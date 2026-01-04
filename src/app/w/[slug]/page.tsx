@@ -180,26 +180,32 @@ export default async function WikiPage({ params }: PageProps) {
           </header>
 
           {/* 목차 - 나무위키 스타일 */}
-          {toc.length >= 2 && (
-            <div className="mb-8 p-4 bg-neutral-50 border border-neutral-200 rounded-lg">
-              <div className="flex items-center justify-between mb-3">
-                <h2 className="text-sm font-semibold text-neutral-600">목차</h2>
+          {toc.length >= 2 && (() => {
+            let h2Counter = 0;
+            return (
+              <div className="mb-8 p-4 bg-neutral-50 border border-neutral-200 rounded-lg">
+                <div className="flex items-center justify-between mb-3">
+                  <h2 className="text-sm font-semibold text-neutral-600">목차</h2>
+                </div>
+                <ol className="space-y-1 text-sm">
+                  {toc.map((item) => {
+                    if (item.level === 2) h2Counter++;
+                    return (
+                      <li key={item.id} className={item.level === 3 ? "ml-4" : ""}>
+                        <a
+                          href={`#${item.id}`}
+                          className="text-emerald-600 hover:underline"
+                        >
+                          {item.level === 2 ? `${h2Counter}. ` : "• "}
+                          {item.text}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ol>
               </div>
-              <ol className="space-y-1 text-sm">
-                {toc.map((item, index) => (
-                  <li key={item.id} className={item.level === 3 ? "ml-4" : ""}>
-                    <a
-                      href={`#${item.id}`}
-                      className="text-emerald-600 hover:underline"
-                    >
-                      {item.level === 2 ? `${index + 1}. ` : "• "}
-                      {item.text}
-                    </a>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          )}
+            );
+          })()}
 
           {/* 3줄 요약 */}
           {doc.summary && (
@@ -209,26 +215,6 @@ export default async function WikiPage({ params }: PageProps) {
                 <h2 className="font-semibold text-emerald-800">3줄 요약</h2>
               </div>
               <p className="text-neutral-700 leading-relaxed">{doc.summary}</p>
-            </div>
-          )}
-
-          {/* 핵심 포인트 */}
-          {doc.keyPoints && doc.keyPoints.length > 0 && (
-            <div className="mb-8 p-6 bg-white rounded-2xl border border-neutral-200 shadow-sm">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-xl">🎯</span>
-                <h2 className="font-semibold">핵심 포인트</h2>
-              </div>
-              <ul className="space-y-3">
-                {doc.keyPoints.map((point, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-medium">
-                      {index + 1}
-                    </span>
-                    <span className="text-neutral-700 leading-relaxed">{point}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           )}
 
