@@ -1,11 +1,50 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "머니위키 - 경제 · 금융 · 법률 정보",
+  title: {
+    default: "머니위키 - 경제 · 금융 · 법률 정보",
+    template: "%s | 머니위키",
+  },
   description: "퇴직금, 세금, 부동산, 대출 정보를 쉽게 찾아보세요. 정부 사이트보다 쉽고, 블로그보다 정확하게.",
+  keywords: ["퇴직금", "연말정산", "세금", "부동산", "대출", "실업급여", "계산기", "경제", "금융", "법률"],
+  authors: [{ name: "머니위키" }],
+  creator: "머니위키",
+  publisher: "머니위키",
+  metadataBase: new URL("https://www.jjyu.co.kr"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "ko_KR",
+    url: "https://www.jjyu.co.kr",
+    siteName: "머니위키",
+    title: "머니위키 - 경제 · 금융 · 법률 정보",
+    description: "퇴직금, 세금, 부동산, 대출 정보를 쉽게 찾아보세요.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "머니위키 - 경제 · 금융 · 법률 정보",
+    description: "퇴직금, 세금, 부동산, 대출 정보를 쉽게 찾아보세요.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "구글서치콘솔인증코드", // Google Search Console에서 받은 코드로 교체
+  },
   icons: {
     icon: "/favicon.ico",
   },
@@ -22,6 +61,13 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
           rel="stylesheet"
+        />
+        {/* Google AdSense */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2442517902625121"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
         />
       </head>
       <body className="antialiased bg-white min-h-screen flex flex-col">
