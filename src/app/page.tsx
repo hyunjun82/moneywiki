@@ -1,186 +1,219 @@
 import Link from "next/link";
+import { getAllWikiDocuments } from "@/lib/wiki";
 
-// 인기 문서
-const popularDocuments = [
-  { title: "퇴직금 계산법", category: "근로", views: "12.5K" },
-  { title: "종합소득세 신고 방법", category: "세금", views: "9.8K" },
-  { title: "전세자금대출 조건", category: "부동산", views: "8.7K" },
-  { title: "청년도약계좌 가입 방법", category: "금융", views: "7.6K" },
-  { title: "실업급여 수급 조건", category: "고용", views: "6.5K" },
-  { title: "연말정산 공제 항목", category: "세금", views: "5.9K" },
-];
-
-// 계산기 도구
-const tools = [
-  { name: "퇴직금 계산기", desc: "근속연수별 퇴직금 계산", href: "/calc/severance" },
-  { name: "연봉 실수령액", desc: "세후 실수령액 계산", href: "/calc/salary" },
-  { name: "전월세 전환", desc: "전세 ↔ 월세 변환", href: "/calc/rent" },
-  { name: "대출이자 계산", desc: "원리금 균등상환 계산", href: "/calc/loan" },
-];
-
-// 최신 문서
-const recentDocs = [
-  { title: "2026년 최저임금 가이드", date: "Jan 4", isNew: true },
-  { title: "청년내일채움공제 변경사항", date: "Jan 3", isNew: true },
-  { title: "연말정산 간소화 서비스", date: "Jan 2", isNew: false },
-  { title: "주택임대차보호법 핵심 정리", date: "Jan 1", isNew: false },
-];
+// 카테고리별 이모지
+const categoryEmoji: Record<string, string> = {
+  "세금": "💰",
+  "경제": "📈",
+  "부동산": "🏠",
+  "법률": "⚖️",
+  "일반": "📄",
+};
 
 export default function Home() {
+  // 실제 위키 문서 가져오기
+  const allDocs = getAllWikiDocuments();
+
+  // 카테고리별로 그룹화
+  const docsByCategory = allDocs.reduce((acc, doc) => {
+    const category = doc.category || "일반";
+    if (!acc[category]) {
+      acc[category] = [];
+    }
+    acc[category].push(doc);
+    return acc;
+  }, {} as Record<string, typeof allDocs>);
+
+  // 카테고리 정렬 (문서 수 기준)
+  const sortedCategories = Object.entries(docsByCategory)
+    .sort((a, b) => b[1].length - a[1].length);
+
+  // 최신 문서 (최근 수정 기준)
+  const recentDocs = [...allDocs]
+    .sort((a, b) => new Date(b.lastUpdated).getTime() - new Date(a.lastUpdated).getTime())
+    .slice(0, 10);
+
+  // 인기 문서 (주요 키워드 기준)
+  const popularDocs = allDocs.filter(doc =>
+    ["연말정산", "퇴직금", "종합소득세", "실업급여", "4대보험", "양도소득세", "취득세", "전세자금대출"].some(
+      keyword => doc.title.includes(keyword) || doc.slug.includes(keyword)
+    )
+  ).slice(0, 8);
+
   return (
     <main className="max-w-6xl mx-auto px-6 py-16">
       {/* 히어로 */}
-      <section className="text-center mb-20">
+      <section className="text-center mb-16">
         <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 rounded-full text-sm text-emerald-700 mb-6">
           <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-          머니위키 · 경제 · 금융 · 법률
+          {allDocs.length}개 문서 · 세금 · 경제 · 부동산 · 법률
         </div>
         <h1 className="text-5xl sm:text-6xl font-bold tracking-tight mb-6">
-          복잡한 정보,<br />
+          머니위키<br />
           <span className="bg-gradient-to-r from-neutral-900 to-neutral-500 bg-clip-text text-transparent">
             쉽게 찾아보세요
           </span>
         </h1>
         <p className="text-lg text-neutral-500 max-w-xl mx-auto mb-8">
-          퇴직금, 세금, 부동산, 대출까지.
+          퇴직금, 연말정산, 부동산, 대출까지.<br />
           정부 사이트보다 쉽고, 블로그보다 정확하게.
         </p>
-        <div className="flex items-center justify-center gap-3">
+
+        {/* 빠른 검색 */}
+        <div className="max-w-md mx-auto">
           <Link
-            href="/w/퇴직금"
-            className="h-11 px-6 bg-emerald-600 text-white text-sm font-medium rounded-lg hover:bg-emerald-700 transition-colors inline-flex items-center"
+            href="/search"
+            className="flex items-center gap-3 px-4 py-3 bg-white border border-neutral-200 rounded-xl hover:border-neutral-300 transition-colors"
           >
-            시작하기
-          </Link>
-          <Link
-            href="/calc"
-            className="h-11 px-6 bg-white text-black text-sm font-medium rounded-lg border border-neutral-200 hover:bg-neutral-50 hover:border-neutral-300 transition-colors inline-flex items-center"
-          >
-            계산기 바로가기
+            <svg className="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <span className="text-neutral-400">문서 검색...</span>
           </Link>
         </div>
       </section>
 
-      {/* 계산기 도구 */}
-      <section className="mb-20">
+      {/* 카테고리 요약 */}
+      <section className="mb-16">
+        <h2 className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-6">
+          카테고리별 문서
+        </h2>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          {sortedCategories.map(([category, docs]) => (
+            <Link
+              key={category}
+              href={`#category-${category}`}
+              className="p-4 bg-white border border-neutral-200 rounded-xl hover:border-emerald-300 hover:shadow-md transition-all text-center"
+            >
+              <span className="text-2xl mb-2 block">{categoryEmoji[category] || "📄"}</span>
+              <span className="font-medium text-sm">{category}</span>
+              <p className="text-xs text-neutral-400 mt-1">{docs.length}개 문서</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* 인기 문서 */}
+      <section className="mb-16">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-sm font-medium text-neutral-500 uppercase tracking-wider">
-            빠른 계산
+            🔥 인기 문서
           </h2>
-          <Link href="/calc" className="text-sm text-neutral-500 hover:text-black transition-colors">
-            전체보기 →
-          </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {tools.map((tool) => (
+          {popularDocs.map((doc) => (
             <Link
-              key={tool.name}
-              href={tool.href}
-              className="group p-5 bg-neutral-50 rounded-xl hover:bg-neutral-100 transition-colors"
+              key={doc.slug}
+              href={`/w/${encodeURIComponent(doc.slug)}`}
+              className="group p-4 bg-white border border-neutral-200 rounded-xl hover:border-emerald-300 hover:shadow-md transition-all"
             >
-              <h3 className="font-medium mb-1 group-hover:text-black transition-colors">{tool.name}</h3>
-              <p className="text-sm text-neutral-500">{tool.desc}</p>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="px-2 py-0.5 text-xs bg-emerald-50 text-emerald-600 rounded">
+                  {doc.category}
+                </span>
+              </div>
+              <h3 className="font-medium text-neutral-800 group-hover:text-emerald-600 transition-colors mb-1 line-clamp-1">
+                {doc.title}
+              </h3>
+              <p className="text-xs text-neutral-500 line-clamp-2">{doc.summary || doc.description}</p>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* 광고 */}
-      <div className="mb-20 p-6 bg-neutral-50 border border-dashed border-neutral-200 rounded-xl text-center">
+      {/* 최신 업데이트 */}
+      <section className="mb-16">
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-sm font-medium text-neutral-500 uppercase tracking-wider">
+            ✨ 최신 업데이트
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {recentDocs.map((doc) => (
+            <Link
+              key={doc.slug}
+              href={`/w/${encodeURIComponent(doc.slug)}`}
+              className="group flex items-center gap-4 p-4 bg-white border border-neutral-200 rounded-xl hover:border-emerald-300 transition-all"
+            >
+              <div className="flex-1 min-w-0">
+                <span className="font-medium text-neutral-800 group-hover:text-emerald-600 transition-colors line-clamp-1">
+                  {doc.title}
+                </span>
+                <p className="text-xs text-neutral-400 mt-1">{doc.category}</p>
+              </div>
+              <span className="text-xs text-neutral-400 shrink-0">{doc.lastUpdated}</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* 광고 슬롯 */}
+      <div className="mb-16 p-6 bg-neutral-50 border border-dashed border-neutral-200 rounded-xl text-center">
         <span className="text-sm text-neutral-400">Advertisement</span>
       </div>
 
-      {/* 메인 그리드 */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
-        {/* 인기 문서 */}
-        <section className="lg:col-span-2">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-sm font-medium text-neutral-500 uppercase tracking-wider">
-              인기 문서
-            </h2>
-            <Link href="/popular" className="text-sm text-neutral-500 hover:text-black transition-colors">
-              전체보기 →
-            </Link>
+      {/* 카테고리별 전체 문서 */}
+      {sortedCategories.map(([category, docs]) => (
+        <section key={category} id={`category-${category}`} className="mb-16 scroll-mt-8">
+          <div className="flex items-center gap-3 mb-6 pb-3 border-b border-neutral-200">
+            <span className="text-2xl">{categoryEmoji[category] || "📄"}</span>
+            <h2 className="text-xl font-bold">{category}</h2>
+            <span className="text-sm text-neutral-400">({docs.length}개)</span>
           </div>
-          <div className="space-y-1">
-            {popularDocuments.map((doc, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {docs
+              .sort((a, b) => a.title.localeCompare(b.title, 'ko'))
+              .map((doc) => (
               <Link
-                key={doc.title}
-                href={`/w/${encodeURIComponent(doc.title)}`}
-                className="group flex items-center gap-4 p-4 -mx-4 rounded-lg hover:bg-neutral-50 transition-colors"
+                key={doc.slug}
+                href={`/w/${encodeURIComponent(doc.slug)}`}
+                className="group flex items-start gap-3 p-4 bg-white border border-neutral-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50/50 transition-all"
               >
-                <span className="w-6 text-sm text-neutral-400 font-mono">{String(i + 1).padStart(2, '0')}</span>
                 <div className="flex-1 min-w-0">
-                  <span className="font-medium group-hover:text-black transition-colors">{doc.title}</span>
+                  <h3 className="font-medium text-neutral-800 group-hover:text-emerald-600 transition-colors line-clamp-1">
+                    {doc.title}
+                  </h3>
+                  <p className="text-xs text-neutral-500 mt-1 line-clamp-2">
+                    {doc.summary || doc.description}
+                  </p>
                 </div>
-                <span className="text-xs text-neutral-400 bg-neutral-100 px-2 py-1 rounded">{doc.category}</span>
-                <span className="text-sm text-neutral-400 w-16 text-right">{doc.views}</span>
+                <svg className="w-4 h-4 text-neutral-300 group-hover:text-emerald-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </Link>
             ))}
           </div>
         </section>
+      ))}
 
-        {/* 최신 문서 */}
-        <section>
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-sm font-medium text-neutral-500 uppercase tracking-wider">
-              최신 업데이트
-            </h2>
-          </div>
-          <div className="space-y-4">
-            {recentDocs.map((doc) => (
+      {/* 전체 문서 인덱스 */}
+      <section className="mb-16">
+        <div className="flex items-center gap-3 mb-6 pb-3 border-b border-neutral-200">
+          <span className="text-2xl">📚</span>
+          <h2 className="text-xl font-bold">전체 문서 목록</h2>
+          <span className="text-sm text-neutral-400">({allDocs.length}개)</span>
+        </div>
+        <div className="bg-neutral-50 rounded-xl p-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            {allDocs
+              .sort((a, b) => a.title.localeCompare(b.title, 'ko'))
+              .map((doc) => (
               <Link
-                key={doc.title}
-                href={`/w/${encodeURIComponent(doc.title)}`}
-                className="group block"
+                key={doc.slug}
+                href={`/w/${encodeURIComponent(doc.slug)}`}
+                className="text-sm text-neutral-600 hover:text-emerald-600 hover:underline truncate py-1"
               >
-                <div className="flex items-start gap-3">
-                  {doc.isNew && (
-                    <span className="mt-1 w-2 h-2 bg-blue-500 rounded-full shrink-0"></span>
-                  )}
-                  {!doc.isNew && (
-                    <span className="mt-1 w-2 h-2 bg-neutral-300 rounded-full shrink-0"></span>
-                  )}
-                  <div>
-                    <span className="font-medium text-sm group-hover:text-black transition-colors">{doc.title}</span>
-                    <p className="text-xs text-neutral-400 mt-1">{doc.date}</p>
-                  </div>
-                </div>
+                {doc.title}
               </Link>
             ))}
           </div>
-        </section>
-      </div>
-
-      {/* 카테고리 */}
-      <section className="mb-20">
-        <h2 className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-6">
-          카테고리
-        </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-          {[
-            { name: "근로/급여", count: 156 },
-            { name: "세금", count: 89 },
-            { name: "부동산", count: 124 },
-            { name: "금융", count: 98 },
-            { name: "사회보험", count: 67 },
-            { name: "법률", count: 45 },
-          ].map((cat) => (
-            <Link
-              key={cat.name}
-              href={`/category/${encodeURIComponent(cat.name)}`}
-              className="p-4 border border-neutral-200 rounded-xl hover:border-neutral-400 hover:shadow-sm transition-all text-center"
-            >
-              <span className="font-medium text-sm">{cat.name}</span>
-              <p className="text-xs text-neutral-400 mt-1">{cat.count}개 문서</p>
-            </Link>
-          ))}
         </div>
       </section>
 
-      {/* 광고 */}
-      <div className="p-6 bg-neutral-50 border border-dashed border-neutral-200 rounded-xl text-center">
-        <span className="text-sm text-neutral-400">Advertisement</span>
+      {/* 푸터 정보 */}
+      <div className="text-center text-sm text-neutral-400 py-8 border-t border-neutral-200">
+        <p>머니위키 - 대한민국 세금·경제·부동산·법률 정보</p>
+        <p className="mt-1">총 {allDocs.length}개 문서 | 2026년 기준 정보</p>
       </div>
     </main>
   );
