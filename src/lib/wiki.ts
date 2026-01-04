@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
+import remarkGfm from "remark-gfm";
 import html from "remark-html";
 
 const wikiDirectory = path.join(process.cwd(), "content/wiki");
@@ -73,8 +74,11 @@ export async function getWikiDocument(
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
-  // 마크다운을 HTML로 변환
-  const processedContent = await remark().use(html).process(content);
+  // 마크다운을 HTML로 변환 (GFM 테이블 지원)
+  const processedContent = await remark()
+    .use(remarkGfm)
+    .use(html, { sanitize: false })
+    .process(content);
   const htmlContent = processedContent.toString();
 
   return {
