@@ -35,11 +35,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const url = `https://www.jjyu.co.kr/w/${encodeURIComponent(slug)}`;
 
-  // SEO용 제목: seoTitle이 있으면 사용, 없으면 title
-  const metaTitle = doc.seoTitle || doc.title;
-
   return {
-    title: metaTitle,
+    title: doc.title,
     description: doc.description,
     keywords: doc.keywords,
     authors: [{ name: "머니위키" }],
@@ -47,7 +44,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       canonical: url,
     },
     openGraph: {
-      title: `${metaTitle} | 머니위키`,
+      title: `${doc.title} | 머니위키`,
       description: doc.description,
       type: "article",
       url: url,
@@ -60,7 +57,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: "summary_large_image",
-      title: `${metaTitle} | 머니위키`,
+      title: `${doc.title} | 머니위키`,
       description: doc.description,
     },
     robots: {
