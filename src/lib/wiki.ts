@@ -34,7 +34,8 @@ export interface SourceItem {
 
 export interface WikiDocument {
   slug: string;
-  title: string;
+  title: string;           // 위키 h1 제목 (예: "연말정산")
+  seoTitle?: string;       // SEO meta title (예: "2026년 연말정산 총정리...")
   description: string;
   category: string;
   keywords: string[];
@@ -94,6 +95,7 @@ export async function getWikiDocument(
   return {
     slug: decodedSlug,
     title: data.title || decodedSlug,
+    seoTitle: data.seoTitle,  // SEO용 롱테일 제목
     description: data.description || "",
     category: data.category || "일반",
     keywords: data.keywords || [],
@@ -126,6 +128,7 @@ export function getAllWikiDocuments(): Omit<WikiDocument, "content" | "htmlConte
     return {
       slug,
       title: data.title || slug,
+      seoTitle: data.seoTitle,
       description: data.description || "",
       category: data.category || "일반",
       keywords: data.keywords || [],
