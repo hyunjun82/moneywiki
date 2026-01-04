@@ -232,7 +232,7 @@ export default async function WikiPage({ params }: PageProps) {
               prose-p:leading-7
               prose-a:text-emerald-600 prose-a:no-underline hover:prose-a:underline
               prose-code:bg-neutral-100 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
-              prose-pre:bg-neutral-900 prose-pre:text-neutral-100
+              prose-pre:bg-neutral-100 prose-pre:text-neutral-800 prose-pre:border prose-pre:border-neutral-200
               prose-table:border prose-table:border-neutral-200
               prose-th:bg-neutral-50 prose-th:p-3 prose-th:text-left
               prose-td:p-3 prose-td:border-t prose-td:border-neutral-200
