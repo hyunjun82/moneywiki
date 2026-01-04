@@ -16,8 +16,9 @@ interface PageProps {
 // 정적 생성을 위한 경로 생성
 export async function generateStaticParams() {
   const slugs = getAllWikiSlugs();
+  // Next.js가 자동으로 URL 인코딩을 처리하므로 raw slug 반환
   return slugs.map((slug) => ({
-    slug: encodeURIComponent(slug),
+    slug: slug,
   }));
 }
 
