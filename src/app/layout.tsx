@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "구글서치콘솔인증코드", // Google Search Console에서 받은 코드로 교체
+    google: "kPe6sAN7cMBDG2OVVWHcI8hH-BxkT5Zv6U8TVWTxuwI",
   },
   icons: {
     icon: "/favicon.ico",
