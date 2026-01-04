@@ -8,7 +8,8 @@ import {
   HowToSchema,
   BreadcrumbSchema,
 } from "@/components/JsonLd";
-import AdSense, { AD_SLOTS } from "@/components/AdSense";
+// AdSense 승인 후 활성화
+// import AdSense, { AD_SLOTS } from "@/components/AdSense";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -218,11 +219,6 @@ export default async function WikiPage({ params }: PageProps) {
             </div>
           )}
 
-          {/* 광고 - 본문 상단 */}
-          <div className="mb-8">
-            <AdSense slot={AD_SLOTS.HORIZONTAL} className="w-full" />
-          </div>
-
           {/* 문서 본문 */}
           <article
             className="prose prose-neutral max-w-none
@@ -298,11 +294,6 @@ export default async function WikiPage({ params }: PageProps) {
             </section>
           )}
 
-          {/* 광고 - 본문 하단 */}
-          <div className="mt-12">
-            <AdSense slot={AD_SLOTS.VERTICAL} className="w-full" />
-          </div>
-
           {/* 키워드 태그 */}
           {doc.keywords && doc.keywords.length > 0 && (
             <div className="mt-8 pt-6 border-t border-neutral-200">
@@ -361,10 +352,7 @@ export default async function WikiPage({ params }: PageProps) {
 
         {/* 사이드바 */}
         <aside className="w-72 shrink-0 hidden lg:block space-y-4">
-          {/* 사이드바 광고 (사각) */}
           <div className="sticky top-4">
-            <AdSense slot={AD_SLOTS.SQUARE} className="w-full mb-4" />
-
             {/* 인기 문서 */}
             <div className="bg-white border border-neutral-200 rounded-xl overflow-hidden mb-4">
               <div className="px-4 py-3 bg-emerald-600">
