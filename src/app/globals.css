@@ -1,5 +1,6 @@
-@import "tailwindcss";
-@plugin "@tailwindcss/typography";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   /* Vercel 스타일 - 미니멀 팔레트 */
@@ -27,13 +28,6 @@
   /* 성공/에러 */
   --success: #00a67e;
   --error: #e00;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 /* 기본 스타일 */
