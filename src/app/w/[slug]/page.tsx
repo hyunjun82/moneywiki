@@ -8,6 +8,7 @@ import {
   HowToSchema,
   BreadcrumbSchema,
 } from "@/components/JsonLd";
+import AdSense, { AD_SLOTS } from "@/components/AdSense";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -171,9 +172,9 @@ export default async function WikiPage({ params }: PageProps) {
           </div>
         )}
 
-        {/* 광고 슬롯 */}
-        <div className="mb-8 p-4 bg-neutral-50 border border-dashed border-neutral-200 rounded-lg text-center">
-          <span className="text-sm text-neutral-400">Advertisement</span>
+        {/* 광고 - 본문 상단 (수평) */}
+        <div className="mb-8">
+          <AdSense slot={AD_SLOTS.HORIZONTAL} className="w-full" />
         </div>
 
         {/* 문서 본문 */}
@@ -224,9 +225,9 @@ export default async function WikiPage({ params }: PageProps) {
           </section>
         )}
 
-        {/* 하단 광고 */}
-        <div className="mt-12 p-4 bg-neutral-50 border border-dashed border-neutral-200 rounded-lg text-center">
-          <span className="text-sm text-neutral-400">Advertisement</span>
+        {/* 광고 - 본문 하단 (수직) */}
+        <div className="mt-12">
+          <AdSense slot={AD_SLOTS.VERTICAL} className="w-full" />
         </div>
 
         {/* 키워드 태그 */}
