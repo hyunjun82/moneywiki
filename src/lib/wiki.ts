@@ -25,6 +25,13 @@ export interface RelatedDoc {
   url: string;
 }
 
+// 출처 타입
+export interface SourceItem {
+  name: string;
+  url: string;
+  date?: string;
+}
+
 export interface WikiDocument {
   slug: string;
   title: string;
@@ -47,6 +54,9 @@ export interface WikiDocument {
   // 토스 스타일 요약
   summary?: string;
   keyPoints?: string[];
+  // 신뢰도 강화
+  sources?: SourceItem[];
+  updateNote?: string; // "2026년 1월 기준"
 }
 
 // 모든 위키 문서 목록 가져오기
@@ -98,6 +108,9 @@ export async function getWikiDocument(
     // 토스 스타일
     summary: data.summary || "",
     keyPoints: data.keyPoints || [],
+    // 신뢰도 강화
+    sources: data.sources || [],
+    updateNote: data.updateNote || "",
   };
 }
 
