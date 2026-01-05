@@ -51,8 +51,8 @@ export interface WikiDocument {
     steps: HowToStep[];
   };
   relatedDocs?: RelatedDoc[];
-  // 토스 스타일 요약
-  summary?: string;
+  // 토스 스타일 요약 (문자열 또는 배열)
+  summary?: string | string[];
   keyPoints?: string[];
   // 신뢰도 강화
   sources?: SourceItem[];

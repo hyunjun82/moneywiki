@@ -214,7 +214,18 @@ export default async function WikiPage({ params }: PageProps) {
                 <span className="text-xl">💡</span>
                 <h2 className="font-semibold text-emerald-800">3줄 요약</h2>
               </div>
-              <p className="text-neutral-700 leading-relaxed">{doc.summary}</p>
+              {Array.isArray(doc.summary) ? (
+                <ul className="text-neutral-700 leading-relaxed space-y-2">
+                  {doc.summary.map((item, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <span className="text-emerald-600 mt-1">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-neutral-700 leading-relaxed">{doc.summary}</p>
+              )}
             </div>
           )}
 
