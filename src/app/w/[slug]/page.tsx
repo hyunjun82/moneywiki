@@ -182,6 +182,7 @@ export default async function WikiPage({ params }: PageProps) {
           {/* 목차 - 나무위키 스타일 */}
           {toc.length >= 2 && (() => {
             let h2Counter = 0;
+            let h3Counter = 0;
             return (
               <div className="mb-8 p-4 bg-neutral-50 border border-neutral-200 rounded-lg">
                 <div className="flex items-center justify-between mb-3">
@@ -189,15 +190,22 @@ export default async function WikiPage({ params }: PageProps) {
                 </div>
                 <ol className="space-y-1 text-sm">
                   {toc.map((item) => {
-                    if (item.level === 2) h2Counter++;
+                    let number = "";
+                    if (item.level === 2) {
+                      h2Counter++;
+                      h3Counter = 0; // h3 카운터 리셋
+                      number = `${h2Counter}.`;
+                    } else if (item.level === 3) {
+                      h3Counter++;
+                      number = `${h2Counter}.${h3Counter}.`;
+                    }
                     return (
-                      <li key={item.id} className={item.level === 3 ? "ml-4" : ""}>
+                      <li key={item.id} className={item.level === 3 ? "ml-6" : ""}>
                         <a
                           href={`#${item.id}`}
                           className="text-emerald-600 hover:underline"
                         >
-                          {item.level === 2 ? `${h2Counter}. ` : "• "}
-                          {item.text}
+                          {number} {item.text}
                         </a>
                       </li>
                     );
