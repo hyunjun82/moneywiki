@@ -7,6 +7,8 @@ interface ArticleSchemaProps {
   dateModified: string;
   author?: string;
   image?: string;
+  keywords?: string[];
+  category?: string;
 }
 
 interface FAQItem {
@@ -33,6 +35,8 @@ export function ArticleSchema({
   dateModified,
   author = "머니위키",
   image = "https://www.jjyu.co.kr/og-image.png",
+  keywords = [],
+  category,
 }: ArticleSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
@@ -42,6 +46,9 @@ export function ArticleSchema({
     url: url,
     datePublished: datePublished,
     dateModified: dateModified,
+    inLanguage: "ko-KR",
+    ...(keywords.length > 0 && { keywords: keywords.join(", ") }),
+    ...(category && { articleSection: category }),
     author: {
       "@type": "Organization",
       name: author,
@@ -61,6 +68,7 @@ export function ArticleSchema({
       "@type": "WebPage",
       "@id": url,
     },
+    isAccessibleForFree: true,
   };
 
   return (

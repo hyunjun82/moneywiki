@@ -70,6 +70,40 @@ export function getAllWikiSlugs(): string[] {
     .map((fileName) => fileName.replace(/\.md$/, ""));
 }
 
+// 카테고리와 슬러그 쌍 가져오기 (새 URL 구조용)
+export function getAllWikiParams(): { category: string; slug: string }[] {
+  if (!fs.existsSync(wikiDirectory)) {
+    return [];
+  }
+  const fileNames = fs.readdirSync(wikiDirectory);
+  return fileNames
+    .filter((fileName) => fileName.endsWith(".md"))
+    .map((fileName) => {
+      const slug = fileName.replace(/\.md$/, "");
+      const fullPath = path.join(wikiDirectory, fileName);
+      const fileContents = fs.readFileSync(fullPath, "utf8");
+      const { data } = matter(fileContents);
+      return {
+        category: data.category || "일반",
+        slug: slug,
+      };
+    });
+}
+
+// 슬러그로 카테고리 찾기 (리다이렉트용)
+export function getCategoryBySlug(slug: string): string | null {
+  const decodedSlug = decodeURIComponent(slug);
+  const fullPath = path.join(wikiDirectory, `${decodedSlug}.md`);
+
+  if (!fs.existsSync(fullPath)) {
+    return null;
+  }
+
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const { data } = matter(fileContents);
+  return data.category || "일반";
+}
+
 // 특정 위키 문서 가져오기
 export async function getWikiDocument(
   slug: string

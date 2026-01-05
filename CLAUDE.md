@@ -1,5 +1,30 @@
 # 머니위키 (wiki-site) 작업 규칙
 
+> **경고: 글 작성 전 아래 체크리스트 필수 확인!**
+
+## 글 작성 전 필수 체크 (STOP!)
+
+| 항목 | 규칙 | 위반 시 |
+|------|------|---------|
+| 이모지 | 절대 금지 | 삭제 |
+| 헤딩 숫자 | `## 제목` O / `## 1. 제목` X | 숫자 제거 |
+| FAQ 섹션 | frontmatter에만 | 본문 삭제 |
+| description | "~알아봅니다" 금지 | 수정 |
+| 제목 | 롱테일만 (단일 키워드 X) | 수정 |
+| 구어체 | ~이에요, ~하죠 필수 | 수정 |
+| 테이블 | 2개 이하 | 텍스트로 변환 |
+| 섹션 분량 | 4문장 이상 | 보충 |
+| URL | `/w/카테고리/슬러그` | 수정 |
+| **출처** | **본문 인라인 + 하단 ## 출처 섹션** | **추가** |
+
+### 신뢰 출처 (본문 + 하단 이중 표기)
+- **법령**: [법제처](https://www.law.go.kr), [대법원 판례](https://glaw.scourt.go.kr)
+- **세금**: [국세청](https://www.nts.go.kr), [홈택스](https://www.hometax.go.kr)
+- **부동산**: [국토부](https://www.molit.go.kr), [HUG](https://www.khug.or.kr)
+- **복지**: [정부24](https://www.gov.kr), [복지로](https://www.bokjiro.go.kr)
+
+---
+
 ## 프로젝트 정보
 - **경로**: `C:\Users\user\wiki-site`
 - **GitHub**: hyunjun82/moneywiki

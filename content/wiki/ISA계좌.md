@@ -1,31 +1,36 @@
 ---
-title: "ISA계좌"
-description: "ISA(개인종합자산관리계좌) 종류와 세제 혜택을 알아봅니다. 일임형, 중개형 ISA 차이와 가입 방법을 정리합니다."
-category: "경제"
-keywords: ["ISA", "ISA계좌", "개인종합자산관리계좌", "ISA비과세", "중개형ISA"]
-lastUpdated: "2026-01-04"
-datePublished: "2026-01-04"
-updateNote: "2026년 기준"
-summary: "ISA는 다양한 금융상품을 한 계좌에서 운용하며 세금 혜택을 받는 계좌입니다. 순이익 200~400만원까지 비과세됩니다."
+title: ISA계좌
+description: 'ISA(개인종합자산관리계좌) 종류와 세제 혜택을 알아봅니다. 일임형, 중개형 ISA 차이와 가입 방법을 정리합니다.'
+category: 경제
+keywords:
+  - ISA
+  - ISA계좌
+  - 개인종합자산관리계좌
+  - ISA비과세
+  - 중개형ISA
+lastUpdated: '2026-01-04'
+datePublished: '2026-01-04'
+updateNote: 2026년 기준
+summary: ISA는 다양한 금융상품을 한 계좌에서 운용하며 세금 혜택을 받는 계좌입니다. 순이익 200~400만원까지 비과세됩니다.
 sources:
-  - name: "조세특례제한법"
-    url: "https://www.law.go.kr/법령/조세특례제한법"
-    date: "2026-01"
-  - name: "금융위원회"
-    url: "https://www.fsc.go.kr"
-    date: "2026-01"
+  - name: 조세특례제한법
+    url: 'https://www.law.go.kr/법령/조세특례제한법'
+    date: 2026-01
+  - name: 금융위원회
+    url: 'https://www.fsc.go.kr'
+    date: 2026-01
 faq:
-  - question: "ISA 가입 조건은?"
-    answer: "만 19세 이상(근로소득자는 15세 이상) 누구나 가입 가능합니다. 1인 1계좌만 가능합니다."
-  - question: "ISA 비과세 한도는 얼마인가요?"
-    answer: "일반형 200만원, 서민형·농어민형 400만원까지 비과세입니다. 초과분은 9.9% 분리과세됩니다."
-  - question: "ISA로 어떤 상품에 투자하나요?"
-    answer: "예적금, 펀드, ETF, ELS, 국내주식(중개형) 등 다양한 상품에 투자할 수 있습니다."
+  - question: ISA 가입 조건은?
+    answer: 만 19세 이상(근로소득자는 15세 이상) 누구나 가입 가능합니다. 1인 1계좌만 가능합니다.
+  - question: ISA 비과세 한도는 얼마인가요?
+    answer: '일반형 200만원, 서민형·농어민형 400만원까지 비과세입니다. 초과분은 9.9% 분리과세됩니다.'
+  - question: ISA로 어떤 상품에 투자하나요?
+    answer: '예적금, 펀드, ETF, ELS, 국내주식(중개형) 등 다양한 상품에 투자할 수 있습니다.'
 relatedDocs:
-  - title: "연금저축"
-    url: "/w/연금저축"
-  - title: "청년도약계좌"
-    url: "/w/청년도약계좌"
+  - title: 연금저축
+    url: /w/%EA%B2%BD%EC%A0%9C/연금저축
+  - title: 청년도약계좌
+    url: /w/%EA%B2%BD%EC%A0%9C/청년도약계좌
 ---
 
 # ISA계좌
@@ -294,6 +299,6 @@ ISA(Individual Savings Account)는 다양한 금융상품을 한 계좌에서 �
 
 ## 관련 문서
 
-- [연금저축](/w/연금저축)
-- [청년도약계좌](/w/청년도약계좌)
-- [배당소득세](/w/배당소득세)
+- [연금저축](/w/%EA%B2%BD%EC%A0%9C/연금저축)
+- [청년도약계좌](/w/%EA%B2%BD%EC%A0%9C/청년도약계좌)
+- [배당소득세](/w/%EC%84%B8%EA%B8%88/배당소득세)
