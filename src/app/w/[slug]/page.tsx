@@ -87,14 +87,29 @@ function extractToc(html: string): { id: string; text: string; level: number }[]
   return toc;
 }
 
-// HTML에 섹션 ID 추가
+// HTML에 섹션 ID와 번호 추가 (나무위키 스타일)
 function addSectionIds(html: string): string {
   let counter = 0;
+  let h2Counter = 0;
+  let h3Counter = 0;
+
   return html.replace(
     /<(h[23])([^>]*)>(.*?)<\/\1>/gi,
     (match, tag, attrs, content) => {
       const id = `section-${counter++}`;
-      return `<${tag}${attrs} id="${id}">${content}</${tag}>`;
+      const level = tag.toLowerCase() === 'h2' ? 2 : 3;
+      let number = "";
+
+      if (level === 2) {
+        h2Counter++;
+        h3Counter = 0;
+        number = `${h2Counter}.`;
+      } else if (level === 3) {
+        h3Counter++;
+        number = `${h2Counter}.${h3Counter}.`;
+      }
+
+      return `<${tag}${attrs} id="${id}"><span class="text-neutral-400 font-normal mr-2">${number}</span>${content}</${tag}>`;
     }
   );
 }
