@@ -44,6 +44,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "kPe6sAN7cMBDG2OVVWHcI8hH-BxkT5Zv6U8TVWTxuwI",
+    other: {
+      "msvalidate.01": "1945B725690D183CB7825C0D0FB24443",
+    },
   },
   icons: {
     icon: "/favicon.ico",
