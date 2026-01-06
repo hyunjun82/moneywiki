@@ -9,6 +9,16 @@ const nextConfig: NextConfig = {
     "/w/[slug]": ["./content/wiki/**/*"],
     "/sitemap.xml": ["./content/wiki/**/*"],
   },
+  // 기존 URL 리다이렉트 (SEO 유지)
+  async redirects() {
+    return [
+      {
+        source: "/w/:category/:slug",
+        destination: "/w/:slug",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

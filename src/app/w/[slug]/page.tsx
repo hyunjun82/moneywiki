@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getWikiDocument, getAllWikiParams, findRelatedDocuments, getAllWikiDocuments } from "@/lib/wiki";
+import { getWikiDocument, getAllWikiSlugs, findRelatedDocuments, getAllWikiDocuments } from "@/lib/wiki";
 import {
   ArticleSchema,
   FAQSchema,
@@ -12,21 +12,20 @@ import AdSense, { AD_SLOTS } from "@/components/AdSense";
 import ShareButtons from "@/components/ShareButtons";
 
 interface PageProps {
-  params: Promise<{ category: string; slug: string }>;
+  params: Promise<{ slug: string }>;
 }
 
 // 정적 생성을 위한 경로 생성
 export async function generateStaticParams() {
-  const params = getAllWikiParams();
-  return params.map((p) => ({
-    category: p.category,
-    slug: p.slug,
+  const slugs = getAllWikiSlugs();
+  return slugs.map((slug) => ({
+    slug: slug,
   }));
 }
 
 // 메타데이터 생성 - SEO 최적화
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { category, slug } = await params;
+  const { slug } = await params;
   const doc = await getWikiDocument(slug);
 
   if (!doc) {
@@ -35,7 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const url = `https://www.jjyu.co.kr/w/${encodeURIComponent(category)}/${encodeURIComponent(slug)}`;
+  const url = `https://www.jjyu.co.kr/w/${encodeURIComponent(slug)}`;
 
   return {
     title: doc.title,
@@ -118,19 +117,14 @@ function addSectionIds(html: string): string {
 }
 
 export default async function WikiPage({ params }: PageProps) {
-  const { category, slug } = await params;
+  const { slug } = await params;
   const doc = await getWikiDocument(slug);
 
   if (!doc) {
     notFound();
   }
 
-  // 카테고리 불일치 체크 (잘못된 카테고리로 접근 시)
-  if (doc.category !== decodeURIComponent(category)) {
-    notFound();
-  }
-
-  const url = `https://www.jjyu.co.kr/w/${encodeURIComponent(doc.category)}/${encodeURIComponent(slug)}`;
+  const url = `https://www.jjyu.co.kr/w/${encodeURIComponent(slug)}`;
   const relatedDocs = findRelatedDocuments(doc.slug, 5);
   const allDocs = getAllWikiDocuments();
 
@@ -144,7 +138,7 @@ export default async function WikiPage({ params }: PageProps) {
   // 브레드크럼 데이터 (새 URL 구조)
   const breadcrumbItems = [
     { name: "홈", url: "https://www.jjyu.co.kr" },
-    { name: doc.category, url: `https://www.jjyu.co.kr/w/${encodeURIComponent(doc.category)}` },
+    { name: doc.category, url: `https://www.jjyu.co.kr/category/${encodeURIComponent(doc.category)}` },
     { name: doc.title, url: url },
   ];
 
@@ -178,7 +172,7 @@ export default async function WikiPage({ params }: PageProps) {
           <nav className="flex items-center gap-2 text-sm text-neutral-500 mb-6" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-black transition-colors">홈</Link>
             <span aria-hidden="true">/</span>
-            <Link href={`/w/${encodeURIComponent(doc.category)}`} className="hover:text-black transition-colors">
+            <Link href={`/category/${encodeURIComponent(doc.category)}`} className="hover:text-black transition-colors">
               {doc.category}
             </Link>
             <span aria-hidden="true">/</span>
@@ -380,7 +374,7 @@ export default async function WikiPage({ params }: PageProps) {
                 {relatedDocs.map((relDoc) => (
                   <Link
                     key={relDoc.slug}
-                    href={`/w/${encodeURIComponent(relDoc.category)}/${encodeURIComponent(relDoc.slug)}`}
+                    href={`/w/${encodeURIComponent(relDoc.slug)}`}
                     className="group p-4 bg-white rounded-xl border border-neutral-200 hover:border-emerald-300 hover:shadow-md transition-all"
                   >
                     <div className="flex items-center gap-2 mb-2">
@@ -426,7 +420,7 @@ export default async function WikiPage({ params }: PageProps) {
                 {popularDocs.map((item, index) => (
                   <li key={item.slug}>
                     <Link
-                      href={`/w/${encodeURIComponent(item.category)}/${encodeURIComponent(item.slug)}`}
+                      href={`/w/${encodeURIComponent(item.slug)}`}
                       className="flex items-center gap-3 px-4 py-3 hover:bg-neutral-50 transition-colors"
                     >
                       <span className={`w-6 h-6 rounded flex items-center justify-center text-xs font-bold ${
@@ -455,7 +449,7 @@ export default async function WikiPage({ params }: PageProps) {
                   .map((item) => (
                     <li key={item.slug}>
                       <Link
-                        href={`/w/${encodeURIComponent(item.category)}/${encodeURIComponent(item.slug)}`}
+                        href={`/w/${encodeURIComponent(item.slug)}`}
                         className="block px-4 py-3 text-sm text-neutral-700 hover:bg-neutral-50 hover:text-emerald-600 transition-colors truncate"
                       >
                         {item.title}
@@ -469,13 +463,13 @@ export default async function WikiPage({ params }: PageProps) {
             <div className="p-4 bg-emerald-50 rounded-xl">
               <h3 className="text-xs font-semibold text-emerald-700 mb-3">빠른 링크</h3>
               <div className="flex flex-wrap gap-2">
-                <Link href="/w/경제/퇴직금" className="px-3 py-1.5 bg-white text-xs text-neutral-600 rounded-lg hover:bg-emerald-600 hover:text-white transition-colors border border-neutral-200">
+                <Link href="/w/퇴직금" className="px-3 py-1.5 bg-white text-xs text-neutral-600 rounded-lg hover:bg-emerald-600 hover:text-white transition-colors border border-neutral-200">
                   퇴직금
                 </Link>
-                <Link href="/w/연말정산/연말정산" className="px-3 py-1.5 bg-white text-xs text-neutral-600 rounded-lg hover:bg-emerald-600 hover:text-white transition-colors border border-neutral-200">
+                <Link href="/w/연말정산" className="px-3 py-1.5 bg-white text-xs text-neutral-600 rounded-lg hover:bg-emerald-600 hover:text-white transition-colors border border-neutral-200">
                   연말정산
                 </Link>
-                <Link href="/w/경제/실업급여" className="px-3 py-1.5 bg-white text-xs text-neutral-600 rounded-lg hover:bg-emerald-600 hover:text-white transition-colors border border-neutral-200">
+                <Link href="/w/실업급여" className="px-3 py-1.5 bg-white text-xs text-neutral-600 rounded-lg hover:bg-emerald-600 hover:text-white transition-colors border border-neutral-200">
                   실업급여
                 </Link>
               </div>
