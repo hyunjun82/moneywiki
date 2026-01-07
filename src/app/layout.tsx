@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
+import KakaoSDK from "@/components/KakaoSDK";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -72,20 +73,9 @@ export default function RootLayout({
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
-        {/* Kakao SDK */}
-        <Script
-          src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js"
-          integrity="sha384-DKYJZ8NLiK8MN4/C5P2dtSmLQ4KwPaoqAfyA/DfmEc1VDxu4yyC7wy6K1Ber6ja8"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-          onLoad={() => {
-            if (typeof window !== 'undefined' && window.Kakao && !window.Kakao.isInitialized()) {
-              window.Kakao.init('c6989b2ce9650dfcf510d4544fd4323f');
-            }
-          }}
-        />
       </head>
       <body className="antialiased bg-white min-h-screen flex flex-col">
+        <KakaoSDK />
         <Header />
         <div className="flex-1">{children}</div>
         <Footer />

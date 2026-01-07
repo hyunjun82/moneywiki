@@ -1,6 +1,23 @@
 # 머니위키 (wiki-site) 작업 규칙
 
 ---
+## !!!! 글 작성 전 필수 워크플로우 !!!!
+
+**매번 글 작성 전 이 순서대로:**
+
+```
+1. Read("C:\Users\user\wiki-site\CLAUDE.md") ← 규칙
+2. Read(".claude/references/wegive-style-01.txt") ← 위기브 벤치마크 1
+3. Read(".claude/references/wegive-style-02.txt") ← 위기브 벤치마크 2
+4. Read(".claude/references/wegive-style-03.txt") ← 위기브 벤치마크 3
+5. Read("content/wiki/묵시적갱신-기간.md") ← MD 구조 레퍼런스
+6. 글 작성 (위기브 스타일 + MD 구조)
+7. 체크리스트 확인 후 저장
+```
+
+**컨텍스트 요약되어도 이 워크플로우는 유지됨**
+
+---
 ## ⛔ 절대 규칙 (이거 하나만 기억해)
 
 **글 작성 전 무조건 이 파일 먼저 읽어:**
