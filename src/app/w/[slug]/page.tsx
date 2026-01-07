@@ -10,6 +10,7 @@ import {
 } from "@/components/JsonLd";
 import AdSense, { AD_SLOTS } from "@/components/AdSense";
 import ShareButtons from "@/components/ShareButtons";
+import YearEndTaxCalculator from "@/components/calculators/YearEndTaxCalculator";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -264,6 +265,13 @@ export default async function WikiPage({ params }: PageProps) {
           <div className="mb-8">
             <AdSense slot={AD_SLOTS.HORIZONTAL} className="w-full" />
           </div>
+
+          {/* 계산기 컴포넌트 (특정 페이지용) */}
+          {slug === "연말정산-모의계산" && (
+            <div className="mb-10">
+              <YearEndTaxCalculator />
+            </div>
+          )}
 
           {/* 문서 본문 */}
           <article
