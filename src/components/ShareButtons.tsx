@@ -2,6 +2,35 @@
 
 import { useState } from "react";
 
+declare global {
+  interface Window {
+    Kakao: {
+      isInitialized: () => boolean;
+      Share: {
+        sendDefault: (options: {
+          objectType: string;
+          content: {
+            title: string;
+            description: string;
+            imageUrl: string;
+            link: {
+              mobileWebUrl: string;
+              webUrl: string;
+            };
+          };
+          buttons: Array<{
+            title: string;
+            link: {
+              mobileWebUrl: string;
+              webUrl: string;
+            };
+          }>;
+        }) => void;
+      };
+    };
+  }
+}
+
 interface ShareButtonsProps {
   title: string;
   url: string;
@@ -13,13 +42,39 @@ export default function ShareButtons({ title, url, description }: ShareButtonsPr
 
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
-  const encodedDesc = encodeURIComponent(description || title);
 
   const shareLinks = {
-    kakao: `https://story.kakao.com/share?url=${encodedUrl}`,
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
     twitter: `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`,
     naver: `https://share.naver.com/web/shareView?url=${encodedUrl}&title=${encodedTitle}`,
+  };
+
+  const shareKakao = () => {
+    if (typeof window !== "undefined" && window.Kakao && window.Kakao.isInitialized()) {
+      window.Kakao.Share.sendDefault({
+        objectType: "feed",
+        content: {
+          title: title,
+          description: description || title,
+          imageUrl: "https://www.jjyu.co.kr/og-image.png",
+          link: {
+            mobileWebUrl: url,
+            webUrl: url,
+          },
+        },
+        buttons: [
+          {
+            title: "자세히 보기",
+            link: {
+              mobileWebUrl: url,
+              webUrl: url,
+            },
+          },
+        ],
+      });
+    } else {
+      alert("카카오톡 공유 기능을 불러오는 중입니다. 잠시 후 다시 시도해주세요.");
+    }
   };
 
   const copyToClipboard = async () => {
@@ -44,19 +99,17 @@ export default function ShareButtons({ title, url, description }: ShareButtonsPr
     <div className="flex items-center gap-2">
       <span className="text-sm text-neutral-500 mr-1">공유</span>
 
-      {/* 카카오스토리 */}
-      <a
-        href={shareLinks.kakao}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-8 h-8 flex items-center justify-center rounded-full bg-[#FAE100] hover:opacity-80 transition-opacity"
-        title="카카오스토리 공유"
-        aria-label="카카오스토리로 공유하기"
+      {/* 카카오톡 */}
+      <button
+        onClick={shareKakao}
+        className="w-8 h-8 flex items-center justify-center rounded-full bg-[#FEE500] hover:opacity-80 transition-opacity"
+        title="카카오톡 공유"
+        aria-label="카카오톡으로 공유하기"
       >
-        <svg viewBox="0 0 24 24" className="w-4 h-4 fill-[#3C1E1E]">
+        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-[#000000]">
           <path d="M12 3C6.48 3 2 6.58 2 11c0 2.83 1.82 5.32 4.58 6.73l-.81 3.56c-.06.27.2.5.44.38l4.13-2.17c.54.06 1.09.1 1.66.1 5.52 0 10-3.58 10-8S17.52 3 12 3z"/>
         </svg>
-      </a>
+      </button>
 
       {/* 네이버 */}
       <a
