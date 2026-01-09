@@ -113,7 +113,7 @@ TDF는 은퇴 시점이 멀면 주식 비중이 높고, 가까워지면 채권 �
 ## 출처
 
 - [금융감독원 퇴직연금](https://www.fss.or.kr) - 금융감독원
-- [고용노동부 퇴직연금제도](https://www.moel.go.kr/policy/policyinfo/retire/list.do) - 고용노동부
+- [고용노동부 퇴직연금제도](https://www.moel.go.kr/policy/policyinfo/retire/list.do) - [고용노동부](https://www.moel.go.kr)
 
 ---
 

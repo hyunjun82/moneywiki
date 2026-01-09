@@ -143,7 +143,7 @@ DC형 ETF는 금융기관 앱에서 매수해요.
 ## 출처
 
 - [금융감독원 퇴직연금](https://www.fss.or.kr) - 금융감독원
-- [고용노동부 퇴직연금제도](https://www.moel.go.kr/policy/policyinfo/retire/list.do) - 고용노동부
+- [고용노동부 퇴직연금제도](https://www.moel.go.kr/policy/policyinfo/retire/list.do) - [고용노동부](https://www.moel.go.kr)
 
 ---
 

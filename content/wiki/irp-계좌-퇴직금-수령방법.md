@@ -121,7 +121,7 @@ IRP 가입한 금융기관 앱에 접속하세요. 국민은행, 신한은행, �
 ## 출처
 
 - [근로자퇴직급여보장법](https://www.law.go.kr/법령/근로자퇴직급여보장법) - 법제처
-- [고용노동부 퇴직연금제도](https://www.moel.go.kr/policy/policyinfo/retire/list.do) - 고용노동부
+- [고용노동부 [퇴직연금](/w/퇴직연금)제도](https://www.moel.go.kr/policy/policyinfo/retire/list.do) - [고용노동부](https://www.moel.go.kr)
 
 ---
 
