@@ -13,6 +13,40 @@
       "각 섹션 4문장 이상",
       "출처 이중표기: 본문 인라인 + 하단 ## 출처 섹션",
       "어려운 법령 → 쉽게 풀어서 설명 후 출처 연결"
+    ],
+    "품질 검증 필수": [
+      "세율: 16.5% (5,500만원 이하), 13.2% (초과) - 15%/12% 절대 금지",
+      "퇴직금 지급: 14일, 청구권: 3년, 지연이자: 연 20%",
+      "계산 예시 작성 시 반드시 검증",
+      "단답형 금지: 돼요./있어요./없어요. 단독 사용 금지"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": {
+          "tool_name": "Write",
+          "file_path": "content/wiki/*.md"
+        },
+        "hooks": [
+          {
+            "type": "command",
+            "command": "py scripts/check-wiki-quality.py \"$FILE_PATH\""
+          }
+        ]
+      },
+      {
+        "matcher": {
+          "tool_name": "Edit",
+          "file_path": "content/wiki/*.md"
+        },
+        "hooks": [
+          {
+            "type": "command",
+            "command": "py scripts/check-wiki-quality.py \"$FILE_PATH\""
+          }
+        ]
+      }
     ]
   }
 }

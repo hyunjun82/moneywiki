@@ -204,8 +204,15 @@ export default async function WikiPage({ params }: PageProps) {
             <p className="text-neutral-600 text-lg">{doc.description}</p>
           </header>
 
-          {/* 목차 - 나무위키 스타일 */}
-          {toc.length >= 2 && (() => {
+          {/* 퇴직금 계산기 - 원페이지 스타일 (맨 위 배치) */}
+          {decodeURIComponent(slug) === "퇴직금-계산기" && (
+            <div className="mb-8">
+              <SeverancePayCalculator />
+            </div>
+          )}
+
+          {/* 목차 - 나무위키 스타일 (퇴직금 계산기 페이지에서는 숨김) */}
+          {decodeURIComponent(slug) !== "퇴직금-계산기" && toc.length >= 2 && (() => {
             let h2Counter = 0;
             let h3Counter = 0;
             return (
@@ -240,8 +247,8 @@ export default async function WikiPage({ params }: PageProps) {
             );
           })()}
 
-          {/* 3줄 요약 */}
-          {doc.summary && (
+          {/* 3줄 요약 (퇴직금 계산기 페이지에서는 숨김) */}
+          {decodeURIComponent(slug) !== "퇴직금-계산기" && doc.summary && (
             <div className="mb-8 p-6 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl border border-emerald-100">
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-xl">💡</span>
@@ -271,13 +278,6 @@ export default async function WikiPage({ params }: PageProps) {
           {decodeURIComponent(slug) === "연말정산-모의계산-하는법" && (
             <div className="mb-10">
               <YearEndTaxCalculator />
-            </div>
-          )}
-
-          {/* 퇴직금 계산기 */}
-          {decodeURIComponent(slug) === "퇴직금-계산기" && (
-            <div className="mb-10">
-              <SeverancePayCalculator />
             </div>
           )}
 
