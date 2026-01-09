@@ -11,6 +11,7 @@ import {
 import AdSense, { AD_SLOTS } from "@/components/AdSense";
 import ShareButtons from "@/components/ShareButtons";
 import YearEndTaxCalculator from "@/components/calculators/YearEndTaxCalculator";
+import SeverancePayCalculator from "@/components/calculators/SeverancePayCalculator";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -270,6 +271,13 @@ export default async function WikiPage({ params }: PageProps) {
           {slug === "연말정산-모의계산-하는법" && (
             <div className="mb-10">
               <YearEndTaxCalculator />
+            </div>
+          )}
+
+          {/* 퇴직금 계산기 */}
+          {slug === "퇴직금-계산기" && (
+            <div className="mb-10">
+              <SeverancePayCalculator />
             </div>
           )}
 
