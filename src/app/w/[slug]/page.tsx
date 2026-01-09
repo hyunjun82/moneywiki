@@ -12,6 +12,7 @@ import AdSense, { AD_SLOTS } from "@/components/AdSense";
 import ShareButtons from "@/components/ShareButtons";
 import YearEndTaxCalculator from "@/components/calculators/YearEndTaxCalculator";
 import SeverancePayCalculator from "@/components/calculators/SeverancePayCalculator";
+import UnemploymentBenefitCalculator from "@/components/calculators/UnemploymentBenefitCalculator";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -211,8 +212,15 @@ export default async function WikiPage({ params }: PageProps) {
             </div>
           )}
 
-          {/* 목차 - 나무위키 스타일 (퇴직금 계산기 페이지에서는 숨김) */}
-          {decodeURIComponent(slug) !== "퇴직금-계산기" && toc.length >= 2 && (() => {
+          {/* 실업급여 계산기 */}
+          {decodeURIComponent(slug) === "실업급여-계산기" && (
+            <div className="mb-8">
+              <UnemploymentBenefitCalculator />
+            </div>
+          )}
+
+          {/* 목차 - 나무위키 스타일 (계산기 페이지에서는 숨김) */}
+          {!["퇴직금-계산기", "실업급여-계산기"].includes(decodeURIComponent(slug)) && toc.length >= 2 && (() => {
             let h2Counter = 0;
             let h3Counter = 0;
             return (
@@ -247,8 +255,8 @@ export default async function WikiPage({ params }: PageProps) {
             );
           })()}
 
-          {/* 3줄 요약 (퇴직금 계산기 페이지에서는 숨김) */}
-          {decodeURIComponent(slug) !== "퇴직금-계산기" && doc.summary && (
+          {/* 3줄 요약 (계산기 페이지에서는 숨김) */}
+          {!["퇴직금-계산기", "실업급여-계산기"].includes(decodeURIComponent(slug)) && doc.summary && (
             <div className="mb-8 p-6 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl border border-emerald-100">
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-xl">💡</span>
