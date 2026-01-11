@@ -243,7 +243,7 @@ export default function AnnualSalaryCalculator() {
           <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
             <h3 className="text-lg font-bold text-emerald-800 mb-4">환산 결과</h3>
 
-            <div className="bg-white rounded-xl p-5 mb-4 border-2 border-orange-200">
+            <div className="bg-white rounded-xl p-5 mb-4 border-2 border-emerald-200">
               <div className="text-sm text-neutral-500 mb-1">예상 연봉</div>
               <div className="text-3xl font-bold text-emerald-600">{formatNumber(annualSalary)}원</div>
               <div className="text-sm text-neutral-500">{formatWon(annualSalary)}</div>
@@ -287,6 +287,141 @@ export default function AnnualSalaryCalculator() {
             <li>• 주 15시간 이상 근무 시 주휴수당 포함</li>
             <li>• 세전 금액 기준 (4대보험, 세금 별도)</li>
           </ul>
+        </div>
+
+        {/* 2026년 연봉별 실수령액표 */}
+        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
+          <h4 className="font-medium text-emerald-800 mb-3">2026년 연봉별 실수령액표 (최신 4대보험 요율 적용)</h4>
+          <div className="overflow-x-auto">
+            <table className="w-full text-xs">
+              <thead>
+                <tr className="border-b border-emerald-200 bg-emerald-100">
+                  <th className="py-2 px-1 text-left text-emerald-700">연봉</th>
+                  <th className="py-2 px-1 text-right text-emerald-700">월급</th>
+                  <th className="py-2 px-1 text-right text-emerald-700">공제</th>
+                  <th className="py-2 px-1 text-right text-emerald-700 font-bold">실수령</th>
+                  <th className="py-2 px-1 text-right text-emerald-700">공제율</th>
+                  <th className="py-2 px-1 text-left text-emerald-700 hidden sm:table-cell">한줄평</th>
+                </tr>
+              </thead>
+              <tbody className="text-neutral-700">
+                <tr className="border-b border-neutral-100 bg-yellow-50">
+                  <td className="py-1.5 px-1 font-medium">2,400만</td>
+                  <td className="py-1.5 px-1 text-right">200만</td>
+                  <td className="py-1.5 px-1 text-right text-red-500">21만</td>
+                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">179만</td>
+                  <td className="py-1.5 px-1 text-right">10.5%</td>
+                  <td className="py-1.5 px-1 text-gray-500 hidden sm:table-cell">2026 최저연봉</td>
+                </tr>
+                <tr className="border-b border-neutral-100">
+                  <td className="py-1.5 px-1">3,000만</td>
+                  <td className="py-1.5 px-1 text-right">250만</td>
+                  <td className="py-1.5 px-1 text-right text-red-500">28만</td>
+                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">222만</td>
+                  <td className="py-1.5 px-1 text-right">11.2%</td>
+                  <td className="py-1.5 px-1 text-gray-500 hidden sm:table-cell">사회초년생 평균</td>
+                </tr>
+                <tr className="border-b border-neutral-100">
+                  <td className="py-1.5 px-1">3,500만</td>
+                  <td className="py-1.5 px-1 text-right">291만</td>
+                  <td className="py-1.5 px-1 text-right text-red-500">38만</td>
+                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">253만</td>
+                  <td className="py-1.5 px-1 text-right">13.0%</td>
+                  <td className="py-1.5 px-1 text-gray-500 hidden sm:table-cell">250 돌파!</td>
+                </tr>
+                <tr className="border-b border-neutral-100">
+                  <td className="py-1.5 px-1">4,000만</td>
+                  <td className="py-1.5 px-1 text-right">333만</td>
+                  <td className="py-1.5 px-1 text-right text-red-500">49만</td>
+                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">284만</td>
+                  <td className="py-1.5 px-1 text-right">14.7%</td>
+                  <td className="py-1.5 px-1 text-gray-500 hidden sm:table-cell">중소기업 대리급</td>
+                </tr>
+                <tr className="border-b border-neutral-100 bg-emerald-50">
+                  <td className="py-1.5 px-1 font-medium">4,500만</td>
+                  <td className="py-1.5 px-1 text-right">375만</td>
+                  <td className="py-1.5 px-1 text-right text-red-500">60만</td>
+                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">315만</td>
+                  <td className="py-1.5 px-1 text-right">16.0%</td>
+                  <td className="py-1.5 px-1 text-emerald-600 hidden sm:table-cell">실수령 300 돌파!</td>
+                </tr>
+                <tr className="border-b border-neutral-100">
+                  <td className="py-1.5 px-1">5,000만</td>
+                  <td className="py-1.5 px-1 text-right">416만</td>
+                  <td className="py-1.5 px-1 text-right text-red-500">72만</td>
+                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">344만</td>
+                  <td className="py-1.5 px-1 text-right">17.3%</td>
+                  <td className="py-1.5 px-1 text-gray-500 hidden sm:table-cell">대기업 신입 평균</td>
+                </tr>
+                <tr className="border-b border-neutral-100">
+                  <td className="py-1.5 px-1">5,500만</td>
+                  <td className="py-1.5 px-1 text-right">458만</td>
+                  <td className="py-1.5 px-1 text-right text-red-500">84만</td>
+                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">374만</td>
+                  <td className="py-1.5 px-1 text-right">18.3%</td>
+                  <td className="py-1.5 px-1 text-gray-500 hidden sm:table-cell">소나타 할부 가능</td>
+                </tr>
+                <tr className="border-b border-neutral-100">
+                  <td className="py-1.5 px-1">6,000만</td>
+                  <td className="py-1.5 px-1 text-right">500만</td>
+                  <td className="py-1.5 px-1 text-right text-red-500">98만</td>
+                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">402만</td>
+                  <td className="py-1.5 px-1 text-right">19.6%</td>
+                  <td className="py-1.5 px-1 text-gray-500 hidden sm:table-cell">실수령 400 돌파!</td>
+                </tr>
+                <tr className="border-b border-neutral-100">
+                  <td className="py-1.5 px-1">7,000만</td>
+                  <td className="py-1.5 px-1 text-right">583만</td>
+                  <td className="py-1.5 px-1 text-right text-red-500">128만</td>
+                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">455만</td>
+                  <td className="py-1.5 px-1 text-right">21.9%</td>
+                  <td className="py-1.5 px-1 text-gray-500 hidden sm:table-cell">과장급 중위권</td>
+                </tr>
+                <tr className="border-b border-neutral-100 bg-emerald-50">
+                  <td className="py-1.5 px-1 font-medium">8,000만</td>
+                  <td className="py-1.5 px-1 text-right">666만</td>
+                  <td className="py-1.5 px-1 text-right text-red-500">158만</td>
+                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">508만</td>
+                  <td className="py-1.5 px-1 text-right">23.7%</td>
+                  <td className="py-1.5 px-1 text-emerald-600 hidden sm:table-cell">실수령 500 돌파!</td>
+                </tr>
+                <tr className="border-b border-neutral-100">
+                  <td className="py-1.5 px-1">9,000만</td>
+                  <td className="py-1.5 px-1 text-right">750만</td>
+                  <td className="py-1.5 px-1 text-right text-red-500">191만</td>
+                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">559만</td>
+                  <td className="py-1.5 px-1 text-right">25.5%</td>
+                  <td className="py-1.5 px-1 text-gray-500 hidden sm:table-cell">차장급</td>
+                </tr>
+                <tr className="border-b border-neutral-100 bg-yellow-50">
+                  <td className="py-1.5 px-1 font-medium">1억</td>
+                  <td className="py-1.5 px-1 text-right">833만</td>
+                  <td className="py-1.5 px-1 text-right text-red-500">227만</td>
+                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">606만</td>
+                  <td className="py-1.5 px-1 text-right">27.2%</td>
+                  <td className="py-1.5 px-1 text-amber-600 hidden sm:table-cell">억대 연봉!</td>
+                </tr>
+                <tr className="border-b border-neutral-100">
+                  <td className="py-1.5 px-1">1.2억</td>
+                  <td className="py-1.5 px-1 text-right">1,000만</td>
+                  <td className="py-1.5 px-1 text-right text-red-500">302만</td>
+                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">698만</td>
+                  <td className="py-1.5 px-1 text-right">30.2%</td>
+                  <td className="py-1.5 px-1 text-gray-500 hidden sm:table-cell">월급 천만원대</td>
+                </tr>
+                <tr className="border-b border-neutral-100">
+                  <td className="py-1.5 px-1">1.5억</td>
+                  <td className="py-1.5 px-1 text-right">1,250만</td>
+                  <td className="py-1.5 px-1 text-right text-red-500">421만</td>
+                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">829만</td>
+                  <td className="py-1.5 px-1 text-right">33.7%</td>
+                  <td className="py-1.5 px-1 text-gray-500 hidden sm:table-cell">임원급</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-2 text-xs text-neutral-500">* 4대보험(국민연금·건강보험·고용보험·산재보험) + 소득세 + 지방소득세 공제 기준</p>
+          <p className="text-xs text-neutral-500">* 부양가족 1인(본인) 기준, 비과세 항목 미적용 시 예상 금액</p>
         </div>
       </div>
     </div>

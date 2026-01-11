@@ -230,7 +230,7 @@ export default function GiftTaxCalculator() {
               type="checkbox"
               checked={isGenerationSkip}
               onChange={(e) => setIsGenerationSkip(e.target.checked)}
-              className="w-5 h-5 text-emerald-600 border-2 border-neutral-300 rounded focus:ring-violet-500"
+              className="w-5 h-5 text-emerald-600 border-2 border-neutral-300 rounded focus:ring-emerald-500"
             />
             <div>
               <span className="font-medium text-neutral-700">세대생략 증여</span>
@@ -286,7 +286,7 @@ export default function GiftTaxCalculator() {
             </div>
 
             {/* 최종 세액 */}
-            <div className="bg-white rounded-xl p-5 border-2 border-violet-300">
+            <div className="bg-white rounded-xl p-5 border-2 border-emerald-300">
               <div className="text-sm text-neutral-500 mb-1">납부할 증여세</div>
               <div className="text-3xl font-bold text-emerald-600">{formatNumber(finalTax)}원</div>
               <div className="text-sm text-neutral-500 mt-1">{formatWon(finalTax)}</div>
@@ -311,27 +311,27 @@ export default function GiftTaxCalculator() {
                 </tr>
               </thead>
               <tbody>
-                <tr className={`border-b border-neutral-100 ${taxBase > 0 && taxBase <= 100000000 ? "bg-violet-50" : ""}`}>
+                <tr className={`border-b border-neutral-100 ${taxBase > 0 && taxBase <= 100000000 ? "bg-emerald-50" : ""}`}>
                   <td className="py-2">1억원 이하</td>
                   <td className="py-2 text-right">10%</td>
                   <td className="py-2 text-right">-</td>
                 </tr>
-                <tr className={`border-b border-neutral-100 ${taxBase > 100000000 && taxBase <= 500000000 ? "bg-violet-50" : ""}`}>
+                <tr className={`border-b border-neutral-100 ${taxBase > 100000000 && taxBase <= 500000000 ? "bg-emerald-50" : ""}`}>
                   <td className="py-2">5억원 이하</td>
                   <td className="py-2 text-right">20%</td>
                   <td className="py-2 text-right">1,000만원</td>
                 </tr>
-                <tr className={`border-b border-neutral-100 ${taxBase > 500000000 && taxBase <= 1000000000 ? "bg-violet-50" : ""}`}>
+                <tr className={`border-b border-neutral-100 ${taxBase > 500000000 && taxBase <= 1000000000 ? "bg-emerald-50" : ""}`}>
                   <td className="py-2">10억원 이하</td>
                   <td className="py-2 text-right">30%</td>
                   <td className="py-2 text-right">6,000만원</td>
                 </tr>
-                <tr className={`border-b border-neutral-100 ${taxBase > 1000000000 && taxBase <= 3000000000 ? "bg-violet-50" : ""}`}>
+                <tr className={`border-b border-neutral-100 ${taxBase > 1000000000 && taxBase <= 3000000000 ? "bg-emerald-50" : ""}`}>
                   <td className="py-2">30억원 이하</td>
                   <td className="py-2 text-right">40%</td>
                   <td className="py-2 text-right">1억 6,000만원</td>
                 </tr>
-                <tr className={`${taxBase > 3000000000 ? "bg-violet-50" : ""}`}>
+                <tr className={`${taxBase > 3000000000 ? "bg-emerald-50" : ""}`}>
                   <td className="py-2">30억원 초과</td>
                   <td className="py-2 text-right">50%</td>
                   <td className="py-2 text-right">4억 6,000만원</td>

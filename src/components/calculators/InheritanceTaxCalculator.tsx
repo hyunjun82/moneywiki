@@ -148,7 +148,7 @@ export default function InheritanceTaxCalculator() {
                 const value = e.target.value.replace(/[^0-9]/g, "");
                 setTotalInheritance(Number(value) || 0);
               }}
-              className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-emerald-500"
+              className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">
               원
@@ -161,7 +161,7 @@ export default function InheritanceTaxCalculator() {
                 onClick={() => setTotalInheritance(amount)}
                 className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
                   totalInheritance === amount
-                    ? "bg-violet-500 text-white"
+                    ? "bg-emerald-500 text-white"
                     : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
                 }`}
               >
@@ -180,7 +180,7 @@ export default function InheritanceTaxCalculator() {
             <button
               onClick={() => setHasSpouse(!hasSpouse)}
               className={`w-12 h-6 rounded-full transition-all ${
-                hasSpouse ? "bg-violet-500" : "bg-neutral-300"
+                hasSpouse ? "bg-emerald-500" : "bg-neutral-300"
               }`}
             >
               <div
@@ -204,7 +204,7 @@ export default function InheritanceTaxCalculator() {
                     const value = e.target.value.replace(/[^0-9]/g, "");
                     setSpouseInheritance(Number(value) || 0);
                   }}
-                  className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-emerald-500"
+                  className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                 />
                 <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">
                   원
@@ -254,7 +254,7 @@ export default function InheritanceTaxCalculator() {
                     const value = e.target.value.replace(/[^0-9]/g, "");
                     setDebts(Number(value) || 0);
                   }}
-                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg text-sm focus:ring-2 focus:ring-violet-500 focus:border-emerald-500"
+                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                 />
                 <span className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 text-xs">
                   원
@@ -271,7 +271,7 @@ export default function InheritanceTaxCalculator() {
                     const value = e.target.value.replace(/[^0-9]/g, "");
                     setFuneralCost(Number(value) || 0);
                   }}
-                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg text-sm focus:ring-2 focus:ring-violet-500 focus:border-emerald-500"
+                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                 />
                 <span className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 text-xs">
                   원
@@ -372,27 +372,27 @@ export default function InheritanceTaxCalculator() {
                 </tr>
               </thead>
               <tbody>
-                <tr className={`border-b border-neutral-100 ${result.taxableAmount <= 100000000 ? "bg-violet-50" : ""}`}>
+                <tr className={`border-b border-neutral-100 ${result.taxableAmount <= 100000000 ? "bg-emerald-50" : ""}`}>
                   <td className="py-2 text-neutral-700">1억원 이하</td>
                   <td className="py-2 text-right font-medium text-neutral-700">10%</td>
                   <td className="py-2 text-right text-neutral-600">-</td>
                 </tr>
-                <tr className={`border-b border-neutral-100 ${result.taxableAmount > 100000000 && result.taxableAmount <= 500000000 ? "bg-violet-50" : ""}`}>
+                <tr className={`border-b border-neutral-100 ${result.taxableAmount > 100000000 && result.taxableAmount <= 500000000 ? "bg-emerald-50" : ""}`}>
                   <td className="py-2 text-neutral-700">5억원 이하</td>
                   <td className="py-2 text-right font-medium text-neutral-700">20%</td>
                   <td className="py-2 text-right text-neutral-600">1천만원</td>
                 </tr>
-                <tr className={`border-b border-neutral-100 ${result.taxableAmount > 500000000 && result.taxableAmount <= 1000000000 ? "bg-violet-50" : ""}`}>
+                <tr className={`border-b border-neutral-100 ${result.taxableAmount > 500000000 && result.taxableAmount <= 1000000000 ? "bg-emerald-50" : ""}`}>
                   <td className="py-2 text-neutral-700">10억원 이하</td>
                   <td className="py-2 text-right font-medium text-neutral-700">30%</td>
                   <td className="py-2 text-right text-neutral-600">6천만원</td>
                 </tr>
-                <tr className={`border-b border-neutral-100 ${result.taxableAmount > 1000000000 && result.taxableAmount <= 3000000000 ? "bg-violet-50" : ""}`}>
+                <tr className={`border-b border-neutral-100 ${result.taxableAmount > 1000000000 && result.taxableAmount <= 3000000000 ? "bg-emerald-50" : ""}`}>
                   <td className="py-2 text-neutral-700">30억원 이하</td>
                   <td className="py-2 text-right font-medium text-neutral-700">40%</td>
                   <td className="py-2 text-right text-neutral-600">1억 6천만원</td>
                 </tr>
-                <tr className={result.taxableAmount > 3000000000 ? "bg-violet-50" : ""}>
+                <tr className={result.taxableAmount > 3000000000 ? "bg-emerald-50" : ""}>
                   <td className="py-2 text-neutral-700">30억원 초과</td>
                   <td className="py-2 text-right font-medium text-neutral-700">50%</td>
                   <td className="py-2 text-right text-neutral-600">4억 6천만원</td>

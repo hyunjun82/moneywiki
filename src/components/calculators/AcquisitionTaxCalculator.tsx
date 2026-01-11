@@ -740,6 +740,92 @@ export default function AcquisitionTaxCalculator() {
           <p className="text-xs text-gray-500 mt-2">※ 농어촌특별세: 전용면적 85㎡ 이하 주택은 비과세</p>
         </div>
       </div>
+
+      {/* 금액별 취득세액표 */}
+      <div className="border-t border-gray-200">
+        <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-200 bg-gray-50">
+          <span className="w-1 h-5 bg-emerald-500 rounded-full"></span>
+          <h3 className="text-sm font-semibold text-gray-700">2026년 주택 가격별 취득세 예상액 (1주택자 기준)</h3>
+        </div>
+
+        <div className="p-4 overflow-x-auto">
+          <table className="w-full text-xs border-collapse min-w-[420px]">
+            <thead>
+              <tr className="bg-emerald-50">
+                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-emerald-800">주택가격</th>
+                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-emerald-800">세율</th>
+                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-emerald-800">1주택 세액</th>
+                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-emerald-800 hidden sm:table-cell">포인트</th>
+              </tr>
+            </thead>
+            <tbody className="text-gray-600">
+              <tr>
+                <td className="border border-gray-300 px-2 py-2 text-center font-medium">3억원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center">1.1%</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">330만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-gray-500 hidden sm:table-cell">청약 당첨 수준</td>
+              </tr>
+              <tr className="bg-gray-50">
+                <td className="border border-gray-300 px-2 py-2 text-center font-medium">5억원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center">1.1%</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">550만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-gray-500 hidden sm:table-cell">수도권 외곽</td>
+              </tr>
+              <tr className="bg-amber-100 border-2 border-amber-400">
+                <td className="border border-gray-300 px-2 py-2 text-center font-bold text-amber-700">6억원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center font-bold text-amber-700">1.1%</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-bold">660만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-amber-600 font-medium hidden sm:table-cell">세율 상승 직전!</td>
+              </tr>
+              <tr className="bg-yellow-50">
+                <td className="border border-gray-300 px-2 py-2 text-center font-medium">7억원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-amber-600 font-medium">1.77%</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">1,237만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-red-500 hidden sm:table-cell">6억대비 +577만!</td>
+              </tr>
+              <tr className="bg-yellow-50">
+                <td className="border border-gray-300 px-2 py-2 text-center font-medium">8억원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-amber-600 font-medium">2.43%</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">1,947만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-gray-500 hidden sm:table-cell">누진세율 구간</td>
+              </tr>
+              <tr className="bg-red-100 border-2 border-red-400">
+                <td className="border border-gray-300 px-2 py-2 text-center font-bold text-red-700">9억원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center font-bold text-red-700">3.1%</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-bold">2,790만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-red-600 font-medium hidden sm:table-cell">최고세율 적용!</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-2 py-2 text-center font-medium">10억원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center">3.5%</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">3,500만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-gray-500 hidden sm:table-cell">고가주택 기준</td>
+              </tr>
+              <tr className="bg-gray-50">
+                <td className="border border-gray-300 px-2 py-2 text-center font-medium">12억원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center">3.5%</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">4,200만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-gray-500 hidden sm:table-cell">종부세 대상</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-2 py-2 text-center font-medium">15억원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center">3.5%</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">5,250만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-gray-500 hidden sm:table-cell">강남 아파트급</td>
+              </tr>
+            </tbody>
+          </table>
+          <div className="mt-3 p-3 bg-amber-50 rounded-lg border border-amber-200">
+            <p className="text-xs text-amber-800 font-medium">핵심 포인트: 6억, 9억 문턱을 주목하세요!</p>
+            <ul className="text-xs text-amber-700 mt-1 space-y-0.5">
+              <li>• 6억 이하: 1.1% 고정 (가장 유리)</li>
+              <li>• 6억~9억: 1~3% 누진세율 (1천만원 오를 때마다 급상승)</li>
+              <li>• 9억 초과: 3.5% 고정 (최고세율)</li>
+            </ul>
+          </div>
+          <p className="text-xs text-gray-500 mt-2">* 1주택 기준 (85㎡ 이하, 비조정지역), 취득세+지방교육세 포함</p>
+        </div>
+      </div>
     </div>
   );
 }

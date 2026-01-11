@@ -299,7 +299,7 @@ export default function InstallmentInterestCalculator() {
             </p>
           </div>
 
-          <div className="border-t border-orange-200 pt-4 grid grid-cols-2 gap-4">
+          <div className="border-t border-emerald-200 pt-4 grid grid-cols-2 gap-4">
             <div className="text-center">
               <p className="text-xs text-neutral-500 mb-1">총 납부액</p>
               <p className="text-lg font-semibold text-neutral-700">

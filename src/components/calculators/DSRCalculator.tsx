@@ -167,7 +167,7 @@ export default function DSRCalculator() {
             </label>
             <button
               onClick={addLoan}
-              className="px-3 py-1 text-sm bg-indigo-100 text-emerald-600 rounded-lg hover:bg-indigo-200 transition-colors"
+              className="px-3 py-1 text-sm bg-emerald-100 text-emerald-600 rounded-lg hover:bg-emerald-200 transition-colors"
             >
               + 대출 추가
             </button>
@@ -214,7 +214,7 @@ export default function DSRCalculator() {
         </div>
 
         {/* 신규 대출 */}
-        <div className="mb-6 p-4 bg-indigo-50 rounded-xl border border-emerald-100">
+        <div className="mb-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
           <h4 className="font-medium text-emerald-800 mb-3">신규 대출 (받고 싶은 대출)</h4>
 
           <div className="space-y-3">
@@ -230,7 +230,7 @@ export default function DSRCalculator() {
                     setNewLoanAmount(value);
                   }}
                   placeholder="희망 대출금액"
-                  className="w-full px-3 py-2 border border-indigo-200 rounded-lg focus:border-emerald-500 text-right pr-10"
+                  className="w-full px-3 py-2 border border-emerald-200 rounded-lg focus:border-emerald-500 text-right pr-10"
                 />
                 <span className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">원</span>
               </div>
@@ -250,7 +250,7 @@ export default function DSRCalculator() {
                   step="0.1"
                   min="0"
                   max="20"
-                  className="w-full px-3 py-2 border border-indigo-200 rounded-lg focus:border-emerald-500 text-right"
+                  className="w-full px-3 py-2 border border-emerald-200 rounded-lg focus:border-emerald-500 text-right"
                 />
               </div>
               <div>
@@ -258,7 +258,7 @@ export default function DSRCalculator() {
                 <select
                   value={newLoanYears}
                   onChange={(e) => setNewLoanYears(parseInt(e.target.value))}
-                  className="w-full px-3 py-2 border border-indigo-200 rounded-lg focus:border-emerald-500"
+                  className="w-full px-3 py-2 border border-emerald-200 rounded-lg focus:border-emerald-500"
                 >
                   <option value={10}>10년</option>
                   <option value={15}>15년</option>
@@ -349,7 +349,7 @@ export default function DSRCalculator() {
         </div>
 
         {/* DSR 기준 안내 */}
-        <div className="mt-6 p-4 bg-indigo-50 rounded-xl border border-emerald-100">
+        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
           <h4 className="font-medium text-emerald-800 mb-3">DSR 규제 기준 (2026년)</h4>
           <div className="space-y-2 text-sm">
             <div className="flex justify-between items-center p-2 bg-white rounded-lg">

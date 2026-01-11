@@ -219,7 +219,7 @@ export default function CompoundInterestCalculator() {
                 <div className="text-2xl font-bold text-neutral-600">{formatNumber(simpleTotal)}원</div>
                 <div className="text-xs text-neutral-500">{formatWon(simpleTotal)}</div>
               </div>
-              <div className="bg-white rounded-xl p-4 border-2 border-purple-400">
+              <div className="bg-white rounded-xl p-4 border-2 border-emerald-400">
                 <div className="text-sm text-emerald-600 mb-1">복리 ({years}년 후)</div>
                 <div className="text-2xl font-bold text-emerald-600">{formatNumber(compoundTotal)}원</div>
                 <div className="text-xs text-neutral-500">{formatWon(compoundTotal)}</div>
@@ -233,11 +233,11 @@ export default function CompoundInterestCalculator() {
             </div>
 
             {/* 72의 법칙 */}
-            <div className="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-xl p-4 mb-4 border border-amber-200">
+            <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-4 mb-4 border border-emerald-200">
               <div className="flex items-center gap-2 mb-1">
                 <span className="text-emerald-600 font-bold">72의 법칙</span>
               </div>
-              <div className="text-sm text-amber-700">
+              <div className="text-sm text-emerald-700">
                 연 {rate}% 수익률이면 약 <span className="font-bold">{doubleYears}년</span> 후에 원금이 2배가 돼요!
               </div>
             </div>
@@ -251,7 +251,7 @@ export default function CompoundInterestCalculator() {
                     <tr className="border-b border-neutral-200">
                       <th className="py-2 text-left text-neutral-500">년차</th>
                       <th className="py-2 text-right text-neutral-500">단리</th>
-                      <th className="py-2 text-right text-purple-500">복리</th>
+                      <th className="py-2 text-right text-emerald-500">복리</th>
                       <th className="py-2 text-right text-pink-500">차이</th>
                     </tr>
                   </thead>
@@ -271,9 +271,9 @@ export default function CompoundInterestCalculator() {
           </div>
         )}
 
-        <div className="mt-6 p-4 bg-purple-50 rounded-xl border border-emerald-100">
+        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
           <h4 className="font-medium text-emerald-800 mb-2">복리의 힘</h4>
-          <ul className="text-sm text-purple-700 space-y-1">
+          <ul className="text-sm text-emerald-700 space-y-1">
             <li>• 복리: 이자에 이자가 붙어요 (눈덩이 효과)</li>
             <li>• 기간이 길수록, 금리가 높을수록 효과가 커요</li>
             <li>• 투자는 일찍 시작할수록 유리해요</li>

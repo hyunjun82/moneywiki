@@ -75,7 +75,7 @@ export default function LoanInterestCalculator() {
             onClick={() => setInterestType("simple")}
             className={`flex-1 py-3 rounded-xl font-medium transition-all ${
               interestType === "simple"
-                ? "bg-red-600 text-white"
+                ? "bg-emerald-600 text-white"
                 : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
             }`}
           >
@@ -85,7 +85,7 @@ export default function LoanInterestCalculator() {
             onClick={() => setInterestType("compound")}
             className={`flex-1 py-3 rounded-xl font-medium transition-all ${
               interestType === "compound"
-                ? "bg-red-600 text-white"
+                ? "bg-emerald-600 text-white"
                 : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
             }`}
           >
@@ -102,11 +102,11 @@ export default function LoanInterestCalculator() {
               value={principal > 0 ? formatNumber(principal) : ""}
               onChange={(e) => setPrincipal(parseInt(e.target.value.replace(/,/g, "")) || 0)}
               placeholder="대출금액"
-              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-red-500 focus:ring-0 text-right pr-12"
+              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 text-right pr-12"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
           </div>
-          {principal > 0 && <p className="mt-1 text-sm text-red-600">{formatWon(principal)}</p>}
+          {principal > 0 && <p className="mt-1 text-sm text-emerald-600">{formatWon(principal)}</p>}
 
           <div className="flex gap-2 mt-3">
             {[10000000, 30000000, 50000000, 100000000, 200000000].map((amount) => (
@@ -118,7 +118,7 @@ export default function LoanInterestCalculator() {
                 {amount >= 100000000 ? `${amount / 100000000}억` : `${amount / 10000}만`}
               </button>
             ))}
-            <button onClick={() => setPrincipal(0)} className="py-2 px-4 bg-red-100 hover:bg-red-200 text-red-600 rounded-lg text-sm font-medium">C</button>
+            <button onClick={() => setPrincipal(0)} className="py-2 px-4 bg-emerald-100 hover:bg-emerald-200 text-emerald-600 rounded-lg text-sm font-medium">C</button>
           </div>
         </div>
 
@@ -133,7 +133,7 @@ export default function LoanInterestCalculator() {
               step="0.1"
               min="0"
               max="30"
-              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-red-500 text-right"
+              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500 text-right"
             />
           </div>
           <div>
@@ -141,7 +141,7 @@ export default function LoanInterestCalculator() {
             <select
               value={period}
               onChange={(e) => setPeriod(parseInt(e.target.value))}
-              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-red-500"
+              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500"
             >
               {[6, 12, 24, 36, 48, 60, 120, 240, 360].map((m) => (
                 <option key={m} value={m}>{m}개월 ({m / 12}년)</option>
@@ -182,13 +182,93 @@ export default function LoanInterestCalculator() {
           </div>
         )}
 
-        <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-emerald-100">
+        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
           <h4 className="font-medium text-emerald-800 mb-2">단리 vs 복리</h4>
-          <ul className="text-sm text-amber-700 space-y-1">
+          <ul className="text-sm text-emerald-700 space-y-1">
             <li>• 단리: 원금에만 이자 발생 (예: 예금)</li>
             <li>• 복리: 원금+이자에 이자 발생 (예: 대출)</li>
             <li>• 대출은 보통 월복리로 계산해요</li>
           </ul>
+        </div>
+
+        {/* 금리별 월 이자 비교표 */}
+        <div className="mt-8 p-4 bg-neutral-50 rounded-xl border border-neutral-200">
+          <h4 className="font-bold text-neutral-800 mb-3 text-center">📊 금리별 월 이자 비교표 (단리 기준)</h4>
+          <p className="text-xs text-neutral-500 mb-4 text-center">대출금액별 월 이자 비교 - 원금균등상환 첫 달 기준</p>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">금리 ↓ / 대출금 →</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">1억</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">2억</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">3억</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">5억</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-green-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-green-700 border border-gray-300">3.0%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">25만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">50만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">75만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">125만원</td>
+                </tr>
+                <tr className="border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-green-600 border border-gray-300">3.5%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">29만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">58만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">87만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">145만원</td>
+                </tr>
+                <tr className="bg-emerald-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-bold text-emerald-700 border border-gray-300">4.0% ⭐</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">33만원</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">66만원</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">100만원</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300 hidden sm:table-cell">166만원</td>
+                </tr>
+                <tr className="border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-amber-600 border border-gray-300">4.5%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">37만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">75만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">112만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">187만원</td>
+                </tr>
+                <tr className="bg-amber-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-bold text-amber-700 border border-gray-300">5.0%</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">41만원</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">83만원</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">125만원</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300 hidden sm:table-cell">208만원</td>
+                </tr>
+                <tr className="border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-orange-600 border border-gray-300">5.5%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">45만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">91만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">137만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">229만원</td>
+                </tr>
+                <tr className="bg-red-50">
+                  <td className="py-2 px-2 text-center font-bold text-red-700 border border-gray-300">6.0% 🔥</td>
+                  <td className="py-2 px-2 text-center font-bold text-red-600 border border-gray-300">50만원</td>
+                  <td className="py-2 px-2 text-center font-bold text-red-600 border border-gray-300">100만원</td>
+                  <td className="py-2 px-2 text-center font-bold text-red-600 border border-gray-300">150만원</td>
+                  <td className="py-2 px-2 text-center font-bold text-red-600 border border-gray-300 hidden sm:table-cell">250만원</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
+            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+              <li>• <strong>금리 1% 차이</strong> = 1억당 월 <strong>8만원</strong> 차이</li>
+              <li>• 3억 대출 시 금리 3% vs 6% = 월 75만원 차이! (연 900만원)</li>
+              <li>• 대출 전 여러 은행 금리 비교는 필수!</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

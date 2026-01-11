@@ -188,7 +188,7 @@ export default function JeonseLoanCalculator() {
                 onClick={() => handleLoanTypeChange(type.value)}
                 className={`p-3 rounded-xl border-2 transition-all text-left ${
                   loanType === type.value
-                    ? "border-violet-500 bg-violet-50"
+                    ? "border-violet-500 bg-emerald-50"
                     : "border-neutral-200 hover:border-neutral-300"
                 }`}
               >
@@ -285,7 +285,7 @@ export default function JeonseLoanCalculator() {
                 onClick={() => setRepaymentType(type.value)}
                 className={`p-3 rounded-xl border-2 transition-all text-left ${
                   repaymentType === type.value
-                    ? "border-violet-500 bg-violet-50"
+                    ? "border-violet-500 bg-emerald-50"
                     : "border-neutral-200 hover:border-neutral-300"
                 }`}
               >
@@ -378,7 +378,7 @@ export default function JeonseLoanCalculator() {
               <div className="mt-4 bg-white rounded-xl overflow-hidden border border-emerald-100">
                 <div className="max-h-64 overflow-y-auto">
                   <table className="w-full text-sm">
-                    <thead className="bg-violet-50 sticky top-0">
+                    <thead className="bg-emerald-50 sticky top-0">
                       <tr>
                         <th className="px-3 py-2 text-left text-neutral-600">회차</th>
                         <th className="px-3 py-2 text-right text-neutral-600">원금</th>
@@ -406,7 +406,7 @@ export default function JeonseLoanCalculator() {
         )}
 
         {/* 대출 상품 안내 */}
-        <div className="mt-6 p-4 bg-violet-50 rounded-xl border border-emerald-100">
+        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
           <h4 className="font-medium text-emerald-800 mb-3">전세대출 상품 비교</h4>
           <div className="space-y-3 text-sm">
             <div className="p-3 bg-white rounded-lg">

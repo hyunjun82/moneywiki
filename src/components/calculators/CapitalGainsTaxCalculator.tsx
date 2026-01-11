@@ -867,6 +867,95 @@ export default function CapitalGainsTaxCalculator() {
           </div>
         </div>
       </div>
+
+      {/* 양도차익별 예상세액표 */}
+      <div className="border-t border-gray-200">
+        <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-200 bg-gray-50">
+          <span className="w-1 h-5 bg-emerald-500 rounded-full"></span>
+          <h3 className="text-sm font-semibold text-gray-700">2026년 양도차익별 예상세액표</h3>
+        </div>
+
+        <div className="p-4 overflow-x-auto">
+          <p className="text-xs text-gray-600 mb-3">※ 1주택 과세 기준 (장특공 30% 적용, 기본공제 250만원)</p>
+          <table className="w-full text-xs border-collapse min-w-[450px]">
+            <thead>
+              <tr className="bg-emerald-50">
+                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-emerald-800">양도차익</th>
+                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-emerald-800">과세표준</th>
+                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-emerald-800">세율</th>
+                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-emerald-800">양도세+지방세</th>
+              </tr>
+            </thead>
+            <tbody className="text-gray-600">
+              <tr>
+                <td className="border border-gray-300 px-2 py-2 text-center font-medium">5천만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center">3,250만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center">15%</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">약 349만원</td>
+              </tr>
+              <tr className="bg-gray-50">
+                <td className="border border-gray-300 px-2 py-2 text-center font-medium">1억원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center">6,750만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center">24%</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">약 1,148만원</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-2 py-2 text-center font-medium">2억원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center">1억 3,750만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center">35%</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">약 3,591만원</td>
+              </tr>
+              <tr className="bg-gray-50">
+                <td className="border border-gray-300 px-2 py-2 text-center font-medium">3억원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center">2억 750만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center">38%</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">약 6,488만원</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-2 py-2 text-center font-medium">5억원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center">3억 4,750만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center">40%</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">약 1억 2,447만원</td>
+              </tr>
+              <tr className="bg-gray-50">
+                <td className="border border-gray-300 px-2 py-2 text-center font-medium">10억원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center">6억 9,750만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center">42%</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">약 2억 5,450만원</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p className="text-xs text-gray-500 mt-3 font-medium">※ 1세대 1주택 비과세 예시</p>
+          <table className="w-full text-xs border-collapse mt-2 min-w-[400px]">
+            <thead>
+              <tr className="bg-green-50">
+                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-green-800">양도가액</th>
+                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-green-800">양도차익</th>
+                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-green-800">예상세액</th>
+              </tr>
+            </thead>
+            <tbody className="text-gray-600">
+              <tr>
+                <td className="border border-gray-300 px-2 py-2 text-center">12억원 이하</td>
+                <td className="border border-gray-300 px-2 py-2 text-center">전액</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-green-600 font-medium">0원 (비과세)</td>
+              </tr>
+              <tr className="bg-gray-50">
+                <td className="border border-gray-300 px-2 py-2 text-center">15억원 (차익 3억)</td>
+                <td className="border border-gray-300 px-2 py-2 text-center">6천만원 과세</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">약 288만원</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-2 py-2 text-center">20억원 (차익 5억)</td>
+                <td className="border border-gray-300 px-2 py-2 text-center">2억원 과세</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">약 1,573만원</td>
+              </tr>
+            </tbody>
+          </table>
+          <p className="text-xs text-gray-500 mt-2">* 2년 이상 보유·거주, 장특공 80% 적용 시 예상 세액</p>
+        </div>
+      </div>
     </div>
   );
 }

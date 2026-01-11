@@ -158,7 +158,7 @@ export default function StockReturnCalculator() {
             onClick={() => setCalcMode("return")}
             className={`py-3 px-4 rounded-lg text-sm font-medium transition-all ${
               calcMode === "return"
-                ? "bg-indigo-500 text-white shadow-md"
+                ? "bg-emerald-500 text-white shadow-md"
                 : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
             }`}
           >
@@ -168,7 +168,7 @@ export default function StockReturnCalculator() {
             onClick={() => setCalcMode("target")}
             className={`py-3 px-4 rounded-lg text-sm font-medium transition-all ${
               calcMode === "target"
-                ? "bg-indigo-500 text-white shadow-md"
+                ? "bg-emerald-500 text-white shadow-md"
                 : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
             }`}
           >
@@ -333,7 +333,7 @@ export default function StockReturnCalculator() {
                       onClick={() => setTargetReturn(rate)}
                       className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
                         targetReturn === rate
-                          ? "bg-indigo-500 text-white"
+                          ? "bg-emerald-500 text-white"
                           : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
                       }`}
                     >
@@ -355,7 +355,7 @@ export default function StockReturnCalculator() {
             <button
               onClick={() => setIncludeFees(!includeFees)}
               className={`w-12 h-6 rounded-full transition-all ${
-                includeFees ? "bg-indigo-500" : "bg-neutral-300"
+                includeFees ? "bg-emerald-500" : "bg-neutral-300"
               }`}
             >
               <div
@@ -385,7 +385,7 @@ export default function StockReturnCalculator() {
                 <button
                   onClick={() => setIsTaxable(!isTaxable)}
                   className={`w-10 h-5 rounded-full transition-all ${
-                    isTaxable ? "bg-indigo-500" : "bg-neutral-300"
+                    isTaxable ? "bg-emerald-500" : "bg-neutral-300"
                   }`}
                 >
                   <div
@@ -424,7 +424,7 @@ export default function StockReturnCalculator() {
               </p>
             </div>
 
-            <div className="border-t border-indigo-200 pt-4 space-y-2">
+            <div className="border-t border-emerald-200 pt-4 space-y-2">
               <div className="flex justify-between text-sm">
                 <span className="text-neutral-600">총 매수금액</span>
                 <span className="font-medium text-neutral-700">
@@ -481,7 +481,7 @@ export default function StockReturnCalculator() {
               </p>
             </div>
 
-            <div className="border-t border-indigo-200 pt-4 space-y-2">
+            <div className="border-t border-emerald-200 pt-4 space-y-2">
               <div className="flex justify-between text-sm">
                 <span className="text-neutral-600">총 매수금액</span>
                 <span className="font-medium text-neutral-700">

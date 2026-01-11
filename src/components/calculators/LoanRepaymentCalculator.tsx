@@ -285,7 +285,7 @@ export default function LoanRepaymentCalculator() {
           </div>
         )}
 
-        <div className="mt-6 p-4 bg-indigo-50 rounded-xl border border-emerald-100">
+        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
           <h4 className="font-medium text-emerald-800 mb-2">상환방식 비교</h4>
           <ul className="text-sm text-indigo-700 space-y-1">
             <li>• 원리금균등: 매월 같은 금액, 계획 세우기 좋아요</li>
