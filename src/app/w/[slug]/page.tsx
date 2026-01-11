@@ -165,10 +165,10 @@ export default async function WikiPage({ params }: PageProps) {
   const processedHtml = addSectionIds(doc.htmlContent || "");
   const toc = extractToc(doc.htmlContent || "");
 
-  // 브레드크럼 데이터 (새 URL 구조)
+  // 브레드크럼 데이터 (메인 페이지 카테고리 앵커로 연결)
   const breadcrumbItems = [
     { name: "홈", url: "https://www.jjyu.co.kr" },
-    { name: doc.category, url: `https://www.jjyu.co.kr/category/${encodeURIComponent(doc.category)}` },
+    { name: doc.category, url: `https://www.jjyu.co.kr/#category-${encodeURIComponent(doc.category)}` },
     { name: doc.title, url: url },
   ];
 
@@ -226,7 +226,7 @@ export default async function WikiPage({ params }: PageProps) {
           <nav className="flex items-center gap-2 text-sm text-neutral-500 mb-6" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-black transition-colors">홈</Link>
             <span aria-hidden="true">/</span>
-            <Link href={`/category/${encodeURIComponent(doc.category)}`} className="hover:text-black transition-colors">
+            <Link href={`/#category-${encodeURIComponent(doc.category)}`} className="hover:text-black transition-colors">
               {doc.category}
             </Link>
             <span aria-hidden="true">/</span>
