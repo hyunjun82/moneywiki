@@ -85,7 +85,7 @@ export default function InsuranceCalculator() {
 
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
-      <div className="bg-gradient-to-r from-green-600 to-emerald-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -128,7 +128,7 @@ export default function InsuranceCalculator() {
         </div>
 
         {result && (
-          <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-100">
+          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 border border-green-100">
             <h3 className="text-lg font-bold text-green-800 mb-4">4대보험료 내역</h3>
 
             <div className="overflow-x-auto">
@@ -177,7 +177,7 @@ export default function InsuranceCalculator() {
                   <tr>
                     <td className="py-3 font-bold text-neutral-800">합계</td>
                     <td className="py-3 text-right font-bold text-green-600">{formatNumber(result.totalEmployee)}원</td>
-                    <td className="py-3 text-right font-bold text-blue-600">{formatNumber(result.totalEmployer)}원</td>
+                    <td className="py-3 text-right font-bold text-emerald-600">{formatNumber(result.totalEmployer)}원</td>
                     <td className="py-3 text-right font-bold text-neutral-800">{formatNumber(result.grandTotal)}원</td>
                   </tr>
                 </tfoot>
@@ -191,14 +191,14 @@ export default function InsuranceCalculator() {
               </div>
               <div className="bg-white rounded-xl p-4 text-center">
                 <div className="text-sm text-neutral-500">회사가 내는 보험료</div>
-                <div className="text-xl font-bold text-blue-600">{formatNumber(result.totalEmployer)}원</div>
+                <div className="text-xl font-bold text-emerald-600">{formatNumber(result.totalEmployer)}원</div>
               </div>
             </div>
           </div>
         )}
 
-        <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-amber-100">
-          <h4 className="font-medium text-amber-800 mb-2">이용안내</h4>
+        <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-emerald-100">
+          <h4 className="font-medium text-emerald-800 mb-2">이용안내</h4>
           <ul className="text-sm text-amber-700 space-y-1">
             <li>• 2026년 4대보험 요율 기준으로 계산해요</li>
             <li>• 국민연금은 월 37만원~590만원 기준소득월액에서 계산해요</li>

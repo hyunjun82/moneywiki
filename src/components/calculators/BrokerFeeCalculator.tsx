@@ -175,7 +175,7 @@ export default function BrokerFeeCalculator() {
               onClick={() => setTransactionType(item.type)}
               className={`flex-1 py-2.5 text-sm font-medium transition-all border-b-2 ${
                 transactionType === item.type
-                  ? "border-teal-500 text-teal-600 bg-teal-50/50"
+                  ? "border-teal-500 text-emerald-600 bg-teal-50/50"
                   : "border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50"
               }`}
             >
@@ -223,7 +223,7 @@ export default function BrokerFeeCalculator() {
                   type="text"
                   value={priceInput}
                   onChange={(e) => handlePriceChange(e.target.value)}
-                  className="w-full px-3 py-2 pr-10 text-right text-sm border border-gray-300 rounded focus:outline-none focus:border-teal-500"
+                  className="w-full px-3 py-2 pr-10 text-right text-sm border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
                   placeholder="0"
                 />
                 <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-white bg-teal-500 px-2 py-0.5 rounded">원</span>
@@ -262,7 +262,7 @@ export default function BrokerFeeCalculator() {
           {/* 금액 표시 */}
           <div className="flex items-center gap-3">
             <div className="w-20 shrink-0"></div>
-            <span className="text-sm text-teal-600 font-medium">{toUk(price)}</span>
+            <span className="text-sm text-emerald-600 font-medium">{toUk(price)}</span>
           </div>
         </div>
 
@@ -281,7 +281,7 @@ export default function BrokerFeeCalculator() {
           </button>
           <button
             onClick={calculate}
-            className="px-6 py-2 text-sm text-white bg-teal-500 rounded hover:bg-teal-600 transition-colors font-medium"
+            className="px-6 py-2 text-sm text-white bg-teal-500 rounded hover:bg-emerald-600 transition-colors font-medium"
           >
             계산하기
           </button>
@@ -349,7 +349,7 @@ export default function BrokerFeeCalculator() {
           <div className="p-4 bg-teal-500 rounded-lg">
             <div className="flex justify-between items-center">
               <div>
-                <span className="text-teal-100 text-sm">총 중개수수료</span>
+                <span className="text-emerald-100 text-sm">총 중개수수료</span>
                 <span className="text-teal-200 text-xs ml-1">(부가세 포함)</span>
               </div>
               <span className="text-white text-xl font-bold">{formatNumber(result.totalFee)}원</span>

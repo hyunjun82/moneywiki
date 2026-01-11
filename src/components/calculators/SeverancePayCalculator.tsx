@@ -220,7 +220,7 @@ function RegularWorkerCalculator() {
           <div className="flex items-start gap-2">
             <span className="text-amber-500 text-xl">⚠️</span>
             <div>
-              <p className="font-medium text-amber-800">퇴직금 지급 대상이 아니에요</p>
+              <p className="font-medium text-emerald-800">퇴직금 지급 대상이 아니에요</p>
               <p className="text-sm text-amber-700 mt-1">{eligibilityMessage}</p>
             </div>
           </div>
@@ -394,7 +394,7 @@ function DailyWorkerCalculator() {
           <div className="flex items-start gap-2">
             <span className="text-amber-500 text-xl">⚠️</span>
             <div>
-              <p className="font-medium text-amber-800">퇴직금 지급 대상이 아니에요</p>
+              <p className="font-medium text-emerald-800">퇴직금 지급 대상이 아니에요</p>
               <p className="text-sm text-amber-700 mt-1">
                 퇴직금은 1년(365일) 이상 근무해야 받을 수 있어요. 현재 {workDays}일 근무로 {365 - workDays}일 부족해요.
               </p>
@@ -408,7 +408,7 @@ function DailyWorkerCalculator() {
         <div className="flex items-start gap-2">
           <span className="text-blue-500 text-xl">ℹ️</span>
           <div>
-            <p className="font-medium text-blue-800">건설근로자 퇴직공제</p>
+            <p className="font-medium text-emerald-800">건설근로자 퇴직공제</p>
             <p className="text-sm text-blue-700 mt-1">
               건설현장 일용직은 <strong>건설근로자 퇴직공제</strong> 제도를 이용할 수 있어요.
               252일 이상 근무하면 퇴직공제금을 받을 수 있어요.
@@ -534,7 +534,7 @@ function ParttimeWorkerCalculator() {
           <div className="flex items-start gap-2">
             <span className="text-amber-500 text-xl">⚠️</span>
             <div>
-              <p className="font-medium text-amber-800">퇴직금 지급 대상이 아니에요</p>
+              <p className="font-medium text-emerald-800">퇴직금 지급 대상이 아니에요</p>
               <ul className="text-sm text-amber-700 mt-1 space-y-1">
                 {!isWeeklyMinimum && (
                   <li>• 주 15시간 이상 근무해야 해요 (현재 {weeklyHours}시간)</li>

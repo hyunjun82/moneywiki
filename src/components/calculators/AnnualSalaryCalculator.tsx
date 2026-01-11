@@ -18,7 +18,7 @@ export default function AnnualSalaryCalculator() {
   const [hourlyWage, setHourlyWage] = useState<number>(0);
 
   // 2026년 최저시급
-  const MIN_WAGE_2026 = 10030;
+  const MIN_WAGE_2026 = 10320;
   const WEEKS_PER_MONTH = 4.345;
 
   useEffect(() => {
@@ -88,7 +88,7 @@ export default function AnnualSalaryCalculator() {
 
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
-      <div className="bg-gradient-to-r from-orange-600 to-amber-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -97,7 +97,7 @@ export default function AnnualSalaryCalculator() {
           </div>
           <div>
             <h2 className="text-xl font-bold text-white">연봉 계산기</h2>
-            <p className="text-orange-100 text-sm">월급/시급 → 연봉 환산</p>
+            <p className="text-emerald-100 text-sm">월급/시급 → 연봉 환산</p>
           </div>
         </div>
       </div>
@@ -109,7 +109,7 @@ export default function AnnualSalaryCalculator() {
             onClick={() => setCalcType("monthToYear")}
             className={`flex-1 py-3 rounded-xl font-medium transition-all ${
               calcType === "monthToYear"
-                ? "bg-orange-600 text-white"
+                ? "bg-emerald-600 text-white"
                 : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
             }`}
           >
@@ -119,7 +119,7 @@ export default function AnnualSalaryCalculator() {
             onClick={() => setCalcType("hourToYear")}
             className={`flex-1 py-3 rounded-xl font-medium transition-all ${
               calcType === "hourToYear"
-                ? "bg-orange-600 text-white"
+                ? "bg-emerald-600 text-white"
                 : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
             }`}
           >
@@ -138,11 +138,11 @@ export default function AnnualSalaryCalculator() {
                   value={monthlyPay > 0 ? formatNumber(monthlyPay) : ""}
                   onChange={(e) => setMonthlyPay(parseInt(e.target.value.replace(/,/g, "")) || 0)}
                   placeholder="월급 입력"
-                  className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-orange-500 focus:ring-0 text-right pr-12"
+                  className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 text-right pr-12"
                 />
                 <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
               </div>
-              {monthlyPay > 0 && <p className="mt-1 text-sm text-orange-600">{formatWon(monthlyPay)}</p>}
+              {monthlyPay > 0 && <p className="mt-1 text-sm text-emerald-600">{formatWon(monthlyPay)}</p>}
 
               <div className="flex gap-2 mt-3">
                 {[2000000, 2500000, 3000000, 4000000, 5000000].map((amount) => (
@@ -167,7 +167,7 @@ export default function AnnualSalaryCalculator() {
                     onClick={() => setBonusMonths(months)}
                     className={`flex-1 py-3 rounded-xl font-medium transition-all ${
                       bonusMonths === months
-                        ? "bg-orange-600 text-white"
+                        ? "bg-emerald-600 text-white"
                         : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
                     }`}
                   >
@@ -189,7 +189,7 @@ export default function AnnualSalaryCalculator() {
                   value={hourlyPay > 0 ? formatNumber(hourlyPay) : ""}
                   onChange={(e) => setHourlyPay(parseInt(e.target.value.replace(/,/g, "")) || 0)}
                   placeholder="시급 입력"
-                  className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-orange-500 focus:ring-0 text-right pr-12"
+                  className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 text-right pr-12"
                 />
                 <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
               </div>
@@ -215,7 +215,7 @@ export default function AnnualSalaryCalculator() {
                 <select
                   value={workHoursPerDay}
                   onChange={(e) => setWorkHoursPerDay(parseInt(e.target.value))}
-                  className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-orange-500"
+                  className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500"
                 >
                   {[4, 5, 6, 7, 8, 9, 10].map((h) => (
                     <option key={h} value={h}>{h}시간</option>
@@ -227,7 +227,7 @@ export default function AnnualSalaryCalculator() {
                 <select
                   value={workDaysPerWeek}
                   onChange={(e) => setWorkDaysPerWeek(parseInt(e.target.value))}
-                  className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-orange-500"
+                  className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500"
                 >
                   {[3, 4, 5, 6].map((d) => (
                     <option key={d} value={d}>{d}일</option>
@@ -240,12 +240,12 @@ export default function AnnualSalaryCalculator() {
 
         {/* 결과 */}
         {(calcType === "monthToYear" ? monthlyPay > 0 : hourlyPay > 0) && (
-          <div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl p-6 border border-orange-100">
-            <h3 className="text-lg font-bold text-orange-800 mb-4">환산 결과</h3>
+          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
+            <h3 className="text-lg font-bold text-emerald-800 mb-4">환산 결과</h3>
 
             <div className="bg-white rounded-xl p-5 mb-4 border-2 border-orange-200">
               <div className="text-sm text-neutral-500 mb-1">예상 연봉</div>
-              <div className="text-3xl font-bold text-orange-600">{formatNumber(annualSalary)}원</div>
+              <div className="text-3xl font-bold text-emerald-600">{formatNumber(annualSalary)}원</div>
               <div className="text-sm text-neutral-500">{formatWon(annualSalary)}</div>
             </div>
 
@@ -270,7 +270,7 @@ export default function AnnualSalaryCalculator() {
             </div>
 
             {calcType === "hourToYear" && workHoursPerDay * workDaysPerWeek >= 15 && (
-              <div className="mt-4 p-3 bg-blue-50 rounded-xl border border-blue-100">
+              <div className="mt-4 p-3 bg-blue-50 rounded-xl border border-emerald-100">
                 <div className="text-sm text-blue-700">
                   ✓ 주 {workHoursPerDay * workDaysPerWeek}시간 근무 → 주휴수당 포함 계산
                 </div>
@@ -279,8 +279,8 @@ export default function AnnualSalaryCalculator() {
           </div>
         )}
 
-        <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-amber-100">
-          <h4 className="font-medium text-amber-800 mb-2">연봉 계산 기준</h4>
+        <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-emerald-100">
+          <h4 className="font-medium text-emerald-800 mb-2">연봉 계산 기준</h4>
           <ul className="text-sm text-amber-700 space-y-1">
             <li>• 월급 × 12 + 상여금 = 연봉</li>
             <li>• 시급 × 주 근무시간 × 4.345주 × 12개월</li>

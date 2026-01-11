@@ -199,7 +199,7 @@ export default function SavingsCalculator() {
               </div>
               <div className="bg-white rounded-xl p-4">
                 <div className="text-sm text-neutral-500 mb-1">세전 이자</div>
-                <div className="text-xl font-bold text-blue-600">{formatNumber(grossInterest)}원</div>
+                <div className="text-xl font-bold text-emerald-600">{formatNumber(grossInterest)}원</div>
               </div>
             </div>
 
@@ -218,8 +218,8 @@ export default function SavingsCalculator() {
           </div>
         )}
 
-        <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-amber-100">
-          <h4 className="font-medium text-amber-800 mb-2">적금 과세 유형</h4>
+        <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-emerald-100">
+          <h4 className="font-medium text-emerald-800 mb-2">적금 과세 유형</h4>
           <ul className="text-sm text-amber-700 space-y-1">
             <li>• 일반과세: 이자소득세 14% + 지방소득세 1.4% = 15.4%</li>
             <li>• 세금우대: 농어촌특별세 1.4% + 이자소득세 9.5% (일부 조건)</li>

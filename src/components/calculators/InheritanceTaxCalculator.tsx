@@ -129,9 +129,9 @@ export default function InheritanceTaxCalculator() {
   return (
     <div className="bg-white rounded-2xl shadow-lg border border-neutral-200 overflow-hidden">
       {/* 헤더 */}
-      <div className="bg-gradient-to-r from-violet-500 to-purple-500 px-6 py-4">
+      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
         <h2 className="text-xl font-bold text-white">상속세 계산기</h2>
-        <p className="text-violet-100 text-sm mt-1">2026년 기준</p>
+        <p className="text-emerald-100 text-sm mt-1">2026년 기준</p>
       </div>
 
       <div className="p-6 space-y-6">
@@ -148,7 +148,7 @@ export default function InheritanceTaxCalculator() {
                 const value = e.target.value.replace(/[^0-9]/g, "");
                 setTotalInheritance(Number(value) || 0);
               }}
-              className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-violet-500"
+              className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-emerald-500"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">
               원
@@ -204,7 +204,7 @@ export default function InheritanceTaxCalculator() {
                     const value = e.target.value.replace(/[^0-9]/g, "");
                     setSpouseInheritance(Number(value) || 0);
                   }}
-                  className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-violet-500"
+                  className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-emerald-500"
                 />
                 <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">
                   원
@@ -224,7 +224,7 @@ export default function InheritanceTaxCalculator() {
               >
                 -
               </button>
-              <span className="text-xl font-bold text-violet-600 w-8 text-center">
+              <span className="text-xl font-bold text-emerald-600 w-8 text-center">
                 {childCount}
               </span>
               <button
@@ -254,7 +254,7 @@ export default function InheritanceTaxCalculator() {
                     const value = e.target.value.replace(/[^0-9]/g, "");
                     setDebts(Number(value) || 0);
                   }}
-                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg text-sm focus:ring-2 focus:ring-violet-500 focus:border-violet-500"
+                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg text-sm focus:ring-2 focus:ring-violet-500 focus:border-emerald-500"
                 />
                 <span className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 text-xs">
                   원
@@ -271,7 +271,7 @@ export default function InheritanceTaxCalculator() {
                     const value = e.target.value.replace(/[^0-9]/g, "");
                     setFuneralCost(Number(value) || 0);
                   }}
-                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg text-sm focus:ring-2 focus:ring-violet-500 focus:border-violet-500"
+                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg text-sm focus:ring-2 focus:ring-violet-500 focus:border-emerald-500"
                 />
                 <span className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 text-xs">
                   원
@@ -282,10 +282,10 @@ export default function InheritanceTaxCalculator() {
         </div>
 
         {/* 결과 영역 */}
-        <div className="bg-gradient-to-r from-violet-50 to-purple-50 rounded-xl p-6 space-y-4">
+        <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 space-y-4">
           <div className="text-center">
             <p className="text-sm text-neutral-600 mb-2">예상 상속세</p>
-            <p className="text-4xl font-bold text-violet-600">
+            <p className="text-4xl font-bold text-emerald-600">
               {formatManWon(result.finalTax)}
             </p>
             <p className="text-sm text-neutral-500 mt-1">

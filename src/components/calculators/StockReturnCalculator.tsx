@@ -146,9 +146,9 @@ export default function StockReturnCalculator() {
   return (
     <div className="bg-white rounded-2xl shadow-lg border border-neutral-200 overflow-hidden">
       {/* 헤더 */}
-      <div className="bg-gradient-to-r from-indigo-500 to-purple-500 px-6 py-4">
+      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
         <h2 className="text-xl font-bold text-white">주식 수익률 계산기</h2>
-        <p className="text-indigo-100 text-sm mt-1">수수료/세금 포함</p>
+        <p className="text-emerald-100 text-sm mt-1">수수료/세금 포함</p>
       </div>
 
       <div className="p-6 space-y-6">
@@ -193,7 +193,7 @@ export default function StockReturnCalculator() {
                         const value = e.target.value.replace(/[^0-9]/g, "");
                         setBuyPrice(Number(value) || 0);
                       }}
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                     />
                     <span className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">
                       원
@@ -212,7 +212,7 @@ export default function StockReturnCalculator() {
                         const value = e.target.value.replace(/[^0-9]/g, "");
                         setBuyQuantity(Number(value) || 0);
                       }}
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                     />
                     <span className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">
                       주
@@ -233,7 +233,7 @@ export default function StockReturnCalculator() {
                       const value = e.target.value.replace(/[^0-9]/g, "");
                       setSellPrice(Number(value) || 0);
                     }}
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                   />
                   <span className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">
                     원
@@ -277,7 +277,7 @@ export default function StockReturnCalculator() {
                         const value = e.target.value.replace(/[^0-9]/g, "");
                         setTargetBuyPrice(Number(value) || 0);
                       }}
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                     />
                     <span className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">
                       원
@@ -296,7 +296,7 @@ export default function StockReturnCalculator() {
                         const value = e.target.value.replace(/[^0-9]/g, "");
                         setTargetBuyQuantity(Number(value) || 0);
                       }}
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                     />
                     <span className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">
                       주
@@ -320,7 +320,7 @@ export default function StockReturnCalculator() {
                     className="flex-1 h-2 bg-neutral-200 rounded-lg appearance-none cursor-pointer accent-indigo-500"
                   />
                   <div className="w-20 text-center">
-                    <span className="text-lg font-bold text-indigo-600">
+                    <span className="text-lg font-bold text-emerald-600">
                       {targetReturn}
                     </span>
                     <span className="text-sm text-neutral-500">%</span>
@@ -401,7 +401,7 @@ export default function StockReturnCalculator() {
 
         {/* 결과 영역 */}
         {calcMode === "return" ? (
-          <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 space-y-4">
+          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 space-y-4">
             <div className="text-center">
               <p className="text-sm text-neutral-600 mb-2">
                 {result.netProfit >= 0 ? "순수익" : "손실"}
@@ -469,10 +469,10 @@ export default function StockReturnCalculator() {
             </div>
           </div>
         ) : (
-          <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 space-y-4">
+          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 space-y-4">
             <div className="text-center">
               <p className="text-sm text-neutral-600 mb-2">목표 매도가</p>
-              <p className="text-4xl font-bold text-indigo-600">
+              <p className="text-4xl font-bold text-emerald-600">
                 {formatNumber(result.targetSellPrice)}
                 <span className="text-xl font-normal text-neutral-500">원</span>
               </p>

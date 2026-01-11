@@ -54,7 +54,7 @@ export default function LoanInterestCalculator() {
 
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
-      <div className="bg-gradient-to-r from-red-600 to-rose-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -152,8 +152,8 @@ export default function LoanInterestCalculator() {
 
         {/* 결과 */}
         {principal > 0 && (
-          <div className="bg-gradient-to-r from-red-50 to-rose-50 rounded-2xl p-6 border border-red-100">
-            <h3 className="text-lg font-bold text-red-800 mb-4">계산 결과</h3>
+          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
+            <h3 className="text-lg font-bold text-emerald-800 mb-4">계산 결과</h3>
 
             <div className="grid grid-cols-2 gap-4 mb-4">
               <div className="bg-white rounded-xl p-4">
@@ -182,8 +182,8 @@ export default function LoanInterestCalculator() {
           </div>
         )}
 
-        <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-amber-100">
-          <h4 className="font-medium text-amber-800 mb-2">단리 vs 복리</h4>
+        <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-emerald-100">
+          <h4 className="font-medium text-emerald-800 mb-2">단리 vs 복리</h4>
           <ul className="text-sm text-amber-700 space-y-1">
             <li>• 단리: 원금에만 이자 발생 (예: 예금)</li>
             <li>• 복리: 원금+이자에 이자 발생 (예: 대출)</li>

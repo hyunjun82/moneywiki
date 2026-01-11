@@ -124,7 +124,7 @@ export default function LoanRepaymentCalculator() {
 
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
-      <div className="bg-gradient-to-r from-indigo-600 to-violet-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -133,7 +133,7 @@ export default function LoanRepaymentCalculator() {
           </div>
           <div>
             <h2 className="text-xl font-bold text-white">대출상환 계산기</h2>
-            <p className="text-indigo-100 text-sm">상환방식별 월 납입금 계산</p>
+            <p className="text-emerald-100 text-sm">상환방식별 월 납입금 계산</p>
           </div>
         </div>
       </div>
@@ -149,12 +149,12 @@ export default function LoanRepaymentCalculator() {
                 onClick={() => setRepaymentType(type.value as RepaymentType)}
                 className={`py-3 px-2 rounded-xl font-medium transition-all text-center ${
                   repaymentType === type.value
-                    ? "bg-indigo-600 text-white"
+                    ? "bg-emerald-600 text-white"
                     : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
                 }`}
               >
                 <div className="text-sm">{type.label}</div>
-                <div className={`text-xs mt-1 ${repaymentType === type.value ? "text-indigo-200" : "text-neutral-400"}`}>
+                <div className={`text-xs mt-1 ${repaymentType === type.value ? "text-emerald-200" : "text-neutral-400"}`}>
                   {type.desc}
                 </div>
               </button>
@@ -171,11 +171,11 @@ export default function LoanRepaymentCalculator() {
               value={loanAmount > 0 ? formatNumber(loanAmount) : ""}
               onChange={(e) => setLoanAmount(parseInt(e.target.value.replace(/,/g, "")) || 0)}
               placeholder="대출금액 입력"
-              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-indigo-500 focus:ring-0 text-right pr-12"
+              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 text-right pr-12"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
           </div>
-          {loanAmount > 0 && <p className="mt-1 text-sm text-indigo-600">{formatWon(loanAmount)}</p>}
+          {loanAmount > 0 && <p className="mt-1 text-sm text-emerald-600">{formatWon(loanAmount)}</p>}
 
           <div className="flex gap-2 mt-3">
             {[10000000, 30000000, 50000000, 100000000, 200000000].map((amount) => (
@@ -201,7 +201,7 @@ export default function LoanRepaymentCalculator() {
               step="0.1"
               min="0"
               max="30"
-              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-indigo-500 text-right"
+              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500 text-right"
             />
           </div>
           <div>
@@ -209,7 +209,7 @@ export default function LoanRepaymentCalculator() {
             <select
               value={period}
               onChange={(e) => setPeriod(parseInt(e.target.value))}
-              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-indigo-500"
+              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500"
             >
               {[6, 12, 24, 36, 48, 60, 120, 240, 360].map((m) => (
                 <option key={m} value={m}>{m}개월 ({m / 12}년)</option>
@@ -220,13 +220,13 @@ export default function LoanRepaymentCalculator() {
 
         {/* 결과 */}
         {loanAmount > 0 && (
-          <div className="bg-gradient-to-r from-indigo-50 to-violet-50 rounded-2xl p-6 border border-indigo-100">
-            <h3 className="text-lg font-bold text-indigo-800 mb-4">상환 계획</h3>
+          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
+            <h3 className="text-lg font-bold text-emerald-800 mb-4">상환 계획</h3>
 
             <div className="grid grid-cols-2 gap-4 mb-4">
               <div className="bg-white rounded-xl p-4">
                 <div className="text-sm text-neutral-500 mb-1">첫 달 납입금</div>
-                <div className="text-2xl font-bold text-indigo-600">{formatNumber(firstPayment)}원</div>
+                <div className="text-2xl font-bold text-emerald-600">{formatNumber(firstPayment)}원</div>
               </div>
               <div className="bg-white rounded-xl p-4">
                 <div className="text-sm text-neutral-500 mb-1">마지막 달 납입금</div>
@@ -285,8 +285,8 @@ export default function LoanRepaymentCalculator() {
           </div>
         )}
 
-        <div className="mt-6 p-4 bg-indigo-50 rounded-xl border border-indigo-100">
-          <h4 className="font-medium text-indigo-800 mb-2">상환방식 비교</h4>
+        <div className="mt-6 p-4 bg-indigo-50 rounded-xl border border-emerald-100">
+          <h4 className="font-medium text-emerald-800 mb-2">상환방식 비교</h4>
           <ul className="text-sm text-indigo-700 space-y-1">
             <li>• 원리금균등: 매월 같은 금액, 계획 세우기 좋아요</li>
             <li>• 원금균등: 총 이자가 가장 적어요</li>

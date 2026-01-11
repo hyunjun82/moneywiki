@@ -70,7 +70,7 @@ export default function DepositInterestCalculator() {
 
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
-      <div className="bg-gradient-to-r from-blue-600 to-sky-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,7 +79,7 @@ export default function DepositInterestCalculator() {
           </div>
           <div>
             <h2 className="text-xl font-bold text-white">예금이자 계산기</h2>
-            <p className="text-blue-100 text-sm">정기예금 이자 계산</p>
+            <p className="text-emerald-100 text-sm">정기예금 이자 계산</p>
           </div>
         </div>
       </div>
@@ -91,7 +91,7 @@ export default function DepositInterestCalculator() {
             onClick={() => setInterestType("simple")}
             className={`flex-1 py-3 rounded-xl font-medium transition-all ${
               interestType === "simple"
-                ? "bg-blue-600 text-white"
+                ? "bg-emerald-600 text-white"
                 : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
             }`}
           >
@@ -101,7 +101,7 @@ export default function DepositInterestCalculator() {
             onClick={() => setInterestType("compound")}
             className={`flex-1 py-3 rounded-xl font-medium transition-all ${
               interestType === "compound"
-                ? "bg-blue-600 text-white"
+                ? "bg-emerald-600 text-white"
                 : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
             }`}
           >
@@ -123,7 +123,7 @@ export default function DepositInterestCalculator() {
                 onClick={() => setTaxType(type.value as TaxType)}
                 className={`py-2 px-2 rounded-xl font-medium transition-all text-center ${
                   taxType === type.value
-                    ? "bg-blue-600 text-white"
+                    ? "bg-emerald-600 text-white"
                     : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
                 }`}
               >
@@ -145,11 +145,11 @@ export default function DepositInterestCalculator() {
               value={principal > 0 ? formatNumber(principal) : ""}
               onChange={(e) => setPrincipal(parseInt(e.target.value.replace(/,/g, "")) || 0)}
               placeholder="예금액 입력"
-              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-blue-500 focus:ring-0 text-right pr-12"
+              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 text-right pr-12"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
           </div>
-          {principal > 0 && <p className="mt-1 text-sm text-blue-600">{formatWon(principal)}</p>}
+          {principal > 0 && <p className="mt-1 text-sm text-emerald-600">{formatWon(principal)}</p>}
 
           <div className="flex gap-2 mt-3">
             {[10000000, 30000000, 50000000, 100000000, 500000000].map((amount) => (
@@ -175,14 +175,14 @@ export default function DepositInterestCalculator() {
               step="0.1"
               min="0"
               max="20"
-              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-blue-500 text-right"
+              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500 text-right"
             />
             <div className="flex gap-2 mt-2">
               {[3, 3.5, 4, 4.5, 5].map((r) => (
                 <button
                   key={r}
                   onClick={() => setRate(r)}
-                  className={`flex-1 py-1 rounded text-xs ${rate === r ? "bg-blue-600 text-white" : "bg-neutral-100"}`}
+                  className={`flex-1 py-1 rounded text-xs ${rate === r ? "bg-emerald-600 text-white" : "bg-neutral-100"}`}
                 >
                   {r}%
                 </button>
@@ -194,7 +194,7 @@ export default function DepositInterestCalculator() {
             <select
               value={period}
               onChange={(e) => setPeriod(parseInt(e.target.value))}
-              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-blue-500"
+              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500"
             >
               {[3, 6, 12, 24, 36].map((m) => (
                 <option key={m} value={m}>{m}개월{m >= 12 ? ` (${m / 12}년)` : ""}</option>
@@ -205,12 +205,12 @@ export default function DepositInterestCalculator() {
 
         {/* 결과 */}
         {principal > 0 && (
-          <div className="bg-gradient-to-r from-blue-50 to-sky-50 rounded-2xl p-6 border border-blue-100">
-            <h3 className="text-lg font-bold text-blue-800 mb-4">만기 수령액</h3>
+          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
+            <h3 className="text-lg font-bold text-emerald-800 mb-4">만기 수령액</h3>
 
             <div className="bg-white rounded-xl p-5 mb-4">
               <div className="text-sm text-neutral-500 mb-1">예상 만기 수령액</div>
-              <div className="text-3xl font-bold text-blue-600">{formatNumber(totalAmount)}원</div>
+              <div className="text-3xl font-bold text-emerald-600">{formatNumber(totalAmount)}원</div>
               <div className="text-sm text-neutral-500">{formatWon(totalAmount)}</div>
             </div>
 
@@ -225,7 +225,7 @@ export default function DepositInterestCalculator() {
               </div>
               <div className="bg-white rounded-xl p-4">
                 <div className="text-xs text-neutral-500 mb-1">세후 이자</div>
-                <div className="text-lg font-bold text-blue-600">{formatNumber(netInterest)}원</div>
+                <div className="text-lg font-bold text-emerald-600">{formatNumber(netInterest)}원</div>
               </div>
             </div>
 
@@ -237,7 +237,7 @@ export default function DepositInterestCalculator() {
                 </div>
                 <div className="text-right">
                   <div className="text-sm text-neutral-500">실효 수익률</div>
-                  <div className="text-lg font-bold text-blue-600">
+                  <div className="text-lg font-bold text-emerald-600">
                     {((netInterest / principal) * (12 / period) * 100).toFixed(2)}%
                   </div>
                 </div>
@@ -246,8 +246,8 @@ export default function DepositInterestCalculator() {
           </div>
         )}
 
-        <div className="mt-6 p-4 bg-sky-50 rounded-xl border border-sky-100">
-          <h4 className="font-medium text-sky-800 mb-2">예금 vs 적금</h4>
+        <div className="mt-6 p-4 bg-sky-50 rounded-xl border border-emerald-100">
+          <h4 className="font-medium text-emerald-800 mb-2">예금 vs 적금</h4>
           <ul className="text-sm text-sky-700 space-y-1">
             <li>• 예금: 목돈을 한 번에 예치, 이자 수령</li>
             <li>• 적금: 매월 일정 금액 납입, 만기에 수령</li>

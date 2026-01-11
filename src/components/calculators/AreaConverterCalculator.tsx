@@ -105,7 +105,7 @@ export default function AreaConverterCalculator() {
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
       {/* 헤더 */}
-      <div className="bg-gradient-to-r from-sky-600 to-blue-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -114,7 +114,7 @@ export default function AreaConverterCalculator() {
           </div>
           <div>
             <h2 className="text-xl font-bold text-white">평수 계산기</h2>
-            <p className="text-sky-100 text-sm">평 ↔ ㎡ ↔ ft² 변환</p>
+            <p className="text-emerald-100 text-sm">평 ↔ ㎡ ↔ ft² 변환</p>
           </div>
         </div>
       </div>
@@ -158,7 +158,7 @@ export default function AreaConverterCalculator() {
               value={inputValue}
               onChange={(e) => handleInputChange(e.target.value)}
               placeholder="숫자를 입력하세요"
-              className="w-full px-4 py-4 text-2xl font-bold border-2 border-neutral-200 rounded-xl focus:border-sky-500 focus:ring-0 transition-colors text-right pr-16"
+              className="w-full px-4 py-4 text-2xl font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 transition-colors text-right pr-16"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500 font-medium">
               {inputUnit === "pyeong" ? "평" : inputUnit === "sqm" ? "㎡" : "ft²"}
@@ -195,8 +195,8 @@ export default function AreaConverterCalculator() {
 
         {/* 결과 표시 */}
         {result && (
-          <div className="bg-gradient-to-r from-sky-50 to-blue-50 rounded-2xl p-6 border border-sky-100">
-            <h3 className="text-lg font-bold text-sky-800 mb-4">변환 결과</h3>
+          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
+            <h3 className="text-lg font-bold text-emerald-800 mb-4">변환 결과</h3>
 
             <div className="grid grid-cols-3 gap-4">
               {/* 평 */}
@@ -255,8 +255,8 @@ export default function AreaConverterCalculator() {
         </div>
 
         {/* 이용안내 */}
-        <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-amber-100">
-          <h4 className="font-medium text-amber-800 mb-2 flex items-center gap-2">
+        <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-emerald-100">
+          <h4 className="font-medium text-emerald-800 mb-2 flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
@@ -271,8 +271,8 @@ export default function AreaConverterCalculator() {
         </div>
 
         {/* 전용면적 vs 공급면적 설명 */}
-        <div className="mt-4 p-4 bg-blue-50 rounded-xl border border-blue-100">
-          <h4 className="font-medium text-blue-800 mb-2">전용면적 vs 공급면적</h4>
+        <div className="mt-4 p-4 bg-blue-50 rounded-xl border border-emerald-100">
+          <h4 className="font-medium text-emerald-800 mb-2">전용면적 vs 공급면적</h4>
           <div className="text-sm text-blue-700 space-y-2">
             <div>
               <span className="font-medium">전용면적</span>: 실제로 사용할 수 있는 방, 거실, 주방 등의 면적

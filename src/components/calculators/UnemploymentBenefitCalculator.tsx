@@ -42,7 +42,7 @@ function calculateDailyBenefit(avgDailyWage: number): {
 } {
   const rawBenefit = avgDailyWage * 0.6;
   const upperLimit = 66000; // 2026년 상한액
-  const lowerLimit = 64192; // 최저임금 10,030원 × 80% × 8시간
+  const lowerLimit = 66048; // 최저임금 10,320원 × 80% × 8시간
 
   if (rawBenefit >= upperLimit) {
     return { benefit: upperLimit, isUpperLimit: true, isLowerLimit: false };
@@ -89,7 +89,7 @@ function InputField({
           className={`w-full max-w-xs px-3 py-2 text-right border rounded-lg ${
             readOnly
               ? "bg-neutral-100 text-neutral-600 border-neutral-200"
-              : "bg-white border-neutral-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+              : "bg-white border-neutral-300 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
           }`}
         />
         <span className="text-sm text-neutral-500">{unit}</span>
@@ -155,9 +155,9 @@ export default function UnemploymentBenefitCalculator() {
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
       {/* 헤더 */}
-      <div className="bg-blue-600 text-white px-6 py-4">
+      <div className="bg-emerald-600 text-white px-6 py-4">
         <h2 className="text-xl font-bold">실업급여 계산기</h2>
-        <p className="text-blue-100 text-sm mt-1">
+        <p className="text-emerald-100 text-sm mt-1">
           퇴직하면 얼마나 받을 수 있는지 바로 확인하세요
         </p>
       </div>
@@ -183,7 +183,7 @@ export default function UnemploymentBenefitCalculator() {
                   name="age"
                   checked={!isOver50}
                   onChange={() => setIsOver50(false)}
-                  className="w-4 h-4 text-blue-600 focus:ring-blue-500"
+                  className="w-4 h-4 text-emerald-600 focus:ring-emerald-500"
                 />
                 <span className="text-sm text-neutral-700">50세 미만</span>
               </label>
@@ -193,7 +193,7 @@ export default function UnemploymentBenefitCalculator() {
                   name="age"
                   checked={isOver50}
                   onChange={() => setIsOver50(true)}
-                  className="w-4 h-4 text-blue-600 focus:ring-blue-500"
+                  className="w-4 h-4 text-emerald-600 focus:ring-emerald-500"
                 />
                 <span className="text-sm text-neutral-700">50세 이상</span>
               </label>
@@ -210,7 +210,7 @@ export default function UnemploymentBenefitCalculator() {
                 type="checkbox"
                 checked={isDisabled}
                 onChange={(e) => setIsDisabled(e.target.checked)}
-                className="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
+                className="w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500"
               />
               <span className="text-sm text-neutral-700">
                 장애인 등록되어 있어요
@@ -232,7 +232,7 @@ export default function UnemploymentBenefitCalculator() {
           <select
             value={insurancePeriod}
             onChange={(e) => setInsurancePeriod(e.target.value as InsurancePeriod)}
-            className="w-full sm:w-64 px-4 py-3 border border-neutral-300 rounded-lg bg-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-neutral-700"
+            className="w-full sm:w-64 px-4 py-3 border border-neutral-300 rounded-lg bg-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-neutral-700"
           >
             {insurancePeriodOptions.map((opt) => (
               <option key={opt.value} value={opt.value}>
@@ -244,7 +244,7 @@ export default function UnemploymentBenefitCalculator() {
             href="https://www.ei.go.kr"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block mt-2 text-xs text-blue-600 hover:underline"
+            className="inline-block mt-2 text-xs text-emerald-600 hover:underline"
           >
             → 고용보험 가입기간 조회하기
           </a>
@@ -310,15 +310,15 @@ export default function UnemploymentBenefitCalculator() {
       </div>
 
       {/* 결과 */}
-      <div className="bg-gradient-to-r from-blue-50 to-cyan-50">
-        <div className="bg-blue-600 px-6 py-3">
+      <div className="bg-gradient-to-r from-emerald-50 to-teal-50">
+        <div className="bg-emerald-600 px-6 py-3">
           <h3 className="font-semibold text-white">실업급여 계산 결과</h3>
         </div>
         <div className="p-6">
           {/* 주요 결과 */}
           <div className="bg-white rounded-xl p-6 text-center shadow-sm">
             <p className="text-neutral-500 mb-2">총 예상 수령액</p>
-            <p className="text-4xl font-bold text-blue-600 mb-2">
+            <p className="text-4xl font-bold text-emerald-600 mb-2">
               {formatNumber(totalBenefit)}원
             </p>
             <p className="text-sm text-neutral-500">
@@ -334,10 +334,10 @@ export default function UnemploymentBenefitCalculator() {
                 {formatNumber(dailyBenefit)}원
               </p>
               {isUpperLimit && (
-                <span className="text-xs text-amber-600">상한액</span>
+                <span className="text-xs text-emerald-600">상한액</span>
               )}
               {isLowerLimit && (
-                <span className="text-xs text-amber-600">하한액</span>
+                <span className="text-xs text-emerald-600">하한액</span>
               )}
             </div>
             <div className="bg-white rounded-xl p-4 text-center">
@@ -373,8 +373,8 @@ export default function UnemploymentBenefitCalculator() {
       </div>
 
       {/* 수급 조건 안내 */}
-      <div className="px-6 py-4 bg-amber-50 border-t border-amber-100">
-        <h4 className="font-medium text-amber-800 mb-2">⚠️ 실업급여 받으려면</h4>
+      <div className="px-6 py-4 bg-amber-50 border-t border-emerald-100">
+        <h4 className="font-medium text-emerald-800 mb-2">⚠️ 실업급여 받으려면</h4>
         <ul className="text-sm text-amber-700 space-y-1">
           <li>• 고용보험 가입 180일 이상 (퇴직 전 18개월 중)</li>
           <li>• 비자발적 퇴사 (권고사직, 계약만료, 정리해고 등)</li>
@@ -392,13 +392,13 @@ export default function UnemploymentBenefitCalculator() {
             href="https://www.ei.go.kr"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 underline"
+            className="text-emerald-600 underline"
           >
             고용24
           </a>
           에서 확인하세요.
         </p>
-        <p>* 2026년 기준: 상한액 66,000원, 하한액 64,192원</p>
+        <p>* 2026년 기준: 상한액 66,000원, 하한액 66,048원</p>
       </div>
     </div>
   );

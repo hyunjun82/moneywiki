@@ -334,7 +334,7 @@ export default function AcquisitionTaxCalculator() {
               onClick={() => setPropertyType(item.type)}
               className={`flex-1 py-2.5 text-sm font-medium transition-all border-b-2 ${
                 propertyType === item.type
-                  ? "border-blue-500 text-blue-600 bg-blue-50/50"
+                  ? "border-blue-500 text-emerald-600 bg-blue-50/50"
                   : "border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50"
               }`}
             >
@@ -402,7 +402,7 @@ export default function AcquisitionTaxCalculator() {
                 <select
                   value={existingHouseCount}
                   onChange={(e) => setExistingHouseCount(parseInt(e.target.value))}
-                  className="px-3 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                  className="px-3 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
                 >
                   <option value={0}>무주택</option>
                   <option value={1}>1주택</option>
@@ -482,7 +482,7 @@ export default function AcquisitionTaxCalculator() {
                   type="text"
                   value={priceInput}
                   onChange={(e) => handlePriceChange(e.target.value)}
-                  className="w-full px-3 py-2 pr-10 text-right text-sm border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                  className="w-full px-3 py-2 pr-10 text-right text-sm border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
                   placeholder="0"
                 />
                 <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-gray-500 bg-blue-500 text-white px-2 py-0.5 rounded text-xs">원</span>
@@ -521,7 +521,7 @@ export default function AcquisitionTaxCalculator() {
           {/* 금액 표시 */}
           <div className="flex items-center gap-3">
             <div className="w-20 shrink-0"></div>
-            <span className="text-sm text-blue-600 font-medium">{toManwon(price)}</span>
+            <span className="text-sm text-emerald-600 font-medium">{toManwon(price)}</span>
           </div>
         </div>
 
@@ -535,7 +535,7 @@ export default function AcquisitionTaxCalculator() {
                   type="number"
                   value={area}
                   onChange={(e) => setArea(parseInt(e.target.value) || 0)}
-                  className="w-full px-3 py-2 pr-8 text-right text-sm border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                  className="w-full px-3 py-2 pr-8 text-right text-sm border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
                 />
                 <span className="absolute right-2 top-1/2 -translate-y-1/2 text-xs text-white bg-blue-500 px-1.5 py-0.5 rounded">㎡</span>
               </div>
@@ -565,7 +565,7 @@ export default function AcquisitionTaxCalculator() {
           </button>
           <button
             onClick={calculate}
-            className="px-6 py-2 text-sm text-white bg-blue-500 rounded hover:bg-blue-600 transition-colors font-medium"
+            className="px-6 py-2 text-sm text-white bg-blue-500 rounded hover:bg-emerald-600 transition-colors font-medium"
           >
             계산하기
           </button>
@@ -615,7 +615,7 @@ export default function AcquisitionTaxCalculator() {
           <div className="mt-4 p-4 bg-blue-500 rounded-lg">
             <div className="flex justify-between items-center">
               <div>
-                <span className="text-blue-100 text-sm">총 납부세액</span>
+                <span className="text-emerald-100 text-sm">총 납부세액</span>
                 <span className="text-blue-200 text-xs ml-1">({result.totalRate.toFixed(2)}%)</span>
               </div>
               <span className="text-white text-xl font-bold">{formatNumber(result.totalTax)}원</span>

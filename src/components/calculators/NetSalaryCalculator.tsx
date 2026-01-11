@@ -134,7 +134,7 @@ export default function NetSalaryCalculator() {
 
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
-      <div className="bg-gradient-to-r from-blue-600 to-cyan-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -143,7 +143,7 @@ export default function NetSalaryCalculator() {
           </div>
           <div>
             <h2 className="text-xl font-bold text-white">연봉 실수령액 계산기</h2>
-            <p className="text-blue-100 text-sm">4대보험, 소득세 공제 후 실수령액</p>
+            <p className="text-emerald-100 text-sm">4대보험, 소득세 공제 후 실수령액</p>
           </div>
         </div>
       </div>
@@ -158,11 +158,11 @@ export default function NetSalaryCalculator() {
               value={annualSalary > 0 ? formatNumber(annualSalary) : ""}
               onChange={(e) => setAnnualSalary(parseInt(e.target.value.replace(/,/g, "")) || 0)}
               placeholder="연봉을 입력하세요"
-              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-blue-500 focus:ring-0 text-right pr-12"
+              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 text-right pr-12"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
           </div>
-          {annualSalary > 0 && <p className="mt-1 text-sm text-blue-600">{formatWon(annualSalary)}</p>}
+          {annualSalary > 0 && <p className="mt-1 text-sm text-emerald-600">{formatWon(annualSalary)}</p>}
 
           <div className="flex gap-2 mt-3">
             <button onClick={() => handleQuickSalary(30000000)} className="flex-1 py-2 bg-neutral-100 hover:bg-neutral-200 rounded-lg text-sm font-medium">3천만</button>
@@ -181,7 +181,7 @@ export default function NetSalaryCalculator() {
             <select
               value={dependents}
               onChange={(e) => setDependents(parseInt(e.target.value))}
-              className="w-full px-3 py-2 border-2 border-neutral-200 rounded-xl focus:border-blue-500"
+              className="w-full px-3 py-2 border-2 border-neutral-200 rounded-xl focus:border-emerald-500"
             >
               {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
                 <option key={n} value={n}>{n}명</option>
@@ -193,7 +193,7 @@ export default function NetSalaryCalculator() {
             <select
               value={children}
               onChange={(e) => setChildren(parseInt(e.target.value))}
-              className="w-full px-3 py-2 border-2 border-neutral-200 rounded-xl focus:border-blue-500"
+              className="w-full px-3 py-2 border-2 border-neutral-200 rounded-xl focus:border-emerald-500"
             >
               {[0, 1, 2, 3, 4, 5].map((n) => (
                 <option key={n} value={n}>{n}명</option>
@@ -205,7 +205,7 @@ export default function NetSalaryCalculator() {
             <select
               value={nonTaxable}
               onChange={(e) => setNonTaxable(parseInt(e.target.value))}
-              className="w-full px-3 py-2 border-2 border-neutral-200 rounded-xl focus:border-blue-500"
+              className="w-full px-3 py-2 border-2 border-neutral-200 rounded-xl focus:border-emerald-500"
             >
               <option value={0}>없음</option>
               <option value={100000}>10만원</option>
@@ -217,12 +217,12 @@ export default function NetSalaryCalculator() {
 
         {/* 결과 */}
         {result && (
-          <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-6 border border-blue-100">
-            <h3 className="text-lg font-bold text-blue-800 mb-4">실수령액</h3>
+          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
+            <h3 className="text-lg font-bold text-emerald-800 mb-4">실수령액</h3>
 
             <div className="bg-white rounded-xl p-4 mb-4">
               <div className="text-sm text-neutral-500 mb-1">월 실수령액</div>
-              <div className="text-3xl font-bold text-blue-600">{formatNumber(result.monthlyNet)}원</div>
+              <div className="text-3xl font-bold text-emerald-600">{formatNumber(result.monthlyNet)}원</div>
               <div className="text-sm text-neutral-500 mt-1">{formatWon(result.monthlyNet)}</div>
             </div>
 
@@ -268,8 +268,8 @@ export default function NetSalaryCalculator() {
         )}
 
         {/* 안내 */}
-        <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-amber-100">
-          <h4 className="font-medium text-amber-800 mb-2">이용안내</h4>
+        <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-emerald-100">
+          <h4 className="font-medium text-emerald-800 mb-2">이용안내</h4>
           <ul className="text-sm text-amber-700 space-y-1">
             <li>• 2026년 4대보험 요율 기준으로 계산해요</li>
             <li>• 실제 공제액은 회사 정책에 따라 다를 수 있어요</li>

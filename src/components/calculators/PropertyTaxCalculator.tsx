@@ -247,7 +247,7 @@ export default function PropertyTaxCalculator() {
               onClick={() => setPropertyType(item.type)}
               className={`flex-1 py-2.5 text-sm font-medium transition-all border-b-2 ${
                 propertyType === item.type
-                  ? "border-orange-500 text-orange-600 bg-orange-50/50"
+                  ? "border-orange-500 text-emerald-600 bg-orange-50/50"
                   : "border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50"
               }`}
             >
@@ -336,7 +336,7 @@ export default function PropertyTaxCalculator() {
                   type="text"
                   value={publicPriceInput}
                   onChange={(e) => handlePriceChange(e.target.value)}
-                  className="w-full px-3 py-2 pr-10 text-right text-sm border border-gray-300 rounded focus:outline-none focus:border-orange-500"
+                  className="w-full px-3 py-2 pr-10 text-right text-sm border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
                   placeholder="0"
                 />
                 <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-white bg-orange-500 px-2 py-0.5 rounded">원</span>
@@ -375,7 +375,7 @@ export default function PropertyTaxCalculator() {
           {/* 금액 표시 */}
           <div className="flex items-center gap-3">
             <div className="w-20 shrink-0"></div>
-            <span className="text-sm text-orange-600 font-medium">{toUk(publicPrice)}</span>
+            <span className="text-sm text-emerald-600 font-medium">{toUk(publicPrice)}</span>
           </div>
         </div>
 
@@ -395,7 +395,7 @@ export default function PropertyTaxCalculator() {
           </button>
           <button
             onClick={calculate}
-            className="px-6 py-2 text-sm text-white bg-orange-500 rounded hover:bg-orange-600 transition-colors font-medium"
+            className="px-6 py-2 text-sm text-white bg-orange-500 rounded hover:bg-emerald-600 transition-colors font-medium"
           >
             계산하기
           </button>
@@ -464,12 +464,12 @@ export default function PropertyTaxCalculator() {
           <div className="p-4 bg-orange-500 rounded-lg">
             <div className="flex justify-between items-center">
               <div>
-                <span className="text-orange-100 text-sm">총 납부세액</span>
+                <span className="text-emerald-100 text-sm">총 납부세액</span>
               </div>
               <span className="text-white text-xl font-bold">{formatNumber(result.totalTax)}원</span>
             </div>
             {propertyType === "house" && result.septemberTax > 0 && (
-              <div className="text-orange-100 text-xs mt-2 pt-2 border-t border-orange-400">
+              <div className="text-emerald-100 text-xs mt-2 pt-2 border-t border-orange-400">
                 <div className="flex justify-between">
                   <span>7월 납부</span>
                   <span>{formatNumber(result.julyTax)}원</span>

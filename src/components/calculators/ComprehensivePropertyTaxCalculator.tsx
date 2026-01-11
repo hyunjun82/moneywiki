@@ -261,7 +261,7 @@ export default function ComprehensivePropertyTaxCalculator() {
                 <div className="font-medium">{item.label}</div>
                 {item.description && (
                   <div className={`text-xs mt-0.5 ${
-                    houseCount === item.type ? "text-purple-100" : "text-gray-400"
+                    houseCount === item.type ? "text-emerald-100" : "text-gray-400"
                   }`}>
                     {item.description}
                   </div>
@@ -310,7 +310,7 @@ export default function ComprehensivePropertyTaxCalculator() {
                   type="text"
                   value={publicPriceInput}
                   onChange={(e) => handlePriceChange(e.target.value)}
-                  className="w-full px-3 py-2 pr-10 text-right text-sm border border-gray-300 rounded focus:outline-none focus:border-purple-500"
+                  className="w-full px-3 py-2 pr-10 text-right text-sm border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
                   placeholder="0"
                 />
                 <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-white bg-purple-500 px-2 py-0.5 rounded">원</span>
@@ -349,7 +349,7 @@ export default function ComprehensivePropertyTaxCalculator() {
           {/* 금액 표시 */}
           <div className="flex items-center gap-3">
             <div className="w-24 shrink-0"></div>
-            <span className="text-sm text-purple-600 font-medium">{toUk(publicPrice)}</span>
+            <span className="text-sm text-emerald-600 font-medium">{toUk(publicPrice)}</span>
           </div>
         </div>
 
@@ -364,7 +364,7 @@ export default function ComprehensivePropertyTaxCalculator() {
                 <select
                   value={age}
                   onChange={(e) => setAge(parseInt(e.target.value))}
-                  className="px-3 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:border-purple-500"
+                  className="px-3 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
                 >
                   <option value={55}>60세 미만</option>
                   <option value={60}>60~65세</option>
@@ -378,7 +378,7 @@ export default function ComprehensivePropertyTaxCalculator() {
                 <select
                   value={holdingYears}
                   onChange={(e) => setHoldingYears(parseInt(e.target.value))}
-                  className="px-3 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:border-purple-500"
+                  className="px-3 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
                 >
                   <option value={3}>5년 미만</option>
                   <option value={5}>5~10년</option>
@@ -388,7 +388,7 @@ export default function ComprehensivePropertyTaxCalculator() {
               </div>
             </div>
 
-            <div className="text-xs text-purple-600">
+            <div className="text-xs text-emerald-600">
               고령자 공제 (60세+ 10~30%) + 장기보유 공제 (5년+ 20~50%), 합산 최대 80%
             </div>
           </div>
@@ -411,7 +411,7 @@ export default function ComprehensivePropertyTaxCalculator() {
           </button>
           <button
             onClick={calculate}
-            className="px-6 py-2 text-sm text-white bg-purple-500 rounded hover:bg-purple-600 transition-colors font-medium"
+            className="px-6 py-2 text-sm text-white bg-purple-500 rounded hover:bg-emerald-600 transition-colors font-medium"
           >
             계산하기
           </button>
@@ -502,11 +502,11 @@ export default function ComprehensivePropertyTaxCalculator() {
           <div className="p-4 bg-purple-500 rounded-lg">
             <div className="flex justify-between items-center">
               <div>
-                <span className="text-purple-100 text-sm">총 납부세액</span>
+                <span className="text-emerald-100 text-sm">총 납부세액</span>
               </div>
               <span className="text-white text-xl font-bold">{formatNumber(result.totalTax)}원</span>
             </div>
-            <div className="text-purple-100 text-xs mt-1">
+            <div className="text-emerald-100 text-xs mt-1">
               종부세 {formatNumber(result.propertyTax)}원 + 농특세 {formatNumber(result.localTax)}원
             </div>
           </div>

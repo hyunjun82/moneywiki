@@ -112,9 +112,9 @@ export default function InstallmentInterestCalculator() {
   return (
     <div className="bg-white rounded-2xl shadow-lg border border-neutral-200 overflow-hidden">
       {/* 헤더 */}
-      <div className="bg-gradient-to-r from-orange-500 to-amber-500 px-6 py-4">
+      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
         <h2 className="text-xl font-bold text-white">할부 이자 계산기</h2>
-        <p className="text-orange-100 text-sm mt-1">카드/대출/자동차 할부</p>
+        <p className="text-emerald-100 text-sm mt-1">카드/대출/자동차 할부</p>
       </div>
 
       <div className="p-6 space-y-6">
@@ -165,7 +165,7 @@ export default function InstallmentInterestCalculator() {
                 const value = e.target.value.replace(/[^0-9]/g, "");
                 setPurchaseAmount(Number(value) || 0);
               }}
-              className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+              className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-emerald-500"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">
               원
@@ -266,7 +266,7 @@ export default function InstallmentInterestCalculator() {
               className="flex-1 h-2 bg-neutral-200 rounded-lg appearance-none cursor-pointer accent-orange-500"
             />
             <div className="w-20 text-center">
-              <span className="text-lg font-bold text-orange-600">
+              <span className="text-lg font-bold text-emerald-600">
                 {interestRate}
               </span>
               <span className="text-sm text-neutral-500">%</span>
@@ -290,10 +290,10 @@ export default function InstallmentInterestCalculator() {
         </div>
 
         {/* 결과 영역 */}
-        <div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl p-6 space-y-4">
+        <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 space-y-4">
           <div className="text-center">
             <p className="text-sm text-neutral-600 mb-2">월 납부액</p>
-            <p className="text-4xl font-bold text-orange-600">
+            <p className="text-4xl font-bold text-emerald-600">
               {formatNumber(monthlyPayment)}
               <span className="text-xl font-normal text-neutral-500">원</span>
             </p>

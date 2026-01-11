@@ -113,7 +113,7 @@ export default function VehicleTaxCalculator() {
   return (
     <div className="bg-white rounded-2xl shadow-lg border border-neutral-200 overflow-hidden">
       {/* 헤더 */}
-      <div className="bg-gradient-to-r from-slate-600 to-zinc-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
         <h2 className="text-xl font-bold text-white">자동차세 계산기</h2>
         <p className="text-slate-200 text-sm mt-1">2026년 기준</p>
       </div>
@@ -293,10 +293,10 @@ export default function VehicleTaxCalculator() {
           <div className="bg-blue-50 rounded-lg p-3">
             <div className="flex justify-between items-center">
               <div>
-                <p className="text-sm font-medium text-blue-800">
+                <p className="text-sm font-medium text-emerald-800">
                   1월 연납 시
                 </p>
-                <p className="text-xs text-blue-600">약 4.6% 할인</p>
+                <p className="text-xs text-emerald-600">약 4.6% 할인</p>
               </div>
               <div className="text-right">
                 <p className="text-lg font-bold text-blue-700">

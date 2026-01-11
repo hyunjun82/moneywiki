@@ -187,7 +187,7 @@ export default function MortgageCalculator() {
   const getLtvColor = (): string => {
     if (ltv === 0) return "text-neutral-500";
     if (ltv <= 40) return "text-green-600";
-    if (ltv <= 60) return "text-blue-600";
+    if (ltv <= 60) return "text-emerald-600";
     if (ltv <= 70) return "text-yellow-600";
     return "text-red-600";
   };
@@ -195,7 +195,7 @@ export default function MortgageCalculator() {
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
       {/* 헤더 */}
-      <div className="bg-gradient-to-r from-rose-600 to-pink-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -204,7 +204,7 @@ export default function MortgageCalculator() {
           </div>
           <div>
             <h2 className="text-xl font-bold text-white">주택담보대출 계산기</h2>
-            <p className="text-rose-100 text-sm">월 상환금과 총 이자 계산</p>
+            <p className="text-emerald-100 text-sm">월 상환금과 총 이자 계산</p>
           </div>
         </div>
       </div>
@@ -232,7 +232,7 @@ export default function MortgageCalculator() {
                 }`}
               >
                 <div className="font-medium text-sm">{type.label}</div>
-                <div className="text-xs text-rose-600">{type.rate}</div>
+                <div className="text-xs text-emerald-600">{type.rate}</div>
               </button>
             ))}
           </div>
@@ -252,12 +252,12 @@ export default function MortgageCalculator() {
                 setPropertyValue(value);
               }}
               placeholder="주택 매매가격"
-              className="w-full px-4 py-3 text-lg font-bold border-2 border-neutral-200 rounded-xl focus:border-rose-500 focus:ring-0 transition-colors text-right pr-12"
+              className="w-full px-4 py-3 text-lg font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 transition-colors text-right pr-12"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
           </div>
           {propertyValue > 0 && (
-            <p className="mt-1 text-sm text-rose-600">{formatWon(propertyValue)}</p>
+            <p className="mt-1 text-sm text-emerald-600">{formatWon(propertyValue)}</p>
           )}
 
           <div className="flex gap-2 mt-2">
@@ -282,13 +282,13 @@ export default function MortgageCalculator() {
                 setLoanAmount(value);
               }}
               placeholder="대출받을 금액"
-              className="w-full px-4 py-3 text-lg font-bold border-2 border-neutral-200 rounded-xl focus:border-rose-500 focus:ring-0 transition-colors text-right pr-12"
+              className="w-full px-4 py-3 text-lg font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 transition-colors text-right pr-12"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
           </div>
           <div className="flex items-center justify-between mt-1">
             {loanAmount > 0 && (
-              <span className="text-sm text-rose-600">{formatWon(loanAmount)}</span>
+              <span className="text-sm text-emerald-600">{formatWon(loanAmount)}</span>
             )}
             {ltv > 0 && (
               <span className={`text-sm font-medium ${getLtvColor()}`}>
@@ -323,7 +323,7 @@ export default function MortgageCalculator() {
               step="0.1"
               min="0"
               max="20"
-              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-rose-500 focus:ring-0 transition-colors text-right"
+              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 transition-colors text-right"
             />
           </div>
 
@@ -335,7 +335,7 @@ export default function MortgageCalculator() {
             <select
               value={loanPeriodYears}
               onChange={(e) => setLoanPeriodYears(parseInt(e.target.value))}
-              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-rose-500 focus:ring-0 transition-colors"
+              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 transition-colors"
             >
               <option value={10}>10년</option>
               <option value={15}>15년</option>
@@ -377,8 +377,8 @@ export default function MortgageCalculator() {
 
         {/* 결과 표시 */}
         {loanAmount > 0 && (
-          <div className="bg-gradient-to-r from-rose-50 to-pink-50 rounded-2xl p-6 border border-rose-100">
-            <h3 className="text-lg font-bold text-rose-800 mb-4">계산 결과</h3>
+          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
+            <h3 className="text-lg font-bold text-emerald-800 mb-4">계산 결과</h3>
 
             <div className="space-y-4">
               {/* 월 상환금 */}
@@ -387,7 +387,7 @@ export default function MortgageCalculator() {
                   {repaymentType === "bullet" ? "월 이자" : "월 상환금"}
                   {repaymentType === "equal_principal" && " (첫 달)"}
                 </div>
-                <div className="text-3xl font-bold text-rose-600">
+                <div className="text-3xl font-bold text-emerald-600">
                   {formatNumber(monthlyPayment)}원
                 </div>
                 <div className="text-sm text-neutral-500 mt-1">
@@ -443,7 +443,7 @@ export default function MortgageCalculator() {
             {/* 상환 스케줄 토글 */}
             <button
               onClick={() => setShowSchedule(!showSchedule)}
-              className="w-full mt-4 py-3 text-sm text-rose-600 hover:text-rose-700 font-medium flex items-center justify-center gap-2"
+              className="w-full mt-4 py-3 text-sm text-emerald-600 hover:text-rose-700 font-medium flex items-center justify-center gap-2"
             >
               {showSchedule ? "상환 스케줄 접기" : "상환 스케줄 보기 (최대 5년)"}
               <svg className={`w-4 h-4 transition-transform ${showSchedule ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -453,7 +453,7 @@ export default function MortgageCalculator() {
 
             {/* 상환 스케줄 */}
             {showSchedule && schedule.length > 0 && (
-              <div className="mt-4 bg-white rounded-xl overflow-hidden border border-rose-100">
+              <div className="mt-4 bg-white rounded-xl overflow-hidden border border-emerald-100">
                 <div className="max-h-64 overflow-y-auto">
                   <table className="w-full text-sm">
                     <thead className="bg-rose-50 sticky top-0">
@@ -484,20 +484,20 @@ export default function MortgageCalculator() {
         )}
 
         {/* LTV 기준 안내 */}
-        <div className="mt-6 p-4 bg-rose-50 rounded-xl border border-rose-100">
-          <h4 className="font-medium text-rose-800 mb-3">LTV 한도 기준 (2026년)</h4>
+        <div className="mt-6 p-4 bg-rose-50 rounded-xl border border-emerald-100">
+          <h4 className="font-medium text-emerald-800 mb-3">LTV 한도 기준 (2026년)</h4>
           <div className="space-y-2 text-sm">
             <div className="flex justify-between items-center p-2 bg-white rounded-lg">
               <span className="text-neutral-600">투기과열지구</span>
-              <span className="font-medium text-rose-600">LTV 40%</span>
+              <span className="font-medium text-emerald-600">LTV 40%</span>
             </div>
             <div className="flex justify-between items-center p-2 bg-white rounded-lg">
               <span className="text-neutral-600">조정대상지역</span>
-              <span className="font-medium text-rose-600">LTV 50%</span>
+              <span className="font-medium text-emerald-600">LTV 50%</span>
             </div>
             <div className="flex justify-between items-center p-2 bg-white rounded-lg">
               <span className="text-neutral-600">비규제지역</span>
-              <span className="font-medium text-rose-600">LTV 70%</span>
+              <span className="font-medium text-emerald-600">LTV 70%</span>
             </div>
             <div className="flex justify-between items-center p-2 bg-white rounded-lg">
               <span className="text-neutral-600">생애최초 주택구입</span>
@@ -507,8 +507,8 @@ export default function MortgageCalculator() {
         </div>
 
         {/* 이용안내 */}
-        <div className="mt-4 p-4 bg-amber-50 rounded-xl border border-amber-100">
-          <h4 className="font-medium text-amber-800 mb-2 flex items-center gap-2">
+        <div className="mt-4 p-4 bg-amber-50 rounded-xl border border-emerald-100">
+          <h4 className="font-medium text-emerald-800 mb-2 flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>

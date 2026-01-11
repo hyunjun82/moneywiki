@@ -631,7 +631,7 @@ export default function YearEndTaxCalculator() {
             <span className="text-lg font-bold text-neutral-800">
               {finalTax < 0 ? "환급예상액" : "추가납부예상액"}
             </span>
-            <span className={`text-2xl font-bold ${finalTax < 0 ? "text-blue-600" : "text-red-600"}`}>
+            <span className={`text-2xl font-bold ${finalTax < 0 ? "text-emerald-600" : "text-red-600"}`}>
               {finalTax < 0 ? "+" : ""}{formatNumber(Math.abs(finalTax))}원
             </span>
           </div>

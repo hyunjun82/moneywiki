@@ -115,7 +115,7 @@ export default function IncomeTaxCalculator() {
 
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
-      <div className="bg-gradient-to-r from-amber-600 to-orange-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -124,7 +124,7 @@ export default function IncomeTaxCalculator() {
           </div>
           <div>
             <h2 className="text-xl font-bold text-white">근로소득세 계산기</h2>
-            <p className="text-amber-100 text-sm">연봉 기준 소득세 계산</p>
+            <p className="text-emerald-100 text-sm">연봉 기준 소득세 계산</p>
           </div>
         </div>
       </div>
@@ -138,7 +138,7 @@ export default function IncomeTaxCalculator() {
               value={annualIncome > 0 ? formatNumber(annualIncome) : ""}
               onChange={(e) => setAnnualIncome(parseInt(e.target.value.replace(/,/g, "")) || 0)}
               placeholder="연봉을 입력하세요"
-              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-amber-500 focus:ring-0 text-right pr-12"
+              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 text-right pr-12"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
           </div>
@@ -162,7 +162,7 @@ export default function IncomeTaxCalculator() {
           <select
             value={dependents}
             onChange={(e) => setDependents(parseInt(e.target.value))}
-            className="w-full px-3 py-2 border-2 border-neutral-200 rounded-xl focus:border-amber-500"
+            className="w-full px-3 py-2 border-2 border-neutral-200 rounded-xl focus:border-emerald-500"
           >
             {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
               <option key={n} value={n}>{n}명</option>
@@ -171,12 +171,12 @@ export default function IncomeTaxCalculator() {
         </div>
 
         {result && (
-          <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl p-6 border border-amber-100">
-            <h3 className="text-lg font-bold text-amber-800 mb-4">소득세 계산 결과</h3>
+          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
+            <h3 className="text-lg font-bold text-emerald-800 mb-4">소득세 계산 결과</h3>
 
             <div className="bg-white rounded-xl p-4 mb-4">
               <div className="text-sm text-neutral-500 mb-1">연간 소득세 + 지방소득세</div>
-              <div className="text-3xl font-bold text-amber-600">{formatNumber(result.totalTax)}원</div>
+              <div className="text-3xl font-bold text-emerald-600">{formatNumber(result.totalTax)}원</div>
               <div className="text-sm text-neutral-500 mt-1">실효세율 {result.effectiveRate.toFixed(2)}%</div>
             </div>
 
@@ -217,7 +217,7 @@ export default function IncomeTaxCalculator() {
                 <span className="text-neutral-500">(+) 지방소득세</span>
                 <span>{formatNumber(result.localTax)}원</span>
               </div>
-              <div className="flex justify-between font-bold border-t pt-2 text-amber-600">
+              <div className="flex justify-between font-bold border-t pt-2 text-emerald-600">
                 <span>총 납부세액</span>
                 <span>{formatNumber(result.totalTax)}원</span>
               </div>
@@ -232,7 +232,7 @@ export default function IncomeTaxCalculator() {
             {taxBrackets.map((bracket, i) => (
               <div key={i} className="flex justify-between p-2 bg-white rounded">
                 <span className="text-neutral-600">{bracket.range}</span>
-                <span className="font-medium text-amber-600">{bracket.rate}</span>
+                <span className="font-medium text-emerald-600">{bracket.rate}</span>
               </div>
             ))}
           </div>

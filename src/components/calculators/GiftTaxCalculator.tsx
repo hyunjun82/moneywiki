@@ -139,7 +139,7 @@ export default function GiftTaxCalculator() {
 
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
-      <div className="bg-gradient-to-r from-violet-600 to-purple-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -148,7 +148,7 @@ export default function GiftTaxCalculator() {
           </div>
           <div>
             <h2 className="text-xl font-bold text-white">증여세 계산기</h2>
-            <p className="text-violet-100 text-sm">2026년 기준 증여세 자동 계산</p>
+            <p className="text-emerald-100 text-sm">2026년 기준 증여세 자동 계산</p>
           </div>
         </div>
       </div>
@@ -164,12 +164,12 @@ export default function GiftTaxCalculator() {
                 onClick={() => setRelationship(rel.value as Relationship)}
                 className={`py-3 px-2 rounded-xl font-medium transition-all text-center ${
                   relationship === rel.value
-                    ? "bg-violet-600 text-white"
+                    ? "bg-emerald-600 text-white"
                     : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
                 }`}
               >
                 <div className="text-sm">{rel.label}</div>
-                <div className={`text-xs mt-1 ${relationship === rel.value ? "text-violet-200" : "text-neutral-400"}`}>
+                <div className={`text-xs mt-1 ${relationship === rel.value ? "text-emerald-200" : "text-neutral-400"}`}>
                   공제 {rel.exemption}
                 </div>
               </button>
@@ -186,11 +186,11 @@ export default function GiftTaxCalculator() {
               value={giftAmount > 0 ? formatNumber(giftAmount) : ""}
               onChange={(e) => setGiftAmount(parseInt(e.target.value.replace(/,/g, "")) || 0)}
               placeholder="증여금액 입력"
-              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-violet-500 focus:ring-0 text-right pr-12"
+              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 text-right pr-12"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
           </div>
-          {giftAmount > 0 && <p className="mt-1 text-sm text-violet-600">{formatWon(giftAmount)}</p>}
+          {giftAmount > 0 && <p className="mt-1 text-sm text-emerald-600">{formatWon(giftAmount)}</p>}
 
           <div className="flex gap-2 mt-3">
             {[50000000, 100000000, 300000000, 500000000, 1000000000].map((amount) => (
@@ -216,7 +216,7 @@ export default function GiftTaxCalculator() {
               value={previousGifts > 0 ? formatNumber(previousGifts) : ""}
               onChange={(e) => setPreviousGifts(parseInt(e.target.value.replace(/,/g, "")) || 0)}
               placeholder="이전 증여금액 (없으면 0)"
-              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-violet-500 focus:ring-0 text-right pr-12"
+              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 text-right pr-12"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
           </div>
@@ -230,7 +230,7 @@ export default function GiftTaxCalculator() {
               type="checkbox"
               checked={isGenerationSkip}
               onChange={(e) => setIsGenerationSkip(e.target.checked)}
-              className="w-5 h-5 text-violet-600 border-2 border-neutral-300 rounded focus:ring-violet-500"
+              className="w-5 h-5 text-emerald-600 border-2 border-neutral-300 rounded focus:ring-violet-500"
             />
             <div>
               <span className="font-medium text-neutral-700">세대생략 증여</span>
@@ -241,8 +241,8 @@ export default function GiftTaxCalculator() {
 
         {/* 결과 */}
         {giftAmount > 0 && (
-          <div className="bg-gradient-to-r from-violet-50 to-purple-50 rounded-2xl p-6 border border-violet-100">
-            <h3 className="text-lg font-bold text-violet-800 mb-4">증여세 계산 결과</h3>
+          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
+            <h3 className="text-lg font-bold text-emerald-800 mb-4">증여세 계산 결과</h3>
 
             {/* 계산 과정 */}
             <div className="bg-white rounded-xl p-4 mb-4 space-y-2 text-sm">
@@ -250,7 +250,7 @@ export default function GiftTaxCalculator() {
                 <span className="text-neutral-600">증여재산가액</span>
                 <span className="font-medium">{formatNumber(giftAmount + previousGifts)}원</span>
               </div>
-              <div className="flex justify-between text-violet-600">
+              <div className="flex justify-between text-emerald-600">
                 <span>(-) 증여재산공제</span>
                 <span>-{formatNumber(exemption)}원</span>
               </div>
@@ -288,11 +288,11 @@ export default function GiftTaxCalculator() {
             {/* 최종 세액 */}
             <div className="bg-white rounded-xl p-5 border-2 border-violet-300">
               <div className="text-sm text-neutral-500 mb-1">납부할 증여세</div>
-              <div className="text-3xl font-bold text-violet-600">{formatNumber(finalTax)}원</div>
+              <div className="text-3xl font-bold text-emerald-600">{formatNumber(finalTax)}원</div>
               <div className="text-sm text-neutral-500 mt-1">{formatWon(finalTax)}</div>
               <div className="mt-2 text-sm">
                 <span className="text-neutral-500">실효세율: </span>
-                <span className="font-medium text-violet-600">{effectiveRate.toFixed(1)}%</span>
+                <span className="font-medium text-emerald-600">{effectiveRate.toFixed(1)}%</span>
               </div>
             </div>
           </div>
@@ -341,8 +341,8 @@ export default function GiftTaxCalculator() {
           </div>
         </div>
 
-        <div className="mt-4 p-4 bg-amber-50 rounded-xl border border-amber-100">
-          <h4 className="font-medium text-amber-800 mb-2">알아두세요</h4>
+        <div className="mt-4 p-4 bg-amber-50 rounded-xl border border-emerald-100">
+          <h4 className="font-medium text-emerald-800 mb-2">알아두세요</h4>
           <ul className="text-sm text-amber-700 space-y-1">
             <li>• 증여일로부터 3개월 내 신고하면 3% 공제</li>
             <li>• 동일인에게 10년간 받은 증여액은 합산</li>
