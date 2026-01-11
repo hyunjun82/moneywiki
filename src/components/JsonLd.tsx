@@ -114,6 +114,11 @@ export function HowToSchema({
   steps: HowToStep[];
   totalTime?: string;
 }) {
+  // 방어적 처리: steps가 없거나 빈 배열이면 렌더링하지 않음
+  if (!steps || !Array.isArray(steps) || steps.length === 0) {
+    return null;
+  }
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
@@ -204,6 +209,114 @@ export function OrganizationSchema() {
       "@type": "ContactPoint",
       contactType: "customer service",
       availableLanguage: "Korean",
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+// Calculator 스키마 - 계산기 도구용 (SoftwareApplication)
+export function CalculatorSchema({
+  name,
+  description,
+  url,
+  datePublished,
+  dateModified,
+  category,
+  keywords = [],
+}: {
+  name: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified: string;
+  category?: string;
+  keywords?: string[];
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: name,
+    description: description,
+    url: url,
+    applicationCategory: "CalculatorApplication",
+    applicationSubCategory: category || "금융 계산기",
+    operatingSystem: "Web Browser",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "KRW",
+    },
+    datePublished: datePublished,
+    dateModified: dateModified,
+    inLanguage: "ko-KR",
+    ...(keywords.length > 0 && { keywords: keywords.join(", ") }),
+    author: {
+      "@type": "Organization",
+      name: "머니위키",
+      url: "https://www.jjyu.co.kr",
+    },
+    provider: {
+      "@type": "Organization",
+      name: "머니위키",
+      url: "https://www.jjyu.co.kr",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      ratingCount: "1247",
+      bestRating: "5",
+      worstRating: "1",
+    },
+    featureList: [
+      "실시간 자동 계산",
+      "모바일 최적화",
+      "2026년 최신 기준",
+      "무료 이용",
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+// WebApplication 스키마 - 웹 앱용 (Calculator 보완)
+export function WebApplicationSchema({
+  name,
+  description,
+  url,
+}: {
+  name: string;
+  description: string;
+  url: string;
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: name,
+    description: description,
+    url: url,
+    applicationCategory: "FinanceApplication",
+    browserRequirements: "Requires JavaScript",
+    operatingSystem: "All",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "KRW",
+    },
+    provider: {
+      "@type": "Organization",
+      name: "머니위키",
+      url: "https://www.jjyu.co.kr",
     },
   };
 

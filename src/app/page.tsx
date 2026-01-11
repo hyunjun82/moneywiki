@@ -10,6 +10,51 @@ const categoryEmoji: Record<string, string> = {
   "일반": "📄",
 };
 
+// 계산기 목록 (카테고리별)
+const calculators = {
+  "세금": [
+    { name: "연말정산 계산기", slug: "year-end-tax", icon: "📊" },
+    { name: "소득세 계산기", slug: "income-tax", icon: "💵" },
+    { name: "재산세 계산기", slug: "property-tax", icon: "🏘️" },
+    { name: "자동차세 계산기", slug: "vehicle-tax", icon: "🚗" },
+    { name: "양도소득세 계산기", slug: "capital-gains-tax", icon: "💸" },
+    { name: "증여세 계산기", slug: "gift-tax", icon: "🎁" },
+    { name: "상속세 계산기", slug: "inheritance-tax", icon: "👨‍👩‍👧‍👦" },
+    { name: "취득세 계산기", slug: "acquisition-tax", icon: "🏡" },
+    { name: "종합부동산세 계산기", slug: "comprehensive-property-tax", icon: "🏢" },
+  ],
+  "급여": [
+    { name: "실수령액 계산기", slug: "net-salary", icon: "💰" },
+    { name: "시급 계산기", slug: "hourly-wage", icon: "⏱️" },
+    { name: "연봉 계산기", slug: "annual-salary", icon: "💼" },
+    { name: "퇴직금 계산기", slug: "severance-pay", icon: "🎂" },
+    { name: "주휴수당 계산기", slug: "weekly-holiday-pay", icon: "📅" },
+  ],
+  "대출": [
+    { name: "대출이자 계산기", slug: "loan-interest", icon: "🏦" },
+    { name: "주택담보대출 계산기", slug: "mortgage", icon: "🏠" },
+    { name: "전세자금대출 계산기", slug: "jeonse-loan", icon: "🔑" },
+    { name: "대출상환 계산기", slug: "loan-repayment", icon: "💳" },
+    { name: "할부이자 계산기", slug: "installment-interest", icon: "🛒" },
+    { name: "DSR 계산기", slug: "dsr", icon: "📊" },
+  ],
+  "금융": [
+    { name: "복리이자 계산기", slug: "compound-interest", icon: "📈" },
+    { name: "예금이자 계산기", slug: "deposit-interest", icon: "💵" },
+    { name: "적금 계산기", slug: "savings", icon: "🏦" },
+    { name: "주식수익률 계산기", slug: "stock-return", icon: "📉" },
+  ],
+  "보험": [
+    { name: "보험료 계산기", slug: "insurance", icon: "🛡️" },
+    { name: "국민연금 계산기", slug: "national-pension", icon: "👴" },
+    { name: "실업급여 계산기", slug: "unemployment-benefit", icon: "📄" },
+  ],
+  "부동산": [
+    { name: "중개수수료 계산기", slug: "broker-fee", icon: "🤝" },
+    { name: "평수변환 계산기", slug: "area-converter", icon: "📐" },
+  ],
+};
+
 export default function Home() {
   // 실제 위키 문서 가져오기
   const allDocs = getAllWikiDocuments();
@@ -70,6 +115,36 @@ export default function Home() {
             </svg>
             <span className="text-neutral-400">문서 검색...</span>
           </Link>
+        </div>
+      </section>
+
+      {/* 계산기 섹션 */}
+      <section className="mb-16">
+        <h2 className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-6">
+          계산기
+        </h2>
+        <div className="space-y-6">
+          {Object.entries(calculators).map(([category, items]) => (
+            <div key={category}>
+              <h3 className="text-sm font-medium text-neutral-700 mb-3">{category}</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                {items.map((calc) => (
+                  <Link
+                    key={calc.slug}
+                    href={`/calculators/${calc.slug}`}
+                    className="group p-3 bg-white border border-neutral-200 rounded-lg hover:border-emerald-300 hover:shadow-md transition-all"
+                  >
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg">{calc.icon}</span>
+                      <span className="text-sm font-medium text-neutral-800 group-hover:text-emerald-600">
+                        {calc.name}
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

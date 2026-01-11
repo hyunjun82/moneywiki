@@ -57,6 +57,8 @@ export interface WikiDocument {
   // 신뢰도 강화
   sources?: SourceItem[];
   updateNote?: string; // "2026년 1월 기준"
+  // 스키마 타입 (calculator, article 등)
+  schemaType?: string;
 }
 
 // 모든 위키 문서 목록 가져오기
@@ -145,6 +147,8 @@ export async function getWikiDocument(
     // 신뢰도 강화
     sources: data.sources || [],
     updateNote: data.updateNote || "",
+    // 스키마 타입
+    schemaType: data.schemaType,
   };
 }
 
@@ -170,6 +174,7 @@ export function getAllWikiDocuments(): Omit<WikiDocument, "content" | "htmlConte
       relatedDocs: data.relatedDocs || [],
       summary: data.summary || "",
       keyPoints: data.keyPoints || [],
+      schemaType: data.schemaType,
     };
   });
 }
