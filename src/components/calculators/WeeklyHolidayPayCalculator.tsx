@@ -68,7 +68,7 @@ export default function WeeklyHolidayPayCalculator() {
           </div>
 
           <div className="flex gap-2 mt-3">
-            <button onClick={() => setHourlyWage(MIN_WAGE_2026)} className="flex-1 py-2 bg-purple-100 hover:bg-purple-200 text-emerald-600 rounded-lg text-sm font-medium">최저시급</button>
+            <button onClick={() => setHourlyWage(MIN_WAGE_2026)} className="flex-1 py-2 bg-emerald-100 hover:bg-emerald-200 text-emerald-600 rounded-lg text-sm font-medium">최저시급</button>
             <button onClick={() => setHourlyWage(12000)} className="flex-1 py-2 bg-neutral-100 hover:bg-neutral-200 rounded-lg text-sm font-medium">12,000원</button>
             <button onClick={() => setHourlyWage(15000)} className="flex-1 py-2 bg-neutral-100 hover:bg-neutral-200 rounded-lg text-sm font-medium">15,000원</button>
             <button onClick={() => setHourlyWage(20000)} className="flex-1 py-2 bg-neutral-100 hover:bg-neutral-200 rounded-lg text-sm font-medium">20,000원</button>
@@ -143,14 +143,134 @@ export default function WeeklyHolidayPayCalculator() {
           </div>
         )}
 
-        <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-emerald-100">
+        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
           <h4 className="font-medium text-emerald-800 mb-2">주휴수당이란?</h4>
-          <ul className="text-sm text-amber-700 space-y-1">
+          <ul className="text-sm text-emerald-700 space-y-1">
             <li>• 1주 15시간 이상 근무 시 유급휴일 1일 발생</li>
             <li>• 주휴수당 = 1일 소정근로시간 × 시급</li>
             <li>• 결근 없이 소정근로일 개근해야 발생</li>
             <li>• 2026년 최저시급: {formatNumber(MIN_WAGE_2026)}원</li>
           </ul>
+        </div>
+
+        {/* 시급별 주휴수당 비교표 */}
+        <div className="mt-6 p-4 bg-neutral-50 rounded-xl border border-neutral-200">
+          <h4 className="font-bold text-neutral-800 mb-3 text-center">📊 시급별 주휴수당 비교표 (주 5일 근무 기준)</h4>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">시급 ↓ / 주 근무시간 →</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">15시간</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">20시간</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">30시간</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">40시간</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden md:table-cell">한줄평</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-yellow-50">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">10,320원<br/><span className="text-xs text-gray-500">최저시급</span></td>
+                  <td className="py-2 px-2 text-center border border-gray-300">30,960원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">41,280원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">61,920원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">82,560원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">법정 최저! 🔖</td>
+                </tr>
+                <tr className="bg-white">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">11,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">33,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">44,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">66,000원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">88,000원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">편의점 평균 💚</td>
+                </tr>
+                <tr className="bg-green-50">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">12,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">36,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">48,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">72,000원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">96,000원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">카페 평균 ☕</td>
+                </tr>
+                <tr className="bg-white">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">15,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">45,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">60,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">90,000원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">120,000원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">전문직 알바 🌟</td>
+                </tr>
+                <tr className="bg-blue-50">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">20,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">60,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">80,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">120,000원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">160,000원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">과외/강사급 👨‍🏫</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-gray-500 mt-2 text-center">※ 주휴수당 = 1일 근로시간 × 시급 (주 5일 기준: 주 근무시간 ÷ 5)</p>
+
+          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
+            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+              <li>• 주 15시간 미만은 주휴수당 없음! (14시간 59분까지 X)</li>
+              <li>• 풀타임(40시간) 근무 시 주휴수당 = 8시간분 추가!</li>
+              <li>• 월 환산: 주휴수당 × 4.345 = 월 주휴수당</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* 월급 비교표 (주휴수당 포함) */}
+        <div className="mt-6 p-4 bg-neutral-50 rounded-xl border border-neutral-200">
+          <h4 className="font-bold text-neutral-800 mb-3 text-center">💰 시급별 예상 월급 비교표 (주휴수당 포함)</h4>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">시급</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">주 20시간<br/><span className="text-xs font-normal">파트타임</span></th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">주 30시간<br/><span className="text-xs font-normal">하프타임</span></th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">주 40시간<br/><span className="text-xs font-normal">풀타임</span></th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden md:table-cell">한줄평</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-yellow-50">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">10,320원<br/><span className="text-xs text-gray-500">최저</span></td>
+                  <td className="py-2 px-2 text-center border border-gray-300">약 108만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 161만원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 215만원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">2026 법정최저 💼</td>
+                </tr>
+                <tr className="bg-white">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">12,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">약 125만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 187만원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 250만원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">괜찮은 시급 👍</td>
+                </tr>
+                <tr className="bg-green-50">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">15,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">약 156만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 234만원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 312만원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">프리미엄 알바 ⭐</td>
+                </tr>
+                <tr className="bg-blue-50">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">20,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">약 208만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 312만원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 417만원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">전문직급 💎</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-gray-500 mt-2 text-center">※ 월 환산: (시급 × 주 근무시간 + 주휴수당) × 4.345주</p>
         </div>
       </div>
     </div>

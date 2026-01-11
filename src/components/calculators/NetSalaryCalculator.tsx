@@ -21,11 +21,11 @@ export default function NetSalaryCalculator() {
   const [nonTaxable, setNonTaxable] = useState<number>(200000); // 비과세 (식대 등)
   const [result, setResult] = useState<DeductionResult | null>(null);
 
-  // 4대보험 요율 (2026년 기준)
+  // 4대보험 요율 (2026년 기준, 2026.1.1 시행)
   const RATES = {
-    nationalPension: 0.045, // 국민연금 4.5%
-    healthInsurance: 0.03545, // 건강보험 3.545%
-    longTermCareRate: 0.1295, // 장기요양보험 (건강보험의 12.95%)
+    nationalPension: 0.0475, // 국민연금 4.75%
+    healthInsurance: 0.03595, // 건강보험 3.595%
+    longTermCareRate: 0.1314, // 장기요양보험 (건강보험의 13.14%)
     employmentInsurance: 0.009, // 고용보험 0.9%
   };
 
@@ -91,7 +91,7 @@ export default function NetSalaryCalculator() {
     const monthlyTaxable = monthlySalary - nonTaxable;
 
     // 4대보험 (월급 기준)
-    const nationalPension = Math.min(monthlyTaxable * RATES.nationalPension, 265500); // 상한액
+    const nationalPension = Math.min(monthlyTaxable * RATES.nationalPension, 302575); // 상한액 (637만원 × 4.75%)
     const healthInsurance = monthlyTaxable * RATES.healthInsurance;
     const longTermCare = healthInsurance * RATES.longTermCareRate;
     const employmentInsurance = monthlyTaxable * RATES.employmentInsurance;
@@ -268,13 +268,162 @@ export default function NetSalaryCalculator() {
         )}
 
         {/* 안내 */}
-        <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-emerald-100">
+        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
           <h4 className="font-medium text-emerald-800 mb-2">이용안내</h4>
-          <ul className="text-sm text-amber-700 space-y-1">
+          <ul className="text-sm text-emerald-700 space-y-1">
             <li>• 2026년 4대보험 요율 기준으로 계산해요</li>
             <li>• 실제 공제액은 회사 정책에 따라 다를 수 있어요</li>
             <li>• 비과세 항목은 식대, 차량유지비 등이에요</li>
           </ul>
+        </div>
+
+        {/* 연봉별 실수령액 비교표 */}
+        <div className="mt-6 p-4 bg-neutral-50 rounded-xl border border-neutral-200">
+          <h4 className="font-bold text-neutral-800 mb-3 text-center">📊 연봉별 월 실수령액 비교표 (2026년 기준)</h4>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">연봉</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">월급</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">4대보험</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">소득세</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">실수령액</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden md:table-cell">한줄평</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-white">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">3,000만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">250만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 23만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 3만원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 224만원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">사회초년생 👶</td>
+                </tr>
+                <tr className="bg-green-50">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">4,000만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">333만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 30만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 8만원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 295만원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">3~5년차 평균 💼</td>
+                </tr>
+                <tr className="bg-white">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">5,000만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">417만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 38만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 18만원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 361만원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">대기업 초봉 🏢</td>
+                </tr>
+                <tr className="bg-blue-50">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">6,000만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">500만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 45만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 30만원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 425만원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">과장급 평균 ⭐</td>
+                </tr>
+                <tr className="bg-white">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">8,000만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">667만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 56만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 58만원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 553만원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">차부장급 💎</td>
+                </tr>
+                <tr className="bg-purple-50">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">1억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">833만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 65만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 100만원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 668만원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">억대연봉! 🎯</td>
+                </tr>
+                <tr className="bg-orange-50">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">1.5억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">1,250만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 81만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 210만원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 959만원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">임원급 🏆</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-gray-500 mt-2 text-center">※ 부양가족 1인(본인), 비과세 20만원 기준 | 실제 금액은 상황에 따라 달라질 수 있음</p>
+
+          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
+            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+              <li>• 연봉 ↑ → 세율 ↑ (누진세): 고소득일수록 실수령 비율 ↓</li>
+              <li>• 4대보험은 고정비율, 소득세는 누진세율 적용</li>
+              <li>• 부양가족 많으면 소득세 ↓ / 비과세 항목 챙기기!</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* 공제율 비교표 */}
+        <div className="mt-6 p-4 bg-neutral-50 rounded-xl border border-neutral-200">
+          <h4 className="font-bold text-neutral-800 mb-3 text-center">💰 연봉별 공제율 & 실수령률 비교</h4>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">연봉</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">4대보험율</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">세금율</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">총 공제율</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">실수령률</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden md:table-cell">한줄평</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-white">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">3,000만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">약 9%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 1%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">약 10%</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 90%</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">세금 거의 없음 😊</td>
+                </tr>
+                <tr className="bg-green-50">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">5,000만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">약 9%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 4%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">약 13%</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 87%</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">적정 세율 👍</td>
+                </tr>
+                <tr className="bg-white">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">8,000만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">약 8%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 9%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">약 17%</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 83%</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">세금 부담 증가 📈</td>
+                </tr>
+                <tr className="bg-yellow-50">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">1억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">약 8%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 12%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">약 20%</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 80%</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">누진세 체감 💸</td>
+                </tr>
+                <tr className="bg-orange-50">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">1.5억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">약 6%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 17%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">약 23%</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 77%</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">절세 필수! 🎯</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-gray-500 mt-2 text-center">※ 국민연금 상한액(월 302,575원) 적용으로 고소득자 4대보험율 ↓</p>
         </div>
       </div>
     </div>

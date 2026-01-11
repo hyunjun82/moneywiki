@@ -341,13 +341,93 @@ export default function GiftTaxCalculator() {
           </div>
         </div>
 
-        <div className="mt-4 p-4 bg-amber-50 rounded-xl border border-emerald-100">
+        <div className="mt-4 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
           <h4 className="font-medium text-emerald-800 mb-2">알아두세요</h4>
-          <ul className="text-sm text-amber-700 space-y-1">
+          <ul className="text-sm text-emerald-700 space-y-1">
             <li>• 증여일로부터 3개월 내 신고하면 3% 공제</li>
             <li>• 동일인에게 10년간 받은 증여액은 합산</li>
             <li>• 부동산 증여 시 취득세도 별도 발생</li>
           </ul>
+        </div>
+
+        {/* 성인자녀 증여 시 예상세액표 */}
+        <div className="mt-8 p-4 bg-neutral-50 rounded-xl border border-neutral-200">
+          <h4 className="font-bold text-neutral-800 mb-3 text-center">📊 성인자녀 증여 시 예상세액표</h4>
+          <p className="text-xs text-neutral-500 mb-4 text-center">10년간 증여재산공제 5천만원 적용 (자진신고 3% 공제 포함)</p>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">증여금액</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">과세표준</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">세율</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">예상세액</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">한줄평</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-green-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">5천만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">0원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">-</td>
+                  <td className="py-2 px-2 text-center font-bold text-green-600 border border-gray-300">0원</td>
+                  <td className="py-2 px-2 text-center text-gray-500 border border-gray-300 hidden sm:table-cell">비과세 한도!</td>
+                </tr>
+                <tr className="border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">1억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">5천만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">10%</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">485만원</td>
+                  <td className="py-2 px-2 text-center text-gray-500 border border-gray-300 hidden sm:table-cell">최저세율 적용</td>
+                </tr>
+                <tr className="bg-emerald-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">2억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">1.5억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">20%</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">1,940만원</td>
+                  <td className="py-2 px-2 text-center text-gray-500 border border-gray-300 hidden sm:table-cell">아파트 한채 값</td>
+                </tr>
+                <tr className="border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">3억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">2.5억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">20%</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">3,880만원</td>
+                  <td className="py-2 px-2 text-center text-gray-500 border border-gray-300 hidden sm:table-cell">세금 4천 가까이</td>
+                </tr>
+                <tr className="bg-amber-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-bold text-amber-700 border border-gray-300">5억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">4.5억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">20%</td>
+                  <td className="py-2 px-2 text-center font-bold text-amber-600 border border-gray-300">7,760만원</td>
+                  <td className="py-2 px-2 text-center text-amber-600 border border-gray-300 hidden sm:table-cell">세율 상승 직전!</td>
+                </tr>
+                <tr className="bg-red-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-bold text-red-700 border border-gray-300">10억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">9.5억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">30%</td>
+                  <td className="py-2 px-2 text-center font-bold text-red-600 border border-gray-300">2.27억원</td>
+                  <td className="py-2 px-2 text-center text-red-600 border border-gray-300 hidden sm:table-cell">30% 세율 적용</td>
+                </tr>
+                <tr className="bg-red-100">
+                  <td className="py-2 px-2 text-center font-bold text-red-700 border border-gray-300">30억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">29.5억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">40%</td>
+                  <td className="py-2 px-2 text-center font-bold text-red-600 border border-gray-300">9.89억원</td>
+                  <td className="py-2 px-2 text-center text-red-600 border border-gray-300 hidden sm:table-cell">증여의 1/3이 세금</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
+            <p className="text-xs text-emerald-800 font-medium">💡 절세 팁</p>
+            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+              <li>• <strong>10년 주기</strong>로 나눠서 증여하면 공제 여러 번 적용!</li>
+              <li>• 5천만원 이하는 세금 0원 (미성년은 2천만원)</li>
+              <li>• 부동산보다 <strong>현금 증여</strong>가 유리한 경우 많아요</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

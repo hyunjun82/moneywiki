@@ -287,11 +287,77 @@ export default function LoanRepaymentCalculator() {
 
         <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
           <h4 className="font-medium text-emerald-800 mb-2">상환방식 비교</h4>
-          <ul className="text-sm text-indigo-700 space-y-1">
+          <ul className="text-sm text-emerald-700 space-y-1">
             <li>• 원리금균등: 매월 같은 금액, 계획 세우기 좋아요</li>
             <li>• 원금균등: 총 이자가 가장 적어요</li>
             <li>• 만기일시: 매월 부담 적지만 총 이자 많아요</li>
           </ul>
+        </div>
+
+        {/* 대출금액별 월상환액 비교표 */}
+        <div className="mt-8 p-4 bg-neutral-50 rounded-xl border border-neutral-200">
+          <h4 className="font-bold text-neutral-800 mb-3 text-center">📊 대출금액별 월상환액 비교표</h4>
+          <p className="text-xs text-neutral-500 mb-4 text-center">금리 5%, 원리금균등상환, 30년(360개월) 기준</p>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">대출금</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">월 상환액</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">총 이자</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">총 상환액</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">한줄평</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">1억</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">53.7만</td>
+                  <td className="py-2 px-2 text-center text-red-500 border border-gray-300">9,330만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">1.93억</td>
+                  <td className="py-2 px-2 text-center text-gray-500 border border-gray-300 hidden sm:table-cell">신혼부부 시작</td>
+                </tr>
+                <tr className="bg-emerald-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-bold text-emerald-700 border border-gray-300">2억</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">107.4만</td>
+                  <td className="py-2 px-2 text-center text-red-500 border border-gray-300">1.87억</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">3.87억</td>
+                  <td className="py-2 px-2 text-center text-emerald-600 border border-gray-300 hidden sm:table-cell">월 100만 돌파</td>
+                </tr>
+                <tr className="border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">3억</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">161.1만</td>
+                  <td className="py-2 px-2 text-center text-red-500 border border-gray-300">2.80억</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">5.80억</td>
+                  <td className="py-2 px-2 text-center text-gray-500 border border-gray-300 hidden sm:table-cell">서울 외곽 아파트</td>
+                </tr>
+                <tr className="bg-amber-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-bold text-amber-700 border border-gray-300">5억</td>
+                  <td className="py-2 px-2 text-center font-bold text-amber-600 border border-gray-300">268.4만</td>
+                  <td className="py-2 px-2 text-center text-red-500 border border-gray-300">4.66억</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">9.66억</td>
+                  <td className="py-2 px-2 text-center text-amber-600 border border-gray-300 hidden sm:table-cell">연봉 8천 필요</td>
+                </tr>
+                <tr className="bg-red-50">
+                  <td className="py-2 px-2 text-center font-bold text-red-700 border border-gray-300">7억</td>
+                  <td className="py-2 px-2 text-center font-bold text-red-600 border border-gray-300">375.8만</td>
+                  <td className="py-2 px-2 text-center text-red-600 border border-gray-300">6.53억</td>
+                  <td className="py-2 px-2 text-center font-bold text-red-600 border border-gray-300">13.53억</td>
+                  <td className="py-2 px-2 text-center text-red-600 border border-gray-300 hidden sm:table-cell">이자만 6억!</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
+            <p className="text-xs text-emerald-800 font-medium">💡 대출 핵심</p>
+            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+              <li>• 30년 대출 시 <strong>원금만큼 이자</strong> 나가요 (100% 이상)</li>
+              <li>• 기간 줄이면 월 부담↑, 총 이자↓</li>
+              <li>• DSR 40% 기준: 월 상환액 = 연봉 × 40% ÷ 12</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

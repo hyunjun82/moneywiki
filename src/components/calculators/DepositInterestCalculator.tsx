@@ -246,13 +246,79 @@ export default function DepositInterestCalculator() {
           </div>
         )}
 
-        <div className="mt-6 p-4 bg-sky-50 rounded-xl border border-emerald-100">
+        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
           <h4 className="font-medium text-emerald-800 mb-2">예금 vs 적금</h4>
-          <ul className="text-sm text-sky-700 space-y-1">
+          <ul className="text-sm text-emerald-700 space-y-1">
             <li>• 예금: 목돈을 한 번에 예치, 이자 수령</li>
             <li>• 적금: 매월 일정 금액 납입, 만기에 수령</li>
             <li>• 같은 금리면 예금 이자가 더 많아요</li>
           </ul>
+        </div>
+
+        {/* 예금액/금리별 이자 비교표 */}
+        <div className="mt-8 p-4 bg-neutral-50 rounded-xl border border-neutral-200">
+          <h4 className="font-bold text-neutral-800 mb-3 text-center">📊 1년 정기예금 세후이자 비교표</h4>
+          <p className="text-xs text-neutral-500 mb-4 text-center">일반과세 15.4% 적용, 단리 기준</p>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">금리 ↓ / 예금액 →</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">1천만</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">3천만</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">5천만</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">1억</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-neutral-600 border border-gray-300">3.0%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">25.4만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">76.1만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">126.9만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">253.8만</td>
+                </tr>
+                <tr className="bg-emerald-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-bold text-emerald-700 border border-gray-300">3.5%</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">29.6만</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">88.8만</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">148.1만</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300 hidden sm:table-cell">296.1만</td>
+                </tr>
+                <tr className="border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-emerald-600 border border-gray-300">4.0% ⭐</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">33.8만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">101.5만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">169.2만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">338.4만</td>
+                </tr>
+                <tr className="bg-amber-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-bold text-amber-700 border border-gray-300">4.5%</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">38.1만</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">114.2만</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">190.3만</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300 hidden sm:table-cell">380.7만</td>
+                </tr>
+                <tr className="bg-red-50">
+                  <td className="py-2 px-2 text-center font-bold text-red-700 border border-gray-300">5.0%</td>
+                  <td className="py-2 px-2 text-center font-bold text-red-600 border border-gray-300">42.3만</td>
+                  <td className="py-2 px-2 text-center font-bold text-red-600 border border-gray-300">126.9만</td>
+                  <td className="py-2 px-2 text-center font-bold text-red-600 border border-gray-300">211.5만</td>
+                  <td className="py-2 px-2 text-center font-bold text-red-600 border border-gray-300 hidden sm:table-cell">423만</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
+            <p className="text-xs text-emerald-800 font-medium">💡 예금 꿀팁</p>
+            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+              <li>• <strong>금리 0.5%</strong> 차이 = 1천만원당 연 <strong>4.2만원</strong> 차이</li>
+              <li>• 1억 예금 시 금리 3% vs 5% = 연 169만원 차이!</li>
+              <li>• <strong>특판 예금</strong> 찾으면 0.3~0.5% 추가 금리 가능</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

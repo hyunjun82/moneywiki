@@ -255,14 +255,14 @@ export default function AreaConverterCalculator() {
         </div>
 
         {/* 이용안내 */}
-        <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-emerald-100">
+        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
           <h4 className="font-medium text-emerald-800 mb-2 flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             이용안내
           </h4>
-          <ul className="text-sm text-amber-700 space-y-1">
+          <ul className="text-sm text-emerald-700 space-y-1">
             <li>• 1평 = 약 3.3㎡로 계산합니다 (정확히 3.3058㎡)</li>
             <li>• 부동산에서 말하는 평수는 보통 '전용면적' 기준이에요</li>
             <li>• 분양면적(공급면적)은 전용면적보다 넓어요</li>
@@ -283,6 +283,78 @@ export default function AreaConverterCalculator() {
             <div className="pt-2 border-t border-blue-200">
               예: 84㎡ 아파트 = 전용 84㎡ (약 25평) + 공용면적
             </div>
+          </div>
+        </div>
+
+        {/* 평수별 면적 환산표 */}
+        <div className="mt-6 p-4 bg-neutral-50 rounded-xl border border-neutral-200">
+          <h4 className="font-bold text-neutral-800 mb-3 text-center">📊 평수별 면적 환산표</h4>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">평수</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">㎡ (제곱미터)</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">ft² (제곱피트)</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">주거 타입</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden md:table-cell">한줄평</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-white">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">7평</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">23.1㎡</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">249ft²</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">원룸</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">1인 가구 🧑</td>
+                </tr>
+                <tr className="bg-green-50">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">15평</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">49.6㎡</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">534ft²</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">투룸/오피스텔</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">신혼부부 👫</td>
+                </tr>
+                <tr className="bg-white">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">24평</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 font-bold text-emerald-600">79.3㎡ (≈84㎡)</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">854ft²</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">국민평수</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">3인 가족 👨‍👩‍👧</td>
+                </tr>
+                <tr className="bg-blue-50">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">34평</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 font-bold text-emerald-600">112.4㎡</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">1,210ft²</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">중형 아파트</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">4인 가족 ⭐</td>
+                </tr>
+                <tr className="bg-white">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">42평</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">138.8㎡</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">1,494ft²</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">대형 아파트</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">넓은 거실 🌟</td>
+                </tr>
+                <tr className="bg-purple-50">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">52평</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">171.9㎡</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">1,850ft²</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">프리미엄</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">고급 아파트 💎</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-gray-500 mt-2 text-center">※ 분양광고 84㎡ = 전용면적 84㎡ ≈ 약 25평 (실사용 면적)</p>
+
+          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
+            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+              <li>• 84㎡ = 약 25평 (가장 많이 찾는 국민평수!)</li>
+              <li>• 평 × 3.3 = ㎡ (빠른 암산법)</li>
+              <li>• 분양면적 ≠ 전용면적 (공용면적 제외해야 실평수)</li>
+            </ul>
           </div>
         </div>
       </div>

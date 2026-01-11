@@ -227,7 +227,7 @@ export default function MortgageCalculator() {
                 onClick={() => handleLoanTypeChange(type.value)}
                 className={`p-3 rounded-xl border-2 transition-all text-center ${
                   loanType === type.value
-                    ? "border-rose-500 bg-rose-50"
+                    ? "border-emerald-500 bg-emerald-50"
                     : "border-neutral-200 hover:border-neutral-300"
                 }`}
               >
@@ -364,7 +364,7 @@ export default function MortgageCalculator() {
                 onClick={() => setRepaymentType(type.value)}
                 className={`p-3 rounded-xl border-2 transition-all text-left ${
                   repaymentType === type.value
-                    ? "border-rose-500 bg-rose-50"
+                    ? "border-emerald-500 bg-emerald-50"
                     : "border-neutral-200 hover:border-neutral-300"
                 }`}
               >
@@ -443,7 +443,7 @@ export default function MortgageCalculator() {
             {/* 상환 스케줄 토글 */}
             <button
               onClick={() => setShowSchedule(!showSchedule)}
-              className="w-full mt-4 py-3 text-sm text-emerald-600 hover:text-rose-700 font-medium flex items-center justify-center gap-2"
+              className="w-full mt-4 py-3 text-sm text-emerald-600 hover:text-emerald-700 font-medium flex items-center justify-center gap-2"
             >
               {showSchedule ? "상환 스케줄 접기" : "상환 스케줄 보기 (최대 5년)"}
               <svg className={`w-4 h-4 transition-transform ${showSchedule ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -456,7 +456,7 @@ export default function MortgageCalculator() {
               <div className="mt-4 bg-white rounded-xl overflow-hidden border border-emerald-100">
                 <div className="max-h-64 overflow-y-auto">
                   <table className="w-full text-sm">
-                    <thead className="bg-rose-50 sticky top-0">
+                    <thead className="bg-emerald-50 sticky top-0">
                       <tr>
                         <th className="px-3 py-2 text-left text-neutral-600">회차</th>
                         <th className="px-3 py-2 text-right text-neutral-600">원금</th>
@@ -484,7 +484,7 @@ export default function MortgageCalculator() {
         )}
 
         {/* LTV 기준 안내 */}
-        <div className="mt-6 p-4 bg-rose-50 rounded-xl border border-emerald-100">
+        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
           <h4 className="font-medium text-emerald-800 mb-3">LTV 한도 기준 (2026년)</h4>
           <div className="space-y-2 text-sm">
             <div className="flex justify-between items-center p-2 bg-white rounded-lg">
@@ -507,19 +507,104 @@ export default function MortgageCalculator() {
         </div>
 
         {/* 이용안내 */}
-        <div className="mt-4 p-4 bg-amber-50 rounded-xl border border-emerald-100">
+        <div className="mt-4 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
           <h4 className="font-medium text-emerald-800 mb-2 flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             이용안내
           </h4>
-          <ul className="text-sm text-amber-700 space-y-1">
+          <ul className="text-sm text-emerald-700 space-y-1">
             <li>• 실제 대출 금리는 신용등급, 대출 상품에 따라 달라요</li>
             <li>• LTV 외에 DSR 규제도 적용돼요 (총부채원리금상환비율)</li>
             <li>• 원리금균등이 가장 일반적이고, 총 이자가 적어요</li>
             <li>• 주담대는 보통 원리금균등 상환이 조건이에요</li>
           </ul>
+        </div>
+
+        {/* 주담대 월 상환금 비교표 */}
+        <div className="mt-6 p-4 bg-neutral-50 rounded-xl border border-neutral-200">
+          <h4 className="font-bold text-neutral-800 mb-3 text-center">📊 주담대 월 상환금 비교표 (원리금균등, 30년)</h4>
+          <p className="text-xs text-neutral-500 text-center mb-3">금리별 × 대출금액별 월 상환금 (원리금균등 30년 기준)</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">금리 ↓ / 대출금 →</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">2억</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">3억</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">4억</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">5억</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">6억</th>
+                  <th className="py-2 px-2 text-center text-neutral-600 font-medium border border-gray-300 hidden md:table-cell">한줄평</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-green-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-green-700 border border-gray-300">3.0%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">84만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">126만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">169만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">211만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">253만</td>
+                  <td className="py-2 px-2 text-center text-green-600 text-xs border border-gray-300 hidden md:table-cell">정책금융 최저!</td>
+                </tr>
+                <tr className="bg-emerald-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-emerald-700 border border-gray-300">3.5%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">90만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">135만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">179만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">224만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">269만</td>
+                  <td className="py-2 px-2 text-center text-emerald-600 text-xs border border-gray-300 hidden md:table-cell">보금자리론 평균</td>
+                </tr>
+                <tr className="bg-white border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-neutral-700 border border-gray-300">4.0%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">95만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">143万</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">191万</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">239万</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">286万</td>
+                  <td className="py-2 px-2 text-center text-neutral-600 text-xs border border-gray-300 hidden md:table-cell">시중은행 평균</td>
+                </tr>
+                <tr className="bg-yellow-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-yellow-700 border border-gray-300">4.5%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">101万</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">152万</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">203万</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">253万</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">304万</td>
+                  <td className="py-2 px-2 text-center text-yellow-600 text-xs border border-gray-300 hidden md:table-cell">300만원 돌파!</td>
+                </tr>
+                <tr className="bg-orange-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-orange-700 border border-gray-300">5.0%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">107万</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">161万</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">215万</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">268万</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">322万</td>
+                  <td className="py-2 px-2 text-center text-orange-600 text-xs border border-gray-300 hidden md:table-cell">부담 증가</td>
+                </tr>
+                <tr className="bg-red-50">
+                  <td className="py-2 px-2 text-center font-medium text-red-700 border border-gray-300">5.5%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">114万</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">170万</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">227万</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">284万</td>
+                  <td className="py-2 px-2 text-center font-bold text-red-600 border border-gray-300 hidden sm:table-cell">341万</td>
+                  <td className="py-2 px-2 text-center text-red-600 text-xs border border-gray-300 hidden md:table-cell">고금리 주의!</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
+            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+              <li>• 4억 대출 시 금리 1% 차이 = 월 약 22만원, 30년간 약 8천만원 차이!</li>
+              <li>• 보금자리론·디딤돌은 소득·가격 요건 충족 시 금리 1%+ 절약</li>
+              <li>• 대출기간 30년→20년 줄이면 총 이자 30% 이상 절감</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

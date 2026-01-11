@@ -46,7 +46,7 @@ export default function NationalPensionCalculator() {
     // A: 전체가입자 평균소득월액, B: 본인 평균소득월액, n: 20년 초과 월수
     // 여기서는 간소화된 공식 사용
 
-    const B = Math.min(avgIncome, 5900000); // 기준소득월액 상한 (2026년)
+    const B = Math.min(avgIncome, 6370000); // 기준소득월액 상한 637만원 (2025.7~2026.6)
     const baseAmount = 1.2 * (A_VALUE + B) / 2;
 
     // 가입기간에 따른 지급률 (10년: 50%, 이후 1년당 5% 추가, 최대 100%)
@@ -79,8 +79,8 @@ export default function NationalPensionCalculator() {
     setStartAge(adjustedAge);
     setMonthlyPension(pension);
 
-    // 총 납부액 계산 (본인부담 4.5%)
-    const total = avgMonthlyIncome * 0.045 * contributionYears * 12;
+    // 총 납부액 계산 (본인부담 4.75%, 2026년 기준)
+    const total = avgMonthlyIncome * 0.0475 * contributionYears * 12;
     setTotalContribution(total);
 
     // 20년간 예상 수령 총액
@@ -333,6 +333,70 @@ export default function NationalPensionCalculator() {
           <p>※ 실제 연금액은 가입이력, 소득 변동 등에 따라 달라질 수 있어요.</p>
           <p>※ 국민연금공단에서 정확한 예상연금 조회가 가능해요.</p>
           <p>※ 2026년 기준 A값(전체가입자 평균소득월액 3년평균): {formatNumber(A_VALUE)}원</p>
+        </div>
+
+        {/* 가입기간별 연금액표 */}
+        <div className="mt-6 p-4 bg-neutral-50 rounded-xl border border-neutral-200">
+          <h4 className="font-bold text-neutral-800 mb-3 text-center">📊 가입기간별 예상 월 연금액 (노령연금)</h4>
+          <p className="text-xs text-neutral-500 text-center mb-3">월 소득 300만원 기준, 2026년 A값 적용</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">가입기간</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">지급률</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">월 연금액</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">연간 총액</th>
+                  <th className="py-2 px-2 text-center text-neutral-600 font-medium border border-gray-300 hidden md:table-cell">한줄평</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-white border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-neutral-700 border border-gray-300">10년</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">50%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">약 53만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 636만</td>
+                  <td className="py-2 px-2 text-center text-neutral-600 text-xs border border-gray-300 hidden md:table-cell">최소 가입</td>
+                </tr>
+                <tr className="bg-green-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-green-700 border border-gray-300">15년</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">75%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">약 80만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 960만</td>
+                  <td className="py-2 px-2 text-center text-green-600 text-xs border border-gray-300 hidden md:table-cell">기초생활 가능</td>
+                </tr>
+                <tr className="bg-emerald-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-emerald-700 border border-gray-300">20년</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">100%</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 107만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 1,284만</td>
+                  <td className="py-2 px-2 text-center text-emerald-600 text-xs border border-gray-300 hidden md:table-cell">100만원 돌파!</td>
+                </tr>
+                <tr className="bg-blue-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-blue-700 border border-gray-300">30년</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">100%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">약 107만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 1,284만</td>
+                  <td className="py-2 px-2 text-center text-blue-600 text-xs border border-gray-300 hidden md:table-cell">풀가입 효과</td>
+                </tr>
+                <tr className="bg-purple-50">
+                  <td className="py-2 px-2 text-center font-medium text-purple-700 border border-gray-300">40년</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">100%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">약 107만</td>
+                  <td className="py-2 px-2 text-center font-bold text-purple-600 border border-gray-300 hidden sm:table-cell">약 1,284만</td>
+                  <td className="py-2 px-2 text-center text-purple-600 text-xs border border-gray-300 hidden md:table-cell">최장 가입</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
+            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+              <li>• 20년 가입하면 100% 지급률 달성!</li>
+              <li>• 연기연금 선택 시 연 7.2% 증액 (5년 최대 36%)</li>
+              <li>• 소득이 높을수록 월 연금액도 증가해요</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

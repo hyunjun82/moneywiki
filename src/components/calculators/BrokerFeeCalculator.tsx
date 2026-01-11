@@ -453,6 +453,82 @@ export default function BrokerFeeCalculator() {
           <p className="text-xs text-gray-500">※ 전세/월세는 별도 요율 적용</p>
         </div>
       </div>
+
+      {/* 매매가별 예상 중개수수료 비교표 */}
+      <div className="border-t border-gray-200">
+        <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-200 bg-gray-50">
+          <span className="w-1 h-5 bg-emerald-500 rounded-full"></span>
+          <h3 className="text-sm font-semibold text-gray-700">📊 매매가별 예상 중개수수료 비교표</h3>
+        </div>
+
+        <div className="p-4 overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-emerald-100 border-b-2 border-emerald-300">
+                <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">매매가</th>
+                <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">요율</th>
+                <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">수수료</th>
+                <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">총액(VAT포함)</th>
+                <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden md:table-cell">한줄평</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="bg-white">
+                <td className="py-2 px-2 text-center font-medium border border-gray-300">1억원</td>
+                <td className="py-2 px-2 text-center border border-gray-300">0.5%</td>
+                <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">50만원</td>
+                <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">55만원</td>
+                <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">소형주택 🏠</td>
+              </tr>
+              <tr className="bg-green-50">
+                <td className="py-2 px-2 text-center font-medium border border-gray-300">3억원</td>
+                <td className="py-2 px-2 text-center border border-gray-300">0.4%</td>
+                <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">120만원</td>
+                <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">132만원</td>
+                <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">20평대 아파트 🏢</td>
+              </tr>
+              <tr className="bg-white">
+                <td className="py-2 px-2 text-center font-medium border border-gray-300">5억원</td>
+                <td className="py-2 px-2 text-center border border-gray-300">0.4%</td>
+                <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">200만원</td>
+                <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">220만원</td>
+                <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">30평대 아파트 ⭐</td>
+              </tr>
+              <tr className="bg-blue-50">
+                <td className="py-2 px-2 text-center font-medium border border-gray-300">7억원</td>
+                <td className="py-2 px-2 text-center border border-gray-300">0.4%</td>
+                <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">280만원</td>
+                <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">308만원</td>
+                <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">40평대 중대형 🌟</td>
+              </tr>
+              <tr className="bg-white">
+                <td className="py-2 px-2 text-center font-medium border border-gray-300">10억원</td>
+                <td className="py-2 px-2 text-center border border-gray-300">0.5%</td>
+                <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">500만원</td>
+                <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">550만원</td>
+                <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">고급 아파트 💎</td>
+              </tr>
+              <tr className="bg-purple-50">
+                <td className="py-2 px-2 text-center font-medium border border-gray-300">15억원</td>
+                <td className="py-2 px-2 text-center border border-gray-300">0.7%</td>
+                <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">1,050만원</td>
+                <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">1,155만원</td>
+                <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">프리미엄 🏆</td>
+              </tr>
+            </tbody>
+          </table>
+          <p className="text-xs text-gray-500 mt-2 text-center">※ 주택 매매 기준, 매도인·매수인 각각 부담</p>
+
+          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
+            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+              <li>• 2~9억: 0.4% 구간이 가장 저렴해요!</li>
+              <li>• 9억 넘으면 요율 UP: 0.5%~0.7%로 급상승</li>
+              <li>• 협상 가능: 상한요율이니 깎을 수 있어요 🤝</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -200,13 +200,86 @@ export default function HourlyWageCalculator() {
           </div>
         )}
 
-        <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-emerald-100">
+        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
           <h4 className="font-medium text-emerald-800 mb-2">계산 기준</h4>
-          <ul className="text-sm text-amber-700 space-y-1">
+          <ul className="text-sm text-emerald-700 space-y-1">
             <li>• 월 환산: 주 근무시간 × 4.345주</li>
             <li>• 주휴수당: 주 15시간 이상 근무 시 1일분</li>
             <li>• 2026년 최저시급: {formatNumber(MIN_WAGE_2026)}원</li>
           </ul>
+        </div>
+
+        {/* 시급별 월급 비교표 */}
+        <div className="mt-8 p-4 bg-neutral-50 rounded-xl border border-neutral-200">
+          <h4 className="font-bold text-neutral-800 mb-3 text-center">📊 시급별 월급 비교표</h4>
+          <p className="text-xs text-neutral-500 mb-4 text-center">주 40시간, 주휴수당 포함 기준</p>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">시급</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">일급(8h)</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">월급</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">연봉</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">한줄평</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-yellow-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-bold text-yellow-700 border border-gray-300">10,320원 ⭐</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">82,560원</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">215만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">2,581만원</td>
+                  <td className="py-2 px-2 text-center text-yellow-600 border border-gray-300 hidden sm:table-cell">2026 최저시급</td>
+                </tr>
+                <tr className="border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">11,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">88,000원</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">229만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">2,752만원</td>
+                  <td className="py-2 px-2 text-center text-gray-500 border border-gray-300 hidden sm:table-cell">최저+α</td>
+                </tr>
+                <tr className="bg-emerald-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-bold text-emerald-700 border border-gray-300">12,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">96,000원</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">250만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">3,002만원</td>
+                  <td className="py-2 px-2 text-center text-emerald-600 border border-gray-300 hidden sm:table-cell">연봉 3천 돌파!</td>
+                </tr>
+                <tr className="border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">15,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">120,000원</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">313만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">3,753만원</td>
+                  <td className="py-2 px-2 text-center text-gray-500 border border-gray-300 hidden sm:table-cell">카페 알바 상위권</td>
+                </tr>
+                <tr className="bg-amber-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-bold text-amber-700 border border-gray-300">20,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">160,000원</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">417만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">5,004만원</td>
+                  <td className="py-2 px-2 text-center text-amber-600 border border-gray-300 hidden sm:table-cell">연봉 5천 가능!</td>
+                </tr>
+                <tr className="bg-red-50">
+                  <td className="py-2 px-2 text-center font-bold text-red-700 border border-gray-300">30,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">240,000원</td>
+                  <td className="py-2 px-2 text-center font-bold text-red-600 border border-gray-300">626만원</td>
+                  <td className="py-2 px-2 text-center font-bold text-red-600 border border-gray-300">7,506만원</td>
+                  <td className="py-2 px-2 text-center text-red-600 border border-gray-300 hidden sm:table-cell">전문직 수준</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
+            <p className="text-xs text-emerald-800 font-medium">💡 알바 꿀팁</p>
+            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+              <li>• <strong>주휴수당</strong>은 주 15시간 이상 근무 시 필수 지급!</li>
+              <li>• 시급 1,000원 차이 = 월급 약 <strong>21만원</strong> 차이</li>
+              <li>• 최저시급 미달 시 노동청에 신고 가능해요</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

@@ -508,6 +508,85 @@ export default function StockReturnCalculator() {
           <p>※ 양도소득세는 대주주(10억 이상) 또는 해외주식에 적용돼요.</p>
           <p>※ 증권사 수수료는 업체별로 다를 수 있어요.</p>
         </div>
+
+        {/* 투자금액별 수익률 비교표 */}
+        <div className="mt-6 p-4 bg-neutral-50 rounded-xl border border-neutral-200">
+          <h4 className="font-bold text-neutral-800 mb-3 text-center">📊 투자금액별 수익 비교표 (수수료/세금 포함)</h4>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">투자금 ↓ / 수익률 →</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">+10%</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">+20%</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">+30%</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden md:table-cell">+50%</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden md:table-cell">한줄평</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-white">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">100만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+9.6만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+19.6만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell text-green-600">+29.6만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell text-green-600">+49.5만원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">소액 투자 🌱</td>
+                </tr>
+                <tr className="bg-green-50">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">500만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+48만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+98만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell text-green-600">+148만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell text-green-600">+248만원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">적립식 투자 💰</td>
+                </tr>
+                <tr className="bg-white">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">1,000만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+96만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+196만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell text-green-600">+296만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell text-green-600">+496만원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">본격 투자 ⭐</td>
+                </tr>
+                <tr className="bg-blue-50">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">3,000만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+288만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+588만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell text-green-600">+888만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell text-green-600">+1,488만원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">중급 투자자 🌟</td>
+                </tr>
+                <tr className="bg-white">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">5,000만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+480만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+980만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell text-green-600">+1,480만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell text-green-600">+2,480만원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">시드머니 확보 💎</td>
+                </tr>
+                <tr className="bg-purple-50">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">1억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+960만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+1,960만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell text-green-600">+2,960만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell text-green-600">+4,960만원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">고액 투자자 🏆</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-gray-500 mt-2 text-center">※ 증권사 수수료 0.015%, 거래세 0.20% 반영 (양도세 미적용)</p>
+
+          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
+            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+              <li>• 수수료+세금으로 약 0.4% 정도가 빠져요</li>
+              <li>• 장기투자일수록 수수료 영향 ↓ (복리효과 ↑)</li>
+              <li>• 대주주/해외주식은 양도세 22% 추가!</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );

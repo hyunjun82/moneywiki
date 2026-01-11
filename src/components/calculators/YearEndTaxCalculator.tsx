@@ -253,14 +253,14 @@ export default function YearEndTaxCalculator() {
     const persDeduction = selfDeduction + spouseDeduction + dependentsDeduction + elderlyDeduction;
     setTotalPersonalDeduction(persDeduction);
 
-    // 4. 연금보험료공제 (자동계산)
-    const autoPension = Math.round(totalSalary * 0.045);
+    // 4. 연금보험료공제 (자동계산, 2026년 기준 4.75%)
+    const autoPension = Math.round(totalSalary * 0.0475);
     setNationalPension(autoPension);
     const pensionDed = autoPension;
     setTotalPensionDeduction(pensionDed);
 
-    // 5. 특별소득공제 (자동계산)
-    const autoHealth = Math.round(totalSalary * 0.03545 + totalSalary * 0.0709 * 0.1281 * 0.5);
+    // 5. 특별소득공제 (자동계산, 2026년 기준)
+    const autoHealth = Math.round(totalSalary * 0.03595 + totalSalary * 0.0719 * 0.1314 * 0.5);
     const autoEmployment = Math.round(totalSalary * 0.009);
     setHealthInsurance(autoHealth);
     setEmploymentInsurance(autoEmployment);
@@ -440,7 +440,7 @@ export default function YearEndTaxCalculator() {
           label="31. 국민연금"
           value={nationalPension}
           readOnly
-          description="총급여 x 4.5% (자동계산)"
+          description="총급여 x 4.75% (2026년 기준, 자동계산)"
         />
         <InputField
           label="연금보험료공제 합계"

@@ -188,7 +188,7 @@ export default function JeonseLoanCalculator() {
                 onClick={() => handleLoanTypeChange(type.value)}
                 className={`p-3 rounded-xl border-2 transition-all text-left ${
                   loanType === type.value
-                    ? "border-violet-500 bg-emerald-50"
+                    ? "border-emerald-500 bg-emerald-50"
                     : "border-neutral-200 hover:border-neutral-300"
                 }`}
               >
@@ -285,7 +285,7 @@ export default function JeonseLoanCalculator() {
                 onClick={() => setRepaymentType(type.value)}
                 className={`p-3 rounded-xl border-2 transition-all text-left ${
                   repaymentType === type.value
-                    ? "border-violet-500 bg-emerald-50"
+                    ? "border-emerald-500 bg-emerald-50"
                     : "border-neutral-200 hover:border-neutral-300"
                 }`}
               >
@@ -365,7 +365,7 @@ export default function JeonseLoanCalculator() {
             {/* 상환 스케줄 토글 */}
             <button
               onClick={() => setShowSchedule(!showSchedule)}
-              className="w-full mt-4 py-3 text-sm text-emerald-600 hover:text-violet-700 font-medium flex items-center justify-center gap-2"
+              className="w-full mt-4 py-3 text-sm text-emerald-600 hover:text-emerald-700 font-medium flex items-center justify-center gap-2"
             >
               {showSchedule ? "상환 스케줄 접기" : "상환 스케줄 보기"}
               <svg className={`w-4 h-4 transition-transform ${showSchedule ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -428,19 +428,104 @@ export default function JeonseLoanCalculator() {
         </div>
 
         {/* 이용안내 */}
-        <div className="mt-4 p-4 bg-amber-50 rounded-xl border border-emerald-100">
+        <div className="mt-4 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
           <h4 className="font-medium text-emerald-800 mb-2 flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             이용안내
           </h4>
-          <ul className="text-sm text-amber-700 space-y-1">
+          <ul className="text-sm text-emerald-700 space-y-1">
             <li>• 실제 대출 금리는 신용등급, 대출 상품에 따라 달라요</li>
             <li>• 전세대출은 보통 만기일시상환으로 이자만 납부해요</li>
             <li>• 버팀목/디딤돌은 소득, 자산 요건이 있어요</li>
             <li>• 대출 한도는 보증금의 70~80% 정도예요</li>
           </ul>
+        </div>
+
+        {/* 전세대출 월 이자 비교표 */}
+        <div className="mt-6 p-4 bg-neutral-50 rounded-xl border border-neutral-200">
+          <h4 className="font-bold text-neutral-800 mb-3 text-center">📊 전세대출 월 이자 비교표 (만기일시상환)</h4>
+          <p className="text-xs text-neutral-500 text-center mb-3">금리별 × 대출금액별 월 이자 (2년 기준)</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">금리 ↓ / 대출금 →</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">1억</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">1.5억</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">2억</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">2.5억</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">3억</th>
+                  <th className="py-2 px-2 text-center text-neutral-600 font-medium border border-gray-300 hidden md:table-cell">한줄평</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-green-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-green-700 border border-gray-300">2.0%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">16.7만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">25만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">33.3만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">41.7만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">50만</td>
+                  <td className="py-2 px-2 text-center text-green-600 text-xs border border-gray-300 hidden md:table-cell">청년 최저금리!</td>
+                </tr>
+                <tr className="bg-emerald-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-emerald-700 border border-gray-300">2.5%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">20.8만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">31.3만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">41.7만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">52.1만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">62.5만</td>
+                  <td className="py-2 px-2 text-center text-emerald-600 text-xs border border-gray-300 hidden md:table-cell">디딤돌 평균</td>
+                </tr>
+                <tr className="bg-blue-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-blue-700 border border-gray-300">3.0%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">25만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">37.5만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">50만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">62.5만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">75만</td>
+                  <td className="py-2 px-2 text-center text-blue-600 text-xs border border-gray-300 hidden md:table-cell">버팀목 평균</td>
+                </tr>
+                <tr className="bg-white border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-neutral-700 border border-gray-300">3.5%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">29.2만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">43.8만</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">58.3만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">72.9만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">87.5만</td>
+                  <td className="py-2 px-2 text-center text-neutral-600 text-xs border border-gray-300 hidden md:table-cell">시중은행 평균</td>
+                </tr>
+                <tr className="bg-yellow-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-yellow-700 border border-gray-300">4.0%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">33.3만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">50만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">66.7만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">83.3만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">100만</td>
+                  <td className="py-2 px-2 text-center text-yellow-600 text-xs border border-gray-300 hidden md:table-cell">100만원 돌파!</td>
+                </tr>
+                <tr className="bg-red-50">
+                  <td className="py-2 px-2 text-center font-medium text-red-700 border border-gray-300">4.5%</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">37.5만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">56.3만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">75만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">93.8만</td>
+                  <td className="py-2 px-2 text-center font-bold text-red-600 border border-gray-300 hidden sm:table-cell">112.5만</td>
+                  <td className="py-2 px-2 text-center text-red-600 text-xs border border-gray-300 hidden md:table-cell">부담 증가</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
+            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+              <li>• 청년/신혼부부는 디딤돌·버팀목으로 금리 1~2% 절약 가능!</li>
+              <li>• 2억 대출 시 금리 1% 차이 = 월 16.7만원 차이</li>
+              <li>• 전세보증보험 가입하면 금리 우대 0.1~0.2%p 가능</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

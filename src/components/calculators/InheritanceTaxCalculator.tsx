@@ -409,6 +409,86 @@ export default function InheritanceTaxCalculator() {
           <p>※ 자진신고 시 산출세액의 3%를 공제받아요.</p>
           <p>※ 신고 기한: 상속개시일이 속한 달의 말일부터 6개월</p>
         </div>
+
+        {/* 상속재산별 예상세액표 */}
+        <div className="mt-8 p-4 bg-neutral-50 rounded-xl border border-neutral-200">
+          <h4 className="font-bold text-neutral-800 mb-3 text-center">📊 상속재산별 예상세액표</h4>
+          <p className="text-xs text-neutral-500 mb-4 text-center">배우자+자녀2명 기준, 배우자 법정상속분 상속 (자진신고 3% 공제 포함)</p>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">상속재산</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">총 공제</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">과세표준</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">예상세액</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">실효세율</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-green-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">5억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">10억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">0원</td>
+                  <td className="py-2 px-2 text-center font-bold text-green-600 border border-gray-300">0원</td>
+                  <td className="py-2 px-2 text-center text-green-600 border border-gray-300 hidden sm:table-cell">0%</td>
+                </tr>
+                <tr className="border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">10억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">10억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">0원</td>
+                  <td className="py-2 px-2 text-center font-bold text-green-600 border border-gray-300">0원</td>
+                  <td className="py-2 px-2 text-center text-green-600 border border-gray-300 hidden sm:table-cell">0%</td>
+                </tr>
+                <tr className="bg-emerald-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-bold text-emerald-700 border border-gray-300">15억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">11.8억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">3.2억원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">4,268만원</td>
+                  <td className="py-2 px-2 text-center text-emerald-600 border border-gray-300 hidden sm:table-cell">2.8%</td>
+                </tr>
+                <tr className="border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">20억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">13.6억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">6.4억원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">1.29억원</td>
+                  <td className="py-2 px-2 text-center text-emerald-600 border border-gray-300 hidden sm:table-cell">6.4%</td>
+                </tr>
+                <tr className="bg-amber-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-bold text-amber-700 border border-gray-300">30억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">18.2억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">11.8억원</td>
+                  <td className="py-2 px-2 text-center font-bold text-amber-600 border border-gray-300">3.25억원</td>
+                  <td className="py-2 px-2 text-center text-amber-600 border border-gray-300 hidden sm:table-cell">10.8%</td>
+                </tr>
+                <tr className="bg-red-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-bold text-red-700 border border-gray-300">50억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">27.3억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">22.7억원</td>
+                  <td className="py-2 px-2 text-center font-bold text-red-600 border border-gray-300">7.54억원</td>
+                  <td className="py-2 px-2 text-center text-red-600 border border-gray-300 hidden sm:table-cell">15.1%</td>
+                </tr>
+                <tr className="bg-red-100">
+                  <td className="py-2 px-2 text-center font-bold text-red-700 border border-gray-300">100억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">35억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">65억원</td>
+                  <td className="py-2 px-2 text-center font-bold text-red-600 border border-gray-300">28.4억원</td>
+                  <td className="py-2 px-2 text-center text-red-600 border border-gray-300 hidden sm:table-cell">28.4%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
+            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+              <li>• <strong>배우자 있으면</strong> 공제가 최소 5억 추가 (최대 30억)</li>
+              <li>• 10억 이하 상속재산은 대부분 <strong>세금 0원</strong></li>
+              <li>• 채무, 장례비용도 <strong>공제 대상</strong>이에요</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -469,7 +469,7 @@ function ParttimeWorkerCalculator() {
           label="시급"
           value={hourlyWage}
           onChange={setHourlyWage}
-          description="2026년 최저시급 10,360원"
+          description="2026년 최저시급 10,320원"
         />
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 py-3 px-4 border-b border-neutral-100">
           <div className="sm:w-48 flex-shrink-0">
@@ -632,6 +632,78 @@ export default function SeverancePayCalculator() {
         <p>* 이 계산기는 참고용이에요. 실제 퇴직금과 다를 수 있어요.</p>
         <p>* 정확한 계산은 <a href="https://www.moel.go.kr/retirementpayCal.do" target="_blank" rel="noopener noreferrer" className="text-emerald-600 underline">고용노동부 퇴직금 계산기</a>를 이용하세요.</p>
         <p>* 퇴직금은 퇴직일로부터 14일 이내에 지급해야 해요.</p>
+      </div>
+
+      {/* 근속연수별 퇴직금 예상표 */}
+      <div className="px-6 pb-6">
+        <div className="p-4 bg-neutral-50 rounded-xl border border-neutral-200">
+          <h4 className="font-bold text-neutral-800 mb-3 text-center">📊 근속연수별 퇴직금 예상표</h4>
+          <p className="text-xs text-neutral-500 text-center mb-3">월급(기본급+수당) 기준, 상여금·연차수당 미포함</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">근속 ↓ / 월급 →</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">250만원</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">300만원</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">350만원</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">400만원</th>
+                  <th className="py-2 px-2 text-center text-neutral-600 font-medium border border-gray-300 hidden md:table-cell">한줄평</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-white border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-neutral-700 border border-gray-300">1년</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">250만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">300만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">350만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">400만</td>
+                  <td className="py-2 px-2 text-center text-neutral-600 text-xs border border-gray-300 hidden md:table-cell">약 1개월치</td>
+                </tr>
+                <tr className="bg-green-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-green-700 border border-gray-300">3년</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">750만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">900만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">1,050만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">1,200만</td>
+                  <td className="py-2 px-2 text-center text-green-600 text-xs border border-gray-300 hidden md:table-cell">목돈 1천 돌파!</td>
+                </tr>
+                <tr className="bg-emerald-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-emerald-700 border border-gray-300">5년</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">1,250만</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">1,500만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">1,750만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">2,000만</td>
+                  <td className="py-2 px-2 text-center text-emerald-600 text-xs border border-gray-300 hidden md:table-cell">목돈 2천 가능!</td>
+                </tr>
+                <tr className="bg-blue-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-blue-700 border border-gray-300">10년</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">2,500만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">3,000만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">3,500만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">4,000만</td>
+                  <td className="py-2 px-2 text-center text-blue-600 text-xs border border-gray-300 hidden md:table-cell">차 바꿀 돈!</td>
+                </tr>
+                <tr className="bg-purple-50">
+                  <td className="py-2 px-2 text-center font-medium text-purple-700 border border-gray-300">20년</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">5,000만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">6,000만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">7,000만</td>
+                  <td className="py-2 px-2 text-center font-bold text-purple-600 border border-gray-300 hidden sm:table-cell">8,000만</td>
+                  <td className="py-2 px-2 text-center text-purple-600 text-xs border border-gray-300 hidden md:table-cell">집 계약금 수준!</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
+            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+              <li>• 퇴직금 = 월급 × 근속연수 (단순 계산)</li>
+              <li>• 상여금·연차수당까지 포함하면 실제 더 많이 받아요</li>
+              <li>• 알바도 주 15시간 이상 + 1년 이상이면 퇴직금 발생!</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );

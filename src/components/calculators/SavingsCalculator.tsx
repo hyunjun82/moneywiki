@@ -218,13 +218,79 @@ export default function SavingsCalculator() {
           </div>
         )}
 
-        <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-emerald-100">
+        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
           <h4 className="font-medium text-emerald-800 mb-2">적금 과세 유형</h4>
-          <ul className="text-sm text-amber-700 space-y-1">
+          <ul className="text-sm text-emerald-700 space-y-1">
             <li>• 일반과세: 이자소득세 14% + 지방소득세 1.4% = 15.4%</li>
             <li>• 세금우대: 농어촌특별세 1.4% + 이자소득세 9.5% (일부 조건)</li>
             <li>• 비과세: 청년희망적금, 주택청약 등 특정 상품</li>
           </ul>
+        </div>
+
+        {/* 월납입금별 만기금액 비교표 */}
+        <div className="mt-8 p-4 bg-neutral-50 rounded-xl border border-neutral-200">
+          <h4 className="font-bold text-neutral-800 mb-3 text-center">📊 1년 적금 만기수령액 비교표</h4>
+          <p className="text-xs text-neutral-500 mb-4 text-center">일반과세 15.4%, 금리 4% 기준</p>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">월 납입금</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">총 납입금</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">세후이자</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">만기수령액</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">한줄평</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">10만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">120만</td>
+                  <td className="py-2 px-2 text-center text-emerald-600 border border-gray-300">2.2만</td>
+                  <td className="py-2 px-2 text-center font-bold border border-gray-300">122.2만</td>
+                  <td className="py-2 px-2 text-center text-gray-500 border border-gray-300 hidden sm:table-cell">소소한 시작</td>
+                </tr>
+                <tr className="bg-emerald-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">20만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">240만</td>
+                  <td className="py-2 px-2 text-center text-emerald-600 border border-gray-300">4.4만</td>
+                  <td className="py-2 px-2 text-center font-bold border border-gray-300">244.4만</td>
+                  <td className="py-2 px-2 text-center text-gray-500 border border-gray-300 hidden sm:table-cell">커피값 저축</td>
+                </tr>
+                <tr className="border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">30만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">360만</td>
+                  <td className="py-2 px-2 text-center text-emerald-600 border border-gray-300">6.6만</td>
+                  <td className="py-2 px-2 text-center font-bold border border-gray-300">366.6만</td>
+                  <td className="py-2 px-2 text-center text-gray-500 border border-gray-300 hidden sm:table-cell">월급쟁이 평균</td>
+                </tr>
+                <tr className="bg-amber-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-bold text-amber-700 border border-gray-300">50만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">600만</td>
+                  <td className="py-2 px-2 text-center text-emerald-600 border border-gray-300">11만</td>
+                  <td className="py-2 px-2 text-center font-bold text-amber-600 border border-gray-300">611만</td>
+                  <td className="py-2 px-2 text-center text-amber-600 border border-gray-300 hidden sm:table-cell">알뜰 저축러</td>
+                </tr>
+                <tr className="bg-red-50">
+                  <td className="py-2 px-2 text-center font-bold text-red-700 border border-gray-300">100만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">1,200만</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">22만</td>
+                  <td className="py-2 px-2 text-center font-bold text-red-600 border border-gray-300">1,222만</td>
+                  <td className="py-2 px-2 text-center text-red-600 border border-gray-300 hidden sm:table-cell">목돈 1천 돌파!</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
+            <p className="text-xs text-emerald-800 font-medium">💡 적금 꿀팁</p>
+            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+              <li>• 적금은 <strong>월초에 입금</strong>해야 이자 조금이라도 더!</li>
+              <li>• 비과세 적금 찾으면 세금 15.4% 절약</li>
+              <li>• <strong>자동이체</strong> 설정하면 우대금리 0.1~0.3% 추가</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

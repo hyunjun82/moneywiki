@@ -17,12 +17,12 @@ export default function InsuranceCalculator() {
   const [monthlySalary, setMonthlySalary] = useState<number>(0);
   const [result, setResult] = useState<InsuranceResult | null>(null);
 
-  // 2026년 4대보험 요율
+  // 2026년 4대보험 요율 (2026.1.1 시행)
   const RATES = {
-    nationalPension: { employee: 0.045, employer: 0.045 },
-    healthInsurance: { employee: 0.03545, employer: 0.03545 },
-    longTermCareRate: 0.1295,
-    employmentInsurance: { employee: 0.009, employer: 0.009 },
+    nationalPension: { employee: 0.0475, employer: 0.0475 }, // 9.5% (각 4.75%)
+    healthInsurance: { employee: 0.03595, employer: 0.03595 }, // 7.19% (각 3.595%)
+    longTermCareRate: 0.1314, // 건강보험료의 13.14%
+    employmentInsurance: { employee: 0.009, employer: 0.009 }, // 1.8% (각 0.9%)
     industrialAccident: 0.007, // 업종 평균
   };
 
@@ -32,8 +32,8 @@ export default function InsuranceCalculator() {
       return;
     }
 
-    // 국민연금 (상한액 590만원 기준월소득, 상한보험료 265,500원)
-    const pensionBase = Math.min(Math.max(monthlySalary, 370000), 5900000);
+    // 국민연금 (상한액 637만원 기준월소득, 2025.7~2026.6 적용)
+    const pensionBase = Math.min(Math.max(monthlySalary, 400000), 6370000);
     const nationalPension = {
       employee: Math.round(pensionBase * RATES.nationalPension.employee),
       employer: Math.round(pensionBase * RATES.nationalPension.employer),
@@ -143,19 +143,19 @@ export default function InsuranceCalculator() {
                 </thead>
                 <tbody className="divide-y divide-green-100">
                   <tr>
-                    <td className="py-3 text-neutral-700">국민연금 (4.5%)</td>
+                    <td className="py-3 text-neutral-700">국민연금 (4.75%)</td>
                     <td className="py-3 text-right">{formatNumber(result.nationalPension.employee)}원</td>
                     <td className="py-3 text-right">{formatNumber(result.nationalPension.employer)}원</td>
                     <td className="py-3 text-right font-medium">{formatNumber(result.nationalPension.total)}원</td>
                   </tr>
                   <tr>
-                    <td className="py-3 text-neutral-700">건강보험 (3.545%)</td>
+                    <td className="py-3 text-neutral-700">건강보험 (3.595%)</td>
                     <td className="py-3 text-right">{formatNumber(result.healthInsurance.employee)}원</td>
                     <td className="py-3 text-right">{formatNumber(result.healthInsurance.employer)}원</td>
                     <td className="py-3 text-right font-medium">{formatNumber(result.healthInsurance.total)}원</td>
                   </tr>
                   <tr>
-                    <td className="py-3 text-neutral-700">장기요양 (12.95%)</td>
+                    <td className="py-3 text-neutral-700">장기요양 (13.14%)</td>
                     <td className="py-3 text-right">{formatNumber(result.longTermCare.employee)}원</td>
                     <td className="py-3 text-right">{formatNumber(result.longTermCare.employer)}원</td>
                     <td className="py-3 text-right font-medium">{formatNumber(result.longTermCare.total)}원</td>
@@ -197,13 +197,92 @@ export default function InsuranceCalculator() {
           </div>
         )}
 
-        <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-emerald-100">
+        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
           <h4 className="font-medium text-emerald-800 mb-2">이용안내</h4>
-          <ul className="text-sm text-amber-700 space-y-1">
+          <ul className="text-sm text-emerald-700 space-y-1">
             <li>• 2026년 4대보험 요율 기준으로 계산해요</li>
-            <li>• 국민연금은 월 37만원~590만원 기준소득월액에서 계산해요</li>
+            <li>• 국민연금은 월 40만원~637만원 기준소득월액에서 계산해요</li>
             <li>• 산재보험료율은 업종 평균(0.7%)이며, 실제는 업종별로 달라요</li>
           </ul>
+        </div>
+
+        {/* 월급별 4대보험료 비교표 */}
+        <div className="mt-6 p-4 bg-neutral-50 rounded-xl border border-neutral-200">
+          <h4 className="font-bold text-neutral-800 mb-3 text-center">📊 월급별 4대보험료 비교표 (2026년 기준)</h4>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">월급</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">국민연금</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">건강+장기요양</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">고용보험</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">본인부담 합계</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden md:table-cell">한줄평</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-white">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">200만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">95,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">81,600원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">18,000원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 19.5만원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">최저임금급 🌱</td>
+                </tr>
+                <tr className="bg-green-50">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">250만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">118,750원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">102,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">22,500원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 24.3만원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">신입사원 👶</td>
+                </tr>
+                <tr className="bg-white">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">300만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">142,500원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">122,400원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">27,000원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 29.2만원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">3년차 평균 💼</td>
+                </tr>
+                <tr className="bg-blue-50">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">400만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">190,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">163,200원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">36,000원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 38.9만원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">대리급 ⭐</td>
+                </tr>
+                <tr className="bg-white">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">500만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">237,500원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">204,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">45,000원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 48.7만원</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">과장급 🌟</td>
+                </tr>
+                <tr className="bg-yellow-50">
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">637만원+</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">302,575원<br/><span className="text-xs text-gray-500">상한</span></td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">비례증가</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">비례증가</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 56만원+</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">연금 상한 도달! 🎯</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-gray-500 mt-2 text-center">※ 국민연금 4.75%, 건강보험 3.595%, 장기요양 13.14%(건보의), 고용보험 0.9%</p>
+
+          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
+            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+              <li>• 월급의 약 9.7%가 4대보험료로 빠져요 (2026년 인상)</li>
+              <li>• 국민연금은 월 637만원 초과해도 302,575원이 최대!</li>
+              <li>• 회사도 같은 금액을 부담해서 총 19.4%가 적립돼요</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

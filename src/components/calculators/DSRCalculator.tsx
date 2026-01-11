@@ -368,19 +368,90 @@ export default function DSRCalculator() {
         </div>
 
         {/* 이용안내 */}
-        <div className="mt-4 p-4 bg-amber-50 rounded-xl border border-emerald-100">
+        <div className="mt-4 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
           <h4 className="font-medium text-emerald-800 mb-2 flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             이용안내
           </h4>
-          <ul className="text-sm text-amber-700 space-y-1">
+          <ul className="text-sm text-emerald-700 space-y-1">
             <li>• DSR = (연간 모든 대출 원리금 상환액 ÷ 연 소득) × 100</li>
             <li>• 신용대출, 카드론, 학자금 대출 등 모든 대출이 포함돼요</li>
             <li>• DSR 40% 초과 시 은행 대출이 어려워요</li>
             <li>• 실제 한도는 은행마다 다를 수 있어요</li>
           </ul>
+        </div>
+
+        {/* 연소득별 최대 대출 가능액표 */}
+        <div className="mt-6 p-4 bg-neutral-50 rounded-xl border border-neutral-200">
+          <h4 className="font-bold text-neutral-800 mb-3 text-center">📊 연소득별 최대 대출 가능액 (DSR 40% 기준)</h4>
+          <p className="text-xs text-neutral-500 text-center mb-3">금리 4%, 30년 원리금균등상환, 기존 대출 없음 기준</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">연소득</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">연간한도</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">월상환가능</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">최대대출액</th>
+                  <th className="py-2 px-2 text-center text-neutral-600 font-medium border border-gray-300 hidden sm:table-cell">한줄평</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-white border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-neutral-700 border border-gray-300">3천만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">1,200만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">100만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">약 2.1억</td>
+                  <td className="py-2 px-2 text-center text-neutral-600 text-xs border border-gray-300 hidden sm:table-cell">신입 평균</td>
+                </tr>
+                <tr className="bg-green-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-green-700 border border-gray-300">4천만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">1,600만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">133만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">약 2.8억</td>
+                  <td className="py-2 px-2 text-center text-green-600 text-xs border border-gray-300 hidden sm:table-cell">3억 근접!</td>
+                </tr>
+                <tr className="bg-emerald-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-emerald-700 border border-gray-300">5천만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">2,000만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">167만</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 3.5억</td>
+                  <td className="py-2 px-2 text-center text-emerald-600 text-xs border border-gray-300 hidden sm:table-cell">직장인 평균</td>
+                </tr>
+                <tr className="bg-blue-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-blue-700 border border-gray-300">6천만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">2,400만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">200만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">약 4.2억</td>
+                  <td className="py-2 px-2 text-center text-blue-600 text-xs border border-gray-300 hidden sm:table-cell">4억 돌파!</td>
+                </tr>
+                <tr className="bg-indigo-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-indigo-700 border border-gray-300">8천만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">3,200만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">267만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">약 5.6억</td>
+                  <td className="py-2 px-2 text-center text-indigo-600 text-xs border border-gray-300 hidden sm:table-cell">중산층 목표</td>
+                </tr>
+                <tr className="bg-purple-50">
+                  <td className="py-2 px-2 text-center font-medium text-purple-700 border border-gray-300">1억원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">4,000만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">333만</td>
+                  <td className="py-2 px-2 text-center font-bold text-purple-600 border border-gray-300">약 7억</td>
+                  <td className="py-2 px-2 text-center text-purple-600 text-xs border border-gray-300 hidden sm:table-cell">고소득자</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
+            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+              <li>• 기존 대출이 있으면 최대 대출액이 그만큼 줄어요</li>
+              <li>• 금리가 낮을수록 같은 월상환액으로 더 많이 빌릴 수 있어요</li>
+              <li>• 부부합산 소득으로 계산하면 한도가 크게 늘어나요</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

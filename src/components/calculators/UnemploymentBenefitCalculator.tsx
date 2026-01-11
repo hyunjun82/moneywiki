@@ -41,7 +41,7 @@ function calculateDailyBenefit(avgDailyWage: number): {
   isLowerLimit: boolean;
 } {
   const rawBenefit = avgDailyWage * 0.6;
-  const upperLimit = 66000; // 2026년 상한액
+  const upperLimit = 68100; // 2026년 상한액 (2026.1.1 인상)
   const lowerLimit = 66048; // 최저임금 10,320원 × 80% × 8시간
 
   if (rawBenefit >= upperLimit) {
@@ -291,7 +291,7 @@ export default function UnemploymentBenefitCalculator() {
             <div className="flex justify-between py-2 border-b border-neutral-100 bg-amber-50 -mx-4 px-4">
               <span className="text-amber-700 font-medium">
                 {isUpperLimit
-                  ? "③ 상한액 적용 (1일 66,000원 초과)"
+                  ? "③ 상한액 적용 (1일 68,100원 초과)"
                   : "③ 하한액 적용 (최저임금 80%)"}
               </span>
               <span className="font-bold text-amber-700">
@@ -398,7 +398,73 @@ export default function UnemploymentBenefitCalculator() {
           </a>
           에서 확인하세요.
         </p>
-        <p>* 2026년 기준: 상한액 66,000원, 하한액 66,048원</p>
+        <p>* 2026년 기준: 상한액 68,100원, 하한액 66,048원</p>
+      </div>
+
+      {/* 월급별 실업급여 비교표 */}
+      <div className="px-6 pb-6">
+        <div className="p-4 bg-neutral-50 rounded-xl border border-neutral-200">
+          <h4 className="font-bold text-neutral-800 mb-3 text-center">📊 월급별 실업급여 비교표 (2026년)</h4>
+          <p className="text-xs text-neutral-500 text-center mb-3">고용보험 3~5년 가입, 50세 미만 기준 (180일 수급)</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">월급 (세전)</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">1일 급여</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">월 예상</th>
+                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">180일 총액</th>
+                  <th className="py-2 px-2 text-center text-neutral-600 font-medium border border-gray-300 hidden md:table-cell">한줄평</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-white border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-neutral-700 border border-gray-300">200만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">66,048원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">198만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">1,189만</td>
+                  <td className="py-2 px-2 text-center text-neutral-600 text-xs border border-gray-300 hidden md:table-cell">하한액 적용</td>
+                </tr>
+                <tr className="bg-green-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-green-700 border border-gray-300">250만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">66,048원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">198만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">1,189만</td>
+                  <td className="py-2 px-2 text-center text-green-600 text-xs border border-gray-300 hidden md:table-cell">하한액 적용</td>
+                </tr>
+                <tr className="bg-emerald-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-emerald-700 border border-gray-300">300만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">66,048원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">198만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">1,189만</td>
+                  <td className="py-2 px-2 text-center text-emerald-600 text-xs border border-gray-300 hidden md:table-cell">하한액 적용</td>
+                </tr>
+                <tr className="bg-blue-50 border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-blue-700 border border-gray-300">350만원</td>
+                  <td className="py-2 px-2 text-center font-bold text-blue-600 border border-gray-300">68,100원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">204만</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">1,226만</td>
+                  <td className="py-2 px-2 text-center text-blue-600 text-xs border border-gray-300 hidden md:table-cell">상한액 적용</td>
+                </tr>
+                <tr className="bg-purple-50">
+                  <td className="py-2 px-2 text-center font-medium text-purple-700 border border-gray-300">500만원+</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">68,100원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">204만</td>
+                  <td className="py-2 px-2 text-center font-bold text-purple-600 border border-gray-300 hidden sm:table-cell">1,226만</td>
+                  <td className="py-2 px-2 text-center text-purple-600 text-xs border border-gray-300 hidden md:table-cell">월급 많아도 동일</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
+            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+              <li>• 2026년 상한액 68,100원 = 월급 340만원 이상은 동일</li>
+              <li>• 50세 이상/장애인은 수급일수가 30일 더 길어요</li>
+              <li>• 고용보험 10년 이상이면 최대 240~270일까지!</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );
