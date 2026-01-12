@@ -584,7 +584,7 @@ export default async function WikiPage({ params }: PageProps) {
                 {doc.keywords.map((keyword) => (
                   <Link
                     key={keyword}
-                    href={`/search?q=${encodeURIComponent(keyword)}`}
+                    href={`/w/${encodeURIComponent(keyword)}`}
                     className="px-3 py-1 text-sm bg-neutral-100 text-neutral-600 rounded-full hover:bg-neutral-200 transition-colors"
                   >
                     #{keyword}

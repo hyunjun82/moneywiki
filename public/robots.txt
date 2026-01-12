@@ -2,6 +2,10 @@
 User-agent: *
 Allow: /
 
+# 검색 결과 페이지 차단 (SEO 최적화)
+Disallow: /search
+Disallow: /search?*
+
 # Sitemap
 Sitemap: https://www.jjyu.co.kr/sitemap.xml
 

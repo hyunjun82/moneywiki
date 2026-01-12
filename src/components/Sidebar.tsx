@@ -45,7 +45,7 @@ export default function Sidebar() {
           {mockPopularSearches.map((item) => (
             <li key={item.rank}>
               <Link
-                href={`/search?q=${encodeURIComponent(item.keyword)}`}
+                href={`/w/${encodeURIComponent(item.keyword)}`}
                 className="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 transition-colors"
               >
                 <span className={`w-6 h-6 rounded-md flex items-center justify-center text-xs font-bold ${
