@@ -490,7 +490,7 @@ export default async function WikiPage({ params }: PageProps) {
           </div>
 
           {/* 계산기 컴포넌트 (특정 페이지용) */}
-          {decodeURIComponent(slug) === "연말정산-모의계산-하는법" && (
+          {decodeURIComponent(slug) === "연말정산-계산기" && (
             <div className="mb-10">
               <YearEndTaxCalculator />
             </div>

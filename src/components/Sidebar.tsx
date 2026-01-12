@@ -137,10 +137,10 @@ export default function Sidebar() {
       <div className="mt-4 p-4 bg-[#2d5a45]/5 rounded-xl">
         <h3 className="text-xs font-semibold text-[#2d5a45] mb-3">빠른 링크</h3>
         <div className="flex flex-wrap gap-2">
-          <Link href="/calc/severance" className="px-3 py-1.5 bg-white text-xs text-gray-600 rounded-lg hover:bg-[#2d5a45] hover:text-white transition-colors border border-gray-100">
+          <Link href="/w/퇴직금-계산기" className="px-3 py-1.5 bg-white text-xs text-gray-600 rounded-lg hover:bg-[#2d5a45] hover:text-white transition-colors border border-gray-100">
             퇴직금계산
           </Link>
-          <Link href="/calc/salary" className="px-3 py-1.5 bg-white text-xs text-gray-600 rounded-lg hover:bg-[#2d5a45] hover:text-white transition-colors border border-gray-100">
+          <Link href="/w/연봉-실수령액-계산기" className="px-3 py-1.5 bg-white text-xs text-gray-600 rounded-lg hover:bg-[#2d5a45] hover:text-white transition-colors border border-gray-100">
             연봉계산기
           </Link>
           <Link href="/w/연말정산" className="px-3 py-1.5 bg-white text-xs text-gray-600 rounded-lg hover:bg-[#2d5a45] hover:text-white transition-colors border border-gray-100">

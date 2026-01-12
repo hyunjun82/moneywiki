@@ -13,7 +13,7 @@ const categoryEmoji: Record<string, string> = {
 // 계산기 목록 (카테고리별)
 const calculators = {
   "세금": [
-    { name: "연말정산 계산기", slug: "연말정산-모의계산-하는법", icon: "📊" },
+    { name: "연말정산 계산기", slug: "연말정산-계산기", icon: "📊" },
     { name: "소득세 계산기", slug: "근로소득세-계산기", icon: "💵" },
     { name: "재산세 계산기", slug: "재산세-계산기", icon: "🏘️" },
     { name: "자동차세 계산기", slug: "자동차세-계산기", icon: "🚗" },

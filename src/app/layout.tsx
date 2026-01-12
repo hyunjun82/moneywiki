@@ -101,10 +101,10 @@ function Footer() {
           <div>
             <h3 className="text-sm font-semibold mb-4">계산기</h3>
             <ul className="space-y-3 text-sm text-neutral-500">
-              <li><Link href="/calc/severance" className="hover:text-black transition-colors">퇴직금 계산기</Link></li>
-              <li><Link href="/calc/salary" className="hover:text-black transition-colors">연봉 실수령액</Link></li>
-              <li><Link href="/calc/rent" className="hover:text-black transition-colors">전월세 전환</Link></li>
-              <li><Link href="/calc/loan" className="hover:text-black transition-colors">대출이자 계산</Link></li>
+              <li><Link href="/w/퇴직금-계산기" className="hover:text-black transition-colors">퇴직금 계산기</Link></li>
+              <li><Link href="/w/연봉-실수령액-계산기" className="hover:text-black transition-colors">연봉 실수령액</Link></li>
+              <li><Link href="/w/전월세-전환율" className="hover:text-black transition-colors">전월세 전환</Link></li>
+              <li><Link href="/w/대출이자-계산기" className="hover:text-black transition-colors">대출이자 계산</Link></li>
             </ul>
           </div>
           <div>
