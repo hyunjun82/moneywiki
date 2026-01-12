@@ -427,7 +427,7 @@ export default async function WikiPage({ params }: PageProps) {
           )}
 
           {/* 목차 - 나무위키 스타일 (계산기 페이지에서는 숨김) */}
-          {!["퇴직금-계산기", "실업급여-계산기", "취득세-계산기", "양도소득세-계산기", "종합부동산세-계산기", "재산세-계산기", "중개수수료-계산기", "평수-계산기", "전세대출-계산기", "주택담보대출-계산기", "DSR-계산기", "연봉-실수령액-계산기", "4대보험료-계산기", "근로소득세-계산기", "주휴수당-계산기", "시급-계산기", "대출이자-계산기", "대출상환-계산기", "적금-계산기", "예금이자-계산기", "복리-계산기", "연봉-계산기", "증여세-계산기", "국민연금-수령액-계산기", "주식-수익률-계산기", "할부-이자-계산기", "상속세-계산기", "자동차세-계산기"].includes(decodeURIComponent(slug)) && toc.length >= 2 && (() => {
+          {doc.schemaType !== "calculator" && toc.length >= 2 && (() => {
             let h2Counter = 0;
             let h3Counter = 0;
             return (
@@ -463,7 +463,7 @@ export default async function WikiPage({ params }: PageProps) {
           })()}
 
           {/* 3줄 요약 (계산기 페이지에서는 숨김) */}
-          {!["퇴직금-계산기", "실업급여-계산기", "취득세-계산기", "양도소득세-계산기", "종합부동산세-계산기", "재산세-계산기", "중개수수료-계산기", "평수-계산기", "전세대출-계산기", "주택담보대출-계산기", "DSR-계산기", "연봉-실수령액-계산기", "4대보험료-계산기", "근로소득세-계산기", "주휴수당-계산기", "시급-계산기", "대출이자-계산기", "대출상환-계산기", "적금-계산기", "예금이자-계산기", "복리-계산기", "연봉-계산기", "증여세-계산기", "국민연금-수령액-계산기", "주식-수익률-계산기", "할부-이자-계산기", "상속세-계산기", "자동차세-계산기"].includes(decodeURIComponent(slug)) && doc.summary && (
+          {doc.schemaType !== "calculator" && doc.summary && (
             <div className="mb-8 p-6 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl border border-emerald-100">
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-xl">💡</span>

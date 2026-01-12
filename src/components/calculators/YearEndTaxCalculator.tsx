@@ -363,22 +363,22 @@ export default function YearEndTaxCalculator() {
       {/* 1. 기본입력사항 */}
       <div className="border-b border-neutral-200">
         <div className="bg-neutral-50 px-6 py-3 border-b border-neutral-200">
-          <h3 className="font-semibold text-neutral-800">1. 기본입력사항</h3>
+          <h3 className="font-semibold text-neutral-800">기본입력사항</h3>
         </div>
         <InputField
-          label="21. 총급여"
+          label="총급여"
           value={totalSalary}
           onChange={setTotalSalary}
           description="연간 급여 + 상여 - 비과세소득"
         />
         <InputField
-          label="22. 근로소득공제"
+          label="근로소득공제"
           value={incomeDeduction}
           readOnly
           description="자동계산"
         />
         <InputField
-          label="23. 근로소득금액"
+          label="근로소득금액"
           value={earnedIncome}
           readOnly
           description="총급여 - 근로소득공제"
@@ -388,36 +388,36 @@ export default function YearEndTaxCalculator() {
       {/* 2. 기본공제 */}
       <div className="border-b border-neutral-200">
         <div className="bg-neutral-50 px-6 py-3 border-b border-neutral-200">
-          <h3 className="font-semibold text-neutral-800">2. 기본공제 (연간소득금액 100만원 이하)</h3>
+          <h3 className="font-semibold text-neutral-800">기본공제 (연간소득금액 100만원 이하)</h3>
         </div>
         <InputField
-          label="24. 본인"
+          label="본인"
           value={1500000}
           readOnly
           description="자동적용"
         />
         <SelectField
-          label="25. 배우자공제"
+          label="배우자공제"
           value={hasSpouse}
           onChange={setHasSpouse}
           description="연봉 500만원 이하 또는 소득금액 100만원 이하"
         />
         <NumberSelect
-          label="26. 직계존속 (부모님)"
+          label="직계존속 (부모님)"
           value={numParents}
           onChange={setNumParents}
           max={4}
           description="만60세 이상, 1964.12.31 이전 출생"
         />
         <NumberSelect
-          label="26. 자녀"
+          label="자녀"
           value={numChildren}
           onChange={setNumChildren}
           max={5}
           description="만20세 이하, 2004.1.1 이후 출생"
         />
         <NumberSelect
-          label="26. 형제자매"
+          label="형제자매"
           value={numSiblings}
           onChange={setNumSiblings}
           max={4}
@@ -434,10 +434,10 @@ export default function YearEndTaxCalculator() {
       {/* 4. 연금보험료공제 */}
       <div className="border-b border-neutral-200">
         <div className="bg-neutral-50 px-6 py-3 border-b border-neutral-200">
-          <h3 className="font-semibold text-neutral-800">4. 연금보험료공제 (근로자 부담분)</h3>
+          <h3 className="font-semibold text-neutral-800">연금보험료공제 (근로자 부담분)</h3>
         </div>
         <InputField
-          label="31. 국민연금"
+          label="국민연금"
           value={nationalPension}
           readOnly
           description="총급여 x 4.75% (2026년 기준, 자동계산)"
@@ -453,28 +453,28 @@ export default function YearEndTaxCalculator() {
       {/* 5. 특별소득공제 */}
       <div className="border-b border-neutral-200">
         <div className="bg-neutral-50 px-6 py-3 border-b border-neutral-200">
-          <h3 className="font-semibold text-neutral-800">5. 특별소득공제</h3>
+          <h3 className="font-semibold text-neutral-800">특별소득공제</h3>
         </div>
         <InputField
-          label="33-가. 건강보험료"
+          label="건강보험료"
           value={healthInsurance}
           readOnly
           description="자동계산"
         />
         <InputField
-          label="33-나. 고용보험료"
+          label="고용보험료"
           value={employmentInsurance}
           readOnly
           description="총급여 x 0.9%"
         />
         <InputField
-          label="34-가. 주택임차차입금 원리금상환액"
+          label="주택임차차입금 원리금상환액"
           value={rentLoanPrincipal}
           onChange={setRentLoanPrincipal}
           description="상환액 x 40%"
         />
         <InputField
-          label="34-나. 장기주택저당차입금 이자상환액"
+          label="장기주택저당차입금 이자상환액"
           value={mortgageInterest}
           onChange={setMortgageInterest}
           description="이자상환액 전액"
@@ -490,22 +490,22 @@ export default function YearEndTaxCalculator() {
       {/* 6. 그 밖의 소득공제 */}
       <div className="border-b border-neutral-200">
         <div className="bg-neutral-50 px-6 py-3 border-b border-neutral-200">
-          <h3 className="font-semibold text-neutral-800">6. 그 밖의 소득공제</h3>
+          <h3 className="font-semibold text-neutral-800">그 밖의 소득공제</h3>
         </div>
         <InputField
-          label="37. 개인연금저축"
+          label="개인연금저축"
           value={personalPension}
           onChange={setPersonalPension}
           description="불입액 x 40% (한도: 72만원)"
         />
         <InputField
-          label="39. 주택마련저축"
+          label="주택마련저축"
           value={housingDeposit}
           onChange={setHousingDeposit}
           description="총급여 7천만원 이하만"
         />
         <div className="bg-neutral-50 px-6 py-2 border-b border-neutral-200">
-          <span className="text-sm font-medium text-neutral-600">41. 신용카드 등 사용금액</span>
+          <span className="text-sm font-medium text-neutral-600">신용카드 등 사용금액</span>
           <span className="text-xs text-neutral-500 ml-2">(총급여 25% 초과분부터 공제)</span>
         </div>
         <InputField
