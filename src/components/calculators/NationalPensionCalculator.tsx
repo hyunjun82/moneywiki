@@ -42,12 +42,13 @@ export default function NationalPensionCalculator() {
 
   // 기본연금액 계산 (간소화 공식)
   const calculateBasicPension = (avgIncome: number, years: number): number => {
-    // 실제 공식: 기본연금액 = 1.2 × (A + B) × (1 + 0.05n/12)
-    // A: 전체가입자 평균소득월액, B: 본인 평균소득월액, n: 20년 초과 월수
-    // 여기서는 간소화된 공식 사용
+    // 국민연금 간소화 계산 공식
+    // 기본연금월액 = (A + B) × 소득대체율 계수
+    // A: 전체가입자 평균소득월액 (약 299만원), B: 본인 평균소득월액
+    // 20년 가입 시 약 17.9%의 소득대체율 적용
 
     const B = Math.min(avgIncome, 6370000); // 기준소득월액 상한 637만원 (2025.7~2026.6)
-    const baseAmount = 1.2 * (A_VALUE + B) / 2;
+    const baseAmount = (A_VALUE + B) * 0.179; // 간소화된 소득대체율 계수
 
     // 가입기간에 따른 지급률 (10년: 50%, 이후 1년당 5% 추가, 최대 100%)
     let paymentRate = 0;
