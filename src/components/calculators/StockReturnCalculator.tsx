@@ -138,7 +138,13 @@ export default function StockReturnCalculator() {
       return man > 0 ? `${eok}억 ${formatNumber(man)}만원` : `${eok}억원`;
     }
     if (Math.abs(num) >= 10000) {
-      return `${formatNumber(Math.round(num / 10000))}만원`;
+      // 소수점 첫째 자리까지 표시 (98.6만원 형태)
+      const manValue = num / 10000;
+      const rounded = Math.round(manValue * 10) / 10; // 소수점 첫째 자리까지
+      if (rounded % 1 === 0) {
+        return `${formatNumber(rounded)}만원`;
+      }
+      return `${rounded.toFixed(1)}만원`;
     }
     return `${formatNumber(num)}원`;
   };
@@ -527,50 +533,50 @@ export default function StockReturnCalculator() {
               <tbody>
                 <tr className="bg-white">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">100만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+9.6만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+19.6만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell text-green-600">+29.6만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell text-green-600">+49.5만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+9.7만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+19.7만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell text-green-600">+29.7만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell text-green-600">+49.7만원</td>
                   <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">소액 투자 🌱</td>
                 </tr>
                 <tr className="bg-green-50">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">500만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+48만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+98만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell text-green-600">+148만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell text-green-600">+248만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+48.7만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+98.6만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell text-green-600">+148.5만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell text-green-600">+248.3만원</td>
                   <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">적립식 투자 💰</td>
                 </tr>
                 <tr className="bg-white">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">1,000만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+96만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+196만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell text-green-600">+296만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell text-green-600">+496만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+97.5만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+197.3만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell text-green-600">+297.1만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell text-green-600">+496.6만원</td>
                   <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">본격 투자 ⭐</td>
                 </tr>
                 <tr className="bg-blue-50">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">3,000만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+288만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+588만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell text-green-600">+888만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell text-green-600">+1,488만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+292.5만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+591.8만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell text-green-600">+891.2만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell text-green-600">+1,489.9만원</td>
                   <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">중급 투자자 🌟</td>
                 </tr>
                 <tr className="bg-white">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">5,000만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+480만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+980만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell text-green-600">+1,480만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell text-green-600">+2,480만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+487.4만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+986.4만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell text-green-600">+1,485.3만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell text-green-600">+2,483.1만원</td>
                   <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">시드머니 확보 💎</td>
                 </tr>
                 <tr className="bg-purple-50">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">1억원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+960만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+1,960만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell text-green-600">+2,960만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell text-green-600">+4,960만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+974.9만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 text-green-600">+1,972.7만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell text-green-600">+2,970.6만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell text-green-600">+4,966.3만원</td>
                   <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">고액 투자자 🏆</td>
                 </tr>
               </tbody>
