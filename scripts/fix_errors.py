@@ -1,157 +1,185 @@
+#!/usr/bin/env python3
 """
-진짜 오류만 일괄 수정하는 스크립트
-- False positive 제외 (교육비 15%, 퇴직소득세 등)
-- 2026년 기준으로 확실한 오류만 수정
+위키 문서 오류 자동 수정 스크립트
+fact_checker.py 결과를 기반으로 자동 수정
 """
 
 import os
 import re
+import sys
+import json
 from pathlib import Path
-from typing import List, Tuple
 
-# ============================================================
-# 수정할 오류 패턴들 (확실한 것만!)
-# ============================================================
-
-FIXES = [
-    # 실업급여 하한액 (66,000원은 2025년 기준, 2026년은 66,048원)
-    # 단, "66,000원 → 68,100원" 같은 비교 표현은 제외
-    {
-        "pattern": r'(?<![→])\s*66,000원(?!\s*→)',
-        "replace": "66,048원",
-        "context_must_have": ["실업급여", "하한", "상한"],
-        "context_must_not_have": ["→", "에서"],
-        "description": "실업급여 하한액 66,000→66,048"
-    },
-
-    # 건강보험 요율 (3.545% → 3.595%)
-    {
-        "pattern": r'3\.545%',
-        "replace": "3.595%",
-        "context_must_have": ["건강보험", "요율"],
-        "description": "건강보험 요율 3.545→3.595"
-    },
-
-    # 장기요양 요율 (12.95% → 13.14%)
-    {
-        "pattern": r'12\.95%',
-        "replace": "13.14%",
-        "context_must_have": ["장기요양"],
-        "description": "장기요양 요율 12.95→13.14"
-    },
-
-    # 국민연금 요율 (4.5% → 4.75%)
-    # 비교 표현 "4.5% → 4.75%" 제외
-    {
-        "pattern": r'(?<!→\s)4\.5%(?!\s*→)',
-        "replace": "4.75%",
-        "context_must_have": ["국민연금", "요율"],
-        "context_must_not_have": ["→"],
-        "description": "국민연금 요율 4.5→4.75"
-    },
-]
-
-# 수정하지 않을 패턴 (False Positive)
-IGNORE_CONTEXTS = [
-    "교육비", "세액공제",  # 교육비 세액공제 15%는 맞음
-    "퇴직소득세", "실효세율",  # 퇴직소득세 실효세율은 다름
-    "원천징수", "해외주식",  # 해외주식 원천징수 15%는 맞음
-    "→",  # 비교 표현
-    "에서",  # "XX에서 YY로" 표현
-]
+class Colors:
+    RED = '\033[91m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    BLUE = '\033[94m'
+    RESET = '\033[0m'
 
 
-def should_fix_line(line: str, fix: dict) -> bool:
-    """이 줄을 수정해야 하는지 판단"""
-    # 필수 키워드 확인
-    if "context_must_have" in fix:
-        has_keyword = any(kw in line for kw in fix["context_must_have"])
-        if not has_keyword:
-            return False
+class WikiFixer:
+    def __init__(self, content_dir):
+        self.content_dir = Path(content_dir)
+        self.fixed_count = 0
 
-    # 제외 키워드 확인
-    if "context_must_not_have" in fix:
-        has_exclude = any(kw in line for kw in fix["context_must_not_have"])
-        if has_exclude:
-            return False
+    def fix_h1_to_h2(self, content):
+        """H1을 H2로 변경 (frontmatter 이후)"""
+        lines = content.split('\n')
+        fixed = False
+        in_frontmatter = False
+        frontmatter_count = 0
 
-    return True
+        for i, line in enumerate(lines):
+            if line.strip() == '---':
+                frontmatter_count += 1
+                if frontmatter_count == 2:
+                    in_frontmatter = False
+                continue
 
+            if frontmatter_count < 2:
+                continue
 
-def fix_file(filepath: Path, dry_run: bool = True) -> List[Tuple[int, str, str]]:
-    """파일 하나 수정"""
-    try:
-        content = filepath.read_text(encoding='utf-8')
-    except Exception as e:
-        print(f"  ❌ 파일 읽기 실패: {e}")
-        return []
+            if line.startswith('# ') and not line.startswith('## '):
+                lines[i] = '#' + line  # # -> ##
+                fixed = True
 
-    lines = content.split('\n')
-    changes = []
+        return '\n'.join(lines), fixed
 
-    for i, line in enumerate(lines):
-        original_line = line
+    def fix_h2_numbers(self, content):
+        """H2에서 번호 제거"""
+        pattern = r'^(## )\d+\.\s*'
+        new_content, count = re.subn(pattern, r'\1', content, flags=re.MULTILINE)
+        return new_content, count > 0
 
-        for fix in FIXES:
-            if re.search(fix["pattern"], line):
-                # 컨텍스트 확인
-                # 현재 줄 + 앞뒤 2줄 컨텍스트
-                context_start = max(0, i - 2)
-                context_end = min(len(lines), i + 3)
-                context = ' '.join(lines[context_start:context_end])
+    def fix_old_years(self, content):
+        """구버전 연도를 2026년으로 수정 (주의: 특정 컨텍스트만)"""
+        # 법 개정 연도 등은 수정하면 안 됨, 여기서는 경고만
+        return content, False
 
-                if should_fix_line(context, fix):
-                    new_line = re.sub(fix["pattern"], fix["replace"], line)
-                    if new_line != line:
-                        lines[i] = new_line
-                        changes.append((i + 1, original_line.strip(), new_line.strip()))
+    def fix_minimum_wage(self, content):
+        """최저임금 금액 수정"""
+        # 2024년 -> 2026년
+        old_wages = {
+            '9,860원': '10,030원',
+            '9860원': '10,030원',
+        }
 
-    if changes and not dry_run:
-        filepath.write_text('\n'.join(lines), encoding='utf-8')
+        fixed = False
+        for old, new in old_wages.items():
+            if old in content:
+                content = content.replace(old, new)
+                fixed = True
 
-    return changes
+        return content, fixed
+
+    def fix_formal_endings(self, content):
+        """딱딱한 문어체를 친근한 어체로 변경"""
+        # 이건 자동 수정이 위험해서 건너뜀
+        return content, False
+
+    def fix_file(self, filepath, dry_run=False):
+        """단일 파일 수정"""
+        fixes_applied = []
+
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                original_content = f.read()
+        except Exception as e:
+            print(f"{Colors.RED}X 파일 읽기 실패: {filepath} - {e}{Colors.RESET}")
+            return []
+
+        content = original_content
+
+        # 1. H1 -> H2 수정
+        content, fixed = self.fix_h1_to_h2(content)
+        if fixed:
+            fixes_applied.append("H1 -> H2 변경")
+
+        # 2. H2 번호 제거
+        content, fixed = self.fix_h2_numbers(content)
+        if fixed:
+            fixes_applied.append("H2 번호 제거")
+
+        # 3. 최저임금 수정
+        content, fixed = self.fix_minimum_wage(content)
+        if fixed:
+            fixes_applied.append("최저임금 금액 수정")
+
+        # 변경 사항이 있으면 저장
+        if fixes_applied and content != original_content:
+            if dry_run:
+                print(f"{Colors.YELLOW}[DRY-RUN] {filepath.name}:{Colors.RESET}")
+                for fix in fixes_applied:
+                    print(f"   - {fix}")
+            else:
+                with open(filepath, 'w', encoding='utf-8') as f:
+                    f.write(content)
+                print(f"{Colors.GREEN}O {filepath.name}: {', '.join(fixes_applied)}{Colors.RESET}")
+                self.fixed_count += 1
+
+        return fixes_applied
+
+    def run(self, target_dir=None, specific_files=None, dry_run=False, fix=False):
+        """수정 실행"""
+        if not fix and not dry_run:
+            print(f"{Colors.YELLOW}! --fix 또는 --dry-run 옵션을 사용하세요.{Colors.RESET}")
+            print("   --fix     : 실제로 파일을 수정")
+            print("   --dry-run : 수정 내용만 미리보기")
+            return 0
+
+        # 대상 파일 수집
+        if specific_files:
+            files = [Path(f) for f in specific_files]
+        else:
+            wiki_dir = self.content_dir / 'wiki'
+            if target_dir:
+                wiki_dir = Path(target_dir)
+            files = list(wiki_dir.glob('*.md'))
+
+        mode = "DRY-RUN" if dry_run else "FIX"
+        print(f"\n{'='*60}")
+        print(f"  Wiki Error Fixer [{mode}] - {len(files)} files")
+        print(f"{'='*60}\n")
+
+        total_fixes = 0
+        for filepath in sorted(files):
+            fixes = self.fix_file(filepath, dry_run=dry_run)
+            total_fixes += len(fixes)
+
+        print(f"\n{'='*60}")
+        print(f"  Results")
+        print(f"{'='*60}")
+        print(f"   Files processed: {len(files)}")
+        print(f"   {Colors.GREEN}Files fixed: {self.fixed_count}{Colors.RESET}")
+        print(f"   Total fixes: {total_fixes}")
+        print(f"{'='*60}\n")
+
+        return 0
 
 
 def main():
-    import sys
+    import argparse
 
-    dry_run = "--fix" not in sys.argv
+    parser = argparse.ArgumentParser(description='Wiki document error fixer')
+    parser.add_argument('--dir', '-d', help='Directory to fix', default=None)
+    parser.add_argument('--files', '-f', nargs='+', help='Specific files to fix')
+    parser.add_argument('--content-dir', '-c', help='Content root directory',
+                        default=r'C:\Users\user\wiki-site\content')
+    parser.add_argument('--fix', action='store_true', help='Actually fix files')
+    parser.add_argument('--dry-run', action='store_true', help='Preview fixes without applying')
 
-    print("🔧 머니위키 오류 일괄 수정")
-    print("=" * 70)
+    args = parser.parse_args()
 
-    if dry_run:
-        print("⚠️  DRY RUN 모드 (실제 수정 안함)")
-        print("   실제 수정하려면: py fix_errors.py --fix")
-    else:
-        print("🚨 실제 수정 모드!")
-
-    print()
-
-    content_dir = Path(__file__).parent.parent / "content" / "wiki"
-    total_changes = 0
-    files_changed = 0
-
-    for md_file in sorted(content_dir.glob("*.md")):
-        changes = fix_file(md_file, dry_run=dry_run)
-
-        if changes:
-            files_changed += 1
-            print(f"\n📄 {md_file.name}")
-            for line_num, old, new in changes:
-                print(f"  Line {line_num}:")
-                print(f"    - {old[:60]}...")
-                print(f"    + {new[:60]}...")
-                total_changes += 1
-
-    print("\n" + "=" * 70)
-    print(f"📊 결과: {files_changed}개 파일, {total_changes}개 수정")
-
-    if dry_run and total_changes > 0:
-        print("\n💡 실제 수정하려면: py fix_errors.py --fix")
-
-    return 0 if total_changes == 0 else 1
+    fixer = WikiFixer(args.content_dir)
+    exit_code = fixer.run(
+        target_dir=args.dir,
+        specific_files=args.files,
+        dry_run=args.dry_run,
+        fix=args.fix
+    )
+    sys.exit(exit_code)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
