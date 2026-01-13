@@ -264,7 +264,7 @@ export default function AreaConverterCalculator() {
           </h4>
           <ul className="text-sm text-emerald-700 space-y-1">
             <li>• 1평 = 약 3.3㎡로 계산합니다 (정확히 3.3058㎡)</li>
-            <li>• 부동산에서 말하는 평수는 보통 '전용면적' 기준이에요</li>
+            <li>• 부동산에서 흔히 말하는 '평형'은 '공급면적(분양면적)' 기준이에요</li>
             <li>• 분양면적(공급면적)은 전용면적보다 넓어요</li>
             <li>• 국토교통부 공식 표기는 ㎡(제곱미터)예요</li>
           </ul>
@@ -317,16 +317,16 @@ export default function AreaConverterCalculator() {
                 </tr>
                 <tr className="bg-white">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">24평</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 font-bold text-emerald-600">79.3㎡ (≈84㎡)</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 font-bold text-emerald-600">79.3㎡ (전용 59㎡)</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">854ft²</td>
-                  <td className="py-2 px-2 text-center border border-gray-300">국민평수</td>
-                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">3인 가족 👨‍👩‍👧</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">소형 아파트</td>
+                  <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">신혼부부·3인가구</td>
                 </tr>
                 <tr className="bg-blue-50">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">34평</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 font-bold text-emerald-600">112.4㎡</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 font-bold text-emerald-600">112.4㎡ (전용 84㎡)</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">1,210ft²</td>
-                  <td className="py-2 px-2 text-center border border-gray-300">중형 아파트</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">국민평수 (국평)</td>
                   <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">4인 가족 ⭐</td>
                 </tr>
                 <tr className="bg-white">

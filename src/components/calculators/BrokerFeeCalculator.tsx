@@ -26,6 +26,7 @@ function toUk(num: number): string {
 
 type TransactionType = "sale" | "lease";
 type PropertyType = "house" | "officetel" | "commercial" | "land";
+type OfficetelType = "residential" | "commercial"; // 주거용 vs 업무용
 
 // 2024년 개정 중개수수료 상한요율 (매매)
 function getSaleFeeRate(price: number): { rate: number; maxFee: number | null; bracket: string } {
@@ -63,12 +64,22 @@ function getLeaseFeeRate(price: number): { rate: number; maxFee: number | null; 
 
 // 오피스텔/상가 중개수수료 (매매/전세 동일)
 function getCommercialFeeRate(): { rate: number; maxFee: number | null; bracket: string } {
-  return { rate: 0.9, maxFee: null, bracket: "오피스텔/상가/토지" };
+  return { rate: 0.9, maxFee: null, bracket: "오피스텔(업무용)/상가/토지" };
+}
+
+// 주거용 오피스텔 중개수수료 (전용 85㎡ 이하, 입식부엌+화장실 구비)
+function getResidentialOfficetelSaleFeeRate(): { rate: number; maxFee: number | null; bracket: string } {
+  return { rate: 0.5, maxFee: null, bracket: "주거용 오피스텔 매매" };
+}
+
+function getResidentialOfficetelLeaseFeeRate(): { rate: number; maxFee: number | null; bracket: string } {
+  return { rate: 0.4, maxFee: null, bracket: "주거용 오피스텔 임대" };
 }
 
 export default function BrokerFeeCalculator() {
   const [transactionType, setTransactionType] = useState<TransactionType>("sale");
   const [propertyType, setPropertyType] = useState<PropertyType>("house");
+  const [officetelType, setOfficetelType] = useState<OfficetelType>("residential"); // 오피스텔 유형
 
   // 금액
   const [price, setPrice] = useState(500000000);
@@ -113,8 +124,21 @@ export default function BrokerFeeCalculator() {
       } else {
         rateInfo = getLeaseFeeRate(price);
       }
+    } else if (propertyType === "officetel") {
+      // 오피스텔: 주거용 vs 업무용 구분
+      if (officetelType === "residential") {
+        // 주거용 오피스텔 (전용 85㎡ 이하)
+        if (transactionType === "sale") {
+          rateInfo = getResidentialOfficetelSaleFeeRate();
+        } else {
+          rateInfo = getResidentialOfficetelLeaseFeeRate();
+        }
+      } else {
+        // 업무용/기타 오피스텔
+        rateInfo = getCommercialFeeRate();
+      }
     } else {
-      // 오피스텔, 상가, 토지는 0.9% 고정
+      // 상가, 토지는 0.9% 고정
       rateInfo = getCommercialFeeRate();
     }
 
@@ -141,7 +165,7 @@ export default function BrokerFeeCalculator() {
       vat,
       totalFee
     });
-  }, [price, transactionType, propertyType]);
+  }, [price, transactionType, propertyType, officetelType]);
 
   useEffect(() => {
     calculate();
@@ -211,6 +235,42 @@ export default function BrokerFeeCalculator() {
           </div>
         </div>
 
+        {/* 오피스텔 유형 선택 (오피스텔 선택 시에만 표시) */}
+        {propertyType === "officetel" && (
+          <div className="flex items-center gap-3">
+            <label className="w-20 text-sm font-medium text-gray-700 shrink-0">유형</label>
+            <div className="flex flex-wrap gap-1.5">
+              <button
+                onClick={() => setOfficetelType("residential")}
+                className={`px-3 py-1.5 text-sm rounded transition-all ${
+                  officetelType === "residential"
+                    ? "bg-emerald-500 text-white"
+                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                }`}
+              >
+                주거용 (0.5%)
+              </button>
+              <button
+                onClick={() => setOfficetelType("commercial")}
+                className={`px-3 py-1.5 text-sm rounded transition-all ${
+                  officetelType === "commercial"
+                    ? "bg-orange-500 text-white"
+                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                }`}
+              >
+                업무용 (0.9%)
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* 오피스텔 주거용 안내 */}
+        {propertyType === "officetel" && officetelType === "residential" && (
+          <div className="ml-[92px] p-2 bg-emerald-50 rounded text-xs text-emerald-700 border border-emerald-200">
+            주거용 오피스텔: 전용 85㎡ 이하 + 입식부엌·화장실 구비
+          </div>
+        )}
+
         {/* 거래금액 */}
         <div className="space-y-2">
           <div className="flex items-center gap-3">
@@ -274,6 +334,7 @@ export default function BrokerFeeCalculator() {
               setPriceInput("500,000,000");
               setTransactionType("sale");
               setPropertyType("house");
+              setOfficetelType("residential");
             }}
             className="px-4 py-2 text-sm text-gray-600 border border-gray-300 rounded hover:bg-gray-50 transition-colors"
           >
@@ -390,7 +451,7 @@ export default function BrokerFeeCalculator() {
           <div>
             <h4 className="font-medium text-gray-800 mb-1">주의사항</h4>
             <ul className="space-y-1 text-gray-600">
-              <li>• 부가세(10%)는 별도예요</li>
+              <li>• 부가세(10%)는 별도예요 <span className="text-gray-500">(간이과세자는 더 적을 수 있어요)</span></li>
               <li>• 매도인·매수인 각각 지불해요</li>
               <li>• 지역에 따라 요율이 다를 수 있어요</li>
             </ul>
@@ -449,7 +510,8 @@ export default function BrokerFeeCalculator() {
             </tbody>
           </table>
 
-          <p className="text-xs text-gray-500">※ 오피스텔/상가/토지: 0.9% (협의)</p>
+          <p className="text-xs text-gray-500">※ 주거용 오피스텔(85㎡ 이하): 매매 0.5%, 임대 0.4%</p>
+          <p className="text-xs text-gray-500">※ 업무용 오피스텔/상가/토지: 0.9% (협의)</p>
           <p className="text-xs text-gray-500">※ 전세/월세는 별도 요율 적용</p>
         </div>
       </div>
