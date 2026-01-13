@@ -1,7 +1,7 @@
 ---
 title: 퇴직금 IRP 의무
 description: 퇴직금 IRP 의무 이전 제도 알려드려요. 55세 미만이면 IRP로 받아야 해요
-category: 퇴직
+category: 퇴직연금
 keywords:
   - 퇴직금 irp 의무
   - 퇴직금 irp 의무화

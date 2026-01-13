@@ -1,7 +1,7 @@
 ---
 title: 퇴직연금 배당 ETF 추천
 description: 퇴직연금에서 투자할 배당 ETF 추천해드려요. 분기마다 배당 받으면서 자산을 불려요
-category: 퇴직
+category: 퇴직연금
 keywords:
   - 퇴직연금 배당 etf 추천
   - 퇴직연금 배당 etf

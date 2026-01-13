@@ -1,7 +1,7 @@
 ---
 title: 삼성증권 퇴직연금 ETF 추천
 description: 삼성증권 퇴직연금에서 투자할 수 있는 ETF 추천해드려요. KODEX ETF 라인업이 풍부해요
-category: 퇴직
+category: 퇴직연금
 keywords:
   - 삼성증권 퇴직연금 etf 추천
   - 삼성증권 퇴직연금 etf

@@ -1,7 +1,7 @@
 ---
 title: 퇴직금 IRP 지급 의무화
 description: 퇴직금 IRP 지급 의무화 제도 알려드려요. 55세 미만이면 회사에서 퇴직금을 IRP로 지급해야 해요
-category: 퇴직
+category: 퇴직연금
 keywords:
   - 퇴직금 irp 지급 의무화
   - 퇴직금 irp 의무 지급

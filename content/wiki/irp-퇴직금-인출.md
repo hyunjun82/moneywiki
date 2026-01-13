@@ -1,7 +1,7 @@
 ---
 title: IRP 퇴직금 인출
 description: IRP에서 퇴직금 인출하는 방법 알려드려요. 55세 전후 조건이 달라요
-category: 퇴직
+category: 퇴직연금
 keywords:
   - IRP 퇴직금 인출
   - IRP 인출 방법

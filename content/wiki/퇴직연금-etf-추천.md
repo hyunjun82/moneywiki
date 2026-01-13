@@ -1,7 +1,7 @@
 ---
 title: 퇴직연금 ETF 추천
 description: 퇴직연금 계좌에서 투자할 ETF 추천해드려요. DC형, IRP에서 운용할 수 있어요
-category: 퇴직
+category: 퇴직연금
 keywords:
   - 퇴직연금 etf 추천
   - 퇴직연금 etf 추천종목

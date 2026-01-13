@@ -1,7 +1,7 @@
 ---
 title: 퇴직연금 안전자산 ETF 추천
 description: 퇴직연금 안전자산 30% 채울 ETF 추천해드려요. 채권 ETF, TDF가 대표적이에요
-category: 퇴직
+category: 퇴직연금
 keywords:
   - 퇴직연금 안전자산 etf 추천
   - 퇴직연금 안전자산 etf

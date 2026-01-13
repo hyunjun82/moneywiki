@@ -1,0 +1,97 @@
+{
+  "total": 10,
+  "passed": 4,
+  "errors": 6,
+  "results": [
+    {
+      "file": "50세-이상-실업급여.md",
+      "calculator_type": "실업급여",
+      "location": "수급기간 (52세, 8년)",
+      "expected": 1,
+      "calculated": 240,
+      "match": false,
+      "error_detail": "예상: 1일, 계산: 240일"
+    },
+    {
+      "file": "50세-이상-실업급여.md",
+      "calculator_type": "실업급여",
+      "location": "총수령액 (52세, 350만, 8년)",
+      "expected": 66000,
+      "calculated": 16344000,
+      "match": false,
+      "error_detail": "차이: -16278000원"
+    },
+    {
+      "file": "실업급여-계산기.md",
+      "calculator_type": "실업급여",
+      "location": "수급기간 (45세, 5년)",
+      "expected": 1,
+      "calculated": 210,
+      "match": false,
+      "error_detail": "예상: 1일, 계산: 210일"
+    },
+    {
+      "file": "실업급여-계산기.md",
+      "calculator_type": "실업급여",
+      "location": "총수령액 (45세, 300만, 5년)",
+      "expected": 66048,
+      "calculated": 13870080,
+      "match": false,
+      "error_detail": "차이: -13804032원"
+    },
+    {
+      "file": "실업급여-금액.md",
+      "calculator_type": "실업급여",
+      "location": "수급기간 (45세, 5년)",
+      "expected": 1,
+      "calculated": 210,
+      "match": false,
+      "error_detail": "예상: 1일, 계산: 210일"
+    },
+    {
+      "file": "실업급여-모의계산.md",
+      "calculator_type": "실업급여",
+      "location": "수급기간 (45세, 5년)",
+      "expected": 1,
+      "calculated": 210,
+      "match": false,
+      "error_detail": "예상: 1일, 계산: 210일"
+    },
+    {
+      "file": "적금-계산기.md",
+      "calculator_type": "적금",
+      "location": "세전이자 (월30만, 4.0%, 1년)",
+      "expected": 78000,
+      "calculated": 78000,
+      "match": true,
+      "error_detail": "차이: 0원"
+    },
+    {
+      "file": "적금-계산기.md",
+      "calculator_type": "적금",
+      "location": "만기수령액 (월30만, 4.0%, 1년)",
+      "expected": 3665988,
+      "calculated": 3665988,
+      "match": true,
+      "error_detail": "차이: 0원"
+    },
+    {
+      "file": "주식-수익률-계산기.md",
+      "calculator_type": "주식수익률",
+      "location": "순수익 (5만→6만, 100주)",
+      "expected": 986350,
+      "calculated": 986350,
+      "match": true,
+      "error_detail": "차이: 0원"
+    },
+    {
+      "file": "주식-수익률-계산기.md",
+      "calculator_type": "주식수익률",
+      "location": "수익률 (5만→6만)",
+      "expected": 19.73,
+      "calculated": 19.73,
+      "match": true,
+      "error_detail": "차이: 0.0%"
+    }
+  ]
+}

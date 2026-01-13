@@ -1,7 +1,7 @@
 ---
 title: 퇴직연금 DC형 ETF 추천
 description: DC형 퇴직연금에서 투자할 ETF 추천해드려요. 안전자산 30% 지키면서 수익 내는 방법이에요
-category: 퇴직
+category: 퇴직연금
 keywords:
   - 퇴직연금 dc형 etf 추천
   - dc형 etf

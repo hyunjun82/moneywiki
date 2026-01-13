@@ -1,7 +1,7 @@
 ---
 title: IRP 계좌 퇴직금 수령방법
 description: IRP에 들어온 퇴직금 어떻게 빼는지 알려드려요. 55세 이후면 자유롭게, 55세 전이면 법정 사유 필요해요
-category: 퇴직
+category: 퇴직연금
 keywords:
   - irp 계좌 퇴직금 수령방법
   - IRP 퇴직금 인출

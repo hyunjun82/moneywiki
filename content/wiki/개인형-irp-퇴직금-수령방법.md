@@ -1,7 +1,7 @@
 ---
 title: 개인형 IRP 퇴직금 수령방법
 description: IRP 계좌에서 퇴직금 인출하는 방법 알려드려요. 앱이나 인터넷뱅킹으로 바로 받을 수 있어요
-category: 퇴직
+category: 퇴직연금
 keywords:
   - 개인형 irp 퇴직금 수령방법
   - IRP 퇴직금 인출

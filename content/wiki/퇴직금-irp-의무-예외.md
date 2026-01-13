@@ -1,7 +1,7 @@
 ---
 title: 퇴직금 IRP 의무 예외
 description: 퇴직금 IRP 이전 안 해도 되는 경우 알려드려요. 55세 이상이거나 법정 사유 있으면 바로 현금으로 받아요
-category: 퇴직
+category: 퇴직연금
 keywords:
   - 퇴직금 irp 의무 예외
   - IRP 이전 예외

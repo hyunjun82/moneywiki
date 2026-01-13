@@ -1,7 +1,7 @@
 ---
 title: 퇴직연금 미국 ETF 추천
 description: 퇴직연금에서 투자할 미국 ETF 추천해드려요. S&P500, 나스닥100이 장기 투자에 좋아요
-category: 퇴직
+category: 퇴직연금
 keywords:
   - 퇴직연금 미국 etf 추천
   - 퇴직연금 미국 etf
