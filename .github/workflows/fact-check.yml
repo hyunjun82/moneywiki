@@ -1,0 +1,56 @@
+name: Fact Check
+
+on:
+  push:
+    paths:
+      - 'content/wiki/*.md'
+  pull_request:
+    paths:
+      - 'content/wiki/*.md'
+
+jobs:
+  fact-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Fact Checker
+        id: fact-check
+        run: |
+          python scripts/fact_checker.py
+          echo "result=$?" >> $GITHUB_OUTPUT
+        continue-on-error: true
+
+      - name: Run Calculator Verifier
+        id: calc-verify
+        run: |
+          python scripts/verify_all.py
+          echo "result=$?" >> $GITHUB_OUTPUT
+        continue-on-error: true
+
+      - name: Check Results
+        run: |
+          if [ -f scripts/fact_check_result.json ]; then
+            ERRORS=$(python -c "import json; print(json.load(open('scripts/fact_check_result.json'))['total_errors'])")
+            echo "::notice::팩트체크 결과: ${ERRORS}개 오류 발견"
+            if [ "$ERRORS" -gt 0 ]; then
+              echo "::error::❌ 팩트 오류 ${ERRORS}개 발견! 수정 필요"
+              exit 1
+            fi
+          fi
+          echo "::notice::✅ 모든 검증 통과!"
+
+      # Discord 알림 (선택사항 - DISCORD_WEBHOOK secret 설정 시 활성화)
+      - name: Discord Notification
+        if: failure() && secrets.DISCORD_WEBHOOK != ''
+        uses: sarisia/actions-status-discord@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          title: "❌ 머니위키 팩트체크 실패!"
+          description: "content/wiki 폴더에서 오류가 발견되었습니다."
+          color: 0xff0000
