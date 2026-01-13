@@ -26,6 +26,9 @@ export default function InsuranceCalculator() {
     industrialAccident: 0.007, // 업종 평균
   };
 
+  // 10원 미만 절사 (실제 고지서 기준)
+  const truncate10 = (num: number): number => Math.floor(num / 10) * 10;
+
   useEffect(() => {
     if (monthlySalary <= 0) {
       setResult(null);
@@ -35,35 +38,35 @@ export default function InsuranceCalculator() {
     // 국민연금 (상한액 637만원 기준월소득, 2025.7~2026.6 적용)
     const pensionBase = Math.min(Math.max(monthlySalary, 400000), 6370000);
     const nationalPension = {
-      employee: Math.round(pensionBase * RATES.nationalPension.employee),
-      employer: Math.round(pensionBase * RATES.nationalPension.employer),
-      total: Math.round(pensionBase * (RATES.nationalPension.employee + RATES.nationalPension.employer)),
+      employee: truncate10(pensionBase * RATES.nationalPension.employee),
+      employer: truncate10(pensionBase * RATES.nationalPension.employer),
+      total: truncate10(pensionBase * (RATES.nationalPension.employee + RATES.nationalPension.employer)),
     };
 
     // 건강보험
     const healthInsurance = {
-      employee: Math.round(monthlySalary * RATES.healthInsurance.employee),
-      employer: Math.round(monthlySalary * RATES.healthInsurance.employer),
-      total: Math.round(monthlySalary * (RATES.healthInsurance.employee + RATES.healthInsurance.employer)),
+      employee: truncate10(monthlySalary * RATES.healthInsurance.employee),
+      employer: truncate10(monthlySalary * RATES.healthInsurance.employer),
+      total: truncate10(monthlySalary * (RATES.healthInsurance.employee + RATES.healthInsurance.employer)),
     };
 
     // 장기요양보험
     const longTermCare = {
-      employee: Math.round(healthInsurance.employee * RATES.longTermCareRate),
-      employer: Math.round(healthInsurance.employer * RATES.longTermCareRate),
-      total: Math.round(healthInsurance.total * RATES.longTermCareRate),
+      employee: truncate10(healthInsurance.employee * RATES.longTermCareRate),
+      employer: truncate10(healthInsurance.employer * RATES.longTermCareRate),
+      total: truncate10(healthInsurance.total * RATES.longTermCareRate),
     };
 
     // 고용보험
     const employmentInsurance = {
-      employee: Math.round(monthlySalary * RATES.employmentInsurance.employee),
-      employer: Math.round(monthlySalary * RATES.employmentInsurance.employer),
-      total: Math.round(monthlySalary * (RATES.employmentInsurance.employee + RATES.employmentInsurance.employer)),
+      employee: truncate10(monthlySalary * RATES.employmentInsurance.employee),
+      employer: truncate10(monthlySalary * RATES.employmentInsurance.employer),
+      total: truncate10(monthlySalary * (RATES.employmentInsurance.employee + RATES.employmentInsurance.employer)),
     };
 
     // 산재보험 (사업주만 부담)
     const industrialAccident = {
-      employer: Math.round(monthlySalary * RATES.industrialAccident),
+      employer: truncate10(monthlySalary * RATES.industrialAccident),
     };
 
     const totalEmployee = nationalPension.employee + healthInsurance.employee + longTermCare.employee + employmentInsurance.employee;
@@ -225,15 +228,15 @@ export default function InsuranceCalculator() {
                 <tr className="bg-white">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">200만원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">95,000원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">81,600원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">81,340원</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">18,000원</td>
-                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 19.5만원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 19.4만원</td>
                   <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">최저임금급 🌱</td>
                 </tr>
                 <tr className="bg-green-50">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">250만원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">118,750원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">102,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">101,670원</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">22,500원</td>
                   <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 24.3만원</td>
                   <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">신입사원 👶</td>
@@ -241,7 +244,7 @@ export default function InsuranceCalculator() {
                 <tr className="bg-white">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">300만원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">142,500원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">122,400원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">122,020원</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">27,000원</td>
                   <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 29.2만원</td>
                   <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">3년차 평균 💼</td>
@@ -249,7 +252,7 @@ export default function InsuranceCalculator() {
                 <tr className="bg-blue-50">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">400만원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">190,000원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">163,200원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">162,690원</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">36,000원</td>
                   <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 38.9만원</td>
                   <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">대리급 ⭐</td>
@@ -257,17 +260,17 @@ export default function InsuranceCalculator() {
                 <tr className="bg-white">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">500만원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">237,500원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">204,000원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">203,360원</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">45,000원</td>
-                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 48.7만원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 48.6만원</td>
                   <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">과장급 🌟</td>
                 </tr>
                 <tr className="bg-yellow-50">
-                  <td className="py-2 px-2 text-center font-medium border border-gray-300">637만원+</td>
-                  <td className="py-2 px-2 text-center border border-gray-300">302,575원<br/><span className="text-xs text-gray-500">상한</span></td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">비례증가</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">비례증가</td>
-                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 56만원+</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">637만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">302,570원<br/><span className="text-xs text-gray-500">상한</span></td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">259,050원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">57,330원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 61.9만원</td>
                   <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">연금 상한 도달! 🎯</td>
                 </tr>
               </tbody>
@@ -278,8 +281,8 @@ export default function InsuranceCalculator() {
           <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
             <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
             <ul className="text-xs text-emerald-700 mt-1 space-y-1">
-              <li>• 월급의 약 9.7%가 4대보험료로 빠져요 (2026년 인상)</li>
-              <li>• 국민연금은 월 637만원 초과해도 302,575원이 최대!</li>
+              <li>• 월급의 약 9.7%가 4대보험료로 빠져요 (2026년 기준)</li>
+              <li>• 국민연금은 월 637만원 초과해도 302,570원이 최대!</li>
               <li>• 회사도 같은 금액을 부담해서 총 19.4%가 적립돼요</li>
             </ul>
           </div>
