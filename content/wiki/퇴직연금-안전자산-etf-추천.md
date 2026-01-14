@@ -1,6 +1,6 @@
 ---
 title: 퇴직연금 안전자산 ETF 추천
-description: '퇴직연금 안전자산 30% 채울 ETF 추천해드려요. 채권 ETF, TDF가 대표적이에요'
+description: 퇴직연금 안전자산 30% 채울 ETF 추천해드려요. 채권 ETF, TDF가 대표적이에요
 category: 퇴직연금
 keywords:
   - 퇴직연금 안전자산 etf 추천
@@ -8,13 +8,17 @@ keywords:
   - 퇴직연금 채권 etf
   - 퇴직연금 안전자산 30
   - irp 안전자산 etf
+  - dc형 안전자산 etf
+  - 퇴직연금 tdf
+  - 퇴직연금 국채 etf
+  - 퇴직연금 안전자산 종류
+  - 퇴직연금 채권형 펀드
 lastUpdated: '2026-01-09'
-author: "머니위키 편집팀"
 datePublished: '2026-01-09'
-updateNote: "2026년 기준"
+updateNote: 2026년 1월 기준
 summary:
   - DC형/IRP는 안전자산 30% 이상 의무예요.
-  - '채권 ETF, TDF가 안전자산으로 분류돼요.'
+  - 채권 ETF, TDF가 안전자산으로 분류돼요.
   - 단기채권 ETF는 변동성이 적어서 안정적이에요.
 sources:
   - name: 금융감독원 퇴직연금
@@ -25,9 +29,9 @@ sources:
     date: 2026-01
 faq:
   - question: 안전자산 30% 꼭 채워야 해요?
-    answer: 'DC형, IRP는 법적으로 안전자산 30% 이상 유지해야 해요. 의무예요.'
+    answer: DC형, IRP는 법적으로 안전자산 30% 이상 유지해야 해요. 의무예요.
   - question: 안전자산 ETF 뭐가 있어요?
-    answer: '채권 ETF, TDF, 예금형 상품 등이 안전자산으로 분류돼요.'
+    answer: 채권 ETF, TDF, 예금형 상품 등이 안전자산으로 분류돼요.
   - question: 채권 ETF도 손실 날 수 있어요?
     answer: 네. 금리가 오르면 채권 가격이 떨어져서 단기적으로 손실 날 수 있어요.
   - question: TDF가 뭐예요?
@@ -40,7 +44,8 @@ relatedDocs:
   - title: 퇴직연금 DC형 ETF 추천
     url: /w/퇴직연금-dc형-etf-추천
   - title: 퇴직연금
-    url: /w/퇴직연금---
+    url: /w/퇴직연금
+---
 
 퇴직연금에서 안전자산 30%를 뭘로 채워야 할지 고민되시죠. 예금만 넣기엔 수익이 너무 적은 것 같죠.
 

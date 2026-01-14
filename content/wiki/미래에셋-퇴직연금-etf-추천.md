@@ -5,13 +5,17 @@ category: 퇴직연금
 keywords:
   - 미래에셋 퇴직연금 etf 추천
   - 미래에셋 퇴직연금 etf
-  - 미래에셋 퇴직연금 추천
   - 미래에셋증권 퇴직연금
   - 미래에셋 irp etf
+  - 미래에셋 dc형 etf
+  - 미래에셋 퇴직연금 투자
+  - 미래에셋 퇴직연금 추천
+  - 미래에셋 irp 추천
+  - tiger etf 퇴직연금
+  - 미래에셋 연금저축
 lastUpdated: '2026-01-09'
-author: "머니위키 편집팀"
 datePublished: '2026-01-09'
-updateNote: "2026년 기준"
+updateNote: 2026년 1월 기준
 summary:
   - 미래에셋증권은 ETF 라인업이 가장 다양해요.
   - TIGER ETF를 직접 운용해서 상품이 풍부해요.
@@ -40,7 +44,8 @@ relatedDocs:
   - title: 퇴직연금 DC형 ETF 추천
     url: /w/퇴직연금-dc형-etf-추천
   - title: 퇴직연금
-    url: /w/퇴직연금---
+    url: /w/퇴직연금
+---
 
 퇴직연금으로 ETF 투자를 적극적으로 하고 싶으시죠. 어느 금융기관이 ETF 라인업이 좋은지 궁금하시죠.
 

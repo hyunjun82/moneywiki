@@ -8,10 +8,14 @@ keywords:
   - kb 퇴직연금 etf
   - 국민은행 irp etf
   - 국민은행 dc형 etf
+  - kb스타뱅킹 퇴직연금
+  - 국민은행 퇴직연금 투자
+  - kb 퇴직연금 추천
+  - 국민은행 퇴직연금 상품
+  - kb irp etf
 lastUpdated: '2026-01-09'
-author: "머니위키 편집팀"
 datePublished: '2026-01-09'
-updateNote: "2026년 기준"
+updateNote: 2026년 1월 기준
 summary:
   - 국민은행 퇴직연금에서 다양한 ETF에 투자할 수 있어요.
   - KB스타뱅킹 앱에서 매수하면 돼요.
@@ -27,11 +31,11 @@ faq:
   - question: 국민은행 퇴직연금에서 ETF 투자할 수 있어요?
     answer: 네. DC형이나 IRP라면 ETF 투자 가능해요. KB스타뱅킹 앱에서 매수해요.
   - question: 어떤 ETF를 살 수 있어요?
-    answer: '국민은행에서 취급하는 ETF 상품 중에서 선택할 수 있어요. S&P500, 나스닥 등 다양해요.'
+    answer: 국민은행에서 취급하는 ETF 상품 중에서 선택할 수 있어요. S&P500, 나스닥 등 다양해요.
   - question: 수수료가 있어요?
     answer: ETF 매매 수수료는 없거나 저렴해요. 운용보수는 ETF마다 달라요.
   - question: 원금보장형만 있어요?
-    answer: '아니요. 원금보장형 외에 실적배당형(ETF, 펀드)도 있어요.'
+    answer: 아니요. 원금보장형 외에 실적배당형(ETF, 펀드)도 있어요.
   - question: 안전자산 30%는 어떻게 맞춰요?
     answer: 채권 ETF나 예금형 상품으로 30% 이상 채우면 돼요.
 relatedDocs:
@@ -40,7 +44,8 @@ relatedDocs:
   - title: 퇴직연금 DC형 ETF 추천
     url: /w/퇴직연금-dc형-etf-추천
   - title: 퇴직연금
-    url: /w/퇴직연금---
+    url: /w/퇴직연금
+---
 
 국민은행 퇴직연금인데 ETF로 투자하고 싶으시죠. 어떤 ETF를 살 수 있는지 궁금하시죠.
 
