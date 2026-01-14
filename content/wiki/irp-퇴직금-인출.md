@@ -9,8 +9,9 @@ keywords:
   - IRP 일시금 인출
   - IRP 퇴직금 수령
 lastUpdated: '2026-01-09'
+author: "머니위키 편집팀"
 datePublished: '2026-01-09'
-updateNote: 2026년 1월 기준
+updateNote: "2026년 개정법 반영"
 summary:
   - IRP 퇴직금은 55세 이후 자유롭게 인출할 수 있어요.
   - 55세 전에는 법정 사유가 있어야 중도인출이 가능해요.
@@ -41,8 +42,7 @@ relatedDocs:
   - title: 퇴직연금 일시금 수령
     url: /w/퇴직연금-일시금-수령
   - title: 퇴직금 세금
-    url: /w/퇴직금-세금
----
+    url: /w/퇴직금-세금---
 
 퇴직금이 IRP로 들어왔는데 어떻게 찾아야 하는지 모르시겠죠. 당장 돈이 필요한데 못 찾는 건 아닌지 걱정되시죠.
 

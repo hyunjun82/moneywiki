@@ -9,8 +9,9 @@ keywords:
   - 퇴직연금 월배당 etf
   - 미국 배당 etf 퇴직연금
 lastUpdated: '2026-01-09'
+author: "머니위키 편집팀"
 datePublished: '2026-01-09'
-updateNote: 2026년 1월 기준
+updateNote: "2026년 기준"
 summary:
   - 배당 ETF는 분기마다 배당금을 받을 수 있어요.
   - 퇴직연금에서 배당금이 자동 재투자되면 복리 효과가 커요.
@@ -39,8 +40,7 @@ relatedDocs:
   - title: 퇴직연금 미국 ETF 추천
     url: /w/퇴직연금-미국-etf-추천
   - title: 퇴직연금
-    url: /w/퇴직연금
----
+    url: /w/퇴직연금---
 
 퇴직연금으로 배당금도 받고 싶으시죠. 배당 ETF가 장기 투자에 좋은지 궁금하시죠.
 

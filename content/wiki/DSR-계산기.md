@@ -10,8 +10,9 @@ keywords:
   - DSR 40
   - DSR 초과
 lastUpdated: '2026-01-10'
+author: "머니위키 편집팀"
 datePublished: '2026-01-10'
-updateNote: 2026년 최신 기준
+updateNote: "2026년 기준"
 summary:
   - DSR 계산기로 대출 가능 금액을 미리 확인하세요.
   - '은행권은 DSR 40%, 제2금융권은 50%가 한도예요.'
@@ -51,8 +52,7 @@ relatedDocs:
   - title: 취득세 계산기
     url: /w/취득세-계산기
   - title: LTV
-    url: /w/LTV
----
+    url: /w/LTV---
 
 대출받고 싶은데 DSR 규제 때문에 얼마나 받을 수 있는지 궁금하시죠?
 

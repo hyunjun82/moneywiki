@@ -9,8 +9,9 @@ keywords:
   - 퇴직금 irp 계좌 지급
   - 퇴직금 irp 강제
 lastUpdated: '2026-01-08'
+author: "머니위키 편집팀"
 datePublished: '2026-01-08'
-updateNote: 2026년 1월 기준
+updateNote: "2026년 개정법 반영"
 summary:
   - 2022년 4월부터 55세 미만 퇴직자는 퇴직금을 IRP로 받아야 해요.
   - 회사는 근로자 IRP 계좌로 퇴직금을 지급해야 할 의무가 있어요.
@@ -41,8 +42,7 @@ relatedDocs:
   - title: 퇴직금 IRP 의무 예외
     url: /w/퇴직금-irp-의무-예외
   - title: IRP 계좌 퇴직금 수령방법
-    url: /w/irp-계좌-퇴직금-수령방법
----
+    url: /w/irp-계좌-퇴직금-수령방법---
 
 퇴직하려는데 회사에서 퇴직금을 IRP로만 준다고 하죠. 왜 바로 현금으로 안 주는지 궁금하시죠.
 

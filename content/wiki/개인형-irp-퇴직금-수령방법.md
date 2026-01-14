@@ -9,8 +9,9 @@ keywords:
   - 퇴직금 IRP 출금
   - IRP 퇴직금 찾기
 lastUpdated: '2026-01-08'
+author: "머니위키 편집팀"
 datePublished: '2026-01-08'
-updateNote: 2026년 1월 기준
+updateNote: "2026년 개정법 반영"
 summary:
   - IRP에 입금된 퇴직금은 앱이나 인터넷뱅킹에서 인출 신청하면 돼요.
   - 55세 미만이면 일시금 인출 시 기타소득세 16.5%가 붙어요.
@@ -39,8 +40,7 @@ relatedDocs:
   - title: 퇴직금 수령방법
     url: /w/퇴직금-수령방법
   - title: 퇴직금 IRP 의무
-    url: /w/퇴직금-irp-의무
----
+    url: /w/퇴직금-irp-의무---
 
 퇴직금이 IRP 계좌로 들어왔는데 어떻게 받아야 하는지 모르시겠죠. 바로 빼도 되는지, 세금은 얼마나 내는지 헷갈리시죠.
 

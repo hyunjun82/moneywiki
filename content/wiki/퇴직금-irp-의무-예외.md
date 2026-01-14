@@ -9,8 +9,9 @@ keywords:
   - 퇴직금 IRP 면제
   - IRP 의무 제외
 lastUpdated: '2026-01-08'
+author: "머니위키 편집팀"
 datePublished: '2026-01-08'
-updateNote: 2026년 1월 기준
+updateNote: "2026년 개정법 반영"
 summary:
   - 55세 이상 퇴직자는 IRP 이전 없이 바로 현금으로 받아요.
   - '퇴직금 55만원 이하, 주택구입, 의료비 등 법정 사유도 예외예요.'
@@ -41,8 +42,7 @@ relatedDocs:
   - title: 퇴직금 수령방법
     url: /w/퇴직금-수령방법
   - title: IRP 계좌 퇴직금 수령방법
-    url: /w/irp-계좌-퇴직금-수령방법
----
+    url: /w/irp-계좌-퇴직금-수령방법---
 
 퇴직금 받으려는데 IRP로 먼저 받아야 한다고 하셨죠. IRP 거치기 귀찮은데 바로 현금으로 못 받나 궁금하시죠.
 

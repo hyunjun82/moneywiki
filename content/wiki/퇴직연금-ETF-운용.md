@@ -9,8 +9,9 @@ keywords:
   - 퇴직연금 etf 매수
   - 퇴직연금 etf 수익률
 lastUpdated: '2026-01-09'
+author: "머니위키 편집팀"
 datePublished: '2026-01-09'
-updateNote: 2026년 1월 기준 퇴직연금 ETF 투자 가이드 반영
+updateNote: "2026년 개정법 반영"
 summary:
   - DC형과 IRP에서 ETF 투자가 가능해요. 적립금의 최대 70%까지 투자할 수 있어요.
   - 'S&P500, 코스피200 등 지수 추종 ETF가 인기예요.'
@@ -39,8 +40,7 @@ relatedDocs:
   - title: 퇴직금 IRP 수령방법
     url: /w/퇴직금-IRP-수령방법
   - title: 퇴직연금 DB DC 차이
-    url: /w/퇴직연금-db-dc-차이
----
+    url: /w/퇴직연금-db-dc-차이---
 
 퇴직연금을 그냥 예금에 넣어두니까 수익이 너무 적죠. ETF로 운용하면 더 높은 수익을 기대할 수 있어요.
 

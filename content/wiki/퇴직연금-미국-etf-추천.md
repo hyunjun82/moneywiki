@@ -9,8 +9,9 @@ keywords:
   - irp 미국 etf
   - dc형 미국 etf
 lastUpdated: '2026-01-09'
+author: "머니위키 편집팀"
 datePublished: '2026-01-09'
-updateNote: 2026년 1월 기준
+updateNote: "2026년 기준"
 summary:
   - S&P500 ETF는 미국 대형주 500개에 분산 투자해요.
   - 나스닥100 ETF는 기술주 중심으로 성장성이 높아요.
@@ -39,8 +40,7 @@ relatedDocs:
   - title: 퇴직연금 DC형 ETF 추천
     url: /w/퇴직연금-dc형-etf-추천
   - title: 퇴직연금
-    url: /w/퇴직연금
----
+    url: /w/퇴직연금---
 
 퇴직연금으로 미국 주식에 투자하고 싶으시죠. S&P500이나 나스닥100 ETF 중에 뭐가 좋은지 모르시겠죠.
 

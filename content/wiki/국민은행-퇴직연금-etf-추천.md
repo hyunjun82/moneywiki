@@ -9,8 +9,9 @@ keywords:
   - 국민은행 irp etf
   - 국민은행 dc형 etf
 lastUpdated: '2026-01-09'
+author: "머니위키 편집팀"
 datePublished: '2026-01-09'
-updateNote: 2026년 1월 기준
+updateNote: "2026년 기준"
 summary:
   - 국민은행 퇴직연금에서 다양한 ETF에 투자할 수 있어요.
   - KB스타뱅킹 앱에서 매수하면 돼요.
@@ -39,8 +40,7 @@ relatedDocs:
   - title: 퇴직연금 DC형 ETF 추천
     url: /w/퇴직연금-dc형-etf-추천
   - title: 퇴직연금
-    url: /w/퇴직연금
----
+    url: /w/퇴직연금---
 
 국민은행 퇴직연금인데 ETF로 투자하고 싶으시죠. 어떤 ETF를 살 수 있는지 궁금하시죠.
 

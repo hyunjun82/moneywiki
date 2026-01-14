@@ -9,8 +9,9 @@ keywords:
   - db형에서 dc형
   - db dc 변경방법
 lastUpdated: '2026-01-09'
+author: "머니위키 편집팀"
 datePublished: '2026-01-09'
-updateNote: 2026년 1월 기준
+updateNote: "2026년 개정법 반영"
 summary:
   - DB형에서 DC형으로 전환은 가능해요. 반대는 안 돼요.
   - 회사에 전환 신청하고 근로자 동의를 받아요.
@@ -39,8 +40,7 @@ relatedDocs:
   - title: 퇴직연금
     url: /w/퇴직연금
   - title: 퇴직연금 종류
-    url: /w/퇴직연금-종류
----
+    url: /w/퇴직연금-종류---
 
 DB형 퇴직연금인데 DC형으로 바꾸고 싶으시죠. 직접 투자해서 수익을 높이고 싶은데 어떻게 전환하는지 모르시겠죠.
 

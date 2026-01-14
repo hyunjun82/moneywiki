@@ -9,8 +9,9 @@ keywords:
   - 퇴직연금 안전자산 30
   - irp 안전자산 etf
 lastUpdated: '2026-01-09'
+author: "머니위키 편집팀"
 datePublished: '2026-01-09'
-updateNote: 2026년 1월 기준
+updateNote: "2026년 기준"
 summary:
   - DC형/IRP는 안전자산 30% 이상 의무예요.
   - '채권 ETF, TDF가 안전자산으로 분류돼요.'
@@ -39,8 +40,7 @@ relatedDocs:
   - title: 퇴직연금 DC형 ETF 추천
     url: /w/퇴직연금-dc형-etf-추천
   - title: 퇴직연금
-    url: /w/퇴직연금
----
+    url: /w/퇴직연금---
 
 퇴직연금에서 안전자산 30%를 뭘로 채워야 할지 고민되시죠. 예금만 넣기엔 수익이 너무 적은 것 같죠.
 

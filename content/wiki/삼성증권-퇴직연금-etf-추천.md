@@ -9,8 +9,9 @@ keywords:
   - 삼성증권 irp etf
   - 삼성증권 dc형 etf
 lastUpdated: '2026-01-09'
+author: "머니위키 편집팀"
 datePublished: '2026-01-09'
-updateNote: 2026년 1월 기준
+updateNote: "2026년 기준"
 summary:
   - 삼성증권은 KODEX ETF를 직접 운용해서 상품이 다양해요.
   - 증권사라서 은행보다 ETF 라인업이 풍부해요.
@@ -39,8 +40,7 @@ relatedDocs:
   - title: 퇴직연금 DC형 ETF 추천
     url: /w/퇴직연금-dc형-etf-추천
   - title: 퇴직연금
-    url: /w/퇴직연금
----
+    url: /w/퇴직연금---
 
 퇴직연금으로 ETF 투자를 적극적으로 하고 싶으시죠. 삼성증권 퇴직연금이 ETF 투자에 좋은지 궁금하시죠.
 

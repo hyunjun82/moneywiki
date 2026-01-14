@@ -9,8 +9,9 @@ keywords:
   - 연금저축 IRP 한도
   - IRP 세액공제율
 lastUpdated: '2026-01-13'
+author: "머니위키 편집팀"
 datePublished: '2026-01-13'
-updateNote: 2026년 기준
+updateNote: "2026년 개정법 반영"
 summary:
   - IRP는 연간 최대 900만 원까지 세액공제 받을 수 있어요.
   - 연금저축과 합산해서 900만 원이에요.
@@ -41,8 +42,7 @@ relatedDocs:
   - title: 퇴직금 IRP 수령방법
     url: /w/퇴직금-IRP-수령방법
   - title: 퇴직연금 해지 절차
-    url: /w/퇴직연금-해지-절차
----
+    url: /w/퇴직연금-해지-절차---
 
 IRP에 돈 넣으면 연말정산 때 돌려받는다던데, 얼마까지 넣으면 되나요? 세액공제 얼마나 받을 수 있어요?
 

@@ -9,8 +9,9 @@ keywords:
   - IRP 중도해지
   - IRP 언제 출금
 lastUpdated: '2026-01-13'
+author: "머니위키 편집팀"
 datePublished: '2026-01-13'
-updateNote: 2026년 기준
+updateNote: "2026년 개정법 반영"
 summary:
   - 55세 전이라도 6가지 사유면 중도인출 가능해요.
   - '무주택자 주택구입, 본인 장기요양, 파산 등이 해당돼요.'
@@ -41,8 +42,7 @@ relatedDocs:
   - title: 퇴직금 중간정산 조건
     url: /w/퇴직금-중간정산-조건
   - title: IRP 세액공제 한도
-    url: /w/IRP-세액공제-한도
----
+    url: /w/IRP-세액공제-한도---
 
 IRP에 퇴직금 넣어뒀는데, 급하게 돈이 필요해요. 55세 전에는 절대 못 빼는 건가요?
 

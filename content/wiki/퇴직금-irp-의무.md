@@ -9,8 +9,9 @@ keywords:
   - irp 퇴직금 의무
   - 퇴직금 irp 이전
 lastUpdated: '2026-01-08'
+author: "머니위키 편집팀"
 datePublished: '2026-01-08'
-updateNote: 2026년 1월 기준
+updateNote: "2026년 개정법 반영"
 summary:
   - 2022년 4월부터 55세 미만 퇴직자는 퇴직금을 IRP로 받아야 해요.
   - 노후 대비를 위해 만든 제도예요.
@@ -41,8 +42,7 @@ relatedDocs:
   - title: IRP 계좌 퇴직금 수령방법
     url: /w/irp-계좌-퇴직금-수령방법
   - title: 퇴직금 수령방법
-    url: /w/퇴직금-수령방법
----
+    url: /w/퇴직금-수령방법---
 
 퇴직금을 IRP로 받아야 한다고 들으셨죠. 왜 바로 현금으로 못 받는지, IRP가 뭔지 궁금하시죠.
 

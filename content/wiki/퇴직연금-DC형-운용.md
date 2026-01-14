@@ -9,8 +9,9 @@ keywords:
   - 퇴직연금 운용
   - DC형 운용상품
 lastUpdated: '2026-01-13'
+author: "머니위키 편집팀"
 datePublished: '2026-01-13'
-updateNote: 2026년 기준
+updateNote: "2026년 개정법 반영"
 summary:
   - DC형은 내가 직접 운용하는 퇴직연금이에요.
   - 원리금보장형과 실적배당형 중 선택할 수 있어요.
@@ -41,8 +42,7 @@ relatedDocs:
   - title: IRP 세액공제 한도
     url: /w/IRP-세액공제-한도
   - title: 퇴직금 IRP 이체 세금
-    url: /w/퇴직금-IRP-이체-세금
----
+    url: /w/퇴직금-IRP-이체-세금---
 
 회사에서 DC형 퇴직연금에 가입됐대요. 근데 운용을 직접 하라는데, 뭘 어떻게 해야 하는 건가요?
 

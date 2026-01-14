@@ -9,8 +9,9 @@ keywords:
   - ISA비과세
   - 중개형ISA
 lastUpdated: '2026-01-04'
+author: "머니위키 편집팀"
 datePublished: '2026-01-04'
-updateNote: 2026년 기준
+updateNote: "2026년 개정법 반영"
 summary: ISA는 다양한 금융상품을 한 계좌에서 운용하며 세금 혜택을 받는 계좌입니다. 순이익 200~400만원까지 비과세됩니다.
 sources:
   - name: 조세특례제한법
@@ -30,8 +31,7 @@ relatedDocs:
   - title: 연금저축
     url: /w/%EA%B2%BD%EC%A0%9C/연금저축
   - title: 청년도약계좌
-    url: /w/%EA%B2%BD%EC%A0%9C/청년도약계좌
----
+    url: /w/%EA%B2%BD%EC%A0%9C/청년도약계좌---
 
 # ISA계좌
 

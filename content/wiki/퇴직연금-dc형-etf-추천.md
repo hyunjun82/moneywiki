@@ -9,8 +9,9 @@ keywords:
   - dc형 퇴직연금 운용
   - dc형 배당 etf
 lastUpdated: '2026-01-09'
+author: "머니위키 편집팀"
 datePublished: '2026-01-09'
-updateNote: 2026년 1월 기준
+updateNote: "2026년 기준"
 summary:
   - 'DC형은 위험자산 70%, 안전자산 30% 규정을 지켜야 해요.'
   - 'S&P500, 나스닥100 ETF가 장기 투자에 좋아요.'
@@ -39,8 +40,7 @@ relatedDocs:
   - title: 퇴직연금 DB DC 차이
     url: /w/퇴직연금-db-dc-차이
   - title: 퇴직연금
-    url: /w/퇴직연금
----
+    url: /w/퇴직연금---
 
 DC형 퇴직연금인데 원금보장형에만 넣어두고 계시죠. 수익률이 너무 낮아서 고민되시죠.
 

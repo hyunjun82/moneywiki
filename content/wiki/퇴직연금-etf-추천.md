@@ -9,8 +9,9 @@ keywords:
   - dc형 퇴직연금 etf
   - irp etf 추천
 lastUpdated: '2026-01-09'
+author: "머니위키 편집팀"
 datePublished: '2026-01-09'
-updateNote: 2026년 1월 기준
+updateNote: "2026년 기준"
 summary:
   - 퇴직연금 ETF는 안전자산 30% 의무 규정을 지켜야 해요.
   - 'S&P500, 나스닥100 같은 해외지수 ETF가 인기예요.'
@@ -39,8 +40,7 @@ relatedDocs:
   - title: 퇴직연금 종류
     url: /w/퇴직연금-종류
   - title: 퇴직연금 세액공제
-    url: /w/퇴직연금-세액공제
----
+    url: /w/퇴직연금-세액공제---
 
 퇴직연금 계좌에 돈이 쌓이는데 그냥 두기 아까우시죠. ETF로 투자해서 수익을 내고 싶은데 뭘 사야 할지 모르시겠죠.
 

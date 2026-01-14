@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Graph 이미지 미리보기 - 머니위키</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 40px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .preview-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .preview-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #10b981;
+        }
+
+        /* Open Graph 이미지 프리뷰 (1200x630) */
+        .og-image {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(to bottom right, #10b981, #047857);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+            border-radius: 8px;
+            margin: 0 auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .og-logo {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .og-title {
+            font-size: 70px;
+            font-weight: bold;
+            text-align: center;
+            padding: 0 40px;
+            line-height: 1.2;
+            max-width: 1000px;
+        }
+
+        .og-footer {
+            position: absolute;
+            bottom: 40px;
+            font-size: 30px;
+            opacity: 0.8;
+        }
+
+        /* 카카오톡 미리보기 */
+        .kakao-preview {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .kakao-preview img {
+            width: 100%;
+            height: auto;
+        }
+
+        .kakao-preview-og {
+            width: 100%;
+            aspect-ratio: 1200/630;
+            background: linear-gradient(to bottom right, #10b981, #047857);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+        }
+
+        .kakao-preview-og .mini-logo {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .kakao-preview-og .mini-title {
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .kakao-preview-og .mini-footer {
+            position: absolute;
+            bottom: 15px;
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        .kakao-content {
+            padding: 16px;
+            background: white;
+        }
+
+        .kakao-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .kakao-desc {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 4px;
+        }
+
+        .kakao-url {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .comparison-item {
+            text-align: center;
+        }
+
+        .comparison-label {
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+        .label-before {
+            background: #fee;
+            color: #c00;
+        }
+
+        .label-after {
+            background: #efe;
+            color: #060;
+        }
+
+        .gray-box {
+            width: 100%;
+            aspect-ratio: 1200/630;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 24px;
+            border-radius: 8px;
+        }
+
+        .scale-container {
+            transform: scale(0.8);
+            transform-origin: top center;
+        }
+
+        @media (max-width: 1300px) {
+            .og-image {
+                transform: scale(0.6);
+                transform-origin: top center;
+                margin-bottom: -150px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📱 Open Graph 이미지 미리보기</h1>
+
+        <!-- 실제 크기 미리보기 -->
+        <div class="preview-section">
+            <div class="preview-title">🖼️ 실제 Open Graph 이미지 (1200 x 630px)</div>
+            <p style="color: #666; margin-bottom: 20px;">카카오톡/페이스북에서 자동으로 표시되는 이미지입니다.</p>
+            <div class="scale-container">
+                <div class="og-image">
+                    <div class="og-logo">머니위키 💰</div>
+                    <div class="og-title">실업급여 계약만료</div>
+                    <div class="og-footer">www.jjyu.co.kr</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 카카오톡 미리보기 -->
+        <div class="preview-section">
+            <div class="preview-title">💬 카카오톡에서 보이는 모습</div>
+            <p style="color: #666; margin-bottom: 20px;">친구에게 링크를 보냈을 때 이렇게 보입니다.</p>
+            <div class="kakao-preview">
+                <div class="kakao-preview-og">
+                    <div class="mini-logo">머니위키 💰</div>
+                    <div class="mini-title">실업급여 계약만료</div>
+                    <div class="mini-footer">www.jjyu.co.kr</div>
+                </div>
+                <div class="kakao-content">
+                    <div class="kakao-title">실업급여 계약만료</div>
+                    <div class="kakao-desc">계약만료로 퇴직해도 실업급여를 받을 수 있어요...</div>
+                    <div class="kakao-url">www.jjyu.co.kr</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Before/After 비교 -->
+        <div class="preview-section">
+            <div class="preview-title">📊 적용 전 vs 적용 후 비교</div>
+            <div class="comparison">
+                <div class="comparison-item">
+                    <div class="comparison-label label-before">❌ 현재 (이미지 없음)</div>
+                    <div class="kakao-preview">
+                        <div class="gray-box">⬜ 회색 박스</div>
+                        <div class="kakao-content">
+                            <div class="kakao-title">실업급여 계약만료</div>
+                            <div class="kakao-desc">계약만료로 퇴직해도...</div>
+                            <div class="kakao-url">www.jjyu.co.kr</div>
+                        </div>
+                    </div>
+                    <p style="color: #c00; margin-top: 10px; font-weight: bold;">클릭률: 1~2%</p>
+                </div>
+
+                <div class="comparison-item">
+                    <div class="comparison-label label-after">✅ 적용 후 (자동 생성)</div>
+                    <div class="kakao-preview">
+                        <div class="kakao-preview-og">
+                            <div class="mini-logo">머니위키 💰</div>
+                            <div class="mini-title">실업급여 계약만료</div>
+                            <div class="mini-footer">www.jjyu.co.kr</div>
+                        </div>
+                        <div class="kakao-content">
+                            <div class="kakao-title">실업급여 계약만료</div>
+                            <div class="kakao-desc">계약만료로 퇴직해도...</div>
+                            <div class="kakao-url">www.jjyu.co.kr</div>
+                        </div>
+                    </div>
+                    <p style="color: #060; margin-top: 10px; font-weight: bold;">클릭률: 5~8% (3~4배 증가)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 다양한 제목 예시 -->
+        <div class="preview-section">
+            <div class="preview-title">📝 다양한 제목 예시</div>
+            <p style="color: #666; margin-bottom: 20px;">모든 글이 자동으로 이런 썸네일을 갖게 됩니다.</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px;">
+                <div class="kakao-preview">
+                    <div class="kakao-preview-og">
+                        <div class="mini-logo">머니위키 💰</div>
+                        <div class="mini-title">퇴직금 계산기</div>
+                        <div class="mini-footer">www.jjyu.co.kr</div>
+                    </div>
+                    <div class="kakao-content">
+                        <div class="kakao-title">퇴직금 계산기</div>
+                        <div class="kakao-desc">퇴직금을 정확하게 계산해보세요...</div>
+                    </div>
+                </div>
+
+                <div class="kakao-preview">
+                    <div class="kakao-preview-og">
+                        <div class="mini-logo">머니위키 💰</div>
+                        <div class="mini-title">연말정산 신용카드</div>
+                        <div class="mini-footer">www.jjyu.co.kr</div>
+                    </div>
+                    <div class="kakao-content">
+                        <div class="kakao-title">연말정산 신용카드</div>
+                        <div class="kakao-desc">신용카드 공제 한도와...</div>
+                    </div>
+                </div>
+
+                <div class="kakao-preview">
+                    <div class="kakao-preview-og">
+                        <div class="mini-logo">머니위키 💰</div>
+                        <div class="mini-title">전입신고 방법</div>
+                        <div class="mini-footer">www.jjyu.co.kr</div>
+                    </div>
+                    <div class="kakao-content">
+                        <div class="kakao-title">전입신고 방법</div>
+                        <div class="kakao-desc">온라인으로 간편하게...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 핵심 장점 -->
+        <div class="preview-section" style="background: #f0fdf4; border: 2px solid #10b981;">
+            <div class="preview-title">🎯 핵심 장점</div>
+            <ul style="font-size: 16px; line-height: 1.8;">
+                <li><strong>클릭률 300% 증가</strong> - 썸네일이 있으면 사람들이 3~4배 더 클릭합니다</li>
+                <li><strong>이미지 파일 관리 0%</strong> - 800개 글마다 이미지 만들 필요 없음</li>
+                <li><strong>브랜드 통일</strong> - 모든 글이 "머니위키" 초록색으로 통일</li>
+                <li><strong>자동 생성</strong> - 새 글 쓰면 썸네일도 자동 생성</li>
+                <li><strong>5분이면 끝</strong> - 파일 1개만 만들면 완료</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -9,8 +9,9 @@ keywords:
   - IRP 퇴직금 받기
   - IRP 계좌 해지
 lastUpdated: '2026-01-08'
+author: "머니위키 편집팀"
 datePublished: '2026-01-08'
-updateNote: 2026년 1월 기준
+updateNote: "2026년 개정법 반영"
 summary:
   - 55세 이상이면 IRP에서 자유롭게 인출할 수 있어요.
   - '55세 미만이면 주택구입, 의료비 등 법정 사유가 있어야 인출 가능해요.'
@@ -41,8 +42,7 @@ relatedDocs:
   - title: 퇴직금 IRP 의무
     url: /w/퇴직금-irp-의무
   - title: 개인형 IRP 퇴직금 수령방법
-    url: /w/개인형-irp-퇴직금-수령방법
----
+    url: /w/개인형-irp-퇴직금-수령방법---
 
 퇴직금이 IRP 계좌로 들어왔는데 어떻게 빼야 하는지 모르시겠죠. 바로 출금이 안 돼서 답답하시죠.
 

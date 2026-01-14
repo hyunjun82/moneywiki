@@ -9,8 +9,9 @@ keywords:
   - DB형 퇴직금 받는 법
   - DB형 퇴직연금 수령
 lastUpdated: '2026-01-08'
+author: "머니위키 편집팀"
 datePublished: '2026-01-08'
-updateNote: 2026년 1월 기준
+updateNote: "2026년 개정법 반영"
 summary:
   - DB형은 퇴직금이 근속연수 × 평균임금으로 확정돼요.
   - 55세 미만이면 IRP로 먼저 이전해야 해요.
@@ -41,8 +42,7 @@ relatedDocs:
   - title: DC형 퇴직금 수령방법
     url: /w/dc형-퇴직금-수령방법
   - title: IRP 계좌 퇴직금 수령방법
-    url: /w/irp-계좌-퇴직금-수령방법
----
+    url: /w/irp-계좌-퇴직금-수령방법---
 
 DB형 [퇴직연금](/w/퇴직연금)에 가입되어 있는데 퇴직할 때 어떻게 받는지 궁금하시죠. DC형이랑 뭐가 다른지, 얼마나 받을 수 있는지 헷갈리시죠.
 
