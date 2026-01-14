@@ -8,11 +8,6 @@ keywords:
   - IRP 퇴직금 찾기
   - IRP 해지
   - IRP 일시금 인출
-  - IRP 퇴직금 수령
-  - 퇴직금 IRP 출금
-  - IRP 중도인출
-  - IRP 퇴직금 찾는법
-  - IRP 퇴직급여 인출
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준

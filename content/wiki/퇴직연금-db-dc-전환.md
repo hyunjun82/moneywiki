@@ -8,11 +8,6 @@ keywords:
   - 퇴직연금 전환
   - db형에서 dc형
   - 퇴직연금 변경
-  - 확정급여형 확정기여형 전환
-  - 퇴직연금 유형 변경
-  - db dc 변경방법
-  - 퇴직연금 전환 방법
-  - db형 dc형 바꾸기
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준

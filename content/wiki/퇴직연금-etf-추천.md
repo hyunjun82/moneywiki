@@ -8,11 +8,6 @@ keywords:
   - 퇴직연금 etf
   - dc형 퇴직연금 etf
   - irp etf 추천
-  - 퇴직연금 미국 etf
-  - 퇴직연금 s&p500
-  - 퇴직연금 배당 etf
-  - 퇴직연금 안전자산 etf
-  - 퇴직연금 etf 수익률
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준

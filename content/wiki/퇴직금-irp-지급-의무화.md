@@ -8,11 +8,6 @@ keywords:
   - 퇴직금 irp 강제
   - 퇴직금 irp 자동 이전
   - 회사 퇴직금 irp 지급
-  - 퇴직금 irp 계좌 지급
-  - 퇴직금 irp 의무 입금
-  - 회사 irp 지급 의무
-  - 퇴직금 irp 이체 의무
-  - 사업주 irp 지급 의무
 lastUpdated: '2026-01-08'
 datePublished: '2026-01-08'
 updateNote: 2026년 1월 기준

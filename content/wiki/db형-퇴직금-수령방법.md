@@ -8,11 +8,6 @@ keywords:
   - DB형 퇴직금 인출
   - 확정급여형 퇴직금
   - DB형 퇴직금 해지
-  - DB형 퇴직연금 출금
-  - DB형 IRP 이전
-  - DB형 퇴직금 받는 법
-  - DB형 연금 수령
-  - 퇴직연금 DB형 인출
 lastUpdated: '2026-01-08'
 datePublished: '2026-01-08'
 updateNote: 2026년 1월 기준

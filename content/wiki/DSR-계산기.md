@@ -9,13 +9,6 @@ keywords:
   - 총부채원리금상환비율
   - DSR 규제
   - DSR 40
-  - 대출 한도
-  - 대출 가능 금액
-  - DSR 초과
-  - DSR 비율
-  - 주담대 DSR
-  - 은행 대출 규제
-  - 부채 상환 능력
 lastUpdated: '2026-01-10'
 datePublished: '2026-01-10'
 updateNote: 2026년 최신 기준

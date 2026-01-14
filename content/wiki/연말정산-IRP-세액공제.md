@@ -8,11 +8,6 @@ keywords:
   - IRP 한도
   - IRP 공제율
   - 퇴직연금 세액공제
-  - IRP 900만원
-  - IRP 148만원 환급
-  - 연금저축 IRP
-  - IRP 가입
-  - IRP 납입
 lastUpdated: '2026-01-07'
 datePublished: '2026-01-04'
 updateNote: 2025년 귀속 연말정산 기준

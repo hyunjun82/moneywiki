@@ -8,11 +8,6 @@ keywords:
   - dc형 etf 투자
   - irp etf 투자
   - 퇴직연금 etf 추천
-  - 퇴직연금 etf 매수
-  - 퇴직연금 s&p500
-  - 퇴직연금 나스닥
-  - 퇴직연금 etf 수익률
-  - 퇴직연금 주식 투자
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준 퇴직연금 ETF 투자 가이드 반영

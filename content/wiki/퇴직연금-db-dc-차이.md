@@ -8,11 +8,6 @@ keywords:
   - 퇴직연금 db dc
   - db형 dc형 비교
   - 퇴직연금 db dc 장단점
-  - 확정급여형 확정기여형 차이
-  - db dc 선택
-  - 퇴직연금 유형 차이
-  - db형 dc형 뭐가 좋아
-  - 퇴직연금 종류 비교
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준 위기브 스타일 업데이트

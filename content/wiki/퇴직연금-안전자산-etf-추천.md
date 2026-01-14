@@ -8,11 +8,6 @@ keywords:
   - 퇴직연금 채권 etf
   - 퇴직연금 안전자산 30
   - irp 안전자산 etf
-  - dc형 안전자산 etf
-  - 퇴직연금 tdf
-  - 퇴직연금 국채 etf
-  - 퇴직연금 안전자산 종류
-  - 퇴직연금 채권형 펀드
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준

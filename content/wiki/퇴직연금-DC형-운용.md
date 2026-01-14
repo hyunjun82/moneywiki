@@ -8,13 +8,6 @@ keywords:
   - 퇴직연금 DC형
   - DC형 투자방법
   - DC형 DB형 차이
-  - 퇴직연금 운용
-  - DC형 운용상품
-  - DC형 수익률
-  - 퇴직연금 펀드
-  - DC형 원리금보장
-  - DC형 실적배당
-  - 퇴직연금 상품변경
 lastUpdated: '2026-01-13'
 datePublished: '2026-01-13'
 updateNote: 2026년 기준

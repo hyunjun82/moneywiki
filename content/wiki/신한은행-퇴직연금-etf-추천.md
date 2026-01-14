@@ -8,11 +8,6 @@ keywords:
   - 신한 퇴직연금 etf
   - 신한은행 irp etf
   - 신한은행 dc형 etf
-  - 신한sol 퇴직연금
-  - 신한은행 퇴직연금 투자
-  - 신한 퇴직연금 추천
-  - 신한은행 퇴직연금 상품
-  - 신한 irp etf
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준

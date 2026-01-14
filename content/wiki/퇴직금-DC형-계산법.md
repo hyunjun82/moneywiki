@@ -8,11 +8,6 @@ keywords:
   - dc 퇴직금 계산법 세후
   - dc형 퇴직금계산기
   - dc 퇴직금 세금 계산
-  - dc형 퇴직연금 계산
-  - dc형 퇴직금 수령
-  - 확정기여형 퇴직금 계산
-  - dc형 퇴직연금 수령액
-  - dc 퇴직연금 계산기
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준 DC형 퇴직연금 계산법 반영

@@ -8,11 +8,6 @@ keywords:
   - kb 퇴직연금 etf
   - 국민은행 irp etf
   - 국민은행 dc형 etf
-  - kb스타뱅킹 퇴직연금
-  - 국민은행 퇴직연금 투자
-  - kb 퇴직연금 추천
-  - 국민은행 퇴직연금 상품
-  - kb irp etf
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준

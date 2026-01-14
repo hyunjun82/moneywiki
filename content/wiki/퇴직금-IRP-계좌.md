@@ -8,11 +8,6 @@ keywords:
   - 퇴직금 irp 계좌 만들기
   - 퇴직금 irp 계좌 추천
   - 퇴직금 통장 irp 만들기
-  - irp 계좌 개설 방법
-  - irp 계좌 추천
-  - irp 어디서 만들어
-  - 퇴직금 irp 은행
-  - 퇴직금 irp 증권사
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준 IRP 계좌 개설 및 금융사 비교 반영

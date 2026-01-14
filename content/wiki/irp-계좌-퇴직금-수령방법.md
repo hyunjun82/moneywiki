@@ -8,11 +8,6 @@ keywords:
   - IRP 퇴직금 출금
   - IRP 해지 방법
   - IRP 일시금 인출
-  - IRP 중도인출
-  - IRP 퇴직금 받기
-  - IRP 계좌 해지
-  - IRP 연금 수령
-  - 개인형 퇴직연금 수령
 lastUpdated: '2026-01-08'
 datePublished: '2026-01-08'
 updateNote: 2026년 1월 기준

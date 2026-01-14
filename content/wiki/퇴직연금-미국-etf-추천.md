@@ -8,11 +8,6 @@ keywords:
   - 퇴직연금 s&p500
   - 퇴직연금 나스닥 etf
   - irp 미국 etf
-  - dc형 미국 etf
-  - 퇴직연금 해외 etf
-  - 퇴직연금 미국주식
-  - 퇴직연금 s&p500 etf
-  - 퇴직연금 나스닥100
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준

@@ -8,11 +8,6 @@ keywords:
   - DC형 퇴직금 인출
   - 확정기여형 퇴직금
   - DC형 퇴직금 해지
-  - DC형 퇴직연금 출금
-  - DC형 IRP 이전
-  - DC형 퇴직금 받는 법
-  - DC형 연금 수령
-  - 퇴직연금 DC형 인출
 lastUpdated: '2026-01-08'
 datePublished: '2026-01-08'
 updateNote: 2026년 1월 기준

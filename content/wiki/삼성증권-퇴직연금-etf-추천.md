@@ -8,11 +8,6 @@ keywords:
   - 삼성증권 irp etf
   - 삼성증권 dc형 etf
   - 삼성증권 퇴직연금 투자
-  - 삼성증권 퇴직연금 추천
-  - 삼성증권 irp 추천
-  - kodex etf 퇴직연금
-  - 삼성증권 연금저축
-  - 삼성증권 pop
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준

@@ -8,11 +8,6 @@ keywords:
   - 퇴직금 IRP 면제
   - IRP 의무 제외
   - 퇴직금 바로 받기
-  - IRP 안 거치고 받기
-  - 퇴직금 현금 수령
-  - IRP 의무화 예외
-  - 퇴직금 IRP 안해도
-  - 55세 퇴직금 수령
 lastUpdated: '2026-01-08'
 datePublished: '2026-01-08'
 updateNote: 2026년 1월 기준

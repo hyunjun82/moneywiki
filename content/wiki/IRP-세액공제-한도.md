@@ -8,13 +8,6 @@ keywords:
   - IRP 연말정산
   - IRP 공제 한도
   - 연금저축 IRP 한도
-  - IRP 900만원
-  - IRP 세액공제율
-  - IRP 16.5%
-  - IRP 13.2%
-  - 연금계좌 세액공제
-  - IRP 납입한도
-  - 퇴직연금 세액공제
 lastUpdated: '2026-01-13'
 datePublished: '2026-01-13'
 updateNote: 2026년 기준

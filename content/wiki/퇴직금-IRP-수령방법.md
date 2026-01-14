@@ -8,11 +8,6 @@ keywords:
   - irp 퇴직금 인출
   - 퇴직금 irp 수령
   - 퇴직금 irp 해지
-  - irp 퇴직금 세금
-  - irp 일시금 수령
-  - irp 연금 수령
-  - 퇴직금 irp 출금
-  - irp 퇴직금 찾는법
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준 IRP 퇴직금 수령 절차 반영

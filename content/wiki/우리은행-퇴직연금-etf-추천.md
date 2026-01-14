@@ -8,11 +8,6 @@ keywords:
   - 우리 퇴직연금 etf
   - 우리은행 irp etf
   - 우리은행 dc형 etf
-  - 우리won뱅킹 퇴직연금
-  - 우리은행 퇴직연금 투자
-  - 우리 퇴직연금 추천
-  - 우리은행 퇴직연금 상품
-  - 우리 irp etf
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준

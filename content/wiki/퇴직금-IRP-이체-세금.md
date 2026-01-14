@@ -8,13 +8,6 @@ keywords:
   - IRP 이체 세금
   - 퇴직금 과세이연
   - IRP 과세이연
-  - 퇴직금 IRP 이체
-  - 퇴직연금 세금
-  - IRP 세금 혜택
-  - 퇴직소득세 이연
-  - IRP 해지 세금
-  - 퇴직금 세금 안내는 방법
-  - IRP 계좌 세금
 lastUpdated: '2026-01-13'
 datePublished: '2026-01-13'
 updateNote: 2026년 기준

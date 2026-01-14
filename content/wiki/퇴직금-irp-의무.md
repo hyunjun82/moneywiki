@@ -8,11 +8,6 @@ keywords:
   - 퇴직금 irp 이전
   - 퇴직금 irp 강제
   - irp 의무 가입
-  - 퇴직금 irp 의무 이전
-  - 퇴직금 irp 필수
-  - irp 퇴직금 의무
-  - 퇴직금 irp 규정
-  - irp 퇴직금 이전
 lastUpdated: '2026-01-08'
 datePublished: '2026-01-08'
 updateNote: 2026년 1월 기준

@@ -8,11 +8,6 @@ keywords:
   - dc형 퇴직연금 운용
   - dc형 투자
   - 확정기여형 etf
-  - dc형 퇴직연금 etf
-  - dc형 s&p500
-  - dc형 나스닥
-  - dc형 배당 etf
-  - dc형 채권 etf
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준
