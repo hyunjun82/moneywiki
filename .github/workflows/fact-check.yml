@@ -1,0 +1,48 @@
+name: Quality Check
+
+on:
+  push:
+    paths:
+      - 'content/wiki/*.md'
+  pull_request:
+    paths:
+      - 'content/wiki/*.md'
+
+jobs:
+  quality-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Check Wegive Style Violations
+        id: style-check
+        run: |
+          node scripts/analyze-wegive-style.js
+          if [ -f scripts/wegive-style-violations.json ]; then
+            TOTAL=$(node -p "require('./scripts/wegive-style-violations.json').total")
+            echo "violations=$TOTAL" >> $GITHUB_OUTPUT
+            if [ "$TOTAL" -gt 0 ]; then
+              echo "::warning::⚠️ 위기브 스타일 위반: ${TOTAL}개 파일"
+            fi
+          fi
+        continue-on-error: true
+
+      - name: Build Test
+        run: npm run build
+
+      - name: Summary
+        run: |
+          echo "::notice::✅ 품질 검사 완료!"
+          if [ -f scripts/wegive-style-violations.json ]; then
+            TOTAL=$(node -p "require('./scripts/wegive-style-violations.json').total || 0")
+            echo "::notice::위기브 스타일 점검: ${TOTAL}개 파일 검토 필요"
+          fi
