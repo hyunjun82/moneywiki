@@ -162,7 +162,7 @@ export function BreadcrumbSchema({ items }: { items: BreadcrumbItem[] }) {
   );
 }
 
-// WebSite 스키마 - 사이트 전체 (검색 기능)
+// WebSite 스키마 - 사이트 전체
 export function WebSiteSchema() {
   const schema = {
     "@context": "https://schema.org",
@@ -171,14 +171,6 @@ export function WebSiteSchema() {
     alternateName: "MoneyWiki",
     url: "https://www.jjyu.co.kr",
     description: "퇴직금, 세금, 부동산, 대출 정보를 쉽게 찾아보세요.",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: "https://www.jjyu.co.kr/search?q={search_term_string}",
-      },
-      "query-input": "required name=search_term_string",
-    },
     publisher: {
       "@type": "Organization",
       name: "머니위키",

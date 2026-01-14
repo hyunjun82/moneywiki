@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "validate": "py scripts/validate-all.py",
+    "prebuild": "py scripts/validate-all.py",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"

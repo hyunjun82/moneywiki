@@ -54,6 +54,12 @@ const nextConfig: NextConfig = {
         destination: "/w/연말정산-계산기",
         permanent: true,
       },
+      // 검색 경로 차단 (404 방지)
+      {
+        source: "/search",
+        destination: "/",
+        permanent: true,
+      },
     ];
   },
 };

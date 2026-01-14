@@ -1,19 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 
 export default function Header() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const router = useRouter();
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
-    }
-  };
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-neutral-200/50">
@@ -36,31 +25,8 @@ export default function Header() {
             <NavLink href="/#category-계산기">계산기</NavLink>
           </nav>
 
-          {/* 검색 & 액션 */}
+          {/* 액션 */}
           <div className="flex items-center gap-4">
-            <form onSubmit={handleSearch} className="hidden sm:block">
-              <div className="relative">
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="검색..."
-                  className="w-48 lg:w-64 h-9 pl-9 pr-3 text-sm bg-neutral-100 border-none rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:bg-white transition-all"
-                />
-                <svg
-                  className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <circle cx="11" cy="11" r="8" />
-                  <path d="M21 21l-4.35-4.35" />
-                </svg>
-              </div>
-            </form>
             <Link
               href="/recent"
               className="text-sm text-neutral-600 hover:text-black transition-colors"

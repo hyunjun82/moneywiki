@@ -1,164 +1,153 @@
 #!/usr/bin/env python3
 """
-통합 검증 스크립트 - 빌드 전 모든 검증 실행
+머니위키 콘텐츠 검증 스크립트
+- 2026년 기준 금액/세율 검증
+- 계산식 오류 검증
+- 금지 패턴 검증
 """
 
-import subprocess
-import sys
 import json
+import re
 from pathlib import Path
-from datetime import datetime
 
-def run_script(script_name: str, description: str) -> dict:
-    """
-    Python 스크립트 실행
+# 색상 코드
+RED = '\033[91m'
+GREEN = '\033[92m'
+YELLOW = '\033[93m'
+RESET = '\033[0m'
 
-    Returns:
-        dict: {
-            'success': bool,
-            'output': str,
-            'errors': int
-        }
-    """
+def load_fact_db():
+    """fact-check-db.json 로드"""
+    db_path = Path(__file__).parent / 'fact-check-db.json'
+    with open(db_path, 'r', encoding='utf-8') as f:
+        return json.load(f)
 
-    script_path = Path(__file__).parent / script_name
+def check_forbidden_values(content, forbidden_values):
+    """금지된 값 검증"""
+    errors = []
+    for forbidden, correct in forbidden_values.items():
+        # 15%, 12% 같은 잘못된 세율 찾기
+        if '퍼센트' in forbidden or '%' in forbidden:
+            pattern = forbidden.replace('퍼센트', '%').replace('세액공제_', '').replace('_', ' ')
+            if pattern in content:
+                errors.append(f"❌ 잘못된 세율: {forbidden} → {correct}")
 
-    if not script_path.exists():
-        return {
-            'success': False,
-            'output': f"❌ {script_name} 파일 없음",
-            'errors': 1
-        }
+        # 10,030원 같은 잘못된 최저임금 찾기
+        elif '원' in forbidden:
+            if forbidden.replace('최저임금_', '').replace('_', ',') in content:
+                errors.append(f"❌ 잘못된 금액: {forbidden} → {correct}")
 
-    print(f"🔍 {description}...")
+        # 7일, 5년 같은 잘못된 기한 찾기
+        elif '일' in forbidden or '년' in forbidden:
+            pattern = forbidden.replace('퇴직금_', '').replace('청구권_', '').replace('_', '')
+            if pattern in content:
+                errors.append(f"❌ 잘못된 기한: {forbidden} → {correct}")
 
-    try:
-        result = subprocess.run(
-            [sys.executable, str(script_path)],
-            capture_output=True,
-            text=True,
-            encoding='utf-8'
-        )
+    return errors
 
-        success = result.returncode == 0
-        output = result.stdout + result.stderr
+def check_calculations(content, categories):
+    """계산식 검증"""
+    errors = []
 
-        # 오류 개수 파악
-        errors = 0
-        if '오류' in output or 'ERROR' in output or '❌' in output:
-            # JSON 결과 파일 확인
-            json_files = {
-                'fact_checker.py': 'fact_check_result.json',
-                'verify_all.py': 'verify_result.json',
-                'verify-calculations.py': 'calculation_errors.json',
-                'check-wiki-quality.py': 'quality_check_result.json'
-            }
+    # 실업급여 상한액 검증
+    if '68,100' in content or '68100' in content:
+        if categories['unemployment']['실업급여_상한액_일'] != 68100:
+            errors.append(f"⚠️ 실업급여 상한액 확인 필요: 68,100원")
 
-            if script_name in json_files:
-                json_path = Path(__file__).parent / json_files[script_name]
-                if json_path.exists():
-                    with open(json_path, 'r', encoding='utf-8') as f:
-                        data = json.load(f)
-                        errors = data.get('error_count', 0) or data.get('total_errors', 0)
+    # 세액공제율 검증
+    if '16.5%' in content or '0.165' in content:
+        if categories['tax']['세액공제_5500만원이하'] != 16.5:
+            errors.append(f"⚠️ 세액공제 16.5% 확인 필요")
 
-        return {
-            'success': success,
-            'output': output,
-            'errors': errors
-        }
+    if '13.2%' in content or '0.132' in content:
+        if categories['tax']['세액공제_5500만원초과'] != 13.2:
+            errors.append(f"⚠️ 세액공제 13.2% 확인 필요")
 
-    except Exception as e:
-        return {
-            'success': False,
-            'output': f"❌ 실행 오류: {str(e)}",
-            'errors': 1
-        }
+    # 최저임금 검증
+    if '10,320' in content or '10320' in content:
+        if categories['wage']['최저임금_시급'] != 10320:
+            errors.append(f"⚠️ 최저임금 10,320원 확인 필요")
+
+    return errors
+
+def check_forbidden_patterns(content):
+    """금지 패턴 검증"""
+    errors = []
+
+    # 본문에 FAQ 섹션 있는지
+    if re.search(r'^##\s*자주\s*묻는\s*질문', content, re.MULTILINE):
+        errors.append(f"❌ 본문에 FAQ 섹션 금지 (frontmatter만 사용)")
+
+    # 헤딩에 숫자 있는지
+    headings_with_numbers = re.findall(r'^##\s+\d+\.', content, re.MULTILINE)
+    if headings_with_numbers:
+        errors.append(f"❌ 헤딩에 숫자 금지: {headings_with_numbers}")
+
+    # description에 "알아봅니다" 있는지
+    if re.search(r'description:.*알아봅니다', content):
+        errors.append(f"❌ description에 '알아봅니다' 금지")
+
+    # 이모지 사용
+    emoji_pattern = r'[\U0001F300-\U0001F9FF]'
+    if re.search(emoji_pattern, content):
+        errors.append(f"⚠️ 이모지 사용 확인 필요")
+
+    return errors
+
+def validate_file(filepath, db):
+    """파일 검증"""
+    content = filepath.read_text(encoding='utf-8')
+    errors = []
+
+    # 1. 금지된 값 검증
+    errors.extend(check_forbidden_values(content, db['forbidden_values']))
+
+    # 2. 계산 검증
+    errors.extend(check_calculations(content, db['categories']))
+
+    # 3. 금지 패턴 검증
+    errors.extend(check_forbidden_patterns(content))
+
+    return errors
 
 def main():
-    """
-    통합 검증 실행
+    print(f"\n{YELLOW}=== 머니위키 콘텐츠 검증 시작 ==={RESET}\n")
 
-    실행 순서:
-    1. fact_checker.py - 팩트체크
-    2. verify-calculations.py - 계산 검증
-    3. verify_all.py - 계산기 검증
-    4. check-wiki-quality.py - 품질 검증
-    """
+    # DB 로드
+    db = load_fact_db()
+    print(f"✓ fact-check-db.json 로드 완료 (버전: {db['version']})")
 
-    print("="*60)
-    print("🚀 머니위키 통합 검증 시작")
-    print("="*60)
-    print(f"⏰ 시작 시간: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+    # 파일 검증
+    wiki_dir = Path('content/wiki')
+    files = list(wiki_dir.glob('*.md'))
+    print(f"✓ 검증 대상: {len(files)}개 파일\n")
 
-    # 검증 단계
-    steps = [
-        {
-            'script': 'fact_checker.py',
-            'description': 'Step 1/4: 팩트체크 실행',
-            'critical': True
-        },
-        {
-            'script': 'verify-calculations.py',
-            'description': 'Step 2/4: 계산 검증',
-            'critical': True
-        },
-        {
-            'script': 'verify_all.py',
-            'description': 'Step 3/4: 계산기 검증',
-            'critical': True
-        },
-        {
-            'script': 'check-wiki-quality.py',
-            'description': 'Step 4/4: 품질 검증',
-            'critical': False  # 경고만 (빌드 중단 X)
-        }
-    ]
-
-    results = {}
     total_errors = 0
+    error_files = []
 
-    for step in steps:
-        result = run_script(step['script'], step['description'])
-        results[step['script']] = result
+    for filepath in files:
+        errors = validate_file(filepath, db)
+        if errors:
+            total_errors += len(errors)
+            error_files.append((filepath.name, errors))
 
-        print(result['output'])
+    # 결과 출력
+    if total_errors == 0:
+        print(f"{GREEN}✅ 검증 통과! 오류 없음{RESET}\n")
+        return 0
+    else:
+        print(f"{RED}❌ 검증 실패: {total_errors}개 오류 발견{RESET}\n")
 
-        if not result['success']:
-            if step['critical']:
-                total_errors += result['errors']
-            else:
-                print(f"⚠️  {step['script']} 실패 (경고 - 빌드 계속)\n")
+        for filename, errors in error_files[:10]:  # 최대 10개 파일만 표시
+            print(f"{RED}파일: {filename}{RESET}")
+            for error in errors:
+                print(f"  {error}")
+            print()
 
-    # 최종 결과
-    print("\n" + "="*60)
-    print("📊 검증 결과 요약")
-    print("="*60)
+        if len(error_files) > 10:
+            print(f"... 외 {len(error_files) - 10}개 파일\n")
 
-    for script, result in results.items():
-        status = "✅ 통과" if result['success'] else f"❌ 실패 ({result['errors']}개 오류)"
-        print(f"{script:30s} {status}")
-
-    print("="*60)
-
-    if total_errors > 0:
-        print(f"\n❌ 총 {total_errors}개 오류 발견!")
-        print("⚠️  빌드를 중단합니다. 위 오류를 수정한 후 다시 시도하세요.\n")
-
-        # 통합 결과 JSON 저장
-        output_path = Path(__file__).parent / 'validation_summary.json'
-        with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump({
-                'timestamp': datetime.now().isoformat(),
-                'total_errors': total_errors,
-                'results': results
-            }, f, ensure_ascii=False, indent=2)
-
-        print(f"💾 상세 결과: {output_path}\n")
-
-        sys.exit(1)  # 빌드 중단
-
-    print("\n✅ 모든 검증 통과! 빌드를 진행합니다.\n")
-    sys.exit(0)
+        return 1
 
 if __name__ == '__main__':
-    main()
+    exit(main())

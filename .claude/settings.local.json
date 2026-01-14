@@ -64,7 +64,21 @@
       "Bash(node scripts/analyze-wegive-style.js:*)",
       "Bash(node:*)",
       "Bash(git commit:*)",
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "Bash(powershell -Command \"Remove-Item -Recurse -Force .next\")",
+      "Bash(git stash:*)",
+      "Bash(git checkout:*)",
+      "Bash(npm run validate:*)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_close",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_run_code",
+      "mcp__playwright__browser_fill_form",
+      "mcp__playwright__browser_evaluate",
+      "Bash(dir:*)",
+      "Bash(findstr:*)"
     ]
   }
 }
