@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const url = `https://www.jjyu.co.kr/w/${encodeURIComponent(slug)}`;
+  const url = `https://www.jjyu.co.kr/w/${slug}`;
 
   return {
     title: doc.title,
@@ -154,7 +154,7 @@ export default async function WikiPage({ params }: PageProps) {
     notFound();
   }
 
-  const url = `https://www.jjyu.co.kr/w/${encodeURIComponent(slug)}`;
+  const url = `https://www.jjyu.co.kr/w/${slug}`;
   const relatedDocs = findRelatedDocuments(doc.slug, 5);
   const allDocs = getAllWikiDocuments();
 
