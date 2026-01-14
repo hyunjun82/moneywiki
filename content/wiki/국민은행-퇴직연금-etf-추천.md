@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준
+author: 머니위키 에디터
 summary:
   - 국민은행 퇴직연금에서 다양한 ETF에 투자할 수 있어요.
   - KB스타뱅킹 앱에서 매수하면 돼요.

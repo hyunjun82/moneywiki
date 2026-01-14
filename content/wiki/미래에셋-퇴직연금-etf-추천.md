@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준
+author: 머니위키 에디터
 summary:
   - 미래에셋증권은 ETF 라인업이 가장 다양해요.
   - TIGER ETF를 직접 운용해서 상품이 풍부해요.

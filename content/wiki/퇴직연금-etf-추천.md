@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준
+author: 머니위키 에디터
 summary:
   - 퇴직연금 ETF는 안전자산 30% 의무 규정을 지켜야 해요.
   - S&P500, 나스닥100 같은 해외지수 ETF가 인기예요.

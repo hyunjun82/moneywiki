@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-08'
 datePublished: '2026-01-08'
 updateNote: 2026년 1월 기준
+author: 머니위키 에디터
 summary:
   - 55세 이상이면 IRP에서 자유롭게 인출할 수 있어요.
   - 55세 미만이면 주택구입, 의료비 등 법정 사유가 있어야 인출 가능해요.

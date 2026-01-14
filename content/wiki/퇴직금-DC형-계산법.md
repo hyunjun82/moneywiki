@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준 DC형 퇴직연금 계산법 반영
+author: 머니위키 에디터
 summary:
   - DC형 퇴직금은 회사 적립금 + 운용수익으로 계산해요.
   - 매년 연봉의 1/12 이상을 회사가 적립하고, 내가 운용해요.

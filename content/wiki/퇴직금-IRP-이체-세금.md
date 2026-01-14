@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-13'
 datePublished: '2026-01-13'
 updateNote: 2026년 기준
+author: 머니위키 에디터
 summary:
   - IRP로 이체하면 퇴직소득세를 나중에 낼 수 있어요 (과세이연).
   - 55세 이후 연금으로 받으면 세금이 30~40% 줄어요.

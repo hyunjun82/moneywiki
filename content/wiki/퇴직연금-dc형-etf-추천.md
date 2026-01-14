@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준
+author: 머니위키 에디터
 summary:
   - DC형은 위험자산 70%, 안전자산 30% 규정을 지켜야 해요.
   - S&P500, 나스닥100 ETF가 장기 투자에 좋아요.

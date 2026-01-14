@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준
+author: 머니위키 에디터
 summary:
   - DC형/IRP는 안전자산 30% 이상 의무예요.
   - 채권 ETF, TDF가 안전자산으로 분류돼요.

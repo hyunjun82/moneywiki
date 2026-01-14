@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준
+author: 머니위키 에디터
 summary:
   - IRP 퇴직금은 55세 이후 자유롭게 인출할 수 있어요.
   - 55세 전에는 법정 사유가 있어야 중도인출이 가능해요.

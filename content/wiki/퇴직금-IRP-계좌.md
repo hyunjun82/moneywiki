@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준 IRP 계좌 개설 및 금융사 비교 반영
+author: 머니위키 에디터
 summary:
   - IRP 계좌는 은행, 증권사, 보험사에서 개설할 수 있어요.
   - 증권사가 상품 다양성과 수수료에서 유리해요.

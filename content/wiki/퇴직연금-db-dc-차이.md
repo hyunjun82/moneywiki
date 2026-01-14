@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준 위기브 스타일 업데이트
+author: 머니위키 에디터
 summary:
   - DB형은 회사가 운용하고, DC형은 근로자가 직접 운용해요.
   - DB형은 퇴직금이 확정되고, DC형은 운용 결과에 따라 달라져요.

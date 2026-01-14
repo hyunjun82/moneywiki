@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-08'
 datePublished: '2026-01-08'
 updateNote: 2026년 1월 기준
+author: 머니위키 에디터
 summary:
   - 55세 이상 퇴직자는 IRP 이전 없이 바로 현금으로 받아요.
   - 퇴직금 55만원 이하, 주택구입, 의료비 등 법정 사유도 예외예요.

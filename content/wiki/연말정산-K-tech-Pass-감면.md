@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-07'
 datePublished: '2026-01-06'
 updateNote: 2025년 귀속 연말정산 기준
+author: 머니위키 에디터
 summary:
   - K-tech Pass 보유 외국인 기술자 소득세 50% 감면이에요.
   - 최대 5년간 적용돼요.

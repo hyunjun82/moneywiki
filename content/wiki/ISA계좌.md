@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-04'
 datePublished: '2026-01-04'
 updateNote: 2026년 기준
+author: 머니위키 에디터
 summary: ISA는 다양한 금융상품을 한 계좌에서 운용하며 세금 혜택을 받는 계좌입니다. 순이익 200~400만원까지 비과세됩니다.
 sources:
   - name: 조세특례제한법

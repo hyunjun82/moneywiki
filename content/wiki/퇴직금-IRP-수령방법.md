@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준 IRP 퇴직금 수령 절차 반영
+author: 머니위키 에디터
 summary:
   - IRP 퇴직금은 55세 이후 연금 또는 일시금으로 받을 수 있어요.
   - 연금으로 받으면 세금이 30~40% 줄어들어요.

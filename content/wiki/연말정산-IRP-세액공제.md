@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-07'
 datePublished: '2026-01-04'
 updateNote: 2025년 귀속 연말정산 기준
+author: 머니위키 에디터
 summary:
   - IRP에 넣은 돈의 13.2~16.5%를 세금에서 바로 빼줘요.
   - 연봉 5,500만원 이하면 900만원 납입 시 148만원 돌려받아요.

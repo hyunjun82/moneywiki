@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-13'
 datePublished: '2026-01-13'
 updateNote: 2026년 기준
+author: 머니위키 에디터
 summary:
   - DC형은 내가 직접 운용하는 퇴직연금이에요.
   - 원리금보장형과 실적배당형 중 선택할 수 있어요.

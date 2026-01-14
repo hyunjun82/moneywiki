@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준 퇴직연금 ETF 투자 가이드 반영
+author: 머니위키 에디터
 summary:
   - DC형과 IRP에서 ETF 투자가 가능해요. 적립금의 최대 70%까지 투자할 수 있어요.
   - S&P500, 코스피200 등 지수 추종 ETF가 인기예요.

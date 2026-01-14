@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-08'
 datePublished: '2026-01-08'
 updateNote: 2026년 1월 기준
+author: 머니위키 에디터
 summary:
   - 2022년 4월부터 55세 미만 퇴직자는 퇴직금을 IRP로 받아야 해요.
   - 회사는 근로자 IRP 계좌로 퇴직금을 지급해야 할 의무가 있어요.

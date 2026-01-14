@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준
+author: 머니위키 에디터
 summary:
   - DB형에서 DC형으로 전환은 가능해요. 반대는 안 돼요.
   - 회사에 전환 신청하고 근로자 동의를 받아요.

@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-08'
 datePublished: '2026-01-08'
 updateNote: 2026년 1월 기준
+author: 머니위키 에디터
 summary:
   - 55세 미만이면 DC형 퇴직금을 IRP로 먼저 이전해야 해요.
   - 55세 이상이면 일시금 또는 연금으로 바로 받을 수 있어요.

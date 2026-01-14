@@ -12,6 +12,7 @@ keywords:
 lastUpdated: '2026-01-10'
 datePublished: '2026-01-10'
 updateNote: 2026년 최신 기준
+author: 머니위키 에디터
 summary:
   - DSR 계산기로 대출 가능 금액을 미리 확인하세요.
   - 은행권은 DSR 40%, 제2금융권은 50%가 한도예요.

@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-13'
 datePublished: '2026-01-13'
 updateNote: 2026년 기준
+author: 머니위키 에디터
 summary:
   - 55세 전이라도 6가지 사유면 중도인출 가능해요.
   - 무주택자 주택구입, 본인 장기요양, 파산 등이 해당돼요.

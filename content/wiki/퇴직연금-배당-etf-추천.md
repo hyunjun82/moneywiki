@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준
+author: 머니위키 에디터
 summary:
   - 배당 ETF는 분기마다 배당금을 받을 수 있어요.
   - 퇴직연금에서 배당금이 자동 재투자되면 복리 효과가 커요.

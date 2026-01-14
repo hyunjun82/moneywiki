@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-13'
 datePublished: '2026-01-13'
 updateNote: 2026년 기준
+author: 머니위키 에디터
 summary:
   - IRP는 연간 최대 900만 원까지 세액공제 받을 수 있어요.
   - 연금저축과 합산해서 900만 원이에요.

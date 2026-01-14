@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-08'
 datePublished: '2026-01-08'
 updateNote: 2026년 1월 기준
+author: 머니위키 에디터
 summary:
   - DB형은 퇴직금이 근속연수 × 평균임금으로 확정돼요.
   - 55세 미만이면 IRP로 먼저 이전해야 해요.

@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준
+author: 머니위키 에디터
 summary:
   - S&P500 ETF는 미국 대형주 500개에 분산 투자해요.
   - 나스닥100 ETF는 기술주 중심으로 성장성이 높아요.

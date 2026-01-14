@@ -11,6 +11,7 @@ keywords:
 lastUpdated: '2026-01-08'
 datePublished: '2026-01-08'
 updateNote: 2026년 1월 기준
+author: 머니위키 에디터
 summary:
   - IRP에 입금된 퇴직금은 앱이나 인터넷뱅킹에서 인출 신청하면 돼요.
   - 55세 미만이면 일시금 인출 시 기타소득세 16.5%가 붙어요.
