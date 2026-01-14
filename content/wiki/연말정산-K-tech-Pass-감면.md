@@ -6,13 +6,8 @@ keywords:
   - 연말정산 K-tech Pass
   - 외국인 기술자 감면
   - K-tech 패스 세금
-  - 외국인 엔지니어
   - 기술자 세금 감면
   - 소득세 50% 감면
-  - 5년 감면
-  - 중소기업 70% 감면
-  - 외국인 근로자 세금
-  - 과기정통부 인증
 lastUpdated: '2026-01-07'
 datePublished: '2026-01-06'
 updateNote: 2025년 귀속 연말정산 기준
@@ -30,7 +25,7 @@ faq:
   - question: K-tech Pass가 뭐예요?
     answer: 우수 외국인 기술인력임을 인증하는 정부 제도예요.
   - question: 감면율이 얼마예요?
-    answer: 소득세 50% 감면, 최대 5년간이에요.
+    answer: '소득세 50% 감면, 최대 5년간이에요.'
   - question: 내국인도 해당돼요?
     answer: 아니요. 외국인 기술자만 해당돼요.
 relatedDocs:

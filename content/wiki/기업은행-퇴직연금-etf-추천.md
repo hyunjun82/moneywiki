@@ -8,11 +8,6 @@ keywords:
   - ibk 퇴직연금 etf
   - 기업은행 irp etf
   - 기업은행 dc형 etf
-  - i-one뱅크 퇴직연금
-  - 기업은행 퇴직연금 투자
-  - ibk 퇴직연금 추천
-  - 기업은행 퇴직연금 상품
-  - ibk irp etf
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준

@@ -5,14 +5,9 @@ category: 퇴직연금
 keywords:
   - 미래에셋 퇴직연금 etf 추천
   - 미래에셋 퇴직연금 etf
+  - 미래에셋 퇴직연금 추천
   - 미래에셋증권 퇴직연금
   - 미래에셋 irp etf
-  - 미래에셋 dc형 etf
-  - 미래에셋 퇴직연금 투자
-  - 미래에셋 퇴직연금 추천
-  - 미래에셋 irp 추천
-  - tiger etf 퇴직연금
-  - 미래에셋 연금저축
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준

@@ -6,13 +6,8 @@ keywords:
   - 신한은행 퇴직연금 etf 추천
   - 신한은행 퇴직연금 etf
   - 신한 퇴직연금 etf
-  - 신한은행 irp etf
-  - 신한은행 dc형 etf
-  - 신한sol 퇴직연금
-  - 신한은행 퇴직연금 투자
   - 신한 퇴직연금 추천
-  - 신한은행 퇴직연금 상품
-  - 신한 irp etf
+  - 신한은행 irp etf
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준
@@ -33,7 +28,7 @@ faq:
   - question: 신한SOL 앱에서 어떻게 해요?
     answer: 앱에서 퇴직연금 메뉴로 가서 운용지시 또는 상품변경에서 ETF를 선택해요.
   - question: ETF 라인업이 다양해요?
-    answer: 주요 ETF는 대부분 취급해요. S&P500, 나스닥, 국내지수 ETF 등 다양해요.
+    answer: '주요 ETF는 대부분 취급해요. S&P500, 나스닥, 국내지수 ETF 등 다양해요.'
   - question: 수수료가 있어요?
     answer: ETF 매매 수수료는 없거나 저렴해요. 운용보수는 ETF마다 달라요.
   - question: 고객센터 번호가 뭐예요?

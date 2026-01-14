@@ -1,6 +1,6 @@
 ---
 title: 퇴직연금 ETF 추천
-description: 퇴직연금 계좌에서 투자할 ETF 추천해드려요. DC형, IRP에서 운용할 수 있어요
+description: '퇴직연금 계좌에서 투자할 ETF 추천해드려요. DC형, IRP에서 운용할 수 있어요'
 category: 퇴직연금
 keywords:
   - 퇴직연금 etf 추천
@@ -8,18 +8,13 @@ keywords:
   - 퇴직연금 etf
   - dc형 퇴직연금 etf
   - irp etf 추천
-  - 퇴직연금 미국 etf
-  - 퇴직연금 s&p500
-  - 퇴직연금 배당 etf
-  - 퇴직연금 안전자산 etf
-  - 퇴직연금 etf 수익률
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준
 summary:
   - 퇴직연금 ETF는 안전자산 30% 의무 규정을 지켜야 해요.
-  - S&P500, 나스닥100 같은 해외지수 ETF가 인기예요.
-  - TDF, 채권 ETF로 안전자산 비중을 맞출 수 있어요.
+  - 'S&P500, 나스닥100 같은 해외지수 ETF가 인기예요.'
+  - 'TDF, 채권 ETF로 안전자산 비중을 맞출 수 있어요.'
 sources:
   - name: 금융감독원 퇴직연금
     url: 'https://www.fss.or.kr'
@@ -35,9 +30,9 @@ faq:
   - question: 해외 ETF도 투자할 수 있어요?
     answer: 국내 상장된 해외지수 ETF는 가능해요. 해외 직접 상장 ETF는 불가능해요.
   - question: 어떤 ETF가 수익률 좋아요?
-    answer: 장기적으로 S&P500, 나스닥100 ETF가 좋은 성과를 보여요. 단, 변동성도 커요.
+    answer: '장기적으로 S&P500, 나스닥100 ETF가 좋은 성과를 보여요. 단, 변동성도 커요.'
   - question: 안전자산 ETF는 뭐가 있어요?
-    answer: 채권 ETF, TDF(타겟데이트펀드), 예금형 상품 등이 안전자산으로 분류돼요.
+    answer: '채권 ETF, TDF(타겟데이트펀드), 예금형 상품 등이 안전자산으로 분류돼요.'
 relatedDocs:
   - title: 퇴직연금
     url: /w/퇴직연금

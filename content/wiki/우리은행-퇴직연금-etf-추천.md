@@ -6,13 +6,8 @@ keywords:
   - 우리은행 퇴직연금 etf 추천
   - 우리은행 퇴직연금 etf
   - 우리 퇴직연금 etf
-  - 우리은행 irp etf
-  - 우리은행 dc형 etf
-  - 우리won뱅킹 퇴직연금
-  - 우리은행 퇴직연금 투자
   - 우리 퇴직연금 추천
-  - 우리은행 퇴직연금 상품
-  - 우리 irp etf
+  - 우리은행 irp etf
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준
@@ -33,7 +28,7 @@ faq:
   - question: 우리WON뱅킹 앱에서 어떻게 해요?
     answer: 앱에서 퇴직연금 메뉴로 가서 운용지시에서 ETF를 선택하고 매수해요.
   - question: ETF 라인업이 다양해요?
-    answer: 주요 ETF는 대부분 취급해요. S&P500, 나스닥, 채권 ETF 등 있어요.
+    answer: '주요 ETF는 대부분 취급해요. S&P500, 나스닥, 채권 ETF 등 있어요.'
   - question: 수수료가 있어요?
     answer: ETF 매매 수수료는 없거나 저렴해요. 운용보수는 ETF마다 달라요.
   - question: 고객센터 번호가 뭐예요?

@@ -4,21 +4,16 @@ description: DC형 퇴직연금에서 투자할 ETF 추천해드려요. 안전�
 category: 퇴직연금
 keywords:
   - 퇴직연금 dc형 etf 추천
+  - dc형 퇴직연금 etf
   - dc형 etf
   - dc형 퇴직연금 운용
-  - dc형 투자
-  - 확정기여형 etf
-  - dc형 퇴직연금 etf
-  - dc형 s&p500
-  - dc형 나스닥
   - dc형 배당 etf
-  - dc형 채권 etf
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준
 summary:
-  - DC형은 위험자산 70%, 안전자산 30% 규정을 지켜야 해요.
-  - S&P500, 나스닥100 ETF가 장기 투자에 좋아요.
+  - 'DC형은 위험자산 70%, 안전자산 30% 규정을 지켜야 해요.'
+  - 'S&P500, 나스닥100 ETF가 장기 투자에 좋아요.'
   - 채권 ETF나 TDF로 안전자산 비중을 맞춰요.
 sources:
   - name: 금융감독원 퇴직연금
@@ -31,9 +26,9 @@ faq:
   - question: DC형에서 ETF 투자할 수 있어요?
     answer: 네. DC형은 근로자가 직접 운용하니까 ETF 투자 가능해요. 금융기관 앱에서 매수하면 돼요.
   - question: 안전자산 30%는 꼭 지켜야 해요?
-    answer: 네. 법정 규정이에요. 전체 적립금의 30% 이상은 안전자산(채권, 예금 등)이어야 해요.
+    answer: '네. 법정 규정이에요. 전체 적립금의 30% 이상은 안전자산(채권, 예금 등)이어야 해요.'
   - question: 어떤 ETF가 좋아요?
-    answer: 장기 투자라면 S&P500, 나스닥100 ETF가 검증됐어요. 안전자산은 채권 ETF나 TDF를 추천해요.
+    answer: '장기 투자라면 S&P500, 나스닥100 ETF가 검증됐어요. 안전자산은 채권 ETF나 TDF를 추천해요.'
   - question: 원금보장형에만 넣어둬도 되나요?
     answer: 되긴 하지만 수익률이 낮아요. 물가상승률도 못 따라가요. 일부는 ETF에 투자하는 게 좋아요.
   - question: 리밸런싱은 얼마나 자주 해요?

@@ -1,6 +1,6 @@
 ---
 title: 퇴직금 IRP 수령방법
-description: 퇴직금 IRP 수령방법 알려드려요. 일시금 vs 연금 선택, 세금 차이, 해지 방법까지 쉽게 설명해요
+description: '퇴직금 IRP 수령방법 알려드려요. 일시금 vs 연금 선택, 세금 차이, 해지 방법까지 쉽게 설명해요'
 category: 퇴직금
 keywords:
   - 퇴직금 irp 수령방법
@@ -8,11 +8,6 @@ keywords:
   - irp 퇴직금 인출
   - 퇴직금 irp 수령
   - 퇴직금 irp 해지
-  - irp 퇴직금 세금
-  - irp 일시금 수령
-  - irp 연금 수령
-  - 퇴직금 irp 출금
-  - irp 퇴직금 찾는법
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준 IRP 퇴직금 수령 절차 반영
@@ -29,7 +24,7 @@ sources:
     date: 2026-01
 faq:
   - question: IRP 퇴직금은 언제 받을 수 있나요?
-    answer: 55세 이후 연금으로, 또는 퇴직 시 일시금으로 받을 수 있어요.
+    answer: '55세 이후 연금으로, 또는 퇴직 시 일시금으로 받을 수 있어요.'
   - question: IRP 퇴직금 일시금으로 받으면 세금이 얼마예요?
     answer: 퇴직소득세로 약 3~5%예요. 연금보다는 세금이 조금 더 나와요.
   - question: IRP 연금으로 받으면 뭐가 좋아요?

@@ -6,13 +6,8 @@ keywords:
   - 퇴직연금 배당 etf 추천
   - 퇴직연금 배당 etf
   - 퇴직연금 고배당 etf
-  - irp 배당 etf
-  - dc형 배당 etf
-  - 퇴직연금 배당주
   - 퇴직연금 월배당 etf
-  - 퇴직연금 배당금
   - 미국 배당 etf 퇴직연금
-  - 퇴직연금 배당 재투자
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준

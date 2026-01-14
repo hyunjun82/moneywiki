@@ -7,12 +7,7 @@ keywords:
   - db형 dc형 전환
   - 퇴직연금 전환
   - db형에서 dc형
-  - 퇴직연금 변경
-  - 확정급여형 확정기여형 전환
-  - 퇴직연금 유형 변경
   - db dc 변경방법
-  - 퇴직연금 전환 방법
-  - db형 dc형 바꾸기
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준
@@ -37,7 +32,7 @@ faq:
   - question: 전환 시기가 정해져 있어요?
     answer: 회사 퇴직연금 규약에 따라 달라요. 보통 연 1~2회 전환 신청 기간이 있어요.
   - question: 전환하면 유리해요?
-    answer: 상황마다 달라요. 직접 운용하고 싶으면 DC형이 좋고, 안정적으로 받고 싶으면 DB형 유지가 나아요.
+    answer: '상황마다 달라요. 직접 운용하고 싶으면 DC형이 좋고, 안정적으로 받고 싶으면 DB형 유지가 나아요.'
 relatedDocs:
   - title: 퇴직연금 DB DC 차이
     url: /w/퇴직연금-db-dc-차이

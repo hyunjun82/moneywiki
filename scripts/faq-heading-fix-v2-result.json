@@ -1,0 +1,1787 @@
+{
+  "fixed": [
+    {
+      "filename": "1년미만-재직자-80퍼센트-미만-출근자-연차휴가-촉진-제도.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "2026년-달라지는-제도.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "2026년-실업급여.md",
+      "changeCount": 6
+    },
+    {
+      "filename": "50세-이상-실업급여.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "52시간-초과-퇴직-실업급여.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "60세-이상-실업급여.md",
+      "changeCount": 4
+    },
+    {
+      "filename": "65세-이상-실업급여.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "db형-퇴직금-수령방법.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "dc형-퇴직금-수령방법.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "irp-계좌-퇴직금-수령방법.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "IRP-세액공제-한도.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "개인퇴직연금.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "개인형-irp-퇴직금-수령방법.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "건설근로자공제회-퇴직금-수령방법.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "건설일용직-실업급여.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "계약갱신청구권-매매.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "계약갱신청구권-복비.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "계약갱신청구권-실거주.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "계약갱신청구권-오피스텔.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "계약갱신청구권-월세.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "계약갱신청구권-재계약.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "계약갱신청구권-중도해지.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "계약갱신청구권-행사방법.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "계약만료-실업급여.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "계약직-퇴사-실업급여-받는-방법.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "고용24-실업급여.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "고용보험-가입기간-합산.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "고용보험료.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "공무원-실업급여.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "광역-구직활동비-신청-조건-및-금액.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "교사-실업급여.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "국민연금-연기연금.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "국민연금-추납제도.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "국민은행-퇴직금-수령방법.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "권고사직-실업급여-신청-방법.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "권고사직-실업급여.md",
+      "changeCount": 5
+    },
+    {
+      "filename": "근로복지공단-퇴직연금-중도인출.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "근로복지공단-퇴직연금.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "근로소득원천징수의무자.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "근로장려금.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "기간제-실업급여.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "노조-전임자-연차휴가-적용.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "다단계-보험설계사-실업급여.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "단시간-근로자-실업급여.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "대학원생-실업급여.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "대항력-발생-시점.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "명예퇴직-실업급여.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "묵시적갱신-기간.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "묵시적갱신-해지.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "묵시적갱신.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "미지급-실업급여-수급-순위-및-신청-방법.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "법정기준-이하-연차휴가-조건-효력-무효.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "부당해고-구제신청-실업급여.md",
+      "changeCount": 6
+    },
+    {
+      "filename": "비상근-고문-고용보험.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "사업주-퇴직권유-실업급여.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "산전후휴가-계약만료-실업급여.md",
+      "changeCount": 4
+    },
+    {
+      "filename": "소액임차인-최우선변제권.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "소정근로일수-현저히-적은-사람-연차휴가-지급.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-180일.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-4대보험.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-65세.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "실업급여-간병-퇴직.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-감액.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-개별연장급여.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-건설일용직.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-고용센터.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-관할-고용센터.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-광역구직활동비.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "실업급여-교육.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-구직활동.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-국민연금-유예.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-국민연금.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "실업급여-군입대.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-금액.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "실업급여-기초수급자.md",
+      "changeCount": 5
+    },
+    {
+      "filename": "실업급여-기초일액.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "실업급여-대기기간.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-대리신청.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "실업급여-미지급-상속.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "실업급여-반복수급.md",
+      "changeCount": 4
+    },
+    {
+      "filename": "실업급여-받으면서-알바-가능여부.md",
+      "changeCount": 5
+    },
+    {
+      "filename": "실업급여-받으면서-알바.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-부정수급-반환-및-징수-기준.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-부정수급.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-비과세.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "실업급여-상병급여.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-상한액.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "실업급여-소정급여일수.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-수급-조건.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "실업급여-수급권-보호.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "실업급여-수급기간-몇개월-받나요.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-수급자격-인정.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-수급자격.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-수급자격제한.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "실업급여-수급중-취업-신고방법.md",
+      "changeCount": 5
+    },
+    {
+      "filename": "실업급여-수급중-취업.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "실업급여-신청-준비물-목록.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-신청기간.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "실업급여-실업크레딧.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "실업급여-심사청구-및-재심사청구-방법.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-알바-미신고.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "실업급여-압류.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-연말정산.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-워크넷.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-육아.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "실업급여-이의신청.md",
+      "changeCount": 4
+    },
+    {
+      "filename": "실업급여-이주비-신청-조건-및-금액.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-이주비.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "실업급여-이직확인서.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-임금체불.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "실업급여-임신.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-재신청.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "실업급여-재심사청구.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-재취업-조건.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "실업급여-조기재취업수당.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "실업급여-직업능력개발수당.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "실업급여-직업훈련.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "실업급여-질병-부상.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "실업급여-창업.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "실업급여-첫-입금일.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-최대금액.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "실업급여-최소금액.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-출산.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-취업촉진수당.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업급여-퇴직금.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "실업급여-특별연장급여.md",
+      "changeCount": 4
+    },
+    {
+      "filename": "실업급여-하한액.md",
+      "changeCount": 4
+    },
+    {
+      "filename": "실업급여-환수.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "실업급여-훈련연장급여.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "실업인정일-변경.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "알바-실업급여.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "알바-퇴직금.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-IRP-세액공제.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-가산세.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-간소화서비스-이용방법.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "연말정산-개정세법.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-결정세액.md",
+      "changeCount": 5
+    },
+    {
+      "filename": "연말정산-결혼-세액공제.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-경로우대-공제.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-경정청구.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-고용보험료.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-고향사랑기부금.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-공무원.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-공제신고서.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-공제항목.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-과세표준.md",
+      "changeCount": 5
+    },
+    {
+      "filename": "연말정산-교복-구입비.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-교육비-세액공제.md",
+      "changeCount": 4
+    },
+    {
+      "filename": "연말정산-국민연금-공제.md",
+      "changeCount": 6
+    },
+    {
+      "filename": "연말정산-근로소득-범위.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-근로소득공제.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-근로소득세액공제.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-기납부세액.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-기본공제-대상.md",
+      "changeCount": 4
+    },
+    {
+      "filename": "연말정산-기부금-세액공제.md",
+      "changeCount": 5
+    },
+    {
+      "filename": "연말정산-기타소득.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-난임시술비-공제.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-납세조합.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "연말정산-다자녀-세액공제.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-대중교통-공제.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "연말정산-대중교통.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-대학교-등록금-공제.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-대학생.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-도서-공연-공제.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-맞벌이-부부.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-무주택-세대주.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "연말정산-문화비.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-발달재활서비스-공제.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "연말정산-배우자.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-백화점-사용액.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-보장성보험료-공제.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "연말정산-부양가족-공제.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-비과세-근로소득.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-사업소득자.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-성과공유-중소기업.md",
+      "changeCount": 4
+    },
+    {
+      "filename": "연말정산-세액공제.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-수정신고.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-시간선택제-전환.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-식대-비과세.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-신용카드-공제-한도.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-신용카드등-사용액.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-아르바이트.md",
+      "changeCount": 4
+    },
+    {
+      "filename": "연말정산-연금계좌-세액공제.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-연금소득.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-연금저축-공제.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-연금저축.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-외국인.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-원천징수영수증.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-월세-세액공제-조건.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-월세-세액공제.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-육아휴직자.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-의료비-공제한도.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-의료비-본인부담금-공제.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-의료비-세액공제.md",
+      "changeCount": 4
+    },
+    {
+      "filename": "연말정산-이직자.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "연말정산-인적공제-중복.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-인적공제.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-임신.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-임플란트.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-자녀-세액공제.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "연말정산-자주-묻는-질문.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-장기주택저당차입금-이자상환액-소득공제.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-장애인-공제.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "연말정산-장애인-특수교육비.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-전세대출-이자.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-전통시장-공제.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-정치자금-기부금.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-조세전문가.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-종교단체-기부금.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-주민세.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-주택담보대출-이자.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-주택청약-공제.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "연말정산-중도퇴사.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-중소기업-청년.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-직계비속.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-직계존속.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-직업훈련비.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-추가납부-분할.md",
+      "changeCount": 4
+    },
+    {
+      "filename": "연말정산-출산-입양-세액공제.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "연말정산-취업.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-취학전-아동-교육비.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-치과-공제.md",
+      "changeCount": 4
+    },
+    {
+      "filename": "연말정산-치과-교정.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-퇴직.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "연말정산-퇴직연금-세액공제.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-투잡.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-특별공제.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-특별재난지역-기부금.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-파트타임.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "연말정산-표준공제.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-프리랜서.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-학원비-공제.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-학원비.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-학자금-대출-상환-공제.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-한부모-공제.md",
+      "changeCount": 4
+    },
+    {
+      "filename": "연말정산-해외교육비.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-핵심인력-성과보상기금.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-헬스장-수영장-소득공제.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-현금영수증-공제.md",
+      "changeCount": 6
+    },
+    {
+      "filename": "연말정산-현금영수증.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연말정산-혼인세액공제.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-환급금-계산.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연말정산-환급금-조회.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "연차휴가-근로일-사용-개별합의-유효여부.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연차휴가-반차-사용-1일-4시간-분할사용.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "연차휴가-법이하-조건-효력.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "예술인-실업급여.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "외국인-퇴직금-수령방법.md",
+      "changeCount": 4
+    },
+    {
+      "filename": "우선변제권-요건.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "월세-세액공제.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "육아휴직후-퇴사-실업급여.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "일용직-실업급여.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "일용직-퇴직금.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "임금삭감-퇴직-실업급여.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "임대차보호법.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "임대차분쟁조정-신청.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "임원-실업급여.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "임원퇴직금-지급-기한.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "자발적-퇴사-실업급여-받는-방법.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "자영업자-실업급여.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "재취업후-재퇴직-실업급여.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "전세보증보험.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "전월세-전환율.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "전월세상한제-위반.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "전월세상한제-폐지.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "전월세상한제.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "정년퇴직후-실업급여-받는-방법.md",
+      "changeCount": 5
+    },
+    {
+      "filename": "조기재취업-수당-신청-조건-및-금액.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "주택임대차보호법-시행령.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "주택임대차보호법-제3조.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "주택임대차보호법-제4조.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "중대귀책사유-실업급여.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "직업능력개발-수당-신청-방법-및-금액.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "직장내-괴롭힘-실업급여.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "출퇴근-곤란-실업급여.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "퇴사후-실업급여-신청-기간.md",
+      "changeCount": 5
+    },
+    {
+      "filename": "퇴직금-1년미만.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "퇴직금-IRP-계좌.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "퇴직금-irp-의무-예외.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "퇴직금-irp-의무.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "퇴직금-IRP-이체-세금.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "퇴직금-irp-지급-의무화.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "퇴직금-계산기-세전-세후.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "퇴직금-계산기-연차수당.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "퇴직금-몇개월부터.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "퇴직금-미지급-신고.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "퇴직금-분할지급.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "퇴직금-세금.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "퇴직금-소멸시효.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "퇴직금-연금-전환.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "퇴직금-연금저축계좌-수령.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "퇴직금-육아휴직.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "퇴직금-이란.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "퇴직금-제도-종류.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "퇴직금-조건.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "퇴직금-중간정산-사유.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "퇴직금-중간정산-주택구입.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "퇴직금-중간정산.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "퇴직금-지급-기준.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "퇴직금-지급-기한-14일.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "퇴직금-지급기한.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "퇴직금-통장-만들기.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "퇴직금-포기각서.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "퇴직금-프리랜서.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "퇴직금.md",
+      "changeCount": 4
+    },
+    {
+      "filename": "퇴직연금-db-dc-차이.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "퇴직연금-기금화.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "퇴직연금-수령-나이.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "퇴직연금-운용지시.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "퇴직연금-의무화.md",
+      "changeCount": 4
+    },
+    {
+      "filename": "퇴직연금-인출-순서.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "퇴직연금-종류.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "퇴직연금.md",
+      "changeCount": 4
+    },
+    {
+      "filename": "특고-실업급여.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "파견직-실업급여.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "폐업-실업급여.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "프리랜서-실업급여.md",
+      "changeCount": 4
+    },
+    {
+      "filename": "프리랜서-일용직-교육비공제.md",
+      "changeCount": 5
+    },
+    {
+      "filename": "피보험기간-근무일수-계산-방법.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "해외취업-실업급여.md",
+      "changeCount": 3
+    },
+    {
+      "filename": "확정일자.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "회사-폐업-퇴직금.md",
+      "changeCount": 1
+    },
+    {
+      "filename": "휴직후-복직-연차휴가-발생-출근율-계산.md",
+      "changeCount": 2
+    },
+    {
+      "filename": "희망퇴직-실업급여.md",
+      "changeCount": 2
+    }
+  ],
+  "skipped": [
+    "1년미만-80퍼센트미만-출근자-연차휴가-촉진.md",
+    "1년미만-계약직-연차휴가-사용촉진-가능여부.md",
+    "1년미만-계약직-연차휴가-촉진.md",
+    "1년미만-퇴직금-지급규정.md",
+    "2026년-건강보험료.md",
+    "2026년-국민연금.md",
+    "2026년-육아휴직급여.md",
+    "2026년-최저임금.md",
+    "2026년-출산휴가급여.md",
+    "4대보험.md",
+    "4대보험료-계산기.md",
+    "4시간-미만-단시간-실업급여.md",
+    "DSR-계산기.md",
+    "IRP-중도인출-조건.md",
+    "irp-퇴직금-인출.md",
+    "ISA계좌.md",
+    "가상자산-세금.md",
+    "감염병-휴업-급여-지급.md",
+    "개인사업자-퇴직연금.md",
+    "개인퇴직연금-가입.md",
+    "개인퇴직연금-해지.md",
+    "건강보험료.md",
+    "건설근로자-퇴직금.md",
+    "경조휴가-부여기준.md",
+    "계약갱신청구권-거절사유.md",
+    "계약갱신청구권-기간.md",
+    "계약직-실업급여.md",
+    "계약직-퇴직금-지급규정.md",
+    "계약직-퇴직금.md",
+    "고용24-실업급여-계산기-사용법.md",
+    "고용보험-서식-모음.md",
+    "고용보험-적용-제외.md",
+    "공무원-퇴직금.md",
+    "교육비공제.md",
+    "구직촉진수당.md",
+    "국민기초생활보장.md",
+    "국민연금-분할연금.md",
+    "국민연금-수령액-계산기.md",
+    "국민연금-예상수령액-확인.md",
+    "국민연금-유족연금-조건.md",
+    "국민연금-조기수령-조건.md",
+    "국민연금.md",
+    "국민은행-퇴직연금-etf-추천.md",
+    "군복무기간-연차휴가-처리방법-출근율.md",
+    "권리금-보호.md",
+    "근로계약서.md",
+    "근로복지공단-퇴직연금-가입.md",
+    "근로복지공단-퇴직연금-수령방법.md",
+    "근로복지공단-퇴직연금-조회.md",
+    "근로소득세-계산기.md",
+    "근로소득세.md",
+    "근로시간-단축자-연차휴가-일수-비례-축소여부.md",
+    "근로시간-면제-노조활동-시간-휴일근로-적용여부.md",
+    "근로자-요청-휴무일-연차휴가-갈음-가능여부.md",
+    "근로자의날-당연유급-제외대상.md",
+    "근로자의날-유급처리-방법.md",
+    "근로조건-변경-실업급여.md",
+    "금융투자소득세.md",
+    "기부금공제.md",
+    "기업은행-퇴직금-수령방법.md",
+    "기업은행-퇴직연금-etf-추천.md",
+    "기초연금.md",
+    "노인장기요양보험.md",
+    "노조-전임자-연차휴가-적용여부-출근율.md",
+    "농협-퇴직연금.md",
+    "다가구주택-상생임대주택.md",
+    "다가구주택-전세-주의사항.md",
+    "다운계약서-양도세.md",
+    "다주택자-세금.md",
+    "대체공휴일-적용대상.md",
+    "대체휴무-휴일근로수당-보상휴가-차이점.md",
+    "대출상환-계산기.md",
+    "대출이자-계산기.md",
+    "등록면허세.md",
+    "명예퇴직금-세금.md",
+    "무급휴무일-180일-미달.md",
+    "무단결근-해고-실업급여.md",
+    "무단전대-법적-대응.md",
+    "묵시적갱신-계약서.md",
+    "묵시적갱신-복비.md",
+    "미래에셋-퇴직연금-etf-추천.md",
+    "미청구-퇴직연금-조회.md",
+    "배당소득세.md",
+    "법인세.md",
+    "보상휴가제-미사용-보상휴가-임금-지급여부.md",
+    "보육수당-비과세.md",
+    "보증금-일부반환.md",
+    "복리-계산기.md",
+    "부가가치세.md",
+    "부동산-취득세.md",
+    "부양가족공제.md",
+    "분양권-전매.md",
+    "사업자등록.md",
+    "사직서-제출해도-실업급여.md",
+    "산재-출산휴가-연차휴가-발생.md",
+    "산재기간-출산휴가-기간-연차휴가-발생여부.md",
+    "삼성증권-퇴직연금-etf-추천.md",
+    "상병급여-신청-조건-및-수급-방법.md",
+    "상생임대주택-특례.md",
+    "상속세-계산기.md",
+    "상속세.md",
+    "상속주택-양도세-거주요건.md",
+    "시급-계산기.md",
+    "신한은행-퇴직연금-etf-추천.md",
+    "실업급여-12개월-제한.md",
+    "실업급여-1차-실업인정.md",
+    "실업급여-거부.md",
+    "실업급여-건강보험-감면.md",
+    "실업급여-건강보험.md",
+    "실업급여-계산기.md",
+    "실업급여-계약만료.md",
+    "실업급여-고용보험-미가입.md",
+    "실업급여-구비서류.md",
+    "실업급여-구직활동-횟수.md",
+    "실업급여-기준기간.md",
+    "실업급여-나이제한.md",
+    "실업급여-모의계산.md",
+    "실업급여-반환.md",
+    "실업급여-부정수급-적발-사례.md",
+    "실업급여-세금.md",
+    "실업급여-수급기간.md",
+    "실업급여-수급유예.md",
+    "실업급여-신청방법.md",
+    "실업급여-실업신고.md",
+    "실업급여-실업인정-특례.md",
+    "실업급여-실업인정.md",
+    "실업급여-연봉별-계산.md",
+    "실업급여-연장.md",
+    "실업급여-온라인-교육.md",
+    "실업급여-온라인-신청.md",
+    "실업급여-이직확인서-거부.md",
+    "실업급여-재취업활동-인정.md",
+    "실업급여-정당한-퇴사-사유.md",
+    "실업급여-중단.md",
+    "실업급여-지급일.md",
+    "실업급여-취업지원금.md",
+    "실업급여-평균임금-계산.md",
+    "실업급여-폐업.md",
+    "실업급여-피보험기간.md",
+    "실업급여-피보험단위기간.md",
+    "실업급여-한달-얼마-받나요.md",
+    "실업급여-해외체류.md",
+    "실업급여.md",
+    "아동수당.md",
+    "알바-퇴직금-지급기준.md",
+    "애경사휴가-기간-휴일-포함-휴가종료일-계산.md",
+    "양도소득세-계산기.md",
+    "양도소득세-비과세-요건.md",
+    "양도소득세-장기보유특별공제.md",
+    "양도소득세-취득가액-인정.md",
+    "양도소득세.md",
+    "업무전환-발령-퇴직-실업급여.md",
+    "연금저축.md",
+    "연말정산-K-tech-Pass-감면.md",
+    "연말정산-개인투자조합-출자-공제.md",
+    "연말정산-건강검진.md",
+    "연말정산-건강보험료.md",
+    "연말정산-경조금-비과세.md",
+    "연말정산-계산기.md",
+    "연말정산-고용유지-중소기업-감면.md",
+    "연말정산-공제대상자료-수집의무.md",
+    "연말정산-공제율.md",
+    "연말정산-공제한도.md",
+    "연말정산-과다공제-사례.md",
+    "연말정산-과세대상.md",
+    "연말정산-교원.md",
+    "연말정산-국외근로소득-비과세.md",
+    "연말정산-근로계약서.md",
+    "연말정산-근로장려금.md",
+    "연말정산-급식비.md",
+    "연말정산-급여.md",
+    "연말정산-기숙사비.md",
+    "연말정산-노조회비-공제.md",
+    "연말정산-다자녀-추가공제.md",
+    "연말정산-단체보험-비과세.md",
+    "연말정산-대중교통-신용카드.md",
+    "연말정산-대학원-교육비.md",
+    "연말정산-도서공연비.md",
+    "연말정산-라식-라섹.md",
+    "연말정산-맞벌이-절세-전략.md",
+    "연말정산-배우자-공제.md",
+    "연말정산-벤처기업-스톡옵션.md",
+    "연말정산-보장성보험료-세액공제.md",
+    "연말정산-보청기.md",
+    "연말정산-보험료-공제.md",
+    "연말정산-복지카드.md",
+    "연말정산-본인부담-의료비-한도초과.md",
+    "연말정산-본인부담금-상한제-환급금.md",
+    "연말정산-부녀자-공제.md",
+    "연말정산-부녀자-추가공제.md",
+    "연말정산-부양가족-의료비-세액공제.md",
+    "연말정산-부업소득.md",
+    "연말정산-분납.md",
+    "연말정산-비과세-소득.md",
+    "연말정산-사내근로복지기금.md",
+    "연말정산-사택-제공-이익.md",
+    "연말정산-산후조리원-공제.md",
+    "연말정산-세액감면.md",
+    "연말정산-세액공제-소득공제-차이.md",
+    "연말정산-세액공제-순서.md",
+    "연말정산-세율.md",
+    "연말정산-세율표.md",
+    "연말정산-소기업-소상공인-공제.md",
+    "연말정산-소득-지출명세서.md",
+    "연말정산-손택스.md",
+    "연말정산-신고-기한.md",
+    "연말정산-신용카드-소득공제-계산.md",
+    "연말정산-신용카드-체크카드-비교.md",
+    "연말정산-신혼부부.md",
+    "연말정산-실손보험금.md",
+    "연말정산-싱글-절세.md",
+    "연말정산-안경구입비-공제.md",
+    "연말정산-야간근로수당-비과세.md",
+    "연말정산-약국비.md",
+    "연말정산-연금계좌-추가납입.md",
+    "연말정산-연봉제-일급제-연장수당.md",
+    "연말정산-연차수당-계산-기준.md",
+    "연말정산-외국납부세액공제.md",
+    "연말정산-외벌이-절세.md",
+    "연말정산-우리사주-공제.md",
+    "연말정산-월급.md",
+    "연말정산-유학생-소득공제.md",
+    "연말정산-유학생.md",
+    "연말정산-의료비-공제-한도.md",
+    "연말정산-의료비-공제.md",
+    "연말정산-의료비-지급처별-조회.md",
+    "연말정산-이사비.md",
+    "연말정산-이월결손금-공제.md",
+    "연말정산-인적공제-요건.md",
+    "연말정산-일용직.md",
+    "연말정산-자가운전보조금.md",
+    "연말정산-자녀-세액공제-조건.md",
+    "연말정산-장기주택저당차입금-이자상환액-공제.md",
+    "연말정산-장기주택저당차입금.md",
+    "연말정산-재해손실-세액공제.md",
+    "연말정산-적격증빙-없는-경조사비.md",
+    "연말정산-전자기부금-영수증.md",
+    "연말정산-절세-체크리스트.md",
+    "연말정산-정치자금-기부금-공제.md",
+    "연말정산-종업원-할인-비과세.md",
+    "연말정산-주식매수선택권.md",
+    "연말정산-주택마련저축-소득공제.md",
+    "연말정산-주택자금.md",
+    "연말정산-중복공제-주의사항.md",
+    "연말정산-중소기업-재직자.md",
+    "연말정산-중소기업-취업자-감면.md",
+    "연말정산-중소기업-취업자-세액감면.md",
+    "연말정산-지급명세서-제출.md",
+    "연말정산-지역-의료보험.md",
+    "연말정산-지정기부금.md",
+    "연말정산-직장어린이집-비과세.md",
+    "연말정산-차량유지비.md",
+    "연말정산-청년형-장기펀드.md",
+    "연말정산-체크카드-공제율.md",
+    "연말정산-체크카드.md",
+    "연말정산-추가공제-종류.md",
+    "연말정산-출산-세액공제.md",
+    "연말정산-출산.md",
+    "연말정산-특별세액공제-한도.md",
+    "연말정산-표준세액공제.md",
+    "연말정산-형제자매.md",
+    "연말정산.md",
+    "연말정산이란.md",
+    "연봉-계산기.md",
+    "연봉-실수령액-계산기.md",
+    "연봉-실수령액.md",
+    "연차수당-산정-통상임금-기준시점-계산방법.md",
+    "연차휴가-가산휴가-근속연수-추가-일수-계산.md",
+    "연차휴가-반반차.md",
+    "연차휴가-발생-일할계산.md",
+    "연차휴가-보상-제한-사용촉진제도-적용.md",
+    "연차휴가-사용-회사-미인정-무단결근-여부.md",
+    "연차휴가-사용촉진-시기지정-절차-방법-효력.md",
+    "연차휴가-사용촉진-일부-근로자-실시-가능여부.md",
+    "연차휴가-사용촉진-후-휴직-징계-연차수당-지급.md",
+    "연차휴가-사전-지정-사용시기-특정-가능여부.md",
+    "연차휴가-소멸시효.md",
+    "연차휴가-이월-사용기한-1년-연장-가능여부.md",
+    "연차휴가-이월.md",
+    "연차휴가-일할계산-조기퇴직.md",
+    "연차휴가-확정일수제-출근율.md",
+    "연차휴가.md",
+    "예금이자-계산기.md",
+    "오피스텔-임대차.md",
+    "외국납부세액공제.md",
+    "외국인-실업급여.md",
+    "우리은행-퇴직연금-etf-추천.md",
+    "원상복구-범위.md",
+    "원천징수-영수증-발급.md",
+    "원천징수.md",
+    "월세-세액공제-신청.md",
+    "월세계약-주의사항.md",
+    "육아기-근로시간-단축.md",
+    "육아휴직-연차휴가-산정.md",
+    "육아휴직-후-실업급여.md",
+    "육아휴직급여.md",
+    "의료비공제.md",
+    "인지세.md",
+    "일용직-퇴직금-지급기준.md",
+    "임금체불-실업급여.md",
+    "임대사업자-등록.md",
+    "임대인-수리의무.md",
+    "임대차-중도해지.md",
+    "임대차계약-해제-해지-차이.md",
+    "임대차계약서-작성법.md",
+    "임신-육아기-노동시간-단축-연차휴가-비례산정.md",
+    "임원-퇴직금-지급규정.md",
+    "임차권등기명령.md",
+    "임차인-우선매수권.md",
+    "자녀세액공제.md",
+    "자녀장려금.md",
+    "자동차세-계산기.md",
+    "자동차세.md",
+    "자발적-퇴사-실업급여.md",
+    "자영업자-실업급여-수급-조건-및-신청-방법.md",
+    "작업량-없는날-연차휴가-갈음-일방적-강제사용.md",
+    "작업량-없는날-연차휴가-강제사용.md",
+    "재개발-재건축.md",
+    "재산분할-임대주택-양도세.md",
+    "재산세-계산기.md",
+    "재산세.md",
+    "적금-계산기.md",
+    "전세계약-주의사항.md",
+    "전세권-설정등기.md",
+    "전세금-경매-배당.md",
+    "전세대출-계산기.md",
+    "전세보증금-반환-절차.md",
+    "전세사기-신고방법.md",
+    "전세자금대출-조건.md",
+    "전세자금대출.md",
+    "전월세상한제-계산.md",
+    "전월세신고-과태료.md",
+    "전월세신고.md",
+    "전입신고-방법.md",
+    "정리해고-실업급여.md",
+    "정전-휴업-급여-지급-휴업수당.md",
+    "정전-휴업-급여-지급.md",
+    "정직기간-연차휴가-부여-출근율-계산방법.md",
+    "종합부동산세-계산기.md",
+    "종합부동산세.md",
+    "종합소득세-신고.md",
+    "종합소득세.md",
+    "주거급여-신청.md",
+    "주거용-오피스텔.md",
+    "주민세.md",
+    "주식-수익률-계산기.md",
+    "주택-지분취득-거주요건.md",
+    "주택-취득세-계산.md",
+    "주택담보대출-계산기.md",
+    "주택담보대출.md",
+    "주택연금.md",
+    "주택임대차보호법-위반.md",
+    "주택임대차보호법-제6조의2.md",
+    "주택임대차보호법-제6조의3.md",
+    "주택청약.md",
+    "주택청약저축.md",
+    "주휴수당-계산기.md",
+    "주휴일-휴일대체-근로자-동의-요건-방법.md",
+    "중개수수료-계산기.md",
+    "중도퇴사자-연말정산-처리.md",
+    "중소기업-취업자-소득세-감면.md",
+    "증여세-계산-방법.md",
+    "증여세-계산기.md",
+    "증여세.md",
+    "질병휴직-급여.md",
+    "집주인-변경-임차인-권리.md",
+    "징계기간-연차휴가-출근율-산정.md",
+    "징계기간-연차휴가-출근율-산정방법.md",
+    "청년도약계좌.md",
+    "최저임금.md",
+    "출산휴가-연차휴가-산정.md",
+    "출산휴가.md",
+    "취득세-계산기.md",
+    "취득세-세율.md",
+    "취업규칙-불이익변경-연차휴가-감소-효력.md",
+    "통상임금-퇴직금-계산.md",
+    "퇴사후-퇴직금-지급-기한.md",
+    "퇴직금-DC형-계산법.md",
+    "퇴직금-IRP-수령방법.md",
+    "퇴직금-가압류.md",
+    "퇴직금-계산-방법.md",
+    "퇴직금-계산기-고용노동부.md",
+    "퇴직금-계산기-통상임금.md",
+    "퇴직금-계산기.md",
+    "퇴직금-계산법.md",
+    "퇴직금-기준.md",
+    "퇴직금-상여금-포함.md",
+    "퇴직금-세금-계산기.md",
+    "퇴직금-세금-몇프로.md",
+    "퇴직금-세금-환급.md",
+    "퇴직금-세율.md",
+    "퇴직금-소득세.md",
+    "퇴직금-수령방법.md",
+    "퇴직금-압류.md",
+    "퇴직금-연금-의무화-언제부터.md",
+    "퇴직금-연봉제.md",
+    "퇴직금-일시금-세금.md",
+    "퇴직금-일시금-수령-방법.md",
+    "퇴직금-일시금-수령-세금-계산기.md",
+    "퇴직금-일용직.md",
+    "퇴직금-정산.md",
+    "퇴직금-정산서.md",
+    "퇴직금-중간정산-계산기.md",
+    "퇴직금-중간정산-방법.md",
+    "퇴직금-중간정산-사유별-증빙서류.md",
+    "퇴직금-중간정산-서류.md",
+    "퇴직금-중간정산-세금.md",
+    "퇴직금-중간정산-신청서.md",
+    "퇴직금-중간정산-요건.md",
+    "퇴직금-중간정산-조건.md",
+    "퇴직금-중간정산-후-퇴직금-계산.md",
+    "퇴직금-중도인출-세금.md",
+    "퇴직금-지급-기준-5인미만.md",
+    "퇴직금-지급-기한-연장-동의서.md",
+    "퇴직금-지급-기한-연장.md",
+    "퇴직금-지급-기한-초과.md",
+    "퇴직금-지급-기한.md",
+    "퇴직금-지급-절차.md",
+    "퇴직금-지급기준.md",
+    "퇴직금-지연이자.md",
+    "퇴직금-통상임금-계산.md",
+    "퇴직금-통장-종류.md",
+    "퇴직금-통장.md",
+    "퇴직금-평균임금.md",
+    "퇴직금-해고.md",
+    "퇴직소득세-계산.md",
+    "퇴직소득세.md",
+    "퇴직연금-db-dc-전환.md",
+    "퇴직연금-dc형-etf-추천.md",
+    "퇴직연금-DC형-운용.md",
+    "퇴직연금-ETF-운용.md",
+    "퇴직연금-etf-추천.md",
+    "퇴직연금-계산기.md",
+    "퇴직연금-교육.md",
+    "퇴직연금-담보대출.md",
+    "퇴직연금-디폴트옵션.md",
+    "퇴직연금-미국-etf-추천.md",
+    "퇴직연금-배당-etf-추천.md",
+    "퇴직연금-사업자-변경.md",
+    "퇴직연금-세액공제.md",
+    "퇴직연금-수령-세금.md",
+    "퇴직연금-수령방법.md",
+    "퇴직연금-수령액-계산기.md",
+    "퇴직연금-수수료.md",
+    "퇴직연금-수익률-비교.md",
+    "퇴직연금-안전자산-etf-추천.md",
+    "퇴직연금-연금수령.md",
+    "퇴직연금-운용수익.md",
+    "퇴직연금-일시금-수령.md",
+    "퇴직연금-적립금-조회.md",
+    "퇴직연금-제도-전환.md",
+    "퇴직연금-조회.md",
+    "퇴직연금-중도인출-서류.md",
+    "퇴직연금-중도인출-세금.md",
+    "퇴직연금-중도인출-월세보증금.md",
+    "퇴직연금-중도인출-주택구입.md",
+    "퇴직연금-중도인출.md",
+    "퇴직연금-해지-절차.md",
+    "퇴직연금-해지.md",
+    "특별공급.md",
+    "평수-계산기.md",
+    "프리랜서-퇴직금-지급기준.md",
+    "하나은행-퇴직금-수령방법.md",
+    "할부-이자-계산기.md",
+    "해외근무-해외연수-기간-연차휴가-발생-산정방법.md",
+    "해외근무-해외연수-연차휴가-산정.md",
+    "해외주식-세금.md",
+    "해외파견-근무자-연차휴가-출근율-산정방법.md",
+    "해외파견-연차휴가-출근율-산정.md",
+    "회계일-기준-연차휴가-입사일-기준-비교-많은경우.md",
+    "휴업기간-급여지급.md"
+  ],
+  "errors": [
+    {
+      "filename": "의료비-공제-대상-범위.md",
+      "error": "Cannot read properties of undefined (reading 'split')"
+    },
+    {
+      "filename": "이자소득-세금-계산.md",
+      "error": "Cannot read properties of undefined (reading 'split')"
+    },
+    {
+      "filename": "지방소득세-신고-납부.md",
+      "error": "Cannot read properties of undefined (reading 'split')"
+    }
+  ]
+}

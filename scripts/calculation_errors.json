@@ -1,0 +1,77 @@
+{
+  "total_files": 798,
+  "total_calculations": 14,
+  "errors": [
+    {
+      "file": "소액임차인-최우선변제권.md",
+      "expression": "5,500 * 3 = 1",
+      "expected": "16,500",
+      "actual": "1",
+      "error": "16,499"
+    },
+    {
+      "file": "실업급여-평균임금-계산.md",
+      "expression": "310 + 155 = 1,185",
+      "expected": "465",
+      "actual": "1,185",
+      "error": "720"
+    },
+    {
+      "file": "연말정산-자녀-세액공제-조건.md",
+      "expression": "30 + 30 = 75",
+      "expected": "60",
+      "actual": "75",
+      "error": "15"
+    },
+    {
+      "file": "연말정산-자녀-세액공제-조건.md",
+      "expression": "30 + 30 = 105",
+      "expected": "60",
+      "actual": "105",
+      "error": "45"
+    },
+    {
+      "file": "연말정산-정치자금-기부금-공제.md",
+      "expression": "100 / 110 = 90,909",
+      "expected": "1",
+      "actual": "90,909",
+      "error": "90,908"
+    },
+    {
+      "file": "연말정산-정치자금-기부금-공제.md",
+      "expression": "100 / 110 = 90,909",
+      "expected": "1",
+      "actual": "90,909",
+      "error": "90,908"
+    },
+    {
+      "file": "연봉-계산기.md",
+      "expression": "40 + 82,560 = 495,360",
+      "expected": "82,600",
+      "actual": "495,360",
+      "error": "412,760"
+    },
+    {
+      "file": "퇴직금-계산기.md",
+      "expression": "12 * 3 = 100",
+      "expected": "36",
+      "actual": "100",
+      "error": "64"
+    },
+    {
+      "file": "퇴직금-평균임금.md",
+      "expression": "12 * 3 = 150",
+      "expected": "36",
+      "actual": "150",
+      "error": "114"
+    },
+    {
+      "file": "퇴직금-평균임금.md",
+      "expression": "12 * 3 = 30",
+      "expected": "36",
+      "actual": "30",
+      "error": "6"
+    }
+  ],
+  "error_count": 10
+}

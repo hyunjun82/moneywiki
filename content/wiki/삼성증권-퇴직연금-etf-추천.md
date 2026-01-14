@@ -5,14 +5,9 @@ category: 퇴직연금
 keywords:
   - 삼성증권 퇴직연금 etf 추천
   - 삼성증권 퇴직연금 etf
+  - 삼성증권 퇴직연금 추천
   - 삼성증권 irp etf
   - 삼성증권 dc형 etf
-  - 삼성증권 퇴직연금 투자
-  - 삼성증권 퇴직연금 추천
-  - 삼성증권 irp 추천
-  - kodex etf 퇴직연금
-  - 삼성증권 연금저축
-  - 삼성증권 pop
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준
@@ -35,7 +30,7 @@ faq:
   - question: 수수료가 저렴해요?
     answer: 온라인 가입 시 수수료 무료인 경우가 많아요. KODEX ETF 운용보수도 경쟁력 있어요.
   - question: 미래에셋이랑 뭐가 달라요?
-    answer: 삼성증권은 KODEX, 미래에셋은 TIGER ETF를 운용해요. 둘 다 라인업이 좋아요.
+    answer: '삼성증권은 KODEX, 미래에셋은 TIGER ETF를 운용해요. 둘 다 라인업이 좋아요.'
   - question: 고객센터 번호가 뭐예요?
     answer: 삼성증권 고객센터는 1588-2323이에요.
 relatedDocs:

@@ -6,22 +6,15 @@ schemaType: calculator
 keywords:
   - DSR 계산기
   - DSR 계산
-  - 총부채원리금상환비율
   - DSR 규제
   - DSR 40
-  - 대출 한도
-  - 대출 가능 금액
   - DSR 초과
-  - DSR 비율
-  - 주담대 DSR
-  - 은행 대출 규제
-  - 부채 상환 능력
 lastUpdated: '2026-01-10'
 datePublished: '2026-01-10'
 updateNote: 2026년 최신 기준
 summary:
   - DSR 계산기로 대출 가능 금액을 미리 확인하세요.
-  - 은행권은 DSR 40%, 제2금융권은 50%가 한도예요.
+  - '은행권은 DSR 40%, 제2금융권은 50%가 한도예요.'
   - 모든 대출의 연간 상환금을 연소득으로 나눈 비율이에요.
 sources:
   - name: 금융감독원
@@ -34,20 +27,20 @@ faq:
   - question: DSR이 뭔가요?
     answer: 연 소득 대비 모든 대출의 연간 원리금 상환 비율이에요. 낮을수록 대출 여력이 있어요.
   - question: DSR 한도는 얼마예요?
-    answer: 은행권 40%, 제2금융권 50%, 서민금융 60%예요.
+    answer: '은행권 40%, 제2금융권 50%, 서민금융 60%예요.'
   - question: DSR에 어떤 대출이 포함되나요?
-    answer: 주담대, 신용대출, 카드론, 학자금대출 등 모든 대출의 원리금이 포함돼요.
+    answer: '주담대, 신용대출, 카드론, 학자금대출 등 모든 대출의 원리금이 포함돼요.'
   - question: DSR 초과하면 대출이 안 되나요?
-    answer: 은행 대출은 어렵고, 제2금융권이나 서민금융을 알아봐야 해요.
+    answer: '은행 대출은 어렵고, 제2금융권이나 서민금융을 알아봐야 해요.'
   - question: DSR을 낮추려면?
-    answer: 기존 대출 상환, 대출 기간 연장, 또는 소득 증가가 필요해요.
+    answer: '기존 대출 상환, 대출 기간 연장, 또는 소득 증가가 필요해요.'
 howTo:
   - step: 연소득을 입력하세요
     description: 세전 연봉 기준
   - step: 기존 대출을 추가하세요
     description: 월 상환금 합계 입력
   - step: 신규 대출을 설정하세요
-    description: 희망 대출금액, 금리, 기간
+    description: '희망 대출금액, 금리, 기간'
   - step: DSR을 확인하세요
     description: 40% 이하면 은행 대출 가능
 relatedDocs:

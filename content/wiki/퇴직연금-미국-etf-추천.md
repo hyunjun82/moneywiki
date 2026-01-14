@@ -1,18 +1,13 @@
 ---
 title: 퇴직연금 미국 ETF 추천
-description: 퇴직연금에서 투자할 미국 ETF 추천해드려요. S&P500, 나스닥100이 장기 투자에 좋아요
+description: '퇴직연금에서 투자할 미국 ETF 추천해드려요. S&P500, 나스닥100이 장기 투자에 좋아요'
 category: 퇴직연금
 keywords:
   - 퇴직연금 미국 etf 추천
   - 퇴직연금 미국 etf
-  - 퇴직연금 s&p500
   - 퇴직연금 나스닥 etf
   - irp 미국 etf
   - dc형 미국 etf
-  - 퇴직연금 해외 etf
-  - 퇴직연금 미국주식
-  - 퇴직연금 s&p500 etf
-  - 퇴직연금 나스닥100
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준
@@ -31,7 +26,7 @@ faq:
   - question: 퇴직연금으로 미국 ETF 투자할 수 있어요?
     answer: 국내 상장된 미국 지수 ETF는 가능해요. 해외 직접 상장 ETF는 불가능해요.
   - question: S&P500 ETF가 뭐예요?
-    answer: 미국 대형주 500개에 투자하는 ETF예요. 애플, 마이크로소프트 등이 포함돼요.
+    answer: '미국 대형주 500개에 투자하는 ETF예요. 애플, 마이크로소프트 등이 포함돼요.'
   - question: 나스닥100이랑 S&P500 뭐가 달라요?
     answer: 나스닥100은 기술주 중심이라 성장성이 높고 변동성도 커요. S&P500은 더 안정적이에요.
   - question: 위험자산 70%까지만 투자할 수 있어요?

@@ -1,25 +1,20 @@
 ---
 title: 퇴직연금 ETF 운용
-description: 퇴직연금 ETF 운용 방법 알려드려요. DC형과 IRP에서 ETF 투자하는 법, 추천 ETF, 주의사항까지 정리했어요
+description: '퇴직연금 ETF 운용 방법 알려드려요. DC형과 IRP에서 ETF 투자하는 법, 추천 ETF, 주의사항까지 정리했어요'
 category: 퇴직금
 keywords:
   - 퇴직연금 etf 운용
   - 퇴직연금 etf 투자
-  - dc형 etf 투자
-  - irp etf 투자
   - 퇴직연금 etf 추천
   - 퇴직연금 etf 매수
-  - 퇴직연금 s&p500
-  - 퇴직연금 나스닥
   - 퇴직연금 etf 수익률
-  - 퇴직연금 주식 투자
 lastUpdated: '2026-01-09'
 datePublished: '2026-01-09'
 updateNote: 2026년 1월 기준 퇴직연금 ETF 투자 가이드 반영
 summary:
   - DC형과 IRP에서 ETF 투자가 가능해요. 적립금의 최대 70%까지 투자할 수 있어요.
-  - S&P500, 코스피200 등 지수 추종 ETF가 인기예요.
-  - 레버리지, 인버스 ETF는 퇴직연금에서 투자가 제한돼요.
+  - 'S&P500, 코스피200 등 지수 추종 ETF가 인기예요.'
+  - '레버리지, 인버스 ETF는 퇴직연금에서 투자가 제한돼요.'
 sources:
   - name: 근로자퇴직급여보장법 시행령
     url: 'https://www.law.go.kr/법령/근로자퇴직급여보장법시행령'
@@ -31,9 +26,9 @@ faq:
   - question: 퇴직연금으로 ETF 투자할 수 있나요?
     answer: 네. DC형과 IRP에서 ETF 투자가 가능해요. 적립금의 70%까지 가능해요.
   - question: 퇴직연금 ETF 추천해주세요.
-    answer: S&P500, 코스피200, 미국배당다우존스 같은 지수 추종 ETF가 인기예요.
+    answer: 'S&P500, 코스피200, 미국배당다우존스 같은 지수 추종 ETF가 인기예요.'
   - question: 레버리지 ETF도 살 수 있나요?
-    answer: 아니요. 레버리지, 인버스 ETF는 퇴직연금에서 투자가 제한돼요.
+    answer: '아니요. 레버리지, 인버스 ETF는 퇴직연금에서 투자가 제한돼요.'
   - question: 퇴직연금 ETF 수수료가 있나요?
     answer: 네. ETF 자체 운용보수와 퇴직연금 수수료가 있어요. 둘 다 낮은 상품이 좋아요.
   - question: ETF 100% 투자할 수 있나요?
