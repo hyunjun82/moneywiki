@@ -48,6 +48,7 @@ export default function ShareButtons({ title, url, description }: ShareButtonsPr
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
     twitter: `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`,
     naver: `https://share.naver.com/web/shareView?url=${encodedUrl}&title=${encodedTitle}`,
+    threads: `https://threads.net/intent/post?text=${encodedTitle}%20${encodedUrl}`,
   };
 
   const shareKakao = () => {
@@ -151,6 +152,35 @@ export default function ShareButtons({ title, url, description }: ShareButtonsPr
           <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
         </svg>
       </a>
+
+      {/* Threads */}
+      <a
+        href={shareLinks.threads}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-8 h-8 flex items-center justify-center rounded-full bg-black hover:opacity-80 transition-opacity"
+        title="Threads 공유"
+        aria-label="Threads로 공유하기"
+      >
+        <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white">
+          <path d="M12.186 3.5c-4.84 0-8.77 3.93-8.77 8.77s3.93 8.77 8.77 8.77 8.77-3.93 8.77-8.77-3.93-8.77-8.77-8.77zm3.45 11.14c-.32 1.14-1.22 1.95-2.45 2.21-.42.09-.87.13-1.33.13-1.94 0-3.52-1.08-4.15-2.82-.16-.45-.24-.93-.24-1.43 0-2.21 1.46-4 3.45-4.21.25-.03.51-.04.77-.04 1.94 0 3.52 1.08 4.15 2.82.16.45.24.93.24 1.43 0 .65-.15 1.27-.44 1.91zm-1.45-3.7c-.42-1.15-1.5-1.98-2.82-2.13-.18-.02-.36-.03-.54-.03-1.32 0-2.47.72-3.08 1.79-.26.45-.4.97-.4 1.52 0 .33.05.65.14.96.42 1.15 1.5 1.98 2.82 2.13.18.02.36.03.54.03 1.32 0 2.47-.72 3.08-1.79.26-.45.4-.97.4-1.52 0-.33-.05-.65-.14-.96z"/>
+        </svg>
+      </a>
+
+      {/* Instagram */}
+      <button
+        onClick={() => {
+          copyToClipboard();
+          alert("링크가 복사되었습니다. Instagram 앱에서 붙여넣기 하세요.");
+        }}
+        className="w-8 h-8 flex items-center justify-center rounded-full bg-gradient-to-br from-[#F58529] via-[#DD2A7B] to-[#8134AF] hover:opacity-80 transition-opacity"
+        title="Instagram 공유"
+        aria-label="Instagram으로 공유하기"
+      >
+        <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white">
+          <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.509.5.902 1.105 1.153 1.772.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 01-1.153 1.772c-.5.508-1.105.902-1.772 1.153-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 01-1.772-1.153 4.904 4.904 0 01-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 011.153-1.772A4.897 4.897 0 015.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 100 10 5 5 0 000-10zm6.5-.25a1.25 1.25 0 00-2.5 0 1.25 1.25 0 002.5 0zM12 9a3 3 0 110 6 3 3 0 010-6z"/>
+        </svg>
+      </button>
 
       {/* 링크 복사 */}
       <button

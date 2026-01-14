@@ -63,7 +63,8 @@
       "Bash(node scripts/fix-keywords.js:*)",
       "Bash(node scripts/analyze-wegive-style.js:*)",
       "Bash(node:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(npm run dev:*)"
     ]
   }
 }
