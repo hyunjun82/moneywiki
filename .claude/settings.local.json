@@ -48,5 +48,22 @@
         ]
       }
     ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(npx next build)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nSEO: 계약갱신청구권-기간 Keywords 17개→4개 축소, 소제목 최적화\n\n- Keywords: 17개 → 4개 \\(Primary + User Intent + Specific + Related\\)\n- 소제목: FAQ 스타일 → 검색 키워드 \\(나무위키 스타일\\)\n- 마무리: \"지금 당장 할 일\" → \"계약갱신청구권 기간 확인 방법\"\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(ls:*)",
+      "Bash(node scripts/analyze-keywords.js:*)",
+      "Bash(node scripts/fix-keywords.js:*)",
+      "Bash(node scripts/analyze-wegive-style.js:*)",
+      "Bash(node:*)",
+      "Bash(git commit:*)"
+    ]
   }
 }

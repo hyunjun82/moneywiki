@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "python scripts/validate-all.py",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "validate": "python scripts/validate-all.py"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
