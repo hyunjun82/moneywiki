@@ -2,9 +2,11 @@
 User-agent: *
 Allow: /
 
-# 검색 결과 페이지 차단 (SEO 최적화)
-Disallow: /search
-Disallow: /search?*
+# 검색 결과 페이지 - noindex 태그로 색인 제거 중
+# 구글이 noindex를 읽을 수 있도록 임시로 허용
+# 색인 제거 완료 후 (2-4주 후) Disallow 다시 활성화
+# Disallow: /search
+# Disallow: /search?*
 
 # Sitemap
 Sitemap: https://www.jjyu.co.kr/sitemap.xml

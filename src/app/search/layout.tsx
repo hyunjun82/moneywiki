@@ -4,7 +4,13 @@ export const metadata: Metadata = {
   title: '검색 - 머니위키',
   robots: {
     index: false,
-    follow: true,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+    },
   },
 };
 
