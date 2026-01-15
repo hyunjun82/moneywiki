@@ -78,7 +78,13 @@
       "mcp__playwright__browser_fill_form",
       "mcp__playwright__browser_evaluate",
       "Bash(dir:*)",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "Bash(curl:*)",
+      "Bash(git fsck:*)",
+      "Bash(powershell -Command \"\\(Get-Content ''C:\\\\Users\\\\user\\\\wiki-site\\\\CLAUDE-COMPRESSED.md'' | Measure-Object -Line\\).Lines\")",
+      "Bash(Get-ChildItem -Path \"$env:USERPROFILE\\\\.claude\" -Recurse -Filter \"*playwright*\")",
+      "Bash(Select-Object FullName)",
+      "Bash(powershell -Command:*)"
     ]
   }
 }
