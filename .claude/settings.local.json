@@ -85,7 +85,9 @@
       "Bash(Get-ChildItem -Path \"$env:USERPROFILE\\\\.claude\" -Recurse -Filter \"*playwright*\")",
       "Bash(Select-Object FullName)",
       "Bash(powershell -Command:*)",
-      "Bash(git commit -m \"fix: 다가구주택 위기브 스타일 전체 재작성\n\n- 기존: 다가구주택-전세-주의사항.md \\(위반 심각\\)\n- 신규: 다가구주택-전세-계약시-선순위-임차인-확인-방법.md\n\n위기브 스타일 적용:\n✅ Title: 롱테일 키워드 \\(계약시 선순위 임차인 확인 방법\\)\n✅ Keywords: 4개 롱테일 \\(단일 키워드 제거\\)\n✅ Description: ~해요 형태 \\(알아봅니다/정리합니다 제거\\)\n✅ H1 삭제 \\(frontmatter title만 사용\\)\n✅ H2 숫자 제거 \\(## 제목\\)\n✅ 테이블 0개 \\(한도: 2개\\)\n✅ 텍스트 중심 설명 \\(80%+\\)\n✅ summary: 배열 3줄\n✅ FAQ: frontmatter만 \\(본문 삭제\\)\n✅ 구어체: ~이에요, ~해요, ~거든요\n\nWebSearch 기반 정확한 정보:\n- 2026년 1월 대법원 판결 \\(중개인 선순위 조사 의무\\)\n- 안전 기준: 시세 80% 이하\n- 확인 방법: 주민센터 확정일자부 + 전입세대 열람\")"
+      "Bash(git commit -m \"fix: 다가구주택 위기브 스타일 전체 재작성\n\n- 기존: 다가구주택-전세-주의사항.md \\(위반 심각\\)\n- 신규: 다가구주택-전세-계약시-선순위-임차인-확인-방법.md\n\n위기브 스타일 적용:\n✅ Title: 롱테일 키워드 \\(계약시 선순위 임차인 확인 방법\\)\n✅ Keywords: 4개 롱테일 \\(단일 키워드 제거\\)\n✅ Description: ~해요 형태 \\(알아봅니다/정리합니다 제거\\)\n✅ H1 삭제 \\(frontmatter title만 사용\\)\n✅ H2 숫자 제거 \\(## 제목\\)\n✅ 테이블 0개 \\(한도: 2개\\)\n✅ 텍스트 중심 설명 \\(80%+\\)\n✅ summary: 배열 3줄\n✅ FAQ: frontmatter만 \\(본문 삭제\\)\n✅ 구어체: ~이에요, ~해요, ~거든요\n\nWebSearch 기반 정확한 정보:\n- 2026년 1월 대법원 판결 \\(중개인 선순위 조사 의무\\)\n- 안전 기준: 시세 80% 이하\n- 확인 방법: 주민센터 확정일자부 + 전입세대 열람\")",
+      "Bash(node scripts/check-wegive-violations.js:*)",
+      "Bash(node scripts/debug-table-count.js:*)"
     ]
   }
 }

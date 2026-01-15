@@ -1,0 +1,1620 @@
+{
+  "total": 798,
+  "violated": 138,
+  "violations": {
+    "description": [
+      "2026년-건강보험료.md",
+      "2026년-국민연금.md",
+      "2026년-실업급여.md",
+      "2026년-육아휴직급여.md",
+      "2026년-최저임금.md",
+      "2026년-출산휴가급여.md",
+      "4대보험.md",
+      "ISA계좌.md",
+      "가상자산-세금.md",
+      "건강보험료.md",
+      "교육비공제.md",
+      "구직촉진수당.md",
+      "국민기초생활보장.md",
+      "국민연금.md",
+      "근로계약서.md",
+      "근로소득세.md",
+      "금융투자소득세.md",
+      "기부금공제.md",
+      "기초연금.md",
+      "노인장기요양보험.md",
+      "다운계약서-양도세.md",
+      "다주택자-세금.md",
+      "등록면허세.md",
+      "배당소득세.md",
+      "법인세.md",
+      "보육수당-비과세.md",
+      "부가가치세.md",
+      "부동산-취득세.md",
+      "부양가족공제.md",
+      "사업자등록.md",
+      "상생임대주택-특례.md",
+      "상속세.md",
+      "상속주택-양도세-거주요건.md",
+      "소액임차인-최우선변제권.md",
+      "아동수당.md",
+      "양도소득세.md",
+      "연금저축.md",
+      "연봉-실수령액.md",
+      "연차휴가.md",
+      "오피스텔-임대차.md",
+      "원상복구-범위.md",
+      "월세-세액공제.md",
+      "월세계약-주의사항.md",
+      "육아기-근로시간-단축.md",
+      "육아휴직급여.md",
+      "의료비공제.md",
+      "인지세.md",
+      "임대사업자-등록.md",
+      "임대인-수리의무.md",
+      "임대차-중도해지.md",
+      "임대차계약서-작성법.md",
+      "임대차분쟁조정-신청.md",
+      "임차권등기명령.md",
+      "임차인-우선매수권.md",
+      "자녀세액공제.md",
+      "자녀장려금.md",
+      "자동차세.md",
+      "재개발-재건축.md",
+      "재산분할-임대주택-양도세.md",
+      "재산세.md",
+      "전세권-설정등기.md",
+      "전세금-경매-배당.md",
+      "전세보증금-반환-절차.md",
+      "전세사기-신고방법.md",
+      "전세자금대출-조건.md",
+      "전월세-전환율.md",
+      "전월세신고-과태료.md",
+      "전월세신고.md",
+      "종합부동산세.md",
+      "종합소득세-신고.md",
+      "종합소득세.md",
+      "주거급여-신청.md",
+      "주거용-오피스텔.md",
+      "주민세.md",
+      "주택-지분취득-거주요건.md",
+      "주택담보대출.md",
+      "주택연금.md",
+      "주택청약저축.md",
+      "중소기업-취업자-소득세-감면.md",
+      "증여세.md",
+      "집주인-변경-임차인-권리.md",
+      "청년도약계좌.md",
+      "최저임금.md",
+      "출산휴가.md",
+      "취득세-세율.md",
+      "특별공급.md",
+      "해외주식-세금.md"
+    ],
+    "h1_in_body": [
+      "4대보험.md",
+      "ISA계좌.md",
+      "가상자산-세금.md",
+      "건강보험료.md",
+      "교육비공제.md",
+      "국민기초생활보장.md",
+      "국민연금.md",
+      "권리금-보호.md",
+      "근로계약서.md",
+      "근로소득세.md",
+      "금융투자소득세.md",
+      "기부금공제.md",
+      "기초연금.md",
+      "노인장기요양보험.md",
+      "다주택자-세금.md",
+      "등록면허세.md",
+      "무단전대-법적-대응.md",
+      "배당소득세.md",
+      "법인세.md",
+      "보증금-일부반환.md",
+      "부가가치세.md",
+      "부동산-취득세.md",
+      "부양가족공제.md",
+      "사업자등록.md",
+      "상속세.md",
+      "소액임차인-최우선변제권.md",
+      "아동수당.md",
+      "양도소득세.md",
+      "연금저축.md",
+      "연봉-실수령액.md",
+      "연차휴가.md",
+      "오피스텔-임대차.md",
+      "원상복구-범위.md",
+      "월세-세액공제.md",
+      "월세계약-주의사항.md",
+      "의료비공제.md",
+      "인지세.md",
+      "임대사업자-등록.md",
+      "임대인-수리의무.md",
+      "임대차-중도해지.md",
+      "임대차계약-해제-해지-차이.md",
+      "임대차계약서-작성법.md",
+      "임대차분쟁조정-신청.md",
+      "임차권등기명령.md",
+      "임차인-우선매수권.md",
+      "자녀세액공제.md",
+      "자녀장려금.md",
+      "자동차세.md",
+      "재개발-재건축.md",
+      "재산세.md",
+      "전세권-설정등기.md",
+      "전세금-경매-배당.md",
+      "전세보증금-반환-절차.md",
+      "전세사기-신고방법.md",
+      "전세자금대출-조건.md",
+      "전세자금대출.md",
+      "전월세-전환율.md",
+      "전월세신고-과태료.md",
+      "전월세신고.md",
+      "종합부동산세.md",
+      "종합소득세-신고.md",
+      "종합소득세.md",
+      "주거급여-신청.md",
+      "주거용-오피스텔.md",
+      "주민세.md",
+      "주택담보대출.md",
+      "주택연금.md",
+      "주택청약.md",
+      "주택청약저축.md",
+      "중소기업-취업자-소득세-감면.md",
+      "증여세.md",
+      "집주인-변경-임차인-권리.md",
+      "청년도약계좌.md",
+      "취득세-세율.md",
+      "특별공급.md",
+      "해외주식-세금.md"
+    ],
+    "h2_numbered": [
+      "4대보험.md",
+      "ISA계좌.md",
+      "가상자산-세금.md",
+      "건강보험료.md",
+      "교육비공제.md",
+      "국민기초생활보장.md",
+      "국민연금.md",
+      "권리금-보호.md",
+      "근로계약서.md",
+      "근로소득세.md",
+      "금융투자소득세.md",
+      "기부금공제.md",
+      "기초연금.md",
+      "노인장기요양보험.md",
+      "다주택자-세금.md",
+      "등록면허세.md",
+      "무단전대-법적-대응.md",
+      "배당소득세.md",
+      "법인세.md",
+      "보증금-일부반환.md",
+      "부가가치세.md",
+      "부동산-취득세.md",
+      "부양가족공제.md",
+      "사업자등록.md",
+      "상속세.md",
+      "소액임차인-최우선변제권.md",
+      "시급-계산기.md",
+      "아동수당.md",
+      "양도소득세.md",
+      "연금저축.md",
+      "연말정산-프리랜서.md",
+      "연봉-실수령액.md",
+      "연차휴가.md",
+      "오피스텔-임대차.md",
+      "원상복구-범위.md",
+      "월세-세액공제.md",
+      "월세계약-주의사항.md",
+      "의료비공제.md",
+      "인지세.md",
+      "임대사업자-등록.md",
+      "임대인-수리의무.md",
+      "임대차-중도해지.md",
+      "임대차계약-해제-해지-차이.md",
+      "임대차계약서-작성법.md",
+      "임대차분쟁조정-신청.md",
+      "임차권등기명령.md",
+      "임차인-우선매수권.md",
+      "자녀세액공제.md",
+      "자녀장려금.md",
+      "자동차세.md",
+      "재개발-재건축.md",
+      "재산세.md",
+      "전세권-설정등기.md",
+      "전세금-경매-배당.md",
+      "전세보증금-반환-절차.md",
+      "전세사기-신고방법.md",
+      "전세자금대출-조건.md",
+      "전세자금대출.md",
+      "전월세-전환율.md",
+      "전월세신고-과태료.md",
+      "전월세신고.md",
+      "종합부동산세.md",
+      "종합소득세-신고.md",
+      "종합소득세.md",
+      "주거급여-신청.md",
+      "주거용-오피스텔.md",
+      "주민세.md",
+      "주택담보대출.md",
+      "주택연금.md",
+      "주택청약.md",
+      "주택청약저축.md",
+      "중소기업-취업자-소득세-감면.md",
+      "증여세.md",
+      "집주인-변경-임차인-권리.md",
+      "청년도약계좌.md",
+      "최저임금.md",
+      "취득세-세율.md",
+      "퇴직금-프리랜서.md",
+      "특별공급.md",
+      "프리랜서-퇴직금-지급기준.md",
+      "해외주식-세금.md"
+    ],
+    "too_many_tables": [
+      "2026년-건강보험료.md (8개)",
+      "2026년-국민연금.md (8개)",
+      "2026년-달라지는-제도.md (48개)",
+      "2026년-육아휴직급여.md (11개)",
+      "2026년-최저임금.md (5개)",
+      "2026년-출산휴가급여.md (11개)",
+      "4대보험.md (21개)",
+      "4대보험료-계산기.md (3개)",
+      "DSR-계산기.md (4개)",
+      "ISA계좌.md (28개)",
+      "가상자산-세금.md (27개)",
+      "건강보험료.md (23개)",
+      "계약갱신청구권-거절사유.md (4개)",
+      "계약갱신청구권-복비.md (5개)",
+      "계약갱신청구권-행사방법.md (5개)",
+      "계약직-퇴직금.md (4개)",
+      "교육비공제.md (24개)",
+      "구직촉진수당.md (9개)",
+      "국민기초생활보장.md (21개)",
+      "국민연금.md (21개)",
+      "권리금-보호.md (9개)",
+      "근로계약서.md (22개)",
+      "근로소득세.md (22개)",
+      "금융투자소득세.md (23개)",
+      "기부금공제.md (25개)",
+      "기초연금.md (21개)",
+      "노인장기요양보험.md (24개)",
+      "다운계약서-양도세.md (8개)",
+      "다주택자-세금.md (28개)",
+      "대항력-발생-시점.md (12개)",
+      "등록면허세.md (24개)",
+      "명예퇴직금-세금.md (3개)",
+      "무단전대-법적-대응.md (8개)",
+      "배당소득세.md (24개)",
+      "법인세.md (26개)",
+      "보육수당-비과세.md (7개)",
+      "보증금-일부반환.md (7개)",
+      "복리-계산기.md (3개)",
+      "부가가치세.md (23개)",
+      "부동산-취득세.md (21개)",
+      "부양가족공제.md (26개)",
+      "사업자등록.md (21개)",
+      "상생임대주택-특례.md (8개)",
+      "상속세.md (21개)",
+      "상속주택-양도세-거주요건.md (5개)",
+      "소액임차인-최우선변제권.md (28개)",
+      "아동수당.md (21개)",
+      "양도소득세-계산기.md (3개)",
+      "양도소득세.md (17개)",
+      "연금저축.md (21개)",
+      "연말정산-계산기.md (4개)",
+      "연말정산-성과공유-중소기업.md (3개)",
+      "연말정산.md (3개)",
+      "연봉-실수령액.md (20개)",
+      "연차휴가.md (24개)",
+      "오피스텔-임대차.md (29개)",
+      "우선변제권-요건.md (15개)",
+      "원상복구-범위.md (28개)",
+      "월세-세액공제.md (29개)",
+      "월세계약-주의사항.md (29개)",
+      "육아기-근로시간-단축.md (8개)",
+      "육아휴직급여.md (20개)",
+      "의료비공제.md (22개)",
+      "인지세.md (25개)",
+      "임대사업자-등록.md (27개)",
+      "임대인-수리의무.md (29개)",
+      "임대차-중도해지.md (27개)",
+      "임대차계약-해제-해지-차이.md (12개)",
+      "임대차계약서-작성법.md (20개)",
+      "임대차보호법.md (3개)",
+      "임대차분쟁조정-신청.md (29개)",
+      "임차권등기명령.md (29개)",
+      "임차인-우선매수권.md (25개)",
+      "자녀세액공제.md (24개)",
+      "자녀장려금.md (21개)",
+      "자동차세-계산기.md (5개)",
+      "자동차세.md (24개)",
+      "재개발-재건축.md (25개)",
+      "재산분할-임대주택-양도세.md (9개)",
+      "재산세.md (19개)",
+      "전세계약-주의사항.md (15개)",
+      "전세권-설정등기.md (26개)",
+      "전세금-경매-배당.md (30개)",
+      "전세대출-계산기.md (4개)",
+      "전세보증금-반환-절차.md (31개)",
+      "전세보증보험.md (19개)",
+      "전세사기-신고방법.md (27개)",
+      "전세자금대출-조건.md (19개)",
+      "전월세-전환율.md (23개)",
+      "전월세상한제-계산.md (4개)",
+      "전월세상한제-위반.md (5개)",
+      "전월세상한제-폐지.md (5개)",
+      "전월세상한제.md (5개)",
+      "전월세신고-과태료.md (29개)",
+      "전월세신고.md (21개)",
+      "전입신고-방법.md (6개)",
+      "종합부동산세-계산기.md (4개)",
+      "종합부동산세.md (20개)",
+      "종합소득세-신고.md (25개)",
+      "종합소득세.md (19개)",
+      "주거급여-신청.md (27개)",
+      "주거용-오피스텔.md (27개)",
+      "주민세.md (26개)",
+      "주택-지분취득-거주요건.md (8개)",
+      "주택담보대출-계산기.md (4개)",
+      "주택담보대출.md (20개)",
+      "주택연금.md (24개)",
+      "주택청약.md (6개)",
+      "주택청약저축.md (21개)",
+      "중소기업-취업자-소득세-감면.md (26개)",
+      "증여세.md (20개)",
+      "집주인-변경-임차인-권리.md (27개)",
+      "청년도약계좌.md (27개)",
+      "최저임금.md (18개)",
+      "출산휴가.md (25개)",
+      "취득세-세율.md (19개)",
+      "퇴직금-DC형-계산법.md (3개)",
+      "퇴직금-계산-방법.md (3개)",
+      "퇴직금-계산기-통상임금.md (4개)",
+      "퇴직금-분할지급.md (3개)",
+      "퇴직금-일시금-수령-세금-계산기.md (5개)",
+      "퇴직금-정산서.md (5개)",
+      "퇴직금-중간정산-조건.md (4개)",
+      "퇴직소득세-계산.md (7개)",
+      "퇴직연금-ETF-운용.md (4개)",
+      "퇴직연금-연금수령.md (6개)",
+      "퇴직연금-해지.md (3개)",
+      "특별공급.md (28개)",
+      "해외주식-세금.md (28개)",
+      "확정일자.md (13개)"
+    ],
+    "summary_not_array": [
+      "4대보험.md",
+      "ISA계좌.md",
+      "가상자산-세금.md",
+      "건강보험료.md",
+      "교육비공제.md",
+      "국민기초생활보장.md",
+      "국민연금.md",
+      "권리금-보호.md",
+      "근로계약서.md",
+      "근로소득세.md",
+      "금융투자소득세.md",
+      "기부금공제.md",
+      "기초연금.md",
+      "노인장기요양보험.md",
+      "다주택자-세금.md",
+      "등록면허세.md",
+      "무단전대-법적-대응.md",
+      "배당소득세.md",
+      "법인세.md",
+      "보증금-일부반환.md",
+      "부가가치세.md",
+      "부동산-취득세.md",
+      "부양가족공제.md",
+      "사업자등록.md",
+      "상속세.md",
+      "소액임차인-최우선변제권.md",
+      "아동수당.md",
+      "양도소득세.md",
+      "연금저축.md",
+      "연봉-실수령액.md",
+      "연차휴가.md",
+      "오피스텔-임대차.md",
+      "원상복구-범위.md",
+      "월세-세액공제.md",
+      "월세계약-주의사항.md",
+      "육아휴직급여.md",
+      "의료비공제.md",
+      "인지세.md",
+      "임대사업자-등록.md",
+      "임대인-수리의무.md",
+      "임대차-중도해지.md",
+      "임대차계약-해제-해지-차이.md",
+      "임대차계약서-작성법.md",
+      "임대차분쟁조정-신청.md",
+      "임차권등기명령.md",
+      "임차인-우선매수권.md",
+      "자녀세액공제.md",
+      "자녀장려금.md",
+      "자동차세.md",
+      "재개발-재건축.md",
+      "재산세.md",
+      "전세권-설정등기.md",
+      "전세금-경매-배당.md",
+      "전세보증금-반환-절차.md",
+      "전세사기-신고방법.md",
+      "전세자금대출-조건.md",
+      "전세자금대출.md",
+      "전월세-전환율.md",
+      "전월세신고-과태료.md",
+      "전월세신고.md",
+      "종합부동산세.md",
+      "종합소득세-신고.md",
+      "종합소득세.md",
+      "주거급여-신청.md",
+      "주거용-오피스텔.md",
+      "주민세.md",
+      "주택담보대출.md",
+      "주택연금.md",
+      "주택청약.md",
+      "주택청약저축.md",
+      "중소기업-취업자-소득세-감면.md",
+      "증여세.md",
+      "집주인-변경-임차인-권리.md",
+      "청년도약계좌.md",
+      "최저임금.md",
+      "출산휴가.md",
+      "취득세-세율.md",
+      "특별공급.md",
+      "해외주식-세금.md"
+    ],
+    "keywords_too_many": [
+      "연말정산-K-tech-Pass-감면.md",
+      "외국인-실업급여.md"
+    ]
+  },
+  "files": [
+    {
+      "fileName": "2026년-건강보험료.md",
+      "violations": [
+        "description",
+        "too_many_tables(8)"
+      ]
+    },
+    {
+      "fileName": "2026년-국민연금.md",
+      "violations": [
+        "description",
+        "too_many_tables(8)"
+      ]
+    },
+    {
+      "fileName": "2026년-달라지는-제도.md",
+      "violations": [
+        "too_many_tables(48)"
+      ]
+    },
+    {
+      "fileName": "2026년-실업급여.md",
+      "violations": [
+        "description"
+      ]
+    },
+    {
+      "fileName": "2026년-육아휴직급여.md",
+      "violations": [
+        "description",
+        "too_many_tables(11)"
+      ]
+    },
+    {
+      "fileName": "2026년-최저임금.md",
+      "violations": [
+        "description",
+        "too_many_tables(5)"
+      ]
+    },
+    {
+      "fileName": "2026년-출산휴가급여.md",
+      "violations": [
+        "description",
+        "too_many_tables(11)"
+      ]
+    },
+    {
+      "fileName": "4대보험.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(21)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "4대보험료-계산기.md",
+      "violations": [
+        "too_many_tables(3)"
+      ]
+    },
+    {
+      "fileName": "DSR-계산기.md",
+      "violations": [
+        "too_many_tables(4)"
+      ]
+    },
+    {
+      "fileName": "ISA계좌.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(28)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "가상자산-세금.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(27)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "건강보험료.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(23)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "계약갱신청구권-거절사유.md",
+      "violations": [
+        "too_many_tables(4)"
+      ]
+    },
+    {
+      "fileName": "계약갱신청구권-복비.md",
+      "violations": [
+        "too_many_tables(5)"
+      ]
+    },
+    {
+      "fileName": "계약갱신청구권-행사방법.md",
+      "violations": [
+        "too_many_tables(5)"
+      ]
+    },
+    {
+      "fileName": "계약직-퇴직금.md",
+      "violations": [
+        "too_many_tables(4)"
+      ]
+    },
+    {
+      "fileName": "교육비공제.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(24)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "구직촉진수당.md",
+      "violations": [
+        "description",
+        "too_many_tables(9)"
+      ]
+    },
+    {
+      "fileName": "국민기초생활보장.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(21)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "국민연금.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(21)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "권리금-보호.md",
+      "violations": [
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(9)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "근로계약서.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(22)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "근로소득세.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(22)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "금융투자소득세.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(23)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "기부금공제.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(25)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "기초연금.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(21)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "노인장기요양보험.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(24)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "다운계약서-양도세.md",
+      "violations": [
+        "description",
+        "too_many_tables(8)"
+      ]
+    },
+    {
+      "fileName": "다주택자-세금.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(28)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "대항력-발생-시점.md",
+      "violations": [
+        "too_many_tables(12)"
+      ]
+    },
+    {
+      "fileName": "등록면허세.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(24)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "명예퇴직금-세금.md",
+      "violations": [
+        "too_many_tables(3)"
+      ]
+    },
+    {
+      "fileName": "무단전대-법적-대응.md",
+      "violations": [
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(8)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "배당소득세.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(24)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "법인세.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(26)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "보육수당-비과세.md",
+      "violations": [
+        "description",
+        "too_many_tables(7)"
+      ]
+    },
+    {
+      "fileName": "보증금-일부반환.md",
+      "violations": [
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(7)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "복리-계산기.md",
+      "violations": [
+        "too_many_tables(3)"
+      ]
+    },
+    {
+      "fileName": "부가가치세.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(23)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "부동산-취득세.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(21)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "부양가족공제.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(26)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "사업자등록.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(21)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "상생임대주택-특례.md",
+      "violations": [
+        "description",
+        "too_many_tables(8)"
+      ]
+    },
+    {
+      "fileName": "상속세.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(21)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "상속주택-양도세-거주요건.md",
+      "violations": [
+        "description",
+        "too_many_tables(5)"
+      ]
+    },
+    {
+      "fileName": "소액임차인-최우선변제권.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(28)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "시급-계산기.md",
+      "violations": [
+        "h2_numbered"
+      ]
+    },
+    {
+      "fileName": "아동수당.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(21)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "양도소득세-계산기.md",
+      "violations": [
+        "too_many_tables(3)"
+      ]
+    },
+    {
+      "fileName": "양도소득세.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(17)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "연금저축.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(21)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "연말정산-K-tech-Pass-감면.md",
+      "violations": [
+        "keywords_too_many"
+      ]
+    },
+    {
+      "fileName": "연말정산-계산기.md",
+      "violations": [
+        "too_many_tables(4)"
+      ]
+    },
+    {
+      "fileName": "연말정산-성과공유-중소기업.md",
+      "violations": [
+        "too_many_tables(3)"
+      ]
+    },
+    {
+      "fileName": "연말정산-프리랜서.md",
+      "violations": [
+        "h2_numbered"
+      ]
+    },
+    {
+      "fileName": "연말정산.md",
+      "violations": [
+        "too_many_tables(3)"
+      ]
+    },
+    {
+      "fileName": "연봉-실수령액.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(20)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "연차휴가.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(24)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "오피스텔-임대차.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(29)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "외국인-실업급여.md",
+      "violations": [
+        "keywords_too_many"
+      ]
+    },
+    {
+      "fileName": "우선변제권-요건.md",
+      "violations": [
+        "too_many_tables(15)"
+      ]
+    },
+    {
+      "fileName": "원상복구-범위.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(28)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "월세-세액공제.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(29)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "월세계약-주의사항.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(29)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "육아기-근로시간-단축.md",
+      "violations": [
+        "description",
+        "too_many_tables(8)"
+      ]
+    },
+    {
+      "fileName": "육아휴직급여.md",
+      "violations": [
+        "description",
+        "too_many_tables(20)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "의료비공제.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(22)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "인지세.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(25)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "임대사업자-등록.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(27)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "임대인-수리의무.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(29)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "임대차-중도해지.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(27)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "임대차계약-해제-해지-차이.md",
+      "violations": [
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(12)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "임대차계약서-작성법.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(20)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "임대차보호법.md",
+      "violations": [
+        "too_many_tables(3)"
+      ]
+    },
+    {
+      "fileName": "임대차분쟁조정-신청.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(29)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "임차권등기명령.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(29)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "임차인-우선매수권.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(25)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "자녀세액공제.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(24)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "자녀장려금.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(21)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "자동차세-계산기.md",
+      "violations": [
+        "too_many_tables(5)"
+      ]
+    },
+    {
+      "fileName": "자동차세.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(24)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "재개발-재건축.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(25)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "재산분할-임대주택-양도세.md",
+      "violations": [
+        "description",
+        "too_many_tables(9)"
+      ]
+    },
+    {
+      "fileName": "재산세.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(19)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "전세계약-주의사항.md",
+      "violations": [
+        "too_many_tables(15)"
+      ]
+    },
+    {
+      "fileName": "전세권-설정등기.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(26)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "전세금-경매-배당.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(30)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "전세대출-계산기.md",
+      "violations": [
+        "too_many_tables(4)"
+      ]
+    },
+    {
+      "fileName": "전세보증금-반환-절차.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(31)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "전세보증보험.md",
+      "violations": [
+        "too_many_tables(19)"
+      ]
+    },
+    {
+      "fileName": "전세사기-신고방법.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(27)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "전세자금대출-조건.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(19)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "전세자금대출.md",
+      "violations": [
+        "h1_in_body",
+        "h2_numbered",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "전월세-전환율.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(23)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "전월세상한제-계산.md",
+      "violations": [
+        "too_many_tables(4)"
+      ]
+    },
+    {
+      "fileName": "전월세상한제-위반.md",
+      "violations": [
+        "too_many_tables(5)"
+      ]
+    },
+    {
+      "fileName": "전월세상한제-폐지.md",
+      "violations": [
+        "too_many_tables(5)"
+      ]
+    },
+    {
+      "fileName": "전월세상한제.md",
+      "violations": [
+        "too_many_tables(5)"
+      ]
+    },
+    {
+      "fileName": "전월세신고-과태료.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(29)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "전월세신고.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(21)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "전입신고-방법.md",
+      "violations": [
+        "too_many_tables(6)"
+      ]
+    },
+    {
+      "fileName": "종합부동산세-계산기.md",
+      "violations": [
+        "too_many_tables(4)"
+      ]
+    },
+    {
+      "fileName": "종합부동산세.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(20)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "종합소득세-신고.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(25)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "종합소득세.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(19)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "주거급여-신청.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(27)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "주거용-오피스텔.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(27)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "주민세.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(26)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "주택-지분취득-거주요건.md",
+      "violations": [
+        "description",
+        "too_many_tables(8)"
+      ]
+    },
+    {
+      "fileName": "주택담보대출-계산기.md",
+      "violations": [
+        "too_many_tables(4)"
+      ]
+    },
+    {
+      "fileName": "주택담보대출.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(20)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "주택연금.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(24)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "주택청약.md",
+      "violations": [
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(6)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "주택청약저축.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(21)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "중소기업-취업자-소득세-감면.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(26)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "증여세.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(20)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "집주인-변경-임차인-권리.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(27)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "청년도약계좌.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(27)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "최저임금.md",
+      "violations": [
+        "description",
+        "h2_numbered",
+        "too_many_tables(18)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "출산휴가.md",
+      "violations": [
+        "description",
+        "too_many_tables(25)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "취득세-세율.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(19)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "퇴직금-DC형-계산법.md",
+      "violations": [
+        "too_many_tables(3)"
+      ]
+    },
+    {
+      "fileName": "퇴직금-계산-방법.md",
+      "violations": [
+        "too_many_tables(3)"
+      ]
+    },
+    {
+      "fileName": "퇴직금-계산기-통상임금.md",
+      "violations": [
+        "too_many_tables(4)"
+      ]
+    },
+    {
+      "fileName": "퇴직금-분할지급.md",
+      "violations": [
+        "too_many_tables(3)"
+      ]
+    },
+    {
+      "fileName": "퇴직금-일시금-수령-세금-계산기.md",
+      "violations": [
+        "too_many_tables(5)"
+      ]
+    },
+    {
+      "fileName": "퇴직금-정산서.md",
+      "violations": [
+        "too_many_tables(5)"
+      ]
+    },
+    {
+      "fileName": "퇴직금-중간정산-조건.md",
+      "violations": [
+        "too_many_tables(4)"
+      ]
+    },
+    {
+      "fileName": "퇴직금-프리랜서.md",
+      "violations": [
+        "h2_numbered"
+      ]
+    },
+    {
+      "fileName": "퇴직소득세-계산.md",
+      "violations": [
+        "too_many_tables(7)"
+      ]
+    },
+    {
+      "fileName": "퇴직연금-ETF-운용.md",
+      "violations": [
+        "too_many_tables(4)"
+      ]
+    },
+    {
+      "fileName": "퇴직연금-연금수령.md",
+      "violations": [
+        "too_many_tables(6)"
+      ]
+    },
+    {
+      "fileName": "퇴직연금-해지.md",
+      "violations": [
+        "too_many_tables(3)"
+      ]
+    },
+    {
+      "fileName": "특별공급.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(28)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "프리랜서-퇴직금-지급기준.md",
+      "violations": [
+        "h2_numbered"
+      ]
+    },
+    {
+      "fileName": "해외주식-세금.md",
+      "violations": [
+        "description",
+        "h1_in_body",
+        "h2_numbered",
+        "too_many_tables(28)",
+        "summary_not_array"
+      ]
+    },
+    {
+      "fileName": "확정일자.md",
+      "violations": [
+        "too_many_tables(13)"
+      ]
+    }
+  ]
+}
