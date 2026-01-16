@@ -15,11 +15,13 @@ const FORMS_DB: Record<string, FormData> = {
     description: "고용노동부 공식 표준근로계약서 양식입니다. 정규직 채용 시 사용하세요.",
     category: "고용·근로",
     source: "고용노동부",
-    sourceUrl: "https://www.moel.go.kr/policy/policyinfo/loborlaw/list5.do",
+    sourceUrl: "https://www.moel.go.kr/policy/policydata/view.do?bbs_seq=20190700008",
+    // 고용노동부 직접 다운로드 링크
     downloads: {
-      hwp: "https://www.moel.go.kr/policy/policyinfo/loborlaw/list5.do",
-      doc: "https://www.moel.go.kr/policy/policyinfo/loborlaw/list5.do",
-      pdf: "https://www.moel.go.kr/policy/policyinfo/loborlaw/list5.do",
+      hwp: "https://www.moel.go.kr/common/downloadFile.do?file_seq=20190700012&bbs_seq=20190700008&bbs_id=29&file_ext=hwp",
+    },
+    downloadNames: {
+      hwp: "표준근로계약서_7종_고용노동부.hwp",
     },
     previewData: 표준근로계약서_DATA,
     relatedArticle: "/w/표준근로계약서-양식-무료-다운로드-작성법-2026",
@@ -28,17 +30,33 @@ const FORMS_DB: Record<string, FormData> = {
       "근로계약서는 반드시 2부 작성, 1부는 근로자에게 교부",
       "수습기간은 최대 3개월, 1년 이상 계약 시만 감액 가능",
     ],
+    faq: [
+      {
+        question: "2026년 최저시급은 얼마인가요?",
+        answer: "2026년 최저시급은 10,320원입니다. 근로계약서 작성 시 이 금액 이상으로 시급을 기재해야 법적 효력이 있습니다.",
+      },
+      {
+        question: "근로계약서는 꼭 2부를 작성해야 하나요?",
+        answer: "네, 반드시 2부를 작성하여 사업주와 근로자가 각각 1부씩 보관해야 합니다. 근로자에게 미교부 시 500만원 이하 벌금이 부과될 수 있습니다.",
+      },
+      {
+        question: "수습기간에도 최저시급을 줘야 하나요?",
+        answer: "1년 이상 근로계약을 체결한 경우, 수습 3개월 동안 최저임금의 90%(9,288원)를 지급할 수 있습니다. 단, 단순노무직은 100% 지급해야 합니다.",
+      },
+    ],
   },
   "단시간근로계약서": {
     title: "단시간근로계약서 (알바용)",
     description: "주 40시간 미만 근무하는 알바, 파트타임용 근로계약서입니다.",
     category: "고용·근로",
     source: "고용노동부",
-    sourceUrl: "https://www.moel.go.kr/policy/policyinfo/loborlaw/list5.do",
+    sourceUrl: "https://www.moel.go.kr/policy/policydata/view.do?bbs_seq=20190700008",
+    // 고용노동부 7종 근로계약서 (단시간 포함)
     downloads: {
-      hwp: "https://www.moel.go.kr/policy/policyinfo/loborlaw/list5.do",
-      doc: "https://www.moel.go.kr/policy/policyinfo/loborlaw/list5.do",
-      pdf: "https://www.moel.go.kr/policy/policyinfo/loborlaw/list5.do",
+      hwp: "https://www.moel.go.kr/common/downloadFile.do?file_seq=20190700012&bbs_seq=20190700008&bbs_id=29&file_ext=hwp",
+    },
+    downloadNames: {
+      hwp: "근로계약서_7종_단시간포함_고용노동부.hwp",
     },
     previewData: 단시간근로계약서_DATA,
     relatedArticle: "/w/표준근로계약서-양식-무료-다운로드-작성법-2026",
@@ -47,17 +65,33 @@ const FORMS_DB: Record<string, FormData> = {
       "시급은 2026년 최저임금 10,320원 이상",
       "근로일과 근로시간을 구체적으로 명시하세요",
     ],
+    faq: [
+      {
+        question: "알바도 근로계약서를 꼭 써야 하나요?",
+        answer: "네, 하루만 일해도 근로계약서 작성은 법적 의무입니다. 단시간근로자용 양식을 사용하면 됩니다.",
+      },
+      {
+        question: "주휴수당은 언제 받을 수 있나요?",
+        answer: "주 15시간 이상 근무하면 주휴수당을 받을 수 있습니다. 시급 10,320원 기준 주 5일 근무 시 주휴수당 포함 실제 시급은 12,384원입니다.",
+      },
+      {
+        question: "알바도 4대보험에 가입해야 하나요?",
+        answer: "주 15시간 이상 근무하면 4대보험 가입 대상입니다. 사업주가 가입해주지 않으면 근로복지공단에 신고할 수 있습니다.",
+      },
+    ],
   },
   "기간제근로계약서": {
     title: "기간제근로계약서 (계약직용)",
     description: "계약 기간이 정해진 계약직, 기간제 근로자용 계약서입니다.",
     category: "고용·근로",
     source: "고용노동부",
-    sourceUrl: "https://www.moel.go.kr/policy/policyinfo/loborlaw/list5.do",
+    sourceUrl: "https://www.moel.go.kr/policy/policydata/view.do?bbs_seq=20190700008",
+    // 고용노동부 7종 근로계약서 (기간제 포함)
     downloads: {
-      hwp: "https://www.moel.go.kr/policy/policyinfo/loborlaw/list5.do",
-      doc: "https://www.moel.go.kr/policy/policyinfo/loborlaw/list5.do",
-      pdf: "https://www.moel.go.kr/policy/policyinfo/loborlaw/list5.do",
+      hwp: "https://www.moel.go.kr/common/downloadFile.do?file_seq=20190700012&bbs_seq=20190700008&bbs_id=29&file_ext=hwp",
+    },
+    downloadNames: {
+      hwp: "근로계약서_7종_기간제포함_고용노동부.hwp",
     },
     previewData: 기간제근로계약서_DATA,
     relatedArticle: "/w/표준근로계약서-양식-무료-다운로드-작성법-2026",
@@ -66,8 +100,27 @@ const FORMS_DB: Record<string, FormData> = {
       "계약 갱신 여부를 명확히 기재하세요",
       "1년 이상 근무 시 퇴직금 발생",
     ],
+    faq: [
+      {
+        question: "계약직도 퇴직금을 받을 수 있나요?",
+        answer: "네, 1년 이상 근무하면 계약직도 퇴직금을 받을 수 있습니다. 퇴직금은 평균임금 30일분 × (재직일수/365)로 계산됩니다.",
+      },
+      {
+        question: "계약직 2년 넘으면 어떻게 되나요?",
+        answer: "기간제 근로자를 2년 넘게 사용하면 자동으로 무기계약직(정규직)으로 전환됩니다. 기간제법 제4조에서 정한 규정입니다.",
+      },
+      {
+        question: "계약 갱신을 거절당하면 어떻게 하나요?",
+        answer: "정당한 사유 없이 갱신을 거절하면 부당해고에 해당할 수 있습니다. 갱신 기대권이 인정되는 경우 노동위원회에 구제신청이 가능합니다.",
+      },
+    ],
   },
 };
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
 
 interface FormData {
   title: string;
@@ -80,9 +133,15 @@ interface FormData {
     doc?: string;
     pdf?: string;
   };
+  downloadNames?: {
+    hwp?: string;
+    doc?: string;
+    pdf?: string;
+  };
   previewData: typeof 표준근로계약서_DATA;
   relatedArticle?: string;
   tips?: string[];
+  faq?: FAQItem[];
 }
 
 interface PageProps {
@@ -123,8 +182,30 @@ export default async function FormDownloadPage({ params }: PageProps) {
     notFound();
   }
 
+  // JSON-LD FAQ Schema
+  const faqSchema = form.faq ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": form.faq.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  } : null;
+
   return (
     <main className="max-w-4xl mx-auto px-4 py-8">
+      {/* JSON-LD FAQ Schema */}
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+
       {/* 상단 전면광고 영역 */}
       <div className="mb-6">
         <AdSense slot={AD_SLOTS.HORIZONTAL} format="horizontal" />
@@ -146,10 +227,11 @@ export default async function FormDownloadPage({ params }: PageProps) {
         <div className="flex items-center gap-4 mt-3 text-sm">
           <span className="text-neutral-500">출처: {form.source}</span>
           <span className="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded text-xs">무료</span>
+          <span className="px-2 py-0.5 bg-blue-50 text-blue-700 rounded text-xs">회원가입 없음</span>
         </div>
       </div>
 
-      {/* 다운로드 버튼 - 상단에 눈에 띄게 */}
+      {/* 다운로드 버튼 - <a download> 태그 사용 */}
       <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl p-6 mb-8">
         <h2 className="text-lg font-semibold text-neutral-800 mb-4">
           원하는 포맷으로 다운받으세요
@@ -158,9 +240,8 @@ export default async function FormDownloadPage({ params }: PageProps) {
           {form.downloads.hwp && (
             <a
               href={form.downloads.hwp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-3 bg-white border border-neutral-200 rounded-lg hover:border-emerald-400 hover:shadow-md transition-all"
+              download={form.downloadNames?.hwp || "양식.hwp"}
+              className="flex items-center gap-2 px-5 py-3 bg-white border border-neutral-200 rounded-lg hover:border-emerald-400 hover:shadow-md transition-all cursor-pointer"
             >
               <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h6v6h6v10H6z"/>
@@ -175,9 +256,8 @@ export default async function FormDownloadPage({ params }: PageProps) {
           {form.downloads.doc && (
             <a
               href={form.downloads.doc}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-3 bg-white border border-neutral-200 rounded-lg hover:border-emerald-400 hover:shadow-md transition-all"
+              download={form.downloadNames?.doc || "양식.docx"}
+              className="flex items-center gap-2 px-5 py-3 bg-white border border-neutral-200 rounded-lg hover:border-emerald-400 hover:shadow-md transition-all cursor-pointer"
             >
               <svg className="w-6 h-6 text-blue-700" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h6v6h6v10H6z"/>
@@ -192,9 +272,8 @@ export default async function FormDownloadPage({ params }: PageProps) {
           {form.downloads.pdf && (
             <a
               href={form.downloads.pdf}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-3 bg-white border border-neutral-200 rounded-lg hover:border-emerald-400 hover:shadow-md transition-all"
+              download={form.downloadNames?.pdf || "양식.pdf"}
+              className="flex items-center gap-2 px-5 py-3 bg-white border border-neutral-200 rounded-lg hover:border-emerald-400 hover:shadow-md transition-all cursor-pointer"
             >
               <svg className="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h6v6h6v10H6z"/>
@@ -208,7 +287,7 @@ export default async function FormDownloadPage({ params }: PageProps) {
           )}
         </div>
         <p className="text-xs text-neutral-500 mt-4">
-          * 고용노동부 공식 양식입니다. 위 버튼 클릭 시 정부 사이트로 이동합니다.
+          * 고용노동부 공식 양식입니다. 클릭 시 바로 다운로드됩니다. 회원가입/로그인 필요 없음.
         </p>
       </div>
 
@@ -249,6 +328,33 @@ export default async function FormDownloadPage({ params }: PageProps) {
               </li>
             ))}
           </ul>
+        </div>
+      )}
+
+      {/* FAQ 섹션 (SEO용) */}
+      {form.faq && form.faq.length > 0 && (
+        <div className="bg-white border border-neutral-200 rounded-xl p-6 mb-8">
+          <h2 className="text-lg font-semibold text-neutral-800 mb-4 flex items-center gap-2">
+            <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            자주 묻는 질문
+          </h2>
+          <div className="space-y-4">
+            {form.faq.map((item, index) => (
+              <details key={index} className="group border-b border-neutral-100 pb-4 last:border-b-0 last:pb-0">
+                <summary className="flex items-center justify-between cursor-pointer list-none font-medium text-neutral-800 hover:text-emerald-600">
+                  <span>Q. {item.question}</span>
+                  <svg className="w-5 h-5 text-neutral-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="mt-3 text-neutral-600 pl-4 border-l-2 border-emerald-200">
+                  {item.answer}
+                </p>
+              </details>
+            ))}
+          </div>
         </div>
       )}
 
