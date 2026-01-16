@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   // Vercel 배포 시 content 폴더 포함
   outputFileTracingIncludes: {
     "/w/[slug]": ["./content/wiki/**/*"],
+    "/forms/[slug]": ["./content/wiki/**/*"],
     "/sitemap.xml": ["./content/wiki/**/*"],
   },
   // 기존 URL 리다이렉트 (SEO 유지)
