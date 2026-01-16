@@ -9,18 +9,19 @@ import FormPreview, {
 import AdSense, { AD_SLOTS } from "@/components/AdSense";
 
 // 양식 데이터베이스
+// HWP 파일은 public/files/forms/에 저장됨 (고용노동부 공식 다운로드)
+// PDF/DOCX 변환: scripts/convert-hwp.py 또는 scripts/convert-hwp-node.js 실행
 const FORMS_DB: Record<string, FormData> = {
   "표준근로계약서": {
     title: "표준근로계약서",
     description: "고용노동부 공식 표준근로계약서 양식입니다. 정규직 채용 시 사용하세요.",
     category: "고용·근로",
     source: "고용노동부",
-    sourceUrl: "https://www.moel.go.kr/policy/policydata/view.do?bbs_seq=20190700008",
-    // HWP, DOC, PDF 직접 다운로드 링크
+    sourceUrl: "https://www.moel.go.kr/policy/policydata/view.do?bbs_seq=20250300356",
+    // 로컬 파일 경로 (public/files/forms/)
     downloads: {
-      hwp: "https://drive.google.com/uc?export=download&id=1qgLzmFna9UGiEy1kkHOYTMuMqZkMgGVy",
-      doc: "https://drive.google.com/uc?export=download&id=1vA2KEs8qDHK59Q2AZcHIgbnIPfgNSGSB",
-      pdf: "https://www.eformsign.com/kr/download/계약서/표준근로계약서.pdf",
+      hwp: "/files/forms/표준근로계약서.hwp",
+      pdf: "/files/forms/표준근로계약서.pdf",
     },
     downloadNames: {
       hwp: "표준근로계약서_정규직_고용노동부.hwp",
@@ -54,11 +55,11 @@ const FORMS_DB: Record<string, FormData> = {
     description: "주 40시간 미만 근무하는 알바, 파트타임용 근로계약서입니다.",
     category: "고용·근로",
     source: "고용노동부",
-    sourceUrl: "https://www.moel.go.kr/policy/policydata/view.do?bbs_seq=20190700008",
-    // HWP, DOC 직접 다운로드 링크
+    sourceUrl: "https://www.moel.go.kr/local/seoulgwanak/news/notice/noticeView.do?bbs_seq=20230700845",
+    // 로컬 파일 경로 (public/files/forms/)
     downloads: {
-      hwp: "https://drive.google.com/uc?export=download&id=1Yuw84CA--DyOgYXe7MIrsN0Xig6C6I6r",
-      doc: "https://drive.google.com/uc?export=download&id=1GTZmUJRYDO3w1RJ99WfCGwdzgD7BNfqi",
+      hwp: "/files/forms/단시간근로계약서.hwp",
+      pdf: "/files/forms/단시간근로계약서.pdf",
     },
     downloadNames: {
       hwp: "단시간근로계약서_알바용_고용노동부.hwp",
@@ -92,13 +93,13 @@ const FORMS_DB: Record<string, FormData> = {
     category: "고용·근로",
     source: "고용노동부",
     sourceUrl: "https://www.moel.go.kr/policy/policydata/view.do?bbs_seq=20190700008",
-    // HWP, DOC 직접 다운로드 링크
+    // 로컬 파일 경로 - 7종 양식 파일 (기간제 포함)
     downloads: {
-      hwp: "https://drive.google.com/uc?export=download&id=1ZhP0g30AW29ZOIdyeX33w-OrtzyhxX-_",
-      doc: "https://drive.google.com/uc?export=download&id=1pfYPraU2pavgJqMzMonce3kTcYweXCfW",
+      hwp: "/files/forms/표준근로계약서-7종.hwp",
+      pdf: "/files/forms/표준근로계약서-7종.pdf",
     },
     downloadNames: {
-      hwp: "기간제근로계약서_계약직용_고용노동부.hwp",
+      hwp: "표준근로계약서_7종_고용노동부.hwp",
       doc: "기간제근로계약서_계약직용_고용노동부.docx",
     },
     previewData: 기간제근로계약서_DATA,

@@ -64,248 +64,250 @@ export default function FormPreview({ title, rows, className = "" }: FormPreview
   );
 }
 
-// 표준근로계약서 미리보기 데이터
+// 표준근로계약서 미리보기 데이터 (고용노동부 표준양식 기준)
 export const 표준근로계약서_DATA: FormRow[] = [
   {
     fields: [
-      { label: "사업체명", isHeader: true },
-      { placeholder: "(주)○○○○", colspan: 3 },
+      { label: "1. 근로개시일", isHeader: true },
+      { placeholder: "____년 __월 __일부터", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "대표자", isHeader: true },
-      { placeholder: "홍길동" },
-      { label: "사업자등록번호", isHeader: true },
-      { placeholder: "000-00-00000" },
+      { label: "2. 근무장소", isHeader: true },
+      { placeholder: "(입력란)", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "소재지", isHeader: true },
-      { placeholder: "서울특별시 ○○구 ○○로 00", colspan: 3 },
+      { label: "3. 업무의 내용", isHeader: true },
+      { placeholder: "(입력란)", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "근로자 성명", isHeader: true },
-      { placeholder: "김철수" },
-      { label: "주민등록번호", isHeader: true },
-      { placeholder: "000000-0000000" },
+      { label: "4. 소정근로시간", isHeader: true },
+      { placeholder: "__시 __분 ~ __시 __분 (휴게: __시 __분 ~ __시 __분)", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "주소", isHeader: true },
-      { placeholder: "서울특별시 ○○구 ○○로 00", colspan: 3 },
+      { label: "5. 근무일/휴일", isHeader: true },
+      { placeholder: "매주 __일 근무, 주휴일 매주 __요일", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "연락처", isHeader: true },
-      { placeholder: "010-0000-0000" },
-      { label: "이메일", isHeader: true },
-      { placeholder: "example@email.com" },
+      { label: "6. 임금", isHeader: true },
+      { placeholder: "월(일, 시간)급: ________원", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "계약기간", isHeader: true },
-      { placeholder: "기간의 정함이 없음 / 2026.01.01 ~ 2026.12.31", colspan: 3 },
+      { label: "상여금", isHeader: true },
+      { placeholder: "있음 (    )원 / 없음 (    )" },
+      { label: "기타 수당", isHeader: true },
+      { placeholder: "있음 [   ] / 없음 [   ]" },
     ],
   },
   {
     fields: [
-      { label: "근무장소", isHeader: true },
-      { placeholder: "본사 또는 회사가 지정하는 장소", colspan: 3 },
-    ],
-  },
-  {
-    fields: [
-      { label: "업무내용", isHeader: true },
-      { placeholder: "○○○○ 업무", colspan: 3 },
-    ],
-  },
-  {
-    fields: [
-      { label: "근로시간", isHeader: true },
-      { placeholder: "09:00 ~ 18:00 (휴게시간 12:00~13:00)", colspan: 3 },
-    ],
-  },
-  {
-    fields: [
-      { label: "근무일/휴일", isHeader: true },
-      { placeholder: "주 5일 (월~금) / 주휴일: 매주 일요일", colspan: 3 },
-    ],
-  },
-  {
-    fields: [
-      { label: "임금", isHeader: true },
-      { placeholder: "월급 ○,○○○,○○○원 (시급 10,320원 이상)", colspan: 3 },
-    ],
-  },
-  {
-    fields: [
-      { label: "임금 지급일", isHeader: true },
-      { placeholder: "매월 25일" },
+      { label: "임금지급일", isHeader: true },
+      { placeholder: "매월(매주) __일" },
       { label: "지급방법", isHeader: true },
-      { placeholder: "근로자 명의 계좌 입금" },
+      { placeholder: "직접지급 [  ] / 계좌입금 [  ]" },
     ],
   },
   {
     fields: [
-      { label: "연차유급휴가", isHeader: true },
+      { label: "7. 연차유급휴가", isHeader: true },
       { placeholder: "근로기준법에서 정하는 바에 따라 부여", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "사회보험 적용", isHeader: true },
-      { placeholder: "☑ 고용보험  ☑ 산재보험  ☑ 국민연금  ☑ 건강보험", colspan: 3 },
+      { label: "8. 사회보험", isHeader: true },
+      { placeholder: "4대 보험 (고용/산재/국민연금/건강보험) 적용", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "(사업주)", isHeader: true },
+      { placeholder: "사업체명:          대표자:          (서명)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "(근로자)", isHeader: true },
+      { placeholder: "성명:              연락처:          (서명)", colspan: 3 },
     ],
   },
 ];
 
-// 단시간근로계약서 (알바) 미리보기 데이터
+// 단시간근로계약서 (알바) 미리보기 데이터 (고용노동부 표준양식 기준)
 export const 단시간근로계약서_DATA: FormRow[] = [
   {
     fields: [
-      { label: "사업체명", isHeader: true },
-      { placeholder: "○○○○", colspan: 3 },
+      { label: "1. 근로개시일", isHeader: true },
+      { placeholder: "____년 __월 __일부터", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "대표자", isHeader: true },
-      { placeholder: "홍길동" },
-      { label: "전화번호", isHeader: true },
-      { placeholder: "02-0000-0000" },
+      { label: "2. 근무장소", isHeader: true },
+      { placeholder: "(입력란)", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "근로자 성명", isHeader: true },
-      { placeholder: "김알바" },
-      { label: "생년월일", isHeader: true },
-      { placeholder: "2000.01.01" },
+      { label: "3. 업무의 내용", isHeader: true },
+      { placeholder: "(입력란)", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "계약기간", isHeader: true },
-      { placeholder: "2026.01.01 ~ 2026.06.30", colspan: 3 },
+      { label: "4. 근로일별 근로시간", isHeader: true },
+      { placeholder: "요일별 시작/종료/휴게시간 기재 (표 형태)", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "근무장소", isHeader: true },
-      { placeholder: "○○점", colspan: 3 },
+      { label: "주휴일", isHeader: true },
+      { placeholder: "매주 __요일" },
+      { label: "공휴일", isHeader: true },
+      { placeholder: "근로기준법에 따름" },
     ],
   },
   {
     fields: [
-      { label: "업무내용", isHeader: true },
-      { placeholder: "매장 판매 보조", colspan: 3 },
+      { label: "5. 임금", isHeader: true },
+      { placeholder: "시간(일, 월)급: ________원", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "근로일", isHeader: true },
-      { placeholder: "매주 월, 수, 금요일", colspan: 3 },
+      { label: "상여금", isHeader: true },
+      { placeholder: "있음 (    )원 / 없음 (    )" },
+      { label: "기타 수당", isHeader: true },
+      { placeholder: "있음 [   ] / 없음 [   ]" },
     ],
   },
   {
     fields: [
-      { label: "근로시간", isHeader: true },
-      { placeholder: "14:00 ~ 18:00 (1일 4시간)", colspan: 3 },
+      { label: "초과근로 가산임금률", isHeader: true },
+      { placeholder: "______% (통상임금의 50% 이상)", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "시급", isHeader: true },
-      { placeholder: "10,320원 (2026년 최저임금)", colspan: 3 },
-    ],
-  },
-  {
-    fields: [
-      { label: "주휴수당", isHeader: true },
-      { placeholder: "주 15시간 이상 시 별도 지급", colspan: 3 },
-    ],
-  },
-  {
-    fields: [
-      { label: "임금 지급일", isHeader: true },
-      { placeholder: "매월 10일" },
+      { label: "임금지급일", isHeader: true },
+      { placeholder: "매월(매주) __일" },
       { label: "지급방법", isHeader: true },
-      { placeholder: "계좌이체" },
+      { placeholder: "직접지급 [  ] / 계좌입금 [  ]" },
+    ],
+  },
+  {
+    fields: [
+      { label: "6. 연차유급휴가", isHeader: true },
+      { placeholder: "통상근로자 근로시간에 비례하여 부여", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "7. 사회보험", isHeader: true },
+      { placeholder: "4대 보험 (고용/산재/국민연금/건강보험) 적용", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "(사업주)", isHeader: true },
+      { placeholder: "사업체명:          대표자:          (서명)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "(근로자)", isHeader: true },
+      { placeholder: "성명:              연락처:          (서명)", colspan: 3 },
     ],
   },
 ];
 
-// 기간제근로계약서 (계약직) 미리보기 데이터
+// 기간제근로계약서 (계약직) 미리보기 데이터 (고용노동부 표준양식 기준)
 export const 기간제근로계약서_DATA: FormRow[] = [
   {
     fields: [
-      { label: "사업체명", isHeader: true },
-      { placeholder: "(주)○○○○", colspan: 3 },
+      { label: "1. 근로계약기간", isHeader: true },
+      { placeholder: "____년 __월 __일부터 ____년 __월 __일까지", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "대표자", isHeader: true },
-      { placeholder: "홍길동" },
-      { label: "사업자등록번호", isHeader: true },
-      { placeholder: "000-00-00000" },
+      { label: "2. 근무장소", isHeader: true },
+      { placeholder: "(입력란)", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "근로자 성명", isHeader: true },
-      { placeholder: "이계약" },
-      { label: "주민등록번호", isHeader: true },
-      { placeholder: "000000-0000000" },
+      { label: "3. 업무의 내용", isHeader: true },
+      { placeholder: "(입력란)", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "계약기간", isHeader: true },
-      { placeholder: "2026.01.01 ~ 2026.12.31 (1년)", colspan: 3 },
+      { label: "4. 소정근로시간", isHeader: true },
+      { placeholder: "__시 __분 ~ __시 __분 (휴게: __시 __분 ~ __시 __분)", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "갱신여부", isHeader: true },
-      { placeholder: "☐ 갱신가능  ☐ 갱신없음  ☐ 협의 후 결정", colspan: 3 },
+      { label: "5. 근무일/휴일", isHeader: true },
+      { placeholder: "매주 __일 근무, 주휴일 매주 __요일", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "근무장소", isHeader: true },
-      { placeholder: "본사", colspan: 3 },
+      { label: "6. 임금", isHeader: true },
+      { placeholder: "월(일, 시간)급: ________원", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "업무내용", isHeader: true },
-      { placeholder: "○○ 프로젝트 업무", colspan: 3 },
+      { label: "상여금", isHeader: true },
+      { placeholder: "있음 (    )원 / 없음 (    )" },
+      { label: "기타 수당", isHeader: true },
+      { placeholder: "있음 [   ] / 없음 [   ]" },
     ],
   },
   {
     fields: [
-      { label: "근로시간", isHeader: true },
-      { placeholder: "09:00 ~ 18:00 (휴게 1시간)", colspan: 3 },
+      { label: "임금지급일", isHeader: true },
+      { placeholder: "매월(매주) __일" },
+      { label: "지급방법", isHeader: true },
+      { placeholder: "직접지급 [  ] / 계좌입금 [  ]" },
     ],
   },
   {
     fields: [
-      { label: "임금", isHeader: true },
-      { placeholder: "월 ○,○○○,○○○원", colspan: 3 },
+      { label: "7. 연차유급휴가", isHeader: true },
+      { placeholder: "근로기준법에서 정하는 바에 따라 부여", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "계약종료 시", isHeader: true },
-      { placeholder: "퇴직금 지급 (1년 이상 근무 시)", colspan: 3 },
+      { label: "8. 사회보험", isHeader: true },
+      { placeholder: "4대 보험 (고용/산재/국민연금/건강보험) 적용", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "(사업주)", isHeader: true },
+      { placeholder: "사업체명:          대표자:          (서명)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "(근로자)", isHeader: true },
+      { placeholder: "성명:              연락처:          (서명)", colspan: 3 },
     ],
   },
 ];
