@@ -110,7 +110,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export async function generateStaticParams() {
   return Object.keys(FORMS_DB).map((slug) => ({
-    slug: encodeURIComponent(slug),
+    slug: slug,
   }));
 }
 
