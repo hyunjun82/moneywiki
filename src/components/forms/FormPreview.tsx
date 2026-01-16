@@ -7,6 +7,8 @@ interface FormField {
   colspan?: number;
   rowspan?: number;
   isHeader?: boolean;
+  // 작성 예시 모드용 필드
+  exampleValue?: string; // 빨간색으로 표시될 작성 예시 값
 }
 
 interface FormRow {
@@ -17,14 +19,20 @@ interface FormPreviewProps {
   title: string;
   rows: FormRow[];
   className?: string;
+  mode?: "preview" | "example"; // preview: 빈 양식, example: 작성 예시 (빨간색)
 }
 
-export default function FormPreview({ title, rows, className = "" }: FormPreviewProps) {
+export default function FormPreview({ title, rows, className = "", mode = "preview" }: FormPreviewProps) {
+  const isExampleMode = mode === "example";
+
   return (
     <div className={`bg-white border border-neutral-200 rounded-lg overflow-hidden ${className}`}>
       {/* 제목 바 */}
-      <div className="bg-neutral-50 px-4 py-3 border-b border-neutral-200">
-        <h3 className="font-semibold text-neutral-800">{title}</h3>
+      <div className={`px-4 py-3 border-b border-neutral-200 ${isExampleMode ? "bg-blue-50" : "bg-neutral-50"}`}>
+        <h3 className="font-semibold text-neutral-800">
+          {title}
+          {isExampleMode && <span className="ml-2 text-sm text-blue-600 font-normal">(작성 예시)</span>}
+        </h3>
       </div>
 
       {/* 양식 미리보기 테이블 */}
@@ -48,6 +56,9 @@ export default function FormPreview({ title, rows, className = "" }: FormPreview
                   >
                     {field.isHeader ? (
                       field.label
+                    ) : isExampleMode && field.exampleValue ? (
+                      // 작성 예시 모드: 파란색으로 예시 값 표시 (한국 문화상 이름에 빨간색 기피)
+                      <span className="text-blue-600 font-medium">{field.exampleValue}</span>
                     ) : field.value ? (
                       <span className="text-neutral-800">{field.value}</span>
                     ) : (
@@ -60,6 +71,13 @@ export default function FormPreview({ title, rows, className = "" }: FormPreview
           </tbody>
         </table>
       </div>
+
+      {/* 작성 예시 모드일 때 범례 */}
+      {isExampleMode && (
+        <div className="px-4 py-2 bg-blue-50 border-t border-blue-100 text-xs text-blue-600">
+          <span className="font-medium text-blue-600">파란색 텍스트</span> = 실제 작성 예시 (본인 상황에 맞게 수정하세요)
+        </div>
+      )}
     </div>
   );
 }
@@ -69,77 +87,77 @@ export const 표준근로계약서_DATA: FormRow[] = [
   {
     fields: [
       { label: "1. 근로개시일", isHeader: true },
-      { placeholder: "____년 __월 __일부터", colspan: 3 },
+      { placeholder: "____년 __월 __일부터", exampleValue: "2026년 1월 15일부터", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "2. 근무장소", isHeader: true },
-      { placeholder: "(입력란)", colspan: 3 },
+      { placeholder: "(입력란)", exampleValue: "서울특별시 강남구 테헤란로 123, OO빌딩 5층", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "3. 업무의 내용", isHeader: true },
-      { placeholder: "(입력란)", colspan: 3 },
+      { placeholder: "(입력란)", exampleValue: "마케팅 기획 및 SNS 콘텐츠 제작", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "4. 소정근로시간", isHeader: true },
-      { placeholder: "__시 __분 ~ __시 __분 (휴게: __시 __분 ~ __시 __분)", colspan: 3 },
+      { placeholder: "__시 __분 ~ __시 __분 (휴게: __시 __분 ~ __시 __분)", exampleValue: "09시 00분 ~ 18시 00분 (휴게: 12시 00분 ~ 13시 00분)", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "5. 근무일/휴일", isHeader: true },
-      { placeholder: "매주 __일 근무, 주휴일 매주 __요일", colspan: 3 },
+      { placeholder: "매주 __일 근무, 주휴일 매주 __요일", exampleValue: "매주 5일 근무 (월~금), 주휴일 매주 일요일", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "6. 임금", isHeader: true },
-      { placeholder: "월(일, 시간)급: ________원", colspan: 3 },
+      { placeholder: "월(일, 시간)급: ________원", exampleValue: "월급: 2,800,000원 (세전)", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "상여금", isHeader: true },
-      { placeholder: "있음 (    )원 / 없음 (    )" },
+      { placeholder: "있음 (    )원 / 없음 (    )", exampleValue: "있음 (연 200만원, 설/추석)" },
       { label: "기타 수당", isHeader: true },
-      { placeholder: "있음 [   ] / 없음 [   ]" },
+      { placeholder: "있음 [   ] / 없음 [   ]", exampleValue: "식대 10만원/월, 교통비 10만원/월" },
     ],
   },
   {
     fields: [
       { label: "임금지급일", isHeader: true },
-      { placeholder: "매월(매주) __일" },
+      { placeholder: "매월(매주) __일", exampleValue: "매월 25일" },
       { label: "지급방법", isHeader: true },
-      { placeholder: "직접지급 [  ] / 계좌입금 [  ]" },
+      { placeholder: "직접지급 [  ] / 계좌입금 [  ]", exampleValue: "계좌입금 [V]" },
     ],
   },
   {
     fields: [
       { label: "7. 연차유급휴가", isHeader: true },
-      { placeholder: "근로기준법에서 정하는 바에 따라 부여", colspan: 3 },
+      { placeholder: "근로기준법에서 정하는 바에 따라 부여", exampleValue: "근로기준법에서 정하는 바에 따라 부여 (1년 미만: 월 1일)", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "8. 사회보험", isHeader: true },
-      { placeholder: "4대 보험 (고용/산재/국민연금/건강보험) 적용", colspan: 3 },
+      { placeholder: "4대 보험 (고용/산재/국민연금/건강보험) 적용", exampleValue: "4대 보험 전부 적용 (입사일로부터)", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "(사업주)", isHeader: true },
-      { placeholder: "사업체명:          대표자:          (서명)", colspan: 3 },
+      { placeholder: "사업체명:          대표자:          (서명)", exampleValue: "사업체명: (주)OO컴퍼니 | 대표자: 홍길동 (서명)", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "(근로자)", isHeader: true },
-      { placeholder: "성명:              연락처:          (서명)", colspan: 3 },
+      { placeholder: "성명:              연락처:          (서명)", exampleValue: "성명: 김철수 | 연락처: 010-1234-5678 (서명)", colspan: 3 },
     ],
   },
 ];

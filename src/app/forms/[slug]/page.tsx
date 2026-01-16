@@ -6,6 +6,7 @@ import FormPreview, {
   단시간근로계약서_DATA,
   기간제근로계약서_DATA,
 } from "@/components/forms/FormPreview";
+import FormPageClient from "@/components/forms/FormPageClient";
 import AdSense, { AD_SLOTS } from "@/components/AdSense";
 
 // 양식 데이터베이스
@@ -13,7 +14,8 @@ import AdSense, { AD_SLOTS } from "@/components/AdSense";
 // PDF/DOCX 변환: scripts/convert-hwp.py 또는 scripts/convert-hwp-node.js 실행
 const FORMS_DB: Record<string, FormData> = {
   "표준근로계약서": {
-    title: "표준근로계약서",
+    title: "2026 표준근로계약서 양식 무료 다운로드 (HWP, PDF, Word)",
+    shortTitle: "표준근로계약서",
     description: "고용노동부 공식 표준근로계약서 양식입니다. 정규직 채용 시 사용하세요.",
     category: "고용·근로",
     source: "고용노동부",
@@ -22,6 +24,7 @@ const FORMS_DB: Record<string, FormData> = {
     downloads: {
       hwp: "/files/forms/표준근로계약서.hwp",
       pdf: "/files/forms/표준근로계약서.pdf",
+      doc: "/files/forms/표준근로계약서.docx",
     },
     downloadNames: {
       hwp: "표준근로계약서_정규직_고용노동부.hwp",
@@ -51,7 +54,7 @@ const FORMS_DB: Record<string, FormData> = {
     ],
   },
   "단시간근로계약서": {
-    title: "단시간근로계약서 (알바용)",
+    title: "단시간근로계약서 (알바용) - 무료 다운로드 (HWP, PDF, Word)",
     description: "주 40시간 미만 근무하는 알바, 파트타임용 근로계약서입니다.",
     category: "고용·근로",
     source: "고용노동부",
@@ -60,6 +63,7 @@ const FORMS_DB: Record<string, FormData> = {
     downloads: {
       hwp: "/files/forms/단시간근로계약서.hwp",
       pdf: "/files/forms/단시간근로계약서.pdf",
+      doc: "/files/forms/단시간근로계약서.docx",
     },
     downloadNames: {
       hwp: "단시간근로계약서_알바용_고용노동부.hwp",
@@ -133,6 +137,7 @@ interface FAQItem {
 
 interface FormData {
   title: string;
+  shortTitle?: string; // 페이지 내 표시용 짧은 제목
   description: string;
   category: string;
   source: string;
@@ -300,20 +305,11 @@ export default async function FormDownloadPage({ params }: PageProps) {
         </p>
       </div>
 
-      {/* 양식 미리보기 */}
-      <div className="mb-8">
-        <h2 className="text-lg font-semibold text-neutral-800 mb-4 flex items-center gap-2">
-          <svg className="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-          </svg>
-          양식 미리보기
-        </h2>
-        <FormPreview title={form.title} rows={form.previewData} />
-        <p className="text-xs text-neutral-500 mt-2">
-          * 실제 양식의 미리보기입니다. 다운로드 후 직접 작성하세요.
-        </p>
-      </div>
+      {/* 양식 미리보기 + 작성 예시 (탭 UI) */}
+      <FormPageClient
+        formTitle={form.shortTitle || form.title}
+        previewData={form.previewData}
+      />
 
       {/* 중간 광고 */}
       <div className="my-8">

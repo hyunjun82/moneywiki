@@ -43,12 +43,13 @@ FORMS_DIR = PROJECT_ROOT / "public" / "files" / "forms"
 # 한글 저장 포맷 상수
 HWP_FORMAT = "HWP"
 PDF_FORMAT = "PDF"
-DOCX_FORMAT = "DOCX"
+DOCX_FORMAT = "OOXML"  # 한글에서 DOCX는 "OOXML" 포맷 사용
 
 # SaveAs 포맷 코드 (한글 2020 기준)
+# 참고: https://forum.developer.hancom.com/t/hwp-docx/975
 SAVE_FORMATS = {
     "pdf": "PDF",      # PDF
-    "docx": "DOCX",    # Microsoft Word DOCX
+    "docx": "OOXML",   # Microsoft Word DOCX (OOXML 포맷)
     "doc": "DOC",      # Microsoft Word DOC
     "hwpx": "HWPX",    # HWPX (새 한글 포맷)
     "txt": "TEXT",     # 텍스트
@@ -174,6 +175,15 @@ class HwpConverter:
         except:
             pass  # 구버전 한글에서는 지원하지 않을 수 있음
 
+        # 메시지 박스 자동 확인 설정 (OOXML 저장 시 팝업 방지)
+        # 참고: https://forum.developer.hancom.com/t/hwp-docx/975
+        try:
+            # 0x10000 = 메시지 박스 자동 확인 (예/확인 버튼 자동 클릭)
+            self.hwp.SetMessageBoxMode(0x10000)
+            print("  ✓ 메시지 박스 자동 확인 설정됨")
+        except:
+            pass  # HwpObjectLib에서는 지원하지 않을 수 있음
+
         # 창 숨기기 (백그라운드 실행) - 여러 방법 시도
         try:
             self.hwp.XHwpWindows.Active_XHwpWindow.Visible = False
@@ -241,8 +251,9 @@ class HwpConverter:
         try:
             abs_path = os.path.abspath(output_path)
 
-            # DOCX 저장
-            self.hwp.SaveAs(abs_path, "DOCX")
+            # DOCX 저장 - 한글에서는 "OOXML" 포맷 사용
+            # 참고: https://forum.developer.hancom.com/t/hwp-docx/975
+            self.hwp.SaveAs(abs_path, "OOXML")
             return os.path.exists(abs_path)
         except Exception as e:
             print(f"    ✗ DOCX 저장 실패: {e}")
