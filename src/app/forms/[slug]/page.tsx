@@ -16,12 +16,16 @@ const FORMS_DB: Record<string, FormData> = {
     category: "고용·근로",
     source: "고용노동부",
     sourceUrl: "https://www.moel.go.kr/policy/policydata/view.do?bbs_seq=20190700008",
-    // 고용노동부 직접 다운로드 링크
+    // HWP, DOC, PDF 직접 다운로드 링크
     downloads: {
-      hwp: "https://www.moel.go.kr/common/downloadFile.do?file_seq=20190700012&bbs_seq=20190700008&bbs_id=29&file_ext=hwp",
+      hwp: "https://drive.google.com/uc?export=download&id=1qgLzmFna9UGiEy1kkHOYTMuMqZkMgGVy",
+      doc: "https://drive.google.com/uc?export=download&id=1vA2KEs8qDHK59Q2AZcHIgbnIPfgNSGSB",
+      pdf: "https://www.eformsign.com/kr/download/계약서/표준근로계약서.pdf",
     },
     downloadNames: {
-      hwp: "표준근로계약서_7종_고용노동부.hwp",
+      hwp: "표준근로계약서_정규직_고용노동부.hwp",
+      doc: "표준근로계약서_정규직_고용노동부.docx",
+      pdf: "표준근로계약서_정규직.pdf",
     },
     previewData: 표준근로계약서_DATA,
     relatedArticle: "/w/표준근로계약서-양식-무료-다운로드-작성법-2026",
@@ -51,12 +55,14 @@ const FORMS_DB: Record<string, FormData> = {
     category: "고용·근로",
     source: "고용노동부",
     sourceUrl: "https://www.moel.go.kr/policy/policydata/view.do?bbs_seq=20190700008",
-    // 고용노동부 7종 근로계약서 (단시간 포함)
+    // HWP, DOC 직접 다운로드 링크
     downloads: {
-      hwp: "https://www.moel.go.kr/common/downloadFile.do?file_seq=20190700012&bbs_seq=20190700008&bbs_id=29&file_ext=hwp",
+      hwp: "https://drive.google.com/uc?export=download&id=1Yuw84CA--DyOgYXe7MIrsN0Xig6C6I6r",
+      doc: "https://drive.google.com/uc?export=download&id=1GTZmUJRYDO3w1RJ99WfCGwdzgD7BNfqi",
     },
     downloadNames: {
-      hwp: "근로계약서_7종_단시간포함_고용노동부.hwp",
+      hwp: "단시간근로계약서_알바용_고용노동부.hwp",
+      doc: "단시간근로계약서_알바용_고용노동부.docx",
     },
     previewData: 단시간근로계약서_DATA,
     relatedArticle: "/w/표준근로계약서-양식-무료-다운로드-작성법-2026",
@@ -86,12 +92,14 @@ const FORMS_DB: Record<string, FormData> = {
     category: "고용·근로",
     source: "고용노동부",
     sourceUrl: "https://www.moel.go.kr/policy/policydata/view.do?bbs_seq=20190700008",
-    // 고용노동부 7종 근로계약서 (기간제 포함)
+    // HWP, DOC 직접 다운로드 링크
     downloads: {
-      hwp: "https://www.moel.go.kr/common/downloadFile.do?file_seq=20190700012&bbs_seq=20190700008&bbs_id=29&file_ext=hwp",
+      hwp: "https://drive.google.com/uc?export=download&id=1ZhP0g30AW29ZOIdyeX33w-OrtzyhxX-_",
+      doc: "https://drive.google.com/uc?export=download&id=1pfYPraU2pavgJqMzMonce3kTcYweXCfW",
     },
     downloadNames: {
-      hwp: "근로계약서_7종_기간제포함_고용노동부.hwp",
+      hwp: "기간제근로계약서_계약직용_고용노동부.hwp",
+      doc: "기간제근로계약서_계약직용_고용노동부.docx",
     },
     previewData: 기간제근로계약서_DATA,
     relatedArticle: "/w/표준근로계약서-양식-무료-다운로드-작성법-2026",
