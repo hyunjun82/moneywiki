@@ -19,6 +19,7 @@ const categoryEmoji: Record<string, string> = {
   "노동": "🔧",
   "연금": "👴",
   "투자": "📉",
+  "양식·서식": "📥",
   "일반": "📄",
 };
 

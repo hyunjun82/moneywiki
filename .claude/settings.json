@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "mcp__playwright__browser_select_option",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(git commit:*)"
     ]
   },
   "editMode": "ask"
