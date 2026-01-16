@@ -226,11 +226,11 @@ export default function InsuranceCalculator() {
               </thead>
               <tbody>
                 <tr className="bg-white">
-                  <td className="py-2 px-2 text-center font-medium border border-gray-300">200만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300">95,000원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">81,340원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">18,000원</td>
-                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 19.4만원</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">2,156,880원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">102,310원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">87,720원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">19,410원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 20.9만원</td>
                   <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">최저임금급 🌱</td>
                 </tr>
                 <tr className="bg-green-50">
