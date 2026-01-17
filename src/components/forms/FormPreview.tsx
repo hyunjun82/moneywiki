@@ -6670,3 +6670,621 @@ export const 성과급지급내역서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// =============================================
+// 19차: 소장-민사, 시말서, 실업급여신청서, 업무제휴계약서
+// =============================================
+
+export const 소장민사_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "소 장", exampleValue: "소        장", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사건의 표시", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사건 종류", isHeader: true },
+      { placeholder: "(사건 종류)", exampleValue: "대여금 반환 청구" },
+      { label: "청구 금액", isHeader: true },
+      { placeholder: "(청구액)", exampleValue: "금 15,000,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "원 고", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(원고 성명)", exampleValue: "김영수" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "850315-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(원고 주소)", exampleValue: "서울시 강남구 테헤란로 123 머니빌딩 501호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "전화번호", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "010-1234-5678" },
+      { label: "이메일", isHeader: true },
+      { placeholder: "(이메일)", exampleValue: "kys@email.com" },
+    ],
+  },
+  {
+    fields: [
+      { label: "피 고", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(피고 성명)", exampleValue: "박민수" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "900520-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(피고 주소)", exampleValue: "서울시 서초구 반포대로 45 행복아파트 203동 1501호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "청구취지", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "1.", isHeader: true },
+      { placeholder: "(청구 내용 1)", exampleValue: "피고는 원고에게 금 15,000,000원 및 이에 대하여 2025. 1. 1.부터 이 사건 소장 부본 송달일까지는 연 5%, 그 다음 날부터 다 갚는 날까지는 연 12%의 각 비율에 의한 금원을 지급하라.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "2.", isHeader: true },
+      { placeholder: "(청구 내용 2)", exampleValue: "소송비용은 피고의 부담으로 한다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "3.", isHeader: true },
+      { placeholder: "(청구 내용 3)", exampleValue: "제1항은 가집행할 수 있다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "청구원인", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "1. 당사자 관계", isHeader: true },
+      { placeholder: "(당사자 관계)", exampleValue: "원고와 피고는 대학교 선후배 사이로, 2020년부터 친밀하게 교류해 온 관계입니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "2. 대여 경위", isHeader: true },
+      { placeholder: "(대여 사실)", exampleValue: "피고는 2024년 6월 15일 원고에게 '사업자금이 급하게 필요하다. 3개월 후인 2024년 9월 15일까지 반드시 갚겠다'고 하여, 원고는 피고에게 금 15,000,000원을 무이자로 대여하였습니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "3. 변제 약정", isHeader: true },
+      { placeholder: "(변제 약정)", exampleValue: "피고는 2024년 9월 15일까지 위 대여금 전액을 현금으로 상환하기로 약정하고, 이를 차용증(갑 제1호증)에 명시하였습니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "4. 채무불이행", isHeader: true },
+      { placeholder: "(채무불이행 사실)", exampleValue: "피고는 변제 기일이 지났음에도 불구하고 원금은 물론 이자조차 상환하지 아니하여, 원고가 수차례 독촉하였으나 계속 변제를 미루고 있습니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "5. 결론", isHeader: true },
+      { placeholder: "(결론)", exampleValue: "이에 원고는 부득이 피고를 상대로 청구취지와 같은 판결을 구하고자 이 사건 소를 제기하게 되었습니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부 서류", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "1.", isHeader: true },
+      { placeholder: "(첨부서류 1)", exampleValue: "갑 제1호증: 차용증 사본 1부" },
+      { label: "2.", isHeader: true },
+      { placeholder: "(첨부서류 2)", exampleValue: "갑 제2호증: 계좌이체 확인서 1부" },
+    ],
+  },
+  {
+    fields: [
+      { label: "3.", isHeader: true },
+      { placeholder: "(첨부서류 3)", exampleValue: "갑 제3호증: 독촉 문자메시지 캡쳐 1부" },
+      { label: "4.", isHeader: true },
+      { placeholder: "(첨부서류 4)", exampleValue: "소장 부본 1부" },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일" },
+      { label: "관할법원", isHeader: true },
+      { placeholder: "(관할 법원)", exampleValue: "서울중앙지방법원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "원고 서명", isHeader: true },
+      { placeholder: "(원고 성명) (인)", exampleValue: "원고 김영수 (인)", colspan: 3 },
+    ],
+  },
+];
+
+export const 시말서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "시 말 서", exampleValue: "시    말    서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성자 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "소속", isHeader: true },
+      { placeholder: "(부서명)", exampleValue: "영업1팀" },
+      { label: "직위/직책", isHeader: true },
+      { placeholder: "(직위)", exampleValue: "대리" },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "이민호" },
+      { label: "사원번호", isHeader: true },
+      { placeholder: "(사원번호)", exampleValue: "EMP-2021-0342" },
+    ],
+  },
+  {
+    fields: [
+      { label: "발생 사건 개요", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발생 일시", isHeader: true },
+      { placeholder: "20__년 __월 __일 __시경", exampleValue: "2026년 1월 10일 오후 3시경" },
+      { label: "발생 장소", isHeader: true },
+      { placeholder: "(발생 장소)", exampleValue: "본사 3층 회의실" },
+    ],
+  },
+  {
+    fields: [
+      { label: "사건 내용", isHeader: true },
+      { placeholder: "(사건의 구체적 내용 기재)", exampleValue: "고객사 A사와의 미팅에서 영업 자료를 준비하지 않아 미팅이 원활하게 진행되지 못함. 사전에 준비 지시를 받았으나 다른 업무로 인해 자료 준비를 미루다가 결국 당일까지 완료하지 못했습니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "관련자", isHeader: true },
+      { placeholder: "(관련된 사람)", exampleValue: "영업1팀 김팀장, 고객사 A사 구매담당 박과장" },
+      { label: "피해 정도", isHeader: true },
+      { placeholder: "(피해 내용)", exampleValue: "미팅 연기, 고객사 신뢰도 하락" },
+    ],
+  },
+  {
+    fields: [
+      { label: "사건 경위", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "경위 설명", isHeader: true },
+      { placeholder: "(사건의 상세한 경위를 기재)", exampleValue: "1월 8일 김팀장으로부터 10일 미팅용 자료 준비 지시를 받았으나, 9일 긴급 발주 건 처리로 자료 준비를 미루었습니다. 당일 아침 급히 준비하려 했으나 필요 데이터 수집이 안 되어 결국 미완성 상태로 미팅에 참석하게 되었습니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "반성 및 사과", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "내용", isHeader: true },
+      { placeholder: "(반성 및 사과 내용)", exampleValue: "이번 일로 팀과 회사에 피해를 끼쳐 진심으로 죄송합니다. 업무 우선순위 판단을 잘못하여 중요한 고객 미팅에 차질을 빚은 점 깊이 반성하고 있습니다. 앞으로 이런 일이 재발하지 않도록 최선을 다하겠습니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "재발 방지 대책", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "1.", isHeader: true },
+      { placeholder: "(재발 방지 대책 1)", exampleValue: "업무 지시 즉시 일정표에 마감일 등록 및 리마인더 설정", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "2.", isHeader: true },
+      { placeholder: "(재발 방지 대책 2)", exampleValue: "마감 2일 전 팀장에게 준비 상황 중간 보고 의무화", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "3.", isHeader: true },
+      { placeholder: "(재발 방지 대책 3)", exampleValue: "긴급 업무 발생 시 즉시 팀장에게 보고하여 우선순위 재조정", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "서약", isHeader: true },
+      { placeholder: "(서약 내용)", exampleValue: "위와 같은 일이 다시 발생하지 않도록 주의하겠으며, 만약 재발 시 회사의 어떠한 조치에도 이의를 제기하지 않겠습니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 13일" },
+      { label: "회사명", isHeader: true },
+      { placeholder: "(회사명)", exampleValue: "(주)머니테크" },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성자", isHeader: true },
+      { placeholder: "(소속) (직위) (성명) (인)", exampleValue: "영업1팀 대리 이민호 (인)", colspan: 3 },
+    ],
+  },
+];
+
+export const 실업급여신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "실업급여 수급자격 인정 신청서", exampleValue: "실업급여 수급자격 인정 신청서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김지연" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "900815-2******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 마포구 와우산로 123 행복빌라 301호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-9876-5432" },
+      { label: "이메일", isHeader: true },
+      { placeholder: "(이메일)", exampleValue: "jykim90@email.com" },
+    ],
+  },
+  {
+    fields: [
+      { label: "이직 전 사업장 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장명", isHeader: true },
+      { placeholder: "(회사명)", exampleValue: "(주)테크솔루션" },
+      { label: "사업자등록번호", isHeader: true },
+      { placeholder: "(사업자등록번호)", exampleValue: "123-45-67890" },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장 소재지", isHeader: true },
+      { placeholder: "(사업장 주소)", exampleValue: "서울시 강남구 역삼로 456 테크빌딩 10층", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "입사일", isHeader: true },
+      { placeholder: "(입사일)", exampleValue: "2022년 3월 2일" },
+      { label: "퇴사일", isHeader: true },
+      { placeholder: "(퇴사일)", exampleValue: "2025년 12월 31일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "담당 업무", isHeader: true },
+      { placeholder: "(담당 업무)", exampleValue: "마케팅팀 온라인 광고 운영" },
+      { label: "고용형태", isHeader: true },
+      { placeholder: "(고용형태)", exampleValue: "정규직" },
+    ],
+  },
+  {
+    fields: [
+      { label: "이직 사유", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "이직 사유", isHeader: true },
+      { placeholder: "(구체적 이직 사유 기재)", exampleValue: "회사의 경영 악화로 인한 권고사직 (사업부 축소에 따른 구조조정)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "이직 사유 분류", isHeader: true },
+      { placeholder: "(해당 사유 선택)", exampleValue: "☑ 회사 사정에 의한 퇴직 (권고사직, 정리해고 등) □ 계약기간 만료 □ 기타", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "고용보험 피보험 기간", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "피보험 기간", isHeader: true },
+      { placeholder: "(가입기간)", exampleValue: "3년 10개월" },
+      { label: "퇴직 전 3개월 평균임금", isHeader: true },
+      { placeholder: "(월 평균임금)", exampleValue: "금 3,800,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "구직 활동 계획", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "희망 직종", isHeader: true },
+      { placeholder: "(희망 직종)", exampleValue: "마케팅, 광고기획, 콘텐츠 마케팅" },
+      { label: "희망 근무지역", isHeader: true },
+      { placeholder: "(희망 지역)", exampleValue: "서울, 경기(분당, 판교)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "희망 급여", isHeader: true },
+      { placeholder: "(희망 급여)", exampleValue: "연봉 4,500만원 이상" },
+      { label: "취업 예정일", isHeader: true },
+      { placeholder: "(취업희망일)", exampleValue: "가능한 빠른 시일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "구직활동 계획", isHeader: true },
+      { placeholder: "(구직활동 계획)", exampleValue: "워크넷, 사람인, 잡코리아 이력서 등록 및 적극적 입사지원, 직무 관련 자격증 취득 준비", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부 서류", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "1.", isHeader: true },
+      { placeholder: "(첨부서류 1)", exampleValue: "이직확인서 1부" },
+      { label: "2.", isHeader: true },
+      { placeholder: "(첨부서류 2)", exampleValue: "신분증 사본 1부" },
+    ],
+  },
+  {
+    fields: [
+      { label: "3.", isHeader: true },
+      { placeholder: "(첨부서류 3)", exampleValue: "수급계좌 통장 사본 1부" },
+      { label: "4.", isHeader: true },
+      { placeholder: "(첨부서류 4)", exampleValue: "워크넷 구직등록 확인서 1부" },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 8일" },
+      { label: "관할기관", isHeader: true },
+      { placeholder: "(관할 고용센터)", exampleValue: "서울서부고용센터장 귀하" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인", isHeader: true },
+      { placeholder: "(성명) (서명 또는 인)", exampleValue: "신청인 김지연 (인)", colspan: 3 },
+    ],
+  },
+];
+
+export const 업무제휴계약서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "업무제휴 계약서", exampleValue: "업 무 제 휴 계 약 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약 당사자", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "갑 (회사명)", isHeader: true },
+      { placeholder: "(갑 회사명)", exampleValue: "(주)머니테크" },
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "대표이사 김대표" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(갑 주소)", exampleValue: "서울시 강남구 테헤란로 123 머니빌딩 15층", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "을 (회사명)", isHeader: true },
+      { placeholder: "(을 회사명)", exampleValue: "(주)파트너솔루션" },
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "대표이사 박파트" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(을 주소)", exampleValue: "서울시 서초구 반포대로 456 파트너타워 8층", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제1조 (목적)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "내용", isHeader: true },
+      { placeholder: "(계약 목적)", exampleValue: "본 계약은 갑과 을이 상호 협력하여 '핀테크 결제 서비스 공동 개발 및 마케팅' 사업을 추진함에 있어 필요한 사항을 정함을 목적으로 한다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제2조 (제휴 내용)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "1.", isHeader: true },
+      { placeholder: "(제휴 내용 1)", exampleValue: "갑은 핀테크 서비스 플랫폼 및 결제 인프라를 제공한다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "2.", isHeader: true },
+      { placeholder: "(제휴 내용 2)", exampleValue: "을은 마케팅 채널 및 고객 데이터 분석 역량을 제공한다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "3.", isHeader: true },
+      { placeholder: "(제휴 내용 3)", exampleValue: "양 당사자는 공동으로 신규 결제 서비스를 개발하고 홍보한다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제3조 (역할 분담)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "갑의 역할", isHeader: true },
+      { placeholder: "(갑의 역할)", exampleValue: "서비스 개발, 시스템 운영, 기술 지원, 고객 CS 담당" },
+      { label: "을의 역할", isHeader: true },
+      { placeholder: "(을의 역할)", exampleValue: "마케팅 기획/실행, 고객 유치, 데이터 분석 리포트 제공" },
+    ],
+  },
+  {
+    fields: [
+      { label: "제4조 (수익 배분)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "배분 비율", isHeader: true },
+      { placeholder: "(배분 비율)", exampleValue: "갑 60% : 을 40%" },
+      { label: "정산 주기", isHeader: true },
+      { placeholder: "(정산 주기)", exampleValue: "매월 말일 마감, 익월 15일 정산" },
+    ],
+  },
+  {
+    fields: [
+      { label: "정산 방법", isHeader: true },
+      { placeholder: "(정산 방법)", exampleValue: "매출 확정 후 세금계산서 발행, 지정 계좌 이체", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제5조 (계약 기간)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약 기간", isHeader: true },
+      { placeholder: "(계약 기간)", exampleValue: "2026년 2월 1일 ~ 2028년 1월 31일 (2년간)" },
+      { label: "자동 연장", isHeader: true },
+      { placeholder: "(연장 조건)", exampleValue: "만료 1개월 전 서면 해지통보 없으면 1년 자동 연장" },
+    ],
+  },
+  {
+    fields: [
+      { label: "제6조 (비밀유지)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "내용", isHeader: true },
+      { placeholder: "(비밀유지 조항)", exampleValue: "양 당사자는 본 계약의 체결 및 이행 과정에서 취득한 상대방의 영업비밀 및 기술정보를 계약 기간 및 종료 후 3년간 제3자에게 누설하거나 본 계약 목적 외로 사용하지 아니한다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제7조 (계약 해지)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "해지 사유", isHeader: true },
+      { placeholder: "(해지 사유)", exampleValue: "1. 상대방이 본 계약을 위반하고 30일 이내 시정하지 않을 때\n2. 상대방이 파산, 회생절차 개시 시\n3. 상호 합의에 의한 해지", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제8조 (분쟁 해결)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "내용", isHeader: true },
+      { placeholder: "(분쟁 해결)", exampleValue: "본 계약과 관련한 분쟁은 서울중앙지방법원을 제1심 관할법원으로 한다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 20일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "갑", isHeader: true },
+      { placeholder: "(회사명) 대표이사 (성명) (인)", exampleValue: "(주)머니테크 대표이사 김대표 (인)" },
+      { label: "을", isHeader: true },
+      { placeholder: "(회사명) 대표이사 (성명) (인)", exampleValue: "(주)파트너솔루션 대표이사 박파트 (인)" },
+    ],
+  },
+];

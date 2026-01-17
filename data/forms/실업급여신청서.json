@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.ei.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "실업급여신청서_DATA",
   "relatedArticle": "/w/실업급여",
+  "relatedDocs": [
+    { "title": "4대보험자격상실신고서 양식", "url": "/forms/4대보험자격상실신고서" },
+    { "title": "퇴직증명서 양식", "url": "/forms/퇴직증명서" },
+    { "title": "사직서 양식", "url": "/forms/사직서" },
+    { "title": "경력증명서 양식", "url": "/forms/경력증명서" },
+    { "title": "이력서 양식", "url": "/forms/이력서" }
+  ],
   "tips": [
     "퇴사 후 최대한 빨리 신청하세요 (지연되면 수급 기간 짧아져요)",
     "이직확인서를 회사에서 미리 발급받으세요",

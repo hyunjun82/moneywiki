@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "시말서_DATA",
   "relatedArticle": "/w/시말서-작성법",
+  "relatedDocs": [
+    { "title": "경위서 양식", "url": "/forms/경위서" },
+    { "title": "사직서 양식", "url": "/forms/사직서" },
+    { "title": "해고예고통지서 양식", "url": "/forms/해고예고통지서" },
+    { "title": "징계위원회소집통지서 양식", "url": "/forms/징계위원회소집통지서" },
+    { "title": "확인서 양식", "url": "/forms/확인서" }
+  ],
   "tips": [
     "사실관계를 솔직하게 인정하되 변명은 최소화하세요",
     "재발 방지 대책을 구체적으로 작성하세요",

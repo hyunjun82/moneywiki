@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.scourt.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "소장민사_DATA",
   "relatedArticle": "/w/민사소송-절차",
+  "relatedDocs": [
+    { "title": "답변서(민사) 양식", "url": "/forms/답변서-민사" },
+    { "title": "지급명령신청서 양식", "url": "/forms/지급명령신청서" },
+    { "title": "내용증명 양식", "url": "/forms/내용증명" },
+    { "title": "고소장 양식", "url": "/forms/고소장" },
+    { "title": "합의서 양식", "url": "/forms/합의서" }
+  ],
   "tips": [
     "청구취지는 '원하는 결과'를 명확히 쓰세요. 예: 피고는 원고에게 1,000만원을 지급하라",
     "청구원인은 '왜 그래야 하는지' 육하원칙으로 상세히 적으세요.",

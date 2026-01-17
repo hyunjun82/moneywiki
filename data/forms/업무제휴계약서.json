@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moj.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "업무제휴계약서_DATA",
   "relatedArticle": "/w/비밀유지계약서",
+  "relatedDocs": [
+    { "title": "비밀유지계약서 양식", "url": "/forms/비밀유지계약서" },
+    { "title": "컨설팅계약서 양식", "url": "/forms/컨설팅계약서" },
+    { "title": "외주계약서 양식", "url": "/forms/외주계약서" },
+    { "title": "용역계약서 양식", "url": "/forms/용역계약서" },
+    { "title": "대리점계약서 양식", "url": "/forms/대리점계약서" }
+  ],
   "tips": [
     "각 회사의 역할과 책임 범위를 구체적으로 나눠서 적으세요",
     "수익 배분 비율과 정산 시기를 명확히 하세요",

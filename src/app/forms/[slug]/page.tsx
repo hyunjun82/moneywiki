@@ -70,6 +70,10 @@ import FormPreview, {
   상속포기서_DATA,
   상여금지급통지서_DATA,
   성과급지급내역서_DATA,
+  소장민사_DATA,
+  시말서_DATA,
+  실업급여신청서_DATA,
+  업무제휴계약서_DATA,
 } from "@/components/forms/FormPreview";
 import FormPageClient from "@/components/forms/FormPageClient";
 import FormSidebar from "@/components/forms/FormSidebar";
@@ -147,6 +151,10 @@ const PREVIEW_DATA_MAP: Record<string, typeof 표준근로계약서_DATA> = {
   "상속포기서_DATA": 상속포기서_DATA,
   "상여금지급통지서_DATA": 상여금지급통지서_DATA,
   "성과급지급내역서_DATA": 성과급지급내역서_DATA,
+  "소장민사_DATA": 소장민사_DATA,
+  "시말서_DATA": 시말서_DATA,
+  "실업급여신청서_DATA": 실업급여신청서_DATA,
+  "업무제휴계약서_DATA": 업무제휴계약서_DATA,
 };
 
 // 기본 프리뷰 데이터 (새 양식용) - FormRow[] 형식
