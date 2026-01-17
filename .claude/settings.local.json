@@ -102,7 +102,23 @@
       "Bash(xargs kill:*)",
       "Bash(netstat:*)",
       "Bash(taskkill:*)",
-      "Bash(gh run list:*)"
+      "Bash(gh run list:*)",
+      "Bash(if not exist \"c:\\\\Users\\\\user\\\\wiki-site\\\\public\\\\files\\\\forms\" mkdir \"c:\\\\Users\\\\user\\\\wiki-site\\\\public\\\\files\\\\forms\")",
+      "Bash(pip show:*)",
+      "Bash(npm:*)",
+      "Bash(pip install:*)",
+      "Bash(\"/c/Users/user/AppData/Local/Programs/Python/Python313/python.exe\" -m pip install pywin32)",
+      "Bash(\"/c/Users/user/AppData/Local/Programs/Python/Python313/python.exe\" scripts/convert-hwp-win32com.py --register)",
+      "Bash(\"/c/Users/user/AppData/Local/Programs/Python/Python313/python.exe\" scripts/convert-hwp-win32com.py)",
+      "Bash(\"/c/Users/user/AppData/Local/Programs/Python/Python313/python.exe\" -c:*)",
+      "Bash(reg query \"HKCR\")",
+      "Bash(\"/c/Users/user/AppData/Local/Programs/Python/Python313/python.exe\" -c \"\nimport os\nimport win32com.client as win32\nimport pythoncom\n\npythoncom.CoInitialize\\(\\)\n\nprint\\(''한글 프로그램 연결 중...''\\)\nhwp = win32.Dispatch\\(''HWPFrame.HwpObject''\\)\nprint\\(''연결됨!''\\)\n\n# 보안 모듈 등록\ntry:\n    hwp.RegisterModule\\(''FilePathCheckDLL'', ''FilePathCheckerModule''\\)\n    print\\(''보안 모듈 등록됨''\\)\nexcept Exception as e:\n    print\\(f''보안 모듈 등록 실패: {e}''\\)\n\n# 표준근로계약서 변환\nhwp_file = r''C:\\\\Users\\\\user\\\\wiki-site\\\\public\\\\files\\\\forms\\\\표준근로계약서.hwp''\npdf_file = r''C:\\\\Users\\\\user\\\\wiki-site\\\\public\\\\files\\\\forms\\\\표준근로계약서.pdf''\ndocx_file = r''C:\\\\Users\\\\user\\\\wiki-site\\\\public\\\\files\\\\forms\\\\표준근로계약서.docx''\n\nprint\\(f''파일 열기: {os.path.basename\\(hwp_file\\)}''\\)\nresult = hwp.Open\\(hwp_file, ''HWP'', ''forceopen:true''\\)\nprint\\(f''열기 결과: {result}''\\)\n\nprint\\(''PDF로 저장 중...''\\)\ntry:\n    hwp.SaveAs\\(pdf_file, ''PDF''\\)\n    print\\(f''PDF 저장 완료: {os.path.exists\\(pdf_file\\)}''\\)\nexcept Exception as e:\n    print\\(f''PDF 저장 실패: {e}''\\)\n\nprint\\(''DOCX로 저장 중...''\\)\ntry:\n    hwp.SaveAs\\(docx_file, ''DOCX''\\)\n    print\\(f''DOCX 저장 완료: {os.path.exists\\(docx_file\\)}''\\)\nexcept Exception as e:\n    print\\(f''DOCX 저장 실패: {e}''\\)\n\nhwp.Clear\\(1\\)\nhwp.Quit\\(\\)\npythoncom.CoUninitialize\\(\\)\nprint\\(''완료!''\\)\n\")",
+      "Bash(\"/c/Users/user/AppData/Local/Programs/Python/Python313/python.exe\" -c \"\nimport os\nimport win32com.client as win32\nimport pythoncom\n\npythoncom.CoInitialize\\(\\)\n\nprint\\(''한글 프로그램 연결 중...''\\)\nhwp = win32.Dispatch\\(''HWPFrame.HwpObject''\\)\nhwp.RegisterModule\\(''FilePathCheckDLL'', ''FilePathCheckerModule''\\)\nprint\\(''연결됨!''\\)\n\nbase_dir = r''C:\\\\Users\\\\user\\\\wiki-site\\\\public\\\\files\\\\forms''\n\n# 7종 파일 변환\nprint\\(''\\\\n[1] 표준근로계약서-7종 변환''\\)\nhwp_file = os.path.join\\(base_dir, ''표준근로계약서-7종.hwp''\\)\npdf_file = os.path.join\\(base_dir, ''표준근로계약서-7종.pdf''\\)\n\nhwp.Open\\(hwp_file, ''HWP'', ''forceopen:true''\\)\nhwp.SaveAs\\(pdf_file, ''PDF''\\)\nprint\\(f''    PDF: {os.path.exists\\(pdf_file\\)}''\\)\nhwp.Clear\\(1\\)\n\n# DOCX 변환 시도 \\(DOC 형식으로\\)\nprint\\(''\\\\n[2] DOCX 변환 시도''\\)\nfiles = [''표준근로계약서'', ''단시간근로계약서'', ''표준근로계약서-7종'']\n\nfor name in files:\n    hwp_file = os.path.join\\(base_dir, f''{name}.hwp''\\)\n    doc_file = os.path.join\\(base_dir, f''{name}.doc''\\)\n    \n    print\\(f''    {name}...''\\)\n    hwp.Open\\(hwp_file, ''HWP'', ''forceopen:true''\\)\n    \n    # DOC 형식으로 저장 시도\n    try:\n        # 방법 1: SaveAs with DOC\n        hwp.SaveAs\\(doc_file, ''DOC''\\)\n        if os.path.exists\\(doc_file\\):\n            print\\(f''      DOC 저장 성공!''\\)\n    except Exception as e:\n        print\\(f''      DOC 저장 실패: {e}''\\)\n    \n    hwp.Clear\\(1\\)\n\nhwp.Quit\\(\\)\npythoncom.CoUninitialize\\(\\)\nprint\\(''\\\\n완료!''\\)\n\")",
+      "Bash(cmd.exe:*)",
+      "Bash(powershell.exe -Command \"& ''C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe'' -c ''print\\(123\\)''\")",
+      "Bash(powershell.exe:*)",
+      "Bash(powershell.exe -Command \"pip install beautifulsoup4 requests --quiet 2>&1\")",
+      "Bash(powershell.exe -Command \"& ''C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe'' -m pip install beautifulsoup4 requests --quiet\")"
     ]
   }
 }
