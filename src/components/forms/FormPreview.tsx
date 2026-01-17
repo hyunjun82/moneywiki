@@ -329,3 +329,69 @@ export const 기간제근로계약서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// 임대차계약서 미리보기 데이터 (법무부 표준양식 기준)
+export const 임대차계약서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "부동산의 표시", isHeader: true },
+      { placeholder: "소재지: (주소)", exampleValue: "서울특별시 강남구 테헤란로 123, 101동 1001호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "임대할 부분", isHeader: true },
+      { placeholder: "건물 __층 __호 (면적 __㎡)", exampleValue: "건물 10층 1001호 (전용면적 84.5㎡)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "보증금", isHeader: true },
+      { placeholder: "금 ________원정", exampleValue: "금 삼억원정 (₩300,000,000)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약금", isHeader: true },
+      { placeholder: "금 ________원정 (계약 시)", exampleValue: "금 삼천만원정 (계약 시 지급)" },
+      { label: "잔금", isHeader: true },
+      { placeholder: "금 ________원정", exampleValue: "금 이억칠천만원 (입주일 지급)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "월세 (차임)", isHeader: true },
+      { placeholder: "금 ________원 (매월 __일 지급)", exampleValue: "해당없음 (전세)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "임대차 기간", isHeader: true },
+      { placeholder: "____년 __월 __일부터 ____년 __월 __일까지", exampleValue: "2026년 2월 1일부터 2028년 1월 31일까지 (2년)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "특약사항", isHeader: true },
+      { placeholder: "(당사자 간 합의 사항)", exampleValue: "1. 도배, 장판 신규 교체 후 입주\n2. 에어컨 2대 포함\n3. 관리비 별도 (약 15만원/월)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "임대인 (갑)", isHeader: true },
+      { placeholder: "성명:          주민등록번호:          (인)", exampleValue: "성명: 홍길동 | 주민등록번호: 700101-1****** (인)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "임차인 (을)", isHeader: true },
+      { placeholder: "성명:          주민등록번호:          (인)", exampleValue: "성명: 김철수 | 주민등록번호: 900515-1****** (인)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "중개업자", isHeader: true },
+      { placeholder: "상호:          등록번호:          (인)", exampleValue: "상호: OO공인중개사 | 등록번호: 11680-2024-00123 (인)", colspan: 3 },
+    ],
+  },
+];
