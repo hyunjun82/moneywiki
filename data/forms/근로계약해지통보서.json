@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "근로계약해지통보서_DATA",
   "relatedArticle": "/w/퇴직금",
+  "relatedDocs": [
+    { "title": "사직서 양식", "url": "/forms/사직서" },
+    { "title": "퇴직증명서 양식", "url": "/forms/퇴직증명서" },
+    { "title": "표준근로계약서 양식", "url": "/forms/표준근로계약서" },
+    { "title": "4대보험자격상실신고서 양식", "url": "/forms/4대보험자격상실신고서" },
+    { "title": "경력증명서 양식", "url": "/forms/경력증명서" }
+  ],
   "tips": [
     "해지 사유는 구체적이고 객관적으로 작성하세요",
     "법정 해고예고기간(30일) 준수 여부 확인하세요",

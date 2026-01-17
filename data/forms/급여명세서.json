@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "급여명세서_DATA",
   "relatedArticle": "/w/연봉-실수령액-계산기",
+  "relatedDocs": [
+    { "title": "표준근로계약서 양식", "url": "/forms/표준근로계약서" },
+    { "title": "연봉근로계약서 양식", "url": "/forms/연봉근로계약서" },
+    { "title": "4대보험가입신청서 양식", "url": "/forms/4대보험가입신청서" },
+    { "title": "재직증명서 양식", "url": "/forms/재직증명서" },
+    { "title": "퇴직증명서 양식", "url": "/forms/퇴직증명서" }
+  ],
   "tips": [
     "기본급, 각종 수당, 공제 내역을 빠짐없이 기재하세요",
     "4대보험료와 소득세 공제액을 정확히 표시하세요",

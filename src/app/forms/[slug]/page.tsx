@@ -55,6 +55,10 @@ import FormPreview, {
   경력기술서_DATA,
   경업금지계약서_DATA,
   교육훈련신청서_DATA,
+  근로계약해지통보서_DATA,
+  급여명세서_DATA,
+  납품서_DATA,
+  등기부등본신청서_DATA,
 } from "@/components/forms/FormPreview";
 import FormPageClient from "@/components/forms/FormPageClient";
 import FormSidebar from "@/components/forms/FormSidebar";
@@ -117,6 +121,10 @@ const PREVIEW_DATA_MAP: Record<string, typeof 표준근로계약서_DATA> = {
   "경력기술서_DATA": 경력기술서_DATA,
   "경업금지계약서_DATA": 경업금지계약서_DATA,
   "교육훈련신청서_DATA": 교육훈련신청서_DATA,
+  "근로계약해지통보서_DATA": 근로계약해지통보서_DATA,
+  "급여명세서_DATA": 급여명세서_DATA,
+  "납품서_DATA": 납품서_DATA,
+  "등기부등본신청서_DATA": 등기부등본신청서_DATA,
 };
 
 // 기본 프리뷰 데이터 (새 양식용) - FormRow[] 형식

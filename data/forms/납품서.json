@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.nts.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "납품서_DATA",
   "relatedArticle": "/w/발주서-작성법",
+  "relatedDocs": [
+    { "title": "발주서 양식", "url": "/forms/발주서" },
+    { "title": "견적서 양식", "url": "/forms/견적서" },
+    { "title": "세금계산서 양식", "url": "/forms/세금계산서" },
+    { "title": "거래명세서 양식", "url": "/forms/거래명세서" },
+    { "title": "영수증 양식", "url": "/forms/영수증" }
+  ],
   "tips": [
     "납품 즉시 서명을 받아야 나중에 '안 받았다' 분쟁을 막을 수 있어요",
     "발주서 번호와 납품서 번호를 연결해서 관리하면 편해요",

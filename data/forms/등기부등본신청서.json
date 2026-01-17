@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.iros.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "등기부등본신청서_DATA",
   "relatedArticle": "/w/등기부등본",
+  "relatedDocs": [
+    { "title": "건축물대장신청서 양식", "url": "/forms/건축물대장신청서" },
+    { "title": "임대차계약서 양식", "url": "/forms/임대차계약서" },
+    { "title": "매매계약서 양식", "url": "/forms/매매계약서" },
+    { "title": "가족관계증명서신청서 양식", "url": "/forms/가족관계증명서신청서" },
+    { "title": "위임장 양식", "url": "/forms/위임장" }
+  ],
   "tips": [
     "인터넷등기소에서 700원에 즉시 발급 가능해요",
     "열람용(무료)과 발급용(700원)을 구분하세요",

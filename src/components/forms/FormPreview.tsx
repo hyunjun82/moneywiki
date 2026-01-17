@@ -5239,3 +5239,408 @@ export const 교육훈련신청서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// 근로계약해지통보서 미리보기 데이터
+export const 근로계약해지통보서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "근로계약 해지 통보서", exampleValue: "근 로 계 약 해 지 통 보 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수신인 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(근로자 성명)", exampleValue: "김해지" },
+      { label: "사원번호", isHeader: true },
+      { placeholder: "(사원번호)", exampleValue: "2023-0089" },
+    ],
+  },
+  {
+    fields: [
+      { label: "부서", isHeader: true },
+      { placeholder: "(소속 부서)", exampleValue: "영업팀" },
+      { label: "직급", isHeader: true },
+      { placeholder: "(직급)", exampleValue: "사원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "입사일", isHeader: true },
+      { placeholder: "(입사일)", exampleValue: "2023년 4월 1일" },
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 성동구 왕십리로 100" },
+    ],
+  },
+  {
+    fields: [
+      { label: "해지 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "해지 유형", isHeader: true },
+      { placeholder: "(해지 유형)", exampleValue: "계약기간 만료" },
+      { label: "최종 근무일", isHeader: true },
+      { placeholder: "(최종 근무일)", exampleValue: "2026년 1월 31일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "해지 사유", isHeader: true },
+      { placeholder: "(구체적인 해지 사유)", exampleValue: "1년 기간제 근로계약 종료에 따른 자연 만료. 계약 갱신에 대한 상호 협의 결과 갱신하지 않기로 합의함.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "퇴직금 정산", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "퇴직금", isHeader: true },
+      { placeholder: "(퇴직금 지급액)", exampleValue: "3,500,000원 (예정)" },
+      { label: "지급 예정일", isHeader: true },
+      { placeholder: "(지급일)", exampleValue: "2026년 2월 14일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "미사용 연차수당", isHeader: true },
+      { placeholder: "(연차수당)", exampleValue: "500,000원 (5일분)" },
+      { label: "지급 방법", isHeader: true },
+      { placeholder: "(지급 방법)", exampleValue: "급여 계좌 입금" },
+    ],
+  },
+  {
+    fields: [
+      { label: "통보일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발신인", isHeader: true },
+      { placeholder: "회사명: ___________ 대표이사: ___________ (인)", exampleValue: "회사명: (주)가나다상사 대표이사: 박대표 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 급여명세서 미리보기 데이터
+export const 급여명세서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "급여명세서", exampleValue: "급 여 명 세 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "지급 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "지급 연월", isHeader: true },
+      { placeholder: "(지급 연월)", exampleValue: "2026년 1월분" },
+      { label: "지급일", isHeader: true },
+      { placeholder: "(지급일)", exampleValue: "2026년 1월 25일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "직원 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "이급여" },
+      { label: "사원번호", isHeader: true },
+      { placeholder: "(사원번호)", exampleValue: "2022-0078" },
+    ],
+  },
+  {
+    fields: [
+      { label: "부서", isHeader: true },
+      { placeholder: "(부서)", exampleValue: "개발팀" },
+      { label: "직급", isHeader: true },
+      { placeholder: "(직급)", exampleValue: "대리" },
+    ],
+  },
+  {
+    fields: [
+      { label: "근로 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "근로일수", isHeader: true },
+      { placeholder: "(근로일수)", exampleValue: "22일" },
+      { label: "근로시간", isHeader: true },
+      { placeholder: "(근로시간)", exampleValue: "176시간" },
+    ],
+  },
+  {
+    fields: [
+      { label: "지급 내역", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "기본급", isHeader: true },
+      { placeholder: "(기본급)", exampleValue: "3,000,000원" },
+      { label: "식대", isHeader: true },
+      { placeholder: "(식대)", exampleValue: "200,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연장수당", isHeader: true },
+      { placeholder: "(연장수당)", exampleValue: "300,000원 (20시간)" },
+      { label: "상여금", isHeader: true },
+      { placeholder: "(상여금)", exampleValue: "0원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "지급 합계", isHeader: true },
+      { placeholder: "(지급 총액)", exampleValue: "3,500,000원", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "공제 내역", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "국민연금", isHeader: true },
+      { placeholder: "(국민연금)", exampleValue: "157,500원 (4.5%)" },
+      { label: "건강보험", isHeader: true },
+      { placeholder: "(건강보험)", exampleValue: "124,070원 (3.545%)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "고용보험", isHeader: true },
+      { placeholder: "(고용보험)", exampleValue: "31,500원 (0.9%)" },
+      { label: "소득세", isHeader: true },
+      { placeholder: "(소득세)", exampleValue: "67,500원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "지방소득세", isHeader: true },
+      { placeholder: "(지방소득세)", exampleValue: "6,750원" },
+      { label: "공제 합계", isHeader: true },
+      { placeholder: "(공제 합계)", exampleValue: "387,320원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "실수령액", isHeader: true },
+      { placeholder: "(실수령액)", exampleValue: "3,112,680원", colspan: 3 },
+    ],
+  },
+];
+
+// 납품서 미리보기 데이터
+export const 납품서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "납품서", exampleValue: "납 품 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "납품처 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수령업체", isHeader: true },
+      { placeholder: "(업체명)", exampleValue: "(주)대한물류" },
+      { label: "담당자", isHeader: true },
+      { placeholder: "(담당자)", exampleValue: "이물류 과장" },
+    ],
+  },
+  {
+    fields: [
+      { label: "납품 주소", isHeader: true },
+      { placeholder: "(납품 주소)", exampleValue: "경기도 안산시 단원구 산업로 500, 물류센터 3층", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "납품 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "납품일", isHeader: true },
+      { placeholder: "(납품일)", exampleValue: "2026년 1월 20일" },
+      { label: "발주서 번호", isHeader: true },
+      { placeholder: "(발주서 번호)", exampleValue: "PO-2026-0123" },
+    ],
+  },
+  {
+    fields: [
+      { label: "납품서 번호", isHeader: true },
+      { placeholder: "(납품서 번호)", exampleValue: "DN-2026-0089" },
+      { label: "운송방법", isHeader: true },
+      { placeholder: "(운송)", exampleValue: "자가 배송" },
+    ],
+  },
+  {
+    fields: [
+      { label: "품목 내역", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "품목 1", isHeader: true },
+      { placeholder: "(품목명)", exampleValue: "A4 복사용지 (80g)" },
+      { label: "수량", isHeader: true },
+      { placeholder: "(수량)", exampleValue: "100박스" },
+    ],
+  },
+  {
+    fields: [
+      { label: "단가", isHeader: true },
+      { placeholder: "(단가)", exampleValue: "25,000원" },
+      { label: "금액", isHeader: true },
+      { placeholder: "(금액)", exampleValue: "2,500,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "품목 2", isHeader: true },
+      { placeholder: "(품목명)", exampleValue: "파일박스 (10개입)" },
+      { label: "수량", isHeader: true },
+      { placeholder: "(수량)", exampleValue: "20세트" },
+    ],
+  },
+  {
+    fields: [
+      { label: "단가", isHeader: true },
+      { placeholder: "(단가)", exampleValue: "15,000원" },
+      { label: "금액", isHeader: true },
+      { placeholder: "(금액)", exampleValue: "300,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "합계 금액", isHeader: true },
+      { placeholder: "(합계)", exampleValue: "2,800,000원 (VAT 별도)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수령 확인", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "납품자", isHeader: true },
+      { placeholder: "납품자: ___________ (인)", exampleValue: "납품자: (주)사무용품천국 배달팀 (인)" },
+      { label: "수령자 확인", isHeader: true },
+      { placeholder: "수령자: ___________ (인)", exampleValue: "수령자: 이물류 (인)" },
+    ],
+  },
+];
+
+// 등기부등본신청서 미리보기 데이터
+export const 등기부등본신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "등기부등본 발급 신청서", exampleValue: "등 기 부 등 본 발 급 신 청 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "최등기" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "880505-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "010-2222-3333" },
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 용산구 이태원로 50" },
+    ],
+  },
+  {
+    fields: [
+      { label: "대상 부동산 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "부동산 종류", isHeader: true },
+      { placeholder: "(종류)", exampleValue: "집합건물(아파트)" },
+      { label: "등기 구분", isHeader: true },
+      { placeholder: "(구분)", exampleValue: "건물" },
+    ],
+  },
+  {
+    fields: [
+      { label: "소재지", isHeader: true },
+      { placeholder: "(상세 주소)", exampleValue: "서울시 강남구 삼성동 123-45, 삼성아파트 101동 1502호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "등기 고유번호", isHeader: true },
+      { placeholder: "(고유번호, 있는 경우)", exampleValue: "1234-2020-012345", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "증명서 유형", isHeader: true },
+      { placeholder: "(유형)", exampleValue: "등기사항전부증명서 (등기부등본)" },
+      { label: "발급 부수", isHeader: true },
+      { placeholder: "(부수)", exampleValue: "2부" },
+    ],
+  },
+  {
+    fields: [
+      { label: "발급 목적", isHeader: true },
+      { placeholder: "(목적)", exampleValue: "부동산 매매계약 체결용" },
+      { label: "수령 방법", isHeader: true },
+      { placeholder: "(수령 방법)", exampleValue: "온라인 출력 (PDF)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 22일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 서명", isHeader: true },
+      { placeholder: "신청인: ___________ (서명)", exampleValue: "신청인: 최등기 (서명)", colspan: 3 },
+    ],
+  },
+];
