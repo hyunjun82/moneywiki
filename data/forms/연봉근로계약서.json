@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "연봉근로계약서_DATA",
   "relatedArticle": "/w/연봉-실수령액-계산기",
+  "relatedDocs": [
+    { "title": "표준근로계약서 양식", "url": "/forms/표준근로계약서" },
+    { "title": "재직증명서 양식", "url": "/forms/재직증명서" },
+    { "title": "사직서 양식", "url": "/forms/사직서" },
+    { "title": "연봉협상 방법", "url": "/w/연봉협상" },
+    { "title": "퇴직금 계산법", "url": "/w/퇴직금-계산" }
+  ],
   "tips": [
     "연봉에 퇴직금 포함 여부를 반드시 명시하세요",
     "연장·야간·휴일수당 포함 여부를 구체적으로 기재하세요",

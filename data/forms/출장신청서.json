@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "출장신청서_DATA",
   "relatedArticle": "/w/출장-신청",
+  "relatedDocs": [
+    { "title": "연차휴가신청서 양식", "url": "/forms/연차휴가신청서" },
+    { "title": "견적서 양식", "url": "/forms/견적서" },
+    { "title": "영수증 양식", "url": "/forms/영수증" },
+    { "title": "출장비 정산 방법", "url": "/w/출장비-정산" },
+    { "title": "산재보험 적용", "url": "/w/산재보험" }
+  ],
   "tips": [
     "출장 목적과 기대 효과를 구체적으로 작성하세요",
     "교통비, 숙박비 등 예상 비용을 미리 계산하세요",

@@ -3651,3 +3651,405 @@ export const 납세증명서신청서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// 연봉근로계약서 미리보기 데이터
+export const 연봉근로계약서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "연봉 근로계약서", exampleValue: "연 봉 근 로 계 약 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장 정보", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "회사명", isHeader: true },
+      { placeholder: "(회사명)", exampleValue: "(주)미래기술" },
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "박대표" },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업자등록번호", isHeader: true },
+      { placeholder: "(사업자번호)", exampleValue: "123-45-67890" },
+      { label: "사업장주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 테헤란로 123" },
+    ],
+  },
+  {
+    fields: [
+      { label: "근로자 정보", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "김개발" },
+      { label: "생년월일", isHeader: true },
+      { placeholder: "(생년월일)", exampleValue: "1992년 7월 25일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 송파구 올림픽로 200", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "근로조건", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "근무부서", isHeader: true },
+      { placeholder: "(부서명)", exampleValue: "개발팀" },
+      { label: "직위", isHeader: true },
+      { placeholder: "(직위)", exampleValue: "시니어 개발자" },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약기간", isHeader: true },
+      { placeholder: "20__년 __월 __일 ~ 20__년 __월 __일", exampleValue: "2026년 1월 1일 ~ 2026년 12월 31일 (1년)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "근무시간", isHeader: true },
+      { placeholder: "(근무 시간)", exampleValue: "09:00 ~ 18:00 (주 40시간, 휴게 1시간)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연봉", isHeader: true },
+      { placeholder: "(연봉)", exampleValue: "금 오천사백만원정 (₩54,000,000)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "월 지급액", isHeader: true },
+      { placeholder: "(월급)", exampleValue: "금 사백오십만원정 (₩4,500,000)" },
+      { label: "지급일", isHeader: true },
+      { placeholder: "(지급일)", exampleValue: "매월 25일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "포함 항목", isHeader: true },
+      { placeholder: "(포함 내역)", exampleValue: "기본급 4,000,000원 + 식대 200,000원 + 교통비 100,000원 + 고정연장수당 200,000원", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "특약사항", isHeader: true },
+      { placeholder: "(특약)", exampleValue: "성과급은 별도 지급하며, 퇴직금은 연봉과 별도로 적립함", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2025년 12월 20일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업주 서명", isHeader: true },
+      { placeholder: "(서명 또는 날인)", exampleValue: "(주)미래기술 대표이사 박대표 (인)" },
+      { label: "근로자 서명", isHeader: true },
+      { placeholder: "(서명 또는 날인)", exampleValue: "근로자 김개발 (서명)" },
+    ],
+  },
+];
+
+// 연차휴가신청서 미리보기 데이터
+export const 연차휴가신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "연차휴가 신청서", exampleValue: "연 차 휴 가 신 청 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "홍길동" },
+      { label: "사원번호", isHeader: true },
+      { placeholder: "(사번)", exampleValue: "E2023-0456" },
+    ],
+  },
+  {
+    fields: [
+      { label: "소속부서", isHeader: true },
+      { placeholder: "(부서명)", exampleValue: "기획팀" },
+      { label: "직위", isHeader: true },
+      { placeholder: "(직위)", exampleValue: "대리" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연차 현황", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "총 연차일수", isHeader: true },
+      { placeholder: "(__일)", exampleValue: "15일" },
+      { label: "사용 연차", isHeader: true },
+      { placeholder: "(__일)", exampleValue: "8일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "잔여 연차", isHeader: true },
+      { placeholder: "(__일)", exampleValue: "7일" },
+      { label: "신청 일수", isHeader: true },
+      { placeholder: "(__일)", exampleValue: "3일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴가 일정", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴가 기간", isHeader: true },
+      { placeholder: "20__년 __월 __일 ~ 20__년 __월 __일", exampleValue: "2026년 2월 5일 (수) ~ 2026년 2월 7일 (금)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴가 사유", isHeader: true },
+      { placeholder: "(사유)", exampleValue: "개인 사유", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "업무 인수인계", isHeader: true },
+      { placeholder: "(인수인계 담당자)", exampleValue: "과장 김철수에게 진행 중인 업무 인수인계 완료 예정", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "비상 연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "010-1234-5678", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 20일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 서명", isHeader: true },
+      { placeholder: "신청인: ___________ (서명)", exampleValue: "신청인: 홍길동 (서명)", colspan: 3 },
+    ],
+  },
+];
+
+// 출장신청서 미리보기 데이터
+export const 출장신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "출장 신청서", exampleValue: "출 장 신 청 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "이영업" },
+      { label: "사원번호", isHeader: true },
+      { placeholder: "(사번)", exampleValue: "S2024-0123" },
+    ],
+  },
+  {
+    fields: [
+      { label: "소속부서", isHeader: true },
+      { placeholder: "(부서명)", exampleValue: "영업1팀" },
+      { label: "직위", isHeader: true },
+      { placeholder: "(직위)", exampleValue: "과장" },
+    ],
+  },
+  {
+    fields: [
+      { label: "출장 정보", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "출장 기간", isHeader: true },
+      { placeholder: "20__년 __월 __일 ~ 20__년 __월 __일", exampleValue: "2026년 1월 25일 (목) ~ 2026년 1월 26일 (금) (1박 2일)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "출장지", isHeader: true },
+      { placeholder: "(출장 장소)", exampleValue: "부산시 해운대구 해운대로 123 (부산지사)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "출장 목적", isHeader: true },
+      { placeholder: "(출장 목적)", exampleValue: "부산지사 신규 거래처 미팅 및 계약 체결", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "세부 일정", isHeader: true },
+      { placeholder: "(세부 일정)", exampleValue: "1/25 10:00 서울 출발, 14:00 거래처 미팅 / 1/26 09:00 계약 체결, 13:00 서울 복귀", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "예상 비용", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "교통비", isHeader: true },
+      { placeholder: "(금액)", exampleValue: "150,000원 (KTX 왕복)" },
+      { label: "숙박비", isHeader: true },
+      { placeholder: "(금액)", exampleValue: "100,000원 (1박)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "식비", isHeader: true },
+      { placeholder: "(금액)", exampleValue: "50,000원" },
+      { label: "합계", isHeader: true },
+      { placeholder: "(금액)", exampleValue: "300,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 서명", isHeader: true },
+      { placeholder: "신청인: ___________ (서명)", exampleValue: "신청인: 이영업 (서명)", colspan: 3 },
+    ],
+  },
+];
+
+// 휴직신청서 미리보기 데이터
+export const 휴직신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "휴직 신청서", exampleValue: "휴 직 신 청 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "박휴직" },
+      { label: "사원번호", isHeader: true },
+      { placeholder: "(사번)", exampleValue: "H2020-0789" },
+    ],
+  },
+  {
+    fields: [
+      { label: "소속부서", isHeader: true },
+      { placeholder: "(부서명)", exampleValue: "인사팀" },
+      { label: "직위", isHeader: true },
+      { placeholder: "(직위)", exampleValue: "사원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-3333-4444", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴직 정보", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴직 종류", isHeader: true },
+      { placeholder: "(휴직 종류)", exampleValue: "육아휴직", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴직 기간", isHeader: true },
+      { placeholder: "20__년 __월 __일 ~ 20__년 __월 __일", exampleValue: "2026년 3월 1일 ~ 2027년 2월 28일 (1년)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴직 사유", isHeader: true },
+      { placeholder: "(휴직 사유)", exampleValue: "자녀 양육을 위한 육아휴직 (자녀: 박아기, 2025년 9월생)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "복직 예정일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2027년 3월 1일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "업무 인수인계", isHeader: true },
+      { placeholder: "(인수인계 담당자)", exampleValue: "대리 김인수에게 담당 업무 전체 인수인계 예정", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부 서류", isHeader: true },
+      { placeholder: "(첨부 서류)", exampleValue: "가족관계증명서 1부, 육아휴직 급여 신청서 1부", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 2월 1일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 서명", isHeader: true },
+      { placeholder: "신청인: ___________ (서명)", exampleValue: "신청인: 박휴직 (서명)", colspan: 3 },
+    ],
+  },
+];

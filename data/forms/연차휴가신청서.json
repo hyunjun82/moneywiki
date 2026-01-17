@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "연차휴가신청서_DATA",
   "relatedArticle": "/w/연차-사용",
+  "relatedDocs": [
+    { "title": "휴직신청서 양식", "url": "/forms/휴직신청서" },
+    { "title": "출장신청서 양식", "url": "/forms/출장신청서" },
+    { "title": "병가신청서 양식", "url": "/forms/병가신청서" },
+    { "title": "연차수당 계산", "url": "/w/연차수당-계산" },
+    { "title": "연차 촉진제도", "url": "/w/연차촉진" }
+  ],
   "tips": [
     "연차는 근로자의 권리이므로 사유를 구체적으로 쓸 필요 없어요",
     "업무 인수인계 계획을 함께 제출하면 승인이 빨라요",

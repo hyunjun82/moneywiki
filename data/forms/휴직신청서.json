@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "휴직신청서_DATA",
   "relatedArticle": "/w/휴직-신청",
+  "relatedDocs": [
+    { "title": "복직신청서 양식", "url": "/forms/복직신청서" },
+    { "title": "연차휴가신청서 양식", "url": "/forms/연차휴가신청서" },
+    { "title": "병가신청서 양식", "url": "/forms/병가신청서" },
+    { "title": "육아휴직 급여 신청", "url": "/w/육아휴직-급여" },
+    { "title": "4대보험 처리", "url": "/w/4대보험" }
+  ],
   "tips": [
     "휴직 사유에 따라 필요한 서류가 다르니 인사팀에 확인하세요",
     "육아휴직은 법적 권리이므로 회사가 거부할 수 없어요",

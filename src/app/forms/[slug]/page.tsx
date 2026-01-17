@@ -39,6 +39,10 @@ import FormPreview, {
   재직증명서_DATA,
   퇴직증명서_DATA,
   납세증명서신청서_DATA,
+  연봉근로계약서_DATA,
+  연차휴가신청서_DATA,
+  출장신청서_DATA,
+  휴직신청서_DATA,
 } from "@/components/forms/FormPreview";
 import FormPageClient from "@/components/forms/FormPageClient";
 import FormSidebar from "@/components/forms/FormSidebar";
@@ -85,6 +89,10 @@ const PREVIEW_DATA_MAP: Record<string, typeof 표준근로계약서_DATA> = {
   "재직증명서_DATA": 재직증명서_DATA,
   "퇴직증명서_DATA": 퇴직증명서_DATA,
   "납세증명서신청서_DATA": 납세증명서신청서_DATA,
+  "연봉근로계약서_DATA": 연봉근로계약서_DATA,
+  "연차휴가신청서_DATA": 연차휴가신청서_DATA,
+  "출장신청서_DATA": 출장신청서_DATA,
+  "휴직신청서_DATA": 휴직신청서_DATA,
 };
 
 // 기본 프리뷰 데이터 (새 양식용) - FormRow[] 형식
