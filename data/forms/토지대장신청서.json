@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.gov.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "토지대장신청서_DATA",
   "relatedArticle": "/w/토지대장",
+  "relatedDocs": [
+    { "title": "등기부등본신청서 양식", "url": "/forms/등기부등본신청서" },
+    { "title": "건축물대장신청서 양식", "url": "/forms/건축물대장신청서" },
+    { "title": "매매계약서 양식", "url": "/forms/매매계약서" },
+    { "title": "임대차계약서 양식", "url": "/forms/임대차계약서" },
+    { "title": "위임장 양식", "url": "/forms/위임장" }
+  ],
   "tips": [
     "정부24에서 무료 즉시 발급 가능해요",
     "지번만 알면 누구나 발급받을 수 있어요",

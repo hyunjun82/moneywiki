@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.nts.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "폐업신고서_DATA",
   "relatedArticle": "/w/폐업신고",
+  "relatedDocs": [
+    { "title": "사업자등록신청서 양식", "url": "/forms/사업자등록신청서" },
+    { "title": "휴업신고서 양식", "url": "/forms/휴업신고서" },
+    { "title": "납세증명서신청서 양식", "url": "/forms/납세증명서신청서" },
+    { "title": "지방세완납증명서신청서 양식", "url": "/forms/지방세완납증명서신청서" },
+    { "title": "실업급여신청서 양식", "url": "/forms/실업급여신청서" }
+  ],
   "tips": [
     "폐업일로부터 25일 이내에 신고해야 가산세가 없어요",
     "미처분 재고가 있으면 재고조사를 받을 수 있어니 정리하고 신고하세요",

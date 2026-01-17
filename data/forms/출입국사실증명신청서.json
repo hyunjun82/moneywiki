@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.gov.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "출입국사실증명신청서_DATA",
   "relatedArticle": "/w/출입국사실증명서",
+  "relatedDocs": [
+    { "title": "여권발급신청서 양식", "url": "/forms/여권발급신청서" },
+    { "title": "병적증명서신청서 양식", "url": "/forms/병적증명서신청서" },
+    { "title": "주민등록등본신청서 양식", "url": "/forms/주민등록등본신청서" },
+    { "title": "가족관계증명서신청서 양식", "url": "/forms/가족관계증명서신청서" },
+    { "title": "위임장 양식", "url": "/forms/위임장" }
+  ],
   "tips": [
     "정부24에서 즉시 발급 가능하고 수수료 무료예요",
     "최근 10년 이력을 기본 제공하고, 전체 이력도 신청 가능해요",

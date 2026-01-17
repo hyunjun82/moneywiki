@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moj.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "컨설팅계약서_DATA",
   "relatedArticle": "/w/용역계약서",
+  "relatedDocs": [
+    { "title": "용역계약서 양식", "url": "/forms/용역계약서" },
+    { "title": "업무제휴계약서 양식", "url": "/forms/업무제휴계약서" },
+    { "title": "외주계약서 양식", "url": "/forms/외주계약서" },
+    { "title": "비밀유지계약서 양식", "url": "/forms/비밀유지계약서" },
+    { "title": "도급계약서 양식", "url": "/forms/도급계약서" }
+  ],
   "tips": [
     "컨설팅 범위와 제공 방식(보고서, 미팅, 이메일 등)을 구체적으로 적으세요",
     "비밀유지 조항을 반드시 포함하세요",
