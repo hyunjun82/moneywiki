@@ -1,15 +1,28 @@
 {
   "slug": "임대차계약서",
   "title": "2026 임대차계약서 양식 무료 다운로드 (HWP, PDF, Word)",
-  "shortTitle": "임대차계약서",
+  "shortTitle": "임대차계약서 (주택용)",
   "description": "집이나 상가를 빌릴 때 작성하는 계약서예요. 보증금과 월세, 계약 기간을 명확히 적어야 나중에 분쟁을 막을 수 있어요.",
   "category": "부동산",
   "source": "법무부",
-  "sourceUrl": "https://www.moj.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "sourceUrl": "https://www.moj.go.kr/moj/314/subview.do",
+  "downloads": {
+    "hwp": "/files/forms/임대차계약서.hwp",
+    "pdf": "/files/forms/임대차계약서.pdf"
+  },
+  "downloadNames": {
+    "hwp": "주택임대차표준계약서_법무부.hwp",
+    "pdf": "주택임대차표준계약서_법무부.pdf"
+  },
   "previewDataKey": "임대차계약서_DATA",
   "relatedArticle": "/w/임대차계약-주의사항",
+  "relatedDocs": [
+    { "title": "전세계약 체크리스트", "url": "/w/전세계약-체크리스트" },
+    { "title": "확정일자 받는 방법", "url": "/w/확정일자-받는-방법" },
+    { "title": "전월세 전환 계산기", "url": "/calculators/rent-conversion" },
+    { "title": "전세보증보험 가입", "url": "/w/전세보증보험" },
+    { "title": "임대차 3법 정리", "url": "/w/임대차-3법" }
+  ],
   "tips": [
     "계약 전 등기부등본으로 소유권과 근저당권을 확인하세요",
     "특약사항에 관리비, 수리 책임, 중도 해지 조건을 꼭 적으세요",
