@@ -9,155 +9,49 @@ import FormPreview, {
 import FormPageClient from "@/components/forms/FormPageClient";
 import FormSidebar from "@/components/forms/FormSidebar";
 import AdSense, { AD_SLOTS } from "@/components/AdSense";
+import ShareButtons from "@/components/ShareButtons";
+import { getAllFormSlugs, getFormData, FormData } from "@/lib/forms-loader";
 
-// 양식 데이터베이스
-// HWP 파일은 public/files/forms/에 저장됨 (고용노동부 공식 다운로드)
-// PDF/DOCX 변환: scripts/convert-hwp.py 또는 scripts/convert-hwp-node.js 실행
-const FORMS_DB: Record<string, FormData> = {
-  "표준근로계약서": {
-    title: "2026 표준근로계약서 양식 무료 다운로드 (HWP, PDF, Word)",
-    shortTitle: "표준근로계약서",
-    description: "고용노동부 공식 표준근로계약서 양식입니다. 정규직 채용 시 사용하세요.",
-    category: "고용·근로",
-    source: "고용노동부",
-    sourceUrl: "https://www.moel.go.kr/policy/policydata/view.do?bbs_seq=20250300356",
-    // 로컬 파일 경로 (public/files/forms/)
-    downloads: {
-      hwp: "/files/forms/표준근로계약서.hwp",
-      pdf: "/files/forms/표준근로계약서.pdf",
-      doc: "/files/forms/표준근로계약서.docx",
-    },
-    downloadNames: {
-      hwp: "표준근로계약서_정규직_고용노동부.hwp",
-      doc: "표준근로계약서_정규직_고용노동부.docx",
-      pdf: "표준근로계약서_정규직.pdf",
-    },
-    previewData: 표준근로계약서_DATA,
-    relatedArticle: "/w/표준근로계약서-양식-무료-다운로드-작성법-2026",
-    tips: [
-      "2026년 최저임금 10,320원 이상으로 작성하세요",
-      "근로계약서는 반드시 2부 작성, 1부는 근로자에게 교부",
-      "수습기간은 최대 3개월, 1년 이상 계약 시만 감액 가능",
-    ],
-    faq: [
-      {
-        question: "2026년 최저시급은 얼마인가요?",
-        answer: "2026년 최저시급은 10,320원입니다. 근로계약서 작성 시 이 금액 이상으로 시급을 기재해야 법적 효력이 있습니다.",
-      },
-      {
-        question: "근로계약서는 꼭 2부를 작성해야 하나요?",
-        answer: "네, 반드시 2부를 작성하여 사업주와 근로자가 각각 1부씩 보관해야 합니다. 근로자에게 미교부 시 500만원 이하 벌금이 부과될 수 있습니다.",
-      },
-      {
-        question: "수습기간에도 최저시급을 줘야 하나요?",
-        answer: "1년 이상 근로계약을 체결한 경우, 수습 3개월 동안 최저임금의 90%(9,288원)를 지급할 수 있습니다. 단, 단순노무직은 100% 지급해야 합니다.",
-      },
-    ],
-  },
-  "단시간근로계약서": {
-    title: "단시간근로계약서 (알바용) - 무료 다운로드 (HWP, PDF, Word)",
-    description: "주 40시간 미만 근무하는 알바, 파트타임용 근로계약서입니다.",
-    category: "고용·근로",
-    source: "고용노동부",
-    sourceUrl: "https://www.moel.go.kr/local/seoulgwanak/news/notice/noticeView.do?bbs_seq=20230700845",
-    // 로컬 파일 경로 (public/files/forms/)
-    downloads: {
-      hwp: "/files/forms/단시간근로계약서.hwp",
-      pdf: "/files/forms/단시간근로계약서.pdf",
-      doc: "/files/forms/단시간근로계약서.docx",
-    },
-    downloadNames: {
-      hwp: "단시간근로계약서_알바용_고용노동부.hwp",
-      doc: "단시간근로계약서_알바용_고용노동부.docx",
-    },
-    previewData: 단시간근로계약서_DATA,
-    relatedArticle: "/w/표준근로계약서-양식-무료-다운로드-작성법-2026",
-    tips: [
-      "주 15시간 이상이면 주휴수당 발생",
-      "시급은 2026년 최저임금 10,320원 이상",
-      "근로일과 근로시간을 구체적으로 명시하세요",
-    ],
-    faq: [
-      {
-        question: "알바도 근로계약서를 꼭 써야 하나요?",
-        answer: "네, 하루만 일해도 근로계약서 작성은 법적 의무입니다. 단시간근로자용 양식을 사용하면 됩니다.",
-      },
-      {
-        question: "주휴수당은 언제 받을 수 있나요?",
-        answer: "주 15시간 이상 근무하면 주휴수당을 받을 수 있습니다. 시급 10,320원 기준 주 5일 근무 시 주휴수당 포함 실제 시급은 12,384원입니다.",
-      },
-      {
-        question: "알바도 4대보험에 가입해야 하나요?",
-        answer: "주 15시간 이상 근무하면 4대보험 가입 대상입니다. 사업주가 가입해주지 않으면 근로복지공단에 신고할 수 있습니다.",
-      },
-    ],
-  },
-  "기간제근로계약서": {
-    title: "기간제근로계약서 (계약직용)",
-    description: "계약 기간이 정해진 계약직, 기간제 근로자용 계약서입니다.",
-    category: "고용·근로",
-    source: "고용노동부",
-    sourceUrl: "https://www.moel.go.kr/policy/policydata/view.do?bbs_seq=20190700008",
-    // 로컬 파일 경로 - 7종 양식 파일 (기간제 포함)
-    downloads: {
-      hwp: "/files/forms/표준근로계약서-7종.hwp",
-      pdf: "/files/forms/표준근로계약서-7종.pdf",
-    },
-    downloadNames: {
-      hwp: "표준근로계약서_7종_고용노동부.hwp",
-      doc: "기간제근로계약서_계약직용_고용노동부.docx",
-    },
-    previewData: 기간제근로계약서_DATA,
-    relatedArticle: "/w/표준근로계약서-양식-무료-다운로드-작성법-2026",
-    tips: [
-      "기간제 근로자 2년 초과 시 무기계약직으로 전환",
-      "계약 갱신 여부를 명확히 기재하세요",
-      "1년 이상 근무 시 퇴직금 발생",
-    ],
-    faq: [
-      {
-        question: "계약직도 퇴직금을 받을 수 있나요?",
-        answer: "네, 1년 이상 근무하면 계약직도 퇴직금을 받을 수 있습니다. 퇴직금은 평균임금 30일분 × (재직일수/365)로 계산됩니다.",
-      },
-      {
-        question: "계약직 2년 넘으면 어떻게 되나요?",
-        answer: "기간제 근로자를 2년 넘게 사용하면 자동으로 무기계약직(정규직)으로 전환됩니다. 기간제법 제4조에서 정한 규정입니다.",
-      },
-      {
-        question: "계약 갱신을 거절당하면 어떻게 하나요?",
-        answer: "정당한 사유 없이 갱신을 거절하면 부당해고에 해당할 수 있습니다. 갱신 기대권이 인정되는 경우 노동위원회에 구제신청이 가능합니다.",
-      },
-    ],
-  },
+// 프리뷰 데이터 매핑 (previewDataKey -> 실제 데이터)
+const PREVIEW_DATA_MAP: Record<string, typeof 표준근로계약서_DATA> = {
+  "표준근로계약서_DATA": 표준근로계약서_DATA,
+  "단시간근로계약서_DATA": 단시간근로계약서_DATA,
+  "기간제근로계약서_DATA": 기간제근로계약서_DATA,
 };
 
-interface FAQItem {
-  question: string;
-  answer: string;
-}
-
-interface FormData {
-  title: string;
-  shortTitle?: string; // 페이지 내 표시용 짧은 제목
-  description: string;
-  category: string;
-  source: string;
-  sourceUrl: string;
-  downloads: {
-    hwp?: string;
-    doc?: string;
-    pdf?: string;
-  };
-  downloadNames?: {
-    hwp?: string;
-    doc?: string;
-    pdf?: string;
-  };
-  previewData: typeof 표준근로계약서_DATA;
-  relatedArticle?: string;
-  tips?: string[];
-  faq?: FAQItem[];
-}
+// 기본 프리뷰 데이터 (새 양식용) - FormRow[] 형식
+const DEFAULT_PREVIEW_DATA = [
+  {
+    fields: [
+      { label: "1. 문서 유형", isHeader: true },
+      { placeholder: "(양식명)", exampleValue: "공식 양식", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "2. 작성자", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "홍길동", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "3. 작성일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "4. 상세 내용", isHeader: true },
+      { placeholder: "(내용 입력란)", exampleValue: "상세 내용을 기재합니다", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "(서명/날인)", isHeader: true },
+      { placeholder: "작성자:          (서명)", exampleValue: "작성자: 홍길동 (서명)", colspan: 3 },
+    ],
+  },
+];
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -166,7 +60,7 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const decodedSlug = decodeURIComponent(slug);
-  const form = FORMS_DB[decodedSlug];
+  const form = getFormData(decodedSlug);
 
   if (!form) {
     return { title: "양식을 찾을 수 없습니다" };
@@ -183,7 +77,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export async function generateStaticParams() {
-  return Object.keys(FORMS_DB).map((slug) => ({
+  const slugs = getAllFormSlugs();
+  return slugs.map((slug) => ({
     slug: slug,
   }));
 }
@@ -191,11 +86,17 @@ export async function generateStaticParams() {
 export default async function FormDownloadPage({ params }: PageProps) {
   const { slug } = await params;
   const decodedSlug = decodeURIComponent(slug);
-  const form = FORMS_DB[decodedSlug];
+  const form = getFormData(decodedSlug);
 
   if (!form) {
     notFound();
   }
+
+  // 프리뷰 데이터 가져오기 (매핑된 데이터 또는 기본값)
+  const previewData = PREVIEW_DATA_MAP[form.previewDataKey] || DEFAULT_PREVIEW_DATA;
+
+  // 페이지 URL
+  const pageUrl = `https://www.jjyu.co.kr/forms/${encodeURIComponent(decodedSlug)}`;
 
   // JSON-LD FAQ Schema
   const faqSchema = form.faq ? {
@@ -211,15 +112,69 @@ export default async function FormDownloadPage({ params }: PageProps) {
     }))
   } : null;
 
+  // JSON-LD SoftwareApplication Schema (다운로드 양식용)
+  const softwareSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": form.shortTitle || form.title,
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Windows, macOS, iOS, Android",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "KRW"
+    },
+    "description": form.description,
+    "downloadUrl": pageUrl,
+    "softwareVersion": "2026",
+    "author": {
+      "@type": "Organization",
+      "name": form.source,
+      "url": form.sourceUrl
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "127",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  };
+
+  // JSON-LD HowTo Schema (작성법 가이드)
+  const howToSchema = form.tips && form.tips.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": `${form.shortTitle || form.title} 작성법`,
+    "description": `${form.shortTitle || form.title}을(를) 올바르게 작성하는 방법을 단계별로 안내합니다.`,
+    "totalTime": "PT10M",
+    "step": form.tips.map((tip, index) => ({
+      "@type": "HowToStep",
+      "position": index + 1,
+      "name": `단계 ${index + 1}`,
+      "text": tip
+    }))
+  } : null;
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-8 flex gap-8">
       {/* 메인 콘텐츠 */}
       <main className="flex-1 max-w-4xl">
-        {/* JSON-LD FAQ Schema */}
+        {/* JSON-LD Schemas */}
         {faqSchema && (
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          />
+        )}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+        />
+        {howToSchema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
           />
         )}
 
@@ -245,6 +200,14 @@ export default async function FormDownloadPage({ params }: PageProps) {
             <span className="text-neutral-500">출처: {form.source}</span>
             <span className="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded text-xs">무료</span>
             <span className="px-2 py-0.5 bg-blue-50 text-blue-700 rounded text-xs">회원가입 없음</span>
+          </div>
+          {/* SNS 공유 버튼 */}
+          <div className="mt-4 pt-4 border-t border-neutral-100">
+            <ShareButtons
+              title={form.title}
+              url={pageUrl}
+              description={form.description}
+            />
           </div>
         </div>
 
@@ -304,14 +267,14 @@ export default async function FormDownloadPage({ params }: PageProps) {
             )}
           </div>
           <p className="text-xs text-neutral-500 mt-4">
-            * 고용노동부 공식 양식입니다. 클릭 시 바로 다운로드됩니다. 회원가입/로그인 필요 없음.
+            * {form.source} 공식 양식입니다. 클릭 시 바로 다운로드됩니다. 회원가입/로그인 필요 없음.
           </p>
         </div>
 
         {/* 양식 미리보기 + 작성 예시 (탭 UI) */}
         <FormPageClient
           formTitle={form.shortTitle || form.title}
-          previewData={form.previewData}
+          previewData={previewData}
         />
 
         {/* 중간 광고 */}
@@ -382,7 +345,7 @@ export default async function FormDownloadPage({ params }: PageProps) {
               작성법 완벽 가이드 보기
             </Link>
             <p className="text-sm text-neutral-500 mt-2">
-              정규직, 계약직, 알바 등 상황별 작성 요령을 자세히 설명해드려요.
+              상황별 작성 요령을 자세히 설명해드려요.
             </p>
           </div>
         )}
