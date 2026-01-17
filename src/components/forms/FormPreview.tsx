@@ -1325,3 +1325,287 @@ export const 영수증_DATA: FormRow[] = [
     ],
   },
 ];
+
+// 진술서 양식
+export const 진술서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "진 술 서", exampleValue: "진 술 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "진술인", isHeader: true, rowspan: 4 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김진술", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "생년월일", isHeader: true },
+      { placeholder: "(생년월일)", exampleValue: "1990. 05. 15.", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 테헤란로 123", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-1234-5678", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "진술 일시", isHeader: true },
+      { placeholder: "(진술 일시)", exampleValue: "2026년 1월 15일 14:00", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "진술 장소", isHeader: true },
+      { placeholder: "(진술 장소)", exampleValue: "서울중앙지방법원 제5호 법정", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사건번호", isHeader: true },
+      { placeholder: "(사건번호)", exampleValue: "2026가합12345", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "진술 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      {
+        placeholder: "(진술 내용을 육하원칙에 따라 구체적으로 작성)",
+        exampleValue: "본인은 2026년 1월 10일 오후 3시경 서울시 강남구 소재 ○○카페에서 피고 홍길동과 만났습니다. 당시 피고는 본인에게 투자를 권유하며 '원금 보장'과 '월 5% 수익'을 약속했습니다. 이에 본인은 피고에게 금 5,000만원을 송금하였으나, 약속한 수익금을 받지 못하고 있습니다. 위 사실은 모두 진실이며 거짓이 없음을 진술합니다.",
+        colspan: 4,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부자료", isHeader: true },
+      { placeholder: "(첨부자료 목록)", exampleValue: "1. 계좌이체 내역서 2. 카카오톡 대화내역", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "진술인 서명", isHeader: true },
+      { placeholder: "(서명 또는 날인)", exampleValue: "김진술 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 탄원서 양식
+export const 탄원서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "탄 원 서", exampleValue: "탄 원 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사건번호", isHeader: true },
+      { placeholder: "(사건번호)", exampleValue: "2026고단1234", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "피고인", isHeader: true },
+      { placeholder: "(피고인 성명)", exampleValue: "홍길동", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "탄원인", isHeader: true, rowspan: 4 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김탄원", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "피고인과의 관계", isHeader: true },
+      { placeholder: "(관계)", exampleValue: "직장 동료 (5년)", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 서초구 반포대로 456", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-9876-5432", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "탄원 취지", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      {
+        placeholder: "(탄원 취지 - 선처를 구하는 내용)",
+        exampleValue: "피고인 홍길동에 대하여 선처를 탄원합니다.",
+        colspan: 4,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "탄원 사유", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      {
+        placeholder: "(탄원 사유 - 피고인의 인품, 반성, 사정 등 구체적으로)",
+        exampleValue: "저는 피고인과 5년간 같은 회사에서 근무한 직장 동료입니다. 피고인은 평소 성실하고 책임감이 강한 사람으로, 회사 내에서도 모범 직원으로 인정받아 왔습니다. 이번 사건으로 피고인은 깊이 반성하고 있으며, 피해자에게도 진심으로 사과하였습니다. 피고인에게는 부양해야 할 고령의 부모님과 어린 자녀가 있어, 가족들의 생계가 어려운 상황입니다. 부디 선처를 베풀어 주시기 바랍니다.",
+        colspan: 4,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "탄원인 서명", isHeader: true },
+      { placeholder: "(서명 또는 날인)", exampleValue: "김탄원 (인)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제출처", isHeader: true },
+      { placeholder: "(법원명) 귀중", exampleValue: "서울중앙지방법원 귀중", colspan: 3 },
+    ],
+  },
+];
+
+// 진정서 양식
+export const 진정서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "진 정 서", exampleValue: "진 정 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "진정인", isHeader: true, rowspan: 4 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "이진정", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "생년월일", isHeader: true },
+      { placeholder: "(생년월일)", exampleValue: "1985. 03. 20.", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "경기도 성남시 분당구 정자동 123", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-5555-6666", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "피진정인", isHeader: true, rowspan: 2 },
+      { label: "기관명", isHeader: true },
+      { placeholder: "(기관명)", exampleValue: "○○구청 건축과", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(기관 주소)", exampleValue: "서울시 ○○구 ○○로 100", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "진정 제목", isHeader: true },
+      { placeholder: "(진정 제목)", exampleValue: "건축허가 지연 처리에 관한 진정", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "진정 취지", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      {
+        placeholder: "(진정 취지 - 요청하는 사항)",
+        exampleValue: "피진정인의 부당한 건축허가 지연에 대한 시정과 신속한 처리를 요청합니다.",
+        colspan: 4,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "진정 사유", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      {
+        placeholder: "(진정 사유 - 사실관계와 문제점을 구체적으로)",
+        exampleValue: "1. 진정인은 2025년 10월 15일 ○○구청에 단독주택 증축 건축허가를 신청하였습니다.\n2. 건축법 시행령 제11조에 따르면 허가 신청일로부터 15일 이내에 처리하도록 되어 있습니다.\n3. 그러나 3개월이 경과한 현재까지 아무런 처리가 되지 않고 있으며, 담당자에게 문의해도 명확한 답변을 받지 못하고 있습니다.\n4. 이로 인해 진정인은 공사 일정 지연으로 경제적 손해를 입고 있습니다.",
+        colspan: 4,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부자료", isHeader: true },
+      { placeholder: "(첨부자료 목록)", exampleValue: "1. 건축허가 신청서 사본 2. 민원 접수증", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "진정인 서명", isHeader: true },
+      { placeholder: "(서명 또는 날인)", exampleValue: "이진정 (인)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제출처", isHeader: true },
+      { placeholder: "(기관명) 귀중", exampleValue: "국민권익위원회 귀중", colspan: 3 },
+    ],
+  },
+];

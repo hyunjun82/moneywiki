@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moj.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "탄원서_DATA",
   "relatedArticle": "/w/탄원서-작성법",
+  "relatedDocs": [
+    { "title": "진술서 양식", "url": "/forms/진술서" },
+    { "title": "고소장 양식", "url": "/forms/고소장" },
+    { "title": "합의서 양식", "url": "/forms/합의서" },
+    { "title": "진정서 양식", "url": "/forms/진정서" },
+    { "title": "경위서 양식", "url": "/forms/경위서" }
+  ],
   "tips": [
     "평소 인품, 성실성, 뉘우치는 모습 구체적으로 쓰세요. 추상적 표현은 효과 없어요.",
     "탄원인 인적사항(이름, 관계, 연락처) 명확히 적으세요.",

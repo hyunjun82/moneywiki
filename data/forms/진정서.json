@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.acrc.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "진정서_DATA",
   "relatedArticle": "/w/진정-절차",
+  "relatedDocs": [
+    { "title": "진술서 양식", "url": "/forms/진술서" },
+    { "title": "탄원서 양식", "url": "/forms/탄원서" },
+    { "title": "내용증명 양식", "url": "/forms/내용증명" },
+    { "title": "고발장 양식", "url": "/forms/고발장" },
+    { "title": "민원신청서 양식", "url": "/forms/민원신청서" }
+  ],
   "tips": [
     "감정적 표현 빼고 사실만 육하원칙으로 쓰세요. '억울하다'보다 '이런 피해 입었다'가 효과적이에요.",
     "관련 법령이나 규정 위반 사항 있으면 명시하세요.",

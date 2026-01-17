@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.klac.or.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "진술서_DATA",
   "relatedArticle": "/w/진술서-작성법",
+  "relatedDocs": [
+    { "title": "경위서 양식", "url": "/forms/경위서" },
+    { "title": "진정서 양식", "url": "/forms/진정서" },
+    { "title": "탄원서 양식", "url": "/forms/탄원서" },
+    { "title": "고소장 양식", "url": "/forms/고소장" },
+    { "title": "합의서 양식", "url": "/forms/합의서" }
+  ],
   "tips": [
     "시간 순서대로 사실만 객관적으로 작성하세요",
     "날짜, 장소, 관련 인물을 구체적으로 기재하세요",
