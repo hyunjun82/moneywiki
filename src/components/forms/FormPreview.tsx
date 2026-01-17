@@ -2893,3 +2893,397 @@ export const 물품매매계약서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// 복직신청서 미리보기 데이터
+export const 복직신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "복직 신청서", exampleValue: "복 직 신 청 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "홍길동" },
+      { label: "사원번호", isHeader: true },
+      { placeholder: "(사번)", exampleValue: "A2024-0156" },
+    ],
+  },
+  {
+    fields: [
+      { label: "소속부서", isHeader: true },
+      { placeholder: "(부서명)", exampleValue: "마케팅팀" },
+      { label: "직위/직급", isHeader: true },
+      { placeholder: "(직위)", exampleValue: "대리" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-1234-5678", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴직 정보", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴직 종류", isHeader: true },
+      { placeholder: "(휴직 사유)", exampleValue: "육아휴직", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴직 기간", isHeader: true },
+      { placeholder: "20__년 __월 __일 ~ 20__년 __월 __일", exampleValue: "2025년 1월 15일 ~ 2026년 1월 14일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "복직 희망일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "복직 희망 부서", isHeader: true },
+      { placeholder: "(부서명)", exampleValue: "마케팅팀 (원 소속)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "복직 사유", isHeader: true },
+      { placeholder: "(복직 신청 사유)", exampleValue: "육아휴직 기간 만료에 따라 복직을 신청합니다. 자녀가 어린이집에 입소하여 정상 근무가 가능합니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2025년 12월 30일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 서명", isHeader: true },
+      { placeholder: "신청인: ___________ (서명)", exampleValue: "신청인: 홍길동 (서명)", colspan: 3 },
+    ],
+  },
+];
+
+// 배우자출산휴가신청서 미리보기 데이터
+export const 배우자출산휴가신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "배우자 출산휴가 신청서", exampleValue: "배우자 출산휴가 신청서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "김영수" },
+      { label: "사원번호", isHeader: true },
+      { placeholder: "(사번)", exampleValue: "B2023-0089" },
+    ],
+  },
+  {
+    fields: [
+      { label: "소속부서", isHeader: true },
+      { placeholder: "(부서명)", exampleValue: "개발팀" },
+      { label: "직위/직급", isHeader: true },
+      { placeholder: "(직위)", exampleValue: "과장" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-9876-5432", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "배우자 정보", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "배우자 성명", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "이미영" },
+      { label: "출산 예정일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 20일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "출산 병원", isHeader: true },
+      { placeholder: "(병원명)", exampleValue: "삼성서울병원", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴가 정보", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴가 기간", isHeader: true },
+      { placeholder: "20__년 __월 __일 ~ 20__년 __월 __일", exampleValue: "2026년 1월 20일 ~ 2026년 1월 31일 (10일)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사용 일수", isHeader: true },
+      { placeholder: "(__일)", exampleValue: "10일 (연속 사용)" },
+      { label: "복귀 예정일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 2월 3일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "업무 인수인계", isHeader: true },
+      { placeholder: "(인수인계 계획)", exampleValue: "대리 박철수에게 진행 중인 프로젝트 인수인계 완료 예정", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부 서류", isHeader: true },
+      { placeholder: "(첨부 서류)", exampleValue: "출산예정일 확인서 1부", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 10일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 서명", isHeader: true },
+      { placeholder: "신청인: ___________ (서명)", exampleValue: "신청인: 김영수 (서명)", colspan: 3 },
+    ],
+  },
+];
+
+// 병가신청서 미리보기 데이터
+export const 병가신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "병가 신청서", exampleValue: "병 가 신 청 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "박지민" },
+      { label: "사원번호", isHeader: true },
+      { placeholder: "(사번)", exampleValue: "C2022-0234" },
+    ],
+  },
+  {
+    fields: [
+      { label: "소속부서", isHeader: true },
+      { placeholder: "(부서명)", exampleValue: "영업팀" },
+      { label: "직위/직급", isHeader: true },
+      { placeholder: "(직위)", exampleValue: "사원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-5555-1234", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "병가 정보", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "병명/증상", isHeader: true },
+      { placeholder: "(질병명 또는 증상)", exampleValue: "급성 장염", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "병가 기간", isHeader: true },
+      { placeholder: "20__년 __월 __일 ~ 20__년 __월 __일", exampleValue: "2026년 1월 15일 ~ 2026년 1월 17일 (3일)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "병가 일수", isHeader: true },
+      { placeholder: "(__일)", exampleValue: "3일" },
+      { label: "복귀 예정일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 20일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "진료 병원", isHeader: true },
+      { placeholder: "(병원명)", exampleValue: "서울내과의원" },
+      { label: "담당 의사", isHeader: true },
+      { placeholder: "(의사명)", exampleValue: "김의사" },
+    ],
+  },
+  {
+    fields: [
+      { label: "업무 인수인계", isHeader: true },
+      { placeholder: "(인수인계 계획)", exampleValue: "팀장 이부장님께 긴급 건 보고 완료, 일반 업무는 복귀 후 처리 예정", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부 서류", isHeader: true },
+      { placeholder: "(첨부 서류)", exampleValue: "진단서 1부, 의사 소견서 1부", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 서명", isHeader: true },
+      { placeholder: "신청인: ___________ (서명)", exampleValue: "신청인: 박지민 (서명)", colspan: 3 },
+    ],
+  },
+];
+
+// 가족돌봄휴가신청서 미리보기 데이터
+export const 가족돌봄휴가신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "가족돌봄휴가 신청서", exampleValue: "가족돌봄휴가 신청서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "최민호" },
+      { label: "사원번호", isHeader: true },
+      { placeholder: "(사번)", exampleValue: "D2021-0567" },
+    ],
+  },
+  {
+    fields: [
+      { label: "소속부서", isHeader: true },
+      { placeholder: "(부서명)", exampleValue: "총무팀" },
+      { label: "직위/직급", isHeader: true },
+      { placeholder: "(직위)", exampleValue: "대리" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-7777-8888", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "돌봄 대상 가족", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "최순자" },
+      { label: "관계", isHeader: true },
+      { placeholder: "(관계)", exampleValue: "어머니" },
+    ],
+  },
+  {
+    fields: [
+      { label: "생년월일", isHeader: true },
+      { placeholder: "(생년월일)", exampleValue: "1955년 3월 10일" },
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강북구" },
+    ],
+  },
+  {
+    fields: [
+      { label: "돌봄 사유", isHeader: true },
+      { placeholder: "(돌봄이 필요한 사유)", exampleValue: "어머니 고관절 수술 후 재활 치료 및 일상생활 보조 필요", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴가 정보", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴가 기간", isHeader: true },
+      { placeholder: "20__년 __월 __일 ~ 20__년 __월 __일", exampleValue: "2026년 1월 20일 ~ 2026년 1월 24일 (5일)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴가 일수", isHeader: true },
+      { placeholder: "(__일)", exampleValue: "5일" },
+      { label: "복귀 예정일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 27일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "업무 인수인계", isHeader: true },
+      { placeholder: "(인수인계 계획)", exampleValue: "과장 김철수에게 주요 업무 인수인계 완료", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부 서류", isHeader: true },
+      { placeholder: "(첨부 서류)", exampleValue: "가족관계증명서 1부, 진단서 1부", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 서명", isHeader: true },
+      { placeholder: "신청인: ___________ (서명)", exampleValue: "신청인: 최민호 (서명)", colspan: 3 },
+    ],
+  },
+];

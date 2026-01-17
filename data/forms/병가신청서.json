@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "병가신청서_DATA",
   "relatedArticle": "/w/연차휴가",
+  "relatedDocs": [
+    { "title": "복직신청서 양식", "url": "/forms/복직신청서" },
+    { "title": "가족돌봄휴가신청서 양식", "url": "/forms/가족돌봄휴가신청서" },
+    { "title": "산재보험청구서 양식", "url": "/forms/산재보험청구서" },
+    { "title": "진단서 발급 방법", "url": "/w/진단서-발급" },
+    { "title": "상병수당 신청 방법", "url": "/w/상병수당-신청" }
+  ],
   "tips": [
     "병원 진단서나 소견서를 첨부하세요",
     "병가 일수와 복귀 예정일을 명시하세요",

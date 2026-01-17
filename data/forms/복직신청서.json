@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "복직신청서_DATA",
   "relatedArticle": "/w/복직-신청",
+  "relatedDocs": [
+    { "title": "병가신청서 양식", "url": "/forms/병가신청서" },
+    { "title": "배우자출산휴가신청서 양식", "url": "/forms/배우자출산휴가신청서" },
+    { "title": "가족돌봄휴가신청서 양식", "url": "/forms/가족돌봄휴가신청서" },
+    { "title": "사직서 양식", "url": "/forms/사직서" },
+    { "title": "휴직 신청 방법", "url": "/w/휴직-신청" }
+  ],
   "tips": [
     "휴직 종료일 최소 2주 전에 제출하세요",
     "복직 전 건강검진이 필요한지 확인하세요",

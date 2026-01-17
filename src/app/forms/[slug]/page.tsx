@@ -31,6 +31,10 @@ import FormPreview, {
   도급계약서_DATA,
   매매계약서_DATA,
   물품매매계약서_DATA,
+  복직신청서_DATA,
+  배우자출산휴가신청서_DATA,
+  병가신청서_DATA,
+  가족돌봄휴가신청서_DATA,
 } from "@/components/forms/FormPreview";
 import FormPageClient from "@/components/forms/FormPageClient";
 import FormSidebar from "@/components/forms/FormSidebar";
@@ -69,6 +73,10 @@ const PREVIEW_DATA_MAP: Record<string, typeof 표준근로계약서_DATA> = {
   "도급계약서_DATA": 도급계약서_DATA,
   "매매계약서_DATA": 매매계약서_DATA,
   "물품매매계약서_DATA": 물품매매계약서_DATA,
+  "복직신청서_DATA": 복직신청서_DATA,
+  "배우자출산휴가신청서_DATA": 배우자출산휴가신청서_DATA,
+  "병가신청서_DATA": 병가신청서_DATA,
+  "가족돌봄휴가신청서_DATA": 가족돌봄휴가신청서_DATA,
 };
 
 // 기본 프리뷰 데이터 (새 양식용) - FormRow[] 형식
