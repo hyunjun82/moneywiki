@@ -711,3 +711,142 @@ export const 견적서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// 각서 양식
+export const 각서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "각    서", exampleValue: "각    서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성자", isHeader: true, rowspan: 3 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "홍길동", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민번호", isHeader: true },
+      { placeholder: "000000-0000000", exampleValue: "850101-1234567", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 역삼동 123-45", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "상대방", isHeader: true, rowspan: 3 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김철수", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민번호", isHeader: true },
+      { placeholder: "000000-0000000", exampleValue: "900515-2345678", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 서초구 서초동 456-78", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "각서 내용", isHeader: true },
+      {
+        placeholder: "본인 홍길동은 아래 내용을 확약하며, 이를 위반할 경우 민·형사상 책임을 지겠습니다.\n\n1. 본인은 2026년 2월 28일까지 상대방 김철수에게 금 1,000만원을 변제하겠습니다.\n\n2. 변제 방법은 상대방 계좌(신한은행 110-123-456789)로 입금합니다.\n\n3. 위 기한 내 변제하지 못할 경우, 연 20%의 지연이자를 가산하여 지급하겠습니다.\n\n4. 위 약속을 어길 경우 법적 조치에 이의를 제기하지 않겠습니다.",
+        exampleValue: "본인 홍길동은 아래 내용을 확약하며, 이를 위반할 경우 민·형사상 책임을 지겠습니다.\n\n1. 본인은 2026년 2월 28일까지 상대방 김철수에게 금 1,000만원을 변제하겠습니다.\n\n2. 변제 방법은 상대방 계좌(신한은행 110-123-456789)로 입금합니다.\n\n3. 위 기한 내 변제하지 못할 경우, 연 20%의 지연이자를 가산하여 지급하겠습니다.\n\n4. 위 약속을 어길 경우 법적 조치에 이의를 제기하지 않겠습니다.",
+        colspan: 3,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성자", isHeader: true },
+      { placeholder: "성명:              (인)", exampleValue: "성명: 홍길동 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 경위서 양식
+export const 경위서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "경 위 서", exampleValue: "경 위 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성자", isHeader: true, rowspan: 3 },
+      { label: "소속", isHeader: true },
+      { placeholder: "(부서명)", exampleValue: "영업팀", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "직위", isHeader: true },
+      { placeholder: "(직급)", exampleValue: "대리", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "홍길동", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발생일시", isHeader: true },
+      { placeholder: "____년 __월 __일 __시", exampleValue: "2026년 1월 10일 14시 30분", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발생장소", isHeader: true },
+      { placeholder: "(장소)", exampleValue: "본사 3층 회의실", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "관련자", isHeader: true },
+      { placeholder: "(관련된 사람들)", exampleValue: "영업팀 김과장, 재무팀 이대리", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사건 경위", isHeader: true },
+      {
+        placeholder: "1. 발생 배경\n   (사건이 발생하게 된 배경을 기술합니다)\n\n2. 사건 경과\n   - __시 __분: (발생 내용)\n   - __시 __분: (후속 상황)\n   - __시 __분: (조치 내용)\n\n3. 현재 상황\n   (현재 어떤 상태인지 기술합니다)\n\n4. 향후 조치 계획\n   (재발 방지 등 향후 계획을 기술합니다)",
+        exampleValue: "1. 발생 배경\n   고객사 A사와의 계약 관련 회의 중 계약조건 변경 요청이 있었습니다.\n\n2. 사건 경과\n   - 14시 30분: 고객사 담당자가 납기일 단축을 요청\n   - 14시 45분: 본인이 팀장 승인 없이 납기 단축 구두 합의\n   - 15시 30분: 생산팀 확인 결과 납기 단축 불가 통보 받음\n\n3. 현재 상황\n   고객사에 납기일 재조정 요청 중이며, 담당자와 협의 진행 중입니다.\n\n4. 향후 조치 계획\n   향후 계약조건 변경 시 반드시 팀장 승인 후 진행하겠습니다.",
+        colspan: 3,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성자", isHeader: true },
+      { placeholder: "성명:              (인)", exampleValue: "성명: 홍길동 (인)", colspan: 3 },
+    ],
+  },
+];

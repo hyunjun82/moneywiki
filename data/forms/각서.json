@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.klac.or.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "각서_DATA",
   "relatedArticle": "/w/각서-작성법",
+  "relatedDocs": [
+    { "title": "차용증 양식", "url": "/forms/차용증" },
+    { "title": "합의서 양식", "url": "/forms/합의서" },
+    { "title": "내용증명 양식", "url": "/forms/내용증명" },
+    { "title": "금전소비대차계약서", "url": "/forms/금전소비대차계약서" },
+    { "title": "공증 방법 안내", "url": "/w/공증-받는-방법" }
+  ],
   "tips": [
     "약속 내용을 구체적이고 명확하게 작성하세요",
     "날짜와 서명(또는 날인)을 반드시 포함하세요",

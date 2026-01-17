@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.klac.or.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "경위서_DATA",
   "relatedArticle": "/w/경위서-작성법",
+  "relatedDocs": [
+    { "title": "시말서 양식", "url": "/forms/시말서" },
+    { "title": "사유서 양식", "url": "/forms/사유서" },
+    { "title": "반성문 양식", "url": "/forms/반성문" },
+    { "title": "사고보고서 양식", "url": "/forms/사고보고서" },
+    { "title": "진술서 양식", "url": "/forms/진술서" }
+  ],
   "tips": [
     "육하원칙(누가, 언제, 어디서, 무엇을, 어떻게, 왜)에 따라 작성하세요",
     "시간 순서대로 사실만 객관적으로 기술하세요",
