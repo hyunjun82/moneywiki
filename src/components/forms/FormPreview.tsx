@@ -445,3 +445,69 @@ export const 사직서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// 위임장 미리보기 데이터
+export const 위임장_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "위 임 장", exampleValue: "위 임 장", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "위임인", isHeader: true, rowspan: 3 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "홍길동" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "800101-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 테헤란로 123" },
+    ],
+  },
+  {
+    fields: [
+      { label: "수임인 (대리인)", isHeader: true, rowspan: 3 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김철수" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "900515-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 서초구 서초대로 456" },
+    ],
+  },
+  {
+    fields: [
+      { label: "위임 내용", isHeader: true },
+      { placeholder: "(위임하는 업무 내용)", exampleValue: "주민등록등본 발급 업무 일체", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "위임인", isHeader: true },
+      { placeholder: "성명:              (인)", exampleValue: "성명: 홍길동 (인)", colspan: 3 },
+    ],
+  },
+];

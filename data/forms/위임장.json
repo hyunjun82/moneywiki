@@ -4,12 +4,23 @@
   "shortTitle": "위임장",
   "description": "내가 직접 못 가는 일을 다른 사람에게 맡길 때 쓰는 문서예요. 관공서 민원이나 법원 업무에 자주 필요해요.",
   "category": "법률·계약",
-  "source": "대한법률구조공단",
-  "sourceUrl": "https://www.klac.or.kr",
-  "downloads": {},
-  "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "source": "국토교통부",
+  "sourceUrl": "https://www.molit.go.kr",
+  "downloads": {
+    "hwp": "/files/forms/위임장.hwp"
+  },
+  "downloadNames": {
+    "hwp": "위임장_국토교통부.hwp"
+  },
+  "previewDataKey": "위임장_DATA",
   "relatedArticle": "/w/위임장-작성법",
+  "relatedDocs": [
+    { "title": "인감증명서 위임장", "url": "/forms/인감증명위임장" },
+    { "title": "주민등록등본 발급 방법", "url": "/w/주민등록등본-발급" },
+    { "title": "본인서명사실확인서 양식", "url": "/forms/본인서명사실확인서" },
+    { "title": "가족관계증명서 발급", "url": "/forms/가족관계증명서신청서" },
+    { "title": "법인 등기 위임장", "url": "/forms/법인설립등기신청서" }
+  ],
   "tips": [
     "위임 범위를 명확하게 한정하세요",
     "신분증 사본을 함께 첨부해야 하는 경우가 많아요",
