@@ -587,3 +587,127 @@ export const 내용증명_DATA: FormRow[] = [
     ],
   },
 ];
+
+// 견적서 양식
+export const 견적서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "견 적 서", exampleValue: "견 적 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "견적번호", isHeader: true },
+      { placeholder: "QT-2026-001", exampleValue: "QT-2026-0115" },
+      { label: "견적일자", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "수신", isHeader: true, rowspan: 3 },
+      { label: "상호", isHeader: true },
+      { placeholder: "(거래처명)", exampleValue: "(주)한국무역", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "담당자", isHeader: true },
+      { placeholder: "(담당자명)", exampleValue: "김담당 과장", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "010-0000-0000", exampleValue: "02-1234-5678", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발신", isHeader: true, rowspan: 4 },
+      { label: "상호", isHeader: true },
+      { placeholder: "(회사명)", exampleValue: "(주)머니위키솔루션", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업자번호", isHeader: true },
+      { placeholder: "000-00-00000", exampleValue: "123-45-67890", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "홍길동", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "000-0000-0000", exampleValue: "02-9876-5432", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "품목", isHeader: true },
+      { label: "수량", isHeader: true },
+      { label: "단가", isHeader: true },
+      { label: "금액", isHeader: true },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "(품목명)", exampleValue: "홈페이지 제작" },
+      { placeholder: "1", exampleValue: "1" },
+      { placeholder: "0", exampleValue: "3,000,000" },
+      { placeholder: "0", exampleValue: "3,000,000" },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "(품목명)", exampleValue: "서버 호스팅 (1년)" },
+      { placeholder: "1", exampleValue: "1" },
+      { placeholder: "0", exampleValue: "500,000" },
+      { placeholder: "0", exampleValue: "500,000" },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "(품목명)", exampleValue: "유지보수 (월)" },
+      { placeholder: "12", exampleValue: "12" },
+      { placeholder: "0", exampleValue: "100,000" },
+      { placeholder: "0", exampleValue: "1,200,000" },
+    ],
+  },
+  {
+    fields: [
+      { label: "공급가액", isHeader: true, colspan: 3 },
+      { placeholder: "0", exampleValue: "4,700,000" },
+    ],
+  },
+  {
+    fields: [
+      { label: "부가세 (10%)", isHeader: true, colspan: 3 },
+      { placeholder: "0", exampleValue: "470,000" },
+    ],
+  },
+  {
+    fields: [
+      { label: "합계금액", isHeader: true, colspan: 3 },
+      { placeholder: "0", exampleValue: "5,170,000" },
+    ],
+  },
+  {
+    fields: [
+      { label: "유효기간", isHeader: true },
+      { placeholder: "발행일로부터 30일", exampleValue: "발행일로부터 30일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "비고", isHeader: true },
+      { placeholder: "(특이사항 기재)", exampleValue: "계약금 30% 선입금 시 착수", colspan: 3 },
+    ],
+  },
+];

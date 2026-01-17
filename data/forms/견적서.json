@@ -4,12 +4,19 @@
   "shortTitle": "견적서",
   "description": "거래 전 가격을 제안하는 견적서 양식이에요. 계약 전 고객에게 보내는 공식 문서예요.",
   "category": "세무·회계",
-  "source": "비즈폼",
-  "sourceUrl": "https://www.bizforms.co.kr",
+  "source": "국세청",
+  "sourceUrl": "https://www.nts.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "견적서_DATA",
   "relatedArticle": "/w/견적서-작성법",
+  "relatedDocs": [
+    { "title": "세금계산서 양식", "url": "/forms/세금계산서" },
+    { "title": "거래명세서 양식", "url": "/forms/거래명세서" },
+    { "title": "청구서 양식", "url": "/forms/청구서" },
+    { "title": "사업자등록 신청 방법", "url": "/w/사업자등록-신청" },
+    { "title": "부가가치세 신고 방법", "url": "/w/부가가치세-신고" }
+  ],
   "tips": [
     "유효기간을 반드시 명시하세요 (보통 발행일로부터 30일)",
     "부가세 포함/별도 여부를 명확히 표시하세요",
