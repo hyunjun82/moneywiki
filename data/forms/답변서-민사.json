@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.scourt.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "답변서민사_DATA",
   "relatedArticle": "/w/민사소송-답변서",
+  "relatedDocs": [
+    { "title": "진술서 양식", "url": "/forms/진술서" },
+    { "title": "합의서 양식", "url": "/forms/합의서" },
+    { "title": "내용증명 양식", "url": "/forms/내용증명" },
+    { "title": "탄원서 양식", "url": "/forms/탄원서" },
+    { "title": "민사소송 절차", "url": "/w/민사소송-절차" }
+  ],
   "tips": [
     "소장 받은 날부터 30일 이내 제출하세요. 늦으면 불리해질 수 있어요.",
     "상대방 주장 하나하나 인정/부인 명확히 하세요. 애매하면 인정으로 볼 수도 있어요.",

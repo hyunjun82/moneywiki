@@ -2025,3 +2025,321 @@ export const 산재보험청구서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// 금전소비대차계약서 양식
+export const 금전소비대차계약서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "금전소비대차계약서", exampleValue: "금전소비대차계약서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "대주(갑)", isHeader: true, rowspan: 4 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김대주", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "850101-1******", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 테헤란로 123", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-1234-5678", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "차주(을)", isHeader: true, rowspan: 4 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "이차주", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "900515-1******", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 서초구 반포대로 456", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-9876-5432", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "대차금액", isHeader: true },
+      { placeholder: "(금액)", exampleValue: "금 오천만원 (₩50,000,000)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "대차일자", isHeader: true },
+      { placeholder: "(대차일자)", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "변제일자", isHeader: true },
+      { placeholder: "(변제일자)", exampleValue: "2027년 1월 14일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "이자율", isHeader: true },
+      { placeholder: "(연 이자율)", exampleValue: "연 5% (법정 최고이율 이내)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "이자지급방법", isHeader: true },
+      { placeholder: "(지급방법)", exampleValue: "매월 말일 선지급 (익월분)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "변제방법", isHeader: true },
+      { placeholder: "(변제방법)", exampleValue: "원금 만기일시상환, 이자 월별지급", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "지연손해금", isHeader: true },
+      { placeholder: "(지연손해금율)", exampleValue: "연 12% (변제일 경과 시 적용)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "담보", isHeader: true },
+      { placeholder: "(담보 내용)", exampleValue: "서울시 송파구 잠실동 소재 아파트 근저당권 설정", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "특약사항", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      {
+        placeholder: "(특약사항)",
+        exampleValue: "1. 차주는 대주의 사전 동의 없이 제3자에게 채무를 이전할 수 없다.\n2. 차주가 2회 이상 이자 지급을 연체할 경우, 대주는 즉시 원금 전액 상환을 청구할 수 있다.\n3. 본 계약에서 정하지 않은 사항은 민법에 따른다.",
+        colspan: 4,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "대주(갑) 서명", isHeader: true },
+      { placeholder: "(서명 또는 날인)", exampleValue: "김대주 (인)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "차주(을) 서명", isHeader: true },
+      { placeholder: "(서명 또는 날인)", exampleValue: "이차주 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 동의서 양식
+export const 동의서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "동 의 서", exampleValue: "개인정보 수집·이용 동의서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "동의인", isHeader: true, rowspan: 4 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "박동의", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "생년월일", isHeader: true },
+      { placeholder: "(생년월일)", exampleValue: "1990. 05. 15.", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 마포구 마포대로 100", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-1234-5678", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수집기관", isHeader: true },
+      { placeholder: "(기관명)", exampleValue: "(주)한국서비스", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수집 항목", isHeader: true },
+      { placeholder: "(수집 항목)", exampleValue: "성명, 연락처, 주소, 이메일, 서비스 이용기록", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수집 목적", isHeader: true },
+      { placeholder: "(수집 목적)", exampleValue: "서비스 제공, 고객 관리, 마케팅 활용", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "보유 기간", isHeader: true },
+      { placeholder: "(보유 기간)", exampleValue: "수집일로부터 3년간 (회원 탈퇴 시 즉시 파기)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "동의 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      {
+        placeholder: "(동의 내용)",
+        exampleValue: "본인은 위와 같이 개인정보를 수집·이용하는 것에 동의합니다.\n\n☑ 필수 개인정보 수집·이용에 동의합니다.\n☐ 선택 개인정보 수집·이용에 동의합니다.\n☐ 마케팅 목적 활용에 동의합니다.\n\n※ 동의를 거부할 권리가 있으며, 필수 항목 거부 시 서비스 이용이 제한될 수 있습니다.",
+        colspan: 4,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "동의 일자", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "동의인 서명", isHeader: true },
+      { placeholder: "(서명 또는 날인)", exampleValue: "박동의 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 답변서(민사) 양식
+export const 답변서민사_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "답 변 서", exampleValue: "답 변 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사건번호", isHeader: true },
+      { placeholder: "(사건번호)", exampleValue: "2026가합12345 대여금 청구사건", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "원고", isHeader: true },
+      { placeholder: "(원고 성명)", exampleValue: "김원고", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "피고", isHeader: true, rowspan: 3 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(피고 성명)", exampleValue: "이피고", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 서초구 반포대로 456", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-9876-5432", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "청구취지에 대한 답변", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      {
+        placeholder: "(청구취지에 대한 답변)",
+        exampleValue: "1. 원고의 청구를 기각한다.\n2. 소송비용은 원고가 부담한다.\n라는 판결을 구합니다.",
+        colspan: 4,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "청구원인에 대한 답변", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      {
+        placeholder: "(청구원인에 대한 답변 - 각 항목별 인정/부인)",
+        exampleValue: "1. 청구원인 제1항 (금전 대여)에 대하여\n   - 인정합니다. 피고는 2025년 6월 15일 원고로부터 금 3,000만원을 차용한 사실이 있습니다.\n\n2. 청구원인 제2항 (변제기일 경과)에 대하여\n   - 부인합니다. 당사자 간 합의로 변제기일을 2026년 6월 14일로 연장하였으며, 아직 변제기일이 도래하지 않았습니다.\n\n3. 청구원인 제3항 (지연이자 주장)에 대하여\n   - 부인합니다. 변제기일 전이므로 지연이자 발생 근거가 없습니다.",
+        colspan: 4,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부 증거", isHeader: true },
+      { placeholder: "(첨부 증거)", exampleValue: "1. 을 제1호증: 변제기일 연장 합의서\n2. 을 제2호증: 카카오톡 대화내역", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "피고 서명", isHeader: true },
+      { placeholder: "(서명 또는 날인)", exampleValue: "이피고 (인)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제출처", isHeader: true },
+      { placeholder: "(법원명) 귀중", exampleValue: "서울중앙지방법원 귀중", colspan: 3 },
+    ],
+  },
+];
