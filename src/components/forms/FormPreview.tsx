@@ -4855,3 +4855,387 @@ export const 개명신청서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// 건축물대장신청서 미리보기 데이터
+export const 건축물대장신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "건축물대장 발급 신청서", exampleValue: "건 축 물 대 장 발 급 신 청 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "박건축" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "850515-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "010-5555-6666" },
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 마포구 월드컵로 100" },
+    ],
+  },
+  {
+    fields: [
+      { label: "대상 건축물 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "소재지", isHeader: true },
+      { placeholder: "(건물 주소)", exampleValue: "서울시 강남구 역삼로 123, 456호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "건물명", isHeader: true },
+      { placeholder: "(건물명)", exampleValue: "테헤란빌딩" },
+      { label: "동/호", isHeader: true },
+      { placeholder: "(동/호수)", exampleValue: "5층 502호" },
+    ],
+  },
+  {
+    fields: [
+      { label: "건축물 종류", isHeader: true },
+      { placeholder: "(일반/집합)", exampleValue: "집합건축물" },
+      { label: "용도", isHeader: true },
+      { placeholder: "(용도)", exampleValue: "업무시설(오피스텔)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발급 유형", isHeader: true },
+      { placeholder: "(유형)", exampleValue: "건축물대장(집합건축물 전유부)" },
+      { label: "발급 부수", isHeader: true },
+      { placeholder: "(부수)", exampleValue: "2부" },
+    ],
+  },
+  {
+    fields: [
+      { label: "발급 목적", isHeader: true },
+      { placeholder: "(발급 목적)", exampleValue: "부동산 매매계약용" },
+      { label: "수령 방법", isHeader: true },
+      { placeholder: "(수령방법)", exampleValue: "창구 수령" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 22일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 서명", isHeader: true },
+      { placeholder: "신청인: ___________ (서명)", exampleValue: "신청인: 박건축 (서명)", colspan: 3 },
+    ],
+  },
+];
+
+// 경력기술서 미리보기 데이터
+export const 경력기술서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "경력기술서", exampleValue: "경 력 기 술 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "인적사항", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "이경력" },
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "010-3333-4444" },
+    ],
+  },
+  {
+    fields: [
+      { label: "이메일", isHeader: true },
+      { placeholder: "(이메일)", exampleValue: "career@email.com" },
+      { label: "지원 직무", isHeader: true },
+      { placeholder: "(직무)", exampleValue: "마케팅 매니저" },
+    ],
+  },
+  {
+    fields: [
+      { label: "경력 1", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "회사명", isHeader: true },
+      { placeholder: "(회사명)", exampleValue: "(주)ABC마케팅" },
+      { label: "근무 기간", isHeader: true },
+      { placeholder: "(근무기간)", exampleValue: "2020.03 ~ 2024.12 (4년 10개월)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "직급/직책", isHeader: true },
+      { placeholder: "(직급/직책)", exampleValue: "과장 / 마케팅팀장" },
+      { label: "담당 업무", isHeader: true },
+      { placeholder: "(담당 업무)", exampleValue: "디지털 마케팅 전략 기획 및 실행" },
+    ],
+  },
+  {
+    fields: [
+      { label: "프로젝트 1", isHeader: true },
+      { placeholder: "(프로젝트명)", exampleValue: "신규 브랜드 런칭 캠페인", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "역할", isHeader: true },
+      { placeholder: "(역할)", exampleValue: "프로젝트 총괄 리드" },
+      { label: "기간", isHeader: true },
+      { placeholder: "(기간)", exampleValue: "2023.01 ~ 2023.06" },
+    ],
+  },
+  {
+    fields: [
+      { label: "성과", isHeader: true },
+      { placeholder: "(정량적 성과)", exampleValue: "신규 고객 유입 150% 증가, 브랜드 인지도 40%p 향상, SNS 팔로워 10만 달성", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "핵심 역량", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "보유 역량", isHeader: true },
+      { placeholder: "(핵심 역량)", exampleValue: "디지털 마케팅 전략 수립, 데이터 기반 의사결정, 팀 리더십, 예산 관리, 크로스펑셔널 협업", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 20일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성자", isHeader: true },
+      { placeholder: "작성자: _______ (서명)", exampleValue: "작성자: 이경력 (서명)", colspan: 3 },
+    ],
+  },
+];
+
+// 경업금지계약서 미리보기 데이터
+export const 경업금지계약서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "경업금지계약서", exampleValue: "경 업 금 지 계 약 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약 당사자", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "회사(갑)", isHeader: true },
+      { placeholder: "(회사명)", exampleValue: "(주)테크솔루션" },
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자)", exampleValue: "김대표" },
+    ],
+  },
+  {
+    fields: [
+      { label: "임직원(을)", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "박직원" },
+      { label: "직위", isHeader: true },
+      { placeholder: "(직위)", exampleValue: "연구개발부 과장" },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "금지 기간", isHeader: true },
+      { placeholder: "(기간)", exampleValue: "퇴직일로부터 1년간" },
+      { label: "금지 지역", isHeader: true },
+      { placeholder: "(지역)", exampleValue: "대한민국 전역" },
+    ],
+  },
+  {
+    fields: [
+      { label: "금지 업종", isHeader: true },
+      { placeholder: "(금지 업종)", exampleValue: "소프트웨어 개발업, IT 솔루션 제공업", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "금지 행위", isHeader: true },
+      { placeholder: "(금지 행위)", exampleValue: "동종 업계 취업, 경쟁사 창업, 경쟁사 임원 취임, 기술 제공", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "대가 및 보상", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "경업금지 보상금", isHeader: true },
+      { placeholder: "(보상금)", exampleValue: "퇴직금과 별도로 월 급여의 50% × 12개월 지급" },
+      { label: "지급 시기", isHeader: true },
+      { placeholder: "(지급 시기)", exampleValue: "퇴직 시 일시불 또는 월별 분할" },
+    ],
+  },
+  {
+    fields: [
+      { label: "위반 시 조치", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "손해배상", isHeader: true },
+      { placeholder: "(손해배상액)", exampleValue: "보상금 전액 반환 + 실손해액 배상" },
+      { label: "기타 조치", isHeader: true },
+      { placeholder: "(기타)", exampleValue: "법적 금지명령(가처분) 신청 가능" },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "서명", isHeader: true },
+      { placeholder: "갑: _______ (인)  을: _______ (인)", exampleValue: "갑: (주)테크솔루션 김대표 (인)  을: 박직원 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 교육훈련신청서 미리보기 데이터
+export const 교육훈련신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "교육훈련 신청서", exampleValue: "교 육 훈 련 신 청 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "최교육" },
+      { label: "사원번호", isHeader: true },
+      { placeholder: "(사원번호)", exampleValue: "2022-0156" },
+    ],
+  },
+  {
+    fields: [
+      { label: "부서", isHeader: true },
+      { placeholder: "(부서)", exampleValue: "개발팀" },
+      { label: "직급", isHeader: true },
+      { placeholder: "(직급)", exampleValue: "대리" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "010-8888-9999" },
+      { label: "입사일", isHeader: true },
+      { placeholder: "(입사일)", exampleValue: "2022년 3월 1일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "교육 과정 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "교육명", isHeader: true },
+      { placeholder: "(교육 과정명)", exampleValue: "AWS 클라우드 아키텍트 자격증 과정" },
+      { label: "교육 기관", isHeader: true },
+      { placeholder: "(교육 기관)", exampleValue: "한국AWS교육센터" },
+    ],
+  },
+  {
+    fields: [
+      { label: "교육 기간", isHeader: true },
+      { placeholder: "(기간)", exampleValue: "2026년 2월 10일 ~ 2026년 2월 14일 (5일간)" },
+      { label: "교육 장소", isHeader: true },
+      { placeholder: "(장소)", exampleValue: "서울 강남 교육센터" },
+    ],
+  },
+  {
+    fields: [
+      { label: "교육 시간", isHeader: true },
+      { placeholder: "(시간)", exampleValue: "총 40시간 (1일 8시간)" },
+      { label: "교육비", isHeader: true },
+      { placeholder: "(비용)", exampleValue: "1,500,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청 사유", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "업무 연관성", isHeader: true },
+      { placeholder: "(업무 연관성)", exampleValue: "현재 진행 중인 클라우드 전환 프로젝트 담당으로 AWS 전문 역량 필요. 자격증 취득 시 프로젝트 품질 향상 및 운영 비용 20% 절감 기대", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "비용 처리", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "교육비", isHeader: true },
+      { placeholder: "(교육비 부담)", exampleValue: "회사 전액 지원 요청" },
+      { label: "출장 처리", isHeader: true },
+      { placeholder: "(출장 여부)", exampleValue: "출장 처리 (5일간)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 25일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 서명", isHeader: true },
+      { placeholder: "신청인: ___________ (서명)", exampleValue: "신청인: 최교육 (서명)", colspan: 3 },
+    ],
+  },
+];

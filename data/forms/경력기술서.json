@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "경력기술서_DATA",
   "relatedArticle": "/w/경력기술서-작성법",
+  "relatedDocs": [
+    { "title": "이력서 양식", "url": "/forms/이력서" },
+    { "title": "자기소개서 양식", "url": "/forms/자기소개서" },
+    { "title": "경력증명서 양식", "url": "/forms/경력증명서" },
+    { "title": "재직증명서 양식", "url": "/forms/재직증명서" },
+    { "title": "표준근로계약서 양식", "url": "/forms/표준근로계약서" }
+  ],
   "tips": [
     "프로젝트명, 역할, 성과를 STAR 기법으로 작성하세요",
     "정량적 성과(매출 증가율, 업무 효율 등)를 숫자로 표현하세요",

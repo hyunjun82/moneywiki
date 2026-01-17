@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "교육훈련신청서_DATA",
   "relatedArticle": "/w/직업훈련",
+  "relatedDocs": [
+    { "title": "출장신청서 양식", "url": "/forms/출장신청서" },
+    { "title": "연차휴가신청서 양식", "url": "/forms/연차휴가신청서" },
+    { "title": "재직증명서 양식", "url": "/forms/재직증명서" },
+    { "title": "경력기술서 양식", "url": "/forms/경력기술서" },
+    { "title": "표준근로계약서 양식", "url": "/forms/표준근로계약서" }
+  ],
   "tips": [
     "교육 과정명, 일정, 비용을 구체적으로 명시하세요",
     "업무 연관성과 기대 효과를 설명하세요",

@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moj.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "경업금지계약서_DATA",
   "relatedArticle": "/w/비밀유지계약서",
+  "relatedDocs": [
+    { "title": "비밀유지계약서 양식", "url": "/forms/비밀유지계약서" },
+    { "title": "표준근로계약서 양식", "url": "/forms/표준근로계약서" },
+    { "title": "사직서 양식", "url": "/forms/사직서" },
+    { "title": "퇴직증명서 양식", "url": "/forms/퇴직증명서" },
+    { "title": "합의서 양식", "url": "/forms/합의서" }
+  ],
   "tips": [
     "금지 기간은 1~2년, 지역은 합리적 범위로 제한하세요",
     "대가(보상금)를 명시하지 않으면 법원에서 무효 판결할 수 있어요",

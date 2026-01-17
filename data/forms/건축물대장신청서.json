@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.gov.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "건축물대장신청서_DATA",
   "relatedArticle": "/w/건축물대장",
+  "relatedDocs": [
+    { "title": "등기부등본신청서 양식", "url": "/forms/등기부등본신청서" },
+    { "title": "임대차계약서 양식", "url": "/forms/임대차계약서" },
+    { "title": "매매계약서 양식", "url": "/forms/매매계약서" },
+    { "title": "가족관계증명서신청서 양식", "url": "/forms/가족관계증명서신청서" },
+    { "title": "위임장 양식", "url": "/forms/위임장" }
+  ],
   "tips": [
     "정부24에서 무료 즉시 발급 가능해요",
     "일반건축물대장과 집합건축물대장을 구분하세요 (아파트는 집합)",
