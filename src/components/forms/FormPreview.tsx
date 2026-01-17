@@ -1148,3 +1148,180 @@ export const 합의서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// 차용증 양식
+export const 차용증_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "차 용 증", exampleValue: "차 용 증", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "채권자", isHeader: true, rowspan: 3 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김채권", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민번호", isHeader: true },
+      { placeholder: "000000-0000000", exampleValue: "750101-1234567", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 역삼동 123-45", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "채무자", isHeader: true, rowspan: 3 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "박채무", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민번호", isHeader: true },
+      { placeholder: "000000-0000000", exampleValue: "850515-2345678", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 서초구 서초동 456-78", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "차용금액", isHeader: true },
+      {
+        placeholder: "금                    원정 (￦               )",
+        exampleValue: "금 이천만원정 (￦20,000,000)",
+        colspan: 3,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "차용일자", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "변제일자", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2027년 1월 14일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "이자율", isHeader: true },
+      { placeholder: "연 ____% (없으면 '없음' 기재)", exampleValue: "연 5%", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "이자지급", isHeader: true },
+      { placeholder: "(지급 방식)", exampleValue: "매월 15일 채권자 계좌로 입금", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "변제방법", isHeader: true },
+      {
+        placeholder: "(변제 방식)",
+        exampleValue: "변제일에 원금 전액을 채권자 명의 계좌(신한 110-123-456789)로 입금",
+        colspan: 3,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "특약사항", isHeader: true },
+      {
+        placeholder: "(특이사항 기재)",
+        exampleValue: "1. 채무자가 변제 기한을 어길 경우 연 20%의 지연손해금을 지급한다.\n2. 이 차용증에 관한 분쟁은 서울중앙지방법원을 관할로 한다.",
+        colspan: 3,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "채무자", isHeader: true },
+      { placeholder: "성명:              (인)", exampleValue: "성명: 박채무 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 영수증 양식
+export const 영수증_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "영 수 증", exampleValue: "영 수 증", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "영수증 번호", isHeader: true },
+      { placeholder: "No.                ", exampleValue: "No. 2026-0115-001", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수취인", isHeader: true },
+      { placeholder: "(받는 분)", exampleValue: "(주)한국무역 귀중", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "금액", isHeader: true },
+      {
+        placeholder: "금                    원정 (￦               )",
+        exampleValue: "금 오백만원정 (￦5,000,000)",
+        colspan: 3,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "내역", isHeader: true },
+      { placeholder: "(거래 내용)", exampleValue: "2026년 1월 컨설팅 용역비", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발행일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발행인", isHeader: true, rowspan: 3 },
+      { label: "상호", isHeader: true },
+      { placeholder: "(상호명)", exampleValue: "(주)머니위키솔루션", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업자번호", isHeader: true },
+      { placeholder: "000-00-00000", exampleValue: "123-45-67890", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)      (인)", exampleValue: "홍길동 (인)", colspan: 2 },
+    ],
+  },
+];
