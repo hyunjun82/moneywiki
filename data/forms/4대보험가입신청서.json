@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.nhis.or.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "사대보험가입신청서_DATA",
   "relatedArticle": "/w/4대보험",
+  "relatedDocs": [
+    { "title": "4대보험자격상실신고서 양식", "url": "/forms/4대보험자격상실신고서" },
+    { "title": "표준근로계약서 양식", "url": "/forms/표준근로계약서" },
+    { "title": "재직증명서 양식", "url": "/forms/재직증명서" },
+    { "title": "급여명세서 양식", "url": "/forms/급여명세서" },
+    { "title": "퇴직증명서 양식", "url": "/forms/퇴직증명서" }
+  ],
   "tips": [
     "입사일로부터 14일 이내 반드시 제출하세요",
     "주민등록번호와 은행 계좌번호를 정확히 기재하세요",

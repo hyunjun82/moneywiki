@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.scourt.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "개명신청서_DATA",
   "relatedArticle": "/w/개명신청",
+  "relatedDocs": [
+    { "title": "가족관계증명서신청서 양식", "url": "/forms/가족관계증명서신청서" },
+    { "title": "등기부등본신청서 양식", "url": "/forms/등기부등본신청서" },
+    { "title": "본인서명사실확인서 양식", "url": "/forms/본인서명사실확인서" },
+    { "title": "위임장 양식", "url": "/forms/위임장" },
+    { "title": "진술서 양식", "url": "/forms/진술서" }
+  ],
   "tips": [
     "정당한 사유(성명 혼동, 난해한 한자, 종교적 이유 등)가 필요해요",
     "신청 수수료는 5,000원이고, 법원 허가까지 약 1~2개월 소요돼요",

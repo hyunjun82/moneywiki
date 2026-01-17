@@ -4470,3 +4470,388 @@ export const 자기소개서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// 4대보험가입신청서 미리보기 데이터
+export const 사대보험가입신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "4대보험 가입 신청서", exampleValue: "4 대 보 험 가 입 신 청 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장명", isHeader: true },
+      { placeholder: "(사업장명)", exampleValue: "(주)한국테크" },
+      { label: "사업자등록번호", isHeader: true },
+      { placeholder: "(사업자등록번호)", exampleValue: "123-45-67890" },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장 주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 테헤란로 100, 5층", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "대표자명", isHeader: true },
+      { placeholder: "(대표자)", exampleValue: "김대표" },
+      { label: "담당자 연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "02-1234-5678" },
+    ],
+  },
+  {
+    fields: [
+      { label: "근로자 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "박신입" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "950315-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "입사일", isHeader: true },
+      { placeholder: "(입사일)", exampleValue: "2026년 1월 15일" },
+      { label: "직종", isHeader: true },
+      { placeholder: "(직종)", exampleValue: "사무직" },
+    ],
+  },
+  {
+    fields: [
+      { label: "월 보수", isHeader: true },
+      { placeholder: "(월 보수액)", exampleValue: "3,500,000원" },
+      { label: "근무형태", isHeader: true },
+      { placeholder: "(근무형태)", exampleValue: "정규직" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(근로자 주소)", exampleValue: "서울시 송파구 올림픽로 123, 101동 501호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "가입 보험 내역", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "국민연금", isHeader: true },
+      { placeholder: "(가입여부)", exampleValue: "가입" },
+      { label: "건강보험", isHeader: true },
+      { placeholder: "(가입여부)", exampleValue: "가입" },
+    ],
+  },
+  {
+    fields: [
+      { label: "고용보험", isHeader: true },
+      { placeholder: "(가입여부)", exampleValue: "가입" },
+      { label: "산재보험", isHeader: true },
+      { placeholder: "(가입여부)", exampleValue: "가입" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 20일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인", isHeader: true },
+      { placeholder: "사업장명: ___________ 대표자: ___________ (인)", exampleValue: "사업장명: (주)한국테크 대표자: 김대표 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 4대보험자격상실신고서 미리보기 데이터
+export const 사대보험자격상실신고서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "4대보험 자격상실 신고서", exampleValue: "4 대 보 험 자 격 상 실 신 고 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장명", isHeader: true },
+      { placeholder: "(사업장명)", exampleValue: "(주)한국무역" },
+      { label: "사업자등록번호", isHeader: true },
+      { placeholder: "(사업자등록번호)", exampleValue: "987-65-43210" },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장 주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 중구 세종대로 50, 10층", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "근로자 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "최퇴사" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "880720-2******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "입사일", isHeader: true },
+      { placeholder: "(입사일)", exampleValue: "2022년 3월 1일" },
+      { label: "퇴사일", isHeader: true },
+      { placeholder: "(퇴사일)", exampleValue: "2026년 1월 31일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "상실 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "상실 사유", isHeader: true },
+      { placeholder: "(상실 사유)", exampleValue: "자진 퇴직 (이직)" },
+      { label: "상실일", isHeader: true },
+      { placeholder: "(상실일)", exampleValue: "2026년 2월 1일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "최종 보수", isHeader: true },
+      { placeholder: "(최종 월 보수)", exampleValue: "4,200,000원" },
+      { label: "퇴직금 지급", isHeader: true },
+      { placeholder: "(퇴직금 지급여부)", exampleValue: "지급 예정" },
+    ],
+  },
+  {
+    fields: [
+      { label: "상실 보험 내역", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "국민연금", isHeader: true },
+      { placeholder: "(상실여부)", exampleValue: "상실" },
+      { label: "건강보험", isHeader: true },
+      { placeholder: "(상실여부)", exampleValue: "상실" },
+    ],
+  },
+  {
+    fields: [
+      { label: "고용보험", isHeader: true },
+      { placeholder: "(상실여부)", exampleValue: "상실" },
+      { label: "산재보험", isHeader: true },
+      { placeholder: "(상실여부)", exampleValue: "상실" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 2월 5일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고인", isHeader: true },
+      { placeholder: "사업장명: ___________ 대표자: ___________ (인)", exampleValue: "사업장명: (주)한국무역 대표자: 박사장 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 가족관계증명서신청서 미리보기 데이터
+export const 가족관계증명서신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "가족관계증명서 발급 신청서", exampleValue: "가 족 관 계 증 명 서 발 급 신 청 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김가족" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "900101-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "010-1234-5678" },
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 서초구 반포대로 10" },
+    ],
+  },
+  {
+    fields: [
+      { label: "증명서 대상자", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "대상자 성명", isHeader: true },
+      { placeholder: "(대상자 성명)", exampleValue: "김가족 (본인)" },
+      { label: "대상자 주민번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "900101-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인과의 관계", isHeader: true },
+      { placeholder: "(관계)", exampleValue: "본인", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "증명서 종류", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "증명서 유형", isHeader: true },
+      { placeholder: "(기본/상세)", exampleValue: "기본증명서" },
+      { label: "발급 부수", isHeader: true },
+      { placeholder: "(부수)", exampleValue: "2부" },
+    ],
+  },
+  {
+    fields: [
+      { label: "발급 목적", isHeader: true },
+      { placeholder: "(사용 목적)", exampleValue: "은행 대출 서류 제출용" },
+      { label: "제출처", isHeader: true },
+      { placeholder: "(제출처)", exampleValue: "○○은행" },
+    ],
+  },
+  {
+    fields: [
+      { label: "수령 방법", isHeader: true },
+      { placeholder: "(수령방법)", exampleValue: "창구 수령", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 20일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 서명", isHeader: true },
+      { placeholder: "신청인: ___________ (서명)", exampleValue: "신청인: 김가족 (서명)", colspan: 3 },
+    ],
+  },
+];
+
+// 개명신청서 미리보기 데이터
+export const 개명신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "개명 허가 신청서", exampleValue: "개 명 허 가 신 청 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "현재 성명", isHeader: true },
+      { placeholder: "(현재 성명)", exampleValue: "김철수" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "950510-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "변경할 성명", isHeader: true },
+      { placeholder: "(변경할 성명)", exampleValue: "김민수" },
+      { label: "변경할 한자", isHeader: true },
+      { placeholder: "(한자)", exampleValue: "金敏秀" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 삼성로 50, 201호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "010-9876-5432" },
+      { label: "직업", isHeader: true },
+      { placeholder: "(직업)", exampleValue: "회사원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "개명 사유", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "상세 사유", isHeader: true },
+      { placeholder: "(개명 사유를 상세히 기재)", exampleValue: "현재 이름 '철수'가 너무 흔해서 동명이인이 많아 일상생활과 직장에서 혼란이 발생함. 동일 부서에 같은 이름의 동료가 있어 서류 혼동, 택배 오배송 등 실질적 불편이 지속됨.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "법정대리인 정보 (미성년자)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "법정대리인", isHeader: true },
+      { placeholder: "(해당 시 기재)", exampleValue: "해당 없음" },
+      { label: "관계", isHeader: true },
+      { placeholder: "(관계)", exampleValue: "-" },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부 서류", isHeader: true },
+      { placeholder: "(첨부 서류)", exampleValue: "가족관계증명서 1부, 기본증명서 1부, 주민등록등본 1부", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 25일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 서명", isHeader: true },
+      { placeholder: "신청인: ___________ (서명)", exampleValue: "신청인: 김철수 (서명)", colspan: 3 },
+    ],
+  },
+];

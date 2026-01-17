@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.nhis.or.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "사대보험자격상실신고서_DATA",
   "relatedArticle": "/w/4대보험",
+  "relatedDocs": [
+    { "title": "4대보험가입신청서 양식", "url": "/forms/4대보험가입신청서" },
+    { "title": "퇴직증명서 양식", "url": "/forms/퇴직증명서" },
+    { "title": "사직서 양식", "url": "/forms/사직서" },
+    { "title": "재직증명서 양식", "url": "/forms/재직증명서" },
+    { "title": "경력증명서 양식", "url": "/forms/경력증명서" }
+  ],
   "tips": [
     "퇴사일로부터 14일 이내 반드시 신고하세요",
     "상실 사유를 정확히 기재하세요 (퇴직, 사망, 근로시간 단축 등)",

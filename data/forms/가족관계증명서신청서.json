@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.gov.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "가족관계증명서신청서_DATA",
   "relatedArticle": "/w/가족관계증명서",
+  "relatedDocs": [
+    { "title": "개명신청서 양식", "url": "/forms/개명신청서" },
+    { "title": "출산휴가신청서 양식", "url": "/forms/출산휴가신청서" },
+    { "title": "육아휴직신청서 양식", "url": "/forms/육아휴직신청서" },
+    { "title": "등기부등본신청서 양식", "url": "/forms/등기부등본신청서" },
+    { "title": "위임장 양식", "url": "/forms/위임장" }
+  ],
   "tips": [
     "주민센터, 무인발급기, 정부24에서 모두 발급 가능해요",
     "본인 외 가족 것도 발급받을 수 있어요 (직계존비속, 배우자)",

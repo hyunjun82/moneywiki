@@ -47,6 +47,10 @@ import FormPreview, {
   육아휴직신청서_DATA,
   이력서_DATA,
   자기소개서_DATA,
+  사대보험가입신청서_DATA,
+  사대보험자격상실신고서_DATA,
+  가족관계증명서신청서_DATA,
+  개명신청서_DATA,
 } from "@/components/forms/FormPreview";
 import FormPageClient from "@/components/forms/FormPageClient";
 import FormSidebar from "@/components/forms/FormSidebar";
@@ -101,6 +105,10 @@ const PREVIEW_DATA_MAP: Record<string, typeof 표준근로계약서_DATA> = {
   "육아휴직신청서_DATA": 육아휴직신청서_DATA,
   "이력서_DATA": 이력서_DATA,
   "자기소개서_DATA": 자기소개서_DATA,
+  "사대보험가입신청서_DATA": 사대보험가입신청서_DATA,
+  "사대보험자격상실신고서_DATA": 사대보험자격상실신고서_DATA,
+  "가족관계증명서신청서_DATA": 가족관계증명서신청서_DATA,
+  "개명신청서_DATA": 개명신청서_DATA,
 };
 
 // 기본 프리뷰 데이터 (새 양식용) - FormRow[] 형식
