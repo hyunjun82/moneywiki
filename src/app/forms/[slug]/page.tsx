@@ -7,6 +7,7 @@ import FormPreview, {
   기간제근로계약서_DATA,
 } from "@/components/forms/FormPreview";
 import FormPageClient from "@/components/forms/FormPageClient";
+import FormSidebar from "@/components/forms/FormSidebar";
 import AdSense, { AD_SLOTS } from "@/components/AdSense";
 
 // 양식 데이터베이스
@@ -211,198 +212,204 @@ export default async function FormDownloadPage({ params }: PageProps) {
   } : null;
 
   return (
-    <main className="max-w-4xl mx-auto px-4 py-8">
-      {/* JSON-LD FAQ Schema */}
-      {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-      )}
+    <div className="max-w-7xl mx-auto px-4 py-8 flex gap-8">
+      {/* 메인 콘텐츠 */}
+      <main className="flex-1 max-w-4xl">
+        {/* JSON-LD FAQ Schema */}
+        {faqSchema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          />
+        )}
 
-      {/* 상단 전면광고 영역 */}
-      <div className="mb-6">
-        <AdSense slot={AD_SLOTS.HORIZONTAL} format="horizontal" />
-      </div>
-
-      {/* 헤더 */}
-      <div className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-neutral-500 mb-2">
-          <Link href="/" className="hover:text-emerald-600">홈</Link>
-          <span>/</span>
-          <span>양식·서식</span>
-          <span>/</span>
-          <span>{form.category}</span>
+        {/* 상단 전면광고 영역 */}
+        <div className="mb-6">
+          <AdSense slot={AD_SLOTS.HORIZONTAL} format="horizontal" />
         </div>
-        <h1 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-2">
-          {form.title}
-        </h1>
-        <p className="text-neutral-600">{form.description}</p>
-        <div className="flex items-center gap-4 mt-3 text-sm">
-          <span className="text-neutral-500">출처: {form.source}</span>
-          <span className="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded text-xs">무료</span>
-          <span className="px-2 py-0.5 bg-blue-50 text-blue-700 rounded text-xs">회원가입 없음</span>
-        </div>
-      </div>
 
-      {/* 다운로드 버튼 - <a download> 태그 사용 */}
-      <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl p-6 mb-8">
-        <h2 className="text-lg font-semibold text-neutral-800 mb-4">
-          원하는 포맷으로 다운받으세요
-        </h2>
-        <div className="flex flex-wrap gap-3">
-          {form.downloads.hwp && (
-            <a
-              href={form.downloads.hwp}
-              download={form.downloadNames?.hwp || "양식.hwp"}
-              className="flex items-center gap-2 px-5 py-3 bg-white border border-neutral-200 rounded-lg hover:border-emerald-400 hover:shadow-md transition-all cursor-pointer"
-            >
-              <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h6v6h6v10H6z"/>
-                <text x="7" y="17" fontSize="6" fontWeight="bold" fill="currentColor">HWP</text>
-              </svg>
-              <div className="text-left">
-                <div className="font-medium text-neutral-800">HWP</div>
-                <div className="text-xs text-neutral-500">한글 파일</div>
-              </div>
-            </a>
-          )}
-          {form.downloads.doc && (
-            <a
-              href={form.downloads.doc}
-              download={form.downloadNames?.doc || "양식.docx"}
-              className="flex items-center gap-2 px-5 py-3 bg-white border border-neutral-200 rounded-lg hover:border-emerald-400 hover:shadow-md transition-all cursor-pointer"
-            >
-              <svg className="w-6 h-6 text-blue-700" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h6v6h6v10H6z"/>
-                <text x="6" y="17" fontSize="5" fontWeight="bold" fill="currentColor">DOC</text>
-              </svg>
-              <div className="text-left">
-                <div className="font-medium text-neutral-800">WORD</div>
-                <div className="text-xs text-neutral-500">워드 파일</div>
-              </div>
-            </a>
-          )}
-          {form.downloads.pdf && (
-            <a
-              href={form.downloads.pdf}
-              download={form.downloadNames?.pdf || "양식.pdf"}
-              className="flex items-center gap-2 px-5 py-3 bg-white border border-neutral-200 rounded-lg hover:border-emerald-400 hover:shadow-md transition-all cursor-pointer"
-            >
-              <svg className="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h6v6h6v10H6z"/>
-                <text x="6" y="17" fontSize="5" fontWeight="bold" fill="currentColor">PDF</text>
-              </svg>
-              <div className="text-left">
-                <div className="font-medium text-neutral-800">PDF</div>
-                <div className="text-xs text-neutral-500">PDF 파일</div>
-              </div>
-            </a>
-          )}
-        </div>
-        <p className="text-xs text-neutral-500 mt-4">
-          * 고용노동부 공식 양식입니다. 클릭 시 바로 다운로드됩니다. 회원가입/로그인 필요 없음.
-        </p>
-      </div>
-
-      {/* 양식 미리보기 + 작성 예시 (탭 UI) */}
-      <FormPageClient
-        formTitle={form.shortTitle || form.title}
-        previewData={form.previewData}
-      />
-
-      {/* 중간 광고 */}
-      <div className="my-8">
-        <AdSense slot={AD_SLOTS.HORIZONTAL} format="rectangle" />
-      </div>
-
-      {/* 작성 팁 */}
-      {form.tips && form.tips.length > 0 && (
-        <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-8">
-          <h2 className="text-lg font-semibold text-neutral-800 mb-3 flex items-center gap-2">
-            <svg className="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-            </svg>
-            작성 시 주의사항
-          </h2>
-          <ul className="space-y-2">
-            {form.tips.map((tip, index) => (
-              <li key={index} className="flex items-start gap-2 text-neutral-700">
-                <span className="text-amber-600 mt-1">•</span>
-                <span>{tip}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      {/* FAQ 섹션 (SEO용) */}
-      {form.faq && form.faq.length > 0 && (
-        <div className="bg-white border border-neutral-200 rounded-xl p-6 mb-8">
-          <h2 className="text-lg font-semibold text-neutral-800 mb-4 flex items-center gap-2">
-            <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            자주 묻는 질문
-          </h2>
-          <div className="space-y-4">
-            {form.faq.map((item, index) => (
-              <details key={index} className="group border-b border-neutral-100 pb-4 last:border-b-0 last:pb-0">
-                <summary className="flex items-center justify-between cursor-pointer list-none font-medium text-neutral-800 hover:text-emerald-600">
-                  <span>Q. {item.question}</span>
-                  <svg className="w-5 h-5 text-neutral-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <p className="mt-3 text-neutral-600 pl-4 border-l-2 border-emerald-200">
-                  {item.answer}
-                </p>
-              </details>
-            ))}
+        {/* 헤더 */}
+        <div className="mb-8">
+          <div className="flex items-center gap-2 text-sm text-neutral-500 mb-2">
+            <Link href="/" className="hover:text-emerald-600">홈</Link>
+            <span>/</span>
+            <span>양식·서식</span>
+            <span>/</span>
+            <span>{form.category}</span>
+          </div>
+          <h1 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-2">
+            {form.title}
+          </h1>
+          <p className="text-neutral-600">{form.description}</p>
+          <div className="flex items-center gap-4 mt-3 text-sm">
+            <span className="text-neutral-500">출처: {form.source}</span>
+            <span className="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded text-xs">무료</span>
+            <span className="px-2 py-0.5 bg-blue-50 text-blue-700 rounded text-xs">회원가입 없음</span>
           </div>
         </div>
-      )}
 
-      {/* 관련 문서 링크 */}
-      {form.relatedArticle && (
-        <div className="bg-neutral-50 border border-neutral-200 rounded-xl p-6 mb-8">
-          <h2 className="text-lg font-semibold text-neutral-800 mb-3">
-            상세 작성법이 궁금하다면?
+        {/* 다운로드 버튼 - <a download> 태그 사용 */}
+        <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl p-6 mb-8">
+          <h2 className="text-lg font-semibold text-neutral-800 mb-4">
+            원하는 포맷으로 다운받으세요
           </h2>
-          <Link
-            href={form.relatedArticle}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            작성법 완벽 가이드 보기
-          </Link>
-          <p className="text-sm text-neutral-500 mt-2">
-            정규직, 계약직, 알바 등 상황별 작성 요령을 자세히 설명해드려요.
+          <div className="flex flex-wrap gap-3">
+            {form.downloads.hwp && (
+              <a
+                href={form.downloads.hwp}
+                download={form.downloadNames?.hwp || "양식.hwp"}
+                className="flex items-center gap-2 px-5 py-3 bg-white border border-neutral-200 rounded-lg hover:border-emerald-400 hover:shadow-md transition-all cursor-pointer"
+              >
+                <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h6v6h6v10H6z"/>
+                  <text x="7" y="17" fontSize="6" fontWeight="bold" fill="currentColor">HWP</text>
+                </svg>
+                <div className="text-left">
+                  <div className="font-medium text-neutral-800">HWP</div>
+                  <div className="text-xs text-neutral-500">한글 파일</div>
+                </div>
+              </a>
+            )}
+            {form.downloads.doc && (
+              <a
+                href={form.downloads.doc}
+                download={form.downloadNames?.doc || "양식.docx"}
+                className="flex items-center gap-2 px-5 py-3 bg-white border border-neutral-200 rounded-lg hover:border-emerald-400 hover:shadow-md transition-all cursor-pointer"
+              >
+                <svg className="w-6 h-6 text-blue-700" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h6v6h6v10H6z"/>
+                  <text x="6" y="17" fontSize="5" fontWeight="bold" fill="currentColor">DOC</text>
+                </svg>
+                <div className="text-left">
+                  <div className="font-medium text-neutral-800">WORD</div>
+                  <div className="text-xs text-neutral-500">워드 파일</div>
+                </div>
+              </a>
+            )}
+            {form.downloads.pdf && (
+              <a
+                href={form.downloads.pdf}
+                download={form.downloadNames?.pdf || "양식.pdf"}
+                className="flex items-center gap-2 px-5 py-3 bg-white border border-neutral-200 rounded-lg hover:border-emerald-400 hover:shadow-md transition-all cursor-pointer"
+              >
+                <svg className="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h6v6h6v10H6z"/>
+                  <text x="6" y="17" fontSize="5" fontWeight="bold" fill="currentColor">PDF</text>
+                </svg>
+                <div className="text-left">
+                  <div className="font-medium text-neutral-800">PDF</div>
+                  <div className="text-xs text-neutral-500">PDF 파일</div>
+                </div>
+              </a>
+            )}
+          </div>
+          <p className="text-xs text-neutral-500 mt-4">
+            * 고용노동부 공식 양식입니다. 클릭 시 바로 다운로드됩니다. 회원가입/로그인 필요 없음.
           </p>
         </div>
-      )}
 
-      {/* 하단 광고 */}
-      <div className="mt-8">
-        <AdSense slot={AD_SLOTS.HORIZONTAL} format="horizontal" />
-      </div>
+        {/* 양식 미리보기 + 작성 예시 (탭 UI) */}
+        <FormPageClient
+          formTitle={form.shortTitle || form.title}
+          previewData={form.previewData}
+        />
 
-      {/* 출처 */}
-      <div className="mt-8 pt-6 border-t border-neutral-200 text-sm text-neutral-500">
-        <p>
-          출처:{" "}
-          <a
-            href={form.sourceUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-emerald-600 hover:underline"
-          >
-            {form.source}
-          </a>
-        </p>
-      </div>
-    </main>
+        {/* 중간 광고 */}
+        <div className="my-8">
+          <AdSense slot={AD_SLOTS.HORIZONTAL} format="rectangle" />
+        </div>
+
+        {/* 작성 팁 */}
+        {form.tips && form.tips.length > 0 && (
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-8">
+            <h2 className="text-lg font-semibold text-neutral-800 mb-3 flex items-center gap-2">
+              <svg className="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+              작성 시 주의사항
+            </h2>
+            <ul className="space-y-2">
+              {form.tips.map((tip, index) => (
+                <li key={index} className="flex items-start gap-2 text-neutral-700">
+                  <span className="text-amber-600 mt-1">•</span>
+                  <span>{tip}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* FAQ 섹션 (SEO용) */}
+        {form.faq && form.faq.length > 0 && (
+          <div className="bg-white border border-neutral-200 rounded-xl p-6 mb-8">
+            <h2 className="text-lg font-semibold text-neutral-800 mb-4 flex items-center gap-2">
+              <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              자주 묻는 질문
+            </h2>
+            <div className="space-y-4">
+              {form.faq.map((item, index) => (
+                <details key={index} className="group border-b border-neutral-100 pb-4 last:border-b-0 last:pb-0">
+                  <summary className="flex items-center justify-between cursor-pointer list-none font-medium text-neutral-800 hover:text-emerald-600">
+                    <span>Q. {item.question}</span>
+                    <svg className="w-5 h-5 text-neutral-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <p className="mt-3 text-neutral-600 pl-4 border-l-2 border-emerald-200">
+                    {item.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* 관련 문서 링크 */}
+        {form.relatedArticle && (
+          <div className="bg-neutral-50 border border-neutral-200 rounded-xl p-6 mb-8">
+            <h2 className="text-lg font-semibold text-neutral-800 mb-3">
+              상세 작성법이 궁금하다면?
+            </h2>
+            <Link
+              href={form.relatedArticle}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              작성법 완벽 가이드 보기
+            </Link>
+            <p className="text-sm text-neutral-500 mt-2">
+              정규직, 계약직, 알바 등 상황별 작성 요령을 자세히 설명해드려요.
+            </p>
+          </div>
+        )}
+
+        {/* 하단 광고 */}
+        <div className="mt-8">
+          <AdSense slot={AD_SLOTS.HORIZONTAL} format="horizontal" />
+        </div>
+
+        {/* 출처 */}
+        <div className="mt-8 pt-6 border-t border-neutral-200 text-sm text-neutral-500">
+          <p>
+            출처:{" "}
+            <a
+              href={form.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-emerald-600 hover:underline"
+            >
+              {form.source}
+            </a>
+          </p>
+        </div>
+      </main>
+
+      {/* 사이드바 */}
+      <FormSidebar />
+    </div>
   );
 }
