@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "재직증명서_DATA",
   "relatedArticle": "/w/재직증명서-발급",
+  "relatedDocs": [
+    { "title": "경력증명서 양식", "url": "/forms/경력증명서" },
+    { "title": "퇴직증명서 양식", "url": "/forms/퇴직증명서" },
+    { "title": "납세증명서신청서 양식", "url": "/forms/납세증명서신청서" },
+    { "title": "연봉계약서 양식", "url": "/forms/연봉계약서" },
+    { "title": "대출 서류 준비", "url": "/w/대출-서류" }
+  ],
   "tips": [
     "회사 직인이 찍힌 원본이 필요한지 먼저 확인하세요",
     "입사일, 부서명, 직급이 정확하게 기재되어야 해요",

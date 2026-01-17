@@ -3287,3 +3287,367 @@ export const 가족돌봄휴가신청서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// 경력증명서 미리보기 데이터
+export const 경력증명서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "경력 증명서", exampleValue: "경 력 증 명 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "인적사항", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "홍길동" },
+      { label: "생년월일", isHeader: true },
+      { placeholder: "(생년월일)", exampleValue: "1990년 5월 15일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 테헤란로 123, 456호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "경력사항", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "근무처", isHeader: true },
+      { placeholder: "(회사명)", exampleValue: "(주)한국테크", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "근무기간", isHeader: true },
+      { placeholder: "20__년 __월 __일 ~ 20__년 __월 __일", exampleValue: "2018년 3월 2일 ~ 2023년 8월 31일 (5년 6개월)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "소속부서", isHeader: true },
+      { placeholder: "(부서명)", exampleValue: "개발팀" },
+      { label: "직위", isHeader: true },
+      { placeholder: "(직위)", exampleValue: "선임연구원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "담당업무", isHeader: true },
+      { placeholder: "(담당 업무 내용)", exampleValue: "웹 애플리케이션 개발, 시스템 설계, 신입사원 교육", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "퇴직사유", isHeader: true },
+      { placeholder: "(퇴직 사유)", exampleValue: "개인 사정에 의한 자진 퇴사", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발급일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발급기관", isHeader: true },
+      { placeholder: "(회사명, 대표자)", exampleValue: "(주)한국테크 대표이사 김철수", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "직인", isHeader: true },
+      { placeholder: "(직인)", exampleValue: "(직인)", colspan: 3 },
+    ],
+  },
+];
+
+// 재직증명서 미리보기 데이터
+export const 재직증명서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "재직 증명서", exampleValue: "재 직 증 명 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "인적사항", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "김영희" },
+      { label: "생년월일", isHeader: true },
+      { placeholder: "(생년월일)", exampleValue: "1988년 8월 20일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민번호)", exampleValue: "880820-2******", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 송파구 올림픽로 300, 101동 1502호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "재직사항", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "회사명", isHeader: true },
+      { placeholder: "(회사명)", exampleValue: "(주)대한금융", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "회사주소", isHeader: true },
+      { placeholder: "(회사 주소)", exampleValue: "서울시 중구 을지로 50", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "소속부서", isHeader: true },
+      { placeholder: "(부서명)", exampleValue: "재무팀" },
+      { label: "직위", isHeader: true },
+      { placeholder: "(직위)", exampleValue: "과장" },
+    ],
+  },
+  {
+    fields: [
+      { label: "입사일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2015년 7월 1일" },
+      { label: "재직기간", isHeader: true },
+      { placeholder: "(기간)", exampleValue: "10년 7개월" },
+    ],
+  },
+  {
+    fields: [
+      { label: "용도", isHeader: true },
+      { placeholder: "(용도)", exampleValue: "은행 대출용", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발급일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발급기관", isHeader: true },
+      { placeholder: "(회사명, 대표자)", exampleValue: "(주)대한금융 대표이사 박대표", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "직인", isHeader: true },
+      { placeholder: "(직인)", exampleValue: "(직인)", colspan: 3 },
+    ],
+  },
+];
+
+// 퇴직증명서 미리보기 데이터
+export const 퇴직증명서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "퇴직 증명서", exampleValue: "퇴 직 증 명 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "인적사항", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "이철수" },
+      { label: "생년월일", isHeader: true },
+      { placeholder: "(생년월일)", exampleValue: "1985년 3월 10일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민번호)", exampleValue: "850310-1******", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "경기도 성남시 분당구 판교로 200", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "퇴직사항", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "회사명", isHeader: true },
+      { placeholder: "(회사명)", exampleValue: "(주)미래시스템즈", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "소속부서", isHeader: true },
+      { placeholder: "(부서명)", exampleValue: "영업부" },
+      { label: "직위", isHeader: true },
+      { placeholder: "(직위)", exampleValue: "부장" },
+    ],
+  },
+  {
+    fields: [
+      { label: "입사일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2012년 4월 1일" },
+      { label: "퇴사일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2025년 12월 31일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "근속기간", isHeader: true },
+      { placeholder: "(기간)", exampleValue: "13년 9개월", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "퇴직사유", isHeader: true },
+      { placeholder: "(퇴직 사유)", exampleValue: "회사 경영상 사유로 인한 권고사직", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발급일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 10일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발급기관", isHeader: true },
+      { placeholder: "(회사명, 대표자)", exampleValue: "(주)미래시스템즈 대표이사 최미래", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "직인", isHeader: true },
+      { placeholder: "(직인)", exampleValue: "(직인)", colspan: 3 },
+    ],
+  },
+];
+
+// 납세증명서신청서 미리보기 데이터
+export const 납세증명서신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "납세증명서 신청서", exampleValue: "납 세 증 명 서 신 청 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명/상호", isHeader: true },
+      { placeholder: "(이름 또는 상호)", exampleValue: "(주)한국상사" },
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "김대표" },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업자등록번호", isHeader: true },
+      { placeholder: "(사업자번호)", exampleValue: "123-45-67890" },
+      { label: "법인등록번호", isHeader: true },
+      { placeholder: "(법인번호)", exampleValue: "110111-0012345" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 역삼로 100", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "전화번호", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "02-1234-5678" },
+      { label: "팩스번호", isHeader: true },
+      { placeholder: "(팩스번호)", exampleValue: "02-1234-5679" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청내용", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "증명서 종류", isHeader: true },
+      { placeholder: "(종류 선택)", exampleValue: "납세완납증명서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청 목적", isHeader: true },
+      { placeholder: "(목적)", exampleValue: "공공입찰 참가용", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "증명 기간", isHeader: true },
+      { placeholder: "(기간)", exampleValue: "2025년 1월 1일 ~ 2025년 12월 31일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발급 통수", isHeader: true },
+      { placeholder: "(__통)", exampleValue: "2통" },
+      { label: "수령 방법", isHeader: true },
+      { placeholder: "(방법)", exampleValue: "인터넷 발급" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 서명", isHeader: true },
+      { placeholder: "신청인: ___________ (서명)", exampleValue: "신청인: (주)한국상사 대표 김대표 (인)", colspan: 3 },
+    ],
+  },
+];

@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.nts.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "납세증명서신청서_DATA",
   "relatedArticle": "/w/납세증명서",
+  "relatedDocs": [
+    { "title": "재직증명서 양식", "url": "/forms/재직증명서" },
+    { "title": "세금계산서 양식", "url": "/forms/세금계산서" },
+    { "title": "사업자등록 신청", "url": "/w/사업자등록-신청" },
+    { "title": "홈택스 사용법", "url": "/w/홈택스-사용법" },
+    { "title": "지방세완납증명서 발급", "url": "/w/지방세완납증명서" }
+  ],
   "tips": [
     "홈택스에서 즉시 발급 가능하고 수수료 무료예요",
     "미납 세금이 있으면 완납증명서는 발급 안 돼요",

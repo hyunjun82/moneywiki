@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "퇴직증명서_DATA",
   "relatedArticle": "/w/퇴직증명서-발급",
+  "relatedDocs": [
+    { "title": "경력증명서 양식", "url": "/forms/경력증명서" },
+    { "title": "재직증명서 양식", "url": "/forms/재직증명서" },
+    { "title": "사직서 양식", "url": "/forms/사직서" },
+    { "title": "실업급여 신청 방법", "url": "/w/실업급여-신청" },
+    { "title": "이직확인서 발급", "url": "/w/이직확인서" }
+  ],
   "tips": [
     "퇴직 사유가 정확하게 기재되어야 실업급여 신청이 가능해요",
     "퇴사일과 근무 기간을 확인하세요",

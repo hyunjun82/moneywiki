@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "경력증명서_DATA",
   "relatedArticle": "/w/경력증명서-발급",
+  "relatedDocs": [
+    { "title": "재직증명서 양식", "url": "/forms/재직증명서" },
+    { "title": "퇴직증명서 양식", "url": "/forms/퇴직증명서" },
+    { "title": "사직서 양식", "url": "/forms/사직서" },
+    { "title": "4대보험 이력 조회", "url": "/w/4대보험-이력" },
+    { "title": "이력서 작성법", "url": "/w/이력서-작성법" }
+  ],
   "tips": [
     "입사일과 퇴사일, 담당 업무를 명확히 기재하세요",
     "직급과 부서명이 정확해야 해요",
