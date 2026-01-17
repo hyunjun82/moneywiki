@@ -5,12 +5,27 @@
 
 ---
 
-## FORMS_DB 데이터 구조
+## 타이틀 형식 규칙 (필수!)
+
+```
+title: "2026 [양식명] 양식 무료 다운로드 (HWP, PDF, Word)"
+shortTitle: "[양식명] (용도)" - 페이지 내 표시용
+```
+
+**예시:**
+- ✅ `"2026 표준근로계약서 양식 무료 다운로드 (HWP, PDF, Word)"`
+- ✅ `"2026 기간제근로계약서 양식 무료 다운로드 (HWP, PDF, Word)"`
+- ❌ `"기간제근로계약서 (계약직용)"` - 연도, "무료 다운로드", 파일형식 누락
+
+---
+
+## JSON 데이터 구조 (data/forms/*.json)
 
 ```typescript
-"[양식명]": {
-  title: "[연도] [양식명] 양식 무료 다운로드 (HWP, PDF, Word)",
-  shortTitle: "[양식명]",  // 페이지 내 표시용
+{
+  "slug": "[양식명-슬러그]",
+  "title": "2026 [양식명] 양식 무료 다운로드 (HWP, PDF, Word)",
+  "shortTitle": "[양식명] (용도)",  // 페이지 내 표시용
   description: "[양식 설명 - 구어체]",
   category: "[카테고리]",
   source: "[출처 기관명]",
@@ -117,26 +132,64 @@
 ```typescript
 // src/components/forms/FormPreview.tsx에 추가
 
-export const 임대차계약서_DATA = {
-  fields: [
-    { label: "임대인(갑)", value: "(이름)", subLabel: "집주인" },
-    { label: "임차인(을)", value: "(이름)", subLabel: "세입자" },
-    { label: "소재지", value: "서울특별시 OO구 OO동 OO번지" },
-    { label: "보증금", value: "금 0,000,000원 (일금 0원)" },
-    { label: "월세", value: "금 000,000원 (매월 O일 지급)" },
-    { label: "계약기간", value: "2026년 O월 O일 ~ 2028년 O월 O일 (2년)" },
-    // ... 추가 필드
-  ],
-  exampleFields: [
-    { label: "임대인(갑)", value: "홍길동", example: true },
-    { label: "임차인(을)", value: "김철수", example: true },
-    { label: "소재지", value: "서울특별시 강남구 테헤란로 123, 101동 1001호", example: true },
-    { label: "보증금", value: "금 300,000,000원 (일금 삼억원)", example: true },
-    { label: "월세", value: "금 0원 (전세)", example: true },
-    { label: "계약기간", value: "2026년 3월 1일 ~ 2028년 2월 28일 (2년)", example: true },
-    // ... 추가 필드
-  ],
-};
+export const 임대차계약서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "임대인(갑)", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "홍길동", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "임차인(을)", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "김철수", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "소재지", isHeader: true },
+      { placeholder: "서울특별시 OO구 OO동 OO번지", exampleValue: "서울특별시 강남구 테헤란로 123, 101동 1001호", colspan: 3 },
+    ],
+  },
+  // ... 추가 필드
+];
+```
+
+### ⚠️ 중요: exampleValue 필수!
+
+**"작성 예시" 탭이 제대로 표시되려면 모든 입력 필드에 `exampleValue`를 추가해야 합니다.**
+
+| 속성 | 용도 | 표시 |
+|------|------|------|
+| `placeholder` | 미리보기 탭 | 빈 칸/가이드 텍스트 |
+| `exampleValue` | 작성 예시 탭 | 파란색 실제 예시값 |
+
+```typescript
+// ❌ 잘못된 예 - 작성 예시 탭이 미리보기와 동일하게 표시됨
+{ placeholder: "____년 __월 __일" }
+
+// ✅ 올바른 예 - 작성 예시 탭에 파란색으로 실제 값 표시
+{ placeholder: "____년 __월 __일", exampleValue: "2026년 2월 1일" }
+```
+
+### FormRow 타입 정의
+
+```typescript
+interface FormField {
+  label?: string;           // 필드 라벨 (헤더용)
+  value?: string;           // 고정값
+  placeholder?: string;     // 빈 칸 표시 (미리보기용)
+  exampleValue?: string;    // 작성 예시값 (작성 예시 탭용) ⭐ 필수!
+  isHeader?: boolean;       // 헤더 스타일 적용
+  colspan?: number;         // 열 병합
+  rowspan?: number;         // 행 병합
+  className?: string;       // 추가 스타일
+}
+
+interface FormRow {
+  fields: FormField[];
+  isFullWidth?: boolean;    // 전체 너비 사용
+}
 ```
 
 ---
@@ -154,13 +207,15 @@ export const 임대차계약서_DATA = {
 ## 체크리스트 (양식 추가 시)
 
 ### 필수 사항
-- [ ] FORMS_DB에 데이터 추가
+- [ ] data/forms/에 JSON 파일 추가
 - [ ] FormPreview.tsx에 프리뷰 데이터 추가
+- [ ] **⭐ 모든 입력 필드에 exampleValue 추가** (작성 예시 탭용)
 - [ ] public/files/forms/에 파일 업로드 (HWP, PDF, DOCX)
 - [ ] title: 연도 + 양식명 + "무료 다운로드"
 - [ ] description: 구어체로 작성
 - [ ] tips: 3개 이상
 - [ ] faq: 3개 고정
+- [ ] relatedDocs: 관련 문서 5개 (양식 + 계산기 + 위키 문서)
 
 ### 선택 사항
 - [ ] relatedArticle: 관련 위키 문서 연결

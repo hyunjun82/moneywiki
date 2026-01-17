@@ -1,14 +1,15 @@
 {
   "slug": "기간제근로계약서",
-  "title": "기간제근로계약서 (계약직용)",
-  "shortTitle": "기간제근로계약서",
+  "title": "2026 기간제근로계약서 양식 무료 다운로드 (HWP, PDF, Word)",
+  "shortTitle": "기간제근로계약서 (계약직용)",
   "description": "계약 기간이 정해진 계약직, 기간제 근로자용 계약서입니다.",
   "category": "고용·근로",
   "source": "고용노동부",
   "sourceUrl": "https://www.moel.go.kr/policy/policydata/view.do?bbs_seq=20190700008",
   "downloads": {
     "hwp": "/files/forms/표준근로계약서-7종.hwp",
-    "pdf": "/files/forms/표준근로계약서-7종.pdf"
+    "pdf": "/files/forms/표준근로계약서-7종.pdf",
+    "doc": "/files/forms/표준근로계약서-7종.docx"
   },
   "downloadNames": {
     "hwp": "표준근로계약서_7종_고용노동부.hwp",
