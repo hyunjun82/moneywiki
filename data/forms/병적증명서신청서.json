@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.gov.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "병적증명서신청서_DATA",
   "relatedArticle": "/w/병적증명서",
+  "relatedDocs": [
+    { "title": "재직증명서 양식", "url": "/forms/재직증명서" },
+    { "title": "경력증명서 양식", "url": "/forms/경력증명서" },
+    { "title": "운전경력증명서신청서 양식", "url": "/forms/운전경력증명서신청서" },
+    { "title": "주민등록등본신청서 양식", "url": "/forms/주민등록등본신청서" },
+    { "title": "출입국사실증명신청서 양식", "url": "/forms/출입국사실증명신청서" }
+  ],
   "tips": [
     "정부24에서 무료 즉시 발급 가능해요",
     "병역미필자도 병역판정검사 기록 확인 가능해요",

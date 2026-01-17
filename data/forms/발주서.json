@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.nts.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "발주서_DATA",
   "relatedArticle": "/w/납품서-작성법",
+  "relatedDocs": [
+    { "title": "납품서 양식", "url": "/forms/납품서" },
+    { "title": "견적서 양식", "url": "/forms/견적서" },
+    { "title": "세금계산서 양식", "url": "/forms/세금계산서" },
+    { "title": "거래명세서 양식", "url": "/forms/거래명세서" },
+    { "title": "물품매매계약서 양식", "url": "/forms/물품매매계약서" }
+  ],
   "tips": [
     "발주번호를 반드시 기재해서 납품서와 매칭되도록 관리하세요",
     "납품 기한과 장소를 명확히 적어야 분쟁을 예방할 수 있어요",

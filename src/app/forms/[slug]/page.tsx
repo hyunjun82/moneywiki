@@ -59,6 +59,9 @@ import FormPreview, {
   급여명세서_DATA,
   납품서_DATA,
   등기부등본신청서_DATA,
+  발주서_DATA,
+  법인설립등기신청서_DATA,
+  병적증명서신청서_DATA,
 } from "@/components/forms/FormPreview";
 import FormPageClient from "@/components/forms/FormPageClient";
 import FormSidebar from "@/components/forms/FormSidebar";
@@ -125,6 +128,9 @@ const PREVIEW_DATA_MAP: Record<string, typeof 표준근로계약서_DATA> = {
   "급여명세서_DATA": 급여명세서_DATA,
   "납품서_DATA": 납품서_DATA,
   "등기부등본신청서_DATA": 등기부등본신청서_DATA,
+  "발주서_DATA": 발주서_DATA,
+  "법인설립등기신청서_DATA": 법인설립등기신청서_DATA,
+  "병적증명서신청서_DATA": 병적증명서신청서_DATA,
 };
 
 // 기본 프리뷰 데이터 (새 양식용) - FormRow[] 형식
