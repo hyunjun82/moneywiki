@@ -395,3 +395,53 @@ export const 임대차계약서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// 사직서 미리보기 데이터
+export const 사직서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "사 직 서", exampleValue: "사 직 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "홍길동", colspan: 1 },
+      { label: "소속", isHeader: true },
+      { placeholder: "(부서명)", exampleValue: "개발팀" },
+    ],
+  },
+  {
+    fields: [
+      { label: "직위", isHeader: true },
+      { placeholder: "(직위)", exampleValue: "대리", colspan: 1 },
+      { label: "입사일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2022년 3월 2일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "퇴직 희망일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 2월 28일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사직 사유", isHeader: true },
+      { placeholder: "(사직 사유를 기재하세요)", exampleValue: "일신상의 사유로 사직합니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제출일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성자", isHeader: true },
+      { placeholder: "성명:              (인)", exampleValue: "성명: 홍길동 (인)", colspan: 3 },
+    ],
+  },
+];

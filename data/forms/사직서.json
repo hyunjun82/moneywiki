@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "사직서_DATA",
   "relatedArticle": "/w/퇴직금-계산법",
+  "relatedDocs": [
+    { "title": "퇴직금 계산기", "url": "/calculators/severance-pay" },
+    { "title": "권고사직 vs 자진퇴사 차이", "url": "/w/권고사직-자진퇴사-차이" },
+    { "title": "실업급여 수급조건", "url": "/w/실업급여-수급조건" },
+    { "title": "4대보험 자격상실 신고", "url": "/forms/4대보험자격상실신고서" },
+    { "title": "경력증명서 양식", "url": "/forms/경력증명서" }
+  ],
   "tips": [
     "퇴사 희망일 최소 30일 전에 제출하는 게 좋아요",
     "사직 사유는 '일신상의 사유'로 적어도 충분해요",
