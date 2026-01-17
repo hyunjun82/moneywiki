@@ -4053,3 +4053,420 @@ export const 휴직신청서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// 출산휴가신청서 미리보기 데이터
+export const 출산휴가신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "출산휴가 신청서", exampleValue: "출 산 휴 가 신 청 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김출산" },
+      { label: "사원번호", isHeader: true },
+      { placeholder: "(사원번호)", exampleValue: "2023-0045" },
+    ],
+  },
+  {
+    fields: [
+      { label: "부서", isHeader: true },
+      { placeholder: "(소속 부서)", exampleValue: "마케팅팀" },
+      { label: "직급", isHeader: true },
+      { placeholder: "(직급)", exampleValue: "대리" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "010-5678-1234" },
+      { label: "입사일", isHeader: true },
+      { placeholder: "(입사일)", exampleValue: "2023년 3월 2일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "출산 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "출산 예정일", isHeader: true },
+      { placeholder: "(출산 예정일)", exampleValue: "2026년 4월 15일" },
+      { label: "임신 주수", isHeader: true },
+      { placeholder: "(임신 주수)", exampleValue: "32주" },
+    ],
+  },
+  {
+    fields: [
+      { label: "다태아 여부", isHeader: true },
+      { placeholder: "단태아/다태아", exampleValue: "단태아" },
+      { label: "산전진료 병원", isHeader: true },
+      { placeholder: "(병원명)", exampleValue: "서울여성병원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴가 신청 내역", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴가 시작일", isHeader: true },
+      { placeholder: "(시작일)", exampleValue: "2026년 3월 15일" },
+      { label: "휴가 종료일", isHeader: true },
+      { placeholder: "(종료일)", exampleValue: "2026년 6월 12일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴가 기간", isHeader: true },
+      { placeholder: "(총 일수)", exampleValue: "90일 (산전 30일 + 산후 60일)" },
+      { label: "복직 예정일", isHeader: true },
+      { placeholder: "(복직 예정일)", exampleValue: "2026년 6월 13일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부 서류", isHeader: true },
+      { placeholder: "(첨부 서류)", exampleValue: "출산 예정일 확인서 1부, 산모수첩 사본 1부", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 2월 10일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 서명", isHeader: true },
+      { placeholder: "신청인: ___________ (서명)", exampleValue: "신청인: 김출산 (서명)", colspan: 3 },
+    ],
+  },
+];
+
+// 육아휴직신청서 미리보기 데이터
+export const 육아휴직신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "육아휴직 신청서", exampleValue: "육 아 휴 직 신 청 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "이육아" },
+      { label: "사원번호", isHeader: true },
+      { placeholder: "(사원번호)", exampleValue: "2021-0089" },
+    ],
+  },
+  {
+    fields: [
+      { label: "부서", isHeader: true },
+      { placeholder: "(소속 부서)", exampleValue: "인사팀" },
+      { label: "직급", isHeader: true },
+      { placeholder: "(직급)", exampleValue: "과장" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "010-7890-4567" },
+      { label: "입사일", isHeader: true },
+      { placeholder: "(입사일)", exampleValue: "2021년 7월 1일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "자녀 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "자녀 성명", isHeader: true },
+      { placeholder: "(자녀 성명)", exampleValue: "이하늘" },
+      { label: "자녀 생년월일", isHeader: true },
+      { placeholder: "(생년월일)", exampleValue: "2024년 8월 20일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "자녀 나이", isHeader: true },
+      { placeholder: "(만 나이)", exampleValue: "만 1세" },
+      { label: "관계", isHeader: true },
+      { placeholder: "(관계)", exampleValue: "아들" },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴직 신청 내역", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴직 시작일", isHeader: true },
+      { placeholder: "(시작일)", exampleValue: "2026년 3월 1일" },
+      { label: "휴직 종료일", isHeader: true },
+      { placeholder: "(종료일)", exampleValue: "2027년 2월 28일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴직 기간", isHeader: true },
+      { placeholder: "(총 기간)", exampleValue: "12개월" },
+      { label: "복직 예정일", isHeader: true },
+      { placeholder: "(복직 예정일)", exampleValue: "2027년 3월 1일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴직 사유", isHeader: true },
+      { placeholder: "(휴직 사유)", exampleValue: "만 8세 이하 자녀 양육을 위한 육아휴직", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "비상연락처", isHeader: true },
+      { placeholder: "(비상연락처)", exampleValue: "배우자: 010-1234-8765", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부 서류", isHeader: true },
+      { placeholder: "(첨부 서류)", exampleValue: "가족관계증명서 1부, 주민등록등본 1부", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 25일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 서명", isHeader: true },
+      { placeholder: "신청인: ___________ (서명)", exampleValue: "신청인: 이육아 (서명)", colspan: 3 },
+    ],
+  },
+];
+
+// 이력서 미리보기 데이터
+export const 이력서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "이력서", exampleValue: "이 력 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "기본 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "홍길동" },
+      { label: "한자", isHeader: true },
+      { placeholder: "(한자)", exampleValue: "洪吉童" },
+    ],
+  },
+  {
+    fields: [
+      { label: "생년월일", isHeader: true },
+      { placeholder: "(생년월일)", exampleValue: "1995년 3월 15일 (만 30세)" },
+      { label: "성별", isHeader: true },
+      { placeholder: "(성별)", exampleValue: "남" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "010-1234-5678" },
+      { label: "이메일", isHeader: true },
+      { placeholder: "(이메일)", exampleValue: "hong@email.com" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 테헤란로 123, 402호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "학력", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "기간", isHeader: true },
+      { placeholder: "(입학~졸업)", exampleValue: "2014.03 ~ 2018.02" },
+      { label: "학교명", isHeader: true },
+      { placeholder: "(학교명)", exampleValue: "한국대학교" },
+    ],
+  },
+  {
+    fields: [
+      { label: "전공", isHeader: true },
+      { placeholder: "(전공)", exampleValue: "경영학과" },
+      { label: "졸업구분", isHeader: true },
+      { placeholder: "(졸업구분)", exampleValue: "졸업" },
+    ],
+  },
+  {
+    fields: [
+      { label: "경력", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "기간", isHeader: true },
+      { placeholder: "(근무기간)", exampleValue: "2018.03 ~ 2023.12" },
+      { label: "회사명", isHeader: true },
+      { placeholder: "(회사명)", exampleValue: "(주)ABC테크" },
+    ],
+  },
+  {
+    fields: [
+      { label: "직위/담당업무", isHeader: true },
+      { placeholder: "(직위/업무)", exampleValue: "대리 / 기획팀 마케팅 담당" },
+      { label: "퇴직사유", isHeader: true },
+      { placeholder: "(퇴직사유)", exampleValue: "이직" },
+    ],
+  },
+  {
+    fields: [
+      { label: "자격증", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "취득일", isHeader: true },
+      { placeholder: "(취득일)", exampleValue: "2019년 5월" },
+      { label: "자격증명", isHeader: true },
+      { placeholder: "(자격증명)", exampleValue: "컴퓨터활용능력 1급" },
+    ],
+  },
+  {
+    fields: [
+      { label: "취득일", isHeader: true },
+      { placeholder: "(취득일)", exampleValue: "2020년 3월" },
+      { label: "자격증명", isHeader: true },
+      { placeholder: "(자격증명)", exampleValue: "TOEIC 850점" },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성자", isHeader: true },
+      { placeholder: "위 기재사항은 사실과 다름없음. 작성자: _______ (인)", exampleValue: "위 기재사항은 사실과 다름없음. 작성자: 홍길동 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 자기소개서 미리보기 데이터
+export const 자기소개서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "자기소개서", exampleValue: "자 기 소 개 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "지원자 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김지원" },
+      { label: "지원 직무", isHeader: true },
+      { placeholder: "(지원 직무)", exampleValue: "마케팅" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "010-9876-5432" },
+      { label: "이메일", isHeader: true },
+      { placeholder: "(이메일)", exampleValue: "jiwon@email.com" },
+    ],
+  },
+  {
+    fields: [
+      { label: "1. 성장과정", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "내용", isHeader: true },
+      { placeholder: "(성장과정을 기술하세요)", exampleValue: "저는 서울에서 태어나 부모님의 따뜻한 사랑 속에서 성장했습니다. 어릴 때부터 책읽기를 좋아했고, 이는 자연스럽게 글쓰기에 대한 관심으로 이어졌습니다. 대학 시절 마케팅 동아리 활동을 하며 '소통의 힘'을 깨달았습니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "2. 지원동기", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "내용", isHeader: true },
+      { placeholder: "(지원동기를 기술하세요)", exampleValue: "귀사의 혁신적인 마케팅 전략과 고객 중심 철학에 깊은 감명을 받았습니다. 특히 최근 진행한 '함께 성장하는 브랜드' 캠페인은 제가 추구하는 마케팅 방향과 일치합니다. 제 경험과 열정을 귀사에서 발휘하고 싶습니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "3. 성격의 장단점", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "내용", isHeader: true },
+      { placeholder: "(성격의 장단점을 기술하세요)", exampleValue: "장점: 새로운 도전을 두려워하지 않는 도전정신과 팀원들과의 협업 능력입니다. 프로젝트 진행 시 항상 소통을 최우선으로 생각합니다. 단점: 완벽주의 성향이 있어 때로는 일 처리가 늦어질 때가 있습니다. 이를 극복하기 위해 우선순위를 정해 효율적으로 업무를 처리하고 있습니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "4. 입사 후 포부", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "내용", isHeader: true },
+      { placeholder: "(입사 후 포부를 기술하세요)", exampleValue: "입사 후 3년 내에 담당 브랜드의 인지도를 20% 향상시키는 것이 목표입니다. 이를 위해 데이터 기반 마케팅 역량을 키우고, 트렌드에 민감한 콘텐츠 기획력을 갖추겠습니다. 궁극적으로 귀사의 마케팅 팀을 이끄는 리더로 성장하고 싶습니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성자", isHeader: true },
+      { placeholder: "작성자: _______ (서명)", exampleValue: "작성자: 김지원 (서명)", colspan: 3 },
+    ],
+  },
+];

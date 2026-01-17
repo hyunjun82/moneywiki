@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "자기소개서_DATA",
   "relatedArticle": "/w/자기소개서-작성법",
+  "relatedDocs": [
+    { "title": "이력서 양식", "url": "/forms/이력서" },
+    { "title": "경력증명서 양식", "url": "/forms/경력증명서" },
+    { "title": "재직증명서 양식", "url": "/forms/재직증명서" },
+    { "title": "표준근로계약서 양식", "url": "/forms/표준근로계약서" },
+    { "title": "연봉근로계약서 양식", "url": "/forms/연봉근로계약서" }
+  ],
   "tips": [
     "회사 인재상과 직무를 먼저 분석한 후 작성하세요",
     "구체적인 경험과 에피소드로 설득력을 높이세요",

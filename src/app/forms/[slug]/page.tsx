@@ -43,6 +43,10 @@ import FormPreview, {
   연차휴가신청서_DATA,
   출장신청서_DATA,
   휴직신청서_DATA,
+  출산휴가신청서_DATA,
+  육아휴직신청서_DATA,
+  이력서_DATA,
+  자기소개서_DATA,
 } from "@/components/forms/FormPreview";
 import FormPageClient from "@/components/forms/FormPageClient";
 import FormSidebar from "@/components/forms/FormSidebar";
@@ -93,6 +97,10 @@ const PREVIEW_DATA_MAP: Record<string, typeof 표준근로계약서_DATA> = {
   "연차휴가신청서_DATA": 연차휴가신청서_DATA,
   "출장신청서_DATA": 출장신청서_DATA,
   "휴직신청서_DATA": 휴직신청서_DATA,
+  "출산휴가신청서_DATA": 출산휴가신청서_DATA,
+  "육아휴직신청서_DATA": 육아휴직신청서_DATA,
+  "이력서_DATA": 이력서_DATA,
+  "자기소개서_DATA": 자기소개서_DATA,
 };
 
 // 기본 프리뷰 데이터 (새 양식용) - FormRow[] 형식

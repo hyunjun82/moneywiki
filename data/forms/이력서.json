@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "이력서_DATA",
   "relatedArticle": "/w/이력서-작성법",
+  "relatedDocs": [
+    { "title": "자기소개서 양식", "url": "/forms/자기소개서" },
+    { "title": "경력증명서 양식", "url": "/forms/경력증명서" },
+    { "title": "재직증명서 양식", "url": "/forms/재직증명서" },
+    { "title": "퇴직증명서 양식", "url": "/forms/퇴직증명서" },
+    { "title": "표준근로계약서 양식", "url": "/forms/표준근로계약서" }
+  ],
   "tips": [
     "사진은 최근 3개월 이내 증명사진으로 준비하세요",
     "학력과 경력은 최신 순으로 작성하는 게 좋아요",

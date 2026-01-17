@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "육아휴직신청서_DATA",
   "relatedArticle": "/w/육아휴직",
+  "relatedDocs": [
+    { "title": "출산휴가신청서 양식", "url": "/forms/출산휴가신청서" },
+    { "title": "배우자출산휴가신청서 양식", "url": "/forms/배우자출산휴가신청서" },
+    { "title": "복직신청서 양식", "url": "/forms/복직신청서" },
+    { "title": "가족돌봄휴가신청서 양식", "url": "/forms/가족돌봄휴가신청서" },
+    { "title": "휴직신청서 양식", "url": "/forms/휴직신청서" }
+  ],
   "tips": [
     "휴직 시작 30일 전에 회사에 신청하세요",
     "휴직 기간과 복직 예정일을 명시하세요",

@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "출산휴가신청서_DATA",
   "relatedArticle": "/w/출산휴가",
+  "relatedDocs": [
+    { "title": "육아휴직신청서 양식", "url": "/forms/육아휴직신청서" },
+    { "title": "배우자출산휴가신청서 양식", "url": "/forms/배우자출산휴가신청서" },
+    { "title": "복직신청서 양식", "url": "/forms/복직신청서" },
+    { "title": "재직증명서 양식", "url": "/forms/재직증명서" },
+    { "title": "가족돌봄휴가신청서 양식", "url": "/forms/가족돌봄휴가신청서" }
+  ],
   "tips": [
     "출산 예정일 증명서를 첨부하세요",
     "산전 45일은 출산 전에 쓸 수 있어요",
