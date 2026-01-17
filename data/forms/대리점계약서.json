@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moj.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "대리점계약서_DATA",
   "relatedArticle": "/w/업무제휴계약서",
+  "relatedDocs": [
+    { "title": "도급계약서 양식", "url": "/forms/도급계약서" },
+    { "title": "매매계약서 양식", "url": "/forms/매매계약서" },
+    { "title": "물품매매계약서 양식", "url": "/forms/물품매매계약서" },
+    { "title": "위임장 양식", "url": "/forms/위임장" },
+    { "title": "사업자등록 신청 방법", "url": "/w/사업자등록-신청" }
+  ],
   "tips": [
     "독점 지역과 제품 범위를 명확히 정의하세요",
     "수수료율과 정산 주기를 구체적으로 적으세요",

@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moj.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "매매계약서_DATA",
   "relatedArticle": "/w/부동산-매매계약",
+  "relatedDocs": [
+    { "title": "임대차계약서 양식", "url": "/forms/임대차계약서" },
+    { "title": "물품매매계약서 양식", "url": "/forms/물품매매계약서" },
+    { "title": "영수증 양식", "url": "/forms/영수증" },
+    { "title": "위임장 양식", "url": "/forms/위임장" },
+    { "title": "등기 신청 방법", "url": "/w/등기-신청" }
+  ],
   "tips": [
     "계약금, 중도금, 잔금 지급 일정을 명확히 적으세요",
     "특약사항에 하자 보수, 위약금 조건을 반드시 기재하세요",

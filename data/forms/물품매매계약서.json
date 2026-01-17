@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moj.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "물품매매계약서_DATA",
   "relatedArticle": "/w/매매계약서-작성법",
+  "relatedDocs": [
+    { "title": "매매계약서 양식", "url": "/forms/매매계약서" },
+    { "title": "대리점계약서 양식", "url": "/forms/대리점계약서" },
+    { "title": "거래명세서 양식", "url": "/forms/거래명세서" },
+    { "title": "영수증 양식", "url": "/forms/영수증" },
+    { "title": "하자 보증 청구 방법", "url": "/w/하자보증-청구" }
+  ],
   "tips": [
     "물품 상태(신품, 중고, 하자 여부)를 상세히 기재하세요",
     "대금 지급 방법과 인도 장소, 시기를 명확히 적으세요",

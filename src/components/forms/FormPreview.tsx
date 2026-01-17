@@ -2343,3 +2343,553 @@ export const 답변서민사_DATA: FormRow[] = [
     ],
   },
 ];
+
+// 대리점계약서 양식
+export const 대리점계약서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "대리점 계약서", exampleValue: "대 리 점 계 약 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "본사(갑)", isHeader: true, rowspan: 4 },
+      { label: "상호", isHeader: true },
+      { placeholder: "(상호)", exampleValue: "(주)대한제품", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업자번호", isHeader: true },
+      { placeholder: "(사업자번호)", exampleValue: "123-45-67890", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 테헤란로 100", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "김대표", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "대리점(을)", isHeader: true, rowspan: 4 },
+      { label: "상호", isHeader: true },
+      { placeholder: "(상호)", exampleValue: "○○대리점", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업자번호", isHeader: true },
+      { placeholder: "(사업자번호)", exampleValue: "987-65-43210", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "경기도 성남시 분당구 판교로 200", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "이대리", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약 제품", isHeader: true },
+      { placeholder: "(제품명)", exampleValue: "○○브랜드 전 제품", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "판매 지역", isHeader: true },
+      { placeholder: "(지역)", exampleValue: "경기도 성남시 전역 (독점)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약 기간", isHeader: true },
+      { placeholder: "(기간)", exampleValue: "2026년 1월 15일 ~ 2028년 1월 14일 (2년)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수수료율", isHeader: true },
+      { placeholder: "(수수료율)", exampleValue: "매출액의 15%", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "정산 주기", isHeader: true },
+      { placeholder: "(정산 주기)", exampleValue: "매월 말일 마감, 익월 10일 지급", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "최소 매출", isHeader: true },
+      { placeholder: "(최소 매출)", exampleValue: "월 5,000만원 이상", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "특약사항", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      {
+        placeholder: "(특약사항)",
+        exampleValue: "1. 을은 갑의 사전 서면 동의 없이 타사 제품을 취급할 수 없다.\n2. 최소 매출 2회 연속 미달 시 갑은 계약을 해지할 수 있다.\n3. 계약 종료 시 을의 잔여 재고는 갑이 원가로 회수한다.",
+        colspan: 4,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "본사(갑) 서명", isHeader: true },
+      { placeholder: "(서명 또는 날인)", exampleValue: "(주)대한제품 대표이사 김대표 (인)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "대리점(을) 서명", isHeader: true },
+      { placeholder: "(서명 또는 날인)", exampleValue: "○○대리점 대표 이대리 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 도급계약서 양식
+export const 도급계약서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "도급 계약서", exampleValue: "도 급 계 약 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "도급인(갑)", isHeader: true, rowspan: 3 },
+      { label: "성명/상호", isHeader: true },
+      { placeholder: "(성명/상호)", exampleValue: "김도급", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 역삼동 123", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-1234-5678", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수급인(을)", isHeader: true, rowspan: 3 },
+      { label: "상호", isHeader: true },
+      { placeholder: "(상호)", exampleValue: "(주)한국인테리어", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 송파구 잠실동 456", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "02-123-4567", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "공사 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "공사명", isHeader: true },
+      { placeholder: "(공사명)", exampleValue: "강남 ○○빌딩 3층 사무실 인테리어 공사", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "공사 장소", isHeader: true },
+      { placeholder: "(공사 장소)", exampleValue: "서울시 강남구 역삼동 123 ○○빌딩 3층", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "공사 기간", isHeader: true },
+      { placeholder: "(공사 기간)", exampleValue: "2026년 2월 1일 ~ 2026년 3월 31일 (60일)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "공사 대금", isHeader: true },
+      { placeholder: "(공사 대금)", exampleValue: "금 오천만원 (₩50,000,000) 부가세 별도", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "대금 지급", isHeader: true, rowspan: 3 },
+      { label: "착수금", isHeader: true },
+      { placeholder: "(착수금)", exampleValue: "30% (1,500만원) - 계약 시", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "중도금", isHeader: true },
+      { placeholder: "(중도금)", exampleValue: "40% (2,000만원) - 공정 50% 완료 시", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "준공금", isHeader: true },
+      { placeholder: "(준공금)", exampleValue: "30% (1,500만원) - 준공 및 인도 시", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "하자 보수", isHeader: true },
+      { placeholder: "(하자 보수 기간)", exampleValue: "준공일로부터 1년간 무상 하자 보수", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "특약사항", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      {
+        placeholder: "(특약사항)",
+        exampleValue: "1. 을은 공사 기간 내 완공하지 못할 경우 지체상금(1일 0.1%)을 지급한다.\n2. 갑의 요청으로 공사 내용 변경 시 추가 비용은 별도 협의한다.\n3. 을은 공사 중 안전사고에 대한 책임을 진다.",
+        colspan: 4,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "도급인(갑) 서명", isHeader: true },
+      { placeholder: "(서명 또는 날인)", exampleValue: "김도급 (인)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수급인(을) 서명", isHeader: true },
+      { placeholder: "(서명 또는 날인)", exampleValue: "(주)한국인테리어 대표 박수급 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 매매계약서 양식
+export const 매매계약서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "부동산 매매계약서", exampleValue: "부 동 산 매 매 계 약 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "매도인(갑)", isHeader: true, rowspan: 4 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김매도", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "700101-1******", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 테헤란로 100", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-1234-5678", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "매수인(을)", isHeader: true, rowspan: 4 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "이매수", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "850515-1******", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 서초구 반포대로 200", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-9876-5432", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "매매 대상", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "소재지", isHeader: true },
+      { placeholder: "(소재지)", exampleValue: "서울시 송파구 잠실동 123-45 ○○아파트 101동 1501호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "면적", isHeader: true },
+      { placeholder: "(면적)", exampleValue: "전용 84.59㎡ (공급 112.34㎡)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "구조", isHeader: true },
+      { placeholder: "(구조)", exampleValue: "철근콘크리트조 아파트 15층", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "매매 조건", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "매매대금", isHeader: true },
+      { placeholder: "(매매대금)", exampleValue: "금 십팔억원 (₩1,800,000,000)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약금", isHeader: true },
+      { placeholder: "(계약금)", exampleValue: "금 1억8천만원 (계약 시 지급)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "중도금", isHeader: true },
+      { placeholder: "(중도금)", exampleValue: "금 5억4천만원 (2026년 3월 15일)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "잔금", isHeader: true },
+      { placeholder: "(잔금)", exampleValue: "금 10억8천만원 (2026년 5월 15일 소유권이전등기시)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "특약사항", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      {
+        placeholder: "(특약사항)",
+        exampleValue: "1. 매도인은 잔금일까지 세입자 퇴거 및 근저당권 말소를 완료한다.\n2. 매수인이 중도금을 지급하면 계약 해제가 불가하다.\n3. 현 상태 그대로 인도하며, 매도인은 숨은 하자에 대해 책임지지 않는다.",
+        colspan: 4,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "매도인(갑) 서명", isHeader: true },
+      { placeholder: "(서명 또는 날인)", exampleValue: "김매도 (인)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "매수인(을) 서명", isHeader: true },
+      { placeholder: "(서명 또는 날인)", exampleValue: "이매수 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 물품매매계약서 양식
+export const 물품매매계약서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "물품 매매계약서", exampleValue: "물 품 매 매 계 약 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "매도인(갑)", isHeader: true, rowspan: 3 },
+      { label: "상호/성명", isHeader: true },
+      { placeholder: "(상호/성명)", exampleValue: "(주)한국기계", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "경기도 화성시 동탄대로 100", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "031-123-4567", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "매수인(을)", isHeader: true, rowspan: 3 },
+      { label: "상호/성명", isHeader: true },
+      { placeholder: "(상호/성명)", exampleValue: "(주)대한제조", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "인천시 남동구 남동대로 200", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "032-987-6543", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "매매 물품", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "품목", isHeader: true },
+      { placeholder: "(품목명)", exampleValue: "CNC 밀링 머신", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "규격/모델", isHeader: true },
+      { placeholder: "(규격/모델)", exampleValue: "VMC-850 / 2025년식", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수량", isHeader: true },
+      { placeholder: "(수량)", exampleValue: "2대", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "물품 상태", isHeader: true },
+      { placeholder: "(상태)", exampleValue: "중고 (사용 6개월, 정상 작동 확인)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "매매대금", isHeader: true },
+      { placeholder: "(매매대금)", exampleValue: "금 2억원 (₩200,000,000) 부가세 별도", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "대금 지급", isHeader: true },
+      { placeholder: "(지급 방법)", exampleValue: "계약금 30% (계약 시), 잔금 70% (인도 시)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "인도 장소", isHeader: true },
+      { placeholder: "(인도 장소)", exampleValue: "매수인 공장 (인천시 남동구)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "인도 일자", isHeader: true },
+      { placeholder: "(인도 일자)", exampleValue: "2026년 2월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "하자 보증", isHeader: true },
+      { placeholder: "(하자 보증)", exampleValue: "인도일로부터 6개월간 무상 A/S", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "특약사항", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      {
+        placeholder: "(특약사항)",
+        exampleValue: "1. 매도인은 인도 전 시운전 및 정상 작동 확인 기회를 매수인에게 제공한다.\n2. 운송 비용은 매도인이 부담한다.\n3. 인도 후 발견된 숨은 하자에 대해 매도인은 3개월간 책임진다.",
+        colspan: 4,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "매도인(갑) 서명", isHeader: true },
+      { placeholder: "(서명 또는 날인)", exampleValue: "(주)한국기계 대표 김매도 (인)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "매수인(을) 서명", isHeader: true },
+      { placeholder: "(서명 또는 날인)", exampleValue: "(주)대한제조 대표 이매수 (인)", colspan: 3 },
+    ],
+  },
+];

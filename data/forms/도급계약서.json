@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moj.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "도급계약서_DATA",
   "relatedArticle": "/w/용역계약서-차이",
+  "relatedDocs": [
+    { "title": "대리점계약서 양식", "url": "/forms/대리점계약서" },
+    { "title": "매매계약서 양식", "url": "/forms/매매계약서" },
+    { "title": "견적서 양식", "url": "/forms/견적서" },
+    { "title": "세금계산서 양식", "url": "/forms/세금계산서" },
+    { "title": "하자보수 청구 방법", "url": "/w/하자보수-청구" }
+  ],
   "tips": [
     "완성 기한과 인도 장소를 명확히 정해야 해요",
     "하자 보수 기간과 책임 범위를 특약사항에 넣으세요",

@@ -27,6 +27,10 @@ import FormPreview, {
   금전소비대차계약서_DATA,
   동의서_DATA,
   답변서민사_DATA,
+  대리점계약서_DATA,
+  도급계약서_DATA,
+  매매계약서_DATA,
+  물품매매계약서_DATA,
 } from "@/components/forms/FormPreview";
 import FormPageClient from "@/components/forms/FormPageClient";
 import FormSidebar from "@/components/forms/FormSidebar";
@@ -61,6 +65,10 @@ const PREVIEW_DATA_MAP: Record<string, typeof 표준근로계약서_DATA> = {
   "금전소비대차계약서_DATA": 금전소비대차계약서_DATA,
   "동의서_DATA": 동의서_DATA,
   "답변서민사_DATA": 답변서민사_DATA,
+  "대리점계약서_DATA": 대리점계약서_DATA,
+  "도급계약서_DATA": 도급계약서_DATA,
+  "매매계약서_DATA": 매매계약서_DATA,
+  "물품매매계약서_DATA": 물품매매계약서_DATA,
 };
 
 // 기본 프리뷰 데이터 (새 양식용) - FormRow[] 형식
