@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moj.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "증여계약서_DATA",
   "relatedArticle": "/w/증여세-절세",
+  "relatedDocs": [
+    { "title": "상속포기서 양식", "url": "/forms/상속포기서" },
+    { "title": "금전소비대차계약서 양식", "url": "/forms/금전소비대차계약서" },
+    { "title": "매매계약서 양식", "url": "/forms/매매계약서" },
+    { "title": "유언장 양식", "url": "/forms/유언장" },
+    { "title": "동의서 양식", "url": "/forms/동의서" }
+  ],
   "tips": [
     "증여세 면제 한도(자녀 5천만원) 확인하고 분할 증여 고려하세요.",
     "계약서 작성 후 3개월 이내 국세청에 신고하세요. 늦으면 가산세 붙어요.",

@@ -90,6 +90,10 @@ import FormPreview, {
   전대차계약서_DATA,
   전입신고서_DATA,
   주민등록등본신청서_DATA,
+  주주총회의사록_DATA,
+  증여계약서_DATA,
+  지급명령신청서_DATA,
+  지방세완납증명서신청서_DATA,
 } from "@/components/forms/FormPreview";
 import FormPageClient from "@/components/forms/FormPageClient";
 import FormSidebar from "@/components/forms/FormSidebar";
@@ -187,6 +191,10 @@ const PREVIEW_DATA_MAP: Record<string, typeof 표준근로계약서_DATA> = {
   "전대차계약서_DATA": 전대차계약서_DATA,
   "전입신고서_DATA": 전입신고서_DATA,
   "주민등록등본신청서_DATA": 주민등록등본신청서_DATA,
+  "주주총회의사록_DATA": 주주총회의사록_DATA,
+  "증여계약서_DATA": 증여계약서_DATA,
+  "지급명령신청서_DATA": 지급명령신청서_DATA,
+  "지방세완납증명서신청서_DATA": 지방세완납증명서신청서_DATA,
 };
 
 // 기본 프리뷰 데이터 (새 양식용) - FormRow[] 형식

@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moj.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "주주총회의사록_DATA",
   "relatedArticle": "/w/주주총회-절차",
+  "relatedDocs": [
+    { "title": "이사회의사록 양식", "url": "/forms/이사회의사록" },
+    { "title": "법인설립등기신청서 양식", "url": "/forms/법인설립등기신청서" },
+    { "title": "정관 양식", "url": "/forms/정관" },
+    { "title": "위임장 양식", "url": "/forms/위임장" },
+    { "title": "인감증명위임장 양식", "url": "/forms/인감증명위임장" }
+  ],
   "tips": [
     "총회 개최 2주 전 소집통지 발송하세요. 늦으면 결의 무효될 수 있어요.",
     "의장과 기록자 서명날인 필수예요. 없으면 등기 안 돼요.",

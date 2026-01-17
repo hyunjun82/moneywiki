@@ -9204,3 +9204,427 @@ export const 주민등록등본신청서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// ========================================
+// 24차 추가: 주주총회의사록, 증여계약서, 지급명령신청서, 지방세완납증명서신청서
+// ========================================
+
+// 주주총회의사록
+export const 주주총회의사록_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "주주총회 의사록", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "회사명", isHeader: true },
+      { placeholder: "(회사명)", exampleValue: "(주)머니테크" },
+      { label: "등록번호", isHeader: true },
+      { placeholder: "(법인등록번호)", exampleValue: "110111-1234567" },
+    ],
+  },
+  {
+    fields: [
+      { label: "본점 소재지", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 테헤란로 123", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "총회 구분", isHeader: true },
+      { placeholder: "□ 정기총회  □ 임시총회", exampleValue: "☑ 정기총회 (제5기)" },
+      { label: "총회 일시", isHeader: true },
+      { placeholder: "____년 __월 __일 __시", exampleValue: "2026년 3월 25일 오전 10시" },
+    ],
+  },
+  {
+    fields: [
+      { label: "개최 장소", isHeader: true },
+      { placeholder: "(장소)", exampleValue: "본점 회의실", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발행주식 총수", isHeader: true },
+      { placeholder: "(총 주식수)", exampleValue: "100,000주" },
+      { label: "참석 주주 주식수", isHeader: true },
+      { placeholder: "(참석 주식수)", exampleValue: "85,000주 (85%)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "제1호 안건", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "안건 제목", isHeader: true },
+      { placeholder: "(안건명)", exampleValue: "제5기 재무제표 승인의 건", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "안건 내용", isHeader: true },
+      { placeholder: "(내용)", exampleValue: "2025년 1월 1일 ~ 12월 31일 재무제표 및 이익잉여금처분계산서 승인", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "표결 결과", isHeader: true },
+      { placeholder: "(결과)", exampleValue: "찬성 85,000주 (100%), 반대 0주, 기권 0주 → 가결", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제2호 안건", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "안건 제목", isHeader: true },
+      { placeholder: "(안건명)", exampleValue: "이사 선임의 건", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "안건 내용", isHeader: true },
+      { placeholder: "(내용)", exampleValue: "김대표 이사 재선임 (임기 3년)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "표결 결과", isHeader: true },
+      { placeholder: "(결과)", exampleValue: "찬성 80,000주 (94%), 반대 5,000주, 기권 0주 → 가결", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "폐회 시각", isHeader: true },
+      { placeholder: "__시 __분", exampleValue: "오전 11시 30분" },
+      { label: "작성일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 3월 25일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "의장", isHeader: true },
+      { placeholder: "(성명) (인)", exampleValue: "의장 김대표 (인)" },
+      { label: "기록자", isHeader: true },
+      { placeholder: "(성명) (인)", exampleValue: "기록자 이사무 (인)" },
+    ],
+  },
+];
+
+// 증여계약서
+export const 증여계약서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "증여계약서", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "증여자 (주는 사람)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김부모" },
+      { label: "생년월일", isHeader: true },
+      { placeholder: "(생년월일)", exampleValue: "1965년 5월 15일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 서초구 서초대로 456", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수증자 (받는 사람)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김자녀" },
+      { label: "생년월일", isHeader: true },
+      { placeholder: "(생년월일)", exampleValue: "1995년 8월 20일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 역삼로 789", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "증여자와의 관계", isHeader: true },
+      { placeholder: "(관계)", exampleValue: "자녀 (장남)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "증여 재산 내역", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "재산 종류", isHeader: true },
+      { placeholder: "□ 부동산  □ 현금  □ 주식  □ 기타", exampleValue: "☑ 현금" },
+      { label: "증여 금액", isHeader: true },
+      { placeholder: "(금액)", exampleValue: "금 50,000,000원 (오천만원정)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "재산 상세", isHeader: true },
+      { placeholder: "(상세 내역)", exampleValue: "결혼 자금 지원 목적", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "증여 조건", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "이행일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 2월 1일" },
+      { label: "이행 방법", isHeader: true },
+      { placeholder: "(방법)", exampleValue: "수증자 계좌로 이체" },
+    ],
+  },
+  {
+    fields: [
+      { label: "특약 사항", isHeader: true },
+      { placeholder: "(특약)", exampleValue: "증여세는 수증자가 부담한다", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "증여자", isHeader: true },
+      { placeholder: "(성명) (인)", exampleValue: "김부모 (인)" },
+      { label: "수증자", isHeader: true },
+      { placeholder: "(성명) (인)", exampleValue: "김자녀 (인)" },
+    ],
+  },
+];
+
+// 지급명령신청서
+export const 지급명령신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "지급명령신청서", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사건번호", isHeader: true },
+      { placeholder: "____차____호", exampleValue: "2026가소12345" },
+      { label: "관할법원", isHeader: true },
+      { placeholder: "(법원명)", exampleValue: "서울중앙지방법원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "채권자 (신청인)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김채권" },
+      { label: "주민번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "850615-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 마포구 월드컵로 100", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-1234-5678", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "채무자 (상대방)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "박채무" },
+      { label: "주민번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "900820-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 송파구 올림픽로 200", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "청구 금액", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "원금", isHeader: true },
+      { placeholder: "(금액)", exampleValue: "금 10,000,000원 (일천만원정)" },
+      { label: "이자", isHeader: true },
+      { placeholder: "(이자)", exampleValue: "연 5% (2025.6.1.부터 완제일까지)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "청구 원인", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발생 원인", isHeader: true },
+      { placeholder: "(원인)", exampleValue: "금전소비대차 (개인 대여금)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "대여일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2024년 6월 1일" },
+      { label: "변제기", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2025년 6월 1일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "청구 이유", isHeader: true },
+      { placeholder: "(상세 내용)", exampleValue: "변제기 도래 후에도 채무 이행이 없어 지급명령 신청함", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부 서류", isHeader: true },
+      { placeholder: "(서류)", exampleValue: "1. 차용증 사본 1부\n2. 계좌이체 확인서 1부\n3. 독촉 문자 내역 1부", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인", isHeader: true },
+      { placeholder: "(성명) (인)", exampleValue: "채권자 김채권 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 지방세완납증명서신청서
+export const 지방세완납증명서신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "지방세 납세(완납)증명 신청서", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명(법인명)", isHeader: true },
+      { placeholder: "(성명/법인명)", exampleValue: "홍길동" },
+      { label: "주민(사업자)번호", isHeader: true },
+      { placeholder: "(주민/사업자번호)", exampleValue: "850101-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 테헤란로 123", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-1234-5678", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "증명서 사용 목적", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "용도", isHeader: true },
+      { placeholder: "□ 관공서 제출  □ 금융기관 제출  □ 기타", exampleValue: "☑ 관공서 제출 (건축허가 신청)" },
+      { label: "제출처", isHeader: true },
+      { placeholder: "(기관명)", exampleValue: "강남구청 건축과" },
+    ],
+  },
+  {
+    fields: [
+      { label: "증명 요청 사항", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "증명 종류", isHeader: true },
+      { placeholder: "□ 완납증명  □ 납세증명  □ 세목별 증명", exampleValue: "☑ 완납증명 (전 세목)" },
+      { label: "유효 기간", isHeader: true },
+      { placeholder: "(기간)", exampleValue: "30일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "필요 부수", isHeader: true },
+      { placeholder: "(부)", exampleValue: "2부" },
+      { label: "발급 방법", isHeader: true },
+      { placeholder: "□ 방문 수령  □ 우편 발송  □ 온라인", exampleValue: "☑ 온라인 발급 (위택스)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "관련 세목", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "해당 세목", isHeader: true },
+      { placeholder: "□ 전체  □ 재산세  □ 자동차세  □ 취득세  □ 주민세", exampleValue: "☑ 전체 (지방세 전 세목)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인", isHeader: true },
+      { placeholder: "(성명) (서명)", exampleValue: "신청인 홍길동 (인)", colspan: 3 },
+    ],
+  },
+];

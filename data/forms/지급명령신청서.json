@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.scourt.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "지급명령신청서_DATA",
   "relatedArticle": "/w/지급명령-절차",
+  "relatedDocs": [
+    { "title": "소장(민사) 양식", "url": "/forms/소장민사" },
+    { "title": "차용증 양식", "url": "/forms/차용증" },
+    { "title": "내용증명 양식", "url": "/forms/내용증명" },
+    { "title": "이의신청서 양식", "url": "/forms/이의신청서" },
+    { "title": "금전소비대차계약서 양식", "url": "/forms/금전소비대차계약서" }
+  ],
   "tips": [
     "차용증, 계약서 등 증거자료 반드시 첨부하세요. 없으면 기각될 수 있어요.",
     "채무자가 이의신청 안 하면 확정돼서 강제집행 가능해요. 2주가 승부예요.",

@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.wetax.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "지방세완납증명서신청서_DATA",
   "relatedArticle": "/w/지방세완납증명서",
+  "relatedDocs": [
+    { "title": "납세증명서신청서 양식", "url": "/forms/납세증명서신청서" },
+    { "title": "사업자등록신청서 양식", "url": "/forms/사업자등록신청서" },
+    { "title": "건축물대장신청서 양식", "url": "/forms/건축물대장신청서" },
+    { "title": "등기부등본신청서 양식", "url": "/forms/등기부등본신청서" },
+    { "title": "토지대장신청서 양식", "url": "/forms/토지대장신청서" }
+  ],
   "tips": [
     "위택스에서 전국 모든 지자체 지방세를 한 번에 확인 가능해요",
     "미납 세금이 1원이라도 있으면 발급 안 돼요",
