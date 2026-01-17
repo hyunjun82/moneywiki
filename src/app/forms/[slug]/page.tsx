@@ -329,27 +329,6 @@ export default async function FormDownloadPage({ params }: PageProps) {
           </div>
         )}
 
-        {/* 관련 문서 링크 */}
-        {form.relatedArticle && (
-          <div className="bg-neutral-50 border border-neutral-200 rounded-xl p-6 mb-8">
-            <h2 className="text-lg font-semibold text-neutral-800 mb-3">
-              상세 작성법이 궁금하다면?
-            </h2>
-            <Link
-              href={form.relatedArticle}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              작성법 완벽 가이드 보기
-            </Link>
-            <p className="text-sm text-neutral-500 mt-2">
-              상황별 작성 요령을 자세히 설명해드려요.
-            </p>
-          </div>
-        )}
-
         {/* 관련 문서 (내부링크) */}
         {form.relatedDocs && form.relatedDocs.length > 0 && (
           <div className="bg-neutral-50 border border-neutral-200 rounded-xl p-6 mb-8">
