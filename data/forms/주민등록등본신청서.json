@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.gov.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "주민등록등본신청서_DATA",
   "relatedArticle": "/w/주민등록등본",
+  "relatedDocs": [
+    { "title": "전입신고서 양식", "url": "/forms/전입신고서" },
+    { "title": "가족관계증명서신청서 양식", "url": "/forms/가족관계증명서신청서" },
+    { "title": "본인서명사실확인서 양식", "url": "/forms/본인서명사실확인서" },
+    { "title": "위임장 양식", "url": "/forms/위임장" },
+    { "title": "납세증명서신청서 양식", "url": "/forms/납세증명서신청서" }
+  ],
   "tips": [
     "정부24에서 무료로 즉시 발급 가능해요",
     "주민번호 뒷자리 공개 여부를 선택할 수 있어요",

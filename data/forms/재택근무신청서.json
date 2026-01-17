@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "재택근무신청서_DATA",
   "relatedArticle": "/w/재택근무-신청",
+  "relatedDocs": [
+    { "title": "휴직신청서 양식", "url": "/forms/휴직신청서" },
+    { "title": "연차휴가신청서 양식", "url": "/forms/연차휴가신청서" },
+    { "title": "출장신청서 양식", "url": "/forms/출장신청서" },
+    { "title": "표준근로계약서 양식", "url": "/forms/표준근로계약서" },
+    { "title": "병가신청서 양식", "url": "/forms/병가신청서" }
+  ],
   "tips": [
     "재택근무 가능 직무인지 먼저 확인하세요",
     "업무 계획과 보고 방식을 구체적으로 작성하세요",

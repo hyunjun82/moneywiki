@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.gov.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "전입신고서_DATA",
   "relatedArticle": "/w/전입신고",
+  "relatedDocs": [
+    { "title": "주민등록등본신청서 양식", "url": "/forms/주민등록등본신청서" },
+    { "title": "임대차계약서 양식", "url": "/forms/임대차계약서" },
+    { "title": "확인서 양식", "url": "/forms/확인서" },
+    { "title": "위임장 양식", "url": "/forms/위임장" },
+    { "title": "가족관계증명서신청서 양식", "url": "/forms/가족관계증명서신청서" }
+  ],
   "tips": [
     "이사 후 14일 이내 신고하지 않으면 과태료 5만원 부과돼요",
     "전세 계약자는 대항력 확보를 위해 당일 신고 권장해요",

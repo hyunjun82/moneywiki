@@ -86,6 +86,10 @@ import FormPreview, {
   인감증명위임장_DATA,
   인사발령통지서_DATA,
   입금확인서_DATA,
+  재택근무신청서_DATA,
+  전대차계약서_DATA,
+  전입신고서_DATA,
+  주민등록등본신청서_DATA,
 } from "@/components/forms/FormPreview";
 import FormPageClient from "@/components/forms/FormPageClient";
 import FormSidebar from "@/components/forms/FormSidebar";
@@ -179,6 +183,10 @@ const PREVIEW_DATA_MAP: Record<string, typeof 표준근로계약서_DATA> = {
   "인감증명위임장_DATA": 인감증명위임장_DATA,
   "인사발령통지서_DATA": 인사발령통지서_DATA,
   "입금확인서_DATA": 입금확인서_DATA,
+  "재택근무신청서_DATA": 재택근무신청서_DATA,
+  "전대차계약서_DATA": 전대차계약서_DATA,
+  "전입신고서_DATA": 전입신고서_DATA,
+  "주민등록등본신청서_DATA": 주민등록등본신청서_DATA,
 };
 
 // 기본 프리뷰 데이터 (새 양식용) - FormRow[] 형식

@@ -8792,3 +8792,415 @@ export const 입금확인서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// =============================================
+// 23차: 재택근무신청서, 전대차계약서, 전입신고서, 주민등록등본신청서
+// =============================================
+
+export const 재택근무신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "재택근무 신청서", exampleValue: "재 택 근 무 신 청 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김재택" },
+      { label: "사원번호", isHeader: true },
+      { placeholder: "(사원번호)", exampleValue: "2023-0156" },
+    ],
+  },
+  {
+    fields: [
+      { label: "부서", isHeader: true },
+      { placeholder: "(부서명)", exampleValue: "개발팀" },
+      { label: "직위", isHeader: true },
+      { placeholder: "(직위)", exampleValue: "선임연구원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-1234-5678" },
+      { label: "이메일", isHeader: true },
+      { placeholder: "(이메일)", exampleValue: "kimjt@company.co.kr" },
+    ],
+  },
+  {
+    fields: [
+      { label: "재택근무 신청 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청 기간", isHeader: true },
+      { placeholder: "____년 __월 __일 ~ ____년 __월 __일", exampleValue: "2026년 2월 1일 ~ 2026년 2월 28일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "재택근무일", isHeader: true },
+      { placeholder: "(요일 선택)", exampleValue: "매주 화, 목 (주 2회)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청 사유", isHeader: true },
+      { placeholder: "(사유)", exampleValue: "프로젝트 집중 개발 및 통근 시간 절감을 통한 업무 효율성 향상", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "업무 수행 계획", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주요 업무", isHeader: true },
+      { placeholder: "(업무 내용)", exampleValue: "1. 신규 기능 개발 (API 설계 및 구현)\n2. 코드 리뷰 및 버그 수정\n3. 기술 문서 작성", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "업무 보고", isHeader: true },
+      { placeholder: "(보고 방식)", exampleValue: "매일 오전 10시 온라인 스탠드업 미팅 참여\n주간 업무 보고서 금요일 오후 5시까지 제출", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락 가능 시간", isHeader: true },
+      { placeholder: "(시간)", exampleValue: "09:00 ~ 18:00 (점심시간 12:00~13:00 제외)" },
+      { label: "근무지 주소", isHeader: true },
+      { placeholder: "(재택 주소)", exampleValue: "서울시 강남구 역삼동 123-45" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인", isHeader: true },
+      { placeholder: "(성명) (서명)", exampleValue: "신청인 김재택 (서명)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "결재", isHeader: true },
+      { placeholder: "팀장:        (서명)   /   부서장:        (서명)", exampleValue: "팀장: 이팀장 (승인) / 부서장: 박부장 (승인)", colspan: 3 },
+    ],
+  },
+];
+
+export const 전대차계약서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "전대차계약서", exampleValue: "전 대 차 계 약 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "부동산 표시", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "소재지", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 역삼동 123-45 OO빌라 301호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "면적", isHeader: true },
+      { placeholder: "전용 __㎡", exampleValue: "전용 59.5㎡ (약 18평)" },
+      { label: "구조", isHeader: true },
+      { placeholder: "(구조)", exampleValue: "아파트 / 철근콘크리트" },
+    ],
+  },
+  {
+    fields: [
+      { label: "원임대인(집주인) 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "최집주" },
+      { label: "주민번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "651010-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 서초구 서초동 789 서초타워 1502호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "전대인(원세입자) 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김전대" },
+      { label: "주민번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "850315-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 역삼동 123-45 OO빌라 301호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "전차인(새 세입자) 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "이전차" },
+      { label: "주민번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "920720-2******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 마포구 상암동 456 상암아파트 1203호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "원임대차 계약기간", isHeader: true },
+      { placeholder: "____년 __월 __일 ~ ____년 __월 __일", exampleValue: "2024년 3월 1일 ~ 2026년 2월 28일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "전대차 계약기간", isHeader: true },
+      { placeholder: "____년 __월 __일 ~ ____년 __월 __일", exampleValue: "2026년 2월 1일 ~ 2026년 2월 28일 (1개월)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "전대보증금", isHeader: true },
+      { placeholder: "금                원정", exampleValue: "금 10,000,000원정 (일천만원)" },
+      { label: "월 차임", isHeader: true },
+      { placeholder: "금                원정", exampleValue: "금 800,000원정 (매월 1일 선불)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "원임대인 동의", isHeader: true },
+      { placeholder: "(동의 여부)", exampleValue: "☑ 동의함 (동의서 별첨)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "특약사항", isHeader: true },
+      { placeholder: "(특약)", exampleValue: "1. 원임대차 계약 종료 시 본 전대차 계약은 자동 종료됨\n2. 전차인은 원임대인에게 직접 권리를 주장할 수 없음\n3. 반려동물 불가, 금연", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "전대인", isHeader: true },
+      { placeholder: "(성명) (서명)", exampleValue: "전대인 김전대 (인)" },
+      { label: "전차인", isHeader: true },
+      { placeholder: "(성명) (서명)", exampleValue: "전차인 이전차 (인)" },
+    ],
+  },
+];
+
+export const 전입신고서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "전입신고서", exampleValue: "전 입 신 고 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고인 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "홍길동" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "900115-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-1234-5678", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "이전 주소 (전출지)", isHeader: true },
+      { placeholder: "(이전 주소)", exampleValue: "서울특별시 종로구 청진동 123 청진빌라 201호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "새 주소 (전입지)", isHeader: true },
+      { placeholder: "(새 주소)", exampleValue: "서울특별시 강남구 역삼동 456 역삼아파트 1502호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "전입 일자", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일" },
+      { label: "세대주 관계", isHeader: true },
+      { placeholder: "(관계)", exampleValue: "본인 (세대주)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "같이 전입하는 세대원", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "세대원1", isHeader: true },
+      { placeholder: "(성명/주민번호/관계)", exampleValue: "김영희 / 920520-2****** / 배우자" },
+      { label: "세대원2", isHeader: true },
+      { placeholder: "(성명/주민번호/관계)", exampleValue: "홍민수 / 180310-3****** / 자녀" },
+    ],
+  },
+  {
+    fields: [
+      { label: "전입 사유", isHeader: true },
+      { placeholder: "(사유)", exampleValue: "☑ 주택 구입  □ 전세 계약  □ 직장 이동  □ 기타", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "확정일자 신청", isHeader: true },
+      { placeholder: "□ 신청  □ 미신청", exampleValue: "☑ 신청 (전세계약서 지참)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고인", isHeader: true },
+      { placeholder: "(성명) (서명)", exampleValue: "신고인 홍길동 (인)", colspan: 3 },
+    ],
+  },
+];
+
+export const 주민등록등본신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "주민등록등본 발급 신청서", exampleValue: "주민등록등본 발급 신청서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "홍길동" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "850315-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 역삼동 123-45 OO아파트 1502호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-1234-5678" },
+      { label: "세대주 여부", isHeader: true },
+      { placeholder: "(세대주/세대원)", exampleValue: "세대주" },
+    ],
+  },
+  {
+    fields: [
+      { label: "발급 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발급 통수", isHeader: true },
+      { placeholder: "( )통", exampleValue: "2통" },
+      { label: "발급 용도", isHeader: true },
+      { placeholder: "(용도)", exampleValue: "대출 신청용" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민번호 뒷자리", isHeader: true },
+      { placeholder: "□ 공개  □ 비공개", exampleValue: "☑ 비공개 (뒷자리 * 처리)" },
+      { label: "과거 주소 이력", isHeader: true },
+      { placeholder: "□ 포함  □ 미포함", exampleValue: "☑ 미포함" },
+    ],
+  },
+  {
+    fields: [
+      { label: "세대원 정보", isHeader: true },
+      { placeholder: "□ 전체  □ 일부  □ 본인만", exampleValue: "☑ 전체 (세대원 3명)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발급 방법", isHeader: true },
+      { placeholder: "□ 방문 발급  □ 온라인 발급", exampleValue: "☑ 온라인 발급 (정부24)" },
+      { label: "수수료", isHeader: true },
+      { placeholder: "(수수료)", exampleValue: "무료 (온라인)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인", isHeader: true },
+      { placeholder: "(성명) (서명)", exampleValue: "신청인 홍길동 (인)", colspan: 3 },
+    ],
+  },
+];

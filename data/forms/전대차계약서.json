@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moj.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "전대차계약서_DATA",
   "relatedArticle": "/w/전대차-주의사항",
+  "relatedDocs": [
+    { "title": "임대차계약서 양식", "url": "/forms/임대차계약서" },
+    { "title": "전입신고서 양식", "url": "/forms/전입신고서" },
+    { "title": "동의서 양식", "url": "/forms/동의서" },
+    { "title": "내용증명 양식", "url": "/forms/내용증명" },
+    { "title": "합의서 양식", "url": "/forms/합의서" }
+  ],
   "tips": [
     "반드시 원임대인(집주인)의 서면 동의를 받아야 해요",
     "전대차 기간은 원임대차 계약 기간을 초과할 수 없어요",
