@@ -350,6 +350,31 @@ export default async function FormDownloadPage({ params }: PageProps) {
           </div>
         )}
 
+        {/* 관련 문서 (내부링크) */}
+        {form.relatedDocs && form.relatedDocs.length > 0 && (
+          <div className="bg-neutral-50 border border-neutral-200 rounded-xl p-6 mb-8">
+            <h2 className="text-lg font-semibold text-neutral-800 mb-4 flex items-center gap-2">
+              <svg className="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              관련 문서
+            </h2>
+            <ul className="space-y-2">
+              {form.relatedDocs.map((doc, index) => (
+                <li key={index}>
+                  <Link
+                    href={doc.url}
+                    className="flex items-center gap-2 text-neutral-700 hover:text-emerald-600 transition-colors"
+                  >
+                    <span className="text-emerald-500">→</span>
+                    <span>{doc.title}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {/* 하단 광고 */}
         <div className="mt-8">
           <AdSense slot={AD_SLOTS.HORIZONTAL} format="horizontal" />

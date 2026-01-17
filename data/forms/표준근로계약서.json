@@ -18,6 +18,13 @@
   },
   "previewDataKey": "표준근로계약서_DATA",
   "relatedArticle": "/w/표준근로계약서-양식-무료-다운로드-작성법-2026",
+  "relatedDocs": [
+    { "title": "단시간 근로계약서 (알바용)", "url": "/forms/단시간근로계약서" },
+    { "title": "기간제 근로계약서 (계약직용)", "url": "/forms/기간제근로계약서" },
+    { "title": "연봉 근로계약서", "url": "/forms/연봉근로계약서" },
+    { "title": "2026년 최저임금 계산기", "url": "/calculators/minimum-wage" },
+    { "title": "퇴직금 계산기", "url": "/calculators/severance-pay" }
+  ],
   "tips": [
     "2026년 최저임금 10,320원 이상으로 작성하세요",
     "근로계약서는 반드시 2부 작성, 1부는 근로자에게 교부",

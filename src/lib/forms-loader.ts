@@ -7,6 +7,11 @@ export interface FAQItem {
   answer: string;
 }
 
+export interface RelatedDoc {
+  title: string;
+  url: string;
+}
+
 export interface FormData {
   slug: string;
   title: string;
@@ -27,6 +32,7 @@ export interface FormData {
   };
   previewDataKey: string;
   relatedArticle?: string;
+  relatedDocs?: RelatedDoc[];  // 관련 문서 배열 (하단 내부링크용)
   tips?: string[];
   faq?: FAQItem[];
   createdAt: string;
