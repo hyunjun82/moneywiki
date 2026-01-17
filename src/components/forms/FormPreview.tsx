@@ -5975,3 +5975,341 @@ export const 병적증명서신청서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// =============================================
+// 17차: 본인서명사실확인서, 불합격통지서, 비밀유지계약서, 사망신고서
+// =============================================
+
+export const 본인서명사실확인서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "본인서명사실 확인서", exampleValue: "본 인 서 명 사 실 확 인 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "확인서 번호", isHeader: true },
+      { placeholder: "제_____호", exampleValue: "제 2026-서울강남-00123 호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "본인 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김서명" },
+      { label: "생년월일", isHeader: true },
+      { placeholder: "(생년월일)", exampleValue: "1985년 6월 15일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "850615-1******" },
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-1234-5678" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 역삼동 123-45, 행복아파트 101동 1001호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사용 용도", isHeader: true },
+      { placeholder: "(용도)", exampleValue: "부동산 매매계약용", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "확인 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "위 본인은 본 확인서에 기재된 서명이 본인의 서명임을 확인합니다.", exampleValue: "위 본인은 본 확인서에 기재된 서명이 본인의 서명임을 확인합니다.", colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "본인 서명", isHeader: true },
+      { placeholder: "(본인 서명)", exampleValue: "김서명 (서명)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발급일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 25일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발급기관", isHeader: true },
+      { placeholder: "○○구청장 / ○○읍·면·동장", exampleValue: "서울특별시 강남구 역삼1동장", colspan: 3 },
+    ],
+  },
+];
+
+export const 불합격통지서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "불합격 통지서", exampleValue: "채 용 심 사 결 과 통 지 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수신", isHeader: true },
+      { placeholder: "(지원자 성명) 귀하", exampleValue: "홍길동 귀하", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "지원 직무", isHeader: true },
+      { placeholder: "(지원 직무)", exampleValue: "마케팅 팀 사원" },
+      { label: "지원일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 10일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "심사 결과", isHeader: true },
+      { placeholder: "(결과)", exampleValue: "불합격", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "통지 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "귀하의 채용 지원에 감사드립니다.\n\n엄정한 심사 결과, 유감스럽게도 이번 채용에서 귀하를 모시지 못하게 되었음을 알려드립니다.\n\n보내주신 열정과 노력에 깊이 감사드리며, 앞으로의 활동에 좋은 결과가 있기를 진심으로 응원합니다.", exampleValue: "귀하의 채용 지원에 감사드립니다.\n\n엄정한 심사 결과, 유감스럽게도 이번 채용에서 귀하를 모시지 못하게 되었음을 알려드립니다.\n\n보내주신 열정과 노력에 깊이 감사드리며, 앞으로의 활동에 좋은 결과가 있기를 진심으로 응원합니다.", colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "향후 안내", isHeader: true },
+      { placeholder: "(인재풀 등록 등 추가 안내)", exampleValue: "귀하의 지원서는 당사 인재풀에 1년간 보관되며, 적합한 포지션 발생 시 연락드릴 수 있습니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "통지일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 25일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발신인", isHeader: true },
+      { placeholder: "(회사명) (대표이사/인사담당)", exampleValue: "(주)머니스타트업 인사팀 드림", colspan: 3 },
+    ],
+  },
+];
+
+export const 비밀유지계약서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "비밀유지계약서 (NDA)", exampleValue: "비 밀 유 지 계 약 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "갑 (정보제공자)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "상호/성명", isHeader: true },
+      { placeholder: "(회사명/성명)", exampleValue: "(주)테크이노베이션" },
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "김대표" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 테헤란로 123", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "을 (정보수령자)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "상호/성명", isHeader: true },
+      { placeholder: "(회사명/성명)", exampleValue: "(주)파트너솔루션" },
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "박협력" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 서초구 반포대로 456", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "비밀정보 정의", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "비밀정보의 범위 및 정의", exampleValue: "1. 기술정보: 소스코드, 알고리즘, 설계문서, 특허출원 예정 기술\n2. 영업정보: 고객목록, 매출자료, 가격정책, 사업계획\n3. 기타: 위 정보와 관련하여 협의 과정에서 취득한 모든 정보", colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "비밀유지 의무", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "비밀유지 의무 내용", exampleValue: "을은 갑으로부터 제공받은 비밀정보를 다음과 같이 관리한다:\n1. 제3자에게 공개, 누설, 제공하지 않는다\n2. 본 계약의 목적 외의 용도로 사용하지 않는다\n3. 적절한 보안조치를 취하여 관리한다", colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "유지 기간", isHeader: true },
+      { placeholder: "(기간)", exampleValue: "본 계약 종료 후 3년간" },
+      { label: "위약금", isHeader: true },
+      { placeholder: "(금액)", exampleValue: "금 5,000만원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 25일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "갑 서명", isHeader: true },
+      { placeholder: "(갑) 대표이사 ___________ (인)", exampleValue: "(주)테크이노베이션 대표이사 김대표 (인)" },
+      { label: "을 서명", isHeader: true },
+      { placeholder: "(을) 대표이사 ___________ (인)", exampleValue: "(주)파트너솔루션 대표이사 박협력 (인)" },
+    ],
+  },
+];
+
+export const 사망신고서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "사 망 신 고 서", exampleValue: "사 망 신 고 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사망자 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김고인" },
+      { label: "한자", isHeader: true },
+      { placeholder: "(한자)", exampleValue: "金故人" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "450315-1******" },
+      { label: "성별", isHeader: true },
+      { placeholder: "(성별)", exampleValue: "남" },
+    ],
+  },
+  {
+    fields: [
+      { label: "등록기준지", isHeader: true },
+      { placeholder: "(본적지)", exampleValue: "서울특별시 종로구", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 역삼동 123-45", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사망 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사망 일시", isHeader: true },
+      { placeholder: "20__년 __월 __일 __시 __분", exampleValue: "2026년 1월 20일 14시 35분" },
+      { label: "사망 장소", isHeader: true },
+      { placeholder: "(장소)", exampleValue: "서울대학교병원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "사망 원인", isHeader: true },
+      { placeholder: "(사인)", exampleValue: "노환 (자연사)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고인 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김상속" },
+      { label: "관계", isHeader: true },
+      { placeholder: "(사망자와의 관계)", exampleValue: "장남" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "750820-1******" },
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-1234-5678" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 서초구 반포동 456-78", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부서류", isHeader: true },
+      { placeholder: "(첨부서류)", exampleValue: "1. 사망진단서 또는 시체검안서 1부\n2. 신고인 신분증 사본 1부", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 25일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고인 서명", isHeader: true },
+      { placeholder: "신고인: ___________ (서명 또는 날인)", exampleValue: "신고인: 김상속 (인)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제출처", isHeader: true },
+      { placeholder: "○○시(구,군)장 귀하", exampleValue: "서울특별시 강남구청장 귀하", colspan: 3 },
+    ],
+  },
+];

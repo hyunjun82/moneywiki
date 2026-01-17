@@ -62,6 +62,10 @@ import FormPreview, {
   발주서_DATA,
   법인설립등기신청서_DATA,
   병적증명서신청서_DATA,
+  본인서명사실확인서_DATA,
+  불합격통지서_DATA,
+  비밀유지계약서_DATA,
+  사망신고서_DATA,
 } from "@/components/forms/FormPreview";
 import FormPageClient from "@/components/forms/FormPageClient";
 import FormSidebar from "@/components/forms/FormSidebar";
@@ -131,6 +135,10 @@ const PREVIEW_DATA_MAP: Record<string, typeof 표준근로계약서_DATA> = {
   "발주서_DATA": 발주서_DATA,
   "법인설립등기신청서_DATA": 법인설립등기신청서_DATA,
   "병적증명서신청서_DATA": 병적증명서신청서_DATA,
+  "본인서명사실확인서_DATA": 본인서명사실확인서_DATA,
+  "불합격통지서_DATA": 불합격통지서_DATA,
+  "비밀유지계약서_DATA": 비밀유지계약서_DATA,
+  "사망신고서_DATA": 사망신고서_DATA,
 };
 
 // 기본 프리뷰 데이터 (새 양식용) - FormRow[] 형식

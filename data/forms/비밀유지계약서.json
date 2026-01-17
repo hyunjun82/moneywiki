@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moj.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "비밀유지계약서_DATA",
   "relatedArticle": "/w/경업금지계약서",
+  "relatedDocs": [
+    { "title": "경업금지계약서 양식", "url": "/forms/경업금지계약서" },
+    { "title": "업무제휴계약서 양식", "url": "/forms/업무제휴계약서" },
+    { "title": "컨설팅계약서 양식", "url": "/forms/컨설팅계약서" },
+    { "title": "용역계약서 양식", "url": "/forms/용역계약서" },
+    { "title": "외주계약서 양식", "url": "/forms/외주계약서" }
+  ],
   "tips": [
     "비밀정보의 범위를 구체적으로 정의하세요(기술, 고객정보, 재무자료 등)",
     "유지 기간을 명확히 정하세요(보통 2~5년)",

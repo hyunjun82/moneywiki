@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.gov.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "본인서명사실확인서_DATA",
   "relatedArticle": "/w/본인서명사실확인서",
+  "relatedDocs": [
+    { "title": "인감증명위임장 양식", "url": "/forms/인감증명위임장" },
+    { "title": "위임장 양식", "url": "/forms/위임장" },
+    { "title": "동의서 양식", "url": "/forms/동의서" },
+    { "title": "확인서 양식", "url": "/forms/확인서" },
+    { "title": "주민등록등본신청서 양식", "url": "/forms/주민등록등본신청서" }
+  ],
   "tips": [
     "본인이 직접 방문해야만 발급 가능해요 (대리 발급 불가)",
     "인감도장 없이 서명만으로 증명되니 편리해요",

@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "불합격통지서_DATA",
   "relatedArticle": "/w/채용절차",
+  "relatedDocs": [
+    { "title": "채용합격통지서 양식", "url": "/forms/채용합격통지서" },
+    { "title": "이력서 양식", "url": "/forms/이력서" },
+    { "title": "자기소개서 양식", "url": "/forms/자기소개서" },
+    { "title": "경력기술서 양식", "url": "/forms/경력기술서" },
+    { "title": "표준근로계약서 양식", "url": "/forms/표준근로계약서" }
+  ],
   "tips": [
     "지원자의 노력에 대한 감사 인사를 담으세요",
     "향후 채용 기회나 인재풀 등록 안내를 추가하세요",
