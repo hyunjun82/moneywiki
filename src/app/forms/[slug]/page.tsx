@@ -82,6 +82,10 @@ import FormPreview, {
   유언장_DATA,
   이사회의사록_DATA,
   이의신청서_DATA,
+  이혼신고서_DATA,
+  인감증명위임장_DATA,
+  인사발령통지서_DATA,
+  입금확인서_DATA,
 } from "@/components/forms/FormPreview";
 import FormPageClient from "@/components/forms/FormPageClient";
 import FormSidebar from "@/components/forms/FormSidebar";
@@ -171,6 +175,10 @@ const PREVIEW_DATA_MAP: Record<string, typeof 표준근로계약서_DATA> = {
   "유언장_DATA": 유언장_DATA,
   "이사회의사록_DATA": 이사회의사록_DATA,
   "이의신청서_DATA": 이의신청서_DATA,
+  "이혼신고서_DATA": 이혼신고서_DATA,
+  "인감증명위임장_DATA": 인감증명위임장_DATA,
+  "인사발령통지서_DATA": 인사발령통지서_DATA,
+  "입금확인서_DATA": 입금확인서_DATA,
 };
 
 // 기본 프리뷰 데이터 (새 양식용) - FormRow[] 형식

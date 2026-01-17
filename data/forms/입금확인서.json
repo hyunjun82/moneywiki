@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.nts.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "입금확인서_DATA",
   "relatedArticle": "/w/영수증-발급",
+  "relatedDocs": [
+    { "title": "영수증 양식", "url": "/forms/영수증" },
+    { "title": "거래명세서 양식", "url": "/forms/거래명세서" },
+    { "title": "세금계산서 양식", "url": "/forms/세금계산서" },
+    { "title": "납품서 양식", "url": "/forms/납품서" },
+    { "title": "견적서 양식", "url": "/forms/견적서" }
+  ],
   "tips": [
     "입금 날짜와 입금액을 통장 내역과 동일하게 적으세요",
     "거래 내역(품목, 계약번호)을 함께 기재하면 나중에 찾기 편해요",

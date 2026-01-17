@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "인사발령통지서_DATA",
   "relatedArticle": "/w/근로계약서",
+  "relatedDocs": [
+    { "title": "표준근로계약서 양식", "url": "/forms/표준근로계약서" },
+    { "title": "연봉협상합의서 양식", "url": "/forms/연봉협상합의서" },
+    { "title": "급여명세서 양식", "url": "/forms/급여명세서" },
+    { "title": "재직증명서 양식", "url": "/forms/재직증명서" },
+    { "title": "복직신청서 양식", "url": "/forms/복직신청서" }
+  ],
   "tips": [
     "발령 효력 발생일을 명확히 기재하세요",
     "변경되는 직위, 부서, 근무지를 구체적으로 명시하세요",

@@ -8374,3 +8374,421 @@ export const 이의신청서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// =============================================
+// 22차: 이혼신고서, 인감증명위임장, 인사발령통지서, 입금확인서
+// =============================================
+
+export const 이혼신고서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "이혼신고서", exampleValue: "이 혼 신 고 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "남편 성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김갑수" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "790315-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "등록기준지", isHeader: true },
+      { placeholder: "(본적)", exampleValue: "서울특별시 강남구 역삼동 123", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 마포구 상암동 456 상암아파트 101동 1502호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "아내 성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "이영희" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "820812-2******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "등록기준지", isHeader: true },
+      { placeholder: "(본적)", exampleValue: "경기도 성남시 분당구 정자동 789", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "경기도 용인시 수지구 죽전동 123 죽전빌라 B동 301호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "이혼 일자", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일" },
+      { label: "혼인신고일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2010년 5월 22일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "이혼 사유", isHeader: true },
+      { placeholder: "□ 협의이혼  □ 재판이혼", exampleValue: "☑ 협의이혼 (가정법원 확인 완료)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "미성년 자녀", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "자녀1 성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김민준" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "150520-3******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "친권자", isHeader: true },
+      { placeholder: "(부/모)", exampleValue: "모(이영희)" },
+      { label: "양육자", isHeader: true },
+      { placeholder: "(부/모)", exampleValue: "모(이영희)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부서류", isHeader: true },
+      { placeholder: "(첨부서류)", exampleValue: "1. 가정법원 이혼의사 확인서 1부\n2. 협의서(양육 및 친권 합의) 사본 1부", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고인", isHeader: true },
+      { placeholder: "남편 (서명) / 아내 (서명)", exampleValue: "남편 김갑수 (인) / 아내 이영희 (인)", colspan: 3 },
+    ],
+  },
+];
+
+export const 인감증명위임장_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "인감증명 발급 위임장", exampleValue: "인감증명 발급 위임장", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "위임인 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(위임인 성명)", exampleValue: "홍길동" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "751015-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 테헤란로 123 강남빌딩 5층", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-1234-5678", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "대리인(수임인) 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(대리인 성명)", exampleValue: "김대리" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "880220-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 송파구 올림픽로 456 송파아파트 201동 1003호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-9876-5432", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "위임 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발급 용도", isHeader: true },
+      { placeholder: "(용도)", exampleValue: "부동산 매매계약 체결용", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발급 통수", isHeader: true },
+      { placeholder: "( )통", exampleValue: "2통" },
+      { label: "제출처", isHeader: true },
+      { placeholder: "(제출처)", exampleValue: "○○공인중개사사무소" },
+    ],
+  },
+  {
+    fields: [
+      { label: "위임 기간", isHeader: true },
+      { placeholder: "____년 __월 __일 ~ ____년 __월 __일", exampleValue: "2026년 1월 17일 ~ 2026년 1월 31일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "위임사항", isHeader: true },
+      { placeholder: "(상세 내용)", exampleValue: "본인의 인감증명서 발급에 관한 일체의 권한을 위 대리인에게 위임합니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "위임인", isHeader: true },
+      { placeholder: "(성명) (인감)", exampleValue: "위임인 홍길동 (인감)", colspan: 3 },
+    ],
+  },
+];
+
+export const 인사발령통지서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "인사발령통지서", exampleValue: "인 사 발 령 통 지 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "문서번호", isHeader: true },
+      { placeholder: "(문서번호)", exampleValue: "인사-2026-0015호" },
+      { label: "발령일자", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 2월 1일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "수신", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김승진 님", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "소속", isHeader: true },
+      { placeholder: "(현 부서)", exampleValue: "영업본부 영업1팀" },
+      { label: "직위", isHeader: true },
+      { placeholder: "(현 직위)", exampleValue: "대리" },
+    ],
+  },
+  {
+    fields: [
+      { label: "발령 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발령 구분", isHeader: true },
+      { placeholder: "□ 승진  □ 전보  □ 전출", exampleValue: "☑ 승진" },
+      { label: "효력 발생일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 2월 1일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "변경 전 직위", isHeader: true },
+      { placeholder: "(변경 전)", exampleValue: "대리" },
+      { label: "변경 후 직위", isHeader: true },
+      { placeholder: "(변경 후)", exampleValue: "과장" },
+    ],
+  },
+  {
+    fields: [
+      { label: "변경 전 부서", isHeader: true },
+      { placeholder: "(변경 전)", exampleValue: "영업본부 영업1팀" },
+      { label: "변경 후 부서", isHeader: true },
+      { placeholder: "(변경 후)", exampleValue: "영업본부 영업1팀" },
+    ],
+  },
+  {
+    fields: [
+      { label: "변경 전 근무지", isHeader: true },
+      { placeholder: "(변경 전)", exampleValue: "본사(서울)" },
+      { label: "변경 후 근무지", isHeader: true },
+      { placeholder: "(변경 후)", exampleValue: "본사(서울)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "급여 변경", isHeader: true },
+      { placeholder: "(급여 변동 내역)", exampleValue: "연봉 5,200만원 → 6,000만원 (과장 승진에 따른 급여 조정)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발령 사유", isHeader: true },
+      { placeholder: "(발령 사유)", exampleValue: "2025년 업무 성과 및 리더십 역량 인정에 따른 승진 발령", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "참고사항", isHeader: true },
+      { placeholder: "(기타 안내사항)", exampleValue: "※ 승진 축하 행사: 2026.2.3(월) 오전 10시 본사 대회의실\n※ 신규 명함 및 사원증은 인사팀에서 별도 배부 예정", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발령일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발령권자", isHeader: true },
+      { placeholder: "(회사명) (대표이사) (인)", exampleValue: "주식회사 ABC코퍼레이션 대표이사 박경영 (인)", colspan: 3 },
+    ],
+  },
+];
+
+export const 입금확인서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "입금확인서", exampleValue: "입 금 확 인 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "문서번호", isHeader: true },
+      { placeholder: "(문서번호)", exampleValue: "입확-2026-0021호" },
+      { label: "발행일자", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "수신", isHeader: true },
+      { placeholder: "(입금자)", exampleValue: "(주)가나다상사 귀중" },
+      { label: "발신", isHeader: true },
+      { placeholder: "(수취인)", exampleValue: "(주)ABC무역" },
+    ],
+  },
+  {
+    fields: [
+      { label: "입금 내역", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "입금일자", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일" },
+      { label: "입금금액", isHeader: true },
+      { placeholder: "(금액)", exampleValue: "금 15,000,000원 (일천오백만원정)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "입금자명", isHeader: true },
+      { placeholder: "(입금자)", exampleValue: "(주)가나다상사" },
+      { label: "입금 계좌", isHeader: true },
+      { placeholder: "(은행/계좌번호)", exampleValue: "국민은행 123-45-678901" },
+    ],
+  },
+  {
+    fields: [
+      { label: "거래 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "품목/내역", isHeader: true },
+      { placeholder: "(거래 품목)", exampleValue: "사무용품 납품대금 (2026년 1월분)" },
+      { label: "계약번호", isHeader: true },
+      { placeholder: "(계약번호)", exampleValue: "계약-2026-0008" },
+    ],
+  },
+  {
+    fields: [
+      { label: "거래금액", isHeader: true },
+      { placeholder: "(총 거래금액)", exampleValue: "22,000,000원" },
+      { label: "잔액", isHeader: true },
+      { placeholder: "(미수금액)", exampleValue: "7,000,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "비고", isHeader: true },
+      { placeholder: "(특이사항)", exampleValue: "잔액 7,000,000원은 2026년 2월 15일까지 입금 예정", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "확인사항", isHeader: true },
+      { placeholder: "(확인 문구)", exampleValue: "상기 금액을 정히 수령하였음을 확인합니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발행인 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "상호", isHeader: true },
+      { placeholder: "(상호)", exampleValue: "(주)ABC무역" },
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "김무역" },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업자번호", isHeader: true },
+      { placeholder: "(사업자번호)", exampleValue: "123-45-67890" },
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "02-1234-5678" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 영등포구 여의대로 100 ABC빌딩 7층", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발행인", isHeader: true },
+      { placeholder: "(직인)", exampleValue: "(주)ABC무역 대표이사 김무역 (직인)", colspan: 3 },
+    ],
+  },
+];
