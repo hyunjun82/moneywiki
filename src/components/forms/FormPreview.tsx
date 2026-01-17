@@ -511,3 +511,79 @@ export const 위임장_DATA: FormRow[] = [
     ],
   },
 ];
+
+// 내용증명 양식
+export const 내용증명_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "내 용 증 명", exampleValue: "내 용 증 명", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발신인", isHeader: true, rowspan: 3 },
+      { label: "성명", isHeader: true },
+      { placeholder: "홍길동", exampleValue: "홍길동" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "서울시 강남구 역삼동 123-45", exampleValue: "서울시 강남구 역삼동 123-45" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "010-1234-5678", exampleValue: "010-1234-5678" },
+    ],
+  },
+  {
+    fields: [
+      { label: "수신인", isHeader: true, rowspan: 3 },
+      { label: "성명", isHeader: true },
+      { placeholder: "김철수", exampleValue: "김철수" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "서울시 서초구 서초동 456-78", exampleValue: "서울시 서초구 서초동 456-78" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "010-9876-5432", exampleValue: "010-9876-5432" },
+    ],
+  },
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "임대차보증금 반환 청구의 건", exampleValue: "임대차보증금 반환 청구의 건", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "내용", isHeader: true },
+      {
+        placeholder: "1. 귀하와 본인은 2024년 1월 15일 아래 부동산에 대하여 임대차계약을 체결하였습니다.\n\n2. 계약 내용:\n   - 소재지: 서울시 강남구 역삼동 123-45\n   - 보증금: 5,000만원\n   - 계약기간: 2024.1.15 ~ 2026.1.14\n\n3. 본인은 계약 만료일인 2026년 1월 14일까지 위 부동산을 명도할 예정이오니, 귀하는 계약 만료일에 보증금 5,000만원을 반환하여 주시기 바랍니다.\n\n4. 만약 정당한 사유 없이 보증금 반환을 지체할 경우, 법적 조치를 취할 것임을 통보합니다.",
+        exampleValue: "1. 귀하와 본인은 2024년 1월 15일 아래 부동산에 대하여 임대차계약을 체결하였습니다.\n\n2. 계약 내용:\n   - 소재지: 서울시 강남구 역삼동 123-45\n   - 보증금: 5,000만원\n   - 계약기간: 2024.1.15 ~ 2026.1.14\n\n3. 본인은 계약 만료일인 2026년 1월 14일까지 위 부동산을 명도할 예정이오니, 귀하는 계약 만료일에 보증금 5,000만원을 반환하여 주시기 바랍니다.\n\n4. 만약 정당한 사유 없이 보증금 반환을 지체할 경우, 법적 조치를 취할 것임을 통보합니다.",
+        colspan: 2,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발신인", isHeader: true },
+      { placeholder: "성명:              (인)", exampleValue: "성명: 홍길동 (인)", colspan: 2 },
+    ],
+  },
+];

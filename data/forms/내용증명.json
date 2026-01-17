@@ -4,12 +4,23 @@
   "shortTitle": "내용증명",
   "description": "법적 효력을 갖는 내용증명 양식이에요. 우편으로 발송하면 나중에 법적 분쟁 시 증거로 쓸 수 있어요.",
   "category": "법률·계약",
-  "source": "대법원",
-  "sourceUrl": "https://www.scourt.go.kr",
-  "downloads": {},
-  "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "source": "인터넷우체국",
+  "sourceUrl": "https://service.epost.go.kr",
+  "downloads": {
+    "hwp": "/files/forms/내용증명.hwp"
+  },
+  "downloadNames": {
+    "hwp": "내용증명_인터넷우체국.hwp"
+  },
+  "previewDataKey": "내용증명_DATA",
   "relatedArticle": "/w/내용증명-작성법",
+  "relatedDocs": [
+    { "title": "계약해지 통보서 양식", "url": "/forms/계약해지통보서" },
+    { "title": "임대차계약서 양식", "url": "/forms/임대차계약서" },
+    { "title": "전세보증금 반환청구 방법", "url": "/w/전세보증금-반환청구" },
+    { "title": "손해배상청구서 양식", "url": "/forms/손해배상청구서" },
+    { "title": "최고장 양식", "url": "/forms/최고장" }
+  ],
   "tips": [
     "우체국에서 내용증명 우편으로 발송하세요. 일반 우편은 증거로 인정 안 돼요.",
     "받는 사람이 수령 거부하면 '수령 거부'도 증거가 돼요. 걱정 마세요.",

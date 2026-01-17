@@ -8,6 +8,7 @@ import FormPreview, {
   임대차계약서_DATA,
   사직서_DATA,
   위임장_DATA,
+  내용증명_DATA,
 } from "@/components/forms/FormPreview";
 import FormPageClient from "@/components/forms/FormPageClient";
 import FormSidebar from "@/components/forms/FormSidebar";
@@ -23,6 +24,7 @@ const PREVIEW_DATA_MAP: Record<string, typeof 표준근로계약서_DATA> = {
   "임대차계약서_DATA": 임대차계약서_DATA,
   "사직서_DATA": 사직서_DATA,
   "위임장_DATA": 위임장_DATA,
+  "내용증명_DATA": 내용증명_DATA,
 };
 
 // 기본 프리뷰 데이터 (새 양식용) - FormRow[] 형식
