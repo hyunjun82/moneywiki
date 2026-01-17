@@ -20,6 +20,10 @@ import FormPreview, {
   진술서_DATA,
   탄원서_DATA,
   진정서_DATA,
+  거래명세서_DATA,
+  세금계산서_DATA,
+  매도청구서_DATA,
+  산재보험청구서_DATA,
 } from "@/components/forms/FormPreview";
 import FormPageClient from "@/components/forms/FormPageClient";
 import FormSidebar from "@/components/forms/FormSidebar";
@@ -47,6 +51,10 @@ const PREVIEW_DATA_MAP: Record<string, typeof 표준근로계약서_DATA> = {
   "진술서_DATA": 진술서_DATA,
   "탄원서_DATA": 탄원서_DATA,
   "진정서_DATA": 진정서_DATA,
+  "거래명세서_DATA": 거래명세서_DATA,
+  "세금계산서_DATA": 세금계산서_DATA,
+  "매도청구서_DATA": 매도청구서_DATA,
+  "산재보험청구서_DATA": 산재보험청구서_DATA,
 };
 
 // 기본 프리뷰 데이터 (새 양식용) - FormRow[] 형식

@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.nts.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "거래명세서_DATA",
   "relatedArticle": "/w/세금계산서-발급",
+  "relatedDocs": [
+    { "title": "세금계산서 양식", "url": "/forms/세금계산서" },
+    { "title": "견적서 양식", "url": "/forms/견적서" },
+    { "title": "납품서 양식", "url": "/forms/납품서" },
+    { "title": "발주서 양식", "url": "/forms/발주서" },
+    { "title": "영수증 양식", "url": "/forms/영수증" }
+  ],
   "tips": [
     "거래일자, 품목, 수량, 단가를 정확히 기재하세요",
     "세금계산서 발행 전 거래명세서로 거래 내역을 먼저 확인하세요",

@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.comwel.or.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "산재보험청구서_DATA",
   "relatedArticle": "/w/산재보험",
+  "relatedDocs": [
+    { "title": "경위서 양식", "url": "/forms/경위서" },
+    { "title": "진술서 양식", "url": "/forms/진술서" },
+    { "title": "4대보험가입신청서 양식", "url": "/forms/4대보험가입신청서" },
+    { "title": "병가신청서 양식", "url": "/forms/병가신청서" },
+    { "title": "산재보험 신청 방법", "url": "/w/산재보험" }
+  ],
   "tips": [
     "사고 발생 즉시 회사에 보고하고 신고서를 작성하세요",
     "의사 진단서와 소견서를 첨부하세요",

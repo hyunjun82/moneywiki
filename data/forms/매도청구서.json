@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moj.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "매도청구서_DATA",
   "relatedArticle": "/w/공유물-분할",
+  "relatedDocs": [
+    { "title": "매매계약서 양식", "url": "/forms/매매계약서" },
+    { "title": "내용증명 양식", "url": "/forms/내용증명" },
+    { "title": "합의서 양식", "url": "/forms/합의서" },
+    { "title": "임대차계약서 양식", "url": "/forms/임대차계약서" },
+    { "title": "공유물분할 방법", "url": "/w/공유물-분할" }
+  ],
   "tips": [
     "시가 감정평가서 첨부하면 설득력 높아져요. 임의 가격은 분쟁 생겨요.",
     "내용증명으로 발송해서 수령 증거 남기세요.",

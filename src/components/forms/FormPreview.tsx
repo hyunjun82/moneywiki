@@ -1609,3 +1609,419 @@ export const 진정서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// 거래명세서 양식
+export const 거래명세서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "거 래 명 세 서", exampleValue: "거 래 명 세 서", colspan: 5 },
+    ],
+  },
+  {
+    fields: [
+      { label: "거래일자", isHeader: true },
+      { placeholder: "(거래일자)", exampleValue: "2026년 1월 15일", colspan: 2 },
+      { label: "문서번호", isHeader: true },
+      { placeholder: "(문서번호)", exampleValue: "GR-2026-0115", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "공급자", isHeader: true, rowspan: 4 },
+      { label: "상호", isHeader: true },
+      { placeholder: "(상호명)", exampleValue: "(주)대한무역", colspan: 2 },
+      { label: "수신자", isHeader: true, rowspan: 4 },
+      { placeholder: "(수신자명)", exampleValue: "(주)한국산업", colspan: 1 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업자번호", isHeader: true },
+      { placeholder: "(사업자번호)", exampleValue: "123-45-67890", colspan: 2 },
+      { placeholder: "(사업자번호)", exampleValue: "987-65-43210", colspan: 1 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 테헤란로 100", colspan: 2 },
+      { placeholder: "(주소)", exampleValue: "서울시 서초구 반포대로 200", colspan: 1 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "02-1234-5678", colspan: 2 },
+      { placeholder: "(전화번호)", exampleValue: "02-9876-5432", colspan: 1 },
+    ],
+  },
+  {
+    fields: [
+      { label: "No", isHeader: true },
+      { label: "품목명", isHeader: true },
+      { label: "규격", isHeader: true },
+      { label: "수량", isHeader: true },
+      { label: "단가", isHeader: true },
+      { label: "금액", isHeader: true },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "1", exampleValue: "1" },
+      { placeholder: "(품목)", exampleValue: "노트북 컴퓨터" },
+      { placeholder: "(규격)", exampleValue: "15인치" },
+      { placeholder: "(수량)", exampleValue: "10" },
+      { placeholder: "(단가)", exampleValue: "1,200,000" },
+      { placeholder: "(금액)", exampleValue: "12,000,000" },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "2", exampleValue: "2" },
+      { placeholder: "(품목)", exampleValue: "무선마우스" },
+      { placeholder: "(규격)", exampleValue: "블루투스" },
+      { placeholder: "(수량)", exampleValue: "10" },
+      { placeholder: "(단가)", exampleValue: "35,000" },
+      { placeholder: "(금액)", exampleValue: "350,000" },
+    ],
+  },
+  {
+    fields: [
+      { label: "합계금액", isHeader: true, colspan: 3 },
+      { placeholder: "금액", exampleValue: "12,350,000", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "비고", isHeader: true },
+      { placeholder: "(비고)", exampleValue: "납품 후 30일 이내 대금 지급", colspan: 5 },
+    ],
+  },
+];
+
+// 세금계산서 양식
+export const 세금계산서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "세 금 계 산 서", exampleValue: "세 금 계 산 서 (공급자 보관용)", colspan: 5 },
+    ],
+  },
+  {
+    fields: [
+      { label: "공급자", isHeader: true, rowspan: 5 },
+      { label: "등록번호", isHeader: true },
+      { placeholder: "(사업자등록번호)", exampleValue: "123-45-67890", colspan: 2 },
+      { label: "공급받는자", isHeader: true, rowspan: 5 },
+      { placeholder: "(사업자등록번호)", exampleValue: "987-65-43210", colspan: 1 },
+    ],
+  },
+  {
+    fields: [
+      { label: "상호", isHeader: true },
+      { placeholder: "(상호)", exampleValue: "(주)대한무역", colspan: 2 },
+      { placeholder: "(상호)", exampleValue: "(주)한국산업", colspan: 1 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(대표자)", exampleValue: "김대표 (인)", colspan: 2 },
+      { placeholder: "(대표자)", exampleValue: "이대표", colspan: 1 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 테헤란로 100", colspan: 2 },
+      { placeholder: "(주소)", exampleValue: "서울시 서초구 반포대로 200", colspan: 1 },
+    ],
+  },
+  {
+    fields: [
+      { label: "업태/종목", isHeader: true },
+      { placeholder: "(업태/종목)", exampleValue: "도매/전자제품", colspan: 2 },
+      { placeholder: "(업태/종목)", exampleValue: "제조/IT기기", colspan: 1 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일자", isHeader: true },
+      { placeholder: "(작성일자)", exampleValue: "2026년 1월 15일", colspan: 2 },
+      { label: "공급가액", isHeader: true },
+      { placeholder: "(공급가액)", exampleValue: "12,350,000", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "세액", isHeader: true },
+      { placeholder: "(세액)", exampleValue: "1,235,000", colspan: 2 },
+      { label: "합계금액", isHeader: true },
+      { placeholder: "(합계)", exampleValue: "13,585,000", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "월일", isHeader: true },
+      { label: "품목", isHeader: true },
+      { label: "규격", isHeader: true },
+      { label: "수량", isHeader: true },
+      { label: "단가", isHeader: true },
+      { label: "공급가액", isHeader: true },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "01/15", exampleValue: "01/15" },
+      { placeholder: "(품목)", exampleValue: "노트북" },
+      { placeholder: "(규격)", exampleValue: "15인치" },
+      { placeholder: "(수량)", exampleValue: "10" },
+      { placeholder: "(단가)", exampleValue: "1,200,000" },
+      { placeholder: "(공급가액)", exampleValue: "12,000,000" },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "01/15", exampleValue: "01/15" },
+      { placeholder: "(품목)", exampleValue: "마우스" },
+      { placeholder: "(규격)", exampleValue: "무선" },
+      { placeholder: "(수량)", exampleValue: "10" },
+      { placeholder: "(단가)", exampleValue: "35,000" },
+      { placeholder: "(공급가액)", exampleValue: "350,000" },
+    ],
+  },
+  {
+    fields: [
+      { label: "비고", isHeader: true },
+      { placeholder: "(비고)", exampleValue: "본 거래에 대한 대금은 거래일로부터 30일 이내에 결제", colspan: 5 },
+    ],
+  },
+];
+
+// 매도청구서 양식
+export const 매도청구서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "매 도 청 구 서", exampleValue: "매 도 청 구 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수신인", isHeader: true, rowspan: 3 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(수신인 성명)", exampleValue: "김공유", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 역삼동 123-45", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-1234-5678", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발신인", isHeader: true, rowspan: 3 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(발신인 성명)", exampleValue: "이매도", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 서초구 서초동 456-78", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-9876-5432", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "대상 부동산", isHeader: true, rowspan: 3 },
+      { label: "소재지", isHeader: true },
+      { placeholder: "(부동산 주소)", exampleValue: "서울시 송파구 잠실동 100-1", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "지목/용도", isHeader: true },
+      { placeholder: "(지목/용도)", exampleValue: "대지 / 주거용", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "면적", isHeader: true },
+      { placeholder: "(면적)", exampleValue: "150㎡ (약 45평)", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "지분 내역", isHeader: true },
+      { placeholder: "(지분 비율)", exampleValue: "발신인 지분 1/2, 수신인 지분 1/2", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "청구 취지", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      {
+        placeholder: "(청구 취지)",
+        exampleValue: "발신인은 위 부동산에 대한 공유지분의 매도를 청구합니다. 수신인께서는 아래 조건으로 발신인의 지분(1/2)을 매수하여 주시기 바랍니다.",
+        colspan: 4,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "매도 조건", isHeader: true, rowspan: 2 },
+      { label: "매도 희망가격", isHeader: true },
+      { placeholder: "(금액)", exampleValue: "금 5억원 (500,000,000원)", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "회신 기한", isHeader: true },
+      { placeholder: "(기한)", exampleValue: "본 서면 도달일로부터 30일 이내", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발신인 서명", isHeader: true },
+      { placeholder: "(서명 또는 날인)", exampleValue: "이매도 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 산재보험청구서 양식
+export const 산재보험청구서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "산업재해보상보험 급여청구서", exampleValue: "산업재해보상보험 급여청구서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "청구인", isHeader: true, rowspan: 5 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "박근로", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "900515-1******", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "경기도 성남시 분당구 판교로 123", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-5555-6666", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계좌번호", isHeader: true },
+      { placeholder: "(은행/계좌번호)", exampleValue: "국민은행 123-456-789012", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장", isHeader: true, rowspan: 3 },
+      { label: "사업장명", isHeader: true },
+      { placeholder: "(사업장명)", exampleValue: "(주)한국제조", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장 주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "경기도 화성시 동탄대로 456", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장관리번호", isHeader: true },
+      { placeholder: "(관리번호)", exampleValue: "12345-67890", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "재해 내용", isHeader: true, rowspan: 4 },
+      { label: "재해 발생일", isHeader: true },
+      { placeholder: "(발생일)", exampleValue: "2026년 1월 10일 14:30", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "재해 발생장소", isHeader: true },
+      { placeholder: "(장소)", exampleValue: "화성공장 제2생산라인", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "상병명", isHeader: true },
+      { placeholder: "(상병명)", exampleValue: "좌측 손목 골절", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "재해 경위", isHeader: true },
+      { placeholder: "(재해 경위)", exampleValue: "제품 운반 작업 중 바닥에 넘어지면서 좌측 손목 부상", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "청구 급여", isHeader: true },
+      { placeholder: "(급여 종류)", exampleValue: "☑ 요양급여  ☑ 휴업급여  ☐ 장해급여", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부서류", isHeader: true },
+      { placeholder: "(첨부서류)", exampleValue: "1. 의사 진단서 2. 재해발생경위서 3. 목격자 진술서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "청구인 서명", isHeader: true },
+      { placeholder: "(서명 또는 날인)", exampleValue: "박근로 (인)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제출처", isHeader: true },
+      { placeholder: "(지사명)", exampleValue: "근로복지공단 ○○지사장 귀하", colspan: 3 },
+    ],
+  },
+];

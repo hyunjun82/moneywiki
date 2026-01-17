@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.nts.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "세금계산서_DATA",
   "relatedArticle": "/w/세금계산서-발행방법",
+  "relatedDocs": [
+    { "title": "거래명세서 양식", "url": "/forms/거래명세서" },
+    { "title": "견적서 양식", "url": "/forms/견적서" },
+    { "title": "영수증 양식", "url": "/forms/영수증" },
+    { "title": "납품서 양식", "url": "/forms/납품서" },
+    { "title": "세금계산서 발행 방법", "url": "/w/세금계산서-발행방법" }
+  ],
   "tips": [
     "공급가액과 부가세를 정확히 구분해서 기재하세요",
     "전자세금계산서 의무발행 대상인지 확인하세요 (개인사업자 8천만원 이상)",
