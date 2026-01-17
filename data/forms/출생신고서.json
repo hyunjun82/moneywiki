@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.gov.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "출생신고서_DATA",
   "relatedArticle": "/w/출생신고",
+  "relatedDocs": [
+    { "title": "혼인신고서 양식", "url": "/forms/혼인신고서" },
+    { "title": "가족관계증명서신청서 양식", "url": "/forms/가족관계증명서신청서" },
+    { "title": "주민등록등본신청서 양식", "url": "/forms/주민등록등본신청서" },
+    { "title": "전입신고서 양식", "url": "/forms/전입신고서" },
+    { "title": "사망신고서 양식", "url": "/forms/사망신고서" }
+  ],
   "tips": [
     "출생 후 1개월 이내 신고해야 과태료가 없어요",
     "병원에서 받은 출생증명서를 함께 제출해야 해요",

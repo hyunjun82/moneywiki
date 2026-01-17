@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "채용합격통지서_DATA",
   "relatedArticle": "/w/근로계약서",
+  "relatedDocs": [
+    { "title": "표준근로계약서 양식", "url": "/forms/표준근로계약서" },
+    { "title": "불합격통지서 양식", "url": "/forms/불합격통지서" },
+    { "title": "이력서 양식", "url": "/forms/이력서" },
+    { "title": "자기소개서 양식", "url": "/forms/자기소개서" },
+    { "title": "경력증명서 양식", "url": "/forms/경력증명서" }
+  ],
   "tips": [
     "입사 예정일과 출근 시간을 명확히 안내하세요",
     "입사 시 제출할 서류 목록을 구체적으로 명시하세요",

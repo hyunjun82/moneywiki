@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moj.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "채권양도통지서_DATA",
   "relatedArticle": "/w/채권양도-절차",
+  "relatedDocs": [
+    { "title": "내용증명 양식", "url": "/forms/내용증명" },
+    { "title": "차용증 양식", "url": "/forms/차용증" },
+    { "title": "금전소비대차계약서 양식", "url": "/forms/금전소비대차계약서" },
+    { "title": "지급명령신청서 양식", "url": "/forms/지급명령신청서" },
+    { "title": "합의서 양식", "url": "/forms/합의서" }
+  ],
   "tips": [
     "내용증명으로 보내야 법적 효력 있어요. 카톡이나 문자는 증거 약해요.",
     "채무자가 통지받은 날부터 효력 발생해요. 발송일 아니에요.",

@@ -9628,3 +9628,443 @@ export const 지방세완납증명서신청서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// ========================================
+// 25차 추가: 징계위원회소집통지서, 채권양도통지서, 채용합격통지서, 출생신고서
+// ========================================
+
+// 징계위원회소집통지서
+export const 징계위원회소집통지서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "징계위원회 소집통지서", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "문서번호", isHeader: true },
+      { placeholder: "(문서번호)", exampleValue: "인사-2026-0012" },
+      { label: "발신일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 10일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "수신", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김직원 (영업팀 사원)" },
+      { label: "발신", isHeader: true },
+      { placeholder: "(발신부서)", exampleValue: "인사위원회" },
+    ],
+  },
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "(제목)", exampleValue: "징계위원회 소집 및 출석 통지", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "위원회 일시", isHeader: true },
+      { placeholder: "____년 __월 __일 __시", exampleValue: "2026년 1월 20일 오후 2시" },
+      { label: "위원회 장소", isHeader: true },
+      { placeholder: "(장소)", exampleValue: "본사 3층 회의실" },
+    ],
+  },
+  {
+    fields: [
+      { label: "피징계자 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김직원" },
+      { label: "소속/직위", isHeader: true },
+      { placeholder: "(소속)", exampleValue: "영업팀 / 사원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "사번", isHeader: true },
+      { placeholder: "(사번)", exampleValue: "2023-0045" },
+      { label: "입사일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2023년 3월 1일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "징계 혐의 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "혐의 사유", isHeader: true },
+      { placeholder: "(혐의 내용)", exampleValue: "무단결근 (2025년 12월 15일~17일, 3일간)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "관련 규정", isHeader: true },
+      { placeholder: "(규정)", exampleValue: "취업규칙 제42조 (복무의무 위반)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "안내 사항", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "소명 기회", isHeader: true },
+      { placeholder: "(안내)", exampleValue: "위원회 참석하여 소명할 수 있음", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "자료 제출", isHeader: true },
+      { placeholder: "(제출 안내)", exampleValue: "소명 자료 제출 기한: 2026년 1월 18일까지", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "불참 시", isHeader: true },
+      { placeholder: "(안내)", exampleValue: "정당한 사유 없이 불참 시 소명권 포기로 간주", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발신자", isHeader: true },
+      { placeholder: "(직위) (성명) (인)", exampleValue: "인사위원회 위원장 이부장 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 채권양도통지서
+export const 채권양도통지서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "채권양도통지서", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "채무자 (수신인)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "박채무" },
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 송파구 올림픽로 200" },
+    ],
+  },
+  {
+    fields: [
+      { label: "양도인 (원채권자)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김채권" },
+      { label: "주민번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "750515-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 마포구 월드컵로 100", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "양수인 (새 채권자)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "이양수" },
+      { label: "주민번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "800820-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 테헤란로 300", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "양도 채권 내역", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "채권 원인", isHeader: true },
+      { placeholder: "(원인)", exampleValue: "금전소비대차계약에 따른 대여금 채권" },
+      { label: "채권 금액", isHeader: true },
+      { placeholder: "(금액)", exampleValue: "금 30,000,000원 (삼천만원정)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "발생일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2024년 6월 1일" },
+      { label: "변제기", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2025년 6월 1일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "양도일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일" },
+      { label: "이자율", isHeader: true },
+      { placeholder: "(이자)", exampleValue: "연 5%" },
+    ],
+  },
+  {
+    fields: [
+      { label: "통지 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "통지 사항", isHeader: true },
+      { placeholder: "(내용)", exampleValue: "상기 채권을 양수인에게 양도하였음을 통지하오니, 이후 채무 변제는 양수인에게 하시기 바랍니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "통지일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "양도인", isHeader: true },
+      { placeholder: "(성명) (인)", exampleValue: "양도인 김채권 (인)" },
+      { label: "양수인", isHeader: true },
+      { placeholder: "(성명) (인)", exampleValue: "양수인 이양수 (인)" },
+    ],
+  },
+];
+
+// 채용합격통지서
+export const 채용합격통지서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "채용합격통지서", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "문서번호", isHeader: true },
+      { placeholder: "(문서번호)", exampleValue: "인사-2026-0025" },
+      { label: "발신일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "수신", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "홍길동 님" },
+      { label: "발신", isHeader: true },
+      { placeholder: "(회사명)", exampleValue: "(주)머니테크 인사팀" },
+    ],
+  },
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "(제목)", exampleValue: "채용 최종 합격 통지", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "합격 안내", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "내용", isHeader: true },
+      { placeholder: "(안내 문구)", exampleValue: "귀하께서 지원하신 당사 채용전형에 최종 합격하셨음을 알려드립니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "입사 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "입사 예정일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 2월 3일 (월)" },
+      { label: "출근 시간", isHeader: true },
+      { placeholder: "(시간)", exampleValue: "오전 9시" },
+    ],
+  },
+  {
+    fields: [
+      { label: "근무 부서", isHeader: true },
+      { placeholder: "(부서명)", exampleValue: "경영지원팀" },
+      { label: "직위", isHeader: true },
+      { placeholder: "(직위)", exampleValue: "사원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "근무지", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 테헤란로 123 머니타워 5층", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "입사 시 제출 서류", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제출 서류", isHeader: true },
+      { placeholder: "(서류 목록)", exampleValue: "1. 주민등록등본 1부\n2. 최종학력증명서 1부\n3. 경력증명서 (해당자)\n4. 통장사본 1부\n5. 증명사진 2매", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "문의처", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "담당자", isHeader: true },
+      { placeholder: "(담당자명)", exampleValue: "인사팀 김인사" },
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "02-1234-5678" },
+    ],
+  },
+  {
+    fields: [
+      { label: "발신자", isHeader: true },
+      { placeholder: "(직위) (성명) (인)", exampleValue: "(주)머니테크 대표이사 이사장 (직인)", colspan: 3 },
+    ],
+  },
+];
+
+// 출생신고서
+export const 출생신고서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "출생신고서", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "출생자 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "홍아기" },
+      { label: "성별", isHeader: true },
+      { placeholder: "□ 남  □ 여", exampleValue: "☑ 남" },
+    ],
+  },
+  {
+    fields: [
+      { label: "출생 연월일시", isHeader: true },
+      { placeholder: "____년 __월 __일 __시 __분", exampleValue: "2026년 1월 15일 오전 10시 30분" },
+      { label: "출생 장소", isHeader: true },
+      { placeholder: "(장소)", exampleValue: "서울특별시 서초구 서초중앙로 ○○병원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "등록기준지", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 테헤란로 123", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "부(父) 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "홍길동" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "850101-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "등록기준지", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 테헤란로 123", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "모(母) 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김영희" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "880515-2******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "등록기준지", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 서초구 서초대로 456", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고인 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고인 자격", isHeader: true },
+      { placeholder: "□ 부  □ 모  □ 기타", exampleValue: "☑ 부" },
+      { label: "신고인 성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "홍길동" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 테헤란로 123, ○○아파트 101동 1001호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-1234-5678", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부 서류", isHeader: true },
+      { placeholder: "(서류)", exampleValue: "☑ 출생증명서 1부", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고인", isHeader: true },
+      { placeholder: "(성명) (서명)", exampleValue: "신고인 홍길동 (인)", colspan: 3 },
+    ],
+  },
+];

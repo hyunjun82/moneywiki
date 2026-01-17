@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "징계위원회소집통지서_DATA",
   "relatedArticle": "/w/징계절차",
+  "relatedDocs": [
+    { "title": "해고통지서 양식", "url": "/forms/해고통지서" },
+    { "title": "시말서 양식", "url": "/forms/시말서" },
+    { "title": "경위서 양식", "url": "/forms/경위서" },
+    { "title": "인사발령통지서 양식", "url": "/forms/인사발령통지서" },
+    { "title": "근로계약해지통보서 양식", "url": "/forms/근로계약해지통보서" }
+  ],
   "tips": [
     "위원회 개최 최소 7일 전에 통지하세요",
     "혐의 사실을 구체적으로 명시하세요",
