@@ -7877,3 +7877,500 @@ export const 용역계약서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// =============================================
+// 21차: 운전경력증명서신청서, 유언장, 이사회의사록, 이의신청서
+// =============================================
+
+export const 운전경력증명서신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "운전경력증명서 발급 신청서", exampleValue: "운전경력증명서 발급 신청서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청 구분", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "증명서 종류", isHeader: true },
+      { placeholder: "(증명서 종류)", exampleValue: "☑ 운전경력증명서  □ 무사고·무벌점 증명서  □ 국제운전면허증" },
+      { label: "발급 언어", isHeader: true },
+      { placeholder: "(언어)", exampleValue: "☑ 국문  □ 영문" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김운전" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "850612-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 테헤란로 123 드라이브빌딩 501호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "010-1234-5678" },
+      { label: "이메일", isHeader: true },
+      { placeholder: "(이메일)", exampleValue: "driver85@email.com" },
+    ],
+  },
+  {
+    fields: [
+      { label: "운전면허 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "면허번호", isHeader: true },
+      { placeholder: "(면허번호)", exampleValue: "11-12-345678-90" },
+      { label: "면허 종류", isHeader: true },
+      { placeholder: "(면허 종류)", exampleValue: "1종 보통" },
+    ],
+  },
+  {
+    fields: [
+      { label: "최초 취득일", isHeader: true },
+      { placeholder: "(취득일)", exampleValue: "2005년 8월 15일" },
+      { label: "유효기간", isHeader: true },
+      { placeholder: "(유효기간)", exampleValue: "2030년 8월 14일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "발급 용도", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "용도", isHeader: true },
+      { placeholder: "(발급 용도)", exampleValue: "☑ 보험가입/갱신  □ 취업/채용  □ 해외면허교환  □ 기타" },
+      { label: "제출처", isHeader: true },
+      { placeholder: "(제출처)", exampleValue: "삼성화재" },
+    ],
+  },
+  {
+    fields: [
+      { label: "수령 방법", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수령 방법", isHeader: true },
+      { placeholder: "(수령 방법)", exampleValue: "☑ 온라인 발급(PDF)  □ 우편 수령  □ 방문 수령" },
+      { label: "수수료", isHeader: true },
+      { placeholder: "(수수료)", exampleValue: "700원 (온라인) / 800원 (방문)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 20일" },
+      { label: "신청 기관", isHeader: true },
+      { placeholder: "(접수처)", exampleValue: "정부24 / 경찰청" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인", isHeader: true },
+      { placeholder: "(성명) (서명)", exampleValue: "신청인 김운전 (서명)", colspan: 3 },
+    ],
+  },
+];
+
+export const 유언장_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "유 언 장", exampleValue: "유    언    장", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "유언자 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(유언자 성명)", exampleValue: "김유언" },
+      { label: "생년월일", isHeader: true },
+      { placeholder: "(생년월일)", exampleValue: "1950년 3월 15일생" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "500315-1******" },
+      { label: "현 주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 테헤란로 123 행복아파트 101동 501호" },
+    ],
+  },
+  {
+    fields: [
+      { label: "유언 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "전문", isHeader: true },
+      { placeholder: "(유언 시작)", exampleValue: "본인 김유언은 명확한 정신 상태에서 아래와 같이 유언합니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제1조 (부동산)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "재산 내용", isHeader: true },
+      { placeholder: "(부동산 상세)", exampleValue: "서울시 강남구 테헤란로 123 행복아파트 101동 501호 (전용면적 84㎡)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "상속인", isHeader: true },
+      { placeholder: "(상속받을 사람)", exampleValue: "장남 김대한 (1975.05.20생)에게 상속합니다." },
+      { label: "지분", isHeader: true },
+      { placeholder: "(지분)", exampleValue: "100%" },
+    ],
+  },
+  {
+    fields: [
+      { label: "제2조 (금융자산)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "재산 내용", isHeader: true },
+      { placeholder: "(금융자산 상세)", exampleValue: "신한은행 예금 (계좌번호: 110-***-******)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "상속인 1", isHeader: true },
+      { placeholder: "(상속인 1)", exampleValue: "장녀 김민국 (1978.08.10생) - 50%" },
+      { label: "상속인 2", isHeader: true },
+      { placeholder: "(상속인 2)", exampleValue: "차남 김만세 (1982.12.25생) - 50%" },
+    ],
+  },
+  {
+    fields: [
+      { label: "제3조 (기타 재산)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "내용", isHeader: true },
+      { placeholder: "(기타 재산)", exampleValue: "그 외 동산, 유체물, 기타 모든 재산은 배우자 이복덕(1955.07.08생)에게 상속합니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제4조 (유언집행자)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "유언집행자", isHeader: true },
+      { placeholder: "(유언집행자)", exampleValue: "장남 김대한을 유언집행자로 지정합니다." },
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "010-1111-2222" },
+    ],
+  },
+  {
+    fields: [
+      { label: "제5조 (부칙)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "내용", isHeader: true },
+      { placeholder: "(부칙 내용)", exampleValue: "1. 본 유언장은 이전에 작성한 모든 유언을 폐기하고 대체합니다.\n2. 본 유언장은 본인이 직접 자필로 작성하였습니다.\n3. 상속인 간 원만한 합의를 당부드립니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "유언자", isHeader: true },
+      { placeholder: "유언자 (성명) 자필서명", exampleValue: "유언자 김유언 (자필서명)", colspan: 3 },
+    ],
+  },
+];
+
+export const 이사회의사록_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "이사회 의사록", exampleValue: "이  사  회  의  사  록", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "회사 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "상호", isHeader: true },
+      { placeholder: "(회사명)", exampleValue: "(주)머니테크" },
+      { label: "본점 소재지", isHeader: true },
+      { placeholder: "(본점 주소)", exampleValue: "서울시 강남구 테헤란로 123" },
+    ],
+  },
+  {
+    fields: [
+      { label: "회의 일시/장소", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "일시", isHeader: true },
+      { placeholder: "(회의 일시)", exampleValue: "2026년 1월 20일 오후 2시" },
+      { label: "장소", isHeader: true },
+      { placeholder: "(회의 장소)", exampleValue: "본사 15층 대회의실" },
+    ],
+  },
+  {
+    fields: [
+      { label: "이사 현황", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "이사 총수", isHeader: true },
+      { placeholder: "(총 이사수)", exampleValue: "5명" },
+      { label: "출석 이사", isHeader: true },
+      { placeholder: "(출석 인원)", exampleValue: "4명 (정족수 충족)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "출석 이사 명단", isHeader: true },
+      { placeholder: "(출석 이사)", exampleValue: "대표이사 김대표, 사내이사 박경영, 사내이사 이기획, 사외이사 최전문" },
+      { label: "불참 이사", isHeader: true },
+      { placeholder: "(불참 이사)", exampleValue: "사외이사 정고문 (해외출장)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "의장", isHeader: true },
+      { placeholder: "(의장)", exampleValue: "대표이사 김대표" },
+      { label: "기록자", isHeader: true },
+      { placeholder: "(기록자)", exampleValue: "경영지원팀 한기록 과장" },
+    ],
+  },
+  {
+    fields: [
+      { label: "안건", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제1호 안건", isHeader: true },
+      { placeholder: "(안건명)", exampleValue: "2026년도 사업계획 승인의 건", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "내용", isHeader: true },
+      { placeholder: "(안건 상세)", exampleValue: "2026년도 사업계획 및 예산안 500억원 승인 요청. 신사업 진출(핀테크 서비스) 포함.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "결의 결과", isHeader: true },
+      { placeholder: "(결의 결과)", exampleValue: "찬성 4표, 반대 0표로 원안 가결" },
+      { label: "비고", isHeader: true },
+      { placeholder: "(비고)", exampleValue: "출석 이사 전원 찬성" },
+    ],
+  },
+  {
+    fields: [
+      { label: "제2호 안건", isHeader: true },
+      { placeholder: "(안건명)", exampleValue: "대표이사 연임의 건", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "내용", isHeader: true },
+      { placeholder: "(안건 상세)", exampleValue: "현 대표이사 김대표의 임기 만료에 따른 연임(3년) 승인 요청.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "결의 결과", isHeader: true },
+      { placeholder: "(결의 결과)", exampleValue: "찬성 3표, 반대 0표, 기권 1표(김대표)로 가결" },
+      { label: "비고", isHeader: true },
+      { placeholder: "(비고)", exampleValue: "대표이사 본인 의결권 행사 배제" },
+    ],
+  },
+  {
+    fields: [
+      { label: "폐회", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "폐회 선언", isHeader: true },
+      { placeholder: "(폐회 시간)", exampleValue: "의장은 2026년 1월 20일 오후 4시 30분 폐회를 선언하다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "확인", isHeader: true },
+      { placeholder: "(확인 문구)", exampleValue: "위 의사록이 정확함을 확인하고 아래 출석 이사 전원이 서명날인합니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "의장", isHeader: true },
+      { placeholder: "(의장 서명)", exampleValue: "의장 김대표 (인)" },
+      { label: "이사", isHeader: true },
+      { placeholder: "(이사 서명)", exampleValue: "이사 박경영 (인) / 이사 이기획 (인) / 이사 최전문 (인)" },
+    ],
+  },
+];
+
+export const 이의신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "이의신청서", exampleValue: "이    의    신    청    서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김이의" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "850725-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 마포구 와우산로 123 행복빌라 301호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "010-9876-5432" },
+      { label: "이메일", isHeader: true },
+      { placeholder: "(이메일)", exampleValue: "objection85@email.com" },
+    ],
+  },
+  {
+    fields: [
+      { label: "처분 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "처분청", isHeader: true },
+      { placeholder: "(처분 기관)", exampleValue: "서울특별시 마포구청" },
+      { label: "처분일자", isHeader: true },
+      { placeholder: "(처분일)", exampleValue: "2026년 1월 10일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "처분 종류", isHeader: true },
+      { placeholder: "(처분 종류)", exampleValue: "주정차위반 과태료 부과처분" },
+      { label: "처분 번호", isHeader: true },
+      { placeholder: "(처분번호)", exampleValue: "마포-2026-과태료-00123" },
+    ],
+  },
+  {
+    fields: [
+      { label: "과태료/처분 금액", isHeader: true },
+      { placeholder: "(금액)", exampleValue: "금 40,000원" },
+      { label: "위반 일시/장소", isHeader: true },
+      { placeholder: "(위반 일시/장소)", exampleValue: "2025.12.25 / 마포구 홍대입구역 앞" },
+    ],
+  },
+  {
+    fields: [
+      { label: "이의신청 사유", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "1. 사실관계", isHeader: true },
+      { placeholder: "(사실관계)", exampleValue: "해당 일시에 본인은 차량을 해당 위치에 주차한 사실이 없습니다. 당일 차량은 서울시 강남구 소재 자택 주차장에 주차되어 있었습니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "2. 이의 사유", isHeader: true },
+      { placeholder: "(이의 사유)", exampleValue: "차량번호 오인으로 인한 처분으로 판단됩니다. 본인 차량의 블랙박스 기록 및 자택 주차장 CCTV 영상을 확인한 결과, 해당 시간대에 차량이 마포구에 있지 않았음이 확인됩니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "3. 요청 사항", isHeader: true },
+      { placeholder: "(요청 사항)", exampleValue: "위 사유에 따라 본 과태료 부과처분의 취소를 요청합니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부 서류", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "1.", isHeader: true },
+      { placeholder: "(첨부서류 1)", exampleValue: "블랙박스 영상 캡쳐 (차량 위치 확인) 1부" },
+      { label: "2.", isHeader: true },
+      { placeholder: "(첨부서류 2)", exampleValue: "자택 주차장 CCTV 영상 캡쳐 1부" },
+    ],
+  },
+  {
+    fields: [
+      { label: "3.", isHeader: true },
+      { placeholder: "(첨부서류 3)", exampleValue: "차량등록증 사본 1부" },
+      { label: "4.", isHeader: true },
+      { placeholder: "(첨부서류 4)", exampleValue: "과태료 부과 고지서 사본 1부" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 18일" },
+      { label: "수신", isHeader: true },
+      { placeholder: "(수신 기관)", exampleValue: "서울특별시 마포구청장 귀하" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인", isHeader: true },
+      { placeholder: "(성명) (서명 또는 인)", exampleValue: "신청인 김이의 (인)", colspan: 3 },
+    ],
+  },
+];

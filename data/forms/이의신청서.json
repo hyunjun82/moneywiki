@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moj.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "이의신청서_DATA",
   "relatedArticle": "/w/이의신청-절차",
+  "relatedDocs": [
+    { "title": "진정서 양식", "url": "/forms/진정서" },
+    { "title": "탄원서 양식", "url": "/forms/탄원서" },
+    { "title": "내용증명 양식", "url": "/forms/내용증명" },
+    { "title": "소장(민사) 양식", "url": "/forms/소장-민사" },
+    { "title": "고소장 양식", "url": "/forms/고소장" }
+  ],
   "tips": [
     "처분 받은 날부터 기한 엄수하세요. 보통 7~30일이에요. 기한 지나면 무조건 확정돼요.",
     "이의신청 이유 구체적으로 쓰세요. '억울하다'보다 '이 부분이 사실과 다르다'가 효과적이에요.",

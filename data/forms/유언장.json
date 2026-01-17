@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moj.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "유언장_DATA",
   "relatedArticle": "/w/유언장-작성법",
+  "relatedDocs": [
+    { "title": "상속포기서 양식", "url": "/forms/상속포기서" },
+    { "title": "가족관계증명서신청서 양식", "url": "/forms/가족관계증명서신청서" },
+    { "title": "위임장 양식", "url": "/forms/위임장" },
+    { "title": "동의서 양식", "url": "/forms/동의서" },
+    { "title": "합의서 양식", "url": "/forms/합의서" }
+  ],
   "tips": [
     "전문 자필로 쓰고, 날짜와 서명 필수예요. 컴퓨터 작성은 무효예요.",
     "유류분 침해하면 나중에 소송 생겨요. 법정상속분 50% 이상 보장하세요.",

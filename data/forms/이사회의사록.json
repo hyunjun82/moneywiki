@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moj.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "이사회의사록_DATA",
   "relatedArticle": "/w/이사회-운영",
+  "relatedDocs": [
+    { "title": "법인설립등기신청서 양식", "url": "/forms/법인설립등기신청서" },
+    { "title": "사업자등록신청서 양식", "url": "/forms/사업자등록신청서" },
+    { "title": "위임장 양식", "url": "/forms/위임장" },
+    { "title": "합의서 양식", "url": "/forms/합의서" },
+    { "title": "동의서 양식", "url": "/forms/동의서" }
+  ],
   "tips": [
     "이사 과반수 출석과 출석 이사 과반수 찬성 필요해요.",
     "의장(보통 대표이사)과 출석 이사 전원 서명날인하세요.",
