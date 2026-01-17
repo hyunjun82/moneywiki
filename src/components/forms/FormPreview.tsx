@@ -6313,3 +6313,360 @@ export const 사망신고서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// =============================================
+// 18차: 사업자등록신청서, 상속포기서, 상여금지급통지서, 성과급지급내역서
+// =============================================
+
+export const 사업자등록신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "사업자등록 신청서", exampleValue: "사 업 자 등 록 신 청 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "인적사항", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김사업" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "850515-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 테헤란로 123, 456호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "상호", isHeader: true },
+      { placeholder: "(상호명)", exampleValue: "머니카페" },
+      { label: "개업일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 2월 1일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장 소재지", isHeader: true },
+      { placeholder: "(사업장 주소)", exampleValue: "서울시 강남구 역삼동 789-12, 1층", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "업태", isHeader: true },
+      { placeholder: "(업태)", exampleValue: "음식점업" },
+      { label: "종목", isHeader: true },
+      { placeholder: "(종목)", exampleValue: "커피전문점" },
+    ],
+  },
+  {
+    fields: [
+      { label: "업종코드", isHeader: true },
+      { placeholder: "(업종코드)", exampleValue: "561912" },
+      { label: "사업자 유형", isHeader: true },
+      { placeholder: "(유형)", exampleValue: "일반과세자" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 25일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 서명", isHeader: true },
+      { placeholder: "신청인: ___________ (서명 또는 날인)", exampleValue: "신청인: 김사업 (인)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제출처", isHeader: true },
+      { placeholder: "○○세무서장 귀하", exampleValue: "역삼세무서장 귀하", colspan: 3 },
+    ],
+  },
+];
+
+export const 상속포기서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "상속포기 신고서", exampleValue: "상 속 포 기 신 고 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사건번호", isHeader: true },
+      { placeholder: "20__느단______", exampleValue: "2026느단12345", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "피상속인 (망인)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "故 김피상속" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "450101-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "최후 주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 종로구 세종대로 100" },
+      { label: "사망일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 5일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고인 (상속인)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김상속" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "780320-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "피상속인과의 관계", isHeader: true },
+      { placeholder: "(관계)", exampleValue: "장남" },
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-1234-5678" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 테헤란로 456", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고 취지", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "신고인은 피상속인의 사망으로 인한 재산상속을 포기합니다.", exampleValue: "신고인은 피상속인 故 김피상속의 사망(2026.1.5.)으로 인한 재산상속(적극재산 및 소극재산 일체)을 포기합니다.", colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부서류", isHeader: true },
+      { placeholder: "(첨부서류)", exampleValue: "1. 피상속인 기본증명서 1부\n2. 피상속인 가족관계증명서 1부\n3. 신고인 기본증명서 1부\n4. 신고인 가족관계증명서 1부", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 25일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고인 서명", isHeader: true },
+      { placeholder: "신고인: ___________ (서명 또는 날인)", exampleValue: "신고인: 김상속 (인)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제출처", isHeader: true },
+      { placeholder: "○○가정법원 귀중", exampleValue: "서울가정법원 귀중", colspan: 3 },
+    ],
+  },
+];
+
+export const 상여금지급통지서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "상여금 지급 통지서", exampleValue: "상 여 금 지 급 통 지 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수신", isHeader: true },
+      { placeholder: "(직원명) 귀하", exampleValue: "김직원 귀하", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "소속", isHeader: true },
+      { placeholder: "(부서명)", exampleValue: "영업팀" },
+      { label: "직급", isHeader: true },
+      { placeholder: "(직급)", exampleValue: "대리" },
+    ],
+  },
+  {
+    fields: [
+      { label: "지급 내역", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "상여금 종류", isHeader: true },
+      { placeholder: "(종류)", exampleValue: "설날 특별상여금" },
+      { label: "지급 기준", isHeader: true },
+      { placeholder: "(기준)", exampleValue: "기본급의 100%" },
+    ],
+  },
+  {
+    fields: [
+      { label: "산정 기간", isHeader: true },
+      { placeholder: "(기간)", exampleValue: "2025년 7월 ~ 2025년 12월 (6개월)" },
+      { label: "근무일수", isHeader: true },
+      { placeholder: "(일수)", exampleValue: "180일 (재직기간 100%)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "지급액 (세전)", isHeader: true },
+      { placeholder: "(금액)", exampleValue: "금 3,500,000원" },
+      { label: "공제액", isHeader: true },
+      { placeholder: "(공제)", exampleValue: "소득세 등 385,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "실수령액", isHeader: true },
+      { placeholder: "(금액)", exampleValue: "금 3,115,000원", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "지급 예정일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 25일 (금요일)" },
+      { label: "지급 방법", isHeader: true },
+      { placeholder: "(방법)", exampleValue: "급여계좌 입금" },
+    ],
+  },
+  {
+    fields: [
+      { label: "통지일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 20일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발신", isHeader: true },
+      { placeholder: "(회사명) (대표이사/인사팀)", exampleValue: "(주)머니솔루션 인사팀 드림", colspan: 3 },
+    ],
+  },
+];
+
+export const 성과급지급내역서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "성과급 지급 내역서", exampleValue: "성 과 급 지 급 내 역 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수신", isHeader: true },
+      { placeholder: "(직원명) 귀하", exampleValue: "박성과 귀하", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "소속", isHeader: true },
+      { placeholder: "(부서명)", exampleValue: "개발팀" },
+      { label: "직급", isHeader: true },
+      { placeholder: "(직급)", exampleValue: "과장" },
+    ],
+  },
+  {
+    fields: [
+      { label: "평가 기간", isHeader: true },
+      { placeholder: "(기간)", exampleValue: "2025년 1월 ~ 2025년 12월", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성과 평가 결과", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "업무 성과", isHeader: true },
+      { placeholder: "(점수)", exampleValue: "95점 / 100점" },
+      { label: "역량 평가", isHeader: true },
+      { placeholder: "(점수)", exampleValue: "88점 / 100점" },
+    ],
+  },
+  {
+    fields: [
+      { label: "종합 등급", isHeader: true },
+      { placeholder: "(등급)", exampleValue: "S등급 (상위 10%)" },
+      { label: "종합 점수", isHeader: true },
+      { placeholder: "(점수)", exampleValue: "92점" },
+    ],
+  },
+  {
+    fields: [
+      { label: "성과급 산정", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "기준 연봉", isHeader: true },
+      { placeholder: "(금액)", exampleValue: "금 60,000,000원" },
+      { label: "지급률", isHeader: true },
+      { placeholder: "(비율)", exampleValue: "연봉의 20%" },
+    ],
+  },
+  {
+    fields: [
+      { label: "성과급 (세전)", isHeader: true },
+      { placeholder: "(금액)", exampleValue: "금 12,000,000원" },
+      { label: "공제액", isHeader: true },
+      { placeholder: "(공제)", exampleValue: "소득세 등 1,320,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "실수령액", isHeader: true },
+      { placeholder: "(금액)", exampleValue: "금 10,680,000원", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "지급 예정일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 2월 28일 (금요일)" },
+      { label: "지급 방법", isHeader: true },
+      { placeholder: "(방법)", exampleValue: "급여계좌 입금" },
+    ],
+  },
+  {
+    fields: [
+      { label: "통지일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 25일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발신", isHeader: true },
+      { placeholder: "(회사명) (대표이사/인사팀)", exampleValue: "(주)머니테크 인사팀 드림", colspan: 3 },
+    ],
+  },
+];

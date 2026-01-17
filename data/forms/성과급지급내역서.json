@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "성과급지급내역서_DATA",
   "relatedArticle": "/w/성과급",
+  "relatedDocs": [
+    { "title": "급여명세서 양식", "url": "/forms/급여명세서" },
+    { "title": "상여금지급통지서 양식", "url": "/forms/상여금지급통지서" },
+    { "title": "표준근로계약서 양식", "url": "/forms/표준근로계약서" },
+    { "title": "연봉근로계약서 양식", "url": "/forms/연봉근로계약서" },
+    { "title": "인사발령통지서 양식", "url": "/forms/인사발령통지서" }
+  ],
   "tips": [
     "성과 평가 기준과 점수를 구체적으로 명시하세요",
     "지급 산식을 투명하게 공개하세요",

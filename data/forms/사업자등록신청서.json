@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.nts.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "사업자등록신청서_DATA",
   "relatedArticle": "/w/사업자등록-방법",
+  "relatedDocs": [
+    { "title": "법인설립등기신청서 양식", "url": "/forms/법인설립등기신청서" },
+    { "title": "4대보험가입신청서 양식", "url": "/forms/4대보험가입신청서" },
+    { "title": "세금계산서 양식", "url": "/forms/세금계산서" },
+    { "title": "폐업신고서 양식", "url": "/forms/폐업신고서" },
+    { "title": "휴업신고서 양식", "url": "/forms/휴업신고서" }
+  ],
   "tips": [
     "사업 개시 전에 미리 신청하세요. 개시 후 20일 이내 안 하면 과태료 나와요.",
     "업종코드 정확히 선택하세요. 나중에 변경하려면 번거로워요.",

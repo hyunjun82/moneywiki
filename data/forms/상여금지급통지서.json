@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "상여금지급통지서_DATA",
   "relatedArticle": "/w/상여금",
+  "relatedDocs": [
+    { "title": "급여명세서 양식", "url": "/forms/급여명세서" },
+    { "title": "성과급지급내역서 양식", "url": "/forms/성과급지급내역서" },
+    { "title": "표준근로계약서 양식", "url": "/forms/표준근로계약서" },
+    { "title": "연봉근로계약서 양식", "url": "/forms/연봉근로계약서" },
+    { "title": "연봉협상합의서 양식", "url": "/forms/연봉협상합의서" }
+  ],
   "tips": [
     "상여금 산정 기준과 계산 방법을 명시하세요",
     "지급 예정일과 지급 방법을 안내하세요",

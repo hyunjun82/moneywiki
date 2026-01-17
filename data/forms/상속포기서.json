@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.scourt.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "상속포기서_DATA",
   "relatedArticle": "/w/상속포기-절차",
+  "relatedDocs": [
+    { "title": "유언장 양식", "url": "/forms/유언장" },
+    { "title": "사망신고서 양식", "url": "/forms/사망신고서" },
+    { "title": "가족관계증명서신청서 양식", "url": "/forms/가족관계증명서신청서" },
+    { "title": "위임장 양식", "url": "/forms/위임장" },
+    { "title": "증여계약서 양식", "url": "/forms/증여계약서" }
+  ],
   "tips": [
     "상속 개시(사망) 안 날부터 3개월 이내 신청하세요. 기한 지나면 자동 승인돼요.",
     "모든 상속인이 포기해야 빚 면제돼요. 한 명이라도 승인하면 그 사람이 책임져요.",
