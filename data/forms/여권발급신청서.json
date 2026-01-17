@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.passport.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "여권발급신청서_DATA",
   "relatedArticle": "/w/여권발급",
+  "relatedDocs": [
+    { "title": "출입국사실증명신청서 양식", "url": "/forms/출입국사실증명신청서" },
+    { "title": "가족관계증명서신청서 양식", "url": "/forms/가족관계증명서신청서" },
+    { "title": "주민등록등본신청서 양식", "url": "/forms/주민등록등본신청서" },
+    { "title": "병적증명서신청서 양식", "url": "/forms/병적증명서신청서" },
+    { "title": "위임장 양식", "url": "/forms/위임장" }
+  ],
   "tips": [
     "정부24에서 온라인 신청 가능하고, 수령은 여권민원센터 방문해야 해요",
     "여권사진은 6개월 이내 촬영한 3.5cm x 4.5cm 규격만 가능해요",

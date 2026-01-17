@@ -7288,3 +7288,592 @@ export const 업무제휴계약서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// =============================================
+// 20차: 여권발급신청서, 연봉협상합의서, 외주계약서, 용역계약서
+// =============================================
+
+export const 여권발급신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "여권발급 신청서", exampleValue: "여 권 발 급 신 청 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청 구분", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발급 유형", isHeader: true },
+      { placeholder: "(신규/재발급/갱신)", exampleValue: "☑ 신규발급  □ 재발급  □ 기간연장(갱신)" },
+      { label: "여권 종류", isHeader: true },
+      { placeholder: "(복수/단수)", exampleValue: "☑ 복수여권(10년)  □ 단수여권(1년)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명 (한글)", isHeader: true },
+      { placeholder: "(한글 성명)", exampleValue: "김민수" },
+      { label: "성명 (영문)", isHeader: true },
+      { placeholder: "(영문 성명)", exampleValue: "KIM MINSU" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "950825-1******" },
+      { label: "성별", isHeader: true },
+      { placeholder: "(남/여)", exampleValue: "남" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주민등록상 주소)", exampleValue: "서울시 강남구 테헤란로 123 머니아파트 501동 1202호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(휴대폰 번호)", exampleValue: "010-1234-5678" },
+      { label: "이메일", isHeader: true },
+      { placeholder: "(이메일)", exampleValue: "minsu.kim@email.com" },
+    ],
+  },
+  {
+    fields: [
+      { label: "기존 여권 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "기존 여권번호", isHeader: true },
+      { placeholder: "(기존 여권번호)", exampleValue: "M12345678 (재발급/갱신 시)" },
+      { label: "유효기간 만료일", isHeader: true },
+      { placeholder: "(만료일)", exampleValue: "2025년 6월 30일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "재발급 사유", isHeader: true },
+      { placeholder: "(해당 시 기재)", exampleValue: "□ 분실  □ 훼손  ☑ 유효기간 만료  □ 사증란 부족", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "병역 사항 (남성)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "병역 구분", isHeader: true },
+      { placeholder: "(병역 상태)", exampleValue: "☑ 군필  □ 미필  □ 면제  □ 해당없음" },
+      { label: "군별/계급", isHeader: true },
+      { placeholder: "(군별/계급)", exampleValue: "육군 병장 만기제대" },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부 서류", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "1.", isHeader: true },
+      { placeholder: "(첨부서류 1)", exampleValue: "여권용 사진 1매 (3.5cm × 4.5cm, 6개월 이내 촬영)" },
+      { label: "2.", isHeader: true },
+      { placeholder: "(첨부서류 2)", exampleValue: "신분증 (주민등록증 또는 운전면허증)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "3.", isHeader: true },
+      { placeholder: "(첨부서류 3)", exampleValue: "기존 여권 (재발급/갱신 시)" },
+      { label: "4.", isHeader: true },
+      { placeholder: "(첨부서류 4)", exampleValue: "가족관계증명서 (미성년자의 경우)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "수수료", isHeader: true },
+      { placeholder: "(수수료)", exampleValue: "복수여권(10년) 53,000원 / 단수여권 20,000원" },
+      { label: "수령 방법", isHeader: true },
+      { placeholder: "(수령 방법)", exampleValue: "☑ 직접 수령  □ 등기우편" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 20일" },
+      { label: "신청 기관", isHeader: true },
+      { placeholder: "(접수처)", exampleValue: "서울특별시 강남구청 여권민원센터" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인", isHeader: true },
+      { placeholder: "(성명) (서명)", exampleValue: "신청인 김민수 (서명)", colspan: 3 },
+    ],
+  },
+];
+
+export const 연봉협상합의서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "연봉협상 합의서", exampleValue: "연 봉 협 상 합 의 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약 당사자", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "회사명 (갑)", isHeader: true },
+      { placeholder: "(회사명)", exampleValue: "(주)머니테크" },
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "대표이사 김대표" },
+    ],
+  },
+  {
+    fields: [
+      { label: "근로자 (을)", isHeader: true },
+      { placeholder: "(근로자 성명)", exampleValue: "이지훈" },
+      { label: "사원번호", isHeader: true },
+      { placeholder: "(사원번호)", exampleValue: "EMP-2020-0156" },
+    ],
+  },
+  {
+    fields: [
+      { label: "소속 부서", isHeader: true },
+      { placeholder: "(부서명)", exampleValue: "개발팀" },
+      { label: "직위/직급", isHeader: true },
+      { placeholder: "(직위)", exampleValue: "과장 / G3" },
+    ],
+  },
+  {
+    fields: [
+      { label: "협상 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "협상 연도", isHeader: true },
+      { placeholder: "(적용 연도)", exampleValue: "2026년도" },
+      { label: "협상 일자", isHeader: true },
+      { placeholder: "(협상일)", exampleValue: "2026년 1월 15일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "기존 연봉 (세전)", isHeader: true },
+      { placeholder: "(기존 연봉)", exampleValue: "금 55,000,000원" },
+      { label: "조정 연봉 (세전)", isHeader: true },
+      { placeholder: "(조정 연봉)", exampleValue: "금 60,000,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "인상액", isHeader: true },
+      { placeholder: "(인상액)", exampleValue: "금 5,000,000원" },
+      { label: "인상률", isHeader: true },
+      { placeholder: "(인상률)", exampleValue: "9.09%" },
+    ],
+  },
+  {
+    fields: [
+      { label: "급여 구성", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "기본급 (월)", isHeader: true },
+      { placeholder: "(월 기본급)", exampleValue: "금 4,000,000원" },
+      { label: "식대 (월, 비과세)", isHeader: true },
+      { placeholder: "(월 식대)", exampleValue: "금 200,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "교통비 (월)", isHeader: true },
+      { placeholder: "(월 교통비)", exampleValue: "금 100,000원" },
+      { label: "성과급 (연)", isHeader: true },
+      { placeholder: "(연 성과급)", exampleValue: "기본급의 100% (실적 연동)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "월 지급액 (세전)", isHeader: true },
+      { placeholder: "(월 세전액)", exampleValue: "금 5,000,000원 (성과급 제외)" },
+      { label: "월 예상 실수령액", isHeader: true },
+      { placeholder: "(월 세후액)", exampleValue: "약 4,200,000원 (예상)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "적용 기간", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "적용 시작일", isHeader: true },
+      { placeholder: "(시작일)", exampleValue: "2026년 2월 1일" },
+      { label: "적용 종료일", isHeader: true },
+      { placeholder: "(종료일)", exampleValue: "2027년 1월 31일 (1년간)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "특약 사항", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "내용", isHeader: true },
+      { placeholder: "(특약 사항)", exampleValue: "1. 상기 연봉은 세전 금액이며, 4대보험 및 소득세 등 법정 공제 후 지급함\n2. 성과급은 회사 실적 및 개인 평가에 따라 변동될 수 있음\n3. 본 합의서는 차기 연봉협상 시까지 유효함", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "합의 내용 확인", isHeader: true },
+      { placeholder: "(합의 문구)", exampleValue: "위 내용에 대해 갑과 을은 충분히 협의하였으며, 상호 합의하에 본 연봉협상합의서를 작성함.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "갑 (회사)", isHeader: true },
+      { placeholder: "(회사명) 대표이사 (성명) (인)", exampleValue: "(주)머니테크 대표이사 김대표 (인)" },
+      { label: "을 (근로자)", isHeader: true },
+      { placeholder: "(성명) (인)", exampleValue: "이지훈 (인)" },
+    ],
+  },
+];
+
+export const 외주계약서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "외주 계약서", exampleValue: "외  주  계  약  서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약 당사자", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발주사 (갑)", isHeader: true },
+      { placeholder: "(갑 회사명)", exampleValue: "(주)머니테크" },
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "대표이사 김대표" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(갑 주소)", exampleValue: "서울시 강남구 테헤란로 123 머니빌딩 15층", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수주사 (을)", isHeader: true },
+      { placeholder: "(을 회사명)", exampleValue: "(주)테크솔루션" },
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "대표이사 박개발" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(을 주소)", exampleValue: "서울시 서초구 반포대로 456 테크타워 10층", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제1조 (계약 목적)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "프로젝트명", isHeader: true },
+      { placeholder: "(프로젝트명)", exampleValue: "머니테크 모바일 앱 2.0 개발" },
+      { label: "계약 목적", isHeader: true },
+      { placeholder: "(목적)", exampleValue: "모바일 앱 UI/UX 개선 및 신규 기능 개발" },
+    ],
+  },
+  {
+    fields: [
+      { label: "제2조 (외주 업무 범위)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "업무 내용", isHeader: true },
+      { placeholder: "(업무 상세)", exampleValue: "1. 모바일 앱(iOS/Android) UI/UX 리뉴얼\n2. 결제 시스템 연동 개발\n3. 푸시 알림 기능 구현\n4. 사용자 분석 대시보드 개발\n5. QA 테스트 및 버그 수정", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제3조 (계약 기간)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "착수일", isHeader: true },
+      { placeholder: "(착수일)", exampleValue: "2026년 2월 1일" },
+      { label: "완료일", isHeader: true },
+      { placeholder: "(완료일)", exampleValue: "2026년 5월 31일 (4개월)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "제4조 (계약 금액)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "총 계약금액", isHeader: true },
+      { placeholder: "(계약금액)", exampleValue: "금 80,000,000원 (부가세 별도)" },
+      { label: "부가세 포함", isHeader: true },
+      { placeholder: "(부가세 포함액)", exampleValue: "금 88,000,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "제5조 (대금 지급)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "착수금 (30%)", isHeader: true },
+      { placeholder: "(착수금)", exampleValue: "금 26,400,000원 (계약 체결 후 7일 이내)" },
+      { label: "중도금 (40%)", isHeader: true },
+      { placeholder: "(중도금)", exampleValue: "금 35,200,000원 (1차 산출물 검수 완료 후)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "잔금 (30%)", isHeader: true },
+      { placeholder: "(잔금)", exampleValue: "금 26,400,000원 (최종 검수 완료 후 14일 이내)" },
+      { label: "지급 계좌", isHeader: true },
+      { placeholder: "(계좌정보)", exampleValue: "신한은행 123-456-789012 (주)테크솔루션" },
+    ],
+  },
+  {
+    fields: [
+      { label: "제6조 (산출물 및 검수)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "산출물", isHeader: true },
+      { placeholder: "(산출물)", exampleValue: "1. 앱 소스코드 (iOS/Android)\n2. API 연동 문서\n3. 사용자 매뉴얼\n4. 테스트 결과 보고서" },
+      { label: "검수 기간", isHeader: true },
+      { placeholder: "(검수기간)", exampleValue: "산출물 제출 후 7영업일 이내" },
+    ],
+  },
+  {
+    fields: [
+      { label: "제7조 (하자 보수)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "하자 보수 기간", isHeader: true },
+      { placeholder: "(하자보수 기간)", exampleValue: "최종 검수 완료 후 6개월" },
+      { label: "범위", isHeader: true },
+      { placeholder: "(하자보수 범위)", exampleValue: "을의 귀책사유로 인한 버그 및 오류 무상 수정" },
+    ],
+  },
+  {
+    fields: [
+      { label: "제8조 (지식재산권)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "내용", isHeader: true },
+      { placeholder: "(지식재산권)", exampleValue: "본 계약으로 발생하는 모든 산출물의 저작권 및 지식재산권은 대금 완납 시 갑에게 귀속된다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 20일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "갑 (발주사)", isHeader: true },
+      { placeholder: "(회사명) 대표이사 (성명) (인)", exampleValue: "(주)머니테크 대표이사 김대표 (인)" },
+      { label: "을 (수주사)", isHeader: true },
+      { placeholder: "(회사명) 대표이사 (성명) (인)", exampleValue: "(주)테크솔루션 대표이사 박개발 (인)" },
+    ],
+  },
+];
+
+export const 용역계약서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "용역 계약서", exampleValue: "용  역  계  약  서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약 당사자", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "의뢰인 (갑)", isHeader: true },
+      { placeholder: "(갑 회사명)", exampleValue: "(주)머니테크" },
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "대표이사 김대표" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(갑 주소)", exampleValue: "서울시 강남구 테헤란로 123 머니빌딩 15층", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "용역자 (을)", isHeader: true },
+      { placeholder: "(을 회사명 또는 개인명)", exampleValue: "이컨설턴트 (개인사업자)" },
+      { label: "사업자등록번호", isHeader: true },
+      { placeholder: "(사업자번호)", exampleValue: "123-45-67890" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(을 주소)", exampleValue: "서울시 마포구 와우산로 45 컨설팅빌딩 301호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제1조 (용역 목적)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "용역명", isHeader: true },
+      { placeholder: "(용역명)", exampleValue: "2026년 마케팅 전략 컨설팅" },
+      { label: "목적", isHeader: true },
+      { placeholder: "(목적)", exampleValue: "신규 사업 마케팅 전략 수립 및 실행 자문" },
+    ],
+  },
+  {
+    fields: [
+      { label: "제2조 (용역 내용)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "업무 내용", isHeader: true },
+      { placeholder: "(용역 상세)", exampleValue: "1. 시장 조사 및 경쟁사 분석\n2. 타겟 고객 페르소나 정의\n3. 마케팅 채널 전략 수립\n4. 브랜드 포지셔닝 전략\n5. 월간 마케팅 미팅 및 자문", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제3조 (용역 기간)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "시작일", isHeader: true },
+      { placeholder: "(시작일)", exampleValue: "2026년 2월 1일" },
+      { label: "종료일", isHeader: true },
+      { placeholder: "(종료일)", exampleValue: "2026년 7월 31일 (6개월)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "제4조 (용역 대금)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "총 용역비", isHeader: true },
+      { placeholder: "(총액)", exampleValue: "금 30,000,000원 (부가세 별도)" },
+      { label: "월 용역비", isHeader: true },
+      { placeholder: "(월액)", exampleValue: "금 5,000,000원 × 6개월" },
+    ],
+  },
+  {
+    fields: [
+      { label: "지급 시기", isHeader: true },
+      { placeholder: "(지급일)", exampleValue: "매월 말일 용역 완료 확인 후 익월 10일 지급" },
+      { label: "지급 방법", isHeader: true },
+      { placeholder: "(방법)", exampleValue: "세금계산서 발행 후 계좌이체" },
+    ],
+  },
+  {
+    fields: [
+      { label: "제5조 (산출물)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "산출물", isHeader: true },
+      { placeholder: "(산출물)", exampleValue: "1. 시장 조사 보고서 (1회)\n2. 마케팅 전략 보고서 (1회)\n3. 월간 활동 보고서 (6회)\n4. 최종 성과 분석 보고서 (1회)" },
+      { label: "제출 시기", isHeader: true },
+      { placeholder: "(제출 시기)", exampleValue: "월간 보고서: 매월 25일\n최종 보고서: 계약 종료 7일 전" },
+    ],
+  },
+  {
+    fields: [
+      { label: "제6조 (비밀유지)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "내용", isHeader: true },
+      { placeholder: "(비밀유지)", exampleValue: "을은 본 용역 수행 과정에서 알게 된 갑의 영업비밀 및 기술정보를 계약 기간 및 종료 후 2년간 제3자에게 누설하거나 용역 목적 외로 사용하지 아니한다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제7조 (계약 해지)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "해지 조건", isHeader: true },
+      { placeholder: "(해지 조건)", exampleValue: "1. 상대방의 중대한 계약 위반 시 7일 이내 시정요구 후 해지 가능\n2. 일방적 해지 시 30일 전 서면 통보 필요\n3. 이미 제공된 용역에 대해서는 일할 계산하여 정산", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 20일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "갑 (의뢰인)", isHeader: true },
+      { placeholder: "(회사명) 대표이사 (성명) (인)", exampleValue: "(주)머니테크 대표이사 김대표 (인)" },
+      { label: "을 (용역자)", isHeader: true },
+      { placeholder: "(성명 또는 회사명) (인)", exampleValue: "이컨설턴트 (인)" },
+    ],
+  },
+];

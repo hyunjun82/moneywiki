@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moel.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "연봉협상합의서_DATA",
   "relatedArticle": "/w/근로계약서",
+  "relatedDocs": [
+    { "title": "연봉근로계약서 양식", "url": "/forms/연봉근로계약서" },
+    { "title": "급여명세서 양식", "url": "/forms/급여명세서" },
+    { "title": "성과급지급내역서 양식", "url": "/forms/성과급지급내역서" },
+    { "title": "상여금지급통지서 양식", "url": "/forms/상여금지급통지서" },
+    { "title": "표준근로계약서 양식", "url": "/forms/표준근로계약서" }
+  ],
   "tips": [
     "기본급과 각종 수당을 항목별로 구분해 기재하세요",
     "연봉 적용 시작일을 명확히 명시하세요",

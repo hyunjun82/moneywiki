@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.moj.go.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "외주계약서_DATA",
   "relatedArticle": "/w/프리랜서계약서",
+  "relatedDocs": [
+    { "title": "용역계약서 양식", "url": "/forms/용역계약서" },
+    { "title": "프리랜서계약서 양식", "url": "/forms/프리랜서계약서" },
+    { "title": "도급계약서 양식", "url": "/forms/도급계약서" },
+    { "title": "비밀유지계약서 양식", "url": "/forms/비밀유지계약서" },
+    { "title": "업무제휴계약서 양식", "url": "/forms/업무제휴계약서" }
+  ],
   "tips": [
     "납품 기한과 품질 기준을 명확히 정의하세요",
     "하자 보수 기간과 재작업 조건을 특약사항에 넣으세요",
