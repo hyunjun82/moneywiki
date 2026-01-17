@@ -850,3 +850,301 @@ export const 경위서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// 고소장 양식
+export const 고소장_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "고 소 장", exampleValue: "고 소 장", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "고소인", isHeader: true, rowspan: 4 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "홍길동", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민번호", isHeader: true },
+      { placeholder: "000000-0000000", exampleValue: "850101-1234567", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 역삼동 123-45", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "010-0000-0000", exampleValue: "010-1234-5678", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "피고소인", isHeader: true, rowspan: 4 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김철수", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민번호", isHeader: true },
+      { placeholder: "000000-0000000 (알 수 없으면 '불상')", exampleValue: "불상", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 서초구 서초동 456-78", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "010-0000-0000", exampleValue: "010-9876-5432", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "고소 죄명", isHeader: true },
+      { placeholder: "(해당 죄명)", exampleValue: "사기죄 (형법 제347조)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "고소 취지", isHeader: true },
+      {
+        placeholder: "피고소인을 위 죄명으로 고소하오니 엄벌에 처해주시기 바랍니다.",
+        exampleValue: "피고소인 김철수를 사기죄로 고소하오니, 철저히 수사하여 엄벌에 처해주시기 바랍니다.",
+        colspan: 3,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "범죄 사실", isHeader: true },
+      {
+        placeholder: "1. 피해 일시: ____년 __월 __일\n2. 피해 장소: (장소)\n3. 피해 내용:\n   (구체적인 범죄 사실을 기술합니다)",
+        exampleValue: "1. 피해 일시: 2025년 12월 15일\n2. 피해 장소: 서울시 강남구 소재 커피숍\n3. 피해 내용:\n   피고소인 김철수는 2025년 12월 15일, 고소인에게 '투자하면 월 20% 수익 보장'이라며 3,000만원을 투자받았습니다. 그러나 피고소인은 처음부터 투자 의사나 능력이 없었으며, 해당 금원을 편취하여 개인 용도로 사용하였습니다.",
+        colspan: 3,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "증거자료", isHeader: true },
+      {
+        placeholder: "1. 계좌이체 내역서\n2. 카카오톡 대화 캡처\n3. 약정서 사본",
+        exampleValue: "1. 계좌이체 내역서 1부\n2. 카카오톡 대화 캡처본 1부\n3. 투자 약정서 사본 1부\n4. 녹음 파일 1건",
+        colspan: 3,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "제출처", isHeader: true },
+      { placeholder: "____경찰서 귀중", exampleValue: "서울강남경찰서 귀중", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "고소인", isHeader: true },
+      { placeholder: "성명:              (인)", exampleValue: "성명: 홍길동 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 고발장 양식
+export const 고발장_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "고 발 장", exampleValue: "고 발 장", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "고발인", isHeader: true, rowspan: 4 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "이영희", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민번호", isHeader: true },
+      { placeholder: "000000-0000000", exampleValue: "800515-2345678", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 마포구 합정동 789-12", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "010-0000-0000", exampleValue: "010-5555-6666", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "피고발인", isHeader: true, rowspan: 3 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명 또는 상호)", exampleValue: "(주)가짜식품", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "경기도 성남시 분당구 판교로 100", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "박사장", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "고발 죄명", isHeader: true },
+      { placeholder: "(해당 죄명)", exampleValue: "식품위생법 위반", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "고발 취지", isHeader: true },
+      {
+        placeholder: "피고발인을 위 죄명으로 고발하오니 수사하여 처벌해주시기 바랍니다.",
+        exampleValue: "피고발인 (주)가짜식품을 식품위생법 위반으로 고발하오니, 철저히 수사하여 엄벌에 처해주시기 바랍니다.",
+        colspan: 3,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "범죄 사실", isHeader: true },
+      {
+        placeholder: "1. 발견 일시: ____년 __월 __일\n2. 발견 장소: (장소)\n3. 범죄 내용:\n   (구체적인 범죄 사실을 기술합니다)",
+        exampleValue: "1. 발견 일시: 2025년 12월 20일\n2. 발견 장소: 경기도 성남시 분당구 소재 피고발인 공장\n3. 범죄 내용:\n   피고발인은 유통기한이 경과한 원재료를 사용하여 식품을 제조하고, 유통기한을 위조하여 판매하고 있습니다. 본 고발인은 피고발인 공장에서 근무하던 중 이러한 사실을 목격하였습니다.",
+        colspan: 3,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "증거자료", isHeader: true },
+      {
+        placeholder: "1. 사진 자료\n2. 목격 진술서\n3. 관련 문서",
+        exampleValue: "1. 공장 내부 촬영 사진 5장\n2. 유통기한 위조 문서 사본 1부\n3. 목격 경위 진술서 1부",
+        colspan: 3,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "제출처", isHeader: true },
+      { placeholder: "____검찰청 귀중", exampleValue: "수원지방검찰청 귀중", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "고발인", isHeader: true },
+      { placeholder: "성명:              (인)", exampleValue: "성명: 이영희 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 합의서 양식
+export const 합의서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "합 의 서", exampleValue: "합 의 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "갑", isHeader: true, rowspan: 3 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "홍길동", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민번호", isHeader: true },
+      { placeholder: "000000-0000000", exampleValue: "850101-1234567", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 역삼동 123-45", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "을", isHeader: true, rowspan: 3 },
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김철수", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민번호", isHeader: true },
+      { placeholder: "000000-0000000", exampleValue: "900515-2345678", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 서초구 서초동 456-78", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "합의 사항", isHeader: true },
+      {
+        placeholder: "갑과 을은 아래 내용에 대하여 합의한다.\n\n제1조 (합의 내용)\n\n제2조 (금전 지급)\n\n제3조 (기타 조건)\n\n제4조 (분쟁 해결)",
+        exampleValue: "갑과 을은 아래 내용에 대하여 합의한다.\n\n제1조 (합의 내용)\n갑과 을 사이에 2025년 12월 10일 발생한 교통사고에 대하여 원만히 합의한다.\n\n제2조 (금전 지급)\n을은 갑에게 합의금으로 금 500만원을 2026년 1월 31일까지 갑 명의 계좌(신한 110-123-456789)로 입금한다.\n\n제3조 (민·형사상 책임)\n갑은 본 합의 후 을에 대하여 민·형사상 어떠한 이의도 제기하지 아니한다.\n\n제4조 (효력)\n본 합의서는 갑과 을이 서명날인한 날로부터 효력이 발생한다.",
+        colspan: 3,
+      },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "갑", isHeader: true },
+      { placeholder: "성명:              (인)", exampleValue: "성명: 홍길동 (인)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "을", isHeader: true },
+      { placeholder: "성명:              (인)", exampleValue: "성명: 김철수 (인)", colspan: 3 },
+    ],
+  },
+];

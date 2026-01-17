@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.klac.or.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "고소장_DATA",
   "relatedArticle": "/w/고소-절차",
+  "relatedDocs": [
+    { "title": "고발장 양식", "url": "/forms/고발장" },
+    { "title": "합의서 양식", "url": "/forms/합의서" },
+    { "title": "내용증명 양식", "url": "/forms/내용증명" },
+    { "title": "진술서 양식", "url": "/forms/진술서" },
+    { "title": "경찰서 고소 절차 안내", "url": "/w/경찰-고소-절차" }
+  ],
   "tips": [
     "피해 날짜, 장소, 상황 구체적으로 쓰세요. 증거 첨부하면 더 좋아요.",
     "감정적인 표현보다 사실 중심으로 쓰세요. '억울하다'보다 '언제 무엇을 당했다'가 중요해요.",

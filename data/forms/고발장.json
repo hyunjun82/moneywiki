@@ -8,8 +8,15 @@
   "sourceUrl": "https://www.klac.or.kr",
   "downloads": {},
   "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "previewDataKey": "고발장_DATA",
   "relatedArticle": "/w/고발-절차",
+  "relatedDocs": [
+    { "title": "고소장 양식", "url": "/forms/고소장" },
+    { "title": "진술서 양식", "url": "/forms/진술서" },
+    { "title": "내용증명 양식", "url": "/forms/내용증명" },
+    { "title": "탄원서 양식", "url": "/forms/탄원서" },
+    { "title": "검찰 고발 절차 안내", "url": "/w/검찰-고발-절차" }
+  ],
   "tips": [
     "피고발인 인적사항(이름, 주소, 주민번호) 최대한 자세히 쓰세요.",
     "범죄 사실 구체적으로 적고, 증거자료(사진, 문서 등) 첨부하세요.",
