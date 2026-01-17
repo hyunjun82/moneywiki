@@ -30,6 +30,18 @@ const mockNews = [
   { title: '연말정산 간소화 서비스 15일 오픈', isNew: false },
 ];
 
+// 인기 계산기
+const popularCalculators = [
+  { title: '실업급여 계산기', slug: '실업급여-계산기', rank: 1 },
+  { title: '퇴직금 계산기', slug: '퇴직금-계산기', rank: 2 },
+  { title: '연말정산 계산기', slug: '연말정산-계산기', rank: 3 },
+  { title: '양도소득세 계산기', slug: '양도소득세-계산기', rank: 4 },
+  { title: '대출이자 계산기', slug: '대출이자-계산기', rank: 5 },
+  { title: '국민연금 수령액', slug: '국민연금-수령액-계산기', rank: 6 },
+  { title: '근로소득세 계산기', slug: '근로소득세-계산기', rank: 7 },
+  { title: '4대보험료 계산기', slug: '4대보험료-계산기', rank: 8 },
+];
+
 export default function Sidebar() {
   return (
     <aside className="w-72 shrink-0 hidden lg:block">
@@ -94,9 +106,34 @@ export default function Sidebar() {
         </ul>
       </div>
 
-      {/* 광고 슬롯 */}
-      <div className="bg-gradient-to-br from-gray-50 to-gray-100 border border-dashed border-gray-200 rounded-xl p-6 mb-4 text-center">
-        <span className="text-gray-400 text-xs">광고</span>
+      {/* 인기 계산기 */}
+      <div className="bg-white border border-gray-100 rounded-xl shadow-sm mb-4 overflow-hidden">
+        <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600">
+          <span className="text-sm font-semibold text-white flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+            인기 계산기
+          </span>
+          <span className="text-xs text-white/60">TOP 8</span>
+        </div>
+        <ul className="divide-y divide-gray-50">
+          {popularCalculators.map((item) => (
+            <li key={item.rank}>
+              <Link
+                href={`/w/${item.slug}`}
+                className="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 transition-colors"
+              >
+                <span className={`w-6 h-6 rounded-md flex items-center justify-center text-xs font-bold ${
+                  item.rank <= 3 ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-500'
+                }`}>
+                  {item.rank}
+                </span>
+                <span className="flex-1 text-sm text-gray-700 truncate">{item.title}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
 
       {/* 뉴스 */}
@@ -128,13 +165,8 @@ export default function Sidebar() {
         </ul>
       </div>
 
-      {/* 광고 슬롯 2 */}
-      <div className="bg-gradient-to-br from-gray-50 to-gray-100 border border-dashed border-gray-200 rounded-xl p-6 text-center">
-        <span className="text-gray-400 text-xs">광고</span>
-      </div>
-
       {/* 빠른 링크 */}
-      <div className="mt-4 p-4 bg-[#2d5a45]/5 rounded-xl">
+      <div className="p-4 bg-[#2d5a45]/5 rounded-xl">
         <h3 className="text-xs font-semibold text-[#2d5a45] mb-3">빠른 링크</h3>
         <div className="flex flex-wrap gap-2">
           <Link href="/w/퇴직금-계산기" className="px-3 py-1.5 bg-white text-xs text-gray-600 rounded-lg hover:bg-[#2d5a45] hover:text-white transition-colors border border-gray-100">
