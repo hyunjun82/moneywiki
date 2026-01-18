@@ -11,11 +11,26 @@
   "previewDataKey": "자기소개서_DATA",
   "relatedArticle": "/w/자기소개서-작성법",
   "relatedDocs": [
-    { "title": "이력서 양식", "url": "/forms/이력서" },
-    { "title": "경력증명서 양식", "url": "/forms/경력증명서" },
-    { "title": "재직증명서 양식", "url": "/forms/재직증명서" },
-    { "title": "표준근로계약서 양식", "url": "/forms/표준근로계약서" },
-    { "title": "연봉근로계약서 양식", "url": "/forms/연봉근로계약서" }
+    {
+      "title": "이력서 양식",
+      "url": "/forms/이력서"
+    },
+    {
+      "title": "경력증명서 양식",
+      "url": "/forms/경력증명서"
+    },
+    {
+      "title": "재직증명서 양식",
+      "url": "/forms/재직증명서"
+    },
+    {
+      "title": "표준근로계약서 양식",
+      "url": "/forms/표준근로계약서"
+    },
+    {
+      "title": "연봉근로계약서 양식",
+      "url": "/forms/연봉근로계약서"
+    }
   ],
   "tips": [
     "회사 인재상과 직무를 먼저 분석한 후 작성하세요",
@@ -36,5 +51,10 @@
       "answer": "가능하면 받는 게 좋아요. 객관적인 피드백으로 완성도를 높일 수 있어요."
     }
   ],
-  "createdAt": "2026-01-17"
+  "createdAt": "2026-01-17",
+  "externalDownload": {
+    "source": "프리폼",
+    "url": "https://www.freeforms.co.kr/search/?q=자기소개서",
+    "description": "프리폼에서 무료 다운로드"
+  }
 }

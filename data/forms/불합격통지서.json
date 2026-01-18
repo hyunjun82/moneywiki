@@ -11,11 +11,26 @@
   "previewDataKey": "불합격통지서_DATA",
   "relatedArticle": "/w/채용절차",
   "relatedDocs": [
-    { "title": "채용합격통지서 양식", "url": "/forms/채용합격통지서" },
-    { "title": "이력서 양식", "url": "/forms/이력서" },
-    { "title": "자기소개서 양식", "url": "/forms/자기소개서" },
-    { "title": "경력기술서 양식", "url": "/forms/경력기술서" },
-    { "title": "표준근로계약서 양식", "url": "/forms/표준근로계약서" }
+    {
+      "title": "채용합격통지서 양식",
+      "url": "/forms/채용합격통지서"
+    },
+    {
+      "title": "이력서 양식",
+      "url": "/forms/이력서"
+    },
+    {
+      "title": "자기소개서 양식",
+      "url": "/forms/자기소개서"
+    },
+    {
+      "title": "경력기술서 양식",
+      "url": "/forms/경력기술서"
+    },
+    {
+      "title": "표준근로계약서 양식",
+      "url": "/forms/표준근로계약서"
+    }
   ],
   "tips": [
     "지원자의 노력에 대한 감사 인사를 담으세요",
@@ -36,5 +51,10 @@
       "answer": "네, 가능해요. 보통 6개월~1년 후 새로운 공고에 재지원할 수 있어요."
     }
   ],
-  "createdAt": "2026-01-17"
+  "createdAt": "2026-01-17",
+  "externalDownload": {
+    "source": "프리폼",
+    "url": "https://www.freeforms.co.kr/search/?q=불합격통지서",
+    "description": "프리폼에서 무료 다운로드"
+  }
 }

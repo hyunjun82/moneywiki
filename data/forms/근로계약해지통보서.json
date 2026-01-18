@@ -11,11 +11,26 @@
   "previewDataKey": "근로계약해지통보서_DATA",
   "relatedArticle": "/w/퇴직금",
   "relatedDocs": [
-    { "title": "사직서 양식", "url": "/forms/사직서" },
-    { "title": "퇴직증명서 양식", "url": "/forms/퇴직증명서" },
-    { "title": "표준근로계약서 양식", "url": "/forms/표준근로계약서" },
-    { "title": "4대보험자격상실신고서 양식", "url": "/forms/4대보험자격상실신고서" },
-    { "title": "경력증명서 양식", "url": "/forms/경력증명서" }
+    {
+      "title": "사직서 양식",
+      "url": "/forms/사직서"
+    },
+    {
+      "title": "퇴직증명서 양식",
+      "url": "/forms/퇴직증명서"
+    },
+    {
+      "title": "표준근로계약서 양식",
+      "url": "/forms/표준근로계약서"
+    },
+    {
+      "title": "4대보험자격상실신고서 양식",
+      "url": "/forms/4대보험자격상실신고서"
+    },
+    {
+      "title": "경력증명서 양식",
+      "url": "/forms/경력증명서"
+    }
   ],
   "tips": [
     "해지 사유는 구체적이고 객관적으로 작성하세요",
@@ -36,5 +51,10 @@
       "answer": "통보서에 적힌 최종 근무일까지 근무하면 돼요. 보통 30일 해고예고기간을 거쳐 퇴사하게 돼요."
     }
   ],
-  "createdAt": "2026-01-17"
+  "createdAt": "2026-01-17",
+  "externalDownload": {
+    "source": "프리폼",
+    "url": "https://www.freeforms.co.kr/search/?q=근로계약해지통보서",
+    "description": "프리폼에서 무료 다운로드"
+  }
 }

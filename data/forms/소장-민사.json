@@ -11,11 +11,26 @@
   "previewDataKey": "소장민사_DATA",
   "relatedArticle": "/w/민사소송-절차",
   "relatedDocs": [
-    { "title": "답변서(민사) 양식", "url": "/forms/답변서-민사" },
-    { "title": "지급명령신청서 양식", "url": "/forms/지급명령신청서" },
-    { "title": "내용증명 양식", "url": "/forms/내용증명" },
-    { "title": "고소장 양식", "url": "/forms/고소장" },
-    { "title": "합의서 양식", "url": "/forms/합의서" }
+    {
+      "title": "답변서(민사) 양식",
+      "url": "/forms/답변서-민사"
+    },
+    {
+      "title": "지급명령신청서 양식",
+      "url": "/forms/지급명령신청서"
+    },
+    {
+      "title": "내용증명 양식",
+      "url": "/forms/내용증명"
+    },
+    {
+      "title": "고소장 양식",
+      "url": "/forms/고소장"
+    },
+    {
+      "title": "합의서 양식",
+      "url": "/forms/합의서"
+    }
   ],
   "tips": [
     "청구취지는 '원하는 결과'를 명확히 쓰세요. 예: 피고는 원고에게 1,000만원을 지급하라",
@@ -36,5 +51,10 @@
       "answer": "법원에서 보정명령 내려요. 기한 내에 고쳐서 다시 내면 돼요."
     }
   ],
-  "createdAt": "2026-01-17"
+  "createdAt": "2026-01-17",
+  "externalDownload": {
+    "source": "대법원",
+    "url": "https://ecfs.scourt.go.kr/ecf/ecf300/ECF302.jsp소장-민사",
+    "description": "대법원 전자소송에서 양식 확인"
+  }
 }

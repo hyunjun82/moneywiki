@@ -12,6 +12,12 @@ export interface RelatedDoc {
   url: string;
 }
 
+export interface ExternalDownload {
+  source: string;
+  url: string;
+  description: string;
+}
+
 export interface FormData {
   slug: string;
   title: string;
@@ -30,6 +36,7 @@ export interface FormData {
     doc?: string;
     pdf?: string;
   };
+  externalDownload?: ExternalDownload;  // 외부 다운로드 링크 (HWP 파일 없을 때)
   previewDataKey: string;
   relatedArticle?: string;
   relatedDocs?: RelatedDoc[];  // 관련 문서 배열 (하단 내부링크용)

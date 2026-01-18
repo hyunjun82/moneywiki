@@ -29,5 +29,10 @@
       "answer": "인지대와 송달료 합쳐서 보통 2만~5만원 정도예요."
     }
   ],
-  "createdAt": "2026-01-17"
+  "createdAt": "2026-01-17",
+  "externalDownload": {
+    "source": "대법원",
+    "url": "https://ecfs.scourt.go.kr/ecf/ecf300/ECF302.jsp항고장",
+    "description": "대법원 전자소송에서 양식 확인"
+  }
 }

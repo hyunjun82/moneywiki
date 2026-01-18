@@ -11,11 +11,26 @@
   "previewDataKey": "가족돌봄휴가신청서_DATA",
   "relatedArticle": "/w/가족돌봄휴가",
   "relatedDocs": [
-    { "title": "복직신청서 양식", "url": "/forms/복직신청서" },
-    { "title": "배우자출산휴가신청서 양식", "url": "/forms/배우자출산휴가신청서" },
-    { "title": "병가신청서 양식", "url": "/forms/병가신청서" },
-    { "title": "가족관계증명서 발급", "url": "/w/가족관계증명서" },
-    { "title": "긴급복지지원 신청", "url": "/w/긴급복지지원" }
+    {
+      "title": "복직신청서 양식",
+      "url": "/forms/복직신청서"
+    },
+    {
+      "title": "배우자출산휴가신청서 양식",
+      "url": "/forms/배우자출산휴가신청서"
+    },
+    {
+      "title": "병가신청서 양식",
+      "url": "/forms/병가신청서"
+    },
+    {
+      "title": "가족관계증명서 발급",
+      "url": "/w/가족관계증명서"
+    },
+    {
+      "title": "긴급복지지원 신청",
+      "url": "/w/긴급복지지원"
+    }
   ],
   "tips": [
     "가족관계증명서와 질병 진단서를 첨부하세요",
@@ -36,5 +51,10 @@
       "answer": "정당한 사유 없이는 거부 못 해요. 사업 운영에 중대한 지장이 있는 경우만 기간 조정 가능해요."
     }
   ],
-  "createdAt": "2026-01-17"
+  "createdAt": "2026-01-17",
+  "externalDownload": {
+    "source": "프리폼",
+    "url": "https://www.freeforms.co.kr/search/?q=가족돌봄휴가신청서",
+    "description": "프리폼에서 무료 다운로드"
+  }
 }

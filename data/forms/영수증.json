@@ -11,11 +11,26 @@
   "previewDataKey": "영수증_DATA",
   "relatedArticle": "/w/현금영수증-발급",
   "relatedDocs": [
-    { "title": "세금계산서 양식", "url": "/forms/세금계산서" },
-    { "title": "거래명세서 양식", "url": "/forms/거래명세서" },
-    { "title": "견적서 양식", "url": "/forms/견적서" },
-    { "title": "차용증 양식", "url": "/forms/차용증" },
-    { "title": "현금영수증 발급 방법", "url": "/w/현금영수증-발급" }
+    {
+      "title": "세금계산서 양식",
+      "url": "/forms/세금계산서"
+    },
+    {
+      "title": "거래명세서 양식",
+      "url": "/forms/거래명세서"
+    },
+    {
+      "title": "견적서 양식",
+      "url": "/forms/견적서"
+    },
+    {
+      "title": "차용증 양식",
+      "url": "/forms/차용증"
+    },
+    {
+      "title": "현금영수증 발급 방법",
+      "url": "/w/현금영수증-발급"
+    }
   ],
   "tips": [
     "받는 사람, 금액, 내역을 정확히 기재해야 경비 처리 가능해요",
@@ -36,5 +51,10 @@
       "answer": "네, 가능해요. 단, '재발급'이라고 표시하고 원본과 동일하게 작성해야 해요. 중복 처리 방지를 위해 원본 회수를 요청할 수도 있어요."
     }
   ],
-  "createdAt": "2026-01-17"
+  "createdAt": "2026-01-17",
+  "externalDownload": {
+    "source": "프리폼",
+    "url": "https://www.freeforms.co.kr/search/?q=영수증",
+    "description": "프리폼에서 무료 다운로드"
+  }
 }

@@ -11,11 +11,26 @@
   "previewDataKey": "경위서_DATA",
   "relatedArticle": "/w/경위서-작성법",
   "relatedDocs": [
-    { "title": "시말서 양식", "url": "/forms/시말서" },
-    { "title": "사유서 양식", "url": "/forms/사유서" },
-    { "title": "반성문 양식", "url": "/forms/반성문" },
-    { "title": "사고보고서 양식", "url": "/forms/사고보고서" },
-    { "title": "진술서 양식", "url": "/forms/진술서" }
+    {
+      "title": "시말서 양식",
+      "url": "/forms/시말서"
+    },
+    {
+      "title": "사유서 양식",
+      "url": "/forms/사유서"
+    },
+    {
+      "title": "반성문 양식",
+      "url": "/forms/반성문"
+    },
+    {
+      "title": "사고보고서 양식",
+      "url": "/forms/사고보고서"
+    },
+    {
+      "title": "진술서 양식",
+      "url": "/forms/진술서"
+    }
   ],
   "tips": [
     "육하원칙(누가, 언제, 어디서, 무엇을, 어떻게, 왜)에 따라 작성하세요",
@@ -36,5 +51,10 @@
       "answer": "사실대로만 작성하면 문제없어요. 거짓을 쓰면 오히려 불리해질 수 있어요."
     }
   ],
-  "createdAt": "2026-01-17"
+  "createdAt": "2026-01-17",
+  "externalDownload": {
+    "source": "일반서식",
+    "url": "https://www.freeforms.co.kr/search/?q=경위서",
+    "description": "프리폼에서 무료 다운로드"
+  }
 }

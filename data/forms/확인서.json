@@ -6,8 +6,12 @@
   "category": "생활·가정",
   "source": "정부24",
   "sourceUrl": "https://www.gov.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/확인서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "확인서.hwp"
+  },
   "previewDataKey": "DEFAULT",
   "relatedArticle": "/w/확인서-작성법",
   "tips": [

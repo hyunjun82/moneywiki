@@ -170,7 +170,7 @@ export default function Home() {
           {sortedCategories.map(([category, docs]) => (
             <Link
               key={category}
-              href={`#category-${category}`}
+              href={category === "양식·서식" ? "/forms" : `#category-${category}`}
               className="p-4 bg-white border border-neutral-200 rounded-xl hover:border-emerald-300 hover:shadow-md transition-all text-center"
             >
               <span className="text-2xl mb-2 block">{categoryEmoji[category] || "📄"}</span>

@@ -11,11 +11,26 @@
   "previewDataKey": "재직증명서_DATA",
   "relatedArticle": "/w/재직증명서-발급",
   "relatedDocs": [
-    { "title": "경력증명서 양식", "url": "/forms/경력증명서" },
-    { "title": "퇴직증명서 양식", "url": "/forms/퇴직증명서" },
-    { "title": "납세증명서신청서 양식", "url": "/forms/납세증명서신청서" },
-    { "title": "연봉계약서 양식", "url": "/forms/연봉계약서" },
-    { "title": "대출 서류 준비", "url": "/w/대출-서류" }
+    {
+      "title": "경력증명서 양식",
+      "url": "/forms/경력증명서"
+    },
+    {
+      "title": "퇴직증명서 양식",
+      "url": "/forms/퇴직증명서"
+    },
+    {
+      "title": "납세증명서신청서 양식",
+      "url": "/forms/납세증명서신청서"
+    },
+    {
+      "title": "연봉계약서 양식",
+      "url": "/forms/연봉계약서"
+    },
+    {
+      "title": "대출 서류 준비",
+      "url": "/w/대출-서류"
+    }
   ],
   "tips": [
     "회사 직인이 찍힌 원본이 필요한지 먼저 확인하세요",
@@ -36,5 +51,10 @@
       "answer": "정부24에서 4대보험 가입증명으로 대체 가능해요. 회사 직인이 필요하면 회사에 직접 요청하세요."
     }
   ],
-  "createdAt": "2026-01-17"
+  "createdAt": "2026-01-17",
+  "externalDownload": {
+    "source": "프리폼",
+    "url": "https://www.freeforms.co.kr/search/?q=재직증명서",
+    "description": "프리폼에서 무료 다운로드"
+  }
 }

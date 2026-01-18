@@ -11,11 +11,26 @@
   "previewDataKey": "육아휴직신청서_DATA",
   "relatedArticle": "/w/육아휴직",
   "relatedDocs": [
-    { "title": "출산휴가신청서 양식", "url": "/forms/출산휴가신청서" },
-    { "title": "배우자출산휴가신청서 양식", "url": "/forms/배우자출산휴가신청서" },
-    { "title": "복직신청서 양식", "url": "/forms/복직신청서" },
-    { "title": "가족돌봄휴가신청서 양식", "url": "/forms/가족돌봄휴가신청서" },
-    { "title": "휴직신청서 양식", "url": "/forms/휴직신청서" }
+    {
+      "title": "출산휴가신청서 양식",
+      "url": "/forms/출산휴가신청서"
+    },
+    {
+      "title": "배우자출산휴가신청서 양식",
+      "url": "/forms/배우자출산휴가신청서"
+    },
+    {
+      "title": "복직신청서 양식",
+      "url": "/forms/복직신청서"
+    },
+    {
+      "title": "가족돌봄휴가신청서 양식",
+      "url": "/forms/가족돌봄휴가신청서"
+    },
+    {
+      "title": "휴직신청서 양식",
+      "url": "/forms/휴직신청서"
+    }
   ],
   "tips": [
     "휴직 시작 30일 전에 회사에 신청하세요",
@@ -36,5 +51,10 @@
       "answer": "아니요. 육아휴직을 이유로 해고하거나 불이익을 주면 불법이에요."
     }
   ],
-  "createdAt": "2026-01-17"
+  "createdAt": "2026-01-17",
+  "externalDownload": {
+    "source": "프리폼",
+    "url": "https://www.freeforms.co.kr/search/?q=육아휴직신청서",
+    "description": "프리폼에서 무료 다운로드"
+  }
 }

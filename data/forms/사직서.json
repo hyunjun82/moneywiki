@@ -11,11 +11,26 @@
   "previewDataKey": "사직서_DATA",
   "relatedArticle": "/w/퇴직금-계산법",
   "relatedDocs": [
-    { "title": "퇴직금 계산기", "url": "/calculators/severance-pay" },
-    { "title": "권고사직 vs 자진퇴사 차이", "url": "/w/권고사직-자진퇴사-차이" },
-    { "title": "실업급여 수급조건", "url": "/w/실업급여-수급조건" },
-    { "title": "4대보험 자격상실 신고", "url": "/forms/4대보험자격상실신고서" },
-    { "title": "경력증명서 양식", "url": "/forms/경력증명서" }
+    {
+      "title": "퇴직금 계산기",
+      "url": "/calculators/severance-pay"
+    },
+    {
+      "title": "권고사직 vs 자진퇴사 차이",
+      "url": "/w/권고사직-자진퇴사-차이"
+    },
+    {
+      "title": "실업급여 수급조건",
+      "url": "/w/실업급여-수급조건"
+    },
+    {
+      "title": "4대보험 자격상실 신고",
+      "url": "/forms/4대보험자격상실신고서"
+    },
+    {
+      "title": "경력증명서 양식",
+      "url": "/forms/경력증명서"
+    }
   ],
   "tips": [
     "퇴사 희망일 최소 30일 전에 제출하는 게 좋아요",
@@ -36,5 +51,10 @@
       "answer": "권고사직은 회사 요청이므로 '권고사직 합의서'를 작성해요. 이 경우 실업급여 수급이 가능합니다. 일반 사직서를 쓰면 자발적 퇴사로 처리될 수 있어요."
     }
   ],
-  "createdAt": "2026-01-17"
+  "createdAt": "2026-01-17",
+  "externalDownload": {
+    "source": "프리폼",
+    "url": "https://www.freeforms.co.kr/search/?q=사직서",
+    "description": "프리폼에서 무료 다운로드"
+  }
 }

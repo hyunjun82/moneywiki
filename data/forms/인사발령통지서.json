@@ -11,11 +11,26 @@
   "previewDataKey": "인사발령통지서_DATA",
   "relatedArticle": "/w/근로계약서",
   "relatedDocs": [
-    { "title": "표준근로계약서 양식", "url": "/forms/표준근로계약서" },
-    { "title": "연봉협상합의서 양식", "url": "/forms/연봉협상합의서" },
-    { "title": "급여명세서 양식", "url": "/forms/급여명세서" },
-    { "title": "재직증명서 양식", "url": "/forms/재직증명서" },
-    { "title": "복직신청서 양식", "url": "/forms/복직신청서" }
+    {
+      "title": "표준근로계약서 양식",
+      "url": "/forms/표준근로계약서"
+    },
+    {
+      "title": "연봉협상합의서 양식",
+      "url": "/forms/연봉협상합의서"
+    },
+    {
+      "title": "급여명세서 양식",
+      "url": "/forms/급여명세서"
+    },
+    {
+      "title": "재직증명서 양식",
+      "url": "/forms/재직증명서"
+    },
+    {
+      "title": "복직신청서 양식",
+      "url": "/forms/복직신청서"
+    }
   ],
   "tips": [
     "발령 효력 발생일을 명확히 기재하세요",
@@ -36,5 +51,10 @@
       "answer": "발령일부터 변경되는 게 원칙이에요. 통지서에 급여 적용 시점이 명시되어 있는지 확인하세요."
     }
   ],
-  "createdAt": "2026-01-17"
+  "createdAt": "2026-01-17",
+  "externalDownload": {
+    "source": "프리폼",
+    "url": "https://www.freeforms.co.kr/search/?q=인사발령통지서",
+    "description": "프리폼에서 무료 다운로드"
+  }
 }

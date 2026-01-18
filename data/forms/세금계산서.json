@@ -11,11 +11,26 @@
   "previewDataKey": "세금계산서_DATA",
   "relatedArticle": "/w/세금계산서-발행방법",
   "relatedDocs": [
-    { "title": "거래명세서 양식", "url": "/forms/거래명세서" },
-    { "title": "견적서 양식", "url": "/forms/견적서" },
-    { "title": "영수증 양식", "url": "/forms/영수증" },
-    { "title": "납품서 양식", "url": "/forms/납품서" },
-    { "title": "세금계산서 발행 방법", "url": "/w/세금계산서-발행방법" }
+    {
+      "title": "거래명세서 양식",
+      "url": "/forms/거래명세서"
+    },
+    {
+      "title": "견적서 양식",
+      "url": "/forms/견적서"
+    },
+    {
+      "title": "영수증 양식",
+      "url": "/forms/영수증"
+    },
+    {
+      "title": "납품서 양식",
+      "url": "/forms/납품서"
+    },
+    {
+      "title": "세금계산서 발행 방법",
+      "url": "/w/세금계산서-발행방법"
+    }
   ],
   "tips": [
     "공급가액과 부가세를 정확히 구분해서 기재하세요",
@@ -36,5 +51,10 @@
       "answer": "5년간 보관해야 해요. 전자세금계산서는 국세청에서 조회 가능하지만, 종이는 분실하면 안 되니 스캔해두세요."
     }
   ],
-  "createdAt": "2026-01-17"
+  "createdAt": "2026-01-17",
+  "externalDownload": {
+    "source": "프리폼",
+    "url": "https://www.freeforms.co.kr/search/?q=세금계산서",
+    "description": "프리폼에서 무료 다운로드"
+  }
 }

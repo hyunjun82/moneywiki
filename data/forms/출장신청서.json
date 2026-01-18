@@ -11,11 +11,26 @@
   "previewDataKey": "출장신청서_DATA",
   "relatedArticle": "/w/출장-신청",
   "relatedDocs": [
-    { "title": "연차휴가신청서 양식", "url": "/forms/연차휴가신청서" },
-    { "title": "견적서 양식", "url": "/forms/견적서" },
-    { "title": "영수증 양식", "url": "/forms/영수증" },
-    { "title": "출장비 정산 방법", "url": "/w/출장비-정산" },
-    { "title": "산재보험 적용", "url": "/w/산재보험" }
+    {
+      "title": "연차휴가신청서 양식",
+      "url": "/forms/연차휴가신청서"
+    },
+    {
+      "title": "견적서 양식",
+      "url": "/forms/견적서"
+    },
+    {
+      "title": "영수증 양식",
+      "url": "/forms/영수증"
+    },
+    {
+      "title": "출장비 정산 방법",
+      "url": "/w/출장비-정산"
+    },
+    {
+      "title": "산재보험 적용",
+      "url": "/w/산재보험"
+    }
   ],
   "tips": [
     "출장 목적과 기대 효과를 구체적으로 작성하세요",
@@ -36,5 +51,10 @@
       "answer": "업무와 관련된 출장 중 사고는 산재로 인정돼요. 즉시 회사에 보고하고 산재 신청하세요."
     }
   ],
-  "createdAt": "2026-01-17"
+  "createdAt": "2026-01-17",
+  "externalDownload": {
+    "source": "프리폼",
+    "url": "https://www.freeforms.co.kr/search/?q=출장신청서",
+    "description": "프리폼에서 무료 다운로드"
+  }
 }

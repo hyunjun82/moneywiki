@@ -118,7 +118,26 @@
       "Bash(powershell.exe -Command \"& ''C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe'' -c ''print\\(123\\)''\")",
       "Bash(powershell.exe:*)",
       "Bash(powershell.exe -Command \"pip install beautifulsoup4 requests --quiet 2>&1\")",
-      "Bash(powershell.exe -Command \"& ''C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe'' -m pip install beautifulsoup4 requests --quiet\")"
+      "Bash(powershell.exe -Command \"& ''C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe'' -m pip install beautifulsoup4 requests --quiet\")",
+      "Bash(where:*)",
+      "Bash(cmd.exe /c \"where python\")",
+      "Bash(/c/Users/user/AppData/Local/Programs/Python/Python312/python.exe:*)",
+      "Bash(/c/Python312/python.exe:*)",
+      "Bash(/c/Python311/python.exe:*)",
+      "Bash(dir \"C:\\\\Users\\\\user\\\\wiki-site\\\\public\\\\files\\\\forms\\\\*.hwp\" /b)",
+      "mcp__mcp-registry__search_mcp_registry",
+      "Bash(py scripts/add-external-downloads.py:*)",
+      "Bash(npx tsc:*)",
+      "Bash(for f in 대리점계약서.hwp 도급계약서.hwp 매매계약서.hwp 물품매매계약서.hwp 비밀유지계약서.hwp 업무제휴계약서.hwp 외주계약서.hwp 용역계약서.hwp 전대차계약서.hwp 전입신고서.hwp 컨설팅계약서.hwp 프리랜서계약서.hwp 경업금지계약서.hwp 근로계약해지통보서.hwp)",
+      "Bash(do rm -f \"$f\")",
+      "Bash(echo:*)",
+      "Bash(py -c:*)",
+      "Bash(dir \"C:\\\\Program Files\\\\HNC\\\\*\" /s /b)",
+      "Bash(dir \"C:\\\\Program Files \\(x86\\)\\\\HNC\\\\*\" /s /b)",
+      "Bash(py -m pip install:*)",
+      "Bash(py scripts/test-hwp-mcp.py)",
+      "Bash(py scripts/create-form-hwp.py)",
+      "Bash(py scripts/read-hwp-content.py)"
     ]
   }
 }

@@ -11,11 +11,26 @@
   "previewDataKey": "휴직신청서_DATA",
   "relatedArticle": "/w/휴직-신청",
   "relatedDocs": [
-    { "title": "복직신청서 양식", "url": "/forms/복직신청서" },
-    { "title": "연차휴가신청서 양식", "url": "/forms/연차휴가신청서" },
-    { "title": "병가신청서 양식", "url": "/forms/병가신청서" },
-    { "title": "육아휴직 급여 신청", "url": "/w/육아휴직-급여" },
-    { "title": "4대보험 처리", "url": "/w/4대보험" }
+    {
+      "title": "복직신청서 양식",
+      "url": "/forms/복직신청서"
+    },
+    {
+      "title": "연차휴가신청서 양식",
+      "url": "/forms/연차휴가신청서"
+    },
+    {
+      "title": "병가신청서 양식",
+      "url": "/forms/병가신청서"
+    },
+    {
+      "title": "육아휴직 급여 신청",
+      "url": "/w/육아휴직-급여"
+    },
+    {
+      "title": "4대보험 처리",
+      "url": "/w/4대보험"
+    }
   ],
   "tips": [
     "휴직 사유에 따라 필요한 서류가 다르니 인사팀에 확인하세요",
@@ -36,5 +51,10 @@
       "answer": "무급휴직이라도 4대보험 자격은 유지돼요. 보험료는 회사와 협의해서 처리해요."
     }
   ],
-  "createdAt": "2026-01-17"
+  "createdAt": "2026-01-17",
+  "externalDownload": {
+    "source": "프리폼",
+    "url": "https://www.freeforms.co.kr/search/?q=휴직신청서",
+    "description": "프리폼에서 무료 다운로드"
+  }
 }

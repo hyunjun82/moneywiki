@@ -11,11 +11,26 @@
   "previewDataKey": "채용합격통지서_DATA",
   "relatedArticle": "/w/근로계약서",
   "relatedDocs": [
-    { "title": "표준근로계약서 양식", "url": "/forms/표준근로계약서" },
-    { "title": "불합격통지서 양식", "url": "/forms/불합격통지서" },
-    { "title": "이력서 양식", "url": "/forms/이력서" },
-    { "title": "자기소개서 양식", "url": "/forms/자기소개서" },
-    { "title": "경력증명서 양식", "url": "/forms/경력증명서" }
+    {
+      "title": "표준근로계약서 양식",
+      "url": "/forms/표준근로계약서"
+    },
+    {
+      "title": "불합격통지서 양식",
+      "url": "/forms/불합격통지서"
+    },
+    {
+      "title": "이력서 양식",
+      "url": "/forms/이력서"
+    },
+    {
+      "title": "자기소개서 양식",
+      "url": "/forms/자기소개서"
+    },
+    {
+      "title": "경력증명서 양식",
+      "url": "/forms/경력증명서"
+    }
   ],
   "tips": [
     "입사 예정일과 출근 시간을 명확히 안내하세요",
@@ -36,5 +51,10 @@
       "answer": "정식 서면 통지를 요청하세요. 나중에 입사 조건 확인할 때 증빙 자료로 필요해요."
     }
   ],
-  "createdAt": "2026-01-17"
+  "createdAt": "2026-01-17",
+  "externalDownload": {
+    "source": "프리폼",
+    "url": "https://www.freeforms.co.kr/search/?q=채용합격통지서",
+    "description": "프리폼에서 무료 다운로드"
+  }
 }

@@ -11,11 +11,26 @@
   "previewDataKey": "이의신청서_DATA",
   "relatedArticle": "/w/이의신청-절차",
   "relatedDocs": [
-    { "title": "진정서 양식", "url": "/forms/진정서" },
-    { "title": "탄원서 양식", "url": "/forms/탄원서" },
-    { "title": "내용증명 양식", "url": "/forms/내용증명" },
-    { "title": "소장(민사) 양식", "url": "/forms/소장-민사" },
-    { "title": "고소장 양식", "url": "/forms/고소장" }
+    {
+      "title": "진정서 양식",
+      "url": "/forms/진정서"
+    },
+    {
+      "title": "탄원서 양식",
+      "url": "/forms/탄원서"
+    },
+    {
+      "title": "내용증명 양식",
+      "url": "/forms/내용증명"
+    },
+    {
+      "title": "소장(민사) 양식",
+      "url": "/forms/소장-민사"
+    },
+    {
+      "title": "고소장 양식",
+      "url": "/forms/고소장"
+    }
   ],
   "tips": [
     "처분 받은 날부터 기한 엄수하세요. 보통 7~30일이에요. 기한 지나면 무조건 확정돼요.",
@@ -36,5 +51,10 @@
       "answer": "보통 1~2개월 걸려요. 복잡하면 3개월 이상도 있어요."
     }
   ],
-  "createdAt": "2026-01-17"
+  "createdAt": "2026-01-17",
+  "externalDownload": {
+    "source": "대법원",
+    "url": "https://ecfs.scourt.go.kr/ecf/ecf300/ECF302.jsp이의신청서",
+    "description": "대법원 전자소송에서 양식 확인"
+  }
 }

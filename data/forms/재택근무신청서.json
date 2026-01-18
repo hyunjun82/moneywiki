@@ -11,11 +11,26 @@
   "previewDataKey": "재택근무신청서_DATA",
   "relatedArticle": "/w/재택근무-신청",
   "relatedDocs": [
-    { "title": "휴직신청서 양식", "url": "/forms/휴직신청서" },
-    { "title": "연차휴가신청서 양식", "url": "/forms/연차휴가신청서" },
-    { "title": "출장신청서 양식", "url": "/forms/출장신청서" },
-    { "title": "표준근로계약서 양식", "url": "/forms/표준근로계약서" },
-    { "title": "병가신청서 양식", "url": "/forms/병가신청서" }
+    {
+      "title": "휴직신청서 양식",
+      "url": "/forms/휴직신청서"
+    },
+    {
+      "title": "연차휴가신청서 양식",
+      "url": "/forms/연차휴가신청서"
+    },
+    {
+      "title": "출장신청서 양식",
+      "url": "/forms/출장신청서"
+    },
+    {
+      "title": "표준근로계약서 양식",
+      "url": "/forms/표준근로계약서"
+    },
+    {
+      "title": "병가신청서 양식",
+      "url": "/forms/병가신청서"
+    }
   ],
   "tips": [
     "재택근무 가능 직무인지 먼저 확인하세요",
@@ -36,5 +51,10 @@
       "answer": "회사가 업무상 필요하다고 판단하면 취소 가능해요. 사전에 협의하세요."
     }
   ],
-  "createdAt": "2026-01-17"
+  "createdAt": "2026-01-17",
+  "externalDownload": {
+    "source": "프리폼",
+    "url": "https://www.freeforms.co.kr/search/?q=재택근무신청서",
+    "description": "프리폼에서 무료 다운로드"
+  }
 }

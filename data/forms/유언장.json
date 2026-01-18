@@ -11,11 +11,26 @@
   "previewDataKey": "유언장_DATA",
   "relatedArticle": "/w/유언장-작성법",
   "relatedDocs": [
-    { "title": "상속포기서 양식", "url": "/forms/상속포기서" },
-    { "title": "가족관계증명서신청서 양식", "url": "/forms/가족관계증명서신청서" },
-    { "title": "위임장 양식", "url": "/forms/위임장" },
-    { "title": "동의서 양식", "url": "/forms/동의서" },
-    { "title": "합의서 양식", "url": "/forms/합의서" }
+    {
+      "title": "상속포기서 양식",
+      "url": "/forms/상속포기서"
+    },
+    {
+      "title": "가족관계증명서신청서 양식",
+      "url": "/forms/가족관계증명서신청서"
+    },
+    {
+      "title": "위임장 양식",
+      "url": "/forms/위임장"
+    },
+    {
+      "title": "동의서 양식",
+      "url": "/forms/동의서"
+    },
+    {
+      "title": "합의서 양식",
+      "url": "/forms/합의서"
+    }
   ],
   "tips": [
     "전문 자필로 쓰고, 날짜와 서명 필수예요. 컴퓨터 작성은 무효예요.",
@@ -36,5 +51,10 @@
       "answer": "있어요. 단, 전문 자필+날짜+서명 필수예요. 하나라도 빠지면 무효예요."
     }
   ],
-  "createdAt": "2026-01-17"
+  "createdAt": "2026-01-17",
+  "externalDownload": {
+    "source": "일반서식",
+    "url": "https://www.freeforms.co.kr/search/?q=유언장",
+    "description": "프리폼에서 무료 다운로드"
+  }
 }

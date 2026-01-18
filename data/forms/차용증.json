@@ -11,11 +11,26 @@
   "previewDataKey": "차용증_DATA",
   "relatedArticle": "/w/금전소비대차계약서",
   "relatedDocs": [
-    { "title": "금전소비대차계약서", "url": "/forms/금전소비대차계약서" },
-    { "title": "각서 양식", "url": "/forms/각서" },
-    { "title": "영수증 양식", "url": "/forms/영수증" },
-    { "title": "내용증명 양식", "url": "/forms/내용증명" },
-    { "title": "공증 받는 방법", "url": "/w/공증-받는-방법" }
+    {
+      "title": "금전소비대차계약서",
+      "url": "/forms/금전소비대차계약서"
+    },
+    {
+      "title": "각서 양식",
+      "url": "/forms/각서"
+    },
+    {
+      "title": "영수증 양식",
+      "url": "/forms/영수증"
+    },
+    {
+      "title": "내용증명 양식",
+      "url": "/forms/내용증명"
+    },
+    {
+      "title": "공증 받는 방법",
+      "url": "/w/공증-받는-방법"
+    }
   ],
   "tips": [
     "차용 금액을 한글과 숫자로 모두 적어서 변조를 막으세요",
@@ -36,5 +51,10 @@
       "answer": "공증 없이도 유효하지만, 공증받으면 소송 없이 바로 강제집행할 수 있어요. 금액이 크면 공증 추천해요."
     }
   ],
-  "createdAt": "2026-01-17"
+  "createdAt": "2026-01-17",
+  "externalDownload": {
+    "source": "일반서식",
+    "url": "https://www.freeforms.co.kr/search/?q=차용증",
+    "description": "프리폼에서 무료 다운로드"
+  }
 }

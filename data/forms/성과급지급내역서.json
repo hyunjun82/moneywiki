@@ -11,11 +11,26 @@
   "previewDataKey": "성과급지급내역서_DATA",
   "relatedArticle": "/w/성과급",
   "relatedDocs": [
-    { "title": "급여명세서 양식", "url": "/forms/급여명세서" },
-    { "title": "상여금지급통지서 양식", "url": "/forms/상여금지급통지서" },
-    { "title": "표준근로계약서 양식", "url": "/forms/표준근로계약서" },
-    { "title": "연봉근로계약서 양식", "url": "/forms/연봉근로계약서" },
-    { "title": "인사발령통지서 양식", "url": "/forms/인사발령통지서" }
+    {
+      "title": "급여명세서 양식",
+      "url": "/forms/급여명세서"
+    },
+    {
+      "title": "상여금지급통지서 양식",
+      "url": "/forms/상여금지급통지서"
+    },
+    {
+      "title": "표준근로계약서 양식",
+      "url": "/forms/표준근로계약서"
+    },
+    {
+      "title": "연봉근로계약서 양식",
+      "url": "/forms/연봉근로계약서"
+    },
+    {
+      "title": "인사발령통지서 양식",
+      "url": "/forms/인사발령통지서"
+    }
   ],
   "tips": [
     "성과 평가 기준과 점수를 구체적으로 명시하세요",
@@ -36,5 +51,10 @@
       "answer": "아니요. 성과급은 최저임금 산정에 포함되지 않아요. 기본급만 계산해요."
     }
   ],
-  "createdAt": "2026-01-17"
+  "createdAt": "2026-01-17",
+  "externalDownload": {
+    "source": "프리폼",
+    "url": "https://www.freeforms.co.kr/search/?q=성과급지급내역서",
+    "description": "프리폼에서 무료 다운로드"
+  }
 }

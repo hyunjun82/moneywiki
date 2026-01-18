@@ -11,11 +11,26 @@
   "previewDataKey": "병가신청서_DATA",
   "relatedArticle": "/w/연차휴가",
   "relatedDocs": [
-    { "title": "복직신청서 양식", "url": "/forms/복직신청서" },
-    { "title": "가족돌봄휴가신청서 양식", "url": "/forms/가족돌봄휴가신청서" },
-    { "title": "산재보험청구서 양식", "url": "/forms/산재보험청구서" },
-    { "title": "진단서 발급 방법", "url": "/w/진단서-발급" },
-    { "title": "상병수당 신청 방법", "url": "/w/상병수당-신청" }
+    {
+      "title": "복직신청서 양식",
+      "url": "/forms/복직신청서"
+    },
+    {
+      "title": "가족돌봄휴가신청서 양식",
+      "url": "/forms/가족돌봄휴가신청서"
+    },
+    {
+      "title": "산재보험청구서 양식",
+      "url": "/forms/산재보험청구서"
+    },
+    {
+      "title": "진단서 발급 방법",
+      "url": "/w/진단서-발급"
+    },
+    {
+      "title": "상병수당 신청 방법",
+      "url": "/w/상병수당-신청"
+    }
   ],
   "tips": [
     "병원 진단서나 소견서를 첨부하세요",
@@ -36,5 +51,10 @@
       "answer": "회사가 연차 사용을 강요할 수는 없어요. 하지만 무급 병가보다 유급 연차가 유리할 수 있어요."
     }
   ],
-  "createdAt": "2026-01-17"
+  "createdAt": "2026-01-17",
+  "externalDownload": {
+    "source": "프리폼",
+    "url": "https://www.freeforms.co.kr/search/?q=병가신청서",
+    "description": "프리폼에서 무료 다운로드"
+  }
 }

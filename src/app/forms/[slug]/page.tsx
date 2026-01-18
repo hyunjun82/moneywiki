@@ -408,7 +408,9 @@ export default async function FormDownloadPage({ params }: PageProps) {
         {/* 다운로드 버튼 - <a download> 태그 사용 */}
         <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl p-6 mb-8">
           <h2 className="text-lg font-semibold text-neutral-800 mb-4">
-            원하는 포맷으로 다운받으세요
+            {(form.downloads.hwp || form.downloads.doc || form.downloads.pdf)
+              ? "원하는 포맷으로 다운받으세요"
+              : "외부 사이트에서 다운로드"}
           </h2>
           <div className="flex flex-wrap gap-3">
             {form.downloads.hwp && (
@@ -459,9 +461,28 @@ export default async function FormDownloadPage({ params }: PageProps) {
                 </div>
               </a>
             )}
+            {/* 외부 다운로드 링크 (HWP/DOC/PDF 파일이 없을 때만 표시) */}
+            {!form.downloads.hwp && !form.downloads.doc && !form.downloads.pdf && form.externalDownload && (
+              <a
+                href={form.externalDownload.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-5 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 hover:shadow-md transition-all cursor-pointer"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                <div className="text-left">
+                  <div className="font-medium">{form.externalDownload.source}에서 다운로드</div>
+                  <div className="text-xs text-emerald-100">{form.externalDownload.description}</div>
+                </div>
+              </a>
+            )}
           </div>
           <p className="text-xs text-neutral-500 mt-4">
-            * {form.source} 공식 양식입니다. 클릭 시 바로 다운로드됩니다. 회원가입/로그인 필요 없음.
+            {(form.downloads.hwp || form.downloads.doc || form.downloads.pdf)
+              ? `* ${form.source} 공식 양식입니다. 클릭 시 바로 다운로드됩니다. 회원가입/로그인 필요 없음.`
+              : `* ${form.externalDownload?.source || form.source}에서 양식을 다운로드할 수 있어요.`}
           </p>
         </div>
 

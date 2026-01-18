@@ -11,11 +11,26 @@
   "previewDataKey": "진술서_DATA",
   "relatedArticle": "/w/진술서-작성법",
   "relatedDocs": [
-    { "title": "경위서 양식", "url": "/forms/경위서" },
-    { "title": "진정서 양식", "url": "/forms/진정서" },
-    { "title": "탄원서 양식", "url": "/forms/탄원서" },
-    { "title": "고소장 양식", "url": "/forms/고소장" },
-    { "title": "합의서 양식", "url": "/forms/합의서" }
+    {
+      "title": "경위서 양식",
+      "url": "/forms/경위서"
+    },
+    {
+      "title": "진정서 양식",
+      "url": "/forms/진정서"
+    },
+    {
+      "title": "탄원서 양식",
+      "url": "/forms/탄원서"
+    },
+    {
+      "title": "고소장 양식",
+      "url": "/forms/고소장"
+    },
+    {
+      "title": "합의서 양식",
+      "url": "/forms/합의서"
+    }
   ],
   "tips": [
     "시간 순서대로 사실만 객관적으로 작성하세요",
@@ -36,5 +51,10 @@
       "answer": "법원이나 경찰 요청은 거부하기 어려워요. 회사 요청은 상황에 따라 다르니 상담받으세요."
     }
   ],
-  "createdAt": "2026-01-17"
+  "createdAt": "2026-01-17",
+  "externalDownload": {
+    "source": "일반서식",
+    "url": "https://www.freeforms.co.kr/search/?q=진술서",
+    "description": "프리폼에서 무료 다운로드"
+  }
 }
