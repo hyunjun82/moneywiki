@@ -6,11 +6,12 @@
   "category": "법률·계약",
   "source": "인터넷우체국",
   "sourceUrl": "https://service.epost.go.kr",
-  "downloads": {
-    "hwp": "/files/forms/내용증명.hwp"
-  },
-  "downloadNames": {
-    "hwp": "내용증명_인터넷우체국.hwp"
+  "downloads": {},
+  "downloadNames": {},
+  "externalDownload": {
+    "source": "인터넷우체국",
+    "url": "https://service.epost.go.kr/main.retrieve.cmd",
+    "description": "인터넷우체국에서 내용증명 신청"
   },
   "previewDataKey": "내용증명_DATA",
   "relatedArticle": "/w/내용증명-작성법",

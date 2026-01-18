@@ -6,11 +6,12 @@
   "category": "금융·대출",
   "source": "대한법률구조공단",
   "sourceUrl": "https://www.klac.or.kr",
-  "downloads": {
-    "hwp": "/files/forms/금전소비대차계약서.hwp"
-  },
-  "downloadNames": {
-    "hwp": "금전소비대차계약서.hwp"
+  "downloads": {},
+  "downloadNames": {},
+  "externalDownload": {
+    "source": "대한법률구조공단",
+    "url": "https://www.klac.or.kr/legalstruct/cyberData/selectCyberDataList.do",
+    "description": "대한법률구조공단에서 다운로드"
   },
   "previewDataKey": "금전소비대차계약서_DATA",
   "relatedArticle": "/w/차용증-작성법",

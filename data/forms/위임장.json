@@ -6,11 +6,12 @@
   "category": "법률·계약",
   "source": "국토교통부",
   "sourceUrl": "https://www.molit.go.kr",
-  "downloads": {
-    "hwp": "/files/forms/위임장.hwp"
-  },
-  "downloadNames": {
-    "hwp": "위임장_국토교통부.hwp"
+  "downloads": {},
+  "downloadNames": {},
+  "externalDownload": {
+    "source": "프리폼",
+    "url": "https://www.freeforms.co.kr/search/?q=위임장",
+    "description": "프리폼에서 무료 다운로드"
   },
   "previewDataKey": "위임장_DATA",
   "relatedArticle": "/w/위임장-작성법",

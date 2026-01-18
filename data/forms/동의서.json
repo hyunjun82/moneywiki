@@ -6,11 +6,12 @@
   "category": "생활·가정",
   "source": "정부24",
   "sourceUrl": "https://www.gov.kr",
-  "downloads": {
-    "hwp": "/files/forms/동의서.hwp"
-  },
-  "downloadNames": {
-    "hwp": "동의서.hwp"
+  "downloads": {},
+  "downloadNames": {},
+  "externalDownload": {
+    "source": "프리폼",
+    "url": "https://www.freeforms.co.kr/search/?q=동의서",
+    "description": "프리폼에서 무료 다운로드"
   },
   "previewDataKey": "동의서_DATA",
   "relatedArticle": "/w/동의서-작성법",
