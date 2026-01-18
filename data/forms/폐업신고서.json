@@ -6,8 +6,12 @@
   "category": "민원·행정",
   "source": "국세청",
   "sourceUrl": "https://www.nts.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/폐업신고서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "폐업신고서.hwp"
+  },
   "previewDataKey": "폐업신고서_DATA",
   "relatedArticle": "/w/폐업신고",
   "relatedDocs": [

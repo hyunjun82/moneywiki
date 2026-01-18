@@ -4740,90 +4740,97 @@ export const 사대보험자격상실신고서_DATA: FormRow[] = [
 ];
 
 // 가족관계증명서신청서 미리보기 데이터
+// 가족관계등록부 등의 증명서 교부 등 신청서 (별지 제11호 서식)
 export const 가족관계증명서신청서_DATA: FormRow[] = [
   {
     fields: [
-      { label: "제목", isHeader: true },
-      { placeholder: "가족관계증명서 발급 신청서", exampleValue: "가 족 관 계 증 명 서 발 급 신 청 서", colspan: 3 },
+      { label: "서식명", isHeader: true },
+      { placeholder: "[별지 제11호 서식] 가족관계등록부 등의 증명서 교부 등 신청서", exampleValue: "[별지 제11호 서식] 가족관계등록부 등의 증명서 교부 등 신청서", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "신청인 정보", isHeader: true, colspan: 4 },
+      { label: "신청 대상자", isHeader: true, colspan: 4 },
     ],
   },
   {
     fields: [
       { label: "성명", isHeader: true },
-      { placeholder: "(성명)", exampleValue: "김가족" },
+      { placeholder: "(한글)          (한자:          )", exampleValue: "김민수 (한자: 金民秀)" },
+      { label: "등록기준지", isHeader: true },
+      { placeholder: "(등록기준지)", exampleValue: "서울특별시 서초구" },
+    ],
+  },
+  {
+    fields: [
       { label: "주민등록번호", isHeader: true },
-      { placeholder: "(주민등록번호)", exampleValue: "900101-1******" },
+      { placeholder: "______-_______", exampleValue: "900101-1******", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "연락처", isHeader: true },
+      { label: "신청내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "1. 일반증명서", isHeader: true },
+      { placeholder: "①가족관계증명서( )통 ②기본증명서( )통 ③혼인관계증명서( )통 ④입양관계증명서( )통 ⑤친양자입양관계증명서( )통", exampleValue: "①가족관계증명서(2)통", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "2. 상세증명서", isHeader: true },
+      { placeholder: "①가족관계증명서( )통 ②기본증명서( )통 ③혼인관계증명서( )통 ④입양관계증명서( )통 ⑤친양자입양관계증명서( )통", exampleValue: "(해당없음)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "3. 특정증명서", isHeader: true },
+      { placeholder: "①기본증명서(특정-친권·후견)( )통", exampleValue: "(해당없음)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민등록번호 공개", isHeader: true },
+      { placeholder: "□전부 공개 □신청대상자 본인만 공개", exampleValue: "☑신청대상자 본인만 공개" },
+      { label: "공개 신청 사유", isHeader: true },
+      { placeholder: "□신청대상자 본인 또는 부모, 양부모, 배우자, 자녀 및 그 대리인인 경우", exampleValue: "☑신청대상자 본인인 경우" },
+    ],
+  },
+  {
+    fields: [
+      { label: "청구사유", isHeader: true },
+      { placeholder: "(발급 목적)", exampleValue: "금융기관 제출용", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명) (인 또는 서명)", exampleValue: "김민수 (서명)" },
+      { label: "생년월일", isHeader: true },
+      { placeholder: "    .  .  .", exampleValue: "1990. 1. 1." },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인자격", isHeader: true },
+      { placeholder: "(본인/배우자/직계혈족 등)", exampleValue: "본인" },
+      { label: "휴대전화번호", isHeader: true },
       { placeholder: "(연락처)", exampleValue: "010-1234-5678" },
-      { label: "주소", isHeader: true },
-      { placeholder: "(주소)", exampleValue: "서울시 서초구 반포대로 10" },
     ],
   },
   {
     fields: [
-      { label: "증명서 대상자", isHeader: true, colspan: 4 },
-    ],
-  },
-  {
-    fields: [
-      { label: "대상자 성명", isHeader: true },
-      { placeholder: "(대상자 성명)", exampleValue: "김가족 (본인)" },
-      { label: "대상자 주민번호", isHeader: true },
-      { placeholder: "(주민등록번호)", exampleValue: "900101-1******" },
-    ],
-  },
-  {
-    fields: [
-      { label: "신청인과의 관계", isHeader: true },
-      { placeholder: "(관계)", exampleValue: "본인", colspan: 3 },
-    ],
-  },
-  {
-    fields: [
-      { label: "증명서 종류", isHeader: true, colspan: 4 },
-    ],
-  },
-  {
-    fields: [
-      { label: "증명서 유형", isHeader: true },
-      { placeholder: "(기본/상세)", exampleValue: "기본증명서" },
-      { label: "발급 부수", isHeader: true },
-      { placeholder: "(부수)", exampleValue: "2부" },
-    ],
-  },
-  {
-    fields: [
-      { label: "발급 목적", isHeader: true },
-      { placeholder: "(사용 목적)", exampleValue: "은행 대출 서류 제출용" },
+      { label: "접수번호", isHeader: true },
+      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 20일" },
       { label: "제출처", isHeader: true },
-      { placeholder: "(제출처)", exampleValue: "○○은행" },
-    ],
-  },
-  {
-    fields: [
-      { label: "수령 방법", isHeader: true },
-      { placeholder: "(수령방법)", exampleValue: "창구 수령", colspan: 3 },
-    ],
-  },
-  {
-    fields: [
-      { label: "신청일", isHeader: true },
-      { placeholder: "20__년 __월 __일", exampleValue: "2026년 1월 20일", colspan: 3 },
-    ],
-  },
-  {
-    fields: [
-      { label: "신청인 서명", isHeader: true },
-      { placeholder: "신청인: ___________ (서명)", exampleValue: "신청인: 김가족 (서명)", colspan: 3 },
+      { placeholder: "○○시(구)·읍·면장 귀하", exampleValue: "서초구청장 귀하" },
     ],
   },
 ];
@@ -10428,31 +10435,87 @@ export const 토지대장신청서_DATA: FormRow[] = [
 ];
 
 // 폐업신고서
+// 사업자등록 및 인·허가 관련 통합 폐업신고서 (별지 제7호 서식)
 export const 폐업신고서_DATA: FormRow[] = [
   {
     fields: [
-      { label: "폐업신고서", isHeader: true, colspan: 4 },
+      { label: "서식명", isHeader: true },
+      { placeholder: "[별지 제7호 서식] 사업자등록 및 인·허가 관련 통합 폐업신고서", exampleValue: "[별지 제7호 서식] 사업자등록 및 인·허가 관련 통합 폐업신고서", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "사업자 정보", isHeader: true, colspan: 4 },
+      { label: "신고내용", isHeader: true, colspan: 4 },
     ],
   },
   {
     fields: [
-      { label: "상호", isHeader: true },
+      { label: "신고사무명", isHeader: true },
+      { placeholder: "(신고사무명)", exampleValue: "부가가치세법 사업자등록" },
+      { label: "세부업종", isHeader: true },
+      { placeholder: "(업종)", exampleValue: "소매업 (의류)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "허가(신고·등록)번호", isHeader: true },
+      { placeholder: "제          호", exampleValue: "제 2020-서울강남-12345 호" },
+      { label: "허가(신고·등록)일자", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2020년 3월 1일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "폐업일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일" },
+      { label: "폐업사유", isHeader: true },
+      { placeholder: "1.사업부진 2.행정처분 3.계절사업 4.법인전환 5.면세포기 6.면세적용 7.해산(합병) 8.양도·양수 9.기타", exampleValue: "1. 사업부진" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고인", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "홍길동" },
+      { label: "생년월일", isHeader: true },
+      { placeholder: "(생년월일)", exampleValue: "1985. 1. 1." },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 서초구 반포대로 10", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "전화번호", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "010-1234-5678", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "상호(법인명)", isHeader: true },
       { placeholder: "(상호)", exampleValue: "머니스토어" },
-      { label: "사업자등록번호", isHeader: true },
+      { label: "사업자(법인)등록번호", isHeader: true },
       { placeholder: "(사업자번호)", exampleValue: "123-45-67890" },
     ],
   },
   {
     fields: [
-      { label: "대표자 성명", isHeader: true },
+      { label: "성명(대표자)", isHeader: true },
       { placeholder: "(대표자명)", exampleValue: "홍길동" },
-      { label: "주민등록번호", isHeader: true },
-      { placeholder: "(주민등록번호)", exampleValue: "850101-1******" },
+      { label: "전화번호", isHeader: true },
+      { placeholder: "(사업장 전화)", exampleValue: "02-1234-5678" },
     ],
   },
   {
@@ -10463,62 +10526,141 @@ export const 폐업신고서_DATA: FormRow[] = [
   },
   {
     fields: [
-      { label: "업종", isHeader: true },
-      { placeholder: "(업종)", exampleValue: "소매업 (의류)" },
-      { label: "사업 개시일", isHeader: true },
-      { placeholder: "____년 __월 __일", exampleValue: "2020년 3월 1일" },
-    ],
-  },
-  {
-    fields: [
-      { label: "폐업 정보", isHeader: true, colspan: 4 },
-    ],
-  },
-  {
-    fields: [
-      { label: "폐업일", isHeader: true },
-      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일" },
-      { label: "폐업 사유", isHeader: true },
-      { placeholder: "(사유)", exampleValue: "경영 악화로 인한 자진 폐업" },
-    ],
-  },
-  {
-    fields: [
-      { label: "재고 처분", isHeader: true },
-      { placeholder: "□ 완료  □ 진행 중  □ 해당없음", exampleValue: "☑ 완료" },
-      { label: "잔여 재고", isHeader: true },
-      { placeholder: "(금액)", exampleValue: "0원 (전량 정리)" },
-    ],
-  },
-  {
-    fields: [
-      { label: "부가가치세 신고", isHeader: true, colspan: 4 },
-    ],
-  },
-  {
-    fields: [
-      { label: "확정 신고 기간", isHeader: true },
-      { placeholder: "____년 __월 __일 ~ ____년 __월 __일", exampleValue: "2026년 1월 1일 ~ 2026년 1월 15일" },
-      { label: "신고 예정일", isHeader: true },
-      { placeholder: "____년 __월 __일", exampleValue: "2026년 2월 9일 (폐업 후 25일 이내)" },
-    ],
-  },
-  {
-    fields: [
-      { label: "연락처", isHeader: true },
-      { placeholder: "(전화번호)", exampleValue: "010-1234-5678", colspan: 3 },
-    ],
-  },
-  {
-    fields: [
-      { label: "신고일", isHeader: true },
-      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+      { label: "신고일/제출처", isHeader: true },
+      { placeholder: "____년 __월 __일 / 세무서장·시장·군수·구청장 귀하", exampleValue: "2026년 1월 17일 / 강남세무서장 귀하", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "신고인", isHeader: true },
-      { placeholder: "(성명) (서명)", exampleValue: "대표자 홍길동 (인)", colspan: 3 },
+      { placeholder: "(성명) (서명 또는 인)", exampleValue: "홍길동 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 혼인신고서 (양식 제10호)
+export const 혼인신고서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "혼인신고서 (양식 제10호)", exampleValue: "혼인신고서 (양식 제10호)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "①혼인당사자(신고인)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "남편(부) 성명", isHeader: true },
+      { placeholder: "한글 (성)     /(명)     (인 또는 서명)", exampleValue: "김 철수 (서명)" },
+      { label: "아내(처) 성명", isHeader: true },
+      { placeholder: "한글 (성)     /(명)     (인 또는 서명)", exampleValue: "이 영희 (서명)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "남편 본(한자)", isHeader: true },
+      { placeholder: "(본)", exampleValue: "김해" },
+      { label: "아내 본(한자)", isHeader: true },
+      { placeholder: "(본)", exampleValue: "전주" },
+    ],
+  },
+  {
+    fields: [
+      { label: "남편 주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "900101-1******" },
+      { label: "아내 주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "920515-2******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "남편 등록기준지", isHeader: true },
+      { placeholder: "(등록기준지)", exampleValue: "서울특별시 강남구" },
+      { label: "아내 등록기준지", isHeader: true },
+      { placeholder: "(등록기준지)", exampleValue: "경기도 성남시 분당구" },
+    ],
+  },
+  {
+    fields: [
+      { label: "남편 주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 테헤란로 123" },
+      { label: "아내 주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "경기도 성남시 분당구 판교로 456" },
+    ],
+  },
+  {
+    fields: [
+      { label: "②부모·양부모", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "남편 부 성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김OO" },
+      { label: "아내 부 성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "이OO" },
+    ],
+  },
+  {
+    fields: [
+      { label: "남편 모 성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "박OO" },
+      { label: "아내 모 성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "최OO" },
+    ],
+  },
+  {
+    fields: [
+      { label: "④성·본의 협의", isHeader: true },
+      { placeholder: "자녀의 성·본을 모의 성·본으로 하는 협의 여부", exampleValue: "아니요 (자녀는 부의 성·본을 따름)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑤근친혼 여부", isHeader: true },
+      { placeholder: "8촌 이내 혈족사이 해당 여부", exampleValue: "아니요 (8촌 이내 혈족 아님)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑦증인", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "증인1 성명", isHeader: true },
+      { placeholder: "(성명) (인 또는 서명)", exampleValue: "박증인 (서명)" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "850303-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "증인1 주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 서초구 반포대로 10", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "증인2 성명", isHeader: true },
+      { placeholder: "(성명) (인 또는 서명)", exampleValue: "최증인 (서명)" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "880707-2******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "증인2 주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "경기도 수원시 팔달구 효원로 20", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑨신고인 출석여부", isHeader: true },
+      { placeholder: "☐ 남편(부)  ☐ 아내(처)", exampleValue: "☑ 남편(부)  ☑ 아내(처) (둘 다 출석)", colspan: 3 },
     ],
   },
 ];

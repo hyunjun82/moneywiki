@@ -6,9 +6,13 @@
   "category": "민원·행정",
   "source": "정부24",
   "sourceUrl": "https://www.gov.kr",
-  "downloads": {},
-  "downloadNames": {},
-  "previewDataKey": "DEFAULT",
+  "downloads": {
+    "hwp": "/files/forms/혼인신고서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "혼인신고서.hwp"
+  },
+  "previewDataKey": "혼인신고서_DATA",
   "relatedArticle": "/w/혼인신고",
   "tips": [
     "성인 증인 2명의 서명과 인감도장(또는 서명)이 필수예요",
