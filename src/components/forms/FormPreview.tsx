@@ -330,68 +330,127 @@ export const 기간제근로계약서_DATA: FormRow[] = [
   },
 ];
 
-// 임대차계약서 미리보기 데이터 (법무부 표준양식 기준)
+// 임대차계약서 미리보기 데이터 (법무부 주택임대차표준계약서 기준)
 export const 임대차계약서_DATA: FormRow[] = [
+  // 제목 및 계약 유형
   {
     fields: [
-      { label: "부동산의 표시", isHeader: true },
-      { placeholder: "소재지: (주소)", exampleValue: "서울특별시 강남구 테헤란로 123, 101동 1001호", colspan: 3 },
+      { label: "계약서 제목", isHeader: true },
+      { placeholder: "주택임대차표준계약서", exampleValue: "주택임대차표준계약서", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "임대할 부분", isHeader: true },
-      { placeholder: "건물 __층 __호 (면적 __㎡)", exampleValue: "건물 10층 1001호 (전용면적 84.5㎡)", colspan: 3 },
+      { label: "계약 유형", isHeader: true },
+      { placeholder: "☐ 보증금 있는 월세  ☐ 전세  ☐ 월세", exampleValue: "☑ 전세", colspan: 3 },
     ],
   },
+  // [임차주택의 표시]
+  {
+    fields: [
+      { label: "소재지", isHeader: true },
+      { placeholder: "(도로명주소)", exampleValue: "서울특별시 강남구 테헤란로 123", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "토지", isHeader: true },
+      { placeholder: "지목:          면적:          ㎡", exampleValue: "지목: 대  면적: 500㎡" },
+      { label: "건물", isHeader: true },
+      { placeholder: "구조·용도:          면적:          ㎡", exampleValue: "구조: 철근콘크리트  면적: 84.5㎡" },
+    ],
+  },
+  {
+    fields: [
+      { label: "임차할 부분", isHeader: true },
+      { placeholder: "상세주소가 있는 경우 동·층·호 정확히 기재", exampleValue: "101동 1001호 (전용면적 84.5㎡)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약의 종류", isHeader: true },
+      { placeholder: "☐ 신규 계약  ☐ 합의에 의한 재계약  ☐ 갱신계약", exampleValue: "☑ 신규 계약", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "미납 국세·지방세", isHeader: true },
+      { placeholder: "☐ 없음  ☐ 있음", exampleValue: "☑ 없음 (임대인 서명 또는 날인)" },
+      { label: "선순위 확정일자 현황", isHeader: true },
+      { placeholder: "☐ 해당 없음  ☐ 해당 있음", exampleValue: "☑ 해당 없음" },
+    ],
+  },
+  // [계약내용] 제1조
   {
     fields: [
       { label: "보증금", isHeader: true },
-      { placeholder: "금 ________원정", exampleValue: "금 삼억원정 (₩300,000,000)", colspan: 3 },
+      { placeholder: "금                                  원정 (\\                    )", exampleValue: "금 삼억원정 (\\300,000,000)", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "계약금", isHeader: true },
-      { placeholder: "금 ________원정 (계약 시)", exampleValue: "금 삼천만원정 (계약 시 지급)" },
-      { label: "잔금", isHeader: true },
-      { placeholder: "금 ________원정", exampleValue: "금 이억칠천만원 (입주일 지급)" },
+      { placeholder: "금          원정은 계약시에 지불하고 영수함", exampleValue: "금 삼천만원정은 계약시에 지불하고 영수함. 영수자 (인)" },
+      { label: "중도금", isHeader: true },
+      { placeholder: "금          원정은    년   월   일에 지불", exampleValue: "금 0원정 (중도금 없음)" },
     ],
   },
   {
     fields: [
-      { label: "월세 (차임)", isHeader: true },
-      { placeholder: "금 ________원 (매월 __일 지급)", exampleValue: "해당없음 (전세)", colspan: 3 },
+      { label: "잔금", isHeader: true },
+      { placeholder: "금          원정은    년   월   일에 지불한다", exampleValue: "금 이억칠천만원정은 2026년 2월 1일에 지불한다", colspan: 3 },
     ],
   },
+  {
+    fields: [
+      { label: "차임 (월세)", isHeader: true },
+      { placeholder: "금          원정은 매월     일에 지불한다", exampleValue: "해당없음 (전세계약)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "관리비", isHeader: true },
+      { placeholder: "(정액인 경우) 총액 금          원정", exampleValue: "월 15만원 (일반관리비, 수도료, 가스요금 포함)", colspan: 3 },
+    ],
+  },
+  // 제2조 임대차기간
   {
     fields: [
       { label: "임대차 기간", isHeader: true },
-      { placeholder: "____년 __월 __일부터 ____년 __월 __일까지", exampleValue: "2026년 2월 1일부터 2028년 1월 31일까지 (2년)", colspan: 3 },
+      { placeholder: "   년   월   일까지 인도하고,    년   월   일까지", exampleValue: "2026년 2월 1일부터 2028년 1월 31일까지 (2년)", colspan: 3 },
     ],
   },
+  // 제3조 입주 전 수리
+  {
+    fields: [
+      { label: "입주 전 수리", isHeader: true },
+      { placeholder: "☐ 없음  ☐ 있음 (수리할 내용:                    )", exampleValue: "☑ 있음 (도배, 장판 전체 교체)", colspan: 3 },
+    ],
+  },
+  // 특약사항
   {
     fields: [
       { label: "특약사항", isHeader: true },
-      { placeholder: "(당사자 간 합의 사항)", exampleValue: "1. 도배, 장판 신규 교체 후 입주\n2. 에어컨 2대 포함\n3. 관리비 별도 (약 15만원/월)", colspan: 3 },
+      { placeholder: "임대인과 임차인 간의 특별한 약정 사항", exampleValue: "1. 도배, 장판 신규 교체 후 입주\n2. 에어컨 2대 기존 설치분 포함\n3. 전입신고 및 확정일자 2026년 2월 2일까지 완료\n4. 임대인은 위 일자까지 담보권 설정 불가", colspan: 3 },
+    ],
+  },
+  // 계약 당사자
+  {
+    fields: [
+      { label: "임대인", isHeader: true },
+      { placeholder: "주소:          주민등록번호:          성명:          (서명 또는 날인)", exampleValue: "주소: 서울시 강남구  주민등록번호: 700101-1******  성명: 홍길동 (인)", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "임대인 (갑)", isHeader: true },
-      { placeholder: "성명:          주민등록번호:          (인)", exampleValue: "성명: 홍길동 | 주민등록번호: 700101-1****** (인)", colspan: 3 },
+      { label: "임차인", isHeader: true },
+      { placeholder: "주소:          주민등록번호:          성명:          (서명 또는 날인)", exampleValue: "주소: 서울시 서초구  주민등록번호: 900515-1******  성명: 김철수 (인)", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "임차인 (을)", isHeader: true },
-      { placeholder: "성명:          주민등록번호:          (인)", exampleValue: "성명: 김철수 | 주민등록번호: 900515-1****** (인)", colspan: 3 },
-    ],
-  },
-  {
-    fields: [
-      { label: "중개업자", isHeader: true },
-      { placeholder: "상호:          등록번호:          (인)", exampleValue: "상호: OO공인중개사 | 등록번호: 11680-2024-00123 (인)", colspan: 3 },
+      { label: "개업공인중개사", isHeader: true },
+      { placeholder: "사무소명칭:          등록번호:          대표:          (서명 및 날인)", exampleValue: "사무소: OO공인중개사  등록번호: 11680-2024-00123  대표: 박영희 (인)", colspan: 3 },
     ],
   },
 ];
