@@ -1,18 +1,18 @@
 {
   "slug": "폐업신고서",
-  "title": "2026 폐업신고서 양식 무료 다운로드 (HWP, PDF, Word)",
+  "title": "2026 폐업신고서 양식 무료 다운로드 (HWP)",
   "shortTitle": "폐업신고서",
   "description": "사업을 그만두실 때 필요한 폐업신고서 양식이에요. 국세청과 지자체에 제출하는 공식 서류로, 사업자등록 말소를 위해 반드시 제출해야 해요.",
   "category": "민원·행정",
   "source": "국세청",
   "sourceUrl": "https://www.nts.go.kr",
   "downloads": {
-    "hwp": "/files/forms/폐업신고서.hwp"
+    "hwp": "/files/forms/휴업폐업신고서.hwp"
   },
   "downloadNames": {
-    "hwp": "폐업신고서.hwp"
+    "hwp": "휴업폐업신고서.hwp"
   },
-  "previewDataKey": "폐업신고서_DATA",
+  "previewDataKey": "휴업폐업신고서_DATA",
   "relatedArticle": "/w/폐업신고",
   "relatedDocs": [
     { "title": "사업자등록신청서 양식", "url": "/forms/사업자등록신청서" },
@@ -23,7 +23,7 @@
   ],
   "tips": [
     "폐업일로부터 25일 이내에 신고해야 가산세가 없어요",
-    "미처분 재고가 있으면 재고조사를 받을 수 있어니 정리하고 신고하세요",
+    "미처분 재고가 있으면 재고조사를 받을 수 있으니 정리하고 신고하세요",
     "부가세 신고와 함께 하면 한 번에 처리할 수 있어요"
   ],
   "faq": [

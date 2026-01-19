@@ -102,6 +102,7 @@ import FormPreview, {
   컨설팅계약서_DATA,
   토지대장신청서_DATA,
   폐업신고서_DATA,
+  혼인신고서_DATA,
 } from "@/components/forms/FormPreview";
 import FormPageClient from "@/components/forms/FormPageClient";
 import FormSidebar from "@/components/forms/FormSidebar";
@@ -211,6 +212,7 @@ const PREVIEW_DATA_MAP: Record<string, typeof 표준근로계약서_DATA> = {
   "컨설팅계약서_DATA": 컨설팅계약서_DATA,
   "토지대장신청서_DATA": 토지대장신청서_DATA,
   "폐업신고서_DATA": 폐업신고서_DATA,
+  "혼인신고서_DATA": 혼인신고서_DATA,
 };
 
 // 기본 프리뷰 데이터 (새 양식용) - FormRow[] 형식

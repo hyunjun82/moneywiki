@@ -1,17 +1,16 @@
 {
   "slug": "위임장",
-  "title": "2026 위임장 양식 무료 다운로드 (HWP, PDF, Word)",
+  "title": "2026 위임장 양식 무료 다운로드 (HWP)",
   "shortTitle": "위임장",
   "description": "내가 직접 못 가는 일을 다른 사람에게 맡길 때 쓰는 문서예요. 관공서 민원이나 법원 업무에 자주 필요해요.",
   "category": "법률·계약",
   "source": "국토교통부",
   "sourceUrl": "https://www.molit.go.kr",
-  "downloads": {},
-  "downloadNames": {},
-  "externalDownload": {
-    "source": "프리폼",
-    "url": "https://www.freeforms.co.kr/search/?q=위임장",
-    "description": "프리폼에서 무료 다운로드"
+  "downloads": {
+    "hwp": "/files/forms/위임장.hwp"
+  },
+  "downloadNames": {
+    "hwp": "위임장.hwp"
   },
   "previewDataKey": "위임장_DATA",
   "relatedArticle": "/w/위임장-작성법",

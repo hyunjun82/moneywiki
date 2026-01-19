@@ -83,7 +83,20 @@ export default function FormPreview({ title, rows, className = "", mode = "previ
 }
 
 // 표준근로계약서 미리보기 데이터 (고용노동부 표준양식 기준)
+// 표준근로계약서 (기간의 정함이 없는 경우) - 2025년 고용노동부 개정 양식 기준
 export const 표준근로계약서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "계약서 제목", isHeader: true },
+      { placeholder: "표준근로계약서(기간의 정함이 없는 경우)", exampleValue: "표준근로계약서(기간의 정함이 없는 경우)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약 당사자", isHeader: true },
+      { placeholder: "(이하 '사업주'라 함)과(와) (이하 '근로자'라 함)은 다음과 같이 근로계약을 체결한다.", exampleValue: "(주)OO컴퍼니(이하 '사업주'라 함)과(와) 김철수(이하 '근로자'라 함)은 다음과 같이 근로계약을 체결한다.", colspan: 3 },
+    ],
+  },
   {
     fields: [
       { label: "1. 근로개시일", isHeader: true },
@@ -105,69 +118,111 @@ export const 표준근로계약서_DATA: FormRow[] = [
   {
     fields: [
       { label: "4. 소정근로시간", isHeader: true },
-      { placeholder: "__시 __분 ~ __시 __분 (휴게: __시 __분 ~ __시 __분)", exampleValue: "09시 00분 ~ 18시 00분 (휴게: 12시 00분 ~ 13시 00분)", colspan: 3 },
+      { placeholder: "__시 __분 ~ __시 __분 (휴게: __시 __분 ~ __시 __분) (1일 __시간, 1주 __시간)", exampleValue: "09시 00분 ~ 18시 00분 (휴게: 12시 00분 ~ 13시 00분) (1일 8시간, 1주 40시간)", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "5. 근무일/휴일", isHeader: true },
-      { placeholder: "매주 __일 근무, 주휴일 매주 __요일", exampleValue: "매주 5일 근무 (월~금), 주휴일 매주 일요일", colspan: 3 },
+      { placeholder: "매주 __일 근무(필요시, 근무요일 __), 주휴일 매주 __요일", exampleValue: "매주 5일 근무(필요시, 근무요일 월~금), 주휴일 매주 일요일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "공휴일", isHeader: true },
+      { placeholder: "공휴일(대체공휴일 포함)은 근로기준법이 정하는 바에 따르며, 근로자의 날은 유급휴일로 함", exampleValue: "공휴일(대체공휴일 포함)은 근로기준법이 정하는 바에 따르며, 근로자의 날은 유급휴일로 함", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "6. 임금", isHeader: true },
-      { placeholder: "월(일, 시간)급: ________원", exampleValue: "월급: 2,800,000원 (세전)", colspan: 3 },
+      { placeholder: "월(일, 시간)급: ________원", exampleValue: "월급: 2,800,000원", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "상여금", isHeader: true },
-      { placeholder: "있음 (    )원 / 없음 (    )", exampleValue: "있음 (연 200만원, 설/추석)" },
-      { label: "기타 수당", isHeader: true },
-      { placeholder: "있음 [   ] / 없음 [   ]", exampleValue: "식대 10만원/월, 교통비 10만원/월" },
+      { label: "- 상여금", isHeader: true },
+      { placeholder: "있음 (    )원 / 없음 (    )", exampleValue: "있음 (연 200만원)" },
+      { label: "- 그 밖의 수당", isHeader: true },
+      { placeholder: "있음 [   ] / 없음 [   ]", exampleValue: "있음 [V] 식대 10만원, 교통비 10만원" },
     ],
   },
   {
     fields: [
-      { label: "임금지급일", isHeader: true },
-      { placeholder: "매월(매주) __일", exampleValue: "매월 25일" },
-      { label: "지급방법", isHeader: true },
-      { placeholder: "직접지급 [  ] / 계좌입금 [  ]", exampleValue: "계좌입금 [V]" },
+      { label: "- 임금지급일", isHeader: true },
+      { placeholder: "매월(매주 또는 매일) __일(휴일의 경우는 전날 지급)", exampleValue: "매월 25일(휴일의 경우는 전날 지급)" },
+      { label: "- 지급방법", isHeader: true },
+      { placeholder: "직접(현금)지급 [  ] / 계좌입금 [  ]", exampleValue: "계좌입금 [V]" },
     ],
   },
   {
     fields: [
       { label: "7. 연차유급휴가", isHeader: true },
-      { placeholder: "근로기준법에서 정하는 바에 따라 부여", exampleValue: "근로기준법에서 정하는 바에 따라 부여 (1년 미만: 월 1일)", colspan: 3 },
+      { placeholder: "연차유급휴가는 근로기준법에서 정하는 바에 따라 부여함", exampleValue: "연차유급휴가는 근로기준법에서 정하는 바에 따라 부여함", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "8. 사회보험", isHeader: true },
-      { placeholder: "4대 보험 (고용/산재/국민연금/건강보험) 적용", exampleValue: "4대 보험 전부 적용 (입사일로부터)", colspan: 3 },
+      { label: "8. 사회보험 적용여부", isHeader: true },
+      { placeholder: "4대 사회보험(고용보험, 산재보험, 국민연금, 건강보험) 적용(가입)을 원칙으로 함", exampleValue: "4대 사회보험(고용보험, 산재보험, 국민연금, 건강보험) 적용(가입)을 원칙으로 함", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "9. 근로계약서 교부", isHeader: true },
+      { placeholder: "사업주는 근로계약을 체결함과 동시에 본 계약서를 사본하여 근로자의 교부요구와 관계없이 근로자에게 교부함(근로기준법 제17조 이행)", exampleValue: "사업주는 근로계약을 체결함과 동시에 본 계약서를 사본하여 근로자의 교부요구와 관계없이 근로자에게 교부함(근로기준법 제17조 이행)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "10. 성실이행의무", isHeader: true },
+      { placeholder: "사업주와 근로자는 각자가 근로계약, 취업규칙, 단체협약을 지키고 성실하게 이행하여야 함", exampleValue: "사업주와 근로자는 각자가 근로계약, 취업규칙, 단체협약을 지키고 성실하게 이행하여야 함", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "11. 그 밖의 사항", isHeader: true },
+      { placeholder: "이 계약에 정함이 없는 사항은 근로관계법령에 따름", exampleValue: "이 계약에 정함이 없는 사항은 근로관계법령에 따름", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 10일", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "(사업주)", isHeader: true },
-      { placeholder: "사업체명:          대표자:          (서명)", exampleValue: "사업체명: (주)OO컴퍼니 | 대표자: 홍길동 (서명)", colspan: 3 },
+      { placeholder: "사업체명: (전화: ) / 주소: / 대표자: (서명)", exampleValue: "사업체명: (주)OO컴퍼니 (전화: 02-123-4567) / 주소: 서울시 강남구 테헤란로 123 / 대표자: 홍길동 (서명)", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "(근로자)", isHeader: true },
-      { placeholder: "성명:              연락처:          (서명)", exampleValue: "성명: 김철수 | 연락처: 010-1234-5678 (서명)", colspan: 3 },
+      { placeholder: "주소: / 연락처: / 성명: (서명)", exampleValue: "주소: 서울시 마포구 OO로 45 / 연락처: 010-1234-5678 / 성명: 김철수 (서명)", colspan: 3 },
     ],
   },
 ];
 
-// 단시간근로계약서 (알바) 미리보기 데이터 (고용노동부 표준양식 기준)
+// 단시간근로계약서 - 2025년 고용노동부 개정 양식 기준
 export const 단시간근로계약서_DATA: FormRow[] = [
   {
     fields: [
+      { label: "계약서 제목", isHeader: true },
+      { placeholder: "단시간근로자 표준근로계약서", exampleValue: "단시간근로자 표준근로계약서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약 당사자", isHeader: true },
+      { placeholder: "(이하 '사업주'라 함)과(와) (이하 '근로자'라 함)은 다음과 같이 근로계약을 체결한다.", exampleValue: "OO카페(이하 '사업주'라 함)과(와) 이민수(이하 '근로자'라 함)은 다음과 같이 근로계약을 체결한다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
       { label: "1. 근로개시일", isHeader: true },
-      { placeholder: "____년 __월 __일부터", exampleValue: "2026년 2월 1일부터", colspan: 3 },
+      { placeholder: "____년 __월 __일부터 (※ 기간 정하는 경우: ~까지)", exampleValue: "2026년 2월 1일부터", colspan: 3 },
     ],
   },
   {
@@ -184,78 +239,135 @@ export const 단시간근로계약서_DATA: FormRow[] = [
   },
   {
     fields: [
-      { label: "4. 근로일별 근로시간", isHeader: true },
-      { placeholder: "요일별 시작/종료/휴게시간 기재 (표 형태)", exampleValue: "월/수/금 14:00~20:00 (휴게 30분)", colspan: 3 },
+      { label: "4. 근로일 및 근로일별 근로시간", isHeader: true, colspan: 4 },
     ],
   },
   {
     fields: [
+      { label: "요일", isHeader: true },
+      { placeholder: "월/화/수/목/금/토", exampleValue: "월요일 / 수요일 / 금요일" },
+      { label: "근로시간", isHeader: true },
+      { placeholder: "__시간", exampleValue: "6시간 / 6시간 / 6시간" },
+    ],
+  },
+  {
+    fields: [
+      { label: "업무시작", isHeader: true },
+      { placeholder: "__시 __분", exampleValue: "14시 00분" },
+      { label: "업무종료", isHeader: true },
+      { placeholder: "__시 __분", exampleValue: "20시 30분" },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴게시간", isHeader: true },
+      { placeholder: "__시 __분 ~ __시 __분", exampleValue: "17시 00분 ~ 17시 30분" },
       { label: "주휴일", isHeader: true },
       { placeholder: "매주 __요일", exampleValue: "매주 일요일" },
+    ],
+  },
+  {
+    fields: [
       { label: "공휴일", isHeader: true },
-      { placeholder: "근로기준법에 따름", exampleValue: "근로기준법에 따름" },
+      { placeholder: "공휴일(대체공휴일 포함)은 근로기준법이 정하는 바에 따르며, 근로자의 날은 유급휴일로 함", exampleValue: "공휴일(대체공휴일 포함)은 근로기준법이 정하는 바에 따르며, 근로자의 날은 유급휴일로 함", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "5. 임금", isHeader: true },
-      { placeholder: "시간(일, 월)급: ________원", exampleValue: "시간급: 10,320원 (2026년 최저임금)", colspan: 3 },
+      { placeholder: "시간(일, 월)급: ________원", exampleValue: "시간급: 10,320원", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "상여금", isHeader: true },
+      { label: "- 상여금", isHeader: true },
       { placeholder: "있음 (    )원 / 없음 (    )", exampleValue: "없음" },
-      { label: "기타 수당", isHeader: true },
-      { placeholder: "있음 [   ] / 없음 [   ]", exampleValue: "식대 제공" },
+      { label: "- 그 밖의 수당", isHeader: true },
+      { placeholder: "있음 [   ] / 없음 [   ]", exampleValue: "있음 [V] 식대 제공" },
     ],
   },
   {
     fields: [
-      { label: "초과근로 가산임금률", isHeader: true },
-      { placeholder: "______% (통상임금의 50% 이상)", exampleValue: "50% (통상임금의 50% 이상)", colspan: 3 },
+      { label: "- 초과근로 가산임금률", isHeader: true },
+      { placeholder: "______% (※ 단시간근로자 초과근로 시 통상임금 50% 이상 가산)", exampleValue: "50% (통상임금의 50% 이상)", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "임금지급일", isHeader: true },
-      { placeholder: "매월(매주) __일", exampleValue: "매월 10일" },
-      { label: "지급방법", isHeader: true },
-      { placeholder: "직접지급 [  ] / 계좌입금 [  ]", exampleValue: "계좌입금 [V]" },
+      { label: "- 임금지급일", isHeader: true },
+      { placeholder: "매월(매주 또는 매일) __일(휴일의 경우는 전날 지급)", exampleValue: "매월 10일(휴일의 경우는 전날 지급)" },
+      { label: "- 지급방법", isHeader: true },
+      { placeholder: "직접(현금)지급 [  ] / 계좌입금 [  ]", exampleValue: "계좌입금 [V]" },
     ],
   },
   {
     fields: [
       { label: "6. 연차유급휴가", isHeader: true },
-      { placeholder: "통상근로자 근로시간에 비례하여 부여", exampleValue: "통상근로자 근로시간에 비례하여 부여", colspan: 3 },
+      { placeholder: "통상근로자의 근로시간에 비례하여 연차유급휴가 부여", exampleValue: "통상근로자의 근로시간에 비례하여 연차유급휴가 부여", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "7. 사회보험", isHeader: true },
-      { placeholder: "4대 보험 (고용/산재/국민연금/건강보험) 적용", exampleValue: "4대 보험 적용 (주 15시간 이상 근무 시)", colspan: 3 },
+      { label: "7. 사회보험 적용여부", isHeader: true },
+      { placeholder: "4대 사회보험(고용보험, 산재보험, 국민연금, 건강보험) 적용(가입)을 원칙으로 함", exampleValue: "4대 사회보험(고용보험, 산재보험, 국민연금, 건강보험) 적용(가입)을 원칙으로 함", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "8. 근로계약서 교부", isHeader: true },
+      { placeholder: "사업주는 근로계약을 체결함과 동시에 본 계약서를 사본하여 근로자의 교부요구와 관계없이 근로자에게 교부함(근로기준법 제17조 이행)", exampleValue: "사업주는 근로계약을 체결함과 동시에 본 계약서를 사본하여 근로자의 교부요구와 관계없이 근로자에게 교부함(근로기준법 제17조 이행)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "9. 성실이행의무", isHeader: true },
+      { placeholder: "사업주와 근로자는 각자가 근로계약, 취업규칙, 단체협약을 지키고 성실하게 이행하여야 함", exampleValue: "사업주와 근로자는 각자가 근로계약, 취업규칙, 단체협약을 지키고 성실하게 이행하여야 함", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "10. 그 밖의 사항", isHeader: true },
+      { placeholder: "이 계약에 정함이 없는 사항은 근로관계법령에 따름", exampleValue: "이 계약에 정함이 없는 사항은 근로관계법령에 따름", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 25일", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "(사업주)", isHeader: true },
-      { placeholder: "사업체명:          대표자:          (서명)", exampleValue: "사업체명: OO카페 | 대표자: 박영희 (서명)", colspan: 3 },
+      { placeholder: "사업체명: (전화: ) / 주소: / 대표자: (서명)", exampleValue: "사업체명: OO카페 (전화: 02-333-4444) / 주소: 서울시 마포구 홍대입구역 / 대표자: 박영희 (서명)", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "(근로자)", isHeader: true },
-      { placeholder: "성명:              연락처:          (서명)", exampleValue: "성명: 이민수 | 연락처: 010-9876-5432 (서명)", colspan: 3 },
+      { placeholder: "주소: / 연락처: / 성명: (서명)", exampleValue: "주소: 서울시 마포구 OO동 / 연락처: 010-9876-5432 / 성명: 이민수 (서명)", colspan: 3 },
     ],
   },
 ];
 
-// 기간제근로계약서 (계약직) 미리보기 데이터 (고용노동부 표준양식 기준)
+// 기간제근로계약서 (기간의 정함이 있는 경우) - 2025년 고용노동부 개정 양식 기준
 export const 기간제근로계약서_DATA: FormRow[] = [
   {
     fields: [
+      { label: "계약서 제목", isHeader: true },
+      { placeholder: "표준근로계약서(기간의 정함이 있는 경우)", exampleValue: "표준근로계약서(기간의 정함이 있는 경우)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약 당사자", isHeader: true },
+      { placeholder: "(이하 '사업주'라 함)과(와) (이하 '근로자'라 함)은 다음과 같이 근로계약을 체결한다.", exampleValue: "(주)OO증권(이하 '사업주'라 함)과(와) 정수현(이하 '근로자'라 함)은 다음과 같이 근로계약을 체결한다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
       { label: "1. 근로계약기간", isHeader: true },
-      { placeholder: "____년 __월 __일부터 ____년 __월 __일까지", exampleValue: "2026년 3월 1일부터 2027년 2월 28일까지 (1년)", colspan: 3 },
+      { placeholder: "____년 __월 __일부터 ____년 __월 __일까지", exampleValue: "2026년 3월 1일부터 2027년 2월 28일까지", colspan: 3 },
     ],
   },
   {
@@ -273,59 +385,89 @@ export const 기간제근로계약서_DATA: FormRow[] = [
   {
     fields: [
       { label: "4. 소정근로시간", isHeader: true },
-      { placeholder: "__시 __분 ~ __시 __분 (휴게: __시 __분 ~ __시 __분)", exampleValue: "09시 00분 ~ 18시 00분 (휴게: 12시 00분 ~ 13시 00분)", colspan: 3 },
+      { placeholder: "__시 __분 ~ __시 __분 (휴게: __시 __분 ~ __시 __분) (1일 __시간, 1주 __시간)", exampleValue: "09시 00분 ~ 18시 00분 (휴게: 12시 00분 ~ 13시 00분) (1일 8시간, 1주 40시간)", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "5. 근무일/휴일", isHeader: true },
-      { placeholder: "매주 __일 근무, 주휴일 매주 __요일", exampleValue: "매주 5일 근무 (월~금), 주휴일 매주 토/일요일", colspan: 3 },
+      { placeholder: "매주 __일 근무(필요시, 근무요일 __), 주휴일 매주 __요일", exampleValue: "매주 5일 근무(필요시, 근무요일 월~금), 주휴일 매주 일요일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "공휴일", isHeader: true },
+      { placeholder: "공휴일(대체공휴일 포함)은 근로기준법이 정하는 바에 따르며, 근로자의 날은 유급휴일로 함", exampleValue: "공휴일(대체공휴일 포함)은 근로기준법이 정하는 바에 따르며, 근로자의 날은 유급휴일로 함", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "6. 임금", isHeader: true },
-      { placeholder: "월(일, 시간)급: ________원", exampleValue: "월급: 3,200,000원 (세전)", colspan: 3 },
+      { placeholder: "월(일, 시간)급: ________원", exampleValue: "월급: 3,200,000원", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "상여금", isHeader: true },
-      { placeholder: "있음 (    )원 / 없음 (    )", exampleValue: "없음 (계약 종료 시 성과급 별도 협의)" },
-      { label: "기타 수당", isHeader: true },
-      { placeholder: "있음 [   ] / 없음 [   ]", exampleValue: "식대 15만원/월" },
+      { label: "- 상여금", isHeader: true },
+      { placeholder: "있음 (    )원 / 없음 (    )", exampleValue: "없음" },
+      { label: "- 그 밖의 수당", isHeader: true },
+      { placeholder: "있음 [   ] / 없음 [   ]", exampleValue: "있음 [V] 식대 15만원" },
     ],
   },
   {
     fields: [
-      { label: "임금지급일", isHeader: true },
-      { placeholder: "매월(매주) __일", exampleValue: "매월 25일" },
-      { label: "지급방법", isHeader: true },
-      { placeholder: "직접지급 [  ] / 계좌입금 [  ]", exampleValue: "계좌입금 [V]" },
+      { label: "- 임금지급일", isHeader: true },
+      { placeholder: "매월(매주 또는 매일) __일(휴일의 경우는 전날 지급)", exampleValue: "매월 25일(휴일의 경우는 전날 지급)" },
+      { label: "- 지급방법", isHeader: true },
+      { placeholder: "직접(현금)지급 [  ] / 계좌입금 [  ]", exampleValue: "계좌입금 [V]" },
     ],
   },
   {
     fields: [
       { label: "7. 연차유급휴가", isHeader: true },
-      { placeholder: "근로기준법에서 정하는 바에 따라 부여", exampleValue: "근로기준법에 따라 부여 (1년 미만: 월 1일)", colspan: 3 },
+      { placeholder: "연차유급휴가는 근로기준법에서 정하는 바에 따라 부여함", exampleValue: "연차유급휴가는 근로기준법에서 정하는 바에 따라 부여함", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "8. 사회보험", isHeader: true },
-      { placeholder: "4대 보험 (고용/산재/국민연금/건강보험) 적용", exampleValue: "4대 보험 전부 적용", colspan: 3 },
+      { label: "8. 사회보험 적용여부", isHeader: true },
+      { placeholder: "4대 사회보험(고용보험, 산재보험, 국민연금, 건강보험) 적용(가입)을 원칙으로 함", exampleValue: "4대 사회보험(고용보험, 산재보험, 국민연금, 건강보험) 적용(가입)을 원칙으로 함", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "9. 근로계약서 교부", isHeader: true },
+      { placeholder: "사업주는 근로계약을 체결함과 동시에 본 계약서를 사본하여 근로자의 교부요구와 관계없이 근로자에게 교부함(근로기준법 제17조 이행)", exampleValue: "사업주는 근로계약을 체결함과 동시에 본 계약서를 사본하여 근로자의 교부요구와 관계없이 근로자에게 교부함(근로기준법 제17조 이행)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "10. 성실이행의무", isHeader: true },
+      { placeholder: "사업주와 근로자는 각자가 근로계약, 취업규칙, 단체협약을 지키고 성실하게 이행하여야 함", exampleValue: "사업주와 근로자는 각자가 근로계약, 취업규칙, 단체협약을 지키고 성실하게 이행하여야 함", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "11. 그 밖의 사항", isHeader: true },
+      { placeholder: "이 계약에 정함이 없는 사항은 근로관계법령에 따름", exampleValue: "이 계약에 정함이 없는 사항은 근로관계법령에 따름", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 2월 20일", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "(사업주)", isHeader: true },
-      { placeholder: "사업체명:          대표자:          (서명)", exampleValue: "사업체명: (주)OO증권 | 대표자: 최현우 (서명)", colspan: 3 },
+      { placeholder: "사업체명: (전화: ) / 주소: / 대표자: (서명)", exampleValue: "사업체명: (주)OO증권 (전화: 02-789-1234) / 주소: 서울시 영등포구 여의도동 / 대표자: 최현우 (서명)", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "(근로자)", isHeader: true },
-      { placeholder: "성명:              연락처:          (서명)", exampleValue: "성명: 정수현 | 연락처: 010-5555-1234 (서명)", colspan: 3 },
+      { placeholder: "주소: / 연락처: / 성명: (서명)", exampleValue: "주소: 서울시 강서구 OO동 / 연락처: 010-5555-1234 / 성명: 정수현 (서명)", colspan: 3 },
     ],
   },
 ];
@@ -10661,6 +10803,2022 @@ export const 혼인신고서_DATA: FormRow[] = [
     fields: [
       { label: "⑨신고인 출석여부", isHeader: true },
       { placeholder: "☐ 남편(부)  ☐ 아내(처)", exampleValue: "☑ 남편(부)  ☑ 아내(처) (둘 다 출석)", colspan: 3 },
+    ],
+  },
+];
+
+// 휴업·폐업 신고서 [별지 제9호서식] (부가가치세법 시행규칙)
+export const 휴업폐업신고서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "[별지 제9호서식] 휴업·폐업 신고서", exampleValue: "[별지 제9호서식] 휴업·폐업 신고서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "처리기간", isHeader: true },
+      { placeholder: "즉시", exampleValue: "즉시", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "인적사항", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "①상호(법인명)", isHeader: true },
+      { placeholder: "(상호)", exampleValue: "머니스토어" },
+      { label: "②성명(대표자)", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "홍길동" },
+    ],
+  },
+  {
+    fields: [
+      { label: "③사업자등록번호", isHeader: true },
+      { placeholder: "___-__-_____", exampleValue: "123-45-67890" },
+      { label: "④주민(법인)등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "850101-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑤사업장 소재지", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 테헤란로 123, 1층", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑥전화번호", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "02-1234-5678" },
+      { label: "⑦휴대전화번호", isHeader: true },
+      { placeholder: "(휴대전화)", exampleValue: "010-1234-5678" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑧신고구분", isHeader: true },
+      { placeholder: "☐ 휴업  ☐ 폐업", exampleValue: "☑ 폐업" },
+      { label: "⑨업태/종목", isHeader: true },
+      { placeholder: "(업태/종목)", exampleValue: "소매업 / 의류" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑩휴업기간", isHeader: true },
+      { placeholder: "____년 __월 __일 ~ ____년 __월 __일", exampleValue: "(폐업으로 해당 없음)" },
+      { label: "⑪폐업일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑫휴업(폐업)사유", isHeader: true },
+      { placeholder: "1.사업부진 2.질병 3.기타", exampleValue: "1. 사업부진" },
+      { label: "⑬잔존재화 유무", isHeader: true },
+      { placeholder: "☐ 유  ☐ 무", exampleValue: "☑ 무" },
+    ],
+  },
+  {
+    fields: [
+      { label: "잔존재화 내역", isHeader: true },
+      { placeholder: "(있을 경우 품명·수량·시가 기재)", exampleValue: "(해당 없음)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제출서류 안내", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "안내", isHeader: true },
+      { placeholder: "신고인 제출서류 및 담당 공무원 확인사항", exampleValue: "사업자등록증 원본, 신분증 / 사업자등록 사항 확인", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고일/제출처", isHeader: true },
+      { placeholder: "____년 __월 __일 / ___세무서장 귀하", exampleValue: "2026년 1월 17일 / 강남세무서장 귀하", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고인", isHeader: true },
+      { placeholder: "(성명) (서명 또는 인)", exampleValue: "홍길동 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 부가가치세 신고서 [별지 제21호서식] (부가가치세법 시행규칙) - 일반과세자용
+export const 부가가치세신고서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "[별지 제21호서식] 일반과세자 부가가치세 신고서", exampleValue: "[별지 제21호서식] 일반과세자 부가가치세 신고서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고기간", isHeader: true },
+      { placeholder: "____년 __기 ( __월 __일 ~ __월 __일 )", exampleValue: "2025년 제2기 확정 (7월 1일 ~ 12월 31일)" },
+      { label: "관할 세무서", isHeader: true },
+      { placeholder: "___세무서", exampleValue: "강남세무서" },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업자 인적사항", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "①상호(법인명)", isHeader: true },
+      { placeholder: "(상호)", exampleValue: "머니스토어" },
+      { label: "②성명(대표자)", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "홍길동" },
+    ],
+  },
+  {
+    fields: [
+      { label: "③사업자등록번호", isHeader: true },
+      { placeholder: "___-__-_____", exampleValue: "123-45-67890" },
+      { label: "④주민(법인)등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "850101-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑤사업장 소재지", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 테헤란로 123", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑥전화번호", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "02-1234-5678" },
+      { label: "⑦업태/종목", isHeader: true },
+      { placeholder: "(업태/종목)", exampleValue: "소매업 / 의류" },
+    ],
+  },
+  {
+    fields: [
+      { label: "과세표준 및 매출세액", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑧과세 세금계산서 발급분", isHeader: true },
+      { placeholder: "금액/세액", exampleValue: "50,000,000원 / 5,000,000원" },
+      { label: "⑨매입자발행 세금계산서", isHeader: true },
+      { placeholder: "금액/세액", exampleValue: "0원 / 0원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑩신용카드·현금영수증 발행분", isHeader: true },
+      { placeholder: "금액/세액", exampleValue: "30,000,000원 / 3,000,000원" },
+      { label: "⑪기타(정규영수증 외 매출분)", isHeader: true },
+      { placeholder: "금액/세액", exampleValue: "0원 / 0원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑫합계(매출세액)", isHeader: true },
+      { placeholder: "금액/세액", exampleValue: "80,000,000원 / 8,000,000원", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "매입세액", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑬세금계산서 수취분(일반매입)", isHeader: true },
+      { placeholder: "금액/세액", exampleValue: "40,000,000원 / 4,000,000원" },
+      { label: "⑭그 밖의 공제매입세액", isHeader: true },
+      { placeholder: "금액/세액", exampleValue: "5,000,000원 / 500,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑮합계(매입세액)", isHeader: true },
+      { placeholder: "금액/세액", exampleValue: "45,000,000원 / 4,500,000원", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "납부(환급)세액 계산", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑯차감세액(⑫-⑮)", isHeader: true },
+      { placeholder: "세액", exampleValue: "3,500,000원" },
+      { label: "⑰가산세액 계", isHeader: true },
+      { placeholder: "세액", exampleValue: "0원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑱예정신고 미환급세액", isHeader: true },
+      { placeholder: "세액", exampleValue: "0원" },
+      { label: "⑲예정고지세액", isHeader: true },
+      { placeholder: "세액", exampleValue: "1,500,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑳납부(환급)할 세액", isHeader: true },
+      { placeholder: "세액", exampleValue: "2,000,000원 (납부)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고일/제출처", isHeader: true },
+      { placeholder: "____년 __월 __일 / ___세무서장 귀하", exampleValue: "2026년 1월 25일 / 강남세무서장 귀하", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고인", isHeader: true },
+      { placeholder: "(성명) (서명 또는 인)", exampleValue: "홍길동 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 종합소득세 신고서 [별지 제40호서식] (소득세법 시행규칙)
+export const 종합소득세신고서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "[별지 제40호서식] 종합소득세 과세표준확정신고 및 납부계산서", exampleValue: "[별지 제40호서식] 종합소득세 과세표준확정신고 및 납부계산서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "귀속연도", isHeader: true },
+      { placeholder: "____년", exampleValue: "2025년" },
+      { label: "관할 세무서", isHeader: true },
+      { placeholder: "___세무서", exampleValue: "강남세무서" },
+    ],
+  },
+  {
+    fields: [
+      { label: "납세자 인적사항", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "①성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "홍길동" },
+      { label: "②주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "850101-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "③주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 테헤란로 123, 101동 1001호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "④전화번호", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-1234-5678" },
+      { label: "⑤전자우편", isHeader: true },
+      { placeholder: "(이메일)", exampleValue: "hong@email.com" },
+    ],
+  },
+  {
+    fields: [
+      { label: "소득금액 명세", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑥사업소득", isHeader: true },
+      { placeholder: "금액", exampleValue: "50,000,000원" },
+      { label: "⑦근로소득", isHeader: true },
+      { placeholder: "금액", exampleValue: "0원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑧연금소득", isHeader: true },
+      { placeholder: "금액", exampleValue: "0원" },
+      { label: "⑨기타소득", isHeader: true },
+      { placeholder: "금액", exampleValue: "5,000,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑩종합소득금액 합계", isHeader: true },
+      { placeholder: "금액", exampleValue: "55,000,000원", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "소득공제 명세", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑪기본공제", isHeader: true },
+      { placeholder: "금액", exampleValue: "1,500,000원 (본인)" },
+      { label: "⑫추가공제", isHeader: true },
+      { placeholder: "금액", exampleValue: "0원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑬연금보험료공제", isHeader: true },
+      { placeholder: "금액", exampleValue: "4,500,000원" },
+      { label: "⑭특별소득공제", isHeader: true },
+      { placeholder: "금액", exampleValue: "2,000,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑮소득공제 합계", isHeader: true },
+      { placeholder: "금액", exampleValue: "8,000,000원", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "세액 계산", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑯과세표준 (⑩-⑮)", isHeader: true },
+      { placeholder: "금액", exampleValue: "47,000,000원" },
+      { label: "⑰산출세액", isHeader: true },
+      { placeholder: "금액", exampleValue: "6,820,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑱세액공제·감면", isHeader: true },
+      { placeholder: "금액", exampleValue: "700,000원" },
+      { label: "⑲기납부세액", isHeader: true },
+      { placeholder: "금액", exampleValue: "3,000,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑳납부(환급)할 세액", isHeader: true },
+      { placeholder: "금액", exampleValue: "3,120,000원 (납부)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고일/제출처", isHeader: true },
+      { placeholder: "____년 __월 __일 / ___세무서장 귀하", exampleValue: "2026년 5월 31일 / 강남세무서장 귀하", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고인", isHeader: true },
+      { placeholder: "(성명) (서명 또는 인)", exampleValue: "홍길동 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 소득·세액 공제신고서 [별지 제37호서식] (소득세법 시행규칙) - 근로소득자용
+export const 소득세액공제신고서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "[별지 제37호서식] 근로소득자 소득·세액 공제신고서", exampleValue: "[별지 제37호서식] 근로소득자 소득·세액 공제신고서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "귀속연도", isHeader: true },
+      { placeholder: "____년", exampleValue: "2025년" },
+      { label: "소속 회사", isHeader: true },
+      { placeholder: "(회사명)", exampleValue: "(주)머니컴퍼니" },
+    ],
+  },
+  {
+    fields: [
+      { label: "근로자 인적사항", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "①성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "홍길동" },
+      { label: "②주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "850101-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "③주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 테헤란로 123", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "인적공제 - 기본공제", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "④본인", isHeader: true },
+      { placeholder: "☐ 해당", exampleValue: "☑ 해당 (150만원)" },
+      { label: "⑤배우자", isHeader: true },
+      { placeholder: "☐ 해당 (소득요건 충족 시)", exampleValue: "☑ 해당 (150만원)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑥부양가족", isHeader: true },
+      { placeholder: "(명) × 150만원", exampleValue: "2명 × 150만원 = 300만원 (자녀 2명)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "인적공제 - 추가공제", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑦경로우대", isHeader: true },
+      { placeholder: "(명) × 100만원", exampleValue: "0명" },
+      { label: "⑧장애인", isHeader: true },
+      { placeholder: "(명) × 200만원", exampleValue: "0명" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑨부녀자", isHeader: true },
+      { placeholder: "☐ 해당 (50만원)", exampleValue: "☐ 해당 없음" },
+      { label: "⑩한부모", isHeader: true },
+      { placeholder: "☐ 해당 (100만원)", exampleValue: "☐ 해당 없음" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연금보험료 공제", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑪국민연금", isHeader: true },
+      { placeholder: "납입금액", exampleValue: "4,500,000원" },
+      { label: "⑫공무원연금 등", isHeader: true },
+      { placeholder: "납입금액", exampleValue: "0원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "특별소득공제", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑬건강·고용보험료", isHeader: true },
+      { placeholder: "납입금액", exampleValue: "3,600,000원" },
+      { label: "⑭주택자금", isHeader: true },
+      { placeholder: "상환금액", exampleValue: "5,000,000원 (주택청약+이자상환)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "그 밖의 소득공제", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑮개인연금저축", isHeader: true },
+      { placeholder: "납입금액 (40% 공제)", exampleValue: "2,400,000원 → 960,000원 공제" },
+      { label: "⑯소기업·소상공인 공제", isHeader: true },
+      { placeholder: "납입금액", exampleValue: "0원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑰신용카드 등 사용금액", isHeader: true },
+      { placeholder: "공제금액", exampleValue: "2,500,000원", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "세액공제", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑱자녀세액공제", isHeader: true },
+      { placeholder: "금액", exampleValue: "300,000원 (2명)" },
+      { label: "⑲연금계좌세액공제", isHeader: true },
+      { placeholder: "금액", exampleValue: "990,000원 (IRP 600만원 × 16.5%)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑳보험료·의료비·교육비 등", isHeader: true },
+      { placeholder: "금액", exampleValue: "850,000원", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고일/제출처", isHeader: true },
+      { placeholder: "____년 __월 __일 / (소속 회사)", exampleValue: "2026년 2월 28일 / (주)머니컴퍼니 귀중", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고인", isHeader: true },
+      { placeholder: "(성명) (서명 또는 인)", exampleValue: "홍길동 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 근로소득 원천징수영수증 [별지 제24호서식] (소득세법 시행규칙)
+export const 근로소득원천징수영수증_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "[별지 제24호서식] 근로소득 원천징수영수증·지급명세서", exampleValue: "[별지 제24호서식] 근로소득 원천징수영수증", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "귀속연도", isHeader: true },
+      { placeholder: "____년", exampleValue: "2025년" },
+      { label: "영수증 종류", isHeader: true },
+      { placeholder: "☐ 근무처용 ☐ 소득자보관용 ☐ 발행자보관용", exampleValue: "☑ 소득자 보관용" },
+    ],
+  },
+  {
+    fields: [
+      { label: "원천징수의무자(회사)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "①법인명(상호)", isHeader: true },
+      { placeholder: "(회사명)", exampleValue: "(주)머니컴퍼니" },
+      { label: "②대표자 성명", isHeader: true },
+      { placeholder: "(대표자)", exampleValue: "김대표" },
+    ],
+  },
+  {
+    fields: [
+      { label: "③사업자등록번호", isHeader: true },
+      { placeholder: "___-__-_____", exampleValue: "123-45-67890" },
+      { label: "④소재지", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 테헤란로 456" },
+    ],
+  },
+  {
+    fields: [
+      { label: "소득자(근로자)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑤성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "홍길동" },
+      { label: "⑥주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "850101-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑦주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 서초구 반포대로 10, 101동 1001호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "근무처별 소득명세", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑧근무기간", isHeader: true },
+      { placeholder: "____.__.__~____.__.__", exampleValue: "2025.01.01 ~ 2025.12.31" },
+      { label: "⑨감면기간", isHeader: true },
+      { placeholder: "____.__.__~____.__.__", exampleValue: "(해당 없음)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑩급여", isHeader: true },
+      { placeholder: "금액", exampleValue: "60,000,000원" },
+      { label: "⑪상여", isHeader: true },
+      { placeholder: "금액", exampleValue: "10,000,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑫인정상여", isHeader: true },
+      { placeholder: "금액", exampleValue: "0원" },
+      { label: "⑬주식매수선택권 행사이익", isHeader: true },
+      { placeholder: "금액", exampleValue: "0원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑭비과세소득 계", isHeader: true },
+      { placeholder: "금액", exampleValue: "2,400,000원 (식대 등)" },
+      { label: "⑮계 (총급여액)", isHeader: true },
+      { placeholder: "금액", exampleValue: "67,600,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "세액명세", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑯결정세액", isHeader: true },
+      { placeholder: "금액", exampleValue: "4,320,000원" },
+      { label: "⑰기납부세액", isHeader: true },
+      { placeholder: "금액", exampleValue: "4,500,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑱차감징수(환급)세액", isHeader: true },
+      { placeholder: "금액", exampleValue: "-180,000원 (환급)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "지방소득세", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑲결정세액", isHeader: true },
+      { placeholder: "금액", exampleValue: "432,000원" },
+      { label: "⑳기납부세액", isHeader: true },
+      { placeholder: "금액", exampleValue: "450,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "㉑차감징수(환급)세액", isHeader: true },
+      { placeholder: "금액", exampleValue: "-18,000원 (환급)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발급일/발급자", isHeader: true },
+      { placeholder: "____년 __월 __일 / (원천징수의무자)", exampleValue: "2026년 2월 28일 / (주)머니컴퍼니", colspan: 3 },
+    ],
+  },
+];
+
+// 신용카드매출전표등 수령명세서 [별지 제16호서식] (부가가치세법 시행규칙)
+export const 신용카드매출전표수령명세서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "[별지 제16호서식] 신용카드매출전표등 수령명세서", exampleValue: "[별지 제16호서식(갑)] 신용카드매출전표등 수령명세서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고기간", isHeader: true },
+      { placeholder: "____년 __기", exampleValue: "2025년 제2기 확정" },
+      { label: "관할 세무서", isHeader: true },
+      { placeholder: "___세무서", exampleValue: "강남세무서" },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업자 인적사항", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "①상호(법인명)", isHeader: true },
+      { placeholder: "(상호)", exampleValue: "머니스토어" },
+      { label: "②성명(대표자)", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "홍길동" },
+    ],
+  },
+  {
+    fields: [
+      { label: "③사업자등록번호", isHeader: true },
+      { placeholder: "___-__-_____", exampleValue: "123-45-67890" },
+      { label: "④사업장 소재지", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 테헤란로 123" },
+    ],
+  },
+  {
+    fields: [
+      { label: "수령명세 합계", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑤신용카드", isHeader: true },
+      { placeholder: "매수/공급가액/세액", exampleValue: "45매 / 15,000,000원 / 1,500,000원" },
+      { label: "⑥직불·선불카드", isHeader: true },
+      { placeholder: "매수/공급가액/세액", exampleValue: "10매 / 3,000,000원 / 300,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑦현금영수증", isHeader: true },
+      { placeholder: "매수/공급가액/세액", exampleValue: "20매 / 5,000,000원 / 500,000원" },
+      { label: "⑧계", isHeader: true },
+      { placeholder: "매수/공급가액/세액", exampleValue: "75매 / 23,000,000원 / 2,300,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "수령명세 (거래처별)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "거래처1", isHeader: true },
+      { placeholder: "상호/사업자번호", exampleValue: "(주)오피스마트 / 234-56-78901" },
+      { label: "금액/세액", isHeader: true },
+      { placeholder: "공급가액/세액", exampleValue: "8,000,000원 / 800,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "거래처2", isHeader: true },
+      { placeholder: "상호/사업자번호", exampleValue: "인터넷물류(주) / 345-67-89012" },
+      { label: "금액/세액", isHeader: true },
+      { placeholder: "공급가액/세액", exampleValue: "5,000,000원 / 500,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "거래처3", isHeader: true },
+      { placeholder: "상호/사업자번호", exampleValue: "기타 다수" },
+      { label: "금액/세액", isHeader: true },
+      { placeholder: "공급가액/세액", exampleValue: "10,000,000원 / 1,000,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "공제 여부 확인", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑨공제대상", isHeader: true },
+      { placeholder: "금액/세액", exampleValue: "20,000,000원 / 2,000,000원" },
+      { label: "⑩불공제대상", isHeader: true },
+      { placeholder: "금액/세액", exampleValue: "3,000,000원 / 300,000원 (접대비 등)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일/제출처", isHeader: true },
+      { placeholder: "____년 __월 __일 / ___세무서장 귀하", exampleValue: "2026년 1월 25일 / 강남세무서장 귀하", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성자", isHeader: true },
+      { placeholder: "(성명) (서명 또는 인)", exampleValue: "홍길동 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 확인서 (일반 확인서 양식)
+export const 확인서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "확 인 서", exampleValue: "확 인 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "확인 대상자", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "홍길동" },
+      { label: "생년월일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "1985년 1월 1일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 테헤란로 123, 101동 1001호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "010-1234-5678", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "확인 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "확인 사항", isHeader: true },
+      { placeholder: "(확인하고자 하는 내용을 구체적으로 기재)", exampleValue: "위 본인은 2025년 1월 1일부터 2025년 12월 31일까지 (주)머니컴퍼니에 재직하였음을 확인합니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "확인 목적", isHeader: true },
+      { placeholder: "(용도)", exampleValue: "금융기관 제출용", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "비고", isHeader: true },
+      { placeholder: "(기타 참고사항)", exampleValue: "(해당 없음)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "확인 문구", isHeader: true },
+      { placeholder: "위 내용이 사실임을 확인합니다.", exampleValue: "위 내용이 틀림없음을 확인합니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "확인일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "확인자(작성자)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "소속/직위", isHeader: true },
+      { placeholder: "(소속 및 직위)", exampleValue: "(주)머니컴퍼니 인사팀장" },
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명) (직인)", exampleValue: "김인사 (직인)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "02-1234-5678", colspan: 3 },
+    ],
+  },
+];
+
+// 프리랜서계약서 (업무위탁계약서)
+export const 프리랜서계약서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "계약서명", isHeader: true },
+      { placeholder: "프리랜서 용역계약서", exampleValue: "프리랜서 용역계약서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약 당사자", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "위탁자(갑)", isHeader: true },
+      { placeholder: "(상호/성명)", exampleValue: "(주)테크스타트" },
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "박대표" },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업자번호", isHeader: true },
+      { placeholder: "(사업자등록번호)", exampleValue: "123-45-67890" },
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "02-1234-5678" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 테헤란로 123", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수탁자(을)", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김프리" },
+      { label: "생년월일", isHeader: true },
+      { placeholder: "(생년월일)", exampleValue: "1990년 1월 1일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "010-9876-5432" },
+      { label: "이메일", isHeader: true },
+      { placeholder: "(이메일)", exampleValue: "kim@email.com" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 마포구 상암로 456", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "업무 내용", isHeader: true },
+      { placeholder: "(위탁업무 내용)", exampleValue: "웹 애플리케이션 프론트엔드 개발 (React.js 기반)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약 기간", isHeader: true },
+      { placeholder: "____년 __월 __일 ~ ____년 __월 __일", exampleValue: "2026년 2월 1일 ~ 2026년 4월 30일 (3개월)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "용역 대금", isHeader: true },
+      { placeholder: "(금액)", exampleValue: "금 15,000,000원 (부가세 별도)" },
+      { label: "지급 방법", isHeader: true },
+      { placeholder: "(지급조건)", exampleValue: "매월 말일 500만원씩 지급" },
+    ],
+  },
+  {
+    fields: [
+      { label: "지급 계좌", isHeader: true },
+      { placeholder: "(은행/계좌번호/예금주)", exampleValue: "신한은행 110-123-456789 김프리", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "납품물", isHeader: true },
+      { placeholder: "(납품할 결과물)", exampleValue: "소스코드, 기술문서, 사용자 매뉴얼", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "특약사항", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "(특약사항 기재)", exampleValue: "1. 수탁자는 독립적 사업자로서 업무를 수행한다.\n2. 저작권은 대금 완납 시 위탁자에게 이전된다.\n3. 비밀유지 의무는 계약 종료 후 2년간 유지된다.", colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "계약일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "위탁자(갑)", isHeader: true },
+      { placeholder: "(서명 또는 인)", exampleValue: "(주)테크스타트 대표이사 박대표 (인)" },
+      { label: "수탁자(을)", isHeader: true },
+      { placeholder: "(서명 또는 인)", exampleValue: "김프리 (인)" },
+    ],
+  },
+];
+
+// 항고장
+export const 항고장_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "항 고 장", exampleValue: "항 고 장", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사건번호", isHeader: true },
+      { placeholder: "____지원 ____년 ____호", exampleValue: "서울중앙지방법원 2025카단12345", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "원심결정", isHeader: true },
+      { placeholder: "(원심재판 결정일)", exampleValue: "2026년 1월 10일 결정", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "항고인(채권자)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "홍길동" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "850101-1234567" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 테헤란로 123, 101동 1001호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "010-1234-5678", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "피항고인(채무자)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김채무" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "900202-2345678" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 서초구 서초대로 456", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "항고 취지", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "(원심결정 취소/변경 요청 내용)", exampleValue: "원심결정을 취소한다.\n이 사건 신청을 인용한다.\n라는 결정을 구합니다.", colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "항고 이유", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "(항고 이유를 구체적으로 기재)", exampleValue: "1. 원심결정의 위법·부당\n원심은 채권자의 피보전권리 및 보전의 필요성에 대한 소명이 부족하다고 판단하였으나, 이는 사실오인 및 법리오해에 해당합니다.\n\n2. 피보전권리의 존재\n채권자는 채무자에 대하여 금 50,000,000원의 대여금채권을 보유하고 있으며, 이는 갑 제1호증 내지 제3호증에 의하여 충분히 소명됩니다.\n\n3. 보전의 필요성\n채무자는 현재 다수의 채권자로부터 추심을 받고 있으며, 유일한 재산인 부동산에 대한 처분이 임박한 상황입니다.", colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부서류", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "(첨부서류 목록)", exampleValue: "1. 갑 제1호증 금전소비대차계약서\n2. 갑 제2호증 이체확인서\n3. 갑 제3호증 독촉장\n4. 갑 제4호증 부동산등기부등본", colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "작성일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 20일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "항고인", isHeader: true },
+      { placeholder: "(성명) (인)", exampleValue: "홍길동 (인)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제출처", isHeader: true },
+      { placeholder: "____법원 귀중", exampleValue: "서울중앙지방법원 귀중", colspan: 3 },
+    ],
+  },
+];
+
+// 해고예고통지서
+export const 해고예고통지서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "해고예고통지서", exampleValue: "해고예고통지서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수신", isHeader: true },
+      { placeholder: "(근로자 성명) 귀하", exampleValue: "홍길동 귀하", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "근로자 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "소속", isHeader: true },
+      { placeholder: "(부서)", exampleValue: "영업팀" },
+      { label: "직위", isHeader: true },
+      { placeholder: "(직위)", exampleValue: "대리" },
+    ],
+  },
+  {
+    fields: [
+      { label: "입사일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2020년 3월 1일" },
+      { label: "근속기간", isHeader: true },
+      { placeholder: "(근속기간)", exampleValue: "5년 10개월" },
+    ],
+  },
+  {
+    fields: [
+      { label: "해고예고 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "해고 사유", isHeader: true },
+      { placeholder: "(해고 사유를 구체적으로 기재)", exampleValue: "회사 경영상의 이유로 인한 인원 감축 (긴박한 경영상의 필요)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "해고 예정일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 2월 28일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "예고 기간", isHeader: true },
+      { placeholder: "(30일 이상)", exampleValue: "30일 (본 통지일로부터 해고 예정일까지)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "퇴직금 등 안내", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "퇴직금", isHeader: true },
+      { placeholder: "(지급예정액)", exampleValue: "약 15,000,000원 (정확한 금액은 퇴직 시 정산)" },
+      { label: "지급일", isHeader: true },
+      { placeholder: "(지급예정일)", exampleValue: "퇴직일로부터 14일 이내" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연차수당", isHeader: true },
+      { placeholder: "(미사용 연차수당)", exampleValue: "잔여 연차 10일분 별도 지급" },
+      { label: "기타", isHeader: true },
+      { placeholder: "(기타 지급사항)", exampleValue: "해고예고수당 해당 없음 (예고 충족)" },
+    ],
+  },
+  {
+    fields: [
+      { label: "안내사항", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "(근로자 안내사항)", exampleValue: "1. 해고 예정일까지 정상 근무해 주시기 바랍니다.\n2. 업무 인수인계를 완료해 주시기 바랍니다.\n3. 회사 비품 및 자료는 퇴직일까지 반납해 주십시오.\n4. 이의가 있으시면 통지일로부터 30일 이내 노동위원회에 부당해고 구제신청을 할 수 있습니다.", colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "통지일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 29일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "회사명", isHeader: true },
+      { placeholder: "(회사명)", exampleValue: "(주)머니컴퍼니" },
+      { label: "대표이사", isHeader: true },
+      { placeholder: "(대표자) (직인)", exampleValue: "김대표 (직인)" },
+    ],
+  },
+];
+
+// 해고통지서
+export const 해고통지서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "해고통지서", exampleValue: "해고통지서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수신", isHeader: true },
+      { placeholder: "(근로자 성명) 귀하", exampleValue: "홍길동 귀하", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "근로자 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "소속", isHeader: true },
+      { placeholder: "(부서)", exampleValue: "영업팀" },
+      { label: "직위", isHeader: true },
+      { placeholder: "(직위)", exampleValue: "대리" },
+    ],
+  },
+  {
+    fields: [
+      { label: "입사일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2023년 6월 1일" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "900101-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "해고 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "해고일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 31일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "해고 사유", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "(해고 사유를 구체적으로 기재)", exampleValue: "1. 귀하는 2025년 10월 15일, 11월 20일, 12월 10일 총 3회에 걸쳐 무단결근하였습니다.\n2. 이에 대해 회사는 2025년 11월 1일, 12월 1일 두 차례 서면경고를 발송하였으나, 귀하는 개선의 의지를 보이지 않았습니다.\n3. 위와 같은 행위는 취업규칙 제32조(해고사유) 제3항 '정당한 사유 없이 3회 이상 무단결근한 경우'에 해당합니다.", colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "해고예고수당", isHeader: true },
+      { placeholder: "(해당 여부 및 금액)", exampleValue: "금 3,500,000원 (30일분 통상임금, 즉시해고에 따른 예고수당)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "퇴직금", isHeader: true },
+      { placeholder: "(지급예정액)", exampleValue: "해당 없음 (1년 미만 근속)" },
+      { label: "연차수당", isHeader: true },
+      { placeholder: "(미사용 연차)", exampleValue: "잔여 연차 3일분 지급" },
+    ],
+  },
+  {
+    fields: [
+      { label: "안내사항", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "(근로자 안내사항)", exampleValue: "1. 본 해고에 이의가 있으시면 통지일로부터 3개월 이내에 관할 노동위원회에 부당해고 구제신청을 할 수 있습니다.\n2. 사원증, 보안카드 등 회사 비품은 해고일까지 반납해 주십시오.\n3. 이직확인서, 경력증명서 등 필요한 서류는 인사팀에 요청해 주십시오.", colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "통지일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "회사명", isHeader: true },
+      { placeholder: "(회사명)", exampleValue: "(주)머니컴퍼니" },
+      { label: "대표이사", isHeader: true },
+      { placeholder: "(대표자) (직인)", exampleValue: "김대표 (직인)" },
+    ],
+  },
+];
+
+// 휴업신고서
+export const 휴업신고서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "휴업신고서", exampleValue: "휴업신고서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고인(사업자) 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "상호(법인명)", isHeader: true },
+      { placeholder: "(상호)", exampleValue: "(주)머니컴퍼니" },
+      { label: "성명(대표자)", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "김대표" },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업자등록번호", isHeader: true },
+      { placeholder: "(사업자등록번호)", exampleValue: "123-45-67890" },
+      { label: "주민(법인)등록번호", isHeader: true },
+      { placeholder: "(주민/법인등록번호)", exampleValue: "110111-1234567" },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장 소재지", isHeader: true },
+      { placeholder: "(사업장 주소)", exampleValue: "서울특별시 강남구 테헤란로 123, 5층", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "업태/종목", isHeader: true },
+      { placeholder: "(업태/종목)", exampleValue: "서비스업 / 소프트웨어 개발", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "02-1234-5678" },
+      { label: "이메일", isHeader: true },
+      { placeholder: "(이메일)", exampleValue: "info@moneycompany.co.kr" },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴업 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴업 개시일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 2월 1일" },
+      { label: "휴업 종료 예정일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 4월 30일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴업 기간", isHeader: true },
+      { placeholder: "(휴업 기간)", exampleValue: "3개월", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "휴업 사유", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "(휴업 사유를 구체적으로 기재)", exampleValue: "사업장 이전 및 인테리어 공사로 인한 일시적 휴업", colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부서류", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "(첨부서류 목록)", exampleValue: "1. 사업자등록증 사본 1부\n2. 임대차계약서 사본 1부 (해당 시)", colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 25일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신고인", isHeader: true },
+      { placeholder: "(성명) (서명 또는 인)", exampleValue: "김대표 (인)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제출처", isHeader: true },
+      { placeholder: "____세무서장 귀하", exampleValue: "강남세무서장 귀하", colspan: 3 },
+    ],
+  },
+];
+
+// 생활안정자금(이차보전) 융자 추천신청서 [별지 1의3] (근로복지사업 운영규정)
+export const 생활안정자금융자추천신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "[별지 1의3] 생활안정자금(이차보전) 융자 추천신청서", exampleValue: "[별지 1의3] 생활안정자금(이차보전) 융자 추천신청서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김철수" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "850101-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 테헤란로 123, 101호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-1234-5678" },
+      { label: "이메일", isHeader: true },
+      { placeholder: "(이메일)", exampleValue: "kim@email.com" },
+    ],
+  },
+  {
+    fields: [
+      { label: "근무처 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장명", isHeader: true },
+      { placeholder: "(사업장명)", exampleValue: "(주)OO기업" },
+      { label: "사업자등록번호", isHeader: true },
+      { placeholder: "___-__-_____", exampleValue: "123-45-67890" },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장 소재지", isHeader: true },
+      { placeholder: "(사업장 주소)", exampleValue: "서울특별시 중구 을지로 100", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "재직기간", isHeader: true },
+      { placeholder: "____년 __월 ~ 현재", exampleValue: "2020년 3월 ~ 현재" },
+      { label: "월평균임금", isHeader: true },
+      { placeholder: "____만원", exampleValue: "320만원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "융자 신청 내역", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "융자 용도", isHeader: true },
+      { placeholder: "1.의료비 2.혼례비 3.장례비 4.부모요양비 5.자녀학자금 6.기타", exampleValue: "5. 자녀학자금" },
+      { label: "신청금액", isHeader: true },
+      { placeholder: "____만원", exampleValue: "1,000만원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "상환방법", isHeader: true },
+      { placeholder: "☐ 원리금균등 ☐ 원금균등 ☐ 만기일시", exampleValue: "☑ 원리금균등" },
+      { label: "상환기간", isHeader: true },
+      { placeholder: "____개월", exampleValue: "36개월" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청 사유", isHeader: true },
+      { placeholder: "(융자 신청 사유를 구체적으로 기재)", exampleValue: "자녀(김영희, 2006년생) 대학 등록금 및 학자금 마련을 위해 신청합니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인", isHeader: true },
+      { placeholder: "(성명) (서명 또는 인)", exampleValue: "김철수 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 경력증명서 [별지 제7호서식] (국가기술자격법 시행규칙)
+export const 경력증명서_국가기술자격_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "[별지 제7호서식] 경력증명서", exampleValue: "[별지 제7호서식] 경력증명서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "인적사항", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "홍길동" },
+      { label: "생년월일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "1985년 1월 1일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 역삼동 123-45", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "경력사항", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "근무기관(업체)명", isHeader: true },
+      { placeholder: "(근무처명)", exampleValue: "(주)대한기계" },
+      { label: "소재지", isHeader: true },
+      { placeholder: "(소재지)", exampleValue: "경기도 수원시 영통구" },
+    ],
+  },
+  {
+    fields: [
+      { label: "근무기간", isHeader: true },
+      { placeholder: "____년 __월 __일 ~ ____년 __월 __일", exampleValue: "2010년 3월 1일 ~ 2015년 12월 31일" },
+      { label: "담당업무", isHeader: true },
+      { placeholder: "(담당업무)", exampleValue: "기계설계 및 제작" },
+    ],
+  },
+  {
+    fields: [
+      { label: "직위(직급)", isHeader: true },
+      { placeholder: "(직위)", exampleValue: "대리" },
+      { label: "퇴직사유", isHeader: true },
+      { placeholder: "(퇴직사유)", exampleValue: "이직" },
+    ],
+  },
+  {
+    fields: [
+      { label: "증명내용", isHeader: true },
+      { placeholder: "위의 사실을 증명합니다.", exampleValue: "위의 사실을 증명합니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발급일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "발급기관", isHeader: true },
+      { placeholder: "(기관명) (직인)", exampleValue: "(주)대한기계 대표이사 (직인)", colspan: 3 },
+    ],
+  },
+];
+
+// 국외취업자모집신고확인증 [별지 제34호서식] (직업안정법 시행규칙)
+export const 국외취업자모집신고확인증_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "[별지 제34호서식] 국외취업자모집신고확인증", exampleValue: "[별지 제34호서식] 국외취업자모집신고확인증", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "모집업체 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "상호(명칭)", isHeader: true },
+      { placeholder: "(상호)", exampleValue: "(주)글로벌인재" },
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "김대표" },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업자등록번호", isHeader: true },
+      { placeholder: "___-__-_____", exampleValue: "123-45-67890" },
+      { label: "전화번호", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "02-1234-5678" },
+    ],
+  },
+  {
+    fields: [
+      { label: "소재지", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 테헤란로 456", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "모집내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "모집인원", isHeader: true },
+      { placeholder: "____명", exampleValue: "50명" },
+      { label: "취업국가", isHeader: true },
+      { placeholder: "(국가명)", exampleValue: "일본" },
+    ],
+  },
+  {
+    fields: [
+      { label: "취업직종", isHeader: true },
+      { placeholder: "(직종)", exampleValue: "IT엔지니어" },
+      { label: "모집기간", isHeader: true },
+      { placeholder: "____년 __월 __일 ~ ____년 __월 __일", exampleValue: "2026년 1월 1일 ~ 2026년 3월 31일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "고용조건", isHeader: true },
+      { placeholder: "(급여, 근무시간, 계약기간 등)", exampleValue: "월 300만원 이상, 주 40시간, 1년 계약", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "확인 내용", isHeader: true },
+      { placeholder: "위 모집에 대하여 신고를 확인합니다.", exampleValue: "위 모집에 대하여 신고를 확인합니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "확인일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 10일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "확인기관", isHeader: true },
+      { placeholder: "____고용센터장 (직인)", exampleValue: "서울강남고용센터장 (직인)", colspan: 3 },
+    ],
+  },
+];
+
+// 실업급여 (지급, 부지급) 결정 통지서 [별지 제74호서식] (고용보험법 시행규칙)
+export const 실업급여결정통지서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "[별지 제74호서식] 실업급여 (지급, 부지급) 결정 통지서", exampleValue: "[별지 제74호서식] 실업급여 (지급, 부지급) 결정 통지서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수신자 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김철수" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "850101-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 테헤란로 123, 101호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "결정 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "결정구분", isHeader: true },
+      { placeholder: "☐ 지급결정 ☐ 부지급결정", exampleValue: "☑ 지급결정" },
+      { label: "급여종류", isHeader: true },
+      { placeholder: "☐ 구직급여 ☐ 취업촉진수당", exampleValue: "☑ 구직급여" },
+    ],
+  },
+  {
+    fields: [
+      { label: "이직일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2025년 12월 31일" },
+      { label: "수급자격 인정일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 10일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "소정급여일수", isHeader: true },
+      { placeholder: "____일", exampleValue: "180일" },
+      { label: "1일 지급액", isHeader: true },
+      { placeholder: "____원", exampleValue: "66,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "수급기간", isHeader: true },
+      { placeholder: "____년 __월 __일 ~ ____년 __월 __일", exampleValue: "2026년 1월 10일 ~ 2026년 7월 9일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "결정사유", isHeader: true },
+      { placeholder: "(결정 사유)", exampleValue: "비자발적 이직(회사 경영상 해고)으로 수급자격 인정", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "통지일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "통지기관", isHeader: true },
+      { placeholder: "____고용센터장 (직인)", exampleValue: "서울강남고용센터장 (직인)", colspan: 3 },
+    ],
+  },
+];
+
+// 구직급여 지급정지 사전고지서 [별지 제91호서식] (고용보험법 시행규칙)
+export const 구직급여지급정지사전고지서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "[별지 제91호서식] 구직급여 지급정지 사전고지서", exampleValue: "[별지 제91호서식] 구직급여 지급정지 사전고지서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수신자 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "홍길동" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "880515-1******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 서초구 서초대로 789", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "고지 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "지급정지 사유", isHeader: true },
+      { placeholder: "(지급정지 사유를 기재)", exampleValue: "실업인정일 불출석 (2026년 1월 20일)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "지급정지 기간", isHeader: true },
+      { placeholder: "____년 __월 __일 ~ ____년 __월 __일 (____일)", exampleValue: "2026년 1월 20일 ~ 2026년 1월 26일 (7일)" },
+      { label: "근거법령", isHeader: true },
+      { placeholder: "고용보험법 제__조", exampleValue: "고용보험법 제44조" },
+    ],
+  },
+  {
+    fields: [
+      { label: "의견제출 안내", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "위 처분에 대하여 의견이 있으시면 이 고지서를 받은 날부터 10일 이내에 의견을 제출할 수 있습니다.", exampleValue: "위 처분에 대하여 의견이 있으시면 이 고지서를 받은 날부터 10일 이내에 의견을 제출할 수 있습니다.", colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "의견제출처", isHeader: true },
+      { placeholder: "____고용센터", exampleValue: "서울강남고용센터" },
+      { label: "제출기한", isHeader: true },
+      { placeholder: "____년 __월 __일까지", exampleValue: "2026년 2월 5일까지" },
+    ],
+  },
+  {
+    fields: [
+      { label: "고지일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 25일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "고지기관", isHeader: true },
+      { placeholder: "____고용센터장 (직인)", exampleValue: "서울강남고용센터장 (직인)", colspan: 3 },
+    ],
+  },
+];
+
+// 상병급여(출산시) 청구서 [별지 제96호서식] (고용보험법 시행규칙)
+export const 상병급여청구서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "[별지 제96호서식] 상병급여(출산시) 청구서", exampleValue: "[별지 제96호서식] 상병급여(출산시) 청구서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "청구인 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "이영희" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "900301-2******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 송파구 올림픽로 300", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-9876-5432" },
+      { label: "계좌번호", isHeader: true },
+      { placeholder: "(은행명 계좌번호)", exampleValue: "국민은행 123-45-67890" },
+    ],
+  },
+  {
+    fields: [
+      { label: "청구 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "청구구분", isHeader: true },
+      { placeholder: "☐ 상병급여 ☐ 출산시 급여", exampleValue: "☑ 출산시 급여" },
+      { label: "출산(예정)일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 2월 15일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "청구기간", isHeader: true },
+      { placeholder: "____년 __월 __일 ~ ____년 __월 __일", exampleValue: "2026년 2월 1일 ~ 2026년 3월 16일" },
+      { label: "청구일수", isHeader: true },
+      { placeholder: "____일", exampleValue: "44일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "질병·부상명", isHeader: true },
+      { placeholder: "(질병명 또는 출산)", exampleValue: "출산" },
+      { label: "진료기관", isHeader: true },
+      { placeholder: "(의료기관명)", exampleValue: "서울대학교병원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부서류", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "1. 의사의 진단서 또는 소견서 1부\n2. 출생증명서 1부 (출산시)\n3. 수급자격증 사본 1부", exampleValue: "1. 의사의 진단서 1부\n2. 출생증명서 1부\n3. 수급자격증 사본 1부", colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "청구일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 2월 20일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "청구인", isHeader: true },
+      { placeholder: "(성명) (서명 또는 인)", exampleValue: "이영희 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 출산전후휴가 급여등의 (지급, 부지급) 결정 통지서 [별지 제106호서식] (고용보험법 시행규칙)
+export const 출산전후휴가급여결정통지서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "[별지 제106호서식] 출산전후휴가 급여등의 (지급, 부지급) 결정 통지서", exampleValue: "[별지 제106호서식] 출산전후휴가 급여등의 (지급, 부지급) 결정 통지서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수신자 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "박지영" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "920515-2******" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 마포구 월드컵북로 400", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "결정 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "결정구분", isHeader: true },
+      { placeholder: "☐ 지급결정 ☐ 부지급결정", exampleValue: "☑ 지급결정" },
+      { label: "급여종류", isHeader: true },
+      { placeholder: "☐ 출산전후휴가급여 ☐ 유산·사산휴가급여", exampleValue: "☑ 출산전후휴가급여" },
+    ],
+  },
+  {
+    fields: [
+      { label: "출산(예정)일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 3월 1일" },
+      { label: "휴가기간", isHeader: true },
+      { placeholder: "____년 __월 __일 ~ ____년 __월 __일", exampleValue: "2026년 2월 1일 ~ 2026년 4월 30일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "지급기간", isHeader: true },
+      { placeholder: "____년 __월 __일 ~ ____년 __월 __일 (____일)", exampleValue: "2026년 3월 2일 ~ 2026년 4월 30일 (60일)" },
+      { label: "월 지급액", isHeader: true },
+      { placeholder: "____원", exampleValue: "2,100,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "총 지급예정액", isHeader: true },
+      { placeholder: "____원", exampleValue: "4,200,000원" },
+      { label: "지급방법", isHeader: true },
+      { placeholder: "(지급방법)", exampleValue: "매월 본인 계좌 입금" },
+    ],
+  },
+  {
+    fields: [
+      { label: "결정사유", isHeader: true },
+      { placeholder: "(결정 사유)", exampleValue: "출산전후휴가 90일 중 최초 60일은 사업주 지급, 나머지 30일은 고용보험 지급 대상", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "통지일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 2월 10일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "통지기관", isHeader: true },
+      { placeholder: "____고용센터장 (직인)", exampleValue: "서울서부고용센터장 (직인)", colspan: 3 },
     ],
   },
 ];
