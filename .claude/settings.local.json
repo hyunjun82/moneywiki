@@ -163,7 +163,18 @@
       "Bash(Select-Object Name, Length, LastWriteTime)",
       "Bash(Format-Table -AutoSize)",
       "Bash(powershell -Command \"Get-ChildItem ''C:\\\\Users\\\\user\\\\Downloads\\\\*.hwp'' | Select-Object Name, Length, LastWriteTime | Format-Table -AutoSize\")",
-      "Bash(echo.)"
+      "Bash(echo.)",
+      "Bash(git status:*)",
+      "Bash(find:*)",
+      "Bash(chmod:*)",
+      "Bash(bash scripts/validate-today.sh:*)",
+      "Bash(for cat in \"부동산\" \"세금\" \"금융\" \"경제\" \"법률\" \"복지\")",
+      "Bash(do echo -n \"$cat: \")",
+      "Bash(for f in 계약갱신청구권-거절사유.md 계약갱신청구권-기간.md 계약갱신청구권-매매.md 계약갱신청구권-복비.md 계약갱신청구권-실거주.md 계약갱신청구권-오피스텔.md 계약갱신청구권-월세.md 계약갱신청구권-재계약.md 계약갱신청구권-중도해지.md 계약갱신청구권-행사방법.md 주택임대차보호법-계약갱신-조항.md)",
+      "Bash(do if [ -f \"content/wiki/$f\" ])",
+      "Bash(then cat \"content/wiki/$f\")",
+      "Bash(else echo \"$f: File not found\")",
+      "Bash(fi)"
     ]
   }
 }
