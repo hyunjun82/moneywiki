@@ -1,5 +1,30 @@
 # 머니위키 작업 규칙
 
+⚠️ **위키 글 쓰기 전 필수 3단계 (위반 시 전체 재작성!)**
+
+**1단계: CLAUDE.md 읽기**
+```
+Read("C:\Users\user\wiki-site\CLAUDE.md")
+```
+
+**2단계: wegive-template-full.md 읽기 (강제!)**
+```
+Read("C:\Users\user\wiki-site\.claude\references\wegive-template-full.md")
+```
+- **예시는 참고용**: 문체/흐름 그대로 복사 금지!
+- **독자 중심**: 20~80대 이해 쉽게, 궁금증 해결
+- **H2 패턴**: "## 민영주택 1순위 조건 예치금 기준" (키워드 포함)
+
+**3단계: TodoWrite 체크리스트 작성 (강제!)**
+```javascript
+TodoWrite([
+  {"content": "wegive-template-full.md 읽고 A씨 B씨 패턴 확인", "status": "completed", "activeForm": "템플릿 확인 중"},
+  {"content": "WebSearch [키워드] 2026 최신 정보", "status": "in_progress", "activeForm": "웹검색 중"},
+  {"content": "글 작성 (A씨 B씨 1번만!)", "status": "pending", "activeForm": "글 작성 중"},
+  {"content": "최종 체크리스트 통과 확인", "status": "pending", "activeForm": "체크리스트 확인 중"}
+])
+```
+
 ---
 ## 📁 프로젝트 정보
 
@@ -8,14 +33,20 @@
 - **도메인**: jjyu.co.kr
 
 ---
-## 🔴 필수 워크플로우 (매번!)
+## 🔴 wegive-template-full.md 핵심 원칙 (암기!)
 
-```
-1. Read("CLAUDE.md") ← 이 파일 (규칙)
-2. Read(".claude/references/wegive-template-full.md") ← 프런트매터 + 본문 + 완성예시 (필수!)
-3. WebSearch("[키워드] 2026") ← 최신 정보 확인
-4. 템플릿대로 글 작성 (프런트매터 구조 + 위기브 스타일)
-5. 체크리스트 확인 후 저장
+### ⚠️ 예시는 참고용! 그대로 복사 금지!
+- **템플릿 목적**: 독자가 궁금증 해결하도록 쉽게 전달
+- **예시 역할**: 문체/흐름 참고용, 그대로 따라하는 게 아님
+- **실제 작성**: 타이틀/키워드에 맞게 독자 중심으로 작성
+
+### H2 소제목 패턴
+```markdown
+✅ ## 민영주택 1순위 조건 예치금 기준
+✅ ## 국민주택 1순위 조건 납입 횟수 기준
+✅ ## 청약 가점제 84점 만점 계산법
+❌ ## 뭔가요?
+❌ ## 어떻게 신청하나요?
 ```
 
 ### 참고 파일
