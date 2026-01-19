@@ -12822,3 +12822,324 @@ export const 출산전후휴가급여결정통지서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// [별지 제97호서식] 조기재취업 수당 청구서
+export const 조기재취업수당청구서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김민수" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "850101-1234567" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 테헤란로 123", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "전화번호", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-1234-5678" },
+      { label: "피보험자번호", isHeader: true },
+      { placeholder: "(피보험자번호)", exampleValue: "1234-567890" },
+    ],
+  },
+  {
+    fields: [
+      { label: "재취업 일자", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일" },
+      { label: "재취업 사업장명", isHeader: true },
+      { placeholder: "(사업장명)", exampleValue: "(주)새일터" },
+    ],
+  },
+  {
+    fields: [
+      { label: "잔여 급여일수", isHeader: true },
+      { placeholder: "____일", exampleValue: "90일" },
+      { label: "청구 금액", isHeader: true },
+      { placeholder: "____원", exampleValue: "3,150,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "입금계좌", isHeader: true },
+      { placeholder: "(은행명) (계좌번호)", exampleValue: "국민은행 123-456-789012", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 20일", colspan: 3 },
+    ],
+  },
+];
+
+// [서식 8] 청년일자리도약장려금 유형Ⅱ 지급 신청서(청년용)
+export const 청년일자리도약장려금신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "신청인(청년)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "이지훈" },
+      { label: "생년월일", isHeader: true },
+      { placeholder: "(생년월일)", exampleValue: "1998.05.15" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "010-9876-5432" },
+      { label: "이메일", isHeader: true },
+      { placeholder: "(이메일)", exampleValue: "jihun98@email.com" },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장명", isHeader: true },
+      { placeholder: "(사업장명)", exampleValue: "(주)청년테크" },
+      { label: "채용일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 2일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "6개월 충족일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 7월 1일" },
+      { label: "지급 신청액", isHeader: true },
+      { placeholder: "____원", exampleValue: "2,000,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "입금계좌", isHeader: true },
+      { placeholder: "(은행명) (계좌번호)", exampleValue: "신한은행 110-123-456789", colspan: 3 },
+    ],
+  },
+];
+
+// [서식 8-2] 청년일자리도약장려금 유형Ⅱ 확인서(청년용)
+export const 청년일자리도약장려금확인서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "이지훈" },
+      { label: "생년월일", isHeader: true },
+      { placeholder: "(생년월일)", exampleValue: "1998.05.15" },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장명", isHeader: true },
+      { placeholder: "(사업장명)", exampleValue: "(주)청년테크" },
+      { label: "채용일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 2일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "6개월 근속 여부", isHeader: true },
+      { placeholder: "(예/아니오)", exampleValue: "예" },
+      { label: "정규직 전환", isHeader: true },
+      { placeholder: "(예/아니오)", exampleValue: "예" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주 소정근로시간", isHeader: true },
+      { placeholder: "____시간", exampleValue: "40시간" },
+      { label: "4대보험 가입", isHeader: true },
+      { placeholder: "(가입/미가입)", exampleValue: "가입" },
+    ],
+  },
+  {
+    fields: [
+      { label: "확인일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 7월 5일" },
+      { label: "확인자(사업주)", isHeader: true },
+      { placeholder: "(서명)", exampleValue: "대표 박창업 (인)" },
+    ],
+  },
+];
+
+// [서식 15-1] 청년일자리도약장려금 유형Ⅱ(청년) 참여청년 점검표
+export const 청년일자리도약장려금점검표_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "이지훈" },
+      { label: "사업장명", isHeader: true },
+      { placeholder: "(사업장명)", exampleValue: "(주)청년테크" },
+    ],
+  },
+  {
+    fields: [
+      { label: "1. 만 15~34세 청년", isHeader: true },
+      { placeholder: "□ 충족", exampleValue: "☑ 충족" },
+      { label: "2. 취업일 고용보험 미가입", isHeader: true },
+      { placeholder: "□ 충족", exampleValue: "☑ 충족" },
+    ],
+  },
+  {
+    fields: [
+      { label: "3. 정규직 6개월 근속", isHeader: true },
+      { placeholder: "□ 충족", exampleValue: "☑ 충족" },
+      { label: "4. 주 30시간 이상", isHeader: true },
+      { placeholder: "□ 충족", exampleValue: "☑ 충족" },
+    ],
+  },
+  {
+    fields: [
+      { label: "5. 4대보험 가입", isHeader: true },
+      { placeholder: "□ 충족", exampleValue: "☑ 충족" },
+      { label: "점검 결과", isHeader: true },
+      { placeholder: "(적합/부적합)", exampleValue: "적합" },
+    ],
+  },
+  {
+    fields: [
+      { label: "점검일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 7월 5일" },
+      { label: "점검자", isHeader: true },
+      { placeholder: "(서명)", exampleValue: "담당자 김확인 (인)" },
+    ],
+  },
+];
+
+// 고용허가 준수사항 확인서 (호텔·콘도업, 광업, 음식점업, 임업 공통 템플릿)
+export const 고용허가준수사항확인서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "사업장명", isHeader: true },
+      { placeholder: "(사업장명)", exampleValue: "○○호텔" },
+      { label: "사업자등록번호", isHeader: true },
+      { placeholder: "(사업자등록번호)", exampleValue: "123-45-67890" },
+    ],
+  },
+  {
+    fields: [
+      { label: "소재지", isHeader: true },
+      { placeholder: "(소재지)", exampleValue: "서울시 중구 명동길 123", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "홍길동" },
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "02-1234-5678" },
+    ],
+  },
+  {
+    fields: [
+      { label: "외국인 성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "NGUYEN VAN A" },
+      { label: "국적", isHeader: true },
+      { placeholder: "(국적)", exampleValue: "베트남" },
+    ],
+  },
+  {
+    fields: [
+      { label: "외국인등록번호", isHeader: true },
+      { placeholder: "(외국인등록번호)", exampleValue: "123456-1234567" },
+      { label: "체류자격", isHeader: true },
+      { placeholder: "(체류자격)", exampleValue: "E-9" },
+    ],
+  },
+  {
+    fields: [
+      { label: "1. 근로계약서 체결", isHeader: true },
+      { placeholder: "□ 이행", exampleValue: "☑ 이행" },
+      { label: "2. 임금체불 없음", isHeader: true },
+      { placeholder: "□ 이행", exampleValue: "☑ 이행" },
+    ],
+  },
+  {
+    fields: [
+      { label: "3. 4대보험 가입", isHeader: true },
+      { placeholder: "□ 이행", exampleValue: "☑ 이행" },
+      { label: "4. 숙식 제공", isHeader: true },
+      { placeholder: "□ 이행", exampleValue: "☑ 이행" },
+    ],
+  },
+  {
+    fields: [
+      { label: "확인일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일" },
+      { label: "확인자", isHeader: true },
+      { placeholder: "(서명)", exampleValue: "대표 홍길동 (인)" },
+    ],
+  },
+];
+
+// 가족수당신청서
+export const 가족수당신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김직원" },
+      { label: "사번", isHeader: true },
+      { placeholder: "(사번)", exampleValue: "20210001" },
+    ],
+  },
+  {
+    fields: [
+      { label: "소속", isHeader: true },
+      { placeholder: "(소속부서)", exampleValue: "영업팀" },
+      { label: "직급", isHeader: true },
+      { placeholder: "(직급)", exampleValue: "대리" },
+    ],
+  },
+  {
+    fields: [
+      { label: "배우자", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "이배우" },
+      { label: "생년월일", isHeader: true },
+      { placeholder: "(생년월일)", exampleValue: "1990.03.20" },
+    ],
+  },
+  {
+    fields: [
+      { label: "자녀1", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김자녀" },
+      { label: "생년월일", isHeader: true },
+      { placeholder: "(생년월일)", exampleValue: "2018.07.15" },
+    ],
+  },
+  {
+    fields: [
+      { label: "자녀2", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김둘째" },
+      { label: "생년월일", isHeader: true },
+      { placeholder: "(생년월일)", exampleValue: "2021.02.10" },
+    ],
+  },
+  {
+    fields: [
+      { label: "부양가족 수", isHeader: true },
+      { placeholder: "____명", exampleValue: "3명" },
+      { label: "신청 수당액", isHeader: true },
+      { placeholder: "____원", exampleValue: "월 150,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "첨부서류", isHeader: true },
+      { placeholder: "(첨부서류)", exampleValue: "가족관계증명서, 주민등록등본", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 10일" },
+      { label: "신청인", isHeader: true },
+      { placeholder: "(서명)", exampleValue: "김직원 (인)" },
+    ],
+  },
+];
