@@ -1,0 +1,32 @@
+{
+  "slug": "계좌변경서약서",
+  "title": "2026 계좌변경 서약서 양식 무료 다운로드 (HWP)",
+  "shortTitle": "계좌변경서약서",
+  "description": "급여나 지원금 수령 계좌를 변경할 때 제출하는 서약서예요.",
+  "category": "인사·노무",
+  "source": "고용노동부",
+  "sourceUrl": "https://www.moel.go.kr",
+  "downloads": {
+    "hwp": "/files/forms/계좌변경서약서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "계좌변경서약서.hwp"
+  },
+  "previewDataKey": "계좌변경서약서_DATA",
+  "relatedArticle": "/w/급여-계좌",
+  "relatedDocs": [
+    { "title": "급여명세서 양식", "url": "/forms/급여명세서" },
+    { "title": "실업급여신청서 양식", "url": "/forms/실업급여신청서" }
+  ],
+  "tips": [
+    "본인 명의 계좌만 등록 가능해요",
+    "통장 사본을 첨부해야 해요",
+    "계좌 오류 시 지급이 지연될 수 있으니 정확하게 기재해요"
+  ],
+  "faq": [
+    {"question": "타인 명의 계좌로 변경 가능한가요?", "answer": "아니요, 급여나 지원금은 반드시 본인 명의 계좌로만 받을 수 있어요."},
+    {"question": "첨부 서류는 뭐가 필요한가요?", "answer": "변경할 계좌의 통장 사본(계좌번호, 예금주명 확인 가능한 페이지)을 첨부해요."},
+    {"question": "변경 후 언제부터 적용되나요?", "answer": "처리 완료 후 다음 지급분부터 변경된 계좌로 입금돼요."}
+  ],
+  "createdAt": "2026-01-19"
+}

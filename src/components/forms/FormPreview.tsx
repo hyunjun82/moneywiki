@@ -13143,3 +13143,426 @@ export const 가족수당신청서_DATA: FormRow[] = [
     ],
   },
 ];
+
+// 평균임금 산정상의 상여금 취급요령 (고용노동부예규 제96호)
+export const 평균임금상여금취급요령_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "예규 제목", isHeader: true },
+      { placeholder: "(제목)", exampleValue: "평균임금 산정상의 상여금 취급요령", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "예규 번호", isHeader: true },
+      { placeholder: "(예규번호)", exampleValue: "고용노동부예규 제96호" },
+      { label: "시행일", isHeader: true },
+      { placeholder: "(시행일)", exampleValue: "2015년 12월 31일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "적용 대상", isHeader: true },
+      { placeholder: "(적용대상)", exampleValue: "평균임금 산정 시 상여금 포함 여부 판단", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "핵심 내용", isHeader: true },
+      { placeholder: "(내용)", exampleValue: "상여금이 평균임금에 포함되려면 정기성, 일률성, 고정성을 갖춰야 함", colspan: 3 },
+    ],
+  },
+];
+
+// 평균임금산정 특례 고시 (고용노동부고시 제2015-77호)
+export const 평균임금산정특례고시_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "고시 제목", isHeader: true },
+      { placeholder: "(제목)", exampleValue: "평균임금산정 특례 고시", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "고시 번호", isHeader: true },
+      { placeholder: "(고시번호)", exampleValue: "고용노동부고시 제2015-77호" },
+      { label: "시행일", isHeader: true },
+      { placeholder: "(시행일)", exampleValue: "2015년 12월 31일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "적용 대상", isHeader: true },
+      { placeholder: "(적용대상)", exampleValue: "일용근로자, 단시간근로자 등 특례 적용 대상", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "핵심 내용", isHeader: true },
+      { placeholder: "(내용)", exampleValue: "평균임금 산정이 곤란한 경우 통상임금을 평균임금으로 적용", colspan: 3 },
+    ],
+  },
+];
+
+// 사업주 직업능력개발 훈련비용 지원 신청서
+export const 직업능력개발훈련비용지원신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "사업장명", isHeader: true },
+      { placeholder: "(사업장명)", exampleValue: "(주)스킬업" },
+      { label: "사업자등록번호", isHeader: true },
+      { placeholder: "(사업자등록번호)", exampleValue: "123-45-67890" },
+    ],
+  },
+  {
+    fields: [
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "김훈련" },
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "02-1234-5678" },
+    ],
+  },
+  {
+    fields: [
+      { label: "훈련과정명", isHeader: true },
+      { placeholder: "(과정명)", exampleValue: "디지털 마케팅 역량강화 과정", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "훈련기간", isHeader: true },
+      { placeholder: "____년 __월 __일 ~ ____년 __월 __일", exampleValue: "2026.02.01 ~ 2026.02.28" },
+      { label: "훈련인원", isHeader: true },
+      { placeholder: "____명", exampleValue: "10명" },
+    ],
+  },
+  {
+    fields: [
+      { label: "총 훈련비용", isHeader: true },
+      { placeholder: "____원", exampleValue: "5,000,000원" },
+      { label: "지원 신청액", isHeader: true },
+      { placeholder: "____원", exampleValue: "3,500,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일" },
+      { label: "신청인", isHeader: true },
+      { placeholder: "(서명)", exampleValue: "대표 김훈련 (인)" },
+    ],
+  },
+];
+
+// 출산육아기 고용안정장려금 지급 신청서 (육아기 단축업무 분담지원금)
+export const 출산육아기고용안정장려금신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "사업장명", isHeader: true },
+      { placeholder: "(사업장명)", exampleValue: "(주)워라밸" },
+      { label: "사업자등록번호", isHeader: true },
+      { placeholder: "(사업자등록번호)", exampleValue: "234-56-78901" },
+    ],
+  },
+  {
+    fields: [
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "이육아" },
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "02-2345-6789" },
+    ],
+  },
+  {
+    fields: [
+      { label: "육아기 근로시간 단축 근로자", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "박엄마" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "880101-2345678" },
+    ],
+  },
+  {
+    fields: [
+      { label: "단축기간", isHeader: true },
+      { placeholder: "____년 __월 __일 ~ ____년 __월 __일", exampleValue: "2026.01.01 ~ 2026.06.30" },
+      { label: "단축 후 근로시간", isHeader: true },
+      { placeholder: "주 ____시간", exampleValue: "주 25시간" },
+    ],
+  },
+  {
+    fields: [
+      { label: "업무 분담 근로자", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김동료" },
+      { label: "지원금 신청액", isHeader: true },
+      { placeholder: "____원", exampleValue: "월 200,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 2월 5일" },
+      { label: "신청인", isHeader: true },
+      { placeholder: "(서명)", exampleValue: "대표 이육아 (인)" },
+    ],
+  },
+];
+
+// 계좌변경 서약서
+export const 계좌변경서약서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김계좌" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "900101-1234567" },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "010-1234-5678" },
+      { label: "소속", isHeader: true },
+      { placeholder: "(소속)", exampleValue: "(주)월급쟁이" },
+    ],
+  },
+  {
+    fields: [
+      { label: "변경 전 계좌", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "은행명", isHeader: true },
+      { placeholder: "(은행명)", exampleValue: "국민은행" },
+      { label: "계좌번호", isHeader: true },
+      { placeholder: "(계좌번호)", exampleValue: "123-456-789012" },
+    ],
+  },
+  {
+    fields: [
+      { label: "변경 후 계좌", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "은행명", isHeader: true },
+      { placeholder: "(은행명)", exampleValue: "신한은행" },
+      { label: "계좌번호", isHeader: true },
+      { placeholder: "(계좌번호)", exampleValue: "110-123-456789" },
+    ],
+  },
+  {
+    fields: [
+      { label: "변경사유", isHeader: true },
+      { placeholder: "(변경사유)", exampleValue: "주거래 은행 변경", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "서약일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 10일" },
+      { label: "서약인", isHeader: true },
+      { placeholder: "(서명)", exampleValue: "김계좌 (인)" },
+    ],
+  },
+];
+
+// 워라밸일자리 장려금 참여 신청서
+export const 워라밸일자리장려금신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "사업장명", isHeader: true },
+      { placeholder: "(사업장명)", exampleValue: "(주)균형인생" },
+      { label: "사업자등록번호", isHeader: true },
+      { placeholder: "(사업자등록번호)", exampleValue: "345-67-89012" },
+    ],
+  },
+  {
+    fields: [
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "정균형" },
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "02-3456-7890" },
+    ],
+  },
+  {
+    fields: [
+      { label: "참여 유형", isHeader: true },
+      { placeholder: "(유형)", exampleValue: "실근로시간 단축제", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "참여 근로자 수", isHeader: true },
+      { placeholder: "____명", exampleValue: "15명" },
+      { label: "단축 전 근로시간", isHeader: true },
+      { placeholder: "주 ____시간", exampleValue: "주 52시간" },
+    ],
+  },
+  {
+    fields: [
+      { label: "단축 후 근로시간", isHeader: true },
+      { placeholder: "주 ____시간", exampleValue: "주 40시간" },
+      { label: "참여 기간", isHeader: true },
+      { placeholder: "____개월", exampleValue: "12개월" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 20일" },
+      { label: "신청인", isHeader: true },
+      { placeholder: "(서명)", exampleValue: "대표 정균형 (인)" },
+    ],
+  },
+];
+
+// 일·가정 양립 환경개선 참여계획 변경 신청서
+export const 일가정양립환경개선신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "사업장명", isHeader: true },
+      { placeholder: "(사업장명)", exampleValue: "(주)가정사랑" },
+      { label: "사업자등록번호", isHeader: true },
+      { placeholder: "(사업자등록번호)", exampleValue: "456-78-90123" },
+    ],
+  },
+  {
+    fields: [
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "김양립" },
+      { label: "연락처", isHeader: true },
+      { placeholder: "(연락처)", exampleValue: "02-4567-8901" },
+    ],
+  },
+  {
+    fields: [
+      { label: "기존 참여계획 내용", isHeader: true },
+      { placeholder: "(기존 내용)", exampleValue: "유연근무제 도입 (주 3일 재택)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "변경 내용", isHeader: true },
+      { placeholder: "(변경 내용)", exampleValue: "유연근무제 확대 (주 4일 재택)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "변경 사유", isHeader: true },
+      { placeholder: "(변경 사유)", exampleValue: "근로자 만족도 향상 및 생산성 증가로 확대 시행", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 2월 1일" },
+      { label: "신청인", isHeader: true },
+      { placeholder: "(서명)", exampleValue: "대표 김양립 (인)" },
+    ],
+  },
+];
+
+// 이직사유 확인서 (간병 퇴사)
+export const 이직확인서_간병퇴사_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "피보험자 성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김간병" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "850101-1234567" },
+    ],
+  },
+  {
+    fields: [
+      { label: "피보험자번호", isHeader: true },
+      { placeholder: "(피보험자번호)", exampleValue: "1234-567890" },
+      { label: "이직일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "이직 사유", isHeader: true },
+      { placeholder: "(이직사유)", exampleValue: "부모님 간병으로 인한 퇴사", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "간병 대상자", isHeader: true },
+      { placeholder: "(대상자)", exampleValue: "부(父) 김OO" },
+      { label: "관계", isHeader: true },
+      { placeholder: "(관계)", exampleValue: "직계존속" },
+    ],
+  },
+  {
+    fields: [
+      { label: "간병 사유", isHeader: true },
+      { placeholder: "(사유)", exampleValue: "뇌졸중 후유증으로 거동 불편, 24시간 돌봄 필요", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "확인자(사업주)", isHeader: true },
+      { placeholder: "(서명)", exampleValue: "대표 박사장 (인)", colspan: 3 },
+    ],
+  },
+];
+
+// 이직사유 확인서 (공통 템플릿 - 다른 이직사유에도 사용)
+export const 이직확인서_공통_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "피보험자 성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "이직자" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "900101-1234567" },
+    ],
+  },
+  {
+    fields: [
+      { label: "피보험자번호", isHeader: true },
+      { placeholder: "(피보험자번호)", exampleValue: "1234-567890" },
+      { label: "이직일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 31일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장명", isHeader: true },
+      { placeholder: "(사업장명)", exampleValue: "(주)이전직장" },
+      { label: "사업자등록번호", isHeader: true },
+      { placeholder: "(사업자등록번호)", exampleValue: "123-45-67890" },
+    ],
+  },
+  {
+    fields: [
+      { label: "이직 사유 구분", isHeader: true },
+      { placeholder: "(이직사유)", exampleValue: "자발적 이직 (정당한 사유)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "구체적 사유", isHeader: true },
+      { placeholder: "(구체적 사유)", exampleValue: "(해당 이직 사유에 맞게 작성)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "증빙서류", isHeader: true },
+      { placeholder: "(첨부서류)", exampleValue: "(해당 이직 사유 증빙 서류)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "확인일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 2월 5일" },
+      { label: "확인자(사업주)", isHeader: true },
+      { placeholder: "(서명)", exampleValue: "대표 OOO (인)" },
+    ],
+  },
+];
