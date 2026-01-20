@@ -174,7 +174,10 @@
       "Bash(do if [ -f \"content/wiki/$f\" ])",
       "Bash(then cat \"content/wiki/$f\")",
       "Bash(else echo \"$f: File not found\")",
-      "Bash(fi)"
+      "Bash(fi)",
+      "Bash(timeout:*)",
+      "Bash(test:*)",
+      "mcp__playwright__browser_wait_for"
     ]
   }
 }
