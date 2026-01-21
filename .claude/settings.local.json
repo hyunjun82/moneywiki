@@ -194,7 +194,9 @@
       "Bash(npx vercel:*)",
       "Bash(npm install:*)",
       "Bash(powershell -Command \"\nGet-ChildItem -Path ''content\\\\wiki\\\\*.md'' | \nWhere-Object { \\(Get-Content $_FullName -Raw\\) -match ''category:\\\\s*[''\\\\''''\"\"]*근로/노동[''\\\\''''\"\"]*'' } |\nSort-Object -Property LastWriteTime -Descending |\nSelect-Object -Property @{Name=''번호'';Expression={$_}, Name, LastWriteTime |\nForEach-Object { [PSCustomObject]@{ Number=$_; FileName=$_.Name; Modified=$_.LastWriteTime } } |\nFormat-Table -Property Number, FileName, Modified -AutoSize\n\")",
-      "Bash(wc:*)"
+      "Bash(wc:*)",
+      "Bash(cat:*)",
+      "Bash(dir \"C:\\\\Users\\\\user\\\\wiki-site\\\\content\\\\wiki\")"
     ]
   }
 }

@@ -1,0 +1,22 @@
+[
+  {
+    "content": "wegive-template-full.md 읽고 템플릿 규칙 확인",
+    "status": "completed",
+    "activeForm": "템플릿 확인 완료"
+  },
+  {
+    "content": "WebSearch 연차촉진 제도 절차 2026 최신 정보",
+    "status": "completed",
+    "activeForm": "웹검색 완료"
+  },
+  {
+    "content": "글 작성 (구어체 ~이에요/~해요, 테이블 최소화)",
+    "status": "completed",
+    "activeForm": "글 작성 완료"
+  },
+  {
+    "content": "최종 체크리스트 통과 확인",
+    "status": "completed",
+    "activeForm": "체크 완료"
+  }
+]

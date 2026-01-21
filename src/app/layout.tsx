@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import Header from "@/components/Header";
 import KakaoSDK from "@/components/KakaoSDK";
+import AdClickTracker from "@/components/AdClickTracker";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -84,6 +85,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased bg-white min-h-screen flex flex-col">
         <KakaoSDK />
+        <AdClickTracker />
         <Header />
         <div className="flex-1">{children}</div>
         <Footer />
