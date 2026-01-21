@@ -180,7 +180,10 @@
       "mcp__playwright__browser_wait_for",
       "Bash(node scripts/todo.js:*)",
       "Bash(npx -y @anthropic-ai/claude-code-todo write:*)",
-      "Bash(npx @modelcontextprotocol/server-brave-search search:*)"
+      "Bash(npx @modelcontextprotocol/server-brave-search search:*)",
+      "Bash(python -c:*)",
+      "Bash(git stash show:*)",
+      "Bash(npm i:*)"
     ]
   }
 }
