@@ -18,9 +18,9 @@ Read("C:\Users\user\wiki-site\.claude\references\wegive-template-full.md")
 **3단계: TodoWrite 체크리스트 작성 (강제!)**
 ```javascript
 TodoWrite([
-  {"content": "wegive-template-full.md 읽고 A씨 B씨 패턴 확인", "status": "completed", "activeForm": "템플릿 확인 중"},
+  {"content": "wegive-template-full.md 읽고 템플릿 규칙 확인", "status": "completed", "activeForm": "템플릿 확인 중"},
   {"content": "WebSearch [키워드] 2026 최신 정보", "status": "in_progress", "activeForm": "웹검색 중"},
-  {"content": "글 작성 (A씨 B씨 1번만!)", "status": "pending", "activeForm": "글 작성 중"},
+  {"content": "글 작성 (구어체 ~이에요/~해요)", "status": "pending", "activeForm": "글 작성 중"},
   {"content": "최종 체크리스트 통과 확인", "status": "pending", "activeForm": "체크리스트 확인 중"}
 ])
 ```

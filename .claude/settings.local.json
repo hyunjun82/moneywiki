@@ -183,7 +183,18 @@
       "Bash(npx @modelcontextprotocol/server-brave-search search:*)",
       "Bash(python -c:*)",
       "Bash(git stash show:*)",
-      "Bash(npm i:*)"
+      "Bash(npm i:*)",
+      "Bash([ -f \"content/wiki/산재보상-회사-주최-야유회-사고.md\" ])",
+      "Bash(ws \"산재보험 외국인근로자 적용 2026 최신 정보\")",
+      "Bash(web-search \"노동위원회 구제신청 방법 2026\")",
+      "Bash([ -f \"content/wiki/비밀유지-의무-위반-처벌.md\" ])",
+      "Bash(npx -y @modelcontextprotocol/create-task@latest write '[{\"\"content\"\": \"\"wegive-template-full.md 읽고 구조 파악\"\", \"\"status\"\": \"\"in_progress\"\", \"\"activeForm\"\": \"\"템플릿 분석 중\"\"}, {\"\"content\"\": \"\"WebSearch로 전직금지 약정 2026 최신 정보 수집\"\", \"\"status\"\": \"\"pending\"\", \"\"activeForm\"\": \"\"정보 수집 중\"\"}, {\"\"content\"\": \"\"본문 작성 \\(구어체, A씨 B씨 패턴 최소화\\)\"\", \"\"status\"\": \"\"pending\"\", \"\"activeForm\"\": \"\"글 작성 중\"\"}, {\"\"content\"\": \"\"최종 체크리스트 검증\"\", \"\"status\"\": \"\"pending\"\", \"\"activeForm\"\": \"\"품질 검증 중\"\"}]')",
+      "Bash(npx:*)",
+      "Bash(git log:*)",
+      "Bash(npx vercel:*)",
+      "Bash(npm install:*)",
+      "Bash(powershell -Command \"\nGet-ChildItem -Path ''content\\\\wiki\\\\*.md'' | \nWhere-Object { \\(Get-Content $_FullName -Raw\\) -match ''category:\\\\s*[''\\\\''''\"\"]*근로/노동[''\\\\''''\"\"]*'' } |\nSort-Object -Property LastWriteTime -Descending |\nSelect-Object -Property @{Name=''번호'';Expression={$_}, Name, LastWriteTime |\nForEach-Object { [PSCustomObject]@{ Number=$_; FileName=$_.Name; Modified=$_.LastWriteTime } } |\nFormat-Table -Property Number, FileName, Modified -AutoSize\n\")",
+      "Bash(wc:*)"
     ]
   }
 }
