@@ -107,10 +107,12 @@ sources:
   - name: "출처명"
     url: "https://실제URL"
     date: "2026-01"
-faq:  # 2개 고정! 소제목과 안 겹치게
-  - question: "[메인키워드] 실제 검색 질문?"
+faq:  # 3개 고정! 소제목과 안 겹치게, 메인키워드 연관 실제 검색 쿼리
+  - question: "[메인키워드] 실제 검색 질문 1?"
     answer: "구어체로 답변"
-  - question: "[메인키워드] 실제 검색 질문?"
+  - question: "[메인키워드] 실제 검색 질문 2?"
+    answer: "구어체로 답변"
+  - question: "[메인키워드] 실제 검색 질문 3?"
     answer: "구어체로 답변"
 relatedDocs:
   - title: "관련문서"
@@ -450,7 +452,7 @@ relatedDocs:
 ### Frontmatter
 - [ ] keywords 4-5개?
 - [ ] author "머니위키 에디터"?
-- [ ] FAQ 2개 고정? (소제목과 안 겹침)
+- [ ] FAQ 3개 고정? (소제목과 안 겹침, 메인키워드 연관)
 - [ ] summary 배열 3줄?
 
 ### 본문 품질
