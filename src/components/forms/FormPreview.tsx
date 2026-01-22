@@ -12335,76 +12335,147 @@ export const 생활안정자금융자추천신청서_DATA: FormRow[] = [
 
 // 경력증명서 [별지 제7호서식] (국가기술자격법 시행규칙)
 export const 경력증명서_국가기술자격_DATA: FormRow[] = [
+  // 서식 헤더
   {
     fields: [
-      { label: "서식명", isHeader: true },
-      { placeholder: "[별지 제7호서식] 경력증명서", exampleValue: "[별지 제7호서식] 경력증명서", colspan: 3 },
+      { placeholder: "[별지 제7호서식]", exampleValue: "[별지 제7호서식]", colspan: 4 },
     ],
   },
   {
     fields: [
-      { label: "인적사항", isHeader: true, colspan: 4 },
+      { placeholder: "경력증명서", exampleValue: "경력증명서", colspan: 4 },
     ],
   },
+  // 제출인(본인) 섹션
   {
     fields: [
+      { label: "제출인(본인)", isHeader: true, rowspan: 4 },
       { label: "성명", isHeader: true },
-      { placeholder: "(성명)", exampleValue: "홍길동" },
-      { label: "생년월일", isHeader: true },
-      { placeholder: "____년 __월 __일", exampleValue: "1985년 1월 1일" },
+      { placeholder: "(성명)", exampleValue: "김철수", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "(주민등록번호)", exampleValue: "850101-1234567", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "전화번호", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "010-1234-5678", colspan: 2 },
     ],
   },
   {
     fields: [
       { label: "주소", isHeader: true },
-      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 역삼동 123-45", colspan: 3 },
+      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 역삼로 123, 101동 1001호", colspan: 2 },
+    ],
+  },
+  // 증명사항 테이블 헤더
+  {
+    fields: [
+      { label: "증명사항", isHeader: true, colspan: 4 },
     ],
   },
   {
     fields: [
-      { label: "경력사항", isHeader: true, colspan: 4 },
+      { label: "재직기간", isHeader: true, colspan: 2 },
+      { label: "소속 및 직위", isHeader: true, rowspan: 2 },
+      { label: "담당 업무 내용", isHeader: true, rowspan: 2 },
     ],
   },
   {
     fields: [
-      { label: "근무기관(업체)명", isHeader: true },
-      { placeholder: "(근무처명)", exampleValue: "(주)대한기계" },
-      { label: "소재지", isHeader: true },
-      { placeholder: "(소재지)", exampleValue: "경기도 수원시 영통구" },
+      { label: "년 월 일", isHeader: true },
+      { label: "년 월 일", isHeader: true },
+    ],
+  },
+  // 증명사항 입력란 (3행)
+  {
+    fields: [
+      { placeholder: "____년 __월 __일", exampleValue: "2018년 3월 1일" },
+      { placeholder: "____년 __월 __일", exampleValue: "2021년 2월 28일" },
+      { placeholder: "(소속/직위)", exampleValue: "기술팀 / 대리" },
+      { placeholder: "(업무 내용)", exampleValue: "기계설비 설계 및 시공관리" },
     ],
   },
   {
     fields: [
-      { label: "근무기간", isHeader: true },
-      { placeholder: "____년 __월 __일 ~ ____년 __월 __일", exampleValue: "2010년 3월 1일 ~ 2015년 12월 31일" },
-      { label: "담당업무", isHeader: true },
-      { placeholder: "(담당업무)", exampleValue: "기계설계 및 제작" },
+      { placeholder: "____년 __월 __일", exampleValue: "2021년 3월 1일" },
+      { placeholder: "____년 __월 __일", exampleValue: "2024년 12월 31일" },
+      { placeholder: "(소속/직위)", exampleValue: "설계팀 / 과장" },
+      { placeholder: "(업무 내용)", exampleValue: "플랜트 설계 총괄" },
     ],
   },
   {
     fields: [
-      { label: "직위(직급)", isHeader: true },
-      { placeholder: "(직위)", exampleValue: "대리" },
-      { label: "퇴직사유", isHeader: true },
-      { placeholder: "(퇴직사유)", exampleValue: "이직" },
+      { placeholder: "____년 __월 __일", exampleValue: "" },
+      { placeholder: "____년 __월 __일", exampleValue: "" },
+      { placeholder: "(소속/직위)", exampleValue: "" },
+      { placeholder: "(업무 내용)", exampleValue: "" },
+    ],
+  },
+  // 증명문구
+  {
+    fields: [
+      { placeholder: "위 사항을 증명합니다.", exampleValue: "위 사항을 증명합니다.", colspan: 4 },
+    ],
+  },
+  // 날짜
+  {
+    fields: [
+      { placeholder: "년", exampleValue: "2026년" },
+      { placeholder: "월", exampleValue: "1월" },
+      { placeholder: "일", exampleValue: "15일", colspan: 2 },
+    ],
+  },
+  // 수탁기관의 장
+  {
+    fields: [
+      { label: "수탁기관의 장", isHeader: true },
+      { placeholder: "(기관명)", exampleValue: "한국산업인력공단 서울지역본부장" },
+      { placeholder: "(직인)", exampleValue: "(직인)", colspan: 2 },
+    ],
+  },
+  // 행정정보 공동이용 동의서 섹션
+  {
+    fields: [
+      { label: "행정정보 공동이용 동의서", isHeader: true, colspan: 4 },
     ],
   },
   {
     fields: [
-      { label: "증명내용", isHeader: true },
-      { placeholder: "위의 사실을 증명합니다.", exampleValue: "위의 사실을 증명합니다.", colspan: 3 },
+      { placeholder: "본인은 이 건 업무처리와 관련하여 담당 직원이 「전자정부법」 제36조제1항에 따른 행정정보의 공동이용을 통하여 위의 담당 직원 확인 사항을 확인하는 것에 동의합니다. *동의하지 않는 경우에는 신청인이 직접 관련 서류를 제출해야 합니다.", exampleValue: "본인은 이 건 업무처리와 관련하여 담당 직원이 「전자정부법」 제36조제1항에 따른 행정정보의 공동이용을 통하여 위의 담당 직원 확인 사항을 확인하는 것에 동의합니다.", colspan: 4 },
     ],
   },
   {
     fields: [
-      { label: "발급일", isHeader: true },
-      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+      { label: "신청인", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김철수" },
+      { placeholder: "(서명 또는 인)", exampleValue: "(인)", colspan: 2 },
+    ],
+  },
+  // 유의사항
+  {
+    fields: [
+      { label: "유의사항", isHeader: true, colspan: 4 },
     ],
   },
   {
     fields: [
-      { label: "발급기관", isHeader: true },
-      { placeholder: "(기관명) (직인)", exampleValue: "(주)대한기계 대표이사 (직인)", colspan: 3 },
+      { placeholder: "1. 증명사항은 국가기술자격 취득 전의 경력사항을 기재합니다.\n2. 담당 업무 내용은 취득하고자 하는 자격과 관련된 업무 내용만을 기재합니다.", exampleValue: "1. 증명사항은 국가기술자격 취득 전의 경력사항을 기재합니다.\n2. 담당 업무 내용은 취득하고자 하는 자격과 관련된 업무 내용만을 기재합니다.", colspan: 4 },
+    ],
+  },
+  // 작성방법
+  {
+    fields: [
+      { label: "작성방법", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "1. 「국가기술자격법 시행규칙」 제11조에 따라 기술자격 검정의 응시자격 중 경력 인정에 필요한 경력증명서 양식입니다.\n2. 증명사항의 재직기간, 소속 및 직위, 담당 업무 내용은 빠짐없이 정확하게 기재하여야 합니다.\n3. 허위로 경력을 증명한 경우 「국가기술자격법」 제16조에 따라 처벌받을 수 있습니다.", exampleValue: "1. 「국가기술자격법 시행규칙」 제11조에 따라 기술자격 검정의 응시자격 중 경력 인정에 필요한 경력증명서 양식입니다.\n2. 증명사항의 재직기간, 소속 및 직위, 담당 업무 내용은 빠짐없이 정확하게 기재하여야 합니다.\n3. 허위로 경력을 증명한 경우 「국가기술자격법」 제16조에 따라 처벌받을 수 있습니다.", colspan: 4 },
     ],
   },
 ];
@@ -14094,6 +14165,414 @@ export const 집합건물매매계약서_DATA: FormRow[] = [
       { placeholder: "(성명)", exampleValue: "김철수" },
       { label: "주민등록번호", isHeader: true },
       { placeholder: "(주민등록번호)", exampleValue: "850515-1234567" },
+    ],
+  },
+];
+
+// 이직확인서(52시간초과) 미리보기 데이터 (과도한 근무시간으로 인한 퇴사)
+export const 이직확인서_52시간초과_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "1. 문서 유형", isHeader: true },
+      { placeholder: "(양식명)", exampleValue: "공식 양식", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "2. 작성자", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "홍길동", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "3. 작성일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "4. 상세 내용", isHeader: true },
+      { placeholder: "(내용 입력란)", exampleValue: "상세 내용을 기재합니다", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "(서명/날인)", isHeader: true },
+      { placeholder: "(직인)", exampleValue: "작성자: 홍길동 (서명)", colspan: 3 },
+    ],
+  },
+];
+
+
+// 이직확인서(근로조건변동) 미리보기 데이터 (근로조건 불리한 변경)
+export const 이직확인서_근로조건변동_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "1. 문서 유형", isHeader: true },
+      { placeholder: "(양식명)", exampleValue: "공식 양식", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "2. 작성자", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "홍길동", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "3. 작성일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "4. 상세 내용", isHeader: true },
+      { placeholder: "(내용 입력란)", exampleValue: "상세 내용을 기재합니다", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "(서명/날인)", isHeader: true },
+      { placeholder: "(직인)", exampleValue: "작성자: 홍길동 (서명)", colspan: 3 },
+    ],
+  },
+];
+
+// 이직확인서(배우자동거) 미리보기 데이터 (배우자 동거를 위한 퇴사)
+export const 이직확인서_배우자동거_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "1. 문서 유형", isHeader: true },
+      { placeholder: "(양식명)", exampleValue: "공식 양식", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "2. 작성자", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "홍길동", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "3. 작성일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "4. 상세 내용", isHeader: true },
+      { placeholder: "(내용 입력란)", exampleValue: "상세 내용을 기재합니다", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "(서명/날인)", isHeader: true },
+      { placeholder: "(직인)", exampleValue: "작성자: 홍길동 (서명)", colspan: 3 },
+    ],
+  },
+];
+
+// 이직확인서(부양가족동거) 미리보기 데이터 (부양가족 동거를 위한 퇴사)
+export const 이직확인서_부양가족동거_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "1. 문서 유형", isHeader: true },
+      { placeholder: "(양식명)", exampleValue: "공식 양식", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "2. 작성자", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "홍길동", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "3. 작성일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "4. 상세 내용", isHeader: true },
+      { placeholder: "(내용 입력란)", exampleValue: "상세 내용을 기재합니다", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "(서명/날인)", isHeader: true },
+      { placeholder: "(직인)", exampleValue: "작성자: 홍길동 (서명)", colspan: 3 },
+    ],
+  },
+];
+
+// 이직확인서(사업장이전) 미리보기 데이터 (사업장 이전으로 인한 퇴사)
+export const 이직확인서_사업장이전_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "1. 문서 유형", isHeader: true },
+      { placeholder: "(양식명)", exampleValue: "공식 양식", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "2. 작성자", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "홍길동", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "3. 작성일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "4. 상세 내용", isHeader: true },
+      { placeholder: "(내용 입력란)", exampleValue: "상세 내용을 기재합니다", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "(서명/날인)", isHeader: true },
+      { placeholder: "(직인)", exampleValue: "작성자: 홍길동 (서명)", colspan: 3 },
+    ],
+  },
+];
+
+// 이직확인서(임신퇴사) 미리보기 데이터 (임신으로 인한 퇴사)
+export const 이직확인서_임신퇴사_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "1. 문서 유형", isHeader: true },
+      { placeholder: "(양식명)", exampleValue: "공식 양식", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "2. 작성자", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "홍길동", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "3. 작성일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "4. 상세 내용", isHeader: true },
+      { placeholder: "(내용 입력란)", exampleValue: "상세 내용을 기재합니다", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "(서명/날인)", isHeader: true },
+      { placeholder: "(직인)", exampleValue: "작성자: 홍길동 (서명)", colspan: 3 },
+    ],
+  },
+];
+
+// 이직확인서(질병부상) 미리보기 데이터 (질병/부상으로 인한 퇴사)
+export const 이직확인서_질병부상_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "1. 문서 유형", isHeader: true },
+      { placeholder: "(양식명)", exampleValue: "공식 양식", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "2. 작성자", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "홍길동", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "3. 작성일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "4. 상세 내용", isHeader: true },
+      { placeholder: "(내용 입력란)", exampleValue: "상세 내용을 기재합니다", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "(서명/날인)", isHeader: true },
+      { placeholder: "(직인)", exampleValue: "작성자: 홍길동 (서명)", colspan: 3 },
+    ],
+  },
+];
+
+// 이직확인서(최저임금미달) 미리보기 데이터 (최저임금 미달로 인한 퇴사)
+export const 이직확인서_최저임금미달_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "1. 문서 유형", isHeader: true },
+      { placeholder: "(양식명)", exampleValue: "공식 양식", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "2. 작성자", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "홍길동", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "3. 작성일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "4. 상세 내용", isHeader: true },
+      { placeholder: "(내용 입력란)", exampleValue: "상세 내용을 기재합니다", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "(서명/날인)", isHeader: true },
+      { placeholder: "(직인)", exampleValue: "작성자: 홍길동 (서명)", colspan: 3 },
+    ],
+  },
+];
+
+
+// Tier 4 - 특수 양식 그룹 (고용허가준수사항확인서)
+
+export const 고용허가준수사항확인서_광업_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "1. 문서 유형", isHeader: true },
+      { exampleValue: "공식 양식" },
+    ],
+  },
+  {
+    fields: [
+      { label: "2. 작성자", isHeader: true },
+      { exampleValue: "홍길동" },
+    ],
+  },
+  {
+    fields: [
+      { label: "3. 작성일", isHeader: true },
+      { exampleValue: "2026년 1월 17일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "4. 상세 내용", isHeader: true },
+      { exampleValue: "상세 내용을 기재합니다" },
+    ],
+  },
+  {
+    fields: [
+      { label: "(서명/날인)", isHeader: true },
+      { exampleValue: "작성자: 홍길동 (서명)" },
+    ],
+  },
+];
+
+export const 고용허가준수사항확인서_음식점업_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "1. 문서 유형", isHeader: true },
+      { exampleValue: "공식 양식" },
+    ],
+  },
+  {
+    fields: [
+      { label: "2. 작성자", isHeader: true },
+      { exampleValue: "홍길동" },
+    ],
+  },
+  {
+    fields: [
+      { label: "3. 작성일", isHeader: true },
+      { exampleValue: "2026년 1월 17일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "4. 상세 내용", isHeader: true },
+      { exampleValue: "상세 내용을 기재합니다" },
+    ],
+  },
+  {
+    fields: [
+      { label: "(서명/날인)", isHeader: true },
+      { exampleValue: "작성자: 홍길동 (서명)" },
+    ],
+  },
+];
+
+export const 고용허가준수사항확인서_임업_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "1. 문서 유형", isHeader: true },
+      { exampleValue: "공식 양식" },
+    ],
+  },
+  {
+    fields: [
+      { label: "2. 작성자", isHeader: true },
+      { exampleValue: "홍길동" },
+    ],
+  },
+  {
+    fields: [
+      { label: "3. 작성일", isHeader: true },
+      { exampleValue: "2026년 1월 17일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "4. 상세 내용", isHeader: true },
+      { exampleValue: "상세 내용을 기재합니다" },
+    ],
+  },
+  {
+    fields: [
+      { label: "(서명/날인)", isHeader: true },
+      { exampleValue: "작성자: 홍길동 (서명)" },
+    ],
+  },
+];
+
+export const 고용허가준수사항확인서_호텔콘도업_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "1. 문서 유형", isHeader: true },
+      { placeholder: "(양식명)", exampleValue: "공식 양식", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "2. 작성자", isHeader: true },
+      { placeholder: "(이름)", exampleValue: "홍길동", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "3. 작성일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 17일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "4. 상세 내용", isHeader: true },
+      { placeholder: "(확인 내용)", exampleValue: "상세 내용을 기재합니다", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "(서명/날인)", isHeader: true },
+      { placeholder: "(직인)", exampleValue: "작성자: 홍길동 (서명)", colspan: 3 },
     ],
   },
 ];
