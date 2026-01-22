@@ -1,15 +1,15 @@
 ---
-title: IRP 퇴직금 인출
-description: IRP에서 퇴직금 인출하는 방법 알려드려요. 55세 전후 조건이 달라요
+title: IRP 퇴직금 인출·조건·세금 기준
+description: IRP 중도인출은 55세 전후로 조건이 완전히 달라요. 절세 전략을 알려드려요
 category: 퇴직연금
 keywords:
-  - IRP 퇴직금 인출
-  - IRP 인출 방법
-  - IRP 퇴직금 찾기
-  - IRP 해지
-  - IRP 일시금 인출
-lastUpdated: '2026-01-09'
-datePublished: '2026-01-09'
+  - IRP 퇴직금
+  - 중도인출
+  - 인출 조건
+  - 인출 방법
+  - 중도인출 세금
+lastUpdated: '2026-01-22'
+datePublished: '2026-01-22'
 updateNote: 2026년 1월 기준
 author: 머니위키 에디터
 summary:

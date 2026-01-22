@@ -1,15 +1,15 @@
 ---
-title: 퇴직금 IRP 의무 예외
-description: 퇴직금 IRP 이전 안 해도 되는 경우 알려드려요. 55세 이상이거나 법정 사유 있으면 바로 현금으로 받아요
+title: 퇴직금 IRP 의무·예외·조건 확인
+description: 퇴직금 IRP 이전 안 해도 되는 예외 조건을 알려드려요. 법정 사유 있으면 현금으로 바로 받아요
 category: 퇴직연금
 keywords:
-  - 퇴직금 irp 의무 예외
-  - IRP 이전 예외
-  - 퇴직금 IRP 면제
-  - IRP 의무 제외
-  - 퇴직금 바로 받기
-lastUpdated: '2026-01-08'
-datePublished: '2026-01-08'
+  - 퇴직금
+  - IRP 의무
+  - 의무 예외
+  - 조건 확인
+  - 적용 기준
+lastUpdated: '2026-01-22'
+datePublished: '2026-01-22'
 updateNote: 2026년 1월 기준
 author: 머니위키 에디터
 summary:

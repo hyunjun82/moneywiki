@@ -1,15 +1,15 @@
 ---
-title: DB형 퇴직금 수령방법
-description: DB형 퇴직연금 수령방법 알려드려요. 55세 미만이면 IRP로 이전해야 하고, 퇴직금 금액은 근속연수로 확정돼요
+title: DB형 퇴직금 수령·전환·세금 절차
+description: DB형 퇴직연금은 확정급여라 안정적이에요. 수령 절차와 세금 절세법을 알려드려요
 category: 퇴직금
 keywords:
-  - db형 퇴직금 수령방법
-  - DB형 퇴직연금 수령
-  - DB형 퇴직금 인출
-  - 확정급여형 퇴직금
-  - DB형 퇴직금 해지
-lastUpdated: '2026-01-08'
-datePublished: '2026-01-08'
+  - DB형 퇴직금
+  - 퇴직금 수령
+  - 연금전환
+  - 수령방법
+  - 세금 절차
+lastUpdated: '2026-01-22'
+datePublished: '2026-01-22'
 updateNote: 2026년 1월 기준
 author: 머니위키 에디터
 summary:

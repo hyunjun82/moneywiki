@@ -1,15 +1,15 @@
 ---
-title: DC형 퇴직금 수령방법
-description: DC형 퇴직연금 수령방법 알려드려요. 55세 미만이면 IRP로 이전해야 하고, 55세 이상이면 바로 받을 수 있어요
+title: DC형 퇴직금 수령·전환·세금 절차
+description: DC형은 운용 결과에 따라 금액이 달라요. 수령 방법과 절세 전략을 알려드려요
 category: 퇴직금
 keywords:
-  - dc형 퇴직금 수령방법
-  - DC형 퇴직연금 수령
-  - DC형 퇴직금 인출
-  - 확정기여형 퇴직금
-  - DC형 퇴직금 해지
-lastUpdated: '2026-01-08'
-datePublished: '2026-01-08'
+  - DC형 퇴직금
+  - 퇴직금 수령
+  - 연금전환
+  - 수령방법
+  - 세금 절차
+lastUpdated: '2026-01-22'
+datePublished: '2026-01-22'
 updateNote: 2026년 1월 기준
 author: 머니위키 에디터
 summary:

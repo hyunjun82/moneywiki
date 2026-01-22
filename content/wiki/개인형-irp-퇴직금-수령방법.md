@@ -1,15 +1,15 @@
 ---
-title: 개인형 IRP 퇴직금 수령방법
-description: IRP 계좌에서 퇴직금 인출하는 방법 알려드려요. 앱이나 인터넷뱅킹으로 바로 받을 수 있어요
+title: 개인형 IRP 퇴직금 수령·관리·세금 안내
+description: 개인형 IRP는 직접 운용하는 계좌예요. 수령 방법과 절세 전략을 알려드려요
 category: 퇴직연금
 keywords:
-  - 개인형 irp 퇴직금 수령방법
-  - IRP 퇴직금 인출
-  - IRP 계좌 퇴직금 수령
-  - IRP 해지 방법
-  - IRP 일시금 수령
-lastUpdated: '2026-01-08'
-datePublished: '2026-01-08'
+  - 개인형 IRP
+  - 퇴직금 수령
+  - 계좌관리
+  - 수령방법
+  - 세금 안내
+lastUpdated: '2026-01-22'
+datePublished: '2026-01-22'
 updateNote: 2026년 1월 기준
 author: 머니위키 에디터
 summary:

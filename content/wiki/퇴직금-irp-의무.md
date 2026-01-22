@@ -1,21 +1,21 @@
 ---
-title: 퇴직금 IRP 의무
-description: 퇴직금 IRP 의무 이전 제도 알려드려요. 55세 미만이면 IRP로 받아야 해요
+title: 퇴직금 IRP 의무·이전·기준 확인
+description: 퇴직금 IRP 의무 이전 제도와 기준을 알려드려요. 55세 미만이면 IRP로 받아야 해요
 category: 퇴직연금
 keywords:
-  - 퇴직금 irp 의무
-  - 퇴직금 irp 의무화
-  - 퇴직금 irp 이전
-  - 퇴직금 irp 강제
-  - irp 의무 가입
-lastUpdated: '2026-01-08'
-datePublished: '2026-01-08'
+  - 퇴직금
+  - IRP 의무
+  - 이전 의무
+  - 기준 확인
+  - 법정 규정
+lastUpdated: '2026-01-22'
+datePublished: '2026-01-22'
 updateNote: 2026년 1월 기준
 author: 머니위키 에디터
 summary:
-  - 2022년 4월부터 55세 미만 퇴직자는 퇴직금을 IRP로 받아야 해요.
-  - 노후 대비를 위해 만든 제도예요.
-  - 예외 사유에 해당하면 IRP 없이 바로 받을 수 있어요.
+  - 2022년 4월부터 55세 미만 퇴직자는 퇴직금을 IRP로 이전받아야 해요
+  - 노후 소득 보장을 위해 과세이연 혜택을 주는 제도예요
+  - 법정 예외 사유 있으면 IRP 없이 현금으로 바로 받을 수 있어요
 sources:
   - name: 근로자퇴직급여보장법 제17조
     url: 'https://www.law.go.kr/법령/근로자퇴직급여보장법'

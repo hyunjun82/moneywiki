@@ -81,14 +81,23 @@ export function getAllWikiParams(): { category: string; slug: string }[] {
   return fileNames
     .filter((fileName) => fileName.endsWith(".md"))
     .map((fileName) => {
-      const slug = fileName.replace(/\.md$/, "");
-      const fullPath = path.join(wikiDirectory, fileName);
-      const fileContents = fs.readFileSync(fullPath, "utf8");
-      const { data } = matter(fileContents);
-      return {
-        category: data.category || "일반",
-        slug: slug,
-      };
+      try {
+        const slug = fileName.replace(/\.md$/, "");
+        const fullPath = path.join(wikiDirectory, fileName);
+        const fileContents = fs.readFileSync(fullPath, "utf8");
+        const { data } = matter(fileContents);
+        return {
+          category: data.category || "일반",
+          slug: slug,
+        };
+      } catch (error) {
+        const slug = fileName.replace(/\.md$/, "");
+        console.warn(`Failed to parse ${slug}: ${error instanceof Error ? error.message : 'Unknown error'}`);
+        return {
+          category: "일반",
+          slug: slug,
+        };
+      }
     });
 }
 
@@ -157,25 +166,42 @@ export function getAllWikiDocuments(): Omit<WikiDocument, "content" | "htmlConte
   const slugs = getAllWikiSlugs();
 
   return slugs.map((slug) => {
-    const fullPath = path.join(wikiDirectory, `${slug}.md`);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
-    const { data } = matter(fileContents);
+    try {
+      const fullPath = path.join(wikiDirectory, `${slug}.md`);
+      const fileContents = fs.readFileSync(fullPath, "utf8");
+      const { data } = matter(fileContents);
 
-    return {
-      slug,
-      title: data.title || slug,
-      description: data.description || "",
-      category: data.category || "일반",
-      keywords: data.keywords || [],
-      lastUpdated: data.lastUpdated || new Date().toISOString().split("T")[0],
-      datePublished: data.datePublished || data.lastUpdated || new Date().toISOString().split("T")[0],
-      faq: data.faq || [],
-      howTo: data.howTo,
-      relatedDocs: data.relatedDocs || [],
-      summary: data.summary || "",
-      keyPoints: data.keyPoints || [],
-      schemaType: data.schemaType,
-    };
+      return {
+        slug,
+        title: data.title || slug,
+        description: data.description || "",
+        category: data.category || "일반",
+        keywords: data.keywords || [],
+        lastUpdated: data.lastUpdated || new Date().toISOString().split("T")[0],
+        datePublished: data.datePublished || data.lastUpdated || new Date().toISOString().split("T")[0],
+        faq: data.faq || [],
+        howTo: data.howTo,
+        relatedDocs: data.relatedDocs || [],
+        summary: data.summary || "",
+        keyPoints: data.keyPoints || [],
+        schemaType: data.schemaType,
+      };
+    } catch (error) {
+      console.warn(`Failed to parse ${slug}: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      return {
+        slug,
+        title: slug,
+        description: "",
+        category: "일반",
+        keywords: [],
+        lastUpdated: new Date().toISOString().split("T")[0],
+        datePublished: new Date().toISOString().split("T")[0],
+        faq: [],
+        relatedDocs: [],
+        summary: "",
+        keyPoints: [],
+      };
+    }
   });
 }
 

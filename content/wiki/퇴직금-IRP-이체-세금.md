@@ -1,15 +1,15 @@
 ---
-title: 퇴직금 IRP 이체 세금
-description: 퇴직금을 IRP에 이체하면 세금은 어떻게 될까요? 과세이연 조건과 해지 시 세금까지 정리했어요
+title: 퇴직금 IRP 이체·세금·절세 방법
+description: 퇴직금을 IRP에 이체할 때 세금과 절세 방법을 알려드려요
 category: 세금
 keywords:
-  - 퇴직금 IRP 이체 세금
-  - 퇴직금 IRP 세금
-  - IRP 이체 세금
-  - 퇴직금 과세이연
-  - IRP 과세이연
-lastUpdated: '2026-01-13'
-datePublished: '2026-01-13'
+  - 퇴직금
+  - IRP 이체
+  - 이체 세금
+  - 절세 방법
+  - 세금 감면
+lastUpdated: '2026-01-22'
+datePublished: '2026-01-22'
 updateNote: 2026년 기준
 author: 머니위키 에디터
 summary:

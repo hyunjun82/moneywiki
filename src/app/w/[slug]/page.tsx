@@ -45,10 +45,15 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-// 정적 생성을 위한 경로 생성
+// ISR 사용 - 주문형 정적 생성 (On-Demand ISR)
+export const revalidate = 3600; // 1시간마다 갱신
+export const dynamicParams = true; // 미리 생성되지 않은 페이지는 런타임에 생성
+
+// 정적 생성을 위한 경로 생성 - 빈 배열로 설정하여 주문형 ISR 사용
 export async function generateStaticParams() {
-  const slugs = getAllWikiSlugs();
-  return slugs.map((slug) => ({
+  // 선택적: 가장 인기 있는 페이지만 미리 생성
+  const popularSlugs = ["실업급여", "퇴직금", "연말정산", "최저임금"];
+  return popularSlugs.map((slug) => ({
     slug: slug,
   }));
 }
