@@ -1,5 +1,5 @@
 ---
-title: "퇴직연금 DB DC 비교·IRP 차이·선택 기준·장단점"
+title: "퇴직연금 DB DC 비교 IRP 차이 선택 기준 장단점"
 description: "퇴직연금 DB는 회사가 운용하고 DC는 내가 운용해요. IRP는 퇴직금 받는 계좌이고요. 세 가지 차이와 나에게 맞는 선택 기준 알려드려요."
 category: "근로/노동"
 keywords:
