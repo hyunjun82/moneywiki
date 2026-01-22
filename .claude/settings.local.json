@@ -200,7 +200,9 @@
       "Bash(powershell -Command \"\nGet-ChildItem -Path ''content/wiki'' -Filter ''*퇴직*'' -File | ForEach-Object {\n  $content = Get-Content $_.FullName -Encoding UTF8 -Raw\n  if \\($content -match ''title:\\\\s*[\"\"'''''']\\([^\"\"''''''\\\\n]+\\)''\\) {\n    [PSCustomObject]@{\n      File = $_.Name\n      Title = $matches[1]\n    }\n  }\n} | ConvertTo-Csv -NoTypeInformation | Out-String\n\")",
       "Bash(git diff:*)",
       "Bash(total \")",
-      "Bash(du:*)"
+      "Bash(du:*)",
+      "Bash(git fetch:*)",
+      "Bash(/tmp/generate_revision_map.sh:*)"
     ]
   }
 }
