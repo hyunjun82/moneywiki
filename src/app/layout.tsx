@@ -49,6 +49,7 @@ export const metadata: Metadata = {
     google: "kPe6sAN7cMBDG2OVVWHcI8hH-BxkT5Zv6U8TVWTxuwI",
     other: {
       "msvalidate.01": "1945B725690D183CB7825C0D0FB24443",
+      "daum-verification": "9f5b7b51c6f32d3f0e5b6db2a8fc13839e7936f1ef2870bb85967b978c0ffe08:XNG90a1lomEQ6b3Rh86ohQ==",
     },
   },
   icons: {
