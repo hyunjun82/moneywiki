@@ -1,5 +1,5 @@
 ---
-title: IRP 계좌 퇴직금 수령·이체·세제 절차
+title: IRP 계좌 퇴직금 수령 이체 세제 절차
 description: IRP 퇴직금 수령 방법은 나이와 세금에 따라 달라요. 최적의 절세 전략을 알려드려요
 category: 퇴직연금
 keywords:

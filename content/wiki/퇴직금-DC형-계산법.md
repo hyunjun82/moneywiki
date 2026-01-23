@@ -1,13 +1,12 @@
 ---
-title: DC형 퇴직금·계산·예시 방법
+title: DC형 퇴직금 계산 예시 방법
 description: DC형 퇴직연금 계산법과 공식, 수익률에 따른 금액 차이를 알려드려요
 category: 근로/노동
 keywords:
-  - DC형 퇴직금
-  - 퇴직금 계산
-  - 계산 공식
-  - 계산 예시
-  - 계산 방법
+  - "퇴직금 DC형"
+  - "퇴직금 DC형 계산"
+  - "DC형 퇴직금 수령"
+  - "퇴직연금 DC형 산정"
 author: 머니위키 에디터
 lastUpdated: '2026-01-22'
 datePublished: '2026-01-22'

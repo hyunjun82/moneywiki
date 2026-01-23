@@ -1,5 +1,5 @@
 ---
-title: IRP 계좌·퇴직금·개설 절차
+title: IRP 계좌 퇴직금 개설 절차
 description: IRP 계좌를 어디서 개설하고, 퇴직금을 받고, 관리하는 방법을 알려드려요
 category: 근로/노동
 keywords:

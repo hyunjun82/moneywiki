@@ -1,5 +1,5 @@
 ---
-title: 퇴직금·IRP·지급 의무화 규정
+title: 퇴직금 IRP 지급 의무화 규정
 description: 퇴직금 IRP 지급이 의무화된 이유와 회사의 책임, 근로자가 해야 할 일을 알려드려요
 category: 근로/노동
 keywords:

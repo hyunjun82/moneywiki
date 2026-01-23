@@ -13,6 +13,9 @@ const nextConfig: NextConfig = {
   // 기존 URL 리다이렉트 (SEO 유지)
   async redirects() {
     return [
+      // ============================================
+      // 기본 리다이렉트
+      // ============================================
       {
         source: "/w/:category/:slug",
         destination: "/w/:slug",

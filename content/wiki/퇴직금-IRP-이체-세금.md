@@ -1,5 +1,5 @@
 ---
-title: IRP 이체·세금·계산 방법
+title: IRP 이체 세금 계산 방법
 description: IRP로 퇴직금을 이체했을 때 세금 계산과 절세 방법을 알려드려요
 category: 근로/노동
 keywords:

@@ -1,5 +1,5 @@
 ---
-title: 퇴직금·IRP·의무 예외 사항
+title: 퇴직금 IRP 의무 예외 사항
 description: IRP 의무 대상이 아닌 예외 사유와 각각 필요한 증빙서류를 알려드려요
 category: 근로/노동
 keywords:

@@ -202,7 +202,15 @@
       "Bash(total \")",
       "Bash(du:*)",
       "Bash(git fetch:*)",
-      "Bash(/tmp/generate_revision_map.sh:*)"
+      "Bash(/tmp/generate_revision_map.sh:*)",
+      "Bash(npx ts-node:*)",
+      "Bash(__NEW_LINE_0022248d6b5ecfb6__ echo \"=== 삭제 대상 파일 \\(중복\\) ===\")",
+      "Bash(cd \"c:/Users/user/wiki-site/content/wiki\" echo \"=== 삭제 확인 ===\" for f in 퇴직금-지급-기한-14일.md 퇴직금-지급기준.md 퇴직금-중간정산-사유.md 퇴직금-중간정산-요건.md 퇴직금-중간정산-서류.md 퇴직금-중간정산-방법.md 퇴직금-세율.md 퇴직소득세-계산.md)",
+      "Bash(do [ -f \"$f\" ])",
+      "Bash(echo \"✅ $f 삭제됨\" done echo \"\" echo \"=== 현재 퇴직금 파일 수 ===\" ls -1 퇴직*.md)",
+      "Bash(npx tsx:*)",
+      "Bash(for kw in \"퇴직금 미지급\" \"IRP 세액공제\" \"전세 보증금 반환\" \"실업급여 수급\" \"양도소득세 비과세\" \"연차 수당\" \"연말정산 의료비\")",
+      "Bash(do echo \"=== $kw ===\")"
     ]
   }
 }

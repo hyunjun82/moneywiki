@@ -1,5 +1,5 @@
 ---
-title: 퇴직금·IRP·의무화 확인
+title: 퇴직금 IRP 의무화 확인
 description: 퇴직금 IRP 의무화 대상과 규정, 받는 방법을 알려드려요
 category: 근로/노동
 keywords:
