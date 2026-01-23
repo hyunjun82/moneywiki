@@ -13,3 +13,5 @@ Sitemap: https://www.jjyu.co.kr/sitemap.xml
 
 # Crawl-delay (optional)
 Crawl-delay: 1
+
+#DaumWebMasterTool:9f5b7b51c6f32d3f0e5b6db2a8fc13839e7936f1ef2870bb85967b978c0ffe08:XNG90a1lomEQ6b3Rh86ohQ==
