@@ -28,8 +28,7 @@ faq:
   - question: DC형 운용수익이 마이너스면 어떻게 되나요?
     answer: 적립금에서 손실분이 빠져요. 운용 책임이 본인이므로 손실도 본인 몫이에요.
   - question: 내 DC형 퇴직금이 얼마인지 어디서 확인하나요?
-    answer: 금융감독원 통합연금포털에서 조회하거나, 가입한 금융기관 앱에서 확인 가능해요.
-    answer: 금융감독원 통합연금포털(100lifeplan.fss.or.kr)에서 조회할 수 있어요. 가입 금융사 앱에서도 확인 가능해요.
+    answer: 금융감독원 통합연금포털(100lifeplan.fss.or.kr)에서 조회하거나, 가입한 금융기관 앱에서 확인 가능해요.
 relatedDocs:
   - title: 퇴직연금 DB DC 차이
     url: /w/퇴직연금-db-dc-차이
