@@ -12,6 +12,10 @@ export default async function Image({ params }: { params: { slug: string } }) {
   // 슬러그에서 제목 추출 (하이픈을 공백으로 변환)
   const title = decodeURIComponent(params.slug).replace(/-/g, ' ');
 
+  // 현재 날짜
+  const today = new Date();
+  const dateStr = `${today.getFullYear()}.${String(today.getMonth() + 1).padStart(2, '0')}.${String(today.getDate()).padStart(2, '0')}`;
+
   return new ImageResponse(
     (
       <div
@@ -20,84 +24,153 @@ export default async function Image({ params }: { params: { slug: string } }) {
           width: '100%',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          backgroundImage: 'linear-gradient(to bottom right, #064e3b, #10b981)',
-          padding: '40px',
+          backgroundColor: '#0f172a',
+          padding: '50px 60px',
+          fontFamily: 'sans-serif',
         }}
       >
-        {/* 카드 박스 (유리 질감 효과) */}
+        {/* 상단 헤더 영역 */}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            marginBottom: '30px',
+          }}
+        >
+          {/* 로고 아이콘 */}
+          <div
+            style={{
+              fontSize: 48,
+              marginRight: 16,
+            }}
+          >
+            💰
+          </div>
+          {/* 로고 텍스트 */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'baseline',
+              gap: '12px',
+            }}
+          >
+            <span
+              style={{
+                fontSize: 36,
+                fontWeight: 800,
+                color: '#fbbf24',
+                letterSpacing: '-0.5px',
+              }}
+            >
+              머니위키
+            </span>
+            <span
+              style={{
+                fontSize: 24,
+                fontWeight: 500,
+                color: '#94a3b8',
+              }}
+            >
+              Money Wiki
+            </span>
+          </div>
+        </div>
+
+        {/* 구분선 */}
+        <div
+          style={{
+            width: '100%',
+            height: '2px',
+            background: 'linear-gradient(to right, #fbbf24, #f59e0b, transparent)',
+            marginBottom: '50px',
+          }}
+        />
+
+        {/* 메인 콘텐츠 영역 */}
         <div
           style={{
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center',
+            flex: 1,
             justifyContent: 'center',
-            width: '100%',
-            height: '100%',
-            backgroundColor: 'rgba(255, 255, 255, 0.1)',
-            border: '2px solid rgba(255, 255, 255, 0.2)',
-            borderRadius: '30px',
-            boxShadow: '0 20px 50px rgba(0,0,0,0.3)',
-            padding: '60px',
-            position: 'relative',
           }}
         >
-          {/* 상단 장식 아이콘 */}
-          <div style={{ fontSize: 80, marginBottom: 20, filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))' }}>
-            💰
-          </div>
-
-          {/* 로고 텍스트 */}
-          <div
-            style={{
-              fontSize: 30,
-              color: '#a7f3d0',
-              fontWeight: 600,
-              letterSpacing: '2px',
-              marginBottom: 10,
-              textTransform: 'uppercase',
-            }}
-          >
-            MONEY WIKI
-          </div>
-
           {/* 메인 제목 */}
           <div
             style={{
-              fontSize: 80,
+              fontSize: title.length > 20 ? 64 : 76,
               fontWeight: 900,
-              color: 'white',
-              textAlign: 'center',
-              lineHeight: 1.1,
-              textShadow: '0 4px 10px rgba(0,0,0,0.3)',
+              color: '#ffffff',
+              lineHeight: 1.2,
+              letterSpacing: '-1px',
               wordBreak: 'keep-all',
+              maxWidth: '100%',
             }}
           >
             {title}
           </div>
 
-          {/* 하단 장식 선 */}
+          {/* 서브 텍스트 (설명) */}
           <div
             style={{
-              width: '100px',
-              height: '6px',
-              backgroundColor: '#fbbf24',
-              marginTop: 40,
-              borderRadius: '3px',
-            }}
-          />
-
-          {/* 도메인 주소 */}
-          <div
-            style={{
-              position: 'absolute',
-              bottom: 30,
-              fontSize: 24,
-              color: '#d1fae5'
+              fontSize: 28,
+              fontWeight: 400,
+              color: '#94a3b8',
+              marginTop: '24px',
+              lineHeight: 1.4,
             }}
           >
-            www.jjyu.co.kr
+            쉽고 정확한 금융·세금·부동산 정보
+          </div>
+        </div>
+
+        {/* 하단 푸터 영역 */}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            borderTop: '1px solid #334155',
+            paddingTop: '24px',
+          }}
+        >
+          {/* 날짜 */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+            }}
+          >
+            <div
+              style={{
+                width: '8px',
+                height: '8px',
+                borderRadius: '50%',
+                backgroundColor: '#22c55e',
+              }}
+            />
+            <span
+              style={{
+                fontSize: 22,
+                color: '#64748b',
+                fontWeight: 500,
+              }}
+            >
+              {dateStr}
+            </span>
+          </div>
+
+          {/* 도메인 */}
+          <div
+            style={{
+              fontSize: 24,
+              fontWeight: 600,
+              color: '#475569',
+              letterSpacing: '0.5px',
+            }}
+          >
+            WWW.JJYU.CO.KR
           </div>
         </div>
       </div>

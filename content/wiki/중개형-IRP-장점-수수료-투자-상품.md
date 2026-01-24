@@ -1,5 +1,5 @@
 ---
-title: "중개형 IRP 장점 및 투자 상품 추천"
+title: "중개형 IRP 장점 및 투자 상품 추천 방법"
 description: "중개형 IRP는 비대면 가입 시 수수료 0%이고 ETF 200개 이상 투자 가능해요. 세액공제까지 받는 방법 알려드려요."
 category: "근로/노동"
 keywords:
