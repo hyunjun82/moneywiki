@@ -217,6 +217,106 @@ function generateWikiTitle(question: string): string {
     return '계약갱신청구권과 묵시적 갱신의 차이: 법적 효력과 유불리 비교';
   }
 
+  // 6. 퇴직금 계산 (평균임금, 근속연수)
+  if (question.includes('퇴직금') && question.includes('계산')) {
+    return '퇴직금 평균임금 산정 및 근속연수 계산 방법';
+  }
+
+  // 7. 퇴직연금 해지 (중도 해지, 세금)
+  if (question.includes('퇴직연금') && question.includes('해지')) {
+    return '퇴직연금 중도 해지: 절차와 세금 부담';
+  }
+
+  // 8. 퇴직금 IRP (이전, 세액공제)
+  if (question.includes('퇴직금') && (question.includes('IRP') || question.includes('irp') || question.includes('이전'))) {
+    return '퇴직금 IRP 이전: 의무 가입과 세액공제 혜택';
+  }
+
+  // 9. 퇴직금 미지급 (신고, 지연이자)
+  if (question.includes('퇴직금') && (question.includes('미지급') || question.includes('안') || question.includes('못'))) {
+    return '퇴직금 미지급 신고: 절차와 지연이자 청구 방법';
+  }
+
+  // 16. 퇴직연금 DB DC 차이 (우선순위: 수령보다 먼저 체크)
+  if (question.includes('퇴직연금') && (question.includes('DB') || question.includes('DC')) && (question.includes('차이') || question.includes('비교'))) {
+    return '퇴직연금 DB형과 DC형 차이: 수령액과 운용 비교';
+  }
+
+  // 14. 퇴직연금 중도인출 (수령보다 구체적)
+  if (question.includes('퇴직연금') && (question.includes('중도인출') || question.includes('인출'))) {
+    return '퇴직연금 중도인출: 조건과 사유 신청 방법';
+  }
+
+  // 24. 퇴직연금 ETF (수령보다 구체적)
+  if (question.includes('퇴직연금') && question.includes('ETF')) {
+    return '퇴직연금 ETF 추천: 안전자산과 배당 상품';
+  }
+
+  // 23. 퇴직연금 운용 (수령보다 구체적)
+  if (question.includes('퇴직연금') && (question.includes('운용') || question.includes('투자'))) {
+    return '퇴직연금 운용 방법: ETF와 펀드 선택 전략';
+  }
+
+  // 25. 퇴직연금 수령 나이 (수령보다 구체적)
+  if (question.includes('퇴직연금') && (question.includes('나이') || question.includes('55세'))) {
+    return '퇴직연금 수령 나이: 55세 기준과 조기 수령';
+  }
+
+  // 10. 퇴직연금 수령 (일시금, 연금) - 일반 케이스
+  if (question.includes('퇴직연금') && (question.includes('수령') || question.includes('받') || question.includes('일시금') || question.includes('연금'))) {
+    return '퇴직연금 수령 방법: 일시금과 연금 비교';
+  }
+
+  // 11. 퇴직금 평균임금 (산정 기준)
+  if (question.includes('평균임금') || (question.includes('퇴직금') && question.includes('임금'))) {
+    return '퇴직금 평균임금 산정: 3개월 임금과 계산 기준';
+  }
+
+  // 12. IRP 세액공제 (연말정산)
+  if (question.includes('IRP') && (question.includes('세액공제') || question.includes('공제'))) {
+    return 'IRP 세액공제 한도: 연말정산 절세 방법';
+  }
+
+  // 13. 퇴직금 중간정산
+  if (question.includes('퇴직금') && (question.includes('중간정산') || question.includes('중간'))) {
+    return '퇴직금 중간정산 신청: 법정 사유와 절차';
+  }
+
+  // 15. 퇴직소득세
+  if (question.includes('퇴직소득세') || (question.includes('퇴직') && question.includes('소득세'))) {
+    return '퇴직소득세 세율 계산: 근속연수별 공제 및 환급';
+  }
+
+  // 17. 1년 미만 퇴직금
+  if (question.includes('퇴직금') && (question.includes('1년') || question.includes('일년') || question.includes('미만'))) {
+    return '1년 미만 퇴직금: 지급 규정과 조건 기준';
+  }
+
+  // 18. 회사 폐업 퇴직금
+  if (question.includes('퇴직금') && (question.includes('폐업') || question.includes('망') || question.includes('도산') || question.includes('파산'))) {
+    return '회사 폐업 시 퇴직금: 체당금 신청과 우선변제권';
+  }
+
+  // 19. DB형 수령
+  if (question.includes('DB') && (question.includes('수령') || question.includes('받'))) {
+    return 'DB형 퇴직연금 수령: 방법과 세금 계산';
+  }
+
+  // 20. DC형 수령
+  if (question.includes('DC') && (question.includes('수령') || question.includes('받'))) {
+    return 'DC형 퇴직연금 수령: 방법과 운용수익 포함';
+  }
+
+  // 21. 퇴직금 지급 기한
+  if (question.includes('퇴직금') && (question.includes('기한') || question.includes('14일') || question.includes('언제'))) {
+    return '퇴직금 지급 기한: 14일 원칙과 지연이자';
+  }
+
+  // 22. 근속연수
+  if (question.includes('근속연수') || (question.includes('근속') && question.includes('연수'))) {
+    return '퇴직금 근속연수 계산: 1년 미만과 재직 기간';
+  }
+
   // 일반 케이스
   switch (questionType) {
     case 'possibility':
@@ -302,6 +402,106 @@ function generate4Keywords(title: string, question: string): string[] {
   // 5. 계약갱신청구권 vs 묵시적 갱신 차이
   if (question.includes('계약갱신청구권') && question.includes('묵시적') && question.includes('차이')) {
     return ['계약갱신청구권 묵시적갱신', '계약갱신청구권 차이', '묵시적갱신 보증금', '5%룰'];
+  }
+
+  // 6. 퇴직금 계산
+  if (question.includes('퇴직금') && question.includes('계산')) {
+    return ['퇴직금 계산', '퇴직금 평균임금', '퇴직금 근속연수', '퇴직금 계산법'];
+  }
+
+  // 7. 퇴직연금 해지
+  if (question.includes('퇴직연금') && question.includes('해지')) {
+    return ['퇴직연금 해지', '퇴직연금 해지 세금', '퇴직연금 중도해지', 'DC형 해지'];
+  }
+
+  // 8. 퇴직금 IRP
+  if (question.includes('퇴직금') && (question.includes('IRP') || question.includes('irp') || question.includes('이전'))) {
+    return ['퇴직금 IRP', 'IRP 이전', 'IRP 의무가입', 'IRP 세액공제'];
+  }
+
+  // 9. 퇴직금 미지급
+  if (question.includes('퇴직금') && (question.includes('미지급') || question.includes('안') || question.includes('못'))) {
+    return ['퇴직금 미지급', '퇴직금 미지급 신고', '퇴직금 지연이자', '퇴직금 체불'];
+  }
+
+  // 16. 퇴직연금 DB DC 차이 (우선순위)
+  if (question.includes('퇴직연금') && (question.includes('DB') || question.includes('DC')) && (question.includes('차이') || question.includes('비교'))) {
+    return ['퇴직연금 DB DC', 'DB형 DC형 차이', '퇴직연금 종류', 'DB DC 비교'];
+  }
+
+  // 10. 퇴직연금 수령
+  if (question.includes('퇴직연금') && (question.includes('수령') || question.includes('받') || question.includes('일시금') || question.includes('연금'))) {
+    return ['퇴직연금 수령', '퇴직연금 일시금', '퇴직연금 연금', 'DB형 수령'];
+  }
+
+  // 11. 퇴직금 평균임금
+  if (question.includes('평균임금') || (question.includes('퇴직금') && question.includes('임금'))) {
+    return ['퇴직금 평균임금', '평균임금 산정', '퇴직금 3개월', '평균임금 계산'];
+  }
+
+  // 12. IRP 세액공제
+  if (question.includes('IRP') && (question.includes('세액공제') || question.includes('공제'))) {
+    return ['IRP 세액공제', 'IRP 세액공제 한도', 'IRP 연말정산', 'IRP 900만원'];
+  }
+
+  // 13. 퇴직금 중간정산
+  if (question.includes('퇴직금') && (question.includes('중간정산') || question.includes('중간'))) {
+    return ['퇴직금 중간정산', '중간정산 사유', '퇴직금 중간정산 신청', '중간정산 조건'];
+  }
+
+  // 14. 퇴직연금 중도인출
+  if (question.includes('퇴직연금') && (question.includes('중도인출') || question.includes('인출'))) {
+    return ['퇴직연금 중도인출', '중도인출 사유', '퇴직연금 인출 조건', '주택구입 중도인출'];
+  }
+
+  // 15. 퇴직소득세
+  if (question.includes('퇴직소득세') || (question.includes('퇴직') && question.includes('소득세'))) {
+    return ['퇴직소득세', '퇴직소득세 계산', '퇴직소득세 세율', '퇴직금 세금'];
+  }
+
+  // 17. 1년 미만 퇴직금
+  if (question.includes('퇴직금') && (question.includes('1년') || question.includes('일년') || question.includes('미만'))) {
+    return ['1년 미만 퇴직금', '퇴직금 지급 조건', '1년 미만 퇴사', '퇴직금 자격'];
+  }
+
+  // 18. 회사 폐업 퇴직금
+  if (question.includes('퇴직금') && (question.includes('폐업') || question.includes('망') || question.includes('도산') || question.includes('파산'))) {
+    return ['회사 폐업 퇴직금', '퇴직금 체당금', '회사 도산 퇴직금', '우선변제권'];
+  }
+
+  // 19. DB형 수령
+  if (question.includes('DB') && (question.includes('수령') || question.includes('받'))) {
+    return ['DB형 수령', 'DB형 퇴직연금', 'DB형 수령 방법', 'DB형 세금'];
+  }
+
+  // 20. DC형 수령
+  if (question.includes('DC') && (question.includes('수령') || question.includes('받'))) {
+    return ['DC형 수령', 'DC형 퇴직연금', 'DC형 수령 방법', 'DC형 운용수익'];
+  }
+
+  // 21. 퇴직금 지급 기한
+  if (question.includes('퇴직금') && (question.includes('기한') || question.includes('14일') || question.includes('언제'))) {
+    return ['퇴직금 지급 기한', '퇴직금 14일', '퇴직금 지급일', '퇴직금 언제'];
+  }
+
+  // 22. 근속연수
+  if (question.includes('근속연수') || (question.includes('근속') && question.includes('연수'))) {
+    return ['근속연수', '근속연수 계산', '퇴직금 근속', '재직 기간'];
+  }
+
+  // 23. 퇴직연금 운용
+  if (question.includes('퇴직연금') && (question.includes('운용') || question.includes('투자'))) {
+    return ['퇴직연금 운용', '퇴직연금 투자', '퇴직연금 운용 방법', '퇴직연금 상품'];
+  }
+
+  // 24. 퇴직연금 ETF
+  if (question.includes('퇴직연금') && question.includes('ETF')) {
+    return ['퇴직연금 ETF', '퇴직연금 ETF 추천', '안전자산 ETF', '배당 ETF'];
+  }
+
+  // 25. 퇴직연금 수령 나이
+  if (question.includes('퇴직연금') && (question.includes('나이') || question.includes('55세'))) {
+    return ['퇴직연금 수령 나이', '퇴직연금 55세', '조기 수령', '퇴직연금 언제'];
   }
 
   // 일반 케이스
@@ -445,6 +645,106 @@ function generateDescription(question: string, title: string): string {
   // 5. 계약갱신청구권 vs 묵시적 갱신 차이
   if (question.includes('계약갱신청구권') && question.includes('묵시적') && question.includes('차이')) {
     return '계약갱신청구권과 묵시적 갱신, 뭐가 다른지 헷갈리시죠? 보증금 5% 인상, 사용 횟수 등 핵심 차이점을 비교해 드려요.';
+  }
+
+  // 6. 퇴직금 계산
+  if (question.includes('퇴직금') && question.includes('계산')) {
+    return '퇴직금 얼마 받을 수 있는지 궁금하시죠? 평균임금 산정 방법과 근속연수 계산법을 쉽게 알려드려요.';
+  }
+
+  // 7. 퇴직연금 해지
+  if (question.includes('퇴직연금') && question.includes('해지')) {
+    return '퇴직연금 해지하면 세금은 얼마나 나올까요? DB형, DC형, IRP 해지 절차와 주의사항까지 정리했어요.';
+  }
+
+  // 8. 퇴직금 IRP
+  if (question.includes('퇴직금') && (question.includes('IRP') || question.includes('irp') || question.includes('이전'))) {
+    return '퇴직금을 IRP로 옮기면 세액공제 받을 수 있어요. 의무 가입 대상과 세액공제 한도를 알려드려요.';
+  }
+
+  // 9. 퇴직금 미지급
+  if (question.includes('퇴직금') && (question.includes('미지급') || question.includes('안') || question.includes('못'))) {
+    return '퇴직금 안 주면 어떻게 해야 할까요? 고용노동부 신고 절차와 연 20% 지연이자 청구 방법을 알려드려요.';
+  }
+
+  // 16. 퇴직연금 DB DC 차이 (우선순위)
+  if (question.includes('퇴직연금') && (question.includes('DB') || question.includes('DC')) && (question.includes('차이') || question.includes('비교'))) {
+    return 'DB형과 DC형 퇴직연금 차이점 알려드려요. 수령액과 운용 방법이 다르니 어떤 게 유리한지 비교해드릴게요.';
+  }
+
+  // 10. 퇴직연금 수령
+  if (question.includes('퇴직연금') && (question.includes('수령') || question.includes('받') || question.includes('일시금') || question.includes('연금'))) {
+    return '퇴직연금, 일시금으로 받을까 연금으로 받을까 고민되시죠? 세금 차이와 수령 방법을 비교해 드려요.';
+  }
+
+  // 11. 퇴직금 평균임금
+  if (question.includes('평균임금') || (question.includes('퇴직금') && question.includes('임금'))) {
+    return '퇴직금 계산의 핵심은 평균임금이에요. 3개월 임금 기준과 상여금 포함 여부를 자세히 알려드려요.';
+  }
+
+  // 12. IRP 세액공제
+  if (question.includes('IRP') && (question.includes('세액공제') || question.includes('공제'))) {
+    return 'IRP로 연말정산 절세하는 방법, 궁금하시죠? 세액공제 한도 900만원과 환급액 계산법을 알려드려요.';
+  }
+
+  // 13. 퇴직금 중간정산
+  if (question.includes('퇴직금') && (question.includes('중간정산') || question.includes('중간'))) {
+    return '퇴직 전에 퇴직금 미리 받을 수 있을까요? 법정 사유가 있으면 중간정산 가능해요. 신청 절차를 알려드려요.';
+  }
+
+  // 14. 퇴직연금 중도인출
+  if (question.includes('퇴직연금') && (question.includes('중도인출') || question.includes('인출'))) {
+    return '퇴직연금 중도인출 사유와 방법 알려드려요. 주택구입, 의료비 등 법정 사유가 있어야 해요.';
+  }
+
+  // 15. 퇴직소득세
+  if (question.includes('퇴직소득세') || (question.includes('퇴직') && question.includes('소득세'))) {
+    return '퇴직소득세는 퇴직금에 붙는 세금인데 일반 소득세보다 훨씬 낮아요. 근속연수가 길수록 공제가 커져서 더 적게 내요.';
+  }
+
+  // 17. 1년 미만 퇴직금
+  if (question.includes('퇴직금') && (question.includes('1년') || question.includes('일년') || question.includes('미만'))) {
+    return '1년 미만 근무하면 법적으로 퇴직금을 못 받아요. 지급 규정과 예외 조건을 확인해보세요.';
+  }
+
+  // 18. 회사 폐업 퇴직금
+  if (question.includes('퇴직금') && (question.includes('폐업') || question.includes('망') || question.includes('도산') || question.includes('파산'))) {
+    return '회사가 망해도 퇴직금을 받을 수 있어요. 체당금 신청 방법과 우선변제권을 정확히 알려드려요.';
+  }
+
+  // 19. DB형 수령
+  if (question.includes('DB') && (question.includes('수령') || question.includes('받'))) {
+    return 'DB형 퇴직연금 수령 방법과 세금 계산법을 알려드려요. 일시금과 연금 중 선택 가능해요.';
+  }
+
+  // 20. DC형 수령
+  if (question.includes('DC') && (question.includes('수령') || question.includes('받'))) {
+    return 'DC형 퇴직연금은 운용수익이 포함돼요. 수령 방법과 세금 혜택을 자세히 알려드려요.';
+  }
+
+  // 21. 퇴직금 지급 기한
+  if (question.includes('퇴직금') && (question.includes('기한') || question.includes('14일') || question.includes('언제'))) {
+    return '퇴직금은 퇴직 후 14일 이내 지급이 원칙이에요. 늦어지면 연 20% 지연이자를 청구할 수 있어요.';
+  }
+
+  // 22. 근속연수
+  if (question.includes('근속연수') || (question.includes('근속') && question.includes('연수'))) {
+    return '퇴직금 계산에 필요한 근속연수 산정 방법 알려드려요. 1년 미만 기간도 일할 계산돼요.';
+  }
+
+  // 23. 퇴직연금 운용
+  if (question.includes('퇴직연금') && (question.includes('운용') || question.includes('투자'))) {
+    return '퇴직연금 운용 방법이 궁금하시죠? ETF와 펀드 선택 전략을 알려드려요.';
+  }
+
+  // 24. 퇴직연금 ETF
+  if (question.includes('퇴직연금') && question.includes('ETF')) {
+    return '퇴직연금으로 투자할 수 있는 안전자산과 배당 ETF 상품을 추천해드려요.';
+  }
+
+  // 25. 퇴직연금 수령 나이
+  if (question.includes('퇴직연금') && (question.includes('나이') || question.includes('55세'))) {
+    return '퇴직연금은 만 55세부터 받을 수 있어요. 조기 수령 조건과 세금 혜택을 알려드려요.';
   }
 
   // 일반 케이스
