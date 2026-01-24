@@ -262,20 +262,6 @@ export default async function WikiPage({ params }: PageProps) {
             <p className="text-neutral-600 text-lg">{doc.description}</p>
           </header>
 
-          {/* 대표 이미지 - 구글 디스커버 노출용 (계산기 페이지 제외) */}
-          {doc.schemaType !== "calculator" && (
-            <div className="mb-8 rounded-xl overflow-hidden shadow-lg">
-              <Image
-                src={`/w/${encodeURIComponent(slug)}/opengraph-image`}
-                alt={doc.title}
-                width={1200}
-                height={630}
-                priority
-                className="w-full h-auto"
-              />
-            </div>
-          )}
-
           {/* 퇴직금 계산기 - 원페이지 스타일 (맨 위 배치) */}
           {decodeURIComponent(slug) === "퇴직금-계산기" && (
             <div className="mb-8">
