@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import { getWikiDocument, getAllWikiSlugs, findRelatedDocuments, getAllWikiDocuments } from "@/lib/wiki";
 import {
   ArticleSchema,
@@ -12,35 +11,8 @@ import {
 } from "@/components/JsonLd";
 import AdSense, { AD_SLOTS } from "@/components/AdSense";
 import ShareButtons from "@/components/ShareButtons";
-import YearEndTaxCalculator from "@/components/calculators/YearEndTaxCalculator";
-import SeverancePayCalculator from "@/components/calculators/SeverancePayCalculator";
-import UnemploymentBenefitCalculator from "@/components/calculators/UnemploymentBenefitCalculator";
-import AcquisitionTaxCalculator from "@/components/calculators/AcquisitionTaxCalculator";
-import CapitalGainsTaxCalculator from "@/components/calculators/CapitalGainsTaxCalculator";
-import ComprehensivePropertyTaxCalculator from "@/components/calculators/ComprehensivePropertyTaxCalculator";
-import PropertyTaxCalculator from "@/components/calculators/PropertyTaxCalculator";
-import BrokerFeeCalculator from "@/components/calculators/BrokerFeeCalculator";
-import AreaConverterCalculator from "@/components/calculators/AreaConverterCalculator";
-import JeonseLoanCalculator from "@/components/calculators/JeonseLoanCalculator";
-import MortgageCalculator from "@/components/calculators/MortgageCalculator";
-import DSRCalculator from "@/components/calculators/DSRCalculator";
-import NetSalaryCalculator from "@/components/calculators/NetSalaryCalculator";
-import InsuranceCalculator from "@/components/calculators/InsuranceCalculator";
-import IncomeTaxCalculator from "@/components/calculators/IncomeTaxCalculator";
-import WeeklyHolidayPayCalculator from "@/components/calculators/WeeklyHolidayPayCalculator";
-import HourlyWageCalculator from "@/components/calculators/HourlyWageCalculator";
-import LoanInterestCalculator from "@/components/calculators/LoanInterestCalculator";
-import LoanRepaymentCalculator from "@/components/calculators/LoanRepaymentCalculator";
-import SavingsCalculator from "@/components/calculators/SavingsCalculator";
-import DepositInterestCalculator from "@/components/calculators/DepositInterestCalculator";
-import CompoundInterestCalculator from "@/components/calculators/CompoundInterestCalculator";
-import AnnualSalaryCalculator from "@/components/calculators/AnnualSalaryCalculator";
-import GiftTaxCalculator from "@/components/calculators/GiftTaxCalculator";
-import NationalPensionCalculator from "@/components/calculators/NationalPensionCalculator";
-import StockReturnCalculator from "@/components/calculators/StockReturnCalculator";
-import InstallmentInterestCalculator from "@/components/calculators/InstallmentInterestCalculator";
-import InheritanceTaxCalculator from "@/components/calculators/InheritanceTaxCalculator";
-import VehicleTaxCalculator from "@/components/calculators/VehicleTaxCalculator";
+// 계산기 컴포넌트는 클라이언트 래퍼에서 동적 로딩
+import CalculatorLoader from "@/components/CalculatorLoader";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -262,175 +234,8 @@ export default async function WikiPage({ params }: PageProps) {
             <p className="text-neutral-600 text-lg">{doc.description}</p>
           </header>
 
-          {/* 퇴직금 계산기 - 원페이지 스타일 (맨 위 배치) */}
-          {decodeURIComponent(slug) === "퇴직금-계산기" && (
-            <div className="mb-8">
-              <SeverancePayCalculator />
-            </div>
-          )}
-
-          {/* 실업급여 계산기 */}
-          {decodeURIComponent(slug) === "실업급여-계산기" && (
-            <div className="mb-8">
-              <UnemploymentBenefitCalculator />
-            </div>
-          )}
-          {/* 취득세 계산기 */}
-          {decodeURIComponent(slug) === "취득세-계산기" && (
-            <div className="mb-8">
-              <AcquisitionTaxCalculator />
-            </div>
-          )}
-          {/* 양도소득세 계산기 */}
-          {decodeURIComponent(slug) === "양도소득세-계산기" && (
-            <div className="mb-8">
-              <CapitalGainsTaxCalculator />
-            </div>
-          )}
-          {/* 종합부동산세 계산기 */}
-          {decodeURIComponent(slug) === "종합부동산세-계산기" && (
-            <div className="mb-8">
-              <ComprehensivePropertyTaxCalculator />
-            </div>
-          )}
-          {/* 재산세 계산기 */}
-          {decodeURIComponent(slug) === "재산세-계산기" && (
-            <div className="mb-8">
-              <PropertyTaxCalculator />
-            </div>
-          )}
-          {/* 중개수수료 계산기 */}
-          {decodeURIComponent(slug) === "중개수수료-계산기" && (
-            <div className="mb-8">
-              <BrokerFeeCalculator />
-            </div>
-          )}
-          {/* 평수 계산기 */}
-          {decodeURIComponent(slug) === "평수-계산기" && (
-            <div className="mb-8">
-              <AreaConverterCalculator />
-            </div>
-          )}
-          {/* 전세대출 계산기 */}
-          {decodeURIComponent(slug) === "전세대출-계산기" && (
-            <div className="mb-8">
-              <JeonseLoanCalculator />
-            </div>
-          )}
-          {/* 주택담보대출 계산기 */}
-          {decodeURIComponent(slug) === "주택담보대출-계산기" && (
-            <div className="mb-8">
-              <MortgageCalculator />
-            </div>
-          )}
-          {/* DSR 계산기 */}
-          {decodeURIComponent(slug) === "DSR-계산기" && (
-            <div className="mb-8">
-              <DSRCalculator />
-            </div>
-          )}
-          {/* 연봉 실수령액 계산기 */}
-          {decodeURIComponent(slug) === "연봉-실수령액-계산기" && (
-            <div className="mb-8">
-              <NetSalaryCalculator />
-            </div>
-          )}
-          {/* 4대보험료 계산기 */}
-          {decodeURIComponent(slug) === "4대보험료-계산기" && (
-            <div className="mb-8">
-              <InsuranceCalculator />
-            </div>
-          )}
-          {/* 근로소득세 계산기 */}
-          {decodeURIComponent(slug) === "근로소득세-계산기" && (
-            <div className="mb-8">
-              <IncomeTaxCalculator />
-            </div>
-          )}
-          {/* 주휴수당 계산기 */}
-          {decodeURIComponent(slug) === "주휴수당-계산기" && (
-            <div className="mb-8">
-              <WeeklyHolidayPayCalculator />
-            </div>
-          )}
-          {/* 시급 계산기 */}
-          {decodeURIComponent(slug) === "시급-계산기" && (
-            <div className="mb-8">
-              <HourlyWageCalculator />
-            </div>
-          )}
-          {/* 대출이자 계산기 */}
-          {decodeURIComponent(slug) === "대출이자-계산기" && (
-            <div className="mb-8">
-              <LoanInterestCalculator />
-            </div>
-          )}
-          {/* 대출상환 계산기 */}
-          {decodeURIComponent(slug) === "대출상환-계산기" && (
-            <div className="mb-8">
-              <LoanRepaymentCalculator />
-            </div>
-          )}
-          {/* 적금 계산기 */}
-          {decodeURIComponent(slug) === "적금-계산기" && (
-            <div className="mb-8">
-              <SavingsCalculator />
-            </div>
-          )}
-          {/* 예금이자 계산기 */}
-          {decodeURIComponent(slug) === "예금이자-계산기" && (
-            <div className="mb-8">
-              <DepositInterestCalculator />
-            </div>
-          )}
-          {/* 복리 계산기 */}
-          {decodeURIComponent(slug) === "복리-계산기" && (
-            <div className="mb-8">
-              <CompoundInterestCalculator />
-            </div>
-          )}
-          {/* 연봉 계산기 */}
-          {decodeURIComponent(slug) === "연봉-계산기" && (
-            <div className="mb-8">
-              <AnnualSalaryCalculator />
-            </div>
-          )}
-          {/* 증여세 계산기 */}
-          {decodeURIComponent(slug) === "증여세-계산기" && (
-            <div className="mb-8">
-              <GiftTaxCalculator />
-            </div>
-          )}
-          {/* 국민연금 수령액 계산기 */}
-          {decodeURIComponent(slug) === "국민연금-수령액-계산기" && (
-            <div className="mb-8">
-              <NationalPensionCalculator />
-            </div>
-          )}
-          {/* 주식 수익률 계산기 */}
-          {decodeURIComponent(slug) === "주식-수익률-계산기" && (
-            <div className="mb-8">
-              <StockReturnCalculator />
-            </div>
-          )}
-          {/* 할부 이자 계산기 */}
-          {decodeURIComponent(slug) === "할부-이자-계산기" && (
-            <div className="mb-8">
-              <InstallmentInterestCalculator />
-            </div>
-          )}
-          {/* 상속세 계산기 */}
-          {decodeURIComponent(slug) === "상속세-계산기" && (
-            <div className="mb-8">
-              <InheritanceTaxCalculator />
-            </div>
-          )}
-          {/* 자동차세 계산기 */}
-          {decodeURIComponent(slug) === "자동차세-계산기" && (
-            <div className="mb-8">
-              <VehicleTaxCalculator />
-            </div>
-          )}
+          {/* 계산기 컴포넌트 - 동적 로딩 (코드 스플리팅) */}
+          <CalculatorLoader slug={slug} />
 
           {/* 목차 - 나무위키 스타일 (계산기 페이지에서는 숨김) */}
           {doc.schemaType !== "calculator" && toc.length >= 2 && (() => {
@@ -494,13 +299,6 @@ export default async function WikiPage({ params }: PageProps) {
           <div className="mb-8">
             <AdSense slot={AD_SLOTS.HORIZONTAL} className="w-full" />
           </div>
-
-          {/* 계산기 컴포넌트 (특정 페이지용) */}
-          {decodeURIComponent(slug) === "연말정산-계산기" && (
-            <div className="mb-10">
-              <YearEndTaxCalculator />
-            </div>
-          )}
 
           {/* 문서 본문 */}
           <article

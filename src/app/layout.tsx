@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import KakaoSDK from "@/components/KakaoSDK";
 import AdClickTracker from "@/components/AdClickTracker";
 import Link from "next/link";
+
+// Google Fonts 최적화: next/font로 자동 셀프호스팅 + display swap
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -70,21 +78,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" className={inter.variable}>
       <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-        {/* Google AdSense */}
+        {/* Google AdSense - lazyOnload로 변경하여 LCP 개선 */}
         <Script
-          async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2442517902625121"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
       </head>
-      <body className="antialiased bg-white min-h-screen flex flex-col">
+      <body className="antialiased bg-white min-h-screen flex flex-col font-sans">
         <KakaoSDK />
         <AdClickTracker />
         <Header />

@@ -4,6 +4,18 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
+  // 이미지 최적화
+  images: {
+    formats: ["image/avif", "image/webp"],
+    deviceSizes: [640, 750, 828, 1080, 1200],
+    minimumCacheTTL: 31536000, // 1년
+  },
+  // 실험적 기능 - 성능 최적화
+  experimental: {
+    optimizeCss: true, // CSS 최적화
+  },
+  // 압축 활성화
+  compress: true,
   // Vercel 배포 시 content 폴더 포함
   outputFileTracingIncludes: {
     "/w/[slug]": ["./content/wiki/**/*"],
