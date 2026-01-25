@@ -126,7 +126,7 @@ export default function Home() {
             <svg className="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
-            <span className="text-neutral-400">문서 검색...</span>
+            <span className="text-neutral-500">문서 검색...</span>
           </Link>
         </div>
       </section>
@@ -175,7 +175,7 @@ export default function Home() {
             >
               <span className="text-2xl mb-2 block">{categoryEmoji[category] || "📄"}</span>
               <span className="font-medium text-sm">{category}</span>
-              <p className="text-xs text-neutral-400 mt-1">{docs.length}개 문서</p>
+              <p className="text-xs text-neutral-500 mt-1">{docs.length}개 문서</p>
             </Link>
           ))}
         </div>
@@ -227,9 +227,9 @@ export default function Home() {
                 <span className="font-medium text-neutral-800 group-hover:text-emerald-600 transition-colors line-clamp-1">
                   {doc.title}
                 </span>
-                <p className="text-xs text-neutral-400 mt-1">{doc.category}</p>
+                <p className="text-xs text-neutral-500 mt-1">{doc.category}</p>
               </div>
-              <span className="text-xs text-neutral-400 shrink-0">{doc.lastUpdated}</span>
+              <span className="text-xs text-neutral-500 shrink-0">{doc.lastUpdated}</span>
             </Link>
           ))}
         </div>
@@ -246,7 +246,7 @@ export default function Home() {
           <div className="flex items-center gap-3 mb-6 pb-3 border-b border-neutral-200">
             <span className="text-2xl">{categoryEmoji[category] || "📄"}</span>
             <h2 className="text-xl font-bold">{category}</h2>
-            <span className="text-sm text-neutral-400">({docs.length}개)</span>
+            <span className="text-sm text-neutral-500">({docs.length}개)</span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {docs
@@ -279,7 +279,7 @@ export default function Home() {
         <div className="flex items-center gap-3 mb-6 pb-3 border-b border-neutral-200">
           <span className="text-2xl">📚</span>
           <h2 className="text-xl font-bold">전체 문서 목록</h2>
-          <span className="text-sm text-neutral-400">({allDocs.length}개)</span>
+          <span className="text-sm text-neutral-500">({allDocs.length}개)</span>
         </div>
         <div className="bg-neutral-50 rounded-xl p-6">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
@@ -299,7 +299,7 @@ export default function Home() {
       </section>
 
       {/* 푸터 정보 */}
-      <div className="text-center text-sm text-neutral-400 py-8 border-t border-neutral-200">
+      <div className="text-center text-sm text-neutral-500 py-8 border-t border-neutral-200">
         <p>머니위키 - 대한민국 세금·경제·부동산·법률 정보</p>
         <p className="mt-1">총 {allDocs.length}개 문서 | 2026년 기준 정보</p>
       </div>
