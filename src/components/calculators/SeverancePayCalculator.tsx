@@ -31,12 +31,78 @@ function calculateWorkDays(start: Date, end: Date): number {
   return Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
 }
 
-// 퇴직 전 3개월 총 일수 계산
+// 퇴직 전 3개월 총 일수 계산 (고용노동부 방식: 퇴직일 전일까지 3개월)
 function calculateThreeMonthDays(endDate: Date): number {
   const end = new Date(endDate);
-  const threeMonthsAgo = new Date(end);
+  // 퇴직일 전일 (마지막 근무일)
+  const lastDay = new Date(end);
+  lastDay.setDate(lastDay.getDate() - 1);
+
+  // 3개월 전 같은 날짜
+  const threeMonthsAgo = new Date(lastDay);
   threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 3);
-  return calculateWorkDays(threeMonthsAgo, end);
+
+  // 3개월 전 날짜 + 1일부터 퇴직일 전일까지 = 총 일수
+  return calculateWorkDays(threeMonthsAgo, lastDay);
+}
+
+// 고용노동부 방식: 퇴직 전 3개월 임금 및 일수 계산
+// 월급제 근로자는 해당 월에 며칠 일했든 월급 전액을 받으므로, 기간 수 × 월급으로 계산
+// 핵심: 퇴직일이 월 1일이면 3기간, 월 중간이면 4기간
+function calculateThreeMonthWage(endDate: Date, monthlyWage: number): { totalWage: number; totalDays: number; periods: number } {
+  const end = new Date(endDate);
+  // 퇴직일 전일 (마지막 근무일) - 예: 퇴직일 2025-01-01이면 마지막 근무일은 2024-12-31
+  const lastDay = new Date(end);
+  lastDay.setDate(lastDay.getDate() - 1);
+
+  const lastDayDate = lastDay.getDate(); // 마지막 근무일의 일(day)
+  const lastDayMonth = lastDay.getMonth();
+  const lastDayYear = lastDay.getFullYear();
+
+  // 해당 월의 마지막 날 계산
+  const lastDayOfMonth = new Date(lastDayYear, lastDayMonth + 1, 0).getDate();
+
+  // 퇴직일이 월 1일인지 확인 (= 마지막 근무일이 월말인지)
+  const isEndOfMonth = lastDayDate === lastDayOfMonth;
+
+  let periods: number;
+  let startDate: Date;
+
+  if (isEndOfMonth) {
+    // 퇴직일이 월 1일 (마지막 근무일이 월말): 3기간
+    // 예: 퇴직일 2025-01-01 → 마지막 근무일 2024-12-31 → 2024-10-01 ~ 2024-12-31 (3기간)
+    periods = 3;
+    let startMonth = lastDayMonth - 2;
+    let startYear = lastDayYear;
+    if (startMonth < 0) {
+      startMonth += 12;
+      startYear -= 1;
+    }
+    startDate = new Date(startYear, startMonth, 1);
+  } else {
+    // 퇴직일이 월 중간: 4기간
+    // 예: 퇴직일 2026-01-25 → 마지막 근무일 2026-01-24
+    // → 2025-10-25 ~ 2025-10-31 (1기간) + 2025-11-01 ~ 2025-11-30 (1기간)
+    // → 2025-12-01 ~ 2025-12-31 (1기간) + 2026-01-01 ~ 2026-01-24 (1기간)
+    // 총 4기간
+    periods = 4;
+    // 3개월 전 같은 날짜부터 시작
+    let startMonth = lastDayMonth - 3;
+    let startYear = lastDayYear;
+    if (startMonth < 0) {
+      startMonth += 12;
+      startYear -= 1;
+    }
+    // 시작일 = 3개월 전 같은 날짜 + 1일 (예: 1월 24일 → 10월 25일)
+    startDate = new Date(startYear, startMonth, lastDayDate + 1);
+  }
+
+  // 총 일수 계산 (시작일 ~ 마지막 근무일)
+  const totalDays = Math.floor((lastDay.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24)) + 1;
+
+  const totalWage = monthlyWage * periods;
+
+  return { totalWage, totalDays, periods };
 }
 
 // 근로자 유형
@@ -151,15 +217,14 @@ function RegularWorkerCalculator() {
     setIsEligible(true);
     setEligibilityMessage("");
 
-    // 퇴직 전 3개월 일수
-    const monthDays = calculateThreeMonthDays(endDate);
+    // 고용노동부 방식: 퇴직 전 3개월간 임금 총액 계산
+    // 월급제는 해당 월에 며칠 일했든 월급 전액을 받으므로, 기간 수 × 월급으로 계산
+    const monthlyWage = baseSalary + allowances;
+    const { totalWage: wage3m, totalDays: monthDays, periods } = calculateThreeMonthWage(endDate, monthlyWage);
     setThreeMonthDays(monthDays);
-
-    // 3개월 임금 합계
-    const wage3m = (baseSalary + allowances) * 3;
     setThreeMonthWage(wage3m);
 
-    // 상여금 3개월분
+    // 상여금 3개월분 (고용노동부 방식: 연간 상여금 ÷ 12 × 3)
     const bonus3m = (annualBonus / 12) * 3;
     setBonusPortion(bonus3m);
 
@@ -172,11 +237,11 @@ function RegularWorkerCalculator() {
     const total = wage3m + bonus3m + leave3m;
     setTotalThreeMonth(total);
 
-    // 1일 평균임금
+    // 1일 평균임금 (고용노동부 방식: 3개월 총액 ÷ 3개월 총 일수)
     const avgWage = total / monthDays;
     setAvgDailyWage(avgWage);
 
-    // 퇴직금
+    // 퇴직금 (고용노동부 공식: 1일 평균임금 × 30일 × (재직일수 ÷ 365))
     const pay = avgWage * 30 * (days / 365);
     setSeverancePay(pay);
   }, [startDate, endDate, baseSalary, allowances, annualBonus, annualLeaveCount, dailyLeaveRate]);
