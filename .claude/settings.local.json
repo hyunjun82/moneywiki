@@ -221,7 +221,12 @@
       "Bash(do npx tsx ../../scripts/validate-wiki-wegive.ts \"$file\")",
       "Bash(while read file)",
       "Bash(/tmp/check-final-titles.sh)",
-      "Bash(npx wrangler pages deploy:*)"
+      "Bash(npx wrangler pages deploy:*)",
+      "Bash(set CLOUDFLARE_API_TOKEN=Nv-V_8kI7v0hGrGfDhOBNzZf8OXLLaPdIe3TKR-s:*)",
+      "Bash(npm run typecheck:*)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash({ grep -l \"description:.*알아봅니다\" content/wiki/*.md)",
+      "Bash(})"
     ]
   }
 }
