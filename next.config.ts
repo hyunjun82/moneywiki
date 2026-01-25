@@ -70,6 +70,12 @@ const nextConfig: NextConfig = {
         destination: "/w/연말정산-계산기",
         permanent: true,
       },
+      // /recent 페이지 없음 - 홈으로 리다이렉트
+      {
+        source: "/recent",
+        destination: "/",
+        permanent: false,
+      },
       // 검색 경로 - noindex 태그로 색인 제거 중 (임시 비활성화)
       // 색인 제거 완료 후 (2-4주 후) 다시 활성화
       // {
