@@ -45,20 +45,20 @@ const popularCalculators = [
 export default function Sidebar() {
   return (
     <aside className="w-72 shrink-0 hidden lg:block">
-      {/* 정부지원금 스티키 배너 - 토스 스타일 */}
-      <div className="sticky top-4 mb-4">
-        <Link
-          href="/category/정부지원금"
-          className="block bg-white p-5 rounded-xl border border-[#E5E7EB] shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.12)] hover:border-[#00C896] transition-all"
-        >
-          <h3 className="text-lg font-bold text-[#333333] mb-1">
-            숨은 정부지원금 찾기
+      {/* 정부지원금 배너 - 사이드바 맨 위 (광고보다 위) */}
+      <Link href="/category/정부지원금" className="block mb-6 group">
+        <div className="p-5 bg-white rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.08)] border border-[#00C896]/40 hover:border-[#00C896] transition-all">
+          <div className="flex justify-between items-start mb-2">
+            <span className="text-xs font-bold text-[#00C896] bg-[#00C896]/10 px-2 py-1 rounded">추천</span>
+            <span className="text-gray-300 group-hover:text-[#00C896] transition-colors">↗</span>
+          </div>
+          <h3 className="text-lg font-bold text-gray-800 leading-tight mb-1">
+            내 <span className="text-[#00C896]">숨은 정부지원금</span><br/>
+            지금 바로 조회하기
           </h3>
-          <p className="text-sm text-[#666666]">
-            놓친 지원금 1분 조회 &rarr;
-          </p>
-        </Link>
-      </div>
+          <p className="text-xs text-gray-400">놓치면 못 받는 지원금 확인</p>
+        </div>
+      </Link>
 
       {/* 인기 검색어 */}
       <div className="bg-white border border-gray-100 rounded-xl shadow-sm mb-4 overflow-hidden">
