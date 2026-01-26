@@ -398,7 +398,7 @@ a:hover {
   animation: fadeIn 0.4s ease-out;
 }
 
-/* 마키 애니메이션 (롤링 티커) */
+/* 마키 애니메이션 (롤링 티커) - 좌→우 */
 @keyframes marquee {
   0% {
     transform: translateX(0%);
@@ -413,5 +413,23 @@ a:hover {
 }
 
 .animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* 마키 애니메이션 - 우→좌 (Right to Left) */
+@keyframes marquee-rtl {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee-rtl {
+  animation: marquee-rtl 30s linear infinite;
+}
+
+.animate-marquee-rtl:hover {
   animation-play-state: paused;
 }

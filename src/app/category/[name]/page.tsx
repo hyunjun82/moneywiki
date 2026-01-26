@@ -52,14 +52,30 @@ export async function generateStaticParams() {
   }));
 }
 
+// 정부지원금 카테고리 추천 문서 (복지/고용 관련)
+const governmentSupportKeywords = [
+  "지원금", "보조금", "급여", "수당", "혜택", "지원", "장려금", "청년", "출산", "육아",
+  "복지", "실업", "고용", "근로장려", "자녀장려", "긴급", "소득", "저소득"
+];
+
 export default async function CategoryPage({ params }: PageProps) {
   const { name } = await params;
   const categoryName = decodeURIComponent(name);
   const allDocs = getAllWikiDocuments();
 
-  const docs = allDocs.filter(doc => (doc.category || "일반") === categoryName);
+  let docs = allDocs.filter(doc => (doc.category || "일반") === categoryName);
 
-  if (docs.length === 0) {
+  // 정부지원금 카테고리: 문서가 없으면 복지/고용 관련 문서 자동 추천
+  if (categoryName === "정부지원금" && docs.length === 0) {
+    docs = allDocs.filter(doc =>
+      governmentSupportKeywords.some(keyword =>
+        doc.title.includes(keyword) || doc.slug.includes(keyword)
+      )
+    ).slice(0, 30);
+  }
+
+  // 정부지원금 외 카테고리: 문서 없으면 404
+  if (docs.length === 0 && categoryName !== "정부지원금") {
     notFound();
   }
 
@@ -82,21 +98,50 @@ export default async function CategoryPage({ params }: PageProps) {
         </div>
       </div>
 
+      {/* 정부지원금 특별 안내 */}
+      {categoryName === "정부지원금" && (
+        <div className="mb-8 p-6 bg-gradient-to-br from-yellow-50 to-yellow-100 border-2 border-yellow-300 rounded-xl">
+          <h2 className="text-lg font-bold text-gray-900 mb-2">💰 숨은 정부지원금 찾기</h2>
+          <p className="text-sm text-gray-700 mb-4">
+            청년 지원금, 출산 혜택, 근로장려금 등 내가 받을 수 있는 정부 지원금을 확인하세요.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <a href="https://www.gov.kr" target="_blank" rel="noopener noreferrer"
+               className="px-4 py-2 bg-emerald-600 text-white text-sm font-medium rounded-lg hover:bg-emerald-700 transition-colors">
+              정부24 바로가기 →
+            </a>
+            <a href="https://www.bokjiro.go.kr" target="_blank" rel="noopener noreferrer"
+               className="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors">
+              복지로 바로가기 →
+            </a>
+          </div>
+        </div>
+      )}
+
       {/* 문서 목록 */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        {sortedDocs.map((doc) => (
-          <Link
-            key={doc.slug}
-            href={`/w/${encodeURIComponent(doc.slug)}`}
-            className="p-4 bg-white border border-neutral-200 rounded-lg hover:border-emerald-300 transition-colors"
-          >
-            <h3 className="font-medium text-neutral-800 line-clamp-1">{doc.title}</h3>
-            <p className="text-xs text-neutral-500 mt-1 line-clamp-2">
-              {doc.summary || doc.description}
-            </p>
+      {docs.length > 0 ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {sortedDocs.map((doc) => (
+            <Link
+              key={doc.slug}
+              href={`/w/${encodeURIComponent(doc.slug)}`}
+              className="p-4 bg-white border border-neutral-200 rounded-lg hover:border-emerald-300 transition-colors"
+            >
+              <h3 className="font-medium text-neutral-800 line-clamp-1">{doc.title}</h3>
+              <p className="text-xs text-neutral-500 mt-1 line-clamp-2">
+                {doc.summary || doc.description}
+              </p>
+            </Link>
+          ))}
+        </div>
+      ) : (
+        <div className="text-center py-12 bg-neutral-50 rounded-xl">
+          <p className="text-neutral-500 mb-4">아직 등록된 문서가 없습니다.</p>
+          <Link href="/" className="text-emerald-600 hover:underline">
+            홈으로 돌아가기 →
           </Link>
-        ))}
-      </div>
+        </div>
+      )}
     </main>
   );
 }
