@@ -110,8 +110,31 @@ export default function DSRCalculator() {
 
   const dsrStatus = getDsrStatus();
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FinancialProduct",
+    "name": "DSR 계산기 (총부채원리금상환비율)",
+    "description": "DSR(총부채원리금상환비율)을 계산하여 대출 가능 여부를 확인하는 온라인 계산기. 금융위원회 기준 적용",
+    "url": "https://jjyu.co.kr/calculators/dsr",
+    "provider": {
+      "@type": "Organization",
+      "name": "머니위키",
+      "url": "https://jjyu.co.kr"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "KRW"
+    }
+  };
+
   return (
-    <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
       {/* 헤더 */}
       <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
         <div className="flex items-center gap-3">
@@ -476,5 +499,6 @@ export default function DSRCalculator() {
         </div>
       </div>
     </div>
+    </>
   );
 }

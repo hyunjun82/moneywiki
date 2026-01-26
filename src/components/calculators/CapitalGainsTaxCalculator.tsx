@@ -471,8 +471,31 @@ export default function CapitalGainsTaxCalculator() {
     { label: "백만", value: 1000000 },
   ];
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FinancialProduct",
+    "name": "양도소득세 계산기",
+    "description": "부동산 양도소득세를 계산하는 온라인 계산기. 주택, 오피스텔, 상가, 분양권 모두 계산 가능. 국세청 기준 적용",
+    "url": "https://jjyu.co.kr/calculators/capital-gains-tax",
+    "provider": {
+      "@type": "Organization",
+      "name": "머니위키",
+      "url": "https://jjyu.co.kr"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "KRW"
+    }
+  };
+
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <div className="bg-white rounded-lg shadow-sm border border-gray-200">
       {/* 헤더 */}
       <div className="border-b border-gray-200">
         <div className="flex items-center gap-2 px-4 py-3 bg-gray-50">
@@ -1169,5 +1192,6 @@ export default function CapitalGainsTaxCalculator() {
         </div>
       </div>
     </div>
+    </>
   );
 }

@@ -52,8 +52,31 @@ export default function LoanInterestCalculator() {
     return `${formatNumber(num)}원`;
   };
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FinancialProduct",
+    "name": "대출이자 계산기",
+    "description": "단리와 복리 대출이자를 정확하게 계산하는 온라인 계산기. 금융감독원과 한국은행 기준 적용",
+    "url": "https://jjyu.co.kr/calculators/loan-interest",
+    "provider": {
+      "@type": "Organization",
+      "name": "머니위키",
+      "url": "https://jjyu.co.kr"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "KRW"
+    }
+  };
+
   return (
-    <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
       <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
@@ -294,5 +317,6 @@ export default function LoanInterestCalculator() {
         </div>
       </div>
     </div>
+    </>
   );
 }
