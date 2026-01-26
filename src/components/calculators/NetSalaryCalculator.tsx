@@ -429,11 +429,6 @@ export default function NetSalaryCalculator() {
             </div>
           </div>
 
-          {/* 광고 영역 */}
-          <div className="mb-4 min-h-[90px] bg-neutral-100 rounded-xl flex items-center justify-center">
-            <p className="text-neutral-400 text-sm">광고 영역</p>
-          </div>
-
           {/* 표 내용 - 조건부 렌더링 */}
           <div className="overflow-x-auto">
             {tableType === "annual" ? (
