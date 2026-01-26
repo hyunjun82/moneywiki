@@ -397,3 +397,21 @@ a:hover {
 .animate-in {
   animation: fadeIn 0.4s ease-out;
 }
+
+/* 마키 애니메이션 (롤링 티커) */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}

@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { getAllWikiDocuments } from "@/lib/wiki";
+import MarqueeBanner from "@/components/MarqueeBanner";
 
 // 카테고리별 이모지
 const categoryEmoji: Record<string, string> = {
+  "정부지원금": "💰",
   "연말정산": "📊",
   "실업급여": "📋",
   "퇴직금": "💵",
@@ -66,9 +68,13 @@ export default function Home() {
   ).slice(0, 6);
 
   return (
-    <main className="max-w-5xl mx-auto px-6 py-12">
-      {/* 히어로 - 간소화 */}
-      <section className="text-center mb-12">
+    <>
+      {/* 롤링 티커 - 정부지원금 홍보 */}
+      <MarqueeBanner />
+
+      <main className="max-w-5xl mx-auto px-6 py-12">
+        {/* 히어로 - 간소화 */}
+        <section className="text-center mb-12">
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
           머니위키
         </h1>
@@ -176,5 +182,6 @@ export default function Home() {
         </Link>
       </div>
     </main>
+    </>
   );
 }

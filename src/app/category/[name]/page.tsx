@@ -13,6 +13,7 @@ export const dynamicParams = true; // 미리 생성되지 않은 페이지는 �
 
 // 카테고리별 이모지
 const categoryEmoji: Record<string, string> = {
+  "정부지원금": "💰",
   "연말정산": "📊",
   "실업급여": "📋",
   "퇴직금": "💵",
