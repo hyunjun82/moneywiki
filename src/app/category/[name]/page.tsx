@@ -45,9 +45,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export async function generateStaticParams() {
-  // 선택적: 가장 인기 있는 카테고리만 미리 생성 (나머지는 on-demand ISR)
-  const popularCategories = ["부동산", "연말정산", "실업급여", "세금", "금융", "근로/노동"];
-  return popularCategories.map((name) => ({
+  // 실제 문서에서 모든 카테고리 추출
+  const allDocs = getAllWikiDocuments();
+  const categories = new Set<string>();
+
+  allDocs.forEach(doc => {
+    const category = doc.category || "일반";
+    categories.add(category);
+  });
+
+  // 정부지원금 카테고리도 추가
+  categories.add("정부지원금");
+
+  return Array.from(categories).map((name) => ({
     name: encodeURIComponent(name),
   }));
 }
