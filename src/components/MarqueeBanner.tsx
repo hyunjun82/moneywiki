@@ -2,48 +2,99 @@
 
 import Link from 'next/link';
 
-// 뉴스 티커 텍스트 (흐르는 문장)
-const tickerMessages = [
-  { text: '2026년 정부지원금 마감 임박', link: '/category/정부지원금' },
-  { text: '내 숨은 환급금 조회하기', link: '/w/근로장려금' },
-  { text: '청년 월세 지원 조건 확인', link: '/w/청년월세지원' },
-  { text: '실업급여 수급자격 바로 확인', link: '/w/실업급여' },
-  { text: '육아휴직 급여 계산하기', link: '/w/육아휴직-급여' },
-  { text: '2026 연말정산 환급 꿀팁', link: '/w/연말정산' },
-  { text: '기초연금 수급 자격 확인', link: '/w/기초연금' },
-  { text: '출산지원금 최대 200만원 받기', link: '/w/출산지원금' },
-];
-
 export default function MarqueeBanner() {
-  // 티커 텍스트 생성 (• 구분자로 연결)
-  const TickerContent = () => (
-    <>
-      {tickerMessages.map((item, index) => (
-        <span key={index} className="inline-flex items-center">
-          <Link
-            href={item.link}
-            className="hover:text-[#00C896] transition-colors"
-          >
-            {item.text}
-          </Link>
-          <span className="mx-6 text-gray-500">•</span>
-        </span>
-      ))}
-    </>
-  );
-
   return (
-    <div className="bg-[#222] overflow-hidden h-10">
-      <div className="relative flex overflow-hidden h-full items-center whitespace-nowrap">
-        {/* 첫 번째 콘텐츠 */}
-        <div className="animate-marquee-rtl inline-flex items-center text-white text-sm">
-          <TickerContent />
-        </div>
-        {/* 복제된 콘텐츠 (무한 반복용) */}
-        <div className="animate-marquee-rtl inline-flex items-center text-white text-sm" aria-hidden="true">
-          <TickerContent />
+    <div className="w-full bg-[#1a1a1a] text-white h-12 overflow-hidden flex items-center relative">
+      {/* 왼쪽 라벨 (고정) */}
+      <div className="bg-[#00C896] h-full px-4 flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg">
+        머니위키 NOW
+      </div>
+
+      {/* 흐르는 텍스트 영역 (Marquee) - 인라인 스타일로 강제 애니메이션 */}
+      <div className="flex-1 overflow-hidden relative">
+        <div
+          className="flex whitespace-nowrap"
+          style={{
+            animation: 'marquee-scroll 25s linear infinite',
+          }}
+        >
+          {/* 내용 세트 1 */}
+          <span className="mx-6 text-sm font-medium inline-flex items-center gap-2">
+            <Link href="/category/정부지원금" className="hover:text-[#00C896] transition-colors">
+              📢 2026년 정부지원금 신청 마감 임박
+            </Link>
+          </span>
+          <span className="text-gray-500">|</span>
+          <span className="mx-6 text-sm font-medium inline-flex items-center gap-2 text-[#00C896]">
+            <Link href="/w/근로장려금" className="hover:text-white transition-colors">
+              💰 내 숨은 환급금 1분 조회
+            </Link>
+          </span>
+          <span className="text-gray-500">|</span>
+          <span className="mx-6 text-sm font-medium inline-flex items-center gap-2">
+            <Link href="/w/청년월세지원" className="hover:text-[#00C896] transition-colors">
+              🏠 청년 월세 지원 조건 완화
+            </Link>
+          </span>
+          <span className="text-gray-500">|</span>
+          <span className="mx-6 text-sm font-medium inline-flex items-center gap-2">
+            <Link href="/w/실업급여-계산기" className="hover:text-[#00C896] transition-colors">
+              📊 실업급여 계산기 인기
+            </Link>
+          </span>
+          <span className="text-gray-500">|</span>
+          <span className="mx-6 text-sm font-medium inline-flex items-center gap-2">
+            <Link href="/w/퇴직금-계산기" className="hover:text-[#00C896] transition-colors">
+              💵 퇴직금 계산기 바로가기
+            </Link>
+          </span>
+          <span className="text-gray-500">|</span>
+
+          {/* 내용 세트 2 (무한 반복용 복제) */}
+          <span className="mx-6 text-sm font-medium inline-flex items-center gap-2">
+            <Link href="/category/정부지원금" className="hover:text-[#00C896] transition-colors">
+              📢 2026년 정부지원금 신청 마감 임박
+            </Link>
+          </span>
+          <span className="text-gray-500">|</span>
+          <span className="mx-6 text-sm font-medium inline-flex items-center gap-2 text-[#00C896]">
+            <Link href="/w/근로장려금" className="hover:text-white transition-colors">
+              💰 내 숨은 환급금 1분 조회
+            </Link>
+          </span>
+          <span className="text-gray-500">|</span>
+          <span className="mx-6 text-sm font-medium inline-flex items-center gap-2">
+            <Link href="/w/청년월세지원" className="hover:text-[#00C896] transition-colors">
+              🏠 청년 월세 지원 조건 완화
+            </Link>
+          </span>
+          <span className="text-gray-500">|</span>
+          <span className="mx-6 text-sm font-medium inline-flex items-center gap-2">
+            <Link href="/w/실업급여-계산기" className="hover:text-[#00C896] transition-colors">
+              📊 실업급여 계산기 인기
+            </Link>
+          </span>
+          <span className="text-gray-500">|</span>
+          <span className="mx-6 text-sm font-medium inline-flex items-center gap-2">
+            <Link href="/w/퇴직금-계산기" className="hover:text-[#00C896] transition-colors">
+              💵 퇴직금 계산기 바로가기
+            </Link>
+          </span>
+          <span className="text-gray-500">|</span>
         </div>
       </div>
+
+      {/* 인라인 스타일 태그로 애니메이션 강제 정의 */}
+      <style jsx>{`
+        @keyframes marquee-scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </div>
   );
 }

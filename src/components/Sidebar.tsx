@@ -45,18 +45,19 @@ const popularCalculators = [
 export default function Sidebar() {
   return (
     <aside className="w-72 shrink-0 hidden lg:block">
-      {/* 정부지원금 배너 - 사이드바 맨 위 (광고보다 위) */}
-      <Link href="/category/정부지원금" className="block mb-6 group">
-        <div className="p-5 bg-white rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.08)] border border-[#00C896]/40 hover:border-[#00C896] transition-all">
-          <div className="flex justify-between items-start mb-2">
-            <span className="text-xs font-bold text-[#00C896] bg-[#00C896]/10 px-2 py-1 rounded">추천</span>
-            <span className="text-gray-300 group-hover:text-[#00C896] transition-colors">↗</span>
+      {/* 1. 정부지원금 배너 (최상단 고정) */}
+      <Link href="/category/정부지원금" className="group block mb-6">
+        <div className="bg-white rounded-xl p-5 border-2 border-[#00C896] shadow-[0_4px_20px_rgba(0,200,150,0.15)] hover:shadow-lg transition-all transform hover:-translate-y-1 relative overflow-hidden">
+          <div className="absolute top-0 right-0 bg-[#00C896] text-white text-[10px] px-2 py-1 rounded-bl-lg font-bold">
+            필수 체크
           </div>
-          <h3 className="text-lg font-bold text-gray-800 leading-tight mb-1">
-            내 <span className="text-[#00C896]">숨은 정부지원금</span><br/>
-            지금 바로 조회하기
-          </h3>
-          <p className="text-xs text-gray-400">놓치면 못 받는 지원금 확인</p>
+          <div className="flex flex-col">
+            <span className="text-gray-500 text-xs mb-1">놓치면 100% 손해!</span>
+            <h3 className="text-lg font-bold text-gray-900 leading-tight">
+              내 <span className="text-[#00C896]">숨은 정부지원금</span><br/>
+              지금 바로 조회하기
+            </h3>
+          </div>
         </div>
       </Link>
 

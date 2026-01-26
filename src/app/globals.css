@@ -430,3 +430,17 @@ a:hover {
   animation: marquee-rtl 35s linear infinite;
   will-change: transform;
 }
+
+/* 뉴스 티커 스크롤 애니메이션 (백업) */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-scroll {
+  animation: marquee-scroll 25s linear infinite;
+}
