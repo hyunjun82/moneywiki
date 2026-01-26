@@ -1,5 +1,4 @@
-export default function robots() {
-  return `# robots.txt for 머니위키
+# robots.txt for 머니위키
 User-agent: *
 Allow: /
 
@@ -15,5 +14,3 @@ Sitemap: https://www.jjyu.co.kr/sitemap.xml
 # Google은 Crawl-delay를 지원하지 않으므로 제거
 
 DaumWebMasterTool:8f277e6a15ecca107afcea48a37bb3aa62fde6892c1349fc8bd43ce576745cd2:XNG90a1IomEQ6b3RH86ohQ==
-`
-}
