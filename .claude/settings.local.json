@@ -235,7 +235,8 @@
       "Bash(setx CLAUDE_CODE_ENABLE_TASKS:*)",
       "Bash(npx playwright:*)",
       "Bash(node test-loan-calculator.js:*)",
-      "Bash(timeout 10 tail:*)"
+      "Bash(timeout 10 tail:*)",
+      "Bash(npx next build:*)"
     ]
   }
 }
