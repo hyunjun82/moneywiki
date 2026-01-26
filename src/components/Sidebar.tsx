@@ -45,28 +45,18 @@ const popularCalculators = [
 export default function Sidebar() {
   return (
     <aside className="w-72 shrink-0 hidden lg:block">
-      {/* 💰 정부지원금 스티키 배너 */}
+      {/* 정부지원금 스티키 배너 - 토스 스타일 */}
       <div className="sticky top-4 mb-4">
         <Link
           href="/category/정부지원금"
-          className="block bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-400 p-5 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-[1.02] border-2 border-yellow-500"
+          className="block bg-white p-5 rounded-xl border border-[#E5E7EB] shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.12)] hover:border-[#00C896] transition-all"
         >
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-2xl shadow-md">
-              💰
-            </div>
-            <div className="flex-1">
-              <h3 className="text-lg font-bold text-gray-900">숨은 정부지원금 찾기</h3>
-              <p className="text-xs text-gray-700 font-medium">1분 만에 조회</p>
-            </div>
-          </div>
-          <p className="text-sm text-gray-800 leading-snug mb-2">
-            나도 모르게 놓친 지원금, 지금 바로 확인하세요 →
+          <h3 className="text-lg font-bold text-[#333333] mb-1">
+            숨은 정부지원금 찾기
+          </h3>
+          <p className="text-sm text-[#666666]">
+            놓친 지원금 1분 조회 &rarr;
           </p>
-          <div className="flex items-center justify-between text-xs text-gray-700">
-            <span className="font-semibold">✨ 2026년 최신 정보</span>
-            <span className="font-bold text-red-600">마감 임박!</span>
-          </div>
         </Link>
       </div>
 

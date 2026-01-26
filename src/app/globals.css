@@ -416,20 +416,17 @@ a:hover {
   animation-play-state: paused;
 }
 
-/* 마키 애니메이션 - 우→좌 (Right to Left) */
+/* 마키 애니메이션 - 우→좌 (Right to Left) - 부드러운 linear */
 @keyframes marquee-rtl {
   0% {
-    transform: translateX(0%);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translate3d(-100%, 0, 0);
   }
 }
 
 .animate-marquee-rtl {
-  animation: marquee-rtl 30s linear infinite;
-}
-
-.animate-marquee-rtl:hover {
-  animation-play-state: paused;
+  animation: marquee-rtl 35s linear infinite;
+  will-change: transform;
 }

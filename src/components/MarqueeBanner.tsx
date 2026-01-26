@@ -25,7 +25,7 @@ export default function MarqueeBanner() {
         <Link
           key={`${keyword.slug}-${index}`}
           href={`/w/${keyword.slug}`}
-          className="inline-flex items-center px-4 py-1.5 bg-white border border-yellow-300 rounded-full text-sm font-medium text-gray-700 hover:bg-yellow-200 hover:border-yellow-400 transition-colors whitespace-nowrap shadow-sm"
+          className="inline-flex items-center px-3 py-1 bg-white/80 rounded text-sm text-[#007A5C] hover:bg-white hover:text-[#00C896] transition-colors whitespace-nowrap"
           onClick={(e) => e.stopPropagation()}
         >
           {keyword.label}
@@ -35,14 +35,14 @@ export default function MarqueeBanner() {
   );
 
   return (
-    <div className="bg-gradient-to-r from-yellow-100 via-yellow-50 to-yellow-100 border-y border-yellow-200 overflow-hidden">
-      <div className="relative flex overflow-hidden">
+    <div className="bg-[#333333] overflow-hidden h-10">
+      <div className="relative flex overflow-hidden h-full items-center">
         {/* 첫 번째 콘텐츠 */}
-        <div className="animate-marquee-rtl whitespace-nowrap py-3 flex items-center gap-3 pl-4">
+        <div className="animate-marquee-rtl whitespace-nowrap flex items-center gap-6 pl-6">
           <KeywordPills />
         </div>
         {/* 복제된 콘텐츠 (무한 반복용) */}
-        <div className="animate-marquee-rtl whitespace-nowrap py-3 flex items-center gap-3 pl-4" aria-hidden="true">
+        <div className="animate-marquee-rtl whitespace-nowrap flex items-center gap-6 pl-6" aria-hidden="true">
           <KeywordPills />
         </div>
       </div>
