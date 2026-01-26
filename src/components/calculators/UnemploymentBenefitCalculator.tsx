@@ -372,33 +372,45 @@ export default function UnemploymentBenefitCalculator() {
         </div>
       </div>
 
-      {/* 수급 조건 안내 */}
-      <div className="px-6 py-4 bg-amber-50 border-t border-emerald-100">
-        <h4 className="font-medium text-emerald-800 mb-2">⚠️ 실업급여 받으려면</h4>
-        <ul className="text-sm text-amber-700 space-y-1">
-          <li>• 고용보험 가입 180일 이상 (퇴직 전 18개월 중)</li>
-          <li>• 비자발적 퇴사 (권고사직, 계약만료, 정리해고 등)</li>
-          <li>• 적극적인 구직활동 의사</li>
-          <li>• 퇴직 후 12개월 이내 신청</li>
-        </ul>
-      </div>
-
-      {/* 주의사항 */}
-      <div className="px-6 py-4 bg-neutral-50 text-xs text-neutral-500">
-        <p>* 이 계산기는 참고용이에요. 실제 금액과 다를 수 있어요.</p>
-        <p>
-          * 정확한 금액은{" "}
-          <a
-            href="https://www.ei.go.kr"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-emerald-600 underline"
-          >
-            고용24
-          </a>
-          에서 확인하세요.
-        </p>
-        <p>* 2026년 기준: 상한액 68,100원, 하한액 66,048원</p>
+      {/* 실업급여 안내 */}
+      <div className="px-6 py-4 bg-emerald-50 border-t border-emerald-100">
+        <div className="p-4 rounded-xl border border-emerald-200 bg-white">
+          <h4 className="font-medium text-emerald-800 mb-2 flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            실업급여가 뭔가요?
+          </h4>
+          <p className="text-sm text-emerald-700 mb-2">
+            고용보험에 가입한 근로자가 비자발적으로 실직했을 때 받는 지원금이에요. <span className="font-medium">최대 270일까지 받을 수 있어요.</span>
+          </p>
+          <ul className="text-sm text-emerald-700 space-y-1.5 mt-3">
+            <li className="flex items-start gap-2">
+              <span className="text-green-600 mt-0.5">✓</span>
+              <span><strong>수급 조건:</strong> 고용보험 180일 이상 가입 (퇴직 전 18개월 중)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-green-600 mt-0.5">✓</span>
+              <span><strong>비자발적 퇴사:</strong> 권고사직, 계약만료, 정리해고 등</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-emerald-600 mt-0.5">✓</span>
+              <span><strong>구직활동:</strong> 4주마다 실업인정 받고 구직활동 증빙</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-amber-600 mt-0.5">⚠</span>
+              <span><strong>신청 기한:</strong> 퇴직 후 12개월 이내</span>
+            </li>
+          </ul>
+          <div className="mt-3 pt-3 border-t border-emerald-200">
+            <p className="text-xs text-emerald-700 mb-1">
+              <strong>2026년 기준:</strong> 상한액 68,100원/일, 하한액 66,048원/일
+            </p>
+            <p className="text-xs text-emerald-600">
+              📌 출처: <a href="https://www.ei.go.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">고용24</a> · <a href="https://www.moel.go.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">고용노동부</a>
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* 월급별 실업급여 비교표 */}

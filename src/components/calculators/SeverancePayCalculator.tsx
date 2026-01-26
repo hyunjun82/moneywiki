@@ -692,11 +692,38 @@ export default function SeverancePayCalculator() {
       {workerType === "daily" && <DailyWorkerCalculator />}
       {workerType === "parttime" && <ParttimeWorkerCalculator />}
 
-      {/* 주의사항 */}
-      <div className="px-6 py-4 bg-neutral-50 text-xs text-neutral-500">
-        <p>* 이 계산기는 참고용이에요. 실제 퇴직금과 다를 수 있어요.</p>
-        <p>* 정확한 계산은 <a href="https://www.moel.go.kr/retirementpayCal.do" target="_blank" rel="noopener noreferrer" className="text-emerald-600 underline">고용노동부 퇴직금 계산기</a>를 이용하세요.</p>
-        <p>* 퇴직금은 퇴직일로부터 14일 이내에 지급해야 해요.</p>
+      {/* 퇴직금 안내 */}
+      <div className="px-6 py-4 bg-emerald-50 border-t border-emerald-100">
+        <div className="p-4 rounded-xl border border-emerald-200 bg-white">
+          <h4 className="font-medium text-emerald-800 mb-2 flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            퇴직금이 뭔가요?
+          </h4>
+          <p className="text-sm text-emerald-700 mb-2">
+            1년 이상 근무한 근로자가 퇴직할 때 받는 법정 수당이에요. <span className="font-medium">알바, 정규직 상관없이 조건만 맞으면 받을 수 있어요.</span>
+          </p>
+          <ul className="text-sm text-emerald-700 space-y-1.5 mt-3">
+            <li className="flex items-start gap-2">
+              <span className="text-green-600 mt-0.5">✓</span>
+              <span><strong>정규직/계약직:</strong> 1년 이상 근무 시 무조건 지급</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-green-600 mt-0.5">✓</span>
+              <span><strong>알바/일용직:</strong> 주 15시간 이상 + 1년 이상 근무</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-amber-600 mt-0.5">⚠</span>
+              <span><strong>지급 기한:</strong> 퇴직일로부터 14일 이내 (지연 시 연 20% 이자)</span>
+            </li>
+          </ul>
+          <div className="mt-3 pt-3 border-t border-emerald-200">
+            <p className="text-xs text-emerald-600">
+              📌 출처: <a href="https://www.moel.go.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">고용노동부</a> · <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">근로자퇴직급여보장법</a>
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* 근속연수별 퇴직금 예상표 */}
