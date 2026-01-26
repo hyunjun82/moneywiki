@@ -20,6 +20,7 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     "/w/[slug]": ["./content/wiki/**/*"],
     "/forms/[slug]": ["./content/wiki/**/*"],
+    "/category/[name]": ["./content/wiki/**/*"],
     "/sitemap.xml": ["./content/wiki/**/*"],
   },
   // 기존 URL 리다이렉트 (SEO 유지)

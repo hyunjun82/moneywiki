@@ -237,7 +237,8 @@
       "Bash(node test-loan-calculator.js:*)",
       "Bash(timeout 10 tail:*)",
       "Bash(npx next build:*)",
-      "WebFetch(domain:job.cosmosfarm.com)"
+      "WebFetch(domain:job.cosmosfarm.com)",
+      "Bash(git restore:*)"
     ]
   }
 }

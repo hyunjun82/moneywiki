@@ -7,6 +7,10 @@ interface PageProps {
   params: Promise<{ name: string }>;
 }
 
+// ISR 사용 - 주문형 정적 생성 (On-Demand ISR)
+export const revalidate = 3600; // 1시간마다 갱신
+export const dynamicParams = true; // 미리 생성되지 않은 페이지는 런타임에 생성
+
 // 카테고리별 이모지
 const categoryEmoji: Record<string, string> = {
   "연말정산": "📊",
@@ -40,10 +44,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export async function generateStaticParams() {
-  const allDocs = getAllWikiDocuments();
-  const categories = [...new Set(allDocs.map(doc => doc.category || "일반"))];
-
-  return categories.map((name) => ({
+  // 선택적: 가장 인기 있는 카테고리만 미리 생성 (나머지는 on-demand ISR)
+  const popularCategories = ["부동산", "연말정산", "실업급여", "세금", "금융", "근로/노동"];
+  return popularCategories.map((name) => ({
     name: encodeURIComponent(name),
   }));
 }
