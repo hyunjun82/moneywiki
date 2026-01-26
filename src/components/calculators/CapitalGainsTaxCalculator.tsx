@@ -25,8 +25,9 @@ function toManwon(num: number): string {
 }
 
 // 부동산 유형
-type PropertyType = "house" | "land";
+type PropertyType = "house" | "land" | "officetel" | "commercial" | "presale";
 type HouseCategory = "oneHouseExempt" | "oneHouseTaxable" | "twoHouse" | "threeHouse";
+type OfficetelCategory = "residential" | "commercial";
 
 // 2026년 양도소득세 기본세율 (누진세)
 function getBaseTaxRate(taxableIncome: number): { rate: number; deduction: number; bracket: string } {
@@ -47,6 +48,35 @@ function getBaseTaxRate(taxableIncome: number): { rate: number; deduction: numbe
   } else {
     return { rate: 45, deduction: 65940000, bracket: "10억 초과" };
   }
+}
+
+// 단기보유 세율 (오피스텔, 분양권)
+function getShortTermRate(
+  holdingYears: number,
+  propertyType: PropertyType,
+  category?: OfficetelCategory
+): { rate: number; description: string } {
+  // 분양권 (지역 구분 없이 일괄 적용 - 국세청 기준)
+  if (propertyType === "presale") {
+    if (holdingYears < 1) {
+      return { rate: 70, description: "분양권 1년 미만" };
+    } else if (holdingYears < 2) {
+      return { rate: 60, description: "분양권 1~2년" };
+    } else {
+      return { rate: 60, description: "분양권 2년 이상" };
+    }
+  }
+
+  // 오피스텔 (업무용)
+  if (propertyType === "officetel" && category === "commercial") {
+    if (holdingYears < 1) {
+      return { rate: 50, description: "업무용 오피스텔 1년 미만" };
+    } else if (holdingYears < 2) {
+      return { rate: 40, description: "업무용 오피스텔 1~2년" };
+    }
+  }
+
+  return { rate: 0, description: "" };
 }
 
 // 장기보유특별공제율 계산
@@ -155,6 +185,9 @@ export default function CapitalGainsTaxCalculator() {
   // 토지 옵션
   const [isNonBusiness, setIsNonBusiness] = useState(false);
 
+  // 오피스텔 옵션
+  const [officetelCategory, setOfficetelCategory] = useState<OfficetelCategory>("residential");
+
   // 보유/거주기간
   const [holdingYears, setHoldingYears] = useState(5);
   const [residenceYears, setResidenceYears] = useState(2);
@@ -255,9 +288,15 @@ export default function CapitalGainsTaxCalculator() {
 
     let taxableGain = gain;
     let exemptAmount = 0;
+    let longTermDeduction = 0;
+    let longTermDescription = "";
 
-    // 2. 1세대 1주택 비과세 적용
-    if (houseCategory === "oneHouseExempt") {
+    // 2. 1세대 1주택 비과세 적용 (주택 + 오피스텔 주거용)
+    const canApplyExemption =
+      (propertyType === "house" && houseCategory === "oneHouseExempt") ||
+      (propertyType === "officetel" && officetelCategory === "residential" && houseCategory === "oneHouseExempt");
+
+    if (canApplyExemption) {
       if (salePrice <= 1200000000) {
         // 12억 이하: 전액 비과세
         setResult({
@@ -286,23 +325,94 @@ export default function CapitalGainsTaxCalculator() {
       }
     }
 
-    // 3. 장기보유특별공제 계산
-    const isOneHouseExempt = houseCategory === "oneHouseExempt" || houseCategory === "oneHouseTaxable";
-    const longTermInfo = getLongTermDeductionRate(
-      holdingYears,
-      residenceYears,
-      isOneHouseExempt && residenceYears >= 2
-    );
-    const longTermDeduction = Math.round(taxableGain * (longTermInfo.totalRate / 100));
+    // 3. 분양권 - 단기 고율 과세 (장기보유공제 없음, 지역 구분 없음)
+    if (propertyType === "presale") {
+      const shortTermInfo = getShortTermRate(holdingYears, propertyType);
+      const basicDeduction = 0; // 분양권 단기는 기본공제 없음
+      const taxableIncome = Math.max(taxableGain - basicDeduction, 0);
+      const tax = Math.round(taxableIncome * (shortTermInfo.rate / 100));
+      const localTax = Math.round(tax * 0.1);
 
-    // 4. 양도소득금액
+      setResult({
+        gain,
+        taxableGain,
+        exemptAmount: 0,
+        longTermDeduction: 0,
+        basicDeduction,
+        taxableIncome,
+        baseRate: shortTermInfo.rate,
+        additionalRate: 0,
+        totalRate: shortTermInfo.rate,
+        tax,
+        localTax,
+        totalTax: tax + localTax,
+        rateDescription: shortTermInfo.description,
+        longTermDescription: "분양권은 장기보유공제 적용 안 됨 (2년 이상 보유해도 60%)",
+        surtaxDescription: ""
+      });
+      return;
+    }
+
+    // 4. 오피스텔 업무용 - 단기 고율 or 장기 누진세
+    if (propertyType === "officetel" && officetelCategory === "commercial") {
+      const shortTermInfo = getShortTermRate(holdingYears, propertyType, officetelCategory);
+
+      if (shortTermInfo.rate > 0) {
+        // 2년 미만: 단기 고율
+        const basicDeduction = 0;
+        const taxableIncome = Math.max(taxableGain - basicDeduction, 0);
+        const tax = Math.round(taxableIncome * (shortTermInfo.rate / 100));
+        const localTax = Math.round(tax * 0.1);
+
+        setResult({
+          gain,
+          taxableGain,
+          exemptAmount: 0,
+          longTermDeduction: 0,
+          basicDeduction,
+          taxableIncome,
+          baseRate: shortTermInfo.rate,
+          additionalRate: 0,
+          totalRate: shortTermInfo.rate,
+          tax,
+          localTax,
+          totalTax: tax + localTax,
+          rateDescription: shortTermInfo.description,
+          longTermDescription: "",
+          surtaxDescription: ""
+        });
+        return;
+      }
+      // 2년 이상: 장기보유공제 적용 후 누진세
+      const longTermInfo = getLongTermDeductionRate(holdingYears, 0, false);
+      longTermDeduction = Math.round(taxableGain * (longTermInfo.totalRate / 100));
+      longTermDescription = longTermInfo.description;
+    }
+
+    // 5. 장기보유특별공제 계산 (주택, 토지, 상가, 오피스텔 주거용)
+    if (propertyType === "house" || propertyType === "land" || propertyType === "commercial" ||
+        (propertyType === "officetel" && officetelCategory === "residential")) {
+      const isOneHouseExempt =
+        (propertyType === "house" || (propertyType === "officetel" && officetelCategory === "residential")) &&
+        (houseCategory === "oneHouseExempt" || houseCategory === "oneHouseTaxable");
+
+      const longTermInfo = getLongTermDeductionRate(
+        holdingYears,
+        residenceYears,
+        isOneHouseExempt && residenceYears >= 2
+      );
+      longTermDeduction = Math.round(taxableGain * (longTermInfo.totalRate / 100));
+      longTermDescription = longTermInfo.description;
+    }
+
+    // 6. 양도소득금액
     const afterLongTerm = taxableGain - longTermDeduction;
 
-    // 5. 기본공제 (연 250만원)
+    // 7. 기본공제 (연 250만원)
     const basicDeduction = 2500000;
     const taxableIncome = Math.max(afterLongTerm - basicDeduction, 0);
 
-    // 6. 세율 적용
+    // 8. 세율 적용
     const { rate: baseRate, deduction, bracket } = getBaseTaxRate(taxableIncome);
     const { additionalRate, description: surtaxDescription } = getSurtaxRate(
       houseCategory,
@@ -314,7 +424,7 @@ export default function CapitalGainsTaxCalculator() {
     const totalRate = baseRate + additionalRate;
     const tax = Math.max(Math.round(taxableIncome * (totalRate / 100) - deduction), 0);
 
-    // 7. 지방소득세 (양도소득세의 10%)
+    // 9. 지방소득세 (양도소득세의 10%)
     const localTax = Math.round(tax * 0.1);
     const totalTax = tax + localTax;
 
@@ -332,12 +442,13 @@ export default function CapitalGainsTaxCalculator() {
       localTax,
       totalTax,
       rateDescription: bracket,
-      longTermDescription: longTermInfo.description,
+      longTermDescription,
       surtaxDescription
     });
   }, [
     salePrice, purchasePrice, expenses, houseCategory, isRegulated,
-    propertyType, isNonBusiness, holdingYears, residenceYears
+    propertyType, isNonBusiness, holdingYears, residenceYears,
+    officetelCategory
   ]);
 
   useEffect(() => {
@@ -370,15 +481,18 @@ export default function CapitalGainsTaxCalculator() {
         </div>
 
         {/* 탭 네비게이션 */}
-        <div className="flex">
+        <div className="flex overflow-x-auto">
           {[
             { type: "house" as PropertyType, label: "주택" },
+            { type: "officetel" as PropertyType, label: "오피스텔" },
+            { type: "commercial" as PropertyType, label: "상가" },
             { type: "land" as PropertyType, label: "토지" },
+            { type: "presale" as PropertyType, label: "분양권" },
           ].map((item) => (
             <button
               key={item.type}
               onClick={() => setPropertyType(item.type)}
-              className={`flex-1 py-2.5 text-sm font-medium transition-all border-b-2 ${
+              className={`flex-1 py-2.5 px-3 text-sm font-medium transition-all border-b-2 whitespace-nowrap ${
                 propertyType === item.type
                   ? "border-emerald-500 text-emerald-600 bg-emerald-50/50"
                   : "border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50"
@@ -420,6 +534,82 @@ export default function CapitalGainsTaxCalculator() {
           </div>
         )}
 
+        {/* 오피스텔 유형 */}
+        {propertyType === "officetel" && (
+          <div className="space-y-2">
+            <label className="block text-sm font-medium text-gray-700">오피스텔 유형</label>
+            <div className="grid grid-cols-2 gap-2">
+              <button
+                onClick={() => setOfficetelCategory("residential")}
+                className={`px-3 py-2 text-sm rounded transition-all text-center ${
+                  officetelCategory === "residential"
+                    ? "bg-emerald-500 text-white"
+                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                }`}
+              >
+                <div className="font-medium">주거용</div>
+                <div className={`text-xs mt-0.5 ${
+                  officetelCategory === "residential" ? "text-emerald-100" : "text-gray-400"
+                }`}>
+                  1주택 비과세 가능
+                </div>
+              </button>
+              <button
+                onClick={() => setOfficetelCategory("commercial")}
+                className={`px-3 py-2 text-sm rounded transition-all text-center ${
+                  officetelCategory === "commercial"
+                    ? "bg-emerald-500 text-white"
+                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                }`}
+              >
+                <div className="font-medium">업무용</div>
+                <div className={`text-xs mt-0.5 ${
+                  officetelCategory === "commercial" ? "text-emerald-100" : "text-gray-400"
+                }`}>
+                  단기 고율 적용
+                </div>
+              </button>
+            </div>
+            {officetelCategory === "residential" && (
+              <div className="mt-2">
+                <label className="block text-sm font-medium text-gray-700 mb-2">주택구분</label>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  {houseCategories.map((item) => (
+                    <button
+                      key={item.type}
+                      onClick={() => setHouseCategory(item.type)}
+                      className={`px-3 py-2 text-sm rounded transition-all text-center ${
+                        houseCategory === item.type
+                          ? "bg-emerald-500 text-white"
+                          : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                      }`}
+                    >
+                      <div className="font-medium">{item.label}</div>
+                      {item.description && (
+                        <div className={`text-xs mt-0.5 ${
+                          houseCategory === item.type ? "text-emerald-100" : "text-gray-400"
+                        }`}>
+                          {item.description}
+                        </div>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* 상가 - 별도 옵션 불필요 (누진세율 적용) */}
+        {propertyType === "commercial" && (
+          <div className="p-3 bg-blue-50 rounded-lg border border-blue-100">
+            <p className="text-sm text-blue-700">
+              <span className="font-medium">상가는 누진세율(6~45%)</span>이 적용되며,
+              보유기간 3년 이상일 때 장기보유특별공제(최대 30%)가 적용돼요.
+            </p>
+          </div>
+        )}
+
         {/* 토지 유형 */}
         {propertyType === "land" && (
           <div className="flex items-center gap-3">
@@ -445,6 +635,28 @@ export default function CapitalGainsTaxCalculator() {
               >
                 비사업용 토지
               </button>
+            </div>
+          </div>
+        )}
+
+        {/* 분양권 안내 */}
+        {propertyType === "presale" && (
+          <div className="space-y-2">
+            <div className="p-3 bg-blue-50 rounded-lg border border-blue-100">
+              <p className="text-sm text-blue-700">
+                <span className="font-medium">분양권 세율 (지역 구분 없음)</span>
+              </p>
+              <ul className="text-sm text-blue-700 mt-2 space-y-1">
+                <li>• 보유기간 1년 미만: <span className="font-medium">70%</span></li>
+                <li>• 보유기간 1~2년: <span className="font-medium">60%</span></li>
+                <li>• 보유기간 2년 이상: <span className="font-medium">60%</span></li>
+              </ul>
+            </div>
+            <div className="p-3 bg-yellow-50 rounded-lg border border-yellow-100">
+              <p className="text-sm text-yellow-700">
+                <span className="font-medium">⚠️ 분양권은 장기보유공제가 적용되지 않아요.</span>
+                {" "}2년 이상 보유해도 60% 세율이 유지되니 주의하세요. (조정대상지역 여부와 무관)
+              </p>
             </div>
           </div>
         )}
