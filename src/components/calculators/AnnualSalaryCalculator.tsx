@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 
 type CalculationType = "monthToYear" | "hourToYear";
+type TableType = "annual" | "monthly";
 
 export default function AnnualSalaryCalculator() {
   const [calcType, setCalcType] = useState<CalculationType>("monthToYear");
@@ -11,6 +12,7 @@ export default function AnnualSalaryCalculator() {
   const [bonusMonths, setBonusMonths] = useState<number>(0);
   const [workHoursPerDay, setWorkHoursPerDay] = useState<number>(8);
   const [workDaysPerWeek, setWorkDaysPerWeek] = useState<number>(5);
+  const [tableType, setTableType] = useState<TableType>("annual");
 
   const [annualSalary, setAnnualSalary] = useState<number>(0);
   const [monthlyAverage, setMonthlyAverage] = useState<number>(0);
@@ -85,6 +87,60 @@ export default function AnnualSalaryCalculator() {
   };
 
   const isMinWageOk = hourlyWage >= MIN_WAGE_2026;
+
+  // 연봉 기준 실수령액 표 데이터
+  const annualSalaryData = [
+    { annual: "1,000만", monthly: "83만", deduction: "10만", netPay: "73만", rate: "12.0%", note: "저소득 구간" },
+    { annual: "1,100만", monthly: "92만", deduction: "11만", netPay: "81만", rate: "12.0%", note: "" },
+    { annual: "1,200만", monthly: "100만", deduction: "12만", netPay: "88만", rate: "12.0%", note: "" },
+    { annual: "1,300만", monthly: "108만", deduction: "14만", netPay: "94만", rate: "13.0%", note: "소득세 시작" },
+    { annual: "1,400만", monthly: "117만", deduction: "15만", netPay: "102만", rate: "12.8%", note: "" },
+    { annual: "1,500만", monthly: "125만", deduction: "17만", netPay: "108만", rate: "13.6%", note: "" },
+    { annual: "1,600만", monthly: "133만", deduction: "19만", netPay: "114만", rate: "14.3%", note: "" },
+    { annual: "1,700만", monthly: "142만", deduction: "21만", netPay: "121만", rate: "14.8%", note: "" },
+    { annual: "1,800만", monthly: "150만", deduction: "23만", netPay: "127만", rate: "15.3%", note: "" },
+    { annual: "1,900만", monthly: "158만", deduction: "25만", netPay: "133만", rate: "15.8%", note: "" },
+    { annual: "2,000만", monthly: "167만", deduction: "27만", netPay: "140만", rate: "16.2%", note: "" },
+    { annual: "2,400만", monthly: "200만", deduction: "21만", netPay: "179만", rate: "10.5%", note: "2026 최저연봉", highlight: true },
+    { annual: "3,000만", monthly: "250만", deduction: "28만", netPay: "222만", rate: "11.2%", note: "사회초년생 평균" },
+    { annual: "3,500만", monthly: "291만", deduction: "38만", netPay: "253만", rate: "13.0%", note: "250 돌파!" },
+    { annual: "4,000만", monthly: "333만", deduction: "49만", netPay: "284만", rate: "14.7%", note: "중소기업 대리급" },
+    { annual: "4,500만", monthly: "375만", deduction: "60만", netPay: "315만", rate: "16.0%", note: "실수령 300 돌파!", highlight: true },
+    { annual: "5,000만", monthly: "416만", deduction: "72만", netPay: "344만", rate: "17.3%", note: "대기업 신입 평균" },
+    { annual: "5,500만", monthly: "458만", deduction: "84만", netPay: "374만", rate: "18.3%", note: "소나타 할부 가능" },
+    { annual: "6,000만", monthly: "500만", deduction: "98만", netPay: "402만", rate: "19.6%", note: "실수령 400 돌파!" },
+    { annual: "7,000만", monthly: "583만", deduction: "128만", netPay: "455만", rate: "21.9%", note: "과장급 중위권" },
+    { annual: "8,000만", monthly: "666만", deduction: "158만", netPay: "508만", rate: "23.7%", note: "실수령 500 돌파!", highlight: true },
+    { annual: "9,000만", monthly: "750만", deduction: "191만", netPay: "559만", rate: "25.5%", note: "차장급" },
+    { annual: "1억", monthly: "833만", deduction: "227만", netPay: "606만", rate: "27.2%", note: "억대 연봉!", highlight: true },
+    { annual: "1.2억", monthly: "1,000만", deduction: "302만", netPay: "698만", rate: "30.2%", note: "월급 천만원대" },
+    { annual: "1.5억", monthly: "1,250만", deduction: "421만", netPay: "829만", rate: "33.7%", note: "임원급" },
+  ];
+
+  // 월급 기준 실수령액 표 데이터
+  const monthlySalaryData = [
+    { monthly: "100만", netPay: "92만", deduction: "8만", rate: "8.0%", note: "최저 구간" },
+    { monthly: "110만", netPay: "101만", deduction: "9만", rate: "8.2%", note: "" },
+    { monthly: "120만", netPay: "110만", deduction: "10만", rate: "8.3%", note: "" },
+    { monthly: "130만", netPay: "119만", deduction: "11만", rate: "8.5%", note: "" },
+    { monthly: "140만", netPay: "128만", deduction: "12만", rate: "8.6%", note: "" },
+    { monthly: "150만", netPay: "137만", deduction: "13만", rate: "8.7%", note: "" },
+    { monthly: "160만", netPay: "146만", deduction: "14만", rate: "8.8%", note: "" },
+    { monthly: "170만", netPay: "155만", deduction: "15만", rate: "8.8%", note: "" },
+    { monthly: "180만", netPay: "164만", deduction: "16만", rate: "8.9%", note: "" },
+    { monthly: "190만", netPay: "173만", deduction: "17만", rate: "8.9%", note: "" },
+    { monthly: "200만", netPay: "182만", deduction: "18만", rate: "9.0%", note: "2026 최저월급", highlight: true },
+    { monthly: "210만", netPay: "190만", deduction: "20만", rate: "9.5%", note: "" },
+    { monthly: "220만", netPay: "199만", deduction: "21만", rate: "9.5%", note: "" },
+    { monthly: "230만", netPay: "208만", deduction: "22만", rate: "9.6%", note: "" },
+    { monthly: "240만", netPay: "217만", deduction: "23만", rate: "9.6%", note: "" },
+    { monthly: "250만", netPay: "225만", deduction: "25만", rate: "10.0%", note: "초년생 평균", highlight: true },
+    { monthly: "260만", netPay: "234만", deduction: "26만", rate: "10.0%", note: "" },
+    { monthly: "270만", netPay: "243만", deduction: "27만", rate: "10.0%", note: "" },
+    { monthly: "280만", netPay: "252만", deduction: "28만", rate: "10.0%", note: "" },
+    { monthly: "290만", netPay: "260만", deduction: "30만", rate: "10.3%", note: "" },
+    { monthly: "300만", netPay: "269만", deduction: "31만", rate: "10.3%", note: "중소기업 평균", highlight: true },
+  ];
 
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
@@ -289,139 +345,108 @@ export default function AnnualSalaryCalculator() {
           </ul>
         </div>
 
-        {/* 2026년 연봉별 실수령액표 */}
-        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
-          <h4 className="font-medium text-emerald-800 mb-3">2026년 연봉별 실수령액표 (최신 4대보험 요율 적용)</h4>
-          <div className="overflow-x-auto">
-            <table className="w-full text-xs">
-              <thead>
-                <tr className="border-b border-emerald-200 bg-emerald-100">
-                  <th className="py-2 px-1 text-left text-emerald-700">연봉</th>
-                  <th className="py-2 px-1 text-right text-emerald-700">월급</th>
-                  <th className="py-2 px-1 text-right text-emerald-700">공제</th>
-                  <th className="py-2 px-1 text-right text-emerald-700 font-bold">실수령</th>
-                  <th className="py-2 px-1 text-right text-emerald-700">공제율</th>
-                  <th className="py-2 px-1 text-left text-emerald-700 hidden sm:table-cell">한줄평</th>
-                </tr>
-              </thead>
-              <tbody className="text-neutral-700">
-                <tr className="border-b border-neutral-100 bg-yellow-50">
-                  <td className="py-1.5 px-1 font-medium">2,400만</td>
-                  <td className="py-1.5 px-1 text-right">200만</td>
-                  <td className="py-1.5 px-1 text-right text-red-500">21만</td>
-                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">179만</td>
-                  <td className="py-1.5 px-1 text-right">10.5%</td>
-                  <td className="py-1.5 px-1 text-gray-500 hidden sm:table-cell">2026 최저연봉</td>
-                </tr>
-                <tr className="border-b border-neutral-100">
-                  <td className="py-1.5 px-1">3,000만</td>
-                  <td className="py-1.5 px-1 text-right">250만</td>
-                  <td className="py-1.5 px-1 text-right text-red-500">28만</td>
-                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">222만</td>
-                  <td className="py-1.5 px-1 text-right">11.2%</td>
-                  <td className="py-1.5 px-1 text-gray-500 hidden sm:table-cell">사회초년생 평균</td>
-                </tr>
-                <tr className="border-b border-neutral-100">
-                  <td className="py-1.5 px-1">3,500만</td>
-                  <td className="py-1.5 px-1 text-right">291만</td>
-                  <td className="py-1.5 px-1 text-right text-red-500">38만</td>
-                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">253만</td>
-                  <td className="py-1.5 px-1 text-right">13.0%</td>
-                  <td className="py-1.5 px-1 text-gray-500 hidden sm:table-cell">250 돌파!</td>
-                </tr>
-                <tr className="border-b border-neutral-100">
-                  <td className="py-1.5 px-1">4,000만</td>
-                  <td className="py-1.5 px-1 text-right">333만</td>
-                  <td className="py-1.5 px-1 text-right text-red-500">49만</td>
-                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">284만</td>
-                  <td className="py-1.5 px-1 text-right">14.7%</td>
-                  <td className="py-1.5 px-1 text-gray-500 hidden sm:table-cell">중소기업 대리급</td>
-                </tr>
-                <tr className="border-b border-neutral-100 bg-emerald-50">
-                  <td className="py-1.5 px-1 font-medium">4,500만</td>
-                  <td className="py-1.5 px-1 text-right">375만</td>
-                  <td className="py-1.5 px-1 text-right text-red-500">60만</td>
-                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">315만</td>
-                  <td className="py-1.5 px-1 text-right">16.0%</td>
-                  <td className="py-1.5 px-1 text-emerald-600 hidden sm:table-cell">실수령 300 돌파!</td>
-                </tr>
-                <tr className="border-b border-neutral-100">
-                  <td className="py-1.5 px-1">5,000만</td>
-                  <td className="py-1.5 px-1 text-right">416만</td>
-                  <td className="py-1.5 px-1 text-right text-red-500">72만</td>
-                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">344만</td>
-                  <td className="py-1.5 px-1 text-right">17.3%</td>
-                  <td className="py-1.5 px-1 text-gray-500 hidden sm:table-cell">대기업 신입 평균</td>
-                </tr>
-                <tr className="border-b border-neutral-100">
-                  <td className="py-1.5 px-1">5,500만</td>
-                  <td className="py-1.5 px-1 text-right">458만</td>
-                  <td className="py-1.5 px-1 text-right text-red-500">84만</td>
-                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">374만</td>
-                  <td className="py-1.5 px-1 text-right">18.3%</td>
-                  <td className="py-1.5 px-1 text-gray-500 hidden sm:table-cell">소나타 할부 가능</td>
-                </tr>
-                <tr className="border-b border-neutral-100">
-                  <td className="py-1.5 px-1">6,000만</td>
-                  <td className="py-1.5 px-1 text-right">500만</td>
-                  <td className="py-1.5 px-1 text-right text-red-500">98만</td>
-                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">402만</td>
-                  <td className="py-1.5 px-1 text-right">19.6%</td>
-                  <td className="py-1.5 px-1 text-gray-500 hidden sm:table-cell">실수령 400 돌파!</td>
-                </tr>
-                <tr className="border-b border-neutral-100">
-                  <td className="py-1.5 px-1">7,000만</td>
-                  <td className="py-1.5 px-1 text-right">583만</td>
-                  <td className="py-1.5 px-1 text-right text-red-500">128만</td>
-                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">455만</td>
-                  <td className="py-1.5 px-1 text-right">21.9%</td>
-                  <td className="py-1.5 px-1 text-gray-500 hidden sm:table-cell">과장급 중위권</td>
-                </tr>
-                <tr className="border-b border-neutral-100 bg-emerald-50">
-                  <td className="py-1.5 px-1 font-medium">8,000만</td>
-                  <td className="py-1.5 px-1 text-right">666만</td>
-                  <td className="py-1.5 px-1 text-right text-red-500">158만</td>
-                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">508만</td>
-                  <td className="py-1.5 px-1 text-right">23.7%</td>
-                  <td className="py-1.5 px-1 text-emerald-600 hidden sm:table-cell">실수령 500 돌파!</td>
-                </tr>
-                <tr className="border-b border-neutral-100">
-                  <td className="py-1.5 px-1">9,000만</td>
-                  <td className="py-1.5 px-1 text-right">750만</td>
-                  <td className="py-1.5 px-1 text-right text-red-500">191만</td>
-                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">559만</td>
-                  <td className="py-1.5 px-1 text-right">25.5%</td>
-                  <td className="py-1.5 px-1 text-gray-500 hidden sm:table-cell">차장급</td>
-                </tr>
-                <tr className="border-b border-neutral-100 bg-yellow-50">
-                  <td className="py-1.5 px-1 font-medium">1억</td>
-                  <td className="py-1.5 px-1 text-right">833만</td>
-                  <td className="py-1.5 px-1 text-right text-red-500">227만</td>
-                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">606만</td>
-                  <td className="py-1.5 px-1 text-right">27.2%</td>
-                  <td className="py-1.5 px-1 text-amber-600 hidden sm:table-cell">억대 연봉!</td>
-                </tr>
-                <tr className="border-b border-neutral-100">
-                  <td className="py-1.5 px-1">1.2억</td>
-                  <td className="py-1.5 px-1 text-right">1,000만</td>
-                  <td className="py-1.5 px-1 text-right text-red-500">302만</td>
-                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">698만</td>
-                  <td className="py-1.5 px-1 text-right">30.2%</td>
-                  <td className="py-1.5 px-1 text-gray-500 hidden sm:table-cell">월급 천만원대</td>
-                </tr>
-                <tr className="border-b border-neutral-100">
-                  <td className="py-1.5 px-1">1.5억</td>
-                  <td className="py-1.5 px-1 text-right">1,250만</td>
-                  <td className="py-1.5 px-1 text-right text-red-500">421만</td>
-                  <td className="py-1.5 px-1 text-right font-bold text-emerald-600">829만</td>
-                  <td className="py-1.5 px-1 text-right">33.7%</td>
-                  <td className="py-1.5 px-1 text-gray-500 hidden sm:table-cell">임원급</td>
-                </tr>
-              </tbody>
-            </table>
+        {/* 2026년 실수령액표 - Segmented Control 탭 */}
+        <div className="mt-6">
+          {/* Segmented Control 탭 */}
+          <div className="flex justify-center mb-4">
+            <div className="inline-flex bg-neutral-200 rounded-full p-1">
+              <button
+                onClick={() => setTableType("annual")}
+                className={`px-6 py-2 rounded-full font-medium transition-all ${
+                  tableType === "annual"
+                    ? "bg-[#00C896] text-white shadow-md"
+                    : "bg-transparent text-neutral-600"
+                }`}
+              >
+                연봉 기준 표
+              </button>
+              <button
+                onClick={() => setTableType("monthly")}
+                className={`px-6 py-2 rounded-full font-medium transition-all ${
+                  tableType === "monthly"
+                    ? "bg-[#00C896] text-white shadow-md"
+                    : "bg-transparent text-neutral-600"
+                }`}
+              >
+                월급 기준 표
+              </button>
+            </div>
           </div>
-          <p className="mt-2 text-xs text-neutral-500">* 4대보험(국민연금·건강보험·고용보험·산재보험) + 소득세 + 지방소득세 공제 기준</p>
-          <p className="text-xs text-neutral-500">* 부양가족 1인(본인) 기준, 비과세 항목 미적용 시 예상 금액</p>
+
+          {/* 광고 공간 */}
+          <div className="mb-4 min-h-[90px] bg-neutral-100 rounded-xl flex items-center justify-center border border-neutral-200">
+            <p className="text-neutral-400 text-sm">광고 영역</p>
+          </div>
+
+          {/* 실수령액 표 */}
+          <div className="p-4 bg-emerald-50 rounded-xl border border-emerald-100">
+            <h4 className="font-medium text-emerald-800 mb-3">
+              2026년 {tableType === "annual" ? "연봉별" : "월급별"} 실수령액표 (최신 4대보험 요율 적용)
+            </h4>
+            <div className="overflow-x-auto">
+              {tableType === "annual" ? (
+                <table className="w-full text-xs">
+                  <thead>
+                    <tr className="border-b border-emerald-200 bg-emerald-100">
+                      <th className="py-2 px-1 text-left text-emerald-700">연봉</th>
+                      <th className="py-2 px-1 text-right text-emerald-700">월급</th>
+                      <th className="py-2 px-1 text-right text-emerald-700">공제</th>
+                      <th className="py-2 px-1 text-right text-emerald-700 font-bold">실수령</th>
+                      <th className="py-2 px-1 text-right text-emerald-700">공제율</th>
+                      <th className="py-2 px-1 text-left text-emerald-700 hidden sm:table-cell">한줄평</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-neutral-700">
+                    {annualSalaryData.map((row, idx) => (
+                      <tr
+                        key={idx}
+                        className={`border-b border-neutral-100 ${row.highlight ? "bg-emerald-50" : ""}`}
+                      >
+                        <td className={`py-1.5 px-1 ${row.highlight ? "font-medium" : ""}`}>{row.annual}</td>
+                        <td className="py-1.5 px-1 text-right">{row.monthly}</td>
+                        <td className="py-1.5 px-1 text-right text-red-500">{row.deduction}</td>
+                        <td className="py-1.5 px-1 text-right font-bold text-emerald-600">{row.netPay}</td>
+                        <td className="py-1.5 px-1 text-right">{row.rate}</td>
+                        <td className={`py-1.5 px-1 hidden sm:table-cell ${row.highlight ? "text-emerald-600 font-medium" : "text-gray-500"}`}>
+                          {row.note}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              ) : (
+                <table className="w-full text-xs">
+                  <thead>
+                    <tr className="border-b border-emerald-200 bg-emerald-100">
+                      <th className="py-2 px-1 text-left text-emerald-700">월급</th>
+                      <th className="py-2 px-1 text-right text-emerald-700 font-bold">실수령</th>
+                      <th className="py-2 px-1 text-right text-emerald-700">공제</th>
+                      <th className="py-2 px-1 text-right text-emerald-700">공제율</th>
+                      <th className="py-2 px-1 text-left text-emerald-700 hidden sm:table-cell">한줄평</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-neutral-700">
+                    {monthlySalaryData.map((row, idx) => (
+                      <tr
+                        key={idx}
+                        className={`border-b border-neutral-100 ${row.highlight ? "bg-emerald-50" : ""}`}
+                      >
+                        <td className={`py-1.5 px-1 ${row.highlight ? "font-medium" : ""}`}>{row.monthly}</td>
+                        <td className="py-1.5 px-1 text-right font-bold text-emerald-600">{row.netPay}</td>
+                        <td className="py-1.5 px-1 text-right text-red-500">{row.deduction}</td>
+                        <td className="py-1.5 px-1 text-right">{row.rate}</td>
+                        <td className={`py-1.5 px-1 hidden sm:table-cell ${row.highlight ? "text-emerald-600 font-medium" : "text-gray-500"}`}>
+                          {row.note}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )}
+            </div>
+            <p className="mt-2 text-xs text-neutral-500">* 4대보험(국민연금·건강보험·고용보험·산재보험) + 소득세 + 지방소득세 공제 기준</p>
+            <p className="text-xs text-neutral-500">* 부양가족 1인(본인) 기준, 비과세 항목 미적용 시 예상 금액</p>
+          </div>
         </div>
       </div>
     </div>
