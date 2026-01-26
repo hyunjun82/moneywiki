@@ -226,7 +226,16 @@
       "Bash(npm run typecheck:*)",
       "mcp__Claude_in_Chrome__tabs_context_mcp",
       "Bash({ grep -l \"description:.*알아봅니다\" content/wiki/*.md)",
-      "Bash(})"
+      "Bash(})",
+      "Bash(claude --version:*)",
+      "Bash(npm view:*)",
+      "Bash(npm update:*)",
+      "Bash(claude tasks:*)",
+      "Bash(export CLAUDE_CODE_ENABLE_TASKS=true)",
+      "Bash(setx CLAUDE_CODE_ENABLE_TASKS:*)",
+      "Bash(npx playwright:*)",
+      "Bash(node test-loan-calculator.js:*)",
+      "Bash(timeout 10 tail:*)"
     ]
   }
 }

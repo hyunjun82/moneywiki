@@ -520,36 +520,39 @@ export default function ComprehensivePropertyTaxCalculator() {
           <h3 className="text-sm font-semibold text-gray-700">이용안내</h3>
         </div>
 
-        <div className="p-4 text-sm text-gray-600 space-y-3">
-          <div>
-            <h4 className="font-medium text-gray-800 mb-1">종합부동산세란?</h4>
-            <p className="text-gray-600 leading-relaxed">
-              일정 기준을 초과하는 부동산 보유자에게 부과하는 국세예요. 매년 6월 1일 기준으로 재산세와 별도로 부과돼요.
+        <div className="p-4 text-sm space-y-3">
+          <div className="bg-emerald-50 p-4 rounded-xl border border-emerald-100">
+            <h4 className="font-medium text-emerald-800 mb-2 flex items-center gap-2">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              종합부동산세가 뭔가요?
+            </h4>
+            <p className="text-sm text-emerald-700 mb-2">
+              일정 기준 초과하는 부동산 보유자에게 부과하는 국세예요. <span className="font-medium">재산세와 별도로 매년 6월 1일 기준으로 부과돼요.</span>
             </p>
-          </div>
-
-          <div>
-            <h4 className="font-medium text-gray-800 mb-1">공제금액</h4>
-            <ul className="space-y-1 text-gray-600">
-              <li>• <strong>1세대 1주택</strong>: 공시가격 12억원 공제</li>
-              <li>• <strong>일반</strong>: 공시가격 6억원 공제</li>
+            <ul className="text-sm text-emerald-700 space-y-1.5 mt-3">
+              <li className="flex items-start gap-2">
+                <span className="text-green-600 mt-0.5">✓</span>
+                <span><strong>1세대 1주택:</strong> 공시가격 12억원 초과분에만 과세</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-emerald-600 mt-0.5">✓</span>
+                <span><strong>다주택자:</strong> 공시가격 6억원 초과분에 과세 (중과세율)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-amber-600 mt-0.5">⚠</span>
+                <span><strong>고령·장기보유:</strong> 1주택자만 최대 80% 세액공제</span>
+              </li>
             </ul>
-          </div>
-
-          <div>
-            <h4 className="font-medium text-gray-800 mb-1">세액공제 (1세대 1주택)</h4>
-            <ul className="space-y-1 text-gray-600">
-              <li>• 고령자: 60세 10%, 65세 20%, 70세 30%</li>
-              <li>• 장기보유: 5년 20%, 10년 40%, 15년 50%</li>
-              <li>• 합산 최대 80%까지 공제</li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-medium text-gray-800 mb-1">납부 시기</h4>
-            <p className="text-gray-600 leading-relaxed">
-              매년 12월 1일~15일 사이에 납부해요. 250만원 초과 시 분납 가능해요.
-            </p>
+            <div className="mt-3 pt-3 border-t border-emerald-200">
+              <p className="text-xs text-emerald-700">
+                <strong>납부 시기:</strong> 매년 12월 1일~15일 (250만원 초과 시 분납 가능)
+              </p>
+              <p className="text-xs text-emerald-600 mt-2">
+                📌 출처: <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">국세청</a> · <a href="https://www.law.go.kr/법령/종합부동산세법" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">종합부동산세법</a>
+              </p>
+            </div>
           </div>
         </div>
       </div>

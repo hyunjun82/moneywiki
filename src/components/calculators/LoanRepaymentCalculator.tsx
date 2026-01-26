@@ -286,12 +286,34 @@ export default function LoanRepaymentCalculator() {
         )}
 
         <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
-          <h4 className="font-medium text-emerald-800 mb-2">상환방식 비교</h4>
-          <ul className="text-sm text-emerald-700 space-y-1">
-            <li>• 원리금균등: 매월 같은 금액, 계획 세우기 좋아요</li>
-            <li>• 원금균등: 총 이자가 가장 적어요</li>
-            <li>• 만기일시: 매월 부담 적지만 총 이자 많아요</li>
+          <h4 className="font-medium text-emerald-800 mb-2 flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            상환방식이 뭔가요?
+          </h4>
+          <p className="text-sm text-emerald-700 mb-2">
+            대출금을 어떤 방식으로 갚을지 정하는 거예요. <span className="font-medium">방식에 따라 총 이자가 수천만원 차이 나요.</span>
+          </p>
+          <ul className="text-sm text-emerald-700 space-y-1.5 mt-3">
+            <li className="flex items-start gap-2">
+              <span className="text-emerald-600 mt-0.5">✓</span>
+              <span><strong>원리금균등:</strong> 매월 같은 금액 납부 (계획 세우기 좋음)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-green-600 mt-0.5">✓</span>
+              <span><strong>원금균등:</strong> 처음엔 많이 내고 점점 줄어듦 (총 이자 최소)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-amber-600 mt-0.5">⚠</span>
+              <span><strong>만기일시:</strong> 매월 이자만 내고 만기에 원금 (총 이자 최대)</span>
+            </li>
           </ul>
+          <div className="mt-3 pt-3 border-t border-emerald-200">
+            <p className="text-xs text-emerald-600">
+              📌 출처: <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">금융감독원</a> · <a href="https://www.hf.go.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">한국주택금융공사</a>
+            </p>
+          </div>
         </div>
 
         {/* 대출금액별 월상환액 비교표 */}

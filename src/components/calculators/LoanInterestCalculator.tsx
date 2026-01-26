@@ -183,12 +183,34 @@ export default function LoanInterestCalculator() {
         )}
 
         <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
-          <h4 className="font-medium text-emerald-800 mb-2">단리 vs 복리</h4>
-          <ul className="text-sm text-emerald-700 space-y-1">
-            <li>• 단리: 원금에만 이자 발생 (예: 예금)</li>
-            <li>• 복리: 원금+이자에 이자 발생 (예: 대출)</li>
-            <li>• 대출은 보통 월복리로 계산해요</li>
+          <h4 className="font-medium text-emerald-800 mb-2 flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            대출이자가 뭔가요?
+          </h4>
+          <p className="text-sm text-emerald-700 mb-2">
+            빌린 돈(원금)에 대해 내야 하는 사용료예요. <span className="font-medium">단리와 복리 방식에 따라 이자가 달라져요.</span>
+          </p>
+          <ul className="text-sm text-emerald-700 space-y-1.5 mt-3">
+            <li className="flex items-start gap-2">
+              <span className="text-green-600 mt-0.5">✓</span>
+              <span><strong>단리:</strong> 원금에만 이자 발생 (예: 일부 예금상품)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-green-600 mt-0.5">✓</span>
+              <span><strong>복리:</strong> 원금+이자에 이자 발생 (예: 대부분의 대출)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-amber-600 mt-0.5">⚠</span>
+              <span><strong>주택담보대출은 월복리</strong>로 계산돼요 (이자가 더 많이 나와요)</span>
+            </li>
           </ul>
+          <div className="mt-3 pt-3 border-t border-emerald-200">
+            <p className="text-xs text-emerald-600">
+              📌 출처: <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">금융감독원</a> · <a href="https://www.bok.or.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">한국은행 기준금리</a>
+            </p>
+          </div>
         </div>
 
         {/* 금리별 월 이자 비교표 */}
@@ -219,35 +241,35 @@ export default function LoanInterestCalculator() {
                   <td className="py-2 px-2 text-center font-medium text-green-600 border border-gray-300">3.5%</td>
                   <td className="py-2 px-2 text-center border border-gray-300">29만원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">58만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300">87만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">145만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">88만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">146만원</td>
                 </tr>
                 <tr className="bg-emerald-50 border-b border-neutral-200">
                   <td className="py-2 px-2 text-center font-bold text-emerald-700 border border-gray-300">4.0% ⭐</td>
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">33만원</td>
-                  <td className="py-2 px-2 text-center font-medium border border-gray-300">66만원</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">67만원</td>
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">100만원</td>
-                  <td className="py-2 px-2 text-center font-medium border border-gray-300 hidden sm:table-cell">166만원</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300 hidden sm:table-cell">167만원</td>
                 </tr>
                 <tr className="border-b border-neutral-200">
                   <td className="py-2 px-2 text-center font-medium text-amber-600 border border-gray-300">4.5%</td>
-                  <td className="py-2 px-2 text-center border border-gray-300">37만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">38만원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">75만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300">112만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">187만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">113만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">188만원</td>
                 </tr>
                 <tr className="bg-amber-50 border-b border-neutral-200">
                   <td className="py-2 px-2 text-center font-bold text-amber-700 border border-gray-300">5.0%</td>
-                  <td className="py-2 px-2 text-center font-medium border border-gray-300">41만원</td>
+                  <td className="py-2 px-2 text-center font-medium border border-gray-300">42만원</td>
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">83만원</td>
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">125만원</td>
                   <td className="py-2 px-2 text-center font-medium border border-gray-300 hidden sm:table-cell">208만원</td>
                 </tr>
                 <tr className="border-b border-neutral-200">
                   <td className="py-2 px-2 text-center font-medium text-orange-600 border border-gray-300">5.5%</td>
-                  <td className="py-2 px-2 text-center border border-gray-300">45만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300">91만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300">137만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">46만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">92만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">138만원</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">229만원</td>
                 </tr>
                 <tr className="bg-red-50">

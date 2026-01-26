@@ -512,14 +512,34 @@ export default function MortgageCalculator() {
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            이용안내
+            주택담보대출이 뭔가요?
           </h4>
-          <ul className="text-sm text-emerald-700 space-y-1">
-            <li>• 실제 대출 금리는 신용등급, 대출 상품에 따라 달라요</li>
-            <li>• LTV 외에 DSR 규제도 적용돼요 (총부채원리금상환비율)</li>
-            <li>• 원리금균등이 가장 일반적이고, 총 이자가 적어요</li>
-            <li>• 주담대는 보통 원리금균등 상환이 조건이에요</li>
+          <p className="text-sm text-emerald-700 mb-2">
+            집을 담보로 은행에서 빌리는 돈이에요. <span className="font-medium">집값의 일정 비율(LTV)까지만 빌릴 수 있어요.</span>
+          </p>
+          <ul className="text-sm text-emerald-700 space-y-1.5 mt-3">
+            <li className="flex items-start gap-2">
+              <span className="text-emerald-600 mt-0.5">✓</span>
+              <span><strong>LTV:</strong> 집값 대비 대출 한도 (지역별로 40~70%)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-emerald-600 mt-0.5">✓</span>
+              <span><strong>DSR:</strong> 소득 대비 모든 대출 상환액 비율 (40% 이하)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-green-600 mt-0.5">✓</span>
+              <span><strong>원리금균등:</strong> 가장 일반적, 매월 동일 금액 납부</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-amber-600 mt-0.5">⚠</span>
+              <span><strong>금리:</strong> 신용등급·대출상품에 따라 0.5~2%p 차이</span>
+            </li>
           </ul>
+          <div className="mt-3 pt-3 border-t border-emerald-200">
+            <p className="text-xs text-emerald-600">
+              📌 출처: <a href="https://www.hf.go.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">한국주택금융공사</a> · <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">금융감독원</a>
+            </p>
+          </div>
         </div>
 
         {/* 주담대 월 상환금 비교표 */}
