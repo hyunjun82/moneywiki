@@ -18,7 +18,7 @@ export default function NationalPensionCalculator() {
   const [expectedTotal20Years, setExpectedTotal20Years] = useState<number>(0);
 
   // 2026년 기준 A값 (전체 가입자 평균소득월액 3년 평균)
-  const A_VALUE = 2989237; // 약 299만원
+  const A_VALUE = 3089062; // 2025년 기준 309만원 (국민연금공단 공식)
 
   // 수급개시연령 계산 (출생년도 기준)
   const getStartAge = (year: number): number => {

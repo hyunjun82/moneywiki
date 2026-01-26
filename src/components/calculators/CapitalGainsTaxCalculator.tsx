@@ -392,17 +392,27 @@ export default function CapitalGainsTaxCalculator() {
     // 5. 장기보유특별공제 계산 (주택, 토지, 상가, 오피스텔 주거용)
     if (propertyType === "house" || propertyType === "land" || propertyType === "commercial" ||
         (propertyType === "officetel" && officetelCategory === "residential")) {
-      const isOneHouseExempt =
-        (propertyType === "house" || (propertyType === "officetel" && officetelCategory === "residential")) &&
-        (houseCategory === "oneHouseExempt" || houseCategory === "oneHouseTaxable");
 
-      const longTermInfo = getLongTermDeductionRate(
-        holdingYears,
-        residenceYears,
-        isOneHouseExempt && residenceYears >= 2
-      );
-      longTermDeduction = Math.round(taxableGain * (longTermInfo.totalRate / 100));
-      longTermDescription = longTermInfo.description;
+      // ⚠️ 다주택 중과세 시 장기보유특별공제 배제 (국세청 기준)
+      const isSurtaxApplied =
+        (houseCategory === "twoHouse" || houseCategory === "threeHouse") && isRegulated;
+
+      if (isSurtaxApplied) {
+        longTermDeduction = 0;
+        longTermDescription = "다주택 중과세 시 장특공 배제";
+      } else {
+        const isOneHouseExempt =
+          (propertyType === "house" || (propertyType === "officetel" && officetelCategory === "residential")) &&
+          (houseCategory === "oneHouseExempt" || houseCategory === "oneHouseTaxable");
+
+        const longTermInfo = getLongTermDeductionRate(
+          holdingYears,
+          residenceYears,
+          isOneHouseExempt && residenceYears >= 2
+        );
+        longTermDeduction = Math.round(taxableGain * (longTermInfo.totalRate / 100));
+        longTermDescription = longTermInfo.description;
+      }
     }
 
     // 6. 양도소득금액
@@ -686,29 +696,38 @@ export default function CapitalGainsTaxCalculator() {
 
         {/* 조정대상지역 */}
         {propertyType === "house" && (houseCategory === "twoHouse" || houseCategory === "threeHouse") && (
-          <div className="flex items-center gap-3">
-            <label className="w-20 text-sm font-medium text-gray-700 shrink-0">조정지역</label>
-            <div className="flex gap-1.5">
-              <button
-                onClick={() => setIsRegulated(false)}
-                className={`px-3 py-1.5 text-sm rounded transition-all ${
-                  !isRegulated
-                    ? "bg-emerald-500 text-white"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                }`}
-              >
-                비조정
-              </button>
-              <button
-                onClick={() => setIsRegulated(true)}
-                className={`px-3 py-1.5 text-sm rounded transition-all ${
-                  isRegulated
-                    ? "bg-emerald-500 text-white"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                }`}
-              >
-                조정대상
-              </button>
+          <div className="space-y-2">
+            <div className="flex items-center gap-3">
+              <label className="w-20 text-sm font-medium text-gray-700 shrink-0">조정지역</label>
+              <div className="flex gap-1.5">
+                <button
+                  onClick={() => setIsRegulated(false)}
+                  className={`px-3 py-1.5 text-sm rounded transition-all ${
+                    !isRegulated
+                      ? "bg-emerald-500 text-white"
+                      : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  }`}
+                >
+                  비조정
+                </button>
+                <button
+                  onClick={() => setIsRegulated(true)}
+                  className={`px-3 py-1.5 text-sm rounded transition-all ${
+                    isRegulated
+                      ? "bg-emerald-500 text-white"
+                      : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  }`}
+                >
+                  조정대상
+                </button>
+              </div>
+            </div>
+            <div className="p-3 bg-yellow-50 rounded-lg border border-yellow-100">
+              <p className="text-sm text-yellow-700">
+                <span className="font-medium">⚠️ 중과 유예 기간 안내</span>
+                {" "}2026년 5월 9일까지는 중과세가 한시적으로 배제되어 기본세율만 적용됩니다.
+                {" "}2026년 5월 10일부터는 조정대상지역 2주택 +20%p, 3주택+ +30%p 중과세율이 적용되며 장기보유특별공제도 배제됩니다.
+              </p>
             </div>
           </div>
         )}
