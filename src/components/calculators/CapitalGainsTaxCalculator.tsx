@@ -1045,22 +1045,16 @@ export default function CapitalGainsTaxCalculator() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-emerald-600 mt-0.5">✓</span>
-                    <span><strong>조정대상지역</strong>은 2년 거주 필수 (비조정지역도 2년 권장)</span>
+                    <span><strong>조정대상지역</strong>은 2년 거주 필수 (비조정지역도 2년 권장). <a href="/w/1세대1주택-양도소득세-비과세-조정지역-거주요건" className="text-emerald-700 underline decoration-2 decoration-emerald-200 hover:decoration-emerald-400 transition-colors">조정지역 상세 보기 →</a></span>
                   </li>
                 </ul>
               </div>
-              <div className="flex gap-2">
+              <div className="flex justify-end">
                 <a
-                  href="/w/부동산/1세대1주택-비과세"
-                  className="inline-flex items-center gap-1 px-3 py-1.5 bg-emerald-600 text-white text-xs font-medium rounded-lg hover:bg-emerald-700 transition-colors"
+                  href="/w/1세대1주택-양도소득세-비과세-조건"
+                  className="inline-flex items-center gap-1 px-4 py-2 bg-emerald-600 text-white text-sm font-medium rounded-lg hover:bg-emerald-700 transition-colors shadow-sm"
                 >
-                  📄 비과세 조건 상세 보기
-                </a>
-                <a
-                  href="/w/부동산/조정대상지역"
-                  className="inline-flex items-center gap-1 px-3 py-1.5 bg-white border border-emerald-600 text-emerald-700 text-xs font-medium rounded-lg hover:bg-emerald-50 transition-colors"
-                >
-                  🗺️ 조정대상지역 확인
+                  비과세 조건 상세 가이드 보기 →
                 </a>
               </div>
             </div>
@@ -1080,15 +1074,15 @@ export default function CapitalGainsTaxCalculator() {
             </summary>
             <div className="px-4 pb-4 pt-2 bg-yellow-50/30 space-y-3 text-sm">
               <div className="bg-white rounded-lg p-3 border border-yellow-100">
-                <p className="font-medium text-yellow-800 mb-2">📊 장기보유특별공제율</p>
+                <p className="font-medium text-emerald-800 mb-2">📊 장기보유특별공제율</p>
                 <div className="space-y-2 text-gray-700">
                   <div className="flex items-start gap-2">
-                    <span className="font-semibold text-yellow-700 min-w-[80px]">일반 부동산:</span>
+                    <span className="font-semibold text-emerald-700 min-w-[80px]">일반 부동산:</span>
                     <span>3년 이상 보유 시 6%부터 시작, 최대 30%까지 공제</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="font-semibold text-yellow-700 min-w-[80px]">1세대 1주택:</span>
-                    <span><strong className="text-yellow-800">보유+거주 합산</strong>으로 최대 80%까지 공제 (예: 10년 보유+10년 거주)</span>
+                    <span className="font-semibold text-emerald-700 min-w-[80px]">1세대 1주택:</span>
+                    <span><strong className="text-emerald-800">보유+거주 합산</strong>으로 최대 80%까지 공제 (예: 10년 보유+10년 거주)</span>
                   </div>
                   <div className="flex items-start gap-2 text-red-600">
                     <span className="font-semibold min-w-[80px]">⚠️ 주의:</span>
@@ -1096,20 +1090,22 @@ export default function CapitalGainsTaxCalculator() {
                   </div>
                 </div>
               </div>
-              <div className="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-lg p-3 border border-yellow-200">
-                <p className="font-medium text-amber-800 mb-1.5">💰 절세 팁</p>
+              <div className="bg-gradient-to-r from-emerald-50 to-green-50 rounded-lg p-3 border border-emerald-200">
+                <p className="font-medium text-emerald-800 mb-1.5">💰 절세 팁</p>
                 <ul className="space-y-1 text-gray-700 text-xs">
                   <li>• 2026년 5월 9일까지는 중과세 유예 → 다주택자도 장특공 적용 가능</li>
                   <li>• 1세대 1주택 전환 후 양도하면 비과세 + 최대 80% 공제 혜택</li>
                   <li>• 거주 기간도 장특공에 포함되므로 실거주 길수록 유리</li>
                 </ul>
               </div>
-              <a
-                href="/w/세금/장기보유특별공제"
-                className="inline-flex items-center gap-1 px-3 py-1.5 bg-yellow-600 text-white text-xs font-medium rounded-lg hover:bg-yellow-700 transition-colors"
-              >
-                📈 장특공 계산법 자세히 보기
-              </a>
+              <div className="flex justify-end">
+                <a
+                  href="/w/양도소득세-장기보유특별공제"
+                  className="inline-flex items-center gap-1 px-4 py-2 bg-emerald-600 text-white text-sm font-medium rounded-lg hover:bg-emerald-700 transition-colors shadow-sm"
+                >
+                  장특공 계산법 상세 가이드 →
+                </a>
+              </div>
             </div>
           </details>
 
@@ -1128,30 +1124,30 @@ export default function CapitalGainsTaxCalculator() {
             <div className="px-4 pb-4 pt-2 bg-blue-50/30 space-y-3 text-sm">
               <p className="text-gray-700 leading-relaxed">
                 필요경비를 많이 인정받을수록 과세표준이 낮아져 세금이 줄어들어요.
-                <strong className="text-blue-700">영수증·계약서를 꼭 보관</strong>하세요!
+                <strong className="text-emerald-700">영수증·계약서를 꼭 보관</strong>하세요!
               </p>
-              <div className="bg-white rounded-lg p-3 border border-blue-100">
-                <p className="font-medium text-blue-800 mb-2">✅ 인정되는 필요경비</p>
+              <div className="bg-white rounded-lg p-3 border border-emerald-100">
+                <p className="font-medium text-emerald-800 mb-2">✅ 인정되는 필요경비</p>
                 <ul className="space-y-1.5 text-gray-700">
                   <li className="flex items-start gap-2">
-                    <span className="text-blue-600">•</span>
+                    <span className="text-emerald-600">•</span>
                     <span><strong>취득세·등록세</strong> (부동산 구매 시 납부한 세금)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-blue-600">•</span>
+                    <span className="text-emerald-600">•</span>
                     <span><strong>중개수수료</strong> (매입·매도 시 부동산 수수료)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-blue-600">•</span>
+                    <span className="text-emerald-600">•</span>
                     <span><strong>인테리어·수리비</strong> (자본적 지출, 영수증 필수)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-blue-600">•</span>
+                    <span className="text-emerald-600">•</span>
                     <span><strong>법무사 비용</strong> (등기·소유권 이전 관련)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-blue-600">•</span>
-                    <span><strong>인지세</strong> (매매계약서 작성 시)</span>
+                    <span className="text-emerald-600">•</span>
+                    <span><strong>인지세</strong> (매매계약서 작성 시). <a href="/w/양도소득세-취득가액-인정" className="text-emerald-700 underline decoration-2 decoration-emerald-200 hover:decoration-emerald-400 transition-colors">취득가액 인정 기준 →</a></span>
                   </li>
                 </ul>
               </div>
@@ -1163,12 +1159,6 @@ export default function CapitalGainsTaxCalculator() {
                   <li>• 대출 이자 (양도세 필요경비 아님)</li>
                 </ul>
               </div>
-              <a
-                href="/w/세금/양도소득세-필요경비"
-                className="inline-flex items-center gap-1 px-3 py-1.5 bg-blue-600 text-white text-xs font-medium rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                💼 필요경비 증빙 방법 보기
-              </a>
             </div>
           </details>
 
@@ -1206,7 +1196,7 @@ export default function CapitalGainsTaxCalculator() {
                     <span className="text-red-600 font-bold mt-0.5">3.</span>
                     <div>
                       <strong className="text-red-700">취득가액 입증 자료</strong>
-                      <p className="text-xs text-gray-600 mt-0.5">매매계약서·등기부등본 필수 (환산취득가액 적용 시 불리)</p>
+                      <p className="text-xs text-gray-600 mt-0.5">매매계약서·등기부등본 필수 (환산취득가액 적용 시 불리). <a href="/w/양도소득세-취득가액-인정" className="text-emerald-700 underline decoration-2 decoration-emerald-200 hover:decoration-emerald-400">취득가액 인정 기준 →</a></p>
                     </div>
                   </li>
                 </ul>
@@ -1218,18 +1208,12 @@ export default function CapitalGainsTaxCalculator() {
                   정확한 세액은 <strong className="text-amber-700">세무사에게 상담</strong>받으세요.
                 </p>
               </div>
-              <div className="flex gap-2">
-                <a
-                  href="/w/세금/양도소득세-신고방법"
-                  className="inline-flex items-center gap-1 px-3 py-1.5 bg-red-600 text-white text-xs font-medium rounded-lg hover:bg-red-700 transition-colors"
-                >
-                  📝 신고 방법 보기
-                </a>
+              <div className="flex justify-end">
                 <a
                   href="https://www.hometax.go.kr"
-                  className="inline-flex items-center gap-1 px-3 py-1.5 bg-white border border-red-600 text-red-700 text-xs font-medium rounded-lg hover:bg-red-50 transition-colors"
+                  className="inline-flex items-center gap-1 px-4 py-2 bg-emerald-600 text-white text-sm font-medium rounded-lg hover:bg-emerald-700 transition-colors shadow-sm"
                 >
-                  🏛️ 국세청 홈택스
+                  국세청 홈택스에서 신고하기 →
                 </a>
               </div>
             </div>
