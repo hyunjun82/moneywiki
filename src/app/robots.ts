@@ -1,12 +1,19 @@
-import { MetadataRoute } from 'next'
+export default function robots() {
+  return `# robots.txt for 머니위키
+User-agent: *
+Allow: /
 
-export default function robots(): MetadataRoute.Robots {
-  return {
-    rules: {
-      userAgent: '*',
-      allow: '/w/',
-      disallow: ['/search', '/admin'],
-    },
-    sitemap: 'https://www.jjyu.co.kr/sitemap.xml',
-  }
+# 검색 결과 페이지 - noindex 태그로 색인 제거 중
+# 구글이 noindex를 읽을 수 있도록 임시로 허용
+# 색인 제거 완료 후 (2-4주 후) Disallow 다시 활성화
+# Disallow: /search
+# Disallow: /search?*
+
+# Sitemap
+Sitemap: https://www.jjyu.co.kr/sitemap.xml
+
+# Google은 Crawl-delay를 지원하지 않으므로 제거
+
+DaumWebMasterTool:8f277e6a15ecca107afcea48a37bb3aa62fde6892c1349fc8bd43ce576745cd2:XNG90a1IomEQ6b3RH86ohQ==
+`
 }
