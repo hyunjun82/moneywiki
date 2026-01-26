@@ -7,9 +7,9 @@ interface PageProps {
   params: Promise<{ name: string }>;
 }
 
-// 강제 정적 생성 - 모든 카테고리 빌드타임에 생성
-export const dynamic = 'force-static';
-export const revalidate = false; // 정적 생성, 재검증 없음
+// ISR - 빌드타임 정적 생성 + 동적 경로 허용
+export const revalidate = 3600; // 1시간마다 재검증
+export const dynamicParams = true; // generateStaticParams에 없는 경로도 허용
 
 // 카테고리별 이모지
 const categoryEmoji: Record<string, string> = {
@@ -57,8 +57,9 @@ export async function generateStaticParams() {
   // 정부지원금 카테고리도 추가
   categories.add("정부지원금");
 
+  // Next.js가 자동으로 URL 인코딩하므로 원본 문자열 그대로 반환
   return Array.from(categories).map((name) => ({
-    name: encodeURIComponent(name),
+    name: name,
   }));
 }
 
