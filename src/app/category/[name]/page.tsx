@@ -7,9 +7,9 @@ interface PageProps {
   params: Promise<{ name: string }>;
 }
 
-// ISR 사용 - 주문형 정적 생성 (On-Demand ISR)
-export const revalidate = 3600; // 1시간마다 갱신
-export const dynamicParams = true; // 미리 생성되지 않은 페이지는 런타임에 생성
+// 강제 정적 생성 - 모든 카테고리 빌드타임에 생성
+export const dynamic = 'force-static';
+export const revalidate = false; // 정적 생성, 재검증 없음
 
 // 카테고리별 이모지
 const categoryEmoji: Record<string, string> = {
