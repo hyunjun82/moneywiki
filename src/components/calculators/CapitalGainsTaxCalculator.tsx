@@ -1007,47 +1007,233 @@ export default function CapitalGainsTaxCalculator() {
         </div>
       </div>
 
-      {/* 이용안내 */}
+      {/* 절세 가이드 (아코디언) */}
       <div className="border-t border-gray-200">
-        <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-200 bg-gray-50">
-          <span className="w-1 h-5 bg-gray-400 rounded-full"></span>
-          <h3 className="text-sm font-semibold text-gray-700">이용안내</h3>
+        <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-200 bg-gradient-to-r from-emerald-50 to-green-50">
+          <span className="w-1 h-5 bg-emerald-500 rounded-full"></span>
+          <h3 className="text-sm font-semibold text-emerald-800">💰 양도소득세 절세 전략 가이드</h3>
         </div>
 
-        <div className="p-4 text-sm text-gray-600 space-y-3">
-          <div>
-            <h4 className="font-medium text-gray-800 mb-1">양도소득세란?</h4>
-            <p className="text-gray-600 leading-relaxed">
-              부동산을 팔아서 생긴 이익(양도차익)에 부과하는 국세예요. 양도일이 속하는 달의 말일부터 2개월 이내에 신고·납부해야 해요.
-            </p>
-          </div>
+        <div className="divide-y divide-gray-100">
+          {/* 아코디언 1: 비과세 받는 법 */}
+          <details className="group">
+            <summary className="cursor-pointer px-4 py-3 hover:bg-emerald-50 transition-colors list-none flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="text-emerald-600 group-open:rotate-90 transition-transform">▶</span>
+                <h4 className="font-semibold text-gray-800 text-sm">
+                  <span className="bg-gradient-to-r from-yellow-200 via-yellow-100 to-transparent bg-[length:100%_40%] bg-no-repeat bg-bottom">
+                    ✅ 1세대 1주택 비과세 받는 법 체크리스트
+                  </span>
+                </h4>
+              </div>
+            </summary>
+            <div className="px-4 pb-4 pt-2 bg-emerald-50/30 space-y-3 text-sm">
+              <p className="text-gray-700 leading-relaxed">
+                <strong className="text-emerald-700">양도소득세란?</strong> 부동산을 팔아서 생긴 이익(양도차익)에 부과하는 국세예요.
+                양도일이 속하는 달의 말일부터 2개월 이내에 신고·납부해야 해요.
+              </p>
+              <div className="bg-white rounded-lg p-3 border border-emerald-100">
+                <p className="font-medium text-emerald-800 mb-2">📋 비과세 요건 체크</p>
+                <ul className="space-y-1.5 text-gray-700">
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-600 mt-0.5">✓</span>
+                    <span><strong>2년 이상 보유</strong> + <strong>2년 이상 거주</strong> 시 비과세 (보유·거주 기간 모두 충족)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-600 mt-0.5">✓</span>
+                    <span><strong>양도가액 12억원</strong>까지 비과세, 12억원 초과분만 과세 (비율 계산)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-600 mt-0.5">✓</span>
+                    <span><strong>조정대상지역</strong>은 2년 거주 필수 (비조정지역도 2년 권장)</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="flex gap-2">
+                <a
+                  href="/w/부동산/1세대1주택-비과세"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 bg-emerald-600 text-white text-xs font-medium rounded-lg hover:bg-emerald-700 transition-colors"
+                >
+                  📄 비과세 조건 상세 보기
+                </a>
+                <a
+                  href="/w/부동산/조정대상지역"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 bg-white border border-emerald-600 text-emerald-700 text-xs font-medium rounded-lg hover:bg-emerald-50 transition-colors"
+                >
+                  🗺️ 조정대상지역 확인
+                </a>
+              </div>
+            </div>
+          </details>
 
-          <div>
-            <h4 className="font-medium text-gray-800 mb-1">1세대 1주택 비과세</h4>
-            <ul className="space-y-1 text-gray-600">
-              <li>• 2년 이상 보유 + 2년 이상 거주 시 비과세</li>
-              <li>• 양도가액 12억원 초과분만 과세</li>
-              <li>• 조정대상지역은 2년 거주 필수</li>
-            </ul>
-          </div>
+          {/* 아코디언 2: 절세 전략 */}
+          <details className="group">
+            <summary className="cursor-pointer px-4 py-3 hover:bg-yellow-50 transition-colors list-none flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="text-yellow-600 group-open:rotate-90 transition-transform">▶</span>
+                <h4 className="font-semibold text-gray-800 text-sm">
+                  <span className="bg-gradient-to-r from-yellow-200 via-yellow-100 to-transparent bg-[length:100%_40%] bg-no-repeat bg-bottom">
+                    💡 장기보유특별공제로 세금 최대 80% 줄이는 법
+                  </span>
+                </h4>
+              </div>
+            </summary>
+            <div className="px-4 pb-4 pt-2 bg-yellow-50/30 space-y-3 text-sm">
+              <div className="bg-white rounded-lg p-3 border border-yellow-100">
+                <p className="font-medium text-yellow-800 mb-2">📊 장기보유특별공제율</p>
+                <div className="space-y-2 text-gray-700">
+                  <div className="flex items-start gap-2">
+                    <span className="font-semibold text-yellow-700 min-w-[80px]">일반 부동산:</span>
+                    <span>3년 이상 보유 시 6%부터 시작, 최대 30%까지 공제</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="font-semibold text-yellow-700 min-w-[80px]">1세대 1주택:</span>
+                    <span><strong className="text-yellow-800">보유+거주 합산</strong>으로 최대 80%까지 공제 (예: 10년 보유+10년 거주)</span>
+                  </div>
+                  <div className="flex items-start gap-2 text-red-600">
+                    <span className="font-semibold min-w-[80px]">⚠️ 주의:</span>
+                    <span><strong>다주택자 중과세 시 장특공 배제</strong> (조정지역 2주택/3주택+)</span>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-lg p-3 border border-yellow-200">
+                <p className="font-medium text-amber-800 mb-1.5">💰 절세 팁</p>
+                <ul className="space-y-1 text-gray-700 text-xs">
+                  <li>• 2026년 5월 9일까지는 중과세 유예 → 다주택자도 장특공 적용 가능</li>
+                  <li>• 1세대 1주택 전환 후 양도하면 비과세 + 최대 80% 공제 혜택</li>
+                  <li>• 거주 기간도 장특공에 포함되므로 실거주 길수록 유리</li>
+                </ul>
+              </div>
+              <a
+                href="/w/세금/장기보유특별공제"
+                className="inline-flex items-center gap-1 px-3 py-1.5 bg-yellow-600 text-white text-xs font-medium rounded-lg hover:bg-yellow-700 transition-colors"
+              >
+                📈 장특공 계산법 자세히 보기
+              </a>
+            </div>
+          </details>
 
-          <div>
-            <h4 className="font-medium text-gray-800 mb-1">장기보유특별공제</h4>
-            <ul className="space-y-1 text-gray-600">
-              <li>• 일반: 3년 이상 보유 시 6%부터 최대 30%</li>
-              <li>• 1세대 1주택: 보유+거주 합산 최대 80%</li>
-              <li>• 다주택자 중과 시 장특공 배제</li>
-            </ul>
-          </div>
+          {/* 아코디언 3: 필요경비 */}
+          <details className="group">
+            <summary className="cursor-pointer px-4 py-3 hover:bg-blue-50 transition-colors list-none flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="text-blue-600 group-open:rotate-90 transition-transform">▶</span>
+                <h4 className="font-semibold text-gray-800 text-sm">
+                  <span className="bg-gradient-to-r from-blue-200 via-blue-100 to-transparent bg-[length:100%_40%] bg-no-repeat bg-bottom">
+                    📋 필요경비 공제 항목 총정리
+                  </span>
+                </h4>
+              </div>
+            </summary>
+            <div className="px-4 pb-4 pt-2 bg-blue-50/30 space-y-3 text-sm">
+              <p className="text-gray-700 leading-relaxed">
+                필요경비를 많이 인정받을수록 과세표준이 낮아져 세금이 줄어들어요.
+                <strong className="text-blue-700">영수증·계약서를 꼭 보관</strong>하세요!
+              </p>
+              <div className="bg-white rounded-lg p-3 border border-blue-100">
+                <p className="font-medium text-blue-800 mb-2">✅ 인정되는 필요경비</p>
+                <ul className="space-y-1.5 text-gray-700">
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-600">•</span>
+                    <span><strong>취득세·등록세</strong> (부동산 구매 시 납부한 세금)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-600">•</span>
+                    <span><strong>중개수수료</strong> (매입·매도 시 부동산 수수료)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-600">•</span>
+                    <span><strong>인테리어·수리비</strong> (자본적 지출, 영수증 필수)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-600">•</span>
+                    <span><strong>법무사 비용</strong> (등기·소유권 이전 관련)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-600">•</span>
+                    <span><strong>인지세</strong> (매매계약서 작성 시)</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-red-50 rounded-lg p-3 border border-red-100">
+                <p className="font-medium text-red-800 mb-1.5">❌ 인정 안 되는 비용</p>
+                <ul className="space-y-1 text-red-700 text-xs">
+                  <li>• 일상적인 관리비·수선비 (자본적 지출 아님)</li>
+                  <li>• 영수증 없는 현금 지출</li>
+                  <li>• 대출 이자 (양도세 필요경비 아님)</li>
+                </ul>
+              </div>
+              <a
+                href="/w/세금/양도소득세-필요경비"
+                className="inline-flex items-center gap-1 px-3 py-1.5 bg-blue-600 text-white text-xs font-medium rounded-lg hover:bg-blue-700 transition-colors"
+              >
+                💼 필요경비 증빙 방법 보기
+              </a>
+            </div>
+          </details>
 
-          <div>
-            <h4 className="font-medium text-gray-800 mb-1">주의사항</h4>
-            <ul className="space-y-1 text-gray-600">
-              <li>• 필요경비: 취득세, 중개수수료, 인테리어 비용 등</li>
-              <li>• 실제 세액은 개인 상황에 따라 달라질 수 있어요</li>
-              <li>• 정확한 세액은 세무사에게 상담하세요</li>
-            </ul>
-          </div>
+          {/* 아코디언 4: 실수 포인트 */}
+          <details className="group">
+            <summary className="cursor-pointer px-4 py-3 hover:bg-red-50 transition-colors list-none flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="text-red-600 group-open:rotate-90 transition-transform">▶</span>
+                <h4 className="font-semibold text-gray-800 text-sm">
+                  <span className="bg-gradient-to-r from-red-200 via-red-100 to-transparent bg-[length:100%_40%] bg-no-repeat bg-bottom">
+                    ⚠️ 실수하기 쉬운 포인트 주의사항
+                  </span>
+                </h4>
+              </div>
+            </summary>
+            <div className="px-4 pb-4 pt-2 bg-red-50/30 space-y-3 text-sm">
+              <div className="bg-white rounded-lg p-3 border border-red-100">
+                <p className="font-medium text-red-800 mb-2">🚨 이것만은 꼭 확인하세요</p>
+                <ul className="space-y-2 text-gray-700">
+                  <li className="flex items-start gap-2">
+                    <span className="text-red-600 font-bold mt-0.5">1.</span>
+                    <div>
+                      <strong className="text-red-700">신고 기한 엄수</strong>
+                      <p className="text-xs text-gray-600 mt-0.5">양도일이 속하는 달의 말일부터 2개월 이내 신고·납부 (미신고 시 가산세)</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-red-600 font-bold mt-0.5">2.</span>
+                    <div>
+                      <strong className="text-red-700">다주택 중과 확인</strong>
+                      <p className="text-xs text-gray-600 mt-0.5">조정지역 2주택 +20%p, 3주택+ +30%p 중과 + 장특공 배제 (2026.5.10부터)</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-red-600 font-bold mt-0.5">3.</span>
+                    <div>
+                      <strong className="text-red-700">취득가액 입증 자료</strong>
+                      <p className="text-xs text-gray-600 mt-0.5">매매계약서·등기부등본 필수 (환산취득가액 적용 시 불리)</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-lg p-3 border border-amber-200">
+                <p className="font-medium text-amber-800 mb-1.5">💡 전문가 상담 권장</p>
+                <p className="text-xs text-gray-700">
+                  이 계산기는 간이 계산기예요. <strong>실제 세액은 개인 상황</strong>(거주 이력, 다른 소득, 공제 혜택 등)에 따라 달라질 수 있어요.
+                  정확한 세액은 <strong className="text-amber-700">세무사에게 상담</strong>받으세요.
+                </p>
+              </div>
+              <div className="flex gap-2">
+                <a
+                  href="/w/세금/양도소득세-신고방법"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 bg-red-600 text-white text-xs font-medium rounded-lg hover:bg-red-700 transition-colors"
+                >
+                  📝 신고 방법 보기
+                </a>
+                <a
+                  href="https://www.hometax.go.kr"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 bg-white border border-red-600 text-red-700 text-xs font-medium rounded-lg hover:bg-red-50 transition-colors"
+                >
+                  🏛️ 국세청 홈택스
+                </a>
+              </div>
+            </div>
+          </details>
         </div>
       </div>
 
