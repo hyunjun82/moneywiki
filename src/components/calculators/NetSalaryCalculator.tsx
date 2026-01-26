@@ -159,57 +159,99 @@ export default function NetSalaryCalculator() {
 
   const handleQuickSalary = (amount: number) => setAnnualSalary(amount);
 
-  // 연봉 기준 실수령액 표 데이터
+  // 연봉 기준 실수령액 표 데이터 (2026년 기준)
   const annualSalaryData = [
-    { annual: "1,000만", monthly: "83만", insurance: "7만", tax: "0.3만", netPay: "76만", rate: "92%", note: "최저 구간" },
-    { annual: "1,500만", monthly: "125만", insurance: "11만", tax: "1만", netPay: "113만", rate: "90%", note: "최저임금 수준" },
-    { annual: "2,000만", monthly: "167만", insurance: "15만", tax: "2만", netPay: "150만", rate: "90%", note: "저소득 구간" },
-    { annual: "2,500만", monthly: "208만", insurance: "19만", tax: "3만", netPay: "186만", rate: "89%", note: "저소득 구간" },
-    { annual: "3,000만", monthly: "250만", insurance: "22만", tax: "3만", netPay: "224만", rate: "90%", note: "사회초년생 👶", highlight: true },
-    { annual: "3,500만", monthly: "292만", insurance: "26만", tax: "7만", netPay: "259만", rate: "89%", note: "2~3년차" },
-    { annual: "4,000만", monthly: "333만", insurance: "30만", tax: "10만", netPay: "293만", rate: "88%", note: "3~5년차 평균 💼", highlight: true },
-    { annual: "4,500만", monthly: "375만", insurance: "34만", tax: "15만", netPay: "326만", rate: "87%", note: "중소기업 평균" },
-    { annual: "5,000만", monthly: "417만", insurance: "39만", tax: "21만", netPay: "357만", rate: "86%", note: "대기업 초봉 🏢", highlight: true },
-    { annual: "5,500만", monthly: "458만", insurance: "43만", tax: "26만", netPay: "389만", rate: "85%", note: "대기업 3년차" },
-    { annual: "6,000만", monthly: "500만", insurance: "47만", tax: "33만", netPay: "420만", rate: "84%", note: "과장급 평균 ⭐", highlight: true },
-    { annual: "6,500만", monthly: "542만", insurance: "51만", tax: "40만", netPay: "451만", rate: "83%", note: "과장급" },
-    { annual: "7,000만", monthly: "583만", insurance: "55만", tax: "47만", netPay: "481만", rate: "82%", note: "차부장급" },
-    { annual: "7,500만", monthly: "625만", insurance: "58만", tax: "54만", netPay: "513만", rate: "82%", note: "차부장급" },
-    { annual: "8,000만", monthly: "667만", insurance: "62만", tax: "61만", netPay: "543만", rate: "81%", note: "차부장급 💎", highlight: true },
-    { annual: "8,500만", monthly: "708만", insurance: "66만", tax: "69만", netPay: "573만", rate: "81%", note: "부장급" },
-    { annual: "9,000만", monthly: "750만", insurance: "70만", tax: "77만", netPay: "603만", rate: "80%", note: "부장급" },
-    { annual: "9,500만", monthly: "792만", insurance: "73만", tax: "86만", netPay: "632만", rate: "80%", note: "부장급" },
-    { annual: "1억", monthly: "833만", insurance: "71만", tax: "99만", netPay: "664만", rate: "80%", note: "억대연봉! 🎯", highlight: true },
-    { annual: "1.1억", monthly: "917만", insurance: "76만", tax: "117만", netPay: "724만", rate: "79%", note: "임원급" },
-    { annual: "1.2억", monthly: "1,000만", insurance: "80만", tax: "136만", netPay: "784만", rate: "78%", note: "임원급" },
-    { annual: "1.3억", monthly: "1,083만", insurance: "84만", tax: "156만", netPay: "843만", rate: "77%", note: "임원급" },
-    { annual: "1.4억", monthly: "1,167만", insurance: "88만", tax: "177만", netPay: "902만", rate: "77%", note: "임원급" },
-    { annual: "1.5억", monthly: "1,250만", insurance: "91만", tax: "224만", netPay: "935만", rate: "75%", note: "임원급 🏆", highlight: true },
-    { annual: "2억", monthly: "1,667만", insurance: "107만", tax: "382만", netPay: "1,178만", rate: "71%", note: "최고경영진" },
+    // 1,000만원 ~ 3,000만원 (100만원 단위)
+    { annual: "1,000만", netPay: "771,033", total: "62,300", pension: "32,990", health: "22,870", longTerm: "1,680", employ: "4,760", income: "0", local: "0" },
+    { annual: "1,100만", netPay: "847,286", total: "69,380", pension: "36,740", health: "25,470", longTerm: "1,870", employ: "5,300", income: "0", local: "0" },
+    { annual: "1,200만", netPay: "923,500", total: "76,500", pension: "40,500", health: "28,080", longTerm: "2,070", employ: "5,850", income: "0", local: "0" },
+    { annual: "1,300만", netPay: "998,863", total: "84,470", pension: "44,240", health: "30,670", longTerm: "2,260", employ: "6,390", income: "830", local: "80" },
+    { annual: "1,400만", netPay: "1,073,736", total: "92,930", pension: "47,990", health: "33,270", longTerm: "2,450", employ: "6,930", income: "2,090", local: "200" },
+    { annual: "1,500만", netPay: "1,148,580", total: "101,420", pension: "51,750", health: "35,880", longTerm: "2,640", employ: "7,470", income: "3,350", local: "330" },
+    { annual: "1,600만", netPay: "1,223,463", total: "109,870", pension: "55,490", health: "38,470", longTerm: "2,830", employ: "8,010", income: "4,610", local: "460" },
+    { annual: "1,700만", netPay: "1,297,826", total: "118,840", pension: "59,240", health: "41,070", longTerm: "3,030", employ: "8,550", income: "6,320", local: "630" },
+    { annual: "1,800만", netPay: "1,372,040", total: "127,960", pension: "63,000", health: "43,680", longTerm: "3,220", employ: "9,100", income: "8,150", local: "810" },
+    { annual: "1,900만", netPay: "1,446,313", total: "137,020", pension: "66,740", health: "46,270", longTerm: "3,410", employ: "9,640", income: "9,970", local: "990" },
+    { annual: "2,000만", netPay: "1,520,566", total: "146,100", pension: "70,490", health: "48,870", longTerm: "3,600", employ: "10,180", income: "11,790", local: "1,170" },
+    { annual: "2,100만", netPay: "1,594,790", total: "155,210", pension: "74,250", health: "51,480", longTerm: "3,790", employ: "10,720", income: "13,610", local: "1,360" },
+    { annual: "2,200만", netPay: "1,669,043", total: "164,290", pension: "77,990", health: "54,070", longTerm: "3,990", employ: "11,260", income: "15,440", local: "1,540" },
+    { annual: "2,300만", netPay: "1,743,296", total: "173,370", pension: "81,740", health: "56,670", longTerm: "4,180", employ: "11,800", income: "17,260", local: "1,720" },
+    { annual: "2,400만", netPay: "1,817,310", total: "182,690", pension: "85,500", health: "59,280", longTerm: "4,370", employ: "12,350", income: "19,270", local: "1,920" },
+    { annual: "2,500만", netPay: "1,890,463", total: "192,870", pension: "89,240", health: "61,870", longTerm: "4,560", employ: "12,890", income: "22,100", local: "2,210" },
+    { annual: "2,600만", netPay: "1,963,596", total: "203,070", pension: "92,990", health: "64,470", longTerm: "4,750", employ: "13,430", income: "24,940", local: "2,490" },
+    { annual: "2,700만", netPay: "2,036,710", total: "213,290", pension: "96,750", health: "67,080", longTerm: "4,950", employ: "13,970", income: "27,770", local: "2,770" },
+    { annual: "2,800만", netPay: "2,109,853", total: "223,480", pension: "100,490", health: "69,670", longTerm: "5,140", employ: "14,510", income: "30,610", local: "3,060" },
+    { annual: "2,900만", netPay: "2,179,916", total: "236,750", pension: "104,240", health: "72,270", longTerm: "5,330", employ: "15,050", income: "36,240", local: "3,620" },
+    // 3,000만원 ~ 5,000만원
+    { annual: "3,000만", netPay: "2,248,340", total: "251,660", pension: "108,000", health: "74,880", longTerm: "5,520", employ: "15,600", income: "43,330", local: "4,330", highlight: true },
+    { annual: "3,500만", netPay: "2,580,346", total: "336,320", pension: "126,740", health: "87,870", longTerm: "6,480", employ: "18,300", income: "88,120", local: "8,810" },
+    { annual: "4,000만", netPay: "2,917,143", total: "416,190", pension: "145,490", health: "100,870", longTerm: "7,440", employ: "21,010", income: "128,530", local: "12,850", highlight: true },
+    { annual: "4,500만", netPay: "3,239,250", total: "510,750", pension: "164,250", health: "113,880", longTerm: "8,400", employ: "23,720", income: "182,280", local: "18,220" },
+    { annual: "5,000만", netPay: "3,552,316", total: "614,350", pension: "182,990", health: "126,870", longTerm: "9,360", employ: "26,430", income: "244,280", local: "24,420", highlight: true },
+    // 5,000만원 ~ 10,000만원
+    { annual: "5,500만", netPay: "3,869,273", total: "714,060", pension: "201,740", health: "139,870", longTerm: "10,320", employ: "29,140", income: "302,720", local: "30,270" },
+    { annual: "6,000만", netPay: "4,183,470", total: "816,530", pension: "220,500", health: "152,880", longTerm: "11,280", employ: "31,850", income: "363,660", local: "36,360", highlight: true },
+    { annual: "6,500만", netPay: "4,500,476", total: "916,190", pension: "239,240", health: "165,870", longTerm: "12,240", employ: "34,550", income: "422,090", local: "42,200" },
+    { annual: "7,000만", netPay: "4,785,823", total: "1,047,510", pension: "257,990", health: "178,870", longTerm: "13,200", employ: "37,260", income: "509,270", local: "50,920" },
+    { annual: "7,500만", netPay: "5,036,270", total: "1,213,730", pension: "276,750", health: "191,880", longTerm: "14,160", employ: "39,970", income: "628,160", local: "62,810" },
+    { annual: "8,000만", netPay: "5,313,816", total: "1,352,850", pension: "295,490", health: "204,870", longTerm: "15,110", employ: "42,680", income: "722,460", local: "72,240", highlight: true },
+    { annual: "8,500만", netPay: "5,591,343", total: "1,491,990", pension: "314,240", health: "217,870", longTerm: "16,070", employ: "45,390", income: "816,750", local: "81,670" },
+    { annual: "9,000만", netPay: "5,868,840", total: "1,631,160", pension: "333,000", health: "230,880", longTerm: "17,030", employ: "48,100", income: "911,050", local: "91,100" },
+    { annual: "9,500만", netPay: "6,146,386", total: "1,770,280", pension: "351,740", health: "243,870", longTerm: "17,990", employ: "50,800", income: "1,005,350", local: "100,530" },
+    { annual: "1억", netPay: "6,423,903", total: "1,909,430", pension: "370,490", health: "256,870", longTerm: "18,950", employ: "53,510", income: "1,099,650", local: "109,960", highlight: true },
+    // 10,000만원 ~ 15,000만원
+    { annual: "10,500만", netPay: "6,698,900", total: "2,051,100", pension: "389,250", health: "269,880", longTerm: "19,910", employ: "56,220", income: "1,196,220", local: "119,620" },
+    { annual: "11,000만", netPay: "6,968,006", total: "2,198,660", pension: "407,990", health: "282,870", longTerm: "20,870", employ: "58,930", income: "1,298,190", local: "129,810" },
+    { annual: "11,500만", netPay: "7,193,163", total: "2,390,170", pension: "426,740", health: "295,870", longTerm: "21,830", employ: "61,640", income: "1,440,090", local: "144,000" },
+    { annual: "12,000만", netPay: "7,418,310", total: "2,581,690", pension: "445,500", health: "308,880", longTerm: "22,790", employ: "64,350", income: "1,581,980", local: "158,190" },
+    { annual: "12,500만", netPay: "7,524,186", total: "2,892,480", pension: "464,240", health: "321,870", longTerm: "23,750", employ: "67,050", income: "1,832,340", local: "183,230" },
+    { annual: "13,000만", netPay: "7,748,553", total: "3,084,780", pension: "482,990", health: "334,870", longTerm: "24,710", employ: "69,760", income: "1,974,960", local: "197,490" },
+    { annual: "13,500만", netPay: "7,972,900", total: "3,277,100", pension: "501,750", health: "347,880", longTerm: "25,670", employ: "72,470", income: "2,117,580", local: "211,750" },
+    { annual: "14,000만", netPay: "8,197,266", total: "3,469,400", pension: "520,490", health: "360,870", longTerm: "26,630", employ: "75,180", income: "2,260,210", local: "226,020" },
+    { annual: "14,500만", netPay: "8,421,633", total: "3,661,700", pension: "539,240", health: "373,870", longTerm: "27,590", employ: "77,890", income: "2,402,830", local: "240,280" },
+    { annual: "15,000만", netPay: "8,645,980", total: "3,854,020", pension: "558,000", health: "386,880", longTerm: "28,550", employ: "80,600", income: "2,545,450", local: "254,540", highlight: true },
   ];
 
-  // 월급 기준 실수령액 표 데이터
+  // 월급 기준 실수령액 표 데이터 (2026년 기준)
   const monthlySalaryData = [
-    { monthly: "100만", netPay: "92만", insurance: "7만", tax: "0.3만", rate: "92%", note: "최저 구간" },
-    { monthly: "150만", netPay: "136만", insurance: "13만", tax: "1만", rate: "91%", note: "최저임금" },
-    { monthly: "200만", netPay: "180만", insurance: "18만", tax: "2만", rate: "90%", note: "저소득" },
-    { monthly: "250만", netPay: "224만", insurance: "22만", tax: "3만", rate: "90%", note: "사회초년생 👶", highlight: true },
-    { monthly: "300만", netPay: "269만", insurance: "27만", tax: "4만", rate: "90%", note: "중소기업 평균 💼", highlight: true },
-    { monthly: "350만", netPay: "311만", insurance: "32만", tax: "7만", rate: "89%", note: "3~5년차" },
-    { monthly: "400만", netPay: "353만", insurance: "37만", tax: "10만", rate: "88%", note: "대기업 초봉 🏢", highlight: true },
-    { monthly: "450만", netPay: "394만", insurance: "42만", tax: "14만", rate: "88%", note: "대기업 3년차" },
-    { monthly: "500만", netPay: "420만", insurance: "47만", tax: "33만", rate: "84%", note: "과장급 평균 ⭐", highlight: true },
-    { monthly: "550만", netPay: "460만", insurance: "51만", tax: "39만", rate: "84%", note: "과장급" },
-    { monthly: "600만", netPay: "499만", insurance: "56만", tax: "45만", rate: "83%", note: "차부장급" },
-    { monthly: "650만", netPay: "537만", insurance: "60만", tax: "52만", rate: "83%", note: "차부장급 💎", highlight: true },
-    { monthly: "700만", netPay: "574만", insurance: "65만", tax: "61만", rate: "82%", note: "부장급" },
-    { monthly: "750만", netPay: "603만", insurance: "70만", tax: "77만", rate: "80%", note: "부장급" },
-    { monthly: "800만", netPay: "654만", insurance: "69만", tax: "78만", rate: "82%", note: "억대연봉 🎯", highlight: true },
-    { monthly: "900만", netPay: "716만", insurance: "75만", tax: "109만", rate: "80%", note: "임원급" },
-    { monthly: "1,000만", netPay: "777만", insurance: "80만", tax: "143만", rate: "78%", note: "임원급 🏆", highlight: true },
-    { monthly: "1,200만", netPay: "895만", insurance: "87만", tax: "218만", rate: "75%", note: "최고경영진" },
-    { monthly: "1,500만", netPay: "1,083만", insurance: "97만", tax: "320만", rate: "72%", note: "CEO급" },
-    { monthly: "2,000만", netPay: "1,383만", insurance: "108만", tax: "509만", rate: "69%", note: "최상위" },
+    // 100만원 ~ 300만원 (10만원 단위)
+    { monthly: "100만", netPay: "923,500", total: "76,500", pension: "40,500", health: "28,080", longTerm: "2,070", employ: "5,850", income: "0", local: "0" },
+    { monthly: "110만", netPay: "1,013,810", total: "86,190", pension: "45,000", health: "31,200", longTerm: "2,300", employ: "6,500", income: "1,090", local: "100" },
+    { monthly: "120만", netPay: "1,103,640", total: "96,360", pension: "49,500", health: "34,320", longTerm: "2,530", employ: "7,150", income: "2,600", local: "260" },
+    { monthly: "130만", netPay: "1,193,480", total: "106,520", pension: "54,000", health: "37,440", longTerm: "2,760", employ: "7,800", income: "4,110", local: "410" },
+    { monthly: "140만", netPay: "1,282,950", total: "117,050", pension: "58,500", health: "40,560", longTerm: "2,990", employ: "8,450", income: "5,960", local: "590" },
+    { monthly: "150만", netPay: "1,372,040", total: "127,960", pension: "63,000", health: "43,680", longTerm: "3,220", employ: "9,100", income: "8,150", local: "810" },
+    { monthly: "160만", netPay: "1,461,140", total: "138,860", pension: "67,500", health: "46,800", longTerm: "3,450", employ: "9,750", income: "10,330", local: "1,030" },
+    { monthly: "170만", netPay: "1,550,230", total: "149,770", pension: "72,000", health: "49,920", longTerm: "3,680", employ: "10,400", income: "12,520", local: "1,250" },
+    { monthly: "180만", netPay: "1,639,320", total: "160,680", pension: "76,500", health: "53,040", longTerm: "3,910", employ: "11,050", income: "14,710", local: "1,470" },
+    { monthly: "190만", netPay: "1,728,430", total: "171,570", pension: "81,000", health: "56,160", longTerm: "4,140", employ: "11,700", income: "16,890", local: "1,680" },
+    { monthly: "200만", netPay: "1,817,310", total: "182,690", pension: "85,500", health: "59,280", longTerm: "4,370", employ: "12,350", income: "19,270", local: "1,920", highlight: true },
+    { monthly: "210만", netPay: "1,905,070", total: "194,930", pension: "90,000", health: "62,400", longTerm: "4,600", employ: "13,000", income: "22,670", local: "2,260" },
+    { monthly: "220만", netPay: "1,992,830", total: "207,170", pension: "94,500", health: "65,520", longTerm: "4,830", employ: "13,650", income: "26,070", local: "2,600" },
+    { monthly: "230만", netPay: "2,080,590", total: "219,410", pension: "99,000", health: "68,640", longTerm: "5,060", employ: "14,300", income: "29,470", local: "2,940" },
+    { monthly: "240만", netPay: "2,166,200", total: "233,800", pension: "103,500", health: "71,760", longTerm: "5,290", employ: "14,950", income: "34,820", local: "3,480" },
+    { monthly: "250만", netPay: "2,248,340", total: "251,660", pension: "108,000", health: "74,880", longTerm: "5,520", employ: "15,600", income: "43,330", local: "4,330", highlight: true },
+    { monthly: "260만", netPay: "2,330,490", total: "269,510", pension: "112,500", health: "78,000", longTerm: "5,750", employ: "16,250", income: "51,830", local: "5,180" },
+    { monthly: "270만", netPay: "2,412,060", total: "287,940", pension: "117,000", health: "81,120", longTerm: "5,980", employ: "16,900", income: "60,860", local: "6,080" },
+    { monthly: "280만", netPay: "2,490,130", total: "309,870", pension: "121,500", health: "84,240", longTerm: "6,210", employ: "17,550", income: "73,070", local: "7,300" },
+    { monthly: "290만", netPay: "2,567,440", total: "332,560", pension: "126,000", health: "87,360", longTerm: "6,440", employ: "18,200", income: "85,970", local: "8,590" },
+    { monthly: "300만", netPay: "2,656,670", total: "343,330", pension: "130,500", health: "90,480", longTerm: "6,670", employ: "18,850", income: "88,030", local: "8,800", highlight: true },
+    // 300만원 ~ 800만원 (50만원 단위)
+    { monthly: "350만", netPay: "3,045,970", total: "454,030", pension: "153,000", health: "106,080", longTerm: "7,820", employ: "22,100", income: "150,030", local: "15,000" },
+    { monthly: "400만", netPay: "3,425,500", total: "574,500", pension: "175,500", health: "121,680", longTerm: "8,970", employ: "25,350", income: "220,910", local: "22,090", highlight: true },
+    { monthly: "450만", netPay: "3,805,860", total: "694,140", pension: "198,000", health: "137,280", longTerm: "10,130", employ: "28,600", income: "291,030", local: "29,100" },
+    { monthly: "500만", netPay: "4,183,470", total: "816,530", pension: "220,500", health: "152,880", longTerm: "11,280", employ: "31,850", income: "363,660", local: "36,360", highlight: true },
+    { monthly: "550만", netPay: "4,562,980", total: "937,020", pension: "243,000", health: "168,480", longTerm: "12,430", employ: "35,100", income: "434,560", local: "43,450" },
+    { monthly: "600만", netPay: "4,869,760", total: "1,130,240", pension: "265,500", health: "184,080", longTerm: "13,580", employ: "38,350", income: "571,580", local: "57,150" },
+    { monthly: "650만", netPay: "5,202,780", total: "1,297,220", pension: "288,000", health: "199,680", longTerm: "14,730", employ: "41,600", income: "684,740", local: "68,470", highlight: true },
+    { monthly: "700만", netPay: "5,535,820", total: "1,464,180", pension: "310,500", health: "215,280", longTerm: "15,880", employ: "44,850", income: "797,890", local: "79,780" },
+    { monthly: "750만", netPay: "5,868,840", total: "1,631,160", pension: "333,000", health: "230,880", longTerm: "17,030", employ: "48,100", income: "911,050", local: "91,100" },
+    { monthly: "800만", netPay: "6,201,850", total: "1,798,150", pension: "355,500", health: "246,480", longTerm: "18,190", employ: "51,350", income: "1,024,210", local: "102,420", highlight: true },
+    // 800만원 ~ 1,200만원
+    { monthly: "900만", netPay: "6,863,420", total: "2,136,580", pension: "400,500", health: "277,680", longTerm: "20,490", employ: "57,850", income: "1,254,600", local: "125,460" },
+    { monthly: "1,000만", netPay: "7,418,310", total: "2,581,690", pension: "445,500", health: "308,880", longTerm: "22,790", employ: "64,350", income: "1,581,980", local: "158,190", highlight: true },
+    { monthly: "1,100만", netPay: "7,838,270", total: "3,161,730", pension: "490,500", health: "340,080", longTerm: "25,090", employ: "70,850", income: "2,032,010", local: "203,200" },
+    { monthly: "1,200만", netPay: "8,376,740", total: "3,623,260", pension: "535,500", health: "371,280", longTerm: "27,400", employ: "77,350", income: "2,374,300", local: "237,430", highlight: true },
   ];
 
   return (
@@ -395,40 +437,49 @@ export default function NetSalaryCalculator() {
           {/* 표 내용 - 조건부 렌더링 */}
           <div className="overflow-x-auto">
             {tableType === "annual" ? (
-              <table className="w-full text-sm border-collapse">
+              <table className="w-full text-xs sm:text-sm border-collapse">
                 <thead>
                   <tr className="bg-emerald-100 border-b-2 border-emerald-300">
                     <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">연봉</th>
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">월급</th>
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">4대보험</th>
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">소득세</th>
                     <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">실수령액</th>
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden md:table-cell">한줄평</th>
+                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden lg:table-cell">공제액계</th>
+                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden md:table-cell">국민연금</th>
+                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden md:table-cell">건강보험</th>
+                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden xl:table-cell">장기요양</th>
+                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden xl:table-cell">고용보험</th>
+                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">소득세</th>
+                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden lg:table-cell">지방소득세</th>
                   </tr>
                 </thead>
                 <tbody>
                   {annualSalaryData.map((row, idx) => (
                     <tr key={idx} className={row.highlight ? "bg-green-50" : "bg-white"}>
                       <td className="py-2 px-2 text-center font-medium border border-gray-300">{row.annual}원</td>
-                      <td className="py-2 px-2 text-center border border-gray-300">{row.monthly}원</td>
-                      <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">{row.insurance}원</td>
-                      <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">{row.tax}원</td>
                       <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">{row.netPay}원</td>
-                      <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">{row.note}</td>
+                      <td className="py-2 px-2 text-center border border-gray-300 hidden lg:table-cell">{row.total}원</td>
+                      <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell">{row.pension}원</td>
+                      <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell">{row.health}원</td>
+                      <td className="py-2 px-2 text-center border border-gray-300 hidden xl:table-cell">{row.longTerm}원</td>
+                      <td className="py-2 px-2 text-center border border-gray-300 hidden xl:table-cell">{row.employ}원</td>
+                      <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">{row.income}원</td>
+                      <td className="py-2 px-2 text-center border border-gray-300 hidden lg:table-cell">{row.local}원</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             ) : (
-              <table className="w-full text-sm border-collapse">
+              <table className="w-full text-xs sm:text-sm border-collapse">
                 <thead>
                   <tr className="bg-emerald-100 border-b-2 border-emerald-300">
                     <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">월급</th>
                     <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">실수령액</th>
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">4대보험</th>
+                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden lg:table-cell">공제액계</th>
+                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden md:table-cell">국민연금</th>
+                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden md:table-cell">건강보험</th>
+                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden xl:table-cell">장기요양</th>
+                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden xl:table-cell">고용보험</th>
                     <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">소득세</th>
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">실수령률</th>
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden md:table-cell">한줄평</th>
+                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden lg:table-cell">지방소득세</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -436,10 +487,13 @@ export default function NetSalaryCalculator() {
                     <tr key={idx} className={row.highlight ? "bg-green-50" : "bg-white"}>
                       <td className="py-2 px-2 text-center font-medium border border-gray-300">{row.monthly}원</td>
                       <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">{row.netPay}원</td>
-                      <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">{row.insurance}원</td>
-                      <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">{row.tax}원</td>
-                      <td className="py-2 px-2 text-center border border-gray-300">{row.rate}</td>
-                      <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">{row.note}</td>
+                      <td className="py-2 px-2 text-center border border-gray-300 hidden lg:table-cell">{row.total}원</td>
+                      <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell">{row.pension}원</td>
+                      <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell">{row.health}원</td>
+                      <td className="py-2 px-2 text-center border border-gray-300 hidden xl:table-cell">{row.longTerm}원</td>
+                      <td className="py-2 px-2 text-center border border-gray-300 hidden xl:table-cell">{row.employ}원</td>
+                      <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">{row.income}원</td>
+                      <td className="py-2 px-2 text-center border border-gray-300 hidden lg:table-cell">{row.local}원</td>
                     </tr>
                   ))}
                 </tbody>
