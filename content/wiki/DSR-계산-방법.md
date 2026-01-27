@@ -34,6 +34,12 @@ relatedDocs:
     url: /calculators/loan-interest
   - title: 주택담보대출 LTV
     url: /w/주택담보대출-LTV
+cta:
+  - url: "https://www.fsc.go.kr"
+    badge: "정부 공식"
+    text: "금융위원회"
+    action: "바로가기"
+    color: "green"
 ---
 
 "대출 받으려고 은행 갔더니 DSR 때문에 안 된다는데요?" 요즘 대출 상담받다 보면 꼭 한 번씩 듣게 되는 말이죠.

@@ -37,6 +37,12 @@ relatedDocs:
     url: /w/퇴직연금-조회
   - title: 퇴직연금 DB DC 차이
     url: /w/퇴직연금-db-dc-차이
+cta:
+  - url: "https://www.law.go.kr/법령/근로자퇴직급여보장법"
+    badge: "정부 공식"
+    text: "근로자퇴직급여보장법"
+    action: "바로가기"
+    color: "green"
 ---
 
 퇴직하면서 퇴직금을 IRP로 받으라고 하는데, IRP 계좌가 없어서 막막하시죠. 어디서 어떻게 만들어야 하는지, 퇴직금은 어떻게 넣는지, 해지는 어떻게 하는지 궁금하실 거예요.

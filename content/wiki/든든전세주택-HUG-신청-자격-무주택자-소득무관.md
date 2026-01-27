@@ -40,6 +40,12 @@ relatedDocs:
     url: /w/공공임대주택-입주자
   - title: 전세계약
     url: /w/주택-전세-계약
+cta:
+  - url: "https://www.khug.or.kr/jeonse"
+    badge: "공식 사이트"
+    text: "주택도시보증공사(HUG)"
+    action: "바로가기"
+    color: "dark"
 ---
 
 "전세사기 겪었는데 다시 전세 구하기 무섭잖아요. 보증금 안 떼이는 집 없나요?" HUG 든든전세주택 있어요!

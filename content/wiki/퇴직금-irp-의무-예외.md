@@ -43,6 +43,12 @@ relatedDocs:
     url: /w/퇴직금-수령방법
   - title: IRP 계좌 퇴직금 수령방법
     url: /w/irp-계좌-퇴직금-수령방법
+cta:
+  - url: "https://www.law.go.kr/법령/근로자퇴직급여보장법"
+    badge: "정부 공식"
+    text: "근로자퇴직급여보장법 제17조"
+    action: "바로가기"
+    color: "green"
 ---
 
 퇴직금 받으려는데 IRP로 먼저 받아야 한다고 하셨죠. IRP 거치기 귀찮은데 바로 현금으로 못 받나 궁금하시죠.

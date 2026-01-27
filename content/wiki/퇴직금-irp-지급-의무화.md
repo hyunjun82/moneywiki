@@ -43,6 +43,12 @@ relatedDocs:
     url: /w/퇴직금-irp-의무-예외
   - title: IRP 계좌 퇴직금 수령방법
     url: /w/irp-계좌-퇴직금-수령방법
+cta:
+  - url: "https://www.law.go.kr/법령/근로자퇴직급여보장법"
+    badge: "정부 공식"
+    text: "근로자퇴직급여보장법 제17조"
+    action: "바로가기"
+    color: "green"
 ---
 
 퇴직하려는데 회사에서 퇴직금을 IRP로만 준다고 하죠. 왜 바로 현금으로 안 주는지 궁금하시죠.

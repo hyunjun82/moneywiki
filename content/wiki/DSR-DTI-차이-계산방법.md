@@ -37,6 +37,12 @@ relatedDocs:
     url: /w/신용대출
   - title: 전세자금대출
     url: /w/전세자금대출
+cta:
+  - url: "https://www.fsc.go.kr/no010101/79514"
+    badge: "정부 공식"
+    text: "금융위원회 가계대출 관리방안"
+    action: "바로가기"
+    color: "green"
 ---
 
 "대출 받으려고 은행 갔더니 DSR이 어쩌고 DTI가 어쩌고 하던데 도대체 뭐예요?" 처음 듣는 용어에 당황하셨죠? 2026년 현재 대출 받으려면 이 두 가지를 꼭 알아야 해요.

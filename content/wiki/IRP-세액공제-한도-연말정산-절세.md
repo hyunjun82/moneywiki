@@ -36,6 +36,12 @@ relatedDocs:
     url: "/w/퇴직금-IRP-이전-의무가입-세액공제-혜택"
   - title: "퇴직연금 중도 해지"
     url: "/w/퇴직연금-중도-해지-절차-세금-부담"
+cta:
+  - url: "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7875"
+    badge: "정부 공식"
+    text: "국세청 세액공제 규정"
+    action: "바로가기"
+    color: "green"
 ---
 
 IRP 가입했는데 세액공제를 얼마나 받을 수 있는지 궁금하시죠? 900만원까지 넣으면 148.5만원 돌려받을 수 있어요. 연금저축이랑 합치면 어떻게 되는지, 한도가 헷갈리시고요. 걱정 마세요. 간단하게 정리해 드릴게요.

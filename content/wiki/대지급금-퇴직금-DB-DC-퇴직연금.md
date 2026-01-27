@@ -35,6 +35,12 @@ relatedDocs:
     url: "/w/도산대지급금-상한액-지급액-계산"
   - title: "대지급금 체당금 지급 사유 및 종류"
     url: "/w/대지급금-체당금-지급-사유-종류"
+cta:
+  - url: "https://www.law.go.kr/법령/근로자퇴직급여 보장법"
+    badge: "정부 공식"
+    text: "근로자퇴직급여 보장법"
+    action: "바로가기"
+    color: "green"
 ---
 
 # 대지급금 퇴직금 DB DC 퇴직연금

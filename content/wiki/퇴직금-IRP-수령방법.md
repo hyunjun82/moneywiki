@@ -41,6 +41,12 @@ relatedDocs:
     url: /w/퇴직금-세금-계산기
   - title: 퇴직연금 조회
     url: /w/퇴직연금-조회
+cta:
+  - url: "https://100lifeplan.fss.or.kr"
+    badge: "공식 사이트"
+    text: "100lifeplan.fss.or.kr"
+    action: "바로가기"
+    color: "green"
 ---
 
 퇴직하면서 IRP 통장으로 퇴직금을 받으셨죠. 그런데 이 돈을 어떻게 찾아야 하는지, 세금은 어떻게 되는지 헷갈리실 거예요.

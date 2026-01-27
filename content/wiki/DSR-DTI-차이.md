@@ -34,6 +34,12 @@ relatedDocs:
     url: /w/DSR-계산-방법
   - title: 대출 이자 계산기
     url: /calculators/loan-interest
+cta:
+  - url: "https://www.fsc.go.kr"
+    badge: "정부 공식"
+    text: "금융위원회"
+    action: "바로가기"
+    color: "green"
 ---
 
 "대출 상담받으러 갔더니 DTI는 괜찮은데 DSR이 안 돼서 대출이 안 된다는데요?" 은행에서 이런 말 들어보셨죠?

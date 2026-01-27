@@ -34,6 +34,12 @@ relatedDocs:
     url: "/w/ETF-투자-초보자"
   - title: "채권 투자 수익률"
     url: "/w/채권-투자-수익률"
+cta:
+  - url: "https://www.fss.or.kr"
+    badge: "공식 사이트"
+    text: "금융감독원 ISA 안내"
+    action: "바로가기"
+    color: "green"
 ---
 
 ISA 계좌가 세금 혜택 많다는데 막상 알아보려니 복잡하고 어려우시죠. 일반형이니 서민형이니 뭐가 뭔지도 헷갈리고요. ISA는 주식, 펀드, 예적금을 한 계좌에서 관리하면서 세금도 아낄 수 있는 만능통장이에요.

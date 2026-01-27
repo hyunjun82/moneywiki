@@ -34,6 +34,12 @@ relatedDocs:
     url: "/w/MMF투자-수익률-방법"
   - title: "적금 금리 비교"
     url: "/w/적금-금리-비교"
+cta:
+  - url: "https://finlife.fss.or.kr"
+    badge: "공식 사이트"
+    text: "금융감독원 금융상품한눈에"
+    action: "바로가기"
+    color: "green"
 ---
 
 급여 받으면 보통 은행 입출금 통장에 넣어두시죠? 근데 거기선 이자가 거의 안 붙어요. 똑같이 넣어두는데 매일 이자가 쌓이는 통장이 있다면 어떨까요?

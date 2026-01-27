@@ -43,6 +43,12 @@ relatedDocs:
     url: /w/퇴직금-irp-의무
   - title: 개인형 IRP 퇴직금 수령방법
     url: /w/개인형-irp-퇴직금-수령방법
+cta:
+  - url: "https://www.law.go.kr/법령/근로자퇴직급여보장법"
+    badge: "정부 공식"
+    text: "근로자퇴직급여보장법"
+    action: "바로가기"
+    color: "green"
 ---
 
 퇴직금이 IRP 계좌로 들어왔는데 어떻게 빼야 하는지 모르시겠죠. 바로 출금이 안 돼서 답답하시죠.

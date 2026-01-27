@@ -36,6 +36,12 @@ relatedDocs:
     url: /w/퇴직금-계산기
   - title: 퇴직연금 조회
     url: /w/퇴직연금-조회
+cta:
+  - url: "https://www.law.go.kr/법령/근로자퇴직급여보장법"
+    badge: "정부 공식"
+    text: "근로자퇴직급여보장법"
+    action: "바로가기"
+    color: "green"
 ---
 
 DC형 퇴직연금에 가입되어 있는데, 퇴직하면 얼마나 받는지 궁금하시죠? DB형이랑 계산 방식이 완전히 달라서 헷갈리실 거예요.

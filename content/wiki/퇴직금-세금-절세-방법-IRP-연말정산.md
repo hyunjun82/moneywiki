@@ -34,6 +34,12 @@ relatedDocs:
     url: "/w/퇴직금-IRP-이전-의무가입-세액공제-혜택"
   - title: "퇴직소득세 계산"
     url: "/w/퇴직소득세-세율-계산-근속연수별-공제-환급"
+cta:
+  - url: "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=6444&cntntsId=7880"
+    badge: "정부 공식"
+    text: "국세청 퇴직소득세"
+    action: "바로가기"
+    color: "green"
 ---
 
 퇴직금 5,000만원 받는데 세금 500만원 떼간다고요? 그냥 받으면 그래요. IRP로 이전하고 연금으로 받으면 200만원만 내요. 300만원 절세예요. 어떻게 하는지 알려드릴게요.

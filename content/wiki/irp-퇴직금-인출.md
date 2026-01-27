@@ -43,6 +43,12 @@ relatedDocs:
     url: /w/퇴직연금-일시금-수령
   - title: 퇴직금 세금
     url: /w/퇴직금-세금
+cta:
+  - url: "https://www.law.go.kr/법령/근로자퇴직급여보장법"
+    badge: "정부 공식"
+    text: "근로자퇴직급여보장법"
+    action: "바로가기"
+    color: "green"
 ---
 
 퇴직금이 IRP로 들어왔는데 어떻게 찾아야 하는지 모르시겠죠. 당장 돈이 필요한데 못 찾는 건 아닌지 걱정되시죠.

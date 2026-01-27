@@ -43,6 +43,12 @@ relatedDocs:
     url: /w/퇴직연금-해지-절차
   - title: 퇴직금 지급기한
     url: /w/퇴직금-지급기한
+cta:
+  - url: "https://www.law.go.kr/법령/근로자퇴직급여보장법"
+    badge: "정부 공식"
+    text: "근로자퇴직급여보장법"
+    action: "바로가기"
+    color: "green"
 ---
 
 회사 그만두고 퇴직금 받았어요. 근데 IRP 계좌로 넣으라는데, 세금이 어떻게 되는 건지 헷갈려요.
