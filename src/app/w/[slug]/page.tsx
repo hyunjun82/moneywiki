@@ -67,11 +67,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       authors: ["머니위키"],
       tags: doc.keywords,
       section: doc.category,
+      ...(doc.thumbnail && {
+        images: [
+          {
+            url: `https://www.jjyu.co.kr${doc.thumbnail}`,
+            width: 1200,
+            height: 630,
+            alt: doc.title,
+          },
+        ],
+      }),
     },
     twitter: {
       card: "summary_large_image",
       title: `${doc.title} | 머니위키`,
       description: doc.description,
+      ...(doc.thumbnail && {
+        images: [`https://www.jjyu.co.kr${doc.thumbnail}`],
+      }),
     },
     robots: {
       index: true,

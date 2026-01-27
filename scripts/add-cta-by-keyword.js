@@ -320,12 +320,452 @@ const KEYWORD_CTA_MAP = [
       action: '신고하기',
       color: 'dark'
     }
+  },
+  // 묵시적갱신/확정일자/우선변제권
+  {
+    keywords: ['묵시적갱신', '확정일자', '우선변제권', '소액임차인', '임차인', '임대인', '권리금', '원상복구', '무단전대', '집주인'],
+    cta: {
+      url: 'https://www.gov.kr/portal/service/serviceInfo/PTR000050545',
+      badge: '정부24 공식',
+      text: '임대차계약 신고하기',
+      action: '신고하기',
+      color: 'dark'
+    }
+  },
+  // 산재보험/산재보상
+  {
+    keywords: ['산재보험', '산재보상', '산재처리', '산업재해', '요양급여'],
+    cta: {
+      url: 'https://www.comwel.or.kr/comwel/paym/insu/insu1.jsp',
+      badge: '근로복지공단 공식',
+      text: '산재보험 급여 신청',
+      action: '신청하기',
+      color: 'green'
+    }
+  },
+  // 요양보호사/장기요양
+  {
+    keywords: ['요양보호사', '장기요양', '노인장기요양'],
+    cta: {
+      url: 'https://www.longtermcare.or.kr/npbs/e/b/101/npeb101m01.web?menuId=npe0000000030',
+      badge: '장기요양 공식',
+      text: '장기요양 등급 신청',
+      action: '신청하기',
+      color: 'green'
+    }
+  },
+  // 기초연금
+  {
+    keywords: ['기초연금', '노인복지', '경로연금'],
+    cta: {
+      url: 'https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do',
+      badge: '복지로 공식',
+      text: '기초연금 자격 조회',
+      action: '조회하기',
+      color: 'green'
+    }
+  },
+  // 고령자 고용
+  {
+    keywords: ['고령자', '60세', '시니어'],
+    cta: {
+      url: 'https://www.work.go.kr/senior/main.do',
+      badge: '워크넷 공식',
+      text: '고령자 일자리 찾기',
+      action: '찾기',
+      color: 'green'
+    }
+  },
+  // 노동위원회/근로감독관
+  {
+    keywords: ['노동위원회', '근로감독관', '징계', '체불임금', '노동조합', '단체협약', '취업규칙', '사직서', '경업금지', '전직금지', '비밀유지'],
+    cta: {
+      url: 'https://minwon.moel.go.kr/minwon2008/minwon/minwonChoice1.do',
+      badge: '고용노동부 공식',
+      text: '노동 민원 신청',
+      action: '신청하기',
+      color: 'green'
+    }
+  },
+  // 부가가치세
+  {
+    keywords: ['부가가치세', '부가세', '원천징수영수증'],
+    cta: {
+      url: 'https://www.hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml',
+      badge: '홈택스 공식',
+      text: '홈택스 세금신고',
+      action: '신고하기',
+      color: 'dark'
+    }
+  },
+  // 지방소득세/주민세
+  {
+    keywords: ['지방소득세', '주민세', '지방세'],
+    cta: {
+      url: 'https://www.wetax.go.kr/main/',
+      badge: '위택스 공식',
+      text: '지방세 납부하기',
+      action: '납부하기',
+      color: 'dark'
+    }
+  },
+  // 배당/이자소득세
+  {
+    keywords: ['배당소득세', '이자소득', '금융소득', '금융투자소득세'],
+    cta: {
+      url: 'https://www.hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml',
+      badge: '홈택스 공식',
+      text: '금융소득 세금신고',
+      action: '신고하기',
+      color: 'dark'
+    }
+  },
+  // 가상자산/해외주식
+  {
+    keywords: ['가상자산', '해외주식', '암호화폐', '비트코인'],
+    cta: {
+      url: 'https://www.hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml',
+      badge: '홈택스 공식',
+      text: '가상자산 세금신고',
+      action: '신고하기',
+      color: 'dark'
+    }
+  },
+  // ETF/MMF/CMA 투자
+  {
+    keywords: ['ETF', 'MMF', 'CMA', '펀드', '투자', '수익률'],
+    cta: {
+      url: 'https://finlife.fss.or.kr/finlife/main/main.do?menuNo=700001',
+      badge: '금융감독원 공식',
+      text: '금융상품 비교하기',
+      action: '비교하기',
+      color: 'dark'
+    }
+  },
+  // 문화누리카드
+  {
+    keywords: ['문화누리카드', '문화바우처'],
+    cta: {
+      url: 'https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do',
+      badge: '복지로 공식',
+      text: '문화누리카드 신청',
+      action: '신청하기',
+      color: 'green'
+    }
+  },
+  // 청년도약계좌
+  {
+    keywords: ['청년도약계좌', '청년저축', '청년희망적금'],
+    cta: {
+      url: 'https://ylaccount.kinfa.or.kr/',
+      badge: '서민금융 공식',
+      text: '청년도약계좌 신청',
+      action: '신청하기',
+      color: 'green'
+    }
+  },
+  // 특별공급/재개발
+  {
+    keywords: ['특별공급', '재개발', '재건축'],
+    cta: {
+      url: 'https://www.applyhome.co.kr/ai/aia/selectAPTLttotPblancListView.do',
+      badge: '청약홈 공식',
+      text: '청약 신청하기',
+      action: '신청하기',
+      color: 'dark'
+    }
+  },
+  // 연봉협상/경력증명서
+  {
+    keywords: ['연봉협상', '경력증명서', '근로자대표', '근로자의날'],
+    cta: {
+      url: 'https://www.moel.go.kr/info/lawinfo/instruction/instrucList.do',
+      badge: '고용노동부 공식',
+      text: '근로기준 안내',
+      action: '확인하기',
+      color: 'dark'
+    }
+  },
+  // OTP/보안카드/공동인증서
+  {
+    keywords: ['OTP', '보안카드', '공동인증서', '인증서'],
+    cta: {
+      url: 'https://www.yessign.or.kr/',
+      badge: '금융결제원 공식',
+      text: '공동인증서 발급',
+      action: '발급하기',
+      color: 'dark'
+    }
+  },
+  // 파견근로자/플랫폼노동자
+  {
+    keywords: ['파견근로자', '파견직', '플랫폼노동자', '배달앱', '플랫폼'],
+    cta: {
+      url: 'https://minwon.moel.go.kr/minwon2008/minwon/minwonChoice1.do',
+      badge: '고용노동부 공식',
+      text: '노동 권익 상담',
+      action: '상담하기',
+      color: 'green'
+    }
+  },
+  // 장애인 고용
+  {
+    keywords: ['장애인고용', '장애인의무고용', '장애인직업훈련'],
+    cta: {
+      url: 'https://www.kead.or.kr/',
+      badge: '장애인고용공단',
+      text: '장애인 취업 지원',
+      action: '신청하기',
+      color: 'green'
+    }
+  },
+  // 세무조사
+  {
+    keywords: ['세무조사', '국세청'],
+    cta: {
+      url: 'https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2377&cntntsId=7751',
+      badge: '국세청 공식',
+      text: '납세자 권리헌장',
+      action: '확인하기',
+      color: 'dark'
+    }
+  },
+  // 가족요양비
+  {
+    keywords: ['가족요양비', '가족돌봄'],
+    cta: {
+      url: 'https://www.longtermcare.or.kr/',
+      badge: '장기요양 공식',
+      text: '가족요양비 신청',
+      action: '신청하기',
+      color: 'green'
+    }
+  },
+  // 직장내 괴롭힘
+  {
+    keywords: ['직장내괴롭힘', '성희롱', '폭언', '갑질', '고객폭언', '고객성희롱'],
+    cta: {
+      url: 'https://minwon.moel.go.kr/minwon2008/minwon/minwonChoice1.do',
+      badge: '고용노동부 공식',
+      text: '직장 내 괴롭힘 신고',
+      action: '신고하기',
+      color: 'green'
+    }
+  },
+  // 기부금공제/교육비공제/부양가족공제
+  {
+    keywords: ['기부금공제', '교육비공제', '부양가족공제', '인적공제'],
+    cta: {
+      url: 'https://www.hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&menuCd=index3',
+      badge: '홈택스 공식',
+      text: '연말정산 간소화 서비스',
+      action: '바로가기',
+      color: 'green'
+    }
+  },
+  // 마이너스통장/할부이자
+  {
+    keywords: ['마이너스통장', '마통', '할부이자'],
+    cta: {
+      url: 'https://finlife.fss.or.kr/finlife/ldng/ldngPrdtList.do?menuNo=700020',
+      badge: '금융감독원 공식',
+      text: '대출상품 금리비교',
+      action: '비교하기',
+      color: 'dark'
+    }
+  },
+  // 고속도로통행료/KTX환불
+  {
+    keywords: ['고속도로', '통행료', 'KTX', 'SRT', '승차권'],
+    cta: {
+      url: 'https://www.letskorail.com/',
+      badge: '코레일 공식',
+      text: 'KTX 예매/환불',
+      action: '바로가기',
+      color: 'dark'
+    }
+  },
+  // 선택근로제/탄력근로제
+  {
+    keywords: ['선택근로제', '탄력근로제', '유연근무'],
+    cta: {
+      url: 'https://www.moel.go.kr/info/lawinfo/instruction/instrucList.do',
+      badge: '고용노동부 공식',
+      text: '근로시간 제도 안내',
+      action: '확인하기',
+      color: 'dark'
+    }
+  },
+  // 휴대폰소액결제
+  {
+    keywords: ['소액결제', '휴대폰결제'],
+    cta: {
+      url: 'https://www.paybooc.co.kr/',
+      badge: '결제 안내',
+      text: '소액결제 한도 확인',
+      action: '확인하기',
+      color: 'dark'
+    }
+  },
+  // 가사근로자/가사서비스
+  {
+    keywords: ['가사근로자', '가사서비스', '입주가사'],
+    cta: {
+      url: 'https://minwon.moel.go.kr/minwon2008/minwon/minwonChoice1.do',
+      badge: '고용노동부 공식',
+      text: '노동 민원 신청',
+      action: '신청하기',
+      color: 'green'
+    }
+  },
+  // 청년/취업
+  {
+    keywords: ['청년취업', '취업연계', '직업훈련'],
+    cta: {
+      url: 'https://www.work.go.kr/empSpt/empSptMain.do',
+      badge: '워크넷 공식',
+      text: '취업 지원 프로그램',
+      action: '신청하기',
+      color: 'green'
+    }
+  },
+  // 쿠팡/온라인쇼핑
+  {
+    keywords: ['쿠팡', '보상쿠폰', '온라인쇼핑'],
+    cta: {
+      url: 'https://www.coupang.com/',
+      badge: '쿠팡',
+      text: '쿠팡 고객센터',
+      action: '바로가기',
+      color: 'dark'
+    }
+  },
+  // 광역구직활동비
+  {
+    keywords: ['광역구직활동비', '이주비', '구직활동비'],
+    cta: {
+      url: 'https://www.ei.go.kr/ei/eih/eg/pb/pbPersonBnef/retrievePb0201Info.do',
+      badge: '고용보험 공식',
+      text: '구직활동비 신청',
+      action: '신청하기',
+      color: 'green'
+    }
+  },
+  // 달라지는 제도/정책 변경
+  {
+    keywords: ['달라지는', '제도변경', '정책변경', '개정'],
+    cta: {
+      url: 'https://www.gov.kr/portal/service/serviceList',
+      badge: '정부24 공식',
+      text: '정부 서비스 전체보기',
+      action: '보기',
+      color: 'dark'
+    }
+  },
+  // 고객응대근로자/감정노동
+  {
+    keywords: ['고객응대', '감정노동', '콜센터'],
+    cta: {
+      url: 'https://minwon.moel.go.kr/minwon2008/minwon/minwonChoice1.do',
+      badge: '고용노동부 공식',
+      text: '직장 내 괴롭힘 신고',
+      action: '신고하기',
+      color: 'green'
+    }
+  },
+  // 마이너스통장/신용대출
+  {
+    keywords: ['마이너스통장', '마이너스', '신용대출한도'],
+    cta: {
+      url: 'https://finlife.fss.or.kr/finlife/main/main.do?menuNo=700001',
+      badge: '금감원 공식',
+      text: '금융상품 비교하기',
+      action: '비교하기',
+      color: 'dark'
+    }
+  },
+  // 무급휴무/피보험기간
+  {
+    keywords: ['무급휴무', '피보험기간', '근무일수'],
+    cta: {
+      url: 'https://www.ei.go.kr/ei/eih/cm/hm/main.do',
+      badge: '고용보험 공식',
+      text: '고용보험 자격조회',
+      action: '조회하기',
+      color: 'green'
+    }
+  },
+  // 문화예술인/예술인 복지
+  {
+    keywords: ['문화예술인', '예술인', '문화예술'],
+    cta: {
+      url: 'https://www.kawf.kr/',
+      badge: '예술인복지재단 공식',
+      text: '예술인 복지 안내',
+      action: '안내받기',
+      color: 'green'
+    }
+  },
+  // 사업장 점거/파업
+  {
+    keywords: ['사업장점거', '점거', '파업', '쟁의행위'],
+    cta: {
+      url: 'https://minwon.moel.go.kr/minwon2008/minwon/minwonChoice1.do',
+      badge: '고용노동부 공식',
+      text: '노동 민원 신청',
+      action: '신청하기',
+      color: 'green'
+    }
+  },
+  // 실업신고/실업인정
+  {
+    keywords: ['실업신고', '실업인정', '구직급여신청'],
+    cta: {
+      url: 'https://www.ei.go.kr/ei/eih/eg/pb/pbPersonBnef/retrievePb0201Info.do',
+      badge: '고용보험 공식',
+      text: '실업급여 신청',
+      action: '신청하기',
+      color: 'green'
+    }
+  },
+  // 장애인 의무고용
+  {
+    keywords: ['장애인의무고용', '의무고용률', '장애인고용'],
+    cta: {
+      url: 'https://www.kead.or.kr/',
+      badge: '한국장애인고용공단 공식',
+      text: '장애인 고용 안내',
+      action: '안내받기',
+      color: 'green'
+    }
+  },
+  // 중소기업 취업자 소득세 감면
+  {
+    keywords: ['중소기업취업자', '중소기업감면', '소득세감면'],
+    cta: {
+      url: 'https://www.hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&menuCd=index3',
+      badge: '홈택스 공식',
+      text: '연말정산 간소화 서비스',
+      action: '바로가기',
+      color: 'dark'
+    }
+  },
+  // 직장내 괴롭힘
+  {
+    keywords: ['직장내괴롭힘', '괴롭힘', '직장갑질'],
+    cta: {
+      url: 'https://minwon.moel.go.kr/minwon2008/minwon/minwonChoice1.do',
+      badge: '고용노동부 공식',
+      text: '직장 내 괴롭힘 신고',
+      action: '신고하기',
+      color: 'green'
+    }
   }
 ];
 
-// frontmatter 파싱
+// frontmatter 파싱 (CRLF/LF 둘 다 지원)
 function parseFrontmatter(content) {
-  const match = content.match(/^---\n([\s\S]*?)\n---/);
+  const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
   if (!match) return { frontmatterRaw: null, body: content };
   return {
     frontmatterRaw: match[1],

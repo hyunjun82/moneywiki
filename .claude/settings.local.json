@@ -247,7 +247,11 @@
       "WebFetch(domain:www.korea.kr)",
       "Bash(node scripts/add-cta-from-links.js:*)",
       "Bash(node scripts/add-cta-by-keyword.js:*)",
-      "Bash(node scripts/update-cta-deeplinks.js:*)"
+      "Bash(node scripts/update-cta-deeplinks.js:*)",
+      "Bash(node scripts/fix-romanized-links.js:*)",
+      "Bash(node --version:*)",
+      "Bash(cmd.exe /c \"cd C:\\\\Users\\\\user\\\\wiki-site && npm install 2>&1\")",
+      "Bash(Start-Process -FilePath \"cmd\" -ArgumentList \"/c npm run dev\" -WorkingDirectory \"C:\\\\Users\\\\user\\\\wiki-site\" -WindowStyle Hidden)"
     ]
   }
 }

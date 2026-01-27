@@ -109,6 +109,8 @@ export interface WikiDocument {
   chart?: string;
   // 차트 설정 (데이터 포함)
   chartConfig?: ChartConfig;
+  // OG 썸네일 이미지 경로
+  thumbnail?: string;
 }
 
 // 모든 위키 문서 목록 가져오기
@@ -214,6 +216,8 @@ export async function getWikiDocument(
     chart: data.chart,
     // 차트 설정
     chartConfig: data.chartConfig,
+    // OG 썸네일 이미지
+    thumbnail: data.thumbnail,
   };
 }
 
