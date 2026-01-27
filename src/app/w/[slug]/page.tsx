@@ -298,7 +298,7 @@ export default async function WikiPage({ params }: PageProps) {
           )}
 
           {/* 차트 컴포넌트 - 동적 로딩 */}
-          <ChartLoader chartName={doc.chart} />
+          <ChartLoader chartName={doc.chart} chartConfig={doc.chartConfig} />
 
           {/* CTA 버튼 (외부링크) */}
           {doc.cta && doc.cta.length > 0 && (

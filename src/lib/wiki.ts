@@ -41,6 +41,41 @@ export interface CTAItem {
   color?: "green" | "blue" | "orange" | "dark";  // 버튼 색상 (기본: green)
 }
 
+// 차트 데이터 아이템 타입
+export interface ChartDataItem {
+  name: string;
+  fullName?: string;
+  primaryValue: number;
+  secondaryValue?: number;
+  category?: string;
+  extra?: Record<string, number | string>;
+}
+
+// 차트 설정 타입 (frontmatter용)
+export interface ChartConfig {
+  title?: string;
+  primaryLabel?: string;
+  primaryUnit?: string;
+  secondaryLabel?: string;
+  secondaryUnit?: string;
+  categoryColors?: Record<string, string>;
+  defaultColor?: string;
+  height?: number;
+  sourceText?: string;
+  disclaimerText?: string;
+  showSecondaryToggle?: boolean;
+  sortOptions?: Array<{
+    key: string;
+    label: string;
+    ascending?: boolean;
+  }>;
+  legendItems?: Array<{
+    color: string;
+    label: string;
+  }>;
+  data?: ChartDataItem[];
+}
+
 export interface WikiDocument {
   slug: string;
   title: string;  // 롱테일 키워드 그대로 (예: "연말정산 신용카드 공제 한도")
@@ -72,6 +107,8 @@ export interface WikiDocument {
   cta?: CTAItem[];
   // 차트 컴포넌트 이름
   chart?: string;
+  // 차트 설정 (데이터 포함)
+  chartConfig?: ChartConfig;
 }
 
 // 모든 위키 문서 목록 가져오기
@@ -175,6 +212,8 @@ export async function getWikiDocument(
     cta: data.cta || [],
     // 차트 컴포넌트
     chart: data.chart,
+    // 차트 설정
+    chartConfig: data.chartConfig,
   };
 }
 
