@@ -210,6 +210,116 @@ const KEYWORD_CTA_MAP = [
       action: '조회하기',
       color: 'green'
     }
+  },
+  // 신용/카드 - 신용점수 조회
+  {
+    keywords: ['신용카드', '신용점수', '신용등급', '카드발급', '카드거부', '체크카드'],
+    cta: {
+      url: 'https://www.credit.co.kr/cb/man/CBICC0101M.nhpe',
+      badge: '무료 조회',
+      text: '내 신용점수 확인하기',
+      action: '조회하기',
+      color: 'dark'
+    }
+  },
+  // 종합소득세 - 홈택스 신고
+  {
+    keywords: ['종합소득세', '종소세', '사업소득', '프리랜서세금'],
+    cta: {
+      url: 'https://www.hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&menuCd=UTXPPBAA52',
+      badge: '홈택스 공식',
+      text: '종합소득세 신고하기',
+      action: '신고하기',
+      color: 'green'
+    }
+  },
+  // 증여세/상속세
+  {
+    keywords: ['증여세', '상속세', '증여', '상속'],
+    cta: {
+      url: 'https://www.hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&menuCd=UTXPPBAA40',
+      badge: '홈택스 공식',
+      text: '증여세 신고하기',
+      action: '신고하기',
+      color: 'dark'
+    }
+  },
+  // 취득세/재산세
+  {
+    keywords: ['취득세', '재산세', '부동산세금'],
+    cta: {
+      url: 'https://www.wetax.go.kr/main/',
+      badge: '위택스 공식',
+      text: '지방세 납부하기',
+      action: '납부하기',
+      color: 'dark'
+    }
+  },
+  // 건강검진
+  {
+    keywords: ['건강검진', '무료검진', '국가검진'],
+    cta: {
+      url: 'https://www.nhis.or.kr/nhis/healthin/wbhaca04700m01.do',
+      badge: '건강보험 공식',
+      text: '건강검진 대상자 조회',
+      action: '조회하기',
+      color: 'green'
+    }
+  },
+  // 공무원연금
+  {
+    keywords: ['공무원연금', '군인연금', '사학연금'],
+    cta: {
+      url: 'https://www.geps.or.kr/g/index.do',
+      badge: '공무원연금 공식',
+      text: '연금정보 조회',
+      action: '조회하기',
+      color: 'dark'
+    }
+  },
+  // 자동차세/자동차등록
+  {
+    keywords: ['자동차세', '자동차등록', '자동차취득세'],
+    cta: {
+      url: 'https://www.wetax.go.kr/main/',
+      badge: '위택스 공식',
+      text: '자동차세 납부하기',
+      action: '납부하기',
+      color: 'dark'
+    }
+  },
+  // 근로장려금/자녀장려금
+  {
+    keywords: ['근로장려금', '자녀장려금', 'EITC'],
+    cta: {
+      url: 'https://www.hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&menuCd=UTXPPBAA70',
+      badge: '홈택스 공식',
+      text: '근로장려금 신청하기',
+      action: '신청하기',
+      color: 'green'
+    }
+  },
+  // 의료비/진료비
+  {
+    keywords: ['의료비', '진료비', '병원비', '본인부담금'],
+    cta: {
+      url: 'https://www.nhis.or.kr/nhis/minwon/retrievePaymentInfoExam.do',
+      badge: '건강보험 공식',
+      text: '의료비 내역 조회',
+      action: '조회하기',
+      color: 'green'
+    }
+  },
+  // 주민등록
+  {
+    keywords: ['주민등록', '전입신고', '주소이전'],
+    cta: {
+      url: 'https://www.gov.kr/portal/service/serviceInfo/551000000016',
+      badge: '정부24 공식',
+      text: '전입신고 하기',
+      action: '신고하기',
+      color: 'dark'
+    }
   }
 ];
 

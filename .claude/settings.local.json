@@ -238,7 +238,16 @@
       "Bash(timeout 10 tail:*)",
       "Bash(npx next build:*)",
       "WebFetch(domain:job.cosmosfarm.com)",
-      "Bash(git restore:*)"
+      "Bash(git restore:*)",
+      "Bash(head:*)",
+      "Bash(npm --version:*)",
+      "Bash(node_modules/.bin/next build)",
+      "Bash(cmd.exe /c \"npm run build 2>&1\")",
+      "Bash(npm.cmd run build:*)",
+      "WebFetch(domain:www.korea.kr)",
+      "Bash(node scripts/add-cta-from-links.js:*)",
+      "Bash(node scripts/add-cta-by-keyword.js:*)",
+      "Bash(node scripts/update-cta-deeplinks.js:*)"
     ]
   }
 }
