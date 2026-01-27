@@ -70,6 +70,8 @@ export interface WikiDocument {
   schemaType?: string;
   // CTA 버튼 (외부링크용)
   cta?: CTAItem[];
+  // 차트 컴포넌트 이름
+  chart?: string;
 }
 
 // 모든 위키 문서 목록 가져오기
@@ -171,6 +173,8 @@ export async function getWikiDocument(
     schemaType: data.schemaType,
     // CTA 버튼
     cta: data.cta || [],
+    // 차트 컴포넌트
+    chart: data.chart,
   };
 }
 

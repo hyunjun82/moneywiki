@@ -13,6 +13,8 @@ import AdSense, { AD_SLOTS } from "@/components/AdSense";
 import ShareButtons from "@/components/ShareButtons";
 // 계산기 컴포넌트는 클라이언트 래퍼에서 동적 로딩
 import CalculatorLoader from "@/components/CalculatorLoader";
+// 차트 컴포넌트 동적 로딩
+import ChartLoader from "@/components/ChartLoader";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -294,6 +296,9 @@ export default async function WikiPage({ params }: PageProps) {
               )}
             </div>
           )}
+
+          {/* 차트 컴포넌트 - 동적 로딩 */}
+          <ChartLoader chartName={doc.chart} />
 
           {/* CTA 버튼 (외부링크) */}
           {doc.cta && doc.cta.length > 0 && (
