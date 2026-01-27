@@ -512,6 +512,29 @@ export default async function WikiPage({ params, searchParams }: PageProps) {
               <AdSense slot={AD_SLOTS.SQUARE} className="w-full" />
             </div>
 
+            {/* CTA 버튼 - 이탈률 감소 */}
+            <div className="bg-white border border-neutral-200 rounded-xl p-4 mb-4">
+              <p className="text-xs text-neutral-500 mb-3">놓치고 있는 돈이 있을지도?</p>
+              <div className="space-y-2">
+                <a
+                  href="https://www.gov.kr/mw/AA020InfoCapp498View.do"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between w-full px-4 py-3 bg-neutral-900 hover:bg-neutral-800 text-white text-sm font-medium rounded-lg transition-colors"
+                >
+                  <span>내 숨은 환급금 조회</span>
+                  <span className="text-neutral-400">→</span>
+                </a>
+                <Link
+                  href="/w/2026-정부지원금-총정리"
+                  className="flex items-center justify-between w-full px-4 py-3 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium rounded-lg transition-colors"
+                >
+                  <span>2026년 정부지원금</span>
+                  <span className="text-emerald-300">→</span>
+                </Link>
+              </div>
+            </div>
+
             {/* 인기 문서 */}
             <div className="bg-white border border-neutral-200 rounded-xl overflow-hidden mb-4">
               <div className="px-4 py-3 bg-emerald-600">
