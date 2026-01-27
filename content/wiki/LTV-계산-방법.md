@@ -33,6 +33,12 @@ relatedDocs:
     url: "/w/전세대출-한도-계산"
   - title: "DTI 계산"
     url: "/w/DTI-계산-방법"
+cta:
+  - url: "https://finlife.fss.or.kr/finlife/ldng/ldngPrdtList.do?menuNo=700020"
+    badge: "금융감독원 공식"
+    text: "대출상품 금리비교"
+    action: "비교하기"
+    color: "dark"
 ---
 
 집을 사려고 대출받는데 LTV라는 말 들어보셨죠? Loan to Value의 약자로, 담보가치 대비 대출 비율이에요. 어떻게 계산하는지 지금부터 설명해 드릴게요.

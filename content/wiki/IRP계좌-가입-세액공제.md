@@ -38,9 +38,9 @@ relatedDocs:
   - title: "청년도약계좌 가입"
     url: "/w/청년도약계좌-가입-조건"
 cta:
-  - url: "https://www.hometax.go.kr"
+  - url: "https://www.hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&menuCd=index3"
     badge: "정부 공식"
-    text: "국세청 홈택스"
+    text: "연말정산 간소화 서비스"
     action: "바로가기"
     color: "green"
 ---

@@ -39,6 +39,12 @@ relatedDocs:
     url: "/w/IRP-개설-관리-방법"
   - title: "퇴직연금과 퇴직금의 차이"
     url: "/w/퇴직연금-퇴직금-차이"
+cta:
+  - url: "https://minwon.moel.go.kr/minwon2008/minwon/minwonChoice1.do"
+    badge: "고용노동부 공식"
+    text: "노동 민원 신청"
+    action: "확인하기"
+    color: "green"
 ---
 
 회사에서 퇴직연금을 DB형으로 하는지 DC형으로 하는지 선택하라고 하는데 뭐가 다른지 몰라 헷갈리신가요. 사실 이 둘은 근본적으로 다른 구조예요. 어느 쪽을 선택할지는 당신의 상황과 선호도에 따라 달라져요.

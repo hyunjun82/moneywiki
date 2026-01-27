@@ -33,6 +33,12 @@ relatedDocs:
     url: "/w/전세대출-한도-계산"
   - title: "LTV 계산"
     url: "/w/LTV-계산-방법"
+cta:
+  - url: "https://finlife.fss.or.kr/finlife/ldng/ldngPrdtList.do?menuNo=700020"
+    badge: "금융감독원 공식"
+    text: "대출상품 금리비교"
+    action: "비교하기"
+    color: "dark"
 ---
 
 대출받으려는데 DTI, DSR 이런 말 들어보셨죠? 소득 대비 대출 상환 비율이에요. 둘의 차이부터 계산법까지 지금부터 설명해 드릴게요.

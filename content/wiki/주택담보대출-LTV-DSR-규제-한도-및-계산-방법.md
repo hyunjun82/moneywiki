@@ -34,6 +34,12 @@ relatedDocs:
     url: "/w/주택담보대출-금리"
   - title: "전세대출 한도 및 금리"
     url: "/w/전세대출-한도"
+cta:
+  - url: "https://www.applyhome.co.kr"
+    badge: "청약홈 공식"
+    text: "청약 신청하기"
+    action: "신청하기"
+    color: "dark"
 ---
 
 집을 사려고 하는데 "LTV가 얼마더라" "DSR이 높아서 못 빈다더라" 이런 말들 들어봤죠. 이 두 가지가 뭔지, 어떻게 계산되는지 모르면 대출 한도를 정확히 알 수 없어요. 자세히 설명해드릴게요.

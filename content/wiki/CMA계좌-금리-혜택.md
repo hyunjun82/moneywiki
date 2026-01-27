@@ -35,7 +35,7 @@ relatedDocs:
   - title: "적금 금리 비교"
     url: "/w/적금-금리-비교"
 cta:
-  - url: "https://finlife.fss.or.kr"
+  - url: "https://finlife.fss.or.kr/finlife/ldng/ldngPrdtList.do?menuNo=700020"
     badge: "공식 사이트"
     text: "금융감독원 금융상품한눈에"
     action: "바로가기"
