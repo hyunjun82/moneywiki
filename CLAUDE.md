@@ -179,9 +179,10 @@ keywords: [A, B, C, D] → H2: [A질문, B질문, C질문, D질문]
 | 파일 | 용도 |
 |------|------|
 | `moneywiki-template.md` | 전체 템플릿 + 예시 |
+| `keyword-extraction-workflow.md` | **PAA → 키워드 추출** |
+| `batch-agent-rules.md` | **배치 작성 시 필독** |
 | `thumbnail-workflow.md` | 썸네일 생성 절차 |
 | `wiki-rules.md` | 신뢰 출처 리스트 |
-| `batch-agent-rules.md` | **배치 작성 시 필독** |
 
 ---
 
