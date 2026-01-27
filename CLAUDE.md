@@ -1,6 +1,6 @@
 # 머니위키 작업 규칙
 
-⚠️ **위키 글 쓰기 전 필수 3단계 (위반 시 전체 재작성!)**
+⚠️ **위키 글 쓰기 필수 4단계 (위반 시 전체 재작성!)**
 
 **1단계: CLAUDE.md 읽기**
 ```
@@ -21,9 +21,18 @@ TodoWrite([
   {"content": "wegive-template-full.md 읽고 템플릿 규칙 확인", "status": "completed", "activeForm": "템플릿 확인 중"},
   {"content": "WebSearch [키워드] 2026 최신 정보", "status": "in_progress", "activeForm": "웹검색 중"},
   {"content": "글 작성 (구어체 ~이에요/~해요)", "status": "pending", "activeForm": "글 작성 중"},
-  {"content": "최종 체크리스트 통과 확인", "status": "pending", "activeForm": "체크리스트 확인 중"}
+  {"content": "최종 체크리스트 통과 확인", "status": "pending", "activeForm": "체크리스트 확인 중"},
+  {"content": "git push → Vercel 배포", "status": "pending", "activeForm": "배포 중"}
 ])
 ```
+
+**4단계: git push → Vercel 자동 배포 (필수!)**
+```bash
+git add content/wiki/[파일명].md && git commit -m "feat: [제목] 글 추가" && git push
+```
+- 글 작성/수정 후 **반드시 git push**
+- push 완료 → Vercel 자동 배포 → URL 확인 가능
+- URL 형식: `https://jjyu.co.kr/w/[슬러그]`
 
 ---
 ## 📁 프로젝트 정보
