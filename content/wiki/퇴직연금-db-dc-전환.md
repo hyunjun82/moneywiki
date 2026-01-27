@@ -41,6 +41,12 @@ relatedDocs:
     url: /w/퇴직연금
   - title: 퇴직연금 종류
     url: /w/퇴직연금-종류
+cta:
+  - url: "https://100lifeplan.fss.or.kr/retire/retireInfo.do"
+    badge: "금감원 통합연금포털"
+    text: "내 퇴직연금 조회"
+    action: "조회하기"
+    color: "green"
 ---
 
 DB형 퇴직연금인데 DC형으로 바꾸고 싶으시죠. 직접 투자해서 수익을 높이고 싶은데 어떻게 전환하는지 모르시겠죠.

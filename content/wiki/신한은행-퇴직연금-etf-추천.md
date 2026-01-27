@@ -41,6 +41,12 @@ relatedDocs:
     url: /w/퇴직연금-dc형-etf-추천
   - title: 퇴직연금
     url: /w/퇴직연금
+cta:
+  - url: "https://100lifeplan.fss.or.kr/retire/retireInfo.do"
+    badge: "금감원 통합연금포털"
+    text: "내 퇴직연금 조회"
+    action: "조회하기"
+    color: "green"
 ---
 
 신한은행 퇴직연금인데 ETF로 투자하고 싶으시죠. 신한SOL 앱에서 할 수 있는지 궁금하시죠.

@@ -34,6 +34,12 @@ relatedDocs:
     url: "/w/보안카드-대체수단-OTP"
   - title: "금융인증서 발급"
     url: "/w/금융인증서-공동인증서-차이"
+cta:
+  - url: "https://www.yessign.or.kr/"
+    badge: "금융결제원 공식"
+    text: "공동인증서 발급"
+    action: "발급하기"
+    color: "dark"
 ---
 
 은행 거래할 때 보안카드 번호 찾느라 매번 시간 뺏기시죠? OTP 하나면 간편하고 안전하게 해결돼요.

@@ -34,6 +34,12 @@ relatedDocs:
     url: "/w/MMF투자"
   - title: "예금 금리 비교"
     url: "/w/예금금리비교"
+cta:
+  - url: "https://finlife.fss.or.kr/finlife/main/main.do?menuNo=700001"
+    badge: "금융감독원 공식"
+    text: "금융상품 비교하기"
+    action: "비교하기"
+    color: "dark"
 ---
 
 수시 입출금 통장은 이자가 거의 없는데, 증권사 CMA 계좌는 매일 이자가 쌓인다고 들으셨나요? 예금처럼 돈을 묶어두지 않아도 되고, 필요할 때 자유롭게 쓰면서 금리까지 받을 수 있는 통장이에요.

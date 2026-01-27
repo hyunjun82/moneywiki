@@ -43,6 +43,12 @@ relatedDocs:
     url: /w/퇴직금-IRP-수령방법
   - title: 퇴직연금 해지 절차
     url: /w/퇴직연금-해지-절차
+cta:
+  - url: "https://100lifeplan.fss.or.kr/retire/retireInfo.do"
+    badge: "금감원 통합연금포털"
+    text: "내 퇴직연금 조회"
+    action: "조회하기"
+    color: "green"
 ---
 
 IRP에 돈 넣으면 연말정산 때 돌려받는다던데, 얼마까지 넣으면 되나요? 세액공제 얼마나 받을 수 있어요?

@@ -41,6 +41,12 @@ relatedDocs:
     url: /w/퇴직연금-종류
   - title: 퇴직연금 세액공제
     url: /w/퇴직연금-세액공제
+cta:
+  - url: "https://100lifeplan.fss.or.kr/retire/retireInfo.do"
+    badge: "금감원 통합연금포털"
+    text: "내 퇴직연금 조회"
+    action: "조회하기"
+    color: "green"
 ---
 
 퇴직연금 계좌에 돈이 쌓이는데 그냥 두기 아까우시죠. ETF로 투자해서 수익을 내고 싶은데 뭘 사야 할지 모르시겠죠.

@@ -41,6 +41,12 @@ relatedDocs:
     url: /w/퇴직연금-미국-etf-추천
   - title: 퇴직연금
     url: /w/퇴직연금
+cta:
+  - url: "https://100lifeplan.fss.or.kr/retire/retireInfo.do"
+    badge: "금감원 통합연금포털"
+    text: "내 퇴직연금 조회"
+    action: "조회하기"
+    color: "green"
 ---
 
 퇴직연금으로 배당금도 받고 싶으시죠. 배당 ETF가 장기 투자에 좋은지 궁금하시죠.

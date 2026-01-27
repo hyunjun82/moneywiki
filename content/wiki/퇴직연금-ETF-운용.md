@@ -41,6 +41,12 @@ relatedDocs:
     url: /w/퇴직금-IRP-수령방법
   - title: 퇴직연금 DB DC 차이
     url: /w/퇴직연금-db-dc-차이
+cta:
+  - url: "https://100lifeplan.fss.or.kr/retire/retireInfo.do"
+    badge: "금감원 통합연금포털"
+    text: "내 퇴직연금 조회"
+    action: "조회하기"
+    color: "green"
 ---
 
 퇴직연금을 그냥 예금에 넣어두니까 수익이 너무 적죠. ETF로 운용하면 더 높은 수익을 기대할 수 있어요.

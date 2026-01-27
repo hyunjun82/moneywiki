@@ -43,6 +43,12 @@ relatedDocs:
     url: /w/퇴직금-중간정산-조건
   - title: IRP 세액공제 한도
     url: /w/IRP-세액공제-한도
+cta:
+  - url: "https://100lifeplan.fss.or.kr/retire/retireInfo.do"
+    badge: "금감원 통합연금포털"
+    text: "내 퇴직연금 조회"
+    action: "조회하기"
+    color: "green"
 ---
 
 IRP에 퇴직금 넣어뒀는데, 급하게 돈이 필요해요. 55세 전에는 절대 못 빼는 건가요?

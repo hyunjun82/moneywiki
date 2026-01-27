@@ -40,6 +40,12 @@ relatedDocs:
     url: "/w/연금저축펀드-세액공제"
   - title: "IRP 퇴직연금 가입"
     url: "/w/IRP-퇴직연금-가입"
+cta:
+  - url: "https://finlife.fss.or.kr/finlife/main/main.do?menuNo=700001"
+    badge: "금융감독원 공식"
+    text: "금융상품 비교하기"
+    action: "비교하기"
+    color: "dark"
 ---
 
 주식 투자 시작하려는데 뭘 사야 할지 모르겠죠. 삼성전자? 네이버? 개별 종목 고르기 어렵잖아요. ETF 하나 사면 여러 종목에 한 번에 투자할 수 있어요. 수수료도 싸고, 분산투자 효과도 있어요.

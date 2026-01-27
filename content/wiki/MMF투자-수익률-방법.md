@@ -34,6 +34,12 @@ relatedDocs:
     url: "/w/CMA계좌-금리-혜택"
   - title: "청년도약계좌 가입"
     url: "/w/청년도약계좌-가입-조건"
+cta:
+  - url: "https://finlife.fss.or.kr/finlife/main/main.do?menuNo=700001"
+    badge: "금융감독원 공식"
+    text: "금융상품 비교하기"
+    action: "비교하기"
+    color: "dark"
 ---
 
 주식 투자는 무섭고, 예금 이자는 너무 적고. 안전하면서도 이자 좀 더 받을 방법 없을까 고민하셨다면, MMF를 한번 알아보세요.

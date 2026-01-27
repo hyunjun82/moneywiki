@@ -47,6 +47,12 @@ relatedDocs:
     url: /w/청년도약계좌
   - title: 배당소득세
     url: /w/배당소득세
+cta:
+  - url: "https://www.hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&menuCd=UTXPPBAA01"
+    badge: "홈택스 공식"
+    text: "양도소득세 신고하기"
+    action: "신고하기"
+    color: "dark"
 ---
 
 ISA 계좌 열어놓으면 주식으로 돈 벌어도 세금 안 내도 돼요. 펀드로 수익 나도 비과세고요. 예금 이자도 ISA에 넣으면 세금 덜 떼요.

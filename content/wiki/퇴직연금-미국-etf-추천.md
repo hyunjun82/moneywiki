@@ -41,6 +41,12 @@ relatedDocs:
     url: /w/퇴직연금-dc형-etf-추천
   - title: 퇴직연금
     url: /w/퇴직연금
+cta:
+  - url: "https://100lifeplan.fss.or.kr/retire/retireInfo.do"
+    badge: "금감원 통합연금포털"
+    text: "내 퇴직연금 조회"
+    action: "조회하기"
+    color: "green"
 ---
 
 퇴직연금으로 미국 주식에 투자하고 싶으시죠. S&P500이나 나스닥100 ETF 중에 뭐가 좋은지 모르시겠죠.

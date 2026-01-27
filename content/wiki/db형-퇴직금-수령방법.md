@@ -43,6 +43,12 @@ relatedDocs:
     url: /w/dc형-퇴직금-수령방법
   - title: IRP 계좌 퇴직금 수령방법
     url: /w/irp-계좌-퇴직금-수령방법
+cta:
+  - url: "https://100lifeplan.fss.or.kr/retire/retireInfo.do"
+    badge: "금감원 통합연금포털"
+    text: "내 퇴직연금 조회"
+    action: "조회하기"
+    color: "green"
 ---
 
 DB형 [퇴직연금](/w/퇴직연금)에 가입되어 있는데 퇴직할 때 어떻게 받는지 궁금하시죠. DC형이랑 뭐가 다른지, 얼마나 받을 수 있는지 헷갈리시죠.

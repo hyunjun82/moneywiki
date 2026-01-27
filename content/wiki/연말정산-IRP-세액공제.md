@@ -40,6 +40,12 @@ relatedDocs:
     url: /w/연말정산-연금저축-공제
   - title: 연말정산
     url: /w/연말정산
+cta:
+  - url: "https://100lifeplan.fss.or.kr/retire/retireInfo.do"
+    badge: "금감원 통합연금포털"
+    text: "내 퇴직연금 조회"
+    action: "조회하기"
+    color: "green"
 ---
 
 노후 준비는 하고 싶은데 당장 돈을 묶어두기가 부담스러우시죠. 연금저축이나 IRP 가입하라는 말은 많이 들었는데, 지금 쓸 돈도 빠듯한데 노후 자금까지 신경 쓰기 어려우시잖아요.

@@ -41,6 +41,12 @@ relatedDocs:
     url: /w/퇴직금-수령방법
   - title: 퇴직금 IRP 의무
     url: /w/퇴직금-irp-의무
+cta:
+  - url: "https://100lifeplan.fss.or.kr/retire/retireInfo.do"
+    badge: "금감원 통합연금포털"
+    text: "내 퇴직연금 조회"
+    action: "조회하기"
+    color: "green"
 ---
 
 퇴직금이 IRP 계좌로 들어왔는데 어떻게 받아야 하는지 모르시겠죠. 바로 빼도 되는지, 세금은 얼마나 내는지 헷갈리시죠.

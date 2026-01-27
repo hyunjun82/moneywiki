@@ -39,6 +39,12 @@ relatedDocs:
     url: "/w/퇴직금-미지급-지급받는-방법"
   - title: "IRP 세액공제 한도"
     url: "/w/IRP-세액공제-한도-조건"
+cta:
+  - url: "https://100lifeplan.fss.or.kr/retire/retireInfo.do"
+    badge: "금감원 통합연금포털"
+    text: "내 퇴직연금 조회"
+    action: "조회하기"
+    color: "green"
 ---
 
 회사에서 "퇴직연금 DB로 할까요, DC로 할까요?" 물어봤는데 뭔 소린지 모르겠죠. DB는 회사가 알아서 굴리고, DC는 내가 직접 굴리는 거예요. IRP는 퇴직금 받는 통장이고요. 어떤 게 나한테 유리한지 지금 바로 알려드릴게요.

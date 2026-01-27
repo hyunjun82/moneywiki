@@ -39,6 +39,12 @@ relatedDocs:
     url: "/w/퇴직소득세-분리과세-비과세-계산"
   - title: "연금저축과 IRP 비교"
     url: "/w/연금저축-vs-IRP-절세-비교"
+cta:
+  - url: "https://100lifeplan.fss.or.kr/retire/retireInfo.do"
+    badge: "금감원 통합연금포털"
+    text: "내 퇴직연금 조회"
+    action: "조회하기"
+    color: "green"
 ---
 
 퇴직금을 받을 때 "IRP 계좌 만들어야 한다"는 말 들어봤나요? 정확히 뭔지, 왜 만드는지 모르면 놓치는 돈이 정말 많아요. [근로자퇴직급여 보장법](https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=78373)에서 정한 제도인데, 현명하게 쓰면 수백만 원을 절약할 수 있어요.

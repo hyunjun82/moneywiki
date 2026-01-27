@@ -41,6 +41,12 @@ relatedDocs:
     url: /w/퇴직연금-dc형-etf-추천
   - title: 퇴직연금
     url: /w/퇴직연금
+cta:
+  - url: "https://100lifeplan.fss.or.kr/retire/retireInfo.do"
+    badge: "금감원 통합연금포털"
+    text: "내 퇴직연금 조회"
+    action: "조회하기"
+    color: "green"
 ---
 
 퇴직연금에서 안전자산 30%를 뭘로 채워야 할지 고민되시죠. 예금만 넣기엔 수익이 너무 적은 것 같죠.

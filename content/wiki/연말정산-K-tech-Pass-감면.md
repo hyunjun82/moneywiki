@@ -34,6 +34,12 @@ relatedDocs:
     url: /w/연말정산-중소기업-취업자-감면
   - title: 연말정산
     url: /w/연말정산
+cta:
+  - url: "https://www.hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&menuCd=index3"
+    badge: "홈택스 공식"
+    text: "연말정산 간소화 서비스"
+    action: "바로가기"
+    color: "green"
 ---
 
 K-tech Pass가 있으면 세금 혜택이 있나요? 네, 소득세 50%를 최대 5년간 감면받을 수 있어요. 외국인 기술자를 위한 파격적인 세제 혜택이에요.

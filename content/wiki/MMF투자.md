@@ -34,6 +34,12 @@ relatedDocs:
     url: "/w/CMA계좌"
   - title: "예금 금리 비교"
     url: "/w/예금금리비교"
+cta:
+  - url: "https://finlife.fss.or.kr/finlife/main/main.do?menuNo=700001"
+    badge: "금융감독원 공식"
+    text: "금융상품 비교하기"
+    action: "비교하기"
+    color: "dark"
 ---
 
 여유 자금을 어디에 넣어둘지 고민되시죠? 은행 예금은 금리가 낮고, 주식은 위험하고. 그럴 때 MMF가 딱이에요. 안전하면서도 적금 수준의 수익을 내고, 필요할 때 바로 찾을 수 있답니다.

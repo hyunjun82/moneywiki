@@ -34,6 +34,12 @@ relatedDocs:
     url: "/w/부당해고-구제-절차-복직-조건"
   - title: "임금 체불 신고 및 지연이자 청구"
     url: "/w/임금-체불-신고-지연이자-청구"
+cta:
+  - url: "https://www.scourt.go.kr/portal/information/events/search/search.jsp"
+    badge: "대법원 공식"
+    text: "나의 사건 검색"
+    action: "검색하기"
+    color: "dark"
 ---
 
 "회사가 임금을 안 줬어요. 뭘 해야 하나요?" "부당하게 해고당했어요. 어디에 제소해야 하나요?"

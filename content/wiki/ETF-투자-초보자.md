@@ -34,6 +34,12 @@ relatedDocs:
     url: "/w/ISA-계좌-가입-세제혜택"
   - title: "채권 투자 방법"
     url: "/w/채권-투자-수익률"
+cta:
+  - url: "https://finlife.fss.or.kr/finlife/main/main.do?menuNo=700001"
+    badge: "금융감독원 공식"
+    text: "금융상품 비교하기"
+    action: "비교하기"
+    color: "dark"
 ---
 
 주식 투자 해보고 싶은데 어떤 종목을 사야 할지 모르겠고, 한 종목에 몰빵하기는 위험해 보이시죠. ETF는 이런 고민을 해결해주는 상품이에요. 여러 주식을 한 바구니에 담아서 리스크를 분산하면서 수익도 낼 수 있어요.

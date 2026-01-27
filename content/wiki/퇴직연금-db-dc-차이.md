@@ -41,6 +41,12 @@ relatedDocs:
     url: /w/퇴직연금-종류
   - title: 퇴직연금 수령방법
     url: /w/퇴직연금-수령방법
+cta:
+  - url: "https://100lifeplan.fss.or.kr/retire/retireInfo.do"
+    badge: "금감원 통합연금포털"
+    text: "내 퇴직연금 조회"
+    action: "조회하기"
+    color: "green"
 ---
 
 회사에서 퇴직연금 DB형이랑 DC형 중에 선택하라고 하는데 뭐가 다른지 모르시겠죠. 어떤 게 나한테 유리한지 고민되시죠.

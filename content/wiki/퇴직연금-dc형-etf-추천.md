@@ -41,6 +41,12 @@ relatedDocs:
     url: /w/퇴직연금-db-dc-차이
   - title: 퇴직연금
     url: /w/퇴직연금
+cta:
+  - url: "https://100lifeplan.fss.or.kr/retire/retireInfo.do"
+    badge: "금감원 통합연금포털"
+    text: "내 퇴직연금 조회"
+    action: "조회하기"
+    color: "green"
 ---
 
 DC형 퇴직연금인데 원금보장형에만 넣어두고 계시죠. 수익률이 너무 낮아서 고민되시죠.

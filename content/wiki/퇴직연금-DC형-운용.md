@@ -43,6 +43,12 @@ relatedDocs:
     url: /w/IRP-세액공제-한도
   - title: 퇴직금 IRP 이체 세금
     url: /w/퇴직금-IRP-이체-세금
+cta:
+  - url: "https://100lifeplan.fss.or.kr/retire/retireInfo.do"
+    badge: "금감원 통합연금포털"
+    text: "내 퇴직연금 조회"
+    action: "조회하기"
+    color: "green"
 ---
 
 회사에서 DC형 퇴직연금에 가입됐대요. 근데 운용을 직접 하라는데, 뭘 어떻게 해야 하는 건가요?
