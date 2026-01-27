@@ -610,6 +610,40 @@ cta:  # 외부링크 버튼 (선택, 최대 2개)
 - 심플 버튼은 필요한 곳에 자유롭게
 - 정부/공공기관 사이트 위주로 사용
 
+#### 🚨 딥링크 필수! (홈페이지 링크 금지)
+
+**독자가 버튼 클릭 → 바로 서비스 이용 가능해야 함!**
+
+```
+❌ 일반 링크 (금지)
+https://www.gov.kr/
+→ 들어가면 뉴스, 검색창, 메뉴... 독자: "아 귀찮아..." → 뒤로가기 → 이탈
+
+✅ 딥링크 (필수)
+https://www.gov.kr/portal/service/serviceInfo/174100000054
+→ 들어가면 바로 "미환급금 조회" 서비스 페이지 → 독자: "오 바로 되네!" → 신청
+```
+
+**주요 딥링크 예시:**
+
+| 서비스 | ❌ 홈페이지 | ✅ 딥링크 |
+|--------|-------------|-----------|
+| 미환급금 조회 | gov.kr | gov.kr/portal/service/serviceInfo/174100000054 |
+| 실업급여 신청 | ei.go.kr | ei.go.kr/ei/eih/eg/pb/pbPersonBnef/retrievePb0201Info.do |
+| 연말정산 간소화 | hometax.go.kr | hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&menuCd=index3 |
+| 내 연금 조회 | nps.or.kr | nps.or.kr/jsppage/cyber/confirm/npspension.jsp |
+| 경매 물건 검색 | courtauction.go.kr | courtauction.go.kr/RetrieveRealEstMulDetailList.laf |
+| 건강보험료 조회 | nhis.or.kr | nhis.or.kr/nhis/minwon/retrievePaymentInfoExam.do |
+| 등기부등본 발급 | iros.go.kr | iros.go.kr/pos1/pfrontservlet?cmd=PIMIP001M01&a=PSJ |
+| 복지서비스 찾기 | bokjiro.go.kr | bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do |
+| 대출금리 비교 | finlife.fss.or.kr | finlife.fss.or.kr/finlife/ldng/ldngPrdtList.do?menuNo=700020 |
+
+**딥링크 찾는 방법:**
+1. 해당 정부 사이트 접속
+2. 원하는 서비스 페이지로 이동
+3. 주소창 URL 복사 (쿼리스트링 포함)
+4. 테스트: 시크릿 모드에서 URL 붙여넣기 → 바로 서비스 페이지 뜨는지 확인
+
 ---
 
 ## 금지 사항
