@@ -26,7 +26,7 @@ export default function MarqueeBanner() {
           </span>
           <span className="text-gray-500">|</span>
           <span className="mx-6 text-sm font-medium inline-flex items-center gap-2 text-[#00C896]">
-            <Link href="/w/근로장려금" className="hover:text-white transition-colors">
+            <Link href="/w/미환급금-조회-정부24-환급금-찾기" className="hover:text-white transition-colors">
               💰 내 숨은 환급금 1분 조회
             </Link>
           </span>
@@ -58,7 +58,7 @@ export default function MarqueeBanner() {
           </span>
           <span className="text-gray-500">|</span>
           <span className="mx-6 text-sm font-medium inline-flex items-center gap-2 text-[#00C896]">
-            <Link href="/w/근로장려금" className="hover:text-white transition-colors">
+            <Link href="/w/미환급금-조회-정부24-환급금-찾기" className="hover:text-white transition-colors">
               💰 내 숨은 환급금 1분 조회
             </Link>
           </span>
