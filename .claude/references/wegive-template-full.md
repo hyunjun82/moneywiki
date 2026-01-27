@@ -185,6 +185,12 @@ faq:  # 3개 고정! 소제목과 안 겹치게, 메인키워드 연관 실제 �
 relatedDocs:
   - title: "실업급여 계산기"
     url: "/w/실업급여-계산기"
+cta:  # 외부링크 버튼 (선택, 최대 2개)
+  - url: "https://www.ei.go.kr"
+    badge: "온라인 신청 가능"  # 배지 텍스트 (선택)
+    text: "실업급여 신청하기"   # 메인 텍스트 (필수)
+    action: "바로가기"         # CTA 텍스트 (선택, 기본: 바로가기)
+    color: "green"            # green | blue | orange | dark (선택, 기본: green)
 ---
 ```
 
@@ -542,6 +548,67 @@ relatedDocs:
 
 - [주택임대차보호법](https://www.law.go.kr/법령/주택임대차보호법) - 법제처
 ```
+
+---
+
+### 🔗 외부링크 버튼 (CTA - 전면광고 트리거)
+
+**외부 사이트로 유도할 때 프리미엄 버튼 사용!**
+
+#### 1. 프리미엄 버튼 (대형 - 배지+텍스트+CTA)
+
+```html
+<a href="https://www.ei.go.kr" class="ext-btn ext-btn-green" target="_blank">
+  <span class="ext-btn-badge">평균 13만원 환급</span>
+  <span class="ext-btn-text">잠자고 있는 내 돈 찾기</span>
+  <span class="ext-btn-cta">조회 →</span>
+</a>
+```
+
+**색상 변형:**
+- `ext-btn-green` - 기본 (복지/환급/신청)
+- `ext-btn-blue` - 금융/대출/은행
+- `ext-btn-orange` - 긴급/마감임박
+- `ext-btn-dark` - 정부/공식
+
+**사용 예시:**
+```html
+<!-- 실업급여 신청 -->
+<a href="https://www.ei.go.kr" class="ext-btn ext-btn-green" target="_blank">
+  <span class="ext-btn-badge">온라인 신청 가능</span>
+  <span class="ext-btn-text">실업급여 신청하기</span>
+  <span class="ext-btn-cta">바로가기 →</span>
+</a>
+
+<!-- 대출 비교 -->
+<a href="https://finlife.fss.or.kr" class="ext-btn ext-btn-blue" target="_blank">
+  <span class="ext-btn-badge">금융감독원 공식</span>
+  <span class="ext-btn-text">전세대출 금리 비교</span>
+  <span class="ext-btn-cta">비교하기 →</span>
+</a>
+```
+
+#### 2. 심플 버튼 (소형 - 인라인용)
+
+```html
+<a href="https://www.gov.kr" class="ext-link" target="_blank">정부24 신청 →</a>
+<a href="https://www.hometax.go.kr" class="ext-link ext-link-blue" target="_blank">홈택스 조회 →</a>
+```
+
+**사용 케이스:**
+- 본문 중간에 자연스럽게 삽입
+- 테이블 내 "신청하기" 버튼
+- 여러 링크를 나란히 배치
+
+#### 버튼 배치 위치
+- **서론 직후**: 핵심 액션 유도 (1-2개)
+- **해당 섹션 끝**: 관련 외부 링크
+- **글 마무리**: 최종 CTA
+
+**⚠️ 주의:**
+- 프리미엄 버튼은 글당 1-2개만 (과하면 역효과)
+- 심플 버튼은 필요한 곳에 자유롭게
+- 정부/공공기관 사이트 위주로 사용
 
 ---
 

@@ -295,6 +295,27 @@ export default async function WikiPage({ params }: PageProps) {
             </div>
           )}
 
+          {/* CTA 버튼 (외부링크) */}
+          {doc.cta && doc.cta.length > 0 && (
+            <div className="mb-8 space-y-3">
+              {doc.cta.slice(0, 2).map((item, index) => (
+                <a
+                  key={index}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`ext-btn ext-btn-${item.color || 'green'}`}
+                >
+                  {item.badge && (
+                    <span className="ext-btn-badge">{item.badge}</span>
+                  )}
+                  <span className="ext-btn-text">{item.text}</span>
+                  <span className="ext-btn-cta">{item.action || '바로가기'} →</span>
+                </a>
+              ))}
+            </div>
+          )}
+
           {/* 광고 - 본문 상단 */}
           <div className="mb-8">
             <AdSense slot={AD_SLOTS.HORIZONTAL} className="w-full" />

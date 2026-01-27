@@ -32,6 +32,15 @@ export interface SourceItem {
   date?: string;
 }
 
+// CTA 버튼 타입
+export interface CTAItem {
+  url: string;
+  badge?: string;      // 배지 텍스트 (예: "평균 13만원 환급")
+  text: string;        // 메인 텍스트 (예: "잠자고 있는 내 돈 찾기")
+  action?: string;     // CTA 텍스트 (예: "조회", 기본값: "바로가기")
+  color?: "green" | "blue" | "orange" | "dark";  // 버튼 색상 (기본: green)
+}
+
 export interface WikiDocument {
   slug: string;
   title: string;  // 롱테일 키워드 그대로 (예: "연말정산 신용카드 공제 한도")
@@ -59,6 +68,8 @@ export interface WikiDocument {
   updateNote?: string; // "2026년 1월 기준"
   // 스키마 타입 (calculator, article 등)
   schemaType?: string;
+  // CTA 버튼 (외부링크용)
+  cta?: CTAItem[];
 }
 
 // 모든 위키 문서 목록 가져오기
@@ -158,6 +169,8 @@ export async function getWikiDocument(
     updateNote: data.updateNote || "",
     // 스키마 타입
     schemaType: data.schemaType,
+    // CTA 버튼
+    cta: data.cta || [],
   };
 }
 
