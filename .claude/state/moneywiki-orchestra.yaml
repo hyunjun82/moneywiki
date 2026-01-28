@@ -4,17 +4,33 @@
 meta:
   created: "2026-01-28"
   last_updated: "2026-01-28"
-  last_session_summary: "Batch 6 완료 (재산분할 8개, 1개 키워드 교체) - 총 43/52 완료"
+  last_session_summary: "🎉 전체 완료! 가정법률 52개 키워드 100% 작성 (Batch 1-7)"
 
 current:
   phase: "completed"
-  batch_number: 6
-  task: "가정법률 키워드 8개 (재산분할 관련) 완료"
-  progress: "8/8"
+  batch_number: 7
+  task: "가정법률 52개 키워드 전체 완료"
+  progress: "52/52"
 
 keywords_queue: []
 
 completed_log:
+  - date: "2026-01-28"
+    batch: 7
+    articles:
+      - "재산분할-대상-범위.md"
+      - "재산분할-명의-일방-청구권.md"
+      - "재산분할-재산-은닉-확인-방법.md"
+      - "재산분할-가압류-신청-가능.md"
+      - "재산분할-청구-기한-제한.md"
+      - "재산분할-심판청구-기각-가능.md"
+      - "재산분할-이혼-부동산-취득세-양도소득세.md"
+      - "재산분할-혼인신고-전-재산-포함.md"
+      - "재산분할-공동명의-대출-부담.md"
+    count: 9
+    git_pushed: false
+    note: "가정법률 52개 키워드 전체 완료 (최종 배치)"
+
   - date: "2026-01-28"
     batch: 6
     articles:
@@ -27,7 +43,7 @@ completed_log:
       - "이혼-시부모-증여-토지-분할대상.md"
       - "이혼-혼인중-별거-내연관계-위자료.md"
     count: 8
-    git_pushed: false
+    git_pushed: true
     note: "키워드 '이혼 없이 재산분할 청구' → '재산분할 청구권 소멸시효'로 교체 (법률적 불가능)"
 
   - date: "2026-01-28"
