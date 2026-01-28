@@ -32,7 +32,7 @@ export default function MarqueeBanner() {
           </span>
           <span className="text-gray-600">•</span>
           <span className="mx-8 text-sm font-bold inline-flex items-center gap-2">
-            <Link href="/category/2026-달라지는-제도" className="hover:text-[#00C896] transition-colors flex items-center gap-2">
+            <Link href="/w/2026년-달라지는-제도" className="hover:text-[#00C896] transition-colors flex items-center gap-2">
               📋 2026년 달라지는 제도 <span className="text-xs text-yellow-400">NEW</span>
             </Link>
           </span>
@@ -52,7 +52,7 @@ export default function MarqueeBanner() {
           </span>
           <span className="text-gray-600">•</span>
           <span className="mx-8 text-sm font-bold inline-flex items-center gap-2">
-            <Link href="/category/2026-달라지는-제도" className="hover:text-[#00C896] transition-colors flex items-center gap-2">
+            <Link href="/w/2026년-달라지는-제도" className="hover:text-[#00C896] transition-colors flex items-center gap-2">
               📋 2026년 달라지는 제도 <span className="text-xs text-yellow-400">NEW</span>
             </Link>
           </span>

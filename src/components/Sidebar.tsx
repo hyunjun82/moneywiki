@@ -64,7 +64,7 @@ export default function Sidebar() {
             <span className="text-emerald-300 text-xs">30개+</span>
           </Link>
           <Link
-            href="/category/2026-달라지는-제도"
+            href="/w/2026년-달라지는-제도"
             className="flex items-center justify-between w-full px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors"
           >
             <span>2026년 달라지는 제도</span>
