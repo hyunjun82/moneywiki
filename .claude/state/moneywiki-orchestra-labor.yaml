@@ -1,0 +1,51 @@
+# 머니위키 오케스트라 상태 파일 - 근로노동 164개
+# 마지막 업데이트: 2026-01-28
+
+meta:
+  created: "2026-01-28"
+  last_updated: "2026-01-28"
+  project: "근로노동 164개 키워드 전면 재작성"
+  last_session_summary: "Batch 1-2 완료 (16/164) - 베이스 키워드 누락 수정 완료"
+
+current:
+  phase: "in_progress"
+  batch_number: 2
+  task: "근로노동 164개 키워드 Batch 3 대기"
+  progress: "16/164"
+
+keywords_queue: []
+
+completed_log:
+  - date: "2026-01-28"
+    batch: 2
+    articles:
+      - "장애인-차별-구제-방법.md"
+      - "장애인-등록증-발급-방법.md"
+      - "고령자-정의-법적-기준.md"
+      - "시간선택제-고령자-고용-지원금.md"
+      - "고령자-근로자-훈련-지원.md"
+      - "고령자-계속고용장려금-요건.md"
+      - "고령자-취업-프로그램.md"
+      - "고령자-고용-의무-인원.md"
+    count: 8
+    git_pushed: true
+    note: "베이스 키워드 누락 수정 (5개), 노인비하 표현 수정 (1개)"
+
+  - date: "2026-01-28"
+    batch: 1
+    articles:
+      - "장애인-고용의무-최소-인원.md"
+      - "장애인-고용장려금-신청-자격.md"
+      - "장애인-창업-자금-지원.md"
+      - "장애인-작업지도원-고용-지원.md"
+      - "장애인-고용부담금-계산-방법.md"
+      - "장애인-보조공학기기-지원-신청.md"
+      - "장애인-표준사업장-인증-요건.md"
+      - "장애인-취업-지원-방법.md"
+    count: 8
+    git_pushed: true
+    note: "장애인 고용 8개 키워드 완료 (commit 1d0afd7)"
+
+deleted_keywords: []
+
+errors: []
