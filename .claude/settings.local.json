@@ -251,7 +251,9 @@
       "Bash(node scripts/fix-romanized-links.js:*)",
       "Bash(node --version:*)",
       "Bash(cmd.exe /c \"cd C:\\\\Users\\\\user\\\\wiki-site && npm install 2>&1\")",
-      "Bash(Start-Process -FilePath \"cmd\" -ArgumentList \"/c npm run dev\" -WorkingDirectory \"C:\\\\Users\\\\user\\\\wiki-site\" -WindowStyle Hidden)"
+      "Bash(Start-Process -FilePath \"cmd\" -ArgumentList \"/c npm run dev\" -WorkingDirectory \"C:\\\\Users\\\\user\\\\wiki-site\" -WindowStyle Hidden)",
+      "WebFetch(domain:www.jjyu.co.kr)",
+      "mcp__playwright__browser_hover"
     ]
   }
 }
