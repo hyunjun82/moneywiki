@@ -45,21 +45,33 @@ const popularCalculators = [
 export default function Sidebar() {
   return (
     <aside className="w-72 shrink-0 hidden lg:block">
-      {/* 1. 정부지원금 배너 (최상단 고정) */}
-      <Link href="/category/정부지원금" className="group block mb-6">
-        <div className="bg-white rounded-xl p-5 border-2 border-[#00C896] shadow-[0_4px_20px_rgba(0,200,150,0.15)] hover:shadow-lg transition-all transform hover:-translate-y-1 relative overflow-hidden">
-          <div className="absolute top-0 right-0 bg-[#00C896] text-white text-[10px] px-2 py-1 rounded-bl-lg font-bold">
-            필수 체크
-          </div>
-          <div className="flex flex-col">
-            <span className="text-gray-500 text-xs mb-1">놓치면 100% 손해!</span>
-            <h3 className="text-lg font-bold text-gray-900 leading-tight">
-              내 <span className="text-[#00C896]">숨은 정부지원금</span><br/>
-              지금 바로 조회하기
-            </h3>
-          </div>
+      {/* 1. CTA 배너 - 3개 핵심 링크 */}
+      <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-4 border border-amber-200 mb-6">
+        <p className="text-sm font-bold text-amber-800 mb-3">💰 놓치고 있는 돈이 있을지도?</p>
+        <div className="space-y-2">
+          <Link
+            href="/w/미환급금-조회-정부24-환급금-찾기"
+            className="flex items-center justify-between w-full px-4 py-3 bg-amber-500 hover:bg-amber-600 text-white text-sm font-bold rounded-lg transition-colors shadow-sm"
+          >
+            <span>내 숨은 환급금 찾기</span>
+            <span className="bg-red-500 text-xs px-2 py-0.5 rounded animate-pulse">HOT</span>
+          </Link>
+          <Link
+            href="/category/정부지원금"
+            className="flex items-center justify-between w-full px-4 py-3 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium rounded-lg transition-colors"
+          >
+            <span>2026 정부지원금 총정리</span>
+            <span className="text-emerald-300 text-xs">30개+</span>
+          </Link>
+          <Link
+            href="/category/2026-달라지는-제도"
+            className="flex items-center justify-between w-full px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors"
+          >
+            <span>2026년 달라지는 제도</span>
+            <span className="text-yellow-300 text-xs">NEW</span>
+          </Link>
         </div>
-      </Link>
+      </div>
 
       {/* 인기 검색어 */}
       <div className="bg-white border border-gray-100 rounded-xl shadow-sm mb-4 overflow-hidden">

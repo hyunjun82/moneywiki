@@ -513,24 +513,29 @@ export default async function WikiPage({ params, searchParams }: PageProps) {
             </div>
 
             {/* CTA 버튼 - 이탈률 감소 */}
-            <div className="bg-white border border-neutral-200 rounded-xl p-4 mb-4">
-              <p className="text-xs text-neutral-500 mb-3">놓치고 있는 돈이 있을지도?</p>
+            <div className="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-xl p-4 mb-4">
+              <p className="text-sm font-bold text-amber-800 mb-3">💰 놓치고 있는 돈이 있을지도?</p>
               <div className="space-y-2">
-                <a
-                  href="https://www.gov.kr/mw/AA020InfoCapp498View.do"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between w-full px-4 py-3 bg-neutral-900 hover:bg-neutral-800 text-white text-sm font-medium rounded-lg transition-colors"
-                >
-                  <span>내 숨은 환급금 조회</span>
-                  <span className="text-neutral-400">→</span>
-                </a>
                 <Link
-                  href="/w/2026-정부지원금-총정리"
+                  href="/w/미환급금-조회-정부24-환급금-찾기"
+                  className="flex items-center justify-between w-full px-4 py-3 bg-amber-500 hover:bg-amber-600 text-white text-sm font-bold rounded-lg transition-colors shadow-sm"
+                >
+                  <span>내 숨은 환급금 찾기</span>
+                  <span className="bg-red-500 text-xs px-2 py-0.5 rounded animate-pulse">HOT</span>
+                </Link>
+                <Link
+                  href="/category/정부지원금"
                   className="flex items-center justify-between w-full px-4 py-3 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium rounded-lg transition-colors"
                 >
-                  <span>2026년 정부지원금</span>
-                  <span className="text-emerald-300">→</span>
+                  <span>2026 정부지원금 총정리</span>
+                  <span className="text-emerald-300 text-xs">30개+</span>
+                </Link>
+                <Link
+                  href="/category/2026-달라지는-제도"
+                  className="flex items-center justify-between w-full px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors"
+                >
+                  <span>2026년 달라지는 제도</span>
+                  <span className="text-yellow-300 text-xs">NEW</span>
                 </Link>
               </div>
             </div>
