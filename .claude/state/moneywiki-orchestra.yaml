@@ -4,65 +4,76 @@
 meta:
   created: "2026-01-28"
   last_updated: "2026-01-28"
-  last_session_summary: "민사/소송(이혼/재산분할) 키워드 8개 작업 시작"
+  last_session_summary: "Batch 6 완료 (재산분할 8개, 1개 키워드 교체) - 총 43/52 완료"
 
 current:
-  phase: "validated"
-  batch_number: 3
-  task: "민사/소송 키워드 8개 글 검증 완료 - git push 대기"
+  phase: "completed"
+  batch_number: 6
+  task: "가정법률 키워드 8개 (재산분할 관련) 완료"
   progress: "8/8"
 
-keywords_queue:
-  - id: 1
-    title: "이혼 무료 법률상담 소송구조"
-    status: "completed"
-    article_file: "이혼-무료-법률상담-소송구조.md"
-    validated: true
-
-  - id: 2
-    title: "이혼 소송 진행중 양육비 청구"
-    status: "completed"
-    article_file: "이혼-소송-진행중-양육비-청구.md"
-    validated: true
-
-  - id: 3
-    title: "이혼소송 중 면접교섭권 방해 대응"
-    status: "completed"
-    article_file: "이혼소송-중-면접교섭권-방해-대응.md"
-    validated: true
-
-  - id: 4
-    title: "이혼 재산분할 협의 불가 대응"
-    status: "completed"
-    article_file: "이혼-재산분할-협의-불가-대응.md"
-    validated: true
-
-  - id: 5
-    title: "이혼 소송중 재산분할 합의 효력"
-    status: "completed"
-    article_file: "이혼-소송중-재산분할-합의-효력.md"
-    validated: true
-
-  - id: 6
-    title: "이혼 소송 증거 제시 필요"
-    status: "completed"
-    article_file: "이혼-소송-증거-제시-필요.md"
-    validated: true
-
-  - id: 7
-    title: "재산분할 법원 비율 기준"
-    status: "completed"
-    article_file: "재산분할-법원-비율-기준.md"
-    validated: true
-
-  - id: 8
-    title: "재산분할 협의 합의 불가 대응"
-    status: "completed"
-    article_file: "재산분할-협의-합의-불가-대응.md"
-    validated: true
+keywords_queue: []
 
 completed_log:
   - date: "2026-01-28"
+    batch: 6
+    articles:
+      - "재산분할-청구권-소멸시효.md"
+      - "이혼-전-재산-빼돌림-대비.md"
+      - "이혼-고려중-재산-은닉-방지.md"
+      - "이혼-재산명의-일방-분할청구.md"
+      - "이혼-빚-공동-부담-여부.md"
+      - "이혼-퇴직금-재산분할-대상.md"
+      - "이혼-시부모-증여-토지-분할대상.md"
+      - "이혼-혼인중-별거-내연관계-위자료.md"
+    count: 8
+    git_pushed: false
+    note: "키워드 '이혼 없이 재산분할 청구' → '재산분할 청구권 소멸시효'로 교체 (법률적 불가능)"
+
+  - date: "2026-01-28"
+    batch: 5
+    articles:
+      - "이혼-취소-가능-여부.md"
+      - "이혼-결혼-취소-성적-불능.md"
+      - "이혼-교도소-복역중-배우자.md"
+      - "이혼-친권자-양육자-자동-지정.md"
+      - "이혼-시부모-고부갈등-사유.md"
+      - "이혼-별거-중-양육비-청구.md"
+      - "이혼-미성년자-결혼-가능.md"
+      - "이혼-혼인신고-전-재산-약정.md"
+    count: 8
+    git_pushed: true
+
+  - date: "2026-01-28"
+    batch: 4
+    articles:
+      - "협의이혼-절차-방법.md"
+      - "이혼-청구-배우자-동의-불필요.md"
+      - "이혼-사유-별거-2년.md"
+      - "이혼-청구-외도-책임.md"
+      - "가정폭력-이혼-방법.md"
+      - "이혼-일방-통보-거부-가능.md"
+      - "이혼-배우자-2년-가출-생사불명-재혼.md"
+      - "이혼-포기-외도-배우자-청구.md"
+    count: 8
+    git_pushed: true
+
+  - date: "2026-01-28"
+    batch: 3
+    articles:
+      - "이혼-무료-법률상담-소송구조.md"
+      - "이혼-소송-진행중-양육비-청구.md"
+      - "이혼소송-중-면접교섭권-방해-대응.md"
+      - "이혼-재산분할-협의-불가-대응.md"
+      - "이혼-소송중-재산분할-합의-효력.md"
+      - "이혼-소송-증거-제시-필요.md"
+      - "재산분할-법원-비율-기준.md"
+      - "재산분할-협의-합의-불가-대응.md"
+    count: 8
+    git_pushed: true
+
+  - date: "2026-01-28"
+    batch: 1-2
     articles:
       - "원천징수-대상-의무자.md"
       - "원천세-세율-체계.md"
@@ -76,11 +87,12 @@ completed_log:
       - "법인세-신고-기한.md"
       - "지방세-납부-기한.md"
     count: 11
-    git_pushed: false
+    git_pushed: true
 
 deleted_keywords:
   - "연말정산 놓쳤을 때 (시즌)"
   - "2025년 비과세 한도 (시즌)"
   - "특수 직업 세금"
+  - "이혼 없이 재산분할 청구 가능 (법률적 불가능 - 재산분할청구권은 이혼 후에만 발생)"
 
 errors: []
