@@ -28,7 +28,7 @@ completed_log:
       - "재산분할-혼인신고-전-재산-포함.md"
       - "재산분할-공동명의-대출-부담.md"
     count: 9
-    git_pushed: false
+    git_pushed: true
     note: "가정법률 52개 키워드 전체 완료 (최종 배치)"
 
   - date: "2026-01-28"
