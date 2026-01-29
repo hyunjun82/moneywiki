@@ -181,6 +181,14 @@ export async function getWikiDocument(
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
+  // gray-matter가 자동으로 Date 객체로 변환하는 것 방지
+  if (data.lastUpdated instanceof Date) {
+    data.lastUpdated = data.lastUpdated.toISOString().split("T")[0];
+  }
+  if (data.datePublished instanceof Date) {
+    data.datePublished = data.datePublished.toISOString().split("T")[0];
+  }
+
   // 마크다운을 HTML로 변환 (GFM 테이블 지원)
   const processedContent = await remark()
     .use(remarkGfm)
@@ -230,6 +238,14 @@ export function getAllWikiDocuments(): Omit<WikiDocument, "content" | "htmlConte
       const fullPath = path.join(wikiDirectory, `${slug}.md`);
       const fileContents = fs.readFileSync(fullPath, "utf8");
       const { data } = matter(fileContents);
+
+      // gray-matter가 자동으로 Date 객체로 변환하는 것 방지
+      if (data.lastUpdated instanceof Date) {
+        data.lastUpdated = data.lastUpdated.toISOString().split("T")[0];
+      }
+      if (data.datePublished instanceof Date) {
+        data.datePublished = data.datePublished.toISOString().split("T")[0];
+      }
 
       return {
         slug,
