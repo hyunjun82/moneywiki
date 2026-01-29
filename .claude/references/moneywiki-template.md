@@ -98,7 +98,7 @@ faq:
 relatedDocs:
   - title: "관련문서"
     url: "/w/슬러그"
-thumbnail: "/images/wiki/[슬러그]-thumb.webp"
+thumbnail: "/images/wiki/[슬러그]-thumb.avif"
 ---
 ```
 

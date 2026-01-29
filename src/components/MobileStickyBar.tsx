@@ -34,7 +34,7 @@ export default function MobileStickyBar() {
         <div className="absolute -top-4 left-0 right-0 h-4 bg-gradient-to-t from-black/10 to-transparent pointer-events-none" />
 
         <Link
-          href="/w/환급금-허브"
+          href="/w/refund-hub"
           className="flex items-center justify-between w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg"
         >
           <div className="flex items-center gap-2">

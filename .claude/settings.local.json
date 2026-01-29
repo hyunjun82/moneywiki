@@ -295,7 +295,13 @@
       "Bash(then)",
       "Bash(fi:*)",
       "Bash(node scripts/find-orphan-chartconfig.js:*)",
-      "Bash(node scripts/remove-orphan-chartconfig.js:*)"
+      "Bash(node scripts/remove-orphan-chartconfig.js:*)",
+      "Bash(node scripts/validate-charts.js:*)",
+      "Bash(npm run prebuild:*)",
+      "Bash(npm ls:*)",
+      "Bash(ping:*)",
+      "Bash(npx next dev:*)",
+      "Bash(powershell -Command \"cd ''c:\\\\Users\\\\user\\\\wiki-site''; Start-Process npm -ArgumentList ''run'', ''dev'' -NoNewWindow\")"
     ]
   }
 }
