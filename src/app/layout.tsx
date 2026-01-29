@@ -93,7 +93,7 @@ export default function RootLayout({
         <Header />
         <div className="flex-1">{children}</div>
         <Footer />
-        <Analytics />
+        <Analytics debug={process.env.NODE_ENV === 'development'} />
       </body>
     </html>
   );
