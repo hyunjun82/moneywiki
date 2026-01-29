@@ -7,9 +7,8 @@ interface PageProps {
   params: Promise<{ name: string }>;
 }
 
-// ISR - 빌드타임 정적 생성 + 동적 경로 허용
-export const revalidate = 3600; // 1시간마다 재검증
-export const dynamicParams = true; // generateStaticParams에 없는 경로도 허용
+// Pure SSG - 빌드타임에만 정적 생성 (런타임 CPU 0%)
+export const dynamic = 'force-static';
 
 // 카테고리별 이모지
 const categoryEmoji: Record<string, string> = {

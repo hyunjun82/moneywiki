@@ -208,12 +208,12 @@ export default function ComparisonBarChart({
       </div>
 
       {/* 차트 */}
-      <div style={{ height: chartHeight }} className="w-full">
+      <div style={{ height: chartHeight }} className="w-full relative">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={sortedData}
             layout="vertical"
-            margin={{ top: 5, right: 30, left: 80, bottom: 5 }}
+            margin={{ top: 5, right: 30, left: 80, bottom: 20 }}
           >
             <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} />
             <XAxis
@@ -263,6 +263,13 @@ export default function ComparisonBarChart({
             )}
           </BarChart>
         </ResponsiveContainer>
+
+        {/* 차트 워터마크 (이미지 캡처 시 포함) */}
+        {sourceText && (
+          <div className="absolute bottom-1 right-2 text-[10px] text-gray-400 pointer-events-none">
+            {sourceText}
+          </div>
+        )}
       </div>
 
       {/* 범례 & 출처 */}
