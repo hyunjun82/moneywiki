@@ -331,7 +331,11 @@
       "Bash(git -C \"C:\\\\Users\\\\user\\\\wiki-site\" status --short \"content/wiki/기간제근로자-무기계약-전환-시기.md\")",
       "Bash(git -C \"C:\\\\Users\\\\user\\\\wiki-site\" log --oneline -1 \"content/wiki/기간제근로자-무기계약-전환-시기.md\")",
       "Bash(git -C \"C:\\\\Users\\\\user\\\\wiki-site\" log --oneline --all --grep=\"해고\" -10)",
-      "Bash(git -C:*)"
+      "Bash(git -C:*)",
+      "WebFetch(domain:www.insjournal.co.kr)",
+      "WebFetch(domain:bravo.etoday.co.kr)",
+      "WebFetch(domain:www.bokjinews.com)",
+      "Bash(node scripts/fix-invalid-charts.js:*)"
     ]
   }
 }
