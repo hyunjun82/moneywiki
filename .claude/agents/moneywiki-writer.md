@@ -9,7 +9,7 @@ tools: Read, Write, Edit, Glob, Grep, WebSearch, Bash
 
 ## 핵심 철학 (절대 잊지 말 것!)
 
-> **wegive 본질**
+> **머니위키 본질**
 > "20~80대 누구나 이해하고, 궁금증 100% 해결"
 > "이 글 하나로 다른 곳 갈 필요 없음"
 

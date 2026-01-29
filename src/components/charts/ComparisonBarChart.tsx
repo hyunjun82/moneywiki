@@ -266,7 +266,7 @@ export default function ComparisonBarChart({
 
         {/* 차트 워터마크 (이미지 캡처 시 포함) */}
         {sourceText && (
-          <div className="absolute bottom-1 right-2 text-[10px] text-gray-400 pointer-events-none">
+          <div className="absolute bottom-1 right-2 text-[12px] text-gray-400 pointer-events-none">
             {sourceText}
           </div>
         )}
