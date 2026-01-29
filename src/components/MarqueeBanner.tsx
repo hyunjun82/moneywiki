@@ -20,7 +20,7 @@ export default function MarqueeBanner() {
         >
           {/* 내용 세트 1 - 3개 핵심 항목 */}
           <span className="mx-8 text-sm font-bold inline-flex items-center gap-2 text-[#FFD700]">
-            <Link href="/w/미환급금-조회-정부24-환급금-찾기" className="hover:text-white transition-colors flex items-center gap-2">
+            <Link href="/w/미환급금-조회" className="hover:text-white transition-colors flex items-center gap-2">
               💰 내 숨은 환급금 찾기 <span className="text-xs bg-red-500 px-1.5 py-0.5 rounded text-white animate-pulse">HOT</span>
             </Link>
           </span>
@@ -40,7 +40,7 @@ export default function MarqueeBanner() {
 
           {/* 내용 세트 2 (무한 반복용 복제) */}
           <span className="mx-8 text-sm font-bold inline-flex items-center gap-2 text-[#FFD700]">
-            <Link href="/w/미환급금-조회-정부24-환급금-찾기" className="hover:text-white transition-colors flex items-center gap-2">
+            <Link href="/w/미환급금-조회" className="hover:text-white transition-colors flex items-center gap-2">
               💰 내 숨은 환급금 찾기 <span className="text-xs bg-red-500 px-1.5 py-0.5 rounded text-white animate-pulse">HOT</span>
             </Link>
           </span>

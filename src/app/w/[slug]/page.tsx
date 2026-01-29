@@ -511,29 +511,36 @@ export default async function WikiPage({ params, searchParams }: PageProps) {
             </div>
 
             {/* CTA 버튼 - 이탈률 감소 */}
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-xl p-4 mb-4">
-              <p className="text-sm font-bold text-amber-800 mb-3">💰 놓치고 있는 돈이 있을지도?</p>
+            <div className="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-xl p-4 mb-4 shadow-lg" style={{ animation: 'glow 2s ease-in-out infinite' }}>
+              <style>{`
+                @keyframes glow { 0%, 100% { box-shadow: 0 0 5px rgba(245, 158, 11, 0.5); } 50% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.8); } }
+                @keyframes shine { 0% { left: -100%; } 50%, 100% { left: 100%; } }
+              `}</style>
+              <p className="text-sm font-bold text-amber-800 mb-3 flex items-center gap-2">
+                <span className="text-xl">💰</span>
+                <span>놓치고 있는 돈이 있을지도?</span>
+              </p>
               <div className="space-y-2">
                 <Link
-                  href="/w/미환급금-조회-정부24-환급금-찾기"
-                  className="flex items-center justify-between w-full px-4 py-3 bg-amber-500 hover:bg-amber-600 text-white text-sm font-bold rounded-lg transition-colors shadow-sm"
+                  href="/w/미환급금-조회"
+                  className="relative overflow-hidden flex items-center justify-between w-full px-4 py-3 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white text-sm font-bold rounded-lg transition-all shadow-lg hover:shadow-xl hover:scale-[1.02]"
                 >
                   <span>내 숨은 환급금 찾기</span>
                   <span className="bg-red-500 text-xs px-2 py-0.5 rounded animate-pulse">HOT</span>
                 </Link>
                 <Link
                   href="/category/정부지원금"
-                  className="flex items-center justify-between w-full px-4 py-3 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium rounded-lg transition-colors"
+                  className="flex items-center justify-between w-full px-4 py-3 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white text-sm font-medium rounded-lg transition-all hover:shadow-lg hover:scale-[1.01]"
                 >
                   <span>2026 정부지원금 총정리</span>
-                  <span className="text-emerald-300 text-xs">30개+</span>
+                  <span className="text-emerald-200 text-xs font-bold">30개+</span>
                 </Link>
                 <Link
                   href="/w/2026년-달라지는-제도"
-                  className="flex items-center justify-between w-full px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors"
+                  className="flex items-center justify-between w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-sm font-medium rounded-lg transition-all hover:shadow-lg hover:scale-[1.01]"
                 >
                   <span>2026년 달라지는 제도</span>
-                  <span className="text-yellow-300 text-xs">NEW</span>
+                  <span className="text-yellow-300 text-xs font-bold">NEW</span>
                 </Link>
               </div>
             </div>
