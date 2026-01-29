@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 
+// Pure SSG - CPU 0%
+export const dynamic = 'force-static';
+
 export const metadata: Metadata = {
   title: '미환급금 조회 - 국세·건보·연금 환급금 바로 찾기',
   description: '정부24 기준 7가지 환급금을 한번에 조회하세요. 국세, 지방세, 건강보험, 국민연금, 통신 환급금까지. 평균 15만원, 30초면 확인 가능해요.',
