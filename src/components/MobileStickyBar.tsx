@@ -25,6 +25,17 @@ export default function MobileStickyBar() {
 
   return (
     <>
+      {/* Pulse 애니메이션 */}
+      <style jsx>{`
+        @keyframes pulse-soft {
+          0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 235, 59, 0.7); }
+          50% { transform: scale(1.02); box-shadow: 0 0 0 8px rgba(255, 235, 59, 0); }
+        }
+        .animate-pulse-soft {
+          animation: pulse-soft 2s ease-in-out infinite;
+        }
+      `}</style>
+
       {/* 스티키 바가 차지하는 공간 확보 (모바일만) */}
       <div className="h-14 md:hidden" />
 
@@ -37,15 +48,18 @@ export default function MobileStickyBar() {
           href="/w/미환급금-조회"
           className="flex items-center justify-between w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg"
         >
-          <div className="flex items-center gap-2">
-            <span className="text-xl">💰</span>
+          <div className="flex items-center gap-3">
+            <span className="text-2xl">💰</span>
             <div className="flex flex-col">
               <span className="text-sm font-bold">내 숨은 환급금 찾기</span>
-              <span className="text-xs text-blue-200">평균 15만원 · 30초면 조회</span>
+              <span className="text-xs text-blue-200">평균 15만원 · 무료</span>
             </div>
           </div>
-          <div className="flex items-center gap-1 bg-white/20 rounded-full px-3 py-1">
-            <span className="text-sm font-medium">조회하기</span>
+          <div
+            className="animate-pulse-soft flex items-center gap-1 rounded-full px-4 py-2 font-bold text-sm"
+            style={{ backgroundColor: '#FFEB3B', color: '#333333' }}
+          >
+            <span>조회하기</span>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
