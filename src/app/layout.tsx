@@ -6,6 +6,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import KakaoSDK from "@/components/KakaoSDK";
 import AdClickTracker from "@/components/AdClickTracker";
+import MobileStickyBar from "@/components/MobileStickyBar";
 import Link from "next/link";
 
 // Google Fonts 최적화: next/font로 자동 셀프호스팅 + display swap
@@ -93,6 +94,7 @@ export default function RootLayout({
         <Header />
         <div className="flex-1">{children}</div>
         <Footer />
+        <MobileStickyBar />
         <Analytics debug={process.env.NODE_ENV === 'development'} />
       </body>
     </html>
