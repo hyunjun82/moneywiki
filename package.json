@@ -5,6 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "validate": "py scripts/validate-all.py",
+    "validate-charts": "node scripts/validate-charts.js",
+    "fix-charts": "node scripts/fix-invalid-charts.js",
+    "prebuild": "node scripts/validate-charts.js",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
