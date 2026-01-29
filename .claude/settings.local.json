@@ -289,7 +289,8 @@
       "Bash(shuf:*)",
       "Bash(python generate_yaml.py:*)",
       "Bash(for file in \"가사근로자-근로기준법-적용.md\" \"입주가사근로자-휴게시간.md\" \"가사근로자-최저임금-적용.md\" \"가사근로자-근로시간-기준.md\" \"가사근로자-자격요건.md\" \"가사근로자-근로계약서-주의사항.md\" \"가사서비스-추가-가능-여부.md\" \"가사근로자-공휴일-유급휴일.md\")",
-      "Bash(do)"
+      "Bash(do)",
+      "Bash(node scripts/validate-force-static.js:*)"
     ]
   }
 }

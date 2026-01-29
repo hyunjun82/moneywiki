@@ -2,6 +2,9 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { getAllForms } from "@/lib/forms-loader";
 
+// Pure SSG - 빌드타임에만 정적 생성 (런타임 CPU 0%)
+export const dynamic = 'force-static';
+
 export const metadata: Metadata = {
   title: "양식·서식 무료 다운로드 - 머니위키",
   description: "근로계약서, 임대차계약서, 위임장 등 각종 양식을 무료로 다운로드하세요. HWP, PDF, Word 형식 제공.",

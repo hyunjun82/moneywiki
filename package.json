@@ -6,8 +6,9 @@
     "dev": "next dev",
     "validate": "py scripts/validate-all.py",
     "validate-charts": "node scripts/validate-charts.js",
+    "validate-static": "node scripts/validate-force-static.js",
     "fix-charts": "node scripts/fix-invalid-charts.js",
-    "prebuild": "node scripts/validate-charts.js",
+    "prebuild": "node scripts/validate-force-static.js && node scripts/validate-charts.js",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"

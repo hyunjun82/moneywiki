@@ -2,6 +2,9 @@ import Link from "next/link";
 import { getAllWikiDocuments } from "@/lib/wiki";
 import MarqueeBanner from "@/components/MarqueeBanner";
 
+// Pure SSG - 빌드타임에만 정적 생성 (런타임 CPU 0%)
+export const dynamic = 'force-static';
+
 // 카테고리별 이모지
 const categoryEmoji: Record<string, string> = {
   "정부지원금": "💰",
