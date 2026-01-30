@@ -301,7 +301,39 @@ export function getDocumentsByCategory(category: string): Omit<WikiDocument, "co
   return allDocs.filter((doc) => doc.category === category);
 }
 
-// 관련 문서 찾기 (키워드 기반)
+// 주제 키워드 추출 함수
+function extractTopicKeywords(slug: string, title: string, category: string): string[] {
+  const text = `${slug} ${title} ${category}`.toLowerCase();
+  const topics: string[] = [];
+
+  // 주제별 키워드 매핑 (우선순위 순)
+  const topicPatterns = [
+    { keywords: ['퇴직금', '퇴직연금', '퇴직'], topic: '퇴직금' },
+    { keywords: ['실업급여', '고용보험', '구직급여'], topic: '실업급여' },
+    { keywords: ['연말정산', '소득공제', '세액공제'], topic: '연말정산' },
+    { keywords: ['대출', '이자', '금리', '원리금'], topic: '대출' },
+    { keywords: ['dsr', '총부채'], topic: 'DSR' },
+    { keywords: ['양도소득세', '양도세'], topic: '양도소득세' },
+    { keywords: ['취득세'], topic: '취득세' },
+    { keywords: ['전세', '월세', '임대차', '보증금'], topic: '전월세' },
+    { keywords: ['국민연금', '연금수령'], topic: '국민연금' },
+    { keywords: ['4대보험', '사대보험'], topic: '4대보험' },
+    { keywords: ['근로소득세', '근로소득'], topic: '근로소득세' },
+    { keywords: ['주식', '배당', '증권'], topic: '주식' },
+    { keywords: ['최저임금', '시급'], topic: '최저임금' },
+    { keywords: ['종합소득세', '종소세'], topic: '종합소득세' },
+  ];
+
+  for (const pattern of topicPatterns) {
+    if (pattern.keywords.some(k => text.includes(k))) {
+      topics.push(pattern.topic);
+    }
+  }
+
+  return topics;
+}
+
+// 관련 문서 찾기 (주제 키워드 기반 - 개선)
 export function findRelatedDocuments(
   currentSlug: string,
   limit: number = 5
@@ -311,21 +343,38 @@ export function findRelatedDocuments(
 
   if (!currentDoc) return [];
 
-  // 같은 카테고리 또는 공통 키워드가 있는 문서 찾기
+  // 현재 문서의 주제 키워드 추출
+  const currentTopics = extractTopicKeywords(currentDoc.slug, currentDoc.title, currentDoc.category);
+
+  // 주제 키워드가 있으면 해당 주제 문서만 필터링
   return allDocs
     .filter((doc) => doc.slug !== currentSlug)
     .map((doc) => {
       let score = 0;
-      // 같은 카테고리면 +3점
-      if (doc.category === currentDoc.category) score += 3;
+      const docTopics = extractTopicKeywords(doc.slug, doc.title, doc.category);
+
+      // 같은 주제면 +10점 (최우선)
+      const commonTopics = currentTopics.filter(t => docTopics.includes(t));
+      score += commonTopics.length * 10;
+
+      // 같은 카테고리면 +2점
+      if (doc.category === currentDoc.category) score += 2;
+
       // 공통 키워드당 +1점
       const commonKeywords = doc.keywords.filter((k) =>
         currentDoc.keywords.includes(k)
       );
       score += commonKeywords.length;
-      return { doc, score };
+
+      return { doc, score, hasCommonTopic: commonTopics.length > 0 };
     })
-    .filter((item) => item.score > 0)
+    // 주제가 있으면 같은 주제 문서만, 없으면 모든 문서
+    .filter((item) => {
+      if (currentTopics.length > 0) {
+        return item.hasCommonTopic; // 주제가 있으면 같은 주제만
+      }
+      return item.score > 0; // 주제가 없으면 기존 로직
+    })
     .sort((a, b) => b.score - a.score)
     .slice(0, limit)
     .map((item) => item.doc);

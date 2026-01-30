@@ -94,45 +94,126 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-// 주제별 계산기 매핑 함수
+// 주제별 계산기 매핑 함수 (점수 기반 - 가장 관련성 높은 계산기 반환)
 function getRelatedCalculator(slug: string, title: string, category: string): { slug: string; title: string } | null {
   const text = `${slug} ${title} ${category}`.toLowerCase();
 
-  if (text.includes('실업급여') || text.includes('고용보험')) {
-    return { slug: '실업급여-계산기', title: '실업급여 계산기' };
-  }
-  if (text.includes('퇴직금') || text.includes('퇴직')) {
-    return { slug: '퇴직금-계산기', title: '퇴직금 계산기' };
-  }
-  if (text.includes('대출') || text.includes('이자') || text.includes('금리')) {
-    return { slug: '대출이자-계산기', title: '대출이자 계산기' };
-  }
-  if (text.includes('dsr') || text.includes('총부채')) {
-    return { slug: 'DSR-계산기', title: 'DSR 계산기' };
-  }
-  if (text.includes('주식') || text.includes('투자') || text.includes('수익률')) {
-    return { slug: '주식-계산기', title: '주식 계산기' };
-  }
-  if (text.includes('연말정산') || text.includes('소득공제') || text.includes('세금')) {
-    return { slug: '연말정산-계산기', title: '연말정산 계산기' };
-  }
-  if (text.includes('전세') || text.includes('월세') || text.includes('임대차')) {
-    return { slug: '전월세-계산기', title: '전월세 계산기' };
-  }
-  if (text.includes('양도') || text.includes('부동산')) {
-    return { slug: '양도소득세-계산기', title: '양도소득세 계산기' };
-  }
-  if (text.includes('국민연금') || text.includes('연금')) {
-    return { slug: '국민연금-수령액-계산기', title: '국민연금 수령액' };
-  }
-  if (text.includes('4대보험') || text.includes('사대보험')) {
-    return { slug: '4대보험료-계산기', title: '4대보험료 계산기' };
-  }
-  if (text.includes('근로소득')) {
-    return { slug: '근로소득세-계산기', title: '근로소득세 계산기' };
+  // 계산기 매핑 테이블 (키워드와 가중치)
+  const calculatorMappings = [
+    {
+      slug: '퇴직금-계산기',
+      title: '퇴직금 계산기',
+      keywords: [
+        { word: '퇴직금', weight: 10 },
+        { word: '퇴직연금', weight: 8 },
+        { word: '퇴직', weight: 5 },
+      ]
+    },
+    {
+      slug: '실업급여-계산기',
+      title: '실업급여 계산기',
+      keywords: [
+        { word: '실업급여', weight: 10 },
+        { word: '고용보험', weight: 8 },
+        { word: '구직급여', weight: 8 },
+      ]
+    },
+    {
+      slug: '연말정산-계산기',
+      title: '연말정산 계산기',
+      keywords: [
+        { word: '연말정산', weight: 10 },
+        { word: '소득공제', weight: 6 },
+        { word: '세액공제', weight: 6 },
+      ]
+    },
+    {
+      slug: '양도소득세-계산기',
+      title: '양도소득세 계산기',
+      keywords: [
+        { word: '양도소득세', weight: 10 },
+        { word: '양도세', weight: 10 },
+        { word: '양도', weight: 5 },
+      ]
+    },
+    {
+      slug: '대출이자-계산기',
+      title: '대출이자 계산기',
+      keywords: [
+        { word: '대출이자', weight: 10 },
+        { word: '대출', weight: 6 },
+        { word: '금리', weight: 5 },
+        { word: '원리금', weight: 5 },
+      ]
+    },
+    {
+      slug: 'DSR-계산기',
+      title: 'DSR 계산기',
+      keywords: [
+        { word: 'dsr', weight: 10 },
+        { word: '총부채', weight: 8 },
+      ]
+    },
+    {
+      slug: '국민연금-수령액-계산기',
+      title: '국민연금 수령액',
+      keywords: [
+        { word: '국민연금', weight: 10 },
+        { word: '연금수령', weight: 8 },
+      ]
+    },
+    {
+      slug: '4대보험료-계산기',
+      title: '4대보험료 계산기',
+      keywords: [
+        { word: '4대보험', weight: 10 },
+        { word: '사대보험', weight: 10 },
+      ]
+    },
+    {
+      slug: '근로소득세-계산기',
+      title: '근로소득세 계산기',
+      keywords: [
+        { word: '근로소득세', weight: 10 },
+        { word: '근로소득', weight: 6 },
+      ]
+    },
+    {
+      slug: '전월세-계산기',
+      title: '전월세 계산기',
+      keywords: [
+        { word: '전세', weight: 8 },
+        { word: '월세', weight: 8 },
+        { word: '임대차', weight: 6 },
+      ]
+    },
+    {
+      slug: '주식-계산기',
+      title: '주식 계산기',
+      keywords: [
+        { word: '주식', weight: 8 },
+        { word: '배당', weight: 6 },
+        { word: '증권', weight: 5 },
+      ]
+    },
+  ];
+
+  // 각 계산기별 점수 계산
+  let bestMatch: { slug: string; title: string; score: number } | null = null;
+
+  for (const calc of calculatorMappings) {
+    let score = 0;
+    for (const kw of calc.keywords) {
+      if (text.includes(kw.word)) {
+        score += kw.weight;
+      }
+    }
+    if (score > 0 && (!bestMatch || score > bestMatch.score)) {
+      bestMatch = { slug: calc.slug, title: calc.title, score };
+    }
   }
 
-  return null; // 매칭 없으면 계산기 없이 relatedDocs만 표시
+  return bestMatch ? { slug: bestMatch.slug, title: bestMatch.title } : null;
 }
 
 // HTML 콘텐츠에서 목차 추출
@@ -263,7 +344,8 @@ export default async function WikiPage({ params, searchParams }: PageProps) {
     processedHtml = processedHtml.replace(sourceRemovePattern, '');
 
     // 본문에서 "관련 문서" 섹션 제거 (사이드바로 이동)
-    const relatedDocsRemovePattern = /<h2[^>]*>(?:<span[^>]*>[^<]*<\/span>)?\s*관련\s*문서<\/h2>[\s\S]*?(?=<hr|<h2|<section|$)/gi;
+    // H2 내부에 "관련 문서" 텍스트가 포함되어 있으면 전체 섹션 제거
+    const relatedDocsRemovePattern = /<h2[^>]*>[\s\S]*?관련\s*문서[\s\S]*?<\/h2>[\s\S]*?(?=<hr|<h2|<section|$)/gi;
     processedHtml = processedHtml.replace(relatedDocsRemovePattern, '');
 
     // 머니위키 박스 HTML 생성
