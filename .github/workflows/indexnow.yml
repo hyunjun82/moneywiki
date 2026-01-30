@@ -1,0 +1,41 @@
+name: IndexNow Auto Submit
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # 수동 실행 가능
+
+jobs:
+  submit-indexnow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Wait for Vercel deployment
+        run: sleep 60  # Vercel 배포 완료 대기 (60초)
+
+      - name: Submit to IndexNow
+        run: |
+          echo "Submitting sitemap URLs to IndexNow..."
+          response=$(curl -s -w "\n%{http_code}" https://jjyu.co.kr/api/indexnow)
+          http_code=$(echo "$response" | tail -n1)
+          body=$(echo "$response" | head -n-1)
+
+          echo "HTTP Status: $http_code"
+          echo "Response: $body"
+
+          if [ "$http_code" -eq 200 ]; then
+            echo "✅ IndexNow 제출 성공!"
+            echo "$body" | jq '.' || echo "$body"
+          else
+            echo "❌ IndexNow 제출 실패"
+            exit 1
+          fi
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "### IndexNow Submission Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- Timestamp: $(date)" >> $GITHUB_STEP_SUMMARY
+          echo "- Status: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
