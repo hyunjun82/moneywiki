@@ -25,10 +25,10 @@ export default function MobileStickyBar() {
 
   return (
     <>
-      {/* 스티키 바가 차지하는 공간 확보 (모바일만) */}
+      {/* 모바일 스티키 바가 차지하는 공간 확보 */}
       <div className="md:hidden" style={{ height: '70px' }} />
 
-      {/* 스티키 바 */}
+      {/* 모바일 스티키 바 (기존 스타일 유지) */}
       <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
         <Link
           href="/w/미환급금-조회"
@@ -60,6 +60,22 @@ export default function MobileStickyBar() {
             </svg>
           </button>
         </Link>
+      </div>
+
+      {/* PC 스티키 바 (상단 녹색 버튼 스타일 적용) */}
+      <div className="hidden md:block fixed bottom-8 left-0 right-0 z-50 px-4">
+        <div className="max-w-4xl mx-auto">
+          <Link
+            href="/w/미환급금-조회"
+            className="ext-btn ext-btn-green"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="ext-btn-badge">평균 13만원 환급</span>
+            <span className="ext-btn-text">30초 안에 내 숨은 환급금 찾기</span>
+            <span className="ext-btn-cta">조회하기 →</span>
+          </Link>
+        </div>
       </div>
     </>
   );
