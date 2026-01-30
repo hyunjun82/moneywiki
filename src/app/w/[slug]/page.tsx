@@ -494,34 +494,6 @@ export default async function WikiPage({ params, searchParams }: PageProps) {
             </div>
           )}
 
-          {/* 관련 문서 */}
-          {relatedDocs.length > 0 && (
-            <section className="mt-12 pt-8 border-t border-neutral-200">
-              <div className="flex items-center gap-2 mb-6">
-                <span className="text-2xl">📄</span>
-                <h2 className="text-xl font-bold">관련 문서</h2>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {relatedDocs.map((relDoc) => (
-                  <Link
-                    key={relDoc.slug}
-                    href={`/w/${encodeURIComponent(relDoc.slug)}`}
-                    className="group p-4 bg-white rounded-xl border border-neutral-200 hover:border-emerald-300 hover:shadow-md transition-all"
-                  >
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="px-2 py-0.5 text-xs bg-neutral-100 text-neutral-500 rounded">
-                        {relDoc.category}
-                      </span>
-                    </div>
-                    <h3 className="font-medium text-neutral-800 group-hover:text-emerald-600 transition-colors mb-1">
-                      {relDoc.title}
-                    </h3>
-                    <p className="text-sm text-neutral-500 line-clamp-2">{relDoc.description}</p>
-                  </Link>
-                ))}
-              </div>
-            </section>
-          )}
 
           {/* 문서 피드백 */}
           <div className="mt-12 p-6 bg-neutral-50 rounded-2xl text-center">
@@ -600,6 +572,32 @@ export default async function WikiPage({ params, searchParams }: PageProps) {
                 ))}
               </ul>
             </div>
+
+            {/* 관련 문서 - 네이버 스타일 */}
+            {relatedDocs.length > 0 && (
+              <div className="bg-white border border-neutral-200 rounded-xl overflow-hidden mb-4">
+                <div className="px-4 py-3 bg-neutral-800">
+                  <span className="text-sm font-semibold text-white flex items-center gap-2">
+                    📄 관련 문서
+                  </span>
+                </div>
+                <ul className="divide-y divide-neutral-100">
+                  {relatedDocs.map((relDoc) => (
+                    <li key={relDoc.slug}>
+                      <Link
+                        href={`/w/${encodeURIComponent(relDoc.slug)}`}
+                        className="block px-4 py-3 hover:bg-neutral-50 transition-colors"
+                      >
+                        <span className="text-sm text-neutral-700 hover:text-emerald-600 line-clamp-2">
+                          {relDoc.title}
+                        </span>
+                        <span className="text-xs text-neutral-400 mt-1 block">{relDoc.category}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {/* 같은 카테고리 문서 */}
             <div className="bg-white border border-neutral-200 rounded-xl overflow-hidden mb-4">
