@@ -262,6 +262,10 @@ export default async function WikiPage({ params, searchParams }: PageProps) {
     const sourceRemovePattern = /<h2[^>]*>(?:<span[^>]*>[^<]*<\/span>)?\s*출처<\/h2>[\s\S]*?(?=<hr|<h2|<section|$)/gi;
     processedHtml = processedHtml.replace(sourceRemovePattern, '');
 
+    // 본문에서 "관련 문서" 섹션 제거 (사이드바로 이동)
+    const relatedDocsRemovePattern = /<h2[^>]*>(?:<span[^>]*>[^<]*<\/span>)?\s*관련\s*문서<\/h2>[\s\S]*?(?=<hr|<h2|<section|$)/gi;
+    processedHtml = processedHtml.replace(relatedDocsRemovePattern, '');
+
     // 머니위키 박스 HTML 생성
     const wikiBoxHtml = relatedDocs.length > 0 ? `
       <div class="my-8 border border-neutral-200 rounded-xl overflow-hidden not-prose">
@@ -279,14 +283,10 @@ export default async function WikiPage({ params, searchParams }: PageProps) {
       </div>
     ` : '';
 
-    // H2 목록 추출
-    const allH2Matches = [...processedHtml.matchAll(/<h2[^>]*>/gi)];
-
-    // 머니위키 박스: 마지막에서 2번째 H2 앞에 (6~7 사이)
-    if (wikiBoxHtml && allH2Matches.length >= 2) {
-      const secondLastH2 = allH2Matches[allH2Matches.length - 1];
-      const insertPos = secondLastH2.index!;
-      processedHtml = processedHtml.slice(0, insertPos) + wikiBoxHtml + processedHtml.slice(insertPos);
+    // 머니위키 박스: "결론" H2 바로 위에 삽입
+    const conclusionMatch = processedHtml.match(/<h2[^>]*>(?:<span[^>]*>[^<]*<\/span>)?[^<]*결론[^<]*<\/h2>/i);
+    if (wikiBoxHtml && conclusionMatch && conclusionMatch.index !== undefined) {
+      processedHtml = processedHtml.slice(0, conclusionMatch.index) + wikiBoxHtml + processedHtml.slice(conclusionMatch.index);
     }
 
     // FAQ 삽입: 본문 맨 끝에 (7번 결론 아래)
