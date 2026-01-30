@@ -62,20 +62,34 @@ export default function MobileStickyBar() {
         </Link>
       </div>
 
-      {/* PC 스티키 바 (상단 녹색 버튼 스타일 적용) */}
-      <div className="hidden md:block fixed bottom-8 left-0 right-0 z-50 px-4">
-        <div className="max-w-4xl mx-auto">
-          <Link
-            href="/w/미환급금-조회"
-            className="ext-btn ext-btn-green"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="ext-btn-badge">평균 13만원 환급</span>
-            <span className="ext-btn-text">30초 안에 내 숨은 환급금 찾기</span>
-            <span className="ext-btn-cta">조회하기 →</span>
-          </Link>
-        </div>
+      {/* PC 스티키 바 - 바닥 고정, 본문 영역 내에서만 */}
+      <div
+        className="hidden lg:block fixed bottom-0 z-40"
+        style={{
+          left: 'max(1rem, calc((100vw - 1280px) / 2 + 1rem))',
+          right: 'calc(288px + 2rem + max(1rem, (100vw - 1280px) / 2))',
+          maxWidth: 'calc(1280px - 288px - 4rem)'
+        }}
+      >
+        <Link
+          href="/w/미환급금-조회"
+          className="flex items-center justify-between w-full px-5 py-3"
+          style={{
+            background: 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
+            borderTopLeftRadius: '12px',
+            borderTopRightRadius: '12px',
+          }}
+        >
+          <span className="px-3 py-1 bg-white text-emerald-700 rounded-full text-xs font-bold">
+            평균 13만원 환급
+          </span>
+          <span className="flex-1 text-center font-bold text-white text-sm">
+            30초 안에 내 숨은 환급금 찾기
+          </span>
+          <span className="font-bold text-white text-sm">
+            조회하기 →
+          </span>
+        </Link>
       </div>
     </>
   );

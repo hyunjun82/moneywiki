@@ -460,6 +460,8 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   padding: 20px 24px;
   border-radius: 16px;
   text-decoration: none !important;
@@ -467,7 +469,7 @@ a:hover {
   position: relative;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  margin: 16px 0;
+  margin: 16px auto;
 }
 
 .ext-btn:hover {
@@ -653,4 +655,81 @@ a:hover {
 .ext-link-blue:hover {
   background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
   box-shadow: 0 5px 15px rgba(59, 130, 246, 0.35);
+}
+
+/* ============================================
+   FAQ 섹션 (동적 삽입)
+   ============================================ */
+
+.faq-section {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.faq-section details {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.faq-section summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-section summary::-webkit-details-marker {
+  display: none;
+}
+
+/* ============================================
+   전역 오버플로우 방지
+   ============================================ */
+
+article,
+main,
+.prose {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+article > *,
+.prose > * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* 테이블 반응형 */
+article table,
+.prose table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* blockquote 오버플로우 방지 */
+article blockquote,
+.prose blockquote {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+/* ============================================
+   사이드바 CTA 노란색 깜박임 애니메이션
+   ============================================ */
+@keyframes yellowBlink {
+  0%, 100% {
+    background-color: #fafafa;
+    box-shadow: none;
+  }
+  50% {
+    background-color: #FFF9C4;
+    box-shadow: 0 0 15px rgba(255, 235, 59, 0.6);
+  }
+}
+
+.animate-yellow-blink {
+  animation: yellowBlink 2s ease-in-out infinite;
 }

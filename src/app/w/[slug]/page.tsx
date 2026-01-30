@@ -182,8 +182,80 @@ export default async function WikiPage({ params, searchParams }: PageProps) {
   const popularDocs = allDocs.slice(0, 5);
 
   // HTML 처리
-  const processedHtml = addSectionIds(doc.htmlContent || "");
-  const toc = extractToc(doc.htmlContent || "");
+  let processedHtml = addSectionIds(doc.htmlContent || "");
+
+  // FAQ를 본문에 삽입 (결론 전, 출처 앞의 마지막 H2 앞에)
+  if (doc.faq && doc.faq.length > 0) {
+    const faqHtml = `
+      <section class="faq-section mt-12 pt-8 border-t border-neutral-200">
+        <div class="flex items-center gap-2 mb-6">
+          <span class="text-2xl">❓</span>
+          <h2 class="text-2xl font-bold">자주 묻는 질문</h2>
+        </div>
+        <div class="space-y-4">
+          ${doc.faq.map((item: { question: string; answer: string }, index: number) => `
+            <details class="group bg-white rounded-xl border border-neutral-200 overflow-hidden">
+              <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-neutral-50 transition-colors">
+                <span class="font-medium text-neutral-800 pr-4">${item.question}</span>
+                <span class="text-neutral-400 group-open:rotate-180 transition-transform">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </span>
+              </summary>
+              <div class="px-5 pb-5 text-neutral-600 leading-relaxed border-t border-neutral-100 pt-4">
+                ${item.answer}
+              </div>
+            </details>
+          `).join('')}
+        </div>
+      </section>
+    `;
+
+    // 마크다운 본문에서 "자주 묻는 질문" 섹션 제거 (frontmatter FAQ로 대체)
+    // addSectionIds 후: <h2 id="section-N"><span...>숫자.</span>자주 묻는 질문</h2>
+    const faqRemovePattern = /<h2[^>]*>(?:<span[^>]*>[^<]*<\/span>)?\s*자주\s*묻는\s*질문<\/h2>[\s\S]*?(?=<hr|<h2|$)/gi;
+    processedHtml = processedHtml.replace(faqRemovePattern, '');
+
+    // 본문에서 "출처" 섹션 제거 (하단 출처 및 참고자료로 대체)
+    const sourceRemovePattern = /<h2[^>]*>(?:<span[^>]*>[^<]*<\/span>)?\s*출처<\/h2>[\s\S]*?(?=<hr|<h2|<section|$)/gi;
+    processedHtml = processedHtml.replace(sourceRemovePattern, '');
+
+    // 머니위키 박스 HTML 생성
+    const wikiBoxHtml = relatedDocs.length > 0 ? `
+      <div class="my-8 border border-neutral-200 rounded-xl overflow-hidden not-prose">
+        <div class="px-4 py-2.5 bg-neutral-50 border-b border-neutral-100 flex items-center gap-2">
+          <span class="text-emerald-600 font-semibold text-sm">💡 머니위키</span>
+        </div>
+        <div class="divide-y divide-neutral-100">
+          ${relatedDocs.slice(0, 3).map((relDoc: { slug: string; title: string }) => `
+            <a href="/w/${encodeURIComponent(relDoc.slug)}" class="flex items-center justify-between px-4 py-3 hover:bg-neutral-50 transition-colors group no-underline">
+              <span class="text-sm text-neutral-700 group-hover:text-emerald-600 transition-colors">${relDoc.title}</span>
+              <span class="text-emerald-500 font-bold">→</span>
+            </a>
+          `).join('')}
+        </div>
+      </div>
+    ` : '';
+
+    // H2 목록 추출
+    const allH2Matches = [...processedHtml.matchAll(/<h2[^>]*>/gi)];
+
+    // 머니위키 박스: 마지막에서 2번째 H2 앞에 (6~7 사이)
+    if (wikiBoxHtml && allH2Matches.length >= 2) {
+      const secondLastH2 = allH2Matches[allH2Matches.length - 1];
+      const insertPos = secondLastH2.index!;
+      processedHtml = processedHtml.slice(0, insertPos) + wikiBoxHtml + processedHtml.slice(insertPos);
+    }
+
+    // FAQ 삽입: 본문 맨 끝에 (7번 결론 아래)
+    processedHtml = processedHtml + faqHtml;
+  }
+
+  // 목차 추출 (processedHtml에서 - FAQ 제거 후)
+  const toc = extractToc(processedHtml).filter(
+    item => !/자주\s*묻는\s*질문/i.test(item.text)
+  );
 
   // 브레드크럼 데이터 (메인 페이지 카테고리 앵커로 연결)
   const breadcrumbItems = [
@@ -280,40 +352,28 @@ export default async function WikiPage({ params, searchParams }: PageProps) {
           <CalculatorLoader slug={slug} />
 
           {/* 목차 - 나무위키 스타일 (계산기 페이지에서는 숨김) */}
-          {doc.schemaType !== "calculator" && toc.length >= 2 && (() => {
-            let h2Counter = 0;
-            let h3Counter = 0;
-            return (
+          {doc.schemaType !== "calculator" && toc.length >= 2 && (
               <div className="mb-8 p-4 bg-neutral-50 border border-neutral-200 rounded-lg">
                 <div className="flex items-center justify-between mb-3">
                   <h2 className="text-sm font-semibold text-neutral-600">목차</h2>
                 </div>
                 <ol className="space-y-1 text-sm">
                   {toc.map((item) => {
-                    let number = "";
-                    if (item.level === 2) {
-                      h2Counter++;
-                      h3Counter = 0;
-                      number = `${h2Counter}.`;
-                    } else if (item.level === 3) {
-                      h3Counter++;
-                      number = `${h2Counter}.${h3Counter}.`;
-                    }
+                    // 텍스트에서 앞부분 번호 제거 (이미 번호가 포함되어 있음)
                     return (
                       <li key={item.id} className={item.level === 3 ? "ml-6" : ""}>
                         <a
                           href={`#${item.id}`}
                           className="text-emerald-600 hover:underline"
                         >
-                          {number} {item.text}
+                          {item.text}
                         </a>
                       </li>
                     );
                   })}
                 </ol>
               </div>
-            );
-          })()}
+          )}
 
           {/* 3줄 요약 (계산기 페이지에서는 숨김) */}
           {doc.schemaType !== "calculator" && doc.summary && (
@@ -354,7 +414,7 @@ export default async function WikiPage({ params, searchParams }: PageProps) {
 
           {/* ctaButton (단일 객체 - position: "afterChart"인 경우) */}
           {doc.ctaButton && doc.ctaButton.position === "afterChart" && (
-            <div className="mb-8">
+            <div className="mb-8 overflow-hidden">
               <a
                 href={doc.ctaButton.url}
                 target="_blank"
@@ -372,7 +432,7 @@ export default async function WikiPage({ params, searchParams }: PageProps) {
 
           {/* CTA 버튼 (외부링크 - 배열) */}
           {doc.cta && doc.cta.length > 0 && (
-            <div className="mb-8 space-y-3">
+            <div className="mb-8 space-y-3 overflow-hidden">
               {doc.cta.slice(0, 2).map((item, index) => (
                 <a
                   key={index}
@@ -414,36 +474,9 @@ export default async function WikiPage({ params, searchParams }: PageProps) {
             dangerouslySetInnerHTML={{ __html: processedHtml }}
           />
 
-          {/* FAQ 섹션 */}
-          {doc.faq && doc.faq.length > 0 && (
-            <section className="mt-12 pt-8 border-t border-neutral-200">
-              <div className="flex items-center gap-2 mb-6">
-                <span className="text-2xl">❓</span>
-                <h2 className="text-2xl font-bold">자주 묻는 질문</h2>
-              </div>
-              <div className="space-y-4">
-                {doc.faq.map((item, index) => (
-                  <details key={index} className="group bg-white rounded-xl border border-neutral-200 overflow-hidden">
-                    <summary className="flex items-center justify-between p-5 cursor-pointer hover:bg-neutral-50 transition-colors">
-                      <span className="font-medium text-neutral-800 pr-4">{item.question}</span>
-                      <span className="text-neutral-400 group-open:rotate-180 transition-transform">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </span>
-                    </summary>
-                    <div className="px-5 pb-5 text-neutral-600 leading-relaxed border-t border-neutral-100 pt-4">
-                      {item.answer}
-                    </div>
-                  </details>
-                ))}
-              </div>
-            </section>
-          )}
-
           {/* 출처 섹션 - E-E-A-T 강화 */}
           {doc.sources && doc.sources.length > 0 && (
-            <section className="mt-12 pt-8 border-t border-neutral-200">
+            <section className="mt-8 pt-8 border-t border-neutral-200">
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-xl">📚</span>
                 <h2 className="text-lg font-semibold">출처 및 참고자료</h2>
@@ -512,115 +545,101 @@ export default async function WikiPage({ params, searchParams }: PageProps) {
               <AdSense slot={AD_SLOTS.SQUARE} className="w-full" />
             </div>
 
-            {/* CTA 버튼 - 이탈률 감소 */}
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-xl p-4 mb-4 shadow-lg" style={{ animation: 'glow 2s ease-in-out infinite' }}>
-              <style>{`
-                @keyframes glow { 0%, 100% { box-shadow: 0 0 5px rgba(245, 158, 11, 0.5); } 50% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.8); } }
-                @keyframes shine { 0% { left: -100%; } 50%, 100% { left: 100%; } }
-              `}</style>
-              <p className="text-sm font-bold text-amber-800 mb-3 flex items-center gap-2">
-                <span className="text-xl">💰</span>
-                <span>놓치고 있는 돈이 있을지도?</span>
-              </p>
-              <div className="space-y-2">
+            {/* CTA 버튼 - 노란색 깜박임 효과 */}
+            <div className="bg-white border border-neutral-200 rounded-xl overflow-hidden mb-4">
+              <div className="p-4 space-y-3">
                 <Link
                   href="/w/미환급금-조회"
-                  className="relative overflow-hidden flex items-center justify-between w-full px-4 py-3 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white text-sm font-bold rounded-lg transition-all shadow-lg hover:shadow-xl hover:scale-[1.02]"
+                  className="group flex items-center gap-3 p-3 rounded-lg transition-all border border-transparent hover:border-emerald-200 animate-yellow-blink"
                 >
-                  <span>내 숨은 환급금 찾기</span>
-                  <span className="bg-red-500 text-xs px-2 py-0.5 rounded animate-pulse">HOT</span>
+                  <span className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center text-lg group-hover:scale-110 transition-transform">💰</span>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-semibold text-neutral-800 truncate">내 숨은 환급금 찾기</p>
+                    <p className="text-xs text-neutral-500">평균 13만원 환급</p>
+                  </div>
+                  <svg className="w-5 h-5 text-neutral-400 group-hover:text-emerald-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </Link>
                 <Link
                   href="/category/정부지원금"
-                  className="flex items-center justify-between w-full px-4 py-3 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white text-sm font-medium rounded-lg transition-all hover:shadow-lg hover:scale-[1.01]"
+                  className="group flex items-center gap-3 p-3 rounded-lg transition-all border border-transparent hover:border-blue-200 animate-yellow-blink"
+                  style={{ animationDelay: '0.3s' }}
                 >
-                  <span>2026 정부지원금 총정리</span>
-                  <span className="text-emerald-200 text-xs font-bold">30개+</span>
+                  <span className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-lg group-hover:scale-110 transition-transform">🏛️</span>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-semibold text-neutral-800 truncate">2026 정부지원금</p>
+                    <p className="text-xs text-neutral-500">30개+ 지원금 총정리</p>
+                  </div>
+                  <svg className="w-5 h-5 text-neutral-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </Link>
                 <Link
                   href="/w/2026년-달라지는-제도"
-                  className="flex items-center justify-between w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-sm font-medium rounded-lg transition-all hover:shadow-lg hover:scale-[1.01]"
+                  className="group flex items-center gap-3 p-3 rounded-lg transition-all border border-transparent hover:border-amber-200 animate-yellow-blink"
+                  style={{ animationDelay: '0.6s' }}
                 >
-                  <span>2026년 달라지는 제도</span>
-                  <span className="text-yellow-300 text-xs font-bold">NEW</span>
+                  <span className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center text-lg group-hover:scale-110 transition-transform">📋</span>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-semibold text-neutral-800 truncate">2026년 달라지는 제도</p>
+                    <p className="text-xs text-neutral-500">꼭 알아야 할 변경사항</p>
+                  </div>
+                  <svg className="w-5 h-5 text-neutral-400 group-hover:text-amber-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </Link>
               </div>
             </div>
 
-            {/* 인기 문서 */}
-            <div className="bg-white border border-neutral-200 rounded-xl overflow-hidden mb-4">
-              <div className="px-4 py-3 bg-emerald-600">
-                <span className="text-sm font-semibold text-white flex items-center gap-2">
-                  🔥 인기 문서
-                </span>
-              </div>
-              <ul className="divide-y divide-neutral-100">
-                {popularDocs.map((item, index) => (
-                  <li key={item.slug}>
-                    <Link
-                      href={`/w/${encodeURIComponent(item.slug)}`}
-                      className="flex items-center gap-3 px-4 py-3 hover:bg-neutral-50 transition-colors"
-                    >
-                      <span className={`w-6 h-6 rounded flex items-center justify-center text-xs font-bold ${
-                        index < 3 ? "bg-emerald-600 text-white" : "bg-neutral-100 text-neutral-500"
-                      }`}>
-                        {index + 1}
-                      </span>
-                      <span className="flex-1 text-sm text-neutral-700 truncate">{item.title}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* 관련 문서 - 네이버 스타일 */}
-            {relatedDocs.length > 0 && (
-              <div className="bg-white border border-neutral-200 rounded-xl overflow-hidden mb-4">
-                <div className="px-4 py-3 bg-neutral-800">
-                  <span className="text-sm font-semibold text-white flex items-center gap-2">
-                    📄 관련 문서
-                  </span>
-                </div>
-                <ul className="divide-y divide-neutral-100">
-                  {relatedDocs.map((relDoc) => (
-                    <li key={relDoc.slug}>
-                      <Link
-                        href={`/w/${encodeURIComponent(relDoc.slug)}`}
-                        className="block px-4 py-3 hover:bg-neutral-50 transition-colors"
-                      >
-                        <span className="text-sm text-neutral-700 hover:text-emerald-600 line-clamp-2">
-                          {relDoc.title}
-                        </span>
-                        <span className="text-xs text-neutral-400 mt-1 block">{relDoc.category}</span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {/* 같은 카테고리 문서 */}
+            {/* 관련 문서 - 1번 실업급여 계산기 고정 */}
             <div className="bg-white border border-neutral-200 rounded-xl overflow-hidden mb-4">
               <div className="px-4 py-3 border-b border-neutral-100">
-                <span className="text-sm font-semibold text-neutral-800">
-                  📁 {doc.category} 문서
+                <span className="text-sm font-semibold text-neutral-800 flex items-center gap-2">
+                  <svg className="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                  </svg>
+                  관련 문서
                 </span>
               </div>
-              <ul className="divide-y divide-neutral-100">
-                {allDocs
-                  .filter((d) => d.category === doc.category && d.slug !== doc.slug)
-                  .slice(0, 5)
-                  .map((item) => (
-                    <li key={item.slug}>
-                      <Link
-                        href={`/w/${encodeURIComponent(item.slug)}`}
-                        className="block px-4 py-3 text-sm text-neutral-700 hover:bg-neutral-50 hover:text-emerald-600 transition-colors truncate"
-                      >
-                        {item.title}
-                      </Link>
-                    </li>
+              <div className="p-3 space-y-2">
+                {/* 1번: 실업급여 계산기 고정 */}
+                <Link
+                  href="/w/실업급여-계산기"
+                  className="group flex items-start gap-3 p-3 rounded-lg hover:bg-neutral-50 transition-all border border-transparent hover:border-neutral-200"
+                >
+                  <span className="w-6 h-6 bg-emerald-100 text-emerald-700 rounded-md flex items-center justify-center text-xs font-bold shrink-0 group-hover:bg-emerald-200 transition-colors">
+                    1
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm text-neutral-700 group-hover:text-emerald-600 line-clamp-2 font-medium transition-colors">
+                      실업급여 계산기
+                    </p>
+                    <p className="text-xs text-neutral-400 mt-0.5">계산기</p>
+                  </div>
+                </Link>
+                {/* 2번부터: relatedDocs에서 계산기 제외하고 표시 */}
+                {relatedDocs
+                  .filter((d) => d.slug !== '실업급여-계산기')
+                  .slice(0, 4)
+                  .map((relDoc, index) => (
+                    <Link
+                      key={relDoc.slug}
+                      href={`/w/${encodeURIComponent(relDoc.slug)}`}
+                      className="group flex items-start gap-3 p-3 rounded-lg hover:bg-neutral-50 transition-all border border-transparent hover:border-neutral-200"
+                    >
+                      <span className="w-6 h-6 bg-emerald-100 text-emerald-700 rounded-md flex items-center justify-center text-xs font-bold shrink-0 group-hover:bg-emerald-200 transition-colors">
+                        {index + 2}
+                      </span>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm text-neutral-700 group-hover:text-emerald-600 line-clamp-2 font-medium transition-colors">
+                          {relDoc.title}
+                        </p>
+                        <p className="text-xs text-neutral-400 mt-0.5">{relDoc.category}</p>
+                      </div>
+                    </Link>
                   ))}
-              </ul>
+              </div>
             </div>
 
             {/* 인기 계산기 */}
