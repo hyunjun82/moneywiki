@@ -45,3 +45,8 @@ tmpclaude-*
 nul
 .playwright-mcp/
 .claude/
+
+# internal docs
+.claude/
+dev.log
+dev-server.log
