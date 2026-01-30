@@ -94,6 +94,47 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
+// 주제별 계산기 매핑 함수
+function getRelatedCalculator(slug: string, title: string, category: string): { slug: string; title: string } | null {
+  const text = `${slug} ${title} ${category}`.toLowerCase();
+
+  if (text.includes('실업급여') || text.includes('고용보험')) {
+    return { slug: '실업급여-계산기', title: '실업급여 계산기' };
+  }
+  if (text.includes('퇴직금') || text.includes('퇴직')) {
+    return { slug: '퇴직금-계산기', title: '퇴직금 계산기' };
+  }
+  if (text.includes('대출') || text.includes('이자') || text.includes('금리')) {
+    return { slug: '대출이자-계산기', title: '대출이자 계산기' };
+  }
+  if (text.includes('dsr') || text.includes('총부채')) {
+    return { slug: 'DSR-계산기', title: 'DSR 계산기' };
+  }
+  if (text.includes('주식') || text.includes('투자') || text.includes('수익률')) {
+    return { slug: '주식-계산기', title: '주식 계산기' };
+  }
+  if (text.includes('연말정산') || text.includes('소득공제') || text.includes('세금')) {
+    return { slug: '연말정산-계산기', title: '연말정산 계산기' };
+  }
+  if (text.includes('전세') || text.includes('월세') || text.includes('임대차')) {
+    return { slug: '전월세-계산기', title: '전월세 계산기' };
+  }
+  if (text.includes('양도') || text.includes('부동산')) {
+    return { slug: '양도소득세-계산기', title: '양도소득세 계산기' };
+  }
+  if (text.includes('국민연금') || text.includes('연금')) {
+    return { slug: '국민연금-수령액-계산기', title: '국민연금 수령액' };
+  }
+  if (text.includes('4대보험') || text.includes('사대보험')) {
+    return { slug: '4대보험료-계산기', title: '4대보험료 계산기' };
+  }
+  if (text.includes('근로소득')) {
+    return { slug: '근로소득세-계산기', title: '근로소득세 계산기' };
+  }
+
+  return null; // 매칭 없으면 계산기 없이 relatedDocs만 표시
+}
+
 // HTML 콘텐츠에서 목차 추출
 function extractToc(html: string): { id: string; text: string; level: number }[] {
   const toc: { id: string; text: string; level: number }[] = [];
@@ -603,42 +644,55 @@ export default async function WikiPage({ params, searchParams }: PageProps) {
                 </span>
               </div>
               <div className="p-3 space-y-2">
-                {/* 1번: 실업급여 계산기 고정 */}
-                <Link
-                  href="/w/실업급여-계산기"
-                  className="group flex items-start gap-3 p-3 rounded-lg hover:bg-neutral-50 transition-all border border-transparent hover:border-neutral-200"
-                >
-                  <span className="w-6 h-6 bg-emerald-100 text-emerald-700 rounded-md flex items-center justify-center text-xs font-bold shrink-0 group-hover:bg-emerald-200 transition-colors">
-                    1
-                  </span>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm text-neutral-700 group-hover:text-emerald-600 line-clamp-2 font-medium transition-colors">
-                      실업급여 계산기
-                    </p>
-                    <p className="text-xs text-neutral-400 mt-0.5">계산기</p>
-                  </div>
-                </Link>
-                {/* 2번부터: relatedDocs에서 계산기 제외하고 표시 */}
-                {relatedDocs
-                  .filter((d) => d.slug !== '실업급여-계산기')
-                  .slice(0, 4)
-                  .map((relDoc, index) => (
-                    <Link
-                      key={relDoc.slug}
-                      href={`/w/${encodeURIComponent(relDoc.slug)}`}
-                      className="group flex items-start gap-3 p-3 rounded-lg hover:bg-neutral-50 transition-all border border-transparent hover:border-neutral-200"
-                    >
-                      <span className="w-6 h-6 bg-emerald-100 text-emerald-700 rounded-md flex items-center justify-center text-xs font-bold shrink-0 group-hover:bg-emerald-200 transition-colors">
-                        {index + 2}
-                      </span>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-sm text-neutral-700 group-hover:text-emerald-600 line-clamp-2 font-medium transition-colors">
-                          {relDoc.title}
-                        </p>
-                        <p className="text-xs text-neutral-400 mt-0.5">{relDoc.category}</p>
-                      </div>
-                    </Link>
-                  ))}
+                {/* 1번: 주제별 계산기 동적 매핑 */}
+                {(() => {
+                  const calculator = getRelatedCalculator(slug, doc.title, doc.category);
+                  if (calculator) {
+                    return (
+                      <Link
+                        href={`/w/${calculator.slug}`}
+                        className="group flex items-start gap-3 p-3 rounded-lg hover:bg-neutral-50 transition-all border border-transparent hover:border-neutral-200"
+                      >
+                        <span className="w-6 h-6 bg-emerald-100 text-emerald-700 rounded-md flex items-center justify-center text-xs font-bold shrink-0 group-hover:bg-emerald-200 transition-colors">
+                          1
+                        </span>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm text-neutral-700 group-hover:text-emerald-600 line-clamp-2 font-medium transition-colors">
+                            {calculator.title}
+                          </p>
+                          <p className="text-xs text-neutral-400 mt-0.5">계산기</p>
+                        </div>
+                      </Link>
+                    );
+                  }
+                  return null;
+                })()}
+                {/* 계산기 있으면 2번부터, 없으면 1번부터 relatedDocs 표시 */}
+                {(() => {
+                  const calculator = getRelatedCalculator(slug, doc.title, doc.category);
+                  const startIndex = calculator ? 2 : 1;
+                  const excludeSlug = calculator?.slug;
+                  return relatedDocs
+                    .filter((d) => d.slug !== excludeSlug)
+                    .slice(0, calculator ? 4 : 5)
+                    .map((relDoc, index) => (
+                      <Link
+                        key={relDoc.slug}
+                        href={`/w/${encodeURIComponent(relDoc.slug)}`}
+                        className="group flex items-start gap-3 p-3 rounded-lg hover:bg-neutral-50 transition-all border border-transparent hover:border-neutral-200"
+                      >
+                        <span className="w-6 h-6 bg-emerald-100 text-emerald-700 rounded-md flex items-center justify-center text-xs font-bold shrink-0 group-hover:bg-emerald-200 transition-colors">
+                          {index + startIndex}
+                        </span>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm text-neutral-700 group-hover:text-emerald-600 line-clamp-2 font-medium transition-colors">
+                            {relDoc.title}
+                          </p>
+                          <p className="text-xs text-neutral-400 mt-0.5">{relDoc.category}</p>
+                        </div>
+                      </Link>
+                    ));
+                })()}
               </div>
             </div>
 
