@@ -335,7 +335,10 @@
       "WebFetch(domain:www.insjournal.co.kr)",
       "WebFetch(domain:bravo.etoday.co.kr)",
       "WebFetch(domain:www.bokjinews.com)",
-      "Bash(node scripts/fix-invalid-charts.js:*)"
+      "Bash(node scripts/fix-invalid-charts.js:*)",
+      "Bash(timeout 5 tail:*)",
+      "Bash(exit 0)",
+      "Bash(python -c \"\nimport json\nimport csv\nimport os\n\n# JSON 파일 읽기\ndata_path = r''C:\\\\Users\\\\user\\\\.claude\\\\projects\\\\c--Users-user-wiki-site\\\\3fec797c-ae8a-4cee-80e4-63e1bc496fb5\\\\tool-results\\\\mcp-playwright-browser_run_code-1769743800029.txt''\nwith open\\(data_path, ''r'', encoding=''utf-8''\\) as f:\n    data = json.load\\(f\\)\n\n# 기존 CSV 읽기 \\(50개\\)\nexisting_csv = ''.claude/state/naver-pay-insurance-keywords-50.csv''\nexisting_titles = set\\(\\)\nwith open\\(existing_csv, ''r'', encoding=''utf-8''\\) as f:\n    lines = f.readlines\\(\\)[1:]  # 헤더 제외\n    for line in lines:\n        parts = line.strip\\(\\).split\\('','', 2\\)\n        if len\\(parts\\) >= 2:\n            existing_titles.add\\(parts[1]\\)\n\n# 새 데이터 필터링 \\(중복 제거\\)\nnew_keywords = []\nseen_titles = set\\(existing_titles\\)\n\nfor item in data:\n    title = item.get\\(''제목'', ''''\\)\n    desc = item.get\\(''설명'', ''''\\)\n    \n    if title and title not in seen_titles and len\\(title\\) > 5:\n        seen_titles.add\\(title\\)\n        new_keywords.append\\({\n            ''제목'': title,\n            ''설명'': desc[:200]  # 200자 제한\n        }\\)\n\n# 결과 출력\nresult = {\n    ''기존개수'': len\\(existing_titles\\),\n    ''신규개수'': len\\(new_keywords\\),\n    ''전체개수'': len\\(seen_titles\\),\n    ''샘플'': [k[''제목''] for k in new_keywords[:5]]\n}\n\nprint\\(json.dumps\\(result, ensure_ascii=False, indent=2\\)\\)\n\")"
     ]
   }
 }
