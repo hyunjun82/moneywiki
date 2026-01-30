@@ -340,7 +340,37 @@ export default async function WikiPage({ params, searchParams }: PageProps) {
           {/* 차트 컴포넌트 - 동적 로딩 */}
           <ChartLoader chartName={doc.chart} chartConfig={doc.chartConfig} />
 
-          {/* CTA 버튼 (외부링크) */}
+          {/* 썸네일 이미지 (차트 다음, 버튼 전) */}
+          {doc.thumbnail && (
+            <div className="mb-8">
+              <img
+                src={doc.thumbnail}
+                alt={doc.title}
+                className="w-full rounded-xl shadow-lg"
+                loading="lazy"
+              />
+            </div>
+          )}
+
+          {/* ctaButton (단일 객체 - position: "afterChart"인 경우) */}
+          {doc.ctaButton && doc.ctaButton.position === "afterChart" && (
+            <div className="mb-8">
+              <a
+                href={doc.ctaButton.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`ext-btn ext-btn-${doc.ctaButton.theme || 'green'}`}
+              >
+                {doc.ctaButton.badge && (
+                  <span className="ext-btn-badge">{doc.ctaButton.badge}</span>
+                )}
+                <span className="ext-btn-text">{doc.ctaButton.text}</span>
+                <span className="ext-btn-cta">{doc.ctaButton.cta}</span>
+              </a>
+            </div>
+          )}
+
+          {/* CTA 버튼 (외부링크 - 배열) */}
           {doc.cta && doc.cta.length > 0 && (
             <div className="mb-8 space-y-3">
               {doc.cta.slice(0, 2).map((item, index) => (

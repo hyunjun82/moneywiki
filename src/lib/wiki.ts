@@ -32,13 +32,23 @@ export interface SourceItem {
   date?: string;
 }
 
-// CTA 버튼 타입
+// CTA 버튼 타입 (배열용)
 export interface CTAItem {
   url: string;
   badge?: string;      // 배지 텍스트 (예: "평균 13만원 환급")
   text: string;        // 메인 텍스트 (예: "잠자고 있는 내 돈 찾기")
   action?: string;     // CTA 텍스트 (예: "조회", 기본값: "바로가기")
   color?: "green" | "blue" | "orange" | "dark";  // 버튼 색상 (기본: green)
+}
+
+// CTA 버튼 타입 (단일 객체 - ctaButton frontmatter용)
+export interface CTAButton {
+  position?: "beforeChart" | "afterChart" | "afterSummary";
+  theme?: "green" | "blue" | "orange" | "dark";
+  url: string;
+  badge?: string;
+  text: string;
+  cta: string;
 }
 
 // 차트 데이터 아이템 타입
@@ -103,8 +113,10 @@ export interface WikiDocument {
   updateNote?: string; // "2026년 1월 기준"
   // 스키마 타입 (calculator, article 등)
   schemaType?: string;
-  // CTA 버튼 (외부링크용)
+  // CTA 버튼 (외부링크용 - 배열)
   cta?: CTAItem[];
+  // CTA 버튼 (단일 객체 - Batch 8 이후)
+  ctaButton?: CTAButton;
   // 차트 컴포넌트 이름
   chart?: string;
   // 차트 설정 (데이터 포함)
@@ -218,8 +230,10 @@ export async function getWikiDocument(
     updateNote: data.updateNote || "",
     // 스키마 타입
     schemaType: data.schemaType,
-    // CTA 버튼
+    // CTA 버튼 (배열)
     cta: data.cta || [],
+    // CTA 버튼 (단일 객체)
+    ctaButton: data.ctaButton,
     // 차트 컴포넌트
     chart: data.chart,
     // 차트 설정
