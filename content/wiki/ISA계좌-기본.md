@@ -59,6 +59,12 @@ thumbnail: ""
 
 ISA 계좌 뭐가 좋은지 헷갈리죠? 결론부터 말하면 **서민형은 400만원 비과세, 일반형은 200만원 비과세**예요. 중개형은 주식 직접 거래하고, 신탁형은 은행이 알아서 굴려줘요. 안 하면 배당·이자 15.4% 세금 그대로 내야 해요. 지금부터 정확한 차이점을 알려드릴게요.
 
+<a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer" class="ext-btn ext-btn-green">
+  <span class="ext-btn-badge">금융감독원</span>
+  <span class="ext-btn-text">ISA 계좌 비교</span>
+  <span class="ext-btn-cta">확인하기 →</span>
+</a>
+
 ## ISA 계좌 중개형 서민형 일반형 차이는 뭔가요?
 
 **운용 방식은 중개형·신탁형·일임형이고, 소득 기준은 일반형·서민형·농어민형이에요.**
