@@ -344,9 +344,10 @@ export default async function WikiPage({ params, searchParams }: PageProps) {
     processedHtml = processedHtml.replace(sourceRemovePattern, '');
 
     // 본문에서 "관련 문서" 섹션 제거 (사이드바로 이동)
-    // H2 내부에 "관련 문서" 텍스트가 포함되어 있으면 전체 섹션 제거
-    const relatedDocsRemovePattern = /<h2[^>]*>[\s\S]*?관련\s*문서[\s\S]*?<\/h2>[\s\S]*?(?=<hr|<h2|<section|$)/gi;
-    processedHtml = processedHtml.replace(relatedDocsRemovePattern, '');
+    // FIXME: 정규식이 너무 광범위하게 매칭되어 본문까지 삭제하는 문제 발생
+    // 임시로 비활성화
+    // const relatedDocsRemovePattern = /<h2[^>]*>[\s\S]*?관련\s*문서[\s\S]*?<\/h2>[\s\S]*?(?=<hr|<h2|<section|$)/gi;
+    // processedHtml = processedHtml.replace(relatedDocsRemovePattern, '');
 
     // 머니위키 박스 HTML 생성
     const wikiBoxHtml = relatedDocs.length > 0 ? `
