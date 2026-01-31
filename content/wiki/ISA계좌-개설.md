@@ -47,6 +47,12 @@ thumbnail: ""
 
 ISA 계좌 어떻게 만드는지 궁금하죠? 결론부터 말하면 **은행·증권사 앱에서 5분 안에 개설할 수 있어요**. 19세 이상이면 누구나 가능하고, 신분증과 소득증명원(서민형만)만 있으면 돼요. 영업점 갈 필요 없어요. 안 하면 비과세 혜택 못 받아요. 지금부터 정확한 개설 방법을 알려드릴게요.
 
+<a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer" class="ext-btn ext-btn-green">
+  <span class="ext-btn-badge">금융감독원</span>
+  <span class="ext-btn-text">ISA 계좌 비교</span>
+  <span class="ext-btn-cta">확인하기 →</span>
+</a>
+
 ## ISA 계좌 개설 조건은 뭔가요?
 
 **만 19세 이상이면 누구나 개설할 수 있어요. 소득·직업 제한 없어요.**

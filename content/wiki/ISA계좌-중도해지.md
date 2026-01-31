@@ -47,6 +47,12 @@ thumbnail: ""
 
 ISA 계좌 급하게 돈 필요하면 어떡하나요? 결론부터 말하면 **원금은 언제나 인출 가능하지만 수익까지 빼면 15.4% 세금 내요**. 3년 전에 해지하면 비과세 혜택 날려요. 원금만 먼저 빼고 수익은 3년 채운 뒤 받는 게 이득이에요. 지금부터 정확한 패널티를 알려드릴게요.
 
+<a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer" class="ext-btn ext-btn-green">
+  <span class="ext-btn-badge">금융감독원</span>
+  <span class="ext-btn-text">ISA 계좌 안내</span>
+  <span class="ext-btn-cta">확인하기 →</span>
+</a>
+
 ## ISA 계좌 중도해지 패널티는 얼마인가요?
 
 **3년 전에 해지하면 비과세 혜택 없고 배당·이자에 15.4% 세금 다 내요.**

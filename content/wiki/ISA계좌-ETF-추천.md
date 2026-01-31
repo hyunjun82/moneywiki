@@ -47,6 +47,12 @@ thumbnail: ""
 
 ISA 계좌에서 뭘 사야 할지 헷갈리죠? 결론부터 말하면 **KODEX 200, TIGER 미국S&P500이 안정적이고 인기 많아요**. 배당 많이 받으려면 **KODEX 고배당, TIGER 배당귀족** 추천해요. 배당 ETF로 투자해야 ISA 비과세 혜택 제대로 받아요. 지금부터 정확한 추천 리스트를 알려드릴게요.
 
+<a href="https://www.krx.co.kr" target="_blank" rel="noopener noreferrer" class="ext-btn ext-btn-green">
+  <span class="ext-btn-badge">한국거래소</span>
+  <span class="ext-btn-text">ETF 정보</span>
+  <span class="ext-btn-cta">확인하기 →</span>
+</a>
+
 ## ISA 계좌 ETF 추천 순위는?
 
 **KODEX 200, TIGER 미국S&P500, KODEX 고배당 순으로 추천해요.**

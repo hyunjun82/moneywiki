@@ -47,6 +47,12 @@ thumbnail: ""
 
 ISA 계좌에 얼마나 넣을 수 있는지 궁금하죠? 결론부터 말하면 **연간 한도는 2,000만원, 누적 한도는 1억원**이에요. 초과하면 입금 거부되고 추가 납입 못 해요. 월 166만원씩 넣으면 연간 한도 꽉 채워요. 지금부터 정확한 납입 한도를 알려드릴게요.
 
+<a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer" class="ext-btn ext-btn-green">
+  <span class="ext-btn-badge">금융감독원</span>
+  <span class="ext-btn-text">ISA 계좌 안내</span>
+  <span class="ext-btn-cta">확인하기 →</span>
+</a>
+
 ## ISA 계좌 납입 한도는 얼마인가요?
 
 **연간 2,000만원, 누적 1억원까지 넣을 수 있어요.**

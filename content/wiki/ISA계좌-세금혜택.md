@@ -47,6 +47,12 @@ thumbnail: ""
 
 ISA 계좌 세금혜택이 얼마나 큰지 궁금하죠? 결론부터 말하면 **서민형은 400만원까지 세금 0원, 일반형은 200만원까지 세금 0원**이에요. 일반 계좌는 15.4% 세금 떼는데 ISA는 비과세 한도 초과해도 9.9%만 내요. 안 하면 매년 수십만원 세금 더 내요. 지금부터 정확한 절세 효과를 알려드릴게요.
 
+<a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer" class="ext-btn ext-btn-green">
+  <span class="ext-btn-badge">국세청</span>
+  <span class="ext-btn-text">ISA 세금 안내</span>
+  <span class="ext-btn-cta">확인하기 →</span>
+</a>
+
 ## ISA 계좌 비과세 한도는 얼마인가요?
 
 **서민형은 400만원, 일반형은 200만원까지 배당·이자 세금이 0원이에요.**

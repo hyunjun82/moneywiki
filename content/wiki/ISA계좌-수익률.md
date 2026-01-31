@@ -47,6 +47,12 @@ thumbnail: ""
 
 ISA 계좌로 얼마나 벌 수 있는지 궁금하죠? 결론부터 말하면 **평균 수익률은 연 5-7%**예요. 고배당 ETF는 배당 4% + 가격 상승 3% = 연 7%고, 비과세 효과까지 합치면 실질 수익률 8-9%예요. 적금(연 3-4%)보다 훨씬 높아요. 안 하면 수익 못 내요. 지금부터 정확한 수익률을 알려드릴게요.
 
+<a href="https://www.kofia.or.kr" target="_blank" rel="noopener noreferrer" class="ext-btn ext-btn-green">
+  <span class="ext-btn-badge">금융투자협회</span>
+  <span class="ext-btn-text">ISA 수익 정보</span>
+  <span class="ext-btn-cta">확인하기 →</span>
+</a>
+
 ## ISA 계좌 평균 수익률은 얼마인가요?
 
 **중개형은 연 5-7%, 신탁형은 연 3-5% 정도예요.**

@@ -47,6 +47,12 @@ thumbnail: ""
 
 ISA 계좌 장점만 보고 가입하면 안 돼요. 결론부터 말하면 **3년 의무가입, 해외주식 직접 매수 불가, ETF 수수료 높음** 이 3가지가 제일 큰 단점이에요. 중도해지하면 비과세 혜택 날리고 15.4% 세금 다 내요. 안 알면 손해예요. 지금부터 정확한 단점을 알려드릴게요.
 
+<a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer" class="ext-btn ext-btn-green">
+  <span class="ext-btn-badge">금융감독원</span>
+  <span class="ext-btn-text">ISA 계좌 안내</span>
+  <span class="ext-btn-cta">확인하기 →</span>
+</a>
+
 ## ISA 계좌 3년 의무가입이 왜 단점인가요?
 
 **3년 전에 해지하면 비과세 혜택 없고 15.4% 세금 다 내야 해요.**
