@@ -10,7 +10,7 @@ keywords:
 author: "머니위키 에디터"
 lastUpdated: "2026-01-31"
 datePublished: "2026-01-31"
-updateNote: "2026-01-26년 1월 기준"
+updateNote: "2026년 1월 기준"
 summary:
   - "ISA 평균 수익률은 연 5-7%로 일반 적금보다 높아요"
   - "고배당 ETF는 배당 4% + 가격 상승 3% = 연 7%예요"
