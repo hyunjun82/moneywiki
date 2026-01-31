@@ -1,12 +1,12 @@
 ---
-title: "ISA 계좌 만기 해지 절차와 비과세 수령 방법"
+title: "ISA 계좌 만기 3년과 해지 절차 및 연장 방법"
 description: "ISA 만기는 3년 후고, 만기 해지하면 비과세 혜택 받아요. 연장하면 최대 5년 더 가능해요. 안 하면 세금 내요."
 category: "금융/투자"
 keywords:
-  - "ISA 만기"
-  - "ISA 해지"
-  - "ISA 연장"
-  - "ISA 3년"
+  - "ISA 계좌 만기 3년"
+  - "ISA 계좌 만기 해지"
+  - "ISA 계좌 연장 방법"
+  - "ISA 계좌 만기 주의사항"
 author: "머니위키 에디터"
 lastUpdated: "2026-01-31"
 datePublished: "2026-01-31"
