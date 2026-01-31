@@ -366,10 +366,27 @@ export default async function WikiPage({ params, searchParams }: PageProps) {
       </div>
     ` : '';
 
-    // 머니위키 박스: "결론" H2 바로 위에 삽입
-    const conclusionMatch = processedHtml.match(/<h2[^>]*>(?:<span[^>]*>[^<]*<\/span>)?[^<]*결론[^<]*<\/h2>/i);
-    if (wikiBoxHtml && conclusionMatch && conclusionMatch.index !== undefined) {
-      processedHtml = processedHtml.slice(0, conclusionMatch.index) + wikiBoxHtml + processedHtml.slice(conclusionMatch.index);
+    // 머니위키 박스: 본문 마지막 H2 바로 위에 삽입
+    // 시스템 H2 (FAQ, 출처, 관련 문서) 제외하고 마지막 본문 H2 찾기
+    if (wikiBoxHtml) {
+      const h2Regex = /<h2[^>]*>(?:<span[^>]*>[^<]*<\/span>)?([^<]*)<\/h2>/gi;
+      const systemH2Patterns = /자주\s*묻는\s*질문|출처|관련\s*문서|관련\s*키워드|참고\s*자료/i;
+
+      let lastContentH2Index: number | null = null;
+      let match;
+
+      while ((match = h2Regex.exec(processedHtml)) !== null) {
+        const h2Text = match[1].trim();
+        // 시스템 H2가 아니면 마지막 본문 H2 위치 업데이트
+        if (!systemH2Patterns.test(h2Text)) {
+          lastContentH2Index = match.index;
+        }
+      }
+
+      // 마지막 본문 H2 앞에 삽입
+      if (lastContentH2Index !== null) {
+        processedHtml = processedHtml.slice(0, lastContentH2Index) + wikiBoxHtml + processedHtml.slice(lastContentH2Index);
+      }
     }
 
     // FAQ 삽입: 본문 맨 끝에 (7번 결론 아래)
