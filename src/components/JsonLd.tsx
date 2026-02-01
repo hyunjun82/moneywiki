@@ -162,7 +162,8 @@ export function BreadcrumbSchema({ items }: { items: BreadcrumbItem[] }) {
   );
 }
 
-// WebSite 스키마 - 사이트 전체
+// WebSite 스키마 - 사이트 전체 (위키트리 벤치마킹)
+// Google 검색창에서 사이트 내 검색 기능 노출 (SearchAction)
 export function WebSiteSchema() {
   const schema = {
     "@context": "https://schema.org",
@@ -170,11 +171,21 @@ export function WebSiteSchema() {
     name: "머니위키",
     alternateName: "MoneyWiki",
     url: "https://www.jjyu.co.kr",
-    description: "퇴직금, 세금, 부동산, 대출 정보를 쉽게 찾아보세요.",
+    description: "퇴직금, 세금, 부동산, 대출 정보를 쉽게 찾아보세요. 정부 사이트보다 쉽고, 블로그보다 정확하게.",
+    inLanguage: "ko-KR",
     publisher: {
       "@type": "Organization",
       name: "머니위키",
       url: "https://www.jjyu.co.kr",
+    },
+    // SearchAction: Google 검색 결과에서 사이트 내 검색 가능
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://www.jjyu.co.kr/search?q={search_term_string}",
+      },
+      "query-input": "required name=search_term_string",
     },
   };
 
@@ -186,7 +197,8 @@ export function WebSiteSchema() {
   );
 }
 
-// Organization 스키마 - 조직 정보
+// Organization 스키마 - 조직 정보 (위키트리 벤치마킹)
+// Google News 등록, 브랜드 신뢰도 향상, 소셜 미디어 연결
 export function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
@@ -194,14 +206,34 @@ export function OrganizationSchema() {
     name: "머니위키",
     alternateName: "MoneyWiki",
     url: "https://www.jjyu.co.kr",
-    logo: "https://www.jjyu.co.kr/logo.png",
-    description: "경제, 금융, 법률 정보를 쉽게 설명하는 위키",
-    sameAs: [],
+    logo: {
+      "@type": "ImageObject",
+      url: "https://www.jjyu.co.kr/logo.png",
+      width: 600,
+      height: 60,
+    },
+    description: "경제, 금융, 법률 정보를 쉽게 설명하는 위키. 정부 사이트보다 쉽고, 블로그보다 정확하게.",
+    // sameAs: 소셜 미디어 프로필 연결 (브랜드 신뢰도 + Knowledge Panel)
+    sameAs: [
+      // 소셜 미디어 계정 추가 시 여기에 URL 입력
+      // "https://www.youtube.com/@moneywiki",
+      // "https://www.instagram.com/moneywiki",
+      // "https://twitter.com/moneywiki",
+      // "https://www.facebook.com/moneywiki",
+    ],
+    foundingDate: "2024",
+    founder: {
+      "@type": "Person",
+      name: "머니위키 에디터",
+    },
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
       availableLanguage: "Korean",
+      url: "https://www.jjyu.co.kr/contact",
     },
+    // 발행사 정보 (E-E-A-T 강화)
+    publishingPrinciples: "https://www.jjyu.co.kr/about",
   };
 
   return (
@@ -258,19 +290,69 @@ export function CalculatorSchema({
       name: "머니위키",
       url: "https://www.jjyu.co.kr",
     },
-    aggregateRating: {
+    // 🚨 [안전 조치] 실제 리뷰 기능 개발 전까지 주석 처리
+    // 구글 가이드라인: 페이지에 평점 표시 없으면 페널티 위험
+    // 참고: https://developers.google.com/search/docs/appearance/structured-data/review-snippet
+    /* aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.8",
       ratingCount: "1247",
       bestRating: "5",
       worstRating: "1",
-    },
+    }, */
     featureList: [
       "실시간 자동 계산",
       "모바일 최적화",
       "2026년 최신 기준",
       "무료 이용",
     ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+// Event 스키마 - 정부 지원금 신청 기간용 (CTR 30-50% ↑)
+// Google 검색 결과에 날짜 표시 → 클릭율 대폭 증가
+export function EventSchema({
+  name,
+  description,
+  startDate,
+  endDate,
+  url,
+  organizerName,
+  organizerUrl,
+}: {
+  name: string;
+  description: string;
+  startDate: string; // ISO 8601: "2026-02-03T09:00"
+  endDate: string;
+  url: string;
+  organizerName: string;
+  organizerUrl: string;
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: name,
+    description: description,
+    startDate: startDate,
+    endDate: endDate,
+    eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
+    eventStatus: "https://schema.org/EventScheduled",
+    location: {
+      "@type": "VirtualLocation",
+      url: url,
+    },
+    organizer: {
+      "@type": "Organization",
+      name: organizerName,
+      url: organizerUrl,
+    },
   };
 
   return (
@@ -310,6 +392,32 @@ export function WebApplicationSchema({
       name: "머니위키",
       url: "https://www.jjyu.co.kr",
     },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+// ItemList 스키마 - Hub 페이지용 (내부 SEO 강화)
+// Hub 페이지에 연결된 Spoke 글 목록을 구조화하여 구글에 전달
+export function ItemListSchema({
+  items,
+}: {
+  items: Array<{ name: string; url: string; position: number }>;
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: items.map((item) => ({
+      "@type": "ListItem",
+      position: item.position,
+      name: item.name,
+      url: item.url,
+    })),
   };
 
   return (

@@ -123,6 +123,21 @@ export interface WikiDocument {
   chartConfig?: ChartConfig;
   // OG 썸네일 이미지 경로
   thumbnail?: string;
+  // Event 스키마 (신청 기간)
+  event?: {
+    name: string;
+    description?: string;
+    startDate: string; // ISO 8601: "2026-02-03T09:00"
+    endDate: string;
+    organizerName: string;
+    organizerUrl: string;
+  };
+  // ItemList 스키마 (Hub 페이지)
+  itemList?: Array<{
+    name: string;
+    url: string;
+    position: number;
+  }>;
 }
 
 // 모든 위키 문서 목록 가져오기

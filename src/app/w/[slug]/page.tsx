@@ -8,6 +8,8 @@ import {
   HowToSchema,
   BreadcrumbSchema,
   CalculatorSchema,
+  EventSchema,
+  ItemListSchema,
 } from "@/components/JsonLd";
 import AdSense, { AD_SLOTS } from "@/components/AdSense";
 import ShareButtons from "@/components/ShareButtons";
@@ -450,6 +452,22 @@ export default async function WikiPage({ params, searchParams }: PageProps) {
           category={doc.category}
           keywords={doc.keywords}
         />
+      )}
+      {/* Event 스키마 - 신청 기간 있는 글 (CTR 30-50% ↑) */}
+      {doc.event && (
+        <EventSchema
+          name={doc.event.name}
+          description={doc.event.description || doc.description}
+          startDate={doc.event.startDate}
+          endDate={doc.event.endDate}
+          url={url}
+          organizerName={doc.event.organizerName}
+          organizerUrl={doc.event.organizerUrl}
+        />
+      )}
+      {/* ItemList 스키마 - Hub 페이지 (내부 SEO ↑) */}
+      {doc.itemList && doc.itemList.length > 0 && (
+        <ItemListSchema items={doc.itemList} />
       )}
 
       <div className="max-w-7xl mx-auto px-4 py-8 flex gap-8">
