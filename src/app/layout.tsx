@@ -8,6 +8,7 @@ import KakaoSDK from "@/components/KakaoSDK";
 import AdClickTracker from "@/components/AdClickTracker";
 import MobileStickyBar from "@/components/MobileStickyBar";
 import Link from "next/link";
+import { WebSiteSchema, OrganizationSchema } from "@/components/JsonLd";
 
 // Google Fonts 최적화: next/font로 자동 셀프호스팅 + display swap
 const inter = Inter({
@@ -89,6 +90,9 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased bg-white min-h-screen flex flex-col font-sans">
+        {/* 전역 JSON-LD 스키마 - 위키트리 벤치마킹 */}
+        <WebSiteSchema />
+        <OrganizationSchema />
         <KakaoSDK />
         <AdClickTracker />
         <Header />
