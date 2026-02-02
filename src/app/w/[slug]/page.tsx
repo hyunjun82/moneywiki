@@ -15,12 +15,9 @@ import AdSense, { AD_SLOTS } from "@/components/AdSense";
 import ShareButtons from "@/components/ShareButtons";
 // 계산기 컴포넌트는 클라이언트 래퍼에서 동적 로딩
 import CalculatorLoader from "@/components/CalculatorLoader";
-// 차트 컴포넌트 동적 로딩
-import ChartLoader from "@/components/ChartLoader";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
-  searchParams: Promise<{ thumbnail?: string }>;
 }
 
 // Pure SSG - 빌드타임에만 정적 생성 (런타임 CPU 0%)
@@ -262,40 +259,12 @@ function addSectionIds(html: string): string {
   );
 }
 
-export default async function WikiPage({ params, searchParams }: PageProps) {
+export default async function WikiPage({ params }: PageProps) {
   const { slug } = await params;
-  const { thumbnail } = await searchParams;
   const doc = await getWikiDocument(slug);
 
   if (!doc) {
     notFound();
-  }
-
-  // 썸네일 모드: 광고 없이 차트만 렌더링 (Playwright 캡처용)
-  if (thumbnail === 'true') {
-    return (
-      <div
-        className="w-[1200px] h-[630px] bg-white flex flex-col items-center justify-center p-8"
-        style={{ fontFamily: 'Pretendard, sans-serif' }}
-      >
-        {/* 제목 */}
-        <h1 className="text-3xl font-bold text-neutral-800 mb-6 text-center leading-tight">
-          {doc.title}
-        </h1>
-
-        {/* 차트 */}
-        {doc.chart && (
-          <div className="flex-1 w-full max-w-[1100px]">
-            <ChartLoader chartName={doc.chart} chartConfig={doc.chartConfig} />
-          </div>
-        )}
-
-        {/* 브랜드 */}
-        <div className="mt-4 text-sm text-neutral-400">
-          jjyu.co.kr | 머니위키
-        </div>
-      </div>
-    );
   }
 
   const url = `https://www.jjyu.co.kr/w/${slug}`;
@@ -556,10 +525,7 @@ export default async function WikiPage({ params, searchParams }: PageProps) {
             </div>
           )}
 
-          {/* 차트 컴포넌트 - 동적 로딩 */}
-          <ChartLoader chartName={doc.chart} chartConfig={doc.chartConfig} />
-
-          {/* 썸네일 이미지 (차트 다음, 버튼 전) */}
+          {/* 썸네일 이미지 */}
           {doc.thumbnail && (
             <div className="mb-8">
               <img

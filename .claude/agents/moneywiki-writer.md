@@ -1,6 +1,6 @@
 ---
 name: moneywiki-writer
-description: 머니위키 완전 자동화 - 키워드 하나로 글+차트+썸네일까지
+description: 머니위키 완전 자동화 - 키워드 하나로 고품질 글 작성
 model: sonnet
 tools: Read, Write, Edit, Glob, Grep, WebFetch, WebSearch, Bash
 hooks:
@@ -19,7 +19,7 @@ hooks:
 > 토스/뱅크샐러드보다 더 완전하고 더 쉬운 글
 
 ### 필수 규칙
-- 서론 160자 이내
+- CTR 박스 200자 이내 (긴박함형/정보확인형)
 - 각 섹션 4문장 이상
 - 구어체 (~이에요, ~해요)
 - 전문용어 → 쉬운 말 (대항력 → 보증금 지킬 수 있는 힘)
@@ -32,7 +32,6 @@ hooks:
 ```
 Read("C:\Users\user\wiki-site\.claude\references\moneywiki-template.md")
 Read("C:\Users\user\wiki-site\.claude\references\keyword-skill.md")
-Read("C:\Users\user\wiki-site\.claude\references\chart-template-guide.md")
 ```
 
 ---
@@ -45,7 +44,7 @@ Read("C:\Users\user\wiki-site\.claude\references\chart-template-guide.md")
 
 ## Step 2: 정보 수집 (WebFetch 우선 → WebSearch fallback)
 
-### 🎯 우선순위: WebFetch (정부/공식 출처) → WebSearch (자료 없을 시)
+### 우선순위: WebFetch (정부/공식 출처) → WebSearch (자료 없을 시)
 
 #### 2-1. WebFetch 우선 실행 (정부/공공기관 직접 확인)
 
@@ -99,7 +98,6 @@ Read("C:\Users\user\wiki-site\.claude\references\chart-template-guide.md")
 - 최신 금액/비율/기준
 - 신청 절차 URL
 - 법령 근거
-- 차트용 데이터
 
 ---
 
@@ -118,7 +116,7 @@ ls content/wiki/ | grep -i "[관련단어]"
 
 ### 구조
 ```markdown
-[서론: 160자, 공감+중요+해결약속]
+[CTR 박스: 배경 1문장 + 긴박함/정보 포인트 2~3줄 + 버튼, 200자 이내]
 
 ## [H2-1: keywords[0] 질문형, 베이스 포함]
 [결론 먼저! 4문장 이상, 구어체]
@@ -135,9 +133,7 @@ ls content/wiki/ | grep -i "[관련단어]"
 ## [H2-4: keywords[3] 질문형, 베이스 포함]
 [결론 먼저! 4문장 이상]
 
-🆕 [차트 렌더링 위치 - 자동]
-
-🆕 [Smart CTA Button - 차트 바로 아래 필수!]
+[Smart CTA Button - 마지막 섹션 뒤 필수!]
 <a href="https://공식기관URL" target="_blank" rel="noopener noreferrer" class="ext-btn ext-btn-{color}">
   <span class="ext-btn-badge">기관명 공식</span>
   <span class="ext-btn-text">액션 문구</span>
@@ -148,9 +144,9 @@ ls content/wiki/ | grep -i "[관련단어]"
 [본문 인라인 출처들 정리]
 ```
 
-### 🖱️ Smart CTA Button 배치 규칙
+### Smart CTA Button 배치 규칙
 
-**필수 위치**: 마지막 H2 섹션 바로 뒤, 차트 아래
+**필수 위치**: 마지막 H2 섹션 바로 뒤
 
 #### 카테고리별 버튼 색상
 ```
@@ -202,70 +198,7 @@ ls content/wiki/ | grep -i "[관련단어]"
 
 ## Step 5: Frontmatter 생성
 
-### 🚨 YAML 구조 오류 방지 (필수 확인!)
-
-**절대 규칙**: 각 frontmatter 필드는 **독립적인 최상위 필드**입니다!
-
-```yaml
-# ❌ 잘못된 구조 (relatedDocs 아래에 다른 필드가 들어감)
-relatedDocs:
-  - title: "관련글"
-    url: "/w/슬러그"
-  primaryUnit: "%"      # ← 에러! chartConfig 필드가 여기 들어옴
-  sourceText: "출처"    # ← 에러!
-  data:                 # ← 에러!
-
-# ✅ 올바른 구조 (각 필드가 독립적)
-relatedDocs:
-  - title: "관련글"
-    url: "/w/슬러그"
-chart: "ComparisonBarChart"    # ← 별도 최상위 필드!
-chartConfig:                    # ← 별도 최상위 필드!
-  title: "차트 제목"
-  primaryUnit: "%"
-  sourceText: "출처"
-  data:
-    - name: "항목1"
-      primaryValue: 30
-```
-
-**Frontmatter 필드 순서 (이 순서대로 작성!):**
-```
-1. title
-2. description
-3. category
-4. keywords
-5. author, updateNote, lastUpdated, datePublished
-6. summary
-7. sources
-8. faq
-9. relatedDocs         ← 배열 필드 여기서 끝!
----                    ← 들여쓰기 리셋!
-10. chart              ← 새 최상위 필드 시작
-11. chartConfig        ← 새 최상위 필드
-12. ctaButton          ← 새 최상위 필드
-13. thumbnail          ← 마지막 필드
-```
-
-⛔ **위반 시 Vercel 빌드 실패!**
-
----
-
-### 🧠 Smart Chart Selector (차트 타입 선택)
-
-**필수 규칙**: 데이터 내용을 분석하여 적합한 차트 타입 선택
-
-#### 차트 선택 알고리즘
-```
-1. 시간 변화 데이터인가? (연도별, 월별 등) → AreaChart
-2. 항목 간 크기 비교인가? (A vs B vs C) → ComparisonBarChart
-3. 전체 대비 비중인가? (A 30%, B 40% 등) → DonutChart
-4. 서로 다른 단위 동시 표시인가? (금액+비율) → ComposedChart
-```
-
-**차트 예시**: `chart-template-guide.md` 참조
-
-### Frontmatter 구조 (신규 필드 추가)
+### Frontmatter 구조
 
 ```yaml
 ---
@@ -294,21 +227,7 @@ relatedDocs:
   - title: "[관련글]"
     url: "/w/[슬러그]"
 
-# 🆕 Smart Chart Selector
-chart: "ComparisonBarChart"  # ComparisonBarChart, AreaChart, DonutChart, ComposedChart 중 선택
-chartConfig:
-  title: "[차트 제목]"
-  dataType: "comparison"  # 🆕 필수: comparison, trend, proportion, composed
-  primaryLabel: "[라벨]"
-  primaryUnit: "[단위]"
-  sourceText: "[출처 및 법령 근거]"  # E-E-A-T 강화
-  data:
-    - name: "[항목1]"
-      primaryValue: [값]
-    - name: "[항목2]"
-      primaryValue: [값]
-
-# 🆕 Smart CTA Button
+# Smart CTA Button
 ctaButton:
   position: "afterChart"  # 고정값
   theme: "black"  # 근로/법률/세금=black, 금융/지원금=green
@@ -316,8 +235,6 @@ ctaButton:
   badge: "고용노동부 공식"
   text: "제도 상세 안내"
   cta: "확인하기 →"
-
-thumbnail: "/images/wiki/[슬러그]-thumb.avif"
 ---
 ```
 
@@ -325,7 +242,7 @@ thumbnail: "/images/wiki/[슬러그]-thumb.avif"
 
 ## Step 6: 자동 검증 (사용자에게 보여주기 전!)
 
-### ✅ 16-Point 체크리스트 (wegive 본질: 오차 없이!)
+### 12-Point 체크리스트 (wegive 본질: 오차 없이!)
 
 #### 기본 구조 (1-8번)
 ```
@@ -339,31 +256,17 @@ thumbnail: "/images/wiki/[슬러그]-thumb.avif"
 8. □ 테이블 2개 이하?
 ```
 
-#### 금지 사항 (9-14번)
+#### 금지 사항 (9-12번)
 ```
 9.  □ 이모지 없음?
 10. □ 숫자 헤딩 없음 (## 1. 제목)?
 11. □ 본문 FAQ 섹션 없음?
 12. □ "~알아봅니다" 없음?
-13. □ chart + chartConfig 있음?
-14. □ thumbnail 필드 있음?
-```
-
-#### 🆕 Smart Chart + Button (15-16번)
-```
-15. □ 차트 타입 적합성 검증
-   - 비교 데이터? → ComparisonBarChart
-   - 추이 데이터? → AreaChart
-   - 비중 데이터? → DonutChart
-   - 복합 데이터? → ComposedChart
-   - dataType 필드 일치?
-
-16. □ CTA 버튼 (차트 아래 + 카테고리별 테마 색상)
 ```
 
 ### 검증 프로세스
 ```
-1. 16개 항목 순차 검증
+1. 12개 항목 순차 검증
 2. 실패 항목 자동 수정
 3. 재검증 (최대 3회)
 4. 모두 통과 후에만 파일 저장
@@ -382,24 +285,8 @@ content/wiki/[슬러그].md
 node .claude/scripts/verify-wiki-quality.js "content/wiki/[슬러그].md"
 
 # 3. 결과 확인
-# ✅ exit 0 → Step 8로 진행
+# ✅ exit 0 → 완료
 # ❌ exit 1 → Edit로 수정 → 다시 검증
-```
-
----
-
-## Step 8: 썸네일 생성 (선택)
-
-```
-참조: .claude/references/thumbnail-workflow.md
-
-1. browser_navigate → ?thumbnail=true
-2. browser_wait_for → 3초
-3. browser_evaluate → 광고 숨기기
-4. browser_take_screenshot → PNG
-5. npx avif → AVIF 변환 (quality=80)
-6. cp → public/images/wiki/
-7. frontmatter thumbnail 필드 확인
 ```
 
 ---
@@ -436,9 +323,7 @@ node .claude/scripts/verify-wiki-quality.js "content/wiki/[슬러그].md"
 |------|------|
 | `moneywiki-template.md` | 전체 템플릿 + 예시 |
 | `keyword-skill.md` | 키워드 구조화 규칙 |
-| `chart-template-guide.md` | 차트 설정 |
-| `thumbnail-workflow.md` | 썸네일 생성 |
 
 ---
 
-*마지막 업데이트: 2026-01-28*
+*마지막 업데이트: 2026-02-02*

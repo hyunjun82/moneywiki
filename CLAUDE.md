@@ -39,9 +39,11 @@
 Read("C:\Users\user\wiki-site\.claude\references\moneywiki-template.md")
 ```
 
-### 2단계: 웹검색 (최신 정보)
+### 2단계: 정보 확인 (WebFetch 우선!)
 ```
-WebSearch "[키워드] 2026"
+1. WebFetch 먼저 (정부/공식 URL)
+   - korea.kr, nts.go.kr, fss.or.kr, moel.go.kr 등
+2. 못 찾으면 WebSearch (fallback)
 ```
 
 ### 3단계: 글 작성
@@ -49,12 +51,7 @@ WebSearch "[키워드] 2026"
 - 20~80대 누구나 이해
 - H2에 베이스 키워드 포함
 
-### 4단계: 썸네일 생성
-```
-참조: .claude/references/thumbnail-workflow.md
-```
-
-### 5단계: 배포
+### 4단계: 배포
 ```bash
 git add content/wiki/[파일명].md && git commit -m "feat: [제목]" && git push
 ```
@@ -89,7 +86,6 @@ faq:  # 2개, 소제목과 안 겹침
 relatedDocs:
   - title: "관련문서"
     url: "/w/슬러그"
-thumbnail: "/images/wiki/[슬러그]-thumb.png"  # 썸네일 있으면 추가
 ---
 ```
 
@@ -164,10 +160,6 @@ keywords: [A, B, C, D] → H2: [A질문, B질문, C질문, D질문]
 - [ ] 출처 섹션 있음?
 - [ ] FAQ 2개 (소제목과 안 겹침)?
 
-### 썸네일 (선택)
-- [ ] thumbnail 필드 추가?
-- [ ] 이미지 파일 생성? (`/images/wiki/[슬러그]-thumb.png`)
-
 ### 배포
 - [ ] git push 완료?
 - [ ] Vercel 배포 확인?
@@ -182,7 +174,6 @@ keywords: [A, B, C, D] → H2: [A질문, B질문, C질문, D질문]
 | `keyword-skill.md` | **타이틀 구조화 규칙** |
 | `keyword-extraction-workflow.md` | **PAA → 키워드 추출** |
 | `batch-agent-rules.md` | **배치 작성 시 필독** |
-| `thumbnail-workflow.md` | 썸네일 생성 절차 |
 | `wiki-rules.md` | 신뢰 출처 리스트 |
 
 ---
