@@ -11,7 +11,8 @@ const path = require('path');
 // 실제 존재하는 차트 컴포넌트
 const VALID_CHARTS = [
   'ComparisonBarChart',
-  'PensionBarChart'
+  'PensionBarChart',
+  'BarChart'
 ];
 
 // 금지된 차트 참조 (과거에 문제를 일으킨 것들)
