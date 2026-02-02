@@ -265,18 +265,9 @@ ls content/wiki/ | grep -i "[관련단어]"
 [본문 인라인 출처들 정리]
 ```
 
-### 🖱️ Smart CTA Button 배치 규칙 (NEW!)
+### 🖱️ Smart CTA Button 배치 규칙
 
-**필수 위치**: 마지막 H2 섹션 바로 뒤, 차트 렌더링 위치 아래
-
-#### 버튼 HTML 템플릿
-```html
-<a href="https://공식기관URL" target="_blank" rel="noopener noreferrer" class="ext-btn ext-btn-{color}">
-  <span class="ext-btn-badge">기관명 공식</span>
-  <span class="ext-btn-text">액션 문구</span>
-  <span class="ext-btn-cta">확인하기 →</span>
-</a>
-```
+**필수 위치**: 마지막 H2 섹션 바로 뒤, 차트 아래
 
 #### 카테고리별 버튼 색상
 ```
@@ -389,93 +380,7 @@ chartConfig:                    # ← 별도 최상위 필드!
 4. 서로 다른 단위 동시 표시인가? (금액+비율) → ComposedChart
 ```
 
-#### 차트 타입별 예시
-
-**비교 (Comparison) → ComparisonBarChart**
-```yaml
-# 사용 시기: 항목 간 크기/값 비교
-# 예시: 세율 차이, 지원금 한도, 결격사유 비율
-chart: "ComparisonBarChart"
-chartConfig:
-  title: "요양보호사 결격사유 유형별 비중"
-  dataType: "comparison"
-  primaryLabel: "해당 비율"
-  primaryUnit: "%"
-  sourceText: "노인복지법 제39조의13 기준"
-  data:
-    - name: "형사처벌"
-      primaryValue: 40
-    - name: "정신질환"
-      primaryValue: 25
-```
-
-**추이 (Trend) → AreaChart**
-```yaml
-# 사용 시기: 시간 흐름에 따른 변화
-# 예시: 최저임금 변화, 연도별 금리, 물가 상승률
-chart: "AreaChart"
-chartConfig:
-  title: "최저임금 연도별 변화 추이"
-  dataType: "trend"
-  primaryLabel: "최저임금"
-  primaryUnit: "원"
-  sourceText: "고용노동부 최저임금위원회"
-  data:
-    - year: "2022"
-      primaryValue: 9160
-    - year: "2023"
-      primaryValue: 9620
-    - year: "2024"
-      primaryValue: 9860
-    - year: "2025"
-      primaryValue: 10030
-    - year: "2026"
-      primaryValue: 10320
-```
-
-**비중 (Proportion) → DonutChart**
-```yaml
-# 사용 시기: 전체 대비 각 항목 비율
-# 예시: 4대보험 요율 구성, 세금 비중, 예산 배분
-chart: "DonutChart"
-chartConfig:
-  title: "4대보험 요율 구성 비중"
-  dataType: "proportion"
-  primaryLabel: "요율"
-  primaryUnit: "%"
-  sourceText: "국민건강보험공단 2026년 기준"
-  data:
-    - name: "국민연금"
-      primaryValue: 4.5
-    - name: "건강보험"
-      primaryValue: 3.545
-    - name: "고용보험"
-      primaryValue: 0.9
-    - name: "산재보험"
-      primaryValue: 1.2
-```
-
-**복합 (Composed) → ComposedChart**
-```yaml
-# 사용 시기: 서로 다른 단위의 데이터 동시 표시
-# 예시: 매출액+성장률, 수입+지출, 인원+비율
-chart: "ComposedChart"
-chartConfig:
-  title: "퇴직연금 가입자 수 및 적립금 추이"
-  dataType: "composed"
-  primaryLabel: "적립금"
-  primaryUnit: "조원"
-  secondaryLabel: "가입자"
-  secondaryUnit: "만명"
-  sourceText: "고용노동부 퇴직연금 통계"
-  data:
-    - year: "2024"
-      primaryValue: 350
-      secondaryValue: 620
-    - year: "2025"
-      primaryValue: 380
-      secondaryValue: 650
-```
+**차트 예시**: `chart-template-guide.md` 참조
 
 ### Frontmatter 구조 (신규 필드 추가)
 
@@ -572,17 +477,6 @@ thumbnail: "/images/wiki/[슬러그]-thumb.avif"
 14. □ thumbnail 필드 있음?
 ```
 
-#### 🚨 YAML 구조 검증 (필수!)
-```
-□ relatedDocs 아래에 다른 필드 없음?
-  - relatedDocs 바로 다음에 chart/chartConfig가 독립 필드로?
-□ chart 타입이 ComparisonBarChart/AreaChart/DonutChart/ComposedChart 중 하나?
-  - ❌ "BarChart" (존재 안 함!)
-  - ✅ "ComparisonBarChart"
-□ updateNote에 숫자 오타 없음? ("2026년 1월 기준"만!)
-□ 모든 문자열 값에 따옴표 닫힘?
-```
-
 #### 🆕 Smart Chart + Button (15-16번)
 ```
 15. □ 차트 타입 적합성 검증
@@ -604,8 +498,8 @@ thumbnail: "/images/wiki/[슬러그]-thumb.avif"
 
 #### 차트 타입 오류 (15번)
 ```
-잘못: chart: "BarChart" (존재 안 하는 타입!)
-수정: chart: "ComparisonBarChart" (비교) 또는 "AreaChart" (추이)
+잘못: chart: "BarChart" + 연도별 추이 데이터
+수정: chart: "AreaChart" + dataType: "trend"
 ```
 
 #### 버튼 위치 오류 (16번)
@@ -629,124 +523,21 @@ thumbnail: "/images/wiki/[슬러그]-thumb.avif"
 5. 검증 결과 로그 출력
 ```
 
-### 검증 결과 출력 예시
-```
-✅ 16-Point 체크리스트 검증 완료
-
-[기본 구조]
-✅ 1. keywords 4개 = H2 4개
-✅ 2. 모든 H2에 베이스 키워드 포함
-✅ 3. 각 섹션 4문장 이상
-✅ 4. 구어체 (~이에요)
-✅ 5. 내부링크 3개
-✅ 6. 출처 섹션
-✅ 7. FAQ 2개
-✅ 8. 테이블 2개 이하
-
-[금지 사항]
-✅ 9. 이모지 없음
-✅ 10. 숫자 헤딩 없음
-✅ 11. 본문 FAQ 없음
-✅ 12. "~알아봅니다" 없음
-✅ 13. chart + chartConfig
-✅ 14. thumbnail 필드
-
-[Smart Chart + Button]
-✅ 15. 차트 타입: ComparisonBarChart (비교 데이터 적합)
-✅ 16. 버튼 위치: 차트 아래 + black 테마
-
-🎯 wegive 본질: 오차 없이 완료!
-```
-
 ---
 
-## Step 6.5: ⛔⛔⛔ 필수 검증 (이 단계 스킵 = 작업 무효!)
-
-### 🚨 절대 규칙 (위반 시 오류 파일이 배포됩니다!)
-
-**Claude Code hooks는 서브에이전트에서 작동하지 않습니다!**
-**당신(moneywiki-writer)이 직접 검증하지 않으면 오류가 그대로 배포됩니다!**
-
-### 🔴 필수 실행 순서 (한 단계도 건너뛰면 안 됨!)
-
-```
-[1] Write 도구로 파일 저장
-    ↓
-[2] 즉시 Bash 실행 (검증) ← ⛔ 이 단계 스킵 금지!
-    node .claude/scripts/verify-wiki-quality.js "content/wiki/[슬러그].md"
-    ↓
-[3] exit code 확인
-    exit 0 (성공) → 다음 글 진행
-    exit 1 (실패) → 오류 메시지 확인 → Edit로 수정 → 다시 검증
-
-⛔ 검증 통과 전에는 절대로 다음 글로 넘어가지 마세요!
-```
-
-### 🔴 Bash 검증 명령어 (복붙해서 사용!)
+## Step 7: 파일 저장 + 검증
 
 ```bash
-node .claude/scripts/verify-wiki-quality.js "content/wiki/[슬러그].md"
-```
-
-**[슬러그]를 실제 파일명으로 교체!**
-
-### 검증 항목 (총 8개) - 하나라도 실패 시 수정 필요!
-
-| # | 항목 | 검증 내용 |
-|---|------|----------|
-| 1 | 타이틀 | 콜론(:) 앞 3-4단어 |
-| 2 | Keywords | 정확히 4개 |
-| 3 | 내부링크 | 3개 이상 |
-| 4 | CTA 버튼 | ext-btn 클래스 존재 |
-| 5 | 섹션 문장 | 각 H2 아래 4문장 이상 |
-| 6 | 수치 오차 | critical-facts.json 기준 |
-| 7 | H2 키워드 | 모든 H2에 베이스 키워드 |
-| 8 | 서론 길이 | 160자 이내 |
-
-### 🚨 검증 안 하면?
-
-- 타이틀 오류 → 구글 SEO 실패
-- 키워드 오류 → 검색 노출 실패
-- 내부링크 부족 → 이탈률 증가
-- CTA 없음 → 전환율 0%
-
-**반드시 Write 직후 Bash 검증 실행!**
-
----
-
-## Step 7: 파일 저장
-
-```bash
-# 파일명: 키워드-슬러그.md
+# 1. 파일 저장
 content/wiki/[슬러그].md
 
-# 예시
-content/wiki/원천세-3.3-계산.md
-```
-
----
-
-## Step 7.5: 🚨 CCTV 자동 검증 (Write 직후 필수!)
-
-**Write 완료 후 즉시 실행 - 실패 시 파일 자동 삭제!**
-
-```bash
-# 방금 저장한 파일 검증
+# 2. 즉시 검증 실행 (필수!)
 node .claude/scripts/verify-wiki-quality.js "content/wiki/[슬러그].md"
 
-# 결과:
-# ✅ 통과 → Step 8로 진행
-# ❌ 실패 → 파일 자동 삭제됨 → Step 3부터 다시 작성
+# 3. 결과 확인
+# ✅ exit 0 → Step 8로 진행
+# ❌ exit 1 → Edit로 수정 → 다시 검증
 ```
-
-**검증 항목 (자동 체크):**
-- ✅ 타이틀: 3-4단어 + 콜론
-- ✅ Keywords: 정확히 4개
-- ✅ 내부링크: 3개 이상
-- ✅ CTA 버튼 존재
-- ✅ 수치 오차 없음
-
-**🚨 실패 시 자동 삭제 후 다시 작성해야 합니다!**
 
 ---
 
