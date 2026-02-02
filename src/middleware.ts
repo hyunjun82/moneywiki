@@ -2,6 +2,15 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export async function middleware(request: NextRequest) {
+  const host = request.headers.get("host") || "";
+
+  // www 없는 도메인 → www로 301 리다이렉트 (SEO)
+  if (host === "jjyu.co.kr") {
+    const url = request.nextUrl.clone();
+    url.host = "www.jjyu.co.kr";
+    return NextResponse.redirect(url, 301);
+  }
+
   // robots.txt 동적 처리 (User-Agent 기반)
   if (request.nextUrl.pathname === '/robots.txt') {
     const userAgent = (request.headers.get('user-agent') || '').toLowerCase();
