@@ -37,7 +37,6 @@ relatedDocs:
     url: "/w/개인정보-유출-신고-방법"
   - title: "크리덴셜 스터핑 예방"
     url: "/w/크리덴셜-스터핑-예방"
-chart: "BarChart"
 chartConfig:
   title: "본인확인 방법별 조회 가능 기간"
   dataType: "comparison"
