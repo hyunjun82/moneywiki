@@ -9,8 +9,7 @@
         }
       ],
       "destination": "https://www.jjyu.co.kr/:path*",
-      "permanent": true,
-      "statusCode": 301
+      "permanent": true
     }
   ]
 }
