@@ -8,12 +8,11 @@
 const fs = require('fs');
 const path = require('path');
 
-// 실제 존재하는 차트 컴포넌트
-const VALID_CHARTS = [
-  'ComparisonBarChart',
-  'PensionBarChart',
-  'BarChart'
-];
+// 실제 존재하는 차트 컴포넌트를 파일 시스템에서 자동 감지
+const CHARTS_DIR = path.join(process.cwd(), 'src', 'components', 'charts');
+const VALID_CHARTS = fs.readdirSync(CHARTS_DIR)
+  .filter(f => f.endsWith('.tsx'))
+  .map(f => f.replace('.tsx', ''));
 
 // 금지된 차트 참조 (과거에 문제를 일으킨 것들)
 const INVALID_CHARTS = [
