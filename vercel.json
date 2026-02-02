@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "jjyu.co.kr"
+        }
+      ],
+      "destination": "https://www.jjyu.co.kr/:path*",
+      "permanent": true,
+      "statusCode": 301
+    }
+  ]
+}
