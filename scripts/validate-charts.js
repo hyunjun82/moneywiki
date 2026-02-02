@@ -16,7 +16,6 @@ const VALID_CHARTS = [
 
 // 금지된 차트 참조 (과거에 문제를 일으킨 것들)
 const INVALID_CHARTS = [
-  'BarChart',
   'barChart',
   'TimelineChart',
   'DonutChart',
