@@ -249,21 +249,21 @@ export default function WeeklyHolidayPayCalculator() {
                 <tr className="bg-white">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">12,000원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">약 125만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 187만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 188만원</td>
                   <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 250만원</td>
                   <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">괜찮은 시급 👍</td>
                 </tr>
                 <tr className="bg-green-50">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">15,000원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">약 156만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 234만원</td>
-                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 312만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 235만원</td>
+                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 313만원</td>
                   <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">프리미엄 알바 ⭐</td>
                 </tr>
                 <tr className="bg-blue-50">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">20,000원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300">약 208만원</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 312만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300">약 209만원</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 313만원</td>
                   <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 417만원</td>
                   <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">전문직급 💎</td>
                 </tr>
