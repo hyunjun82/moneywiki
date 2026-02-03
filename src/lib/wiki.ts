@@ -51,6 +51,15 @@ export interface CTAButton {
   cta: string;
 }
 
+// CTA 카드 타입 (서론 아래 행동 유도)
+export interface CTACard {
+  label: string;      // 라벨 (예: "⚡ 1분 조회")
+  mainText: string;   // 메인 문구 (예: "1년 지나면 청구권이 사라집니다.")
+  subText: string;    // 서브 문구 (예: "내 남은 기한 확인해보세요.")
+  url: string;        // 링크 URL
+  external?: boolean; // 외부 링크 여부 (기본: false)
+}
+
 // 차트 데이터 아이템 타입
 export interface ChartDataItem {
   name: string;
@@ -117,6 +126,8 @@ export interface WikiDocument {
   cta?: CTAItem[];
   // CTA 버튼 (단일 객체 - Batch 8 이후)
   ctaButton?: CTAButton;
+  // CTA 카드 (서론 아래 행동 유도)
+  ctaCard?: CTACard;
   // 차트 컴포넌트 이름
   chart?: string;
   // 차트 설정 (데이터 포함)

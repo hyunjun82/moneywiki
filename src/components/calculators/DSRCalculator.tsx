@@ -8,17 +8,40 @@ interface Loan {
   monthlyPayment: number;
 }
 
+type LoanType = "mortgage" | "credit" | "other";
+type Region = "capital" | "local";
+
 export default function DSRCalculator() {
   const [annualIncome, setAnnualIncome] = useState<number>(0);
   const [existingLoans, setExistingLoans] = useState<Loan[]>([]);
   const [newLoanAmount, setNewLoanAmount] = useState<number>(0);
   const [newLoanRate, setNewLoanRate] = useState<number>(4.0);
   const [newLoanYears, setNewLoanYears] = useState<number>(30);
+  const [loanType, setLoanType] = useState<LoanType>("mortgage");
+  const [region, setRegion] = useState<Region>("capital");
+  const [useStressDsr, setUseStressDsr] = useState<boolean>(true);
 
   const [dsr, setDsr] = useState<number>(0);
+  const [stressDsr, setStressDsr] = useState<number>(0);
   const [totalAnnualPayment, setTotalAnnualPayment] = useState<number>(0);
+  const [stressAnnualPayment, setStressAnnualPayment] = useState<number>(0);
   const [newLoanMonthlyPayment, setNewLoanMonthlyPayment] = useState<number>(0);
+  const [stressMonthlyPayment, setStressMonthlyPayment] = useState<number>(0);
   const [maxLoanAmount, setMaxLoanAmount] = useState<number>(0);
+  const [stressMaxLoanAmount, setStressMaxLoanAmount] = useState<number>(0);
+
+  // 스트레스 금리 가산 (2024.10.15 대책 기준)
+  const getStressRate = useCallback((): number => {
+    if (loanType === "mortgage") {
+      // 주택담보대출
+      if (region === "capital") return 3.0; // 수도권/규제지역
+      return 0.75; // 지방 (2025년 말까지)
+    } else if (loanType === "credit") {
+      // 신용대출 (1억원 초과 시에만 적용, 여기서는 기본 적용)
+      return 1.5;
+    }
+    return 0;
+  }, [loanType, region]);
 
   // 원리금균등 월 상환금 계산
   const calculateMonthlyPayment = useCallback((principal: number, rate: number, years: number): number => {
@@ -43,23 +66,39 @@ export default function DSRCalculator() {
     return Math.max(0, Math.floor(maxPrincipal));
   }, []);
 
-  // DSR 계산
+  // DSR 계산 (일반 + 스트레스)
   useEffect(() => {
     const existingAnnualPayment = existingLoans.reduce((sum, loan) => sum + loan.monthlyPayment * 12, 0);
+
+    // 일반 DSR
     const newMonthly = calculateMonthlyPayment(newLoanAmount, newLoanRate, newLoanYears);
     setNewLoanMonthlyPayment(Math.round(newMonthly));
-
     const totalAnnual = existingAnnualPayment + newMonthly * 12;
     setTotalAnnualPayment(Math.round(totalAnnual));
 
+    // 스트레스 DSR (가산금리 적용)
+    const stressRate = getStressRate();
+    const stressAppliedRate = newLoanRate + stressRate;
+    const stressMonthly = calculateMonthlyPayment(newLoanAmount, stressAppliedRate, newLoanYears);
+    setStressMonthlyPayment(Math.round(stressMonthly));
+    const stressTotal = existingAnnualPayment + stressMonthly * 12;
+    setStressAnnualPayment(Math.round(stressTotal));
+
     if (annualIncome > 0) {
+      // 일반 DSR
       setDsr((totalAnnual / annualIncome) * 100);
       setMaxLoanAmount(calculateMaxLoan(annualIncome, existingAnnualPayment, newLoanRate, newLoanYears));
+
+      // 스트레스 DSR
+      setStressDsr((stressTotal / annualIncome) * 100);
+      setStressMaxLoanAmount(calculateMaxLoan(annualIncome, existingAnnualPayment, stressAppliedRate, newLoanYears));
     } else {
       setDsr(0);
+      setStressDsr(0);
       setMaxLoanAmount(0);
+      setStressMaxLoanAmount(0);
     }
-  }, [annualIncome, existingLoans, newLoanAmount, newLoanRate, newLoanYears, calculateMonthlyPayment, calculateMaxLoan]);
+  }, [annualIncome, existingLoans, newLoanAmount, newLoanRate, newLoanYears, loanType, region, calculateMonthlyPayment, calculateMaxLoan, getStressRate]);
 
   // 기존 대출 추가
   const addLoan = useCallback(() => {
@@ -99,33 +138,109 @@ export default function DSRCalculator() {
     return `${formatNumber(num)}원`;
   };
 
-  // DSR 상태
-  const getDsrStatus = (): { color: string; text: string; bg: string } => {
-    if (dsr === 0) return { color: "text-neutral-500", text: "-", bg: "bg-neutral-50" };
-    if (dsr <= 30) return { color: "text-green-600", text: "안전", bg: "bg-green-50" };
-    if (dsr <= 40) return { color: "text-emerald-600", text: "적정", bg: "bg-blue-50" };
-    if (dsr <= 50) return { color: "text-yellow-600", text: "주의", bg: "bg-yellow-50" };
+  // DSR 상태 (스트레스 DSR 고려)
+  const getDsrStatus = (dsrValue: number): { color: string; text: string; bg: string } => {
+    if (dsrValue === 0) return { color: "text-neutral-500", text: "-", bg: "bg-neutral-50" };
+    if (dsrValue <= 30) return { color: "text-green-600", text: "안전", bg: "bg-green-50" };
+    if (dsrValue <= 40) return { color: "text-emerald-600", text: "대출 가능", bg: "bg-blue-50" };
+    if (dsrValue <= 50) return { color: "text-yellow-600", text: "제2금융권", bg: "bg-yellow-50" };
     return { color: "text-red-600", text: "초과", bg: "bg-red-50" };
   };
 
-  const dsrStatus = getDsrStatus();
+  const currentDsr = useStressDsr ? stressDsr : dsr;
+  const currentMaxLoan = useStressDsr ? stressMaxLoanAmount : maxLoanAmount;
+  const currentAnnualPayment = useStressDsr ? stressAnnualPayment : totalAnnualPayment;
+  const currentMonthlyPayment = useStressDsr ? stressMonthlyPayment : newLoanMonthlyPayment;
+  const dsrStatus = getDsrStatus(currentDsr);
 
+  // 강화된 스키마 (Toss보다 더 상세)
   const schema = {
     "@context": "https://schema.org",
-    "@type": "FinancialProduct",
-    "name": "DSR 계산기 (총부채원리금상환비율)",
-    "description": "DSR(총부채원리금상환비율)을 계산하여 대출 가능 여부를 확인하는 온라인 계산기. 금융위원회 기준 적용",
-    "url": "https://jjyu.co.kr/calculators/dsr",
-    "provider": {
-      "@type": "Organization",
-      "name": "머니위키",
-      "url": "https://jjyu.co.kr"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "KRW"
-    }
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://jjyu.co.kr/w/DSR-계산기#calculator",
+        "name": "DSR 계산기 - 스트레스 DSR 포함",
+        "alternateName": ["총부채원리금상환비율 계산기", "대출한도 계산기", "스트레스 DSR 계산기"],
+        "description": "2026년 최신 스트레스 DSR 기준 적용. 연소득, 대출금액, 금리를 입력하면 일반 DSR과 스트레스 DSR을 동시 계산. 수도권/지방, 주담대/신용대출별 정확한 대출 한도 확인",
+        "url": "https://jjyu.co.kr/w/DSR-계산기",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "browserRequirements": "Requires JavaScript",
+        "softwareVersion": "2.0",
+        "datePublished": "2026-01-10",
+        "dateModified": new Date().toISOString().split('T')[0],
+        "inLanguage": "ko",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "KRW",
+          "availability": "https://schema.org/InStock"
+        },
+        "featureList": [
+          "일반 DSR 계산",
+          "스트레스 DSR 계산 (10.15 대책 반영)",
+          "수도권/지방 가산금리 자동 적용",
+          "주택담보대출/신용대출 구분",
+          "최대 대출 가능액 자동 계산",
+          "기존 대출 합산 계산",
+          "실시간 결과 표시"
+        ],
+        "screenshot": "https://jjyu.co.kr/images/calculators/dsr-calculator-screenshot.png",
+        "author": {
+          "@type": "Organization",
+          "name": "머니위키",
+          "url": "https://jjyu.co.kr"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "머니위키",
+          "url": "https://jjyu.co.kr",
+          "logo": "https://jjyu.co.kr/logo.png"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "스트레스 DSR이 뭔가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "스트레스 DSR은 금리 상승 가능성을 반영해 실제 금리보다 높은 금리로 DSR을 계산하는 방식입니다. 2024년 10월 15일 대책으로 수도권/규제지역 주택담보대출은 3.0%p, 지방은 0.75%p(2025년 말까지)가 가산됩니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "DSR 40%를 초과하면 대출이 안 되나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "은행권은 DSR 40%가 한도이지만, 제2금융권(저축은행, 보험 등)은 50%, 서민금융(햇살론 등)은 60%까지 가능합니다. 또한 생애최초 주택구입자나 무주택 서민은 60%까지 예외 적용됩니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "일반 DSR과 스트레스 DSR 중 어떤 걸로 심사하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "실제 은행 대출 심사 시에는 스트레스 DSR이 적용됩니다. 따라서 대출 한도를 정확히 알려면 스트레스 DSR 기준으로 확인해야 합니다."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "FinancialProduct",
+        "name": "DSR 규제",
+        "description": "총부채원리금상환비율(DSR) 대출 규제 - 연소득 대비 모든 대출의 연간 원리금 상환액 비율",
+        "provider": {
+          "@type": "GovernmentOrganization",
+          "name": "금융위원회",
+          "url": "https://www.fsc.go.kr"
+        },
+        "termsOfService": "은행권 DSR 40%, 제2금융권 50%, 서민금융 60%"
+      }
+    ]
   };
 
   return (
@@ -241,6 +356,72 @@ export default function DSRCalculator() {
           <h4 className="font-medium text-emerald-800 mb-3">신규 대출 (받고 싶은 대출)</h4>
 
           <div className="space-y-3">
+            {/* 대출 종류 */}
+            <div>
+              <label className="block text-xs text-neutral-600 mb-1">대출 종류</label>
+              <div className="grid grid-cols-3 gap-2">
+                <button
+                  onClick={() => setLoanType("mortgage")}
+                  className={`py-2 px-3 rounded-lg text-sm font-medium transition-colors ${
+                    loanType === "mortgage"
+                      ? "bg-emerald-600 text-white"
+                      : "bg-white border border-emerald-200 text-emerald-700 hover:bg-emerald-100"
+                  }`}
+                >
+                  주택담보
+                </button>
+                <button
+                  onClick={() => setLoanType("credit")}
+                  className={`py-2 px-3 rounded-lg text-sm font-medium transition-colors ${
+                    loanType === "credit"
+                      ? "bg-emerald-600 text-white"
+                      : "bg-white border border-emerald-200 text-emerald-700 hover:bg-emerald-100"
+                  }`}
+                >
+                  신용대출
+                </button>
+                <button
+                  onClick={() => setLoanType("other")}
+                  className={`py-2 px-3 rounded-lg text-sm font-medium transition-colors ${
+                    loanType === "other"
+                      ? "bg-emerald-600 text-white"
+                      : "bg-white border border-emerald-200 text-emerald-700 hover:bg-emerald-100"
+                  }`}
+                >
+                  기타
+                </button>
+              </div>
+            </div>
+
+            {/* 지역 선택 (주택담보대출만) */}
+            {loanType === "mortgage" && (
+              <div>
+                <label className="block text-xs text-neutral-600 mb-1">주택 소재지</label>
+                <div className="grid grid-cols-2 gap-2">
+                  <button
+                    onClick={() => setRegion("capital")}
+                    className={`py-2 px-3 rounded-lg text-sm font-medium transition-colors ${
+                      region === "capital"
+                        ? "bg-blue-600 text-white"
+                        : "bg-white border border-blue-200 text-blue-700 hover:bg-blue-100"
+                    }`}
+                  >
+                    수도권/규제지역
+                  </button>
+                  <button
+                    onClick={() => setRegion("local")}
+                    className={`py-2 px-3 rounded-lg text-sm font-medium transition-colors ${
+                      region === "local"
+                        ? "bg-blue-600 text-white"
+                        : "bg-white border border-blue-200 text-blue-700 hover:bg-blue-100"
+                    }`}
+                  >
+                    지방
+                  </button>
+                </div>
+              </div>
+            )}
+
             {/* 대출금액 */}
             <div>
               <label className="block text-xs text-neutral-600 mb-1">대출금액</label>
@@ -298,24 +479,91 @@ export default function DSRCalculator() {
               <div className="p-2 bg-white rounded-lg text-sm">
                 <span className="text-neutral-500">예상 월 상환금:</span>
                 <span className="font-bold text-emerald-600 ml-2">{formatNumber(newLoanMonthlyPayment)}원</span>
+                {useStressDsr && getStressRate() > 0 && (
+                  <span className="text-orange-600 ml-2 text-xs">(스트레스: {formatNumber(stressMonthlyPayment)}원)</span>
+                )}
               </div>
             )}
           </div>
         </div>
 
+        {/* 스트레스 DSR 토글 */}
+        <div className="mb-6 p-4 bg-orange-50 rounded-xl border border-orange-200">
+          <div className="flex items-center justify-between">
+            <div>
+              <h4 className="font-medium text-orange-800 flex items-center gap-2">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                스트레스 DSR 적용
+              </h4>
+              <p className="text-xs text-orange-600 mt-1">
+                실제 은행 심사 기준 (10.15 대책)
+              </p>
+            </div>
+            <button
+              onClick={() => setUseStressDsr(!useStressDsr)}
+              className={`relative w-14 h-7 rounded-full transition-colors ${
+                useStressDsr ? "bg-orange-500" : "bg-neutral-300"
+              }`}
+            >
+              <span
+                className={`absolute top-1 left-1 w-5 h-5 bg-white rounded-full transition-transform ${
+                  useStressDsr ? "translate-x-7" : ""
+                }`}
+              />
+            </button>
+          </div>
+          {useStressDsr && getStressRate() > 0 && (
+            <div className="mt-3 p-2 bg-white rounded-lg text-sm">
+              <span className="text-orange-700">
+                적용 가산금리: <strong>+{getStressRate().toFixed(2)}%p</strong>
+                <span className="text-xs text-orange-500 ml-1">
+                  ({loanType === "mortgage" ? (region === "capital" ? "수도권" : "지방") : "신용대출"})
+                </span>
+              </span>
+            </div>
+          )}
+        </div>
+
         {/* DSR 결과 */}
         <div className={`rounded-2xl p-6 border ${dsrStatus.bg} border-opacity-50`}>
-          <h3 className="text-lg font-bold text-neutral-800 mb-4">DSR 계산 결과</h3>
+          <h3 className="text-lg font-bold text-neutral-800 mb-4">
+            DSR 계산 결과
+            {useStressDsr && <span className="text-sm font-normal text-orange-600 ml-2">(스트레스 DSR)</span>}
+          </h3>
 
           <div className="space-y-4">
-            {/* DSR */}
+            {/* DSR 비교 (일반 vs 스트레스) */}
+            {annualIncome > 0 && newLoanAmount > 0 && getStressRate() > 0 && (
+              <div className="grid grid-cols-2 gap-3">
+                <div className={`bg-white rounded-xl p-4 text-center ${!useStressDsr ? "ring-2 ring-emerald-500" : ""}`}>
+                  <div className="text-xs text-neutral-500 mb-1">일반 DSR</div>
+                  <div className={`text-2xl font-bold ${getDsrStatus(dsr).color}`}>
+                    {dsr.toFixed(1)}%
+                  </div>
+                  <div className="text-xs text-neutral-500 mt-1">금리 {newLoanRate}%</div>
+                </div>
+                <div className={`bg-white rounded-xl p-4 text-center ${useStressDsr ? "ring-2 ring-orange-500" : ""}`}>
+                  <div className="text-xs text-orange-500 mb-1 font-medium">스트레스 DSR</div>
+                  <div className={`text-2xl font-bold ${getDsrStatus(stressDsr).color}`}>
+                    {stressDsr.toFixed(1)}%
+                  </div>
+                  <div className="text-xs text-orange-500 mt-1">금리 {(newLoanRate + getStressRate()).toFixed(1)}%</div>
+                </div>
+              </div>
+            )}
+
+            {/* 주요 DSR */}
             <div className="bg-white rounded-xl p-4 text-center">
-              <div className="text-sm text-neutral-500 mb-2">DSR (총부채원리금상환비율)</div>
+              <div className="text-sm text-neutral-500 mb-2">
+                {useStressDsr ? "스트레스 DSR (실제 심사 기준)" : "일반 DSR"}
+              </div>
               <div className={`text-4xl font-bold ${dsrStatus.color}`}>
-                {dsr > 0 ? dsr.toFixed(1) : "-"}%
+                {currentDsr > 0 ? currentDsr.toFixed(1) : "-"}%
               </div>
               <div className={`mt-2 px-3 py-1 rounded-full text-sm font-medium inline-block ${dsrStatus.bg} ${dsrStatus.color}`}>
-                {dsr > 0 ? (dsr <= 40 ? "대출 가능" : "대출 제한") : "정보를 입력하세요"}
+                {currentDsr > 0 ? (currentDsr <= 40 ? "은행권 가능" : currentDsr <= 50 ? "제2금융권 가능" : "대출 제한") : "정보를 입력하세요"}
               </div>
             </div>
 
@@ -328,42 +576,57 @@ export default function DSRCalculator() {
                     <div className="font-bold text-neutral-800">{formatWon(annualIncome)}</div>
                   </div>
                   <div className="bg-white rounded-xl p-3">
-                    <div className="text-xs text-neutral-500 mb-1">연간 상환액</div>
-                    <div className="font-bold text-neutral-800">{formatWon(totalAnnualPayment)}</div>
+                    <div className="text-xs text-neutral-500 mb-1">
+                      연간 상환액 {useStressDsr && <span className="text-orange-500">(스트레스)</span>}
+                    </div>
+                    <div className="font-bold text-neutral-800">{formatWon(currentAnnualPayment)}</div>
                   </div>
                 </div>
 
                 <div className="bg-white rounded-xl p-4">
-                  <div className="text-sm text-neutral-500 mb-2">DSR 40% 기준 최대 대출 가능액</div>
+                  <div className="text-sm text-neutral-500 mb-2">
+                    DSR 40% 기준 최대 대출 가능액
+                    {useStressDsr && <span className="text-orange-500 text-xs ml-1">(스트레스 기준)</span>}
+                  </div>
                   <div className="text-2xl font-bold text-emerald-600">
-                    {maxLoanAmount > 0 ? formatWon(maxLoanAmount) : "불가"}
+                    {currentMaxLoan > 0 ? formatWon(currentMaxLoan) : "불가"}
                   </div>
                   <div className="text-xs text-neutral-500 mt-1">
-                    (금리 {newLoanRate}%, {newLoanYears}년 기준)
+                    (금리 {useStressDsr ? (newLoanRate + getStressRate()).toFixed(1) : newLoanRate}%, {newLoanYears}년 기준)
                   </div>
+                  {useStressDsr && maxLoanAmount > stressMaxLoanAmount && (
+                    <div className="text-xs text-red-500 mt-2">
+                      ⚠️ 스트레스 DSR로 인해 약 {formatWon(maxLoanAmount - stressMaxLoanAmount)} 한도 감소
+                    </div>
+                  )}
                 </div>
 
                 {/* DSR 바 */}
                 <div className="bg-white rounded-xl p-4">
                   <div className="flex justify-between text-xs text-neutral-500 mb-2">
                     <span>0%</span>
-                    <span>40% (한도)</span>
+                    <span>40% (은행)</span>
+                    <span>50% (2금융)</span>
                     <span>100%</span>
                   </div>
                   <div className="h-4 bg-neutral-200 rounded-full overflow-hidden relative">
                     {/* 40% 기준선 */}
                     <div className="absolute left-[40%] top-0 bottom-0 w-0.5 bg-red-400 z-10"></div>
+                    {/* 50% 기준선 */}
+                    <div className="absolute left-[50%] top-0 bottom-0 w-0.5 bg-yellow-400 z-10"></div>
                     {/* DSR 바 */}
                     <div
                       className={`h-full transition-all duration-300 ${
-                        dsr <= 40 ? "bg-gradient-to-r from-green-400 to-blue-500" : "bg-gradient-to-r from-yellow-400 to-red-500"
+                        currentDsr <= 40 ? "bg-gradient-to-r from-green-400 to-blue-500" :
+                        currentDsr <= 50 ? "bg-gradient-to-r from-yellow-400 to-orange-500" :
+                        "bg-gradient-to-r from-orange-400 to-red-500"
                       }`}
-                      style={{ width: `${Math.min(dsr, 100)}%` }}
+                      style={{ width: `${Math.min(currentDsr, 100)}%` }}
                     ></div>
                   </div>
                   <div className="flex justify-between text-xs mt-2">
-                    <span className={dsrStatus.color}>현재 DSR: {dsr.toFixed(1)}%</span>
-                    <span className="text-neutral-500">여유: {Math.max(0, 40 - dsr).toFixed(1)}%</span>
+                    <span className={dsrStatus.color}>현재: {currentDsr.toFixed(1)}%</span>
+                    <span className="text-neutral-500">여유: {Math.max(0, 40 - currentDsr).toFixed(1)}%</span>
                   </div>
                 </div>
               </>
@@ -387,6 +650,36 @@ export default function DSRCalculator() {
               <span className="text-neutral-600">서민금융</span>
               <span className="font-medium text-green-600">DSR 60%</span>
             </div>
+          </div>
+        </div>
+
+        {/* 스트레스 DSR 설명 */}
+        <div className="mt-4 p-4 bg-orange-50 rounded-xl border border-orange-200">
+          <h4 className="font-medium text-orange-800 mb-2 flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            스트레스 DSR이 뭔가요? (10.15 대책)
+          </h4>
+          <p className="text-sm text-orange-700 mb-2">
+            금리 상승 가능성을 반영해 <span className="font-medium">실제 금리보다 높은 금리로 DSR을 계산</span>해요.
+          </p>
+          <div className="text-sm text-orange-700 space-y-1 mb-3">
+            <div className="flex items-start gap-2">
+              <span className="font-medium shrink-0">⚡</span>
+              <span><span className="font-medium">수도권/규제지역 주담대:</span> +3.0%p 가산</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="font-medium shrink-0">⚡</span>
+              <span><span className="font-medium">지방 주담대:</span> +0.75%p 가산 (2025년 말까지)</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="font-medium shrink-0">⚡</span>
+              <span><span className="font-medium">신용대출:</span> 1억원 초과 시 +1.5%p 가산</span>
+            </div>
+          </div>
+          <div className="p-2 bg-white rounded-lg text-xs text-orange-600">
+            <strong>실제 은행 심사 시 스트레스 DSR이 적용됩니다.</strong> 대출 한도를 정확히 알려면 스트레스 DSR을 켜고 확인하세요.
           </div>
         </div>
 

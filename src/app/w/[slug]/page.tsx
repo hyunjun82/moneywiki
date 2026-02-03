@@ -13,6 +13,7 @@ import {
 } from "@/components/JsonLd";
 import AdSense, { AD_SLOTS } from "@/components/AdSense";
 import ShareButtons from "@/components/ShareButtons";
+import CtaCard from "@/components/CtaCard";
 // 계산기 컴포넌트는 클라이언트 래퍼에서 동적 로딩
 import CalculatorLoader from "@/components/CalculatorLoader";
 
@@ -501,6 +502,17 @@ export default async function WikiPage({ params }: PageProps) {
                   })}
                 </ol>
               </div>
+          )}
+
+          {/* CTA 카드 - 서론 아래 행동 유도 (계산기 페이지에서는 숨김) */}
+          {doc.schemaType !== "calculator" && doc.ctaCard && (
+            <CtaCard
+              label={doc.ctaCard.label}
+              mainText={doc.ctaCard.mainText}
+              subText={doc.ctaCard.subText}
+              url={doc.ctaCard.url}
+              external={doc.ctaCard.external}
+            />
           )}
 
           {/* 3줄 요약 (계산기 페이지에서는 숨김) */}
