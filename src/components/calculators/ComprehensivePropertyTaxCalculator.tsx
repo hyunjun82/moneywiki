@@ -26,7 +26,7 @@ function toUk(num: number): string {
 
 type HouseCount = "oneHouse" | "twoHouse" | "threeHouse";
 
-// 2026년 종합부동산세율 (일반)
+// 2023년 이후 종합부동산세율 (일반 - 2주택 이하)
 function getBasicTaxRate(taxBase: number): { rate: number; deduction: number; bracket: string } {
   if (taxBase <= 300000000) {
     return { rate: 0.5, deduction: 0, bracket: "3억 이하" };
@@ -34,29 +34,33 @@ function getBasicTaxRate(taxBase: number): { rate: number; deduction: number; br
     return { rate: 0.7, deduction: 600000, bracket: "3~6억" };
   } else if (taxBase <= 1200000000) {
     return { rate: 1.0, deduction: 2400000, bracket: "6~12억" };
+  } else if (taxBase <= 2500000000) {
+    return { rate: 1.3, deduction: 6000000, bracket: "12~25억" };
   } else if (taxBase <= 5000000000) {
-    return { rate: 1.5, deduction: 8400000, bracket: "12~50억" };
+    return { rate: 1.5, deduction: 11000000, bracket: "25~50억" };
   } else if (taxBase <= 9400000000) {
-    return { rate: 2.0, deduction: 33400000, bracket: "50~94억" };
+    return { rate: 2.0, deduction: 36000000, bracket: "50~94억" };
   } else {
-    return { rate: 2.7, deduction: 99200000, bracket: "94억 초과" };
+    return { rate: 2.7, deduction: 101800000, bracket: "94억 초과" };
   }
 }
 
-// 2026년 종합부동산세율 (다주택자 중과)
+// 2023년 이후 종합부동산세율 (3주택 이상 - 12억 이하 일반과 동일)
 function getSurtaxRate(taxBase: number): { rate: number; deduction: number; bracket: string } {
   if (taxBase <= 300000000) {
-    return { rate: 1.2, deduction: 0, bracket: "3억 이하" };
+    return { rate: 0.5, deduction: 0, bracket: "3억 이하" };
   } else if (taxBase <= 600000000) {
-    return { rate: 1.6, deduction: 1200000, bracket: "3~6억" };
+    return { rate: 0.7, deduction: 600000, bracket: "3~6억" };
   } else if (taxBase <= 1200000000) {
-    return { rate: 2.2, deduction: 4800000, bracket: "6~12억" };
+    return { rate: 1.0, deduction: 2400000, bracket: "6~12억" };
+  } else if (taxBase <= 2500000000) {
+    return { rate: 2.0, deduction: 14400000, bracket: "12~25억" };
   } else if (taxBase <= 5000000000) {
-    return { rate: 3.6, deduction: 21600000, bracket: "12~50억" };
+    return { rate: 3.0, deduction: 39400000, bracket: "25~50억" };
   } else if (taxBase <= 9400000000) {
-    return { rate: 5.0, deduction: 91600000, bracket: "50~94억" };
+    return { rate: 4.0, deduction: 89400000, bracket: "50~94억" };
   } else {
-    return { rate: 6.0, deduction: 185600000, bracket: "94억 초과" };
+    return { rate: 5.0, deduction: 183400000, bracket: "94억 초과" };
   }
 }
 

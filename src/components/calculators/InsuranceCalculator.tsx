@@ -22,7 +22,7 @@ export default function InsuranceCalculator() {
     nationalPension: { employee: 0.0475, employer: 0.0475 }, // 9.5% (각 4.75%)
     healthInsurance: { employee: 0.03595, employer: 0.03595 }, // 7.19% (각 3.595%)
     longTermCareRate: 0.1314, // 건강보험료의 13.14%
-    employmentInsurance: { employee: 0.009, employer: 0.009 }, // 1.8% (각 0.9%)
+    employmentInsurance: { employee: 0.009, employer: 0.0115 }, // 근로자 0.9%, 사업주 1.15% (실업0.9%+고용안정0.25%)
     industrialAccident: 0.007, // 업종 평균
   };
 
