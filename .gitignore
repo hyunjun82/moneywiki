@@ -50,3 +50,7 @@ nul
 .claude/
 dev.log
 dev-server.log
+
+# 배치 작업 플래그
+.batch-in-progress
+.batch-info

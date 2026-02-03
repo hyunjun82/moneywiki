@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# 배치 작업 중인지 확인
+if [ -f ".batch-in-progress" ]; then
+  echo ""
+  echo "╔════════════════════════════════════════════════════════╗"
+  echo "║  ⚠️  배치 작업 진행 중!                                  ║"
+  echo "╚════════════════════════════════════════════════════════╝"
+  echo ""
+
+  # 배치 정보 읽기
+  if [ -f ".batch-info" ]; then
+    cat .batch-info
+    echo ""
+  fi
+
+  echo "❌ push를 막습니다. 배치 작업을 완료한 후 push하세요."
+  echo ""
+  echo "📌 배치 완료 후:"
+  echo "   rm .batch-in-progress .batch-info"
+  echo "   git push"
+  echo ""
+  exit 1
+fi
+
+exit 0
