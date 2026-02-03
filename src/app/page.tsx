@@ -126,7 +126,7 @@ export default function Home() {
             return (
               <Link
                 key={category}
-                href={`/category/${encodeURIComponent(categorySlug)}`}
+                href={`/category/${categorySlug}`}
                 className="p-4 bg-white border border-neutral-200 rounded-lg hover:border-emerald-300 transition-colors text-center"
               >
                 <span className="text-xl block mb-1">{categoryEmoji[category] || "📄"}</span>
