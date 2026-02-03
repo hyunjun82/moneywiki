@@ -10,6 +10,31 @@
       ],
       "destination": "https://www.jjyu.co.kr/:path*",
       "permanent": true
+    },
+    {
+      "source": "/category/:slug*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tag/:slug*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/author/:slug*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/page/:num",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:year(\\d{4})/:month(\\d{2})/:slug*",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }
