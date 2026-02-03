@@ -120,17 +120,21 @@ export default function Home() {
           카테고리
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          {sortedCategories.map(([category, docs]) => (
-            <Link
-              key={category}
-              href={`/category/${encodeURIComponent(category)}`}
-              className="p-4 bg-white border border-neutral-200 rounded-lg hover:border-emerald-300 transition-colors text-center"
-            >
-              <span className="text-xl block mb-1">{categoryEmoji[category] || "📄"}</span>
-              <span className="text-sm font-medium">{category}</span>
-              <p className="text-xs text-neutral-500">{docs.length}개</p>
-            </Link>
-          ))}
+          {sortedCategories.map(([category, docs]) => {
+            // URL에서 슬래시를 대시로 변환
+            const categorySlug = category.replace(/\//g, '-');
+            return (
+              <Link
+                key={category}
+                href={`/category/${encodeURIComponent(categorySlug)}`}
+                className="p-4 bg-white border border-neutral-200 rounded-lg hover:border-emerald-300 transition-colors text-center"
+              >
+                <span className="text-xl block mb-1">{categoryEmoji[category] || "📄"}</span>
+                <span className="text-sm font-medium">{category}</span>
+                <p className="text-xs text-neutral-500">{docs.length}개</p>
+              </Link>
+            );
+          })}
         </div>
       </section>
 

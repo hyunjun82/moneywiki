@@ -56,9 +56,9 @@ export async function generateStaticParams() {
   // 정부지원금 카테고리도 추가
   categories.add("정부지원금");
 
-  // Next.js가 자동으로 URL 인코딩하므로 원본 문자열 그대로 반환
+  // URL에서 슬래시(/)를 대시(-)로 변환
   return Array.from(categories).map((name) => ({
-    name: name,
+    name: name.replace(/\//g, '-'),
   }));
 }
 
@@ -70,7 +70,8 @@ const governmentSupportKeywords = [
 
 export default async function CategoryPage({ params }: PageProps) {
   const { name } = await params;
-  const categoryName = decodeURIComponent(name);
+  // URL에서 대시(-)를 슬래시(/)로 변환
+  const categoryName = decodeURIComponent(name).replace(/-/g, '/');
   const allDocs = getAllWikiDocuments();
 
   let docs = allDocs.filter(doc => (doc.category || "일반") === categoryName);
