@@ -36,6 +36,8 @@ const calculatorMap: Record<string, string> = {
   "전세대출-계산기": "JeonseLoanCalculator",
   "주택담보대출-계산기": "MortgageCalculator",
   "DSR-계산기": "DSRCalculator",
+  "DTI-계산기": "DTICalculator",
+  "LTV-계산기": "LTVCalculator",
   "연봉-실수령액-계산기": "NetSalaryCalculator",
   "4대보험료-계산기": "InsuranceCalculator",
   "근로소득세-계산기": "IncomeTaxCalculator",
@@ -53,6 +55,7 @@ const calculatorMap: Record<string, string> = {
   "할부-이자-계산기": "InstallmentInterestCalculator",
   "상속세-계산기": "InheritanceTaxCalculator",
   "자동차세-계산기": "VehicleTaxCalculator",
+  "예적금-계산기": "DepositSavingsCalculator",
 };
 
 interface CalculatorLoaderProps {

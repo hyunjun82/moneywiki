@@ -196,6 +196,17 @@ function getRelatedCalculator(slug: string, title: string, category: string): { 
         { word: '증권', weight: 5 },
       ]
     },
+    {
+      slug: '예적금-계산기',
+      title: '예적금 계산기',
+      keywords: [
+        { word: '예금', weight: 10 },
+        { word: '적금', weight: 10 },
+        { word: '예적금', weight: 10 },
+        { word: '정기예금', weight: 8 },
+        { word: '정기적금', weight: 8 },
+      ]
+    },
   ];
 
   // 각 계산기별 점수 계산
