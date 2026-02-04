@@ -18,11 +18,11 @@ export default function Header() {
 
           {/* 네비게이션 */}
           <nav className="hidden md:flex items-center gap-8">
-            <NavLink href="/#category-경제">경제</NavLink>
-            <NavLink href="/#category-부동산">부동산</NavLink>
-            <NavLink href="/#category-세금">세금</NavLink>
-            <NavLink href="/#category-법률">법률</NavLink>
-            <NavLink href="/#category-계산기">계산기</NavLink>
+            <NavLink href="/category/경제">경제</NavLink>
+            <NavLink href="/category/부동산">부동산</NavLink>
+            <NavLink href="/category/세금">세금</NavLink>
+            <NavLink href="/category/법률">법률</NavLink>
+            <NavLink href="/#calculators">계산기</NavLink>
           </nav>
 
           {/* 액션 */}

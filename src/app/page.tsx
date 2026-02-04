@@ -96,7 +96,7 @@ export default function Home() {
       </section>
 
       {/* 인기 계산기 - 8개만 */}
-      <section className="mb-12">
+      <section id="calculators" className="mb-12">
         <h2 className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-4">
           계산기
         </h2>
