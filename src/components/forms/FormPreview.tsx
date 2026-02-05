@@ -14357,42 +14357,28 @@ export const 출산육아기고용안정장려금결과통지서_DATA: FormRow[]
 
 // 고용장려금 사업계획 및 지원 해지 확인서
 export const 고용장려금해지확인서_DATA: FormRow[] = [
-  {
-    fields: [
-      { label: "사업장명", isHeader: true },
-      { placeholder: "(사업장명)", exampleValue: "(주)해지기업" },
-      { label: "사업자등록번호", isHeader: true },
-      { placeholder: "(사업자등록번호)", exampleValue: "567-89-01234" },
-    ],
-  },
-  {
-    fields: [
-      { label: "해지 장려금 종류", isHeader: true },
-      { placeholder: "(장려금 종류)", exampleValue: "고용촉진장려금", colspan: 3 },
-    ],
-  },
-  {
-    fields: [
-      { label: "지원 시작일", isHeader: true },
-      { placeholder: "____년 __월 __일", exampleValue: "2025년 7월 1일" },
-      { label: "해지 사유 발생일", isHeader: true },
-      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일" },
-    ],
-  },
-  {
-    fields: [
-      { label: "해지 사유", isHeader: true },
-      { placeholder: "(해지 사유)", exampleValue: "지원 대상 근로자 자발적 퇴사", colspan: 3 },
-    ],
-  },
-  {
-    fields: [
-      { label: "기 수령액", isHeader: true },
-      { placeholder: "(수령액)", exampleValue: "3,600,000원" },
-      { label: "환수 대상 여부", isHeader: true },
-      { placeholder: "(환수여부)", exampleValue: "환수 대상 없음" },
-    ],
-  },
+  { fields: [{ label: "제목", isHeader: true }, { placeholder: "고용장려금 사업계획 및 지원 해지 확인서", exampleValue: "고용장려금 사업계획 및 지원 해지 확인서", colspan: 3 }] },
+  { fields: [{ label: "1. 사업장 현황", isHeader: true, colspan: 4 }] },
+  { fields: [{ label: "사업장명", isHeader: true }, { placeholder: "(예시) 길동산업", exampleValue: "(예시) 홍길동", colspan: 3 }] },
+  { fields: [{ label: "소재지 주소", isHeader: true }, { placeholder: "(예시) 서울시 중구 남문로 00가 00", exampleValue: "(예시) 서울시 중구 남문로 5가 1-23", colspan: 3 }] },
+  { fields: [{ label: "담당자", isHeader: true }, { placeholder: "성명", exampleValue: "(예시) 홍길동" }, { label: "전화번호", isHeader: true }, { placeholder: "000-000-0000", exampleValue: "02-1234-5678" }] },
+  { fields: [{ label: "사업자등록번호", isHeader: true }, { placeholder: "000000-00-00000", exampleValue: "123-45-67890" }, { label: "대표자", isHeader: true }, { placeholder: "(예시) 홍길동", exampleValue: "(예시) 홍길동" }] },
+  { fields: [{ label: "2. 이전 신청 내용", isHeader: true, colspan: 4 }] },
+  { fields: [{ label: "①사업계획서", isHeader: true, colspan: 4 }] },
+  { fields: [{ label: "사업명", isHeader: true }, { placeholder: "(예시) 일자리함께하기", exampleValue: "(예시) 일자리함께하기", colspan: 3 }] },
+  { fields: [{ label: "승인통보일", isHeader: true }, { placeholder: "(예시) 2020년 1월 10일", exampleValue: "2020년 1월 10일" }, { label: "", isHeader: true }, { placeholder: "년 월 일", exampleValue: "년 월 일" }] },
+  { fields: [{ label: "승인 내용", isHeader: true }, { placeholder: "(예시) 일자리함께하기 교대제 전환 및 새로고용", exampleValue: "일자리함께하기 교대제 전환 및 새로고용", colspan: 3 }] },
+  { fields: [{ label: "고용장려금 종류", isHeader: true }, { placeholder: "(예시) 일자리함께하기", exampleValue: "일자리함께하기" }, { label: "유형", isHeader: true }, { placeholder: "(예시) 교대제 전환형 중기근로자 인건비", exampleValue: "교대제 전환형 중기근로자 인건비" }] },
+  { fields: [{ label: "②고용장려금", isHeader: true, colspan: 4 }] },
+  { fields: [{ label: "지원대상근로자 성명", isHeader: true }, { placeholder: "(예시) 김길동", exampleValue: "김길동" }, { label: "주민등록번호", isHeader: true }, { placeholder: "000000-0******", exampleValue: "850315-1******" }] },
+  { fields: [{ label: "최종 지급 신청일", isHeader: true }, { placeholder: "2021년 1월 3일", exampleValue: "2021년 6월 30일" }, { label: "지급받은(예정)일", isHeader: true }, { placeholder: "2021년 6월 30일", exampleValue: "2021년 7월 15일" }] },
+  { fields: [{ label: "기 수급기간", isHeader: true }, { placeholder: "'20년 7월 1일 ~ '20년 12월 31일", exampleValue: "2020년 7월 1일 ~ 2020년 12월 31일" }, { label: "기 수급 내역", isHeader: true }, { placeholder: "3,600,00원", exampleValue: "3,600,000원" }] },
+  { fields: [{ label: "3. 장려금 해지 확인서 제출 사유", isHeader: true, colspan: 4 }] },
+  { fields: [{ label: "○ (    ) 장려금 신청", isHeader: true, colspan: 4 }] },
+  { fields: [{ label: "○ 등 확인서 제출후 확인서에 기재된 장려금은 다시 신청할 수 없음을 확인함 ( 서  명 )", isHeader: true, colspan: 4 }] },
+  { fields: [{ label: "년    월    일", isHeader: true, colspan: 4 }] },
+  { fields: [{ label: "제출자(대표)", isHeader: true }, { placeholder: "(서명 또는 인)", exampleValue: "(서명 또는 인)", colspan: 3 }] },
+  { fields: [{ label: "제출처", isHeader: true }, { placeholder: "○○지방고용노동청(○○지청)장 귀하", exampleValue: "서울지방고용노동청(강남지청)장 귀하", colspan: 3 }] },
 ];
 
 // [별지 26의3] 워라밸일자리 장려금(실근로시간단축제) 지급 신청서 (고용창출장려금·고용안정장려금의 신청 및 지급에 관한 규정)
