@@ -1,0 +1,36 @@
+{
+  "slug": "납품청구서",
+  "title": "2026 납품청구서 양식 무료 다운로드 (DOC)",
+  "shortTitle": "납품청구서",
+  "description": "물품 납품 후 대금을 청구할 때 사용하는 공식 청구서입니다. 납품 내역과 금액을 상세히 기재합니다.",
+  "category": "재무·회계",
+  "source": "일반 서식",
+  "sourceUrl": "https://kcosmetics.kr",
+  "downloads": {
+    "doc": "/files/forms/납품 청구서.doc"
+  },
+  "downloadNames": {
+    "doc": "납품 청구서.doc"
+  },
+  "previewDataKey": "납품청구서_DATA",
+  "tips": [
+    "납품 날짜와 품목을 정확히 기재하세요",
+    "수량, 단가, 총액을 명확히 표시하세요",
+    "부가세 포함 여부를 명시하세요"
+  ],
+  "faq": [
+    {
+      "question": "납품청구서 발행 시기는?",
+      "answer": "납품 완료 즉시 또는 계약서에 명시된 청구일에 발행합니다."
+    },
+    {
+      "question": "세금계산서와 차이는?",
+      "answer": "납품청구서는 내부 문서이며, 세금계산서는 국세청 신고용입니다."
+    },
+    {
+      "question": "청구서 보관 기간은?",
+      "answer": "상법상 10년간 보관이 원칙입니다."
+    }
+  ],
+  "createdAt": "2026-02-05"
+}
