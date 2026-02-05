@@ -12231,6 +12231,7 @@ export const 휴업신고서_DATA: FormRow[] = [
 ];
 
 // 생활안정자금(이차보전) 융자 추천신청서 [별지 1의3] (근로복지사업 운영규정)
+// [별지 1의3] 생활안정자금(이차보전) 융자 추천신청서 (근로복지사업 운영규정)
 export const 생활안정자금융자추천신청서_DATA: FormRow[] = [
   {
     fields: [
@@ -12260,7 +12261,7 @@ export const 생활안정자금융자추천신청서_DATA: FormRow[] = [
   {
     fields: [
       { label: "연락처", isHeader: true },
-      { placeholder: "(전화번호)", exampleValue: "010-1234-5678" },
+      { placeholder: "(휴대전화)", exampleValue: "010-1234-5678" },
       { label: "이메일", isHeader: true },
       { placeholder: "(이메일)", exampleValue: "kim@email.com" },
     ],
@@ -12287,9 +12288,9 @@ export const 생활안정자금융자추천신청서_DATA: FormRow[] = [
   {
     fields: [
       { label: "재직기간", isHeader: true },
-      { placeholder: "____년 __월 ~ 현재", exampleValue: "2020년 3월 ~ 현재" },
+      { placeholder: "____년 __월 ~ ____년 __월", exampleValue: "2020년 3월 ~ 현재" },
       { label: "월평균임금", isHeader: true },
-      { placeholder: "____만원", exampleValue: "320만원" },
+      { placeholder: "____________원", exampleValue: "3,200,000원" },
     ],
   },
   {
@@ -12300,9 +12301,15 @@ export const 생활안정자금융자추천신청서_DATA: FormRow[] = [
   {
     fields: [
       { label: "융자 용도", isHeader: true },
-      { placeholder: "1.의료비 2.혼례비 3.장례비 4.부모요양비 5.자녀학자금 6.기타", exampleValue: "5. 자녀학자금" },
+      { placeholder: "☐의료비 ☐혼례비 ☐장례비 ☐부모요양비 ☐자녀학자금 ☐임금감소생활안정자금 ☐기타", exampleValue: "☑ 자녀학자금", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
       { label: "신청금액", isHeader: true },
-      { placeholder: "____만원", exampleValue: "1,000만원" },
+      { placeholder: "_____________원", exampleValue: "10,000,000원" },
+      { label: "융자한도", isHeader: true },
+      { placeholder: "(한도)", exampleValue: "최대 1천만원" },
     ],
   },
   {
@@ -12315,8 +12322,14 @@ export const 생활안정자금융자추천신청서_DATA: FormRow[] = [
   },
   {
     fields: [
-      { label: "신청 사유", isHeader: true },
-      { placeholder: "(융자 신청 사유를 구체적으로 기재)", exampleValue: "자녀(김영희, 2006년생) 대학 등록금 및 학자금 마련을 위해 신청합니다.", colspan: 3 },
+      { label: "융자 신청 사유", isHeader: true },
+      { placeholder: "(융자 신청 사유를 구체적으로 기재)", exampleValue: "자녀(김영희, 2006년생) 대학교 등록금 및 학자금 마련을 위해 신청합니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "이차보전 신청 여부", isHeader: true },
+      { placeholder: "☐ 신청 ☐ 미신청", exampleValue: "☑ 신청", colspan: 3 },
     ],
   },
   {
@@ -12329,6 +12342,12 @@ export const 생활안정자금융자추천신청서_DATA: FormRow[] = [
     fields: [
       { label: "신청인", isHeader: true },
       { placeholder: "(성명) (서명 또는 인)", exampleValue: "김철수 (인)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "추천인(사업주)", isHeader: true },
+      { placeholder: "(대표자명) (서명 또는 인)", exampleValue: "대표이사 이사장 (인)", colspan: 3 },
     ],
   },
 ];
@@ -12895,64 +12914,161 @@ export const 출산전후휴가급여결정통지서_DATA: FormRow[] = [
 ];
 
 // [별지 제97호서식] 조기재취업 수당 청구서
+// 조기재취업수당청구서 - 실제 PDF 양식 기반 (2025.7.1 개정)
 export const 조기재취업수당청구서_DATA: FormRow[] = [
+  // 청구인(수급자격자)
   {
     fields: [
-      { label: "성명", isHeader: true },
-      { placeholder: "(성명)", exampleValue: "김민수" },
-      { label: "주민등록번호", isHeader: true },
-      { placeholder: "(주민등록번호)", exampleValue: "850101-1234567" },
+      { label: "① 성명", isHeader: true },
+      { placeholder: "", exampleValue: "김구직" },
+      { label: "② 주민등록번호", isHeader: true },
+      { placeholder: "", exampleValue: "901020-1******" },
     ],
   },
   {
     fields: [
-      { label: "주소", isHeader: true },
-      { placeholder: "(주소)", exampleValue: "서울시 강남구 테헤란로 123", colspan: 3 },
+      { label: "③ 주소", isHeader: true },
+      { placeholder: "", exampleValue: "서울특별시 강남구 테헤란로 123", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "전화번호", isHeader: true },
-      { placeholder: "(전화번호)", exampleValue: "010-1234-5678" },
-      { label: "피보험자번호", isHeader: true },
-      { placeholder: "(피보험자번호)", exampleValue: "1234-567890" },
+      { label: "전화번호:", isHeader: true },
+      { placeholder: "", exampleValue: "02-1234-5678" },
+      { label: "휴대전화번호:", isHeader: true },
+      { placeholder: "", exampleValue: "010-1234-5678" },
+    ],
+  },
+  // 사업장에 고용된 경우
+  {
+    fields: [
+      { label: "④ 사업장명", isHeader: true },
+      { placeholder: "", exampleValue: "(주)새로운회사" },
+      { label: "⑤ 대표자 성명", isHeader: true },
+      { placeholder: "", exampleValue: "이대표" },
     ],
   },
   {
     fields: [
-      { label: "재취업 일자", isHeader: true },
-      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일" },
-      { label: "재취업 사업장명", isHeader: true },
-      { placeholder: "(사업장명)", exampleValue: "(주)새일터" },
+      { label: "⑥ 소재지", isHeader: true },
+      { placeholder: "", exampleValue: "경기도 성남시 분당구 판교역로 235", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "잔여 급여일수", isHeader: true },
-      { placeholder: "____일", exampleValue: "90일" },
-      { label: "청구 금액", isHeader: true },
-      { placeholder: "____원", exampleValue: "3,150,000원" },
+      { label: "전화번호:", isHeader: true },
+      { placeholder: "", exampleValue: "031-1234-5678", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "입금계좌", isHeader: true },
-      { placeholder: "(은행명) (계좌번호)", exampleValue: "국민은행 123-456-789012", colspan: 3 },
+      { label: "⑦ 채용일(입사일)", isHeader: true },
+      { placeholder: "", exampleValue: "2026.01.15" },
+      { label: "⑧ 채용 확정 통보받은 날", isHeader: true },
+      { placeholder: "", exampleValue: "2026.01.10" },
     ],
   },
   {
     fields: [
-      { label: "신청일", isHeader: true },
-      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 20일", colspan: 3 },
+      { label: "⑨ 월평균 임금액", isHeader: true },
+      { placeholder: "_________원", exampleValue: "3,500,000원", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑩ 구직급여 수급 직전 최종 이직 사업장명", isHeader: true },
+      { placeholder: "", exampleValue: "(주)이전회사", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑪ 구직급여 수급 직전 최종 이직 사업장과 재취직한 사업장 사업주의 관계", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "[  ] 영업을 양도·양수한 사업주에게 재취직", placeholder: "", exampleValue: "" },
+      { label: "[  ] 사업을 인수한 사업주에게 재취직", placeholder: "", exampleValue: "" },
+    ],
+  },
+  {
+    fields: [
+      { label: "[  ] 합병·분할된 사업장에 재취직", placeholder: "", exampleValue: "" },
+      { label: "[√] 해당 없음", placeholder: "", exampleValue: "√" },
+    ],
+  },
+  // 자영업 등을 하는 경우
+  {
+    fields: [
+      { label: "⑫ 사업장명", isHeader: true },
+      { placeholder: "", exampleValue: "" },
+      { label: "⑬ 대표자 성명", isHeader: true },
+      { placeholder: "", exampleValue: "" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑭ 소재지", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "전화번호:", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑮ 사업 시작일", isHeader: true },
+      { placeholder: "", exampleValue: "" },
+      { label: "⑯ 사업자등록번호", isHeader: true },
+      { placeholder: "", exampleValue: "" },
+    ],
+  },
+  {
+    fields: [
+      { label: "⑰ 업종", isHeader: true },
+      { placeholder: "", exampleValue: "", colspan: 3 },
+    ],
+  },
+  // 지급계좌
+  {
+    fields: [
+      { label: "계좌번호:", isHeader: true },
+      { placeholder: "", exampleValue: "110-123-456789" },
+      { label: "은행명:", isHeader: true },
+      { placeholder: "", exampleValue: "신한은행" },
+    ],
+  },
+  {
+    fields: [
+      { label: "예금주:", isHeader: true },
+      { placeholder: "", exampleValue: "김구직", colspan: 3 },
+    ],
+  },
+  // 청구
+  {
+    fields: [
+      { label: "청구일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 20일" },
+      { label: "청구인 (서명 또는 인)", placeholder: "", exampleValue: "김구직 (인)" },
     ],
   },
 ];
 
 // [서식 8] 청년일자리도약장려금 유형Ⅱ 지급 신청서(청년용)
+// [서식 8] 청년일자리도약장려금 유형Ⅱ 지급 신청서(청년용)
 export const 청년일자리도약장려금신청서_DATA: FormRow[] = [
   {
     fields: [
-      { label: "신청인(청년)", isHeader: true, colspan: 4 },
+      { label: "서식명", isHeader: true },
+      { placeholder: "[서식 8] 청년일자리도약장려금 유형Ⅱ 지급 신청서(청년용)", exampleValue: "[서식 8] 청년일자리도약장려금 유형Ⅱ 지급 신청서(청년용)", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인(청년) 정보", isHeader: true, colspan: 4 },
     ],
   },
   {
@@ -12960,37 +13076,97 @@ export const 청년일자리도약장려금신청서_DATA: FormRow[] = [
       { label: "성명", isHeader: true },
       { placeholder: "(성명)", exampleValue: "이지훈" },
       { label: "생년월일", isHeader: true },
-      { placeholder: "(생년월일)", exampleValue: "1998.05.15" },
+      { placeholder: "____년 __월 __일", exampleValue: "1998년 5월 15일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "980515-1******" },
+      { label: "연령", isHeader: true },
+      { placeholder: "(만 __세)", exampleValue: "만 27세" },
     ],
   },
   {
     fields: [
       { label: "연락처", isHeader: true },
-      { placeholder: "(연락처)", exampleValue: "010-9876-5432" },
+      { placeholder: "(휴대전화)", exampleValue: "010-9876-5432" },
       { label: "이메일", isHeader: true },
       { placeholder: "(이메일)", exampleValue: "jihun98@email.com" },
     ],
   },
   {
     fields: [
+      { label: "주소", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 마포구 월드컵로 123, 101동 501호", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
       { label: "사업장명", isHeader: true },
       { placeholder: "(사업장명)", exampleValue: "(주)청년테크" },
+      { label: "사업자등록번호", isHeader: true },
+      { placeholder: "___-__-_____", exampleValue: "234-56-78901" },
+    ],
+  },
+  {
+    fields: [
       { label: "채용일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 2일" },
+      { label: "고용보험 취득일", isHeader: true },
       { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 2일" },
     ],
   },
   {
     fields: [
-      { label: "6개월 충족일", isHeader: true },
+      { label: "6개월 근속 충족일", isHeader: true },
       { placeholder: "____년 __월 __일", exampleValue: "2026년 7월 1일" },
+      { label: "고용형태", isHeader: true },
+      { placeholder: "(형태)", exampleValue: "정규직" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주 소정근로시간", isHeader: true },
+      { placeholder: "주 ___시간", exampleValue: "주 40시간" },
+      { label: "월 평균임금", isHeader: true },
+      { placeholder: "_________원", exampleValue: "2,500,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "지급 신청 내역", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
       { label: "지급 신청액", isHeader: true },
-      { placeholder: "____원", exampleValue: "2,000,000원" },
+      { placeholder: "____________원", exampleValue: "2,000,000원 (6개월 충족)" },
+      { label: "지급 방법", isHeader: true },
+      { placeholder: "☐ 계좌입금", exampleValue: "☑ 계좌입금" },
     ],
   },
   {
     fields: [
       { label: "입금계좌", isHeader: true },
-      { placeholder: "(은행명) (계좌번호)", exampleValue: "신한은행 110-123-456789", colspan: 3 },
+      { placeholder: "(은행명) (계좌번호) (예금주)", exampleValue: "신한은행 110-123-456789 이지훈", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 7월 5일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인(청년)", isHeader: true },
+      { placeholder: "(성명) (서명 또는 인)", exampleValue: "이지훈 (인)", colspan: 3 },
     ],
   },
 ];
@@ -13443,13 +13619,25 @@ export const 계좌변경서약서_DATA: FormRow[] = [
 ];
 
 // 워라밸일자리 장려금 참여 신청서
+// [별지 22] 워라밸일자리 장려금 지급 신청서 (고용창출장려금·고용안정장려금의 신청 및 지급에 관한 규정)
 export const 워라밸일자리장려금신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "[별지 22] 워라밸일자리 장려금 지급 신청서", exampleValue: "[별지 22] 워라밸일자리 장려금 지급 신청서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장 정보", isHeader: true, colspan: 4 },
+    ],
+  },
   {
     fields: [
       { label: "사업장명", isHeader: true },
       { placeholder: "(사업장명)", exampleValue: "(주)균형인생" },
       { label: "사업자등록번호", isHeader: true },
-      { placeholder: "(사업자등록번호)", exampleValue: "345-67-89012" },
+      { placeholder: "___-__-_____", exampleValue: "345-67-89012" },
     ],
   },
   {
@@ -13457,49 +13645,115 @@ export const 워라밸일자리장려금신청서_DATA: FormRow[] = [
       { label: "대표자", isHeader: true },
       { placeholder: "(대표자명)", exampleValue: "정균형" },
       { label: "연락처", isHeader: true },
-      { placeholder: "(연락처)", exampleValue: "02-3456-7890" },
+      { placeholder: "(전화번호)", exampleValue: "02-3456-7890" },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장 소재지", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "서울특별시 영등포구 여의대로 108", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "참여 사업 내용", isHeader: true, colspan: 4 },
     ],
   },
   {
     fields: [
       { label: "참여 유형", isHeader: true },
-      { placeholder: "(유형)", exampleValue: "실근로시간 단축제", colspan: 3 },
+      { placeholder: "☐ 일·가정양립환경개선 ☐ 실근로시간단축제", exampleValue: "☑ 실근로시간단축제", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "참여 시작일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 1일" },
+      { label: "참여 종료일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 12월 31일" },
     ],
   },
   {
     fields: [
       { label: "참여 근로자 수", isHeader: true },
       { placeholder: "____명", exampleValue: "15명" },
-      { label: "단축 전 근로시간", isHeader: true },
-      { placeholder: "주 ____시간", exampleValue: "주 52시간" },
+      { label: "지급신청 기간", isHeader: true },
+      { placeholder: "____개월차", exampleValue: "6개월차" },
     ],
   },
   {
     fields: [
+      { label: "실근로시간 단축 내용 (해당 시)", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "단축 전 근로시간", isHeader: true },
+      { placeholder: "주 ____시간", exampleValue: "주 52시간" },
       { label: "단축 후 근로시간", isHeader: true },
       { placeholder: "주 ____시간", exampleValue: "주 40시간" },
-      { label: "참여 기간", isHeader: true },
-      { placeholder: "____개월", exampleValue: "12개월" },
+    ],
+  },
+  {
+    fields: [
+      { label: "단축 시간", isHeader: true },
+      { placeholder: "주 ____시간", exampleValue: "주 12시간" },
+      { label: "임금 보전 여부", isHeader: true },
+      { placeholder: "☐ 보전 ☐ 미보전", exampleValue: "☑ 임금 100% 보전" },
+    ],
+  },
+  {
+    fields: [
+      { label: "지급 신청 내역", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청 금액", isHeader: true },
+      { placeholder: "___________원", exampleValue: "2,700만원 (월 30만원×15명×6개월)" },
+      { label: "지급 방법", isHeader: true },
+      { placeholder: "☐ 계좌입금", exampleValue: "☑ 계좌입금" },
+    ],
+  },
+  {
+    fields: [
+      { label: "입금 계좌", isHeader: true },
+      { placeholder: "(은행명) (계좌번호)", exampleValue: "우리은행 1002-345-678901", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "신청일", isHeader: true },
-      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 20일" },
-      { label: "신청인", isHeader: true },
-      { placeholder: "(서명)", exampleValue: "대표 정균형 (인)" },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 7월 20일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인(사업주)", isHeader: true },
+      { placeholder: "(대표자명) (서명 또는 인)", exampleValue: "대표이사 정균형 (인)", colspan: 3 },
     ],
   },
 ];
 
-// 일·가정 양립 환경개선 참여계획 변경 신청서
+// [별지 제4호 서식] 일·가정 양립 환경개선(유연근무 장려금) 참여신청서
 export const 일가정양립환경개선신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "[별지 제4호 서식] 일·가정 양립 환경개선(유연근무 장려금) 참여신청서", exampleValue: "[별지 제4호 서식] 일·가정 양립 환경개선(유연근무 장려금) 참여신청서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장 정보", isHeader: true, colspan: 4 },
+    ],
+  },
   {
     fields: [
       { label: "사업장명", isHeader: true },
       { placeholder: "(사업장명)", exampleValue: "(주)가정사랑" },
       { label: "사업자등록번호", isHeader: true },
-      { placeholder: "(사업자등록번호)", exampleValue: "456-78-90123" },
+      { placeholder: "___-__-_____", exampleValue: "456-78-90123" },
     ],
   },
   {
@@ -13507,33 +13761,78 @@ export const 일가정양립환경개선신청서_DATA: FormRow[] = [
       { label: "대표자", isHeader: true },
       { placeholder: "(대표자명)", exampleValue: "김양립" },
       { label: "연락처", isHeader: true },
-      { placeholder: "(연락처)", exampleValue: "02-4567-8901" },
+      { placeholder: "(전화번호)", exampleValue: "02-4567-8901" },
     ],
   },
   {
     fields: [
-      { label: "기존 참여계획 내용", isHeader: true },
-      { placeholder: "(기존 내용)", exampleValue: "유연근무제 도입 (주 3일 재택)", colspan: 3 },
+      { label: "소재지", isHeader: true },
+      { placeholder: "(사업장 주소)", exampleValue: "서울특별시 서초구 강남대로 465", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "변경 내용", isHeader: true },
-      { placeholder: "(변경 내용)", exampleValue: "유연근무제 확대 (주 4일 재택)", colspan: 3 },
+      { label: "상시근로자 수", isHeader: true },
+      { placeholder: "____명", exampleValue: "30명" },
+      { label: "업종", isHeader: true },
+      { placeholder: "(업종)", exampleValue: "서비스업" },
     ],
   },
   {
     fields: [
-      { label: "변경 사유", isHeader: true },
-      { placeholder: "(변경 사유)", exampleValue: "근로자 만족도 향상 및 생산성 증가로 확대 시행", colspan: 3 },
+      { label: "유연근무제 참여계획", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "유연근무제 유형", isHeader: true },
+      { placeholder: "☐재택근무 ☐원격근무 ☐선택근무 ☐시차출퇴근", exampleValue: "☑ 재택근무", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "도입 예정일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 3월 1일" },
+      { label: "대상 근로자 수", isHeader: true },
+      { placeholder: "____명", exampleValue: "20명" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주당 유연근무일", isHeader: true },
+      { placeholder: "주 ___일", exampleValue: "주 3일" },
+      { label: "참여기간", isHeader: true },
+      { placeholder: "____개월", exampleValue: "12개월" },
+    ],
+  },
+  {
+    fields: [
+      { label: "운영 계획", isHeader: true },
+      { placeholder: "(운영계획 상세 기재)", exampleValue: "재택근무용 노트북 20대 지급, 사내 협업툴 도입, 주 3일 재택근무 허용", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "인프라 구축 내용", isHeader: true },
+      { placeholder: "(인프라 구축 내용)", exampleValue: "화상회의 시스템, VPN 구축, 업무용 노트북 지급", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "예상 지원금", isHeader: true },
+      { placeholder: "___________원", exampleValue: "월 10만원 × 20명 × 12개월 = 24,000,000원", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "신청일", isHeader: true },
-      { placeholder: "____년 __월 __일", exampleValue: "2026년 2월 1일" },
-      { label: "신청인", isHeader: true },
-      { placeholder: "(서명)", exampleValue: "대표 김양립 (인)" },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 2월 1일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인(사업주)", isHeader: true },
+      { placeholder: "(대표자명) (서명 또는 인)", exampleValue: "대표이사 김양립 (인)", colspan: 3 },
     ],
   },
 ];
@@ -13773,43 +14072,113 @@ export const 출산육아기고용안정장려금_단축업무분담지원금_DA
 ];
 
 // 고용촉진장려금 지급 신청서
+// [별지 17] 고용촉진장려금 지급 신청서 (고용창출장려금·고용안정장려금의 신청 및 지급에 관한 규정)
 export const 고용촉진장려금신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "[별지 17] 고용촉진장려금 지급 신청서", exampleValue: "[별지 17] 고용촉진장려금 지급 신청서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장 정보", isHeader: true, colspan: 4 },
+    ],
+  },
   {
     fields: [
       { label: "사업장명", isHeader: true },
       { placeholder: "(사업장명)", exampleValue: "(주)고용촉진" },
       { label: "사업자등록번호", isHeader: true },
-      { placeholder: "(사업자등록번호)", exampleValue: "345-67-89012" },
+      { placeholder: "___-__-_____", exampleValue: "345-67-89012" },
     ],
   },
   {
     fields: [
       { label: "대표자", isHeader: true },
       { placeholder: "(대표자명)", exampleValue: "박고용" },
-      { label: "소재지", isHeader: true },
-      { placeholder: "(주소)", exampleValue: "서울시 강남구 테헤란로 123" },
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "02-3456-7890" },
     ],
   },
   {
     fields: [
-      { label: "신규 채용자 성명", isHeader: true },
+      { label: "소재지", isHeader: true },
+      { placeholder: "(사업장 주소)", exampleValue: "서울특별시 강남구 테헤란로 123, 5층", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "채용 근로자 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "근로자 성명", isHeader: true },
       { placeholder: "(성명)", exampleValue: "김취업" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "950101-1******" },
+    ],
+  },
+  {
+    fields: [
       { label: "채용일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일" },
+      { label: "고용보험 취득일", isHeader: true },
       { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일" },
     ],
   },
   {
     fields: [
-      { label: "취업지원 프로그램", isHeader: true },
-      { placeholder: "(프로그램명)", exampleValue: "국민취업지원제도 1유형", colspan: 3 },
+      { label: "취업지원프로그램", isHeader: true },
+      { placeholder: "(프로그램명)", exampleValue: "국민취업지원제도 1유형 수료", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "지원 금액", isHeader: true },
-      { placeholder: "(금액)", exampleValue: "6개월 고용 시 720만원" },
+      { label: "근로계약 형태", isHeader: true },
+      { placeholder: "(계약형태)", exampleValue: "정규직 (기간의 정함이 없는 근로계약)" },
+      { label: "주 소정근로시간", isHeader: true },
+      { placeholder: "____시간", exampleValue: "40시간" },
+    ],
+  },
+  {
+    fields: [
+      { label: "월 평균임금", isHeader: true },
+      { placeholder: "________원", exampleValue: "2,800,000원" },
+      { label: "지급신청 기간", isHeader: true },
+      { placeholder: "____개월차", exampleValue: "6개월차" },
+    ],
+  },
+  {
+    fields: [
+      { label: "지급 신청 내역", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청 금액", isHeader: true },
+      { placeholder: "(금액)", exampleValue: "720만원 (월 120만원 × 6개월)" },
+      { label: "지급 방법", isHeader: true },
+      { placeholder: "☐ 계좌입금", exampleValue: "☑ 계좌입금" },
+    ],
+  },
+  {
+    fields: [
       { label: "입금 계좌", isHeader: true },
-      { placeholder: "(계좌번호)", exampleValue: "우리 1002-123-456789" },
+      { placeholder: "(은행명) (계좌번호)", exampleValue: "우리은행 1002-123-456789", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 7월 20일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인(사업주)", isHeader: true },
+      { placeholder: "(대표자명) (서명 또는 인)", exampleValue: "대표이사 박고용 (인)", colspan: 3 },
     ],
   },
 ];
@@ -13858,8 +14227,19 @@ export const 정규직전환지원신청서_DATA: FormRow[] = [
   },
 ];
 
-// 출산육아기 고용안정장려금 결과 통지서
+// [별지 35] 출산육아기 고용안정장려금(육아휴직, 육아기 근로시간 단축) 및 대체인력지원금 지급 신청 결과 통지서 (고용창출장려금·고용안정장려금의 신청 및 지급에 관한 규정)
 export const 출산육아기고용안정장려금결과통지서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "[별지 35] 출산육아기 고용안정장려금 지급 신청 결과 통지서", exampleValue: "[별지 35] 출산육아기 고용안정장려금 지급 신청 결과 통지서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "문서 정보", isHeader: true, colspan: 4 },
+    ],
+  },
   {
     fields: [
       { label: "문서번호", isHeader: true },
@@ -13871,29 +14251,106 @@ export const 출산육아기고용안정장려금결과통지서_DATA: FormRow[]
   {
     fields: [
       { label: "수신", isHeader: true },
-      { placeholder: "(사업장명)", exampleValue: "(주)모범기업 대표 김대표" },
-      { label: "발신", isHeader: true },
-      { placeholder: "(고용센터)", exampleValue: "서울강남고용센터장" },
+      { placeholder: "(사업장명) 대표", exampleValue: "(주)모범기업 대표 김대표", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "신청 내용", isHeader: true },
-      { placeholder: "(신청내용)", exampleValue: "출산육아기 고용안정장려금(육아휴직)", colspan: 3 },
+      { label: "발신", isHeader: true },
+      { placeholder: "(고용센터)", exampleValue: "서울강남고용센터장", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "(제목)", exampleValue: "출산육아기 고용안정장려금 지급 신청 결과 통지", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청 사업장", isHeader: true },
+      { placeholder: "(사업장명)", exampleValue: "(주)모범기업" },
+      { label: "사업자등록번호", isHeader: true },
+      { placeholder: "___-__-_____", exampleValue: "123-45-67890" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청 장려금 종류", isHeader: true },
+      { placeholder: "☐육아휴직 ☐육아기근로시간단축 ☐대체인력", exampleValue: "☑ 육아휴직 지원금", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "육아휴직 근로자", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "이육아" },
+      { label: "육아휴직 기간", isHeader: true },
+      { placeholder: "____년 __월 ~ ____년 __월", exampleValue: "2025.2.1 ~ 2026.1.31" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청 기간", isHeader: true },
+      { placeholder: "____개월", exampleValue: "12개월" },
+      { label: "신청 금액", isHeader: true },
+      { placeholder: "_________원", exampleValue: "9,600,000원" },
+    ],
+  },
+  {
+    fields: [
+      { label: "심사 결과", isHeader: true, colspan: 4 },
     ],
   },
   {
     fields: [
       { label: "지급 결정 여부", isHeader: true },
-      { placeholder: "(결정)", exampleValue: "지급 결정", colspan: 3 },
+      { placeholder: "☐지급 ☐부지급", exampleValue: "☑ 지급 결정", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "지급 금액", isHeader: true },
-      { placeholder: "(금액)", exampleValue: "9,600,000원 (월 80만원 × 12개월)" },
+      { placeholder: "_________원", exampleValue: "9,600,000원 (월 80만원 × 12개월)" },
+      { label: "지급 방법", isHeader: true },
+      { placeholder: "(방법)", exampleValue: "계좌입금" },
+    ],
+  },
+  {
+    fields: [
       { label: "지급 예정일", isHeader: true },
-      { placeholder: "(예정일)", exampleValue: "2026년 2월 25일" },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 2월 25일" },
+      { label: "입금 계좌", isHeader: true },
+      { placeholder: "(계좌번호)", exampleValue: "우리 1002-123-456789" },
+    ],
+  },
+  {
+    fields: [
+      { label: "부지급 사유 (해당 시)", isHeader: true },
+      { placeholder: "(부지급 사유)", exampleValue: "-", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "담당자 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "담당자", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김담당" },
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "02-1234-5678" },
+    ],
+  },
+  {
+    fields: [
+      { label: "통지기관", isHeader: true },
+      { placeholder: "(고용센터)", exampleValue: "서울강남고용센터", colspan: 3 },
     ],
   },
 ];
@@ -13938,168 +14395,442 @@ export const 고용장려금해지확인서_DATA: FormRow[] = [
   },
 ];
 
-// 워라밸일자리 장려금 - 실근로시간단축제 참여 신청서
+// [별지 26의3] 워라밸일자리 장려금(실근로시간단축제) 지급 신청서 (고용창출장려금·고용안정장려금의 신청 및 지급에 관한 규정)
 export const 워라밸일자리장려금_실근로시간단축_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "[별지 26의3] 워라밸일자리 장려금(실근로시간단축제) 지급 신청서", exampleValue: "[별지 26의3] 워라밸일자리 장려금(실근로시간단축제) 지급 신청서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장 정보", isHeader: true, colspan: 4 },
+    ],
+  },
   {
     fields: [
       { label: "사업장명", isHeader: true },
       { placeholder: "(사업장명)", exampleValue: "(주)실근로단축" },
       { label: "사업자등록번호", isHeader: true },
-      { placeholder: "(사업자등록번호)", exampleValue: "678-90-12345" },
+      { placeholder: "___-__-_____", exampleValue: "678-90-12345" },
     ],
   },
   {
     fields: [
       { label: "대표자", isHeader: true },
       { placeholder: "(대표자명)", exampleValue: "정워라밸" },
-      { label: "상시근로자 수", isHeader: true },
-      { placeholder: "(인원)", exampleValue: "25명" },
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "02-6789-0123" },
     ],
   },
   {
     fields: [
-      { label: "실근로시간 단축 전", isHeader: true },
-      { placeholder: "(시간)", exampleValue: "주 52시간" },
-      { label: "단축 후", isHeader: true },
-      { placeholder: "(시간)", exampleValue: "주 40시간" },
+      { label: "소재지", isHeader: true },
+      { placeholder: "(사업장 주소)", exampleValue: "경기도 성남시 분당구 판교역로 166", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "상시근로자 수", isHeader: true },
+      { placeholder: "____명", exampleValue: "25명" },
+      { label: "업종", isHeader: true },
+      { placeholder: "(업종)", exampleValue: "정보통신업" },
+    ],
+  },
+  {
+    fields: [
+      { label: "실근로시간단축제 내용", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "단축 전 소정근로시간", isHeader: true },
+      { placeholder: "주 ____시간", exampleValue: "주 52시간" },
+      { label: "단축 후 소정근로시간", isHeader: true },
+      { placeholder: "주 ____시간", exampleValue: "주 40시간" },
+    ],
+  },
+  {
+    fields: [
+      { label: "단축 시간", isHeader: true },
+      { placeholder: "주 ____시간", exampleValue: "주 12시간" },
+      { label: "임금 보전율", isHeader: true },
+      { placeholder: "____%", exampleValue: "100% (임금 감소 없음)" },
     ],
   },
   {
     fields: [
       { label: "단축 실시 기간", isHeader: true },
-      { placeholder: "____년 __월 __일 ~ ____년 __월 __일", exampleValue: "2026.01.01 ~ 2026.12.31", colspan: 3 },
+      { placeholder: "____년 __월 __일 ~ ____년 __월 __일", exampleValue: "2026년 1월 1일 ~ 2026년 12월 31일", colspan: 3 },
     ],
   },
   {
     fields: [
       { label: "대상 근로자 수", isHeader: true },
-      { placeholder: "(인원)", exampleValue: "10명" },
+      { placeholder: "____명", exampleValue: "10명" },
+      { label: "지급신청 기간", isHeader: true },
+      { placeholder: "____개월차", exampleValue: "6개월차" },
+    ],
+  },
+  {
+    fields: [
+      { label: "지급 신청 내역", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
       { label: "신청 금액", isHeader: true },
-      { placeholder: "(금액)", exampleValue: "월 30만원 × 10명 × 12개월" },
+      { placeholder: "___________원", exampleValue: "18,000,000원 (월 30만원×10명×6개월)" },
+      { label: "지급 방법", isHeader: true },
+      { placeholder: "☐ 계좌입금", exampleValue: "☑ 계좌입금" },
+    ],
+  },
+  {
+    fields: [
+      { label: "입금 계좌", isHeader: true },
+      { placeholder: "(은행명) (계좌번호)", exampleValue: "신한은행 100-234-567890", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 7월 20일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인(사업주)", isHeader: true },
+      { placeholder: "(대표자명) (서명 또는 인)", exampleValue: "대표이사 정워라밸 (인)", colspan: 3 },
     ],
   },
 ];
 
-// 국민연금·고용보험 보험료 지원신청서
+// [별지 제31호서식] 국민연금 보험료 지원신청서, 고용보험 보험료 지원신청서 (근로자 종사 사업장) (고용보험 및 산업재해보상보험의 보험료징수 등에 관한 법률 시행규칙)
 export const 국민연금고용보험료지원신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "[별지 제31호서식] 국민연금·고용보험 보험료 지원신청서", exampleValue: "[별지 제31호서식] 국민연금·고용보험 보험료 지원신청서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장 정보", isHeader: true, colspan: 4 },
+    ],
+  },
   {
     fields: [
       { label: "사업장명", isHeader: true },
       { placeholder: "(사업장명)", exampleValue: "(주)소규모사업장" },
       { label: "사업자등록번호", isHeader: true },
-      { placeholder: "(사업자등록번호)", exampleValue: "789-01-23456" },
+      { placeholder: "___-__-_____", exampleValue: "789-01-23456" },
     ],
   },
   {
     fields: [
       { label: "대표자", isHeader: true },
       { placeholder: "(대표자명)", exampleValue: "홍사장" },
-      { label: "상시근로자 수", isHeader: true },
-      { placeholder: "(인원)", exampleValue: "8명" },
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "02-7890-1234" },
     ],
   },
   {
     fields: [
-      { label: "지원 대상 근로자", isHeader: true },
+      { label: "사업장 소재지", isHeader: true },
+      { placeholder: "(주소)", exampleValue: "경기도 고양시 일산동구 중앙로 1234", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "상시근로자 수", isHeader: true },
+      { placeholder: "____명", exampleValue: "8명 (10인 미만)" },
+      { label: "업종", isHeader: true },
+      { placeholder: "(업종)", exampleValue: "제조업" },
+    ],
+  },
+  {
+    fields: [
+      { label: "지원 대상 근로자 정보", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "근로자 성명", isHeader: true },
       { placeholder: "(성명)", exampleValue: "김신입" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "950101-1******" },
+    ],
+  },
+  {
+    fields: [
       { label: "월 보수액", isHeader: true },
-      { placeholder: "(금액)", exampleValue: "2,300,000원" },
+      { placeholder: "_________원", exampleValue: "2,300,000원" },
+      { label: "입사일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "보험료 지원 내역", isHeader: true, colspan: 4 },
     ],
   },
   {
     fields: [
       { label: "국민연금 보험료", isHeader: true },
-      { placeholder: "(금액)", exampleValue: "103,500원 (4.5%)" },
+      { placeholder: "______원 (4.5%)", exampleValue: "103,500원 (사업주 부담분)" },
       { label: "고용보험 보험료", isHeader: true },
-      { placeholder: "(금액)", exampleValue: "20,700원 (0.9%)" },
+      { placeholder: "______원 (0.9%)", exampleValue: "20,700원 (사업주 부담분)" },
     ],
   },
   {
     fields: [
+      { label: "월 보험료 합계", isHeader: true },
+      { placeholder: "________원", exampleValue: "124,200원" },
       { label: "지원율", isHeader: true },
-      { placeholder: "(비율)", exampleValue: "80% 지원 (두루누리 사업)" },
+      { placeholder: "____%", exampleValue: "80% (두루누리 사업)" },
+    ],
+  },
+  {
+    fields: [
       { label: "월 지원 예상액", isHeader: true },
-      { placeholder: "(금액)", exampleValue: "99,360원" },
+      { placeholder: "________원", exampleValue: "99,360원 (124,200원 × 80%)" },
+      { label: "지원 기간", isHeader: true },
+      { placeholder: "____개월", exampleValue: "36개월" },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청 사유", isHeader: true },
+      { placeholder: "☐신규가입 ☐계속지원", exampleValue: "☑ 신규가입", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "입금 계좌", isHeader: true },
+      { placeholder: "(은행명) (계좌번호) (예금주)", exampleValue: "농협은행 123-45-678901 (주)소규모사업장", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 2월 1일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인(사업주)", isHeader: true },
+      { placeholder: "(대표자명) (서명 또는 인)", exampleValue: "대표이사 홍사장 (인)", colspan: 3 },
     ],
   },
 ];
 
-// 일·가정 양립 환경개선 참여계획 변경 신청서
+// [별지 제16호 서식] 일·가정 양립 환경개선 참여계획 변경 신청서 (고용창출장려금·고용안정장려금의 신청 및 지급에 관한 규정)
 export const 일가정양립환경개선변경신청서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "[별지 제16호 서식] 일·가정 양립 환경개선 참여계획 변경 신청서", exampleValue: "[별지 제16호 서식] 일·가정 양립 환경개선 참여계획 변경 신청서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장 정보", isHeader: true, colspan: 4 },
+    ],
+  },
   {
     fields: [
       { label: "사업장명", isHeader: true },
       { placeholder: "(사업장명)", exampleValue: "(주)환경개선기업" },
       { label: "사업자등록번호", isHeader: true },
-      { placeholder: "(사업자등록번호)", exampleValue: "890-12-34567" },
+      { placeholder: "___-__-_____", exampleValue: "890-12-34567" },
+    ],
+  },
+  {
+    fields: [
+      { label: "대표자", isHeader: true },
+      { placeholder: "(대표자명)", exampleValue: "박변경" },
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "02-8901-2345" },
     ],
   },
   {
     fields: [
       { label: "기존 참여 사업", isHeader: true },
-      { placeholder: "(사업명)", exampleValue: "유연근무제 인프라 구축", colspan: 3 },
+      { placeholder: "☐유연근무장려금 ☐일생활균형인프라", exampleValue: "☑ 유연근무장려금", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "변경 전 계획", isHeader: true },
-      { placeholder: "(기존 계획)", exampleValue: "재택근무용 노트북 10대 구입", colspan: 3 },
+      { label: "참여 승인일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 10일" },
+      { label: "참여 승인번호", isHeader: true },
+      { placeholder: "(승인번호)", exampleValue: "서울-2026-001" },
     ],
   },
   {
     fields: [
-      { label: "변경 후 계획", isHeader: true },
-      { placeholder: "(변경 계획)", exampleValue: "재택근무용 노트북 8대 + VPN 장비 1식", colspan: 3 },
+      { label: "변경 전 참여계획", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "변경 전 계획 내용", isHeader: true },
+      { placeholder: "(기존 계획)", exampleValue: "재택근무용 노트북 10대 구입 및 협업툴 도입", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "대상 근로자 수", isHeader: true },
+      { placeholder: "____명", exampleValue: "10명" },
+      { label: "주당 유연근무일", isHeader: true },
+      { placeholder: "주 ___일", exampleValue: "주 2일" },
+    ],
+  },
+  {
+    fields: [
+      { label: "변경 후 참여계획", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "변경 후 계획 내용", isHeader: true },
+      { placeholder: "(변경 계획)", exampleValue: "재택근무용 노트북 8대 + VPN 보안장비 1식 + 화상회의 시스템", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "대상 근로자 수", isHeader: true },
+      { placeholder: "____명", exampleValue: "12명" },
+      { label: "주당 유연근무일", isHeader: true },
+      { placeholder: "주 ___일", exampleValue: "주 3일" },
     ],
   },
   {
     fields: [
       { label: "변경 사유", isHeader: true },
-      { placeholder: "(변경 사유)", exampleValue: "보안 강화를 위한 VPN 장비 추가 도입 필요", colspan: 3 },
+      { placeholder: "(변경 사유를 구체적으로 기재)", exampleValue: "보안 강화 필요성 대두로 VPN 장비 추가 도입. 근로자 만족도 향상으로 대상 인원 및 재택근무일 확대", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 3월 15일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인(사업주)", isHeader: true },
+      { placeholder: "(대표자명) (서명 또는 인)", exampleValue: "대표이사 박변경 (인)", colspan: 3 },
     ],
   },
 ];
 
-// 일·가정 양립 환경개선 (유연근무 장려금) 참여신청서
+// [별지 제24호 서식] 일·가정 양립 환경개선(유연근무 장려금) 지급신청서
 export const 일가정양립환경개선_유연근무장려금_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "서식명", isHeader: true },
+      { placeholder: "[별지 제24호 서식] 일·가정 양립 환경개선(유연근무 장려금) 지급신청서", exampleValue: "[별지 제24호 서식] 일·가정 양립 환경개선(유연근무 장려금) 지급신청서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "사업장 정보", isHeader: true, colspan: 4 },
+    ],
+  },
   {
     fields: [
       { label: "사업장명", isHeader: true },
       { placeholder: "(사업장명)", exampleValue: "(주)유연근무기업" },
       { label: "사업자등록번호", isHeader: true },
-      { placeholder: "(사업자등록번호)", exampleValue: "901-23-45678" },
+      { placeholder: "___-__-_____", exampleValue: "901-23-45678" },
     ],
   },
   {
     fields: [
       { label: "대표자", isHeader: true },
       { placeholder: "(대표자명)", exampleValue: "유대표" },
+      { label: "연락처", isHeader: true },
+      { placeholder: "(전화번호)", exampleValue: "02-9012-3456" },
+    ],
+  },
+  {
+    fields: [
+      { label: "소재지", isHeader: true },
+      { placeholder: "(사업장 주소)", exampleValue: "서울특별시 송파구 올림픽로 300", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
       { label: "업종", isHeader: true },
       { placeholder: "(업종)", exampleValue: "소프트웨어 개발업" },
+      { label: "상시근로자 수", isHeader: true },
+      { placeholder: "____명", exampleValue: "30명" },
+    ],
+  },
+  {
+    fields: [
+      { label: "유연근무제 운영 내용", isHeader: true, colspan: 4 },
     ],
   },
   {
     fields: [
       { label: "유연근무제 유형", isHeader: true },
-      { placeholder: "(유형)", exampleValue: "재택근무제" },
-      { label: "도입 예정일", isHeader: true },
-      { placeholder: "____년 __월 __일", exampleValue: "2026년 3월 1일" },
+      { placeholder: "☐재택근무 ☐원격근무 ☐선택근무 ☐시차출퇴근", exampleValue: "☑ 재택근무", colspan: 3 },
     ],
   },
   {
     fields: [
+      { label: "도입일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 3월 1일" },
       { label: "대상 근로자 수", isHeader: true },
-      { placeholder: "(인원)", exampleValue: "15명" },
-      { label: "주당 재택근무일", isHeader: true },
-      { placeholder: "(일수)", exampleValue: "주 2일" },
+      { placeholder: "____명", exampleValue: "15명" },
+    ],
+  },
+  {
+    fields: [
+      { label: "주당 유연근무일", isHeader: true },
+      { placeholder: "주 ___일", exampleValue: "주 2일" },
+      { label: "지급신청 기간", isHeader: true },
+      { placeholder: "____개월차", exampleValue: "6개월차" },
+    ],
+  },
+  {
+    fields: [
+      { label: "인프라 구축 내용", isHeader: true },
+      { placeholder: "(인프라 구축 내용)", exampleValue: "재택근무용 노트북 15대, VPN 시스템, 화상회의 솔루션 도입", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "지급 신청 내역", isHeader: true, colspan: 4 },
     ],
   },
   {
     fields: [
       { label: "신청 장려금", isHeader: true },
-      { placeholder: "(금액)", exampleValue: "월 10만원 × 15명 × 12개월 = 1,800만원" },
+      { placeholder: "___________원", exampleValue: "9,000,000원 (월 10만원 × 15명 × 6개월)" },
+      { label: "지급 방법", isHeader: true },
+      { placeholder: "☐ 계좌입금", exampleValue: "☑ 계좌입금" },
+    ],
+  },
+  {
+    fields: [
       { label: "입금 계좌", isHeader: true },
-      { placeholder: "(계좌번호)", exampleValue: "기업 123-456789-01-012" },
+      { placeholder: "(은행명) (계좌번호)", exampleValue: "기업은행 123-456789-01-012", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 9월 10일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "신청인(사업주)", isHeader: true },
+      { placeholder: "(대표자명) (서명 또는 인)", exampleValue: "대표이사 유대표 (인)", colspan: 3 },
     ],
   },
 ];
