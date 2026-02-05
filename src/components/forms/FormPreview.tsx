@@ -15950,3 +15950,264 @@ export const 임대료증액청구서_DATA: FormRow[] = [
 ];
 
 // Export all forms
+
+// 개명허가청구
+export const 개명허가청구_DATA: FormRow[] = [
+  { fields: [{ label: "문서 제목", isHeader: true }, { placeholder: "개명허가청구", exampleValue: "개명허가청구", colspan: 3 }] },
+  { fields: [{ label: "본적", isHeader: true }, { placeholder: "본적지", exampleValue: "OO시 OO구 OO동", colspan: 3 }] },
+  { fields: [{ label: "주소", isHeader: true }, { placeholder: "주소", exampleValue: "OO시 OO구 OO동 (우편번호 123-456)", colspan: 3 }] },
+  { fields: [{ label: "청구인 겸 사건본인", isHeader: true }, { placeholder: "성명 (한자)", exampleValue: "이병화 (李炳和)", colspan: 3 }] },
+  { fields: [{ label: "전화", isHeader: true }, { placeholder: "전화번호", exampleValue: "010-1234-5678", colspan: 3 }] },
+  { fields: [{ label: "위 법정대리인 친권자", isHeader: true }, { placeholder: "부모", exampleValue: "부 이OO / 모 OOO", colspan: 3 }] },
+  { fields: [{ label: "신청취지", isHeader: true }, { placeholder: "개명 신청 내용", exampleValue: "OO시 OO구청에 비치된 같은 구 OO동 호적중 청구인 겸 사건본인의 이름 '병화(炳和)'를 '태윤(兌潤)'으로 개명하는 것을 허가한다는 결정을 구합니다.", colspan: 3 }] },
+  { fields: [{ label: "청구원인", isHeader: true }, { placeholder: "개명 사유 (1-4)", exampleValue: "1. 출생 후 통명칭으로 '태윤'을 사용해왔으나 출생신고는 '병화'로 되어 있음\n2. 초등학교 취학 시 혼란 예상\n3. 작명가의 조언에 따라 현재 이름이 불길하다는 의견\n4. 사실상 사용 중인 '태윤'으로 개명하고자 함", colspan: 3 }] },
+  { fields: [{ label: "첨부서류", isHeader: true }, { placeholder: "서류 목록", exampleValue: "1. 호적등본 1통\n2. 주민등록등본 1통\n3. 재원증명서 1통\n4. 인우보증서 1통\n5. 인우주민등록등본 1통\n6. 인우인감증명서 1통\n7. 납부서 1통", colspan: 3 }] },
+  { fields: [{ label: "작성일", isHeader: true }, { placeholder: "년 월 일", exampleValue: "2026년 2월 5일", colspan: 3 }] },
+  { fields: [{ label: "청구인 겸 사건본인의 법정대리인", isHeader: true }, { placeholder: "친권자 부모", exampleValue: "친권자 부 이OO / 모 OOO (서명)", colspan: 3 }] },
+  { fields: [{ label: "제출처", isHeader: true }, { placeholder: "법원", exampleValue: "OO지방법원 OO지원 귀중", colspan: 3 }] },
+];
+
+// 건물수리청구
+export const 건물수리청구_DATA: FormRow[] = [
+  { fields: [{ label: "문서 제목", isHeader: true }, { placeholder: "건물 수리 청구", exampleValue: "건물 수리 청구", colspan: 3 }] },
+  { fields: [{ label: "하자위치", isHeader: true }, { label: "하자내용", isHeader: true }, { label: "보수청구내용", isHeader: true }] },
+  { fields: [{ placeholder: "1.", exampleValue: "안방 벽" }, { placeholder: "", exampleValue: "균열 발생, 빗물 누수" }, { placeholder: "", exampleValue: "벽면 보수 및 방수 처리" }] },
+  { fields: [{ placeholder: "2.", exampleValue: "화장실 천장" }, { placeholder: "", exampleValue: "곰팡이 발생" }, { placeholder: "", exampleValue: "천장 교체 및 환기 개선" }] },
+  { fields: [{ placeholder: "3.", exampleValue: "거실 바닥" }, { placeholder: "", exampleValue: "타일 균열" }, { placeholder: "", exampleValue: "바닥 타일 교체" }] },
+  { fields: [{ placeholder: "임차 정보", exampleValue: "본인은 귀하로부터 2024년 3월 1일에 서울시 강남구 역삼동 123번지 건물 30평을 임차하여 사용중에 있습니다.", colspan: 3 }] },
+  { fields: [{ placeholder: "하자 발생 사실", exampleValue: "그러나 건물의 안방 벽에 균열이 발생하여 지난 2025년 7월 장마에 빗물의 누수가 심하여 가재의 일부가 썩는 등 피해를 입었으며 속히 수리하지 않고는 도저히 임대차의 목적을 달성할 수 없습니다.", colspan: 3 }] },
+  { fields: [{ placeholder: "수리 요청", exampleValue: "바쁘시더라도 조속한 시일내에 보완공사를 해주시기 바라며 현재까지 발견된 하자 내용은 아래와 같습니다.", colspan: 3 }] },
+  { fields: [{ label: "아래", isHeader: true, colspan: 3 }] },
+  { fields: [{ label: "작성일", isHeader: true }, { placeholder: "년 월 일", exampleValue: "2026년 2월 5일", colspan: 2 }] },
+  { fields: [{ label: "임차인 주소", isHeader: true }, { placeholder: "주소", exampleValue: "서울시 강남구 역삼동 123번지", colspan: 2 }] },
+  { fields: [{ label: "임차인 성명", isHeader: true }, { placeholder: "성명", exampleValue: "김임차 (인)", colspan: 2 }] },
+  { fields: [{ label: "임대인 주소", isHeader: true }, { placeholder: "주소", exampleValue: "서울시 송파구 OO동 456번지", colspan: 2 }] },
+  { fields: [{ label: "임대인 성명", isHeader: true }, { placeholder: "성명", exampleValue: "이임대 귀하", colspan: 2 }] },
+];
+
+// 과세전적부심사청구서
+export const 과세전적부심사청구서_DATA: FormRow[] = [
+  { fields: [{ label: "문서 제목", isHeader: true }, { placeholder: "과세전 적부심사 청구서", exampleValue: "과세전 적부심사 청구서", colspan: 2 }, { label: "처리기간", isHeader: true }, { placeholder: "30일", exampleValue: "30일" }] },
+  { fields: [{ label: "청구인 정보", isHeader: true, colspan: 4 }] },
+  { fields: [{ label: "상호(법인명)", isHeader: true }, { placeholder: "상호 또는 법인명", exampleValue: "(주)OO산업" }, { label: "주민(법인)등록번호", isHeader: true }, { placeholder: "사업자등록번호", exampleValue: "123-45-67890" }] },
+  { fields: [{ label: "성명(대표자)", isHeader: true }, { placeholder: "대표자명", exampleValue: "김철수" }, { label: "전화번호(휴대전화)", isHeader: true }, { placeholder: "전화번호", exampleValue: "010-1234-5678" }] },
+  { fields: [{ label: "주소(사업장)", isHeader: true }, { placeholder: "우편번호 및 주소", exampleValue: "(우 12345) 서울시 강남구 테헤란로 123", colspan: 3 }] },
+  { fields: [{ label: "전자우편(e-mail)", isHeader: true }, { placeholder: "이메일 주소", exampleValue: "abc@example.com", colspan: 3 }] },
+  { fields: [{ label: "세무조사결과·과세예고 통지관서", isHeader: true }, { placeholder: "관서명", exampleValue: "강남세무서", colspan: 3 }] },
+  { fields: [{ label: "통지연월일(통지 받은 날)", isHeader: true }, { placeholder: "20XX. XX. XX. (20XX. XX. XX.)", exampleValue: "2026. 1. 15. (2026. 1. 20.)", colspan: 3 }] },
+  { fields: [{ label: "청구관련 세액", isHeader: true, colspan: 4 }] },
+  { fields: [{ label: "세목", isHeader: true }, { placeholder: "세목", exampleValue: "법인세" }, { label: "과세대상 기간", isHeader: true }, { placeholder: "과세기간", exampleValue: "2025.1.1~2025.12.31" }] },
+  { fields: [{ label: "세액(수입금액)", isHeader: true }, { placeholder: "세액", exampleValue: "100,000,000원", colspan: 3 }] },
+  { fields: [{ label: "청구내용 및 이유", isHeader: true }, { placeholder: "불복내용과 이유를 구체적으로 기재", exampleValue: "1. 과세 처분의 위법·부당 사유\n2. 구체적인 근거 및 증빙자료\n3. 청구 취지 및 요청사항", colspan: 3 }] },
+  { fields: [{ label: "첨부서류", isHeader: true }, { placeholder: "첨부서류 목록", exampleValue: "• 과세예고통지서 사본 1부\n• 청구이유서 1부\n• 관련 증빙서류 각 1부", colspan: 3 }] },
+  { fields: [{ placeholder: "청구 취지", exampleValue: "국세기본법 제81조의10 및 동법 시행령 제63조의8과 과세전적부심사사무처리규정 제10조 제1호의 규정에 의하여 위와 같이 과세전적부심사를 청구합니다.", colspan: 4 }] },
+  { fields: [{ label: "작성일", isHeader: true }, { placeholder: "20XX년 XX월 XX일", exampleValue: "2026년 2월 5일", colspan: 3 }] },
+  { fields: [{ label: "청구인", isHeader: true }, { placeholder: "서명 또는 날인", exampleValue: "김철수 (인)", colspan: 3 }] },
+  { fields: [{ label: "대리인", isHeader: true }, { placeholder: "서명 또는 날인", exampleValue: "세무사 이OO (인)", colspan: 3 }] },
+  { fields: [{ label: "제출처", isHeader: true }, { placeholder: "제출 기관", exampleValue: "OO세무서장 귀하 / OO지방국세청장 귀하", colspan: 3 }] },
+  { fields: [{ label: "위임장 (선택)", isHeader: true }, { placeholder: "대리인 선임 시 작성", exampleValue: "대리인: 세무사 이OO\n사업장: 서울시 강남구 OO로 456 (사업자등록번호: 987-65-43210)\n전화번호: 02-1234-5678", colspan: 3 }] },
+];
+
+// 구조금지급청구서
+export const 구조금지급청구서_DATA: FormRow[] = [
+  { fields: [{ label: "문서 제목", isHeader: true }, { placeholder: "구조금 지급 청구서", exampleValue: "구조금 지급 청구서", colspan: 3 }] },
+  { fields: [{ label: "제출처", isHeader: true }, { placeholder: "OO지방검찰청 귀중", exampleValue: "서울중앙지방검찰청 귀중", colspan: 3 }] },
+  { fields: [{ label: "작성일", isHeader: true }, { placeholder: "20OO년 O월 O일", exampleValue: "2026년 2월 5일", colspan: 3 }] },
+  { fields: [{ label: "청구인", isHeader: true }, { placeholder: "(OOO) (인)", exampleValue: "김철수 (인)", colspan: 3 }] },
+  { fields: [{ label: "주소", isHeader: true }, { placeholder: "주소", exampleValue: "서울시 강남구 테헤란로 123 (우편번호 12345)", colspan: 3 }] },
+  { fields: [{ placeholder: "안내 문구", exampleValue: "다음과 같이 구조금의 지급을 청구합니다.", colspan: 3 }] },
+  { fields: [{ label: "청구금액", isHeader: true }, { placeholder: "___원정", exampleValue: "10,000,000원정", colspan: 3 }] },
+  { fields: [{ label: "구조결정 - 사건번호", isHeader: true }, { placeholder: "구심 년 제 호", exampleValue: "구심 2025 제 12345 호", colspan: 3 }] },
+  { fields: [{ label: "결정일자", isHeader: true }, { placeholder: "20OO년 O월 O일", exampleValue: "2025년 12월 15일", colspan: 3 }] },
+  { fields: [{ label: "결정심의회명", isHeader: true }, { placeholder: "OO지방검찰청 범죄피해구조심의회", exampleValue: "서울중앙지방검찰청 범죄피해구조심의회", colspan: 3 }] },
+  { fields: [{ label: "종류", isHeader: true }, { placeholder: "유족구조금, 장해구조금", exampleValue: "유족구조금", colspan: 3 }] },
+  { fields: [{ label: "지급방법", isHeader: true, colspan: 3 }] },
+  { fields: [{ label: "구좌입금 - 은행명", isHeader: true }, { placeholder: "은행명", exampleValue: "국민은행", colspan: 2 }] },
+  { fields: [{ label: "구좌번호", isHeader: true }, { placeholder: "계좌번호", exampleValue: "123-456-78901234", colspan: 2 }] },
+  { fields: [{ label: "예금종류", isHeader: true }, { placeholder: "예금종류", exampleValue: "보통예금" }, { label: "예금주", isHeader: true }, { placeholder: "예금주", exampleValue: "김철수" }] },
+  { fields: [{ label: "직접지급", isHeader: true }, { placeholder: "OO지방검찰청 지출관으로부터 직접 수령", exampleValue: "□ 서울중앙지방검찰청 지출관으로부터 직접 수령", colspan: 3 }] },
+  { fields: [{ placeholder: "비고", exampleValue: "※ 지급방법란은 희망하는 항목을 ○으로 둘러주시고, 그에 해당되는 빈칸을 정확히 기입하여 주십시오.", colspan: 3 }] },
+];
+
+// 국공유지소유권이전등기청구서
+export const 국공유지소유권이전등기청구서_DATA: FormRow[] = [
+  { fields: [{ label: "문서 제목", isHeader: true }, { placeholder: "국·공유지 소유권이전등기청구서", exampleValue: "국·공유지 소유권이전등기청구서", colspan: 2 }, { label: "처리기간", isHeader: true }, { placeholder: "90일", exampleValue: "90일" }] },
+  { fields: [{ label: "청구인 정보", isHeader: true, colspan: 4 }] },
+  { fields: [{ label: "주소", isHeader: true }, { placeholder: "주소", exampleValue: "경기도 수원시 팔달구 OO로 123", colspan: 3 }] },
+  { fields: [{ label: "주민등록번호", isHeader: true }, { placeholder: "주민등록번호", exampleValue: "650101-1******" }, { label: "성명", isHeader: true }, { placeholder: "성명", exampleValue: "김철수" }] },
+  { fields: [{ label: "생년월일", isHeader: true }, { placeholder: "19XX. XX. XX.생", exampleValue: "1965. 1. 1.생", colspan: 3 }] },
+  { fields: [{ label: "토지 정보", isHeader: true, colspan: 4 }] },
+  { fields: [{ label: "소재지", isHeader: true }, { label: "지번", isHeader: true }, { label: "지목", isHeader: true }, { label: "매도토지 면적", isHeader: true }, { label: "매도청", isHeader: true }, { label: "총상환액", isHeader: true }, { label: "상환완료일", isHeader: true }, { label: "비고", isHeader: true }] },
+  { fields: [{ placeholder: "소재지", exampleValue: "경기도 수원시 팔달구" }, { placeholder: "지번", exampleValue: "123-45" }, { placeholder: "지목", exampleValue: "전" }, { placeholder: "면적", exampleValue: "500㎡" }, { placeholder: "매도청", exampleValue: "수원시청" }, { placeholder: "상환액", exampleValue: "50,000,000원" }, { placeholder: "완료일", exampleValue: "2025.12.31" }, { placeholder: "비고", exampleValue: "" }] },
+  { fields: [{ placeholder: "소재지", exampleValue: "" }, { placeholder: "지번", exampleValue: "" }, { placeholder: "지목", exampleValue: "" }, { placeholder: "면적", exampleValue: "" }, { placeholder: "매도청", exampleValue: "" }, { placeholder: "상환액", exampleValue: "" }, { placeholder: "완료일", exampleValue: "" }, { placeholder: "비고", exampleValue: "" }] },
+  { fields: [{ placeholder: "소재지", exampleValue: "" }, { placeholder: "지번", exampleValue: "" }, { placeholder: "지목", exampleValue: "" }, { placeholder: "면적", exampleValue: "" }, { placeholder: "매도청", exampleValue: "" }, { placeholder: "상환액", exampleValue: "" }, { placeholder: "완료일", exampleValue: "" }, { placeholder: "비고", exampleValue: "" }] },
+  { fields: [{ placeholder: "청구 취지", exampleValue: "화전정리에관한법률시행령 제18조의 규정에 의하여 위에 표시된 토지에 대한 토지대가의 상환을 완료하고 관계서류를 갖추어 이전등기를 청구합니다.", colspan: 8 }] },
+  { fields: [{ label: "작성일", isHeader: true }, { placeholder: "20OO년 O월 O일", exampleValue: "2026년 2월 5일", colspan: 7 }] },
+  { fields: [{ label: "청구인", isHeader: true }, { placeholder: "서명 또는 날인", exampleValue: "김철수 (인)", colspan: 7 }] },
+  { fields: [{ label: "제출처", isHeader: true }, { placeholder: "OO 귀하", exampleValue: "수원시청 귀하", colspan: 7 }] },
+  { fields: [{ label: "수입인지", isHeader: true }, { placeholder: "없음", exampleValue: "없음", colspan: 7 }] },
+  { fields: [{ placeholder: "구비서류", exampleValue: "• 상환완료증명서\n  - 국유지: 국유림관리소장 발급\n  - 공유지: 지방자치단체장 발급", colspan: 8 }] },
+];
+
+// 국선변호인선정청구서
+export const 국선변호인선정청구서_DATA: FormRow[] = [
+  { fields: [{ label: "문서 제목", isHeader: true }, { placeholder: "고지확인서 겸 국선변호인 선정 청구서", exampleValue: "고지확인서 겸 국선변호인 선정 청구서", colspan: 3 }] },
+  { fields: [{ label: "재판부", isHeader: true }, { placeholder: "제 형사부(단독)", exampleValue: "제3형사부(단독)", colspan: 3 }] },
+  { fields: [{ label: "사건번호", isHeader: true }, { placeholder: "사건번호", exampleValue: "2025고단12345" }, { label: "죄명", isHeader: true }, { placeholder: "죄명", exampleValue: "사기" }] },
+  { fields: [{ label: "피고인(피의자) 정보", isHeader: true, colspan: 4 }] },
+  { fields: [{ label: "성명", isHeader: true }, { placeholder: "성명", exampleValue: "김철수" }, { label: "직업", isHeader: true }, { placeholder: "직업", exampleValue: "회사원" }] },
+  { fields: [{ label: "주민등록번호", isHeader: true }, { placeholder: "주민등록번호", exampleValue: "800101-1******", colspan: 3 }] },
+  { fields: [{ label: "구속/불구속", isHeader: true }, { placeholder: "□구속 □불구속", exampleValue: "☑구속 □불구속", colspan: 3 }] },
+  { fields: [{ label: "주거", isHeader: true }, { placeholder: "주소", exampleValue: "서울시 강남구 테헤란로 123 (OO아파트 101동 202호)", colspan: 3 }] },
+  { fields: [{ placeholder: "확인 문구", exampleValue: "국선변호인 선정에 대한 고지를 틀림없이 받았음을 확인합니다.", colspan: 4 }] },
+  { fields: [{ placeholder: "의견 안내", exampleValue: "국선변호인 선정에 관한 의견은 다음과 같습니다. (해당란에 ✓ 표시)", colspan: 4 }] },
+  { fields: [{ label: "국선변호인 선정 청구", isHeader: true, colspan: 4 }] },
+  { fields: [{ placeholder: "청구함", exampleValue: "☑ 국선변호인 선정을 청구합니다.", colspan: 4 }] },
+  { fields: [{ label: "청구 사유", isHeader: true }, { placeholder: "□ 빈곤 □ 기타", exampleValue: "☑ 빈곤(생활보호대상자 등)\n□ 기타 사유 [현재의 가정형편상 개인적으로 사선변호인을 선임하기 어려움]", colspan: 3 }] },
+  { fields: [{ placeholder: "참고사항", exampleValue: "※ 기타 참고할 만한 사항이 있으면 기재하십시오.\n• 현재 실직 상태로 수입 없음\n• 부양가족 3명 (배우자, 자녀 2명)\n• 국민기초생활수급자 해당", colspan: 4 }] },
+  { fields: [{ placeholder: "청구하지 않음", exampleValue: "□ 국선변호인 선정을 청구하지 않습니다.\n  □ 사선변호인을 선임하였거나 선임할 예정임\n  □ 국선변호는 원하지 아니함", colspan: 4 }] },
+  { fields: [{ label: "작성일", isHeader: true }, { placeholder: "19XX. XX. XX.", exampleValue: "2026. 2. 5.", colspan: 3 }] },
+  { fields: [{ label: "피고인(피의자)", isHeader: true }, { placeholder: "(인) 또는 서명", exampleValue: "김철수 (인)", colspan: 3 }] },
+  { fields: [{ label: "제출처", isHeader: true }, { placeholder: "OO법원 귀중", exampleValue: "서울중앙지방법원 귀중", colspan: 3 }] },
+  { fields: [{ label: "첨부서류(소명자료)", isHeader: true }, { placeholder: "□ 없음  □ 있음", exampleValue: "☑ 있음: 국민기초생활수급자 증명서 1부, 실업급여 수급 확인서 1부", colspan: 3 }] },
+];
+
+// 근로조건위반손해배상청구신청서
+export const 근로조건위반손해배상청구신청서_DATA: FormRow[] = [
+  { fields: [{ label: "문서 제목", isHeader: true }, { placeholder: "근로조건위반 손해배상청구 신청서", exampleValue: "근로조건위반 손해배상청구 신청서", colspan: 2 }, { label: "처리기간", isHeader: true }, { placeholder: "30일", exampleValue: "30일" }] },
+  { fields: [{ label: "신청인 정보", isHeader: true, colspan: 4 }] },
+  { fields: [{ label: "성명", isHeader: true }, { placeholder: "성명", exampleValue: "김철수" }, { label: "주민등록번호", isHeader: true }, { placeholder: "주민등록번호", exampleValue: "850101-1******" }] },
+  { fields: [{ label: "주소", isHeader: true }, { placeholder: "주소 (전화)", exampleValue: "서울시 강남구 테헤란로 123 (전화: 010-1234-5678)", colspan: 3 }] },
+  { fields: [{ label: "사업장명", isHeader: true }, { placeholder: "사업장명", exampleValue: "(주)OO산업" }, { label: "근무부서", isHeader: true }, { placeholder: "부서명", exampleValue: "생산부" }] },
+  { fields: [{ label: "종사업무", isHeader: true }, { placeholder: "업무", exampleValue: "생산직" }, { label: "입사일", exampleValue: "2023년 3월 1일", placeholder: "년 월 일" }] },
+  { fields: [{ label: "피신청인 정보", isHeader: true, colspan: 4 }] },
+  { fields: [{ label: "사업장명", isHeader: true }, { placeholder: "사업장명", exampleValue: "(주)OO산업" }, { label: "사업의 종류", isHeader: true }, { placeholder: "업종", exampleValue: "제조업" }] },
+  { fields: [{ label: "대표자명", isHeader: true }, { placeholder: "대표자", exampleValue: "이OO" }, { label: "주민등록번호", isHeader: true }, { placeholder: "주민등록번호", exampleValue: "700101-1******" }] },
+  { fields: [{ label: "근로자수", isHeader: true }, { placeholder: "인원", exampleValue: "50명" }, { label: "전화번호", isHeader: true }, { placeholder: "전화", exampleValue: "02-1234-5678" }] },
+  { fields: [{ label: "소재지", isHeader: true }, { placeholder: "사업장 주소", exampleValue: "경기도 성남시 분당구 OO로 456", colspan: 3 }] },
+  { fields: [{ label: "신청이유 및 청구금액", isHeader: true }, { placeholder: "근로계약 당시 근로조건, 입사 이후 근로조건 및 손해배상 청구금액 등을 구체적으로 기재", exampleValue: "1. 근로계약 당시 근로조건\n   • 근무시간: 09:00~18:00 (주 5일, 40시간)\n   • 임금: 월 3,000,000원\n   • 연장·야간근로 수당: 법정 기준 지급\n\n2. 입사 이후 실제 근로조건\n   • 실제 근무시간: 08:00~22:00 (주 6일, 84시간)\n   • 실제 지급 임금: 월 3,000,000원 (연장수당 미지급)\n   • 야간근로수당, 휴일수당 전액 미지급\n\n3. 위반 사항\n   • 근로기준법 제50조(근로시간) 위반\n   • 근로기준법 제56조(연장·야간·휴일근로 가산수당) 미지급\n\n4. 청구금액: 15,000,000원\n   • 미지급 연장근로수당: 10,000,000원\n   • 미지급 야간근로수당: 3,000,000원\n   • 미지급 휴일근로수당: 2,000,000원", colspan: 3 }] },
+  { fields: [{ placeholder: "청구 취지", exampleValue: "근로기준법 제26조 제2항 및 동법 시행규칙 제2조의 규정에 의하여 위와 같이 근로조건 위반을 이유로 한 손해배상청구를 신청합니다.", colspan: 4 }] },
+  { fields: [{ label: "작성일", isHeader: true }, { placeholder: "년 월 일", exampleValue: "2026년 2월 5일", colspan: 3 }] },
+  { fields: [{ label: "신청인", isHeader: true }, { placeholder: "서명 또는 인", exampleValue: "김철수 (인)", colspan: 3 }] },
+  { fields: [{ label: "대리인", isHeader: true }, { placeholder: "서명 또는 인", exampleValue: "변호사 OOO (인)", colspan: 3 }] },
+  { fields: [{ label: "제출처", isHeader: true }, { placeholder: "지방노동위원회 위원장 귀하", exampleValue: "서울지방노동위원회 위원장 귀하", colspan: 3 }] },
+  { fields: [{ label: "구비서류", isHeader: true }, { placeholder: "첨부 서류", exampleValue: "1. 근로계약서 사본 1부\n2. 사용자의 근로조건 위반사실을 입증하는 자료 (근태기록, 급여명세서 등)", colspan: 3 }] },
+  { fields: [{ label: "수수료", isHeader: true }, { placeholder: "없음", exampleValue: "없음", colspan: 3 }] },
+];
+
+// 금치산선고심판청구
+export const 금치산선고심판청구_DATA: FormRow[] = [
+  { fields: [{ label: "문서 제목", isHeader: true }, { placeholder: "금치산선고심판청구", exampleValue: "금치산선고심판청구", colspan: 3 }] },
+  { fields: [{ label: "청구인", isHeader: true }, { placeholder: "OOO (주민등록번호)", exampleValue: "김철수 (800101-1******)", colspan: 3 }] },
+  { fields: [{ label: "생년월일", isHeader: true }, { placeholder: "생년월일", exampleValue: "1980년 1월 1일", colspan: 3 }] },
+  { fields: [{ label: "본적", isHeader: true }, { placeholder: "본적지", exampleValue: "서울시 강남구 OO동", colspan: 3 }] },
+  { fields: [{ label: "주소", isHeader: true }, { placeholder: "주소", exampleValue: "서울시 강남구 테헤란로 123", colspan: 3 }] },
+  { fields: [{ label: "전화", isHeader: true }, { placeholder: "전화번호", exampleValue: "010-1234-5678", colspan: 3 }] },
+  { fields: [{ label: "사건본인", isHeader: true }, { placeholder: "OOO (주민등록번호)", exampleValue: "김영희 (850101-2******)", colspan: 3 }] },
+  { fields: [{ label: "생년월일", isHeader: true }, { placeholder: "생년월일", exampleValue: "1985년 1월 1일", colspan: 3 }] },
+  { fields: [{ label: "본적", isHeader: true }, { placeholder: "본적지", exampleValue: "서울시 강남구 OO동", colspan: 3 }] },
+  { fields: [{ label: "주소", isHeader: true }, { placeholder: "주소", exampleValue: "서울시 강남구 테헤란로 456", colspan: 3 }] },
+  { fields: [{ label: "전화", isHeader: true }, { placeholder: "전화번호", exampleValue: "010-9876-5432", colspan: 3 }] },
+  { fields: [{ label: "청구취지", isHeader: true }, { placeholder: "청구 내용", exampleValue: "사건본인 김영희를 금치산자로 선고한다.\n라는 심판을 구함.", colspan: 3 }] },
+  { fields: [{ label: "청구원인", isHeader: true }, { placeholder: "청구 이유", exampleValue: "1. 청구인은 사건본인 김영희의 배우자이고 사건본인은 2024년 1월 15일 교통사고로 인하여 OO병원에 입원하여 치료를 받은 바 있으나 정신이상으로 회복을 예측할 수 없는 상태에 있습니다.\n\n2. 따라서 청구인은 심신상실의 상태에 있는 사건본인에 대하여 금치산선고를 구하고자 이 심판 청구에 이른 것입니다.", colspan: 3 }] },
+  { fields: [{ label: "첨부서류", isHeader: true }, { placeholder: "첨부 서류 목록", exampleValue: "1. 청구인과 사건본인의 호적등본 각 1통\n2. 청구인과 사건본인의 주민등록등본 각 1통\n3. 진단서 1통", colspan: 3 }] },
+  { fields: [{ label: "작성일", isHeader: true }, { placeholder: "OOOO. O. O.", exampleValue: "2026. 2. 5.", colspan: 3 }] },
+  { fields: [{ label: "청구인", isHeader: true }, { placeholder: "OOO (인)", exampleValue: "위 청구인 김철수 (인)", colspan: 3 }] },
+  { fields: [{ label: "제출처", isHeader: true }, { placeholder: "OO지방법원 OO지원 귀중", exampleValue: "서울중앙지방법원 귀중", colspan: 3 }] },
+];
+
+// 금치산선고취소심판청구
+export const 금치산선고취소심판청구_DATA: FormRow[] = [
+  { fields: [{ label: "문서 제목", isHeader: true }, { placeholder: "금치산선고취소심판청구", exampleValue: "금치산선고취소심판청구", colspan: 3 }] },
+  { fields: [{ label: "청구인", isHeader: true }, { placeholder: "OOO (주민등록번호)", exampleValue: "김철수 (800101-1******)", colspan: 3 }] },
+  { fields: [{ label: "생년월일", isHeader: true }, { placeholder: "생년월일", exampleValue: "1980년 1월 1일", colspan: 3 }] },
+  { fields: [{ label: "본적", isHeader: true }, { placeholder: "본적지", exampleValue: "서울시 강남구 OO동", colspan: 3 }] },
+  { fields: [{ label: "주소", isHeader: true }, { placeholder: "주소", exampleValue: "서울시 강남구 테헤란로 123", colspan: 3 }] },
+  { fields: [{ label: "전화", isHeader: true }, { placeholder: "전화번호", exampleValue: "010-1234-5678", colspan: 3 }] },
+  { fields: [{ label: "사건본인", isHeader: true }, { placeholder: "OOO (주민등록번호)", exampleValue: "김영희 (850101-2******)", colspan: 3 }] },
+  { fields: [{ label: "생년월일", isHeader: true }, { placeholder: "생년월일", exampleValue: "1985년 1월 1일", colspan: 3 }] },
+  { fields: [{ label: "본적", isHeader: true }, { placeholder: "본적지", exampleValue: "서울시 강남구 OO동", colspan: 3 }] },
+  { fields: [{ label: "주소", isHeader: true }, { placeholder: "주소", exampleValue: "서울시 강남구 테헤란로 456", colspan: 3 }] },
+  { fields: [{ label: "전화", isHeader: true }, { placeholder: "전화번호", exampleValue: "010-9876-5432", colspan: 3 }] },
+  { fields: [{ label: "청구취지", isHeader: true }, { placeholder: "청구 내용", exampleValue: "서울중앙지방법원이 2024년 3월 1일 선고한 2024느12345 사건본인 김영희에 대한 금치산선고는 이를 취소한다.\n라는 심판을 구함.", colspan: 3 }] },
+  { fields: [{ label: "청구원인", isHeader: true }, { placeholder: "청구 이유", exampleValue: "1. 청구인은 사건본인 김영희의 배우자이고, 청구인은 사건본인을 심신상실자로 금치산선고를 구하여 2024. 3. 1. 서울중앙지방법원 2024느12345호로 금치산선고를 받았습니다.\n\n2. 그 후 사건본인을 OO병원에 입원시켜 치료를 하였던 바, 정신상태가 회복되어 정상적인 사회생활을 영위하는데 아무런 불편이 없습니다.\n\n3. 따라서 OO병원 의사의 진단서를 첨부하여 사건본인에 대한 금치산선고의 취소를 구하고자 이건 청구에 이르렀습니다.", colspan: 3 }] },
+  { fields: [{ label: "첨부서류", isHeader: true }, { placeholder: "첨부 서류 목록", exampleValue: "1. 청구인과 사건본인의 호적등본 각 1통\n2. 청구인과 사건본인의 주민등록등본 각 1통\n3. 금치산선고심판정본 1통\n4. 진단서 1통", colspan: 3 }] },
+  { fields: [{ label: "작성일", isHeader: true }, { placeholder: "OOOO. O. O.", exampleValue: "2026. 2. 5.", colspan: 3 }] },
+  { fields: [{ label: "청구인", isHeader: true }, { placeholder: "OOO (인)", exampleValue: "위 청구인 김철수 (인)", colspan: 3 }] },
+  { fields: [{ label: "제출처", isHeader: true }, { placeholder: "OO지방법원 OO지원 귀중", exampleValue: "서울중앙지방법원 귀중", colspan: 3 }] },
+];
+
+// 내용증명서_계약금반환청구
+export const 내용증명서_계약금반환청구_DATA: FormRow[] = [
+  { fields: [{ label: "문서 제목", isHeader: true }, { placeholder: "내용증명서 (계약금 반환 청구)", exampleValue: "내용증명서 (계약금 반환 청구)", colspan: 3 }] },
+  { fields: [{ label: "수신 주소", isHeader: true }, { placeholder: "주소", exampleValue: "OO시 OO구 OO동 123-45", colspan: 3 }] },
+  { fields: [{ label: "수신 성명", isHeader: true }, { placeholder: "성명", exampleValue: "이OO", colspan: 3 }] },
+  { fields: [{ label: "제목", isHeader: true }, { placeholder: "계약금 반환청구", exampleValue: "계약금 반환청구", colspan: 3 }] },
+  { fields: [{ label: "청구금액", isHeader: true }, { placeholder: "OOO 원정(￦OOO)", exampleValue: "10,000,000원정 (￦10,000,000)", colspan: 3 }] },
+  { fields: [{ label: "매매계약한 부동산의 표시", isHeader: true, colspan: 3 }] },
+  { fields: [{ label: "소재지", isHeader: true }, { placeholder: "주소", exampleValue: "OO시 OO구 OO동 67-89", colspan: 2 }] },
+  { fields: [{ label: "소유자", isHeader: true }, { placeholder: "소유자", exampleValue: "이OO" }, { label: "면적", isHeader: true }, { placeholder: "면적", exampleValue: "120㎡ (36평)" }] },
+  { fields: [{ label: "위 부동산의 계약내용", isHeader: true, colspan: 3 }] },
+  { fields: [{ label: "계약금", isHeader: true }, { placeholder: "금액 및 지급일", exampleValue: "10,000,000원정 2025년 12월 1일 (계약일에 지급한다.)", colspan: 2 }] },
+  { fields: [{ label: "중도금", isHeader: true }, { placeholder: "금액 및 지급일", exampleValue: "20,000,000원정 2026년 1월 15일 지급키로 한다.", colspan: 2 }] },
+  { fields: [{ label: "잔금", isHeader: true }, { placeholder: "금액 및 지급일", exampleValue: "70,000,000원정 2026년 2월 28일 지급키로 한다.", colspan: 2 }] },
+  { fields: [{ placeholder: "계약 경위 및 하자 발생", exampleValue: "상기와 같이 계약을 체결하였으나 그 부동산에 하자가 발생하여 매매 당사자인 쌍방이 합의하에 계약금을 2026년 1월 31일까지 반환하여 주기로 지불각서까지 제출하고 금일 현재까지 반환하지 않고 있음.", colspan: 3 }] },
+  { fields: [{ placeholder: "청구 내용", exampleValue: "귀하는 수차에 걸쳐 반환하여 준다는 약속을 하고도 반환하지 않은 것을 볼 때 저를 기만한 행위이며 그 부동산을 매매 당시부터 계획적으로 한 행위로 볼 수밖에 없습니다.\n\n만약 위 금액을 2026년 2월 15일까지 반환하지 않으면 손해배상청구소송을 취할 것이오니 이에 대한 어떠한 피해도 감수하시고 제반 비용등도 귀하의 계약위반으로 볼 수밖에 없으므로 계약금액의 배액을 배상하여 주시기 바랍니다.", colspan: 3 }] },
+  { fields: [{ label: "작성일", isHeader: true }, { placeholder: "20OO년 O월 O일", exampleValue: "2026년 2월 5일", colspan: 3 }] },
+  { fields: [{ label: "발신인 주소", isHeader: true }, { placeholder: "주소", exampleValue: "OO시 OO구 OO동 111-222", colspan: 3 }] },
+  { fields: [{ label: "발신인 성명", isHeader: true }, { placeholder: "성명", exampleValue: "김OO", colspan: 3 }] },
+  { fields: [{ label: "수신인", isHeader: true }, { placeholder: "OOO 귀하", exampleValue: "이OO 귀하", colspan: 3 }] },
+];
+
+// 내용증명서_전세금반환청구01
+export const 내용증명서_전세금반환청구01_DATA: FormRow[] = [
+  { fields: [{ label: "문서 제목", isHeader: true }, { placeholder: "내용증명", exampleValue: "내용증명", colspan: 3 }] },
+  { fields: [{ label: "수신", isHeader: true }, { placeholder: "OOO", exampleValue: "이OO", colspan: 3 }] },
+  { fields: [{ label: "수신 주소", isHeader: true }, { placeholder: "주소", exampleValue: "OO시 OO구 OO동 123-45", colspan: 3 }] },
+  { fields: [{ label: "제목", isHeader: true }, { placeholder: "전세금 반환 청구 건", exampleValue: "전세금 반환 청구 건", colspan: 3 }] },
+  { fields: [{ label: "내용", isHeader: true, colspan: 3 }] },
+  { fields: [{ placeholder: "인사 및 임차 정보", exampleValue: "1. 귀하의 가정에 평안하심을 기원합니다. 다름이 아니라 본인은 귀하 소유의 OO시 OO구 OO동 123번지 소재 가옥 2층 60㎡를 임차하여 거주하다가 임대기간이 만료하여 귀하에게 본 가옥을 명도하여 주었으나 3개월이 지난 현재까지 임차보증금을 반환하지 않아 이에 보증금의 지급을 받고자 이에 통고하는 바입니다.", colspan: 3 }] },
+  { fields: [{ placeholder: "반환 요구", exampleValue: "2. 따라서 2026. 2. 28.까지 미반환보증금 금 50,000,000원을 변제해 주시기를 바랍니다. 만약 위 기간을 어길 경우에는 강제집행 등 법적 조치를 취함을 알려드리오니 이를 이행하여 주시기 바랍니다.", colspan: 3 }] },
+  { fields: [{ label: "작성일", isHeader: true }, { placeholder: "20OO. O. O.", exampleValue: "2026. 2. 5.", colspan: 3 }] },
+  { fields: [{ label: "발신", isHeader: true }, { placeholder: "OOO (인)", exampleValue: "김OO (인)", colspan: 3 }] },
+  { fields: [{ label: "발신 주소", isHeader: true }, { placeholder: "주소", exampleValue: "OO시 OO구 OO동 456-78", colspan: 3 }] },
+  { fields: [{ label: "전화번호", isHeader: true }, { placeholder: "전화", exampleValue: "010-1234-5678", colspan: 3 }] },
+];
+
+// 내용증명서_전세금반환청구02
+export const 내용증명서_전세금반환청구02_DATA: FormRow[] = [
+  { fields: [{ label: "문서 제목", isHeader: true }, { placeholder: "내용증명서", exampleValue: "내용증명서", colspan: 3 }] },
+  { fields: [{ label: "수신", isHeader: true }, { placeholder: "OOO", exampleValue: "이OO", colspan: 3 }] },
+  { fields: [{ label: "수신 주소", isHeader: true }, { placeholder: "주소", exampleValue: "OO시 OO구 OO동 123번지", colspan: 3 }] },
+  { fields: [{ label: "발신", isHeader: true }, { placeholder: "OOO", exampleValue: "김OO", colspan: 3 }] },
+  { fields: [{ label: "발신 주소", isHeader: true }, { placeholder: "주소", exampleValue: "OO시 OO구 OO동 456번지", colspan: 3 }] },
+  { fields: [{ label: "제목", isHeader: true }, { placeholder: "전세금 반환청구에 대한 내용증명", exampleValue: "전세금 반환청구에 대한 내용증명", colspan: 3 }] },
+  { fields: [{ placeholder: "계약 정보 및 통보 내역", exampleValue: "본 임차인은 임대인과 함께 2024년 3월 1일부터 2026년 3월 1일까지 24개월 간의 임대차 계약을 체결하고 아래 다음 내용에 대하여 임대인에게 임대차 계약해지를 2개월 전부터 전화 및 구두로 통보한 바 있으며, 수 차례에 걸쳐 무료일간지 게재 및 벽보부착을 하였으며, 임대차 계약완료 1개월 전부터 다시 계약완료를 통보하였습니다.", colspan: 3 }] },
+  { fields: [{ placeholder: "반환 약속 불이행", exampleValue: "임대계약완료 전날인 2026년 2월 28일에 임대인이 2026년 3월 15일까지 전세금 전액을 반환해 준다고 하였으나, 그 약속 기일이 지났음에도 불구하고 전세금을 반환하지 않고 있습니다. 이에 본 임차인은 2026년 3월 1일로 임대차 계약이 완료된 것을 다시 한 번 통보해 드리며 임대인이 본 임차인에게 반환해야하는 전세금은 일금 5천만원입니다.", colspan: 3 }] },
+  { fields: [{ placeholder: "최종 통보", exampleValue: "그러므로 본 서면이 도달된 후 즉시 전세금을 반환해 주시기 바라며, 만약 2026년 4월 1일까지 전세금을 지불하지 아니하면 향후 별도의 통지없이 법적인 절차를 취할 목적으로 내용증명을 발송하였으니 이점 양지해 주시기 바랍니다.", colspan: 3 }] },
+  { fields: [{ label: "다음", isHeader: true, colspan: 3 }] },
+  { fields: [{ label: "임대가옥", isHeader: true }, { placeholder: "주소 및 면적", exampleValue: "OO시 OO구 123번지 2층 독채 (20평)", colspan: 2 }] },
+  { fields: [{ label: "전세금", isHeader: true }, { placeholder: "금액", exampleValue: "50,000,000원 (오천만원)", colspan: 2 }] },
+  { fields: [{ label: "임대기간", isHeader: true }, { placeholder: "기간", exampleValue: "2024년 3월 1일부터 2026년 3월 1일 (24개월)", colspan: 2 }] },
+  { fields: [{ label: "작성일", isHeader: true }, { placeholder: "20OO년 O월 O일", exampleValue: "2026년 3월 20일", colspan: 3 }] },
+  { fields: [{ label: "위 발송인", isHeader: true }, { placeholder: "OOO (인)", exampleValue: "김OO (인)", colspan: 3 }] },
+];
+
+// 기성고청구내역서
+export const 기성고청구내역서_DATA: FormRow[] = [
+  { fields: [{ label: "문서 제목", isHeader: true }, { placeholder: "기성고 청구 내역서", exampleValue: "기성고 청구 내역서", colspan: 3 }] },
+  { fields: [{ label: "공사명", isHeader: true }, { placeholder: "공사명", exampleValue: "OO아파트 신축공사", colspan: 3 }] },
+  { fields: [{ label: "번호", isHeader: true }, { label: "품명", isHeader: true }, { label: "규격", isHeader: true }, { label: "단위", isHeader: true }] },
+  { fields: [{ label: "계약 내역", isHeader: true }, { label: "전회 기성", isHeader: true }, { label: "금회 기성", isHeader: true }, { label: "기성 누계", isHeader: true }] },
+  { fields: [{ placeholder: "1", exampleValue: "1" }, { placeholder: "품명", exampleValue: "철근콘크리트공사" }, { placeholder: "규격", exampleValue: "24MPa" }, { placeholder: "단위", exampleValue: "㎥" }] },
+  { fields: [{ placeholder: "수량/금액", exampleValue: "수량: 1,000㎥\n금액: 500,000,000원" }, { placeholder: "수량/금액", exampleValue: "수량: 600㎥\n금액: 300,000,000원" }, { placeholder: "수량/금액", exampleValue: "수량: 200㎥\n금액: 100,000,000원" }, { placeholder: "수량/금액", exampleValue: "수량: 800㎥\n금액: 400,000,000원" }] },
+  { fields: [{ placeholder: "2", exampleValue: "2" }, { placeholder: "품명", exampleValue: "거푸집공사" }, { placeholder: "규격", exampleValue: "합판" }, { placeholder: "단위", exampleValue: "㎡" }] },
+  { fields: [{ placeholder: "수량/금액", exampleValue: "수량: 5,000㎡\n금액: 250,000,000원" }, { placeholder: "수량/금액", exampleValue: "수량: 3,000㎡\n금액: 150,000,000원" }, { placeholder: "수량/금액", exampleValue: "수량: 1,000㎡\n금액: 50,000,000원" }, { placeholder: "수량/금액", exampleValue: "수량: 4,000㎡\n금액: 200,000,000원" }] },
+  { fields: [{ placeholder: "3", exampleValue: "3" }, { placeholder: "품명", exampleValue: "철골공사" }, { placeholder: "규격", exampleValue: "H형강" }, { placeholder: "단위", exampleValue: "톤" }] },
+  { fields: [{ placeholder: "수량/금액", exampleValue: "수량: 100톤\n금액: 150,000,000원" }, { placeholder: "수량/금액", exampleValue: "수량: 50톤\n금액: 75,000,000원" }, { placeholder: "수량/금액", exampleValue: "수량: 30톤\n금액: 45,000,000원" }, { placeholder: "수량/금액", exampleValue: "수량: 80톤\n금액: 120,000,000원" }] },
+  { fields: [{ label: "합계", isHeader: true }, { placeholder: "계약 합계", exampleValue: "900,000,000원", colspan: 3 }] },
+  { fields: [{ label: "금회 청구금액", isHeader: true }, { placeholder: "청구 금액", exampleValue: "195,000,000원 (일억구천오백만원)", colspan: 3 }] },
+  { fields: [{ label: "작성일", isHeader: true }, { placeholder: "년 월 일", exampleValue: "2026년 2월 5일", colspan: 3 }] },
+  { fields: [{ label: "시공사", isHeader: true }, { placeholder: "회사명 및 대표자", exampleValue: "(주)OO건설 대표이사 김OO (인)", colspan: 3 }] },
+  { fields: [{ label: "제출처", isHeader: true }, { placeholder: "발주처", exampleValue: "(주)OO개발 귀중", colspan: 3 }] },
+];
