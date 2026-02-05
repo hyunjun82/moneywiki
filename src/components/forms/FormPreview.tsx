@@ -16211,3 +16211,114 @@ export const 기성고청구내역서_DATA: FormRow[] = [
   { fields: [{ label: "시공사", isHeader: true }, { placeholder: "회사명 및 대표자", exampleValue: "(주)OO건설 대표이사 김OO (인)", colspan: 3 }] },
   { fields: [{ label: "제출처", isHeader: true }, { placeholder: "발주처", exampleValue: "(주)OO개발 귀중", colspan: 3 }] },
 ];
+
+// 농산물매매계약불이행손해배상청구
+export const 농산물매매계약불이행손해배상청구_DATA: FormRow[] = [
+  { fields: [{ label: "문서 제목", isHeader: true }, { placeholder: "농작물 매매계약 불이행에 따른 손해배상 청구", exampleValue: "농작물 매매계약 불이행에 따른 손해배상 청구", colspan: 3 }] },
+  { fields: [{ placeholder: "계약 내용", exampleValue: "본인은 귀하와 2025년 5월 1일에 충청남도 서산시 대산읍 123번지 밭 1,000평에 식재된 농작물(고구마)에 대하여 일금 50,000,000원에 포전매매계약을 체결하였습니다.", colspan: 3 }] },
+  { fields: [{ placeholder: "계약 불이행 사실", exampleValue: "그러나 귀하는 약정기일인 2025년 10월 31일까지 매매대금을 지급하지 않았고 농작물도 수거해 가지 않았으며 또한 본인이 추가적으로 제시한 2025년 11월 15일까지도 농작물을 수거해 가지 않아 본인은 2025년 11월 20일 내용증명우편으로 귀하와의 농작물 매매계약을 해제하였습니다.", colspan: 3 }] },
+  { fields: [{ placeholder: "손해배상 청구", exampleValue: "따라서 귀하의 계약위반에 따른 본인의 손해에 대하여 아래와 같이 그 배상을 청구합니다.", colspan: 3 }] },
+  { fields: [{ label: "아래", isHeader: true, colspan: 3 }] },
+  { fields: [{ label: "구분", isHeader: true }, { label: "금액", isHeader: true }, { label: "비고", isHeader: true }] },
+  { fields: [{ placeholder: "계약금액(㉮)", exampleValue: "계약금액(㉮)" }, { placeholder: "50,000,000원", exampleValue: "50,000,000원" }, { placeholder: "", exampleValue: "" }] },
+  { fields: [{ placeholder: "농작물처분금액(㉯)", exampleValue: "농작물 처분이익 - 농작물처분금액(㉯)" }, { placeholder: "30,000,000원", exampleValue: "30,000,000원" }, { placeholder: "", exampleValue: "" }] },
+  { fields: [{ placeholder: "처분비용(㉰)", exampleValue: "처분에 소요된 금액(㉰) (인건비, 운송비 등)", exampleValue: "처분에 소요된 금액(㉰) (인건비, 운송비 등)" }, { placeholder: "5,000,000원", exampleValue: "5,000,000원" }, { placeholder: "", exampleValue: "" }] },
+  { fields: [{ placeholder: "소계(㉱)", exampleValue: "소계(㉱=㉯-㉰)" }, { placeholder: "25,000,000원", exampleValue: "25,000,000원" }, { placeholder: "", exampleValue: "" }] },
+  { fields: [{ label: "손해배상청구금액(㉮-㉱)", isHeader: true }, { placeholder: "청구금액", exampleValue: "25,000,000원", colspan: 2 }] },
+  { fields: [{ label: "작성일", isHeader: true }, { placeholder: "년 월 일", exampleValue: "2026년 2월 5일", colspan: 3 }] },
+  { fields: [{ label: "매도인 주소", isHeader: true }, { placeholder: "주소", exampleValue: "충청남도 서산시 대산읍 123번지", colspan: 3 }] },
+  { fields: [{ label: "매도인 성명", isHeader: true }, { placeholder: "성명 (인)", exampleValue: "김OO (인)", colspan: 3 }] },
+  { fields: [{ label: "매수인 주소", isHeader: true }, { placeholder: "주소", exampleValue: "서울시 강남구 테헤란로 456", colspan: 3 }] },
+  { fields: [{ label: "매수인", isHeader: true }, { placeholder: "성명 귀하", exampleValue: "이OO 귀하", colspan: 3 }] },
+];
+
+// 농산물매수청구
+export const 농산물매수청구_DATA: FormRow[] = [
+  { fields: [{ label: "문서 제목", isHeader: true }, { placeholder: "농산물 매수 청구", exampleValue: "농산물 매수 청구", colspan: 3 }] },
+  { fields: [{ placeholder: "계약 내용", exampleValue: "본인은 귀하와 2025년 5월 1일에 충청남도 서산시 대산읍 123번지 밭 1,000평에 식재된 농산물(고구마)에 대하여 수확기에 전량 수매하기로 약정을 하였습니다.", colspan: 3 }] },
+  { fields: [{ placeholder: "매수 청구 거절 사실", exampleValue: "이에 본인은 위 농산물을 수확·포장하여 2025년 10월 15일 당초 약정한 장소에 운반하여 매수를 청구하였으나 귀하께서는 농산물의 품질이 나쁘다며 이를 거절하였습니다.", colspan: 3 }] },
+  { fields: [{ placeholder: "농산물 품질 설명", exampleValue: "그러나 본인이 매수 청구한 농산물은 계약내용에 따라 엄격히 선별한 것으로 규격이나 품질면에서 전혀 하자가 없는 것입니다.", colspan: 3 }] },
+  { fields: [{ placeholder: "재청구 및 경고", exampleValue: "따라서 2026년 2월 10일 본인은 다시 한번 농산물을 약정된 장소로 운반할 것이니 이번에는 틀림없이 매수하여 주시기 바랍니다.\n\n만약 그때에도 매수를 거절한다면 본인은 즉시 계약을 해제한 후 손해배상을 청구하겠습니다.", colspan: 3 }] },
+  { fields: [{ label: "작성일", isHeader: true }, { placeholder: "년 월 일", exampleValue: "2026년 2월 5일", colspan: 3 }] },
+  { fields: [{ label: "청구인 주소", isHeader: true }, { placeholder: "주소", exampleValue: "충청남도 서산시 대산읍 123번지", colspan: 3 }] },
+  { fields: [{ label: "청구인 성명", isHeader: true }, { placeholder: "성명 (인)", exampleValue: "김OO (인)", colspan: 3 }] },
+  { fields: [{ label: "피청구인 주소", isHeader: true }, { placeholder: "주소", exampleValue: "서울시 강남구 테헤란로 456", colspan: 3 }] },
+  { fields: [{ label: "피청구인", isHeader: true }, { placeholder: "성명 귀하", exampleValue: "이OO 귀하", colspan: 3 }] },
+];
+
+// 물품구입제작청구서
+export const 물품구입제작청구서_DATA: FormRow[] = [
+  { fields: [{ label: "문서 제목", isHeader: true }, { placeholder: "물품 구입/제작 청구서", exampleValue: "물품 구입/제작 청구서", colspan: 3 }] },
+  { fields: [{ label: "결재", isHeader: true }, { label: "재", isHeader: true }, { label: "계", isHeader: true }] },
+  { fields: [{ label: "접수일자", isHeader: true }, { placeholder: "년. 월. 일.", exampleValue: "2026. 2. 5.", colspan: 3 }] },
+  { fields: [{ label: "품명", isHeader: true }, { label: "규격", isHeader: true }, { label: "수량", isHeader: true }, { label: "추정단가", isHeader: true }, { label: "추정금액", isHeader: true }, { label: "비고", isHeader: true }] },
+  { fields: [{ placeholder: "품명", exampleValue: "노트북" }, { placeholder: "규격", exampleValue: "15인치, i7, 16GB" }, { placeholder: "수량", exampleValue: "5대" }, { placeholder: "단가", exampleValue: "1,500,000원" }, { placeholder: "금액", exampleValue: "7,500,000원" }, { placeholder: "비고", exampleValue: "" }] },
+  { fields: [{ placeholder: "품명", exampleValue: "프린터" }, { placeholder: "규격", exampleValue: "레이저, 컬러" }, { placeholder: "수량", exampleValue: "2대" }, { placeholder: "단가", exampleValue: "800,000원" }, { placeholder: "금액", exampleValue: "1,600,000원" }, { placeholder: "비고", exampleValue: "" }] },
+  { fields: [{ placeholder: "품명", exampleValue: "사무용 책상" }, { placeholder: "규격", exampleValue: "1200×700" }, { placeholder: "수량", exampleValue: "10개" }, { placeholder: "단가", exampleValue: "300,000원" }, { placeholder: "금액", exampleValue: "3,000,000원" }, { placeholder: "비고", exampleValue: "" }] },
+  { fields: [{ label: "합계", isHeader: true }, { placeholder: "총 금액", exampleValue: "12,100,000원", colspan: 5 }] },
+  { fields: [{ label: "청구부서", isHeader: true }, { placeholder: "부서명", exampleValue: "총무부", colspan: 5 }] },
+  { fields: [{ label: "대학/학과", isHeader: true }, { placeholder: "소속", exampleValue: "OO대학 경영학과", colspan: 2 }] },
+  { fields: [{ label: "청구인", isHeader: true }, { placeholder: "청구인 (인)", exampleValue: "김OO (인)", colspan: 2 }] },
+  { fields: [{ label: "확정 실시 내용", isHeader: true, colspan: 6 }] },
+  { fields: [{ label: "품명", isHeader: true }, { label: "종수", isHeader: true }, { label: "접수", isHeader: true }, { label: "집행금액", isHeader: true }, { label: "확인", isHeader: true }] },
+  { fields: [{ placeholder: "예산현황", exampleValue: "예산현황: 세항/목/세목/변경사항", colspan: 5 }] },
+  { fields: [{ label: "예산액", isHeader: true }, { label: "금일까지 집행액", isHeader: true }, { label: "예산 잔액", isHeader: true }, { placeholder: "", colspan: 2 }] },
+];
+
+// 사무용품청구량
+export const 사무용품청구량_DATA: FormRow[] = [
+  { fields: [{ label: "문서 제목", isHeader: true }, { placeholder: "사무용품 청구량", exampleValue: "사무용품 청구량", colspan: 3 }] },
+  { fields: [{ label: "작성일", isHeader: true }, { placeholder: "OOOO년 OO월 OO일", exampleValue: "2026년 2월 5일", colspan: 3 }] },
+  { fields: [{ label: "NO", isHeader: true }, { label: "품명", isHeader: true }, { label: "규격", isHeader: true }, { label: "수량", isHeader: true }, { label: "단위", isHeader: true }, { label: "단가", isHeader: true }, { label: "금액", isHeader: true }, { label: "비고", isHeader: true }] },
+  { fields: [{ placeholder: "1", exampleValue: "1" }, { placeholder: "볼펜", exampleValue: "볼펜" }, { placeholder: "0.5mm 흑색", exampleValue: "0.5mm 흑색" }, { placeholder: "100", exampleValue: "100" }, { placeholder: "개", exampleValue: "개" }, { placeholder: "500원", exampleValue: "500원" }, { placeholder: "50,000원", exampleValue: "50,000원" }, { placeholder: "", exampleValue: "" }] },
+  { fields: [{ placeholder: "2", exampleValue: "2" }, { placeholder: "A4 용지", exampleValue: "A4 용지" }, { placeholder: "80g 백색", exampleValue: "80g 백색" }, { placeholder: "50", exampleValue: "50" }, { placeholder: "박스", exampleValue: "박스" }, { placeholder: "15,000원", exampleValue: "15,000원" }, { placeholder: "750,000원", exampleValue: "750,000원" }, { placeholder: "", exampleValue: "" }] },
+  { fields: [{ placeholder: "3", exampleValue: "3" }, { placeholder: "포스트잇", exampleValue: "포스트잇" }, { placeholder: "3×3", exampleValue: "3×3" }, { placeholder: "200", exampleValue: "200" }, { placeholder: "개", exampleValue: "개" }, { placeholder: "1,000원", exampleValue: "1,000원" }, { placeholder: "200,000원", exampleValue: "200,000원" }, { placeholder: "", exampleValue: "" }] },
+  { fields: [{ placeholder: "4", exampleValue: "4" }, { placeholder: "클립", exampleValue: "클립" }, { placeholder: "대형", exampleValue: "대형" }, { placeholder: "50", exampleValue: "50" }, { placeholder: "박스", exampleValue: "박스" }, { placeholder: "3,000원", exampleValue: "3,000원" }, { placeholder: "150,000원", exampleValue: "150,000원" }, { placeholder: "", exampleValue: "" }] },
+  { fields: [{ placeholder: "5", exampleValue: "5" }, { placeholder: "파일", exampleValue: "파일" }, { placeholder: "A4 2공", exampleValue: "A4 2공" }, { placeholder: "100", exampleValue: "100" }, { placeholder: "개", exampleValue: "개" }, { placeholder: "2,000원", exampleValue: "2,000원" }, { placeholder: "200,000원", exampleValue: "200,000원" }, { placeholder: "", exampleValue: "" }] },
+  { fields: [{ label: "합계", isHeader: true }, { placeholder: "총 금액", exampleValue: "1,350,000원", colspan: 7 }] },
+  { fields: [{ label: "결재", isHeader: true, colspan: 8 }] },
+  { fields: [{ label: "담당", isHeader: true }, { label: "부장", isHeader: true }, { label: "이사", isHeader: true }, { label: "사장", isHeader: true }, { placeholder: "", colspan: 4 }] },
+];
+
+// 사무용품소모품청구의뢰서
+export const 사무용품소모품청구의뢰서_DATA: FormRow[] = [
+  { fields: [{ label: "문서 제목", isHeader: true }, { placeholder: "사무용품/소모품 청구의뢰서", exampleValue: "사무용품/소모품 청구의뢰서", colspan: 3 }] },
+  { fields: [{ label: "청구부서", isHeader: true }, { placeholder: "부서명", exampleValue: "총무부" }, { label: "부서장확인", isHeader: true }, { placeholder: "확인 (인)", exampleValue: "확인 (인)" }] },
+  { fields: [{ label: "결재", isHeader: true }, { label: "계", isHeader: true }, { label: "과장", isHeader: true }, { label: "차장", isHeader: true }, { label: "부장", isHeader: true }] },
+  { fields: [{ label: "작성일", isHeader: true }, { placeholder: "년 월 일", exampleValue: "2026년 2월 5일", colspan: 4 }] },
+  { fields: [{ label: "품명", isHeader: true }, { label: "규격", isHeader: true }, { label: "단위", isHeader: true }, { label: "수량", isHeader: true }, { label: "비고", isHeader: true }] },
+  { fields: [{ placeholder: "", exampleValue: "" }, { placeholder: "", exampleValue: "" }, { placeholder: "", exampleValue: "" }, { label: "청구", isHeader: true }, { label: "불출", isHeader: true }, { placeholder: "", exampleValue: "" }] },
+  { fields: [{ placeholder: "품명", exampleValue: "볼펜" }, { placeholder: "규격", exampleValue: "0.5mm 흑색" }, { placeholder: "단위", exampleValue: "개" }, { placeholder: "청구", exampleValue: "100" }, { placeholder: "불출", exampleValue: "100" }, { placeholder: "비고", exampleValue: "" }] },
+  { fields: [{ placeholder: "품명", exampleValue: "A4 용지" }, { placeholder: "규격", exampleValue: "80g 백색" }, { placeholder: "단위", exampleValue: "박스" }, { placeholder: "청구", exampleValue: "50" }, { placeholder: "불출", exampleValue: "50" }, { placeholder: "비고", exampleValue: "" }] },
+  { fields: [{ placeholder: "품명", exampleValue: "포스트잇" }, { placeholder: "규격", exampleValue: "3×3" }, { placeholder: "단위", exampleValue: "개" }, { placeholder: "청구", exampleValue: "200" }, { placeholder: "불출", exampleValue: "200" }, { placeholder: "비고", exampleValue: "" }] },
+  { fields: [{ placeholder: "품명", exampleValue: "클립" }, { placeholder: "규격", exampleValue: "대형" }, { placeholder: "단위", exampleValue: "박스" }, { placeholder: "청구", exampleValue: "30" }, { placeholder: "불출", exampleValue: "30" }, { placeholder: "비고", exampleValue: "" }] },
+  { fields: [{ placeholder: "품명", exampleValue: "파일" }, { placeholder: "규격", exampleValue: "A4 2공" }, { placeholder: "단위", exampleValue: "개" }, { placeholder: "청구", exampleValue: "100" }, { placeholder: "불출", exampleValue: "100" }, { placeholder: "비고", exampleValue: "" }] },
+];
+
+// 사망조위금청구서
+export const 사망조위금청구서_DATA: FormRow[] = [
+  { fields: [{ label: "문서 제목", isHeader: true }, { placeholder: "사망조위금청구서", exampleValue: "사망조위금청구서", colspan: 2 }, { label: "처리기간", isHeader: true }, { placeholder: "14일", exampleValue: "14일" }] },
+  { fields: [{ label: "청구인 기재란", isHeader: true, colspan: 4 }] },
+  { fields: [{ label: "성명", isHeader: true }, { placeholder: "성명", exampleValue: "김철수" }, { label: "주민등록번호", isHeader: true }, { placeholder: "주민등록번호", exampleValue: "800101-1******" }] },
+  { fields: [{ label: "주소", isHeader: true }, { placeholder: "주소 (우편번호)", exampleValue: "(12345) 서울시 강남구 테헤란로 123", colspan: 2 }] },
+  { fields: [{ label: "전화번호", isHeader: true }, { placeholder: "전화", exampleValue: "(02) 1234-5678", colspan: 2 }] },
+  { fields: [{ label: "급여수령 금융기관", isHeader: true }, { placeholder: "은행", exampleValue: "국민은행" }, { label: "계좌번호", isHeader: true }, { placeholder: "계좌번호", exampleValue: "123-456-78901234" }] },
+  { fields: [{ label: "사망자와의 관계", isHeader: true }, { placeholder: "관계", exampleValue: "사망자의 (자녀)", colspan: 2 }] },
+  { fields: [{ label: "사망자 정보", isHeader: true, colspan: 4 }] },
+  { fields: [{ label: "성명", isHeader: true }, { placeholder: "성명", exampleValue: "김OO" }, { label: "주민등록번호", isHeader: true }, { placeholder: "주민등록번호", exampleValue: "550101-1******" }] },
+  { fields: [{ label: "사망연월일", isHeader: true }, { placeholder: "년. 월. 일.", exampleValue: "2025. 12. 31.", colspan: 2 }] },
+  { fields: [{ label: "연금취급기관 기재란", isHeader: true, colspan: 4 }] },
+  { fields: [{ label: "공무원 성명", isHeader: true }, { placeholder: "성명", exampleValue: "김OO" }, { label: "임용연월일", isHeader: true }, { placeholder: "년. 월. 일.", exampleValue: "1980. 3. 1." }] },
+  { fields: [{ label: "사망당시 직급 호봉", isHeader: true }, { placeholder: "직급 호봉", exampleValue: "5급 30호봉" }, { label: "기여금기호", isHeader: true }, { placeholder: "기호", exampleValue: "123456" }] },
+  { fields: [{ label: "사망당시 보수월액", isHeader: true }, { placeholder: "금액", exampleValue: "5,000,000원" }, { label: "연금취급기관명(기관기호)", isHeader: true }, { placeholder: "기관명 (기호)", exampleValue: "OO시청 (654321)" }] },
+  { fields: [{ label: "재원부담 회계", isHeader: true }, { placeholder: "회계", exampleValue: "☑ 총무처일반회계  □ 통신사업특별회계  □ 철도사업특별회계\n□ 지방(교육)자치단체", colspan: 3 }] },
+  { fields: [{ placeholder: "청구 취지", exampleValue: "공무원연금법시행령 제36조의2 제4항의 규정에 의하여 위와 같이 청구합니다.", colspan: 4 }] },
+  { fields: [{ label: "작성일", isHeader: true }, { placeholder: "년 월 일", exampleValue: "2026년 2월 5일", colspan: 3 }] },
+  { fields: [{ label: "청구인", isHeader: true }, { placeholder: "서명 또는 인", exampleValue: "김철수 (인)", colspan: 3 }] },
+  { fields: [{ label: "제출처", isHeader: true }, { placeholder: "(연금취급기관장) 귀하", exampleValue: "공무원연금관리공단 (연금취급기관장) 귀하", colspan: 3 }] },
+  { fields: [{ label: "첨부서류", isHeader: true }, { placeholder: "첨부 서류 목록", exampleValue: "1. 사망자의 호적등본 또는 제적등본 (사망사실 및 청구인과의 관계가 나타나야 하며, 사망정리가 되어 있지 않은 경우에는 주민등록말소자등본 또는 사망진단서 별도 첨부) 1부\n2. 청구인의 주민등록등본 (부양사실의 확인을 요하는 경우에 한함) 1부\n3. 청구인의 실명확인통장 사본 (국가공무원의 경우에 한함) 1부", colspan: 3 }] },
+  { fields: [{ placeholder: "확인 및 이송", exampleValue: "위 사실을 확인하여 이송합니다.", colspan: 4 }] },
+  { fields: [{ label: "확인일", isHeader: true }, { placeholder: "년 월 일", exampleValue: "2026년 2월 10일", colspan: 3 }] },
+  { fields: [{ label: "확인자", isHeader: true }, { placeholder: "(연금취급기관장) 직인", exampleValue: "(연금취급기관장) 직인", colspan: 3 }] },
+  { fields: [{ label: "최종 제출처", isHeader: true }, { placeholder: "공무원연금관리공단 이사장 귀하", exampleValue: "공무원연금관리공단 이사장 귀하", colspan: 3 }] },
+];
