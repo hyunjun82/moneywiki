@@ -15577,3 +15577,30 @@ export const 물품청구서_DATA: FormRow[] = [
   { fields: [{ label: "품목", isHeader: true }, { placeholder: "품명", exampleValue: "노트북 컴퓨터 10대", colspan: 3 }] },
   { fields: [{ label: "합계", isHeader: true }, { placeholder: "총액", exampleValue: "16,500,000원", colspan: 3 }] },
 ];
+
+// 청구서 (물품)
+export const 청구서_DATA: FormRow[] = [
+  { fields: [{ label: "문서 제목", isHeader: true }, { placeholder: "청구서", exampleValue: "물품 청구서", colspan: 3 }] },
+  { fields: [{ label: "청구 날짜", isHeader: true }, { placeholder: "____년 __월 __일", exampleValue: "2026년 2월 5일", colspan: 3 }] },
+  { fields: [{ label: "거래처", isHeader: true }, { placeholder: "회사명", exampleValue: "(주)ABC상사 귀중", colspan: 3 }] },
+  { fields: [{ label: "품목", isHeader: true }, { placeholder: "물품명", exampleValue: "사무용 의자 외 2건", colspan: 3 }] },
+  { fields: [{ label: "수량", isHeader: true }, { placeholder: "수량", exampleValue: "50EA" }, { label: "단가", isHeader: true }, { placeholder: "단가", exampleValue: "150,000원" }] },
+  { fields: [{ label: "공급가액", isHeader: true }, { placeholder: "금액", exampleValue: "7,500,000원" }, { label: "부가세", isHeader: true }, { placeholder: "부가세", exampleValue: "750,000원" }] },
+  { fields: [{ label: "합계 금액", isHeader: true }, { placeholder: "총액", exampleValue: "8,250,000원", colspan: 3 }] },
+  { fields: [{ label: "입금 계좌", isHeader: true }, { placeholder: "은행 계좌", exampleValue: "국민은행 123-45-67890 (예금주: (주)공급업체)", colspan: 3 }] },
+  { fields: [{ label: "청구인", isHeader: true }, { placeholder: "회사명 및 담당자", exampleValue: "(주)공급업체, 담당: 김철수 (010-1234-5678)", colspan: 3 }] },
+];
+
+// 공사대금청구서
+export const 공사대금청구서_DATA: FormRow[] = [
+  { fields: [{ label: "문서 제목", isHeader: true }, { placeholder: "공사대금 청구서", exampleValue: "공사대금 청구서", colspan: 3 }] },
+  { fields: [{ label: "청구 날짜", isHeader: true }, { placeholder: "____년 __월 __일", exampleValue: "2026년 2월 5일", colspan: 3 }] },
+  { fields: [{ label: "발주처", isHeader: true }, { placeholder: "회사명", exampleValue: "OO건설(주) 귀중", colspan: 3 }] },
+  { fields: [{ label: "공사명", isHeader: true }, { placeholder: "공사명칭", exampleValue: "서울시 강남구 OO아파트 신축공사", colspan: 3 }] },
+  { fields: [{ label: "공사 기간", isHeader: true }, { placeholder: "기간", exampleValue: "2025년 1월 1일 ~ 2026년 2월 28일", colspan: 3 }] },
+  { fields: [{ label: "계약금액", isHeader: true }, { placeholder: "총 계약금액", exampleValue: "금 1,000,000,000원 (십억원정)", colspan: 3 }] },
+  { fields: [{ label: "기지급액", isHeader: true }, { placeholder: "기지급 금액", exampleValue: "600,000,000원" }, { label: "청구액", isHeader: true }, { placeholder: "이번 청구액", exampleValue: "400,000,000원" }] },
+  { fields: [{ label: "공사 내용", isHeader: true }, { placeholder: "공사 상세", exampleValue: "토목공사, 건축공사, 전기설비공사 일체", colspan: 3 }] },
+  { fields: [{ label: "입금 계좌", isHeader: true }, { placeholder: "은행 계좌", exampleValue: "국민은행 987-65-43210 (예금주: △△건업(주))", colspan: 3 }] },
+  { fields: [{ label: "청구인", isHeader: true }, { placeholder: "회사명 및 대표", exampleValue: "△△건업(주) 대표이사 박시공 (인)", colspan: 3 }] },
+];
