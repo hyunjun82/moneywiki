@@ -376,6 +376,11 @@ export default async function WikiPage({ params }: PageProps) {
     processedHtml = processedHtml + faqHtml;
   }
 
+  // 서론/본문 분리 (첫 번째 <h2> 기준)
+  const firstH2Index = processedHtml.search(/<h2[\s>]/);
+  const introHtml = firstH2Index > 0 ? processedHtml.slice(0, firstH2Index) : "";
+  const bodyHtml = firstH2Index > 0 ? processedHtml.slice(firstH2Index) : processedHtml;
+
   // 목차 추출 (processedHtml에서 - FAQ 제거 후)
   const toc = extractToc(processedHtml).filter(
     item => !/자주\s*묻는\s*질문/i.test(item.text)
@@ -515,17 +520,6 @@ export default async function WikiPage({ params }: PageProps) {
               </div>
           )}
 
-          {/* CTA 카드 - 서론 아래 행동 유도 (계산기 페이지에서는 숨김) */}
-          {doc.schemaType !== "calculator" && doc.ctaCard && (
-            <CtaCard
-              label={doc.ctaCard.label}
-              mainText={doc.ctaCard.mainText}
-              subText={doc.ctaCard.subText}
-              url={doc.ctaCard.url}
-              external={doc.ctaCard.external}
-            />
-          )}
-
           {/* 3줄 요약 (계산기 페이지에서는 숨김) */}
           {doc.schemaType !== "calculator" && doc.summary && (
             <div className="mb-8 p-6 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl border border-emerald-100">
@@ -604,7 +598,28 @@ export default async function WikiPage({ params }: PageProps) {
             <AdSense slot={AD_SLOTS.HORIZONTAL} className="w-full" />
           </div>
 
-          {/* 문서 본문 */}
+          {/* 서론 (첫 번째 H2 전까지) */}
+          {introHtml && (
+            <article
+              className="prose prose-neutral max-w-none
+                prose-p:leading-7
+                prose-a:text-emerald-600 prose-a:no-underline hover:prose-a:underline"
+              dangerouslySetInnerHTML={{ __html: introHtml }}
+            />
+          )}
+
+          {/* CTA 카드 - 서론 아래 행동 유도 (계산기 페이지에서는 숨김) */}
+          {doc.schemaType !== "calculator" && doc.ctaCard && (
+            <CtaCard
+              label={doc.ctaCard.label}
+              mainText={doc.ctaCard.mainText}
+              subText={doc.ctaCard.subText}
+              url={doc.ctaCard.url}
+              external={doc.ctaCard.external}
+            />
+          )}
+
+          {/* 본문 (H2 섹션들) */}
           <article
             className="prose prose-neutral max-w-none
               prose-headings:font-semibold prose-headings:scroll-mt-20
@@ -619,7 +634,7 @@ export default async function WikiPage({ params }: PageProps) {
               prose-td:p-3 prose-td:border-t prose-td:border-neutral-200
               prose-li:my-1
               prose-blockquote:border-l-emerald-500 prose-blockquote:bg-emerald-50 prose-blockquote:py-1"
-            dangerouslySetInnerHTML={{ __html: processedHtml }}
+            dangerouslySetInnerHTML={{ __html: bodyHtml }}
           />
 
           {/* 출처 섹션 - E-E-A-T 강화 */}
