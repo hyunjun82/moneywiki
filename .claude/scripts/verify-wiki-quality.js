@@ -1,16 +1,17 @@
 #!/usr/bin/env node
 /**
- * 머니위키 CCTV 품질 검증 스크립트
+ * 머니위키 CCTV 품질 검증 스크립트 (v2.3)
  *
  * 작동 방식:
  * 1. PreToolUse: stdin에서 content 읽음 → 검증 → 차단
  * 2. PostToolUse: 파일 경로에서 직접 읽음 → 검증 → 실패 시 삭제!
  *
  * 검증 항목:
- * - 타이틀: 3-4개 단어 + 콜론 필수
+ * - 타이틀: 콜론(:) 금지, 32자 이내
  * - Keywords: 정확히 4개
  * - 내부링크: 3개 이상
- * - CTA 버튼: 행동 유도
+ * - ctaCard: frontmatter 필수 (label, mainText, subText, url)
+ * - 섹션: 4문장 이상
  * - 수치 오차: critical-facts.json
  */
 
@@ -42,27 +43,15 @@ function validateWikiContent(content, filePath) {
   if (titleMatch) {
     const title = titleMatch[1];
 
-    // 32자 이내
-    if (title.length > 32) {
-      warnings.push(`타이틀 길이: ${title.length}자 (32자 이내 권장)`);
-    }
 
-    // 콜론(:) 사용 여부
-    if (!title.includes(':')) {
-      errors.push(`타이틀에 콜론(:) 없음: "${title}"`);
-    }
-
-    // 콜론 앞 단어 수 검증 (3-4개)
+    // 콜론(:) 금지 (v2.3 규칙)
     if (title.includes(':')) {
-      const beforeColon = title.split(':')[0].trim();
-      const wordCount = beforeColon.split(/\s+/).length;
+      errors.push(`타이틀에 콜론(:) 사용 금지: "${title}" → 콜론 없이 작성`);
+    }
 
-      if (wordCount < 3 || wordCount > 4) {
-        errors.push(
-          `타이틀 콜론 앞 단어 수 오류: "${beforeColon}" (${wordCount}개)\n` +
-          `   → 3-4개 단어 필요 (예: "퇴직금 세금 공제", "실업급여 지급 기간")`
-        );
-      }
+    // 타이틀 32자 이내
+    if (title.length > 32) {
+      errors.push(`타이틀 32자 초과: ${title.length}자 "${title}"`);
     }
 
     // "~란 무엇인가요?", "3단계", "및" 금지 패턴
@@ -112,8 +101,71 @@ function validateWikiContent(content, filePath) {
   // keywords를 외부에서도 사용 가능하게 저장
   const parsedKeywords = keywords;
 
+  // ========================================
+  // 2-1. 타이틀+키워드+소제목 완벽 일치 검증 (핵심 규칙!)
+  // ========================================
+  if (titleMatch && parsedKeywords.length === 4) {
+    const title = titleMatch[1];
+    // 타이틀에서 조사/접속사 제거한 핵심 단어 추출
+    const titleNormalized = title.replace(/[과와의를은는이가에서도까지]/g, ' ').replace(/\s+/g, ' ').trim();
+
+    parsedKeywords.forEach(kw => {
+      // 키워드의 핵심 단어들이 타이틀에 있는지 확인
+      const kwWords = kw.split(/\s+/).filter(w => w.length > 1);
+      const missingWords = kwWords.filter(word => !title.includes(word) && !titleNormalized.includes(word));
+
+      if (missingWords.length > 0) {
+        errors.push(`키워드-타이틀 불일치: "${kw}" → 타이틀에 "${missingWords.join(', ')}" 없음! 타이틀에 포함된 단어로만 키워드 구성 필수`);
+      }
+    });
+
+    // 동의어 사전 (같은 검색 의도 = 중복!)
+    const synonymGroups = [
+      ['대상', '조건', '자격', '요건'],
+      ['방법', '절차', '과정', '순서'],
+      ['금액', '비용', '요금', '수수료'],
+      ['기한', '기간', '시기', '시점'],
+      ['서류', '준비물', '구비서류'],
+      ['계산', '산정', '산출'],
+      ['지급', '수령', '수급'],
+      ['감면', '공제', '절세'],
+      ['종류', '유형', '구분'],
+    ];
+    const synonymMap = new Map();
+    synonymGroups.forEach((group, idx) => {
+      group.forEach(word => synonymMap.set(word, idx));
+    });
+
+    for (let i = 0; i < parsedKeywords.length; i++) {
+      for (let j = i + 1; j < parsedKeywords.length; j++) {
+        const kw1 = parsedKeywords[i].trim();
+        const kw2 = parsedKeywords[j].trim();
+        if (kw1.includes(kw2) || kw2.includes(kw1)) continue;
+
+        const words1 = kw1.split(/\s+/).filter(w => w.length > 1);
+        const words2 = kw2.split(/\s+/).filter(w => w.length > 1);
+        if (words1.length <= 1 || words2.length <= 1) continue;
+
+        // 다른 단어만 추출
+        const diff1 = words1.filter(w => !words2.includes(w));
+        const diff2 = words2.filter(w => !words1.includes(w));
+
+        // 다른 부분끼리 동의어면 = 같은 검색 의도 = 중복
+        for (const d1 of diff1) {
+          for (const d2 of diff2) {
+            if (synonymMap.has(d1) && synonymMap.get(d1) === synonymMap.get(d2)) {
+              errors.push(`키워드 동의어 중복: "${kw1}" ≈ "${kw2}" ("${d1}" ≈ "${d2}") → 서로 다른 검색 의도 필요`);
+            }
+          }
+        }
+      }
+    }
+  }
+
   // 3. 소제목 검증 (PAA 자연스러움)
   const h2Matches = bodyContent.match(/^## (.+)$/gm);
+  const contentH2s = h2Matches ? h2Matches.map(h => h.replace(/^## /, '')).filter(h => h !== '출처' && h !== '관련 문서') : [];
+
   if (h2Matches) {
     h2Matches.forEach(h2 => {
       const h2Text = h2.replace(/^## /, '');
@@ -133,6 +185,21 @@ function validateWikiContent(content, filePath) {
     });
   }
 
+  // 3-1. H2 ↔ 키워드 대응 검증 (각 키워드가 대응하는 H2가 있어야 함)
+  if (parsedKeywords.length === 4 && contentH2s.length >= 4) {
+    parsedKeywords.forEach(kw => {
+      const kwWords = kw.split(/\s+/).filter(w => w.length > 1);
+      const hasMatchingH2 = contentH2s.some(h2 => {
+        const matchCount = kwWords.filter(w => h2.includes(w)).length;
+        return matchCount >= Math.ceil(kwWords.length * 0.6);
+      });
+
+      if (!hasMatchingH2) {
+        errors.push(`키워드-소제목 불일치: "${kw}" → 대응하는 H2 없음! 키워드마다 H2 하나씩 매칭 필수`);
+      }
+    });
+  }
+
   // 4. 내부링크 검증 (3개 이상)
   const internalLinks = bodyContent.match(/\[([^\]]+)\]\((\/w\/[^\)]+|\/calculators\/[^\)]+)\)/g);
   const internalLinkCount = internalLinks ? internalLinks.length : 0;
@@ -140,12 +207,24 @@ function validateWikiContent(content, filePath) {
     errors.push(`내부링크 부족: ${internalLinkCount}개 (최소 3개 필요)`);
   }
 
-  // 5. CTA 버튼 검증
-  const ctaMatch = bodyContent.match(/<span class="ext-btn-cta">(.+?)<\/span>/);
-  if (!ctaMatch) {
-    const hasExtBtn = bodyContent.includes('class="ext-btn');
-    if (!hasExtBtn) {
-      errors.push('CTA 버튼 없음 (행동 유도 필수!)');
+  // 5. CTA 카드 검증 (frontmatter ctaCard 필수)
+  const ctaCardMatch = frontmatter.match(/ctaCard:/);
+  if (!ctaCardMatch) {
+    errors.push('ctaCard 없음 (frontmatter에 ctaCard 필수!)');
+  } else {
+    // ctaCard 필수 필드 검증
+    const hasLabel = frontmatter.match(/ctaCard:[\s\S]*?label:/);
+    const hasMainText = frontmatter.match(/ctaCard:[\s\S]*?mainText:/);
+    const hasSubText = frontmatter.match(/ctaCard:[\s\S]*?subText:/);
+    const hasUrl = frontmatter.match(/ctaCard:[\s\S]*?url:/);
+
+    if (!hasLabel || !hasMainText || !hasSubText || !hasUrl) {
+      const missing = [];
+      if (!hasLabel) missing.push('label');
+      if (!hasMainText) missing.push('mainText');
+      if (!hasSubText) missing.push('subText');
+      if (!hasUrl) missing.push('url');
+      errors.push(`ctaCard 필수 필드 누락: ${missing.join(', ')}`);
     }
   }
 
@@ -201,6 +280,14 @@ function validateWikiContent(content, filePath) {
       errors.push(`섹션 "${sectionTitle}" 내용 부족: ${sentences.length}문장 (최소 4문장 필수!)`);
     }
   });
+
+  // 9-1. 시각 요소 검증 (텍스트만 있으면 읽기 힘듦)
+  const hasBlockquote = /^> .+/m.test(bodyContent);
+  const hasTable = /\|.+\|.+\|/.test(bodyContent);
+  const hasSelectionBullet = /- \*\*.+\*\*/.test(bodyContent);
+  if (!hasBlockquote && !hasTable && !hasSelectionBullet) {
+    warnings.push('시각 요소 없음: blockquote(>), 테이블(|), 굵은 불릿 중 1개 이상 권장');
+  }
 
   // 10. 이탈 방지 - 완전성 검증 (대형사이트 대비)
   const completenessChecks = {
@@ -332,8 +419,7 @@ function printResults(result, filePath) {
 
     console.error('────────────────────────────────────────────────────────────');
     console.error('📌 참고:');
-    console.error('   - .claude/references/keyword-skill.md (타이틀 규칙)');
-    console.error('   - .claude/references/action-keywords.md (CTA 버튼)');
+    console.error('   - .claude/references/moneywiki-template3358.md (템플릿 최신)');
     console.error('   - .claude/references/critical-facts.json (수치 정확성)');
     console.error('────────────────────────────────────────────────────────────');
     console.error('');

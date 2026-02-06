@@ -36,7 +36,7 @@
 
 ### 1단계: 템플릿 읽기
 ```
-Read("C:\Users\user\wiki-site\.claude\references\moneywiki-template.md")
+Read("C:\Users\user\wiki-site\.claude\references\moneywiki-template3358.md")
 ```
 
 ### 2단계: 정보 확인 (WebFetch 우선!)
@@ -170,11 +170,11 @@ keywords: [A, B, C, D] → H2: [A질문, B질문, C질문, D질문]
 
 | 파일 | 용도 |
 |------|------|
-| `moneywiki-template.md` | 전체 템플릿 + 예시 |
-| `keyword-skill.md` | **타이틀 구조화 규칙** |
-| `keyword-extraction-workflow.md` | **PAA → 키워드 추출** |
-| `batch-agent-rules.md` | **배치 작성 시 필독** |
+| `moneywiki-template3358.md` | **최신 템플릿** (경쟁사 장점 포함) |
+| `keywords.md` (commands/) | **타이틀 구조화 규칙** (콜론 금지) |
 | `wiki-rules.md` | 신뢰 출처 리스트 |
+| `moneywiki-writer.md` (agents/) | 글 작성 에이전트 |
+| `moneywiki-reviewer.md` (agents/) | 검토 에이전트 |
 
 ---
 
