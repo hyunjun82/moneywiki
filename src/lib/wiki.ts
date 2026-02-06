@@ -260,6 +260,8 @@ export async function getWikiDocument(
     cta: data.cta || [],
     // CTA 버튼 (단일 객체)
     ctaButton: data.ctaButton,
+    // CTA 카드 (서론 아래 행동 유도)
+    ctaCard: data.ctaCard,
     // 차트 컴포넌트
     chart: data.chart,
     // 차트 설정
