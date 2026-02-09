@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 const INDEXNOW_KEY = 'cf14d2ece5b0438e848760be86604782';
-const HOST = 'jjyu.co.kr';
+const HOST = 'www.jjyu.co.kr';
 
 // IndexNow 제출 함수
 async function submitToIndexNow(urls: string[]) {
