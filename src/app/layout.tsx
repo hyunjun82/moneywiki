@@ -8,7 +8,7 @@ import KakaoSDK from "@/components/KakaoSDK";
 import AdClickTracker from "@/components/AdClickTracker";
 import MobileStickyBar from "@/components/MobileStickyBar";
 import Link from "next/link";
-import { WebSiteSchema, OrganizationSchema } from "@/components/JsonLd";
+import { WebSiteSchema, OrganizationSchema, PersonSchema } from "@/components/JsonLd";
 
 // Google Fonts 최적화: next/font로 자동 셀프호스팅 + display swap
 const inter = Inter({
@@ -60,6 +60,7 @@ export const metadata: Metadata = {
     other: {
       "msvalidate.01": "1945B725690D183CB7825C0D0FB24443",
       "daum-verification": "9f5b7b51c6f32d3f0e5b6db2a8fc13839e7936f1ef2870bb85967b978c0ffe08:XNG90a1lomEQ6b3Rh86ohQ==",
+      "naver-site-verification": "c59c1c6975687fa229b95b038b1de462b43ff320",
     },
   },
   icons: {
@@ -93,6 +94,7 @@ export default function RootLayout({
         {/* 전역 JSON-LD 스키마 - 위키트리 벤치마킹 */}
         <WebSiteSchema />
         <OrganizationSchema />
+        <PersonSchema />
         <KakaoSDK />
         <AdClickTracker />
         <Header />
