@@ -66,9 +66,9 @@ export default function MobileStickyBar() {
       <div
         className="hidden lg:block fixed bottom-0 z-40"
         style={{
-          left: 'max(1rem, calc((100vw - 1280px) / 2 + 1rem))',
-          right: 'calc(288px + 2rem + max(1rem, (100vw - 1280px) / 2))',
-          maxWidth: 'calc(1280px - 288px - 4rem)'
+          left: 'max(1rem, calc((100vw - 720px) / 2))',
+          right: 'max(1rem, calc((100vw - 720px) / 2))',
+          maxWidth: '720px'
         }}
       >
         <Link
@@ -80,13 +80,15 @@ export default function MobileStickyBar() {
             borderTopRightRadius: '12px',
           }}
         >
-          <span className="px-3 py-1 bg-white text-emerald-700 rounded-full text-xs font-bold">
-            평균 13만원 환급
+          <span className="flex-1 flex items-center justify-start">
+            <span className="px-3 py-1 bg-white text-emerald-700 rounded-full text-xs font-bold">
+              평균 13만원 환급
+            </span>
           </span>
           <span className="flex-1 text-center font-bold text-white text-sm">
             30초 안에 내 숨은 환급금 찾기
           </span>
-          <span className="font-bold text-white text-sm">
+          <span className="flex-1 font-bold text-white text-sm text-right">
             조회하기 →
           </span>
         </Link>

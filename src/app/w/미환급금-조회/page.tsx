@@ -74,7 +74,7 @@ export default function RefundPage() {
       {/* What */}
       <section className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-slate-900 text-center mb-12">
+          <h2 id="refund-types" className="text-2xl font-bold text-slate-900 text-center mb-12">
             어떤 환급금을 찾을 수 있나요?
           </h2>
 
@@ -104,7 +104,7 @@ export default function RefundPage() {
       {/* How */}
       <section className="py-20 px-6 bg-slate-50">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-slate-900 text-center mb-12">
+          <h2 id="how-to" className="text-2xl font-bold text-slate-900 text-center mb-12">
             조회 방법
           </h2>
 

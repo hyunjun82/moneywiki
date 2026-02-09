@@ -59,3 +59,19 @@ dev-server.log
 # 배치 작업 플래그
 .batch-in-progress
 .batch-info
+
+# 빌드 및 작업 로그
+*.log
+build-*.log
+
+# 임시 스크립트 및 보고서
+check-*.js
+fix-*.js
+extract-*.js
+REPORT.md
+
+# 작업 데이터
+extracted-*.json
+
+# 임시 이미지
+*-rewrite.png

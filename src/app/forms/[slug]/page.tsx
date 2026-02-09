@@ -557,7 +557,7 @@ export default async function FormDownloadPage({ params }: PageProps) {
 
         {/* 다운로드 버튼 - <a download> 태그 사용 */}
         <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl p-6 mb-8">
-          <h2 className="text-lg font-semibold text-neutral-800 mb-4">
+          <h2 id="download" className="text-lg font-semibold text-neutral-800 mb-4">
             {(form.downloads.hwp || form.downloads.doc || form.downloads.pdf)
               ? "원하는 포맷으로 다운받으세요"
               : "외부 사이트에서 다운로드"}
@@ -650,7 +650,7 @@ export default async function FormDownloadPage({ params }: PageProps) {
         {/* 작성 팁 */}
         {form.tips && form.tips.length > 0 && (
           <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-8">
-            <h2 className="text-lg font-semibold text-neutral-800 mb-3 flex items-center gap-2">
+            <h2 id="tips" className="text-lg font-semibold text-neutral-800 mb-3 flex items-center gap-2">
               <svg className="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
               </svg>
@@ -670,7 +670,7 @@ export default async function FormDownloadPage({ params }: PageProps) {
         {/* FAQ 섹션 (SEO용) */}
         {form.faq && form.faq.length > 0 && (
           <div className="bg-white border border-neutral-200 rounded-xl p-6 mb-8">
-            <h2 className="text-lg font-semibold text-neutral-800 mb-4 flex items-center gap-2">
+            <h2 id="faq" className="text-lg font-semibold text-neutral-800 mb-4 flex items-center gap-2">
               <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -697,7 +697,7 @@ export default async function FormDownloadPage({ params }: PageProps) {
         {/* 관련 문서 (내부링크) */}
         {form.relatedDocs && form.relatedDocs.length > 0 && (
           <div className="bg-neutral-50 border border-neutral-200 rounded-xl p-6 mb-8">
-            <h2 className="text-lg font-semibold text-neutral-800 mb-4 flex items-center gap-2">
+            <h2 id="related" className="text-lg font-semibold text-neutral-800 mb-4 flex items-center gap-2">
               <svg className="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>

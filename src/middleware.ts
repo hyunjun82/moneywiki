@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { staticRedirects, getPatternRedirect, getTopicFallback } from "./lib/redirect-config";
 
 export async function middleware(request: NextRequest) {
   const host = request.headers.get("host") || "";
+  const pathname = request.nextUrl.pathname;
 
   // www 없는 도메인 → www로 301 리다이렉트 (SEO)
   if (host === "jjyu.co.kr") {
@@ -12,7 +14,7 @@ export async function middleware(request: NextRequest) {
   }
 
   // robots.txt 동적 처리 (User-Agent 기반)
-  if (request.nextUrl.pathname === '/robots.txt') {
+  if (pathname === '/robots.txt') {
     const userAgent = (request.headers.get('user-agent') || '').toLowerCase();
 
     // 기본 robots.txt (Google용)
@@ -41,6 +43,30 @@ DaumWebMasterTool:8f277e6a15ecca107afcea48a37bb3aa62fde6892c1349fc8bd43ce576745c
     });
   }
 
+  // === 404 리다이렉트 처리 ===
+
+  // 1단계: 정적 리다이렉트 (로마자, 중첩경로, 카테고리)
+  const decodedPathname = decodeURIComponent(pathname);
+  const staticTarget = staticRedirects[decodedPathname] || staticRedirects[pathname];
+  if (staticTarget) {
+    return NextResponse.redirect(new URL(staticTarget, request.url), 301);
+  }
+
+  // 2단계: 패턴 매칭 (공백→검색, .md제거, 중첩경로, opengraph-image)
+  const patternTarget = getPatternRedirect(decodedPathname);
+  if (patternTarget) {
+    return NextResponse.redirect(new URL(patternTarget, request.url), 301);
+  }
+
+  // 3단계: /w/slug가 미존재 확인된 URL → 카테고리 fallback
+  if (decodedPathname.startsWith('/w/')) {
+    const slug = decodedPathname.replace('/w/', '');
+    const fallback = getTopicFallback(slug);
+    if (fallback) {
+      return NextResponse.redirect(new URL(fallback, request.url), 301);
+    }
+  }
+
   // IP 주소 가져오기
   const forwarded = request.headers.get("x-forwarded-for");
   const ip = forwarded?.split(",")[0]?.trim() || "";
@@ -50,11 +76,6 @@ DaumWebMasterTool:8f277e6a15ecca107afcea48a37bb3aa62fde6892c1349fc8bd43ce576745c
 
   // 응답에 IP 헤더 추가 (디버깅용)
   const response = NextResponse.next();
-
-  // 광고 페이지 접근 로깅 (옵션)
-  if (request.nextUrl.pathname.startsWith("/w/")) {
-    // 위키 페이지 접근 시 기본 처리
-  }
 
   return response;
 }

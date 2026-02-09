@@ -97,7 +97,7 @@ export default function Home() {
 
       {/* 인기 계산기 - 8개만 */}
       <section id="calculators" className="mb-12">
-        <h2 className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-4">
+        <h2 id="calculators" className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-4">
           계산기
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -116,7 +116,7 @@ export default function Home() {
 
       {/* 카테고리 - 상위 8개만 */}
       <section className="mb-12">
-        <h2 className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-4">
+        <h2 id="categories" className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-4">
           카테고리
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -140,7 +140,7 @@ export default function Home() {
 
       {/* 인기 문서 - 6개만 */}
       <section className="mb-12">
-        <h2 className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-4">
+        <h2 id="popular" className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-4">
           인기 문서
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -159,7 +159,7 @@ export default function Home() {
 
       {/* 최신 업데이트 - 6개만 */}
       <section className="mb-12">
-        <h2 className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-4">
+        <h2 id="recent" className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-4">
           최신 업데이트
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

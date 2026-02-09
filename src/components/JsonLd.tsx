@@ -402,6 +402,44 @@ export function WebApplicationSchema({
   );
 }
 
+// Person 스키마 - 작성자 프로필 (E-E-A-T 핵심)
+// 전역 고정: layout.tsx에서 항상 렌더링
+export function PersonSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "머니위키 에디터",
+    url: "https://www.jjyu.co.kr/about",
+    jobTitle: "금융·세무 콘텐츠 에디터",
+    worksFor: {
+      "@type": "Organization",
+      name: "머니위키",
+      url: "https://www.jjyu.co.kr",
+    },
+    knowsAbout: [
+      "양도소득세",
+      "종합부동산세",
+      "퇴직금",
+      "연말정산",
+      "원천징수",
+      "4대보험",
+      "국민연금",
+      "실업급여",
+      "주택연금",
+      "전세자금대출",
+    ],
+    description:
+      "정부 사이트보다 쉽고, 블로그보다 정확한 금융·세무 정보를 작성합니다.",
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
 // ItemList 스키마 - Hub 페이지용 (내부 SEO 강화)
 // Hub 페이지에 연결된 Spoke 글 목록을 구조화하여 구글에 전달
 export function ItemListSchema({

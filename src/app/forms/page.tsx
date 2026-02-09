@@ -71,7 +71,7 @@ export default function FormsListPage() {
         {/* 카테고리별 양식 목록 */}
         {sortedCategories.map(([category, forms]) => (
           <section key={category} className="mb-10">
-            <h2 className="flex items-center gap-2 text-lg font-semibold text-neutral-800 mb-4">
+            <h2 id={category.replace(/\s+/g, '-').replace(/\//g, '-')} className="flex items-center gap-2 text-lg font-semibold text-neutral-800 mb-4">
               <span>{categoryEmoji[category] || "📄"}</span>
               {category}
               <span className="text-sm font-normal text-neutral-500">

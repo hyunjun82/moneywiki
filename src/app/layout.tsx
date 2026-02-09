@@ -8,7 +8,7 @@ import KakaoSDK from "@/components/KakaoSDK";
 import AdClickTracker from "@/components/AdClickTracker";
 import MobileStickyBar from "@/components/MobileStickyBar";
 import Link from "next/link";
-import { WebSiteSchema, OrganizationSchema } from "@/components/JsonLd";
+import { WebSiteSchema, OrganizationSchema, PersonSchema } from "@/components/JsonLd";
 
 // Google Fonts 최적화: next/font로 자동 셀프호스팅 + display swap
 const inter = Inter({

@@ -709,6 +709,45 @@ article table,
   overflow-x: auto;
 }
 
+/* 머니위키 테이블 헤더 스타일 */
+article table thead th,
+.prose table thead th {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  border: none;
+}
+
+article table thead th:first-child,
+.prose table thead th:first-child {
+  border-radius: 8px 0 0 0;
+}
+
+article table thead th:last-child,
+.prose table thead th:last-child {
+  border-radius: 0 8px 0 0;
+}
+
+article table tbody td,
+.prose table tbody td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--gray-200);
+  font-size: 0.9rem;
+}
+
+article table tbody tr:hover,
+.prose table tbody tr:hover {
+  background-color: var(--gray-50);
+}
+
+article table tbody tr:last-child td,
+.prose table tbody tr:last-child td {
+  border-bottom: none;
+}
+
 /* blockquote 오버플로우 방지 */
 article blockquote,
 .prose blockquote {

@@ -112,7 +112,7 @@ export default async function CategoryPage({ params }: PageProps) {
       {/* 정부지원금 특별 안내 */}
       {categoryName === "정부지원금" && (
         <div className="mb-8 p-6 bg-gradient-to-br from-yellow-50 to-yellow-100 border-2 border-yellow-300 rounded-xl">
-          <h2 className="text-lg font-bold text-gray-900 mb-2">💰 숨은 정부지원금 찾기</h2>
+          <h2 id="gov-support" className="text-lg font-bold text-gray-900 mb-2">💰 숨은 정부지원금 찾기</h2>
           <p className="text-sm text-gray-700 mb-4">
             청년 지원금, 출산 혜택, 근로장려금 등 내가 받을 수 있는 정부 지원금을 확인하세요.
           </p>

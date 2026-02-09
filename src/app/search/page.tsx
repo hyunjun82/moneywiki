@@ -116,7 +116,7 @@ function SearchContent() {
           ) : query ? (
             <div className="text-center py-12">
               <div className="text-6xl mb-4">🔍</div>
-              <h2 className="text-xl font-bold mb-2">검색 결과가 없습니다</h2>
+              <h2 id="no-results" className="text-xl font-bold mb-2">검색 결과가 없습니다</h2>
               <p className="text-gray-500 mb-4">
                 &quot;{query}&quot;에 대한 문서를 찾을 수 없습니다.
               </p>
@@ -140,7 +140,7 @@ function SearchContent() {
           ) : (
             <div className="text-center py-12">
               <div className="text-6xl mb-4">📚</div>
-              <h2 className="text-xl font-bold mb-2">검색어를 입력하세요</h2>
+              <h2 id="search-prompt" className="text-xl font-bold mb-2">검색어를 입력하세요</h2>
               <p className="text-gray-500">
                 위키 문서를 검색하려면 검색어를 입력해주세요.
               </p>

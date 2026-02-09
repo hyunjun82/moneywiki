@@ -2,6 +2,10 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getWikiDocument, getAllWikiSlugs, findRelatedDocuments, getAllWikiDocuments } from "@/lib/wiki";
+import { getSpokeBySlug, getAllSpokeSlugs } from "@/data/spoke/registry";
+import { getHubBySlug, getAllHubSlugs } from "@/data/hub/registry";
+import SpokePageContent from "@/components/spoke/SpokePageContent";
+import HubPageContent from "@/components/hub/HubPageContent";
 import {
   ArticleSchema,
   FAQSchema,
@@ -24,17 +28,64 @@ interface PageProps {
 // Pure SSG - 빌드타임에만 정적 생성 (런타임 CPU 0%)
 export const dynamic = 'force-static';
 
-// 모든 페이지를 빌드 타임에 생성
+// 모든 페이지를 빌드 타임에 생성 (wiki MD + spoke TSX)
 export async function generateStaticParams() {
-  const allSlugs = getAllWikiSlugs();
-  return allSlugs.map((slug) => ({
-    slug: slug,
-  }));
+  const wikiSlugs = getAllWikiSlugs().map((slug) => ({ slug }));
+  const spokeSlugs = getAllSpokeSlugs().map((slug) => ({ slug }));
+  const hubSlugs = getAllHubSlugs().map((slug) => ({ slug }));
+  return [...wikiSlugs, ...spokeSlugs, ...hubSlugs];
 }
 
 // 메타데이터 생성 - SEO 최적화
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug: rawSlug } = await params;
+  const slug = decodeURIComponent(rawSlug);
+
+  // hub 데이터 우선 체크
+  const hub = getHubBySlug(slug);
+  if (hub) {
+    const { meta } = hub;
+    const url = `https://www.jjyu.co.kr/w/${slug}`;
+    return {
+      title: meta.title,
+      description: meta.description,
+      keywords: meta.keywords,
+      alternates: { canonical: url },
+      openGraph: {
+        title: meta.ogTitle,
+        description: meta.ogDescription,
+        type: 'article',
+        url,
+        siteName: '머니위키',
+        locale: 'ko_KR',
+      },
+      robots: { index: true, follow: true, 'max-snippet': -1, 'max-image-preview': 'large' as const },
+    };
+  }
+
+  // spoke 데이터 체크
+  const spoke = getSpokeBySlug(slug);
+  if (spoke) {
+    const { meta } = spoke;
+    const url = `https://www.jjyu.co.kr/w/${slug}`;
+    return {
+      title: meta.title,
+      description: meta.description,
+      keywords: meta.keywords,
+      alternates: { canonical: url },
+      openGraph: {
+        title: meta.ogTitle,
+        description: meta.ogDescription,
+        type: 'article',
+        url,
+        siteName: '머니위키',
+        locale: 'ko_KR',
+      },
+      robots: { index: true, follow: true, 'max-snippet': -1, 'max-image-preview': 'large' as const },
+    };
+  }
+
+  // 기존 wiki MD
   const doc = await getWikiDocument(slug);
 
   if (!doc) {
@@ -272,7 +323,22 @@ function addSectionIds(html: string): string {
 }
 
 export default async function WikiPage({ params }: PageProps) {
-  const { slug } = await params;
+  const { slug: rawSlug } = await params;
+  const slug = decodeURIComponent(rawSlug);
+
+  // 허브 데이터 우선 체크 → 허브 레이아웃으로 렌더링
+  const hub = getHubBySlug(slug);
+  if (hub) {
+    return <HubPageContent hub={hub} slug={slug} />;
+  }
+
+  // 스포크 데이터 체크 → 스포크 레이아웃으로 렌더링
+  const spoke = getSpokeBySlug(slug);
+  if (spoke) {
+    return <SpokePageContent spoke={spoke} slug={slug} />;
+  }
+
+  // 기존 wiki MD 렌더링
   const doc = await getWikiDocument(slug);
 
   if (!doc) {
@@ -295,7 +361,7 @@ export default async function WikiPage({ params }: PageProps) {
       <section class="faq-section mt-12 pt-8 border-t border-neutral-200">
         <div class="flex items-center gap-2 mb-6">
           <span class="text-2xl">❓</span>
-          <h2 class="text-2xl font-bold">자주 묻는 질문</h2>
+          <h2 id="faq" class="text-2xl font-bold">자주 묻는 질문</h2>
         </div>
         <div class="space-y-4">
           ${doc.faq.map((item: { question: string; answer: string }, index: number) => `
@@ -500,7 +566,7 @@ export default async function WikiPage({ params }: PageProps) {
           {doc.schemaType !== "calculator" && toc.length >= 2 && (
               <div className="mb-8 p-4 bg-neutral-50 border border-neutral-200 rounded-lg">
                 <div className="flex items-center justify-between mb-3">
-                  <h2 className="text-sm font-semibold text-neutral-600">목차</h2>
+                  <h2 id="toc" className="text-sm font-semibold text-neutral-600">목차</h2>
                 </div>
                 <ol className="space-y-1 text-sm">
                   {toc.map((item) => {
@@ -525,7 +591,7 @@ export default async function WikiPage({ params }: PageProps) {
             <div className="mb-8 p-6 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl border border-emerald-100">
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-xl">💡</span>
-                <h2 className="font-semibold text-emerald-800">3줄 요약</h2>
+                <h2 id="summary" className="font-semibold text-emerald-800">3줄 요약</h2>
               </div>
               {Array.isArray(doc.summary) ? (
                 <ul className="text-neutral-700 leading-relaxed space-y-2">
@@ -642,7 +708,7 @@ export default async function WikiPage({ params }: PageProps) {
             <section className="mt-8 pt-8 border-t border-neutral-200">
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-xl">📚</span>
-                <h2 className="text-lg font-semibold">출처 및 참고자료</h2>
+                <h2 id="sources" className="text-lg font-semibold">출처 및 참고자료</h2>
               </div>
               <ul className="space-y-2 text-sm">
                 {doc.sources.map((source, index) => (
