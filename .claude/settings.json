@@ -1,0 +1,57 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__playwright__browser_select_option",
+      "Bash(git push:*)",
+      "Bash(git commit:*)",
+      "Bash(for file in content/wiki/자손-자상-보험료-차이.md content/wiki/자손-자상-선택.md)",
+      "WebFetch(domain:taxly.kr)",
+      "Write(/src/data/spoke/**)",
+      "Write(/src/data/hub/**)",
+      "Edit(/src/data/spoke/registry.ts)",
+      "Edit(/src/data/hub/registry.ts)",
+      "WebSearch",
+      "WebFetch"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR\"/.claude/scripts/verify-spoke-quality.js",
+            "timeout": 30
+          }
+        ]
+      },
+      {
+        "matcher": "Bash(git push*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR\"/.claude/scripts/deploy-gate.js",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR\"/.claude/scripts/verify-spoke-quality.js",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  },
+  "editMode": "ask",
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  }
+}

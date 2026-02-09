@@ -49,10 +49,10 @@ next-env.d.ts
 tmpclaude-*
 nul
 .playwright-mcp/
-.claude/
 
-# internal docs
-.claude/
+# Claude Code - 민감 파일만 제외
+.claude/settings.local.json
+.claude/memory/
 dev.log
 dev-server.log
 
