@@ -23,6 +23,9 @@ function validateWikiContent(content, filePath) {
   const errors = [];
   const warnings = [];
 
+  // CRLF → LF 정규화 (Windows git checkout 대응)
+  content = content.replace(/\r\n/g, '\n');
+
   // wiki 파일만 검증
   const normalizedPath = filePath.replace(/\\/g, '/');
   if (!normalizedPath.includes('content/wiki/') || !normalizedPath.endsWith('.md')) {
@@ -64,6 +67,23 @@ function validateWikiContent(content, filePath) {
     if (title.includes(' 및 ')) {
       warnings.push(`타이틀에 "및" 사용 (자연스럽지 않을 수 있음): "${title}"`);
     }
+
+    // 타이틀 자연스러움: "과/와" 뒤 맨 끝이 단독 행동명사면 부자연스러움
+    // ❌ "주택과 신고" → ✅ "주택과 신고 방법"
+    // ❌ "적용과 계산" → ✅ "적용 조건 공제율과 계산"
+    const bareActionNouns = ['신고', '적용', '계산', '처분', '해지', '신청', '등록', '납부', '환급', '접수', '변경', '갱신', '전환', '조회', '발급', '취소', '연장', '수령', '지급'];
+    const bareEndMatch = title.match(/[과와]\s+(\S+)$/);
+    if (bareEndMatch && bareActionNouns.includes(bareEndMatch[1])) {
+      errors.push(`타이틀 부자연스러움: "~${bareEndMatch[0]}" → "${bareEndMatch[1]} 방법/조건/금액" 등 보어 추가 필요`);
+    }
+
+    // 타이틀 금지어 (키워드 스팸 느낌)
+    const bannedTitleWords = ['총정리', '완벽정리', '정리', '가이드', '가이드북', '비교표'];
+    bannedTitleWords.forEach(word => {
+      if (title.includes(word)) {
+        errors.push(`타이틀 금지어: "${word}" 사용 금지 → "${title}"`);
+      }
+    });
   }
 
   // 2. Keywords 개수 검증 (정확히 4개)
@@ -119,43 +139,82 @@ function validateWikiContent(content, filePath) {
       }
     });
 
-    // 동의어 사전 (같은 검색 의도 = 중복!)
-    const synonymGroups = [
-      ['대상', '조건', '자격', '요건'],
-      ['방법', '절차', '과정', '순서'],
-      ['금액', '비용', '요금', '수수료'],
-      ['기한', '기간', '시기', '시점'],
-      ['서류', '준비물', '구비서류'],
-      ['계산', '산정', '산출'],
-      ['지급', '수령', '수급'],
-      ['감면', '공제', '절세'],
-      ['종류', '유형', '구분'],
-    ];
-    const synonymMap = new Map();
-    synonymGroups.forEach((group, idx) => {
-      group.forEach(word => synonymMap.set(word, idx));
-    });
+    // ========================================
+    // 동의어 검증 v3 - 핵심 명사 기반 의미론적 검증
+    // ========================================
 
+    // 핵심 명사 동의어 그룹 (검색 의도를 결정하는 핵심어만)
+    const coreNounGroups = [
+      ['서류', '문서', '자료', '준비물', '구비서류', '첨부서류', '신청서류', '제출서류'],
+      ['비용', '요금', '수수료', '금액', '가격', '비'],
+      ['조건', '자격', '요건', '대상', '기준'],
+      ['방법', '절차', '과정', '순서', '프로세스'],
+      ['기간', '기한', '시기', '시점', '기일', '날짜'],
+      ['계산', '산정', '산출', '산식', '계산법'],
+      ['지급', '수령', '수급', '받기', '지불'],
+      ['감면', '공제', '절세', '혜택'],
+      ['종류', '유형', '구분', '타입', '분류'],
+    ];
+
+    // 접두사 단어 (검색 의도를 결정하지 않음 - 제외)
+    const prefixWords = new Set(['신청', '접수', '제출', '등록', '변경', '수정', '갱신', '조정', '취소', '철회', '취하', '포기', '개시', '종료', '완료']);
+
+    // 키워드에서 핵심 명사 추출 (마지막 1-2단어만 추출, 접두사 제외)
+    function extractCoreNounGroups(keyword) {
+      // 키워드를 단어로 분리
+      const words = keyword.split(/\s+/).filter(w => w.length > 1);
+
+      // 마지막 1-2단어만 추출 (핵심 의도를 나타내는 부분)
+      const coreWords = words.slice(-2);
+
+      // 접두사 제외하고 핵심 명사 그룹 찾기
+      const foundGroups = new Set();
+      coreNounGroups.forEach((group, groupIdx) => {
+        for (const noun of group) {
+          // 접두사 단어는 스킵
+          if (prefixWords.has(noun)) continue;
+
+          // 핵심 단어에만 매칭
+          for (const coreWord of coreWords) {
+            if (coreWord.includes(noun)) {
+              foundGroups.add(groupIdx);
+            }
+          }
+        }
+      });
+      return Array.from(foundGroups);
+    }
+
+    // 두 키워드의 핵심 명사가 같은 그룹에 속하는지 확인
     for (let i = 0; i < parsedKeywords.length; i++) {
       for (let j = i + 1; j < parsedKeywords.length; j++) {
         const kw1 = parsedKeywords[i].trim();
         const kw2 = parsedKeywords[j].trim();
+
+        // 완전 포함 관계는 스킵
         if (kw1.includes(kw2) || kw2.includes(kw1)) continue;
 
-        const words1 = kw1.split(/\s+/).filter(w => w.length > 1);
-        const words2 = kw2.split(/\s+/).filter(w => w.length > 1);
-        if (words1.length <= 1 || words2.length <= 1) continue;
+        // 각 키워드의 핵심 명사 그룹 추출
+        const groups1 = extractCoreNounGroups(kw1);
+        const groups2 = extractCoreNounGroups(kw2);
 
-        // 다른 단어만 추출
-        const diff1 = words1.filter(w => !words2.includes(w));
-        const diff2 = words2.filter(w => !words1.includes(w));
+        // 공통 그룹이 있으면 동의어 중복
+        const commonGroups = groups1.filter(g => groups2.includes(g));
 
-        // 다른 부분끼리 동의어면 = 같은 검색 의도 = 중복
-        for (const d1 of diff1) {
-          for (const d2 of diff2) {
-            if (synonymMap.has(d1) && synonymMap.get(d1) === synonymMap.get(d2)) {
-              errors.push(`키워드 동의어 중복: "${kw1}" ≈ "${kw2}" ("${d1}" ≈ "${d2}") → 서로 다른 검색 의도 필요`);
+        if (commonGroups.length > 0) {
+          // 어떤 핵심 명사가 중복인지 찾기
+          const duplicatedNouns = [];
+          commonGroups.forEach(groupIdx => {
+            const group = coreNounGroups[groupIdx];
+            const nouns1 = group.filter(n => kw1.includes(n));
+            const nouns2 = group.filter(n => kw2.includes(n));
+            if (nouns1.length > 0 && nouns2.length > 0) {
+              duplicatedNouns.push(`"${nouns1[0]}" ≈ "${nouns2[0]}"`);
             }
+          });
+
+          if (duplicatedNouns.length > 0) {
+            errors.push(`키워드 동의어 중복: "${kw1}" ≈ "${kw2}" (${duplicatedNouns[0]}) → 서로 다른 검색 의도 필요`);
           }
         }
       }
@@ -173,6 +232,12 @@ function validateWikiContent(content, filePath) {
       // "~란 무엇인가요?" 패턴 금지
       if (h2Text.match(/란\s*무엇인가요/)) {
         errors.push(`소제목 부자연스러움: "${h2Text}" → "~가 뭔가요?" 또는 "~는 뭔가요?" 사용`);
+      }
+
+      // "방법+어떻게" 중복 표현 금지
+      // ❌ "신청 방법은 어떻게 되나요?" → ✅ "신청 방법은 뭔가요?"
+      if (h2Text.includes('방법') && h2Text.includes('어떻게')) {
+        errors.push(`H2 중복 표현: "${h2Text}" → "방법"이 있으면 "뭔가요?" 사용 ("어떻게" 금지)`);
       }
 
       // 베이스 키워드 포함 확인 (parsedKeywords 사용)
@@ -200,11 +265,28 @@ function validateWikiContent(content, filePath) {
     });
   }
 
-  // 4. 내부링크 검증 (3개 이상)
+  // 4. 내부링크 (관련 문서 사이드바가 자동 표시하므로 본문 강제 안 함)
   const internalLinks = bodyContent.match(/\[([^\]]+)\]\((\/w\/[^\)]+|\/calculators\/[^\)]+)\)/g);
   const internalLinkCount = internalLinks ? internalLinks.length : 0;
-  if (internalLinkCount < 3) {
-    errors.push(`내부링크 부족: ${internalLinkCount}개 (최소 3개 필요)`);
+
+  // 4-1. 키워드 스터핑 검증 (본문에서 full keyword 사용 금지 - H2에만 사용)
+  // 템플릿 패턴: H2 제목에 full keyword, 본문은 자연어로 쪼개서 배치
+  if (keywords && keywords.length > 0) {
+    const kwSections = bodyContent.split(/^## /gm).slice(1);
+    kwSections.forEach((section) => {
+      const sectionTitle = section.split('\n')[0].trim();
+      if (sectionTitle.includes('출처') || sectionTitle.includes('관련')) return;
+      // H2 제목 제외한 본문만 추출
+      const sectionBody = section.substring(section.indexOf('\n'));
+      keywords.forEach((kw) => {
+        const escaped = kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const matches = sectionBody.match(new RegExp(escaped, 'g'));
+        const count = matches ? matches.length : 0;
+        if (count > 1) {
+          errors.push(`키워드 스터핑: "${kw}" 가 "${sectionTitle}" 본문에 ${count}회 (H2에만 사용! 본문은 자연어로 풀어쓰기)`);
+        }
+      });
+    });
   }
 
   // 5. CTA 카드 검증 (frontmatter ctaCard 필수)
@@ -308,13 +390,7 @@ function validateWikiContent(content, filePath) {
     warnings.push(`완전성 부족: ${missingInfo.join(', ')} 정보 없음 (이탈 방지 필요)`);
   }
 
-  // 11. 내부링크 다양성 검증 (관련 글 연결 = 이탈 방지)
-  if (internalLinkCount >= 3) {
-    const uniqueLinks = new Set(internalLinks.map(l => l.match(/\(([^)]+)\)/)[1]));
-    if (uniqueLinks.size < 3) {
-      warnings.push('내부링크 다양성 부족: 서로 다른 글 3개 이상 연결 권장');
-    }
-  }
+  // 11. 내부링크 다양성 (사이드바가 자동 처리하므로 검증 제거)
 
   // 6. 수치 오차 검증 (critical-facts.json)
   const scriptDir = __dirname;
