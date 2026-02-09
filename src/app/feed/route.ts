@@ -2,7 +2,7 @@ import { getAllWikiDocuments } from "@/lib/wiki";
 
 export async function GET() {
   const docs = await getAllWikiDocuments();
-  const siteUrl = "https://jjyu.co.kr";
+  const siteUrl = "https://www.jjyu.co.kr";
 
   // 최근 50개만
   const recentDocs = docs
