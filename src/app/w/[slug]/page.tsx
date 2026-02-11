@@ -25,15 +25,12 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-// Pure SSG - 빌드타임에만 정적 생성 (런타임 CPU 0%)
-export const dynamic = 'force-static';
+// ISR - 빌드 시 0개, 요청 시 생성 → 캐시 → 24시간 후 재생성
+export const revalidate = 86400;
+export const dynamicParams = true;
 
-// 모든 페이지를 빌드 타임에 생성 (wiki MD + spoke TSX)
 export async function generateStaticParams() {
-  const wikiSlugs = getAllWikiSlugs().map((slug) => ({ slug }));
-  const spokeSlugs = getAllSpokeSlugs().map((slug) => ({ slug }));
-  const hubSlugs = getAllHubSlugs().map((slug) => ({ slug }));
-  return [...wikiSlugs, ...spokeSlugs, ...hubSlugs];
+  return []; // 빌드 시 0개 생성, 유저 첫 방문 시 생성
 }
 
 // 메타데이터 생성 - SEO 최적화
