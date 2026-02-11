@@ -86,24 +86,6 @@ const data: SpokeData = {
         </p>
       </>
     ),
-    /**
-     * Quick Answer — Google Featured Snippet 타겟 + 이탈 방지 핵심
-     *
-     * ⚠️ 현재 SpokeData 타입에 quickAnswer 필드 없음. 타입 확장 후 추가 예정.
-     * 원본 HTML에서는 hero 바로 아래에 "핵심 요약" 박스로 존재:
-     *
-     * quickAnswer: {
-     *   text: '간이세액표는 비과세 제외 월급과 부양가족 수(본인 포함), 이 두 가지만 알면
-     *          매달 원천징수되는 소득세가 나와요. 예를 들어 월급 300만원·부양가족 2명이면
-     *          매월 소득세 38,000원 + 지방세 3,800원 = 총 41,800원이 빠져요.',
-     *   hook: '아래 계산기에 내 월급을 넣어 보면 바로 확인돼요',
-     * },
-     *
-     * 작성 원칙:
-     * - H2-1의 핵심 답변을 3줄 이내로 요약
-     * - 마지막에 계산기/도구로 자연스럽게 유도
-     * - 구체적 숫자 예시 포함 (이 글의 신뢰도를 한눈에 보여줌)
-     */
     hubCTA: {
       badge: '올인원',
       desc: '내 소득 유형에 맞는 세금 구조 확인하기',
@@ -137,14 +119,12 @@ const data: SpokeData = {
             <strong>근로소득 간이세액표</strong>는 국세청이 매년 발표하는 기준표예요. <a href="https://www.law.go.kr/법령/소득세법시행령/제194조" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">소득세법 시행령 제194조</a>에 따라 매년 2월에 고시되고, 회사는 이 표대로 매달 원천징수해요. 보는 법은 간단해요.
           </p>
 
-          {/* 절차: SpokeStepCards */}
           <SpokeStepCards steps={[
             { title: '비과세 항목 빼기', desc: '세전 급여에서 식대(월 20만원), 자가운전보조금 등 비과세 항목을 빼요' },
             { title: '부양가족 수 확인', desc: '본인 포함해서 배우자·자녀·부모님 중 소득·나이 요건 충족 인원을 세요' },
             { title: '표에서 교차점 찾기', desc: '아래 표에서 월급 구간 × 부양가족 수가 만나는 칸 = 매달 소득세' },
           ]} />
 
-          {/* 데이터: SpokeTable */}
           <SpokeTable
             id="tbl1"
             title="2026 간이세액표 월급별 소득세"
@@ -154,14 +134,12 @@ const data: SpokeData = {
             highlightCol={2}
           />
 
-          {/* 보충: TipBox */}
           <TipBox title="비과세 항목이 뭔지 헷갈린다면?">
             <p className="mb-0 leading-relaxed">
               대표적인 비과세: <strong>식대 월 20만원</strong>, 자가운전보조금 월 20만원, 출산·보육수당 월 20만원, 야간근로수당(생산직·월 240만원 이하). 급여명세서에서 '비과세'라고 표시된 항목을 확인하세요.
             </p>
           </TipBox>
 
-          {/* 전환 문장 — A. 독자 대변형 */}
           <p className="text-neutral-600 mb-4 leading-relaxed">
             자, 표에서 대략적인 세금은 알겠는데 내 월급에선 정확히 얼마인지 직접 계산해 보고 싶잖아요.
           </p>
@@ -179,10 +157,6 @@ const data: SpokeData = {
     /**
      * ===== S2: 계산 방법 =====
      *
-     * ⚠️ 원본 HTML은 인터랙티브 계산기(SpokeTaxCalculator) — 직접 입력하는 체험형 UX.
-     * 현재는 기존 컴포넌트(FormulaBox + SpokeRateBars)로 대체.
-     * 계산기 컴포넌트 개발 후 교체 필요. 계산기 없을 때는 국세청 조회 링크로 유도가 UX상 맞음.
-     *
      * 패턴: 계산 공식(FormulaBox) → 수치 비교(SpokeRateBars) → 출처 안내
      * 전환 스타일: B. 자연 호기심형 ("~궁금한 게 생기죠")
      * 시각 요소: FormulaBox + SpokeRateBars = 2개
@@ -198,7 +172,6 @@ const data: SpokeData = {
             <strong>비과세 제외한 월급</strong>과 <strong>부양가족 수</strong>, <strong>원천징수 비율</strong> — 이 세 가지만 알면 매달 소득세가 나와요. 부양가족 수는 본인을 포함해서 세면 돼요.
           </p>
 
-          {/* 계산 공식: FormulaBox */}
           <FormulaBox lines={[
             { text: '// 간이세액 계산 순서', comment: true },
             { text: '1. 세전 급여 - 비과세 항목 = 과세 급여', numbered: true },
@@ -211,7 +184,6 @@ const data: SpokeData = {
             예를 들어 월급 300만원, 부양가족 2명이면 소득세 <strong>38,000원</strong>이에요. 여기에 지방소득세 3,800원을 더하면 매달 <strong>총 41,800원</strong>이 빠져요.
           </p>
 
-          {/* 수치 비교: SpokeRateBars */}
           <SpokeRateBars bars={[
             { label: '소득세', rate: '38,000원', width: '65%' },
             { label: '지방소득세', rate: '3,800원', width: '10%' },
@@ -222,7 +194,6 @@ const data: SpokeData = {
             표에 없는 금액이면 <a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=6620&cntntsId=7873" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">국세청 간이세액표 조회</a>에서 1만원 단위로 정확한 세액을 조회할 수 있어요.
           </p>
 
-          {/* 전환 문장 — B. 자연 호기심형 */}
           <p className="text-neutral-600 mb-4 leading-relaxed">
             여기까지 보면 한 가지 궁금한 게 생기죠. 80%로 바꾸면 매달 얼마나 더 받을 수 있을까요?
           </p>
@@ -240,15 +211,9 @@ const data: SpokeData = {
     /**
      * ===== S3: 80/100/120% 비율 선택 =====
      *
-     * ⚠️ 원본 HTML은 RateCards + 슬라이더 비교 시뮬레이터 + 3문 진단 위저드(SpokeWizard) 포함.
-     * 현재는 RateCards + SpokeCompareCards로 대체. 위저드 컴포넌트 개발 후 추가 예정.
-     *
      * 패턴: 선택지 비교(RateCards) → 상세 비교(SpokeCompareCards) → 실무 팁(TipBox)
      * 전환 스타일: E. 실용 연결형 ("~정리했어요")
      * 시각 요소: RateCards + SpokeCompareCards + TipBox = 3개
-     *
-     * ⚠️ TipBox가 S1에도 있어서 전체 40% 경계선 (2/4 = 50%)
-     *    → 실제 작성 시 S3의 TipBox를 SpokeChecklist 등으로 대체하면 더 좋음
      */
     {
       id: 's3',
@@ -261,7 +226,6 @@ const data: SpokeData = {
             <strong>어떤 비율을 골라도 연간 세금 총액은 같아요.</strong> 차이는 매달 미리 내는 금액뿐이에요. 80%를 선택하면 매달 실수령이 늘지만 연말에 추가 납부 가능성이 있고, 120%를 선택하면 반대로 환급 가능성이 높아져요.
           </p>
 
-          {/* 선택지 비교: RateCards */}
           <RateCards cards={[
             { value: '80%', label: '적게 떼기', lines: ['매달 실수령 ↑', '연말에 추가 납부 가능성'], highlightColor: 'orange' },
             { value: '100%', label: '기본 (디폴트)', lines: ['간이세액표 그대로', '신청 안 하면 자동 적용'], active: true },
@@ -272,7 +236,6 @@ const data: SpokeData = {
             월급 300만원·부양가족 2명 기준으로 80%와 120% 사이 매달 약 <strong>8,400원</strong> 차이예요. 연간으로 환산하면 약 <strong>100,800원</strong>이에요. 어떤 상황에서 뭘 골라야 하는지 한눈에 비교해 볼게요.
           </p>
 
-          {/* 상세 비교: SpokeCompareCards */}
           <SpokeCompareCards cards={[
             {
               title: '80% 선택이 유리한 경우',
@@ -288,14 +251,12 @@ const data: SpokeData = {
             },
           ]} />
 
-          {/* 실무 팁: TipBox */}
           <TipBox title="변경 방법">
             <p className="mb-0 leading-relaxed">
               회사 인사팀에 <a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2304&cntntsId=238938" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline"><strong>원천징수세액 조정 신청서</strong></a>를 제출하면 돼요. 연중 아무 때나 변경 가능하고, 변경한 달부터 적용돼요.
             </p>
           </TipBox>
 
-          {/* 전환 문장 — E. 실용 연결형 */}
           <p className="text-neutral-600 mb-4 leading-relaxed">
             비율까지 정했으면 실제로 통장에 찍히는 금액이 궁금할 거예요. 4대보험까지 빠진 진짜 실수령액을 정리했어요.
           </p>
@@ -328,7 +289,6 @@ const data: SpokeData = {
             소득세 외에 <strong>국민연금(4.5%), 건강보험(3.545%), 장기요양보험(건강보험의 12.95%), 고용보험(0.9%)</strong>이 추가로 빠져요. 4대보험 합계 약 9.4%에 소득세를 더하면 전체 공제율은 약 <strong>10~17%</strong>예요.
           </p>
 
-          {/* 공식: FormulaBox */}
           <FormulaBox lines={[
             { text: '// 실수령액 공식', comment: true },
             { text: '실수령액 = 세전급여 - 소득세 - 지방세 - 4대보험' },
@@ -336,7 +296,6 @@ const data: SpokeData = {
             { text: '2,694,800 = 3,000,000 - 38,000 - 3,800 - 263,400' },
           ]} />
 
-          {/* 데이터: SpokeTable */}
           <SpokeTable
             id="tbl3"
             title="2026 월급별 실수령액 표"
@@ -346,7 +305,6 @@ const data: SpokeData = {
             highlightCol={5}
           />
 
-          {/* 주의: SpokeWarnBox */}
           <SpokeWarnBox title="주의사항">
             <p className="mb-0 leading-relaxed">
               위 표는 <strong>근사치</strong>예요. 건강보험료 상한·하한, 국민연금 상한(월 590만원), 비과세 항목 차이 등에 따라 실제 금액과 다를 수 있어요. 정확한 금액은 급여명세서를 확인하세요.
@@ -354,7 +312,6 @@ const data: SpokeData = {
           </SpokeWarnBox>
         </>
       ),
-      /* 마지막 섹션 bridgeCTA — primary: true, 허브 또는 계산기로 연결 */
       bridgeCTA: {
         href: '/w/원천세-가이드',
         badge: '올인원',
@@ -365,10 +322,6 @@ const data: SpokeData = {
       },
     },
 
-    /**
-     * ===== S5: FAQ =====
-     * content: null → FAQ 자동 렌더링
-     */
     {
       id: 's5',
       number: '05',
@@ -378,12 +331,6 @@ const data: SpokeData = {
     },
   ],
 
-  /**
-   * FAQ — H2와 겹치지 않는 실무 질문 2개
-   *
-   * H2: 세금표, 계산, 비율 선택, 실수령액
-   * FAQ: 중도입사자 적용, 연말정산 차이 ← H2와 안 겹침
-   */
   faq: [
     {
       question: '중도입사자는 간이세액표를 어떻게 적용하나요?',

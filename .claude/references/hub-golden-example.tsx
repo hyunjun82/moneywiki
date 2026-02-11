@@ -56,15 +56,6 @@ export const 개인파산신청자격조건: HubData = {
     },
   },
 
-  /**
-   * spokeGrid — 허브의 핵심 역할
-   *
-   * 규칙:
-   * - CSV의 해당 허브 스포크를 전부 포함
-   * - badge: 2~3글자 카테고리
-   * - 순서: 사용자 여정 순 (자격 → 절차 → 서류 → 비용 → 지원)
-   * - desc: 1줄 ~예요체
-   */
   spokeGrid: [
     {
       badge: '자격',
@@ -128,16 +119,6 @@ export const 개인파산신청자격조건: HubData = {
     },
   ],
 
-  /**
-   * sections — H2 본문
-   *
-   * 규칙:
-   * - H2 텍스트 = CSV의 H2-1 ~ H2-4 원문 그대로
-   * - 단락 2~3개로 요약 (스포크의 5~8개보다 짧게)
-   * - 매 H2 끝에 관련 스포크 링크 1~2개
-   * - 시각 컴포넌트 0~1개 (전체 2~4개 제한)
-   * - 마지막 { heading: null } → FAQ 자동 삽입
-   */
   sections: [
     {
       heading: '개인파산 신청은 어떻게 하나요?',
@@ -149,14 +130,14 @@ export const 개인파산신청자격조건: HubData = {
             접수하면 돼요.
           </p>
 
+          {/* ✅ 수정: title → prop 없음, items → events, label → month+title */}
           <SpokeTimeline
-            title="개인파산 신청 → 면책 흐름"
-            items={[
-              { label: '신청서 제출', desc: '관할법원에 파산·면책 신청서 접수' },
-              { label: '보정 명령', desc: '서류 미비 시 보정 기간 부여 (약 1~2주)' },
-              { label: '심문 기일', desc: '법원 출석, 채무 상태 확인' },
-              { label: '파산 선고', desc: '동시폐지 결정 포함 가능' },
-              { label: '면책 결정', desc: '이의 없으면 약 1~3개월 후 확정' },
+            events={[
+              { month: '1단계', title: '신청서 제출', desc: '관할법원에 파산·면책 신청서 접수' },
+              { month: '2단계', title: '보정 명령', desc: '서류 미비 시 보정 기간 부여 (약 1~2주)' },
+              { month: '3단계', title: '심문 기일', desc: '법원 출석, 채무 상태 확인' },
+              { month: '4단계', title: '파산 선고', desc: '동시폐지 결정 포함 가능' },
+              { month: '5단계', title: '면책 결정', desc: '이의 없으면 약 1~3개월 후 확정' },
             ]}
           />
 
@@ -192,27 +173,29 @@ export const 개인파산신청자격조건: HubData = {
             거부될 수 있어요.
           </p>
 
-          <SpokeCompareCards
-            title="개인파산 vs 개인회생 자격 비교"
-            left={{
-              label: '개인파산',
+          {/* ✅ 수정: title/left/right → cards 배열 */}
+          <SpokeCompareCards cards={[
+            {
+              title: '개인파산',
+              subtitle: '채무 전액 면책',
               items: [
                 '채무 한도 없음',
                 '소득 기준 없음',
                 '지급불능 상태 필수',
                 '면책 시 채무 전액 소멸',
               ],
-            }}
-            right={{
-              label: '개인회생',
+            },
+            {
+              title: '개인회생',
+              subtitle: '변제 후 잔여 면책',
               items: [
                 '무담보 10억·담보 15억 이하',
                 '정기적 소득 필수',
                 '3~5년 변제계획 이행',
                 '변제 후 잔여 채무 소멸',
               ],
-            }}
-          />
+            },
+          ]} />
 
           <p>
             자격 요건을 더 자세히 확인하고 싶다면{' '}
@@ -237,8 +220,11 @@ export const 개인파산신청자격조건: HubData = {
             홈페이지에서 양식을 내려받을 수 있어요.
           </p>
 
+          {/* ✅ 수정: caption → id + title + subtitle */}
           <SpokeTable
-            caption="개인파산 핵심 제출 서류"
+            id="tbl-docs"
+            title="개인파산 핵심 제출 서류"
+            subtitle="법원 제출 기준"
             headers={['서류', '발급/작성', '핵심 주의사항']}
             rows={[
               ['파산·면책 신청서', '법원 양식', '관할법원 확인 필수'],
@@ -248,9 +234,12 @@ export const 개인파산신청자격조건: HubData = {
             ]}
           />
 
-          <TipBox emoji="💡" title="서류 작성이 어렵다면">
-            법률구조공단(☎ 132)에서 무료 법률상담을 받을 수 있어요.
-            소송구조 신청까지 하면 비용 부담도 줄어요.
+          {/* ✅ 수정: emoji prop 제거 */}
+          <TipBox title="💡 서류 작성이 어렵다면">
+            <p className="mb-0 leading-relaxed">
+              법률구조공단(☎ 132)에서 무료 법률상담을 받을 수 있어요.
+              소송구조 신청까지 하면 비용 부담도 줄어요.
+            </p>
           </TipBox>
 
           <p>
@@ -301,7 +290,7 @@ export const 개인파산신청자격조건: HubData = {
       ),
     },
     {
-      heading: null, // → FAQ 자동 삽입 위치
+      heading: null,
       content: null,
     },
   ],

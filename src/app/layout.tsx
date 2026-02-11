@@ -94,6 +94,7 @@ export default function RootLayout({
         {/* 전역 JSON-LD 스키마 - 위키트리 벤치마킹 */}
         <WebSiteSchema />
         <OrganizationSchema />
+        <PersonSchema />
         <KakaoSDK />
         <AdClickTracker />
         <Header />

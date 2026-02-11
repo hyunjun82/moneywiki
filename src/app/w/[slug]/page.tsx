@@ -503,6 +503,7 @@ export default async function WikiPage({ params }: PageProps) {
           dateModified={doc.lastUpdated}
           category={doc.category}
           keywords={doc.keywords}
+          featureList={doc.tool?.featureList}
         />
       )}
       {/* Event 스키마 - 신청 기간 있는 글 (CTR 30-50% ↑) */}

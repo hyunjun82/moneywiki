@@ -134,6 +134,11 @@ export interface WikiDocument {
   chartConfig?: ChartConfig;
   // OG 썸네일 이미지 경로
   thumbnail?: string;
+  // 계산기 도구 스키마 (featureList 등)
+  tool?: {
+    featureList?: string[];
+    [key: string]: unknown;
+  };
   // Event 스키마 (신청 기간)
   event?: {
     name: string;

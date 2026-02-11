@@ -253,6 +253,7 @@ export function CalculatorSchema({
   dateModified,
   category,
   keywords = [],
+  featureList,
 }: {
   name: string;
   description: string;
@@ -261,6 +262,7 @@ export function CalculatorSchema({
   dateModified: string;
   category?: string;
   keywords?: string[];
+  featureList?: string[];
 }) {
   const schema = {
     "@context": "https://schema.org",
@@ -290,17 +292,7 @@ export function CalculatorSchema({
       name: "머니위키",
       url: "https://www.jjyu.co.kr",
     },
-    // 🚨 [안전 조치] 실제 리뷰 기능 개발 전까지 주석 처리
-    // 구글 가이드라인: 페이지에 평점 표시 없으면 페널티 위험
-    // 참고: https://developers.google.com/search/docs/appearance/structured-data/review-snippet
-    /* aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      ratingCount: "1247",
-      bestRating: "5",
-      worstRating: "1",
-    }, */
-    featureList: [
+    featureList: featureList && featureList.length > 0 ? featureList : [
       "실시간 자동 계산",
       "모바일 최적화",
       "2026년 최신 기준",
@@ -419,6 +411,7 @@ export function PersonSchema() {
     knowsAbout: [
       "양도소득세",
       "종합부동산세",
+      "취득세",
       "퇴직금",
       "연말정산",
       "원천징수",

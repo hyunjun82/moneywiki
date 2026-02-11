@@ -384,24 +384,26 @@ export default function VehicleTaxCalculator() {
             <h3 className="font-semibold text-neutral-700 mb-3">
               차령별 경감률 (비영업용)
             </h3>
-            <div className="grid grid-cols-4 gap-2 text-xs">
-              <div className="text-center p-2 bg-white rounded">
-                <p className="text-neutral-500">3년</p>
-                <p className="font-medium text-green-600">5%</p>
-              </div>
-              <div className="text-center p-2 bg-white rounded">
-                <p className="text-neutral-500">6년</p>
-                <p className="font-medium text-green-600">20%</p>
-              </div>
-              <div className="text-center p-2 bg-white rounded">
-                <p className="text-neutral-500">9년</p>
-                <p className="font-medium text-green-600">35%</p>
-              </div>
-              <div className="text-center p-2 bg-white rounded">
-                <p className="text-neutral-500">12년+</p>
-                <p className="font-medium text-green-600">50%</p>
-              </div>
+            <div className="grid grid-cols-5 gap-1.5 text-xs">
+              {[
+                { year: "3년", rate: "5%" },
+                { year: "4년", rate: "10%" },
+                { year: "5년", rate: "15%" },
+                { year: "6년", rate: "20%" },
+                { year: "7년", rate: "25%" },
+                { year: "8년", rate: "30%" },
+                { year: "9년", rate: "35%" },
+                { year: "10년", rate: "40%" },
+                { year: "11년", rate: "45%" },
+                { year: "12년+", rate: "50%" },
+              ].map((item) => (
+                <div key={item.year} className="text-center p-1.5 bg-white rounded">
+                  <p className="text-neutral-500">{item.year}</p>
+                  <p className="font-medium text-green-600">{item.rate}</p>
+                </div>
+              ))}
             </div>
+            <p className="text-xs text-neutral-500 mt-2">※ 3년 미만은 경감 없음, 매년 5%씩 증가 (최대 50%)</p>
           </div>
         )}
 

@@ -661,30 +661,8 @@ export default function SeverancePayCalculator() {
     { type: "parttime", label: "알바", description: "시급제 파트타임" },
   ];
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "FinancialProduct",
-    "name": "퇴직금 계산기",
-    "description": "고용노동부 공식에 따른 퇴직금 계산기. 정규직, 일용직, 알바 모두 계산 가능",
-    "url": "https://jjyu.co.kr/calculators/severance-pay",
-    "provider": {
-      "@type": "Organization",
-      "name": "머니위키",
-      "url": "https://jjyu.co.kr"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "KRW"
-    }
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
       <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
       {/* 헤더 */}
       <div className="bg-emerald-600 text-white px-6 py-4">

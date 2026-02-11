@@ -192,30 +192,8 @@ export default function MortgageCalculator() {
     return "text-red-600";
   };
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "FinancialProduct",
-    "name": "주택담보대출 계산기",
-    "description": "주택담보대출 월 상환금과 총 이자를 계산하는 온라인 계산기. 한국주택금융공사와 금융감독원 기준 적용",
-    "url": "https://jjyu.co.kr/calculators/mortgage",
-    "provider": {
-      "@type": "Organization",
-      "name": "머니위키",
-      "url": "https://jjyu.co.kr"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "KRW"
-    }
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
       <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
       {/* 헤더 */}
       <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
