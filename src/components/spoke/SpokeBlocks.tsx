@@ -26,21 +26,21 @@ export function BridgeCTA({ href, badge, title, desc, icon, primary }: {
   return (
     <Link
       href={href}
-      className={`group flex items-center gap-4 mt-8 p-[18px] bg-white border rounded-[14px] no-underline transition-all hover:border-emerald-600 hover:shadow-md hover:-translate-y-px ${
+      className={`group flex items-center gap-4 mt-8 p-[18px] bg-white border rounded-[14px] no-underline transition-all hover:border-[#1E3A5F] hover:shadow-md hover:-translate-y-px ${
         primary
-          ? 'border-emerald-600/30 bg-gradient-to-r from-emerald-600/[0.02] to-emerald-600/[0.05]'
+          ? 'border-[#1E3A5F]/30 bg-gradient-to-r from-[#1E3A5F]/[0.02] to-[#1E3A5F]/[0.05]'
           : 'border-neutral-200'
       }`}
     >
-      <div className="shrink-0 w-[42px] h-[42px] rounded-full bg-gradient-to-br from-emerald-600 to-emerald-500 flex items-center justify-center">
+      <div className="shrink-0 w-[42px] h-[42px] rounded-full bg-gradient-to-br from-[#1E3A5F] to-[#2B5280] flex items-center justify-center">
         {ICONS[icon]}
       </div>
       <div className="flex-1 min-w-0">
-        <div className="inline-block text-[10px] font-bold text-emerald-600 bg-emerald-600/[0.08] px-2 py-0.5 rounded-full mb-1 tracking-wide">{badge}</div>
+        <div className="inline-block text-[10px] font-bold text-[#1E3A5F] bg-[#1E3A5F]/[0.08] px-2 py-0.5 rounded-full mb-1 tracking-wide">{badge}</div>
         <div className="text-[15px] font-bold text-neutral-800 leading-snug">{title}</div>
         <div className="text-xs text-neutral-500 mt-0.5">{desc}</div>
       </div>
-      <span className="shrink-0 text-lg text-neutral-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all">&rarr;</span>
+      <span className="shrink-0 text-lg text-neutral-400 group-hover:text-[#1E3A5F] group-hover:translate-x-1 transition-all">&rarr;</span>
     </Link>
   )
 }
@@ -48,8 +48,8 @@ export function BridgeCTA({ href, badge, title, desc, icon, primary }: {
 // --- TipBox ---
 export function TipBox({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="bg-emerald-600/[0.04] border-l-[3px] border-emerald-600 py-4 px-5 rounded-r-lg my-6 text-[13px] text-neutral-600">
-      <h4 className="text-[13px] font-bold text-emerald-600 mb-1.5">{title}</h4>
+    <div className="bg-[#1E3A5F]/[0.04] border-l-[3px] border-[#1E3A5F] py-4 px-5 rounded-r-lg my-6 text-[13px] text-neutral-600">
+      <h4 className="text-[13px] font-bold text-[#1E3A5F] mb-1.5">{title}</h4>
       {children}
     </div>
   )
@@ -64,7 +64,7 @@ export function FormulaBox({ lines }: { lines: { text: string; numbered?: boolea
           {line.comment ? (
             <span className="text-neutral-500">{line.text}</span>
           ) : line.numbered ? (
-            (() => { const idx = line.text.indexOf('.'); return <><span className="text-emerald-400 font-bold">{line.text.slice(0, idx + 1)}</span> {line.text.slice(idx + 1)}</> })()
+            (() => { const idx = line.text.indexOf('.'); return <><span className="text-[#4A7AB5] font-bold">{line.text.slice(0, idx + 1)}</span> {line.text.slice(idx + 1)}</> })()
           ) : (
             line.text
           )}
@@ -106,7 +106,7 @@ export function SpokeTable({ id, title, subtitle, headers, rows, highlightCol }:
                   <td
                     key={ci}
                     className={`px-3 py-2.5 border-b border-neutral-100 ${
-                      highlightCol !== undefined && ci === highlightCol ? 'text-emerald-600 font-semibold' : ''
+                      highlightCol !== undefined && ci === highlightCol ? 'text-[#1E3A5F] font-semibold' : ''
                     }`}
                   >
                     {cell}
@@ -131,10 +131,10 @@ export function RateCards({ cards }: {
         <div
           key={i}
           className={`border rounded-xl p-5 text-center ${
-            card.active ? 'border-emerald-600 bg-emerald-600/[0.03]' : 'border-neutral-200'
+            card.active ? 'border-[#1E3A5F] bg-[#1E3A5F]/[0.03]' : 'border-neutral-200'
           }`}
         >
-          <div className="text-[28px] font-extrabold text-emerald-600 mb-1">{card.value}</div>
+          <div className="text-[28px] font-extrabold text-[#1E3A5F] mb-1">{card.value}</div>
           <div className="text-xs font-semibold text-neutral-500 mb-2">{card.label}</div>
           <div className="text-xs text-neutral-500 leading-relaxed">
             {card.lines.map((line, li) => (
@@ -143,7 +143,7 @@ export function RateCards({ cards }: {
                 {card.highlight && line.includes(card.highlight) ? (
                   <>
                     {line.split(card.highlight)[0]}
-                    <strong className={card.highlightColor === 'orange' ? 'text-orange-600' : 'text-emerald-600'}>{card.highlight}</strong>
+                    <strong className={card.highlightColor === 'orange' ? 'text-orange-600' : 'text-[#1E3A5F]'}>{card.highlight}</strong>
                     {line.split(card.highlight)[1]}
                   </>
                 ) : line}
@@ -165,11 +165,11 @@ export function SpokeTimeline({ events }: {
       <div className="absolute left-[6px] top-[6px] bottom-[6px] w-0.5 bg-neutral-200" />
       {events.map((event, i) => {
         const dotClass =
-          event.status === 'current' ? 'border-emerald-600 bg-emerald-600 shadow-[0_0_0_3px_rgba(5,150,105,0.15)]' :
+          event.status === 'current' ? 'border-[#1E3A5F] bg-[#1E3A5F] shadow-[0_0_0_3px_rgba(5,150,105,0.15)]' :
           event.status === 'warning' ? 'border-orange-500 bg-orange-500' :
           'border-neutral-300 bg-white'
         const tagClass =
-          event.status === 'warning' ? 'bg-orange-500/[0.08] text-orange-500' : 'bg-emerald-600/[0.08] text-emerald-600'
+          event.status === 'warning' ? 'bg-orange-500/[0.08] text-orange-500' : 'bg-[#1E3A5F]/[0.08] text-[#1E3A5F]'
 
         return (
           <div key={i} className="relative pb-5 last:pb-0">
@@ -196,13 +196,13 @@ export function SpokeStepCards({ steps }: {
   return (
     <div className="my-4">
       {steps.map((step, i) => (
-        <div key={i} className="relative pl-14 py-4 pr-4 bg-neutral-50 border border-neutral-200 rounded-xl mb-2 hover:border-emerald-600 hover:bg-emerald-600/[0.02] transition-all">
-          <div className="absolute left-3.5 top-3.5 w-[30px] h-[30px] rounded-full bg-emerald-600 text-white text-sm font-bold flex items-center justify-center">
+        <div key={i} className="relative pl-14 py-4 pr-4 bg-neutral-50 border border-neutral-200 rounded-xl mb-2 hover:border-[#1E3A5F] hover:bg-[#1E3A5F]/[0.02] transition-all">
+          <div className="absolute left-3.5 top-3.5 w-[30px] h-[30px] rounded-full bg-[#1E3A5F] text-white text-sm font-bold flex items-center justify-center">
             {i + 1}
           </div>
           <div className="text-sm font-semibold text-neutral-800">{step.title}</div>
           <div className="text-xs text-neutral-500 mt-0.5">{step.desc}</div>
-          {step.tip && <div className="text-[11px] text-emerald-600 mt-1 font-medium">{step.tip}</div>}
+          {step.tip && <div className="text-[11px] text-[#1E3A5F] mt-1 font-medium">{step.tip}</div>}
         </div>
       ))}
     </div>
@@ -219,11 +219,11 @@ export function SpokeCompareCards({ cards }: {
         <div
           key={i}
           className={`border rounded-xl p-5 hover:shadow-md hover:-translate-y-0.5 transition-all ${
-            card.recommended ? 'border-emerald-600 bg-emerald-600/[0.02]' : 'border-neutral-200'
+            card.recommended ? 'border-[#1E3A5F] bg-[#1E3A5F]/[0.02]' : 'border-neutral-200'
           }`}
         >
           {card.recommended && card.recLabel && (
-            <span className="inline-block text-[10px] font-bold py-0.5 px-2 bg-emerald-600/10 text-emerald-600 rounded mb-2">
+            <span className="inline-block text-[10px] font-bold py-0.5 px-2 bg-[#1E3A5F]/10 text-[#1E3A5F] rounded mb-2">
               {card.recLabel}
             </span>
           )}
@@ -253,7 +253,7 @@ export function SpokeRateBars({ bars }: {
           <span className="w-20 text-xs font-semibold text-neutral-600 text-right shrink-0">{bar.label}</span>
           <div className="flex-1 h-6 bg-neutral-100 rounded-xl overflow-hidden">
             <div
-              className="h-full bg-emerald-600 rounded-xl flex items-center pl-2.5 text-[11px] font-bold text-white"
+              className="h-full bg-[#1E3A5F] rounded-xl flex items-center pl-2.5 text-[11px] font-bold text-white"
               style={{ width: bar.width }}
             >
               {bar.rate}
@@ -274,7 +274,7 @@ export function SpokeFlow({ steps }: {
       {steps.map((step, i) => (
         <div key={i} className="contents">
           {i > 0 && <span className="text-neutral-300 px-2 shrink-0 text-base">&rarr;</span>}
-          <div className="bg-neutral-50 border border-neutral-200 rounded-xl px-[18px] py-[14px] text-center min-w-[100px] hover:border-emerald-600 hover:bg-emerald-600/[0.03] transition-all">
+          <div className="bg-neutral-50 border border-neutral-200 rounded-xl px-[18px] py-[14px] text-center min-w-[100px] hover:border-[#1E3A5F] hover:bg-[#1E3A5F]/[0.03] transition-all">
             <div className="text-2xl mb-1">{step.icon}</div>
             <div className="text-xs font-semibold text-neutral-700">{step.label}</div>
             {step.sub && <div className="text-[10px] text-neutral-400 mt-0.5">{step.sub}</div>}
@@ -300,10 +300,10 @@ export function QuickAnswer({ title, body, hook }: {
   title: string; body: React.ReactNode; hook?: string
 }) {
   return (
-    <div className="bg-emerald-600/[0.04] border border-emerald-600/20 rounded-xl p-5 my-4">
-      <h4 className="text-sm font-bold text-emerald-600 mb-2">{title}</h4>
+    <div className="bg-[#1E3A5F]/[0.04] border border-[#1E3A5F]/20 rounded-xl p-5 my-4">
+      <h4 className="text-sm font-bold text-[#1E3A5F] mb-2">{title}</h4>
       <div className="text-[13px] text-neutral-700 leading-relaxed">{body}</div>
-      {hook && <div className="text-xs text-emerald-600 mt-2 font-medium">{hook}</div>}
+      {hook && <div className="text-xs text-[#1E3A5F] mt-2 font-medium">{hook}</div>}
     </div>
   )
 }
@@ -317,7 +317,7 @@ export function SpokeChecklist({ items }: {
       {items.map((item, i) => (
         <div key={i} className={`flex items-start gap-3 px-5 py-3 ${i > 0 ? 'border-t border-neutral-100' : ''}`}>
           <div className={`shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 ${
-            item.done ? 'bg-emerald-600' : 'border-2 border-neutral-300'
+            item.done ? 'bg-[#1E3A5F]' : 'border-2 border-neutral-300'
           }`}>
             {item.done && (
               <svg viewBox="0 0 24 24" className="w-3 h-3">
@@ -327,10 +327,103 @@ export function SpokeChecklist({ items }: {
           </div>
           <div className="flex-1 min-w-0">
             <div className={`text-sm ${item.done ? 'text-neutral-800 font-medium' : 'text-neutral-500'}`}>{item.text}</div>
-            {item.note && <div className="text-[11px] text-emerald-600 mt-0.5">{item.note}</div>}
+            {item.note && <div className="text-[11px] text-[#1E3A5F] mt-0.5">{item.note}</div>}
           </div>
         </div>
       ))}
+    </div>
+  )
+}
+
+// --- Chips (4칩 클릭 가능 그리드) ---
+export function Chips({ items }: {
+  items: { icon: string; label: string; value: string; href: string }[]
+}) {
+  return (
+    <div className="grid grid-cols-4 gap-2 my-3">
+      {items.map((item, i) => (
+        <Link
+          key={i}
+          href={item.href}
+          className="bg-white border border-neutral-200 rounded-lg px-2 py-3 text-center no-underline transition-all hover:border-[#1E3A5F] hover:shadow-md hover:-translate-y-0.5"
+        >
+          <div className="text-xl mb-1">{item.icon}</div>
+          <div className="text-[10px] text-neutral-400 mb-0.5">{item.label}</div>
+          <div className="text-xs font-bold text-[#1E3A5F] leading-tight">{item.value}</div>
+        </Link>
+      ))}
+    </div>
+  )
+}
+
+// --- SectionSpoke (본문 중간 관련 글 카드) ---
+export function SectionSpoke({ items }: {
+  items: { icon: string; title: string; desc: string; href: string }[]
+}) {
+  return (
+    <div className="my-4 flex flex-col gap-1">
+      {items.map((item, i) => (
+        <Link
+          key={i}
+          href={item.href}
+          className="flex items-center gap-3 p-3 bg-white border border-neutral-200 rounded-lg no-underline transition-all hover:border-[#1E3A5F] hover:shadow-sm hover:-translate-y-px"
+        >
+          <span className="shrink-0 text-base">{item.icon}</span>
+          <div className="flex-1 min-w-0">
+            <div className="text-[13px] font-bold text-[#1E3A5F]">{item.title}</div>
+            <div className="text-[11px] text-neutral-400 mt-0.5">{item.desc}</div>
+          </div>
+          <span className="shrink-0 text-xs text-neutral-400">&rarr;</span>
+        </Link>
+      ))}
+    </div>
+  )
+}
+
+// --- DetailBox (스포크 상세 정보 박스) ---
+export function DetailBox({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div className="bg-neutral-50 border border-neutral-200 rounded-xl p-5 my-4 text-[13px] text-neutral-600">
+      <h4 className="text-sm font-bold text-neutral-800 mb-2">{title}</h4>
+      {children}
+    </div>
+  )
+}
+
+// --- HubChecker (4가지 급여 동시 판정 체커) ---
+export function HubChecker({ title, subtitle, intro, benefits, spokeLinks }: {
+  title: string
+  subtitle: string
+  intro: React.ReactNode
+  benefits: {
+    key: string
+    icon: string
+    name: string
+    standard: { [size: string]: number }
+  }[]
+  spokeLinks: {
+    [key: string]: { title: string; desc: string; url: string }
+  }
+}) {
+  return (
+    <div className="bg-white border border-neutral-200 rounded-xl overflow-hidden my-3">
+      <div className="bg-[#1E3A5F] p-4 flex items-center gap-3">
+        <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-lg border-none">
+          ✔
+        </div>
+        <div>
+          <h3 className="text-white text-[15px] font-bold">{title}</h3>
+          <p className="text-white/70 text-xs mt-0.5">{subtitle}</p>
+        </div>
+      </div>
+      <div className="p-5">
+        <div className="text-[13px] text-neutral-500 leading-relaxed mb-4 pb-3 border-b border-neutral-200">
+          {intro}
+        </div>
+        <div className="text-[13px] text-neutral-500">
+          [체커 UI 구현 영역 - 가구원 수, 월 소득, 재산 선택 → 4가지 급여별 자격 표시]
+        </div>
+      </div>
     </div>
   )
 }

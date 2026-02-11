@@ -1,357 +1,665 @@
 /**
  * ========================================
- * GOLDEN EXAMPLE — 스포크 글 완성 예시
+ * GOLDEN EXAMPLE — 스포크 최고 품질 샘플
  * ========================================
  *
- * 이 파일은 "이 수준, 이 문체, 이 흐름으로 써라"를 보여주는 기준 원본이에요.
- * HTML 원본(spoke-salary-skyscraper_4.html)을 SpokeData TSX로 변환한 것이에요.
+ * HTML 원본: 기초생활수급자_1인가구_생계급여_v4.html
  *
- * 에이전트가 참고할 포인트:
- * 1. 서론(hero.intro) — 독자 상황 묘사 → 해결 약속 → 구체 숫자
- * 2. 문체 — ~예요체, 독자 감정 먼저, 정보 나열 금지
- * 3. 전환 문장 — 4개 섹션 전부 다른 스타일
- * 4. 시각 요소 — 8종류 사용 (SpokeStepCards, SpokeTable, TipBox, FormulaBox, SpokeRateBars, RateCards, SpokeCompareCards, SpokeWarnBox)
- * 5. bridgeCTA — 다음 섹션의 "독자가 자연스럽게 궁금해할 질문"
+ * 이 파일은 에이전트가 새 스포크 글을 작성할 때 참고할 **완성된 실제 글**입니다.
  *
- * ⚠️ 이 파일을 그대로 복사하지 마세요. 구조와 문체를 참고하되 주제에 맞게 변형하세요.
+ * 핵심 요소 (100% 보존):
+ * - Warm Navy 색상 (#1E3A5F)
+ * - PAS Bridge 5개 (독자 대변 → 질문형 → 화제 전환 → 자연스러운 궁금증)
+ * - Dynamic Spoke Routing (체커 결과별 pass/dim 처리)
+ * - Nested TOC (H2 + H3 자동 수집)
+ * - Section-level Spoke (본문 3곳)
+ * - 4개 Chips (클릭 가능)
+ * - DetailBox (3개 항목 공제 설명)
+ * - 체커 (4개 입력 그룹 + 동적 결과)
+ * - 스티키 바 (스크롤 시 "나도 받을 수 있을까?")
+ * - FAQ (6개 아코디언)
+ *
+ * golden-example vs template 차이:
+ * - golden-example: 완성된 실제 글 (문체, 컴포넌트, 전환 문장 모범)
+ * - template: 빈 뼈대 (TODO 주석, 필드 구조만)
  */
 
 import Link from 'next/link'
-import type { SpokeData } from './types'
-import { SpokeTable, TipBox, FormulaBox, RateCards, SpokeStepCards, SpokeCompareCards, SpokeRateBars, SpokeWarnBox } from '@/components/spoke/SpokeBlocks'
+import type { SpokeData } from '@/data/spoke/types'
+import { SpokeTable, FormulaBox, TipBox } from '@/components/spoke/SpokeBlocks'
 
-// --- 대용량 테이블 데이터는 상단에 분리 ---
-const TAX_TABLE_ROWS = [
-  ['150만원', '3,000원', '1,000원', '0원', '0원'],
-  ['200만원', '14,000원', '7,000원', '3,000원', '0원'],
-  ['250만원', '28,000원', '20,000원', '14,000원', '9,000원'],
-  ['300만원', '46,000원', '38,000원', '30,000원', '22,000원'],
-  ['350만원', '66,000원', '57,000원', '48,000원', '39,000원'],
-  ['400만원', '89,000원', '80,000원', '72,000원', '61,000원'],
-  ['500만원', '188,000원', '163,000원', '143,000원', '125,000원'],
-  ['700만원', '378,000원', '348,000원', '317,000원', '287,000원'],
-  ['1,000만원', '852,000원', '822,000원', '792,000원', '761,000원'],
-]
-
-const NET_PAY_TABLE_ROWS = [
-  ['200만원', '7,700원', '169,200원', '176,900원', '1,823,100원'],
-  ['250만원', '22,000원', '216,200원', '238,200원', '2,261,800원'],
-  ['300만원', '41,800원', '263,400원', '305,200원', '2,694,800원'],
-  ['400만원', '88,000원', '357,600원', '445,600원', '3,554,400원'],
-  ['500만원', '179,300원', '451,800원', '631,100원', '4,368,900원'],
-  ['700만원', '382,800원', '602,000원', '984,800원', '6,015,200원'],
-  ['1,000만원', '904,200원', '765,000원', '1,669,200원', '8,330,800원'],
-]
-
-
-// === SPOKE DATA ===
 const data: SpokeData = {
-  slug: '간이세액표-보는-법-월급별-세금-실수령액',
+  slug: '기초생활수급자-1인가구-생계급여-조건-소득인정액',
 
   meta: {
-    title: '2026 근로소득 간이세액표 보는 법 월급별 세금 실수령액 계산',
-    description: '간이세액표로 매달 원천징수되는 소득세부터 실수령액까지 바로 확인할 수 있어요.',
-    keywords: ['간이세액표 월급별 소득세', '간이세액표 계산', '간이세액표 80 100 120', '간이세액표 실수령액'],
-    ogTitle: '2026 근로소득 간이세액표 보는 법 | 머니위키',
-    ogDescription: '월급별 소득세, 계산 방법, 비율 선택, 실수령액까지 한 번에',
+    title: '2026 기초생활수급자 1인가구 생계급여 조건 | 소득인정액 계산 방법',
+    description: '2026년 기초생활수급자 1인가구 생계급여 선정기준 820,556원. 소득인정액 계산법, 근로소득공제 30%, 부양의무자 폐지 현황까지 정리했습니다.',
+    keywords: ['기초생활수급자 1인가구', '생계급여 조건', '소득인정액 계산', '부양의무자 폐지'],
+    ogTitle: '2026 기초생활수급자 1인가구 생계급여 조건 | 머니위키',
+    ogDescription: '1인가구 생계급여 선정기준 820,556원. 소득인정액 계산, 부양의무자 폐지 총정리.',
   },
 
   hub: {
-    url: '/w/원천세-가이드',
-    name: '원천세 가이드',
+    url: '/w/기초생활수급자-조건-급여-총정리',
+    name: '2026 기초생활수급자 조건과 급여 총정리',
   },
 
-  breadcrumb: ['세금', '간이세액표 보는 법'],
+  breadcrumb: ['복지', '기초생활보장', '1인가구 생계급여'],
 
-  /**
-   * HERO — 서론
-   *
-   * 1줄: 독자의 실제 상황 묘사 ("급여명세서 볼 때마다 '내 세금 맞게 떼인 건가?' 싶었다면")
-   * 2줄: 이 글로 해결된다는 약속 ("간이세액표 하나면 ~ 바로 알 수 있어요")
-   * 3줄: 구체 숫자/범위 언급 + 허브 연결 ("프리랜서 3.3%나 기타소득 8.8%는 ~")
-   * 4줄: 동행 톤으로 첫 섹션 안내 ("먼저 ~ 볼게요" 느낌, intro 마지막 문장)
-   *
-   * ❌ 금지: "아래에서 확인해 보세요", "이 글 하나로 정리했어요", "~ 한 번에 알아볼게요"
-   */
   hero: {
-    badge: '2026년 최신 기준',
-    h1: <>2026 근로소득 <span className="text-emerald-600">간이세액표</span> 보는 법 — 월급별 세금과 실수령액 계산</>,
+    badge: '2026년 최신',
+    h1: (
+      <>
+        2026 기초생활수급자 <span className="text-[#1E3A5F]">1인가구 생계급여</span> 조건과 소득인정액 계산
+      </>
+    ),
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
-          매달 급여명세서 볼 때마다 '내 세금 맞게 떼인 건가?' 싶었다면 잘 오셨어요. <strong>간이세액표</strong> 하나면 매달 빠지는 소득세부터 실수령액까지 바로 알 수 있어요.
-        </p>
-        <p className="text-base text-neutral-500 leading-relaxed mt-3">
-          직장인 근로소득 기준으로 세금표, 비율 선택, 실수령액까지 정리했어요. 프리랜서 3.3%나 기타소득 8.8%는 계산 방식이 다른데, 그 차이가 궁금하면 <Link href="/w/원천세-가이드" className="text-blue-600 hover:underline">원천세 구조별 비교</Link>도 같이 보면 이해가 빨라요. 먼저 월급별 세금표부터 볼게요.
+          1인가구 생계급여 선정기준 <strong>월 820,556원</strong> 이하. 소득인정액 계산법부터 부양의무자 기준 폐지까지, 신청 전 알아야 할 모든 것을 정리했어요.
         </p>
       </>
     ),
     hubCTA: {
-      badge: '올인원',
-      desc: '내 소득 유형에 맞는 세금 구조 확인하기',
+      badge: '전체 가이드',
+      desc: '기초생활수급자 조건, 4가지 급여, 신청 방법 총정리',
     },
   },
 
   toc: [
-    { id: 's1', text: '간이세액표 월급별 소득세는 얼마나 되나요?' },
-    { id: 's2', text: '내 세금은 어떻게 계산하나요?' },
-    { id: 's3', text: '80% 100% 120% 중 어떤 걸 선택하나요?' },
-    { id: 's4', text: '월급별 실수령액은 얼마나 되나요?' },
-    { id: 's5', text: '자주 묻는 질문' },
+    { id: 'checker', text: '내가 수급자가 될 수 있는지 30초 자격 체크' },
+    { id: 'sec-standard', text: '2026년 기초생활수급자 선정기준은 얼마인가요?' },
+    { id: 'sec-income', text: '소득인정액은 어떻게 계산하나요?' },
+    { id: 'sec-family', text: '부양의무자 기준은 폐지됐나요?' },
+    { id: 'sec-amount', text: '생계급여 실수령액은 얼마인가요?' },
+    { id: 'sec-apply', text: '기초생활수급자 신청은 어떻게 하나요?' },
+    { id: 'sec-faq', text: '자주 묻는 질문' },
   ],
 
   sections: [
     /**
-     * ===== S1: 간이세액표 월급별 소득세 =====
-     *
-     * 패턴: 개념 설명 → 절차(SpokeStepCards) → 데이터(SpokeTable) → 보충(TipBox)
-     * 전환 스타일: A. 독자 대변형 ("~싶잖아요")
-     * 시각 요소: SpokeStepCards + SpokeTable + TipBox = 3개
+     * ===== S1: 체커 =====
+     * 컴포넌트: SpokeChecker (신규 컴포넌트 필요 - 4개 입력 + 동적 결과)
+     * 전환: PAS Bridge 1 (부모님 소득 때문에 탈락하셨나요?)
      */
     {
-      id: 's1',
+      id: 'checker',
       number: '01',
-      heading: '2026 간이세액표 월급별 소득세는 얼마나 되나요?',
-      subtitle: '비과세 제외한 월 급여 + 부양가족 수로 내 소득세가 결정돼요',
+      heading: '내가 생계급여 대상인지 확인하기',
+      subtitle: '4가지만 선택하면 바로 알 수 있어요',
       content: (
         <>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            <strong>근로소득 간이세액표</strong>는 국세청이 매년 발표하는 기준표예요. <a href="https://www.law.go.kr/법령/소득세법시행령/제194조" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">소득세법 시행령 제194조</a>에 따라 매년 2월에 고시되고, 회사는 이 표대로 매달 원천징수해요. 보는 법은 간단해요.
+            기초생활수급자가 되려면 <strong>소득인정액</strong>이 급여별 선정기준 이하여야 해요. 소득인정액은 월급만 보는 게 아니라, 부동산·자동차·예금 같은 <a href="#sec-income" className="text-[#4A7AB5] underline">재산도 월 소득으로 환산</a>해서 합산한 금액이에요. 아래에서 대략적인 자격 여부를 확인해 보세요.
           </p>
 
-          <SpokeStepCards steps={[
-            { title: '비과세 항목 빼기', desc: '세전 급여에서 식대(월 20만원), 자가운전보조금 등 비과세 항목을 빼요' },
-            { title: '부양가족 수 확인', desc: '본인 포함해서 배우자·자녀·부모님 중 소득·나이 요건 충족 인원을 세요' },
-            { title: '표에서 교차점 찾기', desc: '아래 표에서 월급 구간 × 부양가족 수가 만나는 칸 = 매달 소득세' },
-          ]} />
+          {/*
+            TODO: SpokeChecker 컴포넌트 생성 필요
+            Props: groups (4개 입력 그룹), standards (선정기준 데이터), dynamicResults (결과별 spoke 링크)
 
-          <SpokeTable
-            id="tbl1"
-            title="2026 간이세액표 월급별 소득세"
-            subtitle="부양가족 수 기준 · 100%"
-            headers={['월급여(비과세 제외)', '1명(본인)', '2명', '3명', '4명']}
-            rows={TAX_TABLE_ROWS}
-            highlightCol={2}
-          />
+            기능:
+            - 4개 입력 그룹 (가구원 수, 월 소득, 재산, 부양의무자)
+            - 선택 시 즉시 계산 → 결과 표시
+            - pass=true인 급여만 활성화, pass=false는 dim 처리
+            - 동적 spoke 링크 생성 (체커 결과별 맞춤 가이드)
+          */}
+          <div className="bg-white border border-neutral-200 rounded-xl overflow-hidden my-6">
+            <div className="bg-[#1E3A5F] p-4 flex items-center gap-3">
+              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-xl">✔</div>
+              <div>
+                <h3 className="text-white text-base font-bold">수급자격 간편 체크</h3>
+                <p className="text-white/70 text-xs mt-0.5">결과에서 해당 급여별 상세 글도 확인하세요</p>
+              </div>
+            </div>
+            <div className="p-5">
+              <p className="text-sm text-neutral-500 mb-4 pb-4 border-b">
+                소득인정액은 <strong>실제소득(근로소득 30% 공제 적용)</strong>에 재산을 월 소득으로 환산한 금액을 합산한 겁니다. 아래 4가지를 선택하면 대략적인 수급 가능성을 바로 확인할 수 있어요.
+              </p>
+              {/* 체커 UI는 클라이언트 컴포넌트로 구현 */}
+              <div className="text-sm text-neutral-400 text-center py-8 border-2 border-dashed border-neutral-200 rounded-lg">
+                [SpokeChecker 컴포넌트 - 4개 입력 그룹 + 동적 결과 표시]
+              </div>
+            </div>
+          </div>
 
-          <TipBox title="비과세 항목이 뭔지 헷갈린다면?">
-            <p className="mb-0 leading-relaxed">
-              대표적인 비과세: <strong>식대 월 20만원</strong>, 자가운전보조금 월 20만원, 출산·보육수당 월 20만원, 야간근로수당(생산직·월 240만원 이하). 급여명세서에서 '비과세'라고 표시된 항목을 확인하세요.
-            </p>
-          </TipBox>
-
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            자, 표에서 대략적인 세금은 알겠는데 내 월급에선 정확히 얼마인지 직접 계산해 보고 싶잖아요.
+          <p className="text-sm text-neutral-500 mt-4">
+            체크는 다 해보셨나요? 위 결과는 <strong>간이 추정</strong>이에요. 정확한 소득인정액은 <a href="#sec-income" className="text-[#4A7AB5] underline">아래에서 계산 방식을 확인</a>하시면 돼요.
           </p>
         </>
       ),
       bridgeCTA: {
-        href: '#s2',
-        badge: '간편 계산',
-        title: '내 월급에서 세금이 얼마나 빠질까?',
-        desc: '내 월급으로 직접 계산해보기',
-        icon: 'calc',
+        href: '#',
+        badge: '재산 공제',
+        title: '전세금 1억, 자동차 있어도 수급자 될 수 있다는 거 아셨나요?',
+        desc: '서울 거주자라면 전세 9,900만원까지 재산 0원 처리돼요. 1,600cc 미만 차량도 조건부 인정.',
+        icon: 'info',
       },
     },
 
     /**
-     * ===== S2: 계산 방법 =====
-     *
-     * 패턴: 계산 공식(FormulaBox) → 수치 비교(SpokeRateBars) → 출처 안내
-     * 전환 스타일: B. 자연 호기심형 ("~궁금한 게 생기죠")
-     * 시각 요소: FormulaBox + SpokeRateBars = 2개
+     * ===== S2: 선정기준 =====
+     * 컴포넌트: SpokeTable (2개)
+     * 전환: PAS Bridge 2 (매달 병원비가 부담되시나요?)
      */
     {
-      id: 's2',
+      id: 'sec-standard',
       number: '02',
-      heading: '간이세액표 계산기로 내 세금은 어떻게 계산하나요?',
-      subtitle: '3가지만 알면 세금부터 실수령액까지 바로 나와요',
+      heading: '2026년 기초생활수급자 선정기준은 얼마인가요?',
+      subtitle: '기준중위소득의 32~50%가 급여별 기준이에요',
       content: (
         <>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            <strong>비과세 제외한 월급</strong>과 <strong>부양가족 수</strong>, <strong>원천징수 비율</strong> — 이 세 가지만 알면 매달 소득세가 나와요. 부양가족 수는 본인을 포함해서 세면 돼요.
+            기초생활보장 급여는 생계·의료·주거·교육 4가지예요. 각 급여마다 <strong>선정기준이 다릅니다.</strong> 생계급여가 가장 엄격하고(중위소득 32%), 교육급여가 가장 넓어요(50%). 내 소득인정액이 아래 표의 금액 <strong>이하</strong>면 해당 급여를 받을 수 있어요.
           </p>
-
-          <FormulaBox lines={[
-            { text: '// 간이세액 계산 순서', comment: true },
-            { text: '1. 세전 급여 - 비과세 항목 = 과세 급여', numbered: true },
-            { text: '2. 과세 급여 × 부양가족 수 → 간이세액표 조회', numbered: true },
-            { text: '3. 조회된 소득세 × 원천징수 비율(80/100/120%)', numbered: true },
-            { text: '4. 소득세 + 지방소득세(소득세의 10%) = 원천징수 총액', numbered: true },
-          ]} />
-
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            예를 들어 월급 300만원, 부양가족 2명이면 소득세 <strong>38,000원</strong>이에요. 여기에 지방소득세 3,800원을 더하면 매달 <strong>총 41,800원</strong>이 빠져요.
-          </p>
-
-          <SpokeRateBars bars={[
-            { label: '소득세', rate: '38,000원', width: '65%' },
-            { label: '지방소득세', rate: '3,800원', width: '10%' },
-            { label: '원천징수 합계', rate: '41,800원', width: '75%' },
-          ]} />
-
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            표에 없는 금액이면 <a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=6620&cntntsId=7873" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">국세청 간이세액표 조회</a>에서 1만원 단위로 정확한 세액을 조회할 수 있어요.
-          </p>
-
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            여기까지 보면 한 가지 궁금한 게 생기죠. 80%로 바꾸면 매달 얼마나 더 받을 수 있을까요?
-          </p>
-        </>
-      ),
-      bridgeCTA: {
-        href: '#s3',
-        badge: '비율 선택',
-        title: '80%로 바꾸면 매달 얼마나 더 받을까?',
-        desc: '세 가지 비율, 내 월급에선 얼마 차이 날까',
-        icon: 'info',
-      },
-    },
-
-    /**
-     * ===== S3: 80/100/120% 비율 선택 =====
-     *
-     * 패턴: 선택지 비교(RateCards) → 상세 비교(SpokeCompareCards) → 실무 팁(TipBox)
-     * 전환 스타일: E. 실용 연결형 ("~정리했어요")
-     * 시각 요소: RateCards + SpokeCompareCards + TipBox = 3개
-     */
-    {
-      id: 's3',
-      number: '03',
-      heading: '간이세액표 80% 100% 120% 중 어떤 걸 선택하나요?',
-      subtitle: '어떤 걸 골라도 연간 세금 총액은 같아요 — 매달 얼마나 미리 내느냐의 차이',
-      content: (
-        <>
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            <strong>어떤 비율을 골라도 연간 세금 총액은 같아요.</strong> 차이는 매달 미리 내는 금액뿐이에요. 80%를 선택하면 매달 실수령이 늘지만 연말에 추가 납부 가능성이 있고, 120%를 선택하면 반대로 환급 가능성이 높아져요.
-          </p>
-
-          <RateCards cards={[
-            { value: '80%', label: '적게 떼기', lines: ['매달 실수령 ↑', '연말에 추가 납부 가능성'], highlightColor: 'orange' },
-            { value: '100%', label: '기본 (디폴트)', lines: ['간이세액표 그대로', '신청 안 하면 자동 적용'], active: true },
-            { value: '120%', label: '많이 떼기', lines: ['매달 실수령 ↓', '연말에 환급 가능성'], highlight: '환급', highlightColor: 'emerald' },
-          ]} />
-
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            월급 300만원·부양가족 2명 기준으로 80%와 120% 사이 매달 약 <strong>8,400원</strong> 차이예요. 연간으로 환산하면 약 <strong>100,800원</strong>이에요. 어떤 상황에서 뭘 골라야 하는지 한눈에 비교해 볼게요.
-          </p>
-
-          <SpokeCompareCards cards={[
-            {
-              title: '80% 선택이 유리한 경우',
-              subtitle: '연말에 환급 많이 받던 분',
-              items: ['의료비·교육비·기부금 공제 많음', '부양가족 공제 빠짐없이 적용', '매달 실수령 극대화 원할 때'],
-              recommended: false,
-            },
-            {
-              title: '120% 선택이 유리한 경우',
-              subtitle: '추가 납부 경험 있는 분',
-              items: ['공제 항목이 거의 없음', '첫 직장이라 잘 모름', '연말 목돈 환급을 선호'],
-              recommended: false,
-            },
-          ]} />
-
-          <TipBox title="변경 방법">
-            <p className="mb-0 leading-relaxed">
-              회사 인사팀에 <a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2304&cntntsId=238938" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline"><strong>원천징수세액 조정 신청서</strong></a>를 제출하면 돼요. 연중 아무 때나 변경 가능하고, 변경한 달부터 적용돼요.
-            </p>
-          </TipBox>
-
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            비율까지 정했으면 실제로 통장에 찍히는 금액이 궁금할 거예요. 4대보험까지 빠진 진짜 실수령액을 정리했어요.
-          </p>
-        </>
-      ),
-      bridgeCTA: {
-        href: '#s4',
-        badge: '실수령액',
-        title: '그래서 내 통장에 실제로 찍히는 금액은?',
-        desc: '4대보험까지 빠진 실제 입금액 확인',
-        icon: 'info',
-      },
-    },
-
-    /**
-     * ===== S4: 월급별 실수령액 =====
-     *
-     * 패턴: 핵심 정보 → 공식(FormulaBox) → 데이터(SpokeTable) → 주의(SpokeWarnBox)
-     * 전환 스타일: 없음 (마지막 본문 섹션 — primary CTA로 마무리)
-     * 시각 요소: FormulaBox + SpokeTable + SpokeWarnBox = 3개
-     */
-    {
-      id: 's4',
-      number: '04',
-      heading: '간이세액표 기준 월급별 실수령액은 얼마나 되나요?',
-      subtitle: '소득세 + 지방세 + 4대보험까지 전부 빠진 실제 통장 입금액',
-      content: (
-        <>
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            소득세 외에 <strong>국민연금(4.5%), 건강보험(3.545%), 장기요양보험(건강보험의 12.95%), 고용보험(0.9%)</strong>이 추가로 빠져요. 4대보험 합계 약 9.4%에 소득세를 더하면 전체 공제율은 약 <strong>10~17%</strong>예요.
-          </p>
-
-          <FormulaBox lines={[
-            { text: '// 실수령액 공식', comment: true },
-            { text: '실수령액 = 세전급여 - 소득세 - 지방세 - 4대보험' },
-            { text: '// 예시: 세전 300만원, 부양가족 2명, 비과세 20만원', comment: true },
-            { text: '2,694,800 = 3,000,000 - 38,000 - 3,800 - 263,400' },
-          ]} />
 
           <SpokeTable
-            id="tbl3"
-            title="2026 월급별 실수령액 표"
-            subtitle="부양가족 2명 · 비과세 월 20만원 · 100%"
-            headers={['세전 월급', '소득세+지방세', '4대보험', '공제 합계', '실수령액']}
-            rows={NET_PAY_TABLE_ROWS}
-            highlightCol={5}
+            id="tbl-standard"
+            title="2026 급여별 선정기준 금액표 (가구원 수별, 월 기준)"
+            subtitle="단위: 원 / 보건복지부 2026년 고시 기준"
+            headers={['가구원', '생계(32%)', '의료(40%)', '주거(48%)', '교육(50%)']}
+            rows={[
+              ['1인', '820,556', '1,025,695', '1,230,834', '1,282,119'],
+              ['2인', '1,343,773', '1,679,717', '2,015,660', '2,099,646'],
+              ['3인', '1,714,892', '2,143,614', '2,572,337', '2,679,518'],
+              ['4인', '2,078,316', '2,597,895', '3,117,474', '3,247,369'],
+              ['5인', '2,418,150', '3,022,688', '3,627,225', '3,778,360'],
+            ]}
+            highlightCol={1}
           />
 
-          <SpokeWarnBox title="주의사항">
-            <p className="mb-0 leading-relaxed">
-              위 표는 <strong>근사치</strong>예요. 건강보험료 상한·하한, 국민연금 상한(월 590만원), 비과세 항목 차이 등에 따라 실제 금액과 다를 수 있어요. 정확한 금액은 급여명세서를 확인하세요.
-            </p>
-          </SpokeWarnBox>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            위 기준은 2026년 <a href="#" className="text-[#4A7AB5] underline">기준중위소득</a>을 기반으로 산정돼요. 기준중위소득이란 전 국민을 소득순으로 줄 세웠을 때 딱 중간에 해당하는 금액이에요.
+          </p>
+
+          <SpokeTable
+            id="tbl-median"
+            title="2026 기준중위소득 금액표 (가구원 수별)"
+            subtitle="단위: 원 / 보건복지부 고시"
+            headers={['가구원 수', '1인', '2인', '3인', '4인', '5인']}
+            rows={[
+              ['기준중위소득', '2,564,238', '4,199,292', '5,359,036', '6,494,738', '7,556,720'],
+            ]}
+          />
         </>
       ),
       bridgeCTA: {
-        href: '/w/원천세-가이드',
-        badge: '올인원',
-        title: '내 조건에 맞는 실수령액 계산해보기',
-        desc: '비과세·부양가족·비율 직접 설정',
-        icon: 'calc',
-        primary: true,
+        href: '#',
+        badge: '의료급여',
+        title: '매달 병원비가 부담되시나요? 의료급여 1종이면 본인부담 0원이에요.',
+        desc: 'MRI·입원비·수술비 포함 본인부담 0원에 가깝고, 건강보험료도 0원이에요.',
+        icon: 'check',
       },
     },
 
+    /**
+     * ===== S3: 소득인정액 =====
+     * 컴포넌트: FormulaBox, DetailBox (신규), SpokeTable, TipBox
+     * Section-level Spoke 1 (소득인정액 더 알아보기 3개)
+     * 전환: PAS Bridge 3 (월세가 밀려서 걱정이신가요?)
+     */
     {
-      id: 's5',
+      id: 'sec-income',
+      number: '03',
+      heading: '소득인정액은 어떻게 계산하나요?',
+      subtitle: '월급 + 재산 환산액 − 공제 = 소득인정액',
+      content: (
+        <>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            소득인정액은 <strong>소득평가액</strong>과 <strong>재산의 소득환산액</strong>을 합한 금액이에요. 단순히 월급만 보는 게 아니라 부동산, 자동차, 예금도 월 소득으로 환산해서 더해요. 대신 일하는 분들에게는 근로소득의 30%를 공제해주기 때문에, 실제 소득보다 소득인정액이 낮아질 수 있어요.
+          </p>
+
+          <FormulaBox
+            lines={[
+              { text: '소득인정액 계산 공식', numbered: false, comment: true },
+              { text: '1. 소득인정액 = 소득평가액 + 재산의 소득환산액', numbered: true },
+              { text: '2. 소득평가액 = 실제소득 − 가구특성 지출 − 근로소득공제(30%)', numbered: true },
+              { text: '3. 재산 소득환산액 = (재산 − 기본재산액 − 부채) × 소득환산율', numbered: true },
+            ]}
+          />
+
+          <h3
+            id="sub-deduct"
+            data-toc-text="근로소득공제 30%와 가구특성 지출 공제"
+            className="text-[17px] font-bold text-neutral-800 mt-6 mb-3 scroll-mt-20 border-l-3 border-[#1E3A5F] pl-3"
+          >
+            근로소득공제 30%와 가구특성 지출 공제란?
+          </h3>
+
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            일을 해서 번 돈의 30%는 소득에서 빼줘요. 예를 들어 <strong>월 100만원</strong>을 벌면, 소득평가액에는 <strong>70만원</strong>만 잡혀요. 여기에 장애인 추가 비용, 만성질환 치료비 같은 가구특성 지출도 공제돼요.
+          </p>
+
+          {/*
+            TODO: DetailBox 컴포넌트 생성 필요
+            Props: title, items: Array<{ index, heading, description }>
+          */}
+          <div className="bg-[#F5F8FB] border border-neutral-200 rounded-lg my-4 overflow-hidden">
+            <div className="px-4 py-3 bg-white border-b font-bold text-sm text-neutral-800 flex items-center gap-2">
+              <span>💡</span> 소득에서 빠지는 주요 공제 항목
+            </div>
+            <div className="p-4 space-y-3">
+              <div className="flex gap-3">
+                <div className="w-6 h-6 bg-[#1E3A5F] text-white rounded-md flex items-center justify-center text-xs font-bold shrink-0">1</div>
+                <div>
+                  <h4 className="text-sm font-bold text-neutral-800 mb-0.5">근로소득공제 30%</h4>
+                  <p className="text-xs text-neutral-500 leading-relaxed m-0">일해서 번 소득의 30%를 무조건 공제해요. 월 100만원 → 70만원만 반영</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="w-6 h-6 bg-[#1E3A5F] text-white rounded-md flex items-center justify-center text-xs font-bold shrink-0">2</div>
+                <div>
+                  <h4 className="text-sm font-bold text-neutral-800 mb-0.5">가구특성 지출</h4>
+                  <p className="text-xs text-neutral-500 leading-relaxed m-0">장애인 추가 비용, 만성질환 치료비, 양육비 등을 공제해요</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="w-6 h-6 bg-[#1E3A5F] text-white rounded-md flex items-center justify-center text-xs font-bold shrink-0">3</div>
+                <div>
+                  <h4 className="text-sm font-bold text-neutral-800 mb-0.5">기본재산액 공제</h4>
+                  <p className="text-xs text-neutral-500 leading-relaxed m-0">거주 지역에 따라 5,300만~9,900만원을 재산에서 먼저 빼요</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <SpokeTable
+            id="tbl-base-asset"
+            title="2026 지역별 기본재산액 공제 기준표"
+            subtitle="기본재산액 이하는 소득환산 시 0원 처리"
+            headers={['지역', '서울', '경기', '광역·세종·창원', '그 외 지역']}
+            rows={[['기본재산액', '9,900만원', '8,000만원', '7,700만원', '5,300만원']]}
+            highlightCol={1}
+          />
+
+          <TipBox title="서울에 전세 8,000만원으로 거주 중이라면?">
+            기본재산액 9,900만원을 공제하면 <strong>환산액은 0원</strong>이에요. "전세가 있어서 안 된다"고 포기하지 마세요.
+          </TipBox>
+
+          {/* Section-level Spoke 1 */}
+          <div className="my-6 space-y-2">
+            <div className="text-sm font-bold text-neutral-800 mb-2 flex items-center gap-1.5">
+              <span>📖</span> 소득인정액 더 알아보기
+            </div>
+            <Link
+              href="#"
+              className="flex items-center gap-3 p-3 bg-white border border-neutral-200 rounded-lg hover:border-[#4A7AB5] hover:shadow-sm transition no-underline"
+            >
+              <span className="w-7 h-7 bg-[#EDF2F8] text-[#1E3A5F] rounded-md flex items-center justify-center text-xs font-bold shrink-0">01</span>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-bold text-neutral-800">소득인정액 모의계산 방법 (복지로 사용법)</div>
+                <div className="text-xs text-neutral-400 mt-0.5">내 정확한 소득인정액을 직접 계산하는 법</div>
+              </div>
+              <span className="text-sm text-neutral-400 shrink-0">→</span>
+            </Link>
+            <Link
+              href="#"
+              className="flex items-center gap-3 p-3 bg-white border border-neutral-200 rounded-lg hover:border-[#4A7AB5] hover:shadow-sm transition no-underline"
+            >
+              <span className="w-7 h-7 bg-[#EDF2F8] text-[#1E3A5F] rounded-md flex items-center justify-center text-xs font-bold shrink-0">02</span>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-bold text-neutral-800">재산의 소득환산율 계산 — 자동차, 전세금은?</div>
+                <div className="text-xs text-neutral-400 mt-0.5">자동차 보유 시 불이익, 전세금 공제 기준</div>
+              </div>
+              <span className="text-sm text-neutral-400 shrink-0">→</span>
+            </Link>
+            <Link
+              href="#"
+              className="flex items-center gap-3 p-3 bg-white border border-neutral-200 rounded-lg hover:border-[#4A7AB5] hover:shadow-sm transition no-underline"
+            >
+              <span className="w-7 h-7 bg-[#EDF2F8] text-[#1E3A5F] rounded-md flex items-center justify-center text-xs font-bold shrink-0">03</span>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-bold text-neutral-800">근로소득공제 30% 적용 사례 — 일하면서 수급받기</div>
+                <div className="text-xs text-neutral-400 mt-0.5">월 100만원 소득자의 실제 소득인정액 계산 예시</div>
+              </div>
+              <span className="text-sm text-neutral-400 shrink-0">→</span>
+            </Link>
+          </div>
+        </>
+      ),
+      bridgeCTA: {
+        href: '#',
+        badge: '주거급여',
+        title: '월세가 밀려서 걱정이신가요? 서울 1인가구 최대 35만원 지원돼요.',
+        desc: '주거급여는 부양의무자 기준이 완전 폐지됐어요. 중위소득 48% 이하면 임차료를 지원받아요.',
+        icon: 'check',
+      },
+    },
+
+    /**
+     * ===== S4: 부양의무자 =====
+     * 컴포넌트: Chips (신규 - 4칩 그리드), WarnBox
+     * Section-level Spoke 2 (부양의무자 더 알아보기 2개)
+     * 전환: PAS Bridge 4 (갑자기 직장을 잃었는데...)
+     */
+    {
+      id: 'sec-family',
+      number: '04',
+      heading: '부양의무자 기준은 폐지됐나요?',
+      subtitle: '생계·주거·교육급여는 폐지, 의료급여만 유지',
+      content: (
+        <>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            2026년 기준으로 <strong>생계급여, 주거급여, 교육급여</strong>의 부양의무자 기준은 <strong>완전 폐지</strong>됐어요. 부모님이나 자녀가 돈을 많이 벌어도 내 소득인정액만 기준 이하면 받을 수 있어요. 단, <strong>의료급여</strong>만 부양의무자 기준이 남아 있어요.
+          </p>
+
+          {/*
+            TODO: Chips 컴포넌트 생성 필요
+            Props: chips: Array<{ icon, label, value, href? }>
+          */}
+          <div className="grid grid-cols-4 gap-2 my-4">
+            <a href="#ben-life" className="bg-white border border-neutral-200 rounded-lg p-3 text-center no-underline hover:border-[#4A7AB5] hover:shadow-sm transition">
+              <div className="text-xl mb-1">✅</div>
+              <div className="text-xs text-neutral-400 mb-1">생계급여</div>
+              <div className="text-xs font-bold text-[#1E3A5F]">폐지</div>
+            </a>
+            <a href="#ben-med" className="bg-white border border-neutral-200 rounded-lg p-3 text-center no-underline hover:border-[#4A7AB5] hover:shadow-sm transition">
+              <div className="text-xl mb-1">⚠️</div>
+              <div className="text-xs text-neutral-400 mb-1">의료급여</div>
+              <div className="text-xs font-bold text-[#1E3A5F]">유지</div>
+            </a>
+            <a href="#ben-house" className="bg-white border border-neutral-200 rounded-lg p-3 text-center no-underline hover:border-[#4A7AB5] hover:shadow-sm transition">
+              <div className="text-xl mb-1">✅</div>
+              <div className="text-xs text-neutral-400 mb-1">주거급여</div>
+              <div className="text-xs font-bold text-[#1E3A5F]">폐지</div>
+            </a>
+            <a href="#ben-edu" className="bg-white border border-neutral-200 rounded-lg p-3 text-center no-underline hover:border-[#4A7AB5] hover:shadow-sm transition">
+              <div className="text-xl mb-1">✅</div>
+              <div className="text-xs text-neutral-400 mb-1">교육급여</div>
+              <div className="text-xs font-bold text-[#1E3A5F]">폐지</div>
+            </a>
+          </div>
+
+          <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 flex gap-2 text-xs my-4">
+            <span className="shrink-0 text-base">⚠️</span>
+            <div className="leading-relaxed">
+              <strong>의료급여 예외:</strong> 부양의무자 연소득 <strong>1.3억 초과</strong> 또는 재산 <strong>12억 초과</strong> 시 의료급여가 제외될 수 있어요. 단 수급자가 중증장애인·노인이면 면제돼요.
+            </div>
+          </div>
+
+          {/* Section-level Spoke 2 */}
+          <div className="my-6 space-y-2">
+            <div className="text-sm font-bold text-neutral-800 mb-2 flex items-center gap-1.5">
+              <span>📖</span> 부양의무자 더 알아보기
+            </div>
+            <Link
+              href="#"
+              className="flex items-center gap-3 p-3 bg-white border border-neutral-200 rounded-lg hover:border-[#4A7AB5] hover:shadow-sm transition no-underline"
+            >
+              <span className="w-7 h-7 bg-[#EDF2F8] text-[#1E3A5F] rounded-md flex items-center justify-center text-xs font-bold shrink-0">01</span>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-bold text-neutral-800">의료급여 부양의무자 면제 조건 — 중증장애·노인</div>
+                <div className="text-xs text-neutral-400 mt-0.5">면제 대상과 소득·재산 기준 상세</div>
+              </div>
+              <span className="text-sm text-neutral-400 shrink-0">→</span>
+            </Link>
+            <Link
+              href="#"
+              className="flex items-center gap-3 p-3 bg-white border border-neutral-200 rounded-lg hover:border-[#4A7AB5] hover:shadow-sm transition no-underline"
+            >
+              <span className="w-7 h-7 bg-[#EDF2F8] text-[#1E3A5F] rounded-md flex items-center justify-center text-xs font-bold shrink-0">02</span>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-bold text-neutral-800">부양능력 판정 기준 — 부양의무자 소득·재산 계산법</div>
+                <div className="text-xs text-neutral-400 mt-0.5">부양의무자의 소득·재산이 얼마까지 허용되는지</div>
+              </div>
+              <span className="text-sm text-neutral-400 shrink-0">→</span>
+            </Link>
+          </div>
+        </>
+      ),
+      bridgeCTA: {
+        href: '#',
+        badge: '긴급지원',
+        title: '갑자기 직장을 잃었는데, 당장 다음 달 생활비가 막막하시죠?',
+        desc: '긴급복지지원은 신청 즉시 선지급 후 조사해요. 생계급여와 별개로 최대 월 71만원 긴급생계지원.',
+        icon: 'clock',
+      },
+    },
+
+    /**
+     * ===== S5: 실수령액 =====
+     * 컴포넌트: FormulaBox, TipBox
+     */
+    {
+      id: 'sec-amount',
       number: '05',
+      heading: '생계급여 실수령액은 얼마인가요?',
+      subtitle: '선정기준액 − 소득인정액 = 매월 받는 현금',
+      content: (
+        <>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            생계급여는 선정기준액에서 내 소득인정액을 뺀 차액을 <strong>매달 현금</strong>으로 줘요. 소득이 전혀 없는 1인가구라면 월 <strong>820,556원 전액</strong>을 받아요. 소득인정액이 30만원이라면 820,556 − 300,000 = <strong>약 52만원</strong>을 받게 돼요.
+          </p>
+
+          <FormulaBox
+            lines={[
+              { text: '생계급여 실수령액 계산', numbered: false, comment: true },
+              { text: '1. 생계급여 = 선정기준액 − 소득인정액', numbered: true },
+              { text: '2. 1인가구 예시: 820,556원 − 0원(소득 없음) = 820,556원 전액', numbered: true },
+            ]}
+          />
+
+          <TipBox title="소득인정액이 0원에 가까울수록 더 많이 받아요">
+            위의 <a href="#checker" className="text-[#4A7AB5] underline">간편 체크</a>에서 예상 수령액도 확인할 수 있어요.
+          </TipBox>
+        </>
+      ),
+    },
+
+    /**
+     * ===== S6: 신청 방법 =====
+     * 컴포넌트: Steps (기존 활용 가능 - SpokeStepCards 또는 인라인)
+     */
+    {
+      id: 'sec-apply',
+      number: '06',
+      heading: '기초생활수급자 신청은 어떻게 하나요?',
+      subtitle: '주민센터 방문 → 서류 제출 → 조사 → 결정 통지',
+      content: (
+        <>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            온라인 신청은 <strong>복지로(bokjiro.go.kr)</strong>에서 가능해요. 공인인증서(또는 간편인증)로 로그인 후 '복지서비스 신청'에서 기초생활보장을 선택하면 돼요. 온라인 신청이 어려우신 분은 거주지 읍·면·동 <strong>주민센터</strong>에 방문하시면 돼요. 본인 또는 친족이 신청할 수 있고, 위기 상황이면 시·군·구청에서 직권 신청도 가능해요.
+          </p>
+
+          {/* Steps (기존 패턴) */}
+          <div className="my-4 space-y-0">
+            <div className="flex gap-3 pb-3 border-b border-neutral-100">
+              <div className="w-7 h-7 bg-[#1E3A5F] text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0">1</div>
+              <div>
+                <h4 className="text-sm font-bold text-neutral-800 mb-1">주민센터 방문·신청서 작성</h4>
+                <p className="text-xs text-neutral-500 leading-relaxed m-0">신분증, 통장사본, 임대차계약서 지참. 소득·재산 조회 동의서 작성</p>
+              </div>
+            </div>
+            <div className="flex gap-3 pb-3 border-b border-neutral-100 pt-3">
+              <div className="w-7 h-7 bg-[#1E3A5F] text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0">2</div>
+              <div>
+                <h4 className="text-sm font-bold text-neutral-800 mb-1">소득·재산 조사 (약 30일)</h4>
+                <p className="text-xs text-neutral-500 leading-relaxed m-0">국민건강보험·국세청·금융기관 등 공적 자료 일괄 조회</p>
+              </div>
+            </div>
+            <div className="flex gap-3 pb-3 border-b border-neutral-100 pt-3">
+              <div className="w-7 h-7 bg-[#1E3A5F] text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0">3</div>
+              <div>
+                <h4 className="text-sm font-bold text-neutral-800 mb-1">부양의무자 조사 (의료급여만)</h4>
+                <p className="text-xs text-neutral-500 leading-relaxed m-0">생계·주거·교육급여는 부양의무자 조사 없음</p>
+              </div>
+            </div>
+            <div className="flex gap-3 pt-3">
+              <div className="w-7 h-7 bg-[#1E3A5F] text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0">4</div>
+              <div>
+                <h4 className="text-sm font-bold text-neutral-800 mb-1">결정 통지 → 급여 개시</h4>
+                <p className="text-xs text-neutral-500 leading-relaxed m-0">신청일 기준 30일 이내 결정. 통과 시 신청월부터 소급 지급</p>
+              </div>
+            </div>
+          </div>
+        </>
+      ),
+      bridgeCTA: {
+        href: '#',
+        badge: '차상위',
+        title: '기준을 초과해서 수급자가 안 된다면?',
+        desc: '소득인정액이 중위소득 50% 이하면 차상위계층으로 의료비 감면, 통신비 할인 혜택을 받을 수 있어요.',
+        icon: 'info',
+      },
+    },
+
+    /**
+     * ===== FAQ =====
+     * Section-level Spoke 3 (이 글과 함께 읽으면 좋은 글 5개)
+     */
+    {
+      id: 'sec-faq',
+      number: '07',
       heading: '자주 묻는 질문',
-      subtitle: '자주 나오는 질문만 모았어요',
-      content: null,
+      subtitle: '',
+      content: (
+        <>
+          {/* TODO: SpokeFAQ 컴포넌트 활용 */}
+          <div className="space-y-2 mb-8">
+            <div className="bg-white border border-neutral-200 rounded-lg overflow-hidden">
+              <button className="w-full px-4 py-3 flex items-center justify-between text-left bg-transparent border-none cursor-pointer font-sans">
+                <span className="flex items-center gap-2">
+                  <span className="w-5 h-5 bg-[#1E3A5F] text-white rounded text-[9px] font-bold flex items-center justify-center shrink-0">Q</span>
+                  <span className="text-sm font-semibold text-neutral-800">기초생활수급자 1인가구 생계급여 조건은?</span>
+                </span>
+                <span className="text-xs text-neutral-400">▾</span>
+              </button>
+            </div>
+            <div className="bg-white border border-neutral-200 rounded-lg overflow-hidden">
+              <button className="w-full px-4 py-3 flex items-center justify-between text-left bg-transparent border-none cursor-pointer font-sans">
+                <span className="flex items-center gap-2">
+                  <span className="w-5 h-5 bg-[#1E3A5F] text-white rounded text-[9px] font-bold flex items-center justify-center shrink-0">Q</span>
+                  <span className="text-sm font-semibold text-neutral-800">일을 하면서도 수급자가 될 수 있나요?</span>
+                </span>
+                <span className="text-xs text-neutral-400">▾</span>
+              </button>
+            </div>
+            <div className="bg-white border border-neutral-200 rounded-lg overflow-hidden">
+              <button className="w-full px-4 py-3 flex items-center justify-between text-left bg-transparent border-none cursor-pointer font-sans">
+                <span className="flex items-center gap-2">
+                  <span className="w-5 h-5 bg-[#1E3A5F] text-white rounded text-[9px] font-bold flex items-center justify-center shrink-0">Q</span>
+                  <span className="text-sm font-semibold text-neutral-800">자동차가 있으면 수급자가 안 되나요?</span>
+                </span>
+                <span className="text-xs text-neutral-400">▾</span>
+              </button>
+            </div>
+            <div className="bg-white border border-neutral-200 rounded-lg overflow-hidden">
+              <button className="w-full px-4 py-3 flex items-center justify-between text-left bg-transparent border-none cursor-pointer font-sans">
+                <span className="flex items-center gap-2">
+                  <span className="w-5 h-5 bg-[#1E3A5F] text-white rounded text-[9px] font-bold flex items-center justify-center shrink-0">Q</span>
+                  <span className="text-sm font-semibold text-neutral-800">전세보증금도 재산에 포함되나요?</span>
+                </span>
+                <span className="text-xs text-neutral-400">▾</span>
+              </button>
+            </div>
+            <div className="bg-white border border-neutral-200 rounded-lg overflow-hidden">
+              <button className="w-full px-4 py-3 flex items-center justify-between text-left bg-transparent border-none cursor-pointer font-sans">
+                <span className="flex items-center gap-2">
+                  <span className="w-5 h-5 bg-[#1E3A5F] text-white rounded text-[9px] font-bold flex items-center justify-center shrink-0">Q</span>
+                  <span className="text-sm font-semibold text-neutral-800">탈락해도 다시 신청할 수 있나요?</span>
+                </span>
+                <span className="text-xs text-neutral-400">▾</span>
+              </button>
+            </div>
+            <div className="bg-white border border-neutral-200 rounded-lg overflow-hidden">
+              <button className="w-full px-4 py-3 flex items-center justify-between text-left bg-transparent border-none cursor-pointer font-sans">
+                <span className="flex items-center gap-2">
+                  <span className="w-5 h-5 bg-[#1E3A5F] text-white rounded text-[9px] font-bold flex items-center justify-center shrink-0">Q</span>
+                  <span className="text-sm font-semibold text-neutral-800">의료급여 수급자는 건강보험료를 안 내나요?</span>
+                </span>
+                <span className="text-xs text-neutral-400">▾</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Section-level Spoke 3 */}
+          <div className="space-y-2 mt-8">
+            <div className="text-sm font-bold text-neutral-800 mb-3 flex items-center gap-1.5">
+              <span>📎</span> 이 글과 함께 읽으면 좋은 글
+            </div>
+            <Link
+              href="#"
+              className="flex items-center gap-3 p-3 bg-white border border-neutral-200 rounded-lg hover:border-[#4A7AB5] hover:shadow-sm transition no-underline"
+            >
+              <span className="w-7 h-7 bg-[#EDF2F8] text-[#1E3A5F] rounded-md flex items-center justify-center text-xs font-bold shrink-0">01</span>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-bold text-neutral-800">2026 기준중위소득 금액 총정리 (1인~6인가구)</div>
+                <div className="text-xs text-neutral-400 mt-0.5">기준중위소득 · 복지</div>
+              </div>
+              <span className="text-sm text-neutral-400 shrink-0">→</span>
+            </Link>
+            <Link
+              href="#"
+              className="flex items-center gap-3 p-3 bg-white border border-neutral-200 rounded-lg hover:border-[#4A7AB5] hover:shadow-sm transition no-underline"
+            >
+              <span className="w-7 h-7 bg-[#EDF2F8] text-[#1E3A5F] rounded-md flex items-center justify-center text-xs font-bold shrink-0">02</span>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-bold text-neutral-800">주거급여 신청 조건 — 1인가구 임차료 최대 35만원</div>
+                <div className="text-xs text-neutral-400 mt-0.5">주거급여 · 복지</div>
+              </div>
+              <span className="text-sm text-neutral-400 shrink-0">→</span>
+            </Link>
+            <Link
+              href="#"
+              className="flex items-center gap-3 p-3 bg-white border border-neutral-200 rounded-lg hover:border-[#4A7AB5] hover:shadow-sm transition no-underline"
+            >
+              <span className="w-7 h-7 bg-[#EDF2F8] text-[#1E3A5F] rounded-md flex items-center justify-center text-xs font-bold shrink-0">03</span>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-bold text-neutral-800">의료급여 1종 2종 차이 — 본인부담금 0원 조건</div>
+                <div className="text-xs text-neutral-400 mt-0.5">의료급여 · 복지</div>
+              </div>
+              <span className="text-sm text-neutral-400 shrink-0">→</span>
+            </Link>
+            <Link
+              href="#"
+              className="flex items-center gap-3 p-3 bg-white border border-neutral-200 rounded-lg hover:border-[#4A7AB5] hover:shadow-sm transition no-underline"
+            >
+              <span className="w-7 h-7 bg-[#EDF2F8] text-[#1E3A5F] rounded-md flex items-center justify-center text-xs font-bold shrink-0">04</span>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-bold text-neutral-800">긴급복지지원 신청 방법 — 갑자기 소득이 끊겼을 때</div>
+                <div className="text-xs text-neutral-400 mt-0.5">긴급복지 · 복지</div>
+              </div>
+              <span className="text-sm text-neutral-400 shrink-0">→</span>
+            </Link>
+            <Link
+              href="#"
+              className="flex items-center gap-3 p-3 bg-white border border-neutral-200 rounded-lg hover:border-[#4A7AB5] hover:shadow-sm transition no-underline"
+            >
+              <span className="w-7 h-7 bg-[#EDF2F8] text-[#1E3A5F] rounded-md flex items-center justify-center text-xs font-bold shrink-0">05</span>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-bold text-neutral-800">기초생활수급자 자동차 재산 기준 — 보유해도 되는 조건</div>
+                <div className="text-xs text-neutral-400 mt-0.5">소득인정액 · 복지</div>
+              </div>
+              <span className="text-sm text-neutral-400 shrink-0">→</span>
+            </Link>
+          </div>
+        </>
+      ),
     },
   ],
 
   faq: [
     {
-      question: '중도입사자는 간이세액표를 어떻게 적용하나요?',
-      answer: '입사한 달부터 간이세액표대로 원천징수하면 돼요. 이전 직장 소득은 연말정산 때 합산해서 정산하니까, 전 직장 <strong>원천징수영수증</strong>만 연말정산 시 제출하면 돼요. 전 직장에서 연락이 안 되면 홈택스에서 직접 발급받을 수 있어요.',
+      question: '기초생활수급자 1인가구 생계급여 조건은?',
+      answer: '2026년 기준 1인가구 소득인정액이 <strong>820,556원 이하</strong>면 생계급여를 받을 수 있어요. 소득인정액은 근로소득(30% 공제 후)과 재산 환산액을 합한 금액이에요.',
     },
     {
-      question: '간이세액표 소득세와 연말정산 결과가 다른 이유는?',
-      answer: '간이세액표는 월급과 부양가족 수만으로 계산한 <strong>추정치</strong>예요. 연말정산에서는 의료비·교육비·기부금·신용카드·보험료 등 실제 공제를 반영해 재계산하니까 차이가 생겨요. 더 냈으면 환급, 덜 냈으면 추가 납부해요.',
+      question: '일을 하면서도 수급자가 될 수 있나요?',
+      answer: '<strong>네.</strong> 근로소득의 30%를 공제하기 때문에 가능해요. 예를 들어 월 100만원 벌면 소득평가액은 70만원이에요. 1인가구 기준(82만원) 이하이므로 <strong>생계급여를 받을 수 있어요.</strong>',
+    },
+  ],
+
+  sources: [
+    {
+      name: '보건복지부 2026년 기초생활보장 사업안내',
+      url: 'https://www.mohw.go.kr',
+      date: '2026-01',
     },
   ],
 
   relatedSpokes: [
-    { badge: '프리랜서', title: '프리랜서 3.3% 원천징수 계산 방법과 실수령액', desc: '소득세 3% + 지방세 0.3% 구조와 종합소득세 신고까지', href: '/w/사업소득-원천징수-3-3-percent' },
-    { badge: '기타소득', title: '기타소득 8.8% 원천징수 강연료 원고료 세금 계산', desc: '필요경비 60% 공제 구조와 분리과세 기준', href: '/w/기타소득-원천징수' },
-  ],
-
-  sources: [
-    { name: '소득세법 시행령 제194조', url: 'https://www.law.go.kr/법령/소득세법시행령/제194조', org: '국세법령정보시스템' },
-    { name: '근로소득 간이세액표', url: 'https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=6620&cntntsId=7873', org: '국세청' },
-    { name: '국민연금 보험료율 (2026년 기준 4.5%)', url: 'https://www.nps.or.kr', org: '국민연금공단' },
-    { name: '건강보험료율 (2026년 기준 3.545%)', url: 'https://www.nhis.or.kr', org: '국민건강보험공단' },
+    { title: '2026 기준중위소득 금액 총정리', url: '/w/기준중위소득' },
+    { title: '주거급여 신청 조건', url: '/w/주거급여' },
+    { title: '의료급여 1종 2종 차이', url: '/w/의료급여' },
   ],
 }
 

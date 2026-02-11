@@ -81,8 +81,8 @@ export default function SpokeTOC({ items }: SpokeTOCProps) {
               item.sub ? 'pl-6 text-[11px] text-neutral-400' : 'pl-3'
             } ${
               activeId === item.id
-                ? 'border-emerald-600 text-emerald-600 font-semibold'
-                : 'border-neutral-200 hover:border-emerald-600 hover:text-emerald-600'
+                ? 'border-[#1E3A5F] text-[#1E3A5F] font-semibold'
+                : 'border-neutral-200 hover:border-[#1E3A5F] hover:text-[#1E3A5F]'
             }`}
           >
             {item.text}
@@ -118,8 +118,8 @@ export default function SpokeTOC({ items }: SpokeTOCProps) {
                   item.sub ? 'pl-7 text-xs text-neutral-400' : 'text-neutral-600'
                 } ${
                   activeId === item.id
-                    ? 'text-emerald-600 bg-emerald-600/5'
-                    : 'hover:text-emerald-600 hover:bg-emerald-600/5'
+                    ? 'text-[#1E3A5F] bg-[#1E3A5F]/5'
+                    : 'hover:text-[#1E3A5F] hover:bg-[#1E3A5F]/5'
                 }`}
               >
                 {item.text}

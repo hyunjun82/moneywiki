@@ -3,7 +3,19 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
-export default function MobileStickyBar() {
+interface MobileStickyBarProps {
+  text?: string
+  amount?: string
+  href?: string
+  badgeText?: string
+}
+
+export default function MobileStickyBar({
+  text = '30초 안에 내 숨은 환급금 찾기',
+  amount = '평균 13만원 환급',
+  href = '/w/미환급금-조회',
+  badgeText = '무료'
+}: MobileStickyBarProps) {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -31,7 +43,7 @@ export default function MobileStickyBar() {
       {/* 모바일 스티키 바 (기존 스타일 유지) */}
       <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
         <Link
-          href="/w/미환급금-조회"
+          href={href}
           className="flex items-center justify-between w-full px-4 py-4"
           style={{
             backgroundColor: '#191F28',
@@ -41,10 +53,10 @@ export default function MobileStickyBar() {
         >
           <div className="flex-1">
             <h3 className="font-bold text-white text-base leading-tight">
-              30초 안에 내 숨은 환급금 찾기
+              {text}
             </h3>
             <p className="text-sm mt-1" style={{ color: '#B0B8C1' }}>
-              무료
+              {badgeText}
             </p>
           </div>
           <button
@@ -72,21 +84,21 @@ export default function MobileStickyBar() {
         }}
       >
         <Link
-          href="/w/미환급금-조회"
+          href={href}
           className="flex items-center justify-between w-full px-5 py-3"
           style={{
-            background: 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
+            background: 'linear-gradient(135deg, #1E3A5F 0%, #2B5280 100%)',
             borderTopLeftRadius: '12px',
             borderTopRightRadius: '12px',
           }}
         >
           <span className="flex-1 flex items-center justify-start">
-            <span className="px-3 py-1 bg-white text-emerald-700 rounded-full text-xs font-bold">
-              평균 13만원 환급
+            <span className="px-3 py-1 bg-white text-[#1E3A5F] rounded-full text-xs font-bold">
+              {amount}
             </span>
           </span>
           <span className="flex-1 text-center font-bold text-white text-sm">
-            30초 안에 내 숨은 환급금 찾기
+            {text}
           </span>
           <span className="flex-1 font-bold text-white text-sm text-right">
             조회하기 →

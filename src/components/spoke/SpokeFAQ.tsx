@@ -24,7 +24,7 @@ export default function SpokeFAQ({ items }: SpokeFAQProps) {
         <div key={i} className="border-b border-neutral-100">
           <button
             onClick={() => toggle(i)}
-            className="w-full flex justify-between items-center py-4 text-left font-semibold text-sm cursor-pointer hover:text-emerald-600 transition-colors bg-transparent border-none font-sans text-neutral-800"
+            className="w-full flex justify-between items-center py-4 text-left font-semibold text-sm cursor-pointer hover:text-[#1E3A5F] transition-colors bg-transparent border-none font-sans text-neutral-800"
           >
             <span>{item.question}</span>
             <span className="text-neutral-400 ml-4 shrink-0">{openIndex === i ? '−' : '+'}</span>
