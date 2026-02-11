@@ -89,7 +89,7 @@ function InputField({
           className={`w-full max-w-xs px-3 py-2 text-right border rounded-lg ${
             readOnly
               ? "bg-neutral-100 text-neutral-600 border-neutral-200"
-              : "bg-white border-neutral-300 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+              : "bg-white border-neutral-300 focus:border-[#2B5280] focus:ring-1 focus:ring-[#2B5280]"
           }`}
         />
         <span className="text-sm text-neutral-500">{unit}</span>
@@ -155,9 +155,9 @@ export default function UnemploymentBenefitCalculator() {
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
       {/* 헤더 */}
-      <div className="bg-emerald-600 text-white px-6 py-4">
+      <div className="bg-[#1E3A5F] text-white px-6 py-4">
         <h2 className="text-xl font-bold">실업급여 계산기</h2>
-        <p className="text-emerald-100 text-sm mt-1">
+        <p className="text-[#EDF2F8] text-sm mt-1">
           퇴직하면 얼마나 받을 수 있는지 바로 확인하세요
         </p>
       </div>
@@ -183,7 +183,7 @@ export default function UnemploymentBenefitCalculator() {
                   name="age"
                   checked={!isOver50}
                   onChange={() => setIsOver50(false)}
-                  className="w-4 h-4 text-emerald-600 focus:ring-emerald-500"
+                  className="w-4 h-4 text-[#1E3A5F] focus:ring-[#2B5280]"
                 />
                 <span className="text-sm text-neutral-700">50세 미만</span>
               </label>
@@ -193,7 +193,7 @@ export default function UnemploymentBenefitCalculator() {
                   name="age"
                   checked={isOver50}
                   onChange={() => setIsOver50(true)}
-                  className="w-4 h-4 text-emerald-600 focus:ring-emerald-500"
+                  className="w-4 h-4 text-[#1E3A5F] focus:ring-[#2B5280]"
                 />
                 <span className="text-sm text-neutral-700">50세 이상</span>
               </label>
@@ -210,7 +210,7 @@ export default function UnemploymentBenefitCalculator() {
                 type="checkbox"
                 checked={isDisabled}
                 onChange={(e) => setIsDisabled(e.target.checked)}
-                className="w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500"
+                className="w-4 h-4 text-[#1E3A5F] rounded focus:ring-[#2B5280]"
               />
               <span className="text-sm text-neutral-700">
                 장애인 등록되어 있어요
@@ -232,7 +232,7 @@ export default function UnemploymentBenefitCalculator() {
           <select
             value={insurancePeriod}
             onChange={(e) => setInsurancePeriod(e.target.value as InsurancePeriod)}
-            className="w-full sm:w-64 px-4 py-3 border border-neutral-300 rounded-lg bg-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-neutral-700"
+            className="w-full sm:w-64 px-4 py-3 border border-neutral-300 rounded-lg bg-white focus:border-[#2B5280] focus:ring-1 focus:ring-[#2B5280] text-neutral-700"
           >
             {insurancePeriodOptions.map((opt) => (
               <option key={opt.value} value={opt.value}>
@@ -244,7 +244,7 @@ export default function UnemploymentBenefitCalculator() {
             href="https://www.ei.go.kr"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block mt-2 text-xs text-emerald-600 hover:underline"
+            className="inline-block mt-2 text-xs text-[#1E3A5F] hover:underline"
           >
             → 고용보험 가입기간 조회하기
           </a>
@@ -310,15 +310,15 @@ export default function UnemploymentBenefitCalculator() {
       </div>
 
       {/* 결과 */}
-      <div className="bg-gradient-to-r from-emerald-50 to-teal-50">
-        <div className="bg-emerald-600 px-6 py-3">
+      <div className="bg-gradient-to-r from-[#F5F8FB] to-teal-50">
+        <div className="bg-[#1E3A5F] px-6 py-3">
           <h3 className="font-semibold text-white">실업급여 계산 결과</h3>
         </div>
         <div className="p-6">
           {/* 주요 결과 */}
           <div className="bg-white rounded-xl p-6 text-center shadow-sm">
             <p className="text-neutral-500 mb-2">총 예상 수령액</p>
-            <p className="text-4xl font-bold text-emerald-600 mb-2">
+            <p className="text-4xl font-bold text-[#1E3A5F] mb-2">
               {formatNumber(totalBenefit)}원
             </p>
             <p className="text-sm text-neutral-500">
@@ -334,10 +334,10 @@ export default function UnemploymentBenefitCalculator() {
                 {formatNumber(dailyBenefit)}원
               </p>
               {isUpperLimit && (
-                <span className="text-xs text-emerald-600">상한액</span>
+                <span className="text-xs text-[#1E3A5F]">상한액</span>
               )}
               {isLowerLimit && (
-                <span className="text-xs text-emerald-600">하한액</span>
+                <span className="text-xs text-[#1E3A5F]">하한액</span>
               )}
             </div>
             <div className="bg-white rounded-xl p-4 text-center">
@@ -373,18 +373,18 @@ export default function UnemploymentBenefitCalculator() {
       </div>
 
       {/* 실업급여 안내 */}
-      <div className="px-6 py-4 bg-emerald-50 border-t border-emerald-100">
-        <div className="p-4 rounded-xl border border-emerald-200 bg-white">
-          <h4 className="font-medium text-emerald-800 mb-2 flex items-center gap-2">
+      <div className="px-6 py-4 bg-[#F5F8FB] border-t border-[#EDF2F8]">
+        <div className="p-4 rounded-xl border border-[#B8D0E8] bg-white">
+          <h4 className="font-medium text-[#132A42] mb-2 flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             실업급여가 뭔가요?
           </h4>
-          <p className="text-sm text-emerald-700 mb-2">
+          <p className="text-sm text-[#162F4F] mb-2">
             고용보험에 가입한 근로자가 비자발적으로 실직했을 때 받는 지원금이에요. <span className="font-medium">최대 270일까지 받을 수 있어요.</span>
           </p>
-          <ul className="text-sm text-emerald-700 space-y-1.5 mt-3">
+          <ul className="text-sm text-[#162F4F] space-y-1.5 mt-3">
             <li className="flex items-start gap-2">
               <span className="text-green-600 mt-0.5">✓</span>
               <span><strong>수급 조건:</strong> 고용보험 180일 이상 가입 (퇴직 전 18개월 중)</span>
@@ -394,7 +394,7 @@ export default function UnemploymentBenefitCalculator() {
               <span><strong>비자발적 퇴사:</strong> 권고사직, 계약만료, 정리해고 등</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-emerald-600 mt-0.5">✓</span>
+              <span className="text-[#1E3A5F] mt-0.5">✓</span>
               <span><strong>구직활동:</strong> 4주마다 실업인정 받고 구직활동 증빙</span>
             </li>
             <li className="flex items-start gap-2">
@@ -402,12 +402,12 @@ export default function UnemploymentBenefitCalculator() {
               <span><strong>신청 기한:</strong> 퇴직 후 12개월 이내</span>
             </li>
           </ul>
-          <div className="mt-3 pt-3 border-t border-emerald-200">
-            <p className="text-xs text-emerald-700 mb-1">
+          <div className="mt-3 pt-3 border-t border-[#B8D0E8]">
+            <p className="text-xs text-[#162F4F] mb-1">
               <strong>2026년 기준:</strong> 상한액 68,100원/일, 하한액 66,048원/일
             </p>
-            <p className="text-xs text-emerald-600">
-              📌 출처: <a href="https://www.ei.go.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">고용24</a> · <a href="https://www.moel.go.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">고용노동부</a>
+            <p className="text-xs text-[#1E3A5F]">
+              📌 출처: <a href="https://www.ei.go.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#132A42]">고용24</a> · <a href="https://www.moel.go.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#132A42]">고용노동부</a>
             </p>
           </div>
         </div>
@@ -421,11 +421,11 @@ export default function UnemploymentBenefitCalculator() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">월급 (세전)</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">1일 급여</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">월 예상</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">180일 총액</th>
+                <tr className="bg-[#EDF2F8] border-b-2 border-[#4A7AB5]">
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">월급 (세전)</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">1일 급여</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">월 예상</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden sm:table-cell">180일 총액</th>
                   <th className="py-2 px-2 text-center text-neutral-600 font-medium border border-gray-300 hidden md:table-cell">한줄평</th>
                 </tr>
               </thead>
@@ -444,12 +444,12 @@ export default function UnemploymentBenefitCalculator() {
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">1,189만</td>
                   <td className="py-2 px-2 text-center text-green-600 text-xs border border-gray-300 hidden md:table-cell">하한액 적용</td>
                 </tr>
-                <tr className="bg-emerald-50 border-b border-neutral-200">
-                  <td className="py-2 px-2 text-center font-medium text-emerald-700 border border-gray-300">300만원</td>
+                <tr className="bg-[#F5F8FB] border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-[#162F4F] border border-gray-300">300만원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">66,048원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">198만</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">1,189만</td>
-                  <td className="py-2 px-2 text-center text-emerald-600 text-xs border border-gray-300 hidden md:table-cell">하한액 적용</td>
+                  <td className="py-2 px-2 text-center text-[#1E3A5F] text-xs border border-gray-300 hidden md:table-cell">하한액 적용</td>
                 </tr>
                 <tr className="bg-blue-50 border-b border-neutral-200">
                   <td className="py-2 px-2 text-center font-medium text-blue-700 border border-gray-300">350만원</td>
@@ -468,9 +468,9 @@ export default function UnemploymentBenefitCalculator() {
               </tbody>
             </table>
           </div>
-          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
-            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
-            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+          <div className="mt-4 p-3 bg-[#EDF2F8] rounded-lg">
+            <p className="text-xs text-[#132A42] font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-[#162F4F] mt-1 space-y-1">
               <li>• 2026년 상한액 68,100원 = 월급 340만원 이상은 동일</li>
               <li>• 50세 이상/장애인은 수급일수가 30일 더 길어요</li>
               <li>• 고용보험 10년 이상이면 최대 240~270일까지!</li>

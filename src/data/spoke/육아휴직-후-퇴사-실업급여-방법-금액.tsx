@@ -23,7 +23,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>육아휴직 후 <span className="text-emerald-600">퇴사하면 실업급여</span> 받는 방법과 금액</>,
+    h1: <>육아휴직 후 <span className="text-[#1E3A5F]">퇴사하면 실업급여</span> 받는 방법과 금액</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -214,7 +214,7 @@ const data: SpokeData = {
             cards={[
               { value: '120일', label: '50세 미만, 가입 1년 미만', lines: ['1일 68,100원 × 120일', '총 약 408만원'], highlight: '단기', highlightColor: 'orange' },
               { value: '180일', label: '50세 미만, 가입 3~5년', lines: ['1일 68,100원 × 180일', '총 약 612만원'], active: true },
-              { value: '270일', label: '50세 이상, 가입 10년+', lines: ['1일 68,100원 × 270일', '총 약 918만원'], highlight: '최대', highlightColor: 'emerald' },
+              { value: '270일', label: '50세 이상, 가입 10년+', lines: ['1일 68,100원 × 270일', '총 약 918만원'], highlight: '최대', highlightColor: 'navy' },
             ]}
           />
 

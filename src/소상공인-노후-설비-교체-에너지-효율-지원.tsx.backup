@@ -1,0 +1,290 @@
+import Link from 'next/link'
+import type { SpokeData } from './types'
+import { SpokeTable, SpokeCompareCards, FormulaBox, SpokeFlow, SpokeRateBars, SpokeChecklist, SpokeTimeline, RateCards } from '@/components/spoke/SpokeBlocks'
+
+// === SPOKE DATA ===
+// Visual Spec: S1(SpokeTable+SpokeCompareCards), S2(FormulaBox+SpokeFlow), S3(SpokeRateBars+SpokeChecklist), S4(SpokeTimeline+RateCards)
+
+const data: SpokeData = {
+  slug: '소상공인-노후-설비-교체-에너지-효율-지원',
+
+  meta: {
+    title: '2026 소상공인 노후 설비 교체 에너지 효율 지원 신청',
+    description: '냉장고·에어컨 같은 노후 설비를 교체하면 에너지 절감 + 지원금까지 받을 수 있어요. 고효율 설비 교체 지원을 정리했어요',
+    keywords: ['소상공인 노후 설비 교체 지원금 신청', '고효율 냉장 쇼케이스 교체 에너지 지원', '소상공인 냉난방기 교체 보조금 방법', '에너지 효율 개선 사업 소상공인 신청'],
+    ogTitle: '2026 노후 설비 교체 에너지 지원 | 머니위키',
+    ogDescription: '냉장고·에어컨 교체로 전기세 절감 + 지원금 최대 300만원',
+  },
+
+  hub: {
+    url: '/w/소상공인-시설개선-지원금-종류-신청-방법-2026',
+    name: '소상공인 시설개선 지원금 종류 신청 방법',
+  },
+
+  breadcrumb: ['지원금', '노후 설비 교체 에너지 지원'],
+
+  hero: {
+    badge: '최대 300만원',
+    h1: <>소상공인 <span className="text-emerald-600">노후 설비 교체 에너지 효율 지원</span> — 전기세 절감 + 지원금</>,
+    intro: (
+      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+        냉장고 전기세가 한 달에 20만원씩 나오시나요? 10년 넘은 에어컨 때문에 여름마다 고민이신가요?
+        노후 설비를 고효율 제품으로 교체하면 전기세도 절감하고 지원금도 받는 1석 2조!
+      </p>
+    ),
+    hubCTA: {
+      badge: '올인원',
+      desc: '소상공인 시설개선 지원금 모든 종류 한눈에 비교',
+    },
+  },
+
+  toc: [
+    { id: 's1', title: '에너지 효율 개선 지원금이란?' },
+    { id: 's2', title: '한국에너지공단 지원 사업 신청' },
+    { id: 's3', title: '신청 방법과 절차' },
+    { id: 's4', title: '교체 전략과 우선순위' },
+  ],
+
+  sections: [
+    // === S1: SpokeTable + SpokeCompareCards ===
+    {
+      id: 's1',
+      title: '에너지 효율 개선 지원금이란?',
+      intro: (
+        <>
+          <p>노후 설비를 <strong>고효율 제품</strong>으로 교체하면 비용을 지원해줍니다. 전기세도 절감하고 지원금도 받는 1석 2조!</p>
+          <p><strong>2년 6개월이면 본전</strong>, 이후는 순수익입니다.</p>
+        </>
+      ),
+      visuals: [
+        <SpokeTable
+          key="support"
+          caption="지원 대상 설비"
+          headers={['설비', '교체 기준', '최대 지원액', '전기세 절감']}
+          rows={[
+            ['냉장 쇼케이스', '10년 이상', '300만원', '월 5~8만원'],
+            ['업소용 냉난방기', '10년 이상', '250만원', '월 10~15만원'],
+            ['LED 조명', '형광등 → LED', '100만원', '월 3~5만원'],
+            ['냉동고', '15년 이상', '200만원', '월 4~7만원'],
+          ]}
+        />,
+        <SpokeCompareCards
+          key="comparison"
+          title="교체 전후 5년 누적 절감액"
+          items={[
+            {
+              title: '교체 전',
+              features: [
+                '냉장 쇼케이스 2대 (10년 이상)',
+                '월 전기세 18만원',
+                '연간 216만원',
+                '5년 누적 1,080만원',
+              ],
+              badge: '고비용',
+            },
+            {
+              title: '교체 후',
+              features: [
+                '고효율 1~2등급 제품',
+                '월 전기세 10만원',
+                '연간 120만원',
+                '5년 누적 600만원 (480만원 절감)',
+              ],
+              badge: '저비용',
+              highlight: true,
+            },
+          ]}
+        />,
+      ],
+    },
+
+    // === S2: FormulaBox + SpokeFlow ===
+    {
+      id: 's2',
+      title: '한국에너지공단 지원 사업 신청',
+      intro: (
+        <>
+          <p><strong>에너지 소비효율 등급 1~2등급</strong> 제품만 지원 대상입니다.</p>
+          <p>3등급 이하 제품은 아무리 저렴해도 지원 불가!</p>
+        </>
+      ),
+      visuals: [
+        <FormulaBox
+          key="calc"
+          title="실제 부담 금액 계산"
+          items={[
+            {
+              label: '예시: 음식점 냉장 쇼케이스 2대 교체',
+              formula: '교체 비용 600만원 - 지원금 300만원 (50%) = 자부담 300만원',
+              result: '월 12만원 절감 → 5년 누적 720만원',
+              explanation: '순이익 420만원 (720만원 - 300만원)',
+            },
+            {
+              label: '투자 회수 기간',
+              formula: '자부담 300만원 ÷ 월 절감 12만원 = 25개월',
+              result: '2년 1개월이면 본전',
+              explanation: '이후는 순수익!',
+            },
+          ]}
+        />,
+        <SpokeFlow
+          key="process"
+          title="신청 절차"
+          steps={[
+            { label: '에너지진단 신청', description: '한국에너지공단 무료 진단 (2주 소요)' },
+            { label: '진단 결과 확인', description: '설비별 절감액 시뮬레이션' },
+            { label: '고효율 제품 선정', description: '1~2등급 인증 제품 견적' },
+            { label: '온라인 신청', description: '에너지포인트시스템 (kemco.or.kr)' },
+            { label: '심사·선정', description: '5월 선정 발표' },
+            { label: '설비 교체', description: '6~9월 (3개월 이내)' },
+            { label: '정산', description: '10~11월 증빙 제출' },
+          ]}
+        />,
+      ],
+    },
+
+    // === S3: SpokeRateBars + SpokeChecklist ===
+    {
+      id: 's3',
+      title: '신청 방법과 절차',
+      intro: (
+        <>
+          <p>2026년 신청은 <strong>3~4월</strong>에 진행됩니다. 에너지진단을 먼저 받으세요!</p>
+          <p>노후 설비 사진(제조일자 라벨 포함)은 필수입니다.</p>
+        </>
+      ),
+      visuals: [
+        <SpokeRateBars
+          key="savings"
+          title="설비별 전기세 절감 효과 비교"
+          description="업소용 냉난방기가 가장 절감 효과가 큽니다"
+          items={[
+            { label: '업소용 냉난방기', value: 40, color: 'red', unit: '월 10~20만원' },
+            { label: '냉장 쇼케이스', value: 25, color: 'orange', unit: '월 5~8만원' },
+            { label: 'LED 조명', value: 20, color: 'yellow', unit: '월 3~5만원' },
+            { label: '냉동고·냉장고', value: 15, color: 'blue', unit: '월 4~7만원' },
+          ]}
+        />,
+        <SpokeChecklist
+          key="docs"
+          title="필수 제출 서류"
+          items={[
+            { text: '사업자등록증', checked: false },
+            { text: '전기요금 고지서 (최근 1년)', checked: false },
+            { text: '노후 설비 사진 (제조일자 라벨 포함)', checked: false },
+            { text: '교체 예정 제품 견적서 (고효율 인증 확인)', checked: false },
+            { text: '에너지진단 보고서 (공단 발급)', checked: false },
+          ]}
+        />,
+      ],
+    },
+
+    // === S4: SpokeTimeline + RateCards ===
+    {
+      id: 's4',
+      title: '교체 전략과 우선순위',
+      intro: (
+        <>
+          <p><strong>ROI 높은 순서대로</strong> 교체하세요. 업소용 냉난방기가 1순위입니다!</p>
+          <p>에너지진단을 받으면 정확한 분석을 받을 수 있어요.</p>
+        </>
+      ),
+      visuals: [
+        <SpokeTimeline
+          key="schedule"
+          title="2026년 에너지 효율 개선 일정"
+          events={[
+            {
+              date: '2~3월',
+              label: '사업 공고',
+              description: '한국에너지공단 공고',
+            },
+            {
+              date: '3~4월',
+              label: '온라인 신청',
+              description: '에너지포인트시스템',
+            },
+            {
+              date: '5월',
+              label: '심사·선정',
+              description: '에너지진단 기반',
+            },
+            {
+              date: '6~9월',
+              label: '설비 교체',
+              description: '3개월 이내',
+            },
+            {
+              date: '10~11월',
+              label: '정산',
+              description: '증빙 제출',
+            },
+          ]}
+        />,
+        <RateCards
+          key="priority"
+          title="교체 우선순위 추천"
+          items={[
+            {
+              label: '1순위',
+              title: '업소용 냉난방기',
+              value: '10~20만원',
+              description: '전기세 절감 효과 최대, 여름·겨울 필수 가동',
+              highlight: true,
+            },
+            {
+              label: '2순위',
+              title: '냉장 쇼케이스',
+              value: '5~8만원',
+              description: '24시간 가동, 고장 시 재고 손실 위험',
+            },
+            {
+              label: '3순위',
+              title: 'LED 조명 전체',
+              value: '3~5만원',
+              description: '초기 투자 낮음, 전기세 30~40% 절감',
+            },
+            {
+              label: '4순위',
+              title: '냉동고·냉장고',
+              value: '4~7만원',
+              description: '필수 설비지만 절감 효과 상대적 낮음',
+            },
+          ]}
+        />,
+      ],
+    },
+  ],
+
+  faq: [
+    {
+      question: '에너지진단은 꼭 받아야 하나요?',
+      answer: '네, 필수입니다. 한국에너지공단 전문가가 무료로 방문하여 현재 전력 사용 패턴을 분석하고, 설비별 교체 시 절감액을 시뮬레이션해줍니다.',
+    },
+    {
+      question: '고효율 인증은 어디서 확인하나요?',
+      answer: '에너지효율관리시스템(eep.energy.or.kr)에서 확인하거나, 제품 라벨에서 1~2등급을 확인하세요. 3등급 이하는 지원 불가입니다.',
+    },
+    {
+      question: '지원금은 언제 받나요?',
+      answer: '설비 교체 완료 후 증빙 서류를 제출하면, 정산 후 2주 이내에 입금됩니다. 보통 10~11월에 정산이 진행돼요.',
+    },
+    {
+      question: 'LED 조명만 교체해도 지원금을 받을 수 있나요?',
+      answer: '네, 가능합니다. 형광등을 LED로 전체 교체하면 최대 100만원까지 지원받을 수 있어요. 초기 투자도 낮고 절감 효과도 좋습니다.',
+    },
+  ],
+
+  related: [
+    { text: '소상공인 시설개선 지원금 종류 비교', link: '/w/소상공인-시설개선-지원금-종류-비교-정리' },
+    { text: '스마트상점 기술보급 신청 방법', link: '/w/스마트상점-기술보급-사업-신청-방법-2026' },
+    { text: '시설개선 지원금 신청 서류 절차', link: '/w/소상공인-시설개선-지원금-신청-서류-절차' },
+  ],
+
+  sources: [
+    { label: '한국에너지공단 소상공인 에너지효율 개선 사업', url: 'https://kemco.or.kr', date: '2026.02' },
+    { label: '에너지포인트시스템', url: 'https://eep.energy.or.kr', date: '2026.02' },
+  ],
+}
+
+export default data

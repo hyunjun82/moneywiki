@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>가처분 <span className="text-emerald-600">비용 계산</span> — 인지대 송달료 담보금 총정리</>,
+    h1: <>가처분 <span className="text-[#1E3A5F]">비용 계산</span> — 인지대 송달료 담보금 총정리</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

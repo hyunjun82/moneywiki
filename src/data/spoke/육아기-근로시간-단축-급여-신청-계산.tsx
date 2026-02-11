@@ -30,7 +30,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>육아기 <span className="text-emerald-600">근로시간 단축</span> 급여 신청과 계산 방법</>,
+    h1: <>육아기 <span className="text-[#1E3A5F]">근로시간 단축</span> 급여 신청과 계산 방법</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

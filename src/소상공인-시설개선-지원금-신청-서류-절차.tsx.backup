@@ -1,0 +1,269 @@
+import Link from 'next/link'
+import type { SpokeData } from './types'
+import { SpokeFlow, FormulaBox, SpokeTable, SpokeChecklist, SpokeTimeline, SpokeRateBars, SpokeCompareCards, TipBox } from '@/components/spoke/SpokeBlocks'
+
+// === SPOKE DATA ===
+// Visual Spec: S1(SpokeFlow+FormulaBox), S2(SpokeTable+SpokeChecklist), S3(SpokeTimeline+SpokeRateBars), S4(SpokeCompareCards+TipBox)
+
+const data: SpokeData = {
+  slug: '소상공인-시설개선-지원금-신청-서류-절차',
+
+  meta: {
+    title: '2026 소상공인 시설개선 지원금 신청 서류 절차 총정리',
+    description: '사업자등록증 말고 또 뭘 준비해야 하나요? 시설개선 지원금 신청에 필요한 서류와 심사 절차를 정리했어요',
+    keywords: ['소상공인 시설개선 지원금 신청 서류 목록', '소상공인 지원금 신청 절차 심사 기간', '소상공인 시설개선 사업계획서 작성 방법', '소상공인 지원금 정산 증빙 제출 방법'],
+    ogTitle: '2026 소상공인 시설개선 신청 서류 | 머니위키',
+    ogDescription: '신청 서류부터 사업계획서 작성, 심사, 정산까지 완벽 가이드',
+  },
+
+  hub: {
+    url: '/w/소상공인-시설개선-지원금-종류-신청-방법-2026',
+    name: '소상공인 시설개선 지원금 종류 신청 방법',
+  },
+
+  breadcrumb: ['지원금', '신청 서류 절차'],
+
+  hero: {
+    badge: '서류부터 정산까지',
+    h1: <>소상공인 시설개선 지원금 <span className="text-emerald-600">신청 서류 절차</span> — 한 번에 끝내는 가이드</>,
+    intro: (
+      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+        사업자등록증 말고 또 뭘 준비해야 하나요?
+        시설개선 지원금 신청에 필요한 서류와 심사 절차를 정리했어요. 온라인 서류 발급 5분 완성법도 알려드립니다.
+      </p>
+    ),
+    hubCTA: {
+      badge: '올인원',
+      desc: '소상공인 시설개선 지원금 모든 종류 한눈에 비교',
+    },
+  },
+
+  toc: [
+    { id: 's1', title: '필수 서류 완벽 체크리스트' },
+    { id: 's2', title: '사업계획서 작성 전략' },
+    { id: 's3', title: '심사 과정과 합격 전략' },
+    { id: 's4', title: '선정 후 정산 절차' },
+  ],
+
+  sections: [
+    // === S1: SpokeFlow + FormulaBox ===
+    {
+      id: 's1',
+      title: '필수 서류 완벽 체크리스트',
+      intro: (
+        <>
+          <p>모든 지원금에 공통으로 필요한 <strong>기본 서류 5종</strong>과 <strong>사업계획 서류 3종</strong>을 준비하세요.</p>
+          <p>온라인 발급은 <strong>5분</strong>이면 완성됩니다!</p>
+        </>
+      ),
+      visuals: [
+        <SpokeFlow
+          key="docs"
+          title="서류 준비 단계별 흐름"
+          steps={[
+            { label: '기본 서류 5종', description: '사업자등록증, 영업허가증, 임대차계약서, 국세·지방세 완납증명서' },
+            { label: '사업계획서', description: '양식 다운로드 → A4 3~5장 작성 (사진 포함)' },
+            { label: '견적서 2~3개', description: '인테리어 2개 이상, 스마트 기기 3개 이상 (필수)' },
+            { label: '사업장 사진', description: '외관 1장, 내부 3~5장 (개선 필요 부분 집중 촬영)' },
+            { label: '온라인 제출', description: '신청 사이트에서 PDF 업로드 → 제출 완료' },
+          ]}
+        />,
+        <FormulaBox
+          key="online"
+          title="온라인 서류 발급 5분 완성법"
+          items={[
+            {
+              label: '홈택스 (hometax.go.kr)',
+              formula: '사업자등록증명 + 국세 완납증명',
+              result: '2분 소요, 무료 PDF 저장',
+              explanation: '공인인증서 필요',
+            },
+            {
+              label: '위택스 (wetax.go.kr)',
+              formula: '지방세 완납증명',
+              result: '1분 소요, 무료 PDF 저장',
+              explanation: '공인인증서 필요',
+            },
+            {
+              label: '정부24 (gov.kr)',
+              formula: '영업허가증 (식품위생, 공중위생)',
+              result: '2분 소요, 무료 PDF 저장',
+              explanation: '회원가입 필요',
+            },
+          ]}
+        />,
+      ],
+    },
+
+    // === S2: SpokeTable + SpokeChecklist ===
+    {
+      id: 's2',
+      title: '사업계획서 작성 전략',
+      intro: (
+        <>
+          <p>사업계획서는 <strong>A4 3~5장</strong> 분량으로 작성합니다. 사진 증빙이 가장 중요해요!</p>
+          <p>추상적 표현보다 <strong>구체적 수치</strong>로 말하세요.</p>
+        </>
+      ),
+      visuals: [
+        <SpokeTable
+          key="structure"
+          caption="사업계획서 섹션별 구성"
+          headers={['섹션', '주요 내용', '분량']}
+          rows={[
+            ['사업자 현황', '상호명, 주소, 업종, 영업기간, 매출 규모', '1페이지'],
+            ['현황 분석', '문제점, 매출 영향, 고객 불편사항', '1~2페이지'],
+            ['개선 계획', '개선 항목, 소요 예산, 추진 일정', '1~2페이지'],
+            ['기대 효과', '매출 증가, 고객 만족도, 고용 창출', '1페이지'],
+          ]}
+        />,
+        <SpokeChecklist
+          key="tips"
+          title="고득점 사업계획서 작성 팁"
+          items={[
+            { text: '사진 증빙을 많이 (낡은 간판, 깨진 타일 등 Before 사진)', checked: false },
+            { text: '수치로 말하기 (매출 18% 감소, 개업 12년차 등)', checked: false },
+            { text: '실현 가능한 계획 (월 매출 10~15% 개선 목표)', checked: false },
+            { text: '견적서와 사업계획 일치 (항목 동일하게)', checked: false },
+            { text: '마감일 일주일 전 제출 (보완 요청 대응 시간 확보)', checked: false },
+          ]}
+        />,
+      ],
+    },
+
+    // === S3: SpokeTimeline + SpokeRateBars ===
+    {
+      id: 's3',
+      title: '심사 과정과 합격 전략',
+      intro: (
+        <>
+          <p>심사는 <strong>3단계</strong>로 진행되며, 최종 합격률은 <strong>50~60%</strong>입니다.</p>
+          <p>서류 미비로 탈락하는 경우가 30%나 됩니다. 꼼꼼히 준비하세요!</p>
+        </>
+      ),
+      visuals: [
+        <SpokeTimeline
+          key="process"
+          title="심사 3단계 프로세스"
+          events={[
+            {
+              date: '1단계',
+              label: '서류 심사',
+              description: '신청 마감 후 2주, 자격 요건·서류 완비 확인 (탈락률 30%)',
+            },
+            {
+              date: '2단계',
+              label: '현장 심사',
+              description: '서류 통과자 대상, 사업장 방문·면담 (탈락률 20%)',
+            },
+            {
+              date: '3단계',
+              label: '종합 평가',
+              description: '점수 합산 → 고득점 순 선정 (최종 합격률 50~60%)',
+            },
+          ]}
+        />,
+        <SpokeRateBars
+          key="rejection"
+          title="탈락 사유 비율"
+          description="서류 미비가 1위입니다"
+          items={[
+            { label: '서류 미비', value: 30, color: 'red' },
+            { label: '임대차 계약 1년 미만', value: 25, color: 'orange' },
+            { label: '동일 지원금 중복 신청', value: 20, color: 'yellow' },
+            { label: '현황 불일치', value: 15, color: 'blue' },
+            { label: '기타 사유', value: 10, color: 'gray' },
+          ]}
+        />,
+      ],
+    },
+
+    // === S4: SpokeCompareCards + TipBox ===
+    {
+      id: 's4',
+      title: '선정 후 정산 절차',
+      intro: (
+        <>
+          <p>선정 통보 받은 후 <strong>3개월 이내</strong>에 공사·구매를 완료해야 합니다.</p>
+          <p>증빙 서류 없으면 정산 불가하니 주의하세요!</p>
+        </>
+      ),
+      visuals: [
+        <SpokeCompareCards
+          key="settlement"
+          title="정산 증빙 서류 2종류"
+          items={[
+            {
+              title: '지출 증빙 (필수)',
+              features: [
+                '세금계산서 (전자 발행 권장)',
+                '카드 매출전표 (현금영수증)',
+                '통장 입출금 내역',
+                '현금 거래는 반드시 영수증',
+              ],
+              badge: '원본 제출',
+            },
+            {
+              title: '사업 완료 증빙',
+              features: [
+                '시공 완료 사진 (Before/After)',
+                '기기 설치 인증 사진',
+                '검수확인서 (업체 날인)',
+                '정산보고서 (양식 제공)',
+              ],
+              badge: '사진 필수',
+              highlight: true,
+            },
+          ]}
+        />,
+        <TipBox
+          key="tips"
+          type="warning"
+          title="정산 불가 사유 (지원금 못 받음)"
+        >
+          <ul className="space-y-2">
+            <li><strong>현금 거래 증빙 없음</strong>: 반드시 세금계산서 또는 현금영수증 필수</li>
+            <li><strong>견적서와 다른 항목</strong>: 견적서 간판 교체 → 실제 에어컨 구입 → 해당 금액 미지급</li>
+            <li><strong>기한 초과</strong>: 3개월 기한 넘김 → 지원금 삭감 또는 전액 회수</li>
+            <li><strong>허위·이중 청구</strong>: 다른 지원금과 중복 청구 → 부정수급, 5년 제재</li>
+          </ul>
+          <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
+            💡 <strong>정산 꿀팁</strong>: 공사 중간중간 사진 찍어두세요. 완료 후엔 Before 사진 못 찍어요!
+          </p>
+        </TipBox>,
+      ],
+    },
+  ],
+
+  faq: [
+    {
+      question: '사업자등록증은 사본으로 제출해도 되나요?',
+      answer: '네, 사본 제출 가능합니다. 홈택스에서 PDF로 발급받아 출력하면 됩니다.',
+    },
+    {
+      question: '임대차 계약이 1년 미만 남았는데 어떻게 하나요?',
+      answer: '계약을 갱신하거나 연장 계약서를 작성하세요. 잔여기간 1년 이상이 필수 조건입니다.',
+    },
+    {
+      question: '사업계획서 양식은 어디서 다운로드하나요?',
+      answer: '신청 사이트(소상공인24, 스마트상점 등)에서 한글/워드 양식을 제공합니다. 공고문에 첨부된 링크를 클릭하면 다운로드할 수 있어요.',
+    },
+    {
+      question: '정산할 때 현금영수증도 인정되나요?',
+      answer: '네, 인정됩니다. 하지만 세금계산서가 더 확실하므로, 가능하면 세금계산서를 받으세요.',
+    },
+  ],
+
+  related: [
+    { text: '소상공인 시설개선 지원금 종류 비교', link: '/w/소상공인-시설개선-지원금-종류-비교-정리' },
+    { text: '스마트상점 기술보급 신청 방법', link: '/w/스마트상점-기술보급-사업-신청-방법-2026' },
+    { text: '지자체 매장 리모델링 지원금', link: '/w/지자체-소상공인-매장-리모델링-지원금-신청' },
+  ],
+
+  sources: [
+    { label: '소상공인시장진흥공단 신청 가이드', url: 'https://sbiz.or.kr', date: '2026.02' },
+    { label: '중소벤처기업부 지원 사업 공고', url: 'https://www.mss.go.kr', date: '2026.02' },
+  ],
+}
+
+export default data

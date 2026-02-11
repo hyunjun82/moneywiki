@@ -30,7 +30,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <><span className="text-emerald-600">실업급여 지급일</span> 첫 입금일 대기기간</>,
+    h1: <><span className="text-[#1E3A5F]">실업급여 지급일</span> 첫 입금일 대기기간</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -89,7 +89,7 @@ const data: SpokeData = {
 
           <RateCards cards={[
             { value: '7일', label: '대기기간', lines: ['신청일부터 기산', '구직급여 0원'], highlight: '필수', highlightColor: 'orange' },
-            { value: '8일째', label: '지급 시작', lines: ['첫 실업인정 이후', '소정급여일수 차감'], highlight: '입금', highlightColor: 'emerald', active: true },
+            { value: '8일째', label: '지급 시작', lines: ['첫 실업인정 이후', '소정급여일수 차감'], highlight: '입금', highlightColor: 'navy', active: true },
             { value: '소급 없음', label: '대기기간', lines: ['7일 동안 0원', '면제 불가'], highlight: '불가',  },
           ]} />
 

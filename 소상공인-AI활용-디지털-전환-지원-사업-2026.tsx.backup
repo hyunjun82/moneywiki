@@ -1,0 +1,316 @@
+import Link from 'next/link'
+import type { SpokeData } from './types'
+import { SpokeTimeline, SpokeRateBars, SpokeCompareCards, FormulaBox, SpokeTable, SpokeStepCards, SpokeChecklist, SpokeFlow } from '@/components/spoke/SpokeBlocks'
+
+// === SPOKE DATA ===
+// Visual Spec: S1(SpokeTimeline+SpokeRateBars), S2(SpokeCompareCards+FormulaBox), S3(SpokeTable+SpokeStepCards), S4(SpokeChecklist+SpokeFlow)
+
+const data: SpokeData = {
+  slug: '소상공인-AI활용-디지털-전환-지원-사업-2026',
+
+  meta: {
+    title: '2026 소상공인 AI활용 디지털 전환 지원 사업 신청 방법',
+    description: '2026년 신규 사업으로 AI 솔루션 도입비를 지원해준대요. POS 자동화부터 매출분석까지 AI활용 지원을 정리했어요',
+    keywords: ['소상공인 AI활용 지원 사업 2026 신청', '소상공인 디지털 전환 POS 자동화 지원', 'AI 도우미 소상공인 매출분석 컨설팅', '소상공인 디지털 역량강화 사업 신청 방법'],
+    ogTitle: '2026 소상공인 AI활용 지원 신청 | 머니위키',
+    ogDescription: 'AI로 업무 자동화, 2026년 신규 디지털 전환 지원 사업',
+  },
+
+  hub: {
+    url: '/w/소상공인-시설개선-지원금-종류-신청-방법-2026',
+    name: '소상공인 시설개선 지원금 종류 신청 방법',
+  },
+
+  breadcrumb: ['지원금', 'AI활용 디지털 전환'],
+
+  hero: {
+    badge: '2026년 신규',
+    h1: <>소상공인 <span className="text-emerald-600">AI활용 디지털 전환 지원 사업</span> 2026 — 업무 자동화</>,
+    intro: (
+      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+        "AI는 대기업이나 쓰는 거 아냐?" → 아닙니다! 작은 음식점도 AI로 매출 분석, 재고 관리, 마케팅 자동화 가능해요.
+        2026년 신규 사업으로 AI 솔루션 도입비를 지원합니다.
+      </p>
+    ),
+    hubCTA: {
+      badge: '올인원',
+      desc: '소상공인 시설개선 지원금 모든 종류 한눈에 비교',
+    },
+  },
+
+  toc: [
+    { id: 's1', text: 'AI활용 지원 사업이 뭔가요?' },
+    { id: 's2', text: '지원 대상 AI 솔루션' },
+    { id: 's3', text: '신청 방법과 절차' },
+    { id: 's4', text: '교육과 컨설팅 지원' },
+  ],
+
+  sections: [
+    // === S1: SpokeTimeline + SpokeRateBars ===
+    {
+      id: 's1',
+      title: 'AI활용 지원 사업이 뭔가요?',
+      intro: (
+        <>
+          <p><strong>2026년 신규 사업</strong>으로, 소상공인이 인공지능(AI)을 활용해 업무를 자동화하면 비용을 지원해줍니다.</p>
+          <p><strong>주 15시간 절약</strong> + <strong>매출 10~20% 증가</strong> 효과!</p>
+        </>
+      ),
+      visuals: [
+        <SpokeTimeline
+          key="schedule"
+          title="2026년 AI활용 지원 일정"
+          events={[
+            {
+              date: '2월',
+              label: '사업 공고',
+              description: '소진공 홈페이지 공고',
+            },
+            {
+              date: '3~4월',
+              label: '신청 접수 (1차)',
+              description: '온라인 신청 + 교육 이수',
+            },
+            {
+              date: '5~7월',
+              label: '교육 + 솔루션 도입',
+              description: '맞춤형 AI 솔루션 도입',
+            },
+            {
+              date: '8월',
+              label: '신청 접수 (2차)',
+              description: '추가 모집',
+            },
+            {
+              date: '9~11월',
+              label: '교육 + 솔루션 도입',
+              description: '사후 컨설팅 3개월',
+            },
+          ]}
+        />,
+        <SpokeRateBars
+          key="benefits"
+          title="AI 도입 시간 절감 효과"
+          description="주 15시간 절약됩니다"
+          items={[
+            { label: '매출 분석 (주 3시간 → 10분)', value: 40, color: 'blue', unit: '주 2.5시간 절약' },
+            { label: '재고 관리 (수시 → 자동 알림)', value: 30, color: 'green', unit: '품절·과다 방지' },
+            { label: 'SNS 마케팅 (매일 1시간 → 자동)', value: 30, color: 'yellow', unit: '주 7시간 절약' },
+          ]}
+        />,
+      ],
+    },
+
+    // === S2: SpokeCompareCards + FormulaBox ===
+    {
+      id: 's2',
+      title: '지원 대상 AI 솔루션',
+      intro: (
+        <>
+          <p>POS·회계, 마케팅, 고객 관리, 매출 분석 <strong>4개 분야</strong>를 지원합니다.</p>
+          <p>월 이용료를 <strong>연 30~60만원</strong>까지 지원받을 수 있어요.</p>
+        </>
+      ),
+      visuals: [
+        <SpokeCompareCards
+          key="solutions"
+          title="업종별 추천 AI 솔루션"
+          items={[
+            {
+              title: '음식점·카페',
+              features: [
+                'AI 재고 관리 (식자재 발주 최적화)',
+                'AI 메뉴 추천 (고객 취향 분석)',
+                'AI 마케팅 (SNS 콘텐츠 자동 생성)',
+                '연 30~50만원 지원',
+              ],
+              badge: '식자재',
+            },
+            {
+              title: '소매·편의점',
+              features: [
+                'AI 재고 예측 (품절 방지)',
+                'AI 가격 최적화 (경쟁가 분석)',
+                'AI 매출 분석 (트렌드 파악)',
+                '연 30~40만원 지원',
+              ],
+              badge: '재고',
+            },
+            {
+              title: '미용·뷰티',
+              features: [
+                'AI 예약 관리 (카톡 자동 응답)',
+                'AI 고객 관리 (재방문 알림)',
+                'AI 마케팅 (고객 맞춤 추천)',
+                '연 40~50만원 지원',
+              ],
+              badge: '예약',
+              highlight: true,
+            },
+            {
+              title: '숙박업',
+              features: [
+                'AI 예약 시스템 (실시간 가격 조정)',
+                'AI 리뷰 분석 (개선점 도출)',
+                'AI 고객 관리 (재방문 유도)',
+                '연 40~60만원 지원',
+              ],
+              badge: '가격',
+            },
+          ]}
+        />,
+        <FormulaBox
+          key="roi"
+          title="AI 도입 ROI 계산"
+          items={[
+            {
+              label: '사례 1: 강남 카페 (AI 재고관리)',
+              formula: '도입 전 폐기율 20% → 도입 후 5%',
+              result: '월 50만원 절감',
+              explanation: '투자: 월 3만원 (자부담 0원) → ROI: 1,667%',
+            },
+            {
+              label: '사례 2: 홍대 음식점 (AI 마케팅)',
+              formula: 'SNS 관리 주 5시간 → 30분',
+              result: '주 4.5시간 절약',
+              explanation: 'SNS 팔로워 3배 증가 → 매출 15% 상승',
+            },
+            {
+              label: '사례 3: 수원 편의점 (AI 매출분석)',
+              formula: '수기 장부 주 3시간 → 자동 리포트 10분',
+              result: '재고 효율 30% 개선',
+              explanation: '인기 상품 분석으로 품절 방지',
+            },
+          ]}
+        />,
+      ],
+    },
+
+    // === S3: SpokeTable + SpokeStepCards ===
+    {
+      id: 's3',
+      title: '신청 방법과 절차',
+      intro: (
+        <>
+          <p><strong>디지털 역량 진단</strong>을 먼저 받으세요. 온라인 테스트 20분이면 완성됩니다.</p>
+          <p>교육 이수 후 AI 솔루션 신청하면 <strong>자부담 0~30%</strong>로 도입할 수 있어요.</p>
+        </>
+      ),
+      visuals: [
+        <SpokeTable
+          key="solutions-table"
+          caption="지원 가능 AI 솔루션 분야"
+          headers={['분야', '솔루션 예시', '월 이용료', '지원 한도']}
+          rows={[
+            ['POS·회계', 'AI 재고 예측, 자동 발주', '3~5만원', '연 30만원'],
+            ['마케팅', 'AI 콘텐츠 생성, SNS 자동화', '5~10만원', '연 50만원'],
+            ['고객 관리', 'AI 챗봇, 예약 자동화', '3~8만원', '연 40만원'],
+            ['매출 분석', 'AI 경영 컨설팅, 데이터 분석', '5~15만원', '연 60만원'],
+          ]}
+        />,
+        <SpokeStepCards
+          key="process"
+          steps={[
+            {
+              stepNumber: 1,
+              title: '디지털 역량 진단',
+              description: '소상공인24에서 온라인 테스트',
+              tips: ['20분 소요', '맞춤형 솔루션 추천'],
+            },
+            {
+              stepNumber: 2,
+              title: '교육 이수',
+              description: '온라인 교육 4시간 (AI 기초 + 활용)',
+              tips: ['온라인 수강', '실습 위주'],
+            },
+            {
+              stepNumber: 3,
+              title: 'AI 솔루션 신청',
+              description: '추천받은 솔루션 중 선택',
+              tips: ['자부담 0~30%', '업종별 맞춤'],
+            },
+            {
+              stepNumber: 4,
+              title: '도입 + 컨설팅',
+              description: '설치 + 초기 설정 + 활용 교육',
+              tips: ['1:1 맞춤 컨설팅 3회', '무료 지원'],
+            },
+            {
+              stepNumber: 5,
+              title: '사후 컨설팅',
+              description: '3개월간 월 1회 화상 상담',
+              tips: ['카톡 상시 지원', '업그레이드 안내'],
+            },
+          ]}
+        />,
+      ],
+    },
+
+    // === S4: SpokeChecklist + SpokeFlow ===
+    {
+      id: 's4',
+      title: '교육과 컨설팅 지원',
+      intro: (
+        <>
+          <p><strong>온라인 교육 4시간</strong>과 <strong>1:1 맞춤 컨설팅 3회</strong>를 무료로 제공합니다.</p>
+          <p>사후 컨설팅도 <strong>3개월간 월 1회</strong> 지원해요!</p>
+        </>
+      ),
+      visuals: [
+        <SpokeChecklist
+          key="education"
+          title="무료 교육 프로그램"
+          items={[
+            { text: '온라인 교육 (총 4시간): AI 기초 이해 1시간', checked: false },
+            { text: '업종별 AI 활용 사례 1시간', checked: false },
+            { text: '솔루션 사용법 실습 2시간', checked: false },
+            { text: '오프라인 교육 (선택, 8시간): 권역별 집합 교육장', checked: false },
+            { text: '실습 위주 심화 과정 + 네트워킹', checked: false },
+          ]}
+        />,
+        <SpokeFlow
+          key="consulting"
+          title="1:1 맞춤 컨설팅 3단계"
+          steps={[
+            { label: '1회차: 현황 분석', description: '현재 업무 프로세스 분석 + 솔루션 추천' },
+            { label: '2회차: 설치 + 설정', description: 'AI 솔루션 설치 + 초기 설정 지원' },
+            { label: '3회차: 활용 교육', description: '실전 활용 교육 + 최적화 가이드' },
+            { label: '사후 컨설팅 (3개월)', description: '월 1회 화상 상담 + 카톡 상시 문의' },
+          ]}
+        />,
+      ],
+    },
+  ],
+
+  faq: [
+    {
+      question: 'AI는 어렵지 않나요? 컴퓨터도 잘 못 하는데...',
+      answer: '걱정 마세요! 교육 프로그램과 1:1 컨설팅을 통해 차근차근 배울 수 있어요. 대부분의 AI 솔루션은 스마트폰 앱처럼 쉽게 사용할 수 있도록 만들어져 있습니다.',
+    },
+    {
+      question: '자부담이 있나요?',
+      answer: '솔루션에 따라 0~30% 자부담이 있습니다. 하지만 월 이용료가 3~10만원 수준이고, 연간 30~60만원까지 지원받으니 부담이 크지 않아요.',
+    },
+    {
+      question: '중도에 솔루션을 변경할 수 있나요?',
+      answer: '원칙적으로 선택한 솔루션을 3개월 이상 사용해야 합니다. 하지만 정말 맞지 않는 경우 담당자와 상의하여 변경할 수 있어요.',
+    },
+    {
+      question: 'AI 솔루션 도입 후 효과는 언제 나타나나요?',
+      answer: '보통 1~2개월 후부터 효과가 나타납니다. 재고 관리는 즉시, 마케팅은 2~3개월 후부터 매출 증가 효과를 볼 수 있어요.',
+    },
+  ],
+
+  related: [
+    { text: '소상공인 시설개선 지원금 종류 비교', link: '/w/소상공인-시설개선-지원금-종류-비교-정리' },
+    { text: '스마트상점 기술보급 신청 방법', link: '/w/스마트상점-기술보급-사업-신청-방법-2026' },
+    { text: '시설개선 지원금 신청 서류 절차', link: '/w/소상공인-시설개선-지원금-신청-서류-절차' },
+  ],
+
+  sources: [
+    { label: '소상공인시장진흥공단 AI활용 지원 사업', url: 'https://sbiz.or.kr', date: '2026.02' },
+    { label: '중소벤처기업부 디지털 전환 지원', url: 'https://www.mss.go.kr', date: '2026.02' },
+  ],
+}
+
+export default data

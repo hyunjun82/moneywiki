@@ -105,7 +105,7 @@ export default function AreaConverterCalculator() {
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
       {/* 헤더 */}
-      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-[#1E3A5F] to-teal-600 px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -114,7 +114,7 @@ export default function AreaConverterCalculator() {
           </div>
           <div>
             <h2 className="text-xl font-bold text-white">평수 계산기</h2>
-            <p className="text-emerald-100 text-sm">평 ↔ ㎡ ↔ ft² 변환</p>
+            <p className="text-[#EDF2F8] text-sm">평 ↔ ㎡ ↔ ft² 변환</p>
           </div>
         </div>
       </div>
@@ -158,7 +158,7 @@ export default function AreaConverterCalculator() {
               value={inputValue}
               onChange={(e) => handleInputChange(e.target.value)}
               placeholder="숫자를 입력하세요"
-              className="w-full px-4 py-4 text-2xl font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 transition-colors text-right pr-16"
+              className="w-full px-4 py-4 text-2xl font-bold border-2 border-neutral-200 rounded-xl focus:border-[#2B5280] focus:ring-0 transition-colors text-right pr-16"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500 font-medium">
               {inputUnit === "pyeong" ? "평" : inputUnit === "sqm" ? "㎡" : "ft²"}
@@ -195,8 +195,8 @@ export default function AreaConverterCalculator() {
 
         {/* 결과 표시 */}
         {result && (
-          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
-            <h3 className="text-lg font-bold text-emerald-800 mb-4">변환 결과</h3>
+          <div className="bg-gradient-to-r from-[#F5F8FB] to-teal-50 rounded-2xl p-6 border border-[#EDF2F8]">
+            <h3 className="text-lg font-bold text-[#132A42] mb-4">변환 결과</h3>
 
             <div className="grid grid-cols-3 gap-4">
               {/* 평 */}
@@ -255,14 +255,14 @@ export default function AreaConverterCalculator() {
         </div>
 
         {/* 이용안내 */}
-        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
-          <h4 className="font-medium text-emerald-800 mb-2 flex items-center gap-2">
+        <div className="mt-6 p-4 bg-[#F5F8FB] rounded-xl border border-[#EDF2F8]">
+          <h4 className="font-medium text-[#132A42] mb-2 flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             이용안내
           </h4>
-          <ul className="text-sm text-emerald-700 space-y-1">
+          <ul className="text-sm text-[#162F4F] space-y-1">
             <li>• 1평 = 약 3.3㎡로 계산합니다 (정확히 3.3058㎡)</li>
             <li>• 부동산에서 흔히 말하는 '평형'은 '공급면적(분양면적)' 기준이에요</li>
             <li>• 분양면적(공급면적)은 전용면적보다 넓어요</li>
@@ -271,8 +271,8 @@ export default function AreaConverterCalculator() {
         </div>
 
         {/* 전용면적 vs 공급면적 설명 */}
-        <div className="mt-4 p-4 bg-blue-50 rounded-xl border border-emerald-100">
-          <h4 className="font-medium text-emerald-800 mb-2">전용면적 vs 공급면적</h4>
+        <div className="mt-4 p-4 bg-blue-50 rounded-xl border border-[#EDF2F8]">
+          <h4 className="font-medium text-[#132A42] mb-2">전용면적 vs 공급면적</h4>
           <div className="text-sm text-blue-700 space-y-2">
             <div>
               <span className="font-medium">전용면적</span>: 실제로 사용할 수 있는 방, 거실, 주방 등의 면적
@@ -292,12 +292,12 @@ export default function AreaConverterCalculator() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">평수</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">㎡ (제곱미터)</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">ft² (제곱피트)</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">주거 타입</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden md:table-cell">한줄평</th>
+                <tr className="bg-[#EDF2F8] border-b-2 border-[#4A7AB5]">
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">평수</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">㎡ (제곱미터)</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden sm:table-cell">ft² (제곱피트)</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">주거 타입</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden md:table-cell">한줄평</th>
                 </tr>
               </thead>
               <tbody>
@@ -317,14 +317,14 @@ export default function AreaConverterCalculator() {
                 </tr>
                 <tr className="bg-white">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">24평</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 font-bold text-emerald-600">79.3㎡ (전용 59㎡)</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 font-bold text-[#1E3A5F]">79.3㎡ (전용 59㎡)</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">854ft²</td>
                   <td className="py-2 px-2 text-center border border-gray-300">소형 아파트</td>
                   <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">신혼부부·3인가구</td>
                 </tr>
                 <tr className="bg-blue-50">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">34평</td>
-                  <td className="py-2 px-2 text-center border border-gray-300 font-bold text-emerald-600">112.4㎡ (전용 84㎡)</td>
+                  <td className="py-2 px-2 text-center border border-gray-300 font-bold text-[#1E3A5F]">112.4㎡ (전용 84㎡)</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">1,210ft²</td>
                   <td className="py-2 px-2 text-center border border-gray-300">국민평수 (국평)</td>
                   <td className="py-2 px-2 text-center text-xs text-gray-600 border border-gray-300 hidden md:table-cell">4인 가족 ⭐</td>
@@ -348,9 +348,9 @@ export default function AreaConverterCalculator() {
           </div>
           <p className="text-xs text-gray-500 mt-2 text-center">※ 분양광고 84㎡ = 전용면적 84㎡ ≈ 약 25평 (실사용 면적)</p>
 
-          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
-            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
-            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+          <div className="mt-4 p-3 bg-[#EDF2F8] rounded-lg">
+            <p className="text-xs text-[#132A42] font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-[#162F4F] mt-1 space-y-1">
               <li>• 84㎡ = 약 25평 (가장 많이 찾는 국민평수!)</li>
               <li>• 평 × 3.3 = ㎡ (빠른 암산법)</li>
               <li>• 분양면적 ≠ 전용면적 (공용면적 제외해야 실평수)</li>

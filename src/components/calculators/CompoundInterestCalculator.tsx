@@ -96,7 +96,7 @@ export default function CompoundInterestCalculator() {
 
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
-      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-[#1E3A5F] to-teal-600 px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -105,7 +105,7 @@ export default function CompoundInterestCalculator() {
           </div>
           <div>
             <h2 className="text-xl font-bold text-white">복리 계산기</h2>
-            <p className="text-emerald-100 text-sm">복리의 마법을 확인하세요</p>
+            <p className="text-[#EDF2F8] text-sm">복리의 마법을 확인하세요</p>
           </div>
         </div>
       </div>
@@ -121,7 +121,7 @@ export default function CompoundInterestCalculator() {
                 onClick={() => setFrequency(freq.value as CompoundFrequency)}
                 className={`py-2 px-4 rounded-xl font-medium transition-all ${
                   frequency === freq.value
-                    ? "bg-emerald-600 text-white"
+                    ? "bg-[#1E3A5F] text-white"
                     : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
                 }`}
               >
@@ -140,11 +140,11 @@ export default function CompoundInterestCalculator() {
               value={principal > 0 ? formatNumber(principal) : ""}
               onChange={(e) => setPrincipal(parseInt(e.target.value.replace(/,/g, "")) || 0)}
               placeholder="원금 입력"
-              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 text-right pr-12"
+              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-[#2B5280] focus:ring-0 text-right pr-12"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
           </div>
-          {principal > 0 && <p className="mt-1 text-sm text-emerald-600">{formatWon(principal)}</p>}
+          {principal > 0 && <p className="mt-1 text-sm text-[#1E3A5F]">{formatWon(principal)}</p>}
 
           <div className="flex gap-2 mt-3">
             {[10000000, 30000000, 50000000, 100000000, 500000000].map((amount) => (
@@ -170,14 +170,14 @@ export default function CompoundInterestCalculator() {
               step="0.5"
               min="0"
               max="50"
-              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500 text-right"
+              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-[#2B5280] text-right"
             />
             <div className="flex gap-2 mt-2">
               {[3, 5, 7, 10].map((r) => (
                 <button
                   key={r}
                   onClick={() => setRate(r)}
-                  className={`flex-1 py-1 rounded text-sm ${rate === r ? "bg-emerald-600 text-white" : "bg-neutral-100"}`}
+                  className={`flex-1 py-1 rounded text-sm ${rate === r ? "bg-[#1E3A5F] text-white" : "bg-neutral-100"}`}
                 >
                   {r}%
                 </button>
@@ -192,14 +192,14 @@ export default function CompoundInterestCalculator() {
               onChange={(e) => setYears(parseInt(e.target.value) || 0)}
               min="1"
               max="50"
-              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500 text-right"
+              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-[#2B5280] text-right"
             />
             <div className="flex gap-2 mt-2">
               {[5, 10, 20, 30].map((y) => (
                 <button
                   key={y}
                   onClick={() => setYears(y)}
-                  className={`flex-1 py-1 rounded text-sm ${years === y ? "bg-emerald-600 text-white" : "bg-neutral-100"}`}
+                  className={`flex-1 py-1 rounded text-sm ${years === y ? "bg-[#1E3A5F] text-white" : "bg-neutral-100"}`}
                 >
                   {y}년
                 </button>
@@ -210,8 +210,8 @@ export default function CompoundInterestCalculator() {
 
         {/* 결과 */}
         {principal > 0 && (
-          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
-            <h3 className="text-lg font-bold text-emerald-800 mb-4">복리 vs 단리 비교</h3>
+          <div className="bg-gradient-to-r from-[#F5F8FB] to-teal-50 rounded-2xl p-6 border border-[#EDF2F8]">
+            <h3 className="text-lg font-bold text-[#132A42] mb-4">복리 vs 단리 비교</h3>
 
             <div className="grid grid-cols-2 gap-4 mb-4">
               <div className="bg-white rounded-xl p-4 border-2 border-neutral-200">
@@ -219,9 +219,9 @@ export default function CompoundInterestCalculator() {
                 <div className="text-2xl font-bold text-neutral-600">{formatNumber(simpleTotal)}원</div>
                 <div className="text-xs text-neutral-500">{formatWon(simpleTotal)}</div>
               </div>
-              <div className="bg-white rounded-xl p-4 border-2 border-emerald-400">
-                <div className="text-sm text-emerald-600 mb-1">복리 ({years}년 후)</div>
-                <div className="text-2xl font-bold text-emerald-600">{formatNumber(compoundTotal)}원</div>
+              <div className="bg-white rounded-xl p-4 border-2 border-[#4A7AB5]">
+                <div className="text-sm text-[#1E3A5F] mb-1">복리 ({years}년 후)</div>
+                <div className="text-2xl font-bold text-[#1E3A5F]">{formatNumber(compoundTotal)}원</div>
                 <div className="text-xs text-neutral-500">{formatWon(compoundTotal)}</div>
               </div>
             </div>
@@ -233,11 +233,11 @@ export default function CompoundInterestCalculator() {
             </div>
 
             {/* 72의 법칙 */}
-            <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-4 mb-4 border border-emerald-200">
+            <div className="bg-gradient-to-r from-[#F5F8FB] to-teal-50 rounded-xl p-4 mb-4 border border-[#B8D0E8]">
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-emerald-600 font-bold">72의 법칙</span>
+                <span className="text-[#1E3A5F] font-bold">72의 법칙</span>
               </div>
-              <div className="text-sm text-emerald-700">
+              <div className="text-sm text-[#162F4F]">
                 연 {rate}% 수익률이면 약 <span className="font-bold">{doubleYears}년</span> 후에 원금이 2배가 돼요!
               </div>
             </div>
@@ -251,7 +251,7 @@ export default function CompoundInterestCalculator() {
                     <tr className="border-b border-neutral-200">
                       <th className="py-2 text-left text-neutral-500">년차</th>
                       <th className="py-2 text-right text-neutral-500">단리</th>
-                      <th className="py-2 text-right text-emerald-500">복리</th>
+                      <th className="py-2 text-right text-[#2B5280]">복리</th>
                       <th className="py-2 text-right text-pink-500">차이</th>
                     </tr>
                   </thead>
@@ -260,7 +260,7 @@ export default function CompoundInterestCalculator() {
                       <tr key={row.year} className="border-b border-neutral-100">
                         <td className="py-2 text-neutral-700">{row.year}년</td>
                         <td className="py-2 text-right">{formatWon(row.simpleAmount)}</td>
-                        <td className="py-2 text-right font-medium text-emerald-600">{formatWon(row.compoundAmount)}</td>
+                        <td className="py-2 text-right font-medium text-[#1E3A5F]">{formatWon(row.compoundAmount)}</td>
                         <td className="py-2 text-right text-pink-500">+{formatWon(row.difference)}</td>
                       </tr>
                     ))}
@@ -271,9 +271,9 @@ export default function CompoundInterestCalculator() {
           </div>
         )}
 
-        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
-          <h4 className="font-medium text-emerald-800 mb-2">복리의 힘</h4>
-          <ul className="text-sm text-emerald-700 space-y-1">
+        <div className="mt-6 p-4 bg-[#F5F8FB] rounded-xl border border-[#EDF2F8]">
+          <h4 className="font-medium text-[#132A42] mb-2">복리의 힘</h4>
+          <ul className="text-sm text-[#162F4F] space-y-1">
             <li>• 복리: 이자에 이자가 붙어요 (눈덩이 효과)</li>
             <li>• 기간이 길수록, 금리가 높을수록 효과가 커요</li>
             <li>• 투자는 일찍 시작할수록 유리해요</li>

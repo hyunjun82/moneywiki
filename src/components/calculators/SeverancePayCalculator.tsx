@@ -120,7 +120,7 @@ interface InputFieldProps {
 
 function InputField({ label, value, onChange, readOnly, description, highlight, unit = "원" }: InputFieldProps) {
   return (
-    <div className={`flex flex-col sm:flex-row sm:items-center gap-2 py-3 px-4 border-b border-neutral-100 ${highlight ? "bg-emerald-50" : ""}`}>
+    <div className={`flex flex-col sm:flex-row sm:items-center gap-2 py-3 px-4 border-b border-neutral-100 ${highlight ? "bg-[#F5F8FB]" : ""}`}>
       <div className="sm:w-48 flex-shrink-0">
         <span className="text-sm font-medium text-neutral-700">{label}</span>
       </div>
@@ -133,7 +133,7 @@ function InputField({ label, value, onChange, readOnly, description, highlight, 
           className={`w-full max-w-xs px-3 py-2 text-right border rounded-lg ${
             readOnly
               ? "bg-neutral-100 text-neutral-600 border-neutral-200"
-              : "bg-white border-neutral-300 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+              : "bg-white border-neutral-300 focus:border-[#2B5280] focus:ring-1 focus:ring-[#2B5280]"
           }`}
         />
         <span className="text-sm text-neutral-500">{unit}</span>
@@ -163,7 +163,7 @@ function DateField({ label, value, onChange, description }: DateFieldProps) {
           type="date"
           value={formatDate(value)}
           onChange={(e) => onChange(parseDate(e.target.value))}
-          className="px-3 py-2 border border-neutral-300 rounded-lg bg-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+          className="px-3 py-2 border border-neutral-300 rounded-lg bg-white focus:border-[#2B5280] focus:ring-1 focus:ring-[#2B5280]"
         />
       </div>
       {description && (
@@ -285,7 +285,7 @@ function RegularWorkerCalculator() {
           <div className="flex items-start gap-2">
             <span className="text-amber-500 text-xl">⚠️</span>
             <div>
-              <p className="font-medium text-emerald-800">퇴직금 지급 대상이 아니에요</p>
+              <p className="font-medium text-[#132A42]">퇴직금 지급 대상이 아니에요</p>
               <p className="text-sm text-amber-700 mt-1">{eligibilityMessage}</p>
             </div>
           </div>
@@ -335,7 +335,7 @@ function RegularWorkerCalculator() {
               onChange={(e) => setAnnualLeaveCount(parseInt(e.target.value) || 0)}
               min="0"
               max="30"
-              className="w-20 px-3 py-2 text-right border border-neutral-300 rounded-lg bg-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+              className="w-20 px-3 py-2 text-right border border-neutral-300 rounded-lg bg-white focus:border-[#2B5280] focus:ring-1 focus:ring-[#2B5280]"
             />
             <span className="text-sm text-neutral-500">일</span>
           </div>
@@ -368,9 +368,9 @@ function RegularWorkerCalculator() {
               <span className="text-neutral-600">③ 연차수당 3개월분</span>
               <span className="font-medium">{formatNumber(leavePortion)}원</span>
             </div>
-            <div className="flex justify-between py-2 border-b border-neutral-100 bg-emerald-50 -mx-4 px-4">
+            <div className="flex justify-between py-2 border-b border-neutral-100 bg-[#F5F8FB] -mx-4 px-4">
               <span className="text-neutral-700 font-medium">3개월 총액 (①+②+③)</span>
-              <span className="font-bold text-emerald-700">{formatNumber(totalThreeMonth)}원</span>
+              <span className="font-bold text-[#162F4F]">{formatNumber(totalThreeMonth)}원</span>
             </div>
             <div className="flex justify-between py-2 border-b border-neutral-100">
               <span className="text-neutral-600">3개월 총 일수</span>
@@ -386,14 +386,14 @@ function RegularWorkerCalculator() {
 
       {/* 결과 */}
       {isEligible && severancePay > 0 && (
-        <div className="bg-gradient-to-r from-emerald-50 to-teal-50">
-          <div className="bg-emerald-600 px-6 py-3">
+        <div className="bg-gradient-to-r from-[#F5F8FB] to-teal-50">
+          <div className="bg-[#1E3A5F] px-6 py-3">
             <h3 className="font-semibold text-white">퇴직금 계산 결과</h3>
           </div>
           <div className="p-6">
             <div className="bg-white rounded-xl p-6 text-center shadow-sm">
               <p className="text-neutral-500 mb-2">예상 퇴직금</p>
-              <p className="text-4xl font-bold text-emerald-600 mb-2">
+              <p className="text-4xl font-bold text-[#1E3A5F] mb-2">
                 {formatNumber(severancePay)}원
               </p>
               <p className="text-sm text-neutral-500">
@@ -445,7 +445,7 @@ function DailyWorkerCalculator() {
               value={workDays}
               onChange={(e) => setWorkDays(parseInt(e.target.value) || 0)}
               min="0"
-              className="w-24 px-3 py-2 text-right border border-neutral-300 rounded-lg bg-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+              className="w-24 px-3 py-2 text-right border border-neutral-300 rounded-lg bg-white focus:border-[#2B5280] focus:ring-1 focus:ring-[#2B5280]"
             />
             <span className="text-sm text-neutral-500">일</span>
           </div>
@@ -459,7 +459,7 @@ function DailyWorkerCalculator() {
           <div className="flex items-start gap-2">
             <span className="text-amber-500 text-xl">⚠️</span>
             <div>
-              <p className="font-medium text-emerald-800">퇴직금 지급 대상이 아니에요</p>
+              <p className="font-medium text-[#132A42]">퇴직금 지급 대상이 아니에요</p>
               <p className="text-sm text-amber-700 mt-1">
                 퇴직금은 1년(365일) 이상 근무해야 받을 수 있어요. 현재 {workDays}일 근무로 {365 - workDays}일 부족해요.
               </p>
@@ -473,7 +473,7 @@ function DailyWorkerCalculator() {
         <div className="flex items-start gap-2">
           <span className="text-blue-500 text-xl">ℹ️</span>
           <div>
-            <p className="font-medium text-emerald-800">건설근로자 퇴직공제</p>
+            <p className="font-medium text-[#132A42]">건설근로자 퇴직공제</p>
             <p className="text-sm text-blue-700 mt-1">
               건설현장 일용직은 <strong>건설근로자 퇴직공제</strong> 제도를 이용할 수 있어요.
               252일 이상 근무하면 퇴직공제금을 받을 수 있어요.
@@ -484,14 +484,14 @@ function DailyWorkerCalculator() {
 
       {/* 결과 */}
       {isEligible && (
-        <div className="bg-gradient-to-r from-emerald-50 to-teal-50">
-          <div className="bg-emerald-600 px-6 py-3">
+        <div className="bg-gradient-to-r from-[#F5F8FB] to-teal-50">
+          <div className="bg-[#1E3A5F] px-6 py-3">
             <h3 className="font-semibold text-white">퇴직금 계산 결과</h3>
           </div>
           <div className="p-6">
             <div className="bg-white rounded-xl p-6 text-center shadow-sm">
               <p className="text-neutral-500 mb-2">예상 퇴직금</p>
-              <p className="text-4xl font-bold text-emerald-600 mb-2">
+              <p className="text-4xl font-bold text-[#1E3A5F] mb-2">
                 {formatNumber(severancePay)}원
               </p>
               <p className="text-sm text-neutral-500">
@@ -547,7 +547,7 @@ function ParttimeWorkerCalculator() {
               onChange={(e) => setHoursPerDay(parseInt(e.target.value) || 0)}
               min="1"
               max="12"
-              className="w-20 px-3 py-2 text-right border border-neutral-300 rounded-lg bg-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+              className="w-20 px-3 py-2 text-right border border-neutral-300 rounded-lg bg-white focus:border-[#2B5280] focus:ring-1 focus:ring-[#2B5280]"
             />
             <span className="text-sm text-neutral-500">시간</span>
           </div>
@@ -563,7 +563,7 @@ function ParttimeWorkerCalculator() {
               onChange={(e) => setDaysPerWeek(parseInt(e.target.value) || 0)}
               min="1"
               max="7"
-              className="w-20 px-3 py-2 text-right border border-neutral-300 rounded-lg bg-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+              className="w-20 px-3 py-2 text-right border border-neutral-300 rounded-lg bg-white focus:border-[#2B5280] focus:ring-1 focus:ring-[#2B5280]"
             />
             <span className="text-sm text-neutral-500">일</span>
           </div>
@@ -578,7 +578,7 @@ function ParttimeWorkerCalculator() {
               value={workMonths}
               onChange={(e) => setWorkMonths(parseInt(e.target.value) || 0)}
               min="0"
-              className="w-20 px-3 py-2 text-right border border-neutral-300 rounded-lg bg-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+              className="w-20 px-3 py-2 text-right border border-neutral-300 rounded-lg bg-white focus:border-[#2B5280] focus:ring-1 focus:ring-[#2B5280]"
             />
             <span className="text-sm text-neutral-500">개월</span>
           </div>
@@ -586,7 +586,7 @@ function ParttimeWorkerCalculator() {
         <div className="py-3 px-4 border-b border-neutral-100 bg-blue-50">
           <div className="flex justify-between items-center">
             <span className="text-sm font-medium text-neutral-700">주당 근무시간</span>
-            <span className={`font-bold ${isWeeklyMinimum ? "text-emerald-600" : "text-red-600"}`}>
+            <span className={`font-bold ${isWeeklyMinimum ? "text-[#1E3A5F]" : "text-red-600"}`}>
               {weeklyHours}시간 {isWeeklyMinimum ? "✓" : "(15시간 미만)"}
             </span>
           </div>
@@ -599,7 +599,7 @@ function ParttimeWorkerCalculator() {
           <div className="flex items-start gap-2">
             <span className="text-amber-500 text-xl">⚠️</span>
             <div>
-              <p className="font-medium text-emerald-800">퇴직금 지급 대상이 아니에요</p>
+              <p className="font-medium text-[#132A42]">퇴직금 지급 대상이 아니에요</p>
               <ul className="text-sm text-amber-700 mt-1 space-y-1">
                 {!isWeeklyMinimum && (
                   <li>• 주 15시간 이상 근무해야 해요 (현재 {weeklyHours}시간)</li>
@@ -625,14 +625,14 @@ function ParttimeWorkerCalculator() {
 
       {/* 결과 */}
       {isWeeklyMinimum && isYearMinimum && (
-        <div className="bg-gradient-to-r from-emerald-50 to-teal-50">
-          <div className="bg-emerald-600 px-6 py-3">
+        <div className="bg-gradient-to-r from-[#F5F8FB] to-teal-50">
+          <div className="bg-[#1E3A5F] px-6 py-3">
             <h3 className="font-semibold text-white">퇴직금 계산 결과</h3>
           </div>
           <div className="p-6">
             <div className="bg-white rounded-xl p-6 text-center shadow-sm">
               <p className="text-neutral-500 mb-2">예상 퇴직금</p>
-              <p className="text-4xl font-bold text-emerald-600 mb-2">
+              <p className="text-4xl font-bold text-[#1E3A5F] mb-2">
                 {formatNumber(severancePay)}원
               </p>
               <p className="text-sm text-neutral-500">
@@ -665,9 +665,9 @@ export default function SeverancePayCalculator() {
     <>
       <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
       {/* 헤더 */}
-      <div className="bg-emerald-600 text-white px-6 py-4">
+      <div className="bg-[#1E3A5F] text-white px-6 py-4">
         <h2 className="text-xl font-bold">퇴직금 계산기</h2>
-        <p className="text-emerald-100 text-sm mt-1">고용노동부 공식과 동일한 방식으로 계산해요</p>
+        <p className="text-[#EDF2F8] text-sm mt-1">고용노동부 공식과 동일한 방식으로 계산해요</p>
       </div>
 
       {/* 탭 */}
@@ -678,7 +678,7 @@ export default function SeverancePayCalculator() {
             onClick={() => setWorkerType(tab.type)}
             className={`flex-1 py-3 px-4 text-center transition-colors ${
               workerType === tab.type
-                ? "bg-emerald-50 border-b-2 border-emerald-600 text-emerald-700"
+                ? "bg-[#F5F8FB] border-b-2 border-[#1E3A5F] text-[#162F4F]"
                 : "text-neutral-500 hover:bg-neutral-50"
             }`}
           >
@@ -694,18 +694,18 @@ export default function SeverancePayCalculator() {
       {workerType === "parttime" && <ParttimeWorkerCalculator />}
 
       {/* 퇴직금 안내 */}
-      <div className="px-6 py-4 bg-emerald-50 border-t border-emerald-100">
-        <div className="p-4 rounded-xl border border-emerald-200 bg-white">
-          <h4 className="font-medium text-emerald-800 mb-2 flex items-center gap-2">
+      <div className="px-6 py-4 bg-[#F5F8FB] border-t border-[#EDF2F8]">
+        <div className="p-4 rounded-xl border border-[#B8D0E8] bg-white">
+          <h4 className="font-medium text-[#132A42] mb-2 flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             퇴직금이 뭔가요?
           </h4>
-          <p className="text-sm text-emerald-700 mb-2">
+          <p className="text-sm text-[#162F4F] mb-2">
             1년 이상 근무한 근로자가 퇴직할 때 받는 법정 수당이에요. <span className="font-medium">알바, 정규직 상관없이 조건만 맞으면 받을 수 있어요.</span>
           </p>
-          <ul className="text-sm text-emerald-700 space-y-1.5 mt-3">
+          <ul className="text-sm text-[#162F4F] space-y-1.5 mt-3">
             <li className="flex items-start gap-2">
               <span className="text-green-600 mt-0.5">✓</span>
               <span><strong>정규직/계약직:</strong> 1년 이상 근무 시 무조건 지급</span>
@@ -719,9 +719,9 @@ export default function SeverancePayCalculator() {
               <span><strong>지급 기한:</strong> 퇴직일로부터 14일 이내 (지연 시 연 20% 이자)</span>
             </li>
           </ul>
-          <div className="mt-3 pt-3 border-t border-emerald-200">
-            <p className="text-xs text-emerald-600">
-              📌 출처: <a href="https://www.moel.go.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">고용노동부</a> · <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">근로자퇴직급여보장법</a>
+          <div className="mt-3 pt-3 border-t border-[#B8D0E8]">
+            <p className="text-xs text-[#1E3A5F]">
+              📌 출처: <a href="https://www.moel.go.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#132A42]">고용노동부</a> · <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#132A42]">근로자퇴직급여보장법</a>
             </p>
           </div>
         </div>
@@ -735,12 +735,12 @@ export default function SeverancePayCalculator() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">근속 ↓ / 월급 →</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">250만원</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">300만원</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">350만원</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">400만원</th>
+                <tr className="bg-[#EDF2F8] border-b-2 border-[#4A7AB5]">
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">근속 ↓ / 월급 →</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">250만원</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">300만원</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">350만원</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden sm:table-cell">400만원</th>
                   <th className="py-2 px-2 text-center text-neutral-600 font-medium border border-gray-300 hidden md:table-cell">한줄평</th>
                 </tr>
               </thead>
@@ -761,13 +761,13 @@ export default function SeverancePayCalculator() {
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">1,200만</td>
                   <td className="py-2 px-2 text-center text-green-600 text-xs border border-gray-300 hidden md:table-cell">목돈 1천 돌파!</td>
                 </tr>
-                <tr className="bg-emerald-50 border-b border-neutral-200">
-                  <td className="py-2 px-2 text-center font-medium text-emerald-700 border border-gray-300">5년</td>
+                <tr className="bg-[#F5F8FB] border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-[#162F4F] border border-gray-300">5년</td>
                   <td className="py-2 px-2 text-center border border-gray-300">1,250만</td>
-                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">1,500만</td>
+                  <td className="py-2 px-2 text-center font-bold text-[#1E3A5F] border border-gray-300">1,500만</td>
                   <td className="py-2 px-2 text-center border border-gray-300">1,750만</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">2,000만</td>
-                  <td className="py-2 px-2 text-center text-emerald-600 text-xs border border-gray-300 hidden md:table-cell">목돈 2천 가능!</td>
+                  <td className="py-2 px-2 text-center text-[#1E3A5F] text-xs border border-gray-300 hidden md:table-cell">목돈 2천 가능!</td>
                 </tr>
                 <tr className="bg-blue-50 border-b border-neutral-200">
                   <td className="py-2 px-2 text-center font-medium text-blue-700 border border-gray-300">10년</td>
@@ -788,9 +788,9 @@ export default function SeverancePayCalculator() {
               </tbody>
             </table>
           </div>
-          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
-            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
-            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+          <div className="mt-4 p-3 bg-[#EDF2F8] rounded-lg">
+            <p className="text-xs text-[#132A42] font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-[#162F4F] mt-1 space-y-1">
               <li>• 퇴직금 = 월급 × 근속연수 (단순 계산)</li>
               <li>• 상여금·연차수당까지 포함하면 실제 더 많이 받아요</li>
               <li>• 알바도 주 15시간 이상 + 1년 이상이면 퇴직금 발생!</li>

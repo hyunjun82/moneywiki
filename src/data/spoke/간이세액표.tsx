@@ -53,7 +53,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 간이세액표 기준',
-    h1: <>2026 근로소득 <span className="text-emerald-600">간이세액표</span> 보는 법 — 월급별 세금과 실수령액 계산</>,
+    h1: <>2026 근로소득 <span className="text-[#1E3A5F]">간이세액표</span> 보는 법 — 월급별 세금과 실수령액 계산</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -167,7 +167,7 @@ const data: SpokeData = {
           <RateCards cards={[
             { value: '80%', label: '적게 떼기', lines: ['매달 실수령 많지만', '연말에 추가 납부 가능성'], highlight: '추가 납부', highlightColor: 'orange' },
             { value: '100%', label: '기본 (디폴트)', lines: ['간이세액표 그대로', '신청 안 하면 자동 적용'], active: true },
-            { value: '120%', label: '많이 떼기', lines: ['매달 실수령 적지만', '연말에 환급 가능성'], highlight: '환급', highlightColor: 'emerald' },
+            { value: '120%', label: '많이 떼기', lines: ['매달 실수령 적지만', '연말에 환급 가능성'], highlight: '환급', highlightColor: 'navy' },
           ]} />
 
           <p className="text-neutral-600 mb-2 leading-relaxed"><strong>월급 300만원, 부양가족 2명</strong> 기준으로 비교하면:</p>

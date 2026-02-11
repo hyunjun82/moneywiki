@@ -47,7 +47,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <><span className="text-emerald-600">2주택자 양도세</span> 비과세 조건 세율과 계산 방법</>,
+    h1: <><span className="text-[#1E3A5F]">2주택자 양도세</span> 비과세 조건 세율과 계산 방법</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -95,7 +95,7 @@ const data: SpokeData = {
           </p>
 
           <RateCards cards={[
-            { value: '비과세', label: '일시적 2주택', lines: ['3년 내 종전주택 처분', '비과세 조건 충족'], highlight: '0원', highlightColor: 'emerald' as const },
+            { value: '비과세', label: '일시적 2주택', lines: ['3년 내 종전주택 처분', '비과세 조건 충족'], highlight: '0원', highlightColor: 'navy' as const },
             { value: '기본세율', label: '유예 기간 중', lines: ['~2026.5.9까지', '6~45% 적용'], active: true },
             { value: '+20%p', label: '유예 종료 후', lines: ['2026.5.10 이후', '중과세율 적용'], highlight: '주의', highlightColor: 'orange' as const },
           ]} />

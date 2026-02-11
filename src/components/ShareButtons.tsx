@@ -190,7 +190,7 @@ export default function ShareButtons({ title, url, description }: ShareButtonsPr
         aria-label="링크 복사하기"
       >
         {copied ? (
-          <svg viewBox="0 0 24 24" className="w-4 h-4 fill-emerald-600">
+          <svg viewBox="0 0 24 24" className="w-4 h-4 fill-[#1E3A5F]">
             <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
           </svg>
         ) : (

@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>양도세 중과 뜻 — <span className="text-emerald-600">기본세율과 중과세율</span> 비교</>,
+    h1: <>양도세 중과 뜻 — <span className="text-[#1E3A5F]">기본세율과 중과세율</span> 비교</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -237,7 +237,7 @@ const data: SpokeData = {
           ]} />
 
           <RateCards cards={[
-            { value: '기본세율', label: '유예 기간 중', lines: ['1주택·다주택 동일', '6~45% 적용', '장특공제 가능'], highlightColor: 'emerald' },
+            { value: '기본세율', label: '유예 기간 중', lines: ['1주택·다주택 동일', '6~45% 적용', '장특공제 가능'], highlightColor: 'navy' },
             { value: '+20%p', label: '2주택 중과', lines: ['26~65%', '장특공제 배제', '조정지역 내 주택'],},
             { value: '+30%p', label: '3주택+ 중과', lines: ['36~75%', '장특공제 배제', '조정지역 내 주택'],},
           ]} />

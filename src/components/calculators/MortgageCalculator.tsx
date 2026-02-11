@@ -187,7 +187,7 @@ export default function MortgageCalculator() {
   const getLtvColor = (): string => {
     if (ltv === 0) return "text-neutral-500";
     if (ltv <= 40) return "text-green-600";
-    if (ltv <= 60) return "text-emerald-600";
+    if (ltv <= 60) return "text-[#1E3A5F]";
     if (ltv <= 70) return "text-yellow-600";
     return "text-red-600";
   };
@@ -196,7 +196,7 @@ export default function MortgageCalculator() {
     <>
       <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
       {/* 헤더 */}
-      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-[#1E3A5F] to-teal-600 px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -205,7 +205,7 @@ export default function MortgageCalculator() {
           </div>
           <div>
             <h2 className="text-xl font-bold text-white">주택담보대출 계산기</h2>
-            <p className="text-emerald-100 text-sm">월 상환금과 총 이자 계산</p>
+            <p className="text-[#EDF2F8] text-sm">월 상환금과 총 이자 계산</p>
           </div>
         </div>
       </div>
@@ -228,12 +228,12 @@ export default function MortgageCalculator() {
                 onClick={() => handleLoanTypeChange(type.value)}
                 className={`p-3 rounded-xl border-2 transition-all text-center ${
                   loanType === type.value
-                    ? "border-emerald-500 bg-emerald-50"
+                    ? "border-[#2B5280] bg-[#F5F8FB]"
                     : "border-neutral-200 hover:border-neutral-300"
                 }`}
               >
                 <div className="font-medium text-sm">{type.label}</div>
-                <div className="text-xs text-emerald-600">{type.rate}</div>
+                <div className="text-xs text-[#1E3A5F]">{type.rate}</div>
               </button>
             ))}
           </div>
@@ -253,12 +253,12 @@ export default function MortgageCalculator() {
                 setPropertyValue(value);
               }}
               placeholder="주택 매매가격"
-              className="w-full px-4 py-3 text-lg font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 transition-colors text-right pr-12"
+              className="w-full px-4 py-3 text-lg font-bold border-2 border-neutral-200 rounded-xl focus:border-[#2B5280] focus:ring-0 transition-colors text-right pr-12"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
           </div>
           {propertyValue > 0 && (
-            <p className="mt-1 text-sm text-emerald-600">{formatWon(propertyValue)}</p>
+            <p className="mt-1 text-sm text-[#1E3A5F]">{formatWon(propertyValue)}</p>
           )}
 
           <div className="flex gap-2 mt-2">
@@ -283,13 +283,13 @@ export default function MortgageCalculator() {
                 setLoanAmount(value);
               }}
               placeholder="대출받을 금액"
-              className="w-full px-4 py-3 text-lg font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 transition-colors text-right pr-12"
+              className="w-full px-4 py-3 text-lg font-bold border-2 border-neutral-200 rounded-xl focus:border-[#2B5280] focus:ring-0 transition-colors text-right pr-12"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
           </div>
           <div className="flex items-center justify-between mt-1">
             {loanAmount > 0 && (
-              <span className="text-sm text-emerald-600">{formatWon(loanAmount)}</span>
+              <span className="text-sm text-[#1E3A5F]">{formatWon(loanAmount)}</span>
             )}
             {ltv > 0 && (
               <span className={`text-sm font-medium ${getLtvColor()}`}>
@@ -324,7 +324,7 @@ export default function MortgageCalculator() {
               step="0.1"
               min="0"
               max="20"
-              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 transition-colors text-right"
+              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-[#2B5280] focus:ring-0 transition-colors text-right"
             />
           </div>
 
@@ -336,7 +336,7 @@ export default function MortgageCalculator() {
             <select
               value={loanPeriodYears}
               onChange={(e) => setLoanPeriodYears(parseInt(e.target.value))}
-              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 transition-colors"
+              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-[#2B5280] focus:ring-0 transition-colors"
             >
               <option value={10}>10년</option>
               <option value={15}>15년</option>
@@ -365,7 +365,7 @@ export default function MortgageCalculator() {
                 onClick={() => setRepaymentType(type.value)}
                 className={`p-3 rounded-xl border-2 transition-all text-left ${
                   repaymentType === type.value
-                    ? "border-emerald-500 bg-emerald-50"
+                    ? "border-[#2B5280] bg-[#F5F8FB]"
                     : "border-neutral-200 hover:border-neutral-300"
                 }`}
               >
@@ -378,8 +378,8 @@ export default function MortgageCalculator() {
 
         {/* 결과 표시 */}
         {loanAmount > 0 && (
-          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
-            <h3 className="text-lg font-bold text-emerald-800 mb-4">계산 결과</h3>
+          <div className="bg-gradient-to-r from-[#F5F8FB] to-teal-50 rounded-2xl p-6 border border-[#EDF2F8]">
+            <h3 className="text-lg font-bold text-[#132A42] mb-4">계산 결과</h3>
 
             <div className="space-y-4">
               {/* 월 상환금 */}
@@ -388,7 +388,7 @@ export default function MortgageCalculator() {
                   {repaymentType === "bullet" ? "월 이자" : "월 상환금"}
                   {repaymentType === "equal_principal" && " (첫 달)"}
                 </div>
-                <div className="text-3xl font-bold text-emerald-600">
+                <div className="text-3xl font-bold text-[#1E3A5F]">
                   {formatNumber(monthlyPayment)}원
                 </div>
                 <div className="text-sm text-neutral-500 mt-1">
@@ -444,7 +444,7 @@ export default function MortgageCalculator() {
             {/* 상환 스케줄 토글 */}
             <button
               onClick={() => setShowSchedule(!showSchedule)}
-              className="w-full mt-4 py-3 text-sm text-emerald-600 hover:text-emerald-700 font-medium flex items-center justify-center gap-2"
+              className="w-full mt-4 py-3 text-sm text-[#1E3A5F] hover:text-[#162F4F] font-medium flex items-center justify-center gap-2"
             >
               {showSchedule ? "상환 스케줄 접기" : "상환 스케줄 보기 (최대 5년)"}
               <svg className={`w-4 h-4 transition-transform ${showSchedule ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -454,10 +454,10 @@ export default function MortgageCalculator() {
 
             {/* 상환 스케줄 */}
             {showSchedule && schedule.length > 0 && (
-              <div className="mt-4 bg-white rounded-xl overflow-hidden border border-emerald-100">
+              <div className="mt-4 bg-white rounded-xl overflow-hidden border border-[#EDF2F8]">
                 <div className="max-h-64 overflow-y-auto">
                   <table className="w-full text-sm">
-                    <thead className="bg-emerald-50 sticky top-0">
+                    <thead className="bg-[#F5F8FB] sticky top-0">
                       <tr>
                         <th className="px-3 py-2 text-left text-neutral-600">회차</th>
                         <th className="px-3 py-2 text-right text-neutral-600">원금</th>
@@ -485,20 +485,20 @@ export default function MortgageCalculator() {
         )}
 
         {/* LTV 기준 안내 */}
-        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
-          <h4 className="font-medium text-emerald-800 mb-3">LTV 한도 기준 (2026년)</h4>
+        <div className="mt-6 p-4 bg-[#F5F8FB] rounded-xl border border-[#EDF2F8]">
+          <h4 className="font-medium text-[#132A42] mb-3">LTV 한도 기준 (2026년)</h4>
           <div className="space-y-2 text-sm">
             <div className="flex justify-between items-center p-2 bg-white rounded-lg">
               <span className="text-neutral-600">투기과열지구</span>
-              <span className="font-medium text-emerald-600">LTV 40%</span>
+              <span className="font-medium text-[#1E3A5F]">LTV 40%</span>
             </div>
             <div className="flex justify-between items-center p-2 bg-white rounded-lg">
               <span className="text-neutral-600">조정대상지역</span>
-              <span className="font-medium text-emerald-600">LTV 50%</span>
+              <span className="font-medium text-[#1E3A5F]">LTV 50%</span>
             </div>
             <div className="flex justify-between items-center p-2 bg-white rounded-lg">
               <span className="text-neutral-600">비규제지역</span>
-              <span className="font-medium text-emerald-600">LTV 70%</span>
+              <span className="font-medium text-[#1E3A5F]">LTV 70%</span>
             </div>
             <div className="flex justify-between items-center p-2 bg-white rounded-lg">
               <span className="text-neutral-600">생애최초 주택구입</span>
@@ -508,23 +508,23 @@ export default function MortgageCalculator() {
         </div>
 
         {/* 이용안내 */}
-        <div className="mt-4 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
-          <h4 className="font-medium text-emerald-800 mb-2 flex items-center gap-2">
+        <div className="mt-4 p-4 bg-[#F5F8FB] rounded-xl border border-[#EDF2F8]">
+          <h4 className="font-medium text-[#132A42] mb-2 flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             주택담보대출이 뭔가요?
           </h4>
-          <p className="text-sm text-emerald-700 mb-2">
+          <p className="text-sm text-[#162F4F] mb-2">
             집을 담보로 은행에서 빌리는 돈이에요. <span className="font-medium">집값의 일정 비율(LTV)까지만 빌릴 수 있어요.</span>
           </p>
-          <ul className="text-sm text-emerald-700 space-y-1.5 mt-3">
+          <ul className="text-sm text-[#162F4F] space-y-1.5 mt-3">
             <li className="flex items-start gap-2">
-              <span className="text-emerald-600 mt-0.5">✓</span>
+              <span className="text-[#1E3A5F] mt-0.5">✓</span>
               <span><strong>LTV:</strong> 집값 대비 대출 한도 (지역별로 40~70%)</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-emerald-600 mt-0.5">✓</span>
+              <span className="text-[#1E3A5F] mt-0.5">✓</span>
               <span><strong>DSR:</strong> 소득 대비 모든 대출 상환액 비율 (40% 이하)</span>
             </li>
             <li className="flex items-start gap-2">
@@ -536,9 +536,9 @@ export default function MortgageCalculator() {
               <span><strong>금리:</strong> 신용등급·대출상품에 따라 0.5~2%p 차이</span>
             </li>
           </ul>
-          <div className="mt-3 pt-3 border-t border-emerald-200">
-            <p className="text-xs text-emerald-600">
-              📌 출처: <a href="https://www.hf.go.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">한국주택금융공사</a> · <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">금융감독원</a>
+          <div className="mt-3 pt-3 border-t border-[#B8D0E8]">
+            <p className="text-xs text-[#1E3A5F]">
+              📌 출처: <a href="https://www.hf.go.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#132A42]">한국주택금융공사</a> · <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#132A42]">금융감독원</a>
             </p>
           </div>
         </div>
@@ -550,13 +550,13 @@ export default function MortgageCalculator() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">금리 ↓ / 대출금 →</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">2억</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">3억</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">4억</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">5억</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">6억</th>
+                <tr className="bg-[#EDF2F8] border-b-2 border-[#4A7AB5]">
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">금리 ↓ / 대출금 →</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">2억</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">3억</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">4억</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden sm:table-cell">5억</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden sm:table-cell">6억</th>
                   <th className="py-2 px-2 text-center text-neutral-600 font-medium border border-gray-300 hidden md:table-cell">한줄평</th>
                 </tr>
               </thead>
@@ -570,20 +570,20 @@ export default function MortgageCalculator() {
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">253만</td>
                   <td className="py-2 px-2 text-center text-green-600 text-xs border border-gray-300 hidden md:table-cell">정책금융 최저!</td>
                 </tr>
-                <tr className="bg-emerald-50 border-b border-neutral-200">
-                  <td className="py-2 px-2 text-center font-medium text-emerald-700 border border-gray-300">3.5%</td>
+                <tr className="bg-[#F5F8FB] border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-[#162F4F] border border-gray-300">3.5%</td>
                   <td className="py-2 px-2 text-center border border-gray-300">90만</td>
                   <td className="py-2 px-2 text-center border border-gray-300">135만</td>
                   <td className="py-2 px-2 text-center border border-gray-300">179만</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">224만</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">269만</td>
-                  <td className="py-2 px-2 text-center text-emerald-600 text-xs border border-gray-300 hidden md:table-cell">보금자리론 평균</td>
+                  <td className="py-2 px-2 text-center text-[#1E3A5F] text-xs border border-gray-300 hidden md:table-cell">보금자리론 평균</td>
                 </tr>
                 <tr className="bg-white border-b border-neutral-200">
                   <td className="py-2 px-2 text-center font-medium text-neutral-700 border border-gray-300">4.0%</td>
                   <td className="py-2 px-2 text-center border border-gray-300">95만</td>
                   <td className="py-2 px-2 text-center border border-gray-300">143万</td>
-                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">191万</td>
+                  <td className="py-2 px-2 text-center font-bold text-[#1E3A5F] border border-gray-300">191万</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">239万</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">286万</td>
                   <td className="py-2 px-2 text-center text-neutral-600 text-xs border border-gray-300 hidden md:table-cell">시중은행 평균</td>
@@ -618,9 +618,9 @@ export default function MortgageCalculator() {
               </tbody>
             </table>
           </div>
-          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
-            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
-            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+          <div className="mt-4 p-3 bg-[#EDF2F8] rounded-lg">
+            <p className="text-xs text-[#132A42] font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-[#162F4F] mt-1 space-y-1">
               <li>• 4억 대출 시 금리 1% 차이 = 월 약 22만원, 30년간 약 8천만원 차이!</li>
               <li>• 보금자리론·디딤돌은 소득·가격 요건 충족 시 금리 1%+ 절약</li>
               <li>• 대출기간 30년→20년 줄이면 총 이자 30% 이상 절감</li>

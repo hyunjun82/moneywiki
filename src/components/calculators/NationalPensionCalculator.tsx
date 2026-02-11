@@ -112,9 +112,9 @@ export default function NationalPensionCalculator() {
   return (
     <div className="bg-white rounded-2xl shadow-lg border border-neutral-200 overflow-hidden">
       {/* 헤더 */}
-      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-[#1E3A5F] to-teal-600 px-6 py-4">
         <h2 className="text-xl font-bold text-white">국민연금 수령액 계산기</h2>
-        <p className="text-emerald-100 text-sm mt-1">2026년 기준</p>
+        <p className="text-[#EDF2F8] text-sm mt-1">2026년 기준</p>
       </div>
 
       <div className="p-6 space-y-6">
@@ -171,7 +171,7 @@ export default function NationalPensionCalculator() {
             <select
               value={birthYear}
               onChange={(e) => setBirthYear(Number(e.target.value))}
-              className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-emerald-500 appearance-none bg-white"
+              className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-[#2B5280] appearance-none bg-white"
             >
               {Array.from({ length: 50 }, (_, i) => 1955 + i).map((year) => (
                 <option key={year} value={year}>
@@ -201,7 +201,7 @@ export default function NationalPensionCalculator() {
                 const value = e.target.value.replace(/[^0-9]/g, "");
                 setAvgMonthlyIncome(Number(value) || 0);
               }}
-              className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-emerald-500"
+              className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-[#2B5280]"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">
               원
@@ -239,7 +239,7 @@ export default function NationalPensionCalculator() {
               className="flex-1 h-2 bg-neutral-200 rounded-lg appearance-none cursor-pointer accent-teal-500"
             />
             <div className="w-20 text-center">
-              <span className="text-lg font-bold text-emerald-600">{contributionYears}</span>
+              <span className="text-lg font-bold text-[#1E3A5F]">{contributionYears}</span>
               <span className="text-sm text-neutral-500">년</span>
             </div>
           </div>
@@ -250,10 +250,10 @@ export default function NationalPensionCalculator() {
         </div>
 
         {/* 결과 영역 */}
-        <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 space-y-4">
+        <div className="bg-gradient-to-r from-[#F5F8FB] to-teal-50 rounded-xl p-6 space-y-4">
           <div className="text-center">
             <p className="text-sm text-neutral-600 mb-2">예상 월 수령액</p>
-            <p className="text-4xl font-bold text-emerald-600">
+            <p className="text-4xl font-bold text-[#1E3A5F]">
               {formatNumber(monthlyPension)}
               <span className="text-xl font-normal text-neutral-500">원</span>
             </p>
@@ -346,11 +346,11 @@ export default function NationalPensionCalculator() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">가입기간</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">지급률</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">월 연금액</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">연간 총액</th>
+                <tr className="bg-[#EDF2F8] border-b-2 border-[#4A7AB5]">
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">가입기간</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">지급률</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">월 연금액</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden sm:table-cell">연간 총액</th>
                   <th className="py-2 px-2 text-center text-neutral-600 font-medium border border-gray-300 hidden md:table-cell">한줄평</th>
                 </tr>
               </thead>
@@ -369,12 +369,12 @@ export default function NationalPensionCalculator() {
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 960만</td>
                   <td className="py-2 px-2 text-center text-green-600 text-xs border border-gray-300 hidden md:table-cell">기초생활 가능</td>
                 </tr>
-                <tr className="bg-emerald-50 border-b border-neutral-200">
-                  <td className="py-2 px-2 text-center font-medium text-emerald-700 border border-gray-300">20년</td>
+                <tr className="bg-[#F5F8FB] border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-[#162F4F] border border-gray-300">20년</td>
                   <td className="py-2 px-2 text-center border border-gray-300">100%</td>
-                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">약 107만</td>
+                  <td className="py-2 px-2 text-center font-bold text-[#1E3A5F] border border-gray-300">약 107만</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">약 1,284만</td>
-                  <td className="py-2 px-2 text-center text-emerald-600 text-xs border border-gray-300 hidden md:table-cell">100만원 돌파!</td>
+                  <td className="py-2 px-2 text-center text-[#1E3A5F] text-xs border border-gray-300 hidden md:table-cell">100만원 돌파!</td>
                 </tr>
                 <tr className="bg-blue-50 border-b border-neutral-200">
                   <td className="py-2 px-2 text-center font-medium text-blue-700 border border-gray-300">30년</td>
@@ -393,9 +393,9 @@ export default function NationalPensionCalculator() {
               </tbody>
             </table>
           </div>
-          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
-            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
-            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+          <div className="mt-4 p-3 bg-[#EDF2F8] rounded-lg">
+            <p className="text-xs text-[#132A42] font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-[#162F4F] mt-1 space-y-1">
               <li>• 20년 가입하면 100% 지급률 달성!</li>
               <li>• 20년 초과 시 매년 5%씩 추가 증가 (30년=150%, 40년=200%)</li>
               <li>• 연기연금 선택 시 연 7.2% 증액 (5년 최대 36%)</li>

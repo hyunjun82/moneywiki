@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>경영안정바우처 <span className="text-emerald-600">공동대표</span> — 다수 사업장 신청 기준</>,
+    h1: <>경영안정바우처 <span className="text-[#1E3A5F]">공동대표</span> — 다수 사업장 신청 기준</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -254,7 +254,7 @@ const data: SpokeData = {
           />
 
           <RateCards cards={[
-            { value: '매출 기준', label: '신청 사업체만', lines: ['해당 사업체 1개의 매출', '다른 사업체 매출 미포함', '1억 400만원 미만'], highlight: '중요', highlightColor: 'emerald' },
+            { value: '매출 기준', label: '신청 사업체만', lines: ['해당 사업체 1개의 매출', '다른 사업체 매출 미포함', '1억 400만원 미만'], highlight: '중요', highlightColor: 'navy' },
             { value: '근로자 기준', label: '전체 합산', lines: ['모든 사업장 직원 합산', '서비스업: 5인 미만', '제조업: 10인 미만'] },
             { value: '신청 횟수', label: '1회만', lines: ['복수 사업체라도 1개만', '1인 1개 사업체 원칙', '25만원 x 1회'] },
             { value: '공동대표', label: '주대표 1인', lines: ['주대표만 신청 가능', '부대표 별도 신청 불가', '사업자등록증 확인'] },

@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>원천세 신고 납부기한 - 완전 가이드 | 머니위키</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #171717;
+      --g50: #fafafa; --g100: #f5f5f5; --g200: #e5e5e5; --g300: #d4d4d4;
+      --g400: #a3a3a3; --g500: #737373; --g600: #525252; --g700: #404040;
+      --g800: #262626; --g900: #171717;
+      --accent: #0070f3;
+      --green: #059669; --green-light: #10b981;
+      --orange: #ea580c;
+      --purple: #7c3aed;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: var(--bg); color: var(--fg);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 15px; line-height: 1.75; letter-spacing: -0.01em;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    strong { color: var(--fg); font-weight: 600; }
+
+    /* Header */
+    .header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.85); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--g200);
+    }
+    .header-inner {
+      max-width: 860px; margin: 0 auto; padding: 0 24px;
+      height: 52px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { font-size: 17px; font-weight: 700; color: var(--green); letter-spacing: -0.03em; }
+    .header-nav { display: flex; gap: 20px; font-size: 13px; color: var(--g500); }
+
+    /* Floating TOC */
+    .float-toc {
+      position: fixed; right: 24px; top: 80px; width: 200px;
+      font-size: 12px; color: var(--g500); z-index: 50;
+    }
+    .float-toc-title {
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--g400); margin-bottom: 10px;
+    }
+    .float-toc a {
+      display: block; padding: 4px 0 4px 12px; color: var(--g500);
+      border-left: 2px solid var(--g200); transition: all 0.15s;
+      text-decoration: none; line-height: 1.5;
+    }
+    .float-toc a:hover, .float-toc a.active {
+      color: var(--fg); border-left-color: var(--green);
+    }
+
+    /* Page */
+    .page { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+    /* Hero */
+    .hero { padding: 48px 0 40px; border-bottom: 1px solid var(--g200); }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 12px; background: rgba(5,150,105,0.07);
+      border: 1px solid rgba(5,150,105,0.12); border-radius: 999px;
+      font-size: 11px; font-weight: 600; color: var(--green); margin-bottom: 16px;
+    }
+    .hero-badge::before {
+      content:''; width:6px; height:6px; background:var(--green);
+      border-radius:50%; animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+    .hero h1 {
+      font-size: 36px; font-weight: 800; letter-spacing: -0.04em;
+      line-height: 1.15; margin-bottom: 12px;
+    }
+    .hero-sub { font-size: 16px; color: var(--g500); line-height: 1.7; margin-bottom: 28px; }
+
+    /* Quick Stats */
+    .stats {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
+      background: var(--g200); border-radius: 10px; overflow: hidden;
+    }
+    .stat { background: var(--bg); padding: 16px; text-align: center; }
+    .stat-val { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; }
+    .stat-val.g { color: var(--green); }
+    .stat-val.o { color: var(--orange); }
+    .stat-lbl { font-size: 11px; color: var(--g400); margin-top: 2px; }
+
+    /* Section */
+    .sec { padding: 48px 0; border-bottom: 1px solid var(--g100); }
+    .sec:last-child { border-bottom: none; }
+    .sec-tag {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--green); margin-bottom: 6px;
+    }
+    .sec h2 {
+      font-size: 22px; font-weight: 700; letter-spacing: -0.02em;
+      margin-bottom: 6px; scroll-margin-top: 70px;
+    }
+    .sec-desc { font-size: 14px; color: var(--g500); margin-bottom: 24px; }
+    .sec p { margin-bottom: 14px; color: var(--g700); }
+    .sec h3 {
+      font-size: 16px; font-weight: 700; margin: 32px 0 10px;
+      padding-left: 12px; border-left: 3px solid var(--green);
+    }
+
+    /* Summary Box */
+    .summary-box {
+      background: var(--g50); border: 1px solid var(--g200);
+      border-radius: 12px; padding: 24px 28px; margin-bottom: 24px;
+    }
+    .summary-box h3 { border: none; padding: 0; margin: 0 0 12px; font-size: 14px; }
+    .summary-box ul { list-style: none; }
+    .summary-box li {
+      padding: 6px 0; padding-left: 28px; position: relative; font-size: 14px; color: var(--g700);
+    }
+    .summary-box li::before {
+      content:''; position: absolute; left: 0; top: 10px;
+      width: 16px; height: 16px; background: var(--green); border-radius: 50%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'/%3E%3C/svg%3E");
+      background-size: 10px; background-repeat: no-repeat; background-position: center;
+    }
+
+    /* Table */
+    table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 13px; }
+    thead th {
+      text-align: left; padding: 10px 12px; font-weight: 600; font-size: 12px;
+      background: var(--g900); color: white; letter-spacing: 0.02em;
+    }
+    thead th:first-child { border-radius: 8px 0 0 0; }
+    thead th:last-child { border-radius: 0 8px 0 0; }
+    td { padding: 10px 12px; border-bottom: 1px solid var(--g100); }
+    tr:hover td { background: var(--g50); }
+    .highlight-cell { font-weight: 600; color: var(--green); }
+    .warn-cell { font-weight: 600; color: var(--orange); }
+
+    /* Warning Box */
+    .warn-box {
+      background: linear-gradient(135deg, #fef2f2, #fff7ed);
+      border: 1px solid rgba(234,88,12,0.15); border-radius: 12px;
+      padding: 24px 28px; margin: 20px 0;
+    }
+    .warn-box h4 {
+      font-size: 14px; font-weight: 700; color: var(--orange);
+      margin-bottom: 10px;
+    }
+    .warn-box p { font-size: 13px; color: var(--g600); margin-bottom: 8px; }
+
+    /* Info Box */
+    .info-box {
+      background: rgba(0,112,243,0.04); border: 1px solid rgba(0,112,243,0.12);
+      border-radius: 12px; padding: 20px 24px; margin: 20px 0;
+    }
+    .info-box h4 { font-size: 14px; font-weight: 700; color: var(--accent); margin-bottom: 8px; }
+    .info-box p { font-size: 13px; color: var(--g600); margin-bottom: 6px; }
+
+    /* Tip Box */
+    .tip-box {
+      background: rgba(5,150,105,0.04); border: 1px solid rgba(5,150,105,0.12);
+      border-radius: 12px; padding: 20px 24px; margin: 20px 0;
+    }
+    .tip-box h4 { font-size: 14px; font-weight: 700; color: var(--green); margin-bottom: 8px; }
+    .tip-box p { font-size: 13px; color: var(--g600); margin-bottom: 6px; }
+
+    /* Compare Cards */
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0 24px; }
+    .cmp-card {
+      border: 1px solid var(--g200); border-radius: 10px; padding: 20px;
+    }
+    .cmp-card.rec { border-color: var(--green); background: rgba(5,150,105,0.02); }
+    .cmp-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+    .cmp-card .sub { font-size: 11px; color: var(--g500); margin-bottom: 10px; }
+    .cmp-card ul { list-style: none; }
+    .cmp-card li {
+      font-size: 12px; color: var(--g600); padding: 3px 0;
+      padding-left: 14px; position: relative;
+    }
+    .cmp-card li::before { content: '·'; position: absolute; left: 0; font-weight: 700; color: var(--g400); }
+    .rec-tag {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      padding: 2px 8px; background: rgba(5,150,105,0.1); color: var(--green);
+      border-radius: 4px; margin-bottom: 8px;
+    }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 28px; margin: 16px 0; }
+    .timeline::before {
+      content:''; position: absolute; left: 6px; top: 6px; bottom: 6px;
+      width: 2px; background: var(--g200);
+    }
+    .tl-item { position: relative; padding-bottom: 20px; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-dot {
+      position: absolute; left: -28px; top: 5px; width: 14px; height: 14px;
+      border-radius: 50%; background: var(--bg); border: 2px solid var(--g300);
+    }
+    .tl-item.now .tl-dot { border-color: var(--green); background: var(--green); box-shadow: 0 0 0 3px rgba(5,150,105,0.15); }
+    .tl-item.warn .tl-dot { border-color: var(--orange); background: var(--orange); }
+    .tl-month { font-size: 11px; font-weight: 600; color: var(--g400); }
+    .tl-title { font-size: 14px; font-weight: 600; }
+    .tl-desc { font-size: 12px; color: var(--g500); }
+    .tl-tag {
+      display: inline-block; padding: 1px 6px; font-size: 10px;
+      font-weight: 600; border-radius: 3px; margin-top: 4px;
+    }
+    .tl-tag.ok { background: rgba(5,150,105,0.08); color: var(--green); }
+    .tl-tag.dl { background: rgba(234,88,12,0.08); color: var(--orange); }
+
+    /* CTA Buttons */
+    .cta-row { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+    .cta-btn {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 20px; border-radius: 12px; color: white !important;
+      text-decoration: none !important;
+      transition: all 0.2s ease; position: relative; overflow: hidden;
+    }
+    .cta-btn:hover { transform: translateY(-2px); opacity: 0.95; }
+    .cta-dark { background: linear-gradient(135deg,#1e293b,#334155); }
+    .cta-blue { background: linear-gradient(135deg,#2563eb,#3b82f6); }
+    .cta-grn { background: linear-gradient(135deg,#059669,#10b981); }
+    .cta-left { display: flex; flex-direction: column; gap: 2px; }
+    .cta-small { font-size: 10px; font-weight: 600; opacity: 0.7; }
+    .cta-main { font-size: 14px; font-weight: 700; }
+    .cta-arrow { font-size: 13px; font-weight: 600; }
+
+    /* FAQ */
+    .faq { border: 1px solid var(--g200); border-radius: 10px; overflow: hidden; margin: 8px 0; }
+    .faq-q {
+      padding: 14px 18px; font-size: 13px; font-weight: 600; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; user-select: none;
+    }
+    .faq-q::after { content:'+'; font-size: 16px; color: var(--g400); transition: transform .2s; }
+    .faq.open .faq-q::after { transform: rotate(45deg); }
+    .faq-a { font-size: 13px; color: var(--g600); line-height: 1.7; }
+
+    /* Divider */
+    .divider { height: 1px; background: var(--g200); margin: 8px 0; }
+
+    /* Footer */
+    .footer {
+      margin-top: 32px; padding: 32px 24px; border-top: 1px solid var(--g200);
+      text-align: center; font-size: 12px; color: var(--g400);
+    }
+
+    /* Preview */
+    .preview-bar {
+      background: var(--g900); color: white; text-align: center;
+      padding: 8px; font-size: 11px; font-weight: 500;
+    }
+    .preview-bar code {
+      background: rgba(255,255,255,0.15); padding: 2px 6px;
+      border-radius: 3px; font-size: 10px; margin-left: 6px;
+    }
+
+    /* Reading Progress Bar */
+    .progress-bar {
+      position: fixed; top: 0; left: 0; height: 3px; z-index: 200;
+      background: linear-gradient(90deg, var(--green), var(--green-light));
+      width: 0%; transition: width 0.1s linear;
+      box-shadow: 0 0 8px rgba(5,150,105,0.4);
+    }
+
+    /* Section fade-in animation */
+    .sec {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .sec.visible {
+      opacity: 1; transform: translateY(0);
+    }
+
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+
+    /* Active TOC enhancement */
+    .float-toc a.active {
+      color: var(--green); font-weight: 600;
+      border-left-color: var(--green); border-left-width: 3px;
+    }
+
+    /* Hover card lift */
+    .cmp-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .cmp-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+
+    /* Table row hover effect */
+    tr { transition: background 0.15s ease; }
+
+    /* Stat counter animation */
+    .stat { transition: transform 0.2s ease; }
+    .stat:hover { transform: scale(1.03); }
+
+    /* Back to top button */
+    .back-top {
+      position: fixed; bottom: 28px; right: 28px; z-index: 100;
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--green); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; cursor: pointer; border: none;
+      box-shadow: 0 4px 14px rgba(5,150,105,0.3);
+      opacity: 0; transform: translateY(16px);
+      transition: all 0.3s ease; pointer-events: none;
+    }
+    .back-top.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .back-top:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(5,150,105,0.4); }
+
+    /* FAQ smooth transition */
+    .faq-a {
+      max-height: 0; overflow: hidden; padding: 0 18px;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      display: block !important;
+    }
+    .faq.open .faq-a {
+      max-height: 200px; padding: 0 18px 14px;
+    }
+
+    /* Highlight anchor on scroll */
+    .sec:target h2 { color: var(--green); transition: color 0.5s ease; }
+
+    /* Responsive */
+    @media (max-width: 1100px) { .float-toc { display: none; } }
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 26px; }
+      .hero-sub { font-size: 14px; }
+      .stats { grid-template-columns: 1fr; }
+      .compare { grid-template-columns: 1fr; }
+      .page { padding: 0 16px; }
+      .sec { padding: 36px 0; }
+      .sec h2 { font-size: 19px; }
+      .back-top { bottom: 16px; right: 16px; width: 38px; height: 38px; }
+    }
+
+    /* Formula */
+    .formula {
+      background: var(--g50); border: 1px solid var(--g200);
+      border-radius: 8px; padding: 14px 18px; margin: 12px 0;
+      font-family: 'SF Mono', Consolas, monospace; font-size: 13px;
+      color: var(--g700); text-align: center;
+    }
+
+    /* Badge inline */
+    .badge {
+      display: inline-block; padding: 2px 8px; font-size: 10px; font-weight: 600;
+      border-radius: 4px;
+    }
+    .badge-g { background: rgba(5,150,105,0.1); color: var(--green); }
+    .badge-o { background: rgba(234,88,12,0.1); color: var(--orange); }
+    .badge-b { background: rgba(0,112,243,0.1); color: var(--accent); }
+    .badge-p { background: rgba(124,58,237,0.1); color: var(--purple); }
+
+    /* === VISUAL FLOW === */
+    .flow{display:flex;align-items:center;justify-content:center;gap:0;margin:24px 0;flex-wrap:wrap}
+    .flow-node{background:var(--g50);border:1px solid var(--g200);border-radius:10px;padding:14px 18px;text-align:center;min-width:100px;transition:all .2s}
+    .flow-node:hover{border-color:var(--green);background:rgba(5,150,105,.03)}
+    .flow-icon{font-size:24px;margin-bottom:4px}
+    .flow-label{font-size:12px;font-weight:600;color:var(--g700)}
+    .flow-sub{font-size:10px;color:var(--g400);margin-top:2px}
+    .flow-arrow{font-size:16px;color:var(--g300);padding:0 8px;flex-shrink:0}
+    @media(max-width:640px){.flow{gap:4px}.flow-node{min-width:70px;padding:10px 12px}.flow-arrow{padding:0 4px;font-size:14px}}
+
+    /* === RATE BAR === */
+    .rate-bars{margin:20px 0}
+    .rate-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+    .rate-label{width:80px;font-size:12px;font-weight:600;color:var(--g600);text-align:right;flex-shrink:0}
+    .rate-track{flex:1;height:24px;background:var(--g100);border-radius:12px;overflow:hidden;position:relative}
+    .rate-fill{height:100%;border-radius:12px;display:flex;align-items:center;padding-left:10px;font-size:11px;font-weight:700;color:white;transition:width 1s ease-out;width:0}
+    .rate-fill.g{background:var(--green)}
+    @media(max-width:640px){.rate-label{width:60px;font-size:11px}}
+
+    /* === MINI CALC === */
+    .mini-calc{background:var(--g50);border:1px solid var(--g200);border-radius:12px;padding:20px 24px;margin:20px 0}
+    .mini-calc h4{font-size:14px;font-weight:700;color:var(--green);margin-bottom:12px}
+    .calc-row{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap}
+    .calc-field{flex:1;min-width:140px}
+    .calc-field label{display:block;font-size:11px;font-weight:600;color:var(--g500);margin-bottom:3px}
+    .calc-field input,.calc-field select{width:100%;padding:8px 12px;border:1px solid var(--g200);border-radius:8px;font-size:14px;font-family:inherit;transition:border-color .2s;background:white}
+    .calc-field input:focus,.calc-field select:focus{outline:none;border-color:var(--green)}
+    .calc-btn{background:var(--green);color:white;border:none;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;transition:opacity .2s;height:38px}
+    .calc-btn:hover{opacity:.9}
+    .calc-result{margin-top:14px;padding:14px 18px;background:white;border:1px solid var(--g200);border-radius:8px;display:none}
+    .calc-result.show{display:block;animation:fadeUp .3s ease}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+    .calc-big{font-size:22px;font-weight:800;color:var(--green)}
+    .calc-detail{font-size:12px;color:var(--g500);margin-top:6px;line-height:1.7}
+
+    /* === STEP CARDS === */
+    .step-cards{counter-reset:step;margin:16px 0}
+    .step-card{position:relative;padding:16px 16px 16px 56px;background:var(--g50);border:1px solid var(--g200);border-radius:10px;margin-bottom:8px;counter-increment:step;transition:all .2s}
+    .step-card:hover{border-color:var(--green);background:rgba(5,150,105,.02)}
+    .step-card::before{content:counter(step);position:absolute;left:14px;top:14px;width:30px;height:30px;border-radius:50%;background:var(--green);color:white;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+    .step-card .sc-title{font-size:14px;font-weight:600;color:var(--g800)}
+    .step-card .sc-desc{font-size:12px;color:var(--g500);margin-top:2px}
+    .step-card .sc-tip{font-size:11px;color:var(--green);margin-top:4px;font-weight:500}
+
+    /* === MISTAKE CARDS === */
+    .mistake-grid{display:grid;grid-template-columns:1fr;gap:8px;margin:16px 0}
+    .mistake{background:var(--g50);border:1px solid var(--g200);border-radius:10px;padding:16px 20px;transition:all .2s}
+    .mistake:hover{border-color:var(--green)}
+    .mistake .m-num{font-size:11px;font-weight:700;color:var(--green);margin-bottom:4px}
+    .mistake .m-title{font-size:14px;font-weight:600;color:var(--g800);margin-bottom:4px}
+    .mistake .m-desc{font-size:12px;color:var(--g500);line-height:1.6}
+    .mistake .m-fix{font-size:12px;color:var(--green);font-weight:500;margin-top:6px}
+  </style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="preview-bar">
+  허브 원페이지 미리보기 - 모든 정보를 한 페이지에<code>jjyu.co.kr</code>
+</div>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-inner">
+    <span class="logo">머니위키</span>
+    <nav class="header-nav">
+      <a href="#">세금</a>
+      <a href="#">연말정산</a>
+      <a href="#">급여</a>
+      <a href="#">계산기</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Floating TOC -->
+<nav class="float-toc">
+  <div class="float-toc-title">목차</div>
+  <a href="#what">원천징수란</a>
+  <a href="#who">누가 내나요</a>
+  <a href="#rates">세율 체계</a>
+  <a href="#salary">근로소득</a>
+  <a href="#freelance">프리랜서 3.3%</a>
+  <a href="#etc">기타소득 8.8%</a>
+  <a href="#finance">금융소득</a>
+  <a href="#retire">퇴직소득</a>
+  <a href="#pension">연금소득</a>
+  <a href="#foreign">비거주자</a>
+  <a href="#how">신고 방법</a>
+  <a href="#when">납부기한</a>
+  <a href="#half">반기 신고</a>
+  <a href="#penalty">가산세</a>
+  <a href="#receipt">영수증 발급</a>
+  <a href="#nontax">비과세 소득</a>
+  <a href="#mistakes">실수 TOP 5</a>
+  <a href="#faq">FAQ</a>
+</nav>
+
+<div class="page">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-badge">2026년 기준 &middot; 국세청 출처</div>
+    <h1>원천세 신고 납부기한<br>완전 가이드</h1>
+    <p class="hero-sub">원천세의 개념, 소득별 세율, 신고 방법, 납부기한, 가산세, 영수증 발급까지.<br>이 페이지 하나로 전부 해결하세요.</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-val">매월 10일</div>
+        <div class="stat-lbl">납부 기한</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val g">3.3% ~ 22%</div>
+        <div class="stat-lbl">소득별 세율</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val o">최대 50%</div>
+        <div class="stat-lbl">미납 시 가산세</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1. 원천징수란 -->
+  <section class="sec" id="what">
+    <div class="sec-tag">01 개념</div>
+    <h2>원천징수란?</h2>
+    <div class="sec-desc">월급에서 세금 먼저 떼는 이유</div>
+
+    <p>원천징수는 쉽게 말해서 <strong>월급 줄 때 세금을 미리 떼는 제도</strong>예요. 회사가 직원한테 급여를 줄 때 소득세를 먼저 빼고, 나머지를 지급하는 거죠.</p>
+    <p>예를 들어 월급이 300만 원이면 실제로는 270만 원 정도만 받잖아요? 나머지 30만 원은 세금으로 나가는데, 이걸 회사가 미리 떼서 국세청에 내는 게 원천징수예요.</p>
+    <p>소득세법 제127조에서 이 제도를 정하고 있어요. 소득이 발생하는 <strong>'근원'에서 미리 세금을 거둔다</strong>고 해서 원천징수라고 불러요.</p>
+
+    <div class="flow">
+      <div class="flow-node"><div class="flow-icon">🏢</div><div class="flow-label">회사 (사업자)</div><div class="flow-sub">소득 지급 시</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node"><div class="flow-icon">✂️</div><div class="flow-label">세금 원천징수</div><div class="flow-sub">급여에서 차감</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node"><div class="flow-icon">🏛️</div><div class="flow-label">국세청 납부</div><div class="flow-sub">익월 10일까지</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node"><div class="flow-icon">📋</div><div class="flow-label">연말정산</div><div class="flow-sub">정산 후 환급/추납</div></div>
+    </div>
+
+    <div class="tip-box">
+      <h4>왜 미리 떼나요?</h4>
+      <p>연말에 세금을 한꺼번에 내면 부담이 크니까 매달 조금씩 미리 떼는 거예요. 국가 입장에서도 세금을 안정적으로 걷을 수 있고, 직원 입장에서는 세금 낼 걱정을 안 해도 돼서 편해요.</p>
+      <p>나중에 <strong>연말정산</strong>에서 정확한 세금을 다시 계산하고, 더 냈으면 돌려받고 덜 냈으면 추가로 내요.</p>
+    </div>
+  </section>
+
+  <!-- 2. 누가 내나요 -->
+  <section class="sec" id="who">
+    <div class="sec-tag">02 대상</div>
+    <h2>원천징수 대상과 의무자</h2>
+    <div class="sec-desc">누가 떼고, 어떤 소득이 대상인가요</div>
+
+    <p><strong>원천징수의무자</strong>는 소득을 지급하는 쪽이에요. 회사, 프리랜서 고용주, 금융기관, 개인사업자 모두 해당돼요. 소득을 지급할 때 세금을 떼서 다음 달 10일까지 국세청에 납부해야 해요.</p>
+
+    <table>
+      <thead><tr><th>대상 소득</th><th>세율</th><th>예시</th></tr></thead>
+      <tbody>
+        <tr><td>근로소득</td><td>간이세액표 (약 6%)</td><td>직장인 월급</td></tr>
+        <tr><td>사업소득</td><td class="highlight-cell">3.3%</td><td>프리랜서, 강사, 배달 라이더</td></tr>
+        <tr><td>기타소득</td><td class="highlight-cell">8.8%</td><td>강연료, 원고료, 자문료</td></tr>
+        <tr><td>이자소득</td><td>15.4%</td><td>예금이자, 채권이자</td></tr>
+        <tr><td>배당소득</td><td>15.4%</td><td>주식 배당금</td></tr>
+        <tr><td>퇴직소득</td><td>6~45% 누진</td><td>퇴직금</td></tr>
+        <tr><td>연금소득</td><td>간이세액표 / 3~5%</td><td>국민연금, 퇴직연금</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 3. 세율 체계 -->
+  <section class="sec" id="rates">
+    <div class="sec-tag">03 세율</div>
+    <h2>원천세 세율 체계</h2>
+    <div class="sec-desc">3.3%, 8.8%, 15.4% 뭐가 다른가요</div>
+
+    <p>원천세 세율은 소득 유형에 따라 달라요. 가장 많이 헷갈리는 <strong>3.3%</strong>와 <strong>8.8%</strong>의 차이를 정리했어요.</p>
+
+    <table>
+      <thead><tr><th>소득 유형</th><th>세율</th><th>구성</th><th>적용 대상</th></tr></thead>
+      <tbody>
+        <tr><td>사업소득 (프리랜서)</td><td class="highlight-cell">3.3%</td><td>소득세 3% + 지방세 0.3%</td><td>프리랜서, 용역 제공자</td></tr>
+        <tr><td>기타소득</td><td class="highlight-cell">8.8%</td><td>(수입-경비60%) × 22%</td><td>강연료, 원고료, 자문료</td></tr>
+        <tr><td>금융소득</td><td>15.4%</td><td>소득세 14% + 지방세 1.4%</td><td>이자, 배당</td></tr>
+        <tr><td>근로소득</td><td>간이세액표</td><td>월급+부양가족 기준</td><td>직장인</td></tr>
+      </tbody>
+    </table>
+
+    <h3>세율 한눈에 비교</h3>
+    <div class="rate-bars" id="rateBars">
+      <div class="rate-row"><span class="rate-label">사업소득</span><div class="rate-track"><div class="rate-fill g" style="--tw:15%">3.3%</div></div></div>
+      <div class="rate-row"><span class="rate-label">기타소득</span><div class="rate-track"><div class="rate-fill g" style="--tw:40%">8.8%</div></div></div>
+      <div class="rate-row"><span class="rate-label">금융소득</span><div class="rate-track"><div class="rate-fill g" style="--tw:70%">15.4%</div></div></div>
+      <div class="rate-row"><span class="rate-label">비거주자</span><div class="rate-track"><div class="rate-fill g" style="--tw:100%">22%</div></div></div>
+    </div>
+
+    <div class="info-box">
+      <h4>3.3% vs 8.8% 핵심 차이</h4>
+      <p><strong>3.3%</strong> = 프리랜서처럼 지속적으로 용역을 제공하는 사업소득. 총지급액에 바로 3.3% 적용.</p>
+      <p><strong>8.8%</strong> = 일시적인 기타소득 (강연, 원고). 필요경비 60%를 빼고 남은 40%에 22%를 적용하면 실질 8.8%가 돼요.</p>
+    </div>
+  </section>
+
+  <!-- 4. 근로소득 -->
+  <section class="sec" id="salary">
+    <div class="sec-tag">04 근로소득</div>
+    <h2>근로소득 원천징수</h2>
+    <div class="sec-desc">직장인 급여에서 세금이 얼마나 빠지나요</div>
+
+    <p>근로소득 원천징수는 <strong>간이세액표</strong>를 기준으로 해요. 월급과 부양가족 수에 따라 다르게 적용돼요. 부양가족이 많을수록 세금이 줄어요.</p>
+
+    <table>
+      <thead><tr><th>월급여 (비과세 제외)</th><th>부양 1명</th><th>부양 2명</th><th>부양 3명</th></tr></thead>
+      <tbody>
+        <tr><td>200만원</td><td>14,000원</td><td>7,000원</td><td>3,000원</td></tr>
+        <tr><td>300만원</td><td>46,000원</td><td>38,000원</td><td>30,000원</td></tr>
+        <tr><td>400만원</td><td>89,000원</td><td>80,000원</td><td>72,000원</td></tr>
+        <tr><td>500만원</td><td>188,000원</td><td>163,000원</td><td>143,000원</td></tr>
+      </tbody>
+    </table>
+
+    <div class="tip-box">
+      <h4>자녀 추가 공제</h4>
+      <p>8~20세 자녀가 있으면 추가 공제돼요. 1명이면 월 12,500원, 2명이면 29,160원 더 줄어요.</p>
+    </div>
+  </section>
+
+  <!-- 5. 프리랜서 3.3% -->
+  <section class="sec" id="freelance">
+    <div class="sec-tag">05 프리랜서</div>
+    <h2>사업소득 원천징수 3.3%</h2>
+    <div class="sec-desc">프리랜서, 배달 라이더, 보험설계사 등</div>
+
+    <p>프리랜서한테 용역비를 지급할 때 <strong>3.3%</strong>를 원천징수해요. 소득세 3%와 지방소득세 0.3%를 합친 금액이에요.</p>
+
+    <table>
+      <thead><tr><th>지급액</th><th>소득세 (3%)</th><th>지방세 (0.3%)</th><th>원천징수 합계</th><th>실수령액</th></tr></thead>
+      <tbody>
+        <tr><td>100만원</td><td>30,000원</td><td>3,000원</td><td class="warn-cell">33,000원</td><td class="highlight-cell">967,000원</td></tr>
+        <tr><td>200만원</td><td>60,000원</td><td>6,000원</td><td class="warn-cell">66,000원</td><td class="highlight-cell">1,934,000원</td></tr>
+        <tr><td>300만원</td><td>90,000원</td><td>9,000원</td><td class="warn-cell">99,000원</td><td class="highlight-cell">2,901,000원</td></tr>
+        <tr><td>500만원</td><td>150,000원</td><td>15,000원</td><td class="warn-cell">165,000원</td><td class="highlight-cell">4,835,000원</td></tr>
+      </tbody>
+    </table>
+
+    <div class="formula">지급액 &times; 3.3% = 원천징수세액</div>
+
+    <div class="mini-calc">
+      <h4>💰 3.3% 실수령액 계산기</h4>
+      <div class="calc-row">
+        <div class="calc-field">
+          <label>계약 금액 (원)</label>
+          <input type="text" id="freelanceAmt" placeholder="예: 3,000,000" oninput="formatNumber(this)">
+        </div>
+        <button class="calc-btn" onclick="calcFreelance()">계산하기</button>
+      </div>
+      <div class="calc-result" id="freelanceResult">
+        <div class="calc-big" id="freelanceNet"></div>
+        <div class="calc-detail" id="freelanceDetail"></div>
+      </div>
+    </div>
+
+    <p><strong>대상:</strong> 강사, 작가, 디자이너, 배달 라이더, 보험설계사, 골프 캐디, IT 개발자, 유튜버 등 프리랜서 전반이에요.</p>
+  </section>
+
+  <!-- 6. 기타소득 8.8% -->
+  <section class="sec" id="etc">
+    <div class="sec-tag">06 기타소득</div>
+    <h2>기타소득 원천징수 8.8%</h2>
+    <div class="sec-desc">강연료, 원고료, 상금은 세율이 달라요</div>
+
+    <p>기타소득은 소득세 20%에 지방소득세 2%를 더해서 총 22%예요. 다만 <strong>필요경비를 먼저 빼기 때문에</strong> 실질 세율은 낮아져요.</p>
+
+    <table>
+      <thead><tr><th>소득 종류</th><th>필요경비율</th><th>실질 세율</th><th>100만원 기준 세금</th></tr></thead>
+      <tbody>
+        <tr><td>강연료, 원고료, 자문료</td><td>60%</td><td class="warn-cell">8.8%</td><td>88,000원</td></tr>
+        <tr><td>상금, 현상금</td><td>80%</td><td class="warn-cell">4.4%</td><td>44,000원</td></tr>
+        <tr><td>복권 당첨금 (3억 이하)</td><td>없음</td><td class="warn-cell">22%</td><td>220,000원</td></tr>
+      </tbody>
+    </table>
+
+    <div class="formula">(총수입 - 필요경비) &times; 22% = 원천징수세액</div>
+
+    <div class="info-box">
+      <h4>종합과세 기준</h4>
+      <p>기타소득이 연 300만원 미만이면 원천징수로 세금이 종결돼요 (분리과세). 300만원 이상이면 다른 소득과 합산해서 종합소득세를 내야 해요.</p>
+    </div>
+  </section>
+
+  <!-- 7. 금융소득 -->
+  <section class="sec" id="finance">
+    <div class="sec-tag">07 금융소득</div>
+    <h2>금융소득 원천징수 15.4%</h2>
+    <div class="sec-desc">이자와 배당에 붙는 세금</div>
+
+    <p>예금이자, 채권이자, 주식배당금에는 <strong>15.4%</strong> (소득세 14% + 지방소득세 1.4%)가 원천징수돼요. 은행이나 증권사가 알아서 떼고 지급해요.</p>
+
+    <table>
+      <thead><tr><th>금융소득</th><th>원천징수 (15.4%)</th><th>실수령</th></tr></thead>
+      <tbody>
+        <tr><td>100만원</td><td class="warn-cell">154,000원</td><td>846,000원</td></tr>
+        <tr><td>500만원</td><td class="warn-cell">770,000원</td><td>4,230,000원</td></tr>
+        <tr><td>1,000만원</td><td class="warn-cell">1,540,000원</td><td>8,460,000원</td></tr>
+      </tbody>
+    </table>
+
+    <div class="warn-box">
+      <h4>종합과세 주의</h4>
+      <p>금융소득이 <strong>연 2,000만원을 초과</strong>하면 다른 소득과 합산해서 6.6%~49.5% 누진세율이 적용돼요.</p>
+      <p>2026년부터 배당소득 분리과세 선택이 가능해요. 2천만원 이하 15.4%, 3억원 이하 22%, 50억원 이하 27.5%, 초과 33%.</p>
+    </div>
+  </section>
+
+  <!-- 8. 퇴직소득 -->
+  <section class="sec" id="retire">
+    <div class="sec-tag">08 퇴직소득</div>
+    <h2>퇴직소득 원천징수</h2>
+    <div class="sec-desc">퇴직금에 붙는 세금 계산법</div>
+
+    <p>퇴직금을 받을 때도 원천징수가 돼요. 근속연수가 길수록 세금이 줄어드는 구조예요.</p>
+
+    <h3>계산 순서</h3>
+    <p>1. <strong>근속연수공제</strong>: 5년까지 연 30만원, 이후 연 50만원 공제<br>
+    2. <strong>환산급여</strong> = (퇴직금 - 공제) &divide; 근속연수 &times; 12<br>
+    3. 환산급여에 <strong>세율 적용</strong> (6~45% 누진)<br>
+    4. <strong>최종세액</strong> = 산출세액 &divide; 12 &times; 근속연수</p>
+
+    <table>
+      <thead><tr><th>환산급여</th><th>세율</th><th>누진공제</th></tr></thead>
+      <tbody>
+        <tr><td>1,200만원 이하</td><td>6%</td><td>-</td></tr>
+        <tr><td>4,600만원 이하</td><td>15%</td><td>108만원</td></tr>
+        <tr><td>8,800만원 이하</td><td>24%</td><td>522만원</td></tr>
+        <tr><td>1.5억원 이하</td><td>35%</td><td>1,490만원</td></tr>
+        <tr><td>1.5억원 초과</td><td>45%</td><td>2,990만원</td></tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <h4>예시: 근속 10년, 퇴직금 5,000만원</h4>
+      <p>근속연수공제 1,500만원 &rarr; 환산급여 4,200만원 &rarr; 산출세액 522만원 &rarr; 지방소득세 포함 약 478만원</p>
+    </div>
+  </section>
+
+  <!-- 9. 연금소득 -->
+  <section class="sec" id="pension">
+    <div class="sec-tag">09 연금소득</div>
+    <h2>연금소득 원천징수</h2>
+    <div class="sec-desc">국민연금, 퇴직연금 수령 시 세금</div>
+
+    <p><strong>공적연금</strong> (국민연금 등)은 연금소득간이세액표에 따라 원천징수돼요. <strong>사적연금</strong> (퇴직연금 IRP, 연금저축)은 수령 연차에 따라 세율이 달라져요.</p>
+
+    <table>
+      <thead><tr><th>구분</th><th>세율</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td>공적연금 (국민연금)</td><td>간이세액표</td><td>연금소득 크기에 따라</td></tr>
+        <tr><td>사적연금 10년 이하 수령</td><td>연금외수령 세율의 70%</td><td>퇴직연금 IRP 등</td></tr>
+        <tr><td>사적연금 10~20년</td><td>연금외수령 세율의 60%</td><td>오래 받을수록 유리</td></tr>
+        <tr><td>사적연금 20년 초과</td><td>연금외수령 세율의 50%</td><td>최저 세율</td></tr>
+      </tbody>
+    </table>
+
+    <div class="tip-box">
+      <h4>분리과세 기준</h4>
+      <p>사적연금 수령액이 <strong>연 1,500만원 이하</strong>면 15% 분리과세를 선택할 수 있어요. 2024년부터 1,200만원에서 1,500만원으로 상향됐어요.</p>
+    </div>
+  </section>
+
+  <!-- 10. 비거주자 -->
+  <section class="sec" id="foreign">
+    <div class="sec-tag">10 비거주자</div>
+    <h2>비거주자 원천징수</h2>
+    <div class="sec-desc">외국인, 해외거주자에게 지급할 때</div>
+
+    <p>비거주자에게 국내원천소득을 지급할 때는 기본적으로 <strong>20%</strong>를 원천징수해요.</p>
+
+    <table>
+      <thead><tr><th>소득 종류</th><th>세율</th></tr></thead>
+      <tbody>
+        <tr><td>이자소득</td><td>20%</td></tr>
+        <tr><td>배당소득</td><td>20%</td></tr>
+        <tr><td>사용료소득 (로열티)</td><td>20%</td></tr>
+        <tr><td>근로소득</td><td>6~45% 또는 20%</td></tr>
+        <tr><td>양도소득</td><td>양도가액 10% 또는 양도차익 20% 중 적은 금액</td></tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <h4>조세조약 감면</h4>
+      <p>한국과 조세조약을 맺은 국가의 거주자라면 감면된 세율을 적용받을 수 있어요. 거주자증명서와 감면신청서를 제출해야 해요.</p>
+    </div>
+  </section>
+
+  <!-- 11. 신고 방법 -->
+  <section class="sec" id="how">
+    <div class="sec-tag">11 신고</div>
+    <h2>원천세 신고 방법</h2>
+    <div class="sec-desc">홈택스 + 위택스, 둘 다 해야 해요</div>
+
+    <p>원천세는 <strong>홈택스에서 소득세</strong>를, <strong>위택스에서 지방소득세</strong>를 각각 신고해야 해요. 두 곳 다 해야 가산세가 안 붙어요.</p>
+
+    <h3>홈택스 신고 절차 (소득세)</h3>
+    <div class="step-cards">
+      <div class="step-card">
+        <div class="sc-title">홈택스 로그인</div>
+        <div class="sc-desc">공동인증서 또는 간편인증으로 로그인</div>
+        <div class="sc-tip">💡 사업자 번호로 로그인해야 해요</div>
+      </div>
+      <div class="step-card">
+        <div class="sc-title">신고/납부 → 세금신고 → 원천세</div>
+        <div class="sc-desc">상단 메뉴에서 원천세 신고 화면 진입</div>
+      </div>
+      <div class="step-card">
+        <div class="sc-title">정기신고 또는 반기신고 선택</div>
+        <div class="sc-desc">매월 신고자는 정기, 승인받은 사업장은 반기</div>
+      </div>
+      <div class="step-card">
+        <div class="sc-title">원천징수이행상황신고서 작성</div>
+        <div class="sc-desc">소득 종류별 지급액과 세액을 입력</div>
+        <div class="sc-tip">💡 급여대장 미리 준비하면 빨라요</div>
+      </div>
+      <div class="step-card">
+        <div class="sc-title">신고서 제출 → 납부</div>
+        <div class="sc-desc">제출 후 즉시 전자납부 가능</div>
+      </div>
+    </div>
+
+    <h3>위택스 신고 절차 (지방소득세)</h3>
+    <div class="step-cards">
+      <div class="step-card">
+        <div class="sc-title">위택스 로그인</div>
+        <div class="sc-desc">공동인증서 또는 간편인증으로 로그인</div>
+      </div>
+      <div class="step-card">
+        <div class="sc-title">신고하기 → 지방소득세 특별징수</div>
+        <div class="sc-desc">메뉴에서 특별징수 신고 화면 진입</div>
+      </div>
+      <div class="step-card">
+        <div class="sc-title">홈택스 신고 내용 기반으로 작성</div>
+        <div class="sc-desc">홈택스에서 신고한 금액의 10%를 신고</div>
+        <div class="sc-tip">💡 홈택스 먼저 → 위택스 순서로 하세요</div>
+      </div>
+      <div class="step-card">
+        <div class="sc-title">신고서 제출 → 납부</div>
+        <div class="sc-desc">제출 후 전자납부 완료</div>
+      </div>
+    </div>
+
+    <table>
+      <thead><tr><th>구분</th><th>신고 사이트</th><th>메뉴</th></tr></thead>
+      <tbody>
+        <tr><td>소득세</td><td class="highlight-cell">홈택스 (hometax.go.kr)</td><td>신고/납부 &rarr; 원천세</td></tr>
+        <tr><td>지방소득세</td><td class="highlight-cell">위택스 (wetax.go.kr)</td><td>신고하기 &rarr; 지방소득세 특별징수</td></tr>
+      </tbody>
+    </table>
+
+    <div class="warn-box">
+      <h4>세액이 0원이어도 신고는 필수</h4>
+      <p>원천징수할 세금이 없더라도 원천징수이행상황신고서는 반드시 제출해야 해요. 미제출 시 가산세가 붙을 수 있어요.</p>
+    </div>
+
+    <div class="cta-row">
+      <a href="https://hometax.go.kr" class="cta-btn cta-dark" target="_blank">
+        <div class="cta-left">
+          <span class="cta-small">국세청 공식</span>
+          <span class="cta-main">홈택스 원천세 신고하기</span>
+        </div>
+        <span class="cta-arrow">바로가기 &rarr;</span>
+      </a>
+      <a href="https://wetax.go.kr" class="cta-btn cta-blue" target="_blank">
+        <div class="cta-left">
+          <span class="cta-small">지방세 신고</span>
+          <span class="cta-main">위택스 지방소득세 신고하기</span>
+        </div>
+        <span class="cta-arrow">바로가기 &rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 12. 납부기한 -->
+  <section class="sec" id="when">
+    <div class="sec-tag">12 납부기한</div>
+    <h2>월별 원천세 납부기한</h2>
+    <div class="sec-desc">급여 지급한 달의 다음 달 10일까지</div>
+
+    <p>원천세는 <strong>급여를 지급한 달의 다음 달 10일</strong>까지 납부해야 해요. 1월 급여를 지급했다면 2월 10일이 마감이에요. 10일이 주말이나 공휴일이면 그 다음 영업일까지 납부하면 돼요.</p>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-month">1월분</div>
+        <div class="tl-title">2월 10일 (화)</div>
+        <div class="tl-desc">1월 급여분 원천세 납부</div>
+        <span class="tl-tag ok">정상 영업일</span>
+      </div>
+      <div class="tl-item now">
+        <div class="tl-dot"></div>
+        <div class="tl-month">2월분</div>
+        <div class="tl-title">3월 10일 (화)</div>
+        <div class="tl-desc">2월 급여분 원천세 납부</div>
+        <span class="tl-tag ok">정상 영업일</span>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-month">3월분</div>
+        <div class="tl-title">4월 10일 (금)</div>
+        <div class="tl-desc">3월 급여분 원천세 납부</div>
+        <span class="tl-tag ok">정상 영업일</span>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-month">4월분</div>
+        <div class="tl-title">5월 11일 (월)</div>
+        <div class="tl-desc">4월 급여분 (5/10 일요일 &rarr; 차주 월요일)</div>
+        <span class="tl-tag dl">주말 연장</span>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-month">5월분</div>
+        <div class="tl-title">6월 10일 (수)</div>
+        <div class="tl-desc">5월 급여분 원천세 납부</div>
+        <span class="tl-tag ok">정상 영업일</span>
+      </div>
+      <div class="tl-item warn">
+        <div class="tl-dot"></div>
+        <div class="tl-month">6월분 (반기)</div>
+        <div class="tl-title">7월 10일 (금)</div>
+        <div class="tl-desc">6월 급여분 + 반기신고 시 1~6월분</div>
+        <span class="tl-tag dl">반기 마감</span>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-month">7~11월분</div>
+        <div class="tl-title">각 다음 달 10일</div>
+        <div class="tl-desc">매월 동일 패턴</div>
+        <span class="tl-tag ok">정상</span>
+      </div>
+      <div class="tl-item warn">
+        <div class="tl-dot"></div>
+        <div class="tl-month">12월분 (반기)</div>
+        <div class="tl-title">2027년 1월 12일 (월)</div>
+        <div class="tl-desc">12월 급여분 + 반기신고 시 7~12월분 (1/10 토 &rarr; 월요일)</div>
+        <span class="tl-tag dl">주말 연장 + 반기 마감</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. 반기 신고 -->
+  <section class="sec" id="half">
+    <div class="sec-tag">13 반기 신고</div>
+    <h2>매월 신고 vs 반기 신고</h2>
+    <div class="sec-desc">상시근로자 20명 이하면 반기 신고 가능</div>
+
+    <p>매달 신고하는 게 번거로우면 <strong>반기별 납부 특례</strong>를 이용할 수 있어요. 상시근로자 20명 이하 사업장이 대상이에요. 관할 세무서에 승인 신청을 먼저 해야 해요.</p>
+
+    <div class="compare">
+      <div class="cmp-card">
+        <h4>매월 신고</h4>
+        <div class="sub">모든 사업장</div>
+        <ul>
+          <li>매달 다음 달 10일까지</li>
+          <li>연 12회 신고·납부</li>
+          <li>매달 자금 부담</li>
+          <li>수정신고 빠른 처리</li>
+        </ul>
+      </div>
+      <div class="cmp-card rec">
+        <span class="rec-tag">소규모 추천</span>
+        <h4>반기 신고</h4>
+        <div class="sub">상시근로자 20명 이하</div>
+        <ul>
+          <li>6개월치 모아서 한 번에</li>
+          <li>연 2회만 신고·납부</li>
+          <li>신고 부담 대폭 감소</li>
+          <li>1~6월 &rarr; 7/10, 7~12월 &rarr; 1/10</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. 가산세 -->
+  <section class="sec" id="penalty">
+    <div class="sec-tag">14 가산세</div>
+    <h2>납부 기한 놓치면? 가산세 계산</h2>
+    <div class="sec-desc">미납 시 3% + 일할 가산세, 최대 50%</div>
+
+    <p>기한 내에 원천세를 납부하지 않으면 <strong>납부불성실가산세</strong>가 붙어요. 기본 3%에 하루하루 추가 가산세가 쌓여요.</p>
+
+    <div class="formula">미납세액 &times; 3% + (미납세액 &times; 경과일수 &times; 0.022%) = 가산세</div>
+
+    <div class="mini-calc">
+      <h4>⚠️ 가산세 자동 계산기</h4>
+      <div class="calc-row">
+        <div class="calc-field">
+          <label>미납 세액 (원)</label>
+          <input type="text" id="penaltyAmt" placeholder="예: 1,000,000" oninput="formatNumber(this)">
+        </div>
+        <div class="calc-field">
+          <label>지연 일수</label>
+          <input type="number" id="penaltyDays" placeholder="예: 30" min="1" max="9999">
+        </div>
+        <button class="calc-btn" onclick="calcPenalty()">계산하기</button>
+      </div>
+      <div class="calc-result" id="penaltyResult">
+        <div class="calc-big" id="penaltyTotal"></div>
+        <div class="calc-detail" id="penaltyDetail"></div>
+      </div>
+    </div>
+
+    <table>
+      <thead><tr><th>지연 기간</th><th>가산세율</th><th>100만원 미납 시</th></tr></thead>
+      <tbody>
+        <tr><td>기한 내 납부</td><td>0%</td><td class="highlight-cell">0원</td></tr>
+        <tr><td>1일 초과</td><td>3% + 일할 0.022%</td><td class="warn-cell">30,220원</td></tr>
+        <tr><td>1개월 (30일)</td><td>약 3.66%</td><td class="warn-cell">36,600원</td></tr>
+        <tr><td>3개월 (90일)</td><td>약 4.98%</td><td class="warn-cell">49,800원</td></tr>
+        <tr><td>6개월 (180일)</td><td>약 6.96%</td><td class="warn-cell">69,600원</td></tr>
+        <tr><td>1년 (365일)</td><td>약 11.03%</td><td class="warn-cell">110,300원</td></tr>
+        <tr><td>최대 한도</td><td>50%</td><td class="warn-cell">500,000원</td></tr>
+      </tbody>
+    </table>
+
+    <div class="warn-box">
+      <h4>가산세 한도</h4>
+      <p>전체 가산세는 미납세액의 <strong>50%</strong>를 넘을 수 없어요. 납부기한부터 고지일까지의 가산세는 <strong>10%</strong>가 한도예요.</p>
+    </div>
+
+    <div class="tip-box">
+      <h4>가산세 줄이는 방법</h4>
+      <p>기한 내에 스스로 수정신고하면 가산세의 <strong>50%가 감면</strong>돼요. 놓쳤다면 최대한 빨리 자진 납부하는 게 유리해요.</p>
+    </div>
+
+    <table>
+      <thead><tr><th>기간</th><th>일할 가산세율</th></tr></thead>
+      <tbody>
+        <tr><td>~2019년</td><td>0.03%</td></tr>
+        <tr><td>2019~2022년</td><td>0.025%</td></tr>
+        <tr><td>2022년~현재</td><td class="highlight-cell">0.022%</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 15. 영수증 발급 -->
+  <section class="sec" id="receipt">
+    <div class="sec-tag">15 영수증</div>
+    <h2>원천징수영수증 발급 방법</h2>
+    <div class="sec-desc">이직, 대출, 비자 신청에 필요해요</div>
+
+    <p>원천징수영수증은 <strong>회사가 발급 의무자</strong>예요. 매년 3월 10일까지 정기 발급하고, 중도퇴사 시 1개월 이내에 발급해야 해요.</p>
+
+    <h3>홈택스 직접 발급</h3>
+    <p>1. 홈택스 로그인<br>
+    2. My 홈택스 &rarr; 연말정산·지급명세서<br>
+    3. 지급명세서 등 제출내역 조회<br>
+    4. PDF 다운로드</p>
+
+    <h3>영수증에 담긴 정보</h3>
+    <p>총급여액, 비과세/과세 소득, 소득공제 내역, 세액공제 내역, 결정세액, 차감징수세액</p>
+
+    <h3>활용처</h3>
+    <table>
+      <thead><tr><th>용도</th><th>필요한 곳</th></tr></thead>
+      <tbody>
+        <tr><td>이직 시 연말정산</td><td>새 회사 인사팀</td></tr>
+        <tr><td>대출 신청</td><td>은행, 금융기관</td></tr>
+        <tr><td>비자 신청</td><td>대사관, 출입국관리사무소</td></tr>
+        <tr><td>종합소득세 신고</td><td>국세청 홈택스</td></tr>
+        <tr><td>정부 지원금 신청</td><td>각 지원기관</td></tr>
+      </tbody>
+    </table>
+
+    <div class="tip-box">
+      <h4>보관 기한</h4>
+      <p>원천징수영수증은 <strong>5년간 보관</strong>하는 것을 권장해요. 세무 조사나 소득 증명 시 필요할 수 있어요.</p>
+    </div>
+  </section>
+
+  <!-- 16. 비과세 소득 -->
+  <section class="sec" id="nontax">
+    <div class="sec-tag">16 비과세</div>
+    <h2>원천징수 안 하는 비과세 소득</h2>
+    <div class="sec-desc">이 소득은 세금을 안 떼요</div>
+
+    <table>
+      <thead><tr><th>비과세 항목</th><th>한도</th></tr></thead>
+      <tbody>
+        <tr><td>식대</td><td>월 20만원</td></tr>
+        <tr><td>출산·보육수당</td><td>월 20만원</td></tr>
+        <tr><td>자가운전보조금</td><td>월 20만원</td></tr>
+        <tr><td>국외근로소득</td><td>월 300만원 (원양어업 등)</td></tr>
+        <tr><td>생산직 야간근로수당</td><td>연 240만원</td></tr>
+      </tbody>
+    </table>
+    <p>위 금액까지는 원천징수 대상에서 제외돼요. 한도 초과분은 과세 대상이에요.</p>
+  </section>
+
+  <!-- 17. 잘못 납부 -->
+  <section class="sec" id="fix">
+    <div class="sec-tag">17 수정·환급</div>
+    <h2>잘못 납부했을 때 처리 방법</h2>
+    <div class="sec-desc">수정신고로 돌려받을 수 있어요</div>
+
+    <p>원천세를 과다 납부했거나 과소 납부했을 때는 <strong>홈택스에서 수정신고</strong>를 하면 돼요.</p>
+
+    <div class="compare">
+      <div class="cmp-card">
+        <h4>과다 납부</h4>
+        <div class="sub">세금을 더 냈을 때</div>
+        <ul>
+          <li>경정청구서 제출</li>
+          <li>환급받을 수 있어요</li>
+          <li>법정기한 5년 이내</li>
+        </ul>
+      </div>
+      <div class="cmp-card">
+        <h4>과소 납부</h4>
+        <div class="sub">세금을 덜 냈을 때</div>
+        <ul>
+          <li>수정신고 후 추가 납부</li>
+          <li>자진 수정 시 가산세 50% 감면</li>
+          <li>최대한 빨리 하는 게 유리</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 17.5 자주 하는 실수 -->
+  <section class="sec" id="mistakes">
+    <div class="sec-tag">실수 방지</div>
+    <h2>원천세 실무 실수 TOP 5</h2>
+    <div class="sec-desc">이것만 피해도 가산세 걱정 없어요</div>
+
+    <div class="mistake-grid">
+      <div class="mistake">
+        <div class="m-num">실수 #1</div>
+        <div class="m-title">위택스 지방소득세 신고 누락</div>
+        <div class="m-desc">홈택스에서 소득세만 신고하고 위택스 지방소득세를 안 하는 경우가 많아요. 둘 다 해야 완료!</div>
+        <div class="m-fix">→ 홈택스 신고 후 바로 위택스 접속하는 습관 만들기</div>
+      </div>
+      <div class="mistake">
+        <div class="m-num">실수 #2</div>
+        <div class="m-title">0원 신고를 안 하는 경우</div>
+        <div class="m-desc">원천징수할 세금이 0원이어도 신고서는 반드시 제출해야 해요. 미제출 시 가산세 부과!</div>
+        <div class="m-fix">→ 지급한 금액이 없는 달에도 "무실적 신고" 꼭 제출</div>
+      </div>
+      <div class="mistake">
+        <div class="m-num">실수 #3</div>
+        <div class="m-title">3.3% vs 8.8% 잘못 적용</div>
+        <div class="m-desc">프리랜서(지속적 용역)는 3.3%, 일시적 강연·원고료는 8.8%예요. 잘못 적용하면 수정신고해야 해요.</div>
+        <div class="m-fix">→ 계약서 확인: 지속적이면 3.3%, 일시적이면 8.8%</div>
+      </div>
+      <div class="mistake">
+        <div class="m-num">실수 #4</div>
+        <div class="m-title">납부기한 주말·공휴일 혼동</div>
+        <div class="m-desc">10일이 주말이면 다음 영업일까지 가능한데, 미리 확인 안 하면 놓칠 수 있어요.</div>
+        <div class="m-fix">→ 매월 초에 달력으로 납부기한 확인하기</div>
+      </div>
+      <div class="mistake">
+        <div class="m-num">실수 #5</div>
+        <div class="m-title">지급명세서 제출기한 착각</div>
+        <div class="m-desc">원천세 신고와 별도로 지급명세서(간이)를 반기별로 제출해야 해요. 1~6월분은 7/31, 7~12월분은 다음 해 1/31까지.</div>
+        <div class="m-fix">→ 원천세 반기 마감일과 함께 캘린더에 등록</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 18. FAQ -->
+  <section class="sec" id="faq">
+    <div class="sec-tag">FAQ</div>
+    <h2>자주 묻는 질문</h2>
+    <div class="sec-desc">원천세에 대해 가장 많이 궁금해하는 질문들이에요.</div>
+
+    <div class="faq">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">원천징수는 왜 하나요?</div>
+      <div class="faq-a">세금을 나중에 한꺼번에 내면 부담이 크니까, 매달 조금씩 미리 떼는 거예요. 국가 입장에서도 세수를 안정적으로 확보할 수 있고요.</div>
+    </div>
+    <div class="faq">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">프리랜서도 원천징수 대상인가요?</div>
+      <div class="faq-a">네, 프리랜서도 3.3% 원천징수 대상이에요. 소득세 3%와 지방소득세 0.3%를 합친 금액이에요. 다음 해 5월 종합소득세 신고 때 정산해요.</div>
+    </div>
+    <div class="faq">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">원천세 신고를 안 하면 어떻게 되나요?</div>
+      <div class="faq-a">납부불성실가산세가 붙어요. 미납세액의 3%에 더해 경과일수만큼 추가 가산세가 나오니까 최대한 빨리 납부하세요. 최대 50%까지 붙을 수 있어요.</div>
+    </div>
+    <div class="faq">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">원천세 반기 신고는 누가 할 수 있나요?</div>
+      <div class="faq-a">상시근로자 20명 이하 사업장은 반기 신고가 가능해요. 1~6월분은 7월 10일까지, 7~12월분은 다음 해 1월 10일까지 신고하면 돼요. 관할 세무서에 승인 신청을 먼저 해야 해요.</div>
+    </div>
+    <div class="faq">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">원천징수 많이 떼면 환급 많이 받나요?</div>
+      <div class="faq-a">네, 맞아요. 원천징수를 많이 했으면 연말정산 때 환급을 많이 받을 가능성이 높아요. 반대로 적게 떼면 추가 납부할 수 있어요.</div>
+    </div>
+    <div class="faq">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">10일이 주말이면 언제까지 내면 되나요?</div>
+      <div class="faq-a">납부기한이 토요일, 일요일, 공휴일인 경우 그 다음 영업일까지 납부하면 돼요. 예를 들어 10일이 토요일이면 12일 월요일이 기한이에요.</div>
+    </div>
+    <div class="faq">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">직원 없이 혼자 사업하면 원천세 안 내도 되나요?</div>
+      <div class="faq-a">직원이나 프리랜서에게 급여·용역비를 지급하지 않으면 원천세 신고 의무가 없어요. 하지만 외주 인력에게 용역비를 지급하면 3.3% 원천징수 후 신고·납부해야 해요.</div>
+    </div>
+    <div class="faq">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">원천세 잘못 납부했으면 어떻게 하나요?</div>
+      <div class="faq-a">홈택스에서 수정신고를 하면 돼요. 과다 납부한 경우 경정청구로 환급받을 수 있고, 과소 납부한 경우 수정신고 후 추가 납부하면 가산세를 줄일 수 있어요.</div>
+    </div>
+    <div class="faq">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">기타소득 300만원 미만이면 세금 안 내도 되나요?</div>
+      <div class="faq-a">원천징수로 세금 납부가 종결돼요 (분리과세). 300만원 이상이면 다른 소득과 합산해서 종합소득세를 신고해야 해요.</div>
+    </div>
+    <div class="faq">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">가산세 감면받을 수 있나요?</div>
+      <div class="faq-a">기한 내에 스스로 수정신고하면 가산세의 50%가 감면돼요. 놓쳤다면 최대한 빨리 자진 납부하는 게 유리해요.</div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <p>머니위키 &middot; 2026년 기준 &middot; 출처: 국세청, 소득세법 제127조, 국세기본법</p>
+  <p style="margin-top:6px; color: var(--g300);">이 페이지는 허브 원페이지 컨셉 미리보기입니다</p>
+</footer>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0})">&#8593;</button>
+
+<!-- Enhanced JS -->
+<script>
+// TOC Scroll Highlight
+const tocLinks = document.querySelectorAll('.float-toc a');
+const tocSections = [];
+tocLinks.forEach(link => {
+  const id = link.getAttribute('href').slice(1);
+  const el = document.getElementById(id);
+  if(el) tocSections.push({el, link});
+});
+
+// Reading Progress Bar
+const progressBar = document.getElementById('progressBar');
+const backTop = document.getElementById('backTop');
+
+window.addEventListener('scroll', () => {
+  // Progress bar
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  progressBar.style.width = progress + '%';
+
+  // Back to top
+  if(scrollTop > 400) backTop.classList.add('show');
+  else backTop.classList.remove('show');
+
+  // TOC highlight
+  let current = '';
+  tocSections.forEach(({el}) => {
+    if(el.getBoundingClientRect().top <= 100) current = el.id;
+  });
+  tocLinks.forEach(l => l.classList.remove('active'));
+  const active = document.querySelector('.float-toc a[href="#'+current+'"]');
+  if(active) active.classList.add('active');
+});
+
+// Section fade-in on scroll (IntersectionObserver)
+const allSecs = document.querySelectorAll('.sec');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.08 });
+allSecs.forEach(sec => observer.observe(sec));
+
+// Hero always visible
+document.querySelector('.hero').style.opacity = '1';
+document.querySelector('.hero').style.transform = 'none';
+
+// === Number formatting ===
+function formatNumber(input) {
+  let v = input.value.replace(/[^\d]/g, '');
+  if(v) input.value = Number(v).toLocaleString('ko-KR');
+}
+function parseAmt(id) {
+  return Number(document.getElementById(id).value.replace(/[^\d]/g, '')) || 0;
+}
+
+// === 3.3% Freelance Calculator ===
+function calcFreelance() {
+  const amt = parseAmt('freelanceAmt');
+  if(!amt) return;
+  const tax3 = Math.floor(amt * 0.03);
+  const local = Math.floor(amt * 0.003);
+  const total = tax3 + local;
+  const net = amt - total;
+  const r = document.getElementById('freelanceResult');
+  document.getElementById('freelanceNet').textContent = '실수령액: ' + net.toLocaleString('ko-KR') + '원';
+  document.getElementById('freelanceDetail').innerHTML =
+    '계약금액 ' + amt.toLocaleString('ko-KR') + '원<br>' +
+    '소득세(3%): -' + tax3.toLocaleString('ko-KR') + '원 | ' +
+    '지방세(0.3%): -' + local.toLocaleString('ko-KR') + '원<br>' +
+    '<strong>원천징수 합계: ' + total.toLocaleString('ko-KR') + '원</strong>';
+  r.classList.add('show');
+}
+
+// === Penalty Calculator ===
+function calcPenalty() {
+  const amt = parseAmt('penaltyAmt');
+  const days = parseInt(document.getElementById('penaltyDays').value) || 0;
+  if(!amt || !days) return;
+  const base = Math.floor(amt * 0.03);
+  const daily = Math.floor(amt * days * 0.00022);
+  let total = base + daily;
+  const cap = Math.floor(amt * 0.5);
+  const capped = total > cap;
+  if(capped) total = cap;
+  const r = document.getElementById('penaltyResult');
+  document.getElementById('penaltyTotal').textContent = '가산세: ' + total.toLocaleString('ko-KR') + '원';
+  document.getElementById('penaltyDetail').innerHTML =
+    '미납세액 ' + amt.toLocaleString('ko-KR') + '원 × ' + days + '일 지연<br>' +
+    '기본(3%): ' + base.toLocaleString('ko-KR') + '원 + 일할(0.022%×' + days + '일): ' + daily.toLocaleString('ko-KR') + '원' +
+    (capped ? '<br><strong style="color:var(--orange)">⚠️ 최대 한도(50%) 적용됨</strong>' : '');
+  r.classList.add('show');
+}
+
+// === Rate Bar Chart Animation ===
+const barObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.querySelectorAll('.rate-fill').forEach(bar => {
+        const tw = getComputedStyle(bar).getPropertyValue('--tw');
+        bar.style.width = tw;
+      });
+      barObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+const rateBars = document.getElementById('rateBars');
+if(rateBars) barObserver.observe(rateBars);
+</script>
+
+</body>
+</html>

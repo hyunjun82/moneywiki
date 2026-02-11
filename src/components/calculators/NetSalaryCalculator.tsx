@@ -256,7 +256,7 @@ export default function NetSalaryCalculator() {
 
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
-      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-[#1E3A5F] to-teal-600 px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -265,7 +265,7 @@ export default function NetSalaryCalculator() {
           </div>
           <div>
             <h2 className="text-xl font-bold text-white">연봉 실수령액 계산기</h2>
-            <p className="text-emerald-100 text-sm">4대보험, 소득세 공제 후 실수령액</p>
+            <p className="text-[#EDF2F8] text-sm">4대보험, 소득세 공제 후 실수령액</p>
           </div>
         </div>
       </div>
@@ -280,11 +280,11 @@ export default function NetSalaryCalculator() {
               value={annualSalary > 0 ? formatNumber(annualSalary) : ""}
               onChange={(e) => setAnnualSalary(parseInt(e.target.value.replace(/,/g, "")) || 0)}
               placeholder="연봉을 입력하세요"
-              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 text-right pr-12"
+              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-[#2B5280] focus:ring-0 text-right pr-12"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
           </div>
-          {annualSalary > 0 && <p className="mt-1 text-sm text-emerald-600">{formatWon(annualSalary)}</p>}
+          {annualSalary > 0 && <p className="mt-1 text-sm text-[#1E3A5F]">{formatWon(annualSalary)}</p>}
 
           <div className="flex gap-2 mt-3">
             <button onClick={() => handleQuickSalary(30000000)} className="flex-1 py-2 bg-neutral-100 hover:bg-neutral-200 rounded-lg text-sm font-medium">3천만</button>
@@ -303,7 +303,7 @@ export default function NetSalaryCalculator() {
             <select
               value={dependents}
               onChange={(e) => setDependents(parseInt(e.target.value))}
-              className="w-full px-3 py-2 border-2 border-neutral-200 rounded-xl focus:border-emerald-500"
+              className="w-full px-3 py-2 border-2 border-neutral-200 rounded-xl focus:border-[#2B5280]"
             >
               {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
                 <option key={n} value={n}>{n}명</option>
@@ -315,7 +315,7 @@ export default function NetSalaryCalculator() {
             <select
               value={children}
               onChange={(e) => setChildren(parseInt(e.target.value))}
-              className="w-full px-3 py-2 border-2 border-neutral-200 rounded-xl focus:border-emerald-500"
+              className="w-full px-3 py-2 border-2 border-neutral-200 rounded-xl focus:border-[#2B5280]"
             >
               {[0, 1, 2, 3, 4, 5].map((n) => (
                 <option key={n} value={n}>{n}명</option>
@@ -327,7 +327,7 @@ export default function NetSalaryCalculator() {
             <select
               value={nonTaxable}
               onChange={(e) => setNonTaxable(parseInt(e.target.value))}
-              className="w-full px-3 py-2 border-2 border-neutral-200 rounded-xl focus:border-emerald-500"
+              className="w-full px-3 py-2 border-2 border-neutral-200 rounded-xl focus:border-[#2B5280]"
             >
               <option value={0}>없음</option>
               <option value={100000}>10만원</option>
@@ -339,12 +339,12 @@ export default function NetSalaryCalculator() {
 
         {/* 결과 */}
         {result && (
-          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
-            <h3 className="text-lg font-bold text-emerald-800 mb-4">실수령액</h3>
+          <div className="bg-gradient-to-r from-[#F5F8FB] to-teal-50 rounded-2xl p-6 border border-[#EDF2F8]">
+            <h3 className="text-lg font-bold text-[#132A42] mb-4">실수령액</h3>
 
             <div className="bg-white rounded-xl p-4 mb-4">
               <div className="text-sm text-neutral-500 mb-1">월 실수령액</div>
-              <div className="text-3xl font-bold text-emerald-600">{formatNumber(result.monthlyNet)}원</div>
+              <div className="text-3xl font-bold text-[#1E3A5F]">{formatNumber(result.monthlyNet)}원</div>
               <div className="text-sm text-neutral-500 mt-1">{formatWon(result.monthlyNet)}</div>
             </div>
 
@@ -390,9 +390,9 @@ export default function NetSalaryCalculator() {
         )}
 
         {/* 안내 */}
-        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
-          <h4 className="font-medium text-emerald-800 mb-2">이용안내</h4>
-          <ul className="text-sm text-emerald-700 space-y-1">
+        <div className="mt-6 p-4 bg-[#F5F8FB] rounded-xl border border-[#EDF2F8]">
+          <h4 className="font-medium text-[#132A42] mb-2">이용안내</h4>
+          <ul className="text-sm text-[#162F4F] space-y-1">
             <li>• 2026년 4대보험 요율 기준으로 계산해요</li>
             <li>• 실제 공제액은 회사 정책에 따라 다를 수 있어요</li>
             <li>• 비과세 항목은 식대, 차량유지비 등이에요</li>
@@ -434,23 +434,23 @@ export default function NetSalaryCalculator() {
             {tableType === "annual" ? (
               <table className="w-full text-xs sm:text-sm border-collapse">
                 <thead>
-                  <tr className="bg-emerald-100 border-b-2 border-emerald-300">
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">연봉</th>
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">실수령액</th>
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden lg:table-cell">공제액계</th>
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden md:table-cell">국민연금</th>
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden md:table-cell">건강보험</th>
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden xl:table-cell">장기요양</th>
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden xl:table-cell">고용보험</th>
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">소득세</th>
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden lg:table-cell">지방소득세</th>
+                  <tr className="bg-[#EDF2F8] border-b-2 border-[#4A7AB5]">
+                    <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">연봉</th>
+                    <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">실수령액</th>
+                    <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden lg:table-cell">공제액계</th>
+                    <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden md:table-cell">국민연금</th>
+                    <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden md:table-cell">건강보험</th>
+                    <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden xl:table-cell">장기요양</th>
+                    <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden xl:table-cell">고용보험</th>
+                    <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden sm:table-cell">소득세</th>
+                    <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden lg:table-cell">지방소득세</th>
                   </tr>
                 </thead>
                 <tbody>
                   {annualSalaryData.map((row, idx) => (
                     <tr key={idx} className={row.highlight ? "bg-green-50" : "bg-white"}>
                       <td className="py-2 px-2 text-center font-medium border border-gray-300">{row.annual}원</td>
-                      <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">{row.netPay}원</td>
+                      <td className="py-2 px-2 text-center font-bold text-[#1E3A5F] border border-gray-300">{row.netPay}원</td>
                       <td className="py-2 px-2 text-center border border-gray-300 hidden lg:table-cell">{row.total}원</td>
                       <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell">{row.pension}원</td>
                       <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell">{row.health}원</td>
@@ -465,23 +465,23 @@ export default function NetSalaryCalculator() {
             ) : (
               <table className="w-full text-xs sm:text-sm border-collapse">
                 <thead>
-                  <tr className="bg-emerald-100 border-b-2 border-emerald-300">
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">월급</th>
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">실수령액</th>
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden lg:table-cell">공제액계</th>
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden md:table-cell">국민연금</th>
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden md:table-cell">건강보험</th>
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden xl:table-cell">장기요양</th>
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden xl:table-cell">고용보험</th>
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">소득세</th>
-                    <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden lg:table-cell">지방소득세</th>
+                  <tr className="bg-[#EDF2F8] border-b-2 border-[#4A7AB5]">
+                    <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">월급</th>
+                    <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">실수령액</th>
+                    <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden lg:table-cell">공제액계</th>
+                    <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden md:table-cell">국민연금</th>
+                    <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden md:table-cell">건강보험</th>
+                    <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden xl:table-cell">장기요양</th>
+                    <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden xl:table-cell">고용보험</th>
+                    <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden sm:table-cell">소득세</th>
+                    <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden lg:table-cell">지방소득세</th>
                   </tr>
                 </thead>
                 <tbody>
                   {monthlySalaryData.map((row, idx) => (
                     <tr key={idx} className={row.highlight ? "bg-green-50" : "bg-white"}>
                       <td className="py-2 px-2 text-center font-medium border border-gray-300">{row.monthly}원</td>
-                      <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">{row.netPay}원</td>
+                      <td className="py-2 px-2 text-center font-bold text-[#1E3A5F] border border-gray-300">{row.netPay}원</td>
                       <td className="py-2 px-2 text-center border border-gray-300 hidden lg:table-cell">{row.total}원</td>
                       <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell">{row.pension}원</td>
                       <td className="py-2 px-2 text-center border border-gray-300 hidden md:table-cell">{row.health}원</td>
@@ -498,9 +498,9 @@ export default function NetSalaryCalculator() {
 
           <p className="text-xs text-gray-500 mt-3 text-center">※ 부양가족 1인(본인), 비과세 20만원 기준 | 실제 금액은 상황에 따라 달라질 수 있음</p>
 
-          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
-            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
-            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+          <div className="mt-4 p-3 bg-[#EDF2F8] rounded-lg">
+            <p className="text-xs text-[#132A42] font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-[#162F4F] mt-1 space-y-1">
               <li>• 연봉 ↑ → 세율 ↑ (누진세): 고소득일수록 실수령 비율 ↓</li>
               <li>• 4대보험은 고정비율, 소득세는 누진세율 적용</li>
               <li>• 부양가족 많으면 소득세 ↓ / 비과세 항목 챙기기!</li>

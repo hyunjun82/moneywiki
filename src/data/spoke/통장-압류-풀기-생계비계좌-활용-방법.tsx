@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>통장 <span className="text-emerald-600">압류 풀기</span> — 생계비계좌 활용 방법과 해제 신청</>,
+    h1: <>통장 <span className="text-[#1E3A5F]">압류 풀기</span> — 생계비계좌 활용 방법과 해제 신청</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

@@ -124,7 +124,7 @@ export default function LoanRepaymentCalculator() {
 
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
-      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-[#1E3A5F] to-teal-600 px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -133,7 +133,7 @@ export default function LoanRepaymentCalculator() {
           </div>
           <div>
             <h2 className="text-xl font-bold text-white">대출상환 계산기</h2>
-            <p className="text-emerald-100 text-sm">상환방식별 월 납입금 계산</p>
+            <p className="text-[#EDF2F8] text-sm">상환방식별 월 납입금 계산</p>
           </div>
         </div>
       </div>
@@ -149,12 +149,12 @@ export default function LoanRepaymentCalculator() {
                 onClick={() => setRepaymentType(type.value as RepaymentType)}
                 className={`py-3 px-2 rounded-xl font-medium transition-all text-center ${
                   repaymentType === type.value
-                    ? "bg-emerald-600 text-white"
+                    ? "bg-[#1E3A5F] text-white"
                     : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
                 }`}
               >
                 <div className="text-sm">{type.label}</div>
-                <div className={`text-xs mt-1 ${repaymentType === type.value ? "text-emerald-200" : "text-neutral-400"}`}>
+                <div className={`text-xs mt-1 ${repaymentType === type.value ? "text-[#B8D0E8]" : "text-neutral-400"}`}>
                   {type.desc}
                 </div>
               </button>
@@ -171,11 +171,11 @@ export default function LoanRepaymentCalculator() {
               value={loanAmount > 0 ? formatNumber(loanAmount) : ""}
               onChange={(e) => setLoanAmount(parseInt(e.target.value.replace(/,/g, "")) || 0)}
               placeholder="대출금액 입력"
-              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 text-right pr-12"
+              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-[#2B5280] focus:ring-0 text-right pr-12"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
           </div>
-          {loanAmount > 0 && <p className="mt-1 text-sm text-emerald-600">{formatWon(loanAmount)}</p>}
+          {loanAmount > 0 && <p className="mt-1 text-sm text-[#1E3A5F]">{formatWon(loanAmount)}</p>}
 
           <div className="flex gap-2 mt-3">
             {[10000000, 30000000, 50000000, 100000000, 200000000].map((amount) => (
@@ -201,7 +201,7 @@ export default function LoanRepaymentCalculator() {
               step="0.1"
               min="0"
               max="30"
-              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500 text-right"
+              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-[#2B5280] text-right"
             />
           </div>
           <div>
@@ -209,7 +209,7 @@ export default function LoanRepaymentCalculator() {
             <select
               value={period}
               onChange={(e) => setPeriod(parseInt(e.target.value))}
-              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500"
+              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-[#2B5280]"
             >
               {[6, 12, 24, 36, 48, 60, 120, 240, 360].map((m) => (
                 <option key={m} value={m}>{m}개월 ({m / 12}년)</option>
@@ -220,13 +220,13 @@ export default function LoanRepaymentCalculator() {
 
         {/* 결과 */}
         {loanAmount > 0 && (
-          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
-            <h3 className="text-lg font-bold text-emerald-800 mb-4">상환 계획</h3>
+          <div className="bg-gradient-to-r from-[#F5F8FB] to-teal-50 rounded-2xl p-6 border border-[#EDF2F8]">
+            <h3 className="text-lg font-bold text-[#132A42] mb-4">상환 계획</h3>
 
             <div className="grid grid-cols-2 gap-4 mb-4">
               <div className="bg-white rounded-xl p-4">
                 <div className="text-sm text-neutral-500 mb-1">첫 달 납입금</div>
-                <div className="text-2xl font-bold text-emerald-600">{formatNumber(firstPayment)}원</div>
+                <div className="text-2xl font-bold text-[#1E3A5F]">{formatNumber(firstPayment)}원</div>
               </div>
               <div className="bg-white rounded-xl p-4">
                 <div className="text-sm text-neutral-500 mb-1">마지막 달 납입금</div>
@@ -285,19 +285,19 @@ export default function LoanRepaymentCalculator() {
           </div>
         )}
 
-        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
-          <h4 className="font-medium text-emerald-800 mb-2 flex items-center gap-2">
+        <div className="mt-6 p-4 bg-[#F5F8FB] rounded-xl border border-[#EDF2F8]">
+          <h4 className="font-medium text-[#132A42] mb-2 flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             상환방식이 뭔가요?
           </h4>
-          <p className="text-sm text-emerald-700 mb-2">
+          <p className="text-sm text-[#162F4F] mb-2">
             대출금을 어떤 방식으로 갚을지 정하는 거예요. <span className="font-medium">방식에 따라 총 이자가 수천만원 차이 나요.</span>
           </p>
-          <ul className="text-sm text-emerald-700 space-y-1.5 mt-3">
+          <ul className="text-sm text-[#162F4F] space-y-1.5 mt-3">
             <li className="flex items-start gap-2">
-              <span className="text-emerald-600 mt-0.5">✓</span>
+              <span className="text-[#1E3A5F] mt-0.5">✓</span>
               <span><strong>원리금균등:</strong> 매월 같은 금액 납부 (계획 세우기 좋음)</span>
             </li>
             <li className="flex items-start gap-2">
@@ -309,9 +309,9 @@ export default function LoanRepaymentCalculator() {
               <span><strong>만기일시:</strong> 매월 이자만 내고 만기에 원금 (총 이자 최대)</span>
             </li>
           </ul>
-          <div className="mt-3 pt-3 border-t border-emerald-200">
-            <p className="text-xs text-emerald-600">
-              📌 출처: <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">금융감독원</a> · <a href="https://www.hf.go.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">한국주택금융공사</a>
+          <div className="mt-3 pt-3 border-t border-[#B8D0E8]">
+            <p className="text-xs text-[#1E3A5F]">
+              📌 출처: <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#132A42]">금융감독원</a> · <a href="https://www.hf.go.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#132A42]">한국주택금융공사</a>
             </p>
           </div>
         </div>
@@ -324,32 +324,32 @@ export default function LoanRepaymentCalculator() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">대출금</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">월 상환액</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">총 이자</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">총 상환액</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">한줄평</th>
+                <tr className="bg-[#EDF2F8] border-b-2 border-[#4A7AB5]">
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">대출금</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">월 상환액</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">총 이자</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">총 상환액</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden sm:table-cell">한줄평</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-b border-neutral-200">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">1억</td>
-                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">53.7만</td>
+                  <td className="py-2 px-2 text-center font-bold text-[#1E3A5F] border border-gray-300">53.7만</td>
                   <td className="py-2 px-2 text-center text-red-500 border border-gray-300">9,330만</td>
                   <td className="py-2 px-2 text-center border border-gray-300">1.93억</td>
                   <td className="py-2 px-2 text-center text-gray-500 border border-gray-300 hidden sm:table-cell">신혼부부 시작</td>
                 </tr>
-                <tr className="bg-emerald-50 border-b border-neutral-200">
-                  <td className="py-2 px-2 text-center font-bold text-emerald-700 border border-gray-300">2억</td>
-                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">107.4만</td>
+                <tr className="bg-[#F5F8FB] border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-bold text-[#162F4F] border border-gray-300">2억</td>
+                  <td className="py-2 px-2 text-center font-bold text-[#1E3A5F] border border-gray-300">107.4만</td>
                   <td className="py-2 px-2 text-center text-red-500 border border-gray-300">1.87억</td>
                   <td className="py-2 px-2 text-center border border-gray-300">3.87억</td>
-                  <td className="py-2 px-2 text-center text-emerald-600 border border-gray-300 hidden sm:table-cell">월 100만 돌파</td>
+                  <td className="py-2 px-2 text-center text-[#1E3A5F] border border-gray-300 hidden sm:table-cell">월 100만 돌파</td>
                 </tr>
                 <tr className="border-b border-neutral-200">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">3억</td>
-                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">161.1만</td>
+                  <td className="py-2 px-2 text-center font-bold text-[#1E3A5F] border border-gray-300">161.1만</td>
                   <td className="py-2 px-2 text-center text-red-500 border border-gray-300">2.80억</td>
                   <td className="py-2 px-2 text-center border border-gray-300">5.80억</td>
                   <td className="py-2 px-2 text-center text-gray-500 border border-gray-300 hidden sm:table-cell">서울 외곽 아파트</td>
@@ -372,9 +372,9 @@ export default function LoanRepaymentCalculator() {
             </table>
           </div>
 
-          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
-            <p className="text-xs text-emerald-800 font-medium">💡 대출 핵심</p>
-            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+          <div className="mt-4 p-3 bg-[#EDF2F8] rounded-lg">
+            <p className="text-xs text-[#132A42] font-medium">💡 대출 핵심</p>
+            <ul className="text-xs text-[#162F4F] mt-1 space-y-1">
               <li>• 30년 대출 시 <strong>원금만큼 이자</strong> 나가요 (100% 이상)</li>
               <li>• 기간 줄이면 월 부담↑, 총 이자↓</li>
               <li>• DSR 40% 기준: 월 상환액 = 연봉 × 40% ÷ 12</li>

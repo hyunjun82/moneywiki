@@ -112,9 +112,9 @@ export default function InstallmentInterestCalculator() {
   return (
     <div className="bg-white rounded-2xl shadow-lg border border-neutral-200 overflow-hidden">
       {/* 헤더 */}
-      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-[#1E3A5F] to-teal-600 px-6 py-4">
         <h2 className="text-xl font-bold text-white">할부 이자 계산기</h2>
-        <p className="text-emerald-100 text-sm mt-1">카드/대출/자동차 할부</p>
+        <p className="text-[#EDF2F8] text-sm mt-1">카드/대출/자동차 할부</p>
       </div>
 
       <div className="p-6 space-y-6">
@@ -124,7 +124,7 @@ export default function InstallmentInterestCalculator() {
             onClick={() => setInstallmentType("card")}
             className={`py-3 px-4 rounded-lg text-sm font-medium transition-all ${
               installmentType === "card"
-                ? "bg-emerald-500 text-white shadow-md"
+                ? "bg-[#2B5280] text-white shadow-md"
                 : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
             }`}
           >
@@ -134,7 +134,7 @@ export default function InstallmentInterestCalculator() {
             onClick={() => setInstallmentType("loan")}
             className={`py-3 px-4 rounded-lg text-sm font-medium transition-all ${
               installmentType === "loan"
-                ? "bg-emerald-500 text-white shadow-md"
+                ? "bg-[#2B5280] text-white shadow-md"
                 : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
             }`}
           >
@@ -144,7 +144,7 @@ export default function InstallmentInterestCalculator() {
             onClick={() => setInstallmentType("auto")}
             className={`py-3 px-4 rounded-lg text-sm font-medium transition-all ${
               installmentType === "auto"
-                ? "bg-emerald-500 text-white shadow-md"
+                ? "bg-[#2B5280] text-white shadow-md"
                 : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
             }`}
           >
@@ -165,7 +165,7 @@ export default function InstallmentInterestCalculator() {
                 const value = e.target.value.replace(/[^0-9]/g, "");
                 setPurchaseAmount(Number(value) || 0);
               }}
-              className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-emerald-500"
+              className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-[#2B5280]"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">
               원
@@ -215,7 +215,7 @@ export default function InstallmentInterestCalculator() {
                     onClick={() => setMonths(m)}
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                       months === m
-                        ? "bg-emerald-500 text-white shadow-md"
+                        ? "bg-[#2B5280] text-white shadow-md"
                         : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
                     }`}
                   >
@@ -228,7 +228,7 @@ export default function InstallmentInterestCalculator() {
                     onClick={() => setMonths(m)}
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                       months === m
-                        ? "bg-emerald-500 text-white shadow-md"
+                        ? "bg-[#2B5280] text-white shadow-md"
                         : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
                     }`}
                   >
@@ -266,7 +266,7 @@ export default function InstallmentInterestCalculator() {
               className="flex-1 h-2 bg-neutral-200 rounded-lg appearance-none cursor-pointer accent-orange-500"
             />
             <div className="w-20 text-center">
-              <span className="text-lg font-bold text-emerald-600">
+              <span className="text-lg font-bold text-[#1E3A5F]">
                 {interestRate}
               </span>
               <span className="text-sm text-neutral-500">%</span>
@@ -290,16 +290,16 @@ export default function InstallmentInterestCalculator() {
         </div>
 
         {/* 결과 영역 */}
-        <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 space-y-4">
+        <div className="bg-gradient-to-r from-[#F5F8FB] to-teal-50 rounded-xl p-6 space-y-4">
           <div className="text-center">
             <p className="text-sm text-neutral-600 mb-2">월 납부액</p>
-            <p className="text-4xl font-bold text-emerald-600">
+            <p className="text-4xl font-bold text-[#1E3A5F]">
               {formatNumber(monthlyPayment)}
               <span className="text-xl font-normal text-neutral-500">원</span>
             </p>
           </div>
 
-          <div className="border-t border-emerald-200 pt-4 grid grid-cols-2 gap-4">
+          <div className="border-t border-[#B8D0E8] pt-4 grid grid-cols-2 gap-4">
             <div className="text-center">
               <p className="text-xs text-neutral-500 mb-1">총 납부액</p>
               <p className="text-lg font-semibold text-neutral-700">
@@ -408,7 +408,7 @@ export default function InstallmentInterestCalculator() {
                 <div
                   key={rate}
                   className={`flex justify-between items-center p-2 rounded-lg ${
-                    interestRate === rate ? "bg-emerald-100" : ""
+                    interestRate === rate ? "bg-[#EDF2F8]" : ""
                   }`}
                 >
                   <span className="text-sm text-neutral-600">연 {rate}%</span>
@@ -435,12 +435,12 @@ export default function InstallmentInterestCalculator() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">금리 ↓ / 기간 →</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">6개월</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">12개월</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">24개월</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">36개월</th>
+                <tr className="bg-[#EDF2F8] border-b-2 border-[#4A7AB5]">
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">금리 ↓ / 기간 →</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">6개월</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">12개월</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">24개월</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden sm:table-cell">36개월</th>
                   <th className="py-2 px-2 text-center text-neutral-600 font-medium border border-gray-300 hidden md:table-cell">한줄평</th>
                 </tr>
               </thead>
@@ -453,18 +453,18 @@ export default function InstallmentInterestCalculator() {
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">7.8만</td>
                   <td className="py-2 px-2 text-center text-green-600 text-xs border border-gray-300 hidden md:table-cell">자동차 저금리</td>
                 </tr>
-                <tr className="bg-emerald-50 border-b border-neutral-200">
-                  <td className="py-2 px-2 text-center font-medium text-emerald-700 border border-gray-300">10%</td>
+                <tr className="bg-[#F5F8FB] border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-[#162F4F] border border-gray-300">10%</td>
                   <td className="py-2 px-2 text-center border border-gray-300">2.9만</td>
                   <td className="py-2 px-2 text-center border border-gray-300">5.5만</td>
                   <td className="py-2 px-2 text-center border border-gray-300">10.6만</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">16만</td>
-                  <td className="py-2 px-2 text-center text-emerald-600 text-xs border border-gray-300 hidden md:table-cell">신용대출 평균</td>
+                  <td className="py-2 px-2 text-center text-[#1E3A5F] text-xs border border-gray-300 hidden md:table-cell">신용대출 평균</td>
                 </tr>
                 <tr className="bg-yellow-50 border-b border-neutral-200">
                   <td className="py-2 px-2 text-center font-medium text-yellow-700 border border-gray-300">15%</td>
                   <td className="py-2 px-2 text-center border border-gray-300">4.4만</td>
-                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">8.3만</td>
+                  <td className="py-2 px-2 text-center font-bold text-[#1E3A5F] border border-gray-300">8.3만</td>
                   <td className="py-2 px-2 text-center border border-gray-300">16.2만</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">24.7만</td>
                   <td className="py-2 px-2 text-center text-yellow-600 text-xs border border-gray-300 hidden md:table-cell">카드 할부 평균</td>
@@ -488,9 +488,9 @@ export default function InstallmentInterestCalculator() {
               </tbody>
             </table>
           </div>
-          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
-            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
-            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+          <div className="mt-4 p-3 bg-[#EDF2F8] rounded-lg">
+            <p className="text-xs text-[#132A42] font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-[#162F4F] mt-1 space-y-1">
               <li>• 무이자 할부 이벤트를 적극 활용하세요!</li>
               <li>• 기간이 길수록 총 이자가 급증해요 (36개월 = 6개월 × 5배)</li>
               <li>• 카드 할부보다 신용대출이 금리가 낮은 경우도 있어요</li>

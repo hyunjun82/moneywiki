@@ -53,7 +53,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>다주택자 <span className="text-emerald-600">장기보유특별공제</span> 적용 조건 공제율과 계산</>,
+    h1: <>다주택자 <span className="text-[#1E3A5F]">장기보유특별공제</span> 적용 조건 공제율과 계산</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -102,7 +102,7 @@ const data: SpokeData = {
           </p>
 
           <RateCards cards={[
-            { value: '최대 30%', label: '유예 기간 중', lines: ['~2026.5.9', '보유 15년 이상'], highlight: '가능', highlightColor: 'emerald' as const },
+            { value: '최대 30%', label: '유예 기간 중', lines: ['~2026.5.9', '보유 15년 이상'], highlight: '가능', highlightColor: 'navy' as const },
             { value: '0%', label: '중과 적용 시', lines: ['2026.5.10~', '장특공제 배제'], highlight: '불가', highlightColor: 'orange' as const },
             { value: '최대 80%', label: '1세대 1주택', lines: ['보유 40% + 거주 40%', '고가주택 초과분'], active: true },
           ]} />

@@ -1,0 +1,301 @@
+import Link from 'next/link'
+import type { SpokeData } from './types'
+import { SpokeTable, FormulaBox, SpokeStepCards, SpokeRateBars, SpokeCompareCards, SpokeChecklist, SpokeTimeline, TipBox } from '@/components/spoke/SpokeBlocks'
+
+// === SPOKE DATA ===
+// Visual Spec: S1(SpokeTable+FormulaBox), S2(SpokeStepCards+SpokeRateBars), S3(SpokeCompareCards+SpokeChecklist), S4(SpokeTimeline+TipBox)
+
+const data: SpokeData = {
+  slug: '스마트상점-기술보급-사업-신청-방법-2026',
+
+  meta: {
+    title: '2026 스마트상점 기술보급 사업 신청 방법 키오스크 지원금',
+    description: '키오스크 500만원, 서빙로봇까지 정부가 대줘요. 2026년 스마트상점 기술보급사업 신청 방법과 지원 한도를 정리했어요',
+    keywords: ['스마트상점 기술보급 사업 신청 방법 2026', '키오스크 테이블오더 도입 지원금 신청', '스마트상점 지원 한도 500만원 700만원', '스마트상점 자부담 비율 렌탈형 SW형'],
+    ogTitle: '2026 스마트상점 기술보급 신청 방법 | 머니위키',
+    ogDescription: '키오스크 500만원까지 정부 지원, 2026년 스마트상점 신청법 총정리',
+  },
+
+  hub: {
+    url: '/w/소상공인-시설개선-지원금-종류-신청-방법-2026',
+    name: '소상공인 시설개선 지원금 종류 신청 방법',
+  },
+
+  breadcrumb: ['지원금', '스마트상점 기술보급 신청'],
+
+  hero: {
+    badge: '2026년 11,000개',
+    h1: <>2026 <span className="text-emerald-600">스마트상점 기술보급 사업</span> 신청 방법 — 키오스크 500만원 지원</>,
+    intro: (
+      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+        키오스크 500만원, 서빙로봇까지 정부가 지원해줍니다. 배리어프리 기기는 700만원까지!
+        2026년 스마트상점 기술보급사업 신청 방법과 지원 한도를 정리했어요.
+      </p>
+    ),
+    hubCTA: {
+      badge: '올인원',
+      desc: '소상공인 시설개선 지원금 모든 종류 한눈에 비교',
+    },
+  },
+
+  toc: [
+    { id: 's1', title: '2026년 스마트상점 지원 대상 기기' },
+    { id: 's2', title: '신청 절차 5단계 완벽 가이드' },
+    { id: 's3', title: '구입형 vs 렌탈형, 어떤 게 유리한가요?' },
+    { id: 's4', title: '신청 후 일정과 유의사항' },
+  ],
+
+  sections: [
+    // === S1: SpokeTable + FormulaBox ===
+    {
+      id: 's1',
+      title: '2026년 스마트상점 지원 대상 기기',
+      intro: (
+        <>
+          <p>키오스크, 서빙로봇, 스마트 POS까지 다양한 디지털 장비를 지원받을 수 있어요. 2026년에는 <strong>11,000개 상점</strong>을 지원합니다.</p>
+          <p>무인화·자동화 기기부터 배리어프리 시설까지, 내 가게에 필요한 장비를 확인하세요.</p>
+        </>
+      ),
+      visuals: [
+        <SpokeTable
+          key="devices"
+          caption="지원 가능 기기 총정리"
+          headers={['분야', '세부 항목', '지원 한도', '자부담']}
+          rows={[
+            ['무인화', '키오스크, 테이블오더', '300만원', '30%'],
+            ['자동화', '서빙로봇, 자동조리기', '500만원', '50%'],
+            ['디지털', '스마트 POS, 재고관리', '200만원', '20%'],
+            ['배리어프리', '휠체어 리프트, 점자 키오스크', '700만원', '10%'],
+            ['소프트웨어', '클라우드 POS, 회계 프로그램', '30만원/연', '0%'],
+          ]}
+        />,
+        <FormulaBox
+          key="calc"
+          title="실제 부담 금액 계산기"
+          items={[
+            {
+              label: '예시 1: 카페 테이블오더 도입 (250만원)',
+              formula: '총 비용 250만원 × 자부담 30% = 본인 부담 75만원',
+              result: '정부 지원 175만원',
+              explanation: '자부담 30%만 내면 됩니다',
+            },
+            {
+              label: '예시 2: 음식점 서빙로봇 구입 (1,000만원)',
+              formula: '지원 한도 500만원 (자부담 50%)',
+              result: '정부 지원 500만원, 본인 부담 500만원',
+              explanation: '지원 한도 초과분은 전액 자부담',
+            },
+          ]}
+        />,
+      ],
+    },
+
+    // === S2: SpokeStepCards + SpokeRateBars ===
+    {
+      id: 's2',
+      title: '신청 절차 5단계 완벽 가이드',
+      intro: (
+        <>
+          <p>스마트상점 홈페이지(<strong>sbiz.or.kr</strong>)에서 온라인 신청하시면 됩니다. 견적서 3개는 필수예요!</p>
+          <p>서류 준비부터 심사 결과까지 약 <strong>2~3개월</strong> 소요됩니다.</p>
+        </>
+      ),
+      visuals: [
+        <SpokeStepCards
+          key="steps"
+          steps={[
+            {
+              stepNumber: 1,
+              title: '사업공고 확인',
+              description: '2~3월 소진공 홈페이지 공고',
+              tips: ['매년 2월 중 공고', '신청 기간 약 4주'],
+            },
+            {
+              stepNumber: 2,
+              title: '지원 기기 선정 & 견적 3개 받기',
+              description: '서로 다른 업체에서 동일 품목 견적',
+              tips: ['반드시 3개 업체', '사업자등록증 첨부'],
+            },
+            {
+              stepNumber: 3,
+              title: '스마트상점 홈페이지 회원가입',
+              description: 'sbiz.or.kr 접속 → 사업자 인증',
+              tips: ['공인인증서 필요', '10분 소요'],
+            },
+            {
+              stepNumber: 4,
+              title: '온라인 신청서 작성 & 서류 제출',
+              description: '사업계획서 + 증빙서류 업로드',
+              tips: ['임대차 잔여 1년 이상', '국세·지방세 완납'],
+            },
+            {
+              stepNumber: 5,
+              title: '심사 결과 확인 & 사업 진행',
+              description: '4~5월 선정 통보 → 사업 진행',
+              tips: ['3개월 내 완료 필수', '증빙 제출 후 입금'],
+            },
+          ]}
+        />,
+        <SpokeRateBars
+          key="rejection"
+          title="심사 탈락 사유 비율"
+          description="서류 미비가 1위, 임대차 계약 부족이 2위입니다"
+          items={[
+            { label: '서류 미비', value: 30, color: 'red' },
+            { label: '임대차 계약 1년 미만', value: 25, color: 'orange' },
+            { label: '동일 지원금 중복 신청', value: 20, color: 'yellow' },
+            { label: '자격 요건 미달', value: 15, color: 'blue' },
+            { label: '기타 사유', value: 10, color: 'gray' },
+          ]}
+        />,
+      ],
+    },
+
+    // === S3: SpokeCompareCards + SpokeChecklist ===
+    {
+      id: 's3',
+      title: '구입형 vs 렌탈형, 어떤 게 유리한가요?',
+      intro: (
+        <>
+          <p>초기 자금이 충분하면 <strong>구입형</strong>, 부담되면 <strong>렌탈형</strong>을 선택하세요.</p>
+          <p>렌탈형은 3년 약정이므로 중도 폐업 시 위약금이 발생할 수 있어요.</p>
+        </>
+      ),
+      visuals: [
+        <SpokeCompareCards
+          key="compare"
+          title="나에게 맞는 방식 찾기"
+          items={[
+            {
+              title: '구입형',
+              features: [
+                '초기 비용 높음 (수백만원)',
+                '총 지원액 500만원 1회',
+                '즉시 내 소유',
+                '유지보수 본인 부담',
+              ],
+              badge: '장기 운영 확실하면',
+            },
+            {
+              title: '렌탈형',
+              features: [
+                '초기 비용 낮음 (0원)',
+                '총 지원액 1,050만원 (3년 합산)',
+                '3년 후 반납/매입',
+                '유지보수 렌탈사 부담',
+              ],
+              badge: '초기 자금 부족하면',
+              highlight: true,
+            },
+          ]}
+        />,
+        <SpokeChecklist
+          key="checklist"
+          title="렌탈형 선택 시 체크리스트"
+          items={[
+            { text: '3년간 영업 지속 가능한가?', checked: false },
+            { text: '중도 해지 시 위약금 감당 가능한가?', checked: false },
+            { text: '3년 후 반납 또는 매입 계획이 있는가?', checked: false },
+            { text: '월 렌탈료가 0원이라는 것을 이해했는가?', checked: false },
+            { text: '유지보수는 렌탈사가 한다는 것을 알고 있는가?', checked: false },
+          ]}
+        />,
+      ],
+    },
+
+    // === S4: SpokeTimeline + TipBox ===
+    {
+      id: 's4',
+      title: '신청 후 일정과 유의사항',
+      intro: (
+        <>
+          <p>선정 후 <strong>3개월 이내</strong>에 기기 구입·설치를 완료해야 합니다. 증빙 서류 없으면 정산 불가하니 주의하세요.</p>
+          <p>3년 영업 유지 필수! 조기 폐업 시 지원금 전액 환수됩니다.</p>
+        </>
+      ),
+      visuals: [
+        <SpokeTimeline
+          key="schedule"
+          title="2026년 스마트상점 주요 일정"
+          events={[
+            {
+              date: '2월 중',
+              label: '공고',
+              description: '소진공 홈페이지 공고',
+            },
+            {
+              date: '3월 초~말',
+              label: '신청',
+              description: '온라인 신청 접수 (약 4주)',
+            },
+            {
+              date: '4월~5월 초',
+              label: '심사',
+              description: '서류·현장 심사',
+            },
+            {
+              date: '5월 중',
+              label: '선정 발표',
+              description: '개별 통보',
+            },
+            {
+              date: '6월~9월',
+              label: '사업 진행',
+              description: '구매·설치 (3개월)',
+            },
+            {
+              date: '10월~11월',
+              label: '정산',
+              description: '증빙 제출',
+            },
+          ]}
+        />,
+        <TipBox
+          key="tips"
+          type="warning"
+          title="선정 후 주의사항 5가지"
+        >
+          <ul className="space-y-2">
+            <li><strong>지정 업체 외 구매 금지</strong>: 견적서 제출한 업체에서만 구매</li>
+            <li><strong>견적 금액 초과 금지</strong>: 초과분은 지원금 삭감</li>
+            <li><strong>기한 내 완료 필수</strong>: 3개월 내 미완료 시 지원금 회수</li>
+            <li><strong>증빙 서류 필수</strong>: 세금계산서·카드전표 없으면 정산 불가</li>
+            <li><strong>3년 영업 유지</strong>: 조기 폐업 시 지원금 전액 환수</li>
+          </ul>
+        </TipBox>,
+      ],
+    },
+  ],
+
+  faq: [
+    {
+      question: '렌탈형과 구입형 둘 다 신청 가능한가요?',
+      answer: '아니요, 둘 중 하나만 선택해야 합니다. 렌탈형은 자부담 0원이지만 3년 약정이고, 구입형은 자부담 있지만 즉시 소유권 확보됩니다.',
+    },
+    {
+      question: '견적서를 꼭 3개 받아야 하나요?',
+      answer: '네, 필수입니다. 서로 다른 3개 업체에서 동일 품목으로 견적을 받아야 하며, 각 업체의 사업자등록증도 첨부해야 합니다.',
+    },
+    {
+      question: '배리어프리 기기는 뭐가 다른가요?',
+      answer: '휠체어 리프트, 점자 키오스크 등 장애인·고령자 접근성을 높이는 기기입니다. 일반 기기보다 지원 한도가 높고(700만원) 자부담도 낮습니다(10%).',
+    },
+    {
+      question: 'SW형은 어떤 경우에 신청하나요?',
+      answer: '클라우드 기반 POS나 회계 프로그램처럼 월 이용료를 내는 소프트웨어입니다. 연 30만원까지 지원받을 수 있고, 자부담은 0원입니다.',
+    },
+  ],
+
+  related: [
+    { text: '소상공인 시설개선 지원금 종류 비교', link: '/w/소상공인-시설개선-지원금-종류-비교-정리' },
+    { text: '지자체 매장 리모델링 지원금', link: '/w/지자체-소상공인-매장-리모델링-지원금-신청' },
+    { text: '시설개선 지원금 신청 서류 절차', link: '/w/소상공인-시설개선-지원금-신청-서류-절차' },
+  ],
+
+  sources: [
+    { label: '중소벤처기업부 스마트상점 기술보급사업 공고', url: 'https://www.mss.go.kr', date: '2026.02' },
+    { label: '소상공인시장진흥공단 스마트상점 홈페이지', url: 'https://sbiz.or.kr', date: '2026.02' },
+  ],
+}
+
+export default data

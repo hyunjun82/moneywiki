@@ -123,7 +123,7 @@ export function SpokeTable({ id, title, subtitle, headers, rows, highlightCol }:
 
 // --- RateCards ---
 export function RateCards({ cards }: {
-  cards: { value: string; label: string; lines: string[]; highlight?: string; highlightColor?: 'orange' | 'emerald'; active?: boolean }[]
+  cards: { value: string; label: string; lines: string[]; highlight?: string; highlightColor?: 'orange' | 'navy'; active?: boolean }[]
 }) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 my-6">
@@ -165,7 +165,7 @@ export function SpokeTimeline({ events }: {
       <div className="absolute left-[6px] top-[6px] bottom-[6px] w-0.5 bg-neutral-200" />
       {events.map((event, i) => {
         const dotClass =
-          event.status === 'current' ? 'border-[#1E3A5F] bg-[#1E3A5F] shadow-[0_0_0_3px_rgba(5,150,105,0.15)]' :
+          event.status === 'current' ? 'border-[#1E3A5F] bg-[#1E3A5F] shadow-[0_0_0_3px_rgba(30,58,95,0.15)]' :
           event.status === 'warning' ? 'border-orange-500 bg-orange-500' :
           'border-neutral-300 bg-white'
         const tagClass =

@@ -334,7 +334,7 @@ export default function AcquisitionTaxCalculator() {
               onClick={() => setPropertyType(item.type)}
               className={`flex-1 py-2.5 text-sm font-medium transition-all border-b-2 ${
                 propertyType === item.type
-                  ? "border-blue-500 text-emerald-600 bg-blue-50/50"
+                  ? "border-blue-500 text-[#1E3A5F] bg-blue-50/50"
                   : "border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50"
               }`}
             >
@@ -402,7 +402,7 @@ export default function AcquisitionTaxCalculator() {
                 <select
                   value={existingHouseCount}
                   onChange={(e) => setExistingHouseCount(parseInt(e.target.value))}
-                  className="px-3 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
+                  className="px-3 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:border-[#2B5280]"
                 >
                   <option value={0}>무주택</option>
                   <option value={1}>1주택</option>
@@ -482,7 +482,7 @@ export default function AcquisitionTaxCalculator() {
                   type="text"
                   value={priceInput}
                   onChange={(e) => handlePriceChange(e.target.value)}
-                  className="w-full px-3 py-2 pr-10 text-right text-sm border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
+                  className="w-full px-3 py-2 pr-10 text-right text-sm border border-gray-300 rounded focus:outline-none focus:border-[#2B5280]"
                   placeholder="0"
                 />
                 <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-gray-500 bg-blue-500 text-white px-2 py-0.5 rounded text-xs">원</span>
@@ -521,7 +521,7 @@ export default function AcquisitionTaxCalculator() {
           {/* 금액 표시 */}
           <div className="flex items-center gap-3">
             <div className="w-20 shrink-0"></div>
-            <span className="text-sm text-emerald-600 font-medium">{toManwon(price)}</span>
+            <span className="text-sm text-[#1E3A5F] font-medium">{toManwon(price)}</span>
           </div>
         </div>
 
@@ -535,7 +535,7 @@ export default function AcquisitionTaxCalculator() {
                   type="number"
                   value={area}
                   onChange={(e) => setArea(parseInt(e.target.value) || 0)}
-                  className="w-full px-3 py-2 pr-8 text-right text-sm border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
+                  className="w-full px-3 py-2 pr-8 text-right text-sm border border-gray-300 rounded focus:outline-none focus:border-[#2B5280]"
                 />
                 <span className="absolute right-2 top-1/2 -translate-y-1/2 text-xs text-white bg-blue-500 px-1.5 py-0.5 rounded">㎡</span>
               </div>
@@ -565,7 +565,7 @@ export default function AcquisitionTaxCalculator() {
           </button>
           <button
             onClick={calculate}
-            className="px-6 py-2 text-sm text-white bg-blue-500 rounded hover:bg-emerald-600 transition-colors font-medium"
+            className="px-6 py-2 text-sm text-white bg-blue-500 rounded hover:bg-[#1E3A5F] transition-colors font-medium"
           >
             계산하기
           </button>
@@ -615,7 +615,7 @@ export default function AcquisitionTaxCalculator() {
           <div className="mt-4 p-4 bg-blue-500 rounded-lg">
             <div className="flex justify-between items-center">
               <div>
-                <span className="text-emerald-100 text-sm">총 납부세액</span>
+                <span className="text-[#EDF2F8] text-sm">총 납부세액</span>
                 <span className="text-blue-200 text-xs ml-1">({result.totalRate.toFixed(2)}%)</span>
               </div>
               <span className="text-white text-xl font-bold">{formatNumber(result.totalTax)}원</span>
@@ -744,73 +744,73 @@ export default function AcquisitionTaxCalculator() {
       {/* 금액별 취득세액표 */}
       <div className="border-t border-gray-200">
         <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-200 bg-gray-50">
-          <span className="w-1 h-5 bg-emerald-500 rounded-full"></span>
+          <span className="w-1 h-5 bg-[#2B5280] rounded-full"></span>
           <h3 className="text-sm font-semibold text-gray-700">2026년 주택 가격별 취득세 예상액 (1주택자 기준)</h3>
         </div>
 
         <div className="p-4 overflow-x-auto">
           <table className="w-full text-xs border-collapse min-w-[420px]">
             <thead>
-              <tr className="bg-emerald-50">
-                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-emerald-800">주택가격</th>
-                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-emerald-800">세율</th>
-                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-emerald-800">1주택 세액</th>
-                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-emerald-800 hidden sm:table-cell">포인트</th>
+              <tr className="bg-[#F5F8FB]">
+                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-[#132A42]">주택가격</th>
+                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-[#132A42]">세율</th>
+                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-[#132A42]">1주택 세액</th>
+                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-[#132A42] hidden sm:table-cell">포인트</th>
               </tr>
             </thead>
             <tbody className="text-gray-600">
               <tr>
                 <td className="border border-gray-300 px-2 py-2 text-center font-medium">3억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">1.1%</td>
-                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">330만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-[#1E3A5F] font-medium">330만원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center text-gray-500 hidden sm:table-cell">청약 당첨 수준</td>
               </tr>
               <tr className="bg-gray-50">
                 <td className="border border-gray-300 px-2 py-2 text-center font-medium">5억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">1.1%</td>
-                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">550만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-[#1E3A5F] font-medium">550만원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center text-gray-500 hidden sm:table-cell">수도권 외곽</td>
               </tr>
               <tr className="bg-amber-100 border-2 border-amber-400">
                 <td className="border border-gray-300 px-2 py-2 text-center font-bold text-amber-700">6억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center font-bold text-amber-700">1.1%</td>
-                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-bold">660만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-[#1E3A5F] font-bold">660만원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center text-amber-600 font-medium hidden sm:table-cell">세율 상승 직전!</td>
               </tr>
               <tr className="bg-yellow-50">
                 <td className="border border-gray-300 px-2 py-2 text-center font-medium">7억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center text-amber-600 font-medium">1.77%</td>
-                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">1,237만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-[#1E3A5F] font-medium">1,237만원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center text-red-500 hidden sm:table-cell">6억대비 +577만!</td>
               </tr>
               <tr className="bg-yellow-50">
                 <td className="border border-gray-300 px-2 py-2 text-center font-medium">8억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center text-amber-600 font-medium">2.43%</td>
-                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">1,947만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-[#1E3A5F] font-medium">1,947만원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center text-gray-500 hidden sm:table-cell">누진세율 구간</td>
               </tr>
               <tr className="bg-red-100 border-2 border-red-400">
                 <td className="border border-gray-300 px-2 py-2 text-center font-bold text-red-700">9억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center font-bold text-red-700">3.1%</td>
-                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-bold">2,790만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-[#1E3A5F] font-bold">2,790만원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center text-red-600 font-medium hidden sm:table-cell">최고세율 적용!</td>
               </tr>
               <tr>
                 <td className="border border-gray-300 px-2 py-2 text-center font-medium">10억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">3.5%</td>
-                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">3,500만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-[#1E3A5F] font-medium">3,500만원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center text-gray-500 hidden sm:table-cell">고가주택 기준</td>
               </tr>
               <tr className="bg-gray-50">
                 <td className="border border-gray-300 px-2 py-2 text-center font-medium">12억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">3.5%</td>
-                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">4,200만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-[#1E3A5F] font-medium">4,200만원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center text-gray-500 hidden sm:table-cell">종부세 대상</td>
               </tr>
               <tr>
                 <td className="border border-gray-300 px-2 py-2 text-center font-medium">15억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">3.5%</td>
-                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">5,250만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-[#1E3A5F] font-medium">5,250만원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center text-gray-500 hidden sm:table-cell">강남 아파트급</td>
               </tr>
             </tbody>

@@ -142,7 +142,7 @@ export default function DSRCalculator() {
   const getDsrStatus = (dsrValue: number): { color: string; text: string; bg: string } => {
     if (dsrValue === 0) return { color: "text-neutral-500", text: "-", bg: "bg-neutral-50" };
     if (dsrValue <= 30) return { color: "text-green-600", text: "안전", bg: "bg-green-50" };
-    if (dsrValue <= 40) return { color: "text-emerald-600", text: "대출 가능", bg: "bg-blue-50" };
+    if (dsrValue <= 40) return { color: "text-[#1E3A5F]", text: "대출 가능", bg: "bg-blue-50" };
     if (dsrValue <= 50) return { color: "text-yellow-600", text: "제2금융권", bg: "bg-yellow-50" };
     return { color: "text-red-600", text: "초과", bg: "bg-red-50" };
   };
@@ -157,7 +157,7 @@ export default function DSRCalculator() {
     <>
       <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
       {/* 헤더 */}
-      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-[#1E3A5F] to-teal-600 px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -166,7 +166,7 @@ export default function DSRCalculator() {
           </div>
           <div>
             <h2 className="text-xl font-bold text-white">DSR 계산기</h2>
-            <p className="text-emerald-100 text-sm">총부채원리금상환비율 계산</p>
+            <p className="text-[#EDF2F8] text-sm">총부채원리금상환비율 계산</p>
           </div>
         </div>
       </div>
@@ -186,12 +186,12 @@ export default function DSRCalculator() {
                 setAnnualIncome(value);
               }}
               placeholder="세전 연봉"
-              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 transition-colors text-right pr-12"
+              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-[#2B5280] focus:ring-0 transition-colors text-right pr-12"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
           </div>
           {annualIncome > 0 && (
-            <p className="mt-1 text-sm text-emerald-600">{formatWon(annualIncome)}</p>
+            <p className="mt-1 text-sm text-[#1E3A5F]">{formatWon(annualIncome)}</p>
           )}
 
           <div className="flex gap-2 mt-2">
@@ -211,7 +211,7 @@ export default function DSRCalculator() {
             </label>
             <button
               onClick={addLoan}
-              className="px-3 py-1 text-sm bg-emerald-100 text-emerald-600 rounded-lg hover:bg-emerald-200 transition-colors"
+              className="px-3 py-1 text-sm bg-[#EDF2F8] text-[#1E3A5F] rounded-lg hover:bg-[#B8D0E8] transition-colors"
             >
               + 대출 추가
             </button>
@@ -229,7 +229,7 @@ export default function DSRCalculator() {
                     type="text"
                     value={loan.name}
                     onChange={(e) => updateLoan(loan.id, "name", e.target.value)}
-                    className="w-24 px-2 py-1 text-sm border border-neutral-200 rounded-lg focus:border-emerald-500"
+                    className="w-24 px-2 py-1 text-sm border border-neutral-200 rounded-lg focus:border-[#2B5280]"
                     placeholder="대출명"
                   />
                   <input
@@ -239,7 +239,7 @@ export default function DSRCalculator() {
                       const value = parseInt(e.target.value.replace(/,/g, "")) || 0;
                       updateLoan(loan.id, "monthlyPayment", value);
                     }}
-                    className="flex-1 px-3 py-1 text-sm border border-neutral-200 rounded-lg focus:border-emerald-500 text-right"
+                    className="flex-1 px-3 py-1 text-sm border border-neutral-200 rounded-lg focus:border-[#2B5280] text-right"
                     placeholder="월 상환금"
                   />
                   <span className="text-sm text-neutral-500">원/월</span>
@@ -258,8 +258,8 @@ export default function DSRCalculator() {
         </div>
 
         {/* 신규 대출 */}
-        <div className="mb-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
-          <h4 className="font-medium text-emerald-800 mb-3">신규 대출 (받고 싶은 대출)</h4>
+        <div className="mb-6 p-4 bg-[#F5F8FB] rounded-xl border border-[#EDF2F8]">
+          <h4 className="font-medium text-[#132A42] mb-3">신규 대출 (받고 싶은 대출)</h4>
 
           <div className="space-y-3">
             {/* 대출 종류 */}
@@ -270,8 +270,8 @@ export default function DSRCalculator() {
                   onClick={() => setLoanType("mortgage")}
                   className={`py-2 px-3 rounded-lg text-sm font-medium transition-colors ${
                     loanType === "mortgage"
-                      ? "bg-emerald-600 text-white"
-                      : "bg-white border border-emerald-200 text-emerald-700 hover:bg-emerald-100"
+                      ? "bg-[#1E3A5F] text-white"
+                      : "bg-white border border-[#B8D0E8] text-[#162F4F] hover:bg-[#EDF2F8]"
                   }`}
                 >
                   주택담보
@@ -280,8 +280,8 @@ export default function DSRCalculator() {
                   onClick={() => setLoanType("credit")}
                   className={`py-2 px-3 rounded-lg text-sm font-medium transition-colors ${
                     loanType === "credit"
-                      ? "bg-emerald-600 text-white"
-                      : "bg-white border border-emerald-200 text-emerald-700 hover:bg-emerald-100"
+                      ? "bg-[#1E3A5F] text-white"
+                      : "bg-white border border-[#B8D0E8] text-[#162F4F] hover:bg-[#EDF2F8]"
                   }`}
                 >
                   신용대출
@@ -290,8 +290,8 @@ export default function DSRCalculator() {
                   onClick={() => setLoanType("other")}
                   className={`py-2 px-3 rounded-lg text-sm font-medium transition-colors ${
                     loanType === "other"
-                      ? "bg-emerald-600 text-white"
-                      : "bg-white border border-emerald-200 text-emerald-700 hover:bg-emerald-100"
+                      ? "bg-[#1E3A5F] text-white"
+                      : "bg-white border border-[#B8D0E8] text-[#162F4F] hover:bg-[#EDF2F8]"
                   }`}
                 >
                   기타
@@ -340,12 +340,12 @@ export default function DSRCalculator() {
                     setNewLoanAmount(value);
                   }}
                   placeholder="희망 대출금액"
-                  className="w-full px-3 py-2 border border-emerald-200 rounded-lg focus:border-emerald-500 text-right pr-10"
+                  className="w-full px-3 py-2 border border-[#B8D0E8] rounded-lg focus:border-[#2B5280] text-right pr-10"
                 />
                 <span className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">원</span>
               </div>
               {newLoanAmount > 0 && (
-                <p className="text-xs text-emerald-600 mt-1">{formatWon(newLoanAmount)}</p>
+                <p className="text-xs text-[#1E3A5F] mt-1">{formatWon(newLoanAmount)}</p>
               )}
             </div>
 
@@ -360,7 +360,7 @@ export default function DSRCalculator() {
                   step="0.1"
                   min="0"
                   max="20"
-                  className="w-full px-3 py-2 border border-emerald-200 rounded-lg focus:border-emerald-500 text-right"
+                  className="w-full px-3 py-2 border border-[#B8D0E8] rounded-lg focus:border-[#2B5280] text-right"
                 />
               </div>
               <div>
@@ -368,7 +368,7 @@ export default function DSRCalculator() {
                 <select
                   value={newLoanYears}
                   onChange={(e) => setNewLoanYears(parseInt(e.target.value))}
-                  className="w-full px-3 py-2 border border-emerald-200 rounded-lg focus:border-emerald-500"
+                  className="w-full px-3 py-2 border border-[#B8D0E8] rounded-lg focus:border-[#2B5280]"
                 >
                   <option value={10}>10년</option>
                   <option value={15}>15년</option>
@@ -384,7 +384,7 @@ export default function DSRCalculator() {
             {newLoanMonthlyPayment > 0 && (
               <div className="p-2 bg-white rounded-lg text-sm">
                 <span className="text-neutral-500">예상 월 상환금:</span>
-                <span className="font-bold text-emerald-600 ml-2">{formatNumber(newLoanMonthlyPayment)}원</span>
+                <span className="font-bold text-[#1E3A5F] ml-2">{formatNumber(newLoanMonthlyPayment)}원</span>
                 {useStressDsr && getStressRate() > 0 && (
                   <span className="text-orange-600 ml-2 text-xs">(스트레스: {formatNumber(stressMonthlyPayment)}원)</span>
                 )}
@@ -443,7 +443,7 @@ export default function DSRCalculator() {
             {/* DSR 비교 (일반 vs 스트레스) */}
             {annualIncome > 0 && newLoanAmount > 0 && getStressRate() > 0 && (
               <div className="grid grid-cols-2 gap-3">
-                <div className={`bg-white rounded-xl p-4 text-center ${!useStressDsr ? "ring-2 ring-emerald-500" : ""}`}>
+                <div className={`bg-white rounded-xl p-4 text-center ${!useStressDsr ? "ring-2 ring-[#2B5280]" : ""}`}>
                   <div className="text-xs text-neutral-500 mb-1">일반 DSR</div>
                   <div className={`text-2xl font-bold ${getDsrStatus(dsr).color}`}>
                     {dsr.toFixed(1)}%
@@ -494,7 +494,7 @@ export default function DSRCalculator() {
                     DSR 40% 기준 최대 대출 가능액
                     {useStressDsr && <span className="text-orange-500 text-xs ml-1">(스트레스 기준)</span>}
                   </div>
-                  <div className="text-2xl font-bold text-emerald-600">
+                  <div className="text-2xl font-bold text-[#1E3A5F]">
                     {currentMaxLoan > 0 ? formatWon(currentMaxLoan) : "불가"}
                   </div>
                   <div className="text-xs text-neutral-500 mt-1">
@@ -541,16 +541,16 @@ export default function DSRCalculator() {
         </div>
 
         {/* DSR 기준 안내 */}
-        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
-          <h4 className="font-medium text-emerald-800 mb-3">DSR 규제 기준 (2026년)</h4>
+        <div className="mt-6 p-4 bg-[#F5F8FB] rounded-xl border border-[#EDF2F8]">
+          <h4 className="font-medium text-[#132A42] mb-3">DSR 규제 기준 (2026년)</h4>
           <div className="space-y-2 text-sm">
             <div className="flex justify-between items-center p-2 bg-white rounded-lg">
               <span className="text-neutral-600">은행권</span>
-              <span className="font-medium text-emerald-600">DSR 40%</span>
+              <span className="font-medium text-[#1E3A5F]">DSR 40%</span>
             </div>
             <div className="flex justify-between items-center p-2 bg-white rounded-lg">
               <span className="text-neutral-600">제2금융권</span>
-              <span className="font-medium text-emerald-600">DSR 50%</span>
+              <span className="font-medium text-[#1E3A5F]">DSR 50%</span>
             </div>
             <div className="flex justify-between items-center p-2 bg-white rounded-lg">
               <span className="text-neutral-600">서민금융</span>
@@ -590,17 +590,17 @@ export default function DSRCalculator() {
         </div>
 
         {/* 이용안내 - 간소화 */}
-        <div className="mt-4 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
-          <h4 className="font-medium text-emerald-800 mb-2 flex items-center gap-2">
+        <div className="mt-4 p-4 bg-[#F5F8FB] rounded-xl border border-[#EDF2F8]">
+          <h4 className="font-medium text-[#132A42] mb-2 flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             DSR이 뭔가요?
           </h4>
-          <p className="text-sm text-emerald-700 mb-2">
+          <p className="text-sm text-[#162F4F] mb-2">
             내 소득 대비 대출 상환액 비율이에요. <span className="font-medium">40%가 넘으면 은행에서 대출이 어려워져요.</span>
           </p>
-          <div className="text-sm text-emerald-700 space-y-1">
+          <div className="text-sm text-[#162F4F] space-y-1">
             <div className="flex items-start gap-2">
               <span className="font-medium shrink-0">✓</span>
               <span><span className="font-medium">모든 대출</span>이 포함돼요 (주택담보, 신용대출, 카드론, 학자금 등)</span>
@@ -629,21 +629,21 @@ export default function DSRCalculator() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">
+                <tr className="bg-[#EDF2F8] border-b-2 border-[#4A7AB5]">
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">
                     내 연봉
                   </th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden sm:table-cell">
                     <div>1년 상환</div>
-                    <div className="text-xs font-normal text-emerald-600">(40% 한도)</div>
+                    <div className="text-xs font-normal text-[#1E3A5F]">(40% 한도)</div>
                   </th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">
                     <div>월 상환액</div>
-                    <div className="text-xs font-normal text-emerald-600">(최대)</div>
+                    <div className="text-xs font-normal text-[#1E3A5F]">(최대)</div>
                   </th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">
                     <div>대출 가능액</div>
-                    <div className="text-xs font-normal text-emerald-600">(최대)</div>
+                    <div className="text-xs font-normal text-[#1E3A5F]">(최대)</div>
                   </th>
                 </tr>
               </thead>
@@ -660,11 +660,11 @@ export default function DSRCalculator() {
                   <td className="py-2 px-2 text-center border border-gray-300">133만원</td>
                   <td className="py-2 px-2 text-center font-bold text-green-700 border border-gray-300">2.8억원</td>
                 </tr>
-                <tr className="bg-emerald-50 border-b border-neutral-200 hover:bg-emerald-100 transition-colors">
-                  <td className="py-2 px-2 text-center font-medium text-emerald-700 border border-gray-300">5천만원</td>
+                <tr className="bg-[#F5F8FB] border-b border-neutral-200 hover:bg-[#EDF2F8] transition-colors">
+                  <td className="py-2 px-2 text-center font-medium text-[#162F4F] border border-gray-300">5천만원</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">2,000만원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">167만원</td>
-                  <td className="py-2 px-2 text-center font-bold text-emerald-700 border border-gray-300">3.5억원</td>
+                  <td className="py-2 px-2 text-center font-bold text-[#162F4F] border border-gray-300">3.5억원</td>
                 </tr>
                 <tr className="bg-blue-50 border-b border-neutral-200 hover:bg-blue-100 transition-colors">
                   <td className="py-2 px-2 text-center font-medium text-blue-700 border border-gray-300">6천만원</td>
@@ -687,9 +687,9 @@ export default function DSRCalculator() {
               </tbody>
             </table>
           </div>
-          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
-            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
-            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+          <div className="mt-4 p-3 bg-[#EDF2F8] rounded-lg">
+            <p className="text-xs text-[#132A42] font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-[#162F4F] mt-1 space-y-1">
               <li>• 기존 대출이 있으면 최대 대출액이 그만큼 줄어요</li>
               <li>• 금리가 낮을수록 같은 월상환액으로 더 많이 빌릴 수 있어요</li>
               <li>• 부부합산 소득으로 계산하면 한도가 크게 늘어나요</li>

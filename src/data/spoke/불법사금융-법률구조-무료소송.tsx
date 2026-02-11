@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>불법사금융 <span className="text-emerald-600">법률 구조</span> 지원 — 무료 소송 대리와 채무자대리인</>,
+    h1: <>불법사금융 <span className="text-[#1E3A5F]">법률 구조</span> 지원 — 무료 소송 대리와 채무자대리인</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -70,7 +70,7 @@ const data: SpokeData = {
           </p>
 
           <RateCards cards={[
-            { value: '0원', label: '변호사 비용', lines: ['정부 예산으로', '전액 지원해요'], highlight: '전액 지원', highlightColor: 'emerald' as const },
+            { value: '0원', label: '변호사 비용', lines: ['정부 예산으로', '전액 지원해요'], highlight: '전액 지원', highlightColor: 'navy' as const },
             { value: '0원', label: '소송 비용', lines: ['인지대, 송달료 포함', '전부 정부 부담'], active: true },
             { value: '연 20%', label: '법정 최고금리', lines: ['초과 이자는 무효', '돌려받을 수 있어요'], highlight: '무효', highlightColor: 'orange' as const },
           ]} />

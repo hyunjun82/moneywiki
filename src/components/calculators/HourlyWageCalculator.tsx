@@ -52,7 +52,7 @@ export default function HourlyWageCalculator() {
 
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
-      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-[#1E3A5F] to-teal-600 px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -61,7 +61,7 @@ export default function HourlyWageCalculator() {
           </div>
           <div>
             <h2 className="text-xl font-bold text-white">시급 계산기</h2>
-            <p className="text-emerald-100 text-sm">시급 ↔ 월급 변환</p>
+            <p className="text-[#EDF2F8] text-sm">시급 ↔ 월급 변환</p>
           </div>
         </div>
       </div>
@@ -73,7 +73,7 @@ export default function HourlyWageCalculator() {
             onClick={() => setMode("toMonthly")}
             className={`flex-1 py-3 rounded-xl font-medium transition-all ${
               mode === "toMonthly"
-                ? "bg-emerald-600 text-white"
+                ? "bg-[#1E3A5F] text-white"
                 : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
             }`}
           >
@@ -83,7 +83,7 @@ export default function HourlyWageCalculator() {
             onClick={() => setMode("toHourly")}
             className={`flex-1 py-3 rounded-xl font-medium transition-all ${
               mode === "toHourly"
-                ? "bg-emerald-600 text-white"
+                ? "bg-[#1E3A5F] text-white"
                 : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
             }`}
           >
@@ -101,12 +101,12 @@ export default function HourlyWageCalculator() {
                 value={hourlyWage > 0 ? formatNumber(hourlyWage) : ""}
                 onChange={(e) => setHourlyWage(parseInt(e.target.value.replace(/,/g, "")) || 0)}
                 placeholder={`2026 최저시급 ${formatNumber(MIN_WAGE_2026)}원`}
-                className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 text-right pr-12"
+                className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-[#2B5280] focus:ring-0 text-right pr-12"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
             </div>
             <div className="flex gap-2 mt-3">
-              <button onClick={() => setHourlyWage(MIN_WAGE_2026)} className="flex-1 py-2 bg-emerald-100 hover:bg-emerald-200 text-emerald-600 rounded-lg text-sm font-medium">최저시급</button>
+              <button onClick={() => setHourlyWage(MIN_WAGE_2026)} className="flex-1 py-2 bg-[#EDF2F8] hover:bg-[#B8D0E8] text-[#1E3A5F] rounded-lg text-sm font-medium">최저시급</button>
               <button onClick={() => setHourlyWage(12000)} className="flex-1 py-2 bg-neutral-100 hover:bg-neutral-200 rounded-lg text-sm font-medium">12,000</button>
               <button onClick={() => setHourlyWage(15000)} className="flex-1 py-2 bg-neutral-100 hover:bg-neutral-200 rounded-lg text-sm font-medium">15,000</button>
               <button onClick={() => setHourlyWage(20000)} className="flex-1 py-2 bg-neutral-100 hover:bg-neutral-200 rounded-lg text-sm font-medium">20,000</button>
@@ -122,7 +122,7 @@ export default function HourlyWageCalculator() {
                 value={monthlyWage > 0 ? formatNumber(monthlyWage) : ""}
                 onChange={(e) => setMonthlyWage(parseInt(e.target.value.replace(/,/g, "")) || 0)}
                 placeholder="월급을 입력하세요"
-                className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 text-right pr-12"
+                className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-[#2B5280] focus:ring-0 text-right pr-12"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
             </div>
@@ -148,7 +148,7 @@ export default function HourlyWageCalculator() {
             <select
               value={weeklyHours}
               onChange={(e) => setWeeklyHours(parseInt(e.target.value))}
-              className="w-full px-3 py-2 border-2 border-neutral-200 rounded-xl focus:border-emerald-500"
+              className="w-full px-3 py-2 border-2 border-neutral-200 rounded-xl focus:border-[#2B5280]"
             >
               {[15, 20, 25, 30, 35, 40].map((h) => (
                 <option key={h} value={h}>{h}시간</option>
@@ -161,7 +161,7 @@ export default function HourlyWageCalculator() {
                 type="checkbox"
                 checked={includeHolidayPay}
                 onChange={(e) => setIncludeHolidayPay(e.target.checked)}
-                className="w-5 h-5 text-emerald-600 rounded"
+                className="w-5 h-5 text-[#1E3A5F] rounded"
               />
               <span className="text-sm text-neutral-700">주휴수당 포함</span>
             </label>
@@ -170,13 +170,13 @@ export default function HourlyWageCalculator() {
 
         {/* 결과 */}
         {(resultHourly > 0 || resultMonthly > 0) && (
-          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
-            <h3 className="text-lg font-bold text-emerald-800 mb-4">환산 결과</h3>
+          <div className="bg-gradient-to-r from-[#F5F8FB] to-teal-50 rounded-2xl p-6 border border-[#EDF2F8]">
+            <h3 className="text-lg font-bold text-[#132A42] mb-4">환산 결과</h3>
 
             <div className="grid grid-cols-2 gap-4 mb-4">
               <div className="bg-white rounded-xl p-4">
                 <div className="text-sm text-neutral-500 mb-1">시급</div>
-                <div className="text-2xl font-bold text-emerald-600">{formatNumber(resultHourly)}원</div>
+                <div className="text-2xl font-bold text-[#1E3A5F]">{formatNumber(resultHourly)}원</div>
                 {isMinimumWage && (
                   <div className="text-xs text-red-500 mt-1">최저시급 미달!</div>
                 )}
@@ -200,9 +200,9 @@ export default function HourlyWageCalculator() {
           </div>
         )}
 
-        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
-          <h4 className="font-medium text-emerald-800 mb-2">계산 기준</h4>
-          <ul className="text-sm text-emerald-700 space-y-1">
+        <div className="mt-6 p-4 bg-[#F5F8FB] rounded-xl border border-[#EDF2F8]">
+          <h4 className="font-medium text-[#132A42] mb-2">계산 기준</h4>
+          <ul className="text-sm text-[#162F4F] space-y-1">
             <li>• 월 환산: 주 근무시간 × 4.345주</li>
             <li>• 주휴수당: 주 15시간 이상 근무 시 1일분</li>
             <li>• 2026년 최저시급: {formatNumber(MIN_WAGE_2026)}원</li>
@@ -217,12 +217,12 @@ export default function HourlyWageCalculator() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">시급</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">일급(8h)</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">월급</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">연봉</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">한줄평</th>
+                <tr className="bg-[#EDF2F8] border-b-2 border-[#4A7AB5]">
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">시급</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">일급(8h)</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">월급</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">연봉</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden sm:table-cell">한줄평</th>
                 </tr>
               </thead>
               <tbody>
@@ -240,12 +240,12 @@ export default function HourlyWageCalculator() {
                   <td className="py-2 px-2 text-center border border-gray-300">2,752만원</td>
                   <td className="py-2 px-2 text-center text-gray-500 border border-gray-300 hidden sm:table-cell">최저+α</td>
                 </tr>
-                <tr className="bg-emerald-50 border-b border-neutral-200">
-                  <td className="py-2 px-2 text-center font-bold text-emerald-700 border border-gray-300">12,000원</td>
+                <tr className="bg-[#F5F8FB] border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-bold text-[#162F4F] border border-gray-300">12,000원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">96,000원</td>
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">250만원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">3,002만원</td>
-                  <td className="py-2 px-2 text-center text-emerald-600 border border-gray-300 hidden sm:table-cell">연봉 3천 돌파!</td>
+                  <td className="py-2 px-2 text-center text-[#1E3A5F] border border-gray-300 hidden sm:table-cell">연봉 3천 돌파!</td>
                 </tr>
                 <tr className="border-b border-neutral-200">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">15,000원</td>
@@ -272,9 +272,9 @@ export default function HourlyWageCalculator() {
             </table>
           </div>
 
-          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
-            <p className="text-xs text-emerald-800 font-medium">💡 알바 꿀팁</p>
-            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+          <div className="mt-4 p-3 bg-[#EDF2F8] rounded-lg">
+            <p className="text-xs text-[#132A42] font-medium">💡 알바 꿀팁</p>
+            <ul className="text-xs text-[#162F4F] mt-1 space-y-1">
               <li>• <strong>주휴수당</strong>은 주 15시간 이상 근무 시 필수 지급!</li>
               <li>• 시급 1,000원 차이 = 월급 약 <strong>21만원</strong> 차이</li>
               <li>• 최저시급 미달 시 노동청에 신고 가능해요</li>

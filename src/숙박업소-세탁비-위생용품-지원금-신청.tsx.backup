@@ -1,0 +1,273 @@
+import Link from 'next/link'
+import type { SpokeData } from './types'
+import { SpokeCompareCards, FormulaBox, SpokeRateBars, SpokeTable, SpokeFlow, TipBox, SpokeChecklist, SpokeTimeline } from '@/components/spoke/SpokeBlocks'
+
+// === SPOKE DATA ===
+// Visual Spec: S1(SpokeCompareCards+FormulaBox), S2(SpokeRateBars+SpokeTable), S3(SpokeFlow+TipBox), S4(SpokeChecklist+SpokeTimeline)
+
+const data: SpokeData = {
+  slug: '숙박업소-세탁비-위생용품-지원금-신청',
+
+  meta: {
+    title: '2026 숙박업소 세탁비 위생용품 지원금 신청 방법 조건',
+    description: '곡성군은 숙박업소 세탁비를 연 300만원까지 지원해요. 숙박업 전용 시설 지원금 종류와 신청법을 정리했어요',
+    keywords: ['숙박업소 세탁비 지원금 신청 방법 조건', '숙박업 시설개선 위생용품 지원금 종류', '펜션 민박 관광숙박 시설 보조금 신청', '숙박업소 소상공인 지원금 지역별 비교'],
+    ogTitle: '2026 숙박업소 세탁비 지원금 | 머니위키',
+    ogDescription: '펜션·민박 세탁비 연 300만원까지 지원, 숙박업 전용 지원금',
+  },
+
+  hub: {
+    url: '/w/소상공인-시설개선-지원금-종류-신청-방법-2026',
+    name: '소상공인 시설개선 지원금 종류 신청 방법',
+  },
+
+  breadcrumb: ['지원금', '숙박업소 세탁비 위생용품'],
+
+  hero: {
+    badge: '숙박업 전용',
+    h1: <>숙박업소 <span className="text-emerald-600">세탁비 위생용품 지원금</span> 신청 — 연 300만원까지</>,
+    intro: (
+      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+        곡성군은 숙박업소 세탁비를 연 300만원까지 지원해요. 강릉시는 어메니티를 연 150만원까지!
+        펜션·민박·모텔 운영하시는 분들을 위한 특화 지원금을 정리했어요.
+      </p>
+    ),
+    hubCTA: {
+      badge: '올인원',
+      desc: '소상공인 시설개선 지원금 모든 종류 한눈에 비교',
+    },
+  },
+
+  toc: [
+    { id: 's1', title: '숙박업 전용 지원금이 따로 있나요?' },
+    { id: 's2', title: '곡성군 숙박업소 세탁비 지원 사례' },
+    { id: 's3', title: '강릉시 위생용품 지원 사례' },
+    { id: 's4', title: '우리 지역 숙박업 지원금 찾기' },
+  ],
+
+  sections: [
+    // === S1: SpokeCompareCards + FormulaBox ===
+    {
+      id: 's1',
+      title: '숙박업 전용 지원금이 따로 있나요?',
+      intro: (
+        <>
+          <p>네, 있습니다! 일반 소상공인 지원금과 별도로 <strong>숙박업 특화 지원금</strong>이 있어요.</p>
+          <p>펜션·민박·모텔 등 숙박업은 침구 세탁비, 어메니티 구입비가 만만치 않죠. 일부 지자체는 이런 <strong>운영비를 직접 지원</strong>합니다.</p>
+        </>
+      ),
+      visuals: [
+        <SpokeCompareCards
+          key="types"
+          title="숙박업 지원금 종류"
+          items={[
+            {
+              title: '세탁비 지원',
+              features: [
+                '곡성군 300만원/연',
+                '침구류 세탁 용역비',
+                '자부담 0원 (전액 지원)',
+                '숙박업소 대상',
+              ],
+              badge: '운영비',
+            },
+            {
+              title: '위생용품 지원',
+              features: [
+                '강릉시 150만원/연',
+                '어메니티(칫솔·샴푸 등)',
+                '자부담 20%',
+                '관광숙박업 대상',
+              ],
+              badge: '소모품',
+            },
+            {
+              title: '시설개선 지원',
+              features: [
+                '제주 서귀포 500만원',
+                '게스트하우스 시설개선',
+                '자부담 30%',
+                '인테리어·설비',
+              ],
+              badge: '시설',
+              highlight: true,
+            },
+          ]}
+        />,
+        <FormulaBox
+          key="calc"
+          title="관광지 지자체일수록 지원 많음"
+          items={[
+            {
+              label: '관광지 중심 지자체 (지원 많음 ⭕)',
+              formula: '강원(강릉·속초·평창) + 전남(여수·순천·곡성) + 제주(제주시·서귀포) + 경북(경주·안동)',
+              result: '숙박업 특화 지원금 다수',
+              explanation: '관광산업 육성 정책',
+            },
+            {
+              label: '비관광지 지자체 (지원 적음 ❌)',
+              formula: '수도권 대부분 + 공업 도시',
+              result: '숙박업 전용 지원금 거의 없음',
+              explanation: '일반 소상공인 지원금 활용',
+            },
+          ]}
+        />,
+      ],
+    },
+
+    // === S2: SpokeRateBars + SpokeTable ===
+    {
+      id: 's2',
+      title: '곡성군 숙박업소 세탁비 지원 사례',
+      intro: (
+        <>
+          <p>곡성군은 <strong>세탁비를 연 300만원까지 전액 지원</strong>합니다. 자부담 0원!</p>
+          <p>이불·베개 세탁부터 수건·가운 세탁까지 모두 지원 대상이에요.</p>
+        </>
+      ),
+      visuals: [
+        <SpokeRateBars
+          key="support"
+          title="세탁비 지원 비율 (10실 규모 펜션 기준)"
+          description="연 480만원 중 300만원 지원 = 62.5% 지원"
+          items={[
+            { label: '지원금 (300만원)', value: 62.5, color: 'green', unit: '62.5%' },
+            { label: '자부담 (180만원)', value: 37.5, color: 'gray', unit: '37.5%' },
+          ]}
+        />,
+        <SpokeTable
+          key="items"
+          caption="지원 가능 항목 vs 불가 항목"
+          headers={['항목', '지원 여부', '비고']}
+          rows={[
+            ['이불·베개 세탁', '⭕', '용역비 지원'],
+            ['침대 시트·커버', '⭕', '용역비 지원'],
+            ['수건·가운 세탁', '⭕', '용역비 지원'],
+            ['세탁 픽업·배송비', '⭕', '용역비 지원'],
+            ['세탁기 구입', '❌', '설비는 시설개선'],
+            ['세제·섬유유연제', '❌', '소모품 제외'],
+          ]}
+        />,
+      ],
+    },
+
+    // === S3: SpokeFlow + TipBox ===
+    {
+      id: 's3',
+      title: '강릉시 위생용품 지원 사례',
+      intro: (
+        <>
+          <p>강릉시는 <strong>어메니티를 연 150만원까지 지원</strong>합니다. 자부담 20%!</p>
+          <p>샴푸, 칫솔, 치약, 슬리퍼 등이 모두 지원 대상이에요.</p>
+        </>
+      ),
+      visuals: [
+        <SpokeFlow
+          key="amenity"
+          title="위생용품 지원 가능 품목"
+          steps={[
+            { label: '욕실 용품', description: '샴푸, 린스, 바디워시 (개당 500~1,000원)' },
+            { label: '위생 용품', description: '칫솔, 치약, 면도기 (개당 300~800원)' },
+            { label: '침구 용품', description: '일회용 슬리퍼, 수건 (개당 500~2,000원)' },
+            { label: '청소 용품', description: '방향제, 소독제 (개당 2,000~5,000원)' },
+          ]}
+        />,
+        <TipBox
+          key="tips"
+          type="success"
+          title="신청 팁"
+        >
+          <ul className="space-y-2">
+            <li>매월 구입 영수증 잘 보관하세요</li>
+            <li>연말에 일괄 정산 방식</li>
+            <li>세금계산서 필수 (현금영수증 인정 안 됨)</li>
+            <li>사업자등록증이 있는 업체에서 구입해야 함</li>
+          </ul>
+        </TipBox>,
+      ],
+    },
+
+    // === S4: SpokeChecklist + SpokeTimeline ===
+    {
+      id: 's4',
+      title: '우리 지역 숙박업 지원금 찾기',
+      intro: (
+        <>
+          <p>지자체 홈페이지에서 <strong>「숙박업 지원」, 「관광업 지원금」</strong>을 검색하세요.</p>
+          <p>대부분 <strong>상반기 (3~5월)</strong>에 공고가 집중됩니다!</p>
+        </>
+      ),
+      visuals: [
+        <SpokeChecklist
+          key="search"
+          title="우리 지역 확인하기"
+          items={[
+            { text: '시·군·구청 홈페이지 접속', checked: false },
+            { text: '통합검색에 「숙박업 지원」 입력', checked: false },
+            { text: '관광과·문화관광과에 전화 문의', checked: false },
+            { text: '우리 지역이 관광특구인지 확인', checked: false },
+            { text: '3월부터 공고문 주시 (놓치면 1년 기다림)', checked: false },
+          ]}
+        />,
+        <SpokeTimeline
+          key="schedule"
+          title="지자체 예산 집행 패턴"
+          events={[
+            {
+              date: '2월',
+              label: '예산 확정',
+              description: '지자체 예산 확정',
+            },
+            {
+              date: '3월',
+              label: '공고',
+              description: '지자체 홈페이지 공고',
+            },
+            {
+              date: '4~5월',
+              label: '신청 접수',
+              description: '온라인 또는 방문 신청',
+            },
+            {
+              date: '하반기',
+              label: '선정·집행',
+              description: '심사 → 선정 → 사업 진행',
+            },
+          ]}
+        />,
+      ],
+    },
+  ],
+
+  faq: [
+    {
+      question: '펜션과 민박 모두 신청 가능한가요?',
+      answer: '네, 관광진흥법상 숙박업 신고를 한 업소는 모두 가능합니다. 펜션, 민박, 모텔, 호텔 모두 해당돼요.',
+    },
+    {
+      question: '세탁은 자가 세탁도 인정되나요?',
+      answer: '아니요, 세탁 용역 이용 실적이 있어야 합니다. 세탁소에 맡긴 영수증이 필요해요. 자가 세탁은 지원 대상이 아닙니다.',
+    },
+    {
+      question: '우리 지역에 숙박업 지원금이 없으면 어떻게 하나요?',
+      answer: '일반 소상공인 지원금(스마트상점, 시설개선)을 활용하세요. 또는 인근 관광지 지자체로 사업장을 이전하는 것도 고려해볼 수 있습니다.',
+    },
+    {
+      question: '지원금은 언제 받나요?',
+      answer: '보통 하반기에 선정·집행되며, 연말에 일괄 정산하는 경우가 많습니다. 매월 구입 영수증을 잘 보관해두세요.',
+    },
+  ],
+
+  related: [
+    { text: '소상공인 시설개선 지원금 종류 비교', link: '/w/소상공인-시설개선-지원금-종류-비교-정리' },
+    { text: '지자체 매장 리모델링 지원금', link: '/w/지자체-소상공인-매장-리모델링-지원금-신청' },
+    { text: '시설개선 지원금 신청 서류 절차', link: '/w/소상공인-시설개선-지원금-신청-서류-절차' },
+  ],
+
+  sources: [
+    { label: '곡성군 숙박업소 세탁비 지원 사업', url: 'https://www.gokseong.go.kr', date: '2026.04' },
+    { label: '강릉시 관광숙박업 위생용품 지원', url: 'https://www.gn.go.kr', date: '2026.04' },
+  ],
+}
+
+export default data

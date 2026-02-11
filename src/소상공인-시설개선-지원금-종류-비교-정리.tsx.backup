@@ -1,0 +1,293 @@
+import Link from 'next/link'
+import type { SpokeData } from './types'
+import { SpokeCompareCards, SpokeRateBars, SpokeTable, TipBox, FormulaBox, SpokeFlow, SpokeChecklist, RateCards } from '@/components/spoke/SpokeBlocks'
+
+// --- Table data ---
+const SUPPORT_COMPARISON_TABLE = [
+  ['중앙 (스마트상점)', '구입형 최대 500만원, 배리어프리 700만원', '렌탈형 연 350만원, SW형 연 30만원', '0~50% (유형별)', '전국 11,000개'],
+  ['지자체 (문경시)', '총사업비 70% 이내 최대 350만원', '3년 이상 영업 개인사업자', '30% (자부담)', '문경시 소재'],
+  ['지자체 (거제시)', '업소당 200만원', '주방위생 개선 대상', '15% (자부담)', '거제시 소재'],
+]
+
+const AI_SUPPORT_TYPES = [
+  ['POS 자동화', '매출·재고·고객관리 통합', '업종별 맞춤형'],
+  ['AI 회계', '자동 장부·세금 신고', '세무사 연계'],
+  ['마케팅 자동화', '고객 분석·SNS 관리', '맞춤 광고'],
+]
+
+// === SPOKE DATA ===
+const data: SpokeData = {
+  slug: '소상공인-시설개선-지원금-종류-비교-정리',
+
+  meta: {
+    title: '2026 소상공인 시설개선 지원금 종류 비교 정리 중앙 지자체 차이점',
+    description: '중앙정부 스마트상점, 지자체 시설개선, 위생환경 개선까지 종류가 제각각이에요. 지원금별 금액과 조건을 한눈에 비교했어요',
+    keywords: ['소상공인 시설개선 지원금 종류 비교 정리', '중앙정부 지자체 소상공인 지원금 차이점', '소상공인 스마트상점 시설개선 지원 비교', '소상공인 지원금 종류별 금액 자부담 비교'],
+    ogTitle: '2026 소상공인 시설개선 지원금 종류 비교 | 머니위키',
+    ogDescription: '중앙정부·지자체 소상공인 시설개선 지원금 금액과 조건 한눈에 비교',
+  },
+
+  hub: {
+    url: '',
+    name: '',
+  },
+
+  breadcrumb: ['지원금', '소상공인 시설개선 종류 비교'],
+
+  hero: {
+    badge: '2026년 기준',
+    h1: <>2026 소상공인 <span className="text-emerald-600">시설개선 지원금 종류</span> 비교 정리 — 중앙·지자체 차이점</>,
+    intro: (
+      <>
+        <p className="text-base text-neutral-500 leading-relaxed">
+          매장 시설을 바꾸고 싶은데 정부 지원금이 뭐가 있는지, 중앙이랑 지자체가 어떻게 다른지 헷갈렸다면 잘 오셨어요. <strong>소상공인 시설개선 지원금</strong>은 중앙정부 사업과 지자체별 사업으로 나뉘어 있어요.
+        </p>
+        <p className="text-base text-neutral-500 leading-relaxed mt-3">
+          <a href="https://www.mss.go.kr/site/smba/ex/bbs/View.do?cbIdx=86&bcIdx=1064370&parentSeq=1064370" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">중소벤처기업부</a>가 주관하는 스마트상점은 최대 500만원, 지자체마다 200~350만원까지 지원하는데 신청 조건과 자부담 비율이 제각각이에요. 중앙 vs 지자체, AI지원 vs 일반 시설개선까지 종류별로 차근차근 정리했어요.
+        </p>
+      </>
+    ),
+    hubCTA: {
+      badge: '신청법',
+      desc: '내가 받을 수 있는 지원금부터 신청 방법까지',
+    },
+  },
+
+  toc: [
+    { id: 's1', text: '소상공인 시설개선 지원금 종류는 어떻게 나뉘나요?' },
+    { id: 's2', text: '중앙정부와 지자체 지원금 차이점은 뭔가요?' },
+    { id: 's3', text: '소상공인 지원금 종류별 금액과 자부담 비율은?' },
+    { id: 's4', text: '소상공인 AI활용 지원 사업은 어떻게 다른가요?' },
+    { id: 's5', text: '자주 묻는 질문' },
+  ],
+
+  sections: [
+    {
+      id: 's1',
+      number: '01',
+      heading: '소상공인 시설개선 지원금 종류는 어떻게 나뉘나요?',
+      subtitle: '중앙정부 vs 지자체, 일반 vs 특화 사업으로 분류돼요',
+      content: (
+        <>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            소상공인 시설개선 지원금은 크게 <strong>중앙정부 사업</strong>과 <strong>지자체별 사업</strong>으로 나뉘어요. 중앙은 중소벤처기업부와 소상공인시장진흥공단(소진공)이 주관하고, 지자체는 시·군·구가 각자 예산 범위 내에서 운영해요.
+          </p>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            <a href="https://www.bizinfo.go.kr/web/lay1/bbs/S1T122C128/AS/74/view.do?pblancId=PBLN_000000000117016" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">2026년 소상공인 지원사업 통합 공고</a>에 따르면 중앙정부는 스마트상점 기술보급, AI활용 지원, 에너지 효율 개선 사업을 운영하고 있어요. 지자체는 일반 인테리어·설비 교체부터 업종별 특화 지원(주방위생, 세탁비 등)까지 지역 특성에 맞게 설계돼요.
+          </p>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            중복 신청이 가능한 경우도 있고 한 가지만 선택해야 하는 경우도 있으니, 먼저 내가 받을 수 있는 지원금이 뭐가 있는지부터 파악하는 게 첫걸음이에요.
+          </p>
+
+          {/* 중앙 vs 지자체 비교: SpokeCompareCards */}
+          <SpokeCompareCards cards={[
+            {
+              title: '중앙정부 지원금',
+              subtitle: '중소벤처기업부 + 소진공',
+              items: ['스마트상점 (키오스크·서빙로봇)', 'AI활용 디지털 전환', '에너지 효율 개선 (냉장고·에어컨)'],
+              recommended: false,
+            },
+            {
+              title: '지자체 지원금',
+              subtitle: '시·군·구별 예산 사업',
+              items: ['일반 시설개선 (인테리어·수리)', '업종별 특화 (주방위생·세탁비)', '전통시장 상점 현대화'],
+              recommended: false,
+            },
+          ]} />
+
+          {/* 지원 비율 비교: SpokeRateBars */}
+          <SpokeRateBars bars={[
+            { label: '중앙 (스마트상점)', rate: '자부담 0~50%', width: '70%' },
+            { label: '지자체 (평균)', rate: '자부담 15~30%', width: '80%' },
+            { label: 'AI활용 지원', rate: '자부담 0%', width: '100%' },
+          ]} />
+
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            자부담 비율이 중요한데요, 중앙정부 스마트상점은 사업 유형에 따라 0~50%로 차이가 크고, 지자체는 보통 15~30% 수준이에요.
+          </p>
+        </>
+      ),
+      bridgeCTA: {
+        href: '#s2',
+        badge: '차이점',
+        title: '중앙이랑 지자체 중 어디를 먼저 알아봐야 할까?',
+        desc: '내 상황에 맞는 지원금 찾기',
+        icon: 'info',
+      },
+    },
+
+    {
+      id: 's2',
+      number: '02',
+      heading: '중앙정부와 지자체 소상공인 지원금 차이점은 뭔가요?',
+      subtitle: '신청 대상·금액·기간·절차가 각각 달라요',
+      content: (
+        <>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            가장 큰 차이는 <strong>신청 대상</strong>과 <strong>지원 금액 상한</strong>이에요. 중앙정부는 전국 어디서나 영업 중인 소상공인이면 신청할 수 있지만, 지자체는 그 지역에서 사업자등록이 돼 있어야 해요.
+          </p>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            중앙정부 스마트상점은 <a href="https://www.sbiz.or.kr/smst/main.do" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">소진공 스마트상점 사이트</a>에서 연중 신청받고, 지자체는 보통 상반기 집중 모집 후 선착순 마감이 많아요. 예산 소진되면 조기 종료되니까 지자체 공고는 우리 동네 홈페이지를 수시로 확인해야 해요.
+          </p>
+
+          {/* 비교표: SpokeTable */}
+          <SpokeTable
+            id="tbl1"
+            title="중앙정부 vs 지자체 소상공인 지원금 비교"
+            subtitle="2026년 기준"
+            headers={['구분', '최대 금액', '신청 조건', '자부담', '신청 채널']}
+            rows={SUPPORT_COMPARISON_TABLE}
+            highlightCol={2}
+          />
+
+          {/* 핵심 팁: TipBox */}
+          <TipBox title="중복 신청 가능한가요?">
+            <p className="mb-0 leading-relaxed">
+              중앙정부 스마트상점과 지자체 일반 시설개선은 <strong>중복 불가</strong>예요. 하지만 지자체 업종별 특화 사업(주방위생, 세탁비)은 별도 예산이라 중복 가능한 경우도 있어요. 각 사업 공고문의 "중복지원 제한" 항목을 반드시 확인하세요.
+            </p>
+          </TipBox>
+
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            중앙과 지자체 중 어디를 먼저 알아봐야 하나 고민이라면, 키오스크·서빙로봇 같은 스마트 기기가 필요하면 중앙을, 인테리어·간판·타일 같은 일반 시설 수리가 필요하면 지자체를 우선 확인하세요.
+          </p>
+        </>
+      ),
+      bridgeCTA: {
+        href: '#s3',
+        badge: '금액 비교',
+        title: '그래서 내가 받을 수 있는 금액은 정확히 얼마?',
+        desc: '종류별 지원 한도와 자부담 계산',
+        icon: 'calc',
+      },
+    },
+
+    {
+      id: 's3',
+      number: '03',
+      heading: '소상공인 지원금 종류별 금액과 자부담 비율은?',
+      subtitle: '사업 유형에 따라 0%부터 50%까지 달라요',
+      content: (
+        <>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            중앙정부 스마트상점 기술보급사업은 <strong>구입형·렌탈형·SW형</strong> 세 가지로 나뉘어요. 구입형은 키오스크나 서빙로봇을 직접 사서 쓰는 방식이고, 렌탈형은 매달 일정 금액 내고 빌려 쓰는 방식이에요.
+          </p>
+
+          {/* 계산 공식: FormulaBox */}
+          <FormulaBox lines={[
+            { text: '// 스마트상점 지원금 계산 예시', comment: true },
+            { text: '구입형 키오스크 500만원 × 자부담 50% = 250만원 본인 부담' },
+            { text: '배리어프리 기기 700만원 × 자부담 30% = 210만원 본인 부담' },
+            { text: '렌탈형 월 20만원 × 지원비율 80% = 월 16만원 지원' },
+          ]} />
+
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            지자체 시설개선은 지역마다 차이가 커요. 문경시는 총사업비의 70% 이내 최대 350만원, 거제시는 업소당 200만원에 자부담 15%예요. 곡성군은 숙박업소 세탁비를 연 300만원까지 지원하는데 이건 숙박업 전용이에요.
+          </p>
+
+          {/* 절차 흐름: SpokeFlow */}
+          <SpokeFlow steps={[
+            { icon: '📋', label: '사업 공고', sub: '기업마당·소진공' },
+            { icon: '🔍', label: '자격 확인', sub: '업종·규모' },
+            { icon: '💰', label: '자부담 계산', sub: '0~50%' },
+            { icon: '📝', label: '신청 제출', sub: '온라인·방문' },
+          ]} />
+
+          {/* 체크리스트: SpokeChecklist */}
+          <SpokeChecklist items={[
+            { text: '사업자등록증 (3개월 이상 영업)', done: true },
+            { text: '최근 3년 이내 동일 사업 지원 미수혜', done: true },
+            { text: '체납·신용정보 문제 없음', done: false, note: '국세·지방세·4대보험' },
+            { text: '영업 중인 실제 점포 보유', done: false, note: '온라인 전용 사업자 제외' },
+          ]} />
+
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            자부담 비율이 부담되면 <a href="https://www.semas.or.kr" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">소상공인 정책자금</a>으로 저금리 융자를 받을 수 있는지도 같이 알아보세요.
+          </p>
+        </>
+      ),
+      bridgeCTA: {
+        href: '#s4',
+        badge: '2026 신규',
+        title: 'AI활용 지원은 일반 시설개선이랑 뭐가 다를까?',
+        desc: 'POS 자동화·매출분석까지 지원',
+        icon: 'info',
+      },
+    },
+
+    {
+      id: 's4',
+      number: '04',
+      heading: '소상공인 AI활용 지원 사업은 어떻게 다른가요?',
+      subtitle: '2026년 신규 사업으로 디지털 전환에 집중해요',
+      content: (
+        <>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            <strong>AI활용 지원사업</strong>은 2026년 신규로 시작된 사업이에요. 키오스크나 서빙로봇 같은 하드웨어가 아니라 <strong>POS 자동화, 회계 시스템, 마케팅 자동화</strong> 같은 소프트웨어 중심이에요.
+          </p>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            기존 스마트상점은 "기기 도입"이 목표였다면, AI활용은 "일하는 방식 바꾸기"가 목표예요. 매출·재고·고객관리를 자동으로 해주는 시스템을 깔아주고, 사장님은 분석 결과만 보면서 의사결정할 수 있게 만드는 거죠.
+          </p>
+
+          {/* AI 지원 종류: SpokeTable */}
+          <SpokeTable
+            id="tbl2"
+            title="2026 소상공인 AI활용 지원 종류"
+            subtitle="소프트웨어 중심 지원"
+            headers={['구분', '주요 기능', '특징']}
+            rows={AI_SUPPORT_TYPES}
+          />
+
+          {/* 선택 가이드: RateCards */}
+          <RateCards cards={[
+            { value: '스마트상점', label: '하드웨어', lines: ['키오스크·로봇', '자부담 0~50%'], highlightColor: 'emerald' },
+            { value: 'AI활용', label: '소프트웨어', lines: ['POS·회계·마케팅', '자부담 0%'], active: true, highlight: '2026 신규', highlightColor: 'emerald' },
+          ]} />
+
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            AI활용 지원은 자부담이 0%인 경우가 많아요. 대신 사업 참여 후 일정 기간 시스템을 의무적으로 사용해야 하고, 정기적으로 사용 데이터를 제출해야 하는 조건이 붙을 수 있어요. 신청 전에 공고문의 "사후관리" 항목을 꼭 확인하세요.
+          </p>
+        </>
+      ),
+      bridgeCTA: {
+        href: '/w/소상공인-시설개선-지원금-종류-신청-방법-2026',
+        badge: '신청법',
+        title: '내가 받을 수 있는 지원금 찾고 신청하기',
+        desc: '서류부터 심사까지 한눈에',
+        icon: 'check',
+        primary: true,
+      },
+    },
+
+    {
+      id: 's5',
+      number: '05',
+      heading: '자주 묻는 질문',
+      subtitle: '자주 나오는 질문만 모았어요',
+      content: null,
+    },
+  ],
+
+  faq: [
+    {
+      question: '소상공인 시설개선 지원금은 중복으로 받을 수 있나요?',
+      answer: '중앙정부 스마트상점과 지자체 일반 시설개선은 <strong>중복 불가</strong>예요. 하지만 지자체 업종별 특화 사업(주방위생, 세탁비 등)은 별도 예산이라 중복 가능한 경우도 있어요. 각 사업 공고문의 "중복지원 제한" 항목을 반드시 확인하세요.',
+    },
+    {
+      question: '소상공인 지원금 자부담 비율은 어떻게 정해지나요?',
+      answer: '사업 유형과 지원 항목에 따라 달라져요. 중앙정부 스마트상점은 구입형 50%, 렌탈형 20%, SW형 0%가 많고, 지자체는 평균 15~30% 수준이에요. 배리어프리 기기나 에너지 효율 기기는 자부담 비율이 낮은 편이에요.',
+    },
+  ],
+
+  relatedSpokes: [
+    { badge: '스마트상점', title: '스마트상점 기술보급 사업 신청 방법 2026', desc: '키오스크 500만원, 서빙로봇까지 지원', href: '/w/스마트상점-기술보급-사업-신청-방법-2026' },
+    { badge: '지자체', title: '지자체 소상공인 매장 리모델링 지원금 신청', desc: '우리 지역 지원금 확인하는 방법', href: '/w/지자체-소상공인-매장-리모델링-지원금-신청' },
+  ],
+
+  sources: [
+    { name: '2026년 중소벤처기업부 소상공인 지원사업 통합 공고', url: 'https://www.bizinfo.go.kr/web/lay1/bbs/S1T122C128/AS/74/view.do?pblancId=PBLN_000000000117016', org: '기업마당' },
+    { name: '소상공인시장진흥공단 스마트상점', url: 'https://www.sbiz.or.kr/smst/main.do', org: '소진공' },
+    { name: '중소벤처기업부 공식 홈페이지', url: 'https://www.mss.go.kr/site/smba/ex/bbs/View.do?cbIdx=86&bcIdx=1064370&parentSeq=1064370', org: '중소벤처기업부' },
+  ],
+}
+
+export default data

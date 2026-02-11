@@ -157,7 +157,7 @@ export default function JeonseLoanCalculator() {
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
       {/* 헤더 */}
-      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-[#1E3A5F] to-teal-600 px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -166,7 +166,7 @@ export default function JeonseLoanCalculator() {
           </div>
           <div>
             <h2 className="text-xl font-bold text-white">전세대출 계산기</h2>
-            <p className="text-emerald-100 text-sm">월 이자와 총 비용 계산</p>
+            <p className="text-[#EDF2F8] text-sm">월 이자와 총 비용 계산</p>
           </div>
         </div>
       </div>
@@ -188,12 +188,12 @@ export default function JeonseLoanCalculator() {
                 onClick={() => handleLoanTypeChange(type.value)}
                 className={`p-3 rounded-xl border-2 transition-all text-left ${
                   loanType === type.value
-                    ? "border-emerald-500 bg-emerald-50"
+                    ? "border-[#2B5280] bg-[#F5F8FB]"
                     : "border-neutral-200 hover:border-neutral-300"
                 }`}
               >
                 <div className="font-medium text-sm">{type.label}</div>
-                <div className="text-xs text-emerald-600">{type.rate}</div>
+                <div className="text-xs text-[#1E3A5F]">{type.rate}</div>
                 <div className="text-xs text-neutral-500">{type.desc}</div>
               </button>
             ))}
@@ -214,12 +214,12 @@ export default function JeonseLoanCalculator() {
                 setLoanAmount(value);
               }}
               placeholder="대출받을 금액"
-              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 transition-colors text-right pr-12"
+              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-[#2B5280] focus:ring-0 transition-colors text-right pr-12"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
           </div>
           {loanAmount > 0 && (
-            <p className="mt-1 text-sm text-emerald-600">{formatWon(loanAmount)}</p>
+            <p className="mt-1 text-sm text-[#1E3A5F]">{formatWon(loanAmount)}</p>
           )}
 
           {/* 빠른 입력 버튼 */}
@@ -246,7 +246,7 @@ export default function JeonseLoanCalculator() {
               step="0.1"
               min="0"
               max="20"
-              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 transition-colors text-right"
+              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-[#2B5280] focus:ring-0 transition-colors text-right"
             />
           </div>
 
@@ -258,7 +258,7 @@ export default function JeonseLoanCalculator() {
             <select
               value={loanPeriod}
               onChange={(e) => setLoanPeriod(parseInt(e.target.value))}
-              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 transition-colors"
+              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-[#2B5280] focus:ring-0 transition-colors"
             >
               <option value={12}>12개월 (1년)</option>
               <option value={24}>24개월 (2년)</option>
@@ -285,7 +285,7 @@ export default function JeonseLoanCalculator() {
                 onClick={() => setRepaymentType(type.value)}
                 className={`p-3 rounded-xl border-2 transition-all text-left ${
                   repaymentType === type.value
-                    ? "border-emerald-500 bg-emerald-50"
+                    ? "border-[#2B5280] bg-[#F5F8FB]"
                     : "border-neutral-200 hover:border-neutral-300"
                 }`}
               >
@@ -298,8 +298,8 @@ export default function JeonseLoanCalculator() {
 
         {/* 결과 표시 */}
         {loanAmount > 0 && (
-          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
-            <h3 className="text-lg font-bold text-emerald-800 mb-4">계산 결과</h3>
+          <div className="bg-gradient-to-r from-[#F5F8FB] to-teal-50 rounded-2xl p-6 border border-[#EDF2F8]">
+            <h3 className="text-lg font-bold text-[#132A42] mb-4">계산 결과</h3>
 
             <div className="space-y-4">
               {/* 월 납부금 */}
@@ -308,7 +308,7 @@ export default function JeonseLoanCalculator() {
                   {repaymentType === "bullet" ? "월 이자" : "월 납부금"}
                   {repaymentType === "equal_principal" && " (첫 달)"}
                 </div>
-                <div className="text-3xl font-bold text-emerald-600">
+                <div className="text-3xl font-bold text-[#1E3A5F]">
                   {formatNumber(monthlyPayment)}원
                 </div>
                 <div className="text-sm text-neutral-500 mt-1">
@@ -365,7 +365,7 @@ export default function JeonseLoanCalculator() {
             {/* 상환 스케줄 토글 */}
             <button
               onClick={() => setShowSchedule(!showSchedule)}
-              className="w-full mt-4 py-3 text-sm text-emerald-600 hover:text-emerald-700 font-medium flex items-center justify-center gap-2"
+              className="w-full mt-4 py-3 text-sm text-[#1E3A5F] hover:text-[#162F4F] font-medium flex items-center justify-center gap-2"
             >
               {showSchedule ? "상환 스케줄 접기" : "상환 스케줄 보기"}
               <svg className={`w-4 h-4 transition-transform ${showSchedule ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -375,10 +375,10 @@ export default function JeonseLoanCalculator() {
 
             {/* 상환 스케줄 */}
             {showSchedule && schedule.length > 0 && (
-              <div className="mt-4 bg-white rounded-xl overflow-hidden border border-emerald-100">
+              <div className="mt-4 bg-white rounded-xl overflow-hidden border border-[#EDF2F8]">
                 <div className="max-h-64 overflow-y-auto">
                   <table className="w-full text-sm">
-                    <thead className="bg-emerald-50 sticky top-0">
+                    <thead className="bg-[#F5F8FB] sticky top-0">
                       <tr>
                         <th className="px-3 py-2 text-left text-neutral-600">회차</th>
                         <th className="px-3 py-2 text-right text-neutral-600">원금</th>
@@ -406,36 +406,36 @@ export default function JeonseLoanCalculator() {
         )}
 
         {/* 대출 상품 안내 */}
-        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
-          <h4 className="font-medium text-emerald-800 mb-3">전세대출 상품 비교</h4>
+        <div className="mt-6 p-4 bg-[#F5F8FB] rounded-xl border border-[#EDF2F8]">
+          <h4 className="font-medium text-[#132A42] mb-3">전세대출 상품 비교</h4>
           <div className="space-y-3 text-sm">
             <div className="p-3 bg-white rounded-lg">
               <div className="font-medium text-violet-700">버팀목 전세자금대출</div>
               <div className="text-neutral-600 mt-1">연소득 5천만원 이하, 보증금 3억 이하 주택</div>
-              <div className="text-emerald-600 text-xs mt-1">금리 연 2.1%~2.9%</div>
+              <div className="text-[#1E3A5F] text-xs mt-1">금리 연 2.1%~2.9%</div>
             </div>
             <div className="p-3 bg-white rounded-lg">
               <div className="font-medium text-violet-700">청년 전용 버팀목</div>
               <div className="text-neutral-600 mt-1">만 19~34세, 연소득 5천만원 이하</div>
-              <div className="text-emerald-600 text-xs mt-1">금리 연 1.8%~2.7%</div>
+              <div className="text-[#1E3A5F] text-xs mt-1">금리 연 1.8%~2.7%</div>
             </div>
             <div className="p-3 bg-white rounded-lg">
               <div className="font-medium text-violet-700">신혼부부 전용</div>
               <div className="text-neutral-600 mt-1">결혼 7년 이내, 합산소득 6천만원 이하</div>
-              <div className="text-emerald-600 text-xs mt-1">금리 연 1.65%~2.6%</div>
+              <div className="text-[#1E3A5F] text-xs mt-1">금리 연 1.65%~2.6%</div>
             </div>
           </div>
         </div>
 
         {/* 이용안내 */}
-        <div className="mt-4 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
-          <h4 className="font-medium text-emerald-800 mb-2 flex items-center gap-2">
+        <div className="mt-4 p-4 bg-[#F5F8FB] rounded-xl border border-[#EDF2F8]">
+          <h4 className="font-medium text-[#132A42] mb-2 flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             이용안내
           </h4>
-          <ul className="text-sm text-emerald-700 space-y-1">
+          <ul className="text-sm text-[#162F4F] space-y-1">
             <li>• 실제 대출 금리는 신용등급, 대출 상품에 따라 달라요</li>
             <li>• 전세대출은 보통 만기일시상환으로 이자만 납부해요</li>
             <li>• 버팀목/디딤돌은 소득, 자산 요건이 있어요</li>
@@ -450,13 +450,13 @@ export default function JeonseLoanCalculator() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">금리 ↓ / 대출금 →</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">1억</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">1.5억</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">2억</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">2.5억</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">3억</th>
+                <tr className="bg-[#EDF2F8] border-b-2 border-[#4A7AB5]">
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">금리 ↓ / 대출금 →</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">1억</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">1.5억</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">2억</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden sm:table-cell">2.5억</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden sm:table-cell">3억</th>
                   <th className="py-2 px-2 text-center text-neutral-600 font-medium border border-gray-300 hidden md:table-cell">한줄평</th>
                 </tr>
               </thead>
@@ -470,14 +470,14 @@ export default function JeonseLoanCalculator() {
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">50만</td>
                   <td className="py-2 px-2 text-center text-green-600 text-xs border border-gray-300 hidden md:table-cell">청년 최저금리!</td>
                 </tr>
-                <tr className="bg-emerald-50 border-b border-neutral-200">
-                  <td className="py-2 px-2 text-center font-medium text-emerald-700 border border-gray-300">2.5%</td>
+                <tr className="bg-[#F5F8FB] border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-medium text-[#162F4F] border border-gray-300">2.5%</td>
                   <td className="py-2 px-2 text-center border border-gray-300">20.8만</td>
                   <td className="py-2 px-2 text-center border border-gray-300">31.3만</td>
                   <td className="py-2 px-2 text-center border border-gray-300">41.7만</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">52.1만</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">62.5만</td>
-                  <td className="py-2 px-2 text-center text-emerald-600 text-xs border border-gray-300 hidden md:table-cell">디딤돌 평균</td>
+                  <td className="py-2 px-2 text-center text-[#1E3A5F] text-xs border border-gray-300 hidden md:table-cell">디딤돌 평균</td>
                 </tr>
                 <tr className="bg-blue-50 border-b border-neutral-200">
                   <td className="py-2 px-2 text-center font-medium text-blue-700 border border-gray-300">3.0%</td>
@@ -492,7 +492,7 @@ export default function JeonseLoanCalculator() {
                   <td className="py-2 px-2 text-center font-medium text-neutral-700 border border-gray-300">3.5%</td>
                   <td className="py-2 px-2 text-center border border-gray-300">29.2만</td>
                   <td className="py-2 px-2 text-center border border-gray-300">43.8만</td>
-                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">58.3만</td>
+                  <td className="py-2 px-2 text-center font-bold text-[#1E3A5F] border border-gray-300">58.3만</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">72.9만</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">87.5만</td>
                   <td className="py-2 px-2 text-center text-neutral-600 text-xs border border-gray-300 hidden md:table-cell">시중은행 평균</td>
@@ -518,9 +518,9 @@ export default function JeonseLoanCalculator() {
               </tbody>
             </table>
           </div>
-          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
-            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
-            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+          <div className="mt-4 p-3 bg-[#EDF2F8] rounded-lg">
+            <p className="text-xs text-[#132A42] font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-[#162F4F] mt-1 space-y-1">
               <li>• 청년/신혼부부는 디딤돌·버팀목으로 금리 1~2% 절약 가능!</li>
               <li>• 2억 대출 시 금리 1% 차이 = 월 16.7만원 차이</li>
               <li>• 전세보증보험 가입하면 금리 우대 0.1~0.2%p 가능</li>

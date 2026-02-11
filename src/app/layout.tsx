@@ -151,7 +151,7 @@ function Footer() {
         </div>
         <div className="pt-8 border-t border-neutral-200 flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 bg-emerald-600 rounded flex items-center justify-center">
+            <div className="w-6 h-6 bg-[#1E3A5F] rounded flex items-center justify-center">
               <span className="text-white font-bold text-xs">M</span>
             </div>
             <span className="text-sm text-neutral-500">© 2026 머니위키. All rights reserved.</span>

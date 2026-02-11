@@ -129,9 +129,9 @@ export default function InheritanceTaxCalculator() {
   return (
     <div className="bg-white rounded-2xl shadow-lg border border-neutral-200 overflow-hidden">
       {/* 헤더 */}
-      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-[#1E3A5F] to-teal-600 px-6 py-4">
         <h2 className="text-xl font-bold text-white">상속세 계산기</h2>
-        <p className="text-emerald-100 text-sm mt-1">2026년 기준</p>
+        <p className="text-[#EDF2F8] text-sm mt-1">2026년 기준</p>
       </div>
 
       <div className="p-6 space-y-6">
@@ -148,7 +148,7 @@ export default function InheritanceTaxCalculator() {
                 const value = e.target.value.replace(/[^0-9]/g, "");
                 setTotalInheritance(Number(value) || 0);
               }}
-              className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-[#2B5280] focus:border-[#2B5280]"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">
               원
@@ -161,7 +161,7 @@ export default function InheritanceTaxCalculator() {
                 onClick={() => setTotalInheritance(amount)}
                 className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
                   totalInheritance === amount
-                    ? "bg-emerald-500 text-white"
+                    ? "bg-[#2B5280] text-white"
                     : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
                 }`}
               >
@@ -180,7 +180,7 @@ export default function InheritanceTaxCalculator() {
             <button
               onClick={() => setHasSpouse(!hasSpouse)}
               className={`w-12 h-6 rounded-full transition-all ${
-                hasSpouse ? "bg-emerald-500" : "bg-neutral-300"
+                hasSpouse ? "bg-[#2B5280]" : "bg-neutral-300"
               }`}
             >
               <div
@@ -204,7 +204,7 @@ export default function InheritanceTaxCalculator() {
                     const value = e.target.value.replace(/[^0-9]/g, "");
                     setSpouseInheritance(Number(value) || 0);
                   }}
-                  className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-[#2B5280] focus:border-[#2B5280]"
                 />
                 <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">
                   원
@@ -224,7 +224,7 @@ export default function InheritanceTaxCalculator() {
               >
                 -
               </button>
-              <span className="text-xl font-bold text-emerald-600 w-8 text-center">
+              <span className="text-xl font-bold text-[#1E3A5F] w-8 text-center">
                 {childCount}
               </span>
               <button
@@ -254,7 +254,7 @@ export default function InheritanceTaxCalculator() {
                     const value = e.target.value.replace(/[^0-9]/g, "");
                     setDebts(Number(value) || 0);
                   }}
-                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg text-sm focus:ring-2 focus:ring-[#2B5280] focus:border-[#2B5280]"
                 />
                 <span className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 text-xs">
                   원
@@ -271,7 +271,7 @@ export default function InheritanceTaxCalculator() {
                     const value = e.target.value.replace(/[^0-9]/g, "");
                     setFuneralCost(Number(value) || 0);
                   }}
-                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg text-sm focus:ring-2 focus:ring-[#2B5280] focus:border-[#2B5280]"
                 />
                 <span className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 text-xs">
                   원
@@ -282,10 +282,10 @@ export default function InheritanceTaxCalculator() {
         </div>
 
         {/* 결과 영역 */}
-        <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 space-y-4">
+        <div className="bg-gradient-to-r from-[#F5F8FB] to-teal-50 rounded-xl p-6 space-y-4">
           <div className="text-center">
             <p className="text-sm text-neutral-600 mb-2">예상 상속세</p>
-            <p className="text-4xl font-bold text-emerald-600">
+            <p className="text-4xl font-bold text-[#1E3A5F]">
               {formatManWon(result.finalTax)}
             </p>
             <p className="text-sm text-neutral-500 mt-1">
@@ -372,27 +372,27 @@ export default function InheritanceTaxCalculator() {
                 </tr>
               </thead>
               <tbody>
-                <tr className={`border-b border-neutral-100 ${result.taxableAmount <= 100000000 ? "bg-emerald-50" : ""}`}>
+                <tr className={`border-b border-neutral-100 ${result.taxableAmount <= 100000000 ? "bg-[#F5F8FB]" : ""}`}>
                   <td className="py-2 text-neutral-700">1억원 이하</td>
                   <td className="py-2 text-right font-medium text-neutral-700">10%</td>
                   <td className="py-2 text-right text-neutral-600">-</td>
                 </tr>
-                <tr className={`border-b border-neutral-100 ${result.taxableAmount > 100000000 && result.taxableAmount <= 500000000 ? "bg-emerald-50" : ""}`}>
+                <tr className={`border-b border-neutral-100 ${result.taxableAmount > 100000000 && result.taxableAmount <= 500000000 ? "bg-[#F5F8FB]" : ""}`}>
                   <td className="py-2 text-neutral-700">5억원 이하</td>
                   <td className="py-2 text-right font-medium text-neutral-700">20%</td>
                   <td className="py-2 text-right text-neutral-600">1천만원</td>
                 </tr>
-                <tr className={`border-b border-neutral-100 ${result.taxableAmount > 500000000 && result.taxableAmount <= 1000000000 ? "bg-emerald-50" : ""}`}>
+                <tr className={`border-b border-neutral-100 ${result.taxableAmount > 500000000 && result.taxableAmount <= 1000000000 ? "bg-[#F5F8FB]" : ""}`}>
                   <td className="py-2 text-neutral-700">10억원 이하</td>
                   <td className="py-2 text-right font-medium text-neutral-700">30%</td>
                   <td className="py-2 text-right text-neutral-600">6천만원</td>
                 </tr>
-                <tr className={`border-b border-neutral-100 ${result.taxableAmount > 1000000000 && result.taxableAmount <= 3000000000 ? "bg-emerald-50" : ""}`}>
+                <tr className={`border-b border-neutral-100 ${result.taxableAmount > 1000000000 && result.taxableAmount <= 3000000000 ? "bg-[#F5F8FB]" : ""}`}>
                   <td className="py-2 text-neutral-700">30억원 이하</td>
                   <td className="py-2 text-right font-medium text-neutral-700">40%</td>
                   <td className="py-2 text-right text-neutral-600">1억 6천만원</td>
                 </tr>
-                <tr className={result.taxableAmount > 3000000000 ? "bg-emerald-50" : ""}>
+                <tr className={result.taxableAmount > 3000000000 ? "bg-[#F5F8FB]" : ""}>
                   <td className="py-2 text-neutral-700">30억원 초과</td>
                   <td className="py-2 text-right font-medium text-neutral-700">50%</td>
                   <td className="py-2 text-right text-neutral-600">4억 6천만원</td>
@@ -418,12 +418,12 @@ export default function InheritanceTaxCalculator() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">상속재산</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">총 공제</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">과세표준</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">예상세액</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">실효세율</th>
+                <tr className="bg-[#EDF2F8] border-b-2 border-[#4A7AB5]">
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">상속재산</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">총 공제</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">과세표준</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">예상세액</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden sm:table-cell">실효세율</th>
                 </tr>
               </thead>
               <tbody>
@@ -441,19 +441,19 @@ export default function InheritanceTaxCalculator() {
                   <td className="py-2 px-2 text-center font-bold text-green-600 border border-gray-300">0원</td>
                   <td className="py-2 px-2 text-center text-green-600 border border-gray-300 hidden sm:table-cell">0%</td>
                 </tr>
-                <tr className="bg-emerald-50 border-b border-neutral-200">
-                  <td className="py-2 px-2 text-center font-bold text-emerald-700 border border-gray-300">15억원</td>
+                <tr className="bg-[#F5F8FB] border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-bold text-[#162F4F] border border-gray-300">15억원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">11.8억원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">3.2억원</td>
-                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">4,268만원</td>
-                  <td className="py-2 px-2 text-center text-emerald-600 border border-gray-300 hidden sm:table-cell">2.8%</td>
+                  <td className="py-2 px-2 text-center font-bold text-[#1E3A5F] border border-gray-300">4,268만원</td>
+                  <td className="py-2 px-2 text-center text-[#1E3A5F] border border-gray-300 hidden sm:table-cell">2.8%</td>
                 </tr>
                 <tr className="border-b border-neutral-200">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">20억원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">13.6억원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">6.4억원</td>
-                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">1.29억원</td>
-                  <td className="py-2 px-2 text-center text-emerald-600 border border-gray-300 hidden sm:table-cell">6.4%</td>
+                  <td className="py-2 px-2 text-center font-bold text-[#1E3A5F] border border-gray-300">1.29억원</td>
+                  <td className="py-2 px-2 text-center text-[#1E3A5F] border border-gray-300 hidden sm:table-cell">6.4%</td>
                 </tr>
                 <tr className="bg-amber-50 border-b border-neutral-200">
                   <td className="py-2 px-2 text-center font-bold text-amber-700 border border-gray-300">30억원</td>
@@ -480,9 +480,9 @@ export default function InheritanceTaxCalculator() {
             </table>
           </div>
 
-          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
-            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
-            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+          <div className="mt-4 p-3 bg-[#EDF2F8] rounded-lg">
+            <p className="text-xs text-[#132A42] font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-[#162F4F] mt-1 space-y-1">
               <li>• <strong>배우자 있으면</strong> 공제가 최소 5억 추가 (최대 30억)</li>
               <li>• 10억 이하 상속재산은 대부분 <strong>세금 0원</strong></li>
               <li>• 채무, 장례비용도 <strong>공제 대상</strong>이에요</li>

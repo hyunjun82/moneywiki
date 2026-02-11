@@ -76,7 +76,7 @@ export default function SpokeTaxCalculator() {
 
   return (
     <div className="bg-neutral-50 border border-neutral-200 rounded-xl p-7 my-6">
-      <h3 className="text-base font-bold text-emerald-600 mb-1">간이세액 간편 계산기</h3>
+      <h3 className="text-base font-bold text-[#1E3A5F] mb-1">간이세액 간편 계산기</h3>
       <p className="text-[11px] text-neutral-400 mb-5">국세청 간이세액표 기준 (2024.02 개정)</p>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
         <div>
@@ -87,7 +87,7 @@ export default function SpokeTaxCalculator() {
             value={salaryInput}
             onChange={handleSalaryChange}
             placeholder="예: 3,000,000"
-            className="w-full px-3 py-2.5 border border-neutral-300 rounded-lg text-sm font-sans bg-white focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/10"
+            className="w-full px-3 py-2.5 border border-neutral-300 rounded-lg text-sm font-sans bg-white focus:outline-none focus:border-[#1E3A5F] focus:ring-2 focus:ring-[#1E3A5F]/10"
           />
         </div>
         <div>
@@ -95,7 +95,7 @@ export default function SpokeTaxCalculator() {
           <select
             value={family}
             onChange={(e) => setFamily(Number(e.target.value))}
-            className="w-full px-3 py-2.5 border border-neutral-300 rounded-lg text-sm font-sans bg-white focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/10"
+            className="w-full px-3 py-2.5 border border-neutral-300 rounded-lg text-sm font-sans bg-white focus:outline-none focus:border-[#1E3A5F] focus:ring-2 focus:ring-[#1E3A5F]/10"
           >
             <option value={1}>1명 (본인만)</option>
             <option value={2}>2명</option>
@@ -109,7 +109,7 @@ export default function SpokeTaxCalculator() {
           <select
             value={rate}
             onChange={(e) => setRate(Number(e.target.value))}
-            className="w-full px-3 py-2.5 border border-neutral-300 rounded-lg text-sm font-sans bg-white focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/10"
+            className="w-full px-3 py-2.5 border border-neutral-300 rounded-lg text-sm font-sans bg-white focus:outline-none focus:border-[#1E3A5F] focus:ring-2 focus:ring-[#1E3A5F]/10"
           >
             <option value={80}>80% (적게 떼기)</option>
             <option value={100}>100% (기본)</option>
@@ -119,14 +119,14 @@ export default function SpokeTaxCalculator() {
       </div>
       <button
         onClick={calculate}
-        className="bg-emerald-600 text-white px-6 py-2.5 rounded-lg text-sm font-semibold cursor-pointer hover:bg-emerald-500 transition-colors"
+        className="bg-[#1E3A5F] text-white px-6 py-2.5 rounded-lg text-sm font-semibold cursor-pointer hover:bg-[#2B5280] transition-colors"
       >
         계산하기
       </button>
 
       {result && (
         <div className="bg-white border border-neutral-200 rounded-xl p-6 mt-4">
-          <div className="text-[28px] font-extrabold text-emerald-600 mb-2">
+          <div className="text-[28px] font-extrabold text-[#1E3A5F] mb-2">
             예상 소득세: {fmt(result.total)}원 (실수령: {fmt(result.net)}원)
           </div>
           <div className="text-[13px] text-neutral-500 leading-relaxed">

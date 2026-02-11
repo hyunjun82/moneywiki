@@ -302,21 +302,21 @@ a:hover {
   align-items: center;
   gap: 8px;
   padding: 12px 24px;
-  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  background: linear-gradient(135deg, #1E3A5F 0%, #2B5280 100%);
   color: white !important;
   font-weight: 600;
   font-size: 15px;
   border-radius: 10px;
   text-decoration: none !important;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 4px 14px rgba(30, 58, 95, 0.3);
   margin: 8px 4px;
 }
 
 .cta-button:hover {
-  background: linear-gradient(135deg, #047857 0%, #059669 100%);
+  background: linear-gradient(135deg, #162F4F 0%, #1E3A5F 100%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+  box-shadow: 0 6px 20px rgba(30, 58, 95, 0.4);
   color: white !important;
 }
 
@@ -331,14 +331,14 @@ a:hover {
   align-items: center;
   gap: 6px;
   padding: 10px 20px;
-  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  background: linear-gradient(135deg, #1E3A5F 0%, #2B5280 100%);
   color: white !important;
   font-weight: 600;
   font-size: 14px;
   border-radius: 8px;
   text-decoration: none !important;
   transition: all 0.2s ease;
-  box-shadow: 0 3px 10px rgba(16, 185, 129, 0.25);
+  box-shadow: 0 3px 10px rgba(30, 58, 95, 0.25);
   margin: 6px 2px;
 }
 
@@ -348,9 +348,9 @@ a:hover {
 .prose a[href*="nts.go.kr"]:hover,
 .prose a[href*="moel.go.kr"]:hover,
 .prose a[href*="molit.go.kr"]:hover {
-  background: linear-gradient(135deg, #047857 0%, #059669 100%);
+  background: linear-gradient(135deg, #162F4F 0%, #1E3A5F 100%);
   transform: translateY(-1px);
-  box-shadow: 0 5px 15px rgba(16, 185, 129, 0.35);
+  box-shadow: 0 5px 15px rgba(30, 58, 95, 0.35);
   color: white !important;
 }
 
@@ -498,12 +498,12 @@ a:hover {
 
 /* 색상 변형 - 그린 (기본) */
 .ext-btn-green {
-  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-  box-shadow: 0 8px 25px rgba(17, 153, 142, 0.4);
+  background: linear-gradient(135deg, #1E3A5F 0%, #2B5280 100%);
+  box-shadow: 0 8px 25px rgba(30, 58, 95, 0.4);
 }
 
 .ext-btn-green:hover {
-  box-shadow: 0 15px 40px rgba(17, 153, 142, 0.5);
+  box-shadow: 0 15px 40px rgba(30, 58, 95, 0.5);
 }
 
 /* 색상 변형 - 블루 (금융/대출) */
@@ -540,7 +540,7 @@ a:hover {
 .ext-btn-badge {
   display: inline-block;
   background: white;
-  color: #11998e;
+  color: #1E3A5F;
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 13px;
@@ -629,21 +629,21 @@ a:hover {
   align-items: center;
   gap: 6px;
   padding: 10px 18px;
-  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  background: linear-gradient(135deg, #1E3A5F 0%, #2B5280 100%);
   color: white !important;
   font-weight: 600;
   font-size: 14px;
   border-radius: 8px;
   text-decoration: none !important;
   transition: all 0.2s ease;
-  box-shadow: 0 3px 10px rgba(16, 185, 129, 0.25);
+  box-shadow: 0 3px 10px rgba(30, 58, 95, 0.25);
   margin: 4px 2px;
 }
 
 .ext-link:hover {
-  background: linear-gradient(135deg, #047857 0%, #059669 100%);
+  background: linear-gradient(135deg, #162F4F 0%, #1E3A5F 100%);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(16, 185, 129, 0.35);
+  box-shadow: 0 5px 15px rgba(30, 58, 95, 0.35);
   color: white !important;
 }
 
@@ -712,7 +712,7 @@ article table,
 /* 머니위키 테이블 헤더 스타일 */
 article table thead th,
 .prose table thead th {
-  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  background: linear-gradient(135deg, #1E3A5F 0%, #2B5280 100%);
   color: #ffffff;
   font-weight: 600;
   padding: 10px 14px;

@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>다주택 증여 양도 비교 — <span className="text-emerald-600">부담부증여와 절세 전략</span></>,
+    h1: <>다주택 증여 양도 비교 — <span className="text-[#1E3A5F]">부담부증여와 절세 전략</span></>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -232,7 +232,7 @@ const data: SpokeData = {
           </p>
 
           <RateCards cards={[
-            { value: '양도', label: '중과유예 중(~2026.5.9)', lines: ['기본세율 6~45%', '장특공제 가능(최대 30%)', '자녀가 시가로 취득'], highlightColor: 'emerald' },
+            { value: '양도', label: '중과유예 중(~2026.5.9)', lines: ['기본세율 6~45%', '장특공제 가능(최대 30%)', '자녀가 시가로 취득'], highlightColor: 'navy' },
             { value: '증여', label: '자녀 장기보유 계획', lines: ['증여세 10~50%', '자녀 1주택 비과세 가능', '부모 취득가액 승계'],},
             { value: '부담부증여', label: '대출 활용', lines: ['증여세 과표 축소', '부모 일부 양도세 발생', '자녀 대출 상환 부담'],},
           ]} />

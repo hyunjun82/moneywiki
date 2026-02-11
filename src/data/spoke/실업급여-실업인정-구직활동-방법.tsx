@@ -23,7 +23,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <><span className="text-emerald-600">실업급여 실업인정</span> 구직활동 방법</>,
+    h1: <><span className="text-[#1E3A5F]">실업급여 실업인정</span> 구직활동 방법</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -211,9 +211,9 @@ const data: SpokeData = {
           </p>
 
           <RateCards cards={[
-            { value: '면접', label: '입사 면접', lines: ['면접확인서 제출', '일정 조정 가능'], highlight: '인정', highlightColor: 'emerald' },
-            { value: '질병', label: '질병·부상', lines: ['진단서 제출', '입원확인서 가능'], highlight: '인정', highlightColor: 'emerald', active: true },
-            { value: '경조사', label: '경조사', lines: ['직계가족 사망', '결혼 등'], highlight: '인정', highlightColor: 'emerald' },
+            { value: '면접', label: '입사 면접', lines: ['면접확인서 제출', '일정 조정 가능'], highlight: '인정', highlightColor: 'navy' },
+            { value: '질병', label: '질병·부상', lines: ['진단서 제출', '입원확인서 가능'], highlight: '인정', highlightColor: 'navy', active: true },
+            { value: '경조사', label: '경조사', lines: ['직계가족 사망', '결혼 등'], highlight: '인정', highlightColor: 'navy' },
           ]} />
 
           <TipBox title="실업인정 불참 시 패널티">

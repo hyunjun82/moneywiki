@@ -52,7 +52,7 @@ export default function FormsListPage() {
       <header className="bg-white border-b border-neutral-200">
         <div className="max-w-6xl mx-auto px-4 py-6">
           <nav className="text-sm text-neutral-500 mb-2">
-            <Link href="/" className="hover:text-emerald-600">
+            <Link href="/" className="hover:text-[#1E3A5F]">
               홈
             </Link>
             <span className="mx-2">/</span>
@@ -83,11 +83,11 @@ export default function FormsListPage() {
                 <Link
                   key={form.slug}
                   href={`/forms/${encodeURIComponent(form.slug)}`}
-                  className="group p-4 bg-white border border-neutral-200 rounded-xl hover:border-emerald-400 hover:shadow-md transition-all"
+                  className="group p-4 bg-white border border-neutral-200 rounded-xl hover:border-[#4A7AB5] hover:shadow-md transition-all"
                 >
                   <div className="flex items-start justify-between">
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-medium text-neutral-800 group-hover:text-emerald-600 truncate">
+                      <h3 className="font-medium text-neutral-800 group-hover:text-[#1E3A5F] truncate">
                         {form.shortTitle || form.slug}
                       </h3>
                       <p className="text-sm text-neutral-500 mt-1 line-clamp-2">
@@ -95,7 +95,7 @@ export default function FormsListPage() {
                       </p>
                     </div>
                     {form.downloads.hwp && (
-                      <span className="ml-2 px-2 py-1 bg-emerald-100 text-emerald-700 text-xs font-medium rounded">
+                      <span className="ml-2 px-2 py-1 bg-[#EDF2F8] text-[#162F4F] text-xs font-medium rounded">
                         HWP
                       </span>
                     )}
@@ -118,11 +118,11 @@ export default function FormsListPage() {
         ))}
 
         {/* 안내 문구 */}
-        <div className="mt-12 p-6 bg-emerald-50 border border-emerald-200 rounded-xl">
-          <h3 className="font-semibold text-emerald-800 mb-2">
+        <div className="mt-12 p-6 bg-[#F5F8FB] border border-[#B8D0E8] rounded-xl">
+          <h3 className="font-semibold text-[#132A42] mb-2">
             양식 다운로드 안내
           </h3>
-          <ul className="text-sm text-emerald-700 space-y-1">
+          <ul className="text-sm text-[#162F4F] space-y-1">
             <li>• HWP 표시가 있는 양식은 바로 다운로드 가능합니다</li>
             <li>• 그 외 양식은 출처 사이트에서 다운로드할 수 있어요</li>
             <li>• 모든 양식은 무료이며 회원가입이 필요 없습니다</li>

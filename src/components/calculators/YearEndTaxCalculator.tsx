@@ -84,7 +84,7 @@ interface InputFieldProps {
 
 function InputField({ label, value, onChange, readOnly, description, highlight }: InputFieldProps) {
   return (
-    <div className={`flex flex-col sm:flex-row sm:items-center gap-2 py-3 px-4 border-b border-neutral-100 ${highlight ? "bg-emerald-50" : ""}`}>
+    <div className={`flex flex-col sm:flex-row sm:items-center gap-2 py-3 px-4 border-b border-neutral-100 ${highlight ? "bg-[#F5F8FB]" : ""}`}>
       <div className="sm:w-48 flex-shrink-0">
         <span className="text-sm font-medium text-neutral-700">{label}</span>
       </div>
@@ -97,7 +97,7 @@ function InputField({ label, value, onChange, readOnly, description, highlight }
           className={`w-full max-w-xs px-3 py-2 text-right border rounded-lg ${
             readOnly
               ? "bg-neutral-100 text-neutral-600 border-neutral-200"
-              : "bg-white border-neutral-300 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+              : "bg-white border-neutral-300 focus:border-[#2B5280] focus:ring-1 focus:ring-[#2B5280]"
           }`}
         />
         <span className="text-sm text-neutral-500">원</span>
@@ -128,7 +128,7 @@ function SelectField({ label, value, onChange, description }: SelectFieldProps) 
             type="radio"
             checked={value}
             onChange={() => onChange(true)}
-            className="w-4 h-4 text-emerald-600"
+            className="w-4 h-4 text-[#1E3A5F]"
           />
           <span className="text-sm">예</span>
         </label>
@@ -137,7 +137,7 @@ function SelectField({ label, value, onChange, description }: SelectFieldProps) 
             type="radio"
             checked={!value}
             onChange={() => onChange(false)}
-            className="w-4 h-4 text-emerald-600"
+            className="w-4 h-4 text-[#1E3A5F]"
           />
           <span className="text-sm">아니오</span>
         </label>
@@ -167,7 +167,7 @@ function NumberSelect({ label, value, onChange, max, description }: NumberSelect
         <select
           value={value}
           onChange={(e) => onChange(parseInt(e.target.value))}
-          className="px-3 py-2 border border-neutral-300 rounded-lg bg-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+          className="px-3 py-2 border border-neutral-300 rounded-lg bg-white focus:border-[#2B5280] focus:ring-1 focus:ring-[#2B5280]"
         >
           {Array.from({ length: max + 1 }, (_, i) => (
             <option key={i} value={i}>{i}명</option>
@@ -355,9 +355,9 @@ export default function YearEndTaxCalculator() {
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
       {/* 헤더 */}
-      <div className="bg-emerald-600 text-white px-6 py-4">
+      <div className="bg-[#1E3A5F] text-white px-6 py-4">
         <h2 className="text-xl font-bold">연말정산 계산기 (2025년 귀속)</h2>
-        <p className="text-emerald-100 text-sm mt-1">홈택스 연말정산 미리보기와 동일한 방식으로 계산해요</p>
+        <p className="text-[#EDF2F8] text-sm mt-1">홈택스 연말정산 미리보기와 동일한 방식으로 계산해요</p>
       </div>
 
       {/* 1. 기본입력사항 */}
@@ -602,28 +602,28 @@ export default function YearEndTaxCalculator() {
       </div>
 
       {/* 결과 */}
-      <div className="bg-gradient-to-r from-emerald-50 to-teal-50">
-        <div className="bg-emerald-600 px-6 py-3">
+      <div className="bg-gradient-to-r from-[#F5F8FB] to-teal-50">
+        <div className="bg-[#1E3A5F] px-6 py-3">
           <h3 className="font-semibold text-white">계산 결과</h3>
         </div>
         <div className="p-4 space-y-3">
-          <div className="flex justify-between items-center py-2 border-b border-emerald-200">
+          <div className="flex justify-between items-center py-2 border-b border-[#B8D0E8]">
             <span className="text-neutral-700">과세표준</span>
             <span className="font-semibold">{formatNumber(taxBase)}원</span>
           </div>
-          <div className="flex justify-between items-center py-2 border-b border-emerald-200">
+          <div className="flex justify-between items-center py-2 border-b border-[#B8D0E8]">
             <span className="text-neutral-700">산출세액</span>
             <span className="font-semibold">{formatNumber(calculatedTax)}원</span>
           </div>
-          <div className="flex justify-between items-center py-2 border-b border-emerald-200">
+          <div className="flex justify-between items-center py-2 border-b border-[#B8D0E8]">
             <span className="text-neutral-700">세액공제 합계</span>
-            <span className="font-semibold text-emerald-600">-{formatNumber(totalTaxCredit)}원</span>
+            <span className="font-semibold text-[#1E3A5F]">-{formatNumber(totalTaxCredit)}원</span>
           </div>
-          <div className="flex justify-between items-center py-2 border-b border-emerald-200">
+          <div className="flex justify-between items-center py-2 border-b border-[#B8D0E8]">
             <span className="text-neutral-700">결정세액</span>
             <span className="font-semibold">{formatNumber(determinedTax)}원</span>
           </div>
-          <div className="flex justify-between items-center py-2 border-b border-emerald-200">
+          <div className="flex justify-between items-center py-2 border-b border-[#B8D0E8]">
             <span className="text-neutral-700">기납부세액 (예상)</span>
             <span className="font-semibold">{formatNumber(prepaidTax)}원</span>
           </div>
@@ -631,12 +631,12 @@ export default function YearEndTaxCalculator() {
             <span className="text-lg font-bold text-neutral-800">
               {finalTax < 0 ? "환급예상액" : "추가납부예상액"}
             </span>
-            <span className={`text-2xl font-bold ${finalTax < 0 ? "text-emerald-600" : "text-red-600"}`}>
+            <span className={`text-2xl font-bold ${finalTax < 0 ? "text-[#1E3A5F]" : "text-red-600"}`}>
               {finalTax < 0 ? "+" : ""}{formatNumber(Math.abs(finalTax))}원
             </span>
           </div>
           {finalTax < 0 && (
-            <p className="text-sm text-emerald-700 text-center mt-2">
+            <p className="text-sm text-[#162F4F] text-center mt-2">
               약 {formatNumber(Math.abs(finalTax))}원을 돌려받을 수 있어요
             </p>
           )}

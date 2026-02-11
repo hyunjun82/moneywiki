@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>장특공 <span className="text-emerald-600">절세 계산</span> — 실전 사례로 보는 양도세 줄이기</>,
+    h1: <>장특공 <span className="text-[#1E3A5F]">절세 계산</span> — 실전 사례로 보는 양도세 줄이기</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

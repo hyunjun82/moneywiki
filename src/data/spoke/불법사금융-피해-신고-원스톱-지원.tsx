@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>불법사금융 <span className="text-emerald-600">피해 신고</span> 방법 — 원스톱 지원 신청과 절차</>,
+    h1: <>불법사금융 <span className="text-[#1E3A5F]">피해 신고</span> 방법 — 원스톱 지원 신청과 절차</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -106,9 +106,9 @@ const data: SpokeData = {
           </p>
 
           <RateCards cards={[
-            { value: '추심 중단', label: '금감원', lines: ['불법추심 즉시 중단 요청', '채권 추심 차단 조치'], highlight: '즉시 중단', highlightColor: 'emerald' },
+            { value: '추심 중단', label: '금감원', lines: ['불법추심 즉시 중단 요청', '채권 추심 차단 조치'], highlight: '즉시 중단', highlightColor: 'navy' },
             { value: '수사 의뢰', label: '경찰청', lines: ['불법 대부업체 수사', '자동 연계로 별도 신고 불필요'], active: true },
-            { value: '법률 지원', label: '법률구조공단', lines: ['무료 법률 상담', '소송 대리 지원 가능'], highlight: '무료', highlightColor: 'emerald' },
+            { value: '법률 지원', label: '법률구조공단', lines: ['무료 법률 상담', '소송 대리 지원 가능'], highlight: '무료', highlightColor: 'navy' },
           ]} />
 
           <TipBox title="불법사금융예방대출도 함께 신청하세요">

@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 2월 기준',
-    h1: <>중과 유예 종료 — <span className="text-emerald-600">부동산 시장 전망</span>과 대응 전략</>,
+    h1: <>중과 유예 종료 — <span className="text-[#1E3A5F]">부동산 시장 전망</span>과 대응 전략</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

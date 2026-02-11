@@ -55,7 +55,7 @@ export default function LoanInterestCalculator() {
   return (
     <>
       <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
-      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-[#1E3A5F] to-teal-600 px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -76,7 +76,7 @@ export default function LoanInterestCalculator() {
             onClick={() => setInterestType("simple")}
             className={`flex-1 py-3 rounded-xl font-medium transition-all ${
               interestType === "simple"
-                ? "bg-emerald-600 text-white"
+                ? "bg-[#1E3A5F] text-white"
                 : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
             }`}
           >
@@ -86,7 +86,7 @@ export default function LoanInterestCalculator() {
             onClick={() => setInterestType("compound")}
             className={`flex-1 py-3 rounded-xl font-medium transition-all ${
               interestType === "compound"
-                ? "bg-emerald-600 text-white"
+                ? "bg-[#1E3A5F] text-white"
                 : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
             }`}
           >
@@ -103,11 +103,11 @@ export default function LoanInterestCalculator() {
               value={principal > 0 ? formatNumber(principal) : ""}
               onChange={(e) => setPrincipal(parseInt(e.target.value.replace(/,/g, "")) || 0)}
               placeholder="대출금액"
-              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 text-right pr-12"
+              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-[#2B5280] focus:ring-0 text-right pr-12"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
           </div>
-          {principal > 0 && <p className="mt-1 text-sm text-emerald-600">{formatWon(principal)}</p>}
+          {principal > 0 && <p className="mt-1 text-sm text-[#1E3A5F]">{formatWon(principal)}</p>}
 
           <div className="flex gap-2 mt-3">
             {[10000000, 30000000, 50000000, 100000000, 200000000].map((amount) => (
@@ -119,7 +119,7 @@ export default function LoanInterestCalculator() {
                 {amount >= 100000000 ? `${amount / 100000000}억` : `${amount / 10000}만`}
               </button>
             ))}
-            <button onClick={() => setPrincipal(0)} className="py-2 px-4 bg-emerald-100 hover:bg-emerald-200 text-emerald-600 rounded-lg text-sm font-medium">C</button>
+            <button onClick={() => setPrincipal(0)} className="py-2 px-4 bg-[#EDF2F8] hover:bg-[#B8D0E8] text-[#1E3A5F] rounded-lg text-sm font-medium">C</button>
           </div>
         </div>
 
@@ -134,7 +134,7 @@ export default function LoanInterestCalculator() {
               step="0.1"
               min="0"
               max="30"
-              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500 text-right"
+              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-[#2B5280] text-right"
             />
           </div>
           <div>
@@ -142,7 +142,7 @@ export default function LoanInterestCalculator() {
             <select
               value={period}
               onChange={(e) => setPeriod(parseInt(e.target.value))}
-              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500"
+              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-[#2B5280]"
             >
               {[6, 12, 24, 36, 48, 60, 120, 240, 360].map((m) => (
                 <option key={m} value={m}>{m}개월 ({m / 12}년)</option>
@@ -153,8 +153,8 @@ export default function LoanInterestCalculator() {
 
         {/* 결과 */}
         {principal > 0 && (
-          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
-            <h3 className="text-lg font-bold text-emerald-800 mb-4">계산 결과</h3>
+          <div className="bg-gradient-to-r from-[#F5F8FB] to-teal-50 rounded-2xl p-6 border border-[#EDF2F8]">
+            <h3 className="text-lg font-bold text-[#132A42] mb-4">계산 결과</h3>
 
             <div className="grid grid-cols-2 gap-4 mb-4">
               <div className="bg-white rounded-xl p-4">
@@ -183,17 +183,17 @@ export default function LoanInterestCalculator() {
           </div>
         )}
 
-        <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
-          <h4 className="font-medium text-emerald-800 mb-2 flex items-center gap-2">
+        <div className="mt-6 p-4 bg-[#F5F8FB] rounded-xl border border-[#EDF2F8]">
+          <h4 className="font-medium text-[#132A42] mb-2 flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             대출이자가 뭔가요?
           </h4>
-          <p className="text-sm text-emerald-700 mb-2">
+          <p className="text-sm text-[#162F4F] mb-2">
             빌린 돈(원금)에 대해 내야 하는 사용료예요. <span className="font-medium">단리와 복리 방식에 따라 이자가 달라져요.</span>
           </p>
-          <ul className="text-sm text-emerald-700 space-y-1.5 mt-3">
+          <ul className="text-sm text-[#162F4F] space-y-1.5 mt-3">
             <li className="flex items-start gap-2">
               <span className="text-green-600 mt-0.5">✓</span>
               <span><strong>단리:</strong> 원금에만 이자 발생 (예: 일부 예금상품)</span>
@@ -207,9 +207,9 @@ export default function LoanInterestCalculator() {
               <span><strong>주택담보대출은 월복리</strong>로 계산돼요 (이자가 더 많이 나와요)</span>
             </li>
           </ul>
-          <div className="mt-3 pt-3 border-t border-emerald-200">
-            <p className="text-xs text-emerald-600">
-              📌 출처: <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">금융감독원</a> · <a href="https://www.bok.or.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">한국은행 기준금리</a>
+          <div className="mt-3 pt-3 border-t border-[#B8D0E8]">
+            <p className="text-xs text-[#1E3A5F]">
+              📌 출처: <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#132A42]">금융감독원</a> · <a href="https://www.bok.or.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#132A42]">한국은행 기준금리</a>
             </p>
           </div>
         </div>
@@ -222,12 +222,12 @@ export default function LoanInterestCalculator() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">금리 ↓ / 대출금 →</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">1억</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">2억</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">3억</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">5억</th>
+                <tr className="bg-[#EDF2F8] border-b-2 border-[#4A7AB5]">
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">금리 ↓ / 대출금 →</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">1억</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">2억</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">3억</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden sm:table-cell">5억</th>
                 </tr>
               </thead>
               <tbody>
@@ -245,8 +245,8 @@ export default function LoanInterestCalculator() {
                   <td className="py-2 px-2 text-center border border-gray-300">88만원</td>
                   <td className="py-2 px-2 text-center border border-gray-300 hidden sm:table-cell">146만원</td>
                 </tr>
-                <tr className="bg-emerald-50 border-b border-neutral-200">
-                  <td className="py-2 px-2 text-center font-bold text-emerald-700 border border-gray-300">4.0% ⭐</td>
+                <tr className="bg-[#F5F8FB] border-b border-neutral-200">
+                  <td className="py-2 px-2 text-center font-bold text-[#162F4F] border border-gray-300">4.0% ⭐</td>
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">33만원</td>
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">67만원</td>
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">100만원</td>
@@ -284,9 +284,9 @@ export default function LoanInterestCalculator() {
             </table>
           </div>
 
-          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
-            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
-            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+          <div className="mt-4 p-3 bg-[#EDF2F8] rounded-lg">
+            <p className="text-xs text-[#132A42] font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-[#162F4F] mt-1 space-y-1">
               <li>• <strong>금리 1% 차이</strong> = 1억당 월 <strong>8만원</strong> 차이</li>
               <li>• 3억 대출 시 금리 3% vs 6% = 월 75만원 차이! (연 900만원)</li>
               <li>• 대출 전 여러 은행 금리 비교는 필수!</li>

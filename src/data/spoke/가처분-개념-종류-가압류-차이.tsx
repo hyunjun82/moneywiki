@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>가처분 <span className="text-emerald-600">개념과 종류</span> — 가압류와의 차이까지 정리</>,
+    h1: <>가처분 <span className="text-[#1E3A5F]">개념과 종류</span> — 가압류와의 차이까지 정리</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -231,14 +231,14 @@ const data: SpokeData = {
               label: '임금 지급 가처분',
               lines: ['해고 무효 확인 소송 전', '근로자 지위 보전', '임금 가지급 가처분'],
               highlight: '해고 무효',
-              highlightColor: 'emerald',
+              highlightColor: 'navy',
             },
             {
               value: '회사 분쟁',
               label: '직무집행 정지',
               lines: ['이사 해임 결의 전', '주총 결의 효력 정지', '대표이사 직무 대행'],
               highlight: '결의 효력',
-              highlightColor: 'emerald',
+              highlightColor: 'navy',
             },
             {
               value: '지식재산',

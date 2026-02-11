@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>장특공 <span className="text-emerald-600">거주기간 2년 요건</span> — 계산 방법과 미충족 불이익</>,
+    h1: <>장특공 <span className="text-[#1E3A5F]">거주기간 2년 요건</span> — 계산 방법과 미충족 불이익</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

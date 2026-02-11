@@ -36,7 +36,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>희망저축계좌2 <span className="text-emerald-600">신청 기간</span> 서류와 신청 방법</>,
+    h1: <>희망저축계좌2 <span className="text-[#1E3A5F]">신청 기간</span> 서류와 신청 방법</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -192,7 +192,7 @@ const data: SpokeData = {
           ]} />
 
           <RateCards cards={[
-            { value: '주민센터', label: '방문 신청', lines: ['담당자 직접 상담', '서류 누락 시 현장 보완 가능'], highlight: '확실', highlightColor: 'emerald', active: true },
+            { value: '주민센터', label: '방문 신청', lines: ['담당자 직접 상담', '서류 누락 시 현장 보완 가능'], highlight: '확실', highlightColor: 'navy', active: true },
             { value: '복지로', label: '온라인 신청', lines: ['일부 지역만 가능', '서류 스캔·업로드 필요'], highlight: '편리', highlightColor: 'orange' },
           ]} />
 

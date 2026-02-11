@@ -90,10 +90,10 @@ export default function Sidebar() {
           </Link>
           <Link
             href="/category/정부지원금"
-            className="flex items-center justify-between w-full px-4 py-3 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white text-sm font-medium rounded-lg transition-all hover:shadow-lg hover:scale-[1.01]"
+            className="flex items-center justify-between w-full px-4 py-3 bg-gradient-to-r from-[#1E3A5F] to-[#2B5280] hover:from-[#162F4F] hover:to-[#1E3A5F] text-white text-sm font-medium rounded-lg transition-all hover:shadow-lg hover:scale-[1.01]"
           >
             <span>2026 정부지원금 총정리</span>
-            <span className="text-emerald-200 text-xs font-bold">30개+</span>
+            <span className="text-[#B8D0E8] text-xs font-bold">30개+</span>
           </Link>
           <Link
             href="/w/2026년-달라지는-제도"
@@ -107,7 +107,7 @@ export default function Sidebar() {
 
       {/* 인기 검색어 */}
       <div className="bg-white border border-gray-100 rounded-xl shadow-sm mb-4 overflow-hidden">
-        <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-[#2d5a45] to-[#3d7a5c]">
+        <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-[#1E3A5F] to-[#2B5280]">
           <span className="text-sm font-semibold text-white flex items-center gap-2">
             <span>🔥</span> 인기 검색어
           </span>
@@ -121,7 +121,7 @@ export default function Sidebar() {
                 className="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 transition-colors"
               >
                 <span className={`w-6 h-6 rounded-md flex items-center justify-center text-xs font-bold ${
-                  item.rank <= 3 ? 'bg-[#2d5a45] text-white' : 'bg-gray-100 text-gray-500'
+                  item.rank <= 3 ? 'bg-[#1E3A5F] text-white' : 'bg-gray-100 text-gray-500'
                 }`}>
                   {item.rank}
                 </span>
@@ -144,7 +144,7 @@ export default function Sidebar() {
           <span className="text-sm font-semibold text-gray-800 flex items-center gap-2">
             <span>📝</span> 최근 업데이트
           </span>
-          <Link href="/recent" className="text-xs text-[#2d5a45] hover:underline font-medium">
+          <Link href="/recent" className="text-xs text-[#1E3A5F] hover:underline font-medium">
             더보기
           </Link>
         </div>
@@ -218,7 +218,7 @@ export default function Sidebar() {
             </li>
           ))}
           <li className="px-4 py-2">
-            <Link href="/news" className="text-xs text-[#2d5a45] hover:underline font-medium">
+            <Link href="/news" className="text-xs text-[#1E3A5F] hover:underline font-medium">
               뉴스 더보기 →
             </Link>
           </li>
@@ -226,16 +226,16 @@ export default function Sidebar() {
       </div>
 
       {/* 빠른 링크 */}
-      <div className="p-4 bg-[#2d5a45]/5 rounded-xl">
-        <h3 className="text-xs font-semibold text-[#2d5a45] mb-3">빠른 링크</h3>
+      <div className="p-4 bg-[#1E3A5F]/5 rounded-xl">
+        <h3 className="text-xs font-semibold text-[#1E3A5F] mb-3">빠른 링크</h3>
         <div className="flex flex-wrap gap-2">
-          <Link href="/w/퇴직금-계산기" className="px-3 py-1.5 bg-white text-xs text-gray-600 rounded-lg hover:bg-[#2d5a45] hover:text-white transition-colors border border-gray-100">
+          <Link href="/w/퇴직금-계산기" className="px-3 py-1.5 bg-white text-xs text-gray-600 rounded-lg hover:bg-[#1E3A5F] hover:text-white transition-colors border border-gray-100">
             퇴직금계산
           </Link>
-          <Link href="/w/연봉-실수령액-계산기" className="px-3 py-1.5 bg-white text-xs text-gray-600 rounded-lg hover:bg-[#2d5a45] hover:text-white transition-colors border border-gray-100">
+          <Link href="/w/연봉-실수령액-계산기" className="px-3 py-1.5 bg-white text-xs text-gray-600 rounded-lg hover:bg-[#1E3A5F] hover:text-white transition-colors border border-gray-100">
             연봉계산기
           </Link>
-          <Link href="/w/연말정산" className="px-3 py-1.5 bg-white text-xs text-gray-600 rounded-lg hover:bg-[#2d5a45] hover:text-white transition-colors border border-gray-100">
+          <Link href="/w/연말정산" className="px-3 py-1.5 bg-white text-xs text-gray-600 rounded-lg hover:bg-[#1E3A5F] hover:text-white transition-colors border border-gray-100">
             연말정산
           </Link>
         </div>

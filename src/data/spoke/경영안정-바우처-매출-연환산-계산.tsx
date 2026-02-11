@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>경영안정바우처 <span className="text-emerald-600">매출 연환산</span> — 계산 방법과 창업 첫해 기준</>,
+    h1: <>경영안정바우처 <span className="text-[#1E3A5F]">매출 연환산</span> — 계산 방법과 창업 첫해 기준</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

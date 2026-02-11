@@ -27,15 +27,15 @@ export default function HopeReturnPackagePage() {
       {/* Hero */}
       <section className="pt-16 pb-20 px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 text-sm font-medium px-4 py-2 rounded-full mb-8">
-            <span className="w-2 h-2 bg-emerald-500 rounded-full" />
+          <div className="inline-flex items-center gap-2 bg-[#F5F8FB] text-[#162F4F] text-sm font-medium px-4 py-2 rounded-full mb-8">
+            <span className="w-2 h-2 bg-[#2B5280] rounded-full" />
             중소벤처기업부 공식 지원
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-6">
             폐업하면 받는
             <br />
-            <span className="text-emerald-600">희망리턴패키지</span>
+            <span className="text-[#1E3A5F]">희망리턴패키지</span>
           </h1>
 
           <p className="text-xl text-slate-600 mb-10">
@@ -207,7 +207,7 @@ export default function HopeReturnPackagePage() {
 
           <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 my-6">
             <div className="text-center">
-              <div className="text-3xl font-bold text-emerald-600 mb-2">최대 3,820만원</div>
+              <div className="text-3xl font-bold text-[#1E3A5F] mb-2">최대 3,820만원</div>
               <div className="text-sm text-slate-600">모든 프로그램 활용 시</div>
             </div>
           </div>
@@ -289,10 +289,10 @@ export default function HopeReturnPackagePage() {
             ]}
           />
 
-          <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6 my-8">
+          <div className="bg-[#F5F8FB] border border-[#B8D0E8] rounded-xl p-6 my-8">
             <div className="text-center">
-              <div className="text-2xl font-bold text-emerald-700 mb-2">총 최대 3,820만원</div>
-              <div className="text-sm text-emerald-600">모든 프로그램 순차 활용 시</div>
+              <div className="text-2xl font-bold text-[#162F4F] mb-2">총 최대 3,820만원</div>
+              <div className="text-sm text-[#1E3A5F]">모든 프로그램 순차 활용 시</div>
             </div>
           </div>
 

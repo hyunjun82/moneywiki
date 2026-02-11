@@ -47,8 +47,8 @@ export default function HubPageContent({ hub, slug }: { hub: HubData; slug: stri
             </nav>
 
             {/* 배지 */}
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-600/[0.07] border border-emerald-600/[0.12] rounded-full text-[11px] font-semibold text-emerald-600 mb-4">
-              <span className="w-1.5 h-1.5 bg-emerald-600 rounded-full animate-pulse" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#1E3A5F]/[0.07] border border-[#1E3A5F]/[0.12] rounded-full text-[11px] font-semibold text-[#1E3A5F] mb-4">
+              <span className="w-1.5 h-1.5 bg-[#1E3A5F] rounded-full animate-pulse" />
               {hub.hero.badge}
             </div>
 
@@ -74,7 +74,7 @@ export default function HubPageContent({ hub, slug }: { hub: HubData; slug: stri
                 {hub.hero.stats.map((stat, i) => (
                   <div key={i} className="bg-white p-4 text-center hover:scale-[1.03] transition-transform">
                     <div className={`text-xl font-bold tracking-tight ${
-                      stat.color === 'green' ? 'text-emerald-600' :
+                      stat.color === 'green' ? 'text-[#1E3A5F]' :
                       stat.color === 'orange' ? 'text-orange-500' : ''
                     }`}>
                       {stat.value}
@@ -93,7 +93,7 @@ export default function HubPageContent({ hub, slug }: { hub: HubData; slug: stri
               id={section.id}
               className="py-12 border-b border-neutral-100 last:border-b-0"
             >
-              <div className="text-[11px] font-bold uppercase tracking-wide text-emerald-600 mb-1.5">
+              <div className="text-[11px] font-bold uppercase tracking-wide text-[#1E3A5F] mb-1.5">
                 {section.tag}
               </div>
               <h2 className="text-[22px] font-bold tracking-tight mb-1.5 scroll-mt-[70px]">
@@ -103,7 +103,7 @@ export default function HubPageContent({ hub, slug }: { hub: HubData; slug: stri
                 {section.subtitle}
               </div>
               {/* 본문: p, h3, strong, a 등 기본 스타일 */}
-              <div className="text-[15px] text-neutral-700 leading-relaxed [&>p]:mb-3.5 [&>h3]:text-base [&>h3]:font-bold [&>h3]:mt-8 [&>h3]:mb-2.5 [&>h3]:pl-3 [&>h3]:border-l-[3px] [&>h3]:border-emerald-600 [&_strong]:text-neutral-900 [&_strong]:font-semibold [&_a:not(.hub-cta)]:text-blue-600 [&_a:not(.hub-cta):hover]:underline">
+              <div className="text-[15px] text-neutral-700 leading-relaxed [&>p]:mb-3.5 [&>h3]:text-base [&>h3]:font-bold [&>h3]:mt-8 [&>h3]:mb-2.5 [&>h3]:pl-3 [&>h3]:border-l-[3px] [&>h3]:border-[#1E3A5F] [&_strong]:text-neutral-900 [&_strong]:font-semibold [&_a:not(.hub-cta)]:text-blue-600 [&_a:not(.hub-cta):hover]:underline">
                 {section.content}
               </div>
 
@@ -121,7 +121,7 @@ export default function HubPageContent({ hub, slug }: { hub: HubData; slug: stri
           {/* ===== 스포크 링크 ===== */}
           {hub.spokeGroups.length > 0 && (
             <section className="py-12 border-b border-neutral-100">
-              <div className="text-[11px] font-bold uppercase tracking-wide text-emerald-600 mb-1.5">
+              <div className="text-[11px] font-bold uppercase tracking-wide text-[#1E3A5F] mb-1.5">
                 관련 글
               </div>
               <h2 className="text-[22px] font-bold tracking-tight mb-6 scroll-mt-[70px]">
@@ -131,7 +131,7 @@ export default function HubPageContent({ hub, slug }: { hub: HubData; slug: stri
               {hub.spokeGroups.map((group, gi) => (
                 <div key={gi} className={gi > 0 ? 'mt-8' : ''}>
                   {hub.spokeGroups.length > 1 && (
-                    <h3 className="text-base font-bold pl-3 border-l-[3px] border-emerald-600 mb-3">
+                    <h3 className="text-base font-bold pl-3 border-l-[3px] border-[#1E3A5F] mb-3">
                       {group.title}
                     </h3>
                   )}
@@ -140,12 +140,12 @@ export default function HubPageContent({ hub, slug }: { hub: HubData; slug: stri
                       <Link
                         key={spoke.slug}
                         href={`/w/${spoke.slug}`}
-                        className="group border border-neutral-200 rounded-xl p-5 hover:border-emerald-600 hover:shadow-md hover:-translate-y-0.5 transition-all no-underline"
+                        className="group border border-neutral-200 rounded-xl p-5 hover:border-[#1E3A5F] hover:shadow-md hover:-translate-y-0.5 transition-all no-underline"
                       >
-                        <span className="inline-block text-[10px] font-bold py-0.5 px-2 bg-emerald-600/10 text-emerald-600 rounded mb-2">
+                        <span className="inline-block text-[10px] font-bold py-0.5 px-2 bg-[#1E3A5F]/10 text-[#1E3A5F] rounded mb-2">
                           {spoke.badge}
                         </span>
-                        <div className="text-sm font-semibold text-neutral-800 group-hover:text-emerald-600 transition-colors">
+                        <div className="text-sm font-semibold text-neutral-800 group-hover:text-[#1E3A5F] transition-colors">
                           {spoke.title}
                         </div>
                         <div className="text-xs text-neutral-500 mt-1">{spoke.desc}</div>
@@ -160,7 +160,7 @@ export default function HubPageContent({ hub, slug }: { hub: HubData; slug: stri
           {/* ===== FAQ ===== */}
           {hub.faq.length > 0 && (
             <section className="py-12 border-b border-neutral-100">
-              <div className="text-[11px] font-bold uppercase tracking-wide text-emerald-600 mb-1.5">
+              <div className="text-[11px] font-bold uppercase tracking-wide text-[#1E3A5F] mb-1.5">
                 FAQ
               </div>
               <h2 className="text-[22px] font-bold tracking-tight mb-6 scroll-mt-[70px]">

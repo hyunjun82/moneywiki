@@ -37,8 +37,8 @@ export default function HubFloatingTOC({ items }: { items: HubTOCItem[] }) {
           href={`#${item.id}`}
           className={`block py-1 ${item.sub ? 'pl-6 text-[10px]' : 'pl-3'} border-l-2 transition-all no-underline leading-snug ${
             activeId === item.id
-              ? 'text-emerald-600 font-semibold border-emerald-600 border-l-[3px]'
-              : 'text-neutral-500 border-neutral-200 hover:text-neutral-800 hover:border-emerald-600'
+              ? 'text-[#1E3A5F] font-semibold border-[#1E3A5F] border-l-[3px]'
+              : 'text-neutral-500 border-neutral-200 hover:text-neutral-800 hover:border-[#1E3A5F]'
           }`}
         >
           {item.text}

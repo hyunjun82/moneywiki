@@ -26,7 +26,7 @@ export default function FormSidebar() {
     <aside className="w-72 shrink-0 hidden lg:block">
       {/* 인기 다운로드 */}
       <div className="bg-white border border-gray-100 rounded-xl shadow-sm mb-4 overflow-hidden">
-        <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-emerald-600 to-teal-600">
+        <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-[#1E3A5F] to-teal-600">
           <span className="text-sm font-semibold text-white flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -43,7 +43,7 @@ export default function FormSidebar() {
                 className="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 transition-colors"
               >
                 <span className={`w-6 h-6 rounded-md flex items-center justify-center text-xs font-bold ${
-                  item.rank <= 3 ? 'bg-emerald-600 text-white' : 'bg-gray-100 text-gray-500'
+                  item.rank <= 3 ? 'bg-[#1E3A5F] text-white' : 'bg-gray-100 text-gray-500'
                 }`}>
                   {item.rank}
                 </span>

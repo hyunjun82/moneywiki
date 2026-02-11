@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 2월 기준',
-    h1: <>조정대상지역 목록 — <span className="text-emerald-600">서울 경기</span> 해제 지역까지</>,
+    h1: <>조정대상지역 목록 — <span className="text-[#1E3A5F]">서울 경기</span> 해제 지역까지</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

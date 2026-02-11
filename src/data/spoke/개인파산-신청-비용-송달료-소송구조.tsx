@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>개인파산 <span className="text-emerald-600">신청 비용</span> — 인지대 송달료 계산과 소송구조 신청</>,
+    h1: <>개인파산 <span className="text-[#1E3A5F]">신청 비용</span> — 인지대 송달료 계산과 소송구조 신청</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

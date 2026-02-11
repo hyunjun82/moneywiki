@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>개인파산 <span className="text-emerald-600">준비서류</span> 작성 방법 — 채권자목록과 재산목록 기재</>,
+    h1: <>개인파산 <span className="text-[#1E3A5F]">준비서류</span> 작성 방법 — 채권자목록과 재산목록 기재</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

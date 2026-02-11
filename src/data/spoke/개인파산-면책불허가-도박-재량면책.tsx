@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>개인파산 <span className="text-emerald-600">면책불허가</span> 사유 — 도박 빚과 재산은닉, 재량면책 방법</>,
+    h1: <>개인파산 <span className="text-[#1E3A5F]">면책불허가</span> 사유 — 도박 빚과 재산은닉, 재량면책 방법</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -127,7 +127,7 @@ const data: SpokeData = {
           </p>
 
           <RateCards cards={[
-            { value: '높음', label: '면책 가능성 높은 경우', lines: ['도박 치료 기록이 있는 경우', '생활비 대부분이 도박 외 채무', '반성문과 갱생 의지 소명'], highlightColor: 'emerald', highlight: '유리' },
+            { value: '높음', label: '면책 가능성 높은 경우', lines: ['도박 치료 기록이 있는 경우', '생활비 대부분이 도박 외 채무', '반성문과 갱생 의지 소명'], highlightColor: 'navy', highlight: '유리' },
             { value: '보통', label: '반반인 경우', lines: ['도박 비중이 전체의 절반 수준', '치료 기록은 없지만 중단 증명', '재산 은닉 등 다른 사유 없음'] },
             { value: '낮음', label: '면책 어려운 경우', lines: ['최근까지 도박 지속', '재산 숨기거나 허위 진술', '반성 의지 소명 부족'], highlightColor: 'orange', highlight: '불리' },
           ]} />

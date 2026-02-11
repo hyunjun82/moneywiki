@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>경영안정바우처 <span className="text-emerald-600">신청 대상</span> — 매출 기준과 업종 제한</>,
+    h1: <>경영안정바우처 <span className="text-[#1E3A5F]">신청 대상</span> — 매출 기준과 업종 제한</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

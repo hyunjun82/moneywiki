@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>가처분 <span className="text-emerald-600">심리와 재판</span> — 담보제공 명령과 심문 절차</>,
+    h1: <>가처분 <span className="text-[#1E3A5F]">심리와 재판</span> — 담보제공 명령과 심문 절차</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

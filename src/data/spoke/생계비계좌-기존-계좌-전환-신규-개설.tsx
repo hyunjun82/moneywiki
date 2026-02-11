@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>생계비계좌 <span className="text-emerald-600">기존 계좌 전환</span> — 신규 개설과 비교까지</>,
+    h1: <>생계비계좌 <span className="text-[#1E3A5F]">기존 계좌 전환</span> — 신규 개설과 비교까지</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

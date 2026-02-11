@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>경영안정바우처 <span className="text-emerald-600">중복 수혜</span> — 배달비 크레딧과 다른 지원금</>,
+    h1: <>경영안정바우처 <span className="text-[#1E3A5F]">중복 수혜</span> — 배달비 크레딧과 다른 지원금</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

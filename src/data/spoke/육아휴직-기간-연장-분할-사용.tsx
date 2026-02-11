@@ -23,7 +23,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2025년 2월 23일 시행',
-    h1: <><span className="text-emerald-600">육아휴직 기간 연장</span> 신청과 분할 사용 횟수</>,
+    h1: <><span className="text-[#1E3A5F]">육아휴직 기간 연장</span> 신청과 분할 사용 횟수</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

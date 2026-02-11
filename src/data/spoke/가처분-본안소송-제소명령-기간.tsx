@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>가처분 <span className="text-emerald-600">본안소송</span> — 제소명령과 제소기간 정리</>,
+    h1: <>가처분 <span className="text-[#1E3A5F]">본안소송</span> — 제소명령과 제소기간 정리</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -230,7 +230,7 @@ const data: SpokeData = {
               label: '채권자 승소 확정',
               lines: ['가처분 등기 말소', '본등기 경료', '위반 처분 등기 말소', '담보금 회수'],
               highlight: '본등기',
-              highlightColor: 'emerald',
+              highlightColor: 'navy',
               active: true,
             },
             {

@@ -41,7 +41,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>다주택자 양도세 <span className="text-emerald-600">중과 배제</span> 대상 주택과 신고 방법</>,
+    h1: <>다주택자 양도세 <span className="text-[#1E3A5F]">중과 배제</span> 대상 주택과 신고 방법</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -89,7 +89,7 @@ const data: SpokeData = {
           </p>
 
           <RateCards cards={[
-            { value: '기본세율', label: '중과 배제 주택', lines: ['6~45% 적용', '장기공제 가능'], highlight: '절세', highlightColor: 'emerald' as const },
+            { value: '기본세율', label: '중과 배제 주택', lines: ['6~45% 적용', '장기공제 가능'], highlight: '절세', highlightColor: 'navy' as const },
             { value: '+20~30%p', label: '중과 적용 주택', lines: ['최대 75%', '장기공제 배제'], highlight: '부담', highlightColor: 'orange' as const },
           ]} />
 

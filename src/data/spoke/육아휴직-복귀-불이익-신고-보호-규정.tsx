@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>육아휴직 <span className="text-emerald-600">복귀 후 불이익</span> 대처 신고와 보호 규정</>,
+    h1: <>육아휴직 <span className="text-[#1E3A5F]">복귀 후 불이익</span> 대처 신고와 보호 규정</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

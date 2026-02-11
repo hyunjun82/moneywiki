@@ -30,7 +30,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <><span className="text-emerald-600">실업급여 세금</span> 건강보험 국민연금 처리</>,
+    h1: <><span className="text-[#1E3A5F]">실업급여 세금</span> 건강보험 국민연금 처리</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -229,7 +229,7 @@ const data: SpokeData = {
 
           <RateCards cards={[
             { value: '없음', label: '고용·산재', lines: ['직장가입자 전용', '퇴직 시 자동 해제'], highlight: '미가입',  },
-            { value: '감면', label: '건강보험', lines: ['지역가입자 전환', '최대 50% 감면'], highlight: '신청', highlightColor: 'emerald', active: true },
+            { value: '감면', label: '건강보험', lines: ['지역가입자 전환', '최대 50% 감면'], highlight: '신청', highlightColor: 'navy', active: true },
             { value: '유예', label: '국민연금', lines: ['납부유예 가능', '실업크레딧 선택'], highlight: '선택', highlightColor: 'orange' },
           ]} />
 

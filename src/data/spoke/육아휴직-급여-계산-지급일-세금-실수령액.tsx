@@ -36,7 +36,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <><span className="text-emerald-600">육아휴직 급여</span> 계산 지급일 세금과 실수령액</>,
+    h1: <><span className="text-[#1E3A5F]">육아휴직 급여</span> 계산 지급일 세금과 실수령액</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

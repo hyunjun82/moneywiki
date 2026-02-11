@@ -39,7 +39,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>일시적 2주택 <span className="text-emerald-600">양도세 비과세</span> 기간과 처분 조건</>,
+    h1: <>일시적 2주택 <span className="text-[#1E3A5F]">양도세 비과세</span> 기간과 처분 조건</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -87,7 +87,7 @@ const data: SpokeData = {
           </p>
 
           <RateCards cards={[
-            { value: '0원', label: '비과세 적용 시', lines: ['기한 내 종전주택 매도', '12억 이하 전액 면제'], highlight: '비과세', highlightColor: 'emerald' as const },
+            { value: '0원', label: '비과세 적용 시', lines: ['기한 내 종전주택 매도', '12억 이하 전액 면제'], highlight: '비과세', highlightColor: 'navy' as const },
             { value: '6~45%', label: '비과세 미적용 시', lines: ['기한 초과 또는 요건 미충족', '일반 양도세 과세'], highlight: '과세', highlightColor: 'orange' as const },
           ]} />
 

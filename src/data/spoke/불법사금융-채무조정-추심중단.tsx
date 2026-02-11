@@ -39,7 +39,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>불법사금융 <span className="text-emerald-600">채무 조정</span> 방법 — 추심 중단과 채무 감면</>,
+    h1: <>불법사금융 <span className="text-[#1E3A5F]">채무 조정</span> 방법 — 추심 중단과 채무 감면</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -120,9 +120,9 @@ const data: SpokeData = {
           ]} />
 
           <RateCards cards={[
-            { value: '최대 15%', label: '원금 감면', lines: ['신용회복위원회 채무 조정', '원금 일부 감면 가능'], highlight: '감면', highlightColor: 'emerald' as const },
+            { value: '최대 15%', label: '원금 감면', lines: ['신용회복위원회 채무 조정', '원금 일부 감면 가능'], highlight: '감면', highlightColor: 'navy' as const },
             { value: '최장 10년', label: '분할상환', lines: ['원금균등분할 방식', '상환 부담 대폭 완화'], active: true },
-            { value: '최대 2년', label: '상환 유예', lines: ['당장 갚기 어려울 때', '유예 후 분할상환 시작'], highlight: '유예', highlightColor: 'emerald' as const },
+            { value: '최대 2년', label: '상환 유예', lines: ['당장 갚기 어려울 때', '유예 후 분할상환 시작'], highlight: '유예', highlightColor: 'navy' as const },
           ]} />
 
           <p className="text-neutral-600 mb-0">추심이 멈추면, 이제 본격적으로 채무를 줄이는 방법을 알아볼 차례예요.</p>

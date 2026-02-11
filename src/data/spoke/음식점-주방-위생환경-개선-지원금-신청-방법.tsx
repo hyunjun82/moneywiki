@@ -40,7 +40,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <><span className="text-emerald-600">음식점 주방 위생환경 개선</span> 지원금 신청 방법</>,
+    h1: <><span className="text-[#1E3A5F]">음식점 주방 위생환경 개선</span> 지원금 신청 방법</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -149,8 +149,8 @@ const data: SpokeData = {
           ]} />
 
           <RateCards cards={[
-            { value: '6개월', label: '창원시', lines: ['공고일 기준', '6개월 이상 영업'], highlight: '200만원', highlightColor: 'emerald' },
-            { value: '1년', label: '인천시', lines: ['사업자등록증', '개업연월일 기준'], highlight: '200만원', highlightColor: 'emerald', active: true },
+            { value: '6개월', label: '창원시', lines: ['공고일 기준', '6개월 이상 영업'], highlight: '200만원', highlightColor: 'navy' },
+            { value: '1년', label: '인천시', lines: ['사업자등록증', '개업연월일 기준'], highlight: '200만원', highlightColor: 'navy', active: true },
             { value: '6개월', label: '청양군', lines: ['공고일 기준', '6개월 이상 영업'], highlight: '500만원', highlightColor: 'orange' },
           ]} />
 

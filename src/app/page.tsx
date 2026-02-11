@@ -105,7 +105,7 @@ export default function Home() {
             <Link
               key={calc.slug}
               href={`/w/${calc.slug}`}
-              className="flex items-center gap-2 p-3 bg-white border border-neutral-200 rounded-lg hover:border-emerald-300 transition-colors"
+              className="flex items-center gap-2 p-3 bg-white border border-neutral-200 rounded-lg hover:border-[#4A7AB5] transition-colors"
             >
               <span>{calc.icon}</span>
               <span className="text-sm font-medium text-neutral-700">{calc.name}</span>
@@ -127,7 +127,7 @@ export default function Home() {
               <Link
                 key={category}
                 href={`/category/${categorySlug}`}
-                className="p-4 bg-white border border-neutral-200 rounded-lg hover:border-emerald-300 transition-colors text-center"
+                className="p-4 bg-white border border-neutral-200 rounded-lg hover:border-[#4A7AB5] transition-colors text-center"
               >
                 <span className="text-xl block mb-1">{categoryEmoji[category] || "📄"}</span>
                 <span className="text-sm font-medium">{category}</span>
@@ -148,9 +148,9 @@ export default function Home() {
             <Link
               key={doc.slug}
               href={`/w/${encodeURIComponent(doc.slug)}`}
-              className="p-4 bg-white border border-neutral-200 rounded-lg hover:border-emerald-300 transition-colors"
+              className="p-4 bg-white border border-neutral-200 rounded-lg hover:border-[#4A7AB5] transition-colors"
             >
-              <span className="text-xs text-emerald-600 mb-1 block">{doc.category}</span>
+              <span className="text-xs text-[#1E3A5F] mb-1 block">{doc.category}</span>
               <h3 className="font-medium text-neutral-800 line-clamp-1">{doc.title}</h3>
             </Link>
           ))}
@@ -167,7 +167,7 @@ export default function Home() {
             <Link
               key={doc.slug}
               href={`/w/${encodeURIComponent(doc.slug)}`}
-              className="flex items-center justify-between p-3 bg-white border border-neutral-200 rounded-lg hover:border-emerald-300 transition-colors"
+              className="flex items-center justify-between p-3 bg-white border border-neutral-200 rounded-lg hover:border-[#4A7AB5] transition-colors"
             >
               <span className="font-medium text-neutral-700 truncate">{doc.title}</span>
               <span className="text-xs text-neutral-400 shrink-0 ml-2">{doc.lastUpdated}</span>

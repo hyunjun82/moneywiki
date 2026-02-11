@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>개인파산 <span className="text-emerald-600">관할법원</span> 접수 방법 — 서울회생법원과 지방법원 선택</>,
+    h1: <>개인파산 <span className="text-[#1E3A5F]">관할법원</span> 접수 방법 — 서울회생법원과 지방법원 선택</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

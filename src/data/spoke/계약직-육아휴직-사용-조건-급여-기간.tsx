@@ -23,7 +23,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>계약직도 가능한 <span className="text-emerald-600">육아휴직</span> 사용 조건 급여 기간</>,
+    h1: <>계약직도 가능한 <span className="text-[#1E3A5F]">육아휴직</span> 사용 조건 급여 기간</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

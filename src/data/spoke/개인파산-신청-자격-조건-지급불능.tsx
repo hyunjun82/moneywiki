@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>개인파산 <span className="text-emerald-600">신청 자격 조건</span> — 지급불능 판단 기준과 소득 요건</>,
+    h1: <>개인파산 <span className="text-[#1E3A5F]">신청 자격 조건</span> — 지급불능 판단 기준과 소득 요건</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

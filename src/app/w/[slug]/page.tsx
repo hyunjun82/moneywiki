@@ -402,13 +402,13 @@ export default async function WikiPage({ params }: PageProps) {
     const wikiBoxHtml = relatedDocs.length > 0 ? `
       <div class="my-8 border border-neutral-200 rounded-xl overflow-hidden not-prose">
         <div class="px-4 py-2.5 bg-neutral-50 border-b border-neutral-100 flex items-center gap-2">
-          <span class="text-emerald-600 font-semibold text-sm">💡 머니위키</span>
+          <span class="text-[#1E3A5F] font-semibold text-sm">💡 머니위키</span>
         </div>
         <div class="divide-y divide-neutral-100">
           ${relatedDocs.slice(0, 3).map((relDoc: { slug: string; title: string }) => `
             <a href="/w/${encodeURIComponent(relDoc.slug)}" class="flex items-center justify-between px-4 py-3 hover:bg-neutral-50 transition-colors group no-underline">
-              <span class="text-sm text-neutral-700 group-hover:text-emerald-600 transition-colors">${relDoc.title}</span>
-              <span class="text-emerald-500 font-bold">→</span>
+              <span class="text-sm text-neutral-700 group-hover:text-[#1E3A5F] transition-colors">${relDoc.title}</span>
+              <span class="text-[#2B5280] font-bold">→</span>
             </a>
           `).join('')}
         </div>
@@ -541,7 +541,7 @@ export default async function WikiPage({ params }: PageProps) {
           <header className="mb-8 pb-6 border-b border-neutral-200">
             <div className="flex items-center justify-between mb-4 flex-wrap gap-3">
               <div className="flex items-center gap-3 flex-wrap">
-                <span className="px-2 py-1 text-xs bg-emerald-100 text-emerald-700 rounded font-medium">
+                <span className="px-2 py-1 text-xs bg-[#EDF2F8] text-[#162F4F] rounded font-medium">
                   {doc.category}
                 </span>
                 {doc.updateNote && (
@@ -576,7 +576,7 @@ export default async function WikiPage({ params }: PageProps) {
                       <li key={item.id} className={item.level === 3 ? "ml-6" : ""}>
                         <a
                           href={`#${item.id}`}
-                          className="text-emerald-600 hover:underline"
+                          className="text-[#1E3A5F] hover:underline"
                         >
                           {item.text}
                         </a>
@@ -589,16 +589,16 @@ export default async function WikiPage({ params }: PageProps) {
 
           {/* 3줄 요약 (계산기 페이지에서는 숨김) */}
           {doc.schemaType !== "calculator" && doc.summary && (
-            <div className="mb-8 p-6 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl border border-emerald-100">
+            <div className="mb-8 p-6 bg-gradient-to-r from-[#F5F8FB] to-teal-50 rounded-2xl border border-[#EDF2F8]">
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-xl">💡</span>
-                <h2 id="summary" className="font-semibold text-emerald-800">3줄 요약</h2>
+                <h2 id="summary" className="font-semibold text-[#132A42]">3줄 요약</h2>
               </div>
               {Array.isArray(doc.summary) ? (
                 <ul className="text-neutral-700 leading-relaxed space-y-2">
                   {doc.summary.map((item, index) => (
                     <li key={index} className="flex items-start gap-2">
-                      <span className="text-emerald-600 mt-1">•</span>
+                      <span className="text-[#1E3A5F] mt-1">•</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -670,7 +670,7 @@ export default async function WikiPage({ params }: PageProps) {
             <article
               className="prose prose-neutral max-w-none
                 prose-p:leading-7
-                prose-a:text-emerald-600 prose-a:no-underline hover:prose-a:underline"
+                prose-a:text-[#1E3A5F] prose-a:no-underline hover:prose-a:underline"
               dangerouslySetInnerHTML={{ __html: introHtml }}
             />
           )}
@@ -693,14 +693,14 @@ export default async function WikiPage({ params }: PageProps) {
               prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h2:pb-2 prose-h2:border-b prose-h2:border-neutral-200
               prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
               prose-p:leading-7
-              prose-a:text-emerald-600 prose-a:no-underline hover:prose-a:underline
+              prose-a:text-[#1E3A5F] prose-a:no-underline hover:prose-a:underline
               prose-code:bg-neutral-100 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
               prose-pre:bg-neutral-100 prose-pre:text-neutral-800 prose-pre:border prose-pre:border-neutral-200
               prose-table:border prose-table:border-neutral-200
               prose-th:bg-neutral-50 prose-th:p-3 prose-th:text-left
               prose-td:p-3 prose-td:border-t prose-td:border-neutral-200
               prose-li:my-1
-              prose-blockquote:border-l-emerald-500 prose-blockquote:bg-emerald-50 prose-blockquote:py-1"
+              prose-blockquote:border-l-[#2B5280] prose-blockquote:bg-[#F5F8FB] prose-blockquote:py-1"
             dangerouslySetInnerHTML={{ __html: bodyHtml }}
           />
 
@@ -720,7 +720,7 @@ export default async function WikiPage({ params }: PageProps) {
                         href={source.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-emerald-600 hover:underline"
+                        className="text-[#1E3A5F] hover:underline"
                       >
                         {source.name}
                       </a>
@@ -780,14 +780,14 @@ export default async function WikiPage({ params }: PageProps) {
               <div className="p-4 space-y-3">
                 <Link
                   href="/w/미환급금-조회"
-                  className="group flex items-center gap-3 p-3 rounded-lg transition-all border border-transparent hover:border-emerald-200 animate-yellow-blink"
+                  className="group flex items-center gap-3 p-3 rounded-lg transition-all border border-transparent hover:border-[#B8D0E8] animate-yellow-blink"
                 >
-                  <span className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center text-lg group-hover:scale-110 transition-transform">💰</span>
+                  <span className="w-10 h-10 bg-[#EDF2F8] rounded-lg flex items-center justify-center text-lg group-hover:scale-110 transition-transform">💰</span>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-semibold text-neutral-800 truncate">내 숨은 환급금 찾기</p>
                     <p className="text-xs text-neutral-500">평균 13만원 환급</p>
                   </div>
-                  <svg className="w-5 h-5 text-neutral-400 group-hover:text-emerald-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-neutral-400 group-hover:text-[#1E3A5F] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
@@ -826,7 +826,7 @@ export default async function WikiPage({ params }: PageProps) {
             <div className="bg-white border border-neutral-200 rounded-xl overflow-hidden mb-4">
               <div className="px-4 py-3 border-b border-neutral-100">
                 <span className="text-sm font-semibold text-neutral-800 flex items-center gap-2">
-                  <svg className="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-[#1E3A5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                   </svg>
                   관련 문서
@@ -842,11 +842,11 @@ export default async function WikiPage({ params }: PageProps) {
                         href={`/w/${calculator.slug}`}
                         className="group flex items-start gap-3 p-3 rounded-lg hover:bg-neutral-50 transition-all border border-transparent hover:border-neutral-200"
                       >
-                        <span className="w-6 h-6 bg-emerald-100 text-emerald-700 rounded-md flex items-center justify-center text-xs font-bold shrink-0 group-hover:bg-emerald-200 transition-colors">
+                        <span className="w-6 h-6 bg-[#EDF2F8] text-[#162F4F] rounded-md flex items-center justify-center text-xs font-bold shrink-0 group-hover:bg-[#B8D0E8] transition-colors">
                           1
                         </span>
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm text-neutral-700 group-hover:text-emerald-600 line-clamp-2 font-medium transition-colors">
+                          <p className="text-sm text-neutral-700 group-hover:text-[#1E3A5F] line-clamp-2 font-medium transition-colors">
                             {calculator.title}
                           </p>
                           <p className="text-xs text-neutral-400 mt-0.5">계산기</p>
@@ -870,11 +870,11 @@ export default async function WikiPage({ params }: PageProps) {
                         href={`/w/${encodeURIComponent(relDoc.slug)}`}
                         className="group flex items-start gap-3 p-3 rounded-lg hover:bg-neutral-50 transition-all border border-transparent hover:border-neutral-200"
                       >
-                        <span className="w-6 h-6 bg-emerald-100 text-emerald-700 rounded-md flex items-center justify-center text-xs font-bold shrink-0 group-hover:bg-emerald-200 transition-colors">
+                        <span className="w-6 h-6 bg-[#EDF2F8] text-[#162F4F] rounded-md flex items-center justify-center text-xs font-bold shrink-0 group-hover:bg-[#B8D0E8] transition-colors">
                           {index + startIndex}
                         </span>
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm text-neutral-700 group-hover:text-emerald-600 line-clamp-2 font-medium transition-colors">
+                          <p className="text-sm text-neutral-700 group-hover:text-[#1E3A5F] line-clamp-2 font-medium transition-colors">
                             {relDoc.title}
                           </p>
                           <p className="text-xs text-neutral-400 mt-0.5">{relDoc.category}</p>
@@ -924,16 +924,16 @@ export default async function WikiPage({ params }: PageProps) {
             </div>
 
             {/* 빠른 링크 */}
-            <div className="p-4 bg-emerald-50 rounded-xl">
-              <h3 className="text-xs font-semibold text-emerald-700 mb-3">빠른 링크</h3>
+            <div className="p-4 bg-[#F5F8FB] rounded-xl">
+              <h3 className="text-xs font-semibold text-[#162F4F] mb-3">빠른 링크</h3>
               <div className="flex flex-wrap gap-2">
-                <Link href="/w/퇴직금" className="px-3 py-1.5 bg-white text-xs text-neutral-600 rounded-lg hover:bg-emerald-600 hover:text-white transition-colors border border-neutral-200">
+                <Link href="/w/퇴직금" className="px-3 py-1.5 bg-white text-xs text-neutral-600 rounded-lg hover:bg-[#1E3A5F] hover:text-white transition-colors border border-neutral-200">
                   퇴직금
                 </Link>
-                <Link href="/w/연말정산" className="px-3 py-1.5 bg-white text-xs text-neutral-600 rounded-lg hover:bg-emerald-600 hover:text-white transition-colors border border-neutral-200">
+                <Link href="/w/연말정산" className="px-3 py-1.5 bg-white text-xs text-neutral-600 rounded-lg hover:bg-[#1E3A5F] hover:text-white transition-colors border border-neutral-200">
                   연말정산
                 </Link>
-                <Link href="/w/실업급여" className="px-3 py-1.5 bg-white text-xs text-neutral-600 rounded-lg hover:bg-emerald-600 hover:text-white transition-colors border border-neutral-200">
+                <Link href="/w/실업급여" className="px-3 py-1.5 bg-white text-xs text-neutral-600 rounded-lg hover:bg-[#1E3A5F] hover:text-white transition-colors border border-neutral-200">
                   실업급여
                 </Link>
               </div>

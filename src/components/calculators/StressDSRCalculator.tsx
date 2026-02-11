@@ -184,7 +184,7 @@ export default function StressDSRCalculator() {
   const getStressDsrStatus = (): { color: string; text: string; bg: string } => {
     if (stressDsr === 0) return { color: "text-neutral-500", text: "-", bg: "bg-neutral-50" };
     if (stressDsr <= 30) return { color: "text-green-600", text: "안전", bg: "bg-green-50" };
-    if (stressDsr <= 40) return { color: "text-emerald-600", text: "적정", bg: "bg-blue-50" };
+    if (stressDsr <= 40) return { color: "text-[#1E3A5F]", text: "적정", bg: "bg-blue-50" };
     if (stressDsr <= 50) return { color: "text-yellow-600", text: "주의", bg: "bg-yellow-50" };
     return { color: "text-red-600", text: "초과", bg: "bg-red-50" };
   };

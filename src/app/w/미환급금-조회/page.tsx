@@ -15,8 +15,8 @@ export default function RefundPage() {
       {/* Hero */}
       <section className="pt-16 pb-20 px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 text-sm font-medium px-4 py-2 rounded-full mb-8">
-            <span className="w-2 h-2 bg-emerald-500 rounded-full" />
+          <div className="inline-flex items-center gap-2 bg-[#F5F8FB] text-[#162F4F] text-sm font-medium px-4 py-2 rounded-full mb-8">
+            <span className="w-2 h-2 bg-[#2B5280] rounded-full" />
             정부24 공식 서비스
           </div>
 

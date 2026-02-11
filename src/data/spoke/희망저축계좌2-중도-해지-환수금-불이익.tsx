@@ -33,7 +33,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>희망저축계좌2 <span className="text-emerald-600">중도 해지</span> 환수금과 불이익 — 해지 전 꼭 확인하세요</>,
+    h1: <>희망저축계좌2 <span className="text-[#1E3A5F]">중도 해지</span> 환수금과 불이익 — 해지 전 꼭 확인하세요</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -81,7 +81,7 @@ const data: SpokeData = {
           </p>
 
           <RateCards cards={[
-            { value: '만기 유지', label: '3년 완료', lines: ['본인적립금 360만원', '정부지원금 720만원', '총 1,080만원 + 이자'], highlight: '720만원 수령', highlightColor: 'emerald', active: true },
+            { value: '만기 유지', label: '3년 완료', lines: ['본인적립금 360만원', '정부지원금 720만원', '총 1,080만원 + 이자'], highlight: '720만원 수령', highlightColor: 'navy', active: true },
             { value: '중도 해지', label: '해지 시', lines: ['본인적립금 360만원 + 이자만', '정부지원금 0원', '총 수령 360만원대'], highlight: '720만원 포기', highlightColor: 'orange' },
           ]} />
 

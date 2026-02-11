@@ -144,7 +144,7 @@ export default function AnnualSalaryCalculator() {
 
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
-      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-[#1E3A5F] to-teal-600 px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -153,7 +153,7 @@ export default function AnnualSalaryCalculator() {
           </div>
           <div>
             <h2 className="text-xl font-bold text-white">연봉 계산기</h2>
-            <p className="text-emerald-100 text-sm">월급/시급 → 연봉 환산</p>
+            <p className="text-[#EDF2F8] text-sm">월급/시급 → 연봉 환산</p>
           </div>
         </div>
       </div>
@@ -165,7 +165,7 @@ export default function AnnualSalaryCalculator() {
             onClick={() => setCalcType("monthToYear")}
             className={`flex-1 py-3 rounded-xl font-medium transition-all ${
               calcType === "monthToYear"
-                ? "bg-emerald-600 text-white"
+                ? "bg-[#1E3A5F] text-white"
                 : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
             }`}
           >
@@ -175,7 +175,7 @@ export default function AnnualSalaryCalculator() {
             onClick={() => setCalcType("hourToYear")}
             className={`flex-1 py-3 rounded-xl font-medium transition-all ${
               calcType === "hourToYear"
-                ? "bg-emerald-600 text-white"
+                ? "bg-[#1E3A5F] text-white"
                 : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
             }`}
           >
@@ -194,11 +194,11 @@ export default function AnnualSalaryCalculator() {
                   value={monthlyPay > 0 ? formatNumber(monthlyPay) : ""}
                   onChange={(e) => setMonthlyPay(parseInt(e.target.value.replace(/,/g, "")) || 0)}
                   placeholder="월급 입력"
-                  className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 text-right pr-12"
+                  className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-[#2B5280] focus:ring-0 text-right pr-12"
                 />
                 <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
               </div>
-              {monthlyPay > 0 && <p className="mt-1 text-sm text-emerald-600">{formatWon(monthlyPay)}</p>}
+              {monthlyPay > 0 && <p className="mt-1 text-sm text-[#1E3A5F]">{formatWon(monthlyPay)}</p>}
 
               <div className="flex gap-2 mt-3">
                 {[2000000, 2500000, 3000000, 4000000, 5000000].map((amount) => (
@@ -223,7 +223,7 @@ export default function AnnualSalaryCalculator() {
                     onClick={() => setBonusMonths(months)}
                     className={`flex-1 py-3 rounded-xl font-medium transition-all ${
                       bonusMonths === months
-                        ? "bg-emerald-600 text-white"
+                        ? "bg-[#1E3A5F] text-white"
                         : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
                     }`}
                   >
@@ -245,7 +245,7 @@ export default function AnnualSalaryCalculator() {
                   value={hourlyPay > 0 ? formatNumber(hourlyPay) : ""}
                   onChange={(e) => setHourlyPay(parseInt(e.target.value.replace(/,/g, "")) || 0)}
                   placeholder="시급 입력"
-                  className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 text-right pr-12"
+                  className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-[#2B5280] focus:ring-0 text-right pr-12"
                 />
                 <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
               </div>
@@ -271,7 +271,7 @@ export default function AnnualSalaryCalculator() {
                 <select
                   value={workHoursPerDay}
                   onChange={(e) => setWorkHoursPerDay(parseInt(e.target.value))}
-                  className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500"
+                  className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-[#2B5280]"
                 >
                   {[4, 5, 6, 7, 8, 9, 10].map((h) => (
                     <option key={h} value={h}>{h}시간</option>
@@ -283,7 +283,7 @@ export default function AnnualSalaryCalculator() {
                 <select
                   value={workDaysPerWeek}
                   onChange={(e) => setWorkDaysPerWeek(parseInt(e.target.value))}
-                  className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500"
+                  className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-[#2B5280]"
                 >
                   {[3, 4, 5, 6].map((d) => (
                     <option key={d} value={d}>{d}일</option>
@@ -296,12 +296,12 @@ export default function AnnualSalaryCalculator() {
 
         {/* 결과 */}
         {(calcType === "monthToYear" ? monthlyPay > 0 : hourlyPay > 0) && (
-          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
-            <h3 className="text-lg font-bold text-emerald-800 mb-4">환산 결과</h3>
+          <div className="bg-gradient-to-r from-[#F5F8FB] to-teal-50 rounded-2xl p-6 border border-[#EDF2F8]">
+            <h3 className="text-lg font-bold text-[#132A42] mb-4">환산 결과</h3>
 
-            <div className="bg-white rounded-xl p-5 mb-4 border-2 border-emerald-200">
+            <div className="bg-white rounded-xl p-5 mb-4 border-2 border-[#B8D0E8]">
               <div className="text-sm text-neutral-500 mb-1">예상 연봉</div>
-              <div className="text-3xl font-bold text-emerald-600">{formatNumber(annualSalary)}원</div>
+              <div className="text-3xl font-bold text-[#1E3A5F]">{formatNumber(annualSalary)}원</div>
               <div className="text-sm text-neutral-500">{formatWon(annualSalary)}</div>
             </div>
 
@@ -326,7 +326,7 @@ export default function AnnualSalaryCalculator() {
             </div>
 
             {calcType === "hourToYear" && workHoursPerDay * workDaysPerWeek >= 15 && (
-              <div className="mt-4 p-3 bg-blue-50 rounded-xl border border-emerald-100">
+              <div className="mt-4 p-3 bg-blue-50 rounded-xl border border-[#EDF2F8]">
                 <div className="text-sm text-blue-700">
                   ✓ 주 {workHoursPerDay * workDaysPerWeek}시간 근무 → 주휴수당 포함 계산
                 </div>
@@ -335,8 +335,8 @@ export default function AnnualSalaryCalculator() {
           </div>
         )}
 
-        <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-emerald-100">
-          <h4 className="font-medium text-emerald-800 mb-2">연봉 계산 기준</h4>
+        <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-[#EDF2F8]">
+          <h4 className="font-medium text-[#132A42] mb-2">연봉 계산 기준</h4>
           <ul className="text-sm text-amber-700 space-y-1">
             <li>• 월급 × 12 + 상여금 = 연봉</li>
             <li>• 시급 × 주 근무시간 × 4.345주 × 12개월</li>
@@ -379,35 +379,35 @@ export default function AnnualSalaryCalculator() {
           </div>
 
           {/* 실수령액 표 */}
-          <div className="p-4 bg-emerald-50 rounded-xl border border-emerald-100">
-            <h4 className="font-medium text-emerald-800 mb-3">
+          <div className="p-4 bg-[#F5F8FB] rounded-xl border border-[#EDF2F8]">
+            <h4 className="font-medium text-[#132A42] mb-3">
               2026년 {tableType === "annual" ? "연봉별" : "월급별"} 실수령액표 (최신 4대보험 요율 적용)
             </h4>
             <div className="overflow-x-auto">
               {tableType === "annual" ? (
                 <table className="w-full text-xs">
                   <thead>
-                    <tr className="border-b border-emerald-200 bg-emerald-100">
-                      <th className="py-2 px-1 text-left text-emerald-700">연봉</th>
-                      <th className="py-2 px-1 text-right text-emerald-700">월급</th>
-                      <th className="py-2 px-1 text-right text-emerald-700">공제</th>
-                      <th className="py-2 px-1 text-right text-emerald-700 font-bold">실수령</th>
-                      <th className="py-2 px-1 text-right text-emerald-700">공제율</th>
-                      <th className="py-2 px-1 text-left text-emerald-700 hidden sm:table-cell">한줄평</th>
+                    <tr className="border-b border-[#B8D0E8] bg-[#EDF2F8]">
+                      <th className="py-2 px-1 text-left text-[#162F4F]">연봉</th>
+                      <th className="py-2 px-1 text-right text-[#162F4F]">월급</th>
+                      <th className="py-2 px-1 text-right text-[#162F4F]">공제</th>
+                      <th className="py-2 px-1 text-right text-[#162F4F] font-bold">실수령</th>
+                      <th className="py-2 px-1 text-right text-[#162F4F]">공제율</th>
+                      <th className="py-2 px-1 text-left text-[#162F4F] hidden sm:table-cell">한줄평</th>
                     </tr>
                   </thead>
                   <tbody className="text-neutral-700">
                     {annualSalaryData.map((row, idx) => (
                       <tr
                         key={idx}
-                        className={`border-b border-neutral-100 ${row.highlight ? "bg-emerald-50" : ""}`}
+                        className={`border-b border-neutral-100 ${row.highlight ? "bg-[#F5F8FB]" : ""}`}
                       >
                         <td className={`py-1.5 px-1 ${row.highlight ? "font-medium" : ""}`}>{row.annual}</td>
                         <td className="py-1.5 px-1 text-right">{row.monthly}</td>
                         <td className="py-1.5 px-1 text-right text-red-500">{row.deduction}</td>
-                        <td className="py-1.5 px-1 text-right font-bold text-emerald-600">{row.netPay}</td>
+                        <td className="py-1.5 px-1 text-right font-bold text-[#1E3A5F]">{row.netPay}</td>
                         <td className="py-1.5 px-1 text-right">{row.rate}</td>
-                        <td className={`py-1.5 px-1 hidden sm:table-cell ${row.highlight ? "text-emerald-600 font-medium" : "text-gray-500"}`}>
+                        <td className={`py-1.5 px-1 hidden sm:table-cell ${row.highlight ? "text-[#1E3A5F] font-medium" : "text-gray-500"}`}>
                           {row.note}
                         </td>
                       </tr>
@@ -417,25 +417,25 @@ export default function AnnualSalaryCalculator() {
               ) : (
                 <table className="w-full text-xs">
                   <thead>
-                    <tr className="border-b border-emerald-200 bg-emerald-100">
-                      <th className="py-2 px-1 text-left text-emerald-700">월급</th>
-                      <th className="py-2 px-1 text-right text-emerald-700 font-bold">실수령</th>
-                      <th className="py-2 px-1 text-right text-emerald-700">공제</th>
-                      <th className="py-2 px-1 text-right text-emerald-700">공제율</th>
-                      <th className="py-2 px-1 text-left text-emerald-700 hidden sm:table-cell">한줄평</th>
+                    <tr className="border-b border-[#B8D0E8] bg-[#EDF2F8]">
+                      <th className="py-2 px-1 text-left text-[#162F4F]">월급</th>
+                      <th className="py-2 px-1 text-right text-[#162F4F] font-bold">실수령</th>
+                      <th className="py-2 px-1 text-right text-[#162F4F]">공제</th>
+                      <th className="py-2 px-1 text-right text-[#162F4F]">공제율</th>
+                      <th className="py-2 px-1 text-left text-[#162F4F] hidden sm:table-cell">한줄평</th>
                     </tr>
                   </thead>
                   <tbody className="text-neutral-700">
                     {monthlySalaryData.map((row, idx) => (
                       <tr
                         key={idx}
-                        className={`border-b border-neutral-100 ${row.highlight ? "bg-emerald-50" : ""}`}
+                        className={`border-b border-neutral-100 ${row.highlight ? "bg-[#F5F8FB]" : ""}`}
                       >
                         <td className={`py-1.5 px-1 ${row.highlight ? "font-medium" : ""}`}>{row.monthly}</td>
-                        <td className="py-1.5 px-1 text-right font-bold text-emerald-600">{row.netPay}</td>
+                        <td className="py-1.5 px-1 text-right font-bold text-[#1E3A5F]">{row.netPay}</td>
                         <td className="py-1.5 px-1 text-right text-red-500">{row.deduction}</td>
                         <td className="py-1.5 px-1 text-right">{row.rate}</td>
-                        <td className={`py-1.5 px-1 hidden sm:table-cell ${row.highlight ? "text-emerald-600 font-medium" : "text-gray-500"}`}>
+                        <td className={`py-1.5 px-1 hidden sm:table-cell ${row.highlight ? "text-[#1E3A5F] font-medium" : "text-gray-500"}`}>
                           {row.note}
                         </td>
                       </tr>

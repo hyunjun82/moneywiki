@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>개인파산 <span className="text-emerald-600">개인회생</span> 선택 기준 — 소득 유무별 유리한 제도 비교</>,
+    h1: <>개인파산 <span className="text-[#1E3A5F]">개인회생</span> 선택 기준 — 소득 유무별 유리한 제도 비교</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -105,7 +105,7 @@ const data: SpokeData = {
           {/* 선택 기준 카드: RateCards */}
           <RateCards cards={[
             { value: '파산', label: '소득 없음', lines: ['재산으로 빚 변제 불가', '자격제한 감수 가능', '빠른 면책 원할 때'], highlightColor: 'orange' },
-            { value: '회생', label: '소득 있음', lines: ['정기적 수입 있음', '직업·자격 유지 필요', '3~5년 변제 가능'], highlight: '추천', highlightColor: 'emerald', active: true },
+            { value: '회생', label: '소득 있음', lines: ['정기적 수입 있음', '직업·자격 유지 필요', '3~5년 변제 가능'], highlight: '추천', highlightColor: 'navy', active: true },
             { value: '상담', label: '판단 어려움', lines: ['소득이 불규칙', '채무 한도 초과 우려', '법률구조공단 상담'], highlightColor: 'orange' },
           ]} />
 

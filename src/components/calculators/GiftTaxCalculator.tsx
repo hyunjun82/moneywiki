@@ -139,7 +139,7 @@ export default function GiftTaxCalculator() {
 
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
-      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-[#1E3A5F] to-teal-600 px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -148,7 +148,7 @@ export default function GiftTaxCalculator() {
           </div>
           <div>
             <h2 className="text-xl font-bold text-white">증여세 계산기</h2>
-            <p className="text-emerald-100 text-sm">2026년 기준 증여세 자동 계산</p>
+            <p className="text-[#EDF2F8] text-sm">2026년 기준 증여세 자동 계산</p>
           </div>
         </div>
       </div>
@@ -164,12 +164,12 @@ export default function GiftTaxCalculator() {
                 onClick={() => setRelationship(rel.value as Relationship)}
                 className={`py-3 px-2 rounded-xl font-medium transition-all text-center ${
                   relationship === rel.value
-                    ? "bg-emerald-600 text-white"
+                    ? "bg-[#1E3A5F] text-white"
                     : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
                 }`}
               >
                 <div className="text-sm">{rel.label}</div>
-                <div className={`text-xs mt-1 ${relationship === rel.value ? "text-emerald-200" : "text-neutral-400"}`}>
+                <div className={`text-xs mt-1 ${relationship === rel.value ? "text-[#B8D0E8]" : "text-neutral-400"}`}>
                   공제 {rel.exemption}
                 </div>
               </button>
@@ -186,11 +186,11 @@ export default function GiftTaxCalculator() {
               value={giftAmount > 0 ? formatNumber(giftAmount) : ""}
               onChange={(e) => setGiftAmount(parseInt(e.target.value.replace(/,/g, "")) || 0)}
               placeholder="증여금액 입력"
-              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 text-right pr-12"
+              className="w-full px-4 py-4 text-xl font-bold border-2 border-neutral-200 rounded-xl focus:border-[#2B5280] focus:ring-0 text-right pr-12"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
           </div>
-          {giftAmount > 0 && <p className="mt-1 text-sm text-emerald-600">{formatWon(giftAmount)}</p>}
+          {giftAmount > 0 && <p className="mt-1 text-sm text-[#1E3A5F]">{formatWon(giftAmount)}</p>}
 
           <div className="flex gap-2 mt-3">
             {[50000000, 100000000, 300000000, 500000000, 1000000000].map((amount) => (
@@ -216,7 +216,7 @@ export default function GiftTaxCalculator() {
               value={previousGifts > 0 ? formatNumber(previousGifts) : ""}
               onChange={(e) => setPreviousGifts(parseInt(e.target.value.replace(/,/g, "")) || 0)}
               placeholder="이전 증여금액 (없으면 0)"
-              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-emerald-500 focus:ring-0 text-right pr-12"
+              className="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-[#2B5280] focus:ring-0 text-right pr-12"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500">원</span>
           </div>
@@ -230,7 +230,7 @@ export default function GiftTaxCalculator() {
               type="checkbox"
               checked={isGenerationSkip}
               onChange={(e) => setIsGenerationSkip(e.target.checked)}
-              className="w-5 h-5 text-emerald-600 border-2 border-neutral-300 rounded focus:ring-emerald-500"
+              className="w-5 h-5 text-[#1E3A5F] border-2 border-neutral-300 rounded focus:ring-[#2B5280]"
             />
             <div>
               <span className="font-medium text-neutral-700">세대생략 증여</span>
@@ -241,8 +241,8 @@ export default function GiftTaxCalculator() {
 
         {/* 결과 */}
         {giftAmount > 0 && (
-          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
-            <h3 className="text-lg font-bold text-emerald-800 mb-4">증여세 계산 결과</h3>
+          <div className="bg-gradient-to-r from-[#F5F8FB] to-teal-50 rounded-2xl p-6 border border-[#EDF2F8]">
+            <h3 className="text-lg font-bold text-[#132A42] mb-4">증여세 계산 결과</h3>
 
             {/* 계산 과정 */}
             <div className="bg-white rounded-xl p-4 mb-4 space-y-2 text-sm">
@@ -250,7 +250,7 @@ export default function GiftTaxCalculator() {
                 <span className="text-neutral-600">증여재산가액</span>
                 <span className="font-medium">{formatNumber(giftAmount + previousGifts)}원</span>
               </div>
-              <div className="flex justify-between text-emerald-600">
+              <div className="flex justify-between text-[#1E3A5F]">
                 <span>(-) 증여재산공제</span>
                 <span>-{formatNumber(exemption)}원</span>
               </div>
@@ -286,13 +286,13 @@ export default function GiftTaxCalculator() {
             </div>
 
             {/* 최종 세액 */}
-            <div className="bg-white rounded-xl p-5 border-2 border-emerald-300">
+            <div className="bg-white rounded-xl p-5 border-2 border-[#4A7AB5]">
               <div className="text-sm text-neutral-500 mb-1">납부할 증여세</div>
-              <div className="text-3xl font-bold text-emerald-600">{formatNumber(finalTax)}원</div>
+              <div className="text-3xl font-bold text-[#1E3A5F]">{formatNumber(finalTax)}원</div>
               <div className="text-sm text-neutral-500 mt-1">{formatWon(finalTax)}</div>
               <div className="mt-2 text-sm">
                 <span className="text-neutral-500">실효세율: </span>
-                <span className="font-medium text-emerald-600">{effectiveRate.toFixed(1)}%</span>
+                <span className="font-medium text-[#1E3A5F]">{effectiveRate.toFixed(1)}%</span>
               </div>
             </div>
           </div>
@@ -311,27 +311,27 @@ export default function GiftTaxCalculator() {
                 </tr>
               </thead>
               <tbody>
-                <tr className={`border-b border-neutral-100 ${taxBase > 0 && taxBase <= 100000000 ? "bg-emerald-50" : ""}`}>
+                <tr className={`border-b border-neutral-100 ${taxBase > 0 && taxBase <= 100000000 ? "bg-[#F5F8FB]" : ""}`}>
                   <td className="py-2">1억원 이하</td>
                   <td className="py-2 text-right">10%</td>
                   <td className="py-2 text-right">-</td>
                 </tr>
-                <tr className={`border-b border-neutral-100 ${taxBase > 100000000 && taxBase <= 500000000 ? "bg-emerald-50" : ""}`}>
+                <tr className={`border-b border-neutral-100 ${taxBase > 100000000 && taxBase <= 500000000 ? "bg-[#F5F8FB]" : ""}`}>
                   <td className="py-2">5억원 이하</td>
                   <td className="py-2 text-right">20%</td>
                   <td className="py-2 text-right">1,000만원</td>
                 </tr>
-                <tr className={`border-b border-neutral-100 ${taxBase > 500000000 && taxBase <= 1000000000 ? "bg-emerald-50" : ""}`}>
+                <tr className={`border-b border-neutral-100 ${taxBase > 500000000 && taxBase <= 1000000000 ? "bg-[#F5F8FB]" : ""}`}>
                   <td className="py-2">10억원 이하</td>
                   <td className="py-2 text-right">30%</td>
                   <td className="py-2 text-right">6,000만원</td>
                 </tr>
-                <tr className={`border-b border-neutral-100 ${taxBase > 1000000000 && taxBase <= 3000000000 ? "bg-emerald-50" : ""}`}>
+                <tr className={`border-b border-neutral-100 ${taxBase > 1000000000 && taxBase <= 3000000000 ? "bg-[#F5F8FB]" : ""}`}>
                   <td className="py-2">30억원 이하</td>
                   <td className="py-2 text-right">40%</td>
                   <td className="py-2 text-right">1억 6,000만원</td>
                 </tr>
-                <tr className={`${taxBase > 3000000000 ? "bg-emerald-50" : ""}`}>
+                <tr className={`${taxBase > 3000000000 ? "bg-[#F5F8FB]" : ""}`}>
                   <td className="py-2">30억원 초과</td>
                   <td className="py-2 text-right">50%</td>
                   <td className="py-2 text-right">4억 6,000만원</td>
@@ -341,9 +341,9 @@ export default function GiftTaxCalculator() {
           </div>
         </div>
 
-        <div className="mt-4 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
-          <h4 className="font-medium text-emerald-800 mb-2">알아두세요</h4>
-          <ul className="text-sm text-emerald-700 space-y-1">
+        <div className="mt-4 p-4 bg-[#F5F8FB] rounded-xl border border-[#EDF2F8]">
+          <h4 className="font-medium text-[#132A42] mb-2">알아두세요</h4>
+          <ul className="text-sm text-[#162F4F] space-y-1">
             <li>• 증여일로부터 3개월 내 신고하면 3% 공제</li>
             <li>• 동일인에게 10년간 받은 증여액은 합산</li>
             <li>• 부동산 증여 시 취득세도 별도 발생</li>
@@ -358,12 +358,12 @@ export default function GiftTaxCalculator() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">증여금액</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">과세표준</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">세율</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">예상세액</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">한줄평</th>
+                <tr className="bg-[#EDF2F8] border-b-2 border-[#4A7AB5]">
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">증여금액</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">과세표준</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">세율</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">예상세액</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden sm:table-cell">한줄평</th>
                 </tr>
               </thead>
               <tbody>
@@ -378,21 +378,21 @@ export default function GiftTaxCalculator() {
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">1억원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">5천만원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">10%</td>
-                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">485만원</td>
+                  <td className="py-2 px-2 text-center font-bold text-[#1E3A5F] border border-gray-300">485만원</td>
                   <td className="py-2 px-2 text-center text-gray-500 border border-gray-300 hidden sm:table-cell">최저세율 적용</td>
                 </tr>
-                <tr className="bg-emerald-50 border-b border-neutral-200">
+                <tr className="bg-[#F5F8FB] border-b border-neutral-200">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">2억원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">1.5억원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">20%</td>
-                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">1,940만원</td>
+                  <td className="py-2 px-2 text-center font-bold text-[#1E3A5F] border border-gray-300">1,940만원</td>
                   <td className="py-2 px-2 text-center text-gray-500 border border-gray-300 hidden sm:table-cell">아파트 한채 값</td>
                 </tr>
                 <tr className="border-b border-neutral-200">
                   <td className="py-2 px-2 text-center font-medium border border-gray-300">3억원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">2.5억원</td>
                   <td className="py-2 px-2 text-center border border-gray-300">20%</td>
-                  <td className="py-2 px-2 text-center font-bold text-emerald-600 border border-gray-300">3,880만원</td>
+                  <td className="py-2 px-2 text-center font-bold text-[#1E3A5F] border border-gray-300">3,880만원</td>
                   <td className="py-2 px-2 text-center text-gray-500 border border-gray-300 hidden sm:table-cell">세금 4천 가까이</td>
                 </tr>
                 <tr className="bg-amber-50 border-b border-neutral-200">
@@ -420,9 +420,9 @@ export default function GiftTaxCalculator() {
             </table>
           </div>
 
-          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
-            <p className="text-xs text-emerald-800 font-medium">💡 절세 팁</p>
-            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+          <div className="mt-4 p-3 bg-[#EDF2F8] rounded-lg">
+            <p className="text-xs text-[#132A42] font-medium">💡 절세 팁</p>
+            <ul className="text-xs text-[#162F4F] mt-1 space-y-1">
               <li>• <strong>10년 주기</strong>로 나눠서 증여하면 공제 여러 번 적용!</li>
               <li>• 5천만원 이하는 세금 0원 (미성년은 2천만원)</li>
               <li>• 부동산보다 <strong>현금 증여</strong>가 유리한 경우 많아요</li>

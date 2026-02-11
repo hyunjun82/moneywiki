@@ -39,7 +39,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <><span className="text-emerald-600">실업급여 신청 방법</span> 절차 준비서류</>,
+    h1: <><span className="text-[#1E3A5F]">실업급여 신청 방법</span> 절차 준비서류</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>다주택 양도세 <span className="text-emerald-600">중과 전후 세액 비교</span> — 실제 계산 사례</>,
+    h1: <>다주택 양도세 <span className="text-[#1E3A5F]">중과 전후 세액 비교</span> — 실제 계산 사례</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -228,7 +228,7 @@ const data: SpokeData = {
 
           <RateCards cards={[
             { value: '3억원', label: '양도차익', lines: ['유예: 약 5,400만원', '중과: 약 1.64억원', '차이: 약 1.1억원'] },
-            { value: '5억원', label: '양도차익', lines: ['유예: 약 1.05억원', '중과: 약 3.22억원', '차이: 약 2.17억원'], highlightColor: 'emerald' },
+            { value: '5억원', label: '양도차익', lines: ['유예: 약 1.05억원', '중과: 약 3.22억원', '차이: 약 2.17억원'], highlightColor: 'navy' },
             { value: '10억원', label: '양도차익', lines: ['유예: 약 2.62억원', '중과: 약 6.64억원', '차이: 약 4.02억원'] },
           ]} />
 

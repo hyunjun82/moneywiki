@@ -23,7 +23,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <><span className="text-emerald-600">실업급여 금액 계산</span> 연봉별 수령액</>,
+    h1: <><span className="text-[#1E3A5F]">실업급여 금액 계산</span> 연봉별 수령액</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -174,7 +174,7 @@ const data: SpokeData = {
 
           <RateCards cards={[
             { value: '36,000원', label: '연봉 2천만원', lines: ['하루 수령액', '월 약 108만원'], highlight: '하한액 미만' },
-            { value: '54,000원', label: '연봉 3천만원', lines: ['하루 수령액', '월 약 162만원'], highlight: '중간', highlightColor: 'emerald', active: true },
+            { value: '54,000원', label: '연봉 3천만원', lines: ['하루 수령액', '월 약 162만원'], highlight: '중간', highlightColor: 'navy', active: true },
             { value: '66,000원', label: '연봉 4천만원+', lines: ['하루 수령액', '월 약 198만원'], highlight: '상한액', highlightColor: 'orange' },
           ]} />
 

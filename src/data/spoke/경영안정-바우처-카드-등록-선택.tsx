@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>경영안정바우처 <span className="text-emerald-600">카드 등록</span> — 카드사 선택과 변경 방법</>,
+    h1: <>경영안정바우처 <span className="text-[#1E3A5F]">카드 등록</span> — 카드사 선택과 변경 방법</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

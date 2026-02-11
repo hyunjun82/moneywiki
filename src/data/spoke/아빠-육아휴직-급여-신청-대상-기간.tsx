@@ -23,7 +23,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <><span className="text-emerald-600">아빠 육아휴직</span> 급여 신청 대상과 기간</>,
+    h1: <><span className="text-[#1E3A5F]">아빠 육아휴직</span> 급여 신청 대상과 기간</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

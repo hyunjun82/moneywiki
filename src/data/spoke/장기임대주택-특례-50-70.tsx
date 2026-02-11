@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>장기임대주택 <span className="text-emerald-600">장특공 특례</span> — 50%와 70% 조건 정리</>,
+    h1: <>장기임대주택 <span className="text-[#1E3A5F]">장특공 특례</span> — 50%와 70% 조건 정리</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -239,7 +239,7 @@ const data: SpokeData = {
           </p>
 
           <RateCards cards={[
-            { value: '70%', label: '10년 임대', lines: ['장기 일반 민간임대', '최대 혜택'], highlightColor: 'emerald' },
+            { value: '70%', label: '10년 임대', lines: ['장기 일반 민간임대', '최대 혜택'], highlightColor: 'navy' },
             { value: '50%', label: '8년 임대', lines: ['장기 임대 기본', '충분한 혜택'] },
             { value: '30%', label: '일반 최대', lines: ['미등록 다주택', '15년 보유 기준'] },
             { value: '0%', label: '중과 적용', lines: ['조정지역 다주택', '유예 종료 후'] },

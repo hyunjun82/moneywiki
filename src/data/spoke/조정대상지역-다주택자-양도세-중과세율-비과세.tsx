@@ -43,7 +43,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <><span className="text-emerald-600">조정대상지역</span> 다주택자 양도세 중과세율과 비과세</>,
+    h1: <><span className="text-[#1E3A5F]">조정대상지역</span> 다주택자 양도세 중과세율과 비과세</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -93,7 +93,7 @@ const data: SpokeData = {
           </p>
 
           <RateCards cards={[
-            { value: '기본세율', label: '유예 기간 (~2026.5.9)', lines: ['6~45%', '장기공제 가능'], highlight: '현재', highlightColor: 'emerald' as const },
+            { value: '기본세율', label: '유예 기간 (~2026.5.9)', lines: ['6~45%', '장기공제 가능'], highlight: '현재', highlightColor: 'navy' as const },
             { value: '중과세율', label: '유예 종료 후', lines: ['+20~30%p', '장기공제 배제'], highlight: '주의', highlightColor: 'orange' as const },
           ]} />
 

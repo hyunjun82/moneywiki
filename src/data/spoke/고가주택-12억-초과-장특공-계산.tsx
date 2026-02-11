@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>고가주택 <span className="text-emerald-600">12억 초과</span> 장특공 계산 — 안분 방법 정리</>,
+    h1: <>고가주택 <span className="text-[#1E3A5F]">12억 초과</span> 장특공 계산 — 안분 방법 정리</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

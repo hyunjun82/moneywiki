@@ -118,7 +118,7 @@ export default async function CategoryPage({ params }: PageProps) {
           </p>
           <div className="flex flex-wrap gap-2">
             <a href="https://www.gov.kr" target="_blank" rel="noopener noreferrer"
-               className="px-4 py-2 bg-emerald-600 text-white text-sm font-medium rounded-lg hover:bg-emerald-700 transition-colors">
+               className="px-4 py-2 bg-[#1E3A5F] text-white text-sm font-medium rounded-lg hover:bg-[#162F4F] transition-colors">
               정부24 바로가기 →
             </a>
             <a href="https://www.bokjiro.go.kr" target="_blank" rel="noopener noreferrer"
@@ -136,7 +136,7 @@ export default async function CategoryPage({ params }: PageProps) {
             <Link
               key={doc.slug}
               href={`/w/${encodeURIComponent(doc.slug)}`}
-              className="p-4 bg-white border border-neutral-200 rounded-lg hover:border-emerald-300 transition-colors"
+              className="p-4 bg-white border border-neutral-200 rounded-lg hover:border-[#4A7AB5] transition-colors"
             >
               <h3 className="font-medium text-neutral-800 line-clamp-1">{doc.title}</h3>
               <p className="text-xs text-neutral-500 mt-1 line-clamp-2">
@@ -148,7 +148,7 @@ export default async function CategoryPage({ params }: PageProps) {
       ) : (
         <div className="text-center py-12 bg-neutral-50 rounded-xl">
           <p className="text-neutral-500 mb-4">아직 등록된 문서가 없습니다.</p>
-          <Link href="/" className="text-emerald-600 hover:underline">
+          <Link href="/" className="text-[#1E3A5F] hover:underline">
             홈으로 돌아가기 →
           </Link>
         </div>

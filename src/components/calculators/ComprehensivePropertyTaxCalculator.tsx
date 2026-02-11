@@ -242,7 +242,7 @@ export default function ComprehensivePropertyTaxCalculator() {
       {/* 헤더 */}
       <div className="border-b border-gray-200">
         <div className="flex items-center gap-2 px-4 py-3 bg-gray-50">
-          <span className="w-1 h-5 bg-emerald-500 rounded-full"></span>
+          <span className="w-1 h-5 bg-[#2B5280] rounded-full"></span>
           <h2 className="text-base font-semibold text-gray-900">종합부동산세 계산기</h2>
         </div>
       </div>
@@ -258,14 +258,14 @@ export default function ComprehensivePropertyTaxCalculator() {
                 onClick={() => setHouseCount(item.type)}
                 className={`px-3 py-2 text-sm rounded transition-all text-center ${
                   houseCount === item.type
-                    ? "bg-emerald-500 text-white"
+                    ? "bg-[#2B5280] text-white"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
                 <div className="font-medium">{item.label}</div>
                 {item.description && (
                   <div className={`text-xs mt-0.5 ${
-                    houseCount === item.type ? "text-emerald-100" : "text-gray-400"
+                    houseCount === item.type ? "text-[#EDF2F8]" : "text-gray-400"
                   }`}>
                     {item.description}
                   </div>
@@ -284,7 +284,7 @@ export default function ComprehensivePropertyTaxCalculator() {
                 onClick={() => setIsRegulated(false)}
                 className={`px-3 py-1.5 text-sm rounded transition-all ${
                   !isRegulated
-                    ? "bg-emerald-500 text-white"
+                    ? "bg-[#2B5280] text-white"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
@@ -294,7 +294,7 @@ export default function ComprehensivePropertyTaxCalculator() {
                 onClick={() => setIsRegulated(true)}
                 className={`px-3 py-1.5 text-sm rounded transition-all ${
                   isRegulated
-                    ? "bg-emerald-500 text-white"
+                    ? "bg-[#2B5280] text-white"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
@@ -314,10 +314,10 @@ export default function ComprehensivePropertyTaxCalculator() {
                   type="text"
                   value={publicPriceInput}
                   onChange={(e) => handlePriceChange(e.target.value)}
-                  className="w-full px-3 py-2 pr-10 text-right text-sm border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
+                  className="w-full px-3 py-2 pr-10 text-right text-sm border border-gray-300 rounded focus:outline-none focus:border-[#2B5280]"
                   placeholder="0"
                 />
-                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-white bg-emerald-500 px-2 py-0.5 rounded">원</span>
+                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-white bg-[#2B5280] px-2 py-0.5 rounded">원</span>
               </div>
             </div>
           </div>
@@ -353,14 +353,14 @@ export default function ComprehensivePropertyTaxCalculator() {
           {/* 금액 표시 */}
           <div className="flex items-center gap-3">
             <div className="w-24 shrink-0"></div>
-            <span className="text-sm text-emerald-600 font-medium">{toUk(publicPrice)}</span>
+            <span className="text-sm text-[#1E3A5F] font-medium">{toUk(publicPrice)}</span>
           </div>
         </div>
 
         {/* 1세대 1주택 세액공제 옵션 */}
         {houseCount === "oneHouse" && (
-          <div className="p-3 bg-emerald-50 rounded-lg space-y-3">
-            <p className="text-sm text-emerald-700 font-medium">1세대 1주택 세액공제</p>
+          <div className="p-3 bg-[#F5F8FB] rounded-lg space-y-3">
+            <p className="text-sm text-[#162F4F] font-medium">1세대 1주택 세액공제</p>
 
             <div className="grid grid-cols-2 gap-4">
               <div className="flex items-center gap-2">
@@ -368,7 +368,7 @@ export default function ComprehensivePropertyTaxCalculator() {
                 <select
                   value={age}
                   onChange={(e) => setAge(parseInt(e.target.value))}
-                  className="px-3 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
+                  className="px-3 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:border-[#2B5280]"
                 >
                   <option value={55}>60세 미만</option>
                   <option value={60}>60~65세</option>
@@ -382,7 +382,7 @@ export default function ComprehensivePropertyTaxCalculator() {
                 <select
                   value={holdingYears}
                   onChange={(e) => setHoldingYears(parseInt(e.target.value))}
-                  className="px-3 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
+                  className="px-3 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:border-[#2B5280]"
                 >
                   <option value={3}>5년 미만</option>
                   <option value={5}>5~10년</option>
@@ -392,7 +392,7 @@ export default function ComprehensivePropertyTaxCalculator() {
               </div>
             </div>
 
-            <div className="text-xs text-emerald-600">
+            <div className="text-xs text-[#1E3A5F]">
               고령자 공제 (60세+ 10~30%) + 장기보유 공제 (5년+ 20~50%), 합산 최대 80%
             </div>
           </div>
@@ -415,7 +415,7 @@ export default function ComprehensivePropertyTaxCalculator() {
           </button>
           <button
             onClick={calculate}
-            className="px-6 py-2 text-sm text-white bg-emerald-500 rounded hover:bg-emerald-600 transition-colors font-medium"
+            className="px-6 py-2 text-sm text-white bg-[#2B5280] rounded hover:bg-[#1E3A5F] transition-colors font-medium"
           >
             계산하기
           </button>
@@ -425,7 +425,7 @@ export default function ComprehensivePropertyTaxCalculator() {
       {/* 계산 결과 */}
       <div className="border-t border-gray-200 bg-gray-50">
         <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-200">
-          <span className="w-1 h-5 bg-emerald-500 rounded-full"></span>
+          <span className="w-1 h-5 bg-[#2B5280] rounded-full"></span>
           <h3 className="text-base font-semibold text-gray-900">계산 결과</h3>
         </div>
 
@@ -503,14 +503,14 @@ export default function ComprehensivePropertyTaxCalculator() {
           </div>
 
           {/* 총액 */}
-          <div className="p-4 bg-emerald-500 rounded-lg">
+          <div className="p-4 bg-[#2B5280] rounded-lg">
             <div className="flex justify-between items-center">
               <div>
-                <span className="text-emerald-100 text-sm">총 납부세액</span>
+                <span className="text-[#EDF2F8] text-sm">총 납부세액</span>
               </div>
               <span className="text-white text-xl font-bold">{formatNumber(result.totalTax)}원</span>
             </div>
-            <div className="text-emerald-100 text-xs mt-1">
+            <div className="text-[#EDF2F8] text-xs mt-1">
               종부세 {formatNumber(result.propertyTax)}원 + 농특세 {formatNumber(result.localTax)}원
             </div>
           </div>
@@ -525,23 +525,23 @@ export default function ComprehensivePropertyTaxCalculator() {
         </div>
 
         <div className="p-4 text-sm space-y-3">
-          <div className="bg-emerald-50 p-4 rounded-xl border border-emerald-100">
-            <h4 className="font-medium text-emerald-800 mb-2 flex items-center gap-2">
+          <div className="bg-[#F5F8FB] p-4 rounded-xl border border-[#EDF2F8]">
+            <h4 className="font-medium text-[#132A42] mb-2 flex items-center gap-2">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               종합부동산세가 뭔가요?
             </h4>
-            <p className="text-sm text-emerald-700 mb-2">
+            <p className="text-sm text-[#162F4F] mb-2">
               일정 기준 초과하는 부동산 보유자에게 부과하는 국세예요. <span className="font-medium">재산세와 별도로 매년 6월 1일 기준으로 부과돼요.</span>
             </p>
-            <ul className="text-sm text-emerald-700 space-y-1.5 mt-3">
+            <ul className="text-sm text-[#162F4F] space-y-1.5 mt-3">
               <li className="flex items-start gap-2">
                 <span className="text-green-600 mt-0.5">✓</span>
                 <span><strong>1세대 1주택:</strong> 공시가격 12억원 초과분에만 과세</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-emerald-600 mt-0.5">✓</span>
+                <span className="text-[#1E3A5F] mt-0.5">✓</span>
                 <span><strong>다주택자:</strong> 공시가격 6억원 초과분에 과세 (중과세율)</span>
               </li>
               <li className="flex items-start gap-2">
@@ -549,12 +549,12 @@ export default function ComprehensivePropertyTaxCalculator() {
                 <span><strong>고령·장기보유:</strong> 1주택자만 최대 80% 세액공제</span>
               </li>
             </ul>
-            <div className="mt-3 pt-3 border-t border-emerald-200">
-              <p className="text-xs text-emerald-700">
+            <div className="mt-3 pt-3 border-t border-[#B8D0E8]">
+              <p className="text-xs text-[#162F4F]">
                 <strong>납부 시기:</strong> 매년 12월 1일~15일 (250만원 초과 시 분납 가능)
               </p>
-              <p className="text-xs text-emerald-600 mt-2">
-                📌 출처: <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">국세청</a> · <a href="https://www.law.go.kr/법령/종합부동산세법" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-800">종합부동산세법</a>
+              <p className="text-xs text-[#1E3A5F] mt-2">
+                📌 출처: <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#132A42]">국세청</a> · <a href="https://www.law.go.kr/법령/종합부동산세법" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#132A42]">종합부동산세법</a>
               </p>
             </div>
           </div>
@@ -618,7 +618,7 @@ export default function ComprehensivePropertyTaxCalculator() {
       {/* 공시가격별 종부세액표 */}
       <div className="border-t border-gray-200">
         <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-200 bg-gray-50">
-          <span className="w-1 h-5 bg-emerald-500 rounded-full"></span>
+          <span className="w-1 h-5 bg-[#2B5280] rounded-full"></span>
           <h3 className="text-sm font-semibold text-gray-700">2026년 1세대 1주택 공시가격별 종부세액표</h3>
         </div>
 
@@ -626,11 +626,11 @@ export default function ComprehensivePropertyTaxCalculator() {
           <p className="text-xs text-gray-600 mb-3">※ 1세대 1주택 기준 (12억 공제, 세액공제 미적용)</p>
           <table className="w-full text-xs border-collapse min-w-[400px]">
             <thead>
-              <tr className="bg-emerald-50">
-                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-emerald-800">공시가격</th>
-                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-emerald-800">과세표준</th>
-                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-emerald-800">세율</th>
-                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-emerald-800">종부세+농특세</th>
+              <tr className="bg-[#F5F8FB]">
+                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-[#132A42]">공시가격</th>
+                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-[#132A42]">과세표준</th>
+                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-[#132A42]">세율</th>
+                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-[#132A42]">종부세+농특세</th>
               </tr>
             </thead>
             <tbody className="text-gray-600">
@@ -644,31 +644,31 @@ export default function ComprehensivePropertyTaxCalculator() {
                 <td className="border border-gray-300 px-2 py-2 text-center font-medium">15억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">1.8억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">0.5%</td>
-                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">약 108만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-[#1E3A5F] font-medium">약 108만원</td>
               </tr>
               <tr>
                 <td className="border border-gray-300 px-2 py-2 text-center font-medium">20억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">4.8억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">0.7%</td>
-                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">약 331만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-[#1E3A5F] font-medium">약 331만원</td>
               </tr>
               <tr className="bg-gray-50">
                 <td className="border border-gray-300 px-2 py-2 text-center font-medium">25억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">7.8억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">1.0%</td>
-                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">약 648만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-[#1E3A5F] font-medium">약 648만원</td>
               </tr>
               <tr>
                 <td className="border border-gray-300 px-2 py-2 text-center font-medium">30억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">10.8억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">1.0%</td>
-                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">약 1,008만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-[#1E3A5F] font-medium">약 1,008만원</td>
               </tr>
               <tr className="bg-gray-50">
                 <td className="border border-gray-300 px-2 py-2 text-center font-medium">50억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">22.8억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">1.5%</td>
-                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">약 3,110만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-[#1E3A5F] font-medium">약 3,110만원</td>
               </tr>
             </tbody>
           </table>

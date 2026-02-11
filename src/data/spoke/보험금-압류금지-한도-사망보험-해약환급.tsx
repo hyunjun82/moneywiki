@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 2월 시행',
-    h1: <>보험금 <span className="text-emerald-600">압류금지 한도</span> — 사망보험금과 해약환급금 보호 범위</>,
+    h1: <>보험금 <span className="text-[#1E3A5F]">압류금지 한도</span> — 사망보험금과 해약환급금 보호 범위</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -233,7 +233,7 @@ const data: SpokeData = {
           ]} />
 
           <RateCards cards={[
-            { value: '1,500만원', label: '사망보험금 보호', lines: ['보장성 보험 한정', '초과분만 압류 가능'], highlightColor: 'emerald' as const, active: true },
+            { value: '1,500만원', label: '사망보험금 보호', lines: ['보장성 보험 한정', '초과분만 압류 가능'], highlightColor: 'navy' as const, active: true },
             { value: '250만원', label: '해약환급금 보호', lines: ['보장성 보험 한정', '저축성은 보호 없음'], active: false },
             { value: '250만원', label: '만기환급금 보호', lines: ['보장성 보험 한정', '해약환급금과 동일 기준'], active: false },
           ]} />

@@ -152,9 +152,9 @@ export default function StockReturnCalculator() {
   return (
     <div className="bg-white rounded-2xl shadow-lg border border-neutral-200 overflow-hidden">
       {/* 헤더 */}
-      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-[#1E3A5F] to-teal-600 px-6 py-4">
         <h2 className="text-xl font-bold text-white">주식 수익률 계산기</h2>
-        <p className="text-emerald-100 text-sm mt-1">수수료/세금 포함</p>
+        <p className="text-[#EDF2F8] text-sm mt-1">수수료/세금 포함</p>
       </div>
 
       <div className="p-6 space-y-6">
@@ -164,7 +164,7 @@ export default function StockReturnCalculator() {
             onClick={() => setCalcMode("return")}
             className={`py-3 px-4 rounded-lg text-sm font-medium transition-all ${
               calcMode === "return"
-                ? "bg-emerald-500 text-white shadow-md"
+                ? "bg-[#2B5280] text-white shadow-md"
                 : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
             }`}
           >
@@ -174,7 +174,7 @@ export default function StockReturnCalculator() {
             onClick={() => setCalcMode("target")}
             className={`py-3 px-4 rounded-lg text-sm font-medium transition-all ${
               calcMode === "target"
-                ? "bg-emerald-500 text-white shadow-md"
+                ? "bg-[#2B5280] text-white shadow-md"
                 : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
             }`}
           >
@@ -199,7 +199,7 @@ export default function StockReturnCalculator() {
                         const value = e.target.value.replace(/[^0-9]/g, "");
                         setBuyPrice(Number(value) || 0);
                       }}
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-[#2B5280] focus:border-[#2B5280]"
                     />
                     <span className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">
                       원
@@ -218,7 +218,7 @@ export default function StockReturnCalculator() {
                         const value = e.target.value.replace(/[^0-9]/g, "");
                         setBuyQuantity(Number(value) || 0);
                       }}
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-[#2B5280] focus:border-[#2B5280]"
                     />
                     <span className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">
                       주
@@ -239,7 +239,7 @@ export default function StockReturnCalculator() {
                       const value = e.target.value.replace(/[^0-9]/g, "");
                       setSellPrice(Number(value) || 0);
                     }}
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-[#2B5280] focus:border-[#2B5280]"
                   />
                   <span className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">
                     원
@@ -283,7 +283,7 @@ export default function StockReturnCalculator() {
                         const value = e.target.value.replace(/[^0-9]/g, "");
                         setTargetBuyPrice(Number(value) || 0);
                       }}
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-[#2B5280] focus:border-[#2B5280]"
                     />
                     <span className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">
                       원
@@ -302,7 +302,7 @@ export default function StockReturnCalculator() {
                         const value = e.target.value.replace(/[^0-9]/g, "");
                         setTargetBuyQuantity(Number(value) || 0);
                       }}
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-[#2B5280] focus:border-[#2B5280]"
                     />
                     <span className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">
                       주
@@ -326,7 +326,7 @@ export default function StockReturnCalculator() {
                     className="flex-1 h-2 bg-neutral-200 rounded-lg appearance-none cursor-pointer accent-indigo-500"
                   />
                   <div className="w-20 text-center">
-                    <span className="text-lg font-bold text-emerald-600">
+                    <span className="text-lg font-bold text-[#1E3A5F]">
                       {targetReturn}
                     </span>
                     <span className="text-sm text-neutral-500">%</span>
@@ -339,7 +339,7 @@ export default function StockReturnCalculator() {
                       onClick={() => setTargetReturn(rate)}
                       className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
                         targetReturn === rate
-                          ? "bg-emerald-500 text-white"
+                          ? "bg-[#2B5280] text-white"
                           : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
                       }`}
                     >
@@ -361,7 +361,7 @@ export default function StockReturnCalculator() {
             <button
               onClick={() => setIncludeFees(!includeFees)}
               className={`w-12 h-6 rounded-full transition-all ${
-                includeFees ? "bg-emerald-500" : "bg-neutral-300"
+                includeFees ? "bg-[#2B5280]" : "bg-neutral-300"
               }`}
             >
               <div
@@ -391,7 +391,7 @@ export default function StockReturnCalculator() {
                 <button
                   onClick={() => setIsTaxable(!isTaxable)}
                   className={`w-10 h-5 rounded-full transition-all ${
-                    isTaxable ? "bg-emerald-500" : "bg-neutral-300"
+                    isTaxable ? "bg-[#2B5280]" : "bg-neutral-300"
                   }`}
                 >
                   <div
@@ -407,7 +407,7 @@ export default function StockReturnCalculator() {
 
         {/* 결과 영역 */}
         {calcMode === "return" ? (
-          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 space-y-4">
+          <div className="bg-gradient-to-r from-[#F5F8FB] to-teal-50 rounded-xl p-6 space-y-4">
             <div className="text-center">
               <p className="text-sm text-neutral-600 mb-2">
                 {result.netProfit >= 0 ? "순수익" : "손실"}
@@ -430,7 +430,7 @@ export default function StockReturnCalculator() {
               </p>
             </div>
 
-            <div className="border-t border-emerald-200 pt-4 space-y-2">
+            <div className="border-t border-[#B8D0E8] pt-4 space-y-2">
               <div className="flex justify-between text-sm">
                 <span className="text-neutral-600">총 매수금액</span>
                 <span className="font-medium text-neutral-700">
@@ -475,10 +475,10 @@ export default function StockReturnCalculator() {
             </div>
           </div>
         ) : (
-          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 space-y-4">
+          <div className="bg-gradient-to-r from-[#F5F8FB] to-teal-50 rounded-xl p-6 space-y-4">
             <div className="text-center">
               <p className="text-sm text-neutral-600 mb-2">목표 매도가</p>
-              <p className="text-4xl font-bold text-emerald-600">
+              <p className="text-4xl font-bold text-[#1E3A5F]">
                 {formatNumber(result.targetSellPrice)}
                 <span className="text-xl font-normal text-neutral-500">원</span>
               </p>
@@ -487,7 +487,7 @@ export default function StockReturnCalculator() {
               </p>
             </div>
 
-            <div className="border-t border-emerald-200 pt-4 space-y-2">
+            <div className="border-t border-[#B8D0E8] pt-4 space-y-2">
               <div className="flex justify-between text-sm">
                 <span className="text-neutral-600">총 매수금액</span>
                 <span className="font-medium text-neutral-700">
@@ -521,13 +521,13 @@ export default function StockReturnCalculator() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="bg-emerald-100 border-b-2 border-emerald-300">
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">투자금 ↓ / 수익률 →</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">+10%</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300">+20%</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden sm:table-cell">+30%</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden md:table-cell">+50%</th>
-                  <th className="py-2 px-2 text-center text-emerald-700 font-bold border border-gray-300 hidden md:table-cell">한줄평</th>
+                <tr className="bg-[#EDF2F8] border-b-2 border-[#4A7AB5]">
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">투자금 ↓ / 수익률 →</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">+10%</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300">+20%</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden sm:table-cell">+30%</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden md:table-cell">+50%</th>
+                  <th className="py-2 px-2 text-center text-[#162F4F] font-bold border border-gray-300 hidden md:table-cell">한줄평</th>
                 </tr>
               </thead>
               <tbody>
@@ -584,9 +584,9 @@ export default function StockReturnCalculator() {
           </div>
           <p className="text-xs text-gray-500 mt-2 text-center">※ 증권사 수수료 0.015%, 거래세 0.20% 반영 (양도세 미적용)</p>
 
-          <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
-            <p className="text-xs text-emerald-800 font-medium">💡 핵심 포인트</p>
-            <ul className="text-xs text-emerald-700 mt-1 space-y-1">
+          <div className="mt-4 p-3 bg-[#EDF2F8] rounded-lg">
+            <p className="text-xs text-[#132A42] font-medium">💡 핵심 포인트</p>
+            <ul className="text-xs text-[#162F4F] mt-1 space-y-1">
               <li>• 수수료+세금으로 약 0.4% 정도가 빠져요</li>
               <li>• 장기투자일수록 수수료 영향 ↓ (복리효과 ↑)</li>
               <li>• 대주주/해외주식은 양도세 22% 추가!</li>

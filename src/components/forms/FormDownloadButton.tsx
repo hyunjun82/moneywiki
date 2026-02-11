@@ -49,8 +49,8 @@ export default function FormDownloadButton({
         onClick={handleClick}
         className={`
           inline-flex items-center justify-center gap-2
-          px-6 py-3 bg-emerald-600 text-white font-medium
-          rounded-lg hover:bg-emerald-700 transition-all
+          px-6 py-3 bg-[#1E3A5F] text-white font-medium
+          rounded-lg hover:bg-[#162F4F] transition-all
           shadow-lg hover:shadow-xl
           ${className}
         `}
@@ -78,7 +78,7 @@ export default function FormDownloadButton({
 
             {/* 로딩 표시 */}
             <div className="flex flex-col items-center gap-4">
-              <div className="w-12 h-12 border-4 border-emerald-200 border-t-emerald-600 rounded-full animate-spin" />
+              <div className="w-12 h-12 border-4 border-[#B8D0E8] border-t-[#1E3A5F] rounded-full animate-spin" />
               <div>
                 <p className="text-lg font-medium text-neutral-800">
                   양식 페이지로 이동 중...
@@ -93,7 +93,7 @@ export default function FormDownloadButton({
             {countdown <= 1 && (
               <button
                 onClick={() => router.push(`/forms/${encodeURIComponent(formSlug)}`)}
-                className="mt-4 px-4 py-2 text-emerald-600 hover:text-emerald-700 underline text-sm"
+                className="mt-4 px-4 py-2 text-[#1E3A5F] hover:text-[#162F4F] underline text-sm"
               >
                 바로 이동하기
               </button>
@@ -122,7 +122,7 @@ export function FormDownloadLink({
     <a
       href={`/forms/${encodeURIComponent(formSlug)}`}
       onClick={handleClick}
-      className={`text-emerald-600 hover:text-emerald-700 hover:underline ${className}`}
+      className={`text-[#1E3A5F] hover:text-[#162F4F] hover:underline ${className}`}
     >
       {formName} 양식 다운로드
     </a>

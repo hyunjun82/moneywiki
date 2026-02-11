@@ -10,7 +10,7 @@ const MATURITY_TABLE_ROWS = [
 ]
 
 const USAGE_CARDS = [
-  { value: '주거', label: '주거 마련', lines: ['전세·월세 보증금', '주택 구입 자금'], highlight: '가장 많이', highlightColor: 'emerald' as const },
+  { value: '주거', label: '주거 마련', lines: ['전세·월세 보증금', '주택 구입 자금'], highlight: '가장 많이', highlightColor: 'navy' as const },
   { value: '교육', label: '교육/훈련', lines: ['본인 또는 자녀 교육비', '직업훈련비'], active: true },
   { value: '창업', label: '창업 자금', lines: ['사업 시작 비용', '운영 자금'], highlight: '자립 핵심', highlightColor: 'orange' as const },
 ]
@@ -36,7 +36,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>희망저축계좌2 <span className="text-emerald-600">만기 수령액</span> 적립금과 사용처</>,
+    h1: <>희망저축계좌2 <span className="text-[#1E3A5F]">만기 수령액</span> 적립금과 사용처</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

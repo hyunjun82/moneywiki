@@ -69,7 +69,7 @@ const data: HubData = {
             더 자세한 종류별 비교는{' '}
             <a
               href="/w/소상공인-시설개선-지원금-종류-비교-정리"
-              className="text-emerald-600 font-semibold hover:underline"
+              className="text-[#1E3A5F] font-semibold hover:underline"
             >
               소상공인 시설개선 지원금 종류 비교 정리
             </a>
@@ -96,7 +96,7 @@ const data: HubData = {
             신청 방법과 세부 조건은{' '}
             <a
               href="/w/스마트상점-기술보급-사업-신청-방법-2026"
-              className="text-emerald-600 font-semibold hover:underline"
+              className="text-[#1E3A5F] font-semibold hover:underline"
             >
               스마트상점 기술보급 사업 신청 방법 2026
             </a>
@@ -123,7 +123,7 @@ const data: HubData = {
             지역별 지원금 확인 방법은{' '}
             <a
               href="/w/지자체-소상공인-매장-리모델링-지원금-신청"
-              className="text-emerald-600 font-semibold hover:underline"
+              className="text-[#1E3A5F] font-semibold hover:underline"
             >
               지자체 소상공인 매장 리모델링 지원금 신청
             </a>

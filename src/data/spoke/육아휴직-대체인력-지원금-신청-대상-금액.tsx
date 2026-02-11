@@ -37,7 +37,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>육아휴직 <span className="text-emerald-600">대체인력 지원금</span> 신청 대상과 금액</>,
+    h1: <>육아휴직 <span className="text-[#1E3A5F]">대체인력 지원금</span> 신청 대상과 금액</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -88,8 +88,8 @@ const data: SpokeData = {
           </p>
 
           <RateCards cards={[
-            { value: '월 140만원', label: '30인 미만', lines: ['대체인력 고용', '선지급 방식'], highlight: '최대 지원', highlightColor: 'emerald', active: true },
-            { value: '월 130만원', label: '30인 이상', lines: ['대체인력 고용', '선지급 방식'], highlight: '선지급', highlightColor: 'emerald' },
+            { value: '월 140만원', label: '30인 미만', lines: ['대체인력 고용', '선지급 방식'], highlight: '최대 지원', highlightColor: 'navy', active: true },
+            { value: '월 130만원', label: '30인 이상', lines: ['대체인력 고용', '선지급 방식'], highlight: '선지급', highlightColor: 'navy' },
             { value: '월 60만원', label: '업무분담 (30인 미만)', lines: ['기존 직원 활용', '별도 고용 불필요'], highlight: '소규모', highlightColor: 'orange' },
           ]} />
 

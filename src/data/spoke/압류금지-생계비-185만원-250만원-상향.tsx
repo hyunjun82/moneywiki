@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 2월 시행',
-    h1: <>압류금지 생계비 <span className="text-emerald-600">185만원에서 250만원</span> — 상향 배경과 적용 시점</>,
+    h1: <>압류금지 생계비 <span className="text-[#1E3A5F]">185만원에서 250만원</span> — 상향 배경과 적용 시점</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -226,7 +226,7 @@ const data: SpokeData = {
           ]} />
 
           <RateCards cards={[
-            { value: '250만원', label: '압류금지 생계비', lines: ['2026년 2월 시행', '급여채권 보호 최저금액'], highlightColor: 'emerald' as const, active: true },
+            { value: '250만원', label: '압류금지 생계비', lines: ['2026년 2월 시행', '급여채권 보호 최저금액'], highlightColor: 'navy' as const, active: true },
             { value: '1,500만원', label: '사망보험금 한도', lines: ['보장성 보험 한정', '기존 1,000만원에서 상향'], active: false },
             { value: '250만원', label: '해약환급금 한도', lines: ['보장성 보험 한정', '기존 150만원에서 상향'], active: false },
           ]} />

@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>생계비계좌 <span className="text-emerald-600">입금 한도 250만원</span> — 잔액 관리 방법까지</>,
+    h1: <>생계비계좌 <span className="text-[#1E3A5F]">입금 한도 250만원</span> — 잔액 관리 방법까지</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -226,7 +226,7 @@ const data: SpokeData = {
           ]} />
 
           <RateCards cards={[
-            { value: '250만원', label: '월 입금 한도', lines: ['1개월 누적 입금 기준', '매월 1일 초기화'], highlightColor: 'emerald' as const, active: true },
+            { value: '250만원', label: '월 입금 한도', lines: ['1개월 누적 입금 기준', '매월 1일 초기화'], highlightColor: 'navy' as const, active: true },
             { value: '250만원', label: '압류금지 보호액', lines: ['잔액 중 이 금액까지 보호', '초과분만 압류 대상'], active: false },
             { value: '1,500만원', label: '사망보험금 한도', lines: ['보장성 보험 한정', '2026년 2월 상향'], active: false },
           ]} />

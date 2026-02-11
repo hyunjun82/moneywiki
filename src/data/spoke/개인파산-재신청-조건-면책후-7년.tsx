@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>개인파산 <span className="text-emerald-600">재신청 조건</span> — 면책 후 7년 기간과 재신청 절차</>,
+    h1: <>개인파산 <span className="text-[#1E3A5F]">재신청 조건</span> — 면책 후 7년 기간과 재신청 절차</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

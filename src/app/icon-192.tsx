@@ -12,7 +12,7 @@ export default function Icon192() {
           width: 192,
           height: 192,
           borderRadius: 32,
-          background: 'linear-gradient(135deg, #059669 0%, #10b981 100%)',
+          background: 'linear-gradient(135deg, #1E3A5F 0%, #2B5280 100%)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',

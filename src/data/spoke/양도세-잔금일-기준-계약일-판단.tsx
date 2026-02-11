@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>양도세 잔금일 기준 — <span className="text-emerald-600">계약일이 아니라 잔금일이</span> 과세 시점</>,
+    h1: <>양도세 잔금일 기준 — <span className="text-[#1E3A5F]">계약일이 아니라 잔금일이</span> 과세 시점</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -233,7 +233,7 @@ const data: SpokeData = {
           ]} />
 
           <RateCards cards={[
-            { value: '6~45%', label: '유예 기간 내 잔금(~5/9)', lines: ['기본세율만 적용', '장특공제 가능', '다주택자도 동일'], highlightColor: 'emerald' },
+            { value: '6~45%', label: '유예 기간 내 잔금(~5/9)', lines: ['기본세율만 적용', '장특공제 가능', '다주택자도 동일'], highlightColor: 'navy' },
             { value: '26~65%', label: '유예 종료 후 잔금(2주택)', lines: ['기본세율 +20%p', '장특공제 배제', '조정지역 내 주택'],},
             { value: '36~75%', label: '유예 종료 후 잔금(3주택+)', lines: ['기본세율 +30%p', '장특공제 배제', '조정지역 내 주택'],},
           ]} />

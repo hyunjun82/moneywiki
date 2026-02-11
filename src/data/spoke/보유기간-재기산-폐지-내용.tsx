@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>보유기간 <span className="text-emerald-600">재기산 폐지</span> — 장특공 보유기간 계산 변경</>,
+    h1: <>보유기간 <span className="text-[#1E3A5F]">재기산 폐지</span> — 장특공 보유기간 계산 변경</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

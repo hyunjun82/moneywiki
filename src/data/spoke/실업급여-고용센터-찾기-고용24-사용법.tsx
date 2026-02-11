@@ -30,7 +30,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <><span className="text-emerald-600">실업급여 고용센터 찾기</span> 고용24 사용법</>,
+    h1: <><span className="text-[#1E3A5F]">실업급여 고용센터 찾기</span> 고용24 사용법</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -149,7 +149,7 @@ const data: SpokeData = {
           ]} />
 
           <RateCards cards={[
-            { value: '온라인', label: '고용24 신청', lines: ['회원가입 필수', '2차 실업인정부터'], highlight: '편리', highlightColor: 'emerald', active: true },
+            { value: '온라인', label: '고용24 신청', lines: ['회원가입 필수', '2차 실업인정부터'], highlight: '편리', highlightColor: 'navy', active: true },
             { value: '방문', label: '고용센터 방문', lines: ['1차 실업인정 필수', '서류 지참'], highlight: '필수', highlightColor: 'orange' },
             { value: '전화', label: '전화 상담', lines: ['☎1350', '센터 연결'], highlight: '안내' },
           ]} />

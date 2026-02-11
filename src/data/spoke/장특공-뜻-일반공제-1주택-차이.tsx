@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>장기보유특별공제 <span className="text-emerald-600">뜻과 유형</span> — 일반공제와 1주택 차이</>,
+    h1: <>장기보유특별공제 <span className="text-[#1E3A5F]">뜻과 유형</span> — 일반공제와 1주택 차이</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -245,7 +245,7 @@ const data: SpokeData = {
           ]} />
 
           <RateCards cards={[
-            { value: '80%', label: '1주택 최대', lines: ['보유 10년 + 거주 10년', '양도차익 대부분 공제'], highlightColor: 'emerald' },
+            { value: '80%', label: '1주택 최대', lines: ['보유 10년 + 거주 10년', '양도차익 대부분 공제'], highlightColor: 'navy' },
             { value: '40%', label: '1주택 거주 미충족', lines: ['보유 10년만 인정', '거주 공제율 0%'] },
             { value: '30%', label: '일반 최대', lines: ['보유 15년 이상', '거주기간 무관'] },
             { value: '0%', label: '3년 미만', lines: ['보유기간 부족', '장특공 적용 불가'] },

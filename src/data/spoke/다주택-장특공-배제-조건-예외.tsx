@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>다주택 <span className="text-emerald-600">장특공 배제</span> — 조건과 예외 중과유예 정리</>,
+    h1: <>다주택 <span className="text-[#1E3A5F]">장특공 배제</span> — 조건과 예외 중과유예 정리</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -245,7 +245,7 @@ const data: SpokeData = {
           ]} />
 
           <RateCards cards={[
-            { value: '30%', label: '유예 기간 최대', lines: ['일반 장특공 적용', '15년 보유 기준'], highlightColor: 'emerald' },
+            { value: '30%', label: '유예 기간 최대', lines: ['일반 장특공 적용', '15년 보유 기준'], highlightColor: 'navy' },
             { value: '0%', label: '중과 적용 시', lines: ['장특공 배제', '중과세율까지 적용'] },
             { value: '80%', label: '참고: 1주택', lines: ['1세대 1주택 전용', '다주택은 해당 없음'] },
           ]} />

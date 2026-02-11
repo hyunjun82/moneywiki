@@ -11,7 +11,7 @@ export function HubFlow({ steps }: {
       {steps.map((step, i) => (
         <div key={i} className="contents">
           {i > 0 && <span className="text-neutral-300 px-2 shrink-0 text-base">→</span>}
-          <div className="bg-neutral-50 border border-neutral-200 rounded-xl px-[18px] py-[14px] text-center min-w-[100px] hover:border-emerald-600 hover:bg-emerald-600/[0.03] transition-all">
+          <div className="bg-neutral-50 border border-neutral-200 rounded-xl px-[18px] py-[14px] text-center min-w-[100px] hover:border-[#1E3A5F] hover:bg-[#1E3A5F]/[0.03] transition-all">
             <div className="text-2xl mb-1">{step.icon}</div>
             <div className="text-xs font-semibold text-neutral-700">{step.label}</div>
             {step.sub && <div className="text-[10px] text-neutral-400 mt-0.5">{step.sub}</div>}
@@ -35,7 +35,7 @@ export function HubRateBars({ bars }: {
           <span className="w-20 text-xs font-semibold text-neutral-600 text-right shrink-0">{bar.label}</span>
           <div className="flex-1 h-6 bg-neutral-100 rounded-xl overflow-hidden">
             <div
-              className="h-full bg-emerald-600 rounded-xl flex items-center pl-2.5 text-[11px] font-bold text-white"
+              className="h-full bg-[#1E3A5F] rounded-xl flex items-center pl-2.5 text-[11px] font-bold text-white"
               style={{ width: bar.width }}
             >
               {bar.rate}
@@ -58,11 +58,11 @@ export function HubTimeline({ events }: {
       <div className="absolute left-[6px] top-[6px] bottom-[6px] w-0.5 bg-neutral-200" />
       {events.map((event, i) => {
         const dotClass =
-          event.status === 'current' ? 'border-emerald-600 bg-emerald-600 shadow-[0_0_0_3px_rgba(5,150,105,0.15)]' :
+          event.status === 'current' ? 'border-[#1E3A5F] bg-[#1E3A5F] shadow-[0_0_0_3px_rgba(30,58,95,0.15)]' :
           event.status === 'warning' ? 'border-orange-500 bg-orange-500' :
           'border-neutral-300 bg-white'
         const tagClass =
-          event.status === 'warning' ? 'bg-orange-500/[0.08] text-orange-500' : 'bg-emerald-600/[0.08] text-emerald-600'
+          event.status === 'warning' ? 'bg-orange-500/[0.08] text-orange-500' : 'bg-[#1E3A5F]/[0.08] text-[#1E3A5F]'
 
         return (
           <div key={i} className="relative pb-5 last:pb-0">
@@ -91,13 +91,13 @@ export function HubStepCards({ steps }: {
   return (
     <div className="my-4">
       {steps.map((step, i) => (
-        <div key={i} className="relative pl-14 py-4 pr-4 bg-neutral-50 border border-neutral-200 rounded-xl mb-2 hover:border-emerald-600 hover:bg-emerald-600/[0.02] transition-all">
-          <div className="absolute left-3.5 top-3.5 w-[30px] h-[30px] rounded-full bg-emerald-600 text-white text-sm font-bold flex items-center justify-center">
+        <div key={i} className="relative pl-14 py-4 pr-4 bg-neutral-50 border border-neutral-200 rounded-xl mb-2 hover:border-[#1E3A5F] hover:bg-[#1E3A5F]/[0.02] transition-all">
+          <div className="absolute left-3.5 top-3.5 w-[30px] h-[30px] rounded-full bg-[#1E3A5F] text-white text-sm font-bold flex items-center justify-center">
             {i + 1}
           </div>
           <div className="text-sm font-semibold text-neutral-800">{step.title}</div>
           <div className="text-xs text-neutral-500 mt-0.5">{step.desc}</div>
-          {step.tip && <div className="text-[11px] text-emerald-600 mt-1 font-medium">{step.tip}</div>}
+          {step.tip && <div className="text-[11px] text-[#1E3A5F] mt-1 font-medium">{step.tip}</div>}
         </div>
       ))}
     </div>
@@ -116,11 +116,11 @@ export function HubCompareCards({ cards }: {
         <div
           key={i}
           className={`border rounded-xl p-5 hover:shadow-md hover:-translate-y-0.5 transition-all ${
-            card.recommended ? 'border-emerald-600 bg-emerald-600/[0.02]' : 'border-neutral-200'
+            card.recommended ? 'border-[#1E3A5F] bg-[#1E3A5F]/[0.02]' : 'border-neutral-200'
           }`}
         >
           {card.recommended && card.recLabel && (
-            <span className="inline-block text-[10px] font-bold py-0.5 px-2 bg-emerald-600/10 text-emerald-600 rounded mb-2">
+            <span className="inline-block text-[10px] font-bold py-0.5 px-2 bg-[#1E3A5F]/10 text-[#1E3A5F] rounded mb-2">
               {card.recLabel}
             </span>
           )}
@@ -154,7 +154,7 @@ export function HubTable({ id, title, subtitle, headers, rows, highlightCol, war
   return (
     <>
       {title && (
-        <h3 id={id} className="text-base font-bold mt-6 mb-0 pl-3 border-l-[3px] border-emerald-600 scroll-mt-20">
+        <h3 id={id} className="text-base font-bold mt-6 mb-0 pl-3 border-l-[3px] border-[#1E3A5F] scroll-mt-20">
           {title}
           {subtitle && <small className="inline-block text-[11px] font-medium text-neutral-500 ml-2 px-2 py-0.5 bg-neutral-100 rounded align-middle tracking-normal">{subtitle}</small>}
         </h3>
@@ -182,7 +182,7 @@ export function HubTable({ id, title, subtitle, headers, rows, highlightCol, war
                   const isWarn = (isObj && cell.warn) || (warnCol !== undefined && ci === warnCol)
                   return (
                     <td key={ci} className={`px-3 py-2.5 border-b border-neutral-100 ${
-                      isHighlight ? 'text-emerald-600 font-semibold' :
+                      isHighlight ? 'text-[#1E3A5F] font-semibold' :
                       isWarn ? 'text-orange-500 font-semibold' : ''
                     }`}>
                       {text}
@@ -203,8 +203,8 @@ export function HubTable({ id, title, subtitle, headers, rows, highlightCol, war
 // =============================================
 export function HubTipBox({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="bg-emerald-600/[0.04] border border-emerald-600/[0.12] rounded-xl py-5 px-6 my-5 text-[13px] text-neutral-600">
-      <h4 className="text-sm font-bold text-emerald-600 mb-2">{title}</h4>
+    <div className="bg-[#1E3A5F]/[0.04] border border-[#1E3A5F]/[0.12] rounded-xl py-5 px-6 my-5 text-[13px] text-neutral-600">
+      <h4 className="text-sm font-bold text-[#1E3A5F] mb-2">{title}</h4>
       {children}
     </div>
   )
@@ -254,7 +254,7 @@ export function HubCTA({ buttons }: {
   const colors = {
     dark: 'from-slate-800 to-slate-600',
     blue: 'from-blue-600 to-blue-500',
-    green: 'from-emerald-600 to-emerald-500',
+    green: 'from-[#1E3A5F] to-[#2B5280]',
   }
   return (
     <div className="flex flex-col gap-2.5 my-5">
@@ -283,20 +283,20 @@ export function HubCTA({ buttons }: {
 export function HubBridgeCTA({ href, badge, title, desc }: {
   href: string; badge: string; title: string; desc: string
 }) {
-  const cls = 'group flex items-center gap-4 mt-8 p-[18px] bg-white border border-neutral-200 rounded-[14px] no-underline transition-all hover:border-emerald-600 hover:shadow-md hover:-translate-y-px'
+  const cls = 'group flex items-center gap-4 mt-8 p-[18px] bg-white border border-neutral-200 rounded-[14px] no-underline transition-all hover:border-[#1E3A5F] hover:shadow-md hover:-translate-y-px'
   const inner = (
     <>
-      <div className="shrink-0 w-[42px] h-[42px] rounded-full bg-gradient-to-br from-emerald-600 to-emerald-500 flex items-center justify-center">
+      <div className="shrink-0 w-[42px] h-[42px] rounded-full bg-gradient-to-br from-[#1E3A5F] to-[#2B5280] flex items-center justify-center">
         <svg viewBox="0 0 24 24" className="w-[18px] h-[18px]">
           <path d="M9 5l7 7-7 7" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
       <div className="flex-1 min-w-0">
-        <div className="inline-block text-[10px] font-bold text-emerald-600 bg-emerald-600/[0.08] px-2 py-0.5 rounded-full mb-1 tracking-wide">{badge}</div>
+        <div className="inline-block text-[10px] font-bold text-[#1E3A5F] bg-[#1E3A5F]/[0.08] px-2 py-0.5 rounded-full mb-1 tracking-wide">{badge}</div>
         <div className="text-[15px] font-bold text-neutral-800 leading-snug">{title}</div>
         <div className="text-xs text-neutral-500 mt-0.5">{desc}</div>
       </div>
-      <span className="shrink-0 text-lg text-neutral-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all">&rarr;</span>
+      <span className="shrink-0 text-lg text-neutral-400 group-hover:text-[#1E3A5F] group-hover:translate-x-1 transition-all">&rarr;</span>
     </>
   )
 
@@ -315,19 +315,19 @@ export function HubSpokeLink({ href, badge, title, desc }: {
   return (
     <Link
       href={href}
-      className="group flex items-center gap-4 my-4 p-[18px] bg-white border border-neutral-200 rounded-[14px] no-underline transition-all hover:border-emerald-600 hover:shadow-md hover:-translate-y-px"
+      className="group flex items-center gap-4 my-4 p-[18px] bg-white border border-neutral-200 rounded-[14px] no-underline transition-all hover:border-[#1E3A5F] hover:shadow-md hover:-translate-y-px"
     >
-      <div className="shrink-0 w-[42px] h-[42px] rounded-full bg-gradient-to-br from-emerald-600 to-emerald-500 flex items-center justify-center">
+      <div className="shrink-0 w-[42px] h-[42px] rounded-full bg-gradient-to-br from-[#1E3A5F] to-[#2B5280] flex items-center justify-center">
         <svg viewBox="0 0 24 24" className="w-[18px] h-[18px]">
           <path d="M9 5l7 7-7 7" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
       <div className="flex-1 min-w-0">
-        <div className="inline-block text-[10px] font-bold text-emerald-600 bg-emerald-600/[0.08] px-2 py-0.5 rounded-full mb-1 tracking-wide">{badge}</div>
+        <div className="inline-block text-[10px] font-bold text-[#1E3A5F] bg-[#1E3A5F]/[0.08] px-2 py-0.5 rounded-full mb-1 tracking-wide">{badge}</div>
         <div className="text-[15px] font-bold text-neutral-800 leading-snug">{title}</div>
         <div className="text-xs text-neutral-500 mt-0.5">{desc}</div>
       </div>
-      <span className="shrink-0 text-lg text-neutral-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all">→</span>
+      <span className="shrink-0 text-lg text-neutral-400 group-hover:text-[#1E3A5F] group-hover:translate-x-1 transition-all">→</span>
     </Link>
   )
 }

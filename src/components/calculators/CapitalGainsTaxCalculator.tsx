@@ -487,7 +487,7 @@ export default function CapitalGainsTaxCalculator() {
       {/* 헤더 */}
       <div className="border-b border-gray-200">
         <div className="flex items-center gap-2 px-4 py-3 bg-gray-50">
-          <span className="w-1 h-5 bg-emerald-500 rounded-full"></span>
+          <span className="w-1 h-5 bg-[#2B5280] rounded-full"></span>
           <h2 className="text-base font-semibold text-gray-900">양도소득세 계산기</h2>
         </div>
 
@@ -505,7 +505,7 @@ export default function CapitalGainsTaxCalculator() {
               onClick={() => setPropertyType(item.type)}
               className={`flex-1 py-2.5 px-3 text-sm font-medium transition-all border-b-2 whitespace-nowrap ${
                 propertyType === item.type
-                  ? "border-emerald-500 text-emerald-600 bg-emerald-50/50"
+                  ? "border-[#2B5280] text-[#1E3A5F] bg-[#F5F8FB]/50"
                   : "border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50"
               }`}
             >
@@ -527,14 +527,14 @@ export default function CapitalGainsTaxCalculator() {
                   onClick={() => setHouseCategory(item.type)}
                   className={`px-3 py-2 text-sm rounded transition-all text-center ${
                     houseCategory === item.type
-                      ? "bg-emerald-500 text-white"
+                      ? "bg-[#2B5280] text-white"
                       : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                   }`}
                 >
                   <div className="font-medium">{item.label}</div>
                   {item.description && (
                     <div className={`text-xs mt-0.5 ${
-                      houseCategory === item.type ? "text-emerald-100" : "text-gray-400"
+                      houseCategory === item.type ? "text-[#EDF2F8]" : "text-gray-400"
                     }`}>
                       {item.description}
                     </div>
@@ -554,13 +554,13 @@ export default function CapitalGainsTaxCalculator() {
                 onClick={() => setOfficetelCategory("residential")}
                 className={`px-3 py-2 text-sm rounded transition-all text-center ${
                   officetelCategory === "residential"
-                    ? "bg-emerald-500 text-white"
+                    ? "bg-[#2B5280] text-white"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
                 <div className="font-medium">주거용</div>
                 <div className={`text-xs mt-0.5 ${
-                  officetelCategory === "residential" ? "text-emerald-100" : "text-gray-400"
+                  officetelCategory === "residential" ? "text-[#EDF2F8]" : "text-gray-400"
                 }`}>
                   1주택 비과세 가능
                 </div>
@@ -569,13 +569,13 @@ export default function CapitalGainsTaxCalculator() {
                 onClick={() => setOfficetelCategory("commercial")}
                 className={`px-3 py-2 text-sm rounded transition-all text-center ${
                   officetelCategory === "commercial"
-                    ? "bg-emerald-500 text-white"
+                    ? "bg-[#2B5280] text-white"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
                 <div className="font-medium">업무용</div>
                 <div className={`text-xs mt-0.5 ${
-                  officetelCategory === "commercial" ? "text-emerald-100" : "text-gray-400"
+                  officetelCategory === "commercial" ? "text-[#EDF2F8]" : "text-gray-400"
                 }`}>
                   단기 고율 적용
                 </div>
@@ -591,14 +591,14 @@ export default function CapitalGainsTaxCalculator() {
                       onClick={() => setHouseCategory(item.type)}
                       className={`px-3 py-2 text-sm rounded transition-all text-center ${
                         houseCategory === item.type
-                          ? "bg-emerald-500 text-white"
+                          ? "bg-[#2B5280] text-white"
                           : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                       }`}
                     >
                       <div className="font-medium">{item.label}</div>
                       {item.description && (
                         <div className={`text-xs mt-0.5 ${
-                          houseCategory === item.type ? "text-emerald-100" : "text-gray-400"
+                          houseCategory === item.type ? "text-[#EDF2F8]" : "text-gray-400"
                         }`}>
                           {item.description}
                         </div>
@@ -630,7 +630,7 @@ export default function CapitalGainsTaxCalculator() {
                 onClick={() => setIsNonBusiness(false)}
                 className={`px-3 py-1.5 text-sm rounded transition-all ${
                   !isNonBusiness
-                    ? "bg-emerald-500 text-white"
+                    ? "bg-[#2B5280] text-white"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
@@ -640,7 +640,7 @@ export default function CapitalGainsTaxCalculator() {
                 onClick={() => setIsNonBusiness(true)}
                 className={`px-3 py-1.5 text-sm rounded transition-all ${
                   isNonBusiness
-                    ? "bg-emerald-500 text-white"
+                    ? "bg-[#2B5280] text-white"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
@@ -682,7 +682,7 @@ export default function CapitalGainsTaxCalculator() {
                   onClick={() => setIsRegulated(false)}
                   className={`px-3 py-1.5 text-sm rounded transition-all ${
                     !isRegulated
-                      ? "bg-emerald-500 text-white"
+                      ? "bg-[#2B5280] text-white"
                       : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                   }`}
                 >
@@ -692,7 +692,7 @@ export default function CapitalGainsTaxCalculator() {
                   onClick={() => setIsRegulated(true)}
                   className={`px-3 py-1.5 text-sm rounded transition-all ${
                     isRegulated
-                      ? "bg-emerald-500 text-white"
+                      ? "bg-[#2B5280] text-white"
                       : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                   }`}
                 >
@@ -725,18 +725,18 @@ export default function CapitalGainsTaxCalculator() {
                     onFocus={() => setActiveField("sale")}
                     className={`w-full px-3 py-2 pr-10 text-right text-sm border rounded focus:outline-none ${
                       activeField === "sale"
-                        ? "border-emerald-500 ring-1 ring-emerald-500"
+                        ? "border-[#2B5280] ring-1 ring-[#2B5280]"
                         : "border-gray-300"
                     }`}
                     placeholder="0"
                   />
-                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-white bg-emerald-500 px-2 py-0.5 rounded">원</span>
+                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-white bg-[#2B5280] px-2 py-0.5 rounded">원</span>
                 </div>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-16 shrink-0"></div>
-              <span className="text-sm text-emerald-600 font-medium">{toManwon(salePrice)}</span>
+              <span className="text-sm text-[#1E3A5F] font-medium">{toManwon(salePrice)}</span>
             </div>
           </div>
 
@@ -753,18 +753,18 @@ export default function CapitalGainsTaxCalculator() {
                     onFocus={() => setActiveField("purchase")}
                     className={`w-full px-3 py-2 pr-10 text-right text-sm border rounded focus:outline-none ${
                       activeField === "purchase"
-                        ? "border-emerald-500 ring-1 ring-emerald-500"
+                        ? "border-[#2B5280] ring-1 ring-[#2B5280]"
                         : "border-gray-300"
                     }`}
                     placeholder="0"
                   />
-                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-white bg-emerald-500 px-2 py-0.5 rounded">원</span>
+                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-white bg-[#2B5280] px-2 py-0.5 rounded">원</span>
                 </div>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-16 shrink-0"></div>
-              <span className="text-sm text-emerald-600 font-medium">{toManwon(purchasePrice)}</span>
+              <span className="text-sm text-[#1E3A5F] font-medium">{toManwon(purchasePrice)}</span>
             </div>
           </div>
 
@@ -781,12 +781,12 @@ export default function CapitalGainsTaxCalculator() {
                     onFocus={() => setActiveField("expenses")}
                     className={`w-full px-3 py-2 pr-10 text-right text-sm border rounded focus:outline-none ${
                       activeField === "expenses"
-                        ? "border-emerald-500 ring-1 ring-emerald-500"
+                        ? "border-[#2B5280] ring-1 ring-[#2B5280]"
                         : "border-gray-300"
                     }`}
                     placeholder="0"
                   />
-                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-white bg-emerald-500 px-2 py-0.5 rounded">원</span>
+                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-white bg-[#2B5280] px-2 py-0.5 rounded">원</span>
                 </div>
               </div>
             </div>
@@ -833,7 +833,7 @@ export default function CapitalGainsTaxCalculator() {
               <select
                 value={holdingYears}
                 onChange={(e) => setHoldingYears(parseInt(e.target.value))}
-                className="px-3 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
+                className="px-3 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:border-[#2B5280]"
               >
                 {Array.from({ length: 21 }, (_, i) => (
                   <option key={i} value={i}>{i}년</option>
@@ -849,7 +849,7 @@ export default function CapitalGainsTaxCalculator() {
                 <select
                   value={residenceYears}
                   onChange={(e) => setResidenceYears(parseInt(e.target.value))}
-                  className="px-3 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
+                  className="px-3 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:border-[#2B5280]"
                 >
                   {Array.from({ length: 21 }, (_, i) => (
                     <option key={i} value={i}>{i}년</option>
@@ -881,7 +881,7 @@ export default function CapitalGainsTaxCalculator() {
           </button>
           <button
             onClick={calculate}
-            className="px-6 py-2 text-sm text-white bg-emerald-500 rounded hover:bg-emerald-600 transition-colors font-medium"
+            className="px-6 py-2 text-sm text-white bg-[#2B5280] rounded hover:bg-[#1E3A5F] transition-colors font-medium"
           >
             계산하기
           </button>
@@ -891,7 +891,7 @@ export default function CapitalGainsTaxCalculator() {
       {/* 계산 결과 */}
       <div className="border-t border-gray-200 bg-gray-50">
         <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-200">
-          <span className="w-1 h-5 bg-emerald-500 rounded-full"></span>
+          <span className="w-1 h-5 bg-[#2B5280] rounded-full"></span>
           <h3 className="text-base font-semibold text-gray-900">계산 결과</h3>
         </div>
 
@@ -971,14 +971,14 @@ export default function CapitalGainsTaxCalculator() {
           </div>
 
           {/* 총액 */}
-          <div className="p-4 bg-emerald-500 rounded-lg">
+          <div className="p-4 bg-[#2B5280] rounded-lg">
             <div className="flex justify-between items-center">
               <div>
-                <span className="text-emerald-100 text-sm">총 납부세액</span>
+                <span className="text-[#EDF2F8] text-sm">총 납부세액</span>
               </div>
               <span className="text-white text-xl font-bold">{formatNumber(result.totalTax)}원</span>
             </div>
-            <div className="text-emerald-100 text-xs mt-1">
+            <div className="text-[#EDF2F8] text-xs mt-1">
               양도소득세 {formatNumber(result.tax)}원 + 지방소득세 {formatNumber(result.localTax)}원
             </div>
           </div>
@@ -987,17 +987,17 @@ export default function CapitalGainsTaxCalculator() {
 
       {/* 절세 가이드 (아코디언) */}
       <div className="border-t border-gray-200">
-        <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-200 bg-gradient-to-r from-emerald-50 to-green-50">
-          <span className="w-1 h-5 bg-emerald-500 rounded-full"></span>
-          <h3 className="text-sm font-semibold text-emerald-800">💰 양도소득세 절세 전략 가이드</h3>
+        <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-200 bg-gradient-to-r from-[#F5F8FB] to-green-50">
+          <span className="w-1 h-5 bg-[#2B5280] rounded-full"></span>
+          <h3 className="text-sm font-semibold text-[#132A42]">💰 양도소득세 절세 전략 가이드</h3>
         </div>
 
         <div className="divide-y divide-gray-100">
           {/* 아코디언 1: 비과세 받는 법 */}
           <details className="group">
-            <summary className="cursor-pointer px-4 py-3 hover:bg-emerald-50 transition-colors list-none flex items-center justify-between">
+            <summary className="cursor-pointer px-4 py-3 hover:bg-[#F5F8FB] transition-colors list-none flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span className="text-emerald-600 group-open:rotate-90 transition-transform">▶</span>
+                <span className="text-[#1E3A5F] group-open:rotate-90 transition-transform">▶</span>
                 <h4 className="font-semibold text-gray-800 text-sm">
                   <span className="bg-gradient-to-r from-yellow-200 via-yellow-100 to-transparent bg-[length:100%_40%] bg-no-repeat bg-bottom">
                     ✅ 1세대 1주택 비과세 받는 법 체크리스트
@@ -1005,32 +1005,32 @@ export default function CapitalGainsTaxCalculator() {
                 </h4>
               </div>
             </summary>
-            <div className="px-4 pb-4 pt-2 bg-emerald-50/30 space-y-3 text-sm">
+            <div className="px-4 pb-4 pt-2 bg-[#F5F8FB]/30 space-y-3 text-sm">
               <p className="text-gray-700 leading-relaxed">
-                <strong className="text-emerald-700">양도소득세란?</strong> 부동산을 팔아서 생긴 이익(양도차익)에 부과하는 국세예요.
+                <strong className="text-[#162F4F]">양도소득세란?</strong> 부동산을 팔아서 생긴 이익(양도차익)에 부과하는 국세예요.
                 양도일이 속하는 달의 말일부터 2개월 이내에 신고·납부해야 해요.
               </p>
-              <div className="bg-white rounded-lg p-3 border border-emerald-100">
-                <p className="font-medium text-emerald-800 mb-2">📋 비과세 요건 체크</p>
+              <div className="bg-white rounded-lg p-3 border border-[#EDF2F8]">
+                <p className="font-medium text-[#132A42] mb-2">📋 비과세 요건 체크</p>
                 <ul className="space-y-1.5 text-gray-700">
                   <li className="flex items-start gap-2">
-                    <span className="text-emerald-600 mt-0.5">✓</span>
+                    <span className="text-[#1E3A5F] mt-0.5">✓</span>
                     <span><strong>2년 이상 보유</strong> + <strong>2년 이상 거주</strong> 시 비과세 (보유·거주 기간 모두 충족)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-emerald-600 mt-0.5">✓</span>
+                    <span className="text-[#1E3A5F] mt-0.5">✓</span>
                     <span><strong>양도가액 12억원</strong>까지 비과세, 12억원 초과분만 과세 (비율 계산)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-emerald-600 mt-0.5">✓</span>
-                    <span><strong>조정대상지역</strong>은 2년 거주 필수 (비조정지역도 2년 권장). <a href="/w/1세대1주택-양도소득세-비과세-조정지역-거주요건" className="text-emerald-700 underline decoration-2 decoration-emerald-200 hover:decoration-emerald-400 transition-colors">조정지역 상세 보기 →</a></span>
+                    <span className="text-[#1E3A5F] mt-0.5">✓</span>
+                    <span><strong>조정대상지역</strong>은 2년 거주 필수 (비조정지역도 2년 권장). <a href="/w/1세대1주택-양도소득세-비과세-조정지역-거주요건" className="text-[#162F4F] underline decoration-2 decoration-[#B8D0E8] hover:decoration-[#4A7AB5] transition-colors">조정지역 상세 보기 →</a></span>
                   </li>
                 </ul>
               </div>
               <div className="flex justify-end">
                 <a
                   href="/w/1세대1주택-양도소득세-비과세-조건"
-                  className="inline-flex items-center gap-1 px-4 py-2 bg-emerald-600 text-white text-sm font-medium rounded-lg hover:bg-emerald-700 transition-colors shadow-sm"
+                  className="inline-flex items-center gap-1 px-4 py-2 bg-[#1E3A5F] text-white text-sm font-medium rounded-lg hover:bg-[#162F4F] transition-colors shadow-sm"
                 >
                   비과세 조건 상세 가이드 보기 →
                 </a>
@@ -1052,15 +1052,15 @@ export default function CapitalGainsTaxCalculator() {
             </summary>
             <div className="px-4 pb-4 pt-2 bg-yellow-50/30 space-y-3 text-sm">
               <div className="bg-white rounded-lg p-3 border border-yellow-100">
-                <p className="font-medium text-emerald-800 mb-2">📊 장기보유특별공제율</p>
+                <p className="font-medium text-[#132A42] mb-2">📊 장기보유특별공제율</p>
                 <div className="space-y-2 text-gray-700">
                   <div className="flex items-start gap-2">
-                    <span className="font-semibold text-emerald-700 min-w-[80px]">일반 부동산:</span>
+                    <span className="font-semibold text-[#162F4F] min-w-[80px]">일반 부동산:</span>
                     <span>3년 이상 보유 시 6%부터 시작, 최대 30%까지 공제</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="font-semibold text-emerald-700 min-w-[80px]">1세대 1주택:</span>
-                    <span><strong className="text-emerald-800">보유+거주 합산</strong>으로 최대 80%까지 공제 (예: 10년 보유+10년 거주)</span>
+                    <span className="font-semibold text-[#162F4F] min-w-[80px]">1세대 1주택:</span>
+                    <span><strong className="text-[#132A42]">보유+거주 합산</strong>으로 최대 80%까지 공제 (예: 10년 보유+10년 거주)</span>
                   </div>
                   <div className="flex items-start gap-2 text-red-600">
                     <span className="font-semibold min-w-[80px]">⚠️ 주의:</span>
@@ -1068,8 +1068,8 @@ export default function CapitalGainsTaxCalculator() {
                   </div>
                 </div>
               </div>
-              <div className="bg-gradient-to-r from-emerald-50 to-green-50 rounded-lg p-3 border border-emerald-200">
-                <p className="font-medium text-emerald-800 mb-1.5">💰 절세 팁</p>
+              <div className="bg-gradient-to-r from-[#F5F8FB] to-green-50 rounded-lg p-3 border border-[#B8D0E8]">
+                <p className="font-medium text-[#132A42] mb-1.5">💰 절세 팁</p>
                 <ul className="space-y-1 text-gray-700 text-xs">
                   <li>• 2026년 5월 9일까지는 중과세 유예 → 다주택자도 장특공 적용 가능</li>
                   <li>• 1세대 1주택 전환 후 양도하면 비과세 + 최대 80% 공제 혜택</li>
@@ -1079,7 +1079,7 @@ export default function CapitalGainsTaxCalculator() {
               <div className="flex justify-end">
                 <a
                   href="/w/양도소득세-장기보유특별공제"
-                  className="inline-flex items-center gap-1 px-4 py-2 bg-emerald-600 text-white text-sm font-medium rounded-lg hover:bg-emerald-700 transition-colors shadow-sm"
+                  className="inline-flex items-center gap-1 px-4 py-2 bg-[#1E3A5F] text-white text-sm font-medium rounded-lg hover:bg-[#162F4F] transition-colors shadow-sm"
                 >
                   장특공 계산법 상세 가이드 →
                 </a>
@@ -1102,30 +1102,30 @@ export default function CapitalGainsTaxCalculator() {
             <div className="px-4 pb-4 pt-2 bg-blue-50/30 space-y-3 text-sm">
               <p className="text-gray-700 leading-relaxed">
                 필요경비를 많이 인정받을수록 과세표준이 낮아져 세금이 줄어들어요.
-                <strong className="text-emerald-700">영수증·계약서를 꼭 보관</strong>하세요!
+                <strong className="text-[#162F4F]">영수증·계약서를 꼭 보관</strong>하세요!
               </p>
-              <div className="bg-white rounded-lg p-3 border border-emerald-100">
-                <p className="font-medium text-emerald-800 mb-2">✅ 인정되는 필요경비</p>
+              <div className="bg-white rounded-lg p-3 border border-[#EDF2F8]">
+                <p className="font-medium text-[#132A42] mb-2">✅ 인정되는 필요경비</p>
                 <ul className="space-y-1.5 text-gray-700">
                   <li className="flex items-start gap-2">
-                    <span className="text-emerald-600">•</span>
+                    <span className="text-[#1E3A5F]">•</span>
                     <span><strong>취득세·등록세</strong> (부동산 구매 시 납부한 세금)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-emerald-600">•</span>
+                    <span className="text-[#1E3A5F]">•</span>
                     <span><strong>중개수수료</strong> (매입·매도 시 부동산 수수료)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-emerald-600">•</span>
+                    <span className="text-[#1E3A5F]">•</span>
                     <span><strong>인테리어·수리비</strong> (자본적 지출, 영수증 필수)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-emerald-600">•</span>
+                    <span className="text-[#1E3A5F]">•</span>
                     <span><strong>법무사 비용</strong> (등기·소유권 이전 관련)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-emerald-600">•</span>
-                    <span><strong>인지세</strong> (매매계약서 작성 시). <a href="/w/양도소득세-취득가액-인정" className="text-emerald-700 underline decoration-2 decoration-emerald-200 hover:decoration-emerald-400 transition-colors">취득가액 인정 기준 →</a></span>
+                    <span className="text-[#1E3A5F]">•</span>
+                    <span><strong>인지세</strong> (매매계약서 작성 시). <a href="/w/양도소득세-취득가액-인정" className="text-[#162F4F] underline decoration-2 decoration-[#B8D0E8] hover:decoration-[#4A7AB5] transition-colors">취득가액 인정 기준 →</a></span>
                   </li>
                 </ul>
               </div>
@@ -1174,7 +1174,7 @@ export default function CapitalGainsTaxCalculator() {
                     <span className="text-red-600 font-bold mt-0.5">3.</span>
                     <div>
                       <strong className="text-red-700">취득가액 입증 자료</strong>
-                      <p className="text-xs text-gray-600 mt-0.5">매매계약서·등기부등본 필수 (환산취득가액 적용 시 불리). <a href="/w/양도소득세-취득가액-인정" className="text-emerald-700 underline decoration-2 decoration-emerald-200 hover:decoration-emerald-400">취득가액 인정 기준 →</a></p>
+                      <p className="text-xs text-gray-600 mt-0.5">매매계약서·등기부등본 필수 (환산취득가액 적용 시 불리). <a href="/w/양도소득세-취득가액-인정" className="text-[#162F4F] underline decoration-2 decoration-[#B8D0E8] hover:decoration-[#4A7AB5]">취득가액 인정 기준 →</a></p>
                     </div>
                   </li>
                 </ul>
@@ -1189,7 +1189,7 @@ export default function CapitalGainsTaxCalculator() {
               <div className="flex justify-end">
                 <a
                   href="https://www.hometax.go.kr"
-                  className="inline-flex items-center gap-1 px-4 py-2 bg-emerald-600 text-white text-sm font-medium rounded-lg hover:bg-emerald-700 transition-colors shadow-sm"
+                  className="inline-flex items-center gap-1 px-4 py-2 bg-[#1E3A5F] text-white text-sm font-medium rounded-lg hover:bg-[#162F4F] transition-colors shadow-sm"
                 >
                   국세청 홈택스에서 신고하기 →
                 </a>
@@ -1273,7 +1273,7 @@ export default function CapitalGainsTaxCalculator() {
       {/* 양도차익별 예상세액표 */}
       <div className="border-t border-gray-200">
         <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-200 bg-gray-50">
-          <span className="w-1 h-5 bg-emerald-500 rounded-full"></span>
+          <span className="w-1 h-5 bg-[#2B5280] rounded-full"></span>
           <h3 className="text-sm font-semibold text-gray-700">2026년 양도차익별 예상세액표</h3>
         </div>
 
@@ -1281,11 +1281,11 @@ export default function CapitalGainsTaxCalculator() {
           <p className="text-xs text-gray-600 mb-3">※ 1주택 과세 기준 (장특공 30% 적용, 기본공제 250만원)</p>
           <table className="w-full text-xs border-collapse min-w-[450px]">
             <thead>
-              <tr className="bg-emerald-50">
-                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-emerald-800">양도차익</th>
-                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-emerald-800">과세표준</th>
-                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-emerald-800">세율</th>
-                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-emerald-800">양도세+지방세</th>
+              <tr className="bg-[#F5F8FB]">
+                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-[#132A42]">양도차익</th>
+                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-[#132A42]">과세표준</th>
+                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-[#132A42]">세율</th>
+                <th className="border border-gray-300 px-2 py-2 text-center font-medium text-[#132A42]">양도세+지방세</th>
               </tr>
             </thead>
             <tbody className="text-gray-600">
@@ -1293,37 +1293,37 @@ export default function CapitalGainsTaxCalculator() {
                 <td className="border border-gray-300 px-2 py-2 text-center font-medium">5천만원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">3,250만원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">15%</td>
-                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">약 349만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-[#1E3A5F] font-medium">약 349만원</td>
               </tr>
               <tr className="bg-gray-50">
                 <td className="border border-gray-300 px-2 py-2 text-center font-medium">1억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">6,750만원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">24%</td>
-                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">약 1,148만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-[#1E3A5F] font-medium">약 1,148만원</td>
               </tr>
               <tr>
                 <td className="border border-gray-300 px-2 py-2 text-center font-medium">2억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">1억 3,750만원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">35%</td>
-                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">약 3,591만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-[#1E3A5F] font-medium">약 3,591만원</td>
               </tr>
               <tr className="bg-gray-50">
                 <td className="border border-gray-300 px-2 py-2 text-center font-medium">3억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">2억 750만원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">38%</td>
-                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">약 6,488만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-[#1E3A5F] font-medium">약 6,488만원</td>
               </tr>
               <tr>
                 <td className="border border-gray-300 px-2 py-2 text-center font-medium">5억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">3억 4,750만원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">40%</td>
-                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">약 1억 2,447만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-[#1E3A5F] font-medium">약 1억 2,447만원</td>
               </tr>
               <tr className="bg-gray-50">
                 <td className="border border-gray-300 px-2 py-2 text-center font-medium">10억원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">6억 9,750만원</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">42%</td>
-                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">약 2억 5,450만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-[#1E3A5F] font-medium">약 2억 5,450만원</td>
               </tr>
             </tbody>
           </table>
@@ -1346,12 +1346,12 @@ export default function CapitalGainsTaxCalculator() {
               <tr className="bg-gray-50">
                 <td className="border border-gray-300 px-2 py-2 text-center">15억원 (차익 3억)</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">6천만원 과세</td>
-                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">약 288만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-[#1E3A5F] font-medium">약 288만원</td>
               </tr>
               <tr>
                 <td className="border border-gray-300 px-2 py-2 text-center">20억원 (차익 5억)</td>
                 <td className="border border-gray-300 px-2 py-2 text-center">2억원 과세</td>
-                <td className="border border-gray-300 px-2 py-2 text-center text-emerald-600 font-medium">약 1,573만원</td>
+                <td className="border border-gray-300 px-2 py-2 text-center text-[#1E3A5F] font-medium">약 1,573만원</td>
               </tr>
             </tbody>
           </table>

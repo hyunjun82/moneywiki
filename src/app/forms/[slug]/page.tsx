@@ -530,7 +530,7 @@ export default async function FormDownloadPage({ params }: PageProps) {
         {/* 헤더 */}
         <div className="mb-8">
           <div className="flex items-center gap-2 text-sm text-neutral-500 mb-2">
-            <Link href="/" className="hover:text-emerald-600">홈</Link>
+            <Link href="/" className="hover:text-[#1E3A5F]">홈</Link>
             <span>/</span>
             <span>양식·서식</span>
             <span>/</span>
@@ -542,7 +542,7 @@ export default async function FormDownloadPage({ params }: PageProps) {
           <p className="text-neutral-600">{form.description}</p>
           <div className="flex items-center gap-4 mt-3 text-sm">
             <span className="text-neutral-500">출처: {form.source}</span>
-            <span className="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded text-xs">무료</span>
+            <span className="px-2 py-0.5 bg-[#F5F8FB] text-[#162F4F] rounded text-xs">무료</span>
             <span className="px-2 py-0.5 bg-blue-50 text-blue-700 rounded text-xs">회원가입 없음</span>
           </div>
           {/* SNS 공유 버튼 */}
@@ -556,7 +556,7 @@ export default async function FormDownloadPage({ params }: PageProps) {
         </div>
 
         {/* 다운로드 버튼 - <a download> 태그 사용 */}
-        <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl p-6 mb-8">
+        <div className="bg-gradient-to-r from-[#F5F8FB] to-teal-50 border border-[#B8D0E8] rounded-xl p-6 mb-8">
           <h2 id="download" className="text-lg font-semibold text-neutral-800 mb-4">
             {(form.downloads.hwp || form.downloads.doc || form.downloads.pdf)
               ? "원하는 포맷으로 다운받으세요"
@@ -567,7 +567,7 @@ export default async function FormDownloadPage({ params }: PageProps) {
               <a
                 href={form.downloads.hwp}
                 download={form.downloadNames?.hwp || "양식.hwp"}
-                className="flex items-center gap-2 px-5 py-3 bg-white border border-neutral-200 rounded-lg hover:border-emerald-400 hover:shadow-md transition-all cursor-pointer"
+                className="flex items-center gap-2 px-5 py-3 bg-white border border-neutral-200 rounded-lg hover:border-[#4A7AB5] hover:shadow-md transition-all cursor-pointer"
               >
                 <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h6v6h6v10H6z"/>
@@ -583,7 +583,7 @@ export default async function FormDownloadPage({ params }: PageProps) {
               <a
                 href={form.downloads.doc}
                 download={form.downloadNames?.doc || "양식.docx"}
-                className="flex items-center gap-2 px-5 py-3 bg-white border border-neutral-200 rounded-lg hover:border-emerald-400 hover:shadow-md transition-all cursor-pointer"
+                className="flex items-center gap-2 px-5 py-3 bg-white border border-neutral-200 rounded-lg hover:border-[#4A7AB5] hover:shadow-md transition-all cursor-pointer"
               >
                 <svg className="w-6 h-6 text-blue-700" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h6v6h6v10H6z"/>
@@ -599,7 +599,7 @@ export default async function FormDownloadPage({ params }: PageProps) {
               <a
                 href={form.downloads.pdf}
                 download={form.downloadNames?.pdf || "양식.pdf"}
-                className="flex items-center gap-2 px-5 py-3 bg-white border border-neutral-200 rounded-lg hover:border-emerald-400 hover:shadow-md transition-all cursor-pointer"
+                className="flex items-center gap-2 px-5 py-3 bg-white border border-neutral-200 rounded-lg hover:border-[#4A7AB5] hover:shadow-md transition-all cursor-pointer"
               >
                 <svg className="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h6v6h6v10H6z"/>
@@ -617,14 +617,14 @@ export default async function FormDownloadPage({ params }: PageProps) {
                 href={form.externalDownload.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 hover:shadow-md transition-all cursor-pointer"
+                className="flex items-center gap-2 px-5 py-3 bg-[#1E3A5F] text-white rounded-lg hover:bg-[#162F4F] hover:shadow-md transition-all cursor-pointer"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
                 <div className="text-left">
                   <div className="font-medium">{form.externalDownload.source}에서 다운로드</div>
-                  <div className="text-xs text-emerald-100">{form.externalDownload.description}</div>
+                  <div className="text-xs text-[#EDF2F8]">{form.externalDownload.description}</div>
                 </div>
               </a>
             )}
@@ -679,13 +679,13 @@ export default async function FormDownloadPage({ params }: PageProps) {
             <div className="space-y-4">
               {form.faq.map((item, index) => (
                 <details key={index} className="group border-b border-neutral-100 pb-4 last:border-b-0 last:pb-0">
-                  <summary className="flex items-center justify-between cursor-pointer list-none font-medium text-neutral-800 hover:text-emerald-600">
+                  <summary className="flex items-center justify-between cursor-pointer list-none font-medium text-neutral-800 hover:text-[#1E3A5F]">
                     <span>Q. {item.question}</span>
                     <svg className="w-5 h-5 text-neutral-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </summary>
-                  <p className="mt-3 text-neutral-600 pl-4 border-l-2 border-emerald-200">
+                  <p className="mt-3 text-neutral-600 pl-4 border-l-2 border-[#B8D0E8]">
                     {item.answer}
                   </p>
                 </details>
@@ -708,9 +708,9 @@ export default async function FormDownloadPage({ params }: PageProps) {
                 <li key={index}>
                   <Link
                     href={doc.url}
-                    className="flex items-center gap-2 text-neutral-700 hover:text-emerald-600 transition-colors"
+                    className="flex items-center gap-2 text-neutral-700 hover:text-[#1E3A5F] transition-colors"
                   >
-                    <span className="text-emerald-500">→</span>
+                    <span className="text-[#2B5280]">→</span>
                     <span>{doc.title}</span>
                   </Link>
                 </li>
@@ -732,7 +732,7 @@ export default async function FormDownloadPage({ params }: PageProps) {
               href={form.sourceUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-emerald-600 hover:underline"
+              className="text-[#1E3A5F] hover:underline"
             >
               {form.source}
             </a>

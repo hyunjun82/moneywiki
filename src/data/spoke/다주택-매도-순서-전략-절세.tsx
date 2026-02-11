@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>다주택 매도 순서 — <span className="text-emerald-600">절세 전략</span> 총정리</>,
+    h1: <>다주택 매도 순서 — <span className="text-[#1E3A5F]">절세 전략</span> 총정리</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

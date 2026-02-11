@@ -22,7 +22,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <>생계비계좌 <span className="text-emerald-600">은행별 개설 방법</span> — 비대면 가능 여부까지</>,
+    h1: <>생계비계좌 <span className="text-[#1E3A5F]">은행별 개설 방법</span> — 비대면 가능 여부까지</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">

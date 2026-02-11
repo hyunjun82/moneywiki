@@ -44,7 +44,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <><span className="text-emerald-600">실업급여 수급기간</span> 소정급여일수 기준</>,
+    h1: <><span className="text-[#1E3A5F]">실업급여 수급기간</span> 소정급여일수 기준</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -146,7 +146,7 @@ const data: SpokeData = {
 
           <RateCards cards={[
             { value: '120일', label: '최소 기간', lines: ['1년 미만', '모든 연령'], highlight: '약 4개월',  },
-            { value: '180일', label: '중간 기간', lines: ['3~5년 미만', '30세 미만'], highlight: '약 6개월', highlightColor: 'emerald', active: true },
+            { value: '180일', label: '중간 기간', lines: ['3~5년 미만', '30세 미만'], highlight: '약 6개월', highlightColor: 'navy', active: true },
             { value: '270일', label: '최대 기간', lines: ['10년 이상', '50세 이상'], highlight: '약 9개월', highlightColor: 'orange' },
           ]} />
 
