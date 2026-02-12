@@ -20,6 +20,7 @@ const FORBIDDEN_PATTERNS = [
 // 예외 페이지 (동적이어도 되는 페이지)
 const EXCEPTIONS = [
   'src/app/search/page.tsx', // 'use client' 컴포넌트 (브라우저에서 실행)
+  'src/app/w/[slug]/page.tsx', // ISR: revalidate=86400, dynamicParams=true (2,000+ 페이지 빌드 최적화)
 ];
 
 // 재귀적으로 page.tsx 파일 찾기
