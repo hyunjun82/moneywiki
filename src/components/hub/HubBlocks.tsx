@@ -164,7 +164,7 @@ export function HubTable({ id, title, subtitle, headers, rows, highlightCol, war
           <thead>
             <tr>
               {headers.map((h, i) => (
-                <th key={i} className={`text-left px-3 py-2.5 font-semibold text-xs text-[#1E3A5F] bg-[#EDF2F8] border-b-2 border-[#1E3A5F] ${
+                <th key={i} className={`text-left px-3 py-2.5 font-bold text-[13px] text-[#1E3A5F] bg-[#EDF2F8] border-b-2 border-[#1E3A5F] ${
                   i === 0 ? 'rounded-tl-lg' : ''
                 } ${i === headers.length - 1 ? 'rounded-tr-lg' : ''}`}>
                   {h}
@@ -181,9 +181,10 @@ export function HubTable({ id, title, subtitle, headers, rows, highlightCol, war
                   const isHighlight = (isObj && cell.highlight) || (highlightCol !== undefined && ci === highlightCol)
                   const isWarn = (isObj && cell.warn) || (warnCol !== undefined && ci === warnCol)
                   return (
-                    <td key={ci} className={`px-3 py-2.5 border-b border-neutral-100 ${
-                      isHighlight ? 'text-[#1E3A5F] font-semibold' :
-                      isWarn ? 'text-orange-500 font-semibold' : ''
+                    <td key={ci} className={`px-3 py-2.5 border-b border-neutral-100 text-[13.5px] ${
+                      ci === 0 ? 'font-semibold text-neutral-800' :
+                      isHighlight ? 'text-[#1E3A5F] font-bold' :
+                      isWarn ? 'text-orange-500 font-bold' : 'font-medium'
                     }`}>
                       {text}
                     </td>
@@ -237,10 +238,17 @@ export function HubInfoBox({ title, children }: { title: string; children: React
 // =============================================
 // 10. HubFormula — 수식/공식 표시
 // =============================================
-export function HubFormula({ text }: { text: string }) {
+export function HubFormula({ text, sub }: { text: string; sub?: string[] }) {
   return (
-    <div className="bg-[#EDF2F8] border border-[#1E3A5F]/10 rounded-lg py-3.5 px-[18px] my-3 font-mono text-[14px] font-semibold text-[#1E3A5F] text-center">
-      {text}
+    <div className="bg-[#EDF2F8] border border-[#1E3A5F]/10 rounded-xl py-5 px-6 my-4 text-center">
+      <div className="font-mono text-[15px] font-bold text-[#1E3A5F]">{text}</div>
+      {sub && sub.length > 0 && (
+        <div className="mt-3 pt-3 border-t border-[#1E3A5F]/10 space-y-0.5">
+          {sub.map((s, i) => (
+            <div key={i} className="font-mono text-[12px] text-neutral-500 leading-relaxed">{s}</div>
+          ))}
+        </div>
+      )}
     </div>
   )
 }

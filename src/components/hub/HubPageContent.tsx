@@ -196,7 +196,7 @@ export default function HubPageContent({ hub, slug }: { hub: HubData; slug: stri
                 {section.heading}
               </h2>
               {section.subtitle && (
-                <div className="text-[13.5px] text-[#1E3A5F] font-semibold mb-[14px]">
+                <div className="text-[13.5px] text-[#1E3A5F] font-bold mb-[14px]">
                   {section.subtitle}
                 </div>
               )}
