@@ -218,7 +218,7 @@ const data: HubData = {
           </HubTipBox>
 
           <CalcLink
-            href="https://www.bokjiro.go.kr/ssis-teu/twatga/wlfareInfo/moveTWAT52011M.do"
+            href="https://www.bokjiro.go.kr/ssis-tbu/twatbz/mkclAsis/mkclInsertBspnPage.do"
             icon="🧮"
             title="복지로 소득인정액 모의계산"
             desc="내 소득·재산 입력 → 정확한 소득인정액 확인"
@@ -299,7 +299,7 @@ const data: HubData = {
             <div className="flex gap-3 pb-3 border-b border-neutral-100">
               <div className="w-7 h-7 bg-[#1E3A5F] text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0">1</div>
               <div>
-                <h4 className="text-sm font-bold text-neutral-800 mb-1"><a href="https://www.bokjiro.go.kr/ssis-teu/twatga/wlfareInfo/moveTWAT52011M.do" target="_blank" rel="noopener noreferrer" className="text-[#1E3A5F] underline underline-offset-2 hover:text-[#2B5280]">복지로(bokjiro.go.kr)</a>에서 온라인 신청</h4>
+                <h4 className="text-sm font-bold text-neutral-800 mb-1"><a href="https://www.bokjiro.go.kr" target="_blank" rel="noopener noreferrer" className="text-[#1E3A5F] underline underline-offset-2 hover:text-[#2B5280]">복지로(bokjiro.go.kr)</a>에서 온라인 신청</h4>
                 <p className="text-xs text-neutral-500 leading-relaxed m-0">공인인증서(또는 간편인증)로 로그인 후 &quot;복지서비스 신청&quot;에서 기초생활보장을 선택해요.</p>
               </div>
             </div>
