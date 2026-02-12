@@ -209,3 +209,113 @@ keywords: [A, B, C, D] → H2: [A질문, B질문, C질문, D질문]
 node .claude/hooks/batch-verify.js --hub {허브명}
 실행하시겠습니까?
 ```
+
+---
+
+## Spoke 생산 에이전트 팀 규칙
+
+### 파이프라인 (5단계 순차)
+
+```
+키워드 → [1.리서치] → [2.작성] → [3.검증] → [4.SEO] → [5.최종검수] → 승인
+                                    ↑ 실패 시 되돌림 (최대 2회)
+```
+
+### 에이전트별 역할
+
+| # | 에이전트 | 입력 | 출력 |
+|---|----------|------|------|
+| 1 | **리서치** | 키워드 + hub 데이터 | 수치/출처/법령/공식 (facts[]) |
+| 2 | **작성** | 리서치 결과 + 골든 예제 + writing-rules | `src/data/spoke/[slug].tsx` |
+| 3 | **검증** | 초안 TSX + 리서치 결과 | pass/fail + 수정 지시 |
+| 4 | **SEO** | 검증 통과 TSX | 링크/스키마/메타 검증 완료 |
+| 5 | **최종검수** | SEO 통과 TSX | QA 스코어 (80%+ → 승인) |
+
+### 필수 참조 파일
+
+```
+src/data/spoke/types.ts                    — 타입 정의 (SpokeData, SpokeSection)
+src/components/spoke/SpokeBlocks.tsx       — 컴포넌트 전체 (20개+)
+src/components/spoke/SpokeChecker.tsx      — 수급자격 체커
+src/components/spoke/SpokeTOCInline.tsx    — 접이식 목차
+골든 예제: src/data/spoke/기초생활수급자-1인가구-생계급여-조건-소득인정액.tsx
+```
+
+### 리서치 규칙 (AGENT 1)
+
+- 모든 금액: 원 단위까지 정확 (오차 0원)
+- 비율: 소수점 1자리까지
+- 연도: 2026년 기준만 (이전 연도 혼입 금지)
+- 교차검증: 동일 수치 최소 2개 출처 확인
+- 출처 우선순위: 보건복지부 > 복지로 > 기타 정부 > 민간
+
+### 작성 규칙 (AGENT 2)
+
+```
+[문체] 해요체 통일. "~입니다" 금지 → "~이에요/예요"
+[길이] 한 문장 최대 40자, 한 단락 최대 3문장
+[흐름] PAS 구조: Problem → Agitate → Solution
+[구체] "많은 금액" ❌ → "820,556원" ✅
+[연결] 섹션 끝마다 PASBridge 또는 BridgeCTA (막다른 길 없음)
+```
+
+필수 포함 항목:
+- summary3 (3줄 요약)
+- sourceBar (출처 바)
+- checker (체커, 해당 글만)
+- prevNext (이전/다음)
+- stickyBar (스티키 바)
+- pasBridge 최소 2개
+
+### 검증 규칙 (AGENT 3)
+
+```
+[수치] 리서치 수치 vs 작성 수치 일치, 체커 기준값 = 테이블 값
+[누락] sections 5개+, faq 4개+, relatedSpokes 3개+, sources 2개+
+[문체] "입니다" 0회, 40자 초과 문장 0개
+[컴포넌트] 공식→FormulaBox, 비교→SpokeTable, 수치→Chips, 팁→TipBox, 절차→Steps
+```
+
+불합격 시: 해당 에이전트로 되돌림 (최대 2회, 3회 실패 → 사람 검수)
+
+### SEO 규칙 (AGENT 4)
+
+링크 검증:
+- 모든 내부 href → `src/data/spoke/`, `src/data/hub/` 실존 slug 확인
+- 깨진 링크 0개 (미존재 시 빌드 차단)
+- toc.id ↔ sections.id 1:1 매칭
+
+스키마 필수 9종:
+| 스키마 | 적용 |
+|--------|------|
+| Article | 모든 spoke |
+| FAQPage | faq 4개+ |
+| BreadcrumbList | 모든 spoke (홈→허브→현재) |
+| HowTo | Steps 컴포넌트 사용 시 |
+| WebSite | layout.tsx (전역) |
+| Organization | layout.tsx (전역) |
+| WebApplication | checker: true 시 |
+| ItemList | Hub 전용 |
+| Person | Article.author 참조 (E-E-A-T) |
+
+메타데이터:
+- title: 60자 이내, 핵심 수치 포함
+- description: 120~155자, 키워드+숫자+행동유도
+
+### 최종검수 규칙 (AGENT 5)
+
+```
+[렌더링] npm run build 성공 + 페이지 에러 없음
+[골든 대비] TOC/요약/출처바/PAS/체커/FormulaBox/Chips/이전다음/스티키/관련글 전부 있음
+[수치 크로스] hero 수치 = 체커 기준값 = 테이블 값 = 스티키 값
+[메타 품질] description 120~155자 + 키워드 + 숫자 + CTA
+```
+
+QA 스코어: 80%+ → 자동 승인, 80% 미만 → 재작업, 60% 미만 → 전체 재작성
+
+### 배치 처리
+
+- 한 번에 5개 spoke 병렬 처리
+- 10개마다 중간 빌드 체크
+- 깨진 빌드 발견 시 즉시 중단
+- 완료된 spoke는 즉시 commit
