@@ -326,9 +326,11 @@ const data: HubData = {
             </div>
           </div>
 
-          <HubWarnBox title="참고">
-            온라인 신청이 어려우면 주민센터에 방문하면 직원이 대신 접수해 줘요. 별도 수수료는 없어요.
-          </HubWarnBox>
+          <div
+            style={{ borderLeft: '3px solid #F59E0B', backgroundColor: '#FFFBEB', padding: '14px 18px', borderRadius: '8px', margin: '20px 0', fontSize: '13px', lineHeight: '1.7', color: '#525252' }}
+          >
+            <span style={{ color: '#F59E0B', fontWeight: 700 }}>⚠️ 온라인 신청이 어려우면</span> 주민센터에 방문하면 직원이 대신 접수해 줘요. 별도 수수료는 없어요.
+          </div>
 
           <a
             href="/w/차상위계층-조건-혜택"
