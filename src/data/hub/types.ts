@@ -14,6 +14,7 @@ export interface HubSection {
   heading: string
   subtitle: string
   content: ReactNode   // JSX 본문 (HubBlocks 컴포넌트 포함)
+  sectionSpoke?: { icon: string; title: string; desc: string; href: string }[]
   bridgeCTA?: {
     href: string
     badge: string

@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import type { HubData } from './types'
-import { HubTable, HubTipBox, HubWarnBox, HubFormula, HubBridgeCTA,
-         HubSpokeLink, HubCTA } from '@/components/hub/HubBlocks'
+import { HubTable, HubTipBox, HubWarnBox, HubFormula,
+         HubSpokeLink } from '@/components/hub/HubBlocks'
+import { CalcLink } from '@/components/spoke/SpokeBlocks'
 
 const data: HubData = {
   slug: '기초생활수급자-조건-총정리',
@@ -242,12 +243,12 @@ const data: HubData = {
             </p>
           </HubTipBox>
 
-          <HubCTA buttons={[{
-            href: 'https://www.bokjiro.go.kr/ssis-teu/twatga/wlfareInfo/moveTWAT52011M.do',
-            label: '복지로',
-            title: '소득인정액 모의계산 바로가기',
-            variant: 'green',
-          }]} />
+          <CalcLink
+            href="https://www.bokjiro.go.kr/ssis-teu/twatga/wlfareInfo/moveTWAT52011M.do"
+            icon="🧮"
+            title="복지로 소득인정액 모의계산"
+            desc="내 소득·재산 입력 → 정확한 소득인정액 확인"
+          />
 
           <HubSpokeLink
             href="/w/소득인정액-모의계산"
@@ -426,6 +427,7 @@ const data: HubData = {
 
   prevNext: {
     prev: { title: '실업급여 수급 조건 신청 방법 총정리', href: '/w/실업급여-수급-조건-신청-방법-총정리-2026' },
+    next: { title: '차상위계층 조건과 혜택', href: '/w/chasangwi-jogeon' },
   },
 }
 

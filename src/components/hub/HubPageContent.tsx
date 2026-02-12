@@ -4,38 +4,6 @@ import { SpokeLinks, SectionSpoke, PrevNext } from '@/components/spoke/SpokeBloc
 import SpokeFAQ from '@/components/spoke/SpokeFAQ'
 import SpokeTOCInline from '@/components/spoke/SpokeTOCInline'
 
-/* ═══════════════════════════════════════════
-   HubBridge — 허브 전용 BridgeCTA
-   허브 데이터는 desc가 string이지만 ReactNode도 수용
-   ═══════════════════════════════════════════ */
-function HubBridge({ href, badge, title, desc }: {
-  href: string
-  badge: string
-  title: string
-  desc: React.ReactNode
-}) {
-  return (
-    <Link
-      href={href}
-      className="group flex items-center gap-4 mt-8 p-[18px] bg-white border border-neutral-200 rounded-[14px] no-underline transition-all hover:border-[#1E3A5F] hover:shadow-md hover:-translate-y-px"
-    >
-      <div className="shrink-0 w-[42px] h-[42px] rounded-full bg-gradient-to-br from-[#1E3A5F] to-[#2B5280] flex items-center justify-center text-lg text-white">
-        📖
-      </div>
-      <div className="flex-1 min-w-0">
-        <div className="inline-block text-[10px] font-bold text-[#1E3A5F] bg-[#1E3A5F]/[0.08] px-2 py-0.5 rounded-full mb-1 tracking-wide">
-          {badge}
-        </div>
-        <div className="text-[15px] font-bold text-neutral-800 leading-snug">{title}</div>
-        <div className="text-xs text-neutral-500 mt-0.5">{desc}</div>
-      </div>
-      <span className="shrink-0 text-lg text-neutral-400 group-hover:text-[#1E3A5F] group-hover:translate-x-1 transition-all">
-        &rarr;
-      </span>
-    </Link>
-  )
-}
-
 export default function HubPageContent({ hub, slug }: { hub: HubData; slug: string }) {
   const {
     meta,
@@ -139,7 +107,7 @@ export default function HubPageContent({ hub, slug }: { hub: HubData; slug: stri
             )}
 
             {/* H1 */}
-            <h1 className="text-[25px] sm:text-[28px] font-extrabold leading-[1.3] tracking-tight text-neutral-900 mb-2">
+            <h1 className="text-[25px] sm:text-[28px] font-extrabold leading-[1.3] tracking-tight text-neutral-900 mb-2 [&_em]:not-italic [&_em]:border-b-[2.5px] [&_em]:border-[#1E3A5F] [&_em]:pb-px">
               {hero.h1}
             </h1>
 
@@ -205,14 +173,29 @@ export default function HubPageContent({ hub, slug }: { hub: HubData; slug: stri
                 {section.content}
               </div>
 
-              {/* BridgeCTA */}
+              {/* Section Spoke */}
+              {section.sectionSpoke && section.sectionSpoke.length > 0 && (
+                <SectionSpoke items={section.sectionSpoke} />
+              )}
+
+              {/* BridgeCTA — PAS 스타일 */}
               {section.bridgeCTA && (
-                <HubBridge
+                <Link
                   href={section.bridgeCTA.href}
-                  badge={section.bridgeCTA.badge}
-                  title={section.bridgeCTA.title}
-                  desc={section.bridgeCTA.desc}
-                />
+                  className="group block rounded-xl p-[18px_20px] mt-4 bg-white border-[1.5px] border-neutral-200 no-underline transition-all relative overflow-hidden
+                    before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[3px] before:bg-[#1E3A5F]
+                    hover:border-[#4A7AB5] hover:shadow-[0_4px_16px_rgba(30,58,95,0.08)] hover:-translate-y-px"
+                >
+                  <div className="text-[15px] font-extrabold text-neutral-900 leading-[1.4] mb-2">
+                    {section.bridgeCTA.title}
+                  </div>
+                  <div className="text-[13.5px] text-neutral-500 leading-relaxed mb-3 [&_strong]:text-[#1E3A5F] [&_strong]:font-bold">
+                    {section.bridgeCTA.desc}
+                  </div>
+                  <span className="inline-flex items-center gap-1 bg-[#1E3A5F] text-white text-[12.5px] font-bold py-2 px-4 rounded-md transition-colors group-hover:bg-[#2B5280]">
+                    {section.bridgeCTA.badge} →
+                  </span>
+                </Link>
               )}
             </section>
           ))}

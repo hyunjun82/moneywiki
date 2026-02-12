@@ -37,31 +37,30 @@ export function PASBridge({ href, question, answer, buttonText }: {
   )
 }
 
-// ═══ BridgeCTA (컴팩트 한줄) ═══
+// ═══════════════════════════════════════════
+// BridgeCTA (PAS 스타일 — 왼쪽 navy 보더 + 질문 + 답변 + 버튼)
+// 골든 HTML: .br-pas
+// ═══════════════════════════════════════════
 export function BridgeCTA({ href, badge, title, desc, icon, primary }: {
   href: string
   badge: string
   title: string
-  desc: string
-  icon: SpokeIconName
+  desc: string | React.ReactNode
+  icon?: SpokeIconName | string
   primary?: boolean
 }) {
   return (
     <Link
       href={href}
-      className={`group flex items-center gap-4 mt-8 p-[18px] bg-white border rounded-[14px] no-underline transition-all hover:border-[#1E3A5F] hover:shadow-md hover:-translate-y-px ${
-        primary ? 'border-[#1E3A5F]/30 bg-gradient-to-r from-[#1E3A5F]/[0.02] to-[#1E3A5F]/[0.05]' : 'border-neutral-200'
-      }`}
+      className="group block rounded-xl p-[18px_20px] my-4 bg-white border-[1.5px] border-neutral-200 no-underline transition-all relative overflow-hidden
+        before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[3px] before:bg-[#1E3A5F]
+        hover:border-[#4A7AB5] hover:shadow-[0_4px_16px_rgba(30,58,95,0.08)] hover:-translate-y-px"
     >
-      <div className="shrink-0 w-[42px] h-[42px] rounded-full bg-gradient-to-br from-[#1E3A5F] to-[#2B5280] flex items-center justify-center">
-        {ICONS[icon]}
-      </div>
-      <div className="flex-1 min-w-0">
-        <div className="inline-block text-[10px] font-bold text-[#1E3A5F] bg-[#1E3A5F]/[0.08] px-2 py-0.5 rounded-full mb-1 tracking-wide">{badge}</div>
-        <div className="text-[15px] font-bold text-neutral-800 leading-snug">{title}</div>
-        <div className="text-xs text-neutral-500 mt-0.5">{desc}</div>
-      </div>
-      <span className="shrink-0 text-lg text-neutral-400 group-hover:text-[#1E3A5F] group-hover:translate-x-1 transition-all">&rarr;</span>
+      <div className="text-[15px] font-extrabold text-neutral-900 leading-[1.4] mb-2">{title}</div>
+      <div className="text-[13.5px] text-neutral-500 leading-relaxed mb-3 [&_strong]:text-[#1E3A5F] [&_strong]:font-bold">{desc}</div>
+      <span className="inline-flex items-center gap-1 bg-[#1E3A5F] text-white text-[12.5px] font-bold py-2 px-4 rounded-md transition-colors group-hover:bg-[#2B5280]">
+        {badge} →
+      </span>
     </Link>
   )
 }
@@ -486,18 +485,53 @@ export function SpokeChecklist({ items }: { items: { text: string; done?: boolea
 
 export function SectionSpoke({ items }: { items: { icon: string; title: string; desc: string; href: string }[] }) {
   return (
-    <div className="my-4 flex flex-col gap-1">
+    <div className="my-[14px] flex flex-col gap-1">
       {items.map((item, i) => (
-        <Link key={i} href={item.href} className="flex items-center gap-3 p-3 bg-white border border-neutral-200 rounded-lg no-underline transition-all hover:border-[#1E3A5F] hover:shadow-sm hover:-translate-y-px">
+        <Link key={i} href={item.href} className="flex items-center gap-3 p-[12px_14px] bg-white border border-neutral-200 rounded-lg no-underline transition-all hover:border-[#4A7AB5] hover:shadow-[0_2px_8px_rgba(30,58,95,0.06)] hover:-translate-y-px">
           <span className="shrink-0 text-base">{item.icon}</span>
-          <div className="flex-1 min-w-0">
-            <div className="text-[13px] font-bold text-[#1E3A5F]">{item.title}</div>
-            <div className="text-[11px] text-neutral-400 mt-0.5">{item.desc}</div>
-          </div>
-          <span className="shrink-0 text-xs text-neutral-400">&rarr;</span>
+          <span className="flex-1 min-w-0">
+            <span className="text-[13px] font-bold text-[#1E3A5F] block">{item.title}</span>
+            <span className="text-[11px] text-neutral-400 block mt-px">{item.desc}</span>
+          </span>
+          <span className="shrink-0 text-xs text-neutral-400">→</span>
         </Link>
       ))}
     </div>
+  )
+}
+
+// ═══════════════════════════════════════════
+// 별칭 (골든 예시 호환)
+// ═══════════════════════════════════════════
+export { TipBox as SpokeTip }
+export { WarnBox as SpokeWarning }
+export { Steps as SpokeSteps }
+export { SourceBar as SpokeSourceBadge }
+
+// ═══════════════════════════════════════════
+// CalcLink (외부 계산기 링크 — 복지로 등)
+// 골든 HTML: bg:#F5F8FB + 🧮 + navy title + gray desc + →
+// ═══════════════════════════════════════════
+export function CalcLink({ href, icon, title, desc }: {
+  href: string
+  icon?: string
+  title: string
+  desc?: string
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-3 p-[14px_16px] bg-[#F5F8FB] border border-neutral-200 rounded-lg no-underline transition-all my-[10px] hover:border-[#4A7AB5] hover:bg-[#EDF2F8]"
+    >
+      <span className="text-[22px] shrink-0">{icon || '🧮'}</span>
+      <span className="flex-1">
+        <span className="text-[13.5px] font-bold text-[#1E3A5F] block">{title}</span>
+        {desc && <span className="text-[11.5px] text-neutral-400 block mt-px">{desc}</span>}
+      </span>
+      <span className="text-[14px] text-neutral-400 shrink-0">→</span>
+    </a>
   )
 }
 
