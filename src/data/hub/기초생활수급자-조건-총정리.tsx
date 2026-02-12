@@ -334,8 +334,7 @@ const data: HubData = {
 
           <a
             href="/w/차상위계층-조건-혜택"
-            className="!no-underline !text-neutral-900 !font-normal block rounded-xl py-5 px-6 my-5 transition-all hover:shadow-md hover:-translate-y-px"
-            style={{ backgroundColor: '#FFF8E1', borderWidth: '1px', borderStyle: 'solid', borderColor: '#FFE082' }}
+            className="!no-underline !text-neutral-900 !font-normal block bg-white border border-neutral-200 rounded-xl py-5 px-6 my-5 transition-all hover:shadow-md hover:-translate-y-px hover:border-[#1E3A5F]/30"
           >
             <h4 className="text-[15px] font-extrabold text-neutral-900 mb-2">기준을 초과해서 수급자가 안 된다면?</h4>
             <p className="text-[13.5px] text-neutral-700 leading-relaxed mb-3">
