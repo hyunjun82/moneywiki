@@ -140,8 +140,8 @@ export default function SpokeChecker() {
       <div className="bg-[#1E3A5F] p-4 flex items-center gap-3">
         <div className="w-10 h-10 bg-white rounded-[10px] flex items-center justify-center text-lg">✔</div>
         <div>
-          <h3 className="text-white text-[15px] font-bold m-0">수급자격 간편 체크</h3>
-          <p className="text-white/70 text-xs mt-0.5 m-0">결과에서 해당 급여별 상세 글도 확인하세요</p>
+          <h3 className="!text-white !text-[15px] !font-bold !m-0 !pl-0 !border-l-0 !mt-0 !leading-normal">수급자격 간편 체크</h3>
+          <p className="!text-white/70 text-xs !mt-0.5 !m-0">결과에서 해당 급여별 상세 글도 확인하세요</p>
         </div>
       </div>
 
