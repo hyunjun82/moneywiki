@@ -329,14 +329,18 @@ const data: HubData = {
           <HubWarnBox title="참고">
             온라인 신청이 어려우면 주민센터에 방문하면 직원이 대신 접수해 줘요. 별도 수수료는 없어요.
           </HubWarnBox>
+
+          <a href="/w/차상위계층-조건-혜택" className="!no-underline !text-neutral-900 !font-normal block bg-[#FFF8E1] border border-[#FFE082] rounded-xl py-5 px-6 my-5 transition-all hover:shadow-md hover:-translate-y-px">
+            <h4 className="text-[15px] font-extrabold text-neutral-900 mb-2">기준을 초과해서 수급자가 안 된다면?</h4>
+            <p className="text-[13.5px] text-neutral-700 leading-relaxed mb-3">
+              소득인정액이 중위소득 <strong>50% 이하</strong>면 차상위계층으로 의료비 감면, 통신비 할인 혜택을 받을 수 있어요. 갑자기 소득이 끊겼다면 <strong>긴급복지지원</strong>(선지급 후 조사, 최대 71만원)도 가능해요.
+            </p>
+            <span className="inline-flex items-center gap-1 bg-[#1E3A5F] !text-white text-[13px] font-bold py-[10px] px-5 rounded-lg">
+              차상위계층 조건 확인 →
+            </span>
+          </a>
         </>
       ),
-      bridgeCTA: {
-        href: '/w/차상위계층-조건-혜택',
-        badge: '대안 제도',
-        title: '기준을 초과해서 수급자가 안 된다면?',
-        desc: '소득인정액이 중위소득 50% 이하면 차상위계층으로 의료비 감면, 통신비 할인 혜택을 받을 수 있어요. 갑자기 소득이 끊겼다면 긴급복지지원(선지급 후 조사, 최대 71만원)도 가능해요.',
-      },
     },
   ],
 
