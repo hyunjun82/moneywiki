@@ -26,10 +26,8 @@ export default function HubPageContent({ hub, slug }: { hub: HubData; slug: stri
 
   const url = `https://www.jjyu.co.kr/w/${slug}`
 
-  /* TOC: 메인 항목만 (sub 제외) */
-  const tocItems = toc
-    .filter(item => !item.sub)
-    .map(item => ({ id: item.id, text: item.text }))
+  /* TOC: H2 + H3 전부 (sub 포함) */
+  const tocItems = toc.map(item => ({ id: item.id, text: item.text, sub: item.sub }))
 
   return (
     <>
@@ -202,7 +200,7 @@ export default function HubPageContent({ hub, slug }: { hub: HubData; slug: stri
                   {section.subtitle}
                 </div>
               )}
-              <div className="text-[15px] text-neutral-600 leading-[1.76] [&_p]:mb-[14px] [&_strong]:text-neutral-900 [&_strong]:font-bold [&_a]:text-[#1E3A5F] [&_a]:font-semibold [&_a]:underline [&_a]:underline-offset-2 [&_h3]:text-[16.5px] [&_h3]:font-extrabold [&_h3]:text-neutral-900 [&_h3]:leading-[1.35] [&_h3]:mt-[22px] [&_h3]:mb-2 [&_h3]:pl-3 [&_h3]:border-l-[3px] [&_h3]:border-[#1E3A5F]">
+              <div className="text-[15px] text-neutral-700 leading-[1.76] [&_p]:mb-[14px] [&_strong]:text-neutral-900 [&_strong]:font-bold [&_a]:text-[#1E3A5F] [&_a]:font-semibold [&_a]:underline [&_a]:underline-offset-2 [&_h3]:text-[16.5px] [&_h3]:font-extrabold [&_h3]:text-neutral-900 [&_h3]:leading-[1.35] [&_h3]:mt-[22px] [&_h3]:mb-2 [&_h3]:pl-3 [&_h3]:border-l-[3px] [&_h3]:border-[#1E3A5F]">
                 {section.content}
               </div>
               {section.sectionSpoke && section.sectionSpoke.length > 0 && (

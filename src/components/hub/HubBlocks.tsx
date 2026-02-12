@@ -216,7 +216,7 @@ export function HubTipBox({ title, children }: { title: string; children: React.
 export function HubWarnBox({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="bg-gradient-to-br from-red-50 to-orange-50 border border-orange-500/15 rounded-xl py-5 px-6 my-5 text-[13px] text-neutral-600">
-      <h4 className="text-sm font-bold text-orange-500 mb-2">{title}</h4>
+      <h4 className="text-sm font-bold text-orange-500 mb-2">⚠️ {title}</h4>
       {children}
     </div>
   )
@@ -239,7 +239,7 @@ export function HubInfoBox({ title, children }: { title: string; children: React
 // =============================================
 export function HubFormula({ text }: { text: string }) {
   return (
-    <div className="bg-neutral-50 border border-neutral-200 rounded-lg py-3.5 px-[18px] my-3 font-mono text-[13px] text-neutral-700 text-center">
+    <div className="bg-[#EDF2F8] border border-[#1E3A5F]/10 rounded-lg py-3.5 px-[18px] my-3 font-mono text-[14px] font-semibold text-[#1E3A5F] text-center">
       {text}
     </div>
   )

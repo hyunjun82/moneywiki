@@ -82,7 +82,7 @@ const data: HubData = {
 
           <HubTable
             id="tbl-standard"
-            title="2026 급여별 선정기준 금액표 (가구원 수별, 월 기준)"
+            title="📊 2026 급여별 선정기준 금액표 (가구원 수별, 월 기준)"
             subtitle="단위: 원"
             headers={['가구원 수', '생계급여(32%)', '의료급여(40%)', '주거급여(48%)', '교육급여(50%)']}
             rows={[
@@ -106,7 +106,7 @@ const data: HubData = {
 
           <HubTable
             id="tbl-median"
-            title="2026 기준중위소득 금액표 (가구원 수별, 월 기준)"
+            title="📈 2026 기준중위소득 금액표 (가구원 수별, 월 기준)"
             subtitle="단위: 원"
             headers={['가구원 수', '1인', '2인', '3인', '4인', '5인']}
             rows={[
@@ -129,28 +129,28 @@ const data: HubData = {
       content: (
         <>
           <h3 id="ben-life" className="text-[17px] font-bold text-neutral-800 mt-6 mb-2 pl-3 border-l-[3px] border-[#1E3A5F] scroll-mt-20">
-            생계급여 — 매달 현금 지급
+            💰 생계급여 — 매달 현금 지급
           </h3>
           <p>
             선정기준(1인 820,556원)에서 내 소득인정액을 뺀 차액을 <strong>매달 현금</strong>으로 받아요. 소득이 0원이면 전액(820,556원)을 받고, 소득이 있으면 그만큼 줄어들어요.
           </p>
 
           <h3 id="ben-med" className="text-[17px] font-bold text-neutral-800 mt-6 mb-2 pl-3 border-l-[3px] border-[#1E3A5F] scroll-mt-20">
-            의료급여 — 병원비 본인부담 거의 0원
+            🏥 의료급여 — 병원비 본인부담 거의 0원
           </h3>
           <p>
             1종 수급자는 입원·외래 본인부담금이 <strong>거의 0원</strong>이에요. 2종은 입원 10%, 외래 1,000~1,500원 부담해요. 건강보험료도 면제돼요.
           </p>
 
           <h3 id="ben-house" className="text-[17px] font-bold text-neutral-800 mt-6 mb-2 pl-3 border-l-[3px] border-[#1E3A5F] scroll-mt-20">
-            주거급여 — 월세·임차료 지원
+            🏠 주거급여 — 월세·임차료 지원
           </h3>
           <p>
             전세·월세 사는 분은 <strong>실제 임차료</strong>를 기준임대료 범위 내에서 지원받아요. 서울 1인가구 기준 최대 약 <strong>35만원</strong>이에요. 자가 주택이면 수선유지급여(보수비)를 받을 수 있어요. 부양의무자 기준이 <strong>완전 폐지</strong>되어 부모 소득과 관계없이 받아요.
           </p>
 
           <h3 id="ben-edu" className="text-[17px] font-bold text-neutral-800 mt-6 mb-2 pl-3 border-l-[3px] border-[#1E3A5F] scroll-mt-20">
-            교육급여 — 교육활동지원비
+            📚 교육급여 — 교육활동지원비
           </h3>
           <p>
             초·중·고 학생이 있는 가구가 대상이에요. <strong>교육활동지원비</strong>를 연 1회 지급하고, 고등학생은 교과서 무상 지급, 입학금·수업료 면제 혜택도 있어요. 고등학생 기준 연 최대 약 <strong>65만원</strong>이에요.
@@ -191,7 +191,7 @@ const data: HubData = {
 
           <HubTable
             id="tbl-asset"
-            title="지역별 기본재산액 공제 기준 (2026년)"
+            title="🏘️ 지역별 기본재산액 공제 기준 (2026년)"
             subtitle="기본재산액 이하 재산은 0원 처리"
             headers={['지역', '기본재산액', '의미']}
             rows={[
@@ -293,7 +293,7 @@ const data: HubData = {
             <div className="flex gap-3 pb-3 border-b border-neutral-100">
               <div className="w-7 h-7 bg-[#1E3A5F] text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0">1</div>
               <div>
-                <h4 className="text-sm font-bold text-neutral-800 mb-1">복지로(bokjiro.go.kr)에서 온라인 신청</h4>
+                <h4 className="text-sm font-bold text-neutral-800 mb-1"><a href="https://www.bokjiro.go.kr/ssis-teu/twatga/wlfareInfo/moveTWAT52011M.do" target="_blank" rel="noopener noreferrer" className="text-[#1E3A5F] underline underline-offset-2 hover:text-[#2B5280]">복지로(bokjiro.go.kr)</a>에서 온라인 신청</h4>
                 <p className="text-xs text-neutral-500 leading-relaxed m-0">공인인증서(또는 간편인증)로 로그인 후 &quot;복지서비스 신청&quot;에서 기초생활보장을 선택해요.</p>
               </div>
             </div>

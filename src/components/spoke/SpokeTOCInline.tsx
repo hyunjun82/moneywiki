@@ -32,20 +32,40 @@ export default function SpokeTOCInline({ items }: { items: TOCItem[] }) {
       {open && (
         <div className="px-[18px] py-[14px]">
           <ol className="list-none m-0 p-0">
-            {items.map((item, i) => (
-              <li key={item.id} className="py-[5px]">
-                <a
-                  href={`#${item.id}`}
-                  onClick={() => setOpen(false)}
-                  className="flex items-center gap-[10px] text-[13.5px] text-neutral-600 no-underline hover:text-[#1E3A5F] transition-colors"
-                >
-                  <span className="text-[11px] font-bold text-[#1E3A5F] bg-[#EDF2F8] w-[22px] h-[22px] rounded-md flex items-center justify-center shrink-0">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <span className="leading-snug">{item.label || item.text}</span>
-                </a>
-              </li>
-            ))}
+            {(() => {
+              let mainIdx = 0
+              return items.map((item) => {
+                if (item.sub) {
+                  return (
+                    <li key={item.id} className="py-[3px] pl-[32px]">
+                      <a
+                        href={`#${item.id}`}
+                        onClick={() => setOpen(false)}
+                        className="flex items-center gap-[8px] text-[12.5px] text-neutral-500 no-underline hover:text-[#1E3A5F] transition-colors"
+                      >
+                        <span className="text-neutral-300 shrink-0">–</span>
+                        <span className="leading-snug">{item.label || item.text}</span>
+                      </a>
+                    </li>
+                  )
+                }
+                mainIdx++
+                return (
+                  <li key={item.id} className="py-[5px]">
+                    <a
+                      href={`#${item.id}`}
+                      onClick={() => setOpen(false)}
+                      className="flex items-center gap-[10px] text-[13.5px] text-neutral-600 no-underline hover:text-[#1E3A5F] transition-colors"
+                    >
+                      <span className="text-[11px] font-bold text-[#1E3A5F] bg-[#EDF2F8] w-[22px] h-[22px] rounded-md flex items-center justify-center shrink-0">
+                        {String(mainIdx).padStart(2, '0')}
+                      </span>
+                      <span className="leading-snug">{item.label || item.text}</span>
+                    </a>
+                  </li>
+                )
+              })
+            })()}
           </ol>
         </div>
       )}
