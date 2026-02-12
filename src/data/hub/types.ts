@@ -64,4 +64,8 @@ export interface HubData {
   faq: { question: string; answer: string }[]
   spokeGroups: HubSpokeGroup[]
   sources: { name: string; url: string; org: string }[]
+  prevNext?: {
+    prev?: { title: string; href: string }
+    next?: { title: string; href: string }
+  }
 }

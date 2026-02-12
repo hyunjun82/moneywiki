@@ -423,6 +423,10 @@ const data: HubData = {
     { name: '기초생활수급자 안내', url: 'https://www.bokjiro.go.kr/', org: '복지로' },
     { name: '국민기초생활보장법', url: 'https://www.law.go.kr/', org: '법제처' },
   ],
+
+  prevNext: {
+    prev: { title: '실업급여 수급 조건 신청 방법 총정리', href: '/w/실업급여-수급-조건-신청-방법-총정리-2026' },
+  },
 }
 
 export default data

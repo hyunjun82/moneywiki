@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { HubData } from '@/data/hub/types'
-import { SpokeLinks, SectionSpoke } from '@/components/spoke/SpokeBlocks'
+import { SpokeLinks, SectionSpoke, PrevNext } from '@/components/spoke/SpokeBlocks'
 import SpokeFAQ from '@/components/spoke/SpokeFAQ'
 import SpokeTOCInline from '@/components/spoke/SpokeTOCInline'
 
@@ -46,6 +46,7 @@ export default function HubPageContent({ hub, slug }: { hub: HubData; slug: stri
     spokeGroups,
     sources,
     category,
+    prevNext,
   } = hub
 
   const url = `https://www.jjyu.co.kr/w/${slug}`
@@ -255,6 +256,11 @@ export default function HubPageContent({ hub, slug }: { hub: HubData; slug: stri
                 />
               ))}
             </section>
+          )}
+
+          {/* ═══ 이전/다음 허브 ═══ */}
+          {prevNext && (prevNext.prev || prevNext.next) && (
+            <PrevNext prev={prevNext.prev} next={prevNext.next} />
           )}
 
           {/* ═══════════════════════════════════════

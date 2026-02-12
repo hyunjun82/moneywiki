@@ -164,7 +164,7 @@ export function HubTable({ id, title, subtitle, headers, rows, highlightCol, war
           <thead>
             <tr>
               {headers.map((h, i) => (
-                <th key={i} className={`text-left px-3 py-2.5 font-semibold text-xs text-white bg-neutral-800 ${
+                <th key={i} className={`text-left px-3 py-2.5 font-semibold text-xs text-[#1E3A5F] bg-[#EDF2F8] border-b-2 border-[#1E3A5F] ${
                   i === 0 ? 'rounded-tl-lg' : ''
                 } ${i === headers.length - 1 ? 'rounded-tr-lg' : ''}`}>
                   {h}
