@@ -1,77 +1,165 @@
 import Link from 'next/link'
 import type { HubData } from '@/data/hub/types'
-import HubFloatingTOC from './HubTOC'
-import { ArticleSchema, FAQSchema, BreadcrumbSchema } from '@/components/JsonLd'
-import { HubBridgeCTA } from '@/components/hub/HubBlocks'
+import { SpokeLinks, SectionSpoke } from '@/components/spoke/SpokeBlocks'
+import SpokeFAQ from '@/components/spoke/SpokeFAQ'
+import SpokeTOCInline from '@/components/spoke/SpokeTOCInline'
+
+/* ═══════════════════════════════════════════
+   HubBridge — 허브 전용 BridgeCTA
+   허브 데이터는 desc가 string이지만 ReactNode도 수용
+   ═══════════════════════════════════════════ */
+function HubBridge({ href, badge, title, desc }: {
+  href: string
+  badge: string
+  title: string
+  desc: React.ReactNode
+}) {
+  return (
+    <Link
+      href={href}
+      className="group flex items-center gap-4 mt-8 p-[18px] bg-white border border-neutral-200 rounded-[14px] no-underline transition-all hover:border-[#1E3A5F] hover:shadow-md hover:-translate-y-px"
+    >
+      <div className="shrink-0 w-[42px] h-[42px] rounded-full bg-gradient-to-br from-[#1E3A5F] to-[#2B5280] flex items-center justify-center text-lg text-white">
+        📖
+      </div>
+      <div className="flex-1 min-w-0">
+        <div className="inline-block text-[10px] font-bold text-[#1E3A5F] bg-[#1E3A5F]/[0.08] px-2 py-0.5 rounded-full mb-1 tracking-wide">
+          {badge}
+        </div>
+        <div className="text-[15px] font-bold text-neutral-800 leading-snug">{title}</div>
+        <div className="text-xs text-neutral-500 mt-0.5">{desc}</div>
+      </div>
+      <span className="shrink-0 text-lg text-neutral-400 group-hover:text-[#1E3A5F] group-hover:translate-x-1 transition-all">
+        &rarr;
+      </span>
+    </Link>
+  )
+}
 
 export default function HubPageContent({ hub, slug }: { hub: HubData; slug: string }) {
+  const {
+    meta,
+    hero,
+    toc,
+    sections,
+    faq,
+    spokeGroups,
+    sources,
+    category,
+  } = hub
+
   const url = `https://www.jjyu.co.kr/w/${slug}`
 
-  const breadcrumbItems = [
-    { name: '홈', url: 'https://www.jjyu.co.kr' },
-    { name: hub.category, url: `https://www.jjyu.co.kr/#category-${encodeURIComponent(hub.category)}` },
-    { name: hub.meta.title, url },
-  ]
+  /* ── TOC: 메인 항목만 (sub 제외) ── */
+  const tocItems = toc
+    .filter(item => !item.sub)
+    .map(item => ({ id: item.id, text: item.text }))
 
   return (
     <>
-      {/* JSON-LD 스키마 */}
-      <ArticleSchema
-        title={hub.meta.title}
-        description={hub.meta.description}
-        url={url}
-        datePublished={new Date().toISOString().split('T')[0]}
-        dateModified={new Date().toISOString().split('T')[0]}
-        keywords={hub.meta.keywords}
-        category={hub.category}
+      {/* ═══ JSON-LD: Article ═══ */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: meta.title,
+            description: meta.description,
+            url,
+            author: { '@type': 'Person', name: '머니위키 에디터' },
+            publisher: {
+              '@type': 'Organization',
+              name: '머니위키',
+              url: 'https://www.jjyu.co.kr',
+            },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+          }),
+        }}
       />
-      <BreadcrumbSchema items={breadcrumbItems} />
-      {hub.faq.length > 0 && <FAQSchema items={hub.faq} />}
 
-      <div data-hub="true" className="relative">
-        {/* 플로팅 TOC — 데스크톱만 */}
-        <HubFloatingTOC items={hub.toc} />
+      {/* ═══ JSON-LD: BreadcrumbList ═══ */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: '홈', item: 'https://www.jjyu.co.kr' },
+              { '@type': 'ListItem', position: 2, name: category, item: `https://www.jjyu.co.kr/#category-${encodeURIComponent(category)}` },
+              { '@type': 'ListItem', position: 3, name: meta.title, item: url },
+            ],
+          }),
+        }}
+      />
 
-        <div className="max-w-[720px] mx-auto px-6">
-          {/* ===== Hero ===== */}
-          <div className="py-12 pb-10 border-b border-neutral-200">
-            {/* 브레드크럼 */}
-            <nav className="flex items-center gap-2 text-sm text-neutral-500 mb-6" aria-label="Breadcrumb">
-              <Link href="/" className="hover:text-black transition-colors">홈</Link>
-              <span aria-hidden="true">/</span>
-              <Link href={`/#category-${encodeURIComponent(hub.category)}`} className="hover:text-black transition-colors">
-                {hub.category}
-              </Link>
-              <span aria-hidden="true">/</span>
-              <span className="text-black" aria-current="page">{hub.meta.title}</span>
-            </nav>
+      {/* ═══ JSON-LD: FAQPage ═══ */}
+      {faq.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: faq.map(f => ({
+                '@type': 'Question',
+                name: f.question,
+                acceptedAnswer: { '@type': 'Answer', text: f.answer },
+              })),
+            }),
+          }}
+        />
+      )}
 
+      <div className="max-w-[720px] mx-auto px-6">
+        {/* ═══ Breadcrumb ═══ */}
+        <div className="pt-4 text-xs text-neutral-400">
+          <Link href="/" className="text-neutral-500 hover:underline">홈</Link>
+          <span> › </span>
+          <Link href={`/#category-${encodeURIComponent(category)}`} className="text-neutral-500 hover:underline">
+            {category}
+          </Link>
+          <span> › </span>
+          <strong className="text-neutral-800">{meta.title}</strong>
+        </div>
+
+        <div className="pb-20" data-hub="true">
+          {/* ═══════════════════════════════════════
+               HERO
+             ═══════════════════════════════════════ */}
+          <div className="pt-12 pb-10 border-b border-neutral-200 mb-8">
             {/* 배지 */}
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#1E3A5F]/[0.07] border border-[#1E3A5F]/[0.12] rounded-full text-[11px] font-semibold text-[#1E3A5F] mb-4">
-              <span className="w-1.5 h-1.5 bg-[#1E3A5F] rounded-full animate-pulse" />
-              {hub.hero.badge}
-            </div>
+            {hero.badge && (
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#1E3A5F]/[0.07] border border-[#1E3A5F]/[0.12] rounded-full text-[11px] font-semibold text-[#1E3A5F] mb-4">
+                <span className="w-1.5 h-1.5 bg-[#1E3A5F] rounded-full animate-pulse" />
+                {hero.badge}
+              </div>
+            )}
 
             {/* H1 */}
-            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-[1.15] mb-3">
-              {hub.hero.h1}
+            <h1 className="text-[25px] sm:text-[28px] font-extrabold leading-[1.3] tracking-tight text-neutral-900 mb-2">
+              {hero.h1}
             </h1>
 
             {/* 부제목 */}
-            <p className="text-base text-neutral-500 leading-relaxed mb-4">
-              {hub.hero.subtitle}
-            </p>
+            {hero.subtitle && (
+              <p className="text-[15px] text-neutral-500 leading-relaxed mb-4">
+                {hero.subtitle}
+              </p>
+            )}
 
-            {hub.hero.intro && (
-              <div className="mb-7 [&>p]:text-base [&>p]:text-neutral-500 [&>p]:leading-relaxed [&>p]:mb-3 [&_a]:text-blue-600 [&_a:hover]:underline [&_strong]:text-neutral-800">
-                {hub.hero.intro}
+            {/* 서론 (ReactNode) */}
+            {hero.intro && (
+              <div className="mb-4 [&>p]:text-[15px] [&>p]:text-neutral-500 [&>p]:leading-relaxed [&>p]:mb-3 [&_a]:text-[#1E3A5F] [&_a:hover]:underline [&_strong]:text-neutral-800">
+                {hero.intro}
               </div>
             )}
 
             {/* 주요 수치 3칸 */}
-            {hub.hero.stats && hub.hero.stats.length > 0 && (
-              <div className="grid grid-cols-3 gap-px bg-neutral-200 rounded-xl overflow-hidden">
-                {hub.hero.stats.map((stat, i) => (
+            {hero.stats && hero.stats.length > 0 && (
+              <div className="grid grid-cols-3 gap-px bg-neutral-200 rounded-xl overflow-hidden my-4">
+                {hero.stats.map((stat, i) => (
                   <div key={i} className="bg-white p-4 text-center hover:scale-[1.03] transition-transform">
                     <div className={`text-xl font-bold tracking-tight ${
                       stat.color === 'green' ? 'text-[#1E3A5F]' :
@@ -84,31 +172,41 @@ export default function HubPageContent({ hub, slug }: { hub: HubData; slug: stri
                 ))}
               </div>
             )}
+
+            {/* ── 인라인 접이식 TOC ── */}
+            <SpokeTOCInline items={tocItems} />
           </div>
 
-          {/* ===== 섹션 목록 ===== */}
-          {hub.sections.map((section) => (
+          {/* ═══════════════════════════════════════
+               SECTIONS
+             ═══════════════════════════════════════ */}
+          {sections.map(section => (
             <section
               key={section.id}
+              className="py-12 border-b border-neutral-100"
               id={section.id}
-              className="py-12 border-b border-neutral-100 last:border-b-0"
             >
-              <div className="text-[11px] font-bold uppercase tracking-wide text-[#1E3A5F] mb-1.5">
+              {/* 넘버링 태그 */}
+              <div className="text-[11px] font-extrabold text-[#1E3A5F] uppercase tracking-[1.5px] mb-[3px]">
                 {section.tag}
               </div>
-              <h2 className="text-[22px] font-bold tracking-tight mb-1.5 scroll-mt-[70px]">
+              <h2 className="text-[20px] font-extrabold text-neutral-900 leading-[1.35] tracking-tight mb-[3px] scroll-mt-[70px]">
                 {section.heading}
               </h2>
-              <div className="text-sm text-neutral-500 mb-6">
-                {section.subtitle}
-              </div>
-              {/* 본문: p, h3, strong, a 등 기본 스타일 */}
-              <div className="text-[15px] text-neutral-700 leading-relaxed [&>p]:mb-3.5 [&>h3]:text-base [&>h3]:font-bold [&>h3]:mt-8 [&>h3]:mb-2.5 [&>h3]:pl-3 [&>h3]:border-l-[3px] [&>h3]:border-[#1E3A5F] [&_strong]:text-neutral-900 [&_strong]:font-semibold [&_a:not(.hub-cta)]:text-blue-600 [&_a:not(.hub-cta):hover]:underline">
+              {section.subtitle && (
+                <div className="text-[13.5px] text-[#1E3A5F] font-semibold mb-[14px]">
+                  {section.subtitle}
+                </div>
+              )}
+
+              {/* 본문 콘텐츠 (JSX) */}
+              <div className="text-[15px] text-neutral-600 leading-[1.76] [&_p]:mb-[14px] [&_strong]:text-neutral-900 [&_strong]:font-bold [&_a]:text-[#1E3A5F] [&_a]:font-semibold [&_a]:underline [&_a]:underline-offset-2 [&_h3]:text-[16.5px] [&_h3]:font-extrabold [&_h3]:text-neutral-900 [&_h3]:leading-[1.35] [&_h3]:mt-[22px] [&_h3]:mb-2 [&_h3]:pl-3 [&_h3]:border-l-[3px] [&_h3]:border-[#1E3A5F]">
                 {section.content}
               </div>
 
+              {/* BridgeCTA */}
               {section.bridgeCTA && (
-                <HubBridgeCTA
+                <HubBridge
                   href={section.bridgeCTA.href}
                   badge={section.bridgeCTA.badge}
                   title={section.bridgeCTA.title}
@@ -118,79 +216,57 @@ export default function HubPageContent({ hub, slug }: { hub: HubData; slug: stri
             </section>
           ))}
 
-          {/* ===== 스포크 링크 ===== */}
-          {hub.spokeGroups.length > 0 && (
-            <section className="py-12 border-b border-neutral-100">
-              <div className="text-[11px] font-bold uppercase tracking-wide text-[#1E3A5F] mb-1.5">
-                관련 글
+          {/* ═══════════════════════════════════════
+               FAQ
+             ═══════════════════════════════════════ */}
+          {faq.length > 0 && (
+            <section className="py-12 border-b border-neutral-100" id="faq">
+              <div className="text-[11px] font-extrabold text-[#1E3A5F] uppercase tracking-[1.5px] mb-[3px]">
+                FAQ
               </div>
-              <h2 className="text-[22px] font-bold tracking-tight mb-6 scroll-mt-[70px]">
+              <h2 className="text-[20px] font-extrabold text-neutral-900 leading-[1.35] tracking-tight mb-6">
+                자주 묻는 질문
+              </h2>
+              <SpokeFAQ items={faq} />
+            </section>
+          )}
+
+          {/* ═══════════════════════════════════════
+               SPOKE GROUPS — 하단 트래픽 분배
+             ═══════════════════════════════════════ */}
+          {spokeGroups.length > 0 && (
+            <section className="py-12" id="spoke-all">
+              <div className="text-[11px] font-extrabold text-[#1E3A5F] uppercase tracking-[1.5px] mb-[3px]">
+                관련 글 모음
+              </div>
+              <h2 className="text-[20px] font-extrabold text-neutral-900 leading-[1.35] tracking-tight mb-6">
                 더 자세히 알아보기
               </h2>
-
-              {hub.spokeGroups.map((group, gi) => (
-                <div key={gi} className={gi > 0 ? 'mt-8' : ''}>
-                  {hub.spokeGroups.length > 1 && (
-                    <h3 className="text-base font-bold pl-3 border-l-[3px] border-[#1E3A5F] mb-3">
-                      {group.title}
-                    </h3>
-                  )}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {group.spokes.map((spoke) => (
-                      <Link
-                        key={spoke.slug}
-                        href={`/w/${spoke.slug}`}
-                        className="group border border-neutral-200 rounded-xl p-5 hover:border-[#1E3A5F] hover:shadow-md hover:-translate-y-0.5 transition-all no-underline"
-                      >
-                        <span className="inline-block text-[10px] font-bold py-0.5 px-2 bg-[#1E3A5F]/10 text-[#1E3A5F] rounded mb-2">
-                          {spoke.badge}
-                        </span>
-                        <div className="text-sm font-semibold text-neutral-800 group-hover:text-[#1E3A5F] transition-colors">
-                          {spoke.title}
-                        </div>
-                        <div className="text-xs text-neutral-500 mt-1">{spoke.desc}</div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
+              {spokeGroups.map((group, gi) => (
+                <SpokeLinks
+                  key={gi}
+                  title={group.title}
+                  items={group.spokes.map((spoke, si) => ({
+                    num: spoke.badge || String(si + 1).padStart(2, '0'),
+                    heading: spoke.title,
+                    desc: spoke.desc,
+                    href: `/w/${spoke.slug}`,
+                  }))}
+                />
               ))}
             </section>
           )}
 
-          {/* ===== FAQ ===== */}
-          {hub.faq.length > 0 && (
-            <section className="py-12 border-b border-neutral-100">
-              <div className="text-[11px] font-bold uppercase tracking-wide text-[#1E3A5F] mb-1.5">
-                FAQ
-              </div>
-              <h2 className="text-[22px] font-bold tracking-tight mb-6 scroll-mt-[70px]">
-                자주 묻는 질문
-              </h2>
-              <div className="space-y-2">
-                {hub.faq.map((item, i) => (
-                  <details key={i} className="group border border-neutral-200 rounded-xl overflow-hidden">
-                    <summary className="flex items-center justify-between p-[14px_18px] cursor-pointer text-[13px] font-semibold select-none hover:bg-neutral-50 transition-colors">
-                      <span className="pr-4">{item.question}</span>
-                      <span className="text-neutral-400 group-open:rotate-45 transition-transform text-lg shrink-0">+</span>
-                    </summary>
-                    <div
-                      className="px-[18px] pb-[14px] text-[13px] text-neutral-600 leading-relaxed border-t border-neutral-100 pt-3"
-                      dangerouslySetInnerHTML={{ __html: item.answer }}
-                    />
-                  </details>
-                ))}
-              </div>
-            </section>
-          )}
-
-          {/* ===== 출처 ===== */}
-          {hub.sources.length > 0 && (
-            <section className="py-8">
-              <div className="text-xs font-semibold text-neutral-400 mb-3">출처</div>
+          {/* ═══════════════════════════════════════
+               출처 (하단)
+             ═══════════════════════════════════════ */}
+          {sources.length > 0 && (
+            <section className="pt-8 border-t border-neutral-100 mt-4">
+              <h2 className="text-sm font-semibold text-neutral-500 mb-3">출처</h2>
               <ul className="space-y-1 text-xs list-none m-0 p-0">
-                {hub.sources.map((src, i) => (
+                {sources.map((src, i) => (
                   <li key={i}>
-                    <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                    <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-[#1E3A5F] hover:underline">
                       {src.name}
                     </a>
                     <span className="text-neutral-400 ml-1">— {src.org}</span>
