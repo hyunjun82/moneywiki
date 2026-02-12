@@ -1,6 +1,7 @@
 import type { HubData } from './types'
 import { HubTable, HubTipBox, HubWarnBox, HubFormula } from '@/components/hub/HubBlocks'
 import { CalcLink } from '@/components/spoke/SpokeBlocks'
+import SpokeChecker from '@/components/spoke/SpokeChecker'
 
 const data: HubData = {
   slug: '기초생활수급자-조건-총정리',
@@ -17,29 +18,10 @@ const data: HubData = {
 
   hero: {
     badge: '2026년 최신 · 보건복지부',
-    h1: (
-      <>
-        2026 <span className="text-[#1E3A5F]">기초생활수급자</span> 조건과 급여 총정리
-      </>
-    ),
+    tags: ['기초생활보장', '종합 가이드'],
+    h1: (<><em>기초생활수급자</em> 조건 총정리</>),
     subtitle: '소득인정액, 선정기준, 4가지 급여, 부양의무자 폐지, 신청 방법까지 한 글에 정리했어요.',
-    intro: (
-      <>
-        <p>
-          소득인정액, 선정기준, 4가지 급여(생계·의료·주거·교육), 부양의무자 폐지, 신청 방법까지.
-          <strong> 이 글 하나로 제도 전체를 이해</strong>할 수 있어요.
-        </p>
-        <p>
-          2026년 1인가구 생계급여 기준은 <strong>월 820,556원</strong>이고,
-          부양의무자 기준은 생계·주거·교육급여에서 <strong>완전 폐지</strong>됐어요.
-        </p>
-      </>
-    ),
-    stats: [
-      { value: '820,556원', label: '1인 생계급여', color: 'green' },
-      { value: '4가지', label: '급여 종류', color: 'default' },
-      { value: '폐지', label: '부양의무자', color: 'orange' },
-    ],
+    // stats: chips로 대체
   },
 
   toc: [
@@ -54,6 +36,7 @@ const data: HubData = {
     { id: 'ben-edu', text: '교육급여 (학비)', sub: true },
     { id: 'sec-income', text: '소득인정액은 어떻게 계산하나요?' },
     { id: 'tbl-asset', text: '지역별 기본재산액 공제 기준표', sub: true },
+    { id: 'checker', text: '내가 받을 수 있는 급여 확인' },
     { id: 'sec-family', text: '부양의무자 기준은 어떻게 바뀌었나요?' },
     { id: 'sec-extra', text: '수급자가 되면 받는 추가 혜택', sub: true },
     { id: 'sec-apply', text: '신청은 어떻게 하나요?' },
@@ -249,6 +232,19 @@ const data: HubData = {
       },
     },
 
+    // ===== CHECK 체커 =====
+    {
+      id: 'checker',
+      tag: 'CHECK',
+      heading: '내가 받을 수 있는 급여는?',
+      subtitle: '3가지 선택하면 4가지 급여를 한번에 비교해요',
+      content: (
+        <>
+          <SpokeChecker />
+        </>
+      ),
+    },
+
     // ===== 05 부양의무자 =====
     {
       id: 'sec-family',
@@ -361,7 +357,7 @@ const data: HubData = {
 
   spokeGroups: [
     {
-      title: '급여별 상세',
+      title: '💰 급여별 상세',
       spokes: [
         { slug: '기초생활수급자-1인가구-생계급여-조건-소득인정액', title: '1인가구 생계급여 조건과 소득인정액 계산', desc: '선정기준 820,556원 · 실수령액 계산 예시', badge: '급여' },
         { slug: '의료급여-1종-2종-차이', title: '의료급여 1종 2종 차이 — 본인부담금 0원 조건', desc: '1종 본인부담 0원 · 건강보험료 면제', badge: '급여' },
@@ -370,7 +366,7 @@ const data: HubData = {
       ],
     },
     {
-      title: '소득인정액 계산',
+      title: '🔢 소득인정액 계산',
       spokes: [
         { slug: '소득인정액-모의계산', title: '소득인정액 모의계산 방법 (복지로 사용법)', desc: '내 정확한 소득인정액을 직접 계산하는 법', badge: '계산' },
         { slug: '재산-소득환산율-계산', title: '재산의 소득환산율 계산 — 자동차, 전세금은?', desc: '자동차 보유 시 불이익, 전세금 공제 기준', badge: '계산' },
@@ -378,7 +374,7 @@ const data: HubData = {
       ],
     },
     {
-      title: '부양의무자·대안 제도',
+      title: '🔄 부양의무자·대안 제도',
       spokes: [
         { slug: '의료급여-부양의무자-면제', title: '의료급여 부양의무자 면제 조건', desc: '중증장애·노인 면제 대상 · 소득·재산 기준 상세', badge: '제도' },
         { slug: '차상위계층-조건-혜택', title: '차상위계층 조건과 혜택', desc: '중위소득 50% 이하 · 의료비 감면', badge: '제도' },
@@ -393,6 +389,35 @@ const data: HubData = {
     { name: '기초생활수급자 안내', url: 'https://www.bokjiro.go.kr/', org: '복지로' },
     { name: '국민기초생활보장법', url: 'https://www.law.go.kr/', org: '법제처' },
   ],
+
+  summary: [
+    <>기초생활수급자는 소득인정액이 기준중위소득의 <strong>32~50% 이하</strong>인 사람이 받는 복지제도예요.</>,
+    <>2026년 1인가구 생계급여 기준은 월 <strong>820,556원</strong>이고, 부양의무자 기준은 생계·주거·교육급여에서 <strong>완전 폐지</strong>됐어요.</>,
+    <>생계급여(현금), 의료급여(병원비), 주거급여(월세), 교육급여(학비) <strong>4가지를 동시에</strong> 받을 수 있어요.</>,
+  ],
+
+  source: { name: '보건복지부', date: '2026.01 고시' },
+
+  chips: [
+    { icon: '💰', label: '1인 생계급여', value: '820,556원', href: '#ben-life' },
+    { icon: '🏥', label: '1인 의료급여', value: '1,025,695원', href: '#ben-med' },
+    { icon: '🏠', label: '1인 주거급여', value: '1,230,834원', href: '#ben-house' },
+    { icon: '📚', label: '1인 교육급여', value: '1,282,119원', href: '#ben-edu' },
+  ],
+
+  heroCTA: {
+    href: '#checker',
+    question: '내가 수급자가 될 수 있을까? 조건이 복잡해서 헷갈리시나요?',
+    answer: <>가구원 수, 소득, 재산 <strong>3가지만</strong> 선택하면 4가지 급여 중 내가 받을 수 있는 급여를 바로 확인할 수 있어요.</>,
+    buttonText: '간편 자격 체크 ↓',
+  },
+
+  sticky: {
+    label: '1인 생계급여 최대',
+    value: '820,556원',
+    ctaText: '나도 받을 수 있을까? ↑',
+    ctaTarget: '#checker',
+  },
 
   prevNext: {
     prev: { title: '실업급여 수급 조건 신청 방법 총정리', href: '/w/실업급여-수급-조건-신청-방법-총정리-2026' },

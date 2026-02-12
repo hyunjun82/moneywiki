@@ -50,6 +50,7 @@ export interface HubData {
 
   hero: {
     badge: string
+    tags?: string[]
     h1: ReactNode
     subtitle: string
     intro?: ReactNode
@@ -65,6 +66,11 @@ export interface HubData {
   faq: { question: string; answer: string }[]
   spokeGroups: HubSpokeGroup[]
   sources: { name: string; url: string; org: string }[]
+  summary?: ReactNode[]
+  source?: { name: string; date: string }
+  chips?: { icon: string; label: string; value: string; href?: string }[]
+  heroCTA?: { href: string; question: string; answer: ReactNode; buttonText: string }
+  sticky?: { label: string; value: string; ctaText: string; ctaTarget: string }
   prevNext?: {
     prev?: { title: string; href: string }
     next?: { title: string; href: string }
