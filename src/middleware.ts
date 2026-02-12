@@ -21,6 +21,8 @@ export async function middleware(request: NextRequest) {
     let robotsTxt = `# robots.txt for 머니위키
 User-agent: *
 Allow: /
+Disallow: /search
+Disallow: /search?*
 
 # Sitemap
 Sitemap: https://www.jjyu.co.kr/sitemap.xml`;
