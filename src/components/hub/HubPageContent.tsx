@@ -226,18 +226,38 @@ export default function HubPageContent({ hub, slug }: { hub: HubData; slug: stri
               <h2 className="text-[20px] font-extrabold text-neutral-900 leading-[1.35] tracking-tight mb-6">
                 더 자세히 알아보기
               </h2>
-              {spokeGroups.map((group, gi) => (
-                <SpokeLinks
-                  key={gi}
-                  title={group.title}
-                  items={group.spokes.map((spoke, si) => ({
-                    num: spoke.badge || String(si + 1).padStart(2, '0'),
-                    heading: spoke.title,
-                    desc: spoke.desc,
-                    href: `/w/${spoke.slug}`,
-                  }))}
-                />
-              ))}
+              {(() => {
+                let globalIdx = 0
+                return spokeGroups.map((group, gi) => (
+                  <div key={gi} className="my-5">
+                    <div className="text-[14px] font-extrabold text-neutral-900 mb-[10px] flex items-center gap-[6px]">
+                      📖 {group.title}
+                    </div>
+                    <div className="flex flex-col gap-1">
+                      {group.spokes.map((spoke) => {
+                        globalIdx++
+                        const num = String(globalIdx).padStart(2, '0')
+                        return (
+                          <Link
+                            key={spoke.slug}
+                            href={`/w/${spoke.slug}`}
+                            className="flex items-center gap-3 p-[13px_15px] bg-white border border-neutral-200 rounded-lg no-underline transition-all hover:border-[#4A7AB5] hover:shadow-[0_2px_8px_rgba(30,58,95,0.06)] hover:-translate-y-px"
+                          >
+                            <span className="text-[11px] font-extrabold text-[#1E3A5F] bg-[#EDF2F8] w-[26px] h-[26px] rounded-md flex items-center justify-center shrink-0">
+                              {num}
+                            </span>
+                            <div className="flex-1 min-w-0">
+                              <div className="text-[13.5px] font-bold text-neutral-900 leading-snug">{spoke.title}</div>
+                              <div className="text-[11px] text-neutral-400 mt-px">{spoke.desc}</div>
+                            </div>
+                            <span className="text-[13px] text-neutral-400 shrink-0">→</span>
+                          </Link>
+                        )
+                      })}
+                    </div>
+                  </div>
+                ))
+              })()}
             </section>
           )}
 

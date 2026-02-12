@@ -490,7 +490,7 @@ export function SectionSpoke({ items }: { items: { icon: string; title: string; 
         <Link key={i} href={item.href} className="flex items-center gap-3 p-[12px_14px] bg-white border border-neutral-200 rounded-lg no-underline transition-all hover:border-[#4A7AB5] hover:shadow-[0_2px_8px_rgba(30,58,95,0.06)] hover:-translate-y-px">
           <span className="shrink-0 text-base">{item.icon}</span>
           <span className="flex-1 min-w-0">
-            <span className="text-[13px] font-bold text-[#1E3A5F] block">{item.title}</span>
+            <span className="text-[13px] font-bold text-[#1E3A5F] block leading-snug">{item.title}</span>
             <span className="text-[11px] text-neutral-400 block mt-px">{item.desc}</span>
           </span>
           <span className="shrink-0 text-xs text-neutral-400">→</span>

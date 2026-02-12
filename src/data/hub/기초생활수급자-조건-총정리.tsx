@@ -1,7 +1,5 @@
-import Link from 'next/link'
 import type { HubData } from './types'
-import { HubTable, HubTipBox, HubWarnBox, HubFormula,
-         HubSpokeLink } from '@/components/hub/HubBlocks'
+import { HubTable, HubTipBox, HubWarnBox, HubFormula } from '@/components/hub/HubBlocks'
 import { CalcLink } from '@/components/spoke/SpokeBlocks'
 
 const data: HubData = {
@@ -175,26 +173,13 @@ const data: HubData = {
             초·중·고 학생이 있는 가구가 대상이에요. <strong>교육활동지원비</strong>를 연 1회 지급하고, 고등학생은 교과서 무상 지급, 입학금·수업료 면제 혜택도 있어요. 고등학생 기준 연 최대 약 <strong>65만원</strong>이에요.
           </p>
 
-          <HubSpokeLink
-            href="/w/기초생활수급자-1인가구-생계급여-조건-소득인정액"
-            badge="급여"
-            title="1인가구 생계급여 조건과 소득인정액 계산"
-            desc="선정기준 820,556원 · 소득별 실수령액 예시"
-          />
-          <HubSpokeLink
-            href="/w/의료급여-1종-2종-차이"
-            badge="급여"
-            title="의료급여 1종 2종 차이 — 본인부담금 비교"
-            desc="1종 본인부담 0원 · 건강보험료 면제"
-          />
-          <HubSpokeLink
-            href="/w/주거급여-신청조건"
-            badge="급여"
-            title="주거급여 신청 조건 — 서울 1인 최대 35만원"
-            desc="기준임대료 · 부양의무자 완전 폐지"
-          />
         </>
       ),
+      sectionSpoke: [
+        { icon: '💰', title: '1인가구 생계급여 조건과 소득인정액 계산', desc: '선정기준 820,556원 · 소득별 실수령액 예시', href: '/w/기초생활수급자-1인가구-생계급여-조건-소득인정액' },
+        { icon: '🏥', title: '의료급여 1종 2종 차이 — 본인부담금 비교', desc: '1종 본인부담 0원 · 건강보험료 면제', href: '/w/의료급여-1종-2종-차이' },
+        { icon: '🏠', title: '주거급여 신청 조건 — 서울 1인 최대 35만원', desc: '기준임대료 · 부양의무자 완전 폐지', href: '/w/주거급여-신청조건' },
+      ],
       bridgeCTA: {
         href: '#sec-income',
         badge: '소득인정액',
@@ -250,20 +235,12 @@ const data: HubData = {
             desc="내 소득·재산 입력 → 정확한 소득인정액 확인"
           />
 
-          <HubSpokeLink
-            href="/w/소득인정액-모의계산"
-            badge="계산"
-            title="소득인정액 모의계산 방법 — 복지로 사용법"
-            desc="근로소득공제 30% · 내 정확한 소득인정액 계산"
-          />
-          <HubSpokeLink
-            href="/w/재산-소득환산율-계산"
-            badge="계산"
-            title="재산의 소득환산율 — 자동차, 전세금 기준"
-            desc="기본재산액 서울 9,900만원 공제"
-          />
         </>
       ),
+      sectionSpoke: [
+        { icon: '🧮', title: '소득인정액 모의계산 방법 — 복지로 사용법', desc: '근로소득공제 30% · 내 정확한 소득인정액 계산', href: '/w/소득인정액-모의계산' },
+        { icon: '📊', title: '재산의 소득환산율 — 자동차, 전세금 기준', desc: '기본재산액 서울 9,900만원 공제', href: '/w/재산-소득환산율-계산' },
+      ],
       bridgeCTA: {
         href: '#sec-family',
         badge: '재산 기준',
@@ -294,20 +271,12 @@ const data: HubData = {
             4가지 급여 외에도 <strong>통신비 감면</strong>(월 최대 26,000원), <strong>전기·가스 요금 할인</strong>(월 16,000원), <strong>TV수신료 면제</strong>, <strong>주민세·자동차세 면제</strong>, 문화누리카드(연 13만원) 등 혜택이 있어요. 생계·의료급여 수급자일수록 감면 폭이 커요.
           </p>
 
-          <HubSpokeLink
-            href="/w/의료급여-부양의무자-면제"
-            badge="제도"
-            title="의료급여 부양의무자 면제 조건"
-            desc="중증장애·노인 면제 대상 · 소득·재산 기준 상세"
-          />
-          <HubSpokeLink
-            href="/w/차상위계층-조건-혜택"
-            badge="제도"
-            title="차상위계층 조건과 혜택"
-            desc="중위소득 50% 이하 · 의료비 감면·통신비 할인"
-          />
         </>
       ),
+      sectionSpoke: [
+        { icon: '🏥', title: '의료급여 부양의무자 면제 조건', desc: '중증장애·노인 면제 대상 · 소득·재산 기준 상세', href: '/w/의료급여-부양의무자-면제' },
+        { icon: '📋', title: '차상위계층 조건과 혜택', desc: '중위소득 50% 이하 · 의료비 감면·통신비 할인', href: '/w/차상위계층-조건-혜택' },
+      ],
       bridgeCTA: {
         href: '#sec-apply',
         badge: '대안 제도',
