@@ -1,32 +1,39 @@
 /**
- * ISA계좌 가입 조건 개설 방법 필요 서류 — 스포크 3
+ * ISA계좌 가입 조건 개설 방법 | 필요 서류 증권사 수수료 — 스포크 3
+ *
+ * 팩트체크 (2026-02-13):
+ * - 가입 나이: 만 19세 이상
+ * - 1인 1계좌
+ * - 비대면 개설: 앱 5분
+ * - 서민형 추가 서류: 소득금액증명원 (홈택스)
  */
 
 import type { SpokeData } from '@/data/spoke/types'
 import {
-  SpokeTable, TipBox, WarnBox,
-  DetailBox, SpokeStepCards,
+  SpokeTable, TipBox, FormulaBox, WarnBox,
+  DetailBox, SpokeStepCards, SpokeRateBars,
+  SpokeCompareCards, SpokeFlow, SpokeChecklist, SpokeTimeline,
 } from '@/components/spoke/SpokeBlocks'
 
 const data: SpokeData = {
   slug: 'ISA계좌-가입-조건-개설-방법-필요-서류',
 
   meta: {
-    title: 'ISA계좌 가입 조건 개설 방법 필요 서류',
-    description: 'ISA계좌는 만 19세 이상이면 누구나 가입할 수 있어요. 은행·증권사 앱에서 5분 비대면 개설이 되고, 서민형은 소득증명원만 추가로 내면 돼요.',
+    title: 'ISA계좌 가입 조건 개설 방법 | 필요 서류 증권사 수수료',
+    description: 'ISA계좌 만들고 싶은데 어디서 어떻게 개설해야 할지 고민이시죠? 가입 조건부터 필요 서류, 증권사별 수수료 비교까지 알려드려요.',
     keywords: [
       'ISA계좌 가입 조건',
       'ISA계좌 개설 방법',
       'ISA계좌 필요 서류',
-      'ISA계좌 개설 절차',
+      'ISA계좌 증권사 수수료',
     ],
-    ogTitle: 'ISA계좌 가입 조건 개설 방법 필요 서류 | 머니위키',
+    ogTitle: 'ISA계좌 가입 조건 개설 방법 | 필요 서류 증권사 수수료 | 머니위키',
     ogDescription: '가입 조건, 비대면 개설 절차, 필요 서류, 증권사별 수수료 비교까지.',
   },
 
   hub: {
     url: '/w/ISA계좌-세금혜택-비과세-한도-중개형-서민형-비교',
-    name: 'ISA계좌 세금혜택 비과세 한도 중개형 서민형 비교',
+    name: 'ISA계좌 세금혜택 비과세 한도 | 중개형 서민형 유형 비교 2026',
   },
 
   breadcrumb: ['금융/투자', 'ISA계좌', '가입과 개설'],
@@ -34,7 +41,7 @@ const data: SpokeData = {
   summary3: [
     <>만 <strong>19세 이상</strong>이면 소득·직업 관계없이 누구나 가입 가능</>,
     <>은행·증권사 앱에서 <strong>비대면 5분</strong> 개설 — 일반형은 신분증만, 서민형은 소득증명원 추가</>,
-    <>증권사 수수료: 토스증권 <strong>0.1%</strong> 최저, NH투자증권 0.2%, 은행 0.3~0.5%</>,
+    <>증권사 수수료 차이: 미래에셋 <strong>0.003%</strong> vs 은행 0.3% — 3년에 수만 원 차이</>,
   ],
 
   sourceBar: {
@@ -48,16 +55,23 @@ const data: SpokeData = {
     next: { title: 'ISA계좌 납입한도 연간 2000만원 이월 규정', href: '/w/ISA계좌-납입한도-연간-2000만원-이월-규정' },
   },
 
+  stickyBar: {
+    topLabel: '비대면 개설',
+    value: '5분 완료',
+    buttonText: '개설 절차 보기 →',
+    scrollTo: '#s4',
+  },
+
   hero: {
     badge: '2026년 기준',
     h1: (
       <>
-        ISA계좌 <span className="text-[#1E3A5F]">가입 조건</span> 개설 방법 필요 서류
+        ISA계좌 <span className="text-[#1E3A5F]">가입 조건</span>과 개설 방법
       </>
     ),
     intro: (
       <p className="text-base text-neutral-500 leading-relaxed">
-        만 19세 이상이면 앱에서 <strong>5분</strong>이면 개설 끝이에요. 가입 조건부터 증권사 선택까지 한 번에 정리했어요.
+        만 19세 이상이면 앱에서 <strong>5분</strong>이면 개설 끝이에요. 가입 조건부터 증권사 수수료 비교까지 한 번에 정리했어요.
       </p>
     ),
     hubCTA: {
@@ -86,18 +100,23 @@ const data: SpokeData = {
             ISA는 <strong>만 19세 이상 대한민국 국민</strong>이면 직업이나 소득에 관계없이 누구나 가입할 수 있어요. 학생, 주부, 무직자 모두 OK예요. 다만 <strong>1인 1계좌</strong>라서 이미 ISA 계좌가 있으면 다른 곳에서 추가로 만들 수 없어요.
           </p>
 
-          <DetailBox
-            title="가입 조건 요약"
-            items={[
-              { heading: '나이', desc: '만 19세 이상 (2007년생은 2026년 생일 이후 가능)' },
-              { heading: '국적', desc: '대한민국 국민 (일부 증권사는 외국인 거주자 가능)' },
-              { heading: '계좌 수', desc: '1인 1계좌만 가능 — 다른 금융사에 추가 개설 불가' },
-              { heading: '소득 제한', desc: '일반형은 없음, 서민형은 총급여 5,000만원 이하' },
+          <FormulaBox
+            lines={[
+              { text: 'ISA 가입 조건 핵심 3가지', comment: true },
+              { text: '① 만 19세 이상 (2007년생은 2026년 생일 이후)' },
+              { text: '② 대한민국 국민 (거주자)' },
+              { text: '③ 1인 1계좌 (기존 ISA 없어야 함)' },
             ]}
           />
 
+          <SpokeRateBars bars={[
+            { label: '일반형', rate: '소득 무관', width: '100%' },
+            { label: '서민형', rate: '5,000만원↓', width: '70%' },
+            { label: '농어민형', rate: '3,800만원↓', width: '55%' },
+          ]} />
+
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            서민형은 소득 조건이 있지만 일반형은 제한이 없어요. 서민형 조건이 안 되면 일반형으로 가입하면 돼요. 이미 ISA 계좌가 있는데 다른 증권사로 옮기고 싶으면, 기존 계좌를 해지하고 새로 개설해야 해요.
+            서민형은 소득 조건이 있지만 일반형은 제한이 없어요. 서민형 조건이 안 되면 일반형으로 가입하면 돼요. 이미 ISA 계좌가 있는데 다른 증권사로 옮기고 싶으면, 기존 계좌를 해지하고 새로 개설해야 해요. 3년 의무기간이 리셋되니까 신중하게 결정하세요.
           </p>
 
           <WarnBox>
@@ -121,30 +140,35 @@ const data: SpokeData = {
       content: (
         <>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            ISA 개설은 <strong>은행·증권사 앱</strong>에서 비대면으로 5~10분이면 끝나요. 영업점에 갈 필요 없어요. 중개형은 증권사(NH투자증권, 토스증권, 미래에셋증권 등), 신탁형은 은행(KB국민은행, 신한은행 등)에서 만들어요.
+            ISA 개설은 <strong>은행·증권사 앱</strong>에서 비대면으로 5~10분이면 끝나요. 영업점에 갈 필요 없어요. 중개형은 증권사(미래에셋증권, NH투자증권, 토스증권 등), 신탁형은 은행(KB국민은행, 신한은행 등)에서 만들어요.
           </p>
+
+          <SpokeCompareCards cards={[
+            { title: '미래에셋증권', subtitle: '수수료 최저', items: ['연 수수료: 0.003%', '평생 우대 수수료', '해외 ETF 풍부', '리서치 자료 풍부'], recommended: true, recLabel: '최저' },
+            { title: '토스증권', subtitle: '앱 편의성', items: ['연 수수료: 0.01%', '초보자 친화 UI', '간편 개설 3분', '소수점 투자 가능'] },
+          ]} />
 
           <SpokeTable
             id="tbl-broker"
             title="증권사·은행별 수수료 비교"
-            subtitle="중개형 기준 · 2026년 1월"
+            subtitle="중개형 기준 · 2026년"
             headers={['금융사', '유형', '연 수수료', '특징']}
             rows={[
-              ['토스증권', '중개형', '0.1%', '수수료 최저, 앱 편리'],
-              ['카카오페이증권', '중개형', '0.1%', '수수료 저렴, 간편 UI'],
-              ['NH투자증권', '중개형', '0.2%', '상품 다양, 리서치'],
-              ['미래에셋증권', '중개형', '0.2%', '해외 ETF 풍부'],
+              ['미래에셋증권', '중개형', '0.003%', '수수료 최저, 해외 ETF'],
+              ['삼성증권', '중개형', '0.004%', '안정적, 리서치'],
+              ['토스증권', '중개형', '0.01%', '앱 편리, 초보자 추천'],
+              ['NH투자증권', '중개형', '0.01%', '상품 다양, 리서치'],
               ['KB국민은행', '신탁형', '0.3%', '펀드·예금, 안전'],
             ]}
             highlightCol={2}
           />
 
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            수수료가 가장 저렴한 곳은 토스증권·카카오페이증권(연 0.1%)이에요. 3,000만원 투자 기준으로 은행(0.3%)과 비교하면 3년에 약 18만원 차이가 나요. 주식 직접 거래하고 싶으면 증권사 중개형, 은행에 맡기고 싶으면 신탁형을 선택하세요.
+            수수료가 가장 저렴한 곳은 미래에셋증권(0.003%)이에요. 3,000만원 투자 기준으로 은행(0.3%)과 비교하면 3년에 약 26만원 차이가 나요. 주식 직접 거래하고 싶으면 증권사 중개형, 은행에 맡기고 싶으면 신탁형을 선택하세요.
           </p>
 
           <TipBox title="주식 처음이라면?">
-            토스증권이 앱 UI가 가장 직관적이고 수수료도 저렴해요. 중개형으로 개설해서 KODEX 200 같은 안전한 ETF만 매달 사면 돼요.
+            토스증권이 앱 UI가 가장 직관적이고 초보자 친화적이에요. 중개형으로 개설해서 KODEX 200 같은 안전한 ETF만 매달 사면 돼요.
           </TipBox>
         </>
       ),
@@ -180,18 +204,31 @@ const data: SpokeData = {
             ]}
           />
 
-          <SpokeStepCards
-            steps={[
-              { title: '홈택스 접속', desc: 'hometax.go.kr → 간편인증 또는 공동인증서 로그인' },
-              { title: '민원증명 메뉴', desc: '상단 메뉴에서 "민원증명" → "소득금액증명" 선택' },
-              { title: '발급 연도 선택', desc: '직전 연도(2025년)를 선택하고 발급 신청' },
-              { title: 'PDF 다운로드', desc: 'PDF로 저장한 뒤 ISA 개설 앱에서 업로드' },
-            ]}
-          />
+          <SpokeFlow steps={[
+            { icon: '🔑', label: '홈택스 로그인' },
+            { icon: '📋', label: '민원증명 메뉴' },
+            { icon: '📅', label: '2025년 선택' },
+            { icon: '📄', label: 'PDF 다운로드' },
+            { icon: '📱', label: 'ISA 앱 업로드' },
+          ]} />
 
           <p className="text-neutral-600 mb-4 leading-relaxed">
             소득금액증명원은 <strong>작년 소득</strong> 기준이에요. 3개월 이내 발급분만 인정되니까 너무 미리 발급받지 마세요. 서민형 조건(총급여 5,000만원 이하)에 해당하는지 확인하고, 맞으면 서민형으로 신청하세요. 안 되면 일반형으로 바로 개설하면 돼요.
           </p>
+
+          <SpokeChecklist items={[
+            { text: '신분증 준비 (주민등록증 또는 운전면허증)', done: true },
+            { text: '홈택스에서 소득금액증명원 발급 (서민형만)', note: '3개월 이내 발급분' },
+            { text: '증권사 앱 설치 및 회원가입', done: true },
+            { text: 'ISA 개설 메뉴 진입 → 유형 선택', note: '중개형 + 서민형 추천' },
+          ]} />
+
+          <SpokeTimeline events={[
+            { month: 'STEP 1', title: '홈택스 접속', desc: 'hometax.go.kr → 간편인증 또는 공동인증서 로그인' },
+            { month: 'STEP 2', title: '민원증명 메뉴', desc: '"민원증명" → "소득금액증명" 선택' },
+            { month: 'STEP 3', title: '발급 연도 선택', desc: '직전 연도(2025년)를 선택하고 발급 신청' },
+            { month: 'STEP 4', title: 'PDF 저장', desc: 'PDF로 저장한 뒤 ISA 개설 앱에서 업로드' },
+          ]} />
         </>
       ),
       pasBridge: {
@@ -215,7 +252,7 @@ const data: SpokeData = {
 
           <SpokeStepCards
             steps={[
-              { title: '증권사·은행 앱 설치', desc: '토스증권, NH투자증권, KB국민은행 등 원하는 곳의 앱을 설치하고 회원가입' },
+              { title: '증권사·은행 앱 설치', desc: '미래에셋증권, 토스증권, KB국민은행 등 원하는 곳의 앱을 설치하고 회원가입' },
               { title: 'ISA 계좌 메뉴 선택', desc: '앱 내 "ISA 개설" 또는 "절세 계좌" 메뉴를 찾아 진입' },
               { title: '유형 선택', desc: '운용방식(중개형/신탁형) + 소득기준(일반형/서민형) 선택' },
               { title: '본인인증 + 서류 제출', desc: '신분증 촬영, 얼굴 인식. 서민형은 소득증명원 PDF 업로드' },
@@ -245,7 +282,7 @@ const data: SpokeData = {
 
   faq: [
     { question: 'ISA 개설하는 데 시간이 얼마나 걸리나요?', answer: '비대면으로 <strong>5~10분</strong>이면 끝나요. 일반형은 5분, 서민형은 소득증명원 업로드 포함 10분 정도예요.' },
-    { question: 'ISA 계좌는 어디서 개설하는 게 좋아요?', answer: '주식 직접 거래하면 <strong>토스증권</strong>(수수료 최저 0.1%) 또는 <strong>NH투자증권</strong>(상품 다양), 은행에 맡기면 <strong>KB국민은행</strong> 추천해요.' },
+    { question: 'ISA 계좌는 어디서 개설하는 게 좋아요?', answer: '수수료 최저는 <strong>미래에셋증권</strong>(0.003%), 앱 편의성은 <strong>토스증권</strong>, 은행에 맡기면 <strong>KB국민은행</strong> 추천해요.' },
     { question: 'ISA 계좌 개설 후 바로 안 넣어도 되나요?', answer: '네, 계좌만 만들어두고 나중에 넣어도 돼요. 하지만 <strong>3년 의무기간은 개설일부터 시작</strong>하니까, 빨리 넣을수록 비과세 혜택 기간이 길어요.' },
     { question: '다른 증권사로 ISA를 옮길 수 있나요?', answer: '직접 이관은 안 돼요. <strong>해지 후 새로 개설</strong>해야 하는데, 3년 의무기간이 리셋돼요. 처음에 잘 선택하는 게 중요해요.' },
   ],

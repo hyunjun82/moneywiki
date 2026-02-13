@@ -210,6 +210,43 @@ const RULES = [
     fix: 'id="unique-table-id" 추가',
   },
 
+  // ── RSC 직렬화 규칙 (500 에러 방지) ──
+  {
+    id: 'RSC-001',
+    severity: 'ERROR',
+    component: 'RSC',
+    description: 'checkerConfig에 evaluate 함수 포함 (RSC 직렬화 불가 → 500 에러)',
+    test: (content) => {
+      const matches = [];
+      // export const checkerConfig 패턴 검출
+      if (/export\s+const\s+checkerConfig/.test(content)) {
+        const line = content.substring(0, content.indexOf('export const checkerConfig')).split('\n').length;
+        matches.push({
+          line,
+          text: 'export const checkerConfig — evaluate 함수가 RSC 경계를 넘으면 500 에러',
+        });
+      }
+      return matches;
+    },
+    fix: 'checkerConfig 제거 → src/components/checkers/에 "use client" 전용 컴포넌트 생성',
+  },
+  {
+    id: 'RSC-002',
+    severity: 'ERROR',
+    component: 'RSC',
+    description: 'GenericChecker를 데이터 파일에서 직접 import (함수 prop 직렬화 불가)',
+    pattern: /import\s+GenericChecker\s+from/g,
+    fix: 'GenericChecker 대신 src/components/checkers/ 전용 "use client" 래퍼 사용',
+  },
+  {
+    id: 'RSC-003',
+    severity: 'ERROR',
+    component: 'RSC',
+    description: 'CheckerConfig 타입 import (evaluate 함수 포함 → RSC 직렬화 불가)',
+    pattern: /import\s+.*CheckerConfig.*from\s+['"]@\/data\/checker-types['"]/g,
+    fix: 'CheckerConfig/evaluate 로직을 src/components/checkers/ "use client" 컴포넌트로 이동',
+  },
+
   // ── 구조 규칙 ──
   {
     id: 'STRUCT-001',

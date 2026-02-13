@@ -25,16 +25,12 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-// ISR - 빌드 시 전체 생성 → 런타임 500 에러 빌드 단계에서 차단
+// ISR - 빌드 시 0개, 요청 시 생성 → 캐시 → 24시간 후 재생성
 export const revalidate = 86400;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  const hubSlugs = getAllHubSlugs();
-  const spokeSlugs = getAllSpokeSlugs();
-  const wikiSlugs = getAllWikiSlugs();
-  const all = [...hubSlugs, ...spokeSlugs, ...wikiSlugs];
-  return all.map(slug => ({ slug }));
+  return [];
 }
 
 // 메타데이터 생성 - SEO 최적화
