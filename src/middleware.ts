@@ -2,15 +2,41 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { staticRedirects, getPatternRedirect, getTopicFallback } from "./lib/redirect-config";
 
+// 검색엔진 봇 (noindex 확인용으로 통과 허용)
+const SEARCH_ENGINE_BOTS = ['googlebot', 'yeti', 'daumoa', 'bingbot', 'slurp', 'naverbot'];
+
+// 악성 크롤러 (429 차단)
+const BAD_BOTS = ['gptbot', 'ccbot', 'bytespider', 'ahrefsbot', 'semrushbot', 'mj12bot', 'dotbot', 'petalbot', 'claudebot', 'anthropic-ai'];
+
 export async function middleware(request: NextRequest) {
   const host = request.headers.get("host") || "";
   const pathname = request.nextUrl.pathname;
+  const userAgent = (request.headers.get('user-agent') || '').toLowerCase();
 
   // www 없는 도메인 → www로 301 리다이렉트 (SEO)
   if (host === "jjyu.co.kr") {
     const url = request.nextUrl.clone();
     url.host = "www.jjyu.co.kr";
     return NextResponse.redirect(url, 301);
+  }
+
+  // === /search 경로 방어 ===
+  if (pathname === '/search' || pathname.startsWith('/search?')) {
+    const isBadBot = BAD_BOTS.some(bot => userAgent.includes(bot));
+    if (isBadBot) {
+      return new NextResponse('Too Many Requests', { status: 429 });
+    }
+
+    const isSearchEngine = SEARCH_ENGINE_BOTS.some(bot => userAgent.includes(bot));
+    if (!isSearchEngine) {
+      return NextResponse.redirect(new URL('/', request.url), 301);
+    }
+  }
+
+  // === 전역 악성 봇 차단 (모든 경로) ===
+  const isBadBot = BAD_BOTS.some(bot => userAgent.includes(bot));
+  if (isBadBot) {
+    return new NextResponse('Too Many Requests', { status: 429 });
   }
 
   // robots.txt 동적 처리 (User-Agent 기반)
