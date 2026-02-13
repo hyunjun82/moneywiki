@@ -14,6 +14,7 @@ import {
   DetailBox, SpokeStepCards, SpokeRateBars,
   SpokeCompareCards, SpokeFlow, SpokeChecklist, SpokeTimeline,
 } from '@/components/spoke/SpokeBlocks'
+import ISA가입Checker from '@/components/checkers/ISA가입Checker'
 
 const data: SpokeData = {
   slug: 'ISA계좌-가입-조건-개설-방법-필요-서류',
@@ -51,8 +52,8 @@ const data: SpokeData = {
   },
 
   prevNext: {
-    prev: { title: 'ISA계좌 중개형 서민형 일반형 유형 선택 기준', href: '/w/ISA계좌-중개형-서민형-일반형-유형-선택-기준' },
-    next: { title: 'ISA계좌 납입한도 연간 2000만원 이월 규정', href: '/w/ISA계좌-납입한도-연간-2000만원-이월-규정' },
+    prev: { title: 'ISA계좌 중개형 서민형 일반형 | 유형별 장단점 선택 기준', href: '/w/ISA계좌-중개형-서민형-일반형-유형-선택-기준' },
+    next: { title: 'ISA계좌 납입한도 이월 규정 | 연간 한도 누적 한도 관리법', href: '/w/ISA계좌-납입한도-연간-2000만원-이월-규정' },
   },
 
   stickyBar: {
@@ -76,13 +77,14 @@ const data: SpokeData = {
     ),
     hubCTA: {
       badge: '전체 가이드',
-      desc: 'ISA계좌 세금혜택, 유형 비교, 개설, 투자 전략 총정리',
+      desc: 'ISA계좌 세금혜택부터 유형 비교, 개설 방법까지 한눈에',
     },
   },
 
   toc: [
     { id: 's1', label: 'ISA계좌 가입 조건은 뭔가요?' },
     { id: 's2', label: 'ISA계좌 개설 방법은 어떻게 되나요?' },
+    { id: 'checker', label: 'ISA 가입 자격 체크' },
     { id: 's3', label: 'ISA계좌 필요 서류는 뭔가요?' },
     { id: 's4', label: 'ISA계좌 개설 절차는 어떻게 진행되나요?' },
     { id: 's-faq', label: '자주 묻는 질문' },
@@ -180,6 +182,14 @@ const data: SpokeData = {
         icon: 'check',
       },
     },
+    {
+      id: 'checker',
+      number: 'CHECK',
+      heading: 'ISA 가입 가능한지 확인해 볼까요?',
+      subtitle: '3가지만 선택하면 바로 알 수 있어요',
+      content: <ISA가입Checker />,
+    },
+
 
     {
       id: 's3',
@@ -288,10 +298,10 @@ const data: SpokeData = {
   ],
 
   relatedSpokes: [
-    { badge: '유형', title: 'ISA계좌 중개형 서민형 일반형 유형 선택 기준', desc: '운용방식별 장단점 + 최적 조합', href: '/w/ISA계좌-중개형-서민형-일반형-유형-선택-기준' },
-    { badge: '절세', title: 'ISA계좌 비과세 한도 손익통산 절세 계산', desc: '수익 구간별 절세액 + 계산기', href: '/w/ISA계좌-비과세-한도-손익통산-절세-계산' },
-    { badge: '한도', title: 'ISA계좌 납입한도 연간 2000만원 이월 규정', desc: '이월 계산법 + 한도 활용 전략', href: '/w/ISA계좌-납입한도-연간-2000만원-이월-규정' },
-    { badge: '만기', title: 'ISA계좌 만기 해지 중도인출 연금전환 방법', desc: '만기 절차 + 연금전환 세액공제', href: '/w/ISA계좌-만기-해지-중도인출-연금전환-방법' },
+    { badge: '유형', title: 'ISA계좌 중개형 서민형 일반형 | 유형별 장단점 선택 기준', desc: '운용방식별 장단점 + 최적 조합', href: '/w/ISA계좌-중개형-서민형-일반형-유형-선택-기준' },
+    { badge: '절세', title: 'ISA계좌 비과세 한도 손익통산 | 절세 효과 계산 방법', desc: '수익 구간별 절세액 + 계산기', href: '/w/ISA계좌-비과세-한도-손익통산-절세-계산' },
+    { badge: '한도', title: 'ISA계좌 납입한도 이월 규정 | 연간 한도 누적 한도 관리법', desc: '이월 계산법 + 한도 활용 전략', href: '/w/ISA계좌-납입한도-연간-2000만원-이월-규정' },
+    { badge: '만기', title: 'ISA계좌 만기 해지 중도인출 | 연금전환 세액공제 방법', desc: '만기 절차 + 연금전환 세액공제', href: '/w/ISA계좌-만기-해지-중도인출-연금전환-방법' },
   ],
 
   sources: [

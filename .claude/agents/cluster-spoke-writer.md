@@ -38,7 +38,6 @@ hooks:
 | `.claude/references/writing-rules.md` | **타이틀/메타/OG/스키마 규칙** |
 | `src/data/spoke/types.ts` | SpokeData, SpokeSection 타입 |
 | `src/components/spoke/SpokeBlocks.tsx` | 15개+ 컴포넌트 팔레트 |
-| `src/data/checker-types.ts` | CheckerConfig (체커 담당 시) |
 | `.claude/references/checker-patterns.md` | **체커 5가지 유형 코드 예시** (A자격판정/B계산/C비교/D세금공제/E구간판정) |
 
 ## import 패턴
@@ -52,8 +51,8 @@ import {
   SpokeRateBars, SpokeFlow, SpokeChecklist, SpokeWarnBox,
 } from '@/components/spoke/SpokeBlocks'
 
-// 체커 담당 스포크만:
-import type { CheckerConfig, CheckerResult } from '@/data/checker-types'
+// 체커가 있는 스포크만 (src/components/checkers/에서 import):
+// import NameChecker from '@/components/checkers/NameChecker'
 ```
 
 ## 컴포넌트 팔레트 (4종류 이상 사용 필수!)
@@ -103,8 +102,16 @@ import type { CheckerConfig, CheckerResult } from '@/data/checker-types'
 
 설계도에서 `spokes[i].has_checker: true`이면:
 
+### 1단계: 체커 컴포넌트 생성 (`src/components/checkers/`)
+
 ```tsx
-export const checkerConfig: CheckerConfig = {
+// src/components/checkers/{Name}Checker.tsx
+'use client'
+
+import GenericChecker from '@/components/GenericChecker'
+import type { CheckerConfig, CheckerResult } from '@/data/checker-types'
+
+const config: CheckerConfig = {
   title: '설계도 checker.title',
   subtitle: '설계도 checker.subtitle',
   intro: (<p>설명 (~해요체)</p>),
@@ -114,19 +121,29 @@ export const checkerConfig: CheckerConfig = {
     return { pass, headline, detail, amount?, badges, links }
   },
 }
-```
 
-그리고 sections[0]에:
-```tsx
-{
-  id: 'checker',
-  number: 'STEP 01',
-  heading: '설계도 heading',
-  subtitle: '설계도 subtitle',
-  checkerConfig,
-  content: (<p>...</p>),
+export default function NameChecker() {
+  return <GenericChecker config={config} />
 }
 ```
+
+### 2단계: 스포크에서 import + sections에 체커 섹션 추가
+
+```tsx
+import NameChecker from '@/components/checkers/NameChecker'
+
+// sections 배열 첫 번째에:
+{
+  id: 'checker',
+  number: 'CHECK',
+  heading: '질문형 제목',
+  subtitle: '간단한 설명',
+  content: <NameChecker />,
+}
+```
+
+> **금지**: `export const checkerConfig` (RSC 직렬화 500 에러!)
+> **금지**: 스포크 데이터 파일에서 `GenericChecker` 직접 import
 
 ## hero.intro 4줄 공식
 

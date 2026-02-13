@@ -44,9 +44,8 @@ hooks:
 import type { HubData } from './types'
 import { HubTable, HubTipBox, HubWarnBox, HubFormula } from '@/components/hub/HubBlocks'
 import { CalcLink } from '@/components/spoke/SpokeBlocks'
-// 체커가 있는 경우:
-import GenericChecker from '@/components/GenericChecker'
-import { checkerConfig } from '@/data/spoke/{checker-owner-spoke-slug}'
+// 체커가 있는 경우 (src/components/checkers/에서 import):
+import NameChecker from '@/components/checkers/NameChecker'
 ```
 
 ## 설계도 → TSX 매핑
@@ -61,27 +60,29 @@ import { checkerConfig } from '@/data/spoke/{checker-owner-spoke-slug}'
 | `hub.sections[].spokes_here` | `section.sectionSpoke` 배열 |
 | `hub.spoke_groups` | `data.spokeGroups` |
 | `cluster.sources` | `data.sources` |
-| `checker` | section with `<GenericChecker config={checkerConfig} />` |
+| `checker` | section with `<NameChecker />` (src/components/checkers/) |
 
 ## 체커 섹션 작성법
 
 설계도에 `checker` 블록이 있으면:
 
 ```tsx
+import NameChecker from '@/components/checkers/NameChecker'
+
 {
   id: 'checker',
   tag: 'CHECK',
   heading: '설계도의 checker.title',
   subtitle: '설계도의 checker.subtitle',
-  content: (
-    <>
-      <GenericChecker config={checkerConfig} />
-    </>
-  ),
+  content: (<><NameChecker /></>),
 },
 ```
 
-checkerConfig는 스포크 파일에서 export. 허브는 **import만** 함.
+체커 컴포넌트는 `src/components/checkers/`에 `'use client'` 래퍼로 존재.
+허브는 **import만** 함.
+
+> **금지**: `import { checkerConfig }` (RSC 직렬화 → 500 에러!)
+> **금지**: `import GenericChecker` 직접 사용 (데이터 파일에서)
 
 ## 금지 사항
 

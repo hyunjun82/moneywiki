@@ -259,9 +259,9 @@ const RULES = [
       // TSX 데이터 파일은 sections[].heading으로 H2 정의
       // FAQ 섹션, 체커 섹션 제외하고 카운트
       const headingMatches = content.match(/heading\s*:\s*['"`](?!자주 묻는 질문)[^'"`]+['"`]/g) || [];
-      // 체커 섹션 heading도 제외 (id: 'checker' 근처의 heading)
-      const checkerHeading = (content.match(/id\s*:\s*['"]checker['"]/g) || []).length;
-      const count = headingMatches.length - checkerHeading;
+      // 체커 섹션 heading도 제외 (toc + sections 양쪽에 id:'checker' 있으므로 최대 1만 차감)
+      const hasChecker = (content.match(/id\s*:\s*['"]checker['"]/g) || []).length > 0 ? 1 : 0;
+      const count = headingMatches.length - hasChecker;
       if (count !== 4) {
         return [{ line: 0, text: `섹션 heading ${count}개 발견 (4개 필요, FAQ/체커 제외)` }];
       }

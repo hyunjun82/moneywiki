@@ -105,7 +105,7 @@
 | # | 스키마 | 조건 | 필요 데이터 |
 |---|--------|------|------------|
 | 5 | **HowTo** | Steps 컴포넌트 사용 시 (신청 방법 등) | sections[].content에 Steps |
-| 6 | **WebApplication** | checkerConfig 존재 시 | checkerConfig |
+| 6 | **WebApplication** | 체커 컴포넌트 존재 시 | sections에 checker 섹션 (id='checker') |
 | 7 | **ItemList** | 허브 페이지 | spokeGroups |
 
 ### 사이트 전역 (layout.tsx, 데이터 파일 무관)
@@ -137,7 +137,7 @@
 | `faq[]` | FAQPage.mainEntity |
 | `hub.url` + `breadcrumb[]` | BreadcrumbList.itemListElement |
 | `spokeGroups[]` | ItemList.itemListElement (허브) |
-| `sections[].checkerConfig` | WebApplication 트리거 |
+| `sections[].id === 'checker'` | WebApplication 트리거 |
 | `sections[].content` (Steps) | HowTo 트리거 |
 
 ---
@@ -153,6 +153,6 @@
 □ faq: 2개 이상 (FAQPage 스키마용)
 □ sources: 2개 이상 (Article.citation용)
 □ breadcrumb: 3단계 (스포크), hub: spokeGroups 존재 (ItemList용)
-□ checkerConfig 있으면 → WebApplication 데이터 충분?
+□ 체커 섹션(id='checker') 있으면 → WebApplication 데이터 충분?
 □ Steps 사용 시 → HowTo 데이터 충분?
 ```

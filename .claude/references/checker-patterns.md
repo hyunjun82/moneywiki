@@ -1,27 +1,75 @@
 # Checker Patterns — 5가지 유형 가이드
 
-> writer 에이전트가 checkerConfig 작성 시 참조.
+> writer 에이전트가 체커 컴포넌트 작성 시 참조.
 > 가장 가까운 유형의 코드를 복사 → 주제에 맞게 수치/라벨 변경.
 
-## 필수 import (체커 담당 스포크 파일 상단)
+## RSC-Safe 패턴 (필수!)
+
+> **중요**: checkerConfig를 스포크 데이터 파일에서 export하면 안 됨!
+> evaluate 함수가 RSC 경계를 넘어가면 500 에러 발생.
+> 반드시 `src/components/checkers/` 폴더에 `'use client'` 컴포넌트로 분리.
+
+### 체커 컴포넌트 생성 (src/components/checkers/)
 
 ```tsx
-import type { CheckerConfig, CheckerResult } from '@/data/checker-types'
-```
+// src/components/checkers/{Name}Checker.tsx
+'use client'
 
-## 필수 export (같은 파일에서 export → 허브가 import)
-
-```tsx
-export const checkerConfig: CheckerConfig = { ... }
-```
-
-## 허브에서 사용 (hub TSX 파일)
-
-```tsx
 import GenericChecker from '@/components/GenericChecker'
-import { checkerConfig } from '@/data/spoke/[체커-스포크-slug]'
+import type { CheckerConfig, CheckerResult } from '@/data/checker-types'
+
+const config: CheckerConfig = {
+  title: '...',
+  subtitle: '...',
+  intro: (<p>...</p>),
+  groups: [/* ... */],
+  evaluate: (sel): CheckerResult => {
+    // 로직 구현
+    return { pass, headline, detail, amount?, badges, links }
+  },
+}
+
+export default function NameChecker() {
+  return <GenericChecker config={config} />
+}
+```
+
+### 스포크에서 사용 (spoke TSX 파일)
+
+```tsx
+import NameChecker from '@/components/checkers/NameChecker'
+
+// sections 배열 첫 번째에 체커 섹션 추가:
+{
+  id: 'checker',
+  number: 'CHECK',
+  heading: '체커 질문형 제목',
+  subtitle: '간단한 설명',
+  content: <NameChecker />,
+},
+```
+
+### 허브에서 사용 (hub TSX 파일)
+
+```tsx
+import NameChecker from '@/components/checkers/NameChecker'
 
 // sections 내 content에서:
+{
+  id: 'checker',
+  tag: 'CHECK',
+  heading: '...',
+  subtitle: '...',
+  content: (<><NameChecker /></>),
+},
+```
+
+### 금지 패턴 (500 에러 발생!)
+
+```tsx
+// ❌ 절대 하면 안 됨 — RSC 직렬화 실패
+export const checkerConfig: CheckerConfig = { evaluate: () => {...} }
+import GenericChecker from '@/components/GenericChecker'
 <GenericChecker config={checkerConfig} />
 ```
 
@@ -33,9 +81,13 @@ import { checkerConfig } from '@/data/spoke/[체커-스포크-slug]'
 **패턴**: 여러 조건 입력 → 전부 충족 시 pass, 하나라도 미충족 시 fail + 사유 표시
 
 ```tsx
-/* ── 자격판정형 체커 (실업급여 예시) ── */
+// src/components/checkers/실업급여Checker.tsx
+'use client'
 
-export const checkerConfig: CheckerConfig = {
+import GenericChecker from '@/components/GenericChecker'
+import type { CheckerConfig, CheckerResult } from '@/data/checker-types'
+
+const config: CheckerConfig = {
   title: '실업급여 자격 간편 체크',
   subtitle: '3가지만 선택하면 수급 가능성을 확인할 수 있어요',
   intro: (
@@ -125,6 +177,10 @@ export const checkerConfig: CheckerConfig = {
     }
   },
 }
+
+export default function 실업급여Checker() {
+  return <GenericChecker config={config} />
+}
 ```
 
 ### 자격판정형 커스터마이징 포인트
@@ -141,9 +197,13 @@ export const checkerConfig: CheckerConfig = {
 **패턴**: 금액/기간 입력 → 공식 적용 → 결과 금액 표시 (항상 pass)
 
 ```tsx
-/* ── 계산형 체커 (퇴직금 예시) ── */
+// src/components/checkers/퇴직금Checker.tsx
+'use client'
 
-export const checkerConfig: CheckerConfig = {
+import GenericChecker from '@/components/GenericChecker'
+import type { CheckerConfig, CheckerResult } from '@/data/checker-types'
+
+const config: CheckerConfig = {
   title: '퇴직금 간편 계산',
   subtitle: '근속연수와 월급으로 예상 퇴직금을 확인하세요',
   intro: (
@@ -202,6 +262,10 @@ export const checkerConfig: CheckerConfig = {
     }
   },
 }
+
+export default function 퇴직금Checker() {
+  return <GenericChecker config={config} />
+}
 ```
 
 ### 계산형 커스터마이징 포인트
@@ -218,7 +282,11 @@ export const checkerConfig: CheckerConfig = {
 **패턴**: 이용 패턴 입력 → 양쪽 계산 → 승자 판정
 
 ```tsx
-/* ── 비교형 체커 (교통카드 비교 예시) ── */
+// src/components/checkers/교통카드Checker.tsx
+'use client'
+
+import GenericChecker from '@/components/GenericChecker'
+import type { CheckerConfig, CheckerResult } from '@/data/checker-types'
 
 /* ── 비교 기준 데이터 ── */
 const CARDS = {
@@ -226,7 +294,7 @@ const CARDS = {
   climate:  { name: '기후동행카드', monthly: 65000 },
 }
 
-export const checkerConfig: CheckerConfig = {
+const config: CheckerConfig = {
   title: '교통카드 비교 — 뭐가 유리할까?',
   subtitle: '이용 패턴에 맞는 카드를 찾아보세요',
   intro: (
@@ -305,6 +373,10 @@ export const checkerConfig: CheckerConfig = {
     }
   },
 }
+
+export default function 교통카드Checker() {
+  return <GenericChecker config={config} />
+}
 ```
 
 ### 비교형 커스터마이징 포인트
@@ -322,13 +394,17 @@ export const checkerConfig: CheckerConfig = {
 **패턴**: 보유기간/금액 입력 → 공제율 적용 → 공제액/절세액 산출
 
 ```tsx
-/* ── 세금/공제형 체커 (장기보유특별공제 예시) ── */
+// src/components/checkers/장특공제Checker.tsx
+'use client'
+
+import GenericChecker from '@/components/GenericChecker'
+import type { CheckerConfig, CheckerResult } from '@/data/checker-types'
 
 /* ── 공제율 테이블 ── */
 const HOLD_RATE: Record<number, number> = { 3: 12, 4: 16, 5: 20, 6: 24, 7: 28, 8: 32, 9: 36, 10: 40 }
 const LIVE_RATE: Record<number, number> = { 2: 8, 3: 12, 4: 16, 5: 20, 6: 24, 7: 28, 8: 32, 9: 36, 10: 40 }
 
-export const checkerConfig: CheckerConfig = {
+const config: CheckerConfig = {
   title: '장기보유특별공제율 확인',
   subtitle: '보유·거주 기간으로 공제율을 확인하세요',
   intro: (
@@ -403,6 +479,10 @@ export const checkerConfig: CheckerConfig = {
     }
   },
 }
+
+export default function 장특공제Checker() {
+  return <GenericChecker config={config} />
+}
 ```
 
 ### 세금/공제형 커스터마이징 포인트
@@ -420,7 +500,11 @@ export const checkerConfig: CheckerConfig = {
 **패턴**: 입력값 → 구간 테이블에서 매칭 → 해당 구간/등급 표시
 
 ```tsx
-/* ── 구간판정형 체커 (종합소득세 세율 예시) ── */
+// src/components/checkers/종소세Checker.tsx
+'use client'
+
+import GenericChecker from '@/components/GenericChecker'
+import type { CheckerConfig, CheckerResult } from '@/data/checker-types'
 
 /* ── 세율 구간 테이블 (2026년) ── */
 const BRACKETS = [
@@ -434,7 +518,7 @@ const BRACKETS = [
   { limit: Infinity, rate: 45, cum: 6594, label: '8구간' },
 ]
 
-export const checkerConfig: CheckerConfig = {
+const config: CheckerConfig = {
   title: '종합소득세 세율 구간 확인',
   subtitle: '과세표준으로 적용 세율을 확인하세요',
   intro: (
@@ -500,6 +584,10 @@ export const checkerConfig: CheckerConfig = {
     }
   },
 }
+
+export default function 종소세Checker() {
+  return <GenericChecker config={config} />
+}
 ```
 
 ### 구간판정형 커스터마이징 포인트
@@ -524,4 +612,4 @@ export const checkerConfig: CheckerConfig = {
 ### 체커 불필요 (건너뛰기)
 - 순수 정보 전달 글 (역사, 제도 설명)
 - 단순 절차 안내 (신청 방법만 설명하는 글)
-- 체커 수: 허브당 1개 (owner spoke에서 export)
+- 체커 수: 모든 스포크에 1개씩 (각자 독립 컴포넌트, `src/components/checkers/`)
