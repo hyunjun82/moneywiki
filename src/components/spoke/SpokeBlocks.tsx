@@ -549,7 +549,7 @@ export function HubChecker({ title, subtitle, intro }: {
       </div>
       <div className="p-5">
         <div className="text-[13px] text-neutral-500 leading-relaxed mb-4 pb-3 border-b border-neutral-200">{intro}</div>
-        <div className="text-[13px] text-neutral-500">[체커 UI — SpokeChecker로 대체 필요]</div>
+        <div className="text-[13px] text-neutral-500">[체커 UI — checkerConfig로 GenericChecker 사용]</div>
       </div>
     </div>
   )

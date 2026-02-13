@@ -11,7 +11,7 @@ import {
   StickyBar,
 } from '@/components/spoke/SpokeBlocks'
 import SpokeFAQ from '@/components/spoke/SpokeFAQ'
-import SpokeChecker from '@/components/spoke/SpokeChecker'
+import GenericChecker from '@/components/GenericChecker'
 import SpokeTOCInline from '@/components/spoke/SpokeTOCInline'
 
 export default function SpokePageContent({ spoke, slug }: { spoke: SpokeData; slug: string }) {
@@ -142,7 +142,7 @@ export default function SpokePageContent({ spoke, slug }: { spoke: SpokeData; sl
 
               {section.content}
 
-              {section.checker && <SpokeChecker />}
+              {section.checkerConfig && <GenericChecker config={section.checkerConfig} />}
 
               {section.content === null && faq.length > 0 && <SpokeFAQ items={faq} />}
 

@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import type { CheckerConfig } from '@/data/checker-types'
 
 // --- TOC Item (인라인 정의 — SpokeTOCInline 호환) ---
 export interface TOCItem {
@@ -26,8 +27,8 @@ export interface SpokeSection {
     icon: SpokeIconName
     primary?: boolean
   }
-  /** SpokeChecker 삽입 여부 */
-  checker?: boolean
+  /** GenericChecker 설정 (주제별 맞춤) */
+  checkerConfig?: CheckerConfig
   /** PAS 브릿지 (큰 카드) */
   pasBridge?: {
     href: string

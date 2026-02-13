@@ -1,7 +1,8 @@
 import type { HubData } from './types'
 import { HubTable, HubTipBox, HubWarnBox, HubFormula } from '@/components/hub/HubBlocks'
 import { CalcLink } from '@/components/spoke/SpokeBlocks'
-import SpokeChecker from '@/components/spoke/SpokeChecker'
+import GenericChecker from '@/components/GenericChecker'
+import { checkerConfig } from '@/data/spoke/기초생활수급자-1인가구-생계급여-조건-소득인정액'
 
 const data: HubData = {
   slug: '기초생활수급자-조건-총정리',
@@ -246,7 +247,7 @@ const data: HubData = {
       subtitle: '3가지 선택하면 4가지 급여를 한번에 비교해요',
       content: (
         <>
-          <SpokeChecker />
+          <GenericChecker config={checkerConfig} />
         </>
       ),
     },
