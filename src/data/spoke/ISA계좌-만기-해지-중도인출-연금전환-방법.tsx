@@ -63,7 +63,7 @@ const data: SpokeData = {
     badge: '2026년 기준',
     h1: (
       <>
-        ISA계좌 <span className="text-[#1E3A5F]">만기 해지</span>와 연금전환 방법
+        ISA계좌 만기 해지 중도인출 | <span className="text-[#1E3A5F]">연금전환</span> 세액공제 방법
       </>
     ),
     intro: (
@@ -123,9 +123,9 @@ const data: SpokeData = {
         </>
       ),
       pasBridge: {
-        href: '#s2',
-        question: '만기 후 해지 절차가 복잡하진 않을까요?',
-        answer: <>앱에서 5분이면 끝나요. 다만 만기 해지와 중도해지의 세금 차이는 꼭 알아두세요.</>,
+        href: '/w/ISA계좌-비과세-한도-손익통산-절세-계산',
+        question: '만기 해지 시 비과세 혜택이 정확히 얼마인지 아시나요?',
+        answer: <>서민형 400만원, 일반형 200만원까지 세금 0원이에요. 손익통산으로 실제 절세액을 계산해 보세요.</>,
         buttonText: '해지 절차 보기 →',
       },
     },
@@ -168,9 +168,9 @@ const data: SpokeData = {
         </>
       ),
       bridgeCTA: {
-        href: '#s3',
-        badge: '중도인출',
-        title: '해지 없이 원금만 빼는 방법이 있어요',
+        href: '/w/ISA계좌-납입한도-연간-2000만원-이월-규정',
+        badge: '한도',
+        title: '해지 전에 납입한도와 이월 규정 확인하세요',
         desc: '급하게 돈이 필요할 때 패널티 없이 원금만 인출하는 방법을 알려드려요.',
         icon: 'calc',
       },
@@ -223,9 +223,9 @@ const data: SpokeData = {
         </>
       ),
       pasBridge: {
-        href: '#s4',
-        question: '해지 말고 연금으로 전환하면 혜택이 더 있을까요?',
-        answer: <>만기 후 60일 이내에 연금전환하면 세액공제 최대 300만원을 추가로 받을 수 있어요.</>,
+        href: '/w/ISA계좌-가입-조건-개설-방법-필요-서류',
+        question: '해지 후 재가입하려면 조건이 어떻게 되나요?',
+        answer: <>ISA는 해지 후 바로 재가입 가능해요. 개설 조건, 증권사 선택, 필요 서류를 한 번에 확인하세요.</>,
         buttonText: '연금전환 혜택 보기 →',
       },
     },

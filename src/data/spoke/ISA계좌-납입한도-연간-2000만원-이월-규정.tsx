@@ -61,7 +61,7 @@ const data: SpokeData = {
     badge: '2026년 기준',
     h1: (
       <>
-        ISA계좌 <span className="text-[#1E3A5F]">납입한도</span>와 이월 규정
+        ISA계좌 납입한도 이월 규정 | <span className="text-[#1E3A5F]">연간 2,000만원</span> 한도 관리법
       </>
     ),
     intro: (
@@ -125,9 +125,9 @@ const data: SpokeData = {
         </>
       ),
       pasBridge: {
-        href: '#s2',
-        question: '매년 한도가 리셋되면 월 얼마씩 넣는 게 좋을까요?',
-        answer: <>월별 제한은 없지만, 자동이체를 잘 설정하면 한도를 빠짐없이 채울 수 있어요.</>,
+        href: '/w/ISA계좌-가입-조건-개설-방법-필요-서류',
+        question: '아직 ISA를 안 만들었다면 개설부터 하세요',
+        answer: <>만 19세 이상이면 앱에서 5분이면 개설 끝이에요. 증권사별 수수료 비교까지 정리했어요.</>,
         buttonText: '납입 전략 보기 →',
       },
     },
@@ -165,9 +165,9 @@ const data: SpokeData = {
         </>
       ),
       bridgeCTA: {
-        href: '#s3',
-        badge: '이월',
-        title: '올해 한도를 못 채우면 다음 해로 넘어갈까요?',
+        href: '/w/ISA계좌-비과세-한도-손익통산-절세-계산',
+        badge: '절세',
+        title: '한도를 채우면 절세 효과가 얼마나 될까요?',
         desc: '2021년 개정으로 미사용 한도가 이월 가능해졌어요. 이월 계산법을 확인하세요.',
         icon: 'info',
       },
@@ -215,9 +215,9 @@ const data: SpokeData = {
         </>
       ),
       pasBridge: {
-        href: '#s4',
-        question: '이월을 계속하면 누적으로는 얼마까지 넣을 수 있을까요?',
-        answer: <>매년 2,000만원씩 채우면 5년에 1억원, 그 이후에는 추가 납입이 막혀요.</>,
+        href: '/w/ISA계좌-만기-해지-중도인출-연금전환-방법',
+        question: '한도를 다 채웠으면 만기 전략을 세워야 해요',
+        answer: <>3년 만기 해지, 연장, 연금전환 중 뭐가 유리한지 비교해 보세요. 연금전환하면 세액공제 최대 300만원이에요.</>,
         buttonText: '누적한도 확인 →',
       },
     },

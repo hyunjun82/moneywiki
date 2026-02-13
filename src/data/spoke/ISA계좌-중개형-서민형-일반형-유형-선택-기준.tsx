@@ -66,7 +66,7 @@ const data: SpokeData = {
     badge: '2026년 기준',
     h1: (
       <>
-        ISA계좌 <span className="text-[#1E3A5F]">중개형 서민형 일반형</span> 유형 선택 기준
+        ISA계좌 중개형 서민형 일반형 | <span className="text-[#1E3A5F]">유형별 차이</span>와 선택 기준
       </>
     ),
     intro: (
@@ -134,9 +134,9 @@ const data: SpokeData = {
         </>
       ),
       pasBridge: {
-        href: '#s2',
-        question: '운용 방식은 정했는데, 서민형 조건이 되는지 궁금하시죠?',
-        answer: <>작년 총급여가 5,000만원 이하면 서민형이에요. 비과세 한도가 <strong>2배(400만원)</strong>로 늘어나요.</>,
+        href: '/w/ISA계좌-비과세-한도-손익통산-절세-계산',
+        question: '유형을 골랐으면 비과세 한도가 얼마인지 확인하세요',
+        answer: <>서민형 400만원, 일반형 200만원까지 세금 0원이에요. 손익통산까지 적용하면 절세 효과가 더 커져요.</>,
         buttonText: '서민형 조건 확인 →',
       },
     },
@@ -175,9 +175,9 @@ const data: SpokeData = {
         </>
       ),
       bridgeCTA: {
-        href: '#s3',
-        badge: '일반형',
-        title: '서민형 조건이 안 되면 일반형밖에 없나요?',
+        href: '/w/ISA계좌-가입-조건-개설-방법-필요-서류',
+        badge: '개설',
+        title: '유형을 정했으면 바로 개설해 볼까요?',
         desc: '일반형도 200만원 비과세 + 9.9% 분리과세라서 일반 계좌보다 훨씬 유리해요.',
         icon: 'info',
       },
@@ -209,9 +209,9 @@ const data: SpokeData = {
         </>
       ),
       pasBridge: {
-        href: '#s4',
-        question: '그래서 나한테 맞는 조합이 뭘까요?',
-        answer: <>운용 방식(중개형/신탁형) + 소득 기준(서민형/일반형) 조합별 추천을 정리했어요.</>,
+        href: '/w/ISA계좌-납입한도-연간-2000만원-이월-규정',
+        question: '유형 선택이 끝났으면 납입한도를 확인하세요',
+        answer: <>연간 2,000만원, 누적 1억원까지 넣을 수 있어요. 못 채운 한도는 다음 해로 이월돼요.</>,
         buttonText: '최적 조합 찾기 →',
       },
     },

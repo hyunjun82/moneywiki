@@ -66,7 +66,7 @@ const data: SpokeData = {
     badge: '2026년 기준',
     h1: (
       <>
-        ISA계좌 <span className="text-[#1E3A5F]">가입 조건</span>과 개설 방법
+        ISA계좌 가입 조건 개설 방법 | <span className="text-[#1E3A5F]">필요 서류</span>와 증권사 비교
       </>
     ),
     intro: (
@@ -125,9 +125,9 @@ const data: SpokeData = {
         </>
       ),
       pasBridge: {
-        href: '#s2',
-        question: '조건은 됐으니, 어디서 만드는 게 좋을까요?',
-        answer: <>증권사마다 수수료가 다르고, 은행은 주식을 직접 못 사요. 선택에 따라 수년간 수만 원 차이가 나요.</>,
+        href: '/w/ISA계좌-중개형-서민형-일반형-유형-선택-기준',
+        question: '개설 전에 유형부터 정해야 해요',
+        answer: <>중개형·신탁형·일임형 중 뭘 고를지, 서민형 조건이 되는지 먼저 확인하세요. 유형마다 비과세 한도가 달라요.</>,
         buttonText: '개설 방법 확인 →',
       },
     },
@@ -173,9 +173,9 @@ const data: SpokeData = {
         </>
       ),
       bridgeCTA: {
-        href: '#s3',
-        badge: '서류',
-        title: '개설할 때 뭘 준비해야 하나요?',
+        href: '/w/ISA계좌-납입한도-연간-2000만원-이월-규정',
+        badge: '한도',
+        title: '개설했으면 납입한도부터 확인하세요',
         desc: '일반형은 신분증만, 서민형은 소득증명원 1장만 추가로 있으면 돼요.',
         icon: 'check',
       },
@@ -232,9 +232,9 @@ const data: SpokeData = {
         </>
       ),
       pasBridge: {
-        href: '#s4',
-        question: '서류 준비됐으면 바로 만들 수 있어요',
-        answer: <>앱 설치부터 첫 투자까지 전체 절차를 순서대로 정리했어요.</>,
+        href: '/w/ISA계좌-비과세-한도-손익통산-절세-계산',
+        question: '개설하고 나면 절세 효과가 궁금하시죠?',
+        answer: <>비과세 한도와 손익통산으로 얼마나 아낄 수 있는지, 실제 계산 예시로 확인해 보세요.</>,
         buttonText: '개설 절차 확인 →',
       },
     },

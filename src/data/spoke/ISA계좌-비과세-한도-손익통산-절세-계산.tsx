@@ -67,7 +67,7 @@ const data: SpokeData = {
     badge: '2026년 기준',
     h1: (
       <>
-        ISA계좌 <span className="text-[#1E3A5F]">비과세 한도</span>와 손익통산 절세 계산
+        ISA계좌 비과세 한도 손익통산 | <span className="text-[#1E3A5F]">절세 효과</span> 계산 방법
       </>
     ),
     intro: (
@@ -123,9 +123,9 @@ const data: SpokeData = {
         </>
       ),
       pasBridge: {
-        href: '#s2',
-        question: '주식에서 손해 본 건 세금에 반영이 안 될까요?',
-        answer: <>ISA만의 특별한 장점이 있어요. 손실과 수익을 상계하는 <strong>손익통산</strong>이 적용돼요.</>,
+        href: '/w/ISA계좌-중개형-서민형-일반형-유형-선택-기준',
+        question: '비과세 한도가 유형마다 다르다는 거 아셨나요?',
+        answer: <>서민형은 400만원, 일반형은 200만원이에요. 내 소득에 맞는 유형을 골라야 절세 효과가 달라져요.</>,
         buttonText: '손익통산 알아보기 →',
       },
     },
@@ -233,9 +233,9 @@ const data: SpokeData = {
         </>
       ),
       pasBridge: {
-        href: '#s4',
-        question: '실제로 세금이 어떻게 계산되는지 궁금하시죠?',
-        answer: <>만기 해지 시 배당·이자를 합산하고 비과세 한도를 빼는 방식이에요. 자동으로 계산되니까 복잡하지 않아요.</>,
+        href: '/w/ISA계좌-만기-해지-중도인출-연금전환-방법',
+        question: '비과세 혜택은 만기 해지해야 받을 수 있어요',
+        answer: <>3년 의무기간을 채워야 비과세가 적용돼요. 만기 해지 절차와 연금전환 세액공제까지 확인하세요.</>,
         buttonText: '세금 계산 방법 →',
       },
     },
