@@ -247,6 +247,48 @@ const RULES = [
     fix: 'CheckerConfig/evaluate 로직을 src/components/checkers/ "use client" 컴포넌트로 이동',
   },
 
+  // ── 인라인 내부링크 규칙 (나무위키 방식) ──
+  {
+    id: 'LINK-001',
+    severity: 'ERROR',
+    component: '인라인링크',
+    description: '본문 인라인 내부링크 2개 미만 (최소 2개 필수)',
+    test: (content) => {
+      const matches = content.match(/<a\s+href="\/w\/[^"]+"/g) || [];
+      if (matches.length < 2) {
+        return [{ line: 0, text: `인라인 내부링크 ${matches.length}개 발견 (최소 2개 필요)` }];
+      }
+      return [];
+    },
+    fix: '본문 <p> 안에서 형제 스포크/허브 키워드에 <a href="/w/슬러그">키워드</a> 추가 (최소 2개)',
+  },
+  {
+    id: 'LINK-002',
+    severity: 'WARNING',
+    component: '인라인링크',
+    description: '동일 슬러그 중복 인라인 링크 (첫 등장에만 링크)',
+    test: (content) => {
+      const matches = [];
+      const regex = /<a\s+href="\/w\/([^"]+)"/g;
+      const seen = {};
+      let m;
+      while ((m = regex.exec(content)) !== null) {
+        const slug = m[1];
+        if (seen[slug]) {
+          const line = content.substring(0, m.index).split('\n').length;
+          matches.push({
+            line,
+            text: `"/w/${slug}" 중복 링크 (첫 등장: L${seen[slug]})`,
+          });
+        } else {
+          seen[slug] = content.substring(0, m.index).split('\n').length;
+        }
+      }
+      return matches;
+    },
+    fix: '동일 슬러그는 첫 등장에만 <a> 링크, 이후는 일반 텍스트로',
+  },
+
   // ── 구조 규칙 ──
   {
     id: 'STRUCT-001',
