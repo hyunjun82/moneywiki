@@ -1,268 +1,392 @@
-import Link from 'next/link'
-import type { SpokeData } from './types'
-import { SpokeTable, SpokeTimeline, SpokeChecklist, SpokeStepCards, SpokeFlow, SpokeRateBars, FormulaBox, RateCards } from '@/components/spoke/SpokeBlocks'
+import type { SpokeData } from '@/data/spoke/types'
+import {
+  SpokeTable,
+  FormulaBox,
+  TipBox,
+  SpokeCompareCards,
+  SpokeFlow,
+  SpokeChecklist,
+  SpokeWarnBox,
+  SpokeStepCards,
+} from '@/components/spoke/SpokeBlocks'
 
-// --- Table data ---
-const TAX_COMPARISON_ROWS = [
-  ['실업급여', '비과세', '0원', '불필요', '신고 제외'],
-  ['근로소득', '과세', '원천징수', '필수', '연말정산 대상'],
-  ['사업소득', '과세', '종합소득세', '필수', '종합소득세 신고'],
-]
-
-// --- Spoke Data ---
 const data: SpokeData = {
   slug: '실업급여-세금-건강보험-국민연금-처리',
 
   meta: {
-    title: '실업급여 세금 건강보험 국민연금 처리 | 수급 중 4대보험 납부 방법',
-    description: '실업급여 받으면 세금 내야 하나요? 건강보험료 감면, 국민연금 납부유예, 실업크레딧까지 정리했어요',
-    keywords: ['실업급여 세금 건강보험 국민연금 처리', '실업급여 비과세 연말정산 신고', '실업급여 건강보험료 감면 신청', '실업급여 국민연금 납부유예 실업크레딧'],
-    ogTitle: '실업급여 세금 건강보험 국민연금 처리 | 수급 중 4대보험 납부 방법 | 머니위키',
-    ogDescription: '세금 비과세부터 4대보험 처리까지 한 번에.',
+    title: '실업급여 세금 비과세 건강보험 국민연금 처리 | 4대보험 납부 방법',
+    description: '실업급여는 소득세 0원 비과세예요. 건강보험 임의계속가입과 국민연금 실업크레딧 신청 방법을 정리했어요.',
+    keywords: [
+      '실업급여 세금 과세 비과세',
+      '실업급여 건강보험료 납부 방법',
+      '실업급여 국민연금 납부 유예',
+      '실업급여 수급 중 4대보험 처리',
+    ],
+    ogTitle: '실업급여 세금 비과세 건강보험 국민연금 처리 | 머니위키',
+    ogDescription: '실업급여 비과세, 건강보험료 줄이는 법, 국민연금 실업크레딧까지.',
   },
 
   hub: {
-    url: '/w/실업급여-신청-조건-금액-기간-총정리',
-    name: '실업급여 총정리',
+    url: '/w/실업급여-수급-조건-신청-방법-2026',
+    name: '실업급여 수급 조건 신청 방법 2026',
   },
 
-  breadcrumb: ['실업급여', '세금 4대보험'],
+  breadcrumb: ['고용·노동', '실업급여', '세금·4대보험'],
+
+  summary3: [
+    <>실업급여(구직급여)는 <strong>비과세 소득</strong>이라서 소득세 0원, 연말정산에도 포함 안 돼요</>,
+    <>퇴직 후 건강보험은 <strong>임의계속가입</strong>(최대 36개월)이나 피부양자 등록으로 보험료를 줄일 수 있어요</>,
+    <>국민연금 <strong>실업크레딧</strong>을 신청하면 보험료의 75%를 국가가 지원해요 (최대 12개월)</>,
+  ],
+
+  sourceBar: {
+    badge: '출처',
+    name: '소득세법 제12조 · 고용보험법',
+    date: '2026.02',
+  },
+
+  prevNext: {
+    prev: { title: '실업급여 지급일 첫 입금일 대기기간', href: '/w/실업급여-지급일-첫-입금일-대기기간' },
+    next: { title: '실업급여 고용센터 찾기 고용24 사용법', href: '/w/실업급여-고용센터-찾기-고용24-사용법' },
+  },
+
+  stickyBar: {
+    topLabel: '실업급여 세금',
+    value: '비과세 0원',
+    buttonText: '4대보험 처리 보기',
+    scrollTo: '#s4',
+  },
 
   hero: {
     badge: '2026년 기준',
-    h1: <><span className="text-[#1E3A5F]">실업급여 세금</span> 건강보험 국민연금 처리</>,
+    h1: (
+      <>
+        <span className="text-[#1E3A5F]">실업급여 세금</span> 건강보험 국민연금 처리
+      </>
+    ),
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
-          실업급여 받으면 세금도 내야 하는지, 건강보험료는 어떻게 되는지 헷갈리셨죠?
+          퇴직하고 실업급여를 받으면 세금은 어떻게 되는지, 건강보험료는 얼마나 나오는지 걱정되셨다면 잘 오셨어요.
         </p>
         <p className="text-base text-neutral-500 leading-relaxed mt-3">
-          <strong className="text-neutral-800">실업급여는 비과세</strong>라서 소득세를 안 내도 되고, 연말정산에도 신고하지 않아요.
-          하지만 <strong className="text-neutral-800">건강보험료는 감면 신청</strong>을 해야 하고, <strong className="text-neutral-800">국민연금은 납부유예나 실업크레딧</strong>을 신청할 수 있어요.
-          <a href="https://www.law.go.kr/법령/소득세법" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">소득세법 제12조</a>에서 실업급여를 비과세 소득으로 정하고 있어요.
+          <strong className="text-neutral-800">실업급여는 비과세 소득</strong>이라서 소득세가 0원이에요. <a href="https://www.law.go.kr/법령/소득세법" target="_blank" rel="noopener noreferrer" className="text-[#4A7AB5] underline">소득세법 제12조</a>에서 고용보험법에 따른 실업급여를 비과세로 정하고 있어요. 건강보험료는 <strong className="text-neutral-800">임의계속가입</strong>으로 최대 36개월 직장 시절 보험료를 유지할 수 있고, 국민연금은 <strong className="text-neutral-800">실업크레딧</strong>으로 75%를 국가가 지원해요.
         </p>
         <p className="text-base text-neutral-500 leading-relaxed mt-3">
-          쉽게 말해서, 실업급여 자체로는 세금 걱정 없지만 건강보험료와 국민연금은 별도로 신청해야 혜택을 받을 수 있어요.
-        </p>
-        <p className="text-base text-neutral-500 leading-relaxed mt-3">
-          먼저 실업급여 세금 처리부터 확인해볼게요.
+          먼저 실업급여가 왜 비과세인지부터 볼게요.
         </p>
       </>
     ),
     hubCTA: {
       badge: '실업급여',
-      desc: '실업급여 총정리 전체 보기',
+      desc: '실업급여 수급 조건·신청 방법·금액 전체 보기',
     },
   },
 
   toc: [
-    { id: 's1', text: '실업급여 비과세 처리와 연말정산' },
-    { id: 'tbl1', text: '소득 유형별 세금 처리 비교', sub: true },
-    { id: 's2', text: '건강보험료 감면 신청 방법 기준' },
-    { id: 's3', text: '국민연금 납부유예와 실업크레딧' },
-    { id: 's4', text: '실업급여 수급 중 4대보험 정리' },
-    { id: 's5', text: '자주 묻는 질문' },
+    { id: 's1', label: '실업급여 세금은 비과세인가요?' },
+    { id: 's2', label: '실업급여 건강보험료는 어떻게 납부하나요?' },
+    { id: 's3', label: '실업급여 국민연금은 납부 유예되나요?' },
+    { id: 's4', label: '실업급여 수급 중 4대보험은 어떻게 처리하나요?' },
+    { id: 's-faq', label: '자주 묻는 질문' },
   ],
 
   sections: [
-    // --- Section 01: 비과세 → SpokeTable + SpokeTimeline ---
+    /* ── S1: 실업급여 비과세 ── */
     {
       id: 's1',
       number: '01',
-      heading: '실업급여 비과세 처리와 연말정산',
-      subtitle: '소득세 0원, 연말정산 신고 불필요해요',
+      heading: '실업급여 세금은 비과세인가요?',
+      subtitle: '소득세법 제12조에 따라 소득세 0원이에요',
       content: (
         <>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            <strong>실업급여(구직급여)</strong>는 <strong>비과세 소득</strong>이라서 소득세를 전혀 내지 않아요.
-            소득세법 제12조 5호에서 "고용보험법에 따른 실업급여"를 비과세 소득으로 명시하고 있어요.
-            연말정산이나 종합소득세 신고에도 포함하지 않아요.
+            실업급여(구직급여)는 <strong>비과세 소득</strong>이에요. 소득세법 제12조에서 고용보험법에 따라 받는 실업급여를 비과세 소득으로 명시하고 있어요. 매달 150만원을 받아도 소득세가 한 푼도 빠지지 않아요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            예를 들어 실업급여로 월 150만원을 받아도, 이 금액에서 소득세·지방소득세가 한 푼도 빠지지 않아요.
-            <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">국세청</a> 홈택스에서도 실업급여는 소득으로 조회되지 않아요.
-            근로소득이나 사업소득과는 완전히 다르게 취급돼요.
+            연말정산이나 종합소득세 신고에도 포함하지 않아요. <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer" className="text-[#4A7AB5] underline">국세청</a> 홈택스에서도 실업급여는 소득으로 조회되지 않아요. 원천징수도 없고, 지방소득세도 없어요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            만약 실업급여를 받다가 중간에 재취업해서 근로소득이 생기면, 근로소득에 대해서만 연말정산을 하면 돼요.
-            실업급여 기간은 제외하고 계산해요.
+            다만 실업급여를 받다가 중간에 재취업해서 근로소득이 생기면, 그 근로소득에 대해서만 연말정산을 하면 돼요. 실업급여 기간은 빼고 계산해요.
+          </p>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            다른 소득과 어떻게 다른지 비교표로 정리했어요.
           </p>
 
           <SpokeTable
-            id="tbl1"
+            id="tbl-tax"
             title="소득 유형별 세금 처리 비교"
             subtitle="2026년 기준"
-            headers={['소득 유형', '과세 여부', '세금 처리', '연말정산', '비고']}
-            rows={TAX_COMPARISON_ROWS}
-            highlightCol={1}
+            headers={['소득 유형', '과세 여부', '세금', '연말정산']}
+            rows={[
+              ['실업급여(구직급여)', '비과세', '0원', '신고 불필요'],
+              ['근로소득', '과세', '원천징수', '연말정산 대상'],
+              ['사업소득', '과세', '종합소득세', '종합소득세 신고'],
+              ['퇴직소득', '과세', '퇴직소득세', '분리과세'],
+            ]}
+            highlightCol={0}
           />
 
-          <SpokeTimeline events={[
-            { month: '퇴직', title: '회사 퇴직', desc: '근로소득 종료' },
-            { month: '실업급여 수급', title: '구직급여 수령', desc: '비과세 소득', status: 'current' },
-            { month: '재취업', title: '새 회사 입사', desc: '근로소득 재개' },
-            { month: '연말정산', title: '재취업 회사에서 진행', desc: '실업급여 기간 제외' },
-          ]} />
+          <TipBox title="퇴직금과 실업급여는 세금이 달라요">
+            <p>퇴직금은 퇴직소득세가 원천징수돼요. 하지만 실업급여는 비과세라서 세금이 전혀 없어요. <a href="/w/실업급여-금액-계산-연봉별-수령액" className="text-[#4A7AB5] hover:underline">실업급여 금액 계산</a>이 궁금하다면 따로 정리해뒀어요.</p>
+          </TipBox>
 
-          <p className="text-neutral-600 mb-0">세금은 안 내도 되는 건 알겠는데, 건강보험료는 어떻게 되는지 궁금해지잖아요.</p>
+          <p className="text-neutral-600 mb-0">
+            세금은 걱정 없는데, 건강보험료가 갑자기 많이 나올까 봐 불안하잖아요.
+          </p>
         </>
       ),
-      bridgeCTA: { href: '#s2', badge: '건강보험', title: '건강보험료 감면받을 수 있나요?', desc: '감면 신청 방법', icon: 'grid' },
+      bridgeCTA: {
+        href: '#s2',
+        badge: '건강보험',
+        title: '건강보험료는 얼마나 나오나요?',
+        desc: '임의계속가입으로 보험료를 줄이는 방법이 있어요',
+        icon: 'calc',
+      },
     },
 
-    // --- Section 02: 건강보험 감면 → SpokeChecklist + SpokeStepCards ---
+    /* ── S2: 건강보험 ── */
     {
       id: 's2',
       number: '02',
-      heading: '건강보험료 감면 신청 방법 기준',
-      subtitle: '지역가입자는 최대 50% 감면 가능해요',
+      heading: '실업급여 건강보험료는 어떻게 납부하나요?',
+      subtitle: '임의계속가입 또는 피부양자 등록으로 부담을 줄이세요',
       content: (
         <>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            실업급여를 받는 동안 건강보험은 <strong>지역가입자</strong>로 자동 전환돼요.
-            직장가입자였다가 퇴직하면 지역가입자가 되는데, 이때 <strong>건강보험료 감면 제도</strong>를 신청하면 보험료를 최대 50%까지 줄일 수 있어요.
-            <a href="https://www.nhis.or.kr" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">국민건강보험공단</a>에서 운영하는 제도예요.
+            직장을 그만두면 건강보험이 <strong>지역가입자</strong>로 자동 전환돼요. 지역가입자 보험료는 소득, 재산, 자동차 등을 기준으로 산정하는데, 직장가입자 때보다 보험료가 더 나올 수 있어요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            감면 신청은 실업급여 수급 사실을 증명하는 <strong>실업급여 수급자 확인서</strong>를 발급받아서 건강보험공단에 제출하면 돼요.
-            고용24 홈페이지에서 온라인으로 발급받을 수 있어요.
-            신청 후 1~2주 내에 감면이 적용돼요.
+            이때 <strong>임의계속가입</strong>을 신청하면 퇴직 전 직장에서 내던 보험료 수준을 최대 <strong>36개월</strong> 유지할 수 있어요. 단, 회사 부담분까지 본인이 전액 내야 하지만 지역보험료보다 적으면 이득이에요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            단, 감면은 <strong>실업급여 수급 기간 동안만</strong> 적용되고, 재취업하면 자동으로 해제돼요.
-            가구 소득이나 재산 기준을 초과하면 감면율이 낮아지거나 감면이 안 될 수 있어요.
+            임의계속가입은 퇴직 전 18개월 중 <strong>1년 이상</strong> 직장가입자였던 사람만 신청할 수 있어요. 첫 지역보험료 고지서를 받은 뒤 <strong>2개월 이내</strong>에 <a href="https://www.nhis.or.kr" target="_blank" rel="noopener noreferrer" className="text-[#4A7AB5] underline">국민건강보험공단</a>에 신청하면 돼요.
           </p>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            배우자나 부모님이 직장가입자라면 <strong>피부양자</strong>로 등록하는 방법도 있어요. 피부양자가 되면 보험료가 0원이에요. 다만 연소득 2,000만원 이하, 재산세 과세표준 5.4억원 이하 등 조건을 충족해야 해요.
+          </p>
+
+          <SpokeCompareCards cards={[
+            {
+              title: '임의계속가입',
+              subtitle: '최대 36개월',
+              items: [
+                '직장 시절 보험료 유지',
+                '본인이 전액 부담 (회사분 포함)',
+                '지역보험료보다 적으면 유리',
+                '퇴직 전 1년 이상 직장가입 필수',
+              ],
+              recommended: true,
+              recLabel: '보험료 절약에 유리',
+            },
+            {
+              title: '지역가입자 전환',
+              subtitle: '자동 전환',
+              items: [
+                '소득·재산·자동차 기준 산정',
+                '재산이 많으면 보험료 높음',
+                '별도 신청 없이 자동 적용',
+                '보험료 조정 신청 가능',
+              ],
+            },
+            {
+              title: '피부양자 등록',
+              subtitle: '보험료 0원',
+              items: [
+                '가족 직장가입자에 등록',
+                '연소득 2,000만원 이하 조건',
+                '재산세 5.4억원 이하 조건',
+                '조건 충족 시 가장 유리',
+              ],
+            },
+          ]} />
 
           <SpokeChecklist items={[
-            { text: '실업급여 수급자 확인서 발급', done: true },
-            { text: '건강보험공단 방문 또는 온라인 신청', done: true },
-            { text: '최대 50% 감면 (소득·재산 기준)', done: true },
-            { text: '재취업 시 자동 해제', done: false, note: '직장가입자 전환' },
+            { text: '퇴직 전 18개월 중 1년 이상 직장가입자 확인', done: true },
+            { text: '첫 지역보험료 고지 후 2개월 이내 신청', done: true, note: '기한 엄수' },
+            { text: '건강보험공단 지사 방문 또는 온라인 신청', done: true },
+            { text: '임의계속 vs 지역가입 보험료 비교 확인', done: false, note: '공단 문의' },
           ]} />
 
-          <SpokeStepCards steps={[
-            { title: '확인서 발급', desc: '고용24에서 수급자 확인서 다운', tip: '온라인 발급' },
-            { title: '신청서 작성', desc: '건강보험료 감면 신청서', tip: '공단 홈페이지' },
-            { title: '서류 제출', desc: '건강보험공단 지사 방문 or 우편', tip: '온라인 가능' },
-            { title: '심사·승인', desc: '1~2주 내 감면 적용', tip: '소득·재산 기준 확인' },
-            { title: '고지서 확인', desc: '감면 적용된 보험료 납부', tip: '재취업 시 자동 해제' },
-          ]} />
-
-          <p className="text-neutral-600 mb-0">건강보험료 감면은 신청했는데, 국민연금은 어떻게 해야 하는지 궁금해질 수 있어요.</p>
+          <p className="text-neutral-600 mb-0">
+            건강보험은 정리했는데, 국민연금도 계속 내야 하는지 궁금해지죠.
+          </p>
         </>
       ),
-      bridgeCTA: { href: '#s3', badge: '국민연금', title: '국민연금도 납부 안 해도 되나요?', desc: '납부유예와 실업크레딧', icon: 'info' },
+      bridgeCTA: {
+        href: '#s3',
+        badge: '국민연금',
+        title: '국민연금은 안 내도 되나요?',
+        desc: '납부예외와 실업크레딧 중 선택할 수 있어요',
+        icon: 'info',
+      },
     },
 
-    // --- Section 03: 국민연금 → SpokeFlow + SpokeRateBars ---
+    /* ── S3: 국민연금 ── */
     {
       id: 's3',
       number: '03',
-      heading: '국민연금 납부유예와 실업크레딧',
-      subtitle: '납부유예 신청하면 나중에 추납 가능해요',
+      heading: '실업급여 국민연금은 납부 유예되나요?',
+      subtitle: '납부예외 또는 실업크레딧 중 선택할 수 있어요',
       content: (
         <>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            실업급여를 받는 동안 국민연금은 <strong>지역가입자</strong>로 전환되는데, 보험료 부담이 크면 <strong>납부유예</strong>를 신청할 수 있어요.
-            납부유예를 신청하면 실업 기간 동안 보험료를 안 내도 되고, 나중에 재취업한 후 <strong>추납</strong>할 수 있어요.
-            <a href="https://www.nps.or.kr" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">국민연금공단</a>에서 신청할 수 있어요.
+            퇴직하면 국민연금도 <strong>지역가입자</strong>로 전환되는데, 소득이 없으면 <strong>납부예외</strong>를 신청할 수 있어요. 납부예외를 신청하면 보험료를 안 내도 되지만, 그 기간은 연금 가입기간에 포함되지 않아서 나중에 연금액이 줄어들어요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            또 다른 제도는 <strong>실업크레딧</strong>인데, 이건 실업 기간 동안 보험료를 안 내도 나중에 연금 계산할 때 납부한 것으로 인정해주는 제도예요.
-            최대 12개월까지 인정되고, 평균소득월액의 50% 수준으로 계산돼요.
-            국민연금 가입기간이 18개월 이상이어야 신청할 수 있어요.
+            더 좋은 방법은 <strong>실업크레딧</strong>이에요. 구직급여 수급자가 신청하면 국가가 보험료의 <strong>75%</strong>를 지원하고, 본인은 <strong>25%</strong>만 내면 돼요. 인정소득 70만원 기준으로 월 보험료 63,000원 중 <strong>본인부담은 15,750원</strong>이에요. 최대 <strong>12개월</strong>까지 지원받을 수 있어요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            납부유예와 실업크레딧은 동시에 신청할 수 없고, 둘 중 하나를 선택해야 해요.
-            실업크레딧이 나중에 연금액이 더 높아질 가능성이 있어요.
-          </p>
-
-          <SpokeFlow steps={[
-            { icon: '🏢', label: '퇴직', sub: '직장가입자 → 지역가입자' },
-            { icon: '📋', label: '납부유예 신청', sub: '국민연금공단' },
-            { icon: '✅', label: '유예 승인', sub: '실업 기간 동안 미납' },
-            { icon: '💼', label: '재취업', sub: '직장가입자 복귀' },
-            { icon: '💰', label: '추납', sub: '원하면 나중에' },
-          ]} />
-
-          <SpokeRateBars bars={[
-            { label: '납부유예 (추납 가능)', rate: '추천', width: '80%' },
-            { label: '실업크레딧 (최대 12개월)', rate: '연금액 유리', width: '100%' },
-            { label: '계속 납부 (부담 큼)', rate: '선택', width: '40%' },
-          ]} />
-
-          <p className="text-neutral-600 mb-0">국민연금 처리 방법을 알았으니, 실업급여 수급 중 4대보험을 전체적으로 정리해봐야죠.</p>
-        </>
-      ),
-      bridgeCTA: { href: '#s4', badge: '4대보험', title: '4대보험 전체 정리하면?', desc: '실업급여 수급 중 처리', icon: 'info' },
-    },
-
-    // --- Section 04: 4대보험 정리 → FormulaBox + RateCards ---
-    {
-      id: 's4',
-      number: '04',
-      heading: '실업급여 수급 중 4대보험 정리',
-      subtitle: '고용·산재는 없고, 건강보험·국민연금만 처리하세요',
-      content: (
-        <>
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            실업급여를 받는 동안 <strong>4대보험</strong> 처리는 다음과 같아요.
-            <strong>고용보험</strong>과 <strong>산재보험</strong>은 직장가입자만 내는 거라서 퇴직하면 자동으로 없어져요.
-            <strong>건강보험</strong>과 <strong>국민연금</strong>만 지역가입자로 전환되어서 납부해야 해요.
+            실업크레딧 신청 조건은 만 18세 이상 60세 미만 구직급여 수급자이면서, 재산세 과세표준 합계 <strong>6억원 이하</strong>, 종합소득(사업·근로 제외) <strong>1,680만원 이하</strong>예요. <a href="https://www.nps.or.kr" target="_blank" rel="noopener noreferrer" className="text-[#4A7AB5] underline">국민연금공단</a>이나 고용센터에서 신청하면 돼요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            건강보험은 감면 신청을 하면 최대 50%까지 줄일 수 있고, 국민연금은 납부유예나 실업크레딧을 신청할 수 있어요.
-            <a href="https://www.4insure.or.kr" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">4대사회보험 정보연계센터</a>에서 내 가입 상태를 확인할 수 있어요.
-          </p>
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            재취업하면 건강보험·국민연금은 다시 직장가입자로 자동 전환되고, 고용보험·산재보험도 자동으로 가입돼요.
-            따로 신청할 필요 없어요.
+            납부예외와 실업크레딧은 동시에 신청할 수 없어서 둘 중 하나를 골라야 해요. 실업크레딧이 연금액 보전에 훨씬 유리해요.
           </p>
 
           <FormulaBox lines={[
-            { text: '// 실업급여 수급 중 4대보험 상태', comment: true },
-            { text: '고용보험: 미가입 (직장가입자만 해당)', numbered: true },
-            { text: '산재보험: 미가입 (직장가입자만 해당)', numbered: true },
-            { text: '건강보험: 지역가입자 전환 → 감면 신청 가능', numbered: true },
-            { text: '국민연금: 지역가입자 전환 → 납부유예/실업크레딧 가능', numbered: true },
+            { text: '실업크레딧 본인부담 계산', comment: true },
+            { text: '인정소득 70만원 x 보험료율 9% = 63,000원', numbered: true },
+            { text: '본인부담 25% = 63,000원 x 25% = 15,750원/월', numbered: true },
+            { text: '국가지원 75% = 63,000원 x 75% = 47,250원/월', numbered: true },
           ]} />
 
-          <RateCards cards={[
-            { value: '없음', label: '고용·산재', lines: ['직장가입자 전용', '퇴직 시 자동 해제'], highlight: '미가입',  },
-            { value: '감면', label: '건강보험', lines: ['지역가입자 전환', '최대 50% 감면'], highlight: '신청', highlightColor: 'navy', active: true },
-            { value: '유예', label: '국민연금', lines: ['납부유예 가능', '실업크레딧 선택'], highlight: '선택', highlightColor: 'orange' },
+          <SpokeStepCards steps={[
+            { title: '구직급여 수급 확인', desc: '실업급여 수급자격 인정을 받은 상태', tip: '고용센터 확인' },
+            { title: '실업크레딧 신청', desc: '고용센터 또는 국민연금공단에서 신청', tip: '온라인도 가능' },
+            { title: '본인부담 25% 납부', desc: '월 15,750원(인정소득 70만원 기준)', tip: '자동이체 가능' },
+            { title: '가입기간 인정', desc: '최대 12개월, 연금액 산정에 반영', tip: '생애 누적 12개월' },
           ]} />
 
-          <p className="text-neutral-600 mb-0">실업급여 수급 중 세금과 4대보험을 정리했으니, 자주 묻는 질문들을 확인해볼게요.</p>
+          <SpokeWarnBox title="납부예외 기간은 연금에 불리해요">
+            <p>납부예외 기간은 가입기간에서 빠지기 때문에 나중에 받는 연금액이 줄어들어요. 여유가 있다면 실업크레딧을 신청하는 게 훨씬 유리해요. <a href="/w/실업급여-지급일-첫-입금일-대기기간" className="text-[#4A7AB5] hover:underline">실업급여 지급일</a>에 맞춰 납부 계획을 세우면 좋아요.</p>
+          </SpokeWarnBox>
+
+          <p className="text-neutral-600 mb-0">
+            이제 4대보험 전체를 한눈에 정리해볼게요.
+          </p>
         </>
       ),
-      bridgeCTA: { href: '#s5', badge: 'FAQ', title: '자주 묻는 질문들', desc: '궁금한 점 바로 확인', icon: 'info' },
+      bridgeCTA: {
+        href: '#s4',
+        badge: '정리',
+        title: '4대보험 전체 처리 한눈에 보기',
+        desc: '고용·산재·건강·국민연금 상태를 정리했어요',
+        icon: 'grid',
+      },
     },
 
-    // --- Section 05: FAQ ---
+    /* ── S4: 4대보험 전체 정리 ── */
     {
-      id: 's5',
+      id: 's4',
+      number: '04',
+      heading: '실업급여 수급 중 4대보험은 어떻게 처리하나요?',
+      subtitle: '고용·산재는 자동 상실, 건강·연금만 챙기세요',
+      content: (
+        <>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            퇴직하면 <strong>고용보험</strong>과 <strong>산재보험</strong>은 자동으로 자격이 없어져요. 직장가입자만 가입하는 보험이라서 퇴직과 동시에 상실돼요. 실업급여를 받는 동안에는 이 두 가지 보험료를 낼 필요가 없어요.
+          </p>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            직접 관리해야 하는 건 <strong>건강보험</strong>과 <strong>국민연금</strong> 두 가지예요. 건강보험은 임의계속가입이나 피부양자 등록으로 부담을 줄이고, 국민연금은 실업크레딧으로 가입기간을 유지하는 게 좋아요.
+          </p>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            재취업하면 4대보험 모두 <strong>직장가입자</strong>로 자동 전환돼요. 임의계속가입이나 실업크레딧도 자동으로 해제되기 때문에 따로 해지 신청할 필요 없어요.
+          </p>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            <a href="https://www.4insure.or.kr" target="_blank" rel="noopener noreferrer" className="text-[#4A7AB5] underline">4대사회보험 정보연계센터</a>에서 내 가입 상태를 한 번에 확인할 수 있어요.
+          </p>
+
+          <SpokeTable
+            id="tbl-4ins"
+            title="실업급여 수급 중 4대보험 처리 요약"
+            subtitle="2026년 기준"
+            headers={['보험', '상태', '보험료', '필요 조치']}
+            rows={[
+              ['고용보험', '자격 상실', '0원', '없음'],
+              ['산재보험', '자격 상실', '0원', '없음'],
+              ['건강보험', '지역가입자 전환', '임의계속 or 피부양자', '신청 필요'],
+              ['국민연금', '지역가입자 전환', '실업크레딧 월 15,750원', '신청 필요'],
+            ]}
+            highlightCol={3}
+          />
+
+          <SpokeFlow steps={[
+            { icon: '🏢', label: '퇴직', sub: '4대보험 직장가입 종료' },
+            { icon: '📋', label: '건강보험 신청', sub: '임의계속 or 피부양자' },
+            { icon: '💰', label: '국민연금 신청', sub: '실업크레딧 or 납부예외' },
+            { icon: '💼', label: '재취업', sub: '4대보험 자동 복귀' },
+          ]} />
+
+          <TipBox title="재취업하면 모든 게 자동이에요">
+            <p>새 직장에 입사하면 4대보험 모두 직장가입자로 자동 전환돼요. 임의계속가입은 자동 해제되고, 실업크레딧도 자동 종료돼요. 따로 해지 신청을 안 해도 돼요.</p>
+          </TipBox>
+        </>
+      ),
+      bridgeCTA: {
+        href: '/w/실업급여-수급-조건-신청-방법-2026',
+        badge: '허브',
+        title: '실업급여 전체 가이드로 돌아가기',
+        desc: '수급 조건, 금액 계산, 신청 절차까지 한 번에 확인',
+        icon: 'check',
+        primary: true,
+      },
+    },
+
+    /* ── S5: FAQ ── */
+    {
+      id: 's-faq',
       number: '05',
       heading: '자주 묻는 질문',
-      subtitle: '자주 묻는 질문이에요',
+      subtitle: '',
       content: null,
     },
   ],
 
   faq: [
-    { question: '실업급여를 받으면 연말정산 때 소득으로 신고해야 하나요?', answer: '안 돼요. 실업급여는 비과세 소득이라서 연말정산이나 종합소득세 신고에 포함하지 않아요.' },
-    { question: '실업급여 수급 중 건강보험료를 안 내면 어떻게 되나요?', answer: '건강보험료를 3개월 이상 안 내면 보험 급여가 제한될 수 있어요. 감면 신청을 해서 보험료를 줄이고 계속 납부하는 게 안전해요.' },
+    {
+      question: '실업급여 받으면 연말정산에 신고해야 하나요?',
+      answer: '아니에요. 실업급여는 비과세 소득이라서 연말정산이나 종합소득세 신고에 포함하지 않아요. 중간에 재취업하면 근로소득만 연말정산하면 돼요.',
+    },
+    {
+      question: '실업급여 수급 중 건강보험료를 안 내면 어떻게 되나요?',
+      answer: '건강보험료를 3개월 이상 안 내면 보험 급여가 제한될 수 있어요. 임의계속가입이나 피부양자 등록으로 부담을 줄이고, 꼭 납부해야 해요.',
+    },
+    {
+      question: '실업크레딧과 납부예외를 동시에 신청할 수 있나요?',
+      answer: '동시 신청은 안 돼요. 둘 중 하나만 선택해야 해요. 실업크레딧은 월 15,750원만 내면 가입기간이 인정되니까 여유가 된다면 실업크레딧이 더 유리해요.',
+    },
+    {
+      question: '실업급여 중 아르바이트하면 세금이 달라지나요?',
+      answer: '실업급여 자체는 비과세로 변함없어요. 하지만 아르바이트 소득은 근로소득이라서 과세 대상이에요. 일정 금액 이상 벌면 실업급여 감액도 될 수 있으니 주의하세요.',
+    },
   ],
 
   relatedSpokes: [
-    { badge: '실업급여', title: '실업급여 신청 조건 금액 기간 총정리', desc: '실업급여 전체 안내', href: '/w/실업급여-신청-조건-금액-기간-총정리' },
-    { badge: '지급일', title: '실업급여 지급일 첫 입금일 대기기간', desc: '입금 일정 확인', href: '/w/실업급여-지급일-첫-입금일-대기기간' },
+    {
+      badge: '금액',
+      title: '실업급여 금액 계산 연봉별 수령액',
+      desc: '평균임금 60% 계산법, 상한액 68,100원',
+      href: '/w/실업급여-금액-계산-연봉별-수령액',
+    },
+    {
+      badge: '지급',
+      title: '실업급여 지급일 첫 입금일 대기기간',
+      desc: '7일 대기기간과 지급 주기 정리',
+      href: '/w/실업급여-지급일-첫-입금일-대기기간',
+    },
+    {
+      badge: '신청',
+      title: '실업급여 신청 방법 절차 준비서류',
+      desc: '워크넷 등록부터 고용센터 방문까지',
+      href: '/w/실업급여-신청-방법-절차-준비서류',
+    },
   ],
 
   sources: [
     { name: '소득세법 제12조 (비과세 소득)', url: 'https://www.law.go.kr/법령/소득세법', org: '법제처' },
-    { name: '국민건강보험 보험료 감면', url: 'https://www.nhis.or.kr/nhis/minwon/wbhaec06200m01.do', org: '국민건강보험공단' },
-    { name: '국민연금 실업크레딧', url: 'https://www.nps.or.kr/jsppage/info/easy/easy_04_01.jsp', org: '국민연금공단' },
+    { name: '고용보험법', url: 'https://www.law.go.kr/법령/고용보험법', org: '법제처' },
+    { name: '실업크레딧 안내', url: 'https://www.nps.or.kr/jsppage/info/easy/easy_04_01.jsp', org: '국민연금공단' },
+    { name: '임의계속가입 안내', url: 'https://www.nhis.or.kr', org: '국민건강보험공단' },
   ],
 }
 

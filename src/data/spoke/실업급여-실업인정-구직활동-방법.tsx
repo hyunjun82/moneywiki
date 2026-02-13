@@ -1,255 +1,368 @@
-import Link from 'next/link'
-import type { SpokeData } from './types'
-import { SpokeTimeline, SpokeChecklist, SpokeStepCards, SpokeFlow, SpokeRateBars, FormulaBox, RateCards, TipBox } from '@/components/spoke/SpokeBlocks'
+import type { SpokeData } from '@/data/spoke/types'
+import {
+  SpokeTable,
+  FormulaBox,
+  TipBox,
+  SpokeTimeline,
+  SpokeStepCards,
+  SpokeCompareCards,
+  SpokeFlow,
+  SpokeChecklist,
+} from '@/components/spoke/SpokeBlocks'
 
-// --- Spoke Data ---
 const data: SpokeData = {
   slug: '실업급여-실업인정-구직활동-방법',
 
   meta: {
-    title: '실업급여 실업인정 구직활동 방법 | 인정 횟수 온라인 교육 신청',
-    description: '실업급여 받으려면 구직활동을 증명해야 해요. 실업인정 출석일, 구직활동 횟수, 온라인 교육까지 정리했어요',
-    keywords: ['실업급여 실업인정 구직활동 방법', '실업급여 구직활동 횟수 인정 기준', '실업급여 온라인 교육 실업인정', '실업인정일 변경 방법 특례'],
-    ogTitle: '실업급여 실업인정 구직활동 방법 | 인정 횟수 온라인 교육 신청 | 머니위키',
-    ogDescription: '실업인정 출석일, 구직활동 횟수, 온라인 교육까지 한 번에.',
+    title: '실업급여 실업인정 구직활동 방법 | 온라인 출석 인정 기준',
+    description: '실업인정일에 빠지면 그 기간 급여가 안 나와요. 온라인·오프라인 실업인정 방법과 구직활동 인정 기준을 정리했어요.',
+    keywords: [
+      '실업급여 실업인정 방법 절차',
+      '실업급여 구직활동 인정 기준',
+      '실업급여 온라인 실업인정 신청',
+      '실업급여 실업인정일 출석 방법',
+    ],
+    ogTitle: '실업급여 실업인정 구직활동 방법 | 머니위키',
+    ogDescription: '실업인정 출석 주기와 구직활동 인정 기준을 확인하세요.',
   },
 
   hub: {
-    url: '/w/실업급여-신청-조건-금액-기간-총정리',
-    name: '실업급여 총정리',
+    url: '/w/실업급여-수급-조건-신청-방법-2026',
+    name: '실업급여 수급 조건 신청 방법 2026',
   },
 
-  breadcrumb: ['실업급여', '실업인정 구직활동'],
+  breadcrumb: ['고용·노동', '실업급여', '실업인정 구직활동'],
+
+  summary3: [
+    <>실업인정은 <strong>1~4주마다</strong> 실업 상태와 구직활동을 확인받는 절차예요</>,
+    <>1차·4차는 고용센터 <strong>출석 필수</strong>, 나머지 회차는 온라인 가능해요</>,
+    <>5차부터 4주간 <strong>재취업활동 2회</strong>(구직활동 1회 필수)를 해야 해요</>,
+  ],
+
+  sourceBar: {
+    badge: '출처',
+    name: '고용보험법 제44조·시행규칙 제101조',
+    date: '2026.02',
+  },
+
+  prevNext: {
+    prev: { title: '실업급여 신청 방법 절차 준비서류', href: '/w/실업급여-신청-방법-절차-준비서류' },
+    next: { title: '실업급여 지급일 첫 입금일 대기기간', href: '/w/실업급여-지급일-첫-입금일-대기기간' },
+  },
+
+  stickyBar: {
+    topLabel: '실업인정 주기',
+    value: '1~4주 단위',
+    buttonText: '인정 기준 확인 →',
+    scrollTo: '#s2',
+  },
 
   hero: {
     badge: '2026년 기준',
-    h1: <><span className="text-[#1E3A5F]">실업급여 실업인정</span> 구직활동 방법</>,
+    h1: (
+      <>
+        실업급여 <span className="text-[#1E3A5F]">실업인정</span> 구직활동 방법과 출석 기준
+      </>
+    ),
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
-          실업급여 신청했는데 계속 받으려면 뭘 해야 하는지 막막하셨죠?
+          실업급여를 받고 있는데 실업인정일마다 뭘 해야 하는지 막막하셨다면 잘 오셨어요.
         </p>
         <p className="text-base text-neutral-500 leading-relaxed mt-3">
-          <strong className="text-neutral-800">실업인정 제도</strong>는 구직활동을 증명해야 실업급여를 계속 받을 수 있는 시스템이에요.
-          4주마다 고용센터를 방문하거나 온라인으로 실업인정을 받아야 하고, 1회 인정기간 동안 <strong className="text-neutral-800">재취업활동 1회 이상</strong> 해야 해요.
-          <a href="https://www.moel.go.kr" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">고용노동부</a> 고용보험법 시행규칙에서 정한 기준이에요.
+          실업인정은 <strong className="text-neutral-800">1~4주 단위</strong>로 고용센터에서 &quot;정말 구직활동을 하고 있는지&quot; 확인하는 절차예요.
+          1차와 4차는 <strong className="text-neutral-800">고용센터 출석 필수</strong>이고, 나머지는 온라인으로 가능해요.
+          <a href="/w/실업급여-수급-조건-신청-방법-2026" className="text-[#4A7AB5] underline">실업급여 전체 안내</a>도 함께 참고해 보세요.
         </p>
         <p className="text-base text-neutral-500 leading-relaxed mt-3">
-          쉽게 말해서, 그냥 돈만 받으면 안 되고 진짜 구직활동을 했다는 증거를 보여줘야 돼요.
-        </p>
-        <p className="text-base text-neutral-500 leading-relaxed mt-3">
-          먼저 실업인정 출석일부터 확인해볼게요.
+          먼저 실업인정 제도가 어떤 구조인지부터 살펴볼게요.
         </p>
       </>
     ),
     hubCTA: {
-      badge: '실업급여',
-      desc: '실업급여 총정리 전체 보기',
+      badge: '전체 가이드',
+      desc: '실업급여 수급 조건·신청 방법·금액 총정리',
     },
   },
 
   toc: [
-    { id: 's1', text: '실업인정 제도와 출석 주기 안내' },
-    { id: 's2', text: '구직활동 인정 범위와 최소 횟수' },
-    { id: 's3', text: '온라인 교육으로 실업인정 받기' },
-    { id: 's4', text: '실업인정일 변경과 특례 적용' },
-    { id: 's5', text: '자주 묻는 질문' },
+    { id: 's1', label: '실업급여 실업인정 방법과 절차는 어떻게 되나요?' },
+    { id: 's2', label: '실업급여 구직활동 인정 기준은 무엇인가요?' },
+    { id: 's3', label: '실업급여 온라인 실업인정은 어떻게 신청하나요?' },
+    { id: 's4', label: '실업급여 실업인정일 출석 못 하면 어떻게 되나요?' },
+    { id: 's-faq', label: '자주 묻는 질문' },
   ],
 
   sections: [
-    // --- Section 01: 실업인정 제도 → SpokeTimeline + SpokeChecklist ---
+    // --- SECTION 01: 실업인정 제도 절차 ---
     {
       id: 's1',
-      number: '01',
-      heading: '실업인정 제도와 출석 주기 안내',
-      subtitle: '4주마다 고용센터 방문 또는 온라인 신고예요',
+      number: 'SECTION 01',
+      heading: '실업급여 실업인정 방법과 절차는 어떻게 되나요?',
+      subtitle: '1~4주마다 고용센터 확인을 받아야 급여가 지급돼요',
       content: (
         <>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            <strong>실업인정</strong>은 구직급여를 받기 위해 4주마다 실업 상태와 재취업 노력을 확인받는 절차예요.
-            고용센터를 직접 방문하거나, 고용24에서 온라인으로 실업인정을 신고할 수 있어요.
-            1차 실업인정은 보통 신청일로부터 14일 후 첫 실업인정일로 지정돼요.
+            실업인정은 <strong>&quot;아직 실업 상태이고, 적극적으로 구직활동을 하고 있다&quot;</strong>는 걸 고용센터에서 확인받는 절차예요.
+            고용보험법 제44조에 따라 실업인정을 받은 날에 대해서만 구직급여가 지급돼요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            매 인정기간(4주)마다 <strong>재취업활동을 1회 이상</strong> 해야 실업급여가 지급돼요.
-            <a href="https://www.work.go.kr/unemployed" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">워크넷</a>에서 입사지원하거나, 고용센터 취업특강을 듣거나, 실제 면접에 다녀오면 인정돼요.
-            고용보험법 시행규칙 제101조에서 정한 기준이에요.
+            수급자격 신청 후 약 <strong>14일 뒤</strong>에 1차 실업인정일이 잡혀요.
+            그 뒤로는 1~4주 간격으로 정기적으로 실업인정을 받아야 해요.
+            회차마다 요구되는 재취업활동 횟수가 달라지니 아래 표를 꼭 확인하세요.
           </p>
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            실업인정일에 출석하지 않으면 그 기간 동안 구직급여가 지급되지 않아요.
-            정당한 사유 없이 2회 이상 불참하면 지급이 정지될 수 있으니 주의해야 해요.
-          </p>
+
+          <SpokeTable
+            id="tbl-round"
+            title="회차별 실업인정 요건"
+            subtitle="고용보험법 시행규칙 제101조 기준"
+            headers={['회차', '재취업활동 횟수', '출석/온라인', '비고']}
+            rows={[
+              ['1차', '없음 (취업특강 수강)', '출석 필수', '수급자격 교육 이수'],
+              ['2~3차', '1회 이상', '온라인 가능', '구직활동 또는 구직외활동'],
+              ['4차', '1회 이상', '출석 필수', '취업지원 상담 병행'],
+              ['5차 이후', '2회 이상 (구직 1회 필수)', '온라인 가능', '입사지원 1회 필수 포함'],
+            ]}
+            highlightCol={1}
+          />
 
           <SpokeTimeline events={[
-            { month: '신청일', title: '수급자격 신청', desc: '고용센터 방문' },
-            { month: '14일 후', title: '1차 실업인정일', desc: '재취업활동 1회 이상', status: 'current' },
-            { month: '28일 후', title: '2차 실업인정일', desc: '재취업활동 1회 이상' },
-            { month: '42일 후', title: '3차 실업인정일', desc: '재취업활동 1회 이상' },
-            { month: '이후 4주마다', title: '정기 실업인정', desc: '소정급여일수 종료까지' },
+            { month: '신청일', title: '수급자격 신청', desc: '고용센터 방문 또는 고용24 접수', status: 'normal' },
+            { month: '약 14일 후', title: '1차 실업인정', desc: '출석 필수 + 취업특강 수강', status: 'current' },
+            { month: '약 28일 후', title: '2차 실업인정', desc: '재취업활동 1회 이상', status: 'normal' },
+            { month: '약 42일 후', title: '3차 실업인정', desc: '재취업활동 1회 이상', status: 'normal' },
+            { month: '약 56일 후', title: '4차 실업인정', desc: '출석 필수 + 재취업활동 1회', status: 'warning' },
+            { month: '이후 4주마다', title: '5차~ 정기 인정', desc: '재취업활동 2회 (구직 1회 필수)', status: 'normal' },
           ]} />
 
-          <SpokeChecklist items={[
-            { text: '4주마다 실업인정 필수', done: true },
-            { text: '1회 인정기간 = 재취업활동 1회 이상', done: true },
-            { text: '온라인 실업인정 가능', done: true },
-            { text: '정당한 사유 없이 불참 시 지급 중단', done: false, note: '2회 이상 불참 주의' },
-          ]} />
-
-          <p className="text-neutral-600 mb-0">출석일은 알겠는데, 구체적으로 어떤 활동을 해야 인정되는지 궁금해지잖아요.</p>
+          <p className="text-neutral-600 mb-0">
+            회차별 기준을 알았으니, 구체적으로 어떤 활동이 인정되는지 궁금해지잖아요.
+          </p>
         </>
       ),
-      bridgeCTA: { href: '#s2', badge: '구직활동', title: '어떤 활동을 해야 인정될까요?', desc: '구직활동 인정 범위 확인', icon: 'grid' },
+      bridgeCTA: {
+        href: '#s2',
+        badge: '인정 기준',
+        title: '어떤 활동을 해야 구직활동으로 인정되나요?',
+        desc: '입사지원, 면접, 교육 등 인정되는 활동 목록 확인',
+        icon: 'grid',
+      },
     },
 
-    // --- Section 02: 구직활동 범위 → SpokeStepCards + SpokeFlow ---
+    // --- SECTION 02: 구직활동 인정 기준 ---
     {
       id: 's2',
-      number: '02',
-      heading: '구직활동 인정 범위와 최소 횟수',
-      subtitle: '워크넷 입사지원, 취업특강, 면접도 인정돼요',
+      number: 'SECTION 02',
+      heading: '실업급여 구직활동 인정 기준은 무엇인가요?',
+      subtitle: '구직활동과 구직외활동으로 나뉘어요',
       content: (
         <>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            재취업활동으로 인정되는 항목은 <strong>워크넷 입사지원</strong>, <strong>고용센터 취업특강 참석</strong>, <strong>실제 면접 참석</strong>, <strong>직업능력개발 훈련</strong> 등이에요.
-            1회 인정기간 동안 최소 1회 이상 활동을 해야 실업급여가 정상 지급돼요.
+            재취업활동은 크게 <strong>구직활동</strong>과 <strong>구직외활동</strong> 두 가지로 나뉘어요.
+            5차부터는 구직활동을 반드시 1회 포함해야 하니까 구분을 확실히 알아둬야 해요.
           </p>
+
+          <SpokeCompareCards cards={[
+            {
+              title: '구직활동',
+              subtitle: '적극적 취업 노력',
+              items: [
+                '워크넷 등 채용사이트 입사지원',
+                '채용 면접 참석 (면접확인서 필요)',
+                '채용박람회 참여',
+                '구인업체 직접 방문·우편 지원',
+              ],
+              recommended: true,
+              recLabel: '5차부터 1회 필수',
+            },
+            {
+              title: '구직외활동',
+              subtitle: '취업 역량 강화',
+              items: [
+                '고용센터 취업특강 (최대 3회 인정)',
+                '직업심리검사 (최대 1회 인정)',
+                '심리안정프로그램 (최대 1회 인정)',
+                '직업능력개발 훈련 수강',
+              ],
+            },
+          ]} />
+
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            워크넷에서 채용공고를 보고 온라인으로 지원하면 자동으로 기록이 남아요.
-            <a href="https://www.work.go.kr" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">워크넷 홈페이지</a>에서 로그인 후 "입사지원 관리"에서 확인할 수 있어요.
-            고용센터 취업특강이나 구직역량강화 프로그램도 참석만 하면 인정돼요.
+            가장 쉬운 방법은 <a href="https://www.work24.go.kr" target="_blank" rel="noopener noreferrer" className="text-[#4A7AB5] underline">워크넷(고용24)</a>에서 채용공고에 입사지원하는 거예요.
+            온라인으로 지원하면 자동으로 기록이 남아서 따로 증빙을 챙기지 않아도 돼요.
+            면접에 다녀온 경우에는 면접확인서를 회사에서 받아 제출하면 인정돼요.
           </p>
+
+          <SpokeChecklist items={[
+            { text: '워크넷 입사지원 (자동 기록, 가장 간편)', done: true, note: '구직활동' },
+            { text: '채용 면접 참석 + 면접확인서 제출', done: true, note: '구직활동' },
+            { text: '채용박람회 참여 (참석확인서 발급)', done: true, note: '구직활동' },
+            { text: '고용센터 취업특강 수강 (전체 3회까지)', done: true, note: '구직외활동' },
+            { text: 'HRD-Net 직업훈련 수강 (수료증 필요)', done: true, note: '구직외활동' },
+            { text: '유튜브·블로그 강의 시청', done: false, note: '인정 불가' },
+            { text: '동일 회사 반복 지원', done: false, note: '인정 불가' },
+          ]} />
+
+          <TipBox title="허위 구직활동을 하면?">
+            <p>형식적이거나 허위로 구직활동을 신고하면 해당 기간 급여가 <strong>부지급</strong> 처리돼요. 2회 적발되면 그 인정기간 전체 급여가 나오지 않으니 실제로 활동한 내역만 신고하세요.</p>
+          </TipBox>
+
+          <p className="text-neutral-600 mb-0">
+            인정되는 활동 범위를 파악했다면, 온라인으로 실업인정 신청하는 구체적인 방법이 궁금해질 거예요.
+          </p>
+        </>
+      ),
+      bridgeCTA: {
+        href: '#s3',
+        badge: '온라인',
+        title: '고용센터 안 가고 온라인으로 실업인정 받을 수 있나요?',
+        desc: '고용24 온라인 실업인정 신청 절차 안내',
+        icon: 'calc',
+      },
+    },
+
+    // --- SECTION 03: 온라인 실업인정 ---
+    {
+      id: 's3',
+      number: 'SECTION 03',
+      heading: '실업급여 온라인 실업인정은 어떻게 신청하나요?',
+      subtitle: '고용24에서 지정일 당일에 신청할 수 있어요',
+      content: (
+        <>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            면접에 다녀온 경우 면접확인서를 회사에서 받아서 제출하면 인정돼요.
-            자영업 준비나 창업 관련 상담도 고용센터에 신고하면 재취업활동으로 인정될 수 있어요.
+            1차와 4차를 제외한 나머지 회차는 <strong>고용24(work24.go.kr)</strong>에서 온라인으로 실업인정을 신청할 수 있어요.
+            실업인정일 당일 오전 0시부터 오후 5시까지 신청이 가능하고, 본인이 직접 해야 해요.
           </p>
 
           <SpokeStepCards steps={[
-            { title: '워크넷 입사지원', desc: '채용공고에 온라인 지원', tip: '자동 기록' },
-            { title: '취업특강 참석', desc: '고용센터 프로그램 참여', tip: '출석만 하면 인정' },
-            { title: '면접 참석', desc: '면접확인서 제출', tip: '회사 직인 필요' },
-            { title: '직업훈련', desc: '국비지원 교육 수강', tip: '수강증명서 제출' },
-            { title: '창업준비', desc: '자영업 관련 상담', tip: '고용센터 신고' },
+            { title: '고용24 로그인', desc: '공동인증서 또는 간편인증으로 로그인', tip: '카카오·네이버 인증 가능' },
+            { title: '실업인정 신청 메뉴 진입', desc: '마이페이지 > 실업급여 > 실업인정 신청', tip: '모바일 앱에서도 가능' },
+            { title: '구직활동 내역 입력', desc: '입사지원·면접·교육 등 활동 내역 기재', tip: '워크넷 지원은 자동 연동' },
+            { title: '신청 완료 확인', desc: '접수 완료 문자 수신 후 급여 지급 대기', tip: '처리 결과도 고용24에서 확인' },
           ]} />
+
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            1차 실업인정은 고용센터에 직접 가서 <strong>수급자격 교육(취업특강)</strong>을 이수해야 해요.
+            온라인 취업특강(약 1시간)을 미리 수강한 뒤 센터를 방문하면 시간을 줄일 수 있어요.
+            4차도 출석이 필수인데, 이때는 담당자와 <strong>취업지원 상담</strong>을 함께 진행해요.
+          </p>
 
           <SpokeFlow steps={[
-            { icon: '🔍', label: '워크넷 검색', sub: '채용공고' },
-            { icon: '📝', label: '입사지원', sub: '온라인 제출' },
-            { icon: '✅', label: '자동 기록', sub: '재취업활동' },
-            { icon: '🏢', label: '고용센터', sub: '실업인정 신고' },
-          ]} />
-
-          <p className="text-neutral-600 mb-0">구직활동 방법을 알았으니, 온라인 교육으로도 인정받을 수 있는지 궁금해지죠.</p>
-        </>
-      ),
-      bridgeCTA: { href: '#s3', badge: '온라인 교육', title: '온라인 교육만 들어도 인정될까요?', desc: '온라인 실업인정 방법', icon: 'info' },
-    },
-
-    // --- Section 03: 온라인 교육 → SpokeRateBars + FormulaBox ---
-    {
-      id: 's3',
-      number: '03',
-      heading: '온라인 교육으로 실업인정 받기',
-      subtitle: 'HRD-Net 직업훈련도 재취업활동 인정돼요',
-      content: (
-        <>
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            <strong>HRD-Net 국비지원 교육</strong>이나 <strong>고용센터 온라인 취업특강</strong>을 들으면 재취업활동으로 인정돼요.
-            단, 단순히 동영상만 보는 게 아니라 수강 완료 후 <strong>수료증이나 참석확인서</strong>가 발급되는 교육이어야 해요.
-            <a href="https://www.hrd.go.kr" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">HRD-Net 홈페이지</a>에서 "실업자 훈련"을 검색하면 인정되는 교육 목록이 나와요.
-          </p>
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            온라인 교육을 들으면서 워크넷 입사지원을 병행하면 더 안전하게 실업인정을 받을 수 있어요.
-            교육만 듣고 입사지원을 전혀 안 하면 나중에 고용센터에서 "적극적인 구직활동을 안 했다"고 판단할 수 있어요.
-          </p>
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            온라인 실업인정은 고용24에서 가능하지만, 1차 실업인정은 반드시 고용센터를 방문해야 해요.
-            2차부터는 온라인으로도 가능해요.
-          </p>
-
-          <SpokeRateBars bars={[
-            { label: '워크넷 입사지원', rate: '필수', width: '100%' },
-            { label: 'HRD-Net 직업훈련', rate: '인정', width: '80%' },
-            { label: '고용센터 온라인 특강', rate: '인정', width: '80%' },
-            { label: '유튜브 강의', rate: '불인정', width: '20%' },
+            { icon: '1', label: '1차 출석', sub: '취업특강 이수' },
+            { icon: '2', label: '2~3차 온라인', sub: '재취업활동 1회' },
+            { icon: '3', label: '4차 출석', sub: '취업지원 상담' },
+            { icon: '4', label: '5차~ 온라인', sub: '재취업활동 2회' },
           ]} />
 
           <FormulaBox lines={[
-            { text: '// 온라인 교육 인정 조건', comment: true },
-            { text: '1. HRD-Net 국비지원 교육 수강', numbered: true },
-            { text: '2. 수료증 또는 참석확인서 발급', numbered: true },
-            { text: '3. 워크넷 입사지원 병행 권장', numbered: true },
-            { text: '4. 2차 실업인정부터 온라인 가능', numbered: true },
+            { text: '온라인 실업인정 가능 시간', comment: true },
+            { text: '실업인정일 당일 00:00 ~ 17:00' },
           ]} />
 
-          <p className="text-neutral-600 mb-0">온라인 교육도 인정되는 건 알겠는데, 실업인정일을 변경할 수 있는지 궁금해질 수 있어요.</p>
+          <p className="text-neutral-600 mb-0">
+            온라인 신청 방법은 알겠는데, 실업인정일에 출석을 못 하면 어떤 불이익이 있는지도 미리 알아둬야 해요.
+          </p>
         </>
       ),
-      bridgeCTA: { href: '#s4', badge: '일정 변경', title: '실업인정일을 변경할 수 있을까요?', desc: '변경 방법과 특례 확인', icon: 'info' },
+      bridgeCTA: {
+        href: '#s4',
+        badge: '주의사항',
+        title: '실업인정일에 출석을 못 하면 급여가 끊기나요?',
+        desc: '불참 시 불이익과 일정 변경 방법 확인',
+        icon: 'info',
+      },
     },
 
-    // --- Section 04: 일정 변경 → RateCards + TipBox ---
+    // --- SECTION 04: 출석 못 하면 ---
     {
       id: 's4',
-      number: '04',
-      heading: '실업인정일 변경과 특례 적용',
-      subtitle: '면접·질병·가족 사유는 변경 가능해요',
+      number: 'SECTION 04',
+      heading: '실업급여 실업인정일 출석 못 하면 어떻게 되나요?',
+      subtitle: '정당한 사유가 있으면 일정 변경이 가능해요',
       content: (
         <>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            실업인정일을 바꾸고 싶다면 <strong>정당한 사유</strong>가 있어야 해요.
-            입사 면접, 질병·부상, 직계가족 경조사, 천재지변 등은 정당한 사유로 인정돼요.
-            고용센터에 미리 전화나 고용24 온라인으로 신고하면 일정을 조정할 수 있어요.
+            실업인정일에 정당한 사유 없이 출석하지 않으면 해당 인정기간의 <strong>구직급여가 지급되지 않아요</strong>.
+            고용보험법 제44조에 따라 실업인정을 받은 날에 대해서만 급여가 나오기 때문이에요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            면접 때문에 실업인정일에 못 갈 경우, <strong>면접확인서</strong>를 제출하면 불참 사유가 인정되고 다음 인정일로 연기돼요.
-            <a href="https://www.ei.go.kr" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">고용보험 홈페이지</a>에서 양식을 다운받을 수 있어요.
-            질병의 경우 진단서나 입원확인서가 필요해요.
+            다만 면접, 질병·부상, 직계가족 경조사, 천재지변 같은 <strong>정당한 사유</strong>가 있으면 일정을 변경할 수 있어요.
+            사전에 고용센터에 전화하거나 고용24에서 신고하면 다음 인정일로 연기돼요.
           </p>
+
+          <SpokeTable
+            id="tbl-excuse"
+            title="실업인정일 변경이 가능한 정당한 사유"
+            subtitle="고용보험법 시행규칙 기준"
+            headers={['사유', '필요 서류', '처리 방법']}
+            rows={[
+              ['채용 면접', '면접확인서', '사전 신고 → 다음 인정일 연기'],
+              ['질병·부상', '진단서·입원확인서', '사전 신고 → 치료 후 방문'],
+              ['직계가족 경조사', '사망진단서·청첩장 등', '사전 신고 → 연기'],
+              ['천재지변', '별도 서류 불요', '고용센터 판단'],
+            ]}
+          />
+
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            특례는 장기 질병, 출산, 육아 등의 사유로 일시적으로 구직활동을 못 하는 경우 실업인정 횟수를 줄여주는 제도예요.
-            단, 특례 기간 중에도 실업급여는 계속 지급되지만 소정급여일수는 차감돼요.
+            개인 사정(날짜 착각 등)으로 빠진 경우에는 전체 수급기간 중 <strong>1회에 한해</strong> 변경이 가능해요.
+            실업인정일 당일 오후 5시까지 온라인 신청을 못 했다면, 오후 6시까지 고용센터에 직접 방문하거나 14일 이내에 방문해서 처리할 수 있어요.
           </p>
 
-          <RateCards cards={[
-            { value: '면접', label: '입사 면접', lines: ['면접확인서 제출', '일정 조정 가능'], highlight: '인정', highlightColor: 'navy' },
-            { value: '질병', label: '질병·부상', lines: ['진단서 제출', '입원확인서 가능'], highlight: '인정', highlightColor: 'navy', active: true },
-            { value: '경조사', label: '경조사', lines: ['직계가족 사망', '결혼 등'], highlight: '인정', highlightColor: 'navy' },
-          ]} />
-
-          <TipBox title="실업인정 불참 시 패널티">
-            정당한 사유 없이 2회 이상 불참하면 구직급여 지급이 정지될 수 있어요. 미리 고용센터에 연락해서 일정을 조정하는 게 안전해요.
+          <TipBox title="반복수급자·장기수급자는 기준이 더 엄격해요">
+            <p>이전에 실업급여를 여러 번 받은 반복수급자나 장기수급자는 실업인정 주기가 짧아지고, 구직활동 요구 횟수도 늘어날 수 있어요. <a href="/w/실업급여-반복수급-감액-대기기간" className="text-[#4A7AB5] underline">반복수급 감액 기준</a>에서 자세히 확인하세요.</p>
           </TipBox>
-
-          <p className="text-neutral-600 mb-0">실업인정 제도를 정리했으니, 자주 묻는 질문들을 확인해볼게요.</p>
         </>
       ),
-      bridgeCTA: { href: '#s5', badge: 'FAQ', title: '자주 묻는 질문들', desc: '궁금한 점 바로 확인', icon: 'info' },
+      bridgeCTA: {
+        href: '/w/실업급여-수급-조건-신청-방법-2026',
+        badge: '전체 가이드',
+        title: '실업급여 전체 흐름이 궁금하다면?',
+        desc: '수급 조건부터 신청·금액·기간까지 한눈에 확인',
+        icon: 'check',
+        primary: true,
+      },
     },
 
-    // --- Section 05: FAQ ---
+    // --- FAQ ---
     {
-      id: 's5',
+      id: 's-faq',
       number: '05',
       heading: '자주 묻는 질문',
-      subtitle: '자주 묻는 질문이에요',
+      subtitle: '',
       content: null,
     },
   ],
 
   faq: [
-    { question: '실업급여 실업인정을 온라인으로만 계속 받을 수 있나요?', answer: '안 돼요. 1차 실업인정은 반드시 고용센터를 방문해야 하고, 2차부터는 온라인 실업인정이 가능해요.' },
-    { question: '워크넷 입사지원을 몇 회나 해야 하나요?', answer: '1회 인정기간(4주)마다 최소 1회 이상 재취업활동을 해야 해요. 워크넷 입사지원 1회면 충분하지만, 여러 번 하면 더 안전해요.' },
+    {
+      question: '실업급여 실업인정을 온라인으로만 받을 수 있나요?',
+      answer: '전부 온라인으로 할 수는 없어요. 1차와 4차 실업인정은 고용센터 출석이 필수이고, 2~3차와 5차 이후는 고용24에서 온라인 신청이 가능해요.',
+    },
+    {
+      question: '실업급여 구직활동은 몇 회나 해야 하나요?',
+      answer: '2~4차까지는 4주간 재취업활동 1회 이상이면 돼요. 5차부터는 2회 이상이 필요하고 그중 구직활동(입사지원·면접)을 반드시 1회 포함해야 해요.',
+    },
+    {
+      question: '워크넷 입사지원만으로 실업인정이 되나요?',
+      answer: '네, 워크넷에서 채용공고에 입사지원하면 자동으로 기록이 남아서 구직활동 1회로 인정돼요. 다만 동일 회사에 반복 지원하면 인정되지 않아요.',
+    },
+    {
+      question: '실업인정일을 깜빡하고 놓치면 어떻게 하나요?',
+      answer: '개인 사정으로 놓친 경우 전체 수급기간 중 1회에 한해 변경할 수 있어요. 14일 이내에 고용센터를 방문하면 처리가 가능해요. 정당한 사유 없이 2회 이상 불참하면 급여가 정지될 수 있어요.',
+    },
   ],
 
   relatedSpokes: [
-    { badge: '실업급여', title: '실업급여 신청 조건 금액 기간 총정리', desc: '실업급여 전체 안내', href: '/w/실업급여-신청-조건-금액-기간-총정리' },
-    { badge: '고용센터', title: '실업급여 고용센터 찾기 고용24 사용법', desc: '고용센터 찾는 법', href: '/w/실업급여-고용센터-찾기-고용24-사용법' },
+    { badge: '신청', title: '실업급여 신청 방법 절차 준비서류', desc: '워크넷 등록부터 고용센터 접수까지', href: '/w/실업급여-신청-방법-절차-준비서류' },
+    { badge: '지급', title: '실업급여 지급일 첫 입금일 대기기간', desc: '7일 대기기간 계산과 지급 주기', href: '/w/실업급여-지급일-첫-입금일-대기기간' },
+    { badge: '센터', title: '실업급여 고용센터 찾기 고용24 사용법', desc: '관할 고용센터 찾는 법과 온라인 신청', href: '/w/실업급여-고용센터-찾기-고용24-사용법' },
   ],
 
   sources: [
+    { name: '고용보험법 제44조 (실업의 인정)', url: 'https://www.law.go.kr/법령/고용보험법', org: '법제처' },
     { name: '고용보험법 시행규칙 제101조', url: 'https://www.law.go.kr/법령/고용보험법시행규칙', org: '법제처' },
-    { name: '실업인정 제도 안내', url: 'https://www.moel.go.kr/policy/policyinfo/recpet/list4.do', org: '고용노동부' },
-    { name: '워크넷 채용정보', url: 'https://www.work.go.kr/unemployed', org: '고용노동부' },
+    { name: '실업급여 안내', url: 'https://www.ei.go.kr/ei/eih/eg/pb/pbPersonBnef/retrievePb0201Info.do', org: '고용보험' },
+    { name: '고용노동부 실업급여 제도', url: 'https://www.moel.go.kr', org: '고용노동부' },
   ],
 }
 
