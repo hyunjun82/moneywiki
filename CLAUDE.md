@@ -236,7 +236,7 @@ node .claude/hooks/batch-verify.js --hub {허브명}
 ```
 src/data/spoke/types.ts                    — 타입 정의 (SpokeData, SpokeSection)
 src/components/spoke/SpokeBlocks.tsx       — 컴포넌트 전체 (20개+)
-src/components/spoke/SpokeChecker.tsx      — 수급자격 체커
+src/components/GenericChecker.tsx           — 범용 체커 (CheckerConfig 기반)
 src/components/spoke/SpokeTOCInline.tsx    — 접이식 목차
 골든 예제: src/data/spoke/기초생활수급자-1인가구-생계급여-조건-소득인정액.tsx
 ```

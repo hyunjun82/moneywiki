@@ -7,26 +7,68 @@
  *
  * 참고:
  *   골든 예시: .claude/references/spoke-golden-example.tsx
- *   컴포넌트 API: .claude/references/spoke-api.md
+ *   타입 정의: src/data/spoke/types.ts
+ *   스포크 컴포넌트: src/components/spoke/SpokeBlocks.tsx
+ *
+ * ⚠️ 절대 규칙:
+ * - SpokeTable, TipBox, FormulaBox 등 Spoke용 컴포넌트 사용 (Hub용 X)
+ * - toc: label 사용 (hub는 text)
+ * - FormulaBox: { lines: [{ text, comment?, numbered? }] }
+ * - sources: { name, url, org }
+ * - relatedSpokes: { badge, title, desc, href }
+ *
+ * ⚠️ 컴포넌트 팔레트 (다양하게 사용!):
+ * - SpokeTable: 데이터 테이블
+ * - FormulaBox: 계산 공식
+ * - TipBox: 팁/조언 (title + children)
+ * - WarnBox: 경고/주의 (children만)
+ * - DetailBox: 번호 + 제목 + 설명 리스트
+ * - Chips: 4칩 클릭 가능 그리드
+ * - SpokeLinks: 관련 글 카드 리스트
+ * - Steps: 순서 절차 표시
+ * - SpokeTimeline: 타임라인
+ * - SpokeStepCards: 카드형 절차
+ * - SpokeCompareCards: 비교 카드
+ * - SpokeRateBars: 비율 바
+ * - SpokeFlow: 플로우 차트
+ * - SpokeChecklist: 체크리스트
+ * - SpokeWarnBox: 제목 있는 경고 (title + children)
  */
 
-import Link from 'next/link'
-import type { SpokeData } from './types'
+import type { SpokeData } from '@/data/spoke/types'
+// ═══ 체커 담당 스포크: 자체 포함 'use client' 래퍼 사용 ═══
+// ⚠️ GenericChecker + checkerConfig 직접 사용 금지! (RSC 직렬화 500 에러)
+// import XXXChecker from '@/components/checkers/XXXChecker'
+// → content 안에서: <XXXChecker />
+// → 래퍼 생성법: src/components/checkers/기초수급Checker.tsx 참고
+//
+// 체커 래퍼 파일 구조 (src/components/checkers/XXXChecker.tsx):
+//   'use client'
+//   import GenericChecker from '@/components/GenericChecker'
+//   import type { CheckerConfig } from '@/data/checker-types'
+//   const config: CheckerConfig = { title, subtitle, intro, groups, evaluate }
+//   export default function XXXChecker() { return <GenericChecker config={config} /> }
 import {
-  SpokeTable, TipBox, FormulaBox, RateCards,
-  SpokeStepCards, SpokeCompareCards, SpokeRateBars,
-  SpokeWarnBox, SpokeTimeline, SpokeFlow, SpokeChecklist,
+  SpokeTable, TipBox, FormulaBox, WarnBox,
+  Chips, DetailBox, SpokeLinks, Steps,
+  SpokeTimeline, SpokeStepCards, SpokeCompareCards,
+  SpokeRateBars, SpokeFlow, SpokeChecklist, SpokeWarnBox,
 } from '@/components/spoke/SpokeBlocks'
 
-// --- 대용량 테이블 데이터는 여기에 분리 ---
-// TODO: 테이블 데이터 (필요 시)
+// ═══ 체커 (설계도에 has_checker: true인 스포크만) ═══
+// 참조: .claude/references/checker-patterns.md (5가지 유형)
+// 유형 A: 자격판정 | B: 계산 | C: 비교 | D: 세금/공제 | E: 구간판정
+//
+// ⚠️ 체커는 별도 래퍼 파일에 작성! (이 파일이 아님)
+// → src/components/checkers/XXXChecker.tsx 에 작성
+// → 이 spoke에서는 import 후 content 안에서 <XXXChecker /> 사용
 
 const data: SpokeData = {
   slug: '', // TODO: 키워드 결과의 slug
 
   meta: {
-    title: '', // TODO: 키워드 결과의 title (변경 금지)
-    description: '', // TODO: 키워드 결과의 description (변경 금지)
+    title: '', // TODO: 키워드 결과의 title
+    description: '', // TODO: ~해요 패턴
     keywords: [
       '', // TODO: keyword 1
       '', // TODO: keyword 2
@@ -44,6 +86,7 @@ const data: SpokeData = {
 
   breadcrumb: [
     '', // TODO: 카테고리 (예: '세금')
+    '', // TODO: 중간 (예: '연말정산')
     '', // TODO: 현재 글 제목 (짧게)
   ],
 
@@ -51,27 +94,13 @@ const data: SpokeData = {
     badge: '2026년 기준', // TODO: 연도 또는 기준 표시
     h1: (
       <>
-        {/* TODO: h1 — 키워드 결과의 title 기반, <span className="text-emerald-600">강조</span> 포함 */}
+        {/* TODO: h1 — <span className="text-[#1E3A5F]">강조</span> 가능 */}
       </>
     ),
     intro: (
-      <>
-        {/*
-         * TODO: 4줄 공식
-         * 1줄: 독자의 실제 상황 묘사 ("~싶었다면 잘 오셨어요")
-         * 2줄: 이 글로 해결된다는 약속 ("~하나면 바로 알 수 있어요")
-         * 3줄: 구체 숫자/범위 + 허브 연결 Link
-         * 4줄: 동행 톤으로 첫 섹션 안내 ("먼저 ~부터 볼게요")
-         *
-         * ❌ 금지: "아래에서 확인해 보세요", "이 글 하나로 정리했어요"
-         */}
-        <p className="text-base text-neutral-500 leading-relaxed">
-          {/* TODO: 1~2줄 */}
-        </p>
-        <p className="text-base text-neutral-500 leading-relaxed mt-3">
-          {/* TODO: 3~4줄 + <Link href="허브URL">허브명</Link> */}
-        </p>
-      </>
+      <p className="text-base text-neutral-500 leading-relaxed">
+        {/* TODO: 1~2줄 소개 (~해요체) */}
+      </p>
     ),
     hubCTA: {
       badge: '', // TODO: 2~3글자
@@ -80,183 +109,51 @@ const data: SpokeData = {
   },
 
   toc: [
-    { id: 's1', text: '' }, // TODO: H2-1 (keyword 1 질문형)
-    { id: 's2', text: '' }, // TODO: H2-2 (keyword 2 질문형)
-    { id: 's3', text: '' }, // TODO: H2-3 (keyword 3 질문형)
-    { id: 's4', text: '' }, // TODO: H2-4 (keyword 4 질문형)
-    { id: 's5', text: '자주 묻는 질문' },
+    // TODO: 섹션별 목차 (label 사용!)
+    // { id: 's1', label: 'H2-1 질문형 제목' },
+    // { id: 's2', label: 'H2-2 질문형 제목' },
+    // { id: 's3', label: 'H2-3 질문형 제목' },
+    // { id: 's4', label: 'H2-4 질문형 제목' },
+    // { id: 's5', label: '자주 묻는 질문' },
   ],
 
   sections: [
-    /**
-     * ===== S1 =====
-     * 전환 스타일: A. 독자 대변형 ("~싶잖아요")
-     * 시각 요소: TODO — 키워드 프리셋 S1 배치 사용
-     */
-    {
-      id: 's1',
-      number: '01',
-      heading: '', // TODO: H2-1 (키워드 결과 그대로)
-      subtitle: '', // TODO: 1줄 부제
-      content: (
-        <>
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            {/* TODO: 도입 단락 — 개념 설명 + 출처 링크 */}
-          </p>
-
-          {/* TODO: 시각 컴포넌트 1 (프리셋 S1 첫째) */}
-          {/* TODO: 시각 컴포넌트 2 (프리셋 S1 둘째) */}
-
-          {/* 전환 문장 — A. 독자 대변형 */}
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            {/* TODO: "~싶잖아요" 스타일 전환 */}
-          </p>
-        </>
-      ),
-      bridgeCTA: {
-        href: '#s2',
-        badge: '', // TODO: 2~3글자
-        title: '', // TODO: 독자가 궁금해할 질문
-        desc: '', // TODO: 1줄 설명
-        icon: 'calc', // TODO: check | calc | clock | info | grid
-      },
-    },
-
-    /**
-     * ===== S2 =====
-     * 전환 스타일: B. 자연 호기심형 ("~궁금한 게 생기죠")
-     * 시각 요소: TODO — 키워드 프리셋 S2 배치 사용
-     */
-    {
-      id: 's2',
-      number: '02',
-      heading: '', // TODO: H2-2
-      subtitle: '', // TODO
-      content: (
-        <>
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            {/* TODO: 도입 단락 */}
-          </p>
-
-          {/* TODO: 시각 컴포넌트 1 (프리셋 S2 첫째) */}
-          {/* TODO: 시각 컴포넌트 2 (프리셋 S2 둘째) */}
-
-          {/* 전환 문장 — B. 자연 호기심형 */}
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            {/* TODO: "~궁금한 게 생기죠" 스타일 전환 */}
-          </p>
-        </>
-      ),
-      bridgeCTA: {
-        href: '#s3',
-        badge: '', // TODO
-        title: '', // TODO
-        desc: '', // TODO
-        icon: 'info', // TODO
-      },
-    },
-
-    /**
-     * ===== S3 =====
-     * 전환 스타일: E. 실용 연결형 ("~정리했어요")
-     * 시각 요소: TODO — 키워드 프리셋 S3 배치 사용
-     */
-    {
-      id: 's3',
-      number: '03',
-      heading: '', // TODO: H2-3
-      subtitle: '', // TODO
-      content: (
-        <>
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            {/* TODO: 도입 단락 */}
-          </p>
-
-          {/* TODO: 시각 컴포넌트 1 (프리셋 S3 첫째) */}
-          {/* TODO: 시각 컴포넌트 2 (프리셋 S3 둘째) */}
-
-          {/* 전환 문장 — E. 실용 연결형 */}
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            {/* TODO: "~정리했어요" 스타일 전환 */}
-          </p>
-        </>
-      ),
-      bridgeCTA: {
-        href: '#s4',
-        badge: '', // TODO
-        title: '', // TODO
-        desc: '', // TODO
-        icon: 'info', // TODO
-      },
-    },
-
-    /**
-     * ===== S4 =====
-     * 전환 스타일: 없음 (마지막 — primary CTA로 마무리)
-     * 시각 요소: TODO — 키워드 프리셋 S4 배치 사용
-     */
-    {
-      id: 's4',
-      number: '04',
-      heading: '', // TODO: H2-4
-      subtitle: '', // TODO
-      content: (
-        <>
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            {/* TODO: 도입 단락 */}
-          </p>
-
-          {/* TODO: 시각 컴포넌트 1 (프리셋 S4 첫째) */}
-          {/* TODO: 시각 컴포넌트 2 (프리셋 S4 둘째) */}
-
-          {/* S4는 전환 문장 없음 */}
-        </>
-      ),
-      bridgeCTA: {
-        href: '', // TODO: 허브 URL
-        badge: '', // TODO
-        title: '', // TODO
-        desc: '', // TODO
-        icon: 'calc', // TODO
-        primary: true, // 마지막 섹션은 항상 primary
-      },
-    },
-
-    /**
-     * ===== S5: FAQ =====
-     */
-    {
-      id: 's5',
-      number: '05',
-      heading: '자주 묻는 질문',
-      subtitle: '자주 나오는 질문만 모았어요',
-      content: null,
-    },
+    // TODO: 각 섹션 추가
+    // {
+    //   id: 's1',
+    //   number: 'SECTION 01',     // 또는 'STEP 01'
+    //   heading: 'H2 질문형 제목',
+    //   subtitle: '1줄 부제',
+    //   content: (<>...</>),
+    //   // content 안에서 <XXXChecker /> 사용 (체커 래퍼는 src/components/checkers/ 에 별도 생성)
+    //   // pasBridge: { href, question, answer, buttonText },  // 큰 PAS 카드
+    //   // bridgeCTA: { href, badge, title, desc, icon },      // 작은 링크 카드
+    // },
+    //
+    // 마지막 FAQ 섹션:
+    // { id: 's-faq', number: '06', heading: '자주 묻는 질문', subtitle: '', content: null },
   ],
 
   faq: [
-    {
-      question: '', // TODO: H2와 겹치지 않는 실무 질문 1
-      answer: '', // TODO: HTML 허용 (<strong>, <a>)
-    },
-    {
-      question: '', // TODO: H2와 겹치지 않는 실무 질문 2
-      answer: '', // TODO
-    },
+    // TODO: 4~6개, H2와 겹치지 않는 질문
+    // { question: '질문?', answer: 'HTML 허용 (<strong>, <a>)' },
   ],
 
   relatedSpokes: [
-    // TODO: 관련 스포크 2~3개
-    { badge: '', title: '', desc: '', href: '' },
-    { badge: '', title: '', desc: '', href: '' },
+    // TODO: 관련 스포크 3~5개
+    // { badge: '2~3글자', title: '제목', desc: '설명', href: '/w/slug' },
   ],
 
   sources: [
-    // TODO: 최소 3개, 정부/법령 사이트 우선
-    { name: '', url: '', org: '' },
-    { name: '', url: '', org: '' },
-    { name: '', url: '', org: '' },
+    // TODO: 최소 2개, 정부/법령 사이트 우선
+    // { name: '출처명', url: 'https://...', org: '기관명' },
   ],
+
+  // ═══ 선택 필드 (모두 옵셔널) ═══
+  // summary3: [<>요약 1</>, <>요약 2</>, <>요약 3</>],
+  // sourceBar: { badge: '출처', name: '기관명 + 근거', date: '2026.01' },
+  // prevNext: { prev: { title: '이전 글', href: '/w/...' }, next: { title: '다음 글', href: '/w/...' } },
+  // stickyBar: { topLabel: '라벨', value: '값', buttonText: '버튼', scrollTo: '#id' },
 }
 
 export default data

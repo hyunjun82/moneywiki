@@ -215,15 +215,116 @@ const RULES = [
     id: 'STRUCT-001',
     severity: 'WARNING',
     component: '구조',
-    description: 'H2 태그가 4개가 아님',
-    test: (content) => {
-      const h2Count = (content.match(/<h2[^>]*>/g) || []).length;
-      if (h2Count !== 4) {
-        return [{ line: 0, text: `H2 ${h2Count}개 발견 (4개 필요)` }];
+    description: '스포크 섹션(heading) 개수가 4개가 아님 (FAQ 제외)',
+    test: (content, filePath) => {
+      // 스포크 파일에만 적용 (허브는 섹션 수 제한 없음)
+      if (filePath && !filePath.includes('spoke')) return [];
+      // TSX 데이터 파일은 sections[].heading으로 H2 정의
+      // FAQ 섹션, 체커 섹션 제외하고 카운트
+      const headingMatches = content.match(/heading\s*:\s*['"`](?!자주 묻는 질문)[^'"`]+['"`]/g) || [];
+      // 체커 섹션 heading도 제외 (id: 'checker' 근처의 heading)
+      const checkerHeading = (content.match(/id\s*:\s*['"]checker['"]/g) || []).length;
+      const count = headingMatches.length - checkerHeading;
+      if (count !== 4) {
+        return [{ line: 0, text: `섹션 heading ${count}개 발견 (4개 필요, FAQ/체커 제외)` }];
       }
       return [];
     },
-    fix: '섹션을 정확히 4개로 조정',
+    fix: '본문 섹션을 정확히 4개로 조정 (+ FAQ 1개)',
+  },
+
+  // ── 문체 규칙 (WARNING) ──
+  {
+    id: 'STYLE-001',
+    severity: 'WARNING',
+    component: '문체',
+    description: '~습니다/~합니다 문체 사용 (→ ~이에요/~해요)',
+    test: (content) => {
+      const matches = [];
+      const lines = content.split('\n');
+      for (let i = 0; i < lines.length; i++) {
+        const trimmed = lines[i].trim();
+        // 코드/메타/URL 라인 제외
+        if (/^(import |export (type|interface|default|const)|\/\/|\*|})/.test(trimmed)) continue;
+        if (/\b(url|href)\s*:/.test(trimmed)) continue;
+        // meta description은 ~습니다 허용 (정리했습니다 패턴)
+        if (/\b(description|ogDescription)\s*:/.test(trimmed)) continue;
+
+        if (/[습합]니다/.test(trimmed)) {
+          matches.push({
+            line: i + 1,
+            text: trimmed.substring(0, 80),
+          });
+        }
+      }
+      return matches;
+    },
+    fix: '~습니다 → ~이에요, ~합니다 → ~해요',
+  },
+  {
+    id: 'STYLE-002',
+    severity: 'WARNING',
+    component: '문체',
+    description: '관공서체/딱딱한 표현 사용',
+    pattern: /(확인해 보시기 바랍니다|참고하시기 바랍니다|문의하시기 바랍니다|하시기 바랍니다|되오니|바라오며|드리오니)/g,
+    fix: '~바랍니다 → ~해 보세요 / ~하세요',
+  },
+  {
+    id: 'STYLE-003',
+    severity: 'WARNING',
+    component: '문체',
+    description: '의미 없는 수식어/금지어 사용',
+    test: (content) => {
+      const matches = [];
+      const lines = content.split('\n');
+      const BAD = [/다양한/g, /다양하게/g, /등등/g, /매우 중요/g, /반드시 확인/g, /총정리/g, /완벽 ?정리/g, /완벽 ?가이드/g];
+      for (let i = 0; i < lines.length; i++) {
+        const trimmed = lines[i].trim();
+        if (/^(import |export |\/\/|\*)/.test(trimmed)) continue;
+        // 구조적 참조 필드 제외 (기존 페이지 slug/URL/제목 참조)
+        if (/\b(slug|href|url)\s*:/.test(trimmed)) continue;
+        if (/^\s*keywords\s*:/.test(trimmed)) continue;
+        if (/^\s*(prev|next)\s*:/.test(trimmed)) continue;
+        if (/^\s*name\s*:\s*'/.test(trimmed)) continue;
+        for (const p of BAD) {
+          p.lastIndex = 0;
+          if (p.test(trimmed)) {
+            matches.push({ line: i + 1, text: trimmed.substring(0, 80) });
+            break;
+          }
+        }
+      }
+      return matches;
+    },
+    fix: '구체적 표현으로 교체 (다양한 → 구체 예시 나열)',
+  },
+  {
+    id: 'STYLE-004',
+    severity: 'WARNING',
+    component: '문체',
+    description: '동일 시작어 3회 연속 반복 (<p> 태그)',
+    test: (content) => {
+      const matches = [];
+      const pRegex = /<p[^>]*>\s*([가-힣]{1,4})/g;
+      const starts = [];
+      let m;
+      while ((m = pRegex.exec(content)) !== null) {
+        starts.push({
+          word: m[1],
+          line: content.substring(0, m.index).split('\n').length,
+        });
+      }
+      for (let i = 0; i < starts.length - 2; i++) {
+        if (starts[i].word === starts[i + 1].word && starts[i + 1].word === starts[i + 2].word) {
+          matches.push({
+            line: starts[i].line,
+            text: `"${starts[i].word}..." 로 시작하는 문장 3회 연속`,
+          });
+        }
+      }
+      return matches;
+    },
+    fix: '문장 시작어 다양화',
   },
 ];
 
@@ -254,8 +355,8 @@ function analyzeFile(filePath) {
         });
       }
     } else if (rule.test) {
-      // 커스텀 테스트 함수 기반 검출
-      const matches = rule.test(content);
+      // 커스텀 테스트 함수 기반 검출 (filePath 전달)
+      const matches = rule.test(content, filePath);
       for (const m of matches) {
         results.push({
           file: fileName,
