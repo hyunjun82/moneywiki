@@ -7,8 +7,7 @@
 
 import type { HubData } from './types'
 import { HubTable, HubTipBox, HubWarnBox } from '@/components/hub/HubBlocks'
-import GenericChecker from '@/components/GenericChecker'
-import { checkerConfig } from '@/data/spoke/ISA계좌-비과세-한도-손익통산-절세-계산'
+import ISAChecker from '@/components/checkers/ISAChecker'
 
 const data: HubData = {
   slug: 'ISA계좌-세금혜택-비과세-한도-중개형-서민형-비교',
@@ -131,7 +130,7 @@ const data: HubData = {
       subtitle: '2가지만 선택하면 일반 계좌 대비 절세액을 바로 계산해요',
       content: (
         <>
-          <GenericChecker config={checkerConfig} />
+          <ISAChecker />
         </>
       ),
     },

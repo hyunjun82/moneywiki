@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react'
-import type { CheckerConfig } from '@/data/checker-types'
 
 // --- Hub TOC Item ---
 export interface HubTOCItem {
@@ -22,8 +21,6 @@ export interface HubSection {
     title: string
     desc: string
   }
-  /** GenericChecker 설정 (주제별 맞춤) */
-  checkerConfig?: CheckerConfig
 }
 
 // --- Hub Spoke Group ---

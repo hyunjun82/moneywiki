@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import type { HubData } from '@/data/hub/types'
 import { SectionSpoke, StickyBar } from '@/components/spoke/SpokeBlocks'
-import GenericChecker from '@/components/GenericChecker'
 import SpokeFAQ from '@/components/spoke/SpokeFAQ'
 import SpokeTOCInline from '@/components/spoke/SpokeTOCInline'
 
@@ -204,7 +203,7 @@ export default function HubPageContent({ hub, slug }: { hub: HubData; slug: stri
               <div className="text-[15px] text-neutral-700 leading-[1.76] [&_p]:mb-[14px] [&_strong]:text-neutral-900 [&_strong]:font-bold [&_a]:text-[#1E3A5F] [&_a]:font-semibold [&_a]:underline [&_a]:underline-offset-2 [&_h3]:text-[16.5px] [&_h3]:font-extrabold [&_h3]:text-neutral-900 [&_h3]:leading-[1.35] [&_h3]:mt-[22px] [&_h3]:mb-2 [&_h3]:pl-3 [&_h3]:border-l-[3px] [&_h3]:border-[#1E3A5F]">
                 {section.content}
               </div>
-              {section.checkerConfig && <GenericChecker config={section.checkerConfig} />}
+              {/* checkerConfig는 이제 content에 직접 포함 (클라이언트 컴포넌트로 분리) */}
               {section.sectionSpoke && section.sectionSpoke.length > 0 && (
                 <SectionSpoke items={section.sectionSpoke} />
               )}
