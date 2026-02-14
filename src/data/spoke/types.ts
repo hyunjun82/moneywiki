@@ -52,6 +52,12 @@ export interface SpokeData {
     h1: ReactNode
     intro: ReactNode
     hubCTA: { badge: string; desc: string }
+    /** Featured Snippet 타깃 — 핵심 답변 2~3문장 압축 */
+    quickAnswer?: {
+      title: string
+      body: string
+      hook: string
+    }
   }
   toc: TOCItem[]
   sections: SpokeSection[]

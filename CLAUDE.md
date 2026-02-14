@@ -2,48 +2,28 @@
 
 ---
 
-## 🚨 신규 vs 리라이트 확인 (최우선!)
+## 신규 vs 리라이트 확인 (최우선!)
 
 **키워드를 받으면 작업 시작 전 반드시 물어볼 것:**
 ```
 "이 키워드는 신규 글인가요, 기존 글 리라이트인가요?"
 ```
 
-- 기존 사이트에 이미 있는 키워드 (퇴직금, 퇴직연금, 부동산 등) → **무조건 리라이트**
-- 리라이트 = 기존 URL 유지, 내용만 품질 업그레이드
+- 기존 사이트에 이미 있는 키워드 → **무조건 리라이트** (기존 URL 유지, 내용만 업그레이드)
 - 신규 = 새 URL 생성
 - **확인 없이 신규 생성 절대 금지**
+- 중복 확인: `content/wiki/` + `src/data/spoke/` + `src/data/hub/` 전체 검색
 
 ---
 
 ## 절대 금지
 
-- Task tool 사용 금지. 서브에이전트 절대 불가.
-- 글 작성은 반드시 TeamCreate로만 진행.
-- 이 규칙 위반 시 즉시 중단.
+- Task tool 사용 금지 (서브에이전트 불가, settings.json deny에서 차단됨)
+- 이 규칙 위반 시 즉시 중단
 
 ---
 
-## 🚨 절대 규칙 (매 글 작성 전 읽기!)
-
-**wegive 본질** - 이것만 기억하세요:
-
-> "20~80대 누구나 이해하고, 궁금증 100% 해결"
-> "이 글 하나로 다른 곳 갈 필요 없음"
-
-### 자가 검증 (글 완료 후 반드시!)
-```
-□ 초등학생도 이해할 수 있는 쉬운 말?
-□ "뭔지, 왜, 어떻게" 다 설명했나?
-□ 다른 사이트 안 가도 되나?
-□ 테이블 대신 텍스트로 설명했나?
-```
-
-**위반 시**: 전체 재작성 (수정 불가)
-
----
-
-## 📁 프로젝트 정보
+## 프로젝트 정보
 
 | 항목 | 값 |
 |------|-----|
@@ -54,24 +34,48 @@
 
 ---
 
-## ⚠️ 위키 글 쓰기 필수 단계
+## 글 형식 2가지 — 반드시 구분!
+
+### A. 위키 마크다운 글 (content/wiki/*.md)
+
+- **용도**: 일반 위키 글, 계산기 페이지, 양식 페이지
+- **파일 위치**: `content/wiki/[슬러그].md`
+- **템플릿**: `.claude/references/moneywiki-template3358.md`
+- **배포**: `git add content/wiki/[파일명].md && git commit && git push`
+
+### B. TSX 스포크/허브 글 (src/data/spoke/*.tsx, src/data/hub/*.tsx)
+
+- **용도**: 허브&스포크 구조의 심층 콘텐츠
+- **파일 위치**: `src/data/spoke/[슬러그].tsx` 또는 `src/data/hub/[슬러그].tsx`
+- **템플릿**: 아래 참조 파일 목록 참고
+- **배포**: `git add src/data/spoke/[파일명].tsx && git commit && git push`
+- **등록 필수**: `src/data/spoke/registry.ts` 또는 `src/data/hub/registry.ts`에 import + 등록
+
+**어떤 형식인지 모르면 사용자에게 물어볼 것!**
+
+---
+
+## 위키 MD 글 작성 단계
 
 ### 1단계: 템플릿 읽기
 ```
-Read("C:\Users\user\wiki-site\.claude\references\moneywiki-template3358.md")
+Read(".claude/references/moneywiki-template3358.md")
 ```
 
 ### 2단계: 정보 확인 (WebFetch 우선!)
 ```
-1. WebFetch 먼저 (정부/공식 URL)
-   - korea.kr, nts.go.kr, fss.or.kr, moel.go.kr 등
+1. WebFetch 먼저 (정부/공식 URL 직접 접속)
+   - korea.kr, nts.go.kr, fss.or.kr, moel.go.kr, easylaw.go.kr
+   - law.go.kr, bokjiro.go.kr, hf.go.kr, nhuf.molit.go.kr
 2. 못 찾으면 WebSearch (fallback)
+3. 블로그/개인사이트/위키백과 절대 금지
 ```
 
 ### 3단계: 글 작성
 - 구어체 (~이에요, ~해요)
 - 20~80대 누구나 이해
 - H2에 베이스 키워드 포함
+- H2 4개 = keywords 4개 (질문형)
 
 ### 4단계: 배포
 ```bash
@@ -80,76 +84,180 @@ git add content/wiki/[파일명].md && git commit -m "feat: [제목]" && git pus
 
 ---
 
-## 📋 Frontmatter 필수
+## TSX 스포크/허브 작성 단계
+
+### 1단계: 템플릿 읽기
+```
+스포크: Read(".claude/references/spoke-template.md") + Read(".claude/references/spoke-rules.md")
+허브:   Read(".claude/references/hub-template.md") + Read(".claude/references/hub-rules.md")
+체커:   Read(".claude/references/checker-patterns.md")
+```
+
+### 2단계: 정보 확인 (위키 MD와 동일)
+
+### 3단계: 글 작성
+- spoke-rules.md / hub-rules.md 규칙 준수
+- 컴포넌트 API는 spoke-template.md가 유일한 정답
+
+### 4단계: 등록 + 배포
+```bash
+# registry.ts에 import + 등록 추가 후
+git add src/data/spoke/ && git commit -m "feat: [제목]" && git push
+```
+
+---
+
+## Frontmatter 필수 (위키 MD 전용)
 
 ```yaml
 ---
-title: "롱테일 키워드 제목"
-description: "~해요 패턴"
+title: "롱테일 키워드 제목 | 보조 키워드"  # 60자 이내, 구분자 | 사용
+description: "100~150자. 구어체 2문장. 키워드 3개+ 자연 포함. 행동유도 마무리"
 category: "카테고리"
-keywords: ["키워드1", "키워드2", "키워드3", "키워드4"]  # 4개
+keywords: ["키워드1", "키워드2", "키워드3", "키워드4"]  # 정확히 4개
 author: "머니위키 에디터"
-updateNote: "2026년 1월 기준"
-lastUpdated: "2026-01-27"
-datePublished: "2026-01-27"
+updateNote: "2026년 2월 기준"
+lastUpdated: "2026-02-15"
+datePublished: "2026-02-15"
 summary:
-  - "핵심 1"
+  - "핵심 1 (구체 숫자 포함)"
   - "핵심 2"
   - "핵심 3"
 sources:
   - name: "출처명"
-    url: "https://URL"
-    date: "2026-01"
-faq:  # 2개, 소제목과 안 겹침
-  - question: "[베이스] + 질문?"
-    answer: "구어체 답변"
-  - question: "[베이스] + 질문?"
-    answer: "구어체 답변"
+    url: "https://딥링크-URL"  # 메인페이지 금지, 해당 콘텐츠 직접 URL
+    date: "2026-02"
+faq:  # 2개, H2 소제목과 안 겹침
+  - question: "[베이스키워드] + 질문?"
+    answer: "구어체 답변 2~3문장"
+  - question: "[베이스키워드] + 질문?"
+    answer: "구어체 답변 2~3문장"
+ctaCard:  # 필수! 클릭 유도 버튼
+  label: "10초 계산"           # 행동 + 시간 (조회/계산/신청/확인)
+  mainText: "14일 넘기면 연 20% 이자"  # 구체 숫자 + 핵심 정보
+  subText: "내 지연이자 얼마인지"       # 독자 행동 유도
+  url: "/w/관련-계산기-또는-외부URL"
+  external: false              # 외부 URL이면 true
 relatedDocs:
   - title: "관련문서"
     url: "/w/슬러그"
 ---
 ```
 
----
+### description 규칙 (중요!)
 
-## ⛔ 5원칙 (위반 시 재작성)
+```
+글자수: 100~150자 (구글 meta description 최대 155자)
+키워드: 4개 중 최소 3개 자연 포함
+구조: 2문장 (호기심 유발 + 해결 제시)
+문체: ~요체 (이에요/해요/드려요)
+금지: "~알아봅니다", "~총정리", 키워드 나열
+```
 
-1. **텍스트가 주인공** - 테이블 2개 이하
-2. **구어체 필수** - ~이에요, ~해요, ~하죠
-3. **독자 중심** - 20~80세 이해 가능
-4. **섹션당 4문장 이상**
-5. **FAQ는 frontmatter만** - 본문 금지
+**나쁜 예 (절대 금지):**
+```
+"기초생활수급자, 생계급여, 1인가구, 계산기, 2026년"
+→ 키워드만 나열. 문장이 아님. 클릭 안 됨.
 
----
+"기초생활수급자에 대해 알아봅니다"
+→ 호기심 없음. 내용 예측 불가. CTR 최악.
 
-## 🎯 H2 규칙 (PAA 노출)
+"기초생활수급자 조건 소득인정액 계산 1인가구 생계급여 의료급여 주거급여 교육급여 총정리"
+→ 키워드 과적. 스팸으로 인식됨.
+```
+
+**좋은 예:**
+```
+"2026년 기초생활수급자 선정 기준이 바뀐 거 아시나요? 1인가구 소득인정액 계산법부터 급여별 조건까지 알려드려요."
+→ 구체 사실 + 호기심 + 자연스러운 키워드 배치. 131자.
+
+"퇴직금을 14일 안에 못 받으면 연 20% 이자가 붙어요. 지연이자 계산 방법과 청구 절차를 정리했어요."
+→ 숫자 충격 + 해결 약속. 116자.
+```
+
+3가지 패턴 순환 (같은 허브 내 중복 금지):
+- **A. 놀라움형**: "[사실]~라는 거 아시나요? [키워드 배치] 알려드려요"
+- **B. 문제해결형**: "[고민] 고민이시죠? [키워드 배치] 방법을 알려드려요"
+- **C. 숫자형**: "[숫자]~라는 사실, 알고 계셨나요? [키워드 배치] 정리해드려요"
+
+### ctaCard 규칙 (필수!)
+
+모든 위키 MD 글에 ctaCard 필수. 서론 바로 뒤에 자동 렌더링됨.
 
 ```yaml
-# Keywords 4개 = H2 4개
-keywords: [A, B, C, D] → H2: [A질문, B질문, C질문, D질문]
+# 내부 계산기 연결
+ctaCard:
+  label: "10초 계산"
+  mainText: "핵심 숫자 + 정보"
+  subText: "행동 유도"
+  url: "/w/계산기-슬러그"
 
-# 모든 H2에 베이스 키워드 포함!
-❌ "면책까지 하면 추가 비용 있나요?"
-✅ "개인파산 면책까지 하면 추가 비용 있나요?"
+# 외부 정부 사이트 연결 (딥링크!)
+ctaCard:
+  label: "30초 조회"
+  mainText: "핵심 정보"
+  subText: "정부 사이트 바로가기"
+  url: "https://딥링크-직접-페이지-URL"  # 메인페이지 금지!
+  external: true
+```
+
+### ext-btn 규칙 (본문 마지막 H2 뒤, 출처 앞)
+
+```html
+<!-- 정부/공식 (검정) -->
+<a href="딥링크URL" target="_blank" rel="noopener noreferrer" class="ext-btn ext-btn-black">
+  <span class="ext-btn-badge">기관명 공식</span>
+  <span class="ext-btn-text">서비스명</span>
+  <span class="ext-btn-cta">바로가기 →</span>
+</a>
+
+<!-- 신청/조회 (파랑) -->
+<a href="딥링크URL" target="_blank" rel="noopener noreferrer" class="ext-btn ext-btn-blue">
+  <span class="ext-btn-badge">무료 조회</span>
+  <span class="ext-btn-text">서비스명</span>
+  <span class="ext-btn-cta">조회하기 →</span>
+</a>
 ```
 
 ---
 
-## 🔗 링크 규칙
+## 5원칙 (위반 시 재작성)
 
-| 타입 | 형식 | 새창 |
-|------|------|------|
-| 내부링크 | `[키워드](/w/슬러그)` | ❌ |
-| 계산기 | `[계산기](/calculators/슬러그)` | ❌ |
-| 외부링크 | `[기관명](https://URL)` | ✅ |
-
-- 내부링크는 관련 있는 글만 자연스럽게 (억지로 개수 채우기 금지)
-- 출처는 본문 인라인 + 하단 섹션 이중 표기
+1. **텍스트가 주인공** - 테이블 2개 이하
+2. **구어체 필수** - ~이에요, ~해요 (~습니다/됩니다 절대 금지)
+3. **독자 중심** - 20~80세 누구나 이해 가능
+4. **섹션당 4문장 이상** - 단락이 짧으면 AI 티 남
+5. **FAQ는 frontmatter/data만** - 본문에 FAQ 섹션 금지
 
 ---
 
-## ⚠️ 정보 정확성
+## H2 규칙 (PAA 노출)
+
+```
+Keywords 4개 = H2 4개 (질문형)
+모든 H2에 베이스 키워드 포함!
+
+BAD:  "면책까지 하면 추가 비용 있나요?"
+GOOD: "개인파산 면책까지 하면 추가 비용 있나요?"
+```
+
+---
+
+## 링크 규칙
+
+| 타입 | 형식 | 새창 |
+|------|------|------|
+| 내부링크 | `[키워드](/w/슬러그)` | X |
+| 계산기 | `[계산기](/calculators/슬러그)` | X |
+| 외부링크 | `[기관명](https://딥링크URL)` | O (target="_blank") |
+
+- 내부링크는 관련 있는 글만 자연스럽게 (억지로 개수 채우기 금지)
+- 외부링크는 반드시 **딥링크** (메인페이지 금지, 해당 콘텐츠 직접 URL)
+- 출처는 본문 인라인 + 하단 출처 섹션 이중 표기
+
+---
+
+## 정보 정확성
 
 | 항목 | 값 |
 |------|-----|
@@ -159,185 +267,95 @@ keywords: [A, B, C, D] → H2: [A질문, B질문, C질문, D질문]
 | 퇴직금 지급기한 | **14일** |
 | 청구권 소멸시효 | **3년** |
 
----
-
-## 🎨 금지 사항
-
-- ❌ 이모지
-- ❌ `## 1. 제목` (숫자 헤딩)
-- ❌ 본문에 FAQ 섹션
-- ❌ description "~알아봅니다"
-- ❌ 단일 키워드 제목
-- ❌ 15%, 12% 세율 (구버전)
+- 모든 금액: 원 단위까지 정확 (오차 0원)
+- 연도: 2026년 기준만 (이전 연도 혼입 금지)
+- 출처 없는 숫자 생성 절대 금지
 
 ---
 
-## ✅ 최종 체크리스트
+## 금지 사항
 
-### 필수
-- [ ] Keywords 4개 = H2 4개?
+- 이모지 사용 금지
+- `## 1. 제목` (숫자 헤딩 금지)
+- 본문에 FAQ 섹션 금지
+- description "~알아봅니다" 금지
+- 단일 키워드 제목 금지
+- 15%, 12% 세율 (구버전 수치 금지)
+- title에 "총정리", "완벽정리", "가이드" 금지
+- title 구분자 — (긴대시), : (콜론) 금지 → | (파이프) 사용
+
+---
+
+## 최종 체크리스트
+
+### 위키 MD 글
+- [ ] Keywords 4개 = H2 4개 (질문형)?
 - [ ] 모든 H2에 베이스 키워드?
 - [ ] 각 섹션 4문장 이상?
-- [ ] 내부링크 관련성 확인?
-- [ ] 출처 섹션 있음?
-- [ ] FAQ 2개 (소제목과 안 겹침)?
+- [ ] description 100~150자, 구어체 2문장?
+- [ ] ctaCard 있음?
+- [ ] 출처 섹션 있음 (딥링크)?
+- [ ] FAQ 2개 (H2와 안 겹침)?
+- [ ] ext-btn 있음 (본문 마지막)?
+- [ ] 내부링크 실존 슬러그 확인?
+
+### TSX 스포크
+- [ ] 컴포넌트 4종류+ 사용?
+- [ ] 같은 컴포넌트 연속 금지?
+- [ ] SpokeTable 2개 이하?
+- [ ] quickAnswer 있음?
+- [ ] bridgeCTA 있음?
+- [ ] 체커 컴포넌트 있음 (해당 시)?
+- [ ] registry.ts 등록?
 
 ### 배포
 - [ ] git push 완료?
-- [ ] Vercel 배포 확인?
+- [ ] Vercel 빌드 성공?
 
 ---
 
-## 📚 참고 파일
+## 참조 파일 목록
 
+### 위키 MD 전용
 | 파일 | 용도 |
 |------|------|
-| `moneywiki-template3358.md` | **최신 템플릿** (경쟁사 장점 포함) |
-| `keywords.md` (commands/) | **타이틀 구조화 규칙** (콜론 금지) |
-| `wiki-rules.md` | 신뢰 출처 리스트 |
+| `.claude/references/moneywiki-template3358.md` | 위키 MD 템플릿 (서론/본문/시각요소/출처/ctaCard/ext-btn) |
+
+### TSX 스포크/허브 전용
+| 파일 | 용도 |
+|------|------|
+| `.claude/references/spoke-template.md` | 스포크 컴포넌트 API (11개 컴포넌트 props, 금지 패턴) |
+| `.claude/references/spoke-rules.md` | 스포크 작성 규칙 (도입부, 문체, 전환, bridgeCTA, FAQ) |
+| `.claude/references/hub-template.md` | 허브 템플릿 (spokeGrid, sections 구조) |
+| `.claude/references/hub-rules.md` | 허브 작성 규칙 (10개 규칙 + 체크리스트) |
+| `.claude/references/checker-patterns.md` | 체커 5가지 유형 (A~E) + RSC-Safe 패턴 |
+
+### 공통
+| 파일 | 용도 |
+|------|------|
+| `.claude/references/writing-rules.md` | SEO 메타 + 스키마 규칙 (title/description/JSON-LD) |
+| `.claude/commands/keywords.md` | `/keywords` 슬래시 명령어 (키워드 생성 + 중복 체크 + 비주얼 프리셋) |
 
 ---
 
-## 🔒 백업 보호 (절대 삭제 금지!)
+## 백업 보호 (절대 삭제 금지!)
 
 `.claude/backup-legacy-agents/` 폴더는 **사용자 명시적 요청 없이 절대 삭제/수정 금지**.
-이전 서브에이전트 시스템 백업 (참고용, 실행 안 함).
 
 ---
 
-## 🚀 배치 작성 (100개 이상)
+## 배치 작성 (10개 단위)
 
 ```
-# 10개 단위로 끊어서 작성
-1. 키워드 10개 작성
-2. 규칙 점검 (wegive 본질 확인)
-3. 위반 발견 → 중단 + 수정
-4. 다음 10개
+1. /keywords [시드키워드] → 키워드 10개 생성
+2. 각 키워드별 글 작성 (위키 MD 또는 TSX 스포크)
+3. 훅이 자동 검증 (통과해야 저장됨)
+4. 10개 완료 후 중간 빌드 체크
+5. 다음 10개
 ```
 
 **규칙 위반 징후**:
-- 테이블 3개 이상 → 텍스트로
-- ~습니다 → ~이에요
-- 섹션 2문장 → 4문장 보충
-
----
-
-## 글 작성 완료 후 검증 안내
-
-허브 1개의 스포크 글 작성이 모두 끝나면, 반드시 아래 메시지를 출력한다:
-
-```
-✅ {허브명} 스포크 {N}개 작성 완료. 검증 명령어:
-node .claude/hooks/batch-verify.js --hub {허브명}
-실행하시겠습니까?
-```
-
----
-
-## Spoke 생산 에이전트 팀 규칙
-
-### 파이프라인 (5단계 순차)
-
-```
-키워드 → [1.리서치] → [2.작성] → [3.검증] → [4.SEO] → [5.최종검수] → 승인
-                                    ↑ 실패 시 되돌림 (최대 2회)
-```
-
-### 에이전트별 역할
-
-| # | 에이전트 | 입력 | 출력 |
-|---|----------|------|------|
-| 1 | **리서치** | 키워드 + hub 데이터 | 수치/출처/법령/공식 (facts[]) |
-| 2 | **작성** | 리서치 결과 + 골든 예제 + writing-rules | `src/data/spoke/[slug].tsx` |
-| 3 | **검증** | 초안 TSX + 리서치 결과 | pass/fail + 수정 지시 |
-| 4 | **SEO** | 검증 통과 TSX | 링크/스키마/메타 검증 완료 |
-| 5 | **최종검수** | SEO 통과 TSX | QA 스코어 (80%+ → 승인) |
-
-### 필수 참조 파일
-
-```
-src/data/spoke/types.ts                    — 타입 정의 (SpokeData, SpokeSection)
-src/components/spoke/SpokeBlocks.tsx       — 컴포넌트 전체 (20개+)
-src/components/GenericChecker.tsx           — 범용 체커 (CheckerConfig 기반)
-src/components/spoke/SpokeTOCInline.tsx    — 접이식 목차
-골든 예제: src/data/spoke/기초생활수급자-1인가구-생계급여-조건-소득인정액.tsx
-```
-
-### 리서치 규칙 (AGENT 1)
-
-- 모든 금액: 원 단위까지 정확 (오차 0원)
-- 비율: 소수점 1자리까지
-- 연도: 2026년 기준만 (이전 연도 혼입 금지)
-- 교차검증: 동일 수치 최소 2개 출처 확인
-- 출처 우선순위: 보건복지부 > 복지로 > 기타 정부 > 민간
-
-### 작성 규칙 (AGENT 2)
-
-```
-[문체] 해요체 통일. "~입니다" 금지 → "~이에요/예요"
-[길이] 한 문장 최대 40자, 한 단락 최대 3문장
-[흐름] PAS 구조: Problem → Agitate → Solution
-[구체] "많은 금액" ❌ → "820,556원" ✅
-[연결] 섹션 끝마다 PASBridge 또는 BridgeCTA (막다른 길 없음)
-```
-
-필수 포함 항목:
-- summary3 (3줄 요약)
-- sourceBar (출처 바)
-- checker (체커, 해당 글만)
-- prevNext (이전/다음)
-- stickyBar (스티키 바)
-- pasBridge 최소 2개
-
-### 검증 규칙 (AGENT 3)
-
-```
-[수치] 리서치 수치 vs 작성 수치 일치, 체커 기준값 = 테이블 값
-[누락] sections 5개+, faq 4개+, relatedSpokes 3개+, sources 2개+
-[문체] "입니다" 0회, 40자 초과 문장 0개
-[컴포넌트] 공식→FormulaBox, 비교→SpokeTable, 수치→Chips, 팁→TipBox, 절차→Steps
-```
-
-불합격 시: 해당 에이전트로 되돌림 (최대 2회, 3회 실패 → 사람 검수)
-
-### SEO 규칙 (AGENT 4)
-
-링크 검증:
-- 모든 내부 href → `src/data/spoke/`, `src/data/hub/` 실존 slug 확인
-- 깨진 링크 0개 (미존재 시 빌드 차단)
-- toc.id ↔ sections.id 1:1 매칭
-
-스키마 필수 9종:
-| 스키마 | 적용 |
-|--------|------|
-| Article | 모든 spoke |
-| FAQPage | faq 4개+ |
-| BreadcrumbList | 모든 spoke (홈→허브→현재) |
-| HowTo | Steps 컴포넌트 사용 시 |
-| WebSite | layout.tsx (전역) |
-| Organization | layout.tsx (전역) |
-| WebApplication | checker: true 시 |
-| ItemList | Hub 전용 |
-| Person | Article.author 참조 (E-E-A-T) |
-
-메타데이터:
-- title: 60자 이내, 핵심 수치 포함
-- description: 120~155자, 키워드+숫자+행동유도
-
-### 최종검수 규칙 (AGENT 5)
-
-```
-[렌더링] npm run build 성공 + 페이지 에러 없음
-[골든 대비] TOC/요약/출처바/PAS/체커/FormulaBox/Chips/이전다음/스티키/관련글 전부 있음
-[수치 크로스] hero 수치 = 체커 기준값 = 테이블 값 = 스티키 값
-[메타 품질] description 120~155자 + 키워드 + 숫자 + CTA
-```
-
-QA 스코어: 80%+ → 자동 승인, 80% 미만 → 재작업, 60% 미만 → 전체 재작성
-
-### 배치 처리
-
-- 한 번에 5개 spoke 병렬 처리
-- 10개마다 중간 빌드 체크
-- 깨진 빌드 발견 시 즉시 중단
-- 완료된 spoke는 즉시 commit
+- 테이블 3개 이상 → 텍스트로 풀어쓰기
+- ~습니다 → ~이에요로 교체
+- 섹션 2문장 → 4문장 이상으로 보충
+- description이 키워드 나열 → 2문장 구어체로 재작성

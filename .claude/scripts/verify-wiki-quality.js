@@ -580,14 +580,10 @@ function handlePostToolUse() {
     printResults(result, absolutePath);
 
     if (!result.valid) {
-      // 🚨 CCTV 작동: 유효하지 않은 파일 삭제!
       console.error('');
-      console.error('🚨 CCTV 작동: 검증 실패한 파일 삭제됨!');
-      console.error(`   삭제된 파일: ${absolutePath}`);
-      console.error('   → 오류 수정 후 다시 작성하세요.');
+      console.error('❌ 검증 실패: 오류를 수정해주세요.');
+      console.error(`   파일: ${absolutePath}`);
       console.error('');
-
-      fs.unlinkSync(absolutePath);
       process.exit(1);
     }
 
