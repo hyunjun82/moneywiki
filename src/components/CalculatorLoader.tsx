@@ -56,6 +56,16 @@ const calculatorMap: Record<string, string> = {
   "상속세-계산기": "InheritanceTaxCalculator",
   "자동차세-계산기": "VehicleTaxCalculator",
   "예적금-계산기": "DepositSavingsCalculator",
+  "기초연금-계산기": "BasicPensionCalculator",
+  "교육비지원-계산기": "EducationCostCalculator",
+  "장애아동수당-계산기": "DisabilityAllowanceCalculator",
+  "기초생활보장-계산기": "BasicLivelihoodCalculator",
+  "장애인연금-계산기": "DisabilityPensionCalculator",
+  "한부모가족지원-계산기": "SingleParentCalculator",
+  "산모신생아-계산기": "MaternalCareCalculator",
+  "아이돌봄서비스-계산기": "ChildcareCalculator",
+  "청년월세지원-계산기": "YouthRentSupportCalculator",
+  "청년내일저축계좌-계산기": "YouthSavingsCalculator",
 };
 
 interface CalculatorLoaderProps {
