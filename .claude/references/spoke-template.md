@@ -88,7 +88,7 @@
   label: string;
   lines: string[];
   highlight?: string;
-  highlightColor?: 'orange' | 'emerald';  // ⚠️ 이 2가지 + undefined만 허용
+  highlightColor?: 'orange' | 'navy';  // ⚠️ 이 2가지 + undefined만 허용
   active?: boolean;
 }[] }
 ```
@@ -119,7 +119,7 @@ highlightColor: 'red'        // ❌ red 없음
 highlightColor: 'blue'       // ❌ blue 없음
 ```
 
-**규칙**: `highlightColor`는 `'orange'` | `'emerald'` | 생략(undefined) 3가지만. **'neutral' 절대 금지**.
+**규칙**: `highlightColor`는 `'orange'` | `'navy'` | 생략(undefined) 3가지만. **'neutral', 'emerald' 절대 금지**.
 
 ---
 
@@ -302,7 +302,7 @@ highlightColor: 'blue'       // ❌ blue 없음
 | 1 | TipBox | `title`, `children(JSX)` | items prop 없음 |
 | 2 | FormulaBox | `lines[{text}]` | numbered/comment 선택 |
 | 3 | SpokeTable | `id`, `title`, `subtitle`, `headers`, `rows` | highlightCol 0-indexed |
-| 4 | RateCards | `cards[{value,label,lines}]` | highlightColor: orange/emerald만 |
+| 4 | RateCards | `cards[{value,label,lines}]` | highlightColor: orange/navy만 |
 | 5 | SpokeTimeline | `events[{month,title,desc}]` | date❌ sub❌ highlight❌ |
 | 6 | SpokeStepCards | `steps[{title,desc}]` | tip 선택 |
 | 7 | SpokeCompareCards | `cards[{title,subtitle,items}]` | recommended+recLabel |
@@ -321,6 +321,6 @@ highlightColor: 'blue'       // ❌ blue 없음
 | 2 | SpokeTimeline: `title` 누락 | 매우 높음 | → 필수 추가 |
 | 3 | SpokeTimeline: `sub` 사용 | 높음 | → `desc` |
 | 4 | SpokeTimeline: `highlight: true` | 높음 | → `status: 'warning'` |
-| 5 | RateCards: `highlightColor: 'neutral'` | 중간 | → 제거 또는 orange/emerald |
+| 5 | RateCards: `highlightColor: 'neutral'` | 중간 | → 제거 또는 orange/navy |
 | 6 | TipBox: `items: []` 배열 사용 | 중간 | → children JSX |
 | 7 | SpokeFlow: `desc` 사용 | 중간 | → `sub` |
