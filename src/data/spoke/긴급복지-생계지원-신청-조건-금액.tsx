@@ -17,10 +17,10 @@ const data: SpokeData = {
   slug: '긴급복지-생계지원-신청-조건-금액',
 
   meta: {
-    title: '긴급복지 생계지원 신청 조건 금액 | 선지원 후심사',
+    title: '긴급복지 생계지원 조건과 신청 방법 | 금액',
     description: '갑자기 소득이 끊겼을 때 정부가 생활비를 먼저 지급하는 긴급복지 생계지원, 위기사유 조건부터 가구별 금액, 신청 방법까지 정리해드려요.',
     keywords: ['긴급복지 생계지원 신청', '긴급복지 생계지원 조건', '긴급복지 생계지원 금액', '긴급복지 신청 방법'],
-    ogTitle: '긴급복지 생계지원 신청 조건 금액 | 1인가구 71만원 | 머니위키',
+    ogTitle: '긴급복지 생계지원 조건과 신청 방법 | 금액 | 머니위키',
     ogDescription: '위기상황 발생 시 선지원 후심사로 생활비를 먼저 받는 방법.',
   },
 
@@ -33,7 +33,7 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 기준',
-    h1: <><span className="text-[#1E3A5F]">긴급복지 생계지원</span> 신청 조건과 지원 금액</>,
+    h1: <><span className="text-[#1E3A5F]">긴급복지 생계지원</span> 조건과 신청 방법</>,
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
@@ -78,7 +78,7 @@ const data: SpokeData = {
         <>
           <p className="text-neutral-600 mb-4 leading-relaxed">
             <strong>긴급복지 생계지원</strong>은 아무나 받을 수 있는 게 아니에요. <a href="https://www.law.go.kr/법령/긴급복지지원법" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">긴급복지지원법 제2조</a>에서 정한 위기사유에 해당해야 해요.
-            핵심은 "갑작스러운 위기"라는 거예요. 만성적으로 소득이 부족한 경우는 <a href="/w/기초생활수급자-신청">기초생활보장 제도</a>가 맞아요.
+            핵심은 "갑작스러운 위기"라는 거예요. 만성적으로 소득이 부족한 경우는 <a href="/w/기초생활수급자-조건-총정리">기초생활보장 제도</a>가 맞아요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
             대표적인 위기사유를 보면, 주소득자가 사망하거나 가출해서 행방불명된 경우가 첫 번째예요. 그리고 주소득자가 중한 질병이나 부상을 당해서 일을 못 하게 된 경우도 해당돼요.
