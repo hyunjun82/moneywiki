@@ -66,6 +66,14 @@ const calculatorMap: Record<string, string> = {
   "아이돌봄서비스-계산기": "ChildcareCalculator",
   "청년월세지원-계산기": "YouthRentSupportCalculator",
   "청년내일저축계좌-계산기": "YouthSavingsCalculator",
+  "건강보험료-계산기": "HealthInsuranceCalculator",
+  "자녀세액공제-계산기": "ChildTaxCreditCalculator",
+  "학자금대출-상환-계산기": "StudentLoanCalculator",
+  "노인장기요양-본인부담금-계산기": "LongTermCareCalculator",
+  "산재-휴업급여-계산기": "WorkersCompCalculator",
+  "산재휴업급여계산기": "WorkersCompCalculator",
+  "보금자리론-상환-계산기": "HousingLoanCalculator",
+  "보금자리론상환계산기": "HousingLoanCalculator",
 };
 
 interface CalculatorLoaderProps {

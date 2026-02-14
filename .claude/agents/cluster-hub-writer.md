@@ -5,8 +5,13 @@ tools: Read, Write, Edit, Glob, Grep, WebFetch, WebSearch
 model: sonnet
 permissionMode: acceptEdits
 hooks:
+  PreToolUse:
+    - matcher: "Write"
+      hooks:
+        - type: command
+          command: "node .claude/hooks/post-write-verify.js"
   PostToolUse:
-    - matcher: "Write|Edit"
+    - matcher: "Edit"
       hooks:
         - type: command
           command: "node .claude/hooks/post-write-verify.js"

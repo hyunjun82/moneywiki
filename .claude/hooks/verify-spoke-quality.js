@@ -8,8 +8,9 @@
  *   node verify-spoke-quality.js ./src/data/spoke/
  *   node verify-spoke-quality.js ./src/data/spoke/실업급여-수급-조건.tsx
  *
- * 버전: 1.1 (2026-02-09)
- *   - 파일 필터: src/data/spoke/ 내 모든 .tsx (types.ts, registry.ts, index.ts 제외)
+ * 버전: 2.0 (2026-02-14)
+ *   - 파일 필터: src/data/spoke/ + hub/ 내 모든 .tsx (types.ts, registry.ts, index.ts 제외)
+ *   - 신규 규칙 7개: TITLE-001/002, DESC-001, KEYWORD-001, BADGE-001, PAA-001, VARIETY-001
  */
 
 const fs = require('fs');
@@ -310,6 +311,154 @@ const RULES = [
       return [];
     },
     fix: '본문 섹션을 정확히 4개로 조정 (+ FAQ 1개)',
+  },
+
+  // ── SEO/메타 규칙 ──
+  {
+    id: 'TITLE-001',
+    severity: 'ERROR',
+    component: 'SEO',
+    description: 'meta.title에 — 또는 : 구분자 사용 (→ | 으로 변경)',
+    test: (content) => {
+      const metaIdx = content.indexOf('meta:');
+      if (metaIdx === -1) return [];
+      const afterMeta = content.substring(metaIdx, metaIdx + 500);
+      const titleMatch = afterMeta.match(/title\s*:\s*['"`]([^'"`]+)['"`]/);
+      if (!titleMatch) return [];
+      const title = titleMatch[1];
+      if (title.includes('\u2014') || title.includes(':')) {
+        const line = content.substring(0, metaIdx + titleMatch.index).split('\n').length;
+        return [{ line, text: `"${title.substring(0, 60)}" \u2014 \uAE08\uC9C0 \uAD6C\uBD84\uC790(\u2014/:) \uC0AC\uC6A9` }];
+      }
+      return [];
+    },
+    fix: 'meta.title\uC5D0\uC11C \u2014 \uB610\uB294 : \u2192 | (\uD30C\uC774\uD504) \uAD6C\uBD84\uC790\uB85C \uBCC0\uACBD',
+  },
+  {
+    id: 'TITLE-002',
+    severity: 'ERROR',
+    component: 'SEO',
+    description: 'meta.title 60자 초과',
+    test: (content) => {
+      const metaIdx = content.indexOf('meta:');
+      if (metaIdx === -1) return [];
+      const afterMeta = content.substring(metaIdx, metaIdx + 500);
+      const titleMatch = afterMeta.match(/title\s*:\s*['"`]([^'"`]+)['"`]/);
+      if (!titleMatch) return [];
+      const title = titleMatch[1];
+      if (title.length > 60) {
+        const line = content.substring(0, metaIdx + titleMatch.index).split('\n').length;
+        return [{ line, text: `title ${title.length}\uC790 (60\uC790 \uC774\uB0B4 \uD544\uC694): "${title.substring(0, 40)}..."` }];
+      }
+      return [];
+    },
+    fix: 'meta.title\uC744 60\uC790 \uC774\uB0B4\uB85C \uC904\uC774\uAE30',
+  },
+  {
+    id: 'DESC-001',
+    severity: 'WARNING',
+    component: 'SEO',
+    description: 'meta.description 길이 부적절 (60~80자 필요)',
+    test: (content) => {
+      const metaIdx = content.indexOf('meta:');
+      if (metaIdx === -1) return [];
+      const afterMeta = content.substring(metaIdx, metaIdx + 1000);
+      const descMatch = afterMeta.match(/description\s*:\s*['"`]([^'"`]+)['"`]/);
+      if (!descMatch) return [{ line: 0, text: 'meta.description \uB204\uB77D' }];
+      const desc = descMatch[1];
+      const line = content.substring(0, metaIdx + descMatch.index).split('\n').length;
+      if (desc.length < 60 || desc.length > 80) {
+        return [{ line, text: `description ${desc.length}\uC790 (60~80\uC790 \uD544\uC694): "${desc.substring(0, 40)}..."` }];
+      }
+      return [];
+    },
+    fix: 'meta.description\uC744 60~80\uC790 \uC790\uC5F0\uC2A4\uB7EC\uC6B4 \uBB38\uC7A5\uC73C\uB85C \uC791\uC131',
+  },
+  {
+    id: 'KEYWORD-001',
+    severity: 'ERROR',
+    component: 'SEO',
+    description: 'meta.keywords 4개가 아님',
+    test: (content) => {
+      const metaIdx = content.indexOf('meta:');
+      if (metaIdx === -1) return [];
+      const afterMeta = content.substring(metaIdx, metaIdx + 1000);
+      const kwMatch = afterMeta.match(/keywords\s*:\s*\[([\s\S]*?)\]/);
+      if (!kwMatch) return [{ line: 0, text: 'keywords \uD544\uB4DC \uB204\uB77D' }];
+      const items = kwMatch[1].match(/['"`][^'"`]+['"`]/g) || [];
+      if (items.length !== 4) {
+        const line = content.substring(0, metaIdx + kwMatch.index).split('\n').length;
+        return [{ line, text: `keywords ${items.length}\uAC1C (4\uAC1C \uD544\uC694)` }];
+      }
+      return [];
+    },
+    fix: 'meta.keywords\uB97C \uC815\uD655\uD788 4\uAC1C\uB85C \uC124\uC815',
+  },
+
+  // ── 배지/구조 규칙 ──
+  {
+    id: 'BADGE-001',
+    severity: 'WARNING',
+    component: '구조',
+    description: 'badge에 개발자 용어 사용 (허브/스포크/HUB/SPOKE)',
+    pattern: /badge\s*:\s*['"](?:허브|스포크|HUB|SPOKE)['"]/g,
+    fix: 'badge\uB97C \uC0AC\uC6A9\uC790 \uCE5C\uD654\uC801 \uC6A9\uC5B4\uB85C \uBCC0\uACBD (\uC608: \uD575\uC2EC, \uAE30\uBCF8, \uC808\uCC28, \uACC4\uC0B0, \uC870\uAC74 \uB4F1)',
+  },
+  {
+    id: 'PAA-001',
+    severity: 'WARNING',
+    component: 'SEO',
+    description: '섹션 heading이 질문형(?)이 아님',
+    test: (content, filePath) => {
+      // 스포크에만 적용 (허브는 질문형 필수 아님)
+      if (filePath && !filePath.includes('spoke')) return [];
+      const matches = [];
+      const headingRegex = /heading\s*:\s*['"`]([^'"`]+)['"`]/g;
+      let m;
+      while ((m = headingRegex.exec(content)) !== null) {
+        const heading = m[1];
+        if (heading === '\uC790\uC8FC \uBB3B\uB294 \uC9C8\uBB38') continue;
+        if (!heading.includes('?')) {
+          matches.push({
+            line: content.substring(0, m.index).split('\n').length,
+            text: `"${heading}" \u2014 \uC9C8\uBB38\uD615(?)\uC774 \uC544\uB2D8`,
+          });
+        }
+      }
+      return matches;
+    },
+    fix: 'heading\uC744 \uC9C8\uBB38\uD615\uC73C\uB85C \uBCC0\uACBD (\uC608: "\uC2E4\uC5C5\uAE09\uC5EC \uC218\uAE09 \uC870\uAC74\uC740 \uC5B4\uB5BB\uAC8C \uB418\uB098\uC694?")',
+  },
+
+  // ── 다양성 규칙 ──
+  {
+    id: 'VARIETY-001',
+    severity: 'WARNING',
+    component: '구조',
+    description: '컴포넌트 종류 부족 (스포크 4종+, 허브 2종+ 필요)',
+    test: (content, filePath) => {
+      const SPOKE_COMPONENTS = [
+        'SpokeTable', 'FormulaBox', 'TipBox', 'WarnBox', 'SpokeWarnBox',
+        'DetailBox', 'Chips', 'SpokeLinks', 'Steps', 'SpokeTimeline',
+        'SpokeStepCards', 'SpokeCompareCards', 'SpokeRateBars',
+        'SpokeFlow', 'SpokeChecklist',
+      ];
+      const HUB_COMPONENTS = ['HubTable', 'HubTipBox', 'HubWarnBox', 'HubFormula'];
+
+      const isHub = filePath && filePath.includes('hub');
+      const components = isHub ? HUB_COMPONENTS : SPOKE_COMPONENTS;
+      const minVariety = isHub ? 2 : 4;
+
+      const used = components.filter(c => content.includes(`<${c}`));
+      if (used.length < minVariety) {
+        return [{
+          line: 0,
+          text: `\uCEF4\uD3EC\uB10C\uD2B8 ${used.length}\uC885\uB958 \uC0AC\uC6A9 (${used.join(', ')}) \u2014 \uCD5C\uC18C ${minVariety}\uC885\uB958 \uD544\uC694`,
+        }];
+      }
+      return [];
+    },
+    fix: '\uB2E4\uC591\uD55C \uCEF4\uD3EC\uB10C\uD2B8 \uD65C\uC6A9 (\uC608: SpokeTable + FormulaBox + TipBox + Steps)',
   },
 
   // ── 문체 규칙 (WARNING) ──
