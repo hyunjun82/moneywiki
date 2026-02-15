@@ -157,6 +157,14 @@ const RULES = [
     fix: '제거하거나 "orange" 또는 "navy"로 변경',
   },
   {
+    id: 'RATECARDS-003',
+    severity: 'ERROR',
+    component: 'RateCards',
+    description: 'RateCards에서 highlight: true/false 사용 (highlight는 문자열이어야 함, 예: "추천")',
+    pattern: /highlight\s*:\s*(true|false)/g,
+    fix: 'highlight: true → highlight: "추천" 또는 highlight 줄 자체를 삭제',
+  },
+  {
     id: 'RATECARDS-002',
     severity: 'WARNING',
     component: 'RateCards',
@@ -707,6 +715,156 @@ const RULES = [
     },
     fix: '문장 시작어 다양화',
   },
+  // ── [신규] hero.h1 금지어 규칙 ──
+  {
+    id: 'H1-001',
+    severity: 'ERROR',
+    component: 'SEO',
+    description: 'hero.h1에 금지어 사용 (총정리/완벽정리/가이드/완벽 가이드/완전 가이드)',
+    test: (content) => {
+      const matches = [];
+      // h1: (<>...</>)  패턴에서 텍스트 추출
+      const h1Regex = /h1\s*:\s*\(\s*<>([\s\S]*?)<\/>\s*\)/g;
+      let m;
+      while ((m = h1Regex.exec(content)) !== null) {
+        const h1Text = m[1].replace(/<[^>]*>/g, '').trim();
+        const forbidden = ['총정리', '완벽정리', '완벽 정리', '가이드', '완벽 가이드', '완전 가이드'];
+        for (const word of forbidden) {
+          if (h1Text.includes(word)) {
+            const line = content.substring(0, m.index).split('\n').length;
+            matches.push({
+              line,
+              text: `h1에 금지어 "${word}" 포함: "${h1Text.substring(0, 50)}"`,
+            });
+          }
+        }
+      }
+      return matches;
+    },
+    fix: 'hero.h1에서 총정리/완벽정리/가이드 제거, 구체적 표현으로 교체',
+  },
+
+  // ── [신규] pasBridge/bridgeCTA href 앵커(#) 금지 ──
+  {
+    id: 'HREF-001',
+    severity: 'ERROR',
+    component: '구조',
+    description: 'pasBridge/bridgeCTA href에 앵커(#) 사용 (→ /w/슬러그로 변경)',
+    test: (content) => {
+      const matches = [];
+      // pasBridge 또는 bridgeCTA 블록 내 href: '#...' 패턴
+      const regex = /(pasBridge|bridgeCTA)\s*:\s*\{[\s\S]*?href\s*:\s*['"]#([^'"]+)['"]/g;
+      let m;
+      while ((m = regex.exec(content)) !== null) {
+        const line = content.substring(0, m.index).split('\n').length;
+        matches.push({
+          line,
+          text: `${m[1]}.href = "#${m[2]}" — 앵커(#) 금지, /w/슬러그로 변경 필요`,
+        });
+      }
+      return matches;
+    },
+    fix: 'pasBridge/bridgeCTA의 href를 "/w/관련-스포크-슬러그" 형식으로 변경 (앵커 # 금지)',
+  },
+
+  // ── [신규] Checker 없는 주제에서 1번 섹션 대체 컴포넌트 확인 ──
+  {
+    id: 'CHECKER-001',
+    severity: 'WARNING',
+    component: '구조',
+    description: 'Checker import 없는데 시각 대체 요소도 없음 (1번 섹션에 RateCards/Chips 등 필요)',
+    test: (content, filePath) => {
+      // 스포크에만 적용
+      if (filePath && !filePath.includes('spoke')) return [];
+      // Checker import가 있으면 OK
+      if (/import\s+\w+Checker/.test(content)) return [];
+      // Checker import 없으면: sections 첫 번째에 시각 컴포넌트가 있는지 확인
+      const sectionsMatch = content.match(/sections\s*:\s*\[([\s\S]*?)\n\s*\],?\s*\n\s*faq/);
+      if (!sectionsMatch) return [];
+      // 첫 섹션 블록 추출 (첫 번째 { ... } 까지)
+      const firstSectionMatch = sectionsMatch[1].match(/\{[\s\S]*?(?:pasBridge|bridgeCTA)\s*:/);
+      if (!firstSectionMatch) return [];
+      const firstSection = firstSectionMatch[0];
+      const hasVisual = /<(RateCards|Chips|SpokeTable|FormulaBox|SpokeCompareCards|SpokeRateBars|Steps|SpokeStepCards)/.test(firstSection);
+      if (!hasVisual) {
+        return [{
+          line: 0,
+          text: 'Checker 없는 주제: 1번 섹션에 RateCards/Chips 등 시각 대체 컴포넌트 필요',
+        }];
+      }
+      return [];
+    },
+    fix: '1번 섹션에 RateCards, Chips, SpokeTable 등 핵심 정보 시각화 컴포넌트 추가',
+  },
+
+  // ── [신규] Chips icon 텍스트 검사 ──
+  {
+    id: 'CHIPS-001',
+    severity: 'WARNING',
+    component: 'Chips',
+    description: 'Chips icon에 허용되지 않는 값 사용 (허용: calc/clock/info/grid/check/won/percent/doc/star)',
+    test: (content) => {
+      const matches = [];
+      // Chips items 내 icon 값 추출
+      const chipsRegex = /<Chips\s+items=\{\[([\s\S]*?)\]\}\s*\/>/g;
+      let chipsMatch;
+      while ((chipsMatch = chipsRegex.exec(content)) !== null) {
+        const block = chipsMatch[1];
+        const iconRegex = /icon\s*:\s*['"]([^'"]+)['"]/g;
+        let iconMatch;
+        while ((iconMatch = iconRegex.exec(block)) !== null) {
+          const icon = iconMatch[1];
+          const allowed = ['calc', 'clock', 'info', 'grid', 'check', 'won', 'percent', 'doc', 'star'];
+          if (!allowed.includes(icon)) {
+            const line = content.substring(0, chipsMatch.index + iconMatch.index).split('\n').length;
+            matches.push({
+              line,
+              text: `Chips icon="${icon}" — 허용값: ${allowed.join('/')}`,
+            });
+          }
+        }
+      }
+      return matches;
+    },
+    fix: 'Chips icon을 허용값 중 하나로 변경: calc/clock/info/grid/check/won/percent/doc/star',
+  },
+
+  // ── [신규] hub chips/sectionSpoke href가 /w/로 시작하는지 ──
+  {
+    id: 'HUBHREF-001',
+    severity: 'ERROR',
+    component: '구조',
+    description: 'hub의 chips/sectionSpoke href가 /w/로 시작하지 않음',
+    test: (content, filePath) => {
+      // 허브에만 적용
+      if (filePath && !filePath.includes('hub')) return [];
+      const matches = [];
+      // chips 또는 sectionSpoke 배열 내 href 검사
+      const hrefRegex = /href\s*:\s*['"]([^'"]+)['"]/g;
+      let m;
+      while ((m = hrefRegex.exec(content)) !== null) {
+        const href = m[1];
+        // scrollTo, heroCTA의 #checker 등 페이지 내 앵커는 허용
+        const before = content.substring(Math.max(0, m.index - 100), m.index);
+        if (/scrollTo|heroCTA|stickyBar|sticky/.test(before)) continue;
+        // 외부 URL은 허용
+        if (href.startsWith('http')) continue;
+        // /w/로 시작하지 않고 #으로 시작하면 ERROR
+        if (href.startsWith('#') && !/(scrollTo|heroCTA|stickyBar|sticky)/.test(before)) {
+          // bridgeCTA/pasBridge의 #은 HREF-001에서 잡으므로 여기서는 chips/sectionSpoke만
+          if (/chips|sectionSpoke/.test(before)) {
+            const line = content.substring(0, m.index).split('\n').length;
+            matches.push({
+              line,
+              text: `href="${href}" — /w/슬러그로 변경 필요 (앵커 금지)`,
+            });
+          }
+        }
+      }
+      return matches;
+    },
+    fix: 'chips/sectionSpoke의 href를 "/w/스포크-슬러그" 형식으로 변경',
+  },
 ];
 
 // ─── 검출 엔진 ───
@@ -749,6 +907,116 @@ function analyzeFile(filePath) {
           line: m.line,
           text: m.text || '',
           fix: rule.fix,
+        });
+      }
+    }
+  }
+
+  return results;
+}
+
+// ─── 형제 스포크 간 컴포넌트 겹침 검사 ───
+
+const SPOKE_VISUAL_COMPONENTS = [
+  'SpokeTable', 'FormulaBox', 'TipBox', 'WarnBox', 'SpokeWarnBox',
+  'DetailBox', 'Chips', 'SpokeLinks', 'Steps', 'SpokeTimeline',
+  'SpokeStepCards', 'SpokeCompareCards', 'SpokeRateBars',
+  'SpokeFlow', 'SpokeChecklist', 'RateCards', 'CalcLink',
+];
+
+function analyzeSiblings(files) {
+  const results = [];
+  // 스포크 파일만 필터
+  const spokeFiles = files.filter(f => f.includes('spoke') && !f.includes('hub'));
+  if (spokeFiles.length < 2) return results;
+
+  // 각 파일의 hub URL과 사용 컴포넌트 추출
+  const spokeData = [];
+  for (const f of spokeFiles) {
+    const content = fs.readFileSync(f, 'utf-8');
+    const fileName = path.basename(f);
+
+    // hub URL 추출
+    const hubMatch = content.match(/hub\s*:\s*\{[\s\S]*?url\s*:\s*['"]([^'"]+)['"]/);
+    const hubUrl = hubMatch ? hubMatch[1] : '';
+
+    // 사용 컴포넌트 추출 (TipBox, WarnBox 같은 범용은 제외하고 비교)
+    const genericComponents = ['TipBox', 'WarnBox', 'SpokeWarnBox'];
+    const usedAll = SPOKE_VISUAL_COMPONENTS.filter(c => content.includes(`<${c}`));
+    const usedUnique = usedAll.filter(c => !genericComponents.includes(c));
+
+    // description 패턴 추출 (A/B/C 유형)
+    const descMatch = content.match(/description\s*:\s*['"]([^'"]+)['"]/);
+    const desc = descMatch ? descMatch[1] : '';
+    let descPattern = '';
+    // 패턴 판별 순서: 더 구체적인 것 먼저 (B→C→A)
+    if (/고민|걱정|모르시겠|어렵|힘들/.test(desc)) descPattern = 'B-문제해결';
+    else if (/^\d|사실.*아시|수익률.*\d|연평균.*\d|\d+%/.test(desc)) descPattern = 'C-숫자';
+    else if (/아시나요|아셨나요|된다는 거|열렸다는/.test(desc)) descPattern = 'A-놀라움';
+
+    spokeData.push({ file: f, fileName, hubUrl, usedAll, usedUnique, descPattern });
+  }
+
+  // 같은 허브에 속한 형제끼리 비교
+  for (let i = 0; i < spokeData.length; i++) {
+    for (let j = i + 1; j < spokeData.length; j++) {
+      const a = spokeData[i];
+      const b = spokeData[j];
+
+      // 같은 허브가 아니면 스킵
+      if (!a.hubUrl || a.hubUrl !== b.hubUrl) continue;
+
+      // 고유 컴포넌트(TipBox/WarnBox 제외) 조합이 동일하면 ERROR
+      const aSet = a.usedUnique.sort().join(',');
+      const bSet = b.usedUnique.sort().join(',');
+      if (aSet === bSet && aSet.length > 0) {
+        results.push({
+          file: a.fileName,
+          filePath: a.file,
+          rule: 'SIBLING-001',
+          severity: 'ERROR',
+          component: '고유성',
+          description: `형제 스포크와 시각 컴포넌트 조합 동일: ${b.fileName}`,
+          line: 0,
+          text: `두 파일 모두 [${aSet}] 사용 — 최소 2종류 달라야 함`,
+          fix: '형제 스포크와 최소 2종류 다른 컴포넌트 사용',
+        });
+      }
+
+      // 고유 컴포넌트 차이가 2개 미만이면 WARNING
+      if (aSet !== bSet) {
+        const aArr = a.usedUnique;
+        const bArr = b.usedUnique;
+        const onlyInA = aArr.filter(c => !bArr.includes(c));
+        const onlyInB = bArr.filter(c => !aArr.includes(c));
+        const diff = Math.max(onlyInA.length, onlyInB.length);
+        if (diff < 2) {
+          results.push({
+            file: a.fileName,
+            filePath: a.file,
+            rule: 'SIBLING-002',
+            severity: 'WARNING',
+            component: '고유성',
+            description: `형제 스포크와 시각 컴포넌트 차이 ${diff}종류 (최소 2종류 필요): ${b.fileName}`,
+            line: 0,
+            text: `${a.fileName}: [${aSet}] vs ${b.fileName}: [${bSet}]`,
+            fix: '형제 스포크와 최소 2종류 다른 컴포넌트 사용',
+          });
+        }
+      }
+
+      // description 패턴 같으면 WARNING
+      if (a.descPattern && b.descPattern && a.descPattern === b.descPattern) {
+        results.push({
+          file: a.fileName,
+          filePath: a.file,
+          rule: 'SIBLING-003',
+          severity: 'WARNING',
+          component: '고유성',
+          description: `형제 스포크와 description 패턴 동일 (${a.descPattern}): ${b.fileName}`,
+          line: 0,
+          text: `같은 허브 내 description 패턴 중복 — A/B/C 순환 필요`,
+          fix: 'description을 다른 패턴(A-놀라움/B-문제해결/C-숫자)으로 변경',
         });
       }
     }
@@ -955,6 +1223,29 @@ async function main() {
   const allResults = [];
   for (const f of files) {
     allResults.push(...analyzeFile(f));
+  }
+
+  // 형제 스포크 간 겹침 검사 (디렉토리 검사 시 또는 파일 검사 시 같은 허브 형제도 검사)
+  if (files.length >= 2) {
+    allResults.push(...analyzeSiblings(files));
+  } else if (files.length === 1 && files[0].includes('spoke')) {
+    // 단일 파일이라도 같은 허브의 형제를 찾아서 비교
+    const content = fs.readFileSync(files[0], 'utf-8');
+    const hubMatch = content.match(/hub\s*:\s*\{[\s\S]*?url\s*:\s*['"]\/w\/([^'"]+)['"]/);
+    if (hubMatch) {
+      const hubSlug = hubMatch[1];
+      const spokeDir = path.join(path.dirname(files[0]));
+      const allSpokeFiles = getFiles(spokeDir);
+      // 같은 허브에 속한 형제만 필터
+      const siblings = allSpokeFiles.filter(f => {
+        if (f === files[0]) return true; // 현재 파일 포함
+        const c = fs.readFileSync(f, 'utf-8');
+        return c.includes(`'/w/${hubSlug}'`) || c.includes(`"/w/${hubSlug}"`);
+      });
+      if (siblings.length >= 2) {
+        allResults.push(...analyzeSiblings(siblings));
+      }
+    }
   }
 
   const exitCode = printResults(allResults);

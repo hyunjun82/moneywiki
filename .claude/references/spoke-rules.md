@@ -154,16 +154,18 @@
 
 ```tsx
 bridgeCTA: {
-  href: '#s2',           // 다음 섹션 ID (마지막은 허브/계산기 URL)
-  badge: '간편 계산',     // 2~4글자 키워드
+  href: '/w/관련-스포크-슬러그',   // 반드시 /w/ 시작! 앵커(#) 절대 금지!
+  badge: '간편 계산',              // 2~4글자 키워드
   title: '내 월급에서 세금이 얼마나 빠질까?',  // 궁금증 유발 질문
   desc: '내 월급으로 직접 계산해보기',          // 행동 유도 한 줄
-  icon: 'calc',          // calc | clock | info | grid | check
-  primary: false,        // 마지막 섹션만 true (허브/계산기 연결)
+  icon: 'calc',                   // calc | clock | info | grid | check
 }
 ```
 
-- 마지막 본문 섹션의 bridgeCTA → `primary: true` + 허브/계산기 연결
+**bridgeCTA/pasBridge href 절대 규칙:**
+- `href`는 반드시 `/w/슬러그` 형식 (다른 스포크/허브 URL)
+- `href: '#sec-xxx'` 같은 **앵커(#) 절대 금지** → 검증 훅에서 ERROR 처리
+- 마지막 본문 섹션의 bridgeCTA → 허브/계산기 URL로 연결
 - 기계적 질문 반복 금지 ("~알고 싶다면?" 4번 반복 = FAIL)
 
 ---

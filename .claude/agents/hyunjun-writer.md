@@ -151,7 +151,7 @@ const data: SpokeData = {
 
   sections: [
     // Checker (해당 주제에 전용 컴포넌트가 있을 때만!)
-    // 없으면 이 섹션 생략
+    // 없으면 1번 섹션을 RateCards/Chips/핵심요약 등 시각 컴포넌트로 대체 (절대 생략 금지!)
     {
       id: 'checker',
       number: 'STEP 01',
@@ -176,7 +176,7 @@ const data: SpokeData = {
         </>
       ),
       pasBridge: {
-        href: '/w/관련-스포크',
+        href: '/w/관련-스포크',   // 반드시 /w/ 시작! #sec-xxx 같은 앵커(#) 절대 금지!
         question: '독자 궁금증?',
         answer: <>답변 + <strong>강조</strong></>,
         buttonText: '행동 유도 →',
@@ -193,7 +193,7 @@ const data: SpokeData = {
       subtitle: '...',
       content: (<>...</>),
       bridgeCTA: {
-        href: '/w/관련-글',
+        href: '/w/관련-글',   // 반드시 /w/ 시작! 앵커(#) 절대 금지!
         badge: '키워드',
         title: '다음 단계 질문?',
         desc: '행동 유도 설명',
@@ -311,6 +311,7 @@ E. 스토리형: 실제 상황 → 결과 → 적용
 | SpokeTimeline에서 `highlight: true` | → `status: 'warning'` |
 | SpokeFlow에서 `desc` | → `sub` |
 | TipBox에서 `items` prop | → `children`으로 JSX |
+| RateCards `highlight: true` (boolean) | → `highlight: '추천'` (문자열) 또는 삭제 |
 | RateCards `highlightColor: 'neutral'` | → `'orange'` 또는 `'navy'` |
 | RateCards `highlightColor: 'emerald'` | → `'navy'` |
 | 다른 스포크 파일 복사 후 텍스트 교체 | → 주제에 맞게 처음부터 구성 |

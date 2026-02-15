@@ -1,15 +1,15 @@
 import type { SpokeData } from '@/data/spoke/types'
-import { SpokeCompareCards, SpokeRateBars, TipBox, WarnBox } from '@/components/spoke/SpokeBlocks'
+import { SpokeCompareCards, SpokeRateBars, TipBox, FormulaBox, Chips } from '@/components/spoke/SpokeBlocks'
 
 const data: SpokeData = {
   slug: '퇴직연금-국채-vs-ETF-비교-안정성-수익률',
 
   meta: {
     title: '퇴직연금 국채 vs ETF 비교 | 안정성 수익률 차이',
-    description: '퇴직연금으로 국채와 ETF 중 뭘 골라야 할지 고민이시죠? 수익률만 보면 ETF가 높아 보이지만, 안정성과 세금 혜택까지 따져보면 결과가 완전히 달라져요. 비교 기준을 알려드려요.',
+    description: '국채 20년물 연평균 수익률이 7.3%인데, 채권형 ETF는 5~6%에 그친다는 사실 아시나요? 퇴직연금 국채 ETF 비교 시 안정성과 수익률, 투자 비교 포인트까지 한번에 정리해드려요.',
     keywords: ['퇴직연금 국채 ETF 비교', '국채 안정성', '국채 수익률 ETF', '퇴직연금 투자 비교'],
     ogTitle: '퇴직연금 국채 vs ETF 비교 | 머니위키',
-    ogDescription: '안정성·수익률·세금 세 가지 기준으로 비교해 보세요.',
+    ogDescription: '안정성과 수익률, 세금 기준으로 직접 비교해 보세요.',
   },
 
   hub: {
@@ -20,15 +20,15 @@ const data: SpokeData = {
   breadcrumb: ['퇴직연금', '국채 투자', '퇴직연금 국채 vs ETF 비교'],
 
   summary3: [
-    <>국채는 <strong>원금 보장</strong>, ETF는 시장수익률 추종하지만 <strong>원금 손실 가능</strong></>,
-    <>국채 20년물 연평균 <strong>7.3%</strong> vs ETF 국고채10년 <strong>5~6%</strong> 변동</>,
-    <>국채는 복리 가산금리 1.25%p, ETF는 운용보수 차감 필요</>,
+    <>국채 20년물 연평균 수익률 <strong>7.3%</strong>, 채권형 ETF는 <strong>5~6%</strong> 수준</>,
+    <>국채는 <strong>정부 원금보장</strong>, ETF는 시장 가격 변동에 따라 원금 손실 가능</>,
+    <>국채 분리과세 <strong>15.4%</strong>, ETF 매매차익 250만 원까지 비과세</>,
   ],
 
   sourceBar: {
     badge: '정책 출처',
-    name: '기획재정부 개인투자용 국채 발행계획',
-    date: '2026.02',
+    name: '기획재정부 2026년 개인투자용국채 발행계획 및 투자 활성화 방안',
+    date: '2026.01',
   },
 
   prevNext: {
@@ -37,9 +37,9 @@ const data: SpokeData = {
   },
 
   stickyBar: {
-    topLabel: '안정성 비교',
-    value: '국채 원금보장 vs ETF 시장변동',
-    buttonText: '비교표 보기 →',
+    topLabel: '핵심 비교',
+    value: '국채 7.3% vs ETF 5~6%',
+    buttonText: '비교표 확인 →',
     scrollTo: '#sec-compare',
   },
 
@@ -47,12 +47,12 @@ const data: SpokeData = {
     badge: '2026년 최신 비교',
     h1: (
       <>
-        퇴직연금 국채 vs ETF, <span className="text-[#1E3A5F]">안정성과 수익률</span> 둘 다 잡을 순 없을까요?
+        퇴직연금 국채 vs ETF, <span className="text-[#1E3A5F]">안정성과 수익률</span> 어디에 무게를 둘까요?
       </>
     ),
     intro: (
       <p className="text-base text-neutral-500 leading-relaxed">
-        많은 분들이 "국채는 안전하지만 수익률이 낮고, ETF는 수익률이 높지만 위험하다"고 알고 계시죠? 꼭 그렇진 않아요. 2026년 9월부터 개인투자용 국채는 복리 가산금리 1.25%p가 붙어서 20년물 기준 연평균 7.3% 수익률이에요. 채권형 ETF와 비교하면 어떨까요? 안정성·수익률·세금 세 가지 기준으로 비교해 볼게요.
+        퇴직연금에서 국채를 살까, 채권형 ETF를 살까 고민되시죠? 2026년 9월부터 DC형과 IRP 계좌로 국채 직접 투자가 열렸어요. 국채 20년물은 복리 가산금리 1.25%p 덕분에 연평균 7.3% 수익률을 내고, 채권형 ETF는 시장 금리를 따라가며 5~6% 수준이에요. 안정성과 수익률, 세금까지 세 가지 기준으로 비교해 볼게요.
       </p>
     ),
     hubCTA: { badge: '전체 가이드', desc: '퇴직연금 국채 투자 조건부터 신청까지 한눈에' },
@@ -67,67 +67,49 @@ const data: SpokeData = {
   ],
 
   sections: [
-    // SECTION 01: 국채 vs ETF 비교
+    // SECTION 01: 핵심 비교 개요
     {
       id: 'sec-compare',
       number: 'SECTION 01',
       heading: '퇴직연금 국채와 ETF 비교하면 어떤 차이가 있나요?',
-      subtitle: '원금보장 여부와 수익률 구조',
+      subtitle: '원금보장 여부와 수익 구조가 핵심',
       content: (
         <>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            가장 큰 차이는 <strong>원금 보장</strong>이에요. 개인투자용 국채는 정부가 원금과 이자를 100% 보장하지만, ETF는 시장 가격 변동에 따라 원금 손실이 날 수 있어요. 채권형 ETF라도 금리가 오르면 채권 가격이 떨어져서 손해 볼 수 있거든요.
+            가장 큰 차이는 <strong>원금 보장</strong>이에요. 개인투자용 국채는 정부가 원금과 이자를 전액 보장해요. 은행 예금처럼 5,000만 원 한도도 없이 투자한 만큼 전부 돌려받아요. 반면 채권형 ETF는 국고채에 투자하지만, 시장 가격이 움직이면서 원금 손실이 생길 수 있어요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            수익률 구조도 달라요. 국채는 만기까지 보유하면 <a href="/w/개인투자용-국채-수익률-세금-혜택-복리-비과세" className="text-[#4A7AB5] underline">복리 가산금리</a>가 연복리로 쌓여요. 20년물 기준 147% 수익(연평균 7.3%)이에요. ETF는 채권 시장 금리를 따라가는데, 운용보수를 빼야 해서 순수익은 보통 5~6% 사이예요.
+            수익이 쌓이는 방식도 달라요. 국채는 만기까지 보유하면 <a href="/w/개인투자용-국채-수익률-세금-혜택-복리-비과세" className="text-[#4A7AB5] underline">복리 가산금리</a>가 연복리로 눈덩이처럼 불어나요. 20년물 기준 세전 147% 수익, 연평균 7.3%예요. ETF는 시장 금리를 따라가는데, 운용보수(0.03~0.15%)가 매일 빠지니까 순수익은 5~6% 사이에 머물러요.
           </p>
           <p className="text-neutral-600 mb-6 leading-relaxed">
-            퇴직연금 계좌에서는 둘 다 투자 가능해요. 2026년 9월부터 DC형·IRP 계좌로 국채 직접 투자가 열리면서 선택지가 넓어졌어요. 안전자산 30% 의무 비중을 국채로 채울지 ETF로 채울지 고민이 생긴 거죠.
+            2026년 9월부터 <a href="/w/퇴직연금-DC형-IRP-국채-투자-조건-금융기관" className="text-[#4A7AB5] underline">DC형과 IRP 계좌</a>로 국채 직접 매입이 가능해졌어요. 안전자산 30% 의무 비중을 국채로 채울지, ETF로 채울지, 아니면 섞을지 선택할 수 있어요. 유동성을 포기할 수 있다면 국채, 중간에 팔 일이 있다면 ETF가 유리해요.
           </p>
 
-          <SpokeCompareCards
-            cards={[
-              {
-                title: '개인투자용 국채',
-                subtitle: '정부 원금보장',
-                items: [
-                  '원금·이자 100% 정부 보장',
-                  '복리 가산금리 1.25%p (20년물)',
-                  '만기 보유 시 147% 수익 (세전)',
-                  '중도 매도 시 금리 변동 리스크',
-                ],
-                recommended: true,
-                recLabel: '안정성 우선',
-              },
-              {
-                title: '채권형 ETF',
-                subtitle: '시장수익률 추종',
-                items: [
-                  '시장 가격 변동에 따라 원금 손실 가능',
-                  '국고채10년 ETF 연평균 5~6%',
-                  '운용보수 0.03~0.15% 차감',
-                  '언제든 매도 가능 (유동성 높음)',
-                ],
-              },
+          <Chips
+            items={[
+              { icon: 'check', label: '원금보장', value: '국채 전액' },
+              { icon: 'percent', label: '국채 수익률', value: '연 7.3%' },
+              { icon: 'clock', label: '유동성', value: 'ETF 우위' },
+              { icon: 'grid', label: '안전자산', value: '둘 다 인정' },
             ]}
           />
 
-          <TipBox title="안전자산 30% 비중 채우기">
+          <TipBox title="안전자산 30% 비중, 어떻게 채울까요?">
             <p className="text-neutral-600 leading-relaxed">
-              퇴직연금 DC형은 위험자산(주식형 ETF 등)에 70%까지만 투자 가능해요. 나머지 30%는 <strong>안전자산</strong>으로 채워야 하는데, 국채와 채권형 ETF 둘 다 안전자산으로 인정돼요. 안정성을 더 중시한다면 국채, 유동성을 중시한다면 ETF가 나아요.
+              퇴직연금 DC형은 위험자산에 <strong>70%</strong>까지만 투자할 수 있어요. 나머지 30%는 안전자산으로 채워야 하는데, 국채와 채권형 ETF 모두 안전자산으로 인정돼요. 국채 15%에 ETF 15%를 섞으면 안정성과 유동성을 동시에 확보할 수 있어요.
             </p>
           </TipBox>
         </>
       ),
       pasBridge: {
-        href: '#sec-stability',
-        question: '국채의 안정성은 구체적으로 어떤가요?',
+        href: '/w/퇴직연금-DC형-IRP-국채-투자-조건-금융기관',
+        question: '국채의 안정성은 구체적으로 어느 정도인가요?',
         answer: (
           <>
-            국채는 정부가 발행하는 채권이라 <strong>신용등급 AAA</strong>예요. 원금과 이자를 못 받을 리스크가 사실상 0%예요.
+            국채는 정부 발행 채권이라 <strong>신용등급 AAA</strong>예요. 원금을 못 돌려받을 가능성이 사실상 0%에 가까워요.
           </>
         ),
-        buttonText: '안정성 비교 보기 →',
+        buttonText: '안정성 비교 자세히 →',
       },
     },
 
@@ -136,41 +118,47 @@ const data: SpokeData = {
       id: 'sec-stability',
       number: 'SECTION 02',
       heading: '국채 안정성은 ETF보다 얼마나 높은가요?',
-      subtitle: '원금손실 리스크 차이',
+      subtitle: '원금손실 가능성을 수치로 비교',
       content: (
         <>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            국채는 <strong>정부가 원금과 이자를 100% 보장</strong>해요. 은행 예금은 1인당 5,000만 원까지만 보장되지만, 국채는 금액 제한 없이 전액 보장이에요. 만기까지 보유하면 약속된 금액을 정확히 받아요.
+            국채와 ETF의 안정성 차이는 <strong>원금 보장 여부</strong>에서 갈려요. 개인투자용 국채는 만기까지 들고 있으면 약속된 원금과 이자를 정부가 100% 돌려줘요. 예금자보호 한도인 5,000만 원도 적용 안 돼요. 금액에 상관없이 전액 보장이에요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            채권형 ETF는 국고채에 투자하는 상품이라 신용 리스크는 낮지만, <strong>시장 가격 변동 리스크</strong>는 있어요. 금리가 오르면 채권 가격이 떨어져서 매도 시 손실이 날 수 있어요. 예를 들어 금리가 1%p 오르면 10년물 채권 가격은 약 7~9% 하락해요.
+            채권형 ETF도 국고채에 투자하니까 신용 리스크 자체는 낮아요. 하지만 <strong>금리 변동 리스크</strong>가 있어요. 금리가 1%p 오르면 10년물 채권 가격은 약 7~9% 떨어져요. 장기채일수록 변동 폭이 더 커요. 2025년처럼 금리가 급하게 움직이는 시기에는 하루 만에 1~2% 손실이 나기도 했어요.
+          </p>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            다만 국채도 중도 매도하면 ETF처럼 시장 가격에 팔아야 해요. 만기까지 보유해야 원금보장 혜택을 온전히 받을 수 있어요. ETF는 시장에서 아무 때나 팔 수 있는 대신, 항상 가격 변동을 감수해야 하고요.
           </p>
           <p className="text-neutral-600 mb-6 leading-relaxed">
-            만기 보유 vs 중도 매도의 차이도 커요. 국채는 만기 보유 시 원금 보장이지만 중도 매도하면 ETF처럼 시장 가격 변동 영향을 받아요. ETF는 언제든 팔 수 있지만 그만큼 가격 변동 리스크가 일상화되어 있고요.
+            결론적으로 만기 보유가 확실하면 국채가 압도적으로 안전하고, 중간에 현금화가 필요할 수 있으면 ETF의 유동성이 장점이에요.
           </p>
 
           <SpokeRateBars
             bars={[
-              { label: '국채 만기 보유', rate: '100%', width: '100%' },
-              { label: '국채 중도 매도', rate: '85%', width: '85%' },
-              { label: '채권형 ETF 1년 보유', rate: '75%', width: '75%' },
-              { label: '주식형 ETF 1년 보유', rate: '40%', width: '40%' },
+              { label: '국채 만기 보유 (원금보장)', rate: '100%', width: '100%' },
+              { label: '국채 중도 매도 (시장가)', rate: '85~95%', width: '90%' },
+              { label: '채권형 ETF 장기 보유', rate: '70~90%', width: '80%' },
+              { label: '주식형 ETF (참고)', rate: '30~70%', width: '50%' },
             ]}
           />
 
-          <WarnBox>
-            <p className="text-neutral-600 leading-relaxed">
-              <strong>중도 매도 시 주의:</strong> 국채든 ETF든 만기 전에 팔면 금리 변동 영향을 받아요. 2026년 금리가 지금보다 오를 가능성이 있다면, 장기 국채(20년물)보다 중단기 국채(10년물)나 단기 채권 ETF가 안전할 수 있어요.
-            </p>
-          </WarnBox>
+          <FormulaBox
+            lines={[
+              { text: '금리 1%p 상승 시 채권 가격 하락폭' },
+              { text: '10년물 국고채 ETF: 약 -7~9%', numbered: true },
+              { text: '20년물 국고채 ETF: 약 -14~18%', numbered: true },
+              { text: '국채 만기 보유: 변동 없음 (0%) — 원금보장', numbered: true, comment: true },
+            ]}
+          />
         </>
       ),
       pasBridge: {
-        href: '#sec-return',
-        question: '안전하다는 건 알겠는데, 수익률은 어떨까요?',
+        href: '/w/개인투자용-국채-수익률-세금-혜택-복리-비과세',
+        question: '안전한 건 알겠는데, 수익률은 어떤 차이가 나나요?',
         answer: (
           <>
-            국채 20년물은 연평균 <strong>7.3%</strong>, 채권형 ETF는 보통 <strong>5~6%</strong>예요. 장기 보유 시 국채가 더 유리해요.
+            국채 20년물은 연평균 <strong>7.3%</strong>, 채권형 ETF는 <strong>5~6%</strong>예요. 복리 가산금리가 핵심 차이예요.
           </>
         ),
         buttonText: '수익률 비교 보기 →',
@@ -182,17 +170,20 @@ const data: SpokeData = {
       id: 'sec-return',
       number: 'SECTION 03',
       heading: '국채 수익률과 ETF 수익률은 어떻게 다른가요?',
-      subtitle: '복리 가산금리 vs 시장수익률',
+      subtitle: '복리 가산금리와 시장수익률의 차이',
       content: (
         <>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            국채 수익률은 <strong>복리 가산금리</strong>가 핵심이에요. 10년물은 표면금리에 1.0%p, 20년물은 1.25%p를 더해줘요. 만기 보유 시 세전 수익률은 10년물 54%(연평균 5.4%), 20년물 147%(연평균 7.3%)예요. 이자는 연복리로 붙어서 시간이 갈수록 복리 효과가 커져요.
+            국채의 수익률 비밀은 <strong>복리 가산금리</strong>예요. 표면금리에 10년물은 1.0%p, 20년물은 1.25%p를 더해줘요. 2026년 1월 발행 기준으로 20년물 표면금리가 3.365%니까, 가산금리 합산 시 4.615%가 복리로 쌓여요. 만기 보유하면 세전 수익률이 무려 147%, 연평균 7.3%예요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            채권형 ETF는 시장 금리를 추종해요. KODEX 국고채10년, ACE 국고채10년 같은 상품은 최근 5년 연평균 수익률이 5~6% 사이예요. 운용보수(0.03~0.15%)를 빼면 순수익은 조금 낮아지고요. 금리가 내려가면 채권 가격이 올라서 수익률이 높아지지만, 금리가 오르면 반대가 돼요.
+            채권형 ETF는 시장 금리를 그대로 따라가요. KODEX 국고채10년, ACE 국고채10년 같은 대표 상품의 최근 5년 평균 수익률은 5~6%예요. 여기에 운용보수(연 0.03~0.15%)가 매일 자동으로 빠지니까 실제 순수익은 조금 더 낮아져요.
+          </p>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            세금 구조도 차이가 커요. 국채 이자소득은 <strong>분리과세 15.4%</strong>가 적용돼요. 종합소득세에 합산되지 않으니까 고소득자에게 유리해요. ETF 매매차익은 250만 원까지 비과세이고 초과분에 22% 과세돼요.
           </p>
           <p className="text-neutral-600 mb-6 leading-relaxed">
-            장기 투자 기준으로 보면 국채 20년물이 유리해요. 7.3%는 현재 채권형 ETF 평균 수익률보다 1~2%p 높거든요. 단, 20년 동안 돈이 묶인다는 게 부담이라면 ETF가 더 나을 수 있어요. 언제든 팔 수 있으니까요.
+            퇴직연금 계좌 안에서 투자하면 운용 기간 동안 과세 이연 혜택도 받아요. 55세 이후 연금으로 수령하면 연금소득세 3.3~5.5%만 내면 돼요. 국채든 ETF든 퇴직연금 계좌 활용이 절세에 핵심이에요.
           </p>
 
           <SpokeCompareCards
@@ -201,13 +192,13 @@ const data: SpokeData = {
                 title: '국채 20년물',
                 subtitle: '복리 가산금리 1.25%p',
                 items: [
-                  '만기 보유 시 147% 수익 (세전)',
+                  '만기 보유 시 세전 147% 수익',
                   '연평균 수익률 7.3%',
                   '이자소득 분리과세 15.4%',
                   '만기까지 환금 제약',
                 ],
                 recommended: true,
-                recLabel: '장기 투자',
+                recLabel: '장기 수익',
               },
               {
                 title: '채권형 ETF',
@@ -215,29 +206,29 @@ const data: SpokeData = {
                 items: [
                   '최근 5년 연평균 5~6%',
                   '운용보수 0.03~0.15% 차감',
-                  '매매차익 비과세 (250만원 초과 시 과세)',
+                  '매매차익 250만 원까지 비과세',
                   '언제든 환금 가능',
                 ],
               },
             ]}
           />
 
-          <TipBox title="세금 차이도 확인하세요">
+          <TipBox title="고소득자라면 세금 차이가 더 벌어져요">
             <p className="text-neutral-600 leading-relaxed">
-              국채는 이자소득에 <strong>분리과세 15.4%</strong>가 적용돼요. ETF는 매매차익에 대해 250만원까지 비과세, 초과 시 22%예요. 고소득자라면 국채가 세금 면에서 유리할 수 있어요.
+              종합소득세율이 38%인 분이라면 국채 분리과세 15.4%로 <strong>22.6%p 절세</strong>돼요. ETF 매매차익에 붙는 22% 과세보다도 낮아요. 연간 이자소득이 2,000만 원을 넘는 금융소득종합과세 대상자에게 국채가 특히 유리해요.
             </p>
           </TipBox>
         </>
       ),
       pasBridge: {
-        href: '#sec-when',
-        question: '그럼 언제 국채를 선택해야 하나요?',
+        href: '/w/연금형-개인투자용-국채-신청-방법-10년물-20년물',
+        question: '그럼 결국 어떤 상황에서 국채를 골라야 할까요?',
         answer: (
           <>
-            <strong>만기까지 보유할 여유자금</strong>이 있고, 안정성을 최우선으로 두는 투자자라면 국채가 나아요.
+            <strong>10년 이상 장기 투자 여력</strong>이 있고, 원금 손실을 절대 원하지 않는 분이라면 국채가 확실히 유리해요.
           </>
         ),
-        buttonText: '선택 기준 보기 →',
+        buttonText: '선택 기준 확인 →',
       },
     },
 
@@ -246,42 +237,47 @@ const data: SpokeData = {
       id: 'sec-when',
       number: 'SECTION 04',
       heading: '퇴직연금 투자 비교 시 국채가 유리한 경우는 언제인가요?',
-      subtitle: '투자자 유형별 선택 기준',
+      subtitle: '투자 성향별 선택 기준',
       content: (
         <>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            <strong>국채가 유리한 경우</strong>는 크게 세 가지예요. 첫째, 만기까지 보유할 여유자금이 있을 때. 10년·20년 동안 돈이 묶여도 괜찮다면 복리 효과를 최대한 누릴 수 있어요. 둘째, 원금 손실을 절대 못 받아들이는 투자자. 정부가 100% 보장하니까 안심하고 묻어둘 수 있어요.
+            국채가 딱 맞는 경우는 세 가지예요. 첫째, 퇴직까지 <strong>10년 이상 남은 직장인</strong>이에요. 20년물을 만기까지 들고 가면 복리 효과가 극대화돼요. 연평균 7.3%면 일반 은행 예금(3%대)의 두 배가 넘는 수준이에요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            셋째, 고소득자. 이자소득 분리과세 15.4%는 종합소득세율이 높은 사람에게 절세 효과가 커요. 예를 들어 종합소득세율이 38%라면 국채 이자는 15.4%만 떼이니까 22.6%p 절세되는 거예요.
+            둘째, <strong>원금 손실을 참을 수 없는 분</strong>이에요. 주식이나 ETF로 -10% 손실을 보면 밤잠을 설치는 성향이라면 국채가 마음 편해요. 정부가 원금을 보장하니까 시장이 아무리 흔들려도 만기에 약속된 금액을 정확히 받아요.
+          </p>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            셋째, <strong>고소득자</strong>예요. 종합소득세율이 38% 이상이면 분리과세 15.4%의 절세 효과가 커져요. 금융소득종합과세 걱정 없이 안정적으로 이자를 받을 수 있어요.
           </p>
           <p className="text-neutral-600 mb-6 leading-relaxed">
-            반대로 <strong>ETF가 유리한 경우</strong>는 유동성이 중요할 때예요. 갑자기 돈이 필요하면 바로 팔 수 있거든요. 또 금리 하락기에는 채권 가격이 올라서 ETF 수익률이 국채보다 높을 수 있어요. 단기적으로 시장 타이밍을 잡고 싶다면 ETF가 나아요.
+            반대로 ETF가 나은 경우도 있어요. 금리 하락기에는 채권 가격이 올라서 ETF 수익률이 국채를 앞설 수 있어요. 급하게 현금이 필요한 상황이 올 수 있다면 ETF의 유동성이 큰 장점이에요. 두 상품을 반반 섞어서 안전자산 30%를 구성하는 것도 좋은 방법이에요.
           </p>
 
           <SpokeRateBars
             bars={[
-              { label: '안정성 중시 (만기 보유 가능)', rate: '100%', width: '100%' },
-              { label: '복리 장기수익 우선 (10년+)', rate: '90%', width: '90%' },
-              { label: '유동성 중시 (중도 매도 가능)', rate: '30%', width: '30%' },
-              { label: '단기 시장 타이밍 (1~3년)', rate: '20%', width: '20%' },
+              { label: '장기 투자 (만기 보유)', rate: '국채 유리', width: '95%' },
+              { label: '절세 효과 (고소득자)', rate: '국채 유리', width: '85%' },
+              { label: '유동성 (중도 매도)', rate: 'ETF 유리', width: '35%' },
+              { label: '금리 하락기 수익', rate: 'ETF 유리', width: '40%' },
             ]}
           />
 
-          <WarnBox>
-            <p className="text-neutral-600 leading-relaxed">
-              <strong>분산 투자도 고려하세요:</strong> 국채와 ETF를 반반씩 나눠서 안전자산 30%를 채우는 것도 방법이에요. 국채로 안정성 확보하고, ETF로 유동성 확보하는 거죠. <a href="/w/퇴직연금-DC형-IRP-국채-투자-조건-금융기관" className="text-[#4A7AB5] underline">참여 금융기관</a>에서 두 상품 모두 투자 가능해요.
-            </p>
-          </WarnBox>
+          <Chips
+            items={[
+              { icon: 'check', label: '국채 적합', value: '만기 보유 가능' },
+              { icon: 'won', label: '국채 적합', value: '고소득 절세' },
+              { icon: 'clock', label: 'ETF 적합', value: '유동성 중시' },
+              { icon: 'calc', label: 'ETF 적합', value: '금리 하락 기대' },
+            ]}
+          />
         </>
       ),
       bridgeCTA: {
         href: '/w/연금형-개인투자용-국채-신청-방법-10년물-20년물',
         badge: '신청 방법',
-        title: '국채 투자 결정했다면 어떻게 신청하나요?',
-        desc: '전용계좌 개설부터 청약까지 절차 확인',
+        title: '국채 투자를 결정했다면 어떻게 신청하나요?',
+        desc: '전용계좌 개설부터 청약 절차까지 확인',
         icon: 'check',
-        primary: true,
       },
     },
 
@@ -297,53 +293,53 @@ const data: SpokeData = {
 
   faq: [
     {
-      question: '퇴직연금 국채와 ETF를 둘 다 투자할 수 있나요?',
+      question: '퇴직연금 국채와 ETF를 동시에 투자할 수 있나요?',
       answer:
-        '네, 가능해요. DC형·IRP 계좌에서 국채와 채권형 ETF를 <strong>동시에 보유</strong>할 수 있어요. 안전자산 30% 비중을 둘로 나눠서 국채 15%, ETF 15% 이렇게 구성하는 것도 좋은 전략이에요.',
+        '네, 가능해요. DC형이나 IRP 계좌에서 국채와 채권형 ETF를 <strong>동시에 보유</strong>할 수 있어요. 안전자산 30% 비중을 국채 15%, ETF 15%로 나눠서 안정성과 유동성을 함께 잡는 전략도 괜찮아요.',
     },
     {
-      question: '퇴직연금 국채 ETF 비교 시 세금은 어떻게 다른가요?',
+      question: '퇴직연금 국채 ETF 비교 시 운용보수 차이는 얼마나 되나요?',
       answer:
-        '국채는 이자소득에 <strong>분리과세 15.4%</strong>가 적용돼요. ETF는 매매차익에 대해 250만원까지 비과세, 초과 시 22%예요. 고소득자(종합소득세율 38%)라면 국채가 절세 효과가 커요.',
+        '국채는 운용보수가 <strong>0원</strong>이에요. 정부에서 직접 발행하는 상품이라 별도 수수료가 없어요. 채권형 ETF는 연 0.03~0.15%의 운용보수가 매일 자동으로 빠져요. 20년 장기 투자 시 이 차이가 상당히 커질 수 있어요.',
     },
   ],
 
   relatedSpokes: [
     {
-      badge: '신청',
-      title: '연금형 개인투자용 국채 신청 방법',
-      desc: '10년물·20년물 청약 절차와 배정 방식',
-      href: '/w/연금형-개인투자용-국채-신청-방법-10년물-20년물',
-    },
-    {
       badge: '수익률',
       title: '개인투자용 국채 수익률 세금 혜택',
-      desc: '복리 가산금리 1.25%p와 분리과세 15.4%',
+      desc: '복리 가산금리 1.25%p와 분리과세 15.4% 상세 분석',
       href: '/w/개인투자용-국채-수익률-세금-혜택-복리-비과세',
+    },
+    {
+      badge: '신청',
+      title: '연금형 개인투자용 국채 신청 방법',
+      desc: '10년물과 20년물 청약 절차와 배정 방식',
+      href: '/w/연금형-개인투자용-국채-신청-방법-10년물-20년물',
     },
     {
       badge: '조건',
       title: '퇴직연금 DC형 IRP 국채 투자 조건',
-      desc: 'DC형·IRP 계좌로 국채 투자 조건과 참여 금융기관',
+      desc: 'DC형과 IRP 계좌로 국채 투자하는 조건과 금융기관',
       href: '/w/퇴직연금-DC형-IRP-국채-투자-조건-금융기관',
     },
   ],
 
   sources: [
     {
-      name: '내년 개인투자용 국채 2조원 발행…3년물도 도입',
-      url: 'https://www.korea.kr/news/policyNewsView.do?newsId=148959500',
-      org: '정부 정책브리핑',
-    },
-    {
-      name: '2026년 개인투자용국채 연간·1월 발행계획 및 투자 활성화 방안',
+      name: '2026년 개인투자용국채 연간 발행계획 및 투자 활성화 방안',
       url: 'https://www.etoday.co.kr/news/view/2540759',
       org: '기획재정부',
     },
     {
-      name: '개인투자용 국채에 복리 적용 검토',
-      url: 'https://www.sedaily.com/NewsView/22RDW2C7VA',
-      org: '서울경제',
+      name: '내년 개인투자용 국채 2조원 발행, 3년물 도입',
+      url: 'https://www.korea.kr/news/policyNewsView.do?newsId=148957316',
+      org: '정부 정책브리핑',
+    },
+    {
+      name: '퇴직연금 계좌로 개인투자용 국채 투자 가능',
+      url: 'https://www.korea.kr/news/policyNewsView.do?newsId=148959500',
+      org: '정부 정책브리핑',
     },
   ],
 }
