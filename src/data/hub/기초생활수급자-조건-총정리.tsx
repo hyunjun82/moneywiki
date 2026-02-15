@@ -7,11 +7,11 @@ const data: HubData = {
   slug: '기초생활수급자-조건-총정리',
 
   meta: {
-    title: '2026 기초생활수급자 조건 급여 | 생계 의료 주거 교육급여 기준',
-    description: '2026년 기초생활수급자 선정기준, 소득인정액 계산, 급여별 혜택, 신청 방법까지. 생계·의료·주거·교육급여 4가지를 한 페이지에서 확인하세요.',
-    keywords: ['기초생활수급자 조건 급여 총정리', '기초생활수급자 선정기준 소득인정액', '생계급여 의료급여 주거급여 교육급여', '기초생활수급자 신청 방법 부양의무자'],
-    ogTitle: '2026 기초생활수급자 조건 급여 | 생계 의료 주거 교육급여 기준 | 머니위키',
-    ogDescription: '생계·의료·주거·교육급여 4가지를 한 번에. 선정기준, 소득인정액 계산, 신청 방법까지 완벽 가이드.',
+    title: '2026 기초생활수급자 조건과 급여 | 소득인정액 계산부터 신청까지',
+    description: '2026년 기초생활수급자 선정기준이 또 바뀌었어요. 1인가구 생계급여 820,556원, 소득인정액 계산법, 부양의무자 완전 폐지, 4가지 급여별 조건과 신청 방법까지 달라진 내용을 지금 확인해 보세요.',
+    keywords: ['기초생활수급자 조건 2026', '소득인정액 계산 방법', '생계급여 의료급여 주거급여 교육급여', '기초생활수급자 신청 방법'],
+    ogTitle: '2026 기초생활수급자 조건과 급여 | 소득인정액 계산부터 신청까지 | 머니위키',
+    ogDescription: '1인가구 생계급여 820,556원. 소득인정액 계산, 부양의무자 폐지, 급여별 조건 한 번에 확인.',
   },
 
   category: '복지/기초생활보장',
@@ -19,36 +19,48 @@ const data: HubData = {
   hero: {
     badge: '2026년 최신 · 보건복지부',
     tags: ['기초생활보장', '종합 가이드'],
-    h1: (<><em>기초생활수급자</em> 조건 총정리</>),
-    subtitle: '소득인정액, 선정기준, 4가지 급여, 부양의무자 폐지, 신청 방법까지 한 글에 정리했어요.',
-    // stats: chips로 대체
+    h1: (<>2026 <em>기초생활수급자</em> 조건과 급여</>),
+    subtitle: '소득인정액, 선정기준, 4가지 급여(생계·의료·주거·교육), 부양의무자 폐지, 신청 방법까지 이 글 하나로 확인할 수 있어요.',
   },
 
   toc: [
-    { id: 'sec-what', text: '기초생활수급자란 무엇인가요?' },
-    { id: 'sec-standard', text: '급여별 선정기준은 얼마인가요?' },
+    { id: 'checker', text: '내가 받을 수 있는 급여 확인' },
+    { id: 'sec-what', text: '기초생활수급자 조건은 무엇인가요?' },
+    { id: 'sec-standard', text: '기초생활수급자 급여별 선정기준은 얼마인가요?' },
     { id: 'tbl-standard', text: '급여별 선정기준 금액표', sub: true },
     { id: 'tbl-median', text: '2026 기준중위소득 금액표', sub: true },
-    { id: 'sec-benefits', text: '4가지 급여 — 각각 얼마 받나요?' },
+    { id: 'sec-benefits', text: '기초생활수급자 4가지 급여는 각각 얼마 받나요?' },
     { id: 'ben-life', text: '생계급여 (현금)', sub: true },
     { id: 'ben-med', text: '의료급여 (병원비)', sub: true },
     { id: 'ben-house', text: '주거급여 (월세)', sub: true },
     { id: 'ben-edu', text: '교육급여 (학비)', sub: true },
-    { id: 'sec-income', text: '소득인정액은 어떻게 계산하나요?' },
+    { id: 'sec-income', text: '기초생활수급자 소득인정액은 어떻게 계산하나요?' },
     { id: 'tbl-asset', text: '지역별 기본재산액 공제 기준표', sub: true },
-    { id: 'checker', text: '내가 받을 수 있는 급여 확인' },
-    { id: 'sec-family', text: '부양의무자 기준은 어떻게 바뀌었나요?' },
+    { id: 'sec-family', text: '기초생활수급자 부양의무자 기준은 폐지됐나요?' },
     { id: 'sec-extra', text: '수급자가 되면 받는 추가 혜택', sub: true },
-    { id: 'sec-apply', text: '신청은 어떻게 하나요?' },
+    { id: 'sec-apply', text: '기초생활수급자 신청은 어떻게 하나요?' },
     { id: 'faq', text: '자주 묻는 질문' },
   ],
 
   sections: [
+    // ===== CHECK 체커 (1번!) =====
+    {
+      id: 'checker',
+      tag: 'CHECK',
+      heading: '기초생활수급자 내가 받을 수 있는 급여는?',
+      subtitle: '3가지 선택하면 4가지 급여를 한번에 비교해요',
+      content: (
+        <>
+          <기초수급Checker />
+        </>
+      ),
+    },
+
     // ===== 01 개요 =====
     {
       id: 'sec-what',
       tag: '01 개요',
-      heading: '기초생활수급자란 무엇인가요?',
+      heading: '기초생활수급자 조건은 무엇인가요?',
       subtitle: '소득이 적은 국민에게 4가지 급여를 지급하는 제도',
       content: (
         <>
@@ -72,7 +84,7 @@ const data: HubData = {
     {
       id: 'sec-standard',
       tag: '02 기준',
-      heading: '급여별 선정기준은 얼마인가요?',
+      heading: '기초생활수급자 급여별 선정기준은 얼마인가요?',
       subtitle: '기준중위소득의 32~50%가 급여별 기준',
       content: (
         <>
@@ -82,7 +94,7 @@ const data: HubData = {
 
           <HubTable
             id="tbl-standard"
-            title="📊 2026 급여별 선정기준 금액표 (가구원 수별, 월 기준)"
+            title="2026 급여별 선정기준 금액표 (가구원 수별, 월 기준)"
             subtitle="단위: 원"
             headers={['가구원 수', '생계급여(32%)', '의료급여(40%)', '주거급여(48%)', '교육급여(50%)']}
             rows={[
@@ -106,7 +118,7 @@ const data: HubData = {
 
           <HubTable
             id="tbl-median"
-            title="📈 2026 기준중위소득 금액표 (가구원 수별, 월 기준)"
+            title="2026 기준중위소득 금액표 (가구원 수별, 월 기준)"
             subtitle="단위: 원"
             headers={['가구원 수', '1인', '2인', '3인', '4인', '5인']}
             rows={[
@@ -124,33 +136,33 @@ const data: HubData = {
     {
       id: 'sec-benefits',
       tag: '03 급여',
-      heading: '4가지 급여 — 각각 얼마 받나요?',
+      heading: '기초생활수급자 4가지 급여는 각각 얼마 받나요?',
       subtitle: '생계(현금) + 의료(병원비) + 주거(월세) + 교육(학비)',
       content: (
         <>
           <h3 id="ben-life" className="text-[17px] font-bold text-neutral-800 mt-6 mb-2 pl-3 border-l-[3px] border-[#1E3A5F] scroll-mt-20">
-            💰 생계급여 — 매달 현금 지급
+            생계급여 — 매달 현금 지급
           </h3>
           <p>
-            선정기준(1인 820,556원)에서 내 소득인정액을 뺀 차액을 <strong>매달 현금</strong>으로 받아요. 소득이 0원이면 전액(820,556원)을 받고, 소득이 있으면 그만큼 줄어들어요.
+            선정기준(1인 820,556원)에서 내 소득인정액을 뺀 차액을 <strong>매달 현금</strong>으로 받아요. 소득이 0원이면 전액(820,556원)을 받고, 소득이 있으면 그만큼 줄어들어요. <a href="/w/기초생활수급자-1인가구-생계급여-조건-소득인정액">1인가구 생계급여의 상세 계산 예시와 실수령액</a>을 확인해 보세요.
           </p>
 
           <h3 id="ben-med" className="text-[17px] font-bold text-neutral-800 mt-6 mb-2 pl-3 border-l-[3px] border-[#1E3A5F] scroll-mt-20">
-            🏥 의료급여 — 병원비 본인부담 거의 0원
+            의료급여 — 병원비 본인부담 거의 0원
           </h3>
           <p>
-            1종 수급자는 입원·외래 본인부담금이 <strong>거의 0원</strong>이에요. 2종은 입원 10%, 외래 1,000~1,500원 부담해요. 건강보험료도 면제돼요.
+            1종 수급자는 입원·외래 본인부담금이 <strong>거의 0원</strong>이에요. 2종은 입원 10%, 외래 1,000~1,500원 부담해요. 건강보험료도 면제돼요. <a href="/w/의료급여-1종-2종-차이">의료급여 1종과 2종의 본인부담금 차이</a>는 별도로 정리했어요.
           </p>
 
           <h3 id="ben-house" className="text-[17px] font-bold text-neutral-800 mt-6 mb-2 pl-3 border-l-[3px] border-[#1E3A5F] scroll-mt-20">
-            🏠 주거급여 — 월세·임차료 지원
+            주거급여 — 월세·임차료 지원
           </h3>
           <p>
             전세·월세 사는 분은 <strong>실제 임차료</strong>를 기준임대료 범위 내에서 지원받아요. 서울 1인가구 기준 최대 약 <strong>35만원</strong>이에요. 자가 주택이면 수선유지급여(보수비)를 받을 수 있어요. 부양의무자 기준이 <strong>완전 폐지</strong>되어 부모 소득과 관계없이 받아요.
           </p>
 
           <h3 id="ben-edu" className="text-[17px] font-bold text-neutral-800 mt-6 mb-2 pl-3 border-l-[3px] border-[#1E3A5F] scroll-mt-20">
-            📚 교육급여 — 교육활동지원비
+            교육급여 — 교육활동지원비
           </h3>
           <p>
             초·중·고 학생이 있는 가구가 대상이에요. <strong>교육활동지원비</strong>를 연 1회 지급하고, 고등학생은 교과서 무상 지급, 입학금·수업료 면제 혜택도 있어요. 고등학생 기준 연 최대 약 <strong>65만원</strong>이에요.
@@ -161,7 +173,8 @@ const data: HubData = {
       sectionSpoke: [
         { icon: '💰', title: '1인가구 생계급여 조건과 소득인정액 계산', desc: '선정기준 820,556원 · 소득별 실수령액 예시', href: '/w/기초생활수급자-1인가구-생계급여-조건-소득인정액' },
         { icon: '🏥', title: '의료급여 1종 2종 차이 — 본인부담금 비교', desc: '1종 본인부담 0원 · 건강보험료 면제', href: '/w/의료급여-1종-2종-차이' },
-        { icon: '🏠', title: '주거급여 신청 조건 — 서울 1인 최대 35만원', desc: '기준임대료 · 부양의무자 완전 폐지', href: '/w/주거급여-신청조건' },
+        { icon: '🏠', title: '주거급여 임차료 지원금 — 서울 1인 최대 35만원', desc: '기준임대료 · 부양의무자 완전 폐지', href: '/w/주거급여-신청조건' },
+        { icon: '📚', title: '교육급여 지원 항목과 금액', desc: '교육활동지원비 연 최대 65만원', href: '/w/교육급여-지원항목' },
       ],
       bridgeCTA: {
         href: '#sec-income',
@@ -175,7 +188,7 @@ const data: HubData = {
     {
       id: 'sec-income',
       tag: '04 계산',
-      heading: '소득인정액은 어떻게 계산하나요?',
+      heading: '기초생활수급자 소득인정액은 어떻게 계산하나요?',
       subtitle: '소득평가액 + 재산의 소득환산액',
       content: (
         <>
@@ -197,7 +210,7 @@ const data: HubData = {
 
           <HubTable
             id="tbl-asset"
-            title="🏘️ 지역별 기본재산액 공제 기준 (2026년)"
+            title="지역별 기본재산액 공제 기준 (2026년)"
             subtitle="기본재산액 이하 재산은 0원 처리"
             headers={['지역', '기본재산액', '의미']}
             rows={[
@@ -238,24 +251,11 @@ const data: HubData = {
       },
     },
 
-    // ===== CHECK 체커 =====
-    {
-      id: 'checker',
-      tag: 'CHECK',
-      heading: '내가 받을 수 있는 급여는?',
-      subtitle: '3가지 선택하면 4가지 급여를 한번에 비교해요',
-      content: (
-        <>
-          <기초수급Checker />
-        </>
-      ),
-    },
-
     // ===== 05 부양의무자 =====
     {
       id: 'sec-family',
       tag: '05 부양의무자',
-      heading: '부양의무자 기준은 어떻게 바뀌었나요?',
+      heading: '기초생활수급자 부양의무자 기준은 폐지됐나요?',
       subtitle: '생계·주거·교육 완전 폐지, 의료급여만 유지',
       content: (
         <>
@@ -291,7 +291,7 @@ const data: HubData = {
     {
       id: 'sec-apply',
       tag: '06 신청',
-      heading: '신청은 어떻게 하나요?',
+      heading: '기초생활수급자 신청은 어떻게 하나요?',
       subtitle: '복지로 온라인 또는 주민센터 방문',
       content: (
         <>
@@ -329,7 +329,7 @@ const data: HubData = {
           <div
             style={{ borderLeft: '3px solid #F59E0B', backgroundColor: '#FFFBEB', padding: '14px 18px', borderRadius: '8px', margin: '20px 0', fontSize: '13px', lineHeight: '1.7', color: '#525252' }}
           >
-            <span style={{ color: '#F59E0B', fontWeight: 700 }}>⚠️ 온라인 신청이 어려우면</span> 주민센터에 방문하면 직원이 대신 접수해 줘요. 별도 수수료는 없어요.
+            <span style={{ color: '#F59E0B', fontWeight: 700 }}>온라인 신청이 어려우면</span> 주민센터에 방문하면 직원이 대신 접수해 줘요. 별도 수수료는 없어요.
           </div>
 
           <a
@@ -378,7 +378,7 @@ const data: HubData = {
 
   spokeGroups: [
     {
-      title: '💰 급여별 상세',
+      title: '급여별 상세',
       spokes: [
         { slug: '기초생활수급자-1인가구-생계급여-조건-소득인정액', title: '1인가구 생계급여 조건과 소득인정액 계산', desc: '선정기준 820,556원 · 실수령액 계산 예시', badge: '급여' },
         { slug: '의료급여-1종-2종-차이', title: '의료급여 1종 2종 차이 — 본인부담금 0원 조건', desc: '1종 본인부담 0원 · 건강보험료 면제', badge: '급여' },
@@ -387,7 +387,7 @@ const data: HubData = {
       ],
     },
     {
-      title: '🔢 소득인정액 계산',
+      title: '소득인정액 계산',
       spokes: [
         { slug: '소득인정액-모의계산', title: '소득인정액 모의계산 방법 (복지로 사용법)', desc: '내 정확한 소득인정액을 직접 계산하는 법', badge: '계산' },
         { slug: '재산-소득환산율-계산', title: '재산의 소득환산율 계산 — 자동차, 전세금은?', desc: '자동차 보유 시 불이익, 전세금 공제 기준', badge: '계산' },
@@ -395,7 +395,7 @@ const data: HubData = {
       ],
     },
     {
-      title: '🔄 부양의무자·대안 제도',
+      title: '부양의무자·대안 제도',
       spokes: [
         { slug: '의료급여-부양의무자-면제', title: '의료급여 부양의무자 면제 조건', desc: '중증장애·노인 면제 대상 · 소득·재산 기준 상세', badge: '제도' },
         { slug: '차상위계층-조건-혜택', title: '차상위계층 조건과 혜택', desc: '중위소득 50% 이하 · 의료비 감면', badge: '제도' },
@@ -420,17 +420,17 @@ const data: HubData = {
   source: { name: '보건복지부', date: '2026.01 고시' },
 
   chips: [
-    { icon: '💰', label: '1인 생계급여', value: '820,556원', href: '#ben-life' },
-    { icon: '🏥', label: '1인 의료급여', value: '1,025,695원', href: '#ben-med' },
-    { icon: '🏠', label: '1인 주거급여', value: '1,230,834원', href: '#ben-house' },
-    { icon: '📚', label: '1인 교육급여', value: '1,282,119원', href: '#ben-edu' },
+    { icon: '💰', label: '1인 생계급여', value: '820,556원', href: '/w/기초생활수급자-1인가구-생계급여-조건-소득인정액' },
+    { icon: '🏥', label: '1인 의료급여', value: '1,025,695원', href: '/w/의료급여-1종-2종-차이' },
+    { icon: '🏠', label: '1인 주거급여', value: '1,230,834원', href: '/w/주거급여-신청조건' },
+    { icon: '📚', label: '1인 교육급여', value: '1,282,119원', href: '/w/교육급여-지원항목' },
   ],
 
   heroCTA: {
     href: '#checker',
-    question: '내가 수급자가 될 수 있을까? 조건이 복잡해서 헷갈리시나요?',
-    answer: <>가구원 수, 소득, 재산 <strong>3가지만</strong> 선택하면 4가지 급여 중 내가 받을 수 있는 급여를 바로 확인할 수 있어요.</>,
-    buttonText: '간편 자격 체크 ↓',
+    question: '조건이 복잡해서 내가 받을 수 있는지 모르겠다면?',
+    answer: <>가구원 수, 소득, 재산 <strong>3가지만</strong> 선택하면 생계·의료·주거·교육급여 중 받을 수 있는 급여를 바로 확인할 수 있어요.</>,
+    buttonText: '30초 자격 체크 →',
   },
 
   sticky: {
@@ -441,8 +441,8 @@ const data: HubData = {
   },
 
   prevNext: {
-    prev: { title: '실업급여 수급 조건 신청 방법 총정리', href: '/w/실업급여-수급-조건-신청-방법-총정리-2026' },
-    next: { title: '차상위계층 조건과 혜택', href: '/w/chasangwi-jogeon' },
+    prev: { title: '2026 기준중위소득 금액 총정리', href: '/w/기준중위소득-금액-총정리' },
+    next: { title: '의료급여 1종 2종 차이와 혜택', href: '/w/의료급여-1종-2종-차이' },
   },
 }
 

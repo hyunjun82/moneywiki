@@ -152,17 +152,17 @@ const RULES = [
     id: 'RATECARDS-001',
     severity: 'ERROR',
     component: 'RateCards',
-    description: 'RateCards에서 highlightColor: "neutral" 사용 (허용: orange | emerald | undefined)',
+    description: 'RateCards에서 highlightColor: "neutral" 사용 (허용: orange | navy | undefined)',
     pattern: /highlightColor\s*:\s*['"]neutral['"]/g,
-    fix: '제거하거나 "orange" 또는 "emerald"로 변경',
+    fix: '제거하거나 "orange" 또는 "navy"로 변경',
   },
   {
     id: 'RATECARDS-002',
     severity: 'WARNING',
     component: 'RateCards',
     description: 'RateCards에서 허용되지 않는 highlightColor 값 사용',
-    pattern: /highlightColor\s*:\s*['"](?!orange|emerald)[a-z]+['"]/g,
-    fix: '"orange" 또는 "emerald"만 허용',
+    pattern: /highlightColor\s*:\s*['"](?!orange|navy)[a-z]+['"]/g,
+    fix: '"orange" 또는 "navy"만 허용',
   },
 
   // ── SpokeFlow 규칙 ──
@@ -299,18 +299,27 @@ const RULES = [
     test: (content, filePath) => {
       // 스포크 파일에만 적용 (허브는 섹션 수 제한 없음)
       if (filePath && !filePath.includes('spoke')) return [];
-      // TSX 데이터 파일은 sections[].heading으로 H2 정의
-      // FAQ 섹션, 체커 섹션 제외하고 카운트
-      const headingMatches = content.match(/heading\s*:\s*['"`](?!자주 묻는 질문)[^'"`]+['"`]/g) || [];
-      // 체커 섹션 heading도 제외 (toc + sections 양쪽에 id:'checker' 있으므로 최대 1만 차감)
-      const hasChecker = (content.match(/id\s*:\s*['"]checker['"]/g) || []).length > 0 ? 1 : 0;
-      const count = headingMatches.length - hasChecker;
-      if (count !== 4) {
-        return [{ line: 0, text: `섹션 heading ${count}개 발견 (4개 필요, FAQ/체커 제외)` }];
+      // sections 배열 내 최상위 heading만 카운트 (SpokeLinks/DetailBox 내부 heading 제외)
+      // 패턴: sections 배열의 직접 자식 객체 { id: '...', ... heading: '...' } 추출
+      const sectionIdMatches = content.match(/\{\s*\n?\s*id\s*:\s*['"][^'"]+['"]/g) || [];
+      // sections 배열 내 id-heading 쌍만 카운트
+      const sectionHeadingRegex = /\{\s*\n?\s*id\s*:\s*['"]([^'"]+)['"]\s*,\s*\n?\s*number\s*:\s*['"][^'"]+['"]\s*,\s*\n?\s*heading\s*:\s*['"`]([^'"`]+)['"`]/g;
+      let m;
+      let count = 0;
+      while ((m = sectionHeadingRegex.exec(content)) !== null) {
+        const id = m[1];
+        const heading = m[2];
+        // checker, faq 제외
+        if (id === 'checker' || id === 'sec-faq') continue;
+        if (heading === '자주 묻는 질문') continue;
+        count++;
+      }
+      if (count !== 4 && count !== 5) {
+        return [{ line: 0, text: `섹션 heading ${count}개 발견 (4~5개 필요, FAQ/체커 제외)` }];
       }
       return [];
     },
-    fix: '본문 섹션을 정확히 4개로 조정 (+ FAQ 1개)',
+    fix: '본문 섹션을 4~5개로 조정 (+ FAQ 1개)',
   },
 
   // ── SEO/메타 규칙 ──
@@ -355,24 +364,163 @@ const RULES = [
     fix: 'meta.title\uC744 60\uC790 \uC774\uB0B4\uB85C \uC904\uC774\uAE30',
   },
   {
+    id: 'TITLE-003',
+    severity: 'WARNING',
+    component: 'SEO',
+    description: 'meta.title에 | 구분자 없음 (필수: [핵심 키워드] | [보조 키워드/질문])',
+    test: (content) => {
+      const metaIdx = content.indexOf('meta:');
+      if (metaIdx === -1) return [];
+      const afterMeta = content.substring(metaIdx, metaIdx + 500);
+      const titleMatch = afterMeta.match(/title\s*:\s*['"`]([^'"`]+)['"`]/);
+      if (!titleMatch) return [];
+      const title = titleMatch[1];
+      if (!title.includes('|')) {
+        const line = content.substring(0, metaIdx + titleMatch.index).split('\n').length;
+        return [{ line, text: `"${title.substring(0, 50)}" — | 구분자 없음` }];
+      }
+      return [];
+    },
+    fix: 'meta.title을 "[핵심 키워드] | [보조 키워드/질문]" 구조로 변경',
+  },
+  {
+    id: 'TITLE-004',
+    severity: 'ERROR',
+    component: 'SEO',
+    description: 'meta.title에 금지어 사용 (총정리/완벽정리/가이드/완벽 가이드)',
+    test: (content) => {
+      const metaIdx = content.indexOf('meta:');
+      if (metaIdx === -1) return [];
+      const afterMeta = content.substring(metaIdx, metaIdx + 500);
+      const titleMatch = afterMeta.match(/title\s*:\s*['"`]([^'"`]+)['"`]/);
+      if (!titleMatch) return [];
+      const title = titleMatch[1];
+      const forbidden = ['총정리', '완벽정리', '완벽 정리', '가이드', '완벽 가이드'];
+      for (const word of forbidden) {
+        if (title.includes(word)) {
+          const line = content.substring(0, metaIdx + titleMatch.index).split('\n').length;
+          return [{ line, text: `"${title.substring(0, 50)}" — 금지어 "${word}" 포함` }];
+        }
+      }
+      return [];
+    },
+    fix: 'meta.title에서 총정리/완벽정리/가이드 제거, 구체적 내용으로 교체',
+  },
+  {
+    id: 'TITLE-005',
+    severity: 'WARNING',
+    component: 'SEO',
+    description: 'meta.title에 - (하이픈) 구분자 사용 (→ | 으로 변경)',
+    test: (content) => {
+      const metaIdx = content.indexOf('meta:');
+      if (metaIdx === -1) return [];
+      const afterMeta = content.substring(metaIdx, metaIdx + 500);
+      const titleMatch = afterMeta.match(/title\s*:\s*['"`]([^'"`]+)['"`]/);
+      if (!titleMatch) return [];
+      const title = titleMatch[1];
+      // 하이픈이 구분자로 쓰인 경우만 검출 (공백-공백 패턴)
+      if (/\s-\s/.test(title) || /\s–\s/.test(title)) {
+        const line = content.substring(0, metaIdx + titleMatch.index).split('\n').length;
+        return [{ line, text: `"${title.substring(0, 50)}" — 하이픈(-)을 구분자로 사용` }];
+      }
+      return [];
+    },
+    fix: 'meta.title에서 - 또는 – → | (파이프) 구분자로 변경',
+  },
+  {
     id: 'DESC-001',
     severity: 'WARNING',
     component: 'SEO',
-    description: 'meta.description 길이 부적절 (60~80자 필요)',
+    description: 'meta.description 길이 부적절 (100~150자 필요)',
     test: (content) => {
       const metaIdx = content.indexOf('meta:');
       if (metaIdx === -1) return [];
       const afterMeta = content.substring(metaIdx, metaIdx + 1000);
       const descMatch = afterMeta.match(/description\s*:\s*['"`]([^'"`]+)['"`]/);
-      if (!descMatch) return [{ line: 0, text: 'meta.description \uB204\uB77D' }];
+      if (!descMatch) return [{ line: 0, text: 'meta.description 누락' }];
       const desc = descMatch[1];
       const line = content.substring(0, metaIdx + descMatch.index).split('\n').length;
-      if (desc.length < 60 || desc.length > 80) {
-        return [{ line, text: `description ${desc.length}\uC790 (60~80\uC790 \uD544\uC694): "${desc.substring(0, 40)}..."` }];
+      if (desc.length < 100 || desc.length > 150) {
+        return [{ line, text: `description ${desc.length}자 (100~150자 필요): "${desc.substring(0, 40)}..."` }];
       }
       return [];
     },
-    fix: 'meta.description\uC744 60~80\uC790 \uC790\uC5F0\uC2A4\uB7EC\uC6B4 \uBB38\uC7A5\uC73C\uB85C \uC791\uC131',
+    fix: 'meta.description을 100~150자 구어체 2문장으로 작성 (호기심 유발 + 해결 제시)',
+  },
+  {
+    id: 'DESC-002',
+    severity: 'WARNING',
+    component: 'SEO',
+    description: 'description 마무리가 행동유도가 아님 (CTR 저하)',
+    test: (content) => {
+      const metaIdx = content.indexOf('meta:');
+      if (metaIdx === -1) return [];
+      const afterMeta = content.substring(metaIdx, metaIdx + 1000);
+      const descMatch = afterMeta.match(/description\s*:\s*['"`]([^'"`]+)['"`]/);
+      if (!descMatch) return [];
+      const desc = descMatch[1];
+      const line = content.substring(0, metaIdx + descMatch.index).split('\n').length;
+      // 행동유도 마무리 패턴: ~해 보세요/확인하세요/알려드려요/풀어서/드려요/체크하세요
+      const goodEndings = /(보세요|확인하세요|알려드려요|드려요|체크하세요|풀어서|풀었어요|정리해드려요)[.!]?\s*$/;
+      // 나쁜 마무리: ~정리했어요/~했어요 (수동적)
+      const badEndings = /(정리했어요|했어요|있어요|됐어요)[.!]?\s*$/;
+      if (badEndings.test(desc) && !goodEndings.test(desc)) {
+        return [{ line, text: `마무리가 수동적: "${desc.slice(-30)}" → 행동유도로 변경` }];
+      }
+      return [];
+    },
+    fix: 'description 마무리를 "~확인해 보세요/~알려드려요/~체크하세요" 등 행동유도로 변경',
+  },
+  {
+    id: 'DESC-003',
+    severity: 'WARNING',
+    component: 'SEO',
+    description: 'description에 궁금증 유발 패턴 없음 (CTR 저하)',
+    test: (content) => {
+      const metaIdx = content.indexOf('meta:');
+      if (metaIdx === -1) return [];
+      const afterMeta = content.substring(metaIdx, metaIdx + 1000);
+      const descMatch = afterMeta.match(/description\s*:\s*['"`]([^'"`]+)['"`]/);
+      if (!descMatch) return [];
+      const desc = descMatch[1];
+      const line = content.substring(0, metaIdx + descMatch.index).split('\n').length;
+      // 궁금증 유발 패턴
+      const curiosity = /(아시나요|아셨나요|모르겠다면|달라졌|바뀌었|받을 수 있다는|된다는 거|몰랐다면|놓치고 있다면|손해|이득)/;
+      if (!curiosity.test(desc)) {
+        return [{ line, text: `궁금증 유발 패턴 없음: "${desc.substring(0, 40)}..."` }];
+      }
+      return [];
+    },
+    fix: 'description 첫 문장에 "~아시나요?/~바뀌었어요/~받을 수 있다는 거" 등 궁금증 유발 표현 추가',
+  },
+  {
+    id: 'DESC-004',
+    severity: 'ERROR',
+    component: 'SEO',
+    description: 'description에 금지 패턴 사용',
+    test: (content) => {
+      const metaIdx = content.indexOf('meta:');
+      if (metaIdx === -1) return [];
+      const afterMeta = content.substring(metaIdx, metaIdx + 1000);
+      const descMatch = afterMeta.match(/description\s*:\s*['"`]([^'"`]+)['"`]/);
+      if (!descMatch) return [];
+      const desc = descMatch[1];
+      const line = content.substring(0, metaIdx + descMatch.index).split('\n').length;
+      const forbidden = [
+        { pattern: /알아봅니다/, label: '알아봅니다' },
+        { pattern: /살펴보겠/, label: '살펴보겠' },
+        { pattern: /총정리/, label: '총정리' },
+        { pattern: /완벽.?정리/, label: '완벽정리' },
+        { pattern: /한눈에 보는/, label: '한눈에 보는' },
+      ];
+      for (const f of forbidden) {
+        if (f.pattern.test(desc)) {
+          return [{ line, text: `금지 표현 "${f.label}" 사용: "${desc.substring(0, 40)}..."` }];
+        }
+      }
+      return [];
+    },
+    fix: 'description에서 "알아봅니다/총정리/완벽정리/한눈에 보는" 등 금지 표현 제거',
   },
   {
     id: 'KEYWORD-001',
@@ -413,11 +561,16 @@ const RULES = [
       // 스포크에만 적용 (허브는 질문형 필수 아님)
       if (filePath && !filePath.includes('spoke')) return [];
       const matches = [];
-      const headingRegex = /heading\s*:\s*['"`]([^'"`]+)['"`]/g;
+      // sections 배열의 최상위 heading만 검사 (SpokeLinks/DetailBox 내부 heading 제외)
+      // 패턴: id: '...' + number: '...' + heading: '...' (sections 직접 자식만 매칭)
+      const sectionHeadingRegex = /\{\s*\n?\s*id\s*:\s*['"]([^'"]+)['"]\s*,\s*\n?\s*number\s*:\s*['"][^'"]+['"]\s*,\s*\n?\s*heading\s*:\s*['"`]([^'"`]+)['"`]/g;
       let m;
-      while ((m = headingRegex.exec(content)) !== null) {
-        const heading = m[1];
+      while ((m = sectionHeadingRegex.exec(content)) !== null) {
+        const id = m[1];
+        const heading = m[2];
         if (heading === '\uC790\uC8FC \uBB3B\uB294 \uC9C8\uBB38') continue;
+        // checker 섹션은 질문형 필수 아님
+        if (id === 'checker') continue;
         if (!heading.includes('?')) {
           matches.push({
             line: content.substring(0, m.index).split('\n').length,
@@ -691,38 +844,130 @@ function printResults(allResults) {
   return errors.length > 0 ? 1 : 0;
 }
 
+// ─── stdin JSON 읽기 (PostToolUse 훅에서 호출 시) ───
+
+function readStdin() {
+  return new Promise((resolve) => {
+    // 타임아웃 100ms — stdin이 없으면(CLI 직접 호출) 빈 문자열 반환
+    const timeout = setTimeout(() => {
+      process.stdin.destroy();
+      resolve('');
+    }, 100);
+
+    let data = '';
+    process.stdin.setEncoding('utf8');
+    process.stdin.on('data', (chunk) => { data += chunk; });
+    process.stdin.on('end', () => {
+      clearTimeout(timeout);
+      resolve(data);
+    });
+    process.stdin.on('error', () => {
+      clearTimeout(timeout);
+      resolve('');
+    });
+
+    // non-TTY일 때만 resume (TTY = 직접 실행)
+    if (!process.stdin.isTTY) {
+      process.stdin.resume();
+    } else {
+      clearTimeout(timeout);
+      resolve('');
+    }
+  });
+}
+
+function extractFilePathFromHookInput(stdinData) {
+  if (!stdinData || !stdinData.trim()) return null;
+  try {
+    const json = JSON.parse(stdinData);
+    // PostToolUse: { tool_name: "Write", tool_input: { file_path: "..." } }
+    if (json.tool_input && json.tool_input.file_path) {
+      return json.tool_input.file_path;
+    }
+    // TaskCompleted: 전체 스포크/허브 디렉토리 검사
+    if (json.hook_event_name === 'TaskCompleted') {
+      return null; // 전체 디렉토리 검사 모드
+    }
+    return null;
+  } catch (e) {
+    return null;
+  }
+}
+
+function isRelevantFile(filePath) {
+  if (!filePath) return false;
+  const normalized = filePath.replace(/\\/g, '/');
+  // src/data/spoke/ 또는 src/data/hub/ 내 .tsx 파일만 검사
+  if (!normalized.includes('src/data/spoke/') && !normalized.includes('src/data/hub/')) return false;
+  if (!normalized.endsWith('.tsx')) return false;
+  if (EXCLUDE_FILES.includes(path.basename(filePath))) return false;
+  return true;
+}
+
 // ─── 메인 ───
 
-const target = process.argv[2];
+async function main() {
+  // 1) CLI 인자 확인
+  let target = process.argv[2];
 
-if (!target) {
-  console.log('사용법: node verify-spoke-quality.js <파일 또는 디렉토리>');
-  console.log('  예시: node verify-spoke-quality.js ./src/data/spoke/');
-  console.log('  예시: node verify-spoke-quality.js ./src/data/spoke/실업급여-수급-조건.tsx');
-  process.exit(1);
+  // 2) CLI 인자 없으면 stdin에서 읽기 (훅 모드)
+  if (!target) {
+    const stdinData = await readStdin();
+    const hookFilePath = extractFilePathFromHookInput(stdinData);
+
+    if (hookFilePath) {
+      // PostToolUse 훅: 해당 파일만 검사
+      if (!isRelevantFile(hookFilePath)) {
+        // spoke/hub TSX 아닌 파일이면 스킵 (exit 0)
+        process.exit(0);
+      }
+      // 절대경로로 변환
+      target = path.isAbsolute(hookFilePath) ? hookFilePath : path.resolve(hookFilePath);
+    } else if (stdinData && stdinData.trim()) {
+      // TaskCompleted 등: 전체 디렉토리 검사
+      target = './src/data/spoke/';
+    } else {
+      console.log('사용법: node verify-spoke-quality.js <파일 또는 디렉토리>');
+      console.log('  예시: node verify-spoke-quality.js ./src/data/spoke/');
+      console.log('  예시: node verify-spoke-quality.js ./src/data/spoke/실업급여-수급-조건.tsx');
+      console.log('  (PostToolUse/TaskCompleted 훅에서는 stdin JSON으로 파일 경로 전달)');
+      process.exit(1);
+    }
+  }
+
+  if (!fs.existsSync(target)) {
+    console.error(`오류: "${target}" 경로를 찾을 수 없습니다.`);
+    process.exit(1);
+  }
+
+  const files = getFiles(target);
+
+  if (files.length === 0) {
+    console.log(`"${target}"에서 .tsx 파일을 찾을 수 없습니다.`);
+    process.exit(0);
+  }
+
+  console.log(`\n검사 대상: ${files.length}개 파일`);
+  for (const f of files) {
+    console.log(`  · ${path.basename(f)}`);
+  }
+
+  const allResults = [];
+  for (const f of files) {
+    allResults.push(...analyzeFile(f));
+  }
+
+  const exitCode = printResults(allResults);
+
+  // 훅 모드에서 ERROR 있으면 exit 2 (재작성 강제)
+  if (exitCode > 0 && !process.argv[2]) {
+    const errors = allResults.filter(r => r.severity === 'ERROR');
+    const errorSummary = errors.map(e => `[${e.rule}] ${e.description}`).join('\n');
+    process.stderr.write(`검증 실패: ERROR ${errors.length}개 발견\n${errorSummary}\n`);
+    process.exit(2);  // exit 2 = 훅에서 blocking error (재작성 강제)
+  }
+
+  process.exit(exitCode);
 }
 
-if (!fs.existsSync(target)) {
-  console.error(`오류: "${target}" 경로를 찾을 수 없습니다.`);
-  process.exit(1);
-}
-
-const files = getFiles(target);
-
-if (files.length === 0) {
-  console.log(`"${target}"에서 .tsx 파일을 찾을 수 없습니다.`);
-  process.exit(0);
-}
-
-console.log(`\n검사 대상: ${files.length}개 파일`);
-for (const f of files) {
-  console.log(`  · ${path.basename(f)}`);
-}
-
-const allResults = [];
-for (const f of files) {
-  allResults.push(...analyzeFile(f));
-}
-
-const exitCode = printResults(allResults);
-process.exit(exitCode);
+main();
