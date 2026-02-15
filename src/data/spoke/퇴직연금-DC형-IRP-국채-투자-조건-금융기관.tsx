@@ -1,5 +1,6 @@
 import type { SpokeData } from '@/data/spoke/types'
 import { SpokeTable, Chips, SpokeChecklist, TipBox, SpokeWarnBox } from '@/components/spoke/SpokeBlocks'
+import 퇴직연금국채Checker from '@/components/checkers/퇴직연금국채Checker'
 
 const data: SpokeData = {
   slug: '퇴직연금-DC형-IRP-국채-투자-조건-금융기관',
@@ -67,6 +68,14 @@ const data: SpokeData = {
   ],
 
   sections: [
+    // CHECKER: 퇴직연금 국채 투자 자격 확인
+    {
+      id: 'checker',
+      number: 'CHECK',
+      heading: '퇴직연금으로 국채 투자할 수 있는지 확인해 보세요',
+      subtitle: '3가지만 선택하면 바로 알 수 있어요',
+      content: <퇴직연금국채Checker />,
+    },
     // SECTION 01: DC형 조건
     {
       id: 'sec-what',

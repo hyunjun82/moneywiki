@@ -7,6 +7,7 @@ import {
   SpokeWarnBox,
   RateCards,
 } from '@/components/spoke/SpokeBlocks'
+import 국채만기선택Checker from '@/components/checkers/국채만기선택Checker'
 
 const data: SpokeData = {
   slug: '연금형-개인투자용-국채-신청-방법-10년물-20년물',
@@ -116,6 +117,14 @@ const data: SpokeData = {
   ],
 
   sections: [
+    // CHECKER: 10년물 vs 20년물 비교
+    {
+      id: 'checker',
+      number: 'CHECK',
+      heading: '10년물과 20년물 중 뭐가 유리한지 확인해 보세요',
+      subtitle: '투자 목적과 금액으로 맞는 만기를 알려드려요',
+      content: <국채만기선택Checker />,
+    },
     // SECTION 01: 신청 방법
     {
       id: 'sec-how',

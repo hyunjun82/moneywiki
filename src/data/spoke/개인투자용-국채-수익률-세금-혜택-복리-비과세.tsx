@@ -1,5 +1,6 @@
 import type { SpokeData } from '@/data/spoke/types'
 import { FormulaBox, RateCards, SpokeTable, TipBox, DetailBox, SpokeTimeline } from '@/components/spoke/SpokeBlocks'
+import 국채수익률Checker from '@/components/checkers/국채수익률Checker'
 
 // --- Table Data ---
 const TAX_COMPARISON_ROWS = [
@@ -96,6 +97,14 @@ const data: SpokeData = {
   ],
 
   sections: [
+    // CHECKER: 국채 세후 수익 계산
+    {
+      id: 'checker',
+      number: 'CHECK',
+      heading: '내 투자금으로 세후 수익이 얼마나 되는지 확인해 보세요',
+      subtitle: '투자 금액과 만기를 선택하면 바로 계산해요',
+      content: <국채수익률Checker />,
+    },
     // SECTION 01: 수익률
     {
       id: 'sec-yield',

@@ -1,5 +1,6 @@
 import type { SpokeData } from '@/data/spoke/types'
 import { SpokeCompareCards, SpokeRateBars, TipBox, FormulaBox, Chips } from '@/components/spoke/SpokeBlocks'
+import 국채ETF비교Checker from '@/components/checkers/국채ETF비교Checker'
 
 const data: SpokeData = {
   slug: '퇴직연금-국채-vs-ETF-비교-안정성-수익률',
@@ -67,6 +68,14 @@ const data: SpokeData = {
   ],
 
   sections: [
+    // CHECKER: 국채 vs ETF 비교
+    {
+      id: 'checker',
+      number: 'CHECK',
+      heading: '국채와 ETF 중 내게 맞는 걸 확인해 보세요',
+      subtitle: '투자 성향 3가지만 선택하면 알려드려요',
+      content: <국채ETF비교Checker />,
+    },
     // SECTION 01: 핵심 비교 개요
     {
       id: 'sec-compare',
