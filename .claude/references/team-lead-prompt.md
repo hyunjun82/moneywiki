@@ -21,7 +21,7 @@
 - hyunjun-quality 1명: 작성 완료 후 문체/UX 검수 + 직접 수정
 - hyunjun-accuracy 1명: 작성 완료 후 숫자/출처 검증 + 직접 수정
 - hyunjun-seo 1명: 작성 완료 후 타이틀/PAA/스키마 검증 + 직접 수정
-- hyunjun-cctv 1명 (Opus): 검증자 3명 PASS 후 최종 검수
+- hyunjun-cctv 3명 (Opus): 검증자 3명 PASS 후 최종 검수 (파일 2~3개씩 배분)
 
 JSON에서 읽을 정보:
 - 각 Writer에게 title, slug, keywords, h2, description, visuals, introType 전달
@@ -32,7 +32,7 @@ JSON에서 읽을 정보:
 Phase 순서:
 1. 허브 + 스포크 4개 동시 작성
 2. 검증자 3명 동시 검수 (FAIL → 직접 수정)
-3. CCTV 최종 검수
+3. CCTV 최종 검수 (분산 병렬: 파일 2~3개씩 CCTV 3명에 배분)
 4. 리드가 registry 등록 + commit + push
 5. spokes[4~] 남은 스포크 → Phase 1부터 반복
 ```
@@ -57,14 +57,14 @@ Phase 순서:
 - hyunjun-quality 1명
 - hyunjun-accuracy 1명
 - hyunjun-seo 1명
-- hyunjun-cctv 1명 (Opus)
+- hyunjun-cctv 3명 (Opus) — 파일 2~3개씩 배분
 
 워크플로우: .claude/references/agent-team-workflow.md 참조
 
 Phase 순서:
 1. 허브 + 스포크 4개 동시 작성
 2. 검증자 3명 동시 검수 (FAIL → 직접 수정)
-3. CCTV 최종 검수
+3. CCTV 3명 분산 검수 (파일 2~3개씩 배분, 병렬)
 4. 리드가 registry 등록 + commit + push
 5. 추가 스포크 있으면 Phase 1부터 반복
 
