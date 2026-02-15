@@ -48,7 +48,7 @@ const data: SpokeData = {
     badge: '2026년 최신 비교',
     h1: (
       <>
-        퇴직연금 국채 vs ETF, <span className="text-[#1E3A5F]">안정성과 수익률</span> 어디에 무게를 둘까요?
+        퇴직연금 <span className="text-[#1E3A5F]">국채 vs ETF</span> 안정성 수익률 비교
       </>
     ),
     intro: (
@@ -96,10 +96,10 @@ const data: SpokeData = {
 
           <Chips
             items={[
-              { icon: 'check', label: '원금보장', value: '국채 전액' },
-              { icon: 'percent', label: '국채 수익률', value: '연 7.3%' },
-              { icon: 'clock', label: '유동성', value: 'ETF 우위' },
-              { icon: 'grid', label: '안전자산', value: '둘 다 인정' },
+              { icon: '🛡️', label: '원금보장', value: '국채 전액' },
+              { icon: '💰', label: '국채 수익률', value: '연 7.3%' },
+              { icon: '⏱️', label: '유동성', value: 'ETF 우위' },
+              { icon: '📊', label: '안전자산', value: '둘 다 인정' },
             ]}
           />
 
@@ -273,10 +273,10 @@ const data: SpokeData = {
 
           <Chips
             items={[
-              { icon: 'check', label: '국채 적합', value: '만기 보유 가능' },
-              { icon: 'won', label: '국채 적합', value: '고소득 절세' },
-              { icon: 'clock', label: 'ETF 적합', value: '유동성 중시' },
-              { icon: 'calc', label: 'ETF 적합', value: '금리 하락 기대' },
+              { icon: '✅', label: '국채 적합', value: '만기 보유 가능' },
+              { icon: '💵', label: '국채 적합', value: '고소득 절세' },
+              { icon: '⏱️', label: 'ETF 적합', value: '유동성 중시' },
+              { icon: '📉', label: 'ETF 적합', value: '금리 하락 기대' },
             ]}
           />
         </>

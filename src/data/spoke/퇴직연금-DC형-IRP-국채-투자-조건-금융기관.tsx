@@ -48,7 +48,7 @@ const data: SpokeData = {
     badge: '2026년 9월 시행',
     h1: (
       <>
-        퇴직연금 DC형 IRP로 국채 투자, <span className="text-[#1E3A5F]">어떤 조건</span>이 필요한가요?
+        퇴직연금 <span className="text-[#1E3A5F]">DC형 IRP</span> 국채 투자 조건
       </>
     ),
     intro: (
@@ -99,10 +99,10 @@ const data: SpokeData = {
 
           <Chips
             items={[
-              { icon: 'check', label: '계좌 유형', value: 'DC형(확정기여형)' },
-              { icon: 'info', label: '투자 상품', value: '10년물·20년물 국채' },
-              { icon: 'star', label: '금융기관', value: '인가 보유 9곳' },
-              { icon: 'clock', label: '시행 시기', value: '2026년 9월' },
+              { icon: '✅', label: '계좌 유형', value: 'DC형(확정기여형)' },
+              { icon: '📋', label: '투자 상품', value: '10년물·20년물 국채' },
+              { icon: '🏦', label: '금융기관', value: '인가 보유 9곳' },
+              { icon: '📅', label: '시행 시기', value: '2026년 9월' },
             ]}
           />
 
@@ -148,10 +148,10 @@ const data: SpokeData = {
 
           <Chips
             items={[
-              { icon: 'doc', label: '계좌 유형', value: 'IRP (개인형 퇴직연금)' },
-              { icon: 'clock', label: '투자 가능 상품', value: '10년물·20년물 국채' },
-              { icon: 'check', label: '추가 개설', value: '기존 IRP 그대로 사용' },
-              { icon: 'calc', label: '전용계좌 병행', value: '동시 사용 가능' },
+              { icon: '📄', label: '계좌 유형', value: 'IRP (개인형 퇴직연금)' },
+              { icon: '📋', label: '투자 가능 상품', value: '10년물·20년물 국채' },
+              { icon: '✅', label: '추가 개설', value: '기존 IRP 그대로 사용' },
+              { icon: '🔄', label: '전용계좌 병행', value: '동시 사용 가능' },
             ]}
           />
 

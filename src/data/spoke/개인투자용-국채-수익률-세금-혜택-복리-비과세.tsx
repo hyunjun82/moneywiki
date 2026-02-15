@@ -74,7 +74,7 @@ const data: SpokeData = {
     badge: '2026년 최신',
     h1: (
       <>
-        개인투자용 국채 <span className="text-[#1E3A5F]">수익률과 세금 혜택</span>, 실제로 얼마나 남을까요?
+        개인투자용 국채 <span className="text-[#1E3A5F]">수익률 세금 혜택</span> 복리 비과세
       </>
     ),
     intro: (

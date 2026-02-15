@@ -73,9 +73,7 @@ const data: SpokeData = {
     badge: '2026년 9월 시행',
     h1: (
       <>
-        연금형 개인투자용 국채{' '}
-        <span className="text-[#1E3A5F]">10년물과 20년물</span>, 어떻게
-        신청하나요?
+        연금형 개인투자용 국채 <span className="text-[#1E3A5F]">10년물 20년물</span> 신청 방법
       </>
     ),
     intro: (
