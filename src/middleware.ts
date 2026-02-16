@@ -8,6 +8,9 @@ const SEARCH_ENGINE_BOTS = ['googlebot', 'yeti', 'daumoa', 'bingbot', 'slurp', '
 // 악성 크롤러 (429 차단)
 const BAD_BOTS = ['gptbot', 'ccbot', 'bytespider', 'ahrefsbot', 'semrushbot', 'mj12bot', 'dotbot', 'petalbot', 'claudebot', 'anthropic-ai'];
 
+// 허용 국가 (한국어 사이트 대상 — 한국 + 검색엔진 봇 국가)
+const ALLOWED_COUNTRIES = new Set(['KR', 'US', 'JP']);
+
 export async function middleware(request: NextRequest) {
   const host = request.headers.get("host") || "";
   const pathname = request.nextUrl.pathname;
@@ -20,23 +23,28 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 301);
   }
 
-  // === /search 경로 방어 ===
-  if (pathname === '/search' || pathname.startsWith('/search?')) {
-    const isBadBot = BAD_BOTS.some(bot => userAgent.includes(bot));
-    if (isBadBot) {
-      return new NextResponse('Too Many Requests', { status: 429 });
-    }
-
-    const isSearchEngine = SEARCH_ENGINE_BOTS.some(bot => userAgent.includes(bot));
-    if (!isSearchEngine) {
-      return NextResponse.redirect(new URL('/', request.url), 301);
-    }
-  }
-
-  // === 전역 악성 봇 차단 (모든 경로) ===
+  // === 전역 악성 봇 차단 (UA 기반) ===
   const isBadBot = BAD_BOTS.some(bot => userAgent.includes(bot));
   if (isBadBot) {
     return new NextResponse('Too Many Requests', { status: 429 });
+  }
+
+  // === 비한국 IP 차단 (Vercel geo 헤더 기반) ===
+  // 검색엔진 봇은 통과 (크롤링 보장)
+  const isSearchEngine = SEARCH_ENGINE_BOTS.some(bot => userAgent.includes(bot));
+  if (!isSearchEngine) {
+    const country = request.headers.get('x-vercel-ip-country') || '';
+    if (country && !ALLOWED_COUNTRIES.has(country)) {
+      return new NextResponse('Forbidden', { status: 403 });
+    }
+  }
+
+  // === /search 경로 방어 ===
+  if (pathname === '/search' || pathname.startsWith('/search?')) {
+    const isSearchBot = SEARCH_ENGINE_BOTS.some(bot => userAgent.includes(bot));
+    if (!isSearchBot) {
+      return NextResponse.redirect(new URL('/', request.url), 301);
+    }
   }
 
   // robots.txt 동적 처리 (User-Agent 기반)
