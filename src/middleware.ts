@@ -29,15 +29,9 @@ export async function middleware(request: NextRequest) {
     return new NextResponse('Too Many Requests', { status: 429 });
   }
 
-  // === 비한국 IP 차단 (Vercel geo 헤더 기반) ===
-  // 검색엔진 봇은 통과 (크롤링 보장)
-  const isSearchEngine = SEARCH_ENGINE_BOTS.some(bot => userAgent.includes(bot));
-  if (!isSearchEngine) {
-    const country = request.headers.get('x-vercel-ip-country') || '';
-    if (country && !ALLOWED_COUNTRIES.has(country)) {
-      return new NextResponse('Forbidden', { status: 403 });
-    }
-  }
+  // === 비한국 IP 차단: 제거됨 ===
+  // Vercel geo 헤더(x-vercel-ip-country)가 한국 사용자도 잘못 차단하는 문제 발생.
+  // geo 차단은 Vercel Dashboard > Firewall에서 설정하는 게 안전함.
 
   // === /search 경로 방어 ===
   if (pathname === '/search' || pathname.startsWith('/search?')) {
