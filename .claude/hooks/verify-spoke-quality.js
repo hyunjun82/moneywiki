@@ -744,6 +744,32 @@ const RULES = [
     fix: 'hero.h1에서 총정리/완벽정리/가이드 제거, 구체적 표현으로 교체',
   },
 
+  // ── hero.h1 질문형 금지 ──
+  {
+    id: 'H1-002',
+    severity: 'ERROR',
+    component: 'SEO',
+    description: 'hero.h1이 질문형 — h1은 타이틀형만 허용!',
+    test: (content) => {
+      const matches = [];
+      const h1Regex = /h1\s*:\s*\(\s*<>([\s\S]*?)<\/>\s*\)/g;
+      let m;
+      while ((m = h1Regex.exec(content)) !== null) {
+        const h1Text = m[1].replace(/<[^>]*>/g, '').replace(/\{[^}]*\}/g, '').trim();
+        // 질문형 패턴: ~인가요? ~될까요? ~있나요? ~하나요? ~남을까요? 등
+        if (/[?？]/.test(h1Text) || /(?:인가요|될까요|있나요|하나요|남을까요|둘까요|필요한가요|되나요|할까요)\s*[?？]?\s*$/.test(h1Text)) {
+          const line = content.substring(0, m.index).split('\n').length;
+          matches.push({
+            line,
+            text: `h1이 질문형: "${h1Text.substring(0, 60)}" → 타이틀형으로 변경`,
+          });
+        }
+      }
+      return matches;
+    },
+    fix: 'h1을 타이틀형으로 변경. 질문형(~인가요?/~될까요?)은 H2에만 사용',
+  },
+
   // ── [신규] pasBridge/bridgeCTA href 앵커(#) 금지 ──
   {
     id: 'HREF-001',
@@ -767,42 +793,31 @@ const RULES = [
     fix: 'pasBridge/bridgeCTA의 href를 "/w/관련-스포크-슬러그" 형식으로 변경 (앵커 # 금지)',
   },
 
-  // ── [신규] Checker 없는 주제에서 1번 섹션 대체 컴포넌트 확인 ──
+  // ── Checker 필수 (모든 스포크) ──
   {
     id: 'CHECKER-001',
-    severity: 'WARNING',
+    severity: 'ERROR',
     component: '구조',
-    description: 'Checker import 없는데 시각 대체 요소도 없음 (1번 섹션에 RateCards/Chips 등 필요)',
+    description: 'Checker import 없음 — 모든 스포크에 Checker 1개 필수!',
     test: (content, filePath) => {
       // 스포크에만 적용
       if (filePath && !filePath.includes('spoke')) return [];
-      // Checker import가 있으면 OK
-      if (/import\s+\w+Checker/.test(content)) return [];
-      // Checker import 없으면: sections 첫 번째에 시각 컴포넌트가 있는지 확인
-      const sectionsMatch = content.match(/sections\s*:\s*\[([\s\S]*?)\n\s*\],?\s*\n\s*faq/);
-      if (!sectionsMatch) return [];
-      // 첫 섹션 블록 추출 (첫 번째 { ... } 까지)
-      const firstSectionMatch = sectionsMatch[1].match(/\{[\s\S]*?(?:pasBridge|bridgeCTA)\s*:/);
-      if (!firstSectionMatch) return [];
-      const firstSection = firstSectionMatch[0];
-      const hasVisual = /<(RateCards|Chips|SpokeTable|FormulaBox|SpokeCompareCards|SpokeRateBars|Steps|SpokeStepCards)/.test(firstSection);
-      if (!hasVisual) {
-        return [{
-          line: 0,
-          text: 'Checker 없는 주제: 1번 섹션에 RateCards/Chips 등 시각 대체 컴포넌트 필요',
-        }];
-      }
-      return [];
+      // Checker import가 있으면 OK (한글 import명도 매칭)
+      if (/import\s+.+Checker/.test(content)) return [];
+      return [{
+        line: 1,
+        text: 'Checker import 없음. 모든 스포크에 체커 1개 필수 (checker-patterns.md 참조)',
+      }];
     },
-    fix: '1번 섹션에 RateCards, Chips, SpokeTable 등 핵심 정보 시각화 컴포넌트 추가',
+    fix: 'checker-patterns.md 5유형 중 선택 → src/components/checkers/에 생성 → import + sections 첫 번째에 배치',
   },
 
-  // ── [신규] Chips icon 텍스트 검사 ──
+  // ── Chips icon 이모지 필수 (영어 금지) ──
   {
     id: 'CHIPS-001',
-    severity: 'WARNING',
+    severity: 'ERROR',
     component: 'Chips',
-    description: 'Chips icon에 허용되지 않는 값 사용 (허용: calc/clock/info/grid/check/won/percent/doc/star)',
+    description: 'Chips icon에 영어 텍스트 사용 — 이모지만 허용!',
     test: (content) => {
       const matches = [];
       // Chips items 내 icon 값 추출
@@ -814,19 +829,19 @@ const RULES = [
         let iconMatch;
         while ((iconMatch = iconRegex.exec(block)) !== null) {
           const icon = iconMatch[1];
-          const allowed = ['calc', 'clock', 'info', 'grid', 'check', 'won', 'percent', 'doc', 'star'];
-          if (!allowed.includes(icon)) {
+          // 영어 알파벳으로만 이루어진 값이면 ERROR (이모지/숫자는 OK)
+          if (/^[a-zA-Z_-]+$/.test(icon)) {
             const line = content.substring(0, chipsMatch.index + iconMatch.index).split('\n').length;
             matches.push({
               line,
-              text: `Chips icon="${icon}" — 허용값: ${allowed.join('/')}`,
+              text: `Chips icon="${icon}" — 영어 금지! 이모지 사용 (✅/📋/🏦/💰 등)`,
             });
           }
         }
       }
       return matches;
     },
-    fix: 'Chips icon을 허용값 중 하나로 변경: calc/clock/info/grid/check/won/percent/doc/star',
+    fix: 'Chips icon을 이모지로 변경: ✅, 📋, 🏦, 💰, 📅, ⚠️ 등',
   },
 
   // ── [신규] hub chips/sectionSpoke href가 /w/로 시작하는지 ──

@@ -138,6 +138,9 @@ const data: SpokeData = {
   hero: {
     badge: '2026년 최신',
     h1: (<>제목 <span className="text-[#1E3A5F]">강조</span> 나머지</>),
+    // ⚠️ h1은 타이틀형만! 질문형(~인가요?/~될까요?/~있나요?) 절대 금지!
+    // ✅ 퇴직연금 DC형 IRP 국채 투자 조건
+    // ❌ 퇴직연금 DC형 IRP로 국채 투자, 어떤 조건이 필요한가요?
     intro: (<p className="text-base text-neutral-500 leading-relaxed">구어체 3~4줄</p>),
     hubCTA: { badge: '전체 가이드', desc: '허브 한줄 설명' },
   },
@@ -150,14 +153,16 @@ const data: SpokeData = {
   ],
 
   sections: [
-    // Checker (해당 주제에 전용 컴포넌트가 있을 때만!)
-    // 없으면 1번 섹션을 RateCards/Chips/핵심요약 등 시각 컴포넌트로 대체 (절대 생략 금지!)
+    // ⚠️ Checker 1개 필수! 모든 스포크에 반드시 포함! 건너뛰기 금지!
+    // checker-patterns.md 5유형 중 주제에 맞는 것 선택:
+    //   A(자격판정) B(계산) C(비교) D(세금공제) E(구간판정)
+    // src/components/checkers/에 새 파일 생성 → import → 섹션에 배치
     {
       id: 'checker',
-      number: 'STEP 01',
+      number: 'CHECK',
       heading: '체커 질문형 제목',
       subtitle: '한줄 설명',
-      content: (<><XxxChecker /><p>설명 텍스트</p></>),
+      content: (<XxxChecker />),
     },
 
     // 본문 4개 (keywords와 1:1 매칭)
@@ -289,7 +294,7 @@ E. 스토리형: 실제 상황 → 결과 → 적용
 | `SpokeWarnBox` | 주의 (제목) | `title, children(JSX)` — items prop 금지! |
 | `DetailBox` | 번호+제목+설명 | `title, items[{heading, desc}]` |
 | `Steps` | 절차/단계 | `items[{title, desc}]` |
-| `Chips` | 4칸 그리드 | `items[{icon, label, value, href?}]` |
+| `Chips` | 4칸 그리드 | `items[{icon, label, value, href?}]` — **icon은 이모지만!** `'✅'`,`'📋'`,`'🏦'`,`'💰'` 등. 영어(`'check'`,`'info'`) 넣으면 화면에 영어 텍스트 출력됨! |
 | `SpokeLinks` | 관련 글 그리드 | `title, items[{num, heading, desc, href}]` |
 | `CalcLink` | 외부 계산기 | `href, icon?, title, desc?` |
 | `SpokeChecklist` | 서류 체크 | `items[{text, done?, note?}]` |
@@ -316,6 +321,9 @@ E. 스토리형: 실제 상황 → 결과 → 적용
 | RateCards `highlightColor: 'emerald'` | → `'navy'` |
 | 다른 스포크 파일 복사 후 텍스트 교체 | → 주제에 맞게 처음부터 구성 |
 | 다른 주제의 Checker import | → 해당 주제 전용만 사용 |
+| Checker 섹션 생략 | → 모든 스포크에 Checker 1개 필수! 건너뛰기 금지 |
+| Chips icon에 영어 (`'check'`, `'info'`) | → 이모지만 (`'✅'`, `'📋'`, `'🏦'`) |
+| h1을 질문형으로 작성 (~인가요?) | → h1은 타이틀형만. 질문형은 H2에만! |
 
 ---
 

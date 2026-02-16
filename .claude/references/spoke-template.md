@@ -94,13 +94,19 @@ hero: {
 }
 ```
 
+**h1 필수 규칙:**
+- **타이틀형만 허용. 질문형(~인가요?/~될까요?/~있나요?) 절대 금지!**
+- H2가 질문형이지 h1은 아님. 혼동하지 마라.
+- `✅ 퇴직연금 DC형 IRP 국채 투자 조건` (타이틀형)
+- `❌ 퇴직연금 DC형 IRP로 국채 투자, 어떤 조건이 필요한가요?` (질문형 = FAIL)
+
 ### sections (핵심!)
 
 **섹션 5~7개 구성 — 주제에 따라 유동적:**
 
 | # | id | number | 용도 | 필수? |
 |---|-----|--------|------|-------|
-| 1 | checker | STEP 01 | Checker (해당 주제에 전용 Checker가 있을 때만) | 선택 |
+| 1 | checker | CHECK | Checker (모든 스포크에 1개 필수! checker-patterns.md 참조) | **필수** |
 | 2~5 | sec-xxx | SECTION 02~05 | H2 질문형 (keywords와 1:1 매칭) | 필수 4개 |
 | 6 | sec-apply | STEP 0x | 신청/절차 (해당 시) | 선택 |
 | 7 | sec-faq | 07 | FAQ (content: null) | 필수 |
@@ -175,7 +181,7 @@ bridgeCTA: {
 | `SpokeWarnBox` | 주의 (제목 포함) | `title, children(JSX)` |
 | `DetailBox` | 번호+제목+설명 리스트 | `title, items[{heading, desc}]` |
 | `Steps` | 절차/단계 | `items[{title, desc}]` |
-| `Chips` | 4칸 그리드 (상태 비교) | `items[{icon, label, value, href?}]` |
+| `Chips` | 4칸 그리드 (상태 비교) | `items[{icon, label, value, href?}]` — **icon은 이모지 필수!** `'✅'`, `'📋'`, `'🏦'`, `'💰'` 등. 영어(`'check'`, `'info'`) 넣으면 화면에 영어가 그대로 출력됨 |
 | `SpokeLinks` | 섹션 내 관련 글 그리드 | `title, items[{num, heading, desc, href}]` |
 | `CalcLink` | 외부 계산기 링크 | `href, icon?, title, desc?` |
 | `SpokeChecklist` | 서류/조건 체크리스트 | `items[{text, done?, note?}]` |
@@ -222,12 +228,14 @@ bridgeCTA: {
 - 해결: 주제에 맞게 headers/행 수를 다르게 구성
 ```
 
-### 3. Checker 고유성
+### 3. Checker 필수 + 고유성
 
 ```
-- 각 Checker는 해당 주제 전용 (src/components/checkers/에 존재하는 것만)
+- 모든 스포크에 Checker 1개 필수! 건너뛰기 금지!
+- 각 Checker는 해당 주제 전용으로 새로 생성 (src/components/checkers/)
 - 다른 주제의 Checker를 import하면 FAIL
-- Checker가 없는 주제: 1번 섹션을 RateCards/Chips/핵심요약 등으로 대체
+- checker-patterns.md의 5가지 유형(A~E) 중 주제에 맞는 것 선택
+- 유형 선택 기준: "나도 받을 수 있어?"→A, "얼마나?"→B, "뭐가 유리?"→C, "세금?"→D, "어디 해당?"→E
 ```
 
 ### 4. 서론/전환 고유성
@@ -261,6 +269,9 @@ bridgeCTA: {
 | 다른 주제의 Checker import | 해당 주제 전용 Checker만 사용 |
 | 형제 스포크와 같은 시각 조합 | 최소 2종류 이상 다르게 구성 |
 | 기존 글 복사 후 텍스트만 교체 | 주제에 맞게 컴포넌트 조합부터 새로 설계 |
+| `Chips`의 `icon`에 영어(`'check'`, `'info'`) | 이모지만 허용 (`'✅'`, `'📋'`, `'🏦'`) |
+| `h1`을 질문형으로 작성 (~인가요?/~될까요?) | h1은 타이틀형만. 질문형은 H2에만 사용 |
+| Checker 섹션 생략 | 모든 스포크에 Checker 1개 필수. 건너뛰기 금지 |
 
 ---
 
