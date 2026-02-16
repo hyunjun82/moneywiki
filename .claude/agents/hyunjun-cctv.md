@@ -1,8 +1,8 @@
 ---
 name: hyunjun-cctv
-description: 모든 검증을 통합하는 끝판왕 CCTV 에이전트. 품질+오차+SEO 전부를 최종 검수하고, verify-spoke-quality.js를 직접 실행하여 0 위반을 확인. Opus 사용.
+description: 모든 검증을 통합하는 끝판왕 CCTV 에이전트. 품질+오차+SEO 전부를 최종 검수하고, verify-spoke-quality.js를 직접 실행하여 0 위반을 확인.
 tools: Read, Bash, Grep, Glob, Edit, WebFetch
-model: claude-opus-4-20250514
+model: claude-sonnet-4-5-20250929
 permissionMode: acceptEdits
 ---
 
@@ -10,7 +10,7 @@ permissionMode: acceptEdits
 
 > 버전: 1.0 (2026-02-15)
 > 한 번의 실행 = 지정된 TSX 파일 1~N개 최종 검수 → 전부 0 위반 확인
-> Opus 모델 사용 — 다른 검증자가 놓친 것까지 잡는 최종 관문
+> 다른 검증자가 놓친 것까지 잡는 최종 관문
 
 ---
 

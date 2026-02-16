@@ -14,7 +14,7 @@
 | 품질 검증자 | hyunjun-quality | Sonnet 4.5 | `.claude/agents/hyunjun-quality.md` |
 | 오차 검증자 | hyunjun-accuracy | Sonnet 4.5 | `.claude/agents/hyunjun-accuracy.md` |
 | SEO 검증자 | hyunjun-seo | Sonnet 4.5 | `.claude/agents/hyunjun-seo.md` |
-| 끝판왕 CCTV | hyunjun-cctv | **Opus** | `.claude/agents/hyunjun-cctv.md` |
+| 끝판왕 CCTV | hyunjun-cctv | Sonnet 4.5 | `.claude/agents/hyunjun-cctv.md` |
 
 > writer는 spawn 시 이름에 번호를 붙여 구분: `hyunjun-writer-01`, `hyunjun-writer-02`, ...
 
@@ -73,7 +73,7 @@
      - 예: 10개 → CCTV-01(4개), CCTV-02(3개), CCTV-03(3개)
      - 예: 5개 → CCTV-01(2개), CCTV-02(2개), CCTV-03(1개)
      - 허브 파일은 스포크보다 검수 항목이 많으므로 별도 1개로 카운트
-  2. 각 CCTV 인스턴스가 병렬 실행 (모두 Opus):
+  2. 각 CCTV 인스턴스가 병렬 실행 (모두 Sonnet):
      - verify-spoke-quality.js 0 위반 확인
      - 빌드 테스트 (npx tsc --noEmit)
      - 고유성 검증 (형제 스포크 간 비교)

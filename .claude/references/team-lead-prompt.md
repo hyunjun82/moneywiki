@@ -21,7 +21,7 @@
 - hyunjun-quality 1명: 작성 완료 후 문체/UX 검수 + 직접 수정
 - hyunjun-accuracy 1명: 작성 완료 후 숫자/출처 검증 + 직접 수정
 - hyunjun-seo 1명: 작성 완료 후 타이틀/PAA/스키마 검증 + 직접 수정
-- hyunjun-cctv 3명 (Opus): 검증자 3명 PASS 후 최종 검수 (파일 2~3개씩 배분)
+- hyunjun-cctv 3명 (Sonnet): 검증자 3명 PASS 후 최종 검수 (파일 2~3개씩 배분)
 
 JSON에서 읽을 정보:
 - 각 Writer에게 title, slug, keywords, h2, description, visuals, introType 전달
@@ -57,7 +57,7 @@ Phase 순서:
 - hyunjun-quality 1명
 - hyunjun-accuracy 1명
 - hyunjun-seo 1명
-- hyunjun-cctv 3명 (Opus) — 파일 2~3개씩 배분
+- hyunjun-cctv 3명 (Sonnet) — 파일 2~3개씩 배분
 
 워크플로우: .claude/references/agent-team-workflow.md 참조
 

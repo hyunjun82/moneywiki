@@ -4,12 +4,6 @@ description: 키워드를 받아 스포크 TSX 데이터 파일 1개를 생성. 
 tools: Read, Write, Edit, Glob, Grep, WebFetch, WebSearch
 model: claude-sonnet-4-5-20250929
 permissionMode: acceptEdits
-hooks:
-  PostToolUse:
-    - matcher: "Write"
-      hooks:
-        - type: command
-          command: "node .claude/hooks/verify-spoke-quality.js"
 ---
 
 # hyunjun-writer (스포크 작성 에이전트) v5

@@ -1,16 +1,27 @@
-import Link from 'next/link'
 import type { SpokeData } from './types'
-import { SpokeCompareCards, FormulaBox, SpokeRateBars, SpokeTable, SpokeFlow, TipBox, SpokeChecklist, RateCards } from '@/components/spoke/SpokeBlocks'
+import {
+  SpokeTable,
+  FormulaBox,
+  TipBox,
+  SpokeWarnBox,
+  DetailBox,
+  SpokeCompareCards,
+  SpokeRateBars,
+  SpokeTimeline,
+  Chips,
+  SpokeLinks,
+} from '@/components/spoke/SpokeBlocks'
+import YangdoseJungkwaChecker from '@/components/checkers/YangdoseJungkwaChecker'
 
 const data: SpokeData = {
   slug: '양도세-중과-뜻-기본세율-중과세율-비교',
 
   meta: {
-    title: '양도세 중과 뜻 기본세율 중과세율 비교 대상까지 총정리',
-    description: '양도세 중과가 적용되면 세금이 두 배 가까이 늘어난다는 거 아시나요? 기본세율과 중과세율의 차이를 한눈에 비교해 드려요',
-    keywords: ['양도세 중과 뜻', '양도세 기본세율', '양도세 중과세율', '중과 비교'],
-    ogTitle: '양도세 중과 뜻 기본세율 중과세율 비교 | 머니위키',
-    ogDescription: '양도세 중과 개념, 기본세율과 중과세율 비교, 중과 대상과 조건까지 총정리했어요.',
+    title: '양도세 중과 뜻, 기본세율 중과세율 비교 | 2026 중과 유예 종료 후 세금 차이는?',
+    description: '양도세 중과가 적용되면 세율이 최대 75%까지 올라간다는 사실, 알고 계셨나요? 기본세율에 최대 30%p 추가에 장특공제 배제까지, 과세표준 구간별 세율 비교와 유예 종료 후 세금 변화를 정리해드려요.',
+    keywords: ['양도세 중과 뜻', '양도세 기본세율 중과세율', '양도세 중과 대상', '중과 유예 종료 세금'],
+    ogTitle: '양도세 중과 뜻, 기본세율 중과세율 비교 | 머니위키',
+    ogDescription: '기본세율 vs 중과세율 세금 차이를 바로 비교해 보세요.',
   },
 
   hub: {
@@ -18,250 +29,327 @@ const data: SpokeData = {
     name: '다주택양도세 중과유예 세율 절세 전략',
   },
 
-  breadcrumb: ['세금', '다주택양도세 중과 뜻'],
+  breadcrumb: ['세금', '양도소득세', '양도세 중과 뜻'],
+
+  summary3: [
+    <>양도세 중과는 기본세율에 <strong>2주택 +20%p, 3주택 +30%p</strong>를 추가하는 제도예요</>,
+    <>장기보유특별공제가 <strong>배제</strong>돼서 실질 세금이 두 배 가까이 늘어요</>,
+    <>중과 유예는 <strong>2026년 5월 9일</strong> 예정대로 종료, 잔금 기한 보완책 시행</>,
+  ],
+
+  sourceBar: {
+    badge: '출처',
+    name: '정책브리핑 다주택 중과 유예 종료 보완방안',
+    date: '2026.02',
+  },
+
+  prevNext: {
+    prev: { title: '중과 유예 연혁과 종료일', href: '/w/중과-유예-연혁-종료일-확정' },
+    next: { title: '다주택 중과 전후 세액 비교', href: '/w/다주택-양도세-중과-전후-세액-비교' },
+  },
+
+  stickyBar: {
+    topLabel: '기본 vs 중과',
+    value: '최대 +30%p',
+    buttonText: '세금 비교하기 →',
+    scrollTo: '#checker',
+  },
 
   hero: {
-    badge: '2026년 기준',
-    h1: <>양도세 중과 뜻 — <span className="text-[#1E3A5F]">기본세율과 중과세율</span> 비교</>,
-    intro: (
+    badge: '2026년 2월 기준',
+    h1: (
       <>
-        <p className="text-base text-neutral-500 leading-relaxed">
-          집을 팔 때 내는 양도소득세, 다주택자라면 '중과'라는 단어가 신경 쓰일 수밖에 없어요. <strong>양도세 중과</strong>란 다주택자가 조정대상지역 내 주택을 양도할 때 기본세율에 추가 세율을 더해서 부과하는 제도예요.
-        </p>
-        <p className="text-base text-neutral-500 leading-relaxed mt-3">
-          기본세율만 적용되면 6~45%인데, 중과가 붙으면 최대 75%까지 올라가요. <a href="https://law.go.kr/법령/소득세법/제104조" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">소득세법 제104조</a>에 근거한 제도이고, 전체적인 중과유예 흐름이 궁금하면 <Link href="/w/다주택양도세-중과유예-세율-절세-전략" className="text-blue-600 hover:underline">다주택양도세 중과유예 세율 절세 전략</Link>을 같이 보면 도움이 돼요. 먼저 중과가 뭔지부터 정리할게요.
-        </p>
+        양도세 <span className="text-[#1E3A5F]">중과 뜻</span>과 기본세율 중과세율 비교
       </>
+    ),
+    intro: (
+      <p className="text-base text-neutral-500 leading-relaxed">
+        양도세 중과가 되면 세율이 최대 75%까지 올라가는데, 이게 정확히 어떤 의미인지 감이 안 잡히시죠?
+        기본세율 6~45%에 2주택이면 20%p, 3주택이면 30%p가 추가로 붙어요. 거기에 장기보유특별공제까지
+        배제되니까 실질 세금은 두 배 가까이 뛰어요. 2026년 2월 12일 정부 발표로 중과 유예 종료가 확정됐는데,
+        기본세율과 중과세율이 얼마나 차이 나는지 아래에서 바로 비교해 보세요.
+      </p>
     ),
     hubCTA: {
       badge: '전체 가이드',
-      desc: '다주택 양도세 중과유예 세율 절세 전략 전체 보기',
+      desc: '다주택 양도세 중과유예 세율 절세 전략 한눈에 보기',
+    },
+    quickAnswer: {
+      title: '양도세 중과란?',
+      body: '양도세 중과는 다주택자가 조정대상지역 내 주택을 팔 때 기본세율(6~45%)에 추가 세율(2주택 +20%p, 3주택 +30%p)을 더해 부과하는 제도예요. 장기보유특별공제도 배제돼요.',
+      hook: '기본세율과 중과세율 세금 차이를 지금 바로 비교할 수 있어요.',
     },
   },
 
   toc: [
-    { id: 's1', text: '양도세 중과란 무엇인가요?' },
-    { id: 's2', text: '양도세 기본세율은 얼마인가요?' },
-    { id: 's3', text: '양도세 중과세율은 얼마나 더 내나요?' },
-    { id: 's4', text: '양도세 중과 대상은 누구인가요?' },
-    { id: 's5', text: '자주 묻는 질문' },
+    { id: 'checker', label: '기본세율 vs 중과세율 비교' },
+    { id: 'sec-meaning', label: '양도세 중과란 정확히 어떤 뜻인가요?' },
+    { id: 'sec-rate-compare', label: '양도세 기본세율과 중과세율은 얼마나 차이 나나요?' },
+    { id: 'sec-target', label: '양도세 중과 대상은 누구이고 예외는 뭔가요?' },
+    { id: 'sec-after-end', label: '양도세 중과 유예 종료 후 세금이 얼마나 늘어나나요?' },
+    { id: 'sec-faq', label: '자주 묻는 질문' },
   ],
 
   sections: [
-    /**
-     * ===== S1: 양도세 중과 개념 =====
-     * 시각 요소: SpokeCompareCards + FormulaBox
-     * 전환 스타일: A. 독자 대변형
+    /* ===== CHECK: 기본세율 vs 중과세율 비교 체커 ===== */
+    {
+      id: 'checker',
+      number: 'CHECK',
+      heading: '양도세 기본세율 vs 중과세율, 내 세금 차이는?',
+      subtitle: '주택 수와 양도차익을 선택하면 세금 차이를 바로 확인할 수 있어요',
+      content: <YangdoseJungkwaChecker />,
+    },
+
+    /* ===== S1: 양도세 중과 뜻 =====
+     * 시각: Chips + DetailBox
+     * 전환: A 독자 대변형
      */
     {
-      id: 's1',
-      number: '01',
-      heading: '양도세 중과란 무엇인가요?',
-      subtitle: '기본세율에 추가 세율을 더해서 부과하는 제도예요',
+      id: 'sec-meaning',
+      number: 'SECTION 02',
+      heading: '양도세 중과란 정확히 어떤 뜻인가요?',
+      subtitle: '기본세율 위에 추가 세율을 더해서 부과하는 제도예요',
       content: (
         <>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            양도세 중과란 다주택자가 조정대상지역 내 주택을 양도할 때 기본세율(6~45%)에 추가 세율을 더해서 세금을 부과하는 제도예요. <a href="https://law.go.kr/법령/소득세법/제104조" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">소득세법 제104조</a>에 따르면, 2주택자는 기본세율에 20%p를, 3주택 이상은 30%p를 더해요. 정부가 다주택 투기를 억제하기 위해 도입한 제도예요.
+            양도세 중과는 다주택자가 <a href="/w/조정대상지역-목록-서울-경기" className="text-[#4A7AB5] underline">조정대상지역</a> 안에 있는 주택을 팔 때 기본세율(6~45%)에 추가 세율을 얹어서 세금을 부과하는 제도예요. <a href="https://law.go.kr/법령/소득세법/제104조" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">소득세법 제104조</a>에 따라 2주택자는 기본세율에 20%포인트를, 3주택 이상은 30%포인트를 더해요. 정부가 다주택 투기를 억제하려고 도입한 제도예요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            중과가 적용되면 세율만 올라가는 게 아니에요. 장기보유특별공제(최대 30%)가 아예 배제돼요. 오래 보유했더라도 공제를 받을 수 없으니까 실질 세금이 훨씬 더 커지는 거예요. 예를 들어 10년 보유해서 30% 공제를 받을 수 있었던 게, 중과되면 공제 0%로 바뀌어요.
+            세율만 올라가는 게 아니에요. 중과가 적용되면 장기보유특별공제(다주택자 최대 30%)가 아예 배제돼요. 10년을 보유해서 30%를 공제받을 수 있었던 사람도, 중과가 되면 공제 0%로 바뀌어요. 양도차익 5억원 기준으로 장특공제 30%면 과세표준이 1.5억원이나 줄어드는데, 이것만 사라져도 수천만원의 세금 차이가 나요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            다만 현재는 중과유예 조치로 2026년 5월 9일까지 기본세율만 적용되고 있어요. 유예 기간에는 다주택자라도 기본세율로 양도할 수 있고, 장기보유특별공제도 받을 수 있어요. 유예와 중과의 핵심 차이를 비교해 볼게요.
+            현재 중과유예 조치가 적용 중이라 다주택자도 기본세율로 양도할 수 있어요. 하지만 2026년 2월 12일 정부 발표에 따르면 유예는 <strong>2026년 5월 9일 예정대로 종료</strong>돼요. 유예 기간에는 주택 수와 관계없이 기본세율만 적용되고, 장기보유특별공제도 받을 수 있어요.
+          </p>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            중과가 걸리면 세율과 공제 두 가지가 동시에 불리해지는 거예요. 구체적인 차이를 숫자로 정리해 볼게요.
           </p>
 
-          <SpokeCompareCards cards={[
-            { title: '중과 적용 시', subtitle: '', items: ['기본세율 + 20~30%p 추가', '장기보유특별공제 배제', '실질 세율 최대 75%', '조정대상지역 내 다주택자'] },
-            { title: '유예 적용 시(~2026.5.9)', subtitle: '', items: ['기본세율 6~45%만 적용', '장기보유특별공제 가능(최대 30%)', '실질 세율 최대 45%', '주택 수 관계없이 동일'] }
+          <Chips items={[
+            { icon: '📊', label: '2주택 추가세율', value: '+20%p' },
+            { icon: '📊', label: '3주택 추가세율', value: '+30%p' },
+            { icon: '🚫', label: '장특공제', value: '배제' },
+            { icon: '📅', label: '유예 종료', value: '2026.5.9' },
+          ]} />
+
+          <DetailBox
+            title="양도세 중과 핵심 요약"
+            items={[
+              { heading: '추가세율 부과', desc: '기본세율(6~45%)에 2주택은 20%p, 3주택 이상은 30%p를 더해요' },
+              { heading: '장특공제 배제', desc: '보유기간이 아무리 길어도 장기보유특별공제를 받을 수 없어요' },
+              { heading: '적용 조건', desc: '조정대상지역 내 주택을 양도하는 1세대 2주택 이상 보유자에게만 적용돼요' },
+            ]}
+          />
+
+          <SpokeLinks
+            title="양도세 중과 더 알아보기"
+            items={[
+              { num: '01', heading: '중과 유예 연혁과 종료일 확정', desc: '2022년부터 매년 연장된 유예 제도 전체 흐름', href: '/w/중과-유예-연혁-종료일-확정' },
+              { num: '02', heading: '중과 배제 대상 주택과 신고', desc: '상속주택, 임대등록 주택 등 중과에서 빠지는 경우', href: '/w/다주택자-양도세-중과-배제-대상-주택-신고' },
+            ]}
+          />
+        </>
+      ),
+      pasBridge: {
+        href: '/w/다주택-양도세-중과-전후-세액-비교',
+        question: '그래서 기본세율과 중과세율이 실제로 얼마나 차이가 나는 건가요?',
+        answer: <>과세표준 구간별로 세율 차이를 비교하면 <strong>최대 30%포인트</strong>까지 벌어져요</>,
+        buttonText: '세율 비교 보기 →',
+      },
+    },
+
+    /* ===== S2: 기본세율 vs 중과세율 비교 =====
+     * 시각: SpokeTable + SpokeRateBars
+     * 전환: D 화제 전환형
+     */
+    {
+      id: 'sec-rate-compare',
+      number: 'SECTION 03',
+      heading: '양도세 기본세율과 중과세율은 얼마나 차이 나나요?',
+      subtitle: '과세표준 구간별로 기본세율과 중과세율을 나란히 비교해요',
+      content: (
+        <>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            양도소득세 기본세율은 종합소득세와 동일한 8단계 누진세 구조예요. 과세표준(양도차익에서 공제를 뺀 금액)이 커질수록 세율이 올라가요. 가장 낮은 구간은 1,400만원 이하로 6%, 가장 높은 구간은 10억원 초과로 45%가 적용돼요.
+          </p>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            누진세라서 구간별로 세율이 따로 적용되는 게 핵심이에요. 과세표준이 6,000만원이라면 1,400만원까지는 6%, 5,000만원까지는 15%, 나머지 1,000만원에는 24%가 적용돼요. 전체에 24%를 곱하는 게 아니에요. 이걸 쉽게 계산하기 위해 '누진공제'를 쓰는 거예요.
+          </p>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            중과가 되면 이 기본세율 위에 2주택은 20%p, 3주택은 30%p가 추가로 얹혀요. 과세표준 3억원이라면 기본세율 38%에 3주택 중과 30%p가 더해져서 68%가 되는 거예요. 여기에 장기보유특별공제 배제까지 겹치면 과세표준 자체가 커지니까 세금 차이는 더 벌어져요.
+          </p>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            아래 표에서 구간별로 기본세율과 중과세율을 나란히 비교해 보세요. <a href="/w/양도세-잔금일-기준-계약일-판단" className="text-[#4A7AB5] underline">잔금일 기준</a>으로 유예 종료 전에 양도하면 기본세율만 적용돼요.
+          </p>
+
+          <SpokeTable
+            id="rate-compare"
+            title="기본세율 vs 중과세율 비교표"
+            subtitle="2026년 기준, 소득세법 제104조"
+            headers={['과세표준', '기본세율', '2주택 중과', '3주택+ 중과', '누진공제']}
+            rows={[
+              ['1,400만원 이하', '6%', '26%', '36%', '-'],
+              ['5,000만원 이하', '15%', '35%', '45%', '126만원'],
+              ['8,800만원 이하', '24%', '44%', '54%', '576만원'],
+              ['1.5억원 이하', '35%', '55%', '65%', '1,544만원'],
+              ['3억원 이하', '38%', '58%', '68%', '1,994만원'],
+              ['5억원 이하', '40%', '60%', '70%', '2,594만원'],
+              ['10억원 이하', '42%', '62%', '72%', '3,594만원'],
+              ['10억원 초과', '45%', '65%', '75%', '6,594만원'],
+            ]}
+            highlightCol={3}
+          />
+
+          <SpokeRateBars bars={[
+            { label: '1주택/유예 중 최고세율', rate: '45%', width: '60%' },
+            { label: '2주택 중과 최고세율', rate: '65%', width: '87%' },
+            { label: '3주택 중과 최고세율', rate: '75%', width: '100%' },
           ]} />
 
           <FormulaBox lines={[
-            { text: '양도차익 = 양도가액 - 취득가액 - 필요경비', numbered: true },
-            { text: '// 중과 시 장특공제 0%: 과세표준 = 양도차익 - 장기보유특별공제 - 기본공제(250만원)', numbered: true, comment: true },
-            { text: '산출세액 = 과세표준 x (기본세율 + 중과추가세율)', numbered: true },
+            { text: '기본 산출세액 = 과세표준 x 기본세율 - 누진공제', numbered: true },
+            { text: '중과 산출세액 = 과세표준 x (기본세율 + 추가세율) - 누진공제', numbered: true },
+            { text: '// 2주택: +20%p / 3주택+: +30%p / 장특공제 배제로 과세표준 자체도 커짐', comment: true },
           ]} />
 
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            세율이 얼마나 차이 나는지 궁금하잖아요. 기본세율 구간부터 먼저 확인해 볼게요.
-          </p>
+          <SpokeLinks
+            title="세율 관련 더 알아보기"
+            items={[
+              { num: '01', heading: '2주택자 양도세 비과세 조건', desc: '일시적 2주택 등 비과세 받는 방법', href: '/w/2주택자-양도세-비과세-조건-세율-계산' },
+              { num: '02', heading: '3주택자 양도세 중과세율 계산', desc: '3주택 이상일 때 세금 계산 방법', href: '/w/3주택자-양도세-중과세율-계산-비과세' },
+            ]}
+          />
         </>
       ),
-      bridgeCTA: {
-        href: '#s2',
-        badge: '기본세율',
-        title: '기본세율은 구간별로 얼마일까?',
-        desc: '과세표준 구간별 기본세율 확인하기',
-        icon: 'calc',
+      pasBridge: {
+        href: '/w/조정대상지역-다주택자-양도세-중과세율-비과세',
+        question: '세율 차이는 알겠는데, 정확히 누가 중과 대상인지 궁금하시죠?',
+        answer: <>조정대상지역 + 2주택 이상이면 대상이지만 <strong>예외도 꽤 많아요</strong></>,
+        buttonText: '중과 대상 확인 →',
       },
     },
 
-    /**
-     * ===== S2: 기본세율 =====
-     * 시각 요소: SpokeRateBars + SpokeTable
-     * 전환 스타일: D. 화제 전환형
+    /* ===== S3: 중과 대상과 예외 =====
+     * 시각: SpokeCompareCards + SpokeWarnBox
+     * 전환: B 자연 호기심형
      */
     {
-      id: 's2',
-      number: '02',
-      heading: '양도세 기본세율은 얼마인가요?',
-      subtitle: '과세표준에 따라 6%에서 45%까지 8단계로 나뉘어요',
+      id: 'sec-target',
+      number: 'SECTION 04',
+      heading: '양도세 중과 대상은 누구이고 예외는 뭔가요?',
+      subtitle: '조정대상지역 내 2주택 이상이 기본이지만 예외가 있어요',
       content: (
         <>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            양도소득세 기본세율은 종합소득세와 동일한 구간을 사용해요. 과세표준(양도차익에서 공제를 뺀 금액)이 커질수록 세율이 올라가는 누진세 구조예요. 가장 낮은 구간은 1,400만원 이하로 6%, 가장 높은 구간은 10억원 초과로 45%가 적용돼요.
+            양도세 중과 대상은 1세대가 조정대상지역 내에서 2주택 이상을 보유한 상태에서 주택을 양도하는 경우예요. 여기서 '1세대'란 배우자와 같은 주소에서 생계를 같이하는 가족이에요. 부부가 각각 1채씩 가지고 있으면 1세대 2주택이에요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            누진세라서 구간별로 세율이 따로 적용돼요. 예를 들어 과세표준이 6,000만원이면, 1,400만원까지는 6%, 5,000만원까지는 15%, 나머지 1,000만원에는 24%가 적용돼요. 전체를 24%로 계산하는 게 아니에요. 이를 쉽게 계산하기 위해 '누진공제'라는 걸 써요.
+            특히 주의할 점은 2021년 1월 1일 이후 취득한 분양권과 입주권도 주택 수에 포함된다는 거예요. 오피스텔도 주거용으로 사용하면 주택 수에 들어가요. 단순히 등기부상 주택 수만 세는 게 아니라 실질적인 주거용 부동산 전체를 따지는 거예요.
+          </p>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            다만 중과에서 제외되는 예외도 상당히 많아요. 상속받은 주택(5년 이내), 이사를 위한 일시적 2주택(3년 이내 처분), 장기임대등록 주택, 농어촌 주택, 혼인 합산 2주택(5년 이내) 등이에요. 본인이 중과 대상인지 판단하려면 주택 수, 지역, 보유 기간, 취득 사유를 종합적으로 봐야 해요.
+          </p>
+          <p className="text-neutral-600 mb-4 leading-relaxed">
+            중과 대상과 비대상의 핵심 차이를 비교해 볼게요. <a href="/w/다주택자-양도세-중과-배제-대상-주택-신고" className="text-[#4A7AB5] underline">중과 배제 대상</a>에 해당하는지 꼭 확인하세요.
           </p>
 
-          <SpokeRateBars bars={[
-            { label: '1,400만원 이하', rate: '6%', width: '13%' },
-            { label: '5,000만원 이하', rate: '15%', width: '33%' },
-            { label: '8,800만원 이하', rate: '24%', width: '53%' },
-            { label: '1.5억원 이하', rate: '35%', width: '78%' },
-            { label: '3억원 이하', rate: '38%', width: '84%' },
-            { label: '5억원 이하', rate: '40%', width: '89%' },
-            { label: '10억원 이하', rate: '42%', width: '93%' },
-            { label: '10억원 초과', rate: '45%', width: '100%' },
+          <SpokeCompareCards cards={[
+            {
+              title: '중과 대상',
+              subtitle: '추가세율 적용',
+              items: [
+                '조정대상지역 내 주택 양도',
+                '1세대 2주택 이상 보유',
+                '분양권/입주권도 주택 수 포함',
+                '주거용 오피스텔도 포함',
+              ],
+            },
+            {
+              title: '중과 배제(예외)',
+              subtitle: '기본세율 적용',
+              items: [
+                '상속주택 (5년 이내)',
+                '일시적 2주택 (3년 이내 처분)',
+                '장기임대등록 주택',
+                '농어촌 주택 / 혼인 합산 5년',
+              ],
+              recommended: true,
+              recLabel: '해당 시 확인',
+            },
           ]} />
 
-          <SpokeTable id="rate-detail" title="기본세율 및 누진공제액" subtitle="2026년 기준, 소득세법 제104조" headers={['과세표준', '세율', '누진공제']} rows={[
-            ['1,400만원 이하', '6%', '-'],
-            ['5,000만원 이하', '15%', '126만원'],
-            ['8,800만원 이하', '24%', '576만원'],
-            ['1.5억원 이하', '35%', '1,544만원'],
-            ['3억원 이하', '38%', '1,994만원'],
-            ['5억원 이하', '40%', '2,594만원'],
-            ['10억원 이하', '42%', '3,594만원'],
-            ['10억원 초과', '45%', '6,594만원'],
-          ]} />
-
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            기본세율은 1주택자든 다주택자든 동일하게 적용돼요. 차이가 나는 건 중과세율이 추가되느냐 아니냐예요. 중과 유예 중에는 누구나 이 기본세율만 내면 되지만, 유예가 끝나면 상황이 완전히 달라져요.
-          </p>
-
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            그런데 중과가 붙으면 구체적으로 세금이 얼마나 더 나오는 걸까요.
-          </p>
-        </>
-      ),
-      bridgeCTA: {
-        href: '#s3',
-        badge: '중과세율',
-        title: '중과되면 세금이 얼마나 늘어날까?',
-        desc: '기본세율 대비 중과세율 증가분 확인',
-        icon: 'calc',
-      },
-    },
-
-    /**
-     * ===== S3: 중과세율 =====
-     * 시각 요소: SpokeFlow + TipBox
-     * 전환 스타일: C. 간결 연결형
-     */
-    {
-      id: 's3',
-      number: '03',
-      heading: '양도세 중과세율은 얼마나 더 내나요?',
-      subtitle: '2주택은 +20%p, 3주택 이상은 +30%p가 추가돼요',
-      content: (
-        <>
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            중과세율은 기본세율에 일정 퍼센트포인트를 더하는 구조예요. 2주택자는 기본세율에 20%p를, 3주택 이상은 30%p를 추가해요. 과세표준이 3억원이라면 기본세율 38%에 3주택 중과 30%p가 더해져서 68%가 되는 거예요.
-          </p>
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            여기에 장기보유특별공제 배제까지 겹치면 실질 세금 차이는 더 커져요. 10년 보유한 주택의 양도차익이 5억원이라면, 유예 중에는 장특공제 30%를 적용받아 과세표준이 3.5억원이 되고 기본세율 약 38%가 적용돼요. 중과되면 공제 없이 5억원 전체에 70%가 적용되는 거예요.
-          </p>
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            소득세법에서 중과가 적용되는 조건은 명확해요. 조정대상지역 내 주택을 양도하는 다주택자(1세대 2주택 이상)에게만 적용돼요. 비조정대상지역 주택이나 1주택자에게는 중과가 없어요.
-          </p>
-
-          <SpokeFlow steps={[
-            { icon: '1', label: '주택 수 확인', sub: '2주택 이상?' },
-            { icon: '2', label: '지역 확인', sub: '조정대상지역?' },
-            { icon: '3', label: '유예 확인', sub: '~2026.5.9?' },
-            { icon: '4', label: '세율 결정', sub: '기본 or 중과' },
-          ]} />
-
-          <TipBox title="장기보유특별공제 배제의 영향">
+          <SpokeWarnBox title="분양권/오피스텔 주의">
             <p className="mb-0 leading-relaxed">
-              중과 시 세율만 올라가는 게 아니라 <strong>장기보유특별공제가 배제</strong>돼요. 10년 보유하면 최대 30%를 공제받을 수 있는데, 중과되면 이 혜택이 사라져요. 양도차익 5억원 기준으로, 공제 30% 적용 시 과세표준이 1.5억원 줄어들어요. 이것만으로도 수천만원의 세금 차이가 나요.
+              2021년 1월 1일 이후 취득한 분양권은 주택 수에 포함돼요. 기존 1주택에 분양권 1개를 보유하면
+              2주택으로 간주될 수 있어요. 오피스텔도 실제 주거 목적이면 주택으로 봐요.
             </p>
-          </TipBox>
-
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            세율과 공제 차이를 알았으니, 정확히 누가 중과 대상인지 정리해 볼게요.
-          </p>
+          </SpokeWarnBox>
         </>
       ),
-      bridgeCTA: {
-        href: '#s4',
-        badge: '대상',
-        title: '나도 중과 대상에 해당할까?',
-        desc: '중과 대상 기준과 예외 사유 확인',
-        icon: 'check',
+      pasBridge: {
+        href: '/w/중과-유예-연혁-종료일-확정',
+        question: '중과 대상이면 유예가 끝난 뒤 세금이 얼마나 늘어나는지 궁금하시죠?',
+        answer: <>2026년 5월 9일 유예 종료 후 <strong>보완 방안</strong>까지 함께 확인하세요</>,
+        buttonText: '유예 종료 일정 보기 →',
       },
     },
 
-    /**
-     * ===== S4: 중과 대상 =====
-     * 시각 요소: SpokeChecklist + RateCards
-     * 전환 스타일: 없음 (마지막 섹션)
+    /* ===== S4: 유예 종료 후 세금 영향 =====
+     * 시각: SpokeTimeline + TipBox
+     * 전환: 없음 (마지막 → bridgeCTA)
      */
     {
-      id: 's4',
-      number: '04',
-      heading: '양도세 중과 대상은 누구인가요?',
-      subtitle: '조정대상지역 내 2주택 이상 보유자가 대상이에요',
+      id: 'sec-after-end',
+      number: 'SECTION 05',
+      heading: '양도세 중과 유예 종료 후 세금이 얼마나 늘어나나요?',
+      subtitle: '2026년 5월 9일 이후 중과 복원, 잔금 기한 보완책 시행',
       content: (
         <>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            양도세 중과 대상은 1세대가 조정대상지역 내에서 2주택 이상을 보유한 상태에서 주택을 양도하는 경우예요. 여기서 '1세대'란 배우자와 같은 주소에서 생계를 같이하는 가족을 말해요. 부부가 각각 1채씩 보유하면 1세대 2주택이에요.
+            2026년 2월 12일 정부 발표에 따르면, 다주택자 양도세 중과 유예는 2026년 5월 9일 예정대로 종료돼요. 유예가 끝나면 조정대상지역 내 다주택자에게 추가세율(2주택 +20%p, 3주택 +30%p)이 다시 적용되고, 장기보유특별공제도 배제돼요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            다만 중과에서 제외되는 경우가 꽤 있어요. 상속받은 주택(5년 이내), 이사를 위한 일시적 2주택(3년 이내 처분), 장기임대등록 주택, 농어촌 주택 등은 중과 대상에서 빠져요. 본인이 중과 대상인지 판단하려면 주택 수, 지역, 보유 기간, 취득 사유를 종합적으로 봐야 해요.
+            다만 정부가 보완 방안을 함께 마련했어요. 기존 조정대상지역(강남/서초/송파/용산)은 5월 9일 전 매매계약을 완료하고 계약일로부터 <strong>4개월 내 잔금</strong>을 치르면 중과가 적용되지 않아요. 2025년 10월 16일 이후 신규 지정된 조정대상지역은 <strong>6개월 내 잔금</strong>으로 2개월 추가 여유를 줬어요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            특히 주의할 점은 분양권과 입주권도 주택 수에 포함된다는 거예요. 2021년 1월 1일 이후 취득한 분양권은 주택으로 간주돼요. 오피스텔도 주거용으로 사용하면 주택 수에 들어가요.
+            양도차익 5억원인 3주택자를 예로 들면, 유예 기간에는 장특공제를 적용받아 과세표준 약 3.5억원에 기본세율 38%로 약 1.1억원의 세금이 나와요. 중과가 적용되면 공제 없이 약 5억원에 70%가 적용돼서 약 3.2억원이 나와요. <strong>약 2.1억원</strong>이나 차이 나는 거예요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            아래 체크리스트로 본인이 중과 대상에 해당하는지 점검해 보세요.
+            <a href="/w/다주택-매도-순서-전략-절세" className="text-[#4A7AB5] underline">매도 순서</a>를 어떻게 잡느냐에 따라 절세 효과가 크게 달라져요. 유예 종료 전까지의 일정을 시간순으로 정리해 봤어요.
           </p>
 
-          <SpokeChecklist items={[
-            { text: '1세대 기준으로 2주택 이상을 보유하고 있다', done: false, note: '분양권·입주권 포함' },
-            { text: '양도하려는 주택이 조정대상지역에 있다', done: false, note: '서울 전역, 경기 12곳' },
-            { text: '상속받은 주택이 아니다(또는 상속 후 5년 초과)', done: false, note: '상속주택 5년 이내 예외' },
-            { text: '일시적 2주택 예외에 해당하지 않는다', done: false, note: '이사 목적 3년 이내 처분' },
-            { text: '장기임대등록 주택이 아니다', done: false, note: '임대등록 요건 충족 시 예외' },
+          <SpokeTimeline events={[
+            { month: '2026.02', title: '정부 보완 방안 발표', desc: '중과 유예 종료 확정, 잔금 기한 보완책 마련', status: 'current' as const },
+            { month: '2026.02', title: '소득세법 시행령 입법예고', desc: '2월 13일부터 입법예고, 2월 내 공포 시행 목표', status: 'normal' as const },
+            { month: '2026.05.09', title: '중과 유예 종료', desc: '이 날까지 양도(잔금) 완료해야 기본세율 적용', status: 'warning' as const },
+            { month: '2026.09', title: '기존 조정지역 잔금 기한', desc: '5월 9일 전 계약 + 계약일로부터 4개월 내 잔금', status: 'normal' as const },
+            { month: '2026.11', title: '신규 조정지역 잔금 기한', desc: '5월 9일 전 계약 + 계약일로부터 6개월 내 잔금', status: 'normal' as const },
           ]} />
 
-          <RateCards cards={[
-            { value: '기본세율', label: '유예 기간 중', lines: ['1주택·다주택 동일', '6~45% 적용', '장특공제 가능'], highlightColor: 'navy' },
-            { value: '+20%p', label: '2주택 중과', lines: ['26~65%', '장특공제 배제', '조정지역 내 주택'],},
-            { value: '+30%p', label: '3주택+ 중과', lines: ['36~75%', '장특공제 배제', '조정지역 내 주택'],},
-          ]} />
-
-          <p className="text-neutral-600 mb-4 leading-relaxed">
-            중과 대상에 해당한다면 2026년 5월 9일 전에 양도를 완료하는 게 유리해요. 유예 기간 내에 기본세율로 양도하면 중과 시 대비 수천만원에서 수억원까지 세금을 아낄 수 있어요. 구체적인 매도 전략이 궁금하면 <Link href="/w/다주택-매도-순서-전략-절세" className="text-blue-600 hover:underline">다주택 매도 순서 전략</Link>을 참고하세요.
-          </p>
+          <TipBox title="잔금 기한 보완책 핵심">
+            <ul className="list-disc pl-5 space-y-1">
+              <li>기존 조정지역(강남/서초/송파/용산): 5월 9일 전 계약 + <strong>4개월 내 잔금</strong></li>
+              <li>신규 조정지역(위 4구 외): 5월 9일 전 계약 + <strong>6개월 내 잔금</strong></li>
+              <li>토지거래허가 실거주 의무도 같은 기간으로 유예돼요</li>
+            </ul>
+          </TipBox>
         </>
       ),
       bridgeCTA: {
         href: '/w/다주택양도세-중과유예-세율-절세-전략',
-        badge: '전체 가이드',
-        title: '다주택 양도세 중과유예 절세 전략은?',
-        desc: '유예 기간 활용 전략부터 매도 순서까지 확인하기',
+        badge: '전체 전략',
+        title: '다주택 양도세 절세 전략이 궁금하다면?',
+        desc: '유예 기간 활용 전략부터 매도 순서까지 한 번에 확인하기',
         icon: 'grid',
         primary: true,
       },
     },
 
+    /* ===== FAQ ===== */
     {
-      id: 's5',
-      number: '05',
+      id: 'sec-faq',
+      number: '06',
       heading: '자주 묻는 질문',
-      subtitle: '자주 묻는 질문이에요',
+      subtitle: '',
       content: null,
     },
   ],
@@ -269,26 +357,25 @@ const data: SpokeData = {
   faq: [
     {
       question: '양도세 중과와 종합부동산세 중과는 같은 건가요?',
-      answer: '다른 세금이에요. 양도세 중과는 주택을 <strong>팔 때</strong> 세율이 올라가는 거고, 종부세 중과는 주택을 <strong>보유하는 동안</strong> 매년 부과되는 세금이에요. 다주택자는 두 가지 모두 영향을 받을 수 있어요.',
+      answer: '완전히 다른 세금이에요. 양도세 중과는 주택을 <strong>팔 때</strong> 세율이 올라가는 거고, 종부세 중과는 주택을 <strong>보유하는 동안</strong> 매년 부과되는 세금이에요. 다주택자는 두 가지 모두 영향을 받을 수 있어요.',
     },
     {
-      question: '1주택인데 분양권을 가지고 있으면 2주택인가요?',
-      answer: '2021년 1월 1일 이후에 취득한 분양권은 주택 수에 포함돼요. 기존 1주택에 분양권 1개를 보유하면 2주택으로 간주될 수 있어요. 다만 일시적 2주택 예외 규정이 적용될 수 있으니 취득 시기와 처분 계획을 함께 확인하세요.',
+      question: '양도세 중과 유예 기간에 매매계약만 하면 되나요, 잔금까지 쳐야 하나요?',
+      answer: '양도 시점은 <strong>잔금일 기준</strong>이에요. 5월 9일까지 잔금을 완료해야 유예가 적용돼요. 다만 기존 조정지역은 5월 9일 전 계약 + 4개월 내 잔금, 신규 조정지역은 6개월 내 잔금으로 보완책이 마련됐어요.',
     },
   ],
 
   relatedSpokes: [
     { badge: '연혁', title: '중과 유예 연혁과 종료일 확정', desc: '2022년부터 매년 연장된 유예 제도 전체 흐름', href: '/w/중과-유예-연혁-종료일-확정' },
     { badge: '계산', title: '다주택 양도세 중과 전후 세액 비교', desc: '실제 사례로 기본세율과 중과세율 세금 차이 계산', href: '/w/다주택-양도세-중과-전후-세액-비교' },
-    { badge: '지역', title: '조정대상지역 목록 서울 경기', desc: '서울·경기 조정대상지역과 해제 지역 정리', href: '/w/조정대상지역-목록-서울-경기' },
-    { badge: '전략', title: '다주택 매도 순서 전략 절세', desc: '어떤 집부터 팔아야 절세가 되는지 정리', href: '/w/다주택-매도-순서-전략-절세' },
+    { badge: '지역', title: '조정대상지역 목록 서울 경기', desc: '서울 경기 조정대상지역과 해제 지역 정리', href: '/w/조정대상지역-목록-서울-경기' },
+    { badge: '전략', title: '다주택 매도 순서 전략 절세', desc: '어떤 집부터 팔아야 절세가 되는지 순서 정리', href: '/w/다주택-매도-순서-전략-절세' },
   ],
 
   sources: [
     { name: '소득세법 제104조(세율)', url: 'https://law.go.kr/법령/소득세법/제104조', org: '국가법령정보센터' },
     { name: '양도소득세 기본정보 세율', url: 'https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2312&cntntsId=7711', org: '국세청' },
-    { name: '소득세법 시행령 제167조의3', url: 'https://law.go.kr/법령/소득세법시행령/제167조의3', org: '국가법령정보센터' },
-    { name: '2026년 경제정책방향', url: 'https://www.moef.go.kr', org: '기획재정부' },
+    { name: '다주택 중과 유예 종료 보완방안', url: 'https://www.korea.kr/news/policyNewsView.do?newsId=148959488', org: '정책브리핑' },
   ],
 }
 

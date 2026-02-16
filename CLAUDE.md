@@ -18,7 +18,8 @@
 
 ## 절대 금지
 
-- Task tool 사용 금지 (서브에이전트 불가, settings.json deny에서 차단됨)
+- 범용 서브에이전트(Explore, general-purpose 등) 사용 금지 (settings.json deny에서 차단됨)
+- `.claude/agents/` 에이전트 팀은 허용
 - 이 규칙 위반 시 즉시 중단
 
 ---
