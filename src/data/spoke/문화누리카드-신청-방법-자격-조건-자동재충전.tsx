@@ -1,5 +1,5 @@
 import type { SpokeData } from '@/data/spoke/types'
-import { Steps, Chips, TipBox, SpokeChecklist, SpokeTimeline, SpokeTable, SpokeWarnBox, RateCards } from '@/components/spoke/SpokeBlocks'
+import { Steps, Chips, TipBox, SpokeChecklist, SpokeTimeline, SpokeTable, SpokeWarnBox, RateCards, SpokeLinks } from '@/components/spoke/SpokeBlocks'
 import 문화누리카드Checker from '@/components/checkers/문화누리카드Checker'
 
 const data: SpokeData = {
@@ -110,6 +110,14 @@ const data: SpokeData = {
               ['준고령층 (60~64세)', '위 대상 중 해당 연령', '연 16만원'],
             ]}
           />
+
+          <SpokeLinks
+            title="문화누리카드 자격 더 알아보기"
+            items={[
+              { num: '01', heading: '기초생활수급자 조건과 급여 총정리', desc: '수급자격 종류별 선정기준과 신청 방법', href: '/w/기초생활수급자-조건-총정리' },
+              { num: '02', heading: '문화누리카드 사용처와 잔액 확인', desc: '가맹점 목록, 잔액 조회, 12월 소멸 규정', href: '/w/문화누리카드-사용처-잔액-확인-가맹점-소멸' },
+            ]}
+          />
         </>
       ),
       pasBridge: {
@@ -181,6 +189,14 @@ const data: SpokeData = {
               <li>본인이 자동재충전 거부 의사를 표시한 경우</li>
             </ul>
           </SpokeWarnBox>
+
+          <SpokeLinks
+            title="자동재충전 관련 더 알아보기"
+            items={[
+              { num: '01', heading: '문화누리카드 사용처, 잔액 소멸 기한', desc: '12월 31일 전에 꼭 확인해야 할 사용 규정', href: '/w/문화누리카드-사용처-잔액-확인-가맹점-소멸' },
+              { num: '02', heading: '2026 문화누리카드 전체 가이드', desc: '대상, 금액, 신청부터 사용처까지 한눈에', href: '/w/2026-문화누리카드-신청-대상-사용처-금액' },
+            ]}
+          />
         </>
       ),
       pasBridge: {

@@ -1,5 +1,5 @@
 import type { SpokeData } from '@/data/spoke/types'
-import { SpokeTable, SpokeCompareCards, SpokeFlow, DetailBox, TipBox, WarnBox, FormulaBox } from '@/components/spoke/SpokeBlocks'
+import { SpokeTable, SpokeCompareCards, SpokeFlow, DetailBox, TipBox, WarnBox, FormulaBox, SpokeLinks } from '@/components/spoke/SpokeBlocks'
 import 문화누리잔액Checker from '@/components/checkers/문화누리잔액Checker'
 
 const data: SpokeData = {
@@ -129,6 +129,14 @@ const data: SpokeData = {
               { heading: '체육 분야', desc: '프로스포츠/e스포츠 입장권, 헬스/수영/볼링/요가/스키/태권도, 체육용품점, 자전거/낚시용품' },
             ]}
           />
+
+          <SpokeLinks
+            title="문화누리카드 더 알아보기"
+            items={[
+              { num: '01', heading: '문화누리카드 신청 방법과 자격 조건', desc: '온라인·오프라인 신청 절차와 자동재충전 조건', href: '/w/문화누리카드-신청-방법-자격-조건-자동재충전' },
+              { num: '02', heading: '2026 문화누리카드 전체 가이드', desc: '대상, 금액, 사용처를 한눈에 확인', href: '/w/2026-문화누리카드-신청-대상-사용처-금액' },
+            ]}
+          />
         </>
       ),
       pasBridge: {
@@ -207,6 +215,13 @@ const data: SpokeData = {
               <li>온라인 결제 시 카드번호를 직접 입력하는 방식으로 결제해요</li>
             </ul>
           </TipBox>
+
+          <SpokeLinks
+            title="가맹점 활용 더 알아보기"
+            items={[
+              { num: '01', heading: '문화누리카드 신청과 자동재충전', desc: '3만원 이상 사용 시 자동으로 다음 해 충전', href: '/w/문화누리카드-신청-방법-자격-조건-자동재충전' },
+            ]}
+          />
         </>
       ),
       pasBridge: {
