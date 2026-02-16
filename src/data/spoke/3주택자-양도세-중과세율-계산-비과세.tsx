@@ -39,7 +39,7 @@ const data: SpokeData = {
   },
 
   hub: {
-    url: '/w/다주택자-양도세-중과-유예-2026-세율-절세',
+    url: '/w/다주택양도세-중과유예-세율-절세-전략',
     name: '다주택자 양도세 중과 유예 2026 세율과 절세 방법',
   },
 
@@ -55,7 +55,7 @@ const data: SpokeData = {
           <strong className="text-neutral-800"> 3주택자는 기본세율에 30%p가 추가</strong>되는 중과 대상이에요.
         </p>
         <p className="text-base text-neutral-500 leading-relaxed mt-3">
-          다행히 2026년 5월 9일까지는 <a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7707&mi=2308" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">중과가 유예</a>되어 있어요. 유예 기간 활용법과 비과세 조건은 <Link href="/w/다주택자-양도세-중과-유예-2026-세율-절세" className="text-blue-600 hover:underline">다주택자 양도세 가이드</Link>에서 전체를 볼 수 있어요.
+          다행히 2026년 5월 9일까지는 <a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7707&mi=2308" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">중과가 유예</a>되어 있어요. 유예 기간 활용법과 비과세 조건은 <Link href="/w/다주택양도세-중과유예-세율-절세-전략" className="text-blue-600 hover:underline">다주택자 양도세 가이드</Link>에서 전체를 볼 수 있어요.
         </p>
       </>
     ),
@@ -222,7 +222,7 @@ const data: SpokeData = {
           <p className="text-neutral-600 mb-0">더 궁금한 점은 아래 자주 묻는 질문에서 확인해 보세요.</p>
         </>
       ),
-      bridgeCTA: { href: '/w/다주택자-양도세-중과-유예-2026-세율-절세', badge: '절세 가이드', title: '다주택자 절세 전략 전체 보기', desc: '중과 유예·배제·공제 총정리', icon: 'grid', primary: true },
+      bridgeCTA: { href: '/w/다주택양도세-중과유예-세율-절세-전략', badge: '절세 가이드', title: '다주택자 절세 전략 전체 보기', desc: '중과 유예·배제·공제 총정리', icon: 'grid', primary: true },
     },
 
     {

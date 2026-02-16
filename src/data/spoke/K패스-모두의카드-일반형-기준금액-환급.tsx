@@ -67,7 +67,7 @@ const data: SpokeData = {
             { icon: '🚌', label: '시내버스', value: '포함', href: '#s2' },
             { icon: '🚇', label: '지하철', value: '포함', href: '#s2' },
             { icon: '🚐', label: '마을버스', value: '포함', href: '#s2' },
-            { icon: '🚄', label: 'GTX', value: '플러스형만', href: '/w/K패스-모두의카드-플러스형-GTX-광역버스' },
+            { icon: '🚄', label: 'GTX', value: '플러스형만', href: '/w/K패스-모두의카드-교통카드-할인-비교' },
           ]} />
           <p>
             GTX, 광역급행버스, 신분당선처럼 1회 요금이 3,000원 이상인 노선은 일반형 대상이 아니에요. 이런 노선까지 포함하려면 <strong>플러스형</strong>을 선택해야 해요.
@@ -249,10 +249,7 @@ const data: SpokeData = {
   ],
 
   relatedSpokes: [
-    { badge: '플러스', title: '모두의카드 플러스형 GTX 광역버스 환급', desc: 'GTX·광역급행 포함 플러스형 기준금액', href: '/w/K패스-모두의카드-플러스형-GTX-광역버스' },
-    { badge: '비교', title: 'K패스 vs 기후동행카드 비교', desc: '서울 거주자 기준 어떤 카드가 유리한지', href: '/w/K패스-기후동행카드-비교-서울-교통비' },
-    { badge: '신청', title: '모두의카드 신청 방법과 카드 등록', desc: '카드 발급부터 K패스 앱 등록까지', href: '/w/K패스-모두의카드-신청-방법-카드-등록' },
-    { badge: '카드사', title: 'K패스 카드사별 추가 혜택 비교', desc: 'KB·신한·우리·하나 카드별 부가 혜택', href: '/w/K패스-카드사별-추가혜택-비교-추천' },
+    { badge: '종합', title: 'K패스 모두의카드 교통카드 할인 비교', desc: '전체 가이드 · 기후동행카드·더경기패스 비교', href: '/w/K패스-모두의카드-교통카드-할인-비교' },
   ],
 
   sources: [

@@ -247,7 +247,7 @@ const data: SpokeData = {
           <p className="text-neutral-600 mb-4 leading-relaxed">
             <strong>일 하한액은 66,048원</strong>이에요. 하한액은{' '}
             <a
-              href="/w/실업급여-2026-개정-상한액-하한액"
+              href="/w/실업급여-2026-개정-상한액-하한액-인상-변경"
               className="text-[#4A7AB5] underline"
             >
               2026년 최저임금 10,320원

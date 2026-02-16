@@ -35,7 +35,7 @@ const data: SpokeData = {
   },
 
   hub: {
-    url: '/w/다주택자-양도세-중과-유예-2026-세율-절세',
+    url: '/w/다주택양도세-중과유예-세율-절세-전략',
     name: '다주택자 양도세 중과 유예 2026 세율과 절세 방법',
   },
 
@@ -53,7 +53,7 @@ const data: SpokeData = {
         <p className="text-base text-neutral-500 leading-relaxed mt-3">
           다만 2026년 5월 9일까지는 중과가 유예되어 있어요.
           현재 지정 지역 목록부터 중과세율, 비과세 방법까지 정리했어요.
-          전체 절세 전략은 <Link href="/w/다주택자-양도세-중과-유예-2026-세율-절세" className="text-blue-600 hover:underline">다주택자 양도세 가이드</Link>에서 확인하세요.
+          전체 절세 전략은 <Link href="/w/다주택양도세-중과유예-세율-절세-전략" className="text-blue-600 hover:underline">다주택자 양도세 가이드</Link>에서 확인하세요.
         </p>
       </>
     ),
@@ -211,7 +211,7 @@ const data: SpokeData = {
           <p className="text-neutral-600 mb-0">더 궁금한 점은 아래 자주 묻는 질문에서 확인하세요.</p>
         </>
       ),
-      bridgeCTA: { href: '/w/다주택자-양도세-중과-유예-2026-세율-절세', badge: '절세 가이드', title: '다주택자 절세 전략 전체 보기', desc: '중과 유예·배제·공제 총정리', icon: 'grid', primary: true },
+      bridgeCTA: { href: '/w/다주택양도세-중과유예-세율-절세-전략', badge: '절세 가이드', title: '다주택자 절세 전략 전체 보기', desc: '중과 유예·배제·공제 총정리', icon: 'grid', primary: true },
     },
 
     {

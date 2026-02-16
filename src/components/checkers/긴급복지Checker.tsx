@@ -110,7 +110,7 @@ const config: CheckerConfig = {
         badges: [],
         links: [
           { icon: '🛡️', title: '기초생활수급자 조건 확인', desc: '소득인정액 기준 4가지 급여', href: '/w/기초생활수급자-조건-총정리' },
-          { icon: '📋', title: '차상위계층 혜택', desc: '중위소득 50% 이하 지원', href: '/w/차상위계층-조건-혜택' },
+          { icon: '📋', title: '차상위계층 혜택', desc: '중위소득 50% 이하 지원', href: '/w/차상위계층-혜택-리스트-및-증명서-발급-방법' },
         ],
       }
     }

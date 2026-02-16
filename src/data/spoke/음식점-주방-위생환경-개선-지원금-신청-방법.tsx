@@ -267,10 +267,7 @@ const data: SpokeData = {
     { question: '주방 개선 공사를 먼저 하고 나중에 신청해도 되나요?', answer: '안 돼요. <strong>반드시 선정 통보를 받은 후</strong>에 공사를 시작해야 해요. 먼저 공사하면 지원금을 못 받아요.' },
   ],
 
-  relatedSpokes: [
-    { badge: '시설개선', title: '소상공인 시설개선 지원금 종류 비교 정리', desc: '시설개선 지원 종류 전체 비교', href: '/w/소상공인-시설개선-지원금-종류-비교-정리' },
-    { badge: '리모델링', title: '지자체 소상공인 매장 리모델링 지원금 신청', desc: '매장 전체 리모델링 지원', href: '/w/지자체-소상공인-매장-리모델링-지원금-신청' },
-  ],
+  relatedSpokes: [],
 
   sources: [
     { name: '창원시 소상공인 소규모 경영환경개선사업', url: 'https://www.changwon.go.kr/cwportal/biz/11151/11261/11266.web', org: '창원시청' },

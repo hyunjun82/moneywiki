@@ -77,7 +77,7 @@ const config: CheckerConfig = {
         ),
         badges: [priority, '청구 가능'],
         links: [
-          { icon: '📋', title: '미지급 청구 절차 보기', desc: '고용센터 방문부터 지급까지', href: '#s3' },
+          { icon: '📋', title: '미지급 청구 절차 보기', desc: '고용센터 방문부터 지급까지', href: '/w/실업급여-미지급-대리신청-상속-수급순위' },
           { icon: '📄', title: '실업급여 신청 방법', desc: '일반 실업급여 신청 절차 안내', href: '/w/실업급여-신청-방법-절차-준비서류' },
         ],
       }
@@ -101,7 +101,7 @@ const config: CheckerConfig = {
       badges: [],
       links: [
         { icon: '🔍', title: '수급권 보호 제도', desc: '실업급여 압류 금지와 전용계좌', href: '/w/실업급여-압류금지-수급권-보호-계좌' },
-        { icon: '📞', title: '고용센터 찾기', desc: '관할 고용센터 위치와 연락처', href: '/w/실업급여-고용센터-찾기-고용24' },
+        { icon: '📞', title: '고용센터 찾기', desc: '관할 고용센터 위치와 연락처', href: '/w/실업급여-고용센터-찾기-고용24-사용법' },
       ],
     }
   },

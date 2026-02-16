@@ -31,8 +31,8 @@ const data: SpokeData = {
   },
 
   hub: {
-    url: '/w/불법사금융-전체가이드',
-    name: '불법사금융 전체가이드',
+    url: '/w/불법사금융-피해-신고-원스톱-지원',
+    name: '불법사금융 피해 신고 원스톱 지원',
   },
 
   breadcrumb: ['복지', '불법사금융 채무 조정'],
@@ -48,7 +48,7 @@ const data: SpokeData = {
         </p>
         <p className="text-base text-neutral-500 leading-relaxed mt-3">
           쉽게 말해서 국가가 인정한 기관에서 채무를 조정해 주는 제도예요.<br />
-          불법사금융 관련 전체 대응 방법은 <Link href="/w/불법사금융-전체가이드" className="text-blue-600 hover:underline">불법사금융 전체가이드</Link>에 모아뒀어요.
+          불법사금융 관련 전체 대응 방법은 <Link href="/w/불법사금융-피해-신고-원스톱-지원" className="text-blue-600 hover:underline">불법사금융 피해 신고 가이드</Link>를 확인해 보세요.
         </p>
       </>
     ),
@@ -194,7 +194,7 @@ const data: SpokeData = {
           </TipBox>
         </>
       ),
-      bridgeCTA: { href: '/w/불법사금융-전체가이드', badge: '전체가이드', title: '불법사금융 대응 방법 전체 보기', desc: '신고, 추심 차단, 법률 지원까지 총정리', icon: 'grid', primary: true },
+      bridgeCTA: { href: '/w/불법사금융-법률구조-무료소송', badge: '법률구조', title: '소송 비용이 없어서 법적 대응을 못 하고 있다면?', desc: '정부 무료 법률 구조로 변호사 비용 0원에 소송까지 가능해요.', icon: 'info' },
     },
 
     // --- Section 05: FAQ ---

@@ -151,8 +151,8 @@ const data: HubData = {
             의료급여 — 병원비 본인부담 거의 0원
           </h3>
           <p>
-            1종 수급자는 입원·외래 본인부담금이 <strong>거의 0원</strong>이에요. 2종은 입원 10%, 외래 1,000~1,500원 부담해요. 건강보험료도 면제돼요. <a href="/w/의료급여-1종-2종-차이">의료급여 1종과 2종의 본인부담금 차이</a>는 별도로 정리했어요.
-          </p>
+             1종 수급자는 입원·외래 본인부담금이 <strong>거의 0원</strong>이에요. 2종은 입원 10%, 외래 1,000~1,500원 부담해요. 건강보험료도 면제돼요.
+           </p>
 
           <h3 id="ben-house" className="text-[17px] font-bold text-neutral-800 mt-6 mb-2 pl-3 border-l-[3px] border-[#1E3A5F] scroll-mt-20">
             주거급여 — 월세·임차료 지원
@@ -172,9 +172,6 @@ const data: HubData = {
       ),
       sectionSpoke: [
         { icon: '💰', title: '1인가구 생계급여 조건과 소득인정액 계산', desc: '선정기준 820,556원 · 소득별 실수령액 예시', href: '/w/기초생활수급자-1인가구-생계급여-조건-소득인정액' },
-        { icon: '🏥', title: '의료급여 1종 2종 차이 — 본인부담금 비교', desc: '1종 본인부담 0원 · 건강보험료 면제', href: '/w/의료급여-1종-2종-차이' },
-        { icon: '🏠', title: '주거급여 임차료 지원금 — 서울 1인 최대 35만원', desc: '기준임대료 · 부양의무자 완전 폐지', href: '/w/주거급여-신청조건' },
-        { icon: '📚', title: '교육급여 지원 항목과 금액', desc: '교육활동지원비 연 최대 65만원', href: '/w/교육급여-지원항목' },
       ],
       bridgeCTA: {
         href: '#sec-income',
@@ -226,7 +223,7 @@ const data: HubData = {
 
           <HubTipBox title="계산이 복잡하게 느껴진다면">
             <p className="mb-0 leading-relaxed">
-              <a href="/w/소득인정액-모의계산">소득인정액 실제 계산 사례</a>에서 가구 유형별 예시를 확인해 보세요. <a href="/w/재산-소득환산율-계산">재산의 소득환산율과 자동차 기준</a>도 별도로 정리했어요.
+              복지로 모의계산기에서 소득·재산을 직접 입력하면 내 정확한 소득인정액을 확인할 수 있어요.
             </p>
           </HubTipBox>
 
@@ -240,8 +237,7 @@ const data: HubData = {
         </>
       ),
       sectionSpoke: [
-        { icon: '🧮', title: '소득인정액 모의계산 방법 — 복지로 사용법', desc: '근로소득공제 30% · 내 정확한 소득인정액 계산', href: '/w/소득인정액-모의계산' },
-        { icon: '📊', title: '재산의 소득환산율 — 자동차, 전세금 기준', desc: '기본재산액 서울 9,900만원 공제', href: '/w/재산-소득환산율-계산' },
+        { icon: '💰', title: '1인가구 생계급여 조건과 소득인정액 계산', desc: '근로소득공제 30% · 소득인정액 계산 예시', href: '/w/기초생활수급자-1인가구-생계급여-조건-소득인정액' },
       ],
       bridgeCTA: {
         href: '#sec-family',
@@ -276,8 +272,7 @@ const data: HubData = {
         </>
       ),
       sectionSpoke: [
-        { icon: '🏥', title: '의료급여 부양의무자 면제 조건', desc: '중증장애·노인 면제 대상 · 소득·재산 기준 상세', href: '/w/의료급여-부양의무자-면제' },
-        { icon: '📋', title: '차상위계층 조건과 혜택', desc: '중위소득 50% 이하 · 의료비 감면·통신비 할인', href: '/w/차상위계층-조건-혜택' },
+        { icon: '📋', title: '차상위계층 혜택 리스트와 증명서 발급', desc: '중위소득 50% 이하 · 의료비 감면·통신비 할인', href: '/w/차상위계층-혜택-리스트-및-증명서-발급-방법' },
       ],
       bridgeCTA: {
         href: '#sec-apply',
@@ -333,7 +328,7 @@ const data: HubData = {
           </div>
 
           <a
-            href="/w/차상위계층-조건-혜택"
+            href="/w/차상위계층-혜택-리스트-및-증명서-발급-방법"
             className="!no-underline !text-neutral-900 !font-normal block bg-white border border-neutral-200 rounded-xl py-5 px-6 my-5 transition-all hover:shadow-md hover:-translate-y-px hover:border-[#1E3A5F]/30"
           >
             <h4 className="text-[15px] font-extrabold text-neutral-900 mb-2">기준을 초과해서 수급자가 안 된다면?</h4>
@@ -381,26 +376,14 @@ const data: HubData = {
       title: '급여별 상세',
       spokes: [
         { slug: '기초생활수급자-1인가구-생계급여-조건-소득인정액', title: '1인가구 생계급여 조건과 소득인정액 계산', desc: '선정기준 820,556원 · 실수령액 계산 예시', badge: '급여' },
-        { slug: '의료급여-1종-2종-차이', title: '의료급여 1종 2종 차이 — 본인부담금 0원 조건', desc: '1종 본인부담 0원 · 건강보험료 면제', badge: '급여' },
-        { slug: '주거급여-신청조건', title: '주거급여 신청 조건 — 1인가구 임차료 최대 35만원', desc: '서울·경기·지방 기준임대료 비교', badge: '급여' },
-        { slug: '교육급여-지원항목', title: '교육급여 지원 항목과 금액', desc: '교육활동지원비 연 최대 65만원', badge: '급여' },
       ],
     },
     {
-      title: '소득인정액 계산',
+      title: '관련 제도',
       spokes: [
-        { slug: '소득인정액-모의계산', title: '소득인정액 모의계산 방법 (복지로 사용법)', desc: '내 정확한 소득인정액을 직접 계산하는 법', badge: '계산' },
-        { slug: '재산-소득환산율-계산', title: '재산의 소득환산율 계산 — 자동차, 전세금은?', desc: '자동차 보유 시 불이익, 전세금 공제 기준', badge: '계산' },
-        { slug: '근로소득공제-적용사례', title: '근로소득공제 30% 적용 사례', desc: '월 100만원 소득자의 실제 소득인정액 계산 예시', badge: '계산' },
-      ],
-    },
-    {
-      title: '부양의무자·대안 제도',
-      spokes: [
-        { slug: '의료급여-부양의무자-면제', title: '의료급여 부양의무자 면제 조건', desc: '중증장애·노인 면제 대상 · 소득·재산 기준 상세', badge: '제도' },
-        { slug: '차상위계층-조건-혜택', title: '차상위계층 조건과 혜택', desc: '중위소득 50% 이하 · 의료비 감면', badge: '제도' },
-        { slug: '긴급복지지원-신청방법', title: '긴급복지지원 신청 방법 — 갑자기 소득이 끊겼을 때', desc: '선지급 후 조사, 최대 월 71만원', badge: '제도' },
-        { slug: '기초생활수급자-자동차-재산기준', title: '기초생활수급자 자동차 재산 기준 — 보유해도 되는 조건', desc: '1,600cc 미만·200만원 이하 제외 조건', badge: '제도' },
+        { slug: '긴급복지-생계지원-신청-조건-금액', title: '긴급복지 생계지원 신청 조건과 금액', desc: '선지급 후 조사, 최대 월 71만원', badge: '제도' },
+        { slug: '기초수급자-실업급여-동시수급-소득-영향', title: '기초수급자 실업급여 동시수급 소득 영향', desc: '실업급여 받으면 생계급여 감액 여부', badge: '제도' },
+        { slug: '생계비계좌-압류방지통장-행복지킴이-차이', title: '생계비계좌 압류방지통장 행복지킴이 차이', desc: '수급비 보호 방법', badge: '제도' },
       ],
     },
   ],
@@ -421,9 +404,9 @@ const data: HubData = {
 
   chips: [
     { icon: '💰', label: '1인 생계급여', value: '820,556원', href: '/w/기초생활수급자-1인가구-생계급여-조건-소득인정액' },
-    { icon: '🏥', label: '1인 의료급여', value: '1,025,695원', href: '/w/의료급여-1종-2종-차이' },
-    { icon: '🏠', label: '1인 주거급여', value: '1,230,834원', href: '/w/주거급여-신청조건' },
-    { icon: '📚', label: '1인 교육급여', value: '1,282,119원', href: '/w/교육급여-지원항목' },
+    { icon: '🏥', label: '1인 의료급여', value: '1,025,695원', href: '#checker' },
+    { icon: '🏠', label: '1인 주거급여', value: '1,230,834원', href: '#checker' },
+    { icon: '📚', label: '1인 교육급여', value: '1,282,119원', href: '#checker' },
   ],
 
   heroCTA: {
@@ -441,8 +424,8 @@ const data: HubData = {
   },
 
   prevNext: {
-    prev: { title: '2026 기준중위소득 금액 총정리', href: '/w/기준중위소득-금액-총정리' },
-    next: { title: '의료급여 1종 2종 차이와 혜택', href: '/w/의료급여-1종-2종-차이' },
+    prev: { title: '1인가구 생계급여 조건과 소득인정액', href: '/w/기초생활수급자-1인가구-생계급여-조건-소득인정액' },
+    next: { title: '긴급복지 생계지원 신청 조건', href: '/w/긴급복지-생계지원-신청-조건-금액' },
   },
 }
 

@@ -14,8 +14,8 @@ const data: SpokeData = {
   },
 
   hub: {
-    url: '/w/불법사금융-전체가이드',
-    name: '불법사금융 전체가이드',
+    url: '/w/불법사금융-피해-신고-원스톱-지원',
+    name: '불법사금융 피해 신고 원스톱 지원',
   },
 
   breadcrumb: ['복지', '불법사금융 법률 구조'],
@@ -31,7 +31,7 @@ const data: SpokeData = {
         </p>
         <p className="text-base text-neutral-500 leading-relaxed mt-3">
           대한법률구조공단의 채무자대리인 선임부터 피해구제 소송까지, 이 글 하나로 정리했어요.{' '}
-          불법사금융 피해 대응의 전체 흐름이 궁금하면 <Link href="/w/불법사금융-전체가이드" className="text-blue-600 hover:underline">불법사금융 전체가이드</Link>에 모아뒀어요.
+          불법사금융 피해 대응의 전체 흐름이 궁금하면 <Link href="/w/불법사금융-피해-신고-원스톱-지원" className="text-blue-600 hover:underline">불법사금융 피해 신고 가이드</Link>를 확인해 보세요.
         </p>
       </>
     ),
@@ -215,7 +215,7 @@ const data: SpokeData = {
           </TipBox>
         </>
       ),
-      bridgeCTA: { href: '/w/불법사금융-전체가이드', badge: '전체가이드', title: '불법사금융 대응 A to Z 한 번에 보기', desc: '신고, 채무 탕감, 법률 구조까지 총정리', icon: 'grid', primary: true },
+      bridgeCTA: { href: '/w/불법사금융-채무조정-추심중단', badge: '채무조정', title: '추심이 무서워서 밤잠을 못 자시나요?', desc: '채무조정 신청 즉시 추심이 중단돼요. 원금까지 탕감 가능한 방법을 확인하세요.', icon: 'info' },
     },
 
     // --- Section 05: FAQ ---

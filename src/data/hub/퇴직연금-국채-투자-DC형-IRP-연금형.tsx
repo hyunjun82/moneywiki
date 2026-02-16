@@ -283,7 +283,7 @@ const data: HubData = {
   },
 
   prevNext: {
-    prev: { title: 'IRP 계좌 세액공제 한도', href: '/w/IRP-계좌-세액공제-한도-900만원-16-5' },
+    prev: { title: 'IRP 세액공제 한도', href: '/w/IRP-세액공제-한도' },
     next: { title: '연금형 개인투자용 국채 신청 방법', href: '/w/연금형-개인투자용-국채-신청-방법-10년물-20년물' },
   },
 }

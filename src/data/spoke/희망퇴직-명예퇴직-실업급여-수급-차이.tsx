@@ -301,7 +301,7 @@ const data: SpokeData = {
           </TipBox>
 
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            만약 이직확인서에 자발적 퇴사로 적혀 있다면 <a href="/w/실업급여-이의신청-심사청구-재심사-방법" className="text-[#4A7AB5] underline">이의신청</a>을 할 수 있어요. 희망퇴직 공고문, 합의서, 구조조정 관련 사내 공지 등을 증빙으로 제출하면 고용센터에서 사실관계를 조사해요. 50세 이상이라면 같은 피보험기간이라도 <a href="/w/50세-이상-정년퇴직-실업급여-수급기간-우대" className="text-[#4A7AB5] underline">소정급여일수가 30일 더 길어져요</a>.
+            만약 이직확인서에 자발적 퇴사로 적혀 있다면 <a href="/w/실업급여-이의신청-심사청구-재심사-불복-절차" className="text-[#4A7AB5] underline">이의신청</a>을 할 수 있어요. 희망퇴직 공고문, 합의서, 구조조정 관련 사내 공지 등을 증빙으로 제출하면 고용센터에서 사실관계를 조사해요. 50세 이상이라면 같은 피보험기간이라도 <a href="/w/50세-이상-정년퇴직-실업급여-수급기간-우대" className="text-[#4A7AB5] underline">소정급여일수가 30일 더 길어져요</a>.
           </p>
         </>
       ),

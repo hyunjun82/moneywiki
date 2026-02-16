@@ -373,7 +373,7 @@ const RULES = [
   },
   {
     id: 'TITLE-003',
-    severity: 'WARNING',
+    severity: 'ERROR',
     component: 'SEO',
     description: 'meta.title에 | 구분자 없음 (필수: [핵심 키워드] | [보조 키워드/질문])',
     test: (content) => {
@@ -880,6 +880,100 @@ const RULES = [
     },
     fix: 'chips/sectionSpoke의 href를 "/w/스포크-슬러그" 형식으로 변경',
   },
+
+  // ── [신규] 내부링크 슬러그 실존 검증 ──
+  {
+    id: 'LINK-003',
+    severity: 'ERROR',
+    component: '인라인링크',
+    description: '존재하지 않는 슬러그로 내부링크 — 404 발생!',
+    test: (content) => {
+      const matches = [];
+      // 실존 슬러그 목록 빌드
+      const existingSlugs = new Set();
+      const dirs = ['src/data/spoke', 'src/data/hub', 'content/wiki'];
+      const excludeFiles = ['types.ts', 'registry.ts', 'index.ts', 'index.tsx'];
+      for (const d of dirs) {
+        if (!fs.existsSync(d)) continue;
+        for (const f of fs.readdirSync(d)) {
+          if (excludeFiles.includes(f)) continue;
+          if (f.endsWith('.tsx')) existingSlugs.add(f.replace('.tsx', ''));
+          if (f.endsWith('.md')) existingSlugs.add(f.replace('.md', ''));
+        }
+      }
+      // 파일 내 모든 /w/슬러그 href 검출
+      const hrefRegex = /href:\s*['"]\/w\/([^'"]+)['"]/g;
+      let m;
+      while ((m = hrefRegex.exec(content)) !== null) {
+        const slug = m[1];
+        if (!existingSlugs.has(slug)) {
+          const line = content.substring(0, m.index).split('\n').length;
+          matches.push({
+            line,
+            text: `"/w/${slug}" — 해당 슬러그 파일이 존재하지 않음 (404)`,
+          });
+        }
+      }
+      // <a href="/w/..." 패턴도 검출
+      const aRegex = /href="\/w\/([^"]+)"/g;
+      while ((m = aRegex.exec(content)) !== null) {
+        const slug = m[1];
+        if (!existingSlugs.has(slug)) {
+          const line = content.substring(0, m.index).split('\n').length;
+          // 중복 방지: 같은 라인+슬러그가 이미 있으면 스킵
+          if (!matches.some(x => x.line === line && x.text.includes(slug))) {
+            matches.push({
+              line,
+              text: `"/w/${slug}" — 해당 슬러그 파일이 존재하지 않음 (404)`,
+            });
+          }
+        }
+      }
+      // <Link href="/w/..." 패턴도 검출
+      const linkRegex = /<Link\s+href="\/w\/([^"]+)"/g;
+      while ((m = linkRegex.exec(content)) !== null) {
+        const slug = m[1];
+        if (!existingSlugs.has(slug)) {
+          const line = content.substring(0, m.index).split('\n').length;
+          if (!matches.some(x => x.line === line && x.text.includes(slug))) {
+            matches.push({
+              line,
+              text: `"/w/${slug}" — 해당 슬러그 파일이 존재하지 않음 (404)`,
+            });
+          }
+        }
+      }
+      return matches;
+    },
+    fix: '실존하는 슬러그로 교체하거나 해당 링크 제거. 존재하지 않는 페이지 링크는 404를 유발하여 SEO를 손상시킴',
+  },
+
+  // ── [신규] 체커 파일 내 앵커(#) 링크 금지 ──
+  {
+    id: 'CHECKER-HREF-001',
+    severity: 'ERROR',
+    component: 'Checker',
+    description: '체커 링크에 앵커(#) 사용 — /w/슬러그 또는 외부 URL만 허용!',
+    test: (content, filePath) => {
+      // 체커 파일에만 적용
+      if (!filePath || !filePath.includes('checkers')) return [];
+      const matches = [];
+      const hrefRegex = /href:\s*['"]#([^'"]+)['"]/g;
+      let m;
+      while ((m = hrefRegex.exec(content)) !== null) {
+        const anchor = m[1];
+        // tel: 같은 특수 프로토콜은 허용
+        if (anchor.startsWith('tel:')) continue;
+        const line = content.substring(0, m.index).split('\n').length;
+        matches.push({
+          line,
+          text: `href="#${anchor}" — 체커 링크는 /w/슬러그 또는 외부 URL만 허용`,
+        });
+      }
+      return matches;
+    },
+    fix: '체커의 href를 "/w/관련-스포크-슬러그" 형식으로 변경. 체커는 독립 컴포넌트이므로 같은 페이지 앵커(#)가 작동하지 않을 수 있음',
+  },
 ];
 
 // ─── 검출 엔진 ───
@@ -1180,8 +1274,8 @@ function extractFilePathFromHookInput(stdinData) {
 function isRelevantFile(filePath) {
   if (!filePath) return false;
   const normalized = filePath.replace(/\\/g, '/');
-  // src/data/spoke/ 또는 src/data/hub/ 내 .tsx 파일만 검사
-  if (!normalized.includes('src/data/spoke/') && !normalized.includes('src/data/hub/')) return false;
+  // src/data/spoke/ 또는 src/data/hub/ 또는 src/components/checkers/ 내 .tsx 파일만 검사
+  if (!normalized.includes('src/data/spoke/') && !normalized.includes('src/data/hub/') && !normalized.includes('src/components/checkers/')) return false;
   if (!normalized.endsWith('.tsx')) return false;
   if (EXCLUDE_FILES.includes(path.basename(filePath))) return false;
   return true;

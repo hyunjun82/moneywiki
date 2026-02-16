@@ -201,7 +201,7 @@ const data: SpokeData = {
 
           <Chips
             items={[
-              { icon: '💰', label: '실업급여 하한', value: '월 약 198만원', href: '/w/실업급여-2026-개정-상한액-하한액' },
+              { icon: '💰', label: '실업급여 하한', value: '월 약 198만원', href: '/w/실업급여-2026-개정-상한액-하한액-인상-변경' },
               { icon: '📊', label: '소득 반영', value: '100%' },
               { icon: '🏠', label: '1인 생계기준', value: '820,556원' },
               { icon: '⚠️', label: '공제 적용', value: '없음' },

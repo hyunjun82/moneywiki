@@ -91,7 +91,7 @@ const config: CheckerConfig = {
         badges: ['압류해제 신청 필요'],
         links: [
           { icon: '⚖️', title: '압류해제 신청 방법', desc: '법원에 수급사실확인서 제출', href: '#s4' },
-          { icon: '🆘', title: '이의신청 방법', desc: '실업급여 관련 구제 절차', href: '/w/실업급여-이의신청-심사청구-재심사-절차' },
+          { icon: '🆘', title: '이의신청 방법', desc: '실업급여 관련 구제 절차', href: '/w/실업급여-이의신청-심사청구-재심사-불복-절차' },
         ],
       }
     }

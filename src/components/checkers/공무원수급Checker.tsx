@@ -71,7 +71,7 @@ const config: CheckerConfig = {
         ),
         badges: ['적용 제외'],
         links: [
-          { icon: '🏛️', title: '공무원 퇴직급여 vs 실업급여', desc: '두 제도의 차이를 비교해 보세요', href: '#s3' },
+          { icon: '🏛️', title: '공무원 퇴직급여 vs 실업급여', desc: '두 제도의 차이를 비교해 보세요', href: '/w/공무원-교사-실업급여-퇴직급여-차이-비교' },
           { icon: '📋', title: '실업급여 수급 조건', desc: '민간 재취업 후 수급 방법', href: '/w/실업급여-수급-조건-자격-요건-완벽정리' },
         ],
       }

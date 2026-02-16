@@ -285,7 +285,7 @@ const data: SpokeData = {
           />
 
           <TipBox title="국세·지방세 체납으로 압류된 경우는?">
-            국세징수법에 따른 체납 압류도 실업급여수급계좌는 제외돼요. 세무서에 수급사실확인서를 제출하면 <strong>실업급여 해당 금액은 압류에서 해제</strong>할 수 있어요. 처리가 안 되면 <a href="/w/실업급여-이의신청-심사청구-재심사-절차" className="text-[#4A7AB5] underline">이의신청</a>을 하세요.
+            국세징수법에 따른 체납 압류도 실업급여수급계좌는 제외돼요. 세무서에 수급사실확인서를 제출하면 <strong>실업급여 해당 금액은 압류에서 해제</strong>할 수 있어요. 처리가 안 되면 <a href="/w/실업급여-이의신청-심사청구-재심사-불복-절차" className="text-[#4A7AB5] underline">이의신청</a>을 하세요.
           </TipBox>
 
           <SpokeFlow

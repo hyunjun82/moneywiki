@@ -168,8 +168,11 @@ export default function SpokePageContent({ spoke, slug }: { spoke: SpokeData; sl
           ))}
 
           {/* ═══ 이전/다음 ═══ */}
-          {prevNext && (prevNext.prev || prevNext.next) && (
-            <PrevNext prev={prevNext.prev} next={prevNext.next} />
+          {prevNext && (
+            <PrevNext
+              prev={prevNext.prev || (hub ? { title: hub.name, href: hub.url } : undefined)}
+              next={prevNext.next || (hub ? { title: hub.name, href: hub.url } : undefined)}
+            />
           )}
 
           {/* ═══ 관련 글 (세로 리스트) ═══ */}

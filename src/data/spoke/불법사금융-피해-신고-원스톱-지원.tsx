@@ -14,8 +14,8 @@ const data: SpokeData = {
   },
 
   hub: {
-    url: '/w/불법사금융-전체가이드',
-    name: '불법사금융 전체가이드',
+    url: '/w/불법사금융-채무조정-추심중단',
+    name: '불법사금융 채무조정과 추심중단',
   },
 
   breadcrumb: ['복지', '불법사금융 피해 신고'],
@@ -31,7 +31,7 @@ const data: SpokeData = {
         </p>
         <p className="text-base text-neutral-500 leading-relaxed mt-3">
           금감원 1332 신고부터 서민금융통합지원센터 방문까지, 피해를 구제받는 전체 절차를 정리했어요.<br />
-          불법사금융 관련 모든 내용은 <Link href="/w/불법사금융-전체가이드" className="text-blue-600 hover:underline">불법사금융 전체가이드</Link>에 모아뒀어요.
+          불법사금융 관련 채무 조정과 추심 중단 방법은 <Link href="/w/불법사금융-채무조정-추심중단" className="text-blue-600 hover:underline">채무조정·추심중단 가이드</Link>를 확인해 보세요.
         </p>
       </>
     ),
@@ -196,7 +196,7 @@ const data: SpokeData = {
           <p className="text-xs text-neutral-400 mt-1">* 2026년 3월 본격 시행 기준. 세부 절차는 시행 후 변경될 수 있어요.</p>
         </>
       ),
-      bridgeCTA: { href: '/w/불법사금융-전체가이드', badge: '전체가이드', title: '불법사금융 관련 모든 정보 한 번에 보기', desc: '판별, 신고, 구제, 대안 대출까지', icon: 'grid', primary: true },
+      bridgeCTA: { href: '/w/불법사금융-채무조정-추심중단', badge: '채무조정', title: '신고 후에는 빚 자체를 줄여야 해요', desc: '신용회복위원회 채무조정으로 추심 중단 + 원금 감면까지 가능해요.', icon: 'info' },
     },
 
     // --- Section 05: FAQ ---
