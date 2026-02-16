@@ -19,7 +19,7 @@ const data: HubData = {
 
   hero: {
     badge: '2026년 2월 기준 · 소득세법 출처',
-    h1: <>다주택 양도세 중과유예<br /><strong>세율과 절세 전략 총정리</strong></>,
+    h1: <>다주택 양도세 중과유예<br /><strong>세율 절세 전략</strong></>,
     subtitle: '중과 유예 종료일, 기본세율 vs 중과세율 비교, 매도 순서 전략까지 한눈에 정리했어요.',
     intro: (
       <>

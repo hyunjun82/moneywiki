@@ -59,7 +59,7 @@ const data: SpokeData = {
     badge: '2026년 2월 기준',
     h1: (
       <>
-        양도세 <span className="text-[#1E3A5F]">중과 뜻</span>과 기본세율 중과세율 비교
+        양도세 <span className="text-[#1E3A5F]">중과 뜻</span> 기본세율 중과세율 비교
       </>
     ),
     intro: (

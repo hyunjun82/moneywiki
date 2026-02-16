@@ -47,7 +47,7 @@ const data: SpokeData = {
   hero: {
     badge: '2026년 기준',
     h1: (
-      <>양도세 <span className="text-[#1E3A5F]">잔금일 기준</span> 과세 시점 판단</>
+      <>양도세 <span className="text-[#1E3A5F]">잔금일 기준</span> 계약일 차이</>
     ),
     intro: (
       <p className="text-base text-neutral-500 leading-relaxed">

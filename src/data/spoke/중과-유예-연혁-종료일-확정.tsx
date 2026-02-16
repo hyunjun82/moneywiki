@@ -57,7 +57,7 @@ const data: SpokeData = {
     badge: '2026년 2월 확정',
     h1: (
       <>
-        양도세 중과 유예 <span className="text-[#1E3A5F]">연혁과 종료일</span> 확정
+        양도세 중과 유예 <span className="text-[#1E3A5F]">연혁 종료일</span> 확정
       </>
     ),
     intro: (
