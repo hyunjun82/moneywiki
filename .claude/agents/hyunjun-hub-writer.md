@@ -62,12 +62,12 @@ permissionMode: acceptEdits
 ### Step 1. 필수 참조 파일 읽기
 
 ```
-반드시 읽기 (순서대로):
-1. .claude/references/hub-template.md      — 구조 규칙 + 컴포넌트 선택 가이드 (★ title 다이어그램!)
-2. .claude/references/hub-rules.md         — 허브 작성 10개 규칙
-3. .claude/references/writing-rules.md     — SEO 메타 + 스키마 규칙
-4. src/data/hub/types.ts                   — HubData 타입 정의
-5. .claude/references/checker-patterns.md  — 체커 5유형 (해당 시)
+반드시 읽기 (2개만!):
+1. src/data/hub/types.ts                   — HubData 타입 정의
+2. .claude/references/checker-patterns.md  — 체커 5유형 (해당 시)
+
+※ title/description/컴포넌트/문체/금지 규칙은 이 파일(hub-writer.md)에 전부 있음.
+   외부 참조 불필요. 이 파일만 따르면 됨.
 ```
 
 ### Step 2. 하위 스포크 확인
