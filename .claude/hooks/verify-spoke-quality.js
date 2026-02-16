@@ -974,6 +974,32 @@ const RULES = [
     },
     fix: '체커의 href를 "/w/관련-스포크-슬러그" 형식으로 변경. 체커는 독립 컴포넌트이므로 같은 페이지 앵커(#)가 작동하지 않을 수 있음',
   },
+
+  // ── [신규] 스포크 본문에 SpokeLinks 최소 2개 필수 ──
+  {
+    id: 'SPOKELINKS-001',
+    severity: 'ERROR',
+    component: 'SpokeLinks',
+    description: '스포크 본문에 SpokeLinks가 2개 미만 — 최소 2개 섹션에 배치 필수!',
+    test: (content, filePath) => {
+      // 스포크 파일에만 적용 (허브/체커 제외)
+      if (!filePath || !filePath.includes('spoke')) return [];
+      if (filePath.includes('checkers') || filePath.includes('hub')) return [];
+      // registry.ts, types.ts 등 제외
+      const basename = path.basename(filePath);
+      if (EXCLUDE_FILES.includes(basename)) return [];
+
+      const spokeLinksCount = (content.match(/<SpokeLinks/g) || []).length;
+      if (spokeLinksCount < 2) {
+        return [{
+          line: 1,
+          text: `<SpokeLinks> ${spokeLinksCount}개 발견 (최소 2개 필수) — 본문 섹션 중 2개 이상에 SpokeLinks 배치`,
+        }];
+      }
+      return [];
+    },
+    fix: '본문 4개 섹션 중 최소 2개에 <SpokeLinks title="[주제] 더 알아보기" items={[...]} /> 배치. 같은 허브 내 형제 스포크/허브로 연결',
+  },
 ];
 
 // ─── 검출 엔진 ───

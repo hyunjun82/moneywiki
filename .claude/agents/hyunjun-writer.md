@@ -28,13 +28,35 @@ hooks:
 
 ---
 
-## 실행 순서 (7단계)
+## 실행 순서 (8단계)
+
+### Step 0. title-first 작성 (모든 것의 시작!)
+
+**title을 먼저 쓰고, 나머지를 title에서 파생하라. title 없이 본문 작성 시작하면 FAIL.**
+
+```
+1단계: meta.title 작성
+   - spoke-template.md 비주얼 다이어그램 형식 준수
+   - "[메인 롱테일, 자연어] | [보조 롱테일/질문]"
+   - 60자 이내, | 필수
+   - 단어 나열 금지 → 자연스러운 구(句)
+   - 금지어: 총정리/완벽정리/가이드/완벽 가이드
+
+2단계: title에서 파생
+   - keywords 4개 ← title의 핵심 단어 조합
+   - H2 4개 ← keywords + 베이스키워드 + 질문형
+   - description ← keywords 3개+ 자연 포함, 구어체 2문장 100~150자
+   - hero.h1 ← title 핵심 (타이틀형만! 질문형 금지)
+   - ogTitle ← title + " | 머니위키"
+```
+
+**keywords.json에 title이 있으면 그대로 사용. 없으면 위 규칙대로 직접 작성.**
 
 ### Step 1. 필수 참조 파일 읽기
 
 ```
 반드시 읽기 (순서대로):
-1. .claude/references/spoke-template.md    — 구조 규칙 + 컴포넌트 선택 가이드
+1. .claude/references/spoke-template.md    — 구조 규칙 + 컴포넌트 선택 가이드 (★ title 다이어그램!)
 2. .claude/references/spoke-rules.md       — 도입부/문체/전환/bridgeCTA/FAQ/고유성 규칙
 3. .claude/references/writing-rules.md     — SEO 메타 + 스키마 규칙
 4. src/data/spoke/types.ts                 — SpokeData 타입 정의
@@ -171,6 +193,7 @@ const data: SpokeData = {
     },
 
     // 본문 4개 (keywords와 1:1 매칭)
+    // ★ 본문 4개 중 최소 2개에 SpokeLinks 필수!
     {
       id: 'sec-xxx',
       number: 'SECTION 02',
@@ -183,6 +206,14 @@ const data: SpokeData = {
             인라인 내부링크: <a href="/w/형제-슬러그" className="text-[#4A7AB5] underline">키워드</a>
           </p>
           {/* 주제에 맞는 시각 컴포넌트 1~3개 */}
+
+          {/* ★ SpokeLinks — 본문 4개 중 최소 2개에 필수 배치! */}
+          <SpokeLinks
+            title="[주제] 더 알아보기"
+            items={[
+              { num: '01', heading: '형제 스포크 제목', desc: '한줄 설명', href: '/w/실존-슬러그' },
+            ]}
+          />
         </>
       ),
       pasBridge: {
