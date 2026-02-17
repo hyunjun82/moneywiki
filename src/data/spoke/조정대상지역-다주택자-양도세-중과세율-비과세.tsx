@@ -253,10 +253,10 @@ const data: SpokeData = {
           </p>
 
           <SpokeRateBars bars={[
-            { label: '유예 기간 내 매도 (기본세율 + 장특공)', rate: 92, width: 92 },
-            { label: '중과 배제 주택 활용 (기본세율 적용)', rate: 75, width: 75 },
-            { label: '매도 순서 조정 (차익 큰 주택 1주택으로)', rate: 68, width: 68 },
-            { label: '유예 종료 후 증여 전환', rate: 40, width: 40 },
+            { label: '유예 기간 내 매도 (기본세율 + 장특공)', rate: '절세 효과 최대', width: '92%' },
+            { label: '중과 배제 주택 활용 (기본세율 적용)', rate: '효과 높음', width: '75%' },
+            { label: '매도 순서 조정 (차익 큰 주택 1주택으로)', rate: '효과 보통', width: '68%' },
+            { label: '유예 종료 후 증여 전환', rate: '상황별 검토', width: '40%' },
           ]} />
 
           <SpokeChecklist items={[
@@ -292,10 +292,10 @@ const data: SpokeData = {
           </p>
 
           <SpokeTimeline events={[
-            { month: '2022.05', title: '다주택자 양도세 중과 유예 시작', desc: '소득세법 시행령 개정 — 조정지역 다주택자 기본세율 적용 시작', status: 'done' },
-            { month: '2023.05', title: '유예 1차 연장', desc: '2024년 5월 9일까지 연장', status: 'done' },
-            { month: '2024.05', title: '유예 2차 연장', desc: '2025년 5월 9일까지 연장', status: 'done' },
-            { month: '2025.05', title: '유예 3차 연장', desc: '2026년 5월 9일까지 연장', status: 'done' },
+            { month: '2022.05', title: '다주택자 양도세 중과 유예 시작', desc: '소득세법 시행령 개정 — 조정지역 다주택자 기본세율 적용 시작', status: 'normal' },
+            { month: '2023.05', title: '유예 1차 연장', desc: '2024년 5월 9일까지 연장', status: 'normal' },
+            { month: '2024.05', title: '유예 2차 연장', desc: '2025년 5월 9일까지 연장', status: 'normal' },
+            { month: '2025.05', title: '유예 3차 연장', desc: '2026년 5월 9일까지 연장', status: 'current' },
             { month: '2026.05', title: '유예 종료 예정일', desc: '추가 연장 없으면 2026.5.10부터 중과 재개 — 장특공 배제 동시 적용', status: 'warning', tag: '종료 예정' },
           ]} />
 

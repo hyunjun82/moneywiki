@@ -177,9 +177,9 @@ const data: SpokeData = {
           </p>
 
           <SpokeRateBars bars={[
-            { label: '2019.12.17~2022.5.9 (조정→조정)', rate: 33, width: 33 },
-            { label: '2018.9.14~2019.12.16 (조정→조정)', rate: 66, width: 66 },
-            { label: '2022.5.10 이후 (모든 지역)', rate: 100, width: 100 },
+            { label: '2019.12.17~2022.5.9 (조정→조정)', rate: '1년', width: '33%' },
+            { label: '2018.9.14~2019.12.16 (조정→조정)', rate: '2년', width: '66%' },
+            { label: '2022.5.10 이후 (모든 지역)', rate: '3년', width: '100%' },
           ]} />
 
           <SpokeCompareCards cards={[

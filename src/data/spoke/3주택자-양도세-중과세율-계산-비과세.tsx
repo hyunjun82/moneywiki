@@ -152,10 +152,10 @@ const data: SpokeData = {
 
           <SpokeRateBars
             bars={[
-              { label: '1,400만원 이하 (기본6% → 중과36%)', rate: 36, width: 36 },
-              { label: '1.5억 이하 (기본35% → 중과65%)', rate: 65, width: 65 },
-              { label: '3억 이하 (기본38% → 중과68%)', rate: 68, width: 68 },
-              { label: '10억 초과 (기본45% → 중과75%)', rate: 75, width: 75 },
+              { label: '1,400만원 이하 (기본6% → 중과36%)', rate: '36%', width: '48%' },
+              { label: '1.5억 이하 (기본35% → 중과65%)', rate: '65%', width: '87%' },
+              { label: '3억 이하 (기본38% → 중과68%)', rate: '68%', width: '91%' },
+              { label: '10억 초과 (기본45% → 중과75%)', rate: '75%', width: '100%' },
             ]}
           />
 

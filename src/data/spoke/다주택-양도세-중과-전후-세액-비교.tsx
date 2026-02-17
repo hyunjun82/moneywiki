@@ -56,7 +56,7 @@ const data: SpokeData = {
     badge: '2026년 기준',
     h1: (
       <>
-        다주택 양도세 <span className="text-[#1E3A5F]">중과 전후 세액</span> 비교
+        다주택 양도세 <span className="text-[#1E3A5F]">중과 전후 세액 비교</span> | 유예 종료 후 세금 차이 계산
       </>
     ),
     intro: (
