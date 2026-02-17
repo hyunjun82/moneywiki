@@ -4,14 +4,19 @@
       "mcp__playwright__browser_select_option",
       "Bash(git push:*)",
       "Bash(git commit:*)",
-      "Bash(for file in content/wiki/자손-자상-보험료-차이.md content/wiki/자손-자상-선택.md)",
       "WebFetch(domain:taxly.kr)",
       "Write(/src/data/spoke/**)",
       "Write(/src/data/hub/**)",
-      "Edit(/src/data/spoke/registry.ts)",
-      "Edit(/src/data/hub/registry.ts)",
+      "Write(/src/components/checkers/**)",
+      "Edit(/src/data/spoke/**)",
+      "Edit(/src/data/hub/**)",
+      "Edit(/src/components/checkers/**)",
       "WebSearch",
       "WebFetch"
+    ],
+    "deny": [
+      "Write(/.claude/**)",
+      "Edit(/.claude/**)"
     ]
   },
   "hooks": {

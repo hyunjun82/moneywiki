@@ -244,7 +244,18 @@ const RULES = [
     severity: 'ERROR',
     component: 'RSC',
     description: 'GenericChecker를 데이터 파일에서 직접 import (함수 prop 직렬화 불가)',
-    pattern: /import\s+GenericChecker\s+from/g,
+    test: (content, filePath) => {
+      // src/components/checkers/ 는 "use client" 컴포넌트 — GenericChecker import 정상
+      if (filePath && filePath.replace(/\\/g, '/').includes('src/components/checkers/')) return [];
+      const regex = /import\s+GenericChecker\s+from/g;
+      const matches = [];
+      let m;
+      while ((m = regex.exec(content)) !== null) {
+        const line = content.substring(0, m.index).split('\n').length;
+        matches.push({ line, text: m[0].trim().substring(0, 80) });
+      }
+      return matches;
+    },
     fix: 'GenericChecker 대신 src/components/checkers/ 전용 "use client" 래퍼 사용',
   },
   {
@@ -252,7 +263,18 @@ const RULES = [
     severity: 'ERROR',
     component: 'RSC',
     description: 'CheckerConfig 타입 import (evaluate 함수 포함 → RSC 직렬화 불가)',
-    pattern: /import\s+.*CheckerConfig.*from\s+['"]@\/data\/checker-types['"]/g,
+    test: (content, filePath) => {
+      // src/components/checkers/ 는 "use client" 컴포넌트 — CheckerConfig import 정상
+      if (filePath && filePath.replace(/\\/g, '/').includes('src/components/checkers/')) return [];
+      const regex = /import\s+.*CheckerConfig.*from\s+['"]@\/data\/checker-types['"]/g;
+      const matches = [];
+      let m;
+      while ((m = regex.exec(content)) !== null) {
+        const line = content.substring(0, m.index).split('\n').length;
+        matches.push({ line, text: m[0].trim().substring(0, 80) });
+      }
+      return matches;
+    },
     fix: 'CheckerConfig/evaluate 로직을 src/components/checkers/ "use client" 컴포넌트로 이동',
   },
 
@@ -799,6 +821,31 @@ const RULES = [
       return matches;
     },
     fix: 'h1을 타이틀형으로 변경. 질문형(~인가요?/~될까요?)은 H2에만 사용',
+  },
+
+  // ── hero.h1에 | 구분자 필수 ──
+  {
+    id: 'H1-003',
+    severity: 'ERROR',
+    component: 'SEO',
+    description: 'hero.h1에 | 구분자 없음 — h1 = meta.title 전체 (롱테일 | 연관 롱테일)',
+    test: (content) => {
+      const matches = [];
+      const h1Regex = /h1\s*:\s*\(\s*<>([\s\S]*?)<\/>\s*\)/g;
+      let m;
+      while ((m = h1Regex.exec(content)) !== null) {
+        const h1Text = m[1].replace(/<[^>]*>/g, '').replace(/\{[^}]*\}/g, '').trim();
+        if (!h1Text.includes('|')) {
+          const line = content.substring(0, m.index).split('\n').length;
+          matches.push({
+            line,
+            text: `h1에 | 없음: "${h1Text.substring(0, 60)}" → meta.title 전체를 h1에 사용`,
+          });
+        }
+      }
+      return matches;
+    },
+    fix: 'h1 = meta.title 전체 (| 포함). 왼쪽만 쓰면 FAIL',
   },
 
   // ── [신규] pasBridge/bridgeCTA href 앵커(#) 금지 ──
@@ -1409,7 +1456,17 @@ async function main() {
         return c.includes(`'/w/${hubSlug}'`) || c.includes(`"/w/${hubSlug}"`);
       });
       if (siblings.length >= 2) {
-        allResults.push(...analyzeSiblings(siblings));
+        const siblingResults = analyzeSiblings(siblings);
+        // 단일 파일 모드: 타겟 파일이 관련된 에러만 반영 (다른 형제 간 에러는 보고만)
+        const targetFileName = path.basename(files[0]);
+        for (const r of siblingResults) {
+          if (r.file === targetFileName || r.description.includes(targetFileName)) {
+            allResults.push(r);
+          } else {
+            // 다른 형제 간 에러 → WARNING으로 보고만 (exit code 미반영)
+            allResults.push({ ...r, severity: 'WARNING', description: `[참고] ${r.description}` });
+          }
+        }
       }
     }
   }

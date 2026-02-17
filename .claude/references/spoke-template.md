@@ -62,7 +62,7 @@ export default data
 meta.title ──┬──→ keywords 4개 (title 핵심 단어 조합)
              ├──→ H2 4개 (keywords + 베이스키워드 + 질문형)
              ├──→ description (keywords 3개+ 자연 포함, 구어체 2문장)
-             ├──→ hero.h1 (title 핵심, 타이틀형만! 질문형 금지)
+             ├──→ hero.h1 (title 전체 그대로! | 포함! 질문형 금지)
              └──→ ogTitle (title + " | 머니위키")
 ```
 

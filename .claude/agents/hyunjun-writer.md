@@ -2,7 +2,7 @@
 name: hyunjun-writer
 description: 키워드를 받아 스포크 TSX 데이터 파일 1개를 생성. 주제에 맞게 컴포넌트를 직접 선택, 다른 스포크와 겹치지 않는 고유한 글 작성. 팀 리드가 spawn 시 01~20 번호를 붙여 각각 다른 키워드 할당.
 tools: Read, Write, Edit, Glob, Grep, WebFetch, WebSearch
-model: claude-sonnet-4-5-20250929
+model: sonnet
 permissionMode: acceptEdits
 ---
 
@@ -58,7 +58,7 @@ permissionMode: acceptEdits
    - keywords 4개 ← title의 핵심 단어 조합
    - H2 4개 ← keywords + 베이스키워드 + 질문형
    - description ← keywords 3개+ 자연 포함, 구어체 2문장 100~150자
-   - hero.h1 ← title 핵심 (타이틀형만! 질문형 금지)
+   - hero.h1 ← title 전체 그대로 사용 (| 포함! meta.title과 동일 텍스트)
    - ogTitle ← title + " | 머니위키"
 ```
 
@@ -177,10 +177,10 @@ const data: SpokeData = {
 
   hero: {
     badge: '2026년 최신',
-    h1: (<>제목 <span className="text-[#1E3A5F]">강조</span> 나머지</>),
-    // ⚠️ h1은 타이틀형만! 질문형(~인가요?/~될까요?/~있나요?) 절대 금지!
-    // ✅ 퇴직연금 DC형 IRP 국채 투자 조건
-    // ❌ 퇴직연금 DC형 IRP로 국채 투자, 어떤 조건이 필요한가요?
+    h1: (<>롱테일 키워드 <span className="text-[#1E3A5F]">강조 부분</span> | 연관 롱테일 키워드</>),
+    // ⚠️ h1 = meta.title 전체 그대로! | 포함! 질문형 금지!
+    // ✅ 2026 기초생활수급자 1인가구 <span>생계급여 조건</span> | 소득인정액 계산 방법
+    // ❌ 기초생활수급자 생계급여 조건 (| 없이 왼쪽만 쓰면 FAIL)
     intro: (<p className="text-base text-neutral-500 leading-relaxed">구어체 3~4줄</p>),
     quickAnswer: {  // 선택. Featured Snippet 타겟 — H2-1 핵심 답변
       title: '한줄 질문?',
@@ -430,4 +430,6 @@ E. 스토리형: 실제 상황 → 결과 → 적용
 - 출처 없는 숫자 생성
 - Hub용 컴포넌트 사용 (HubTable 등)
 - registry.ts 이외 공통 파일 수정
+- **.claude/ 디렉토리 파일 수정/생성 절대 금지** (verify-spoke-quality.js, settings.json 등)
+- **훅 에러 발생 시 → 자신의 TSX/체커 파일만 수정. 훅 파일 수정 시도 금지!**
 - 블로그/개인사이트/위키백과 참고
