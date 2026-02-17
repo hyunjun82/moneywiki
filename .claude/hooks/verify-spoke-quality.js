@@ -436,6 +436,37 @@ const RULES = [
     fix: 'meta.title에서 - 또는 – → | (파이프) 구분자로 변경',
   },
   {
+    id: 'TITLE-006',
+    severity: 'ERROR',
+    component: 'SEO',
+    description: 'meta.title | 오른쪽이 질문형/설명문 (양쪽 다 키워드여야 함)',
+    test: (content) => {
+      const metaIdx = content.indexOf('meta:');
+      if (metaIdx === -1) return [];
+      const afterMeta = content.substring(metaIdx, metaIdx + 500);
+      const titleMatch = afterMeta.match(/title\s*:\s*['"`]([^'"`]+)['"`]/);
+      if (!titleMatch) return [];
+      const title = titleMatch[1];
+      if (!title.includes('|')) return [];
+      const rightSide = title.split('|')[1]?.trim();
+      if (!rightSide) return [];
+      // 질문형 패턴: ~인가요? ~될까요? ~있나요? ~하나요? ~인가? ~일까? 등
+      const questionPattern = /[?？]$|인가요|될까요|있나요|하나요|인가$|일까$|일까요|할까요|어떻게|어떤가요|무엇인가요|뭔가요|건가요/;
+      // 설명문 패턴: ~해요 ~이에요 ~돼요 ~있어요 ~에요 등
+      const sentencePattern = /해요$|이에요$|돼요$|있어요$|에요$|드려요$|보세요$|하세요$|거예요$|이죠$/;
+      if (questionPattern.test(rightSide)) {
+        const line = content.substring(0, metaIdx + titleMatch.index).split('\n').length;
+        return [{ line, text: `| 오른쪽 질문형: "...| ${rightSide}"` }];
+      }
+      if (sentencePattern.test(rightSide)) {
+        const line = content.substring(0, metaIdx + titleMatch.index).split('\n').length;
+        return [{ line, text: `| 오른쪽 설명문: "...| ${rightSide}"` }];
+      }
+      return [];
+    },
+    fix: 'meta.title | 오른쪽도 키워드 형태로 변경 (질문형/설명문 → 키워드)',
+  },
+  {
     id: 'DESC-001',
     severity: 'WARNING',
     component: 'SEO',
