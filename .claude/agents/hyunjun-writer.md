@@ -184,7 +184,7 @@ const data: SpokeData = {
     intro: (<p className="text-base text-neutral-500 leading-relaxed">구어체 3~4줄</p>),
     quickAnswer: {  // 선택. Featured Snippet 타겟 — H2-1 핵심 답변
       title: '한줄 질문?',
-      body: (<>3줄 이내 핵심 답변. <strong>구체 숫자</strong> 1개 이상.</>),
+      body: '3줄 이내 핵심 답변. 구체 숫자 1개 이상.',  // ⚠️ string만! JSX 금지 (types.ts 참조)
       hook: '자세한 내용은 아래에서 확인하세요 →',
     },
     hubCTA: { badge: '전체 가이드', desc: '허브 한줄 설명' },
