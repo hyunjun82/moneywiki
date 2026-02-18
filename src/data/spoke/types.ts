@@ -86,6 +86,7 @@ export interface SpokeData {
     topLabel: string
     value: string
     buttonText: string
-    scrollTo: string
+    href?: string
+    scrollTo?: string
   }
 }

@@ -53,7 +53,7 @@ const data: SpokeData = {
     topLabel: '2026년 상한액',
     value: '1일 68,100원',
     buttonText: '내 기초일액 확인 →',
-    scrollTo: '#checker',
+    href: '/w/실업급여-금액-계산-연봉별-수령액',
   },
 
   hero: {

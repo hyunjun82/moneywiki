@@ -53,7 +53,7 @@ const data: SpokeData = {
     topLabel: '기준기간',
     value: '이직일 이전 18개월',
     buttonText: '충족 여부 확인 →',
-    scrollTo: '#checker',
+    href: '/w/실업급여-피보험기간-180일-계산-합산-방법',
   },
 
   hero: {

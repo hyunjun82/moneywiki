@@ -224,6 +224,7 @@ export default function SpokePageContent({ spoke, slug }: { spoke: SpokeData; sl
           topLabel={stickyBar.topLabel}
           value={stickyBar.value}
           buttonText={stickyBar.buttonText}
+          href={stickyBar.href}
           scrollTo={stickyBar.scrollTo}
         />
       )}

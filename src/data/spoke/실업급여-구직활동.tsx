@@ -54,7 +54,7 @@ const data: SpokeData = {
     topLabel: '5차 이후 구직활동',
     value: '2회 이상 필수',
     buttonText: '차수별 확인 →',
-    scrollTo: '#checker',
+    href: '/w/실업급여-실업인정-구직활동-방법',
   },
 
   hero: {
