@@ -2,6 +2,41 @@
 
 ---
 
+## 전체 마이그레이션 전략 (핵심 컨텍스트!)
+
+**현재 상황**: 위키MD 약 2000개 → 단계적으로 전부 TSX 스포크로 전환 중
+**이유**: 방문자 500명/일, 애드센스 $1/일 수준 → TSX 전환으로 SEO 품질 개선
+**기간**: 매일 진행 (신규 작성 + 기존 리라이트 병행, 장기 프로젝트)
+
+### 라우팅 우선순위 (충돌 없음!)
+```
+Hub TSX > Spoke TSX > MD
+```
+→ 동일 슬러그로 TSX 만들고 registry.ts 등록하면 MD는 자동으로 무시됨
+→ **기존 MD 삭제 불필요**
+
+### 리라이트 = MD → TSX 전환
+- 기존 MD가 있는 키워드 → 동일 슬러그로 TSX 스포크 작성
+- registry.ts 등록 → 기존 MD 자동 덮어씌워짐 (URL 유지)
+- **MD는 건드리지 않아도 됨**
+
+### 작업 큐 (CSV 파일)
+```
+scripts/롱테일-41-50-수정본v2.csv
+scripts/롱테일-51-60-수정본v2.csv
+...
+scripts/롱테일-122-131-수정본v2.csv
+```
+→ 각 CSV 행 = 1개 TSX 스포크 (title, slug, keywords, H2, description 포함)
+
+### 매일 워크플로우
+1. CSV에서 해당 슬러그 확인 (MD 존재 여부 체크)
+2. `src/data/spoke/[슬러그].tsx` 작성 (11개 컴포넌트 팔레트)
+3. `src/data/spoke/registry.ts` 등록
+4. `git push` → Vercel 빌드 확인
+
+---
+
 ## 신규 vs 리라이트 확인 (최우선!)
 
 **키워드를 받으면 작업 시작 전 반드시 물어볼 것:**
@@ -284,6 +319,41 @@ GOOD: "개인파산 면책까지 하면 추가 비용 있나요?"
 - 15%, 12% 세율 (구버전 수치 금지)
 - title에 "총정리", "완벽정리", "가이드" 금지
 - title 구분자 — (긴대시), : (콜론) 금지 → | (파이프) 사용
+- **"확인하세요" 금지** — intro, ogDescription, hubCTA desc 전체 (BAD: "바로 여기서 확인하세요" / GOOD: "이 글 하나로 정리돼요")
+- **"총정리" 금지** — title뿐 아니라 hubCTA desc에도 사용 금지
+
+## TSX 스포크 체커 배치 규칙
+
+- **체커는 반드시 sections 배열 맨 앞 (s1보다 먼저)** (체류 시간 확보 목적)
+- toc 순서: `checker → s1 → s2 → s3 → s4 → s-faq`
+- sections 배열도 동일: checker가 SECTION 01보다 먼저
+- 템플릿 기준: checker=#1, H2 섹션은 SECTION 01~04
+- 중간/하단/s1 뒤에 배치 → **절대 금지**
+
+## TSX 컴포넌트 타입 주의사항 (빌드 에러 방지)
+
+### RateCards — `lines` 필수, `icon` 없음
+```tsx
+// ❌ 빌드 에러
+{ label: '...', value: '...', icon: 'check' }
+
+// ✅ 정상
+{ label: '...', value: '...', lines: ['설명1', '설명2'] }
+```
+- `lines: string[]` 필수 항목
+- `icon`은 존재하지 않는 필드 (bridgeCTA.icon과 혼동 금지)
+- 선택: `highlight`, `highlightColor: 'orange' | 'navy'`, `active`
+
+### SpokeTable — `subtitle` 필수
+```tsx
+// ❌ 빌드 에러
+<SpokeTable id="..." title="..." headers={[...]} rows={[...]} />
+
+// ✅ 정상
+<SpokeTable id="..." title="..." subtitle="부제목" headers={[...]} rows={[...]} />
+```
+- `subtitle` 필수 (내용 있는 문장 권장)
+- 선택: `highlightCol`
 
 ---
 
@@ -309,7 +379,7 @@ GOOD: "개인파산 면책까지 하면 추가 비용 있나요?"
 - [ ] SpokeLinks 최소 2개 섹션에 배치?
 - [ ] quickAnswer 있음?
 - [ ] bridgeCTA 있음?
-- [ ] 체커 컴포넌트 있음 (해당 시)?
+- [ ] 체커 컴포넌트 있음 (해당 시)? → 위치는 반드시 s1 바로 다음!
 - [ ] 내부링크 전부 실존 슬러그?
 - [ ] registry.ts 등록?
 

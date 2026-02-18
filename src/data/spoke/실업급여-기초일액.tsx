@@ -85,8 +85,8 @@ const data: SpokeData = {
   },
 
   toc: [
-    { id: 's1', label: '실업급여 기초일액는 어떻게 계산하나요?' },
     { id: 'checker', label: '내 기초일액 확인' },
+    { id: 's1', label: '실업급여 기초일액는 어떻게 계산하나요?' },
     { id: 's2', label: '실업급여 평균임금 60%는 어떻게 산정하나요?' },
     { id: 's3', label: '실업급여 상한액 하한액은 얼마인가요?' },
     { id: 's4', label: '실업급여 1일 지급액 적용 기준은 어떻게 되나요?' },
@@ -94,6 +94,17 @@ const data: SpokeData = {
   ],
 
   sections: [
+    // --- CHECKER ---
+    {
+      id: 'checker',
+      number: 'CHECK',
+      heading: '내 월급으로 기초일액 예상 금액 확인하기',
+      subtitle: '월급 구간을 선택하면 적용되는 기초일액을 바로 알 수 있어요',
+      content: (
+        <기초일액Checker />
+      ),
+    },
+
     // --- SECTION 01: 기초일액 계산 ---
     {
       id: 's1',
@@ -138,17 +149,6 @@ const data: SpokeData = {
         desc: '연봉별 예상 수령액과 총액 계산법 안내',
         icon: 'calc',
       },
-    },
-
-    // --- CHECKER ---
-    {
-      id: 'checker',
-      number: 'CHECK',
-      heading: '내 월급으로 기초일액 예상 금액 확인하기',
-      subtitle: '월급 구간을 선택하면 적용되는 기초일액을 바로 알 수 있어요',
-      content: (
-        <기초일액Checker />
-      ),
     },
 
     // --- SECTION 02: 평균임금 계산 ---
