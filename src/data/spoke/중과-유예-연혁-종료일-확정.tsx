@@ -15,9 +15,9 @@ const data: SpokeData = {
   slug: '중과-유예-연혁-종료일-확정',
 
   meta: {
-    title: '양도세 중과 유예 연혁 종료일 확정 | 2026 중과유예 종료 경과규정 잔금 기한',
-    description: '양도세 중과 유예가 2026년 5월 9일에 최종 종료 확정된 거 아시나요? 2022년부터 매년 연장되던 중과유예 연혁과 보완조치 잔금일 기준, 지역별 경과규정까지 한 번에 정리해드려요.',
-    keywords: ['양도세 중과 유예 연혁', '중과유예 종료일', '중과유예 보완조치', '중과유예 잔금일 기준'],
+    title: '양도세 중과 유예 연혁 종료일 확정 | 2026 중과유예 보완조치 잔금 기한',
+    description: '양도세 중과 유예가 2026년 5월 9일에 최종 종료 확정된 거 아시나요? 2022년부터 매년 연장됐던 중과유예 연혁과 보완조치 잔금 기한, 지역별 경과규정까지 한 번에 정리해드려요.',
+    keywords: ['양도세 중과 유예 연혁', '중과유예 종료일 확정', '중과유예 보완조치', '중과유예 잔금 기한'],
     ogTitle: '양도세 중과 유예 연혁 종료일 확정 | 머니위키',
     ogDescription: '중과 유예 종료일 2026.5.9 확정, 보완조치와 잔금 기한까지 정리했어요.',
   },
@@ -42,7 +42,7 @@ const data: SpokeData = {
   },
 
   prevNext: {
-    prev: { title: '양도세 중과 뜻 기본세율 중과세율 비교', href: '/w/양도세-중과-뜻-기본세율-중과세율-비교' },
+    prev: { title: '양도세 중과 뜻 기본세율 중과세율 차이', href: '/w/양도세-중과-뜻-기본세율-중과세율-비교' },
     next: { title: '양도세 잔금일 기준 계약일 차이', href: '/w/양도세-잔금일-기준-계약일-판단' },
   },
 
@@ -57,7 +57,7 @@ const data: SpokeData = {
     badge: '2026년 2월 확정',
     h1: (
       <>
-        양도세 중과 유예 <span className="text-[#1E3A5F]">연혁 종료일</span> 확정
+        양도세 중과 유예 <span className="text-[#1E3A5F]">연혁 종료일 확정</span> | 2026 중과유예 보완조치 잔금 기한
       </>
     ),
     intro: (
@@ -73,7 +73,7 @@ const data: SpokeData = {
       desc: '다주택 양도세 중과유예 세율 절세 전략 한눈에 보기',
     },
     quickAnswer: {
-      title: '양도세 중과 유예 종료일은?',
+      title: '중과유예 종료일은?',
       body: '2026년 5월 9일이 최종 종료일이에요. 추가 연장은 없어요. 다만 5월 9일 전에 계약하면 기존 4구는 4개월, 신규 조정대상지역은 6개월 내 잔금까지 유예가 적용돼요.',
       hook: '내 주택이 어디 해당하는지 체커로 바로 확인할 수 있어요.',
     },
@@ -81,15 +81,15 @@ const data: SpokeData = {
 
   toc: [
     { id: 'checker', label: '중과 유예 적용 여부 체크' },
-    { id: 'sec-history', label: '양도세 중과 유예 연혁은 어떻게 되나요?' },
-    { id: 'sec-deadline', label: '중과유예 종료일은 정확히 언제인가요?' },
-    { id: 'sec-complement', label: '중과유예 보완조치 잔금 기한은 어떻게 되나요?' },
-    { id: 'sec-action', label: '중과유예 종료 전 잔금일 기준 대비 전략은?' },
+    { id: 'sec-history', label: '양도세 중과 유예 연혁은 어떻게 진행됐나요?' },
+    { id: 'sec-deadline', label: '양도세 중과유예 종료일은 언제 확정됐나요?' },
+    { id: 'sec-complement', label: '양도세 중과유예 보완조치 내용은 무엇인가요?' },
+    { id: 'sec-grace', label: '양도세 중과유예 잔금 기한은 어떻게 되나요?' },
     { id: 'sec-faq', label: '자주 묻는 질문' },
   ],
 
   sections: [
-    /* ── CHECK: 체커 ── */
+    /* ── CHECK ── */
     {
       id: 'checker',
       number: 'CHECK',
@@ -98,11 +98,14 @@ const data: SpokeData = {
       content: <JungkwaYuyeChecker />,
     },
 
-    /* ── SECTION 02: 연혁 ── */
+    /* ── SECTION 02: 연혁 ──
+     * 시각: SpokeTimeline
+     * 전환: C 간결 연결형
+     */
     {
       id: 'sec-history',
       number: 'SECTION 02',
-      heading: '양도세 중과 유예 연혁은 어떻게 되나요?',
+      heading: '양도세 중과 유예 연혁은 어떻게 진행됐나요?',
       subtitle: '2022년 시작, 매년 1년씩 연장, 2026년 종료 확정',
       content: (
         <>
@@ -116,12 +119,12 @@ const data: SpokeData = {
             하지만 2025년 하반기 서울 집값 상승과 투기 우려가 커지면서, 정부는 2026년 2월 12일 중과 유예를 더 이상 연장하지 않겠다고 공식 발표했어요. 4년간 이어진 유예 조치가 마침내 마침표를 찍은 거예요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            연장 과정을 시간순으로 정리하면 아래와 같아요.
+            연혁을 알았으니 종료일 확정 내용으로 넘어갈게요.
           </p>
 
           <SpokeTimeline events={[
             { month: '2022.05', title: '중과 유예 최초 시행', desc: '소득세법 시행령 167조의3 신설, 1년간 중과 배제', status: 'normal' as const, tag: '1차' },
-            { month: '2023.02', title: '1차 연장 결정', desc: '금리 인상 거래절벽, 2024년 5월 9일까지 1년 연장', status: 'normal' as const, tag: '2차' },
+            { month: '2023.02', title: '1차 연장 결정', desc: '금리 인상 거래절벽, 2024년 5월 9일까지 연장', status: 'normal' as const, tag: '2차' },
             { month: '2024.02', title: '2차 연장 결정', desc: '건설경기 침체 미분양 증가, 2025년 5월 9일까지 연장', status: 'normal' as const, tag: '3차' },
             { month: '2025.02', title: '3차 연장 결정', desc: '서울 상승세에도 지방 침체, 2026년 5월 9일까지 연장', status: 'normal' as const, tag: '4차' },
             { month: '2026.02', title: '종료 확정 발표', desc: '추가 연장 없음, 5월 9일 종료 + 보완조치 발표', status: 'warning' as const, tag: '종료' },
@@ -130,7 +133,7 @@ const data: SpokeData = {
           <SpokeLinks
             title="중과 유예 연혁 더 알아보기"
             items={[
-              { num: '01', heading: '양도세 중과 뜻과 기본세율 비교', desc: '기본세율과 중과세율 차이가 얼마나 되는지 확인', href: '/w/양도세-중과-뜻-기본세율-중과세율-비교' },
+              { num: '01', heading: '양도세 중과 뜻과 세율 비교', desc: '기본세율과 중과세율 차이가 얼마나 되는지 확인', href: '/w/양도세-중과-뜻-기본세율-중과세율-비교' },
               { num: '02', heading: '조정대상지역 다주택자 중과세율', desc: '조정대상지역 내 중과 적용 기준과 세율', href: '/w/조정대상지역-다주택자-양도세-중과세율-비과세' },
             ]}
           />
@@ -139,21 +142,24 @@ const data: SpokeData = {
       pasBridge: {
         href: '/w/양도세-중과-뜻-기본세율-중과세율-비교',
         question: '유예가 끝나면 세율이 정확히 얼마나 오르나요?',
-        answer: <>2주택자는 기본세율에 <strong>20%p</strong>, 3주택자는 <strong>30%p</strong>가 추가돼요. 양도차익 5억 기준 세금이 수천만 원 차이 나요.</>,
+        answer: <>2주택자는 기본세율에 <strong>20%p</strong>, 3주택자는 <strong>30%p</strong>가 추가돼요</>,
         buttonText: '중과세율 비교 보기 →',
       },
     },
 
-    /* ── SECTION 03: 종료일 ── */
+    /* ── SECTION 03: 종료일 확정 ──
+     * 시각: Chips + SpokeCompareCards
+     * 전환: A 독자 대변형
+     */
     {
       id: 'sec-deadline',
       number: 'SECTION 03',
-      heading: '중과유예 종료일은 정확히 언제인가요?',
+      heading: '양도세 중과유예 종료일은 언제 확정됐나요?',
       subtitle: '2026년 5월 9일이 마지막, 5월 10일부터 중과 재개',
       content: (
         <>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            중과 유예의 최종 종료일은 <strong>2026년 5월 9일</strong>이에요. 이 날까지 잔금을 받으면(양도하면) 기본세율이 적용되고, 5월 10일부터는 <a href="/w/양도세-중과-뜻-기본세율-중과세율-비교" className="text-[#4A7AB5] underline">중과세율</a>이 다시 적용돼요.
+            중과유예 종료일은 <strong>2026년 5월 9일</strong>이에요. 2026년 2월 12일 기획재정부가 공식 발표했고, 추가 연장은 없다고 못 박았어요. 이날까지 잔금을 받으면(양도하면) 기본세율이 적용되고, 5월 10일부터는 <a href="/w/양도세-중과-뜻-기본세율-중과세율-비교" className="text-[#4A7AB5] underline">중과세율</a>이 다시 적용돼요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
             여기서 핵심은 양도 시기의 기준이에요. 양도세법상 양도 시기는 계약일이 아니라 <strong>잔금 수령일(대금청산일)</strong>이에요. 4월에 계약하고 5월 8일에 잔금을 받으면 유예 적용, 같은 계약인데 잔금이 5월 12일이면 중과가 돼요.
@@ -162,7 +168,7 @@ const data: SpokeData = {
             등기를 먼저 하고 잔금을 나중에 받는 경우도 있는데, 이때는 등기접수일이 양도일이 돼요. 잔금일과 등기접수일 중 빠른 날이 기준이라고 보면 돼요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            중과가 재개되면 세율뿐 아니라 장기보유특별공제도 배제돼요. 오래 보유한 주택일수록 타격이 커요.
+            5월 9일 안에 잔금을 못 맞출 수도 있잖아요. 그래서 정부가 보완조치를 함께 발표했어요.
           </p>
 
           <Chips items={[
@@ -196,25 +202,28 @@ const data: SpokeData = {
       },
     },
 
-    /* ── SECTION 04: 보완조치 ── */
+    /* ── SECTION 04: 보완조치 ──
+     * 시각: SpokeTable + SpokeWarnBox
+     * 전환: D 화제 전환형
+     */
     {
       id: 'sec-complement',
       number: 'SECTION 04',
-      heading: '중과유예 보완조치 잔금 기한은 어떻게 되나요?',
-      subtitle: '기존 4구는 4개월, 신규 조정대상지역은 6개월',
+      heading: '양도세 중과유예 보완조치 내용은 무엇인가요?',
+      subtitle: '5월 9일 전 계약하면 잔금 기한을 추가로 받을 수 있어요',
       content: (
         <>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            정부는 중과 유예 종료와 함께 보완조치를 발표했어요. 핵심은 5월 9일 전에 매매계약만 체결하면, 잔금일이 5월 9일을 넘기더라도 일정 기간 내에 양도하면 중과를 적용하지 않겠다는 거예요.
+            정부는 중과유예 종료와 함께 보완조치를 발표했어요. 핵심은 5월 9일 전에 매매계약만 체결하면, 잔금일이 5월 9일을 넘기더라도 일정 기간 내에 양도하면 중과를 적용하지 않겠다는 거예요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            기존 조정대상지역인 <a href="/w/조정대상지역-목록-서울-경기" className="text-[#4A7AB5] underline">서울 강남구, 서초구, 송파구, 용산구</a>에 있는 주택은 5월 9일 전에 계약하고 계약일로부터 <strong>4개월 내</strong>에 잔금을 받으면 돼요. 예를 들어 4월 1일에 계약하면 8월 1일까지 잔금을 치르면 중과가 안 돼요.
+            기존 조정대상지역인 <a href="/w/조정대상지역-목록-서울-경기" className="text-[#4A7AB5] underline">서울 강남구, 서초구, 송파구, 용산구</a>에 있는 주택은 5월 9일 전에 계약하고 계약일로부터 <strong>4개월 내</strong>에 잔금을 받으면 돼요. 4월 1일에 계약하면 8월 1일까지 잔금을 치르면 중과가 안 돼요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
             2025년 10월 16일 이후 새로 지정된 조정대상지역은 2개월 더 여유가 있어요. 계약일로부터 <strong>6개월 내</strong>에 잔금을 받으면 중과가 유예돼요. 신규 지정으로 갑자기 중과 대상이 된 점을 감안한 조치예요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            다만 이 보완조치는 소득세법 시행령 개정이 필요한데, 2월 13일 입법예고를 거쳐 2월 내 공포 및 시행을 목표로 하고 있어요.
+            그런데 한 가지 주의할 게 있어요. 보완조치는 소득세법 시행령 개정이 필요한데, 2월 13일 입법예고를 거쳐 2월 내 공포 및 시행을 목표로 하고 있어요.
           </p>
 
           <SpokeTable
@@ -240,7 +249,7 @@ const data: SpokeData = {
           <SpokeLinks
             title="보완조치 관련 더 알아보기"
             items={[
-              { num: '01', heading: '양도세 잔금일 기준과 계약일 판단', desc: '잔금일이 양도일인 이유와 예외 상황', href: '/w/양도세-잔금일-기준-계약일-판단' },
+              { num: '01', heading: '양도세 잔금일 기준과 계약일 차이', desc: '잔금일이 양도일인 이유와 예외 상황', href: '/w/양도세-잔금일-기준-계약일-판단' },
               { num: '02', heading: '조정대상지역 목록 서울 경기', desc: '어떤 지역이 조정대상인지 확인', href: '/w/조정대상지역-목록-서울-경기' },
             ]}
           />
@@ -248,40 +257,43 @@ const data: SpokeData = {
       ),
       pasBridge: {
         href: '/w/다주택-매도-순서-전략-절세',
-        question: '보완조치 기한 안에 매도하려면 어떤 준비가 필요한가요?',
+        question: '보완조치 기한 안에 매도하려면 구체적으로 어떤 일정으로 움직여야 하나요?',
         answer: <>양도차익이 큰 주택부터 우선 매도하고, <strong>잔금일을 역산</strong>해서 매물 시점을 정해야 해요.</>,
         buttonText: '매도 순서 전략 보기 →',
       },
     },
 
-    /* ── SECTION 05: 대비 전략 ── */
+    /* ── SECTION 05: 잔금 기한 ──
+     * 시각: DetailBox + TipBox
+     * 전환: 없음 (마지막 → bridgeCTA)
+     */
     {
-      id: 'sec-action',
+      id: 'sec-grace',
       number: 'SECTION 05',
-      heading: '중과유예 종료 전 잔금일 기준 대비 전략은?',
-      subtitle: '지금 바로 실행할 수 있는 체크리스트예요',
+      heading: '양도세 중과유예 잔금 기한은 어떻게 되나요?',
+      subtitle: '지역별로 잔금 기한이 다르고, 기한 초과 시 즉시 중과 적용',
       content: (
         <>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            중과 유예 종료가 확정됐으니 더 이상 연장을 기대하면 안 돼요. 3주택자가 양도차익 5억 원인 주택을 파는 경우, 유예 중이면 약 1.6억 원인 세금이 중과되면 약 3.2억 원으로 <a href="/w/다주택-양도세-중과-전후-세액-비교" className="text-[#4A7AB5] underline">두 배 가까이</a> 늘어나요.
+            중과유예 잔금 기한은 지역에 따라 달라요. 기존 조정대상지역(강남/서초/송파/용산)은 <strong>계약일로부터 4개월</strong>, 나머지 신규 조정대상지역은 <strong>계약일로부터 6개월</strong>이에요. 두 경우 모두 5월 9일 이전에 계약을 체결해야 하는 건 동일해요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            지금부터 해야 할 일은 명확해요. 보유 주택 중 양도차익이 큰 주택 목록을 먼저 정리하세요. 잔금일이 기한 내에 들어오도록 매물 시점을 역산해야 해요. 매수자 찾기에 2~3개월이 걸릴 수 있으니 지금 움직여야 해요.
+            구체적으로 계산하면, 기존 4구에서 5월 9일에 계약하면 잔금 기한이 9월 8일이에요. 신규 지역이라면 11월 8일까지예요. 4월 1일에 계약했다면 기존 4구는 8월 1일, 신규 지역은 10월 1일이 잔금 기한이에요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            양도보다 증여가 유리한 주택이 있는지도 함께 검토하세요. 양도차익이 크지 않은 주택은 <a href="/w/다주택-매도-순서-전략-절세" className="text-[#4A7AB5] underline">매도 순서를 조정</a>하는 것만으로도 절세가 가능해요.
+            3주택자가 양도차익 5억 원인 주택을 파는 경우, 유예 중이면 약 1.6억 원인 세금이 중과되면 약 3.2억 원으로 <a href="/w/다주택-양도세-중과-전후-세액-비교" className="text-[#4A7AB5] underline">두 배 가까이</a> 늘어나요. 잔금 기한 하루 차이가 1.6억 원 차이인 거예요.
           </p>
           <p className="text-neutral-600 mb-4 leading-relaxed">
-            <a href="/w/중과-유예-종료-부동산-시장-전망" className="text-[#4A7AB5] underline">중과 유예 종료 후 시장 전망</a>도 함께 살펴보면 매도 타이밍을 잡는 데 도움이 돼요.
+            <a href="/w/중과-유예-종료-부동산-시장-전망" className="text-[#4A7AB5] underline">유예 종료 후 시장 전망</a>도 함께 살펴보면 매도 타이밍을 잡는 데 도움이 돼요.
           </p>
 
           <DetailBox
-            title="유예 종료 대비 체크리스트"
+            title="잔금 기한 관리 체크리스트"
             items={[
               { heading: '양도차익 큰 주택 목록 정리', desc: '취득가 대비 현재 시세를 확인해서 양도차익이 큰 순서대로 정리하세요' },
-              { heading: '잔금일 역산 후 매물 시점 결정', desc: '기존 4구는 9월 8일, 신규 지역은 11월 8일이 최종 잔금일이에요 (5.9 계약 기준)' },
+              { heading: '잔금일 역산 후 매물 시점 결정', desc: '기존 4구는 계약일+4개월, 신규 지역은 계약일+6개월이 잔금 기한이에요' },
               { heading: '매수자 확보 기간 고려', desc: '통상 2~3개월 소요, 급매 아니면 지금 바로 매물 등록이 필요해요' },
-              { heading: '양도 vs 증여 비교 검토', desc: '양도차익이 적은 주택은 증여가 유리할 수 있어요' },
+              { heading: '계약서에 잔금일 명시', desc: '잔금일을 구체적으로 적고, 변경 시 양측 합의 조항도 넣어두세요' },
             ]}
           />
 
@@ -323,7 +335,7 @@ const data: SpokeData = {
   ],
 
   relatedSpokes: [
-    { badge: '개념', title: '양도세 중과 뜻 기본세율 중과세율 비교', desc: '기본세율과 중과세율의 차이를 자세히 비교', href: '/w/양도세-중과-뜻-기본세율-중과세율-비교' },
+    { badge: '개념', title: '양도세 중과 뜻 기본세율 중과세율 차이', desc: '기본세율과 중과세율 차이를 세율표로 비교', href: '/w/양도세-중과-뜻-기본세율-중과세율-비교' },
     { badge: '시기', title: '양도세 잔금일 기준 계약일 차이', desc: '잔금일과 계약일 중 뭐가 양도일인지 확인', href: '/w/양도세-잔금일-기준-계약일-판단' },
     { badge: '전략', title: '다주택 매도 순서 전략 절세', desc: '어떤 집부터 팔아야 절세가 되는지 정리', href: '/w/다주택-매도-순서-전략-절세' },
     { badge: '전망', title: '중과 유예 종료 부동산 시장 전망', desc: '유예 종료 후 시장 영향과 대응 전략', href: '/w/중과-유예-종료-부동산-시장-전망' },
