@@ -85,7 +85,6 @@ const data: SpokeData = {
   },
 
   toc: [
-    { id: 'checker', label: '내 기초일액 확인' },
     { id: 's1', label: '실업급여 기초일액는 어떻게 계산하나요?' },
     { id: 's2', label: '실업급여 평균임금 60%는 어떻게 산정하나요?' },
     { id: 's3', label: '실업급여 상한액 하한액은 얼마인가요?' },

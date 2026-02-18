@@ -85,7 +85,6 @@ const data: SpokeData = {
   },
 
   toc: [
-    { id: 'checker', label: '내 기준기간 충족 여부 확인' },
     { id: 's1', label: '실업급여 기준기간은 무엇인가요?' },
     { id: 's2', label: '이직일 이전 18개월은 어떻게 계산하나요?' },
     { id: 's3', label: '피보험기간 180일은 어떻게 채우나요?' },
