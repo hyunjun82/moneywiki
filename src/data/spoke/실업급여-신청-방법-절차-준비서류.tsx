@@ -9,6 +9,7 @@ import {
   FormulaBox,
   WarnBox,
 } from '@/components/spoke/SpokeBlocks'
+import 신청방법Checker from '@/components/checkers/신청방법Checker'
 
 const data: SpokeData = {
   slug: '실업급여-신청-방법-절차-준비서류',
@@ -82,8 +83,8 @@ const data: SpokeData = {
       </>
     ),
     hubCTA: {
-      badge: '실업급여',
-      desc: '실업급여 수급 조건·금액·기간 전체 가이드',
+      badge: '전체 가이드',
+      desc: '실업급여 수급 조건·금액·기간 전체 안내',
     },
   },
 
@@ -96,6 +97,15 @@ const data: SpokeData = {
   ],
 
   sections: [
+    // --- CHECKER ---
+    {
+      id: 'checker',
+      number: 'CHECK',
+      heading: '지금 실업급여 신청 가능한지 확인하기',
+      subtitle: '퇴사 사유·피보험기간·신청 기한 3가지 선택하면 바로 알 수 있어요',
+      content: <신청방법Checker />,
+    },
+
     // --- SECTION 01: 신청 방법과 절차 ---
     {
       id: 's1',
