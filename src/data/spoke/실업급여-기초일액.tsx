@@ -22,7 +22,7 @@ const data: SpokeData = {
       '적용 기준',
     ],
     ogTitle: '실업급여 기초일액 평균임금 60% 계산 | 머니위키',
-    ogDescription: '기초일액 상한 68,100원·하한 66,048원 계산 기준을 확인하세요.',
+    ogDescription: '기초일액 상한 68,100원·하한 66,048원 계산 기준과 월급별 적용 사례를 정리했어요.',
   },
 
   hub: {
@@ -66,12 +66,12 @@ const data: SpokeData = {
     intro: (
       <>
         <p className="text-base text-neutral-500 leading-relaxed">
-          실업급여를 받게 됐는데 &quot;1일 얼마예요?&quot;가 궁금하셨다면 바로 여기서 확인하세요.
+          실업급여를 받게 됐는데 &quot;1일 얼마예요?&quot;가 궁금하셨다면 이 글 하나로 정리돼요.
         </p>
         <p className="text-base text-neutral-500 leading-relaxed mt-3">
           기초일액은 <strong className="text-neutral-800">퇴직 전 3개월 평균임금의 60%</strong>인데, 상한과 하한이 정해져 있어서 대부분 비슷한 금액을 받아요.
           2026년 기준 1일 최대 68,100원, 최소 66,048원이에요.
-          <a href="/w/실업급여-2026-개정-상한액-하한액-인상-변경" className="text-[#4A7AB5] underline">상한액·하한액 변경 내용</a>도 함께 확인하세요.
+          <a href="/w/실업급여-2026-개정-상한액-하한액-인상-변경" className="text-[#4A7AB5] underline">상한액·하한액 변경 내용</a>도 아래에서 바로 이어서 볼 수 있어요.
         </p>
         <p className="text-base text-neutral-500 leading-relaxed mt-3">
           계산 공식부터 월급별 적용 사례까지 순서대로 정리해드릴게요.
@@ -80,16 +80,16 @@ const data: SpokeData = {
     ),
     hubCTA: {
       badge: '전체 가이드',
-      desc: '실업급여 수급 조건·신청 방법·금액 총정리',
+      desc: '실업급여 수급 조건·신청 방법·금액 전체 안내',
     },
   },
 
   toc: [
     { id: 's1', label: '실업급여 기초일액는 어떻게 계산하나요?' },
+    { id: 'checker', label: '내 기초일액 확인' },
     { id: 's2', label: '실업급여 평균임금 60%는 어떻게 산정하나요?' },
     { id: 's3', label: '실업급여 상한액 하한액은 얼마인가요?' },
     { id: 's4', label: '실업급여 1일 지급액 적용 기준은 어떻게 되나요?' },
-    { id: 'checker', label: '내 기초일액 확인' },
     { id: 's-faq', label: '자주 묻는 질문' },
   ],
 
@@ -138,6 +138,17 @@ const data: SpokeData = {
         desc: '연봉별 예상 수령액과 총액 계산법 안내',
         icon: 'calc',
       },
+    },
+
+    // --- CHECKER ---
+    {
+      id: 'checker',
+      number: 'CHECK',
+      heading: '내 월급으로 기초일액 예상 금액 확인하기',
+      subtitle: '월급 구간을 선택하면 적용되는 기초일액을 바로 알 수 있어요',
+      content: (
+        <기초일액Checker />
+      ),
     },
 
     // --- SECTION 02: 평균임금 계산 ---
@@ -282,17 +293,6 @@ const data: SpokeData = {
         icon: 'check',
         primary: true,
       },
-    },
-
-    // --- CHECKER ---
-    {
-      id: 'checker',
-      number: 'CHECK',
-      heading: '내 월급으로 기초일액 예상 금액 확인하기',
-      subtitle: '월급 구간을 선택하면 적용되는 기초일액을 바로 알 수 있어요',
-      content: (
-        <기초일액Checker />
-      ),
     },
 
     // --- FAQ ---

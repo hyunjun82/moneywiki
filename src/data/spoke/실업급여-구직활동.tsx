@@ -87,10 +87,10 @@ const data: SpokeData = {
 
   toc: [
     { id: 's1', label: '실업급여 구직활동 인정 기준은 무엇인가요?' },
+    { id: 'checker', label: '내 차수별 구직활동 요건 확인' },
     { id: 's2', label: '실업급여 구직활동 증빙 방법은 어떻게 되나요?' },
     { id: 's3', label: '워크넷 입사지원으로 구직활동 인정받는 방법은?' },
     { id: 's4', label: '실업급여 구직활동 온라인 교육은 무엇인가요?' },
-    { id: 'checker', label: '내 차수별 구직활동 요건 확인' },
     { id: 's-faq', label: '자주 묻는 질문' },
   ],
 
@@ -168,6 +168,17 @@ const data: SpokeData = {
         desc: '온라인 실업인정 신청 절차와 출석 회차 구분',
         icon: 'grid',
       },
+    },
+
+    // --- CHECKER ---
+    {
+      id: 'checker',
+      number: 'CHECK',
+      heading: '내 차수에 맞는 구직활동 요건 확인하기',
+      subtitle: '차수를 선택하면 필요한 횟수와 증빙 방법을 바로 알 수 있어요',
+      content: (
+        <구직활동차수Checker />
+      ),
     },
 
     // --- SECTION 02: 증빙 방법 ---
@@ -323,17 +334,6 @@ const data: SpokeData = {
         icon: 'check',
         primary: true,
       },
-    },
-
-    // --- CHECKER ---
-    {
-      id: 'checker',
-      number: 'CHECK',
-      heading: '내 차수에 맞는 구직활동 요건 확인하기',
-      subtitle: '차수를 선택하면 필요한 횟수와 증빙 방법을 바로 알 수 있어요',
-      content: (
-        <구직활동차수Checker />
-      ),
     },
 
     // --- FAQ ---

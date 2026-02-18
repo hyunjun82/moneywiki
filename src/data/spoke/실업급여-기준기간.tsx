@@ -86,10 +86,10 @@ const data: SpokeData = {
 
   toc: [
     { id: 's1', label: '실업급여 기준기간은 무엇인가요?' },
+    { id: 'checker', label: '내 기준기간 충족 여부 확인' },
     { id: 's2', label: '이직일 이전 18개월은 어떻게 계산하나요?' },
     { id: 's3', label: '피보험기간 180일은 어떻게 채우나요?' },
     { id: 's4', label: '실업급여 피보험기간 합산 방법은 어떻게 되나요?' },
-    { id: 'checker', label: '내 기준기간 충족 여부 확인' },
     { id: 's-faq', label: '자주 묻는 질문' },
   ],
 
@@ -154,6 +154,17 @@ const data: SpokeData = {
         desc: '일한 날수 계산 방법과 여러 직장 합산 기준',
         icon: 'calc',
       },
+    },
+
+    // --- CHECKER ---
+    {
+      id: 'checker',
+      number: 'CHECK',
+      heading: '내 기준기간 180일 충족 여부 확인하기',
+      subtitle: '근무일수를 선택하면 수급 가능 여부를 바로 알 수 있어요',
+      content: (
+        <기준기간Checker />
+      ),
     },
 
     // --- SECTION 02: 18개월 역산 ---
@@ -316,17 +327,6 @@ const data: SpokeData = {
         icon: 'check',
         primary: true,
       },
-    },
-
-    // --- CHECKER ---
-    {
-      id: 'checker',
-      number: 'CHECK',
-      heading: '내 기준기간 180일 충족 여부 확인하기',
-      subtitle: '근무일수를 선택하면 수급 가능 여부를 바로 알 수 있어요',
-      content: (
-        <기준기간Checker />
-      ),
     },
 
     // --- FAQ ---
