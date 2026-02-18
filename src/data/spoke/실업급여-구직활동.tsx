@@ -300,6 +300,7 @@ const data: SpokeData = {
           <SpokeTable
             id="tbl-edu"
             title="1차 온라인 교육 vs 2차 이후 구직활동"
+            subtitle="차수별 실업인정 요건 비교"
             headers={['구분', '1차 실업인정', '2~4차', '5차 이후']}
             rows={[
               ['인정 방식', '온라인 교육 이수', '재취업활동 1회', '재취업활동 2회'],
