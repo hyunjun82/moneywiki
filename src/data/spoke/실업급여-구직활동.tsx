@@ -187,26 +187,26 @@ const data: SpokeData = {
 
           <RateCards cards={[
             {
-              icon: 'check',
               label: '워크넷 입사지원',
               value: '자동 연동',
+              lines: ['별도 서류 불필요', '고용24 자동 처리'],
               highlight: '가장 편리',
               highlightColor: 'navy',
             },
             {
-              icon: 'check',
               label: '연동 민간 채용사이트',
               value: '자동 처리',
+              lines: ['사람인·잡코리아 등', '연동 목록 확인 필요'],
             },
             {
-              icon: 'clock',
               label: '비연동 사이트 지원',
-              value: '화면 캡처 첨부',
+              value: '캡처 첨부',
+              lines: ['지원 완료 화면 저장', '회사명·날짜 보여야 함'],
             },
             {
-              icon: 'clock',
               label: '오프라인 면접·교육',
-              value: '확인서 발급 필요',
+              value: '확인서 필요',
+              lines: ['면접확인서·출석확인서', '증빙 발급 후 첨부'],
             },
           ]} />
 

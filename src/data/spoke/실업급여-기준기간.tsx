@@ -223,26 +223,26 @@ const data: SpokeData = {
 
           <RateCards cards={[
             {
-              icon: 'check',
               label: '정규직·계약직 (상용직)',
               value: '실 근무일 + 유급휴일',
+              lines: ['가장 일반적인 방식', '유급휴일도 포함됨'],
               highlight: '가장 일반적',
               highlightColor: 'navy',
             },
             {
-              icon: 'check',
               label: '단시간·파트타임',
-              value: '월 60시간 이상이면 포함',
+              value: '월 60시간 이상',
+              lines: ['주 15시간 이상 근무', '60시간 미만이면 제외'],
             },
             {
-              icon: 'clock',
               label: '무급 결근·무급휴직',
               value: '제외됨',
+              lines: ['피보험단위기간 불산입', '유급 기간만 인정'],
             },
             {
-              icon: 'clock',
               label: '고용보험 미가입 기간',
-              value: '전혀 포함 안 됨',
+              value: '포함 안 됨',
+              lines: ['가입 이력 없으면 0일', '고용보험 확인 필수'],
             },
           ]} />
 
