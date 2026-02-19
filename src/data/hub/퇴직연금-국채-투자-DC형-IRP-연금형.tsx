@@ -9,7 +9,7 @@ const data: HubData = {
     description: '퇴직연금으로 국채를 직접 살 수 있다는 거 아시나요? 2026년 9월부터 DC형과 IRP 계좌로 연금형 개인투자용 국채 10년물·20년물에 투자하는 방법과 참여 금융기관 9곳을 정리해드려요.',
     keywords: ['퇴직연금 국채 투자', 'DC형 IRP 국채', '연금형 개인투자용 국채', '퇴직연금 국채 2026'],
     ogTitle: '퇴직연금 국채 투자 2026 | 머니위키',
-    ogDescription: 'DC형·IRP로 국채 직접 투자, 참여기관 9곳 확인하세요',
+    ogDescription: 'DC형·IRP로 국채 직접 투자, 참여기관 9곳과 수익률을 정리했어요',
   },
 
   category: '퇴직연금/투자',
@@ -18,7 +18,7 @@ const data: HubData = {
     badge: '2026년 9월 시행 · 금융위원회',
     tags: ['퇴직연금', '국채 투자'],
     h1: (<>2026 <em>퇴직연금 국채 투자</em> DC형 IRP 핵심 정리</>),
-    subtitle: 'DC형·IRP 계좌로 개인투자용 국채에 직접 투자하는 방법을 한눈에 확인해요',
+    subtitle: 'DC형·IRP 계좌로 개인투자용 국채에 직접 투자하는 방법을 한눈에 정리했어요',
   },
 
   toc: [
@@ -68,7 +68,7 @@ const data: HubData = {
       ),
       sectionSpoke: [
         { icon: '📋', title: '연금형 개인투자용 국채 신청 방법', desc: '10년물 vs 20년물 비교와 청약 절차', href: '/w/연금형-개인투자용-국채-신청-방법-10년물-20년물' },
-        { icon: '💰', title: '개인투자용 국채 수익률 세금 혜택', desc: '복리 가산금리와 비과세 조건 확인', href: '/w/개인투자용-국채-수익률-세금-혜택-복리-비과세' },
+        { icon: '💰', title: '개인투자용 국채 수익률 세금 혜택', desc: '복리 가산금리와 비과세 조건 정리', href: '/w/개인투자용-국채-수익률-세금-혜택-복리-비과세' },
       ],
     },
 
@@ -103,7 +103,7 @@ const data: HubData = {
         href: '/w/퇴직연금-DC형-IRP-국채-투자-조건-금융기관',
         badge: '투자 조건',
         title: '내 퇴직연금 계좌로 국채를 살 수 있을까요?',
-        desc: 'DC형·IRP 가입 조건과 참여 금융기관 9곳 확인',
+        desc: 'DC형·IRP 가입 조건과 참여 금융기관 9곳 정리',
       },
     },
 
@@ -270,15 +270,15 @@ const data: HubData = {
 
   heroCTA: {
     href: '/w/퇴직연금-DC형-IRP-국채-투자-조건-금융기관',
-    question: '퇴직연금으로 국채를 직접 살 수 있나요?',
-    answer: <>2026년 9월부터 DC형·IRP 계좌로 개인투자용 국채를 <strong>직접 매수</strong>할 수 있어요.</>,
-    buttonText: '투자 조건 확인하기 →',
+    question: '퇴직연금으로 국채를 직접 살 수 있다는 거 아셨나요?',
+    answer: <>2026년 9월부터 DC형·IRP 계좌로 개인투자용 국채를 <strong>직접 매수</strong>할 수 있어요. 운용보수 없이 <strong>복리 가산금리</strong>까지 받을 수 있죠.</>,
+    buttonText: 'DC형 IRP 투자 조건 보기 →',
   },
 
   sticky: {
     label: '2026.9 시행',
     value: 'DC형·IRP 국채 투자',
-    ctaText: '참여기관 확인 →',
+    ctaText: '참여기관 보기 ↓',
     ctaTarget: '#sec-institutions',
   },
 
