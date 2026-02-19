@@ -10,7 +10,7 @@ const data: SpokeData = {
     description: '국채 20년물 연평균 수익률이 7.3%인데, 채권형 ETF는 5~6%에 그친다는 사실 아시나요? 퇴직연금 국채 ETF 비교 시 안정성과 수익률, 투자 비교 포인트까지 한번에 정리해드려요.',
     keywords: ['퇴직연금 국채 ETF 비교', '국채 안정성', '국채 수익률 ETF', '퇴직연금 투자 비교'],
     ogTitle: '퇴직연금 국채 vs ETF 비교 | 머니위키',
-    ogDescription: '안정성과 수익률, 세금 기준으로 직접 비교해 보세요.',
+    ogDescription: '안정성, 수익률, 세금까지 세 기준으로 비교 정리했어요.',
   },
 
   hub: {
@@ -40,8 +40,8 @@ const data: SpokeData = {
   stickyBar: {
     topLabel: '핵심 비교',
     value: '국채 7.3% vs ETF 5~6%',
-    buttonText: '비교표 확인 →',
-    scrollTo: '#sec-compare',
+    buttonText: 'DC형 IRP 투자 조건 →',
+    href: '/w/퇴직연금-DC형-IRP-국채-투자-조건-금융기관',
   },
 
   hero: {
@@ -56,7 +56,7 @@ const data: SpokeData = {
         퇴직연금에서 국채를 살까, 채권형 ETF를 살까 고민되시죠? 2026년 9월부터 DC형과 IRP 계좌로 국채 직접 투자가 열렸어요. 국채 20년물은 복리 가산금리 1.25%p 덕분에 연평균 7.3% 수익률을 내고, 채권형 ETF는 시장 금리를 따라가며 5~6% 수준이에요. 안정성과 수익률, 세금까지 세 가지 기준으로 비교해 볼게요.
       </p>
     ),
-    hubCTA: { badge: '전체 가이드', desc: '퇴직연금 국채 투자 조건부터 신청까지 한눈에' },
+    hubCTA: { badge: '국채 투자 제도 보기', desc: 'DC형 IRP 조건, 가산금리, 참여기관까지 정리돼 있어요' },
   },
 
   toc: [
@@ -111,14 +111,14 @@ const data: SpokeData = {
         </>
       ),
       pasBridge: {
-        href: '/w/퇴직연금-DC형-IRP-국채-투자-조건-금융기관',
-        question: '국채의 안정성은 구체적으로 어느 정도인가요?',
+        href: '/w/개인투자용-국채-수익률-세금-혜택-복리-비과세',
+        question: '국채 20년물은 만기 수익이 147%나 된다는 거 아셨나요?',
         answer: (
           <>
-            국채는 정부 발행 채권이라 <strong>신용등급 AAA</strong>예요. 원금을 못 돌려받을 가능성이 사실상 0%에 가까워요.
+            분리과세 <strong>15.4%</strong>만 내면 돼요. 종합소득세에 합산 안 되니 고소득자일수록 절세 효과가 <strong>22%p 이상</strong> 벌어져요.
           </>
         ),
-        buttonText: '안정성 비교 자세히 →',
+        buttonText: '국채 세후 수익률 계산 →',
       },
     },
 
@@ -163,14 +163,14 @@ const data: SpokeData = {
         </>
       ),
       pasBridge: {
-        href: '/w/개인투자용-국채-수익률-세금-혜택-복리-비과세',
-        question: '안전한 건 알겠는데, 수익률은 어떤 차이가 나나요?',
+        href: '/w/퇴직연금-DC형-IRP-국채-투자-조건-금융기관',
+        question: 'DC형이나 IRP 계좌로 이 국채를 바로 살 수 있을까요?',
         answer: (
           <>
-            국채 20년물은 연평균 <strong>7.3%</strong>, 채권형 ETF는 <strong>5~6%</strong>예요. 복리 가산금리가 핵심 차이예요.
+            2026년 9월부터 전용계좌 없이 기존 <strong>DC형·IRP 계좌</strong>에서 직접 청약이 가능해요. 참여 금융기관은 총 <strong>9곳</strong>이에요.
           </>
         ),
-        buttonText: '수익률 비교 보기 →',
+        buttonText: 'DC형 IRP 투자 조건 보기 →',
       },
     },
 
@@ -231,13 +231,13 @@ const data: SpokeData = {
       ),
       pasBridge: {
         href: '/w/연금형-개인투자용-국채-신청-방법-10년물-20년물',
-        question: '그럼 결국 어떤 상황에서 국채를 골라야 할까요?',
+        question: '국채가 유리한 건 알겠는데, 실제로 어떻게 신청하는지 막막하시나요?',
         answer: (
           <>
-            <strong>10년 이상 장기 투자 여력</strong>이 있고, 원금 손실을 절대 원하지 않는 분이라면 국채가 확실히 유리해요.
+            참여 금융기관에서 전용계좌를 개설하고 매월 청약하면 돼요. <strong>300만원까지 우선 배정</strong>, 모바일 비대면으로 가능해요.
           </>
         ),
-        buttonText: '선택 기준 확인 →',
+        buttonText: '국채 청약 신청 절차 →',
       },
     },
 
@@ -282,11 +282,11 @@ const data: SpokeData = {
         </>
       ),
       bridgeCTA: {
-        href: '/w/연금형-개인투자용-국채-신청-방법-10년물-20년물',
-        badge: '신청 방법',
-        title: '국채 투자를 결정했다면 어떻게 신청하나요?',
-        desc: '전용계좌 개설부터 청약 절차까지 확인',
-        icon: 'check',
+        href: '/w/퇴직연금-국채-투자-DC형-IRP-연금형',
+        badge: '전체',
+        title: '퇴직연금 국채 투자, 전체 흐름 한눈에',
+        desc: '투자 조건, 수익률, 금융기관까지 정리',
+        icon: 'grid',
       },
     },
 

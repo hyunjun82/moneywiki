@@ -22,7 +22,7 @@ const data: SpokeData = {
       '국채 신청 방법',
     ],
     ogTitle: '연금형 개인투자용 국채 신청 방법 | 머니위키',
-    ogDescription: '10년물 vs 20년물 비교부터 신청 절차까지 확인해 보세요.',
+    ogDescription: '10년물 vs 20년물 가산금리 차이부터 청약 절차까지 정리돼 있어요.',
   },
 
   hub: {
@@ -63,10 +63,10 @@ const data: SpokeData = {
   },
 
   stickyBar: {
-    topLabel: '신청 방법',
-    value: '전용계좌 개설 → 청약',
-    buttonText: '신청 절차 보기 →',
-    scrollTo: '#sec-how',
+    topLabel: '만기 수익률',
+    value: '10년물 54% · 20년물 147%',
+    buttonText: '복리 수익률 계산 →',
+    href: '/w/개인투자용-국채-수익률-세금-혜택-복리-비과세',
   },
 
   hero: {
@@ -84,8 +84,8 @@ const data: SpokeData = {
       </p>
     ),
     hubCTA: {
-      badge: '전체 가이드',
-      desc: '퇴직연금 국채 투자 조건부터 수익률까지 한눈에',
+      badge: '국채 투자 조건 비교',
+      desc: 'DC형 IRP 투자 조건, 참여 금융기관 9곳, 수익률까지 정리돼 있어요',
     },
     quickAnswer: {
       title: '연금형 개인투자용 국채 신청 방법',
@@ -181,14 +181,13 @@ const data: SpokeData = {
       ),
       pasBridge: {
         href: '/w/개인투자용-국채-수익률-세금-혜택-복리-비과세',
-        question: '10년물과 20년물 중 뭘 골라야 할까요?',
+        question: '만기 보유하면 10년물은 54%, 20년물은 147% 수익이라는 거 아셨나요?',
         answer: (
           <>
-            만기가 길수록 <strong>가산금리</strong>가 높아서 수익률이 좋아요.
-            하지만 20년은 환금성 제약이 크니 여유자금 규모를 먼저 따져봐야 해요.
+            가산금리가 <strong>복리로</strong> 붙어서 만기가 길수록 수익 차이가 크게 벌어져요. 표면금리 외에 10년물 <strong>1.0%p</strong>, 20년물 <strong>1.25%p</strong>가 추가돼요.
           </>
         ),
-        buttonText: '만기별 차이 비교 →',
+        buttonText: '국채 복리 수익률 계산 →',
       },
     },
 
@@ -249,14 +248,13 @@ const data: SpokeData = {
       ),
       pasBridge: {
         href: '/w/퇴직연금-DC형-IRP-국채-투자-조건-금융기관',
-        question: '신청할 때 서류는 뭐가 필요한가요?',
+        question: 'DC형이나 IRP 계좌가 있으면 전용계좌 없이도 국채를 살 수 있을까요?',
         answer: (
           <>
-            전용계좌 개설 시 신분증과 계좌정보만 있으면 돼요.{' '}
-            <strong>모바일 비대면 개설</strong>이 가능해서 은행에 안 가도 돼요.
+            2026년 9월부터 기존 <strong>DC형·IRP 계좌</strong>에서 바로 청약할 수 있어요. 참여 금융기관은 증권 7곳 + 은행 2곳, 총 <strong>9곳</strong>이에요.
           </>
         ),
-        buttonText: '필요 서류 확인 →',
+        buttonText: 'DC형 IRP 투자 조건 보기 →',
       },
     },
 
@@ -301,14 +299,13 @@ const data: SpokeData = {
       ),
       pasBridge: {
         href: '/w/퇴직연금-국채-vs-ETF-비교-안정성-수익률',
-        question: '청약 후 배정은 어떤 방식인가요?',
+        question: '국채는 안전한데 수익률도 ETF만큼 나올까 걱정되시나요?',
         answer: (
           <>
-            청약 총액이 발행 한도 이내면 <strong>전액 배정</strong>이에요. 초과
-            시 300만원까지 우선 배정하고, 나머지는 비례 배정 방식이에요.
+            20년물 만기 보유 시 <strong>연 7.3%</strong> 수익률이에요. ETF는 시장 변동에 따라 원금 손실이 있지만, 국채는 <strong>원금이 보장</strong>돼요.
           </>
         ),
-        buttonText: '배정 절차 보기 →',
+        buttonText: '국채 vs ETF 비교 →',
       },
     },
 
@@ -373,11 +370,11 @@ const data: SpokeData = {
         </>
       ),
       bridgeCTA: {
-        href: '/w/개인투자용-국채-수익률-세금-혜택-복리-비과세',
-        badge: '수익률 계산',
-        title: '내 투자금으로 실수령액이 얼마나 될까?',
-        desc: '복리 가산금리와 분리과세까지 반영한 수익률 확인',
-        icon: 'calc',
+        href: '/w/퇴직연금-국채-투자-DC형-IRP-연금형',
+        badge: '전체',
+        title: '투자 조건부터 수익률까지 한눈에 비교',
+        desc: 'DC형 IRP 국채 투자의 핵심을 정리한 허브',
+        icon: 'grid',
       },
     },
 
