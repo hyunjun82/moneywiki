@@ -179,9 +179,10 @@ const data: SpokeData = {
           </p>
 
           <SpokeCompareCards
-            items={[
+            cards={[
               {
                 title: 'IRP 계좌',
+                subtitle: '개인형 퇴직연금',
                 items: [
                   '10년물·20년물 투자 가능',
                   '세액공제 혜택 있음 (최대 900만원)',
@@ -191,6 +192,7 @@ const data: SpokeData = {
               },
               {
                 title: '전용계좌',
+                subtitle: '개인투자용 국채 전용',
                 items: [
                   '3·5·10·20년물 전부 투자 가능',
                   '분리과세 (14% 단일세율)',
