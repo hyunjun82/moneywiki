@@ -4,7 +4,7 @@ import { useState } from 'react'
 import type { TOCItem } from '@/data/spoke/types'
 
 export default function SpokeTOCInline({ items }: { items: TOCItem[] }) {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
 
   if (!items || items.length === 0) return null
 

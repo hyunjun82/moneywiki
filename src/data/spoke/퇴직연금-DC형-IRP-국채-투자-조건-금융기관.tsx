@@ -9,10 +9,10 @@ const data: SpokeData = {
   slug: '퇴직연금-DC형-IRP-국채-투자-조건-금융기관',
 
   meta: {
-    title: '퇴직연금 DC형 IRP 국채 투자 조건 | 참여 금융기관 목록',
+    title: '퇴직연금 DC형 IRP 국채 투자 조건 | 국채 청약 가능 증권사 은행 9곳',
     description: 'DC형이나 IRP 계좌로 국채 투자를 하고 싶은데 가입 조건이 뭔지 헷갈리시죠? 2026년 9월부터 참여 금융기관 9곳에서 10년물·20년물 국채를 전용계좌 없이 기존 퇴직연금으로 바로 청약할 수 있는 조건을 알려드려요.',
     keywords: ['퇴직연금 DC형 국채 조건', 'IRP 국채 투자 조건', '국채 참여 금융기관', '퇴직연금 국채 가입'],
-    ogTitle: '퇴직연금 DC형 IRP 국채 투자 조건 | 머니위키',
+    ogTitle: '퇴직연금 DC형 IRP 국채 투자 조건 | 국채 청약 가능 증권사 은행 9곳',
     ogDescription: 'DC형·IRP 국채 투자 조건과 참여 금융기관 9곳을 한눈에 정리했어요.',
   },
 
@@ -51,7 +51,7 @@ const data: SpokeData = {
     badge: '2026년 9월 시행',
     h1: (
       <>
-        퇴직연금 <span className="text-[#1E3A5F]">DC형 IRP</span> 국채 투자 조건 | 참여 금융기관 목록
+        퇴직연금 <span className="text-[#1E3A5F]">DC형 IRP</span> 국채 투자 조건 | 국채 청약 가능 증권사 은행 9곳
       </>
     ),
     intro: (
@@ -95,7 +95,7 @@ const data: SpokeData = {
             만기까지 보유하면 표면금리에 가산금리 1.0~1.25%p가 <strong>복리로</strong> 붙어요. 20년물 기준 실질 수익률이 연 5~7%대까지 올라가요.
           </>
         ),
-        buttonText: '국채 수익률 계산해 보기 →',
+        buttonText: '10년물 20년물 수익률 비교 →',
       },
     },
 
@@ -153,7 +153,7 @@ const data: SpokeData = {
             네, DC형과 동일하게 가능해요. IRP는 <strong>개인형 퇴직연금</strong>이라서 회사를 옮기거나 자영업자도 활용할 수 있어요.
           </>
         ),
-        buttonText: 'IRP 투자 조건 비교 →',
+        buttonText: 'IRP 국채 가입 조건 →',
       },
     },
 
@@ -218,7 +218,7 @@ const data: SpokeData = {
             KB증권, 미래에셋증권, 삼성증권 등 <strong>주요 증권사 7곳</strong>이 모두 포함돼 있어요. 은행은 NH농협과 신한은행이에요.
           </>
         ),
-        buttonText: '금융기관 9곳 전체 목록 →',
+        buttonText: '증권사 은행 9곳 목록 →',
       },
     },
 
@@ -284,7 +284,7 @@ const data: SpokeData = {
             DC형·IRP 계좌가 있다면 <strong>청약 기간에 모바일로 만기와 금액만 입력</strong>하면 끝이에요. 300만원까지 우선 배정돼요.
           </>
         ),
-        buttonText: '청약 절차 7단계 보기 →',
+        buttonText: '국채 청약 신청 방법 →',
       },
     },
 
