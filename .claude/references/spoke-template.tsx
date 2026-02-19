@@ -473,7 +473,12 @@ const data: SpokeData = {
   // summary3: [<>요약 1</>, <>요약 2</>, <>요약 3</>],
   // sourceBar: { badge: '출처', name: '기관명 + 근거', date: '2026.01' },
   // prevNext: { prev: { title: '이전 글', href: '/w/...' }, next: { title: '다음 글', href: '/w/...' } },
-  // stickyBar: { topLabel: '라벨', value: '값', buttonText: '버튼', scrollTo: '#id' },
+  // ── stickyBar (하단 고정 바) ──
+  // ✅ href (다른 페이지 이동) — 대부분 이걸 사용!
+  // stickyBar: { topLabel: '라벨', value: '핵심 수치', buttonText: '자연스러운 CTA →', href: '/w/관련-스포크-슬러그' },
+  // ⚠️ scrollTo (같은 페이지 앵커) — 체커/계산기 등 같은 페이지 내 이동이 반드시 필요할 때만
+  // stickyBar: { topLabel: '라벨', value: '값', buttonText: '바로 계산 →', scrollTo: '#checker' },
+  // ※ 기본값은 href! scrollTo는 예외적으로만 사용. 같은 페이지 섹션은 TOC가 이미 처리함.
 }
 
 export default data

@@ -43,8 +43,8 @@ const data: SpokeData = {
   stickyBar: {
     topLabel: '참여 금융기관',
     value: '증권 7곳 + 은행 2곳',
-    buttonText: '금융기관 목록 →',
-    scrollTo: '#sec-where',
+    buttonText: '국채 참여 금융기관 9곳 →',
+    href: '/w/퇴직연금-국채-투자-DC형-IRP-연금형',
   },
 
   hero: {
