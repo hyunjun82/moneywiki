@@ -161,7 +161,7 @@
  *   SpokeLinks     — 관련 글 카드 리스트
  *   Steps          — 순서 절차 표시
  *   SpokeTimeline  — 타임라인 (month 필드, status 필드)
- *   SpokeStepCards — 카드형 절차
+ *   SpokeStepCards — 카드형 절차 (steps prop, step 필드 없음)
  *   SpokeCompareCards — 비교 카드 (cards prop, subtitle 필수)
  *   SpokeRateBars  — 비율 바
  *   SpokeFlow      — 플로우 차트 (sub 필드)
@@ -198,6 +198,7 @@
  * | pasBridge.buttonText "자세히 보기" | → 구체적 내용 + → |
  * | hubCTA.desc "확인하세요" | → "정리돼요" / "볼 수 있어요" |
  * | SpokeCompareCards `items` | → `cards` prop. `subtitle` 필수 |
+ * | SpokeStepCards `items` | → `steps` prop. `step` 필드 없음 |
  */
 
 import type { SpokeData } from '@/data/spoke/types'
@@ -339,7 +340,7 @@ const data: SpokeData = {
            * <Chips items={[{ icon: '✅', label: '항목', value: '값', href: '#id' }]} />
            * <Steps items={[{ title: '단계', desc: '설명' }]} />
            * <SpokeTimeline items={[{ month: '3월', title: '제목', desc: '설명' }]} />
-           * <SpokeStepCards items={[{ step: '01', title: '제목', desc: '설명' }]} />
+           * <SpokeStepCards steps={[{ title: '제목', desc: '설명', tip: '선택 팁' }]} />
            * <SpokeCompareCards cards={[{ title: 'A', subtitle: '부제', items: ['특징1'] }, { title: 'B', subtitle: '부제', items: ['특징1'] }]} />
            * <SpokeRateBars items={[{ label: '항목', rate: 70, desc: '설명' }]} />
            * <SpokeFlow items={[{ title: '단계', sub: '설명' }]} />
