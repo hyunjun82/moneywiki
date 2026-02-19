@@ -89,13 +89,13 @@ const data: SpokeData = {
       ),
       pasBridge: {
         href: '/w/개인투자용-국채-수익률-세금-혜택-복리-비과세',
-        question: '퇴직연금 국채 수익률이 최대 7%대라는 거 아셨나요?',
+        question: '퇴직연금으로 국채 사면 수익률이 얼마나 될까요? 20년물은 연 7%대까지 가능해요.',
         answer: (
           <>
-            만기까지 보유하면 표면금리에 가산금리 1.0~1.25%p가 <strong>복리로</strong> 붙어요. 20년물 기준 실질 수익률이 연 5~7%대까지 올라가요.
+            만기 보유 시 표면금리에 가산금리 <strong>1.25%p가 복리로</strong> 붙어요. 20년물 기준 실질 수익률이 <strong>연 5~7%대</strong>까지 올라가요.
           </>
         ),
-        buttonText: '국채 수익률 세금 혜택 상세 기준 →',
+        buttonText: '국채 복리 수익률 계산 →',
       },
     },
 
@@ -147,13 +147,13 @@ const data: SpokeData = {
       ),
       pasBridge: {
         href: '/w/연금형-개인투자용-국채-신청-방법-10년물-20년물',
-        question: 'IRP 계좌로도 국채를 살 수 있을까요?',
+        question: 'IRP 계좌로도 전용계좌 없이 국채를 살 수 있다는 거 아시나요?',
         answer: (
           <>
-            네, DC형과 동일하게 가능해요. IRP는 <strong>개인형 퇴직연금</strong>이라서 회사를 옮기거나 자영업자도 활용할 수 있어요.
+            DC형과 동일하게 IRP에서도 <strong>10년물·20년물</strong> 국채를 바로 청약할 수 있어요. 매월 <strong>300만원까지 우선 배정</strong>돼요.
           </>
         ),
-        buttonText: '국채 신청 방법 상세 절차 →',
+        buttonText: '국채 청약 신청 절차 →',
       },
     },
 
@@ -212,13 +212,13 @@ const data: SpokeData = {
       ),
       pasBridge: {
         href: '/w/퇴직연금-국채-vs-ETF-비교-안정성-수익률',
-        question: '내 증권사가 9곳에 포함 안 되면 어쩌나 걱정되시죠?',
+        question: '국채가 좋다는데, ETF랑 비교하면 어느 쪽이 유리할까요?',
         answer: (
           <>
-            KB증권, 미래에셋증권, 삼성증권 등 <strong>주요 증권사 7곳</strong>이 모두 포함돼 있어요. 은행은 NH농협과 신한은행이에요.
+            국채는 <strong>원금 보장 + 복리 가산금리</strong>, ETF는 중도 매도가 자유로워요. 투자 성향에 따라 유리한 쪽이 달라요.
           </>
         ),
-        buttonText: '국채 ETF 비교 상세 분석 →',
+        buttonText: '국채 ETF 수익률 비교 →',
       },
     },
 
@@ -278,13 +278,13 @@ const data: SpokeData = {
       ),
       pasBridge: {
         href: '/w/퇴직연금-국채-투자-DC형-IRP-연금형',
-        question: '기존 계좌에서 별도 서류 없이 바로 된다는 거 아시나요?',
+        question: '9곳 금융기관에서 별도 서류 없이 바로 청약된다는 거 아시나요?',
         answer: (
           <>
-            DC형·IRP 계좌가 있다면 <strong>청약 기간에 모바일로 만기와 금액만 입력</strong>하면 끝이에요. 300만원까지 우선 배정돼요.
+            DC형·IRP 계좌가 있다면 청약 기간에 <strong>모바일로 만기와 금액만 입력</strong>하면 끝이에요. <strong>300만원까지 우선 배정</strong>돼요.
           </>
         ),
-        buttonText: '퇴직연금 국채 투자 전체 정리 →',
+        buttonText: '퇴직연금 국채 투자 조건 정리 →',
       },
     },
 
