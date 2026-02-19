@@ -59,7 +59,7 @@ const data: SpokeData = {
         퇴직연금이 쌓여가는데 주식은 무섭고 예금은 아쉬우셨죠. 2026년 9월부터 DC형이나 IRP 계좌로 국채를 직접 살 수 있어요. 국가가 보증하는 안정성에 만기 보유 시 연 5~7%대 수익률까지 가능하거든요. 참여 금융기관 9곳과 투자 조건을 차례대로 정리해 볼게요.
       </p>
     ),
-    hubCTA: { badge: '퇴직연금 국채 조건 수익률 비교', desc: 'DC형 IRP 계좌 국채 투자 조건부터 수익률까지 정리돼 있어요' },
+    hubCTA: { badge: '퇴직연금 국채 투자 상세 조건', desc: 'DC형 IRP 계좌 국채 투자 조건부터 수익률까지 정리돼 있어요' },
   },
 
   toc: [
@@ -95,7 +95,7 @@ const data: SpokeData = {
             만기까지 보유하면 표면금리에 가산금리 1.0~1.25%p가 <strong>복리로</strong> 붙어요. 20년물 기준 실질 수익률이 연 5~7%대까지 올라가요.
           </>
         ),
-        buttonText: '국채 복리 수익률 상세 비교 →',
+        buttonText: '국채 수익률 세금 혜택 상세 기준 →',
       },
     },
 
@@ -153,7 +153,7 @@ const data: SpokeData = {
             네, DC형과 동일하게 가능해요. IRP는 <strong>개인형 퇴직연금</strong>이라서 회사를 옮기거나 자영업자도 활용할 수 있어요.
           </>
         ),
-        buttonText: 'IRP 국채 청약 상세 절차 →',
+        buttonText: '국채 신청 방법 상세 절차 →',
       },
     },
 
@@ -218,7 +218,7 @@ const data: SpokeData = {
             KB증권, 미래에셋증권, 삼성증권 등 <strong>주요 증권사 7곳</strong>이 모두 포함돼 있어요. 은행은 NH농협과 신한은행이에요.
           </>
         ),
-        buttonText: '국채 ETF 수익률 안정성 비교 →',
+        buttonText: '국채 ETF 비교 상세 분석 →',
       },
     },
 
@@ -284,7 +284,7 @@ const data: SpokeData = {
             DC형·IRP 계좌가 있다면 <strong>청약 기간에 모바일로 만기와 금액만 입력</strong>하면 끝이에요. 300만원까지 우선 배정돼요.
           </>
         ),
-        buttonText: 'DC형 IRP 국채 투자 제도 정리 →',
+        buttonText: '퇴직연금 국채 투자 전체 정리 →',
       },
     },
 
