@@ -63,8 +63,44 @@ relatedDocs:
     url: "/w/퇴직금-계산법"
   - title: "퇴직금 지급 청구 방법"
     url: "/w/퇴직금-지급-청구-방법"
+checker:
+  title: "체커 제목 (예: 내 퇴직금 지연이자 체커)"
+  subtitle: "부제목 — 선택 후 결과 안내"
+  intro: "체커 상단 안내 문구. 어떤 항목을 고르면 되는지 1~2문장."
+  groups:
+    - key: "상황키"
+      label: "독자에게 물어볼 질문"
+      options:
+        - value: "값1"
+          text: "선택지 텍스트"
+        - value: "값2"
+          text: "선택지 텍스트"
+  results:
+    - when:
+        상황키: "값1"
+      pass: true
+      headline: "결과 제목"
+      detail: "결과 설명 2~3문장. 구어체."
+      badges: ["뱃지1", "뱃지2"]
+      links:
+        - icon: "📋"
+          title: "링크 제목"
+          desc: "링크 설명"
+          href: "#앵커-또는-슬러그"
+  default:
+    pass: false
+    headline: "선택해 주세요"
+    detail: "항목을 선택하면 결과를 알려드려요."
+    badges: []
+    links: []
 ---
 ```
+
+> ★ **체커 배치 규칙 (절대 고정!)**
+> - 체커는 렌더링 시 ctaCard 바로 다음, **소제목1(첫 H2) 바로 앞**에 자동 삽입됨
+> - 모든 글에 체커 필수 (주제에 맞는 판단/분류 체커 설계)
+> - frontmatter 안에서의 위치 = `relatedDocs:` 다음에 배치
+> - 체커를 빠뜨리면 체류 시간 확보 실패 → 반드시 포함
 
 ---
 
@@ -184,6 +220,78 @@ ctaCard:
 
 한 가지 더 알아두실 게 있어요. 퇴직금에는 3년 소멸시효가 있지만, 지연이자는 퇴직금을 받은 시점부터 별도로 3년이 적용돼요.
 회사와 합의서를 쓸 때도 [지연이자](/w/퇴직금-지연이자-받기) 포기 조항이 있는지 꼭 확인하세요.
+```
+
+---
+
+## bridge-card (★★★ 본문에 반드시 2개 필수!)
+
+> ★ **bridge-card 규칙 (절대 고정!)**
+> - 모든 글에 bridge-card **2개 필수** (1개만 있으면 탈락)
+> - 위치: 본문 H2 섹션 사이 또는 마지막 H2 뒤, ext-btn 바로 앞
+> - 연결 대상: 서로 다른 내부 슬러그 (`/w/슬러그`)
+> - bridge-card 2개가 같은 슬러그 금지
+
+```html
+<a href="/w/관련-슬러그" class="bridge-card">
+  <p class="bridge-headline">독자의 다음 궁금증을 질문형으로 (구체적 상황)</p>
+  <p class="bridge-body">
+    핵심 정보 1~2문장. 구체적 숫자나 사실 포함.
+    <strong>핵심 강조 텍스트</strong>는 bold 처리.
+  </p>
+  <span class="bridge-btn">도착 페이지 주제 짧고 명확하게 →</span>
+</a>
+```
+
+bridge-card 2개 예시:
+```html
+<!-- bridge-card 1: H2 중간 또는 H2-4 후 -->
+<a href="/w/실업급여-소정급여일수" class="bridge-card">
+  <p class="bridge-headline">내 소정급여일수가 몇 일인지 아직 모르세요?</p>
+  <p class="bridge-body">
+    기초일액이 같아도 소정급여일수에 따라 총 수령액이 크게 달라져요.
+    나이와 피보험기간에 따라 <strong>120~270일</strong> 범위에서 결정돼요.
+  </p>
+  <span class="bridge-btn">소정급여일수 기준 보기 →</span>
+</a>
+
+<!-- bridge-card 2: bridge-card 1 바로 아래, ext-btn 바로 앞 -->
+<a href="/w/실업급여-상한액" class="bridge-card">
+  <p class="bridge-headline">2026년 상한액이 6년 만에 바뀐 거 아셨나요?</p>
+  <p class="bridge-body">
+    2026년 실업급여 상한액이 <strong>68,100원</strong>으로 인상됐어요.
+    월 최대 수령액이 얼마인지 정리했어요.
+  </p>
+  <span class="bridge-btn">2026년 상한액 변경 내용 보기 →</span>
+</a>
+```
+
+bridge-card buttonText 규칙:
+```
+GOOD: "소정급여일수 기준 보기 →"  ← 도착 페이지 주제 명확
+GOOD: "기초일액 계산 기준 보기 →"
+BAD:  "자세히 보기 →"
+BAD:  "전체 가이드 →"
+BAD:  "바로가기 →"
+```
+
+---
+
+## 테이블 (★★ 본문에 반드시 1개 이상 필수!)
+
+> ★ **테이블 규칙 (절대 고정!)**
+> - 모든 글에 테이블 **최소 1개 필수**
+> - H4 제목(`####`) + 마크다운 테이블 세트로 작성
+> - 전체 글에서 테이블 최대 2개 (3개 이상 금지 → 텍스트로 풀기)
+> - 텍스트 설명 먼저, 테이블은 정리용으로 뒤에
+
+```markdown
+#### 테이블 제목 (상황 설명 포함)
+
+| 구분 | 내용1 | 내용2 |
+|------|------|------|
+| 항목1 | 값 | 설명 |
+| 항목2 | 값 | 설명 |
 ```
 
 ---

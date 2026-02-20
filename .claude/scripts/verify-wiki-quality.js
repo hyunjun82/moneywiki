@@ -495,7 +495,7 @@ function printResults(result, filePath) {
 
     console.error('────────────────────────────────────────────────────────────');
     console.error('📌 참고:');
-    console.error('   - .claude/references/moneywiki-template3358.md (템플릿 최신)');
+    console.error('   - .claude/references/moneywiki-template-v2.md (템플릿 최신)');
     console.error('   - .claude/references/critical-facts.json (수치 정확성)');
     console.error('────────────────────────────────────────────────────────────');
     console.error('');
