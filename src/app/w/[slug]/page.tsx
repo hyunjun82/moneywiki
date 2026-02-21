@@ -552,6 +552,27 @@ export default async function WikiPage({ params }: PageProps) {
             <h1 className="text-3xl sm:text-4xl font-bold mb-4">{doc.title}</h1>
           </header>
 
+          {/* 서론 (첫 번째 H2 전까지) - 제목 바로 아래 */}
+          {introHtml && (
+            <article
+              className="prose prose-neutral max-w-none
+                prose-p:leading-[1.9] prose-p:text-[#404040] prose-strong:text-[#1a1a1a]
+                prose-a:text-[#1E3A5F] prose-a:no-underline hover:prose-a:underline"
+              dangerouslySetInnerHTML={{ __html: introHtml }}
+            />
+          )}
+
+          {/* CTA 카드 - 서론 아래 행동 유도 (계산기 페이지에서는 숨김) */}
+          {doc.schemaType !== "calculator" && doc.ctaCard && (
+            <CtaCard
+              label={doc.ctaCard.label}
+              mainText={doc.ctaCard.mainText}
+              subText={doc.ctaCard.subText}
+              url={doc.ctaCard.url}
+              external={doc.ctaCard.external}
+            />
+          )}
+
           {/* 계산기 컴포넌트 - 동적 로딩 (코드 스플리팅) */}
           <CalculatorLoader slug={slug} />
 
@@ -663,27 +684,6 @@ export default async function WikiPage({ params }: PageProps) {
           <div className="mb-8">
             <AdSense slot={AD_SLOTS.HORIZONTAL} className="w-full" />
           </div>
-
-          {/* 서론 (첫 번째 H2 전까지) */}
-          {introHtml && (
-            <article
-              className="prose prose-neutral max-w-none
-                prose-p:leading-[1.9] prose-p:text-[#404040] prose-strong:text-[#1a1a1a]
-                prose-a:text-[#1E3A5F] prose-a:no-underline hover:prose-a:underline"
-              dangerouslySetInnerHTML={{ __html: introHtml }}
-            />
-          )}
-
-          {/* CTA 카드 - 서론 아래 행동 유도 (계산기 페이지에서는 숨김) */}
-          {doc.schemaType !== "calculator" && doc.ctaCard && (
-            <CtaCard
-              label={doc.ctaCard.label}
-              mainText={doc.ctaCard.mainText}
-              subText={doc.ctaCard.subText}
-              url={doc.ctaCard.url}
-              external={doc.ctaCard.external}
-            />
-          )}
 
           {/* 본문 (H2 섹션들) */}
           <article
