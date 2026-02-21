@@ -76,7 +76,12 @@ DaumWebMasterTool:8f277e6a15ecca107afcea48a37bb3aa62fde6892c1349fc8bd43ce576745c
   // === 404 리다이렉트 처리 ===
 
   // 1단계: 정적 리다이렉트 (로마자, 중첩경로, 카테고리)
-  const decodedPathname = decodeURIComponent(pathname);
+  let decodedPathname: string;
+  try {
+    decodedPathname = decodeURIComponent(pathname);
+  } catch {
+    decodedPathname = pathname;
+  }
   const staticTarget = staticRedirects[decodedPathname] || staticRedirects[pathname];
   if (staticTarget) {
     return NextResponse.redirect(new URL(staticTarget, request.url), 301);

@@ -139,6 +139,8 @@ export interface WikiDocument {
     featureList?: string[];
     [key: string]: unknown;
   };
+  // 프론트매터 체커
+  checker?: FrontmatterCheckerConfig;
   // Event 스키마 (신청 기간)
   event?: {
     name: string;
@@ -154,6 +156,54 @@ export interface WikiDocument {
     url: string;
     position: number;
   }>;
+}
+
+// 프론트매터 체커 타입 (YAML 직렬화 가능)
+export interface FrontmatterCheckerOption {
+  value: string;
+  text: string;
+}
+
+export interface FrontmatterCheckerGroup {
+  key: string;
+  label: string;
+  options: FrontmatterCheckerOption[];
+}
+
+export interface FrontmatterCheckerLink {
+  icon: string;
+  title: string;
+  desc: string;
+  href: string;
+}
+
+export interface FrontmatterCheckerResult {
+  when: Record<string, string>;
+  pass: boolean;
+  headline: string;
+  detail: string;
+  amount?: {
+    value: string;
+    unit: string;
+    formula?: string;
+  };
+  badges: string[];
+  links: FrontmatterCheckerLink[];
+}
+
+export interface FrontmatterCheckerConfig {
+  title: string;
+  subtitle: string;
+  intro: string;
+  groups: FrontmatterCheckerGroup[];
+  results: FrontmatterCheckerResult[];
+  default: {
+    pass: boolean;
+    headline: string;
+    detail: string;
+    badges: string[];
+    links: FrontmatterCheckerLink[];
+  };
 }
 
 // 모든 위키 문서 목록 가져오기
@@ -273,6 +323,8 @@ export async function getWikiDocument(
     chartConfig: data.chartConfig,
     // OG 썸네일 이미지
     thumbnail: data.thumbnail,
+    // 프론트매터 체커
+    checker: data.checker,
   };
 }
 

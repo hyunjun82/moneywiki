@@ -76,7 +76,7 @@ scripts/롱테일-122-131-수정본v2.csv
 
 - **용도**: 일반 위키 글, 계산기 페이지, 양식 페이지
 - **파일 위치**: `content/wiki/[슬러그].md`
-- **템플릿**: `.claude/references/moneywiki-template3358.md`
+- **템플릿**: `.claude/references/moneywiki-template-v2.md`
 - **배포**: `git add content/wiki/[파일명].md && git commit && git push`
 
 ### B. TSX 스포크/허브 글 (src/data/spoke/*.tsx, src/data/hub/*.tsx)
@@ -95,7 +95,7 @@ scripts/롱테일-122-131-수정본v2.csv
 
 ### 1단계: 템플릿 읽기
 ```
-Read(".claude/references/moneywiki-template3358.md")
+Read(".claude/references/moneywiki-template-v2.md")
 ```
 
 ### 2단계: 정보 확인 (WebFetch 우선!)
@@ -120,26 +120,11 @@ git add content/wiki/[파일명].md && git commit -m "feat: [제목]" && git pus
 
 ---
 
-## TSX 스포크/허브 작성 단계
+## (TSX 스포크/허브 — 사용 중단, 기존 글만 유지)
 
-### 1단계: 템플릿 읽기
-```
-스포크: Read(".claude/references/spoke-template.md") + Read(".claude/references/spoke-rules.md")
-허브:   Read(".claude/references/hub-template.md") + Read(".claude/references/hub-rules.md")
-체커:   Read(".claude/references/checker-patterns.md")
-```
-
-### 2단계: 정보 확인 (위키 MD와 동일)
-
-### 3단계: 글 작성
-- spoke-rules.md / hub-rules.md 규칙 준수
-- 컴포넌트 API는 spoke-template.md가 유일한 정답
-
-### 4단계: 등록 + 배포
-```bash
-# registry.ts에 import + 등록 추가 후
-git add src/data/spoke/ && git commit -m "feat: [제목]" && git push
-```
+> TSX 신규 작성 중단. 새 글은 전부 위키 MD로 작성.
+> 기존 TSX 스포크/허브는 라이브 유지 (삭제하지 않음).
+> TSX 참조파일은 `.claude/backup-legacy-agents/`로 이동됨.
 
 ---
 
@@ -394,22 +379,15 @@ GOOD: "개인파산 면책까지 하면 추가 비용 있나요?"
 ### 위키 MD 전용
 | 파일 | 용도 |
 |------|------|
-| `.claude/references/moneywiki-template3358.md` | 위키 MD 템플릿 (서론/본문/시각요소/출처/ctaCard/ext-btn) |
+| `.claude/references/moneywiki-template-v2.md` | 위키 MD 템플릿 (서론/본문/시각요소/출처/ctaCard/ext-btn) |
 
-### TSX 스포크/허브 전용
+### 기타
 | 파일 | 용도 |
 |------|------|
-| `.claude/references/spoke-template.md` | 스포크 컴포넌트 API (11개 컴포넌트 props, 금지 패턴) |
-| `.claude/references/spoke-rules.md` | 스포크 작성 규칙 (도입부, 문체, 전환, bridgeCTA, FAQ) |
-| `.claude/references/hub-template.md` | 허브 템플릿 (spokeGrid, sections 구조) |
-| `.claude/references/hub-rules.md` | 허브 작성 규칙 (10개 규칙 + 체크리스트) |
-| `.claude/references/checker-patterns.md` | 체커 5가지 유형 (A~E) + RSC-Safe 패턴 |
+| `.claude/references/form-template.md` | 계산기/양식 페이지 템플릿 |
+| `.claude/commands/keywords.md` | `/keywords` 슬래시 명령어 (키워드 생성 + 중복 체크) |
 
-### 공통
-| 파일 | 용도 |
-|------|------|
-| `.claude/references/writing-rules.md` | SEO 메타 + 스키마 규칙 (title/description/JSON-LD) |
-| `.claude/commands/keywords.md` | `/keywords` 슬래시 명령어 (키워드 생성 + 중복 체크 + 비주얼 프리셋) |
+> TSX 참조파일(spoke-template, hub-template 등)은 `.claude/backup-legacy-agents/`로 이동됨
 
 ---
 
@@ -423,7 +401,7 @@ GOOD: "개인파산 면책까지 하면 추가 비용 있나요?"
 
 ```
 1. /keywords [시드키워드] → 키워드 10개 생성
-2. 각 키워드별 글 작성 (위키 MD 또는 TSX 스포크)
+2. 각 키워드별 위키 MD 작성 (checker frontmatter 필수)
 3. 훅이 자동 검증 (통과해야 저장됨)
 4. 10개 완료 후 중간 빌드 체크
 5. 다음 10개

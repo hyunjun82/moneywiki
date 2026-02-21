@@ -7,7 +7,7 @@
  * 2. PostToolUse: 파일 경로에서 직접 읽음 → 검증 → 실패 시 삭제!
  *
  * 검증 항목:
- * - 타이틀: 콜론(:) 금지, 32자 이내
+ * - 타이틀: 콜론(:) 금지, 60자 이내
  * - Keywords: 정확히 4개
  * - 내부링크: 3개 이상
  * - ctaCard: frontmatter 필수 (label, mainText, subText, url)
@@ -52,9 +52,9 @@ function validateWikiContent(content, filePath) {
       errors.push(`타이틀에 콜론(:) 사용 금지: "${title}" → 콜론 없이 작성`);
     }
 
-    // 타이틀 32자 이내
-    if (title.length > 32) {
-      errors.push(`타이틀 32자 초과: ${title.length}자 "${title}"`);
+    // 타이틀 60자 이내 (CLAUDE.md 기준)
+    if (title.length > 60) {
+      errors.push(`타이틀 60자 초과: ${title.length}자 "${title}"`);
     }
 
     // "~란 무엇인가요?", "3단계", "및" 금지 패턴
@@ -120,6 +120,11 @@ function validateWikiContent(content, filePath) {
 
   // keywords를 외부에서도 사용 가능하게 저장
   const parsedKeywords = keywords;
+
+  // 2-0. checker frontmatter 필수 검증
+  if (!frontmatter.includes('checker:')) {
+    errors.push('checker 필드 없음 (모든 MD 글에 checker frontmatter 필수)');
+  }
 
   // ========================================
   // 2-1. 타이틀+키워드+소제목 완벽 일치 검증 (핵심 규칙!)
@@ -240,11 +245,11 @@ function validateWikiContent(content, filePath) {
         errors.push(`H2 중복 표현: "${h2Text}" → "방법"이 있으면 "뭔가요?" 사용 ("어떻게" 금지)`);
       }
 
-      // 베이스 키워드 포함 확인 (parsedKeywords 사용)
+      // 베이스 키워드 포함 확인 (주제어 = k1의 첫 단어만 체크)
       if (parsedKeywords.length > 0 && h2Text !== '출처' && h2Text !== '관련 문서') {
-        const baseKeyword = parsedKeywords[0];
-        if (!h2Text.includes(baseKeyword)) {
-          warnings.push(`소제목 "${h2Text}"에 베이스 키워드 "${baseKeyword}" 없음`);
+        const baseWord = parsedKeywords[0].split(/\s+/)[0]; // "실업급여 비과세" → "실업급여"
+        if (!h2Text.includes(baseWord)) {
+          warnings.push(`소제목 "${h2Text}"에 주제어 "${baseWord}" 없음`);
         }
       }
     });

@@ -109,20 +109,21 @@ export default function GenericChecker({ config }: { config: CheckerConfig }) {
               </>
             )}
 
-            {/* ── 결과 링크 ── */}
+            {/* ── 결과 링크 (전체 영역 클릭 가능) ── */}
             {result.links.length > 0 && (
               <div className={`mt-3 pt-3 border-t ${result.pass ? 'border-[#1E3A5F]/[0.08]' : 'border-red-500/[0.08]'}`}>
-                <div className="text-[12px] font-bold text-neutral-800 mb-[6px]">
-                  {result.pass ? '해당 가이드 — 다음 단계로 넘어가세요' : '다른 방법을 확인해 보세요'}
-                </div>
                 {result.links.map((sp, i) => (
                   <Link
                     key={i}
                     href={sp.href}
-                    className="flex items-center justify-between py-2 text-[13px] text-[#1E3A5F] font-semibold no-underline border-b border-[#1E3A5F]/[0.06] last:border-b-0 hover:text-[#4A7AB5]"
+                    className="flex items-center gap-3 p-3 -mx-1 rounded-lg text-[#1E3A5F] no-underline hover:bg-[#1E3A5F]/[0.05] transition-colors"
                   >
-                    <span>{sp.icon} {sp.title}</span>
-                    <span className="text-[11px] text-neutral-400">&rarr;</span>
+                    <span className="text-lg shrink-0">{sp.icon}</span>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-[13.5px] font-bold">{sp.title}</div>
+                      <div className="text-[12px] text-neutral-500">{sp.desc}</div>
+                    </div>
+                    <span className="text-[13px] text-neutral-400 shrink-0">&rsaquo;</span>
                   </Link>
                 ))}
               </div>

@@ -20,6 +20,7 @@ import ShareButtons from "@/components/ShareButtons";
 import CtaCard from "@/components/CtaCard";
 // 계산기 컴포넌트는 클라이언트 래퍼에서 동적 로딩
 import CalculatorLoader from "@/components/CalculatorLoader";
+import FrontmatterChecker from "@/components/FrontmatterChecker";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -363,13 +364,8 @@ export default async function WikiPage({ params }: PageProps) {
         <div class="space-y-4">
           ${doc.faq.map((item: { question: string; answer: string }, index: number) => `
             <details class="group bg-white rounded-xl border border-neutral-200 overflow-hidden">
-              <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-neutral-50 transition-colors">
-                <span class="font-medium text-neutral-800 pr-4">${item.question}</span>
-                <span class="text-neutral-400 group-open:rotate-180 transition-transform">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </span>
+              <summary>
+                <span>${item.question}</span>
               </summary>
               <div class="px-5 pb-5 text-neutral-600 leading-relaxed border-t border-neutral-100 pt-4">
                 ${item.answer}
@@ -606,6 +602,13 @@ export default async function WikiPage({ params }: PageProps) {
             </div>
           )}
 
+          {/* 프론트매터 체커 (3줄 요약 바로 아래) */}
+          {doc.checker && (
+            <div className="mb-8">
+              <FrontmatterChecker data={doc.checker} />
+            </div>
+          )}
+
           {/* 썸네일 이미지 */}
           {doc.thumbnail && (
             <div className="mb-8">
@@ -666,7 +669,7 @@ export default async function WikiPage({ params }: PageProps) {
           {introHtml && (
             <article
               className="prose prose-neutral max-w-none
-                prose-p:leading-7
+                prose-p:leading-[1.9] prose-p:text-[#404040] prose-strong:text-[#1a1a1a]
                 prose-a:text-[#1E3A5F] prose-a:no-underline hover:prose-a:underline"
               dangerouslySetInnerHTML={{ __html: introHtml }}
             />
@@ -686,18 +689,16 @@ export default async function WikiPage({ params }: PageProps) {
           {/* 본문 (H2 섹션들) */}
           <article
             className="prose prose-neutral max-w-none
-              prose-headings:font-semibold prose-headings:scroll-mt-20
-              prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h2:pb-2 prose-h2:border-b prose-h2:border-neutral-200
-              prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
-              prose-p:leading-7
+              prose-headings:font-bold prose-headings:scroll-mt-20
+              prose-h2:text-[1.45rem] prose-h2:text-[#1E3A5F] prose-h2:mt-16 prose-h2:mb-6 prose-h2:pb-3 prose-h2:border-b-2 prose-h2:border-[#1E3A5F]/20
+              prose-h3:text-[1.15rem] prose-h3:text-[#1E3A5F] prose-h3:mt-10 prose-h3:mb-4
+              prose-p:leading-[1.9] prose-p:text-[#404040]
+              prose-strong:text-[#1a1a1a]
               prose-a:text-[#1E3A5F] prose-a:no-underline hover:prose-a:underline
               prose-code:bg-neutral-100 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
               prose-pre:bg-neutral-100 prose-pre:text-neutral-800 prose-pre:border prose-pre:border-neutral-200
-              prose-table:border prose-table:border-neutral-200
-              prose-th:bg-neutral-50 prose-th:p-3 prose-th:text-left
-              prose-td:p-3 prose-td:border-t prose-td:border-neutral-200
-              prose-li:my-1
-              prose-blockquote:border-l-[#2B5280] prose-blockquote:bg-[#F5F8FB] prose-blockquote:py-1"
+              prose-li:my-1.5 prose-li:leading-[1.8]
+              prose-blockquote:border-l-[3px] prose-blockquote:border-l-[#1E3A5F] prose-blockquote:bg-[#F5F8FB] prose-blockquote:py-3 prose-blockquote:px-5 prose-blockquote:rounded-r-lg prose-blockquote:not-italic"
             dangerouslySetInnerHTML={{ __html: bodyHtml }}
           />
 

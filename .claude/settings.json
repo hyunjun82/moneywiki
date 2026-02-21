@@ -5,18 +5,14 @@
       "Bash(git push:*)",
       "Bash(git commit:*)",
       "WebFetch(domain:taxly.kr)",
-      "Write(/src/data/spoke/**)",
-      "Write(/src/data/hub/**)",
-      "Write(/src/components/checkers/**)",
-      "Edit(/src/data/spoke/**)",
-      "Edit(/src/data/hub/**)",
-      "Edit(/src/components/checkers/**)",
+      "Write(content/wiki/**)",
+      "Edit(content/wiki/**)",
       "WebSearch",
       "WebFetch"
     ],
     "deny": [
-      "Write(/.claude/**)",
-      "Edit(/.claude/**)"
+      "Write(/.claude/settings.json)",
+      "Edit(/.claude/settings.json)"
     ]
   },
   "hooks": {
@@ -26,9 +22,9 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node .claude/hooks/verify-spoke-quality.js",
+            "command": "node .claude/scripts/verify-wiki-quality.js",
             "timeout": 30,
-            "statusMessage": "스포크/허브 품질 검증 중..."
+            "statusMessage": "위키 MD 품질 검증 중..."
           }
         ]
       }

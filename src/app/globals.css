@@ -701,24 +701,43 @@ article > *,
   box-sizing: border-box;
 }
 
-/* 테이블 반응형 */
+/* 테이블 — 네이버 블로그 스타일 (꽉 참, 컴팩트) */
 article table,
 .prose table {
-  display: block;
-  max-width: 100%;
-  overflow-x: auto;
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e5e5e5;
+  margin: 1.2em 0;
 }
 
-/* 머니위키 테이블 헤더 스타일 */
+/* 반응형 스크롤 래퍼 (모바일 대응) */
+article .table-wrap,
+.prose .table-wrap {
+  overflow-x: auto;
+  margin: 1.2em 0;
+}
+
+/* 테이블 헤더 */
 article table thead th,
 .prose table thead th {
   background: linear-gradient(135deg, #1E3A5F 0%, #2B5280 100%);
   color: #ffffff;
   font-weight: 600;
-  padding: 10px 14px;
-  font-size: 0.9rem;
+  padding: 10px 16px;
+  font-size: 0.88rem;
+  text-align: center;
   white-space: nowrap;
   border: none;
+  border-right: 1px solid rgba(255,255,255,0.15);
+}
+
+article table thead th:last-child,
+.prose table thead th:last-child {
+  border-right: none;
 }
 
 article table thead th:first-child,
@@ -731,11 +750,20 @@ article table thead th:last-child,
   border-radius: 0 8px 0 0;
 }
 
+/* 테이블 셀 */
 article table tbody td,
 .prose table tbody td {
-  padding: 10px 14px;
+  padding: 9px 16px;
   border-bottom: 1px solid var(--gray-200);
-  font-size: 0.9rem;
+  border-right: 1px solid var(--gray-100);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #404040;
+}
+
+article table tbody td:last-child,
+.prose table tbody td:last-child {
+  border-right: none;
 }
 
 article table tbody tr:hover,
@@ -748,11 +776,50 @@ article table tbody tr:last-child td,
   border-bottom: none;
 }
 
-/* blockquote 오버플로우 방지 */
+/* 가독성 개선 — 문단 간격 확대 (네이버 블로그 수준) */
+article p,
+.prose p {
+  margin-bottom: 1.6em;    /* 약 26px — 기존 prose 기본(~20px)보다 넓게 */
+}
+
+/* 본문 색상 — 빡빡함 완화 */
+article,
+.prose {
+  color: #505050;
+}
+
+/* blockquote — 깔끔한 인용 스타일 */
 article blockquote,
 .prose blockquote {
   max-width: 100%;
   overflow-wrap: break-word;
+  font-style: normal;
+  color: #333;
+}
+
+article blockquote p,
+.prose blockquote p {
+  margin-bottom: 0.5em;
+}
+
+article blockquote p:last-child,
+.prose blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* 리스트 — 간격 넉넉하게 */
+article ul,
+article ol,
+.prose ul,
+.prose ol {
+  padding-left: 1.5em;
+}
+
+/* strong 텍스트 */
+article strong,
+.prose strong {
+  color: #1a1a1a;
+  font-weight: 700;
 }
 
 /* ============================================
@@ -771,4 +838,236 @@ article blockquote,
 
 .animate-yellow-blink {
   animation: yellowBlink 2s ease-in-out infinite;
+}
+
+/* ============================================
+   위키 MD 프리미엄 컴포넌트
+   아코디언 · 브릿지카드 · 사례박스 · 콜아웃
+   ============================================ */
+
+/* --- 아코디언 (details/summary) --- */
+article details,
+.prose details {
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+
+article details[open],
+.prose details[open] {
+  border-color: #CBD5E1;
+}
+
+article details summary,
+.prose details summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  cursor: pointer;
+  background: #ffffff;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #1E293B;
+  font-weight: 500;
+  list-style: none;
+  transition: background 0.15s ease;
+}
+
+article details summary:hover,
+.prose details summary:hover {
+  background: #F8FAFC;
+}
+
+article details summary::-webkit-details-marker,
+.prose details summary::-webkit-details-marker {
+  display: none;
+}
+
+article details summary::after,
+.prose details summary::after {
+  content: '';
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-left: 12px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center/contain no-repeat;
+  transition: transform 0.2s ease;
+}
+
+article details[open] summary,
+.prose details[open] summary {
+  background: #ffffff;
+  color: #1E3A5F;
+  font-weight: 600;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+article details[open] summary::after,
+.prose details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+article details > :not(summary),
+.prose details > :not(summary) {
+  padding: 0 20px;
+}
+
+article details > div,
+.prose details > div {
+  padding: 16px 20px;
+  color: #475569;
+  font-size: 14.5px;
+  line-height: 1.75;
+}
+
+/* --- 형광펜 (mark 태그 — 중요부분만 선택적 사용) --- */
+article mark,
+.prose mark {
+  background: linear-gradient(transparent 55%, #FFF3B0 55%);
+  padding: 0 2px;
+  color: inherit;
+}
+
+/* --- 브릿지 카드 (전체 클릭 가능) --- */
+a.bridge-card,
+.bridge-card {
+  display: block;
+  background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
+  border: 1px solid #DBEAFE;
+  border-left: 4px solid #1E3A5F;
+  border-radius: 12px;
+  padding: 28px 28px 24px;
+  margin: 36px 0;
+  position: relative;
+  text-decoration: none !important;
+  color: inherit;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+a.bridge-card:hover {
+  box-shadow: 0 4px 16px rgba(30, 58, 95, 0.12);
+  border-color: #93C5FD;
+}
+
+.bridge-headline {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1E3A5F;
+  line-height: 1.6;
+  margin: 0 0 12px 0;
+}
+
+.bridge-body {
+  font-size: 14.5px;
+  color: #475569;
+  line-height: 1.75;
+  margin: 0 0 20px 0;
+}
+
+.bridge-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #1E3A5F 0%, #2B5280 100%);
+  color: #ffffff !important;
+  font-size: 14.5px;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 10px;
+  text-decoration: none !important;
+  letter-spacing: -0.2px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+a.bridge-card:hover .bridge-btn {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(30, 58, 95, 0.25);
+}
+
+/* --- 블록인용 강조 박스 (3줄 요약, 콜아웃, 사례) --- */
+article blockquote,
+.prose blockquote {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-left: 4px solid #1E3A5F;
+  border-radius: 0 12px 12px 0;
+  padding: 20px 24px;
+  margin: 24px 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+article blockquote p,
+.prose blockquote p {
+  color: #334155;
+  font-size: 15px;
+  line-height: 1.75;
+  margin: 8px 0;
+}
+
+article blockquote p:first-child,
+.prose blockquote p:first-child {
+  margin-top: 0;
+}
+
+article blockquote p:last-child,
+.prose blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+article blockquote strong,
+.prose blockquote strong {
+  color: #1E3A5F;
+}
+
+/* --- 독자 인용문 (이탤릭 em) --- */
+article > p > em:only-child,
+.prose > p > em:only-child {
+  display: block;
+  font-size: 16px;
+  color: #64748B;
+  line-height: 1.7;
+  padding: 16px 0 16px 20px;
+  border-left: 3px solid #CBD5E1;
+  margin: 24px 0;
+  font-style: italic;
+}
+
+/* --- 모바일 반응형 --- */
+@media (max-width: 640px) {
+  article details summary,
+  .prose details summary {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+  article details > :not(summary),
+  .prose details > :not(summary) {
+    padding: 0 16px;
+  }
+
+  .bridge-card {
+    padding: 20px 18px 18px;
+    margin: 28px 0;
+  }
+
+  .bridge-headline {
+    font-size: 15.5px;
+  }
+
+  .bridge-body {
+    font-size: 13.5px;
+  }
+
+  .bridge-btn {
+    font-size: 13.5px;
+    padding: 11px 22px;
+  }
+
+  article blockquote,
+  .prose blockquote {
+    padding: 16px 18px;
+  }
 }
