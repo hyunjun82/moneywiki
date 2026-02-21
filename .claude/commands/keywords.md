@@ -92,6 +92,35 @@ C. 완전 신규 → 채택
 - 최소 3단어, 권장 4~5단어 롱테일
 - 정보형 2개 이하 + 행동형 2개 이상
 
+### Step 3-1: contentType 자동 분류 (필수!)
+
+각 키워드의 검색 의도를 분석해서 4가지 콘텐츠 타입 중 하나를 배정.
+이 타입에 따라 `/write`에서 다른 템플릿을 적용함.
+
+```
+감지 우선순위 (먼저 매칭이 승):
+
+1. comparison → title/H2에 "차이|비교|vs|다른점|어디가|어떤 게"
+2. calculation → keywords에 "계산|얼마|금액|세율|상한|하한|수령액|공제|환급"
+3. procedure  → keywords에 "방법|절차|신청|순서|하는법|발급|등록|신고"
+4. condition  → 위 어디에도 안 걸림 (default)
+
+혼합 패턴:
+- "실업급여 수급조건 + 계산" → calculation (숫자가 핵심)
+- "건강보험 피부양자 탈락 조건" → condition
+- "실업급여 신청 방법" → procedure
+- "DSR DTI 차이" → comparison
+```
+
+CSV 출력 시 `contentType` 컬럼 맨 끝에 추가:
+```
+번호,카테고리,...,상태,파일타입,contentType
+41,실업급여,...,리라이트,wiki-md,procedure
+42,실업급여,...,리라이트,wiki-md,calculation
+```
+
+---
+
 ### Step 4: 2x2 vs 1x4 판단
 ```
 2x2: 동사 2개가 완전히 다른 행위 (신고 ≠ 납부)
@@ -134,6 +163,7 @@ keyword 4: [4~5단어] → [의도] → ## [질문형 H2]
 description: 100~150자 구어체 2문장
 category: [카테고리]
 상태: 신규 | 리라이트(기존URL) | 차별화(유사글)
+contentType: calculation | condition | procedure | comparison
 검색 출처: [PAA/네이버/다음/easylaw 등]
 visuals:
   S1: [시각A] + [시각B]

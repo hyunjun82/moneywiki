@@ -93,10 +93,15 @@ scripts/롱테일-122-131-수정본v2.csv
 
 ## 위키 MD 글 작성 단계
 
-### 1단계: 템플릿 읽기
+### 1단계: 3-Layer 템플릿 읽기
 ```
-Read(".claude/references/moneywiki-template-v2.md")
+Read(".claude/references/base.md")            ← 불변 구조
+contentType 결정 (CSV 또는 keywords 패턴)
+Read(".claude/references/type-{타입}.md")     ← 타입별 조리법
+Read(".claude/references/style-guide.md")     ← 문체/톤
 ```
+
+contentType 4가지: `calculation` | `condition` | `procedure` | `comparison`
 
 ### 2단계: 정보 확인 (WebFetch 우선!)
 ```
@@ -107,11 +112,12 @@ Read(".claude/references/moneywiki-template-v2.md")
 3. 블로그/개인사이트/위키백과 절대 금지
 ```
 
-### 3단계: 글 작성
+### 3단계: 글 작성 (base + type + style 결합)
 - 구어체 (~이에요, ~해요)
 - 20~80대 누구나 이해
 - H2에 베이스 키워드 포함
 - H2 4개 = keywords 4개 (질문형)
+- **type별 구조 차이**: 계산형(시뮬3인), 조건형(사례중심), 절차형(단계별), 비교형(비교표)
 
 ### 4단계: 배포
 ```bash
@@ -376,16 +382,24 @@ GOOD: "개인파산 면책까지 하면 추가 비용 있나요?"
 
 ## 참조 파일 목록
 
-### 위키 MD 전용
-| 파일 | 용도 |
-|------|------|
-| `.claude/references/moneywiki-template-v2.md` | 위키 MD 템플릿 (서론/본문/시각요소/출처/ctaCard/ext-btn) |
+### 3-Layer 템플릿 시스템
+| 파일 | Layer | 용도 |
+|------|-------|------|
+| `.claude/references/base.md` | 1 (불변) | Frontmatter 스키마, H2 규칙, 금지 사항, 5원칙 |
+| `.claude/references/type-calculation.md` | 2 (계산형) | 시뮬레이션, 테이블 3~4개, ext-btn 필수 |
+| `.claude/references/type-condition.md` | 2 (조건형) | 자격 판정, 사례 중심, 선택 분기 |
+| `.claude/references/type-procedure.md` | 2 (절차형) | 단계별 번호, 서류 테이블, ext-btn 필수 |
+| `.claude/references/type-comparison.md` | 2 (비교형) | 비교 테이블, side-by-side, 선택 가이드 |
+| `.claude/references/style-guide.md` | 3 (문체) | 구어체, 전환 표현, Anti-AI 패턴, mark |
+
+글 작성 시: `base.md + type-{타입}.md + style-guide.md` = ~250줄 (기존 604줄 → 41%)
 
 ### 기타
 | 파일 | 용도 |
 |------|------|
 | `.claude/references/form-template.md` | 계산기/양식 페이지 템플릿 |
-| `.claude/commands/keywords.md` | `/keywords` 슬래시 명령어 (키워드 생성 + 중복 체크) |
+| `.claude/commands/keywords.md` | `/keywords` 슬래시 명령어 (키워드 생성 + contentType 분류) |
+| `.claude/references/moneywiki-template-v2.md` | 기존 모놀리식 템플릿 (참고용, 사용하지 않음) |
 
 > TSX 참조파일(spoke-template, hub-template 등)은 `.claude/backup-legacy-agents/`로 이동됨
 
