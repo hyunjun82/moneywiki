@@ -550,7 +550,6 @@ export default async function WikiPage({ params }: PageProps) {
               <ShareButtons title={doc.title} url={url} description={doc.description} />
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold mb-4">{doc.title}</h1>
-            <p className="text-neutral-600 text-lg">{doc.description}</p>
           </header>
 
           {/* 계산기 컴포넌트 - 동적 로딩 (코드 스플리팅) */}
