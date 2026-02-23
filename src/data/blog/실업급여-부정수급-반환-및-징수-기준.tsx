@@ -197,7 +197,7 @@ export default function Article() {
 
       <P>전액 반환은 기본이고, 여기에 추가 징수가 더해져요. 추가 징수 배율은 부정수급 횟수에 따라 달라지는데, <A href="https://easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=5&cciNo=2&cnpClsNo=2">찾기쉬운 생활법령정보</A>에서 정리한 기준은 이래요.</P>
 
-      <TableTitle>횟수별 추가 징수 배율</TableTitle>
+      <TableTitle>실업급여 부정수급 횟수별 추가 징수 배율</TableTitle>
       <div style={{ overflowX: "auto" }}>
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
           <thead>
@@ -241,7 +241,7 @@ export default function Article() {
 
       <P>사업주 공모 부정수급의 추가 징수 배율은 횟수에 따라 300%에서 <B>최대 500%(5배)</B>까지 올라가요. 받은 급여가 300만원이라면 추가 징수 최대 1,500만원, 반환까지 합치면 총 1,800만원이에요.</P>
 
-      <TableTitle>사업주 공모 시 추가 징수 배율</TableTitle>
+      <TableTitle>실업급여 부정수급 사업주 공모 추가 징수 배율 (최대 5배)</TableTitle>
       <div style={{ overflowX: "auto" }}>
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
           <thead>
