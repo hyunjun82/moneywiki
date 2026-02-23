@@ -18,6 +18,11 @@ import {
   FAQAccordion,
   RelatedArticles,
   PrevNext,
+  Divider,
+  TableTitle,
+  TableNote,
+  TH,
+  THL,
 } from "@/components/wiki/BlogShared";
 
 type Sel = { reason?: string; period?: string };
@@ -209,6 +214,7 @@ export default function Article65() {
         </div>
       </div>
 
+      <Divider />
       <Sec id="h2-1" question="실업급여 수급유예는 무엇인가요?">
         <P>
           <B>수급유예는 실업급여 수급기간을 일시적으로 멈추는 제도예요.</B> 구직활동이 불가능한
@@ -231,6 +237,7 @@ export default function Article65() {
         </P>
       </Sec>
 
+      <Divider />
       <Sec id="h2-2" question="실업급여 수급유예 신청은 어떻게 하나요?">
         <P>
           <A href="https://www.ei.go.kr">고용24</A>에서 온라인으로 신청하거나 관할 고용센터에
@@ -252,7 +259,31 @@ export default function Article65() {
         </P>
       </Sec>
 
+      <Divider />
       <Sec id="h2-3" question="실업급여 수급유예 질병 출산 조건은 뭐예요?">
+        <TableTitle>수급유예 인정 사유별 조건</TableTitle>
+        <div style={{ overflowX: "auto" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+            <thead>
+              <tr><THL>사유</THL><TH>인정 기준</TH><TH>필요 서류</TH></tr>
+            </thead>
+            <tbody>
+              {[
+                ["질병·부상", "30일 이상 구직 불가", "의사 진단서"],
+                ["출산", "출산 전후 기간 자동 인정", "출생증명서"],
+                ["3세 이하 육아", "직접 양육 (어린이집 미이용)", "가족관계증명서"],
+                ["배우자 동반 출국", "배우자 해외 파견", "파견발령서"],
+              ].map((row, ri) => (
+                <tr key={ri}>
+                  {row.map((cell, ci) => (
+                    <td key={ci} style={{ padding: "8px", textAlign: ci === 0 ? "left" : "center", borderBottom: `1px solid ${C.line}`, color: ci === 0 ? C.t1 : C.t2, fontWeight: ci === 0 ? 600 : 400 }}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <TableNote>※ 여러 사유가 겹치면 각 사유 기간을 합산해 연장 가능</TableNote>
         <P>
           수급유예 사유는{" "}
           <A href="https://www.law.go.kr/법령/고용보험법">고용보험법 시행령</A>에서 구체적으로
@@ -279,6 +310,7 @@ export default function Article65() {
         </P>
       </Sec>
 
+      <Divider />
       <Sec id="h2-4" question="실업급여 수급유예 최대 4년 연장은 어떻게 계산하나요?">
         <P>
           수급유예 기간은 원래 수급기간(12개월)에 더해지는 방식이에요. <B>최대 연장 기간은 원래

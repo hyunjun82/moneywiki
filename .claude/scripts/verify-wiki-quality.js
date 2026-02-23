@@ -18,6 +18,79 @@
 const fs = require('fs');
 const path = require('path');
 
+// ============================================
+// TSX 블로그 검증 함수
+// ============================================
+function validateTsxBlog(content, filePath) {
+  const errors = [];
+  const warnings = [];
+
+  // 1. 체커: C.navy 인라인 스타일 체커 존재
+  if (!content.includes('C.navy') || !content.includes('<Btn ')) {
+    errors.push('체커 누락: C.navy + Btn 인라인 스타일 체커 필수');
+  }
+
+  // 2. CSS 클래스 체커 금지 패턴
+  if (content.includes('checker-wrap') || content.includes('ck-header') || content.includes('ck-opt') || content.includes('ck-res')) {
+    errors.push('금지 패턴: CSS 클래스 체커(checker-wrap/ck-*) 사용 금지 → 인라인 스타일 필수');
+  }
+
+  // 3. 테이블 1개 이상
+  const hasTable = content.includes('<table') || content.includes('<TH') || content.includes('<THL');
+  if (!hasTable) {
+    errors.push('테이블 없음: 최소 1개 테이블(table/TH/THL) 필수');
+  }
+
+  // 4. Info 컴포넌트 1개 이상
+  if (!content.includes('<Info')) {
+    errors.push('Info 컴포넌트 없음: 최소 1개 필수 (팁/주의사항)');
+  }
+
+  // 5. ExtBtn 존재
+  if (!content.includes('<ExtBtn')) {
+    errors.push('ExtBtn 없음: 정부 사이트 바로가기 버튼 필수');
+  }
+
+  // 6. FAQAccordion 존재
+  if (!content.includes('<FAQAccordion')) {
+    errors.push('FAQAccordion 없음: FAQ 섹션 필수');
+  }
+
+  // 7. Sec 개수 (4개 이상)
+  const secCount = (content.match(/<Sec /g) || []).length;
+  if (secCount < 4) {
+    errors.push(`Sec 컴포넌트 ${secCount}개 (최소 4개 필수 — 키워드 4개 = Sec 4개)`);
+  }
+
+  // 8. BridgeCard 또는 SpokeLink 존재 (내부 링크 연결)
+  if (!content.includes('<BridgeCard') && !content.includes('<SpokeLink')) {
+    warnings.push('BridgeCard/SpokeLink 없음 (내부 링크 연결 권장)');
+  }
+
+  // 9. Divider 존재 (섹션 구분선)
+  if (!content.includes('<Divider')) {
+    warnings.push('Divider 없음 (섹션 구분선 권장)');
+  }
+
+  // 10. Summary3 존재
+  if (!content.includes('<Summary3')) {
+    errors.push('Summary3 없음: 3줄 요약 필수');
+  }
+
+  // 11. TOC 존재
+  if (!content.includes('<TOC')) {
+    errors.push('TOC 없음: 목차 필수');
+  }
+
+  return {
+    valid: errors.length === 0,
+    criticalErrors: [],
+    structuralErrors: errors,
+    warnings,
+    skip: false,
+  };
+}
+
 // 검증 함수 (content와 filePath를 받아서 검증)
 function validateWikiContent(content, filePath) {
   const errors = [];
@@ -26,8 +99,15 @@ function validateWikiContent(content, filePath) {
   // CRLF → LF 정규화 (Windows git checkout 대응)
   content = content.replace(/\r\n/g, '\n');
 
-  // wiki 파일만 검증
+  // 파일 타입 분기
   const normalizedPath = filePath.replace(/\\/g, '/');
+
+  // TSX 블로그 파일이면 TSX 전용 검증
+  if (normalizedPath.includes('src/data/blog/') && normalizedPath.endsWith('.tsx')) {
+    return validateTsxBlog(content, filePath);
+  }
+
+  // MD wiki 파일만 검증
   if (!normalizedPath.includes('content/wiki/') || !normalizedPath.endsWith('.md')) {
     return { valid: true, errors: [], warnings: [], skip: true };
   }
@@ -179,9 +259,9 @@ function validateWikiContent(content, filePath) {
           // 접두사 단어는 스킵
           if (prefixWords.has(noun)) continue;
 
-          // 핵심 단어에만 매칭
+          // 핵심 단어에만 매칭 (정확 일치만, 복합어 내부 형태소 매칭 방지)
           for (const coreWord of coreWords) {
-            if (coreWord.includes(noun)) {
+            if (coreWord === noun) {
               foundGroups.add(groupIdx);
             }
           }
@@ -245,11 +325,12 @@ function validateWikiContent(content, filePath) {
         errors.push(`H2 중복 표현: "${h2Text}" → "방법"이 있으면 "뭔가요?" 사용 ("어떻게" 금지)`);
       }
 
-      // 베이스 키워드 포함 확인 (주제어 = k1의 첫 단어만 체크)
+      // 베이스 키워드 전체 포함 확인 (k1의 모든 단어가 H2에 있어야 함)
       if (parsedKeywords.length > 0 && h2Text !== '출처' && h2Text !== '관련 문서') {
-        const baseWord = parsedKeywords[0].split(/\s+/)[0]; // "실업급여 비과세" → "실업급여"
-        if (!h2Text.includes(baseWord)) {
-          warnings.push(`소제목 "${h2Text}"에 주제어 "${baseWord}" 없음`);
+        const baseWords = parsedKeywords[0].split(/\s+/).filter(w => w.length > 1);
+        const missingBaseWords = baseWords.filter(w => !h2Text.includes(w));
+        if (missingBaseWords.length > 0) {
+          errors.push(`H2에 베이스 키워드 누락: "${h2Text}" → "${parsedKeywords[0]}" 중 "${missingBaseWords.join(', ')}" 없음`);
         }
       }
     });
@@ -285,7 +366,9 @@ function validateWikiContent(content, filePath) {
       const sectionBody = section.substring(section.indexOf('\n'));
       keywords.forEach((kw) => {
         const escaped = kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        const matches = sectionBody.match(new RegExp(escaped, 'g'));
+        // 한글 복합어 내부 서브스트링 매칭 방지 (ex: "자발적 퇴사" in "비자발적 퇴사")
+        const regex = new RegExp(`(?<![가-힣])${escaped}`, 'g');
+        const matches = sectionBody.match(regex);
         const count = matches ? matches.length : 0;
         if (count > 1) {
           errors.push(`키워드 스터핑: "${kw}" 가 "${sectionTitle}" 본문에 ${count}회 (H2에만 사용! 본문은 자연어로 풀어쓰기)`);
@@ -368,12 +451,118 @@ function validateWikiContent(content, filePath) {
     }
   });
 
+  // 9-0. [신규] H2+H3 소제목 개수 검증 (4~6개 범위)
+  const h3Matches = bodyContent.match(/^### (.+)$/gm);
+  const contentH3s = h3Matches
+    ? h3Matches.map(h => h.replace(/^### /, '').trim())
+        .filter(h => h !== '출처' && h !== '관련 문서')
+    : [];
+  const totalHeadings = contentH2s.length + contentH3s.length;
+  if (totalHeadings > 0 && totalHeadings < 4) {
+    warnings.push(`소제목(H2+H3) 부족: ${totalHeadings}개 (4~6개 권장, 내용 보충 필요)`);
+  } else if (totalHeadings > 6) {
+    warnings.push(`소제목(H2+H3) 과다: ${totalHeadings}개 (4~6개 권장, 소제목 통합 검토)`);
+  }
+
   // 9-1. 시각 요소 검증 (텍스트만 있으면 읽기 힘듦)
   const hasBlockquote = /^> .+/m.test(bodyContent);
   const hasTable = /\|.+\|.+\|/.test(bodyContent);
   const hasSelectionBullet = /- \*\*.+\*\*/.test(bodyContent);
   if (!hasBlockquote && !hasTable && !hasSelectionBullet) {
     warnings.push('시각 요소 없음: blockquote(>), 테이블(|), 굵은 불릿 중 1개 이상 권장');
+  }
+
+  // 9-2. contentType별 필수 컴포넌트 검증 (핵심 강제!)
+  const ctMatch = frontmatter.match(/contentType:\s*["']?(\w+)["']?/);
+  const contentType = ctMatch ? ctMatch[1].toLowerCase() : null;
+
+  if (contentType) {
+    const fullContent = content; // frontmatter + body 전체
+
+    const REQUIRED = {
+      condition: [
+        { cls: 'class="chips"', msg: 'chips (급여/자격 상태 표시 필수)' },
+        { cls: 'class="dbox"', msg: 'dbox (조건 변수 목록 필수)' },
+        { cls: 'class="br-pas"', msg: 'br-pas (관련 글 연결 필수)' },
+      ],
+      calculation: [
+        { cls: 'class="formula"', msg: 'formula (핵심 공식 박스 필수)' },
+        { cls: 'class="dbox"', msg: 'dbox (계산 변수 설명 필수)' },
+        { cls: 'class="br-pas"', msg: 'br-pas (계산기/관련 글 연결 필수)' },
+      ],
+      procedure: [
+        { cls: 'class="steps"', msg: 'steps (단계별 흐름 필수)' },
+        { cls: 'class="dbox"', msg: 'dbox (준비물/서류 목록 필수)' },
+        { cls: 'class="info warn"', msg: 'info warn (주의사항 필수)' },
+        { cls: 'class="br-pas"', msg: 'br-pas (선행 조건 연결 필수)' },
+      ],
+      comparison: [
+        { cls: 'class="br-pas"', msg: 'br-pas (선택지별 상세 글 연결 필수)' },
+      ],
+    };
+
+    // 비교형: 테이블 2개 이상 별도 체크
+    if (contentType === 'comparison') {
+      const tableCount = (fullContent.match(/\|.+\|.+\|/g) || []).length;
+      if (tableCount < 2) {
+        errors.push(`[comparison] 비교 테이블 부족: ${tableCount}개 (최소 2개 필수)`);
+      }
+    }
+
+    const required = REQUIRED[contentType];
+    if (required) {
+      for (const { cls, msg } of required) {
+        if (!fullContent.includes(cls)) {
+          errors.push(`[${contentType}] 필수 컴포넌트 누락: ${msg}`);
+        }
+      }
+    }
+
+    // [신규] calculation 타입: 예시 카드(dbox 내 "예시" 포함) 3개 이상
+    if (contentType === 'calculation') {
+      const dboxParts = fullContent.split('class="dbox').slice(1);
+      const exampleCount = dboxParts.filter(b => b.includes('예시')).length;
+      if (exampleCount < 3) {
+        errors.push(`[calculation] 예시 카드 부족: ${exampleCount}개 (최소 3개 필수 - 1인/2인/3인가구 시뮬 필요)`);
+      }
+    }
+  }
+
+  // [신규] br-pas 위치 검증: 중간 섹션에 배치되어야 함 (첫/마지막 제외)
+  if (content.includes('class="br-pas"')) {
+    const sectionList = bodyContent.split(/^## /gm).slice(1);
+    const filteredSections = sectionList.filter(s => {
+      const title = s.split('\n')[0];
+      return !title.includes('출처') && !title.includes('관련');
+    });
+    if (filteredSections.length >= 3) {
+      const brPasInMiddle = filteredSections.slice(1, -1).some(s => s.includes('class="br-pas"'));
+      if (!brPasInMiddle) {
+        warnings.push('br-pas 위치: 중간 섹션에 없음 (첫/마지막 섹션 제외한 중간에 배치 필요)');
+      }
+    }
+  }
+
+  // [신규] ext-btn 존재 검증 (외부 정부 사이트 버튼)
+  if (!content.includes('ext-btn')) {
+    if (contentType === 'calculation' || contentType === 'procedure') {
+      errors.push(`[${contentType}] ext-btn 없음 (정부 사이트 바로가기 버튼 필수!)`);
+    } else {
+      warnings.push('ext-btn 없음 (정부 사이트 바로가기 버튼 추가 권장)');
+    }
+  }
+
+  // [신규] 딥링크(외부링크) 존재 검증
+  const hasExternalLink =
+    /\[[^\]]+\]\(https?:\/\//.test(bodyContent) ||
+    /href="https?:\/\//.test(content);
+  if (!hasExternalLink) {
+    warnings.push('외부링크(딥링크) 없음 (정부/공식 출처 링크 추가 권장)');
+  }
+
+  // [신규] spoke-sec (관련 글 섹션) 존재 여부
+  if (!content.includes('spoke-sec')) {
+    warnings.push('spoke-sec 없음 (관련 글 섹션 추가 권장: 이탈 방지)');
   }
 
   // 10. 이탈 방지 - 완전성 검증 (대형사이트 대비)

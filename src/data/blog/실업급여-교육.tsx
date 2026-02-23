@@ -18,6 +18,11 @@ import {
   FAQAccordion,
   RelatedArticles,
   PrevNext,
+  Divider,
+  TableTitle,
+  TableNote,
+  TH,
+  THL,
 } from "@/components/wiki/BlogShared";
 
 type Sel = { edu?: string; visit?: string };
@@ -197,6 +202,7 @@ export default function Article66() {
         </div>
       </div>
 
+      <Divider />
       <Sec id="h2-1" question="실업급여 온라인 교육은 필수인가요?">
         <P>
           <B>필수예요.</B> <A href="https://www.law.go.kr/법령/고용보험법시행규칙">고용보험법 시행규칙</A>에
@@ -218,7 +224,31 @@ export default function Article66() {
         </P>
       </Sec>
 
+      <Divider />
       <Sec id="h2-2" question="실업급여 온라인 교육 수강 방법은 어떻게 되나요?">
+        <TableTitle>온라인 교육 수강 절차</TableTitle>
+        <div style={{ overflowX: "auto" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+            <thead>
+              <tr><THL>단계</THL><TH>내용</TH><TH>소요 시간</TH></tr>
+            </thead>
+            <tbody>
+              {[
+                ["1단계", "고용24 로그인 (공동인증서/간편인증)", "1분"],
+                ["2단계", "수급자격 신청자 교육 동영상 시청", "1~2시간"],
+                ["3단계", "퀴즈 응시 (미달 시 재응시)", "10분"],
+                ["4단계", "이수증 발급 확인", "즉시"],
+              ].map((row, ri) => (
+                <tr key={ri}>
+                  {row.map((cell, ci) => (
+                    <td key={ci} style={{ padding: "8px", textAlign: ci === 0 ? "left" : "center", borderBottom: `1px solid ${C.line}`, color: ci === 0 ? C.t1 : C.t2, fontWeight: ci === 0 ? 600 : 400 }}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <TableNote>※ 동영상은 일시정지 후 이어서 시청 가능</TableNote>
         <P>
           수강 절차는 <B>4단계</B>예요. 고용24 로그인 → 수급자격 신청자 교육 동영상 시청 →
           퀴즈 풀기 → 이수증 발급 확인 순이에요.
@@ -238,6 +268,7 @@ export default function Article66() {
         </P>
       </Sec>
 
+      <Divider />
       <Sec id="h2-3" question="실업급여 온라인 교육 후 14일 기한은 뭐예요?">
         <P>
           <B>교육 수료 후 14일 이내에 관할 고용센터를 방문해서 수급자격을 신청해야 해요.</B> 이
@@ -263,6 +294,7 @@ export default function Article66() {
         </P>
       </Sec>
 
+      <Divider />
       <Sec id="h2-4" question="실업급여 온라인 교육 후 고용센터 방문은 어떻게 하나요?">
         <P>
           교육 이수 후 주소지 관할 고용센터에 방문하면 돼요.{" "}

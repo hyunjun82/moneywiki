@@ -4,6 +4,7 @@ import {
   BlogLayout,
   C,
   Btn,
+  Divider,
   TOC,
   Summary3,
   Sec,
@@ -18,6 +19,10 @@ import {
   FAQAccordion,
   RelatedArticles,
   PrevNext,
+  TableTitle,
+  TableNote,
+  TH,
+  THL,
 } from "@/components/wiki/BlogShared";
 
 type Sel = { status?: string; days?: string };
@@ -232,6 +237,7 @@ export default function Article61() {
         </div>
       </div>
 
+      <Divider />
       <Sec id="h2-1" question="실업급여 받으면서 창업하면 수급이 중단되나요?">
         <P>
           <B>창업 준비 단계라면 수급이 중단되지 않아요.</B> 시장조사, 사업 계획 수립, 자금 준비 같은
@@ -254,6 +260,7 @@ export default function Article61() {
         </P>
       </Sec>
 
+      <Divider />
       <Sec id="h2-2" question="실업급여 수급 중 사업자등록하면 어떻게 되나요?">
         <P>
           <B>사업자등록일부터 수급이 중단돼요.</B> 등록하면 취업으로 간주되기 때문이에요. 해당일에
@@ -276,6 +283,7 @@ export default function Article61() {
         </P>
       </Sec>
 
+      <Divider />
       <Sec id="h2-3" question="실업급여 창업 시 조기재취업수당 받을 수 있나요?">
         <P>
           <B>받을 수 있어요.</B> 자영업도 조기재취업수당 대상이에요.{" "}
@@ -303,11 +311,35 @@ export default function Article61() {
         </P>
       </Sec>
 
+      <Divider />
       <Sec id="h2-4" question="실업급여 창업 수급 중단 조건은 무엇인가요?">
         <P>
           수급 중단 시점은 <B>세 가지 중 가장 이른 날</B>이에요. 사업자등록일, 실질적 영업 시작일,
           소득 발생일 중 먼저 오는 날부터 수급이 중단돼요.
         </P>
+        <TableTitle>창업 단계별 수급 영향 비교</TableTitle>
+        <div style={{ overflowX: "auto" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+            <thead>
+              <tr><THL>구분</THL><TH>수급 영향</TH><TH>조기재취업수당</TH></tr>
+            </thead>
+            <tbody>
+              {[
+                ["창업 준비 (등록 전)", "수급 유지", "등록 시 1/2 이상 남기면 가능"],
+                ["사업자등록일", "즉시 중단", "1/2 이상 남긴 경우 가능"],
+                ["실질 영업 시작일", "즉시 중단", "등록일 기준 판단"],
+                ["소득 발생일", "즉시 중단 + 신고 의무", "등록일 기준 판단"],
+              ].map((row, ri) => (
+                <tr key={ri}>
+                  {row.map((cell, ci) => (
+                    <td key={ci} style={{ padding: "8px", textAlign: ci === 0 ? "left" : "center", borderBottom: `1px solid ${C.line}`, color: ci === 0 ? C.t1 : C.t2, fontWeight: ci === 0 ? 600 : 400 }}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <TableNote>※ 세 가지 중 가장 이른 날부터 수급 중단</TableNote>
         <P>
           "등록만 안 했으니까 괜찮겠지"는 통하지 않아요. 등록 없이 먼저 영업을 시작하거나 소득이
           생기면 그날부터 수급 중단 대상이에요. 이미 받은 실업급여는 전액 반환해야 해요.

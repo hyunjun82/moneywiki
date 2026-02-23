@@ -18,6 +18,11 @@ import {
   FAQAccordion,
   RelatedArticles,
   PrevNext,
+  Divider,
+  TableTitle,
+  TableNote,
+  TH,
+  THL,
 } from "@/components/wiki/BlogShared";
 
 type Sel = { timing?: string; notice?: string };
@@ -218,6 +223,7 @@ export default function Article63() {
         </div>
       </div>
 
+      <Divider />
       <Sec id="h2-1" question="실업급여 수급 중 해외여행 가도 되나요?">
         <P>
           <B>가능해요.</B> 실업급여 수급 중 해외여행 자체를 금지하는 규정은 없어요.{" "}
@@ -239,6 +245,7 @@ export default function Article63() {
         </P>
       </Sec>
 
+      <Divider />
       <Sec id="h2-2" question="실업급여 해외체류 42일 기준은 어떻게 계산하나요?">
         <P>
           42일은 법으로 정해진 고정 수치가 아니에요. <B>실무적으로 알려진 최대 공백 없이 다녀올 수
@@ -261,6 +268,7 @@ export default function Article63() {
         </P>
       </Sec>
 
+      <Divider />
       <Sec id="h2-3" question="실업급여 해외체류 시 수급 중단은 어떻게 되나요?">
         <P>
           <B>수급이 "중단"되는 게 아니라 "정지"되는 개념이에요.</B> 귀국하면 남은 급여일수만큼 다시
@@ -288,7 +296,31 @@ export default function Article63() {
         </P>
       </Sec>
 
+      <Divider />
       <Sec id="h2-4" question="실업급여 해외체류 후 수급 재개 조건은 뭐예요?">
+        <TableTitle>해외체류 기간별 수급 영향</TableTitle>
+        <div style={{ overflowX: "auto" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+            <thead>
+              <tr><THL>체류 기간</THL><TH>급여 영향</TH><TH>조치 사항</TH></tr>
+            </thead>
+            <tbody>
+              {[
+                ["28일 이내", "실업인정일 전 귀국 시 정상 지급", "일정 확인 후 출국"],
+                ["29~42일", "변경 신청 1회 사용, 지급 가능", "귀국 후 14일 내 변경 신청"],
+                ["42일 초과", "해당 주기 급여 미지급", "귀국 후 다음 인정일 대기"],
+                ["수급기간 초과", "잔여 급여 소멸", "12개월 내 귀국 필수"],
+              ].map((row, ri) => (
+                <tr key={ri}>
+                  {row.map((cell, ci) => (
+                    <td key={ci} style={{ padding: "8px", textAlign: ci === 0 ? "left" : "center", borderBottom: `1px solid ${C.line}`, color: ci === 0 ? C.t1 : C.t2, fontWeight: ci === 0 ? 600 : 400 }}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <TableNote>※ 실업인정 주기가 2주인 경우 28일 기준이 아닌 14일 기준 적용</TableNote>
         <P>
           귀국 후 수급 재개에 필요한 조건은 두 가지예요. <B>수급기간(퇴직 후 12개월) 내에 귀국</B>해야
           하고, <B>실업인정일에 맞춰 정상 신청</B>해야 해요.

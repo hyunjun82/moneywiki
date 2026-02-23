@@ -18,6 +18,11 @@ import {
   FAQAccordion,
   RelatedArticles,
   PrevNext,
+  Divider,
+  TableTitle,
+  TableNote,
+  TH,
+  THL,
 } from "@/components/wiki/BlogShared";
 
 type Sel = { worknet?: string; applied?: string };
@@ -204,6 +209,7 @@ export default function Article68() {
         </div>
       </div>
 
+      <Divider />
       <Sec id="h2-1" question="실업급여 수급자격 신청은 어떻게 하나요?">
         <P>
           <B>순서가 있어요.</B> 온라인 교육 수료 → 워크넷 구직등록 → 고용센터 방문 신청 순서예요.
@@ -219,12 +225,36 @@ export default function Article68() {
           1단계와 2단계는 순서가 바뀌어도 무방하지만, 고용센터 방문 전에 둘 다 완료돼야 해요.
           고용센터에서는 두 가지 이수 여부를 방문 시 확인해요.
         </P>
+        <TableTitle>수급자격 신청 단계별 절차</TableTitle>
+        <div style={{ overflowX: "auto" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+            <thead>
+              <tr><THL>단계</THL><TH>내용</TH><TH>소요 시간</TH><TH>방법</TH></tr>
+            </thead>
+            <tbody>
+              {[
+                ["1단계", "온라인 교육 수료", "1~2시간", "고용24 접속"],
+                ["2단계", "워크넷 구직등록", "10~20분", "워크넷 접속"],
+                ["3단계", "고용센터 방문 신청", "30분~1시간", "관할 센터 방문"],
+                ["4단계", "수급자격 심사", "14일 이내", "고용센터 심사"],
+              ].map((row, ri) => (
+                <tr key={ri}>
+                  {row.map((cell, ci) => (
+                    <td key={ci} style={{ padding: "8px", textAlign: ci === 0 ? "left" : "center", borderBottom: `1px solid ${C.line}`, color: ci === 0 ? C.t1 : C.t2, fontWeight: ci === 0 ? 600 : 400 }}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <TableNote>※ 1단계와 2단계는 순서 무관, 3단계 전에 둘 다 완료 필수</TableNote>
         <P>
           쉽게 말하면, 온라인 두 가지 완료 → 고용센터 한 번 방문이에요. 방문 당일 완료할 수도
           있지만, 미리 해두면 대기 시간 없이 바로 신청할 수 있어요.
         </P>
       </Sec>
 
+      <Divider />
       <Sec id="h2-2" question="실업급여 수급자격 고용센터 방문 시 뭐가 필요한가요?">
         <P>
           <B>4가지를 챙겨야 해요.</B> 신분증, 통장 사본, 이직확인서, 워크넷 구직등록 확인증이에요.
@@ -245,6 +275,7 @@ export default function Article68() {
         </P>
       </Sec>
 
+      <Divider />
       <Sec id="h2-3" question="실업급여 수급자격 심사 기간은 얼마나 걸리나요?">
         <P>
           <B>보통 14일 이내예요.</B> 방문 신청일로부터 14일 안에 수급자격 인정 여부가 결정돼요.
@@ -267,6 +298,7 @@ export default function Article68() {
         </P>
       </Sec>
 
+      <Divider />
       <Sec id="h2-4" question="실업급여 수급자격 불인정되면 어떻게 되나요?">
         <P>
           <B>이의신청이 가능해요.</B> 불인정 통보를 받은 날로부터 90일 이내에 고용보험 심사위원회에

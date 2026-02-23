@@ -18,6 +18,11 @@ import {
   FAQAccordion,
   RelatedArticles,
   PrevNext,
+  Divider,
+  TableTitle,
+  TableNote,
+  TH,
+  THL,
 } from "@/components/wiki/BlogShared";
 
 type Sel = { employed?: string; reported?: string };
@@ -196,6 +201,7 @@ export default function Article62() {
         </div>
       </div>
 
+      <Divider />
       <Sec id="h2-1" question="실업급여 취업신고는 언제 해야 하나요?">
         <P>
           <B>취업한 날의 다음 날까지 신고해야 해요.</B> 취업 당일이 아니라 다음 날까지라는 점이
@@ -217,6 +223,7 @@ export default function Article62() {
         </P>
       </Sec>
 
+      <Divider />
       <Sec id="h2-2" question="실업급여 취업신고 방법은 어떻게 되나요?">
         <P>
           <B>두 가지 방법이 있어요.</B> <A href="https://www.ei.go.kr">고용24</A>에서 온라인으로
@@ -238,6 +245,7 @@ export default function Article62() {
         </P>
       </Sec>
 
+      <Divider />
       <Sec id="h2-3" question="고용24에서 실업급여 취업신고는 어떻게 하나요?">
         <P>
           고용24 취업신고 온라인 절차는 <B>4단계</B>예요.
@@ -263,7 +271,31 @@ export default function Article62() {
         </P>
       </Sec>
 
+      <Divider />
       <Sec id="h2-4" question="실업급여 취업신고 안 하면 어떻게 되나요?">
+        <TableTitle>취업신고 방법별 비교</TableTitle>
+        <div style={{ overflowX: "auto" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+            <thead>
+              <tr><THL>구분</THL><TH>온라인 (고용24)</TH><TH>방문 (고용센터)</TH></tr>
+            </thead>
+            <tbody>
+              {[
+                ["소요 시간", "5분", "30분~1시간 (대기 포함)"],
+                ["필요 서류", "없음 (로그인만)", "신분증 + 근로계약서 사본"],
+                ["접수 시간", "24시간", "평일 09:00~18:00"],
+                ["처리 결과", "즉시 확인", "현장 확인"],
+              ].map((row, ri) => (
+                <tr key={ri}>
+                  {row.map((cell, ci) => (
+                    <td key={ci} style={{ padding: "8px", textAlign: ci === 0 ? "left" : "center", borderBottom: `1px solid ${C.line}`, color: ci === 0 ? C.t1 : C.t2, fontWeight: ci === 0 ? 600 : 400 }}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <TableNote>※ 전화 신고(1350)는 정식 신고로 인정되지 않아요</TableNote>
         <P>
           <B>부정수급으로 처리돼요.</B> 취업 후 신고 없이 받은 실업급여는{" "}
           <A href="https://www.law.go.kr/법령/고용보험법">고용보험법 제62조</A>에 따라 전액 반환해야

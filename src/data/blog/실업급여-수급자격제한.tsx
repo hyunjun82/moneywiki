@@ -18,6 +18,11 @@ import {
   FAQAccordion,
   RelatedArticles,
   PrevNext,
+  Divider,
+  TableTitle,
+  TableNote,
+  TH,
+  THL,
 } from "@/components/wiki/BlogShared";
 
 type Sel = { quit?: string; reason?: string };
@@ -225,6 +230,7 @@ export default function Article69() {
         </div>
       </div>
 
+      <Divider />
       <Sec id="h2-1" question="실업급여 수급자격제한은 어떤 경우에 해당하나요?">
         <P>
           <B>자발적 이직이 원칙적인 제한 사유예요.</B> 스스로 사직서를 내고 그만둔 경우, 별다른 사유
@@ -249,6 +255,7 @@ export default function Article69() {
         </P>
       </Sec>
 
+      <Divider />
       <Sec id="h2-2" question="실업급여 수급자격제한 중대과실 해고 기준은 뭐예요?">
         <P>
           <B>고의·중대한 귀책 사유로 해고된 경우 수급자격이 제한돼요.</B> 형사처분을 받을 만한 행위,
@@ -273,6 +280,7 @@ export default function Article69() {
         </P>
       </Sec>
 
+      <Divider />
       <Sec id="h2-3" question="실업급여 수급자격제한에서 자발적 퇴사 기준은 어떻게 되나요?">
         <P>
           <B>사직서를 직접 제출하면 원칙적으로 자발적 퇴사예요.</B> 사직서 제출 형태에 상관없이
@@ -296,6 +304,7 @@ export default function Article69() {
         </P>
       </Sec>
 
+      <Divider />
       <Sec id="h2-4" question="실업급여 수급자격제한 예외 정당한 사유는 뭐예요?">
         <P>
           <B>11가지 유형이 있어요.</B>{" "}
@@ -307,6 +316,31 @@ export default function Article69() {
           (이직 전 1년간 2개월 이상), 최저임금 미달(지속적으로 최저임금 미만), 통근 어려움(왕복
           3시간 이상), 질병·부상(30일 이상 치료 필요), 임신·출산·육아(만 8세 이하 자녀 돌봄 필요)예요.
         </P>
+        <TableTitle>수급자격제한 예외 인정 주요 사유</TableTitle>
+        <div style={{ overflowX: "auto" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+            <thead>
+              <tr><THL>사유</THL><TH>인정 기준</TH><TH>필요 증빙</TH></tr>
+            </thead>
+            <tbody>
+              {[
+                ["직장 내 괴롭힘", "사업주가 해결 조치 안 한 경우", "녹취·문자·이메일"],
+                ["임금 체불", "이직 전 1년간 2개월 이상", "급여명세서·통장 내역"],
+                ["최저임금 미달", "지속적으로 최저임금 미만", "근로계약서·급여대장"],
+                ["통근 어려움", "왕복 3시간 이상 소요", "주소지 확인·교통 증빙"],
+                ["질병·부상", "30일 이상 치료 필요", "진단서·소견서"],
+                ["임신·출산·육아", "만 8세 이하 자녀 돌봄", "가족관계증명서"],
+              ].map((row, ri) => (
+                <tr key={ri}>
+                  {row.map((cell, ci) => (
+                    <td key={ci} style={{ padding: "8px", textAlign: ci === 0 ? "left" : "center", borderBottom: `1px solid ${C.line}`, color: ci === 0 ? C.t1 : C.t2, fontWeight: ci === 0 ? 600 : 400 }}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <TableNote>※ 고용보험법 시행규칙 제101조 별표2 기준, 6가지 대표 사유</TableNote>
         <Info>예외 인정에는 증빙이 필요해요. 괴롭힘은 녹취나 문자, 임금 체불은 급여명세서나 통장 내역, 통근 거리는 주소지 확인, 질병은 진단서가 증빙이 돼요.</Info>
         <P>
           고용센터 방문 시 진술서를 작성해요. "괴롭힘을 당했어요"보다 "0월 0일 상사로부터
