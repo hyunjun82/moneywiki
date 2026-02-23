@@ -4,7 +4,7 @@ import { useState } from "react";
 import {
   C, Btn, Info, Divider, Sec, P, B, A, H3,
   TableTitle, TableNote, TH, THL,
-  BridgeCard, ExtBtn, BlogLayout, TOC, Summary3,
+  BridgeCard, BlogLayout, TOC, Summary3,
   FAQAccordion, RelatedArticles, PrevNext,
   InlineLink, SpokeLink,
 } from "@/components/wiki/BlogShared";
@@ -212,8 +212,6 @@ export default function Article() {
       />
 
       <InlineLink icon={"\uD83D\uDCC8"} title={"2026\uB144 \uC2E4\uC5C5\uAE09\uC5EC \uC0C1\uD55C\uC561 \uBCC0\uACBD \uB0B4\uC6A9"} desc={"6\uB144 \uB9CC\uC5D0 \uC0C1\uD55C\uC561\uC774 68,100\uC6D0\uC73C\uB85C \uC778\uC0C1\uB410\uC5B4\uC694. \uC6D4 \uCD5C\uB300 \uC218\uB839\uC561\uACFC \uC778\uC0C1 \uBC30\uACBD\uC744 \uC815\uB9AC\uD588\uC5B4\uC694."} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uC0C1\uD55C\uC561" />
-
-      <ExtBtn badge="고용24 공식" text="실업급여 모의계산기" cta="계산하기 →" href="https://www.work24.go.kr/ei/eih/eg/pb/pbPersonBnef/retrievePb0201Info.do" />
 
       {/* ── FAQ ── */}
       <Divider />

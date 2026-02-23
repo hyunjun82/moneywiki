@@ -4,7 +4,7 @@ import { useState } from "react";
 import {
   C, Btn, Tag, Info, InlineLink, SpokeLink, Divider, Sec, P, B, A, H3,
   TableTitle, TableNote, TH, THL,
-  BridgeCard, ExtBtn, BlogLayout, TOC, Summary3,
+  BridgeCard, BlogLayout, TOC, Summary3,
   FAQAccordion, RelatedArticles, PrevNext,
 } from "@/components/wiki/BlogShared";
 
@@ -220,6 +220,15 @@ export default function Article() {
 
       <InlineLink icon="📋" title="실업급여 구비서류 — 단계별 필요 서류 전체" desc="수급자격 신청부터 실업인정까지 어떤 서류가 필요한지 정리했어요." href="/w/실업급여-구비서류" />
 
+      <div style={{ marginTop: 20 }}>
+        <div style={{ fontSize: 14, fontWeight: 800, color: C.t1, marginBottom: 10 }}>{"📖 실업급여 구직활동 더 알아보기"}</div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+          <SpokeLink num="01" title="실업급여 지급일 — 실업인정 후 입금까지 기간" desc="인정일 이후 2~5일 내 입금 기준 안내" href="/w/실업급여-지급일" />
+          <SpokeLink num="02" title="실업급여 반복수급 — 5년 3회 감액 기준" desc="반복 수급 시 10%~50% 삭감 기준 정리" href="/w/실업급여-반복수급" />
+          <SpokeLink num="03" title="실업급여 기준기간 — 18개월 피보험 180일" desc="기준기간 산정 방법과 합산 기준 정리" href="/w/실업급여-기준기간" />
+        </div>
+      </div>
+
       {/* ── SECTION 05. 온라인 교육 ── */}
       <Divider />
       <Sec n="SECTION 05" title="실업급여 구직활동 온라인 교육은 어디서 받나요?" sub="1차 실업인정은 교육 수강만으로 끝나요" />
@@ -269,27 +278,11 @@ export default function Article() {
         ))}
       </div>
 
-      <div style={{ marginTop: 20 }}>
-        <div style={{ fontSize: 14, fontWeight: 800, color: C.t1, marginBottom: 10 }}>{"📖 실업급여 구직활동 더 알아보기"}</div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-          <SpokeLink num="01" title="실업급여 지급일 — 실업인정 후 입금까지 기간" desc="인정일 이후 2~5일 내 입금 기준 안내" href="/w/실업급여-지급일" />
-          <SpokeLink num="02" title="실업급여 반복수급 — 5년 3회 감액 기준" desc="반복 수급 시 10%~50% 삭감 기준 정리" href="/w/실업급여-반복수급" />
-          <SpokeLink num="03" title="실업급여 기준기간 — 18개월 피보험 180일" desc="기준기간 산정 방법과 합산 기준 정리" href="/w/실업급여-기준기간" />
-        </div>
-      </div>
-
       <BridgeCard
         question="실업인정 후 급여가 언제 들어오는지 궁금하시죠?"
         body={<>실업인정 신청 후 보통 <strong style={{ color: C.navy }}>2~5일 이내</strong>에 입금돼요. 지급일 계산법과 첫 입금까지 걸리는 기간을 정리했어요.</>}
         btnText="실업급여 지급일 기준 보기 →"
         href="/w/실업급여-지급일"
-      />
-
-      <ExtBtn
-        badge="고용24 공식"
-        text="실업인정 온라인 신청"
-        cta="신청하기 →"
-        href="https://www.work24.go.kr/ei/eih/eg/pb/pbPersonBnef/retrievePb0201Info.do"
       />
 
       {/* ── FAQ ── */}

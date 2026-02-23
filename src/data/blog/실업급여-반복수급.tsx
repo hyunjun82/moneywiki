@@ -4,7 +4,7 @@ import { useState } from "react";
 import {
   C, Btn, Info, InlineLink, SpokeLink, Divider, Sec, P, B, A,
   TableTitle, TableNote, TH, THL,
-  BridgeCard, ExtBtn, BlogLayout, TOC, Summary3,
+  BridgeCard, BlogLayout, TOC, Summary3,
   FAQAccordion, RelatedArticles, PrevNext,
 } from "@/components/wiki/BlogShared";
 
@@ -225,8 +225,6 @@ export default function Article() {
         btnText="부정수급 형사처벌 기준 보기 →"
         href="/w/실업급여-부정수급"
       />
-
-      <ExtBtn badge="고용24 공식" text="실업급여 수급 이력 조회" cta="조회하기 →" href="https://www.work24.go.kr/ei/eih/eg/pb/pbPersonBnef/retrievePb0201Info.do" />
 
       {/* ── FAQ ── */}
       <Divider />

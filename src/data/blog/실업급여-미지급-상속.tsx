@@ -4,7 +4,7 @@ import { useState } from "react";
 import {
   C, Btn, Info, InlineLink, SpokeLink, Divider, Sec, P, B, A,
   TableTitle, TableNote, TH, THL,
-  BridgeCard, ExtBtn, BlogLayout, TOC, Summary3,
+  BridgeCard, BlogLayout, TOC, Summary3,
   FAQAccordion, RelatedArticles, PrevNext,
 } from "@/components/wiki/BlogShared";
 
@@ -220,8 +220,6 @@ export default function Article() {
         btnText="청구 절차와 서류 확인 →"
         href="/w/실업급여-신청방법"
       />
-
-      <ExtBtn badge="고용24 공식" text="미지급 실업급여 청구 안내" cta="바로가기 →" href="https://www.work24.go.kr/cm/c/d/UECMCDA0101.do" />
 
       {/* ── FAQ ── */}
       <Divider />

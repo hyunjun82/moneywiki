@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import {
-  C, Btn, Info, Divider, Sec, P, B, A, H3,
+  C, Btn, Info, Divider, Sec, P, B, A,
   TableTitle, TableNote, TH, THL,
-  BridgeCard, ExtBtn, BlogLayout, TOC, Summary3,
+  BridgeCard, BlogLayout, TOC, Summary3,
   FAQAccordion, RelatedArticles, PrevNext,
   InlineLink, SpokeLink,
 } from "@/components/wiki/BlogShared";
@@ -179,6 +179,13 @@ export default function Article() {
 
       <InlineLink icon={"\uD83D\uDCB0"} title={"\uC2E4\uC5C5\uAE09\uC5EC \uAE30\uCD08\uC77C\uC561 \uC0C1\uD55C\u00B7\uD558\uD55C \uAE30\uC900"} desc={"\uAE30\uC900\uAE30\uAC04\uC744 \uCDA9\uC871\uD55C \uB4A4 \uAD81\uAE08\uD55C \uAC74 \uC9C0\uAE09\uC561\uC774\uC5D0\uC694. \uD3C9\uADE0\uC784\uAE08 60%\uC640 \uC0C1\u00B7\uD558\uD55C\uC561 \uAE30\uC900\uC744 \uC815\uB9AC\uD588\uC5B4\uC694."} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uAE30\uCD08\uC77C\uC561" />
 
+      <div style={{ margin: "20px 0" }}>
+        <div style={{ fontSize: 13, fontWeight: 700, color: C.t1, marginBottom: 8 }}>{"\uD83D\uDCD6 \uC2E4\uC5C5\uAE09\uC5EC \uAE30\uC900\uAE30\uAC04 \uB354 \uC54C\uC544\uBCF4\uAE30"}</div>
+        <SpokeLink num="01" title={"\uAE30\uCD08\uC77C\uC561 \uC0C1\uD55C\u00B7\uD558\uD55C \uAE30\uC900 \uD655\uC778"} desc={"\uD3C9\uADE0\uC784\uAE08 60%\uC640 \uC0C1\u00B7\uD558\uD55C\uC561 \uAE30\uC900"} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uAE30\uCD08\uC77C\uC561" />
+        <SpokeLink num="02" title={"\uC5F0\uBD09\uBCC4 \uC608\uC0C1 \uC218\uB839\uC561 \uACC4\uC0B0"} desc={"\uB0B4 \uC5F0\uBD09 \uAE30\uC900 \uC2E4\uC5C5\uAE09\uC5EC \uACC4\uC0B0"} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uC5F0\uBD09\uBCC4-\uACC4\uC0B0" />
+        <SpokeLink num="03" title={"\uAD6C\uC9C1\uD65C\uB3D9 \uC778\uC815 \uC99D\uBE59 \uBC29\uBC95"} desc={"\uC6CC\uD06C\uB137 \uC785\uC0AC\uC9C0\uC6D0 \uB4F1 \uC778\uC815 \uBC29\uBC95"} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uAD6C\uC9C1\uD65C\uB3D9" />
+      </div>
+
       {/* ── SECTION 04 ── */}
       <Divider />
       <Sec n="SECTION 04" title="피보험기간 180일은 어떻게 채우나요?" sub="주5일제 기준 약 9개월 근무" />
@@ -228,21 +235,12 @@ export default function Article() {
       </div>
       <TableNote>※ 정확한 피보험단위기간은 고용24 &quot;고용보험 가입이력&quot;에서 조회 가능</TableNote>
 
-      <div style={{ margin: "20px 0" }}>
-        <div style={{ fontSize: 13, fontWeight: 700, color: C.t1, marginBottom: 8 }}>{"\uD83D\uDCD6 \uC2E4\uC5C5\uAE09\uC5EC \uAE30\uC900\uAE30\uAC04 \uB354 \uC54C\uC544\uBCF4\uAE30"}</div>
-        <SpokeLink num="01" title={"\uAE30\uCD08\uC77C\uC561 \uC0C1\uD55C\u00B7\uD558\uD55C \uAE30\uC900 \uD655\uC778"} desc={"\uD3C9\uADE0\uC784\uAE08 60%\uC640 \uC0C1\u00B7\uD558\uD55C\uC561 \uAE30\uC900"} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uAE30\uCD08\uC77C\uC561" />
-        <SpokeLink num="02" title={"\uC5F0\uBD09\uBCC4 \uC608\uC0C1 \uC218\uB839\uC561 \uACC4\uC0B0"} desc={"\uB0B4 \uC5F0\uBD09 \uAE30\uC900 \uC2E4\uC5C5\uAE09\uC5EC \uACC4\uC0B0"} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uC5F0\uBD09\uBCC4-\uACC4\uC0B0" />
-        <SpokeLink num="03" title={"\uAD6C\uC9C1\uD65C\uB3D9 \uC778\uC815 \uC99D\uBE59 \uBC29\uBC95"} desc={"\uC6CC\uD06C\uB137 \uC785\uC0AC\uC9C0\uC6D0 \uB4F1 \uC778\uC815 \uBC29\uBC95"} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uAD6C\uC9C1\uD65C\uB3D9" />
-      </div>
-
       <BridgeCard
         question="기준기간 충족 후 실업급여는 하루 얼마 받나요?"
         body={<>180일을 채웠다면 다음 궁금증은 지급액이에요. 평균임금의 60%로 계산되는 <strong style={{ color: C.navy }}>1일 기초일액</strong>과 상·하한액 기준을 정리했어요.</>}
         btnText="기초일액 계산 기준 보기 →"
         href="/w/실업급여-기초일액"
       />
-
-      <ExtBtn badge="고용24 공식" text="고용보험 가입이력 조회" cta="조회하기 →" href="https://www.work24.go.kr" />
 
       {/* ── FAQ ── */}
       <Divider />
