@@ -2,23 +2,37 @@
 
 import { useState } from "react";
 import {
-  C, Btn, Info, Divider, Sec, P, B, A,
+  C, Btn, Info, InlineLink, SpokeLink, Divider, Sec, P, B, A,
   TableTitle, TableNote, TH, THL,
   BridgeCard, ExtBtn, BlogLayout, TOC, Summary3,
   FAQAccordion, RelatedArticles, PrevNext,
 } from "@/components/wiki/BlogShared";
 
 // ── 체커 로직: 반복수급 횟수별 감액률 ──
-type Res = { pass: boolean; headline: string; detail: string; badges: string[]; rate?: string; daily?: string };
+type ResLink = { icon: string; title: string; href: string };
+type Res = { pass: boolean; headline: string; detail: string; badges: string[]; rate?: string; daily?: string; links: ResLink[] };
 
 function getResult(sel: Record<string, string>): Res | null {
   const { count } = sel;
   if (!count) return null;
 
-  if (count === "first_or_second") return { pass: true, headline: "감액 없이 전액 수급해요", detail: "직전 5년 내 1~2회 수급은 반복수급 감액 대상이 아니에요. 산정된 기초일액 그대로 소정급여일수 동안 받을 수 있어요.", badges: ["감액 없음", "전액 수급"], rate: "0%", daily: "68,100원" };
-  if (count === "third") return { pass: true, headline: "기초일액의 10%가 삭감돼요", detail: "3회째 수급부터 반복수급 감액이 시작돼요. 산정된 기초일액에서 10%를 삭감한 금액으로 소정급여일수 동안 지급받아요. 하한액도 같은 비율로 낮아질 수 있어요.", badges: ["10% 삭감", "3회째 수급"], rate: "10%", daily: "61,290원" };
-  if (count === "fourth") return { pass: false, headline: "기초일액의 25%가 삭감돼요", detail: "4회째 수급은 25% 감액이 적용돼요. 기초일액이 68,100원이라면 25% 삭감 후 51,075원으로 줄어요. 재취업활동계획서 제출 의무도 강화돼요.", badges: ["25% 삭감", "4회째 수급"], rate: "25%", daily: "51,075원" };
-  if (count === "fifth_plus") return { pass: false, headline: "기초일액의 50%가 삭감돼요", detail: "5회 이상 수급은 50% 감액이 적용돼요. 기초일액이 68,100원이라면 50% 삭감 후 34,050원만 받아요. 하한액도 50% 낮아진 금액이 적용될 수 있어요.", badges: ["50% 삭감", "5회 이상"], rate: "50%", daily: "34,050원" };
+  if (count === "first_or_second") return { pass: true, headline: "감액 없이 전액 수급해요", detail: "직전 5년 내 1~2회 수급은 반복수급 감액 대상이 아니에요. 산정된 기초일액 그대로 소정급여일수 동안 받을 수 있어요.", badges: ["감액 없음", "전액 수급"], rate: "0%", daily: "68,100원", links: [
+    { icon: "📋", title: "기초일액 상한·하한 기준 확인", href: "/w/실업급여-기초일액" },
+    { icon: "📊", title: "소정급여일수 — 나이별 수급 기간표", href: "/w/실업급여-소정급여일수" },
+  ] };
+  if (count === "third") return { pass: true, headline: "기초일액의 10%가 삭감돼요", detail: "3회째 수급부터 반복수급 감액이 시작돼요. 산정된 기초일액에서 10%를 삭감한 금액으로 소정급여일수 동안 지급받아요. 하한액도 같은 비율로 낮아질 수 있어요.", badges: ["10% 삭감", "3회째 수급"], rate: "10%", daily: "61,290원", links: [
+    { icon: "📋", title: "기초일액 상한·하한 기준 확인", href: "/w/실업급여-기초일액" },
+    { icon: "📝", title: "구직활동 인정 기준 — 차수별 횟수", href: "/w/실업급여-구직활동" },
+  ] };
+  if (count === "fourth") return { pass: false, headline: "기초일액의 25%가 삭감돼요", detail: "4회째 수급은 25% 감액이 적용돼요. 기초일액이 68,100원이라면 25% 삭감 후 51,075원으로 줄어요. 재취업활동계획서 제출 의무도 강화돼요.", badges: ["25% 삭감", "4회째 수급"], rate: "25%", daily: "51,075원", links: [
+    { icon: "📝", title: "구직활동 인정 기준 강화 확인", href: "/w/실업급여-구직활동" },
+    { icon: "⚠️", title: "부정수급 처벌 기준 — 최대 5배 추징", href: "/w/실업급여-부정수급" },
+  ] };
+  if (count === "fifth_plus") return { pass: false, headline: "기초일액의 50%가 삭감돼요", detail: "5회 이상 수급은 50% 감액이 적용돼요. 기초일액이 68,100원이라면 50% 삭감 후 34,050원만 받아요. 하한액도 50% 낮아진 금액이 적용될 수 있어요.", badges: ["50% 삭감", "5회 이상"], rate: "50%", daily: "34,050원", links: [
+    { icon: "📝", title: "구직활동 인정 기준 강화 확인", href: "/w/실업급여-구직활동" },
+    { icon: "⚠️", title: "부정수급 처벌 기준 — 최대 5배 추징", href: "/w/실업급여-부정수급" },
+    { icon: "📋", title: "기초일액 상한·하한 기준 확인", href: "/w/실업급여-기초일액" },
+  ] };
 
   return null;
 }
@@ -49,7 +63,7 @@ export default function Article() {
         { t: "내 반복수급 감액률 체크", sub: "5년 내 수급 횟수별 삭감률" },
         { t: "실업급여 반복수급은 얼마나 감액되나요?", sub: null },
         { t: "5년 3회 감액 기준은 무엇인가요?", sub: null },
-        { t: "10% 25% 50% 삭감은 어떻게 되나요?", sub: "감액률별 지급액 비교표" },
+        { t: "10% 25% 50% 삭감은 어떻게 되나요?", sub: "반복수급 감액률별 지급액 비교 (기초일액 68,100원 기준)" },
         { t: "재취업활동계획서는 언제 제출하나요?", sub: null },
         { t: "자주 묻는 질문", sub: null },
       ]} />
@@ -104,6 +118,17 @@ export default function Article() {
                   <span key={i} style={{ fontSize: 11, fontWeight: 700, padding: "3px 9px", borderRadius: 4, background: result.pass ? C.navy : "#E53E3E", color: "#fff" }}>{b}</span>
                 ))}
               </div>
+              {result.links.length > 0 && (
+                <div style={{ marginTop: 12, paddingTop: 12, borderTop: result.pass ? "1px solid rgba(30,58,95,.08)" : "1px solid #FED7D7" }}>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: C.t1, marginBottom: 6 }}>{"📖 관련 가이드"}</div>
+                  {result.links.map((lnk, li) => (
+                    <a key={li} href={lnk.href} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 0", fontSize: 13, color: C.navy, fontWeight: 600, borderBottom: "1px solid rgba(30,58,95,.06)", textDecoration: "none" }}>
+                      <span>{lnk.icon} {lnk.title}</span>
+                      <span style={{ fontSize: 11, color: C.t4 }}>{"\u2192"}</span>
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -121,6 +146,8 @@ export default function Article() {
 
       <P>반복수급 감액은 수급자 잘못이 아니라 반복 이직이 잦다는 이유로 적용되는 제도예요. 구직급여를 통해 실제로 재취업을 촉진하는 게 목적이에요.</P>
 
+      <InlineLink icon="📋" title="실업급여 기초일액 상한·하한 기준" desc="2026년 상한액 68,100원, 하한액 66,048원. 감액 전 기초일액이 얼마인지 먼저 확인하세요." href="/w/실업급여-기초일액" />
+
       {/* ── SECTION 03. 5년 3회 기준 ── */}
       <Divider />
       <Sec n="SECTION 03" title="5년 3회 감액 기준은 무엇인가요?" sub="이직일 기준 직전 5년 내 수급 횟수" />
@@ -134,6 +161,8 @@ export default function Article() {
       <P>감액 대상인지 확실하지 않다면 고용센터에서 피보험 이력을 조회하면 정확하게 확인할 수 있어요.</P>
 
       <Info type="tip">{'<strong>핵심 기준:</strong> 이직일 기준 직전 5년 내 <strong>실제로 수급한 횟수</strong>만 계산해요. 수급자격만 인정받고 안 받은 경우는 미포함이에요.'}</Info>
+
+      <InlineLink icon="📊" title="실업급여 수급자격 — 비자발적 퇴사 기준" desc="자발적 퇴사도 예외 인정되는 경우가 있어요. 180일 합산 조건도 함께 정리했어요." href="/w/실업급여-수급자격" />
 
       {/* ── SECTION 04. 삭감 비교 ── */}
       <Divider />
@@ -169,6 +198,15 @@ export default function Article() {
 
       <P><B>감액된 금액이라도 하한액의 감액분(하한액 &times; 감액률 적용)보다는 높아요.</B> 기초일액이 하한액에 해당하는 사람도 감액 후 최저 지급선이 적용돼요.</P>
 
+      <div style={{ marginTop: 20 }}>
+        <div style={{ fontSize: 14, fontWeight: 800, color: C.t1, marginBottom: 10 }}>{"📖 실업급여 감액 더 알아보기"}</div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+          <SpokeLink num="01" title="실업급여 기초일액 — 평균임금 60% 계산법" desc="상한액·하한액 기준과 평균임금 산정 방법" href="/w/실업급여-기초일액" />
+          <SpokeLink num="02" title="실업급여 연봉별 계산 — 월급 200~500만원 시뮬레이션" desc="연봉별 예상 수급액과 수급 기간 계산" href="/w/실업급여-연봉별-계산" />
+          <SpokeLink num="03" title="실업급여 부정수급 — 형사처벌과 5배 추징 기준" desc="허위 신고 시 처벌 기준과 자진신고 감경" href="/w/실업급여-부정수급" />
+        </div>
+      </div>
+
       {/* ── SECTION 05. 재취업활동계획서 ── */}
       <Divider />
       <Sec n="SECTION 05" title="재취업활동계획서는 언제 제출하나요?" sub="반복수급자 의무 — 구직활동 기준 강화" />
@@ -179,12 +217,7 @@ export default function Article() {
 
       <P>계획서를 제출하지 않으면 실업인정이 거부될 수 있어요. 반복수급자는 일반 수급자보다 구직활동 기준이 엄격하게 적용될 수 있으니, 첫 실업인정일 이전에 미리 고용센터에 문의하는 게 좋아요.</P>
 
-      <BridgeCard
-        question="구직활동 기준이 헷갈리시나요?"
-        body={<>차수별로 달라지는 구직활동 횟수와 인정 기준을 정리했어요. 워크넷 지원, 직업훈련 등 <strong style={{ color: C.navy }}>어떤 활동이 인정되는지</strong> 바로 확인할 수 있어요.</>}
-        btnText="구직활동 인정 기준 보기 →"
-        href="/w/실업급여-구직활동"
-      />
+      <InlineLink icon="📝" title="구직활동 인정 기준 — 차수별 횟수와 증빙 방법" desc="반복수급자는 구직활동 기준이 강화돼요. 차수별 인정 횟수와 증빙 방법을 정리했어요." href="/w/실업급여-구직활동" />
 
       <BridgeCard
         question="감액보다 더 무서운 처벌이 있다는 거 아셨나요?"

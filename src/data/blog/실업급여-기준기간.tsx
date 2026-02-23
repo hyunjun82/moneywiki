@@ -6,33 +6,44 @@ import {
   TableTitle, TableNote, TH, THL,
   BridgeCard, ExtBtn, BlogLayout, TOC, Summary3,
   FAQAccordion, RelatedArticles, PrevNext,
+  InlineLink, SpokeLink,
 } from "@/components/wiki/BlogShared";
 
 // ── 체커 로직 ──
-type Res = { pass: boolean; headline: string; detail: string; badges: string[] };
+type ResLink = { icon: string; title: string; href: string };
+type Res = { pass: boolean; headline: string; detail: string; badges: string[]; links: ResLink[] };
+
+const passLinks: ResLink[] = [
+  { icon: "\uD83D\uDCB0", title: "\uAE30\uCD08\uC77C\uC561 \uC0C1\uD55C\u00B7\uD558\uD55C \uAE30\uC900 \uBCF4\uAE30", href: "/w/\uC2E4\uC5C5\uAE09\uC5EC-\uAE30\uCD08\uC77C\uC561" },
+  { icon: "\uD83D\uDCCB", title: "\uC218\uAE09\uC790\uACA9 \uC804\uCCB4 \uC870\uAC74 \uD655\uC778", href: "/w/\uC2E4\uC5C5\uAE09\uC5EC-\uC218\uAE09\uC790\uACA9" },
+];
+const failLinks: ResLink[] = [
+  { icon: "\uD83D\uDCCB", title: "\uC218\uAE09\uC790\uACA9 \uC804\uCCB4 \uC870\uAC74 \uD655\uC778", href: "/w/\uC2E4\uC5C5\uAE09\uC5EC-\uC218\uAE09\uC790\uACA9" },
+  { icon: "\uD83D\uDCC4", title: "\uC2E4\uC5C5\uAE09\uC5EC \uAD6C\uBE44\uC11C\uB958 \uC548\uB0B4", href: "/w/\uC2E4\uC5C5\uAE09\uC5EC-\uAD6C\uBE44\uC11C\uB958" },
+];
 
 function getResult(sel: Record<string, string>): Res | null {
   const { period, extend } = sel;
   if (!period) return null;
 
   if (period === "over9m") {
-    if (extend === "yes") return { pass: true, headline: "기준기간 연장 적용 시 더 유리해요", detail: "질병·출산·육아 기간만큼 기준기간이 연장돼요. 최대 3년까지 늘어나니 더 오래된 근무 이력도 포함될 수 있어요.", badges: ["180일 충족 가능", "기준기간 연장"] };
-    return { pass: true, headline: "피보험기간 180일 충족 가능성 높아요", detail: "이직일 이전 18개월 안에 9개월 이상 근무했다면 180일을 충족할 가능성이 높아요. 정확한 날수는 고용24에서 피보험단위기간을 조회해 확인하세요.", badges: ["180일 충족 가능", "수급자격 기대"] };
+    if (extend === "yes") return { pass: true, headline: "\uAE30\uC900\uAE30\uAC04 \uC5F0\uC7A5 \uC801\uC6A9 \uC2DC \uB354 \uC720\uB9AC\uD574\uC694", detail: "\uC9C8\uBCD1\u00B7\uCD9C\uC0B0\u00B7\uC721\uC544 \uAE30\uAC04\uB9CC\uD07C \uAE30\uC900\uAE30\uAC04\uC774 \uC5F0\uC7A5\uB3FC\uC694. \uCD5C\uB300 3\uB144\uAE4C\uC9C0 \uB298\uC5B4\uB098\uB2C8 \uB354 \uC624\uB798\uB41C \uADFC\uBB34 \uC774\uB825\uB3C4 \uD3EC\uD568\uB420 \uC218 \uC788\uC5B4\uC694.", badges: ["180\uC77C \uCDA9\uC871 \uAC00\uB2A5", "\uAE30\uC900\uAE30\uAC04 \uC5F0\uC7A5"], links: passLinks };
+    return { pass: true, headline: "\uD53C\uBCF4\uD5D8\uAE30\uAC04 180\uC77C \uCDA9\uC871 \uAC00\uB2A5\uC131 \uB192\uC544\uC694", detail: "\uC774\uC9C1\uC77C \uC774\uC804 18\uAC1C\uC6D4 \uC548\uC5D0 9\uAC1C\uC6D4 \uC774\uC0C1 \uADFC\uBB34\uD588\uB2E4\uBA74 180\uC77C\uC744 \uCDA9\uC871\uD560 \uAC00\uB2A5\uC131\uC774 \uB192\uC544\uC694. \uC815\uD655\uD55C \uB0A0\uC218\uB294 \uACE0\uC6A924\uC5D0\uC11C \uD53C\uBCF4\uD5D8\uB2E8\uC704\uAE30\uAC04\uC744 \uC870\uD68C\uD574 \uD655\uC778\uD558\uC138\uC694.", badges: ["180\uC77C \uCDA9\uC871 \uAC00\uB2A5", "\uC218\uAE09\uC790\uACA9 \uAE30\uB300"], links: passLinks };
   }
 
   if (period === "6to9m") {
-    if (extend === "yes") return { pass: true, headline: "기준기간 연장하면 합산 범위가 넓어져요", detail: "연장된 기준기간 안에 이전 직장 근무일도 포함될 수 있어요. 고용센터에서 정확한 피보험단위기간을 확인해보세요.", badges: ["합산 가능", "기준기간 연장"] };
-    return { pass: false, headline: "단독으로는 180일이 부족할 수 있어요", detail: "6~9개월 근무라면 180일이 될 수도, 안 될 수도 있어요. 이전 직장 근무 이력이 기준기간 내에 있다면 합산할 수 있어요.", badges: ["합산 검토 필요"] };
+    if (extend === "yes") return { pass: true, headline: "\uAE30\uC900\uAE30\uAC04 \uC5F0\uC7A5\uD558\uBA74 \uD569\uC0B0 \uBC94\uC704\uAC00 \uB113\uC5B4\uC838\uC694", detail: "\uC5F0\uC7A5\uB41C \uAE30\uC900\uAE30\uAC04 \uC548\uC5D0 \uC774\uC804 \uC9C1\uC7A5 \uADFC\uBB34\uC77C\uB3C4 \uD3EC\uD568\uB420 \uC218 \uC788\uC5B4\uC694. \uACE0\uC6A9\uC13C\uD130\uC5D0\uC11C \uC815\uD655\uD55C \uD53C\uBCF4\uD5D8\uB2E8\uC704\uAE30\uAC04\uC744 \uD655\uC778\uD574\uBCF4\uC138\uC694.", badges: ["\uD569\uC0B0 \uAC00\uB2A5", "\uAE30\uC900\uAE30\uAC04 \uC5F0\uC7A5"], links: passLinks };
+    return { pass: false, headline: "\uB2E8\uB3C5\uC73C\uB85C\uB294 180\uC77C\uC774 \uBD80\uC871\uD560 \uC218 \uC788\uC5B4\uC694", detail: "6~9\uAC1C\uC6D4 \uADFC\uBB34\uB77C\uBA74 180\uC77C\uC774 \uB420 \uC218\uB3C4, \uC548 \uB420 \uC218\uB3C4 \uC788\uC5B4\uC694. \uC774\uC804 \uC9C1\uC7A5 \uADFC\uBB34 \uC774\uB825\uC774 \uAE30\uC900\uAE30\uAC04 \uB0B4\uC5D0 \uC788\uB2E4\uBA74 \uD569\uC0B0\uD560 \uC218 \uC788\uC5B4\uC694.", badges: ["\uD569\uC0B0 \uAC80\uD1A0 \uD544\uC694"], links: failLinks };
   }
 
   if (period === "under6m") {
-    if (extend === "yes") return { pass: false, headline: "연장해도 합산이 필요해요", detail: "기준기간이 최대 3년까지 연장되면 이전 직장 이력이 포함될 수 있어요. 고용센터에서 연장 사유와 합산 이력을 함께 확인하세요.", badges: ["합산 필요", "기준기간 연장"] };
-    return { pass: false, headline: "단독으로는 180일 충족이 어려워요", detail: "최근 직장 근무가 6개월 미만이면 이전 직장 합산이 필요해요. 이전 직장이 기준기간(18개월) 안에 있어야 합산 가능해요.", badges: ["합산 필요"] };
+    if (extend === "yes") return { pass: false, headline: "\uC5F0\uC7A5\uD574\uB3C4 \uD569\uC0B0\uC774 \uD544\uC694\uD574\uC694", detail: "\uAE30\uC900\uAE30\uAC04\uC774 \uCD5C\uB300 3\uB144\uAE4C\uC9C0 \uC5F0\uC7A5\uB418\uBA74 \uC774\uC804 \uC9C1\uC7A5 \uC774\uB825\uC774 \uD3EC\uD568\uB420 \uC218 \uC788\uC5B4\uC694. \uACE0\uC6A9\uC13C\uD130\uC5D0\uC11C \uC5F0\uC7A5 \uC0AC\uC720\uC640 \uD569\uC0B0 \uC774\uB825\uC744 \uD568\uAED8 \uD655\uC778\uD558\uC138\uC694.", badges: ["\uD569\uC0B0 \uD544\uC694", "\uAE30\uC900\uAE30\uAC04 \uC5F0\uC7A5"], links: failLinks };
+    return { pass: false, headline: "\uB2E8\uB3C5\uC73C\uB85C\uB294 180\uC77C \uCDA9\uC871\uC774 \uC5B4\uB824\uC6CC\uC694", detail: "\uCD5C\uADFC \uC9C1\uC7A5 \uADFC\uBB34\uAC00 6\uAC1C\uC6D4 \uBBF8\uB9CC\uC774\uBA74 \uC774\uC804 \uC9C1\uC7A5 \uD569\uC0B0\uC774 \uD544\uC694\uD574\uC694. \uC774\uC804 \uC9C1\uC7A5\uC774 \uAE30\uC900\uAE30\uAC04(18\uAC1C\uC6D4) \uC548\uC5D0 \uC788\uC5B4\uC57C \uD569\uC0B0 \uAC00\uB2A5\uD574\uC694.", badges: ["\uD569\uC0B0 \uD544\uC694"], links: failLinks };
   }
 
   if (period === "multi") {
-    if (extend === "yes") return { pass: true, headline: "연장 기준기간 + 합산으로 충족 가능성 높아요", detail: "기준기간이 최대 3년까지 연장되면 더 오래된 직장 이력도 포함돼요. 고용센터에 연장 사유와 합산 이력을 함께 제출하세요.", badges: ["합산 가능", "기준기간 연장"] };
-    return { pass: true, headline: "여러 직장 합산은 가능해요 — 조건 확인 필요", detail: "기준기간(이직일 이전 18개월) 안에 있는 모든 직장의 피보험단위기간을 합산할 수 있어요. 고용24에서 가입이력 조회 후 계산해보세요.", badges: ["합산 가능", "기준기간 내 근무"] };
+    if (extend === "yes") return { pass: true, headline: "\uC5F0\uC7A5 \uAE30\uC900\uAE30\uAC04 + \uD569\uC0B0\uC73C\uB85C \uCDA9\uC871 \uAC00\uB2A5\uC131 \uB192\uC544\uC694", detail: "\uAE30\uC900\uAE30\uAC04\uC774 \uCD5C\uB300 3\uB144\uAE4C\uC9C0 \uC5F0\uC7A5\uB418\uBA74 \uB354 \uC624\uB798\uB41C \uC9C1\uC7A5 \uC774\uB825\uB3C4 \uD3EC\uD568\uB3FC\uC694. \uACE0\uC6A9\uC13C\uD130\uC5D0 \uC5F0\uC7A5 \uC0AC\uC720\uC640 \uD569\uC0B0 \uC774\uB825\uC744 \uD568\uAED8 \uC81C\uCD9C\uD558\uC138\uC694.", badges: ["\uD569\uC0B0 \uAC00\uB2A5", "\uAE30\uC900\uAE30\uAC04 \uC5F0\uC7A5"], links: passLinks };
+    return { pass: true, headline: "\uC5EC\uB7EC \uC9C1\uC7A5 \uD569\uC0B0\uC740 \uAC00\uB2A5\uD574\uC694 \u2014 \uC870\uAC74 \uD655\uC778 \uD544\uC694", detail: "\uAE30\uC900\uAE30\uAC04(\uC774\uC9C1\uC77C \uC774\uC804 18\uAC1C\uC6D4) \uC548\uC5D0 \uC788\uB294 \uBAA8\uB4E0 \uC9C1\uC7A5\uC758 \uD53C\uBCF4\uD5D8\uB2E8\uC704\uAE30\uAC04\uC744 \uD569\uC0B0\uD560 \uC218 \uC788\uC5B4\uC694. \uACE0\uC6A924\uC5D0\uC11C \uAC00\uC785\uC774\uB825 \uC870\uD68C \uD6C4 \uACC4\uC0B0\uD574\uBCF4\uC138\uC694.", badges: ["\uD569\uC0B0 \uAC00\uB2A5", "\uAE30\uC900\uAE30\uAC04 \uB0B4 \uADFC\uBB34"], links: passLinks };
   }
 
   return null;
@@ -124,6 +135,17 @@ export default function Article() {
                   <span key={i} style={{ fontSize: 11, fontWeight: 700, padding: "3px 9px", borderRadius: 4, background: result.pass ? C.navy : C.t4, color: "#fff" }}>{b}</span>
                 ))}
               </div>
+              {result.links.length > 0 && (
+                <div style={{ marginTop: 12, paddingTop: 12, borderTop: result.pass ? "1px solid rgba(30,58,95,.08)" : "1px solid #E2E8F0" }}>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: C.t1, marginBottom: 6 }}>{"\uD83D\uDCD6 \uAD00\uB828 \uAC00\uC774\uB4DC"}</div>
+                  {result.links.map((lnk, li) => (
+                    <a key={li} href={lnk.href} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 0", fontSize: 13, color: C.navy, fontWeight: 600, borderBottom: "1px solid rgba(30,58,95,.06)", textDecoration: "none" }}>
+                      <span>{lnk.icon}{" "}{lnk.title}</span>
+                      <span style={{ fontSize: 11, color: C.t4 }}>{"\u2192"}</span>
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -141,6 +163,8 @@ export default function Article() {
 
       <Info type="tip">{'<strong>연장 사유:</strong> 질병·부상, 임신·출산·육아, 병역, 재해 등 일을 할 수 없었던 기간. 증빙(진단서, 출생증명서 등)을 고용센터에 제출해야 해요.'}</Info>
 
+      <InlineLink icon={"\uD83D\uDCCB"} title={"\uC2E4\uC5C5\uAE09\uC5EC \uC218\uAE09\uC790\uACA9 \u2014 \uBE44\uC790\uBC1C\uC801 \uD1F4\uC9C1 \uC870\uAC74"} desc={"180\uC77C \uC678\uC5D0 \uBE44\uC790\uBC1C\uC801 \uD1F4\uC9C1, \uAD6C\uC9C1\uD65C\uB3D9 \uC758\uC0AC \uB4F1 \uB098\uBA38\uC9C0 \uC218\uAE09\uC790\uACA9 \uC870\uAC74\uC744 \uC815\uB9AC\uD588\uC5B4\uC694."} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uC218\uAE09\uC790\uACA9" />
+
       {/* ── SECTION 03 ── */}
       <Divider />
       <Sec n="SECTION 03" title="이직일 이전 18개월은 어떻게 계산하나요?" sub="퇴직일로부터 역산해요" />
@@ -152,6 +176,8 @@ export default function Article() {
       <P>퇴직 시점도 중요해요. 언제 퇴직하느냐에 따라 기준기간 안에 포함되는 근무일이 달라지기 때문이에요. 퇴직 전에 미리 <A href="https://www.work24.go.kr">고용24</A>에서 피보험단위기간을 조회해서 180일 충족 여부를 확인하는 게 좋아요.</P>
 
       <Info type="warn">{'<strong>초기화 주의:</strong> 과거에 실업급여를 받은 시점 이전 경력은 전부 소멸해요. 재취업 후 새로 쌓은 기간만 유효해요.'}</Info>
+
+      <InlineLink icon={"\uD83D\uDCB0"} title={"\uC2E4\uC5C5\uAE09\uC5EC \uAE30\uCD08\uC77C\uC561 \uC0C1\uD55C\u00B7\uD558\uD55C \uAE30\uC900"} desc={"\uAE30\uC900\uAE30\uAC04\uC744 \uCDA9\uC871\uD55C \uB4A4 \uAD81\uAE08\uD55C \uAC74 \uC9C0\uAE09\uC561\uC774\uC5D0\uC694. \uD3C9\uADE0\uC784\uAE08 60%\uC640 \uC0C1\u00B7\uD558\uD55C\uC561 \uAE30\uC900\uC744 \uC815\uB9AC\uD588\uC5B4\uC694."} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uAE30\uCD08\uC77C\uC561" />
 
       {/* ── SECTION 04 ── */}
       <Divider />
@@ -201,6 +227,13 @@ export default function Article() {
         </table>
       </div>
       <TableNote>※ 정확한 피보험단위기간은 고용24 &quot;고용보험 가입이력&quot;에서 조회 가능</TableNote>
+
+      <div style={{ margin: "20px 0" }}>
+        <div style={{ fontSize: 13, fontWeight: 700, color: C.t1, marginBottom: 8 }}>{"\uD83D\uDCD6 \uC2E4\uC5C5\uAE09\uC5EC \uAE30\uC900\uAE30\uAC04 \uB354 \uC54C\uC544\uBCF4\uAE30"}</div>
+        <SpokeLink num="01" title={"\uAE30\uCD08\uC77C\uC561 \uC0C1\uD55C\u00B7\uD558\uD55C \uAE30\uC900 \uD655\uC778"} desc={"\uD3C9\uADE0\uC784\uAE08 60%\uC640 \uC0C1\u00B7\uD558\uD55C\uC561 \uAE30\uC900"} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uAE30\uCD08\uC77C\uC561" />
+        <SpokeLink num="02" title={"\uC5F0\uBD09\uBCC4 \uC608\uC0C1 \uC218\uB839\uC561 \uACC4\uC0B0"} desc={"\uB0B4 \uC5F0\uBD09 \uAE30\uC900 \uC2E4\uC5C5\uAE09\uC5EC \uACC4\uC0B0"} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uC5F0\uBD09\uBCC4-\uACC4\uC0B0" />
+        <SpokeLink num="03" title={"\uAD6C\uC9C1\uD65C\uB3D9 \uC778\uC815 \uC99D\uBE59 \uBC29\uBC95"} desc={"\uC6CC\uD06C\uB137 \uC785\uC0AC\uC9C0\uC6D0 \uB4F1 \uC778\uC815 \uBC29\uBC95"} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uAD6C\uC9C1\uD65C\uB3D9" />
+      </div>
 
       <BridgeCard
         question="기준기간 충족 후 실업급여는 하루 얼마 받나요?"

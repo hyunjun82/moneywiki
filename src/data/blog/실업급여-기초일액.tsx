@@ -6,19 +6,26 @@ import {
   TableTitle, TableNote, TH, THL,
   BridgeCard, ExtBtn, BlogLayout, TOC, Summary3,
   FAQAccordion, RelatedArticles, PrevNext,
+  InlineLink, SpokeLink,
 } from "@/components/wiki/BlogShared";
 
 // ── 체커 로직: 월급여별 기초일액 예상 ──
-type Res = { pass: boolean; headline: string; detail: string; badges: string[]; amount?: string };
+type ResLink = { icon: string; title: string; href: string };
+type Res = { pass: boolean; headline: string; detail: string; badges: string[]; amount?: string; links: ResLink[] };
+
+const checkerLinks: ResLink[] = [
+  { icon: "\uD83D\uDCC5", title: "\uC18C\uC815\uAE09\uC5EC\uC77C\uC218 \uB098\uC774\uBCC4 \uAE30\uAC04 \uBCF4\uAE30", href: "/w/\uC2E4\uC5C5\uAE09\uC5EC-\uC18C\uC815\uAE09\uC5EC\uC77C\uC218" },
+  { icon: "\uD83D\uDCB0", title: "\uC5F0\uBD09\uBCC4 \uC608\uC0C1 \uC218\uB839\uC561 \uACC4\uC0B0", href: "/w/\uC2E4\uC5C5\uAE09\uC5EC-\uC5F0\uBD09\uBCC4-\uACC4\uC0B0" },
+];
 
 function getResult(sel: Record<string, string>): Res | null {
   const { salary } = sel;
   if (!salary) return null;
 
-  if (salary === "under250") return { pass: true, headline: "하한액 66,048원이 적용될 가능성이 높아요", detail: "월 250만원 미만이면 평균임금의 60%가 하한액(66,048원)보다 낮아서 하한액이 보장돼요. 최저임금의 80% × 8시간으로 계산한 금액이에요.", badges: ["하한액 보장", "66,048원/일"], amount: "66,048원" };
-  if (salary === "250to400") return { pass: true, headline: "직접 계산이 필요해요 (66,048~68,100원 범위)", detail: "월 250~400만원 구간은 평균임금 60%가 하한액과 상한액 사이에 해당해요. 퇴직 전 3개월 임금총액을 총일수로 나눠 계산해야 정확한 금액을 알 수 있어요.", badges: ["직접 계산 필요", "개인별 상이"] };
-  if (salary === "400to600") return { pass: true, headline: "상한액 68,100원이 적용돼요", detail: "월 400만원 이상이면 평균임금의 60%가 상한액(68,100원)을 초과해요. 실제 급여가 높아도 1일 최대 68,100원까지만 받을 수 있어요.", badges: ["상한액 적용", "68,100원/일"], amount: "68,100원" };
-  if (salary === "over600") return { pass: true, headline: "상한액 68,100원으로 고정돼요", detail: "월 600만원 이상이라도 1일 최대 68,100원까지만 받을 수 있어요. 소정급여일수가 180일이면 총 12,258,000원이 상한이에요.", badges: ["상한액 고정", "68,100원/일"], amount: "68,100원" };
+  if (salary === "under250") return { pass: true, headline: "\uD558\uD55C\uC561 66,048\uC6D0\uC774 \uC801\uC6A9\uB420 \uAC00\uB2A5\uC131\uC774 \uB192\uC544\uC694", detail: "\uC6D4 250\uB9CC\uC6D0 \uBBF8\uB9CC\uC774\uBA74 \uD3C9\uADE0\uC784\uAE08\uC758 60%\uAC00 \uD558\uD55C\uC561(66,048\uC6D0)\uBCF4\uB2E4 \uB0AE\uC544\uC11C \uD558\uD55C\uC561\uC774 \uBCF4\uC7A5\uB3FC\uC694. \uCD5C\uC800\uC784\uAE08\uC758 80% \u00D7 8\uC2DC\uAC04\uC73C\uB85C \uACC4\uC0B0\uD55C \uAE08\uC561\uC774\uC5D0\uC694.", badges: ["\uD558\uD55C\uC561 \uBCF4\uC7A5", "66,048\uC6D0/\uC77C"], amount: "66,048\uC6D0", links: checkerLinks };
+  if (salary === "250to400") return { pass: true, headline: "\uC9C1\uC811 \uACC4\uC0B0\uC774 \uD544\uC694\uD574\uC694 (66,048~68,100\uC6D0 \uBC94\uC704)", detail: "\uC6D4 250~400\uB9CC\uC6D0 \uAD6C\uAC04\uC740 \uD3C9\uADE0\uC784\uAE08 60%\uAC00 \uD558\uD55C\uC561\uACFC \uC0C1\uD55C\uC561 \uC0AC\uC774\uC5D0 \uD574\uB2F9\uD574\uC694. \uD1F4\uC9C1 \uC804 3\uAC1C\uC6D4 \uC784\uAE08\uCD1D\uC561\uC744 \uCD1D\uC77C\uC218\uB85C \uB098\uB220 \uACC4\uC0B0\uD574\uC57C \uC815\uD655\uD55C \uAE08\uC561\uC744 \uC54C \uC218 \uC788\uC5B4\uC694.", badges: ["\uC9C1\uC811 \uACC4\uC0B0 \uD544\uC694", "\uAC1C\uC778\uBCC4 \uC0C1\uC774"], links: checkerLinks };
+  if (salary === "400to600") return { pass: true, headline: "\uC0C1\uD55C\uC561 68,100\uC6D0\uC774 \uC801\uC6A9\uB3FC\uC694", detail: "\uC6D4 400\uB9CC\uC6D0 \uC774\uC0C1\uC774\uBA74 \uD3C9\uADE0\uC784\uAE08\uC758 60%\uAC00 \uC0C1\uD55C\uC561(68,100\uC6D0)\uC744 \uCD08\uACFC\uD574\uC694. \uC2E4\uC81C \uAE09\uC5EC\uAC00 \uB192\uC544\uB3C4 1\uC77C \uCD5C\uB300 68,100\uC6D0\uAE4C\uC9C0\uB9CC \uBC1B\uC744 \uC218 \uC788\uC5B4\uC694.", badges: ["\uC0C1\uD55C\uC561 \uC801\uC6A9", "68,100\uC6D0/\uC77C"], amount: "68,100\uC6D0", links: checkerLinks };
+  if (salary === "over600") return { pass: true, headline: "\uC0C1\uD55C\uC561 68,100\uC6D0\uC73C\uB85C \uACE0\uC815\uB3FC\uC694", detail: "\uC6D4 600\uB9CC\uC6D0 \uC774\uC0C1\uC774\uB77C\uB3C4 1\uC77C \uCD5C\uB300 68,100\uC6D0\uAE4C\uC9C0\uB9CC \uBC1B\uC744 \uC218 \uC788\uC5B4\uC694. \uC18C\uC815\uAE09\uC5EC\uC77C\uC218\uAC00 180\uC77C\uC774\uBA74 \uCD1D 12,258,000\uC6D0\uC774 \uC0C1\uD55C\uC774\uC5D0\uC694.", badges: ["\uC0C1\uD55C\uC561 \uACE0\uC815", "68,100\uC6D0/\uC77C"], amount: "68,100\uC6D0", links: checkerLinks };
 
   return null;
 }
@@ -49,7 +56,7 @@ export default function Article() {
         { t: "내 기초일액 예상 체크", sub: "월급여별 상한·하한 적용 확인" },
         { t: "기초일액은 어떻게 계산하나요?", sub: null },
         { t: "평균임금 60% 산정은 어떻게 하나요?", sub: null },
-        { t: "상한액 하한액은 얼마인가요?", sub: "2026년 기준 금액표" },
+        { t: "상한액 하한액은 얼마인가요?", sub: "2026년 기초일액 상한액·하한액 기준" },
         { t: "기초일액 기준 수령액은 얼마인가요?", sub: null },
         { t: "자주 묻는 질문", sub: null },
       ]} />
@@ -102,6 +109,17 @@ export default function Article() {
                   <span key={i} style={{ fontSize: 11, fontWeight: 700, padding: "3px 9px", borderRadius: 4, background: C.navy, color: "#fff" }}>{b}</span>
                 ))}
               </div>
+              {result.links.length > 0 && (
+                <div style={{ marginTop: 12, paddingTop: 12, borderTop: "1px solid rgba(30,58,95,.08)" }}>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: C.t1, marginBottom: 6 }}>{"\uD83D\uDCD6 \uAD00\uB828 \uAC00\uC774\uB4DC"}</div>
+                  {result.links.map((lnk, li) => (
+                    <a key={li} href={lnk.href} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 0", fontSize: 13, color: C.navy, fontWeight: 600, borderBottom: "1px solid rgba(30,58,95,.06)", textDecoration: "none" }}>
+                      <span>{lnk.icon}{" "}{lnk.title}</span>
+                      <span style={{ fontSize: 11, color: C.t4 }}>{"\u2192"}</span>
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -122,6 +140,8 @@ export default function Article() {
 
       <P>기초일액 계산에서 퇴직금, 퇴직 시 일시 지급되는 미사용 연차수당, 경조사비 같은 일시금은 평균임금에서 제외돼요. 일상적으로 지급받은 기본급, 직책수당, 교통비, 분기별 상여금의 해당 기간 분만 포함해요.</P>
 
+      <InlineLink icon={"\uD83D\uDCC5"} title={"\uC2E4\uC5C5\uAE09\uC5EC \uAE30\uC900\uAE30\uAC04 18\uAC1C\uC6D4 \uD53C\uBCF4\uD5D8 180\uC77C"} desc={"\uAE30\uCD08\uC77C\uC561 \uACC4\uC0B0 \uC804\uC5D0 \uD53C\uBCF4\uD5D8\uAE30\uAC04 180\uC77C \uCDA9\uC871 \uC5EC\uBD80\uBD80\uD130 \uD655\uC778\uC774 \uD544\uC694\uD574\uC694."} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uAE30\uC900\uAE30\uAC04" />
+
       {/* ── SECTION 03 ── */}
       <Divider />
       <Sec n="SECTION 03" title="평균임금 60% 산정은 어떻게 하나요?" sub="퇴직일 이전 3개월 역산" />
@@ -133,6 +153,8 @@ export default function Article() {
       <P><B>평균임금이 최저임금 미만으로 나오면 최저임금을 기준으로 산정해요.</B> 이 경우에도 60%를 적용한 금액이 하한액(66,048원)보다 낮으면 하한액이 보장돼요. 결국 실업급여는 아무리 낮아도 1일 66,048원 이상은 받을 수 있어요.</P>
 
       <Info type="tip">{'<strong>증빙 준비:</strong> 고용센터에서 자동 계산해주지만, 퇴직 전 <strong>3개월치 급여명세서</strong>를 보관해두면 이의 신청 시 유리해요.'}</Info>
+
+      <InlineLink icon={"\uD83D\uDCB0"} title={"\uC2E4\uC5C5\uAE09\uC5EC \uC5F0\uBD09\uBCC4 \uC608\uC0C1 \uC218\uB839\uC561 \uACC4\uC0B0"} desc={"\uB0B4 \uC5F0\uBD09 \uAE30\uC900\uC73C\uB85C \uC2E4\uC5C5\uAE09\uC5EC \uC608\uC0C1 \uC218\uB839\uC561\uC774 \uC5BC\uB9C8\uC778\uC9C0 \uBC14\uB85C \uACC4\uC0B0\uD560 \uC218 \uC788\uC5B4\uC694."} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uC5F0\uBD09\uBCC4-\uACC4\uC0B0" />
 
       {/* ── SECTION 04 ── */}
       <Divider />
@@ -165,6 +187,13 @@ export default function Article() {
       </div>
       <TableNote>※ 하한액 = 최저임금 10,320원 × 80% × 8시간 = 66,048원</TableNote>
 
+      <div style={{ margin: "20px 0" }}>
+        <div style={{ fontSize: 13, fontWeight: 700, color: C.t1, marginBottom: 8 }}>{"\uD83D\uDCD6 \uAE30\uCD08\uC77C\uC561 \uAD00\uB828 \uB354 \uC54C\uC544\uBCF4\uAE30"}</div>
+        <SpokeLink num="01" title={"\uAE30\uC900\uAE30\uAC04 18\uAC1C\uC6D4 \uD53C\uBCF4\uD5D8 180\uC77C \uD569\uC0B0"} desc={"\uC774\uC9C1\uC77C \uAE30\uC900 18\uAC1C\uC6D4 \uC5ED\uC0B0 \uBC29\uBC95"} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uAE30\uC900\uAE30\uAC04" />
+        <SpokeLink num="02" title={"\uC5F0\uBD09\uBCC4 \uC608\uC0C1 \uC218\uB839\uC561 \uACC4\uC0B0"} desc={"\uB0B4 \uC5F0\uBD09 \uAE30\uC900 \uC2E4\uC5C5\uAE09\uC5EC \uACC4\uC0B0"} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uC5F0\uBD09\uBCC4-\uACC4\uC0B0" />
+        <SpokeLink num="03" title={"\uC18C\uC815\uAE09\uC5EC\uC77C\uC218 \uB098\uC774\uBCC4 \uAE30\uAC04"} desc={"\uB098\uC774\u00B7\uD53C\uBCF4\uD5D8\uAE30\uAC04\uBCC4 120~270\uC77C"} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uC18C\uC815\uAE09\uC5EC\uC77C\uC218" />
+      </div>
+
       {/* ── SECTION 05 ── */}
       <Divider />
       <Sec n="SECTION 05" title="기초일액 기준 수령액은 얼마인가요?" sub="기초일액 × 소정급여일수 = 총 수령액" />
@@ -182,12 +211,7 @@ export default function Article() {
         href="/w/실업급여-소정급여일수"
       />
 
-      <BridgeCard
-        question="2026년 상한액이 6년 만에 바뀐 거 아셨나요?"
-        body={<>2026년 실업급여 상한액이 <strong style={{ color: C.navy }}>68,100원</strong>으로 인상됐어요. 월 최대 수령액이 얼마인지, 인상 배경까지 정리했어요.</>}
-        btnText="2026년 상한액 변경 내용 보기 →"
-        href="/w/실업급여-상한액"
-      />
+      <InlineLink icon={"\uD83D\uDCC8"} title={"2026\uB144 \uC2E4\uC5C5\uAE09\uC5EC \uC0C1\uD55C\uC561 \uBCC0\uACBD \uB0B4\uC6A9"} desc={"6\uB144 \uB9CC\uC5D0 \uC0C1\uD55C\uC561\uC774 68,100\uC6D0\uC73C\uB85C \uC778\uC0C1\uB410\uC5B4\uC694. \uC6D4 \uCD5C\uB300 \uC218\uB839\uC561\uACFC \uC778\uC0C1 \uBC30\uACBD\uC744 \uC815\uB9AC\uD588\uC5B4\uC694."} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uC0C1\uD55C\uC561" />
 
       <ExtBtn badge="고용24 공식" text="실업급여 모의계산기" cta="계산하기 →" href="https://www.work24.go.kr/ei/eih/eg/pb/pbPersonBnef/retrievePb0201Info.do" />
 

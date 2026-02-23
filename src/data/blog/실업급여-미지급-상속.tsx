@@ -2,23 +2,30 @@
 
 import { useState } from "react";
 import {
-  C, Btn, Info, Divider, Sec, P, B, A,
+  C, Btn, Info, InlineLink, SpokeLink, Divider, Sec, P, B, A,
   TableTitle, TableNote, TH, THL,
   BridgeCard, ExtBtn, BlogLayout, TOC, Summary3,
   FAQAccordion, RelatedArticles, PrevNext,
 } from "@/components/wiki/BlogShared";
 
 // ── 체커 로직: 유족관계별 청구 순위 ──
-type Res = { pass: boolean; headline: string; detail: string; badges: string[]; rank?: string };
+type ResLink = { icon: string; title: string; href: string };
+type Res = { pass: boolean; headline: string; detail: string; badges: string[]; rank?: string; links: ResLink[] };
+
+const commonLinks: ResLink[] = [
+  { icon: "📋", title: "청구 절차와 필요 서류 확인", href: "#section-03" },
+  { icon: "📊", title: "소정급여일수 — 남은 급여일수 확인", href: "/w/실업급여-소정급여일수" },
+  { icon: "📝", title: "실업급여 신청방법 전체 안내", href: "/w/실업급여-신청방법" },
+];
 
 function getResult(sel: Record<string, string>): Res | null {
   const { relation } = sel;
   if (!relation) return null;
 
-  if (relation === "spouse_child") return { pass: true, headline: "1순위 청구권자예요", detail: "배우자와 자녀는 1순위 청구권자예요. 생계를 같이하지 않아도 청구할 수 있어요. 사망일로부터 3년 이내에 고용센터에 청구하면 돼요.", badges: ["1순위", "청구 가능"], rank: "1순위" };
-  if (relation === "parent") return { pass: true, headline: "2순위 청구권자예요", detail: "배우자나 자녀가 없을 때 부모가 2순위로 청구할 수 있어요. 1순위 청구권자가 있으면 청구할 수 없어요. 사망일로부터 3년 이내에 신청해야 해요.", badges: ["2순위", "1순위 없을 때"], rank: "2순위" };
-  if (relation === "grandchild_grandparent") return { pass: true, headline: "3순위 청구권자예요", detail: "1·2순위 청구권자가 모두 없을 때 손자녀 또는 조부모가 3순위로 청구할 수 있어요. 선순위 유족이 청구권을 포기한 경우에도 청구할 수 있어요.", badges: ["3순위", "선순위 없을 때"], rank: "3순위" };
-  if (relation === "sibling") return { pass: true, headline: "4순위 청구권자예요", detail: "형제자매는 가장 마지막 순위로, 1~3순위 청구권자가 모두 없을 때만 청구할 수 있어요. 생계를 같이했는지 여부는 관계없어요.", badges: ["4순위", "선순위 전원 없을 때"], rank: "4순위" };
+  if (relation === "spouse_child") return { pass: true, headline: "1순위 청구권자예요", detail: "배우자와 자녀는 1순위 청구권자예요. 생계를 같이하지 않아도 청구할 수 있어요. 사망일로부터 3년 이내에 고용센터에 청구하면 돼요.", badges: ["1순위", "청구 가능"], rank: "1순위", links: commonLinks };
+  if (relation === "parent") return { pass: true, headline: "2순위 청구권자예요", detail: "배우자나 자녀가 없을 때 부모가 2순위로 청구할 수 있어요. 1순위 청구권자가 있으면 청구할 수 없어요. 사망일로부터 3년 이내에 신청해야 해요.", badges: ["2순위", "1순위 없을 때"], rank: "2순위", links: commonLinks };
+  if (relation === "grandchild_grandparent") return { pass: true, headline: "3순위 청구권자예요", detail: "1·2순위 청구권자가 모두 없을 때 손자녀 또는 조부모가 3순위로 청구할 수 있어요. 선순위 유족이 청구권을 포기한 경우에도 청구할 수 있어요.", badges: ["3순위", "선순위 없을 때"], rank: "3순위", links: commonLinks };
+  if (relation === "sibling") return { pass: true, headline: "4순위 청구권자예요", detail: "형제자매는 가장 마지막 순위로, 1~3순위 청구권자가 모두 없을 때만 청구할 수 있어요. 생계를 같이했는지 여부는 관계없어요.", badges: ["4순위", "선순위 전원 없을 때"], rank: "4순위", links: commonLinks };
 
   return null;
 }
@@ -102,6 +109,17 @@ export default function Article() {
                   <span key={i} style={{ fontSize: 11, fontWeight: 700, padding: "3px 9px", borderRadius: 4, background: C.navy, color: "#fff" }}>{b}</span>
                 ))}
               </div>
+              {result.links.length > 0 && (
+                <div style={{ marginTop: 12, paddingTop: 12, borderTop: "1px solid rgba(30,58,95,.08)" }}>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: C.t1, marginBottom: 6 }}>{"📖 다음 단계 안내"}</div>
+                  {result.links.map((lnk, li) => (
+                    <a key={li} href={lnk.href} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 0", fontSize: 13, color: C.navy, fontWeight: 600, borderBottom: "1px solid rgba(30,58,95,.06)", textDecoration: "none" }}>
+                      <span>{lnk.icon} {lnk.title}</span>
+                      <span style={{ fontSize: 11, color: C.t4 }}>{"\u2192"}</span>
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -121,6 +139,8 @@ export default function Article() {
 
       <Info type="tip">{'<strong>상속 포기와 별개:</strong> 수급자의 채무가 많아서 상속을 포기해도 미지급 실업급여는 <strong>별도로 청구할 수 있어요</strong>. 유족 고유 권리이기 때문이에요.'}</Info>
 
+      <InlineLink icon="📊" title="실업급여 소정급여일수 — 나이별 수급 기간표" desc="사망한 수급자의 남은 급여일수를 파악하려면 나이와 피보험기간으로 확인하세요." href="/w/실업급여-소정급여일수" />
+
       {/* ── SECTION 03. 청구 절차 ── */}
       <Divider />
       <Sec n="SECTION 03" title="사망 시 유족 청구는 어떻게 하나요?" sub="고용센터 방문 신청 — 온라인은 불가" />
@@ -134,6 +154,8 @@ export default function Article() {
       <P><B>사망일로부터 3년 이내에 청구해야 소멸시효가 완성되기 전에 받을 수 있어요.</B> 바쁘더라도 3년 안에는 꼭 청구해두세요.</P>
 
       <Info type="warn">{'<strong>서류 체크리스트:</strong> ① 미지급 청구서(현장 수령) ② 사망진단서 또는 가족관계증명서 ③ 청구인 신분증 ④ 청구인 명의 통장 사본'}</Info>
+
+      <InlineLink icon="📋" title="실업급여 구비서류 — 신청 시 필요한 서류 전체" desc="수급자격 신청부터 실업인정까지 단계별 필요 서류를 정리했어요." href="/w/실업급여-구비서류" />
 
       {/* ── SECTION 04. 순위 ── */}
       <Divider />
@@ -169,6 +191,15 @@ export default function Article() {
       </div>
       <TableNote>※ 같은 순위 유족이 여러 명이면 동등하게 나눠서 청구</TableNote>
 
+      <div style={{ marginTop: 20 }}>
+        <div style={{ fontSize: 14, fontWeight: 800, color: C.t1, marginBottom: 10 }}>{"📖 실업급여 청구 더 알아보기"}</div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+          <SpokeLink num="01" title="실업급여 신청방법 — 고용센터 방문부터 온라인까지" desc="수급자격 신청 전체 절차 안내" href="/w/실업급여-신청방법" />
+          <SpokeLink num="02" title="실업급여 지급일 — 실업인정 후 입금까지 기간" desc="지급 주기와 입금 시점 확인" href="/w/실업급여-지급일" />
+          <SpokeLink num="03" title="실업급여 수급자격 — 비자발적 퇴사 기준" desc="자발적·비자발적 퇴사별 수급자격 판단" href="/w/실업급여-수급자격" />
+        </div>
+      </div>
+
       {/* ── SECTION 05. 소멸시효 ── */}
       <Divider />
       <Sec n="SECTION 05" title="유족 청구 기한은 언제까지인가요?" sub="사망일로부터 3년 — 소멸시효" />
@@ -181,18 +212,13 @@ export default function Article() {
 
       <P>상속 절차와 별개로 진행할 수 있으니, 상속 정리가 끝나지 않았더라도 미지급 실업급여는 먼저 청구해두는 게 좋아요. 특히 3년 시효가 임박했다면 서류가 완비되지 않아도 일단 청구서를 제출해서 시효를 중단시키는 게 중요해요.</P>
 
-      <BridgeCard
-        question="실업급여 신청 절차가 헷갈리시나요?"
-        body={<>수급자 본인의 실업급여 신청부터 서류 준비까지, 고용센터 방문 전에 알아두면 좋은 내용을 정리했어요.</>}
-        btnText="실업급여 신청방법 보기 →"
-        href="/w/실업급여-신청방법"
-      />
+      <InlineLink icon="📊" title="소정급여일수 기준표 — 나이와 피보험기간별 수급 기간" desc="수급자의 남은 급여일수를 확인하려면 나이·피보험기간 기준표를 참고하세요." href="/w/실업급여-소정급여일수" />
 
       <BridgeCard
-        question="남은 실업급여 일수가 몇 일인지 알 수 있나요?"
-        body={<>수급자가 받지 못하고 사망한 경우 남은 일수를 파악해야 해요. 나이와 피보험기간에 따라 <strong style={{ color: C.navy }}>120~270일</strong>로 결정되는 기준표를 정리했어요.</>}
-        btnText="소정급여일수 기준표 보기 →"
-        href="/w/실업급여-소정급여일수"
+        question="상속 포기해도 미지급 급여는 받을 수 있다는 거 아셨나요?"
+        body={<>미지급 실업급여는 상속재산이 아니에요. 수급자에게 채무가 있어서 <strong style={{ color: C.navy }}>상속을 포기</strong>해도 유족 고유 청구권으로 별도 청구가 가능해요.</>}
+        btnText="청구 절차와 서류 확인 →"
+        href="/w/실업급여-신청방법"
       />
 
       <ExtBtn badge="고용24 공식" text="미지급 실업급여 청구 안내" cta="바로가기 →" href="https://www.work24.go.kr/cm/c/d/UECMCDA0101.do" />

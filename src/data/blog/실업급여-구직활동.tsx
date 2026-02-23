@@ -2,33 +2,43 @@
 
 import { useState } from "react";
 import {
-  C, Btn, Tag, Info, Divider, Sec, P, B, A, H3,
+  C, Btn, Tag, Info, InlineLink, SpokeLink, Divider, Sec, P, B, A, H3,
   TableTitle, TableNote, TH, THL,
   BridgeCard, ExtBtn, BlogLayout, TOC, Summary3,
   FAQAccordion, RelatedArticles, PrevNext,
 } from "@/components/wiki/BlogShared";
 
 // ── 체커 로직 ──
-type Res = { pass: boolean; headline: string; detail: string; badges: string[] };
+type ResLink = { icon: string; title: string; href: string };
+type Res = { pass: boolean; headline: string; detail: string; badges: string[]; links: ResLink[] };
+
+const passLinks: ResLink[] = [
+  { icon: "📋", title: "실업인정 후 지급일 확인", href: "/w/실업급여-지급일" },
+  { icon: "📊", title: "기초일액 상한·하한 기준", href: "/w/실업급여-기초일액" },
+];
+const failLinks: ResLink[] = [
+  { icon: "📝", title: "워크넷 입사지원 방법 보기", href: "/w/실업급여-구직활동" },
+  { icon: "⚠️", title: "부정수급 처벌 기준 확인", href: "/w/실업급여-부정수급" },
+];
 
 function getResult(sel: Record<string, string>): Res | null {
   const { round, activity } = sel;
   if (!round) return null;
 
   if (round === "1st") {
-    if (activity === "online-edu") return { pass: true, headline: "1차 실업인정 가능해요", detail: "수급자격자 온라인 교육을 이수하면 1차 실업인정이 자동 처리돼요. 별도 구직활동은 불필요해요.", badges: ["온라인 교육 이수", "자동 처리"] };
-    return { pass: true, headline: "1차는 온라인 교육만으로 충분해요", detail: "1차 실업인정은 수급자격자 온라인 교육 수강만으로 인정돼요. 입사지원이나 면접은 2차부터 활용하는 게 효율적이에요.", badges: ["온라인 교육 권장"] };
+    if (activity === "online-edu") return { pass: true, headline: "1차 실업인정 가능해요", detail: "수급자격자 온라인 교육을 이수하면 1차 실업인정이 자동 처리돼요. 별도 구직활동은 불필요해요.", badges: ["온라인 교육 이수", "자동 처리"], links: passLinks };
+    return { pass: true, headline: "1차는 온라인 교육만으로 충분해요", detail: "1차 실업인정은 수급자격자 온라인 교육 수강만으로 인정돼요. 입사지원이나 면접은 2차부터 활용하는 게 효율적이에요.", badges: ["온라인 교육 권장"], links: passLinks };
   }
 
   if (round === "2-4") {
-    if (activity === "online-edu") return { pass: false, headline: "온라인 교육은 1차 전용이에요", detail: "수급자격자 온라인 교육은 1차 실업인정에만 사용할 수 있어요. 2차부터는 입사지원, 면접 등 재취업 활동이 필요해요.", badges: ["1차 전용"] };
-    return { pass: true, headline: "실업인정 가능해요", detail: "2~4차는 재취업 활동 1회 이상이면 인정돼요. 구직활동과 구직 외 활동(직업훈련·취업특강) 모두 가능해요.", badges: ["재취업 활동 1회"] };
+    if (activity === "online-edu") return { pass: false, headline: "온라인 교육은 1차 전용이에요", detail: "수급자격자 온라인 교육은 1차 실업인정에만 사용할 수 있어요. 2차부터는 입사지원, 면접 등 재취업 활동이 필요해요.", badges: ["1차 전용"], links: failLinks };
+    return { pass: true, headline: "실업인정 가능해요", detail: "2~4차는 재취업 활동 1회 이상이면 인정돼요. 구직활동과 구직 외 활동(직업훈련·취업특강) 모두 가능해요.", badges: ["재취업 활동 1회"], links: passLinks };
   }
 
   if (round === "5plus") {
-    if (activity === "online-edu") return { pass: false, headline: "온라인 교육은 1차 전용이에요", detail: "5차 이후에는 재취업 활동 2회 이상이 필요하고, 그중 구직활동 1회는 필수예요. 온라인 교육은 해당하지 않아요.", badges: ["1차 전용"] };
-    if (activity === "training") return { pass: true, headline: "재취업 활동 1회로 인정 — 추가 활동 필요", detail: "직업훈련·취업특강은 구직 외 활동이라 재취업 활동 1회로 인정돼요. 나머지 1회는 입사지원·면접 등 구직활동이 필요해요.", badges: ["구직 외 활동", "구직활동 추가 필요"] };
-    return { pass: true, headline: "구직활동 1회로 인정돼요", detail: "5차 이후 필수인 구직활동 1회에 해당해요. 나머지 1회는 다른 날 추가 활동이 필요해요. 1일 1회만 인정되니 이틀에 나눠서 활동하세요.", badges: ["구직활동 인정", "추가 1회 필요"] };
+    if (activity === "online-edu") return { pass: false, headline: "온라인 교육은 1차 전용이에요", detail: "5차 이후에는 재취업 활동 2회 이상이 필요하고, 그중 구직활동 1회는 필수예요. 온라인 교육은 해당하지 않아요.", badges: ["1차 전용"], links: failLinks };
+    if (activity === "training") return { pass: true, headline: "재취업 활동 1회로 인정 — 추가 활동 필요", detail: "직업훈련·취업특강은 구직 외 활동이라 재취업 활동 1회로 인정돼요. 나머지 1회는 입사지원·면접 등 구직활동이 필요해요.", badges: ["구직 외 활동", "구직활동 추가 필요"], links: passLinks };
+    return { pass: true, headline: "구직활동 1회로 인정돼요", detail: "5차 이후 필수인 구직활동 1회에 해당해요. 나머지 1회는 다른 날 추가 활동이 필요해요. 1일 1회만 인정되니 이틀에 나눠서 활동하세요.", badges: ["구직활동 인정", "추가 1회 필요"], links: passLinks };
   }
 
   return null;
@@ -125,6 +135,17 @@ export default function Article() {
                   <span key={i} style={{ fontSize: 11, fontWeight: 700, padding: "3px 9px", borderRadius: 4, background: result.pass ? C.navy : C.t4, color: "#fff" }}>{b}</span>
                 ))}
               </div>
+              {result.links.length > 0 && (
+                <div style={{ marginTop: 12, paddingTop: 12, borderTop: result.pass ? "1px solid rgba(30,58,95,.08)" : `1px solid ${C.line}` }}>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: C.t1, marginBottom: 6 }}>{"📖 관련 가이드"}</div>
+                  {result.links.map((lnk, li) => (
+                    <a key={li} href={lnk.href} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 0", fontSize: 13, color: C.navy, fontWeight: 600, borderBottom: "1px solid rgba(30,58,95,.06)", textDecoration: "none" }}>
+                      <span>{lnk.icon} {lnk.title}</span>
+                      <span style={{ fontSize: 11, color: C.t4 }}>{"\u2192"}</span>
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -141,6 +162,8 @@ export default function Article() {
       <P>활동별 인정 횟수에는 한도가 있어요. 취업특강은 온·오프라인 합산 <B>최대 3회</B>까지만, 직업심리검사와 심리안정프로그램은 각 <B>1회</B>까지만 실업인정 실적으로 인정돼요. 그리고 중요한 규칙이 하나 있어요. <B>1일 1회만 인정</B>되기 때문에 같은 날 여러 활동을 해도 1회로만 계산해요. 2회가 필요한 차수는 반드시 이틀에 걸쳐 활동해야 해요.</P>
 
       <Info type="warn">{'<strong>1일 1회 규칙:</strong> 같은 날 입사지원 2건을 해도 1회로만 인정돼요. 5차 이후(2회 필요)에는 <strong>반드시 이틀에 나눠서</strong> 활동해야 해요.'}</Info>
+
+      <InlineLink icon="📊" title="실업급여 수급자격 조건 — 180일 합산 기준" desc="피보험기간 180일 합산 방법과 자발적 퇴사 예외 인정 사유를 정리했어요." href="/w/실업급여-수급자격" />
 
       {/* ── SECTION 03. 증빙 방법 ── */}
       <Divider />
@@ -195,6 +218,8 @@ export default function Article() {
 
       <P>사람인·잡코리아 같은 민간 채용사이트도 고용24와 연동되는 경우가 많아요. 연동 가능한 사이트 목록은 <A href="https://www.work24.go.kr">고용24</A>에서 확인할 수 있어요. 연동이 안 되는 사이트에서 지원했다면 입사지원 완료 화면을 캡처해서 첨부하면 실적으로 인정받을 수 있어요. 회사명, 직종, 지원 날짜가 확인 가능한 화면이어야 해요.</P>
 
+      <InlineLink icon="📋" title="실업급여 구비서류 — 단계별 필요 서류 전체" desc="수급자격 신청부터 실업인정까지 어떤 서류가 필요한지 정리했어요." href="/w/실업급여-구비서류" />
+
       {/* ── SECTION 05. 온라인 교육 ── */}
       <Divider />
       <Sec n="SECTION 05" title="실업급여 구직활동 온라인 교육은 어디서 받나요?" sub="1차 실업인정은 교육 수강만으로 끝나요" />
@@ -242,6 +267,15 @@ export default function Article() {
             </div>
           </div>
         ))}
+      </div>
+
+      <div style={{ marginTop: 20 }}>
+        <div style={{ fontSize: 14, fontWeight: 800, color: C.t1, marginBottom: 10 }}>{"📖 실업급여 구직활동 더 알아보기"}</div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+          <SpokeLink num="01" title="실업급여 지급일 — 실업인정 후 입금까지 기간" desc="인정일 이후 2~5일 내 입금 기준 안내" href="/w/실업급여-지급일" />
+          <SpokeLink num="02" title="실업급여 반복수급 — 5년 3회 감액 기준" desc="반복 수급 시 10%~50% 삭감 기준 정리" href="/w/실업급여-반복수급" />
+          <SpokeLink num="03" title="실업급여 기준기간 — 18개월 피보험 180일" desc="기준기간 산정 방법과 합산 기준 정리" href="/w/실업급여-기준기간" />
+        </div>
       </div>
 
       <BridgeCard
