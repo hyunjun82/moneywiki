@@ -114,14 +114,25 @@ export default function Article65() {
   const res = getResult();
 
   const tocItems = [
-    { id: "h2-1", label: "실업급여 수급유예는 무엇인가요?" },
-    { id: "h2-2", label: "실업급여 수급유예 신청은 어떻게 하나요?" },
-    { id: "h2-3", label: "실업급여 수급유예 질병 출산 조건은 뭐예요?" },
-    { id: "h2-4", label: "실업급여 수급유예 최대 4년 연장은 어떻게 계산하나요?" },
+    { t: "실업급여 수급유예는 무엇인가요?", sub: null },
+    { t: "실업급여 수급유예 신청은 어떻게 하나요?", sub: null },
+    { t: "실업급여 수급유예 질병 출산 조건은 뭐예요?", sub: null },
+    { t: "실업급여 수급유예 최대 4년 연장은 어떻게 계산하나요?", sub: null },
   ];
 
   return (
-    <BlogLayout meta={META}>
+    <BlogLayout
+      breadcrumb={["홈", "실업급여", "수급유예"]}
+      tags={["2026년 기준", "실업급여", "수급유예", "4년 연장"]}
+      date="2026-02-23"
+      title="실업급여 수급유예 신청 방법 | 질병 출산 최대 4년 연장 조건"
+      description="질병이나 출산으로 실업급여를 최대 4년까지 연장할 수 있어요. 수급유예 신청 방법과 인정 사유, 4년 계산법을 정리했어요."
+      sourceBar={{ badge: "출처", name: "고용보험법 · 고용24", date: "2026.02 기준" }}
+      stickyLabel="수급유예 신청"
+      stickyValue="고용센터"
+      stickyBtn="관할 센터 찾기 →"
+      stickyHref="https://www.ei.go.kr"
+    >
       <TOC items={tocItems} />
       <Summary3
         items={[

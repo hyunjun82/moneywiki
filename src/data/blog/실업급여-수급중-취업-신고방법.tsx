@@ -103,14 +103,25 @@ export default function Article62() {
   const res = getResult();
 
   const tocItems = [
-    { id: "h2-1", label: "실업급여 취업신고는 언제 해야 하나요?" },
-    { id: "h2-2", label: "실업급여 취업신고 방법은 어떻게 되나요?" },
-    { id: "h2-3", label: "고용24에서 실업급여 취업신고는 어떻게 하나요?" },
-    { id: "h2-4", label: "실업급여 취업신고 안 하면 어떻게 되나요?" },
+    { t: "실업급여 취업신고는 언제 해야 하나요?", sub: null },
+    { t: "실업급여 취업신고 방법은 어떻게 되나요?", sub: null },
+    { t: "고용24에서 실업급여 취업신고는 어떻게 하나요?", sub: null },
+    { t: "실업급여 취업신고 안 하면 어떻게 되나요?", sub: null },
   ];
 
   return (
-    <BlogLayout meta={META}>
+    <BlogLayout
+      breadcrumb={["홈", "실업급여", "취업신고"]}
+      tags={["2026년 기준", "실업급여", "취업신고", "고용24"]}
+      date="2026-02-23"
+      title="실업급여 취업신고 방법 | 고용24 온라인 신고 절차"
+      description="취업한 날 다음 날까지 고용24에서 실업급여 취업신고를 해야 해요. 미신고하면 부정수급으로 전액 반환에 최대 5배 추가 징수까지 있어요."
+      sourceBar={{ badge: "출처", name: "고용보험법 · 고용24", date: "2026.02 기준" }}
+      stickyLabel="취업신고"
+      stickyValue="고용24"
+      stickyBtn="지금 신고하기 →"
+      stickyHref="https://www.ei.go.kr"
+    >
       <TOC items={tocItems} />
       <Summary3
         items={[

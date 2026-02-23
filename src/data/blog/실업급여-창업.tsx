@@ -138,14 +138,25 @@ export default function Article61() {
   const res = getResult();
 
   const tocItems = [
-    { id: "h2-1", label: "실업급여 받으면서 창업하면 수급이 중단되나요?" },
-    { id: "h2-2", label: "실업급여 수급 중 사업자등록하면 어떻게 되나요?" },
-    { id: "h2-3", label: "실업급여 창업 시 조기재취업수당 받을 수 있나요?" },
-    { id: "h2-4", label: "실업급여 창업 수급 중단 조건은 무엇인가요?" },
+    { t: "실업급여 받으면서 창업하면 수급이 중단되나요?", sub: null },
+    { t: "실업급여 수급 중 사업자등록하면 어떻게 되나요?", sub: null },
+    { t: "실업급여 창업 시 조기재취업수당 받을 수 있나요?", sub: null },
+    { t: "실업급여 창업 수급 중단 조건은 무엇인가요?", sub: null },
   ];
 
   return (
-    <BlogLayout meta={META}>
+    <BlogLayout
+      breadcrumb={["홈", "실업급여", "창업"]}
+      tags={["2026년 기준", "실업급여", "창업", "사업자등록"]}
+      date="2026-02-23"
+      title="실업급여 받으면서 창업 가능 여부 | 사업자등록 수급 중단 조건"
+      description="실업급여 받으면서 창업하면 사업자등록 즉시 수급이 중단돼요. 창업 준비 단계와 수급 중단 조건, 조기재취업수당까지 정리했어요."
+      sourceBar={{ badge: "출처", name: "고용보험법 · 고용24", date: "2026.02 기준" }}
+      stickyLabel="수급이력 조회"
+      stickyValue="고용24"
+      stickyBtn="수급이력 조회하기 →"
+      stickyHref="https://www.ei.go.kr"
+    >
       <TOC items={tocItems} />
       <Summary3
         items={[

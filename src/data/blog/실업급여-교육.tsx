@@ -104,14 +104,25 @@ export default function Article66() {
   const res = getResult();
 
   const tocItems = [
-    { id: "h2-1", label: "실업급여 온라인 교육은 필수인가요?" },
-    { id: "h2-2", label: "실업급여 온라인 교육 수강 방법은 어떻게 되나요?" },
-    { id: "h2-3", label: "실업급여 온라인 교육 후 14일 기한은 뭐예요?" },
-    { id: "h2-4", label: "실업급여 온라인 교육 후 고용센터 방문은 어떻게 하나요?" },
+    { t: "실업급여 온라인 교육은 필수인가요?", sub: null },
+    { t: "실업급여 온라인 교육 수강 방법은 어떻게 되나요?", sub: null },
+    { t: "실업급여 온라인 교육 후 14일 기한은 뭐예요?", sub: null },
+    { t: "실업급여 온라인 교육 후 고용센터 방문은 어떻게 하나요?", sub: null },
   ];
 
   return (
-    <BlogLayout meta={META}>
+    <BlogLayout
+      breadcrumb={["홈", "실업급여", "온라인 교육"]}
+      tags={["2026년 기준", "실업급여", "온라인 교육", "고용센터 방문"]}
+      date="2026-02-23"
+      title="실업급여 온라인 교육 수강 방법 | 고용센터 방문 기한 및 절차"
+      description="고용24에서 수급자격 신청자 온라인 교육을 먼저 수강해야 해요. 교육 수료 후 14일 이내에 관할 고용센터를 방문해야 수급자격 신청이 돼요."
+      sourceBar={{ badge: "출처", name: "고용보험법 · 고용24", date: "2026.02 기준" }}
+      stickyLabel="온라인 교육"
+      stickyValue="고용24"
+      stickyBtn="교육 수강하기 →"
+      stickyHref="https://www.work24.go.kr"
+    >
       <TOC items={tocItems} />
       <Summary3
         items={[

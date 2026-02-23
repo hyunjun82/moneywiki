@@ -45,14 +45,14 @@ export const Tag = ({ v, children }: { v: "a" | "b"; children: React.ReactNode }
   </span>
 );
 
-export const Info = ({ type, children }: { type: "warn" | "tip"; children: string }) => (
+export const Info = ({ type = "tip", children }: { type?: "warn" | "tip"; children: string }) => (
   <div style={{ borderRadius: 8, padding: "12px 14px", margin: "10px 0", display: "flex", gap: 9, fontSize: 12.5, lineHeight: 1.55, background: type === "warn" ? "#F9FAFB" : C.navyLight, border: type === "warn" ? `1px solid ${C.line}` : "1px solid rgba(30,58,95,.08)", color: type === "warn" ? C.t2 : C.navy }}>
     <span style={{ fontSize: 15, flexShrink: 0, marginTop: 1 }}>{type === "warn" ? "\u26A0\uFE0F" : "\uD83D\uDCA1"}</span>
     <div dangerouslySetInnerHTML={{ __html: children }} />
   </div>
 );
 
-export const SpokeLink = ({ num, title, desc, href }: { num: string; title: string; desc: string; href: string }) => (
+export const SpokeLink = ({ num = "→", title, desc, href }: { num?: string; title: string; desc: string; href: string }) => (
   <a href={href} style={{ display: "flex", alignItems: "center", gap: 12, padding: "13px 15px", background: "#FFF", border: `1px solid ${C.line}`, borderRadius: 8, cursor: "pointer", textDecoration: "none", color: "inherit" }}>
     <div style={{ fontSize: 11, fontWeight: 800, color: C.navy, background: C.navyLight, width: 26, height: 26, borderRadius: 6, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{num}</div>
     <div style={{ flex: 1 }}>
@@ -63,26 +63,34 @@ export const SpokeLink = ({ num, title, desc, href }: { num: string; title: stri
   </a>
 );
 
-export const InlineLink = ({ icon, title, desc, href }: { icon: string; title: string; desc: string; href: string }) => (
-  <a href={href} style={{ display: "flex", alignItems: "center", gap: 14, padding: "14px 18px", margin: "14px 0", background: C.navyLight2, border: `1px solid ${C.line}`, borderRadius: 10, cursor: "pointer", textDecoration: "none", color: "inherit" }}>
-    <span style={{ fontSize: 20, flexShrink: 0 }}>{icon}</span>
-    <div style={{ flex: 1 }}>
-      <div style={{ fontSize: 14, fontWeight: 700, color: C.t1, lineHeight: 1.35 }}>{title}</div>
-      <div style={{ fontSize: 12, color: C.t3, marginTop: 2, lineHeight: 1.4 }}>{desc}</div>
-    </div>
-    <span style={{ fontSize: 18, color: C.navy, fontWeight: 700, flexShrink: 0 }}>{"\u203A"}</span>
-  </a>
-);
+export const InlineLink = ({ icon = "📄", title, label, desc = "", href }: { icon?: string; title?: string; label?: string; desc?: string; href: string }) => {
+  const t = title ?? label ?? "";
+  return (
+    <a href={href} style={{ display: "flex", alignItems: "center", gap: 14, padding: "14px 18px", margin: "14px 0", background: C.navyLight2, border: `1px solid ${C.line}`, borderRadius: 10, cursor: "pointer", textDecoration: "none", color: "inherit" }}>
+      <span style={{ fontSize: 20, flexShrink: 0 }}>{icon}</span>
+      <div style={{ flex: 1 }}>
+        <div style={{ fontSize: 14, fontWeight: 700, color: C.t1, lineHeight: 1.35 }}>{t}</div>
+        {desc && <div style={{ fontSize: 12, color: C.t3, marginTop: 2, lineHeight: 1.4 }}>{desc}</div>}
+      </div>
+      <span style={{ fontSize: 18, color: C.navy, fontWeight: 700, flexShrink: 0 }}>{"\u203A"}</span>
+    </a>
+  );
+};
 
 export const Divider = () => <div style={{ borderTop: `1px solid ${C.line}`, margin: "36px 0 0" }} />;
 
-export const Sec = ({ n, title, sub }: { n: string; title: string; sub?: string }) => (
-  <div style={{ padding: "32px 0 0" }}>
-    <div style={{ fontSize: 11, fontWeight: 800, color: C.navy, letterSpacing: 1.5, marginBottom: 4 }}>{n}</div>
-    <h2 style={{ fontSize: 20, fontWeight: 800, color: C.t1, lineHeight: 1.35, marginBottom: sub ? 4 : 14 }}>{title}</h2>
-    {sub && <div style={{ fontSize: 13.5, color: C.navy, fontWeight: 600, marginBottom: 16 }}>{sub}</div>}
-  </div>
-);
+export const Sec = ({ n, id, title, question, sub, children }: { n?: string; id?: string; title?: string; question?: string; sub?: string; children?: React.ReactNode }) => {
+  const num = n ?? (id ? id.replace("h2-", "0") : "");
+  const heading = title ?? question ?? "";
+  return (
+    <div style={{ padding: "32px 0 0" }}>
+      {num && <div style={{ fontSize: 11, fontWeight: 800, color: C.navy, letterSpacing: 1.5, marginBottom: 4 }}>{num}</div>}
+      <h2 style={{ fontSize: 20, fontWeight: 800, color: C.t1, lineHeight: 1.35, marginBottom: sub ? 4 : 14 }}>{heading}</h2>
+      {sub && <div style={{ fontSize: 13.5, color: C.navy, fontWeight: 600, marginBottom: 16 }}>{sub}</div>}
+      {children}
+    </div>
+  );
+};
 
 export const P = ({ children }: { children: React.ReactNode }) => (
   <p style={{ fontSize: 15, color: C.t2, lineHeight: 1.76, marginBottom: 14 }}>{children}</p>
@@ -117,16 +125,21 @@ export const THL = ({ children }: { children: React.ReactNode }) => (
 );
 
 // ── 브릿지 카드 ──
-export const BridgeCard = ({ question, body, btnText, href }: {
-  question: string; body: React.ReactNode; btnText: string; href: string;
-}) => (
-  <a href={href} style={{ display: "block", borderRadius: 12, padding: "18px 20px", margin: "16px 0", background: "#FFF", border: `1.5px solid ${C.line}`, position: "relative", overflow: "hidden", textDecoration: "none", color: "inherit" }}>
-    <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 3, background: C.navy }} />
-    <div style={{ fontSize: 15, fontWeight: 800, color: C.t1, lineHeight: 1.4, marginBottom: 8 }}>{question}</div>
-    <div style={{ fontSize: 13.5, color: C.t3, lineHeight: 1.6, marginBottom: 12 }}>{body}</div>
-    <span style={{ display: "inline-flex", background: C.navy, color: "#fff", fontSize: 12.5, fontWeight: 700, padding: "8px 16px", borderRadius: 6 }}>{btnText}</span>
-  </a>
-);
+export const BridgeCard = ({ question, q, body, a, btnText, label, href }: {
+  question?: string; q?: string; body?: React.ReactNode; a?: string; btnText?: string; label?: string; href: string;
+}) => {
+  const heading = question ?? q ?? "";
+  const bodyContent = body ?? a ?? "";
+  const btn = btnText ?? label ?? "자세히 보기";
+  return (
+    <a href={href} style={{ display: "block", borderRadius: 12, padding: "18px 20px", margin: "16px 0", background: "#FFF", border: `1.5px solid ${C.line}`, position: "relative", overflow: "hidden", textDecoration: "none", color: "inherit" }}>
+      <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 3, background: C.navy }} />
+      <div style={{ fontSize: 15, fontWeight: 800, color: C.t1, lineHeight: 1.4, marginBottom: 8 }}>{heading}</div>
+      <div style={{ fontSize: 13.5, color: C.t3, lineHeight: 1.6, marginBottom: 12 }}>{bodyContent}</div>
+      <span style={{ display: "inline-flex", background: C.navy, color: "#fff", fontSize: 12.5, fontWeight: 700, padding: "8px 16px", borderRadius: 6 }}>{btn}</span>
+    </a>
+  );
+};
 
 // ── Ext 버튼 ──
 export const ExtBtn = ({ badge, text, cta, href }: {
@@ -301,11 +314,12 @@ export function Summary3({ items }: { items: string[] }) {
 }
 
 // ── FAQ 아코디언 ──
-export function FAQAccordion({ items }: { items: { q: string; a: string }[] }) {
+export function FAQAccordion({ items }: { items: ({ q?: string; a?: string; question?: string; answer?: string })[] }) {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
+  const normalized = items.map(f => ({ q: f.q ?? f.question ?? "", a: f.a ?? f.answer ?? "" }));
   return (
     <div style={{ margin: "12px 0" }}>
-      {items.map((faq, i) => (
+      {normalized.map((faq, i) => (
         <div key={i} style={{ background: "#FFF", border: `1px solid ${C.line}`, borderRadius: 8, marginBottom: 6, overflow: "hidden" }}>
           <button
             onClick={() => setOpenIdx(openIdx === i ? null : i)}

@@ -132,14 +132,25 @@ export default function Article69() {
   const res = getResult();
 
   const tocItems = [
-    { id: "h2-1", label: "실업급여 수급자격제한은 어떤 경우에 해당하나요?" },
-    { id: "h2-2", label: "실업급여 수급자격제한 중대과실 해고 기준은 뭐예요?" },
-    { id: "h2-3", label: "실업급여 수급자격제한에서 자발적 퇴사 기준은 어떻게 되나요?" },
-    { id: "h2-4", label: "실업급여 수급자격제한 예외 정당한 사유는 뭐예요?" },
+    { t: "실업급여 수급자격제한은 어떤 경우에 해당하나요?", sub: null },
+    { t: "실업급여 수급자격제한 중대과실 해고 기준은 뭐예요?", sub: null },
+    { t: "실업급여 수급자격제한에서 자발적 퇴사 기준은 어떻게 되나요?", sub: null },
+    { t: "실업급여 수급자격제한 예외 정당한 사유는 뭐예요?", sub: null },
   ];
 
   return (
-    <BlogLayout meta={META}>
+    <BlogLayout
+      breadcrumb={["홈", "실업급여", "수급자격제한"]}
+      tags={["2026년 기준", "실업급여", "수급자격제한", "자진퇴사"]}
+      date="2026-02-23"
+      title="실업급여 수급자격 제한 사유 | 중대과실 해고 자진퇴사 기준"
+      description="자발적으로 그만뒀는데 실업급여를 받을 수 있을지 고민이시죠? 수급자격제한 사유와 예외 인정 조건 11가지를 정리했어요."
+      sourceBar={{ badge: "출처", name: "고용보험법 · 고용24", date: "2026.02 기준" }}
+      stickyLabel="수급이력 조회"
+      stickyValue="고용24"
+      stickyBtn="수급이력 조회하기 →"
+      stickyHref="https://www.ei.go.kr"
+    >
       <TOC items={tocItems} />
       <Summary3
         items={[

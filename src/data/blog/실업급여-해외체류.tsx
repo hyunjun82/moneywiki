@@ -124,14 +124,25 @@ export default function Article63() {
   const res = getResult();
 
   const tocItems = [
-    { id: "h2-1", label: "실업급여 수급 중 해외여행 가도 되나요?" },
-    { id: "h2-2", label: "실업급여 해외체류 42일 기준은 어떻게 계산하나요?" },
-    { id: "h2-3", label: "실업급여 해외체류 시 수급 중단은 어떻게 되나요?" },
-    { id: "h2-4", label: "실업급여 해외체류 후 수급 재개 조건은 뭐예요?" },
+    { t: "실업급여 수급 중 해외여행 가도 되나요?", sub: null },
+    { t: "실업급여 해외체류 42일 기준은 어떻게 계산하나요?", sub: null },
+    { t: "실업급여 해외체류 시 수급 중단은 어떻게 되나요?", sub: null },
+    { t: "실업급여 해외체류 후 수급 재개 조건은 뭐예요?", sub: null },
   ];
 
   return (
-    <BlogLayout meta={META}>
+    <BlogLayout
+      breadcrumb={["홈", "실업급여", "해외체류"]}
+      tags={["2026년 기준", "실업급여", "해외체류", "42일 기준"]}
+      date="2026-02-23"
+      title="실업급여 해외여행 가능 여부 | 해외체류 수급 중단 재개 방법"
+      description="실업급여 수급 중 해외여행은 가능해요. 출국 기간 중에는 급여가 정지되고 귀국 후 재개돼요. 수급 공백 없이 다녀올 수 있는 실무 기준 42일 계산법을 정리했어요."
+      sourceBar={{ badge: "출처", name: "고용보험법 · 고용24", date: "2026.02 기준" }}
+      stickyLabel="수급이력 조회"
+      stickyValue="고용24"
+      stickyBtn="수급이력 조회하기 →"
+      stickyHref="https://www.ei.go.kr"
+    >
       <TOC items={tocItems} />
       <Summary3
         items={[

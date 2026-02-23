@@ -111,14 +111,25 @@ export default function Article68() {
   const res = getResult();
 
   const tocItems = [
-    { id: "h2-1", label: "실업급여 수급자격 신청은 어떻게 하나요?" },
-    { id: "h2-2", label: "실업급여 수급자격 고용센터 방문 시 뭐가 필요한가요?" },
-    { id: "h2-3", label: "실업급여 수급자격 심사 기간은 얼마나 걸리나요?" },
-    { id: "h2-4", label: "실업급여 수급자격 불인정되면 어떻게 되나요?" },
+    { t: "실업급여 수급자격 신청은 어떻게 하나요?", sub: null },
+    { t: "실업급여 수급자격 고용센터 방문 시 뭐가 필요한가요?", sub: null },
+    { t: "실업급여 수급자격 심사 기간은 얼마나 걸리나요?", sub: null },
+    { t: "실업급여 수급자격 불인정되면 어떻게 되나요?", sub: null },
   ];
 
   return (
-    <BlogLayout meta={META}>
+    <BlogLayout
+      breadcrumb={["홈", "실업급여", "수급자격 신청"]}
+      tags={["2026년 기준", "실업급여", "수급자격", "고용센터 방문"]}
+      date="2026-02-23"
+      title="실업급여 수급자격 신청 절차 | 고용센터 방문 및 심사 기간"
+      description="실업급여 수급자격 신청은 온라인 교육 수료 → 워크넷 구직등록 → 고용센터 방문 순이에요. 방문 후 심사는 보통 14일 이내에 결과가 나와요."
+      sourceBar={{ badge: "출처", name: "고용보험법 · 고용24", date: "2026.02 기준" }}
+      stickyLabel="수급자격 신청"
+      stickyValue="고용24"
+      stickyBtn="수급자격 신청하기 →"
+      stickyHref="https://www.work24.go.kr"
+    >
       <TOC items={tocItems} />
       <Summary3
         items={[
