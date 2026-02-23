@@ -4,6 +4,7 @@ import Link from "next/link";
 import { getWikiDocument, getAllWikiSlugs, findRelatedDocuments, getAllWikiDocuments } from "@/lib/wiki";
 import { getSpokeBySlug, getAllSpokeSlugs } from "@/data/spoke/registry";
 import { getHubBySlug, getAllHubSlugs } from "@/data/hub/registry";
+import { getBlogBySlug } from "@/data/blog/registry";
 import SpokePageContent from "@/components/spoke/SpokePageContent";
 import HubPageContent from "@/components/hub/HubPageContent";
 import {
@@ -78,6 +79,30 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         url,
         siteName: '머니위키',
         locale: 'ko_KR',
+      },
+      robots: { index: true, follow: true, 'max-snippet': -1, 'max-image-preview': 'large' as const },
+    };
+  }
+
+  // blog 데이터 체크
+  const blog = getBlogBySlug(slug);
+  if (blog) {
+    const { meta } = blog;
+    const url = `https://www.jjyu.co.kr/w/${slug}`;
+    return {
+      title: meta.title,
+      description: meta.description,
+      keywords: meta.keywords,
+      alternates: { canonical: url },
+      openGraph: {
+        title: meta.ogTitle,
+        description: meta.ogDescription,
+        type: 'article',
+        url,
+        siteName: '머니위키',
+        locale: 'ko_KR',
+        publishedTime: meta.datePublished,
+        modifiedTime: meta.lastUpdated,
       },
       robots: { index: true, follow: true, 'max-snippet': -1, 'max-image-preview': 'large' as const },
     };
@@ -334,6 +359,34 @@ export default async function WikiPage({ params }: PageProps) {
   const spoke = getSpokeBySlug(slug);
   if (spoke) {
     return <SpokePageContent spoke={spoke} slug={slug} />;
+  }
+
+  // 블로그 데이터 체크 → 블로그 레이아웃으로 렌더링
+  const blog = getBlogBySlug(slug);
+  if (blog) {
+    const BlogComponent = blog.Component;
+    const blogUrl = `https://www.jjyu.co.kr/w/${slug}`;
+    const blogBreadcrumb = [
+      { name: "홈", url: "https://www.jjyu.co.kr" },
+      { name: blog.meta.category, url: `https://www.jjyu.co.kr/#category-${encodeURIComponent(blog.meta.category)}` },
+      { name: blog.meta.title, url: blogUrl },
+    ];
+    return (
+      <>
+        <ArticleSchema
+          title={blog.meta.title}
+          description={blog.meta.description}
+          url={blogUrl}
+          datePublished={blog.meta.datePublished}
+          dateModified={blog.meta.lastUpdated}
+          keywords={blog.meta.keywords}
+          category={blog.meta.category}
+        />
+        <BreadcrumbSchema items={blogBreadcrumb} />
+        {blog.meta.faq && blog.meta.faq.length > 0 && <FAQSchema items={blog.meta.faq} />}
+        <BlogComponent />
+      </>
+    );
   }
 
   // 기존 wiki MD 렌더링
