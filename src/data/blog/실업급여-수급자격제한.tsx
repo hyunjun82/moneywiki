@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import BlogLayout from "@/components/wiki/BlogLayout";
 import {
+  BlogLayout,
   TOC,
   Summary3,
   Sec,
