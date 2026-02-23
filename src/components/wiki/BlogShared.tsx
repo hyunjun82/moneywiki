@@ -59,7 +59,7 @@ export const SpokeLink = ({ num, title, desc, href }: { num: string; title: stri
       <div style={{ fontSize: 13.5, fontWeight: 700, color: C.t1, lineHeight: 1.3 }}>{title}</div>
       <div style={{ fontSize: 11, color: C.t4, marginTop: 1 }}>{desc}</div>
     </div>
-    <span style={{ fontSize: 13, color: C.t4 }}>\u2192</span>
+    <span style={{ fontSize: 13, color: C.t4 }}>{"\u2192"}</span>
   </a>
 );
 
@@ -70,7 +70,7 @@ export const InlineLink = ({ icon, title, desc, href }: { icon: string; title: s
       <div style={{ fontSize: 14, fontWeight: 700, color: C.t1, lineHeight: 1.35 }}>{title}</div>
       <div style={{ fontSize: 12, color: C.t3, marginTop: 2, lineHeight: 1.4 }}>{desc}</div>
     </div>
-    <span style={{ fontSize: 18, color: C.navy, fontWeight: 700, flexShrink: 0 }}>\u203A</span>
+    <span style={{ fontSize: 18, color: C.navy, fontWeight: 700, flexShrink: 0 }}>{"\u203A"}</span>
   </a>
 );
 
@@ -172,7 +172,7 @@ export function BlogLayout({
         <div style={{ maxWidth: 680, margin: "0 auto", padding: "0 20px", display: "flex", alignItems: "center", gap: 5, fontSize: 12.5, color: C.t4 }}>
           {breadcrumb.map((b, i) => (
             <React.Fragment key={i}>
-              {i > 0 && <span>\u203A</span>}
+              {i > 0 && <span>{"\u203A"}</span>}
               {i < breadcrumb.length - 1
                 ? <span>{b}</span>
                 : <span style={{ color: C.t2, fontWeight: 600 }}>{b}</span>
@@ -189,7 +189,7 @@ export function BlogLayout({
             <div style={{ display: "flex", gap: 5, flexWrap: "wrap", alignItems: "center" }}>
               <Tag v="a">{tags[0]}</Tag>
               {tags.slice(1).map((t, i) => <Tag key={i} v="b">{t}</Tag>)}
-              <span style={{ fontSize: 11, color: C.t4, marginLeft: 4 }}>\uC218\uC815: {date}</span>
+              <span style={{ fontSize: 11, color: C.t4, marginLeft: 4 }}>{"수정: "}{date}</span>
             </div>
           </div>
           <h1 style={{ fontSize: 25, fontWeight: 800, lineHeight: 1.3, color: C.t1, letterSpacing: -0.5, marginBottom: 8 }}>{title}</h1>
@@ -197,8 +197,8 @@ export function BlogLayout({
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginTop: 14, paddingTop: 12, borderTop: `1px solid ${C.line}` }}>
             <div style={{ width: 32, height: 32, borderRadius: "50%", background: C.navy, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 800, color: "#fff" }}>M</div>
             <div>
-              <div style={{ fontSize: 13, fontWeight: 700, color: C.t1 }}>\uBA38\uB2C8\uC704\uD0A4 \uC5D0\uB514\uD130</div>
-              <div style={{ fontSize: 11, color: C.t4 }}>\uBCF5\uC9C0\xB7\uC815\uCC45 \uCF58\uD150\uCE20 \uD300</div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: C.t1 }}>{"머니위키 에디터"}</div>
+              <div style={{ fontSize: 11, color: C.t4 }}>{"복지\u00B7정책 콘텐츠 팀"}</div>
             </div>
           </div>
         </div>
@@ -220,15 +220,15 @@ export function BlogLayout({
 
         {/* 면책 */}
         <div style={{ background: C.navyLight2, border: `1px solid ${C.line}`, borderRadius: 8, padding: "12px 16px", margin: "16px 0", fontSize: 11.5, color: C.t4, lineHeight: 1.5 }}>
-          \uD83D\uDCCC <strong style={{ color: C.t3 }}>\uBA74\uCC45 \uC870\uD56D:</strong> \uC774 \uAE00\uC740 \uACF5\uC2DD \uBC95\uB839\uACFC \uC815\uBD80 \uC790\uB8CC\uB97C \uBC14\uD0D5\uC73C\uB85C \uC791\uC131\uB41C \uC815\uBCF4 \uC81C\uACF5 \uBAA9\uC801\uC758 \uCF58\uD150\uCE20\uC608\uC694. \uC815\uD655\uD55C \uC218\uAE09 \uD310\uC815\uC740 \uACE0\uC6A9\uC13C\uD130 \uB610\uB294 \uACE0\uC6A924(work24.go.kr)\uC5D0\uC11C \uD655\uC778\uD558\uC138\uC694.
+          {"\uD83D\uDCCC"} <strong style={{ color: C.t3 }}>{"면책 조항:"}</strong> {"이 글은 공식 법령과 정부 자료를 바탕으로 작성된 정보 제공 목적의 콘텐츠예요. 정확한 수급 판정은 고용센터 또는 고용24(work24.go.kr)에서 확인하세요."}
         </div>
 
         {/* 도움 투표 */}
         <div style={{ background: "#FFF", border: `1px solid ${C.line}`, borderRadius: 8, padding: "16px", margin: "12px 0", textAlign: "center" }}>
-          <div style={{ fontSize: 14, fontWeight: 700, color: C.t1, marginBottom: 10 }}>\uC774 \uAE00\uC774 \uB3C4\uC6C0\uC774 \uB410\uB098\uC694?</div>
+          <div style={{ fontSize: 14, fontWeight: 700, color: C.t1, marginBottom: 10 }}>{"이 글이 도움이 됐나요?"}</div>
           <div style={{ display: "flex", gap: 8, justifyContent: "center" }}>
-            <button style={{ padding: "8px 20px", borderRadius: 6, border: `1px solid ${C.line}`, background: "#FFF", fontSize: 13, cursor: "pointer", fontFamily: "inherit" }}>\uD83D\uDC4D \uB3C4\uC6C0\uB410\uC5B4\uC694</button>
-            <button style={{ padding: "8px 20px", borderRadius: 6, border: `1px solid ${C.line}`, background: "#FFF", fontSize: 13, cursor: "pointer", fontFamily: "inherit" }}>\uD83D\uDC4E \uBD80\uC871\uD574\uC694</button>
+            <button style={{ padding: "8px 20px", borderRadius: 6, border: `1px solid ${C.line}`, background: "#FFF", fontSize: 13, cursor: "pointer", fontFamily: "inherit" }}>{"\uD83D\uDC4D 도움됐어요"}</button>
+            <button style={{ padding: "8px 20px", borderRadius: 6, border: `1px solid ${C.line}`, background: "#FFF", fontSize: 13, cursor: "pointer", fontFamily: "inherit" }}>{"\uD83D\uDC4E 부족해요"}</button>
           </div>
         </div>
 
@@ -261,7 +261,7 @@ export function TOC({ items }: { items: { t: string; sub?: string | null }[] }) 
   return (
     <div style={{ background: "#FFF", margin: "10px 0", borderRadius: 12, border: `1px solid ${C.line}`, overflow: "hidden" }}>
       <div onClick={() => setOpen(!open)} style={{ padding: "12px 18px", background: C.navyLight2, borderBottom: `1px solid ${C.line}`, fontSize: 13, fontWeight: 700, color: C.navy, display: "flex", alignItems: "center", gap: 6, cursor: "pointer" }}>
-        \uD83D\uDCD1 \uBAA9\uCC28 <span style={{ marginLeft: "auto", fontSize: 11, transform: open ? "none" : "rotate(-90deg)", transition: "transform .2s" }}>\u25BE</span>
+        {"\uD83D\uDCD1 목차"} <span style={{ marginLeft: "auto", fontSize: 11, transform: open ? "none" : "rotate(-90deg)", transition: "transform .2s" }}>{"\u25BE"}</span>
       </div>
       {open && (
         <div style={{ padding: "10px 18px 14px" }}>
@@ -272,7 +272,7 @@ export function TOC({ items }: { items: { t: string; sub?: string | null }[] }) 
               </div>
               {item.sub && (
                 <div style={{ display: "flex", alignItems: "baseline", gap: 8, padding: "3px 0 3px 26px", fontSize: 12, color: C.t3 }}>
-                  \u2514 {item.sub}
+                  {"\u2514"} {item.sub}
                 </div>
               )}
             </div>
@@ -287,7 +287,7 @@ export function TOC({ items }: { items: { t: string; sub?: string | null }[] }) 
 export function Summary3({ items }: { items: string[] }) {
   return (
     <div style={{ background: "#FFF", margin: "10px 0", borderRadius: 12, border: `1px solid ${C.line}`, overflow: "hidden" }}>
-      <div style={{ padding: "12px 18px", background: C.navyLight2, borderBottom: `1px solid ${C.line}`, fontSize: 13, fontWeight: 700, color: C.navy }}>\uD83D\uDCCB 3\uC904 \uC694\uC57D</div>
+      <div style={{ padding: "12px 18px", background: C.navyLight2, borderBottom: `1px solid ${C.line}`, fontSize: 13, fontWeight: 700, color: C.navy }}>{"\uD83D\uDCCB 3줄 요약"}</div>
       <div style={{ padding: "14px 18px" }}>
         {items.map((t, i) => (
           <div key={i} style={{ fontSize: 14, color: C.t2, padding: "5px 0 5px 18px", position: "relative", lineHeight: 1.55 }}>
@@ -315,7 +315,7 @@ export function FAQAccordion({ items }: { items: { q: string; a: string }[] }) {
               <span style={{ background: C.navy, color: "#fff", fontSize: 9, fontWeight: 800, width: 18, height: 18, borderRadius: 4, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>Q</span>
               {faq.q}
             </span>
-            <span style={{ fontSize: 11, color: C.t4, transform: openIdx === i ? "rotate(180deg)" : "none", transition: "transform .2s" }}>\u25BE</span>
+            <span style={{ fontSize: 11, color: C.t4, transform: openIdx === i ? "rotate(180deg)" : "none", transition: "transform .2s" }}>{"\u25BE"}</span>
           </button>
           {openIdx === i && (
             <div style={{ padding: "0 14px 14px", fontSize: 13, color: C.t3, lineHeight: 1.6 }}>
@@ -334,7 +334,7 @@ export function RelatedArticles({ items }: { items: { title: string; desc: strin
     <>
       <Divider />
       <div style={{ marginTop: 24 }}>
-        <div style={{ fontSize: 14, fontWeight: 800, color: C.t1, marginBottom: 10 }}>\uD83D\uDCCE \uAD00\uB828 \uAE00</div>
+        <div style={{ fontSize: 14, fontWeight: 800, color: C.t1, marginBottom: 10 }}>{"\uD83D\uDCCE 관련 글"}</div>
         <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
           {items.map((item, i) => (
             <SpokeLink key={i} num={String(i + 1).padStart(2, "0")} title={item.title} desc={item.desc} href={item.href} />
@@ -354,13 +354,13 @@ export function PrevNext({ prev, next }: {
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, margin: "20px 0 0" }}>
       {prev ? (
         <a href={prev.href} style={{ padding: "14px 16px", background: "#FFF", border: `1px solid ${C.line}`, borderRadius: 8, textDecoration: "none" }}>
-          <div style={{ fontSize: 11, color: C.t4, marginBottom: 4 }}>\u2190 \uC774\uC804 \uAE00</div>
+          <div style={{ fontSize: 11, color: C.t4, marginBottom: 4 }}>{"\u2190 이전 글"}</div>
           <div style={{ fontSize: 13, fontWeight: 700, color: C.navy, lineHeight: 1.3 }}>{prev.title}</div>
         </a>
       ) : <div />}
       {next ? (
         <a href={next.href} style={{ padding: "14px 16px", background: "#FFF", border: `1px solid ${C.line}`, borderRadius: 8, textAlign: "right", textDecoration: "none" }}>
-          <div style={{ fontSize: 11, color: C.t4, marginBottom: 4 }}>\uB2E4\uC74C \uAE00 \u2192</div>
+          <div style={{ fontSize: 11, color: C.t4, marginBottom: 4 }}>{"다음 글 \u2192"}</div>
           <div style={{ fontSize: 13, fontWeight: 700, color: C.navy, lineHeight: 1.3 }}>{next.title}</div>
         </a>
       ) : <div />}
