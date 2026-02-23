@@ -1,0 +1,342 @@
+"use client";
+import { useState } from "react";
+import BlogLayout from "@/components/wiki/BlogLayout";
+import {
+  TOC,
+  Summary3,
+  Sec,
+  P,
+  B,
+  A,
+  Info,
+  InlineLink,
+  SpokeLink,
+  BridgeCard,
+  ExtBtn,
+  FAQAccordion,
+  RelatedArticles,
+  PrevNext,
+} from "@/components/wiki/BlogShared";
+
+type Sel = { status?: string; days?: string };
+type ResLink = { icon: "link" | "search"; title: string; desc: string; href: string };
+type Res = { pass: boolean; headline: string; detail: string; badges: string[]; links: ResLink[] };
+
+const META = {
+  title: "실업급여 받으면서 창업 가능 여부 | 사업자등록 수급 중단 조건",
+  description:
+    "실업급여 받으면서 창업하면 사업자등록 즉시 수급이 중단돼요. 창업 준비 단계와 수급 중단 조건, 조기재취업수당까지 정리했어요.",
+  keywords: ["실업급여 창업", "가능 여부", "사업자등록", "수급 중단 조건"],
+  ogTitle: "실업급여 받으면서 창업 가능 여부 | 머니위키",
+  ogDescription: "사업자등록 시 수급 중단 조건과 조기재취업수당을 정리했어요.",
+  datePublished: "2026-02-23",
+  lastUpdated: "2026-02-23",
+  category: "실업급여",
+  faq: [
+    {
+      question: "실업급여 창업 준비 중 비용이 발생했어요. 수급이 중단되나요?",
+      answer:
+        "준비 비용은 소득이 아니라서 수급이 중단되지 않아요. 사업자등록 전이고 실질적인 영업도 시작하지 않았으면 수급을 유지할 수 있어요.",
+    },
+    {
+      question: "실업급여 받으면서 창업했는데 12개월 전에 폐업하면 어떻게 되나요?",
+      answer:
+        "조기재취업수당 자격이 사라져요. 12개월 이상 계속 사업을 영위해야 수당을 받을 수 있어요. 폐업 후 재취업하면 새 피보험기간을 충족해야 실업급여를 다시 받을 수 있어요.",
+    },
+  ],
+};
+
+export default function Article61() {
+  const [sel, setSel] = useState<Sel>({});
+
+  function getResult(): Res {
+    const { status, days } = sel;
+
+    if (status === "prep" && days === "over")
+      return {
+        pass: true,
+        headline: "수급 지속 가능해요",
+        detail:
+          "등록 전 준비 단계는 수급이 중단되지 않아요. 소득이 발생하면 실업인정일에 신고해야 해요. 등록 타이밍을 잘 잡으면 조기재취업수당도 챙길 수 있어요.",
+        badges: ["수급 유지", "조기재취업수당 가능"],
+        links: [{ icon: "link", title: "조기재취업수당 계산", desc: "남은 급여 50% 받는 방법", href: "/w/실업급여-재취업-조건" }],
+      };
+
+    if (status === "prep" && days === "under")
+      return {
+        pass: true,
+        headline: "수급 지속 가능해요",
+        detail:
+          "등록 전이면 수급은 유지돼요. 다만 절반 미만이 남은 상태에서 등록하면 조기재취업수당을 받을 수 없어요. 타이밍을 잘 고려하는 게 좋아요.",
+        badges: ["수급 유지"],
+        links: [],
+      };
+
+    if (status === "prep" && days === "unknown")
+      return {
+        pass: true,
+        headline: "수급 지속 가능해요",
+        detail:
+          "등록 전이면 수급은 유지돼요. 소정급여일수의 절반 이상을 남긴 시점에 등록하면 조기재취업수당도 받을 수 있어요. 고용24에서 남은 급여일수를 먼저 조회해 두세요.",
+        badges: ["수급 유지", "일수 확인 필요"],
+        links: [
+          {
+            icon: "search",
+            title: "수급이력 조회",
+            desc: "고용24에서 남은 급여일수 조회",
+            href: "https://www.ei.go.kr/ei/eih/eg/pb/pbPersonBnef/retrievePb0301Info.do",
+          },
+        ],
+      };
+
+    if (status === "registered" && days === "over")
+      return {
+        pass: false,
+        headline: "수급 중단, 조기재취업수당 가능해요",
+        detail:
+          "등록일부터 수급이 중단돼요. 소정급여일수의 절반 이상을 남기고 등록했으니 조기재취업수당 대상이에요. 12개월 이상 사업을 영위한 뒤 고용24에서 신청하면 돼요.",
+        badges: ["수급 중단", "조기재취업수당 가능"],
+        links: [{ icon: "link", title: "조기재취업수당 신청", desc: "남은 급여 50% 받는 방법", href: "/w/실업급여-재취업-조건" }],
+      };
+
+    if (status === "registered" && days === "under")
+      return {
+        pass: false,
+        headline: "수급 중단, 조기재취업수당은 어려워요",
+        detail:
+          "등록일부터 수급이 중단돼요. 소정급여일수의 절반 미만만 남긴 상태라 조기재취업수당 대상이 아니에요. 이후 사업에 집중하면 돼요.",
+        badges: ["수급 중단"],
+        links: [],
+      };
+
+    if (status === "registered" && days === "unknown")
+      return {
+        pass: false,
+        headline: "수급 중단, 조기재취업수당 확인이 필요해요",
+        detail:
+          "등록으로 수급은 중단됐어요. 소정급여일수 절반 이상을 남기고 등록했다면 조기재취업수당 신청이 가능해요. 고용24에서 남은 급여일수를 조회해 두세요.",
+        badges: ["수급 중단", "일수 확인 필요"],
+        links: [
+          {
+            icon: "search",
+            title: "수급이력 조회",
+            desc: "고용24에서 급여일수 조회",
+            href: "https://www.ei.go.kr/ei/eih/eg/pb/pbPersonBnef/retrievePb0301Info.do",
+          },
+        ],
+      };
+
+    return {
+      pass: false,
+      headline: "조건을 선택해 주세요",
+      detail: "창업 상태와 남은 급여일수를 선택하면 수급 중단 여부를 바로 알려드려요.",
+      badges: [],
+      links: [],
+    };
+  }
+
+  const res = getResult();
+
+  const tocItems = [
+    { id: "h2-1", label: "실업급여 받으면서 창업하면 수급이 중단되나요?" },
+    { id: "h2-2", label: "실업급여 수급 중 사업자등록하면 어떻게 되나요?" },
+    { id: "h2-3", label: "실업급여 창업 시 조기재취업수당 받을 수 있나요?" },
+    { id: "h2-4", label: "실업급여 창업 수급 중단 조건은 무엇인가요?" },
+  ];
+
+  return (
+    <BlogLayout meta={META}>
+      <TOC items={tocItems} />
+      <Summary3
+        items={[
+          "창업 준비 단계(사업자등록 전)는 수급 지속 가능, 등록 이후는 수급 중단이에요.",
+          "소정급여일수의 1/2 이상 남기고 창업하면 조기재취업수당 대상이에요.",
+          "사업자등록 후 미신고 수급하면 부정수급으로 최대 5배 환수돼요.",
+        ]}
+      />
+
+      {/* 체커 */}
+      <div className="checker-wrap">
+        <div className="checker-card">
+          <div className="ck-header">
+            <strong className="ck-title">내 창업 상황, 수급 중단되나요?</strong>
+            <span className="ck-sub">30초 확인</span>
+          </div>
+          <p className="ck-intro">사업자등록 여부와 남은 급여일수만 알면 바로 판정돼요.</p>
+
+          <div className="ck-group">
+            <p className="ck-q">현재 창업 상태가 어떻게 되나요?</p>
+            <div className="ck-opts">
+              {[
+                { v: "prep", t: "사업자등록 전, 준비 중이에요" },
+                { v: "registered", t: "사업자등록을 했어요" },
+              ].map((o) => (
+                <button
+                  key={o.v}
+                  className={`ck-opt${sel.status === o.v ? " on" : ""}`}
+                  onClick={() => setSel((p) => ({ ...p, status: o.v }))}
+                >
+                  {o.t}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="ck-group">
+            <p className="ck-q">소정급여일수의 절반 이상 남았나요?</p>
+            <div className="ck-opts">
+              {[
+                { v: "over", t: "네, 절반 이상 남았어요" },
+                { v: "under", t: "아니에요, 절반 미만이에요" },
+                { v: "unknown", t: "모르겠어요" },
+              ].map((o) => (
+                <button
+                  key={o.v}
+                  className={`ck-opt${sel.days === o.v ? " on" : ""}`}
+                  onClick={() => setSel((p) => ({ ...p, days: o.v }))}
+                >
+                  {o.t}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {Object.keys(sel).length >= 1 && (
+            <div className={`ck-res ${res.pass ? "ok" : "ng"}`}>
+              <p className="ck-headline">{res.headline}</p>
+              <p className="ck-detail">{res.detail}</p>
+              {res.badges.length > 0 && (
+                <div className="ck-badges">
+                  {res.badges.map((b) => (
+                    <span key={b} className="ck-badge">
+                      {b}
+                    </span>
+                  ))}
+                </div>
+              )}
+              {res.links.map((l) => (
+                <a key={l.href} href={l.href} className="ck-link">
+                  <span className="ck-lt">{l.title}</span>
+                  <span className="ck-ld">{l.desc}</span>
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
+      <Sec id="h2-1" question="실업급여 받으면서 창업하면 수급이 중단되나요?">
+        <P>
+          <B>창업 준비 단계라면 수급이 중단되지 않아요.</B> 시장조사, 사업 계획 수립, 자금 준비 같은
+          준비 활동은 취업으로 간주되지 않아요. 이 기간에는 실업급여를 받으면서 창업을 준비할 수 있어요.
+        </P>
+        <P>
+          단, 사업자를 내거나 실질적으로 영업을 시작하거나 소득이 발생하는 순간부터 달라져요.{" "}
+          <A href="https://www.law.go.kr/법령/고용보험법">고용보험법</A>에 따라 이 시점 이후는
+          취업으로 간주돼 수급이 중단돼요.
+        </P>
+        <InlineLink href="/w/실업급여-재취업-조건" label="조기재취업수당 계산 방법" />
+        <P>
+          소득 없는 창업 준비와 소득이 생기는 시점은 구분해야 해요. 창업 교육 수강이나 임대 계약
+          검토는 준비 단계로 봐요. 하지만 시험 판매나 용역 제공으로 돈이 들어오면 그날부터
+          실업인정일에 신고해야 해요.
+        </P>
+        <P>
+          쉽게 정리하면, 사업자를 내기 전까지는 수급 유지, 낸 이후는 수급 중단이에요. 창업 교육비나
+          사업 준비 비용 지출은 소득이 아니라서 수급에 영향이 없어요.
+        </P>
+      </Sec>
+
+      <Sec id="h2-2" question="실업급여 수급 중 사업자등록하면 어떻게 되나요?">
+        <P>
+          <B>사업자등록일부터 수급이 중단돼요.</B> 등록하면 취업으로 간주되기 때문이에요. 해당일에
+          바로 고용센터에 취업 신고를 해야 해요.
+        </P>
+        <P>
+          취업 신고를 하지 않고 수급을 계속 받으면 부정수급이에요. 이후 받은 금액은 전액 반환해야
+          하고, <A href="https://www.law.go.kr/법령/고용보험법">고용보험법 제62조</A>에 따라 최대
+          5배 추가 징수까지 있어요. 형사처벌도 가능해요.
+        </P>
+        <Info>부정수급 적발 시 받은 급여 전액 반환 + 최대 5배 추가 징수예요. 등록 즉시 고용24에서 취업 신고를 해야 해요.</Info>
+        <P>
+          신고는 간단해요. 등록 후 고용24에서 온라인으로 취업 신고를 하면 돼요. 신고하면 잔여 수급
+          기간이 종료되고 조기재취업수당 신청 자격이 생겨요.
+        </P>
+        <InlineLink href="/w/실업급여-알바-미신고" label="부정수급 처벌 및 자진신고 감면 조건" />
+        <P>
+          등록 없이 실질적으로 영업을 시작한 경우도 마찬가지예요. 프리랜서 계약이나 현금 거래로
+          소득이 생기면 그날부터 신고해야 해요. 등록 정보는 국세청과 연동되어 나중에 적발될 수 있어요.
+        </P>
+      </Sec>
+
+      <Sec id="h2-3" question="실업급여 창업 시 조기재취업수당 받을 수 있나요?">
+        <P>
+          <B>받을 수 있어요.</B> 자영업도 조기재취업수당 대상이에요.{" "}
+          <A href="https://www.law.go.kr/법령/고용보험법">고용보험법 제64조</A>에서 재취업뿐 아니라
+          자영업 창업도 대상으로 명시하고 있어요.
+        </P>
+        <P>
+          조기재취업수당을 받으려면 두 가지 조건이 모두 필요해요. 첫째, 소정급여일수의 1/2 이상을
+          남긴 상태에서 창업해야 해요. 둘째, 창업 후 12개월 이상 계속 사업을 영위해야 해요.
+        </P>
+        <P>
+          수당 계산은 간단해요. 남은 소정급여일수 × 1일 지급액 × 50%예요. 빨리 창업할수록 남은
+          일수가 많아서 수당이 커지는 구조예요. 예를 들어 210일 중 60일만 받고 창업하면 남은
+          150일분의 50%를 한꺼번에 받아요.
+        </P>
+        <BridgeCard
+          q="창업하면 조기재취업수당이 얼마나 나오나요?"
+          a="남은 소정급여일수에 따라 달라요. 빨리 창업할수록 수당이 커지는 구조예요."
+          href="/w/실업급여-재취업-조건"
+          label="조기재취업수당 계산 방법 보기"
+        />
+        <P>
+          신청 시점은 12개월 사업 영위 완료 후예요. 수급 전부터 준비하던 사업은 대상에서 제외돼요.
+          12개월을 채운 뒤 고용24에서 신청하면 돼요.
+        </P>
+      </Sec>
+
+      <Sec id="h2-4" question="실업급여 창업 수급 중단 조건은 무엇인가요?">
+        <P>
+          수급 중단 시점은 <B>세 가지 중 가장 이른 날</B>이에요. 사업자등록일, 실질적 영업 시작일,
+          소득 발생일 중 먼저 오는 날부터 수급이 중단돼요.
+        </P>
+        <P>
+          "등록만 안 했으니까 괜찮겠지"는 통하지 않아요. 등록 없이 먼저 영업을 시작하거나 소득이
+          생기면 그날부터 수급 중단 대상이에요. 이미 받은 실업급여는 전액 반환해야 해요.
+        </P>
+        <P>
+          창업 준비 기간을 최대한 활용하고, 소정급여일수의 절반 이상을 남긴 시점에 등록하면
+          조기재취업수당도 챙길 수 있어요. 창업 타이밍을 신중하게 잡는 게 중요한 이유예요.
+        </P>
+        <P>
+          재취업수당 신청을 계획하고 있다면, 창업 전에 고용24에서 남은 소정급여일수를 반드시
+          조회해 보세요. 절반 이상이 남아 있는 시점에 등록해야 수당을 받을 수 있어요.
+        </P>
+        <SpokeLink href="/w/실업급여-재취업-조건" title="조기재취업수당 신청 방법" desc="남은 급여 50% 받는 절차 안내" />
+        <SpokeLink href="/w/실업급여-알바-미신고" title="부정수급 처벌 기준" desc="미신고 수급 시 환수 및 처벌 내용" />
+        <SpokeLink href="/w/실업급여-수급자격-인정" title="수급자격 신청 절차" desc="고용센터 방문부터 첫 지급까지" />
+      </Sec>
+
+      <ExtBtn
+        href="https://www.ei.go.kr/ei/eih/eg/pb/pbPersonBnef/retrievePb0301Info.do"
+        badge="고용24 공식"
+        text="조기재취업수당 신청 및 취업신고"
+        cta="바로가기"
+      />
+
+      <PrevNext
+        prev={{ title: "실업급여 조기재취업수당 신청 조건", href: "/w/실업급여-재취업-조건" }}
+        next={{ title: "실업급여 취업신고 방법", href: "/w/실업급여-수급중-취업-신고방법" }}
+      />
+      <FAQAccordion items={META.faq} />
+      <RelatedArticles
+        items={[
+          { title: "실업급여 조기재취업수당 신청 조건", href: "/w/실업급여-재취업-조건", desc: "남은 급여 50% 받는 방법" },
+          { title: "실업급여 부정수급 처벌", href: "/w/실업급여-알바-미신고", desc: "자진신고 감면 조건" },
+          { title: "실업급여 수급자격 신청 절차", href: "/w/실업급여-수급자격-인정", desc: "방문부터 첫 지급까지" },
+        ]}
+      />
+    </BlogLayout>
+  );
+}
