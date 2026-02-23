@@ -2,6 +2,8 @@
 import { useState } from "react";
 import {
   BlogLayout,
+  C,
+  Btn,
   TOC,
   Summary3,
   Sec,
@@ -100,6 +102,10 @@ export default function Article62() {
     };
   }
 
+  function pick(g: string, v: string) {
+    setSel((p) => ({ ...p, [g]: v }));
+  }
+
   const res = getResult();
 
   const tocItems = [
@@ -132,69 +138,59 @@ export default function Article62() {
       />
 
       {/* 체커 */}
-      <div className="checker-wrap">
-        <div className="checker-card">
-          <div className="ck-header">
-            <strong className="ck-title">취업신고, 나는 해야 하나요?</strong>
-            <span className="ck-sub">30초 확인</span>
+      <div style={{ background: "#FFF", border: `1px solid ${C.line}`, borderRadius: 12, overflow: "hidden" }}>
+        <div style={{ background: C.navy, padding: "16px 18px", display: "flex", alignItems: "center", gap: 12 }}>
+          <div style={{ width: 38, height: 38, background: "#fff", borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>&#x2714;</div>
+          <div>
+            <h3 style={{ color: "#fff", fontSize: 15, fontWeight: 700, margin: 0 }}>취업신고, 나는 해야 하나요?</h3>
+            <p style={{ color: "rgba(255,255,255,.7)", fontSize: 12, marginTop: 1, margin: 0 }}>취업 여부와 신고 상태로 판정해요</p>
           </div>
-          <p className="ck-intro">취업 여부와 신고 상태만 알면 바로 판정돼요.</p>
-
-          <div className="ck-group">
-            <p className="ck-q">현재 취업 상태가 어떻게 되나요?</p>
-            <div className="ck-opts">
-              {[
-                { v: "yes", t: "취업했어요" },
-                { v: "no", t: "아직 구직 중이에요" },
-              ].map((o) => (
-                <button
-                  key={o.v}
-                  className={`ck-opt${sel.employed === o.v ? " on" : ""}`}
-                  onClick={() => setSel((p) => ({ ...p, employed: o.v }))}
-                >
-                  {o.t}
-                </button>
-              ))}
+        </div>
+        <div style={{ padding: "20px 18px" }}>
+          <div style={{ marginBottom: 18 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: C.t2, marginBottom: 8 }}>
+              <span style={{ width: 20, height: 20, background: C.navy, color: "#fff", borderRadius: 5, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 800 }}>1</span>
+              현재 취업 상태가 어떻게 되나요?
+            </div>
+            <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
+              <Btn group="employed" value="yes" label="취업했어요" sel={sel} pick={pick} />
+              <Btn group="employed" value="no" label="아직 구직 중이에요" sel={sel} pick={pick} />
             </div>
           </div>
-
-          <div className="ck-group">
-            <p className="ck-q">취업신고를 했나요?</p>
-            <div className="ck-opts">
-              {[
-                { v: "done", t: "이미 신고했어요" },
-                { v: "pending", t: "아직 안 했어요" },
-              ].map((o) => (
-                <button
-                  key={o.v}
-                  className={`ck-opt${sel.reported === o.v ? " on" : ""}`}
-                  onClick={() => setSel((p) => ({ ...p, reported: o.v }))}
-                >
-                  {o.t}
-                </button>
-              ))}
+          <div>
+            <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: C.t2, marginBottom: 8 }}>
+              <span style={{ width: 20, height: 20, background: C.navy, color: "#fff", borderRadius: 5, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 800 }}>2</span>
+              취업신고를 했나요?
+            </div>
+            <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
+              <Btn group="reported" value="done" label="이미 신고했어요" sel={sel} pick={pick} />
+              <Btn group="reported" value="pending" label="아직 안 했어요" sel={sel} pick={pick} />
             </div>
           </div>
-
           {Object.keys(sel).length >= 1 && (
-            <div className={`ck-res ${res.pass ? "ok" : "ng"}`}>
-              <p className="ck-headline">{res.headline}</p>
-              <p className="ck-detail">{res.detail}</p>
+            <div style={{ marginTop: 16, padding: 16, borderRadius: 8, background: res.pass ? C.navyLight : "#F5F5F5", border: res.pass ? "1px solid rgba(30,58,95,.1)" : `1px solid ${C.line}` }}>
+              <div style={{ fontSize: 15, fontWeight: 800, color: res.pass ? C.navy : C.t1, marginBottom: 4 }}>
+                {res.pass ? "✅" : "⛔"} {res.headline}
+              </div>
+              <div style={{ fontSize: 13, color: C.t3, lineHeight: 1.55 }}>{res.detail}</div>
               {res.badges.length > 0 && (
-                <div className="ck-badges">
-                  {res.badges.map((b) => (
-                    <span key={b} className="ck-badge">
-                      {b}
-                    </span>
+                <div style={{ display: "flex", gap: 5, marginTop: 8, flexWrap: "wrap" }}>
+                  {res.badges.map((b, i) => (
+                    <span key={i} style={{ fontSize: 11, fontWeight: 700, padding: "3px 9px", borderRadius: 4, background: res.pass ? C.navy : C.t4, color: "#fff" }}>{b}</span>
                   ))}
                 </div>
               )}
-              {res.links.map((l) => (
-                <a key={l.href} href={l.href} className="ck-link">
-                  <span className="ck-lt">{l.title}</span>
-                  <span className="ck-ld">{l.desc}</span>
-                </a>
-              ))}
+              {res.links.length > 0 && (
+                <div style={{ marginTop: 12, paddingTop: 12, borderTop: res.pass ? "1px solid rgba(30,58,95,.08)" : "1px solid #E2E8F0" }}>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: C.t1, marginBottom: 6 }}>📖 관련 가이드</div>
+                  {res.links.map((lnk, li) => (
+                    <a key={li} href={lnk.href} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 0", fontSize: 13, color: C.navy, fontWeight: 600, borderBottom: "1px solid rgba(30,58,95,.06)", textDecoration: "none" }}>
+                      <span>{lnk.title}</span>
+                      <span style={{ fontSize: 11, color: C.t4 }}>{"→"}</span>
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
           )}
         </div>
