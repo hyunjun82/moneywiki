@@ -367,3 +367,75 @@ export function PrevNext({ prev, next }: {
     </div>
   );
 }
+
+// ── 공식 박스 ──
+export const FormulaCard = ({ formula, notes }: {
+  formula: string; notes?: string[];
+}) => (
+  <div style={{ background: C.navyLight, border: `1.5px solid ${C.navy}`, borderRadius: 10, padding: "18px 22px", margin: "14px 0", textAlign: "center" }}>
+    <div style={{ fontSize: 16, fontWeight: 800, color: C.navy, lineHeight: 1.65 }} dangerouslySetInnerHTML={{ __html: formula }} />
+    {notes && notes.length > 0 && (
+      <div style={{ marginTop: 12, borderTop: `1px solid rgba(30,58,95,.15)`, paddingTop: 10 }}>
+        {notes.map((n, i) => (
+          <div key={i} style={{ fontSize: 12.5, color: C.t3, lineHeight: 1.5, textAlign: "left", paddingLeft: 4 }}>• {n}</div>
+        ))}
+      </div>
+    )}
+  </div>
+);
+
+// ── 사례 박스 (계산 예시) ──
+export const CaseBox = ({ badge, label, conditions, steps, total, result, pass }: {
+  badge: string; label: string;
+  conditions?: string[];
+  steps?: { label: string; value: string }[];
+  total?: string;
+  result: string;
+  pass: boolean;
+}) => (
+  <div style={{ border: `1.5px solid ${pass ? "#A7F3D0" : "#FECACA"}`, borderRadius: 10, padding: "16px 18px", margin: "10px 0", background: pass ? "#F0FDF4" : "#FFF5F5" }}>
+    <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
+      <span style={{ fontSize: 10.5, fontWeight: 800, padding: "3px 8px", borderRadius: 4, background: C.navy, color: "#fff" }}>{badge}</span>
+      <span style={{ fontSize: 14, fontWeight: 700, color: C.t1 }}>{label}</span>
+    </div>
+    {conditions && (
+      <div style={{ fontSize: 13, color: C.t2, lineHeight: 1.65, marginBottom: 8 }}>
+        {conditions.map((c, i) => <div key={i}>• {c}</div>)}
+      </div>
+    )}
+    {steps && (
+      <div style={{ background: "rgba(255,255,255,.7)", borderRadius: 6, padding: "10px 12px", margin: "8px 0" }}>
+        {steps.map((s, i) => (
+          <div key={i} style={{ display: "flex", justifyContent: "space-between", fontSize: 13, color: C.t2, padding: "4px 0", borderBottom: i < steps.length - 1 ? `1px dashed ${C.line}` : "none" }}>
+            <span>{s.label}</span>
+            <span style={{ fontWeight: 700, color: C.t1 }}>{s.value}</span>
+          </div>
+        ))}
+      </div>
+    )}
+    {total && <div style={{ fontSize: 13.5, fontWeight: 800, color: C.t1, marginTop: 6 }}>{total}</div>}
+    <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 10, padding: "8px 10px", background: pass ? "#D1FAE5" : "#FEE2E2", borderRadius: 6 }}>
+      <span style={{ fontSize: 14 }}>{pass ? "✅" : "❌"}</span>
+      <span style={{ fontSize: 13.5, fontWeight: 700, color: pass ? "#065F46" : "#991B1B" }}>{result}</span>
+    </div>
+  </div>
+);
+
+// ── 단계별 절차 ──
+export const Steps = ({ items }: {
+  items: { title: string; desc?: string }[];
+}) => (
+  <div style={{ margin: "14px 0" }}>
+    {items.map((item, i) => (
+      <div key={i} style={{ display: "flex", gap: 14, padding: "12px 0", borderBottom: i < items.length - 1 ? `1px solid ${C.line}` : "none" }}>
+        <div style={{ width: 28, height: 28, borderRadius: "50%", background: C.navy, color: "#fff", fontSize: 13, fontWeight: 800, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+          {i + 1}
+        </div>
+        <div style={{ flex: 1, paddingTop: 2 }}>
+          <div style={{ fontSize: 14, fontWeight: 700, color: C.t1, lineHeight: 1.35 }}>{item.title}</div>
+          {item.desc && <div style={{ fontSize: 13, color: C.t3, marginTop: 4, lineHeight: 1.6 }}>{item.desc}</div>}
+        </div>
+      </div>
+    ))}
+  </div>
+);

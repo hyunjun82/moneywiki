@@ -91,7 +91,33 @@ function validateBlogContent(content, filePath) {
     errors.push(`SpokeLink ${spokeLinkCount}개 — "더 알아보기" SpokeLink 그룹(2개 이상) 추가 필요`);
   }
 
-  // ── 검증 5: BridgeCard/ExtBtn 연속 몰림 방지 ──
+  // ── 검증 5: FAQAccordion 필수 ──
+  if (!content.includes('<FAQAccordion')) {
+    errors.push('FAQAccordion 없음 — FAQ 2개 고정 필수 (<FAQAccordion items={[{q:"...", a:"..."}]} /> 추가)');
+  }
+
+  // ── 검증 6: 계산형 글 — FormulaCard + CaseBox 권장 ──
+  const titleMatch2 = content.match(/title['":\s]+["']([^"']+)["']/);
+  const title2 = titleMatch2 ? titleMatch2[1] : '';
+  const isCalcType = /계산|얼마|금액|상한액|하한액|세율|공제|수령액/.test(title2);
+  if (isCalcType) {
+    if (!content.includes('<FormulaCard')) {
+      warnings.push('[계산형] FormulaCard 없음 — 핵심 공식 시각화 추가 권장 (<FormulaCard formula="..." />)');
+    }
+    if (!content.includes('<CaseBox')) {
+      warnings.push('[계산형] CaseBox 없음 — 3인 페르소나 계산 예시 추가 권장 (<CaseBox badge="예시 1" ... /> × 3개)');
+    }
+  }
+
+  // ── 검증 7: 절차형 글 — Steps 권장 ──
+  const isProcType = /방법|절차|신청|순서|하는법|발급|등록/.test(title2);
+  if (isProcType) {
+    if (!content.includes('<Steps')) {
+      warnings.push('[절차형] Steps 없음 — 단계별 절차 시각화 추가 권장 (<Steps items={[...]} />)');
+    }
+  }
+
+  // ── 검증 8: BridgeCard/ExtBtn 연속 몰림 방지 ──
   const ctaPattern = /<(BridgeCard|ExtBtn)\s/;
   const ctaLines = [];
   lines.forEach((line, idx) => {
@@ -105,7 +131,7 @@ function validateBlogContent(content, filePath) {
     const span = ctaLines[i + 2] - ctaLines[i];
     if (span <= 30) {
       warnings.push(`BridgeCard/ExtBtn 3개가 ${span}행 이내에 몰려있음 (${ctaLines[i] + 1}행~${ctaLines[i + 2] + 1}행) — 분산 배치 권장`);
-      break; // 첫 번째 경고만
+      break;
     }
   }
 
