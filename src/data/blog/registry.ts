@@ -26,6 +26,7 @@ import Article65Component from "./실업급여-수급유예";
 import Article66Component from "./실업급여-교육";
 import Article68Component from "./실업급여-수급자격-인정";
 import Article69Component from "./실업급여-수급자격제한";
+import Article55Component from "./실업급여-연봉별-계산";
 
 const BLOGS: BlogEntry[] = [
   {
@@ -495,6 +496,24 @@ const BLOGS: BlogEntry[] = [
       ],
     },
     Component: Article69Component,
+  },
+  {
+    slug: "실업급여-연봉별-계산",
+    meta: {
+      title: "2026 실업급여 연봉별 수령액 | 1일 구직급여 계산 방법",
+      description: "연봉이 높을수록 더 받지만 상한이 있어요. 2026년 상한액 68,100원·하한액 66,048원으로 차이가 단 2,052원이에요. 연봉별 예상 수령액을 정리했어요.",
+      keywords: ["실업급여 연봉별 계산", "1일 구직급여", "상한액 하한액", "얼마 받나"],
+      ogTitle: "2026 실업급여 연봉별 수령액 | 머니위키",
+      ogDescription: "상한액 68,100원, 하한액 66,048원 기준과 연봉별 예상 수령액을 정리했어요.",
+      datePublished: "2026-02-24",
+      lastUpdated: "2026-02-24",
+      category: "실업급여",
+      faq: [
+        { question: "실업급여 연봉 5천만원과 6천만원이 같은 금액인가요?", answer: "맞아요. 상한액이 적용되기 때문에 연봉 4,560만원 이상은 모두 1일 68,100원으로 같아요. 아무리 연봉이 높아도 상한액을 넘을 수 없어요." },
+        { question: "실업급여 연봉별 계산에서 상여금이나 수당도 포함되나요?", answer: "네, 포함돼요. 퇴직 전 3개월 동안 받은 급여 전체(기본급+상여금+수당)가 평균임금 계산 기준이에요. 기본급만 따지는 게 아니에요." },
+      ],
+    },
+    Component: Article55Component,
   },
 ];
 
