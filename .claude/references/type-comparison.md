@@ -193,3 +193,118 @@ checker:
 [ext-btn (선택적)]
 ## 출처
 ```
+
+---
+
+## TSX 블로그 컴포넌트 (Blog TSX 전용)
+
+| MD 클래스 | TSX 컴포넌트 |
+|-----------|------------|
+| `class="bridge-card"` | `<BridgeCard>` |
+| `class="info warn"` | `<Info type="warn">` (필수 1개+) |
+| 비교 테이블 | `<TH>` / `<THL>` (필수 1개+) |
+```tsx
+<Info type="warn">{"DC형으로 전환 후 잘못 운용하면 DB형보다 <strong>적게</strong> 받을 수 있어요."}</Info>
+
+<BridgeCard
+  q="내 DSR이 몇 %인지 궁금하시죠?"
+  body="40%를 넘으면 추가 대출이 어려워요."
+  btnText="내 DSR 직접 계산"
+  href="/w/DSR-계산-방법"
+/>
+```
+
+---
+
+## 골든 스탠다드 필수 패턴 (v2 — 모든 타입 공통)
+
+### Import 블록
+
+```tsx
+import {
+  BlogLayout, TOC, Summary3, Sec, P, B, A, H3,
+  Info, InlineLink, SpokeLink, BridgeCard, ExtBtn,
+  FAQAccordion, RelatedArticles, PrevNext,
+  RelatedMid, SidebarCTA, SidebarDocs, SidebarCalc,
+  CheckerShell, CheckerQ, ResultPass, ResultFail, ResultGrid, ResultCTA,
+  Divider, TableTitle, TableNote, TH, THL, Tag, Btn,
+  ChipsGrid,
+} from "@/components/wiki/BlogShared";
+```
+
+### BlogLayout (2컬럼 + sidebar 필수)
+
+```tsx
+<BlogLayout
+  breadcrumb={["홈", "카테고리", "서브", "현재 글"]}
+  tags={["2026년 최신", "카테고리", "태그"]}
+  date={meta.lastUpdated}
+  title={meta.title}
+  description={<>인트로 텍스트 — 핵심 차이 <strong>볼드</strong></>}
+  sourceBar={{ badge: "출처", name: "출처명", date: "2026.02" }}
+  stickyLabel="핵심 라벨"
+  stickyValue="CTA 값"
+  stickyBtn="CTA 버튼"
+  disclaimer="이 글은 OO를 바탕으로 작성된 정보 제공 목적의 콘텐츠예요."
+  sidebar={<>
+    <SidebarCTA items={[
+      { icon: "💰", title: "내 숨은 환급금 찾기", sub: "평균 13만원 환급", href: "/w/환급금-찾기", hot: true },
+      { icon: "🏛️", title: "2026 정부지원금", sub: "30개+ 지원금", href: "/w/정부지원금" },
+      { icon: "📋", title: "2026년 달라지는 제도", sub: "변경사항 정리", href: "/w/2026-변경사항" },
+    ]} />
+    <SidebarDocs items={[
+      { title: "관련문서", cat: "카테고리·태그", href: "/w/슬러그" },
+    ]} />
+    <SidebarCalc items={[
+      { title: "실업급여 계산기", href: "/w/실업급여-계산기" },
+      { title: "퇴직금 계산기", href: "/w/퇴직금-계산기" },
+      { title: "연말정산 계산기", href: "/w/연말정산-계산기" },
+      { title: "양도소득세 계산기", href: "/w/양도소득세-계산기" },
+      { title: "대출이자 계산기", href: "/w/대출이자-계산기" },
+    ]} />
+  </>}
+>
+```
+
+### RelatedMid (SECTION 03-04 사이 필수)
+
+```tsx
+<RelatedMid
+  title="다른 OO 비교도 확인해 보세요"
+  items={[
+    { icon: "⚖️", title: "관련 비교 글 1", desc: "한 줄 설명", href: "/w/슬러그1" },
+    { icon: "📊", title: "관련 비교 글 2", desc: "한 줄 설명", href: "/w/슬러그2" },
+    { icon: "🔄", title: "관련 비교 글 3", desc: "한 줄 설명", href: "/w/슬러그3" },
+  ]}
+  hubHref="/w/허브-슬러그"
+  hubLabel="OO 전체 보기"
+/>
+```
+
+### 본문 6섹션 구조 (고정)
+
+```
+<TOC items={[6개 — sub에 베이스 키워드 포함]} />
+<Summary3 items={[3줄 — 핵심 차이 포함]} />
+sourceBar
+
+STEP 01: 체커 (CheckerShell + CheckerQ × 3~5 — 나에게 맞는 건?)
+  ↓ Divider
+SECTION 02: 키워드1 H2 — 핵심 차이 한눈에
+  비교 테이블 (필수) + 텍스트 설명 먼저
+  ↓ Divider
+SECTION 03: 키워드2 H2 — A 상세
+  H3 특징 + H3 적용 사례 + InlineLink
+  ↓ RelatedMid (본문 중간)
+  ↓ Divider
+SECTION 04: 키워드3 H2 — B 상세
+  H3 특징 + H3 적용 사례 + BridgeCard
+  ↓ Divider
+SECTION 05: 키워드4 H2 — 실제 선택 가이드
+  시나리오 비교 + 선택 분기 불릿 + Info(warn)
+  ↓ Divider
+FAQ: FAQAccordion (2개)
+
+<RelatedArticles items={[5개]} />
+<PrevNext prev={{title,href}} next={{title,href}} />
+```
