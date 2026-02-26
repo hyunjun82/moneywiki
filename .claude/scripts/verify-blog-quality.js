@@ -382,11 +382,15 @@ function printResults(result, filePath) {
 
     if (result.errors.length > 0) {
       console.error('');
-      console.error('❌ [오류] 수정 필수:');
+      console.error('🚨🚨🚨 STOP — 아래 오류를 먼저 수정하세요. registry 추가·git 작업 절대 금지! 🚨🚨🚨');
+      console.error('');
+      console.error(`❌ [오류] ${result.errors.length}건 수정 필수:`);
       console.error('');
       for (const err of result.errors) {
         console.error(`   ✗ ${err}`);
       }
+      console.error('');
+      console.error('👉 오류 수정 후 재검증: node .claude/scripts/verify-blog-quality.js <파일경로>');
     }
 
     if (result.warnings && result.warnings.length > 0) {
