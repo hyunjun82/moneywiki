@@ -11,7 +11,7 @@ import {
 } from "@/components/wiki/BlogShared";
 
 const meta = {
-  title: "재판상 도산 파산 회생절차 비교 | 대지급금 신청 방법 차이",
+  title: "재판상 도산 파산 회생 비교 | 대지급금 임금채권 청구 기준",
   description: "재판상 도산과 사실상 도산 중 어떤 절차로 대지급금 받는지 고민이시죠? 파산과 회생절차 차이까지 비교해 알려드려요.",
   category: "임금·퇴직금",
   keywords: [
@@ -50,6 +50,8 @@ const meta = {
   ],
 };
 
+type ResLink = { icon: string; title: string; desc: string; href: string };
+
 export default function Page() {
   const [sel, setSel] = useState<Record<string, string>>({});
   const pick = (g: string, v: string) => setSel((p) => ({ ...p, [g]: v }));
@@ -68,10 +70,15 @@ export default function Page() {
 
   const result = getResult();
 
+  const links: ResLink[] = [
+    { icon: "🏢", title: "근로복지공단 체당금 신청", desc: "도산대지급금 온라인 접수 방법", href: "https://www.comwel.or.kr" },
+    { icon: "📋", title: "도산등사실인정 신청 방법", desc: "사실상 도산 고용노동부 절차", href: "/w/도산등사실인정-신청-방법-서류" },
+  ];
+
   const toc = [
     { t: "STEP 01 도산 유형별 신청 방법 확인" },
     { t: "재판상 도산이 뭐예요?", sub: "파산 선고 · 회생절차 개시 결정 차이" },
-    { t: "파산과 회생절차 차이가 뭐예요?", sub: "회사 존속 여부 · 근로자 임금 처리" },
+    { t: "재판상 도산 파산과 회생절차 차이가 뭐예요?", sub: "회사 존속 여부 · 근로자 임금 처리" },
     { t: "재판상 도산 대지급금 어떻게 신청하나요?", sub: "파산 선고문 · 회생결정문 신청 방법" },
     { t: "재판상 도산 vs 사실상 도산 어떻게 달라요?", sub: "법원 관여 여부 · 대지급금 한도 비교" },
     { t: "자주 묻는 질문" },
@@ -99,11 +106,15 @@ export default function Page() {
           { title: "도산대지급금 신청 방법", cat: "임금·퇴직금·체당금", href: "/w/도산대지급금-신청-방법-절차" },
           { title: "도산등사실인정 신청 방법", cat: "임금·퇴직금·체당금", href: "/w/도산등사실인정-신청-방법-서류" },
           { title: "도산대지급금 상한액 계산", cat: "임금·퇴직금·체당금", href: "/w/도산대지급금-상한액-지급액-계산" },
+          { title: "대지급금 임금채권 우선변제", cat: "임금·퇴직금·체당금", href: "/w/대지급금-임금채권-우선변제-차이" },
+          { title: "도산등사실인정 사업 폐지 조건", cat: "임금·퇴직금·체당금", href: "/w/도산등사실인정-사업-폐지-영업양도" },
         ]} />
         <SidebarCalc items={[
           { title: "실업급여 계산기", href: "/w/실업급여-상한액" },
           { title: "퇴직금 계산기", href: "/w/퇴직금-계산기" },
           { title: "연말정산 계산기", href: "/w/연말정산-세액공제" },
+          { title: "양도소득세 계산기", href: "/w/양도소득세-계산기" },
+          { title: "대출이자 계산기", href: "/w/대출이자-계산기" },
         ]} />
       </>}
     >
@@ -128,7 +139,9 @@ export default function Page() {
         {result === "bankruptcy_within" && (
           <ResultPass title="파산 선고문으로 대지급금 신청 가능해요">
             <P>법원 파산 선고문을 가지고 근로복지공단에 도산대지급금을 신청하면 돼요. 파산 선고일로부터 2년 이내에 신청해야 해요. 파산 배당 신청도 병행해서 대지급금 한도 초과분을 추가로 받으세요.</P>
-            <ResultCTA icon="🏢" title="근로복지공단 체당금 신청" desc="도산대지급금 온라인 접수" href="https://www.comwel.or.kr" />
+            {links.map((l, i) => (
+              <ResultCTA key={i} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
+            ))}
           </ResultPass>
         )}
         {result === "bankruptcy_over" && (
@@ -181,10 +194,17 @@ export default function Page() {
       <P>재판상 도산 시 별도로 도산등사실인정을 받을 필요가 없어요. 파산 선고문이나 회생절차 개시 결정문이 곧 도산 확인 서류예요. 고용노동부 신청 없이 바로 근로복지공단에 신청하면 돼요.</P>
       <P>재판상 도산은 법원 인터넷 등기소에서 확인할 수 있어요. 파산 선고나 회생절차 개시 결정이 공고되기 때문에 사업주가 알려주지 않아도 확인 가능해요. 인터넷 등기소에서 법인명으로 검색하면 돼요.</P>
 
+      <InlineLink
+        icon="💰"
+        title="도산대지급금 상한액 — 연령별 최대 2,100만원"
+        desc="재판상 도산 시 수령 가능한 대지급금 한도 확인"
+        href="/w/도산대지급금-상한액-지급액-계산"
+      />
+
       <Divider />
 
       {/* SECTION 03 */}
-      <Sec n="SECTION 03" id="s3" title="파산과 회생절차 차이가 뭐예요?" sub="회사 존속 여부 · 근로자 임금 처리" />
+      <Sec n="SECTION 03" id="s3" title="재판상 도산 파산과 회생절차 차이가 뭐예요?" sub="회사 존속 여부 · 근로자 임금 처리" />
       <P>회사의 존속 여부가 핵심 차이예요. 파산은 회사가 소멸하고, 회생은 구조조정 후 존속해요. 근로자 입장에서 임금 처리 방식도 달라요.</P>
 
       <TableTitle>파산 vs 회생절차 비교</TableTitle>
@@ -237,6 +257,13 @@ export default function Page() {
       <P>회생절차의 경우예요. 회생절차 개시 결정문을 준비해요. 결정일로부터 2년 이내에 근로복지공단에 신청해요. 동시에 법원 회생채권 신고 기한(통상 1~2개월)을 놓치지 않도록 주의해야 해요.</P>
       <P>대지급금 신청과 파산·회생 절차 참여는 동시에 진행하는 게 좋아요. 대지급금 한도(최대 2,100만원)를 빠르게 받고, 초과분은 배당·회생 절차에서 청구하면 돼요. 두 경로가 경쟁 관계가 아니라 보완 관계예요.</P>
 
+      <InlineLink
+        icon="📋"
+        title="도산대지급금 신청 절차 — 2년 기한 필요 서류"
+        desc="근로복지공단 체당금 신청부터 수령까지 단계별 안내"
+        href="/w/도산대지급금-신청-방법-절차"
+      />
+
       <Divider />
 
       {/* SECTION 05 */}
@@ -252,6 +279,9 @@ export default function Page() {
         label="도산대지급금 신청 방법"
         href="/w/도산대지급금-신청-방법-절차"
       />
+
+      <SpokeLink num={1} title="도산대지급금 신청 방법 절차" desc="2년 기한과 필요 서류 목록" href="/w/도산대지급금-신청-방법-절차" />
+      <SpokeLink num={2} title="도산등사실인정 신청 방법 서류" desc="고용노동부 인정 절차와 서류" href="/w/도산등사실인정-신청-방법-서류" />
 
       <ExtBtn
         badge="근로복지공단 공식"

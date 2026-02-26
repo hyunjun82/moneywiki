@@ -2,7 +2,7 @@
 import { useState } from "react";
 import {
   BlogLayout, TOC, Summary3, Sec, P, B, A, H3, Divider,
-  InlineLink, ExtBtn, TableTitle, TableNote,
+  Info, InlineLink, SpokeLink, ExtBtn, TableTitle, TableNote,
   CheckerShell, CheckerQ, ResultPass, ResultFail, ResultGrid, ResultCTA,
   FAQAccordion, RelatedArticles, PrevNext, RelatedMid,
   SidebarCTA, SidebarDocs, SidebarCalc, BridgeCard,
@@ -32,12 +32,20 @@ const meta = {
     { name: "근로기준법 제23조 - 해고 등의 제한", url: "https://www.law.go.kr/법령/근로기준법", date: "2026-02" },
     { name: "중앙노동위원회 판정례", url: "https://www.nlrc.go.kr", date: "2026-02" },
   ],
+  ctaCard: {
+    label: "30초 확인",
+    mainText: "학력 위조 해고 → 부당해고 여부",
+    subText: "채용 조건·업무 관련성 선택으로 판단",
+    url: "#checker",
+    external: false,
+  },
   faq: [
     { q: "학력 위조 해고 시 실업급여는 받을 수 있나요?", a: "정당한 해고로 판정돼도 자발적 이직이 아니라서 실업급여는 받을 수 있어요. 다만 합의 퇴직이라면 이직 사유에 따라 달라지니 고용센터에서 확인받는 게 좋아요." },
     { q: "학력 위조 해고 판례 기준이 최근 바뀌었나요?", a: "최근 판례도 일관되게 업무 관련성 기준을 유지하고 있어요. 단순 학력 허위 기재만으로 해고가 정당하지 않고, 채용 조건과 실제 업무 수행에 미친 영향을 종합 판단해요." },
   ],
 };
 
+type ResLink = { icon: string; title: string; desc: string; href: string };
 type Sel = Record<string, string>;
 
 function getResult(sel: Sel): string | null {
@@ -53,6 +61,11 @@ export default function Article108() {
   const [sel, setSel] = useState<Sel>({});
   const pick = (g: string, v: string) => setSel((p) => ({ ...p, [g]: v }));
   const result = getResult(sel);
+
+  const links: ResLink[] = [
+    { icon: "⚖️", title: "노동위원회 부당해고 구제 신청", desc: "해고 통보 후 3개월 이내 접수", href: "https://www.nlrc.go.kr" },
+    { icon: "📞", title: "고용노동부 1350 상담", desc: "부당해고 판단 무료 상담", href: "https://www.moel.go.kr" },
+  ];
 
   const toc = [
     { t: "STEP 01 부당해고 여부 확인", sub: "채용 조건 · 업무 관련성" },
@@ -147,7 +160,7 @@ export default function Article108() {
                 { icon: "✅", name: "업무 관련성", pass: true, desc: "실질 영향 없음" },
                 { icon: "📋", name: "구제 가능", pass: true, desc: "3개월 이내 신청" },
               ]} />
-              <ResultCTA icon="⚖️" title="노동위원회 구제 신청" desc="부당해고 구제 접수" href="https://www.nlrc.go.kr" />
+              {links.map((l, i) => <ResultCTA key={i} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />)}
             </ResultPass>
           )}
           {result === "unfair_req" && (
@@ -229,6 +242,15 @@ export default function Article108() {
         <P>해고가 정당하다고 본 사례들이에요. 전문 자격증이나 면허가 필요한 직종에서 허위 자격으로 취업한 경우예요. 채용 공고에 필수 학력 요건이 명시됐고 학력 미달이면 채용 자체가 안 됐을 경우예요. 학력 위조 사실이 고객 신뢰나 거래에 직접 영향을 미친 경우예요.</P>
         <P>부당해고로 판단한 사례들이에요. 수년간 성실히 근무했고 능력도 충분히 입증된 경우예요. 채용 조건에 학력이 명시되지 않았거나 우대 사항에 불과했던 경우예요. 학력 미달이었어도 업무에 실질적인 지장이 없었던 경우예요.</P>
         <P>따라서 학력 위조 사실이 있어도 상황에 따라 부당해고를 다툴 여지가 있어요. 해고 통보를 받았다면 포기하기 전에 노동위원회 상담을 받아보는 게 좋아요.</P>
+
+        <InlineLink
+          icon="⚖️"
+          title="파견근로자 직접 고용 의무 — 2년 초과 정규직 전환"
+          desc="2년 파견 후 직접 고용 요구 가능한 법적 근거"
+          href="/w/파견근로자-2년-후-고용"
+        />
+
+        <Info type="warn">해고 통보일로부터 3개월이 지나면 노동위원회 구제 신청이 불가해요. 부당해고 의심 시 즉시 3개월 기한을 확인하세요.</Info>
       </Sec>
       <Divider />
 
@@ -240,11 +262,14 @@ export default function Article108() {
         <P>노무사의 도움을 받는 것도 좋아요. 서울·경기 지역은 무료 노무사 상담 서비스를 이용할 수 있어요. 고용노동부 1350으로 전화하면 상담 연결을 받을 수 있어요.</P>
 
         <InlineLink
-          icon="⚖️"
-          title="파견근로자 직접 고용 의무"
-          desc="2년 초과 파견 후 직접 고용 요구 방법"
-          href="/w/파견근로자-2년-후-고용"
+          icon="📞"
+          title="부당해고 구제 신청 — 노동위원회 3개월 기한"
+          desc="해고 통보 후 3개월 이내 구제 신청 절차와 준비 서류"
+          href="/w/부당해고-노동위원회-구제신청"
         />
+
+        <SpokeLink num={1} title="파견근로자 2년 후 정규직 전환" desc="파견 2년 초과 시 직접 고용 요구 방법" href="/w/파견근로자-2년-후-고용" />
+        <SpokeLink num={2} title="퇴직금 지연이자 계산" desc="퇴직금 미지급 시 연 20% 지연이자 청구" href="/w/퇴직급여-지급-지연이자-받기" />
 
         <ExtBtn
           badge="노동위원회 공식"

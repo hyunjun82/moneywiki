@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
   C,
   BlogLayout, TOC, Summary3, Sec, P, B, A, H3,
-  Info, InlineLink, BridgeCard, ExtBtn,
+  Info, InlineLink, SpokeLink, BridgeCard, ExtBtn,
   FAQAccordion, RelatedArticles, PrevNext,
   RelatedMid, SidebarCTA, SidebarDocs, SidebarCalc,
   CheckerShell, CheckerQ, ResultPass, ResultFail, ResultCTA,
@@ -50,6 +50,8 @@ const meta = {
   ],
 };
 
+type ResLink = { icon: string; title: string; desc: string; href: string };
+
 export default function Page() {
   const [sel, setSel] = useState<Record<string, string>>({});
   const pick = (g: string, v: string) => setSel((p) => ({ ...p, [g]: v }));
@@ -62,12 +64,17 @@ export default function Page() {
 
   const result = getResult();
 
+  const links: ResLink[] = [
+    { icon: "📋", title: "수급자격 인정 신청 방법", desc: "신청 절차와 구비서류 안내", href: "/w/실업급여-수급자격-인정" },
+    { icon: "⏰", title: "52시간 초과 퇴직 실업급여", desc: "법정 근로시간 초과 퇴직 조건", href: "/w/52시간-초과-퇴직-실업급여" },
+  ];
+
   const toc = [
     { t: "STEP 01 간병 퇴직 정당사유 해당 여부 확인" },
-    { t: "간병으로 퇴직하면 실업급여 받을 수 있나요?", sub: "정당사유 인정 조건 · 간병 대상 범위" },
+    { t: "간병 사유 퇴직 실업급여 받을 수 있나요?", sub: "정당사유 인정 조건 · 간병 대상 범위" },
     { t: "간병 사유 30일 기준 증빙 서류는 뭐가 필요한가요?", sub: "진단서 · 장기요양등급 · 가족관계증명" },
     { t: "간병 정당사유 인정받으려면 어떤 경우인가요?", sub: "인과관계 · 계속 근무 불가 · 심사 기준" },
-    { t: "배우자 부모 시부모 간병 실업급여 차이가 있나요?", sub: "직계존속 범위 · 시부모·장인장모 제외" },
+    { t: "간병 사유 배우자 부모 시부모 실업급여 차이가 있나요?", sub: "직계존속 범위 · 시부모·장인장모 제외" },
     { t: "자주 묻는 질문" },
   ];
 
@@ -122,7 +129,9 @@ export default function Page() {
         {result === "family_over30" && (
           <ResultPass title="정당사유 인정 가능해요">
             <P>배우자·직계존비속을 30일 이상 간병해야 하는 상황이라면 정당한 이직 사유로 인정돼요. 간병 대상의 진단서, 입원 확인서, 장기요양등급 판정서 등 의료 서류를 준비해서 고용센터에 수급자격 신청을 하세요.</P>
-            <ResultCTA icon="📋" title="수급자격 인정 신청 방법" desc="신청 절차와 구비서류 안내" href="/w/실업급여-수급자격-인정" />
+            {links.map((l, i) => (
+            <ResultCTA key={i} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
+          ))}
           </ResultPass>
         )}
         {result === "family_under30" && (
@@ -163,11 +172,18 @@ export default function Page() {
       <Divider />
 
       {/* SECTION 02 */}
-      <Sec n="SECTION 02" id="s2" title="간병으로 퇴직하면 실업급여 받을 수 있나요?" sub="정당사유 인정 조건 · 간병 대상 범위" />
+      <Sec n="SECTION 02" id="s2" title="간병 사유 퇴직 실업급여 받을 수 있나요?" sub="정당사유 인정 조건 · 간병 대상 범위" />
       <P>받을 수 있어요. 단, 모든 간병이 다 인정되는 건 아니에요. <A href="https://www.law.go.kr/법령/고용보험법시행규칙">고용보험법 시행규칙</A> 별표에서 특정 조건을 충족해야 정당한 이직 사유로 인정해요.</P>
       <P>인정되는 간병 대상은 배우자와 직계존비속이에요. 직계존속은 부모, 조부모예요. 직계비속은 자녀, 손자녀예요. 형제자매는 법적으로 인정되는 범위가 아니에요.</P>
       <P>기간 기준도 중요해요. 30일 이상 간병이 필요한 상황이어야 해요. 이미 30일을 간병했다는 게 아니라, 앞으로도 30일 이상 간병이 필요하다고 의사가 판단한 상황이어야 해요. 단기 간호나 2~3주 회복 지원은 인정받기 어려워요.</P>
       <P>간병 이후에도 구직 의사와 능력이 있어야 해요. 간병이 끝나면 취업 가능한 상태임을 고용센터에 보여줘야 해요. 수급 기간 중에도 구직활동을 해야 수당이 지급돼요.</P>
+
+      <InlineLink
+        icon="📋"
+        title="실업급여 수급자격 인정 — 정당사유 신청 절차"
+        desc="간병 정당사유 인정 후 수급자격 신청 방법"
+        href="/w/실업급여-수급자격-인정"
+      />
 
       <Divider />
 
@@ -211,6 +227,15 @@ export default function Page() {
       <P>퇴직 시점과 간병 시작이 일치해야 해요. 간병 필요 상황이 생겼고 그로 인해 퇴직했다는 연결이 명확해야 해요. 간병이 시작된 후 오래 지나서 퇴직했다면 연관성이 약해질 수 있어요. 퇴직 전에 회사에 간병 사유를 알렸다는 기록이 있으면 도움이 돼요.</P>
       <P>불인정 결정이 나와도 이의신청을 할 수 있어요. 결정 통보일로부터 90일 이내에 심사청구를 할 수 있어요. 추가 증빙 서류를 보완해서 재심사를 받을 수 있어요.</P>
 
+      <Info type="warn">형제자매·시부모·장인장모는 인정 대상이 아니에요. 직계존비속(본인 기준 부모·자녀·조부모)만 해당돼요. 배우자의 부모는 법적 직계존속이 아니에요.</Info>
+
+      <InlineLink
+        icon="⏰"
+        title="52시간 초과 퇴직 실업급여 — 2개월 누적 기준"
+        desc="주 52시간 초과 근무 정당사유 인정 조건"
+        href="/w/52시간-초과-퇴직-실업급여"
+      />
+
       <RelatedMid
         hubHref="/w/실업급여-임금삭감-퇴직-정당사유"
         hubLabel="다른 정당사유 퇴직도 알아보기"
@@ -224,11 +249,14 @@ export default function Page() {
       <Divider />
 
       {/* SECTION 05 */}
-      <Sec n="SECTION 05" id="s5" title="배우자 부모 시부모 간병 실업급여 차이가 있나요?" sub="직계존속 범위 · 시부모·장인장모 제외" />
+      <Sec n="SECTION 05" id="s5" title="간병 사유 배우자 부모 시부모 실업급여 차이가 있나요?" sub="직계존속 범위 · 시부모·장인장모 제외" />
       <P>배우자의 부모(시부모, 장인장모)는 인정 대상이 아니에요. 직계존비속은 본인 기준이에요. 배우자의 직계존속은 본인의 직계존속이 아니에요.</P>
       <P>부모님(직계존속)은 인정 대상이에요. 부모, 조부모, 증조부모 등 직계존속을 30일 이상 간병해야 하는 상황이면 정당사유가 돼요. 치매, 뇌졸중, 골절 등 장기 입원이나 재가 요양이 필요한 경우가 해당돼요.</P>
       <P>장기요양등급이 없어도 신청할 수 있어요. 진단서와 의사 소견서로 30일 이상 간병 필요성을 입증하면 돼요. 갑작스러운 사고로 장기요양 등급이 아직 없는 경우에도 병원 서류를 최대한 모아서 제출하면 돼요.</P>
       <P>자녀 간병도 인정 대상이에요. 만성 질환이나 장기 입원이 필요한 자녀를 간병해야 하는 경우라면 직계비속으로 인정돼요. 단, 만 8세 이하 영유아 양육은 별도의 육아 사유 정당사유로 처리돼요.</P>
+
+      <SpokeLink num="1" title="실업급여 수급자격 인정 절차" desc="비자발적 퇴직 조건과 신청 방법" href="/w/실업급여-수급자격-인정" />
+      <SpokeLink num="2" title="52시간 초과 퇴직 실업급여 조건" desc="근로시간 초과 퇴직 정당사유 기준" href="/w/52시간-초과-퇴직-실업급여" />
 
       <ExtBtn badge="법제처 공식" text="고용보험법 시행규칙 정당사유 조항" cta="바로가기 →" href="https://www.law.go.kr/법령/고용보험법시행규칙" />
 

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import {
   BlogLayout, TOC, Summary3, Sec, P, B, A, H3,
-  Info, InlineLink, BridgeCard, ExtBtn,
+  Info, InlineLink, SpokeLink, BridgeCard, ExtBtn,
   FAQAccordion, RelatedArticles, PrevNext,
   RelatedMid, SidebarCTA, SidebarDocs, SidebarCalc,
   CheckerShell, CheckerQ, ResultPass, ResultFail, ResultGrid, ResultCTA,
@@ -10,7 +10,7 @@ import {
 } from "@/components/wiki/BlogShared";
 
 const meta = {
-  title: "실업급여 임금체불 퇴직 정당사유 | 2개월 기준 증빙서류 방법",
+  title: "실업급여 임금체불 퇴직 정당사유 | 2개월 기준 증빙서류",
   description: "임금을 2개월 이상 못 받았으면 정당사유 퇴직으로 인정돼요. 임금체불 증빙서류 준비부터 고용센터 신청까지 순서대로 정리했어요.",
   category: "실업급여",
   keywords: ["실업급여 임금체불", "퇴직 정당사유", "2개월 기준", "증빙서류 방법"],
@@ -43,6 +43,8 @@ const meta = {
   ],
 };
 
+type ResLink = { icon: string; title: string; desc: string; href: string };
+
 export default function Article84() {
   const [sel, setSel] = useState<Record<string, string>>({});
   const pick = (g: string, v: string) => setSel((p) => ({ ...p, [g]: v }));
@@ -57,6 +59,11 @@ export default function Article84() {
   };
 
   const result = getResult();
+
+  const links: ResLink[] = [
+    { icon: "📝", title: "실업급여 신청 방법과 절차", desc: "고용24 온라인 신청부터 준비서류까지 안내", href: "/w/실업급여-신청-방법-절차-준비서류" },
+    { icon: "⚖️", title: "이의신청 심사청구 재심사", desc: "불인정 시 90일 내 이의제기 가능", href: "/w/실업급여-이의신청-심사청구-재심사-불복-절차" },
+  ];
 
   return (
     <BlogLayout
@@ -115,7 +122,7 @@ export default function Article84() {
           { t: "내 임금체불이 정당사유에 해당하는지 간편 체크", sub: null },
           { t: "실업급여 임금체불 2개월 기준이 뭐예요?", sub: "정당사유 인정 조건 요약표 · 퇴직 전 1년 이내 판단 기준" },
           { t: "실업급여 임금체불 증빙서류는 어떻게 받나요?", sub: "증빙서류 종류와 발급처 · 고용노동부 진정서 활용법" },
-          { t: "실업급여 임금 일부만 체불돼도 인정되나요?", sub: "전액 체불 vs 일부 체불 차이 · 사례별 인정 여부 판단" },
+          { t: "실업급여 임금체불 일부만 돼도 인정되나요?", sub: "전액 체불 vs 일부 체불 차이 · 사례별 인정 여부 판단" },
           { t: "실업급여 임금체불 증빙서류 제출 절차가 어떻게 되나요?", sub: "고용센터 제출 순서 · 이직확인서 정정 방법" },
           { t: "자주 묻는 질문", sub: null },
         ]}
@@ -202,12 +209,9 @@ export default function Article84() {
                   { icon: "✅", name: "피보험기간", pass: true, desc: "충족" },
                 ]}
               />
-              <ResultCTA
-                icon="📝"
-                title="실업급여 신청 방법과 절차"
-                desc="고용24 온라인 신청부터 준비서류까지 안내"
-                href="/w/실업급여-신청-방법-절차-준비서류"
-              />
+              {links.map((l, i) => (
+                <ResultCTA key={i} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
+              ))}
             </ResultPass>
           ) : (
             <ResultFail
@@ -473,7 +477,7 @@ export default function Article84() {
       <Sec
         n="SECTION 04"
         id="s4"
-        title="실업급여 임금 일부만 체불돼도 인정되나요?"
+        title="실업급여 임금체불 일부만 돼도 인정되나요?"
         sub="전액 체불 vs 일부 체불 차이 · 사례별 인정 여부 판단"
       />
 
@@ -534,6 +538,13 @@ export default function Article84() {
         지급 조건이 명시돼 있으면 임금으로 봐서 체불로 인정될 수 있어요. 하지만
         &apos;회사 사정에 따라 지급&apos;이라고만 적혀 있으면 인정받기 어려워요.
       </P>
+
+      <InlineLink
+        icon="💸"
+        title="임금삭감 퇴직 정당사유 — 20% 기준 인정 조건"
+        desc="임금이 삭감된 경우의 정당사유 기준과 증빙 방법"
+        href="/w/실업급여-임금삭감-퇴직-정당사유"
+      />
 
       <BridgeCard
         q="퇴직금 미지급도 정당사유가 돼요"
@@ -612,6 +623,9 @@ export default function Article84() {
         지급돼요. 이직사유 변경에 추가로 걸리는 시간은 보통 1~2주 정도예요. 그
         기간 동안에도 구직활동은 미리 시작해두면 나중에 소급 인정받을 수 있어요.
       </P>
+
+      <SpokeLink num={1} title="실업급여 신청 방법 절차 준비서류" desc="고용24 온라인 신청부터 준비서류까지 안내" href="/w/실업급여-신청-방법-절차-준비서류" />
+      <SpokeLink num={2} title="임금삭감 퇴직 정당사유 인정 조건" desc="임금 20% 이상 삭감 시 정당사유 기준" href="/w/실업급여-임금삭감-퇴직-정당사유" />
 
       <ExtBtn
         href="https://www.ei.go.kr/ei/eih/cm/hm/main.do"

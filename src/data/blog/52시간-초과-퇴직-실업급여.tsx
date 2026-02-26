@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
   C,
   BlogLayout, TOC, Summary3, Sec, P, B, A, H3,
-  Info, InlineLink, BridgeCard, ExtBtn,
+  Info, InlineLink, SpokeLink, BridgeCard, ExtBtn,
   FAQAccordion, RelatedArticles, PrevNext,
   RelatedMid, SidebarCTA, SidebarDocs, SidebarCalc,
   CheckerShell, CheckerQ, ResultPass, ResultFail, ResultCTA,
@@ -50,6 +50,8 @@ const meta = {
   ],
 };
 
+type ResLink = { icon: string; title: string; desc: string; href: string };
+
 export default function Page() {
   const [sel, setSel] = useState<Record<string, string>>({});
   const pick = (g: string, v: string) => setSel((p) => ({ ...p, [g]: v }));
@@ -62,12 +64,17 @@ export default function Page() {
 
   const result = getResult();
 
+  const links: ResLink[] = [
+    { icon: "📋", title: "실업급여 수급자격 인정 신청", desc: "신청 절차 단계별 안내", href: "/w/실업급여-수급자격-인정" },
+    { icon: "💰", title: "2026년 실업급여 상한액", desc: "일 68,100원 기준 월 수령액 계산", href: "/w/2026년-실업급여" },
+  ];
+
   const toc = [
     { t: "STEP 01 수급 가능 여부 확인" },
     { t: "주 52시간 초과 기준은 어떻게 되나요?", sub: "1주 52시간 계산법 · 연장근로 포함" },
-    { t: "2개월은 연속이어야 하나요?", sub: "1년 내 누적 계산 · 주 단위 합산" },
-    { t: "정당사유 증빙서류는 뭐가 필요한가요?", sub: "임금명세서 · 출퇴근 기록 · 수당 내역" },
-    { t: "평균 근로시간은 어떻게 계산하나요?", sub: "1주 기준 · 실제 근무시간 산정" },
+    { t: "주 52시간 2개월은 연속이어야 하나요?", sub: "1년 내 누적 계산 · 주 단위 합산" },
+    { t: "주 52시간 정당사유 증빙서류는 뭐가 필요한가요?", sub: "임금명세서 · 출퇴근 기록 · 수당 내역" },
+    { t: "주 52시간 평균 근로시간은 어떻게 계산하나요?", sub: "1주 기준 · 실제 근무시간 산정" },
     { t: "자주 묻는 질문" },
   ];
 
@@ -121,7 +128,9 @@ export default function Page() {
         {result === "over2_yes" && (
           <ResultPass title="정당사유 인정 가능성이 높아요">
             <P>누적 2개월 이상 + 증빙서류까지 있으면 정당한 이직 사유로 인정될 가능성이 높아요. 이직확인서 발급 후 고용센터에 수급자격 인정 신청을 하면 돼요.</P>
-            <ResultCTA icon="📋" title="실업급여 수급자격 인정 신청" desc="신청 절차 단계별 안내" href="/w/실업급여-수급자격-인정" />
+            {links.map((l, i) => (
+              <ResultCTA key={i} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
+            ))}
           </ResultPass>
         )}
         {result === "over2_no" && (
@@ -169,10 +178,17 @@ export default function Page() {
       <P>예를 들어 평일 하루 10시간씩 5일을 일하면 50시간이에요. 여기에 토요일 4시간 근무가 추가되면 54시간이 되어 52시간을 2시간 초과해요. 이 주는 52시간 초과 주로 계산돼요.</P>
       <P>상시 5인 미만 사업장은 적용 예외예요. 근로기준법 연장근로 한도 규정은 상시 5인 이상 사업장에 적용돼요. 5인 미만 사업장이면 52시간 초과를 이유로 한 정당사유 인정이 어려울 수 있어요.</P>
 
+      <InlineLink
+        icon="📋"
+        title="실업급여 수급자격 인정 — 비자발적 퇴직 조건"
+        desc="정당사유 해당 시 수급자격 신청 절차"
+        href="/w/실업급여-수급자격-인정"
+      />
+
       <Divider />
 
       {/* SECTION 03 */}
-      <Sec n="SECTION 03" id="s3" title="2개월은 연속이어야 하나요?" sub="1년 내 누적 계산 · 주 단위 합산" />
+      <Sec n="SECTION 03" id="s3" title="주 52시간 2개월은 연속이어야 하나요?" sub="1년 내 누적 계산 · 주 단위 합산" />
       <P>연속이 아니어도 돼요. 이직일 이전 1년 내에 누적으로 2개월 이상이면 인정돼요. <A href="https://www.law.go.kr/법령/고용보험법시행규칙">고용보험법 시행규칙</A>에서 이직 전 1년 이내에 2개월 이상 기간 동안 근로기준법 제53조를 위반한 초과 근무가 있었다면 정당한 이직 사유로 보고 있어요.</P>
       <P>중간에 정상 주가 있어도 괜찮아요. 예를 들어 52시간 초과 주가 1월에 4주, 4월에 5주라면 총 9주로 2개월을 넘어요. 2월~3월이 정상 근무여도 상관없이 52시간 초과 주만 합산해요.</P>
       <P>주 단위로 계산하는 게 정확해요. 2개월은 대략 8주예요. 52시간 초과 주가 8주 이상이면 기준을 충족해요. 임금명세서나 근무기록에서 주별로 초과 시간을 합산해서 계산하면 돼요.</P>
@@ -194,7 +210,7 @@ export default function Page() {
       <Divider />
 
       {/* SECTION 04 */}
-      <Sec n="SECTION 04" id="s4" title="정당사유 증빙서류는 뭐가 필요한가요?" sub="임금명세서 · 출퇴근 기록 · 수당 내역" />
+      <Sec n="SECTION 04" id="s4" title="주 52시간 정당사유 증빙서류는 뭐가 필요한가요?" sub="임금명세서 · 출퇴근 기록 · 수당 내역" />
       <P>객관적인 기록이 있어야 인정받을 가능성이 높아요. 회사가 협조하지 않아도 내가 보관하고 있는 서류로 충분히 증빙할 수 있어요.</P>
 
       <TableTitle>52시간 초과 증빙서류 종류</TableTitle>
@@ -228,11 +244,18 @@ export default function Page() {
       <Divider />
 
       {/* SECTION 05 */}
-      <Sec n="SECTION 05" id="s5" title="평균 근로시간은 어떻게 계산하나요?" sub="1주 기준 · 실제 근무시간 산정" />
+      <Sec n="SECTION 05" id="s5" title="주 52시간 평균 근로시간은 어떻게 계산하나요?" sub="1주 기준 · 실제 근무시간 산정" />
       <P>1주(7일) 단위로 실제 근무한 총 시간을 계산해요. 소정근로시간(계약서상 시간)이 아니라 실제 일한 시간 기준이에요. 야근, 주말 근무, 휴일 근무 모두 포함돼요.</P>
       <P>계산 예시예요. 평일 9시 출근·22시 퇴근 기준으로 점심 1시간 제외하면 하루 12시간이에요. 5일이면 60시간이에요. 52시간 한도 대비 8시간 초과에요. 이 주는 52시간 초과 주로 분류돼요.</P>
       <P>포괄임금제여도 실제 근무시간이 기준이에요. 포괄임금 계약이라도 실제로 52시간을 초과해서 일했다면 인정받을 수 있어요. 실제 근무 사실을 입증하는 게 핵심이에요.</P>
       <P>주 단위 계산이 어렵다면 월 단위로 환산해도 돼요. 1개월 약 4.34주 기준으로, 월 초과 근무 시간을 주당으로 나눠서 계산해요. 평균이 주 52시간을 넘으면 기준에 해당해요.</P>
+
+      <InlineLink
+        icon="💼"
+        title="간병 사유 퇴직 실업급여 조건 — 30일 기준"
+        desc="가족 간병으로 퇴직 시 정당사유 인정 기준"
+        href="/w/실업급여-간병-퇴직"
+      />
 
       <BridgeCard
         q="증빙서류를 다 모았다면 이제 신청 절차를 알아볼까요?"
@@ -240,6 +263,9 @@ export default function Page() {
         label="실업급여 신청 방법 보기"
         href="/w/실업급여-신청방법"
       />
+
+      <SpokeLink num="1" title="실업급여 수급자격 인정 신청 방법" desc="비자발적 퇴직 조건과 신청 절차" href="/w/실업급여-수급자격-인정" />
+      <SpokeLink num="2" title="2026년 실업급여 상한액 하한액" desc="일 68,100원 기준 월 수령액 계산" href="/w/2026년-실업급여" />
 
       <ExtBtn badge="법제처 공식" text="고용보험법 시행규칙 정당한 이직 사유" cta="바로가기 →" href="https://www.law.go.kr/법령/고용보험법시행규칙" />
 

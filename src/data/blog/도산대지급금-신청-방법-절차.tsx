@@ -11,8 +11,10 @@ import {
   Steps,
 } from "@/components/wiki/BlogShared";
 
+type ResLink = { icon: string; title: string; desc: string; href: string };
+
 const meta = {
-  title: "도산대지급금 신청 방법 절차 | 2년 기한 필요 서류",
+  title: "도산대지급금 신청 방법 | 2년 기한 필요 서류",
   description: "회사가 도산해서 임금을 못 받으셨나요? 도산대지급금은 2년 안에 신청해야 해요. 근로복지공단 신청 방법과 필요 서류를 알려드려요.",
   category: "임금·퇴직금",
   keywords: [
@@ -69,12 +71,17 @@ export default function Page() {
 
   const result = getResult();
 
+  const links: ResLink[] = [
+    { icon: "🏢", title: "근로복지공단 체당금 신청", desc: "도산대지급금 온라인 접수", href: "https://www.comwel.or.kr/comwel/wlf/dgw/dgwClmHm.jsp" },
+    { icon: "📋", title: "도산등사실인정 신청 방법", desc: "고용노동부 인정 절차와 서류 안내", href: "/w/도산등사실인정-신청-방법-서류" },
+  ];
+
   const toc = [
     { t: "STEP 01 신청 준비 점검" },
     { t: "신청 기한 언제까지예요?", sub: "도산 확인 기산점 · 2년 계산법" },
     { t: "신청 절차 어떻게 되나요?", sub: "도산 확인 → 공단 신청 → 심사 → 지급" },
-    { t: "필요 서류 뭐가 있나요?", sub: "도산 확인 서류 · 체불 증빙 서류 목록" },
-    { t: "기한 초과 시 어떻게 하나요?", sub: "임금채권 소멸시효 · 파산 배당 청구" },
+    { t: "도산대지급금 신청 필요 서류 뭐가 있나요?", sub: "도산 확인 서류 · 체불 증빙 서류 목록" },
+    { t: "도산대지급금 신청 기한 초과 시 어떻게 하나요?", sub: "임금채권 소멸시효 · 파산 배당 청구" },
     { t: "자주 묻는 질문" },
   ];
 
@@ -129,7 +136,7 @@ export default function Page() {
         {result === "bankruptcy_within" && (
           <ResultPass title="파산·회생 선고문으로 바로 신청 가능해요">
             <P>법원 파산 선고문 또는 회생절차 개시 결정문을 가지고 근로복지공단에 바로 신청할 수 있어요. 체불 임금·퇴직금 관련 서류를 함께 준비해서 공단 지사에 방문하거나 온라인으로 제출하세요.</P>
-            <ResultCTA icon="🏢" title="근로복지공단 체당금 신청" desc="도산대지급금 온라인 접수" href="https://www.comwel.or.kr/comwel/wlf/dgw/dgwClmHm.jsp" />
+            {links.map((l, i) => <ResultCTA key={i} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />)}
           </ResultPass>
         )}
         {result === "bankruptcy_exceed" && (
@@ -182,6 +189,13 @@ export default function Page() {
       <P>늦게 알았더라도 도산 확인 후 2년 이내면 신청 가능해요. 회사가 3년 전 폐업했더라도 도산등사실인정서를 최근 받았다면 그 발급일부터 2년이 있어요. 도산등사실인정 신청을 서두르는 게 중요한 이유가 여기 있어요.</P>
       <P>기한이 임박했다면 서류가 완벽하지 않아도 신청서를 먼저 제출하세요. 서류 미비로 반려되더라도 신청 사실 자체가 기한 내 기록으로 남을 수 있어요. 근로복지공단에 사전 상담을 받고 진행하면 돼요.</P>
 
+      <InlineLink
+        icon="📋"
+        title="도산등사실인정 신청 방법 — 고용노동부 4단계 절차"
+        desc="법원 파산 없이 폐업했다면 먼저 도산등사실인정을 받아야 해요"
+        href="/w/도산등사실인정-신청-방법-서류"
+      />
+
       <Divider />
 
       {/* SECTION 03 */}
@@ -210,7 +224,7 @@ export default function Page() {
       <Divider />
 
       {/* SECTION 04 */}
-      <Sec n="SECTION 04" id="s4" title="필요 서류는 뭐가 있나요?" sub="도산 확인 서류 · 체불 증빙 서류 목록" />
+      <Sec n="SECTION 04" id="s4" title="도산대지급금 신청 필요 서류는 뭐가 있나요?" sub="도산 확인 서류 · 체불 증빙 서류 목록" />
       <P>도산대지급금 신청에는 도산 확인 서류, 재직 및 체불 증빙 서류가 필요해요. 서류가 완비될수록 심사가 빠르고 승인 가능성이 높아져요.</P>
 
       <TableTitle>신청 필요 서류 목록</TableTitle>
@@ -243,10 +257,17 @@ export default function Page() {
       <P>기본 서류(청구서, 신분증, 통장)와 도산 확인 서류는 반드시 필요해요. 재직·체불 증빙 서류는 없으면 대체 서류를 활용할 수 있어요. 공단 담당자가 서류 부족 시 보완 방법을 안내해줘요.</P>
       <P>온라인 신청(comwel.or.kr)이 방문보다 편리해요. 서류를 스캔해서 파일로 첨부하면 돼요. 처리 기간은 방문과 온라인 모두 비슷하게 2~4주 정도예요.</P>
 
+      <InlineLink
+        icon="💰"
+        title="도산대지급금 상한액 계산 — 연령별 최대 2,100만원"
+        desc="연령·항목별 상한액 기준과 실수령 계산 방법"
+        href="/w/도산대지급금-상한액-지급액-계산"
+      />
+
       <Divider />
 
       {/* SECTION 05 */}
-      <Sec n="SECTION 05" id="s5" title="기한 초과 시 어떻게 하나요?" sub="임금채권 소멸시효 · 파산 배당 청구" />
+      <Sec n="SECTION 05" id="s5" title="도산대지급금 신청 기한 초과 시 어떻게 하나요?" sub="임금채권 소멸시효 · 파산 배당 청구" />
       <P>도산대지급금 2년 기한이 지났다고 방법이 완전히 없어진 건 아니에요. 임금채권 소멸시효(3년) 안에 있다면 별도의 청구 방법이 있어요. 방법은 도산 유형에 따라 달라요.</P>
       <P>파산 절차 중이라면 파산관재인에게 채권 신고를 할 수 있어요. 파산 배당에서 임금채권은 최우선 변제 대상이에요. 배당 금액은 자산 규모에 따라 달라지지만, 대지급금 한도 초과분도 배당으로 받을 수 있어요.</P>
       <P>회생절차 중이라면 회생채권 신고를 해야 해요. 회생채권 신고 기한(통상 결정 후 1~2개월)을 놓치지 않아야 해요. 신고 기한이 지났어도 법원 허가를 받으면 추가 신고가 가능해요.</P>
@@ -260,6 +281,9 @@ export default function Page() {
         label="대지급금 불복 구제 절차"
         href="/w/대지급금-불복-구제-절차-공인노무사-비용"
       />
+
+      <SpokeLink num={1} title="도산등사실인정 신청 방법 서류" desc="고용노동부 지청 방문 4단계 절차" href="/w/도산등사실인정-신청-방법-서류" />
+      <SpokeLink num={2} title="도산대지급금 상한액 지급액 계산" desc="연령별 최대 2,100만원 한도 기준" href="/w/도산대지급금-상한액-지급액-계산" />
 
       <ExtBtn
         badge="근로복지공단 공식"

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import {
   BlogLayout, TOC, Summary3, Sec, P, B, A, H3,
-  Info, InlineLink, BridgeCard, ExtBtn,
+  Info, InlineLink, SpokeLink, BridgeCard, ExtBtn,
   FAQAccordion, RelatedArticles, PrevNext,
   RelatedMid, SidebarCTA, SidebarDocs, SidebarCalc,
   CheckerShell, CheckerQ, ResultPass, ResultFail, ResultGrid, ResultCTA,
@@ -44,6 +44,8 @@ const meta = {
   ],
 };
 
+type ResLink = { icon: string; title: string; desc: string; href: string };
+
 export default function Article85() {
   const [sel, setSel] = useState<Record<string, string>>({});
   const pick = (g: string, v: string) => setSel((p) => ({ ...p, [g]: v }));
@@ -59,6 +61,11 @@ export default function Article85() {
   };
 
   const result = getResult();
+
+  const links: ResLink[] = [
+    { icon: "📝", title: "실업급여 신청 방법과 절차", desc: "고용24 온라인 신청부터 준비서류까지 안내", href: "/w/실업급여-신청-방법-절차-준비서류" },
+    { icon: "📊", title: "피보험기간 180일 계산 방법", desc: "이전 직장 합산으로 180일 채우는 방법", href: "/w/실업급여-피보험기간-180일-계산-합산-방법" },
+  ];
 
   return (
     <BlogLayout
@@ -118,8 +125,8 @@ export default function Article85() {
           { t: "내 육아 상황이 수급기간 연장에 해당하는지 간편 체크", sub: null },
           { t: "실업급여 육아 연장은 어떤 조건에서 가능한가요?", sub: "연장 가능 사유 전체 목록 · 자녀 나이 기준 정리" },
           { t: "실업급여 육아 퇴직도 정당사유로 인정되나요?", sub: "비자발적 퇴사 인정 기준 · 육아휴직 후 퇴직 사례" },
-          { t: "실업급여 최대 4년 특례는 어떻게 적용되나요?", sub: "기본 12개월과 연장의 차이 · 연장 신청 절차" },
-          { t: "실업급여 8세 이하 조건은 정확히 언제까지인가요?", sub: "만 나이 기준 판단법 · 초등 2학년 기준 적용" },
+          { t: "실업급여 육아 최대 4년 특례는 어떻게 적용되나요?", sub: "기본 12개월과 연장의 차이 · 연장 신청 절차" },
+          { t: "실업급여 육아 8세 이하 조건은 정확히 언제까지인가요?", sub: "만 나이 기준 판단법 · 초등 2학년 기준 적용" },
           { t: "자주 묻는 질문", sub: null },
         ]}
       />
@@ -202,12 +209,9 @@ export default function Article85() {
                   { icon: "✅", name: "퇴직 시점", pass: true, desc: sel.period === "under6" ? "6개월 이내" : "12개월 이내" },
                 ]}
               />
-              <ResultCTA
-                icon="📝"
-                title="실업급여 신청 방법과 절차"
-                desc="고용24 온라인 신청부터 준비서류까지 안내"
-                href="/w/실업급여-신청-방법-절차-준비서류"
-              />
+              {links.map((l, i) => (
+                <ResultCTA key={i} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
+              ))}
             </ResultPass>
           ) : (
             <ResultFail
@@ -448,7 +452,7 @@ export default function Article85() {
       <Sec
         n="SECTION 04"
         id="s4"
-        title="실업급여 최대 4년 특례는 어떻게 적용되나요?"
+        title="실업급여 육아 최대 4년 특례는 어떻게 적용되나요?"
         sub="기본 12개월과 연장의 차이 · 연장 신청 절차"
       />
 
@@ -511,6 +515,13 @@ export default function Article85() {
         다시 출석해서 실업인정을 받으면 돼요. 남은 급여일수는 그대로 유지돼요.
       </P>
 
+      <InlineLink
+        icon="📝"
+        title="실업급여 수급기간 연장 신청 절차 — 고용센터 방문 방법"
+        desc="연장 신청 서류와 고용24 접수 방법 정리"
+        href="/w/실업급여-신청-방법-절차-준비서류"
+      />
+
       <BridgeCard
         q="육아휴직 급여와 실업급여, 동시에 받을 수 있나요?"
         a="안 돼요. 육아휴직 급여를 받고 있는 동안에는 실업급여를 받을 수 없어요. 육아휴직이 끝나고 퇴직한 후에 실업급여를 신청하는 거예요. 수급기간 연장은 실업급여 수급 중에 육아 사유가 생겼을 때 활용하는 제도예요."
@@ -523,7 +534,7 @@ export default function Article85() {
       <Sec
         n="SECTION 05"
         id="s5"
-        title="실업급여 8세 이하 조건은 정확히 언제까지인가요?"
+        title="실업급여 육아 8세 이하 조건은 정확히 언제까지인가요?"
         sub="만 나이 기준 판단법 · 초등 2학년 기준 적용"
       />
 
@@ -583,6 +594,9 @@ export default function Article85() {
         초등 3학년 이상) 육아 연장은 안 되지만, 다른 연장 사유(질병, 부상 등)가
         있으면 별도로 신청할 수 있어요.
       </P>
+
+      <SpokeLink num={1} title="실업급여 신청 방법 절차 준비서류" desc="고용24 온라인 신청부터 준비서류까지 안내" href="/w/실업급여-신청-방법-절차-준비서류" />
+      <SpokeLink num={2} title="피보험기간 180일 계산 합산 방법" desc="이전 직장 합산으로 180일 채우는 방법" href="/w/실업급여-피보험기간-180일-계산-합산-방법" />
 
       <ExtBtn
         href="https://www.ei.go.kr/ei/eih/cm/hm/main.do"
