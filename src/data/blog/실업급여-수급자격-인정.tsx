@@ -178,6 +178,7 @@ export default function Article68() {
             <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
               <Btn group="applied" value="done" label="신청했어요" sel={sel} pick={pick} />
               <Btn group="applied" value="pending" label="아직 안 했어요" sel={sel} pick={pick} />
+              <Btn group="applied" value="unsure" label="잘 모르겠어요" sel={sel} pick={pick} />
             </div>
           </div>
           {Object.keys(sel).length >= 1 && (
@@ -210,7 +211,7 @@ export default function Article68() {
       </div>
 
       <Divider />
-      <Sec id="h2-1" question="실업급여 수급자격 신청은 어떻게 하나요?">
+      <Sec n="SECTION 01" id="h2-1" title="실업급여 수급자격 신청은 어떻게 하나요?" sub="3단계 순서 안내">
         <P>
           <B>순서가 있어요.</B> 온라인 교육 수료 → 워크넷 구직등록 → 고용센터 방문 신청 순서예요.
           순서를 바꾸면 방문이 허탕이 될 수 있어요.
@@ -220,7 +221,7 @@ export default function Article68() {
           수강하는 거예요. 약 1~2시간이고 퀴즈를 통과해야 이수가 완료돼요. 2단계는 워크넷에서
           구직등록을 하는 거예요.
         </P>
-        <InlineLink href="/w/실업급여-교육" label="온라인 교육 수강 방법 및 기한" />
+        <InlineLink icon="🎓" title="실업급여 온라인 교육 수강 방법" desc="고용24에서 1~2시간 수강 후 14일 이내 고용센터 방문해야 해요." href="/w/실업급여-교육" />
         <P>
           1단계와 2단계는 순서가 바뀌어도 무방하지만, 고용센터 방문 전에 둘 다 완료돼야 해요.
           고용센터에서는 두 가지 이수 여부를 방문 시 확인해요.
@@ -255,7 +256,7 @@ export default function Article68() {
       </Sec>
 
       <Divider />
-      <Sec id="h2-2" question="실업급여 수급자격 고용센터 방문 시 뭐가 필요한가요?">
+      <Sec n="SECTION 02" id="h2-2" title="실업급여 수급자격 고용센터 방문 시 뭐가 필요한가요?" sub="4가지 준비물">
         <P>
           <B>4가지를 챙겨야 해요.</B> 신분증, 통장 사본, 이직확인서, 워크넷 구직등록 확인증이에요.
         </P>
@@ -263,7 +264,7 @@ export default function Article68() {
           신분증은 주민등록증, 운전면허증, 여권 중 하나예요. 통장 사본은 실업급여 입금받을 본인
           명의 계좌예요. 모바일 뱅킹 화면 캡처도 인정돼요.
         </P>
-        <InlineLink href="/w/실업급여-구비서류" label="실업급여 구비서류 전체 목록" />
+        <InlineLink icon="📝" title="실업급여 구비서류 전체 목록" desc="이직확인서·통장 사본 등 방문 전 준비물을 정리했어요." href="/w/실업급여-구비서류" />
         <P>
           이직확인서는 사업주가 고용24에 이미 신고했으면 지참 불필요해요. 방문 전 고용24에서
           처리 여부를 조회할 수 있어요. 워크넷 구직등록 확인증은 워크넷에서 출력하거나
@@ -276,7 +277,7 @@ export default function Article68() {
       </Sec>
 
       <Divider />
-      <Sec id="h2-3" question="실업급여 수급자격 심사 기간은 얼마나 걸리나요?">
+      <Sec n="SECTION 03" id="h2-3" title="실업급여 수급자격 심사 기간은 얼마나 걸리나요?" sub="심사 소요 기간">
         <P>
           <B>보통 14일 이내예요.</B> 방문 신청일로부터 14일 안에 수급자격 인정 여부가 결정돼요.
           결과는 고용24에서 조회하거나, 우편으로 통보받아요.
@@ -285,7 +286,7 @@ export default function Article68() {
           심사 내용은 이직 사유 확인이에요. 비자발적 이직(권고사직, 계약 만료, 도산 등)인지
           판단해요. 사업주가 제출한 이직확인서 내용과 수급자 진술이 일치하는지 확인해요.
         </P>
-        <Info>심사 중 고용센터 연락을 놓치면 안 돼요. 추가 서류나 진술을 요청받는 경우가 있어요. 고용24 알림을 켜두면 진행 상황을 놓치지 않아요.</Info>
+        <Info type="warn">심사 중 고용센터 연락을 놓치면 안 돼요. 추가 서류나 진술을 요청받는 경우가 있어요. 고용24 알림을 켜두면 진행 상황을 놓치지 않아요.</Info>
         <BridgeCard
           q="방문 전에 수급자격 조건이 되는지 먼저 알아야 하지 않을까요?"
           a="피보험기간 180일 이상, 비자발적 퇴사가 기본 조건이에요. 자발적 퇴사도 11가지 예외 사유가 있어요."
@@ -299,7 +300,7 @@ export default function Article68() {
       </Sec>
 
       <Divider />
-      <Sec id="h2-4" question="실업급여 수급자격 불인정되면 어떻게 되나요?">
+      <Sec n="SECTION 04" id="h2-4" title="실업급여 수급자격 불인정되면 어떻게 되나요?" sub="이의신청 방법">
         <P>
           <B>이의신청이 가능해요.</B> 불인정 통보를 받은 날로부터 90일 이내에 고용보험 심사위원회에
           심사청구를 할 수 있어요. <A href="https://www.ei.go.kr">고용24</A>에서 온라인으로 하거나,
@@ -310,15 +311,15 @@ export default function Article68() {
           진술이 다른 경우예요. 반박할 수 있는 증거(문자, 이메일, 녹음 등)를 준비하면 심사청구에
           유리해요.
         </P>
-        <Info>이의신청 기간은 90일이에요. 불인정 통보를 받은 날부터 계산해요. 기간이 지나면 이의신청이 불가능하므로 빠르게 처리하는 게 좋아요.</Info>
+        <Info type="warn">이의신청 기간은 90일이에요. 불인정 통보를 받은 날부터 계산해요. 기간이 지나면 이의신청이 불가능하므로 빠르게 처리하는 게 좋아요.</Info>
         <P>
           심사청구 결과도 불복한다면 재심사청구를 할 수 있어요. 고용보험 심사관의 결정에 불복하면
           고용보험심판위원회에 재심사청구(90일 이내)를 할 수 있어요. 그래도 안 되면 행정소송으로
           가는 경우도 있어요.
         </P>
-        <SpokeLink href="/w/실업급여-수급자격제한" title="실업급여 수급자격 제한 사유" desc="자발적 퇴사 예외 인정 11가지" />
-        <SpokeLink href="/w/실업급여-교육" title="실업급여 온라인 교육 수강 방법" desc="14일 이내 고용센터 방문 기한" />
-        <SpokeLink href="/w/실업급여-구비서류" title="실업급여 구비서류 목록" desc="이직확인서·통장 사본 준비법" />
+        <SpokeLink num="01" title="실업급여 수급자격 제한 사유" desc="자발적 퇴사 예외 인정 11가지" href="/w/실업급여-수급자격제한" />
+        <SpokeLink num="02" title="실업급여 온라인 교육 수강 방법" desc="14일 이내 고용센터 방문 기한" href="/w/실업급여-교육" />
+        <SpokeLink num="03" title="실업급여 구비서류 목록" desc="이직확인서·통장 사본 준비법" href="/w/실업급여-구비서류" />
       </Sec>
 
       <ExtBtn

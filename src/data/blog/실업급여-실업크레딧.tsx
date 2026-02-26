@@ -206,6 +206,7 @@ export default function Article() {
       <Info type="tip">
         실업급여를 신청한 고용센터 근처에 국민연금공단 지사가 있는 경우가 많아요. 실업급여 신청하는 날 함께 방문하면 한 번에 처리할 수 있어요.
       </Info>
+      <InlineLink icon="📅" title="실업급여 수급자격 신청 절차" desc="수급자격 인정부터 첫 지급까지의 절차" href="/w/실업급여-수급자격-인정" />
 
       {/* ── SECTION 03 ── */}
       <Divider />

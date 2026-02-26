@@ -215,7 +215,7 @@ export default function Article65() {
       </div>
 
       <Divider />
-      <Sec id="h2-1" question="실업급여 수급유예는 무엇인가요?">
+      <Sec n="SECTION 01" id="h2-1" title="실업급여 수급유예는 무엇인가요?" sub="수급기간 정지 제도 개요">
         <P>
           <B>수급유예는 실업급여 수급기간을 일시적으로 멈추는 제도예요.</B> 구직활동이 불가능한
           특별한 사유가 생겼을 때, 수급기간을 그 기간만큼 연장해 주는 거예요.
@@ -225,7 +225,7 @@ export default function Article65() {
           하지만 출산이나 질병으로 구직활동을 못 하면 12개월이 그냥 지나가 버려요. 수급유예는
           이를 막기 위한 제도예요.
         </P>
-        <InlineLink href="/w/실업급여-수급기간-몇개월-받나요" label="실업급여 수급기간 계산 방법" />
+        <InlineLink icon="📅" title="실업급여 수급기간 몇개월 받나요" desc="나이와 가입기간별 소정급여일수를 표로 정리했어요." href="/w/실업급여-수급기간-몇개월-받나요" />
         <P>
           <A href="https://www.law.go.kr/법령/고용보험법">고용보험법 제48조</A>에서 질병, 출산,
           육아 등 구직활동이 어려운 사유가 생기면 수급기간을 최대 4년까지 연장할 수 있도록
@@ -238,7 +238,7 @@ export default function Article65() {
       </Sec>
 
       <Divider />
-      <Sec id="h2-2" question="실업급여 수급유예 신청은 어떻게 하나요?">
+      <Sec n="SECTION 02" id="h2-2" title="실업급여 수급유예 신청은 어떻게 하나요?" sub="온라인·방문 신청 방법">
         <P>
           <A href="https://www.ei.go.kr">고용24</A>에서 온라인으로 신청하거나 관할 고용센터에
           방문해서 신청할 수 있어요. 온라인 신청이 더 편해요.
@@ -248,7 +248,7 @@ export default function Article65() {
           사유 선택 및 증빙서류 업로드 → 제출이에요. 증빙서류는 사유에 따라 다른데, 질병이면
           진단서, 출산이면 출생증명서, 육아이면 가족관계증명서가 필요해요.
         </P>
-        <InlineLink href="/w/실업급여-수급자격-인정" label="고용센터 방문 신청 절차" />
+        <InlineLink icon="🏢" title="실업급여 수급자격 신청 절차" desc="고용센터 방문부터 심사 결과까지의 과정을 정리했어요." href="/w/실업급여-수급자격-인정" />
         <P>
           신청 시기가 중요해요. 수급기간이 지나기 전에 신청해야 해요. 퇴직 후 12개월이 지난 뒤에
           신청하면 안 돼요. 사유가 발생하면 최대한 빨리 신청하는 게 좋아요.
@@ -260,7 +260,7 @@ export default function Article65() {
       </Sec>
 
       <Divider />
-      <Sec id="h2-3" question="실업급여 수급유예 질병 출산 조건은 뭐예요?">
+      <Sec n="SECTION 03" id="h2-3" title="실업급여 수급유예 질병 출산 조건은 뭐예요?" sub="인정 가능 사유">
         <TableTitle>수급유예 인정 사유별 조건</TableTitle>
         <div style={{ overflowX: "auto" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
@@ -311,7 +311,7 @@ export default function Article65() {
       </Sec>
 
       <Divider />
-      <Sec id="h2-4" question="실업급여 수급유예 최대 4년 연장은 어떻게 계산하나요?">
+      <Sec n="SECTION 04" id="h2-4" title="실업급여 수급유예 최대 4년 연장은 어떻게 계산하나요?" sub="기간 계산 방법">
         <P>
           수급유예 기간은 원래 수급기간(12개월)에 더해지는 방식이에요. <B>최대 연장 기간은 원래
           수급기간을 합쳐 총 4년(48개월)</B>이에요.
@@ -321,14 +321,14 @@ export default function Article65() {
           수급기간이 12개월 → 12 + 24 = 36개월로 연장돼요. 나머지 소정급여일수를 그 36개월
           안에 사용하면 돼요.
         </P>
-        <Info>수급유예 기간이 4년을 초과하더라도 최대 4년(48개월)이 한도예요. 사유가 아무리 길어도 4년까지만 인정돼요.</Info>
+        <Info type="warn">수급유예 기간이 4년을 초과하더라도 최대 4년(48개월)이 한도예요. 사유가 아무리 길어도 4년까지만 인정돼요.</Info>
         <P>
           수급유예가 끝난 뒤에는 고용센터에 사유 해소 신고를 해야 해요. 신고 후 2~3주 내에
           구직급여 수급이 재개돼요. 사유 해소 신고를 잊어버리면 수급기간이 그냥 흘러가니 빠르게
           신고하는 게 중요해요.
         </P>
-        <SpokeLink href="/w/실업급여-수급기간-몇개월-받나요" title="실업급여 수급기간 몇개월" desc="퇴직 후 12개월 신청 기한 계산" />
-        <SpokeLink href="/w/실업급여-해외체류" title="실업급여 해외여행 가능 여부" desc="해외체류 수급 중단 재개 방법" />
+        <SpokeLink num="01" title="실업급여 수급기간 몇개월" desc="퇴직 후 12개월 신청 기한 계산" href="/w/실업급여-수급기간-몇개월-받나요" />
+        <SpokeLink num="02" title="실업급여 해외여행 가능 여부" desc="해외체류 수급 중단 재개 방법" href="/w/실업급여-해외체류" />
       </Sec>
 
       <ExtBtn

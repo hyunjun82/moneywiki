@@ -296,6 +296,12 @@ export default function Article() {
         href="/w/실업급여-수급기간"
       />
 
+      <div style={{ margin: "20px 0" }}>
+        <div style={{ fontSize: 13, fontWeight: 700, color: C.t1, marginBottom: 8 }}>{"📖 실업급여 상한액 더 알아보기"}</div>
+        <SpokeLink num="01" title="실업급여 기초일액 — 평균임금 60% 계산법" desc="상한액·하한액 기준과 평균임금 산정 방법" href="/w/실업급여-기초일액" />
+        <SpokeLink num="02" title="실업급여 소정급여일수 — 나이별 수급 기간" desc="나이·피보험기간별 120~270일 기준표" href="/w/실업급여-소정급여일수" />
+      </div>
+
       <ExtBtn badge="고용24 공식" text="실업급여 모의계산기" cta="계산하기 →" href="https://www.work24.go.kr/ei/eih/eg/pb/pbPersonBnef/retrievePb0201Info.do" />
 
       {/* ── FAQ ── */}

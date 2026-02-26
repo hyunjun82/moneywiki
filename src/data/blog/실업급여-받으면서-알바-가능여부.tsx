@@ -118,6 +118,7 @@ export default function Article() {
             <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
               <Btn group="account" value="yes" label="있어요" sel={sel} pick={pick} />
               <Btn group="account" value="no" label="없어요" sel={sel} pick={pick} />
+              <Btn group="account" value="unsure" label="잘 모르겠어요" sel={sel} pick={pick} />
             </div>
           </div>
           {sel.account === "yes" && (
@@ -246,6 +247,8 @@ export default function Article() {
       <P>또 하나는 임금을 받지 못했다고 신고를 안 하는 경우예요. 임금 지급 여부와 상관없이 실제 근무한 사실이 있으면 신고해야 해요. 나중에 임금을 받으면 수정 신고할 수 있어요.</P>
 
       <P>하루 단기 알바를 여러 날 했을 때 날짜 하나를 빠뜨리는 경우도 있어요. 일용직처럼 날짜별로 각각 입력해야 하는데, 한 번에 합쳐서 입력하면 안 돼요. 날짜마다 별도 행을 만들어서 입력하는 게 맞아요.</P>
+
+      <InlineLink icon="⚠️" title="알바 미신고 부정수급 처벌 — 환수 기준" desc="자진신고하면 최초 1회 추가 징수 없이 반환만으로 처리될 수 있어요." href="/w/실업급여-알바-미신고" />
 
       <Info type="warn">
         실업인정 신청 기한을 놓치면 그 기간 실업급여를 받지 못해요. 알바 신고 때문에 실업인정 신청 자체를 미루는 일이 없도록, 신청 기한을 먼저 지키는 게 중요해요.

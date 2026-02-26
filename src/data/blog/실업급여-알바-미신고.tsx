@@ -234,6 +234,7 @@ export default function Article() {
       <Info type="warn">
         자진신고 감면은 적발 전에 신고한 경우에만 해당해요. 이미 고용센터에서 조사가 시작됐거나 연락을 받은 뒤라면 자진신고 감면이 적용되지 않아요. 빨리 신고할수록 유리해요.
       </Info>
+      <InlineLink icon="⚠️" title="실업급여 부정수급 처벌 기준" desc="부정수급 유형별 처벌 기준과 환수 범위를 정리했어요." href="/w/실업급여-부정수급" />
 
       {/* ── SECTION 05 ── */}
       <Divider />

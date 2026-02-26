@@ -175,7 +175,7 @@ export default function Article81() {
       />
 
       {/* ══════ STEP 01 — 체커 ══════ */}
-      <Sec n={1} id="checker" title="내 임금삭감이 정당사유에 해당하는지 간편 체크" sub="삭감 유형·비율·기간·증빙 4가지만 선택하면 돼요">
+      <Sec n="1" id="checker" title="내 임금삭감이 정당사유에 해당하는지 간편 체크" sub="삭감 유형·비율·기간·증빙 4가지만 선택하면 돼요">
         <P>
           임금삭감으로 퇴사했다고 해서 무조건 정당사유가 되는 건 아니에요. 고용센터에서는 삭감 비율, 지속 기간, 증빙 서류를 종합적으로 판단해요. 아래 체커로 내 상황이 인정 가능성이 있는지 먼저 확인해보세요.
         </P>
@@ -183,20 +183,20 @@ export default function Article81() {
           체커 결과는 참고용이에요. 최종 판정은 관할 고용센터에서 이직확인서와 증빙서류를 검토한 뒤 결정돼요.
         </P>
 
-        <CheckerShell title="임금삭감 정당사유 판정" subtitle="30초 확인">
-          <CheckerQ n={1} label="임금이 어떻게 삭감됐나요?" group="cutType"
+        <CheckerShell title="임금삭감 정당사유 판정" sub="30초 확인">
+          <CheckerQ n="1" label="임금이 어떻게 삭감됐나요?" group="cutType"
             opts={[["base", "기본급이 깎였어요"], ["bonus", "수당·성과급이 없어졌어요"], ["total", "전체 연봉이 삭감됐어요"]]}
             sel={ans} pick={pick}
           />
-          <CheckerQ n={2} label="삭감 비율이 어느 정도인가요?" group="cutRate"
+          <CheckerQ n="2" label="삭감 비율이 어느 정도인가요?" group="cutRate"
             opts={[["over20", "20% 이상 삭감"], ["10to20", "10~20% 삭감"], ["under10", "10% 미만 삭감"]]}
             sel={ans} pick={pick}
           />
-          <CheckerQ n={3} label="삭감이 얼마나 지속됐나요?" group="duration"
+          <CheckerQ n="3" label="삭감이 얼마나 지속됐나요?" group="duration"
             opts={[["over2m", "2개월 이상 지속"], ["under2m", "2개월 미만"]]}
             sel={ans} pick={pick}
           />
-          <CheckerQ n={4} label="삭감 증빙 서류가 있나요?" group="evidence"
+          <CheckerQ n="4" label="삭감 증빙 서류가 있나요?" group="evidence"
             opts={[["full", "급여명세서 있어요"], ["contract", "근로계약서만 있어요"], ["none", "아무것도 없어요"]]}
             sel={ans} pick={pick}
           />
@@ -207,7 +207,7 @@ export default function Article81() {
       <Divider />
 
       {/* ══════ SECTION 02 — 정당사유 인정 여부 ══════ */}
-      <Sec n={2} id="valid-reason" title="임금삭감 퇴직은 정당사유로 인정되나요?" sub="법적 근거와 인정되는 삭감 유형 3가지를 알아볼게요">
+      <Sec n="2" id="valid-reason" title="임금삭감 퇴직은 정당사유로 인정되나요?" sub="법적 근거와 인정되는 삭감 유형 3가지를 알아볼게요">
         <P>
           <A href="https://www.law.go.kr/lsInfoP.do?lsiSeq=246268">고용보험법 시행규칙 별표2</A>에서는 "실제 근로조건이 채용 시 제시된 조건이나 일반적으로 적용받던 조건보다 낮아지게 된 경우"를 정당한 이직사유로 규정하고 있어요. 임금삭감은 이 조건에 해당하는 대표적인 사례예요.
         </P>
@@ -231,7 +231,7 @@ export default function Article81() {
       <Divider />
 
       {/* ══════ SECTION 03 — 20% 기준 ══════ */}
-      <Sec n={3} id="cut-rate" title="20% 기준은 어떻게 계산하나요?" sub="기본급+수당 포함 총 임금으로 비교해요">
+      <Sec n="3" id="cut-rate" title="20% 기준은 어떻게 계산하나요?" sub="기본급+수당 포함 총 임금으로 비교해요">
         <P>
           삭감 비율은 삭감 전 총 임금과 삭감 후 총 임금을 비교해서 계산해요. 기본급, 수당, 성과급을 모두 합한 총 지급액이 기준이에요. 기본급만 보는 게 아니라 통장에 실제로 찍히는 총액으로 비교한다고 생각하면 돼요.
         </P>
@@ -274,7 +274,7 @@ export default function Article81() {
       <Divider />
 
       {/* ══════ SECTION 04 — 2개월 조건 ══════ */}
-      <Sec n={4} id="two-months" title="2개월 인정 조건이 뭐예요?" sub="이직일 전 1년 이내, 비연속 발생도 합산 가능해요">
+      <Sec n="4" id="two-months" title="2개월 인정 조건이 뭐예요?" sub="이직일 전 1년 이내, 비연속 발생도 합산 가능해요">
         <P>
           임금삭감이 있었다 해도 짧은 기간에 끝났으면 정당사유로 인정받기 어려워요. <A href="https://www.law.go.kr/lsInfoP.do?lsiSeq=246268">고용보험법 시행규칙 별표2</A>에서는 "이직일 전 1년 이내에 2개월 이상 발생"한 경우를 요건으로 정하고 있어요.
         </P>
@@ -297,7 +297,7 @@ export default function Article81() {
       <Divider />
 
       {/* ══════ SECTION 05 — 증빙 서류 ══════ */}
-      <Sec n={5} id="documents" title="증빙 서류는 뭐가 필요한가요?" sub="급여명세서가 핵심이고, 없을 때 대처 방법도 있어요">
+      <Sec n="5" id="documents" title="증빙 서류는 뭐가 필요한가요?" sub="급여명세서가 핵심이고, 없을 때 대처 방법도 있어요">
         <P>
           임금삭감으로 정당사유를 주장하려면 "삭감 전"과 "삭감 후"를 비교할 수 있는 서류가 필수예요. 고용센터에서 구두 주장만으로 인정해주지 않기 때문에, 삭감 사실을 객관적으로 증명할 서류를 미리 확보해두는 게 중요해요.
         </P>
@@ -367,18 +367,18 @@ export default function Article81() {
       <Divider />
 
       {/* ══════ FAQ ══════ */}
-      <Sec n={6} id="faq" title="자주 묻는 질문" sub="">
+      <Sec n="6" id="faq" title="자주 묻는 질문" sub="">
         <FAQAccordion items={meta.faq} />
       </Sec>
 
       {/* ── 하단 네비 ── */}
       <RelatedArticles
         items={[
-          { title: "실업급여 수급 조건 정리", cat: "실업급여·수급자격", href: "/w/실업급여-수급-조건" },
-          { title: "임금체불 퇴직 정당사유 인정 기준", cat: "실업급여·퇴직사유", href: "/w/실업급여-임금체불-퇴직-정당사유" },
-          { title: "직장내 괴롭힘 퇴직 정당사유", cat: "실업급여·퇴직사유", href: "/w/실업급여-직장내-괴롭힘-퇴직-정당사유" },
-          { title: "이의신청 심사청구 재심사 절차", cat: "실업급여·불복절차", href: "/w/실업급여-이의신청-심사청구-재심사-불복-절차" },
-          { title: "수급자격 제한 사유 11가지", cat: "실업급여·수급자격", href: "/w/실업급여-수급자격제한" },
+          { title: "실업급여 수급 조건 정리", desc: "실업급여·수급자격", href: "/w/실업급여-수급-조건" },
+          { title: "임금체불 퇴직 정당사유 인정 기준", desc: "실업급여·퇴직사유", href: "/w/실업급여-임금체불-퇴직-정당사유" },
+          { title: "직장내 괴롭힘 퇴직 정당사유", desc: "실업급여·퇴직사유", href: "/w/실업급여-직장내-괴롭힘-퇴직-정당사유" },
+          { title: "이의신청 심사청구 재심사 절차", desc: "실업급여·불복절차", href: "/w/실업급여-이의신청-심사청구-재심사-불복-절차" },
+          { title: "수급자격 제한 사유 11가지", desc: "실업급여·수급자격", href: "/w/실업급여-수급자격제한" },
         ]}
       />
       <PrevNext

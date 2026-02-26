@@ -176,7 +176,7 @@ export default function Article90() {
       />
 
       {/* ══════ STEP 01 — 체커 ══════ */}
-      <Sec n={1} id="checker" title="내 입금 진행 상태 간편 체크" sub="4가지 확인하면 현재 단계를 알 수 있어요">
+      <Sec n="1" id="checker" title="내 입금 진행 상태 간편 체크" sub="4가지 확인하면 현재 단계를 알 수 있어요">
         <P>
           실업급여 입금이 늦거나 안 들어올 때 막막하죠. 대부분은 수급자격 미인정, 실업인정 미신청, 구직활동 보고 누락 중 하나예요. 아래 체커로 현재 단계를 확인해보세요.
         </P>
@@ -184,20 +184,20 @@ export default function Article90() {
           실업인정 신청은 고용24 또는 고용센터 방문으로 해요. 구직활동 실적(워크넷 입사지원, 취업특강 수강 등)을 입력해야 처리가 완료돼요.
         </P>
 
-        <CheckerShell title="실업급여 입금 준비 체크" subtitle="30초 확인">
-          <CheckerQ n={1} label="수급자격 인정을 받은 상태인가요?" group="status"
+        <CheckerShell title="실업급여 입금 준비 체크" sub="30초 확인">
+          <CheckerQ n="1" label="수급자격 인정을 받은 상태인가요?" group="status"
             opts={[["approved", "인정받았어요"], ["pending", "신청 중이에요"], ["not-yet", "아직 신청 안 했어요"]]}
             sel={ans} pick={pick}
           />
-          <CheckerQ n={2} label="다음 실업인정일이 언제인지 알고 있나요?" group="date"
+          <CheckerQ n="2" label="다음 실업인정일이 언제인지 알고 있나요?" group="date"
             opts={[["yes", "알고 있어요"], ["no", "모르겠어요"]]}
             sel={ans} pick={pick}
           />
-          <CheckerQ n={3} label="이번 회차 실업인정 신청(구직활동 보고)을 했나요?" group="report"
+          <CheckerQ n="3" label="이번 회차 실업인정 신청(구직활동 보고)을 했나요?" group="report"
             opts={[["done", "완료했어요"], ["not-yet", "아직 안 했어요"]]}
             sel={ans} pick={pick}
           />
-          <CheckerQ n={4} label="실업급여 입금 계좌가 등록돼 있나요?" group="account"
+          <CheckerQ n="4" label="실업급여 입금 계좌가 등록돼 있나요?" group="account"
             opts={[["yes", "등록됐어요"], ["no", "미등록이에요"]]}
             sel={ans} pick={pick}
           />
@@ -208,7 +208,7 @@ export default function Article90() {
       <Divider />
 
       {/* ══════ SECTION 02 — 지급일 산정 ══════ */}
-      <Sec n={2} id="payment-date" title="실업급여 지급일은 어떻게 정해지나요?" sub="대기기간 7일이 끝나야 첫 실업인정일이 잡혀요">
+      <Sec n="2" id="payment-date" title="실업급여 지급일은 어떻게 정해지나요?" sub="대기기간 7일이 끝나야 첫 실업인정일이 잡혀요">
         <P>
           실업급여 지급은 퇴직 직후부터 바로 시작되지 않아요. <A href="https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1000011093">고용보험법 제47조</A>에 따라 수급자격 인정 후 <B>대기기간 7일</B>이 지나야 첫 지급이 시작돼요. 대기기간에는 실업급여가 나오지 않아요.
         </P>
@@ -234,7 +234,7 @@ export default function Article90() {
       <Divider />
 
       {/* ══════ SECTION 03 — 입금 요일 ══════ */}
-      <Sec n={3} id="deposit-day" title="실업급여 입금 요일은 언제예요?" sub="실업인정일 다음 영업일에 들어와요">
+      <Sec n="3" id="deposit-day" title="실업급여 입금 요일은 언제예요?" sub="실업인정일 다음 영업일에 들어와요">
         <P>
           실업인정이 완료되면 <B>다음 영업일(평일)</B>에 등록한 계좌로 입금돼요. 영업일 기준이기 때문에 주말과 공휴일은 제외돼요. 실업인정일이 화요일이면 수요일, 목요일이면 금요일에 입금되는 식이에요.
         </P>
@@ -308,7 +308,7 @@ export default function Article90() {
       <Divider />
 
       {/* ══════ SECTION 04 — 실업인정일과 지급일 관계 ══════ */}
-      <Sec n={4} id="recognition-relation" title="실업인정일과 지급일 관계가 뭐예요?" sub="실업인정 처리가 완료돼야 지급 요청이 들어가요">
+      <Sec n="4" id="recognition-relation" title="실업인정일과 지급일 관계가 뭐예요?" sub="실업인정 처리가 완료돼야 지급 요청이 들어가요">
         <P>
           실업인정일에 구직활동 실적을 제출하고 담당자가 인정 처리를 완료해야 지급 요청이 금융기관에 전달돼요. 온라인 신청은 자정(00:00~24:00) 안에 제출해야 당일 처리로 인정돼요. 기한을 넘기면 다음 날 처리로 밀려서 입금이 하루 더 늦어져요.
         </P>
@@ -334,7 +334,7 @@ export default function Article90() {
       <Divider />
 
       {/* ══════ SECTION 05 — 지급주기 계산 ══════ */}
-      <Sec n={5} id="cycle-calculation" title="지급주기 계산은 어떻게 하나요?" sub="2주 간격이 기본이고 전체 수급 일정도 미리 알 수 있어요">
+      <Sec n="5" id="cycle-calculation" title="지급주기 계산은 어떻게 하나요?" sub="2주 간격이 기본이고 전체 수급 일정도 미리 알 수 있어요">
         <P>
           실업인정은 원칙적으로 <B>2주(14일)</B>에 한 번씩 이뤄져요. 첫 실업인정일을 기준으로 이후 실업인정일이 2주 단위로 자동 설정돼요. 실업인정을 받을 때마다 2주치 실업급여가 한 번에 입금되는 구조예요.
         </P>
@@ -372,18 +372,18 @@ export default function Article90() {
       <Divider />
 
       {/* ══════ FAQ ══════ */}
-      <Sec n={6} id="faq" title="자주 묻는 질문" sub="">
+      <Sec n="6" id="faq" title="자주 묻는 질문" sub="">
         <FAQAccordion items={meta.faq} />
       </Sec>
 
       {/* ── 하단 네비 ── */}
       <RelatedArticles
         items={[
-          { title: "실업급여 수급 조건 정리", cat: "실업급여·수급자격", href: "/w/실업급여-수급-조건" },
-          { title: "실업급여 신청 방법 절차 준비서류", cat: "실업급여·신청", href: "/w/실업급여-신청방법" },
-          { title: "실업급여 연봉별 계산 방법", cat: "실업급여·계산", href: "/w/실업급여-연봉별-계산" },
-          { title: "관할 고용센터 찾기 고용24", cat: "실업급여·신청", href: "/w/실업급여-고용센터-찾기-고용24-사용법" },
-          { title: "피보험기간 180일 계산 합산", cat: "실업급여·피보험기간", href: "/w/실업급여-피보험기간-180일-계산" },
+          { title: "실업급여 수급 조건 정리", desc: "실업급여·수급자격", href: "/w/실업급여-수급-조건" },
+          { title: "실업급여 신청 방법 절차 준비서류", desc: "실업급여·신청", href: "/w/실업급여-신청방법" },
+          { title: "실업급여 연봉별 계산 방법", desc: "실업급여·계산", href: "/w/실업급여-연봉별-계산" },
+          { title: "관할 고용센터 찾기 고용24", desc: "실업급여·신청", href: "/w/실업급여-고용센터-찾기-고용24-사용법" },
+          { title: "피보험기간 180일 계산 합산", desc: "실업급여·피보험기간", href: "/w/실업급여-피보험기간-180일-계산" },
         ]}
       />
       <PrevNext

@@ -175,7 +175,7 @@ export default function Article88() {
       />
 
       {/* ══════ STEP 01 — 체커 ══════ */}
-      <Sec n={1} id="checker" title="신청 준비 상태 간편 체크" sub="4가지 확인하면 다음 단계를 안내해 드려요">
+      <Sec n="1" id="checker" title="신청 준비 상태 간편 체크" sub="4가지 확인하면 다음 단계를 안내해 드려요">
         <P>
           실업급여 신청 전에 4가지 준비가 갖춰져 있어야 해요. 관할 고용센터 위치 확인, 이직확인서 처리 여부, 고용24 회원가입, 워크넷 구직등록이에요. 아직 안 된 게 있어도 괜찮아요 — 아래 체커로 현재 상태를 확인하면 다음 단계를 안내해 드려요.
         </P>
@@ -183,20 +183,20 @@ export default function Article88() {
           이직확인서는 퇴사 후 회사가 10일 이내에 고용보험에 신고해요. 고용24에서 처리 여부를 조회할 수 있어요.
         </P>
 
-        <CheckerShell title="실업급여 신청 준비 체크" subtitle="30초 확인">
-          <CheckerQ n={1} label="내 주소지 관할 고용센터 위치를 알고 있나요?" group="location"
+        <CheckerShell title="실업급여 신청 준비 체크" sub="30초 확인">
+          <CheckerQ n="1" label="내 주소지 관할 고용센터 위치를 알고 있나요?" group="location"
             opts={[["yes", "알고 있어요"], ["no", "모르겠어요"]]}
             sel={ans} pick={pick}
           />
-          <CheckerQ n={2} label="이직확인서가 고용24에서 처리 완료됐나요?" group="document"
+          <CheckerQ n="2" label="이직확인서가 고용24에서 처리 완료됐나요?" group="document"
             opts={[["yes", "처리 완료"], ["waiting", "처리 중"], ["no", "아직 신고 안 됨"]]}
             sel={ans} pick={pick}
           />
-          <CheckerQ n={3} label="고용24 회원가입이 돼 있나요?" group="signup"
+          <CheckerQ n="3" label="고용24 회원가입이 돼 있나요?" group="signup"
             opts={[["done", "가입 완료"], ["not-yet", "아직 미가입"]]}
             sel={ans} pick={pick}
           />
-          <CheckerQ n={4} label="워크넷 구직등록을 완료했나요?" group="worknet"
+          <CheckerQ n="4" label="워크넷 구직등록을 완료했나요?" group="worknet"
             opts={[["done", "등록 완료"], ["not-yet", "아직 미등록"]]}
             sel={ans} pick={pick}
           />
@@ -207,7 +207,7 @@ export default function Article88() {
       <Divider />
 
       {/* ══════ SECTION 02 — 관할센터 찾기 ══════ */}
-      <Sec n={2} id="find-center" title="관할 고용센터는 어떻게 찾나요?" sub="주소지 기준 원칙이고, 고용24에서 바로 조회할 수 있어요">
+      <Sec n="2" id="find-center" title="관할 고용센터는 어떻게 찾나요?" sub="주소지 기준 원칙이고, 고용24에서 바로 조회할 수 있어요">
         <P>
           실업급여는 <A href="https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1000011088">고용보험법 제42조</A>에 따라 <B>주소지 관할 고용센터</B>에서 신청해야 해요. 전국 어느 고용센터든 방문해도 된다고 생각하기 쉽지만, 원칙적으로는 주민등록상 주소지를 기준으로 담당 고용센터가 정해져 있어요.
         </P>
@@ -233,7 +233,7 @@ export default function Article88() {
       <Divider />
 
       {/* ══════ SECTION 03 — 고용24 조회 ══════ */}
-      <Sec n={3} id="work24-search" title="고용24에서 센터 조회 방법이 뭐예요?" sub="PC 3단계와 모바일 앱 조회 모두 알려드려요">
+      <Sec n="3" id="work24-search" title="고용24에서 센터 조회 방법이 뭐예요?" sub="PC 3단계와 모바일 앱 조회 모두 알려드려요">
         <P>
           고용24는 고용노동부가 운영하는 실업급여·취업 지원 통합 포털이에요. 고용센터 찾기뿐만 아니라 수급자격 신청, 실업인정, 취업 정보 조회까지 한 곳에서 할 수 있어요. 회원가입은 공동인증서(구 공인인증서) 또는 간편 인증(카카오·네이버·PASS)으로 가능해요.
         </P>
@@ -285,7 +285,7 @@ export default function Article88() {
       <Divider />
 
       {/* ══════ SECTION 04 — 다른 지역 가능 여부 ══════ */}
-      <Sec n={4} id="other-region" title="다른 지역 고용센터에서도 신청 가능한가요?" sub="원칙은 주소지 관할이지만, 예외 케이스도 있어요">
+      <Sec n="4" id="other-region" title="다른 지역 고용센터에서도 신청 가능한가요?" sub="원칙은 주소지 관할이지만, 예외 케이스도 있어요">
         <P>
           실업급여 수급자격 인정 신청은 <B>주소지 관할 고용센터</B>에서 하는 게 원칙이에요. 출퇴근이 편한 회사 근처 고용센터나 집 가까운 센터가 아니어도, 주민등록 주소지 기준 센터로 가야 해요.
         </P>
@@ -311,7 +311,7 @@ export default function Article88() {
       <Divider />
 
       {/* ══════ SECTION 05 — 온라인 신청 ══════ */}
-      <Sec n={5} id="online-apply" title="온라인 신청은 어디서 하나요?" sub="고용24에서 수급자격 신청과 실업인정을 모두 처리해요">
+      <Sec n="5" id="online-apply" title="온라인 신청은 어디서 하나요?" sub="고용24에서 수급자격 신청과 실업인정을 모두 처리해요">
         <P>
           실업급여 수급자격 인정 신청은 <A href="https://www.work24.go.kr">고용24(www.work24.go.kr)</A>에서 온라인으로 할 수 있어요. 방문 없이 처리되기 때문에 시간이 절약되고, 대기 없이 처리돼요. 단, 고용24 회원가입과 본인 인증(공동인증서 또는 간편 인증)이 필요해요.
         </P>
@@ -347,18 +347,18 @@ export default function Article88() {
       <Divider />
 
       {/* ══════ FAQ ══════ */}
-      <Sec n={6} id="faq" title="자주 묻는 질문" sub="">
+      <Sec n="6" id="faq" title="자주 묻는 질문" sub="">
         <FAQAccordion items={meta.faq} />
       </Sec>
 
       {/* ── 하단 네비 ── */}
       <RelatedArticles
         items={[
-          { title: "실업급여 수급 조건 정리", cat: "실업급여·수급자격", href: "/w/실업급여-수급-조건" },
-          { title: "실업급여 신청 방법 절차 준비서류", cat: "실업급여·신청", href: "/w/실업급여-신청방법" },
-          { title: "피보험기간 180일 계산 합산 방법", cat: "실업급여·피보험기간", href: "/w/실업급여-피보험기간-180일-계산" },
-          { title: "임금체불 퇴직 정당사유 인정 기준", cat: "실업급여·퇴직사유", href: "/w/실업급여-임금체불-퇴직-정당사유" },
-          { title: "직장내 괴롭힘 퇴직 정당사유", cat: "실업급여·퇴직사유", href: "/w/실업급여-직장내-괴롭힘-퇴직-정당사유" },
+          { title: "실업급여 수급 조건 정리", desc: "실업급여·수급자격", href: "/w/실업급여-수급-조건" },
+          { title: "실업급여 신청 방법 절차 준비서류", desc: "실업급여·신청", href: "/w/실업급여-신청방법" },
+          { title: "피보험기간 180일 계산 합산 방법", desc: "실업급여·피보험기간", href: "/w/실업급여-피보험기간-180일-계산" },
+          { title: "임금체불 퇴직 정당사유 인정 기준", desc: "실업급여·퇴직사유", href: "/w/실업급여-임금체불-퇴직-정당사유" },
+          { title: "직장내 괴롭힘 퇴직 정당사유", desc: "실업급여·퇴직사유", href: "/w/실업급여-직장내-괴롭힘-퇴직-정당사유" },
         ]}
       />
       <PrevNext

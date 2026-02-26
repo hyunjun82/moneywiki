@@ -177,7 +177,7 @@ export default function Article86() {
       />
 
       {/* ══════ STEP 01 — 체커 ══════ */}
-      <Sec n={1} id="checker" title="내 상황이 정당사유에 해당하는지 간편 체크" sub="4가지만 선택하면 바로 알 수 있어요">
+      <Sec n="1" id="checker" title="내 상황이 정당사유에 해당하는지 간편 체크" sub="4가지만 선택하면 바로 알 수 있어요">
         <P>
           직장내 괴롭힘으로 퇴사했다고 해서 무조건 실업급여가 나오는 건 아니에요. 괴롭힘 사실 확인, 증빙서류 유무, 피보험기간, 퇴직 경위까지 종합적으로 판단해요. 아래 체커로 내 상황이 정당사유에 해당하는지 먼저 확인해보세요.
         </P>
@@ -185,20 +185,20 @@ export default function Article86() {
           체커 결과는 참고용이에요. 최종 판정은 관할 고용센터에서 이직확인서와 증빙서류를 검토한 뒤 결정돼요.
         </P>
 
-        <CheckerShell title="직장내 괴롭힘 정당사유 판정" subtitle="30초 확인">
-          <CheckerQ n={1} label="직장내 괴롭힘을 당한 적이 있나요?" group="bullying"
+        <CheckerShell title="직장내 괴롭힘 정당사유 판정" sub="30초 확인">
+          <CheckerQ n="1" label="직장내 괴롭힘을 당한 적이 있나요?" group="bullying"
             opts={[["yes", "네, 당했어요"], ["no", "아니요"]]}
             sel={ans} pick={pick}
           />
-          <CheckerQ n={2} label="증빙할 수 있는 자료가 있나요?" group="evidence"
+          <CheckerQ n="2" label="증빙할 수 있는 자료가 있나요?" group="evidence"
             opts={[["report", "신고 접수 확인서"], ["medical", "진단서·녹취록"], ["witness", "동료 진술서"], ["none", "없어요"]]}
             sel={ans} pick={pick}
           />
-          <CheckerQ n={3} label="고용보험 가입기간이 180일 이상인가요?" group="period"
+          <CheckerQ n="3" label="고용보험 가입기간이 180일 이상인가요?" group="period"
             opts={[["yes", "180일 이상"], ["no", "180일 미만"]]}
             sel={ans} pick={pick}
           />
-          <CheckerQ n={4} label="퇴직 경위가 어떻게 되나요?" group="resign"
+          <CheckerQ n="4" label="퇴직 경위가 어떻게 되나요?" group="resign"
             opts={[["self", "괴롭힘 사유 자진퇴사"], ["recommend", "권고사직"], ["fired", "징계해고"]]}
             sel={ans} pick={pick}
           />
@@ -209,7 +209,7 @@ export default function Article86() {
       <Divider />
 
       {/* ══════ SECTION 02 — 괴롭힘 기준 ══════ */}
-      <Sec n={2} id="standard" title="직장내 괴롭힘 기준이 뭐예요?" sub="근로기준법이 정한 3가지 요소를 모두 충족해야 해요">
+      <Sec n="2" id="standard" title="직장내 괴롭힘 기준이 뭐예요?" sub="근로기준법이 정한 3가지 요소를 모두 충족해야 해요">
         <P>
           <A href="https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1012828735">근로기준법 제76조의2</A>는 직장내 괴롭힘을 명확하게 정의하고 있어요. 단순히 기분이 나빴다거나 상사가 싫다는 정도로는 인정되지 않아요. 법에서 정한 <B>3가지 요소를 모두 충족</B>해야 괴롭힘으로 인정돼요.
         </P>
@@ -261,7 +261,7 @@ export default function Article86() {
       <Divider />
 
       {/* ══════ SECTION 03 — 증빙서류 ══════ */}
-      <Sec n={3} id="evidence" title="증빙서류는 뭐가 필요한가요?" sub="핵심 3종만 갖추면 인정 가능성이 높아져요">
+      <Sec n="3" id="evidence" title="증빙서류는 뭐가 필요한가요?" sub="핵심 3종만 갖추면 인정 가능성이 높아져요">
         <P>
           직장내 괴롭힘으로 정당사유를 인정받으려면 <B>괴롭힘 사실을 입증할 수 있는 증빙서류</B>가 반드시 필요해요. 증빙이 부족하면 고용센터에서 자발적 퇴사로 처리할 수 있어서, 퇴사 전부터 미리 준비하는 게 중요해요.
         </P>
@@ -337,7 +337,7 @@ export default function Article86() {
       <Divider />
 
       {/* ══════ SECTION 04 — 신고 절차 ══════ */}
-      <Sec n={4} id="process" title="신고 절차는 어떻게 되나요?" sub="사내 신고부터 고용센터 실업급여 신청까지 3단계">
+      <Sec n="4" id="process" title="신고 절차는 어떻게 되나요?" sub="사내 신고부터 고용센터 실업급여 신청까지 3단계">
         <P>
           직장내 괴롭힘 신고와 실업급여 신청은 별개의 절차예요. 괴롭힘 신고는 고용노동부에, 실업급여 신청은 고용센터(고용24)에 해요. 두 절차를 동시에 진행할 수 있고, 순서도 상관없어요. 다만 <B>신고를 먼저 하면 증빙서류 확보에 유리</B>해서 순서대로 진행하는 게 좋아요.
         </P>
@@ -368,7 +368,7 @@ export default function Article86() {
       <Divider />
 
       {/* ══════ SECTION 05 — 5인 미만 ══════ */}
-      <Sec n={5} id="under5" title="5인 미만 사업장도 해당되나요?" sub="2025년 하반기부터 단계적으로 적용이 확대돼요">
+      <Sec n="5" id="under5" title="5인 미만 사업장도 해당되나요?" sub="2025년 하반기부터 단계적으로 적용이 확대돼요">
         <P>
           원래 근로기준법의 직장내 괴롭힘 조항(제76조의2)은 <B>상시 5인 이상 사업장</B>에만 적용됐어요. 5인 미만 소규모 사업장에서는 법적으로 괴롭힘 금지 의무가 없었기 때문에, 피해를 입어도 법적 보호를 받기 어려웠어요.
         </P>
@@ -406,18 +406,18 @@ export default function Article86() {
       <Divider />
 
       {/* ══════ FAQ ══════ */}
-      <Sec n={6} id="faq" title="자주 묻는 질문" sub="">
+      <Sec n="6" id="faq" title="자주 묻는 질문" sub="">
         <FAQAccordion items={meta.faq} />
       </Sec>
 
       {/* ── 하단 네비 ── */}
       <RelatedArticles
         items={[
-          { title: "실업급여 수급 조건 정리", cat: "실업급여·수급자격", href: "/w/실업급여-수급-조건" },
-          { title: "실업급여 신청 방법 절차 준비서류", cat: "실업급여·신청", href: "/w/실업급여-신청방법" },
-          { title: "임금체불 퇴직 정당사유", cat: "실업급여·퇴직사유", href: "/w/실업급여-임금체불-퇴직-정당사유" },
-          { title: "피보험기간 180일 계산 합산", cat: "실업급여·피보험기간", href: "/w/실업급여-피보험기간-180일-계산" },
-          { title: "이의신청 심사청구 재심사 절차", cat: "실업급여·불복절차", href: "/w/실업급여-이의신청-심사청구-재심사-불복-절차" },
+          { title: "실업급여 수급 조건 정리", desc: "실업급여·수급자격", href: "/w/실업급여-수급-조건" },
+          { title: "실업급여 신청 방법 절차 준비서류", desc: "실업급여·신청", href: "/w/실업급여-신청방법" },
+          { title: "임금체불 퇴직 정당사유", desc: "실업급여·퇴직사유", href: "/w/실업급여-임금체불-퇴직-정당사유" },
+          { title: "피보험기간 180일 계산 합산", desc: "실업급여·피보험기간", href: "/w/실업급여-피보험기간-180일-계산" },
+          { title: "이의신청 심사청구 재심사 절차", desc: "실업급여·불복절차", href: "/w/실업급여-이의신청-심사청구-재심사-불복-절차" },
         ]}
       />
       <PrevNext

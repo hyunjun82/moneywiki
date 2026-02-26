@@ -296,6 +296,7 @@ export default function Article() {
       <Info type="warn">
         취업 신고를 고용센터에 미리 해두지 않으면 나중에 조기재취업수당 신청 시 문제가 될 수 있어요. 취업한 날에 고용센터에 취업 사실을 신고해두는 게 좋아요.
       </Info>
+      <InlineLink icon="💼" title="실업급여 취업신고 방법 — 고용24 온라인 신고" desc="취업 후 다음 날까지 고용24에서 신고하는 절차예요." href="/w/실업급여-수급중-취업-신고방법" />
 
       {/* ── SECTION 05 ── */}
       <Divider />

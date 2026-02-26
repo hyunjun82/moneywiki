@@ -171,6 +171,7 @@ export default function Article66() {
             <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
               <Btn group="visit" value="done" label="방문했어요" sel={sel} pick={pick} />
               <Btn group="visit" value="pending" label="아직 안 갔어요" sel={sel} pick={pick} />
+              <Btn group="visit" value="unsure" label="잘 모르겠어요" sel={sel} pick={pick} />
             </div>
           </div>
           {Object.keys(sel).length >= 1 && (
@@ -203,7 +204,7 @@ export default function Article66() {
       </div>
 
       <Divider />
-      <Sec id="h2-1" question="실업급여 온라인 교육은 필수인가요?">
+      <Sec n="SECTION 01" id="h2-1" title="실업급여 온라인 교육은 필수인가요?" sub="수강 의무와 목적">
         <P>
           <B>필수예요.</B> <A href="https://www.law.go.kr/법령/고용보험법시행규칙">고용보험법 시행규칙</A>에
           따라 수급자격 신청 전 교육 수강이 의무화돼 있어요. 교육을 수료하지 않으면 수급자격 신청
@@ -213,7 +214,7 @@ export default function Article66() {
           교육 목적은 두 가지예요. 실업급여 수급 절차와 의무사항을 미리 알려주는 것, 그리고 부정수급
           예방이에요. 교육 내용은 실업인정 주기, 구직활동 기준, 부정수급 처벌 등이에요.
         </P>
-        <InlineLink href="/w/실업급여-수급자격-인정" label="수급자격 신청 절차 전 과정" />
+        <InlineLink icon="📋" title="실업급여 수급자격 신청 절차" desc="온라인 교육부터 고용센터 방문까지 전 과정을 정리했어요." href="/w/실업급여-수급자격-인정" />
         <P>
           교육 시간은 약 1~2시간이에요. 한 번에 다 듣지 않아도 돼요. 일시정지하고 나중에 이어서
           들을 수 있어요. 고용24에 로그인만 되어 있으면 PC, 스마트폰, 태블릿 어디서든 수강할 수 있어요.
@@ -225,7 +226,7 @@ export default function Article66() {
       </Sec>
 
       <Divider />
-      <Sec id="h2-2" question="실업급여 온라인 교육 수강 방법은 어떻게 되나요?">
+      <Sec n="SECTION 02" id="h2-2" title="실업급여 온라인 교육 수강 방법은 어떻게 되나요?" sub="4단계 수강 절차">
         <TableTitle>온라인 교육 수강 절차</TableTitle>
         <div style={{ overflowX: "auto" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
@@ -257,7 +258,7 @@ export default function Article66() {
           동영상 시청 후 간단한 퀴즈를 풀어야 이수가 완료돼요. 퀴즈 점수가 기준에 미달하면
           재응시해야 해요. 이수증은 고용24에서 언제든지 다시 출력할 수 있어요.
         </P>
-        <InlineLink href="/w/실업급여-구비서류" label="고용센터 방문 시 준비물 목록" />
+        <InlineLink icon="📝" title="실업급여 구비서류 목록" desc="고용센터 방문 전 신분증·통장 사본 등 준비물을 정리했어요." href="/w/실업급여-구비서류" />
         <P>
           실업급여를 처음 신청하는 분은 수급자격 신청자 교육을 들으면 돼요. 재수급자(이전에
           실업급여를 받은 적 있는 분)는 교육 이수 이력이 남아 있으면 생략할 수 있는 경우도 있어요.
@@ -269,7 +270,7 @@ export default function Article66() {
       </Sec>
 
       <Divider />
-      <Sec id="h2-3" question="실업급여 온라인 교육 후 14일 기한은 뭐예요?">
+      <Sec n="SECTION 03" id="h2-3" title="실업급여 온라인 교육 후 14일 기한은 뭐예요?" sub="신청 기한과 패널티">
         <P>
           <B>교육 수료 후 14일 이내에 관할 고용센터를 방문해서 수급자격을 신청해야 해요.</B> 이
           기한을 넘기면 신청이 늦어질 수 있어요.
@@ -295,7 +296,7 @@ export default function Article66() {
       </Sec>
 
       <Divider />
-      <Sec id="h2-4" question="실업급여 온라인 교육 후 고용센터 방문은 어떻게 하나요?">
+      <Sec n="SECTION 04" id="h2-4" title="실업급여 온라인 교육 후 고용센터 방문은 어떻게 하나요?" sub="방문 전 예약 방법">
         <P>
           교육 이수 후 주소지 관할 고용센터에 방문하면 돼요.{" "}
           <A href="https://www.ei.go.kr">고용24</A>에서 고용센터 찾기 메뉴로 관할 센터를
@@ -305,13 +306,13 @@ export default function Article66() {
           방문 시 지참 서류가 있어요. 신분증, 이직확인서 사본(사업주가 이미 신고했으면 생략 가능),
           통장 사본, 워크넷 구직등록 확인증이 필요해요. 워크넷 구직등록은 방문 전에 미리 해야 해요.
         </P>
-        <Info>고용24나 전화(1350)로 사전 예약하면 대기 없이 바로 상담받을 수 있어요. 요즘 고용센터는 붐벼서 당일 대기가 1시간 이상 걸리는 경우가 많아요.</Info>
+        <Info type="warn">고용24나 전화(1350)로 사전 예약하면 대기 없이 바로 상담받을 수 있어요. 요즘 고용센터는 붐벼서 당일 대기가 1시간 이상 걸리는 경우가 많아요.</Info>
         <P>
           방문하면 상담사와 면담 후 수급자격 심사가 접수돼요. 심사 기간은 보통 14일 이내예요.
           결과가 나오면 첫 실업인정일이 지정되고, 그때부터 실업인정을 받아서 급여를 받을 수 있어요.
         </P>
-        <SpokeLink href="/w/실업급여-수급자격-인정" title="실업급여 수급자격 신청 절차" desc="고용센터 방문부터 첫 지급까지" />
-        <SpokeLink href="/w/실업급여-구비서류" title="실업급여 구비서류 목록" desc="이직확인서·통장 사본 준비법" />
+        <SpokeLink num="01" title="실업급여 수급자격 신청 절차" desc="고용센터 방문부터 첫 지급까지" href="/w/실업급여-수급자격-인정" />
+        <SpokeLink num="02" title="실업급여 구비서류 목록" desc="이직확인서·통장 사본 준비법" href="/w/실업급여-구비서류" />
       </Sec>
 
       <ExtBtn

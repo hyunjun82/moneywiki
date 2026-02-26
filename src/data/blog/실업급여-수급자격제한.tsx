@@ -199,6 +199,7 @@ export default function Article69() {
             <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
               <Btn group="reason" value="normal" label="더 좋은 직장, 개인 사정 등" sel={sel} pick={pick} />
               <Btn group="reason" value="justified" label="괴롭힘·임금체불·통근 어려움·건강·육아" sel={sel} pick={pick} />
+              <Btn group="reason" value="unsure" label="잘 모르겠어요" sel={sel} pick={pick} />
             </div>
           </div>
           {Object.keys(sel).length >= 1 && (
@@ -231,7 +232,7 @@ export default function Article69() {
       </div>
 
       <Divider />
-      <Sec id="h2-1" question="실업급여 수급자격제한은 어떤 경우에 해당하나요?">
+      <Sec n="SECTION 01" id="h2-1" title="실업급여 수급자격제한은 어떤 경우에 해당하나요?" sub="제한 사유 기준">
         <P>
           <B>자발적 이직이 원칙적인 제한 사유예요.</B> 스스로 사직서를 내고 그만둔 경우, 별다른 사유
           없이 무단 결근한 경우, 이전에 부정수급 이력이 있는 경우가 해당돼요.{" "}
@@ -242,7 +243,7 @@ export default function Article69() {
           반면 비자발적 이직은 제한 사유가 아니에요. 권고사직, 계약 만료, 폐업·도산, 해고는
           수급자격이 인정돼요. 이 경우 이직확인서에 이직 사유가 제대로 기재돼 있으면 신청하면 돼요.
         </P>
-        <InlineLink href="/w/실업급여-수급자격-인정" label="수급자격 신청 절차 전체 보기" />
+        <InlineLink icon="📝" title="수급자격 신청 절차 전체 보기" desc="고용센터 방문 전 확인할 것들" href="/w/실업급여-수급자격-인정" />
         <P>
           제한 사유 해당 여부는 이직확인서와 수급자 진술을 종합해서 판단해요. 같은 사직서 제출이어도
           사업주가 이직확인서를 어떻게 작성했는지, 수급자가 어떤 사유를 입증하는지에 따라 결과가
@@ -256,7 +257,7 @@ export default function Article69() {
       </Sec>
 
       <Divider />
-      <Sec id="h2-2" question="실업급여 수급자격제한 중대과실 해고 기준은 뭐예요?">
+      <Sec n="SECTION 02" id="h2-2" title="실업급여 수급자격제한 중대과실 해고 기준은 뭐예요?" sub="중대과실 유형 정리">
         <P>
           <B>고의·중대한 귀책 사유로 해고된 경우 수급자격이 제한돼요.</B> 형사처분을 받을 만한 행위,
           사업에 막대한 지장을 초래하는 행위, 장기간 무단결근이 대표적인 사유예요.
@@ -266,7 +267,7 @@ export default function Article69() {
           연속 7일 이상 무단결근 등이 해당돼요. 단순 업무 실수나 성과 부진은 중대과실에 해당하지
           않아요.
         </P>
-        <Info>중대과실 해고 여부는 이직확인서 이직 사유 코드와 수급자 진술을 종합해서 판단해요. 억울하게 기재된 경우 고용센터에서 이의 제기가 가능해요.</Info>
+        <Info type="warn">중대과실 해고 여부는 이직확인서 이직 사유 코드와 수급자 진술을 종합해서 판단해요. 억울하게 기재된 경우 고용센터에서 이의 제기가 가능해요.</Info>
         <BridgeCard
           q="수급자격 제한 여부가 확인됐다면 신청 절차가 궁금하시죠?"
           a="고용센터 방문 전에 워크넷 구직등록과 온라인 교육 수료가 먼저예요."
@@ -281,7 +282,7 @@ export default function Article69() {
       </Sec>
 
       <Divider />
-      <Sec id="h2-3" question="실업급여 수급자격제한에서 자발적 퇴사 기준은 어떻게 되나요?">
+      <Sec n="SECTION 03" id="h2-3" title="실업급여 수급자격제한에서 자발적 퇴사 기준은 어떻게 되나요?" sub="자발적 퇴사 판단 기준">
         <P>
           <B>사직서를 직접 제출하면 원칙적으로 자발적 퇴사예요.</B> 사직서 제출 형태에 상관없이
           근로자가 먼저 고용 관계 종료를 요청하면 자발적 이직으로 봐요.
@@ -291,7 +292,7 @@ export default function Article69() {
           "다음 달부터 급여를 삭감하겠다"는 압박으로 사직서를 낸 경우라면 실질적 권고사직에 해당할
           수 있어요. 이런 경우에는 관련 대화 내용을 증거로 남겨두면 좋아요.
         </P>
-        <InlineLink href="/w/실업급여-자발적퇴사" label="자진퇴사 예외 조건 11가지 전체 보기" />
+        <InlineLink icon="📋" title="자진퇴사 예외 조건 11가지 전체 보기" desc="정당한 사유 인정 기준 11가지" href="/w/실업급여-자발적퇴사" />
         <P>
           합의 퇴직도 상황에 따라 다르게 판단돼요. 사업주의 제안으로 이루어진 합의 퇴직은
           비자발적으로 볼 수 있어요. 반면 근로자가 먼저 퇴직 의사를 밝히고 합의한 경우는
@@ -305,7 +306,7 @@ export default function Article69() {
       </Sec>
 
       <Divider />
-      <Sec id="h2-4" question="실업급여 수급자격제한 예외 정당한 사유는 뭐예요?">
+      <Sec n="SECTION 04" id="h2-4" title="실업급여 수급자격제한 예외 정당한 사유는 뭐예요?" sub="11가지 예외 사유">
         <P>
           <B>11가지 유형이 있어요.</B>{" "}
           <A href="https://www.law.go.kr/법령/고용보험법시행규칙">고용보험법 시행규칙 제101조</A>{" "}
@@ -341,15 +342,15 @@ export default function Article69() {
           </table>
         </div>
         <TableNote>※ 고용보험법 시행규칙 제101조 별표2 기준, 6가지 대표 사유</TableNote>
-        <Info>예외 인정에는 증빙이 필요해요. 괴롭힘은 녹취나 문자, 임금 체불은 급여명세서나 통장 내역, 통근 거리는 주소지 확인, 질병은 진단서가 증빙이 돼요.</Info>
+        <Info type="warn">예외 인정에는 증빙이 필요해요. 괴롭힘은 녹취나 문자, 임금 체불은 급여명세서나 통장 내역, 통근 거리는 주소지 확인, 질병은 진단서가 증빙이 돼요.</Info>
         <P>
           고용센터 방문 시 진술서를 작성해요. "괴롭힘을 당했어요"보다 "0월 0일 상사로부터
           이런 행위를 당했어요"처럼 날짜와 내용이 구체적이어야 인정받기 유리해요. 예외 불인정 시
           90일 이내 이의신청이 가능해요.
         </P>
-        <SpokeLink href="/w/실업급여-수급자격-인정" title="실업급여 수급자격 신청 절차" desc="고용센터 방문부터 첫 지급까지" />
-        <SpokeLink href="/w/실업급여-자발적퇴사" title="자진퇴사 후 실업급여 예외 조건" desc="11가지 인정 사유 전체 목록" />
-        <SpokeLink href="/w/실업급여-구비서류" title="실업급여 구비서류 목록" desc="고용센터 방문 전 준비물" />
+        <SpokeLink num="01" title="실업급여 수급자격 신청 절차" desc="고용센터 방문부터 첫 지급까지" href="/w/실업급여-수급자격-인정" />
+        <SpokeLink num="02" title="자진퇴사 후 실업급여 예외 조건" desc="11가지 인정 사유 전체 목록" href="/w/실업급여-자발적퇴사" />
+        <SpokeLink num="03" title="실업급여 구비서류 목록" desc="고용센터 방문 전 준비물" href="/w/실업급여-구비서류" />
       </Sec>
 
       <ExtBtn

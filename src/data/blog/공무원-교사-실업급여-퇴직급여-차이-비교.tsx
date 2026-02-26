@@ -196,7 +196,7 @@ export default function Article87() {
       />
 
       {/* ══════ STEP 01 — 체커 ══════ */}
-      <Sec n={1} id="checker" title="내 직종이 고용보험 대상인지 간편 체크" sub="3가지만 선택하면 바로 알 수 있어요">
+      <Sec n="1" id="checker" title="내 직종이 고용보험 대상인지 간편 체크" sub="3가지만 선택하면 바로 알 수 있어요">
         <P>
           공무원이라고 해서 모두 실업급여를 못 받는 건 아니에요. 직종과 고용보험 가입 여부에 따라 결과가 달라져요. 아래 체커로 내 상황을 먼저 확인해보세요.
         </P>
@@ -204,16 +204,16 @@ export default function Article87() {
           체커 결과는 참고용이에요. 정확한 가입 여부는 고용센터(1350) 또는 고용24에서 확인할 수 있어요.
         </P>
 
-        <CheckerShell title="공무원·교사 실업급여 가능 여부" subtitle="30초 확인">
-          <CheckerQ n={1} label="현재(또는 이전) 직종이 무엇인가요?" group="job"
+        <CheckerShell title="공무원·교사 실업급여 가능 여부" sub="30초 확인">
+          <CheckerQ n="1" label="현재(또는 이전) 직종이 무엇인가요?" group="job"
             opts={[["general", "일반 공무원"], ["special", "별정직 공무원"], ["temp", "임기제 공무원"], ["teacher-pub", "국공립 교사"], ["teacher-pri", "사립학교 교사"]]}
             sel={ans} pick={pick}
           />
-          <CheckerQ n={2} label="고용보험에 가입되어 있나요?" group="insurance"
+          <CheckerQ n="2" label="고용보험에 가입되어 있나요?" group="insurance"
             opts={[["yes", "네, 가입됨"], ["no", "아니요"], ["unknown", "모르겠어요"]]}
             sel={ans} pick={pick}
           />
-          <CheckerQ n={3} label="고용보험 가입기간이 180일 이상인가요?" group="period"
+          <CheckerQ n="3" label="고용보험 가입기간이 180일 이상인가요?" group="period"
             opts={[["yes", "180일 이상"], ["no", "180일 미만"], ["unknown", "모르겠어요"]]}
             sel={ans} pick={pick}
           />
@@ -224,7 +224,7 @@ export default function Article87() {
       <Divider />
 
       {/* ══════ SECTION 02 — 공무원 실업급여 ══════ */}
-      <Sec n={2} id="civil-servant" title="공무원은 왜 실업급여 못 받나요?" sub="고용보험법이 아예 적용 대상에서 빼놨어요">
+      <Sec n="2" id="civil-servant" title="공무원은 왜 실업급여 못 받나요?" sub="고용보험법이 아예 적용 대상에서 빼놨어요">
         <P>
           <A href="https://www.law.go.kr/법령/고용보험법">고용보험법 제10조</A>는 고용보험 적용 제외 대상을 열거하고 있어요. 여기에 <B>국가공무원법·지방공무원법에 따른 공무원</B>이 명시되어 있어요. 공무원은 법률로 신분이 보장되고, 퇴직 시 별도의 연금·수당 제도가 있기 때문에 고용보험이 필요 없다는 취지예요.
         </P>
@@ -247,7 +247,7 @@ export default function Article87() {
       <Divider />
 
       {/* ══════ SECTION 03 — 별정직 ══════ */}
-      <Sec n={3} id="special" title="별정직 공무원도 실업급여 가입할 수 있나요?" sub="임용 3개월 내 임의가입이 가능해요">
+      <Sec n="3" id="special" title="별정직 공무원도 실업급여 가입할 수 있나요?" sub="임용 3개월 내 임의가입이 가능해요">
         <P>
           별정직·임기제 공무원은 일반 공무원과 달라요. <A href="https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=281219&joNo=0003&joBrNo=02">고용보험법 시행령 제3조의2</A>에 따르면, 별정직 또는 임기제 공무원은 <B>최초 임용일로부터 3개월 이내에 고용보험에 임의가입</B>할 수 있어요.
         </P>
@@ -321,7 +321,7 @@ export default function Article87() {
       <Divider />
 
       {/* ══════ SECTION 04 — 교사 ══════ */}
-      <Sec n={4} id="teacher" title="교사도 실업급여 받을 수 있나요?" sub="국공립과 사립에 따라 완전히 달라요">
+      <Sec n="4" id="teacher" title="교사도 실업급여 받을 수 있나요?" sub="국공립과 사립에 따라 완전히 달라요">
         <P>
           교사의 실업급여 수급 가능 여부는 <B>국공립학교인지 사립학교인지</B>에 따라 결정돼요. 같은 교사라도 적용되는 연금 제도와 고용보험 가입 여부가 다르기 때문이에요.
         </P>
@@ -389,7 +389,7 @@ export default function Article87() {
       <Divider />
 
       {/* ══════ SECTION 05 — 퇴직급여 차이 ══════ */}
-      <Sec n={5} id="difference" title="공무원 퇴직급여와 실업급여 차이가 뭐예요?" sub="지급 목적부터 산정 방식까지 완전히 달라요">
+      <Sec n="5" id="difference" title="공무원 퇴직급여와 실업급여 차이가 뭐예요?" sub="지급 목적부터 산정 방식까지 완전히 달라요">
         <P>
           공무원 퇴직급여(퇴직수당·퇴직연금)와 실업급여는 이름이 비슷해 보이지만 <B>목적, 재원, 지급 방식이 완전히 다른 제도</B>예요. 둘 다 퇴직 후 경제적 안전망 역할을 하지만, 구조가 다르기 때문에 직접 비교하기는 어려워요.
         </P>
@@ -460,18 +460,18 @@ export default function Article87() {
       <Divider />
 
       {/* ══════ FAQ ══════ */}
-      <Sec n={6} id="faq" title="자주 묻는 질문" sub="">
+      <Sec n="6" id="faq" title="자주 묻는 질문" sub="">
         <FAQAccordion items={meta.faq} />
       </Sec>
 
       {/* ── 하단 네비 ── */}
       <RelatedArticles
         items={[
-          { title: "실업급여 수급 조건 정리", cat: "실업급여·수급자격", href: "/w/실업급여-수급-조건" },
-          { title: "실업급여 신청 방법 절차 준비서류", cat: "실업급여·신청", href: "/w/실업급여-신청방법" },
-          { title: "직장내 괴롭힘 퇴직 정당사유", cat: "실업급여·퇴직사유", href: "/w/실업급여-직장내-괴롭힘-퇴직-정당사유" },
-          { title: "피보험기간 180일 계산 합산", cat: "실업급여·피보험기간", href: "/w/실업급여-피보험기간-180일-계산" },
-          { title: "연봉별 실업급여 수령액", cat: "실업급여·계산", href: "/w/실업급여-연봉별-계산" },
+          { title: "실업급여 수급 조건 정리", desc: "실업급여·수급자격", href: "/w/실업급여-수급-조건" },
+          { title: "실업급여 신청 방법 절차 준비서류", desc: "실업급여·신청", href: "/w/실업급여-신청방법" },
+          { title: "직장내 괴롭힘 퇴직 정당사유", desc: "실업급여·퇴직사유", href: "/w/실업급여-직장내-괴롭힘-퇴직-정당사유" },
+          { title: "피보험기간 180일 계산 합산", desc: "실업급여·피보험기간", href: "/w/실업급여-피보험기간-180일-계산" },
+          { title: "연봉별 실업급여 수령액", desc: "실업급여·계산", href: "/w/실업급여-연봉별-계산" },
         ]}
       />
       <PrevNext

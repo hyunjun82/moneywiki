@@ -191,7 +191,7 @@ export default function Article82() {
       />
 
       {/* ══════ STEP 01 — 체커 ══════ */}
-      <Sec n={1} id="checker" title="내 불복 절차 진행 가능 여부 간편 체크" sub="불복 사유·기한·단계·증빙 4가지만 선택하면 돼요">
+      <Sec n="1" id="checker" title="내 불복 절차 진행 가능 여부 간편 체크" sub="불복 사유·기한·단계·증빙 4가지만 선택하면 돼요">
         <P>
           실업급여 불인정 후 이의신청이 가능한지는 기한, 처분 사유, 증빙 서류 유무에 따라 달라져요. 90일 기한을 넘기면 원칙적으로 이의신청이 불가능해요. 아래 체커로 현재 상황을 먼저 확인해보세요.
         </P>
@@ -199,20 +199,20 @@ export default function Article82() {
           체커 결과는 참고용이에요. 정확한 절차와 가능 여부는 관할 고용센터 또는 고용보험심사위원회에서 확인하는 게 좋아요.
         </P>
 
-        <CheckerShell title="이의신청 절차 체크" subtitle="30초 확인">
-          <CheckerQ n={1} label="어떤 처분에 이의가 있나요?" group="reason"
+        <CheckerShell title="이의신청 절차 체크" sub="30초 확인">
+          <CheckerQ n="1" label="어떤 처분에 이의가 있나요?" group="reason"
             opts={[["deny", "수급자격 불인정"], ["amount", "급여액 산정 이의"], ["return", "부정수급 환수 처분"]]}
             sel={ans} pick={pick}
           />
-          <CheckerQ n={2} label="처분 통보를 받은 지 얼마나 됐나요?" group="timing"
+          <CheckerQ n="2" label="처분 통보를 받은 지 얼마나 됐나요?" group="timing"
             opts={[["within90", "90일 이내"], ["over90", "90일 초과"]]}
             sel={ans} pick={pick}
           />
-          <CheckerQ n={3} label="심사청구를 이미 했나요?" group="stage"
+          <CheckerQ n="3" label="심사청구를 이미 했나요?" group="stage"
             opts={[["notyet", "아직 안 했어요"], ["rejected", "했는데 기각됐어요"]]}
             sel={ans} pick={pick}
           />
-          <CheckerQ n={4} label="증빙 서류가 있나요?" group="evidence"
+          <CheckerQ n="4" label="증빙 서류가 있나요?" group="evidence"
             opts={[["enough", "이직확인서·급여명세서 등 있어요"], ["lack", "부족하거나 없어요"]]}
             sel={ans} pick={pick}
           />
@@ -223,7 +223,7 @@ export default function Article82() {
       <Divider />
 
       {/* ══════ SECTION 02 — 이의신청 방법 ══════ */}
-      <Sec n={2} id="appeal-method" title="이의신청은 어떻게 하나요?" sub="불복 3단계 흐름과 심사청구서 작성 포인트를 알아볼게요">
+      <Sec n="2" id="appeal-method" title="이의신청은 어떻게 하나요?" sub="불복 3단계 흐름과 심사청구서 작성 포인트를 알아볼게요">
         <P>
           고용센터의 처분에 불만이 있으면 <B>심사청구 → 재심사청구 → 행정소송</B> 순서로 불복할 수 있어요. 각 단계마다 90일의 기한이 있고, 앞 단계를 거치지 않으면 다음 단계로 갈 수 없어요.
         </P>
@@ -249,7 +249,7 @@ export default function Article82() {
       <Divider />
 
       {/* ══════ SECTION 03 — 90일 기한 ══════ */}
-      <Sec n={3} id="review-90days" title="심사청구 90일 기한은 언제부터인가요?" sub="기산점이 중요해요 — 처분을 안 날부터 계산돼요">
+      <Sec n="3" id="review-90days" title="심사청구 90일 기한은 언제부터인가요?" sub="기산점이 중요해요 — 처분을 안 날부터 계산돼요">
         <P>
           90일 기한의 시작점(기산점)이 언제인지 정확히 아는 게 가장 중요해요. 기한을 하루라도 넘기면 심사청구 자체가 각하되기 때문이에요.
         </P>
@@ -292,7 +292,7 @@ export default function Article82() {
       <Divider />
 
       {/* ══════ SECTION 04 — 재심사청구 ══════ */}
-      <Sec n={4} id="re-review" title="재심사청구는 언제 할 수 있나요?" sub="심사 기각 후 90일 이내, 고용보험심사위원회에 제출해요">
+      <Sec n="4" id="re-review" title="재심사청구는 언제 할 수 있나요?" sub="심사 기각 후 90일 이내, 고용보험심사위원회에 제출해요">
         <P>
           심사관의 결정이 나왔는데 기각됐다면, 한 단계 더 불복할 수 있어요. <A href="https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1000011134">고용보험법 제88조</A>에 따라 고용보험심사위원회에 <B>재심사청구</B>를 제기하는 거예요. 기한은 심사관 결정을 안 날부터 다시 90일이에요.
         </P>
@@ -346,7 +346,7 @@ export default function Article82() {
       <Divider />
 
       {/* ══════ SECTION 05 — 기한 초과 ══════ */}
-      <Sec n={5} id="deadline-over" title="90일 기한을 넘기면 어떻게 되나요?" sub="예외 사유가 있으면 14일 이내 구제 가능해요">
+      <Sec n="5" id="deadline-over" title="90일 기한을 넘기면 어떻게 되나요?" sub="예외 사유가 있으면 14일 이내 구제 가능해요">
         <P>
           원칙적으로 90일 기한을 넘기면 심사청구·재심사청구가 각하돼요. "각하"는 내용을 보지도 않고 기한 초과를 이유로 거부하는 거예요. 기한 관리가 왜 중요한지 알 수 있는 부분이에요.
         </P>
@@ -384,18 +384,18 @@ export default function Article82() {
       <Divider />
 
       {/* ══════ FAQ ══════ */}
-      <Sec n={6} id="faq" title="자주 묻는 질문" sub="">
+      <Sec n="6" id="faq" title="자주 묻는 질문" sub="">
         <FAQAccordion items={meta.faq} />
       </Sec>
 
       {/* ── 하단 네비 ── */}
       <RelatedArticles
         items={[
-          { title: "실업급여 수급 조건 정리", cat: "실업급여·수급자격", href: "/w/실업급여-수급-조건" },
-          { title: "수급자격 제한 사유 11가지", cat: "실업급여·불인정", href: "/w/실업급여-수급자격제한" },
-          { title: "임금삭감 퇴직 정당사유 기준", cat: "실업급여·퇴직사유", href: "/w/실업급여-임금삭감-퇴직-정당사유" },
-          { title: "임금체불 퇴직 정당사유 기준", cat: "실업급여·퇴직사유", href: "/w/실업급여-임금체불-퇴직-정당사유" },
-          { title: "직장내 괴롭힘 퇴직 정당사유", cat: "실업급여·퇴직사유", href: "/w/실업급여-직장내-괴롭힘-퇴직-정당사유" },
+          { title: "실업급여 수급 조건 정리", desc: "실업급여·수급자격", href: "/w/실업급여-수급-조건" },
+          { title: "수급자격 제한 사유 11가지", desc: "실업급여·불인정", href: "/w/실업급여-수급자격제한" },
+          { title: "임금삭감 퇴직 정당사유 기준", desc: "실업급여·퇴직사유", href: "/w/실업급여-임금삭감-퇴직-정당사유" },
+          { title: "임금체불 퇴직 정당사유 기준", desc: "실업급여·퇴직사유", href: "/w/실업급여-임금체불-퇴직-정당사유" },
+          { title: "직장내 괴롭힘 퇴직 정당사유", desc: "실업급여·퇴직사유", href: "/w/실업급여-직장내-괴롭힘-퇴직-정당사유" },
         ]}
       />
       <PrevNext

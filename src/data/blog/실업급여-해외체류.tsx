@@ -224,7 +224,7 @@ export default function Article63() {
       </div>
 
       <Divider />
-      <Sec id="h2-1" question="실업급여 수급 중 해외여행 가도 되나요?">
+      <Sec n="SECTION 01" id="h2-1" title="실업급여 수급 중 해외여행 가도 되나요?" sub="출국 가능 여부 기준">
         <P>
           <B>가능해요.</B> 실업급여 수급 중 해외여행 자체를 금지하는 규정은 없어요.{" "}
           <A href="https://1350.moel.go.kr/home/hp/data/faqView.do?faq_idx=1000001196">고용노동부</A>에
@@ -234,7 +234,7 @@ export default function Article63() {
           단, 출국 가능 여부와 급여 지급 여부는 별개예요. 해외에 있는 동안은 실업인정을 받을 수
           없어서, 체류 기간 동안은 급여가 지급되지 않아요. 귀국해서 실업인정을 받아야 급여가 나와요.
         </P>
-        <InlineLink href="/w/실업급여-알바-미신고" label="부정수급 처벌 기준 및 환수 조건" />
+        <InlineLink icon="⚠️" title="부정수급 처벌 기준 및 환수 조건" desc="미신고 수급 시 환수와 추가 징수 내용" href="/w/실업급여-알바-미신고" />
         <P>
           주의해야 할 점이 있어요. 해외에서 우회 접속 등의 방법으로 온라인 실업인정을 신청하면
           부정수급이에요. 해외 체류 중 IP를 바꿔서 고용24에 접속해도 시스템이 감지할 수 있어요.
@@ -246,7 +246,7 @@ export default function Article63() {
       </Sec>
 
       <Divider />
-      <Sec id="h2-2" question="실업급여 해외체류 42일 기준은 어떻게 계산하나요?">
+      <Sec n="SECTION 02" id="h2-2" title="실업급여 해외체류 42일 기준은 어떻게 계산하나요?" sub="계산 방법 정리">
         <P>
           42일은 법으로 정해진 고정 수치가 아니에요. <B>실무적으로 알려진 최대 공백 없이 다녀올 수
           있는 기간</B>이에요.
@@ -256,7 +256,7 @@ export default function Article63() {
           후 14일 이내에 변경 신청이 1회 허용돼요. 28일 + 14일 = 42일이 한 번의 실업인정 주기 내에서
           수급 공백 없이 다녀올 수 있는 최대 기간인 거예요.
         </P>
-        <InlineLink href="/w/실업급여-수급기간-몇개월-받나요" label="실업급여 수급기간 계산 방법" />
+        <InlineLink icon="📅" title="실업급여 수급기간 계산 방법" desc="퇴직 후 12개월 기한 계산 방법" href="/w/실업급여-수급기간-몇개월-받나요" />
         <P>
           이 42일을 넘기면 어떻게 될까요? 변경 신청 1회를 이미 소진했다면, 다음 실업인정일을 또
           놓치게 돼요. 그 기간의 급여는 받을 수 없어요. 다음 실업인정일에 맞춰 귀국하거나, 귀국 후
@@ -269,7 +269,7 @@ export default function Article63() {
       </Sec>
 
       <Divider />
-      <Sec id="h2-3" question="실업급여 해외체류 시 수급 중단은 어떻게 되나요?">
+      <Sec n="SECTION 03" id="h2-3" title="실업급여 해외체류 시 수급 중단은 어떻게 되나요?" sub="정지 vs 중단 구분">
         <P>
           <B>수급이 "중단"되는 게 아니라 "정지"되는 개념이에요.</B> 귀국하면 남은 급여일수만큼 다시
           받을 수 있어요. 해외에 있던 날들은 수급일수로 카운트되지 않아요.
@@ -297,7 +297,7 @@ export default function Article63() {
       </Sec>
 
       <Divider />
-      <Sec id="h2-4" question="실업급여 해외체류 후 수급 재개 조건은 뭐예요?">
+      <Sec n="SECTION 04" id="h2-4" title="실업급여 해외체류 후 수급 재개 조건은 뭐예요?" sub="귀국 후 재개 절차">
         <TableTitle>해외체류 기간별 수급 영향</TableTitle>
         <div style={{ overflowX: "auto" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
@@ -330,14 +330,14 @@ export default function Article63() {
           변경을 신청하면 돼요. 이 변경은 전체 수급기간 중 1회만 허용돼요. 기한(14일)을 넘기면
           해당 실업인정 기간의 급여는 포기해야 해요.
         </P>
-        <Info>귀국 후 별도의 "재개 신청"은 없어요. 실업인정일에 정상적으로 고용24에서 신고하면 그날부터 급여가 다시 나와요.</Info>
+        <Info type="warn">귀국 후 별도의 "재개 신청"은 없어요. 실업인정일에 정상적으로 고용24에서 신고하면 그날부터 급여가 다시 나와요.</Info>
         <P>
           재개 절차는 간단해요. 귀국 후 다음 실업인정일에 고용24에서 온라인으로 정상 신청하거나,
           고용센터에 출석하면 돼요. 출국 전에 실업인정일을 미리 확인해두면 귀국 일정 잡기가 훨씬
           편해요.
         </P>
-        <SpokeLink href="/w/실업급여-수급유예" title="실업급여 수급유예 신청 방법" desc="질병·출산·육아 시 최대 4년 연장" />
-        <SpokeLink href="/w/실업급여-수급기간-몇개월-받나요" title="실업급여 수급기간" desc="퇴직 후 12개월 신청 기한 계산" />
+        <SpokeLink num="01" title="실업급여 수급유예 신청 방법" desc="질병·출산·육아 시 최대 4년 연장" href="/w/실업급여-수급유예" />
+        <SpokeLink num="02" title="실업급여 수급기간" desc="퇴직 후 12개월 신청 기한 계산" href="/w/실업급여-수급기간-몇개월-받나요" />
       </Sec>
 
       <ExtBtn

@@ -251,6 +251,12 @@ export default function Article() {
         href="/w/실업급여-부정수급-적발-사례"
       />
 
+      <div style={{ margin: "20px 0" }}>
+        <div style={{ fontSize: 13, fontWeight: 700, color: C.t1, marginBottom: 8 }}>{"📖 실업급여 부정수급 더 알아보기"}</div>
+        <SpokeLink num="01" title="실업급여 부정수급 반환 징수 기준" desc="횟수별 추가 징수 배율과 반환 금액 계산" href="/w/실업급여-부정수급-반환-및-징수-기준" />
+        <SpokeLink num="02" title="실업급여 알바 미신고 부정수급 처벌" desc="알바 미신고 시 환수 기준과 자진신고 방법" href="/w/실업급여-알바-미신고" />
+      </div>
+
       <ExtBtn badge="고용24 공식" text="부정수급 자진신고" cta="신고하기 →" href="https://www.work24.go.kr/cm/c/d/UECMCDA0101.do" />
 
       {/* ── FAQ ── */}

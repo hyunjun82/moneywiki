@@ -235,6 +235,8 @@ export default function Article() {
 
       <Info type="warn">{'<strong>건강보험료 체납 시 급여 제한.</strong> 보험료를 6개월 이상 체납하면 건강보험 급여(병원비 지원)가 제한될 수 있어요. 납부가 어려우면 분할납부를 신청하세요.'}</Info>
 
+      <InlineLink icon="📊" title="실업급여 국민연금 납부유예 신청 방법" desc="건강보험료 외에 국민연금도 납부유예 신청이 가능해요. 조건과 신청 방법을 정리했어요." href="/w/실업급여-국민연금-유예" />
+
       <div style={{ margin: "20px 0" }}>
         <div style={{ fontSize: 13, fontWeight: 700, color: C.t1, marginBottom: 8 }}>{"📖 실업급여 세금·보험 더 알아보기"}</div>
         <SpokeLink num="01" title="실업급여 비과세 소득" desc="소득세는 0원, 건강보험료와는 별개" href="/w/실업급여-비과세" />

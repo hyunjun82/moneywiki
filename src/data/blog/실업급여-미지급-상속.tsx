@@ -92,6 +92,7 @@ export default function Article() {
               <Btn group="relation" value="parent" label="부모 (친부모·양부모)" sel={sel} pick={pick} />
               <Btn group="relation" value="grandchild_grandparent" label="손자녀 또는 조부모" sel={sel} pick={pick} />
               <Btn group="relation" value="sibling" label="형제자매" sel={sel} pick={pick} />
+              <Btn group="relation" value="unknown" label="잘 모르겠어요" sel={sel} pick={pick} />
             </div>
           </div>
 

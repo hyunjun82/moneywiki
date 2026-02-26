@@ -92,6 +92,7 @@ export default function Article() {
               <Btn group="salary" value="250to400" label="250~400만원" sel={sel} pick={pick} />
               <Btn group="salary" value="400to600" label="400~600만원" sel={sel} pick={pick} />
               <Btn group="salary" value="over600" label="600만원 이상" sel={sel} pick={pick} />
+              <Btn group="salary" value="unsure" label="잘 모르겠어요" sel={sel} pick={pick} />
             </div>
           </div>
 
@@ -152,7 +153,7 @@ export default function Article() {
 
       <P><B>평균임금이 최저임금 미만으로 나오면 최저임금을 기준으로 산정해요.</B> 이 경우에도 60%를 적용한 금액이 하한액(66,048원)보다 낮으면 하한액이 보장돼요. 결국 실업급여는 아무리 낮아도 1일 66,048원 이상은 받을 수 있어요.</P>
 
-      <Info type="tip">{'<strong>증빙 준비:</strong> 고용센터에서 자동 계산해주지만, 퇴직 전 <strong>3개월치 급여명세서</strong>를 보관해두면 이의 신청 시 유리해요.'}</Info>
+      <Info type="warn">{'<strong>증빙 준비:</strong> 고용센터에서 자동 계산해주지만, 퇴직 전 <strong>3개월치 급여명세서</strong>를 보관해두면 이의 신청 시 유리해요.'}</Info>
 
       <InlineLink icon={"\uD83D\uDCB0"} title={"\uC2E4\uC5C5\uAE09\uC5EC \uC5F0\uBD09\uBCC4 \uC608\uC0C1 \uC218\uB839\uC561 \uACC4\uC0B0"} desc={"\uB0B4 \uC5F0\uBD09 \uAE30\uC900\uC73C\uB85C \uC2E4\uC5C5\uAE09\uC5EC \uC608\uC0C1 \uC218\uB839\uC561\uC774 \uC5BC\uB9C8\uC778\uC9C0 \uBC14\uB85C \uACC4\uC0B0\uD560 \uC218 \uC788\uC5B4\uC694."} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uC5F0\uBD09\uBCC4-\uACC4\uC0B0" />
 

@@ -170,6 +170,7 @@ export default function Article62() {
             <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
               <Btn group="reported" value="done" label="이미 신고했어요" sel={sel} pick={pick} />
               <Btn group="reported" value="pending" label="아직 안 했어요" sel={sel} pick={pick} />
+              <Btn group="reported" value="unsure" label="잘 모르겠어요" sel={sel} pick={pick} />
             </div>
           </div>
           {Object.keys(sel).length >= 1 && (
@@ -202,7 +203,7 @@ export default function Article62() {
       </div>
 
       <Divider />
-      <Sec id="h2-1" question="실업급여 취업신고는 언제 해야 하나요?">
+      <Sec n="SECTION 01" id="h2-1" title="실업급여 취업신고는 언제 해야 하나요?" sub="신고 기한과 기준">
         <P>
           <B>취업한 날의 다음 날까지 신고해야 해요.</B> 취업 당일이 아니라 다음 날까지라는 점이
           중요해요. 예를 들어 3월 5일에 출근했다면 3월 6일까지 신고해야 해요.
@@ -212,7 +213,7 @@ export default function Article62() {
           그 하루치 실업급여를 돌려줘야 해요. 자진신고하면 추가 징수를 줄일 수 있지만, 적발되면
           혜택이 없어요.
         </P>
-        <InlineLink href="/w/실업급여-알바-미신고" label="부정수급 처벌 및 자진신고 감면 조건" />
+        <InlineLink icon="⚠️" title="부정수급 처벌 및 자진신고 감면 조건" desc="미신고 수급 시 반환과 추가 징수 내용" href="/w/실업급여-알바-미신고" />
         <P>
           여기서 "취업"의 기준은 실제 근무 시작일이에요. 합격 통보를 받은 날이나 근로계약서를 쓴
           날이 아니라 실제로 일을 시작한 날이에요. 수습 기간이라도 근무를 시작했으면 취업한 거예요.
@@ -224,7 +225,7 @@ export default function Article62() {
       </Sec>
 
       <Divider />
-      <Sec id="h2-2" question="실업급여 취업신고 방법은 어떻게 되나요?">
+      <Sec n="SECTION 02" id="h2-2" title="실업급여 취업신고 방법은 어떻게 되나요?" sub="온라인 · 방문 신고">
         <P>
           <B>두 가지 방법이 있어요.</B> <A href="https://www.ei.go.kr">고용24</A>에서 온라인으로
           신고하는 방법과, 관할 고용센터에 직접 방문하는 방법이에요.
@@ -233,7 +234,7 @@ export default function Article62() {
           온라인 신고가 훨씬 편해요. 고용24에 로그인 후 수급자격자 서비스 → 취업·훈련 신고 →
           취업신고 메뉴로 들어가면 돼요. 취업일, 사업장명, 취업 형태를 입력하면 5분이면 완료돼요.
         </P>
-        <InlineLink href="/w/실업급여-재취업-조건" label="취업신고 후 조기재취업수당 신청 방법" />
+        <InlineLink icon="💼" title="취업신고 후 조기재취업수당 신청 방법" desc="남은 급여 50% 받는 절차" href="/w/실업급여-재취업-조건" />
         <P>
           방문 신고는 취업신고서를 작성해서 고용센터 창구에 제출하면 돼요. 신분증과 근로계약서
           사본을 지참하면 빠르게 처리돼요. 주소지 관할 고용센터가 아니어도 어느 센터에서나 신고할
@@ -246,7 +247,7 @@ export default function Article62() {
       </Sec>
 
       <Divider />
-      <Sec id="h2-3" question="고용24에서 실업급여 취업신고는 어떻게 하나요?">
+      <Sec n="SECTION 03" id="h2-3" title="고용24에서 실업급여 취업신고는 어떻게 하나요?" sub="4단계 절차">
         <P>
           고용24 취업신고 온라인 절차는 <B>4단계</B>예요.
         </P>
@@ -272,7 +273,7 @@ export default function Article62() {
       </Sec>
 
       <Divider />
-      <Sec id="h2-4" question="실업급여 취업신고 안 하면 어떻게 되나요?">
+      <Sec n="SECTION 04" id="h2-4" title="실업급여 취업신고 안 하면 어떻게 되나요?" sub="부정수급 처벌 기준">
         <TableTitle>취업신고 방법별 비교</TableTitle>
         <div style={{ overflowX: "auto" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
@@ -306,13 +307,13 @@ export default function Article62() {
           그 기록이 수급이력과 대조되면 바로 발각돼요. 현금 근무라도 사용자가 비용 처리를 하면
           국세청 소득 자료에 남아요.
         </P>
-        <Info>자진신고하면 추가 징수 금액이 감면돼요. 이미 취업 후 실업급여를 받은 기간이 있다면, 하루라도 빨리 고용센터(1350)에 연락하세요.</Info>
+        <Info type="warn">자진신고하면 추가 징수 금액이 감면돼요. 이미 취업 후 실업급여를 받은 기간이 있다면, 하루라도 빨리 고용센터(1350)에 연락하세요.</Info>
         <P>
           취업신고 의무를 어기면 형사처벌도 가능해요. 금액이 크거나 기간이 길면 1년 이하 징역 또는
           300만 원 이하 벌금이에요. 전과 기록도 남을 수 있어서 단순한 돈 문제가 아니에요.
         </P>
-        <SpokeLink href="/w/실업급여-재취업-조건" title="조기재취업수당 신청 방법" desc="남은 급여 50% 받는 절차" />
-        <SpokeLink href="/w/실업급여-알바-미신고" title="부정수급 처벌 기준" desc="미신고 수급 시 환수 및 처벌 내용" />
+        <SpokeLink num="01" title="조기재취업수당 신청 방법" desc="남은 급여 50% 받는 절차" href="/w/실업급여-재취업-조건" />
+        <SpokeLink num="02" title="부정수급 처벌 기준" desc="미신고 수급 시 환수 및 처벌 내용" href="/w/실업급여-알바-미신고" />
       </Sec>
 
       <ExtBtn

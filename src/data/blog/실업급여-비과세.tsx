@@ -122,6 +122,7 @@ export default function Article() {
               <Btn group="income" value="work_and_ui" label="퇴직 전 근로소득 + 실업급여" sel={sel} pick={pick} />
               <Btn group="income" value="freelance_ui" label="프리랜서 소득 + 실업급여" sel={sel} pick={pick} />
               <Btn group="income" value="rehired_ui" label="재취업 근로소득 + 실업급여" sel={sel} pick={pick} />
+              <Btn group="income" value="unsure" label="잘 모르겠어요" sel={sel} pick={pick} />
             </div>
           </div>
 
@@ -187,6 +188,8 @@ export default function Article() {
       <P>퇴직 전 근로소득이 있다면 중도 퇴직자 연말정산을 해야 해요. 퇴직월까지의 근로소득에 대해서만 정산하면 되고, 이후 실업급여 기간은 포함하지 않아요.</P>
 
       <Info type="tip">{'<strong>실업급여를 소득에 잘못 포함했다면?</strong> 경정청구를 통해 돌려받을 수 있어요. <strong>5년 이내</strong>에 홈택스에서 경정청구를 하면 과납 세금을 환급받을 수 있어요.'}</Info>
+
+      <InlineLink icon="💰" title="실업급여 연봉별 예상 수령액 계산" desc="퇴직 전 연봉 기준으로 실업급여 예상 수령액이 얼마인지 바로 계산할 수 있어요." href="/w/실업급여-연봉별-계산" />
 
       <div style={{ margin: "20px 0" }}>
         <div style={{ fontSize: 13, fontWeight: 700, color: C.t1, marginBottom: 8 }}>{"📖 실업급여 세금·보험 더 알아보기"}</div>

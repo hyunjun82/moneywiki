@@ -99,6 +99,7 @@ export default function Article() {
               <Btn group="count" value="third" label="3회 (세 번째)" sel={sel} pick={pick} />
               <Btn group="count" value="fourth" label="4회 (네 번째)" sel={sel} pick={pick} />
               <Btn group="count" value="fifth_plus" label="5회 이상" sel={sel} pick={pick} />
+              <Btn group="count" value="unsure" label="잘 모르겠어요" sel={sel} pick={pick} />
             </div>
           </div>
 
@@ -160,7 +161,7 @@ export default function Article() {
 
       <P>감액 대상인지 확실하지 않다면 고용센터에서 피보험 이력을 조회하면 정확하게 확인할 수 있어요.</P>
 
-      <Info type="tip">{'<strong>핵심 기준:</strong> 이직일 기준 직전 5년 내 <strong>실제로 수급한 횟수</strong>만 계산해요. 수급자격만 인정받고 안 받은 경우는 미포함이에요.'}</Info>
+      <Info type="warn">{'<strong>핵심 기준:</strong> 이직일 기준 직전 5년 내 <strong>실제로 수급한 횟수</strong>만 계산해요. 수급자격만 인정받고 안 받은 경우는 미포함이에요.'}</Info>
 
       <InlineLink icon="📊" title="실업급여 수급자격 — 비자발적 퇴사 기준" desc="자발적 퇴사도 예외 인정되는 경우가 있어요. 180일 합산 조건도 함께 정리했어요." href="/w/실업급여-수급자격" />
 
