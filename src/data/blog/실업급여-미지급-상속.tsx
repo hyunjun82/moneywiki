@@ -57,52 +57,43 @@ export default function Page() {
   const [q3, setQ3] = useState<Q3 | "">("");
   const [q4, setQ4] = useState<Q4 | "">("");
 
+  type GridItem = { icon: string; name: string; pass: boolean; desc: string };
   type ResLink = { icon: string; title: string; desc: string; href: string };
-  type Result = { pass: boolean; title: string; desc: string; links: ResLink[] };
+  type Result = { pass: boolean; title: string; desc: string; grid: GridItem[]; links: ResLink[] };
 
   function getResult(): Result | null {
     if (!q1 || !q2 || !q3 || !q4) return null;
-
-    if (q4 === "over3") {
+    const grid: GridItem[] = [
+      { icon: "✅", name: "수급자격 인정", pass: q1 === "y", desc: q1 === "y" ? "수급자격 인정 완료" : "인정 전 사망 시 불가" },
+      { icon: "👨‍👩‍👧", name: "유족 관계", pass: true, desc: q2 === "spouse" ? "배우자 (1순위)" : q2 === "child" ? "자녀 (2순위)" : q2 === "parent" ? "부모 (3순위)" : "기타 유족" },
+      { icon: "📋", name: "선순위 유족 없음", pass: q3 === "y", desc: q3 === "y" ? "청구 우선권 보유" : "선순위 유족 포기 필요" },
+      { icon: "⏰", name: "소멸시효 3년 이내", pass: q4 === "within3", desc: q4 === "within3" ? "청구 기한 내 가능" : "3년 초과 청구권 소멸" },
+    ];
+    const allPass = grid.every((g) => g.pass);
+    if (allPass) {
       return {
-        pass: false,
-        title: "소멸시효가 지났어요",
-        desc: "사망일로부터 3년이 지나면 미지급 실업급여 청구권이 소멸돼요. 안타깝게도 청구가 어려워요.",
+        pass: true,
+        title: "미지급 실업급여 청구 가능해요",
+        desc: "관할 고용센터에 사망진단서, 유족관계증명서, 통장사본 등을 제출하면 돼요.",
+        grid,
         links: [
-          { icon: "📋", title: "실업급여 수급자격 인정 조건", desc: "기본 수급 요건 전체 정리", href: "/w/실업급여-수급자격-인정" },
-          { icon: "📅", title: "실업급여 소정급여일수 기준", desc: "나이·피보험기간별 일수 확인", href: "/w/실업급여-소정급여일수" },
-        ],
-      };
-    }
-    if (q1 === "n") {
-      return {
-        pass: false,
-        title: "수급자격 인정이 선행되어야 해요",
-        desc: "사망자가 수급자격 인정을 받지 못한 경우 미지급 실업급여를 청구할 수 없어요.",
-        links: [
-          { icon: "📋", title: "실업급여 수급자격 인정 조건", desc: "수급자격 인정 기준 상세 정리", href: "/w/실업급여-수급자격-인정" },
-          { icon: "📅", title: "실업급여 신청방법 안내", desc: "고용24 온라인 신청 전체 흐름", href: "/w/실업급여-신청방법" },
-        ],
-      };
-    }
-    if (q3 === "n") {
-      return {
-        pass: false,
-        title: "선순위 유족이 먼저 청구해야 해요",
-        desc: "유족 중 선순위가 있다면 선순위 유족이 먼저 청구해야 해요. 선순위 유족이 포기하면 다음 순위가 청구할 수 있어요.",
-        links: [
-          { icon: "📋", title: "실업급여 미지급 청구 서류", desc: "유족 순위별 서류 목록 확인", href: "/w/실업급여-미지급-상속" },
-          { icon: "🏢", title: "고용24 미지급 청구 안내", desc: "고용센터 방문 청구 방법", href: "https://www.ei.go.kr/ei/eih/cm/hm/main.do" },
+          { icon: "🏢", title: "고용24 미지급 실업급여 청구", desc: "관할 고용센터 방문 청구 안내", href: "https://www.ei.go.kr/ei/eih/cm/hm/main.do" },
+          { icon: "📋", title: "실업급여 구비서류 목록", desc: "청구에 필요한 기본 서류 목록", href: "/w/실업급여-구비서류" },
+          { icon: "📅", title: "실업급여 소정급여일수 기준", desc: "나이·피보험기간별 수급 일수 확인", href: "/w/실업급여-소정급여일수" },
+          { icon: "💰", title: "실업급여 상한액 하한액 기준", desc: "1일 구직급여액 계산 기준", href: "/w/실업급여-상한액" },
         ],
       };
     }
     return {
-      pass: true,
-      title: "미지급 실업급여 청구 가능해요",
-      desc: "관할 고용센터에 사망진단서, 유족관계증명서, 통장사본 등을 제출하면 돼요.",
+      pass: false,
+      title: "미충족 조건이 있어요",
+      desc: "빨간 항목을 확인하세요. 소멸시효 3년 초과 시 청구권이 소멸돼요. 수급자격 미인정 상태에서는 청구가 불가해요.",
+      grid,
       links: [
-        { icon: "🏢", title: "고용24 미지급 실업급여 청구", desc: "관할 고용센터 방문 청구 안내", href: "https://www.ei.go.kr/ei/eih/cm/hm/main.do" },
-        { icon: "📋", title: "실업급여 구비서류 목록", desc: "청구에 필요한 기본 서류 목록", href: "/w/실업급여-구비서류" },
+        { icon: "📋", title: "실업급여 수급자격 인정 조건", desc: "수급자격 인정 기준 상세 정리", href: "/w/실업급여-수급자격-인정" },
+        { icon: "📅", title: "실업급여 신청방법 안내", desc: "고용24 온라인 신청 전체 흐름", href: "/w/실업급여-신청방법" },
+        { icon: "🏢", title: "고용24 미지급 청구 안내", desc: "고용센터 방문 청구 방법", href: "https://www.ei.go.kr/ei/eih/cm/hm/main.do" },
+        { icon: "📅", title: "실업급여 소정급여일수 기준", desc: "나이·피보험기간별 일수 확인", href: "/w/실업급여-소정급여일수" },
       ],
     };
   }
@@ -169,12 +160,14 @@ export default function Page() {
             const links = result.links as ResLink[];
             return result.pass ? (
               <ResultPass title={result.title} desc={result.desc}>
+                <ResultGrid items={result.grid} />
                 {links.map((l) => (
                   <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
                 ))}
               </ResultPass>
             ) : (
               <ResultFail title={result.title} desc={result.desc}>
+                <ResultGrid items={result.grid} />
                 {links.map((l) => (
                   <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
                 ))}

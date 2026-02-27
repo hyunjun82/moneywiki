@@ -58,62 +58,44 @@ export default function Page() {
   const [q4, setQ4] = useState<Q4 | "">("");
 
   type ResLink = { icon: string; title: string; desc: string; href: string };
-  type Result = { pass: boolean; title: string; desc: string; links: ResLink[] };
+  type GridItem = { icon: string; name: string; pass: boolean; desc: string };
+  type Result = { pass: boolean; title: string; desc: string; grid: GridItem[]; links: ResLink[] };
 
   function getResult(): Result | null {
     if (!q1 || !q2 || !q3 || !q4) return null;
 
-    if (q1 === "y" && q2 === "y" && q3 !== "short" && q4 === "none") {
+    const grid: GridItem[] = [
+      { icon: "💰", name: "구직급여 수급 중", pass: q1 === "y", desc: q1 === "y" ? "현재 수급 중이에요" : "미신청 상태예요" },
+      { icon: "📅", name: "잔여일수 50% 이상", pass: q2 === "y", desc: q2 === "y" ? "절반 이상 남아있어요" : "절반 미만이에요" },
+      { icon: "🏢", name: "12개월 이상 고용", pass: q3 !== "short", desc: q3 === "regular" ? "정규직·계약직 가능" : q3 === "startup" ? "자영업 창업 가능" : "단기직 미충족" },
+      { icon: "📋", name: "3년 재수급 없음", pass: q4 === "none", desc: q4 === "none" ? "재수급 이력 없음" : "3년 이내 이력 있음" },
+    ];
+    const allPass = grid.every((g) => g.pass);
+
+    if (allPass) {
       return {
         pass: true,
         title: "조기재취업수당 신청 가능해요",
-        desc: "잔여일수 절반 이상 + 12개월 이상 고용 조건이 충족돼요. 재취업 후 12개월 뒤 고용24에서 신청하면 돼요.",
+        desc: "4가지 조건이 모두 충족돼요. 재취업 후 12개월 뒤 고용24에서 잔여일수 × 50% 금액을 신청하세요.",
+        grid,
         links: [
-          { icon: "🏢", title: "고용24 조기재취업수당 신청", desc: "재취업 12개월 후 온라인 신청 가능", href: "https://www.ei.go.kr/ei/eih/cm/hm/main.do" },
-          { icon: "📋", title: "실업급여 소정급여일수 확인", desc: "잔여일수 계산 기준 정리", href: "/w/실업급여-소정급여일수" },
-        ],
-      };
-    }
-    if (q1 === "n") {
-      return {
-        pass: false,
-        title: "구직급여 수급 중이어야 해요",
-        desc: "조기재취업수당은 구직급여 수급 중에 재취업한 경우에만 해당돼요. 먼저 실업급여 신청부터 해야 해요.",
-        links: [
-          { icon: "📋", title: "실업급여 신청방법 안내", desc: "고용24 온라인 신청 단계별 안내", href: "/w/실업급여-신청방법" },
-          { icon: "📅", title: "실업급여 신청기간 기한", desc: "퇴직 후 12개월 이내 접수 시기", href: "/w/실업급여-신청기간" },
-        ],
-      };
-    }
-    if (q2 === "n") {
-      return {
-        pass: false,
-        title: "잔여일수가 부족해요",
-        desc: "소정급여일수의 절반 이상이 남아있어야 해요. 잔여일수를 먼저 확인해 보세요.",
-        links: [
-          { icon: "📋", title: "실업급여 소정급여일수 기준", desc: "나이·피보험기간별 일수 확인", href: "/w/실업급여-소정급여일수" },
-          { icon: "📅", title: "실업급여 수급기간 몇 개월", desc: "최대 9개월 수급 기간 안내", href: "/w/실업급여-수급기간-몇개월-받나요" },
-        ],
-      };
-    }
-    if (q3 === "short") {
-      return {
-        pass: false,
-        title: "단기·임시직은 조건 미충족이에요",
-        desc: "12개월 이상 계속 고용이 가능한 직장에 재취업해야 해요. 12개월 미만 단기 계약은 해당되지 않아요.",
-        links: [
-          { icon: "📋", title: "실업급여 수급자격 인정 조건", desc: "기본 수급 요건 다시 확인", href: "/w/실업급여-수급자격-인정" },
-          { icon: "📅", title: "실업급여 실업인정 특례 조건", desc: "온라인 인정 구직활동 완화 안내", href: "/w/실업급여-실업인정-특례" },
+          { icon: "🏢", title: "고용24 조기재취업수당 신청", desc: "재취업 12개월 후 온라인 신청", href: "https://www.ei.go.kr/ei/eih/cm/hm/main.do" },
+          { icon: "📅", title: "실업급여 소정급여일수 확인", desc: "잔여일수 계산 기준 정리", href: "/w/실업급여-소정급여일수" },
+          { icon: "💰", title: "실업급여 연봉별 계산 예시", desc: "내 월급 기준 구직급여 예상액", href: "/w/실업급여-연봉별-계산" },
+          { icon: "📋", title: "실업급여 신청방법 안내", desc: "고용24 온라인 신청 단계별", href: "/w/실업급여-신청방법" },
         ],
       };
     }
     return {
       pass: false,
-      title: "3년 내 재수급 제한이에요",
-      desc: "조기재취업수당을 받은 날로부터 3년이 지나야 다시 신청할 수 있어요.",
+      title: "미충족 조건이 있어요",
+      desc: "빨간 항목을 확인해 보세요. 조건을 갖추면 조기재취업수당을 받을 수 있어요.",
+      grid,
       links: [
-        { icon: "📋", title: "실업급여 수급자격 인정 조건", desc: "기본 수급 요건 확인", href: "/w/실업급여-수급자격-인정" },
-        { icon: "📅", title: "실업급여 소정급여일수 기준", desc: "잔여일수 계산 기준", href: "/w/실업급여-소정급여일수" },
+        { icon: "📋", title: "실업급여 수급자격 인정 조건", desc: "기본 수급 요건 전체 정리", href: "/w/실업급여-수급자격-인정" },
+        { icon: "📅", title: "실업급여 소정급여일수 기준", desc: "나이·피보험기간별 일수 확인", href: "/w/실업급여-소정급여일수" },
+        { icon: "🏢", title: "실업급여 신청방법 안내", desc: "고용24 온라인 신청 전체 흐름", href: "/w/실업급여-신청방법" },
+        { icon: "🔍", title: "실업급여 실업인정 특례 조건", desc: "온라인 인정 구직활동 완화", href: "/w/실업급여-실업인정-특례" },
       ],
     };
   }
@@ -180,12 +162,14 @@ export default function Page() {
             const links = result.links as ResLink[];
             return result.pass ? (
               <ResultPass title={result.title} desc={result.desc}>
+                <ResultGrid items={result.grid} />
                 {links.map((l) => (
                   <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
                 ))}
               </ResultPass>
             ) : (
               <ResultFail title={result.title} desc={result.desc}>
+                <ResultGrid items={result.grid} />
                 {links.map((l) => (
                   <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
                 ))}
@@ -209,6 +193,14 @@ export default function Page() {
         <P>첫 번째 조건은 <B>잔여 소정급여일수의 절반(50%) 이상</B>이 남아있어야 해요. 소정급여일수가 180일이라면 90일 이상이 남은 상태에서 재취업해야 해요. 잔여일수가 절반 미만이면 조기재취업수당이 아닌 다른 취업촉진수당을 검토해야 해요.</P>
         <P>두 번째 조건은 <B>12개월 이상 계속 고용</B>이에요. 재취업한 사업장에서 고용보험 피보험자로 12개월 이상 유지돼야 해요. 자영업자로 창업한 경우에는 사업자 등록 후 12개월 이상 사업을 영위해야 해요.</P>
         <P>세 번째 조건은 <B>재취업 전 3년 이내에 조기재취업수당을 받은 사실이 없을 것</B>이에요. 이전에 이미 받은 적이 있다면 3년이 지난 뒤에만 다시 신청할 수 있어요. 대기기간 7일이 경과한 뒤 재취업해야 하는 것도 필수 조건이에요.</P>
+        <TableTitle>조기재취업수당 4가지 필수 조건</TableTitle>
+        <TH cols={["조건", "기준", "충족 여부"]} rows={[
+          ["구직급여 수급 중", "수급자격 인정 + 대기기간(7일) 경과 후", "수급 중이어야 함"],
+          ["잔여일수 50% 이상", "소정급여일수의 절반 이상 남아있어야 함", "절반 이상 필수"],
+          ["12개월 이상 고용", "정규직·계약직·자영업 모두 인정, 단기직 제외", "12개월 계속 유지"],
+          ["3년 이내 재수급 없음", "이전 조기재취업수당 수령일로부터 3년 경과", "중복 수령 불가"],
+        ]} />
+        <TableNote>* 4가지 조건 중 하나라도 미충족 시 수당 지급이 불가해요.</TableNote>
         <Info type="warn">{"<strong>대기기간 이후 재취업이어야 해요:</strong> 수급자격 인정 후 대기기간(7일)이 지난 상태에서 재취업해야 조기재취업수당 대상이 돼요. 대기기간 중 재취업한 경우에는 해당되지 않아요."}</Info>
         <InlineLink icon="📋" title="실업급여 대기기간 안내" desc="7일 대기기간 및 예외 조건 상세 정리" href="/w/실업급여-대기기간" />
       </Sec>

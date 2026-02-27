@@ -57,54 +57,45 @@ export default function Page() {
   const [q3, setQ3] = useState<Q3 | "">("");
   const [q4, setQ4] = useState<Q4 | "">("");
 
+  type GridItem = { icon: string; name: string; pass: boolean; desc: string };
   type ResLink = { icon: string; title: string; desc: string; href: string };
-  type Result = { pass: boolean; title: string; desc: string; links: ResLink[] };
+  type Result = { pass: boolean; title: string; desc: string; grid: GridItem[]; links: ResLink[] };
 
   function getResult(): Result | null {
     if (!q1 || !q2 || !q3 || !q4) return null;
-
-    if (q1 === "issued" && q2 === "y" && q3 === "involuntary") {
+    const grid: GridItem[] = [
+      { icon: "📄", name: "이직확인서 발급", pass: q1 === "issued", desc: q1 === "issued" ? "사업주 제출 완료" : "아직 미발급 상태예요" },
+      { icon: "📅", name: "피보험기간 180일+", pass: q2 === "y", desc: q2 === "y" ? "수급 요건 충족" : "기간 부족으로 미충족" },
+      { icon: "🏢", name: "비자발적 퇴사", pass: q3 === "involuntary", desc: q3 === "involuntary" ? "수급 대상 퇴사 사유" : "추가 증빙 서류 필요" },
+      { icon: "💻", name: "신청 방법 준비", pass: true, desc: q4 === "online" ? "온라인 신청 가능" : "방문 서류 지참 필요" },
+    ];
+    const allPass = grid.every((g) => g.pass);
+    if (allPass) {
       return {
         pass: true,
         title: "서류 준비 완료, 신청 가능해요",
         desc: q4 === "online"
           ? "고용24 온라인으로 바로 수급자격 인정 신청을 할 수 있어요. 신분증·통장사본을 스캔해 두세요."
           : "고용센터 방문 신청 시 이직확인서·신분증·통장사본·증명사진 1장을 챙기면 돼요.",
+        grid,
         links: [
           { icon: "🏢", title: "고용24 수급자격 인정 신청", desc: "온라인 신청 바로가기", href: "https://www.ei.go.kr/ei/eih/cm/hm/main.do" },
           { icon: "📋", title: "실업급여 신청방법 단계별 안내", desc: "신청 절차 전체 흐름 정리", href: "/w/실업급여-신청방법" },
-        ],
-      };
-    }
-    if (q1 === "not") {
-      return {
-        pass: false,
-        title: "이직확인서 발급이 먼저예요",
-        desc: "사업주에게 이직확인서 발급을 요청하세요. 퇴직 후 10일 이내에 제출해야 해요. 미발급 시 고용센터에 신고할 수 있어요.",
-        links: [
-          { icon: "📋", title: "실업급여 신청기간 기한", desc: "이직확인서 처리 후 신청 시기", href: "/w/실업급여-신청기간" },
-          { icon: "🏢", title: "고용24 이직확인서 신고", desc: "미발급 사업주 신고 바로가기", href: "https://www.ei.go.kr/ei/eih/cm/hm/main.do" },
-        ],
-      };
-    }
-    if (q2 === "n") {
-      return {
-        pass: false,
-        title: "피보험기간 180일 이상이 필요해요",
-        desc: "피보험기간이 부족하면 수급 자격이 안 돼요. 이전 직장 피보험기간을 합산할 수 있어요.",
-        links: [
-          { icon: "📋", title: "실업급여 수급자격 인정 조건", desc: "피보험기간 합산 방법 안내", href: "/w/실업급여-수급자격-인정" },
-          { icon: "📅", title: "실업급여 피보험기간 180일 계산", desc: "근무일수 계산 기준 정리", href: "/w/실업급여-피보험기간-180일-계산" },
+          { icon: "📅", title: "실업급여 신청기간 기한", desc: "퇴직 후 12개월 이내 신청해야 해요", href: "/w/실업급여-신청기간" },
+          { icon: "💰", title: "실업급여 연봉별 계산 예시", desc: "내 월급 기준 예상 수령액 확인", href: "/w/실업급여-연봉별-계산" },
         ],
       };
     }
     return {
       pass: false,
-      title: "자발적 퇴사는 추가 서류가 필요해요",
-      desc: "자발적 퇴사 예외 사유(임금체불, 직장 내 괴롭힘 등)가 있다면 증빙 서류를 추가로 제출해야 해요.",
+      title: "미충족 항목이 있어요",
+      desc: "빨간 항목을 먼저 해결하세요. 이직확인서 미발급 시 사업주에게 요청하거나 고용센터에 신고할 수 있어요.",
+      grid,
       links: [
-        { icon: "📋", title: "실업급여 임금삭감 퇴직 사유", desc: "자발적 퇴사 예외 인정 사유", href: "/w/실업급여-임금삭감-퇴직-정당사유" },
-        { icon: "📅", title: "실업급여 수급자격 인정 조건", desc: "비자발적 퇴사 해당 여부 확인", href: "/w/실업급여-수급자격-인정" },
+        { icon: "📋", title: "실업급여 수급자격 인정 조건", desc: "피보험기간 합산 방법 안내", href: "/w/실업급여-수급자격-인정" },
+        { icon: "📅", title: "실업급여 피보험기간 180일 계산", desc: "근무일수 계산 기준 정리", href: "/w/실업급여-피보험기간-180일-계산" },
+        { icon: "🏢", title: "고용24 이직확인서 신고", desc: "미발급 사업주 신고 바로가기", href: "https://www.ei.go.kr/ei/eih/cm/hm/main.do" },
+        { icon: "🔍", title: "실업급여 임금삭감 퇴직 사유", desc: "자발적 퇴사 예외 인정 사유", href: "/w/실업급여-임금삭감-퇴직-정당사유" },
       ],
     };
   }
@@ -171,12 +162,14 @@ export default function Page() {
             const links = result.links as ResLink[];
             return result.pass ? (
               <ResultPass title={result.title} desc={result.desc}>
+                <ResultGrid items={result.grid} />
                 {links.map((l) => (
                   <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
                 ))}
               </ResultPass>
             ) : (
               <ResultFail title={result.title} desc={result.desc}>
+                <ResultGrid items={result.grid} />
                 {links.map((l) => (
                   <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
                 ))}
