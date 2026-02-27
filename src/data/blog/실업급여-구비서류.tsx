@@ -1,271 +1,279 @@
 "use client";
-
 import { useState } from "react";
 import {
-  C, Btn, Info, Divider, Sec, P, B, A,
-  TableTitle, TableNote, TH, THL,
-  BridgeCard, BlogLayout, TOC, Summary3,
+  BlogLayout, TOC, Summary3, Sec, P, B, A, H3,
+  Info, InlineLink, SpokeLink, BridgeCard, ExtBtn,
   FAQAccordion, RelatedArticles, PrevNext,
-  InlineLink, SpokeLink,
+  RelatedMid, SidebarCTA, SidebarDocs, SidebarCalc,
+  CheckerShell, CheckerQ, ResultPass, ResultFail, ResultGrid, ResultCTA,
+  Divider, TableTitle, TableNote, TH, THL, Tag, Btn,
+  FormulaCard, CaseBox, ChipsGrid,
 } from "@/components/wiki/BlogShared";
 
-type ResLink = { icon: string; title: string; href: string };
-type Res = { pass: boolean; headline: string; detail: string; badges: string[]; links: ResLink[] };
+type Q1 = "issued" | "not";
+type Q2 = "y" | "n";
+type Q3 = "involuntary" | "voluntary";
+type Q4 = "online" | "visit";
 
-const docLinks: ResLink[] = [
-  { icon: "📋", title: "실업급여 신청방법 — 고용24 워크넷 절차", href: "/w/실업급여-신청방법" },
-  { icon: "📄", title: "워크넷 구직등록 방법", href: "/w/실업급여-실업신고" },
-];
+const meta = {
+  title: "실업급여 구비서류 준비 목록 | 이직확인서 통장 사진 필요 서류",
+  description: "실업급여 신청에 필요한 구비서류를 정리했어요. 이직확인서, 신분증, 통장사본, 사진까지 온라인과 방문 신청 차이도 함께 알려드려요.",
+  category: "실업급여",
+  keywords: [
+    "실업급여 구비서류 준비 목록",
+    "이직확인서 발급 고용보험 서류",
+    "실업급여 구비서류 온라인 방문 차이",
+    "실업급여 구비서류 추가 제출 서류",
+  ],
+  author: "머니위키 에디터",
+  updateNote: "2026년 2월 기준",
+  lastUpdated: "2026-02-27",
+  datePublished: "2026-02-27",
+  summary: [
+    "기본 구비서류: 이직확인서 + 신분증 + 통장사본 + 사진 1장",
+    "이직확인서는 퇴직 후 사업주가 10일 이내에 고용24로 제출해요",
+    "온라인 신청은 사진 불필요, 방문 신청은 증명사진 1장 지참해요",
+  ],
+  sources: [
+    { name: "고용24 실업급여 신청 안내", url: "https://www.ei.go.kr/ei/eih/es/pb/pbAr/retrievePbArInfo.do?games_no=4821&menu_id=&ggn_type=sub", date: "2026-02" },
+  ],
+  faq: [
+    { q: "실업급여 구비서류 이직확인서 없으면 신청 안 되나요?", a: "이직확인서가 없어도 수급자격 인정 신청은 가능해요. 다만 이직확인서가 처리돼야 구직급여를 실제로 받을 수 있어요. 사업주가 발급을 안 해주면 고용센터에 직접 신고할 수 있어요." },
+    { q: "실업급여 구비서류 온라인 신청 시 사진이 필요한가요?", a: "고용24 온라인 신청 시에는 별도의 증명사진이 필요하지 않아요. 방문 신청 시에만 증명사진 1장을 지참해야 해요." },
+  ],
+  ctaCard: {
+    label: "30초 확인",
+    mainText: "내 서류 준비가 됐는지 체크해요",
+    subText: "4가지만 선택하면 바로 결과 확인",
+    url: "#checker",
+    external: false,
+  },
+  relatedDocs: [{ title: "실업급여 신청방법", url: "/w/실업급여-신청방법" }],
+};
 
-function getResult(sel: Record<string, string>): Res | null {
-  const { confirm, dispute } = sel;
-  if (!confirm || !dispute) return null;
+export default function Page() {
+  const [q1, setQ1] = useState<Q1 | "">("");
+  const [q2, setQ2] = useState<Q2 | "">("");
+  const [q3, setQ3] = useState<Q3 | "">("");
+  const [q4, setQ4] = useState<Q4 | "">("");
 
-  if (confirm === "done" && dispute === "no") return {
-    pass: true,
-    headline: "서류 준비 완료! 신분증 챙겨서 고용센터 방문하면 돼요",
-    detail: "이직확인서 처리 완료 + 이직 사유에 분쟁 없음 → 신분증만 있으면 수급자격 인정 신청이 가능해요. 고용센터에서 추가 서류를 요청할 수도 있으니 퇴직 관련 서류는 보관해두세요.",
-    badges: ["신분증만 필요", "방문 준비 완료"],
-    links: docLinks,
-  };
-  if (confirm === "done" && dispute === "yes") return {
-    pass: false,
-    headline: "이직 사유 분쟁 시 추가 서류가 필요해요",
-    detail: "부당해고·임금체불 등 분쟁이 있으면 근로계약서, 급여명세서, 해고통보서 등 관련 서류를 챙기세요. 고용센터에서 실제 이직 사유를 확인하는 데 사용돼요.",
-    badges: ["추가 서류 필요", "분쟁 사유 증빙"],
-    links: docLinks,
-  };
-  if (confirm === "pending" && dispute === "no") return {
-    pass: false,
-    headline: "이직확인서 제출 먼저 확인해야 해요",
-    detail: "고용24에서 이직확인서 처리 여부를 조회하세요. 회사는 퇴직 후 10일 이내 제출 의무가 있어요. 미제출이면 회사에 요청하거나 고용센터에 신고할 수 있어요.",
-    badges: ["이직확인서 확인 필요"],
-    links: docLinks,
-  };
-  if (confirm === "pending" && dispute === "yes") return {
-    pass: false,
-    headline: "이직확인서 + 분쟁 서류 모두 준비해야 해요",
-    detail: "이직확인서가 처리되지 않았고 이직 사유 분쟁도 있으면 준비할 게 많아요. 고용센터에 먼저 전화해서 필요한 서류 목록을 확인받고 방문하는 게 좋아요.",
-    badges: ["이직확인서 확인 필요", "추가 서류 준비"],
-    links: docLinks,
-  };
-  if (confirm === "no" && dispute === "no") return {
-    pass: false,
-    headline: "이직확인서 없이는 수급자격 신청이 안 돼요",
-    detail: "이직확인서가 미처리 상태면 고용센터 방문해도 수급자격 신청이 안 돼요. 회사에 제출 요청하거나 고용센터에 신고할 수 있어요. 제출 후 처리까지 2~3일 걸려요.",
-    badges: ["이직확인서 없음", "방문 불가 상태"],
-    links: docLinks,
-  };
-  if (confirm === "no" && dispute === "yes") return {
-    pass: false,
-    headline: "이직확인서 미제출 + 분쟁 — 고용센터 상담이 먼저예요",
-    detail: "이직확인서 미제출과 이직 사유 분쟁이 겹치면 고용센터에 전화 또는 방문 상담을 먼저 받는 게 좋아요. 분쟁 사유 증빙도 함께 준비하세요.",
-    badges: ["상담 필요", "이직확인서 없음"],
-    links: docLinks,
-  };
+  type ResLink = { icon: string; title: string; desc: string; href: string };
+  type Result = { pass: boolean; title: string; desc: string; links: ResLink[] };
 
-  return null;
-}
+  function getResult(): Result | null {
+    if (!q1 || !q2 || !q3 || !q4) return null;
 
-export default function Article() {
-  const [sel, setSel] = useState<Record<string, string>>({});
-  const pick = (g: string, v: string) => setSel((p) => ({ ...p, [g]: v }));
-  const result = getResult(sel);
+    if (q1 === "issued" && q2 === "y" && q3 === "involuntary") {
+      return {
+        pass: true,
+        title: "서류 준비 완료, 신청 가능해요",
+        desc: q4 === "online"
+          ? "고용24 온라인으로 바로 수급자격 인정 신청을 할 수 있어요. 신분증·통장사본을 스캔해 두세요."
+          : "고용센터 방문 신청 시 이직확인서·신분증·통장사본·증명사진 1장을 챙기면 돼요.",
+        links: [
+          { icon: "🏢", title: "고용24 수급자격 인정 신청", desc: "온라인 신청 바로가기", href: "https://www.ei.go.kr/ei/eih/cm/hm/main.do" },
+          { icon: "📋", title: "실업급여 신청방법 단계별 안내", desc: "신청 절차 전체 흐름 정리", href: "/w/실업급여-신청방법" },
+        ],
+      };
+    }
+    if (q1 === "not") {
+      return {
+        pass: false,
+        title: "이직확인서 발급이 먼저예요",
+        desc: "사업주에게 이직확인서 발급을 요청하세요. 퇴직 후 10일 이내에 제출해야 해요. 미발급 시 고용센터에 신고할 수 있어요.",
+        links: [
+          { icon: "📋", title: "실업급여 신청기간 기한", desc: "이직확인서 처리 후 신청 시기", href: "/w/실업급여-신청기간" },
+          { icon: "🏢", title: "고용24 이직확인서 신고", desc: "미발급 사업주 신고 바로가기", href: "https://www.ei.go.kr/ei/eih/cm/hm/main.do" },
+        ],
+      };
+    }
+    if (q2 === "n") {
+      return {
+        pass: false,
+        title: "피보험기간 180일 이상이 필요해요",
+        desc: "피보험기간이 부족하면 수급 자격이 안 돼요. 이전 직장 피보험기간을 합산할 수 있어요.",
+        links: [
+          { icon: "📋", title: "실업급여 수급자격 인정 조건", desc: "피보험기간 합산 방법 안내", href: "/w/실업급여-수급자격-인정" },
+          { icon: "📅", title: "실업급여 피보험기간 180일 계산", desc: "근무일수 계산 기준 정리", href: "/w/실업급여-피보험기간-180일-계산" },
+        ],
+      };
+    }
+    return {
+      pass: false,
+      title: "자발적 퇴사는 추가 서류가 필요해요",
+      desc: "자발적 퇴사 예외 사유(임금체불, 직장 내 괴롭힘 등)가 있다면 증빙 서류를 추가로 제출해야 해요.",
+      links: [
+        { icon: "📋", title: "실업급여 임금삭감 퇴직 사유", desc: "자발적 퇴사 예외 인정 사유", href: "/w/실업급여-임금삭감-퇴직-정당사유" },
+        { icon: "📅", title: "실업급여 수급자격 인정 조건", desc: "비자발적 퇴사 해당 여부 확인", href: "/w/실업급여-수급자격-인정" },
+      ],
+    };
+  }
+
+  const result = getResult();
 
   return (
     <BlogLayout
       breadcrumb={["홈", "실업급여", "구비서류"]}
-      tags={["2026년 기준", "실업급여", "이직확인서"]}
-      date="2026-02-24"
-      title="실업급여 신청 구비서류 및 절차 | 이직확인서 발급 방법"
-      description={
-        <>
-          신분증 하나면 돼요. <strong style={{ color: C.t1 }}>이직확인서는 회사가 제출</strong>해요. 본인이 직접 챙길 서류는 신분증뿐인데, 이직확인서 처리 여부 확인이 핵심이에요.
-        </>
-      }
-      sourceBar={{ badge: "출처", name: "고용보험법 · 고용24", date: "2026.02 기준" }}
-      stickyLabel="서류 확인"
-      stickyValue="이직확인서"
-      stickyBtn="고용24 조회 →"
-      stickyHref="https://www.work24.go.kr"
+      tags={["2026년 최신", "실업급여", "신청서류"]}
+      date={meta.lastUpdated}
+      title={meta.title}
+      description={<>실업급여 신청에 필요한 서류가 뭔지 막막하죠. 핵심 서류는 <B>이직확인서 + 신분증 + 통장사본</B>이에요. 온라인과 방문 신청에 따라 준비 서류가 조금 달라요. 체커로 먼저 내 상황을 확인해 보세요.</>}
+      sourceBar={{ badge: "출처", name: "고용24 실업급여 신청 안내", date: "2026.02 기준" }}
+      stickyLabel="기본 서류"
+      stickyValue="이직확인서·신분증·통장"
+      stickyBtn="서류 준비 체크 ↑"
+      disclaimer="이 글은 고용24 공식 안내를 바탕으로 작성된 정보 제공 목적의 콘텐츠예요. 정확한 서류 목록은 관할 고용센터에서 확인하세요."
+      sidebar={<>
+        <SidebarCTA items={[
+          { icon: "📋", title: "고용24 수급자격 신청", sub: "온라인 신청 바로가기", href: "https://www.ei.go.kr/ei/eih/cm/hm/main.do", hot: true },
+          { icon: "📅", title: "실업급여 신청기간 확인", sub: "퇴직 후 12개월 이내", href: "/w/실업급여-신청기간" },
+          { icon: "💰", title: "실업급여 계산기", sub: "예상 수령액 미리 계산", href: "/w/실업급여-연봉별-계산" },
+        ]} />
+        <SidebarDocs items={[
+          { title: "실업급여 신청방법 안내", cat: "실업급여·신청", href: "/w/실업급여-신청방법" },
+          { title: "실업급여 신청기간 기한", cat: "실업급여·기한", href: "/w/실업급여-신청기간" },
+          { title: "실업급여 수급자격 인정", cat: "실업급여·자격", href: "/w/실업급여-수급자격-인정" },
+          { title: "실업급여 실업신고 방법", cat: "실업급여·신고", href: "/w/실업급여-실업신고" },
+          { title: "실업급여 대기기간 안내", cat: "실업급여·대기", href: "/w/실업급여-대기기간" },
+        ]} />
+        <SidebarCalc items={[
+          { title: "실업급여 계산기", href: "/w/실업급여-연봉별-계산" },
+          { title: "퇴직금 계산기", href: "/w/퇴직급여-지급-지연이자-받기" },
+          { title: "건강보험료 계산기", href: "/w/건강보험-지역가입자-보험료-계산" },
+          { title: "연말정산 계산기", href: "/w/프리랜서-3.3-원천징수-환급" },
+          { title: "소득세 계산기", href: "/w/종합소득세-신고-안하면-가산세" },
+        ]} />
+      </>}
     >
       <TOC items={[
-        { t: "구비서류 준비 상태 체크", sub: "이직확인서 처리 여부 확인" },
-        { t: "실업급여 신청 구비서류는 뭐가 있나요?", sub: null },
-        { t: "실업급여 이직확인서는 어떻게 받나요?", sub: "발급 요청과 처리 흐름" },
-        { t: "실업급여 신청 필요 서류는 온라인으로 제출할 수 있나요?", sub: null },
-        { t: "실업급여 구비서류 빠뜨리면 어떻게 되나요?", sub: null },
+        { t: "내 서류 준비 됐는지 체크해요", sub: null },
+        { t: "실업급여 구비서류 기본 목록은?", sub: "이직확인서 · 신분증 · 통장사본 · 사진" },
+        { t: "실업급여 구비서류 온라인과 방문 차이는?", sub: "온라인 스캔 제출 · 방문 원본 지참" },
+        { t: "실업급여 구비서류 추가 제출 서류는?", sub: "자발적 퇴사 예외 · 특수 케이스 서류" },
+        { t: "실업급여 구비서류 이직확인서 없으면?", sub: "사업주 미발급 · 고용센터 신고 방법" },
         { t: "자주 묻는 질문", sub: null },
       ]} />
-
       <Summary3 items={[
-        "본인이 직접 챙길 서류는 <strong>신분증 하나</strong>예요. 나머지는 회사와 시스템이 처리해요.",
-        "이직확인서는 <strong>회사가 퇴직 후 10일 이내</strong> 고용24에 제출해야 해요.",
-        "이직 사유에 <strong>분쟁이 있는 경우에만</strong> 근로계약서·급여명세서 등 추가 서류가 필요해요.",
+        "기본 구비서류: 이직확인서 + 신분증 + 통장사본 + 사진 1장",
+        "이직확인서는 퇴직 후 사업주가 10일 이내에 고용24로 제출해요",
+        "온라인 신청은 사진 불필요, 방문 신청은 증명사진 1장 지참해요",
       ]} />
 
-      {/* ── STEP 01. 체커 ── */}
-      <Divider />
-      <Sec n="STEP 01" id="checker" title="구비서류 준비 상태 체크" sub="이직확인서 상태와 이직 사유를 선택해주세요" />
-
-      <P>이직확인서 처리 여부와 이직 사유 분쟁 여부에 따라 필요한 서류가 달라져요.</P>
-
-      <div style={{ background: "#FFF", border: `1px solid ${C.line}`, borderRadius: 12, overflow: "hidden" }}>
-        <div style={{ background: C.navy, padding: "16px 18px", display: "flex", alignItems: "center", gap: 12 }}>
-          <div style={{ width: 38, height: 38, background: "#fff", borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>&#x1F4C4;</div>
-          <div>
-            <h3 style={{ color: "#fff", fontSize: 15, fontWeight: 700, margin: 0 }}>실업급여 구비서류 체크</h3>
-            <p style={{ color: "rgba(255,255,255,.7)", fontSize: 12, marginTop: 1, margin: 0 }}>내 상황에 맞는 서류 확인</p>
-          </div>
-        </div>
-        <div style={{ padding: "20px 18px" }}>
-          <div style={{ marginBottom: 18 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: C.t2, marginBottom: 8 }}>
-              <span style={{ width: 20, height: 20, background: C.navy, color: "#fff", borderRadius: 5, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 800 }}>1</span>
-              고용24에서 이직확인서 처리됐나요?
-            </div>
-            <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
-              <Btn group="confirm" value="done" label="처리 완료됐어요" sel={sel} pick={pick} />
-              <Btn group="confirm" value="pending" label="아직 처리 중이에요" sel={sel} pick={pick} />
-              <Btn group="confirm" value="no" label="제출 안 됐어요" sel={sel} pick={pick} />
-            </div>
-          </div>
-          <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: C.t2, marginBottom: 8 }}>
-              <span style={{ width: 20, height: 20, background: C.navy, color: "#fff", borderRadius: 5, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 800 }}>2</span>
-              이직 사유에 분쟁이 있나요?
-            </div>
-            <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
-              <Btn group="dispute" value="no" label="없어요 (합의 퇴직·권고사직)" sel={sel} pick={pick} />
-              <Btn group="dispute" value="yes" label="있어요 (부당해고·임금체불 등)" sel={sel} pick={pick} />
-            </div>
-          </div>
-
-          {result && (
-            <div style={{ marginTop: 16, padding: 16, borderRadius: 8, background: result.pass ? C.navyLight : "#F5F5F5", border: result.pass ? "1px solid rgba(30,58,95,.1)" : `1px solid ${C.line}` }}>
-              <div style={{ fontSize: 15, fontWeight: 800, color: result.pass ? C.navy : C.t1, marginBottom: 4 }}>
-                {result.pass ? "✅" : "📌"} {result.headline}
-              </div>
-              <div style={{ fontSize: 13, color: C.t3, lineHeight: 1.55 }}>{result.detail}</div>
-              <div style={{ display: "flex", gap: 5, marginTop: 8, flexWrap: "wrap" }}>
-                {result.badges.map((b, i) => (
-                  <span key={i} style={{ fontSize: 11, fontWeight: 700, padding: "3px 9px", borderRadius: 4, background: result.pass ? C.navy : C.t4, color: "#fff" }}>{b}</span>
+      <Sec n={1} id="checker" title="내 서류 준비 됐는지 체크해요" sub={null}>
+        <P>실업급여를 신청하려면 몇 가지 서류를 준비해야 해요. 서류가 빠지면 신청이 지연되거나 추가 방문이 필요해지기도 해요.</P>
+        <P>4가지 항목을 선택하면 지금 서류 준비가 됐는지, 추가로 무엇이 필요한지 바로 알려드려요.</P>
+        <CheckerShell title="내 서류 준비 됐는지 체크해요" subtitle="30초 확인" intro="4가지를 선택하면 서류 준비 완료 여부를 알려드려요.">
+          <CheckerQ n={1} group={1} label="이직확인서가 발급됐나요?" opts={[["issued", "사업주가 발급·제출했어요"], ["not", "아직 발급 안 됐어요"]]} sel={q1} pick={setQ1 as (v: string) => void} />
+          <CheckerQ n={2} group={1} label="고용보험 피보험기간이 180일 이상인가요?" opts={[["y", "180일 이상이에요"], ["n", "180일 미만이에요"]]} sel={q2} pick={setQ2 as (v: string) => void} />
+          <CheckerQ n={3} group={2} label="퇴직 사유가 무엇인가요?" opts={[["involuntary", "비자발적 퇴사 (권고사직·계약만료)"], ["voluntary", "자발적 퇴사 (개인 사정)"]]} sel={q3} pick={setQ3 as (v: string) => void} />
+          <CheckerQ n={4} group={2} label="신청 방법은 어떻게 할 예정인가요?" opts={[["online", "고용24 온라인 신청"], ["visit", "고용센터 방문 신청"]]} sel={q4} pick={setQ4 as (v: string) => void} />
+          {result && (() => {
+            const links = result.links as ResLink[];
+            return result.pass ? (
+              <ResultPass title={result.title} desc={result.desc}>
+                {links.map((l) => (
+                  <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
                 ))}
-              </div>
-              {result.links.length > 0 && (
-                <div style={{ marginTop: 12, paddingTop: 12, borderTop: result.pass ? "1px solid rgba(30,58,95,.08)" : "1px solid #E2E8F0" }}>
-                  <div style={{ fontSize: 12, fontWeight: 700, color: C.t1, marginBottom: 6 }}>&#x1F4D6; 관련 가이드</div>
-                  {result.links.map((lnk, li) => (
-                    <a key={li} href={lnk.href} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 0", fontSize: 13, color: C.navy, fontWeight: 600, borderBottom: "1px solid rgba(30,58,95,.06)", textDecoration: "none" }}>
-                      <span>{lnk.icon}{" "}{lnk.title}</span>
-                      <span style={{ fontSize: 11, color: C.t4 }}>&#x2192;</span>
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* ── SECTION 02 ── */}
-      <Divider />
-      <Sec n="SECTION 02" id="docs" title="실업급여 신청 구비서류는 뭐가 있나요?" sub="신분증 하나가 전부예요" />
-
-      <P>실업급여 신청 시 본인이 직접 챙겨야 할 서류는 <B>신분증 1개</B>뿐이에요. 주민등록증이나 운전면허증을 가져가면 돼요. 통장 사본은 일부 고용센터에서 요청하는 경우도 있지만 대부분은 계좌번호만 알려주면 돼요.</P>
-
-      <P>이직확인서는 회사가 알아서 제출해야 해요. 본인이 발급받아 가져갈 필요가 없어요. <A href="https://www.law.go.kr/법령/고용보험법">고용보험법</A>에서 사업주는 이직한 피보험자가 요청하거나 직권으로 이직확인서를 퇴직 후 10일 이내에 고용센터에 제출하도록 정하고 있어요.</P>
-
-      <P>근로계약서, 급여명세서, 해고통보서 등은 이직 사유에 분쟁이 있을 때만 필요해요. 합의 퇴직이나 권고사직이라면 고용센터에서 추가 서류를 요청하지 않아요. 혹시 모르니 관련 서류는 보관해두는 게 좋아요.</P>
-
-      <TableTitle>실업급여 신청 구비서류 요약</TableTitle>
-      <div style={{ overflowX: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-          <thead>
-            <tr><THL>서류</THL><TH>준비 주체</TH><TH>비고</TH></tr>
-          </thead>
-          <tbody>
-            {[
-              ["신분증", "본인", "주민등록증 또는 운전면허증"],
-              ["이직확인서", "회사", "퇴직 후 10일 내 제출 의무"],
-              ["통장 사본", "본인 (선택)", "일부 센터 요청 시"],
-              ["근로계약서·급여명세서", "본인 (분쟁 시)", "이직 사유 분쟁 있을 때만"],
-            ].map((row, ri) => (
-              <tr key={ri}>
-                {row.map((cell, ci) => (
-                  <td key={ci} style={{ padding: "8px 8px", textAlign: ci === 0 ? "left" : "center", borderBottom: `1px solid ${C.line}`, color: ci === 0 ? C.t1 : C.t2, fontWeight: ci === 0 ? 600 : 400 }}>{cell}</td>
+              </ResultPass>
+            ) : (
+              <ResultFail title={result.title} desc={result.desc}>
+                {links.map((l) => (
+                  <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
                 ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <TableNote>※ 이직확인서 처리 상태는 고용24에서 조회 가능</TableNote>
+              </ResultFail>
+            );
+          })()}
+        </CheckerShell>
+      </Sec>
 
-      {/* ── SECTION 03 ── */}
       <Divider />
-      <Sec n="SECTION 03" id="confirm" title="실업급여 이직확인서는 어떻게 받나요?" sub="회사가 10일 내 제출, 본인이 받는 게 아니에요" />
-
-      <P>이직확인서는 본인이 발급받는 서류가 아니에요. 회사가 <A href="https://www.work24.go.kr">고용24</A>나 고용센터를 통해 직접 제출하는 서류예요. 퇴직 후 회사는 10일 이내에 제출할 의무가 있어요. 본인이 할 일은 고용24에서 처리 여부를 조회하는 것뿐이에요.</P>
-
-      <P>고용24 → 개인서비스 → 실업급여 → '이직확인서 처리 현황 조회'에서 제출 여부를 볼 수 있어요. 미제출 상태라면 회사 인사담당자에게 제출 요청을 해요. 요청해도 제출하지 않으면 고용센터(1350)에 신고할 수 있어요. 회사가 정당한 이유 없이 제출을 거부하면 과태료 대상이에요.</P>
-
-      <P>이직확인서가 처리된 후 고용센터 방문 시 시스템에서 자동으로 불러와요. 본인이 인쇄해서 가져갈 필요가 없어요. 처리까지 보통 2~3일이 걸리니 처리 완료를 확인하고 나서 고용센터 방문 날짜를 잡는 게 좋아요.</P>
-
-      <Info type="warn">{'<strong>주의:</strong> 이직확인서 미제출 상태에서 고용센터를 방문하면 수급자격 신청이 안 돼요. 방문 전 반드시 고용24에서 처리 여부를 확인하세요.'}</Info>
-
-      {/* ── SECTION 04 ── */}
-      <Divider />
-      <Sec n="SECTION 04" id="online" title="실업급여 신청 필요 서류는 온라인으로 제출할 수 있나요?" sub="이직확인서는 회사가 온라인 제출, 나머지는 방문이에요" />
-
-      <P>이직확인서는 회사가 고용24 사업주 서비스를 통해 온라인으로 제출해요. 예전에는 고용센터에 직접 가야 했지만 이제는 온라인 제출이 일반화됐어요. 본인이 할 일은 없고, 고용24에서 처리 완료 여부만 조회하면 돼요.</P>
-
-      <P>수급자격 인정 신청 자체는 고용센터 방문이 원칙이에요. 고용24에서 온라인 교육 수료와 일부 사전 입력은 가능하지만, 첫 번째 수급자격 신청은 관할 고용센터에 직접 방문해야 해요. 상담사 면담을 통해 이직 사유와 구직 의사를 확인하는 절차가 있기 때문이에요.</P>
-
-      <P>이후 실업인정은 고용24에서 온라인으로 처리할 수 있어요. 4차 이후부터는 온라인 실업인정이 가능한 경우가 많아요. 각 실업인정일마다 고용센터에서 안내하는 방식을 따라가면 돼요.</P>
 
       <BridgeCard
-        question="실업급여 신청 전체 절차가 궁금하세요?"
-        body={<>워크넷 구직등록부터 첫 입금까지 <strong style={{ color: C.navy }}>5단계 전체 흐름</strong>을 신청방법 가이드에서 정리했어요.</>}
-        btnText="실업급여 신청방법 전체 절차 →"
+        q="서류를 다 챙겼다면 실업급여 신청 절차를 확인하세요"
+        a="워크넷 구직 등록 → 수급자격 인정신청 → 실업인정 순서로 진행해요."
+        label="실업급여 신청방법 전체 보기"
         href="/w/실업급여-신청방법"
       />
 
-      {/* ── SECTION 05 ── */}
+      <Sec n={2} id="basic" title="실업급여 구비서류 기본 목록은?" sub="이직확인서 · 신분증 · 통장사본 · 사진">
+        <P>실업급여(구직급여) 신청에 필요한 기본 서류는 크게 4가지예요. <B>이직확인서, 신분증, 통장사본, 증명사진</B>이에요. 이 중 하나라도 빠지면 신청 처리가 지연돼요.</P>
+        <TableTitle>실업급여 기본 구비서류 목록</TableTitle>
+        <table><thead><THL items={["서류", "발급처", "비고"]} /></thead><tbody>
+          <TH items={["이직확인서", "사업주 → 고용24 제출", "퇴직 후 10일 이내 자동 제출"]} />
+          <TH items={["신분증", "본인 소지", "주민등록증·운전면허증"]} />
+          <TH items={["통장사본", "은행", "본인 명의 통장 앞면"]} />
+          <TH items={["증명사진", "사진관·편의점", "방문 신청 시만 필요"]} />
+        </tbody></table>
+        <P>이직확인서는 사업주가 퇴직 후 10일 이내에 고용24에 직접 제출해요. 근로자가 별도로 받아올 필요 없이, 고용24에서 처리 여부를 조회할 수 있어요.</P>
+        <P>통장사본은 본인 명의 통장이라면 어떤 은행이든 관계없어요. 체크카드 계좌도 가능해요. 온라인 신청 시에는 계좌번호를 직접 입력하면 되니 사본 첨부가 필요 없어요.</P>
+        <Info type="warn">{"<strong>수급자격신청서는 별도로 작성해요:</strong> 고용24 온라인 신청 시에는 화면에서 입력하고, 방문 신청 시에는 고용센터에서 양식을 받아 작성해요. 미리 출력하거나 방문 당일 현장에서 작성 가능해요."}</Info>
+        <InlineLink icon="📋" title="실업급여 실업신고 방법" desc="수급자격 인정신청 온라인 접수 안내" href="/w/실업급여-실업신고" />
+      </Sec>
+
       <Divider />
-      <Sec n="SECTION 05" id="missing" title="실업급여 구비서류 빠뜨리면 어떻게 되나요?" sub="이직확인서 미처리가 가장 흔한 문제예요" />
 
-      <P>신분증을 빠뜨리면 당일 신청이 불가능해요. 다른 사진 ID라도 있으면 상담 후 처리 여부를 확인해야 해요. 대부분의 경우 주민등록증·운전면허증이 없으면 당일 신청이 안 되니 꼭 챙기세요.</P>
+      <Sec n={3} id="online-visit" title="실업급여 구비서류 온라인과 방문 차이는?" sub="온라인 스캔 제출 · 방문 원본 지참">
+        <H3>온라인 신청 시 서류</H3>
+        <P>고용24 온라인 신청 시에는 증명사진이 필요 없어요. 신분증과 통장 정보는 화면에서 직접 입력하면 되고, 이직확인서는 사업주가 시스템에 이미 등록해 둔 것을 자동으로 확인해요.</P>
+        <H3>방문 신청 시 서류</H3>
+        <P>고용센터 방문 신청 시에는 <B>증명사진 1장</B>을 반드시 지참해야 해요. 이직확인서 원본을 가져갈 필요는 없지만, 신분증·통장사본 원본은 지참해야 해요.</P>
+        <P>방문 신청이 필요한 경우는 온라인 신청이 어렵거나, 특수 사유(자발적 퇴사 예외, 장기미취업 등)로 담당자 상담이 필요한 때예요. 일반적인 비자발적 퇴사라면 온라인으로 모두 처리 가능해요.</P>
+        <P>방문 시 거주지 관할 고용센터로 가야 해요. 사업장 소재지가 다른 지역이어도 거주지 고용센터에서 신청하면 돼요. 고용24 고용센터 찾기 기능으로 가까운 곳을 미리 확인해 두세요.</P>
+        <InlineLink icon="🏢" title="실업급여 고용센터 찾기" desc="거주지 관할 고용센터 위치 확인" href="/w/실업급여-고용센터-찾기-고용24-사용법" />
+      </Sec>
 
-      <P>이직확인서가 미처리 상태에서 방문하면 신청이 안 돼요. 가장 흔한 문제예요. 방문 전 반드시 고용24에서 처리 완료를 확인하고 오세요. 이직확인서 처리까지 기다리는 동안 워크넷 구직등록과 고용24 온라인 교육을 미리 완료해두면 시간 낭비가 없어요.</P>
+      <RelatedMid
+        title="실업급여 신청 절차도 함께 확인해 보세요"
+        items={[
+          { icon: "📋", title: "실업급여 신청방법 안내", desc: "고용24 온라인 단계별 신청 순서", href: "/w/실업급여-신청방법" },
+          { icon: "📅", title: "실업급여 신청기간 기한", desc: "퇴직 후 12개월 이내 접수 시기", href: "/w/실업급여-신청기간" },
+          { icon: "🏢", title: "실업급여 실업신고 방법", desc: "고용24 온라인 수급자격 신청", href: "/w/실업급여-실업신고" },
+        ]}
+        hubHref="/category/실업급여"
+        hubLabel="실업급여 전체 보기"
+      />
 
-      <P>분쟁이 있는데 관련 서류를 안 가져왔다면 고용센터에서 재방문 안내를 받아요. 부당해고·임금체불 같은 상황이라면 근로계약서, 급여명세서, 문자 내역 등 증빙을 최대한 준비해서 방문하는 게 좋아요.</P>
-
-      <SpokeLink num="01" title="실업급여 신청방법 — 고용24 워크넷 절차" desc="5단계 신청 흐름과 방문 전 체크리스트" href="/w/실업급여-신청방법" />
-
-      <a href="https://www.work24.go.kr" target="_blank" rel="noopener noreferrer" className="ext-btn ext-btn-black">
-        <span className="ext-btn-badge">고용24 공식</span>
-        <span className="ext-btn-text">이직확인서 처리 현황 조회</span>
-        <span className="ext-btn-cta">조회하기 →</span>
-      </a>
-
-      {/* ── FAQ ── */}
       <Divider />
-      <Sec n="FAQ" id="faq" title="자주 묻는 질문" />
-      <FAQAccordion items={[
-        { q: "실업급여 구비서류 신청할 때 이직확인서를 본인이 가져가야 하나요?", a: '아니에요. 이직확인서는 <strong>회사가 고용24에 직접 제출</strong>해요. 본인은 고용24에서 처리 여부만 확인하면 돼요.' },
-        { q: "실업급여 구비서류가 빠지면 다음 날 다시 방문해야 하나요?", a: '이직확인서 미처리면 처리 완료 후 재방문해야 해요. 신분증 문제면 당일 빠른 재방문으로 해결될 수도 있어요. 고용센터에 전화로 먼저 확인해 보세요.' },
-      ]} />
 
+      <Sec n={4} id="extra" title="실업급여 구비서류 추가 제출 서류는?" sub="자발적 퇴사 예외 · 특수 케이스 서류">
+        <H3>자발적 퇴사 예외 사유 증빙</H3>
+        <P>자발적으로 퇴사했지만 정당한 사유가 있다면 추가 서류를 제출해 수급자격을 인정받을 수 있어요. 임금체불이라면 임금대장, 체불확인서를, 직장 내 괴롭힘이라면 진정서 접수증·의료기록 등을 준비해요.</P>
+        <P>이사로 인한 퇴사라면 이사 전·후 주소지 확인 서류, 전·월세 계약서가 필요해요. 통근 거리가 왕복 3시간 이상 늘어났음을 증명해야 해요. 건강 악화라면 의사 소견서·진단서를 첨부해야 해요.</P>
+        <H3>기타 특수 상황 서류</H3>
+        <P>외국인 근로자는 체류자격 관련 서류를 추가로 제출해야 해요. 65세 이상 고령자는 일부 서류 양식이 다를 수 있으니 사전에 고용센터에 문의하는 게 좋아요.</P>
+        <BridgeCard
+          q="자발적 퇴사였는데 정당한 사유가 있어요"
+          a="임금삭감, 직장 내 괴롭힘, 건강 악화 등 12가지 정당 사유가 인정돼요. 증빙 서류를 갖춰 고용센터에 제출하면 돼요."
+          label="자발적 퇴사 예외 사유 보기"
+          href="/w/실업급여-임금삭감-퇴직-정당사유"
+        />
+      </Sec>
+
+      <Divider />
+
+      <Sec n={5} id="no-doc" title="실업급여 구비서류 이직확인서 없으면?" sub="사업주 미발급 · 고용센터 신고 방법">
+        <P>사업주가 이직확인서를 발급해 주지 않거나 늦게 제출하는 경우가 있어요. 이런 경우에도 수급자격 인정 신청 자체는 가능하지만, 이직확인서가 처리되지 않으면 구직급여가 실제로 지급되지 않아요.</P>
+        <P>사업주가 이직확인서 제출을 거부하거나 지연하면 <B>고용24 또는 관할 고용센터에 신고</B>할 수 있어요. 고용보험법상 사업주는 피보험자가 퇴직한 다음 날부터 10일 이내에 이직확인서를 제출해야 하고, 위반 시 과태료가 부과돼요.</P>
+        <P>신고 후 고용센터에서 사업주에게 제출을 촉구하게 돼요. 사업주가 폐업했거나 연락이 되지 않는 경우에는 고용센터가 직권으로 확인 절차를 진행해요. 이 경우 근로계약서, 급여명세서, 4대보험 취득·상실 확인서 등 근로 사실을 입증하는 서류가 필요해요.</P>
+        <P>이직확인서 없이 신청한 경우 서류가 처리되는 대로 수급자격이 소급 인정돼요. 신청일을 기준으로 대기기간이 시작되므로 이직확인서가 없어도 최대한 빨리 신청하는 게 유리해요.</P>
+        <SpokeLink num={1} title="실업급여 신청방법 단계별 안내" desc="고용24 온라인 신청 전체 흐름" href="/w/실업급여-신청방법" />
+        <SpokeLink num={2} title="실업급여 신청기간 기한 안내" desc="퇴직 후 12개월 이내 접수 시기" href="/w/실업급여-신청기간" />
+        <ExtBtn badge="고용24 공식" text="이직확인서 미제출 신고하기" cta="바로가기 →" href="https://www.ei.go.kr/ei/eih/cm/hm/main.do" />
+      </Sec>
+
+      <Divider />
+
+      <FAQAccordion items={meta.faq} />
       <RelatedArticles items={[
-        { title: "실업급여 신청방법 — 고용24 워크넷 절차", desc: "실업급여 · 신청방법", href: "/w/실업급여-신청방법" },
-        { title: "실업급여 워크넷 구직등록 방법", desc: "실업급여 · 실업신고", href: "/w/실업급여-실업신고" },
-        { title: "실업급여 대기기간 — 첫 입금일 계산", desc: "실업급여 · 대기기간", href: "/w/실업급여-대기기간" },
+        { title: "실업급여 신청방법 단계별 안내", href: "/w/실업급여-신청방법" },
+        { title: "실업급여 신청기간 기한 안내", href: "/w/실업급여-신청기간" },
+        { title: "실업급여 수급자격 인정 조건", href: "/w/실업급여-수급자격-인정" },
+        { title: "실업급여 실업신고 방법 안내", href: "/w/실업급여-실업신고" },
+        { title: "실업급여 재취업 조건 안내", href: "/w/실업급여-재취업-조건" },
       ]} />
-
       <PrevNext
-        prev={{ title: "실업급여 신청방법", href: "/w/실업급여-신청방법" }}
-        next={{ title: "실업급여 신청기간 12개월", href: "/w/실업급여-신청기간" }}
+        prev={{ title: "실업급여 재취업 조건 안내", href: "/w/실업급여-재취업-조건" }}
+        next={{ title: "실업급여 미지급 상속 청구", href: "/w/실업급여-미지급-상속" }}
       />
     </BlogLayout>
   );

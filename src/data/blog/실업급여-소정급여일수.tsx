@@ -2,296 +2,380 @@
 
 import { useState } from "react";
 import {
-  C, Btn, Info, Divider, Sec, P, B, A,
-  TableTitle, TableNote, TH, THL,
-  BridgeCard, BlogLayout, TOC, Summary3,
+  BlogLayout, TOC, Summary3, Sec, P, B, A, H3,
+  Info, InlineLink, SpokeLink, BridgeCard, ExtBtn,
   FAQAccordion, RelatedArticles, PrevNext,
-  InlineLink, SpokeLink, FormulaCard, CaseBox,
+  RelatedMid, SidebarCTA, SidebarDocs, SidebarCalc,
+  CheckerShell, CheckerQ, ResultPass, ResultFail, ResultGrid, ResultCTA,
+  Divider, TableTitle, TableNote, TH, THL, Tag, Btn,
+  FormulaCard, CaseBox,
 } from "@/components/wiki/BlogShared";
 
-// ── 체커 로직 ──
-type ResLink = { icon: string; title: string; href: string };
-type Res = { pass: boolean; headline: string; detail: string; badges: string[]; links: ResLink[] };
-
-const resLinks: ResLink[] = [
-  { icon: "📅", title: "수급기간 12개월 신청 기한 확인", href: "/w/실업급여-수급기간-몇개월-받나요" },
-  { icon: "💰", title: "1일 지급액 기초일액 계산", href: "/w/실업급여-기초일액" },
-];
-
-const dayTable: Record<string, Record<string, number>> = {
-  under50: { under1: 120, yr1to3: 150, yr3to5: 180, yr5to10: 210, over10: 240 },
-  over50:  { under1: 120, yr1to3: 180, yr3to5: 210, yr5to10: 240, over10: 270 },
+const meta = {
+  title: "실업급여 소정급여일수 계산 기준 | 피보험기간 나이별 120일 270일",
+  description: "실업급여 소정급여일수는 피보험기간과 나이에 따라 120일~270일로 달라져요. 1년 미만은 모두 120일이고, 50세 이상·장애인은 같은 기간도 더 많은 일수를 받아요.",
+  category: "실업급여",
+  keywords: ["실업급여 소정급여일수 계산 기준", "피보험기간 나이별 수급일수", "소정급여일수 120일 270일", "소정급여일수 연장 특례"],
+  author: "머니위키 에디터",
+  updateNote: "2026년 2월 기준",
+  lastUpdated: "2026-02-27",
+  datePublished: "2026-02-27",
+  summary: [
+    "소정급여일수는 피보험기간·나이에 따라 최소 120일~최대 270일",
+    "50세 이상·장애인은 같은 피보험기간이어도 30일 더 많이 받아요",
+    "질병·육아 등 특정 사유 시 연장 수급 신청이 가능해요",
+  ],
+  sources: [
+    { name: "고용보험법 제50조", url: "https://www.law.go.kr/법령/고용보험법", date: "2026-02" },
+  ],
+  faq: [
+    { q: "실업급여 소정급여일수는 어떻게 결정되나요?", a: "이직일 기준 나이와 피보험기간(고용보험 가입기간)에 따라 결정돼요. 1년 미만이면 나이와 관계없이 120일이고, 10년 이상이면 50세 미만 240일, 50세 이상은 270일이에요." },
+    { q: "소정급여일수 도중 재취업하면 남은 일수는 어떻게 되나요?", a: "남은 소정급여일수가 있을 때 재취업하면 조기재취업수당을 신청할 수 있어요. 잔여 소정급여일수의 50%를 일시금으로 받을 수 있으니 활용해 보세요." },
+  ],
+  ctaCard: {
+    label: "30초 확인",
+    mainText: "내 소정급여일수 바로 확인",
+    subText: "피보험기간과 나이만 입력하면 돼요",
+    url: "/w/실업급여-계산기",
+    external: false,
+  },
+  relatedDocs: [{ title: "실업급여 계산기", url: "/w/실업급여-계산기" }],
 };
 
-function getResult(sel: Record<string, string>): Res | null {
-  const { age, period } = sel;
-  if (!age || !period) return null;
-  const days = dayTable[age]?.[period];
-  if (!days) return null;
-  const months = Math.round(days / 30);
+type Q1 = "under1" | "1-3" | "3-5" | "5-10" | "over10";
+type Q2 = "under50" | "over50_disabled";
+type Q3 = "normal" | "disease" | "childcare";
+type Q4 = "involuntary" | "voluntary";
+
+function getResult(q1: Q1 | "", q2: Q2 | "", q3: Q3 | "", q4: Q4 | "") {
+  if (!q1 || !q2 || !q3 || !q4) return null;
+  if (q4 === "voluntary") {
+    return {
+      pass: false,
+      title: "자발적 퇴직은 원칙적으로 실업급여 대상이 아니에요",
+      desc: "실업급여는 비자발적 퇴직이어야 수급할 수 있어요. 임금 미지급·직장 내 괴롭힘 등 정당한 사유가 있으면 예외가 가능해요.",
+      links: [
+        { icon: "📋", title: "자발적 퇴직 정당사유 확인", desc: "임금삭감·괴롭힘 등 예외 사유 안내", href: "/w/실업급여-임금삭감-퇴직-정당사유" },
+      ],
+    };
+  }
+  const dayMap: Record<Q1, Record<Q2, number>> = {
+    "under1": { "under50": 120, "over50_disabled": 120 },
+    "1-3": { "under50": 150, "over50_disabled": 180 },
+    "3-5": { "under50": 180, "over50_disabled": 210 },
+    "5-10": { "under50": 210, "over50_disabled": 240 },
+    "over10": { "under50": 240, "over50_disabled": 270 },
+  };
+  const days = dayMap[q1][q2];
+  const extra = q3 !== "normal" ? " (질병·육아 사유로 최대 4년 연장 가능)" : "";
   return {
     pass: true,
-    headline: `소정급여일수 ${days}일이에요`,
-    detail: `약 ${months}개월치 실업급여를 받을 수 있어요. 이직 후 12개월 안에 소진해야 해요.`,
-    badges: [`${days}일`, age === "over50" ? "50세 이상 우대" : "50세 미만 일반"],
-    links: resLinks,
+    title: `소정급여일수는 약 ${days}일이에요`,
+    desc: `피보험기간과 나이 기준으로 소정급여일수가 ${days}일이에요${extra}. 소정급여일수 × 일 지급액이 총 수령 예상액이에요.`,
+    links: [
+      { icon: "🧮", title: "총 수령액 계산하기", desc: "일 지급액 × 소정급여일수 계산", href: "/w/실업급여-계산기" },
+      { icon: "📋", title: "실업급여 신청 방법", desc: "고용24 온라인 신청 절차", href: "/w/실업급여-신청방법" },
+    ],
   };
 }
 
-export default function Article() {
-  const [sel, setSel] = useState<Record<string, string>>({});
-  const pick = (g: string, v: string) => setSel((p) => ({ ...p, [g]: v }));
-  const result = getResult(sel);
+type ResLink = { icon: string; title: string; desc: string; href: string };
+
+export default function Page() {
+  const [q1, setQ1] = useState<Q1 | "">("");
+  const [q2, setQ2] = useState<Q2 | "">("");
+  const [q3, setQ3] = useState<Q3 | "">("");
+  const [q4, setQ4] = useState<Q4 | "">("");
+  const result = getResult(q1, q2, q3, q4);
+
+  const sidebar = (
+    <>
+      <SidebarCTA items={[
+        { icon: "💰", title: "실업급여 수급액 계산", sub: "30초 내 예상 금액 확인", href: "/w/실업급여-계산기", hot: true },
+        { icon: "📋", title: "실업급여 신청 방법", sub: "온라인 신청 절차 안내", href: "/w/실업급여-신청방법" },
+        { icon: "📅", title: "상한액·하한액 확인", sub: "2026년 기초일액 기준", href: "/w/실업급여-상한액" },
+      ]} />
+      <SidebarDocs items={[
+        { title: "실업급여 상한액 하한액 기준", cat: "실업급여·계산", href: "/w/실업급여-상한액" },
+        { title: "실업급여 신청 방법", cat: "실업급여·신청", href: "/w/실업급여-신청방법" },
+        { title: "피보험기간 180일 계산", cat: "실업급여·자격", href: "/w/실업급여-피보험기간-180일-계산" },
+        { title: "실업급여 대기기간", cat: "실업급여·수급", href: "/w/실업급여-대기기간" },
+        { title: "실업급여 재취업 조건", cat: "실업급여·수급", href: "/w/실업급여-재취업-조건" },
+      ]} />
+      <SidebarCalc items={[
+        { title: "실업급여 계산기", href: "/w/실업급여-계산기" },
+        { title: "퇴직금 계산기", href: "/w/퇴직금-계산기" },
+        { title: "연말정산 계산기", href: "/w/연말정산-계산기" },
+        { title: "건강보험료 계산기", href: "/w/건강보험료-계산기" },
+        { title: "국민연금 계산기", href: "/w/국민연금-계산기" },
+      ]} />
+    </>
+  );
 
   return (
     <BlogLayout
-      breadcrumb={["홈", "실업급여", "소정급여일수"]}
-      tags={["2026년 기준", "실업급여", "소정급여일수"]}
-      date="2026-02-23"
-      title="실업급여 소정급여일수 기준표 | 나이별 지급일수 계산 방법"
-      description={
-        <>
-          실업급여 소정급여일수는 나이와 피보험기간에 따라 120일에서 270일까지 달라요. 연령별 피보험기간 <strong style={{ color: C.t1 }}>기준표와 지급일수 계산 방법</strong>을 정리했어요.
-        </>
-      }
-      sourceBar={{ badge: "출처", name: "고용보험법 제50조 · 고용보험 시행령", date: "2026.02 기준" }}
-      stickyLabel="소정급여일수"
-      stickyValue="120~270일"
-      stickyBtn="내 일수 확인 →"
-      stickyHref="https://www.work24.go.kr"
+      breadcrumb={["홈", "실업급여", "수급액 계산", "소정급여일수"]}
+      tags={["2026년 최신", "실업급여", "소정급여일수", "수급기간"]}
+      date={meta.lastUpdated}
+      title={meta.title}
+      description={<>실업급여 수급 기간인 <B>소정급여일수</B>는 피보험기간과 나이에 따라 <B>120일~270일</B>로 달라져요. 50세 이상이거나 장애인이면 같은 기간 가입해도 30일 더 받을 수 있어요.</>}
+      sourceBar={{ badge: "고용보험법", name: "제50조 소정급여일수", date: "2026.02" }}
+      stickyLabel="최대 소정급여일수"
+      stickyValue="270일"
+      stickyBtn="내 일수 확인"
+      disclaimer="이 글은 고용보험법 및 고용노동부 공개 자료를 바탕으로 작성된 정보 제공 목적의 콘텐츠예요. 개인 수급일수는 실제 피보험기간에 따라 달라질 수 있어요."
+      sidebar={sidebar}
     >
       <TOC items={[
-        { t: "내 소정급여일수 바로 확인", sub: "나이 × 피보험기간 간편 조회" },
-        { t: "실업급여 소정급여일수는 어떻게 정해지나요?", sub: null },
-        { t: "실업급여 소정급여일수 기준표는 어떻게 되나요?", sub: "2026년 현행 기준" },
-        { t: "실업급여 연령별 지급일수 차이는 뭐예요?", sub: "50세 기준이 유리한 이유" },
-        { t: "실업급여 가입기간별 소정급여일수는 어떻게 계산하나요?", sub: "3인 페르소나 예시" },
-        { t: "자주 묻는 질문", sub: null },
+        { n: "01", t: "내 소정급여일수 바로 확인", sub: "피보험기간 · 나이 선택" },
+        { n: "02", t: "실업급여 소정급여일수 계산 기준은 무엇인가요?", sub: "피보험기간별 기준표 · 나이 구분" },
+        { n: "03", t: "실업급여 소정급여일수가 피보험기간별로 다른가요?", sub: "1년 미만 120일 · 10년 이상 270일" },
+        { n: "04", t: "실업급여 소정급여일수 계산 사례 3가지", sub: "단기 근무 · 중간 · 장기 근무 케이스" },
+        { n: "05", t: "실업급여 소정급여일수 연장이 가능한가요?", sub: "질병 · 육아 · 특례 연장" },
+        { n: "FAQ", t: "자주 묻는 질문", sub: "결정 기준 · 재취업 시 처리" },
       ]} />
+      <Summary3 items={meta.summary} />
 
-      <Summary3 items={[
-        "소정급여일수는 <strong>나이와 피보험기간</strong>으로 결정돼요. 최소 120일, 최대 270일이에요.",
-        "50세 이상 또는 장애인은 같은 피보험기간이라도 <strong>최대 60일</strong> 더 받아요.",
-        "이직 후 <strong>12개월 안에</strong> 소정급여일수를 소진해야 해요. 남은 일수는 소멸해요.",
-      ]} />
-
-      {/* ── STEP 01. 체커 ── */}
-      <Divider />
-      <Sec n="STEP 01" title="내 소정급여일수 바로 확인" sub="나이와 피보험기간 두 가지만 선택하면 돼요" />
-
-      <P>몇 일 받을 수 있는지, 나이와 피보험기간만 알면 바로 알 수 있어요. 피보험기간은 현재 직장만이 아니라 기준기간(18개월) 안의 전 직장 합산이에요.</P>
-
-      <div style={{ background: "#FFF", border: `1px solid ${C.line}`, borderRadius: 12, overflow: "hidden" }}>
-        <div style={{ background: C.navy, padding: "16px 18px", display: "flex", alignItems: "center", gap: 12 }}>
-          <div style={{ width: 38, height: 38, background: "#fff", borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>📅</div>
-          <div>
-            <h3 style={{ color: "#fff", fontSize: 15, fontWeight: 700, margin: 0 }}>소정급여일수 간편 확인</h3>
-            <p style={{ color: "rgba(255,255,255,.7)", fontSize: 12, marginTop: 1, margin: 0 }}>나이 × 피보험기간 기준표 적용</p>
-          </div>
-        </div>
-        <div style={{ padding: "20px 18px" }}>
-          <div style={{ marginBottom: 18 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: C.t2, marginBottom: 8 }}>
-              <span style={{ width: 20, height: 20, background: C.navy, color: "#fff", borderRadius: 5, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 800 }}>1</span>
-              이직 당시 나이가 몇 살이었나요?
-            </div>
-            <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
-              <Btn group="age" value="under50" label="50세 미만" sel={sel} pick={pick} />
-              <Btn group="age" value="over50" label="50세 이상 (또는 장애인)" sel={sel} pick={pick} />
-            </div>
-          </div>
-          <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: C.t2, marginBottom: 8 }}>
-              <span style={{ width: 20, height: 20, background: C.navy, color: "#fff", borderRadius: 5, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 800 }}>2</span>
-              피보험기간(고용보험 가입기간 합산)이 얼마나 됐나요?
-            </div>
-            <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
-              <Btn group="period" value="under1" label="1년 미만" sel={sel} pick={pick} />
-              <Btn group="period" value="yr1to3" label="1~3년" sel={sel} pick={pick} />
-              <Btn group="period" value="yr3to5" label="3~5년" sel={sel} pick={pick} />
-              <Btn group="period" value="yr5to10" label="5~10년" sel={sel} pick={pick} />
-              <Btn group="period" value="over10" label="10년 이상" sel={sel} pick={pick} />
-            </div>
-          </div>
-
-          {result && (
-            <div style={{ marginTop: 16, padding: 16, borderRadius: 8, background: C.navyLight, border: "1px solid rgba(30,58,95,.1)" }}>
-              <div style={{ fontSize: 15, fontWeight: 800, color: C.navy, marginBottom: 4 }}>
-                ✅ {result.headline}
-              </div>
-              <div style={{ fontSize: 13, color: C.t3, lineHeight: 1.55 }}>{result.detail}</div>
-              <div style={{ display: "flex", gap: 5, marginTop: 8, flexWrap: "wrap" }}>
-                {result.badges.map((b, i) => (
-                  <span key={i} style={{ fontSize: 11, fontWeight: 700, padding: "3px 9px", borderRadius: 4, background: C.navy, color: "#fff" }}>{b}</span>
+      {/* STEP 01 — 체커 */}
+      <Sec n="01" id="checker" title="내 소정급여일수 바로 확인" sub="피보험기간 · 나이 선택">
+        <CheckerShell
+          title="내 실업급여 소정급여일수가 몇 일일까?"
+          subtitle="30초 확인"
+          intro="피보험기간과 나이만 선택하면 바로 확인할 수 있어요."
+        >
+          <CheckerQ
+            n={1}
+            group="q1"
+            label="고용보험 피보험기간이 얼마나 되나요?"
+            opts={[
+              ["under1", "1년 미만"],
+              ["1-3", "1년 이상 ~ 3년 미만"],
+              ["3-5", "3년 이상 ~ 5년 미만"],
+              ["5-10", "5년 이상 ~ 10년 미만"],
+              ["over10", "10년 이상"],
+            ]}
+            sel={q1}
+            pick={(v) => setQ1(v as Q1)}
+          />
+          <CheckerQ
+            n={2}
+            group="q2"
+            label="이직 당시 나이가 어떻게 되나요?"
+            opts={[
+              ["under50", "50세 미만 (비장애인)"],
+              ["over50_disabled", "50세 이상 또는 장애인"],
+            ]}
+            sel={q2}
+            pick={(v) => setQ2(v as Q2)}
+          />
+          <CheckerQ
+            n={3}
+            group="q3"
+            label="퇴직 후 특별한 사정이 있나요?"
+            opts={[
+              ["normal", "특별한 사유 없음"],
+              ["disease", "질병·부상으로 취업 불가"],
+              ["childcare", "임신·출산·육아"],
+            ]}
+            sel={q3}
+            pick={(v) => setQ3(v as Q3)}
+          />
+          <CheckerQ
+            n={4}
+            group="q4"
+            label="퇴직 사유는 무엇인가요?"
+            opts={[
+              ["involuntary", "비자발적 퇴직 (권고사직·계약만료 등)"],
+              ["voluntary", "자발적 퇴직"],
+            ]}
+            sel={q4}
+            pick={(v) => setQ4(v as Q4)}
+          />
+          {result && (() => {
+            const links = result.links as ResLink[];
+            return result.pass ? (
+              <ResultPass title={result.title} desc={result.desc}>
+                {links.map((l) => (
+                  <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
                 ))}
-              </div>
-              {result.links.length > 0 && (
-                <div style={{ marginTop: 12, paddingTop: 12, borderTop: "1px solid rgba(30,58,95,.08)" }}>
-                  <div style={{ fontSize: 12, fontWeight: 700, color: C.t1, marginBottom: 6 }}>📖 관련 가이드</div>
-                  {result.links.map((lnk, li) => (
-                    <a key={li} href={lnk.href} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 0", fontSize: 13, color: C.navy, fontWeight: 600, borderBottom: "1px solid rgba(30,58,95,.06)", textDecoration: "none" }}>
-                      <span>{lnk.icon} {lnk.title}</span>
-                      <span style={{ fontSize: 11, color: C.t4 }}>→</span>
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* ── SECTION 02 ── */}
-      <Divider />
-      <Sec n="SECTION 02" title="실업급여 소정급여일수는 어떻게 정해지나요?" sub="나이와 피보험기간 두 가지로 결정돼요" />
-
-      <P><A href="https://www.law.go.kr/법령/고용보험법">고용보험법 제50조</A>에 따라 소정급여일수는 <B>이직 당시 나이</B>와 <B>피보험기간</B>으로 결정돼요. 이 두 가지의 교차점이 받을 수 있는 일수예요. 최소 120일에서 최대 270일까지 다양해요.</P>
-
-      <P>피보험기간은 지금 퇴직하는 직장 하나의 기간이 아니에요. 이직일 이전 18개월(기준기간) 안에 있는 모든 직장의 피보험단위기간을 합산한 값이에요. 여러 직장을 짧게 다녔어도 합산하면 상위 구간에 해당할 수 있어요.</P>
-
-      <P>나이는 이직 당시 만 나이를 적용해요. 퇴직 직전일 기준으로 계산하기 때문에, 퇴직 전날에 막 50세 생일이 지났다면 50세 이상 기준이 적용돼요. 반대로 퇴직 후에 생일이 온다면 49세 기준이에요. 피보험기간이 긴 경우 이 차이가 30일 더 받는 결과로 이어져요.</P>
-
-      <FormulaCard
-        formula="소정급여일수 = 기준표[이직 당시 나이 × 피보험기간]"
-        notes={[
-          "최소 120일 (50세 미만, 1년 미만) / 최대 270일 (50세 이상, 10년 이상)",
-          "50세 이상·장애인은 같은 피보험기간 대비 최대 60일 우대",
-          "피보험기간: 기준기간(18개월) 내 전 직장 합산 가능",
-        ]}
-      />
-
-      <InlineLink icon="📋" title="피보험기간 합산 방법 — 기준기간 18개월" desc="여러 직장 근무 이력을 어떻게 합산하는지 정리했어요." href="/w/실업급여-기준기간" />
-
-      {/* ── SECTION 03 ── */}
-      <Divider />
-      <Sec n="SECTION 03" title="실업급여 소정급여일수 기준표는 어떻게 되나요?" sub="2026년 현행 기준" />
-
-      <P>기준표는 나이 두 구간 × 피보험기간 다섯 구간으로 구성돼요. 50세 미만과 50세 이상(장애인 포함)으로 나뉘고, 피보험기간이 길수록 더 많은 일수를 받아요.</P>
-
-      <TableTitle>실업급여 소정급여일수 기준표 (2026년)</TableTitle>
-      <div style={{ overflowX: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-          <thead>
-            <tr>
-              <THL>구분</THL>
-              <TH>1년 미만</TH>
-              <TH>1~3년</TH>
-              <TH>3~5년</TH>
-              <TH>5~10년</TH>
-              <TH>10년 이상</TH>
-            </tr>
-          </thead>
-          <tbody>
-            {[
-              ["50세 미만", "120일", "150일", "180일", "210일", "240일"],
-              ["50세 이상 / 장애인", "120일", "180일", "210일", "240일", "270일"],
-            ].map((row, ri) => (
-              <tr key={ri}>
-                {row.map((cell, ci) => (
-                  <td key={ci} style={{ padding: "9px 8px", textAlign: ci === 0 ? "left" : "center", borderBottom: `1px solid ${C.line}`, color: ci === 0 ? C.t1 : C.t2, fontWeight: ci === 0 ? 700 : 400, background: ri === 1 && ci > 0 ? "rgba(30,58,95,.03)" : "transparent" }}>{cell}</td>
+              </ResultPass>
+            ) : (
+              <ResultFail title={result.title} desc={result.desc}>
+                {links.map((l) => (
+                  <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
                 ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <TableNote>※ 나이는 이직 당시 만 나이 기준 / 피보험기간은 기준기간 내 전 직장 합산 가능</TableNote>
+              </ResultFail>
+            );
+          })()}
+        </CheckerShell>
+      </Sec>
 
-      <P>표를 보면 1년 미만 구간은 나이에 관계없이 동일하게 120일이에요. 1~3년 구간부터 차이가 생기는데 50세 이상이 30일 더 받아요. 10년 이상 구간에서 최대 차이인 30일(240일 vs 270일)이 유지돼요. 표에서 한 칸씩 올라갈수록 30일씩 늘어나는 패턴이에요.</P>
-
-      <InlineLink icon="💰" title="소정급여일수 × 1일 기초일액 = 총 수령액" desc="일수가 정해지면 하루 얼마 받는지도 확인해야 해요." href="/w/실업급여-기초일액" />
-
-      {/* ── SECTION 04 ── */}
       <Divider />
-      <Sec n="SECTION 04" title="실업급여 연령별 지급일수 차이는 뭐예요?" sub="50세 이상이 유리한 이유가 있어요" />
 
-      <P>50세 이상에게 더 많은 일수를 주는 건 고용보험법이 의도한 설계예요. 나이가 들수록 재취업이 어렵기 때문에 그 기간 동안 생활을 더 보장해주는 거예요. 장애인도 나이와 관계없이 동일한 우대 기준을 받아요.</P>
+      {/* SECTION 02 */}
+      <Sec n="02" id="standard" title="실업급여 소정급여일수 계산 기준은 무엇인가요?" sub="피보험기간별 기준표 · 나이 구분">
+        <P>소정급여일수는 <B>이직일 직전의 피보험기간</B>과 <B>이직 당시 나이</B>에 따라 결정돼요. <A href="https://www.law.go.kr/법령/고용보험법">고용보험법 제50조</A>에서 정한 기준이에요. 피보험기간이 길고 나이가 많을수록 더 많은 일수를 받아요.</P>
+        <P>나이 구분은 딱 두 가지예요. <B>50세 미만(비장애인)</B>과 <B>50세 이상 또는 장애인</B>이에요. 50세가 되면 같은 피보험기간이더라도 30일 더 받을 수 있어요. 이직일 당시 기준이기 때문에 퇴직 시점의 나이가 중요해요.</P>
+        <P>피보험기간은 이직일 이전 <B>18개월</B> 범위 내에서 실제 고용보험에 가입된 기간의 합산이에요. 여러 직장을 다녔더라도 합산이 가능하고, 일용직·단시간 근로자도 동일하게 적용돼요. 합산 기간이 <B>180일 이상</B>이어야 수급 자격이 생겨요.</P>
+        <P>아래 표가 2026년 기준 소정급여일수 전체예요. 내 상황에 해당하는 칸을 찾아보세요.</P>
 
-      <P>퇴직 시점을 어느 정도 조율할 수 있다면, 50세 생일이 지난 뒤에 퇴직하면 같은 피보험기간으로 30일을 더 받을 수 있어요. 피보험기간 1~3년이면 150일(50세 미만) vs 180일(50세 이상)로 한 달치 차이예요. 다만 이를 위해 억지로 퇴직을 미루는 것보다는 자연스러운 상황에서 확인하는 정도가 좋아요.</P>
+        <TableTitle>2026년 피보험기간·나이별 소정급여일수 기준표</TableTitle>
+        <TH cols={["피보험기간", "50세 미만 (비장애인)", "50세 이상 또는 장애인"]} rows={[
+          ["1년 미만", "120일", "120일"],
+          ["1년 이상 ~ 3년 미만", "150일", "180일"],
+          ["3년 이상 ~ 5년 미만", "180일", "210일"],
+          ["5년 이상 ~ 10년 미만", "210일", "240일"],
+          ["10년 이상", "240일", "270일"],
+        ]} />
+        <TableNote>* 고용보험법 제50조 기준. 피보험기간은 이직일 직전 합산 기간이에요.</TableNote>
 
-      <Info type="tip">이직 당시(퇴직 직전일 기준) 만 50세 이상이면 우대 기준이 적용돼요. 장애인은 나이와 무관하게 동일한 우대 일수예요.</Info>
+        <SpokeLink num={1} title="피보험기간 180일 계산 방법" desc="고용보험 가입기간 합산 및 이직일 기준 확인" href="/w/실업급여-피보험기간-180일-계산" />
+        <SpokeLink num={2} title="실업급여 상한액 하한액 기준" desc="2026년 기초일액 상한 68,100원 적용 기준" href="/w/실업급여-상한액" />
+      </Sec>
 
-      <P>50세 기준의 또 다른 특징은 구간 점프예요. 50세 미만 1~3년은 150일인데, 50세 이상 1~3년은 180일로 30일 더 받아요. 하지만 이 30일 차이는 피보험기간이 늘어도 동일하게 유지돼요. 즉, 어느 구간에서든 50세 이상이 딱 30일 유리한 구조예요.</P>
-
-      <BridgeCard
-        question="소정급여일수 말고도 수급기간(신청 기한)이 따로 있나요?"
-        body={<>소정급여일수는 받을 수 있는 일수, 수급기간은 신청 가능한 기한이에요. <strong style={{ color: C.navy }}>이직 후 12개월 안에</strong> 소진하지 않으면 남은 일수는 사라져요.</>}
-        btnText="실업급여 수급기간 12개월 기한 확인 →"
-        href="/w/실업급여-수급기간-몇개월-받나요"
-      />
-
-      {/* ── SECTION 05 ── */}
       <Divider />
-      <Sec n="SECTION 05" title="실업급여 가입기간별 소정급여일수는 어떻게 계산하나요?" sub="3인 페르소나 예시" />
 
-      <P>기준표를 보는 것보다 실제 사람 사례로 보면 훨씬 이해하기 쉬워요. 세 가지 다른 상황을 비교해볼게요.</P>
+      {/* SECTION 03 */}
+      <Sec n="03" id="detail" title="실업급여 소정급여일수가 피보험기간별로 다른가요?" sub="1년 미만 120일 · 10년 이상 270일">
+        <P>피보험기간이 <B>1년 미만</B>이면 나이와 상관없이 모두 <B>120일</B>이에요. 처음 직장을 다니는 분이나 단기 계약직이 많이 해당돼요. 120일이 최소 기간이지만, 일 지급액은 상한·하한 기준에 따라 결정돼요.</P>
+        <P>피보험기간이 <B>10년 이상</B>이면 50세 미만은 <B>240일</B>, 50세 이상 또는 장애인은 <B>270일</B>이에요. 270일이 현재 법정 최대 소정급여일수예요. 장기 근속자에게 가장 유리한 구조예요.</P>
+        <P>50세 이상이 되면 <B>30일 추가 혜택</B>이 생겨요. 예를 들어 피보험기간 5~10년이면 50세 미만은 210일, 50세 이상은 240일이에요. 퇴직을 앞두고 있다면 이직일 당시 나이가 50세 이상인지 확인하는 게 중요해요.</P>
+        <P>장애인 인정을 받으면 나이와 관계없이 50세 이상과 동일한 소정급여일수를 받아요. 복지카드를 발급받은 등록 장애인이 해당돼요. 신청 시 고용센터에서 별도로 확인해요.</P>
 
-      <CaseBox
-        badge="예시 1"
-        label="직장인 이 씨(38세), 피보험기간 4년"
-        conditions={["이직 당시 나이: 38세 → 50세 미만", "피보험기간: 4년 → 3~5년 구간"]}
-        steps={[
-          { label: "기준표 적용", value: "50세 미만 × 3~5년 → 180일" },
-          { label: "예상 수급 기간", value: "약 6개월" },
+        <FormulaCard
+          formula="소정급여일수 결정 = 피보험기간 구간 × 나이 구분(50세 기준)"
+          notes={[
+            "피보험기간: 이직일 이전 18개월 범위 내 실제 고용보험 가입 기간 합산",
+            "나이 기준: 이직일 당시 만 나이 (50세 이상 or 장애인 → 30일 추가)",
+            "최소 120일 ~ 최대 270일 범위 내에서 결정돼요",
+          ]}
+        />
+
+        <Info type="warn">
+          <B>피보험기간은 이직일 기준으로 산정해요</B><br />
+          퇴직일이 아닌 이직일(마지막 근무일) 기준으로 피보험기간을 계산해요. 여러 직장을 다닌 경우 기간 사이에 공백이 있어도 합산할 수 있어요. 단, 이전 실업급여를 받은 기간은 제외돼요.
+        </Info>
+      </Sec>
+
+      <RelatedMid
+        title="실업급여 수급액 계산 관련 글"
+        items={[
+          { icon: "📊", title: "실업급여 상한액·하한액 기준", desc: "2026년 기초일액 68,100원 적용 기준", href: "/w/실업급여-상한액" },
+          { icon: "🧮", title: "연봉별 실업급여 계산", desc: "연봉별 예상 수령액 시뮬레이션", href: "/w/실업급여-연봉별-계산" },
+          { icon: "📋", title: "피보험기간 180일 계산", desc: "고용보험 가입 기간 합산 방법", href: "/w/실업급여-피보험기간-180일-계산" },
         ]}
-        total="소정급여일수: 180일"
-        result="일반 기준 적용"
-        pass={true}
+        hubHref="/category/실업급여"
+        hubLabel="실업급여 전체 보기"
       />
 
-      <CaseBox
-        badge="예시 2"
-        label="베테랑 김 씨(52세), 피보험기간 12년"
-        conditions={["이직 당시 나이: 52세 → 50세 이상", "피보험기간: 12년 → 10년 이상 구간"]}
-        steps={[
-          { label: "기준표 적용", value: "50세 이상 × 10년 이상 → 270일" },
-          { label: "예상 수급 기간", value: "약 9개월" },
-          { label: "50세 미만 대비", value: "240일보다 30일 더 (우대 적용)" },
-        ]}
-        total="소정급여일수: 270일 (최대)"
-        result="우대 기준 + 최대 일수"
-        pass={true}
-      />
-
-      <CaseBox
-        badge="예시 3"
-        label="첫 직장 박 씨(27세), 피보험기간 10개월"
-        conditions={["이직 당시 나이: 27세 → 50세 미만", "피보험기간: 10개월 → 1년 미만 구간"]}
-        steps={[
-          { label: "기준표 적용", value: "50세 미만 × 1년 미만 → 120일" },
-          { label: "예상 수급 기간", value: "약 4개월" },
-        ]}
-        total="소정급여일수: 120일"
-        result="최소 일수 적용 (나이 우대 해당 없음)"
-        pass={true}
-      />
-
-      <Info type="warn">소정급여일수가 남아있어도 이직 후 12개월이 지나면 소멸해요. 270일 받을 자격이어도 12개월이 지나면 못 받아요.</Info>
-
-      <div style={{ margin: "20px 0" }}>
-        <div style={{ fontSize: 13, fontWeight: 700, color: C.t1, marginBottom: 8 }}>📖 실업급여 더 알아보기</div>
-        <SpokeLink num="01" title="실업급여 수급기간 — 이직 후 12개월 기한" desc="소정급여일수와 수급기간의 차이" href="/w/실업급여-수급기간-몇개월-받나요" />
-        <SpokeLink num="02" title="실업급여 기초일액 — 1일 지급액 계산" desc="소정급여일수 × 기초일액 = 총 수령액" href="/w/실업급여-기초일액" />
-        <SpokeLink num="03" title="실업급여 수급자격 — 비자발적 퇴직 조건" desc="피보험기간 180일 + 나머지 조건 정리" href="/w/실업급여-수급-조건" />
-      </div>
-
-      {/* ── FAQ ── */}
       <Divider />
-      <Sec n="FAQ" title="자주 묻는 질문" />
-      <FAQAccordion items={[
-        { q: "실업급여 소정급여일수 50세 기준은 어떻게 되나요?", a: "50세 이상(또는 장애인)은 같은 피보험기간이라도 50세 미만보다 30일 더 받아요. 단, 1년 미만 구간은 동일하게 120일이에요. 이직 당시 만 나이 기준으로 판단돼요." },
-        { q: "실업급여 소정급여일수와 수급기간은 다른 건가요?", a: "소정급여일수는 받을 수 있는 최대 일수예요. 수급기간은 이직 후 12개월이라는 신청 가능 기한이에요. 두 조건 모두 충족해야 전부 받을 수 있어요. 남은 소정급여일수가 있어도 12개월이 지나면 사라져요." },
-      ]} />
+
+      {/* SECTION 04 */}
+      <Sec n="04" id="cases" title="실업급여 소정급여일수 계산 사례 3가지" sub="단기 근무 · 중간 · 장기 근무 케이스">
+        <P>소정급여일수가 실제로 어떻게 적용되는지 세 가지 사례로 살펴볼게요. 일 지급액이 같아도 소정급여일수에 따라 총 수령액이 크게 달라지니 내 상황과 비교해 보세요.</P>
+
+        <H3>이 씨(27세), 피보험기간 8개월, 월급 250만 원</H3>
+        <P>피보험기간이 1년 미만이어서 나이와 관계없이 <B>소정급여일수 120일</B>이에요. 월급 250만 원이면 일 지급액은 하한액 63,104원이 적용돼요 (평균임금 × 60% < 하한액).</P>
+        <CaseBox
+          badge="예시 1"
+          label="이 씨(27세), 피보험기간 8개월, 월급 250만 원"
+          conditions={["피보험기간: 8개월 (1년 미만)", "나이: 27세 (50세 미만)"]}
+          steps={[
+            { label: "소정급여일수", value: "120일 (1년 미만 기준)" },
+            { label: "일 지급액", value: "63,104원 (하한액 적용)" },
+            { label: "총 수령 예상", value: "63,104원 × 120일 = 7,572,480원" },
+          ]}
+          total="총 예상 수령: 약 757만 원"
+          result="120일 적용 (약 757만 원)"
+          pass={true}
+        />
+
+        <H3>박 씨(42세), 피보험기간 4년, 월급 350만 원</H3>
+        <P>피보험기간 3~5년, 50세 미만이어서 <B>소정급여일수 180일</B>이에요. 월급 350만 원이면 일 지급액은 약 68,043원으로 상한액(68,100원)에 근접해요.</P>
+        <CaseBox
+          badge="예시 2"
+          label="박 씨(42세), 피보험기간 4년, 월급 350만 원"
+          conditions={["피보험기간: 4년 (3~5년 구간)", "나이: 42세 (50세 미만)"]}
+          steps={[
+            { label: "소정급여일수", value: "180일 (3~5년, 50세 미만)" },
+            { label: "일 지급액", value: "약 68,043원 (일반 계산)" },
+            { label: "총 수령 예상", value: "68,043원 × 180일 = 12,247,740원" },
+          ]}
+          total="총 예상 수령: 약 1,225만 원"
+          result="180일 적용 (약 1,225만 원)"
+          pass={true}
+        />
+
+        <H3>김 씨(55세), 피보험기간 12년, 월급 450만 원</H3>
+        <P>피보험기간 10년 이상, 50세 이상이어서 <B>소정급여일수 270일</B>이에요. 월급 450만 원이면 상한액 68,100원이 적용돼요. 가장 많이 받는 케이스예요.</P>
+        <CaseBox
+          badge="예시 3"
+          label="김 씨(55세), 피보험기간 12년, 월급 450만 원"
+          conditions={["피보험기간: 12년 (10년 이상)", "나이: 55세 (50세 이상)"]}
+          steps={[
+            { label: "소정급여일수", value: "270일 (10년 이상, 50세 이상)" },
+            { label: "일 지급액", value: "68,100원 (상한액)" },
+            { label: "총 수령 예상", value: "68,100원 × 270일 = 18,387,000원" },
+          ]}
+          total="총 예상 수령: 약 1,839만 원"
+          result="270일 적용 (약 1,839만 원)"
+          pass={true}
+        />
+
+        <BridgeCard
+          q="내 정확한 일 지급액이 궁금하다면?"
+          a="월급과 피보험기간을 입력하면 30초 안에 정확한 금액이 나와요."
+          label="실업급여 계산기 바로 가기"
+          href="/w/실업급여-계산기"
+        />
+      </Sec>
+
+      <Divider />
+
+      {/* SECTION 05 */}
+      <Sec n="05" id="extend" title="실업급여 소정급여일수 연장이 가능한가요?" sub="질병 · 육아 · 특례 연장">
+        <P>소정급여일수가 끝나도 특정 사유가 있으면 <B>수급기간 연장 신청</B>이 가능해요. 수급기간은 퇴직일로부터 12개월인데, 이 기간이 지나면 남은 소정급여일수가 있어도 더 이상 받지 못해요.</P>
+        <P>연장 사유는 <B>질병·부상·임신·출산·육아·배우자 등의 간호</B>가 해당돼요. 이런 사유로 취업이 불가능한 기간은 수급기간에서 제외돼요. 최대 4년까지 연장이 가능해요.</P>
+        <P>연장 신청은 사유가 발생한 날로부터 <B>30일 이내</B>에 고용센터에 신청해야 해요. 의사 소견서, 진단서, 출생증명서 등 관련 서류가 필요해요. 연장 미신청 시 기간이 지나면 권리가 소멸돼요.</P>
+        <P>또한 소정급여일수가 남아 있을 때 재취업하면 <B>조기재취업수당</B>을 받을 수 있어요. 잔여 소정급여일수의 50%를 일시금으로 지급받는 제도예요. 재취업 후에도 챙길 수 있는 혜택이에요.</P>
+
+        <InlineLink
+          icon="💡"
+          title="조기재취업수당 신청 조건"
+          desc="잔여 소정급여일수 50% 일시금 수령 방법"
+          href="/w/실업급여-재취업-조건"
+        />
+
+        <InlineLink
+          icon="📋"
+          title="실업급여 신청 방법 전체 절차"
+          desc="고용24 온라인 신청부터 수급까지 단계별 안내"
+          href="/w/실업급여-신청방법"
+        />
+
+        <ExtBtn
+          badge="고용24 공식"
+          text="실업급여 수급기간 연장 신청"
+          cta="신청하기 →"
+          href="https://www.ei.go.kr/ei/eih/cm/hm/main.do"
+        />
+      </Sec>
+
+      <Divider />
+
+      <FAQAccordion items={meta.faq} />
 
       <RelatedArticles items={[
-        { title: "실업급여 수급기간 — 이직 후 12개월", desc: "실업급여 · 수급기간", href: "/w/실업급여-수급기간-몇개월-받나요" },
-        { title: "실업급여 기준기간 — 이직일 18개월 합산", desc: "실업급여 · 기준기간", href: "/w/실업급여-기준기간" },
-        { title: "실업급여 기초일액 — 평균임금 60% 계산", desc: "실업급여 · 기초일액", href: "/w/실업급여-기초일액" },
+        { title: "실업급여 상한액·하한액 기준", href: "/w/실업급여-상한액" },
+        { title: "연봉별 실업급여 계산 예시", href: "/w/실업급여-연봉별-계산" },
+        { title: "피보험기간 180일 계산하기", href: "/w/실업급여-피보험기간-180일-계산" },
+        { title: "실업급여 신청 방법과 절차", href: "/w/실업급여-신청방법" },
+        { title: "실업급여 대기기간 7일 안내", href: "/w/실업급여-대기기간" },
       ]} />
 
       <PrevNext
-        prev={{ title: "실업급여 세금 — 수급 중 건강보험", href: "/w/실업급여-세금" }}
-        next={{ title: "실업급여 수급기간 몇개월 받나", href: "/w/실업급여-수급기간-몇개월-받나요" }}
+        prev={{ title: "실업급여 상한액 하한액 기준", href: "/w/실업급여-상한액" }}
+        next={{ title: "실업급여 수급 기간 몇 개월", href: "/w/실업급여-수급기간-몇개월-받나요" }}
       />
     </BlogLayout>
   );

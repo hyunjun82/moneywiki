@@ -1,245 +1,272 @@
 "use client";
-
 import { useState } from "react";
 import {
-  C, Btn, Info, InlineLink, SpokeLink, Divider, Sec, P, B, A,
-  TableTitle, TableNote, TH, THL,
-  BridgeCard, BlogLayout, TOC, Summary3,
+  BlogLayout, TOC, Summary3, Sec, P, B, A, H3,
+  Info, InlineLink, SpokeLink, BridgeCard, ExtBtn,
   FAQAccordion, RelatedArticles, PrevNext,
+  RelatedMid, SidebarCTA, SidebarDocs, SidebarCalc,
+  CheckerShell, CheckerQ, ResultPass, ResultFail, ResultGrid, ResultCTA,
+  Divider, TableTitle, TableNote, TH, THL, Tag, Btn,
+  FormulaCard, CaseBox, ChipsGrid,
 } from "@/components/wiki/BlogShared";
 
-// ── 체커 로직: 유족관계별 청구 순위 ──
-type ResLink = { icon: string; title: string; href: string };
-type Res = { pass: boolean; headline: string; detail: string; badges: string[]; rank?: string; links: ResLink[] };
+type Q1 = "y" | "n";
+type Q2 = "spouse" | "child" | "parent" | "other";
+type Q3 = "y" | "n";
+type Q4 = "within3" | "over3";
 
-const commonLinks: ResLink[] = [
-  { icon: "📋", title: "청구 절차와 필요 서류 확인", href: "#section-03" },
-  { icon: "📊", title: "소정급여일수 — 남은 급여일수 확인", href: "/w/실업급여-소정급여일수" },
-  { icon: "📝", title: "실업급여 신청방법 전체 안내", href: "/w/실업급여-신청방법" },
-];
+const meta = {
+  title: "실업급여 미지급 상속 청구 | 수급자 사망 유족 지급 요건",
+  description: "구직급여 수급자가 사망하면 남은 미지급 실업급여를 유족이 청구할 수 있어요. 유족 순위, 청구 서류, 소멸시효 3년까지 정리했어요.",
+  category: "실업급여",
+  keywords: [
+    "실업급여 미지급 상속 청구",
+    "수급자 사망 미지급 유족 지급",
+    "실업급여 미지급 청구 서류",
+    "실업급여 미지급 소멸시효 3년",
+  ],
+  author: "머니위키 에디터",
+  updateNote: "2026년 2월 기준",
+  lastUpdated: "2026-02-27",
+  datePublished: "2026-02-27",
+  summary: [
+    "수급자 사망 시 미지급 구직급여는 유족이 청구할 수 있어요",
+    "유족 순위: 배우자 → 자녀 → 부모 → 손자녀 → 조부모 → 형제자매",
+    "소멸시효는 3년이며 사망일 기준으로 기산해요",
+  ],
+  sources: [
+    { name: "고용보험법 제55조 미지급 실업급여 청구", url: "https://www.law.go.kr/lsSc.do?menuId=1&subMenuId=15&tabMenuId=81&query=%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95#undefined", date: "2026-02" },
+  ],
+  faq: [
+    { q: "실업급여 미지급 상속 청구는 어디서 하나요?", a: "수급자의 거주지 또는 사업장 관할 고용센터에서 청구할 수 있어요. 고용24 온라인에서도 일부 가능하지만 사망 관련 서류는 방문 제출이 필요한 경우가 많아요." },
+    { q: "실업급여 미지급분 소멸시효는 언제부터 기산하나요?", a: "수급자의 사망일부터 3년이 소멸시효예요. 3년이 지나면 청구권이 소멸되니 빠르게 신청하는 게 좋아요." },
+  ],
+  ctaCard: {
+    label: "30초 확인",
+    mainText: "미지급 실업급여 청구 가능할까?",
+    subText: "유족 조건 체크하고 바로 확인",
+    url: "#checker",
+    external: false,
+  },
+  relatedDocs: [{ title: "실업급여 수급자격 인정", url: "/w/실업급여-수급자격-인정" }],
+};
 
-function getResult(sel: Record<string, string>): Res | null {
-  const { relation } = sel;
-  if (!relation) return null;
+export default function Page() {
+  const [q1, setQ1] = useState<Q1 | "">("");
+  const [q2, setQ2] = useState<Q2 | "">("");
+  const [q3, setQ3] = useState<Q3 | "">("");
+  const [q4, setQ4] = useState<Q4 | "">("");
 
-  if (relation === "spouse_child") return { pass: true, headline: "1순위 청구권자예요", detail: "배우자와 자녀는 1순위 청구권자예요. 생계를 같이하지 않아도 청구할 수 있어요. 사망일로부터 3년 이내에 고용센터에 청구하면 돼요.", badges: ["1순위", "청구 가능"], rank: "1순위", links: commonLinks };
-  if (relation === "parent") return { pass: true, headline: "2순위 청구권자예요", detail: "배우자나 자녀가 없을 때 부모가 2순위로 청구할 수 있어요. 1순위 청구권자가 있으면 청구할 수 없어요. 사망일로부터 3년 이내에 신청해야 해요.", badges: ["2순위", "1순위 없을 때"], rank: "2순위", links: commonLinks };
-  if (relation === "grandchild_grandparent") return { pass: true, headline: "3순위 청구권자예요", detail: "1·2순위 청구권자가 모두 없을 때 손자녀 또는 조부모가 3순위로 청구할 수 있어요. 선순위 유족이 청구권을 포기한 경우에도 청구할 수 있어요.", badges: ["3순위", "선순위 없을 때"], rank: "3순위", links: commonLinks };
-  if (relation === "sibling") return { pass: true, headline: "4순위 청구권자예요", detail: "형제자매는 가장 마지막 순위로, 1~3순위 청구권자가 모두 없을 때만 청구할 수 있어요. 생계를 같이했는지 여부는 관계없어요.", badges: ["4순위", "선순위 전원 없을 때"], rank: "4순위", links: commonLinks };
+  type ResLink = { icon: string; title: string; desc: string; href: string };
+  type Result = { pass: boolean; title: string; desc: string; links: ResLink[] };
 
-  return null;
-}
+  function getResult(): Result | null {
+    if (!q1 || !q2 || !q3 || !q4) return null;
 
-export default function Article() {
-  const [sel, setSel] = useState<Record<string, string>>({});
-  const pick = (g: string, v: string) => setSel((p) => ({ ...p, [g]: v }));
-  const result = getResult(sel);
+    if (q4 === "over3") {
+      return {
+        pass: false,
+        title: "소멸시효가 지났어요",
+        desc: "사망일로부터 3년이 지나면 미지급 실업급여 청구권이 소멸돼요. 안타깝게도 청구가 어려워요.",
+        links: [
+          { icon: "📋", title: "실업급여 수급자격 인정 조건", desc: "기본 수급 요건 전체 정리", href: "/w/실업급여-수급자격-인정" },
+          { icon: "📅", title: "실업급여 소정급여일수 기준", desc: "나이·피보험기간별 일수 확인", href: "/w/실업급여-소정급여일수" },
+        ],
+      };
+    }
+    if (q1 === "n") {
+      return {
+        pass: false,
+        title: "수급자격 인정이 선행되어야 해요",
+        desc: "사망자가 수급자격 인정을 받지 못한 경우 미지급 실업급여를 청구할 수 없어요.",
+        links: [
+          { icon: "📋", title: "실업급여 수급자격 인정 조건", desc: "수급자격 인정 기준 상세 정리", href: "/w/실업급여-수급자격-인정" },
+          { icon: "📅", title: "실업급여 신청방법 안내", desc: "고용24 온라인 신청 전체 흐름", href: "/w/실업급여-신청방법" },
+        ],
+      };
+    }
+    if (q3 === "n") {
+      return {
+        pass: false,
+        title: "선순위 유족이 먼저 청구해야 해요",
+        desc: "유족 중 선순위가 있다면 선순위 유족이 먼저 청구해야 해요. 선순위 유족이 포기하면 다음 순위가 청구할 수 있어요.",
+        links: [
+          { icon: "📋", title: "실업급여 미지급 청구 서류", desc: "유족 순위별 서류 목록 확인", href: "/w/실업급여-미지급-상속" },
+          { icon: "🏢", title: "고용24 미지급 청구 안내", desc: "고용센터 방문 청구 방법", href: "https://www.ei.go.kr/ei/eih/cm/hm/main.do" },
+        ],
+      };
+    }
+    return {
+      pass: true,
+      title: "미지급 실업급여 청구 가능해요",
+      desc: "관할 고용센터에 사망진단서, 유족관계증명서, 통장사본 등을 제출하면 돼요.",
+      links: [
+        { icon: "🏢", title: "고용24 미지급 실업급여 청구", desc: "관할 고용센터 방문 청구 안내", href: "https://www.ei.go.kr/ei/eih/cm/hm/main.do" },
+        { icon: "📋", title: "실업급여 구비서류 목록", desc: "청구에 필요한 기본 서류 목록", href: "/w/실업급여-구비서류" },
+      ],
+    };
+  }
+
+  const result = getResult();
 
   return (
     <BlogLayout
-      breadcrumb={["홈", "실업급여", "미지급 유족 청구"]}
-      tags={["2026년 기준", "실업급여", "미지급"]}
-      date="2026-02-20"
-      title="실업급여 미지급 사망 유족 | 배우자 자녀 기한"
-      description={
-        <>
-          실업급여 수급 중 사망하면 남은 급여를 유족이 받을 수 있어요. 청구 순위는 배우자·자녀 → 부모 → 조부모 → 형제자매 순이고, <strong style={{ color: C.t1 }}>3년 소멸시효</strong>가 있어요.
-        </>
-      }
-      sourceBar={{ badge: "출처", name: "고용보험법 제63조 · 고용24", date: "2026.02 기준" }}
-      stickyLabel="소멸시효"
+      breadcrumb={["홈", "실업급여", "미지급 상속"]}
+      tags={["2026년 최신", "실업급여", "유족 청구"]}
+      date={meta.lastUpdated}
+      title={meta.title}
+      description={<>구직급여 수급자가 사망한 경우 남은 <B>미지급 실업급여</B>를 유족이 청구할 수 있어요. 유족 순위와 청구 서류, <B>소멸시효 3년</B>까지 정리했어요.</>}
+      sourceBar={{ badge: "법령", name: "고용보험법 제55조 미지급 실업급여", date: "2026.02 기준" }}
+      stickyLabel="청구 기한"
       stickyValue="사망일로부터 3년"
-      stickyBtn="고용24 청구 안내 →"
-      stickyHref="https://www.work24.go.kr/cm/c/d/UECMCDA0101.do"
+      stickyBtn="유족 청구 조건 확인 ↑"
+      disclaimer="이 글은 고용보험법 제55조를 바탕으로 작성된 정보 제공 목적의 콘텐츠예요. 정확한 청구 여부는 고용센터에서 확인하세요."
+      sidebar={<>
+        <SidebarCTA items={[
+          { icon: "🏢", title: "고용센터 미지급 청구", sub: "유족 청구 서류 제출", href: "https://www.ei.go.kr/ei/eih/cm/hm/main.do", hot: true },
+          { icon: "📋", title: "실업급여 구비서류 목록", sub: "신청 서류 전체 정리", href: "/w/실업급여-구비서류" },
+          { icon: "📅", title: "실업급여 수급기간", sub: "최대 9개월 일수 확인", href: "/w/실업급여-수급기간-몇개월-받나요" },
+        ]} />
+        <SidebarDocs items={[
+          { title: "실업급여 수급자격 인정", cat: "실업급여·자격", href: "/w/실업급여-수급자격-인정" },
+          { title: "실업급여 구비서류 목록", cat: "실업급여·서류", href: "/w/실업급여-구비서류" },
+          { title: "실업급여 신청방법 안내", cat: "실업급여·신청", href: "/w/실업급여-신청방법" },
+          { title: "실업급여 소정급여일수", cat: "실업급여·지급일수", href: "/w/실업급여-소정급여일수" },
+          { title: "실업급여 상한액 하한액", cat: "실업급여·금액", href: "/w/실업급여-상한액" },
+        ]} />
+        <SidebarCalc items={[
+          { title: "실업급여 계산기", href: "/w/실업급여-연봉별-계산" },
+          { title: "퇴직금 계산기", href: "/w/퇴직급여-지급-지연이자-받기" },
+          { title: "건강보험료 계산기", href: "/w/건강보험-지역가입자-보험료-계산" },
+          { title: "연말정산 계산기", href: "/w/프리랜서-3.3-원천징수-환급" },
+          { title: "소득세 계산기", href: "/w/종합소득세-신고-안하면-가산세" },
+        ]} />
+      </>}
     >
       <TOC items={[
-        { t: "유족 청구 자격 확인 체크", sub: "수급자와의 관계별 순위" },
-        { t: "실업급여 미지급은 누가 받나요?", sub: null },
-        { t: "사망 시 유족 청구는 어떻게 하나요?", sub: "필요 서류 안내" },
-        { t: "배우자 자녀 순위는 어떻게 되나요?", sub: "유족 청구 순위표" },
-        { t: "유족 청구 기한은 언제까지인가요?", sub: null },
+        { t: "미지급 실업급여 청구 가능할까?", sub: null },
+        { t: "실업급여 미지급 상속 받을 수 있나요?", sub: "유족 순위 · 청구 자격 조건" },
+        { t: "실업급여 미지급 청구 서류는 무엇인가요?", sub: "사망진단서 · 유족관계증명서 · 통장" },
+        { t: "실업급여 미지급 사례별 판단은?", sub: "배우자 · 자녀 · 형제자매 사례" },
+        { t: "실업급여 미지급 소멸시효는?", sub: "사망일 기준 3년 · 청구 시기 주의" },
         { t: "자주 묻는 질문", sub: null },
       ]} />
-
       <Summary3 items={[
-        "실업급여 수급자가 사망하면 미지급 급여는 <strong>유족이 청구</strong>할 수 있어요.",
-        "수급 순위는 배우자·자녀 → 부모 → 손자녀·조부모 → <strong>형제자매</strong> 순이에요.",
-        "청구권은 사망일로부터 <strong>3년</strong>이 지나면 소멸시효가 완성돼요.",
+        "수급자 사망 시 미지급 구직급여는 유족이 청구할 수 있어요",
+        "유족 순위: 배우자 → 자녀 → 부모 → 손자녀 → 조부모 → 형제자매",
+        "소멸시효는 3년이며 사망일 기준으로 기산해요",
       ]} />
 
-      {/* ── STEP 01. 체커 ── */}
-      <Divider />
-      <Sec n="STEP 01" title="유족 청구 자격 확인 체크" sub="사망한 수급자와의 관계를 선택하면 청구 순위를 알려드려요" />
-
-      <P>실업급여 미지급 유족 청구는 관계에 따라 순위가 정해져요. <A href="https://www.law.go.kr/법령/고용보험법">고용보험법 제63조</A>에서 순위를 명시하고 있어요. 선순위 청구권자가 있으면 후순위는 청구할 수 없으니 먼저 확인해 보세요.</P>
-
-      <div style={{ background: "#FFF", border: `1px solid ${C.line}`, borderRadius: 12, overflow: "hidden" }}>
-        <div style={{ background: C.navy, padding: "16px 18px", display: "flex", alignItems: "center", gap: 12 }}>
-          <div style={{ width: 38, height: 38, background: "#fff", borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>&#x2714;</div>
-          <div>
-            <h3 style={{ color: "#fff", fontSize: 15, fontWeight: 700, margin: 0 }}>유족 청구 순위 확인</h3>
-            <p style={{ color: "rgba(255,255,255,.7)", fontSize: 12, marginTop: 1, margin: 0 }}>30초면 확인할 수 있어요</p>
-          </div>
-        </div>
-        <div style={{ padding: "20px 18px" }}>
-          <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: C.t2, marginBottom: 8 }}>
-              <span style={{ width: 20, height: 20, background: C.navy, color: "#fff", borderRadius: 5, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 800 }}>1</span>
-              사망한 수급자와 어떤 관계인가요?
-            </div>
-            <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
-              <Btn group="relation" value="spouse_child" label="배우자 또는 자녀" sel={sel} pick={pick} />
-              <Btn group="relation" value="parent" label="부모 (친부모·양부모)" sel={sel} pick={pick} />
-              <Btn group="relation" value="grandchild_grandparent" label="손자녀 또는 조부모" sel={sel} pick={pick} />
-              <Btn group="relation" value="sibling" label="형제자매" sel={sel} pick={pick} />
-              <Btn group="relation" value="unknown" label="잘 모르겠어요" sel={sel} pick={pick} />
-            </div>
-          </div>
-
-          {result && (
-            <div style={{ marginTop: 16, padding: 16, borderRadius: 8, background: C.navyLight, border: "1px solid rgba(30,58,95,.1)" }}>
-              {result.rank && (
-                <div style={{ fontSize: 22, fontWeight: 900, color: C.navy, marginBottom: 6 }}>
-                  {result.rank} <span style={{ fontSize: 12, color: C.t3, fontWeight: 400 }}>청구권자</span>
-                </div>
-              )}
-              <div style={{ fontSize: 15, fontWeight: 800, color: C.navy, marginBottom: 4 }}>{result.headline}</div>
-              <div style={{ fontSize: 13, color: C.t3, lineHeight: 1.55 }}>{result.detail}</div>
-              <div style={{ display: "flex", gap: 5, marginTop: 8, flexWrap: "wrap" }}>
-                {result.badges.map((b, i) => (
-                  <span key={i} style={{ fontSize: 11, fontWeight: 700, padding: "3px 9px", borderRadius: 4, background: C.navy, color: "#fff" }}>{b}</span>
+      <Sec n={1} id="checker" title="미지급 실업급여 청구 가능할까?" sub={null}>
+        <P>구직급여를 수급하던 중 사망한 경우, 아직 받지 못한 실업급여는 사라지지 않아요. <B>유족이 대신 청구</B>할 수 있는 권리가 있어요.</P>
+        <P>4가지 조건을 확인하면 청구 가능 여부를 바로 알 수 있어요. 아래 체커에서 상황을 선택해 보세요.</P>
+        <CheckerShell title="미지급 실업급여 청구 가능할까?" subtitle="30초 확인" intro="4가지를 선택하면 청구 가능 여부를 바로 알려드려요.">
+          <CheckerQ n={1} group={1} label="사망자가 수급자격 인정을 받은 상태였나요?" opts={[["y", "수급자격 인정을 받았어요"], ["n", "수급자격 인정 전이에요"]]} sel={q1} pick={setQ1 as (v: string) => void} />
+          <CheckerQ n={2} group={1} label="청구자의 유족 관계가 어떻게 되나요?" opts={[["spouse", "배우자"], ["child", "자녀 또는 부모"], ["parent", "손자녀 또는 조부모"], ["other", "형제자매"]]} sel={q2} pick={setQ2 as (v: string) => void} />
+          <CheckerQ n={3} group={2} label="내가 선순위 유족인가요?" opts={[["y", "선순위 유족이에요"], ["n", "선순위 유족이 있어요"]]} sel={q3} pick={setQ3 as (v: string) => void} />
+          <CheckerQ n={4} group={2} label="사망일로부터 얼마나 됐나요?" opts={[["within3", "3년 이내예요"], ["over3", "3년이 지났어요"]]} sel={q4} pick={setQ4 as (v: string) => void} />
+          {result && (() => {
+            const links = result.links as ResLink[];
+            return result.pass ? (
+              <ResultPass title={result.title} desc={result.desc}>
+                {links.map((l) => (
+                  <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
                 ))}
-              </div>
-              {result.links.length > 0 && (
-                <div style={{ marginTop: 12, paddingTop: 12, borderTop: "1px solid rgba(30,58,95,.08)" }}>
-                  <div style={{ fontSize: 12, fontWeight: 700, color: C.t1, marginBottom: 6 }}>{"📖 다음 단계 안내"}</div>
-                  {result.links.map((lnk, li) => (
-                    <a key={li} href={lnk.href} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 0", fontSize: 13, color: C.navy, fontWeight: 600, borderBottom: "1px solid rgba(30,58,95,.06)", textDecoration: "none" }}>
-                      <span>{lnk.icon} {lnk.title}</span>
-                      <span style={{ fontSize: 11, color: C.t4 }}>{"\u2192"}</span>
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* ── SECTION 02. 미지급 수급 ── */}
-      <Divider />
-      <Sec n="SECTION 02" title="실업급여 미지급은 누가 받나요?" sub="유족의 고유 청구권 — 상속재산과 별도" />
-
-      <P>실업급여 수급자가 사망하면 아직 지급되지 않은 급여는 유족이 본인 명의로 청구할 수 있어요. <A href="https://www.law.go.kr/법령/고용보험법">고용보험법 제63조</A>에서 미지급 실업급여는 수급자격자의 유족이 청구할 수 있다고 정하고 있어요.</P>
-
-      <P>여기서 중요한 점이 있어요. 미지급 실업급여는 상속재산이 아니에요. 유족의 고유 청구권이기 때문에 수급자에게 채무가 있어도 채권자가 압류할 수 없어요. 상속을 포기해도 미지급 실업급여는 별도로 청구할 수 있어요.</P>
-
-      <P>청구 대상은 사망일 이전에 발생한 실업인정 기간 중 지급이 완료되지 않은 금액이에요. 예를 들어 실업인정일에 신청은 했지만 지급 전에 사망했다면 그 금액을 청구할 수 있어요.</P>
-
-      <P>유족이 청구할 수 있는 건 미지급 급여만이에요. 수급자가 아직 실업인정을 받지 않은 기간의 급여는 청구 대상이 아니에요. 이미 발생한 급여 채권 중에서 실제 지급이 안 된 부분만 해당돼요.</P>
-
-      <Info type="tip">{'<strong>상속 포기와 별개:</strong> 수급자의 채무가 많아서 상속을 포기해도 미지급 실업급여는 <strong>별도로 청구할 수 있어요</strong>. 유족 고유 권리이기 때문이에요.'}</Info>
-
-      <InlineLink icon="📊" title="실업급여 소정급여일수 — 나이별 수급 기간표" desc="사망한 수급자의 남은 급여일수를 파악하려면 나이와 피보험기간으로 확인하세요." href="/w/실업급여-소정급여일수" />
-
-      {/* ── SECTION 03. 청구 절차 ── */}
-      <Divider />
-      <Sec n="SECTION 03" title="사망 시 유족 청구는 어떻게 하나요?" sub="고용센터 방문 신청 — 온라인은 불가" />
-
-      <P>미지급 실업급여를 청구하려면 수급자가 마지막으로 다니던 고용센터에 방문해야 해요. 온라인 신청은 되지 않고, 직접 방문해서 청구서를 제출해야 해요.</P>
-
-      <P>필요한 서류는 미지급 실업급여 청구서, 수급자의 사망 사실을 확인할 수 있는 사망진단서 또는 가족관계증명서, 그리고 청구인 본인 신분증과 통장 사본이에요. 가족관계를 증명하는 서류가 추가로 필요할 수 있어요.</P>
-
-      <P>청구서 양식은 고용센터 방문 시 현장에서 받을 수 있어요. 사전에 <A href="https://www.work24.go.kr">고용24</A>에서 서류를 확인해두면 방문 시 빠르게 처리할 수 있어요.</P>
-
-      <P><B>사망일로부터 3년 이내에 청구해야 소멸시효가 완성되기 전에 받을 수 있어요.</B> 바쁘더라도 3년 안에는 꼭 청구해두세요.</P>
-
-      <Info type="warn">{'<strong>서류 체크리스트:</strong> ① 미지급 청구서(현장 수령) ② 사망진단서 또는 가족관계증명서 ③ 청구인 신분증 ④ 청구인 명의 통장 사본'}</Info>
-
-      <InlineLink icon="📋" title="실업급여 구비서류 — 신청 시 필요한 서류 전체" desc="수급자격 신청부터 실업인정까지 단계별 필요 서류를 정리했어요." href="/w/실업급여-구비서류" />
-
-      {/* ── SECTION 04. 순위 ── */}
-      <Divider />
-      <Sec n="SECTION 04" title="배우자 자녀 순위는 어떻게 되나요?" sub="고용보험법 제63조 기준 유족 순위" />
-
-      <P>유족 청구 순위는 고용보험법에서 정한 순서가 있어요. 선순위 청구권자가 있으면 후순위는 청구할 수 없어요.</P>
-
-      <P>1순위는 배우자와 자녀예요. 법률혼 배우자와 혼인 외 출생자를 포함한 자녀 모두 해당해요. 생계를 같이하지 않아도 되고, 배우자와 자녀가 여러 명이면 같은 순위로 동등하게 나눠요. 2순위는 부모예요. 친부모·양부모 모두 포함되고, 1순위 청구권자가 없을 때 청구할 수 있어요. 3순위는 손자녀 또는 조부모예요. 4순위는 형제자매예요.</P>
-
-      <P>선순위 유족이 청구권을 포기하거나 모두 사망한 경우 후순위가 청구할 수 있어요. 순위가 같은 유족이 여러 명이면 대표 청구인을 지정해서 일괄 신청하거나 각각 청구할 수 있어요.</P>
-
-      <TableTitle>미지급 실업급여 유족 청구 순위</TableTitle>
-      <div style={{ overflowX: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-          <thead>
-            <tr><THL>순위</THL><TH>대상</TH><TH>조건</TH></tr>
-          </thead>
-          <tbody>
-            {[
-              ["1순위", "배우자·자녀", "동등하게 나눔"],
-              ["2순위", "부모 (친부모·양부모)", "1순위 없을 때"],
-              ["3순위", "손자녀·조부모", "1~2순위 없을 때"],
-              ["4순위", "형제자매", "1~3순위 없을 때"],
-            ].map((row, ri) => (
-              <tr key={ri}>
-                {row.map((cell, ci) => (
-                  <td key={ci} style={{ padding: "8px 8px", textAlign: ci === 0 ? "left" : "center", borderBottom: `1px solid ${C.line}`, color: ci === 0 ? C.t1 : C.t2, fontWeight: ci === 0 ? 600 : 400 }}>{cell}</td>
+              </ResultPass>
+            ) : (
+              <ResultFail title={result.title} desc={result.desc}>
+                {links.map((l) => (
+                  <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
                 ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <TableNote>※ 같은 순위 유족이 여러 명이면 동등하게 나눠서 청구</TableNote>
+              </ResultFail>
+            );
+          })()}
+        </CheckerShell>
+      </Sec>
 
-      <div style={{ marginTop: 20 }}>
-        <div style={{ fontSize: 14, fontWeight: 800, color: C.t1, marginBottom: 10 }}>{"📖 실업급여 청구 더 알아보기"}</div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-          <SpokeLink num="01" title="실업급여 신청방법 — 고용센터 방문부터 온라인까지" desc="수급자격 신청 전체 절차 안내" href="/w/실업급여-신청방법" />
-          <SpokeLink num="02" title="실업급여 지급일 — 실업인정 후 입금까지 기간" desc="지급 주기와 입금 시점 확인" href="/w/실업급여-지급일" />
-          <SpokeLink num="03" title="실업급여 수급자격 — 비자발적 퇴사 기준" desc="자발적·비자발적 퇴사별 수급자격 판단" href="/w/실업급여-수급자격" />
-        </div>
-      </div>
-
-      {/* ── SECTION 05. 소멸시효 ── */}
       <Divider />
-      <Sec n="SECTION 05" title="유족 청구 기한은 언제까지인가요?" sub="사망일로부터 3년 — 소멸시효" />
-
-      <P>미지급 실업급여 청구권의 소멸시효는 <B>사망일로부터 3년</B>이에요. 3년이 지나면 청구권이 소멸해서 더 이상 받을 수 없어요. 고용보험법에서 실업급여 청구권의 소멸시효를 3년으로 정하고 있어요.</P>
-
-      <P>소멸시효 기산점은 수급자가 사망한 날이에요. 사망 사실을 나중에 알았더라도 사망일 기준으로 기산해요. 예를 들어 2024년 3월에 사망했다면 2027년 3월까지 청구해야 해요.</P>
-
-      <P>소멸시효가 완성되기 전에 청구서를 제출하면 시효가 중단돼요. 고용센터에서 접수증을 받아두면 청구 사실을 입증할 수 있어요.</P>
-
-      <P>상속 절차와 별개로 진행할 수 있으니, 상속 정리가 끝나지 않았더라도 미지급 실업급여는 먼저 청구해두는 게 좋아요. 특히 3년 시효가 임박했다면 서류가 완비되지 않아도 일단 청구서를 제출해서 시효를 중단시키는 게 중요해요.</P>
-
-      <InlineLink icon="📊" title="소정급여일수 기준표 — 나이와 피보험기간별 수급 기간" desc="수급자의 남은 급여일수를 확인하려면 나이·피보험기간 기준표를 참고하세요." href="/w/실업급여-소정급여일수" />
 
       <BridgeCard
-        question="상속 포기해도 미지급 급여는 받을 수 있다는 거 아셨나요?"
-        body={<>미지급 실업급여는 상속재산이 아니에요. 수급자에게 채무가 있어서 <strong style={{ color: C.navy }}>상속을 포기</strong>해도 유족 고유 청구권으로 별도 청구가 가능해요.</>}
-        btnText="청구 절차와 서류 확인 →"
-        href="/w/실업급여-신청방법"
+        q="미지급 청구 조건이 충족됐다면 서류 준비를 시작하세요"
+        a="사망진단서, 유족관계증명서, 통장사본을 준비해 관할 고용센터에 방문하면 돼요."
+        label="청구 서류 목록 보기"
+        href="#docs"
       />
 
-      {/* ── FAQ ── */}
+      <Sec n={2} id="eligibility" title="실업급여 미지급 상속 받을 수 있나요?" sub="유족 순위 · 청구 자격 조건">
+        <P>미지급 실업급여 청구권은 <B>고용보험법 제55조</B>에 규정돼 있어요. 수급자격자가 사망한 경우 아직 지급받지 못한 실업급여를 유족이 청구할 수 있는 제도예요.</P>
+        <P>유족 청구 순위는 민법 상속 순위와 유사하게 적용돼요. <B>배우자가 1순위</B>이고, 그 다음이 자녀, 부모, 손자녀, 조부모, 형제자매 순이에요. 같은 순위의 유족이 여러 명이라면 동등한 권리를 가져요.</P>
+        <P>중요한 것은 사망 당시 수급자격 인정을 받은 상태여야 한다는 점이에요. 수급자격 신청은 했지만 인정 결정이 나기 전에 사망한 경우에는 유족이 대신 인정 신청을 진행할 수 있어요.</P>
+        <P>구직급여 수급 중 사망한 경우뿐 아니라, 수급자격 인정 후 아직 수급을 시작하지 않은 상태에서 사망한 경우에도 청구 가능해요. 대기기간 중 사망한 경우에도 잔여 소정급여일수에 해당하는 금액을 청구할 수 있어요.</P>
+        <Info type="warn">{"<strong>생계를 같이하지 않아도 청구 가능해요:</strong> 유족의 청구권은 동거 여부와 관계없이 인정돼요. 다만 동순위 유족이 여러 명이라면 합의하여 1명이 대표로 청구하는 것이 편리해요."}</Info>
+        <InlineLink icon="📋" title="실업급여 수급자격 인정 조건" desc="수급자격 인정 기준 전체 정리" href="/w/실업급여-수급자격-인정" />
+      </Sec>
+
       <Divider />
-      <Sec n="FAQ" title="자주 묻는 질문" />
-      <FAQAccordion items={[
-        { q: "실업급여 미지급 청구 시 유족 간 순위가 같으면 어떻게 되나요?", a: '같은 순위의 유족이 여러 명이면 <strong>동등하게 나눠 받아요</strong>. 예를 들어 자녀가 2명이면 각각 절반씩 청구할 수 있어요. 대표 청구인을 지정해서 일괄 신청하는 경우도 있어요.' },
-        { q: "실업급여 미지급 사망 시 수급자의 빚이 있으면 어떻게 되나요?", a: '미지급 실업급여는 상속재산과 <strong>별도로 취급</strong>돼요. 수급자에게 채무가 있어도 유족의 고유 청구권이기 때문에 채권자가 압류할 수 없어요.' },
-      ]} />
 
+      <Sec n={3} id="docs" title="실업급여 미지급 청구 서류는 무엇인가요?" sub="사망진단서 · 유족관계증명서 · 통장">
+        <H3>기본 청구 서류</H3>
+        <P>미지급 실업급여를 청구하려면 사망자와의 관계를 증명하는 서류와 수령 계좌를 확인하는 서류가 필요해요. 기본 서류는 <B>사망진단서, 가족관계증명서(또는 기본증명서), 청구인 신분증, 청구인 통장사본</B>이에요.</P>
+        <H3>추가 서류</H3>
+        <P>선순위 유족이 청구를 포기하는 경우에는 포기 확인서 또는 동의서가 필요해요. 사망자의 수급자격 확인을 위해 사망자의 주민등록등본이나 이직확인서 사본을 요청받을 수도 있어요.</P>
+        <P>고용센터에 따라 요구 서류가 다를 수 있으니, 방문 전에 관할 고용센터에 전화로 확인하는 게 좋아요. 서류가 완비돼야 처리 기간이 단축되기 때문에 미리 확인하는 게 유리해요.</P>
+        <BridgeCard
+          q="서류 준비가 됐다면 관할 고용센터에 방문하세요"
+          a="방문 시 담당자가 청구인 확인 후 미지급 금액을 안내해 드려요. 처리 기간은 보통 2~3주 정도 걸려요."
+          label="고용센터 찾기"
+          href="/w/실업급여-고용센터-찾기-고용24-사용법"
+        />
+      </Sec>
+
+      <RelatedMid
+        title="실업급여 관련 다른 글도 함께 살펴보세요"
+        items={[
+          { icon: "📋", title: "실업급여 구비서류 목록", desc: "이직확인서·통장·사진 필요 서류", href: "/w/실업급여-구비서류" },
+          { icon: "📅", title: "실업급여 소정급여일수", desc: "나이·피보험기간별 120~270일", href: "/w/실업급여-소정급여일수" },
+          { icon: "💰", title: "실업급여 상한액 하한액", desc: "2026년 기준 일일 상한 66,000원", href: "/w/실업급여-상한액" },
+        ]}
+        hubHref="/category/실업급여"
+        hubLabel="실업급여 전체 보기"
+      />
+
+      <Divider />
+
+      <Sec n={4} id="cases" title="실업급여 미지급 사례별 판단은?" sub="배우자 · 자녀 · 형제자매 사례">
+        <H3>배우자가 청구한 이 씨 사례</H3>
+        <P>남편이 구직급여 수급 중 갑작스럽게 사망했어요. 배우자는 1순위 유족으로 바로 청구 가능해요. 사망진단서, 가족관계증명서, 이 씨 본인 통장사본을 준비해 관할 고용센터에 방문했고, 잔여 미지급 구직급여를 수령했어요.</P>
+        <H3>자녀가 청구한 박 씨 사례</H3>
+        <P>아버지가 수급자격 인정 직후 대기기간 중 사망했어요. 아버지에게 배우자가 없어 자녀(2순위)인 박 씨가 청구했어요. 기본증명서로 자녀 관계를 증명하고, 형제들의 동의서를 함께 제출해 단독 청구했어요.</P>
+        <H3>형제자매가 청구한 김 씨 사례</H3>
+        <P>수급자에게 배우자·자녀·부모·손자녀·조부모가 모두 없어서 마지막 순위인 형제자매가 청구했어요. 선순위 유족이 없음을 증명하는 가족관계증명서 전체를 제출해야 했어요. 처리 시간이 다소 길었지만 결국 미지급 금액을 수령할 수 있었어요.</P>
+        <P>어떤 유족 순위든 사망일부터 3년 이내에 청구하면 돼요. 선순위 유족이 포기 의사를 밝히면 다음 순위 유족이 청구할 수 있어요. 가족 간 합의를 통해 대표 청구인을 정하는 것이 가장 효율적이에요.</P>
+      </Sec>
+
+      <Divider />
+
+      <Sec n={5} id="expiry" title="실업급여 미지급 소멸시효는?" sub="사망일 기준 3년 · 청구 시기 주의">
+        <P>미지급 실업급여 청구권의 소멸시효는 <B>사망일로부터 3년</B>이에요. 3년이 지나면 청구권이 소멸되어 지급받을 수 없으니, 되도록 빨리 청구하는 게 좋아요.</P>
+        <P>소멸시효는 사망일을 기준으로 하는 것이지, 유족이 사망 사실을 안 날부터 기산하지 않아요. 가족 간 연락이 늦어지거나 서류 준비에 시간이 걸리더라도, 사망일로부터 3년 이내에 청구를 완료해야 해요.</P>
+        <P>청구 후 처리 기간은 보통 2~3주 정도 걸려요. 서류가 완비된 상태에서 접수하면 처리가 빠르게 진행돼요. 처리 완료 후 청구인 통장으로 미지급 금액이 입금돼요.</P>
+        <P>미지급 금액이 소액이더라도 청구하는 것이 좋아요. 수급자가 납부한 고용보험료에서 비롯된 권리이고, 청구 절차가 어렵지 않으니 3년 이내에 챙겨볼 것을 권장해요.</P>
+        <InlineLink icon="📋" title="실업급여 소정급여일수 기준" desc="나이·피보험기간별 잔여일수 계산 방법" href="/w/실업급여-소정급여일수" />
+        <SpokeLink num={1} title="실업급여 수급자격 인정 조건" desc="비자발적 퇴사 · 피보험기간 180일 이상" href="/w/실업급여-수급자격-인정" />
+        <SpokeLink num={2} title="실업급여 구비서류 준비 목록" desc="이직확인서 · 통장 · 사진 필요 서류" href="/w/실업급여-구비서류" />
+        <ExtBtn badge="고용보험 공식" text="미지급 실업급여 유족 청구" cta="바로가기 →" href="https://www.ei.go.kr/ei/eih/cm/hm/main.do" />
+      </Sec>
+
+      <Divider />
+
+      <FAQAccordion items={meta.faq} />
       <RelatedArticles items={[
-        { title: "실업급여 신청방법 — 고용센터 방문부터 온라인까지", desc: "실업급여 · 신청", href: "/w/실업급여-신청방법" },
-        { title: "실업급여 수급자격 — 자발적·비자발적 퇴사 기준", desc: "실업급여 · 수급자격", href: "/w/실업급여-수급자격" },
-        { title: "실업급여 지급일 — 실업인정 후 입금까지 기간", desc: "실업급여 · 지급일", href: "/w/실업급여-지급일" },
-        { title: "실업급여 소정급여일수 — 나이별 기간표", desc: "실업급여 · 소정급여일수", href: "/w/실업급여-소정급여일수" },
+        { title: "실업급여 수급자격 인정 조건", href: "/w/실업급여-수급자격-인정" },
+        { title: "실업급여 구비서류 준비 목록", href: "/w/실업급여-구비서류" },
+        { title: "실업급여 신청방법 단계별 안내", href: "/w/실업급여-신청방법" },
+        { title: "실업급여 소정급여일수 계산", href: "/w/실업급여-소정급여일수" },
+        { title: "실업급여 재취업 조건 안내", href: "/w/실업급여-재취업-조건" },
       ]} />
-
       <PrevNext
-        prev={{ title: "실업급여 기초일액 상한·하한", href: "/w/실업급여-기초일액" }}
-        next={{ title: "실업급여 반복수급 감액", href: "/w/실업급여-반복수급" }}
+        prev={{ title: "실업급여 구비서류 준비 목록", href: "/w/실업급여-구비서류" }}
+        next={{ title: "실업급여 이의신청 심사청구 절차", href: "/w/실업급여-이의신청-심사청구-재심사-불복-절차" }}
       />
     </BlogLayout>
   );

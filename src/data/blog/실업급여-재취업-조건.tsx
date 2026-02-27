@@ -1,343 +1,283 @@
 "use client";
-
 import { useState } from "react";
 import {
-  C, Btn, Info, Divider, Sec, P, B, A,
-  TableTitle, TableNote, TH, THL,
-  BridgeCard, BlogLayout, TOC, Summary3,
+  BlogLayout, TOC, Summary3, Sec, P, B, A, H3,
+  Info, InlineLink, SpokeLink, BridgeCard, ExtBtn,
   FAQAccordion, RelatedArticles, PrevNext,
-  InlineLink, SpokeLink, FormulaCard, CaseBox,
+  RelatedMid, SidebarCTA, SidebarDocs, SidebarCalc,
+  CheckerShell, CheckerQ, ResultPass, ResultFail, ResultGrid, ResultCTA,
+  Divider, TableTitle, TableNote, TH, THL, Tag, Btn,
+  FormulaCard, CaseBox, ChipsGrid,
 } from "@/components/wiki/BlogShared";
 
-// ── 체커 로직 ──
-type ResLink = { icon: string; title: string; href: string };
-type Res = { pass: boolean; headline: string; detail: string; badges: string[]; links: ResLink[] };
+type Q1 = "y" | "n";
+type Q2 = "y" | "n";
+type Q3 = "regular" | "startup" | "short";
+type Q4 = "none" | "had";
 
-function getResult(sel: Record<string, string>): Res | null {
-  const { remaining, tenure } = sel;
-  if (!remaining) return null;
-  if (remaining === "over-half" && !tenure) return null;
+const meta = {
+  title: "실업급여 재취업 조건 안내 | 조기재취업수당 잔여일수 절반 지급",
+  description: "구직급여 수급 중 재취업했다면 조기재취업수당을 받을 수 있어요. 잔여일수 절반 이상, 12개월 이상 고용 조건부터 신청 시점까지 알려드려요.",
+  category: "실업급여",
+  keywords: [
+    "실업급여 재취업 조건 안내",
+    "조기재취업수당 잔여일수 기준",
+    "실업급여 재취업 사례 판단",
+    "실업급여 재취업 후 재신청 조건",
+  ],
+  author: "머니위키 에디터",
+  updateNote: "2026년 2월 기준",
+  lastUpdated: "2026-02-27",
+  datePublished: "2026-02-27",
+  summary: [
+    "조기재취업수당 = 잔여일수 × 1일 구직급여액 × 50%",
+    "잔여 소정급여일수 절반 이상 + 12개월 이상 고용이 필수 조건이에요",
+    "재취업 후 12개월이 지난 뒤 고용센터 또는 고용24에서 신청해요",
+  ],
+  sources: [
+    { name: "고용보험법 제64조 조기재취업수당", url: "https://www.law.go.kr/lsSc.do?menuId=1&subMenuId=15&tabMenuId=81&query=%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95#undefined", date: "2026-02" },
+  ],
+  faq: [
+    { q: "실업급여 재취업 후 조기수당은 언제 신청하나요?", a: "재취업일로부터 12개월이 지난 뒤 고용센터 또는 고용24에서 신청해요. 재취업 즉시 신청하는 게 아니라 12개월 계속 고용이 확인된 뒤에 신청하는 구조예요." },
+    { q: "실업급여 재취업 조기수당은 세금이 붙나요?", a: "조기재취업수당은 비과세 소득이에요. 구직급여와 동일하게 소득세가 부과되지 않아요." },
+  ],
+  ctaCard: {
+    label: "30초 확인",
+    mainText: "조기재취업수당 받을 수 있을까?",
+    subText: "조건 체크하고 바로 결과 확인",
+    url: "#checker",
+    external: false,
+  },
+  relatedDocs: [{ title: "실업급여 소정급여일수", url: "/w/실업급여-소정급여일수" }],
+};
 
-  if (remaining === "under-half") {
+export default function Page() {
+  const [q1, setQ1] = useState<Q1 | "">("");
+  const [q2, setQ2] = useState<Q2 | "">("");
+  const [q3, setQ3] = useState<Q3 | "">("");
+  const [q4, setQ4] = useState<Q4 | "">("");
+
+  type ResLink = { icon: string; title: string; desc: string; href: string };
+  type Result = { pass: boolean; title: string; desc: string; links: ResLink[] };
+
+  function getResult(): Result | null {
+    if (!q1 || !q2 || !q3 || !q4) return null;
+
+    if (q1 === "y" && q2 === "y" && q3 !== "short" && q4 === "none") {
+      return {
+        pass: true,
+        title: "조기재취업수당 신청 가능해요",
+        desc: "잔여일수 절반 이상 + 12개월 이상 고용 조건이 충족돼요. 재취업 후 12개월 뒤 고용24에서 신청하면 돼요.",
+        links: [
+          { icon: "🏢", title: "고용24 조기재취업수당 신청", desc: "재취업 12개월 후 온라인 신청 가능", href: "https://www.ei.go.kr/ei/eih/cm/hm/main.do" },
+          { icon: "📋", title: "실업급여 소정급여일수 확인", desc: "잔여일수 계산 기준 정리", href: "/w/실업급여-소정급여일수" },
+        ],
+      };
+    }
+    if (q1 === "n") {
+      return {
+        pass: false,
+        title: "구직급여 수급 중이어야 해요",
+        desc: "조기재취업수당은 구직급여 수급 중에 재취업한 경우에만 해당돼요. 먼저 실업급여 신청부터 해야 해요.",
+        links: [
+          { icon: "📋", title: "실업급여 신청방법 안내", desc: "고용24 온라인 신청 단계별 안내", href: "/w/실업급여-신청방법" },
+          { icon: "📅", title: "실업급여 신청기간 기한", desc: "퇴직 후 12개월 이내 접수 시기", href: "/w/실업급여-신청기간" },
+        ],
+      };
+    }
+    if (q2 === "n") {
+      return {
+        pass: false,
+        title: "잔여일수가 부족해요",
+        desc: "소정급여일수의 절반 이상이 남아있어야 해요. 잔여일수를 먼저 확인해 보세요.",
+        links: [
+          { icon: "📋", title: "실업급여 소정급여일수 기준", desc: "나이·피보험기간별 일수 확인", href: "/w/실업급여-소정급여일수" },
+          { icon: "📅", title: "실업급여 수급기간 몇 개월", desc: "최대 9개월 수급 기간 안내", href: "/w/실업급여-수급기간-몇개월-받나요" },
+        ],
+      };
+    }
+    if (q3 === "short") {
+      return {
+        pass: false,
+        title: "단기·임시직은 조건 미충족이에요",
+        desc: "12개월 이상 계속 고용이 가능한 직장에 재취업해야 해요. 12개월 미만 단기 계약은 해당되지 않아요.",
+        links: [
+          { icon: "📋", title: "실업급여 수급자격 인정 조건", desc: "기본 수급 요건 다시 확인", href: "/w/실업급여-수급자격-인정" },
+          { icon: "📅", title: "실업급여 실업인정 특례 조건", desc: "온라인 인정 구직활동 완화 안내", href: "/w/실업급여-실업인정-특례" },
+        ],
+      };
+    }
     return {
       pass: false,
-      headline: "소정급여일수 절반 이상 남아야 해요",
-      detail: "조기재취업수당은 소정급여일수의 1/2 이상 남은 상태에서 취업해야 받을 수 있어요. 이미 절반 이상 소진했다면 조기재취업수당은 어려워요.",
-      badges: ["소정급여일수 부족", "신청 불가"],
+      title: "3년 내 재수급 제한이에요",
+      desc: "조기재취업수당을 받은 날로부터 3년이 지나야 다시 신청할 수 있어요.",
       links: [
-        { icon: "📅", title: "소정급여일수 기준표 — 내 기준 일수 확인", href: "/w/실업급여-소정급여일수" },
-        { icon: "💰", title: "실업급여 기초일액 계산 방법", href: "/w/실업급여-기초일액" },
+        { icon: "📋", title: "실업급여 수급자격 인정 조건", desc: "기본 수급 요건 확인", href: "/w/실업급여-수급자격-인정" },
+        { icon: "📅", title: "실업급여 소정급여일수 기준", desc: "잔여일수 계산 기준", href: "/w/실업급여-소정급여일수" },
       ],
     };
   }
 
-  if (remaining === "unknown") {
-    return {
-      pass: false,
-      headline: "소정급여일수를 먼저 확인해야 해요",
-      detail: "고용24에서 현재 남은 소정급여일수를 확인할 수 있어요. 나이와 피보험기간별로 120~270일 중 해당하는 일수를 받아요.",
-      badges: ["소정급여일수 미확인"],
-      links: [
-        { icon: "📅", title: "소정급여일수 기준표 확인", href: "/w/실업급여-소정급여일수" },
-      ],
-    };
-  }
-
-  if (remaining === "over-half" && tenure === "yes") {
-    return {
-      pass: true,
-      headline: "조기재취업수당 신청이 가능해요",
-      detail: "취업일로부터 12개월 계속 근무를 완료했다면 바로 신청하면 돼요. 취업일 기준 12개월~14개월 이내에 관할 고용센터에 신청하세요.",
-      badges: ["신청 가능", "조건 충족"],
-      links: [
-        { icon: "💰", title: "실업급여 기초일액 계산 방법", href: "/w/실업급여-기초일액" },
-        { icon: "📅", title: "수급기간 계산 — 12개월 기한 확인", href: "/w/실업급여-수급기간-몇개월-받나요" },
-      ],
-    };
-  }
-
-  if (remaining === "over-half" && tenure === "not-yet") {
-    return {
-      pass: false,
-      headline: "12개월 계속 근무를 채워야 해요",
-      detail: "조기재취업수당은 취업일로부터 12개월 이상 계속 근무를 완료한 뒤에 신청할 수 있어요. 아직 12개월이 안 됐다면 계속 다니면 돼요.",
-      badges: ["근무 유지 중", "12개월 대기"],
-      links: [
-        { icon: "📅", title: "소정급여일수 기준표", href: "/w/실업급여-소정급여일수" },
-      ],
-    };
-  }
-
-  if (remaining === "over-half" && tenure === "no") {
-    return {
-      pass: false,
-      headline: "12개월 미만 근무라면 신청이 어려워요",
-      detail: "조기재취업수당은 취업 후 12개월 이상 계속 근무해야 받을 수 있어요. 12개월 이전에 퇴직했다면 해당되지 않아요.",
-      badges: ["근무 기간 부족", "신청 어려움"],
-      links: [
-        { icon: "📅", title: "소정급여일수 기준표", href: "/w/실업급여-소정급여일수" },
-        { icon: "💰", title: "실업급여 기초일액 계산 방법", href: "/w/실업급여-기초일액" },
-      ],
-    };
-  }
-
-  return null;
-}
-
-export default function Article() {
-  const [sel, setSel] = useState<Record<string, string>>({});
-  const pick = (g: string, v: string) => setSel((p) => ({ ...p, [g]: v }));
-  const result = getResult(sel);
+  const result = getResult();
 
   return (
     <BlogLayout
-      breadcrumb={["홈", "실업급여", "조기재취업수당"]}
-      tags={["2026년 기준", "실업급여", "조기재취업수당"]}
-      date="2026-02-23"
-      title="실업급여 조기재취업수당 신청 조건 | 남은 급여 50% 계산 방법"
-      description={
-        <>
-          빨리 취업하면 남은 실업급여의 50%를 일시금으로 받을 수 있어요. <strong style={{ color: C.t1 }}>소정급여일수 절반 이상 남았을 때 취업</strong>하면 조기재취업수당 신청이 가능해요.
-        </>
-      }
-      sourceBar={{ badge: "출처", name: "고용보험법 제64조 · 조기재취업수당 지급기준", date: "2026.02 기준" }}
-      stickyLabel="지급 기준"
-      stickyValue="남은 급여 50%"
-      stickyBtn="수당 계산하기 →"
-      stickyHref="https://www.work24.go.kr"
+      breadcrumb={["홈", "실업급여", "재취업 조건"]}
+      tags={["2026년 최신", "실업급여", "조기재취업수당"]}
+      date={meta.lastUpdated}
+      title={meta.title}
+      description={<>구직급여를 받는 도중 취업에 성공했다면 <B>조기재취업수당</B>을 받을 수 있어요. 잔여 소정급여일수의 <B>절반 이상</B>이 남아있고 <B>12개월 이상</B> 고용이 유지되어야 해요. 조건을 체크하면 바로 알 수 있어요.</>}
+      sourceBar={{ badge: "법령", name: "고용보험법 제64조 조기재취업수당", date: "2026.02 기준" }}
+      stickyLabel="수당 지급"
+      stickyValue="잔여일수 50%"
+      stickyBtn="조기수당 조건 확인 ↑"
+      disclaimer="이 글은 고용보험법 제64조를 바탕으로 작성된 정보 제공 목적의 콘텐츠예요. 정확한 수급 여부는 고용센터에서 확인하세요."
+      sidebar={<>
+        <SidebarCTA items={[
+          { icon: "💰", title: "조기재취업수당 신청", sub: "잔여일수 50% 한번에 수령", href: "https://www.ei.go.kr/ei/eih/cm/hm/main.do", hot: true },
+          { icon: "📋", title: "실업급여 계산기", sub: "나의 구직급여 예상액 확인", href: "/w/실업급여-연봉별-계산" },
+          { icon: "📅", title: "실업급여 수급기간", sub: "최대 9개월 일수 확인", href: "/w/실업급여-수급기간-몇개월-받나요" },
+        ]} />
+        <SidebarDocs items={[
+          { title: "실업급여 소정급여일수", cat: "실업급여·지급일수", href: "/w/실업급여-소정급여일수" },
+          { title: "실업급여 신청방법 안내", cat: "실업급여·신청", href: "/w/실업급여-신청방법" },
+          { title: "실업급여 수급기간", cat: "실업급여·수급", href: "/w/실업급여-수급기간-몇개월-받나요" },
+          { title: "실업급여 실업인정 특례", cat: "실업급여·인정", href: "/w/실업급여-실업인정-특례" },
+          { title: "실업급여 수급자격 인정", cat: "실업급여·자격", href: "/w/실업급여-수급자격-인정" },
+        ]} />
+        <SidebarCalc items={[
+          { title: "실업급여 계산기", href: "/w/실업급여-연봉별-계산" },
+          { title: "퇴직금 계산기", href: "/w/퇴직급여-지급-지연이자-받기" },
+          { title: "건강보험료 계산기", href: "/w/건강보험-지역가입자-보험료-계산" },
+          { title: "연말정산 계산기", href: "/w/프리랜서-3.3-원천징수-환급" },
+          { title: "소득세 계산기", href: "/w/종합소득세-신고-안하면-가산세" },
+        ]} />
+      </>}
     >
       <TOC items={[
-        { t: "조기재취업수당 신청 가능 여부 체크", sub: "남은 일수 · 근무 기간 확인" },
-        { t: "실업급여 조기재취업수당 신청 조건이 어떻게 되나요?", sub: null },
-        { t: "실업급여 남은 급여 50% 계산 방법은 어떻게 하나요?", sub: "3가지 계산 예시" },
-        { t: "실업급여 조기재취업수당 신청 방법과 절차는 어떻게 되나요?", sub: null },
-        { t: "조기재취업수당 신청 시 주의사항이 있나요?", sub: null },
+        { t: "조기재취업수당 받을 수 있을까?", sub: null },
+        { t: "실업급여 재취업 조기수당 조건은?", sub: "잔여일수 절반 이상 · 12개월 이상 고용 필수" },
+        { t: "실업급여 재취업 수당 지급액은?", sub: "잔여일수 50% · 재취업 12개월 후 신청" },
+        { t: "실업급여 재취업 사례별 판단은?", sub: "정규직 · 자영업 · 단기직 사례 비교" },
+        { t: "실업급여 재취업 후 재신청 가능한가요?", sub: "재실업 시 재수급 · 3년 제한 조건" },
         { t: "자주 묻는 질문", sub: null },
       ]} />
-
       <Summary3 items={[
-        "소정급여일수의 <strong>1/2 이상 남은 상태</strong>에서 취업하면 조기재취업수당을 신청할 수 있어요.",
-        "지급액은 <strong>남은 소정급여일수 × 1일 지급액 × 50%</strong>예요. 취업 후 12개월 근무 완료 시 지급돼요.",
-        "신청 기한은 <strong>취업일로부터 12개월 이후 ~ 14개월 이내</strong>예요. 이 기간을 놓치면 받을 수 없어요.",
+        "조기재취업수당 = 잔여일수 × 1일 구직급여액 × 50%",
+        "잔여 소정급여일수 절반 이상 + 12개월 이상 고용이 필수 조건이에요",
+        "재취업 후 12개월이 지난 뒤 고용센터 또는 고용24에서 신청해요",
       ]} />
 
-      {/* ── STEP 01. 체커 ── */}
-      <Divider />
-      <Sec n="STEP 01" title="조기재취업수당 신청 가능 여부 체크" sub="남은 일수와 근무 기간을 선택해 주세요" />
-
-      <P>조기재취업수당을 받으려면 두 가지 조건이 필요해요. 소정급여일수가 절반 이상 남아야 하고, 취업 후 12개월을 계속 근무해야 해요.</P>
-
-      <div style={{ background: "#FFF", border: `1px solid ${C.line}`, borderRadius: 12, overflow: "hidden" }}>
-        <div style={{ background: C.navy, padding: "16px 18px", display: "flex", alignItems: "center", gap: 12 }}>
-          <div style={{ width: 38, height: 38, background: "#fff", borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>💼</div>
-          <div>
-            <h3 style={{ color: "#fff", fontSize: 15, fontWeight: 700, margin: 0 }}>조기재취업수당 신청 가능 여부 체크</h3>
-            <p style={{ color: "rgba(255,255,255,.7)", fontSize: 12, marginTop: 1, margin: 0 }}>30초 확인</p>
-          </div>
-        </div>
-        <div style={{ padding: "20px 18px" }}>
-          <div style={{ marginBottom: 18 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: C.t2, marginBottom: 8 }}>
-              <span style={{ width: 20, height: 20, background: C.navy, color: "#fff", borderRadius: 5, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 800 }}>1</span>
-              취업 시점에 소정급여일수가 얼마나 남아있었나요?
-            </div>
-            <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
-              <Btn group="remaining" value="over-half" label="절반 이상 남아있었어요" sel={sel} pick={pick} />
-              <Btn group="remaining" value="under-half" label="절반 미만이었어요" sel={sel} pick={pick} />
-              <Btn group="remaining" value="unknown" label="잘 모르겠어요" sel={sel} pick={pick} />
-            </div>
-          </div>
-          {sel.remaining === "over-half" && (
-            <div>
-              <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: C.t2, marginBottom: 8 }}>
-                <span style={{ width: 20, height: 20, background: C.navy, color: "#fff", borderRadius: 5, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 800 }}>2</span>
-                취업 후 12개월 계속 근무를 완료했나요?
-              </div>
-              <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
-                <Btn group="tenure" value="yes" label="12개월 완료했어요" sel={sel} pick={pick} />
-                <Btn group="tenure" value="not-yet" label="아직 12개월이 안 됐어요" sel={sel} pick={pick} />
-                <Btn group="tenure" value="no" label="중간에 퇴직했어요" sel={sel} pick={pick} />
-              </div>
-            </div>
-          )}
-
-          {result && (
-            <div style={{ marginTop: 16, padding: 16, borderRadius: 8, background: result.pass ? C.navyLight : "#F5F5F5", border: result.pass ? "1px solid rgba(30,58,95,.1)" : `1px solid ${C.line}` }}>
-              <div style={{ fontSize: 15, fontWeight: 800, color: result.pass ? C.navy : C.t1, marginBottom: 4 }}>
-                {result.pass ? "✅" : "⛔"} {result.headline}
-              </div>
-              <div style={{ fontSize: 13, color: C.t3, lineHeight: 1.55 }}>{result.detail}</div>
-              <div style={{ display: "flex", gap: 5, marginTop: 8, flexWrap: "wrap" }}>
-                {result.badges.map((b, i) => (
-                  <span key={i} style={{ fontSize: 11, fontWeight: 700, padding: "3px 9px", borderRadius: 4, background: result.pass ? C.navy : C.t4, color: "#fff" }}>{b}</span>
+      <Sec n={1} id="checker" title="조기재취업수당 받을 수 있을까?" sub={null}>
+        <P>구직급여를 받는 도중 취업에 성공했다면, 남은 수급일수에 해당하는 금액을 한꺼번에 받는 제도가 있어요. 바로 <B>조기재취업수당</B>이에요.</P>
+        <P>4가지 조건을 선택하면 바로 수급 가능 여부를 알 수 있어요. 아래 체커에서 내 상황과 맞는지 확인해 보세요.</P>
+        <CheckerShell title="조기재취업수당 받을 수 있을까?" subtitle="30초 확인" intro="4가지 조건을 선택하면 바로 결과를 알려드려요.">
+          <CheckerQ n={1} group={1} label="현재 구직급여 수급 중인가요?" opts={[["y", "수급 중이에요"], ["n", "아직 미신청이에요"]]} sel={q1} pick={setQ1 as (v: string) => void} />
+          <CheckerQ n={2} group={1} label="잔여 소정급여일수가 절반 이상인가요?" opts={[["y", "절반(50%) 이상 남았어요"], ["n", "절반 미만이에요"]]} sel={q2} pick={setQ2 as (v: string) => void} />
+          <CheckerQ n={3} group={2} label="재취업 형태가 어떻게 되나요?" opts={[["regular", "정규직·계약직 (12개월 이상)"], ["startup", "자영업·사업 창업"], ["short", "단기·임시직 (12개월 미만)"]]} sel={q3} pick={setQ3 as (v: string) => void} />
+          <CheckerQ n={4} group={2} label="최근 3년 내 조기재취업수당 받은 적 있나요?" opts={[["none", "받은 적 없어요"], ["had", "이전에 받은 적 있어요"]]} sel={q4} pick={setQ4 as (v: string) => void} />
+          {result && (() => {
+            const links = result.links as ResLink[];
+            return result.pass ? (
+              <ResultPass title={result.title} desc={result.desc}>
+                {links.map((l) => (
+                  <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
                 ))}
-              </div>
-              {result.links.length > 0 && (
-                <div style={{ marginTop: 12, paddingTop: 12, borderTop: result.pass ? "1px solid rgba(30,58,95,.08)" : "1px solid #E2E8F0" }}>
-                  <div style={{ fontSize: 12, fontWeight: 700, color: C.t1, marginBottom: 6 }}>📖 관련 가이드</div>
-                  {result.links.map((lnk, li) => (
-                    <a key={li} href={lnk.href} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 0", fontSize: 13, color: C.navy, fontWeight: 600, borderBottom: "1px solid rgba(30,58,95,.06)", textDecoration: "none" }}>
-                      <span>{lnk.icon} {lnk.title}</span>
-                      <span style={{ fontSize: 11, color: C.t4 }}>→</span>
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* ── SECTION 02 ── */}
-      <Divider />
-      <Sec n="SECTION 02" title="실업급여 조기재취업수당 신청 조건이 어떻게 되나요?" sub="4가지 조건 모두 충족해야 해요" />
-
-      <P>조기재취업수당을 받으려면 <B>4가지 조건을 모두 충족</B>해야 해요. 하나라도 빠지면 받을 수 없어요. 주요 조건은 취업 시점의 남은 일수와 취업 후 근무 기간이에요.</P>
-
-      <TableTitle>조기재취업수당 신청 조건</TableTitle>
-      <div style={{ overflowX: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-          <thead>
-            <tr><THL>조건</THL><TH>기준</TH></tr>
-          </thead>
-          <tbody>
-            {[
-              ["소정급여일수 잔여 기준", "취업일 기준 소정급여일수의 1/2 이상 남아있을 것"],
-              ["취업 계속 근무", "취업일로부터 12개월 이상 계속 근무 (사업자 등록 포함)"],
-              ["수급기간 이내 취업", "이직일로부터 12개월 이내에 취업할 것"],
-              ["1회 한정", "이전 수급에서 조기재취업수당을 받지 않았을 것"],
-            ].map((row, ri) => (
-              <tr key={ri}>
-                {row.map((cell, ci) => (
-                  <td key={ci} style={{ padding: "8px 8px", textAlign: "left", borderBottom: `1px solid ${C.line}`, color: ci === 0 ? C.t1 : C.t2, fontWeight: ci === 0 ? 600 : 400 }}>{cell}</td>
+              </ResultPass>
+            ) : (
+              <ResultFail title={result.title} desc={result.desc}>
+                {links.map((l) => (
+                  <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
                 ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <TableNote>※ 1회 한정 규정은 생애 동안이 아니라 직전 수급 기준이에요. 재실직 후 새로 수급 중이라면 다시 신청 가능해요.</TableNote>
+              </ResultFail>
+            );
+          })()}
+        </CheckerShell>
+      </Sec>
 
-      <P>취업에는 근로자로 취업하는 것 외에 사업 개시(사업자 등록)도 포함돼요. 자영업을 시작한 경우에도 12개월 이상 유지하면 조기재취업수당을 신청할 수 있어요.</P>
-
-      {/* ── SECTION 03 ── */}
       <Divider />
-      <Sec n="SECTION 03" title="실업급여 남은 급여 50% 계산 방법은 어떻게 하나요?" sub="3가지 계산 예시" />
 
-      <P>조기재취업수당은 간단한 공식으로 계산해요. 얼마나 빨리 취업했느냐에 따라 금액이 크게 달라요. 소정급여일수가 많이 남은 상태에서 취업할수록 더 많이 받아요.</P>
-
-      <FormulaCard
-        formula="조기재취업수당 = 남은 소정급여일수 × 1일 지급액 × 50%"
-        notes={[
-          "2026년 1일 지급액 상한: 68,100원 / 하한: 63,104원",
-          "소정급여일수 절반 이상 남아있어야 신청 가능",
-          "취업 후 12개월 근무 완료 후 신청",
-        ]}
+      <BridgeCard
+        q="체커를 통과했다면 조기재취업수당 신청 준비를 시작하세요"
+        a="재취업 후 12개월이 지난 시점에 고용24 또는 고용센터에서 신청하면 돼요."
+        label="고용24 신청 바로가기"
+        href="https://www.ei.go.kr/ei/eih/cm/hm/main.do"
       />
 
-      <div style={{ marginBottom: 8 }}></div>
+      <Sec n={2} id="condition" title="실업급여 재취업 조기수당 조건은?" sub="잔여일수 절반 이상 · 12개월 이상 고용 필수">
+        <P>조기재취업수당은 <B>고용보험법 제64조</B>에 따라 운영되는 취업촉진수당의 하나예요. 구직급여 수급자가 조기에 재취업하도록 장려하기 위해 만들어진 제도예요.</P>
+        <P>첫 번째 조건은 <B>잔여 소정급여일수의 절반(50%) 이상</B>이 남아있어야 해요. 소정급여일수가 180일이라면 90일 이상이 남은 상태에서 재취업해야 해요. 잔여일수가 절반 미만이면 조기재취업수당이 아닌 다른 취업촉진수당을 검토해야 해요.</P>
+        <P>두 번째 조건은 <B>12개월 이상 계속 고용</B>이에요. 재취업한 사업장에서 고용보험 피보험자로 12개월 이상 유지돼야 해요. 자영업자로 창업한 경우에는 사업자 등록 후 12개월 이상 사업을 영위해야 해요.</P>
+        <P>세 번째 조건은 <B>재취업 전 3년 이내에 조기재취업수당을 받은 사실이 없을 것</B>이에요. 이전에 이미 받은 적이 있다면 3년이 지난 뒤에만 다시 신청할 수 있어요. 대기기간 7일이 경과한 뒤 재취업해야 하는 것도 필수 조건이에요.</P>
+        <Info type="warn">{"<strong>대기기간 이후 재취업이어야 해요:</strong> 수급자격 인정 후 대기기간(7일)이 지난 상태에서 재취업해야 조기재취업수당 대상이 돼요. 대기기간 중 재취업한 경우에는 해당되지 않아요."}</Info>
+        <InlineLink icon="📋" title="실업급여 대기기간 안내" desc="7일 대기기간 및 예외 조건 상세 정리" href="/w/실업급여-대기기간" />
+      </Sec>
 
-      <P>3가지 사례로 실제 계산 금액을 확인해 보세요.</P>
+      <Divider />
 
-      <CaseBox
-        badge="예시 1"
-        label="이 씨(35세), 소정급여일수 180일 중 100일 남음"
-        conditions={["피보험기간: 4년 2개월", "1일 지급액: 55,000원", "취업 시점 잔여: 100일 (절반 이상)✅"]}
-        steps={[
-          { label: "남은 소정급여일수", value: "100일" },
-          { label: "1일 지급액", value: "55,000원" },
-          { label: "조기재취업수당", value: "100일 × 55,000원 × 50% = 2,750,000원" },
+      <Sec n={3} id="amount" title="실업급여 재취업 수당 지급액은?" sub="잔여일수 50% · 재취업 12개월 후 신청">
+        <H3>지급액 계산 공식</H3>
+        <P>조기재취업수당 지급액은 <B>잔여 소정급여일수 × 1일 구직급여액 × 50%</B>로 계산돼요. 재취업한 날 기준으로 남아있는 소정급여일수에 1일 지급액을 곱한 뒤 50%를 지급하는 구조예요.</P>
+        <P>예를 들어 소정급여일수 180일 중 100일이 남은 상태에서 재취업했고, 1일 구직급여액이 66,000원(상한액)이라면 지급액은 <B>100일 × 66,000원 × 50% = 3,300,000원</B>이 돼요.</P>
+        <H3>신청 시기와 방법</H3>
+        <P>조기재취업수당은 재취업일로부터 <B>12개월이 지난 뒤</B>에 신청해야 해요. 재취업 직후 신청하는 게 아니라, 12개월 계속 고용이 확인된 뒤에 신청하는 구조예요. 12개월 미만 시점에 신청하면 접수가 안 돼요.</P>
+        <P>신청은 고용24 온라인(www.ei.go.kr) 또는 거주지 관할 고용센터 방문으로 할 수 있어요. 재직증명서, 4대보험 가입확인서, 급여명세서 등 12개월 이상 근무를 증빙하는 서류가 필요해요.</P>
+        <InlineLink icon="💰" title="실업급여 상한액 하한액 기준" desc="구직급여 1일 지급액 확인 방법" href="/w/실업급여-상한액" />
+      </Sec>
+
+      <RelatedMid
+        title="실업급여 다른 수당도 함께 살펴보세요"
+        items={[
+          { icon: "📅", title: "실업급여 소정급여일수", desc: "나이·피보험기간별 120~270일", href: "/w/실업급여-소정급여일수" },
+          { icon: "💰", title: "실업급여 연봉별 계산", desc: "월급별 예상 실수령액 비교", href: "/w/실업급여-연봉별-계산" },
+          { icon: "📋", title: "실업급여 상한액 하한액", desc: "2026년 기준 일일 상한 66,000원", href: "/w/실업급여-상한액" },
         ]}
-        total="수당: 약 275만원 (취업 후 12개월 근무 완료 시)"
-        result="신청 가능 (소정급여일수 절반 이상 남음)"
-        pass={true}
+        hubHref="/category/실업급여"
+        hubLabel="실업급여 전체 보기"
       />
 
-      <CaseBox
-        badge="예시 2"
-        label="김 씨(52세), 소정급여일수 270일 중 200일 남음"
-        conditions={["피보험기간: 15년", "1일 지급액: 68,100원 (상한액 적용)", "취업 시점 잔여: 200일 (절반 이상)✅"]}
-        steps={[
-          { label: "남은 소정급여일수", value: "200일" },
-          { label: "1일 지급액 (상한 적용)", value: "68,100원" },
-          { label: "조기재취업수당", value: "200일 × 68,100원 × 50% = 6,810,000원" },
-        ]}
-        total="수당: 약 681만원 (취업 후 12개월 근무 완료 시)"
-        result="신청 가능 (상한액 적용, 고액 수당)"
-        pass={true}
-      />
-
-      <CaseBox
-        badge="예시 3"
-        label="박 씨(28세), 소정급여일수 150일 중 60일 남음"
-        conditions={["피보험기간: 1년 5개월", "1일 지급액: 63,104원 (하한액 적용)", "취업 시점 잔여: 60일 (절반 미만❌)"]}
-        steps={[
-          { label: "소정급여일수 절반", value: "150일 × 50% = 75일" },
-          { label: "잔여 일수", value: "60일 (75일 미만이라 조건 미충족)" },
-          { label: "조기재취업수당", value: "신청 불가" },
-        ]}
-        total="조기재취업수당 신청 불가"
-        result="조건 미충족 (절반 미만 남음)"
-        pass={false}
-      />
-
-      <InlineLink icon="📅" title="실업급여 소정급여일수 기준표 — 내 기준 일수 확인" desc="나이·피보험기간별 120~270일 기준표를 확인할 수 있어요." href="/w/실업급여-소정급여일수" />
-
-      {/* ── SECTION 04 ── */}
       <Divider />
-      <Sec n="SECTION 04" title="실업급여 조기재취업수당 신청 방법과 절차는 어떻게 되나요?" sub="취업 후 12개월 뒤 신청" />
 
-      <P>조기재취업수당은 취업 후 12개월 계속 근무를 완료한 뒤에 신청해요. 취업 즉시 신청하는 게 아니에요. 신청 기한은 <B>취업일로부터 12개월 이후 ~ 14개월 이내</B>예요. 이 기간을 놓치면 신청할 수 없어요.</P>
+      <Sec n={4} id="cases" title="실업급여 재취업 사례별 판단은?" sub="정규직 · 자영업 · 단기직 사례 비교">
+        <H3>정규직으로 재취업한 이 씨 (32세)</H3>
+        <P>소정급여일수 150일 중 90일이 남은 상태에서 IT 회사에 정규직으로 재취업했어요. 잔여일수가 150일의 절반(75일) 이상이므로 조건이 충족돼요. 12개월 후 고용24에서 신청하면 <B>90일 × 구직급여 1일액 × 50%</B>를 받을 수 있어요.</P>
+        <H3>자영업으로 창업한 박 씨 (45세)</H3>
+        <P>구직급여 180일 중 110일이 남은 상태에서 소규모 카페를 창업했어요. 자영업도 사업자 등록 후 12개월 이상 사업을 영위하면 조기재취업수당 대상이에요. 12개월 후 사업자 등록증, 부가세 신고서 등을 지참해 고용센터에 신청할 수 있어요.</P>
+        <H3>단기 계약직으로 취업한 김 씨 (38세)</H3>
+        <P>소정급여일수 120일 중 70일이 남아 잔여일수 조건은 충족됐어요. 하지만 계약 기간이 3개월짜리 단기직이라 12개월 이상 고용 조건을 충족하지 못해요. 계약이 12개월 이상 연장되거나 정규직으로 전환되면 그때 다시 조건을 확인해 볼 수 있어요.</P>
+        <BridgeCard
+          q="재취업 후 구직급여 수급은 자동으로 중단되나요?"
+          a="재취업하면 구직급여 수급이 중단돼요. 고용24 또는 고용센터에 재취업 사실을 신고해야 해요."
+          label="실업급여 실업인정 안내 보기"
+          href="/w/실업급여-실업인정-특례"
+        />
+      </Sec>
 
-      <P>신청 방법은 관할 고용센터 방문 또는 고용24 온라인 신청이에요. 필요한 서류는 재직증명서(12개월 이상 재직 확인), 근로계약서, 신분증이에요. 사업자 등록으로 취업한 경우에는 사업자등록증과 실제 사업 영위 확인 서류가 필요해요.</P>
-
-      <P>수당은 신청 후 검토를 거쳐 지급되는 데 보통 1~2주 정도 걸려요. 재직 기간을 위·변조하면 부정수급이 되니 주의해야 해요.</P>
-
-      <Info type="warn">
-        취업 신고를 고용센터에 미리 해두지 않으면 나중에 조기재취업수당 신청 시 문제가 될 수 있어요. 취업한 날에 고용센터에 취업 사실을 신고해두는 게 좋아요.
-      </Info>
-      <InlineLink icon="💼" title="실업급여 취업신고 방법 — 고용24 온라인 신고" desc="취업 후 다음 날까지 고용24에서 신고하는 절차예요." href="/w/실업급여-수급중-취업-신고방법" />
-
-      {/* ── SECTION 05 ── */}
       <Divider />
-      <Sec n="SECTION 05" title="조기재취업수당 신청 시 주의사항이 있나요?" sub="알아두면 좋은 점" />
 
-      <P>가장 중요한 건 <B>취업일 신고를 빠뜨리지 않는 거예요</B>. 취업한 날 고용센터에 취업 사실을 신고해야 해요. 신고를 안 하면 실업급여를 계속 받게 되는데, 이건 부정수급이 돼요. 취업하는 즉시 신고하는 습관을 들이세요.</P>
+      <Sec n={5} id="renew" title="실업급여 재취업 후 재신청 가능한가요?" sub="재실업 시 재수급 · 3년 제한 조건">
+        <P>조기재취업수당을 받은 뒤 다시 실업 상태가 됐다면, 새로운 고용보험 피보험기간을 쌓아 다시 실업급여를 신청할 수 있어요. 조기재취업수당 수령 자체가 실업급여 재신청을 막지는 않아요.</P>
+        <P>다만 조기재취업수당을 이미 받은 날로부터 <B>3년 이내에는 다시 조기재취업수당을 받을 수 없어요</B>. 구직급여 자체는 다시 신청 가능하지만, 조기재취업수당은 3년 제한이 적용돼요.</P>
+        <P>재취업 후 다시 퇴직하면 새로운 피보험기간 <B>180일 이상</B>을 충족해야 새 구직급여를 받을 수 있어요. 조기재취업수당을 받으면서 다녔던 직장의 피보험기간도 새로운 수급 조건 계산에 포함돼요.</P>
+        <P>이전 실업급여와 새로운 피보험기간을 합산하는 게 아니라, <B>가장 최근 이직일 이후의 피보험기간</B>이 180일 이상인지를 기준으로 판단해요. 재취업 직장을 오래 다닐수록 유리한 조건이 만들어져요.</P>
+        <SpokeLink num={1} title="실업급여 수급자격 인정 조건" desc="비자발적 퇴사 · 피보험기간 180일 이상" href="/w/실업급여-수급자격-인정" />
+        <SpokeLink num={2} title="실업급여 소정급여일수 기준" desc="나이·피보험기간별 120일~270일" href="/w/실업급여-소정급여일수" />
+        <ExtBtn badge="고용보험 공식" text="조기재취업수당 온라인 신청" cta="바로가기 →" href="https://www.ei.go.kr/ei/eih/cm/hm/main.do" />
+      </Sec>
 
-      <P>12개월 계속 근무 조건에서 '계속'이라는 말에 주의해야 해요. 중간에 퇴직하거나 계약이 종료됐다가 다시 재입사한 경우에는 계속 근무로 인정되지 않을 수 있어요. 동일 사업장에서 12개월을 연속으로 채워야 해요.</P>
-
-      <P>단기 알바(주 15시간 미만)를 하다가 정규 취업으로 전환된 경우에는 정규 취업일 기준으로 판단해요. 단기 알바 기간이 12개월에 합산되지 않아요. 취업일 기준이 헷갈리면 고용센터에 먼저 문의하세요.</P>
-
-      <div style={{ margin: "20px 0" }}>
-        <div style={{ fontSize: 13, fontWeight: 700, color: C.t1, marginBottom: 8 }}>📖 실업급여 더 알아보기</div>
-        <SpokeLink num="01" title="실업급여 소정급여일수 기준표" desc="나이·피보험기간별 120~270일 기준" href="/w/실업급여-소정급여일수" />
-        <SpokeLink num="02" title="실업급여 기초일액 계산 방법" desc="1일 지급액 계산 공식과 상·하한액" href="/w/실업급여-기초일액" />
-        <SpokeLink num="03" title="실업급여 수급기간 몇개월 받나" desc="이직 후 12개월 기한 계산 방법" href="/w/실업급여-수급기간-몇개월-받나요" />
-      </div>
-
-      <a href="https://www.work24.go.kr" target="_blank" rel="noopener noreferrer" className="ext-btn ext-btn-blue">
-        <span className="ext-btn-badge">고용24 공식</span>
-        <span className="ext-btn-text">조기재취업수당 신청</span>
-        <span className="ext-btn-cta">신청하기 →</span>
-      </a>
-
-      {/* ── FAQ ── */}
       <Divider />
-      <Sec n="FAQ" title="자주 묻는 질문" />
-      <FAQAccordion items={[
-        { q: "실업급여 조기재취업수당 신청 조건이 어떻게 되나요?", a: "소정급여일수의 1/2 이상 남은 상태에서 취업하고, 취업 후 12개월 이상 계속 근무를 완료해야 해요. 수급기간(12개월) 이내 취업이어야 하고, 이전 수급에서 받지 않은 경우에 해당해요." },
-        { q: "실업급여 남은 급여 50% 계산 방법이 어떻게 되나요?", a: "남은 소정급여일수 × 1일 지급액 × 50%예요. 취업일 기준으로 남은 일수가 많을수록 수당이 커요. 예를 들어 100일 남았고 1일 지급액이 55,000원이라면 100 × 55,000 × 0.5 = 2,750,000원이에요." },
-      ]} />
 
+      <FAQAccordion items={meta.faq} />
       <RelatedArticles items={[
-        { title: "실업급여 소정급여일수 기준표", desc: "실업급여 · 소정급여일수", href: "/w/실업급여-소정급여일수" },
-        { title: "실업급여 기초일액 계산 방법", desc: "실업급여 · 기초일액", href: "/w/실업급여-기초일액" },
-        { title: "실업급여 알바 가능 여부 — 월 60시간 기준", desc: "실업급여 · 알바 규정", href: "/w/실업급여-받으면서-알바" },
+        { title: "실업급여 소정급여일수 계산 기준", href: "/w/실업급여-소정급여일수" },
+        { title: "실업급여 상한액 하한액 기준", href: "/w/실업급여-상한액" },
+        { title: "실업급여 수급기간 몇 개월 받나요", href: "/w/실업급여-수급기간-몇개월-받나요" },
+        { title: "실업급여 실업인정 특례 조건", href: "/w/실업급여-실업인정-특례" },
+        { title: "실업급여 신청방법 안내", href: "/w/실업급여-신청방법" },
       ]} />
-
       <PrevNext
-        prev={{ title: "알바 미신고 부정수급 처벌", href: "/w/실업급여-알바-미신고" }}
-        next={undefined}
+        prev={{ title: "실업급여 실업크레딧 가입 조건", href: "/w/실업급여-실업크레딧" }}
+        next={{ title: "실업급여 구비서류 준비 목록", href: "/w/실업급여-구비서류" }}
       />
     </BlogLayout>
   );

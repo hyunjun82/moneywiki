@@ -2,307 +2,332 @@
 
 import { useState } from "react";
 import {
-  C, Btn, Info, Divider, Sec, P, B, A,
-  TableTitle, TableNote, TH, THL,
-  BridgeCard, BlogLayout, TOC, Summary3,
+  BlogLayout, TOC, Summary3, Sec, P, B, A, H3,
+  Info, InlineLink, SpokeLink, BridgeCard, ExtBtn,
   FAQAccordion, RelatedArticles, PrevNext,
-  InlineLink, SpokeLink, Steps,
+  RelatedMid, SidebarCTA, SidebarDocs, SidebarCalc,
+  CheckerShell, CheckerQ, ResultPass, ResultFail, ResultGrid, ResultCTA,
+  Divider, TableTitle, TableNote, TH, THL, Tag, Btn,
 } from "@/components/wiki/BlogShared";
 
-// ── 체커 로직 ──
-type ResLink = { icon: string; title: string; href: string };
-type Res = { pass: boolean; headline: string; detail: string; badges: string[]; links: ResLink[] };
+const meta = {
+  title: "실업급여 실업크레딧 가입 조건 | 구직급여 수급자 국민연금 특례",
+  description: "실업크레딧은 실업급여(구직급여) 수급자가 국민연금 보험료의 75%를 정부 지원받는 제도예요. 실직 중에도 국민연금 가입 기간을 유지할 수 있어 노후 연금에 유리해요.",
+  category: "실업급여",
+  keywords: ["실업급여 실업크레딧 가입 조건", "구직급여 수급자 국민연금 특례", "실업크레딧 보험료 지원 금액", "실업크레딧 신청 기간 방법"],
+  author: "머니위키 에디터",
+  updateNote: "2026년 2월 기준",
+  lastUpdated: "2026-02-27",
+  datePublished: "2026-02-27",
+  summary: [
+    "실업크레딧은 구직급여 수급자의 국민연금 보험료 75%를 정부가 지원해요",
+    "인정 소득은 실직 전 3개월 평균 소득의 50% (최대 70만 원)",
+    "평생 최대 12개월 지원, 구직급여 수급 기간 내 신청해야 해요",
+  ],
+  sources: [
+    { name: "국민연금공단 실업크레딧 안내", url: "https://www.nps.or.kr/jsppage/business/insure/credit/unemployment_credit.jsp", date: "2026-02" },
+  ],
+  faq: [
+    { q: "실업급여 실업크레딧 가입 조건은 무엇인가요?", a: "구직급여(실업급여)를 받는 중이고, 국민연금 가입 이력이 있어야 해요. 18세 이상 60세 미만이어야 하고, 이미 국민연금을 수령 중인 분은 대상이 아니에요." },
+    { q: "실업크레딧 신청은 언제까지 해야 하나요?", a: "구직급여 수급 기간 내에 신청해야 해요. 수급이 끝난 후에는 신청이 불가능해요. 국민연금공단 지사 방문 또는 온라인(www.nps.or.kr)으로 신청할 수 있어요." },
+  ],
+  ctaCard: {
+    label: "지금 신청",
+    mainText: "실업크레딧 국민연금공단에서 신청하기",
+    subText: "구직급여 수급 중에만 신청 가능해요",
+    url: "https://www.nps.or.kr/jsppage/business/insure/credit/unemployment_credit.jsp",
+    external: true,
+  },
+  relatedDocs: [{ title: "국민연금 임의가입 안내", url: "/w/국민연금-임의가입-전업주부" }],
+};
 
-function getResult(sel: Record<string, string>): Res | null {
-  const { status, applied } = sel;
-  if (!status) return null;
-  if (status === "receiving" && !applied) return null;
+type Q1 = "receiving" | "not_receiving";
+type Q2 = "has_history" | "no_history";
+type Q3 = "under60" | "over60";
+type Q4 = "want_join" | "not_sure";
 
-  if (status === "not-yet") {
-    return {
-      pass: true,
-      headline: "실업급여 신청 후 함께 신청하면 돼요",
-      detail: "실업급여 수급자격 인정을 받은 뒤 국민연금공단에서 실업크레딧을 신청하면 돼요. 수급 기간이 시작된 이후부터 신청할 수 있어요.",
-      badges: ["신청 예정", "준비 OK"],
-      links: [
-        { icon: "📅", title: "실업급여 수급자격 신청 절차", href: "/w/실업급여-수급-조건" },
-        { icon: "🏦", title: "국민연금 납부예외 신청 방법", href: "/w/실업급여-국민연금-유예" },
-      ],
-    };
-  }
-
-  if (status === "receiving" && applied === "not-yet") {
-    return {
-      pass: false,
-      headline: "지금 바로 신청하세요",
-      detail: "실업급여 수급 중에 실업크레딧을 신청하면 보험료의 75%를 국가가 내줘요. 국민연금공단 지사 방문, 1355 전화, 내연금.kr 중 하나로 신청할 수 있어요.",
-      badges: ["실업크레딧 미신청", "즉시 신청 가능"],
-      links: [
-        { icon: "🏦", title: "납부예외와 실업크레딧 차이", href: "/w/실업급여-국민연금-유예" },
-        { icon: "💰", title: "실업급여 기초일액 계산 방법", href: "/w/실업급여-기초일액" },
-      ],
-    };
-  }
-
-  if (status === "receiving" && applied === "done") {
-    return {
-      pass: true,
-      headline: "잘 신청됐어요. 매월 본인 부담분만 납부하면 돼요",
-      detail: "인정 소득 기준 보험료의 25%를 매월 납부하면 국가가 75%를 채워줘요. 가입기간도 그대로 인정되니 연금에 영향이 없어요.",
-      badges: ["실업크레딧 신청 완료", "정상 적용 중"],
-      links: [
-        { icon: "📅", title: "소정급여일수 기준표 — 얼마나 더 받나요?", href: "/w/실업급여-소정급여일수" },
-      ],
-    };
-  }
-
-  if (status === "ended") {
+function getResult(q1: Q1 | "", q2: Q2 | "", q3: Q3 | "", q4: Q4 | "") {
+  if (!q1 || !q2 || !q3 || !q4) return null;
+  if (q1 === "not_receiving") {
     return {
       pass: false,
-      headline: "수급 종료 후에는 신청할 수 없어요",
-      detail: "실업크레딧은 구직급여 수급 기간 중에만 신청할 수 있어요. 수급이 종료된 후에는 신청 불가예요. 납부예외 소급 신청은 국민연금공단에 문의해 보세요.",
-      badges: ["수급 종료", "신청 불가"],
+      title: "구직급여 수급 중이어야 실업크레딧 가입이 가능해요",
+      desc: "실업크레딧은 구직급여(실업급여)를 받는 기간에만 신청할 수 있어요. 구직급여 수급 자격이 있는지 먼저 확인해 보세요.",
       links: [
-        { icon: "🏦", title: "납부예외 소급 신청 방법", href: "/w/실업급여-국민연금-유예" },
+        { icon: "📋", title: "실업급여 수급자격 확인", desc: "피보험기간 180일 기준 확인 방법", href: "/w/실업급여-피보험기간-180일-계산" },
       ],
     };
   }
-
-  return null;
+  if (q2 === "no_history") {
+    return {
+      pass: false,
+      title: "국민연금 가입 이력이 없으면 실업크레딧 대상이 아니에요",
+      desc: "실업크레딧은 국민연금 가입 이력이 있어야 해요. 이전에 한 번이라도 국민연금을 납부한 이력이 있으면 가입할 수 있어요.",
+      links: [
+        { icon: "📋", title: "국민연금 임의가입 안내", desc: "전업주부 등 임의가입자 조건 확인", href: "/w/국민연금-임의가입-전업주부" },
+      ],
+    };
+  }
+  if (q3 === "over60") {
+    return {
+      pass: false,
+      title: "60세 이상은 실업크레딧 대상이 아니에요",
+      desc: "실업크레딧은 18세 이상 60세 미만 국민연금 가입 대상자에게만 지원돼요. 국민연금을 이미 수령 중이거나 60세 이상이면 대상에서 제외돼요.",
+      links: [
+        { icon: "📋", title: "국민연금 조기수령 신청 조건", desc: "60세 이전 연금 수령 조건 확인", href: "/w/국민연금-조기수령-신청-조건" },
+      ],
+    };
+  }
+  return {
+    pass: true,
+    title: "실업크레딧 가입 가능해요 — 보험료의 25%만 부담해요",
+    desc: "구직급여 수급 기간 내에 국민연금공단에 신청하면 돼요. 인정 소득의 75%는 정부가 부담하고 본인은 25%만 내면 돼요. 평생 최대 12개월 혜택이에요.",
+    links: [
+      { icon: "🏛️", title: "국민연금공단 실업크레딧 신청", desc: "온라인 또는 지사 방문 신청 가능", href: "https://www.nps.or.kr/jsppage/business/insure/credit/unemployment_credit.jsp" },
+      { icon: "📋", title: "실업급여 신청 방법", desc: "구직급여 수급 신청 전체 절차", href: "/w/실업급여-신청방법" },
+    ],
+  };
 }
 
-export default function Article() {
-  const [sel, setSel] = useState<Record<string, string>>({});
-  const pick = (g: string, v: string) => setSel((p) => ({ ...p, [g]: v }));
-  const result = getResult(sel);
+type ResLink = { icon: string; title: string; desc: string; href: string };
+
+export default function Page() {
+  const [q1, setQ1] = useState<Q1 | "">("");
+  const [q2, setQ2] = useState<Q2 | "">("");
+  const [q3, setQ3] = useState<Q3 | "">("");
+  const [q4, setQ4] = useState<Q4 | "">("");
+  const result = getResult(q1, q2, q3, q4);
+
+  const sidebar = (
+    <>
+      <SidebarCTA items={[
+        { icon: "🏛️", title: "실업크레딧 국민연금공단 신청", sub: "구직급여 수급 중 온라인 신청", href: "https://www.nps.or.kr/jsppage/business/insure/credit/unemployment_credit.jsp", hot: true },
+        { icon: "💰", title: "실업급여 수급액 계산", sub: "30초 내 예상 금액 확인", href: "/w/실업급여-계산기" },
+        { icon: "📋", title: "국민연금 조기수령 조건", sub: "60세 이전 연금 수령 방법", href: "/w/국민연금-조기수령-신청-조건" },
+      ]} />
+      <SidebarDocs items={[
+        { title: "국민연금 임의가입 전업주부", cat: "국민연금·가입", href: "/w/국민연금-임의가입-전업주부" },
+        { title: "국민연금 조기수령 신청 조건", cat: "국민연금·수령", href: "/w/국민연금-조기수령-신청-조건" },
+        { title: "실업급여 신청 방법", cat: "실업급여·신청", href: "/w/실업급여-신청방법" },
+        { title: "실업급여 소정급여일수", cat: "실업급여·수급기간", href: "/w/실업급여-소정급여일수" },
+        { title: "피보험기간 180일 계산", cat: "실업급여·자격", href: "/w/실업급여-피보험기간-180일-계산" },
+      ]} />
+      <SidebarCalc items={[
+        { title: "국민연금 계산기", href: "/w/국민연금-계산기" },
+        { title: "실업급여 계산기", href: "/w/실업급여-계산기" },
+        { title: "퇴직금 계산기", href: "/w/퇴직금-계산기" },
+        { title: "건강보험료 계산기", href: "/w/건강보험료-계산기" },
+        { title: "연말정산 계산기", href: "/w/연말정산-계산기" },
+      ]} />
+    </>
+  );
 
   return (
     <BlogLayout
-      breadcrumb={["홈", "실업급여", "실업크레딧"]}
-      tags={["2026년 기준", "실업급여", "실업크레딧"]}
-      date="2026-02-23"
-      title="실업급여 실업크레딧 신청 방법 | 국민연금 75% 지원 최대 12개월"
-      description={
-        <>
-          실업크레딧은 구직급여 수급 중 국민연금 보험료의 75%를 국가가 내주는 제도예요. <strong style={{ color: C.t1 }}>본인은 25%만 부담</strong>하고, 납부예외와 달리 가입기간도 인정돼요. 최대 12개월이에요.
-        </>
-      }
-      sourceBar={{ badge: "출처", name: "고용보험법 제61조의2 · 국민연금법 시행령", date: "2026.02 기준" }}
-      stickyLabel="국가 지원"
-      stickyValue="보험료 75%"
-      stickyBtn="실업크레딧 신청 →"
-      stickyHref="https://www.nps.or.kr"
+      breadcrumb={["홈", "실업급여", "수급 중 관리", "실업크레딧"]}
+      tags={["2026년 최신", "실업급여", "실업크레딧", "국민연금"]}
+      date={meta.lastUpdated}
+      title={meta.title}
+      description={<>실업크레딧은 구직급여 수급 중 <B>국민연금 보험료의 75%</B>를 정부가 지원하는 제도예요. 실직 기간에도 <B>국민연금 가입 기간을 유지</B>할 수 있어 노후 연금에 유리해요.</>}
+      sourceBar={{ badge: "국민연금공단", name: "실업크레딧 안내", date: "2026.02" }}
+      stickyLabel="정부 지원 비율"
+      stickyValue="75%"
+      stickyBtn="신청 자격 확인"
+      disclaimer="이 글은 국민연금공단 공개 자료를 바탕으로 작성된 정보 제공 목적의 콘텐츠예요. 개인별 인정 소득과 지원 금액은 실제 상황에 따라 다를 수 있어요."
+      sidebar={sidebar}
     >
       <TOC items={[
-        { t: "실업크레딧 신청 준비 상태 확인", sub: "수급 상태별 안내" },
-        { t: "실업급여 실업크레딧 신청 방법은 어떻게 되나요?", sub: "단계별 신청 절차" },
-        { t: "실업급여 실업크레딧 국민연금 75% 지원은 어떻게 계산하나요?", sub: "인정 소득 · 본인 부담금" },
-        { t: "실업급여 실업크레딧 최대 12개월 조건이 어떻게 되나요?", sub: "지원 자격 · 한도" },
-        { t: "실업크레딧과 납부예외 어떤 게 더 나을까요?", sub: null },
-        { t: "자주 묻는 질문", sub: null },
+        { n: "01", t: "실업크레딧 가입 자격 빠른 확인", sub: "구직급여 수급 여부 · 나이 · 가입 이력" },
+        { n: "02", t: "실업급여 실업크레딧 가입 조건은 무엇인가요?", sub: "수급자 조건 · 18세 이상 60세 미만" },
+        { n: "03", t: "실업급여 실업크레딧 보험료를 얼마나 지원받나요?", sub: "75% 정부 지원 · 인정 소득 기준" },
+        { n: "04", t: "실업급여 실업크레딧 신청 기간이 언제인가요?", sub: "구직급여 수급 중 · 평생 12개월" },
+        { n: "05", t: "실업급여 실업크레딧 가입이 노후에 유리한가요?", sub: "연금 수령액 증가 · 가입 기간 효과" },
+        { n: "FAQ", t: "자주 묻는 질문", sub: "가입 조건 · 신청 기간" },
       ]} />
+      <Summary3 items={meta.summary} />
 
-      <Summary3 items={[
-        "실업크레딧은 구직급여 수급 중 국민연금 보험료의 <strong>75%를 국가가 지원</strong>해요. 본인은 25%만 부담해요.",
-        "납부예외와 달리 실업크레딧 기간은 <strong>가입기간으로 인정</strong>돼서 나중에 받을 연금이 줄지 않아요.",
-        "생애 최대 <strong>12개월</strong>까지 이용할 수 있어요. 국민연금공단에서 수급 중에만 신청 가능해요.",
-      ]} />
-
-      {/* ── STEP 01. 체커 ── */}
-      <Divider />
-      <Sec n="STEP 01" title="실업크레딧 신청 준비 상태 확인" sub="수급 상태를 선택해 주세요" />
-
-      <P>실업크레딧은 구직급여(실업급여) 수급 중에만 신청할 수 있어요. 현재 상황을 선택하면 다음 단계를 바로 안내해 드려요.</P>
-
-      <div style={{ background: "#FFF", border: `1px solid ${C.line}`, borderRadius: 12, overflow: "hidden" }}>
-        <div style={{ background: C.navy, padding: "16px 18px", display: "flex", alignItems: "center", gap: 12 }}>
-          <div style={{ width: 38, height: 38, background: "#fff", borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>🏦</div>
-          <div>
-            <h3 style={{ color: "#fff", fontSize: 15, fontWeight: 700, margin: 0 }}>실업크레딧 신청 준비 상태</h3>
-            <p style={{ color: "rgba(255,255,255,.7)", fontSize: 12, marginTop: 1, margin: 0 }}>30초 확인</p>
-          </div>
-        </div>
-        <div style={{ padding: "20px 18px" }}>
-          <div style={{ marginBottom: 18 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: C.t2, marginBottom: 8 }}>
-              <span style={{ width: 20, height: 20, background: C.navy, color: "#fff", borderRadius: 5, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 800 }}>1</span>
-              지금 실업급여 수급 상태가 어떻게 되나요?
-            </div>
-            <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
-              <Btn group="status" value="not-yet" label="아직 신청 전이에요" sel={sel} pick={pick} />
-              <Btn group="status" value="receiving" label="수급 중이에요" sel={sel} pick={pick} />
-              <Btn group="status" value="ended" label="이미 종료됐어요" sel={sel} pick={pick} />
-            </div>
-          </div>
-          {sel.status === "receiving" && (
-            <div>
-              <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: C.t2, marginBottom: 8 }}>
-                <span style={{ width: 20, height: 20, background: C.navy, color: "#fff", borderRadius: 5, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 800 }}>2</span>
-                실업크레딧을 이미 신청하셨나요?
-              </div>
-              <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
-                <Btn group="applied" value="not-yet" label="아직 안 했어요" sel={sel} pick={pick} />
-                <Btn group="applied" value="done" label="이미 신청했어요" sel={sel} pick={pick} />
-              </div>
-            </div>
-          )}
-
-          {result && (
-            <div style={{ marginTop: 16, padding: 16, borderRadius: 8, background: result.pass ? C.navyLight : "#F5F5F5", border: result.pass ? "1px solid rgba(30,58,95,.1)" : `1px solid ${C.line}` }}>
-              <div style={{ fontSize: 15, fontWeight: 800, color: result.pass ? C.navy : C.t1, marginBottom: 4 }}>
-                {result.pass ? "✅" : "⛔"} {result.headline}
-              </div>
-              <div style={{ fontSize: 13, color: C.t3, lineHeight: 1.55 }}>{result.detail}</div>
-              <div style={{ display: "flex", gap: 5, marginTop: 8, flexWrap: "wrap" }}>
-                {result.badges.map((b, i) => (
-                  <span key={i} style={{ fontSize: 11, fontWeight: 700, padding: "3px 9px", borderRadius: 4, background: result.pass ? C.navy : C.t4, color: "#fff" }}>{b}</span>
+      {/* STEP 01 — 체커 */}
+      <Sec n="01" id="checker" title="실업크레딧 가입 자격 빠른 확인" sub="구직급여 수급 여부 · 나이 · 가입 이력">
+        <CheckerShell
+          title="나는 실업크레딧 가입이 가능할까?"
+          subtitle="30초 확인"
+          intro="구직급여 수급 여부와 국민연금 이력을 선택하면 바로 알 수 있어요."
+        >
+          <CheckerQ
+            n={1}
+            group="q1"
+            label="현재 구직급여(실업급여)를 받고 있나요?"
+            opts={[
+              ["receiving", "예, 수급 중이에요"],
+              ["not_receiving", "아니요, 아직 받지 않고 있어요"],
+            ]}
+            sel={q1}
+            pick={(v) => setQ1(v as Q1)}
+          />
+          <CheckerQ
+            n={2}
+            group="q2"
+            label="국민연금 가입 이력이 있나요?"
+            opts={[
+              ["has_history", "예, 이전에 납부한 이력이 있어요"],
+              ["no_history", "아니요, 가입한 적이 없어요"],
+            ]}
+            sel={q2}
+            pick={(v) => setQ2(v as Q2)}
+          />
+          <CheckerQ
+            n={3}
+            group="q3"
+            label="현재 나이가 어떻게 되나요?"
+            opts={[
+              ["under60", "60세 미만"],
+              ["over60", "60세 이상"],
+            ]}
+            sel={q3}
+            pick={(v) => setQ3(v as Q3)}
+          />
+          <CheckerQ
+            n={4}
+            group="q4"
+            label="실업크레딧 가입을 원하시나요?"
+            opts={[
+              ["want_join", "예, 가입하고 싶어요"],
+              ["not_sure", "잘 모르겠어요 — 혜택을 알고 싶어요"],
+            ]}
+            sel={q4}
+            pick={(v) => setQ4(v as Q4)}
+          />
+          {result && (() => {
+            const links = result.links as ResLink[];
+            return result.pass ? (
+              <ResultPass title={result.title} desc={result.desc}>
+                {links.map((l) => (
+                  <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
                 ))}
-              </div>
-              {result.links.length > 0 && (
-                <div style={{ marginTop: 12, paddingTop: 12, borderTop: result.pass ? "1px solid rgba(30,58,95,.08)" : "1px solid #E2E8F0" }}>
-                  <div style={{ fontSize: 12, fontWeight: 700, color: C.t1, marginBottom: 6 }}>📖 관련 가이드</div>
-                  {result.links.map((lnk, li) => (
-                    <a key={li} href={lnk.href} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 0", fontSize: 13, color: C.navy, fontWeight: 600, borderBottom: "1px solid rgba(30,58,95,.06)", textDecoration: "none" }}>
-                      <span>{lnk.icon} {lnk.title}</span>
-                      <span style={{ fontSize: 11, color: C.t4 }}>→</span>
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* ── SECTION 02 ── */}
-      <Divider />
-      <Sec n="SECTION 02" title="실업급여 실업크레딧 신청 방법은 어떻게 되나요?" sub="단계별 신청 절차" />
-
-      <P>실업크레딧 신청은 실업급여 수급자격 인정 이후부터 가능해요. 국민연금공단 지사 방문이 가장 확실하지만, 전화나 온라인으로도 신청할 수 있어요.</P>
-
-      <Steps items={[
-        {
-          title: "실업급여 수급자격 인정 받기",
-          desc: "고용센터에서 실업급여 수급자격 인정을 먼저 받아야 해요. 이직확인서 처리 → 워크넷 구직등록 → 수급자격 교육 이수 → 수급자격 신청 순서예요.",
-        },
-        {
-          title: "국민연금공단에 실업크레딧 신청",
-          desc: "국민연금공단 지사 방문, 전화 1355, 내연금.kr(nps.or.kr), 국민연금 앱 중 하나로 신청해요. 신청 시 수급자격 인정 정보가 자동으로 확인돼요.",
-        },
-        {
-          title: "인정 소득 확인 및 신청서 작성",
-          desc: "실직 전 3개월 평균 월 보수의 50%가 인정 소득이 돼요. 상한은 70만원이에요. 신청서에 서명하면 처리돼요.",
-        },
-        {
-          title: "매월 본인 부담분 납부",
-          desc: "인정 소득 × 9% × 25%가 매월 본인 부담이에요. 고지서가 날아오면 납부하면 돼요. 납부하지 않으면 그 달 실업크레딧 혜택을 받을 수 없어요.",
-        },
-        {
-          title: "가입기간 인정 확인",
-          desc: "내연금.kr에서 가입기간이 정상적으로 인정됐는지 확인할 수 있어요. 실업크레딧 적용 기간은 국민연금 가입기간으로 기록돼요.",
-        },
-      ]} />
-
-      <Info type="tip">
-        실업급여를 신청한 고용센터 근처에 국민연금공단 지사가 있는 경우가 많아요. 실업급여 신청하는 날 함께 방문하면 한 번에 처리할 수 있어요.
-      </Info>
-      <InlineLink icon="📅" title="실업급여 수급자격 신청 절차" desc="수급자격 인정부터 첫 지급까지의 절차" href="/w/실업급여-수급자격-인정" />
-
-      {/* ── SECTION 03 ── */}
-      <Divider />
-      <Sec n="SECTION 03" title="실업급여 실업크레딧 국민연금 75% 지원은 어떻게 계산하나요?" sub="인정 소득 · 본인 부담금" />
-
-      <P>실업크레딧의 핵심은 <B>인정 소득</B>이에요. 인정 소득은 실직 전 3개월 평균 월 보수의 50%로 정해져요. 여기서 최대 상한은 70만원이에요. 평균 월 보수가 140만원 이하라면 실제 50%가 적용되고, 이상이라면 70만원이 상한이 돼요.</P>
-
-      <TableTitle>실업크레딧 본인 부담금 계산 예시</TableTitle>
-      <div style={{ overflowX: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-          <thead>
-            <tr><THL>평균 월 보수</THL><TH>인정 소득</TH><TH>월 보험료(9%)</TH><TH>본인 부담(25%)</TH></tr>
-          </thead>
-          <tbody>
-            {[
-              ["100만원", "50만원", "45,000원", "11,250원"],
-              ["150만원", "70만원 (상한)", "63,000원", "15,750원"],
-              ["200만원", "70만원 (상한)", "63,000원", "15,750원"],
-              ["300만원", "70만원 (상한)", "63,000원", "15,750원"],
-            ].map((row, ri) => (
-              <tr key={ri}>
-                {row.map((cell, ci) => (
-                  <td key={ci} style={{ padding: "8px 8px", textAlign: ci === 0 ? "left" : "center", borderBottom: `1px solid ${C.line}`, color: ci === 0 ? C.t1 : C.t2, fontWeight: ci === 0 ? 600 : 400 }}>{cell}</td>
+              </ResultPass>
+            ) : (
+              <ResultFail title={result.title} desc={result.desc}>
+                {links.map((l) => (
+                  <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
                 ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <TableNote>※ 월 보수 140만원 초과 시 인정 소득 상한 70만원 적용. 본인 부담 최대 월 15,750원이에요.</TableNote>
+              </ResultFail>
+            );
+          })()}
+        </CheckerShell>
+      </Sec>
 
-      <P>최대 부담이 월 15,750원이에요. 이 금액으로 국민연금 가입기간을 유지할 수 있어요. 납부예외를 선택하면 한 달에 0원이지만 가입기간이 줄어드는 것과 비교하면, 실업크레딧이 훨씬 유리해요.</P>
-
-      <InlineLink icon="🏦" title="국민연금 납부예외 — 납부예외 vs 실업크레딧 비교" desc="두 제도의 차이와 어떤 걸 선택해야 할지 정리했어요." href="/w/실업급여-국민연금-유예" />
-
-      {/* ── SECTION 04 ── */}
       <Divider />
-      <Sec n="SECTION 04" title="실업급여 실업크레딧 최대 12개월 조건이 어떻게 되나요?" sub="지원 자격 · 한도" />
 
-      <P>실업크레딧은 생애 통산 최대 12개월까지 지원받을 수 있어요. 한 번 실직해서 6개월을 쓰고, 나중에 또 실직하면 남은 6개월을 쓸 수 있어요. 한 번에 12개월을 써야 하는 건 아니에요.</P>
+      {/* SECTION 02 */}
+      <Sec n="02" id="condition" title="실업급여 실업크레딧 가입 조건은 무엇인가요?" sub="수급자 조건 · 18세 이상 60세 미만">
+        <P>실업크레딧은 <B>구직급여(실업급여)를 받는 수급자</B>이면서 <B>국민연금 가입 이력이 있는 분</B>이 대상이에요. <A href="https://www.nps.or.kr/jsppage/business/insure/credit/unemployment_credit.jsp">국민연금공단</A>에서 운영하는 국민연금 특례 제도예요.</P>
+        <P>나이 조건은 <B>18세 이상 60세 미만</B>이에요. 이미 노령연금을 수령 중이거나 60세 이상이면 가입할 수 없어요. 구직급여 수급 기간이 곧 가입 가능 기간이에요.</P>
+        <P>국민연금 가입 이력이 있어야 해요. 직장에 다니면서 한 번이라도 국민연금을 납부했던 이력이 있으면 돼요. 납부 이력이 없는 분은 별도로 임의가입 후 실업크레딧 가입이 가능한지 상담이 필요해요.</P>
+        <P>2016년 8월 1일 이후 구직급여 수급자부터 적용되는 제도예요. 평생 최대 <B>12개월</B>까지 지원받을 수 있어요. 이전에 실업크레딧을 받은 이력이 있으면 남은 기간만큼만 받을 수 있어요.</P>
 
-      <P>지원 자격은 만 18세 이상 60세 미만의 구직급여 수급자예요. 실업급여 수급 기간 중에만 신청할 수 있고, 수급이 종료되면 신청할 수 없어요. 국민연금 가입 이력이 있어야 하고, 재산세 과세표준이 6억원 이하여야 해요.</P>
+        <TableTitle>실업크레딧 가입 자격 요건</TableTitle>
+        <TH cols={["항목", "기준"]} rows={[
+          ["기본 조건", "구직급여(실업급여) 수급자"],
+          ["연령", "18세 이상 60세 미만"],
+          ["국민연금 이력", "가입 이력이 있어야 함 (납부 이력 1회 이상)"],
+          ["최대 혜택 기간", "평생 12개월"],
+          ["제외 대상", "60세 이상, 노령연금 수령 중인 자"],
+        ]} />
+        <TableNote>* 국민연금공단 기준 (2026년 현재).</TableNote>
 
-      <P>이미 실업크레딧을 12개월 전부 사용한 경우에는 납부예외나 임의계속가입을 고려해야 해요. 임의계속가입은 퇴직 전 직장 보험료 수준으로 납부를 유지할 수 있는 제도예요.</P>
+        <InlineLink
+          icon="🏛️"
+          title="국민연금 임의가입 전업주부 안내"
+          desc="국민연금 가입 이력이 없는 경우 임의가입 방법"
+          href="/w/국민연금-임의가입-전업주부"
+        />
+        <SpokeLink num={1} title="실업급여 신청 방법 안내" desc="고용24 수급자격 신청 전체 절차" href="/w/실업급여-신청방법" />
+      </Sec>
 
-      <Info type="warn">
-        실업크레딧 지원 기간은 실업급여 수급기간 이내에서만 인정돼요. 수급 종료 후에는 자동으로 종료되니, 재취업 후에는 직장 가입으로 전환되는지 확인하세요.
-      </Info>
-
-      {/* ── SECTION 05 ── */}
       <Divider />
-      <Sec n="SECTION 05" title="실업크레딧과 납부예외 어떤 게 더 나을까요?" sub="상황별 선택 기준" />
 
-      <P>대부분의 경우 실업크레딧이 유리해요. 월 최대 15,750원이라는 적은 부담으로 가입기간을 유지할 수 있어요. 나중에 받을 국민연금 금액을 지키는 셈이에요.</P>
+      {/* SECTION 03 */}
+      <Sec n="03" id="amount" title="실업급여 실업크레딧 보험료를 얼마나 지원받나요?" sub="75% 정부 지원 · 인정 소득 기준">
+        <P>실업크레딧의 인정 소득은 <B>실직 전 3개월 평균 소득의 50%</B>를 기준으로 해요. 단, 이 금액이 70만 원을 넘으면 최대 <B>70만 원</B>으로 제한돼요. 실직 전 소득이 높을수록 최대 기준이 의미 있어요.</P>
+        <P>국민연금 보험료율은 9%예요. 인정 소득에 9%를 적용한 금액이 총 보험료예요. 이 중 <B>75%는 정부가 부담</B>하고 본인은 <B>25%만 내면 돼요</B>. 예를 들어 인정 소득이 70만 원이면 총 보험료는 63,000원이고, 본인 부담은 약 15,750원이에요.</P>
+        <P>본인 부담 보험료(25%)를 납부해야 실업크레딧이 인정돼요. 납부를 안 하면 그 기간은 실업크레딧으로 인정되지 않아요. 납부는 국민연금공단에서 발송한 고지서로 납부하면 돼요.</P>
+        <P>부담이 크다면 최소 인정 소득으로 적용받을 수 있어요. 인정 소득 하한은 없지만 소득이 너무 낮으면 최저 보험료가 적용될 수 있어요. 국민연금공단 상담을 받아보는 게 좋아요.</P>
 
-      <P>납부예외가 유리한 경우는 생애 12개월 한도를 이미 모두 썼거나, 정말 납부가 어려운 극도의 생계 위기 상황이에요. 하지만 이런 경우에도 월 1만원대 부담이라면 실업크레딧을 먼저 고려해 보는 게 좋아요.</P>
+        <Info type="warn">
+          <B>납부 거부 시 해당 기간 실업크레딧 인정 안 돼요</B><br />
+          정부 지원 75%와 본인 부담 25%를 함께 납부해야 가입 기간으로 인정돼요. 본인 부담 25%를 납부하지 않으면 그 달은 실업크레딧 혜택이 적용되지 않아요.
+        </Info>
+      </Sec>
 
-      <P>두 제도를 동시에 신청하는 것도 가능해요. 납부예외를 신청하면서 실업크레딧도 같이 신청하면, 실업크레딧 적용 기간에는 국가가 75%를 부담하고 본인이 25%를 내는 방식으로 처리돼요.</P>
-
-      <BridgeCard
-        question="실업급여 수급 중 국민연금 처리를 어떻게 해야 할지 헷갈리나요?"
-        body={<>납부예외와 실업크레딧의 차이, 가입기간 영향까지 정리했어요. <strong style={{ color: C.navy }}>수급 중에는 실업크레딧을 우선 고려하는 게 좋아요.</strong></>}
-        btnText="납부예외 vs 실업크레딧 상세 비교 →"
-        href="/w/실업급여-국민연금-유예"
+      <RelatedMid
+        title="실업급여 수급 중 챙겨야 할 제도들"
+        items={[
+          { icon: "📋", title: "실업급여 실업인정 특례", desc: "50세 이상·장애인 온라인 인정 완화", href: "/w/실업급여-실업인정-특례" },
+          { icon: "💼", title: "실업급여 재취업 조건", desc: "조기재취업수당 신청 조건 안내", href: "/w/실업급여-재취업-조건" },
+          { icon: "🏛️", title: "국민연금 조기수령 신청 조건", desc: "60세 이전 연금 수령 방법", href: "/w/국민연금-조기수령-신청-조건" },
+        ]}
+        hubHref="/category/실업급여"
+        hubLabel="실업급여 전체 보기"
       />
 
-      <div style={{ margin: "20px 0" }}>
-        <div style={{ fontSize: 13, fontWeight: 700, color: C.t1, marginBottom: 8 }}>📖 실업급여 더 알아보기</div>
-        <SpokeLink num="01" title="국민연금 납부예외 신청 방법" desc="납부예외 기간의 연금액 영향과 신청 절차" href="/w/실업급여-국민연금-유예" />
-        <SpokeLink num="02" title="실업급여 수급자격 조건 — 피보험기간 180일" desc="비자발적 퇴사 기준과 자진퇴사 예외 사유" href="/w/실업급여-수급-조건" />
-        <SpokeLink num="03" title="실업급여 소정급여일수 기준표" desc="나이·피보험기간별 120~270일 기준" href="/w/실업급여-소정급여일수" />
-      </div>
-
-      <a href="https://www.nps.or.kr" target="_blank" rel="noopener noreferrer" className="ext-btn ext-btn-blue">
-        <span className="ext-btn-badge">국민연금공단</span>
-        <span className="ext-btn-text">실업크레딧 온라인 신청</span>
-        <span className="ext-btn-cta">신청하기 →</span>
-      </a>
-
-      {/* ── FAQ ── */}
       <Divider />
-      <Sec n="FAQ" title="자주 묻는 질문" />
-      <FAQAccordion items={[
-        { q: "실업급여 실업크레딧 신청 방법이 어떻게 되나요?", a: "실업급여 수급자격 인정 후 국민연금공단 지사 방문, 전화 1355, 또는 내연금.kr(nps.or.kr)에서 신청할 수 있어요. 수급 기간 중에만 신청 가능해요." },
-        { q: "실업크레딧 본인 부담금이 얼마나 되나요?", a: "실직 전 3개월 평균 월 보수의 50%(최대 70만원)가 인정 소득이에요. 인정 소득 × 9% × 25%가 본인 부담이에요. 최대 월 15,750원이에요." },
-      ]} />
+
+      {/* SECTION 04 */}
+      <Sec n="04" id="period" title="실업급여 실업크레딧 신청 기간이 언제인가요?" sub="구직급여 수급 중 · 평생 12개월">
+        <P>실업크레딧 신청은 <B>구직급여 수급 기간 내</B>에만 가능해요. 수급이 끝난 후에는 신청할 수 없어요. 구직급여를 받기 시작한 날로부터 수급 종료일까지가 신청 가능 기간이에요.</P>
+        <P>신청 방법은 <B>국민연금공단 지사 방문</B> 또는 <B>국민연금공단 홈페이지(www.nps.or.kr)</B>에서 온라인으로 가능해요. 신청 시 구직급여 수급자임을 확인할 수 있는 자료가 필요해요.</P>
+        <P>실업크레딧은 구직급여 수급 기간마다 매월 신청해야 해요. 자동 연장되지 않기 때문에 매달 능동적으로 신청하거나 일괄 신청을 선택할 수 있어요. 고지서가 발송되면 납부하면 돼요.</P>
+        <P>평생 최대 <B>12개월</B>이에요. 이전에 다른 직장에서 실업크레딧을 받은 기간이 있으면 합산해서 12개월이에요. 12개월이 모두 소진되면 더 이상 혜택을 받을 수 없어요.</P>
+
+        <BridgeCard
+          q="구직급여 수급 기간 내 국민연금을 왜 유지해야 하나요?"
+          a="국민연금 가입 기간이 길수록 노후 수령액이 늘어나요. 실업 기간을 실업크레딧으로 채우면 공백 없이 가입 기간을 이어갈 수 있어요."
+          label="국민연금 조기수령 조건 확인"
+          href="/w/국민연금-조기수령-신청-조건"
+        />
+      </Sec>
+
+      <Divider />
+
+      {/* SECTION 05 */}
+      <Sec n="05" id="benefit" title="실업급여 실업크레딧 가입이 노후에 유리한가요?" sub="연금 수령액 증가 · 가입 기간 효과">
+        <P>국민연금은 가입 기간이 길수록 노후에 더 많은 연금을 받아요. 실직 기간에 실업크레딧을 통해 가입 기간을 유지하면 <B>노후 수령 연금액이 늘어나요</B>. 매달 약 1만5천 원의 본인 부담으로 가입 기간 1개월을 확보하는 셈이에요.</P>
+        <P>국민연금 최소 수령 조건은 <B>가입 기간 10년(120개월)</B>이에요. 가입 기간이 10년 미만이면 노령연금 수령 자체가 안 돼요. 실업크레딧으로 10년을 채우면 수령 자격이 생기는 경우도 있어요.</P>
+        <P>실업크레딧은 본인 부담이 25%로 낮아서 비용 대비 효과가 매우 높아요. 인정 소득 70만 원 기준으로 본인 부담은 월 약 15,750원이에요. 이 금액으로 노후 연금 수령 가능 기간을 1개월 늘릴 수 있어요.</P>
+        <P>따라서 구직급여를 받고 있다면 실업크레딧을 통해 국민연금을 유지하는 것을 적극 고려하는 게 좋아요. 특히 국민연금 가입 기간이 10년에 가까운 분들에게는 거의 필수적인 선택이에요.</P>
+
+        <InlineLink
+          icon="🏛️"
+          title="국민연금 조기수령 신청 조건"
+          desc="연금 수령 시기와 가입 기간 최소 요건 확인"
+          href="/w/국민연금-조기수령-신청-조건"
+        />
+
+        <SpokeLink num={2} title="국민연금 임의가입 전업주부 안내" desc="소득 없는 분의 국민연금 임의가입 방법" href="/w/국민연금-임의가입-전업주부" />
+
+        <ExtBtn
+          badge="국민연금공단 공식"
+          text="실업크레딧 신청 및 안내"
+          cta="신청하기 →"
+          href="https://www.nps.or.kr/jsppage/business/insure/credit/unemployment_credit.jsp"
+        />
+      </Sec>
+
+      <Divider />
+
+      <FAQAccordion items={meta.faq} />
 
       <RelatedArticles items={[
-        { title: "국민연금 납부예외 신청 방법", desc: "실업급여 · 국민연금", href: "/w/실업급여-국민연금-유예" },
-        { title: "실업급여 수급자격 조건", desc: "실업급여 · 수급자격", href: "/w/실업급여-수급-조건" },
-        { title: "실업급여 소정급여일수 기준표", desc: "실업급여 · 소정급여일수", href: "/w/실업급여-소정급여일수" },
+        { title: "국민연금 임의가입 전업주부 안내", href: "/w/국민연금-임의가입-전업주부" },
+        { title: "국민연금 조기수령 신청 조건", href: "/w/국민연금-조기수령-신청-조건" },
+        { title: "실업급여 신청 방법 전체 절차", href: "/w/실업급여-신청방법" },
+        { title: "실업급여 실업인정 특례 조건", href: "/w/실업급여-실업인정-특례" },
+        { title: "실업급여 재취업 조건 안내", href: "/w/실업급여-재취업-조건" },
       ]} />
 
       <PrevNext
-        prev={{ title: "실업급여 수급자격 조건", href: "/w/실업급여-수급-조건" }}
-        next={{ title: "실업급여 받으면서 알바 가능 여부", href: "/w/실업급여-받으면서-알바" }}
+        prev={{ title: "실업급여 실업인정 특례 조건", href: "/w/실업급여-실업인정-특례" }}
+        next={{ title: "실업급여 재취업 조건 안내", href: "/w/실업급여-재취업-조건" }}
       />
     </BlogLayout>
   );

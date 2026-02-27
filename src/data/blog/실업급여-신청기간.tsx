@@ -2,270 +2,341 @@
 
 import { useState } from "react";
 import {
-  C, Btn, Info, Divider, Sec, P, B, A,
-  TableTitle, TableNote, TH, THL,
-  BridgeCard, BlogLayout, TOC, Summary3,
+  BlogLayout, TOC, Summary3, Sec, P, B, A, H3,
+  Info, InlineLink, SpokeLink, BridgeCard, ExtBtn,
   FAQAccordion, RelatedArticles, PrevNext,
-  InlineLink, SpokeLink,
+  RelatedMid, SidebarCTA, SidebarDocs, SidebarCalc,
+  CheckerShell, CheckerQ, ResultPass, ResultFail, ResultGrid, ResultCTA,
+  Divider, TableTitle, TableNote, TH, THL, Tag, Btn, Steps,
 } from "@/components/wiki/BlogShared";
 
-type ResLink = { icon: string; title: string; href: string };
-type Res = { pass: boolean; headline: string; detail: string; badges: string[] };
+const meta = {
+  title: "실업급여 신청기간 기한 안내 | 퇴직 후 12개월 이내 접수 시기",
+  description: "실업급여 신청기간은 퇴직일 다음 날부터 시작해 12개월 이내예요. 늦게 신청할수록 실제 받을 수 있는 기간이 줄어드니 퇴직 직후 최대한 빨리 접수하는 게 유리해요.",
+  category: "실업급여",
+  keywords: ["실업급여 신청기간 기한", "퇴직 후 실업급여 접수 시기", "실업급여 신청기간 놓쳤을 때", "신청기간 내 준비 서류"],
+  author: "머니위키 에디터",
+  updateNote: "2026년 2월 기준",
+  lastUpdated: "2026-02-27",
+  datePublished: "2026-02-27",
+  summary: [
+    "실업급여 신청기간은 퇴직 다음 날부터 12개월 이내 (이 기간이 지나면 수급 불가)",
+    "늦게 신청할수록 소정급여일수 중 실제로 받을 수 있는 기간이 줄어들어요",
+    "퇴직 후 워크넷 구직 등록 → 수급자격 인정신청 순서로 빠르게 진행해야 해요",
+  ],
+  sources: [
+    { name: "고용보험법 제48조", url: "https://www.law.go.kr/법령/고용보험법", date: "2026-02" },
+  ],
+  faq: [
+    { q: "실업급여 신청기간을 놓치면 어떻게 되나요?", a: "퇴직일로부터 12개월이 지나면 남은 소정급여일수가 있어도 더 이상 실업급여를 받을 수 없어요. 단, 질병·육아 등 정당한 사유가 있으면 수급기간 연장 신청을 통해 구제받을 수 있어요." },
+    { q: "실업급여는 퇴직 후 언제 신청하는 게 가장 좋나요?", a: "퇴직 다음 날부터 신청이 가능해요. 가장 빠르게 신청할수록 소정급여일수를 온전히 활용할 수 있어요. 퇴직 후 1~2주 내에 고용센터를 방문하거나 고용24 온라인으로 신청하는 게 이상적이에요." },
+  ],
+  ctaCard: {
+    label: "지금 신청",
+    mainText: "실업급여 신청 기간 놓치지 마세요",
+    subText: "퇴직 다음 날부터 신청 가능해요",
+    url: "https://www.ei.go.kr/ei/eih/cm/hm/main.do",
+    external: true,
+  },
+  relatedDocs: [{ title: "실업급여 신청 방법", url: "/w/실업급여-신청방법" }],
+};
 
-function getResult(sel: Record<string, string>): Res | null {
-  const { elapsed, days } = sel;
-  if (!elapsed || !days) return null;
+type Q1 = "under1m" | "1-3m" | "3-6m" | "over6m";
+type Q2 = "involuntary" | "voluntary";
+type Q3 = "yes" | "no";
+type Q4 = "docs_ready" | "docs_not";
 
-  if (elapsed === "over12") return {
-    pass: false,
-    headline: "아쉽게도 신청기간 12개월이 지났어요",
-    detail: "퇴직일 다음날부터 12개월이 지나면 실업급여를 받을 수 없어요. 질병·출산·병역 등 연장 사유가 있다면 고용센터에 바로 문의해 보세요.",
-    badges: ["기한 초과", "연장 사유 확인 필요"],
-  };
-
-  if (elapsed === "within3" && days === "short") return {
-    pass: true,
-    headline: "충분한 시간이 있어요. 빨리 신청할수록 유리해요",
-    detail: "퇴직 후 3개월 이내면 소정급여일수(90~120일)를 12개월 안에 모두 받을 수 있어요. 지금 바로 워크넷 구직등록부터 시작하세요.",
-    badges: ["기한 내", "여유 있음"],
-  };
-
-  if (elapsed === "within3" && days === "long") return {
-    pass: true,
-    headline: "지금 신청하면 전액 수령 가능해요",
-    detail: "3개월 이내 신청이면 소정급여일수 150~240일도 12개월 안에 충분히 받을 수 있어요. 이직확인서 처리가 완료됐는지 먼저 확인해보세요.",
-    badges: ["기한 내", "전액 수령 가능"],
-  };
-
-  if (elapsed === "3to6" && days === "short") return {
-    pass: true,
-    headline: "아직 시간이 있어요. 서두르세요",
-    detail: "12개월 기준으로 6~9개월 남았어요. 소정급여일수 90~120일이면 충분히 받을 수 있지만, 지금 바로 신청하는 게 안전해요.",
-    badges: ["기한 내", "서둘러야 함"],
-  };
-
-  if (elapsed === "3to6" && days === "long") return {
-    pass: false,
-    headline: "지금 신청하면 일부 수령이 가능해요",
-    detail: "소정급여일수 150~240일이면 12개월 안에 다 받기 빠듯할 수 있어요. 지금 당장 신청하세요. 미루면 수급일수가 줄어요.",
-    badges: ["기한 촉박", "즉시 신청 권장"],
-  };
-
-  if (elapsed === "6to12" && days === "short") return {
-    pass: true,
-    headline: "기한이 얼마 안 남았어요. 오늘 바로 신청하세요",
-    detail: "12개월 기한까지 6개월 이하로 남았어요. 소정급여일수 90~120일이면 즉시 신청하는 게 중요해요.",
-    badges: ["기한 임박", "즉시 신청"],
-  };
-
+function getResult(q1: Q1 | "", q2: Q2 | "", q3: Q3 | "", q4: Q4 | "") {
+  if (!q1 || !q2 || !q3 || !q4) return null;
+  if (q2 === "voluntary") {
+    return {
+      pass: false,
+      title: "자발적 퇴직은 원칙적으로 실업급여 대상이 아니에요",
+      desc: "실업급여는 비자발적 퇴직이어야 수급할 수 있어요. 임금 미지급·직장 내 괴롭힘 등 정당한 사유가 있으면 예외가 가능해요.",
+      links: [
+        { icon: "📋", title: "자발적 퇴직 정당사유 확인", desc: "임금삭감·괴롭힘 등 예외 사유 안내", href: "/w/실업급여-임금삭감-퇴직-정당사유" },
+      ],
+    };
+  }
+  if (q1 === "over6m") {
+    return {
+      pass: true,
+      title: "아직 신청 가능하지만 서둘러야 해요",
+      desc: "퇴직 후 6개월이 지났어도 12개월 이내면 신청이 가능해요. 단, 남은 유효기간 안에만 수급할 수 있으니 바로 신청하는 게 중요해요.",
+      links: [
+        { icon: "📋", title: "실업급여 신청 방법", desc: "고용24 온라인 신청 절차 전체", href: "/w/실업급여-신청방법" },
+        { icon: "📂", title: "실업급여 구비서류", desc: "고용센터 제출 서류 목록", href: "/w/실업급여-구비서류" },
+      ],
+    };
+  }
+  if (q1 === "under1m") {
+    return {
+      pass: true,
+      title: "지금 바로 신청하면 소정급여일수를 최대로 활용해요",
+      desc: "퇴직 후 1개월 이내이면 가장 유리한 시기예요. 워크넷 구직 등록 → 수급자격 인정신청 → 실업인정 신청 순서로 진행하면 돼요.",
+      links: [
+        { icon: "📋", title: "실업급여 신청 방법", desc: "고용24 온라인 신청 절차 전체", href: "/w/실업급여-신청방법" },
+        { icon: "📂", title: "실업급여 구비서류", desc: "고용센터 제출 서류 목록", href: "/w/실업급여-구비서류" },
+      ],
+    };
+  }
   return {
-    pass: false,
-    headline: "소정급여일수를 다 받기 어려울 수 있어요",
-    detail: "기한까지 6개월 미만인데 소정급여일수가 150~240일이면, 기한 안에 전액 수령이 불가능해요. 지금 신청해서 가능한 만큼이라도 받는 게 나아요.",
-    badges: ["기한 촉박", "일부 수령 가능"],
+    pass: true,
+    title: "지금도 신청 가능해요. 빠르게 진행하는 게 유리해요",
+    desc: "퇴직 후 1~6개월 이내면 소정급여일수를 충분히 활용할 수 있어요. 서류를 준비해 고용센터나 고용24를 통해 신청하세요.",
+    links: [
+      { icon: "📋", title: "실업급여 신청 방법", desc: "고용24 온라인 신청 절차 전체", href: "/w/실업급여-신청방법" },
+      { icon: "📂", title: "실업급여 구비서류", desc: "고용센터 제출 서류 목록", href: "/w/실업급여-구비서류" },
+    ],
   };
 }
 
-export default function Article73() {
-  const [sel, setSel] = useState<Record<string, string>>({});
-  const pick = (g: string, v: string) => setSel((p) => ({ ...p, [g]: v }));
-  const result = getResult(sel);
+type ResLink = { icon: string; title: string; desc: string; href: string };
+
+export default function Page() {
+  const [q1, setQ1] = useState<Q1 | "">("");
+  const [q2, setQ2] = useState<Q2 | "">("");
+  const [q3, setQ3] = useState<Q3 | "">("");
+  const [q4, setQ4] = useState<Q4 | "">("");
+  const result = getResult(q1, q2, q3, q4);
+
+  const sidebar = (
+    <>
+      <SidebarCTA items={[
+        { icon: "📋", title: "실업급여 신청 방법", sub: "고용24 온라인 신청 절차", href: "/w/실업급여-신청방법", hot: true },
+        { icon: "📂", title: "실업급여 구비서류", sub: "제출 서류 목록 전체 안내", href: "/w/실업급여-구비서류" },
+        { icon: "💰", title: "실업급여 수급액 계산", sub: "30초 내 예상 금액 확인", href: "/w/실업급여-계산기" },
+      ]} />
+      <SidebarDocs items={[
+        { title: "실업급여 신청 방법", cat: "실업급여·신청절차", href: "/w/실업급여-신청방법" },
+        { title: "실업급여 구비서류", cat: "실업급여·서류", href: "/w/실업급여-구비서류" },
+        { title: "실업급여 소정급여일수", cat: "실업급여·수급기간", href: "/w/실업급여-소정급여일수" },
+        { title: "실업급여 대기기간", cat: "실업급여·수급", href: "/w/실업급여-대기기간" },
+        { title: "피보험기간 180일 계산", cat: "실업급여·자격", href: "/w/실업급여-피보험기간-180일-계산" },
+      ]} />
+      <SidebarCalc items={[
+        { title: "실업급여 계산기", href: "/w/실업급여-계산기" },
+        { title: "퇴직금 계산기", href: "/w/퇴직금-계산기" },
+        { title: "연말정산 계산기", href: "/w/연말정산-계산기" },
+        { title: "건강보험료 계산기", href: "/w/건강보험료-계산기" },
+        { title: "국민연금 계산기", href: "/w/국민연금-계산기" },
+      ]} />
+    </>
+  );
 
   return (
     <BlogLayout
-      breadcrumb={["홈", "실업급여", "신청기간"]}
-      tags={["2026년 기준", "실업급여", "수급기간 12개월"]}
-      date="2026-02-24"
-      title="실업급여 신청기간 퇴직 후 12개월 | 실업급여 신청 기한 지나면"
-      description={
-        <>
-          실업급여 신청기간은 퇴직일 다음날부터 <strong style={{ color: C.t1 }}>딱 12개월</strong>이에요. 이 기한을 넘기면 소정급여일수가 남아도 한 푼도 받을 수 없어요. 언제까지 신청해야 하는지 정리했어요.
-        </>
-      }
-      sourceBar={{ badge: "출처", name: "고용보험법 제48조 · 고용24", date: "2026.02 기준" }}
-      stickyLabel="기한 계산"
-      stickyValue="퇴직일 + 12개월"
-      stickyBtn="수급기간 확인 →"
-      stickyHref="https://www.work24.go.kr/cm/c/d/CMCDD108L.do"
+      breadcrumb={["홈", "실업급여", "신청방법", "신청기간"]}
+      tags={["2026년 최신", "실업급여", "신청기간", "접수기한"]}
+      date={meta.lastUpdated}
+      title={meta.title}
+      description={<>실업급여 신청기간은 <B>퇴직 다음 날부터 12개월</B>이에요. 늦게 신청할수록 실제 받는 기간이 줄어들어요. 퇴직 후 빠를수록 유리하니 워크넷 등록부터 시작하세요.</>}
+      sourceBar={{ badge: "고용보험법", name: "제48조 수급기간", date: "2026.02" }}
+      stickyLabel="신청 유효기간"
+      stickyValue="퇴직 후 12개월"
+      stickyBtn="지금 신청하기"
+      disclaimer="이 글은 고용보험법 및 고용노동부 공개 자료를 바탕으로 작성된 정보 제공 목적의 콘텐츠예요. 개인별 상황에 따라 적용 내용이 다를 수 있어요."
+      sidebar={sidebar}
     >
       <TOC items={[
-        { t: "실업급여 신청기간은 퇴직 후 언제까지인가요?", sub: "퇴직 경과 기간 × 소정급여일수 선택" },
-        { t: "실업급여 12개월 기한은 어떻게 계산하나요?", sub: "퇴직일 기준, 달력 그대로 12개월" },
-        { t: "실업급여 신청기간 넘기면 어떻게 되나요?", sub: null },
-        { t: "실업급여 신청기간과 수급기간 차이가 뭐예요?", sub: null },
+        { n: "01", t: "신청 가능 여부 빠른 확인", sub: "퇴직 경과 기간 · 사유 확인" },
+        { n: "02", t: "실업급여 신청기간 기한은 언제까지인가요?", sub: "퇴직 후 12개월 · 유효기간 개념" },
+        { n: "03", t: "실업급여 신청기간이 늦을수록 불리한가요?", sub: "늦은 신청의 실제 손해 계산" },
+        { n: "04", t: "실업급여 신청기간을 놓쳤을 때 어떻게 하나요?", sub: "연장 신청 · 구제 방법" },
+        { n: "05", t: "실업급여 신청기간 내 준비할 서류는 무엇인가요?", sub: "이직확인서 · 구직 등록 순서" },
+        { n: "FAQ", t: "자주 묻는 질문", sub: "기한 경과 · 빠른 신청 시기" },
       ]} />
+      <Summary3 items={meta.summary} />
 
-      <Summary3 items={[
-        "신청기간은 퇴직일 다음날부터 <strong>12개월</strong>이에요. 수령까지 이 안에 완료해야 해요.",
-        "12개월이 지나면 소정급여일수가 남아도 <strong>소멸</strong>돼요. 기한 초과는 예외 없어요.",
-        "질병·출산 등 정당한 사유가 있으면 <strong>최대 4년</strong>까지 연장 신청이 가능해요.",
-      ]} />
-
-      {/* ── STEP 01. 체커 ── */}
-      <Divider />
-      <Sec n="STEP 01" id="s1" title="실업급여 신청기간은 퇴직 후 언제까지인가요?" sub="퇴직 경과 기간과 소정급여일수를 선택하면 바로 알 수 있어요" />
-
-      <P>실업급여 신청기간은 법으로 딱 정해져 있어요. <B>퇴직일 다음날부터 12개월</B> 이내에 실업급여를 전부 수령해야 해요. 신청만 하면 되는 게 아니라, 수령까지 완료해야 한다는 점이 핵심이에요.</P>
-      <P>많은 분들이 "언젠가 신청해야지"라고 미루다가 기한을 놓치는 경우가 있어요. 소정급여일수가 90~240일인데 12개월 안에 다 받으려면 생각보다 여유가 없어요. 퇴직 후 6개월이 지났다면 지금 바로 계산해보는 게 중요해요.</P>
-
-      <div style={{ background: "#FFF", border: `1px solid ${C.line}`, borderRadius: 12, overflow: "hidden" }}>
-        <div style={{ background: C.navy, padding: "16px 18px", display: "flex", alignItems: "center", gap: 12 }}>
-          <div style={{ width: 38, height: 38, background: "#fff", borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>&#x1F4C5;</div>
-          <div>
-            <h3 style={{ color: "#fff", fontSize: 15, fontWeight: 700, margin: 0 }}>실업급여 신청기간 체크</h3>
-            <p style={{ color: "rgba(255,255,255,.7)", fontSize: 12, marginTop: 1, margin: 0 }}>고용보험법 제48조 기준</p>
-          </div>
-        </div>
-        <div style={{ padding: "20px 18px" }}>
-          <div style={{ marginBottom: 18 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: C.t2, marginBottom: 8 }}>
-              <span style={{ width: 20, height: 20, background: C.navy, color: "#fff", borderRadius: 5, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 800 }}>1</span>
-              퇴직 후 얼마나 지났나요?
-            </div>
-            <div style={{ display: "flex", gap: 5, flexWrap: "wrap" as const }}>
-              <Btn group="elapsed" value="within3" label="3개월 이내" sel={sel} pick={pick} />
-              <Btn group="elapsed" value="3to6" label="3~6개월" sel={sel} pick={pick} />
-              <Btn group="elapsed" value="6to12" label="6~12개월" sel={sel} pick={pick} />
-              <Btn group="elapsed" value="over12" label="12개월 이상" sel={sel} pick={pick} />
-            </div>
-          </div>
-          <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: C.t2, marginBottom: 8 }}>
-              <span style={{ width: 20, height: 20, background: C.navy, color: "#fff", borderRadius: 5, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 800 }}>2</span>
-              나의 소정급여일수는?
-            </div>
-            <div style={{ display: "flex", gap: 5, flexWrap: "wrap" as const }}>
-              <Btn group="days" value="short" label="90~120일" sel={sel} pick={pick} />
-              <Btn group="days" value="long" label="150~240일" sel={sel} pick={pick} />
-            </div>
-          </div>
-
-          {result && (
-            <div style={{ marginTop: 16, padding: 16, borderRadius: 8, background: result.pass ? C.navyLight : "#F5F5F5", border: result.pass ? "1px solid rgba(30,58,95,.1)" : `1px solid ${C.line}` }}>
-              <div style={{ fontSize: 15, fontWeight: 800, color: result.pass ? C.navy : C.t1, marginBottom: 4 }}>
-                {result.pass ? "✅" : "⚠️"} {result.headline}
-              </div>
-              <div style={{ fontSize: 13, color: C.t3, lineHeight: 1.55 }}>{result.detail}</div>
-              <div style={{ display: "flex", gap: 5, marginTop: 8, flexWrap: "wrap" as const }}>
-                {result.badges.map((b, i) => (
-                  <span key={i} style={{ fontSize: 11, fontWeight: 700, padding: "3px 9px", borderRadius: 4, background: result.pass ? C.navy : C.t4, color: "#fff" }}>{b}</span>
+      {/* STEP 01 — 체커 */}
+      <Sec n="01" id="checker" title="신청 가능 여부 빠른 확인" sub="퇴직 경과 기간 · 사유 확인">
+        <CheckerShell
+          title="아직 실업급여 신청 기간 안에 있을까?"
+          subtitle="30초 확인"
+          intro="퇴직 후 경과 기간과 퇴직 사유를 선택하면 바로 알 수 있어요."
+        >
+          <CheckerQ
+            n={1}
+            group="q1"
+            label="퇴직 후 얼마나 지났나요?"
+            opts={[
+              ["under1m", "1개월 미만 (최적 시기)"],
+              ["1-3m", "1~3개월"],
+              ["3-6m", "3~6개월"],
+              ["over6m", "6개월 이상 (12개월 미만)"],
+            ]}
+            sel={q1}
+            pick={(v) => setQ1(v as Q1)}
+          />
+          <CheckerQ
+            n={2}
+            group="q2"
+            label="퇴직 사유는 무엇인가요?"
+            opts={[
+              ["involuntary", "비자발적 퇴직 (권고사직·계약만료 등)"],
+              ["voluntary", "자발적 퇴직"],
+            ]}
+            sel={q2}
+            pick={(v) => setQ2(v as Q2)}
+          />
+          <CheckerQ
+            n={3}
+            group="q3"
+            label="피보험기간이 180일(약 6개월) 이상인가요?"
+            opts={[
+              ["yes", "예, 180일 이상이에요"],
+              ["no", "아니요, 180일 미만이에요"],
+            ]}
+            sel={q3}
+            pick={(v) => setQ3(v as Q3)}
+          />
+          <CheckerQ
+            n={4}
+            group="q4"
+            label="이직확인서를 발급받았나요?"
+            opts={[
+              ["docs_ready", "예, 준비됐어요"],
+              ["docs_not", "아니요, 아직이에요"],
+            ]}
+            sel={q4}
+            pick={(v) => setQ4(v as Q4)}
+          />
+          {result && (() => {
+            const links = result.links as ResLink[];
+            return result.pass ? (
+              <ResultPass title={result.title} desc={result.desc}>
+                {links.map((l) => (
+                  <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
                 ))}
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* ── SECTION 02 ── */}
-      <Divider />
-      <Sec n="SECTION 02" id="s2" title="실업급여 12개월 기한은 어떻게 계산하나요?" sub="퇴직일이 기준, 달력 그대로 12개월 더하면 돼요" />
-
-      <P>계산 방법은 간단해요. 퇴직일 다음날을 1일로 세서 12개월이 되는 날까지예요. 예를 들어 2025년 4월 1일에 퇴직했다면, 수급기간은 4월 2일부터 2026년 4월 1일까지예요.</P>
-      <P>주말이나 공휴일도 별도로 빼지 않아요. 달력 그대로 12개월을 적용해요. 그러니 퇴직일을 정확하게 파악하는 게 먼저예요. 퇴직일은 고용보험 이직확인서에 명시되어 있어요.</P>
-
-      <TableTitle>퇴직일별 수급기간 예시</TableTitle>
-      <div style={{ overflowX: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-          <thead>
-            <tr><THL>퇴직일</THL><THL>수급 시작일</THL><THL>수급기간 마감일</THL></tr>
-          </thead>
-          <tbody>
-            {[
-              ["2025년 1월 31일", "2025년 2월 1일", "2026년 1월 31일"],
-              ["2025년 4월 30일", "2025년 5월 1일", "2026년 4월 30일"],
-              ["2025년 12월 31일", "2026년 1월 1일", "2026년 12월 31일"],
-            ].map((row, ri) => (
-              <tr key={ri}>
-                {row.map((cell, ci) => (
-                  <td key={ci} style={{ padding: "8px 8px", textAlign: ci === 0 ? "left" : "center", borderBottom: `1px solid ${C.line}`, color: ci === 0 ? C.t1 : C.t2, fontWeight: ci === 0 ? 600 : 400 }}>{cell}</td>
+              </ResultPass>
+            ) : (
+              <ResultFail title={result.title} desc={result.desc}>
+                {links.map((l) => (
+                  <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
                 ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <TableNote>※ 수급기간은 고용보험법 제48조에서 정하고 있어요.</TableNote>
-
-      <P>소정급여일수 240일인 경우 12개월(약 365일) 안에 240일을 다 받아야 해요. 실업인정일 간격(28일)을 고려하면 약 8~9번의 실업인정을 받아야 해서, 늦게 신청하면 남은 일수가 소멸될 수 있어요.</P>
-      <P>퇴직일 바로 다음 날 신청하기 어렵더라도, <B>가능한 빠른 시일 내에 워크넷 구직등록부터 시작</B>하는 게 좋아요. 온라인으로 모두 처리 가능해요.</P>
-
-      {/* ── SECTION 03 ── */}
-      <Divider />
-      <Sec n="SECTION 03" id="s3" title="실업급여 신청기간 넘기면 어떻게 되나요?" sub="소정급여일수가 남아도 12개월 지나면 소멸이에요" />
-
-      <P>12개월 기한을 하루라도 넘기면 소정급여일수가 아무리 많이 남아 있어도 받을 수 없어요. 예를 들어 소정급여일수가 210일인데 12개월 이내에 150일만 받았다면, 남은 60일은 소멸돼요.</P>
-      <P>다만, 정당한 사유가 있으면 수급기간을 연장할 수 있어요. 연장 사유는 고용보험법 제48조 2항에서 정하고 있어요.</P>
-
-      <Info type="tip">{'<strong>수급기간 연장 가능 사유:</strong> ① 질병·부상으로 취업 불가 ② 임신·출산·만 6세 이하 육아 ③ 병역 복무 ④ 배우자 동반 해외 이주 ⑤ 천재지변 — 최대 4년까지 연장돼요.'}</Info>
-
-      <P>연장 신청은 연장 사유가 끝난 날로부터 30일 이내에 거주지 관할 고용센터에 신청해야 해요. 미루다가 30일을 넘기면 연장도 불가능하니 주의하세요.</P>
-      <P>연장 신청 시 사유를 증명하는 서류(진단서, 출생증명서, 복무확인서 등)를 함께 제출해야 해요. 고용24에서 온라인 신청도 가능해요.</P>
-
-      {/* ── SECTION 04 ── */}
-      <Divider />
-      <Sec n="SECTION 04" id="s4" title="실업급여 신청기간과 수급기간 차이가 뭐예요?" sub="헷갈리는 두 개념, 한 번에 정리해드려요" />
-
-      <P>"신청기간"과 "수급기간"은 실업급여 관련 안내에 자주 등장하는데, 같은 의미로 쓰이고 있어요. 엄밀히 말하면 <B>수급기간</B>이 정식 용어이고, 그 안에 신청과 수령을 모두 완료해야 한다는 뜻이에요.</P>
-      <P>소정급여일수는 수급기간 안에서 실제로 급여가 지급되는 날수예요. 수급기간(12개월) 내에 소정급여일수(90~240일)를 소진하지 못하면 남은 일수는 없어져요.</P>
-
-      <TableTitle>실업급여 핵심 기간 비교</TableTitle>
-      <div style={{ overflowX: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-          <thead>
-            <tr><THL>구분</THL><THL>의미</THL><THL>기간</THL></tr>
-          </thead>
-          <tbody>
-            {[
-              ["수급기간", "신청·수령 가능한 유효기간", "퇴직 후 12개월"],
-              ["소정급여일수", "실제 급여 지급 일수", "90~240일 (가입기간·나이 기준)"],
-              ["대기기간", "수급 시작 전 무급 기간", "7일 (일반 근로자)"],
-            ].map((row, ri) => (
-              <tr key={ri}>
-                {row.map((cell, ci) => (
-                  <td key={ci} style={{ padding: "8px 8px", textAlign: ci === 0 ? "left" : "center", borderBottom: `1px solid ${C.line}`, color: ci === 0 ? C.t1 : C.t2, fontWeight: ci === 0 ? 600 : 400 }}>{cell}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <TableNote>※ 소정급여일수는 고용보험 가입기간과 이직 당시 나이에 따라 달라져요.</TableNote>
-
-      <P>수급기간 12개월이 소정급여일수보다 항상 길기 때문에, 퇴직 직후 바로 신청하면 소정급여일수를 모두 받을 수 있어요. 문제는 미루다가 기한이 줄어드는 경우예요.</P>
-      <P>소정급여일수 240일이라면 퇴직 후 늦어도 2~3개월 안에는 신청을 시작해야 해요. 그래야 12개월 안에 모든 급여를 받을 수 있어요.</P>
-
-      <SpokeLink num="01" title="실업급여 소정급여일수 — 나이·근속별 계산" desc="가입기간과 나이로 내 소정급여일수 확인" href="/w/실업급여-소정급여일수" />
-
-      <a href="https://www.work24.go.kr/cm/c/d/CMCDD108L.do" target="_blank" rel="noopener noreferrer" className="ext-btn ext-btn-black">
-        <span className="ext-btn-badge">고용24 공식</span>
-        <span className="ext-btn-text">실업급여 수급기간 연장 신청</span>
-        <span className="ext-btn-cta">바로가기 →</span>
-      </a>
+              </ResultFail>
+            );
+          })()}
+        </CheckerShell>
+      </Sec>
 
       <Divider />
-      <Sec n="FAQ" id="faq" title="자주 묻는 질문" />
-      <FAQAccordion items={[
-        { q: "실업급여 신청기간 12개월은 언제부터 계산하나요?", a: "퇴직일 다음날부터 시작해요. 예를 들어 2025년 3월 31일 퇴직이면, 4월 1일부터 12개월, 즉 2026년 3월 31일까지가 수급기간이에요." },
-        { q: "실업급여 신청기간이 지나면 정말 한 푼도 못 받나요?", a: "맞아요. 12개월 기한을 하루라도 넘기면 소정급여일수가 남아있어도 수급이 불가능해요. 질병·출산·병역 같은 사유가 있다면 연장 신청을 할 수 있어요." },
-      ]} />
 
-      <BridgeCard
-        question="대기기간 7일도 수급기간에 포함되나요?"
-        body={<>대기기간과 수급기간의 관계가 헷갈린다면 <strong style={{ color: C.navy }}>실업급여 대기기간 가이드</strong>에서 정확한 계산 방법을 확인해보세요.</>}
-        btnText="대기기간 계산 방법 →"
-        href="/w/실업급여-대기기간"
+      {/* SECTION 02 */}
+      <Sec n="02" id="deadline" title="실업급여 신청기간 기한은 언제까지인가요?" sub="퇴직 후 12개월 · 유효기간 개념">
+        <P>실업급여 신청기간은 <B>이직일(퇴직일)의 다음 날부터 12개월</B>이에요. 이 기간을 법에서는 <A href="https://www.law.go.kr/법령/고용보험법">"수급기간"</A>이라고 불러요. 12개월이 지나면 남은 소정급여일수가 있어도 실업급여를 더 이상 받을 수 없어요.</P>
+        <P>예를 들어 2026년 1월 31일에 퇴직했다면, 신청기간은 <B>2026년 2월 1일부터 2027년 1월 31일까지</B>예요. 이 기간 안에 실업인정을 받은 날만 실업급여가 지급돼요. 기한을 넘기면 자동으로 소멸해요.</P>
+        <P>수급기간(12개월)과 소정급여일수(120~270일)는 다른 개념이에요. 소정급여일수가 270일(9개월)이더라도 유효기간 12개월 안에 신청해 소진해야 해요. 늦게 신청할수록 실제 받을 수 있는 기간이 줄어들어요.</P>
+        <P>퇴직 당일은 아직 고용된 상태로 처리돼서 신청이 안 돼요. <B>퇴직 다음 날부터</B> 고용센터 방문 또는 고용24 온라인으로 수급자격 인정신청이 가능해요. 빠를수록 유리한 구조예요.</P>
+
+        <TableTitle>실업급여 신청기간 핵심 기준</TableTitle>
+        <TH cols={["항목", "내용"]} rows={[
+          ["신청 시작일", "이직일(퇴직일) 다음 날부터"],
+          ["신청 마감일", "이직일로부터 12개월 이내"],
+          ["기한 경과 시", "남은 소정급여일수 자동 소멸"],
+          ["연장 가능 사유", "질병·육아·부상 등 (최대 4년)"],
+        ]} />
+        <TableNote>* 고용보험법 제48조 기준이에요.</TableNote>
+
+        <InlineLink
+          icon="📅"
+          title="실업급여 수급기간 몇 개월인지 확인"
+          desc="피보험기간·나이별 소정급여일수 기준표"
+          href="/w/실업급여-수급기간-몇개월-받나요"
+        />
+        <SpokeLink num={1} title="실업급여 신청 방법" desc="고용24 온라인 신청 절차 전체 안내" href="/w/실업급여-신청방법" />
+      </Sec>
+
+      <Divider />
+
+      {/* SECTION 03 */}
+      <Sec n="03" id="late" title="실업급여 신청기간이 늦을수록 불리한가요?" sub="늦은 신청의 실제 손해 계산">
+        <P>늦게 신청할수록 실제 손해가 발생해요. 소정급여일수가 180일이어도 퇴직 후 6개월 뒤에 신청하면 남은 유효기간이 6개월밖에 없어요. 실제로 받을 수 있는 일수가 180일에서 크게 줄어들 수 있어요.</P>
+        <P>신청이 늦어지면 대기기간 7일도 늦게 시작돼요. 수급자격 인정 후 <B>7일 대기기간</B>이 지나야 실업인정을 받기 시작하는데, 이 기간도 유효기간 안에 포함돼요. 대기기간이 끝난 뒤부터 실제 수령이 시작돼요.</P>
+        <P>구직 활동 실적 기준도 챙겨야 해요. 실업인정을 받으려면 4주마다 구직 활동 내역을 제출해야 해요. 너무 늦게 시작하면 인정 횟수가 줄어 실질적으로 받는 금액이 감소할 수 있어요.</P>
+        <P>결론적으로 <B>퇴직 직후, 늦어도 1개월 내에 신청</B>하는 게 가장 유리해요. 서류가 준비 안 됐더라도 워크넷 구직 등록은 먼저 해두는 게 좋아요. 구직 등록 날짜가 실업인정 기준이 되는 경우가 있어요.</P>
+
+        <Info type="warn">
+          <B>대기기간 7일은 수급 기간에서 차감돼요</B><br />
+          수급자격 인정 후 7일 대기기간 동안은 실업급여가 지급되지 않아요. 단, 이 7일은 소정급여일수에서는 차감되지 않아요. 유효기간(12개월)에는 포함되니 늦게 신청할수록 총 기간이 줄어요.
+        </Info>
+      </Sec>
+
+      <RelatedMid
+        title="실업급여 신청 관련 글 모아봤어요"
+        items={[
+          { icon: "📋", title: "실업급여 신청 방법", desc: "고용24 온라인 신청 절차 전체 안내", href: "/w/실업급여-신청방법" },
+          { icon: "📂", title: "실업급여 구비서류", desc: "고용센터 제출 서류 목록", href: "/w/실업급여-구비서류" },
+          { icon: "📅", title: "실업급여 대기기간 7일", desc: "대기기간 계산 및 수당 예외 안내", href: "/w/실업급여-대기기간" },
+        ]}
+        hubHref="/category/실업급여"
+        hubLabel="실업급여 전체 보기"
       />
 
+      <Divider />
+
+      {/* SECTION 04 */}
+      <Sec n="04" id="miss" title="실업급여 신청기간을 놓쳤을 때 어떻게 하나요?" sub="연장 신청 · 구제 방법">
+        <P>퇴직 후 12개월이 지났다면 원칙적으로 실업급여를 받을 수 없어요. 하지만 <B>정당한 사유가 있으면 수급기간 연장 신청</B>이 가능해요. 연장 사유는 질병·부상·임신·출산·육아·배우자 간호 등이에요.</P>
+        <P>연장 신청은 사유가 발생한 날로부터 <B>30일 이내</B>에 고용센터에 해야 해요. 의사 소견서, 출생증명서, 입원확인서 등 관련 서류를 준비해야 해요. 기한을 넘기면 연장도 불가능해요.</P>
+        <P>실업급여를 받지 못한 채 12개월이 지났고 연장 사유도 없다면 구제 수단이 사실상 없어요. 다음 퇴직 시 새로 피보험기간을 쌓아 신청해야 해요. 이 경우 이전 피보험기간은 재활용할 수 없어요.</P>
+        <P>신청기간은 엄격하게 적용돼요. 모르고 지나쳤다는 사유만으로는 연장이 인정되지 않아요. 퇴직 직후 신청기간과 절차를 미리 파악해 두는 게 중요해요.</P>
+
+        <BridgeCard
+          q="수급기간 연장 신청이 필요한 상황인가요?"
+          a="질병·육아 등 사유가 있으면 고용센터에서 연장 신청이 가능해요."
+          label="고용24 연장 신청 바로 가기"
+          href="https://www.ei.go.kr/ei/eih/cm/hm/main.do"
+        />
+
+        <InlineLink
+          icon="📅"
+          title="실업급여 수급기간 연장 조건"
+          desc="질병·육아 사유별 최대 4년 연장 방법"
+          href="/w/실업급여-수급기간-몇개월-받나요"
+        />
+      </Sec>
+
+      <Divider />
+
+      {/* SECTION 05 */}
+      <Sec n="05" id="docs" title="실업급여 신청기간 내 준비할 서류는 무엇인가요?" sub="이직확인서 · 구직 등록 순서">
+        <P>신청기간 안에 필요한 서류를 빠르게 준비해야 해요. 핵심은 <B>이직확인서</B>예요. 전 직장이 고용보험 상실 신고를 하면 자동으로 생성되는데, 신고가 늦어지면 본인이 직접 요청해야 해요.</P>
+        <P>신청 절차는 순서가 중요해요. 워크넷 구직 등록을 먼저 해야 이후 수급자격 인정신청이 가능해요. 온라인(고용24)으로도 대부분 처리할 수 있어요. 아래 순서를 참고하세요.</P>
+
+        <Steps items={[
+          { title: "워크넷(www.work.go.kr) 구직 등록", desc: "이직 후 가장 먼저 해야 해요. 고용24와 연동돼요." },
+          { title: "수급자격 인정신청서 작성", desc: "고용24 또는 고용센터 방문 신청 가능해요." },
+          { title: "이직확인서 확인", desc: "전 직장이 발급한 이직확인서가 고용보험 시스템에 등록돼 있어야 해요." },
+          { title: "고용센터 방문 또는 온라인 제출", desc: "신분증, 수급자격 인정신청서, 이직확인서 등 지참해요." },
+          { title: "수급자격 인정 후 7일 대기기간", desc: "대기기간 동안 구직 활동을 시작해요. 이후 실업인정 신청을 4주마다 진행해요." },
+        ]} />
+
+        <SpokeLink num={2} title="실업급여 구비서류 전체 목록" desc="이직확인서·사직서 등 제출 서류 상세 안내" href="/w/실업급여-구비서류" />
+
+        <ExtBtn
+          badge="고용24 공식"
+          text="실업급여 수급자격 인정신청"
+          cta="신청하기 →"
+          href="https://www.ei.go.kr/ei/eih/cm/hm/main.do"
+        />
+      </Sec>
+
+      <Divider />
+
+      <FAQAccordion items={meta.faq} />
+
       <RelatedArticles items={[
-        { title: "실업급여 신청방법 — 고용24 워크넷 절차", desc: "실업급여 · 신청방법", href: "/w/실업급여-신청방법" },
-        { title: "실업급여 소정급여일수 — 나이·근속별 계산", desc: "실업급여 · 소정급여일수", href: "/w/실업급여-소정급여일수" },
-        { title: "실업급여 대기기간 7일 — 첫 입금일 계산", desc: "실업급여 · 대기기간", href: "/w/실업급여-대기기간" },
-        { title: "실업급여 수급기간 — 몇 개월 받나요?", desc: "실업급여 · 수급기간", href: "/w/실업급여-수급기간-몇개월-받나요" },
+        { title: "실업급여 신청 방법과 절차", href: "/w/실업급여-신청방법" },
+        { title: "실업급여 구비서류 전체 안내", href: "/w/실업급여-구비서류" },
+        { title: "실업급여 대기기간 7일 안내", href: "/w/실업급여-대기기간" },
+        { title: "실업급여 수급기간 몇 개월 받나요", href: "/w/실업급여-수급기간-몇개월-받나요" },
+        { title: "피보험기간 180일 계산하기", href: "/w/실업급여-피보험기간-180일-계산" },
       ]} />
 
       <PrevNext
-        prev={{ title: "실업급여 구비서류", href: "/w/실업급여-구비서류" }}
-        next={{ title: "실업급여 워크넷 구직등록", href: "/w/실업급여-실업신고" }}
+        prev={{ title: "실업급여 수급기간 몇 개월 받나요", href: "/w/실업급여-수급기간-몇개월-받나요" }}
+        next={{ title: "실업급여 신청 방법과 절차", href: "/w/실업급여-신청방법" }}
       />
     </BlogLayout>
   );
