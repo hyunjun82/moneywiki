@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  /* Vercel 스타일 - 미니멀 팔레트 */
+  /* 기본 */
   --background: #ffffff;
   --foreground: #171717;
 
@@ -20,14 +20,73 @@
   --gray-900: #171717;
   --gray-950: #0a0a0a;
 
-  /* 액센트 - 단일 포인트 컬러 */
-  --accent: #0070f3;
-  --accent-light: #3291ff;
-  --accent-dark: #0050b3;
+  /* KFB 포털 컬러 */
+  --kfb-navy: #1B3A5C;
+  --kfb-navy-dark: #142D4A;
+  --kfb-navy-light: #2B5280;
+  --kfb-blue: #2563EB;
+  --kfb-blue-light: #3B82F6;
+  --kfb-sidebar-width: 120px;
+
+  /* 액센트 */
+  --accent: #2563EB;
+  --accent-light: #3B82F6;
+  --accent-dark: #1D4ED8;
 
   /* 성공/에러 */
   --success: #00a67e;
   --error: #e00;
+}
+
+/* KFB 포털 섹션 배경 */
+.section-kfb-blue {
+  background: linear-gradient(180deg, #EDF2F8 0%, #FFFFFF 100%);
+}
+.section-kfb-purple {
+  background: linear-gradient(180deg, #F0EDF8 0%, #FFFFFF 100%);
+}
+.section-kfb-light {
+  background: #F8FAFC;
+}
+
+/* KFB 바로가기 버튼 */
+.btn-kfb {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: var(--kfb-navy);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+.btn-kfb:hover {
+  background: var(--kfb-navy-dark);
+  color: white;
+}
+
+/* KFB 뱃지 */
+.badge-kfb {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 4px;
+  background: var(--kfb-blue);
+  color: white;
+}
+
+/* KFB 섹션 제목 */
+.kfb-section-title {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--foreground);
+  margin-bottom: 40px;
+  letter-spacing: -0.02em;
 }
 
 /* 기본 스타일 */
@@ -1070,4 +1129,275 @@ article > p > em:only-child,
   .prose blockquote {
     padding: 16px 18px;
   }
+}
+
+/* ══════════════════════════════════════════
+   위키 MD 리치 컴포넌트
+   HTML 블록으로 MD 본문에 직접 삽입
+   ══════════════════════════════════════════ */
+
+/* ── PAS 브릿지 카드 ── */
+.wiki-content .br-pas,
+article .br-pas {
+  display: block;
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin: 16px 0;
+  background: #fff;
+  border: 1.5px solid #E5E7EB;
+  text-decoration: none;
+  transition: all .2s;
+  position: relative;
+  overflow: hidden;
+  color: inherit;
+}
+.wiki-content .br-pas::before,
+article .br-pas::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: #059669;
+}
+.wiki-content .br-pas:hover,
+article .br-pas:hover {
+  border-color: #6EE7B7;
+  box-shadow: 0 4px 16px rgba(5,150,105,.1);
+  transform: translateY(-1px);
+}
+.wiki-content .br-pas-q,
+article .br-pas-q {
+  font-size: 15px;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+.wiki-content .br-pas-a,
+article .br-pas-a {
+  font-size: 13.5px;
+  color: #6B7280;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.wiki-content .br-pas-a strong,
+article .br-pas-a strong {
+  color: #059669;
+  font-weight: 700;
+}
+.wiki-content .br-pas-btn,
+article .br-pas-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #059669;
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background .15s;
+}
+.wiki-content .br-pas:hover .br-pas-btn,
+article .br-pas:hover .br-pas-btn {
+  background: #047857;
+}
+
+/* ── 공식 박스 ── */
+.wiki-content .formula,
+article .formula {
+  background: #ECFDF5;
+  border: 1px solid rgba(5,150,105,.15);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 12px 0;
+  text-align: center;
+}
+.wiki-content .formula .main,
+article .formula .main {
+  font-size: 15px;
+  font-weight: 800;
+  color: #059669;
+  margin-bottom: 6px;
+}
+.wiki-content .formula .sub,
+article .formula .sub {
+  font-size: 12px;
+  color: #6B7280;
+  line-height: 1.5;
+}
+
+/* ── 칩 그리드 ── */
+.wiki-content .chips,
+article .chips {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 12px 0;
+}
+.wiki-content .chip,
+article .chip {
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 12px 6px;
+  text-align: center;
+}
+.wiki-content .chip .ic,
+article .chip .ic {
+  font-size: 20px;
+  margin-bottom: 3px;
+  display: block;
+}
+.wiki-content .chip .t,
+article .chip .t {
+  font-size: 10.5px;
+  color: #9CA3AF;
+  margin-bottom: 2px;
+  display: block;
+}
+.wiki-content .chip .v,
+article .chip .v {
+  font-size: 12px;
+  font-weight: 800;
+  color: #059669;
+  line-height: 1.25;
+  display: block;
+}
+
+/* ── 디테일 박스 ── */
+.wiki-content .dbox,
+article .dbox {
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  margin: 12px 0;
+  overflow: hidden;
+}
+.wiki-content .dbox-h,
+article .dbox-h {
+  padding: 11px 16px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #111827;
+  border-bottom: 1px solid #E5E7EB;
+  background: #fff;
+}
+.wiki-content .dbox-item,
+article .dbox-item {
+  padding: 12px 16px;
+  border-bottom: 1px solid #E5E7EB;
+  display: flex;
+  gap: 12px;
+}
+.wiki-content .dbox-item:last-child,
+article .dbox-item:last-child {
+  border-bottom: none;
+}
+.wiki-content .dbox-idx,
+article .dbox-idx {
+  width: 22px;
+  height: 22px;
+  background: #059669;
+  color: #fff;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.wiki-content .dbox-text h4,
+article .dbox-text h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1px;
+}
+.wiki-content .dbox-text p,
+article .dbox-text p {
+  font-size: 12px;
+  color: #6B7280;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* ── 인포 박스 (tip / warn) ── */
+.wiki-content .info,
+article .info {
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  display: flex;
+  gap: 9px;
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+.wiki-content .info.warn,
+article .info.warn {
+  background: #FFFBEB;
+  border: 1px solid #FDE68A;
+  color: #92400E;
+}
+.wiki-content .info.tip,
+article .info.tip {
+  background: #ECFDF5;
+  border: 1px solid rgba(5,150,105,.15);
+  color: #047857;
+}
+.wiki-content .info .ic,
+article .info .ic {
+  font-size: 15px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.wiki-content .info strong,
+article .info strong {
+  font-weight: 700;
+}
+
+/* ── 시각 단계 흐름 ── */
+.wiki-content .steps,
+article .steps {
+  margin: 14px 0;
+}
+.wiki-content .step,
+article .step {
+  display: flex;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid #E5E7EB;
+}
+.wiki-content .step:last-child,
+article .step:last-child {
+  border-bottom: none;
+}
+.wiki-content .step-n,
+article .step-n {
+  width: 28px;
+  height: 28px;
+  background: #059669;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.wiki-content .step-c h4,
+article .step-c h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 2px;
+}
+.wiki-content .step-c p,
+article .step-c p {
+  font-size: 13px;
+  color: #6B7280;
+  line-height: 1.5;
+  margin: 0;
 }
