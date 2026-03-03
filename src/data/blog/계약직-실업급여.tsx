@@ -3,11 +3,12 @@ import { useState } from "react";
 import {
   C,
   BlogLayout, TOC, Summary3, Sec, P, B, A, H3,
-  Info, InlineLink, BridgeCard, ExtBtn,
+  Info, InlineLink, SpokeLink, BridgeCard, ExtBtn,
   FAQAccordion, RelatedArticles, PrevNext,
   RelatedMid, SidebarCTA, SidebarDocs, SidebarCalc,
   CheckerShell, CheckerQ, ResultPass, ResultFail, ResultCTA,
   Divider, TableTitle, TableNote, TH, THL,
+  FormulaCard, CaseBox, Steps,
 } from "@/components/wiki/BlogShared";
 
 const meta = {
@@ -50,6 +51,8 @@ const meta = {
   ],
 };
 
+type ResLink = { icon: string; title: string; desc: string; href: string };
+
 export default function Page() {
   const [sel, setSel] = useState<Record<string, string>>({});
   const pick = (g: string, v: string) => setSel((p) => ({ ...p, [g]: v }));
@@ -62,12 +65,17 @@ export default function Page() {
 
   const result = getResult();
 
+  const links: ResLink[] = [
+    { icon: "📋", title: "고용24 수급자격 신청", desc: "온라인으로 바로 신청 가능", href: "https://www.ei.go.kr" },
+    { icon: "📅", title: "피보험기간 180일 계산", desc: "이직일 기준 18개월 합산 방법", href: "/w/실업급여-피보험기간-180일-계산" },
+  ];
+
   const toc = [
     { t: "STEP 01 계약직 피보험기간 수급 여부 확인" },
-    { t: "계약직도 180일 합산해서 실업급여 받을 수 있나요?", sub: "여러 직장 합산 · 정규직과 동일 조건" },
-    { t: "이전 직장 피보험기간 합산은 어떻게 하나요?", sub: "18개월 역산 · 이전 수급 후 재계산" },
-    { t: "여러 직장 고용보험 이직일을 어떻게 확인하나요?", sub: "이직일 기준 · 18개월 소급 적용" },
-    { t: "고용24에서 피보험기간 내역 조회하는 방법이 뭐예요?", sub: "로그인 조회 · 누락 기간 확인" },
+    { t: "계약직 실업급여 180일 합산해서 받을 수 있나요?", sub: "여러 직장 합산 · 정규직과 동일 조건" },
+    { t: "계약직 실업급여 이전 직장 피보험기간 합산은 어떻게 하나요?", sub: "18개월 역산 · 이전 수급 후 재계산" },
+    { t: "계약직 실업급여 여러 직장 이직일은 어떻게 확인하나요?", sub: "이직일 기준 · 18개월 소급 적용" },
+    { t: "계약직 실업급여 고용24 피보험기간 내역 조회 방법이 뭐예요?", sub: "로그인 조회 · 누락 기간 확인" },
     { t: "자주 묻는 질문" },
   ];
 
@@ -122,7 +130,7 @@ export default function Page() {
         {result === "over180_expired" && (
           <ResultPass title="실업급여 수급자격이 돼요">
             <P>피보험기간 180일 이상 + 계약만료 비자발적 이직이면 수급자격이 생겨요. 고용24에서 수급자격 신청을 하고, 워크넷 구직 등록 후 고용센터 방문으로 절차를 진행하세요.</P>
-            <ResultCTA icon="📋" title="고용24 수급자격 신청" desc="온라인으로 바로 신청" href="https://www.ei.go.kr" />
+            {links.map((l, i) => (<ResultCTA key={i} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />))}
           </ResultPass>
         )}
         {result === "over180_refused" && (
@@ -164,16 +172,17 @@ export default function Page() {
       <Divider />
 
       {/* SECTION 02 */}
-      <Sec n="SECTION 02" id="s2" title="계약직도 180일 합산해서 실업급여 받을 수 있나요?" sub="여러 직장 합산 · 정규직과 동일 조건" />
+      <Sec n="SECTION 02" id="s2" title="계약직 실업급여 180일 합산해서 받을 수 있나요?" sub="여러 직장 합산 · 정규직과 동일 조건" />
       <P>받을 수 있어요. <A href="https://www.law.go.kr/법령/고용보험법">고용보험법</A>에서 계약직과 정규직 수급 조건을 따로 구분하지 않아요. 이직일 기준 18개월 이내에 피보험기간 180일 이상이면 동일하게 수급자격이 생겨요.</P>
       <P>단기 계약을 여러 번 반복했어도 합산돼요. A 회사 4개월, B 회사 계약직 3개월이면 합산 7개월로 180일을 초과해요. 회사가 달라도 이직일 기준 18개월 이내 기간이면 모두 합산돼요.</P>
       <P>이전에 실업급여를 받은 이력이 있으면 그 이전 기간은 합산이 안 돼요. 수급 후 새로 쌓인 피보험기간부터 다시 계산해요. 고용24에서 이력을 조회하면 정확한 시작 기준을 알 수 있어요.</P>
       <P>파견직도 동일해요. 파견회사를 통해 일하다가 계약이 끝나면 파견회사와의 계약만료예요. 파견회사에서 고용보험에 가입해줬다면 피보험기간이 쌓여 있어요.</P>
+      <InlineLink icon="📋" title="계약만료 실업급여 수급 조건" desc="재계약 거부 유형별 자발적·비자발적 판단" href="/w/실업급여-계약만료" />
 
       <Divider />
 
       {/* SECTION 03 */}
-      <Sec n="SECTION 03" id="s3" title="이전 직장 피보험기간 합산은 어떻게 하나요?" sub="18개월 역산 · 이전 수급 후 재계산" />
+      <Sec n="SECTION 03" id="s3" title="계약직 실업급여 이전 직장 피보험기간 합산은 어떻게 하나요?" sub="18개월 역산 · 이전 수급 후 재계산" />
       <P>이직일(퇴직일)로부터 역산해서 18개월 전부터 이직일까지 고용보험에 가입된 날을 모두 합산해요. 중간에 쉰 기간은 포함되지 않아요.</P>
       <TableTitle>피보험기간 합산 계산 예시</TableTitle>
       <div style={{ overflowX: "auto" }}>
@@ -200,15 +209,27 @@ export default function Page() {
       <TableNote>18개월 계산은 이직일이 바뀌면 결과도 달라져요. 고용24에서 실제 이직일 기준으로 조회하는 게 정확해요.</TableNote>
 
       <P>이전 직장에서 실업급여를 받았다면 그 이전 기간은 합산이 안 돼요. 수급 종료 후 새로 취업해서 쌓인 기간부터만 계산해요. 이 기간이 180일을 넘으면 다시 수급자격이 생겨요.</P>
+      <Info type="warn">이직일이 언제인지에 따라 합산 가능 기간이 달라져요. 이직일 기준 18개월 이내 기간만 합산되므로, 고용24에서 정확한 이직일을 확인하고 계산해야 해요.</Info>
+      <FormulaCard formula="합산 피보험기간 = 현 직장 고용보험 가입일수 + 이전 직장 가입일수 (이직일 전 18개월 이내 기간만 해당)" />
+      <CaseBox badge="사례 1" label="합산 성공" conditions={["현 직장 6개월(약 130일) + 이전 직장 4개월(약 80일) = 210일"]} result="180일 초과 → 수급자격 충족" pass={true} />
+      <CaseBox badge="사례 2" label="18개월 초과" conditions={["이전 직장 2년 전 퇴직 → 18개월 기준 초과"]} result="일부 기간 제외 → 고용24 확인 필수" pass={false} />
+      <CaseBox badge="사례 3" label="이전 수급 후" conditions={["실업급여 받은 후 재취업"]} result="수급 전 기간 불포함 → 재취업 이후 기간만 합산" pass={false} />
+      <InlineLink icon="📅" title="피보험기간 180일 계산 방법" desc="18개월 역산 기준과 합산 조회 안내" href="/w/실업급여-피보험기간-180일-계산" />
 
       <Divider />
 
       {/* SECTION 04 */}
-      <Sec n="SECTION 04" id="s4" title="여러 직장 고용보험 이직일을 어떻게 확인하나요?" sub="이직일 기준 · 18개월 소급 적용" />
+      <Sec n="SECTION 04" id="s4" title="계약직 실업급여 여러 직장 이직일은 어떻게 확인하나요?" sub="이직일 기준 · 18개월 소급 적용" />
       <P>이직일은 퇴직일을 말해요. 현재 직장의 퇴직일이 기준이 돼요. 이직일로부터 역산해서 18개월 전에 재직 중이었던 이전 직장들의 피보험기간이 합산 대상이에요.</P>
       <P>이직일이 언제인지 정확히 알아야 해요. 근로계약서 종료일, 이직확인서 이직일, 고용24 이력의 피보험 상실일이 모두 일치하는지 확인하는 게 좋아요. 불일치가 있으면 고용센터에서 보완 처리를 해야 해요.</P>
       <P>18개월을 소급하면 합산 가능 범위가 정해져요. 예를 들어 2026년 3월 1일 이직이라면 2024년 9월 1일부터 2026년 3월 1일까지가 합산 기간이에요. 이 범위 안에 있는 이전 직장 기간만 합산돼요.</P>
       <P>이전 직장과 현 직장 사이에 공백기가 있어도 괜찮아요. 피보험기간에 가입되지 않은 공백 기간은 합산에 포함되지 않지만, 합산 자격을 없애지는 않아요. 공백 기간이 있어도 18개월 이내 기간 내에서 가입된 날만 합산해요.</P>
+      <Steps items={[
+        { title: "근로계약서에서 계약 종료일 확인", desc: "계약기간 만료일 = 이직일 기준일 → 정확한 날짜 메모" },
+        { title: "고용24에서 피보험 상실일 조회", desc: "www.ei.go.kr → 피보험자격 이력 → 직장별 취득일·상실일 확인" },
+        { title: "이직확인서 이직일과 대조", desc: "이직확인서의 이직일이 실제 퇴직일과 맞는지 확인 → 불일치 시 보완 요청" },
+        { title: "18개월 역산 기간 계산", desc: "이직일로부터 정확히 18개월 전 날짜 계산 → 그 이후 이전 직장 기간만 합산" },
+      ]} />
 
       <RelatedMid
         hubHref="/w/실업급여-피보험기간-180일-계산"
@@ -223,11 +244,13 @@ export default function Page() {
       <Divider />
 
       {/* SECTION 05 */}
-      <Sec n="SECTION 05" id="s5" title="고용24에서 피보험기간 내역 조회하는 방법이 뭐예요?" sub="로그인 조회 · 누락 기간 확인" />
+      <Sec n="SECTION 05" id="s5" title="계약직 실업급여 고용24 피보험기간 내역 조회 방법이 뭐예요?" sub="로그인 조회 · 누락 기간 확인" />
       <P>고용24(ei.go.kr)에 로그인하면 내 피보험자 이력을 확인할 수 있어요. 공인인증서 또는 간편인증(카카오, 네이버 등)으로 로그인하면 돼요.</P>
       <P>조회 경로예요. 고용24 로그인 → 고용보험 → 피보험자격 이력 메뉴에서 직장별 취득일과 상실일, 피보험기간을 볼 수 있어요. 이직일 기준 18개월 내 기간이 총 얼마인지도 계산해볼 수 있어요.</P>
       <P>누락된 기간이 있으면 보완 신청을 해야 해요. 이력에 내가 일한 직장이 없거나 기간이 짧게 나온다면, 해당 사업주에게 피보험자격 신고 보완을 요청하거나 고용센터에 직권 조사를 신청할 수 있어요.</P>
       <P>신청 전에 조회하는 게 중요해요. 고용센터 방문 전에 미리 조회해서 합산 기간이 180일 이상인지 확인하면 당일 처리가 빠르게 돼요. 부족한 경우 보완 후 다시 신청할 수 있어요.</P>
+      <SpokeLink num="01" title="계약만료 실업급여 수급 조건" desc="재계약 거부 유형별 이직 분류 안내" href="/w/실업급여-계약만료" />
+      <SpokeLink num="02" title="실업급여 수급자격 인정 신청" desc="비자발적 이직 신청 절차와 서류" href="/w/실업급여-수급자격-인정" />
 
       <ExtBtn badge="고용24 공식" text="피보험기간 조회 및 수급자격 신청" cta="조회하기 →" href="https://www.ei.go.kr" />
 
@@ -235,6 +258,9 @@ export default function Page() {
       <RelatedArticles items={[
         { title: "계약만료 실업급여 수급 조건", desc: "재계약 거부 유형별 수급 여부", href: "/w/실업급여-계약만료" },
         { title: "실업급여 수급자격 신청 절차", desc: "비자발적 퇴직 조건과 신청 방법", href: "/w/실업급여-수급자격-인정" },
+        { title: "피보험기간 180일 계산 방법", desc: "가입일수 합산 기준과 조회 안내", href: "/w/실업급여-피보험기간-180일-계산" },
+        { title: "건설일용직 실업급여 신청 조건", desc: "여러 현장 합산 180일 기준", href: "/w/건설일용직-실업급여" },
+        { title: "2026년 실업급여 금액 변경", desc: "하한액 64,192원 기준과 계산법", href: "/w/2026년-실업급여" },
       ]} />
       <PrevNext
         prev={{ title: "계약만료 실업급여 조건", href: "/w/실업급여-계약만료" }}

@@ -3,11 +3,12 @@ import { useState } from "react";
 import {
   C,
   BlogLayout, TOC, Summary3, Sec, P, B, A, H3,
-  Info, InlineLink, BridgeCard, ExtBtn,
+  Info, InlineLink, SpokeLink, BridgeCard, ExtBtn,
   FAQAccordion, RelatedArticles, PrevNext,
   RelatedMid, SidebarCTA, SidebarDocs, SidebarCalc,
   CheckerShell, CheckerQ, ResultPass, ResultFail, ResultCTA,
   Divider, TableTitle, TableNote, TH, THL,
+  FormulaCard, CaseBox, Steps,
 } from "@/components/wiki/BlogShared";
 
 const meta = {
@@ -50,6 +51,8 @@ const meta = {
   ],
 };
 
+type ResLink = { icon: string; title: string; desc: string; href: string };
+
 export default function Page() {
   const [sel, setSel] = useState<Record<string, string>>({});
   const pick = (g: string, v: string) => setSel((p) => ({ ...p, [g]: v }));
@@ -62,12 +65,17 @@ export default function Page() {
 
   const result = getResult();
 
+  const links: ResLink[] = [
+    { icon: "🏗️", title: "건설일용직 신청 절차", desc: "이직확인서 발급부터 수급까지", href: "/w/실업급여-건설일용직" },
+    { icon: "📋", title: "수급자격 인정 신청", desc: "비자발적 이직 조건과 신청 방법", href: "/w/실업급여-수급자격-인정" },
+  ];
+
   const toc = [
     { t: "STEP 01 건설일용직 실업급여 신청 가능 여부 확인" },
-    { t: "피보험기간 180일은 어떻게 계산하나요?", sub: "여러 현장 합산 · 18개월 기준 기간" },
-    { t: "이직일 전 18개월 기준은 어떻게 적용되나요?", sub: "이직일 계산 · 10일 미만 근무 판단" },
+    { t: "건설일용직 실업급여 피보험기간 180일은 어떻게 계산하나요?", sub: "여러 현장 합산 · 18개월 기준 기간" },
+    { t: "건설일용직 실업급여 이직일 전 18개월 기준은 어떻게 적용되나요?", sub: "이직일 계산 · 10일 미만 근무 판단" },
     { t: "건설일용직 실업급여 신청 서류 뭐가 필요한가요?", sub: "이직확인서 · 신분증 · 통장 사본" },
-    { t: "근로내용 확인신고서 안 됐을 때 어떻게 하나요?", sub: "사업주 요청 · 고용센터 직권 조사" },
+    { t: "건설일용직 실업급여 근로내용 확인신고서 안 됐을 때 어떻게 하나요?", sub: "사업주 요청 · 고용센터 직권 조사" },
     { t: "자주 묻는 질문" },
   ];
 
@@ -122,7 +130,7 @@ export default function Page() {
         {result === "over180_yes" && (
           <ResultPass title="실업급여 신청 가능해요">
             <P>18개월 내 180일 이상 + 이직 상태가 확인됐어요. 마지막 현장 사업주에게 이직확인서 발급을 요청하고, 고용센터에 수급자격 신청을 하세요. 신청 후 구직활동을 정기적으로 신고해야 수당이 지급돼요.</P>
-            <ResultCTA icon="🏗️" title="건설일용직 신청 절차 보기" desc="이직확인서 발급부터 수급까지" href="/w/실업급여-건설일용직" />
+            {links.map((l, i) => (<ResultCTA key={i} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />))}
           </ResultPass>
         )}
         {result === "over180_no" && (
@@ -163,20 +171,27 @@ export default function Page() {
       <Divider />
 
       {/* SECTION 02 */}
-      <Sec n="SECTION 02" id="s2" title="피보험기간 180일은 어떻게 계산하나요?" sub="여러 현장 합산 · 18개월 기준 기간" />
+      <Sec n="SECTION 02" id="s2" title="건설일용직 실업급여 피보험기간 180일은 어떻게 계산하나요?" sub="여러 현장 합산 · 18개월 기준 기간" />
       <P>이직 전 18개월 내에 실제 근무한 날수를 모두 합산해요. 현장별로 따로 계산하지 않아요. 이 기간 내에 A 현장 60일, B 현장 80일, C 현장 50일 일했다면 합산해서 190일이 돼요.</P>
       <P>180일은 달력 일수가 아니라 고용보험 납부 일수예요. 일용직이기 때문에 출근한 날만 카운트돼요. 주 5일 근무 기준으로 약 36주(9개월)가 돼요. 6개월 계약이면 130일 정도라서 이전 직장 기간을 합산해야 180일을 채울 수 있어요.</P>
       <P>18개월이라는 기간 제한이 있어요. 이직일로부터 역산해서 18개월 전보다 오래된 피보험기간은 합산이 안 돼요. 2년 전 직장 기간은 포함되지 않을 수 있으니 고용24에서 정확히 확인해보세요.</P>
       <P>이전에 실업급여를 받은 이력이 있으면 그 이전 기간은 합산이 안 돼요. 수급 후 새로 쌓인 피보험기간부터 다시 계산해요.</P>
+      <Info type="warn">사업주가 근로내용 확인신고를 제출하지 않으면 해당 기간이 피보험기간에서 빠져요. 고용24에서 정기적으로 본인 기간을 조회하고, 누락이 있으면 즉시 보완 요청을 해야 해요.</Info>
+      <FormulaCard formula="피보험기간(180일 이상) = 현장A 근무일 + 현장B 근무일 + ··· (이직일 전 18개월 내 합산 기준)" />
+      <CaseBox badge="사례 1" label="합산 성공" conditions={["A 현장 80일 + B 현장 60일 + C 현장 50일 = 190일"]} result="18개월 내 합산 → 신청 가능" pass={true} />
+      <CaseBox badge="사례 2" label="18개월 초과" conditions={["2년 전 직장 기간 100일은 포함 안 됨"]} result="이직일 기준 역산해서 18개월 내 기간만 인정" pass={false} />
+      <CaseBox badge="사례 3" label="신고 누락 보완" conditions={["사업주 미신고로 50일 누락"]} result="고용센터 보완 신청 후 180일 충족 → 신청 가능" pass={true} />
+      <InlineLink icon="📅" title="피보험기간 180일 계산 방법" desc="가입일수 합산 기준과 조회 방법" href="/w/실업급여-피보험기간-180일-계산" />
 
       <Divider />
 
       {/* SECTION 03 */}
-      <Sec n="SECTION 03" id="s3" title="이직일 전 18개월 기준은 어떻게 적용되나요?" sub="이직일 계산 · 10일 미만 근무 판단" />
+      <Sec n="SECTION 03" id="s3" title="건설일용직 실업급여 이직일 전 18개월 기준은 어떻게 적용되나요?" sub="이직일 계산 · 10일 미만 근무 판단" />
       <P>건설일용직은 이직일 판단이 일반 근로자와 달라요. 마지막 현장이 종료된 날 또는 최근 1개월 내에 10일 미만 일한 상태가 되는 날이 이직일이에요.</P>
       <P>10일 미만 기준을 이해해야 해요. 현장을 옮겨다니는 경우 딱 떨어지는 이직일이 없어요. 고용보험법에서는 "최근 1개월 내 10일 미만 근무한 날"을 이직 상태로 봐요. 다른 현장에서 계속 일하는 중이라면 이직 상태가 아니에요.</P>
       <P>이직 후 신청 기한도 있어요. 이직일로부터 12개월 이내에 수급자격을 신청해야 해요. 12개월이 지나면 피보험기간 요건을 충족해도 신청이 안 돼요. 이직 상태가 되면 빠르게 신청하는 게 좋아요.</P>
       <P>수급기간은 피보험기간에 따라 90~270일이에요. 건설일용직도 일반 소정급여일수 기준이 적용돼요. 50세 이상이면 구간별로 30일씩 추가돼요.</P>
+      <InlineLink icon="📋" title="실업급여 소정급여일수 기준" desc="피보험기간별 수급기간 계산표" href="/w/실업급여-소정급여일수" />
 
       <RelatedMid
         hubHref="/w/실업급여-피보험기간-180일-계산"
@@ -219,15 +234,23 @@ export default function Page() {
 
       <P>이직확인서 발급은 사업주 의무예요. 사업주가 14일 내에 발급해야 하고, 거부하면 고용노동부(1350)에 신고할 수 있어요. 이직확인서 없이도 수급자격 신청 접수는 가능해요.</P>
       <P>방문 전에 고용24에서 피보험기간을 미리 조회하면 신청 당일 빠르게 처리돼요. 누락된 기간이 있으면 그 자리에서 보완 신청도 할 수 있어요.</P>
+      <Steps items={[
+        { title: "사업주에게 이직확인서 발급 요청", desc: "마지막 현장 사업주에게 연락 → 14일 내 발급 의무, 거부 시 1350 신고" },
+        { title: "고용24에서 피보험기간 조회", desc: "www.ei.go.kr 접속 → 피보험기간 이력 확인 → 누락 기간 체크" },
+        { title: "관할 고용센터 방문 신청", desc: "신분증 + 이직확인서 + 통장 사본 지참 → 수급자격 인정 신청서 작성" },
+        { title: "구직활동 신고 및 수당 수령", desc: "1~4주 간격 실업인정 신청 → 구직활동 이행 확인 후 수당 지급" },
+      ]} />
 
       <Divider />
 
       {/* SECTION 05 */}
-      <Sec n="SECTION 05" id="s5" title="근로내용 확인신고서 안 됐을 때 어떻게 하나요?" sub="사업주 요청 · 고용센터 직권 조사" />
+      <Sec n="SECTION 05" id="s5" title="건설일용직 실업급여 근로내용 확인신고서 안 됐을 때 어떻게 하나요?" sub="사업주 요청 · 고용센터 직권 조사" />
       <P>건설일용직은 고용보험 신고 구조가 일반 사업장과 달라요. 원수급인(원청)이 하수급인(하청)이 고용한 일용직까지 포함해서 신고해야 해요. 신고 기한은 매월 다음 달 15일이에요.</P>
       <P>고용24에서 피보험기간 이력을 조회했을 때 실제로 일한 기간이 빠져있다면, 해당 현장 사업주에게 근로내용 확인신고 보완을 요청해요. 사업주는 과태료 부과 대상이기 때문에 대부분 협조해요.</P>
       <P>사업주가 협조하지 않으면 고용센터에 직권 조사를 신청할 수 있어요. 일당 지급 내역, 일용대장, 동료 진술 등 증빙이 될 만한 자료를 가지고 고용센터에 상담받으면 돼요.</P>
       <P>확인신고서 누락이 자주 발생하는 구조라서, 신청 전에 반드시 피보험기간 이력을 조회해보는 게 좋아요. 누락 기간이 있으면 보완 후 다시 180일을 계산해요.</P>
+      <SpokeLink num="01" title="건설일용직 신청 절차" desc="이직확인서 발급부터 고용센터 방문까지" href="/w/실업급여-건설일용직" />
+      <SpokeLink num="02" title="계약직 실업급여 요건" desc="계약만료 후 피보험기간 180일 합산" href="/w/계약직-실업급여" />
 
       <ExtBtn badge="고용24 공식" text="피보험기간 조회 및 수급자격 신청" cta="조회하기 →" href="https://www.ei.go.kr" />
 
@@ -235,6 +258,9 @@ export default function Page() {
       <RelatedArticles items={[
         { title: "건설일용근로자 실업급여 신청 절차", desc: "고용센터 접수 단계별 방법", href: "/w/실업급여-건설일용직" },
         { title: "계약직 실업급여 신청 요건", desc: "180일 합산과 계약만료 조건", href: "/w/계약직-실업급여" },
+        { title: "피보험기간 180일 계산 방법", desc: "가입일수 합산 기준과 조회 방법", href: "/w/실업급여-피보험기간-180일-계산" },
+        { title: "실업급여 수급자격 인정 조건", desc: "비자발적 이직과 신청 요건 정리", href: "/w/실업급여-수급자격-인정" },
+        { title: "2026년 실업급여 금액 변경", desc: "하한액 64,192원 기준과 계산법", href: "/w/2026년-실업급여" },
       ]} />
       <PrevNext
         prev={{ title: "간병 사유 퇴직 실업급여", href: "/w/실업급여-간병-퇴직" }}

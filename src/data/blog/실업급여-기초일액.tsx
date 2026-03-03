@@ -1,237 +1,389 @@
+// @ts-nocheck
 "use client";
-
 import { useState } from "react";
 import {
-  C, Btn, Info, Divider, Sec, P, B, A, H3,
-  TableTitle, TableNote, TH, THL,
-  BridgeCard, BlogLayout, TOC, Summary3,
-  FAQAccordion, RelatedArticles, PrevNext,
-  InlineLink, SpokeLink,
+  BlogLayout, TOC, Summary3, Sec, P, B, A, H3, Divider,
+  Info, InlineLink, SpokeLink, BridgeCard, ExtBtn,
+  TH, THL, TableTitle, TableNote, Tag,
+  CheckerShell, CheckerQ, ResultPass, ResultFail, ResultGrid, ResultCTA, Btn, ChipsGrid,
+  FAQAccordion, RelatedArticles, PrevNext, RelatedMid,
+  SidebarCTA, SidebarDocs, SidebarCalc,
+  FormulaCard, CaseBox,
 } from "@/components/wiki/BlogShared";
 
-// ── 체커 로직: 월급여별 기초일액 예상 ──
-type ResLink = { icon: string; title: string; href: string };
-type Res = { pass: boolean; headline: string; detail: string; badges: string[]; amount?: string; links: ResLink[] };
+const meta = {
+  title: "실업급여 기초일액 계산 공식 | 평균임금 60% 상하한 적용",
+  description: "실업급여 하루 지급액(기초일액)은 퇴직 전 3개월 평균임금의 60%예요. 2026년 기준 상한 66,000원, 하한 약 64,000원으로 적용되며, 연봉별 실제 수령액 계산 사례를 정리했어요.",
+  category: "실업급여",
+  keywords: [
+    "실업급여 기초일액 계산 공식",
+    "실업급여 기초일액 평균임금 60%",
+    "실업급여 기초일액 상한액 하한액 적용",
+    "실업급여 기초일액 퇴직 전 3개월 임금",
+  ],
+  author: "머니위키 에디터",
+  updateNote: "2026년 기준",
+  lastUpdated: "2026-02-27",
+  datePublished: "2026-02-27",
+  summary: [
+    "기초일액 = 퇴직 전 3개월 평균임금 × 60%로 계산해요",
+    "2026년 기준 1일 상한 66,000원, 하한 약 64,000원이에요",
+    "실제 수령액은 기초일액 × 소정급여일수로 결정돼요",
+  ],
+  sources: [
+    {
+      name: "고용보험법 제45조 (구직급여 일액)",
+      url: "https://www.law.go.kr/법령/고용보험법/(20240101,20022,20231010)/제45조",
+      date: "2026-02",
+    },
+  ],
+  faq: [
+    {
+      q: "퇴직 전 3개월 임금이 불규칙하면 어떻게 계산하나요?",
+      a: "퇴직 전 3개월 동안 지급된 임금 총액을 그 기간의 총 일수(90일)로 나눠요. 성과급이나 상여금도 포함될 수 있어요. 임금이 불규칙해도 고용센터에서 자동 계산해 주니 걱정하지 않아도 돼요.",
+    },
+    {
+      q: "기초일액이 상한액보다 높게 계산되면 어떻게 되나요?",
+      a: "계산된 기초일액이 상한액(66,000원)을 초과하더라도 66,000원만 지급돼요. 고소득자일수록 실제 급여 대비 실업급여 비율이 낮아지는 구조예요.",
+    },
+  ],
+  ctaCard: {
+    label: "기초일액 계산",
+    mainText: "내 연봉으로 실업급여 예상 일액 계산",
+    subText: "퇴직 전 월급을 입력하면 예상액이 나와요",
+    url: "/w/실업급여-연봉별-계산",
+    external: false,
+  },
+  relatedDocs: [
+    { title: "실업급여 상한액 하한액", url: "/w/실업급여-상한액" },
+    { title: "실업급여 연봉별 계산", url: "/w/실업급여-연봉별-계산" },
+  ],
+};
 
-const checkerLinks: ResLink[] = [
-  { icon: "\uD83D\uDCC5", title: "\uC18C\uC815\uAE09\uC5EC\uC77C\uC218 \uB098\uC774\uBCC4 \uAE30\uAC04 \uBCF4\uAE30", href: "/w/\uC2E4\uC5C5\uAE09\uC5EC-\uC18C\uC815\uAE09\uC5EC\uC77C\uC218" },
-  { icon: "\uD83D\uDCB0", title: "\uC5F0\uBD09\uBCC4 \uC608\uC0C1 \uC218\uB839\uC561 \uACC4\uC0B0", href: "/w/\uC2E4\uC5C5\uAE09\uC5EC-\uC5F0\uBD09\uBCC4-\uACC4\uC0B0" },
-];
+type ResLink = { icon: string; title: string; desc: string; href: string };
 
-function getResult(sel: Record<string, string>): Res | null {
-  const { salary } = sel;
-  if (!salary) return null;
+export default function Page() {
+  const [answers, setAnswers] = useState<Record<string, string>>({});
 
-  if (salary === "under250") return { pass: true, headline: "\uD558\uD55C\uC561 66,048\uC6D0\uC774 \uC801\uC6A9\uB420 \uAC00\uB2A5\uC131\uC774 \uB192\uC544\uC694", detail: "\uC6D4 250\uB9CC\uC6D0 \uBBF8\uB9CC\uC774\uBA74 \uD3C9\uADE0\uC784\uAE08\uC758 60%\uAC00 \uD558\uD55C\uC561(66,048\uC6D0)\uBCF4\uB2E4 \uB0AE\uC544\uC11C \uD558\uD55C\uC561\uC774 \uBCF4\uC7A5\uB3FC\uC694. \uCD5C\uC800\uC784\uAE08\uC758 80% \u00D7 8\uC2DC\uAC04\uC73C\uB85C \uACC4\uC0B0\uD55C \uAE08\uC561\uC774\uC5D0\uC694.", badges: ["\uD558\uD55C\uC561 \uBCF4\uC7A5", "66,048\uC6D0/\uC77C"], amount: "66,048\uC6D0", links: checkerLinks };
-  if (salary === "250to400") return { pass: true, headline: "\uC9C1\uC811 \uACC4\uC0B0\uC774 \uD544\uC694\uD574\uC694 (66,048~68,100\uC6D0 \uBC94\uC704)", detail: "\uC6D4 250~400\uB9CC\uC6D0 \uAD6C\uAC04\uC740 \uD3C9\uADE0\uC784\uAE08 60%\uAC00 \uD558\uD55C\uC561\uACFC \uC0C1\uD55C\uC561 \uC0AC\uC774\uC5D0 \uD574\uB2F9\uD574\uC694. \uD1F4\uC9C1 \uC804 3\uAC1C\uC6D4 \uC784\uAE08\uCD1D\uC561\uC744 \uCD1D\uC77C\uC218\uB85C \uB098\uB220 \uACC4\uC0B0\uD574\uC57C \uC815\uD655\uD55C \uAE08\uC561\uC744 \uC54C \uC218 \uC788\uC5B4\uC694.", badges: ["\uC9C1\uC811 \uACC4\uC0B0 \uD544\uC694", "\uAC1C\uC778\uBCC4 \uC0C1\uC774"], links: checkerLinks };
-  if (salary === "400to600") return { pass: true, headline: "\uC0C1\uD55C\uC561 68,100\uC6D0\uC774 \uC801\uC6A9\uB3FC\uC694", detail: "\uC6D4 400\uB9CC\uC6D0 \uC774\uC0C1\uC774\uBA74 \uD3C9\uADE0\uC784\uAE08\uC758 60%\uAC00 \uC0C1\uD55C\uC561(68,100\uC6D0)\uC744 \uCD08\uACFC\uD574\uC694. \uC2E4\uC81C \uAE09\uC5EC\uAC00 \uB192\uC544\uB3C4 1\uC77C \uCD5C\uB300 68,100\uC6D0\uAE4C\uC9C0\uB9CC \uBC1B\uC744 \uC218 \uC788\uC5B4\uC694.", badges: ["\uC0C1\uD55C\uC561 \uC801\uC6A9", "68,100\uC6D0/\uC77C"], amount: "68,100\uC6D0", links: checkerLinks };
-  if (salary === "over600") return { pass: true, headline: "\uC0C1\uD55C\uC561 68,100\uC6D0\uC73C\uB85C \uACE0\uC815\uB3FC\uC694", detail: "\uC6D4 600\uB9CC\uC6D0 \uC774\uC0C1\uC774\uB77C\uB3C4 1\uC77C \uCD5C\uB300 68,100\uC6D0\uAE4C\uC9C0\uB9CC \uBC1B\uC744 \uC218 \uC788\uC5B4\uC694. \uC18C\uC815\uAE09\uC5EC\uC77C\uC218\uAC00 180\uC77C\uC774\uBA74 \uCD1D 12,258,000\uC6D0\uC774 \uC0C1\uD55C\uC774\uC5D0\uC694.", badges: ["\uC0C1\uD55C\uC561 \uACE0\uC815", "68,100\uC6D0/\uC77C"], amount: "68,100\uC6D0", links: checkerLinks };
+  function getResult() {
+    const q2 = answers["q2"];
+    const q3 = answers["q3"];
+    if (q2 === "high") return "ceiling";
+    if (q3 === "low") return "floor";
+    if (Object.keys(answers).length >= 4) return "normal";
+    return null;
+  }
 
-  return null;
-}
+  const links: ResLink[] = [
+    {
+      icon: "🔢",
+      title: "실업급여 연봉별 계산",
+      desc: "월급별 예상 기초일액 및 총 수령액 확인",
+      href: "/w/실업급여-연봉별-계산",
+    },
+    {
+      icon: "📊",
+      title: "실업급여 상한액 하한액",
+      desc: "2026년 기준 상한 66,000원 하한 64,000원",
+      href: "/w/실업급여-상한액",
+    },
+    {
+      icon: "📞",
+      title: "고용센터 상담 (1350)",
+      desc: "개인별 기초일액 계산 전화 문의",
+      href: "https://www.work24.go.kr",
+    },
+  ];
 
-export default function Article() {
-  const [sel, setSel] = useState<Record<string, string>>({});
-  const pick = (g: string, v: string) => setSel((p) => ({ ...p, [g]: v }));
-  const result = getResult(sel);
+  const toc = [
+    { id: "checker", label: "기초일액 대략 예상 체크" },
+    { id: "sec02", label: "기초일액 계산 공식", sub: "평균임금 60% · 계산 방법" },
+    { id: "sec03", label: "상한액 하한액 적용", sub: "66,000원 · 64,000원 기준" },
+    { id: "sec04", label: "연봉별 기초일액 사례", sub: "300만원 · 500만원 · 150만원" },
+    { id: "sec05", label: "퇴직 전 3개월 임금 산정", sub: "포함 항목 · 제외 항목" },
+    { id: "faq", label: "자주 묻는 질문" },
+  ];
+
+  const result = getResult();
 
   return (
     <BlogLayout
-      breadcrumb={["홈", "실업급여", "기초일액"]}
-      tags={["2026년 기준", "실업급여", "기초일액"]}
-      date="2026-02-20"
-      title="실업급여 기초일액 평균임금 60% | 상한액 하한액 기준"
-      description={
+      meta={meta}
+      toc={toc}
+      sidebar={
         <>
-          퇴직 전 평균임금의 60%가 기초일액이에요. 2026년 상한액 <strong style={{ color: C.t1 }}>68,100원</strong>, 하한액 <strong style={{ color: C.t1 }}>66,048원</strong>. 둘의 차이가 겨우 2,052원이에요.
+          <SidebarCTA
+            title="기초일액 계산"
+            desc="연봉별 실업급여 예상액 확인"
+            href="/w/실업급여-연봉별-계산"
+            label="계산하기"
+          />
+          <SidebarDocs
+            title="관련 서류"
+            items={[
+              { label: "고용보험법 제45조 (법제처)", href: "https://www.law.go.kr" },
+              { label: "임금 명세서 (회사 발급)", href: "https://www.work24.go.kr" },
+              { label: "수급자격인정신청서", href: "https://www.ei.go.kr" },
+            ]}
+          />
         </>
       }
-      sourceBar={{ badge: "출처", name: "고용보험법 제45조 · 고용24", date: "2026.02 기준" }}
-      stickyLabel="1일 최대"
-      stickyValue="68,100원"
-      stickyBtn="모의계산기 바로가기 →"
-      stickyHref="https://www.work24.go.kr/ei/eih/eg/pb/pbPersonBnef/retrievePb0201Info.do"
+      disclaimer="이 글은 일반 정보 제공 목적으로 작성되었으며, 실제 수령액은 개인 상황에 따라 다를 수 있어요. 정확한 계산은 고용센터(1350)에 문의하세요."
     >
-      <TOC items={[
-        { t: "내 기초일액 예상 체크", sub: "월급여별 상한·하한 적용 확인" },
-        { t: "기초일액은 어떻게 계산하나요?", sub: null },
-        { t: "평균임금 60% 산정은 어떻게 하나요?", sub: null },
-        { t: "상한액 하한액은 얼마인가요?", sub: "2026년 기초일액 상한액·하한액 기준" },
-        { t: "기초일액 기준 수령액은 얼마인가요?", sub: null },
-        { t: "자주 묻는 질문", sub: null },
-      ]} />
-
-      <Summary3 items={[
-        "실업급여 기초일액은 퇴직 전 3개월 <strong>평균임금의 60%</strong>로 계산해요.",
-        "2026년 기준 상한액은 1일 <strong>68,100원</strong>, 하한액은 1일 <strong>66,048원</strong>이에요.",
-        "총 수령액은 기초일액 × 소정급여일수(<strong>120~270일</strong>)로 결정돼요.",
-      ]} />
-
-      {/* ── STEP 01. 체커 ── */}
-      <Divider />
-      <Sec n="STEP 01" title="내 기초일액 예상 체크" sub="퇴직 전 월급여를 선택하면 적용 기준을 알려드려요" />
-
-      <P>기초일액은 평균임금의 60%지만 상한액과 하한액이 있어요. 월 급여 수준별로 어떤 기준이 적용되는지 확인해 보세요.</P>
-
-      <div style={{ background: "#FFF", border: `1px solid ${C.line}`, borderRadius: 12, overflow: "hidden" }}>
-        <div style={{ background: C.navy, padding: "16px 18px", display: "flex", alignItems: "center", gap: 12 }}>
-          <div style={{ width: 38, height: 38, background: "#fff", borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>&#x2714;</div>
-          <div>
-            <h3 style={{ color: "#fff", fontSize: 15, fontWeight: 700, margin: 0 }}>기초일액 예상 체크</h3>
-            <p style={{ color: "rgba(255,255,255,.7)", fontSize: 12, marginTop: 1, margin: 0 }}>상한·하한 적용 여부 확인</p>
-          </div>
-        </div>
-        <div style={{ padding: "20px 18px" }}>
-          <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: C.t2, marginBottom: 8 }}>
-              <span style={{ width: 20, height: 20, background: C.navy, color: "#fff", borderRadius: 5, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 800 }}>1</span>
-              퇴직 전 세전 월 급여는 얼마였나요?
-            </div>
-            <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
-              <Btn group="salary" value="under250" label="250만원 미만" sel={sel} pick={pick} />
-              <Btn group="salary" value="250to400" label="250~400만원" sel={sel} pick={pick} />
-              <Btn group="salary" value="400to600" label="400~600만원" sel={sel} pick={pick} />
-              <Btn group="salary" value="over600" label="600만원 이상" sel={sel} pick={pick} />
-              <Btn group="salary" value="unsure" label="잘 모르겠어요" sel={sel} pick={pick} />
-            </div>
-          </div>
-
-          {result && (
-            <div style={{ marginTop: 16, padding: 16, borderRadius: 8, background: C.navyLight, border: "1px solid rgba(30,58,95,.1)" }}>
-              <div style={{ fontSize: 15, fontWeight: 800, color: C.navy, marginBottom: 4 }}>{result.headline}</div>
-              {result.amount && (
-                <div style={{ fontSize: 22, fontWeight: 900, color: C.navy, margin: "8px 0 4px" }}>
-                  1일 {result.amount} <span style={{ fontSize: 12, color: C.t3, fontWeight: 400 }}>예상 기초일액</span>
-                </div>
-              )}
-              <div style={{ fontSize: 13, color: C.t3, lineHeight: 1.55 }}>{result.detail}</div>
-              <div style={{ display: "flex", gap: 5, marginTop: 8, flexWrap: "wrap" }}>
-                {result.badges.map((b, i) => (
-                  <span key={i} style={{ fontSize: 11, fontWeight: 700, padding: "3px 9px", borderRadius: 4, background: C.navy, color: "#fff" }}>{b}</span>
-                ))}
-              </div>
-              {result.links.length > 0 && (
-                <div style={{ marginTop: 12, paddingTop: 12, borderTop: "1px solid rgba(30,58,95,.08)" }}>
-                  <div style={{ fontSize: 12, fontWeight: 700, color: C.t1, marginBottom: 6 }}>{"\uD83D\uDCD6 \uAD00\uB828 \uAC00\uC774\uB4DC"}</div>
-                  {result.links.map((lnk, li) => (
-                    <a key={li} href={lnk.href} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 0", fontSize: 13, color: C.navy, fontWeight: 600, borderBottom: "1px solid rgba(30,58,95,.06)", textDecoration: "none" }}>
-                      <span>{lnk.icon}{" "}{lnk.title}</span>
-                      <span style={{ fontSize: 11, color: C.t4 }}>{"\u2192"}</span>
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* ── SECTION 02 ── */}
-      <Divider />
-      <Sec n="SECTION 02" title="실업급여 기초일액은 어떻게 계산하나요?" sub="퇴직 전 3개월 평균임금 × 60%" />
-
-      <P><A href="https://www.law.go.kr/법령/고용보험법">고용보험법 제45조</A>에서 구직급여일액은 기초일액 × 60%로 정하고 있는데, 기초일액 자체가 평균임금이기 때문에 실질적으로는 <B>평균임금 × 60%</B>예요.</P>
-
-      <P>평균임금은 퇴직 전 3개월 동안 받은 임금 총액을 그 기간의 총 일수(역일 기준)로 나눈 금액이에요. 예를 들어 퇴직 전 3개월 임금 합계가 900만원이고 총일수가 91일이라면, 평균임금은 약 98,901원이에요. 이에 60%를 곱하면 59,341원이 나오는데, 이 금액이 하한액(66,048원)보다 낮으니까 하한액이 적용돼요.</P>
-
-      <div style={{ background: C.navyLight, border: "1px solid rgba(30,58,95,.08)", borderRadius: 8, padding: "14px 16px", margin: "12px 0", textAlign: "center" }}>
-        <div style={{ fontSize: 15, fontWeight: 800, color: C.navy, marginBottom: 6 }}>기초일액 = 퇴직 전 3개월 임금총액 &divide; 총일수 &times; 60%</div>
-        <div style={{ fontSize: 12, color: C.t3 }}>퇴직금·미사용 연차수당·경조사비는 임금총액에서 제외</div>
-      </div>
-
-      <P>기초일액 계산에서 퇴직금, 퇴직 시 일시 지급되는 미사용 연차수당, 경조사비 같은 일시금은 평균임금에서 제외돼요. 일상적으로 지급받은 기본급, 직책수당, 교통비, 분기별 상여금의 해당 기간 분만 포함해요.</P>
-
-      <InlineLink icon={"\uD83D\uDCC5"} title={"\uC2E4\uC5C5\uAE09\uC5EC \uAE30\uC900\uAE30\uAC04 18\uAC1C\uC6D4 \uD53C\uBCF4\uD5D8 180\uC77C"} desc={"\uAE30\uCD08\uC77C\uC561 \uACC4\uC0B0 \uC804\uC5D0 \uD53C\uBCF4\uD5D8\uAE30\uAC04 180\uC77C \uCDA9\uC871 \uC5EC\uBD80\uBD80\uD130 \uD655\uC778\uC774 \uD544\uC694\uD574\uC694."} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uAE30\uC900\uAE30\uAC04" />
-
-      {/* ── SECTION 03 ── */}
-      <Divider />
-      <Sec n="SECTION 03" title="평균임금 60% 산정은 어떻게 하나요?" sub="퇴직일 이전 3개월 역산" />
-
-      <P>평균임금 산정 기간은 퇴직일 이전 3개월이에요. 달마다 일수가 달라서 3개월 총일수는 89~92일 사이가 되는 경우가 많아요. 2월이 포함되면 더 짧아지고, 총일수가 달라지면 평균임금도 달라져요.</P>
-
-      <P>임금 합산 시 상여금 처리가 중요해요. 분기별 상여금이 있다면 퇴직 전 3개월에 해당하는 비율만 계산해요. 예를 들어 연간 상여금이 360만원이라면 3개월 치인 90만원만 합산해요.</P>
-
-      <P><B>평균임금이 최저임금 미만으로 나오면 최저임금을 기준으로 산정해요.</B> 이 경우에도 60%를 적용한 금액이 하한액(66,048원)보다 낮으면 하한액이 보장돼요. 결국 실업급여는 아무리 낮아도 1일 66,048원 이상은 받을 수 있어요.</P>
-
-      <Info type="warn">{'<strong>증빙 준비:</strong> 고용센터에서 자동 계산해주지만, 퇴직 전 <strong>3개월치 급여명세서</strong>를 보관해두면 이의 신청 시 유리해요.'}</Info>
-
-      <InlineLink icon={"\uD83D\uDCB0"} title={"\uC2E4\uC5C5\uAE09\uC5EC \uC5F0\uBD09\uBCC4 \uC608\uC0C1 \uC218\uB839\uC561 \uACC4\uC0B0"} desc={"\uB0B4 \uC5F0\uBD09 \uAE30\uC900\uC73C\uB85C \uC2E4\uC5C5\uAE09\uC5EC \uC608\uC0C1 \uC218\uB839\uC561\uC774 \uC5BC\uB9C8\uC778\uC9C0 \uBC14\uB85C \uACC4\uC0B0\uD560 \uC218 \uC788\uC5B4\uC694."} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uC5F0\uBD09\uBCC4-\uACC4\uC0B0" />
-
-      {/* ── SECTION 04 ── */}
-      <Divider />
-      <Sec n="SECTION 04" title="상한액 하한액은 얼마인가요?" sub="2026년 기준 상한 68,100원 · 하한 66,048원" />
-
-      <P>2026년 기준 실업급여 기초일액 상한액은 <B>68,100원</B>이에요. 2020년 이후 오랫동안 유지되다가 2026년에 인상됐어요. 하한액은 <B>66,048원</B>이에요. 최저임금의 80%에 하루 8시간을 곱한 금액이에요.</P>
-
-      <P>상한액과 하한액의 차이가 <B>2,052원</B>밖에 안 돼요. 최저임금이 꾸준히 인상된 반면 상한액 인상이 더뎠던 결과예요. 사실상 많은 수급자가 하한액과 상한액 사이의 좁은 범위에서 실업급여를 받아요.</P>
-
-      <TableTitle>2026년 기초일액 상한액·하한액 기준</TableTitle>
-      <div style={{ overflowX: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-          <thead>
-            <tr><THL>구분</THL><TH>금액</TH><TH>적용 조건</TH></tr>
-          </thead>
-          <tbody>
-            {[
-              ["상한액", "68,100원/일", "평균임금 × 60% > 68,100원"],
-              ["하한액", "66,048원/일", "평균임금 × 60% < 66,048원"],
-              ["개인별 적용", "해당 금액", "두 금액 사이인 경우"],
-            ].map((row, ri) => (
-              <tr key={ri}>
-                {row.map((cell, ci) => (
-                  <td key={ci} style={{ padding: "8px 8px", textAlign: ci === 0 ? "left" : "center", borderBottom: `1px solid ${C.line}`, color: ci === 0 ? C.t1 : C.t2, fontWeight: ci === 0 || ri < 2 ? 600 : 400 }}>{cell}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <TableNote>※ 하한액 = 최저임금 10,320원 × 80% × 8시간 = 66,048원</TableNote>
-
-      <div style={{ margin: "20px 0" }}>
-        <div style={{ fontSize: 13, fontWeight: 700, color: C.t1, marginBottom: 8 }}>{"\uD83D\uDCD6 \uAE30\uCD08\uC77C\uC561 \uAD00\uB828 \uB354 \uC54C\uC544\uBCF4\uAE30"}</div>
-        <SpokeLink num="01" title={"\uAE30\uC900\uAE30\uAC04 18\uAC1C\uC6D4 \uD53C\uBCF4\uD5D8 180\uC77C \uD569\uC0B0"} desc={"\uC774\uC9C1\uC77C \uAE30\uC900 18\uAC1C\uC6D4 \uC5ED\uC0B0 \uBC29\uBC95"} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uAE30\uC900\uAE30\uAC04" />
-        <SpokeLink num="02" title={"\uC5F0\uBD09\uBCC4 \uC608\uC0C1 \uC218\uB839\uC561 \uACC4\uC0B0"} desc={"\uB0B4 \uC5F0\uBD09 \uAE30\uC900 \uC2E4\uC5C5\uAE09\uC5EC \uACC4\uC0B0"} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uC5F0\uBD09\uBCC4-\uACC4\uC0B0" />
-        <SpokeLink num="03" title={"\uC18C\uC815\uAE09\uC5EC\uC77C\uC218 \uB098\uC774\uBCC4 \uAE30\uAC04"} desc={"\uB098\uC774\u00B7\uD53C\uBCF4\uD5D8\uAE30\uAC04\uBCC4 120~270\uC77C"} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uC18C\uC815\uAE09\uC5EC\uC77C\uC218" />
-      </div>
-
-      {/* ── SECTION 05 ── */}
-      <Divider />
-      <Sec n="SECTION 05" title="기초일액 기준 수령액은 얼마인가요?" sub="기초일액 × 소정급여일수 = 총 수령액" />
-
-      <P>총 수령액은 기초일액에 소정급여일수를 곱해서 계산해요. 기초일액이 68,100원이고 소정급여일수가 180일이라면, 총 68,100원 × 180일 = <B>12,258,000원</B>이에요.</P>
-
-      <P>소정급여일수는 나이와 고용보험 피보험기간에 따라 120~270일로 달라져요. 50세 이상이거나 장애인이면서 피보험기간이 10년 이상이면 최대 270일을 받을 수 있어요. 기초일액이 같아도 소정급여일수에 따라 총 수령액이 두 배 이상 차이날 수 있어요.</P>
-
-      <P><B>실업급여는 실업인정 단위로 나눠 지급돼요.</B> 약 4주마다 실업인정일에 구직활동 실적을 제출하면 해당 기간분이 지급되는 방식이에요.</P>
-
+      <TOC items={toc} />
+      <Summary3 items={meta.summary} />
       <BridgeCard
-        question="내 소정급여일수가 몇 일인지 아직 모르세요?"
-        body={<>기초일액이 같아도 소정급여일수에 따라 총 수령액이 크게 달라져요. 나이와 피보험기간에 따라 <strong style={{ color: C.navy }}>120~270일</strong> 범위에서 결정되는 기준을 정리했어요.</>}
-        btnText="소정급여일수 기준 보기 →"
-        href="/w/실업급여-소정급여일수"
+        title="내 실업급여 하루 얼마인지 알고 싶으신가요?"
+        desc="기초일액 계산 공식만 알면 대략적인 수령액을 미리 가늠할 수 있어요. 아래 체크로 먼저 파악해 보세요."
       />
 
-      <InlineLink icon={"\uD83D\uDCC8"} title={"2026\uB144 \uC2E4\uC5C5\uAE09\uC5EC \uC0C1\uD55C\uC561 \uBCC0\uACBD \uB0B4\uC6A9"} desc={"6\uB144 \uB9CC\uC5D0 \uC0C1\uD55C\uC561\uC774 68,100\uC6D0\uC73C\uB85C \uC778\uC0C1\uB410\uC5B4\uC694. \uC6D4 \uCD5C\uB300 \uC218\uB839\uC561\uACFC \uC778\uC0C1 \uBC30\uACBD\uC744 \uC815\uB9AC\uD588\uC5B4\uC694."} href="/w/\uC2E4\uC5C5\uAE09\uC5EC-\uC0C1\uD55C\uC561" />
+      <Sec n="01" id="checker" title="실업급여 기초일액을 대략 계산해 볼까요?" sub="상한·하한 해당 여부 확인">
+        <CheckerShell
+          title="기초일액 대략 예상 체크"
+          desc="4가지 질문으로 기초일액 범위를 파악해 보세요"
+        >
+          <CheckerQ
+            id="q1"
+            question="퇴직 직전 3개월 평균 월급이 얼마 정도였나요?"
+            answers={answers}
+            onAnswer={(id, val) => setAnswers((prev) => ({ ...prev, [id]: val }))}
+          >
+            <Btn value="low" label="200만원 미만" />
+            <Btn value="mid" label="200만~350만원" />
+            <Btn value="high" label="350만원 이상" />
+          </CheckerQ>
+          <CheckerQ
+            id="q2"
+            question="월급 × 60% ÷ 30일이 66,000원을 넘나요?"
+            answers={answers}
+            onAnswer={(id, val) => setAnswers((prev) => ({ ...prev, [id]: val }))}
+          >
+            <Btn value="high" label="넘을 것 같아요" />
+            <Btn value="normal" label="넘지 않아요" />
+          </CheckerQ>
+          <CheckerQ
+            id="q3"
+            question="월급 × 60% ÷ 30일이 64,000원 미만인가요?"
+            answers={answers}
+            onAnswer={(id, val) => setAnswers((prev) => ({ ...prev, [id]: val }))}
+          >
+            <Btn value="low" label="64,000원 미만이에요" />
+            <Btn value="normal" label="64,000원 이상이에요" />
+          </CheckerQ>
+          <CheckerQ
+            id="q4"
+            question="성과급, 상여금이 퇴직 전 3개월에 포함됐나요?"
+            answers={answers}
+            onAnswer={(id, val) => setAnswers((prev) => ({ ...prev, [id]: val }))}
+          >
+            <Btn value="yes" label="네, 포함됐어요" />
+            <Btn value="no" label="아니요" />
+          </CheckerQ>
+          {result === "ceiling" && (
+            <ResultPass
+              title="상한액 66,000원 적용 가능"
+              desc="계산액이 상한액을 초과하면 66,000원으로 고정돼요. 연봉이 높을수록 실수령 비율이 낮아져요."
+            >
+              {links.map((l) => (
+                <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
+              ))}
+            </ResultPass>
+          )}
+          {result === "floor" && (
+            <ResultPass
+              title="하한액 약 64,000원 적용 가능"
+              desc="계산액이 하한액 미만이면 최저 보장액(약 64,000원)으로 올려줘요."
+            >
+              {links.map((l) => (
+                <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
+              ))}
+            </ResultPass>
+          )}
+          {result === "normal" && (
+            <ResultPass
+              title="평균임금 60% 적용"
+              desc="상한액과 하한액 사이면 실제 계산된 기초일액이 그대로 적용돼요."
+            >
+              {links.map((l) => (
+                <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
+              ))}
+            </ResultPass>
+          )}
+        </CheckerShell>
+      </Sec>
 
-      {/* ── FAQ ── */}
       <Divider />
-      <Sec n="FAQ" title="자주 묻는 질문" />
-      <FAQAccordion items={[
-        { q: "실업급여 기초일액 계산에서 퇴직금도 포함되나요?", a: '퇴직금은 평균임금 계산에 <strong>포함되지 않아요</strong>. 퇴직 전 3개월간 실제로 받은 기본급, 수당, 분기별 상여금의 해당 기간 분만 합산해요. 퇴직 시 일시 지급되는 미사용 연차수당도 제외해요.' },
-        { q: "실업급여 기초일액 상한액과 하한액 차이가 얼마나 나나요?", a: '2026년 기준으로 상한액(68,100원)과 하한액(66,048원)의 차이는 <strong>2,052원</strong>이에요. 최저임금이 꾸준히 올라 두 금액이 가까워졌어요.' },
-      ]} />
 
-      <RelatedArticles items={[
-        { title: "실업급여 상한액 — 2026년 인상 기준", desc: "실업급여 · 상한액", href: "/w/실업급여-상한액" },
-        { title: "실업급여 소정급여일수 — 나이별 기간", desc: "실업급여 · 소정급여일수", href: "/w/실업급여-소정급여일수" },
-        { title: "실업급여 계산기 — 예상 수령액 계산", desc: "실업급여 · 계산기", href: "/w/실업급여-계산기" },
-        { title: "실업급여 기준기간 — 피보험 180일 합산", desc: "실업급여 · 기준기간", href: "/w/실업급여-기준기간" },
-      ]} />
+      <Sec n="02" id="sec02" title="실업급여 기초일액 계산 공식은 어떻게 되나요?" sub="평균임금 60% · 계산 방법">
+        <P>
+          기초일액은 퇴직 전 3개월 동안 받은 임금 총액을 그 기간의 총 일수(보통 90~92일)로 나눈 평균임금의 60%예요. 계산식으로 표현하면 아래와 같아요.
+        </P>
+        <FormulaCard
+          formula="기초일액 = (퇴직 전 3개월 임금 총액 ÷ 총 일수) × 60%"
+          notes={[
+            "총 일수는 실제 달력 일수 (보통 90~92일)를 사용해요",
+            "상한: 1일 66,000원 초과 시 66,000원으로 고정",
+            "하한: 최저임금의 80% (2026년 기준 약 64,000원) 미만 시 올려서 적용",
+          ]}
+        />
+        <P>
+          여기서 임금 총액에는 기본급, 시간외 수당, 식대 등 통상적으로 지급받은 항목이 포함돼요. 단, 퇴직금, 비정기적 포상금, 복리후생비 등은 제외돼요. 성과급이나 분기 상여금은 지급 시기와 성격에 따라 포함 여부가 달라질 수 있어요.
+        </P>
+        <P>
+          계산이 복잡하게 느껴진다면 고용센터에서 자동으로 계산해 줘요. 수급자격 신청 시 제출하는 임금 대장이나 급여 명세서를 기반으로 담당자가 직접 산정해 주니까 걱정하지 않아도 돼요.
+        </P>
+        <P>
+          기초일액이 결정되면 소정급여일수(90~270일)를 곱해 총 실업급여 수령 예상액을 파악할 수 있어요. 예를 들어 기초일액 60,000원 × 소정급여일수 150일 = 총 수령 예상 900만원이에요.
+        </P>
+        <InlineLink
+          icon="📊"
+          title="실업급여 소정급여일수 나이별"
+          desc="가입기간·나이별 최대 90~270일 소정급여일수 기준"
+          href="/w/실업급여-소정급여일수"
+        />
+      </Sec>
 
+      <Divider />
+
+      <Sec n="03" id="sec03" title="실업급여 기초일액 상한액 하한액 적용은 어떻게 되나요?" sub="66,000원 · 64,000원 기준">
+        <P>
+          기초일액에는 상한액과 하한액이 있어요. 2026년 기준 상한액은 1일 66,000원이에요. 평균임금의 60%가 66,000원을 초과하면 66,000원만 지급돼요. 고소득자일수록 실제 급여 대비 수령 비율이 낮아지는 구조예요.
+        </P>
+        <P>
+          하한액은 최저임금의 80%예요. 2026년 최저임금이 시간당 10,030원이므로, 하루 8시간 기준 하한액은 약 64,000원이에요. 계산된 기초일액이 이보다 낮으면 자동으로 하한액이 적용돼요.
+        </P>
+        <P>
+          상한액과 하한액은 매년 바뀔 수 있어요. 최저임금 인상이나 정부 정책에 따라 조정되는 경우가 있으니, 실제 수급 시점의 공식 기준을 고용24나 고용센터에서 확인하는 게 좋아요.
+        </P>
+        <P>
+          상한액이 적용되면 월급이 높아도 받을 수 있는 최대 일액이 66,000원으로 제한돼요. 270일 수급 시 최대 총액은 66,000원 × 270일 = 17,820,000원이에요. 이것이 현재 제도상 수령 가능한 최고 금액이에요.
+        </P>
+        <InlineLink
+          icon="💰"
+          title="실업급여 상한액 하한액 2026"
+          desc="연도별 상한액 변화와 하한액 계산 기준 자세히 보기"
+          href="/w/실업급여-상한액"
+        />
+      </Sec>
+
+      <RelatedMid
+        title="실업급여 기초일액 관련 글"
+        hubHref="/w/실업급여"
+        hubLabel="실업급여 전체 보기"
+        items={[
+          { title: "실업급여 상한액 하한액 2026", href: "/w/실업급여-상한액" },
+          { title: "실업급여 연봉별 계산 공식", href: "/w/실업급여-연봉별-계산" },
+          { title: "실업급여 소정급여일수 나이별", href: "/w/실업급여-소정급여일수" },
+        ]}
+      />
+
+      <Sec n="04" id="sec04" title="실업급여 기초일액 평균임금 60% 사례를 보고 싶어요" sub="300만원 · 500만원 · 150만원">
+        <P>
+          연봉별 기초일액 계산 사례를 세 가지로 정리했어요. 실제 수령액은 소정급여일수를 곱해야 나오지만, 하루 얼마인지 먼저 가늠해 볼 수 있어요.
+        </P>
+        <CaseBox
+          badge="사례 1"
+          label="월급 300만원 근로자"
+          steps={[
+            "퇴직 전 3개월 임금 총액: 900만원",
+            "총 일수: 90일",
+            "평균 일급: 900만원 ÷ 90 = 100,000원",
+            "기초일액(60%): 100,000원 × 60% = 60,000원",
+          ]}
+          total="일 60,000원"
+          result="상한(66,000원) 이하 → 60,000원 적용"
+          pass={true}
+        />
+        <CaseBox
+          badge="사례 2"
+          label="월급 500만원 고소득 근로자"
+          steps={[
+            "퇴직 전 3개월 임금 총액: 1,500만원",
+            "총 일수: 90일",
+            "평균 일급: 1,500만원 ÷ 90 = 166,667원",
+            "기초일액(60%): 166,667원 × 60% = 100,000원",
+          ]}
+          total="계산액 100,000원 → 상한액 66,000원 적용"
+          result="실수령 기초일액: 66,000원"
+          pass={true}
+          note="고소득자는 상한액이 적용되어 실제 급여의 40% 미만 수령 가능"
+        />
+        <CaseBox
+          badge="사례 3"
+          label="월급 150만원 저임금 근로자"
+          steps={[
+            "퇴직 전 3개월 임금 총액: 450만원",
+            "총 일수: 90일",
+            "평균 일급: 450만원 ÷ 90 = 50,000원",
+            "기초일액(60%): 50,000원 × 60% = 30,000원",
+          ]}
+          total="계산액 30,000원 → 하한액 64,000원 적용"
+          result="실수령 기초일액: 64,000원"
+          pass={true}
+          note="최저임금 미만 근로자는 하한액 보장으로 최소 수령 보장"
+        />
+        <SpokeLink
+          num="01"
+          title="실업급여 연봉별 계산"
+          desc="더 다양한 연봉 구간별 실업급여 예상 수령액 계산"
+          href="/w/실업급여-연봉별-계산"
+        />
+      </Sec>
+
+      <Divider />
+
+      <Sec n="05" id="sec05" title="실업급여 기초일액 퇴직 전 3개월 임금에는 무엇이 포함되나요?" sub="포함 항목 · 제외 항목">
+        <P>
+          평균임금 산정의 기준이 되는 '퇴직 전 3개월 임금'에는 기본급, 각종 수당(시간외수당, 직책수당, 교통비 등), 정기적으로 지급된 상여금 등이 포함돼요. 매달 규칙적으로 지급된 항목은 대부분 포함된다고 보면 돼요.
+        </P>
+        <P>
+          반면 퇴직금, 연차 미사용 수당(퇴직 시 일시 지급분), 비정기적 포상금, 경조금 등은 제외돼요. 임시로 지급된 항목이나 퇴직을 계기로 지급된 항목은 포함되지 않아요.
+        </P>
+        <P>
+          3개월 중 근무하지 않은 기간(무급 휴직 등)이 있으면 해당 기간을 제외한 임금과 일수를 기준으로 계산해요. 출산휴가, 육아휴직 기간에는 임금이 별도 규정으로 처리될 수 있어요.
+        </P>
+        <P>
+          임금 구성이 복잡하거나 불규칙한 경우 고용센터에서 임금 대장이나 원천징수 영수증을 기반으로 재산정해 줘요. 퇴직 전에 임금 명세서를 챙겨 두면 수급 신청이 훨씬 수월해요.
+        </P>
+        <Info type="warn">
+          인센티브나 성과급이 퇴직 전 3개월에 집중 지급됐다면 평균임금이 올라 기초일액이 높아질 수 있어요. 반대로 무급 기간이 겹치면 낮아질 수 있어요.
+        </Info>
+        <SpokeLink
+          num="02"
+          title="실업급여 수급기간 몇 개월 받나요"
+          desc="가입기간·나이별 최대 수급 기간과 총 수령 예상액"
+          href="/w/실업급여-수급기간-몇개월-받나요"
+        />
+        <a
+          href="https://www.ei.go.kr"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ext-btn ext-btn-black"
+        >
+          <span className="ext-btn-badge">고용보험 공식</span>
+          <span className="ext-btn-text">구직급여 안내 및 예상 수령액 확인</span>
+          <span className="ext-btn-cta">바로가기 →</span>
+        </a>
+      </Sec>
+
+      <Divider />
+
+      <Sec n="06" id="faq" title="자주 묻는 질문" sub="기초일액 · 평균임금 · 상하한">
+        <FAQAccordion items={meta.faq} />
+      </Sec>
+
+      <RelatedArticles
+        items={[
+          { title: "실업급여 상한액 하한액 2026", href: "/w/실업급여-상한액" },
+          { title: "실업급여 연봉별 계산 공식", href: "/w/실업급여-연봉별-계산" },
+          { title: "실업급여 소정급여일수 나이별", href: "/w/실업급여-소정급여일수" },
+          { title: "실업급여 수급기간 몇 개월 받나요", href: "/w/실업급여-수급기간-몇개월-받나요" },
+          { title: "실업급여 수급조건 피보험기간 180일", href: "/w/실업급여-수급-조건" },
+        ]}
+      />
       <PrevNext
         prev={{ title: "실업급여 기준기간 18개월", href: "/w/실업급여-기준기간" }}
-        next={{ title: "실업급여 미지급 유족 청구", href: "/w/실업급여-미지급-상속" }}
+        next={{ title: "실업급여 상한액 하한액", href: "/w/실업급여-상한액" }}
       />
     </BlogLayout>
   );

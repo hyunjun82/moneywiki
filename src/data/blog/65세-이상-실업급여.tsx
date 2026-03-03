@@ -3,12 +3,14 @@ import { useState } from "react";
 import {
   C,
   BlogLayout, TOC, Summary3, Sec, P, B, A, H3,
-  Info, InlineLink, BridgeCard, ExtBtn,
+  Info, InlineLink, SpokeLink, BridgeCard, ExtBtn,
   FAQAccordion, RelatedArticles, PrevNext,
   RelatedMid, SidebarCTA, SidebarDocs, SidebarCalc,
   CheckerShell, CheckerQ, ResultPass, ResultFail, ResultCTA,
-  Divider, TableTitle, TableNote, TH, THL, Btn,
+  Divider, TableTitle, TableNote, TH, THL, Tag, Btn,
 } from "@/components/wiki/BlogShared";
+
+type ResLink = { icon: string; title: string; desc: string; href: string };
 
 const meta = {
   title: "65세 이상 실업급여 수급 조건 | 동일 사업장 60세 이후 고용 적용 여부",
@@ -62,12 +64,17 @@ export default function Page() {
 
   const result = getResult();
 
+  const links: ResLink[] = [
+    { icon: "📋", title: "실업급여 수급자격 인정 신청 방법", desc: "이직확인서 발급 후 고용24 신청 절차", href: "/w/실업급여-수급자격-인정" },
+    { icon: "🔍", title: "고용24 피보험자 이력 조회", desc: "취득일·상실일 확인 후 65세 이전 판단", href: "https://www.ei.go.kr" },
+  ];
+
   const toc = [
     { t: "STEP 01 65세 이상 수급 가능 여부 확인" },
     { t: "65세 이상도 실업급여 받을 수 있나요?", sub: "동일 사업장 계속 고용 · 60세 이전 취업" },
     { t: "65세 이상 실업급여 동일 사업장 조건이 뭐예요?", sub: "60세 이전 취업 · 계속 고용 증명" },
-    { t: "65세 이후 새 직장은 실업급여 안 되나요?", sub: "구직급여 제외 · 고용안정보험 유지" },
-    { t: "사업주만 바뀌면 받을 수 있나요?", sub: "영업양도 · 합병 · 실질적 동일 여부" },
+    { t: "65세 이상 새 직장은 실업급여 안 되나요?", sub: "구직급여 제외 · 고용안정보험 유지" },
+    { t: "65세 이상 사업주만 바뀌면 받을 수 있나요?", sub: "영업양도 · 합병 · 실질적 동일 여부" },
     { t: "자주 묻는 질문" },
   ];
 
@@ -122,7 +129,7 @@ export default function Page() {
         {result === "before65_yes" && (
           <ResultPass title="실업급여 수급이 가능해요">
             <P>65세 이전에 취업해서 같은 사업장에서 계속 근무했다면 65세 이후에도 실업급여를 받을 수 있어요. 피보험기간 180일 이상 등 기본 조건도 확인해야 해요.</P>
-            <ResultCTA icon="📋" title="수급자격 인정 신청 방법" desc="신청 절차와 구비서류 안내" href="/w/실업급여-수급자격-인정" />
+            {links.map((l, i) => <ResultCTA key={i} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />)}
           </ResultPass>
         )}
         {result === "before65_no" && (
@@ -169,6 +176,13 @@ export default function Page() {
       <P>피보험기간은 65세 이전 기간만 인정되는 게 아니에요. 65세 이전 취업 이후 계속 고용된 기간 전체가 피보험기간으로 합산돼요. 65세 이후 근무 기간도 포함돼요.</P>
       <P>피보험기간 180일 이상 등 일반적인 수급 요건도 충족해야 해요. 65세 이상 특례가 있는 게 아니라 일반 실업급여와 동일한 기준이 적용돼요.</P>
 
+      <InlineLink
+        icon="📋"
+        title="실업급여 수급자격 인정 조건 — 비자발적 퇴직 기준"
+        desc="65세 이상도 동일하게 적용되는 수급자격 조건 정리"
+        href="/w/실업급여-수급자격-인정"
+      />
+
       <Divider />
 
       {/* SECTION 03 */}
@@ -194,16 +208,23 @@ export default function Page() {
       <Divider />
 
       {/* SECTION 04 */}
-      <Sec n="SECTION 04" id="s4" title="65세 이후 새 직장은 실업급여 안 되나요?" sub="구직급여 제외 · 고용안정보험 유지" />
+      <Sec n="SECTION 04" id="s4" title="65세 이상 새 직장은 실업급여 안 되나요?" sub="구직급여 제외 · 고용안정보험 유지" />
       <P>65세 이후 새로 취업하면 구직급여(실업급여) 보험은 제외돼요. 사업주가 고용보험료를 납부하더라도 구직급여 부분은 적용 안 돼요. 따라서 퇴직해도 실업급여를 받을 수 없어요.</P>
       <P>다만 모든 고용보험이 제외되는 건 아니에요. 고용안정·직업능력개발 보험은 65세 이후에도 적용돼요. 직업훈련 지원이나 고용유지 지원 등을 받을 수 있어요.</P>
       <P>산재보험은 나이 제한이 없어요. 65세 이후에도 근무 중 사고가 나면 산재보험 혜택을 받을 수 있어요. 고용보험과는 별개예요.</P>
       <P>퇴직금은 나이와 무관해요. 65세 이후에도 1년 이상 근무했다면 퇴직금을 받을 수 있어요. 퇴직금은 근로기준법과 별개로 지급돼요.</P>
 
+      <InlineLink
+        icon="👴"
+        title="50세 이상 실업급여 수급기간 — 최대 270일 혜택"
+        desc="50세 이상·장애인은 수급기간이 일반보다 길어요"
+        href="/w/50세-이상-실업급여"
+      />
+
       <Divider />
 
       {/* SECTION 05 */}
-      <Sec n="SECTION 05" id="s5" title="사업주만 바뀌면 받을 수 있나요?" sub="영업양도 · 합병 · 실질적 동일 여부" />
+      <Sec n="SECTION 05" id="s5" title="65세 이상 사업주만 바뀌면 받을 수 있나요?" sub="영업양도 · 합병 · 실질적 동일 여부" />
       <P>사업장(사업체)은 동일하고 대표(사업주)만 바뀐 경우라면 계속 고용으로 인정될 수 있어요. 실질적으로 같은 사업장에서 계속 근무한 것으로 볼 수 있기 때문이에요.</P>
       <P>영업양도·합병 등으로 사업주가 바뀌어도 사업체의 실질이 이어진다면 같은 사업장으로 봐요. 근로관계도 그대로 이어지는 게 일반적이에요. 이 경우 기존 피보험기간도 유지돼요.</P>
       <P>단순히 대표 명의만 바뀐 경우도 마찬가지예요. 같은 장소에서 같은 업무를 계속하고 있고 고용보험 피보험자 이력이 끊기지 않았다면 동일 사업장으로 인정돼요.</P>
@@ -215,6 +236,9 @@ export default function Page() {
         label="실업급여 신청 방법 보기"
         href="/w/실업급여-신청방법"
       />
+
+      <SpokeLink num="01" title="실업급여 신청 방법 구비서류" desc="이직확인서·온라인 신청 절차 안내" href="/w/실업급여-신청방법" />
+      <SpokeLink num="02" title="2026년 실업급여 금액 기준" desc="상한·하한액 일 68,100원 계산법" href="/w/2026년-실업급여" />
 
       <ExtBtn badge="법제처 공식" text="고용보험법 제10조 적용 제외 규정" cta="바로가기 →" href="https://www.law.go.kr/법령/고용보험법" />
 

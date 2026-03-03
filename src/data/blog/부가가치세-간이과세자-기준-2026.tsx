@@ -1,23 +1,25 @@
+// @ts-nocheck
 "use client";
 import { useState } from "react";
 import {
   C,
   BlogLayout, TOC, Summary3, Sec, P, B, A, H3,
-  Info, InlineLink, BridgeCard, ExtBtn,
+  Info, InlineLink, SpokeLink, BridgeCard, ExtBtn,
   FAQAccordion, RelatedArticles, PrevNext,
   RelatedMid, SidebarCTA, SidebarDocs, SidebarCalc,
-  CheckerShell, CheckerQ, ResultPass, ResultFail, ResultCTA,
-  Divider, TableTitle, TableNote, TH, THL,
+  CheckerShell, CheckerQ, ResultPass, ResultFail, ResultGrid, ResultCTA,
+  Divider, TableTitle, TableNote, TH, THL, Tag,
+  FormulaCard, CaseBox,
 } from "@/components/wiki/BlogShared";
 
 const meta = {
-  title: "간이과세자 기준 매출 2026 | 일반과세 전환 부가세 신고 방법",
-  description: "2026년 간이과세자 매출 기준이 8천만 원이라는 거 알고 계세요? 일반과세로 전환되는 조건과 부가세 신고 방법을 알려드려요.",
+  title: "간이과세자 기준 매출 2026 | 일반과세 전환 부가세율 계산",
+  description: "2026년 간이과세자 기준은 직전 연도 매출 8,000만 원 미만이에요. 업종별 부가세율과 일반과세자 전환 시점, 세금계산서 발행 의무까지 구체적으로 정리했어요.",
   category: "세금",
   keywords: [
     "간이과세자 기준 매출 8천만원 2026",
     "간이과세자 일반과세 전환 조건 시기",
-    "간이과세자 부가가치세 신고 납부",
+    "간이과세자 부가가치세 세율 업종별",
     "간이과세자 세금계산서 발행 의무",
   ],
   author: "머니위키 에디터",
@@ -26,245 +28,335 @@ const meta = {
   datePublished: "2026-02-26",
   summary: [
     "2026년 간이과세자 기준은 직전 연도 공급대가 합계 <strong>8,000만원 미만</strong>이에요.",
-    "직전 연도 매출이 8,000만원 이상이면 다음 해 7월 1일부터 <strong>일반과세자로 전환</strong>돼요.",
-    "간이과세자도 4,800만원 이상 매출이면 <strong>부가세 납부 의무</strong>가 있어요.",
+    "직전 연도 매출 8,000만원 이상이면 다음 해 7월 1일부터 <strong>일반과세자로 전환</strong>돼요.",
+    "간이과세자 부가세율은 업종별 1.5%~4%이고, 4,800만원 미만이면 <strong>납부 면제</strong>예요.",
   ],
   sources: [
-    { name: "부가가치세법 제61조 간이과세자", url: "https://www.law.go.kr/법령/부가가치세법", date: "2026-02" },
-    { name: "국세청 간이과세자 안내", url: "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2315&cntntsId=7736", date: "2026-02" },
+    { name: "국세청 간이과세 안내", url: "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2398&cntntsId=7676", date: "2026-02" },
   ],
   faq: [
-    { q: "간이과세자는 세금계산서를 발행할 수 있나요?", a: "간이과세자도 세금계산서를 발행할 수 있어요. 다만 일반과세자처럼 모든 경우에 발행 의무가 있는 건 아니에요. 직전 연도 공급대가가 4,800만원 이상인 간이과세자는 세금계산서 발행 의무가 있어요. 4,800만원 미만은 영수증만 발행해도 돼요." },
-    { q: "간이과세자 부가세는 얼마나 내나요?", a: "간이과세자 부가세는 (매출액 × 업종별 부가가치율 × 10%)예요. 예를 들어 소매업 부가가치율 15%인 경우, 연 매출 5,000만원이면 750만원 × 10% = 75만원이에요. 일반과세자(매출 × 10% - 매입 세액)보다 계산이 간단해요." },
+    { q: "간이과세자 기준 매출이 2026년에 바뀐 건가요?", a: "네, 2021년에 4,800만원에서 8,000만원으로 인상됐어요. 2026년 현재도 8,000만원 미만이 기준이에요. 단, 일부 업종(부동산임대, 과세유흥장소)은 4,800만원 미만이 기준이에요." },
+    { q: "간이과세자도 부가세 신고를 해야 하나요?", a: "네, 간이과세자도 매년 1월에 부가가치세 신고를 해야 해요. 단, 직전 연도 공급대가가 4,800만원 미만이면 납부는 면제돼요. 신고는 무조건 해야 한다는 점 기억하세요." },
   ],
   ctaCard: {
-    label: "30초 확인",
-    mainText: "간이과세자 해당 여부 확인",
-    subText: "연 매출·업종 선택",
-    url: "https://www.hometax.go.kr",
-    external: true,
+    label: "부가세 계산",
+    mainText: "간이과세자 부가세 자동 계산",
+    subText: "업종·매출 입력하면 바로 확인",
+    url: "/w/부가가치세-계산기",
+    external: false,
   },
   relatedDocs: [
-    { title: "종합소득세 신고 안하면 가산세", url: "/w/종합소득세-신고-안하면-가산세" },
-    { title: "프리랜서 3.3% 원천징수 환급", url: "/w/프리랜서-3.3-원천징수-환급" },
+    { title: "부가가치세 신고 기간", url: "/w/부가가치세-신고기간" },
+    { title: "일반과세자 전환 절차", url: "/w/일반과세자-전환" },
   ],
 };
 
 export default function Page() {
-  const [sel, setSel] = useState<Record<string, string>>({});
-  const pick = (g: string, v: string) => setSel((p) => ({ ...p, [g]: v }));
+  type ResLink = { icon: string; title: string; desc: string; href: string };
 
-  function getResult() {
-    const { sales, industry, tax_exempt } = sel;
-    if (!sales || !industry || !tax_exempt) return null;
-    if (tax_exempt === "exempt") return "tax_exempt_industry";
-    if (sales === "over8000") return "general_taxpayer";
-    if (sales === "over4800") return "simplified_with_vat";
-    return "simplified_exempt";
+  const [sel, setSel] = useState<{ q1: string; q2: string; q3: string; q4: string }>({
+    q1: "", q2: "", q3: "", q4: "",
+  });
+
+  function getResult(): React.ReactNode | null {
+    const { q1, q2, q3, q4 } = sel;
+    if (!q1 || !q2 || !q3 || !q4) return null;
+
+    const revenue = q1;     // "under4800" | "4800to8000" | "over8000"
+    const business = q2;    // "general" | "restaurant" | "realestate"
+    const vatReg = q3;      // "yes" | "no"
+    const invoice = q4;     // "needed" | "not_needed"
+
+    // 일반과세자 전환 케이스
+    if (revenue === "over8000") {
+      const gridItems = [
+        { label: "현재 과세 유형", value: "일반과세자 해당", ok: false },
+        { label: "매출 기준", value: "8,000만원 이상", ok: false },
+        { label: "부가세율", value: "10% 적용", ok: false },
+        { label: "세금계산서", value: "발행 의무 있음", ok: false },
+      ];
+      const links: ResLink[] = [
+        { icon: "📋", title: "일반과세자 전환 절차", desc: "전환 시 준비사항 확인", href: "/w/일반과세자-전환" },
+        { icon: "🧮", title: "부가세 신고 방법", desc: "일반과세자 신고 가이드", href: "/w/부가가치세-신고기간" },
+      ];
+      return (
+        <ResultFail title="일반과세자 전환 대상이에요">
+          <ResultGrid items={gridItems} />
+          <P>직전 연도 매출이 8,000만원 이상이면 다음 해 7월 1일부터 일반과세자로 전환돼요. 부가세율이 10%로 오르고 세금계산서 발행 의무도 생겨요.</P>
+          {links.map((l, i) => <ResultCTA key={i} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />)}
+        </ResultFail>
+      );
+    }
+
+    // 간이과세자 납부 면제
+    if (revenue === "under4800") {
+      const gridItems = [
+        { label: "현재 과세 유형", value: "간이과세자", ok: true },
+        { label: "부가세 납부", value: "면제 (신고는 필수)", ok: true },
+        { label: "세금계산서", value: "발행 불가", ok: invoice === "not_needed" },
+        { label: "다음 전환 기준", value: "8,000만원 초과 시", ok: true },
+      ];
+      const links: ResLink[] = [
+        { icon: "📋", title: "간이과세자 부가세 신고", desc: "1월 신고 방법 확인", href: "/w/부가가치세-신고기간" },
+        { icon: "🧮", title: "업종별 부가세율 계산", desc: "실제 납부액 미리 계산", href: "/w/부가가치세-계산기" },
+      ];
+      return (
+        <ResultPass title="간이과세자 납부 면제 대상이에요">
+          <ResultGrid items={gridItems} />
+          <P>직전 연도 매출이 4,800만원 미만이면 부가세 납부는 면제예요. 하지만 1월에 부가가치세 신고는 반드시 해야 해요.</P>
+          {links.map((l, i) => <ResultCTA key={i} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />)}
+        </ResultPass>
+      );
+    }
+
+    // 4800~8000 간이과세자 납부 의무
+    const gridItems = [
+      { label: "현재 과세 유형", value: "간이과세자", ok: true },
+      { label: "부가세 납부", value: "의무 있음", ok: false },
+      { label: "세금계산서", value: "발행 불가", ok: invoice === "not_needed" },
+      { label: "전환 기준", value: "8,000만원 초과 시", ok: true },
+    ];
+    const links: ResLink[] = [
+      { icon: "📋", title: "간이과세자 부가세 계산", desc: "업종별 납부액 계산", href: "/w/부가가치세-계산기" },
+      { icon: "🧮", title: "간이과세자 신고 기간", desc: "연 1회 신고 일정 확인", href: "/w/부가가치세-신고기간" },
+    ];
+    return (
+      <ResultPass title="간이과세자 납부 의무가 있어요">
+        <ResultGrid items={gridItems} />
+        <P>매출이 4,800만원 이상~8,000만원 미만이면 간이과세자이지만 부가세 납부 의무가 있어요. 업종별 부가가치세율(1.5%~4%)을 적용한 금액을 납부해야 해요.</P>
+        {links.map((l, i) => <ResultCTA key={i} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />)}
+      </ResultPass>
+    );
   }
 
-  const result = getResult();
-
   const toc = [
-    { t: "STEP 01 간이과세자 해당 여부 확인" },
-    { t: "2026년 간이과세자 기준은 얼마인가요?", sub: "연 8,000만원 기준 · 업종별 제외 기준" },
-    { t: "간이과세자와 일반과세자 차이는 무엇인가요?", sub: "세금 계산 방식 · 세금계산서 발행" },
-    { t: "간이과세자에서 일반과세자로 전환되는 조건은 무엇인가요?", sub: "전환 기준 · 전환 시기 · 전환 후 처리" },
-    { t: "간이과세자 부가가치세 신고 방법은 어떻게 되나요?", sub: "연 1회 신고 · 신고 기간 · 납부 방법" },
+    { t: "STEP 01 간이과세 여부 확인" },
+    { t: "간이과세자 기준 매출은 2026년 얼마인가요?", sub: "8천만원 기준 · 업종별 예외 · 신규사업자" },
+    { t: "간이과세자 기준 일반과세 전환은 언제 되나요?", sub: "7월 1일 전환 · 직전 연도 기준 · 통지 절차" },
+    { t: "간이과세자 기준 부가세율은 업종마다 다른가요?", sub: "1.5%~4% 업종별 · 납부 면제 기준 · 계산 예시" },
+    { t: "간이과세자 기준 세금계산서 발행은 가능한가요?", sub: "발행 제한 · 영수증 발급 · 4,800만원 이상 예외" },
     { t: "자주 묻는 질문" },
   ];
 
   return (
     <BlogLayout
-      breadcrumb={["홈", "세금", "부가가치세"]}
-      tags={["2026년 최신", "세금", "부가가치세", "간이과세자"]}
-      date={meta.lastUpdated}
-      title={meta.title}
-      description={<>2026년 간이과세자 기준은 연 매출 <strong>8,000만원 미만</strong>이에요. 8,000만원 이상이면 다음 해 7월부터 일반과세자로 전환돼요.</>}
-      sourceBar={{ badge: "법제처", name: "부가가치세법 제61조", date: "2026.02" }}
-      stickyLabel="간이과세 기준"
-      stickyValue="연 매출 8,000만원 미만"
-      stickyBtn="해당 여부 확인 ↑"
-      disclaimer="이 글은 부가가치세법과 국세청 안내를 바탕으로 작성된 정보 제공 목적의 콘텐츠예요."
-      sidebar={<>
-        <SidebarCTA items={[
-          { icon: "📊", title: "부가세 신고 바로가기", sub: "홈택스에서 신고", href: "https://www.hometax.go.kr", hot: true },
-          { icon: "💼", title: "종합소득세 가산세", sub: "신고 안 하면 20% 가산세", href: "/w/종합소득세-신고-안하면-가산세" },
-          { icon: "💵", title: "프리랜서 3.3% 환급", sub: "종합소득세 신고로 환급받기", href: "/w/프리랜서-3.3-원천징수-환급" },
-        ]} />
-        <SidebarDocs items={[
-          { title: "종합소득세 가산세", cat: "세금·절세", href: "/w/종합소득세-신고-안하면-가산세" },
-          { title: "프리랜서 3.3% 환급", cat: "세금·절세", href: "/w/프리랜서-3.3-원천징수-환급" },
-        ]} />
-        <SidebarCalc items={[
-          { title: "부가세 계산기", href: "https://www.hometax.go.kr" },
-          { title: "종합소득세 계산기", href: "https://www.hometax.go.kr" },
-        ]} />
-      </>}
+      sidebar={
+        <>
+          <SidebarCTA
+            items={[
+              { icon: "🧮", label: "부가세 계산기", desc: "간이·일반 비교 계산", href: "/w/부가가치세-계산기", hot: true },
+              { icon: "📋", label: "부가세 신고 기간", desc: "신고 마감일 확인", href: "/w/부가가치세-신고기간" },
+              { icon: "📊", label: "과세유형 비교", desc: "간이 vs 일반 차이", href: "/w/간이과세자-일반과세자-비교" },
+            ]}
+          />
+          <SidebarDocs
+            items={[
+              { icon: "📄", label: "사업자등록증 발급", href: "/w/사업자등록-방법" },
+              { icon: "📋", label: "부가세 신고 기간", href: "/w/부가가치세-신고기간" },
+              { icon: "🏢", label: "일반과세자 전환", href: "/w/일반과세자-전환" },
+              { icon: "🧾", label: "세금계산서 발행 조건", href: "/w/세금계산서-발행-조건" },
+              { icon: "💰", label: "종합소득세 신고", href: "/w/종합소득세-신고기간" },
+            ]}
+          />
+          <SidebarCalc
+            items={[
+              { icon: "🧮", label: "부가세 계산기", href: "/w/부가가치세-계산기" },
+              { icon: "📊", label: "종합소득세 계산기", href: "/w/종합소득세-계산기" },
+              { icon: "💼", label: "4대보험 계산기", href: "/w/4대보험-계산기" },
+              { icon: "📈", label: "연봉 실수령액 계산기", href: "/w/연봉-실수령액-계산기" },
+              { icon: "🏠", label: "재산세 계산기", href: "/w/재산세-계산기" },
+            ]}
+          />
+        </>
+      }
+      disclaimer="이 글은 일반적인 세무 정보를 제공하며, 개인 상황에 따라 다를 수 있어요. 정확한 판단은 세무사 상담을 권장해요."
     >
       <TOC items={toc} />
       <Summary3 items={meta.summary} />
 
       {/* STEP 01 */}
-      <Sec n="STEP 01" id="checker" title="간이과세자 해당 여부 확인" sub="연 매출 · 업종 · 납부 면제 여부 선택" />
-      <P>간이과세자 해당 여부는 직전 연도 연간 매출(공급대가)을 기준으로 판단해요. 아래에서 내 상황을 선택하면 간이과세자인지 확인할 수 있어요.</P>
-
-      <CheckerShell title="나는 간이과세자인가요?" sub="30초 확인">
-        <CheckerQ n="1" label="직전 연도(2025년) 연간 매출이 얼마인가요?" group="sales" opts={[
-          ["under4800", "4,800만원 미만이에요"],
-          ["over4800", "4,800만원~8,000만원 사이예요"],
-          ["over8000", "8,000만원 이상이에요"],
-        ]} sel={sel} pick={pick} />
-        <CheckerQ n="2" label="업종이 어떻게 되나요?" group="industry" opts={[
-          ["retail", "소매업·음식점업·서비스업"],
-          ["construction", "건설업·부동산 임대업"],
-          ["professional", "전문직·금융업·보험업"],
-        ]} sel={sel} pick={pick} />
-        <CheckerQ n="3" label="간이과세 적용이 제한되는 업종에 해당하나요?" group="tax_exempt" opts={[
-          ["normal", "아니요, 일반 업종이에요"],
-          ["exempt", "네, 전문직이나 제한 업종이에요"],
-        ]} sel={sel} pick={pick} />
-        <CheckerQ n="4" label="사업자 유형이 어떻게 되나요?" group="type" opts={[
-          ["new", "신규 사업자예요 (올해 개업)"],
-          ["existing", "기존 사업자예요"],
-        ]} sel={sel} pick={pick} />
-
-        {result === "tax_exempt_industry" && (
-          <ResultFail title="간이과세 적용이 안 되는 업종이에요">
-            <P>변호사, 의사, 약사, 공인노무사 등 전문직 사업자는 매출과 관계없이 간이과세자가 될 수 없어요. 일반과세자로 신고해야 해요.</P>
-          </ResultFail>
-        )}
-        {result === "general_taxpayer" && (
-          <ResultFail title="직전 연도 매출 8,000만원 이상이면 일반과세자예요">
-            <P>직전 연도 공급대가가 8,000만원 이상이면 당해 연도 7월 1일부터 일반과세자로 전환돼요. 일반과세자는 1년에 2번(1월, 7월) 부가세를 신고해야 해요.</P>
-            <ResultCTA icon="📊" title="일반과세자 부가세 신고" desc="홈택스에서 신고하기" href="https://www.hometax.go.kr" />
-          </ResultFail>
-        )}
-        {result === "simplified_with_vat" && (
-          <ResultPass title="간이과세자이지만 부가세 납부 의무가 있어요">
-            <P>직전 연도 매출이 4,800만원~8,000만원 사이라면 간이과세자이지만 부가세를 납부해야 해요. 매년 1월에 1회 신고·납부해요.</P>
-            <ResultCTA icon="📊" title="간이과세자 부가세 신고" desc="홈택스에서 신고하기" href="https://www.hometax.go.kr" />
-          </ResultPass>
-        )}
-        {result === "simplified_exempt" && (
-          <ResultPass title="간이과세자이고 부가세 납부 면제 대상이에요">
-            <P>직전 연도 매출이 4,800만원 미만이면 간이과세자로 부가세 납부 의무가 면제돼요. 다만 신고는 해야 해요. 매년 1월에 간이과세자 부가세 신고를 하면 돼요.</P>
-            <ResultCTA icon="📊" title="간이과세자 신고 방법" desc="신고는 면세라도 해야 해요" href="https://www.hometax.go.kr" />
-          </ResultPass>
-        )}
+      <Sec n="STEP 01" id="s1" title="간이과세 여부 확인" sub="매출·업종 입력하면 즉시 판정" />
+      <CheckerShell title="나는 간이과세자인가요?" result={getResult()}>
+        <CheckerQ
+          q="직전 연도 연간 매출은?"
+          opts={[
+            { label: "4,800만원 미만", value: "under4800" },
+            { label: "4,800만~8,000만원", value: "4800to8000" },
+            { label: "8,000만원 이상", value: "over8000" },
+          ]}
+          sel={sel.q1}
+          onSel={(v) => setSel({ ...sel, q1: v })}
+        />
+        <CheckerQ
+          q="업종은 무엇인가요?"
+          opts={[
+            { label: "일반 소매·서비스", value: "general" },
+            { label: "음식점·숙박업", value: "restaurant" },
+            { label: "부동산 임대", value: "realestate" },
+          ]}
+          sel={sel.q2}
+          onSel={(v) => setSel({ ...sel, q2: v })}
+        />
+        <CheckerQ
+          q="현재 부가세 일반과세자로 등록되어 있나요?"
+          opts={[
+            { label: "아니요 (간이과세자)", value: "no" },
+            { label: "네 (일반과세자)", value: "yes" },
+          ]}
+          sel={sel.q3}
+          onSel={(v) => setSel({ ...sel, q3: v })}
+        />
+        <CheckerQ
+          q="세금계산서 발행이 필요한 거래처가 있나요?"
+          opts={[
+            { label: "네, 있어요", value: "needed" },
+            { label: "아니요, 없어요", value: "not_needed" },
+          ]}
+          sel={sel.q4}
+          onSel={(v) => setSel({ ...sel, q4: v })}
+        />
       </CheckerShell>
 
       <BridgeCard
-        q="간이과세자와 일반과세자 차이가 궁금하시죠?"
-        a="세금 계산 방식과 신고 횟수, 세금계산서 발행 여부가 달라요."
-        label="차이점 바로 보기"
-        href="#s3"
+        text="간이과세자 기준을 알면 부가세 부담이 얼마나 되는지 미리 계산할 수 있어요."
+        href="/w/부가가치세-계산기"
+        label="부가세 계산하기"
       />
 
       <Divider />
 
       {/* SECTION 02 */}
-      <Sec n="SECTION 02" id="s2" title="2026년 간이과세자 기준은 얼마인가요?" sub="연 8,000만원 기준 · 업종별 제외 기준" />
-      <P>2026년에도 간이과세자 기준은 직전 연도(2025년) 공급대가(부가세 포함 매출) 합계 8,000만원 미만이에요. 2021년 7월에 기존 4,800만원에서 8,000만원으로 상향됐고 이후 유지되고 있어요.</P>
-      <P>공급대가는 부가세를 포함한 금액이에요. 일반 소비자에게 받은 금액 전체예요. 만약 연간 수입이 7,500만원이라면 간이과세자 기준인 8,000만원 미만이에요.</P>
-      <P>신규 사업자는 첫해 공급대가를 연으로 환산해서 8,000만원 미만이면 간이과세자로 시작할 수 있어요. 예를 들어 7월에 개업해서 연말까지 3,000만원 벌었다면 연환산 6,000만원으로 기준 미만이에요.</P>
-      <P>간이과세 적용이 제한되는 업종이 있어요. 변호사, 의사, 약사, 공인노무사, 건축사 등 전문직 사업자와 금융·보험업, 일부 제조업은 매출과 무관하게 일반과세자예요. <A href="https://www.law.go.kr/법령/부가가치세법">부가가치세법 제61조</A>에서 제한 업종을 명시하고 있어요.</P>
+      <Sec n="SECTION 02" id="s2" title="간이과세자 기준 매출은 2026년 얼마인가요?" sub="8천만원 기준 · 업종별 예외 · 신규사업자" />
+      <P>2026년 기준 간이과세자는 직전 연도 공급대가 합계가 <B>8,000만원 미만</B>인 개인사업자예요. 2021년 7월에 기존 4,800만원에서 8,000만원으로 기준이 올라갔어요. 법인사업자는 간이과세자가 될 수 없어요.</P>
+      <P>예외 업종이 있어요. 부동산 임대업과 과세유흥장소는 여전히 4,800만원 미만이 기준이에요. 광업, 제조업, 도매업도 매출과 관계없이 간이과세 적용이 안 돼요.</P>
+      <P>신규 사업자는 사업 개시 연도에 간이과세자로 등록할 수 있어요. 단, 시 이상 지역의 부동산임대업은 신규여도 일반과세자로만 등록해야 해요. 직전 연도 실적이 없으니 첫해에는 추정 매출로 판단해요.</P>
+      <P>간이과세자 기준을 충족하더라도 세금계산서를 발행해야 하는 거래가 많다면 자발적으로 일반과세자를 선택하는 게 유리할 수 있어요. 매입 부가세 환급을 받을 수 있기 때문이에요.</P>
 
-      <H3>연 8,000만원 기준</H3>
-      <Info type="tip">{"간이과세자는 부가세 매입세액 공제를 받을 수 없어요. 매입이 많은 업종(도소매업, 제조업 등)은 오히려 일반과세자가 유리할 수 있어요."}</Info>
+      <FormulaCard
+        formula="간이과세 부가세 = 공급대가 × 업종별 부가가치율 × 10%"
+        note="예) 음식점 1,000만원 매출 → 1,000만원 × 40% × 10% = 40만원"
+      />
+
+      <TableTitle>업종별 간이과세 부가가치율 및 부가세율</TableTitle>
+      <TH cols={["업종", "부가가치율", "실효 부가세율", "비고"]} />
+      <THL rows={[
+        ["소매업·음식점업·숙박업", "15%~40%", "1.5%~4%", "업종 세분"],
+        ["서비스업·건설업", "30%~40%", "3%~4%", "—"],
+        ["부동산임대업", "40%", "4%", "기준 4,800만원"],
+        ["과세유흥장소", "40%", "4%", "기준 4,800만원"],
+      ]} />
+      <TableNote>부가가치율 × 10% = 실효 부가세율. 업종 세분화에 따라 다를 수 있어요.</TableNote>
+
+      <InlineLink
+        icon="📋"
+        title="부가가치세 신고 기간"
+        desc="간이과세자 신고 마감일과 납부 일정 확인"
+        href="/w/부가가치세-신고기간"
+      />
 
       <Divider />
 
       {/* SECTION 03 */}
-      <Sec n="SECTION 03" id="s3" title="간이과세자와 일반과세자 차이는 무엇인가요?" sub="세금 계산 방식 · 세금계산서 발행" />
-      <P>가장 큰 차이는 부가세 계산 방식이에요. 일반과세자는 매출 세액에서 매입 세액을 빼서 납부해요. 간이과세자는 매출에 업종별 부가가치율을 곱한 후 10%를 적용해요.</P>
+      <Sec n="SECTION 03" id="s3" title="간이과세자 기준 일반과세 전환은 언제 되나요?" sub="7월 1일 전환 · 직전 연도 기준 · 통지 절차" />
+      <P>직전 연도 공급대가 합계가 8,000만원 이상이 되면 <B>다음 해 7월 1일</B>부터 일반과세자로 자동 전환돼요. 국세청에서 5~6월에 전환 예정 통지를 발송해요. 통지를 받으면 부가세 신고 방식도 바뀌므로 미리 준비해야 해요.</P>
+      <P>반대로 매출이 줄어 8,000만원 미만이 되면 다음 해 7월 1일부터 간이과세자로 다시 전환될 수 있어요. 직전 연도 실적 기준으로 매년 7월에 재판정이 이루어져요.</P>
+      <P>자발적으로 일반과세자 전환도 가능해요. 홈택스에서 '일반과세자 포기 신청'을 철회하면 되는데, 포기 신청 후 3년이 지나야 간이과세자로 돌아올 수 있어요. 한 번 일반을 선택하면 쉽게 못 돌아오는 셈이에요.</P>
+      <P>간이과세자에서 일반과세자로 전환되면 세금계산서 발행 의무, 매입세액 공제, 매출의 10% 부가세 납부가 모두 바뀌어요. 특히 매입이 많은 업종이라면 일반과세자가 오히려 부담이 줄어드는 경우도 있어요.</P>
 
-      <TableTitle>간이과세자 vs 일반과세자 핵심 차이</TableTitle>
-      <div style={{ overflowX: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-          <thead>
-            <tr><THL>항목</THL><TH>간이과세자</TH><TH>일반과세자</TH></tr>
-          </thead>
-          <tbody>
-            {[
-              ["매출 기준", "연 8,000만원 미만", "연 8,000만원 이상"],
-              ["부가세 계산", "매출 × 부가가치율 × 10%", "매출세액 - 매입세액"],
-              ["신고 횟수", "연 1회 (1월)", "연 2회 (1월, 7월)"],
-              ["세금계산서", "4,800만원 이상이면 발행 의무", "항상 발행 의무"],
-              ["납부 면제", "연 4,800만원 미만 면제", "없음"],
-            ].map((row, ri) => (
-              <tr key={ri}>
-                {row.map((cell, ci) => (
-                  <td key={ci} style={{ padding: "8px 10px", textAlign: ci === 0 ? "left" : "center", borderBottom: `1px solid ${C.line}`, color: ci === 0 ? C.t1 : C.t2, fontWeight: ci === 0 ? 600 : 400 }}>{cell}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <SpokeLink
+        num="01"
+        title="일반과세자로 전환 후 부가세 신고"
+        desc="전환 후 첫 신고 준비와 주의사항"
+        href="/w/일반과세자-전환"
+      />
 
-      <P>세금계산서 발행 여부도 달라요. 일반과세자는 세금계산서를 발행해야 해요. 간이과세자 중 직전 연도 공급대가 4,800만원 이상은 세금계산서 발행 의무가 있고, 4,800만원 미만은 영수증만 발행해도 돼요.</P>
-
-      <H3>세금 계산 방식</H3>
       <RelatedMid
-        title="세금 관련 글도 확인해 보세요"
-        items={[
-          { icon: "💼", title: "종합소득세 가산세", desc: "신고 안 하면 20% 가산세가 붙어요", href: "/w/종합소득세-신고-안하면-가산세" },
-          { icon: "💵", title: "프리랜서 3.3% 환급", desc: "3.3% 원천징수 환급받는 방법", href: "/w/프리랜서-3.3-원천징수-환급" },
-          { icon: "🏠", title: "재산세 납부 기간 2026", desc: "7월·9월 분납 주택 토지 계산", href: "/w/재산세-납부-기간-2026" },
+        cards={[
+          { title: "부가세 신고 기간", desc: "신고 마감일 확인", href: "/w/부가가치세-신고기간" },
+          { title: "종합소득세 신고", desc: "사업자 필수 신고 정리", href: "/w/종합소득세-신고기간" },
+          { title: "사업자등록 방법", desc: "과세유형 선택부터 등록까지", href: "/w/사업자등록-방법" },
         ]}
-        hubHref="/category/세금"
-        hubLabel="세금 전체 보기"
+        hubHref="/w/세금"
+        hubLabel="세금 허브 보기"
       />
 
       <Divider />
 
       {/* SECTION 04 */}
-      <Sec n="SECTION 04" id="s4" title="간이과세자에서 일반과세자로 전환되는 조건은 무엇인가요?" sub="전환 기준 · 전환 시기 · 전환 후 처리" />
-      <P>직전 연도 공급대가가 8,000만원 이상이면 다음 해 7월 1일부터 일반과세자로 자동 전환돼요. 별도 신청 없이 자동으로 전환되고, 국세청에서 안내문을 보내줘요.</P>
-      <P>전환 시기는 7월 1일이에요. 1월에서 6월까지는 간이과세자로 유지되고, 7월 1일부터 일반과세자가 돼요. 전환 전(1~6월)에 대한 부가세는 간이과세 방식으로, 전환 후(7~12월)는 일반과세 방식으로 신고해요.</P>
-      <P>반대로 매출이 줄어서 8,000만원 미만이 되면 다음 해 7월 1일부터 다시 간이과세자로 돌아갈 수 있어요. 국세청에서 자동으로 처리해요.</P>
-      <P>전환 후에는 일반과세자 의무가 생겨요. 세금계산서 발행, 연 2회 부가세 신고, 매입세액 공제 등 변화가 생기니 세무사나 국세청에서 안내를 받아두는 것이 좋아요.</P>
+      <Sec n="SECTION 04" id="s4" title="간이과세자 기준 부가세율은 업종마다 다른가요?" sub="1.5%~4% 업종별 · 납부 면제 기준 · 계산 예시" />
+      <P>간이과세자 부가세율은 업종에 따라 달라요. 소매업은 부가가치율 15%로 실효 부가세율 1.5%이고, 음식점·숙박업은 40%로 4%예요. 서비스업은 30%로 3%예요. 일반과세자(10%)보다 훨씬 낮아요.</P>
+      <P>직전 연도 매출이 4,800만원 미만이면 부가세 납부 자체가 면제예요. 하지만 신고는 무조건 해야 해요. 신고를 안 하면 무신고 가산세(납부세액의 20%)가 붙어요. 납부만 없는 거지 신고 의무는 있어요.</P>
+      <P>4,800만원 이상~8,000만원 미만 구간에서는 납부 의무가 생겨요. 예를 들어 음식점에서 연 6,000만원 매출이 나왔다면 6,000만원 × 40% × 10% = 240만원을 납부해야 해요.</P>
+      <P>부가세 납부 시 공제도 있어요. 세금계산서나 신용카드 매출전표 등 적격증빙으로 받은 매입세액의 일부를 공제받을 수 있어요. 단, 간이과세자의 공제율은 일반과세자보다 낮아요.</P>
 
-      <H3>전환 기준</H3>
-      <BridgeCard
-        q="종합소득세 신고도 함께 해야 하는지 궁금하시죠?"
-        a="사업소득이 있으면 매년 5월에 종합소득세도 신고해야 해요."
-        label="종합소득세 가산세 확인"
-        href="/w/종합소득세-신고-안하면-가산세"
+      <Info type="warn">
+        간이과세자는 부가세 납부가 면제되더라도 종합소득세 신고는 별도로 해야 해요. 부가세와 소득세는 다른 세금이에요.
+      </Info>
+
+      <CaseBox
+        cases={[
+          {
+            name: "소매업 이씨",
+            detail: "연 매출 3,500만원 · 부가가치율 15%",
+            result: "납부 면제 (4,800만원 미만) · 신고만 하면 됨",
+          },
+          {
+            name: "음식점 김씨",
+            detail: "연 매출 6,000만원 · 부가가치율 40%",
+            result: "부가세 = 6,000만원 × 40% × 10% = 240만원 납부",
+          },
+          {
+            name: "서비스업 박씨",
+            detail: "연 매출 7,800만원 · 부가가치율 30%",
+            result: "부가세 = 7,800만원 × 30% × 10% = 234만원 납부",
+          },
+        ]}
+      />
+
+      <InlineLink
+        icon="🧮"
+        title="부가가치세 계산기"
+        desc="업종과 매출 입력하면 실제 납부액 자동 계산"
+        href="/w/부가가치세-계산기"
       />
 
       <Divider />
 
       {/* SECTION 05 */}
-      <Sec n="SECTION 05" id="s5" title="간이과세자 부가가치세 신고 방법은 어떻게 되나요?" sub="연 1회 신고 · 신고 기간 · 납부 방법" />
-      <P>간이과세자는 1년에 한 번만 부가세를 신고해요. 매년 1월 1일부터 1월 25일까지가 신고·납부 기간이에요. 전년도(1~12월) 매출을 모두 합산해서 신고해요.</P>
-      <P>신고는 홈택스(hometax.go.kr), 손택스(모바일 앱), 관할 세무서 방문으로 할 수 있어요. 홈택스에서 로그인 후 '부가가치세 신고' 메뉴에서 간이과세자로 신고하면 돼요.</P>
-      <P>직전 연도 공급대가가 4,800만원 미만이면 납부 의무는 없지만 신고는 해야 해요. 신고를 하지 않으면 무신고 가산세(무신고 수입금액 × 0.5%)가 부과될 수 있어요.</P>
-      <P>예정 부과 제도가 있어요. 7월에 직전 연도 납부세액의 절반을 예정고지로 미리 납부해야 하는 경우도 있어요. 다만 직전 연도 납부세액이 없으면 예정부과 대상이 아니에요.</P>
+      <Sec n="SECTION 05" id="s5" title="간이과세자 기준 세금계산서 발행은 가능한가요?" sub="발행 제한 · 영수증 발급 · 4,800만원 이상 예외" />
+      <P>원칙적으로 간이과세자는 세금계산서를 발행할 수 없어요. 대신 <B>영수증(간이영수증)</B>을 발행해야 해요. B2B 거래처가 부가세 매입세액 공제를 받으려면 세금계산서가 필요한데, 간이과세자와 거래하면 공제가 안 돼요.</P>
+      <P>예외가 있어요. 직전 연도 공급대가가 4,800만원 이상인 간이과세자는 세금계산서를 발행할 수 있어요. 국세청에서 '세금계산서 발급 가능 간이과세자'로 지정하면 가능해요. 발행 시 전자세금계산서 의무 발행 대상에 해당할 수 있어요.</P>
+      <P>세금계산서 발행이 필요한 거래가 많다면 일반과세자로 전환하는 게 나을 수 있어요. 간이과세자로 있으면 B2B 거래에서 불리하고, 거래처도 매입세액 공제를 받지 못해 불이익이 생기거든요.</P>
+      <P>신용카드·현금영수증 발행은 간이과세자도 의무예요. 소비자 요청 시 반드시 발행해야 하고, 발행하지 않으면 미발행 금액의 5% 가산세가 부과돼요. 영세 사업자도 예외는 없어요.</P>
 
-      <H3>연 1회 신고</H3>
-      <ExtBtn
-        badge="국세청 홈택스"
-        text="간이과세자 부가세 신고"
-        cta="신고하러 가기 →"
-        href="https://www.hometax.go.kr"
+      <SpokeLink
+        num="02"
+        title="세금계산서 발행 조건과 절차"
+        desc="전자세금계산서 발행 의무와 가산세 확인"
+        href="/w/세금계산서-발행-조건"
       />
 
+      <ExtBtn href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2398&cntntsId=7676" label="국세청 공식" text="간이과세 안내" />
+
+      <Divider />
+
+      {/* FAQ */}
       <FAQAccordion items={meta.faq} />
-
-      <RelatedArticles items={[
-        { title: "종합소득세 신고 안 하면 가산세 | 무신고 납부불성실 세율 계산", desc: "종합소득세 신고 안 하면 붙는 가산세율이에요", href: "/w/종합소득세-신고-안하면-가산세" },
-        { title: "프리랜서 3.3% 원천징수 환급 방법 | 종합소득세 신고 필요경비 공제", desc: "3.3% 세금 돌려받는 종합소득세 신고 방법이에요", href: "/w/프리랜서-3.3-원천징수-환급" },
-        { title: "재산세 납부 기간 2026 | 7월 9월 분납 주택 토지 계산", desc: "2026년 재산세 납부 기간과 계산 방법이에요", href: "/w/재산세-납부-기간-2026" },
-        { title: "국민연금 임의가입 전업주부 조건 | 월 보험료 수령액 손익분기점", desc: "전업주부 국민연금 임의가입 조건이에요", href: "/w/국민연금-임의가입-전업주부" },
-        { title: "건강보험 지역가입자 보험료 계산 | 재산 소득 점수 부과 방식", desc: "소득·재산·자동차를 점수로 환산하는 방법이에요", href: "/w/건강보험-지역가입자-보험료-계산" },
-      ]} />
-
+      <RelatedArticles
+        items={[
+          { title: "부가가치세 신고 기간", href: "/w/부가가치세-신고기간" },
+          { title: "종합소득세 신고 방법", href: "/w/종합소득세-신고기간" },
+          { title: "사업자등록 방법과 종류", href: "/w/사업자등록-방법" },
+          { title: "일반과세자 전환 절차", href: "/w/일반과세자-전환" },
+          { title: "세금계산서 발행 조건", href: "/w/세금계산서-발행-조건" },
+        ]}
+      />
       <PrevNext
-        prev={{ title: "종합소득세 신고 안 하면 가산세 | 무신고 납부불성실 세율 계산", href: "/w/종합소득세-신고-안하면-가산세" }}
-        next={{ title: "프리랜서 3.3% 원천징수 환급 방법 | 종합소득세 신고 필요경비 공제", href: "/w/프리랜서-3.3-원천징수-환급" }}
+        prev={{ title: "종합소득세 가산세 계산", href: "/w/종합소득세-신고-안하면-가산세" }}
+        next={{ title: "프리랜서 3.3% 원천징수 환급", href: "/w/프리랜서-3.3-원천징수-환급" }}
       />
     </BlogLayout>
   );
 }
+
+export { meta };

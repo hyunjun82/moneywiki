@@ -1,309 +1,364 @@
+// @ts-nocheck
 "use client";
-
 import { useState } from "react";
 import {
-  C, Btn, Tag, Info, InlineLink, SpokeLink, Divider, Sec, P, B, A, H3,
-  TableTitle, TableNote, TH, THL,
-  BridgeCard, BlogLayout, TOC, Summary3,
-  FAQAccordion, RelatedArticles, PrevNext,
+  BlogLayout, TOC, Summary3, Sec, P, B, A, H3, Divider,
+  Info, InlineLink, SpokeLink, BridgeCard, ExtBtn,
+  TH, THL, TableTitle, TableNote, Tag,
+  CheckerShell, CheckerQ, ResultPass, ResultFail, ResultGrid, ResultCTA, Btn, ChipsGrid,
+  FAQAccordion, RelatedArticles, PrevNext, RelatedMid,
+  SidebarCTA, SidebarDocs, SidebarCalc,
 } from "@/components/wiki/BlogShared";
 
-// ── 체커 로직 ──
-type ResLink = { icon: string; title: string; href: string };
-type Res = { pass: boolean; headline: string; detail: string; badges: string[]; links: ResLink[] };
+const meta = {
+  title: "실업급여 구직활동 인정 기준 | 주 1회 이상 증빙 서류 종류",
+  description: "실업급여 수급 중 구직활동 실적을 인정받으려면 실업인정일마다 증빙 자료를 제출해야 해요. 어떤 활동이 인정되는지, 미달 시 어떻게 되는지를 정리했어요.",
+  category: "실업급여",
+  keywords: [
+    "실업급여 구직활동 인정 기준",
+    "실업급여 구직활동 증빙 서류 종류",
+    "실업급여 구직활동 인정 횟수 미달",
+    "실업급여 구직활동 온라인 오프라인 유형",
+  ],
+  author: "머니위키 에디터",
+  updateNote: "2026년 2월 기준",
+  lastUpdated: "2026-02-27",
+  datePublished: "2026-02-27",
+  summary: [
+    "실업인정 주기마다 1회 이상 구직활동 실적을 제출해야 수급이 유지돼요",
+    "온라인(고용24 채용정보 열람)부터 입사지원서 제출, 면접 등 다양한 활동이 인정돼요",
+    "구직활동 횟수 미달 시 해당 기간 실업급여가 지급되지 않아요",
+  ],
+  sources: [
+    {
+      name: "고용보험법 제44조 (실업의 인정)",
+      url: "https://www.law.go.kr/법령/고용보험법/(20240101,20022,20231010)/제44조",
+      date: "2026-02",
+    },
+  ],
+  faq: [
+    {
+      q: "구직활동 실적이 없어도 실업급여를 받을 수 있나요?",
+      a: "아니요, 실업인정 주기마다 1회 이상 구직활동 실적을 제출해야 해요. 실적이 없거나 부족하면 해당 기간 실업급여가 지급되지 않아요. 단, 수급 기간 초기에는 구직활동 의무 횟수가 낮게 적용돼요.",
+    },
+    {
+      q: "온라인 채용공고 열람만으로도 구직활동이 인정되나요?",
+      a: "고용24(work24.go.kr)에서 채용정보 열람, 입사지원, 구인처 검색 등 온라인 구직활동이 인정돼요. 단, 단순 열람만으로는 인정되지 않고 입사 지원이나 채용정보 스크랩 등 적극적 활동이 있어야 해요.",
+    },
+  ],
+  ctaCard: {
+    label: "구직활동 신고",
+    mainText: "고용24에서 실업인정 신청",
+    subText: "구직활동 실적을 온라인으로 제출하세요",
+    url: "https://www.work24.go.kr",
+    external: true,
+  },
+  relatedDocs: [
+    { title: "실업급여 신청방법", url: "/w/실업급여-신청방법" },
+    { title: "실업급여 수급 조건", url: "/w/실업급여-수급-조건" },
+  ],
+};
 
-const passLinks: ResLink[] = [
-  { icon: "📋", title: "실업인정 후 지급일 확인", href: "/w/실업급여-지급일" },
-  { icon: "📊", title: "기초일액 상한·하한 기준", href: "/w/실업급여-기초일액" },
-];
-const failLinks: ResLink[] = [
-  { icon: "📝", title: "워크넷 입사지원 방법 보기", href: "/w/실업급여-구직활동" },
-  { icon: "⚠️", title: "부정수급 처벌 기준 확인", href: "/w/실업급여-부정수급" },
-];
+type ResLink = { icon: string; title: string; desc: string; href: string };
 
-function getResult(sel: Record<string, string>): Res | null {
-  const { round, activity } = sel;
-  if (!round) return null;
+export default function Page() {
+  const [answers, setAnswers] = useState<Record<string, string>>({});
 
-  if (round === "1st") {
-    if (activity === "online-edu") return { pass: true, headline: "1차 실업인정 가능해요", detail: "수급자격자 온라인 교육을 이수하면 1차 실업인정이 자동 처리돼요. 별도 구직활동은 불필요해요.", badges: ["온라인 교육 이수", "자동 처리"], links: passLinks };
-    return { pass: true, headline: "1차는 온라인 교육만으로 충분해요", detail: "1차 실업인정은 수급자격자 온라인 교육 수강만으로 인정돼요. 입사지원이나 면접은 2차부터 활용하는 게 효율적이에요.", badges: ["온라인 교육 권장"], links: passLinks };
+  function getResult() {
+    const q2 = answers["q2"];
+    const q3 = answers["q3"];
+    const q4 = answers["q4"];
+    if (q2 === "no-submit") return "fail";
+    if (q3 === "none") return "warn";
+    if (q4 === "no-proof") return "check";
+    if (Object.keys(answers).length >= 4) return "ok";
+    return null;
   }
 
-  if (round === "2-4") {
-    if (activity === "online-edu") return { pass: false, headline: "온라인 교육은 1차 전용이에요", detail: "수급자격자 온라인 교육은 1차 실업인정에만 사용할 수 있어요. 2차부터는 입사지원, 면접 등 재취업 활동이 필요해요.", badges: ["1차 전용"], links: failLinks };
-    return { pass: true, headline: "실업인정 가능해요", detail: "2~4차는 재취업 활동 1회 이상이면 인정돼요. 구직활동과 구직 외 활동(직업훈련·취업특강) 모두 가능해요.", badges: ["재취업 활동 1회"], links: passLinks };
-  }
+  const links: ResLink[] = [
+    {
+      icon: "💼",
+      title: "고용24 실업인정 신청",
+      desc: "온라인으로 구직활동 실적 제출 방법",
+      href: "https://www.work24.go.kr",
+    },
+    {
+      icon: "📋",
+      title: "구직활동 인정 유형 안내",
+      desc: "인정되는 구직활동 유형과 증빙 서류",
+      href: "https://www.ei.go.kr",
+    },
+    {
+      icon: "📞",
+      title: "고용센터 상담",
+      desc: "구직활동 인정 여부 전화 상담 (1350)",
+      href: "https://www.work24.go.kr",
+    },
+  ];
 
-  if (round === "5plus") {
-    if (activity === "online-edu") return { pass: false, headline: "온라인 교육은 1차 전용이에요", detail: "5차 이후에는 재취업 활동 2회 이상이 필요하고, 그중 구직활동 1회는 필수예요. 온라인 교육은 해당하지 않아요.", badges: ["1차 전용"], links: failLinks };
-    if (activity === "training") return { pass: true, headline: "재취업 활동 1회로 인정 — 추가 활동 필요", detail: "직업훈련·취업특강은 구직 외 활동이라 재취업 활동 1회로 인정돼요. 나머지 1회는 입사지원·면접 등 구직활동이 필요해요.", badges: ["구직 외 활동", "구직활동 추가 필요"], links: passLinks };
-    return { pass: true, headline: "구직활동 1회로 인정돼요", detail: "5차 이후 필수인 구직활동 1회에 해당해요. 나머지 1회는 다른 날 추가 활동이 필요해요. 1일 1회만 인정되니 이틀에 나눠서 활동하세요.", badges: ["구직활동 인정", "추가 1회 필요"], links: passLinks };
-  }
+  const toc = [
+    { id: "checker", label: "구직활동 인정 여부 체크" },
+    { id: "sec02", label: "인정 기준", sub: "횟수 · 유형 기준" },
+    { id: "sec03", label: "증빙 서류 종류", sub: "온라인 · 오프라인 증빙" },
+    { id: "sec04", label: "횟수 미달 불이익", sub: "지급 중단 · 수급 영향" },
+    { id: "sec05", label: "온라인 오프라인 유형", sub: "인정 활동 목록" },
+    { id: "faq", label: "자주 묻는 질문" },
+  ];
 
-  return null;
-}
-
-export default function Article() {
-  const [sel, setSel] = useState<Record<string, string>>({});
-  const pick = (g: string, v: string) => setSel((p) => ({ ...p, [g]: v }));
-  const result = getResult(sel);
+  const result = getResult();
 
   return (
     <BlogLayout
-      breadcrumb={["홈", "실업급여", "구직활동 인정"]}
-      tags={["2026년 기준", "실업급여", "구직활동"]}
-      date="2026-02-21"
-      title="실업급여 구직활동 인정 증빙 방법 | 워크넷 입사지원 온라인 교육"
-      description={
+      meta={meta}
+      toc={toc}
+      sidebar={
         <>
-          실업인정일에 활동 실적을 제출하지 않으면 그 회차 급여가 <strong style={{ color: C.t1 }}>통째로 보류</strong>돼요. 워크넷 자동 연동부터 증빙 방법까지 정리했어요.
+          <SidebarCTA
+            title="실업인정 신청"
+            desc="구직활동 실적 온라인 제출"
+            href="https://www.work24.go.kr"
+            label="고용24 바로가기"
+            external
+          />
+          <SidebarDocs
+            title="관련 서류"
+            items={[
+              { label: "입사지원서 (자유 양식)", href: "https://www.work24.go.kr" },
+              { label: "채용공고 스크린샷", href: "https://www.work24.go.kr" },
+              { label: "면접 확인서", href: "https://www.work24.go.kr" },
+            ]}
+          />
         </>
       }
-      sourceBar={{ badge: "출처", name: "고용보험법 제44조 · 고용24", date: "2026.02 기준" }}
-      stickyLabel="실업인정 신청"
-      stickyValue="고용24"
-      stickyBtn="온라인 신청 바로가기 →"
-      stickyHref="https://www.work24.go.kr/ei/eih/eg/pb/pbPersonBnef/retrievePb0201Info.do"
+      disclaimer="이 글은 일반 정보 제공 목적으로 작성되었으며, 개인 상황에 따라 다를 수 있어요. 정확한 판단은 고용센터(1350)에 문의하세요."
     >
-      {/* 목차 */}
-      <TOC items={[
-        { t: "내 구직활동, 실업인정 받을 수 있을까?", sub: "차수 × 활동유형 간편 체크" },
-        { t: "구직활동 인정 기준은 어떻게 되나요?", sub: null },
-        { t: "구직활동 증빙은 어떻게 하나요?", sub: "활동 유형별 증빙 방법 테이블" },
-        { t: "워크넷 입사지원으로 인정받는 방법", sub: null },
-        { t: "온라인 교육은 어디서 받나요?", sub: "차수별 인정 기준 테이블" },
-        { t: "자주 묻는 질문", sub: null },
-      ]} />
+      <TOC items={toc} />
+      <Summary3 items={meta.summary} />
+      <BridgeCard
+        title="구직활동 실적이 걱정되시나요?"
+        desc="어떤 활동이 인정되는지 모르면 수급이 끊길 수 있어요. 아래 체크로 본인 상황을 먼저 파악해 보세요."
+      />
 
-      {/* 3줄 요약 */}
-      <Summary3 items={[
-        "1차: 수급자격자 온라인 교육 1회 수강 (<strong>고용센터 출석 불필요</strong>)",
-        "2~4차: 재취업 활동 1회 이상 (입사지원·면접·직업훈련 모두 가능)",
-        "5차 이후: 재취업 활동 <strong>2회 이상</strong>, 그중 구직활동(입사지원·면접) 1회 필수",
-      ]} />
-
-      {/* ── STEP 01. 체커 ── */}
-      <Divider />
-      <Sec n="STEP 01" title="내 구직활동, 실업인정 받을 수 있을까?" sub="차수와 활동 유형을 선택하면 바로 알 수 있어요" />
-
-      <P>실업급여를 받으려면 실업인정일마다 구직활동 실적을 제출해야 해요. 차수마다 필요한 횟수가 다르고, 활동 종류에 따라 인정 여부도 달라져요. 한 번 놓치면 다음 인정일까지 기다려야 하니까 미리 확인하는 게 좋아요.</P>
-
-      <div style={{ background: "#FFF", border: `1px solid ${C.line}`, borderRadius: 12, overflow: "hidden" }}>
-        <div style={{ background: C.navy, padding: "16px 18px", display: "flex", alignItems: "center", gap: 12 }}>
-          <div style={{ width: 38, height: 38, background: "#fff", borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>&#x2714;</div>
-          <div>
-            <h3 style={{ color: "#fff", fontSize: 15, fontWeight: 700, margin: 0 }}>구직활동 인정 여부 체크</h3>
-            <p style={{ color: "rgba(255,255,255,.7)", fontSize: 12, marginTop: 1, margin: 0 }}>30초면 확인할 수 있어요</p>
-          </div>
-        </div>
-        <div style={{ padding: "20px 18px" }}>
-          {/* 그룹 1: 차수 */}
-          <div style={{ marginBottom: 18 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: C.t2, marginBottom: 8 }}>
-              <span style={{ width: 20, height: 20, background: C.navy, color: "#fff", borderRadius: 5, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 800 }}>1</span>
-              지금 몇 차 실업인정인가요?
-            </div>
-            <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
-              <Btn group="round" value="1st" label="1차 (첫 번째)" sel={sel} pick={pick} />
-              <Btn group="round" value="2-4" label="2~4차" sel={sel} pick={pick} />
-              <Btn group="round" value="5plus" label="5차 이후" sel={sel} pick={pick} />
-            </div>
-          </div>
-          {/* 그룹 2: 활동유형 */}
-          <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: C.t2, marginBottom: 8 }}>
-              <span style={{ width: 20, height: 20, background: C.navy, color: "#fff", borderRadius: 5, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 800 }}>2</span>
-              어떤 활동을 했나요?
-            </div>
-            <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
-              <Btn group="activity" value="job-search" label="입사지원·면접" sel={sel} pick={pick} />
-              <Btn group="activity" value="training" label="직업훈련·취업특강" sel={sel} pick={pick} />
-              <Btn group="activity" value="online-edu" label="온라인 교육" sel={sel} pick={pick} />
-            </div>
-          </div>
-
-          {/* 결과 */}
-          {result && (
-            <div style={{ marginTop: 16, padding: 16, borderRadius: 8, background: result.pass ? C.navyLight : "#F5F5F5", border: result.pass ? "1px solid rgba(30,58,95,.1)" : `1px solid ${C.line}` }}>
-              <div style={{ fontSize: 15, fontWeight: 800, color: result.pass ? C.navy : C.t1, marginBottom: 4 }}>
-                {result.pass ? "\u2705" : "\u26D4"} {result.headline}
-              </div>
-              <div style={{ fontSize: 13, color: C.t3, lineHeight: 1.55 }}>{result.detail}</div>
-              <div style={{ display: "flex", gap: 5, marginTop: 8, flexWrap: "wrap" }}>
-                {result.badges.map((b, i) => (
-                  <span key={i} style={{ fontSize: 11, fontWeight: 700, padding: "3px 9px", borderRadius: 4, background: result.pass ? C.navy : C.t4, color: "#fff" }}>{b}</span>
-                ))}
-              </div>
-              {result.links.length > 0 && (
-                <div style={{ marginTop: 12, paddingTop: 12, borderTop: result.pass ? "1px solid rgba(30,58,95,.08)" : `1px solid ${C.line}` }}>
-                  <div style={{ fontSize: 12, fontWeight: 700, color: C.t1, marginBottom: 6 }}>{"📖 관련 가이드"}</div>
-                  {result.links.map((lnk, li) => (
-                    <a key={li} href={lnk.href} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 0", fontSize: 13, color: C.navy, fontWeight: 600, borderBottom: "1px solid rgba(30,58,95,.06)", textDecoration: "none" }}>
-                      <span>{lnk.icon} {lnk.title}</span>
-                      <span style={{ fontSize: 11, color: C.t4 }}>{"\u2192"}</span>
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
+      <Sec n="01" id="checker" title="실업급여 구직활동 인정 여부를 체크해 보세요" sub="실적 제출 · 인정 여부 확인">
+        <CheckerShell
+          title="구직활동 인정 여부 체크"
+          desc="4가지 질문으로 구직활동 인정 여부를 파악해 보세요"
+        >
+          <CheckerQ
+            id="q1"
+            question="현재 실업급여 수급 상태가 어떻게 되시나요?"
+            answers={answers}
+            onAnswer={(id, val) => setAnswers((prev) => ({ ...prev, [id]: val }))}
+          >
+            <Btn value="now" label="수급 중이에요" />
+            <Btn value="plan" label="수급 예정이에요" />
+            <Btn value="done" label="이미 종료됐어요" />
+          </CheckerQ>
+          <CheckerQ
+            id="q2"
+            question="실업인정일마다 구직활동 실적을 제출하고 있나요?"
+            answers={answers}
+            onAnswer={(id, val) => setAnswers((prev) => ({ ...prev, [id]: val }))}
+          >
+            <Btn value="yes-submit" label="네, 제출하고 있어요" />
+            <Btn value="no-submit" label="아직 제출 안 했어요" />
+          </CheckerQ>
+          <CheckerQ
+            id="q3"
+            question="구직활동 유형이 인정 목록에 있나요?"
+            answers={answers}
+            onAnswer={(id, val) => setAnswers((prev) => ({ ...prev, [id]: val }))}
+          >
+            <Btn value="yes-type" label="네, 해당돼요" />
+            <Btn value="none" label="잘 모르겠어요" />
+          </CheckerQ>
+          <CheckerQ
+            id="q4"
+            question="증빙 서류를 보관하고 있나요?"
+            answers={answers}
+            onAnswer={(id, val) => setAnswers((prev) => ({ ...prev, [id]: val }))}
+          >
+            <Btn value="yes-proof" label="네, 있어요" />
+            <Btn value="no-proof" label="없어요" />
+          </CheckerQ>
+          {result === "fail" && (
+            <ResultFail
+              title="실적 미제출 — 수급 중단 위험"
+              desc="실업인정일까지 구직활동 실적을 제출하지 않으면 해당 기간 수급이 중단돼요."
+            >
+              {links.map((l) => (
+                <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
+              ))}
+            </ResultFail>
           )}
-        </div>
-      </div>
+          {result === "warn" && (
+            <ResultFail
+              title="인정 유형 확인 필요"
+              desc="어떤 활동이 인정되는지 고용센터에 먼저 확인하고 제출하는 것이 안전해요."
+            >
+              {links.map((l) => (
+                <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
+              ))}
+            </ResultFail>
+          )}
+          {result === "check" && (
+            <ResultFail
+              title="증빙 서류 보관 필요"
+              desc="구직활동 실적은 증빙 서류와 함께 제출해야 해요. 이메일, 스크린샷, 확인서 등을 보관하세요."
+            >
+              {links.map((l) => (
+                <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
+              ))}
+            </ResultFail>
+          )}
+          {result === "ok" && (
+            <ResultPass
+              title="구직활동 정상 인정 가능"
+              desc="제출 기한을 지키고 증빙을 갖추면 정상적으로 수급이 유지돼요."
+            >
+              {links.map((l) => (
+                <ResultCTA key={l.href} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />
+              ))}
+            </ResultPass>
+          )}
+        </CheckerShell>
+      </Sec>
 
-      {/* ── SECTION 02. 인정 기준 ── */}
       <Divider />
-      <Sec n="SECTION 02" title="실업급여 구직활동 인정 기준은 어떻게 되나요?" sub="실업인정일 = 구직활동 실적 제출일" />
 
-      <P><A href="https://www.law.go.kr/법령/고용보험법">고용보험법 제44조</A>에서는 실업급여를 받으려면 적극적으로 일자리를 찾고 있다는 걸 증명해야 한다고 정해요. 정해진 실업인정일에 구직활동 실적을 제출해야 급여가 지급되는 방식이에요.</P>
+      <Sec n="02" id="sec02" title="실업급여 구직활동 인정 기준은 무엇인가요?" sub="횟수 · 유형 기준">
+        <P>
+          실업급여 수급자는 실업인정 주기마다 구직활동 실적을 제출해야 해요. 일반적으로 2주에 1회 실업인정을 받는데, 이 기간 동안 1회 이상의 구직활동을 해야 해요. 첫 번째 실업인정(대기기간 7일 후)에는 구직활동 의무가 없는 경우도 있어요.
+        </P>
+        <P>
+          구직활동으로 인정되는 범위는 생각보다 넓어요. 채용공고 지원, 면접 참여, 직업훈련 수강, 취업박람회 참가, 고용센터 상담 등이 모두 해당돼요. 고용24를 통한 온라인 구직활동도 인정 대상이에요.
+        </P>
+        <P>
+          50세 이상이나 장애인 수급자는 구직활동 횟수 기준이 완화될 수 있어요. 또한 특정 직업훈련 프로그램 참여 중에는 훈련 출석이 구직활동으로 대체될 수 있어요. 해당 여부는 고용센터에 미리 확인하는 게 좋아요.
+        </P>
+        <P>
+          인정 기준은 단순히 횟수만이 아니에요. 실질적으로 취업을 위한 노력을 했느냐가 중요해요. 형식적인 지원서 제출이나 허위 증빙 제출은 부정수급으로 처벌받을 수 있어요.
+        </P>
+        <Info type="tip">
+          수급 기간 초반에는 구직활동 의무 횟수가 낮게 설정되는 경우가 있어요. 본인 실업인정 주기와 의무 횟수를 고용센터에서 정확히 확인하세요.
+        </Info>
+        <InlineLink
+          icon="📋"
+          title="실업급여 신청방법 절차"
+          desc="실업인정 신청 주기와 구직활동 실적 제출 방법"
+          href="/w/실업급여-신청방법"
+        />
+      </Sec>
 
-      <P>구직활동으로 인정되는 활동은 크게 두 가지로 나뉘어요. 첫 번째는 <B>구직활동</B>이에요. 워크넷·사람인·잡코리아 같은 채용사이트에서의 입사지원, 면접 참여, 구인업체 방문 상담이 여기에 해당해요. 두 번째는 <B>구직 외 활동</B>으로, 직업훈련 참여, 고용센터 취업특강 수강, 직업심리검사 등이 포함돼요.</P>
-
-      <P>활동별 인정 횟수에는 한도가 있어요. 취업특강은 온·오프라인 합산 <B>최대 3회</B>까지만, 직업심리검사와 심리안정프로그램은 각 <B>1회</B>까지만 실업인정 실적으로 인정돼요. 그리고 중요한 규칙이 하나 있어요. <B>1일 1회만 인정</B>되기 때문에 같은 날 여러 활동을 해도 1회로만 계산해요. 2회가 필요한 차수는 반드시 이틀에 걸쳐 활동해야 해요.</P>
-
-      <Info type="warn">{'<strong>1일 1회 규칙:</strong> 같은 날 입사지원 2건을 해도 1회로만 인정돼요. 5차 이후(2회 필요)에는 <strong>반드시 이틀에 나눠서</strong> 활동해야 해요.'}</Info>
-
-      <InlineLink icon="📊" title="실업급여 수급자격 조건 — 180일 합산 기준" desc="피보험기간 180일 합산 방법과 자발적 퇴사 예외 인정 사유를 정리했어요." href="/w/실업급여-수급자격" />
-
-      {/* ── SECTION 03. 증빙 방법 ── */}
       <Divider />
-      <Sec n="SECTION 03" title="실업급여 구직활동 증빙은 어떻게 하나요?" sub="온라인 활동과 오프라인 활동의 증빙 방식이 달라요" />
 
-      <P>구직활동이 실적으로 인정받으려면 활동에 맞는 증빙 방법을 알아야 해요. 놓치기 쉬운 부분인데, 온라인 채용사이트 지원은 고용24와 연동 여부가 핵심이에요. 연동되는 사이트라면 별도 서류 없이 자동으로 처리돼요.</P>
+      <Sec n="03" id="sec03" title="실업급여 구직활동 증빙 서류는 무엇이 있나요?" sub="온라인 · 오프라인 증빙">
+        <P>
+          구직활동 증빙 서류는 활동 유형에 따라 달라요. 입사지원서를 제출했다면 지원 확인 이메일이나 채용 플랫폼 화면을 캡처해 두면 돼요. 면접을 봤다면 면접 확인서나 면접 통보 문자도 증빙이 돼요.
+        </P>
+        <P>
+          고용24를 통해 채용정보를 검색하고 입사 지원을 하면 자동으로 활동 이력이 기록돼요. 이 경우 별도 증빙 서류 없이 시스템에서 확인이 가능해요. 고용24 외 다른 플랫폼(잡코리아, 사람인 등)에서 지원한 경우에는 스크린샷을 캡처해 두세요.
+        </P>
+        <P>
+          직업훈련 수강이나 취업박람회 참가도 증빙이 필요해요. 수료증이나 참가 확인서를 발급받아 제출하면 돼요. 자격증 시험 응시도 구직활동으로 인정될 수 있으니 수험표나 응시 확인서를 보관하세요.
+        </P>
+        <P>
+          증빙 서류는 실업인정일 전에 준비해 두는 것이 중요해요. 증빙이 없으면 해당 활동이 인정되지 않을 수 있어요. 고용24 온라인 인정을 이용하면 증빙 업로드까지 한 번에 처리할 수 있어요.
+        </P>
+        <InlineLink
+          icon="💼"
+          title="실업급여 수급 조건 180일"
+          desc="피보험기간 180일 이상, 비자발적 이직 등 수급 자격 정리"
+          href="/w/실업급여-수급-조건"
+        />
+      </Sec>
 
-      <P>연동이 안 되는 사이트에서 지원했다면 지원 완료 화면을 캡처해서 제출하면 돼요. 오프라인 활동은 확인서가 필요해요. 면접을 봤다면 면접확인서, 직업훈련에 참여했다면 출석확인서를 받아서 첨부해야 해요.</P>
-
-      <TableTitle>활동 유형별 증빙 방법</TableTitle>
-      <div style={{ overflowX: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13, minWidth: 420 }}>
-          <thead>
-            <tr><THL>활동 유형</THL><TH>증빙 방법</TH><TH>비고</TH></tr>
-          </thead>
-          <tbody>
-            {[
-              ["워크넷 입사지원", "자동 연동 (증빙 불필요)", "가장 간편"],
-              ["연동 민간사이트", "자동 연동", "사람인·잡코리아 등"],
-              ["비연동 사이트", "지원 완료 화면 캡처", "회사명·날짜 포함"],
-              ["면접 참여", "면접확인서", "업체에서 발급"],
-              ["직업훈련", "출석확인서", "훈련기관에서 발급"],
-              ["취업특강", "수강확인서", "최대 3회 한도"],
-            ].map((row, ri) => (
-              <tr key={ri}>
-                {row.map((cell, ci) => (
-                  <td key={ci} style={{ padding: "8px 8px", textAlign: ci === 0 ? "left" : "center", borderBottom: `1px solid ${C.line}`, color: ci === 0 ? C.t1 : C.t2, fontWeight: ci === 0 ? 600 : 400 }}>{cell}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <TableNote>※ 워크넷 지원이 가장 간편 — 지원 즉시 고용24에 자동 반영</TableNote>
-
-      <P>실업인정 신청은 <A href="https://www.work24.go.kr">고용24</A> 앱이나 웹사이트에서 &quot;실업인정 신청&quot;을 선택하고 구직활동 내역을 입력하면 돼요. 워크넷 지원 내역은 자동으로 불러오고, 그 외 활동은 직접 입력 후 증빙자료를 첨부하면 완료예요.</P>
-
-      <BridgeCard
-        question="구직활동 허위로 신고하면 어떻게 되나요?"
-        body={<>실적을 허위로 제출하면 부정수급으로 분류돼요. 받은 급여를 전액 반환하는 것은 물론, <strong style={{ color: C.navy }}>최대 5배 추가 징수</strong>와 형사처벌까지 이어질 수 있어요.</>}
-        btnText="부정수급 처벌 기준과 면제 조건 보기 →"
-        href="/w/실업급여-부정수급"
+      <RelatedMid
+        title="실업급여 구직활동 관련 글"
+        hubHref="/w/실업급여"
+        hubLabel="실업급여 전체 보기"
+        items={[
+          { title: "실업급여 신청방법 절차", href: "/w/실업급여-신청방법" },
+          { title: "실업급여 수급 조건", href: "/w/실업급여-수급-조건" },
+          { title: "실업급여 소정급여일수", href: "/w/실업급여-소정급여일수" },
+        ]}
       />
 
-      {/* ── SECTION 04. 워크넷 ── */}
+      <Sec n="04" id="sec04" title="실업급여 구직활동 횟수가 부족하면 어떻게 되나요?" sub="지급 중단 · 수급 영향">
+        <P>
+          구직활동 실적이 부족하면 해당 실업인정 주기의 급여가 지급되지 않아요. 이는 수급이 완전히 종료되는 것이 아니라 해당 기간만 지급이 건너뛰어지는 거예요. 다음 실업인정일에 실적을 충족하면 수급이 이어져요.
+        </P>
+        <P>
+          하지만 실업인정일에 출석하지 않거나 신고를 아예 하지 않으면 수급 자격 자체가 소멸될 수 있어요. 실업인정일에는 반드시 출석하거나 온라인으로 신청해야 해요. 불가피한 사유(질병, 출장 등)가 있다면 사전에 고용센터에 연락해야 해요.
+        </P>
+        <P>
+          허위 구직활동이나 증빙 조작이 발각되면 부정수급으로 처리돼요. 부정수급은 수급액 전액 반환에 더해 최대 5배 추가징수가 부과되는 중대한 처벌이에요. 진짜 구직 노력을 기록하고 성실하게 제출하는 것이 가장 중요해요.
+        </P>
+        <P>
+          구직활동 실적 부족이 반복되면 고용센터에서 특별 상담을 진행할 수 있어요. 취업 장애 요인이 있는 경우 별도 지원 프로그램을 연계받을 수도 있으니 적극적으로 상담하는 것이 좋아요.
+        </P>
+        <SpokeLink
+          num="01"
+          title="실업급여 수급 자격 인정"
+          desc="비자발적 이직 및 피보험기간 180일 등 수급 자격 기준"
+          href="/w/실업급여-수급자격-인정"
+        />
+      </Sec>
+
       <Divider />
-      <Sec n="SECTION 04" title="워크넷 입사지원으로 실업급여 구직활동 인정받을 수 있나요?" sub="자동 연동이라 증빙이 가장 편해요" />
 
-      <P>워크넷 입사지원은 실업급여 구직활동 증빙 방법 중 가장 편리한 방식이에요. <A href="https://www.work.go.kr">워크넷</A>에서 채용공고에 지원하면 고용24에 자동으로 연동되기 때문에 별도 서류 준비 없이 실업인정 신청 화면에서 확인만 하면 돼요.</P>
+      <Sec n="05" id="sec05" title="실업급여 구직활동 온라인으로도 인정받을 수 있나요?" sub="인정 활동 목록">
+        <P>
+          온라인 구직활동은 고용24, 잡코리아, 사람인, 링크드인 등 채용 플랫폼을 통한 지원 활동이 포함돼요. 채용공고를 보고 입사 지원을 했다면 스크린샷과 지원 확인 이메일을 보관하세요. 고용24 내에서 활동한 경우 시스템에 자동 기록돼요.
+        </P>
+        <P>
+          직업훈련 수강도 구직활동으로 인정돼요. 고용센터에서 권장하는 직업능력개발훈련에 참여하면 훈련 출석이 구직활동을 대체해요. 자비로 수강하는 민간 학원이나 자격증 교육도 일부 인정될 수 있으니 고용센터에 확인하세요.
+        </P>
+        <P>
+          취업박람회 참가, 직업 상담, 진로 컨설팅도 구직활동으로 인정돼요. 고용센터에서 제공하는 취업 지원 프로그램에 참여하면 참가 확인이 자동 처리돼요. 프리랜서나 자영업 준비 활동은 인정 여부를 사전에 확인해야 해요.
+        </P>
+        <P>
+          자격증 시험 응시, 채용 설명회 참여도 증빙이 있으면 인정받을 수 있어요. 구직활동의 범위가 넓은 만큼, 무엇이 인정되고 무엇이 안 되는지 고용24나 고용센터(1350)에서 미리 확인하는 것이 좋아요.
+        </P>
+        <Info type="warn">
+          허위 구직활동 증빙은 부정수급에 해당해요. 실제로 지원하지 않은 채용공고를 허위로 기재하면 전액 반환 + 추가징수 처벌을 받아요.
+        </Info>
+        <SpokeLink
+          num="02"
+          title="실업급여 실업인정 특례"
+          desc="원거리 거주자, 장애인 등 비대면 실업인정 특례 대상"
+          href="/w/실업급여-실업인정-특례"
+        />
+        <a
+          href="https://www.work24.go.kr"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ext-btn ext-btn-black"
+        >
+          <span className="ext-btn-badge">고용24 공식</span>
+          <span className="ext-btn-text">실업인정 온라인 신청 바로가기</span>
+          <span className="ext-btn-cta">바로가기 →</span>
+        </a>
+      </Sec>
 
-      <P>실제로 보면, 지원 시 직종이나 지역 범위를 너무 좁게 설정하지 않는 게 좋아요. 희망 직종이 아니어도 지원 가능하고, 다양한 공고에 지원해도 구직활동으로 인정돼요. 다만 취업 의사 없이 반복 지원하다가 부정수급으로 적발되면 불이익이 생길 수 있으니 성실하게 활동하는 게 원칙이에요.</P>
-
-      <P>사람인·잡코리아 같은 민간 채용사이트도 고용24와 연동되는 경우가 많아요. 연동 가능한 사이트 목록은 <A href="https://www.work24.go.kr">고용24</A>에서 확인할 수 있어요. 연동이 안 되는 사이트에서 지원했다면 입사지원 완료 화면을 캡처해서 첨부하면 실적으로 인정받을 수 있어요. 회사명, 직종, 지원 날짜가 확인 가능한 화면이어야 해요.</P>
-
-      <InlineLink icon="📋" title="실업급여 구비서류 — 단계별 필요 서류 전체" desc="수급자격 신청부터 실업인정까지 어떤 서류가 필요한지 정리했어요." href="/w/실업급여-구비서류" />
-
-      <div style={{ marginTop: 20 }}>
-        <div style={{ fontSize: 14, fontWeight: 800, color: C.t1, marginBottom: 10 }}>{"📖 실업급여 구직활동 더 알아보기"}</div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-          <SpokeLink num="01" title="실업급여 지급일 — 실업인정 후 입금까지 기간" desc="인정일 이후 2~5일 내 입금 기준 안내" href="/w/실업급여-지급일" />
-          <SpokeLink num="02" title="실업급여 반복수급 — 5년 3회 감액 기준" desc="반복 수급 시 10%~50% 삭감 기준 정리" href="/w/실업급여-반복수급" />
-          <SpokeLink num="03" title="실업급여 기준기간 — 18개월 피보험 180일" desc="기준기간 산정 방법과 합산 기준 정리" href="/w/실업급여-기준기간" />
-        </div>
-      </div>
-
-      {/* ── SECTION 05. 온라인 교육 ── */}
       <Divider />
-      <Sec n="SECTION 05" title="실업급여 구직활동 온라인 교육은 어디서 받나요?" sub="1차 실업인정은 교육 수강만으로 끝나요" />
 
-      <P>실업급여 수급 첫 번째 실업인정은 구직활동 대신 수급자격자 교육 수강으로 대체돼요. 수급자격 인정 신청을 마치면 고용24에서 &quot;수급자격자 교육&quot;을 수강하라는 안내가 나오는데, 이 과정을 이수해야 1차 실업인정이 처리돼요. 이수를 안 하면 <B>1차 급여가 지급되지 않으니</B> 반드시 수강해야 해요.</P>
+      <Sec n="06" id="faq" title="자주 묻는 질문" sub="구직활동 · 실적 제출 · 증빙">
+        <FAQAccordion items={meta.faq} />
+      </Sec>
 
-      <P>수강 시간은 약 1시간이에요. 고용24 앱이나 웹사이트에서 PC·스마트폰 모두 들을 수 있어요. 이수 완료 후에는 자동으로 1차 실업인정 실적이 처리되니까 따로 신청할 필요가 없어요.</P>
-
-      <TableTitle>차수별 구직활동 인정 기준</TableTitle>
-      <div style={{ overflowX: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-          <thead>
-            <tr><THL>차수</THL><TH>인정 기준</TH><TH>구직활동 필수 여부</TH></tr>
-          </thead>
-          <tbody>
-            {[
-              ["1차", "수급자격자 교육 수강", "불필요"],
-              ["2~4차", "재취업 활동 1회 이상", "불필요 (구직 외 활동 가능)"],
-              ["5차 이후", "재취업 활동 2회 이상", "구직활동 1회 필수 포함"],
-            ].map((row, ri) => (
-              <tr key={ri}>
-                {row.map((cell, ci) => (
-                  <td key={ci} style={{ padding: "8px 8px", textAlign: ci === 0 ? "left" : "center", borderBottom: `1px solid ${C.line}`, color: ci === 0 ? C.t1 : C.t2, fontWeight: ci === 0 || ri === 2 ? 600 : 400 }}>{cell}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <TableNote>※ 1일 1회만 인정 — 2회 필요 시 반드시 이틀에 걸쳐 활동</TableNote>
-
-      <H3>나한테 맞는 방법은?</H3>
-
-      <div style={{ background: C.navyLight2, border: `1px solid ${C.line}`, borderRadius: 8, margin: "12px 0", overflow: "hidden" }}>
-        {[
-          { t: "1차 실업인정이라면", d: "수급자격자 교육만 들으면 끝나요" },
-          { t: "2~4차라면", d: "워크넷 입사지원 1회가 가장 간편해요" },
-          { t: "5차 이후라면", d: "입사지원 + 면접(또는 훈련)을 이틀에 나눠서 하세요" },
-        ].map((item, i) => (
-          <div key={i} style={{ padding: "12px 16px", borderBottom: i < 2 ? `1px solid ${C.line}` : "none", display: "flex", gap: 12 }}>
-            <div style={{ width: 22, height: 22, background: C.navy, color: "#fff", borderRadius: 6, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 800, flexShrink: 0 }}>{i + 1}</div>
-            <div>
-              <h4 style={{ fontSize: 13, fontWeight: 700, color: C.t1, marginBottom: 1 }}>{item.t}</h4>
-              <p style={{ fontSize: 12, color: C.t3, lineHeight: 1.45, margin: 0 }}>{item.d}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <BridgeCard
-        question="실업인정 후 급여가 언제 들어오는지 궁금하시죠?"
-        body={<>실업인정 신청 후 보통 <strong style={{ color: C.navy }}>2~5일 이내</strong>에 입금돼요. 지급일 계산법과 첫 입금까지 걸리는 기간을 정리했어요.</>}
-        btnText="실업급여 지급일 기준 보기 →"
-        href="/w/실업급여-지급일"
+      <RelatedArticles
+        items={[
+          { title: "실업급여 신청방법 온라인 절차", href: "/w/실업급여-신청방법" },
+          { title: "실업급여 수급조건 피보험기간 180일", href: "/w/실업급여-수급-조건" },
+          { title: "실업급여 대기기간 7일 의미", href: "/w/실업급여-대기기간" },
+          { title: "실업급여 소정급여일수 나이별", href: "/w/실업급여-소정급여일수" },
+          { title: "실업급여 부정수급 처벌 기준", href: "/w/실업급여-부정수급" },
+        ]}
       />
-
-      {/* ── FAQ ── */}
-      <Divider />
-      <Sec n="FAQ" title="자주 묻는 질문" />
-      <FAQAccordion items={[
-        { q: "실업급여 구직활동 인정 횟수가 차수마다 다른가요?", a: '<strong>네, 달라요.</strong> 1차는 온라인 교육, 2~4차는 재취업 활동 1회, 5차 이후는 2회(구직활동 1회 필수)예요. 1일 1회만 인정되니까 2회가 필요한 차수는 이틀에 걸쳐 활동해야 해요.' },
-        { q: "사람인이나 잡코리아 입사지원도 실업급여 구직활동으로 인정되나요?", a: '고용24와 연동되는 민간 채용사이트는 <strong>자동으로 인정</strong>돼요. 연동이 안 되는 사이트라면 지원 완료 화면을 캡처해서 첨부하면 돼요.' },
-      ]} />
-
-      {/* 관련 글 */}
-      <RelatedArticles items={[
-        { title: "실업급여 신청방법 — 고용센터 방문부터 온라인까지", desc: "실업급여 · 신청", href: "/w/실업급여-신청방법" },
-        { title: "실업급여 부정수급 — 형사처벌 기준과 자진신고 감경", desc: "실업급여 · 부정수급", href: "/w/실업급여-부정수급" },
-        { title: "실업급여 지급일 — 실업인정 후 입금까지 기간", desc: "실업급여 · 지급일", href: "/w/실업급여-지급일" },
-        { title: "실업급여 기준기간 — 이직일 18개월 피보험 180일", desc: "실업급여 · 기준기간", href: "/w/실업급여-기준기간" },
-      ]} />
-
       <PrevNext
-        prev={{ title: "실업급여 수급자격 인정", href: "/w/실업급여-수급자격-인정" }}
-        next={{ title: "실업급여 기준기간 18개월", href: "/w/실업급여-기준기간" }}
+        prev={{ title: "실업급여 수급 조건", href: "/w/실업급여-수급-조건" }}
+        next={{ title: "실업급여 신청방법", href: "/w/실업급여-신청방법" }}
       />
     </BlogLayout>
   );

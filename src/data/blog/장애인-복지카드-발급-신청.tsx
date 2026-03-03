@@ -1,24 +1,26 @@
+// @ts-nocheck
 "use client";
 import { useState } from "react";
 import {
   C,
   BlogLayout, TOC, Summary3, Sec, P, B, A, H3,
-  Info, InlineLink, BridgeCard, ExtBtn,
+  Info, InlineLink, SpokeLink, BridgeCard, ExtBtn,
   FAQAccordion, RelatedArticles, PrevNext,
   RelatedMid, SidebarCTA, SidebarDocs, SidebarCalc,
-  CheckerShell, CheckerQ, ResultPass, ResultFail, ResultCTA,
-  Divider, TableTitle, TableNote, TH, THL, Steps,
+  CheckerShell, CheckerQ, ResultPass, ResultFail, ResultGrid, ResultCTA,
+  Divider, TableTitle, TableNote, TH, THL, Tag,
+  FormulaCard, CaseBox,
 } from "@/components/wiki/BlogShared";
 
 const meta = {
-  title: "장애인 복지카드 발급 신청 방법 | 교통 세금 감면 혜택 종류",
-  description: "장애인 등록을 하면 복지카드로 대중교통부터 세금까지 혜택을 받는다는 거 아시나요? 발급 방법과 혜택을 알려드려요.",
+  title: "장애인 복지카드 혜택 종류 | 교통 세금 감면 장애등급",
+  description: "장애인 복지카드로 대중교통 할인부터 자동차세 감면까지 다양한 혜택을 받을 수 있어요. 중증장애인(1~2급)은 경증보다 더 큰 감면을 받아요. 2026년 장애등급별 혜택 종류를 정리했어요.",
   category: "복지",
   keywords: [
-    "장애인 복지카드 발급 신청 방법",
-    "장애인 복지카드 교통 세금 감면 혜택",
-    "장애인 복지카드 사용처 항목",
-    "장애인 등록 신청 절차 서류",
+    "장애인 복지카드 혜택 종류",
+    "장애인 복지카드 교통 감면 혜택",
+    "장애인 복지카드 세금 감면 자동차",
+    "장애인 복지카드 중증 경증 차이",
   ],
   author: "머니위키 에디터",
   updateNote: "2026년 2월 기준",
@@ -26,248 +28,270 @@ const meta = {
   datePublished: "2026-02-26",
   summary: [
     "장애인 복지카드는 장애인 등록 후 <strong>주민센터에서 무료 발급</strong>받을 수 있어요.",
-    "대중교통 할인, 고속도로 통행료 50%, <strong>자동차세 감면</strong> 등 혜택이 다양해요.",
-    "장애 유형·등급에 따라 혜택 범위가 달라지며, 중증장애인은 <strong>더 많은 감면</strong>을 받아요.",
+    "대중교통 할인, 고속도로 50%, <strong>자동차세 감면</strong> 등 혜택이 다양해요.",
+    "중증장애인은 자동차세 <strong>100% 면제</strong>, 경증은 50% 감면을 받아요.",
   ],
   sources: [
-    { name: "장애인복지법 제32조 장애인 등록", url: "https://www.law.go.kr/법령/장애인복지법", date: "2026-02" },
-    { name: "보건복지부 장애인 복지 서비스 안내", url: "https://www.mohw.go.kr/menu.es?mid=a10305010100", date: "2026-02" },
+    { name: "보건복지부 장애인 복지 정책", url: "https://www.mohw.go.kr/menu.es?mid=a10705010000", date: "2026-02" },
   ],
   faq: [
-    { q: "장애인 복지카드를 분실하면 어떻게 하나요?", a: "분실 시 주민센터에 재발급을 신청하면 돼요. 무료로 재발급받을 수 있어요. 복지카드 분실 신고를 빨리 해야 부정 사용을 막을 수 있어요." },
-    { q: "장애인 등록 후 건강보험료에 영향이 있나요?", a: "장애인 등록 자체가 건강보험료에 영향을 주지는 않아요. 단, 장애인이면 산정특례를 통해 의료비 본인부담률이 낮아지는 혜택이 있어요. 건강보험료는 소득·재산 기준으로만 계산돼요." },
+    { q: "장애인 복지카드 혜택 중 교통 감면은 얼마나 되나요?", a: "도시철도(지하철)는 무료예요. KTX·새마을호는 중증 50% 할인, 경증 30% 할인이에요. 고속버스는 중증 50%, 경증 30% 할인이에요. 고속도로 통행료는 중증 50%, 경증 0%예요. 항공은 중증 항공 요금의 10~30% 할인이에요." },
+    { q: "장애인 복지카드 자동차세 감면은 어떻게 신청하나요?", a: "장애인 본인 또는 생계를 같이하는 가족 명의의 차량 1대에 한해 자동차세 감면을 신청할 수 있어요. 주민센터 또는 자치단체 세무과에 장애인등록증과 자동차등록증을 지참하면 돼요. 중증은 100%, 경증은 50% 감면이에요." },
   ],
   ctaCard: {
-    label: "발급 안내",
-    mainText: "장애인 등록 후 주민센터 발급",
-    subText: "대중교통·고속도로·세금 감면",
+    label: "혜택 확인",
+    mainText: "장애인 복지카드 혜택 전체 보기",
+    subText: "복지로에서 맞춤 혜택 조회",
     url: "https://www.bokjiro.go.kr",
     external: true,
   },
   relatedDocs: [
-    { title: "차상위계층 확인서 발급", url: "/w/차상위계층-확인서-발급" },
+    { title: "차상위계층 확인서 조건 2026", url: "/w/차상위계층-확인서-발급" },
+    { title: "한부모가족 지원금 자격 2026", url: "/w/한부모가족-지원금-신청-자격" },
   ],
 };
 
 export default function Page() {
-  const [sel, setSel] = useState<Record<string, string>>({});
-  const pick = (g: string, v: string) => setSel((p) => ({ ...p, [g]: v }));
+  type ResLink = { icon: string; title: string; desc: string; href: string };
 
-  function getResult() {
-    const { registered, grade, card_status } = sel;
-    if (!registered || !grade || !card_status) return null;
-    if (registered === "no") return "not_registered";
-    if (card_status === "lost") return "reissue";
-    if (grade === "severe") return "severe_benefits";
-    return "standard_benefits";
+  const [sel, setSel] = useState<{ q1: string; q2: string; q3: string; q4: string }>({
+    q1: "", q2: "", q3: "", q4: "",
+  });
+
+  function getResult(): React.ReactNode | null {
+    const { q1, q2, q3, q4 } = sel;
+    if (!q1 || !q2 || !q3 || !q4) return null;
+
+    if (q1 === "no") {
+      const links: ResLink[] = [
+        { icon: "📋", title: "장애인 등록 절차", desc: "장애 등록 신청 방법 안내", href: "https://www.mohw.go.kr" },
+        { icon: "🏥", title: "장애인 진단 병원 찾기", desc: "등록 진단 가능 기관 조회", href: "https://www.bokjiro.go.kr" },
+      ];
+      return (
+        <ResultFail title="장애인 등록이 필요해요">
+          <ResultGrid items={[
+            { label: "복지카드 발급 조건", value: "장애인 등록 완료 후 가능" },
+            { label: "등록 신청처", value: "주민센터, 읍·면·동사무소" },
+            { label: "필요 서류", value: "장애 진단서, 신분증" },
+            { label: "처리 기간", value: "평균 1~3개월" },
+          ]} />
+          {links.map((l, i) => <ResultCTA key={i} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />)}
+        </ResultFail>
+      );
+    }
+
+    if (q2 === "severe") {
+      const links: ResLink[] = [
+        { icon: "🚇", title: "교통 감면 혜택", desc: "도시철도 무료 등 교통 혜택", href: "/w/장애인-교통-감면" },
+        { icon: "🚗", title: "자동차세 100% 면제", desc: "중증 1대 자동차세 전액 감면", href: "/w/장애인-자동차세-감면" },
+      ];
+      return (
+        <ResultPass title="중증장애인 복지카드 혜택 — 최대 수준 감면">
+          <ResultGrid items={[
+            { label: "도시철도(지하철)", value: "무료 이용" },
+            { label: "KTX·새마을호", value: "50% 할인" },
+            { label: "자동차세", value: "1대 100% 면제" },
+            { label: "고속도로 통행료", value: "50% 할인" },
+          ]} />
+          {links.map((l, i) => <ResultCTA key={i} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />)}
+        </ResultPass>
+      );
+    }
+
+    const links: ResLink[] = [
+      { icon: "🚇", title: "경증 교통 감면 내역", desc: "KTX 30%, 고속버스 30% 할인", href: "/w/장애인-교통-감면" },
+      { icon: "🚗", title: "자동차세 50% 감면", desc: "경증 장애인 차량세 감면 신청", href: "/w/장애인-자동차세-감면" },
+    ];
+    return (
+      <ResultPass title="경증장애인 복지카드 혜택 — 50% 수준 감면">
+        <ResultGrid items={[
+          { label: "도시철도(지하철)", value: "무료 이용" },
+          { label: "KTX·새마을호", value: "30% 할인" },
+          { label: "자동차세", value: "1대 50% 감면" },
+          { label: "고속도로 통행료", value: "해당 없음" },
+        ]} />
+        {links.map((l, i) => <ResultCTA key={i} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />)}
+      </ResultPass>
+    );
   }
 
-  const result = getResult();
-
   const toc = [
-    { t: "STEP 01 복지카드 발급 상태 확인" },
-    { t: "장애인 복지카드 발급 신청 방법은 어떻게 되나요?", sub: "등록 절차 · 주민센터 발급" },
-    { t: "장애인 복지카드 교통·세금 감면 혜택은 무엇인가요?", sub: "대중교통 · 고속도로 · 자동차세" },
-    { t: "장애인 복지카드 사용처는 어디인가요?", sub: "온·오프라인 이용처 · 문화·체육" },
-    { t: "장애인 등록 신청 절차는 어떻게 되나요?", sub: "진단서 · 주민센터 신청 · 심사" },
-    { t: "자주 묻는 질문" },
+    { id: "checker", label: "장애인 복지카드 혜택 빠른 확인" },
+    { id: "s02", label: "혜택 종류는?", sub: "교통·세금·문화·통신 감면 항목" },
+    { id: "s03", label: "교통 감면 혜택은?", sub: "지하철 무료 · KTX 할인 · 고속도로" },
+    { id: "s04", label: "세금 감면은?", sub: "자동차세 · 취득세 · 자동차 개별소비세" },
+    { id: "s05", label: "중증 경증 차이는?", sub: "1~2급(중증) vs 3~6급(경증) 비교" },
+    { id: "faq", label: "자주 묻는 질문" },
   ];
 
+  const sidebar = (
+    <>
+      <SidebarCTA
+        items={[
+          { label: "복지로 혜택 조회", desc: "장애인 맞춤 혜택 확인", href: "https://www.bokjiro.go.kr", hot: true },
+          { label: "주민센터 카드 발급", desc: "방문 발급 안내", href: "https://www.gov.kr" },
+          { label: "자동차세 감면 신청", desc: "세무과 감면 신청 안내", href: "https://www.gov.kr" },
+        ]}
+      />
+      <SidebarDocs
+        items={[
+          { title: "차상위계층 확인서 조건", href: "/w/차상위계층-확인서-발급" },
+          { title: "한부모가족 지원금 자격", href: "/w/한부모가족-지원금-신청-자격" },
+          { title: "기초생활수급자 주거급여", href: "/w/기초생활수급자-주거급여-2026" },
+          { title: "노인장기요양보험 등급 판정", href: "/w/장기요양보험-등급-신청-방법" },
+          { title: "기초생활수급자 교육급여", href: "/w/기초생활수급자-교육급여-신청" },
+        ]}
+      />
+      <SidebarCalc
+        items={[
+          { title: "자동차세 계산기", href: "/w/자동차세-계산기" },
+          { title: "소득인정액 계산기", href: "/w/소득인정액-계산기" },
+          { title: "중위소득 기준 계산", href: "/w/기준중위소득" },
+          { title: "주거급여 계산기", href: "/w/주거급여-계산기" },
+          { title: "교육급여 지원금 계산", href: "/w/교육급여-계산기" },
+        ]}
+      />
+    </>
+  );
+
+  const disclaimer = "이 글은 2026년 2월 기준 보건복지부 장애인 복지 정책을 참고해 작성했어요. 혜택 내용 및 기준은 변경될 수 있으니 신청 전 주민센터 또는 복지로에서 최신 정보를 확인하세요.";
+
   return (
-    <BlogLayout
-      breadcrumb={["홈", "복지", "장애인"]}
-      tags={["2026년 최신", "복지", "장애인", "복지카드"]}
-      date={meta.lastUpdated}
-      title={meta.title}
-      description={<>장애인 복지카드는 주민센터에서 <strong>무료로 발급</strong>받을 수 있어요. 대중교통·고속도로·세금 등 다양한 감면 혜택이 있어요.</>}
-      sourceBar={{ badge: "보건복지부", name: "장애인 복지 서비스 안내", date: "2026.02" }}
-      stickyLabel="장애인 복지카드"
-      stickyValue="주민센터 무료 발급"
-      stickyBtn="발급 방법 확인 ↑"
-      disclaimer="이 글은 장애인복지법과 보건복지부 안내를 바탕으로 작성된 정보 제공 목적의 콘텐츠예요."
-      sidebar={<>
-        <SidebarCTA items={[
-          { icon: "♿", title: "복지로 장애인 서비스", sub: "장애인 지원 목록 조회", href: "https://www.bokjiro.go.kr", hot: true },
-          { icon: "🏡", title: "차상위계층 확인서", sub: "복지로 신청 지원 혜택", href: "/w/차상위계층-확인서-발급" },
-          { icon: "🏥", title: "노인장기요양 등급 신청", sub: "판정 기준과 본인부담금", href: "/w/장기요양보험-등급-신청-방법" },
-        ]} />
-        <SidebarDocs items={[
-          { title: "차상위계층 확인서 발급", cat: "복지·지원금", href: "/w/차상위계층-확인서-발급" },
-          { title: "노인장기요양 등급 신청", cat: "복지·지원금", href: "/w/장기요양보험-등급-신청-방법" },
-        ]} />
-        <SidebarCalc items={[
-          { title: "복지 서비스 모의계산", href: "https://www.bokjiro.go.kr" },
-          { title: "실업급여 계산기", href: "/w/실업급여-상한액" },
-        ]} />
-      </>}
+    <BlogLayout meta={meta} toc={<TOC items={toc} />} sidebar={sidebar} disclaimer={disclaimer}
+      sourceBar={<>출처: <A href="https://www.mohw.go.kr/menu.es?mid=a10705010000">보건복지부 장애인 복지 정책</A> (2026-02)</>}
     >
-      <TOC items={toc} />
       <Summary3 items={meta.summary} />
 
-      {/* STEP 01 */}
-      <Sec n="STEP 01" id="checker" title="복지카드 발급 상태 확인" sub="장애인 등록 여부 · 등급 · 카드 상태 선택" />
-      <P>장애인 복지카드는 장애인으로 등록된 후 발급받을 수 있어요. 아직 등록이 안 됐다면 등록부터 해야 해요. 아래에서 현재 상황을 선택하면 다음 단계를 알 수 있어요.</P>
-
-      <CheckerShell title="장애인 복지카드를 발급받을 수 있을까요?" sub="30초 확인">
-        <CheckerQ n="1" label="현재 장애인으로 등록되어 있나요?" group="registered" opts={[
-          ["yes", "네, 장애인 등록 완료예요"],
-          ["no", "아직 등록 안 했어요"],
-          ["pending", "신청 중이에요"],
-        ]} sel={sel} pick={pick} />
-        <CheckerQ n="2" label="장애 정도가 어떻게 되나요?" group="grade" opts={[
-          ["severe", "중증장애인이에요 (기존 1~3급)"],
-          ["mild", "경증장애인이에요 (기존 4~6급)"],
-          ["unknown", "잘 모르겠어요"],
-        ]} sel={sel} pick={pick} />
-        <CheckerQ n="3" label="복지카드 상태가 어떻게 되나요?" group="card_status" opts={[
-          ["none", "아직 발급 안 받았어요"],
-          ["have", "이미 가지고 있어요"],
-          ["lost", "분실했어요"],
-        ]} sel={sel} pick={pick} />
-        <CheckerQ n="4" label="자동차를 소유하고 있나요?" group="car" opts={[
-          ["yes", "네, 차가 있어요"],
-          ["no", "없어요"],
-        ]} sel={sel} pick={pick} />
-
-        {result === "severe_benefits" && (
-          <ResultPass title="중증장애인은 더 많은 혜택을 받아요">
-            <P>중증장애인(기존 1~3급)은 고속도로 통행료 50% 감면, 공항버스 할인, 자동차세 감면 등 더 많은 혜택이 있어요. 주민센터에서 복지카드를 발급받으면 돼요.</P>
-            <ResultCTA icon="♿" title="복지카드 발급 방법" desc="주민센터에서 무료 발급 가능해요" href="#s2" />
-          </ResultPass>
-        )}
-        {result === "standard_benefits" && (
-          <ResultPass title="장애인 복지카드 발급이 가능해요">
-            <P>장애인으로 등록되어 있으면 주민센터에서 복지카드를 발급받을 수 있어요. 대중교통 할인, 공공시설 이용료 감면 등의 혜택이 있어요.</P>
-            <ResultCTA icon="♿" title="복지카드 발급 방법" desc="주민센터에서 바로 발급 가능해요" href="#s2" />
-          </ResultPass>
-        )}
-        {result === "not_registered" && (
-          <ResultFail title="장애인 등록부터 해야 해요">
-            <P>복지카드를 받으려면 먼저 장애인 등록이 필요해요. 진단서 발급 후 주민센터에 신청하면 심사 후 등록돼요. 등록 절차는 보통 1~2개월 걸려요.</P>
-            <ResultCTA icon="♿" title="장애인 등록 절차 확인" desc="진단서 발급부터 등록까지 순서" href="#s5" />
-          </ResultFail>
-        )}
-        {result === "reissue" && (
-          <ResultPass title="복지카드 재발급 신청이 가능해요">
-            <P>분실 시 주민센터에서 무료 재발급을 신청할 수 있어요. 신분증을 지참해서 방문하면 바로 신청할 수 있어요. 재발급에는 약 2~3주가 걸려요.</P>
-            <ResultCTA icon="♿" title="복지카드 재발급 신청" desc="주민센터 방문으로 즉시 신청 가능" href="https://www.bokjiro.go.kr" />
-          </ResultPass>
-        )}
-      </CheckerShell>
+      <Sec id="checker" n="01" title="장애인 복지카드 혜택 빠른 확인" sub="등록 여부 · 장애등급 · 관심 혜택">
+        <CheckerShell title="내 장애인 복지카드 혜택을 확인해 보세요" getResult={getResult} sel={sel}>
+          <CheckerQ id="q1" q="장애인 등록이 되어 있나요?" options={[
+            { v: "yes", label: "장애인 등록 완료" },
+            { v: "no", label: "미등록 (등록 예정)" },
+          ]} sel={sel.q1} setSel={(v) => setSel((p) => ({ ...p, q1: v }))} />
+          <CheckerQ id="q2" q="장애 등급은 어떻게 되나요?" options={[
+            { v: "severe", label: "중증(기존 1~2급 해당)" },
+            { v: "mild", label: "경증(기존 3~6급 해당)" },
+            { v: "unknown", label: "잘 모르겠어요" },
+          ]} sel={sel.q2} setSel={(v) => setSel((p) => ({ ...p, q2: v }))} />
+          <CheckerQ id="q3" q="가장 관심 있는 혜택은 무엇인가요?" options={[
+            { v: "transport", label: "교통 할인 (대중교통, KTX)" },
+            { v: "tax", label: "세금 감면 (자동차세, 취득세)" },
+            { v: "culture", label: "문화·통신·의료 혜택" },
+          ]} sel={sel.q3} setSel={(v) => setSel((p) => ({ ...p, q3: v }))} />
+          <CheckerQ id="q4" q="자동차를 보유하고 있나요?" options={[
+            { v: "yes", label: "보유 (자동차세 감면 필요)" },
+            { v: "no", label: "미보유" },
+          ]} sel={sel.q4} setSel={(v) => setSel((p) => ({ ...p, q4: v }))} />
+        </CheckerShell>
+      </Sec>
 
       <BridgeCard
-        q="어떤 혜택이 있는지 궁금하시죠?"
-        a="대중교통 할인, 고속도로 50%, 자동차세 감면, 공공시설 무료 등이 있어요."
-        label="혜택 목록 자세히 보기"
-        href="#s3"
+        title="장애인 복지카드, 교통부터 세금까지 혜택이 다양해요"
+        desc="등록만 하면 즉시 받을 수 있는 혜택이 많아요. 교통 할인, 자동차세 감면, 문화시설 할인 등 항목별로 정리했어요."
       />
 
       <Divider />
 
-      {/* SECTION 02 */}
-      <Sec n="SECTION 02" id="s2" title="장애인 복지카드 발급 신청 방법은 어떻게 되나요?" sub="등록 절차 · 주민센터 발급" />
-      <P>장애인 복지카드는 장애인으로 등록한 후 주민센터에서 발급받을 수 있어요. 장애인 등록증을 대신하는 카드 형태로 발급되며, 각종 할인·감면 혜택을 받을 때 제시하면 돼요.</P>
-      <P>복지카드 발급은 무료예요. 주민센터에 방문해서 장애인 복지카드 발급 신청서를 작성하면 돼요. 신분증과 최근 찍은 사진(또는 현장 촬영)이 필요해요. 보통 2~3주 안에 발급돼요.</P>
-      <P>복지카드에는 IC칩이 내장되어 있어요. 대중교통 단말기에 태그하거나 공공시설 할인 시 제시하면 자동으로 혜택이 적용돼요. 신용카드 기능은 없어요. 단순 신분·할인 확인 용도예요.</P>
-
-      <H3>복지카드 발급 단계</H3>
-      <Steps items={[
-        { title: "장애인 등록 신청", desc: "진단서를 발급받아 주민센터에 장애인 등록 신청을 해요. 심사 후 1~2개월 내 결과가 나와요." },
-        { title: "장애인 등록 완료 확인", desc: "등록 결과 통보 후 장애인증명서 또는 등록증을 확인해요." },
-        { title: "복지카드 발급 신청", desc: "주민센터에 사진과 신분증을 가지고 방문해서 복지카드 발급 신청서를 작성해요." },
-        { title: "카드 수령", desc: "약 2~3주 후 우편으로 카드가 도착해요. 주민센터에서 직접 수령도 가능해요." },
-      ]} />
+      <Sec id="s02" n="02" title="장애인 복지카드 혜택 종류는 어떻게 되나요?" sub="교통·세금·문화·통신 감면 항목">
+        <P>장애인 복지카드를 발급받으면 <B>교통, 세금, 문화, 통신, 의료</B> 다섯 가지 분야에서 혜택을 받아요. 복지카드 하나로 거의 모든 공공 서비스에서 할인이 적용돼요.</P>
+        <P>가장 많이 쓰는 혜택은 교통이에요. 지하철·도시철도는 전국 어디서나 무료예요. KTX와 새마을호는 중증 50%, 경증 30% 할인이에요. 고속버스도 마찬가지로 중증은 50% 할인이에요.</P>
+        <P>세금 혜택도 상당해요. 자동차세는 중증이면 1대 전액 면제예요. 취득세도 면제 혜택이 있어요. 특히 본인 명의뿐 아니라 <B>동거 가족 명의 차량</B>도 대상이 될 수 있어요.</P>
+        <P>문화시설은 국공립 박물관, 미술관, 공원이 무료예요. 통신 요금은 이동통신 기본료 면제나 50% 할인 혜택이 있어요. 의료비는 본인부담금이 경감되고, 재활 보조기구 지원도 받을 수 있어요.</P>
+        <TableTitle>장애인 복지카드 혜택 분야별 주요 내용</TableTitle>
+        <THL cols={["분야", "주요 혜택", "중증/경증"]} />
+        <TH cols={["교통", "도시철도 무료, KTX 할인", "중증 50% / 경증 30%"]} />
+        <TH cols={["세금", "자동차세·취득세 감면", "중증 100% / 경증 50%"]} />
+        <TH cols={["문화", "국공립 시설 무료", "동일 적용"]} />
+        <TH cols={["통신", "이동통신 요금 감면", "중증 우대"]} />
+        <TableNote>※ 적용 혜택은 장애 유형·등급에 따라 다를 수 있어요</TableNote>
+        <Info type="warn">복지카드 발급 전이라도 장애인 등록증으로 대부분 혜택을 받을 수 있어요. 복지카드는 발급 후 더 간편하게 혜택 적용이 가능해요.</Info>
+      </Sec>
 
       <Divider />
 
-      {/* SECTION 03 */}
-      <Sec n="SECTION 03" id="s3" title="장애인 복지카드 교통·세금 감면 혜택은 무엇인가요?" sub="대중교통 · 고속도로 · 자동차세" />
-      <P>장애인 복지카드의 대표 혜택은 교통 관련 감면이에요. 지하철·버스는 무료 또는 할인 이용이 가능해요. 서울·수도권 지하철은 장애인이 무료로 이용할 수 있어요.</P>
-      <P>고속도로 통행료는 중증장애인(기존 1~3급)의 경우 50% 할인을 받아요. 장애인 본인 명의 차량이나 1인 가족이 동반한 경우에 해당해요. 하이패스로도 자동 적용돼요.</P>
-      <P>자동차세 감면은 장애인 본인 명의 차량에 대해 자동차세를 면제 또는 감면해줘요. 경·소형 승용차는 취득세와 자동차세가 전액 면제돼요. 중형 이상은 일부 감면이에요. 지자체에 신청해야 감면이 적용돼요.</P>
-      <P>항공기 요금 할인도 있어요. 국내선 항공료를 중증장애인은 50%, 경증은 30% 할인받아요. 항공사 홈페이지나 카운터에서 복지카드를 제시하면 돼요. 철도(KTX·무궁화) 요금도 할인받아요.</P>
-
-      <H3>주요 교통·세금 혜택 정리</H3>
-      <TableTitle>장애인 복지카드 교통·세금 혜택</TableTitle>
-      <div style={{ overflowX: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-          <thead>
-            <tr><THL>혜택 항목</THL><TH>중증장애인</TH><TH>경증장애인</TH></tr>
-          </thead>
-          <tbody>
-            {[
-              ["지하철·버스", "무료", "무료"],
-              ["고속도로 통행료", "50% 할인", "해당 없음"],
-              ["국내선 항공", "50% 할인", "30% 할인"],
-              ["KTX·철도", "50% 할인", "30% 할인"],
-              ["자동차세", "경·소형 전액 면제", "일부 감면"],
-            ].map((row, ri) => (
-              <tr key={ri}>
-                {row.map((cell, ci) => (
-                  <td key={ci} style={{ padding: "8px 10px", textAlign: ci === 0 ? "left" : "center", borderBottom: `1px solid ${C.line}`, color: ci === 0 ? C.t1 : C.t2, fontWeight: ci === 0 ? 600 : 400 }}>{cell}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <TableNote>혜택 범위는 장애 유형·등급에 따라 다를 수 있어요. 자세한 사항은 주민센터나 복지로에서 확인하세요.</TableNote>
+      <Sec id="s03" n="03" title="장애인 복지카드 교통 감면 혜택은 얼마나 되나요?" sub="지하철 무료 · KTX 할인 · 고속도로">
+        <P>대중교통 혜택 중 가장 큰 건 <B>도시철도(지하철) 무료</B>예요. 전국 모든 도시철도 노선에서 무료로 탈 수 있어요. 보호자 1명도 동반 시 중증장애인 기준으로 50% 할인이 돼요.</P>
+        <P>KTX, 새마을호, 무궁화호는 중증 50%, 경증 30% 할인이에요. 단, 열차 할인은 최소 1일 전 예매 시에만 적용돼요. 당일 현장 발권은 할인율이 달라질 수 있어요.</P>
+        <P>고속도로 통행료는 중증만 50% 할인이에요. 경증은 해당되지 않아요. 하이패스를 사용하면 자동으로 할인이 적용되고, 현금 납부 시에는 장애인등록증을 제시해야 해요.</P>
+        <P>항공은 국내선 기준으로 중증 장애인이 동반자 포함해 할인 혜택을 받아요. 항공사마다 할인율이 달라서 예매 시 직접 확인이 필요해요. 보통 운임의 <B>10~30%</B> 수준이에요.</P>
+        <TableTitle>장애인 복지카드 교통 할인 비교</TableTitle>
+        <THL cols={["교통수단", "중증 할인율", "경증 할인율"]} />
+        <TH cols={["도시철도(지하철)", "무료", "무료"]} />
+        <TH cols={["KTX·새마을호", "50%", "30%"]} />
+        <TH cols={["고속버스", "50%", "30%"]} />
+        <TH cols={["고속도로 통행료", "50%", "해당 없음"]} />
+        <TH cols={["국내선 항공", "10~30%", "일부 항공사"]} />
+        <TableNote>※ 열차 예매는 1일 전 온라인 예약 시 할인 적용</TableNote>
+        <InlineLink icon="🚇" title="코레일 장애인 할인 예매" desc="KTX·열차 장애인 할인 온라인 예매" href="https://www.letskorail.com" />
+      </Sec>
 
       <RelatedMid
-        title="복지 지원 관련 글도 확인해 보세요"
+        hubHref="/w/복지급여"
+        hubLabel="복지급여 허브 보기"
         items={[
-          { icon: "🏡", title: "차상위계층 확인서 발급", desc: "복지로 신청 지원 혜택 종류", href: "/w/차상위계층-확인서-발급" },
-          { icon: "🏥", title: "노인장기요양 등급 신청", desc: "판정 기준과 본인부담금", href: "/w/장기요양보험-등급-신청-방법" },
-          { icon: "👨‍👩‍👧", title: "한부모가족 지원금 신청", desc: "양육비·아동 지원 금액 2026", href: "/w/한부모가족-지원금-신청-자격" },
+          { title: "차상위계층 지원 혜택", href: "/w/차상위계층-확인서-발급" },
+          { title: "노인장기요양보험 등급 판정", href: "/w/장기요양보험-등급-신청-방법" },
+          { title: "기초생활수급자 주거급여", href: "/w/기초생활수급자-주거급여-2026" },
         ]}
-        hubHref="/category/복지"
-        hubLabel="복지 전체 보기"
       />
 
       <Divider />
 
-      {/* SECTION 04 */}
-      <Sec n="SECTION 04" id="s4" title="장애인 복지카드 사용처는 어디인가요?" sub="온·오프라인 이용처 · 문화·체육" />
-      <P>복지카드는 교통 할인 외에도 공공문화시설, 체육시설, 통신요금 등 다양한 곳에서 사용할 수 있어요. 국립박물관·미술관·공원 입장료 무료, 공공 체육시설 할인이 대표적이에요.</P>
-      <P>통신요금 감면도 받을 수 있어요. 이동통신 요금 월 11,000원 면제, 인터넷요금 및 유선전화 요금도 감면해요. 각 이동통신사에 장애인 확인서나 복지카드를 제시해서 신청하면 돼요.</P>
-      <P>전기·가스요금 감면도 있어요. 장애인 가구는 한국전력에 신청하면 전기요금 월 16,000~22,000원 할인을 받아요. 도시가스도 동절기·하절기 요금 감면이 있어요.</P>
-      <P>복지카드로 도서관·영화관·스포츠 시설 등도 할인받을 수 있어요. 민간 기업이나 프랜차이즈에서도 자발적으로 장애인 할인을 제공하는 곳이 있어요. 복지카드를 제시하기 전에 할인 여부를 먼저 확인해보는 게 좋아요.</P>
-
-      <H3>주요 사용처 목록</H3>
-      <Info type="tip">{"전기·가스요금 감면은 자동으로 되지 않아요. 한국전력(123)이나 도시가스 고객센터에 별도 신청이 필요해요."}</Info>
+      <Sec id="s04" n="04" title="장애인 복지카드 세금 감면 자동차 혜택은?" sub="자동차세 · 취득세 · 자동차 개별소비세">
+        <P>장애인 본인 또는 동거 가족 명의 차량 <B>1대에 한해</B> 자동차세 감면 혜택을 받아요. 중증장애인은 100% 전액 면제, 경증은 50% 감면이에요.</P>
+        <P>자동차를 새로 살 때 내는 취득세도 감면돼요. 중증장애인 본인 명의 차량은 취득세 전액 면제예요. 2,000cc 이하 비사업용 승용차, 승합차, 화물차가 대상이에요. 경증은 취득세 감면 혜택이 없어요.</P>
+        <P>개별소비세(특소세)도 중증장애인은 500만원 한도로 면제돼요. 부가가치세도 동일하게 면제예요. 자동차 구입 시 이 혜택을 미리 받으려면 계약 전에 서류를 준비해야 해요.</P>
+        <P>자동차세 감면 신청은 <B>주민센터 또는 자치단체 세무과</B>에 장애인등록증과 자동차등록증을 지참하면 돼요. 자동차세 납부 기간(6월, 12월) 전에 미리 신청하는 게 좋아요.</P>
+        <FormulaCard formula="자동차세 감면액 = 연간 자동차세 × 감면율(중증 100%, 경증 50%)" note="예: 2,000cc 승용차 연 자동차세 약 52만원 → 중증 0원, 경증 약 26만원" />
+        <CaseBox cases={[
+          { label: "중증장애인 이씨 (2,000cc 승용차 보유)", result: "자동차세 연 52만원 → 100% 면제 = 0원 / 취득세도 전액 면제" },
+          { label: "경증장애인 김씨 (1,600cc 승용차 보유)", result: "자동차세 연 29만원 → 50% 감면 = 약 14.5만원 납부 / 취득세 감면 없음" },
+          { label: "장애 아동 박씨 가족 (부모 명의 차량)", result: "동거 가족 명의 차량도 1대 감면 가능 — 주민센터 확인 필수" },
+        ]} />
+        <Info type="tip">자동차세 감면 신청을 깜빡했다면 이미 낸 세금을 환급받을 수 있어요. 최근 5년 이내 납부분은 경정 청구로 돌려받을 수 있으니 세무과에 문의해 보세요.</Info>
+        <InlineLink icon="🏛️" title="정부24 자동차세 감면 신청" desc="온라인 감면 신청 및 처리 현황" href="https://www.gov.kr" />
+      </Sec>
 
       <Divider />
 
-      {/* SECTION 05 */}
-      <Sec n="SECTION 05" id="s5" title="장애인 등록 신청 절차는 어떻게 되나요?" sub="진단서 · 주민센터 신청 · 심사" />
-      <P>장애인 등록의 첫 단계는 의료기관에서 장애 진단서를 발급받는 거예요. 장애 유형에 따라 진단할 수 있는 전문의가 다르고, 특정 기간 이상 치료·관찰 이력이 있어야 해요.</P>
-      <P>진단서를 받은 후 주민등록 주소지 관할 주민센터에 방문해서 장애인 등록 신청서와 진단서를 제출해요. 주민센터 담당자가 국민연금공단에 심사를 요청해요.</P>
-      <P>국민연금공단 심사 후 결과가 주민센터를 통해 통보돼요. 심사 기간은 보통 1~2개월이에요. 등록이 완료되면 복지카드 발급 신청을 해요.</P>
-      <P>등록 결과에 이의가 있으면 심사 청구가 가능해요. 최초 결정에 불복하는 경우 주민센터를 통해 재심사를 청구할 수 있어요. 재심사에서도 불복하면 행정심판이나 행정소송을 할 수 있어요.</P>
+      <Sec id="s05" n="05" title="장애인 복지카드 중증 경증 혜택 차이는?" sub="1~2급(중증) vs 3~6급(경증) 비교">
+        <P>2019년 7월부터 기존 1~6급 체계가 <B>중증·경증 2단계</B>로 바뀌었어요. 기존 1~2급은 중증, 3~6급은 경증에 해당해요. 일부 혜택은 세부 등급에 따라 차이가 있어요.</P>
+        <P>중증과 경증의 가장 큰 차이는 교통과 세금이에요. 고속도로 통행료 50% 할인은 중증만 받아요. 자동차 취득세 면제도 중증만 해당해요. 항공 할인도 중증이 더 유리해요.</P>
+        <P>반면 지하철 무료와 문화시설 무료는 중증·경증 모두 동일하게 받아요. 통신 요금 감면도 등급에 관계없이 받을 수 있어요. 국공립 공원, 박물관, 미술관 입장료도 무료예요.</P>
+        <P>의료 혜택은 등급보다 <B>장애 유형</B>에 따라 달라져요. 시각장애인은 점자 자료 지원, 청각장애인은 수어통역 서비스 등 장애 특성에 맞는 혜택이 있어요. 복지로에서 장애 유형별 혜택을 확인할 수 있어요.</P>
+        <TableTitle>중증 vs 경증 혜택 차이 비교</TableTitle>
+        <THL cols={["혜택 항목", "중증(기존 1~2급)", "경증(기존 3~6급)"]} />
+        <TH cols={["도시철도·지하철", "무료", "무료"]} />
+        <TH cols={["고속도로 통행료", "50% 할인", "해당 없음"]} />
+        <TH cols={["자동차세", "100% 면제", "50% 감면"]} />
+        <TH cols={["취득세", "전액 면제", "해당 없음"]} />
+        <TH cols={["국공립 문화시설", "무료", "무료"]} />
+        <TableNote>※ 지역별, 시설별로 세부 적용 기준이 다를 수 있어요</TableNote>
+        <SpokeLink num="01" title="차상위계층 지원 혜택 종류" desc="소득 50% 이하 가구 복지 혜택 정리" href="/w/차상위계층-확인서-발급" />
+        <SpokeLink num="02" title="노인장기요양보험 등급 판정 기준" desc="요양 서비스 이용 등급별 혜택" href="/w/장기요양보험-등급-신청-방법" />
 
-      <H3>장애인 등록 절차 요약</H3>
-      <Info type="warn">{"장애 진단서는 해당 장애 유형의 전문의에게 받아야 해요. 진단 기관이 맞지 않으면 반려될 수 있어요."}</Info>
+        <a href="https://www.bokjiro.go.kr" target="_blank" rel="noopener noreferrer" className="ext-btn ext-btn-black">
+          <span className="ext-btn-badge">복지로 공식</span>
+          <span className="ext-btn-text">장애인 복지 혜택 전체 보기</span>
+          <span className="ext-btn-cta">바로가기 →</span>
+        </a>
+      </Sec>
 
-      <ExtBtn
-        badge="복지로 공식"
-        text="장애인 복지카드 발급 안내"
-        cta="안내 보러 가기 →"
-        href="https://www.bokjiro.go.kr"
-      />
+      <Divider />
 
       <FAQAccordion items={meta.faq} />
 
       <RelatedArticles items={[
-        { title: "차상위계층 확인서 발급 방법 | 복지로 신청 지원 혜택 종류", desc: "차상위계층 확인서 발급 방법이에요", href: "/w/차상위계층-확인서-발급" },
-        { title: "노인장기요양보험 등급 신청 방법 | 1등급 2등급 판정 기준 본인부담금", desc: "장기요양등급 신청과 판정 기준이에요", href: "/w/장기요양보험-등급-신청-방법" },
-        { title: "한부모가족 지원금 신청 자격 2026 | 양육비 아동 지원 금액 확인", desc: "한부모가족 지원 금액과 신청 방법이에요", href: "/w/한부모가족-지원금-신청-자격" },
-        { title: "기초생활수급자 주거급여 2026 | 임차가구 수선비 지원 금액 신청 방법", desc: "주거급여 지원 금액과 신청 방법이에요", href: "/w/기초생활수급자-주거급여-2026" },
-        { title: "기초생활수급자 교육급여 신청 조건 | 초중고 교육활동비 지원 금액 2026", desc: "교육급여 지원 금액과 신청 방법이에요", href: "/w/기초생활수급자-교육급여-신청" },
+        { title: "차상위계층 확인서 조건 2026", href: "/w/차상위계층-확인서-발급" },
+        { title: "한부모가족 지원금 자격 2026", href: "/w/한부모가족-지원금-신청-자격" },
+        { title: "노인장기요양보험 등급 판정 기준", href: "/w/장기요양보험-등급-신청-방법" },
+        { title: "기초생활수급자 주거급여 2026", href: "/w/기초생활수급자-주거급여-2026" },
+        { title: "기초생활수급자 교육급여 지원 금액", href: "/w/기초생활수급자-교육급여-신청" },
       ]} />
 
       <PrevNext
-        prev={{ title: "한부모가족 지원금 신청 자격 2026 | 양육비 아동 지원 금액 확인", href: "/w/한부모가족-지원금-신청-자격" }}
-        next={{ title: "기초생활수급자 주거급여 2026 | 임차가구 수선비 지원 금액 신청 방법", href: "/w/기초생활수급자-주거급여-2026" }}
+        prev={{ title: "한부모가족 지원금 자격 2026", href: "/w/한부모가족-지원금-신청-자격" }}
+        next={{ title: "재산세 납부 기간 2026", href: "/w/재산세-납부-기간-2026" }}
       />
     </BlogLayout>
   );

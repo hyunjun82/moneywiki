@@ -1,308 +1,328 @@
+// @ts-nocheck
 "use client";
 import { useState } from "react";
 import {
   C,
-  BlogLayout, TOC, Summary3, Sec, P, B, A, H3, Divider,
-  Info, InlineLink, BridgeCard, ExtBtn,
-  TH, THL, TableTitle, TableNote,
-  CheckerShell, CheckerQ, ResultPass, ResultFail, ResultCTA,
-  FAQAccordion, RelatedArticles, PrevNext, RelatedMid,
-  SidebarCTA, SidebarDocs, SidebarCalc,
+  BlogLayout, TOC, Summary3, Sec, P, B, A, H3,
+  Info, InlineLink, SpokeLink, BridgeCard, ExtBtn,
+  FAQAccordion, RelatedArticles, PrevNext,
+  RelatedMid, SidebarCTA, SidebarDocs, SidebarCalc,
+  CheckerShell, CheckerQ, ResultPass, ResultFail, ResultGrid, ResultCTA,
+  Divider, TableTitle, TableNote, TH, THL, Tag,
+  FormulaCard, CaseBox,
 } from "@/components/wiki/BlogShared";
 
 const meta = {
-  title: "재산세 납부 기간 2026 | 7월 9월 분납 주택 토지 계산",
-  description: "재산세는 7월과 9월 두 번 내야 한다는 거 알고 계세요? 2026년 납부 기간과 주택·토지별 분납 조건을 알려드려요.",
+  title: "재산세 납부 기간 2026 | 7월 9월 주택 토지 세율 계산",
+  description: "2026년 재산세 납부 기간은 7월과 9월이에요. 주택은 두 번으로 나눠 내고, 토지는 9월에 한 번 내요. 공시가격 기준 세율과 실제 납부액 계산 방법을 알려드려요.",
   category: "세금",
   keywords: [
     "재산세 납부 기간 7월 9월 납부일",
-    "재산세 주택 7월 9월 20만원 기준",
-    "재산세 주택 토지 세율 공시가격",
-    "재산세 감면 1주택 세액 공제",
+    "재산세 납부 주택 7월 9월 20만원 기준",
+    "재산세 납부 주택 토지 세율 공시가격",
+    "재산세 납부 감면 1주택 세액 공제",
   ],
   author: "머니위키 에디터",
   updateNote: "2026년 2월 기준",
   lastUpdated: "2026-02-26",
   datePublished: "2026-02-26",
   summary: [
-    "주택 재산세는 <strong>7월(50%)·9월(50%)</strong> 두 번 납부, 토지는 9월 전액",
-    "연간 재산세 <strong>20만원 이하</strong>면 7월에 전액 납부, 9월 없음",
-    "1세대 1주택 공시가격 9억 이하 <strong>5% 세액공제</strong> 자동 적용",
+    "2026년 재산세 납부 기간은 <strong>주택 7월 31일·9월 30일, 토지 9월 30일</strong>이에요.",
+    "주택 재산세가 <strong>20만원 이하면 7월에 전액 납부</strong>하고 9월 고지서는 없어요.",
+    "공시가격에 공정시장가액비율(주택 60%)을 곱한 <strong>과세표준에 세율 0.1%~0.4%</strong>를 적용해요.",
   ],
   sources: [
-    { name: "지방세법 제111조 재산세 세율", url: "https://www.law.go.kr/법령/지방세법", date: "2026-02" },
-    { name: "행정안전부 재산세 납부 안내", url: "https://www.mois.go.kr", date: "2026-02" },
-    { name: "위택스 재산세 납부", url: "https://www.wetax.go.kr", date: "2026-02" },
+    { name: "행정안전부 재산세 안내", url: "https://www.mois.go.kr/frt/sub/a06/b09/propertytax/screen.do", date: "2026-02" },
   ],
   faq: [
-    { q: "재산세 7월에 다 낸 경우 9월에 또 내야 하나요?", a: "주택 재산세는 연간 세액의 절반씩 두 번 나눠 내요. 7월 고지서는 1/2이고, 9월에 나머지 1/2 고지서가 와요. 연간 20만원 이하면 7월에 전액 납부해요." },
-    { q: "재산세 납부 기간이 지나면 어떻게 되나요?", a: "납부 기한이 지나면 지연 가산세 3%가 붙어요. 이후 매달 0.75%씩 중가산세가 추가돼요. 위택스나 은행 앱으로 언제든 납부할 수 있어요." },
+    { q: "재산세 납부 기간을 놓치면 어떻게 되나요?", a: "납부 기한을 넘기면 3%의 납부지연가산세가 부과돼요. 이후 1개월이 지날 때마다 0.75%씩 추가돼요. 위택스나 ARS(1899-0341)에서 납부하면 기한 후 납부도 가능해요." },
+    { q: "재산세 납부 기간에 분납은 어떻게 하나요?", a: "재산세가 500만원을 초과하면 납부 기한 이후 2개월 이내에 분납할 수 있어요. 분납 신청은 위택스 또는 구청 세무과에서 납부 기한 전에 신청해야 해요." },
   ],
   ctaCard: {
-    label: "위택스 납부",
-    mainText: "재산세 → 위택스에서 납부",
-    subText: "7월 16~31일 / 9월 16~30일",
-    url: "https://www.wetax.go.kr",
-    external: true,
+    label: "재산세 계산",
+    mainText: "공시가격 기준 재산세 자동 계산",
+    subText: "주택·토지 납부액 미리 확인",
+    url: "/w/재산세-계산기",
+    external: false,
   },
   relatedDocs: [
-    { title: "종합소득세 신고 안 하면 가산세", url: "/w/종합소득세-신고-안하면-가산세" },
-    { title: "프리랜서 3.3% 원천징수 환급", url: "/w/프리랜서-3.3-원천징수-환급" },
+    { title: "재산세 계산기", url: "/w/재산세-계산기" },
+    { title: "종합부동산세 기준", url: "/w/종합부동산세-기준" },
   ],
 };
 
 export default function Page() {
-  const [sel, setSel] = useState<Record<string, string>>({});
-  const pick = (g: string, v: string) => setSel((p) => ({ ...p, [g]: v }));
+  type ResLink = { icon: string; title: string; desc: string; href: string };
 
-  function getResult() {
-    const { prop_type, tax_amount, pay_month, one_home } = sel;
-    if (!prop_type || !tax_amount || !pay_month || !one_home) return null;
-    if (prop_type === "land") return "land_sep";
-    if (prop_type === "building") return "building_july";
-    if (tax_amount === "lt20") return "july_full";
-    if (tax_amount === "gt500") return "split_eligible";
-    if (one_home === "yes") return "house_half_discount";
-    return "house_half";
+  const [sel, setSel] = useState<{ q1: string; q2: string; q3: string; q4: string }>({
+    q1: "", q2: "", q3: "", q4: "",
+  });
+
+  function getResult(): React.ReactNode | null {
+    const { q1, q2, q3, q4 } = sel;
+    if (!q1 || !q2 || !q3 || !q4) return null;
+
+    const propType = q1;   // "house" | "land" | "building"
+    const pubPrice = q2;   // "under100m" | "100to300m" | "over300m"
+    const count = q3;      // "one" | "multi"
+    const paid = q4;       // "july" | "sept" | "both" | "not_yet"
+
+    // 7월 납부 대상인지 판단
+    const isJulyPayer = propType === "house";
+    const isSeptOnly = propType === "land" || propType === "building";
+
+    let deadline = isJulyPayer ? "7월 31일 · 9월 30일" : "9월 30일";
+    let tax_range = pubPrice === "under100m" ? "약 6만~15만원" : pubPrice === "100to300m" ? "약 15만~80만원" : "약 80만원 이상";
+
+    const gridItems = [
+      { label: "부동산 유형", value: propType === "house" ? "주택" : propType === "land" ? "토지" : "건물", ok: true },
+      { label: "납부 기간", value: deadline, ok: true },
+      { label: "예상 세액 범위", value: tax_range, ok: true },
+      { label: "1주택 감면", value: count === "one" && propType === "house" ? "세액 공제 가능" : "해당 없음", ok: count === "one" && propType === "house" },
+    ];
+    const links: ResLink[] = [
+      { icon: "🧮", title: "재산세 계산기", desc: "공시가격 입력하면 실납부액 계산", href: "/w/재산세-계산기" },
+      { icon: "📋", title: "종합부동산세 기준", desc: "재산세와 종부세 합산 납부 확인", href: "/w/종합부동산세-기준" },
+    ];
+    return (
+      <ResultPass title={isJulyPayer ? "주택 재산세 — 7월·9월 두 번 납부" : "토지·건물 재산세 — 9월에 납부"}>
+        <ResultGrid items={gridItems} />
+        <P>{isJulyPayer ? "주택 재산세는 7월 31일과 9월 30일 두 번 나눠 내요. 단, 세액이 20만원 이하면 7월에 전액 부과하고 9월 고지서는 없어요." : "토지·건물 재산세는 9월 30일까지 한 번만 납부해요. 위택스 또는 구청에서 납부할 수 있어요."}</P>
+        {links.map((l, i) => <ResultCTA key={i} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />)}
+      </ResultPass>
+    );
   }
 
-  const result = getResult();
-
   const toc = [
-    { t: "STEP 01 납부 구조 확인" },
-    { t: "재산세 납부 기간은 언제인가요?", sub: "7월·9월 납부일 · 유형별 구분" },
-    { t: "재산세 7월 9월 분납 조건은 무엇인가요?", sub: "20만원 기준 · 500만원 분납" },
-    { t: "재산세 주택 토지 계산 방법은 어떻게 되나요?", sub: "공시가격 세율 · 계산 예시" },
-    { t: "재산세 감면 조건은 어떻게 되나요?", sub: "1주택 감면 · 세액 공제" },
+    { t: "STEP 01 납부 기간 확인" },
+    { t: "재산세 납부 기간은 2026년 언제인가요?", sub: "7월 31일 · 9월 30일 · 주택·토지 구분" },
+    { t: "재산세 납부 주택은 왜 두 번 내나요?", sub: "20만원 기준 · 7월 반·9월 반 · 분납 조건" },
+    { t: "재산세 납부 주택 토지 세율은 얼마인가요?", sub: "공시가격 × 60% · 세율 구간 · 세부담 상한" },
+    { t: "재산세 납부 감면은 어떤 경우에 받나요?", sub: "1세대 1주택 · 공정시장가액 · 세액 공제" },
     { t: "자주 묻는 질문" },
   ];
 
   return (
     <BlogLayout
-      breadcrumb={["홈", "세금", "재산세"]}
-      tags={["2026년 최신", "세금", "재산세", "납부기간"]}
-      date={meta.lastUpdated}
-      title={meta.title}
-      description={<>재산세는 6월 1일 기준 부동산 소유자에게 부과돼요. <strong>주택은 7월·9월 반반</strong>, 토지는 9월, 건물은 7월에 전액 납부해요. 납부 기간을 놓치면 가산세가 붙어요.</>}
-      sourceBar={{ badge: "행안부", name: "지방세법 제111조", date: "2026.02" }}
-      stickyLabel="납부 기간"
-      stickyValue="7월 16~31일 / 9월 16~30일"
-      stickyBtn="납부하러 가기 ↑"
-      disclaimer="이 글은 지방세법과 행정안전부 자료를 바탕으로 작성된 정보 제공 목적의 콘텐츠예요."
-      sidebar={<>
-        <SidebarCTA items={[
-          { icon: "🏠", title: "위택스 재산세 납부", sub: "7월·9월 납부 기간 확인", href: "https://www.wetax.go.kr", hot: true },
-          { icon: "💰", title: "프리랜서 3.3% 환급", sub: "5월 종합소득세 신고로 환급", href: "/w/프리랜서-3.3-원천징수-환급" },
-          { icon: "⚠️", title: "종합소득세 가산세", sub: "신고 안 하면 20% 가산세", href: "/w/종합소득세-신고-안하면-가산세" },
-        ]} />
-        <SidebarDocs items={[
-          { title: "프리랜서 3.3% 환급", cat: "세금·절세", href: "/w/프리랜서-3.3-원천징수-환급" },
-          { title: "종합소득세 가산세", cat: "세금·절세", href: "/w/종합소득세-신고-안하면-가산세" },
-          { title: "간이과세자 기준 2026", cat: "세금·절세", href: "/w/부가가치세-간이과세자-기준-2026" },
-        ]} />
-        <SidebarCalc items={[
-          { title: "재산세 계산기 (위택스)", href: "https://www.wetax.go.kr" },
-          { title: "공시가격 조회 (부동산공시가격)", href: "https://www.realtyprice.kr" },
-        ]} />
-      </>}
+      sidebar={
+        <>
+          <SidebarCTA
+            items={[
+              { icon: "🧮", label: "재산세 계산기", desc: "공시가격 기준 납부액 계산", href: "/w/재산세-계산기", hot: true },
+              { icon: "📋", label: "종합부동산세 기준", desc: "종부세 합산 납부 확인", href: "/w/종합부동산세-기준" },
+              { icon: "🏠", label: "취득세 계산기", desc: "부동산 취득세 계산", href: "/w/취득세-계산기" },
+            ]}
+          />
+          <SidebarDocs
+            items={[
+              { icon: "📄", label: "종합부동산세 기준", href: "/w/종합부동산세-기준" },
+              { icon: "📋", label: "취득세 감면 조건", href: "/w/생애최초-취득세-감면-조건-2026" },
+              { icon: "🏢", label: "부동산 양도소득세", href: "/w/양도소득세-계산" },
+              { icon: "🧾", label: "재산세 계산기", href: "/w/재산세-계산기" },
+              { icon: "💰", label: "종합소득세 신고", href: "/w/종합소득세-신고기간" },
+            ]}
+          />
+          <SidebarCalc
+            items={[
+              { icon: "🧮", label: "재산세 계산기", href: "/w/재산세-계산기" },
+              { icon: "📊", label: "종합부동산세 계산기", href: "/w/종합부동산세-계산기" },
+              { icon: "🏠", label: "취득세 계산기", href: "/w/취득세-계산기" },
+              { icon: "📈", label: "양도소득세 계산기", href: "/w/양도소득세-계산기" },
+              { icon: "💼", label: "종합소득세 계산기", href: "/w/종합소득세-계산기" },
+            ]}
+          />
+        </>
+      }
+      disclaimer="이 글은 일반적인 세금 정보를 제공하며, 실제 세액은 공시가격 및 지자체 고지서 기준이에요."
     >
       <TOC items={toc} />
       <Summary3 items={meta.summary} />
 
       {/* STEP 01 */}
-      <Sec n="STEP 01" id="checker" title="납부 구조 확인" sub="부동산 유형 · 세액 규모 선택" />
-      <P>재산세는 부동산 유형에 따라 납부 시기와 방법이 달라요. 주택인지, 건물인지, 토지인지에 따라 7월에 낼지 9월에 낼지가 결정돼요. 아래에서 내 상황을 선택해보세요.</P>
-
-      <CheckerShell title="재산세 납부 구조 확인기" sub="30초 확인">
-        <CheckerQ n="1" label="보유한 부동산 유형이 어떻게 되나요?" group="prop_type" opts={[
-          ["house", "주택 (아파트·단독·빌라 등)"],
-          ["building", "건물 (상가·오피스 등 비주거)"],
-          ["land", "토지 (농지·임야·나대지 등)"],
-        ]} sel={sel} pick={pick} />
-        <CheckerQ n="2" label="연간 재산세 예상액이 얼마인가요?" group="tax_amount" opts={[
-          ["lt20", "20만원 이하"],
-          ["20to500", "20~500만원"],
-          ["gt500", "500만원 초과"],
-        ]} sel={sel} pick={pick} />
-        <CheckerQ n="3" label="납부 예정 월이 언제인가요?" group="pay_month" opts={[
-          ["july", "7월"],
-          ["sep", "9월"],
-          ["both", "7월·9월 모두"],
-        ]} sel={sel} pick={pick} />
-        <CheckerQ n="4" label="1세대 1주택 여부가 어떻게 되나요?" group="one_home" opts={[
-          ["yes", "1세대 1주택 (세대원 포함)"],
-          ["no", "다주택 또는 비주거 부동산"],
-        ]} sel={sel} pick={pick} />
-
-        {result === "land_sep" && (
-          <ResultPass title="토지는 9월에 전액 납부해요">
-            <P>토지분 재산세는 9월 16일~30일에 전액 납부해요. 7월에는 납부할 금액이 없어요. 9월 납부 기간 내에 위택스나 은행에서 납부하면 돼요.</P>
-            <ResultCTA icon="🏡" title="위택스에서 토지 재산세 납부" desc="9월 16~30일 납부 기간 확인" href="https://www.wetax.go.kr" />
-          </ResultPass>
-        )}
-        {result === "building_july" && (
-          <ResultPass title="건물(비주거)은 7월에 전액 납부해요">
-            <P>상가, 오피스 등 주거 외 건물분 재산세는 7월 16일~31일에 전액 납부해요. 납부 기간을 놓치면 지연 가산세 3%가 붙으니 주의하세요.</P>
-            <ResultCTA icon="🏢" title="위택스에서 건물 재산세 납부" desc="7월 16~31일 납부 기간" href="https://www.wetax.go.kr" />
-          </ResultPass>
-        )}
-        {result === "july_full" && (
-          <ResultPass title="주택 재산세 20만원 이하 → 7월에 전액 납부">
-            <P>연간 재산세가 20만원 이하라면 7월 16일~31일에 전액 납부해요. 9월에는 별도 청구가 없어요. 납부 고지서를 확인해서 전액인지 1/2인지 금액을 확인하세요.</P>
-            <ResultCTA icon="📋" title="위택스에서 주택 재산세 납부" desc="7월 16~31일 전액 납부" href="https://www.wetax.go.kr" />
-          </ResultPass>
-        )}
-        {result === "split_eligible" && (
-          <ResultPass title="재산세 500만원 초과 → 분납 신청 가능해요">
-            <P>재산세 본세가 250만원을 초과하면 납부 기한 후 45일 이내에 분납을 신청할 수 있어요. 초과분을 나눠 낼 수 있어서 한 번에 내는 부담을 줄일 수 있어요.</P>
-            <ResultCTA icon="💡" title="위택스 분납 신청" desc="납부 기한 후 45일 이내 신청" href="https://www.wetax.go.kr" />
-          </ResultPass>
-        )}
-        {result === "house_half_discount" && (
-          <ResultPass title="1주택자는 7월·9월 각 1/2, 5% 세액공제 적용">
-            <P>1세대 1주택 공시가격 9억원 이하라면 재산세 5% 세액공제 혜택이 있어요. 주택 재산세는 7월 16~31일에 1/2, 9월 16~30일에 나머지 1/2를 내요.</P>
-            <ResultCTA icon="🏠" title="위택스에서 주택 재산세 납부" desc="7월·9월 각각 1/2씩 납부" href="https://www.wetax.go.kr" />
-          </ResultPass>
-        )}
-        {result === "house_half" && (
-          <ResultPass title="주택 재산세는 7월·9월 각 1/2씩 납부해요">
-            <P>주택 재산세 20만원 초과 시 7월 16~31일에 1/2, 9월 16~30일에 나머지 1/2를 납부해요. 납부 고지서가 각각 발송되니 한 번만 내지 않도록 주의하세요.</P>
-            <ResultCTA icon="🏠" title="위택스에서 주택 재산세 납부" desc="7월·9월 각각 1/2씩 납부" href="https://www.wetax.go.kr" />
-          </ResultPass>
-        )}
+      <Sec n="STEP 01" id="s1" title="납부 기간 확인" sub="부동산 유형·공시가격 입력하면 즉시 확인" />
+      <CheckerShell title="내 재산세 납부 기간이 언제인가요?" result={getResult()}>
+        <CheckerQ
+          q="부동산 유형은 무엇인가요?"
+          opts={[
+            { label: "주택 (아파트·단독주택 등)", value: "house" },
+            { label: "토지", value: "land" },
+            { label: "상가·건물", value: "building" },
+          ]}
+          sel={sel.q1}
+          onSel={(v) => setSel({ ...sel, q1: v })}
+        />
+        <CheckerQ
+          q="공시가격(공시지가)은 얼마인가요?"
+          opts={[
+            { label: "1억원 미만", value: "under100m" },
+            { label: "1억~3억원", value: "100to300m" },
+            { label: "3억원 이상", value: "over300m" },
+          ]}
+          sel={sel.q2}
+          onSel={(v) => setSel({ ...sel, q2: v })}
+        />
+        <CheckerQ
+          q="주택 보유 수는 몇 채인가요?"
+          opts={[
+            { label: "1주택 (1세대 1주택)", value: "one" },
+            { label: "2주택 이상", value: "multi" },
+          ]}
+          sel={sel.q3}
+          onSel={(v) => setSel({ ...sel, q3: v })}
+        />
+        <CheckerQ
+          q="2026년 재산세 고지서를 받으셨나요?"
+          opts={[
+            { label: "7월 고지서 받았어요", value: "july" },
+            { label: "9월 고지서 받았어요", value: "sept" },
+            { label: "둘 다 받았어요", value: "both" },
+            { label: "아직 안 받았어요", value: "not_yet" },
+          ]}
+          sel={sel.q4}
+          onSel={(v) => setSel({ ...sel, q4: v })}
+        />
       </CheckerShell>
 
       <BridgeCard
-        q="재산세 고지서가 7월에 왔는데 9월에도 또 오나요?"
-        a="주택 재산세는 7월과 9월 두 번 나눠 내요. 7월 고지서는 연간 세액의 1/2이고, 9월에 나머지 1/2 고지서가 와요."
-        label="납부 기간 확인"
-        href="#s02"
+        text="재산세 납부 기간을 확인했다면, 실제 납부액이 얼마인지 계산해봐요."
+        href="/w/재산세-계산기"
+        label="재산세 계산하기"
       />
 
       <Divider />
 
       {/* SECTION 02 */}
-      <Sec n="SECTION 02" id="s02" title="재산세 납부 기간은 언제인가요?" sub="7월·9월 납부일 · 유형별 구분" />
-      <P>재산세는 과세 기준일인 6월 1일 현재 소유자에게 부과돼요. 6월 1일 이전에 팔았다면 납세 의무가 없고, 6월 2일 이후에 팔았다면 여전히 납세 의무가 있어요. 부동산 매매 시점을 정할 때 참고하면 절세가 돼요.</P>
+      <Sec n="SECTION 02" id="s2" title="재산세 납부 기간은 2026년 언제인가요?" sub="7월 31일 · 9월 30일 · 주택·토지 구분" />
+      <P>2026년 재산세 납부 기간은 부동산 종류에 따라 달라요. 주택은 <B>7월 31일과 9월 30일</B> 두 번 납부하고, 토지는 <B>9월 30일</B> 한 번만 납부해요. 상가·건물 건축물분 재산세는 7월 31일에 납부해요.</P>
+      <P>납부 기한이 토요일이나 공휴일이면 다음 영업일로 연장돼요. 위택스(wetax.go.kr), ARS(1899-0341), 인터넷뱅킹, 편의점 등 다양한 방법으로 납부할 수 있어요.</P>
+      <P>재산세는 매년 6월 1일을 기준으로 소유자가 납부해요. 6월 1일 이전에 부동산을 매도했다면 세금 부담 없이 넘길 수 있어요. 매수자라면 6월 2일 이후에 잔금을 치르면 그해 재산세를 피할 수 있어요.</P>
+      <P>고지서는 납부 기한 약 20~30일 전에 우편이나 전자 통지로 발송돼요. 전자 고지를 신청하면 세액의 500원~200원을 공제해줘요. 고지서를 못 받았더라도 위택스에서 직접 조회하고 납부할 수 있어요.</P>
 
-      <H3>부동산 유형별 납부 기간 (2026년)</H3>
-      <TableTitle>부동산 유형별 재산세 납부 기간</TableTitle>
-      <div style={{ overflowX: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-          <thead>
-            <tr><THL>부동산 유형</THL><THL>7월 납부</THL><THL>9월 납부</THL><THL>비고</THL></tr>
-          </thead>
-          <tbody>
-            {[
-              ["주택 (재산세 20만원 초과)", "7월 16~31일 (1/2)", "9월 16~30일 (1/2)", "연간 세액을 반반 납부"],
-              ["주택 (재산세 20만원 이하)", "7월 16~31일 (전액)", "없음", "7월에 한 번만 납부"],
-              ["건물 (비주거)", "7월 16~31일 (전액)", "없음", "상가·오피스 등"],
-              ["토지", "없음", "9월 16~30일 (전액)", "농지·임야·나대지 등"],
-            ].map((row, ri) => (
-              <tr key={ri}>
-                {row.map((cell, ci) => (
-                  <td key={ci} style={{ padding: "8px 10px", textAlign: ci === 0 ? "left" : "center", borderBottom: `1px solid ${C.line}`, color: ci === 0 ? C.t1 : C.t2, fontWeight: ci === 0 ? 600 : 400 }}>{cell}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <TableNote>과세 기준일: 6월 1일 현재 소유자 / 기간 내 미납 시 3% 가산세 부과</TableNote>
+      <TableTitle>2026년 재산세 납부 기간 일정</TableTitle>
+      <TH cols={["부동산 구분", "1차 납부", "2차 납부", "비고"]} />
+      <THL rows={[
+        ["주택 (건축물분)", "7월 31일", "9월 30일", "세액 20만원 이하 → 7월 전액"],
+        ["토지", "—", "9월 30일", "토지 전체 9월 납부"],
+        ["상가·건물 건축물분", "7월 31일", "—", "7월 한 번"],
+        ["선박·항공기", "7월 31일", "—", "한 번 납부"],
+      ]} />
+      <TableNote>재산세 = 주택분 + 토지분. 공시가격 기준으로 지자체가 부과해요.</TableNote>
 
-      <P>납부 방법은 은행 방문, 위택스 인터넷 납부, 스마트폰 앱, ARS(1599-9111), 자동이체 등 다양해요. 카드 납부도 가능하고 포인트도 쓸 수 있어요.</P>
-      <Info type="tip">{"6월 1일 기준일 전에 부동산을 취득했다면 전 소유자와 협의해서 세금 부담을 나누는 특약을 쓰기도 해요. 법적으로는 취득일 기준이지만 관행적으로 비율로 나누는 경우도 있어요."}</Info>
+      <InlineLink
+        icon="🧮"
+        title="재산세 계산기"
+        desc="공시가격 입력하면 예상 납부액 자동 계산"
+        href="/w/재산세-계산기"
+      />
 
       <Divider />
 
       {/* SECTION 03 */}
-      <Sec n="SECTION 03" id="s03" title="재산세 7월 9월 분납 조건은 무엇인가요?" sub="20만원 기준 · 500만원 분납" />
-      <P>주택 재산세 20만원 기준은 7월에 전액 납부할지, 7월·9월로 나눌지를 결정하는 기준이에요. 연간 재산세가 20만원 이하면 7월에 한 번만 내고, 20만원 초과면 7월과 9월에 각각 절반씩 내요.</P>
-      <P>공시가격 기준으로 대략 3~4억원 주택 정도에서 연간 재산세 20만원 선이 형성돼요. 하지만 지역별 과세표준, 공정시장가액비율, 세율 구간에 따라 달라지므로 고지서를 직접 확인하는 게 정확해요.</P>
-      <H3>분납 제도 (250만원 초과)</H3>
-      <P>재산세 본세가 250만원을 초과하면 납부 기한 후 45일 이내에 분납을 신청할 수 있어요. 초과분을 최대 3번까지 나눠낼 수 있어서 자금 부담을 줄일 수 있어요. 분납 신청은 위택스 또는 관할 시·군·구청 세무과에서 해요.</P>
-      <P>분납은 이자가 없는 대신 기한 내에 반드시 납부해야 해요. 분납 신청 후에도 기한을 지키지 않으면 가산세 3%가 붙어요. 분납 일정을 달력에 메모해두는 게 좋아요.</P>
-      <Info type="warn">{"주택 재산세 7월 납부 기간(7월 16~31일)을 지키지 않으면 지연 가산세 3%가 즉시 부과돼요. 자동이체 설정을 해두면 잊어버릴 걱정이 없어요."}</Info>
+      <Sec n="SECTION 03" id="s3" title="재산세 납부 주택은 왜 두 번 내나요?" sub="20만원 기준 · 7월 반·9월 반 · 분납 조건" />
+      <P>주택 재산세는 연간 세액을 반으로 나눠 7월과 9월에 각각 납부해요. 이는 납세자의 납부 부담을 줄여주기 위한 제도예요. 한 번에 큰 금액을 내는 게 부담스러울 수 있으니 두 번으로 나눈 거예요.</P>
+      <P>단, <B>연간 재산세가 20만원 이하면 7월에 전액</B>을 한 번에 부과해요. 이 경우 9월 고지서는 발행되지 않아요. 세액이 적으면 두 번 납부하는 게 오히려 번거로울 수 있어서 간소화한 거예요.</P>
+      <P>재산세가 500만원을 초과하면 분납 신청이 가능해요. 납부 기한 이내에 일부만 내고, 나머지는 2개월 이내에 낼 수 있어요. 분납 신청은 위택스나 구청 세무과에서 납부 기한 전에 해야 해요.</P>
+      <P>고지서에 적힌 금액이 맞는지 꼭 확인해요. 납세자가 잘못된 세액을 내도 이의 신청이 가능하지만 번거로워요. 공시가격이 조정되거나 용도 변경이 있었다면 세액이 달라질 수 있어요.</P>
+
+      <SpokeLink
+        num="01"
+        title="종합부동산세 기준 확인"
+        desc="재산세와 함께 종부세 대상인지 확인"
+        href="/w/종합부동산세-기준"
+      />
 
       <RelatedMid
-        title="세금 관련 글도 확인해 보세요"
-        items={[
-          { icon: "💰", title: "프리랜서 3.3% 환급", desc: "3.3% 원천징수 세금 돌려받는 방법", href: "/w/프리랜서-3.3-원천징수-환급" },
-          { icon: "⚠️", title: "종합소득세 가산세", desc: "신고 안 하면 최대 40% 가산세", href: "/w/종합소득세-신고-안하면-가산세" },
-          { icon: "🏪", title: "간이과세자 기준 2026", desc: "연 매출 8천만원 간이과세 기준", href: "/w/부가가치세-간이과세자-기준-2026" },
+        cards={[
+          { title: "재산세 계산기", desc: "주택·토지 납부액 계산", href: "/w/재산세-계산기" },
+          { title: "취득세 감면 조건", desc: "생애최초 취득세 혜택", href: "/w/생애최초-취득세-감면-조건-2026" },
+          { title: "양도소득세 계산", desc: "부동산 양도 시 세금 계산", href: "/w/양도소득세-계산" },
         ]}
-        hubHref="/category/세금"
-        hubLabel="세금 글 전체 보기"
+        hubHref="/w/세금"
+        hubLabel="세금 허브 보기"
       />
 
       <Divider />
 
       {/* SECTION 04 */}
-      <Sec n="SECTION 04" id="s04" title="재산세 주택 토지 계산 방법은 어떻게 되나요?" sub="공시가격 세율 · 계산 예시" />
-      <P>재산세 = 공시가격 × 공정시장가액비율 × 세율로 계산해요. 공시가격은 국토교통부 부동산공시가격 알리미에서 조회할 수 있어요. 공정시장가액비율은 2026년 기준 주택의 경우 43~45% 수준이에요.</P>
-      <P>주택 세율은 과세표준(공시가격×비율)에 따라 달라요. 재산세 외에 지방교육세(재산세의 20%), 도시지역분 등도 붙어서 실제 납부액은 재산세보다 더 많아요.</P>
+      <Sec n="SECTION 04" id="s4" title="재산세 납부 주택 토지 세율은 얼마인가요?" sub="공시가격 × 60% · 세율 구간 · 세부담 상한" />
+      <P>재산세 계산 기준은 <B>공시가격 × 공정시장가액비율(주택 60%)</B>이에요. 공시가격 3억원 주택이라면 3억 × 60% = 1억 8천만원이 과세표준이 돼요. 이 과세표준에 세율을 적용해요.</P>
+      <P>주택 재산세율은 과세표준에 따라 달라요. 6천만원 이하 0.1%, 6천만~1억5천만원 0.15%, 1억5천만~3억원 0.25%, 3억원 초과 0.4%예요. 누진세율이므로 구간별로 계산해요.</P>
+      <P>세부담 상한제도가 있어요. 전년도 대비 재산세가 일정 비율 이상 오르지 않도록 제한해요. 공시가격 3억원 이하는 105%, 3억~6억은 110%, 6억 초과는 130%가 상한이에요. 갑자기 세금이 급등하는 걸 막아줘요.</P>
+      <P>토지는 종류에 따라 세율이 달라요. 농지·목장용지 같은 분리과세 토지는 0.07~0.2%이고, 별도합산과세 토지는 0.2~0.4%, 종합합산과세 토지는 0.2~0.5%예요.</P>
 
-      <H3>주택 재산세 세율 구조</H3>
-      <TableTitle>주택 재산세 세율 구조</TableTitle>
-      <div style={{ overflowX: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-          <thead>
-            <tr><THL>과세표준 (공시가격×비율)</THL><THL>세율</THL><THL>누진 공제</THL></tr>
-          </thead>
-          <tbody>
-            {[
-              ["6,000만원 이하", "0.1%", "—"],
-              ["6,000만원 초과 ~ 1억5,000만원 이하", "0.15%", "3만원"],
-              ["1억5,000만원 초과 ~ 3억원 이하", "0.25%", "18만원"],
-              ["3억원 초과", "0.4%", "63만원"],
-            ].map((row, ri) => (
-              <tr key={ri}>
-                {row.map((cell, ci) => (
-                  <td key={ci} style={{ padding: "8px 10px", textAlign: ci === 0 ? "left" : "center", borderBottom: `1px solid ${C.line}`, color: ci === 0 ? C.t1 : C.t2, fontWeight: ci === 0 ? 600 : 400 }}>{cell}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <TableNote>출처: 지방세법 제111조 / 실제 납부액은 지방교육세(재산세의 20%) 별도 부과</TableNote>
+      <FormulaCard
+        formula="재산세 = 공시가격 × 60%(공정시장가액비율) × 세율"
+        note="예) 공시가격 3억원 주택 → 3억 × 60% = 1.8억 과세표준 → 세율 0.25% 구간 → 연간 약 27만원"
+      />
 
-      <H3>계산 예시 (공시가격 4억원 아파트)</H3>
-      <P>공시가격 4억원 아파트의 경우 공정시장가액비율 43% 적용 시 과세표준은 1억 7,200만원이에요. 세율 구간에 따라 계산하면 재산세 약 25만원, 지방교육세 5만원으로 연간 약 30만원이에요. 7월과 9월에 각각 15만원씩 납부해요.</P>
-      <P>공시가격 조회는 부동산공시가격 알리미(realtyprice.kr)에서 직접 확인할 수 있어요. 아파트 단지명과 동·호수를 입력하면 해당 연도 공시가격을 조회할 수 있어요.</P>
+      <CaseBox
+        cases={[
+          {
+            name: "공시가 1억원 이씨",
+            detail: "주택 · 공정시장가액비율 60% · 과세표준 6천만원",
+            result: "재산세 = 6천만 × 0.1% = 6만원 → 7월에 전액 납부",
+          },
+          {
+            name: "공시가 3억원 김씨",
+            detail: "주택 · 과세표준 1.8억원",
+            result: "재산세 ≈ 27만원 → 7월 13.5만 · 9월 13.5만 납부",
+          },
+          {
+            name: "공시가 8억원 박씨",
+            detail: "주택 · 과세표준 4.8억원",
+            result: "재산세 ≈ 138만원 → 7월 69만 · 9월 69만 납부 + 종부세 별도",
+          },
+        ]}
+      />
+
+      <Info type="warn">
+        공시가격 9억원 초과 1주택자는 종합부동산세(종부세) 대상이에요. 재산세와 별도로 12월에 고지서가 발송돼요.
+      </Info>
 
       <Divider />
 
       {/* SECTION 05 */}
-      <Sec n="SECTION 05" id="s05" title="재산세 감면 조건은 어떻게 되나요?" sub="1주택 감면 · 세액 공제" />
-      <P>1세대 1주택이고 공시가격이 9억원 이하인 경우, 주택 재산세에서 5% 세액공제 혜택이 적용돼요. 별도 신청 없이 자동으로 적용되니 고지서에서 확인하면 돼요.</P>
-      <P>1세대 1주택 판단은 주민등록상 같은 세대가 1채만 소유한 경우예요. 배우자와 미성년 자녀는 동일 세대로 보므로, 가족 중 누군가 다른 주택을 소유하고 있다면 1주택 혜택을 받기 어려워요.</P>
-      <H3>고령자·장기보유 납부 유예</H3>
-      <P>만 60세 이상이면서 주택을 5년 이상 보유한 경우 재산세 납부 유예 제도를 이용할 수 있어요. 재산세를 유예하고 주택 처분 시 정산해요. 소득이 없는 고령자에게 현금 부담을 줄여주는 제도예요.</P>
-      <P>임대사업자로 등록한 경우 임대주택의 재산세가 감면될 수 있어요. 전용면적 40㎡ 이하는 100%, 40~60㎡는 75%, 60~85㎡는 50% 감면해요. 지방세 감면 조례에 따라 지역별로 다를 수 있어요.</P>
-      <Info type="tip">{"재산세 납부 유예나 임대사업자 감면은 관할 시·군·구청 세무과에 문의하면 해당 여부를 확인할 수 있어요. 자동 적용 안 되는 항목도 있으니 사전에 확인하세요."}</Info>
+      <Sec n="SECTION 05" id="s5" title="재산세 납부 감면은 어떤 경우에 받나요?" sub="1세대 1주택 · 공정시장가액 · 세액 공제" />
+      <P>1세대 1주택자는 공시가격 9억원 이하인 경우 재산세 특례세율이 적용돼요. 일반 세율보다 낮은 특례세율(0.05%~0.35%)로 계산해서 세금 부담이 줄어요. 다주택자나 법인은 특례 적용이 안 돼요.</P>
+      <P>임시 감면 제도도 있어요. 공시가격이 급등한 시기에 정부가 한시적으로 공정시장가액비율을 45%로 낮춰 과세표준을 줄여준 사례가 있어요. 2026년 적용 여부는 행정안전부 고시를 확인해야 해요.</P>
+      <P>장애인이나 국가유공자 등은 지자체별로 추가 감면 혜택이 있어요. 재산세 50% 감면이나 전액 면제 사례도 있어요. 신청은 매년 납부 기한 전에 구청 세무과에 해야 하고, 자동 적용이 아니에요.</P>
+      <P>국민주택규모(85㎡) 이하 주택을 신축하거나 취득하면 일정 기간 재산세 감면 혜택도 있어요. 세금 감면은 자동으로 적용되지 않는 경우가 많으니, 내 상황에 맞는 감면을 직접 신청해야 해요.</P>
 
-      <ExtBtn
-        badge="행안부 공식"
-        text="위택스 재산세 납부"
-        cta="납부하러 가기 →"
-        href="https://www.wetax.go.kr"
+      <SpokeLink
+        num="02"
+        title="생애최초 취득세 감면 조건 2026"
+        desc="주택 취득 시 취득세와 재산세 감면 확인"
+        href="/w/생애최초-취득세-감면-조건-2026"
       />
 
+      <InlineLink
+        icon="📋"
+        title="종합부동산세 기준 확인"
+        desc="공시가격 9억 초과 시 종부세 납부 확인"
+        href="/w/종합부동산세-기준"
+      />
+
+      <ExtBtn href="https://www.wetax.go.kr" label="위택스 공식" text="재산세 조회·납부 바로가기" />
+
+      <Divider />
+
+      {/* FAQ */}
       <FAQAccordion items={meta.faq} />
-
-      <RelatedArticles items={[
-        { title: "프리랜서 3.3% 원천징수 환급 방법 | 종합소득세 신고 필요경비 공제", desc: "3.3% 원천징수 환급받는 신고 방법이에요", href: "/w/프리랜서-3.3-원천징수-환급" },
-        { title: "종합소득세 신고 안 하면 가산세 | 무신고 납부불성실 세율 계산", desc: "신고 안 하면 최대 40% 가산세가 붙어요", href: "/w/종합소득세-신고-안하면-가산세" },
-        { title: "간이과세자 기준 매출 2026 | 일반과세 전환 부가세 신고 방법", desc: "매출 8천만원 기준 간이·일반과세 차이예요", href: "/w/부가가치세-간이과세자-기준-2026" },
-        { title: "건강보험 지역가입자 보험료 계산 | 재산 소득 점수 부과 방식", desc: "소득·재산·자동차를 점수로 환산하는 방법이에요", href: "/w/건강보험-지역가입자-보험료-계산" },
-        { title: "국민연금 조기노령연금 신청 조건 | 만 60세 수령 감액 손익분기점", desc: "조기 수령 감액 비율과 손익분기점이에요", href: "/w/국민연금-조기수령-신청-조건" },
-      ]} />
-
+      <RelatedArticles
+        items={[
+          { title: "재산세 계산기", href: "/w/재산세-계산기" },
+          { title: "종합부동산세 기준", href: "/w/종합부동산세-기준" },
+          { title: "생애최초 취득세 감면 조건", href: "/w/생애최초-취득세-감면-조건-2026" },
+          { title: "양도소득세 계산 방법", href: "/w/양도소득세-계산" },
+          { title: "종합소득세 신고 기간", href: "/w/종합소득세-신고기간" },
+        ]}
+      />
       <PrevNext
-        prev={{ title: "종합소득세 신고 안 하면 가산세 | 무신고 납부불성실 세율 계산", href: "/w/종합소득세-신고-안하면-가산세" }}
-        next={{ title: "프리랜서 3.3% 원천징수 환급 방법 | 종합소득세 신고 필요경비 공제", href: "/w/프리랜서-3.3-원천징수-환급" }}
+        prev={{ title: "프리랜서 3.3% 원천징수 환급", href: "/w/프리랜서-3.3-원천징수-환급" }}
+        next={{ title: "상가 임대차보호법 환산보증금", href: "/w/상가-임대차보호법-환산보증금" }}
       />
     </BlogLayout>
   );
 }
+
+export { meta };

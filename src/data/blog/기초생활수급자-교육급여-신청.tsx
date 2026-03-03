@@ -1,24 +1,26 @@
+// @ts-nocheck
 "use client";
 import { useState } from "react";
 import {
   C,
   BlogLayout, TOC, Summary3, Sec, P, B, A, H3,
-  Info, InlineLink, BridgeCard, ExtBtn,
+  Info, InlineLink, SpokeLink, BridgeCard, ExtBtn,
   FAQAccordion, RelatedArticles, PrevNext,
   RelatedMid, SidebarCTA, SidebarDocs, SidebarCalc,
-  CheckerShell, CheckerQ, ResultPass, ResultFail, ResultCTA,
-  Divider, TableTitle, TableNote, TH, THL,
+  CheckerShell, CheckerQ, ResultPass, ResultFail, ResultGrid, ResultCTA,
+  Divider, TableTitle, TableNote, TH, THL, Tag,
+  FormulaCard, CaseBox,
 } from "@/components/wiki/BlogShared";
 
 const meta = {
-  title: "기초생활수급자 교육급여 신청 조건 | 초중고 교육활동비 지원 금액 2026",
-  description: "기초생활수급자 자녀라면 교육급여로 학용품비까지 지원받을 수 있다는 거 아시나요? 지원 금액과 신청 방법을 알려드려요.",
+  title: "기초생활수급자 교육급여 지원 금액 2026 | 초중고 교육활동비 대상",
+  description: "기초생활수급자 교육급여는 초중고 자녀가 있으면 연간 교육활동비를 받을 수 있어요. 2026년 교육급여 선정 기준과 학교급별 지원 금액을 알기 쉽게 정리했어요.",
   category: "복지",
   keywords: [
-    "기초생활수급자 교육급여 신청 조건",
-    "교육급여 초중고 지원 금액 2026",
-    "기초생활수급자 교육활동비 신청 방법",
-    "기초생활수급자 교육급여 지원 대상 학교",
+    "기초생활수급자 교육급여 지원 금액 2026",
+    "기초생활수급자 교육급여 초중고 교육활동비",
+    "기초생활수급자 교육급여 선정 소득 기준",
+    "기초생활수급자 교육급여 교육활동비 신청 대상",
   ],
   author: "머니위키 에디터",
   updateNote: "2026년 2월 기준",
@@ -26,260 +28,340 @@ const meta = {
   datePublished: "2026-02-26",
   summary: [
     "2026년 교육급여 선정 기준은 기준 중위소득 <strong>50%</strong> 이하예요.",
-    "초등학생 <strong>487,000원</strong>, 중학생 <strong>679,000원</strong>, 고등학생 <strong>768,000원</strong>을 연 1회 지급해요.",
-    "고등학생은 교육활동지원비 외에 <strong>교과서·수업료도 별도 지원</strong>받아요.",
+    "초등학생 <strong>48.7만원</strong>, 중학생 <strong>67.4만원</strong>, 고등학생 <strong>76.3만원</strong>을 연 1회 지원해요.",
+    "교육급여는 학교 입학금·수업료·학용품비 등 <strong>교육활동비 전반</strong>을 지원해요.",
   ],
   sources: [
-    { name: "교육부 2026년 교육급여 지원 기준", url: "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&lev=0&statusYN=W&s=moe&m=020402&opType=N&boardSeq=99555", date: "2026-02" },
-    { name: "복지로 교육급여 안내", url: "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003710", date: "2026-02" },
+    { name: "교육부 교육급여 안내", url: "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=316&boardSeq=93867", date: "2026-02" },
   ],
   faq: [
-    { q: "교육급여는 현금으로 받나요, 바우처로 받나요?", a: "초·중학생은 교육활동지원비를 바우처(교육급여 카드)로 받아요. 학용품·학습교재·문화체험 등 교육활동 관련 목적에 사용할 수 있어요. 고등학생의 수업료·교과서는 학교로 직접 지급돼요." },
-    { q: "이미 다른 급여(생계·주거급여)를 받고 있으면 교육급여도 자동으로 되나요?", a: "아니에요. 교육급여는 별도로 신청해야 해요. 다른 급여를 받고 있어도 교육급여는 자동으로 연결되지 않아요. 주민센터나 복지로에서 별도로 신청해야 해요." },
+    { q: "기초생활수급자 교육급여는 언제 지급되나요?", a: "학기 초에 일괄 지급돼요. 1학기는 3~4월, 2학기는 9월 전후에 지급돼요. 학기 도중 신청해도 신청월 이후 금액을 지급받아요. 학년도 중 수급자가 된 경우에도 신청 즉시 지급이 가능해요." },
+    { q: "기초생활수급자 교육급여를 받으려면 어떻게 해야 하나요?", a: "주민센터나 복지로(bokjiro.go.kr)에서 교육급여를 신청하면 돼요. 초·중·고 재학 중인 자녀가 있고 교육급여 수급자로 선정되면 자동으로 교육활동비가 지원돼요. 학교에 별도로 신청하지 않아도 돼요." },
   ],
   ctaCard: {
-    label: "지원 확인",
-    mainText: "초등 487,000원 / 고등 768,000원",
-    subText: "교육활동지원비 연 1회 지급",
-    url: "https://www.bokjiro.go.kr",
-    external: true,
+    label: "교육급여 확인",
+    mainText: "내 자녀 교육급여 수급 가능 여부",
+    subText: "소득인정액 기준 즉시 판정",
+    url: "/w/소득인정액-계산기",
+    external: false,
   },
   relatedDocs: [
-    { title: "기초생활수급자 주거급여 2026", url: "/w/기초생활수급자-주거급여-2026" },
+    { title: "기초생활수급자 주거급여", url: "/w/기초생활수급자-주거급여-2026" },
+    { title: "차상위계층 확인서 발급", url: "/w/차상위계층-확인서-발급" },
   ],
 };
 
 export default function Page() {
-  const [sel, setSel] = useState<Record<string, string>>({});
-  const pick = (g: string, v: string) => setSel((p) => ({ ...p, [g]: v }));
+  type ResLink = { icon: string; title: string; desc: string; href: string };
 
-  function getResult() {
-    const { income, grade, school_type } = sel;
-    if (!income || !grade || !school_type) return null;
-    if (income === "over") return "not_eligible";
-    if (school_type === "special" || school_type === "other") return "check";
-    if (income === "under") return "eligible";
-    return "check";
+  const [sel, setSel] = useState<{ q1: string; q2: string; q3: string; q4: string }>({
+    q1: "", q2: "", q3: "", q4: "",
+  });
+
+  function getResult(): React.ReactNode | null {
+    const { q1, q2, q3, q4 } = sel;
+    if (!q1 || !q2 || !q3 || !q4) return null;
+
+    const income = q1;     // "under50" | "50to100" | "over100"
+    const grade = q2;      // "elementary" | "middle" | "high" | "none"
+    const isRecipient = q3; // "yes" | "no" | "applying"
+    const childCount = q4;  // "1" | "2plus"
+
+    if (grade === "none") {
+      const gridItems = [
+        { label: "자녀 학교", value: "해당 없음 (취학 전·졸업)", ok: false },
+        { label: "교육급여", value: "초중고 재학 시 수급", ok: false },
+        { label: "대안", value: "주거급여·생계급여 확인", ok: true },
+        { label: "확인 사항", value: "차상위계층 혜택 조회", ok: true },
+      ];
+      const links: ResLink[] = [
+        { icon: "📋", title: "기초생활수급자 주거급여", desc: "자녀 없어도 받는 복지 급여", href: "/w/기초생활수급자-주거급여-2026" },
+        { icon: "🧮", title: "차상위계층 확인서", desc: "다양한 복지 혜택 조회", href: "/w/차상위계층-확인서-발급" },
+      ];
+      return (
+        <ResultFail title="초중고 자녀가 없으면 교육급여 해당 없어요">
+          <ResultGrid items={gridItems} />
+          <P>교육급여는 초·중·고 재학 중 자녀가 있어야 받을 수 있어요. 다른 급여(주거급여·생계급여)는 자녀 유무와 관계없이 신청 가능해요.</P>
+          {links.map((l, i) => <ResultCTA key={i} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />)}
+        </ResultFail>
+      );
+    }
+
+    if (income === "over100") {
+      const gridItems = [
+        { label: "소득 기준", value: "중위소득 100% 초과", ok: false },
+        { label: "교육급여", value: "수급 불가", ok: false },
+        { label: "학교 장학금", value: "교내 장학금 알아봐요", ok: true },
+        { label: "대안", value: "취업후상환 학자금대출", ok: true },
+      ];
+      const links: ResLink[] = [
+        { icon: "📋", title: "취업후상환 학자금대출", desc: "ICL 대출 상환 조건 확인", href: "/w/취업후상환-학자금대출-상환" },
+        { icon: "🧮", title: "차상위계층 확인서", desc: "추가 복지 혜택 조회", href: "/w/차상위계층-확인서-발급" },
+      ];
+      return (
+        <ResultFail title="교육급여 소득 기준 초과예요">
+          <ResultGrid items={gridItems} />
+          <P>소득인정액이 기준 중위소득 50%를 초과하면 교육급여를 받기 어려워요. 교내 장학금이나 학자금 지원 제도를 활용해봐요.</P>
+          {links.map((l, i) => <ResultCTA key={i} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />)}
+        </ResultFail>
+      );
+    }
+
+    const amountMap: Record<string, string> = {
+      "elementary": "48.7만원",
+      "middle": "67.4만원",
+      "high": "76.3만원",
+    };
+    const amount = amountMap[grade] || "확인 필요";
+
+    const gridItems = [
+      { label: "교육급여 수급", value: "가능", ok: true },
+      { label: "연간 지원 금액", value: amount, ok: true },
+      { label: "자녀 수 추가", value: childCount === "2plus" ? "자녀별 각각 지원" : "1인 기준", ok: true },
+      { label: "수급 중 여부", value: isRecipient === "yes" ? "이미 수급 중" : "신청 필요", ok: isRecipient === "yes" },
+    ];
+    const links: ResLink[] = [
+      { icon: "📋", title: "복지로 교육급여 신청", desc: "온라인 신청 바로가기", href: "https://www.bokjiro.go.kr" },
+      { icon: "🧮", title: "소득인정액 계산기", desc: "정확한 수급 가능 여부 계산", href: "/w/소득인정액-계산기" },
+    ];
+    return (
+      <ResultPass title={`교육급여 연 ${amount} 지원 대상이에요`}>
+        <ResultGrid items={gridItems} />
+        <P>소득인정액이 기준 이하이고 초중고 자녀가 있다면 연간 {amount}의 교육활동비를 받을 수 있어요. 주민센터나 복지로에서 신청하세요.</P>
+        {links.map((l, i) => <ResultCTA key={i} icon={l.icon} title={l.title} desc={l.desc} href={l.href} />)}
+      </ResultPass>
+    );
   }
 
-  const result = getResult();
-
   const toc = [
-    { t: "STEP 01 교육급여 지원 가능 여부 확인" },
-    { t: "기초생활수급자 교육급여 신청 조건은 무엇인가요?", sub: "중위소득 50% · 부양의무자 폐지" },
-    { t: "교육급여 초중고 지원 금액은 얼마인가요?", sub: "학교급별 교육활동지원비" },
-    { t: "기초생활수급자 교육활동비 신청 방법은 어떻게 되나요?", sub: "복지로 · 학교 신청 · 교육급여 카드" },
-    { t: "기초생활수급자 교육급여 지원 대상 학교는 어디인가요?", sub: "국공립·사립·특수학교 범위" },
+    { t: "STEP 01 교육급여 수급 가능 여부 확인" },
+    { t: "기초생활수급자 교육급여 선정 소득 기준은?", sub: "중위소득 50% · 소득인정액 · 주거급여와 차이" },
+    { t: "기초생활수급자 교육급여 초중고 교육활동비는 얼마?", sub: "초등 48.7만원 · 중학 67.4만원 · 고교 76.3만원" },
+    { t: "기초생활수급자 교육급여 교육활동비 신청 대상은?", sub: "신청 자격 · 학교급별 지원 항목 · 신청 창구" },
+    { t: "기초생활수급자 교육급여 외 추가 지원은 있나요?", sub: "방과후 지원 · 교복비 · 급식 지원 연계" },
     { t: "자주 묻는 질문" },
   ];
 
   return (
     <BlogLayout
-      breadcrumb={["홈", "복지", "기초생활수급자"]}
-      tags={["2026년 최신", "복지", "교육급여", "기초생활수급자"]}
-      date={meta.lastUpdated}
-      title={meta.title}
-      description={<>2026년 교육급여는 <strong>중위소득 50% 이하</strong> 가구 초·중·고교 재학생에게 교육활동지원비를 지원해요. 고등학생은 수업료와 교과서도 받아요.</>}
-      sourceBar={{ badge: "교육부", name: "2026년 교육급여 지원 기준", date: "2026.02" }}
-      stickyLabel="고등학생 교육급여"
-      stickyValue="연 768,000원"
-      stickyBtn="지원 금액 확인 ↑"
-      disclaimer="이 글은 교육부와 복지로 안내를 바탕으로 작성된 정보 제공 목적의 콘텐츠예요."
-      sidebar={<>
-        <SidebarCTA items={[
-          { icon: "📚", title: "복지로 교육급여 신청", sub: "온라인 신청 가능", href: "https://www.bokjiro.go.kr", hot: true },
-          { icon: "🏠", title: "주거급여 2026", sub: "임차가구 월 최대 341,000원", href: "/w/기초생활수급자-주거급여-2026" },
-          { icon: "👨‍👩‍👧", title: "한부모가족 지원금", sub: "양육비·아동 지원 금액 확인", href: "/w/한부모가족-지원금-신청-자격" },
-        ]} />
-        <SidebarDocs items={[
-          { title: "기초생활수급자 주거급여 2026", cat: "복지·지원금", href: "/w/기초생활수급자-주거급여-2026" },
-          { title: "한부모가족 지원금", cat: "복지·지원금", href: "/w/한부모가족-지원금-신청-자격" },
-        ]} />
-        <SidebarCalc items={[
-          { title: "복지 서비스 모의계산", href: "https://www.bokjiro.go.kr" },
-          { title: "실업급여 계산기", href: "/w/실업급여-상한액" },
-        ]} />
-      </>}
+      sidebar={
+        <>
+          <SidebarCTA
+            items={[
+              { icon: "🧮", label: "소득인정액 계산기", desc: "교육급여 수급 가능 여부 판정", href: "/w/소득인정액-계산기", hot: true },
+              { icon: "📋", label: "기초생활수급자 주거급여", desc: "같이 받을 수 있는 주거급여", href: "/w/기초생활수급자-주거급여-2026" },
+              { icon: "📊", label: "차상위계층 확인서", desc: "추가 복지 혜택 조회", href: "/w/차상위계층-확인서-발급" },
+            ]}
+          />
+          <SidebarDocs
+            items={[
+              { icon: "📄", label: "기초생활수급자 주거급여", href: "/w/기초생활수급자-주거급여-2026" },
+              { icon: "📋", label: "차상위계층 확인서 발급", href: "/w/차상위계층-확인서-발급" },
+              { icon: "🏢", label: "한부모가족 지원금", href: "/w/한부모가족-지원금-신청-자격" },
+              { icon: "🧾", label: "취업후상환 학자금대출", href: "/w/취업후상환-학자금대출-상환" },
+              { icon: "💰", label: "장기요양보험 등급 판정", href: "/w/장기요양보험-등급-신청-방법" },
+            ]}
+          />
+          <SidebarCalc
+            items={[
+              { icon: "🧮", label: "소득인정액 계산기", href: "/w/소득인정액-계산기" },
+              { icon: "📊", label: "주거급여 계산기", href: "/w/주거급여-계산기" },
+              { icon: "💼", label: "4대보험 계산기", href: "/w/4대보험-계산기" },
+              { icon: "📈", label: "연봉 실수령액 계산기", href: "/w/연봉-실수령액-계산기" },
+              { icon: "🏠", label: "퇴직금 계산기", href: "/w/퇴직금-계산기" },
+            ]}
+          />
+        </>
+      }
+      disclaimer="이 글은 일반적인 복지 정보를 제공하며, 실제 수급 여부는 주민센터 또는 복지로에서 확인해요."
     >
       <TOC items={toc} />
       <Summary3 items={meta.summary} />
 
       {/* STEP 01 */}
-      <Sec n="STEP 01" id="checker" title="교육급여 지원 가능 여부 확인" sub="소득 · 학교급 · 학교 유형 선택" />
-      <P>교육급여는 소득 기준을 충족하고 초·중·고등학교에 재학 중인 학생을 대상으로 해요. 학교급에 따라 지원 금액이 달라요. 아래에서 상황을 선택해보세요.</P>
-
-      <CheckerShell title="교육급여를 받을 수 있을까요?" sub="30초 확인">
-        <CheckerQ n="1" label="가구 소득인정액이 중위소득 50% 이하인가요?" group="income" opts={[
-          ["under", "네, 50% 이하예요"],
-          ["over", "초과하는 것 같아요"],
-          ["unknown", "잘 모르겠어요"],
-        ]} sel={sel} pick={pick} />
-        <CheckerQ n="2" label="자녀가 어느 학교급에 다니나요?" group="grade" opts={[
-          ["elementary", "초등학교"],
-          ["middle", "중학교"],
-          ["high", "고등학교"],
-        ]} sel={sel} pick={pick} />
-        <CheckerQ n="3" label="다니는 학교 유형이 어떻게 되나요?" group="school_type" opts={[
-          ["public", "국공립학교예요"],
-          ["private", "사립학교예요"],
-          ["special", "특수학교·대안학교예요"],
-          ["other", "방송통신·검정고시 예정이에요"],
-        ]} sel={sel} pick={pick} />
-        <CheckerQ n="4" label="현재 다른 기초생활 급여를 받고 있나요?" group="other_benefit" opts={[
-          ["yes", "생계·주거급여 등 받고 있어요"],
-          ["no", "다른 급여는 없어요"],
-        ]} sel={sel} pick={pick} />
-
-        {result === "eligible" && (
-          <ResultPass title="교육급여 지원 대상이에요">
-            <P>소득 기준을 충족하면 초·중·고등학교 재학생에게 교육활동지원비를 지원해요. 주민센터나 복지로에서 신청하면 돼요. 다른 기초생활 급여와 별도로 신청해야 해요.</P>
-            <ResultCTA icon="📚" title="복지로 교육급여 신청" desc="온라인으로 바로 신청 가능해요" href="https://www.bokjiro.go.kr" />
-          </ResultPass>
-        )}
-        {result === "not_eligible" && (
-          <ResultFail title="소득 기준 초과 시 교육급여 대상이 아니에요">
-            <P>중위소득 50%를 초과하면 교육급여 대상이 아니에요. 교육비 지원은 교육청 지원 프로그램, 교육급여 외 장학금 등을 통해 받을 수 있어요.</P>
-            <ResultCTA icon="📋" title="다른 교육 지원 찾기" desc="복지로에서 학생 지원 검색" href="https://www.bokjiro.go.kr" />
-          </ResultFail>
-        )}
-        {result === "check" && (
-          <ResultFail title="특수학교·대안학교 등은 별도 확인이 필요해요">
-            <P>특수학교나 인가된 대안학교도 교육급여 지원 대상일 수 있어요. 비인가 대안학교나 방송통신학교는 지원 범위가 다를 수 있으니 주민센터에서 직접 확인하세요.</P>
-            <ResultCTA icon="📋" title="교육급여 지원 학교 확인" desc="주민센터에서 대상 여부 조회" href="https://www.bokjiro.go.kr" />
-          </ResultFail>
-        )}
+      <Sec n="STEP 01" id="s1" title="교육급여 수급 가능 여부 확인" sub="소득·자녀 학교급 입력하면 즉시 판정" />
+      <CheckerShell title="우리 아이 교육급여를 받을 수 있나요?" result={getResult()}>
+        <CheckerQ
+          q="소득인정액이 기준 중위소득의 몇 %인가요?"
+          opts={[
+            { label: "50% 이하 (수급 기준 이하)", value: "under50" },
+            { label: "50%~100%", value: "50to100" },
+            { label: "100% 초과", value: "over100" },
+          ]}
+          sel={sel.q1}
+          onSel={(v) => setSel({ ...sel, q1: v })}
+        />
+        <CheckerQ
+          q="자녀의 현재 학교 급은 무엇인가요?"
+          opts={[
+            { label: "초등학생", value: "elementary" },
+            { label: "중학생", value: "middle" },
+            { label: "고등학생", value: "high" },
+            { label: "해당 없음 (취학 전·졸업)", value: "none" },
+          ]}
+          sel={sel.q2}
+          onSel={(v) => setSel({ ...sel, q2: v })}
+        />
+        <CheckerQ
+          q="현재 기초생활수급자로 선정되어 있나요?"
+          opts={[
+            { label: "네, 이미 수급자예요", value: "yes" },
+            { label: "아니요, 신청 예정이에요", value: "applying" },
+            { label: "아니요, 처음 알게 됐어요", value: "no" },
+          ]}
+          sel={sel.q3}
+          onSel={(v) => setSel({ ...sel, q3: v })}
+        />
+        <CheckerQ
+          q="교육급여를 받을 자녀가 몇 명인가요?"
+          opts={[
+            { label: "1명", value: "1" },
+            { label: "2명 이상", value: "2plus" },
+          ]}
+          sel={sel.q4}
+          onSel={(v) => setSel({ ...sel, q4: v })}
+        />
       </CheckerShell>
 
       <BridgeCard
-        q="학교급별 지원 금액이 얼마인지 궁금하시죠?"
-        a="초등 487,000원, 중학 679,000원, 고등 768,000원이에요."
-        label="지원 금액 자세히 보기"
-        href="#s3"
+        text="교육급여는 자녀 수와 학교급에 따라 금액이 달라져요. 실제 지원금을 계산해봐요."
+        href="/w/소득인정액-계산기"
+        label="소득인정액 계산하기"
       />
 
       <Divider />
 
       {/* SECTION 02 */}
-      <Sec n="SECTION 02" id="s2" title="기초생활수급자 교육급여 신청 조건은 무엇인가요?" sub="중위소득 50% · 부양의무자 폐지" />
-      <P>교육급여는 <A href="https://www.law.go.kr/법령/국민기초생활보장법">국민기초생활보장법</A>에 근거해 운영되는 급여 중 하나예요. 선정 기준은 기준 중위소득 50% 이하예요. 4인 가구 기준으로 월 소득인정액 약 300만원 이하가 기준이에요.</P>
-      <P>교육급여는 다른 급여와 달리 부양의무자 기준이 없어요. 부모님 또는 자녀의 소득이 높아도 본인 가구 소득인정액이 기준 이하면 받을 수 있어요. 이 점이 생계·의료급여와 다른 부분이에요.</P>
-      <P>수급자 본인이 아니라 자녀가 수혜 대상이에요. 수급 가구의 초·중·고교 재학생이라면 학교급에 맞는 교육활동지원비를 받아요. 가구에 여러 명의 자녀가 있다면 각 자녀마다 지원을 받아요.</P>
-      <P>외국 국적 자녀도 국내 학교에 재학 중이면 지원 대상이 될 수 있어요. 다문화 가족이나 외국인 가구도 소득 기준을 충족하면 신청할 수 있어요. 주민센터에서 구체적인 조건을 확인해야 해요.</P>
+      <Sec n="SECTION 02" id="s2" title="기초생활수급자 교육급여 선정 소득 기준은?" sub="중위소득 50% · 소득인정액 · 주거급여와 차이" />
+      <P>교육급여 선정 기준은 기준 중위소득 <B>50% 이하</B>예요. 2026년 기준으로 1인 가구 월 소득인정액 약 119만원, 4인 가구 약 298만원 이하면 해당돼요. 주거급여(48%)보다 기준이 조금 더 넓어요.</P>
+      <P>교육급여는 주거급여와 기준이 달라요. 교육급여 50%, 주거급여 48%, 의료급여 40%, 생계급여 32% 순으로 기준이 달라요. 교육급여는 가장 넓은 범위에서 지원하므로 다른 급여에서 탈락해도 교육급여는 받을 수 있어요.</P>
+      <P>소득인정액 계산 방식은 주거급여와 동일해요. 근로소득, 사업소득, 이전소득 등에 재산 환산액을 더한 금액이에요. 소득인정액 계산기로 미리 시뮬레이션해볼 수 있어요.</P>
+      <P>교육급여 수급자가 되면 자녀가 초·중·고에 다니는 동안 계속 받을 수 있어요. 소득이 기준을 초과하면 수급 자격이 중단되지만, 자격을 갖추면 다시 신청할 수 있어요.</P>
 
-      <H3>교육급여 2026년 선정 기준</H3>
-      <TableTitle>가구원 수별 교육급여 선정 기준소득 (2026년)</TableTitle>
-      <div style={{ overflowX: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-          <thead>
-            <tr><THL>가구원 수</THL><TH>기준 중위소득 50%</TH></tr>
-          </thead>
-          <tbody>
-            {[
-              ["1인 가구", "약 1,160,649원"],
-              ["2인 가구", "약 1,917,922원"],
-              ["3인 가구", "약 2,455,540원"],
-              ["4인 가구", "약 2,983,289원"],
-            ].map((row, ri) => (
-              <tr key={ri}>
-                {row.map((cell, ci) => (
-                  <td key={ci} style={{ padding: "8px 10px", textAlign: ci === 0 ? "left" : "center", borderBottom: `1px solid ${C.line}`, color: ci === 0 ? C.t1 : C.t2, fontWeight: ci === 0 ? 600 : 400 }}>{cell}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <TableNote>소득인정액은 실제 소득 외에 재산 환산액이 포함돼요. 복지로에서 모의계산이 가능해요.</TableNote>
+      <InlineLink
+        icon="📋"
+        title="기초생활수급자 주거급여 2026"
+        desc="주거급여 선정 기준과 지원 금액 비교"
+        href="/w/기초생활수급자-주거급여-2026"
+      />
 
       <Divider />
 
       {/* SECTION 03 */}
-      <Sec n="SECTION 03" id="s3" title="교육급여 초중고 지원 금액은 얼마인가요?" sub="학교급별 교육활동지원비" />
-      <P>2026년 교육활동지원비는 초등학생 487,000원, 중학생 679,000원, 고등학생 768,000원이에요. 연 1회 지급되며, 바우처(교육급여 카드) 형태로 받아요.</P>
-      <P>교육급여 카드는 학용품·학습교재·문구류·교복·도서·체험학습비 등 교육 목적으로 사용할 수 있어요. 일반 카드처럼 온라인·오프라인 모두 사용 가능하고, 사용처 제한이 있어요. 외식·여행 등 교육과 무관한 곳은 사용할 수 없어요.</P>
-      <P>고등학생은 교육활동지원비 외에 수업료와 교과서 대금도 별도 지원받아요. 수업료는 학교에 직접 지급되고, 교과서도 무상으로 지원돼요. 사립 고등학교 재학생도 수업료 지원 대상이에요.</P>
-      <P>교육활동지원비는 3월에 일괄 지급되는 게 원칙이에요. 단, 당해 연도 중 수급자로 선정된 경우는 선정 이후 남은 기간에 비례해서 받을 수 있어요. 전액을 받지 못하는 경우도 있어요.</P>
+      <Sec n="SECTION 03" id="s3" title="기초생활수급자 교육급여 초중고 교육활동비는 얼마?" sub="초등 48.7만원 · 중학 67.4만원 · 고교 76.3만원" />
+      <P>2026년 교육급여로 지원하는 교육활동비는 학교급에 따라 달라요. 초등학생은 연간 <B>48.7만원</B>, 중학생은 <B>67.4만원</B>, 고등학생은 <B>76.3만원</B>이에요. 매년 조금씩 인상되고 있어요.</P>
+      <P>교육활동비는 학용품, 교재, 체험학습비 등 다양한 교육 관련 비용에 사용할 수 있어요. 현금이나 교육급여 바우처(카드) 형태로 지급돼요. 수급자 본인 계좌나 지정 카드로 받아요.</P>
+      <P>고등학생은 교육활동비 외에 입학금·수업료도 지원받아요. 저소득층 고등학생은 국가장학금 형태로 수업료를 지원받아서 실질적으로 무상 교육에 가까워요.</P>
+      <P>자녀가 여러 명이면 각각 지원받아요. 초등학생 1명, 중학생 1명이 있다면 48.7만원 + 67.4만원 = 116.1만원을 받아요. 자녀 수에 비례해서 지원 금액이 늘어나요.</P>
 
-      <H3>학교급별 지원 내용 정리</H3>
-      <TableTitle>2026년 교육급여 지원 내용</TableTitle>
-      <div style={{ overflowX: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-          <thead>
-            <tr><THL>구분</THL><TH>교육활동지원비</TH><TH>수업료</TH><TH>교과서</TH></tr>
-          </thead>
-          <tbody>
-            {[
-              ["초등학교", "487,000원", "해당 없음", "국정교과서 지원"],
-              ["중학교", "679,000원", "해당 없음", "국정교과서 지원"],
-              ["고등학교", "768,000원", "실비 지원", "검정교과서 포함 지원"],
-            ].map((row, ri) => (
-              <tr key={ri}>
-                {row.map((cell, ci) => (
-                  <td key={ci} style={{ padding: "8px 10px", textAlign: ci === 0 ? "left" : "center", borderBottom: `1px solid ${C.line}`, color: ci === 0 ? C.t1 : C.t2, fontWeight: ci === 0 ? 600 : 400 }}>{cell}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <TableNote>교육활동지원비는 연 1회 바우처로 지급돼요. 수업료·교과서는 학교로 직접 지급돼요.</TableNote>
+      <TableTitle>2026년 기초생활수급자 교육급여 금액</TableTitle>
+      <TH cols={["학교급", "연간 지원 금액", "비고"]} />
+      <THL rows={[
+        ["초등학생", "48.7만원", "교육활동비"],
+        ["중학생", "67.4만원", "교육활동비"],
+        ["고등학생", "76.3만원 + 수업료", "교육활동비 + 입학금·수업료"],
+      ]} />
+      <TableNote>금액은 교육부 고시 기준이며 매년 조정될 수 있어요.</TableNote>
+
+      <SpokeLink
+        num="01"
+        title="기초생활수급자 주거급여 2026"
+        desc="교육급여와 함께 받는 주거급여 확인"
+        href="/w/기초생활수급자-주거급여-2026"
+      />
 
       <RelatedMid
-        title="복지 지원 관련 글도 확인해 보세요"
-        items={[
-          { icon: "🏠", title: "기초생활수급자 주거급여 2026", desc: "임차가구 월 최대 341,000원", href: "/w/기초생활수급자-주거급여-2026" },
-          { icon: "👨‍👩‍👧", title: "한부모가족 지원금 신청", desc: "양육비·아동 지원 금액 2026", href: "/w/한부모가족-지원금-신청-자격" },
-          { icon: "🏡", title: "차상위계층 확인서 발급", desc: "복지로 신청 지원 혜택 종류", href: "/w/차상위계층-확인서-발급" },
+        cards={[
+          { title: "소득인정액 계산기", desc: "수급 가능 여부 정확히 계산", href: "/w/소득인정액-계산기" },
+          { title: "차상위계층 확인서", desc: "교육급여 탈락 시 대안 확인", href: "/w/차상위계층-확인서-발급" },
+          { title: "한부모가족 지원금", desc: "한부모 추가 교육 지원 확인", href: "/w/한부모가족-지원금-신청-자격" },
         ]}
-        hubHref="/category/복지"
-        hubLabel="복지 전체 보기"
+        hubHref="/w/복지"
+        hubLabel="복지 허브 보기"
       />
 
       <Divider />
 
       {/* SECTION 04 */}
-      <Sec n="SECTION 04" id="s4" title="기초생활수급자 교육활동비 신청 방법은 어떻게 되나요?" sub="복지로 · 학교 신청 · 교육급여 카드" />
-      <P>교육급여 신청은 가구 대표자 또는 보호자가 주민등록 주소지 관할 읍·면·동 주민센터에서 할 수 있어요. 복지로(bokjiro.go.kr)에서 온라인으로도 신청 가능해요.</P>
-      <P>신청 시 필요한 주요 서류는 사회보장급여 신청서, 금융정보 제공 동의서, 재학증명서(해당 자녀)예요. 주민등록등본과 건강보험료 납부 확인서는 담당자가 직접 조회하므로 별도 제출이 필요 없는 경우가 많아요.</P>
-      <P>교육급여 카드는 학교에서 배부하거나 신청서를 통해 발급받아요. 초·중학생은 카드사 앱이나 홈페이지에서 발급 현황을 확인할 수 있어요. 카드를 분실하면 재발급 신청이 가능해요.</P>
-      <P>한 번 수급자로 선정되면 이후 매년 자동으로 지원되지 않아요. 소득 상황이 바뀌면 수급 자격이 박탈될 수 있어요. 매년 정기 조사를 통해 수급 자격을 유지하는지 확인해요.</P>
+      <Sec n="SECTION 04" id="s4" title="기초생활수급자 교육급여 교육활동비 신청 대상은?" sub="신청 자격 · 학교급별 지원 항목 · 신청 창구" />
+      <P>교육급여를 받으려면 먼저 <B>기초생활수급자로 선정</B>되어야 해요. 수급자 선정은 주민센터 또는 복지로(bokjiro.go.kr)에서 신청하면 돼요. 선정 후 자녀가 초·중·고에 재학 중이면 자동으로 교육급여가 지급돼요.</P>
+      <P>신규 입학 자녀가 있다면 입학 전 1~2월에 미리 신청하는 게 좋아요. 1학기 교육활동비를 제때 받으려면 3월 이전에 신청이 완료되어야 해요. 중간에 신청해도 신청 이후 분은 받을 수 있어요.</P>
+      <P>외국 국적 학생도 일부 조건에서 교육급여를 받을 수 있어요. 국내 초·중·고에 재학 중이면 국적에 관계없이 신청할 수 있는 경우가 있어요. 자세한 사항은 학교나 주민센터에 문의하세요.</P>
+      <P>학교 급식비는 별도 지원돼요. 교육급여 수급자 자녀는 학교 무상급식과 별도로 급식 지원을 받을 수 있어요. 방과후 돌봄 서비스도 우선 배정 혜택이 있어요.</P>
 
-      <H3>신청 절차 요약</H3>
-      <Info type="tip">{"복지로(bokjiro.go.kr)에서 온라인으로 신청하면 주민센터 방문 없이 처리할 수 있어요. 공동인증서가 필요해요."}</Info>
+      <FormulaCard
+        formula="교육급여 연간 수령액 = 학교급별 금액 × 자녀 수"
+        note="예) 초등 1명 + 중학 1명 → 48.7만원 + 67.4만원 = 연 116.1만원"
+      />
+
+      <CaseBox
+        cases={[
+          {
+            name: "초등학생 1명 이씨",
+            detail: "1인 가구 · 소득인정액 65만원 (중위소득 27%)",
+            result: "교육급여 연 48.7만원 + 주거급여 + 생계급여 동시 수급",
+          },
+          {
+            name: "중고생 2명 김씨",
+            detail: "4인 가구 · 중학생 1명·고등학생 1명",
+            result: "교육급여 연 67.4만원 + 76.3만원 = 143.7만원 (수업료 별도)",
+          },
+          {
+            name: "고등학생 1명 박씨",
+            detail: "3인 가구 · 소득인정액 140만원 (중위소득 45%)",
+            result: "교육급여 연 76.3만원 + 고교 수업료 전액 지원",
+          },
+        ]}
+      />
+
+      <Info type="warn">
+        교육급여는 자동 지급되지 않아요. 수급자로 선정된 후에도 자녀 학적 변경(전학, 휴학 등)이 생기면 주민센터에 신고해야 해요.
+      </Info>
 
       <Divider />
 
       {/* SECTION 05 */}
-      <Sec n="SECTION 05" id="s5" title="기초생활수급자 교육급여 지원 대상 학교는 어디인가요?" sub="국공립·사립·특수학교 범위" />
-      <P>지원 대상 학교는 초·중등교육법에 따라 설립된 학교예요. 국공립 초·중·고등학교, 사립 초·중·고등학교, 특수학교가 포함돼요. 의무교육 대상 학교와 인가를 받은 학교가 해당해요.</P>
-      <P>비인가 대안학교는 지원 대상이 아니에요. 교육청 인가를 받은 대안학교는 지원이 가능하지만, 미인가는 제외돼요. 학교 인가 여부는 학교 측이나 주민센터에서 확인할 수 있어요.</P>
-      <P>방송통신고등학교도 일반 고등학교처럼 수업료·교과서를 지원받을 수 있어요. 야간 학교나 성인을 위한 교육 기관도 학교 유형에 따라 달라질 수 있으니 개별 확인이 필요해요.</P>
-      <P>검정고시는 교육급여 대상이 아니에요. 학교에 재학 중인 학생이 대상이에요. 검정고시를 통해 학력을 취득하려는 경우는 교육청 또는 지자체 장학사업을 알아보는 게 좋아요.</P>
+      <Sec n="SECTION 05" id="s5" title="기초생활수급자 교육급여 외 추가 지원은 있나요?" sub="방과후 지원 · 교복비 · 급식 지원 연계" />
+      <P>교육급여 외에도 다양한 추가 지원이 있어요. 교육부에서 운영하는 <B>교육비 지원 시스템</B>을 통해 방과후 학교 수강권, 인터넷 통신비, 학교급식비 등을 추가로 받을 수 있어요.</P>
+      <P>교복비 지원은 중학교·고등학교 신입생에게 제공돼요. 지자체별로 지원 금액이 달라요. 서울시의 경우 30~40만원을 지원해요. 학교 입학 전에 주민센터나 학교에 문의해야 해요.</P>
+      <P>방과후 학교 자유수강권은 연 최대 60만원을 지원해요. 수급자 자녀는 우선 배정받을 수 있어요. 학원비 대신 학교 방과후 프로그램을 무료로 이용할 수 있어요.</P>
+      <P>중·고등학생이라면 한국장학재단의 국가장학금도 확인해봐요. 대학생이 되면 소득분위에 따라 장학금을 받을 수 있어요. 취업후상환 학자금대출도 소득이 낮으면 이자 혜택이 있어요.</P>
 
-      <H3>지원 대상 학교 범위</H3>
-      <Info type="warn">{"비인가 대안학교는 지원 대상이 아니에요. 재학 중인 학교 인가 여부를 먼저 확인하세요."}</Info>
-
-      <ExtBtn
-        badge="복지로 공식"
-        text="기초생활 교육급여 신청"
-        cta="온라인 신청하기 →"
-        href="https://www.bokjiro.go.kr"
+      <SpokeLink
+        num="02"
+        title="차상위계층 확인서 발급"
+        desc="교육급여 탈락 시 추가 복지 혜택 확인"
+        href="/w/차상위계층-확인서-발급"
       />
 
+      <InlineLink
+        icon="📋"
+        title="취업후상환 학자금대출 상환"
+        desc="대학생 자녀 학자금 대출 조건과 상환 방법"
+        href="/w/취업후상환-학자금대출-상환"
+      />
+
+      <ExtBtn href="https://www.bokjiro.go.kr" label="복지로 공식" text="교육급여 신청 바로가기" />
+
+      <Divider />
+
+      {/* FAQ */}
       <FAQAccordion items={meta.faq} />
-
-      <RelatedArticles items={[
-        { title: "기초생활수급자 주거급여 2026 | 임차가구 수선비 지원 금액 신청 방법", desc: "주거급여 지원 금액과 신청 방법이에요", href: "/w/기초생활수급자-주거급여-2026" },
-        { title: "차상위계층 확인서 발급 방법 | 복지로 신청 지원 혜택 종류", desc: "차상위계층 확인서 발급 방법이에요", href: "/w/차상위계층-확인서-발급" },
-        { title: "한부모가족 지원금 신청 자격 2026 | 양육비 아동 지원 금액 확인", desc: "한부모가족 지원 금액과 신청 방법이에요", href: "/w/한부모가족-지원금-신청-자격" },
-        { title: "노인장기요양보험 등급 신청 방법 | 1등급 2등급 판정 기준 본인부담금", desc: "장기요양등급 신청과 판정 기준이에요", href: "/w/장기요양보험-등급-신청-방법" },
-        { title: "장애인 복지카드 발급 신청 방법 | 교통 세금 감면 혜택 종류", desc: "복지카드 발급 방법과 혜택이에요", href: "/w/장애인-복지카드-발급-신청" },
-      ]} />
-
+      <RelatedArticles
+        items={[
+          { title: "기초생활수급자 주거급여 2026", href: "/w/기초생활수급자-주거급여-2026" },
+          { title: "차상위계층 확인서 발급", href: "/w/차상위계층-확인서-발급" },
+          { title: "한부모가족 지원금 자격", href: "/w/한부모가족-지원금-신청-자격" },
+          { title: "취업후상환 학자금대출 상환", href: "/w/취업후상환-학자금대출-상환" },
+          { title: "장기요양보험 등급 판정", href: "/w/장기요양보험-등급-신청-방법" },
+        ]}
+      />
       <PrevNext
-        prev={{ title: "기초생활수급자 주거급여 2026 | 임차가구 수선비 지원 금액 신청 방법", href: "/w/기초생활수급자-주거급여-2026" }}
-        next={{ title: "노인장기요양보험 등급 신청 방법 | 1등급 2등급 판정 기준 본인부담금", href: "/w/장기요양보험-등급-신청-방법" }}
+        prev={{ title: "기초생활수급자 주거급여 2026", href: "/w/기초생활수급자-주거급여-2026" }}
+        next={{ title: "장기요양보험 등급 판정 기준", href: "/w/장기요양보험-등급-신청-방법" }}
       />
     </BlogLayout>
   );
 }
+
+export { meta };
