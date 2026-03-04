@@ -9,6 +9,7 @@ import { CategorySidebar } from "@/components/CategorySidebar";
 import { AuthorBio } from "@/components/AuthorBio";
 import AdSense, { AD_SLOTS } from "@/components/AdSense";
 import ShareButtons from "@/components/ShareButtons";
+import { ArticleViz } from "@/components/ArticleViz";
 import { getSpokeArticle, spokeArticles } from "@/data/articles";
 import { categories } from "@/data/categories";
 
@@ -205,6 +206,7 @@ export default async function SpokePage({ params }: PageProps) {
         <div className="flex-1 max-w-3xl">
           {/* Article Sections */}
           <article>
+            <ArticleViz slug={spokeSlug} position="top" />
             {article.sections.map((section, i) => {
               const icon = getSectionIcon(section.title);
               return (
@@ -227,9 +229,11 @@ export default async function SpokePage({ params }: PageProps) {
                       <hr className="mt-8 border-gray-200" />
                     )}
                   </section>
+                  <ArticleViz slug={spokeSlug} position={`after-${i}`} />
                 </Fragment>
               );
             })}
+            <ArticleViz slug={spokeSlug} position="bottom" />
           </article>
 
           {/* Sources */}
