@@ -86,7 +86,7 @@ export default function Home() {
     <>
       <QuickSidebar />
 
-      <div className="lg:ml-[100px]">
+      <div className="lg:ml-[88px]">
         {/* ===== Hero ===== */}
         <section className="bg-[#1B3A5C]">
           <div className="max-w-[1100px] mx-auto px-6 py-16 md:py-20">
