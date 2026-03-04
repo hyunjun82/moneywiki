@@ -88,8 +88,11 @@ export default function Home() {
 
       <div className="lg:ml-[88px]">
         {/* ===== Hero ===== */}
-        <section className="bg-[#1B3A5C]">
-          <div className="max-w-[1100px] mx-auto px-6 py-16 md:py-20">
+        <section className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #1B3A5C 0%, #234B73 50%, #1B3A5C 100%)' }}>
+          {/* 배경 장식 */}
+          <div className="absolute -right-32 -top-32 w-[500px] h-[500px] bg-white/[0.03] rounded-full" />
+          <div className="absolute -left-20 -bottom-20 w-[300px] h-[300px] bg-white/[0.02] rounded-full" />
+          <div className="max-w-[1100px] mx-auto px-6 py-16 md:py-20 relative">
             <div className="flex items-center gap-12">
               <div className="flex-1 text-center md:text-left">
                 <h1 className="text-3xl md:text-[40px] font-bold tracking-tight mb-4 text-white leading-tight">
@@ -101,15 +104,23 @@ export default function Home() {
                   <br className="hidden sm:block" />
                   계산기, 체크리스트, 가이드까지 한곳에서.
                 </p>
-                <Link
-                  href="/search"
-                  className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-white rounded-lg hover:bg-gray-50 transition-colors text-[#1B3A5C] font-medium shadow-lg"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                  <span>{allDocs.length}개 문서 검색</span>
-                </Link>
+                <div className="flex flex-col sm:flex-row items-center md:items-start gap-3">
+                  <Link
+                    href="/search"
+                    className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-white rounded-lg hover:bg-gray-50 transition-colors text-[#1B3A5C] font-medium shadow-lg"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    <span>{allDocs.length}개 문서 검색</span>
+                  </Link>
+                  <Link
+                    href="/#calculators"
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-white/25 text-white/80 hover:bg-white/10 hover:text-white transition-all text-sm font-medium"
+                  >
+                    계산기 및 참조 도구
+                  </Link>
+                </div>
               </div>
 
               {/* 히어로 우측: 주요 카테고리 6개 */}
@@ -119,10 +130,10 @@ export default function Home() {
                     <Link
                       key={cat.slug}
                       href={`/${cat.slug}`}
-                      className="flex flex-col items-center gap-2 p-3 rounded-xl bg-white/10 hover:bg-white/15 transition-colors"
+                      className="flex flex-col items-center gap-2 p-3.5 rounded-xl bg-white/[0.08] hover:bg-white/15 transition-all border border-white/[0.06]"
                     >
-                      <div className="w-11 h-11 rounded-lg bg-white/15 flex items-center justify-center">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="white" className="w-5 h-5" dangerouslySetInnerHTML={{ __html: CATEGORY_ICONS[cat.slug] || "" }} />
+                      <div className="w-12 h-12 rounded-lg bg-white/15 flex items-center justify-center">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" className="w-5.5 h-5.5" dangerouslySetInnerHTML={{ __html: CATEGORY_ICONS[cat.slug] || "" }} />
                       </div>
                       <span className="text-[11px] text-white/80 font-medium">{cat.name}</span>
                     </Link>
@@ -150,7 +161,9 @@ export default function Home() {
                     href={`/w/${calc.slug}`}
                     className="flex flex-col items-center gap-2.5 py-2 group"
                   >
-                    <NavyIcon svg={calc.path} />
+                    <div className="rounded-xl flex items-center justify-center bg-[#EDF2F8] group-hover:bg-[#1B3A5C] transition-colors" style={{ width: 48, height: 48 }}>
+                      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 stroke-[#1B3A5C] group-hover:stroke-white transition-colors" dangerouslySetInnerHTML={{ __html: calc.path }} />
+                    </div>
                     <span className="text-xs text-gray-600 group-hover:text-[#1B3A5C] font-medium transition-colors text-center leading-tight">
                       {calc.name}
                     </span>
@@ -165,7 +178,7 @@ export default function Home() {
                 <Link
                   key={link.slug}
                   href={`/w/${link.slug}`}
-                  className="flex items-center justify-between p-4 bg-white border border-gray-200 rounded-xl hover:border-[#1B3A5C]/30 hover:shadow-sm transition-all group"
+                  className="flex items-center justify-between p-4 bg-white border border-gray-200 rounded-xl hover:border-[#1B3A5C]/30 hover:shadow-sm transition-all group border-l-[3px] border-l-[#1B3A5C]/20 hover:border-l-[#1B3A5C]"
                 >
                   <div>
                     <div className="text-sm font-semibold text-gray-900 group-hover:text-[#1B3A5C] transition-colors">{link.name}</div>
@@ -212,7 +225,13 @@ export default function Home() {
                 >
                   <span className="inline-block text-xs font-medium text-[#1B3A5C] bg-[#EDF2F8] px-2.5 py-1 rounded-md mb-3">{guide.category}</span>
                   <h3 className="text-sm font-bold text-gray-900 mb-1.5 group-hover:text-[#1B3A5C] transition-colors">{guide.title}</h3>
-                  <p className="text-xs text-gray-500 leading-relaxed">{guide.desc}</p>
+                  <p className="text-xs text-gray-500 leading-relaxed mb-3">{guide.desc}</p>
+                  <span className="inline-flex items-center gap-1 text-xs text-[#1B3A5C]/60 group-hover:text-[#1B3A5C] font-medium transition-colors">
+                    바로가기
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
                 </Link>
               ))}
             </div>
