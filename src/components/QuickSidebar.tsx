@@ -42,7 +42,7 @@ export default function QuickSidebar() {
   return (
     <aside
       className="hidden lg:flex fixed left-0 top-14 bottom-0 w-[100px] flex-col z-30"
-      style={{ background: 'linear-gradient(180deg, #1B3A5C 0%, #24466B 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #0F2235 0%, #162D45 40%, #1A3550 100%)' }}
     >
       <div className="px-2 py-3 text-white/70 font-semibold text-[11px] text-center tracking-wider uppercase border-b border-white/10">
         빠른 메뉴
@@ -64,7 +64,7 @@ export default function QuickSidebar() {
               `}
             >
               {isActive && (
-                <div className="absolute left-0 top-2 bottom-2 w-[3px] bg-white rounded-r-full" />
+                <div className="absolute left-0 top-2 bottom-2 w-[3px] bg-[#60A5FA] rounded-r-full" />
               )}
               <span className="text-lg leading-none">{item.icon}</span>
               <span className="text-[10px] font-medium leading-tight">{item.label}</span>
