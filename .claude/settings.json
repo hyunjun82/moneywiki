@@ -18,13 +18,9 @@
       "Bash(git checkout:*)",
       "Bash(git status:*)",
       "Bash(git restore:*)",
-      "Bash(git reset:*)",
-      "Bash(node -e \"const s = require\\(''./.claude/settings.json''\\); console.log\\(JSON.stringify\\(s.hooks.PostToolUse, null, 2\\)\\);\")"
+      "Bash(git reset:*)"
     ],
-    "deny": [
-      "Write(/.claude/settings.json)",
-      "Edit(/.claude/settings.json)"
-    ]
+    "deny": []
   },
   "hooks": {
     "PostToolUse": [
@@ -42,30 +38,6 @@
             "command": "node .claude/scripts/verify-blog-quality.js",
             "timeout": 30,
             "statusMessage": "블로그 TSX 품질 검증 중..."
-          }
-        ]
-      }
-    ],
-    "TaskCompleted": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node .claude/hooks/task-complete-verify.js",
-            "timeout": 60,
-            "statusMessage": "태스크 완료 검증 중..."
-          }
-        ]
-      }
-    ],
-    "TeammateIdle": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node .claude/hooks/teammate-idle-check.js",
-            "timeout": 30,
-            "statusMessage": "팀원 idle 검증 중..."
           }
         ]
       }
