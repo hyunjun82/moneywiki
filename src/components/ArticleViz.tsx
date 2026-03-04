@@ -29,18 +29,6 @@ interface VizEntry {
 const VIZ_MAP: Record<string, VizEntry[]> = {
   "부양가족-공제-연말정산": [
     {
-      position: "top",
-      component: <EligibilityChecker
-        questions={[
-          { question: "부양가족이 만 20세 이하 또는 만 60세 이상인가요?" },
-          { question: "부양가족의 연간 소득금액이 100만원 이하인가요? (근로소득만 있는 경우 총급여 500만원 이하)" },
-          { question: "주민등록상 같은 세대에 거주하고 있나요? (직계존속은 별거도 가능)" },
-        ]}
-        passMessage="축하해요! 부양가족 기본공제 대상에 해당돼요. 1인당 150만원 소득공제를 받을 수 있어요."
-        failMessage="아쉽지만 기본공제 대상에 해당하지 않아요. 조건을 다시 확인해 보세요."
-      />,
-    },
-    {
       position: "section-0",
       component: <StatCard items={[
         { label: "기본공제", value: "150만원", sub: "부양가족 1인당" },

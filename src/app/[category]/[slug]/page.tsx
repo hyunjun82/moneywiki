@@ -201,14 +201,11 @@ export default async function SpokePage({ params }: PageProps) {
       </div>
 
       {/* 2-column layout: main + sidebar */}
-      <div className="mx-auto max-w-5xl px-4 lg:flex lg:gap-8">
+      <div className="mx-auto max-w-6xl px-4 lg:flex lg:gap-10">
         {/* Main Column */}
         <div className="flex-1 max-w-3xl">
           {/* Article Sections */}
           <article>
-            <div className="pl-[42px]">
-              <ArticleViz slug={spokeSlug} position="top" />
-            </div>
             {article.sections.map((section, i) => {
               const icon = getSectionIcon(section.title);
               return (
