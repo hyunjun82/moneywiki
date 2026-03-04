@@ -220,6 +220,7 @@ export default async function SpokePage({ params }: PageProps) {
                         {section.title}
                       </h2>
                     </div>
+                    <ArticleViz slug={spokeSlug} position={`section-${i}`} />
                     <div className="text-[15px] text-gray-600 leading-[1.85] sm:text-[16px] pl-[42px] space-y-3">
                       {section.content.split("\n\n").map((paragraph, pi) => (
                         <p key={pi}>{paragraph}</p>
@@ -229,7 +230,6 @@ export default async function SpokePage({ params }: PageProps) {
                       <hr className="mt-8 border-gray-200" />
                     )}
                   </section>
-                  <ArticleViz slug={spokeSlug} position={`after-${i}`} />
                 </Fragment>
               );
             })}
