@@ -206,7 +206,9 @@ export default async function SpokePage({ params }: PageProps) {
         <div className="flex-1 max-w-3xl">
           {/* Article Sections */}
           <article>
-            <ArticleViz slug={spokeSlug} position="top" />
+            <div className="pl-[42px]">
+              <ArticleViz slug={spokeSlug} position="top" />
+            </div>
             {article.sections.map((section, i) => {
               const icon = getSectionIcon(section.title);
               return (
@@ -220,7 +222,9 @@ export default async function SpokePage({ params }: PageProps) {
                         {section.title}
                       </h2>
                     </div>
-                    <ArticleViz slug={spokeSlug} position={`section-${i}`} />
+                    <div className="pl-[42px]">
+                      <ArticleViz slug={spokeSlug} position={`section-${i}`} />
+                    </div>
                     <div className="text-[15px] text-gray-600 leading-[1.85] sm:text-[16px] pl-[42px] space-y-3">
                       {section.content.split("\n\n").map((paragraph, pi) => (
                         <p key={pi}>{paragraph}</p>
@@ -233,7 +237,9 @@ export default async function SpokePage({ params }: PageProps) {
                 </Fragment>
               );
             })}
-            <ArticleViz slug={spokeSlug} position="bottom" />
+            <div className="pl-[42px]">
+              <ArticleViz slug={spokeSlug} position="bottom" />
+            </div>
           </article>
 
           {/* Sources */}
