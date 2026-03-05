@@ -27,6 +27,60 @@ interface VizEntry {
 
 // slug별 시각화 매핑 — 글 작성 시 여기에 추가
 const VIZ_MAP: Record<string, VizEntry[]> = {
+  "조기재취업수당-조건-금액-신청": [
+    {
+      position: "section-0",
+      component: <StatCard items={[
+        { label: "지급 비율", value: "50%", sub: "남은 급여의 절반" },
+        { label: "잔여일수 조건", value: "1/2 이상", sub: "소정급여일수 기준" },
+        { label: "고용 유지", value: "12개월", sub: "재취업 후 근무 기간" },
+        { label: "일 상한액", value: "66,000원", sub: "2026년 기준" },
+      ]} />,
+    },
+    {
+      position: "section-1",
+      component: <EligibilityChecker
+        questions={[
+          { question: "소정급여일수의 절반 이상 남았나요?" },
+          { question: "12개월 이상 고용(또는 사업 영위) 가능한가요?" },
+          { question: "이전 직장과 다른 사업장인가요?" },
+          { question: "수급자격 신청 전에 채용이 확정되지 않았나요?" },
+        ]}
+        passMessage="조기재취업수당을 받을 수 있어요! 재취업 후 12개월이 지나면 고용24에서 신청하세요."
+        failMessage="아쉽지만 조건을 충족하지 못해요. 남은 실업급여를 끝까지 수급하는 게 나을 수 있어요."
+      />,
+    },
+    {
+      position: "section-2",
+      component: <RangeTable
+        title="조기재취업수당 금액 시뮬레이션"
+        headers={["소정급여일수", "수급 일수", "남은 일수", "수당 예상액 (상한 기준)"]}
+        rows={[
+          { label: "120일", values: ["20일", "100일", "330만원"], highlight: true },
+          { label: "150일", values: ["30일", "120일", "396만원"] },
+          { label: "180일", values: ["30일", "150일", "495만원"], highlight: true },
+          { label: "210일", values: ["40일", "170일", "561만원"] },
+          { label: "240일", values: ["50일", "190일", "627만원"], highlight: true },
+          { label: "270일", values: ["60일", "210일", "693만원"] },
+        ]}
+      />,
+    },
+    {
+      position: "section-3",
+      component: <ProcessTimeline steps={[
+        { title: "재취업", description: "소정급여일수 1/2 이상 남기고 취업" },
+        { title: "12개월 근무", description: "같은 직장에서 계속 근무" },
+        { title: "수당 신청", description: "고용24 또는 고용센터 방문" },
+        { title: "심사·지급", description: "서류 확인 후 계좌 입금" },
+      ]} />,
+    },
+    {
+      position: "section-4",
+      component: <WarningBox type="danger" title="반환해야 하는 경우">
+        12개월 미만에 본인 귀책으로 퇴사하면 수당을 반환해야 해요. 다만 회사 도산이나 권고사직은 예외예요. 친족 회사 취업, 사업자등록만 해놓고 실제 영업 안 하는 경우도 거절 사유예요.
+      </WarningBox>,
+    },
+  ],
   "부양가족-공제-연말정산": [
     {
       position: "section-0",

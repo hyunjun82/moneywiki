@@ -7,6 +7,7 @@ import AdSense, { AD_SLOTS } from "@/components/AdSense";
 import ShareButtons from "@/components/ShareButtons";
 import { ArticleViz } from "@/components/ArticleViz";
 import { categories } from "@/data/categories";
+import { hubArticles } from "@/data/articles";
 import type { SpokeArticle } from "@/lib/types";
 
 function formatKoreanDate(isoDate: string): string {
@@ -33,10 +34,63 @@ interface Props {
   slug: string;
 }
 
+// 본문 중간 관련 글 내부링크 (3개)
+function RelatedSpokesInline({ categorySlug, currentSlug }: { categorySlug: string; currentSlug: string }) {
+  const hub = hubArticles[categorySlug];
+  if (!hub) return null;
+  const others = hub.spokes.filter((s) => s.slug !== currentSlug);
+  if (others.length === 0) return null;
+  const display = others.slice(0, 3);
+  const totalCount = hub.spokes.length;
+  const catInfo = categories.find((c) => c.slug === categorySlug);
+
+  return (
+    <div className="my-8 rounded-xl border border-gray-200 bg-gray-50/50 p-5">
+      <Link
+        href={`/${categorySlug}`}
+        className="group flex items-center justify-center gap-2.5 w-full rounded-xl bg-[#1B3A5C] hover:bg-[#15304D] px-5 py-4 text-white font-bold text-base transition-all shadow-sm hover:shadow-md mb-5"
+      >
+        <svg className="h-5 w-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+        </svg>
+        <span>{catInfo?.name ?? categorySlug} 정보 {totalCount}개 전체 보기</span>
+        <svg className="h-5 w-5 shrink-0 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </Link>
+      <h3 className="text-sm font-bold text-gray-900 mb-3 flex items-center gap-2">
+        📋 관련 정보도 확인해 보세요
+      </h3>
+      <div className="space-y-2.5">
+        {display.map((spoke) => (
+          <Link
+            key={spoke.slug}
+            href={`/w/${spoke.slug}`}
+            className="group flex items-start gap-2.5 rounded-lg bg-white px-4 py-3 border border-gray-100 transition-all hover:border-[#1B3A5C]/20 hover:shadow-sm"
+          >
+            <svg className="h-4 w-4 mt-0.5 shrink-0 text-[#1B3A5C] group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+            <div className="min-w-0">
+              <span className="text-sm font-semibold text-gray-900 group-hover:text-[#1B3A5C] transition-colors">
+                {spoke.title}
+              </span>
+              <p className="text-xs text-gray-500 mt-0.5 line-clamp-1">
+                {spoke.description}
+              </p>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function SpokeArticleRenderer({ article, slug }: Props) {
   const catSlug = article.categorySlug;
   const catInfo = categories.find((c) => c.slug === catSlug);
   const url = `https://www.jjyu.co.kr/w/${slug}`;
+  const midIndex = Math.min(2, article.sections.length - 1); // 3번째 섹션 뒤에 삽입
 
   return (
     <>
@@ -130,6 +184,9 @@ export default function SpokeArticleRenderer({ article, slug }: Props) {
                     </div>
                     {i < article.sections.length - 1 && <hr className="mt-8 border-gray-200" />}
                   </section>
+                  {i === midIndex && (
+                    <RelatedSpokesInline categorySlug={catSlug} currentSlug={slug} />
+                  )}
                 </Fragment>
               );
             })}
