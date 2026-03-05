@@ -90,13 +90,13 @@ export default function SpokeArticleRenderer({ article, slug }: Props) {
   const catSlug = article.categorySlug;
   const catInfo = categories.find((c) => c.slug === catSlug);
   const url = `https://www.jjyu.co.kr/w/${slug}`;
-  const midIndex = Math.min(2, article.sections.length - 1); // 3번째 섹션 뒤에 삽입
+  const midIndex = Math.min(2, article.sections.length - 1);
 
   return (
     <>
-      {/* Breadcrumb */}
+      {/* Breadcrumb — 6xl 기준으로 정렬 */}
       <div className="border-b bg-white">
-        <div className="mx-auto max-w-3xl px-4 py-3">
+        <div className="mx-auto max-w-6xl px-4 py-3">
           <nav className="flex items-center gap-1 text-sm text-gray-500">
             <Link href="/" className="hover:text-[#1B3A5C]">홈</Link>
             <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -115,53 +115,58 @@ export default function SpokeArticleRenderer({ article, slug }: Props) {
         </div>
       </div>
 
-      {/* Hero */}
+      {/* Hero — 6xl 2컬럼 안에서 본문과 정렬 */}
       <section className="border-b bg-gradient-to-b from-[#EDF2F8] to-white">
-        <div className="mx-auto max-w-3xl px-4 py-12">
-          {catInfo && (
-            <span className="inline-block bg-[#1B3A5C] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">
-              {catInfo.icon} {catInfo.name}
-            </span>
-          )}
-          <h1 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">
-            {article.h1}
-          </h1>
-          <p className="mt-3 text-base text-gray-500 leading-relaxed sm:text-lg">
-            {article.heroDescription}
-          </p>
-          <div className="mt-3 flex items-center gap-3 text-sm text-gray-400">
-            <Link href="/about" className="font-medium text-gray-500 hover:text-[#1B3A5C] transition-colors">
-              머니위키 에디터
-            </Link>
-            {article.datePublished && (
-              <>
-                <span>|</span>
-                <time dateTime={article.dateModified || article.datePublished}>
-                  {formatKoreanDate(article.datePublished)} 작성
-                </time>
-              </>
+        <div className="mx-auto max-w-6xl px-4 lg:flex lg:gap-10">
+          <div className="flex-1 max-w-3xl py-12">
+            {catInfo && (
+              <span className="inline-block bg-[#1B3A5C] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">
+                {catInfo.icon} {catInfo.name}
+              </span>
             )}
-            {article.dateModified && article.dateModified !== article.datePublished && (
-              <>
-                <span>|</span>
-                <time dateTime={article.dateModified}>{formatKoreanDate(article.dateModified)} 수정</time>
-              </>
-            )}
+            <h1 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">
+              {article.h1}
+            </h1>
+            <p className="mt-3 text-base text-gray-500 leading-relaxed sm:text-lg">
+              {article.heroDescription}
+            </p>
+            <div className="mt-3 flex items-center gap-3 text-sm text-gray-400">
+              <Link href="/about" className="font-medium text-gray-500 hover:text-[#1B3A5C] transition-colors">
+                머니위키 에디터
+              </Link>
+              {article.datePublished && (
+                <>
+                  <span>|</span>
+                  <time dateTime={article.dateModified || article.datePublished}>
+                    {formatKoreanDate(article.datePublished)} 작성
+                  </time>
+                </>
+              )}
+              {article.dateModified && article.dateModified !== article.datePublished && (
+                <>
+                  <span>|</span>
+                  <time dateTime={article.dateModified}>{formatKoreanDate(article.dateModified)} 수정</time>
+                </>
+              )}
+            </div>
+            <div className="mt-4">
+              <ShareButtons title={article.title} url={url} description={article.description} />
+            </div>
           </div>
-          <div className="mt-4">
-            <ShareButtons title={article.title} url={url} description={article.description} />
-          </div>
+          {/* 히어로 오른쪽은 사이드바 자리 비움 (정렬용) */}
+          <div className="hidden lg:block lg:w-[280px] lg:shrink-0" />
         </div>
       </section>
 
-      {/* Ad */}
-      <div className="mx-auto max-w-3xl px-4 py-4">
-        <AdSense slot={AD_SLOTS.HORIZONTAL} className="w-full" />
-      </div>
-
-      {/* 2-column layout */}
+      {/* 2-column layout: 히어로~본문~사이드바 동일 폭 */}
       <div className="mx-auto max-w-6xl px-4 lg:flex lg:gap-10">
         <div className="flex-1 max-w-3xl">
+          {/* Ad */}
+          <div className="py-4">
+            <AdSense slot={AD_SLOTS.HORIZONTAL} className="w-full" />
+          </div>
+
+          {/* Article Sections */}
           <article>
             {article.sections.map((section, i) => {
               const icon = getSectionIcon(section.title);
