@@ -99,6 +99,7 @@ import Article148Component from "./장기요양보험-등급-신청-방법";
 import Article149Component from "./차상위계층-확인서-발급";
 import Article150Component from "./한부모가족-지원금-신청-자격";
 import Article151Component from "./장애인-복지카드-발급-신청";
+import Article152Component from "./자진퇴사-실업급여-정당사유";
 
 const BLOGS: BlogEntry[] = [
   {
@@ -2090,6 +2091,24 @@ const BLOGS: BlogEntry[] = [
       ],
     },
     Component: Article151Component,
+  },
+  {
+    slug: "자진퇴사-실업급여-정당사유",
+    meta: {
+      title: "자진퇴사 정당 이직 사유 12가지 | 실업급여 비자발적 인정 증빙서류",
+      description: "자진퇴사해도 실업급여를 받을 수 있어요. 고용보험법 시행규칙 별표2에 따른 정당 이직 사유 12가지와 사유별 증빙서류 목록을 정리했어요.",
+      keywords: ["자진퇴사 정당 이직 사유", "자진퇴사 비자발적 인정", "자진퇴사 이직확인서 코드", "자진퇴사 증빙서류"],
+      ogTitle: "자진퇴사 정당 이직 사유 12가지 | 머니위키",
+      ogDescription: "자진퇴사해도 실업급여를 받을 수 있습니다. 정당 이직 사유 12가지와 사유별 증빙서류를 정리했습니다.",
+      datePublished: "2026-03-05",
+      lastUpdated: "2026-03-05",
+      category: "실업급여",
+      faq: [
+        { question: "임금이 한 달만 체불됐어도 정당사유로 인정되나요?", answer: "이직 전 1년간 2개월분 이상 체불이어야 정당사유로 인정돼요. 한 달치만 체불된 경우는 원칙적으로 해당되지 않아요. 다만 체불 금액이 전체 임금의 30% 이상이면 1개월이어도 인정될 수 있어요. 해당 여부가 애매하면 고용센터 상담을 받아보는 게 가장 확실해요." },
+        { question: "이직확인서에 코드 4번으로 적혔는데 임금체불 때문에 나왔어요. 어떻게 하나요?", answer: "고용센터에서 실제 이직 사유로 이의 제기가 가능해요. 급여명세서, 통장 거래 내역, 미지급 임금에 관한 문자·이메일을 가져가서 진술서를 작성하면 돼요. 코드 4번이어도 실제 사유가 입증되면 코드 5번 심사를 받을 수 있어요." },
+      ],
+    },
+    Component: Article152Component,
   },
 ];
 
