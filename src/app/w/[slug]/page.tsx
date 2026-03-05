@@ -5,7 +5,9 @@ import { getWikiDocument, getAllWikiSlugs, findRelatedDocuments, getAllWikiDocum
 import { getSpokeBySlug, getAllSpokeSlugs } from "@/data/spoke/registry";
 import { getHubBySlug, getAllHubSlugs } from "@/data/hub/registry";
 import { getBlogBySlug } from "@/data/blog/registry";
+import { getSpokeArticleBySlug } from "@/data/articles";
 import SpokePageContent from "@/components/spoke/SpokePageContent";
+import SpokeArticleRenderer from "@/components/SpokeArticleRenderer";
 import HubPageContent from "@/components/hub/HubPageContent";
 import {
   ArticleSchema,
@@ -81,6 +83,28 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         locale: 'ko_KR',
       },
       robots: { index: true, follow: true, 'max-snippet': -1, 'max-image-preview': 'large' as const },
+    };
+  }
+
+  // articles/ 순수 데이터 메타데이터
+  const spokeArticleMeta = getSpokeArticleBySlug(slug);
+  if (spokeArticleMeta) {
+    const url = `https://www.jjyu.co.kr/w/${slug}`;
+    return {
+      title: spokeArticleMeta.title,
+      description: spokeArticleMeta.metaDescription,
+      alternates: { canonical: url },
+      openGraph: {
+        title: spokeArticleMeta.title,
+        description: spokeArticleMeta.metaDescription,
+        url,
+        type: "article",
+        publishedTime: spokeArticleMeta.datePublished,
+        modifiedTime: spokeArticleMeta.dateModified,
+        siteName: "머니위키",
+        locale: "ko_KR",
+      },
+      robots: { index: true, follow: true, "max-snippet": -1, "max-image-preview": "large" as const },
     };
   }
 
@@ -525,9 +549,87 @@ export default async function WikiPage({ params }: PageProps) {
         />
         <BreadcrumbSchema items={blogBreadcrumb} />
         {blog.meta.faq && blog.meta.faq.length > 0 && <FAQSchema items={blog.meta.faq} />}
-        <BlogComponent />
+        <div className="max-w-7xl mx-auto px-4 py-8 flex gap-8">
+          <main className="flex-1 min-w-0">
+            <BlogComponent />
+          </main>
+          <aside className="w-72 shrink-0 hidden lg:block space-y-4">
+            <div className="sticky top-4">
+              <div className="mb-4">
+                <AdSense slot={AD_SLOTS.SQUARE} className="w-full" />
+              </div>
+              <div className="bg-white border border-neutral-200 rounded-xl overflow-hidden mb-4">
+                <div className="p-4 space-y-3">
+                  <Link href="/w/미환급금-조회" className="group flex items-center gap-3 p-3 rounded-lg transition-all border border-transparent hover:border-[#B8D0E8] animate-yellow-blink">
+                    <span className="w-10 h-10 bg-[#EDF2F8] rounded-lg flex items-center justify-center text-lg group-hover:scale-110 transition-transform">💰</span>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-semibold text-neutral-800 truncate">내 숨은 환급금 찾기</p>
+                      <p className="text-xs text-neutral-500">평균 13만원 환급</p>
+                    </div>
+                    <svg className="w-5 h-5 text-neutral-400 group-hover:text-[#1E3A5F] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                  </Link>
+                  <Link href="/category/정부지원금" className="group flex items-center gap-3 p-3 rounded-lg transition-all border border-transparent hover:border-blue-200 animate-yellow-blink" style={{ animationDelay: '0.3s' }}>
+                    <span className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-lg group-hover:scale-110 transition-transform">🏛️</span>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-semibold text-neutral-800 truncate">2026 정부지원금</p>
+                      <p className="text-xs text-neutral-500">30개+ 지원금 총정리</p>
+                    </div>
+                    <svg className="w-5 h-5 text-neutral-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                  </Link>
+                  <Link href="/w/2026년-달라지는-제도" className="group flex items-center gap-3 p-3 rounded-lg transition-all border border-transparent hover:border-amber-200 animate-yellow-blink" style={{ animationDelay: '0.6s' }}>
+                    <span className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center text-lg group-hover:scale-110 transition-transform">📋</span>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-semibold text-neutral-800 truncate">2026년 달라지는 제도</p>
+                      <p className="text-xs text-neutral-500">꼭 알아야 할 변경사항</p>
+                    </div>
+                    <svg className="w-5 h-5 text-neutral-400 group-hover:text-amber-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                  </Link>
+                </div>
+              </div>
+              <div className="bg-white border border-neutral-200 rounded-xl overflow-hidden mb-4">
+                <div className="px-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600">
+                  <span className="text-sm font-semibold text-white flex items-center gap-2">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
+                    인기 계산기
+                  </span>
+                </div>
+                <ul className="divide-y divide-neutral-100">
+                  {[
+                    { title: '실업급여 계산기', slug: '실업급여-계산기', rank: 1 },
+                    { title: '퇴직금 계산기', slug: '퇴직금-계산기', rank: 2 },
+                    { title: '연말정산 계산기', slug: '연말정산-계산기', rank: 3 },
+                    { title: '양도소득세 계산기', slug: '양도소득세-계산기', rank: 4 },
+                    { title: '대출이자 계산기', slug: '대출이자-계산기', rank: 5 },
+                    { title: '국민연금 수령액', slug: '국민연금-수령액-계산기', rank: 6 },
+                  ].map((item) => (
+                    <li key={item.rank}>
+                      <Link href={`/w/${item.slug}`} className="flex items-center gap-3 px-4 py-2.5 hover:bg-neutral-50 transition-colors">
+                        <span className={`w-6 h-6 rounded-md flex items-center justify-center text-xs font-bold ${item.rank <= 3 ? 'bg-blue-600 text-white' : 'bg-neutral-100 text-neutral-500'}`}>{item.rank}</span>
+                        <span className="flex-1 text-sm text-neutral-700 truncate">{item.title}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="p-4 bg-[#F5F8FB] rounded-xl">
+                <h3 className="text-xs font-semibold text-[#162F4F] mb-3">빠른 링크</h3>
+                <div className="flex flex-wrap gap-2">
+                  <Link href="/w/퇴직금" className="px-3 py-1.5 bg-white text-xs text-neutral-600 rounded-lg hover:bg-[#1E3A5F] hover:text-white transition-colors border border-neutral-200">퇴직금</Link>
+                  <Link href="/w/연말정산" className="px-3 py-1.5 bg-white text-xs text-neutral-600 rounded-lg hover:bg-[#1E3A5F] hover:text-white transition-colors border border-neutral-200">연말정산</Link>
+                  <Link href="/w/실업급여" className="px-3 py-1.5 bg-white text-xs text-neutral-600 rounded-lg hover:bg-[#1E3A5F] hover:text-white transition-colors border border-neutral-200">실업급여</Link>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
       </>
     );
+  }
+
+  // articles/ 순수 데이터 조회 (pharm 방식)
+  const spokeArticle = getSpokeArticleBySlug(slug);
+  if (spokeArticle) {
+    return <SpokeArticleRenderer article={spokeArticle} slug={slug} />;
   }
 
   // 기존 wiki MD 렌더링

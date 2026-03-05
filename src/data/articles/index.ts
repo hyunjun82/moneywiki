@@ -60,3 +60,10 @@ export function getAllSpokeArticles(): SpokeArticle[] {
 export function getSpokesByCategory(categorySlug: string): SpokeArticle[] {
   return Object.values(spokeArticles[categorySlug] || {});
 }
+
+export function getSpokeArticleBySlug(slug: string): SpokeArticle | undefined {
+  for (const spokes of Object.values(spokeArticles)) {
+    if (spokes[slug]) return spokes[slug];
+  }
+  return undefined;
+}
