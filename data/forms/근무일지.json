@@ -1,0 +1,17 @@
+{
+  "slug": "근무일지",
+  "title": "근무일지 양식",
+  "shortTitle": "근무일지",
+  "category": "업무",
+  "description": "근무일지 무료 양식을 다운로드하세요.",
+  "previewDataKey": "근무일지_DATA",
+  "downloads": {
+    "hwp": "/files/forms/근무일지.hwp"
+  },
+  "downloadNames": {
+    "hwp": "근무일지.hwp"
+  },
+  "tags": [
+    "근무일지"
+  ]
+}

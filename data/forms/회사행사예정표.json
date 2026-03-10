@@ -1,0 +1,17 @@
+{
+  "slug": "회사행사예정표",
+  "title": "회사행사 예정표",
+  "shortTitle": "회사행사예정표",
+  "category": "업무",
+  "description": "회사행사예정표 무료 양식을 다운로드하세요.",
+  "previewDataKey": "회사행사예정표_DATA",
+  "downloads": {
+    "hwp": "/files/forms/회사행사예정표.hwp"
+  },
+  "downloadNames": {
+    "hwp": "회사행사예정표.hwp"
+  },
+  "tags": [
+    "회사행사예정표"
+  ]
+}

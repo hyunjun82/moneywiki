@@ -1,0 +1,17 @@
+{
+  "slug": "기안서",
+  "title": "기안서 양식",
+  "shortTitle": "기안서",
+  "category": "업무",
+  "description": "기안서 무료 양식을 다운로드하세요.",
+  "previewDataKey": "기안서_DATA",
+  "downloads": {
+    "hwp": "/files/forms/기안서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "기안서.hwp"
+  },
+  "tags": [
+    "기안서"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "인적사항",
+  "title": "인적사항 양식",
+  "shortTitle": "인적사항",
+  "category": "인사",
+  "description": "인적사항 무료 양식을 다운로드하세요.",
+  "previewDataKey": "인적사항_DATA",
+  "downloads": {
+    "hwp": "/files/forms/인적사항.hwp"
+  },
+  "downloadNames": {
+    "hwp": "인적사항.hwp"
+  },
+  "tags": [
+    "인적사항"
+  ]
+}

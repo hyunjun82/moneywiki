@@ -1,0 +1,17 @@
+{
+  "slug": "결근계",
+  "title": "결근계 양식",
+  "shortTitle": "결근계",
+  "category": "근태",
+  "description": "결근계 무료 양식을 다운로드하세요.",
+  "previewDataKey": "결근계_DATA",
+  "downloads": {
+    "hwp": "/files/forms/결근계.hwp"
+  },
+  "downloadNames": {
+    "hwp": "결근계.hwp"
+  },
+  "tags": [
+    "결근계"
+  ]
+}

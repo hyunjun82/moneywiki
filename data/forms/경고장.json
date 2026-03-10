@@ -1,0 +1,17 @@
+{
+  "slug": "경고장",
+  "title": "경고장 양식",
+  "shortTitle": "경고장",
+  "category": "징계",
+  "description": "경고장 무료 양식을 다운로드하세요.",
+  "previewDataKey": "경고장_DATA",
+  "downloads": {
+    "hwp": "/files/forms/경고장.hwp"
+  },
+  "downloadNames": {
+    "hwp": "경고장.hwp"
+  },
+  "tags": [
+    "경고장"
+  ]
+}

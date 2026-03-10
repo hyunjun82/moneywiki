@@ -1,0 +1,17 @@
+{
+  "slug": "통지서",
+  "title": "통지서 양식",
+  "shortTitle": "통지서",
+  "category": "업무",
+  "description": "통지서 무료 양식을 다운로드하세요.",
+  "previewDataKey": "통지서_DATA",
+  "downloads": {
+    "hwp": "/files/forms/통지서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "통지서.hwp"
+  },
+  "tags": [
+    "통지서"
+  ]
+}

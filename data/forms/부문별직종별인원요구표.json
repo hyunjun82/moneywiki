@@ -1,0 +1,17 @@
+{
+  "slug": "부문별직종별인원요구표",
+  "title": "부문별·직종별 인원요구표",
+  "shortTitle": "인원요구표",
+  "category": "인사",
+  "description": "인원요구표 무료 양식을 다운로드하세요.",
+  "previewDataKey": "부문별직종별인원요구표_DATA",
+  "downloads": {
+    "hwp": "/files/forms/부문별직종별인원요구표.hwp"
+  },
+  "downloadNames": {
+    "hwp": "인원요구표.hwp"
+  },
+  "tags": [
+    "인원요구표"
+  ]
+}

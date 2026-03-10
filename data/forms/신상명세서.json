@@ -1,0 +1,17 @@
+{
+  "slug": "신상명세서",
+  "title": "신상명세서 양식",
+  "shortTitle": "신상명세서",
+  "category": "인사",
+  "description": "신상명세서 무료 양식을 다운로드하세요.",
+  "previewDataKey": "신상명세서_DATA",
+  "downloads": {
+    "hwp": "/files/forms/신상명세서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "신상명세서.hwp"
+  },
+  "tags": [
+    "신상명세서"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "추천서",
+  "title": "추천서 양식",
+  "shortTitle": "추천서",
+  "category": "인사",
+  "description": "추천서 무료 양식을 다운로드하세요.",
+  "previewDataKey": "추천서_DATA",
+  "downloads": {
+    "hwp": "/files/forms/추천서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "추천서.hwp"
+  },
+  "tags": [
+    "추천서"
+  ]
+}

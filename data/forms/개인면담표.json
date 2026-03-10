@@ -1,0 +1,17 @@
+{
+  "slug": "개인면담표",
+  "title": "개인 면담표",
+  "shortTitle": "개인면담표",
+  "category": "인사",
+  "description": "개인면담표 무료 양식을 다운로드하세요.",
+  "previewDataKey": "개인면담표_DATA",
+  "downloads": {
+    "hwp": "/files/forms/개인면담표.hwp"
+  },
+  "downloadNames": {
+    "hwp": "개인면담표.hwp"
+  },
+  "tags": [
+    "개인면담표"
+  ]
+}

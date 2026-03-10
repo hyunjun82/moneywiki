@@ -1,0 +1,17 @@
+{
+  "slug": "급여수령증",
+  "title": "급여 수령증 양식",
+  "shortTitle": "급여수령증",
+  "category": "급여",
+  "description": "급여수령증 무료 양식을 다운로드하세요.",
+  "previewDataKey": "급여수령증_DATA",
+  "downloads": {
+    "hwp": "/files/forms/급여수령증.hwp"
+  },
+  "downloadNames": {
+    "hwp": "급여수령증.hwp"
+  },
+  "tags": [
+    "급여수령증"
+  ]
+}

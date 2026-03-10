@@ -1,0 +1,17 @@
+{
+  "slug": "입사지원서",
+  "title": "입사지원서 양식",
+  "shortTitle": "입사지원서",
+  "category": "채용",
+  "description": "입사지원서 무료 양식을 다운로드하세요.",
+  "previewDataKey": "입사지원서_DATA",
+  "downloads": {
+    "hwp": "/files/forms/입사지원서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "입사지원서.hwp"
+  },
+  "tags": [
+    "입사지원서"
+  ]
+}

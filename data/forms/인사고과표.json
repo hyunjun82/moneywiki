@@ -1,0 +1,17 @@
+{
+  "slug": "인사고과표",
+  "title": "인사고과표 (일반용)",
+  "shortTitle": "인사고과표",
+  "category": "인사",
+  "description": "인사고과표 무료 양식을 다운로드하세요.",
+  "previewDataKey": "인사고과표_DATA",
+  "downloads": {
+    "hwp": "/files/forms/인사고과표.hwp"
+  },
+  "downloadNames": {
+    "hwp": "인사고과표.hwp"
+  },
+  "tags": [
+    "인사고과표"
+  ]
+}

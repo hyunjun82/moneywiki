@@ -1,0 +1,17 @@
+{
+  "slug": "부양가족신고서",
+  "title": "부양가족 신고서",
+  "shortTitle": "부양가족신고서",
+  "category": "인사",
+  "description": "부양가족신고서 무료 양식을 다운로드하세요.",
+  "previewDataKey": "부양가족신고서_DATA",
+  "downloads": {
+    "hwp": "/files/forms/부양가족신고서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "부양가족신고서.hwp"
+  },
+  "tags": [
+    "부양가족신고서"
+  ]
+}

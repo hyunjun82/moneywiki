@@ -1,0 +1,17 @@
+{
+  "slug": "근무성적평정표",
+  "title": "근무성적 평정표",
+  "shortTitle": "근무성적평정표",
+  "category": "인사",
+  "description": "근무성적평정표 무료 양식을 다운로드하세요.",
+  "previewDataKey": "근무성적평정표_DATA",
+  "downloads": {
+    "hwp": "/files/forms/근무성적평정표.hwp"
+  },
+  "downloadNames": {
+    "hwp": "근무성적평정표.hwp"
+  },
+  "tags": [
+    "근무성적평정표"
+  ]
+}

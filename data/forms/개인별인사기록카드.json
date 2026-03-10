@@ -1,0 +1,17 @@
+{
+  "slug": "개인별인사기록카드",
+  "title": "개인별 인사기록 카드",
+  "shortTitle": "개인별인사기록카드",
+  "category": "인사",
+  "description": "개인별인사기록카드 무료 양식을 다운로드하세요.",
+  "previewDataKey": "개인별인사기록카드_DATA",
+  "downloads": {
+    "hwp": "/files/forms/개인별인사기록카드.hwp"
+  },
+  "downloadNames": {
+    "hwp": "개인별인사기록카드.hwp"
+  },
+  "tags": [
+    "개인별인사기록카드"
+  ]
+}

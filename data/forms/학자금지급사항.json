@@ -1,0 +1,17 @@
+{
+  "slug": "학자금지급사항",
+  "title": "학자금 지급사항 양식",
+  "shortTitle": "학자금지급사항",
+  "category": "급여",
+  "description": "학자금지급사항 무료 양식을 다운로드하세요.",
+  "previewDataKey": "학자금지급사항_DATA",
+  "downloads": {
+    "hwp": "/files/forms/학자금지급사항.hwp"
+  },
+  "downloadNames": {
+    "hwp": "학자금지급사항.hwp"
+  },
+  "tags": [
+    "학자금지급사항"
+  ]
+}

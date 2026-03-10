@@ -1,0 +1,17 @@
+{
+  "slug": "학자금지급카드",
+  "title": "학자금 지급 카드",
+  "shortTitle": "학자금지급카드",
+  "category": "급여",
+  "description": "학자금지급카드 무료 양식을 다운로드하세요.",
+  "previewDataKey": "학자금지급카드_DATA",
+  "downloads": {
+    "hwp": "/files/forms/학자금지급카드.hwp"
+  },
+  "downloadNames": {
+    "hwp": "학자금지급카드.hwp"
+  },
+  "tags": [
+    "학자금지급카드"
+  ]
+}

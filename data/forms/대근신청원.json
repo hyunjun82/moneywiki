@@ -1,0 +1,17 @@
+{
+  "slug": "대근신청원",
+  "title": "대근 신청원 양식",
+  "shortTitle": "대근신청원",
+  "category": "근태",
+  "description": "대근신청원 무료 양식을 다운로드하세요.",
+  "previewDataKey": "대근신청원_DATA",
+  "downloads": {
+    "hwp": "/files/forms/대근신청원.hwp"
+  },
+  "downloadNames": {
+    "hwp": "대근신청원.hwp"
+  },
+  "tags": [
+    "대근신청원"
+  ]
+}

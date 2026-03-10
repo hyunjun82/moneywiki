@@ -1,0 +1,17 @@
+{
+  "slug": "회의의사록",
+  "title": "회의 의사록 양식",
+  "shortTitle": "회의의사록",
+  "category": "업무",
+  "description": "회의의사록 무료 양식을 다운로드하세요.",
+  "previewDataKey": "회의의사록_DATA",
+  "downloads": {
+    "hwp": "/files/forms/회의의사록.hwp"
+  },
+  "downloadNames": {
+    "hwp": "회의의사록.hwp"
+  },
+  "tags": [
+    "회의의사록"
+  ]
+}
