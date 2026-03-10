@@ -6,8 +6,12 @@
   "category": "고용·근로",
   "source": "고용노동부",
   "sourceUrl": "https://www.moel.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/시말서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "시말서_양식.hwp"
+  },
   "previewDataKey": "시말서_DATA",
   "relatedArticle": "/w/시말서-작성법",
   "relatedDocs": [

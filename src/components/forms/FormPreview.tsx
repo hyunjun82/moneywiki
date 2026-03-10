@@ -647,6 +647,62 @@ export const 사직서_DATA: FormRow[] = [
   },
 ];
 
+// 권고사직서 미리보기 데이터
+export const 권고사직서_DATA: FormRow[] = [
+  {
+    fields: [
+      { label: "제목", isHeader: true },
+      { placeholder: "권 고 사 직 서", exampleValue: "권 고 사 직 서", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "소속", isHeader: true },
+      { placeholder: "(부서명)", exampleValue: "마케팅팀" },
+      { label: "성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김철수" },
+    ],
+  },
+  {
+    fields: [
+      { label: "직위", isHeader: true },
+      { placeholder: "(직위)", exampleValue: "과장" },
+      { label: "주민등록번호", isHeader: true },
+      { placeholder: "______-_______", exampleValue: "850101-1234567" },
+    ],
+  },
+  {
+    fields: [
+      { label: "권고사직 사유", isHeader: true, colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { placeholder: "(권고사직 사유를 구체적으로 기재)", exampleValue: "경영상 사유에 의한 구조조정으로 인하여 귀하에게 사직을 권고합니다. 회사의 경영 악화로 불가피하게 인원 감축이 필요하여 권고사직을 통보하오니 양해 부탁드립니다.", colspan: 4 },
+    ],
+  },
+  {
+    fields: [
+      { label: "퇴직 예정일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 4월 10일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "통보일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "2026년 3월 10일", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "회사명", isHeader: true },
+      { placeholder: "(회사명)", exampleValue: "주식회사 가나다" },
+      { label: "대표이사", isHeader: true },
+      { placeholder: "(대표자명)        (인)", exampleValue: "박대표        (인)" },
+    ],
+  },
+];
+
 // 위임장 미리보기 데이터
 export const 위임장_DATA: FormRow[] = [
   {
