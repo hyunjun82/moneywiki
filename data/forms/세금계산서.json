@@ -6,8 +6,12 @@
   "category": "세무·회계",
   "source": "국세청",
   "sourceUrl": "https://www.nts.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/세금계산서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "세금계산서_양식_별지제14호.hwp"
+  },
   "previewDataKey": "세금계산서_DATA",
   "relatedArticle": "/w/세금계산서-발행방법",
   "relatedDocs": [
