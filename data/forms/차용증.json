@@ -6,8 +6,12 @@
   "category": "금융·대출",
   "source": "대한법률구조공단",
   "sourceUrl": "https://www.klac.or.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/차용증.hwp"
+  },
+  "downloadNames": {
+    "hwp": "차용증_양식.hwp"
+  },
   "previewDataKey": "차용증_DATA",
   "relatedArticle": "/w/금전소비대차계약서",
   "relatedDocs": [

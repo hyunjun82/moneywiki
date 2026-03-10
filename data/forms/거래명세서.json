@@ -6,8 +6,12 @@
   "category": "세무·회계",
   "source": "국세청",
   "sourceUrl": "https://www.nts.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/거래명세서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "거래명세서_양식.hwp"
+  },
   "previewDataKey": "거래명세서_DATA",
   "relatedArticle": "/w/세금계산서-발급",
   "relatedDocs": [

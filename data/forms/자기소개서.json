@@ -6,8 +6,12 @@
   "category": "취업·이력",
   "source": "고용노동부",
   "sourceUrl": "https://www.moel.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/자기소개서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "자기소개서_양식.hwp"
+  },
   "previewDataKey": "자기소개서_DATA",
   "relatedArticle": "/w/자기소개서-작성법",
   "relatedDocs": [

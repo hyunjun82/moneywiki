@@ -6,8 +6,12 @@
   "category": "취업·이력",
   "source": "고용노동부",
   "sourceUrl": "https://www.moel.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/이력서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "이력서_양식.hwp"
+  },
   "previewDataKey": "이력서_DATA",
   "relatedArticle": "/w/이력서-작성법",
   "relatedDocs": [
