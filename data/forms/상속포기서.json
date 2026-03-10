@@ -6,8 +6,12 @@
   "category": "상속·가족",
   "source": "대법원",
   "sourceUrl": "https://www.scourt.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/상속포기서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "상속포기서_양식.hwp"
+  },
   "previewDataKey": "상속포기서_DATA",
   "relatedArticle": "/w/상속포기-절차",
   "relatedDocs": [

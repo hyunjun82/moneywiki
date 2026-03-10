@@ -6,8 +6,12 @@
   "category": "법률·계약",
   "source": "대법원",
   "sourceUrl": "https://www.scourt.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/답변서민사.hwp"
+  },
+  "downloadNames": {
+    "hwp": "답변서(민사)_양식.hwp"
+  },
   "previewDataKey": "답변서민사_DATA",
   "relatedArticle": "/w/민사소송-답변서",
   "relatedDocs": [

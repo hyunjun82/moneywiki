@@ -6,8 +6,12 @@
   "category": "취업·이력",
   "source": "고용노동부",
   "sourceUrl": "https://www.moel.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/경력기술서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "경력기술서_양식.hwp"
+  },
   "previewDataKey": "경력기술서_DATA",
   "relatedArticle": "/w/경력기술서-작성법",
   "relatedDocs": [

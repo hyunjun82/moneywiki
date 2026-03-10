@@ -6,8 +6,12 @@
   "category": "복지·보험",
   "source": "고용보험",
   "sourceUrl": "https://www.ei.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/실업급여신청서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "실업급여신청서_양식.hwp"
+  },
   "previewDataKey": "실업급여신청서_DATA",
   "relatedArticle": "/w/실업급여",
   "relatedDocs": [

@@ -6,8 +6,12 @@
   "category": "세무·회계",
   "source": "국세청",
   "sourceUrl": "https://www.nts.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/입금확인서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "입금확인서_양식.hwp"
+  },
   "previewDataKey": "입금확인서_DATA",
   "relatedArticle": "/w/영수증-발급",
   "relatedDocs": [

@@ -6,8 +6,12 @@
   "category": "사업·창업",
   "source": "법무부",
   "sourceUrl": "https://www.moj.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/이사회의사록.hwp"
+  },
+  "downloadNames": {
+    "hwp": "이사회의사록_양식.hwp"
+  },
   "previewDataKey": "이사회의사록_DATA",
   "relatedArticle": "/w/이사회-운영",
   "relatedDocs": [

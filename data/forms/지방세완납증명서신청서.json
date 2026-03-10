@@ -6,8 +6,12 @@
   "category": "민원·행정",
   "source": "지방자치단체",
   "sourceUrl": "https://www.wetax.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/지방세완납증명서신청서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "지방세완납증명서신청서_양식.hwp"
+  },
   "previewDataKey": "지방세완납증명서신청서_DATA",
   "relatedArticle": "/w/지방세완납증명서",
   "relatedDocs": [

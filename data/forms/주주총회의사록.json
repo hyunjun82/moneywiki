@@ -6,8 +6,12 @@
   "category": "사업·창업",
   "source": "법무부",
   "sourceUrl": "https://www.moj.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/주주총회의사록.hwp"
+  },
+  "downloadNames": {
+    "hwp": "주주총회의사록_양식.hwp"
+  },
   "previewDataKey": "주주총회의사록_DATA",
   "relatedArticle": "/w/주주총회-절차",
   "relatedDocs": [

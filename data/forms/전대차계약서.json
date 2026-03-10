@@ -6,8 +6,12 @@
   "category": "부동산",
   "source": "법무부",
   "sourceUrl": "https://www.moj.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/전대차계약서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "전대차계약서_양식.hwp"
+  },
   "previewDataKey": "전대차계약서_DATA",
   "relatedArticle": "/w/전대차-주의사항",
   "relatedDocs": [

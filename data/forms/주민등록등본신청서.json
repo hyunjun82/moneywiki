@@ -6,8 +6,12 @@
   "category": "민원·행정",
   "source": "정부24",
   "sourceUrl": "https://www.gov.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/주민등록등본신청서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "주민등록등본신청서_양식.hwp"
+  },
   "previewDataKey": "주민등록등본신청서_DATA",
   "relatedArticle": "/w/주민등록등본",
   "relatedDocs": [

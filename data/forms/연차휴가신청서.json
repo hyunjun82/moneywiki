@@ -6,8 +6,12 @@
   "category": "고용·근로",
   "source": "고용노동부",
   "sourceUrl": "https://www.moel.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/연차휴가신청서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "연차휴가신청서_양식.hwp"
+  },
   "previewDataKey": "연차휴가신청서_DATA",
   "relatedArticle": "/w/연차-사용",
   "relatedDocs": [

@@ -6,8 +6,12 @@
   "category": "민원·행정",
   "source": "정부24",
   "sourceUrl": "https://www.gov.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/출생신고서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "출생신고서_양식.hwp"
+  },
   "externalDownload": {
     "source": "정부24",
     "url": "https://www.gov.kr/main?a=AA020InfoCappViewApp&HighCtgCD=&CappBizCD=13100000001",

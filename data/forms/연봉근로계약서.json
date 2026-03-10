@@ -6,8 +6,12 @@
   "category": "고용·근로",
   "source": "고용노동부",
   "sourceUrl": "https://www.moel.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/연봉근로계약서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "연봉근로계약서_양식.hwp"
+  },
   "previewDataKey": "연봉근로계약서_DATA",
   "relatedArticle": "/w/연봉-실수령액-계산기",
   "relatedDocs": [

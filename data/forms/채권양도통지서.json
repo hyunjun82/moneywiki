@@ -6,8 +6,12 @@
   "category": "법률·계약",
   "source": "법무부",
   "sourceUrl": "https://www.moj.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/채권양도통지서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "채권양도통지서_양식.hwp"
+  },
   "previewDataKey": "채권양도통지서_DATA",
   "relatedArticle": "/w/채권양도-절차",
   "relatedDocs": [

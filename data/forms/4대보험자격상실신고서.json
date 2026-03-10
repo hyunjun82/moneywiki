@@ -6,8 +6,12 @@
   "category": "복지·보험",
   "source": "국민건강보험",
   "sourceUrl": "https://www.nhis.or.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/4대보험자격상실신고서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "4대보험자격상실신고서_양식.hwp"
+  },
   "previewDataKey": "사대보험자격상실신고서_DATA",
   "relatedArticle": "/w/4대보험",
   "relatedDocs": [

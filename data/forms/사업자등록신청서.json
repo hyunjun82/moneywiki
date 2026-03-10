@@ -6,8 +6,12 @@
   "category": "사업·창업",
   "source": "국세청",
   "sourceUrl": "https://www.nts.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/사업자등록신청서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "사업자등록신청서_양식.hwp"
+  },
   "previewDataKey": "사업자등록신청서_DATA",
   "relatedArticle": "/w/사업자등록-방법",
   "relatedDocs": [

@@ -7,9 +7,11 @@
   "source": "일반 서식",
   "sourceUrl": "https://kcosmetics.kr",
   "downloads": {
+    "hwp": "/files/forms/내용증명-전세금반환청구.hwp",
     "doc": "/files/forms/내용증명서(전세금 반환 청구) 01.doc"
   },
   "downloadNames": {
+    "hwp": "내용증명_전세금반환청구_양식.hwp",
     "doc": "내용증명서(전세금 반환 청구) 01.doc"
   },
   "previewDataKey": "내용증명_전세금반환청구_DATA",

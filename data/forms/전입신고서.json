@@ -6,8 +6,12 @@
   "category": "민원·행정",
   "source": "정부24",
   "sourceUrl": "https://www.gov.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/전입신고서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "전입신고서_양식.hwp"
+  },
   "previewDataKey": "전입신고서_DATA",
   "relatedArticle": "/w/전입신고",
   "relatedDocs": [

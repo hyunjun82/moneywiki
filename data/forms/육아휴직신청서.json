@@ -6,8 +6,12 @@
   "category": "복지·보험",
   "source": "고용노동부",
   "sourceUrl": "https://www.moel.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/육아휴직신청서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "육아휴직신청서_양식.hwp"
+  },
   "previewDataKey": "육아휴직신청서_DATA",
   "relatedArticle": "/w/육아휴직",
   "relatedDocs": [

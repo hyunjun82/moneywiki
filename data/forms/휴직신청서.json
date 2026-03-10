@@ -6,8 +6,12 @@
   "category": "고용·근로",
   "source": "고용노동부",
   "sourceUrl": "https://www.moel.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/휴직신청서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "휴직신청서_양식.hwp"
+  },
   "previewDataKey": "휴직신청서_DATA",
   "relatedArticle": "/w/휴직-신청",
   "relatedDocs": [

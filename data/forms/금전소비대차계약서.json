@@ -6,8 +6,12 @@
   "category": "금융·대출",
   "source": "대한법률구조공단",
   "sourceUrl": "https://www.klac.or.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/금전소비대차계약서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "금전소비대차계약서_양식.hwp"
+  },
   "externalDownload": {
     "source": "대한법률구조공단",
     "url": "https://www.klac.or.kr/legalstruct/cyberData/selectCyberDataList.do",

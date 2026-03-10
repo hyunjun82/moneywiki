@@ -6,8 +6,12 @@
   "category": "법률·계약",
   "source": "법무부",
   "sourceUrl": "https://www.moj.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/외주계약서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "외주계약서_양식.hwp"
+  },
   "previewDataKey": "외주계약서_DATA",
   "relatedArticle": "/w/프리랜서계약서",
   "relatedDocs": [

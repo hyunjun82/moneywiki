@@ -6,8 +6,12 @@
   "category": "부동산",
   "source": "정부24",
   "sourceUrl": "https://www.gov.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/건축물대장신청서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "건축물대장신청서_양식.hwp"
+  },
   "previewDataKey": "건축물대장신청서_DATA",
   "relatedArticle": "/w/건축물대장",
   "relatedDocs": [

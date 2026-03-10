@@ -6,8 +6,12 @@
   "category": "사업·창업",
   "source": "국세청",
   "sourceUrl": "https://www.nts.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/휴업신고서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "휴업신고서_양식.hwp"
+  },
   "previewDataKey": "DEFAULT",
   "relatedArticle": "/w/휴업-절차",
   "tips": [
