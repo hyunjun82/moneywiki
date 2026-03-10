@@ -6,8 +6,12 @@
   "category": "상속·가족",
   "source": "법무부",
   "sourceUrl": "https://www.moj.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/유언장.hwp"
+  },
+  "downloadNames": {
+    "hwp": "유언장_자필증서_양식.hwp"
+  },
   "previewDataKey": "유언장_DATA",
   "relatedArticle": "/w/유언장-작성법",
   "relatedDocs": [

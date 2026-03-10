@@ -6,8 +6,12 @@
   "category": "부동산",
   "source": "법무부",
   "sourceUrl": "https://www.moj.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/매매계약서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "매매계약서_동산_양식.hwp"
+  },
   "previewDataKey": "매매계약서_DATA",
   "relatedArticle": "/w/부동산-매매계약",
   "relatedDocs": [

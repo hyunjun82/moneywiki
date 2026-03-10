@@ -6,8 +6,12 @@
   "category": "법률·계약",
   "source": "대법원",
   "sourceUrl": "https://www.scourt.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/지급명령신청서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "지급명령신청서_민사_양식.hwp"
+  },
   "previewDataKey": "지급명령신청서_DATA",
   "relatedArticle": "/w/지급명령-절차",
   "relatedDocs": [

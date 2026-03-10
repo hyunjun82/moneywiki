@@ -6,8 +6,12 @@
   "category": "법률·계약",
   "source": "대한법률구조공단",
   "sourceUrl": "https://www.klac.or.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/경위서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "경위서_양식.hwp"
+  },
   "previewDataKey": "경위서_DATA",
   "relatedArticle": "/w/경위서-작성법",
   "relatedDocs": [

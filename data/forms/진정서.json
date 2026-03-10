@@ -6,8 +6,12 @@
   "category": "민원·행정",
   "source": "국민권익위원회",
   "sourceUrl": "https://www.acrc.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/진정서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "진정서_양식.hwp"
+  },
   "previewDataKey": "진정서_DATA",
   "relatedArticle": "/w/진정-절차",
   "relatedDocs": [

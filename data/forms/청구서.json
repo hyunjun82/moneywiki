@@ -7,9 +7,11 @@
   "source": "일반 서식",
   "sourceUrl": "https://kcosmetics.kr",
   "downloads": {
+    "hwp": "/files/forms/청구서.hwp",
     "doc": "/files/forms/청구서(물품).doc"
   },
   "downloadNames": {
+    "hwp": "청구서_대금청구서_양식.hwp",
     "doc": "청구서_물품.doc"
   },
   "previewDataKey": "청구서_DATA",

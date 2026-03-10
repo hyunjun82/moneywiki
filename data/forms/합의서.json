@@ -6,8 +6,12 @@
   "category": "법률·계약",
   "source": "대한법률구조공단",
   "sourceUrl": "https://www.klac.or.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/합의서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "합의서_상속재산분할_양식.hwp"
+  },
   "previewDataKey": "합의서_DATA",
   "relatedArticle": "/w/합의서-작성법",
   "relatedDocs": [
