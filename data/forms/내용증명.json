@@ -6,8 +6,12 @@
   "category": "법률·계약",
   "source": "인터넷우체국",
   "sourceUrl": "https://service.epost.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/내용증명.hwp"
+  },
+  "downloadNames": {
+    "hwp": "내용증명서_양식.hwp"
+  },
   "externalDownload": {
     "source": "인터넷우체국",
     "url": "https://service.epost.go.kr/main.retrieve.cmd",

@@ -6,8 +6,12 @@
   "category": "법률·계약",
   "source": "대법원",
   "sourceUrl": "https://www.scourt.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/소장민사.hwp"
+  },
+  "downloadNames": {
+    "hwp": "소장_민사_양식.hwp"
+  },
   "previewDataKey": "소장민사_DATA",
   "relatedArticle": "/w/민사소송-절차",
   "relatedDocs": [
