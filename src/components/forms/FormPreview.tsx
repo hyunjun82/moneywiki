@@ -11598,91 +11598,113 @@ export const 신용카드매출전표수령명세서_DATA: FormRow[] = [
   },
 ];
 
-// 확인서 (일반 확인서 양식)
+// 확인서 (사실확인서 — 국가자격시험 경력 확인용, HWP 원본 기준)
 export const 확인서_DATA: FormRow[] = [
   {
     fields: [
-      { label: "서식명", isHeader: true },
-      { placeholder: "확 인 서", exampleValue: "확 인 서", colspan: 3 },
+      { label: "제목", isHeader: true },
+      { placeholder: "사  실  확  인  서", exampleValue: "사  실  확  인  서", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "확인 대상자", isHeader: true, colspan: 4 },
+      { label: "자격명", isHeader: true },
+      { placeholder: "(자격명 :               )", exampleValue: "건축기사", colspan: 3 },
     ],
   },
   {
     fields: [
+      { label: "안내", isHeader: true },
+      { value: "본 사실확인서는 국가자격시험에 필요한 경력사실이며, 허위·위조 시 형사처벌(공·사문서위조, 변조 등)될 수 있음을 확인합니다.", colspan: 3 },
+    ],
+  },
+  {
+    fields: [
+      { label: "입증인", isHeader: true, rowspan: 6 },
       { label: "성명", isHeader: true },
-      { placeholder: "(성명)", exampleValue: "홍길동" },
+      { placeholder: "(인)", exampleValue: "박경력 (인)", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
       { label: "생년월일", isHeader: true },
-      { placeholder: "____년 __월 __일", exampleValue: "1985년 1월 1일" },
+      { placeholder: "____년 __월 __일", exampleValue: "1975년 3월 12일", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "연락처", isHeader: true },
+      { placeholder: "(휴대전화)", exampleValue: "010-9876-5432", colspan: 2 },
+    ],
+  },
+  {
+    fields: [
+      { label: "수험자와의 관계", isHeader: true },
+      { placeholder: "(관계)", exampleValue: "동일 사업장 상급자", colspan: 2 },
     ],
   },
   {
     fields: [
       { label: "주소", isHeader: true },
-      { placeholder: "(주소)", exampleValue: "서울특별시 강남구 테헤란로 123, 101동 1001호", colspan: 3 },
+      { placeholder: "(주소)", exampleValue: "서울시 강남구 테헤란로 123", colspan: 2 },
     ],
   },
   {
     fields: [
-      { label: "연락처", isHeader: true },
-      { placeholder: "(연락처)", exampleValue: "010-1234-5678", colspan: 3 },
+      { label: "근무처 / 직위", isHeader: true },
+      { placeholder: "(근무처)", exampleValue: "(주)OO건설 / 공사부장", colspan: 2 },
     ],
   },
   {
     fields: [
-      { label: "확인 내용", isHeader: true, colspan: 4 },
+      { label: "첨부", isHeader: true },
+      { value: "입증인의 본인서명사실확인서(주민등록번호 뒷자리 삭제) 1부", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "확인 사항", isHeader: true },
-      { placeholder: "(확인하고자 하는 내용을 구체적으로 기재)", exampleValue: "위 본인은 2025년 1월 1일부터 2025년 12월 31일까지 (주)머니컴퍼니에 재직하였음을 확인합니다.", colspan: 3 },
+      { label: "경력사실", isHeader: true, colspan: 4 },
     ],
   },
   {
     fields: [
-      { label: "확인 목적", isHeader: true },
-      { placeholder: "(용도)", exampleValue: "금융기관 제출용", colspan: 3 },
+      { label: "수험자 성명", isHeader: true },
+      { placeholder: "(성명)", exampleValue: "김수험", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "비고", isHeader: true },
-      { placeholder: "(기타 참고사항)", exampleValue: "(해당 없음)", colspan: 3 },
+      { label: "생년월일", isHeader: true },
+      { placeholder: "____년 __월 __일", exampleValue: "1990년 7월 25일", colspan: 3 },
     ],
   },
   {
     fields: [
-      { label: "확인 문구", isHeader: true },
-      { placeholder: "위 내용이 사실임을 확인합니다.", exampleValue: "위 내용이 틀림없음을 확인합니다.", colspan: 3 },
+      { label: "근무 직장명", isHeader: true },
+      { label: "직위", isHeader: true },
+      { label: "재직 기간", isHeader: true },
+      { label: "담당업무내용", isHeader: true },
     ],
   },
   {
     fields: [
-      { label: "확인일", isHeader: true },
-      { placeholder: "____년 __월 __일", exampleValue: "2026년 1월 15일", colspan: 3 },
+      { placeholder: "(직장명)", exampleValue: "(주)OO건설" },
+      { placeholder: "(직위)", exampleValue: "대리" },
+      { placeholder: "____년 __월 __일 ~ ____년 __월 __일", exampleValue: "2018년 3월 1일 ~ 2022년 2월 28일" },
+      { placeholder: "(업무내용)", exampleValue: "건축시공 현장관리" },
     ],
   },
   {
     fields: [
-      { label: "확인자(작성자)", isHeader: true, colspan: 4 },
+      { placeholder: "(직장명)", exampleValue: "(주)△△건축" },
+      { placeholder: "(직위)", exampleValue: "사원" },
+      { placeholder: "____년 __월 __일 ~ ____년 __월 __일", exampleValue: "2016년 1월 5일 ~ 2018년 2월 28일" },
+      { placeholder: "(업무내용)", exampleValue: "건축설계 보조" },
     ],
   },
   {
     fields: [
-      { label: "소속/직위", isHeader: true },
-      { placeholder: "(소속 및 직위)", exampleValue: "(주)머니컴퍼니 인사팀장" },
-      { label: "성명", isHeader: true },
-      { placeholder: "(성명) (직인)", exampleValue: "김인사 (직인)" },
-    ],
-  },
-  {
-    fields: [
-      { label: "연락처", isHeader: true },
-      { placeholder: "(연락처)", exampleValue: "02-1234-5678", colspan: 3 },
+      { value: "한국산업인력공단 이사장 귀하", colspan: 4 },
     ],
   },
 ];

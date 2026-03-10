@@ -179,6 +179,7 @@ import FormPreview, {
   형사보상금지급청구서_DATA,
   형사보상금청구서_DATA,
   후견인선임청구서_DATA,
+  확인서_DATA,
 } from "@/components/forms/FormPreview";
 import FormPageClient from "@/components/forms/FormPageClient";
 import FormSidebar from "@/components/forms/FormSidebar";
@@ -361,6 +362,7 @@ const PREVIEW_DATA_MAP: Record<string, typeof 표준근로계약서_DATA> = {
   "형사보상금지급청구서_DATA": 형사보상금지급청구서_DATA,
   "형사보상금청구서_DATA": 형사보상금청구서_DATA,
   "후견인선임청구서_DATA": 후견인선임청구서_DATA,
+  "확인서_DATA": 확인서_DATA,
 };
 
 // 기본 프리뷰 데이터 (새 양식용) - FormRow[] 형식

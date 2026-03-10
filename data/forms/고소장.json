@@ -6,8 +6,12 @@
   "category": "법률·계약",
   "source": "대한법률구조공단",
   "sourceUrl": "https://www.klac.or.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/고소장.hwp"
+  },
+  "downloadNames": {
+    "hwp": "고소장_양식_경찰서제출용.hwp"
+  },
   "previewDataKey": "고소장_DATA",
   "relatedArticle": "/w/고소-절차",
   "relatedDocs": [

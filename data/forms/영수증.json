@@ -6,8 +6,12 @@
   "category": "세무·회계",
   "source": "국세청",
   "sourceUrl": "https://www.nts.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/영수증.hwp"
+  },
+  "downloadNames": {
+    "hwp": "영수증_간이영수증_양식.hwp"
+  },
   "previewDataKey": "영수증_DATA",
   "relatedArticle": "/w/현금영수증-발급",
   "relatedDocs": [

@@ -6,8 +6,12 @@
   "category": "세무·회계",
   "source": "국세청",
   "sourceUrl": "https://www.nts.go.kr",
-  "downloads": {},
-  "downloadNames": {},
+  "downloads": {
+    "hwp": "/files/forms/납품서.hwp"
+  },
+  "downloadNames": {
+    "hwp": "납품서_양식.hwp"
+  },
   "previewDataKey": "납품서_DATA",
   "relatedArticle": "/w/발주서-작성법",
   "relatedDocs": [
