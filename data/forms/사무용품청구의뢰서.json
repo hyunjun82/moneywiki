@@ -7,10 +7,12 @@
   "source": "일반 서식",
   "sourceUrl": "https://kcosmetics.kr",
   "downloads": {
-    "doc": "/files/forms/사무용품 소모품 청구의뢰서.doc"
+    "doc": "/files/forms/사무용품 소모품 청구의뢰서.doc",
+    "xlsx": "/files/forms/사무용품청구의뢰서.xls"
   },
   "downloadNames": {
-    "doc": "사무용품 소모품 청구의뢰서.doc"
+    "doc": "사무용품 소모품 청구의뢰서.doc",
+    "xlsx": "사무용품청구의뢰서_양식.xls"
   },
   "previewDataKey": "사무용품청구의뢰서_DATA",
   "tips": [

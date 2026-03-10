@@ -7,10 +7,12 @@
   "source": "일반 서식",
   "sourceUrl": "https://kcosmetics.kr",
   "downloads": {
-    "doc": "/files/forms/재해부조금 청구서.doc"
+    "doc": "/files/forms/재해부조금 청구서.doc",
+    "hwp": "/files/forms/재해부조금청구서.hwp"
   },
   "downloadNames": {
-    "doc": "재해부조금 청구서.doc"
+    "doc": "재해부조금 청구서.doc",
+    "hwp": "재해부조금청구서_양식.hwp"
   },
   "previewDataKey": "재해부조금청구서_DATA",
   "tips": [
