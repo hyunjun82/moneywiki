@@ -29,6 +29,15 @@ function getSectionIcon(title: string): string {
   return "📖";
 }
 
+// 카테고리별 계산기 매핑
+const CATEGORY_CALCULATORS: Record<string, { slug: string; label: string }> = {
+  실업급여: { slug: "실업급여-계산기", label: "실업급여 계산기" },
+  세금: { slug: "연말정산-계산기", label: "연말정산 계산기" },
+  부동산: { slug: "취득세-계산기", label: "취득세 계산기" },
+  근로: { slug: "퇴직금-계산기", label: "퇴직금 계산기" },
+  금융: { slug: "전세대출-계산기", label: "전세대출 계산기" },
+};
+
 interface Props {
   article: SpokeArticle;
   slug: string;
@@ -65,20 +74,23 @@ function RelatedSpokesInline({ categorySlug, currentSlug }: { categorySlug: stri
         {display.map((spoke) => (
           <Link
             key={spoke.slug}
-            href={`/w/${spoke.slug}`}
-            className="group flex items-start gap-2.5 rounded-lg bg-white px-4 py-3 border border-gray-100 transition-all hover:border-[#1B3A5C]/20 hover:shadow-sm"
+            href={`/${categorySlug}/${spoke.slug}`}
+            className="group flex items-center justify-between rounded-lg bg-white px-4 py-3.5 border border-gray-200 transition-all hover:border-[#2563EB] hover:shadow-md hover:bg-blue-50/30"
           >
-            <svg className="h-4 w-4 mt-0.5 shrink-0 text-[#1B3A5C] group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-            <div className="min-w-0">
-              <span className="text-sm font-semibold text-gray-900 group-hover:text-[#1B3A5C] transition-colors">
+            <div className="min-w-0 flex-1">
+              <span className="text-sm font-bold text-gray-900 group-hover:text-[#2563EB] transition-colors">
                 {spoke.title}
               </span>
               <p className="text-xs text-gray-500 mt-0.5 line-clamp-1">
                 {spoke.description}
               </p>
             </div>
+            <span className="ml-3 shrink-0 inline-flex items-center gap-1 rounded-md bg-[#EDF2F8] group-hover:bg-[#2563EB] text-[#1B3A5C] group-hover:text-white text-xs font-semibold px-2.5 py-1.5 transition-all">
+              보기
+              <svg className="h-3 w-3 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
           </Link>
         ))}
       </div>
@@ -149,6 +161,17 @@ export default function SpokeArticleRenderer({ article, slug }: Props) {
                 </>
               )}
             </div>
+            {CATEGORY_CALCULATORS[catSlug] && (
+              <Link
+                href={`/w/${CATEGORY_CALCULATORS[catSlug].slug}`}
+                className="mt-4 inline-flex items-center gap-2 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-semibold px-4 py-2.5 transition-all shadow-sm hover:shadow-md"
+              >
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+                🧮 {CATEGORY_CALCULATORS[catSlug].label} 바로가기
+              </Link>
+            )}
             <div className="mt-4">
               <ShareButtons title={article.title} url={url} description={article.description} />
             </div>
@@ -165,6 +188,30 @@ export default function SpokeArticleRenderer({ article, slug }: Props) {
           <div className="py-4">
             <AdSense slot={AD_SLOTS.HORIZONTAL} className="w-full" />
           </div>
+
+          {/* Calculator CTA (본문 상단) */}
+          {CATEGORY_CALCULATORS[catSlug] && (
+            <div className="mb-6 rounded-xl border border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 p-4">
+              <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center gap-3 min-w-0">
+                  <span className="text-2xl shrink-0">🧮</span>
+                  <div>
+                    <p className="text-sm font-bold text-gray-900">{CATEGORY_CALCULATORS[catSlug].label}</p>
+                    <p className="text-xs text-gray-500 mt-0.5">내 조건에 맞는 금액을 바로 계산해 보세요</p>
+                  </div>
+                </div>
+                <Link
+                  href={`/w/${CATEGORY_CALCULATORS[catSlug].slug}`}
+                  className="shrink-0 inline-flex items-center gap-1.5 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-bold px-4 py-2.5 transition-all shadow-sm hover:shadow-md"
+                >
+                  계산하기
+                  <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          )}
 
           {/* Article Sections */}
           <article>
