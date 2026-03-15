@@ -27,6 +27,9 @@ export { CategoryButton } from "./CategoryButton";
 export { RelatedArticles } from "./RelatedArticles";
 export type { RelatedItem } from "./RelatedArticles";
 
+// 광고
+export { ArticleAd } from "./ArticleAd";
+
 // 글 하단
 export { FAQ } from "./FAQ";
 export { References } from "./References";

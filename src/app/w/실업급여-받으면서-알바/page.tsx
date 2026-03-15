@@ -3,7 +3,7 @@
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
   EligibilityChecker, Checklist, FAQ, References, Disclaimer,
-  ArticleLayout, Sidebar, CategoryButton, RelatedArticles,
+  ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
 import { 실업급여_SIDEBAR } from "@/data/실업급여-guide";
 
@@ -109,6 +109,7 @@ export default function Page() {
       </p>
 
       <Divider />
+      <ArticleAd position="intro" />
 
       {/* 섹션 1 — 알바 가능 조건 */}
       <H2>실업급여 받으면서 알바, 언제 가능한가요?</H2>
@@ -159,6 +160,7 @@ export default function Page() {
       {/* ── 섹션 2 끝 → 버튼 + 관련 글 ── */}
       <CategoryButton label="실업급여 정보" count={실업급여_SIDEBAR.length} href="/category/고용" />
       <RelatedArticles items={RELATED} />
+      <ArticleAd position="mid" />
 
       <Divider />
 
