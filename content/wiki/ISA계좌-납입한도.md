@@ -1,7 +1,7 @@
 ---
 title: "ISA 계좌 납입 한도와 연간 입금 제한 총정리"
 description: "ISA 납입 한도는 연 2,000만원, 누적 1억원이에요. 초과하면 못 넣어요. 안 하면 한도 날려요."
-category: "금융/투자"
+category: "금융"
 keywords:
   - "ISA 계좌 납입 한도"
   - "ISA 계좌 월 입금 한도"

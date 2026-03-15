@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(ls src/app/w/[slug]/page.tsx)",
+      "Read(//c/Users/user/wiki-site/content/wiki/$APPDATA/Code/User/**)",
+      "Bash(grep -rl '^category: \"\"\"\"근로노동\"\"\"\"' content/wiki/)",
+      "Bash(grep -rl '^category: \"\"\"\"근로\"\"\"\"$' content/wiki/)",
+      "Bash(grep -rl '^category: 근로$' content/wiki/)",
+      "Bash(grep -rl '^category: \"\"\"\"금융/금전\"\"\"\"' content/wiki/)",
+      "Bash(grep -rl '^category: \"\"\"\"금융/투자\"\"\"\"' content/wiki/)",
+      "Bash(grep -rl '^category: \"\"\"\"금융/적금\"\"\"\"' content/wiki/)",
+      "Bash(grep -rl '^category: \"\"\"\"고용/복지\"\"\"\"' content/wiki/)",
+      "Bash(grep -rl '^category: \"\"\"\"고용\"\"\"\"$' content/wiki/)",
+      "Bash(grep -rl '^category: 고용$' content/wiki/)",
+      "Bash(grep -rl '^category: \"\"\"\"고용복지\"\"\"\"' content/wiki/)",
+      "Bash(xargs sed:*)",
+      "Bash(grep -v -E \"^\\(CLAUDE|README\\)\\\\.md$\")",
+      "Bash(xargs rm:*)",
+      "Bash(grep -v -E \"^\\(node_modules|\\\\.next|\\\\.git|\\\\.claude|\\\\.vscode|\\\\.github|content|public|scripts|src|nul\\)$\")",
+      "Bash(grep -v -E \"^\\(node_modules|\\\\.next|\\\\.git|\\\\.claude|\\\\.vscode|\\\\.github|content|public|scripts|src|data\\)$\")"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\user\\wiki-site\\src\\data",
+      "c:\\Users\\user\\wiki-site\\scripts"
+    ]
+  }
+}

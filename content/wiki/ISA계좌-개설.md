@@ -1,7 +1,7 @@
 ---
 title: "ISA 계좌 개설 방법과 필요 서류 총정리"
 description: "ISA 계좌는 은행·증권사 앱에서 5분 안에 개설할 수 있어요. 19세 이상이면 누구나 가능해요. 안 하면 비과세 못 받아요."
-category: "금융/투자"
+category: "금융"
 keywords:
   - "ISA 계좌 개설 조건"
   - "ISA 계좌 신청 방법"

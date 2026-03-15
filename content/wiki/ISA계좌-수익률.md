@@ -1,7 +1,7 @@
 ---
 title: "ISA 계좌 평균 수익률과 배당 수익 계산 방법"
 description: "ISA 계좌 평균 수익률은 연 5-7%예요. 고배당 ETF는 배당 4% + 가격 상승 3% = 7%예요. 안 하면 수익 못 내요."
-category: "금융/투자"
+category: "금융"
 keywords:
   - "ISA 계좌 평균 수익률"
   - "ISA 계좌 배당 수익"

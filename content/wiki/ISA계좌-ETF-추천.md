@@ -1,7 +1,7 @@
 ---
 title: "ISA 계좌 ETF 추천 순위와 고배당 ETF 리스트"
 description: "ISA 계좌는 KODEX 200, TIGER 미국S&P500, KODEX 고배당이 추천이에요. 배당 많이 받아야 비과세 혜택 커요. 안 하면 세금혜택 못 받아요."
-category: "금융/투자"
+category: "금융"
 keywords:
   - "ISA 계좌 ETF 추천"
   - "ISA 계좌 고배당 ETF"
