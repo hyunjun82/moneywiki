@@ -65,7 +65,7 @@ export function Steps({ steps }: StepsProps) {
           <div style={{ paddingBottom: i < steps.length - 1 ? 20 : 0, flex: 1 }}>
             <p
               style={{
-                fontSize: 14,
+                fontSize: 15.5,
                 fontWeight: 700,
                 color: colors.heading,
                 margin: "2px 0 4px",
@@ -75,9 +75,9 @@ export function Steps({ steps }: StepsProps) {
             </p>
             <p
               style={{
-                fontSize: 13.5,
+                fontSize: 15,
                 color: colors.body,
-                lineHeight: 1.85,
+                lineHeight: 1.95,
                 margin: 0,
               }}
             >

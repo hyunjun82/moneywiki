@@ -18,8 +18,8 @@ export const colors = {
 
 /* ── 본문 기본 스타일 ── */
 export const body: CSSProperties = {
-  fontSize: 14,
+  fontSize: 15.5,
   color: colors.body,
-  lineHeight: 2.05,
-  marginBottom: "0.95rem",
+  lineHeight: 2.0,
+  marginBottom: "1.1rem",
 };

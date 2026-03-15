@@ -47,9 +47,9 @@ export function EligibilityChecker({
               alignItems: "center",
               gap: 10,
               cursor: "pointer",
-              fontSize: 14,
+              fontSize: 15,
               color: colors.body,
-              lineHeight: 1.6,
+              lineHeight: 1.7,
             }}
           >
             <input

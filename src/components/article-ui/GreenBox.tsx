@@ -21,7 +21,7 @@ export function GreenBox({ title, children }: GreenBoxProps) {
       {title && (
         <p
           style={{
-            fontSize: 14,
+            fontSize: 15.5,
             fontWeight: 700,
             color: colors.greenText,
             marginBottom: 8,
@@ -30,7 +30,7 @@ export function GreenBox({ title, children }: GreenBoxProps) {
           {title}
         </p>
       )}
-      <div style={{ fontSize: 13.5, color: colors.greenText, lineHeight: 1.95 }}>
+      <div style={{ fontSize: 15, color: colors.greenText, lineHeight: 2.0 }}>
         {children}
       </div>
     </div>

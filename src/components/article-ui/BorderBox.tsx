@@ -30,7 +30,7 @@ export function BorderBox({ title, children }: BorderBoxProps) {
           {title}
         </p>
       )}
-      <div style={{ fontSize: 13.5, color: colors.body, lineHeight: 1.95 }}>
+      <div style={{ fontSize: 15, color: colors.body, lineHeight: 2.0 }}>
         {children}
       </div>
     </div>

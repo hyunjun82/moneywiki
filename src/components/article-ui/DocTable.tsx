@@ -26,7 +26,7 @@ export function DocTable({ docs }: DocTableProps) {
         style={{
           width: "100%",
           borderCollapse: "collapse",
-          fontSize: 13.5,
+          fontSize: 14.5,
         }}
       >
         <thead>

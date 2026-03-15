@@ -43,7 +43,7 @@ export function FAQ({ items }: FAQProps) {
             >
               <span
                 style={{
-                  fontSize: 14,
+                  fontSize: 15.5,
                   fontWeight: 600,
                   color: colors.heading,
                   lineHeight: 1.5,
@@ -67,9 +67,9 @@ export function FAQ({ items }: FAQProps) {
               <div
                 style={{
                   padding: "0 0 14px",
-                  fontSize: 13.5,
+                  fontSize: 15,
                   color: colors.body,
-                  lineHeight: 1.95,
+                  lineHeight: 2.0,
                 }}
               >
                 {item.a}

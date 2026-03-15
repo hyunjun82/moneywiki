@@ -34,7 +34,7 @@ export function Checklist({ items }: ChecklistProps) {
             gap: 10,
             cursor: "pointer",
             padding: "6px 0",
-            fontSize: 13.5,
+            fontSize: 15,
             color: checked[i] ? colors.muted : colors.body,
             textDecoration: checked[i] ? "line-through" : "none",
             lineHeight: 1.6,
