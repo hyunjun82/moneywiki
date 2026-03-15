@@ -65,7 +65,16 @@ function validateForceStatic() {
     const lines = content.split('\n');
 
     // force-static 선언 확인
-    const hasForceStatic = /export\s+const\s+dynamic\s*=\s*['"]force-static['"]/.test(content);
+    let hasForceStatic = /export\s+const\s+dynamic\s*=\s*['"]force-static['"]/.test(content);
+
+    // "use client" page.tsx는 layout.tsx에서 force-static 선언 가능
+    if (!hasForceStatic && /^\s*["']use client["']/.test(content)) {
+      const layoutPath = path.join(path.dirname(filePath), 'layout.tsx');
+      if (fs.existsSync(layoutPath)) {
+        const layoutContent = fs.readFileSync(layoutPath, 'utf-8');
+        hasForceStatic = /export\s+const\s+dynamic\s*=\s*['"]force-static['"]/.test(layoutContent);
+      }
+    }
 
     if (!hasForceStatic) {
       console.error(`❌ ${relativePath}`);

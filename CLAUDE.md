@@ -156,12 +156,22 @@
 
 ---
 
+## 글 작성 파이프라인
+
+**글 작성/수정 시 반드시 `.claude/skills/article-writing/SKILL.md`를 읽고 순서대로 따라간다.**
+
+4패스 파이프라인: Writer → Critic(subagent) → Refiner → Judge(subagent)
+
+---
+
 ## 검증
 
 ```bash
-npm run quality         # 품질 검증 (9항목)
-npm run quality 세금    # 특정 카테고리만
-npm run build           # prebuild에서 자동 실행
+node scripts/verify-8rules.js <slug>   # 8대 원칙 검증 (개별)
+node scripts/verify-8rules.js --all    # 전체 검증
+node scripts/verify-8rules.js --category 세금  # 카테고리별
+node scripts/batch-verify-loan.js      # 배치 검증
+npm run build                           # 빌드 검증
 ```
 
 에러 시 빌드 중단: title≠h1, FAQ≠3, sections<4, 필수필드 누락

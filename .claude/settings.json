@@ -13,35 +13,28 @@
       "WebSearch",
       "WebFetch",
       "Bash(npm run build:*)",
-      "Bash(node .claude/scripts/verify-blog-quality.js:*)",
       "Bash(git add:*)",
       "Bash(git checkout:*)",
       "Bash(git status:*)",
       "Bash(git restore:*)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "Bash(node -e \":*)",
+      "Bash(node scripts/create-batch2-forms.js)",
+      "Bash(node scripts/append-preview-data-batch2.js)",
+      "Bash(ls c:/Users/user/wiki-site/src/app/[category]/[slug]/)",
+      "Bash(echo \"없음\" ls c:/Users/user/wiki-site/src/app/w/ cat c:/Users/user/wiki-site/src/app/w/[slug]/page.tsx)",
+      "Bash(head -50 c:/Users/user/wiki-site/src/app/w/[slug]/page.tsx)",
+      "Bash(grep -n \"getBlogBySlug\\\\|getWikiDocument\\\\|getSpokeBySlug\\\\|getSpokeArticle\\\\|優先순위\\\\|routing\" c:/Users/user/wiki-site/src/app/w/[slug]/page.tsx)",
+      "Read(//c/Users/user/law-jjyu/scripts/**)",
+      "Read(//c/Users/user/law-jjyu/.claude/skills/article-writing/**)",
+      "Bash(node scripts/verify-8rules.js --all)",
+      "Bash(ls c:/Users/user/wiki-site/src/app/[category]/)"
     ],
-    "deny": []
-  },
-  "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node .claude/scripts/verify-wiki-quality.js",
-            "timeout": 30,
-            "statusMessage": "위키 MD 품질 검증 중..."
-          },
-          {
-            "type": "command",
-            "command": "node .claude/scripts/verify-blog-quality.js",
-            "timeout": 30,
-            "statusMessage": "블로그 TSX 품질 검증 중..."
-          }
-        ]
-      }
+    "deny": [],
+    "additionalDirectories": [
+      "c:\\Users\\user\\wiki-site\\.claude\\skills"
     ]
   },
+  "hooks": {},
   "editMode": "ask"
 }

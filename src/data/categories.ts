@@ -1,4 +1,11 @@
-import { Category } from "@/lib/types";
+interface Category {
+  name: string;
+  slug: string;
+  icon: string;
+  description: string;
+  template: string;
+  count: number;
+}
 
 export const categories: Category[] = [
   {

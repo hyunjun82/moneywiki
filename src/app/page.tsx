@@ -129,7 +129,7 @@ export default function Home() {
                   {categories.slice(0, 6).map((cat) => (
                     <Link
                       key={cat.slug}
-                      href={`/${cat.slug}`}
+                      href={`/search?category=${encodeURIComponent(cat.slug)}`}
                       className="flex flex-col items-center gap-2 p-3.5 rounded-xl bg-white/[0.08] hover:bg-white/15 transition-all border border-white/[0.06]"
                     >
                       <div className="w-12 h-12 rounded-lg bg-white/15 flex items-center justify-center">
@@ -197,15 +197,23 @@ export default function Home() {
         <section id="section-categories" className="py-14 bg-[#F8FAFC]">
           <div className="max-w-[1100px] mx-auto px-6">
             <h2 className="text-xl font-bold text-gray-900 mb-8">카테고리별 가이드</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {categories.map((cat) => (
                 <Link
                   key={cat.slug}
-                  href={`/${cat.slug}`}
-                  className="flex flex-col items-center gap-3 p-5 bg-white border border-gray-100 rounded-xl hover:border-[#1B3A5C]/30 hover:shadow-md transition-all text-center group"
+                  href={`/search?category=${encodeURIComponent(cat.slug)}`}
+                  className="bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow"
                 >
-                  <NavyIcon svg={CATEGORY_ICONS[cat.slug] || ""} size={52} />
-                  <span className="text-sm font-semibold text-gray-800 group-hover:text-[#1B3A5C] transition-colors">{cat.name}</span>
+                  <div className="flex items-center gap-3 p-4 group">
+                    <NavyIcon svg={CATEGORY_ICONS[cat.slug] || ""} size={40} />
+                    <div className="flex-1 min-w-0">
+                      <span className="text-sm font-bold text-gray-900 group-hover:text-[#1B3A5C] transition-colors">{cat.name}</span>
+                      <p className="text-xs text-gray-400 mt-0.5">{cat.description}</p>
+                    </div>
+                    <svg className="w-4 h-4 text-gray-300 group-hover:text-[#1B3A5C] transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 </Link>
               ))}
             </div>
