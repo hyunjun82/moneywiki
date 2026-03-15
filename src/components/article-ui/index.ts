@@ -19,6 +19,14 @@ export { Steps } from "./Steps";
 export { DocTable } from "./DocTable";
 export { Checklist } from "./Checklist";
 
+// 레이아웃 + 내부링크
+export { ArticleLayout } from "./ArticleLayout";
+export { Sidebar } from "./Sidebar";
+export type { SidebarItem } from "./Sidebar";
+export { CategoryButton } from "./CategoryButton";
+export { RelatedArticles } from "./RelatedArticles";
+export type { RelatedItem } from "./RelatedArticles";
+
 // 글 하단
 export { FAQ } from "./FAQ";
 export { References } from "./References";

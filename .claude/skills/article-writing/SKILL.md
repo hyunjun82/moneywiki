@@ -337,6 +337,7 @@ const body: React.CSSProperties = {
 - "~에 대해 알아보겠습니다", "~자세히 살펴보겠습니다" (filler)
 - "확인하세요" (intro, ogDescription 전체)
 - "총정리" (title 어디서도)
+- "있거든요", "있어요" (본문 전체 사용 금지 — "~있죠", "~있고요", "~이에요" 등으로 대체)
 
 ---
 
