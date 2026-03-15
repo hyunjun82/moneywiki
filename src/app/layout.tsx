@@ -89,6 +89,14 @@ export default function RootLayout({
           crossOrigin="anonymous"
           strategy="lazyOnload"
         />
+        {/* Microsoft Clarity */}
+        <Script id="clarity-analytics" strategy="lazyOnload">
+          {`(function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "vvx2cjclu4");`}
+        </Script>
       </head>
       <body className="antialiased bg-white min-h-screen flex flex-col font-sans">
         {/* 전역 JSON-LD 스키마 - 위키트리 벤치마킹 */}
