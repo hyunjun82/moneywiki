@@ -108,7 +108,7 @@ export default function Page() {
       <p style={body}>
         결론부터 말하면, <strong>상황에 따라 다르죠</strong>.{" "}
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>에서는
-        본인의 <strong>중대한 귀책사유</strong>로 해고된 경우 실업급여 수급자격을 제한하고 있어요.
+        본인의 <a href="/w/중대귀책사유-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>중대한 귀책사유</a>로 해고된 경우 실업급여 수급자격을 제한하고 있어요.
         무단결근이 이 중대한 귀책사유에 해당하느냐가 핵심이죠.
       </p>
       <p style={body}>
@@ -170,7 +170,7 @@ export default function Page() {
       <p style={body}>
         셋째, <strong>회사가 사실을 과장한 경우</strong>예요.
         실제로는 1일 결근인데 이직확인서에 &quot;상습 무단결근&quot;이라고 기재하는 사례가 간혹 있죠.
-        이럴 때는 출근 기록, 문자 내역, 동료 증언 등 증빙자료를 고용센터에 제출하면 사유를 정정할 수 있어요.
+        이럴 때는 출근 기록, 문자 내역, 동료 증언 등 증빙자료를 고용센터에 제출하면 <a href="/w/실업급여-이직확인서-거부" style={{ color: "#1D9E75", textDecoration: "underline" }}>이직확인서 사유를 정정</a>할 수 있어요.
       </p>
 
       <GreenBox title="수급 가능성이 높은 상황 정리">
@@ -240,7 +240,7 @@ export default function Page() {
       <H2>불인정 결정 받으면 이의신청으로 다투세요</H2>
       <p style={body}>
         고용센터 심사에서 수급자격이 불인정됐다고 끝이 아니에요.
-        <strong>60일 이내에 이의신청</strong>을 할 수 있죠.
+        <strong>60일 이내에 <a href="/w/실업급여-이의신청" style={{ color: "#1D9E75", textDecoration: "underline" }}>이의신청</a></strong>을 할 수 있죠.
         처음 심사에서 미처 제출하지 못한 증빙자료가 있다면 이때 추가로 첨부하면 돼요.
         새로운 증거가 나오면 결과가 뒤집히는 경우도 있고요.
       </p>

@@ -173,7 +173,7 @@ export default function Page() {
         <a href="https://www.work.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>워크넷(work.go.kr)</a>에서 <strong>구직등록</strong>을 미리 해두면 현장 대기 시간이 확 줄어요. 희망 직종, 희망 급여, 경력 사항을 입력하면 5분 안에 끝나죠. 센터에서도 할 수 있지만, 사람이 많으면 30분 이상 기다려야 해요.
       </p>
       <p style={body}>
-        <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24(ei.go.kr)</a>에서 <strong>수급자격 사전 교육</strong>을 듣는 것도 필수예요. 약 1시간 분량인데, 이걸 이수하지 않으면 고용센터에서 수급자격 신청이 접수되지 않아요. 회원가입까지 미리 해두면 이후 실업인정이나 수급 내역 조회도 온라인으로 처리할 수 있죠.
+        <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24(ei.go.kr)</a>에서 <a href="/w/실업급여-온라인-교육" style={{ color: "#1D9E75", textDecoration: "underline" }}>수급자격 사전 교육</a>을 듣는 것도 필수예요. 약 1시간 분량인데, 이걸 이수하지 않으면 고용센터에서 수급자격 신청이 접수되지 않아요. 회원가입까지 미리 해두면 이후 실업인정이나 수급 내역 조회도 온라인으로 처리할 수 있죠.
       </p>
       <p style={body}>
         정리하면, 집에서 미리 해갈 건 세 가지예요. 구직등록, 이직확인서 처리 확인, 온라인 교육 이수. 이것만 챙기면 고용센터 방문 시간이 절반 가까이 줄어들어요.
@@ -190,10 +190,10 @@ export default function Page() {
         <strong>일용직</strong>이었다면 일용근로내역서가 필요할 수 있는데, 고용센터에서 직접 조회가 가능하니 따로 준비하지 않아도 돼요. <strong>건설일용직</strong>이라면 퇴직공제부금 가입 확인서를 함께 가져가면 처리 속도가 빨라지죠.
       </p>
       <p style={body}>
-        <strong>외국인 근로자</strong>는 외국인등록증과 체류자격 서류가 추가로 필요해요. 체류 자격에 따라 수급 가능 여부가 달라지니까, 방문 전에 1350으로 미리 상담받는 게 안전하죠.
+        <a href="/w/외국인-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>외국인 근로자</a>는 외국인등록증과 체류자격 서류가 추가로 필요해요. 체류 자격에 따라 수급 가능 여부가 달라지니까, 방문 전에 1350으로 미리 상담받는 게 안전하죠.
       </p>
       <p style={body}>
-        <strong>예술인이나 특수고용직</strong>은 고용보험 가입 확인서를 챙겨야 해요. 2022년부터 고용보험 적용 대상이 됐지만, 가입 이력을 확인하는 절차가 필수예요. 고용24에서 본인의 피보험자격 이력을 조회하면 되죠.
+        <a href="/w/예술인-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>예술인</a>이나 <a href="/w/특고-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>특수고용직</a>은 고용보험 가입 확인서를 챙겨야 해요. 2022년부터 고용보험 적용 대상이 됐지만, 가입 이력을 확인하는 절차가 필수예요. 고용24에서 본인의 피보험자격 이력을 조회하면 되죠.
       </p>
 
       <BorderBox title="고용 형태별 추가 서류">

@@ -185,7 +185,7 @@ export default function Page() {
       <p style={body}>
         처음 받을 때와 기본 구조가 같아요.
         핵심 조건은 딱 하나, <strong>이전 수급 종료 후 새로 고용보험 180일 이상을 채우는 것</strong>이죠.
-        여기서 &quot;180일&quot;은 달력상 날짜가 아니라 실제 근무일(유급일) 기준이에요.
+        여기서 &quot;180일&quot;은 달력상 날짜가 아니라 실제 근무일(유급일) 기준이에요. <a href="/w/실업급여-피보험단위기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>피보험단위기간 계산법</a>을 참고하면 이해가 빨라요.
         주 5일제 회사라면 대략 8~9개월 정도 다녀야 채울 수 있죠.
       </p>
       <p style={body}>
@@ -264,7 +264,7 @@ export default function Page() {
         &quot;나중에 이어서 받겠다&quot;는 건 안 되는 구조예요.
       </p>
       <p style={body}>
-        대신 <strong>조기재취업수당</strong>이라는 제도를 활용할 수 있죠.
+        대신 <strong><a href="/w/실업급여-조기재취업수당" style={{ color: "#1D9E75", textDecoration: "underline" }}>조기재취업수당</a></strong>이라는 제도를 활용할 수 있죠.
         수급기간의 절반 이상을 남기고 재취업하면, 남은 급여의 절반을 일시금으로 받을 수 있죠.
         180일 중 60일만 쓰고 취업했다면 120일의 절반인 60일분을 한꺼번에 받는 거예요.
         놓치면 아까운 돈이니까 해당되는지 반드시 체크하세요.

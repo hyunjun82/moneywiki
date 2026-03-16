@@ -159,7 +159,7 @@ export default function Page() {
         금액도 기존에 받던 1일 수급액이 그대로 적용되니까, 수입이 줄어들 걱정은 없어요.
       </p>
       <p style={body}>
-        여기에 <strong>직업능력개발수당</strong>까지 별도로 나와요.
+        여기에 <strong><a href="/w/실업급여-직업능력개발수당" style={{ color: "#1D9E75", textDecoration: "underline" }}>직업능력개발수당</a></strong>까지 별도로 나와요.
         교통비와 식비 명목으로 훈련 참여일마다 일정 금액이 추가 지급되죠.
         실업급여 + 개발수당을 합치면 훈련 기간 동안 생활비 부담이 한결 가벼워져요.
       </p>
@@ -256,7 +256,7 @@ export default function Page() {
       </p>
       <p style={body}>
         훈련 도중에 취업하면 연장급여는 당연히 끝나요.
-        이때 남은 수급기간이 절반 이상이면 <strong>조기재취업수당</strong>을 신청할 수 있죠.
+        이때 남은 수급기간이 절반 이상이면 <strong><a href="/w/실업급여-조기재취업수당" style={{ color: "#1D9E75", textDecoration: "underline" }}>조기재취업수당</a></strong>을 신청할 수 있죠.
         취업 사실은 고용센터에 즉시 신고해야 해요.
         신고 없이 연장급여를 계속 타면 부정수급이에요.
       </p>

@@ -125,7 +125,7 @@ export default function Page() {
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>에서는 사용자(회사)의 권유에 의한 퇴직을 비자발적 이직으로 분류하고 있죠. 신청서를 본인이 작성했다고 해서 자발적 퇴사가 되는 게 아니에요. 핵심은 &quot;누가 먼저 퇴직을 유도했느냐&quot;예요.
       </p>
       <p style={body}>
-        희망퇴직 공고 → 본인 신청 → 회사 승인 순서로 진행됐다면 <strong>권고사직</strong>에 해당돼요. 이직확인서에 &quot;권고사직&quot; 또는 &quot;경영상 필요에 의한 퇴직&quot;으로 기재되면 수급자격이 생기죠. 고용보험 180일 이상 가입, 퇴직 후 12개월 이내 신청이라는 기본 조건도 함께 충족해야 하고요.
+        희망퇴직 공고 → 본인 신청 → 회사 승인 순서로 진행됐다면 <strong>권고사직</strong>에 해당돼요. 이직확인서에 &quot;권고사직&quot; 또는 &quot;경영상 필요에 의한 퇴직&quot;으로 기재되면 수급자격이 생기죠. <a href="/w/실업급여-피보험기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험 180일</a> 이상 가입, 퇴직 후 12개월 이내 신청이라는 기본 조건도 함께 충족해야 하고요.
       </p>
 
       <GreenBox title="희망퇴직 = 권고사직이 되는 조건">
@@ -134,7 +134,7 @@ export default function Page() {
         이직확인서에 &apos;권고사직&apos;으로 기재될 것
       </GreenBox>
 
-      <SectionBadge>내 상황 확인해보세요</SectionBadge>
+      <SectionBadge>내 상황 따져보세요</SectionBadge>
       <EligibilityChecker
         items={CHECK_ITEMS}
         allMatchText="실업급여를 받을 수 있는 조건을 갖추고 있네요. 이직확인서 기재 내용을 꼭 확인하고 신청하세요."
@@ -286,7 +286,7 @@ export default function Page() {
       <Divider />
 
       {/* 섹션 5 — 신청 절차와 주의사항 */}
-      <H2>조건 충족 여부를 먼저 확인하세요</H2>
+      <H2>조건 충족 여부를 먼저 살펴보세요</H2>
       <p style={body}>
         실업급여 신청 전에 가장 먼저 할 일은 <strong>이직확인서 확인</strong>이에요. 퇴직 사유가 &quot;권고사직&quot; 또는 &quot;경영상 필요에 의한 퇴직&quot;으로 기재돼야 하죠. &quot;자진퇴사&quot;로 적혀 있으면 수급이 어려워지니까 퇴직 전에 회사에 반드시 확인해야 해요.
       </p>
@@ -294,7 +294,7 @@ export default function Page() {
         이직확인서가 확인됐다면 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 수급자격 신청자 온라인 교육을 이수하세요. 약 1시간짜리 영상이에요. 교육 수료 후 관할 고용센터에 방문하거나 온라인으로 실업급여를 신청하면 되죠. 퇴직일 다음 날부터 <strong>12개월 이내</strong>에 신청해야 하니까 미루지 마세요.
       </p>
       <p style={body}>
-        희망퇴직 공고문, 사내 메일, 위로금 합의서 등은 사본을 꼭 보관해두세요. 고용센터에서 추가 증빙을 요구할 수 있거든요. 특히 이직확인서에 퇴직 사유가 잘못 기재된 경우, 이런 자료가 있으면 정정 요청이 훨씬 수월해지죠. 고용보험 가입기간 180일 충족 여부도 고용24에서 피보험자격 이력을 조회하면 바로 나와요.
+        희망퇴직 공고문, 사내 메일, 위로금 합의서 등은 사본을 꼭 보관해두세요. 고용센터에서 추가 증빙을 요구할 수 있거든요. 특히 <a href="/w/실업급여-이직확인서-거부" style={{ color: "#1D9E75", textDecoration: "underline" }}>이직확인서에 퇴직 사유가 잘못 기재된 경우</a>, 이런 자료가 있으면 정정 요청이 훨씬 수월해지죠. 고용보험 가입기간 180일 충족 여부도 고용24에서 <a href="/w/실업급여-피보험단위기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>피보험자격 이력</a>을 조회하면 바로 나와요.
       </p>
 
       <Divider />

@@ -189,7 +189,7 @@ export default function Page() {
 
       <p style={body}>
         실업급여 수급 기간이 끝났는데 아직 훈련이 진행 중이라면 어떻게 해야 할까요?
-        <strong>훈련연장급여</strong>를 신청하면 돼요.
+        <strong><a href="/w/실업급여-훈련연장급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>훈련연장급여</a></strong>를 신청하면 돼요.
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>에 따라 훈련이 끝날 때까지 최대 2년간 실업급여를 계속 받을 수 있죠.
       </p>
       <p style={body}>
@@ -213,7 +213,7 @@ export default function Page() {
       <p style={body}>
         직업훈련 기간에 받을 수 있는 지원금은 크게 세 가지예요.
         첫째 <strong>실업급여</strong>(또는 훈련연장급여)가 그대로 나오고, 둘째 <strong>내일배움카드</strong>로 훈련비 전액 또는 대부분이 지원되죠.
-        셋째 출석률 80% 이상이면 <strong>훈련장려금</strong>(직업능력개발수당)으로 월 최대 11만6천원까지 추가 수령이 가능해요.
+        셋째 출석률 80% 이상이면 <strong><a href="/w/실업급여-직업능력개발수당" style={{ color: "#1D9E75", textDecoration: "underline" }}>훈련장려금</a></strong>(직업능력개발수당)으로 월 최대 11만6천원까지 추가 수령이 가능해요.
       </p>
       <p style={body}>
         세 가지 모두 중복 수령이 가능하죠.

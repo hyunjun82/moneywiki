@@ -223,7 +223,7 @@ export default function Page() {
       </p>
       <p style={body}>
         여기서 중요한 분기점이 하나 있죠.
-        새 직장에서 <strong>고용보험 피보험기간이 180일을 넘기면</strong> 새로운 수급자격이 생겨요.
+        새 직장에서 <strong><a href="/w/실업급여-피보험기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험 피보험기간</a>이 180일을 넘기면</strong> 새로운 수급자격이 생겨요.
         잔여일수가 아니라 새 조건으로 실업급여를 받게 되는 거예요.
         반대로 180일 미만이면 기존 잔여일수를 이어받고요.
       </p>
@@ -246,7 +246,7 @@ export default function Page() {
       </p>
       <p style={body}>
         환수는 완전히 다른 문제예요.
-        거짓으로 신고해서 급여를 탔다면 <strong>부정수급</strong>이 되죠.
+        거짓으로 신고해서 급여를 탔다면 <a href="/w/실업급여-부정수급" style={{ color: "#1D9E75", textDecoration: "underline" }}>부정수급</a>이 되죠.
         받은 금액 전부를 돌려내야 하고, 추가로 받은 금액의 <strong>최대 5배</strong>까지 추가징수가 붙어요.{" "}
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 제62조</a>에 명시된 규정이죠.
       </p>

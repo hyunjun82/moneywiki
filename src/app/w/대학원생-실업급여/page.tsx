@@ -203,7 +203,8 @@ export default function Page() {
         실업인정을 받으려면 수업과 별개로 구직활동을 해야 해요.
       </p>
       <p style={body}>
-        인정되는 구직활동은 <strong>입사지원, 면접, 취업특강 참석, 직업훈련</strong> 등이에요.{" "}
+        인정되는{" "}
+        <a href="/w/실업급여-구직활동-횟수" style={{ color: "#1D9E75", textDecoration: "underline" }}>구직활동</a>은 <strong>입사지원, 면접, 취업특강 참석, 직업훈련</strong> 등이에요.{" "}
         <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 지정한 직업훈련을 듣는 건 구직활동으로 인정되죠.
         대학원 수업과 직업훈련은 성격이 완전히 달라요.
         자격증 공부나 개인 학습도 구직활동에 해당하지 않으니 주의하세요.
@@ -226,8 +227,8 @@ export default function Page() {
         대학원생이라고 금액이 다르지 않아요.
         일반 수급자와 동일하게 퇴직 전 평균임금의 <strong>60%</strong>를 받죠.
         2026년 기준으로{" "}
-        <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>에 따라
-        1일 상한액은 <strong>68,100원</strong>, 하한액은 <strong>66,048원</strong>이에요.
+        <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>에 따라{" "}
+        <a href="/w/실업급여-최대금액" style={{ color: "#1D9E75", textDecoration: "underline" }}>1일 상한액은 68,100원</a>, 하한액은 <strong>66,048원</strong>이에요.
         월로 환산하면 최대 약 204만 원 수준이죠.
       </p>
       <p style={body}>
@@ -257,7 +258,8 @@ export default function Page() {
       <p style={body}>
         취업하면 실업급여는 바로 끝나요.
         대학원 다니면서 취업하면 그때부터 실업급여가 중단되죠.
-        다만 수급일수의 절반 이상을 남기고 취업하면 <strong>조기재취업수당</strong>을 받을 수 있죠.
+        다만 수급일수의 절반 이상을 남기고 취업하면{" "}
+        <a href="/w/실업급여-취업촉진수당" style={{ color: "#1D9E75", textDecoration: "underline" }}>조기재취업수당</a>을 받을 수 있죠.
         남은 수급일수의 절반을 일시금으로 주는 제도이니까 꼭 챙기세요.
       </p>
       <p style={body}>

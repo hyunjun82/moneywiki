@@ -110,7 +110,7 @@ export default function Page() {
         <a href="https://www.law.go.kr/법령/고용보험법시행규칙" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 시행규칙</a>에 따라
         <strong> 1~3차 실업인정은 1회, 4차부터는 2회 이상</strong>이면 돼요.{" "}
         <a href="https://www.work.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>워크넷</a>에서 온라인 입사지원 한 건만 해도 인정되고, 10분이면 끝나죠.
-        직업훈련을 받고 있다면 별도 구직활동 없이 자동 인정되고요.
+        <a href="/w/실업급여-직업훈련" style={{ color: "#1D9E75", textDecoration: "underline" }}>직업훈련</a>을 받고 있다면 별도 구직활동 없이 자동 인정되고요.
       </p>
 
       <Divider />
@@ -232,7 +232,7 @@ export default function Page() {
         고용센터에서 &quot;성실한 구직 노력&quot;인지를 판단하기 때문에, 본인 분야에 맞는 곳에 지원하는 게 안전해요.
       </p>
       <p style={body}>
-        횟수를 채우지 못하면 그 차수의 <strong>실업급여가 지급되지 않아요</strong>.
+        횟수를 채우지 못하면 그 차수의 <strong>실업급여가 지급되지 않아요</strong>. <a href="/w/실업인정일-변경" style={{ color: "#1D9E75", textDecoration: "underline" }}>실업인정일 변경</a>이 필요하면 미리 신청하세요.
         영구적으로 끊기는 건 아니고, 다음 실업인정 때 횟수를 채우면 이후분부터 다시 받을 수 있죠.
         다만 못 받은 기간의 급여는 소급되지 않으니, 실업인정 기간이 시작되면 초반에 미리 활동을 해두는 게 안전해요.
       </p>
@@ -261,7 +261,7 @@ export default function Page() {
         고용24 앱에서도 파일 첨부가 되니 스마트폰으로도 처리가 가능하죠.
       </p>
       <p style={body}>
-        활동한 내역은 <strong>그때그때 기록으로 남겨두세요</strong>.
+        활동한 내역은 <strong>그때그때 기록으로 남겨두세요</strong>. <a href="/w/실업급여-부정수급" style={{ color: "#1D9E75", textDecoration: "underline" }}>부정수급</a>으로 의심받지 않으려면 증빙 관리가 중요해요.
         입사지원 완료 화면, 면접 일시 메모, 훈련 수료증 등을 폴더 하나에 모아두면 실업인정 때 한꺼번에 올리기 편하죠.
         실업인정일에 허둥대지 않으려면 평소에 정리해두는 게 핵심이에요.
         고용24 앱에서 알림을 설정해두면 일정을 놓칠 일도 없고요.

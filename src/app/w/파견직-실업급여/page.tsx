@@ -212,7 +212,7 @@ export default function Page() {
       <p style={body}>
         A파견회사에서 3개월, B파견회사에서 4개월 일한 경우 합산해서 7개월로 180일을 넘기죠.
         다만 중간에 실업급여를 이미 받은 기간은 제외되죠.
-        고용보험 가입기간이 헷갈리면{" "}
+        <a href="/w/실업급여-피보험단위기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>피보험단위기간</a> 합산이 헷갈리면{" "}
         <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서
         피보험 이력을 조회하면 한눈에 볼 수 있죠.
       </p>
@@ -286,7 +286,7 @@ export default function Page() {
         근로관계가 공식 종료되면 이직확인서를 발급받고 실업급여를 신청하면 돼요.
         대기 상태에서 급여를 못 받는 기간이 한 달 이상 길어지면,{" "}
         <a href="https://www.moel.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용노동부</a>(1350)에 상담해서 처리 방향을 잡으세요.
-        임금체불에 해당할 수 있으니 체불 진정도 함께 검토하는 게 좋아요.
+        <a href="/w/임금체불-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>임금체불</a>에 해당할 수 있으니 체불 진정도 함께 검토하는 게 좋아요.
       </p>
 
       <BorderBox title="파견회사가 바뀌는 3가지 경우">
@@ -320,7 +320,7 @@ export default function Page() {
       <p style={body}>
         수급 중에는 4주에 한 번 실업인정일에 구직활동을 보고해야 해요.
         고용센터에 직접 방문하거나 온라인으로 처리할 수 있죠.
-        실업인정을 빠뜨리면 해당 기간 급여가 지급되지 않으니까, 달력에 실업인정일을 미리 표시해두는 게 좋아요.
+        <a href="/w/실업급여-구직활동-횟수" style={{ color: "#1D9E75", textDecoration: "underline" }}>실업인정</a>을 빠뜨리면 해당 기간 급여가 지급되지 않으니까, 달력에 실업인정일을 미리 표시해두는 게 좋아요.
       </p>
 
       <GreenBox title="수급기간 — 가입기간별 정리">

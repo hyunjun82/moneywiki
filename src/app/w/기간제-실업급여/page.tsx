@@ -207,7 +207,7 @@ export default function Page() {
       </p>
       <p style={body}>
         한 가지 주의할 점이 있어요. 이전 직장에서 이미 실업급여를 받았으면 그 기간은 합산에서 빠져요. 고용보험 미가입 기간도 당연히 포함되지 않죠.{" "}
-        <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 본인 피보험 이력을 조회하면 합산 가능한 기간이 정확하게 나오니까 신청 전에 꼭 확인해보세요.
+        <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 본인 피보험 이력을 조회하면 합산 가능한 기간이 정확하게 나오니까 신청 전에 꼭 조회해보세요. <a href="/w/실업급여-피보험기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>피보험기간 계산법</a>도 함께 참고하면 좋아요.
       </p>
 
       <Calculator
@@ -229,13 +229,13 @@ export default function Page() {
 
       <p style={body}>
         신청 전에 가장 먼저 확인할 건 <strong>이직확인서</strong>예요.{" "}
-        <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에 접속해서 회사가 이직확인서를 제출했는지, 퇴직 사유가 &lsquo;계약기간 만료&rsquo;로 적혀 있는지 확인하세요. &ldquo;자진퇴사&rdquo;로 잘못 기재된 경우가 종종 있는데, 이때는 고용센터에 이의를 제기하면 돼요.
+        <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에 접속해서 회사가 이직확인서를 제출했는지, 퇴직 사유가 &lsquo;계약기간 만료&rsquo;로 적혀 있는지 살펴보세요. &ldquo;자진퇴사&rdquo;로 잘못 기재된 경우가 종종 있는데, 이때는 고용센터에 이의를 제기하면 돼요.
       </p>
       <p style={body}>
         이직확인서가 정상이면 워크넷에 구직등록 후 수급자격 신청자 온라인 교육을 이수해요. 그 뒤 관할 고용센터에 방문하거나 고용24에서 온라인 신청을 하면 되죠. 담당자가 퇴직 사유와 피보험기간을 심사한 뒤 수급자격 인정 여부를 알려줘요.
       </p>
       <p style={body}>
-        수급이 인정되면 1~4주 간격으로 실업인정일에 구직활동 내역을 보고해야 해요. 보고가 완료되면 실업급여가 통장에 입금되는 구조예요. 퇴직일로부터 <strong>12개월</strong>이 넘으면 아무리 조건을 충족해도 수급 자격이 사라지니까, 퇴직 직후 바로 절차를 시작하세요.
+        수급이 인정되면 1~4주 간격으로 실업인정일에 <a href="/w/실업급여-구직활동-횟수" style={{ color: "#1D9E75", textDecoration: "underline" }}>구직활동</a> 내역을 보고해야 해요. 보고가 완료되면 실업급여가 통장에 입금되는 구조예요. 퇴직일로부터 <strong>12개월</strong>이 넘으면 아무리 조건을 충족해도 수급 자격이 사라지니까, 퇴직 직후 바로 절차를 시작하세요.
       </p>
 
       <Checklist items={CHECKLIST} />
@@ -276,7 +276,7 @@ export default function Page() {
         <a href="https://www.moel.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용노동부</a>에 진정을 넣으세요. 퇴직일로부터 <strong>14일</strong> 안에 지급해야 하고, 이 기한을 넘기면 연 20%의 지연이자가 붙어요.
       </p>
       <p style={body}>
-        실업급여와 퇴직금은 돈이 나오는 곳 자체가 달라요. 실업급여는 고용보험 기금에서, 퇴직금은 회사 재원에서 지급하죠. 둘 중 하나만 받는 게 아니라 동시에 받는 거예요. 퇴직 후에 바빠서 하나를 놓치면 그만큼 손해이니까, 실업급여 신청하면서 퇴직금 지급 여부도 함께 따져보세요.
+        실업급여와 퇴직금은 돈이 나오는 곳 자체가 달라요. <a href="/w/실업급여-계산기" style={{ color: "#1D9E75", textDecoration: "underline" }}>실업급여 계산기</a>로 예상 수급액을 미리 뽑아보면 자금 계획이 수월해지죠. 실업급여는 고용보험 기금에서, 퇴직금은 회사 재원에서 지급하죠. 둘 중 하나만 받는 게 아니라 동시에 받는 거예요. 퇴직 후에 바빠서 하나를 놓치면 그만큼 손해이니까, 실업급여 신청하면서 퇴직금 지급 여부도 함께 따져보세요.
       </p>
 
       <Divider />

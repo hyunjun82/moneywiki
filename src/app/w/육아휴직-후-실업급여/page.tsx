@@ -177,7 +177,8 @@ export default function Page() {
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>상 구직급여 수급요건을 충족할 수 있죠.
       </p>
       <p style={body}>
-        비자발적 퇴직이란 권고사직, 계약만료, 근로조건의 현저한 변경, 회사의 복귀 거부 등이에요.
+        비자발적 퇴직이란{" "}
+        <a href="/w/실업급여-정당한-퇴사-사유" style={{ color: "#1D9E75", textDecoration: "underline" }}>권고사직, 계약만료, 근로조건의 현저한 변경</a>, 회사의 복귀 거부 등이에요.
         육아휴직에서 돌아왔는데 부서가 사라졌거나, 직급이 강등됐거나, 업무 내용이 완전히 바뀐 경우도 비자발적으로 인정되죠.
         이직확인서에 퇴직 사유가 어떻게 기재되느냐가 사실상 판단의 전부예요.
       </p>
@@ -290,6 +291,8 @@ export default function Page() {
       <p style={body}>
         여기에 법정 퇴직금까지 합치면 세 가지를 전부 받을 수 있어요.
         퇴직금은 1년 이상 근무하면 발생하고, 지급기한은 퇴직일로부터 <strong>14일</strong>이에요.
+        실업급여 금액이 궁금하다면{" "}
+        <a href="/w/실업급여-계산기" style={{ color: "#1D9E75", textDecoration: "underline" }}>실업급여 계산기</a>로 미리 산출해볼 수 있죠.
         안 주면 지연이자 <strong>연 20%</strong>가 붙죠.
         육아휴직급여, 퇴직금, 실업급여 — 하나도 빠뜨리지 말고 챙기세요.
       </p>
@@ -307,7 +310,7 @@ export default function Page() {
 
       <p style={body}>
         먼저{" "}
-        <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 이직확인서 처리 상태를 확인하세요.
+        <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 이직확인서 처리 상태를 조회해보세요.
         회사가 이직확인서를 냈는지, 퇴직 사유가 비자발적으로 적혀 있는지 보는 게 첫 번째 할 일이에요.
         미제출이면 회사에 요청하고, 사유가 잘못됐으면 정정을 요구해야 하죠.
       </p>

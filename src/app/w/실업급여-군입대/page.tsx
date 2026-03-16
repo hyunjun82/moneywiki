@@ -127,7 +127,7 @@ export default function Page() {
         남은 수급일수가 사라지는 건 아니에요. <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>이 군입대를 수급기간 연장 사유로 명시해뒀거든요. 쉽게 말하면 &quot;지금은 못 받지만, 전역하면 남은 만큼 다시 줄게&quot;라는 뜻이에요.
       </p>
       <p style={body}>
-        왜 연장이 필요하냐면, 원래 실업급여 수급기간이 퇴직 후 12개월이기 때문이에요. 군복무가 18개월이면 12개월을 훌쩍 넘기죠. 연장 제도가 없으면 전역 후에 한 푼도 못 받게 돼요. 그래서 복무 기간만큼 수급기간을 자동으로 밀어주는 거예요.
+        왜 연장이 필요하냐면, 원래 <a href="/w/퇴사후-실업급여-신청-기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>실업급여 수급기간</a>이 퇴직 후 12개월이기 때문이에요. 군복무가 18개월이면 12개월을 훌쩍 넘기죠. 연장 제도가 없으면 전역 후에 한 푼도 못 받게 돼요. 그래서 복무 기간만큼 수급기간을 자동으로 밀어주는 거예요.
       </p>
 
       <GreenBox title="수급기간 연장 계산">
@@ -178,7 +178,7 @@ export default function Page() {
         전역하면 <strong>고용센터에 복귀 신고</strong>를 해야 해요. 이걸 안 하면 실업급여가 자동으로 재개되지 않아요. 전역증명서를 가지고 관할 고용센터에 방문하면 되고, 그 자리에서 실업인정 일정도 다시 잡아주죠.
       </p>
       <p style={body}>
-        복귀 신고가 끝나면 입대 전과 동일하게 구직활동을 해야 해요. 2주마다 실업인정을 받아야 실업급여가 나오는 구조는 그대로예요. <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 온라인 실업인정도 가능하니까 일정을 미리 확인해 두세요.
+        복귀 신고가 끝나면 입대 전과 동일하게 <a href="/w/실업급여-구직활동-횟수" style={{ color: "#1D9E75", textDecoration: "underline" }}>구직활동</a>을 해야 해요. 2주마다 실업인정을 받아야 실업급여가 나오는 구조는 그대로예요. <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 온라인 실업인정도 가능하니까 일정을 미리 확인해 두세요.
       </p>
       <p style={body}>
         한 가지 주의할 점 — 수급기간이 연장됐다고 무한정 미룰 수 있는 게 아니에요. 연장된 기간 안에 남은 일수를 소진해야 하죠. 전역 후에 늑장을 부리면 받을 수 있는 금액이 줄어들 수 있으니, 가능한 빨리 복귀 신고하는 게 이득이에요.
@@ -219,7 +219,7 @@ export default function Page() {
         구체적으로 보면, 총 수급일수 210일 중 입대 전 100일을 이미 받았다면 전역 후에 110일을 더 받을 수 있죠. 수급일수가 깎이는 게 아니라, 안 쓴 일수가 고스란히 남는 거예요. 이게 수급기간 연장 제도의 핵심이죠.
       </p>
       <p style={body}>
-        전역 후 바로 취업할 계획이라면 <strong>조기재취업수당</strong>도 따져보세요. 남은 수급일수가 절반 이상인 상태에서 재취업하면 남은 금액의 일부를 한꺼번에 수령할 수 있죠. 고용센터나 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 상세 조건을 확인할 수 있죠.
+        전역 후 바로 취업할 계획이라면 <a href="/w/실업급여-취업촉진수당" style={{ color: "#1D9E75", textDecoration: "underline" }}>조기재취업수당</a>도 따져보세요. 남은 수급일수가 절반 이상인 상태에서 재취업하면 남은 금액의 일부를 한꺼번에 수령할 수 있죠. 고용센터나 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 상세 조건을 확인할 수 있죠.
       </p>
 
       <BorderBox title="입대 전후 핵심 요약">

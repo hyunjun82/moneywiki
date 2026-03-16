@@ -161,7 +161,7 @@ export default function Page() {
       <p style={body}>
         그런데 자발적 퇴사라도 <strong>정당한 사유</strong>가 붙으면 얘기가 달라져요.{" "}
         <a href="https://www.law.go.kr/법령/고용보험법시행규칙" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 시행규칙</a>이 인정하는 이직 사유가 따로 있거든요.
-        근로조건이 현저히 나빠진 경우, 출퇴근이 극히 어려운 곳으로 발령받은 경우, 건강 문제로 업무가 불가능한 경우 등이에요.
+        <a href="/w/실업급여-정당한-퇴사-사유" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로조건이 현저히 나빠진 경우</a>, 출퇴근이 극히 어려운 곳으로 발령받은 경우, 건강 문제로 업무가 불가능한 경우 등이에요.
         30일 넘게 가족 간병이 필요한 상황도 해당되죠.
       </p>
       <p style={body}>
@@ -196,7 +196,7 @@ export default function Page() {
       <p style={body}>
         문제는 일부 회사가 육아휴직 복귀 후 퇴사인데도 &lsquo;자발적 퇴사&rsquo;로 적는 경우가 있다는 거예요.
         권고사직으로 기재하면 회사 입장에서 부담이 되니까요.
-        퇴직 전에 인사팀에 &ldquo;이직확인서에 퇴직 사유를 뭐라고 쓸 건지&rdquo; 반드시 확인하세요.
+        퇴직 전에 인사팀에 &ldquo;이직확인서에 퇴직 사유를 뭐라고 쓸 건지&rdquo; 반드시 따져보세요.
       </p>
       <p style={body}>
         잘못 기재됐다면 고용센터(1350)에 이의를 제기할 수 있어요.
@@ -243,6 +243,8 @@ export default function Page() {
       <p style={body}>
         아이가 어려서 당장 구직활동이 어렵다면 <strong>수급기간 연장</strong>을 신청할 수 있어요.
         임신, 출산, 만 8세 이하 자녀 양육으로 취업이 힘든 경우 최대 <strong>1년</strong>까지 가능하죠.
+        구체적인 연장 기준은{" "}
+        <a href="/w/실업급여-수급기간-몇개월-받나요" style={{ color: "#1D9E75", textDecoration: "underline" }}>수급기간 안내 글</a>에 정리되어 있어요.
         고용센터에 가족관계증명서와 연장 사유를 함께 제출하면 돼요.
       </p>
       <p style={body}>

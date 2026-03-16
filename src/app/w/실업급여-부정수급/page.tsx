@@ -110,7 +110,7 @@ export default function Page() {
         실업급여 부정수급은 단순 행정 처분으로 끝나지 않아요.{" "}
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 제116조</a>에 따라
         <strong>5년 이하 징역 또는 5천만원 이하 벌금</strong>까지 선고될 수 있죠.
-        받은 돈을 돌려내고, 추가징수를 맞고, 남은 급여까지 전액 중단되죠.
+        받은 돈을 돌려내고, <a href="/w/실업급여-환수" style={{ color: "#1D9E75", textDecoration: "underline" }}>추가징수</a>를 맞고, 남은 급여까지 전액 중단되죠.
       </p>
       <p style={body}>
         &ldquo;나만 안 걸리겠지&rdquo;라는 생각이 가장 위험해요.
@@ -126,7 +126,7 @@ export default function Page() {
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 제62조</a>가 말하는 부정수급은
         &ldquo;거짓이나 부정한 방법으로 실업급여를 받은 경우&rdquo;예요.
         가장 흔한 유형은 <strong>취업 사실 미신고</strong>죠.
-        알바를 하면서 실업인정일에 &ldquo;일하지 않았다&rdquo;고 체크하는 순간 부정수급이 성립돼요.
+        <a href="/w/실업급여-받으면서-알바" style={{ color: "#1D9E75", textDecoration: "underline" }}>알바</a>를 하면서 실업인정일에 &ldquo;일하지 않았다&rdquo;고 체크하는 순간 부정수급이 성립돼요.
       </p>
       <p style={body}>
         두 번째로 많은 유형은 <strong>구직활동 허위 신고</strong>예요.
@@ -243,7 +243,7 @@ export default function Page() {
       <p style={body}>
         구직활동도 마찬가지예요.
         실제로 지원한 공고만 실적으로 올리고, 면접을 안 봤으면 면접 실적을 쓰지 않으면 돼요.
-        워크넷에서 입사지원하면 자동 기록이 되니까 증빙이 어렵지도 않아요.
+        <a href="/w/실업급여-구직활동-횟수" style={{ color: "#1D9E75", textDecoration: "underline" }}>워크넷에서 입사지원</a>하면 자동 기록이 되니까 증빙이 어렵지도 않아요.
         굳이 허위 실적을 만들 필요가 전혀 없는 구조예요.
       </p>
       <p style={body}>

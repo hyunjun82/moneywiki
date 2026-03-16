@@ -121,7 +121,8 @@ export default function Page() {
       </p>
       <p style={body}>
         현실적인 문제는 따로 있죠. 실업급여를 받으려면 구직활동을 해야 하잖아요. 초기엔 가능해도 후기로 갈수록 면접을 다니기가 쉽지 않아요.
-        그래서 고용보험법이 두 가지 보완장치를 마련해뒀어요. 구직활동 의무 완화, 그리고 수급기간 연장이에요.
+        그래서 고용보험법이 두 가지 보완장치를 마련해뒀어요.{" "}
+        <a href="/w/실업급여-구직활동-횟수" style={{ color: "#1D9E75", textDecoration: "underline" }}>구직활동</a> 의무 완화, 그리고 수급기간 연장이에요.
       </p>
       <p style={body}>
         고용센터에 임신 사실을 알리면 담당자가 구직활동 방식을 조정해줘요. 면접 대신 워크넷 온라인 입사지원이나 직업상담으로 인정해주는 경우가 많죠. 만삭인데 면접장을 돌아다녀야 하는 건 아니에요.
@@ -222,7 +223,9 @@ export default function Page() {
       </p>
       <p style={body}>
         출산 뒤에는 몸이 회복되는 대로 고용센터에 연락해서 구직활동을 시작하면 돼요.
-        <a href="https://www.moel.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용노동부</a> 상담 전화 1350은 무료이고, 내 상황에 딱 맞는 안내를 받을 수 있죠. 연장 기한이 얼마나 남았는지도 이때 같이 확인하세요.
+        출산 후 신청 시기가 궁금하다면{" "}
+        <a href="/w/실업급여-출산" style={{ color: "#1D9E75", textDecoration: "underline" }}>출산 후 실업급여 신청</a> 글을 참고하세요.
+        <a href="https://www.moel.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용노동부</a> 상담 전화 1350은 무료이고, 내 상황에 딱 맞는 안내를 받을 수 있죠. 연장 기한이 얼마나 남았는지도 이때 같이 살펴보세요.
       </p>
 
       <GreenBox title="한 줄 정리">

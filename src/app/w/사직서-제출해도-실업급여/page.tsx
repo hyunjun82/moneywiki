@@ -116,13 +116,13 @@ export default function Page() {
       {/* 섹션 1 — 사직서 내도 받을 수 있는 경우 + EligibilityChecker */}
       <H2>체크리스트 첫 번째, 어떤 조건이면 받을 수 있나요?</H2>
       <p style={body}>
-        가장 많은 사례가 <strong>권고사직</strong>이에요. 회사가 먼저 &quot;퇴사해주세요&quot;라고 말한 뒤 사직서 양식을 요구하는 경우죠. 구조조정, 희망퇴직, 명예퇴직, 실적 부진에 따른 퇴사 권유 — 전부 비자발적 퇴사에 해당해요. 사직서를 썼다는 형식은 결과에 영향을 주지 않죠.
+        가장 많은 사례가 <strong><a href="/w/권고사직-실업급여-신청-방법" style={{ color: "#1D9E75", textDecoration: "underline" }}>권고사직</a></strong>이에요. 회사가 먼저 &quot;퇴사해주세요&quot;라고 말한 뒤 사직서 양식을 요구하는 경우죠. 구조조정, 희망퇴직, 명예퇴직, 실적 부진에 따른 퇴사 권유 — 전부 비자발적 퇴사에 해당해요. 사직서를 썼다는 형식은 결과에 영향을 주지 않죠.
       </p>
       <p style={body}>
         <strong>계약 만료</strong>도 조건에 부합해요. 계약직, 파견직, 촉탁직 등 계약 기간이 끝났는데 회사가 연장을 거부하면 비자발적 퇴사로 봐요. 본인이 연장을 원했는지 여부가 핵심이고, 회사 쪽에서 먼저 거부 의사를 밝혔다면 실업급여 대상이죠.
       </p>
       <p style={body}>
-        <strong>근로조건이 악화</strong>돼서 퇴사한 경우에도 받을 수 있죠. 임금을 30% 이상 안 줬거나 2개월 이상 밀린 경우, 최저임금 미달, 주 52시간 초과 강요 등이 대표적이에요. 회사 잘못으로 정상적인 근무가 불가능했다면 정당한 이직 사유로 인정받을 수 있고요.
+        <strong><a href="/w/근로조건-변경-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로조건이 악화</a></strong>돼서 퇴사한 경우에도 받을 수 있죠. <a href="/w/임금체불-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>임금을 30% 이상 안 줬거나 2개월 이상 밀린 경우</a>, 최저임금 미달, 주 52시간 초과 강요 등이 대표적이에요. 회사 잘못으로 정상적인 근무가 불가능했다면 정당한 이직 사유로 인정받을 수 있고요.
       </p>
 
       <GreenBox title="사직서 내도 실업급여 받을 수 있는 대표 사례">
@@ -179,7 +179,7 @@ export default function Page() {
         <strong>코드 11(폐업·도산)</strong>, <strong>코드 12(경영상 권고사직)</strong>, <strong>코드 22(계약만료)</strong>, <strong>코드 23(근로조건 변동)</strong>, <strong>코드 26(본인 귀책 없는 사유)</strong> — 이 코드들은 실업급여 수급이 가능해요. 반면 <strong>코드 31(단순 자진퇴사)</strong>이면 실업급여를 받을 수 없죠.
       </p>
       <p style={body}>
-        여기서 핵심은 <strong>코드 32(자진퇴사-정당 사유)</strong>예요. 사직서를 냈더라도 임금체불이나 근로조건 위반 같은 정당한 배경이 있으면 이 코드가 적용되죠. <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 본인 이직확인서를 조회할 수 있으니, 퇴직 후 가장 먼저 코드를 확인하세요. 사실과 다르게 기재돼 있다면 고용센터에 즉시 정정 요청이 가능하고요.
+        여기서 핵심은 <strong>코드 32(자진퇴사-정당 사유)</strong>예요. 사직서를 냈더라도 임금체불이나 근로조건 위반 같은 정당한 배경이 있으면 이 코드가 적용되죠. <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 본인 이직확인서를 조회할 수 있으니, 퇴직 후 가장 먼저 코드를 조회해보세요. 사실과 다르게 기재돼 있다면 고용센터에 즉시 정정 요청이 가능하고요.
       </p>
 
       <SectionBadge>사직서 제출 전 체크리스트</SectionBadge>
@@ -217,7 +217,7 @@ export default function Page() {
         이미 자진퇴사로 처리됐다면 <strong>고용센터에 이직 사유 정정 신청</strong>을 하세요. 녹취록, 문자, 이메일 등 증빙자료를 제출하면 고용센터가 회사에 사실 확인 조사를 진행해요. 이직확인서를 아예 내지 않는 회사라면 고용센터가 제출을 요구하고, 불이행 시 과태료(최대 300만원)까지 부과할 수 있죠.
       </p>
       <p style={body}>
-        정정 결과에 불복하면 <strong>60일 이내 이의신청</strong>으로 재심사를 받을 수 있죠. 추가 증거를 첨부하면 뒤집히는 경우도 있고요. 이의신청마저 안 되면 심사청구와 재심사청구 절차가 남아 있으니 끝까지 포기하지 마세요. 퇴직 전에 <a href="https://www.moel.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용노동부</a> 상담(1350)을 미리 받아두면 훨씬 수월하게 대응할 수 있죠.
+        정정 결과에 불복하면 <strong>60일 이내 <a href="/w/실업급여-이의신청" style={{ color: "#1D9E75", textDecoration: "underline" }}>이의신청</a></strong>으로 재심사를 받을 수 있죠. 추가 증거를 첨부하면 뒤집히는 경우도 있고요. 이의신청마저 안 되면 심사청구와 재심사청구 절차가 남아 있으니 끝까지 포기하지 마세요. 퇴직 전에 <a href="https://www.moel.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용노동부</a> 상담(1350)을 미리 받아두면 훨씬 수월하게 대응할 수 있죠.
       </p>
 
       <GreenBox title="핵심 정리">

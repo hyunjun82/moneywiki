@@ -106,7 +106,7 @@ export default function Page() {
         &quot;실업급여 받았는데, 이것도 세금 내야 하나?&quot;
       </p>
       <p style={body}>
-        퇴직하고 실업급여를 타면 연말정산 시즌에 머리가 복잡해지죠.
+        퇴직하고 <a href="/w/실업급여-한달-얼마-받나요" style={{ color: "#1D9E75", textDecoration: "underline" }}>실업급여</a>를 타면 연말정산 시즌에 머리가 복잡해지죠.
         결론부터 말하면, <strong>실업급여는 비과세 소득</strong>이에요.{" "}
         <a href="https://www.law.go.kr/법령/소득세법" style={{ color: "#1D9E75", textDecoration: "underline" }}>소득세법 제12조</a>가
         실업급여를 비과세로 정하고 있어서 연말정산에도, 종합소득세 신고에도 넣지 않아요.
@@ -227,7 +227,7 @@ export default function Page() {
         실업급여는 소득에 안 들어가니까 기준이 될 수 없죠.
       </p>
       <p style={body}>
-        하나 더 챙겨야 할 게, 실업급여 기간에 납부한 <strong>건강보험료와 국민연금</strong>이에요.
+        하나 더 챙겨야 할 게, <a href="/w/실업급여-기초수급자" style={{ color: "#1D9E75", textDecoration: "underline" }}>실업급여 기간</a>에 납부한 <strong>건강보험료와 국민연금</strong>이에요.
         근로소득이 잡힌 해라면 사회보험료 공제 항목에 포함시킬 수 있죠.
         연금저축이나 IRP에 넣은 금액은 세액공제(총급여 5,500만원 이하 16.5%, 초과 13.2%)까지 적용 가능하죠.
       </p>

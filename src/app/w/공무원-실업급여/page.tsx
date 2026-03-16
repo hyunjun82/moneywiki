@@ -205,7 +205,7 @@ export default function Page() {
       <p style={body}>
         확인하는 방법은 간단해요.
         <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에 접속해서 피보험자격 이력을 조회하면 고용보험 가입 여부가 바로 나와요.
-        가입돼 있고 피보험기간 180일 이상이면 실업급여를 신청할 수 있죠.
+        가입돼 있고 피보험기간 180일 이상이면 실업급여를 신청할 수 있죠. <a href="/w/실업급여-계산기" style={{ color: "#1D9E75", textDecoration: "underline" }}>실업급여 계산기</a>로 예상 수급액을 뽑아보면 좋고요.
         가입 이력 자체가 없다면 공무원연금 쪽에서 퇴직급여를 받는 게 맞아요.
       </p>
 
@@ -226,7 +226,7 @@ export default function Page() {
       <p style={body}>
         공무원을 그만두고 민간기업에 취업하면, 그때부터 고용보험에 가입돼요.
         민간에서 일하다가 퇴직하면 비로소 실업급여를 받을 수 있는 거죠.
-        핵심 조건은 <strong>민간 근무 기간 동안 피보험기간 180일 이상</strong>을 채우는 거예요.
+        핵심 조건은 민간 근무 기간 동안 <a href="/w/실업급여-피보험기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>피보험기간</a> <strong>180일 이상</strong>을 채우는 거예요.
       </p>
       <p style={body}>
         주의할 점이 하나 있죠. 공무원으로 일한 기간은 고용보험 가입기간에 <strong>포함되지 않아요</strong>.

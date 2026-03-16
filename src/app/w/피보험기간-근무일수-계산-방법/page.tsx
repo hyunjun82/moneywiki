@@ -119,7 +119,7 @@ export default function Page() {
       <p style={body}>
         피보험기간은 <strong>고용보험에 가입된 채로 보수를 받은 날수</strong>예요.
         회사에 다니면서 월급을 받고, 고용보험료를 낸 기간이 곧 피보험기간이죠.
-        &quot;재직 기간&quot;이랑 같다고 생각하기 쉬운데, 보수가 지급되지 않은 무급일은 빠지니까 재직 기간보다 짧을 수 있죠.
+        &quot;재직 기간&quot;이랑 같다고 생각하기 쉬운데, 보수가 지급되지 않은 <a href="/w/무급휴무일-180일-미달" style={{ color: "#1D9E75", textDecoration: "underline" }}>무급일</a>은 빠지니까 재직 기간보다 짧을 수 있죠.
       </p>
       <p style={body}>
         실업급여를 받으려면 퇴직 전 18개월 동안 피보험기간이 <strong>180일 이상</strong>이어야 해요.
@@ -157,7 +157,7 @@ export default function Page() {
       </p>
       <p style={body}>
         주 5일제 직장을 예로 들어볼게요. 월~금 출근하면 주 5일이죠.
-        여기에 유급 주휴일(일요일)이 추가되면 한 주에 6일이 피보험기간으로 잡혀요.
+        여기에 유급 주휴일(일요일)이 추가되면 한 주에 6일이 <a href="/w/실업급여-피보험단위기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>피보험단위기간</a>으로 잡혀요.
         토요일은 대부분 무급이라 빠지고요. 한 달이면 약 <strong>24~26일</strong> 정도가 쌓이는 셈이에요.
       </p>
       <p style={body}>
@@ -258,7 +258,7 @@ export default function Page() {
       </p>
       <p style={body}>
         다만 조건이 하나 붙어요. 이전 퇴직 때 <strong>실업급여를 받지 않았어야</strong> 해요.
-        실업급여를 한 번이라도 수급하면 그 이전 피보험기간이 전부 리셋되죠.
+        실업급여를 한 번이라도 수급하면 그 이전 <a href="/w/실업급여-피보험기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>피보험기간</a>이 전부 리셋되죠.
         새로 취업한 시점부터 0일에서 다시 쌓아야 하는 거예요.
         그래서 실업급여를 받은 이력이 있다면 &quot;마지막 수급 이후&quot; 기간만 카운트돼요.
       </p>

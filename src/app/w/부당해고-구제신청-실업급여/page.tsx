@@ -240,7 +240,7 @@ export default function Page() {
       <p style={body}>
         한 가지 주의할 점이 있어요.
         구제신청을 넣었다고 구직활동을 생략할 수 있는 건 아니에요.
-        <strong>실업인정일마다 구직활동을 증명</strong>해야 하죠.
+        <strong>실업인정일마다 <a href="/w/실업급여-구직활동-횟수" style={{ color: "#1D9E75", textDecoration: "underline" }}>구직활동</a>을 증명</strong>해야 하죠.
         &quot;복직될 것 같아서 구직활동을 안 했다&quot;는 사유는 인정이 안 돼요.
       </p>
       <p style={body}>
@@ -290,7 +290,7 @@ export default function Page() {
       </p>
       <p style={body}>
         <strong>기각</strong>되면 해고가 정당하다는 뜻이에요.
-        중대한 귀책사유(횡령, 무단결근 등)로 해고된 거라면 실업급여 수급자격 자체가 제한될 수 있죠.
+        <a href="/w/중대귀책사유-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>중대한 귀책사유</a>(횡령, 무단결근 등)로 해고된 거라면 실업급여 수급자격 자체가 제한될 수 있죠.
         반면 중대한 귀책사유가 아닌 통상 해고라면 실업급여는 그대로 유지돼요.
       </p>
 
@@ -313,7 +313,7 @@ export default function Page() {
       <p style={body}>
         구제신청 중에 <strong>다른 회사에 취업</strong>하면 실업급여가 끊기죠.
         복직 판정이 나왔는데 이미 다른 곳에서 일하고 있으면 상황이 복잡해져요.
-        취업 사실을 숨기고 실업급여를 계속 받으면 <strong>부정수급</strong>으로 처리되고, 받은 금액의 최대 5배까지 추징당할 수 있죠.
+        취업 사실을 숨기고 실업급여를 계속 받으면 <a href="/w/실업급여-부정수급" style={{ color: "#1D9E75", textDecoration: "underline" }}>부정수급</a>으로 처리되고, 받은 금액의 최대 5배까지 추징당할 수 있죠.
       </p>
       <p style={body}>
         기한도 주의하세요. <strong>구제신청은 해고일로부터 3개월</strong>, <strong>실업급여 신청은 퇴직 후 12개월</strong>이에요.

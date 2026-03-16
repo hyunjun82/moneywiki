@@ -166,11 +166,11 @@ export default function Page() {
       </p>
       <p style={body}>
         이게 중요한 이유가 두 가지예요. 첫째, <strong>수급자격의 출입문</strong>이에요.
-        퇴직 전 18개월 내 피보험단위기간(실제 근무일 + 유급휴일)이 180일을 넘어야 실업급여를 신청할 수 있죠.
+        퇴직 전 18개월 내 <a href="/w/실업급여-피보험단위기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>피보험단위기간</a>(실제 근무일 + 유급휴일)이 180일을 넘어야 실업급여를 신청할 수 있죠.
         180일이 안 되면 아무리 억울하게 잘렸어도 수급 자체가 안 돼요.
       </p>
       <p style={body}>
-        둘째, <strong>소정급여일수</strong>를 결정해요. 피보험기간이 길수록 실업급여를 오래 받는 구조예요.
+        둘째, <a href="/w/실업급여-수급기간-몇개월-받나요" style={{ color: "#1D9E75", textDecoration: "underline" }}>소정급여일수</a>를 결정해요. 피보험기간이 길수록 실업급여를 오래 받는 구조예요.
         <a href="https://www.law.go.kr/법령/고용보험법시행령" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 시행령</a>에 따르면 1년 미만이면 120일, 10년 이상이면 최대 270일이죠.
         같은 나이인데 피보험기간 차이 하나로 수급일수가 120일(약 4개월) 벌어질 수 있죠.
       </p>
@@ -295,7 +295,7 @@ export default function Page() {
         월급이 안 나오더라도 보험 자격이 살아 있으면 기간이 쌓이는 거예요.
       </p>
       <p style={body}>
-        반대로 <strong>무급휴직</strong>은 빠져요. 고용보험료 자체를 안 내는 기간이니까요.
+        반대로 <a href="/w/무급휴무일-180일-미달" style={{ color: "#1D9E75", textDecoration: "underline" }}>무급휴직</a>은 빠져요. 고용보험료 자체를 안 내는 기간이니까요.
         <strong>이직 후 구직 기간</strong>도 마찬가지예요 — 어떤 회사에도 소속돼 있지 않으면 피보험기간에 잡히지 않죠.
         이 공백이 1년을 넘기면 이전 직장 합산까지 끊기니까 주의가 필요해요.
       </p>

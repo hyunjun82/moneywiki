@@ -166,7 +166,7 @@ export default function Page() {
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>이
         특수형태근로종사자와 예술인을 의무가입 대상으로 정해뒀어요.
         본인도 모르게 이미 가입돼 있을 수 있으니,{" "}
-        <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 먼저 확인해보세요.
+        <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 먼저 조회해보세요.
       </p>
       <p style={body}>
         &quot;나는 프리랜서니까 해당 안 될 거야&quot; 하고 넘기는 분이 정말 많아요.
@@ -202,7 +202,7 @@ export default function Page() {
       </p>
 
       <GreenBox title="나의 수급자격 체크">
-        <p style={{ margin: 0 }}>아래 항목을 체크해서 조건을 충족하는지 확인해 보세요.</p>
+        <p style={{ margin: 0 }}>아래 항목을 체크해서 조건을 충족하는지 따져보세요.</p>
       </GreenBox>
       <EligibilityChecker items={CHECK_ITEMS} />
 
@@ -213,7 +213,8 @@ export default function Page() {
       <p style={body}>
         고용보험에 가입돼 있다고 무조건 받는 건 아니에요.
         이직 전 24개월 중 <strong>피보험 단위기간이 12개월 이상</strong>이어야 하죠.
-        일반 근로자는 18개월 중 180일이 기준인데, 프리랜서(특고·예술인)는 기간이 더 길어요.
+        일반 근로자는 18개월 중{" "}
+        <a href="/w/실업급여-피보험단위기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>피보험단위기간 180일</a>이 기준인데, 프리랜서(특고·예술인)는 기간이 더 길어요.
         이 차이를 모르고 &quot;180일만 채우면 되는 거 아니야?&quot; 하다가 탈락하는 분이 꽤 많죠.
       </p>
       <p style={body}>
@@ -224,7 +225,8 @@ export default function Page() {
       </p>
       <p style={body}>
         마지막으로 재취업 의사와 능력을 갖춰야 해요.
-        수급 기간 동안 정해진 횟수만큼 구직활동을 해야 급여가 계속 나오죠.
+        수급 기간 동안 정해진 횟수만큼{" "}
+        <a href="/w/실업급여-구직활동-횟수" style={{ color: "#1D9E75", textDecoration: "underline" }}>구직활동</a>을 해야 급여가 계속 나오죠.
         프리랜서라면 새 프로젝트에 지원하거나 포트폴리오를 업데이트하는 것도 구직활동으로 인정받을 수 있죠.
         이 세 가지를 모두 갖춰야 수급자격이 생기는 거예요.
       </p>
@@ -291,7 +293,7 @@ export default function Page() {
         예를 들어 3등급으로 3년 일한 40대라면, 150일(약 5개월) 동안 매달 약 127만 원을 받게 돼요.
         전체 수령액은 약 634만 원이죠.
         &quot;프리랜서라서 아무 안전망도 없다&quot;고 생각했다면, 이 금액은 의미가 커요.
-        고용보험이 가입돼 있었는지 한 번만 확인해보세요.
+        고용보험이 가입돼 있었는지 한 번만 조회해보세요.
       </p>
 
       <Divider />
@@ -312,7 +314,8 @@ export default function Page() {
         전체 과정이 2~3주 정도 걸리는 편이에요.
       </p>
       <p style={body}>
-        여기서 가장 중요한 건 <strong>퇴직 다음날부터 12개월 이내</strong>에 신청해야 한다는 거예요.
+        여기서 가장 중요한 건{" "}
+        <a href="/w/퇴사후-실업급여-신청-기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직 다음날부터 12개월 이내</a>에 신청해야 한다는 거예요.
         이 기간을 넘기면 아무리 조건을 다 갖춰도 실업급여를 못 받아요.
         프로젝트 정리한다고, 다음 계약 찾아본다고 미루다가 12개월을 놓치는 분이 실제로 많죠.
         계약이 끝나면 바로 움직이세요.

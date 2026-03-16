@@ -231,7 +231,7 @@ export default function Page() {
       </p>
       <p style={body}>
         &quot;내가 먼저 나왔으니 자발적 퇴사 아닌가?&quot; 하고 걱정되는 분도 있을 거예요.
-        임금체불(30% 이상 또는 2개월 이상), 직장 내 괴롭힘, 출퇴근 왕복 3시간 초과 같은 &quot;정당한 이직 사유&quot;가 있으면 비자발적 퇴직으로 인정돼요.
+        <a href="/w/실업급여-임금체불" style={{ color: "#1D9E75", textDecoration: "underline" }}>임금체불</a>(30% 이상 또는 2개월 이상), 직장 내 괴롭힘, 출퇴근 왕복 3시간 초과 같은 &quot;<a href="/w/실업급여-정당한-퇴사-사유" style={{ color: "#1D9E75", textDecoration: "underline" }}>정당한 이직 사유</a>&quot;가 있으면 비자발적 퇴직으로 인정돼요.
         <a href="https://www.law.go.kr/법령/고용보험법시행규칙" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 시행규칙 별표2</a>에 전체 사유 목록이 나와 있으니 참고하세요.
       </p>
 
@@ -252,7 +252,7 @@ export default function Page() {
       {/* 섹션 3 — 조기재취업수당 받은 경우 */}
       <H2>조기재취업수당 수령 후 재수급 조건</H2>
       <p style={body}>
-        조기재취업수당은 남은 실업급여의 절반을 일시금으로 미리 받는 제도예요.
+        <a href="/w/실업급여-조기재취업수당" style={{ color: "#1D9E75", textDecoration: "underline" }}>조기재취업수당</a>은 남은 실업급여의 절반을 일시금으로 미리 받는 제도예요.
         문제는 이걸 받으면 <strong>남은 실업급여가 완전히 소멸</strong>된다는 거죠.
         &quot;절반을 미리 받았으니 나머지도 사라진다&quot;고 이해하면 돼요.
       </p>

@@ -155,7 +155,7 @@ export default function Page() {
         회사 폐업은 가장 확실한 <strong>비자발적 퇴사</strong> 사유예요.
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>에 따르면
         사업장이 폐업된 경우, 이직확인서가 없어도 고용센터에서 직권으로 수급자격을 인정해주죠.
-        밀린 월급이 남아 있다면 체당금까지 별도로 청구할 수 있죠.
+        밀린 월급이 남아 있다면 체당금까지 별도로 청구할 수 있죠. <a href="/w/실업급여-임금체불" style={{ color: "#1D9E75", textDecoration: "underline" }}>임금체불 사유의 실업급여</a>도 함께 살펴보세요.
       </p>
       <p style={body}>
         수급 조건부터 계산기, 서류, 체당금 신청까지 한꺼번에 정리했어요.
@@ -269,7 +269,7 @@ export default function Page() {
         놓치기 쉬운 게 하나 있죠. <strong>퇴직 후 12개월 이내에 수급을 완료</strong>해야 한다는 거예요. 12개월이 지나면 남은 수급일수가 아무리 많아도 더 이상 받을 수 없죠. 폐업 후 정신없는 와중에 신청을 미루다가 기한을 놓치는 분들이 꽤 많아요.
       </p>
       <p style={body}>
-        <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 온라인으로 신청할 수 있죠. 워크넷 구직등록 &rarr; 수급자격 신청 교육 이수 &rarr; 고용센터 방문 상담 — 이 순서로 진행하면 되죠. 이직확인서가 없는 상황이라면 고용센터에 먼저 전화(1350)해서 직권 처리 절차를 안내받으세요.
+        <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 온라인으로 신청할 수 있죠. 워크넷 구직등록 &rarr; 수급자격 신청 교육 이수 &rarr; 고용센터 방문 상담 — 이 순서로 진행하면 되죠. <a href="/w/실업급여-이직확인서-거부" style={{ color: "#1D9E75", textDecoration: "underline" }}>이직확인서가 없는 상황</a>이라면 고용센터에 먼저 전화(1350)해서 직권 처리 절차를 안내받으세요.
       </p>
       <p style={body}>
         실업급여와 체당금은 별개의 제도예요. 한쪽을 받는다고 다른 쪽이 줄어들지 않으니, <strong>두 가지를 동시에 진행</strong>하는 게 가장 효율적이죠. 고용센터에서 실업급여를 신청하고, 관할 노동청에서 체당금을 별도로 청구하세요. 밀린 월급이 있다면 이 타이밍을 절대 놓치지 마세요.

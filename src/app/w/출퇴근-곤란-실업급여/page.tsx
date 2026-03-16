@@ -139,7 +139,7 @@ export default function Page() {
         증빙: 네이버 지도·카카오맵 대중교통 경로 캡처
       </GreenBox>
 
-      <SectionBadge>내 상황을 확인해보세요</SectionBadge>
+      <SectionBadge>내 상황을 따져보세요</SectionBadge>
       <EligibilityChecker
         items={CHECK_ITEMS}
         allMatchText="모든 조건에 해당되네요. 통근 곤란으로 실업급여를 받을 가능성이 높아요. 증빙서류를 준비해서 고용센터에 신청하세요."
@@ -214,7 +214,7 @@ export default function Page() {
       {/* ── 섹션 4 — 신청 절차 ── */}
       <H2>정당 사유 인정 후 신청 방법 순서</H2>
       <p style={body}>
-        퇴직 후 회사가 <strong>이직확인서</strong>를 고용센터에 제출해야 해요. 법적으로 퇴직 후 10일 이내에 처리해야 하죠.
+        퇴직 후 회사가 <a href="/w/실업급여-이직확인서-거부" style={{ color: "#1D9E75", textDecoration: "underline" }}>이직확인서</a>를 고용센터에 제출해야 해요. 법적으로 퇴직 후 10일 이내에 처리해야 하죠.
         안 해주면 고용센터(1350)에 신고하면 돼요. 이직확인서가 접수되면{" "}
         <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 처리 여부를 바로 확인할 수 있죠.
       </p>
@@ -227,7 +227,7 @@ export default function Page() {
       <p style={body}>
         수급자격이 인정되면 <strong>대기기간 7일</strong>을 거쳐 첫 실업인정일이 돼요.
         2026년 기준 실업급여는 1일 최대 <strong>68,100원</strong>, 최소 <strong>66,048원</strong>이에요.
-        통근 곤란 퇴직이라고 금액이 줄지 않아요. 일반 실업급여와 동일한 기준으로 지급되죠.
+        통근 곤란 퇴직이라고 금액이 줄지 않아요. <a href="/w/실업급여-피보험기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>피보험기간</a>에 따라 수급일수가 달라지죠. 일반 실업급여와 동일한 기준으로 지급되죠.
       </p>
 
       <Divider />
@@ -240,7 +240,7 @@ export default function Page() {
         바로 포기할 필요 없어요. <strong>심사청구</strong>와 <strong>재심사청구</strong> 두 단계의 구제 절차가 마련돼 있으니까요.
       </p>
       <p style={body}>
-        심사청구는 처분을 안 날로부터 <strong>90일 이내</strong>에 고용센터에 제출하면 돼요.
+        <a href="/w/실업급여-이의신청" style={{ color: "#1D9E75", textDecoration: "underline" }}>심사청구</a>는 처분을 안 날로부터 <strong>90일 이내</strong>에 고용센터에 제출하면 돼요.
         추가 증빙을 보강하면 결과가 뒤집히는 사례가 적지 않죠. 대중교통 경로를 출근 시간대·퇴근 시간대별로 여러 장 캡처해서 제출하거나,
         실제 출퇴근 기록(교통카드 내역)을 추가하면 설득력이 올라가요.
       </p>

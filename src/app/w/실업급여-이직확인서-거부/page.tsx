@@ -224,7 +224,7 @@ export default function Page() {
         이렇게 잘못 적히면 실업급여 수급자격 심사에서 불이익을 받게 돼요.
       </p>
       <p style={body}>
-        이때는 고용센터에 <strong>이의를 제기</strong>하면 돼요.
+        이때는 고용센터에 <strong><a href="/w/실업급여-이의신청" style={{ color: "#1D9E75", textDecoration: "underline" }}>이의를 제기</a></strong>하면 돼요.
         담당자가 퇴직 경위를 다시 조사하죠.
         녹음 파일, 문자 메시지, 이메일, 퇴직금 정산서 같은 <strong>증거가 핵심</strong>이에요.
         말로만 주장하면 인정받기 어려우니 증빙을 반드시 미리 확보해두세요.
@@ -247,7 +247,7 @@ export default function Page() {
         나중에 이직확인서가 처리되면 합쳐서 심사를 진행하는 방식이에요.
       </p>
       <p style={body}>
-        여기서 절대 놓치면 안 되는 게 <strong>퇴직 후 12개월</strong>이라는 신청 기한이에요.
+        여기서 절대 놓치면 안 되는 게 <strong><a href="/w/퇴사후-실업급여-신청-기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직 후 12개월</a></strong>이라는 신청 기한이에요.
         이직확인서 문제로 시간을 끌다가 이 기한을 넘기면 실업급여 자격 자체가 사라지죠.
         서류가 늦어지고 있다면 기다리지 말고, 지금 바로 고용센터에 가서 상황을 알리세요.
       </p>

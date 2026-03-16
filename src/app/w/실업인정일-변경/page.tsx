@@ -128,7 +128,7 @@ export default function Page() {
       <p style={body}>
         <strong>질병이나 부상</strong>으로 출석이 불가한 경우도 인정돼요.
         단순 감기 정도로는 어렵지만, 입원이 필요하거나 통원 치료 중이라면 진단서를 제출하면 되죠.
-        장기간 아픈 경우에는 실업인정일 변경보다 <strong>상병급여</strong>로 전환하는 게 나을 수 있어요.
+        장기간 아픈 경우에는 실업인정일 변경보다 <a href="/w/실업급여-상병급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>상병급여</a>로 전환하는 게 나을 수 있어요.
         상병급여는 질병·부상으로 구직활동이 불가능할 때 실업급여 대신 지급되는 급여예요.
       </p>
       <p style={body}>
@@ -223,7 +223,7 @@ export default function Page() {
       </p>
       <p style={body}>
         반복적으로 빠지면 상황이 훨씬 나빠져요.
-        고용센터에서 <strong>구직 의사 없음</strong>으로 판단할 수 있고, 수급자격 자체를 재심사할 수 있죠.
+        고용센터에서 <strong>구직 의사 없음</strong>으로 판단할 수 있고, <a href="/w/실업급여-중단" style={{ color: "#1D9E75", textDecoration: "underline" }}>수급자격 자체를 재심사</a>할 수 있죠.
         실업급여는 &quot;재취업 의사가 있고 적극적으로 구직활동을 하는 사람&quot;에게 주는 돈이에요.
         실업인정일 출석은 그 의사를 증명하는 가장 기본적인 절차이기 때문에, 가볍게 볼 문제가 아니에요.
       </p>
@@ -251,7 +251,7 @@ export default function Page() {
       </p>
       <p style={body}>
         온라인 실업인정은 1차 실업인정(고용센터 방문) 이후부터 이용할 수 있어요.
-        고용24에 접속해서 구직활동 내역을 입력하고 제출하면 끝이죠.
+        고용24에 접속해서 <a href="/w/실업급여-구직활동-횟수" style={{ color: "#1D9E75", textDecoration: "underline" }}>구직활동 내역</a>을 입력하고 제출하면 끝이죠.
         처리 결과도 온라인으로 확인 가능하고, 급여 지급일도 방문 인정과 동일하게 적용돼요.
       </p>
       <p style={body}>

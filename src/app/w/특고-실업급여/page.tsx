@@ -213,7 +213,7 @@ export default function Page() {
       <p style={body}>
         보험설계사, 카드모집인, 골프장캐디도 빠지지 않아요.
         적용 직종은 계속 확대되는 추세라서, 본인 직종이 해당되는지{" "}
-        <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 반드시 확인해보세요.
+        <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 반드시 조회해보세요.
         목록에 없더라도 2025년 이후 추가된 직종이 있을 수 있으니까요.
       </p>
 
@@ -253,7 +253,7 @@ export default function Page() {
         세 번째는 <strong>재취업 의사</strong>예요.
         새 일을 찾겠다는 적극적인 의지가 있어야 하죠.
         이 세 가지를 모두 갖춰야 수급자격이 생겨요.
-        아래 계산기에서 본인의 예상 수급액과 수급기간을 직접 확인해보세요.
+        아래 계산기에서 본인의 예상 수급액과 수급기간을 직접 계산해보세요.
       </p>
 
       <BorderBox title="특고 vs 일반 근로자 수급 조건 비교">
@@ -294,7 +294,7 @@ export default function Page() {
         솔직히 말하면, 이 선택은 거의 항상 손해예요.
       </p>
       <p style={body}>
-        제외하면 실업급여를 못 받죠.
+        제외하면 실업급여를 못 받죠. <a href="/w/실업급여-부정수급" style={{ color: "#1D9E75", textDecoration: "underline" }}>부정수급</a> 추징도 무섭지만, 애초에 수급자격 자체가 없어지는 게 더 큰 손해예요.
         제외 기간은 피보험기간에도 포함되지 않아요.
         나중에 다시 가입해도 제외했던 기간을 소급 적용해주지 않고요.
         한 달 16,000원으로 실업 시 수백만 원을 받을 수 있다고 생각하면, 가입 유지가 압도적으로 이득이에요.
@@ -322,7 +322,7 @@ export default function Page() {
       <p style={body}>
         수급자격이 인정되면 그때부터 <strong>실업인정</strong>을 받으면서 구직급여를 수령하게 돼요.
         실업인정은 1~4주 단위로 진행되는데, 고용센터를 직접 방문하거나 온라인으로 처리할 수 있죠.
-        입사지원, 면접, 직업훈련 같은 적극적인 구직활동을 증명해야 계속 급여가 나와요.
+        입사지원, 면접, 직업훈련 같은 적극적인 <a href="/w/실업급여-구직활동-횟수" style={{ color: "#1D9E75", textDecoration: "underline" }}>구직활동</a>을 증명해야 계속 급여가 나와요.
         신청부터 첫 입금까지는 대략 3~4주 걸린다고 보면 돼요.
       </p>
 

@@ -186,7 +186,8 @@ export default function Page() {
         업종 제한도 없어서, 카페든 온라인 쇼핑몰이든 다 가입할 수 있죠.
       </p>
       <p style={body}>
-        일반 직장인은 회사가 자동으로 고용보험에 넣어주지만, 자영업자는 <strong>본인이 직접 신청</strong>해야 해요.{" "}
+        일반 직장인은 회사가 자동으로{" "}
+        <a href="/w/실업급여-피보험기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험</a>에 넣어주지만, 자영업자는 <strong>본인이 직접 신청</strong>해야 해요.{" "}
         <a href="https://total.comwel.or.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로복지공단 토탈서비스</a>에서
         온라인으로 가입하거나, 관할 근로복지공단에 방문하면 되죠.
         사업자등록증 사본만 있으면 돼요.
@@ -293,7 +294,8 @@ export default function Page() {
         일반 근로자는 나이에 따라 기간이 늘어나지만, 자영업자는 나이와 무관하게 가입기간만 기준이 된다는 점이 다르죠.
       </p>
       <p style={body}>
-        신청 기한은 <strong>폐업일 다음 날부터 12개월 이내</strong>예요.
+        신청 기한은{" "}
+        <a href="/w/퇴사후-실업급여-신청-기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>폐업일 다음 날부터 12개월 이내</a>예요.
         이 기간을 넘기면 수급 자격 자체가 사라지죠.
         폐업 직후에는 정리할 일이 산더미처럼 쌓이겠지만, 고용센터 방문만큼은 최대한 빨리 하는 게 유리해요.
         12개월이 지나면 그동안 낸 보험료를 돌려받을 수도 없어요.
@@ -319,7 +321,8 @@ export default function Page() {
       <p style={body}>
         구직급여 수급 중에 재창업하면 구직급여는 <strong>중단</strong>돼요.
         사업자등록을 다시 내는 순간 &quot;실업 상태&quot;가 아니게 되니까요.
-        하지만 남은 수급일수가 절반 이상 남아 있으면 <strong>조기재취업수당</strong>을 받을 수 있죠.
+        하지만 남은 수급일수가 절반 이상 남아 있으면{" "}
+        <a href="/w/실업급여-취업촉진수당" style={{ color: "#1D9E75", textDecoration: "underline" }}>조기재취업수당</a>을 받을 수 있죠.
         이걸 모르고 급여만 쭉 받다가 재창업하면 수당을 놓치는 거예요.
       </p>
       <p style={body}>

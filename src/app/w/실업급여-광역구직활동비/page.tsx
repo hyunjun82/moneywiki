@@ -224,7 +224,7 @@ export default function Page() {
         숙박하면 일비(식비 포함)도 별도로 지급돼요.
         1일 약 <strong>25,000원</strong>이죠.
         교통비 + 숙박비 + 일비를 합산하면, 서울~부산 면접 1박 기준 약 15~20만 원 정도 돌려받을 수 있죠.
-        아래 계산기로 본인 상황에 맞는 예상 금액을 바로 확인해보세요.
+        아래 계산기로 본인 상황에 맞는 예상 금액을 바로 조회해보세요.
       </p>
 
       <Calculator
@@ -310,7 +310,7 @@ export default function Page() {
       </p>
       <p style={body}>
         광역구직활동비 말고도 실업급여 수급자가 받을 수 있는 수당이 여럿 있죠.
-        직업능력개발수당(훈련 중 수당), 조기재취업수당(빨리 취업하면 보너스), 이주비(취업 후 이사 비용) 등이죠.{" "}
+        <a href="/w/실업급여-직업능력개발수당" style={{ color: "#1D9E75", textDecoration: "underline" }}>직업능력개발수당</a>(훈련 중 수당), <a href="/w/실업급여-조기재취업수당" style={{ color: "#1D9E75", textDecoration: "underline" }}>조기재취업수당</a>(빨리 취업하면 보너스), 이주비(취업 후 이사 비용) 등이죠.{" "}
         <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 내가 받을 수 있는 수당을 한번 훑어보세요.
         실업급여 외에 추가로 챙길 수 있는 돈을 놓치면 아깝잖아요.
       </p>

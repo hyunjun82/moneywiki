@@ -120,7 +120,7 @@ export default function Page() {
       {/* ── 섹션 1 — 정당한 이직 사유 + GreenBox + EligibilityChecker ── */}
       <H2>어떤 업무전환이 실업급여 인정 기준에 맞나요?</H2>
       <p style={body}>
-        근로계약서에 &quot;개발 업무&quot;로 적혀 있는데 영업을 시키면, 이건 사실상 계약 위반이에요. <a href="https://www.law.go.kr/법령/고용보험법시행규칙" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 시행규칙</a>은 채용 시 제시된 근로조건이 본질적으로 달라진 경우를 정당한 이직 사유로 명시하고 있죠. 여기서 판단 기준은 <strong>직무의 성격 자체가 바뀌었느냐</strong>예요.
+        근로계약서에 &quot;개발 업무&quot;로 적혀 있는데 영업을 시키면, 이건 사실상 계약 위반이에요. <a href="https://www.law.go.kr/법령/고용보험법시행규칙" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 시행규칙</a>은 채용 시 제시된 <a href="/w/근로조건-변경-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로조건</a>이 본질적으로 달라진 경우를 정당한 이직 사유로 명시하고 있죠. 여기서 판단 기준은 <strong>직무의 성격 자체가 바뀌었느냐</strong>예요.
       </p>
       <p style={body}>
         구체적으로 보면, 개발자가 영업으로, 디자이너가 경리로, 사무직이 현장직으로 발령받는 건 본질적인 변경에 해당해요. 직무의 핵심이 완전히 달라졌으니까요. 반면 같은 개발팀 안에서 프론트엔드가 백엔드로 바뀌는 건 해당이 안 되죠. 기술 스택은 달라도 직무 유형이 동일하기 때문이에요.
@@ -180,7 +180,7 @@ export default function Page() {
         반면 회사의 정당한 인사권 행사에 해당하면 거부가 어려워요. 업무 지시 불이행으로 징계 대상이 될 수 있기 때문이죠. 이 경우에는 발령에 따르거나, 퇴직을 선택하는 두 갈래가 남아요.
       </p>
       <p style={body}>
-        한 가지 포인트가 있는데요. 정당한 발령이더라도 본인이 감당하기 어려운 수준이면 퇴직 후 실업급여를 받을 여지가 생겨요. 서울에서 지방으로 발령받아 출퇴근 왕복 3시간 이상이 되는 경우가 대표적이죠. 업무 변경과 별개로 <strong>통근 곤란</strong>이라는 독립된 정당한 이직 사유가 성립해요.
+        한 가지 포인트가 있는데요. 정당한 발령이더라도 본인이 감당하기 어려운 수준이면 퇴직 후 실업급여를 받을 여지가 생겨요. 서울에서 지방으로 발령받아 출퇴근 왕복 3시간 이상이 되는 경우가 대표적이죠. 업무 변경과 별개로 <strong><a href="/w/출퇴근-곤란-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>통근 곤란</a></strong>이라는 독립된 정당한 이직 사유가 성립해요.
       </p>
 
       <SectionBadge>퇴직 전 준비 체크리스트</SectionBadge>
@@ -197,7 +197,7 @@ export default function Page() {
         이 두 문서를 나란히 놓으면 &quot;약속한 업무 vs 지시받은 업무&quot;의 차이가 한눈에 드러나죠. 여기에 기존 업무와 새 업무의 <strong>내용 비교표</strong>를 직접 만들어서 첨부하면 고용센터 심사에서 강력한 증거가 돼요.
       </p>
       <p style={body}>
-        퇴직 후에는 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 실업급여를 신청하세요. 수급자격 심사 과정에서 퇴직 사유를 소명해야 하는데, 이때 준비해둔 증빙자료를 함께 제출하면 돼요. 만약 불인정 판정이 나오더라도 <strong>60일 이내 이의신청</strong>으로 재심사를 받을 수 있으니 끝까지 포기하지 마세요.
+        퇴직 후에는 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 실업급여를 신청하세요. 수급자격 심사 과정에서 퇴직 사유를 소명해야 하는데, 이때 준비해둔 증빙자료를 함께 제출하면 돼요. 만약 불인정 판정이 나오더라도 <strong>60일 이내 <a href="/w/실업급여-이의신청" style={{ color: "#1D9E75", textDecoration: "underline" }}>이의신청</a></strong>으로 재심사를 받을 수 있으니 끝까지 포기하지 마세요.
       </p>
 
       <Divider />

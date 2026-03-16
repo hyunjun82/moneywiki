@@ -108,7 +108,7 @@ export default function Page() {
       <p style={body}>
         이런 상황, 무급휴무일이 많은 직장에서 자주 생겨요.
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>에 따르면 실업급여를 받으려면 퇴직 전 18개월 중 <strong>피보험기간 180일 이상</strong>이 필요한데, 무급휴무일은 이 180일에 포함되지 않거든요.
-        달력상 7개월을 다녀도 무급일이 많으면 실제 피보험기간은 160일밖에 안 될 수 있죠.
+        달력상 7개월을 다녀도 무급일이 많으면 실제 <a href="/w/피보험기간-근무일수-계산-방법" style={{ color: "#1D9E75", textDecoration: "underline" }}>피보험기간</a>은 160일밖에 안 될 수 있죠.
       </p>
       <p style={body}>
         왜 이런 일이 생기는지, 내 피보험기간이 지금 얼마인지, 부족하면 어떻게 채우는지 — 아래에서 순서대로 정리해뒀어요.
@@ -122,7 +122,7 @@ export default function Page() {
       <H2>피보험기간 180일, 계산 기준이 정확히 뭔가요?</H2>
       <p style={body}>
         피보험기간은 단순히 &quot;회사에 다닌 기간&quot;이 아니에요.
-        <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>에서 말하는 피보험기간은 <strong>실제로 일한 날 + 유급휴일</strong>을 더한 일수예요.
+        <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>에서 말하는 피보험기간은 <strong>실제로 일한 날 + 유급휴일</strong>을 더한 <a href="/w/실업급여-피보험단위기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>피보험단위기간</a>이에요.
         달력상 6개월이 지났어도 무급으로 빠진 날이 많으면 180일에 못 미치죠.
       </p>
       <p style={body}>
@@ -226,7 +226,7 @@ export default function Page() {
         6개월치를 모아서 더하면 본인의 실제 피보험기간을 추정할 수 있죠.
       </p>
       <p style={body}>
-        직접 계산하기 번거롭다면 <strong>고용센터(1350)</strong>에 전화하는 게 가장 정확해요.
+        직접 계산하기 번거롭다면 <a href="/w/실업급여-고용센터" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용센터</a>(1350)에 전화하는 게 가장 정확해요.
         담당자가 시스템에서 바로 조회해주니까 실수할 일이 없죠.
         퇴직 전에 한 번 전화해서 &quot;제 피보험기간이 180일 넘는지&quot; 물어보면 끝이에요.
       </p>

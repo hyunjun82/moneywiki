@@ -112,7 +112,7 @@ export default function Page() {
       </p>
       <p style={body}>
         퇴직일 기준으로 빠르면 2주, 보통은 3주쯤 뒤에 첫 입금을 확인할 수 있어요.
-        하루라도 빨리 받으려면 이직확인서 처리부터 재촉하는 게 핵심이에요.
+        하루라도 빨리 받으려면 <a href="/w/실업급여-이직확인서-거부" style={{ color: "#1D9E75", textDecoration: "underline" }}>이직확인서</a> 처리부터 재촉하는 게 핵심이에요.
       </p>
 
       <Divider />
@@ -128,7 +128,7 @@ export default function Page() {
       </p>
       <p style={body}>
         이직확인서가 처리되면{" "}
-        <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 수급자격 신청과 온라인 교육을 같은 날 끝낼 수 있어요.
+        <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 수급자격 신청과 <a href="/w/실업급여-온라인-교육" style={{ color: "#1D9E75", textDecoration: "underline" }}>온라인 교육</a>을 같은 날 끝낼 수 있어요.
         교육까지 이수하면 수급자격이 인정되고, 그날부터 대기기간 7일이 돌아가죠.
         7일이 지나면 고용센터가 1차 실업인정일을 잡아줘요.
       </p>
@@ -243,7 +243,7 @@ export default function Page() {
         정해진 입금 요일은 따로 없으니 매일 통장을 확인하는 수밖에 없어요.
       </p>
       <p style={body}>
-        여기서 가장 조심할 건 <strong>실업인정일을 놓치는 것</strong>이에요.
+        여기서 가장 조심할 건 <a href="/w/실업인정일-변경" style={{ color: "#1D9E75", textDecoration: "underline" }}>실업인정일을 놓치는 것</a>이에요.
         날짜를 빠뜨리면 해당 주기의 급여가 지급되지 않아요.
         고용24 앱에서 알림을 켜두면 까먹을 일이 없으니, 설정해두는 게 좋아요.
       </p>

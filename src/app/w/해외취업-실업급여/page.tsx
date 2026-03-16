@@ -126,7 +126,7 @@ export default function Page() {
       </p>
       <p style={body}>
         해외 기업에 이력서를 보내거나, 해외에서 면접을 보거나, 해외 취업 알선을 받는 활동은 전부 구직활동으로 인정 안 돼요.
-        실업급여를 유지하려면 <strong>국내 구직활동</strong>만 해야 하죠.
+        실업급여를 유지하려면 <strong>국내 <a href="/w/실업급여-구직활동-횟수" style={{ color: "#1D9E75", textDecoration: "underline" }}>구직활동</a></strong>만 해야 하죠.
         워크넷에 등록하고, 국내 기업에 지원하는 방식이어야 실업인정이 돼요.
       </p>
       <p style={body}>
@@ -212,7 +212,7 @@ export default function Page() {
       <H2>수급기간과 귀국 신청 방법의 타이밍</H2>
       <p style={body}>
         &quot;해외에 있었으니까 수급기간이 연장되지 않나요?&quot; — 안 돼요.
-        실업급여 수급기간은 퇴직 후 <strong>12개월</strong>로 고정이에요.
+        <a href="/w/실업급여-수급기간-몇개월-받나요" style={{ color: "#1D9E75", textDecoration: "underline" }}>실업급여 수급기간</a>은 퇴직 후 <strong>12개월</strong>로 고정이에요.
         해외에 6개월 있었다고 6개월 더 연장되는 구조가 아니죠.
         퇴직일 기준으로 1년이 되면 무조건 끝나요.
       </p>

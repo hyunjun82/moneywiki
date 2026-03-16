@@ -163,7 +163,7 @@ export default function Page() {
         아니에요. 하루 단위로 일하는 일용직도 고용보험에 가입돼 있으면 실업급여를 받을 수 있죠.{" "}
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 제43조</a>가
         일용근로자 수급자격 특례를 별도로 정해뒀죠.
-        피보험단위기간 <strong>180일</strong>을 채우면 대상이 되고, 일반 직장인과 달리 <strong>대기기간 없이</strong> 바로 지급이 시작돼요.
+        <a href="/w/실업급여-피보험단위기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>피보험단위기간</a> <strong>180일</strong>을 채우면 대상이 되고, 일반 직장인과 달리 <strong>대기기간 없이</strong> 바로 지급이 시작돼요.
       </p>
       <p style={body}>
         2026년 기준 1일 상한액은 <strong>68,100원</strong>, 하한액은 <strong>66,048원</strong>이에요.
@@ -299,11 +299,11 @@ export default function Page() {
       <p style={body}>
         &quot;며칠 일한 건데 안 말해도 되겠지?&quot; 이 생각이 위험해요.
         고용보험 전산에 일용근로 취득 신고가 올라가면 교차 대조로 바로 잡히죠.
-        <strong>부정수급</strong>으로 적발되면 받은 금액의 최대 5배를 추징당하죠.
+        <a href="/w/실업급여-부정수급" style={{ color: "#1D9E75", textDecoration: "underline" }}>부정수급</a>으로 적발되면 받은 금액의 최대 5배를 추징당하죠.
         한 번 적발되면 향후 실업급여 신청에서도 불이익이 따르니까, 하루라도 일했으면 꼭 신고하세요.
       </p>
       <p style={body}>
-        수급 중에 <strong>월 60시간(주 15시간) 이상</strong> 일하면 아예 &quot;취업&quot;으로 간주돼요.
+        수급 중에 <strong>월 60시간(주 15시간) 이상</strong> 일하면 아예 &quot;취업&quot;으로 간주돼요. <a href="/w/실업급여-받으면서-알바" style={{ color: "#1D9E75", textDecoration: "underline" }}>실업급여 받으면서 알바</a>하는 기준이 따로 있으니 꼭 읽어보세요.
         이 기준을 넘기면 수급 자체가 중단될 수 있죠.
         단기 일감을 여러 개 잡다 보면 본인도 모르게 60시간을 넘기는 경우가 생기니까, 근무시간을 미리 계산해두는 게 안전해요.
       </p>

@@ -224,7 +224,7 @@ export default function Page() {
         1일 상한액 <strong>68,100원</strong> 기준이면 30일에 약 204만원이에요.
         60일을 놓치면 408만원, 90일이면 612만원이죠.
         미루는 하루하루가 돈으로 직결된다고 보면 돼요.
-        아래 계산기에서 본인 예상 수령액을 확인해보세요.
+        아래 계산기에서 본인 예상 수령액을 조회해보세요.
       </p>
 
       <BorderBox title="늦게 신청할수록 이만큼 손해">
@@ -262,7 +262,7 @@ export default function Page() {
       <p style={body}>
         이직확인서가 처리되면{" "}
         <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 확인할 수 있어요.
-        그다음은 워크넷에 구직등록을 하고, 수급자격 신청자 온라인 교육을 이수하면 되죠.
+        그다음은 워크넷에 구직등록을 하고, <a href="/w/실업급여-온라인-교육" style={{ color: "#1D9E75", textDecoration: "underline" }}>수급자격 신청자 온라인 교육</a>을 이수하면 되죠.
         교육 이수 후 관할 고용센터에 방문해서 수급자격을 신청하세요.
         요즘은 온라인으로도 진행이 가능해요.
       </p>
@@ -282,7 +282,7 @@ export default function Page() {
         원칙적으로 12개월이 지나면 수급권이 사라져요.
         그런데{" "}
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>이 정한 <strong>법정 사유</strong>에 해당하면 수급기간 연장 신청이 가능하죠.
-        질병, 부상, 출산, 만 8세 이하 자녀 육아, 의무 군복무가 그 사유예요.
+        질병, 부상, 출산, 만 8세 이하 자녀 육아, 의무 <a href="/w/실업급여-군입대" style={{ color: "#1D9E75", textDecoration: "underline" }}>군복무</a>가 그 사유예요.
       </p>
       <p style={body}>
         질병이나 부상으로 취업 자체가 어려운 경우, 의사 진단서를 첨부해서 고용센터에 연장 신청을 하면 돼요.
@@ -322,7 +322,7 @@ export default function Page() {
       <p style={body}>
         결국 교훈은 하나예요 — 퇴사하면 <strong>가능한 빨리 신청</strong>하세요.
         쉬고 싶으면 실업급여를 받으면서 쉬면 돼요.
-        구직활동 보고는 2~4주에 한 번이라 부담이 크지 않아요.
+        <a href="/w/실업급여-구직활동-횟수" style={{ color: "#1D9E75", textDecoration: "underline" }}>구직활동 보고</a>는 2~4주에 한 번이라 부담이 크지 않아요.
         미루는 하루마다 1일 6만원 이상을 그냥 버리는 거라고 생각하면, 늦출 이유가 없죠.
       </p>
 

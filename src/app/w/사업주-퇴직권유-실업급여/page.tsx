@@ -104,7 +104,7 @@ export default function Page() {
 
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
         &quot;사장님이 그만두라는데, 이게 실업급여 대상이 맞나요?&quot;<br />
-        회사가 먼저 나가라고 했으면 <strong>권고사직</strong>이에요.<br /><br />
+        회사가 먼저 나가라고 했으면 <strong><a href="/w/권고사직-실업급여-신청-방법" style={{ color: "#1D9E75", textDecoration: "underline" }}>권고사직</a></strong>이에요.<br /><br />
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>은
         권고사직을 비자발적 이직으로 분류하고 있죠.
         고용보험 피보험기간 180일 이상이고, 재취업 의사만 있으면 실업급여 수급자격이 생겨요.
@@ -123,7 +123,7 @@ export default function Page() {
         &quot;당장 나가!&quot;처럼 화를 내면서 한 말은 다르게 봐요. 진심으로 해고 의사를 밝힌 건지, 감정이 격해져서 내뱉은 건지에 따라 결과가 갈리죠. 고용센터는 발언 전후 맥락과 이후 근무 여부를 종합적으로 판단해요. 그래서 해당 대화를 녹음해두는 게 중요하죠.
       </p>
       <p style={body}>
-        직접 &quot;나가&quot;라고 하진 않았지만, 업무를 안 주거나 한직으로 보내는 식의 <strong>암묵적 압박</strong>도 퇴직 권유에 해당할 수 있죠. 승진에서 계속 빼거나, 동료들과 격리시키는 행위도 마찬가지예요. 이런 상황에서는 문자, 이메일, 동료 진술 같은 정황 증거가 많을수록 인정 가능성이 높아져요.
+        직접 &quot;나가&quot;라고 하진 않았지만, 업무를 안 주거나 한직으로 보내는 식의 <strong>암묵적 압박</strong>도 퇴직 권유에 해당할 수 있죠. <a href="/w/직장내-괴롭힘-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>직장 내 괴롭힘</a> 수준이라면 별도의 정당한 이직 사유로도 인정되고요. 승진에서 계속 빼거나, 동료들과 격리시키는 행위도 마찬가지예요. 이런 상황에서는 문자, 이메일, 동료 진술 같은 정황 증거가 많을수록 인정 가능성이 높아져요.
       </p>
 
       <GreenBox title="퇴직 권유의 3가지 유형">
@@ -192,7 +192,7 @@ export default function Page() {
         2단계는 조사 결과를 기다리는 거예요. 회사가 퇴직 사유를 허위로 기재한 게 확인되면 이직 사유가 정정되고 실업급여를 받을 수 있게 되죠. <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>에 따라 허위 기재한 회사에는 <strong>과태료</strong>까지 부과될 수 있고요.
       </p>
       <p style={body}>
-        3단계는 <strong>이의신청</strong>이에요. 정정 신청이 받아들여지지 않더라도 <strong>60일 이내</strong>에 추가 증거를 첨부해서 재심사를 요청할 수 있죠. 이의신청마저 안 되면 심사청구, 재심사청구 절차가 남아 있으니 끝까지 포기하지 마세요.
+        3단계는 <strong><a href="/w/실업급여-이의신청" style={{ color: "#1D9E75", textDecoration: "underline" }}>이의신청</a></strong>이에요. 정정 신청이 받아들여지지 않더라도 <strong>60일 이내</strong>에 추가 증거를 첨부해서 재심사를 요청할 수 있죠. 이의신청마저 안 되면 심사청구, 재심사청구 절차가 남아 있으니 끝까지 포기하지 마세요.
       </p>
 
       <GreenBox title="이직사유 정정 절차">

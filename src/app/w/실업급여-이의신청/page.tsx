@@ -129,7 +129,7 @@ export default function Page() {
       </p>
       <p style={body}>
         수급자격 불인정뿐만이 아니에요. 실업급여 금액이 잘못 산정됐다고 판단되면 기초일액이나 수급일수 계산에 이의를 제기할 수 있죠.
-        부정수급 판정을 받고 환수 통보가 왔는데 억울한 경우에도 마찬가지예요.
+        <a href="/w/실업급여-환수" style={{ color: "#1D9E75", textDecoration: "underline" }}>부정수급 판정을 받고 환수 통보</a>가 왔는데 억울한 경우에도 마찬가지예요.
       </p>
       <p style={body}>
         여기서 가장 중요한 건 <strong>90일 기한</strong>이에요.
@@ -221,7 +221,7 @@ export default function Page() {
       <p style={body}>
         <strong>기각</strong>은 청구가 받아들여지지 않은 거예요.
         원래 처분이 그대로 유지되죠. 하지만 여기서 끝이 아니에요.
-        재심사청구라는 다음 단계가 남아 있고, 새 증거를 추가로 확보했다면 뒤집힐 가능성이 있죠.
+        <a href="/w/실업급여-재심사청구" style={{ color: "#1D9E75", textDecoration: "underline" }}>재심사청구</a>라는 다음 단계가 남아 있고, 새 증거를 추가로 확보했다면 뒤집힐 가능성이 있죠.
       </p>
       <p style={body}>
         <strong>각하</strong>는 청구 자체가 부적법해서 심사를 아예 안 하는 결과예요.

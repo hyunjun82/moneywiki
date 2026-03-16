@@ -157,7 +157,7 @@ export default function Page() {
       <H2>90일 기한 안에 심사청구를 먼저 해야 하나요?</H2>
       <p style={body}>
         재심사청구를 하려면 먼저 심사청구(1차)를 거쳐야 해요.
-        수급자격 불인정, 급여 감액, 부정수급 판정 같은 결정을 받았을 때 가장 먼저 할 수 있는 게 심사청구죠.
+        수급자격 불인정, 급여 감액, <a href="/w/실업급여-부정수급" style={{ color: "#1D9E75", textDecoration: "underline" }}>부정수급</a> 판정 같은 결정을 받았을 때 가장 먼저 할 수 있는 게 <a href="/w/실업급여-이의신청" style={{ color: "#1D9E75", textDecoration: "underline" }}>심사청구</a>죠.
         결정 통지서를 받은 날부터 <strong>90일 이내</strong>에 관할 고용센터에 심사청구서를 내면 돼요.
         온라인(<a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>), 우편, 방문 접수 전부 가능해요.
       </p>
