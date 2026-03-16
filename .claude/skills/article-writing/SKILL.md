@@ -395,6 +395,12 @@ const body: React.CSSProperties = {
 
 ## 7. 글 작성 절차
 
+### Step 0: 계산기/양식 페이지 체크 (리라이트 전 필수!)
+1. `content/wiki/{slug}.md`의 `schemaType` 확인
+2. `schemaType: calculator` 또는 `schemaType: form` → **리라이트 금지, 절대 덮어쓰지 않음**
+3. `src/components/calculators/` 에 해당 계산기 컴포넌트가 있는지 확인
+4. 계산기 페이지는 기존 MD가 렌더링하는 그대로 유지
+
 ### Step 1: 키워드 분석
 1. 키워드를 받으면 **신규/리라이트** 먼저 확인
 2. 검색 의도 파악: "이 키워드를 검색한 사람이 진짜 알고 싶은 게 뭔가?"
