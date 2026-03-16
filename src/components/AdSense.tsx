@@ -38,6 +38,6 @@ export default function AdSense({ slot, format = "auto", className = "" }: AdSen
 // 사전 정의된 광고 슬롯
 export const AD_SLOTS = {
   SQUARE: "6190024232",    // 사각 - 사이드바용
-  HORIZONTAL: "2250779222", // 수평 - 본문 상단
-  VERTICAL: "8624615881",   // 수직 - 본문 중간
+  HORIZONTAL: "1269427864", // jjyu 반응 - 본문 상단
+  VERTICAL: "1269427864",   // jjyu 반응 - 본문 중간
 } as const;
