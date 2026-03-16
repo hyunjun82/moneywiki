@@ -1,91 +1,299 @@
 "use client";
-import { H2, SectionBadge, GreenBox, BorderBox, Divider, body, EligibilityChecker, Checklist, FAQ, References, Disclaimer, ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd } from "@/components/article-ui";
+
+import {
+  H2, SectionBadge, GreenBox, BorderBox, Divider, body,
+  Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
+  ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
+} from "@/components/article-ui";
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
 const CHECK_ITEMS = [
-  { id: "c1", label: "개인형 IRP 계좌에 퇴직금이 입금돼 있어요" },
-  { id: "c2", label: "퇴직 사유 입금분은 별도 사유 없이 인출 가능해요" },
-  { id: "c3", label: "추가 납입분은 법정 사유가 있어야 중도 인출이 돼요" },
-  { id: "c4", label: "연금 수령 시 세금이 줄어드는 걸 알고 있어요" },
+  "퇴직금을 개인형 IRP로 받을 예정이에요",
+  "연금으로 나눠 받고 싶어요",
+  "세액공제 혜택도 받고 싶어요",
+  "중도인출 없이 노후까지 운용할 계획이에요",
 ];
-const CHECKLIST = ["개인형 IRP 잔액 확인 — 퇴직금 + 추가 납입분 구분", "수령 방법 결정 — 해지, 부분 인출, 연금", "금융사 앱에서 인출 신청", "수령 계좌 지정 및 입금 확인", "해지 후 계좌 유지 여부 결정"];
+
+const CALC_SLIDERS = [
+  {
+    key: "amount",
+    label: "퇴직금",
+    min: 300,
+    max: 10000,
+    step: 100,
+    defaultValue: 3000,
+    format: (v: number) => `${v.toLocaleString()}만원`,
+  },
+  {
+    key: "years",
+    label: "연금 수령 기간",
+    min: 10,
+    max: 30,
+    step: 1,
+    defaultValue: 20,
+    format: (v: number) => `${v}년`,
+  },
+];
+
+const CALC_RESULTS = [
+  {
+    key: "result1",
+    label: "연간 연금 수령액",
+    highlight: true,
+    getValue: (v: Record<string, number>) =>
+      Math.round((v.amount * 10000) / v.years),
+    format: (v: number) =>
+      `약 ${Math.round(v / 10000).toLocaleString()}만원/년`,
+  },
+  {
+    key: "result2",
+    label: "세액공제 (연 300만원 납입 기준, 16.5%)",
+    highlight: false,
+    getValue: (v: Record<string, number>) =>
+      Math.round(Math.min(v.amount * 10000, 9000000) * 0.165),
+    format: (v: number) =>
+      `최대 약 ${Math.round(v / 10000).toLocaleString()}만원`,
+  },
+];
+
+const DOCS = [
+  { name: "신분증", required: true, where: "본인 지참" },
+  { name: "퇴직 확인서", required: true, where: "회사 인사팀" },
+  { name: "IRP 계좌 개설 서류", required: true, where: "금융기관 앱 또는 방문" },
+  { name: "수익자 지정 서류", required: false, where: "금융기관 — 선택 사항" },
+];
+
+const STEPS = [
+  {
+    step: 1,
+    title: "개인형 IRP 개설",
+    desc: "증권사·은행 앱으로 신분증+인증서로 10분",
+    tip: "수수료 낮은 증권사 권장",
+  },
+  {
+    step: 2,
+    title: "납입금 이체",
+    desc: "회사에서 이체하거나 본인이 추가 납입 가능",
+    tip: "본인 추가 납입 시 세액공제 혜택",
+  },
+  {
+    step: 3,
+    title: "운용 지시",
+    desc: "ETF, 펀드, 예금 중 선택해서 운용",
+    tip: "장기 운용이라면 분산 투자 권장",
+  },
+  {
+    step: 4,
+    title: "55세 이후 연금 수령",
+    desc: "10년 이상 분산 수령 시 퇴직소득세 30% 감면",
+    tip: "연금 수령 방법은 수령 직전에 금융기관에 신청",
+  },
+];
+
+const CHECKLIST = [
+  { label: "개인형 IRP 개설", desc: "퇴직 전에 미리" },
+  { label: "추가 납입", desc: "연 1,800만원 한도, 세액공제 900만원 한도" },
+  { label: "운용 지시", desc: "방치하면 원리금보장형 자동 배정" },
+  { label: "55세 이후 연금 전환", desc: "퇴직소득세 30% 감면" },
+  { label: "수수료 비교", desc: "증권사 0.2% vs 은행 0.5%" },
+];
+
 const FAQS = [
-  { q: "개인형 IRP와 퇴직연금 IRP가 다른가요?", a: "제도적으로는 같은 IRP예요. 다만 개인이 직접 개설해서 추가 납입·운용하는 경우를 '개인형 IRP'라고 부르죠. 퇴직금이 들어오면 퇴직연금 수령 기능도 겸하게 돼요." },
-  { q: "개인형 IRP에서 퇴직금 수령하는 방법은?", a: "금융사 앱에서 해지 또는 부분 인출을 신청하면 돼요. 퇴직 사유 입금분은 바로 꺼낼 수 있죠." },
-  { q: "수령 신청에 필요한 조건은?", a: "퇴직 사실이 확인되면 별도 조건 없이 인출 가능해요. 앱에서 본인 인증만 하면 되죠." },
-  { q: "수령 시 세금은 어떻게 되나요?", a: "일시금 인출 시 퇴직소득세 전액, 연금 수령 시 60~70%만 부담해요. 추가 납입분은 별도 세금 체계가 적용되죠." },
-  { q: "개인형 IRP 수령 후 계좌 유지해야 하나요?", a: "의무는 아니에요. 해지하면 폐쇄되고, 유지하면 추가 납입으로 세액공제를 계속 받을 수 있죠." },
+  {
+    q: "개인형 IRP와 기업형 IRP가 어떻게 달라요?",
+    a: "개인형은 본인이 직접 가입하는 계좌, 기업형(DC·DB형)은 회사가 운용해요. 퇴직 시 개인형 IRP로 이전돼요.",
+  },
+  {
+    q: "55세 이전에 연금을 받을 수 있나요?",
+    a: "원칙적으로 불가해요. 부득이한 사유(요양, 파산 등)에 한해 중도인출이 가능하고, 이 경우 세금 16.5%가 부과돼요.",
+  },
+  {
+    q: "추가 납입하면 세액공제가 얼마나 되나요?",
+    a: "IRP+연금저축 합산 연 900만원까지 세액공제를 받을 수 있어요. 소득 5,500만원 이하면 16.5%, 초과면 13.2%예요.",
+  },
+  {
+    q: "운용 중 손실이 나면 퇴직금이 줄어드나요?",
+    a: "실적배당형(ETF·펀드)을 선택하면 손실이 날 수 있어요. 안전하게 원리금보장형을 선택하는 방법도 있어요.",
+  },
+  {
+    q: "퇴직 후 연금 수령 전까지 IRP 관리를 안 해도 되나요?",
+    a: "운용 지시를 따로 안 하면 원리금보장형으로 자동 운용돼요. 수수료는 계속 부과되니 주기적으로 내역은 살펴보는 게 좋아요.",
+  },
 ];
+
 const REFERENCES = [
-  { category: "법령", items: [{ label: "근로자퇴직급여 보장법 — IRP 운영 규정", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" }] },
-  { category: "공식 자료", items: [{ label: "금융감독원 — IRP 비교공시", url: "https://www.fss.or.kr" }] },
+  {
+    type: "법령" as const,
+    name: "근로자퇴직급여보장법 — 개인형 IRP",
+    url: "https://www.law.go.kr/법령/근로자퇴직급여보장법",
+  },
+  {
+    type: "공식" as const,
+    name: "금융감독원 — 퇴직연금 비교공시",
+    url: "https://www.fss.or.kr",
+  },
+  {
+    type: "공식" as const,
+    name: "고용노동부 — 퇴직연금 제도 안내",
+    url: "https://www.moel.go.kr",
+  },
 ];
+
 const RELATED = [
-  { slug: "irp-계좌-퇴직금-수령방법", title: "IRP 계좌 퇴직금 수령 방법", description: "IRP에서 퇴직금 수령하는 단계별 절차를 정리했어요." },
-  { slug: "퇴직금-IRP-계좌", title: "퇴직금 IRP 계좌 개설", description: "IRP 계좌가 왜 필요하고 어디서 만드는지 안내해요." },
-  { slug: "퇴직금-연금저축계좌-수령", title: "퇴직금 연금저축계좌 수령", description: "연금저축계좌와 IRP의 차이를 비교했어요." },
+  {
+    slug: "퇴직금-IRP-계좌",
+    title: "퇴직금 IRP 계좌 개설",
+    desc: "수수료 비교부터 개설까지",
+  },
+  {
+    slug: "퇴직금-IRP-수령방법",
+    title: "퇴직금 IRP 수령 방법",
+    desc: "이체부터 연금 전환까지",
+  },
+  {
+    slug: "퇴직금-세금",
+    title: "퇴직금 세금, 얼마나 떼나요?",
+    desc: "IRP 절세 효과 계산",
+  },
 ];
 
 export default function Page() {
+  const sidebar = (
+    <Sidebar
+      items={퇴직금_SIDEBAR}
+      currentSlug="개인형-irp-퇴직금-수령방법"
+    />
+  );
+
   return (
-    <ArticleLayout sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} currentSlug="개인형-irp-퇴직금-수령방법" />}>
-      <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 개인형IRP · 수령</p>
-      <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>개인형 IRP 퇴직금 수령 방법,<br />어떻게 신청하나요?</h1>
-      <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
-        &ldquo;개인형 IRP에 퇴직금이 들어왔는데, 일반 IRP와 뭐가 다른가요?&rdquo;
-        사실 제도적으로는 같은 IRP예요. 개인이 직접 개설해서 추가 납입·운용하다가 퇴직금까지 받게 된 경우를 &ldquo;개인형 IRP&rdquo;라고 부르죠.
-        수령 방법, 세금 처리, 계좌 유지 여부를 정리해드릴게요.
+    <ArticleLayout sidebar={sidebar}>
+      {/* 브레드크럼 */}
+      <p style={{ fontSize: 13, color: "#6b7280", marginBottom: 8 }}>
+        개인형IRP · 퇴직금 · 수령
       </p>
-      <Divider /><ArticleAd position="intro" />
 
-      <H2>개인형 IRP와 퇴직연금 IRP가 다른가요?</H2>
-      <p style={body}>제도적으로는 <strong>같은 IRP</strong>예요. <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여 보장법</a>상 IRP는 하나의 계좌 유형이죠. 다만 용도에 따라 이름이 달라요.</p>
-      <p style={body}>&ldquo;개인형 IRP&rdquo;는 개인이 <strong>자발적으로 개설</strong>해서 추가 납입(세액공제용)이나 이직 시 퇴직금 수령에 활용하는 경우를 말해요. 회사가 가입시켜주는 DC형 퇴직연금 계좌와 구분하기 위한 표현이죠.</p>
-      <p style={body}>퇴직금이 입금되면 개인형 IRP에 &ldquo;퇴직금 부분&rdquo;과 &ldquo;추가 납입 부분&rdquo;이 함께 들어가요. 인출할 때 각각 다른 세금이 적용되니까 구분이 중요하죠.</p>
-      <GreenBox title="개인형 IRP = 일반 IRP">퇴직금 수령 기능 + 추가 납입(세액공제) 기능<br />퇴직금 부분 → 퇴직소득세 적용<br />추가 납입 부분 → 연금소득세 or 기타소득세 적용</GreenBox>
+      {/* 타이틀 */}
+      <h1 style={{ fontSize: 26, fontWeight: 800, lineHeight: 1.35, marginBottom: 4 }}>
+        개인형 IRP로 퇴직금 수령하는 방법은?
+      </h1>
+      <p style={{ fontSize: 17, color: "#374151", marginBottom: 24 }}>
+        가입부터 수령 방식 선택까지 한 번에
+      </p>
 
-      <Divider />
-      <H2>개인형 IRP에서 퇴직금 수령하는 방법은?</H2>
-      <p style={body}>일반 IRP와 동일해요. 금융사 앱에서 <strong>해지 또는 부분 인출</strong>을 신청하면 2~3영업일 내에 지정 계좌로 입금되죠.</p>
-      <p style={body}>퇴직 사유로 입금된 퇴직금 부분은 <strong>별도 사유 없이 바로 인출</strong>할 수 있어요. 부분 인출을 선택하면 퇴직금만 꺼내고 추가 납입분은 유지할 수 있죠.</p>
-      <p style={body}>전체 해지를 하면 퇴직금과 추가 납입분이 한꺼번에 정산돼요. 추가 납입분에 기타소득세(16.5%)가 붙을 수 있으니, 부분 인출이 세금 면에서 유리한 경우가 많아요.</p>
-
-      <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
-      <RelatedArticles items={RELATED} /><ArticleAd position="mid" />
+      {/* 체크리스트 — 이 글이 맞는지 확인 */}
+      <EligibilityChecker
+        title="이 글이 필요한 분인가요?"
+        items={CHECK_ITEMS}
+      />
 
       <Divider />
-      <H2>수령 신청에 필요한 조건은?</H2>
-      <p style={body}>퇴직 사실이 확인되면 <strong>별도 조건 없이</strong> 인출이 가능해요. 회사가 운용사에 퇴직을 통보하면, IRP 계좌에서 퇴직금 부분이 인출 가능 상태로 전환되죠.</p>
-      <p style={body}>앱에서 본인 인증만 하면 바로 신청할 수 있어요. 추가 서류는 필요 없고, 영업점 방문으로도 처리 가능하죠.</p>
-      <p style={body}>인출 전에 운용 중인 상품을 확인하세요. 펀드에 투자 중이라면 환매까지 시간이 걸릴 수 있어요. 원금보장형으로 미리 옮겨두면 수령이 빨라지죠.</p>
+
+      {/* 섹션 1 — 개인형 IRP란 */}
+      <SectionBadge text="개요" />
+      <H2>개인형 IRP, 퇴직금을 담는 그릇이에요</H2>
+
+      <p style={body}>
+        퇴직금을 받는 방법은 크게 두 가지예요. 그냥 일시불로 받거나, 개인형 IRP 계좌에 넣어서 연금으로 나눠 받거나요. 그냥 받으면 퇴직소득세를 한꺼번에 내야 하는데, IRP를 거치면 세금 납부를 미루면서 운용 수익까지 노릴 수 있어요.
+      </p>
+      <p style={body}>
+        개인형 IRP(Individual Retirement Pension)는 근로자가 직접 개설하는 퇴직연금 계좌예요. 회사가 운용하는 DB형·DC형과 달리 내가 직접 금융기관을 골라서 만들고, 운용 방법도 내가 정해요. 퇴직할 때 회사에서 퇴직금을 이 계좌로 이체해주는 방식이고요.
+      </p>
+      <p style={body}>
+        55세 이후에 연금으로 10년 이상 나눠 받으면 퇴직소득세의 30%를 깎아줘요. 퇴직금이 클수록 이 절세 효과가 커지기 때문에, 퇴직금이 3,000만원을 넘는다면 IRP를 거치는 게 유리한 경우가 많아요.
+      </p>
+
+      <GreenBox>
+        IRP 계좌는 퇴직 전에 미리 만들어두는 게 좋아요. 퇴직 후에 회사가 퇴직금을 이체할 때 계좌가 없으면 지연될 수 있거든요. 증권사 앱으로 10분이면 개설 가능해요.
+      </GreenBox>
 
       <Divider />
-      <H2>수령 시 세금은 어떻게 되나요?</H2>
-      <p style={body}>퇴직금 부분을 일시금으로 꺼내면 <strong>퇴직소득세 전액</strong>이 원천징수돼요. 연금으로 받으면 60~70%만 부담하죠.</p>
-      <p style={body}>추가 납입분(세액공제 받은 금액)까지 같이 해지하면 <strong>기타소득세(16.5%)</strong>가 따로 붙어요. 공제받은 혜택을 토해내는 셈이니까, 가능하면 추가 납입분은 유지하세요.</p>
-      <p style={body}>연금 수령을 선택하면 매년 수령액에 연금소득세가 소액씩 부과돼요. 연간 1,500만 원 이하면 분리과세(3.3~5.5%)가 적용돼서 세금 부담이 적죠.</p>
 
-      <BorderBox title="퇴직금과 추가 납입분 구분이 중요해요">
-        전체 해지 → 퇴직소득세 + 기타소득세 동시 발생<br />
-        부분 인출(퇴직금만) → 퇴직소득세만 발생, 추가 납입분 유지
+      {/* 섹션 2 — 수령 절차 */}
+      <SectionBadge text="절차" />
+      <H2>IRP 퇴직금 수령 절차, 4단계예요</H2>
+
+      <p style={body}>
+        복잡해 보여도 실제로는 4단계예요. 계좌 개설 → 퇴직금 입금 → 운용 → 연금 수령 순서로 진행돼요. 각 단계에서 놓치기 쉬운 포인트들만 잘 챙기면 돼요.
+      </p>
+      <p style={body}>
+        특히 3단계 '운용 지시'를 많이들 놓쳐요. 아무것도 안 하면 원리금보장형(예금 수준)으로 자동 배정되는데, 10~20년 장기로 굴리는 돈이라면 ETF나 펀드로 분산해두는 게 더 유리할 수 있어요. 물론 원금 손실 가능성도 있으니 본인의 성향에 맞게 골라야 해요.
+      </p>
+
+      <Steps items={STEPS} />
+
+      <CategoryButton
+        label="퇴직금 IRP 계좌 개설 방법"
+        slug="퇴직금-IRP-계좌"
+        desc="증권사별 수수료 비교 포함"
+      />
+
+      <RelatedArticles items={RELATED} />
+
+      <Divider />
+
+      {/* 섹션 3 — 연금 수령 시뮬레이터 */}
+      <SectionBadge text="계산기" />
+      <H2>연금 수령액, 미리 계산해 보세요</H2>
+
+      <p style={body}>
+        퇴직금 규모와 수령 기간을 바꿔가며 연간 수령액을 미리 확인해 볼 수 있어요. 운용 수익은 포함되지 않은 단순 분할 기준이에요.
+      </p>
+      <p style={body}>
+        세액공제는 본인이 IRP에 추가로 납입한 금액에 대해 적용돼요. 퇴직금 자체가 아니라 '추가 납입분'에 한해서 돌려받는 거라서, 납입 금액에 따라 실제 혜택이 달라질 수 있어요.
+      </p>
+
+      <Calculator
+        sliders={CALC_SLIDERS}
+        results={CALC_RESULTS}
+        note="※ 연금 수령 시 퇴직소득세 30% 감면. 세액공제는 IRP+연금저축 합산 연 900만원 한도."
+      />
+
+      <Divider />
+
+      {/* 섹션 4 — 필요 서류 */}
+      <SectionBadge text="서류" />
+      <H2>IRP 계좌 개설에 필요한 서류예요</H2>
+
+      <p style={body}>
+        개인형 IRP 계좌 개설은 앱으로도 할 수 있어요. 신분증과 인증서(공동인증서 또는 금융인증서)만 있으면 대부분 비대면으로 처리돼요. 퇴직 확인서는 회사에서 받아야 하니 퇴직 처리 전에 미리 챙겨두세요.
+      </p>
+
+      <DocTable docs={DOCS} />
+
+      <BorderBox>
+        수익자 지정은 선택이지만, 사망 시 IRP 잔액이 상속인에게 돌아가는 방식을 미리 정해두는 거예요. 나중에 추가로 지정해도 되니 급하게 챙기지 않아도 괜찮아요.
       </BorderBox>
 
       <Divider />
-      <H2>개인형 IRP 수령 후 계좌 유지해야 하나요?</H2>
-      <p style={body}>의무는 아니에요. 퇴직금을 꺼낸 뒤 계좌를 해지해도 되고, 유지해도 되죠. 선택은 본인의 몫이에요.</p>
-      <p style={body}>유지하면 <strong>추가 납입으로 세액공제</strong>를 계속 받을 수 있어요. 연간 900만 원까지 납입하면 최대 148.5만 원을 환급받을 수 있죠. 연말정산 절세 수단으로 유용해요.</p>
-      <p style={body}>새 직장에서 퇴직금이 다시 들어올 때도 같은 IRP로 받을 수 있어요. 퇴직금을 한곳에서 관리할 수 있어서 편리하죠. <a href="https://www.fss.or.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>금융감독원</a> 비교공시에서 운용사별 수익률을 확인하고 유지 여부를 결정하세요.</p>
 
-      <SectionBadge>체크리스트</SectionBadge><Checklist items={CHECKLIST} />
-      <SectionBadge>내 상황 체크</SectionBadge>
-      <EligibilityChecker items={CHECK_ITEMS} allMatchText="개인형 IRP 수령 방법을 잘 파악하고 계시네요. 부분 인출로 세금을 절약해보세요." partialMatchText="확인이 필요한 항목이 있어요. 퇴직금과 추가 납입분을 구분해서 인출 계획을 세우세요." />
+      {/* 섹션 5 — 체크리스트 */}
+      <SectionBadge text="체크리스트" />
+      <H2>IRP 수령 전 꼭 챙겨야 할 5가지예요</H2>
+
+      <p style={body}>
+        IRP는 장기 계좌라서 처음 설정을 잘못하면 수십 년 후에 손해가 생겨요. 아래 5가지는 빠뜨리지 말고 챙겨두세요.
+      </p>
+
+      <Checklist items={CHECKLIST} />
+
+      <p style={body}>
+        수수료는 생각보다 크게 차이 나요. 증권사는 연 0.2% 수준인데, 은행은 0.5%까지 올라가는 경우도 있어요. 퇴직금 5,000만원을 20년 운용한다면 수수료 차이만으로 수백만원이 갈릴 수 있어요. 금융감독원의 <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer" style={{ color: "#1D9E75" }}>퇴직연금 비교공시</a>에서 금융기관별로 비교해볼 수 있어요.
+      </p>
+
+      <ArticleAd />
+
       <Divider />
-      <H2>자주 묻는 것들</H2>
-      <p style={{ ...body, marginBottom: 14 }}>개인형 IRP 퇴직금 수령에 관해 자주 나오는 질문을 정리했어요.</p>
+
+      {/* FAQ */}
+      <SectionBadge text="자주 묻는 질문" />
       <FAQ items={FAQS} />
+
       <Divider />
-      <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여 보장법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니, 최신 기준은 금융감독원(fss.or.kr)에서 확인하세요." />
+
+      {/* 출처 */}
+      <References items={REFERENCES} />
+
+      <Disclaimer />
     </ArticleLayout>
   );
 }

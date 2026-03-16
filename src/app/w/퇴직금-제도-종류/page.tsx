@@ -2,48 +2,95 @@
 
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
-  EligibilityChecker, Checklist, FAQ, References, Disclaimer,
+  Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
   ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
-// ─── 데이터 ──────────────────────────────────────────
-
 const CHECK_ITEMS = [
-  { id: "c1", label: "회사에서 퇴직연금(DB형 또는 DC형) 제도를 운영하고 있어요" },
-  { id: "c2", label: "급여명세서에 퇴직연금 적립금이 표시돼요" },
-  { id: "c3", label: "DC형이라면 내 퇴직연금 계좌에서 운용 현황을 확인할 수 있어요" },
-  { id: "c4", label: "회사로부터 퇴직연금 규약 안내를 받은 적이 있어요" },
+  { id: "c1", label: "회사에서 DB형인지 DC형인지 선택하라고 했어요" },
+  { id: "c2", label: "퇴직금과 퇴직연금의 차이를 모르겠어요" },
+  { id: "c3", label: "어느 제도가 나한테 더 유리한지 알고 싶어요" },
+  { id: "c4", label: "IRP가 뭔지, 어떻게 활용하는지 궁금해요" },
+];
+
+const CALC_SLIDERS = [
+  { id: "salary", label: "현재 월 기본급", min: 200, max: 600, step: 50, defaultValue: 300, format: (v: number) => `${v}만원` },
+  { id: "years", label: "예상 근속 기간", min: 1, max: 30, step: 1, defaultValue: 10, format: (v: number) => `${v}년` },
+];
+
+const CALC_RESULTS = [
+  {
+    label: "DB형 퇴직급여 (퇴직 시점 임금 기준)",
+    getValue: (v: Record<string, number>) => v.salary * 10000 * v.years,
+    format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원`,
+    highlight: true,
+  },
+  {
+    label: "DC형 적립 원금 (현재 임금 기준)",
+    getValue: (v: Record<string, number>) => v.salary * 10000 * v.years,
+    format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원 (운용수익 별도)`,
+  },
+];
+
+const DOCS = [
+  { name: "퇴직연금 규약 (회사 퇴직연금 제도 확인)", required: true, where: "회사 인사팀 또는 퇴직연금 금융기관" },
+  { name: "퇴직연금 적립금 확인서", required: false, where: "금융기관 앱 또는 방문" },
+  { name: "IRP 계좌 개설 서류", required: false, where: "은행·증권사" },
+  { name: "퇴직급여 수급 신청서 (퇴직 시)", required: true, where: "금융기관 또는 회사 인사팀" },
+];
+
+const STEPS = [
+  {
+    title: "우리 회사 퇴직급여 제도 확인",
+    desc: "퇴직금(법정 퇴직금), DB형(확정급여형), DC형(확정기여형) 중 어느 제도인지 인사팀에 확인해요. 중소기업은 법정 퇴직금, 대기업·중견기업은 DB형·DC형이 많아요. 제도에 따라 적립 방식과 수령 방법이 달라요.",
+    tip: "인사팀에 '우리 회사 퇴직급여 유형'을 물어보세요",
+  },
+  {
+    title: "DB형 vs DC형 장단점 비교",
+    desc: "DB형은 퇴직 시점 임금 기준으로 계산해서, 임금 인상률이 높으면 유리해요. DC형은 매년 연봉의 1/12이 적립되고 본인이 운용해요. 임금 인상이 낮거나 ETF 투자로 수익을 올리면 DC형이 유리해요.",
+    tip: "임금 인상률이 낮은 회사 = DC형 유리, 임금 인상률이 높은 회사 = DB형 유리",
+  },
+  {
+    title: "IRP 계좌 개설 및 활용",
+    desc: "IRP는 퇴직금 수령 계좌이면서 추가 납입도 가능한 계좌예요. 퇴직 시 퇴직금·퇴직연금이 자동으로 IRP로 이전돼요. 추가 납입하면 연 900만원 한도로 세액공제(16.5%)를 받을 수 있어요.",
+    tip: "수수료가 낮은 증권사 IRP가 유리해요 (연 0.2~0.3%)",
+  },
+  {
+    title: "퇴직 시 수령 방법 선택",
+    desc: "IRP에서 일시금으로 인출하거나 연금으로 나눠 받을 수 있어요. 55세 이후 연금으로 10년 이상 수령하면 퇴직소득세의 30%를 절감해요. 일시금 인출 시에는 퇴직소득세를 전액 납부해요.",
+    tip: "연금 수령을 선택하면 절세+노후 소득 두 가지 효과",
+  },
 ];
 
 const CHECKLIST = [
-  "퇴직연금 규약 — 회사가 어떤 제도를 운영하는지 확인 (인사팀에 요청)",
-  "퇴직연금 적립금 현황 — DC형이면 금융기관 앱에서 직접 조회 가능",
-  "IRP 계좌 개설 — 퇴직 시 퇴직금을 이체받을 계좌 (은행·증권사)",
-  "운용 수익률 확인 — DC형이면 어떤 상품에 투자 중인지 점검",
-  "제도 전환 동의서 — DB→DC 또는 DC→DB 전환 시 근로자 동의 필요",
+  "우리 회사 제도 확인 — 법정퇴직금·DB형·DC형",
+  "DB형 = 퇴직 시점 임금 기준, DC형 = 매년 연봉÷12 적립",
+  "IRP 계좌 — 수령 + 세액공제 이중 활용",
+  "연금 수령 — 10년 이상 시 퇴직소득세 30% 절감",
+  "수수료 비교 — 증권사 IRP 연 0.2~0.3%",
 ];
 
 const FAQS = [
   {
-    q: "회사가 DB형인데 DC형으로 바꾸겠다고 하면 거부할 수 있나요?",
-    a: "거부할 수 있어요. 퇴직연금 제도 전환은 근로자 과반수의 동의가 필요하죠. 개별 근로자 본인의 동의 없이 강제 전환은 불가능해요.",
+    q: "퇴직금과 퇴직연금은 뭐가 다른가요?",
+    a: "퇴직금은 회사가 보유하다가 퇴직 시 지급하는 방식이에요. 퇴직연금(DB형·DC형)은 금융기관에 미리 적립해두는 방식이에요. 회사가 망해도 퇴직연금은 금융기관에 있어서 더 안전해요.",
   },
   {
-    q: "DC형에서 투자를 안 하면 어떻게 되나요?",
-    a: "적립금이 예금이나 원리금보장상품에 자동으로 들어가요. 원금 손실 위험은 없지만, 금리가 낮아서 물가 상승률을 못 따라갈 수 있죠. DB형이었으면 받았을 퇴직금보다 적어질 수도 있어요.",
+    q: "DB형과 DC형 중 어느 게 더 좋나요?",
+    a: "회사마다 달라요. 임금 인상이 꾸준히 높다면 DB형이 유리해요. 임금 인상이 낮거나 직접 ETF 운용에 자신 있다면 DC형이 유리해요. 본인 상황에 맞게 선택하는 게 좋아요.",
   },
   {
-    q: "IRP에 돈을 추가로 넣을 수 있나요?",
-    a: "넣을 수 있어요. 퇴직금과 별개로 개인이 연간 1,800만 원까지 추가 납입할 수 있죠. 이 중 최대 900만 원까지 세액공제(총급여 5,500만 원 이하 16.5%, 초과 13.2%)를 받을 수 있어요.",
+    q: "DC형이면 회사가 퇴직금을 안 주나요?",
+    a: "DC형은 회사가 매년 연봉의 1/12을 IRP(퇴직연금 계좌)에 적립해요. 퇴직 시 그 계좌 잔액이 퇴직급여예요. 회사가 퇴직 시 따로 지급하는 게 아니에요.",
   },
   {
-    q: "퇴직연금이 없는 회사는 어떻게 되나요?",
-    a: "퇴직연금을 도입하지 않은 회사는 기존 퇴직금 제도를 유지하는 거예요. 퇴직 시 회사가 직접 계산해서 일시금으로 지급하죠. 법적으로 문제가 되는 건 아니에요.",
+    q: "IRP 계좌가 없으면 퇴직금을 못 받나요?",
+    a: "퇴직금 300만원 초과 시 IRP 계좌로만 수령 가능해요. IRP 계좌를 미리 만들어두지 않으면 지급이 지연될 수 있어요. 퇴직 전에 미리 개설해두는 게 좋아요.",
   },
   {
-    q: "퇴직연금을 중간에 인출할 수 있나요?",
-    a: "DC형은 법정 사유(무주택자 주택 구입, 6개월 이상 요양, 천재지변 등)에 해당하면 중도 인출이 가능해요. DB형은 중도 인출이 안 되고, 중간정산 형태로만 받을 수 있죠.",
+    q: "IRP 세액공제는 얼마나 받을 수 있나요?",
+    a: "IRP + 연금저축 합산 연 900만원까지 납입분에 대해 세액공제를 받아요. 소득 5,500만원 이하면 16.5%, 초과면 13.2%예요. 연 300만원 납입 시 약 49만원 환급이에요.",
   },
 ];
 
@@ -51,192 +98,157 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로자퇴직급여보장법 제12조~제25조 — 퇴직연금제도", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
-      { label: "근로자퇴직급여보장법 제24조 — 개인형퇴직연금(IRP)", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+      { label: "근로자퇴직급여보장법 — DB형·DC형 제도 구분", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용노동부 — 퇴직연금 제도 안내", url: "https://www.moel.go.kr" },
+      { label: "고용노동부 — 퇴직연금 제도 비교 안내", url: "https://www.moel.go.kr" },
       { label: "금융감독원 — 퇴직연금 비교공시", url: "https://www.fss.or.kr" },
     ],
   },
 ];
 
 const RELATED = [
-  {
-    slug: "퇴직금-DC형-계산법",
-    title: "DC형 퇴직금 계산법",
-    description: "DC형 퇴직연금의 적립금 계산 방식과 운용 수익 반영 방법을 정리했어요.",
-  },
-  {
-    slug: "퇴직금-IRP-계좌",
-    title: "퇴직금 IRP 계좌 개설과 수령",
-    description: "IRP 계좌 개설 방법, 퇴직금 이체 절차, 세액공제 혜택을 다뤘어요.",
-  },
-  {
-    slug: "db형-퇴직금-수령방법",
-    title: "DB형 퇴직금 수령 방법",
-    description: "DB형 퇴직연금의 수령 절차와 IRP 이체 방법을 정리했어요.",
-  },
+  { slug: "퇴직금-DC형-계산법", title: "DC형 퇴직연금 계산 방법", description: "DC형 적립 구조와 수령 절차." },
+  { slug: "db형-퇴직금-수령방법", title: "DB형 퇴직금 수령 방법", description: "DB형 적립 구조와 수령 절차." },
+  { slug: "퇴직금-IRP-계좌", title: "IRP 계좌 개설 방법", description: "은행·증권사 비교와 개설 절차." },
 ];
 
-// ─── 페이지 ──────────────────────────────────────────
-
 export default function Page() {
+  const currentSlug = "퇴직금-제도-종류";
+
   return (
     <ArticleLayout
       sidebar={
         <Sidebar
-          heading="퇴직금 가이드"
           items={퇴직금_SIDEBAR}
-          currentSlug="퇴직금-제도-종류"
+          currentSlug={currentSlug}
         />
       }
     >
-      <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 근로기준법 · 제도비교</p>
+      {/* Breadcrumb */}
+      <p style={{ fontSize: 13, color: "#6b7280", marginBottom: 8 }}>
+        퇴직금 · 제도 · DB·DC·IRP
+      </p>
 
-      <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
-        퇴직금 제도 종류,<br />
-        DB형·DC형·IRP 뭐가 다를까?
+      {/* H1 */}
+      <h1 style={{ fontSize: 28, fontWeight: 700, lineHeight: 1.35, marginBottom: 8, color: "#111827" }}>
+        퇴직금, 퇴직연금, IRP — 뭐가 다른가요?
+        <br />
+        <span style={{ fontSize: 18, fontWeight: 500, color: "#374151" }}>
+          DB형·DC형 비교부터 내게 유리한 제도 선택까지
+        </span>
       </h1>
 
-      <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
-        &ldquo;회사에서 DB형이니 DC형이니 하는데 뭐가 뭔지 모르겠어요.&rdquo;<br />
-        당연히 헷갈리죠. 이름부터 영어 약자라 직관적이지 않으니까요.
-        <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여보장법</a>이 정한 퇴직급여 제도는 크게 세 가지예요 — <strong>퇴직금(DB형)</strong>, <strong>확정기여형(DC형)</strong>, <strong>개인형퇴직연금(IRP)</strong>.
-        각 제도가 어떻게 다르고, 나한테 뭐가 유리한지, 중간에 바꿀 수 있는지까지 정리해드릴게요.
+      {/* Intro */}
+      <p style={{ ...body, marginBottom: 12 }}>
+        회사에 입사하거나 이직할 때 "DB형으로 할지, DC형으로 할지 선택하세요"라는 말을 들어본 적 있죠? 퇴직금, 퇴직연금, IRP — 이름은 비슷한데 뭐가 다른지 헷갈리는 분이 정말 많아요. 제도를 잘 모르고 선택하면 수백만원 차이가 날 수 있어요.
+      </p>
+      <p style={{ ...body, marginBottom: 12 }}>
+        퇴직급여 제도는 크게 세 가지예요. 법정 퇴직금(회사가 직접 보유), DB형 퇴직연금(확정급여형, 금융기관 적립), DC형 퇴직연금(확정기여형, 매년 연봉÷12 적립)이에요. 여기에 IRP(개인형 퇴직연금)가 수령 창구이자 절세 도구로 연결돼요. 각 제도의 핵심 차이와 나에게 맞는 선택 방법을 아래에서 정리했어요.
       </p>
 
-      <Divider />
+      {/* 해당 사항 체크 */}
+      <SectionBadge text="해당 사항 체크" />
+      <EligibilityChecker items={CHECK_ITEMS} />
+
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 */}
-      <H2>퇴직금 제도에는 어떤 종류가 있나요?</H2>
-      <p style={body}>
-        법이 정한 퇴직급여 제도는 세 가지예요. 첫째, <strong>확정급여형(DB형, Defined Benefit)</strong>이에요. 전통적인 퇴직금 제도와 같은 구조로, 퇴직 시 받을 금액이 미리 정해져 있죠. 퇴직 전 3개월 평균임금 x 근속연수로 계산해요.
-      </p>
-      <p style={body}>
-        둘째, <strong>확정기여형(DC형, Defined Contribution)</strong>이에요. 회사가 매년 연봉의 1/12 이상을 근로자 개인 계좌에 적립하고, 근로자가 그 돈을 직접 투자 운용하는 방식이죠. 운용 결과에 따라 퇴직 시 받는 금액이 달라져요.
-      </p>
-      <p style={body}>
-        셋째, <strong>개인형퇴직연금(IRP, Individual Retirement Pension)</strong>이에요. 이건 회사가 운영하는 제도가 아니라 개인이 직접 개설하는 계좌예요. 퇴직금을 이체받는 통로이면서, 개인이 추가 납입해서 세액공제 혜택을 받을 수도 있죠.
-      </p>
+      <Divider />
 
-      <GreenBox title="3가지 제도 한눈에">
-        <strong>DB형</strong> — 회사가 운용, 퇴직 시 평균임금 x 근속연수 (금액 확정)<br />
-        <strong>DC형</strong> — 회사가 적립, 근로자가 투자 운용 (운용 결과에 따라 금액 변동)<br />
-        <strong>IRP</strong> — 개인 계좌, 퇴직금 수령 + 추가 납입으로 세액공제
+      {/* H2-1 */}
+      <H2>세 가지 제도, 어떻게 다른가요?</H2>
+      <p style={{ ...body, marginBottom: 12 }}>
+        법정 퇴직금은 회사가 퇴직금을 사내에 쌓아두다가 퇴직 시 지급하는 방식이에요. 회사가 도산하면 못 받을 위험이 있어요. 퇴직연금(DB형·DC형)은 외부 금융기관(은행·증권사)에 적립해두는 방식이라, 회사가 망해도 내 돈은 안전하게 보호돼요.
+      </p>
+      <p style={{ ...body, marginBottom: 16 }}>
+        DB형(확정급여형)은 퇴직 시점의 평균임금을 기준으로 퇴직급여를 계산해요. 임금이 오를수록 퇴직급여도 커지는 구조예요. DC형(확정기여형)은 회사가 매년 연봉의 1/12을 내 계좌에 넣어주고, 내가 직접 ETF나 펀드로 운용해요. 같은 원금이라도 운용 결과에 따라 수령액이 달라지죠.
+      </p>
+      <GreenBox>
+        <p style={{ fontWeight: 600, marginBottom: 8 }}>세 가지 제도 한눈에 비교</p>
+        <ul style={{ paddingLeft: 16, lineHeight: 2 }}>
+          <li><strong>법정 퇴직금</strong> — 회사가 직접 보유 → 회사 도산 시 위험, 소규모 사업장에 많아요</li>
+          <li><strong>DB형 (확정급여형)</strong> — 금융기관 적립, 퇴직 시점 임금 기준 계산 → 임금 인상 높으면 유리</li>
+          <li><strong>DC형 (확정기여형)</strong> — 금융기관 적립, 매년 연봉÷12 → 본인 운용, 임금 인상 낮을수록 유리</li>
+        </ul>
       </GreenBox>
-
-      <SectionBadge>우리 회사 제도가 뭔지 확인해보세요</SectionBadge>
-      <EligibilityChecker
-        items={CHECK_ITEMS}
-        allMatchText="4가지 다 해당되면 우리 회사가 퇴직연금 제도를 운영하고 있다는 뜻이에요. 인사팀에 DB형인지 DC형인지 확인해보세요."
-        partialMatchText="일부만 해당돼요. 회사 인사팀에 퇴직급여 제도가 어떻게 되어 있는지 직접 문의하는 게 가장 정확해요."
-      />
 
       <Divider />
 
-      {/* 섹션 2 */}
-      <H2>DB형과 DC형, 어떤 차이가 있나요?</H2>
-      <p style={body}>
-        가장 큰 차이는 <strong>&ldquo;누가 투자 위험을 부담하느냐&rdquo;</strong>예요. DB형은 회사가 운용하니까 투자 결과와 관계없이 근로자는 정해진 퇴직금을 받아요. 회사가 투자에서 손해를 봐도 근로자 퇴직금은 줄어들지 않죠. 반면 DC형은 근로자 본인이 투자하니까, 잘하면 퇴직금이 늘고 못하면 줄어요.
+      {/* H2-2 */}
+      <H2>DB형 vs DC형 예상 수령액 비교</H2>
+      <p style={{ ...body, marginBottom: 12 }}>
+        DB형과 DC형의 원금은 현재 임금 기준으로 보면 같아 보여요. 하지만 DB형은 퇴직 시점의 임금이 기준이라, 임금이 많이 오른다면 DB형 수령액이 더 커요. 반대로 DC형은 운용 수익을 더하면 원금보다 훨씬 많이 받을 수도 있어요.
       </p>
-      <p style={body}>
-        계산 방식도 달라요. DB형은 <strong>퇴직 시점의 평균임금 x 근속연수</strong>로 산정하죠. 연봉이 매년 오르는 직장이라면 퇴직 직전 가장 높은 급여 기준으로 계산되니까 유리해요. DC형은 <strong>매년 적립된 금액 + 운용 수익</strong>의 합이에요. 적립 시점의 급여 기준이라 나중에 연봉이 올라도 과거 적립분에는 반영이 안 되죠.
+      <p style={{ ...body, marginBottom: 16 }}>
+        아래 계산기는 현재 임금 기준으로 퇴직급여 원금을 확인하는 도구예요. DB형은 퇴직 시점까지 임금 인상분이 반영되고, DC형은 이 원금에 운용 수익이 더해지는 구조예요. 내 회사 임금 인상률과 투자 성향을 함께 고려해서 제도를 선택하세요.
       </p>
-      <p style={body}>
-        퇴직금 지급 안정성에서도 차이가 나요. DB형은 회사가 도산하면 적립금이 부족할 위험이 있어요(법적으로 최소 적립 의무가 있긴 하지만). DC형은 이미 금융기관에 분리 보관돼 있어서 회사가 망해도 근로자 적립금은 안전하죠. 회사 재정 상태가 불안하다면 DC형이 오히려 안전한 측면이 있어요.
-      </p>
+      <Calculator sliders={CALC_SLIDERS} results={CALC_RESULTS} />
 
-      <BorderBox title="DB형 vs DC형 핵심 비교">
-        <strong>운용 주체</strong> — DB형: 회사 | DC형: 근로자 본인<br />
-        <strong>투자 위험</strong> — DB형: 회사가 부담 | DC형: 근로자가 부담<br />
-        <strong>퇴직금 계산</strong> — DB형: 퇴직 시 평균임금 기준 | DC형: 매년 적립금 + 운용 수익<br />
-        <strong>연봉 인상 반영</strong> — DB형: 퇴직 시점 급여 기준 (유리) | DC형: 적립 시점 급여 기준<br />
-        <strong>회사 도산 시</strong> — DB형: 적립 부족 위험 | DC형: 금융기관 분리 보관 (안전)
-      </BorderBox>
-
-      {/* ── 섹션 2 끝 → 버튼 + 관련 글 ── */}
-      <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/퇴직금" />
-      <RelatedArticles items={RELATED} />
       <ArticleAd position="mid" />
 
       <Divider />
 
-      {/* 섹션 3 */}
-      <H2>어떤 제도가 나에게 유리한가요?</H2>
-      <p style={body}>
-        <strong>연봉이 꾸준히 오르는 직장</strong>이라면 DB형이 유리해요. 퇴직 직전의 높은 급여를 기준으로 퇴직금을 계산하니까, 근속연수가 길수록 DB형의 이점이 커지죠. 대기업이나 공공기관처럼 호봉제가 있는 곳이라면 DB형이 거의 대부분 유리해요.
+      {/* H2-3 */}
+      <H2>퇴직급여 수령에 필요한 서류</H2>
+      <p style={{ ...body, marginBottom: 12 }}>
+        퇴직급여를 받으려면 미리 준비해야 할 서류가 있어요. 가장 중요한 건 우리 회사가 어떤 제도를 운용하는지 확인하는 퇴직연금 규약이에요. 인사팀이나 퇴직연금을 맡긴 금융기관에 요청하면 받을 수 있어요.
       </p>
-      <p style={body}>
-        <strong>연봉 인상이 크지 않거나 투자에 자신 있는 경우</strong>라면 DC형이 나을 수 있어요. DC형은 적립금을 직접 운용할 수 있으니까, 주식형 펀드나 TDF(타깃데이트펀드) 같은 상품에 투자해서 시장 수익률을 따라갈 수 있죠. 장기 투자로 연평균 7~8% 수익률을 올리면 DB형보다 더 많이 받을 수도 있어요.
+      <p style={{ ...body, marginBottom: 16 }}>
+        퇴직 전에 <a href="/w/퇴직금-IRP-계좌" style={{ color: "#1D9E75" }}>IRP 계좌</a>를 미리 개설해두면 퇴직 당일 바로 퇴직급여가 이전돼요. IRP 계좌가 없으면 300만원 초과 퇴직금은 지급이 지연될 수 있어서, 퇴직 예정이라면 미리 개설해두세요.
       </p>
-      <p style={body}>
-        <strong>회사 재정이 불안한 곳</strong>이라면 DC형이 안전해요. DB형은 회사가 부도나면 적립금이 부족할 수 있지만, DC형은 금융기관에 분리 보관돼 있어서 회사가 망해도 내 퇴직금은 무사하거든요. 중소기업이나 스타트업에 다니는 분이라면 이 점을 꼭 따져보세요.
-      </p>
-
-      <SectionBadge>서류 체크리스트</SectionBadge>
-      <Checklist items={CHECKLIST} />
+      <DocTable docs={DOCS} />
 
       <Divider />
 
-      {/* 섹션 4 */}
-      <H2>제도를 중간에 바꿀 수 있나요?</H2>
-      <p style={body}>
-        바꿀 수 있어요. 근로자퇴직급여보장법 제21조에 따라 사용자는 근로자 과반수의 동의를 받아 퇴직연금 제도를 다른 종류로 전환할 수 있죠. DB형에서 DC형으로, 또는 DC형에서 DB형으로 전환이 가능해요.
+      {/* H2-4 */}
+      <H2>퇴직급여 제도 활용 4단계</H2>
+      <p style={{ ...body, marginBottom: 12 }}>
+        퇴직급여 제도를 제대로 활용하려면 입사 시점부터 퇴직 후 수령까지 4단계가 있어요. 각 단계에서 놓치는 포인트가 있으면 수백만원 손해로 이어져요. 지금 어느 단계에 있는지 먼저 파악해두세요.
       </p>
-      <p style={body}>
-        다만 회사가 일방적으로 바꿀 수는 없어요. 반드시 <strong>근로자 과반수의 동의</strong>가 필요하죠. 그리고 전환 시 기존 적립금은 어떻게 처리할지도 합의해야 해요. DB형에서 DC형으로 전환하면 기존 퇴직금 상당액을 DC형 계좌에 이체하는 방식이 일반적이에요.
+      <p style={{ ...body, marginBottom: 16 }}>
+        특히 IRP 계좌는 퇴직 전에 반드시 개설해둬야 해요. 퇴직 당일 갑자기 만들려고 하면 영업일 기준 처리 지연이 생길 수 있어요. 수수료가 낮은 증권사 IRP를 미리 개설해두면 절세와 수수료 절감 두 가지를 챙길 수 있어요.
       </p>
-      <p style={body}>
-        개별 근로자가 본인만 DB에서 DC로(또는 반대로) 전환할 수도 있어요. 회사가 복수의 퇴직연금 제도를 운영하고 있다면 가능하죠. 단, 이건 회사 규약에 따라 다르니까 인사팀에 직접 물어보는 게 확실해요. 전환 시점의 적립금 정산, 운용 상품 변경 등 세부 사항도 함께 확인하세요.
-      </p>
+      <Steps steps={STEPS} />
 
-      <GreenBox title="제도 전환 핵심">
-        DB ↔ DC 전환 가능 (근로자 과반수 동의 필요)<br />
-        개별 전환도 가능 (회사가 복수 제도 운영 시)<br />
-        전환 시 기존 적립금 정산 방식을 반드시 확인
+      <Divider />
+
+      {/* H2-5 */}
+      <H2>퇴직급여 제도 체크리스트</H2>
+      <p style={{ ...body, marginBottom: 12 }}>
+        지금까지 설명한 내용을 빠르게 점검할 수 있는 체크리스트예요. 특히 IRP 세액공제는 재직 중에도 납입할 수 있어서, 퇴직과 무관하게 절세 효과를 누릴 수 있어요. 연봉 5,500만원 이하라면 납입액의 16.5%를 돌려받아요.
+      </p>
+      <p style={{ ...body, marginBottom: 16 }}>
+        체크리스트를 보면서 빠진 단계가 있는지 짚어보세요. 제도 확인부터 IRP 개설, 수령 방법 선택까지 미리 해두면 퇴직할 때 당황하지 않아요.
+      </p>
+      <Checklist items={CHECKLIST} />
+      <GreenBox style={{ marginTop: 16 }}>
+        <p style={{ fontWeight: 600, marginBottom: 4 }}>IRP 세액공제 최대 절세 금액</p>
+        <p style={{ lineHeight: 1.7 }}>
+          연 900만원 납입 × 16.5%(소득 5,500만원 이하) = <strong>최대 148.5만원 환급</strong>이에요.<br />
+          소득 5,500만원 초과라면 13.2% 적용, <strong>최대 118.8만원</strong>이에요.<br />
+          IRP와 연금저축을 합산한 한도예요 (<a href="/w/퇴직금-IRP-계좌" style={{ color: "#1D9E75" }}>IRP 계좌 활용법</a> 참고).
+        </p>
       </GreenBox>
 
-      <Divider />
-
-      {/* 섹션 5 */}
-      <H2>IRP는 퇴직금 제도와 어떤 관계인가요?</H2>
-      <p style={body}>
-        IRP(개인형퇴직연금)는 DB형이나 DC형과는 성격이 좀 달라요. 회사가 운영하는 퇴직연금 제도가 아니라 <strong>개인이 직접 개설하는 계좌</strong>예요. 두 가지 역할을 하죠 — 퇴직금을 이체받는 통로, 그리고 추가 납입으로 세액공제를 받는 절세 수단.
-      </p>
-      <p style={body}>
-        퇴직금 300만 원 이상이면 <a href="/w/퇴직금-IRP-계좌" style={{ color: "#1D9E75", textDecoration: "underline" }}>IRP 계좌</a>로 받아야 해요. 이건 2022년부터 의무화됐죠. 일반 통장으로 바로 받을 수 있는 건 300만 원 이하일 때뿐이에요. 그래서 퇴직 전에 IRP 계좌를 미리 만들어두는 게 좋아요. 은행이나 증권사 앱에서 10분이면 개설할 수 있죠.
-      </p>
-      <p style={body}>
-        IRP의 가장 큰 장점은 <strong>세액공제</strong>예요. 퇴직금과 별개로 연간 최대 1,800만 원까지 추가 납입할 수 있고, 이 중 900만 원까지 세액공제를 받을 수 있죠. 총급여 5,500만 원 이하라면 16.5%, 초과라면 13.2% 공제율이 적용돼요. 매년 꾸준히 넣으면 수십만 원의 세금을 돌려받을 수 있어요.
-      </p>
-      <p style={body}>
-        IRP에 들어간 퇴직금은 바로 찾을 수도 있고, 연금으로 나눠 받을 수도 있어요. 55세 이후에 연금으로 수령하면 퇴직소득세의 60~70%만 내면 되니까 세금이 훨씬 줄어들죠. 당장 돈이 급하지 않다면 IRP에 넣어두고 연금으로 받는 게 세금 면에서 유리해요.
-      </p>
-
-      <BorderBox title="IRP 핵심 정리">
-        <strong>퇴직금 수령 통로</strong> — 300만 원 이상이면 IRP로 받아야 해요<br />
-        <strong>세액공제</strong> — 연간 900만 원까지 공제 (16.5% 또는 13.2%)<br />
-        <strong>연금 수령 시 절세</strong> — 55세 이후 연금 수령 시 퇴직소득세 30~40% 감면<br />
-        <strong>개설</strong> — 은행·증권사 앱에서 10분이면 완료
-      </BorderBox>
+      <CategoryButton category="퇴직금" slug={currentSlug} />
+      <RelatedArticles articles={RELATED} />
 
       <Divider />
 
+      {/* H2-6 */}
       <H2>자주 묻는 것들</H2>
-      <p style={{ ...body, marginBottom: 14 }}>
-        퇴직금 제도 종류에 대해 자주 나오는 질문을 모았어요.
+      <p style={{ ...body, marginBottom: 16 }}>
+        퇴직급여 제도에서 가장 많이 헷갈리는 질문들을 모았어요. 용어가 비슷해서 혼동하기 쉬운 부분 위주로 정리했어요.
       </p>
       <FAQ items={FAQS} />
 
       <Divider />
 
-      <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니, 최신 기준은 고용노동부(1350)나 금융감독원(1332)에서 확인하세요." />
+      <References sources={REFERENCES} />
+      <Disclaimer />
     </ArticleLayout>
   );
 }

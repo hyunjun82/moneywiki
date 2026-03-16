@@ -2,25 +2,95 @@
 
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
-  FAQ, References, Disclaimer,
+  Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
   ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
-// ─── 데이터 ──────────────────────────────────────────
+const CHECK_ITEMS = [
+  { id: "c1", label: "회사가 퇴직금을 나눠서 주겠다고 했어요" },
+  { id: "c2", label: "퇴직 후 14일이 지났는데 아직 받지 못했어요" },
+  { id: "c3", label: "분할지급 합의를 받아야 하는 상황인지 모르겠어요" },
+  { id: "c4", label: "지연이자를 청구할 수 있는지 알고 싶어요" },
+];
+
+const CALC_SLIDERS = [
+  { id: "severance", label: "퇴직금 총액", min: 300, max: 10000, step: 300, defaultValue: 3000, format: (v: number) => `${v.toLocaleString()}만원` },
+  { id: "delay", label: "지급 지연 일수", min: 1, max: 365, step: 1, defaultValue: 30, format: (v: number) => `${v}일` },
+];
+
+const CALC_RESULTS = [
+  {
+    label: "지연이자 (연 20%)",
+    getValue: (v: Record<string, number>) => Math.round(v.severance * 10000 * 0.2 * v.delay / 365),
+    format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원`,
+    highlight: true,
+  },
+  {
+    label: "합산 청구액 (퇴직금 + 지연이자)",
+    getValue: (v: Record<string, number>) => v.severance * 10000 + Math.round(v.severance * 10000 * 0.2 * v.delay / 365),
+    format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원`,
+  },
+];
+
+const DOCS = [
+  { name: "분할지급 합의서 (합의한 경우)", required: false, where: "회사와 작성" },
+  { name: "퇴직금 미지급 확인서 또는 내용증명", required: true, where: "내용증명 우편 발송" },
+  { name: "퇴직 증명서 또는 사직서 수리 확인", required: true, where: "회사 인사팀" },
+  { name: "IRP 계좌번호 (300만원 초과 시)", required: true, where: "은행·증권사 개설" },
+];
+
+const STEPS = [
+  {
+    title: "14일 기한 확인",
+    desc: "회사는 퇴직 후 14일 이내에 퇴직금을 지급해야 해요. 14일이 지나면 지급 지체가 되고, 연 20% 지연이자가 자동으로 발생해요. 14일 이내라면 아직 위반은 아니지만, 지급 일정을 확인해야 해요.",
+    tip: "14일은 근로자가 요청하지 않아도 자동으로 지급 의무 발생",
+  },
+  {
+    title: "분할지급 합의 여부 결정",
+    desc: "회사와 합의하면 분할지급이 가능해요. 단, 합의 없이 분할지급하면 위법이에요. 합의를 하더라도 지연이자 포기 조항을 넣으면 불리하니, 이자 조항을 빼고 합의하는 게 좋아요.",
+    tip: "합의 시 지급 일정과 금액을 서면으로 남기세요",
+  },
+  {
+    title: "내용증명 발송",
+    desc: "14일이 지났는데 지급이 안 되면 내용증명으로 퇴직금과 지연이자 지급을 요청해요. 내용증명은 법적 청구 증거가 돼요. 발송 후에도 지급이 안 되면 고용노동부 진정을 낼 수 있어요.",
+    tip: "내용증명은 우체국 방문 또는 온라인 우편서비스에서 발송 가능",
+  },
+  {
+    title: "고용노동부 진정",
+    desc: "고용노동부 민원마당에서 온라인 진정이 가능해요. 진정 접수 후 근로감독관이 회사를 조사하고 지급 명령을 내려요. 불이행 시 형사 처벌 대상이 돼요.",
+    tip: "고용노동부 민원마당(minwon.moel.go.kr) — 온라인 24시간 신청 가능",
+  },
+];
+
+const CHECKLIST = [
+  "14일 기한 — 퇴직일 기준 달력으로 계산",
+  "분할지급 합의 — 반드시 서면으로 작성",
+  "지연이자 — 14일 초과 시 연 20% 자동 발생",
+  "내용증명 — 지급 요청 증거 확보",
+  "고용노동부 진정 — 민원마당 온라인 신청",
+];
 
 const FAQS = [
   {
-    q: "분할 지급 동의서를 쓰면 퇴직금을 못 받나요?",
-    a: "받을 수 있어요. 퇴직금 분할 지급 약정은 근로자퇴직급여보장법에 따라 무효이기 때문에, 동의서를 썼어도 퇴직 시 별도로 퇴직금을 청구할 수 있죠.",
+    q: "퇴직금을 나눠 받는 게 가능한가요?",
+    a: "근로자가 동의하면 분할지급 합의가 가능해요. 하지만 합의 없이 회사가 일방적으로 분할지급하면 위법이에요. 분할지급에 동의할 때는 이자와 지급 일정을 명확히 하세요.",
   },
   {
-    q: "매달 퇴직금 명목으로 받은 돈은 돌려줘야 하나요?",
-    a: "돌려줄 필요 없어요. 무효인 약정에 따라 지급된 금액은 급여로 간주되기 때문이죠. 퇴직 시 받는 퇴직금과는 별개예요.",
+    q: "퇴직금 지연이자는 어떻게 계산하나요?",
+    a: "연 20% 비율로 계산해요. 예를 들어 3,000만원을 30일 지연하면 약 49만원 이자가 발생해요. 퇴직 후 14일이 지난 날부터 실제 지급일까지 일 단위로 계산해요.",
   },
   {
-    q: "회사가 폐업하면 분할 지급 중인 퇴직금은 어떻게 되나요?",
-    a: "분할 지급 약정 자체가 무효이니, 아직 퇴직금을 받지 못한 상태와 같아요. 회사가 폐업하면 체당금(국가 대위 지급) 제도를 통해 퇴직금을 받을 수 있죠. 고용노동부에 체당금 신청을 하면 돼요.",
+    q: "회사 사정이 어려워 퇴직금을 못 준다고 하면?",
+    a: "회사 사정과 무관하게 퇴직금은 지급 의무가 있어요. 폐업이나 도산 시에는 체당금 제도를 이용해 고용보험에서 일부 받을 수 있어요. 고용노동부(1350)에 문의하세요.",
+  },
+  {
+    q: "분할지급 합의서에 서명했는데 후회돼요",
+    a: "합의 내용이 퇴직금 포기나 지나친 이자 면제 조항이 있으면 무효가 될 수 있어요. 법률 전문가 상담을 받아보세요. 퇴직금 청구권은 법으로 보호되는 권리예요.",
+  },
+  {
+    q: "퇴직금 소멸시효가 있나요?",
+    a: "있어요. 퇴직 후 3년 이내에 청구해야 해요. 3년이 지나면 법적 청구가 어려워져요. 지연이자 청구도 동일하게 3년 이내예요.",
   },
 ];
 
@@ -28,177 +98,175 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로자퇴직급여보장법 제9조 — 퇴직금의 지급", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
-      { label: "근로자퇴직급여보장법 제4조 — 퇴직급여제도의 설정", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
-    ],
-  },
-  {
-    category: "판례",
-    items: [
-      { label: "대법원 — 퇴직금 분할 약정 무효 판결", url: "https://glaw.scourt.go.kr" },
+      { label: "근로기준법 제37조 — 퇴직금 지연이자 연 20%", url: "https://www.law.go.kr/법령/근로기준법" },
+      { label: "근로자퇴직급여보장법 제9조 — 퇴직금 지급 기한 14일", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용노동부 — 퇴직급여 제도 안내", url: "https://www.moel.go.kr" },
+      { label: "고용노동부 민원마당 — 퇴직금 진정 신청", url: "https://minwon.moel.go.kr" },
     ],
   },
 ];
 
 const RELATED = [
-  {
-    slug: "퇴직금-연봉제",
-    title: "연봉제 직장인, 퇴직금은 따로 받나요?",
-    description: "퇴직금 포함 연봉 계약의 효력과 별도 지급 원칙을 설명해요.",
-  },
-  {
-    slug: "회사-폐업-퇴직금",
-    title: "회사가 폐업하면 퇴직금은 어떻게 되나요?",
-    description: "폐업 시 체당금 제도를 통한 퇴직금 수령 방법을 안내해요.",
-  },
-  {
-    slug: "퇴직금-포기각서",
-    title: "퇴직금 포기각서, 법적 효력이 있나요?",
-    description: "퇴직금 포기각서의 유효성과 무효 사유를 정리했어요.",
-  },
+  { slug: "퇴직금-지급-기한", title: "퇴직금 지급 기한 14일", description: "14일 기한과 지연이자 계산 방법." },
+  { slug: "퇴직금-미지급-신고", title: "퇴직금 못 받았을 때", description: "고용노동부 진정 절차 안내." },
+  { slug: "퇴직금-지연이자", title: "퇴직금 지연이자 청구", description: "연 20% 이자 계산 방법과 청구 절차." },
 ];
 
-// ─── 페이지 ──────────────────────────────────────────
-
 export default function Page() {
-  return (
-    <ArticleLayout
-      sidebar={
-        <Sidebar
-          heading="퇴직금 가이드"
-          items={퇴직금_SIDEBAR}
-          currentSlug="퇴직금-분할지급"
-        />
-      }
-    >
-      <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 근로기준법 · 분할지급</p>
+  const currentSlug = "퇴직금-분할지급";
 
-      <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
-        퇴직금 분할 지급,<br />
-        동의하면 나중에 못 받나요?
+  const sidebar = (
+    <Sidebar
+      items={퇴직금_SIDEBAR}
+      currentSlug={currentSlug}
+    />
+  );
+
+  return (
+    <ArticleLayout sidebar={sidebar}>
+      {/* 브레드크럼 */}
+      <p style={{ fontSize: 13, color: "#6b7280", marginBottom: 8 }}>
+        퇴직금 · 분할지급 · 지연이자
+      </p>
+
+      {/* H1 */}
+      <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.35, marginBottom: 8, color: "#111827" }}>
+        회사가 퇴직금을 나눠 주겠다고 해요, 괜찮은 건가요?
+        <br />
+        <span style={{ fontSize: 18, fontWeight: 500, color: "#374151" }}>
+          분할지급 합의 기준과 지연이자 청구 방법
+        </span>
       </h1>
 
-      <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
-        &ldquo;회사에서 퇴직금을 매달 나눠서 준다는데, 괜찮은 건가요?&rdquo;<br />
-        괜찮지 않아요. <strong>퇴직금 분할 지급 약정은 법적으로 무효</strong>예요.
-        <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여보장법 제9조</a>는 퇴직금을 퇴직 시 일시금으로 지급하도록 규정하고 있죠.
-        동의서를 쓴 경우에도 퇴직 시 전액을 다시 청구할 수 있어요.
-        분할 지급의 법적 문제, 동의서를 쓴 경우 대처법, 회사 폐업 시 대응까지 — 꼭 알아야 할 내용을 정리할게요.
+      {/* 인트로 */}
+      <p style={{ ...body, marginBottom: 8 }}>
+        퇴직금은 퇴직 후 14일 이내에 전액을 한 번에 받는 게 원칙이에요. 그런데 회사가 "사정이 어려우니 나눠서 주겠다"고 하면 어떻게 해야 할지 막막하죠.
+      </p>
+      <p style={{ ...body, marginBottom: 8 }}>
+        결론부터 말하면, 근로자가 동의하지 않으면 분할지급은 위법이에요. 동의하더라도 14일이 지난 기간에 대해서는 <a href="/w/퇴직금-지연이자" style={{ color: "#1D9E75", textDecoration: "underline" }}>연 20% 지연이자</a>를 청구할 수 있고요. 이 글에서 분할지급 합의 기준과 지연이자 계산 방법을 정리했어요.
       </p>
 
-      <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 */}
-      <H2>퇴직금 분할 지급이 가능한가요?</H2>
-      <p style={body}>
-        <strong>법적으로 불가능해요.</strong> <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여보장법 제9조</a>는 사업주가 퇴직하는 근로자에게 퇴직금을 지급해야 한다고 규정하고 있어요. 여기서 &ldquo;퇴직하는&rdquo;이라는 표현이 핵심이죠. 퇴직 전에 미리 나눠주는 건 이 규정에 반해요.
+      <Divider />
+
+      {/* H2-1 */}
+      <H2>퇴직금 분할지급, 원래 되는 건가요?</H2>
+
+      <p style={{ ...body, marginBottom: 12 }}>
+        <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여보장법 제9조</a>는 퇴직 후 14일 이내에 퇴직금을 전액 지급해야 한다고 규정해요. 이 기한은 근로자가 따로 요청하지 않아도 회사가 지켜야 하는 의무예요. 14일을 넘기면 그날부터 연 20% 지연이자가 자동으로 붙어요.
       </p>
-      <p style={body}>
-        대법원은 &ldquo;퇴직금을 매월 분할하여 지급하기로 하는 약정은 강행규정인 근로자퇴직급여보장법에 반하여 무효&rdquo;라고 판시했어요. 근로자와 사업주가 서로 합의했더라도 법보다 우선할 수 없다는 뜻이죠.
-      </p>
-      <p style={body}>
-        유일한 예외는 <strong>퇴직금 중간정산</strong>이에요. 법에서 정한 사유(주택 구입, 장기 요양 등)에 해당하면 재직 중에도 퇴직금을 미리 정산받을 수 있죠. 하지만 이건 &ldquo;분할 지급&rdquo;이 아니라 &ldquo;법정 사유에 의한 정산&rdquo;이라는 점에서 본질이 달라요.
+      <p style={{ ...body, marginBottom: 12 }}>
+        단, 근로자가 명시적으로 동의하면 분할지급 합의가 가능해요. 회사 사정이 어렵거나 근로자가 원할 경우에 해당하죠. 이때 합의서에 지급 일정, 금액, 이자 조항을 명확히 넣는 게 중요해요. 합의 없이 회사가 일방적으로 나눠 준다면, 그건 <a href="/w/퇴직금-미지급-신고" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직금 미지급</a>과 동일하게 처리돼요.
       </p>
 
-      <GreenBox title="분할 지급 vs 중간정산">
-        <strong>분할 지급</strong>: 매달 퇴직금을 나눠서 지급 → <strong>무효</strong><br />
-        <strong>중간정산</strong>: 법정 사유로 재직 중 퇴직금 정산 → <strong>유효</strong><br />
-        둘은 완전히 다른 개념이에요.
+      <GreenBox title="분할지급 원칙 요약">
+        <ul style={{ paddingLeft: 18, margin: 0 }}>
+          <li style={{ marginBottom: 4 }}>퇴직 후 14일 이내 전액 지급이 원칙</li>
+          <li style={{ marginBottom: 4 }}>근로자 동의 없는 분할지급 = 위법</li>
+          <li style={{ marginBottom: 4 }}>합의 시 지급 일정·금액·이자 조항 서면 작성 필수</li>
+          <li>14일 초과분에 대해 지연이자(연 20%) 청구 가능</li>
+        </ul>
       </GreenBox>
+
+      <p style={{ ...body, marginTop: 12 }}>
+        합의를 할 때 주의할 점이 있어요. 회사가 "이자 없이 나눠 받는 데 동의하세요"라고 요청할 수 있는데, 이 조항에 서명하면 불리해요. 이자 포기 조항은 빼고 지급 일정만 합의하는 게 근로자에게 유리해요.
+      </p>
 
       <Divider />
 
-      {/* 섹션 2 */}
-      <H2>분할 지급에 동의하면 어떤 문제가 생기나요?</H2>
-      <p style={body}>
-        가장 큰 문제는 &ldquo;이미 받았으니 퇴직금은 없다&rdquo;는 회사의 주장이에요. 매달 퇴직금 명목으로 25만 원씩 3년간 받았으니 900만 원을 이미 지급했다는 논리죠. 하지만 분할 약정이 무효이기 때문에, 매달 받은 900만 원은 법적으로 급여에 해당해요.
+      {/* H2-2 */}
+      <H2>지연이자 얼마나 받을 수 있나요?</H2>
+
+      <p style={{ ...body, marginBottom: 12 }}>
+        <a href="/w/퇴직금-지연이자" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직금 지연이자</a>는 연 20%로 고정돼 있어요. 근로기준법 제37조에 따른 비율이라 협상으로 줄일 수 없어요. 퇴직일로부터 14일이 지난 날부터 실제 지급일까지 일수를 계산해요.
       </p>
-      <p style={body}>
-        그래서 퇴직 시 퇴직금을 별도로 청구할 수 있어요. 이미 받은 돈을 돌려줄 필요도 없고요. 회사가 &ldquo;이중 지급이다&rdquo;라고 항변하더라도, 분할 약정이 무효인 이상 이중 지급 문제는 발생하지 않죠.
-      </p>
-      <p style={body}>
-        두 번째 문제는 <strong>퇴직금 적립이 안 돼 있을 위험</strong>이에요. 매달 나눠줬으니 따로 쌓아둘 필요가 없다고 생각한 회사가 퇴직금 재원을 마련해두지 않은 경우가 있죠. 이러면 퇴직할 때 &ldquo;돈이 없다&rdquo;며 지급을 미루는 상황이 생길 수 있어요.
+      <p style={{ ...body, marginBottom: 16 }}>
+        예를 들어 퇴직금이 3,000만원인데 30일 지연됐다면, 이자는 약 49만원이에요. 지연 기간이 길수록 이자가 쌓이니, 지급이 늦어질수록 회사 부담이 커지는 구조예요. 아래 계산기로 직접 계산해 보세요.
       </p>
 
-      <BorderBox title="분할 지급 동의서를 쓴 이유가 중요해요">
-        사업주의 요구로 쓴 경우 → 의사의 자유가 없었으므로 효력 부정이 쉬움<br />
-        본인이 자발적으로 요청한 경우 → 그래도 법적으로 무효<br />
-        어느 쪽이든 퇴직 시 별도 청구가 가능해요.
-      </BorderBox>
+      <Calculator
+        sliders={CALC_SLIDERS}
+        results={CALC_RESULTS}
+      />
 
-      {/* ── 섹션 2 끝 → 버튼 + 관련 글 ── */}
-      <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/근로" />
-      <RelatedArticles items={RELATED} />
       <ArticleAd position="mid" />
 
       <Divider />
 
-      {/* 섹션 3 */}
-      <H2>분할 지급 중 회사가 폐업하면 어떻게 되나요?</H2>
-      <p style={body}>
-        분할 약정이 무효이니, 법적으로는 퇴직금을 아직 받지 못한 상태와 같아요. <a href="/w/회사-폐업-퇴직금" style={{ color: "#1D9E75", textDecoration: "underline" }}>회사가 폐업하면 체당금 제도</a>를 이용할 수 있죠. 체당금은 사업주가 지급하지 못한 임금·퇴직금을 국가가 대신 지급하는 제도예요.
+      {/* H2-3 */}
+      <H2>필요한 서류 목록</H2>
+
+      <p style={{ ...body, marginBottom: 12 }}>
+        퇴직금 지급을 청구하거나 분할지급 합의를 진행할 때 필요한 서류예요. 미지급 상황이라면 내용증명과 퇴직 증명서가 핵심이에요. IRP 계좌는 퇴직금이 300만원을 넘으면 반드시 개설해야 해요.
       </p>
-      <p style={body}>
-        체당금 신청은 관할 고용노동부에 하면 돼요. 필요한 서류는 체불 임금·퇴직금 확인서, 폐업 확인 서류 등이고, 근로감독관이 사실관계를 확인한 후 지급이 결정되죠. 최대 지급 한도는 나이와 퇴직 시점에 따라 달라지지만, 퇴직금의 상당 부분을 보전받을 수 있어요.
+      <p style={{ ...body, marginBottom: 16 }}>
+        분할지급에 합의한 경우에는 합의서를 별도로 작성해요. 합의서에는 각 회차 지급 날짜와 금액, 이자 조항 포함 여부를 명확하게 적어야 나중에 분쟁이 생겼을 때 증거가 돼요.
       </p>
-      <p style={body}>
-        분할 약정이 있었던 경우, 매달 받은 금액이 퇴직금에서 공제되느냐가 쟁점이 될 수 있어요. 원칙적으로 분할 약정이 무효이기 때문에 공제 대상이 아니지만, 체당금 심사에서 개별적으로 판단될 수 있죠. 증거(계약서, 급여명세서, 분할 동의서 등)를 미리 확보해두는 게 중요해요.
-      </p>
+
+      <DocTable docs={DOCS} />
 
       <Divider />
 
-      {/* 섹션 4 */}
-      <H2>분할 지급 동의서를 쓴 경우 대처법은?</H2>
-      <p style={body}>
-        이미 동의서를 썼더라도 걱정하지 마세요. 강행규정에 반하는 약정은 동의 여부와 관계없이 무효예요. 퇴직할 때 퇴직금을 별도로 청구하면 돼요.
+      {/* H2-4 */}
+      <H2>분할지급 대응 절차 4단계</H2>
+
+      <p style={{ ...body, marginBottom: 12 }}>
+        회사가 분할지급을 제안했거나 14일이 지나도 퇴직금을 못 받았다면, 아래 순서대로 대응하면 돼요. 내용증명 발송이 법적 절차의 시작이고, 그 이후 단계는 고용노동부가 직접 처리해요.
       </p>
-      <p style={body}>
-        청구 방법은 일반 퇴직금 미지급과 같아요. 먼저 사업주에게 퇴직금 지급을 요청하고, 14일 이내에 안 주면 내용증명을 보내세요. 그래도 안 주면 <a href="/w/퇴직금-미지급-신고" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용노동부에 임금체불 진정</a>을 넣으면 돼요.
+      <p style={{ ...body, marginBottom: 16 }}>
+        고용노동부 진정은 온라인으로 24시간 신청할 수 있어요. 직접 방문하지 않아도 되니까 절차 자체는 어렵지 않아요. 진정 접수 후 약 2~4주 이내에 근로감독관이 회사에 연락해요.
       </p>
-      <p style={body}>
-        진정 시 분할 동의서 사본과 매달 지급된 급여명세서를 함께 제출하세요. 근로감독관이 &ldquo;분할 약정이 무효이므로 퇴직금을 별도로 지급하라&rdquo;는 시정명령을 내리게 되죠. 사업주가 이에 불응하면 형사처벌(<strong>3년 이하 징역 또는 3천만 원 이하 벌금</strong>)로 이어질 수 있어요.
-      </p>
+
+      <Steps steps={STEPS} />
+
+      <CategoryButton
+        slug="퇴직금"
+        label="퇴직금 전체 글 보기"
+      />
+
+      <RelatedArticles articles={RELATED} />
 
       <Divider />
 
-      {/* 섹션 5 */}
-      <H2>분할 지급 대신 일시금을 요구할 수 있나요?</H2>
-      <p style={body}>
-        당연히 요구할 수 있어요. 법이 원래 퇴직 시 일시금 지급을 규정하고 있으니까요. 회사가 분할 지급을 제안하면 &ldquo;법적으로 무효인 약정이라 동의할 수 없다&rdquo;고 거절하면 돼요.
+      {/* H2-5 */}
+      <H2>분할지급 체크리스트</H2>
+
+      <p style={{ ...body, marginBottom: 12 }}>
+        분할지급 합의 전에 아래 항목을 꼭 짚어보세요. 특히 이자 조항은 합의서 서명 전에 확인하는 게 중요해요. 한번 서명하면 번복하기 어려울 수 있어요.
       </p>
-      <p style={body}>
-        재직 중이라면 사업주에게 &ldquo;퇴직연금(DB형 또는 DC형)이나 퇴직금 제도를 제대로 운영해달라&rdquo;고 요청하세요. 퇴직연금에 가입하면 금융기관에 퇴직금이 적립되기 때문에, 회사가 폐업하더라도 퇴직금을 보호받을 수 있죠.
-      </p>
-      <p style={body}>
-        이미 분할 지급이 진행 중인 상태에서도 &ldquo;앞으로는 분할 지급에 동의하지 않겠다&rdquo;고 의사를 표시할 수 있어요. 서면으로 통보하면 증거가 남아서 나중에 유리하죠. 퇴직 시 소멸시효 <strong>3년</strong> 이내에 청구하는 것만 잊지 마세요. 지급 기한 <strong>14일</strong>과 지연이자 <strong>연 20%</strong>도 함께 청구할 수 있어요.
+      <p style={{ ...body, marginBottom: 16 }}>
+        14일 기한은 달력으로 세는 달력일 기준이에요. 공휴일이나 주말도 포함돼요. 퇴직일이 월요일이면 14일 후인 다음 월요일까지 지급해야 해요.
       </p>
 
-      <GreenBox title="퇴직금 분할 지급 핵심 정리">
-        분할 지급 약정 → <strong>무효</strong> (강행규정 위반)<br />
-        동의서를 썼어도 퇴직 시 <strong>전액 별도 청구 가능</strong><br />
-        매달 받은 금액은 급여로 간주 — <strong>반환 의무 없음</strong><br />
-        지급 기한 <strong>14일</strong> / 지연이자 <strong>연 20%</strong> / 소멸시효 <strong>3년</strong>
+      <Checklist items={CHECKLIST} />
+
+      <GreenBox style={{ marginTop: 16 }}>
+        <p style={{ fontWeight: 600, marginBottom: 4 }}>합의 전 반드시 살펴볼 것</p>
+        <p style={{ margin: 0 }}>
+          분할지급 합의서에 서명하기 전, 지급 일정과 이자 조항을 꼭 읽어보세요. "이자 포기" 조항이 있으면 삭제 요청하거나 서명을 거부할 수 있어요. 지연이자는 법으로 정해진 권리예요.
+        </p>
       </GreenBox>
 
       <Divider />
 
+      {/* H2-6 */}
       <H2>자주 묻는 것들</H2>
-      <p style={{ ...body, marginBottom: 14 }}>
-        퇴직금 분할 지급에 대해 실제로 자주 나오는 질문만 골랐어요.
+
+      <p style={{ ...body, marginBottom: 16 }}>
+        분할지급과 지연이자에 대해 자주 나오는 질문을 정리했어요. 소멸시효 3년을 놓치면 청구 자체가 어려워지니, 지금 상황이라면 늦지 않게 대응하는 게 좋아요.
       </p>
+
       <FAQ items={FAQS} />
 
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니, 최신 기준은 고용노동부(1350)에서 확인하세요." />
+      <Disclaimer />
     </ArticleLayout>
   );
 }

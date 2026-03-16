@@ -1,77 +1,232 @@
 "use client";
-import { H2, SectionBadge, GreenBox, BorderBox, Divider, body, EligibilityChecker, Checklist, FAQ, References, Disclaimer, ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd } from "@/components/article-ui";
+
+import {
+  H2, SectionBadge, GreenBox, BorderBox, Divider, body,
+  Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
+  ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
+} from "@/components/article-ui";
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
 const CHECK_ITEMS = [
-  { id: "c1", label: "같은 사업주 아래에서 1년 넘게 일했어요" },
-  { id: "c2", label: "주 평균 15시간 이상 근무했어요" },
-  { id: "c3", label: "일당 지급 기록이나 출근 증빙이 남아 있어요" },
-  { id: "c4", label: "퇴직일로부터 3년 이내예요" },
+  { id: "c1", label: "같은 사업장에서 반복·계속해서 일했어요" },
+  { id: "c2", label: "실질적으로는 정해진 날마다 출근했어요" },
+  { id: "c3", label: "주 15시간 이상 일한 기간이 있어요" },
+  { id: "c4", label: "고용계약이 매일 새로 맺어지는 방식인지 모르겠어요" },
 ];
-const CHECKLIST = ["일당 지급 기록 — 평균임금 산정용","출근 기록(사진, 카톡, 출입카드) — 계속 근로 증빙","근로계약서 — 근무 조건 확인","사업주 연락처·사업자등록번호 — 신고 시 필수","4대보험 가입 이력 — 근로 기간 증빙"];
+
+const CALC_SLIDERS = [
+  { id: "daily", label: "일당", min: 10, max: 50, step: 1, defaultValue: 20, format: (v: number) => `${v}만원/일` },
+  { id: "months", label: "계속 근로 개월 수", min: 1, max: 36, step: 1, defaultValue: 14, format: (v: number) => `${v}개월` },
+];
+
+const CALC_RESULTS = [
+  {
+    label: "월 임금 추정 (월 22일 기준)",
+    getValue: (v: Record<string, number>) => Math.round(v.daily * 10000 * 22),
+    format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원`,
+    highlight: true,
+  },
+  {
+    label: "퇴직금 예상액 (근속 개월 기준)",
+    getValue: (v: Record<string, number>) => Math.round(v.daily * 10000 * 22 * v.months / 12),
+    format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원`,
+  },
+];
+
+const DOCS = [
+  { name: "근로계약서 또는 일용근로확인서", required: true, where: "사업주 요청 또는 직접 보관" },
+  { name: "급여 이체 내역 (통장)", required: true, where: "본인 통장 내역서" },
+  { name: "4대보험 가입 확인서", required: false, where: "국민건강보험공단 또는 4대사회보험포털" },
+  { name: "출퇴근 기록 또는 작업일지", required: false, where: "사업장 자료 또는 캡처" },
+];
+
+const STEPS = [
+  {
+    title: "계속 근로 여부 판단",
+    desc: "일용직이라도 같은 사업장에서 반복·계속해서 근무했다면 '계속 근로'로 인정될 수 있어요. 매일 계약을 새로 맺는 형식이어도 실질적으로 고정된 날마다 출근했다면 법원에서 계속 근로로 보는 경우가 많아요.",
+    tip: "통장 이체 패턴이 일정하면 계속 근로 입증에 도움이 돼요",
+  },
+  {
+    title: "주 15시간 이상 확인",
+    desc: "4주 평균 주 15시간 이상이면 퇴직금 지급 조건을 충족해요. 하루 8시간씩 주 3일만 일해도 주 24시간으로 조건을 넘어요. 15시간 미만이면 퇴직금 대상이 아니에요.",
+    tip: "평균 주 15시간이기 때문에 어떤 주는 적게 일해도 평균이 기준이에요",
+  },
+  {
+    title: "사업주에게 청구",
+    desc: "계속 근로 + 주 15시간 이상 조건이 충족된다면 사업주에게 퇴직금 지급을 요청해요. 퇴직일로부터 14일 이내가 지급 기한이에요. 서면이나 문자로 청구 기록을 남겨두세요.",
+    tip: "건설일용직은 건설근로자공제회를 통해 퇴직공제금을 받는 방법도 있어요",
+  },
+  {
+    title: "미지급 시 노동청 신고",
+    desc: "사업주가 거부하면 고용노동부(1350) 또는 사업장 관할 지방노동청에 진정을 내세요. 일용직인지 여부와 무관하게 계속 근로가 인정되면 퇴직금을 받을 수 있어요. 소멸시효는 퇴직일로부터 3년이에요.",
+    tip: "노동청 진정 전에 법률구조공단(132) 무료 상담을 활용하면 좋아요",
+  },
+];
+
+const CHECKLIST = [
+  "계속 근로 여부 — 반복·정기 출근이면 계속 근로로 인정 가능",
+  "주 15시간 이상 — 4주 평균 기준",
+  "14일 지급 기한 — 초과 시 지연이자(연 20%) 청구 가능",
+  "근무 증거 확보 — 통장 내역·카카오톡·출퇴근 기록",
+  "소멸시효 3년 — 퇴직일로부터 3년 내 청구 필수",
+];
+
 const FAQS = [
-  { q: "일용직인데 근로계약서가 없어요.", a: "근로계약서가 없어도 일당 지급 기록, 출근 사진, 카톡 대화 등으로 근로 사실을 증명할 수 있어요." },
-  { q: "사업주가 '일용직은 해당 안 된다'고 해요.", a: "법적 근거가 없는 주장이에요. 1년 이상 주 15시간 이상 근무했다면 일용직도 퇴직금 대상이죠." },
-  { q: "여러 현장에서 같은 회사 소속으로 일했는데 합산 되나요?", a: "같은 사업주(회사) 소속이면 현장이 달라도 기간이 합산돼요." },
-  { q: "일용직 퇴직금은 대략 얼마나 되나요?", a: "퇴직 전 3개월 평균임금 x 근속연수로 계산해요. 일당 15만 원, 3년 근무 시 약 500만 원 전후죠." },
-  { q: "사업주가 폐업했는데 퇴직금을 받을 수 있나요?", a: "체당금 제도를 통해 받을 수 있어요. 고용노동부에 체당금 신청을 하면 되죠." },
+  {
+    q: "일용직은 퇴직금을 못 받는 거 아닌가요?",
+    a: "아니에요. 계약 형태가 일용직이어도 실질적으로 계속 근무했고 주 15시간 이상이라면 퇴직금을 받을 수 있어요. 법원과 노동부도 실질 관계를 기준으로 판단해요.",
+  },
+  {
+    q: "매일 계약을 새로 맺는데 계속 근로가 인정되나요?",
+    a: "계약 형식보다 실질을 봐요. 같은 사업장에서 정해진 날마다 반복 근무했고, 사실상 고용 관계가 지속됐다면 계속 근로로 인정될 수 있어요.",
+  },
+  {
+    q: "건설 일용직도 퇴직금을 받을 수 있나요?",
+    a: "건설근로자는 일반 퇴직금 외에 건설근로자공제회의 퇴직공제금 제도도 있어요. 퇴직공제금은 건설현장에서 근무일수 누적 시 받을 수 있는 별도 제도예요.",
+  },
+  {
+    q: "일용직 퇴직금 소멸시효는 얼마인가요?",
+    a: "3년이에요. 마지막 근무일로부터 3년 내에 청구해야 해요. 내용증명이나 노동청 진정으로 시효를 중단할 수 있어요.",
+  },
+  {
+    q: "근로계약서가 없는 일용직도 퇴직금 신고가 가능한가요?",
+    a: "가능해요. 통장 이체 내역, 문자 메시지, 출퇴근 기록 등 근무 사실을 입증할 수 있다면 노동청에 진정을 낼 수 있어요.",
+  },
 ];
+
 const REFERENCES = [
-  { category: "법령", items: [{ label: "근로자퇴직급여 보장법", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },{ label: "근로기준법 — 근로자 정의", url: "https://www.law.go.kr/법령/근로기준법" }] },
-  { category: "공식 자료", items: [{ label: "고용노동부 — 일용직 근로자 권익", url: "https://www.moel.go.kr" },{ label: "고용노동부 민원마당", url: "https://minwon.moel.go.kr" }] },
+  {
+    category: "법령",
+    items: [
+      { label: "근로자퇴직급여보장법 제4조 — 퇴직금 지급 요건", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+      { label: "근로기준법 제2조 — 일용근로자 정의", url: "https://www.law.go.kr/법령/근로기준법" },
+    ],
+  },
+  {
+    category: "공식 자료",
+    items: [
+      { label: "고용노동부 — 일용근로자 퇴직금 안내", url: "https://www.moel.go.kr" },
+      { label: "건설근로자공제회 — 퇴직공제금 제도", url: "https://www.cwma.or.kr" },
+    ],
+  },
 ];
+
 const RELATED = [
-  { slug: "일용직-퇴직금", title: "일용직 퇴직금 받을 수 있는 조건", description: "일용직도 1년 이상 근무했다면 퇴직금을 받을 수 있어요." },
-  { slug: "퇴직금-일용직", title: "퇴직금 일용직 적용 기준", description: "일용직 근로자에게 퇴직금이 적용되는 경우를 정리했어요." },
-  { slug: "건설근로자-퇴직금", title: "건설 근로자 퇴직금", description: "건설근로자공제회 제도와 수령법을 안내해요." },
+  { slug: "일용직-퇴직금", title: "일용직 퇴직금 받는 방법", description: "계속 근로 인정 요건을 자세히 설명해요." },
+  { slug: "건설근로자-퇴직금", title: "건설근로자 퇴직금·퇴직공제금", description: "건설근로자공제회 퇴직공제금 제도 안내." },
+  { slug: "퇴직금-미지급-신고", title: "퇴직금 미지급 신고 방법", description: "노동청 진정 절차를 단계별로 안내해요." },
 ];
 
 export default function Page() {
   return (
-    <ArticleLayout sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} currentSlug="일용직-퇴직금-지급기준" />}>
+    <ArticleLayout
+      sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} currentSlug="일용직-퇴직금-지급기준" />}
+    >
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 일용직 · 지급기준</p>
-      <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>일용직 퇴직금 지급 기준,<br />어떻게 판단하나요?</h1>
-      <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>일용직 퇴직금 지급 기준은 &ldquo;계속 근로&rdquo; 여부로 판단해요. 매일 출근하지 않더라도 같은 사업주 아래에서 반복적으로 일했다면 1년 이상 계속 근로로 인정될 수 있죠. <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여 보장법</a>이 정한 기준과 판단 방법, 사업주 거부 시 대응법까지 정리해드릴게요.</p>
-      <Divider /><ArticleAd position="intro" />
 
-      <H2>일용직 퇴직금 지급 기준이 뭔가요?</H2>
-      <p style={body}>기준은 다른 근로자와 같아요. 같은 사업장에서 <strong>1년 이상 계속 근로</strong>하고, 주 평균 <strong>15시간 이상</strong> 일했으면 퇴직금 지급 의무가 생기죠. 일용직이라는 이유로 기준이 달라지는 건 없어요.</p>
-      <p style={body}>&ldquo;계속 근로&rdquo; 판단이 일용직에서 가장 중요한 쟁점이에요. 매일 출근하지 않아도, 같은 사업주가 반복적으로 불러서 일했다면 고용관계가 지속된 것으로 볼 수 있죠.</p>
-      <p style={body}>일용근로자라는 명칭 때문에 매일 새로운 계약이라고 오해하기 쉬운데, 실질적으로 같은 곳에서 반복 근무했다면 형식과 관계없이 계속 근로로 인정받을 수 있어요.</p>
-      <GreenBox title="지급 기준 요약">1. 같은 사업주 아래 <strong>1년 이상</strong> 반복 근로<br />2. 주 평균 <strong>15시간 이상</strong><br />3. &ldquo;계속 근로&rdquo;는 고용의 실질로 판단</GreenBox>
-      <SectionBadge>내 상황에 해당되는지 체크해보세요</SectionBadge>
-      <EligibilityChecker items={CHECK_ITEMS} allMatchText="조건을 갖춘 상황이에요." partialMatchText="일부만 해당돼요. 고용노동부(1350)에 상담해보세요." />
+      <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
+        일용직도 퇴직금을 받을 수 있나요?<br />
+        계속 근로 인정 기준과 청구 방법 정리
+      </h1>
+
+      <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
+        일용직이라도 실질적으로 같은 사업장에서 반복·계속 근무하고 <a href="/w/퇴직금-조건" style={{ color: "#1D9E75", textDecoration: "underline" }}>주 15시간 이상</a> 일했다면 퇴직금 지급 대상이에요.
+        계약서에 '일용직'이라고 적혀 있어도 실질 관계를 기준으로 판단해요.
+        건설 일용직은 <a href="/w/건설근로자-퇴직금" style={{ color: "#1D9E75", textDecoration: "underline" }}>건설근로자공제회 퇴직공제금</a> 제도도 별도로 활용할 수 있어요.
+      </p>
+
+      <Divider />
+      <ArticleAd position="intro" />
+
+      <H2>일용직 퇴직금, 어떤 경우에 받을 수 있나요?</H2>
+      <p style={body}>
+        핵심은 '실질적 계속 근로'예요. 매일 계약을 새로 맺는 형식이어도, 같은 사업장에서 정해진 날마다 반복 출근했다면 법원에서 계속 근로로 보는 경우가 많아요.
+        여기에 주 15시간 이상 조건까지 충족하면 퇴직금 청구가 가능해요.
+      </p>
+      <p style={body}>
+        건설 현장 일용직은 일반 퇴직금 외에 건설근로자공제회 퇴직공제금 제도를 이용할 수 있어요.
+        퇴직공제금은 일한 날짜를 누적해서 적립하는 방식이라 일반 퇴직금과는 별개예요.
+      </p>
+
+      <GreenBox title="일용직 퇴직금 인정 기준">
+        계속 근로: 반복·정기 출근, 실질적 고용 관계 지속<br />
+        주 15시간 이상: 4주 평균 기준<br />
+        → 두 조건 충족 시 일용직도 퇴직금 지급 의무
+      </GreenBox>
+
+      <SectionBadge>내 상황 체크해보세요</SectionBadge>
+      <EligibilityChecker
+        items={CHECK_ITEMS}
+        allMatchText="일용직이어도 퇴직금 청구가 가능한 상황이에요. 아래 계산기로 예상 금액을 확인하세요."
+        partialMatchText="계속 근로 인정 여부에 따라 다를 수 있어요. 고용노동부(1350) 상담을 권해요."
+      />
+
       <Divider />
 
-      <H2>간헐적으로 일해도 퇴직금이 생기나요?</H2>
-      <p style={body}>생길 수 있어요. 매일 출근하지 않더라도 &ldquo;필요할 때 불러서 일하는&rdquo; 패턴이 1년 이상 반복됐다면 계속 근로로 인정될 가능성이 높죠.</p>
-      <p style={body}>판단 기준으로는 사업주의 지시를 받았는지, 출퇴근 시간이 정해져 있었는지, 다른 곳에서 일할 자유가 있었는지 등을 종합적으로 봐요.</p>
-      <p style={body}>증빙이 핵심이에요. 사업주가 보낸 출근 요청 문자, 일당 이체 기록, 현장 출입 기록 등을 최대한 모아두세요.</p>
-      <BorderBox title="인력사무소를 통해 일했다면">인력사무소에서 파견한 경우, 실제 지시·감독한 쪽이 사업주로 인정될 수 있어요.<br />누가 일을 지시하고 급여를 줬는지가 퇴직금 청구 대상을 결정하죠.</BorderBox>
+      <H2>일용직 퇴직금 예상액 계산</H2>
+      <p style={body}>
+        일당과 계속 근로 개월 수를 입력하면 월 임금과 퇴직금 예상액을 바로 확인할 수 있어요.
+        실제 퇴직금은 퇴직 전 3개월 평균임금으로 계산하니 급여명세서 기준이 가장 정확해요.
+      </p>
+
+      <SectionBadge>일용직 퇴직금 계산기</SectionBadge>
+      <Calculator
+        sliders={CALC_SLIDERS}
+        results={CALC_RESULTS}
+        note="※ 월 22일 기준 추정치. 실제 퇴직금은 평균임금 × 근속일수 ÷ 365로 계산해요."
+      />
+
       <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
-      <RelatedArticles items={RELATED} /><ArticleAd position="mid" />
+      <RelatedArticles items={RELATED} />
+      <ArticleAd position="mid" />
+
       <Divider />
 
-      <H2>계속 근로 여부는 어떻게 판단하나요?</H2>
-      <p style={body}>고용노동부와 법원은 &ldquo;근로 제공의 계속성&rdquo;을 기준으로 봐요. 구체적으로는 사업주가 반복적으로 출근을 요청했는지, 정해진 장소·시간에 일했는지, 사업주의 지시·감독을 받았는지를 종합 판단하죠.</p>
-      <p style={body}>공백 기간이 있어도 &ldquo;고용관계가 유지됐다&rdquo;고 볼 수 있어요. 비가 와서 일주일 못 나갔거나 물량이 없어서 보름간 쉬었더라도 다시 복귀할 것이 예정돼 있었다면 계속 근로에 해당하죠.</p>
-      <p style={body}>반대로 사업주와의 관계가 완전히 끊어진 후 우연히 다시 일하게 된 거라면 별도 근로관계로 봐요. 이 경우 이전 기간은 합산되지 않죠.</p>
+      <H2>청구에 필요한 서류</H2>
+      <p style={body}>
+        통장 이체 내역이 계속 근로 입증에 가장 효과적이에요.
+        근로계약서가 없어도 청구할 수 있으니 지금 당장 통장 내역을 확인해두세요.
+      </p>
+
+      <SectionBadge>준비 서류 목록</SectionBadge>
+      <DocTable docs={DOCS} />
+
       <Divider />
 
-      <H2>일용직 퇴직금 신고 방법은?</H2>
-      <p style={body}>사업주가 퇴직금 지급을 거부하면 <a href="/w/퇴직금-미지급-신고" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용노동부에 진정</a>을 넣으세요. 온라인(민원마당)이나 관할 고용노동지청 방문으로 접수할 수 있어요.</p>
-      <p style={body}>근로감독관이 사업주를 조사해서 시정 명령을 내려요. 이행하지 않으면 형사 처벌(3년 이하 징역/3,000만 원 이하 벌금)까지 갈 수 있죠.</p>
-      <p style={body}>소멸시효는 <strong>퇴직일로부터 3년</strong>이에요. 현장을 옮기면서 이전 퇴직금을 놓치는 경우가 많으니, 현장이 끝날 때마다 정산 여부를 확인하세요.</p>
-      <SectionBadge>준비 서류</SectionBadge>
+      <H2>일용직 퇴직금 청구 4단계</H2>
+      <p style={body}>
+        계속 근로 여부 판단 → 주 15시간 확인 → 사업주 청구 → 미지급 시 노동청 신고 순서예요.
+      </p>
+
+      <Steps steps={STEPS} />
+
+      <Divider />
+
+      <H2>퇴직금 청구 체크리스트</H2>
+      <p style={body}>
+        소멸시효 3년과 계속 근로 증거 확보가 핵심이에요.
+      </p>
+
+      <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
+
+      <GreenBox title="계약서에 일용직이어도 청구할 수 있어요">
+        계약 형식이 아닌 실질 근로 관계가 기준이에요.<br />
+        반복·정기 출근 사실만 입증되면 노동청과 법원에서 인정받을 수 있어요.
+      </GreenBox>
+
       <Divider />
 
       <H2>자주 묻는 것들</H2>
-      <p style={{ ...body, marginBottom: 14 }}>일용직 퇴직금 지급 기준에 대해 자주 나오는 질문이에요.</p>
+      <p style={{ ...body, marginBottom: 14 }}>
+        일용직 퇴직금 지급 기준에 대해 실제로 많이 나오는 질문만 골랐어요.
+      </p>
       <FAQ items={FAQS} />
+
       <Divider />
+
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 관련 법령을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니, 최신 기준은 고용노동부(1350)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법과 근로기준법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인하세요." />
     </ArticleLayout>
   );
 }

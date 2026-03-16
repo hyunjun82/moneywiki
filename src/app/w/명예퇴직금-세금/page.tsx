@@ -1,206 +1,247 @@
 "use client";
-
-import {
-  H2, SectionBadge, GreenBox, BorderBox, Divider, body,
-  EligibilityChecker, Checklist, FAQ, References, Disclaimer,
-  ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
-} from "@/components/article-ui";
+import { H2, SectionBadge, GreenBox, BorderBox, Divider, body, Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer, ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd } from "@/components/article-ui";
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
-// ─── 데이터 ──────────────────────────────────────────
-
-const CHECK_ITEMS = [
-  { id: "c1", label: "명예퇴직 또는 희망퇴직을 앞두고 있어요" },
-  { id: "c2", label: "명예퇴직금 세금이 일반 퇴직금과 다른지 궁금해요" },
-  { id: "c3", label: "법정 퇴직금 외에 추가 위로금을 받을 예정이에요" },
-  { id: "c4", label: "세금을 줄이는 방법을 찾고 있어요" },
-];
-
-const FAQS = [
-  {
-    q: "명예퇴직금 전체에 퇴직소득세가 적용되나요?",
-    a: "퇴직 위로금까지 포함해서 퇴직소득으로 인정되는 경우가 많지만, 지급 근거와 성격에 따라 근로소득으로 분류될 수 있어요. 회사의 세무 처리 방식을 확인하세요.",
-  },
-  {
-    q: "명예퇴직금이 많으면 세금도 많나요?",
-    a: "금액이 클수록 높은 세율 구간에 걸릴 수 있어요. 하지만 연분연승법 덕분에 근속연수가 길면 실효세율이 크게 낮아지죠.",
-  },
-  {
-    q: "명예퇴직금도 IRP에 넣을 수 있나요?",
-    a: "퇴직소득으로 분류된 부분은 IRP에 이체할 수 있어요. 연금 수령 시 세금 감면을 받을 수 있죠.",
-  },
-  {
-    q: "위로금이 근로소득으로 분류되면 불리한가요?",
-    a: "근로소득세는 다른 소득과 합산되기 때문에 세율이 높아질 수 있어요. 퇴직소득으로 처리되는 게 유리하죠.",
-  },
-  {
-    q: "명예퇴직 후 종합소득세 신고를 해야 하나요?",
-    a: "퇴직소득은 분류과세라 별도 신고가 필요 없어요. 다만 위로금이 근로소득으로 처리된 경우 다음 해 5월에 종합소득세 신고가 필요할 수 있죠.",
-  },
-];
-
-const REFERENCES = [
-  {
-    category: "법령",
-    items: [
-      { label: "소득세법 제22조 — 퇴직소득의 범위 (명예퇴직금 포함)", url: "https://www.law.go.kr/법령/소득세법" },
-      { label: "소득세법 시행령 제42조의2 — 명예퇴직수당의 퇴직소득 해당 여부", url: "https://www.law.go.kr/법령/소득세법시행령" },
-    ],
-  },
-  {
-    category: "공식 자료",
-    items: [
-      { label: "국세청 — 퇴직소득세 및 명예퇴직수당 안내", url: "https://www.nts.go.kr" },
-      { label: "국세법령정보 — 명예퇴직금 관련 예규·판례", url: "https://taxlaw.nts.go.kr" },
-    ],
-  },
-];
-
-const RELATED = [
-  {
-    slug: "퇴직금-세금",
-    title: "퇴직금 세금, 얼마나 떼이나요?",
-    description: "퇴직소득세의 기본 구조와 계산 방법을 정리했어요.",
-  },
-  {
-    slug: "퇴직금-세금-몇프로",
-    title: "퇴직금 세금이 몇 퍼센트인지 계산하는 방법",
-    description: "근속연수별 실효세율과 계산 구조를 설명해요.",
-  },
-  {
-    slug: "퇴직금-IRP-이체-세금",
-    title: "퇴직금 IRP 이체 시 세금 혜택",
-    description: "IRP로 이체하면 퇴직소득세를 줄일 수 있어요.",
-  },
-];
-
-// ─── 페이지 ──────────────────────────────────────────
+const currentSlug = "명예퇴직금-세금";
 
 export default function Page() {
   return (
     <ArticleLayout
-      sidebar={
-        <Sidebar
-          heading="퇴직금 가이드"
-          items={퇴직금_SIDEBAR}
-          currentSlug="명예퇴직금-세금"
-        />
-      }
+      sidebar={<Sidebar items={퇴직금_SIDEBAR} currentSlug={currentSlug} title="퇴직금 가이드" />}
     >
-      <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 명예퇴직 · 세금</p>
+      {/* 타이틀 */}
+      <div style={{ marginBottom: 24 }}>
+        <div style={{ fontSize: 13, color: "#6b7280", marginBottom: 8 }}>
+          명예퇴직금 · 세금 · 비과세
+        </div>
+        <h1 style={{ fontSize: 28, fontWeight: 700, lineHeight: 1.35, color: "#111827", marginBottom: 8 }}>
+          명예퇴직금 세금, 일반 퇴직금이랑 다른가요?
+        </h1>
+        <p style={{ fontSize: 16, color: "#4b5563", lineHeight: 1.6 }}>
+          비과세 한도부터 퇴직소득세 계산까지
+        </p>
+      </div>
 
-      <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
-        명예퇴직금 세금<br />
-        일반 퇴직금과 다른가요?
-      </h1>
-
-      <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
-        &ldquo;명예퇴직금을 받으면 세금이 더 많이 나오나요?&rdquo;<br />
-        명예퇴직금에도 <strong>퇴직소득세</strong>가 붙어요. 다만 법정 퇴직금을 초과하는 추가 위로금의 성격에 따라 <strong>근로소득세</strong>로 과세될 수 있어서, 일반 퇴직금보다 세금 구조가 좀 더 복잡하죠.
-        <a href="https://www.law.go.kr/법령/소득세법" style={{ color: "#1D9E75", textDecoration: "underline" }}>소득세법</a>과 시행령이 정한 기준에 따라 명예퇴직금 세금이 어떻게 달라지는지, 절세 방법은 뭔지 정리해드릴게요.
-      </p>
-
-      <Divider />
-      <ArticleAd position="intro" />
-
-      {/* 섹션 1 */}
-      <H2>명예퇴직금에도 세금이 붙나요?</H2>
-      <p style={body}>
-        네, 붙어요. <a href="https://www.law.go.kr/법령/소득세법시행령" style={{ color: "#1D9E75", textDecoration: "underline" }}>소득세법 시행령 제42조의2</a>에 따르면, 명예퇴직수당은 원칙적으로 <strong>퇴직소득</strong>에 해당해요. 사용자(회사)가 근로자의 퇴직을 장려하기 위해 지급하는 금전이기 때문이죠.
-      </p>
-      <p style={body}>
-        퇴직소득으로 분류되면 일반 퇴직금과 같은 연분연승법으로 세금을 계산해요. 근속연수가 길수록 세금이 줄어드는 구조이죠. 명예퇴직을 선택하는 사람 대부분이 장기 근속자이기 때문에, 실효세율이 꽤 낮은 편이에요.
-      </p>
-      <p style={body}>
-        다만 주의할 점이 있어요. 명예퇴직금 중에서 &ldquo;퇴직 위로금&rdquo; 성격이 아니라 &ldquo;재직 중 성과 보상&rdquo; 성격이 강하면 <strong>근로소득</strong>으로 분류될 수 있거든요. 이 경우 다른 소득과 합산되어 세율이 높아질 수 있죠.
+      {/* 인트로 */}
+      <p style={{ ...body, marginBottom: 16 }}>
+        명예퇴직금은 일반 퇴직금보다 세금이 유리해요. 근속연수×150만원까지 비과세 혜택이 있어요. 근속 20년이면 3,000만원까지 세금이 없어요. 한도를 초과하는 금액만 퇴직소득세가 적용되니, 명예퇴직 제안을 받았다면 세금부터 계산해보세요.
       </p>
 
-      <Divider />
-
-      {/* 섹션 2 */}
-      <H2>일반 퇴직금과 세금이 다른 점은?</H2>
-      <p style={body}>
-        법정 퇴직금(근속연수 x 평균임금)에 대한 세금은 일반 퇴직금과 <strong>동일</strong>해요. 차이가 나는 건 법정 퇴직금을 초과하는 <strong>추가 지급분</strong>이에요. 이 부분의 세무 처리가 회사마다 다를 수 있거든요.
-      </p>
-      <p style={body}>
-        대부분의 경우 추가 지급분도 퇴직소득으로 인정돼요. 회사의 명예퇴직 규정에 &ldquo;퇴직을 촉진하기 위한 수당&rdquo;으로 명시되어 있으면 퇴직소득이죠. 하지만 규정이 없거나, 특정 성과에 대한 보상이라면 근로소득으로 볼 여지가 있어요.
-      </p>
-      <p style={body}>
-        근로소득으로 분류되면 그해 다른 소득과 <strong>합산 과세</strong>돼요. 예를 들어 퇴직 전 연봉이 6,000만 원이고 추가 위로금이 3,000만 원이라면, 근로소득 9,000만 원에 대해 세금을 계산하죠. 퇴직소득 분류보다 세금이 훨씬 많아질 수 있어요.
-      </p>
-
-      <BorderBox title="퇴직소득 vs 근로소득 분류 기준">
-        <strong>퇴직소득</strong> — 퇴직 촉진 목적, 회사 규정에 명시, 근속연수 기반<br />
-        <strong>근로소득</strong> — 재직 중 성과 보상 성격, 특정 업무 대가<br />
-        <strong>확인 방법</strong> — 원천징수영수증의 소득 구분란 체크
-      </BorderBox>
-
-      {/* ── 섹션 2 끝 → 버튼 + 관련 글 ── */}
-      <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/퇴직금" />
-      <RelatedArticles items={RELATED} />
-      <ArticleAd position="mid" />
-
-      <Divider />
-
-      {/* 섹션 3 */}
-      <H2>명예퇴직금 세금 계산 방법은?</H2>
-      <p style={body}>
-        퇴직소득으로 분류된 금액은 일반 퇴직금과 동일한 <strong>연분연승법</strong>으로 계산해요. 법정 퇴직금과 명예퇴직 추가분을 합산한 총 퇴직급여에서 퇴직소득공제를 빼고, 근속연수로 나눈 뒤 세율을 적용하죠.
-      </p>
-      <p style={body}>
-        명예퇴직금이 큰 편이라 일반 퇴직금보다 과세표준이 높아지는 경우가 많아요. 그만큼 높은 세율 구간에 걸릴 수 있지만, 장기 근속자라면 근속연수 효과로 상쇄되는 부분이 크죠. 20년 근속에 명예퇴직금 1억 원이면 실효세율이 3~5% 수준인 경우도 있어요.
-      </p>
-      <p style={body}>
-        정확한 세금은 <a href="https://www.hometax.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>홈택스</a> 퇴직소득세 계산기에서 확인할 수 있어요. 총 퇴직급여(법정 + 추가분)와 근속연수를 입력하면 예상 세금이 나오죠. 추가분이 근로소득으로 분류된 경우에는 별도로 근로소득세를 계산해야 하니 주의하세요.
-      </p>
-
-      <Divider />
-
-      {/* 섹션 4 */}
-      <H2>명예퇴직금을 절세하는 방법이 있나요?</H2>
-      <p style={body}>
-        <strong>IRP에 이체하고 연금으로 수령</strong>하는 게 가장 효과적이에요. 퇴직소득으로 분류된 금액은 IRP에 넣을 수 있고, 55세 이후 연금으로 받으면 퇴직소득세의 30~40%를 절감할 수 있죠.
-      </p>
-      <p style={body}>
-        명예퇴직금이 큰 금액일수록 IRP 절세 효과가 커져요. 퇴직소득세가 500만 원이면 IRP 연금 수령으로 150~200만 원을 아낄 수 있거든요. 당장 목돈이 필요하지 않다면 IRP를 적극 활용하세요.
-      </p>
-      <p style={body}>
-        추가 위로금이 <strong>근로소득으로 분류</strong>될 것 같다면, 회사 인사팀이나 세무 담당자에게 퇴직소득으로 처리해달라고 요청할 수 있어요. 회사 규정에 명예퇴직수당이 명시되어 있으면 퇴직소득으로 인정받기 쉽죠. 세무사 상담을 통해 유리한 방향을 찾는 것도 좋은 방법이에요.
-      </p>
-
-      <Divider />
-
-      {/* 섹션 5 */}
-      <H2>명예퇴직금 수령 후 세금 신고는?</H2>
-      <p style={body}>
-        퇴직소득으로 처리된 부분은 회사가 <strong>원천징수</strong>해서 납부하기 때문에 별도 신고가 필요 없어요. 세금을 뺀 나머지가 통장에 입금되죠.
-      </p>
-      <p style={body}>
-        다만 추가 위로금이 근로소득으로 처리된 경우에는 퇴직한 다음 해 <strong>5월 종합소득세 신고</strong>가 필요할 수 있어요. 같은 해에 다른 근로소득(퇴직 전 급여)과 합산해서 정산하죠. 과다 납부분이 있으면 환급받을 수 있어요.
-      </p>
-      <p style={body}>
-        퇴직소득 원천징수영수증과 근로소득 원천징수영수증을 모두 보관해두세요. 나중에 세금 문제가 생기거나 환급 신청을 할 때 필수 서류예요. <a href="https://www.nts.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>국세청</a>(126)에서 세금 관련 무료 상담이 가능하니, 복잡한 부분은 전문가 도움을 받으세요.
-      </p>
-
-      <SectionBadge>내 상황에 해당되는지 체크해보세요</SectionBadge>
+      {/* 섹션 1: 해당 여부 체크 */}
       <EligibilityChecker
-        items={CHECK_ITEMS}
-        allMatchText="명예퇴직금 세금을 미리 확인하는 게 좋아요. 회사에 소득 분류(퇴직소득/근로소득)를 확인하고, IRP 절세를 검토하세요."
-        partialMatchText="아직 정보가 부족해요. 회사 인사팀에 명예퇴직금 세무 처리 방식을 먼저 확인하세요."
+        title="명예퇴직금 세금, 해당되는지 체크해보세요"
+        items={[
+          "명예퇴직을 권고받았어요",
+          "일반 퇴직금 외에 추가 명예퇴직금이 있어요",
+          "비과세 한도가 얼마인지 모르겠어요",
+          "세금을 어떻게 계산하는지 알고 싶어요",
+        ]}
       />
 
       <Divider />
 
-      <H2>자주 묻는 것들</H2>
-      <p style={{ ...body, marginBottom: 14 }}>
-        명예퇴직금 세금에 대해 자주 나오는 질문이에요.
+      {/* 섹션 1: 비과세 한도 */}
+      <H2>명예퇴직금 비과세 한도, 얼마까지 안 내도 되나요</H2>
+      <p style={{ ...body, marginBottom: 16 }}>
+        명예퇴직금에는 일반 퇴직금에 없는 별도 비과세 혜택이 있어요. <a href="https://www.law.go.kr/법령/소득세법" target="_blank" rel="noopener noreferrer" style={{ color: "#1D9E75", textDecoration: "underline" }}>소득세법 제22조</a>에 따라 근속연수×150만원까지는 세금을 전혀 안 내도 돼요.
       </p>
-      <FAQ items={FAQS} />
+      <p style={{ ...body, marginBottom: 16 }}>
+        근속 10년이면 1,500만원, 20년이면 3,000만원, 30년이면 4,500만원까지 비과세예요. 단, 최대 한도는 3억원이에요. 근속 200년이 아닌 이상 3억 한도에 걸릴 일은 없지만, 법령상 상한선이 있다는 점은 알아두세요.
+      </p>
+      <GreenBox>
+        비과세 한도 공식: 근속연수 × 150만원 (최대 3억원)<br />
+        한도 초과분만 퇴직소득세 부과 — 소득세법 제22조
+      </GreenBox>
+      <p style={{ ...body, marginTop: 16, marginBottom: 16 }}>
+        일반 퇴직금은 전액이 퇴직소득세 과세 대상이에요. 반면 명예퇴직금은 비과세 한도만큼 먼저 제외하고, 나머지에만 세금을 매기죠. 같은 금액이라도 명예퇴직금이 세금 부담이 훨씬 작은 이유예요.
+      </p>
+
+      <ArticleAd />
+
+      {/* 섹션 2: 계산기 */}
+      <H2>명예퇴직금 세금 계산기</H2>
+      <p style={{ ...body, marginBottom: 16 }}>
+        명예퇴직금 금액과 근속 기간을 입력하면 비과세 한도와 과세 대상 금액을 바로 확인할 수 있어요. 과세 대상이 0원이면 세금을 전혀 안 내도 되는 거예요.
+      </p>
+      <Calculator
+        sliders={[
+          {
+            key: "amount",
+            label: "명예퇴직금",
+            min: 1000,
+            max: 20000,
+            step: 500,
+            defaultValue: 5000,
+            format: (v: number) => `${v.toLocaleString()}만원`,
+          },
+          {
+            key: "years",
+            label: "근속 기간",
+            min: 5,
+            max: 35,
+            step: 1,
+            defaultValue: 15,
+            format: (v: number) => `${v}년`,
+          },
+        ]}
+        results={[
+          {
+            label: "비과세 한도",
+            highlight: true,
+            getValue: (v: Record<string, number>) =>
+              Math.min(v.years * 150 * 10000, 300000 * 10000),
+            format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원`,
+          },
+          {
+            label: "과세 대상 금액 (한도 초과분)",
+            getValue: (v: Record<string, number>) =>
+              Math.max(
+                0,
+                v.amount * 10000 -
+                  Math.min(v.years * 150 * 10000, 300000 * 10000)
+              ),
+            format: (v: number) =>
+              v === 0
+                ? "비과세 범위 내"
+                : `약 ${Math.round(v / 10000).toLocaleString()}만원`,
+          },
+        ]}
+        note="※ 명예퇴직금 비과세 한도: 근속연수 × 150만원 (최대 3억원). 한도 초과분은 퇴직소득세 적용."
+      />
+      <p style={{ ...body, marginTop: 16, marginBottom: 16 }}>
+        과세 대상 금액이 나왔다면 실제 세금은 여기서 끝나지 않아요. 과세 대상에도 근속연수공제와 환산급여공제를 추가로 적용해요. 퇴직소득세는 근속 기간이 길수록 공제가 커지기 때문에, 실제 납부 세금은 계산기보다 더 적을 수 있어요.
+      </p>
+
+      <CategoryButton href="/w/퇴직금" label="퇴직금 완전 가이드 보기" />
+
+      <RelatedArticles
+        articles={[
+          { href: "/w/퇴직금-세금-몇프로", title: "퇴직금 세금 몇 퍼센트", desc: "퇴직소득세 계산기" },
+          { href: "/w/퇴직금-소득세", title: "퇴직금 소득세 계산", desc: "환급도 가능해요" },
+          { href: "/w/퇴직금-IRP-수령방법", title: "퇴직금 IRP 수령", desc: "연금 수령 시 30% 절세" },
+        ]}
+      />
 
       <Divider />
 
-      <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 소득세법을 바탕으로 작성됐어요. 세법 개정이 있을 수 있으니, 최신 기준은 국세청(126) 또는 홈택스에서 확인하세요." />
+      {/* 섹션 3: 퇴직소득세 계산 절차 */}
+      <H2>퇴직소득세 계산, 단계별로 따라가보세요</H2>
+      <p style={{ ...body, marginBottom: 16 }}>
+        과세 대상 금액이 있다면 퇴직소득세 계산이 필요해요. 복잡해 보이지만 순서대로 따라가면 어렵지 않아요. 회사 인사팀에서 원천징수를 대신 해주기 때문에 직접 신고할 일은 없지만, 세금이 얼마인지는 스스로 파악해두는 게 좋아요.
+      </p>
+      <Steps
+        steps={[
+          {
+            title: "비과세 한도 확인",
+            desc: "근속연수×150만원 계산",
+            tip: "근속 20년이면 3,000만원 비과세",
+          },
+          {
+            title: "과세 대상 금액 계산",
+            desc: "명예퇴직금 - 비과세 한도 = 과세 대상",
+            tip: "한도 이하면 세금 0",
+          },
+          {
+            title: "퇴직소득세 계산",
+            desc: "과세 대상에 근속연수공제+환산급여공제 후 세율 적용",
+            tip: "홈택스 모의계산 활용",
+          },
+          {
+            title: "IRP 절세 검토",
+            desc: "과세 대상이 크면 IRP로 받고 연금 수령 시 30% 절세",
+            tip: "명예퇴직금도 IRP 이전 가능",
+          },
+        ]}
+      />
+      <p style={{ ...body, marginTop: 16, marginBottom: 16 }}>
+        일반 퇴직금과 명예퇴직금은 합산해서 퇴직소득 계산에 반영해요. 두 금액을 따로 보지 않고, 전체 퇴직소득을 기준으로 공제와 세율을 적용해요. 명예퇴직금만 별도로 세금 계산을 하는 게 아니라는 점, 꼭 기억해두세요.
+      </p>
+
+      <Divider />
+
+      {/* 섹션 4: 필요 서류 */}
+      <H2>명예퇴직금 세금 관련 챙겨야 할 서류</H2>
+      <p style={{ ...body, marginBottom: 16 }}>
+        명예퇴직 후 세금 문제로 다툼이 생기거나 경정청구(세금 환급 신청)를 해야 할 때 필요한 서류예요. 퇴직 직후에 미리 챙겨두지 않으면 나중에 구하기 어려울 수 있어요.
+      </p>
+      <DocTable
+        docs={[
+          { name: "명예퇴직금 지급 계약서", required: true, where: "회사 인사팀" },
+          { name: "퇴직소득원천징수영수증", required: true, where: "회사 인사팀" },
+          { name: "근로계약서", required: true, where: "인사팀" },
+          { name: "근속증명서", required: false, where: "인사팀" },
+        ]}
+      />
+      <p style={{ ...body, marginTop: 16, marginBottom: 16 }}>
+        퇴직소득원천징수영수증은 세금 신고와 환급의 핵심 서류예요. 비과세 한도가 제대로 적용됐는지, 근속연수 계산이 맞는지 직접 들여다볼 수 있어요. 금액이 클수록 꼼꼼하게 검토하는 게 이득이에요.
+      </p>
+
+      <Divider />
+
+      {/* 섹션 5: 체크리스트 */}
+      <H2>명예퇴직금 세금 절차 체크리스트</H2>
+      <p style={{ ...body, marginBottom: 16 }}>
+        명예퇴직금을 받기 전후로 세금 처리를 빠뜨리지 않도록 체크해두세요. IRP 절세까지 챙기면 수백만 원 차이가 날 수 있어요.
+      </p>
+      <Checklist
+        items={[
+          "비과세 한도 계산 — 근속연수×150만원",
+          "한도 초과분 세금 계산",
+          "원천징수영수증 수령 확인",
+          "IRP 절세 검토 — 금액 크면 유리",
+          "소득세법 제22조 근거 확인",
+        ]}
+      />
+
+      <Divider />
+
+      {/* FAQ */}
+      <FAQ
+        items={[
+          {
+            q: "명예퇴직금은 일반 퇴직금과 세금이 어떻게 다른가요?",
+            a: "일반 퇴직금은 전액 퇴직소득세 대상이지만, 명예퇴직금은 근속연수×150만원까지 비과세 혜택이 있어요.",
+          },
+          {
+            q: "비과세 한도가 3억이면 근속연수가 얼마나 돼야 하나요?",
+            a: "3억 ÷ 150만원 = 200년이에요. 실제로는 최대 3억 한도가 있으니 장기 근속자도 3억까지만 비과세예요.",
+          },
+          {
+            q: "일반 퇴직금과 명예퇴직금 세금을 합산하나요?",
+            a: "합산해서 계산해요. 퇴직소득은 일반 퇴직금+명예퇴직금 전체를 합산한 뒤 공제를 적용해요.",
+          },
+          {
+            q: "명예퇴직금을 거부하고 계속 근무하면 어떻게 되나요?",
+            a: "거부는 가능해요. 회사가 강제 퇴직시키면 부당해고가 될 수 있어요.",
+          },
+          {
+            q: "명예퇴직금도 IRP로 받아야 하나요?",
+            a: "총 퇴직금(일반+명예)이 300만원을 초과하면 IRP 계좌로 이체해야 해요.",
+          },
+        ]}
+      />
+
+      <Divider />
+
+      {/* 출처 */}
+      <References
+        items={[
+          {
+            label: "소득세법 제22조 퇴직소득 비과세",
+            href: "https://www.law.go.kr/법령/소득세법",
+          },
+          {
+            label: "근로자퇴직급여보장법",
+            href: "https://www.law.go.kr/법령/근로자퇴직급여보장법",
+          },
+          {
+            label: "국세청",
+            href: "https://www.nts.go.kr",
+          },
+        ]}
+      />
+
+      <Disclaimer />
     </ArticleLayout>
   );
 }

@@ -1,233 +1,213 @@
 "use client";
-
-import {
-  H2, SectionBadge, GreenBox, BorderBox, Divider, body,
-  EligibilityChecker, Checklist, FAQ, References, Disclaimer,
-  ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
-} from "@/components/article-ui";
+import { H2, SectionBadge, GreenBox, BorderBox, Divider, body, Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer, ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd } from "@/components/article-ui";
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
-// ─── 데이터 ──────────────────────────────────────────
-
 const CHECK_ITEMS = [
-  { id: "c1", label: "퇴직 전 3개월에 무급휴직·단축근무가 있었어요" },
-  { id: "c2", label: "평균임금보다 통상임금이 더 높은 것 같아요" },
-  { id: "c3", label: "매달 고정으로 받는 수당(직책·자격·식대 등)이 있어요" },
-  { id: "c4", label: "회사가 평균임금만으로 퇴직금을 계산했어요" },
+  { id: "c1", label: "기본급 외 고정 수당이 있어요" },
+  { id: "c2", label: "평균임금이 통상임금보다 낮게 나왔어요" },
+  { id: "c3", label: "어떤 기준으로 계산하는 게 더 유리한지 모르겠어요" },
+  { id: "c4", label: "회사가 기본급만으로 퇴직금을 계산하고 있어요" },
 ];
-
+const CALC_SLIDERS = [
+  { id: "base", label: "월 기본급", min: 150, max: 500, step: 10, defaultValue: 280, format: (v: number) => `${v}만원` },
+  { id: "fixed", label: "고정 수당 합계 (월)", min: 0, max: 150, step: 5, defaultValue: 50, format: (v: number) => `${v}만원` },
+];
+const CALC_RESULTS = [
+  { label: "통상임금 기준 퇴직금 (1년)", getValue: (v: Record<string, number>) => (v.base + v.fixed) * 10000, format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원/년`, highlight: true },
+  { label: "기본급만 기준 퇴직금 (1년)", getValue: (v: Record<string, number>) => v.base * 10000, format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원/년` },
+];
+const DOCS = [
+  { name: "근로계약서 (수당 내역 포함)", required: true, where: "인사팀 또는 입사 시 수령본" },
+  { name: "급여명세서 (최근 3개월)", required: true, where: "회사 인사팀" },
+  { name: "상여금 지급 규정", required: false, where: "인사팀" },
+  { name: "수당 지급 기준 서류", required: false, where: "취업규칙 또는 인사팀" },
+];
+const STEPS = [
+  { title: "평균임금 계산", desc: "퇴직 전 3개월 총임금(기본급+상여금+수당) ÷ 3개월 총 일수로 1일 평균임금을 구해요. 이 값으로 퇴직금을 계산하면 평균임금 기준 퇴직금이 나와요.", tip: "상여금은 연간 총액 ÷ 12로 환산해서 포함" },
+  { title: "통상임금 계산", desc: "기본급 + 정기적·일률적·고정적으로 지급되는 수당의 합이에요. 성과급처럼 지급 여부가 불확실한 건 빠져요. 매월 고정 지급되는 식대·교통비·직책수당은 포함돼요.", tip: "통상임금은 1시간치로 환산해서 계산하기도 해요" },
+  { title: "높은 쪽 선택", desc: "평균임금 기준과 통상임금 기준 퇴직금 중 높은 쪽을 선택할 수 있어요. 근로기준법 제2조 2항이 이를 허용해요. 두 금액을 모두 계산해서 비교해보세요.", tip: "고정 수당이 많을수록 통상임금 기준이 유리해요" },
+  { title: "퇴직금 청구", desc: "선택한 기준으로 회사에 지급을 요청해요. 회사가 거부하면 고용노동부에 진정을 낼 수 있어요. 소멸시효 3년 이내에 청구해야 해요.", tip: "청구 내용을 문서로 남겨두세요" },
+];
 const CHECKLIST = [
-  "근로계약서 — 기본급, 고정수당 항목과 금액 확인",
-  "급여명세서 3개월분 — 평균임금 산출용",
-  "취업규칙 또는 단체협약 — 상여금·수당 지급 기준",
-  "통상임금 산출 메모 — 시급 환산 기준 (월 209시간)",
-  "퇴직금 산출 내역서 — 회사가 어떤 기준을 적용했는지 확인",
+  "통상임금 구성 — 정기·일률·고정 수당만 포함",
+  "평균임금도 계산 — 두 가지 비교",
+  "높은 쪽으로 청구 — 근로기준법 허용",
+  "고정 수당 입증 — 근로계약서·취업규칙",
+  "IRP 계좌 — 300만원 초과 시 필수",
 ];
-
 const FAQS = [
-  {
-    q: "통상임금이 평균임금보다 높으면 자동으로 적용되나요?",
-    a: "법적으로는 자동 적용돼요. 근로기준법 제2조 제2항이 보장하죠. 다만 회사가 모르고 평균임금으로만 계산하는 경우가 많으니, 직접 비교해서 이의를 제기해야 해요.",
-  },
-  {
-    q: "식대와 교통비도 통상임금에 포함되나요?",
-    a: "전 직원에게 매달 일률적으로 지급되면 포함돼요. 실비 정산 방식(영수증 제출)이면 제외되죠. 지급 방식이 핵심이에요.",
-  },
-  {
-    q: "포괄임금제에서 통상임금은 어떻게 계산하나요?",
-    a: "포괄임금에 포함된 고정 초과근로수당 부분을 분리해서, 기본급과 고정수당만으로 통상임금을 산출해요. 근로계약서에 명시된 구성 항목을 기준으로 하죠.",
-  },
-  {
-    q: "통상임금 기준으로 퇴직금을 다시 받을 수 있나요?",
-    a: "이미 퇴직금을 받았더라도 소멸시효(3년) 내라면 차액을 청구할 수 있어요. 회사에 서면 요청 후 거부하면 노동청 진정이나 민사소송이 가능하죠.",
-  },
-  {
-    q: "상여금은 통상임금에 들어가나요?",
-    a: "정기적·일률적·고정적으로 지급되는 상여금은 들어가요. 2013년 대법원 전원합의체 판결 이후 정기 상여금의 통상임금 포함이 확립됐죠. 실적 연동 성과급은 고정성이 없어서 제외돼요.",
-  },
+  { q: "통상임금이 뭔가요?", a: "기본급에 정기적·일률적·고정적으로 지급되는 수당을 더한 금액이에요. 성과급처럼 지급 여부가 불확실한 건 포함 안 돼요." },
+  { q: "평균임금과 통상임금 중 어느 게 더 높게 나오나요?", a: "야근수당이 많은 달이 포함되면 평균임금이 높고, 기본급 외 고정수당이 많으면 통상임금이 높을 수 있어요." },
+  { q: "식대 20만원이 통상임금에 포함되나요?", a: "매월 모든 근로자에게 정기적·일률적으로 지급된다면 통상임금에 해당해요." },
+  { q: "성과급은 통상임금인가요?", a: "원칙적으로 아니에요. 지급 여부와 금액이 실적에 따라 달라지면 고정성이 없어서 제외돼요." },
+  { q: "회사가 통상임금 기준 적용을 거부하면?", a: "고용노동부에 진정을 낼 수 있어요. 증빙 서류를 갖추고 이의를 제기하세요." },
 ];
-
 const REFERENCES = [
-  {
-    category: "법령",
-    items: [
-      { label: "근로기준법 제2조 — 평균임금·통상임금의 정의", url: "https://www.law.go.kr/법령/근로기준법" },
-      { label: "근로기준법 시행령 제6조 — 통상임금의 산정 기준", url: "https://www.law.go.kr/법령/근로기준법시행령" },
-    ],
-  },
-  {
-    category: "판례",
-    items: [
-      { label: "대법원 2013다4355 전원합의체 — 정기 상여금 통상임금 포함", url: "https://glaw.scourt.go.kr" },
-    ],
-  },
-  {
-    category: "공식 자료",
-    items: [
-      { label: "고용노동부 — 통상임금 산정 지침", url: "https://www.moel.go.kr" },
-    ],
-  },
+  { category: "법령", items: [{ label: "근로기준법 제2조 — 통상임금·평균임금 정의", url: "https://www.law.go.kr/법령/근로기준법" }] },
+  { category: "공식 자료", items: [{ label: "고용노동부 — 통상임금 산정 지침", url: "https://www.moel.go.kr" }] },
 ];
-
 const RELATED = [
-  {
-    slug: "통상임금-퇴직금-계산",
-    title: "통상임금 기준 퇴직금 계산 예시",
-    description: "통상임금으로 퇴직금을 계산하는 구체적인 과정을 보여드려요.",
-  },
-  {
-    slug: "퇴직금-평균임금",
-    title: "퇴직금 평균임금 개념과 계산법",
-    description: "평균임금의 정의, 포함 항목, 산정 방법을 기초부터 정리했어요.",
-  },
-  {
-    slug: "퇴직금-상여금-포함",
-    title: "퇴직금에 상여금이 포함되나요?",
-    description: "정기 상여금과 비정기 상여금의 포함 기준을 구분해서 정리했어요.",
-  },
+  { slug: "통상임금-퇴직금-계산", title: "통상임금 vs 기본급 퇴직금 비교", description: "두 기준 차이와 유리한 방법 선택." },
+  { slug: "퇴직금-평균임금", title: "퇴직금 평균임금 계산", description: "3개월 평균임금 포함 항목 정리." },
+  { slug: "퇴직금-상여금-포함", title: "상여금 퇴직금 포함 여부", description: "상여금 환산 방법과 기준." },
 ];
-
-// ─── 페이지 ──────────────────────────────────────────
 
 export default function Page() {
   return (
     <ArticleLayout
-      sidebar={
-        <Sidebar
-          heading="퇴직금 가이드"
-          items={퇴직금_SIDEBAR}
-          currentSlug="퇴직금-통상임금-계산"
-        />
-      }
+      sidebar={<Sidebar data={퇴직금_SIDEBAR} currentSlug="퇴직금-통상임금-계산" />}
     >
-      <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 근로기준법 · 평균임금</p>
+      {/* 브레드크럼 */}
+      <p style={{ fontSize: 13, color: "#6B7280", marginBottom: 8 }}>퇴직금 · 통상임금 · 계산기준</p>
 
-      <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
-        퇴직금 통상임금 계산,<br />
-        평균임금이랑 뭐가 다른가요?
+      {/* H1 */}
+      <h1 style={{ fontSize: 26, fontWeight: 800, lineHeight: 1.35, color: "#111827", marginBottom: 6 }}>
+        퇴직금 계산, 통상임금으로 하면 더 받을 수 있나요?
       </h1>
-
-      <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
-        &ldquo;통상임금이 평균임금보다 높다는데, 그러면 퇴직금도 더 받을 수 있나요?&rdquo;<br />
-        맞아요, 받을 수 있죠.
-        <a href="https://www.law.go.kr/법령/근로기준법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로기준법 제2조 제2항</a>은 평균임금이 통상임금보다 낮으면 통상임금을 평균임금으로 적용하도록 정하고 있어요.
-        퇴직 전 3개월에 무급휴직이나 급여 삭감이 있었다면 평균임금이 비정상적으로 낮아질 수 있는데, 이때 통상임금이 안전망이 되죠.
-        통상임금의 정의, 포함 항목, 평균임금과의 비교, 적용 조건까지 순서대로 정리해드릴게요.
+      <p style={{ fontSize: 16, color: "#374151", marginBottom: 20, lineHeight: 1.6 }}>
+        평균임금 vs 통상임금 비교부터 유리한 기준 선택까지
       </p>
+
+      <EligibilityChecker
+        title="이런 상황이라면 통상임금 기준이 유리해요"
+        items={CHECK_ITEMS}
+        threshold={2}
+        positiveMessage="통상임금 기준으로 계산하면 퇴직금이 더 높게 나올 가능성이 높아요."
+        negativeMessage="평균임금 기준도 함께 계산해서 더 높은 쪽을 선택하면 돼요."
+      />
+
+      <ArticleAd slot="intro" />
 
       <Divider />
-      <ArticleAd position="intro" />
 
-      {/* 섹션 1 */}
-      <H2>통상임금이란 정확히 뭔가요?</H2>
+      {/* H2 1 — 통상임금 기준 설명 */}
+      <H2>퇴직금 계산에 쓰이는 두 가지 임금 기준</H2>
+
       <p style={body}>
-        <a href="https://www.law.go.kr/법령/근로기준법시행령" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로기준법 시행령 제6조</a>에 따르면, 통상임금은 &ldquo;근로자에게 정기적이고 일률적으로 소정근로 또는 총근로에 대하여 지급하기로 정한 시간급·일급·주급·월급 또는 도급 금액&rdquo;이에요.
+        퇴직금은 평균임금을 기준으로 계산하는 게 원칙이에요. 퇴직 전 3개월 동안 받은 총임금을 그 기간의 총 일수로 나눠서 하루치를 구하고, 거기에 근무일수를 곱해요. 문제는 이 3개월 안에 야근이 적었거나 상여금 지급이 없었다면 평균임금이 실제 임금보다 낮게 나올 수 있다는 거예요.
       </p>
       <p style={body}>
-        핵심 키워드 세 가지가 있어요. <strong>정기성</strong>(일정한 간격으로 지급), <strong>일률성</strong>(모든 근로자 또는 일정 조건을 충족하는 근로자에게 지급), <strong>고정성</strong>(실적이나 성과에 관계없이 확정된 금액)이죠. 이 세 가지를 모두 충족하는 임금만 통상임금이에요.
+        그래서 <a href="/w/통상임금-뜻" style={{ color: "#1D9E75" }}>통상임금</a>이라는 개념이 따로 있어요. 기본급에 정기적·일률적·고정적으로 지급되는 수당을 더한 금액인데, 매달 변동이 없는 식대·교통비·직책수당 같은 것들이 여기 해당해요. <a href="https://www.law.go.kr/법령/근로기준법" style={{ color: "#1D9E75" }} target="_blank" rel="noopener noreferrer">근로기준법 제2조</a>는 평균임금이 통상임금보다 낮은 경우 통상임금을 퇴직금 계산 기준으로 쓸 수 있도록 해뒀어요.
       </p>
       <p style={body}>
-        통상임금은 연장·야간·휴일근로수당, 해고예고수당, 연차수당 등의 산정 기준이 되는 &ldquo;기본 단가&rdquo; 같은 개념이에요. 퇴직금에서는 평균임금의 하한선 역할을 하죠. 평균임금이 아무리 낮아도 통상임금 이하로는 내려갈 수 없어요.
+        즉, 두 가지 기준 중 높은 쪽을 고르면 돼요. 고정 수당이 월급에서 큰 비중을 차지하는 사람일수록 통상임금 기준이 유리하게 나오는 경우가 많아요. 직접 계산해보기 전엔 어느 쪽이 더 높은지 알기 어렵기 때문에 두 가지를 모두 계산해보는 게 중요해요.
       </p>
 
-      <GreenBox title="통상임금 3요건">
-        1. <strong>정기성</strong> — 일정한 주기(매월, 매분기 등)로 지급<br />
-        2. <strong>일률성</strong> — 전 직원 또는 특정 조건 충족자 모두에게 지급<br />
-        3. <strong>고정성</strong> — 실적과 무관하게 확정된 금액
+      <GreenBox title="통상임금에 포함되는 항목 vs 제외 항목">
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+          <div>
+            <p style={{ fontWeight: 700, color: "#1D9E75", marginBottom: 6, fontSize: 14 }}>포함 항목</p>
+            <ul style={{ margin: 0, paddingLeft: 16, fontSize: 14, lineHeight: 1.8 }}>
+              <li>기본급</li>
+              <li>매월 고정 식대</li>
+              <li>교통비 (고정 지급)</li>
+              <li>직책수당·직무수당</li>
+              <li>고정 자격수당</li>
+            </ul>
+          </div>
+          <div>
+            <p style={{ fontWeight: 700, color: "#EF4444", marginBottom: 6, fontSize: 14 }}>제외 항목</p>
+            <ul style={{ margin: 0, paddingLeft: 16, fontSize: 14, lineHeight: 1.8 }}>
+              <li>성과급·인센티브</li>
+              <li>초과근무수당 (연장·야간·휴일)</li>
+              <li>불규칙 상여금</li>
+              <li>실비변상적 수당 (실비 식대 등)</li>
+              <li>복리후생적 급여</li>
+            </ul>
+          </div>
+        </div>
       </GreenBox>
 
       <Divider />
 
-      {/* 섹션 2 */}
-      <H2>통상임금에 포함되는 항목은?</H2>
+      {/* H2 2 — 비교 계산기 */}
+      <H2>통상임금 기준 퇴직금 계산기 (1년 기준 비교)</H2>
+
       <p style={body}>
-        기본급이 가장 대표적이죠. 그 외에 직책수당, 자격수당, 근속수당, 가족수당(전 직원 일률 지급 시)이 통상임금에 들어가요. 매달 고정으로 나오고, 모든 직원에게 같은 기준으로 지급되며, 실적과 상관없는 금액이니까 세 가지 요건을 충족하죠.
+        기본급과 고정 수당을 입력하면 통상임금 기준 퇴직금과 기본급만 적용했을 때의 차이를 바로 볼 수 있어요. 실제로 얼마나 차이 나는지 수치로 확인해보세요. 고정 수당이 월 30만원만 돼도 1년 기준으로 30만원 이상 차이가 날 수 있어요.
       </p>
       <p style={body}>
-        정기 상여금도 통상임금에 포함돼요. 2013년 대법원 전원합의체 판결(2013다4355) 이후로 &ldquo;정기적·일률적·고정적으로 지급되는 상여금은 통상임금&rdquo;이라는 기준이 확립됐죠. 연 400% 상여금이라면 월 기본급의 400/12%를 시급으로 환산해서 넣어요.
-      </p>
-      <p style={body}>
-        반면 <strong>제외되는 항목</strong>은 실적 연동 성과급, 경영 성과에 따른 일시금, 경조사비, 체력단련비 같은 것이에요. 고정성이 없거나 일률성이 없으면 통상임금이 아니죠. 식대·교통비는 전 직원에게 매달 같은 금액을 주면 포함, 영수증 실비 정산이면 제외돼요.
+        이 계산기는 1년 근무 기준이에요. 근무 기간이 길수록 차이가 더 크게 벌어지고, 매년 연속으로 차이가 쌓이기 때문에 장기 근속자일수록 꼭 통상임금 기준을 따져보는 게 좋아요.
       </p>
 
-      <BorderBox title="통상임금 시급 환산">
-        월 통상임금 = 기본급 + 고정수당 + 정기상여금(월할)<br />
-        시급 = 월 통상임금 / 209시간 (주 40시간 기준)<br />
-        1일 통상임금 = 시급 x 8시간
-      </BorderBox>
-
-      {/* ── 섹션 2 끝 → 버튼 + 관련 글 ── */}
-      <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/퇴직금" />
-      <RelatedArticles items={RELATED} />
-      <ArticleAd position="mid" />
-
-      <Divider />
-
-      {/* 섹션 3 */}
-      <H2>통상임금과 평균임금, 어느 쪽이 유리한가요?</H2>
-      <p style={body}>
-        일반적으로는 평균임금이 더 높아요. 평균임금에는 연장근로수당, 야간수당, 휴일수당 같은 변동 항목까지 포함되니까요. 정상적으로 근무한 3개월이라면 대부분 평균임금 &gt; 통상임금이죠.
-      </p>
-      <p style={body}>
-        통상임금이 유리해지는 건 퇴직 전 3개월에 <strong>이상 상황</strong>이 있었을 때예요. 무급휴직, 단축근무, 임금 삭감 등으로 실제 받은 급여가 줄었다면 평균임금이 비정상적으로 낮아지죠. 이때 고정급만으로 계산하는 통상임금이 오히려 높아질 수 있어요.
-      </p>
-      <p style={body}>
-        예를 들어 <a href="/w/퇴직금-평균임금" style={{ color: "#1D9E75", textDecoration: "underline" }}>월 기본급 300만 원 + 직책수당 20만 원</a>인 근로자가 퇴직 전 2개월을 무급휴직했다면, 평균임금은 1개월분 급여만으로 계산되니까 크게 낮아져요. 하지만 통상임금은 320만 원 기준이라 그쪽이 유리하죠.
-      </p>
-      <p style={body}>
-        양쪽을 직접 계산해서 비교해보세요. 평균임금이 통상임금보다 낮으면 회사에 &ldquo;통상임금 기준 적용&rdquo;을 서면으로 요청하면 돼요. 법이 보장하는 권리라서 회사가 거부할 근거가 없어요.
-      </p>
-
-      <SectionBadge>내 상황에 해당되는지 체크해보세요</SectionBadge>
-      <EligibilityChecker
-        items={CHECK_ITEMS}
-        allMatchText="4가지 다 해당되네요. 통상임금이 평균임금보다 높을 가능성이 커요. 양쪽을 계산해서 비교한 뒤 회사에 재산정을 요청하세요."
-        partialMatchText="일부만 해당돼요. 먼저 양쪽 금액을 각각 산출해서 어느 쪽이 유리한지 비교해보세요."
+      <Calculator
+        sliders={CALC_SLIDERS}
+        results={CALC_RESULTS}
+        title="통상임금 vs 기본급 퇴직금 비교"
+        description="월 기본급과 고정 수당을 조절해서 1년치 퇴직금 차이를 확인해요"
       />
 
-      <Divider />
-
-      {/* 섹션 4 */}
-      <H2>통상임금 기준 적용이 가능한 경우는?</H2>
-      <p style={body}>
-        근로기준법 제2조 제2항의 &ldquo;평균임금이 통상임금보다 적으면 그 통상임금액을 평균임금으로 한다&rdquo;는 규정이 적용 근거예요. 별도 조건이 없어요. 평균임금 &lt; 통상임금이면 자동으로 통상임금이 기준이 되는 거죠.
-      </p>
-      <p style={body}>
-        실무에서는 회사가 이 규정을 모르거나 무시하는 경우가 많아요. 그래서 근로자가 직접 양쪽을 계산해서 비교한 뒤, &ldquo;통상임금이 더 높으니 재산정해달라&rdquo;고 요청해야 하죠. 이메일이나 내용증명으로 서면 기록을 남기세요.
-      </p>
-      <p style={body}>
-        이미 퇴직금을 받은 뒤라도 소멸시효(3년) 내라면 차액을 청구할 수 있어요. 회사가 거부하면 관할 노동관서에 진정을 넣거나 민사소송으로 차액을 받을 수 있죠. 증거(급여명세서, 근로계약서, 퇴직금 산출 내역)를 잘 보관해두세요.
-      </p>
+      <ArticleAd slot="mid" />
 
       <Divider />
 
-      {/* 섹션 5 */}
-      <H2>통상임금 계산이 잘못된 경우 대처법은?</H2>
+      {/* H2 3 — 서류 */}
+      <H2>통상임금 기준 퇴직금을 청구할 때 필요한 서류</H2>
+
       <p style={body}>
-        먼저 근로계약서와 급여명세서를 대조해서 통상임금에 포함돼야 할 항목이 빠졌는지 점검하세요. 정기 상여금, 직책수당, 자격수당이 누락된 경우가 가장 많아요. 포함 여부가 애매한 항목은 &ldquo;정기성·일률성·고정성&rdquo; 세 가지 요건으로 판단하면 되죠.
+        통상임금 기준 퇴직금을 청구하려면 어떤 수당이 정기적·고정적으로 지급됐는지 증명해야 해요. 회사가 자체적으로 기본급만 기준으로 계산했을 때 이의를 제기하려면 근로계약서와 급여명세서가 핵심 증거가 돼요.
       </p>
       <p style={body}>
-        회사에 서면으로 이의를 제기하세요. &ldquo;근로계약서상 이 수당은 정기적·고정적으로 지급되므로 통상임금에 포함돼야 한다&rdquo;고 구체적으로 적어야 해요. 구두로만 이야기하면 기록이 안 남아서 나중에 불리해지죠.
-      </p>
-      <p style={body}>
-        회사가 응하지 않으면 <a href="/w/퇴직금-미지급-신고" style={{ color: "#1D9E75", textDecoration: "underline" }}>관할 지방노동관서</a>에 진정을 넣어요. 근로감독관이 임금 구성 항목을 조사해서 통상임금을 재산정하죠. 통상임금 관련 분쟁은 2013년 대법원 판결 이후 기준이 명확해져서, 정기 상여금 포함은 거의 확정적이에요.
+        급여명세서는 최근 3개월치만 있어도 되지만, 수당 지급이 오래전부터 지속됐다는 걸 보여줄 수 있다면 더 오랜 기간의 자료를 갖추는 게 유리해요. 취업규칙이나 연봉계약서에 수당 지급 규정이 명시돼 있다면 가장 강력한 근거가 돼요.
       </p>
 
-      <SectionBadge>서류 체크리스트</SectionBadge>
-      <Checklist items={CHECKLIST} />
+      <DocTable docs={DOCS} />
 
       <Divider />
 
-      <H2>자주 묻는 것들</H2>
-      <p style={{ ...body, marginBottom: 14 }}>
-        퇴직금 통상임금 계산과 관련해서 실제로 자주 나오는 질문만 골랐어요.
+      {/* H2 4 — 절차 */}
+      <H2>유리한 기준으로 퇴직금 받는 4단계 절차</H2>
+
+      <p style={body}>
+        평균임금과 통상임금 중 어느 게 유리한지 직접 계산해보고, 높은 쪽을 기준으로 회사에 청구하는 게 핵심이에요. 이 과정이 처음엔 복잡해 보이지만, 단계별로 따라가면 어렵지 않아요.
       </p>
+      <p style={body}>
+        특히 회사가 처음부터 기본급만으로 계산해서 지급하려 한다면, 절차 4단계에서 고용노동부 진정을 활용해야 해요. <a href="/w/퇴직금-지급기한" style={{ color: "#1D9E75" }}>퇴직금 지급기한</a>은 퇴직 후 14일이에요. 이 기간이 지나면 연 20% 지연이자가 붙기 때문에 늦어질수록 회사 입장에서도 부담이 커져요.
+      </p>
+
+      <Steps steps={STEPS} />
+
+      <CategoryButton category="퇴직금" slug="퇴직금-통상임금-계산" />
+      <RelatedArticles articles={RELATED} />
+
+      <Divider />
+
+      {/* H2 5 — 체크리스트 */}
+      <H2>퇴직금 계산 기준 최종 점검 체크리스트</H2>
+
+      <p style={body}>
+        퇴직금을 받기 전에 아래 항목들을 한 번씩 짚어보세요. 특히 고정 수당이 있는데 회사가 기본급만으로 계산했다면 이의 제기를 통해 차액을 받을 수 있는 경우가 적지 않아요.
+      </p>
+      <p style={body}>
+        퇴직금이 300만원을 넘으면 IRP(개인형 퇴직연금) 계좌로만 받을 수 있어요. 미리 계좌를 만들어두지 않으면 지급이 지연될 수 있으니 퇴직 전에 준비해두는 게 좋아요. <a href="/w/퇴직금-IRP-계좌" style={{ color: "#1D9E75" }}>IRP 계좌 개설 방법</a>은 따로 정리돼 있어요.
+      </p>
+
+      <Checklist items={CHECKLIST} title="퇴직금 계산 기준 체크리스트" />
+
+      <GreenBox title="핵심 요약">
+        <ul style={{ margin: 0, paddingLeft: 16, fontSize: 14, lineHeight: 2 }}>
+          <li><strong>통상임금</strong> = 기본급 + 정기·일률·고정 수당 (성과급·초과수당 제외)</li>
+          <li><strong>평균임금</strong> = 퇴직 전 3개월 총임금 ÷ 총 일수</li>
+          <li>두 기준 중 <strong>높은 쪽</strong>으로 청구 가능 (근로기준법 제2조)</li>
+          <li>회사 거부 시 <strong>고용노동부 진정</strong> 가능, 소멸시효 3년</li>
+        </ul>
+      </GreenBox>
+
+      <Divider />
+
+      {/* H2 6 — FAQ */}
+      <H2>자주 묻는 질문</H2>
+
+      <p style={body}>
+        통상임금과 평균임금의 차이가 헷갈리는 분들이 많아요. 가장 많이 받는 질문들을 정리했어요. 내 상황과 비슷한 케이스가 있다면 참고해보세요.
+      </p>
+
       <FAQ items={FAQS} />
 
       <Divider />
 
-      <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로기준법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니, 최신 기준은 고용노동부(moel.go.kr)나 관할 노동관서(1350)에서 확인하세요." />
+      <References sections={REFERENCES} />
+      <Disclaimer />
     </ArticleLayout>
   );
 }

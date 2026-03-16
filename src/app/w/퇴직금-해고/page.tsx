@@ -2,38 +2,95 @@
 
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
-  EligibilityChecker, Checklist, FAQ, References, Disclaimer,
+  Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
   ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
 const CHECK_ITEMS = [
-  { id: "c1", label: "해고 전 1년 이상 근무했어요" },
-  { id: "c2", label: "주 평균 15시간 이상 일했어요" },
-  { id: "c3", label: "해고 통보를 받았거나 이미 해고됐어요" },
-  { id: "c4", label: "퇴직 후 아직 3년이 지나지 않았어요" },
+  { id: "c1", label: "해고 통보를 받았어요" },
+  { id: "c2", label: "해고 사유가 부당하다고 생각해요" },
+  { id: "c3", label: "해고 시 퇴직금을 받을 수 있는지 궁금해요" },
+  { id: "c4", label: "해고예고수당이 무엇인지 알고 싶어요" },
+];
+
+const CALC_SLIDERS = [
+  { id: "salary", label: "월 평균급여", min: 200, max: 600, step: 50, defaultValue: 300, format: (v: number) => `${v}만원` },
+  { id: "years", label: "근속 기간", min: 1, max: 20, step: 1, defaultValue: 3, format: (v: number) => `${v}년` },
+];
+
+const CALC_RESULTS = [
+  {
+    label: "해고 시 예상 퇴직금",
+    getValue: (v: Record<string, number>) => v.salary * 10000 * v.years,
+    format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원`,
+    highlight: true,
+  },
+  {
+    label: "해고예고수당 (30일분, 30일 전 통보 없을 시)",
+    getValue: (v: Record<string, number>) => v.salary * 10000,
+    format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원`,
+  },
+];
+
+const DOCS = [
+  { name: "해고 통보서 또는 해고 통지 문자·이메일", required: true, where: "회사로부터 수령" },
+  { name: "근로계약서", required: true, where: "회사 인사팀" },
+  { name: "급여명세서 (최근 3개월)", required: true, where: "회사 인사팀 또는 급여앱" },
+  { name: "IRP 계좌번호 (300만원 초과 시)", required: true, where: "은행·증권사 개설" },
+];
+
+const STEPS = [
+  {
+    title: "해고 정당성 확인",
+    desc: "해고는 정당한 이유가 있어야 해요. 단순 성격 차이, 능률 저하, 경영상 어려움만으로는 해고가 어려워요. 서면 통지 없는 해고도 절차 위반이에요. 부당해고라면 노동위원회에 구제신청을 할 수 있어요.",
+    tip: "해고 통보는 반드시 서면으로 이유를 명시해야 해요",
+  },
+  {
+    title: "퇴직금과 해고예고수당 확인",
+    desc: "해고여도 1년 이상 근무했다면 퇴직금을 받아야 해요. 해고 30일 전 예고 없이 즉시 해고하면 30일분 통상임금을 해고예고수당으로 받을 수 있어요. 퇴직금은 해고 후 14일 이내에 지급해야 해요.",
+    tip: "해고예고수당은 즉시 해고 시에만 발생해요",
+  },
+  {
+    title: "부당해고 구제신청",
+    desc: "해고일로부터 3개월 이내에 노동위원회에 구제신청을 할 수 있어요. 구제 인정 시 원직 복직 또는 해고 기간 임금 상당액을 받을 수 있어요. 5인 미만 사업장은 부당해고 구제신청이 불가하지만 민사소송은 가능해요.",
+    tip: "3개월 기한이 지나면 구제신청이 불가해요 — 바로 신청하세요",
+  },
+  {
+    title: "실업급여 신청",
+    desc: "해고는 비자발적 이직이어서 실업급여 수급 자격이 생겨요. 고용보험 피보험기간 180일 이상이면 신청 가능해요. 퇴직일 다음 날부터 12개월 이내에 신청해야 해요.",
+    tip: "고용24(www.work24.go.kr)에서 실업급여 신청 가능",
+  },
+];
+
+const CHECKLIST = [
+  "퇴직금 — 해고여도 1년 이상이면 지급 의무",
+  "해고예고수당 — 30일 전 예고 없으면 30일분 통상임금",
+  "부당해고 구제신청 — 해고일로부터 3개월 이내",
+  "실업급여 — 해고 시 바로 신청 가능",
+  "퇴직금 지급 기한 — 해고 후 14일 이내",
 ];
 
 const FAQS = [
   {
-    q: "징계 해고를 당해도 퇴직금을 받을 수 있나요?",
-    a: "네, 받을 수 있어요. 해고 사유가 무엇이든 1년 이상 근무하고 주 15시간 이상 일했다면 퇴직금은 발생하죠. 징계 해고라고 해서 퇴직금이 없어지는 건 아니에요.",
+    q: "해고당해도 퇴직금을 받을 수 있나요?",
+    a: "맞아요. 해고는 근로 종료 사유 중 하나이고, 1년 이상 근무했다면 퇴직금 지급 의무가 있어요. 징계 해고여도 동일해요.",
   },
   {
-    q: "해고 예고 없이 잘리면 퇴직금 외에 다른 보상이 있나요?",
-    a: "30일 전 해고 예고를 하지 않으면 30일분 이상의 통상임금을 해고예고수당으로 지급해야 해요. 퇴직금과 별도이니, 둘 다 청구할 수 있죠.",
+    q: "즉시 해고를 당했어요, 무엇을 더 받을 수 있나요?",
+    a: "30일 전 예고 없이 즉시 해고하면 30일분 통상임금(해고예고수당)을 받을 수 있어요. 퇴직금과 별개로 추가 청구 가능해요.",
   },
   {
-    q: "부당해고인데도 퇴직금을 받아야 하나요?",
-    a: "부당해고 구제신청과 퇴직금 청구는 별개 문제예요. 부당해고가 인정되면 복직이 원칙이지만, 복직을 원하지 않는다면 퇴직금을 받고 끝내는 것도 가능하죠.",
+    q: "부당해고라고 생각해요, 어떻게 해야 하나요?",
+    a: "해고일로부터 3개월 이내에 지방노동위원회에 부당해고 구제신청을 해야 해요. 구제 인정 시 복직 또는 임금 상당액을 받을 수 있어요.",
   },
   {
-    q: "해고 당일 퇴직금을 달라고 할 수 있나요?",
-    a: "법적 기한은 퇴직일로부터 14일이에요. 해고 당일 즉시 지급을 요구할 수는 있지만, 회사는 14일까지 시간이 있죠. 14일이 넘으면 연 20% 지연이자가 붙어요.",
+    q: "해고 통보를 말로만 받았는데 유효한가요?",
+    a: "아니에요. 해고는 서면으로 해고 사유와 시기를 명시해야 해요. 서면 통지 없는 해고는 절차 위반으로 부당해고에 해당할 수 있어요.",
   },
   {
-    q: "해고 후 회사가 연락이 안 돼요. 어떻게 하나요?",
-    a: "고용노동부(1350)에 퇴직금 미지급 진정을 넣으세요. 근로감독관이 사업주를 추적·조사해요. 회사가 폐업했다면 체당금 제도를 활용할 수 있죠.",
+    q: "5인 미만 사업장에서 해고당했어요",
+    a: "5인 미만은 근로기준법 부당해고 조항(제23조)이 적용 안 돼요. 노동위원회 구제신청도 불가해요. 하지만 퇴직금·해고예고수당 지급 의무는 있어요. 민사소송으로 다툴 수 있어요.",
   },
 ];
 
@@ -41,158 +98,131 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로기준법 제26조 — 해고의 예고", url: "https://www.law.go.kr/법령/근로기준법" },
-      { label: "근로기준법 제36조 — 금품 청산", url: "https://www.law.go.kr/법령/근로기준법" },
-      { label: "근로자퇴직급여 보장법", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+      { label: "근로기준법 제23조 — 부당해고 금지", url: "https://www.law.go.kr/법령/근로기준법" },
+      { label: "근로기준법 제26조 — 해고예고 30일", url: "https://www.law.go.kr/법령/근로기준법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용노동부 — 해고 관련 안내", url: "https://www.moel.go.kr" },
+      { label: "고용노동부 — 부당해고 구제신청 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
 
 const RELATED = [
-  {
-    slug: "퇴직금-지급-기한",
-    title: "퇴직금 지급 기한 14일 원칙",
-    description: "퇴직금 지급 기한과 위반 시 대응 방법을 정리했어요.",
-  },
-  {
-    slug: "해고-근로자-임금-퇴직금-지급-기한",
-    title: "해고 근로자 임금·퇴직금 지급 기한",
-    description: "해고 시 임금과 퇴직금 지급 기한이 동일한지 정리했어요.",
-  },
-  {
-    slug: "퇴직금-미지급-신고",
-    title: "퇴직금 미지급 신고 방법",
-    description: "퇴직금을 안 주면 어디에 어떻게 신고하는지 정리했어요.",
-  },
+  { slug: "퇴직금-미지급-신고", title: "퇴직금 못 받았을 때", description: "고용노동부 진정 절차 안내." },
+  { slug: "퇴직금-지급-기한", title: "퇴직금 지급 기한 14일", description: "해고 후 14일 이내 지급 원칙." },
+  { slug: "퇴직금-수령방법", title: "퇴직금 수령 방법", description: "IRP 계좌로 안전하게 받는 방법." },
 ];
 
 export default function Page() {
-  return (
-    <ArticleLayout
-      sidebar={
-        <Sidebar
-          heading="퇴직금 가이드"
-          items={퇴직금_SIDEBAR}
-          currentSlug="퇴직금-해고"
-        />
-      }
-    >
-      <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 해고 · 지급기한</p>
+  const sidebar = <Sidebar data={퇴직금_SIDEBAR} currentSlug="퇴직금-해고" />;
 
-      <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
-        해고 시 퇴직금,<br />
-        바로 받을 수 있나요?
+  return (
+    <ArticleLayout sidebar={sidebar}>
+      {/* 브레드크럼 */}
+      <div style={{ fontSize: 13, color: "#6b7280", marginBottom: 12 }}>
+        퇴직금 · 해고 · 권리
+      </div>
+
+      {/* 헤딩 */}
+      <h1 style={{ fontSize: 28, fontWeight: 800, lineHeight: 1.35, color: "#111827", marginBottom: 8 }}>
+        해고당했어요, 퇴직금을 받을 수 있나요?
+        <br />
+        <span style={{ fontSize: 20, fontWeight: 600, color: "#1D9E75" }}>
+          해고예고수당·부당해고 구제까지 한 번에
+        </span>
       </h1>
 
-      <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
-        갑자기 해고 통보를 받으면 퇴직금이 제대로 나올지 걱정되죠.
-        해고 사유가 무엇이든, 1년 이상 근무하고 주 15시간 이상 일했다면 퇴직금은 반드시 지급돼야 해요.
-        <a href="https://www.law.go.kr/법령/근로기준법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로기준법 제36조</a>는 퇴직일로부터 14일 이내에 금품을 청산하도록 규정하고 있죠.
-        해고 시 퇴직금 수령 가능 여부, 지급 기한, 해고예고수당, 미지급 대처법까지 하나씩 짚어볼게요.
+      {/* 인트로 */}
+      <p style={{ ...body, marginBottom: 12 }}>
+        해고 통보를 받은 순간 머릿속이 하얘지죠. &ldquo;퇴직금은 받을 수 있을까?&rdquo;, &ldquo;말도 안 되는 이유로 잘렸는데 이게 부당해고 아닌가?&rdquo; 이런 질문들이 쏟아지는 게 당연해요. 결론부터 말하면, 해고여도 <strong>1년 이상 근무했다면 퇴직금은 받을 수 있어요.</strong> 근로기준법은 해고 사유와 무관하게 퇴직금 지급을 보장하거든요.
+      </p>
+      <p style={{ ...body, marginBottom: 20 }}>
+        거기다 30일 전 예고 없이 즉시 해고당했다면 <strong>해고예고수당</strong>까지 추가로 청구할 수 있어요. 퇴직금과 별개로 한 달치 통상임금을 더 받는 거예요. 해고 후 어떤 돈을 청구할 수 있고, 부당해고라면 어떻게 싸워야 하는지 — 이 글에서 전부 정리할게요.
       </p>
 
-      <Divider />
       <ArticleAd position="intro" />
 
-      <H2>해고되어도 퇴직금을 받을 수 있나요?</H2>
-      <p style={body}>
-        네, 받을 수 있어요. 퇴직금은 퇴직 &ldquo;사유&rdquo;와 무관하게 발생하는 권리죠. 자발적 퇴사든 해고든, 1년 이상 계속 근로하고 주 평균 15시간 이상 일했다면 퇴직금이 생겨요.
+      {/* H2-1: 해고 시 받을 수 있는 것들 */}
+      <H2>해고 시 받을 수 있는 것들</H2>
+      <p style={{ ...body, marginBottom: 12 }}>
+        해고를 당하면 크게 세 가지를 청구할 수 있어요. 퇴직금, 해고예고수당, 실업급여예요. 각각 요건이 다르니 본인 상황에 맞는 걸 짚어보세요.
       </p>
-      <p style={body}>
-        징계 해고, 경영상 해고, 권고사직 등 어떤 형태의 해고라도 마찬가지예요. 회사가 &ldquo;징계로 해고했으니 퇴직금이 없다&rdquo;고 주장하는 건 법적 근거가 없는 말이죠. 퇴직금 청구권은 <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여 보장법</a>에서 보장하고 있어요.
-      </p>
-      <p style={body}>
-        다만 횡령, 배임 등으로 회사에 손해를 끼친 경우 회사가 손해배상 청구를 별도로 할 수 있어요. 이건 퇴직금과는 별개 문제이죠. 퇴직금은 퇴직금대로 받고, 손해배상은 손해배상대로 처리되는 거예요.
-      </p>
-
-      <GreenBox title="해고 시 퇴직금 핵심">
-        - 해고 사유 무관, <strong>1년 이상 + 주 15시간 이상</strong> 근무 시 퇴직금 발생<br />
-        - 징계 해고, 경영상 해고, 권고사직 <strong>모두 동일 적용</strong><br />
-        - 지급 기한: 퇴직일로부터 <strong>14일 이내</strong>
+      <GreenBox>
+        <strong>퇴직금</strong> — 1년 이상 근무하면 해고여도 반드시 지급해야 해요. 징계 해고, 권고사직 모두 동일해요.<br /><br />
+        <strong>해고예고수당</strong> — 30일 전 서면 예고 없이 즉시 해고하면 30일분 통상임금을 추가로 받아요. 퇴직금과 별개예요.<br /><br />
+        <strong>실업급여</strong> — 해고는 비자발적 이직이어서 고용보험 180일 이상이면 바로 신청할 수 있어요.
       </GreenBox>
+      <p style={{ ...body, marginTop: 12, marginBottom: 20 }}>
+        셋 중 가장 빠른 기한이 있는 게 부당해고 구제신청이에요. <strong>해고일로부터 3개월</strong>이 지나면 노동위원회에 신청 자체가 불가해요. 퇴직금이나 해고예고수당은 3년 안에 청구할 수 있지만, 부당해고 구제는 놓치면 되돌릴 수 없어요.
+      </p>
 
-      <SectionBadge>내 상황에 해당되는지 체크해보세요</SectionBadge>
-      <EligibilityChecker
-        items={CHECK_ITEMS}
-        allMatchText="4가지 다 해당되네요. 퇴직금을 받을 수 있는 조건을 갖췄어요."
-        partialMatchText="일부만 해당돼요. 근무 기간과 조건을 확인한 뒤 고용노동부(1350)에 상담받아보세요."
-      />
+      {/* H2-2: 퇴직금과 해고예고수당 계산 */}
+      <H2>퇴직금과 해고예고수당 계산해보세요</H2>
+      <p style={{ ...body, marginBottom: 12 }}>
+        내가 얼마나 받을 수 있는지 먼저 파악해야 회사와 협상할 때도 밀리지 않아요. 월 평균급여와 근속 기간을 입력하면 예상 퇴직금과 해고예고수당을 바로 볼 수 있어요.
+      </p>
+      <p style={{ ...body, marginBottom: 16 }}>
+        퇴직금은 <strong>30일분 평균임금 × 근속연수</strong>로 계산해요. 해고예고수당은 즉시 해고 시에만 발생하고, 30일분 통상임금이에요. 아래에서 직접 입력해보세요.
+      </p>
+      <Calculator sliders={CALC_SLIDERS} results={CALC_RESULTS} />
 
       <Divider />
 
-      <H2>해고 즉시 퇴직금을 요구할 수 있나요?</H2>
-      <p style={body}>
-        즉시 지급을 요청할 수는 있지만, 법적 기한은 퇴직일로부터 14일이에요. 회사는 14일 안에 지급하면 법을 지킨 거죠. 다만 당사자 합의로 기한을 연장할 수는 있는데, 반드시 서면 동의가 있어야 해요.
-      </p>
-      <p style={body}>
-        해고가 갑작스러웠다면 당장 생활비가 필요할 텐데, 14일도 긴 시간이죠. 이럴 때는 회사에 조기 지급을 요청하세요. 법적 의무는 아니지만, 원만한 정리를 위해 응하는 경우가 많아요.
-      </p>
-      <p style={body}>
-        14일이 넘어도 퇴직금이 입금되지 않으면 <a href="/w/퇴직금-지급-기한" style={{ color: "#1D9E75", textDecoration: "underline" }}>연 20% 지연이자</a>가 붙기 시작해요. 이자는 자동으로 발생하지만, 실제로 받으려면 청구해야 하죠. 내용증명으로 지연이자 포함 퇴직금 지급을 요청하는 게 효과적이에요.
-      </p>
+      <RelatedArticles articles={RELATED} />
 
-      {/* ── 섹션 2 끝 → 버튼 + 관련 글 ── */}
-      <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
-      <RelatedArticles items={RELATED} />
+      {/* H2-3: 해고 관련 필요 서류 */}
+      <H2>해고 관련 필요 서류</H2>
+      <p style={{ ...body, marginBottom: 12 }}>
+        퇴직금 청구든 부당해고 구제신청이든, 서류 준비를 먼저 해야 해요. 해고 통보서는 특히 중요해요. 회사가 서면으로 통보하지 않았다면 카카오톡, 문자, 이메일이라도 캡처해두세요.
+      </p>
+      <p style={{ ...body, marginBottom: 16 }}>
+        퇴직금은 300만원 초과 시 IRP 계좌로만 받을 수 있어요. 아직 IRP 계좌가 없다면 은행이나 증권사에서 미리 개설해두세요. 개설 자체는 무료예요.
+      </p>
+      <DocTable docs={DOCS} />
+
       <ArticleAd position="mid" />
 
-      <Divider />
+      {/* H2-4: 해고 대응 절차 4단계 */}
+      <H2>해고 대응 절차 4단계</H2>
+      <p style={{ ...body, marginBottom: 12 }}>
+        해고 통보를 받은 직후 해야 할 일들을 순서대로 정리했어요. 머릿속이 혼란스러울 때일수록 단계별로 따라가는 게 실수를 줄여줘요.
+      </p>
+      <p style={{ ...body, marginBottom: 16 }}>
+        특히 부당해고라고 느낀다면 3단계 구제신청 기한인 <strong>3개월</strong>을 절대 놓치면 안 돼요. 퇴직금 받는 것과 병행해서 진행할 수 있으니 동시에 챙기세요.
+      </p>
+      <Steps steps={STEPS} />
 
-      <H2>해고 예고 없이 잘렸다면 퇴직금 외 다른 보상은?</H2>
-      <p style={body}>
-        근로기준법 제26조에 따르면, 사용자는 근로자를 해고하려면 최소 30일 전에 예고해야 해요. 30일 전 예고를 하지 않으면 30일분 이상의 통상임금을 &ldquo;해고예고수당&rdquo;으로 지급해야 하죠.
+      {/* H2-5: 해고 시 체크리스트 */}
+      <H2>해고 시 체크리스트</H2>
+      <p style={{ ...body, marginBottom: 12 }}>
+        해고 후 챙겨야 할 것들을 한 번에 정리했어요. 하나씩 짚어가면서 빠뜨린 게 없는지 보세요.
       </p>
-      <p style={body}>
-        해고예고수당은 퇴직금과 별개예요. 둘 다 받을 수 있죠. 퇴직금 + 해고예고수당 + 미지급 임금(있다면), 이 세 가지를 모두 청구할 수 있어요. 해고 통보일과 실제 퇴직일을 잘 확인하세요.
-      </p>
-      <p style={body}>
-        다만 3개월 미만 근무자, 일용근로자, 중대한 귀책사유로 해고된 경우에는 해고예고가 면제돼요. 이런 경우 해고예고수당은 받을 수 없지만, 퇴직금은 요건을 충족하면 별도로 받을 수 있죠.
-      </p>
-
-      <Divider />
-
-      <H2>해고 퇴직금 지급 기한은 동일한가요?</H2>
-      <p style={body}>
-        동일해요. 해고든 자발적 퇴사든 퇴직금 지급 기한은 <a href="/w/해고-근로자-임금-퇴직금-지급-기한" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직일로부터 14일</a>이에요. 근로기준법 제36조가 &ldquo;사망 또는 퇴직&rdquo;이라고만 규정하고 있어서, 퇴직 사유에 따른 구분이 없죠.
-      </p>
-      <p style={body}>
-        즉시 해고(당일 해고)라도 14일 기한은 동일하게 적용돼요. 해고 통보일이 곧 퇴직일이 되고, 그날부터 14일 카운트가 시작되죠. 회사가 &ldquo;정산에 시간이 필요하다&rdquo;고 하더라도 법적 기한은 변하지 않아요.
-      </p>
-      <p style={body}>
-        미지급 임금(밀린 월급, 야근수당 등)도 14일 이내에 같이 정산돼야 해요. 퇴직금과 미지급 임금을 합쳐서 한꺼번에 받는 게 일반적이죠. 14일이 지나면 전체 금액에 대해 연 20% 지연이자가 붙어요.
+      <Checklist items={CHECKLIST} />
+      <GreenBox style={{ marginTop: 16 }}>
+        <strong>부당해고 구제신청 3개월 기한 주의</strong><br />
+        해고일로부터 3개월이 지나면 노동위원회에 구제신청을 할 수 없어요. 부당해고라고 생각한다면 퇴직금 청구와 동시에 바로 신청하세요. 고용노동부(1350) 또는 지방노동위원회에 문의하면 절차를 안내받을 수 있어요.
+      </GreenBox>
+      <p style={{ ...body, marginTop: 12, marginBottom: 20 }}>
+        퇴직금과 해고예고수당은 3년 소멸시효가 있어서 시간이 조금 있지만, 증거는 시간이 지날수록 없어져요. 급여명세서, 해고 통보 메시지, 근로계약서는 지금 바로 저장해두세요.
       </p>
 
-      <Divider />
-
-      <H2>해고 후 퇴직금 미지급 시 대처법은?</H2>
-      <p style={body}>
-        먼저 회사에 내용증명을 보내세요. &ldquo;퇴직금 + 지연이자를 지급하라&rdquo;는 내용을 담으면 되죠. 내용증명은 법적 조치를 예고하는 의미가 있어서 효과가 큰 편이에요.
-      </p>
-      <p style={body}>
-        내용증명에도 반응이 없으면 관할 고용노동지청에 <a href="/w/퇴직금-미지급-신고" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직금 미지급 진정</a>을 넣으세요. 접수 후 2~4주 내에 근로감독관이 사업주를 조사하고, 시정 명령을 내려요. 사업주가 명령을 이행하지 않으면 검찰 송치까지 가능하죠.
-      </p>
-      <p style={body}>
-        소멸시효가 퇴직일로부터 <strong>3년</strong>이니까 그 안에 움직여야 해요. 해고 충격으로 &ldquo;나중에 해야지&rdquo; 미루다가 시효가 끝나는 경우가 생각보다 많아요. 증빙 자료(해고 통보서, 급여명세서, 근로계약서)를 퇴직 전에 미리 확보해두세요.
-      </p>
-
-      <Divider />
-
+      {/* H2-6: 자주 묻는 것들 */}
       <H2>자주 묻는 것들</H2>
-      <p style={{ ...body, marginBottom: 14 }}>
-        해고 시 퇴직금에 대해 실제로 자주 나오는 질문만 골랐어요.
+      <p style={{ ...body, marginBottom: 16 }}>
+        해고를 당한 분들이 공통으로 궁금해하는 질문들을 모았어요. 내 상황과 비슷한 사례를 찾아보세요.
       </p>
       <FAQ items={FAQS} />
 
       <Divider />
 
-      <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로기준법과 근로자퇴직급여 보장법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니, 최신 기준은 고용노동부(1350)에서 확인하세요." />
+      <CategoryButton category="퇴직금" />
+
+      <References sources={REFERENCES} />
+
+      <Disclaimer />
     </ArticleLayout>
   );
 }

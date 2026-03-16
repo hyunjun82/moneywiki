@@ -2,103 +2,235 @@
 
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
-  EligibilityChecker, Checklist, FAQ, References, Disclaimer,
+  Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
   ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
 const CHECK_ITEMS = [
-  { id: "c1", label: "같은 사업장에서 1년 이상 일했어요" },
-  { id: "c2", label: "주 평균 15시간 이상 근무했어요(4주 평균)" },
-  { id: "c3", label: "근무 기록(스케줄표·급여명세서)이 남아 있어요" },
-  { id: "c4", label: "퇴직일로부터 3년이 지나지 않았어요" },
+  { id: "c1", label: "주 15시간 이상 근무했어요" },
+  { id: "c2", label: "4주(한 달) 이상 같은 사업장에서 일했어요" },
+  { id: "c3", label: "근로계약서를 작성했거나 급여를 통장으로 받았어요" },
+  { id: "c4", label: "퇴직금을 못 받고 그냥 그만뒀어요" },
+];
+
+const CALC_SLIDERS = [
+  { id: "hourly", label: "시급", min: 10, max: 30, step: 1, defaultValue: 12, format: (v: number) => `${v}천원/시간` },
+  { id: "months", label: "근속 개월 수 (1개월 이상)", min: 1, max: 36, step: 1, defaultValue: 14, format: (v: number) => `${v}개월` },
+];
+
+const CALC_RESULTS = [
+  {
+    label: "월 임금 (주 15시간 × 4.3주)",
+    getValue: (v: Record<string, number>) => Math.round(v.hourly * 1000 * 15 * 4.3),
+    format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원`,
+    highlight: true,
+  },
+  {
+    label: "퇴직금 예상액 (근속 개월 기준)",
+    getValue: (v: Record<string, number>) => {
+      const monthly = Math.round(v.hourly * 1000 * 15 * 4.3);
+      return Math.round(monthly * v.months / 12);
+    },
+    format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원`,
+  },
+];
+
+const DOCS = [
+  { name: "근로계약서 또는 근무 일지", required: true, where: "사업장에서 받거나 본인 보관" },
+  { id: "d2", name: "급여 이체 내역 (통장)", required: true, where: "본인 통장 내역서" },
+  { name: "4대보험 가입 확인서 (있으면)", required: false, where: "국민건강보험공단 또는 4대사회보험포털" },
+  { name: "출퇴근 기록 (카카오톡 등)", required: false, where: "메시지·사진 캡처 등" },
+];
+
+const STEPS = [
+  {
+    title: "퇴직금 지급 요건 확인",
+    desc: "주 15시간 이상 + 4주 이상 같은 사업장에서 계속 근무했다면 알바도 퇴직금 대상이에요(근로자퇴직급여보장법 제4조). 주 15시간 미만 단시간 근로자는 퇴직금 지급 의무가 없어요.",
+    tip: "4주 평균 주 15시간이에요 — 어떤 주는 20시간, 어떤 주는 10시간이어도 평균 15시간 이상이면 해당",
+  },
+  {
+    title: "퇴직금 계산",
+    desc: "퇴직 전 3개월 평균임금을 계산하고, 1일 평균임금 × 30 × 근속연수로 퇴직금을 산정해요. 1년 미만이면 일할 계산해요. 예: 시급 1만2천원, 주 20시간, 14개월 근속이면 약 월 100만원 × 14/12 = 약 117만원이에요.",
+    tip: "주휴수당도 임금에 포함되니 월 급여 계산 시 포함하세요",
+  },
+  {
+    title: "사장님에게 청구",
+    desc: "사업주에게 퇴직금 지급을 서면이나 문자로 요청해요. 퇴직 후 14일 이내가 지급 기한이에요. 이미 지났다면 지연이자(연 20%)와 함께 청구할 수 있어요.",
+    tip: "문자나 카카오톡으로 남기면 나중에 증거가 돼요",
+  },
+  {
+    title: "미지급 시 노동청 신고",
+    desc: "사업주가 거부하면 고용노동부(1350) 또는 사업장 관할 지방노동청에 진정을 내세요. 온라인 신고도 가능해요(minwon.moel.go.kr). 소멸시효 3년 내에 신고해야 해요.",
+    tip: "소규모 사업장이어도 처리 가능해요 — 5인 미만도 퇴직금 대상",
+  },
 ];
 
 const CHECKLIST = [
-  "근로계약서 — 주 근무시간, 시급, 계약 기간 확인",
-  "근무 스케줄표 — 주 15시간 이상 증빙의 핵심 자료",
-  "급여명세서 또는 통장 입금 내역 — 평균임금 산정용",
-  "4대보험 가입 이력 — 근로 기간 확인",
-  "카카오톡·문자 기록 — 근무 사실 보조 증빙",
+  "주 15시간 이상 + 계속 근무 — 알바도 퇴직금 대상",
+  "5인 미만 소규모 사업장도 동일 적용",
+  "14일 기한 초과 — 지연이자(연 20%) 청구 가능",
+  "근무 증거 — 통장 이체 내역·근로계약서·문자 보관",
+  "소멸시효 3년 — 퇴직일로부터 3년 내에 청구",
 ];
 
 const FAQS = [
-  { q: "주 15시간 미만이면 무조건 퇴직금을 못 받나요?", a: "네, 4주 평균 주 15시간 미만이면 퇴직금이 발생하지 않아요. 이 기준은 법으로 정해져 있어서 예외가 없죠." },
-  { q: "방학 때만 일하면 1년 기준은 어떻게 되나요?", a: "같은 사업장에서 반복 근무하면 기간이 합산돼요. 여름 3개월 + 겨울 3개월 + 다음 여름 6개월 = 12개월이면 충족이죠." },
-  { q: "4대보험에 가입 안 했는데 퇴직금을 받을 수 있나요?", a: "받을 수 있어요. 4대보험 가입 여부와 퇴직금 지급 의무는 별개 문제예요. 실제 근무 사실이 입증되면 되죠." },
-  { q: "시급제 알바 퇴직금은 어떻게 계산하나요?", a: "퇴직 전 3개월간 받은 총 급여를 총 일수로 나눠서 일 평균임금을 구하고, 30일을 곱한 뒤 근속연수를 곱하면 돼요." },
-  { q: "사장이 주 15시간 미만이었다고 거짓말하면?", a: "근무 스케줄표, 카톡 대화, CCTV 등 간접 증거로 실제 근무 시간을 입증할 수 있어요. 고용노동부에서 이런 자료를 인정하죠." },
+  {
+    q: "주 15시간 이상이면 무조건 퇴직금이 생기나요?",
+    a: "4주 이상 계속 근무한 경우에 해당해요. 4주 평균 주 15시간 이상이면 조건을 충족해요. 하루 이틀 근무 후 그만두는 일용직 형태라면 계속성이 없어서 퇴직금이 없을 수 있어요.",
+  },
+  {
+    q: "근로계약서가 없어도 퇴직금을 받을 수 있나요?",
+    a: "받을 수 있어요. 통장 이체 내역, 카카오톡 메시지, 출퇴근 기록 등으로 근무 사실을 입증하면 돼요. 근로계약서가 없어도 실질적으로 근로 관계가 인정되면 퇴직금 청구가 가능해요.",
+  },
+  {
+    q: "5인 미만 작은 가게도 퇴직금을 줘야 하나요?",
+    a: "맞아요. 퇴직금은 사업장 규모와 상관없이 적용돼요. 편의점, 카페, 작은 식당 등 5인 미만 소규모 사업장도 근로자퇴직급여보장법 적용 대상이에요.",
+  },
+  {
+    q: "알바로 받는 퇴직금은 얼마나 되나요?",
+    a: "시급 1만2천원, 주 20시간, 14개월 근무한 경우 약 117만원 수준이에요. 주 15시간 최소 기준이면 이보다 적어요. 정확한 금액은 실제 근속일수와 평균임금으로 계산해야 해요.",
+  },
+  {
+    q: "이미 퇴직한 지 1년이 됐는데 퇴직금을 받을 수 있나요?",
+    a: "소멸시효 3년 이내라면 청구 가능해요. 내용증명을 보내거나 노동청에 진정을 내면 소멸시효가 중단돼요. 3년이 다 되어간다면 지금 바로 청구하세요.",
+  },
 ];
 
 const REFERENCES = [
-  { category: "법령", items: [
-    { label: "근로자퇴직급여 보장법 — 퇴직금 지급 기준", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
-    { label: "근로기준법 제18조 — 단시간 근로자", url: "https://www.law.go.kr/법령/근로기준법" },
-  ]},
-  { category: "공식 자료", items: [
-    { label: "고용노동부 — 알바 노동권익 안내", url: "https://www.moel.go.kr" },
-    { label: "고용노동부 민원마당 — 임금·퇴직금 신고", url: "https://minwon.moel.go.kr" },
-  ]},
+  {
+    category: "법령",
+    items: [
+      { label: "근로자퇴직급여보장법 제4조 — 퇴직금 지급 요건", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+      { label: "근로기준법 제18조 — 단시간 근로자 기준 (주 15시간)", url: "https://www.law.go.kr/법령/근로기준법" },
+    ],
+  },
+  {
+    category: "공식 자료",
+    items: [
+      { label: "고용노동부 — 퇴직금 지급 기준 안내", url: "https://www.moel.go.kr" },
+    ],
+  },
 ];
 
 const RELATED = [
-  { slug: "알바-퇴직금", title: "알바 퇴직금 받을 수 있는 조건", description: "알바도 1년 이상 근무했다면 퇴직금을 받을 수 있어요." },
-  { slug: "퇴직금-몇개월부터", title: "퇴직금 몇 개월부터 받을 수 있나요", description: "1년 기준 계산 방법과 예외 상황을 정리했어요." },
-  { slug: "1년미만-퇴직금-지급규정", title: "1년 미만 퇴직금 지급 규정", description: "1년 미만 알바의 퇴직금 지급 규정을 확인해보세요." },
+  { slug: "알바-퇴직금", title: "알바 퇴직금 받는 방법", description: "알바 퇴직금 계산부터 청구까지 정리했어요." },
+  { slug: "퇴직금-1년미만", title: "1년 미만 퇴직금 계산", description: "일할 계산 방법을 자세히 설명해요." },
+  { slug: "퇴직금-미지급-신고", title: "퇴직금 미지급 신고 방법", description: "노동청 진정 절차를 단계별로 안내해요." },
 ];
 
 export default function Page() {
   return (
-    <ArticleLayout sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} currentSlug="알바-퇴직금-지급기준" />}>
+    <ArticleLayout
+      sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} currentSlug="알바-퇴직금-지급기준" />}
+    >
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 알바 · 지급기준</p>
-      <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>알바 퇴직금 지급 기준,<br />주 15시간과 1년 조건</h1>
-      <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
-        알바 퇴직금, 기준이 뭔지 헷갈리죠? 핵심은 딱 두 가지예요. 주 평균 <strong>15시간 이상</strong> 일할 것, 같은 곳에서 <strong>1년 이상</strong> 일할 것.
-        <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여 보장법</a>이 정한 이 두 조건만 충족하면 업종이나 사업장 규모와 관계없이 퇴직금을 받을 수 있죠.
-        주 15시간 계산법, 방학 기간 공백 처리, 기준 미달 시 대처법까지 하나씩 짚어볼게요.
-      </p>
-      <Divider /><ArticleAd position="intro" />
 
-      <H2>알바 퇴직금 지급 기준이 뭔가요?</H2>
-      <p style={body}>기준은 명확해요. <strong>1년 이상</strong> 같은 사업장에서 <strong>주 평균 15시간 이상</strong> 근무하면 퇴직금 지급 의무가 발생하죠. 이 두 조건은 근로자퇴직급여 보장법에 명시돼 있고, 정규직이든 알바든 동일하게 적용돼요.</p>
-      <p style={body}>사업장 규모도 상관없어요. 편의점, 카페, 식당 — 종업원 1명인 가게에서 일해도 조건을 충족하면 퇴직금을 받을 수 있죠. 2012년부터 모든 사업장에 퇴직금 지급 의무가 확대됐기 때문이에요.</p>
-      <p style={body}>&ldquo;계속 근로 1년&rdquo;이란 고용관계가 끊김 없이 이어진 기간을 뜻해요. 같은 매장에서 중간에 계약을 갱신했거나, 잠시 쉬었다가 복귀한 경우에도 실질적으로 이어졌다면 합산할 수 있죠.</p>
-      <GreenBox title="알바 퇴직금 지급 기준 요약">1. 같은 사업장에서 <strong>1년 이상</strong> 계속 근무<br />2. 주 평균 <strong>15시간 이상</strong> 근로 (4주 평균)<br />3. 업종·규모·고용형태 <strong>무관</strong></GreenBox>
-      <SectionBadge>내 상황에 해당되는지 체크해보세요</SectionBadge>
-      <EligibilityChecker items={CHECK_ITEMS} allMatchText="4가지 다 해당돼요. 퇴직금 지급 기준을 충족한 상황이에요." partialMatchText="일부만 해당돼요. 나머지 조건도 확인하고 고용노동부(1350)에 상담해보세요." />
+      <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
+        알바도 퇴직금 받을 수 있는 기준은?<br />
+        주 15시간·계속 근무 조건과 청구 방법
+      </h1>
+
+      <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
+        알바도 <a href="/w/퇴직금-조건" style={{ color: "#1D9E75", textDecoration: "underline" }}>주 15시간 이상, 계속 근무</a> 조건을 충족하면 퇴직금을 받을 수 있어요.
+        5인 미만 소규모 사업장도 동일하게 적용돼요.
+        퇴직 후 14일이 지나도 못 받았다면 <a href="/w/퇴직금-지연이자" style={{ color: "#1D9E75", textDecoration: "underline" }}>지연이자(연 20%)</a>와 함께 노동청에 신고할 수 있어요.
+      </p>
+
+      <Divider />
+      <ArticleAd position="intro" />
+
+      <H2>알바 퇴직금, 어떤 경우에 받을 수 있나요?</H2>
+      <p style={body}>
+        조건은 간단해요. 4주 평균 주 15시간 이상 + 계속 근무(같은 사업장에서 반복 고용)예요.
+        주 15시간 미만 단시간 근로자는 퇴직금 지급 의무 대상에서 제외돼요.
+        하지만 주 15시간을 조금만 넘어도 조건을 충족해요.
+      </p>
+      <p style={body}>
+        근로계약서가 없어도 괜찮아요. 통장 이체 내역, 카카오톡 메시지, 출퇴근 기록 등으로 근무 사실을 입증하면 퇴직금 청구가 가능해요.
+        사업장 규모가 작아도, 사장님이 "알바는 퇴직금 없어요"라고 해도, 조건을 충족하면 법으로 보장된 권리예요.
+      </p>
+
+      <GreenBox title="알바 퇴직금 지급 조건">
+        ① 4주 평균 주 15시간 이상 근무<br />
+        ② 계속 근무 (일용직 제외)<br />
+        → 두 조건 충족 시 사업장 규모 무관 지급 의무
+      </GreenBox>
+
+      <SectionBadge>내 상황 체크해보세요</SectionBadge>
+      <EligibilityChecker
+        items={CHECK_ITEMS}
+        allMatchText="알바 퇴직금 지급 대상이에요. 아래 계산기로 예상 금액을 확인하세요."
+        partialMatchText="조건 충족 여부에 따라 다를 수 있어요. 고용노동부(1350) 상담을 권해요."
+      />
+
       <Divider />
 
-      <H2>주 15시간 기준을 어떻게 계산하나요?</H2>
-      <p style={body}>4주 동안의 총 근로시간을 4로 나누면 돼요. 예를 들어 1주차 18시간, 2주차 12시간, 3주차 16시간, 4주차 14시간이면 평균이 15시간이라 기준을 딱 충족하죠.</p>
-      <p style={body}>매주 시간이 일정하지 않아도 괜찮아요. 시험 기간에 줄이고 방학에 늘리는 패턴이라면 전체 기간의 평균으로 계산해요. 한두 주 15시간 미만이었다고 바로 제외되는 게 아니죠.</p>
-      <p style={body}>근무 스케줄표가 가장 확실한 증빙이에요. 스케줄표가 없다면 급여명세서에서 역산할 수 있죠. 시급 x 근무 시간 = 총 급여이니까, 총 급여를 시급으로 나누면 총 근무 시간이 나오는 거예요.</p>
-      <BorderBox title="스케줄표를 사장이 안 준다면">카카오톡 대화, 매장 CCTV, 동료 증언으로도 근무 시간을 증명할 수 있어요.<br />고용노동부에서 이런 간접 증거를 인정하는 경우가 많으니, 평소에 기록을 남겨두세요.</BorderBox>
+      <H2>알바 퇴직금 예상액 계산</H2>
+      <p style={body}>
+        시급과 근속 개월 수를 입력하면 월 임금과 퇴직금 예상액을 바로 확인할 수 있어요.
+        주휴수당을 포함한 실제 월 임금 기준으로 계산하면 더 정확해요.
+      </p>
+
+      <SectionBadge>알바 퇴직금 계산기</SectionBadge>
+      <Calculator
+        sliders={CALC_SLIDERS}
+        results={CALC_RESULTS}
+        note="※ 주 15시간 기준 월 임금 × 근속 비율. 실제 퇴직금은 평균임금 × 근속일수 ÷ 365로 계산해요."
+      />
+
       <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
       <RelatedArticles items={RELATED} />
       <ArticleAd position="mid" />
+
       <Divider />
 
-      <H2>방학 기간이 있어도 1년이 인정되나요?</H2>
-      <p style={body}>같은 사업장에서 반복 근무했다면 인정받을 수 있어요. 학기 중에 쉬었다가 방학 때마다 같은 매장으로 돌아갔다면, 고용노동부에서는 &ldquo;계속 근로&rdquo;로 볼 가능성이 높죠.</p>
-      <p style={body}>다만 공백 기간이 너무 길면 별도 근로관계로 판단될 수 있어요. 1~2주 공백은 문제없지만, 3~4개월 이상 비어 있으면 위험해지죠. &ldquo;복귀 약속&rdquo;이 있었다는 증거(문자, 카톡 등)가 있으면 유리해요.</p>
-      <p style={body}>방학 알바를 여러 번 했는데 사장이 &ldquo;매번 새 계약이라 퇴직금 해당 안 된다&rdquo;고 주장하는 경우가 있죠. 형식적으로 계약서를 새로 쓰더라도 같은 업무, 같은 장소, 같은 조건이면 하나의 근로관계로 봐요.</p>
+      <H2>청구에 필요한 서류</H2>
+      <p style={body}>
+        근로계약서가 없어도 통장 이체 내역만 있어도 충분한 경우가 많아요.
+        증거가 많을수록 청구가 쉬워지니 지금 당장 캡처해두세요.
+      </p>
+
+      <SectionBadge>준비 서류 목록</SectionBadge>
+      <DocTable docs={DOCS} />
+
       <Divider />
 
-      <H2>기준 미달 시 퇴직금이 아예 없나요?</H2>
-      <p style={body}>주 15시간 미만이거나 1년을 채우지 못했다면 법적으로 퇴직금이 발생하지 않아요. 다만 사업주와의 약정이나 취업규칙에 &ldquo;퇴직금 지급&rdquo;이 명시돼 있다면 별도로 청구할 수 있는 여지가 있죠.</p>
-      <p style={body}>기준 미달이 사업주의 편법 때문이라면 대응할 수 있어요. 예를 들어 1년이 되기 직전에 해고하거나, 주 15시간 미만으로 계약서만 작성하고 실제로는 더 일하게 한 경우죠. 이런 상황이라면 실제 근무 기록을 가지고 고용노동부에 상담을 받아보세요.</p>
-      <p style={body}>기준 충족 여부가 애매하다면 <a href="https://www.moel.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용노동부</a>(1350) 전화 상담이 가장 빠른 해결책이에요. 무료이고 상담 결과가 불이익을 주지 않으니 부담 없이 문의하세요.</p>
+      <H2>알바 퇴직금 청구 4단계</H2>
+      <p style={body}>
+        지급 요건 확인 → 금액 계산 → 사장님에게 청구 → 미지급 시 노동청 신고 순서예요.
+        대부분 3단계에서 해결돼요.
+      </p>
 
-      <SectionBadge>준비 서류</SectionBadge>
+      <Steps steps={STEPS} />
+
+      <Divider />
+
+      <H2>퇴직금 청구 체크리스트</H2>
+      <p style={body}>
+        소멸시효 3년을 놓치지 않는 게 가장 중요해요. 지금 바로 청구 준비를 시작하세요.
+      </p>
+
+      <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
+
+      <GreenBox title="알바 퇴직금은 포기하지 마세요">
+        "알바는 퇴직금이 없어요"는 틀린 말이에요.<br />
+        주 15시간 이상 계속 근무했다면 법으로 보장된 권리예요. 모르고 포기하는 경우가 많아요.
+      </GreenBox>
+
       <Divider />
 
       <H2>자주 묻는 것들</H2>
-      <p style={{ ...body, marginBottom: 14 }}>알바 퇴직금 지급 기준에 대해 자주 나오는 질문이에요.</p>
+      <p style={{ ...body, marginBottom: 14 }}>
+        알바 퇴직금 지급 기준에 대해 실제로 많이 나오는 질문만 골랐어요.
+      </p>
       <FAQ items={FAQS} />
+
       <Divider />
+
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여 보장법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니, 최신 기준은 고용노동부(1350)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법과 근로기준법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인하세요." />
     </ArticleLayout>
   );
 }

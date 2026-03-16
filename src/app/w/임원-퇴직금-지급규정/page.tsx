@@ -1,56 +1,232 @@
 "use client";
-import { H2, SectionBadge, GreenBox, BorderBox, Divider, body, EligibilityChecker, Checklist, FAQ, References, Disclaimer, ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd } from "@/components/article-ui";
+
+import {
+  H2, SectionBadge, GreenBox, BorderBox, Divider, body,
+  Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
+  ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
+} from "@/components/article-ui";
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
-const CHECK_ITEMS = [{ id: "c1", label: "법인의 등기임원(이사, 감사 등)으로 재직했어요" },{ id: "c2", label: "정관 또는 주주총회에서 퇴직금 규정이 있어요" },{ id: "c3", label: "실질적으로 근로자처럼 일했어요(사용종속관계)" },{ id: "c4", label: "퇴직 후 3년이 지나지 않았어요" }];
-const CHECKLIST = ["정관 사본 — 임원 퇴직금 규정 확인","주주총회 의사록 — 퇴직금 지급 결의 확인","급여명세서(최근 3개월) — 보수 산정 근거","법인등기부등본 — 임원 등기 여부 확인","근로계약서(있다면) — 근로자성 증빙"];
-const FAQS = [{ q: "등기임원은 퇴직금을 못 받나요?", a: "근로기준법상 퇴직금은 받기 어려워요. 다만 정관이나 주주총회 결의로 퇴직금 지급 규정이 있다면 받을 수 있죠." },{ q: "비등기임원은 일반 직원처럼 퇴직금을 받나요?", a: "비등기임원이라도 실질적으로 사용종속관계에 있었다면 근로자로 인정받을 수 있고, 이 경우 일반 퇴직금 규정이 적용돼요." },{ q: "임원 퇴직금 세금은 다른가요?", a: "임원 퇴직소득에 대한 퇴직소득세 한도가 있어요. 2012년 이후 정관에서 정한 금액이 기존 한도를 초과하면 초과분에 근로소득세가 부과되죠." },{ q: "정관에 퇴직금 규정이 없으면?", a: "규정이 없다면 주주총회에서 별도 결의가 필요해요. 결의 없이 지급하면 세법상 부인될 수 있죠." },{ q: "임원 퇴직금을 줄이려는 변경이 있었다면?", a: "정관 변경은 주주총회 특별결의가 필요해요. 소급 적용은 원칙적으로 안 되고, 기존 기대권을 침해하면 법적 분쟁이 될 수 있죠." }];
-const REFERENCES = [{ category: "법령", items: [{ label: "상법 — 이사의 보수", url: "https://www.law.go.kr/법령/상법" },{ label: "소득세법 — 퇴직소득 과세 기준", url: "https://www.law.go.kr/법령/소득세법" }] },{ category: "공식 자료", items: [{ label: "국세청 — 임원 퇴직소득 과세 안내", url: "https://www.nts.go.kr" },{ label: "고용노동부 — 근로자성 판단 기준", url: "https://www.moel.go.kr" }] }];
-const RELATED = [{ slug: "임원퇴직금-지급-기한", title: "임원 퇴직금 지급 기한", description: "임원 퇴직금 지급 기한이 일반 직원과 같은지 정리했어요." },{ slug: "퇴직금-세금", title: "퇴직금 세금", description: "퇴직소득세 계산 방법과 절세 방법을 안내해요." },{ slug: "퇴직금-지급-기준", title: "퇴직금 지급 기준", description: "퇴직금 지급 기준을 한눈에 정리했어요." }];
+const CHECK_ITEMS = [
+  { id: "c1", label: "이사·감사 등 임원으로 등기되어 있어요" },
+  { id: "c2", label: "퇴직 후 임원 퇴직금을 청구하고 싶어요" },
+  { id: "c3", label: "회사 정관이나 임원퇴직금 지급규정이 있는지 모르겠어요" },
+  { id: "c4", label: "근로자와 임원을 겸직하는 경우예요" },
+];
+
+const CALC_SLIDERS = [
+  { id: "salary", label: "최종 월 보수", min: 300, max: 2000, step: 50, defaultValue: 600, format: (v: number) => `${v.toLocaleString()}만원` },
+  { id: "years", label: "임원 재임 기간", min: 1, max: 30, step: 1, defaultValue: 5, format: (v: number) => `${v}년` },
+];
+
+const CALC_RESULTS = [
+  {
+    label: "임원 퇴직금 (정관 규정 없을 때 법인세법 한도 기준)",
+    getValue: (v: Record<string, number>) => Math.round(v.salary * 10000 / 10 * v.years * 3),
+    format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원`,
+    highlight: true,
+  },
+  {
+    label: "손금 한도 기준 (월 보수 × 재임연수 × 1/10 × 3배)",
+    getValue: (v: Record<string, number>) => Math.round(v.salary * 10000 / 10 * v.years * 3),
+    format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원`,
+  },
+];
+
+const DOCS = [
+  { name: "회사 정관 (임원 퇴직금 관련 조항)", required: true, where: "법인등기부 또는 회사 경영지원팀" },
+  { name: "임원퇴직금 지급규정 또는 이사회 결의서", required: true, where: "회사 경영지원팀" },
+  { name: "재임 기간 확인 서류 (등기부등본)", required: true, where: "법원등기소 또는 인터넷등기소" },
+  { name: "최종 보수 확인 서류 (급여 지급 내역)", required: false, where: "경리팀 또는 급여명세서" },
+];
+
+const STEPS = [
+  {
+    title: "임원 퇴직금 지급 근거 확인",
+    desc: "임원 퇴직금은 법정 의무가 아니에요. 정관 또는 주주총회·이사회 결의에 명시된 경우에만 지급 의무가 발생해요. 정관에 '임원 퇴직금 지급규정에 따른다'는 조항이 있으면 그 규정이 기준이에요.",
+    tip: "지급규정이 없으면 주주총회 특별결의로 사후에 정할 수도 있어요",
+  },
+  {
+    title: "지급액 계산",
+    desc: "지급규정에 금액 기준이 명시되어 있으면 그에 따라요. 규정이 없을 때는 세법상 손금 한도(최종 월 보수 × 재임연수 × 1/10 × 3배)를 참고해요. 이 한도를 초과하면 법인세법상 손금 산입이 안 돼요.",
+    tip: "임원 퇴직금은 과도하면 세무조사 리스크가 있어요",
+  },
+  {
+    title: "주주총회 또는 이사회 결의",
+    desc: "임원 퇴직금 지급을 위한 주주총회(또는 정관에 위임된 이사회) 결의가 필요해요. 결의 없이 지급하면 법인 자금 횡령 등 문제가 될 수 있어요. 소규모 법인은 주주 전원 동의서로 대체하기도 해요.",
+    tip: "결의 후 의사록을 반드시 보관해두세요",
+  },
+  {
+    title: "지급 및 세금 처리",
+    desc: "임원 퇴직금도 퇴직소득세 과세 대상이에요. 근속 기간은 임원 재임 기간 기준이고, 세율은 근로자 퇴직금과 동일하게 적용돼요. 손금 한도 초과분은 법인세 비용 처리가 안 돼요.",
+    tip: "임원 퇴직금도 IRP로 수령하면 퇴직소득세 절세 가능해요",
+  },
+];
+
+const CHECKLIST = [
+  "정관 또는 지급규정 — 임원 퇴직금 근거 조항 확인",
+  "주주총회 결의 — 지급 전 반드시 결의 필요",
+  "세법 한도 — 월 보수 × 재임연수 × 1/10 × 3배 이내",
+  "퇴직소득세 — 임원도 근로자와 동일하게 과세",
+  "IRP 수령 — 300만원 초과 시 IRP로만 수령 (2022년 이후)",
+];
+
+const FAQS = [
+  {
+    q: "임원은 퇴직금을 무조건 받을 수 있나요?",
+    a: "아니에요. 근로자와 달리 임원 퇴직금은 법정 의무가 없어요. 정관이나 주주총회 결의로 지급 규정이 있어야 받을 수 있어요. 규정이 없으면 받기 어려워요.",
+  },
+  {
+    q: "임원이면서 근로자 역할도 하는 경우엔?",
+    a: "실질적으로 근로자에 해당하는 업무를 했다면 근로자 퇴직금도 별도로 청구할 수 있어요. 법원에서도 등기임원이어도 실질 근로자로 보는 경우가 있어요. 근로감독관 확인이나 소송으로 다퉈볼 수 있어요.",
+  },
+  {
+    q: "임원 퇴직금 세법 한도는 어떻게 계산하나요?",
+    a: "최종 월 보수 × 재임연수 × 1/10 × 3배예요. 예를 들어 월 600만원, 5년 재임이면 600만 × 5 × 1/10 × 3 = 900만원이에요. 이 한도를 넘으면 초과분은 법인 비용 처리가 안 돼요.",
+  },
+  {
+    q: "임원 퇴직금에도 IRP 의무가 있나요?",
+    a: "300만원 초과 시 IRP로만 수령해야 해요. 근로자와 동일한 기준이에요(2022년 4월 이후 퇴직자).",
+  },
+  {
+    q: "소규모 법인에서 정관에 임원 퇴직금 조항이 없으면?",
+    a: "주주 전원 동의로 지급을 결의할 수 있어요. 이 경우 결의 전에 지급 기준을 명확히 정해야 해요. 이미 지급한 경우엔 사후 주주 동의도 가능하지만, 세무상 리스크가 있어요.",
+  },
+];
+
+const REFERENCES = [
+  {
+    category: "법령",
+    items: [
+      { label: "상법 제388조 — 임원 보수 주주총회 결의", url: "https://www.law.go.kr/법령/상법" },
+      { label: "법인세법 시행령 제44조 — 임원 퇴직금 손금 한도", url: "https://www.law.go.kr/법령/법인세법시행령" },
+    ],
+  },
+  {
+    category: "공식 자료",
+    items: [
+      { label: "국세청 — 임원 퇴직금 세무 처리 안내", url: "https://www.nts.go.kr" },
+    ],
+  },
+];
+
+const RELATED = [
+  { slug: "퇴직금-세금", title: "퇴직금 세금, 얼마나 떼나요?", description: "임원 퇴직금 퇴직소득세를 계산해요." },
+  { slug: "퇴직금-IRP-계좌", title: "IRP 계좌 개설 방법", description: "임원도 300만원 초과 시 IRP 수령 필수." },
+  { slug: "퇴직금-조건", title: "퇴직금 지급 조건 정리", description: "근로자 vs 임원 퇴직금 차이를 설명해요." },
+];
 
 export default function Page() {
   return (
-    <ArticleLayout sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} currentSlug="임원-퇴직금-지급규정" />}>
+    <ArticleLayout
+      sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} currentSlug="임원-퇴직금-지급규정" />}
+    >
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 임원 · 지급규정</p>
-      <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>임원 퇴직금 지급 규정,<br />일반 직원이랑 다른가요?</h1>
-      <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>임원 퇴직금은 일반 직원과 완전히 다른 체계예요. 근로기준법이 아닌 <a href="https://www.law.go.kr/법령/상법" style={{ color: "#1D9E75", textDecoration: "underline" }}>상법</a>과 정관이 기준이 되죠. 등기임원이라면 정관 또는 주주총회 결의에 따라 퇴직금이 결정되고, 비등기임원이라면 근로자성 인정 여부에 따라 달라져요. 임원 퇴직금 규정의 핵심, 계산법, 세금 처리까지 정리해드릴게요.</p>
-      <Divider /><ArticleAd position="intro" />
 
-      <H2>임원도 퇴직금을 받을 수 있나요?</H2>
-      <p style={body}>받을 수 있지만, 방식이 달라요. 등기임원(이사, 감사 등)은 회사와 &ldquo;위임 관계&rdquo;에 있어서 근로기준법상 퇴직금이 아닌, 정관이나 주주총회 결의에 의한 퇴직금을 받죠.</p>
-      <p style={body}>비등기임원이나 명칭만 임원인 경우는 다를 수 있어요. 실질적으로 사업주의 지시·감독을 받으며 일했다면 &ldquo;근로자&rdquo;로 인정받아 일반 퇴직금 규정이 적용될 수 있죠.</p>
-      <p style={body}>핵심은 &ldquo;등기 여부&rdquo;와 &ldquo;실질적 근로관계&rdquo;예요. 법인등기부등본에 등기돼 있고 경영 의사결정에 참여했다면 임원 퇴직금 규정이 적용되고, 실제로는 직원처럼 일했다면 근로자 퇴직금이 적용될 수 있어요.</p>
-      <GreenBox title="임원 퇴직금 핵심">1. <strong>등기임원</strong>: 정관/주주총회 결의에 따라 지급<br />2. <strong>비등기임원</strong>: 근로자성 인정 시 일반 퇴직금 적용<br />3. <strong>세법상 한도</strong>: 초과분은 근로소득세 부과</GreenBox>
-      <SectionBadge>내 상황 체크</SectionBadge>
-      <EligibilityChecker items={CHECK_ITEMS} allMatchText="임원 퇴직금을 받을 수 있는 조건이에요." partialMatchText="일부만 해당돼요. 세무사나 노무사에게 상담받아보세요." />
+      <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
+        임원 퇴직금 지급규정, 어떻게 되나요?<br />
+        정관 근거부터 세법 한도, 주총 결의까지
+      </h1>
+
+      <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
+        임원 퇴직금은 근로자처럼 법으로 의무화되어 있지 않아요.
+        정관이나 주주총회 결의로 지급 규정이 있어야 받을 수 있고, 세법상 손금 한도(월 보수 × 재임연수 × 1/10 × 3배)도 존재해요.
+        임원이면서 실질적으로 근로자 역할을 했다면 <a href="/w/퇴직금-조건" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자 퇴직금</a>도 별도로 청구할 수 있어요.
+      </p>
+
+      <Divider />
+      <ArticleAd position="intro" />
+
+      <H2>임원 퇴직금, 언제 받을 수 있나요?</H2>
+      <p style={body}>
+        등기 임원(이사·감사 등)은 근로기준법 적용을 받지 않아서 법정 퇴직금 의무가 없어요.
+        정관에 '임원 퇴직금 지급규정에 따른다'는 조항이 있거나, 주주총회·이사회에서 별도로 결의한 경우에만 지급 의무가 생겨요.
+        지급규정에는 산정 기준, 지급 배율, 지급 시기 등이 명시되어야 해요.
+      </p>
+      <p style={body}>
+        임원이지만 실질적으로 근로자 역할을 했다면(직속 상관의 지휘·감독을 받은 경우) 근로자성 인정 소송으로 근로자 퇴직금을 청구할 수도 있어요.
+        판례에서도 등기임원이라도 근로자성을 인정한 사례가 있어요.
+      </p>
+
+      <GreenBox title="임원 퇴직금 지급 요건">
+        정관 조항 또는 주주총회·이사회 결의 필요<br />
+        세법 한도: 월 보수 × 재임연수 × 1/10 × 3배<br />
+        300만원 초과 시 IRP로만 수령 (2022년 4월 이후)
+      </GreenBox>
+
+      <SectionBadge>내 상황 체크해보세요</SectionBadge>
+      <EligibilityChecker
+        items={CHECK_ITEMS}
+        allMatchText="임원 퇴직금 지급 절차를 진행할 수 있어요. 아래에서 예상 금액을 확인하세요."
+        partialMatchText="임원 퇴직금 요건이 복잡할 수 있어요. 세무사나 법무사 상담을 권해요."
+      />
+
       <Divider />
 
-      <H2>임원 퇴직금 지급 규정이 따로 있나요?</H2>
-      <p style={body}>법으로 정해진 &ldquo;임원 퇴직금법&rdquo; 같은 건 없어요. 각 회사가 정관에서 정하거나, 주주총회에서 별도로 결의하는 거죠. 그래서 회사마다 임원 퇴직금 규정이 천차만별이에요.</p>
-      <p style={body}>보통 &ldquo;최종 보수월액 x 재직 연수 x 지급률&rdquo;로 계산하는데, 지급률이 1배인 곳도 있고 3배인 곳도 있죠. 이건 순전히 정관에서 어떻게 정했느냐에 달려 있어요.</p>
-      <p style={body}>주의할 점은 세법상 한도예요. 2012년 이후 임원 퇴직소득에 대해 세법상 적정 한도가 생겼고, 한도를 초과하면 초과분에 근로소득세가 부과되죠. 정관에서 아무리 높게 정해도 세법 한도를 넘으면 세금이 추가로 붙는 거예요.</p>
-      <BorderBox title="정관에 규정이 없다면">주주총회에서 별도 결의가 필요해요. 결의 없이 임의로 지급하면 세법상 부인되거나 배임 문제가 생길 수 있죠.</BorderBox>
+      <H2>임원 퇴직금 세법 한도 계산</H2>
+      <p style={body}>
+        최종 월 보수와 재임 기간을 입력하면 세법상 손금 산입 한도 내 임원 퇴직금을 확인할 수 있어요.
+        이 한도를 초과하면 초과분은 법인세 비용으로 처리할 수 없어요.
+      </p>
+
+      <SectionBadge>임원 퇴직금 한도 계산기</SectionBadge>
+      <Calculator
+        sliders={CALC_SLIDERS}
+        results={CALC_RESULTS}
+        note="※ 법인세법 시행령 제44조 기준. 월 보수 × 재임연수 × 1/10 × 3배. 초과분은 손금 산입 불가해요."
+      />
+
       <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
-      <RelatedArticles items={RELATED} /><ArticleAd position="mid" />
+      <RelatedArticles items={RELATED} />
+      <ArticleAd position="mid" />
+
       <Divider />
 
-      <H2>임원 퇴직금 계산 방법은?</H2>
-      <p style={body}>정관에서 정한 산식대로 계산해요. 가장 흔한 공식은 &ldquo;최종 보수월액 x 재직 연수 x 지급배수&rdquo;죠. 지급배수가 2배라면, 월 보수 500만 원에 10년 재직 시 퇴직금이 1억 원이 되는 거예요.</p>
-      <p style={body}>세법상 적정 한도는 &ldquo;퇴직 전 3년간 평균 보수 x 1/10 x 근속연수 x 3배&rdquo;예요. 이 한도를 넘는 금액은 퇴직소득이 아닌 근로소득으로 과세되죠.</p>
-      <p style={body}>세금 계산이 복잡하기 때문에 임원 퇴직금은 반드시 세무사와 상의하는 게 좋아요. 지급 시기, 지급 방법에 따라 세금이 크게 달라질 수 있거든요.</p>
+      <H2>지급에 필요한 서류</H2>
+      <p style={body}>
+        정관과 지급규정이 핵심이에요. 주주총회 결의 의사록도 반드시 남겨야 법적 효력이 있어요.
+      </p>
+
+      <SectionBadge>준비 서류 목록</SectionBadge>
+      <DocTable docs={DOCS} />
+
       <Divider />
 
-      <H2>임원 퇴직금 지급 거부 시 대처법은?</H2>
-      <p style={body}>등기임원이라면 근로기준법이 적용되지 않기 때문에 고용노동부 진정이 아닌 <strong>민사소송</strong>으로 해결해야 해요. 정관이나 주주총회 결의를 근거로 퇴직금 지급 청구 소송을 제기하는 거죠.</p>
-      <p style={body}>비등기임원으로서 근로자성이 인정되는 경우라면 고용노동부에 진정을 넣을 수 있어요. 이 경우 근로감독관이 조사해서 시정 명령을 내리죠.</p>
-      <p style={body}>어떤 경로든 소멸시효는 <strong>3년</strong>이에요. 임원 퇴직금 분쟁은 금액이 큰 경우가 많으니, 가능한 한 빨리 법률 전문가와 상담하는 게 유리하죠.</p>
-      <SectionBadge>준비 서류</SectionBadge><Checklist items={CHECKLIST} />
+      <H2>임원 퇴직금 지급 4단계</H2>
+      <p style={body}>
+        지급 근거 확인 → 금액 계산 → 주주총회 결의 → 지급 및 세금 처리 순서예요.
+        결의 없이 지급하면 법적 문제가 생길 수 있어요.
+      </p>
+
+      <Steps steps={STEPS} />
+
       <Divider />
+
+      <H2>임원 퇴직금 체크리스트</H2>
+      <p style={body}>
+        세법 한도와 주주총회 결의를 꼭 챙기세요. 두 가지 빠뜨리면 세무 리스크와 법적 분쟁이 생겨요.
+      </p>
+
+      <SectionBadge>체크리스트</SectionBadge>
+      <Checklist items={CHECKLIST} />
+
+      <GreenBox title="임원도 IRP로 받아야 절세돼요">
+        임원 퇴직금도 IRP에 넣어두면 과세 이연 효과가 있어요.<br />
+        55세 이후 연금으로 수령하면 퇴직소득세를 30~40% 절감할 수 있어요.
+      </GreenBox>
+
+      <Divider />
+
       <H2>자주 묻는 것들</H2>
-      <p style={{ ...body, marginBottom: 14 }}>임원 퇴직금 규정에 대해 자주 나오는 질문이에요.</p>
-      <FAQ items={FAQS} /><Divider />
+      <p style={{ ...body, marginBottom: 14 }}>
+        임원 퇴직금 지급규정에 대해 실제로 많이 나오는 질문만 골랐어요.
+      </p>
+      <FAQ items={FAQS} />
+
+      <Divider />
+
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 상법과 소득세법을 바탕으로 작성됐어요. 개별 사안은 세무사·노무사에게 상담받으세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 상법·법인세법을 바탕으로 작성됐어요. 개인 상황에 따라 결과가 달라질 수 있으니 세무사 또는 법무사 상담을 권해요." />
     </ArticleLayout>
   );
 }

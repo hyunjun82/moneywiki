@@ -1,223 +1,363 @@
 "use client";
-
-import {
-  H2, SectionBadge, GreenBox, BorderBox, Divider, body,
-  EligibilityChecker, Checklist, FAQ, References, Disclaimer,
-  ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
-} from "@/components/article-ui";
+import { H2, SectionBadge, GreenBox, BorderBox, Divider, body, Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer, ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd } from "@/components/article-ui";
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
-// ─── 데이터 ──────────────────────────────────────────
-
-const CHECK_ITEMS = [
-  { id: "c1", label: "중간정산으로 받는 금액이 확정됐어요" },
-  { id: "c2", label: "정산 시점까지의 근속연수를 알고 있어요" },
-  { id: "c3", label: "퇴직소득세 계산 구조(환산급여·세율)를 이해하고 싶어요" },
-  { id: "c4", label: "IRP 이체를 통한 절세 방법을 알고 싶어요" },
-];
-
-const CHECKLIST = [
-  "정산 금액 확인 — 회사에서 산정한 중간정산 금액",
-  "근속연수 확인 — 입사일~중간정산일까지의 기간",
-  "퇴직소득세 계산 — 환산급여 기준 세율 적용",
-  "IRP 이체 여부 — 세금 이연을 원하면 IRP 계좌 준비",
-  "원천징수영수증 — 정산 후 회사에서 발급 (보관 필수)",
-];
-
-const FAQS = [
-  {
-    q: "중간정산하면 세금이 더 많이 나오나요?",
-    a: "경우에 따라 달라요. 근속연수가 짧아지면 근속연수 공제가 줄어들어 세금이 늘어날 수 있죠. 한꺼번에 퇴직할 때보다 분할 정산이 합산 세금에서 불리한 경우가 많아요.",
-  },
-  {
-    q: "중간정산금을 IRP에 넣으면 세금을 안 내도 되나요?",
-    a: "당장은 안 내도 돼요. IRP에 이체하면 퇴직소득세가 이연(뒤로 미뤄짐)되죠. 나중에 인출할 때 세금을 내는데, 연금으로 받으면 세율이 30~40% 낮아져요.",
-  },
-  {
-    q: "세금은 자동으로 떼이나요?",
-    a: "네, 회사가 원천징수해요. 정산 금액에서 퇴직소득세를 뺀 나머지가 입금되죠. 원천징수영수증을 반드시 받아두세요.",
-  },
-  {
-    q: "중간정산 세금을 나중에 환급받을 수 있나요?",
-    a: "중간정산금을 IRP에 넣으면 이미 납부한 세금을 환급받을 수 있어요. 정산 후 60일 이내에 IRP로 이체하면 원천징수된 세금이 돌아오죠.",
-  },
-  {
-    q: "만기 수령과 중간정산, 세금 차이가 크나요?",
-    a: "금액과 근속연수에 따라 달라요. 근속연수가 길수록 공제 혜택이 크기 때문에, 동일 금액이면 한꺼번에 받는 게 보통 세금이 적죠. 미리 시뮬레이션해보는 걸 추천해요.",
-  },
-];
-
-const REFERENCES = [
-  {
-    category: "법령",
-    items: [
-      { label: "소득세법 제48조 — 퇴직소득공제", url: "https://www.law.go.kr/법령/소득세법" },
-      { label: "근로자퇴직급여 보장법 제8조 — 중간정산", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
-    ],
-  },
-  {
-    category: "공식 자료",
-    items: [
-      { label: "국세청 — 퇴직소득세 안내", url: "https://www.nts.go.kr" },
-      { label: "홈택스 — 퇴직소득세 계산", url: "https://www.hometax.go.kr" },
-    ],
-  },
-];
-
-const RELATED = [
-  {
-    slug: "퇴직금-세금",
-    title: "퇴직금 세금 전체 안내",
-    description: "퇴직금에 붙는 세금의 종류와 계산 방법을 정리했어요.",
-  },
-  {
-    slug: "퇴직금-중간정산",
-    title: "퇴직금 중간정산 안내",
-    description: "중간정산의 개념, 사유, 절차를 한번에 정리했어요.",
-  },
-  {
-    slug: "퇴직금-중간정산-후-퇴직금-계산",
-    title: "중간정산 후 퇴직금 계산",
-    description: "중간정산 이후 최종 퇴직금이 어떻게 바뀌는지 안내해요.",
-  },
-];
-
-// ─── 페이지 ──────────────────────────────────────────
-
 export default function Page() {
+  const currentSlug = "퇴직금-중간정산-세금";
+
+  const checkItems = [
+    "중간정산을 신청할 계획이에요",
+    "주택구입이나 임차보증금 사유예요",
+    "세금이 어떻게 되는지 모르겠어요",
+    "이후 퇴직금 계산이 어떻게 되는지 궁금해요",
+  ];
+
+  const calcSliders = [
+    {
+      key: "amount",
+      label: "중간정산금액",
+      min: 500,
+      max: 10000,
+      step: 100,
+      defaultValue: 3000,
+      format: (v: number) => `${v.toLocaleString()}만원`,
+    },
+    {
+      key: "years",
+      label: "당시 근속기간",
+      min: 1,
+      max: 30,
+      step: 1,
+      defaultValue: 5,
+      format: (v: number) => `${v}년`,
+    },
+  ];
+
+  const calcResults = [
+    {
+      label: "퇴직소득세 추정",
+      highlight: true,
+      getValue: (v: Record<string, number>) =>
+        Math.round(
+          Math.max(
+            0,
+            v.amount * 10000 * 0.04 * (1 - Math.min(v.years, 20) * 0.02)
+          )
+        ),
+      format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원`,
+    },
+    {
+      label: "세후 수령액",
+      getValue: (v: Record<string, number>) => {
+        const tax = Math.round(
+          Math.max(
+            0,
+            v.amount * 10000 * 0.04 * (1 - Math.min(v.years, 20) * 0.02)
+          )
+        );
+        return v.amount * 10000 - tax;
+      },
+      format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원`,
+    },
+  ];
+
+  const docs = [
+    { name: "근로계약서", required: true, from: "인사팀" },
+    { name: "중간정산신청서", required: true, from: "인사팀" },
+    { name: "사유증빙서류", required: true, from: "해당기관" },
+    { name: "급여명세서 3개월", required: true, from: "인사팀" },
+  ];
+
+  const steps = [
+    {
+      title: "사유 해당 여부 확인",
+      desc: "법정 사유(무주택자 주택구입, 전세보증금, 요양 등) 해당 여부를 먼저 체크해야 해요.",
+      tip: "법정 사유 외 중간정산은 원칙적으로 불가해요.",
+    },
+    {
+      title: "세금 사전 계산",
+      desc: "중간정산 금액에 퇴직소득세가 어떻게 적용되는지 미리 계산해두세요.",
+      tip: "국세청 홈택스 퇴직소득세 모의계산을 활용하면 정확해요.",
+    },
+    {
+      title: "중간정산 신청",
+      desc: "인사팀에 신청서와 사유증빙서류를 제출하면 돼요.",
+      tip: "정산 후 근속기간은 정산일부터 다시 계산돼요.",
+    },
+    {
+      title: "세금 납부 확인",
+      desc: "원천징수 후 지급되니 영수증을 꼭 수령해두세요.",
+      tip: "퇴직소득원천징수영수증은 나중에도 필요하니 보관 필수예요.",
+    },
+  ];
+
+  const checklistItems = [
+    "법정 사유 해당 여부 확인",
+    "세금 사전 계산 — 홈택스 모의계산",
+    "정산 후 근속기간 리셋 인지",
+    "원천징수영수증 보관",
+    "이후 퇴직금 — 정산일부터 재계산",
+  ];
+
+  const faqs = [
+    {
+      q: "중간정산 받으면 퇴직소득세를 꼭 내야 하나요?",
+      a: "맞아요. 중간정산도 퇴직으로 보기 때문에 퇴직소득세가 원천징수돼요.",
+    },
+    {
+      q: "중간정산 후 최종 퇴직 시 세금이 또 나오나요?",
+      a: "나와요. 중간정산일부터 최종 퇴직일까지의 퇴직금에 별도로 퇴직소득세가 부과돼요.",
+    },
+    {
+      q: "중간정산 금액이 작으면 세금이 0원일 수도 있나요?",
+      a: "가능해요. 근속연수공제 후 과세표준이 0이 되면 세금이 0원이에요. 근속기간이 짧고 금액이 작을수록 가능성이 높아요.",
+    },
+    {
+      q: "IRP로 중간정산을 받을 수 있나요?",
+      a: "원칙적으로 중간정산은 IRP가 아닌 본인 계좌로 받아요. IRP는 퇴직 시 수령용이에요.",
+    },
+    {
+      q: "중간정산 사유가 없으면 어떻게 되나요?",
+      a: "법정 사유 없이 중간정산하면 세금 혜택이 줄어들 수 있어요. 중간정산보다 퇴직 시 전액 받는 게 세금 면에서 유리한 경우가 많아요.",
+    },
+  ];
+
+  const references = [
+    {
+      label: "소득세법 제22조 (퇴직소득세)",
+      url: "https://www.law.go.kr/법령/소득세법",
+    },
+    {
+      label: "근로자퇴직급여보장법 제8조 (중간정산)",
+      url: "https://www.law.go.kr/법령/근로자퇴직급여보장법",
+    },
+    {
+      label: "국세청 홈택스",
+      url: "https://www.hometax.go.kr",
+    },
+  ];
+
+  const relatedArticles = [
+    {
+      slug: "퇴직금-중간정산",
+      title: "퇴직금 중간정산 조건",
+      desc: "법정 사유부터 절차까지",
+    },
+    {
+      slug: "퇴직금-세금-몇프로",
+      title: "퇴직금 세금 몇 퍼센트",
+      desc: "계산기로 확인",
+    },
+    {
+      slug: "퇴직금-계산법",
+      title: "퇴직금 계산법",
+      desc: "중간정산 후 퇴직금 계산",
+    },
+  ];
+
+  const sidebar = <Sidebar data={퇴직금_SIDEBAR} currentSlug={currentSlug} />;
+
   return (
     <ArticleLayout
-      sidebar={
-        <Sidebar
-          heading="퇴직금 가이드"
-          items={퇴직금_SIDEBAR}
-          currentSlug="퇴직금-중간정산-세금"
-        />
-      }
+      breadcrumb="퇴직금 · 중간정산 · 세금"
+      title="퇴직금 중간정산 받으면 세금이 얼마나 나오나요?"
+      subtitle="정산 시점 과세부터 절세 방법까지"
+      sidebar={sidebar}
     >
-      <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 중간정산 · 세금</p>
-
-      <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
-        퇴직금 중간정산 시 세금,<br />
-        얼마나 내야 하나요?
-      </h1>
-
-      <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
-        &ldquo;중간정산 받으면 세금이 더 나온다던데, 진짜예요?&rdquo;<br />
-        경우에 따라 그래요.
-        퇴직소득세는 <strong>근속연수가 길수록 공제가 커지는 구조</strong>인데, 중간정산하면 근속연수가 리셋되니까 공제 혜택이 줄어들 수 있죠.
-        얼마나 차이 나는지, 어떻게 하면 세금을 줄일 수 있는지 구체적으로 정리해드릴게요.
+      {/* Intro */}
+      <p style={body}>
+        퇴직금 중간정산을 받아도 퇴직소득세가 발생해요. 중간정산을 퇴직으로
+        보기 때문이에요. 다만 근속연수공제가 적용돼 세금이 생각보다 낮을 수
+        있어요. 정산 후에는 근속기간이 정산일부터 다시 계산되니, 세금과 이후
+        퇴직금 영향을 함께 고려해야 해요.
       </p>
+
+      <EligibilityChecker title="이런 분들께 필요해요" items={checkItems} />
+
+      <ArticleAd />
 
       <Divider />
-      <ArticleAd position="intro" />
 
-      {/* 섹션 1 */}
-      <H2>중간정산 시 세금이 바로 붙나요?</H2>
+      {/* H2-1: 중간정산 세금 기본 구조 */}
+      <H2>중간정산 세금이 어떻게 계산되나요</H2>
+      <SectionBadge>퇴직소득세 과세 구조</SectionBadge>
+
       <p style={body}>
-        네, 중간정산금을 받을 때 <strong>퇴직소득세</strong>가 원천징수돼요. 회사가 정산 금액에서 세금을 빼고 나머지를 입금하죠. 세금 계산 방식은 일반 퇴직금과 동일해요.
-      </p>
-      <p style={body}>
-        퇴직소득세 계산 구조를 간단히 보면 이래요. 정산 금액에서 근속연수 공제를 빼고, 환산급여를 구한 뒤, 환산급여에 해당하는 세율을 적용하죠. <a href="https://www.law.go.kr/법령/소득세법" style={{ color: "#1D9E75", textDecoration: "underline" }}>소득세법 제48조</a>가 근거예요.
-      </p>
-      <p style={body}>
-        핵심은 <strong>근속연수 공제</strong>예요. 근속연수가 길수록 공제 금액이 커지고 세금이 줄어드는 구조인데, 중간정산을 하면 그 시점까지의 근속연수만 반영되니까 공제가 적어질 수 있죠.
+        중간정산은 세법상 퇴직으로 간주돼요.{" "}
+        <a
+          href="https://www.law.go.kr/법령/소득세법"
+          style={{ color: "#1D9E75" }}
+        >
+          소득세법 제22조
+        </a>
+        에 따라 퇴직소득세가 그대로 적용돼요. 급여소득세가 아니기 때문에
+        누진세율이 아닌 퇴직소득 전용 세율 체계를 써요.
       </p>
 
-      <GreenBox title="퇴직소득세 계산 흐름">
-        정산 금액 → <strong>근속연수 공제</strong> → 환산급여 산출 → 세율 적용 → 세액 확정<br />
-        근속연수가 짧아지면 → 공제가 줄고 → 세금이 늘어날 수 있어요
+      <p style={body}>
+        퇴직소득세 계산 순서는 이래요. 중간정산 금액에서 근속연수공제를 먼저
+        빼고, 남은 금액(환산급여)에 세율을 적용해요. 근속기간이 길수록 공제가
+        커지기 때문에 같은 금액이라도 오래 일한 사람이 세금을 덜 내요.
+      </p>
+
+      <GreenBox title="근속연수공제 기준 (2025년 기준)">
+        <p style={body}>
+          · 5년 이하: 30만원 × 근속연수
+          <br />
+          · 5년 초과~10년 이하: 150만원 + 50만원 × (근속연수 - 5)
+          <br />
+          · 10년 초과~20년 이하: 400만원 + 80만원 × (근속연수 - 10)
+          <br />· 20년 초과: 1,200만원 + 120만원 × (근속연수 - 20)
+        </p>
       </GreenBox>
 
-      <SectionBadge>내 상황 체크</SectionBadge>
-      <EligibilityChecker
-        items={CHECK_ITEMS}
-        allMatchText="세금 계산에 필요한 정보가 갖춰졌네요. 아래 계산법을 참고해서 예상 세액을 확인하세요."
-        partialMatchText="일부 정보가 부족해요. 정산 금액과 근속연수를 먼저 확인하세요."
-      />
-
-      <Divider />
-
-      {/* 섹션 2 */}
-      <H2>중간정산 세금 계산 방법은?</H2>
       <p style={body}>
-        계산 순서를 따라가 볼게요. 먼저 중간정산 금액에서 <strong>근속연수 공제</strong>를 빼요. 근속연수가 5년이면 공제가 500만 원 수준이고, 10년이면 1,500만 원 수준으로 늘어나죠 (정확한 공제 금액은 소득세법 별표에 따라요).
-      </p>
-      <p style={body}>
-        공제 후 남은 금액을 근속연수로 나눠 <strong>환산급여</strong>를 구해요. 이 환산급여에 누진세율(6~45%)을 적용한 뒤, 다시 근속연수를 곱하면 최종 세액이 나오죠. 근속연수가 짧으면 환산급여가 커져서 높은 세율이 적용될 수 있어요.
-      </p>
-      <p style={body}>
-        직접 계산하기 어렵다면 <a href="https://www.hometax.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>홈택스</a>에서 퇴직소득세 모의계산을 해볼 수 있어요. 정산 금액과 근속연수만 입력하면 예상 세액이 바로 나오죠. <a href="/w/퇴직금-세금" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직금 세금</a> 글에서 계산 과정을 더 자세히 다루고 있어요.
+        환산급여에서 환산급여공제를 한 번 더 적용하고, 그 결과에 세율 6~45%를
+        곱해요. 다만 퇴직소득은 일반 소득세처럼 바로 최고세율이 붙지 않아요.
+        환산 과정에서 세율이 희석되기 때문에 실효세율은 대개 낮게 나와요.
       </p>
 
-      <BorderBox title="세금 계산이 어렵다면">
-        홈택스(hometax.go.kr) → &ldquo;퇴직소득세 모의계산&rdquo;에서<br />
-        정산 금액과 근속연수만 입력하면 예상 세액이 나와요.<br />
-        무료이고 로그인 없이도 사용할 수 있어요.
+      <BorderBox title="중간정산 vs 일반 퇴직 세금 차이">
+        <p style={body}>
+          세금 계산 방식 자체는 동일해요. 차이는 근속기간이에요. 중간정산은
+          입사일부터 정산일까지의 기간, 일반 퇴직은 입사일부터 퇴직일까지의
+          기간을 써요. 기간이 짧을수록 공제가 줄어 세금이 상대적으로 높아질 수
+          있어요.
+        </p>
       </BorderBox>
 
-      {/* ── 섹션 2 끝 → 버튼 + 관련 글 ── */}
-      <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
-      <RelatedArticles items={RELATED} />
-      <ArticleAd position="mid" />
+      {/* H2-2: 세금 계산기 */}
+      <H2>퇴직소득세 미리 계산해보세요</H2>
+      <SectionBadge>중간정산 세금 시뮬레이션</SectionBadge>
+
+      <p style={body}>
+        중간정산 전에 세금을 먼저 계산해보는 게 좋아요. 생각보다 세금이 클 수
+        있거든요. 아래 계산기로 대략적인 금액을 확인하고, 정확한 계산은
+        국세청 홈택스 모의계산을 사용하세요.
+      </p>
+
+      <Calculator
+        sliders={calcSliders}
+        results={calcResults}
+        note="※ 중간정산 시에도 퇴직소득세 발생. 근속연수공제 후 세율 적용. 실제 세금은 국세청 홈택스에서 계산하세요."
+      />
+
+      <p style={body}>
+        계산기는 간단한 추정값이에요. 실제 세금은 환산급여공제, 세액공제 등
+        여러 항목이 더 반영돼요.{" "}
+        <a
+          href="https://www.hometax.go.kr"
+          style={{ color: "#1D9E75" }}
+        >
+          국세청 홈택스
+        </a>
+        에서 퇴직소득세 모의계산 메뉴를 쓰면 정확한 금액을 알 수 있어요.
+      </p>
+
+      <RelatedArticles articles={relatedArticles} />
+
+      <ArticleAd />
 
       <Divider />
 
-      {/* 섹션 3 */}
-      <H2>만기 수령과 비교하면 세금이 더 많나요?</H2>
+      {/* H2-3: 중간정산 후 퇴직금에 미치는 영향 */}
+      <H2>중간정산 후 퇴직금은 어떻게 달라지나요</H2>
+      <SectionBadge>근속기간 리셋과 퇴직금 재계산</SectionBadge>
+
       <p style={body}>
-        보통은 더 많아요. 10년 근무하고 한꺼번에 퇴직금을 받으면 10년치 근속연수 공제를 적용받죠. 그런데 5년 차에 중간정산하고 나머지 5년 후 퇴직하면, 각각 5년치 공제만 받게 돼요.
+        중간정산을 받으면 퇴직금 계산의 기준이 되는 근속기간이 리셋돼요. 정산일
+        다음 날부터 새로 근속기간이 쌓이기 시작해요. 나중에 최종 퇴직할 때는
+        정산일 이후 기간만큼의 퇴직금을 받게 되죠.
       </p>
+
       <p style={body}>
-        근속연수 공제는 기간이 길수록 <strong>누적적으로 커지는 구조</strong>예요. 5년+5년 공제 합계가 10년 공제보다 작죠. 그래서 같은 총 퇴직금이라도 나눠 받으면 합산 세금이 더 나오는 게 일반적이에요.
+        예를 들어 10년 근무 중 5년 차에 중간정산을 받으면, 이후 5년분 퇴직금은
+        별도로 다시 쌓여요. 임금이 올랐다면 이후 근속분 퇴직금도 늘어나지만,
+        전체 근속기간을 하나로 합쳤을 때보다 근속연수공제 총액이 줄어들 수
+        있어요.
       </p>
+
+      <GreenBox title="중간정산이 세금에 불리할 수 있는 이유">
+        <p style={body}>
+          퇴직소득세는 근속기간이 길수록 공제가 크고 세금이 적어요. 중간에
+          정산하면 근속기간을 두 번 나눠서 쓰기 때문에, 한 번에 전액을 받을
+          때보다 총 세금이 더 많이 나올 수 있어요. 세금 면에서는 중간정산을
+          피하는 게 유리한 경우가 많아요.
+        </p>
+      </GreenBox>
+
       <p style={body}>
-        다만 예외도 있어요. 중간정산 시점의 급여가 낮고 퇴직 시점의 급여가 크게 올랐다면, 전체를 한꺼번에 받을 때 환산급여가 더 높아져서 오히려 세금이 커질 수도 있죠. 금액 차이가 크다면 두 시나리오를 모두 계산해보세요.
+        물론 지금 당장 목돈이 필요한 상황이라면 선택지가 없을 수도 있어요. 세금
+        손해를 알면서도 중간정산을 선택하는 건 개인 사정에 따른 거예요. 중요한
+        건 세금이 얼마인지, 이후 퇴직금이 어떻게 바뀌는지 미리 알고 결정하는
+        거예요.
       </p>
 
       <Divider />
 
-      {/* 섹션 4 */}
-      <H2>중간정산 후 절세 방법이 있나요?</H2>
+      {/* H2-4: 중간정산 절차와 서류 */}
+      <H2>중간정산 신청 절차와 필요 서류</H2>
+      <SectionBadge>신청 단계별 가이드</SectionBadge>
+
       <p style={body}>
-        <strong>IRP 계좌</strong>를 활용하는 게 가장 효과적이에요. 중간정산금을 IRP에 이체하면 퇴직소득세가 이연(뒤로 미뤄짐)되죠. 이미 원천징수된 세금이 있다면, 정산 후 60일 이내에 IRP로 이체하면 환급받을 수 있어요.
-      </p>
-      <p style={body}>
-        IRP에 넣어둔 뒤 55세 이후에 연금으로 수령하면 퇴직소득세의 60~70%만 내면 돼요. 일시금으로 인출하면 세금이 100% 부과되니까, 연금 수령이 절세 핵심이죠. <a href="/w/퇴직금-세금-절세-방법-IRP-연말정산" style={{ color: "#1D9E75", textDecoration: "underline" }}>IRP 절세 방법</a>에서 더 자세히 다루고 있어요.
-      </p>
-      <p style={body}>
-        IRP 이체 없이 바로 현금으로 받으면 절세 기회가 사라져요. 목돈이 당장 필요한 게 아니라면 IRP 이체를 꼭 검토하세요. 당장 세금 부담을 줄이면서 노후 자금도 쌓을 수 있으니까요.
+        중간정산은 아무때나 신청할 수 있는 게 아니에요.{" "}
+        <a
+          href="https://www.law.go.kr/법령/근로자퇴직급여보장법"
+          style={{ color: "#1D9E75" }}
+        >
+          근로자퇴직급여보장법 제8조
+        </a>
+        에서 정한 법정 사유가 있을 때만 가능해요. 주택 구입, 전세보증금 마련,
+        본인 또는 가족 요양, 파산·회생 절차 개시 등이 해당돼요.
       </p>
 
-      <SectionBadge>세금 관련 체크리스트</SectionBadge>
-      <Checklist items={CHECKLIST} />
+      <Steps steps={steps} />
 
-      <Divider />
+      <DocTable docs={docs} />
 
-      {/* 섹션 5 */}
-      <H2>세금 계산 실수를 피하는 방법은?</H2>
       <p style={body}>
-        가장 흔한 실수는 <strong>근속연수를 잘못 세는 거</strong>예요. 입사일부터 중간정산일까지의 기간인데, 1년 미만은 올림 처리하는 경우가 있어요. 예를 들어 4년 8개월이면 근속연수는 5년으로 계산하죠.
-      </p>
-      <p style={body}>
-        두 번째 실수는 <strong>공제 항목 누락</strong>이에요. 퇴직소득세에는 근속연수 공제 외에 환산급여 공제도 있어서, 하나라도 빠뜨리면 세금이 과다 산출될 수 있죠. 홈택스 모의계산기를 쓰면 이런 실수를 방지할 수 있어요.
-      </p>
-      <p style={body}>
-        원천징수영수증을 반드시 받아두세요. 회사가 세금을 정확히 계산했는지 확인할 수 있는 유일한 서류예요. 나중에 종합소득세 신고나 세금 환급 시에도 필요하니까 분실하지 않도록 보관하세요.
+        사유증빙서류는 사유마다 달라요. 주택 구입이라면 매매계약서, 전세라면
+        임대차계약서를 준비하면 돼요. 요양 사유는 진단서가 필요하고요. 인사팀에
+        먼저 문의하면 어떤 서류가 필요한지 안내받을 수 있어요.
       </p>
 
       <Divider />
 
-      <H2>자주 묻는 것들</H2>
-      <p style={{ ...body, marginBottom: 14 }}>
-        중간정산 세금에 대해 자주 나오는 질문이에요.
+      {/* H2-5: 체크리스트 */}
+      <H2>중간정산 전 꼭 챙겨야 할 것들</H2>
+      <SectionBadge>신청 전 체크리스트</SectionBadge>
+
+      <p style={body}>
+        중간정산은 한 번 실행하면 되돌리기 어려워요. 신청 전에 아래 항목을 하나씩
+        점검하세요. 특히 세금과 이후 퇴직금 변화는 꼭 계산해본 뒤 결정하는 게
+        좋아요.
       </p>
-      <FAQ items={FAQS} />
+
+      <Checklist items={checklistItems} />
+
+      <p style={body}>
+        원천징수영수증은 나중에 종합소득세 신고나 금융 거래 시 필요할 수 있어요.
+        회사에서 자동으로 주는 경우도 있지만, 요청해서라도 꼭 받아두세요. 분실
+        시 홈택스에서 재발급받을 수 있어요.
+      </p>
 
       <Divider />
 
-      <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 소득세법을 바탕으로 작성됐어요. 세율 변동이 있을 수 있으니, 최신 기준은 국세청(nts.go.kr)에서 확인하세요." />
+      {/* H2-6: FAQ */}
+      <H2>중간정산 세금 자주 묻는 질문</H2>
+      <SectionBadge>FAQ</SectionBadge>
+
+      <p style={body}>
+        중간정산 세금에 대해 헷갈리는 부분들을 모았어요. 신청 전에 이 질문들을
+        먼저 읽어보면 불필요한 실수를 줄일 수 있어요.
+      </p>
+
+      <FAQ items={faqs} />
+
+      <Divider />
+
+      <References items={references} />
+      <Disclaimer />
     </ArticleLayout>
   );
 }

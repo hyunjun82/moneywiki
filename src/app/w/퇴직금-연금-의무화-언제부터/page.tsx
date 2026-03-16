@@ -2,46 +2,95 @@
 
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
-  EligibilityChecker, Checklist, FAQ, References, Disclaimer,
+  Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
   ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
 const CHECK_ITEMS = [
-  { id: "c1", label: "퇴직 예정이거나 퇴직금 수령 방식을 고민 중이에요" },
-  { id: "c2", label: "일시금 수령을 계획하고 있어요" },
-  { id: "c3", label: "연금 의무화가 나에게 영향을 주는지 궁금해요" },
-  { id: "c4", label: "IRP 계좌 개설을 아직 안 했어요" },
+  { id: "c1", label: "2022년 4월 이후에 퇴직했거나 퇴직 예정이에요" },
+  { id: "c2", label: "퇴직금이 300만원을 초과할 것 같아요" },
+  { id: "c3", label: "IRP 계좌를 아직 개설하지 않았어요" },
+  { id: "c4", label: "IRP 의무화 이전에 입사했어요" },
+];
+
+const CALC_SLIDERS = [
+  { id: "salary", label: "월 평균임금", min: 200, max: 700, step: 10, defaultValue: 300, format: (v: number) => `${v}만원` },
+  { id: "years", label: "근속 기간", min: 1, max: 35, step: 1, defaultValue: 5, format: (v: number) => `${v}년` },
+];
+
+const CALC_RESULTS = [
+  {
+    label: "퇴직금 예상액 (법정 기준)",
+    getValue: (v: Record<string, number>) => Math.round(v.salary * 10000 * v.years),
+    format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원`,
+    highlight: true,
+  },
+  {
+    label: "IRP 의무 수령 해당 여부",
+    getValue: (v: Record<string, number>) => v.salary * 10000 * v.years,
+    format: (v: number) => v > 3000000 ? "IRP 수령 의무 (300만원 초과)" : "일반 계좌 수령 가능 (300만원 이하)",
+  },
+];
+
+const DOCS = [
+  { name: "IRP 계좌번호", required: true, where: "증권사·은행 앱 개설 후 확인" },
+  { name: "신분증", required: true, where: "본인 지참 또는 앱 인증" },
+  { name: "퇴직 확인서", required: false, where: "회사 인사팀" },
+  { name: "근로계약서", required: false, where: "인사팀 또는 입사 시 수령본" },
+];
+
+const STEPS = [
+  {
+    title: "퇴직금 300만원 초과 여부 확인",
+    desc: "퇴직금이 300만원을 초과하면 2022년 4월 14일부터 IRP로만 수령해요. 300만원 이하라면 일반 계좌로도 받을 수 있어요. 퇴직 전에 예상 금액을 먼저 계산해보세요.",
+    tip: "월급 × 근속연수로 대략적인 퇴직금을 추정할 수 있어요",
+  },
+  {
+    title: "IRP 계좌 개설",
+    desc: "증권사나 은행 앱으로 10분이면 개설 가능해요. 수수료가 낮은 증권사(미래에셋, 삼성증권, NH투자증권 등)를 권해요. 퇴직 전에 미리 만들어두면 이체 지연을 막을 수 있어요.",
+    tip: "수수료 0% 상품도 있어요 (일부 증권사 — 퇴직금 수령 전용)",
+  },
+  {
+    title: "인사팀에 IRP 계좌번호 통보",
+    desc: "퇴직이 확정되면 IRP 계좌번호(은행명·계좌번호·예금주명)를 인사팀에 알려요. 메일이나 문자로 남기면 증거가 돼요. 회사는 퇴직일로부터 14일 이내에 이체해야 해요.",
+    tip: "14일 초과 시 연 20% 지연이자를 청구할 수 있어요",
+  },
+  {
+    title: "IRP에서 일시금 or 연금 수령",
+    desc: "IRP에 들어온 퇴직금을 바로 일시금으로 빼면 퇴직소득세를 냅니다. 55세 이후 연금으로 받으면 퇴직소득세를 30~40% 절감해요. 연금 수령이 가능한 나이라면 연금을 선택하는 게 유리해요.",
+    tip: "10년 이상 연금 수령 시 퇴직소득세 40% 감면",
+  },
 ];
 
 const CHECKLIST = [
-  "현재 퇴직연금 제도 확인 — DB형인지 DC형인지 파악",
-  "IRP 계좌 확인 — 개설 여부 및 운용 상태 점검",
-  "의무화 시행 시점 확인 — 정부 발표 모니터링",
-  "예외 대상 확인 — 55세 이상·소액 퇴직금 등",
-  "수령 방식 비교 — 일시금 vs 연금 세금 차이 계산",
+  "2022년 4월 14일부터 300만원 초과 퇴직금 → IRP 의무 수령",
+  "IRP 계좌 — 퇴직 전 미리 개설 (수수료 비교 후 선택)",
+  "계좌번호 인사팀 통보 — 메일·문자로 증거 남기기",
+  "14일 기한 준수 — 초과 시 지연이자(연 20%) 청구 가능",
+  "연금 수령 — 55세 이후 받으면 퇴직소득세 30~40% 절세",
 ];
 
 const FAQS = [
   {
-    q: "연금 의무화가 확정됐나요?",
-    a: "2026년 3월 기준, 퇴직금 전액 연금 의무화는 아직 확정되지 않았어요. 정부가 논의 중이고, 구체적인 시행 시점은 법 개정 후에 결정되죠.",
+    q: "IRP 의무화가 정확히 언제부터인가요?",
+    a: "2022년 4월 14일부터예요. 근로자퇴직급여보장법 개정으로 이 날 이후 퇴직하는 근로자는 300만원 초과 퇴직금을 IRP로만 수령해야 해요.",
   },
   {
-    q: "의무화되면 일시금을 아예 못 받나요?",
-    a: "완전 의무화가 되더라도 예외 규정이 있을 가능성이 높아요. 주택 구입, 질병 치료 등 급하게 목돈이 필요한 경우에는 일시금 수령이 허용될 수 있죠.",
+    q: "2022년 4월 이전에 입사한 직원도 IRP가 필요한가요?",
+    a: "퇴직 시점이 2022년 4월 14일 이후라면 필요해요. 입사 시점이 아니라 퇴직 시점 기준이에요.",
   },
   {
-    q: "이미 퇴직한 사람도 영향을 받나요?",
-    a: "보통 법 시행일 이후 퇴직하는 사람부터 적용돼요. 이미 퇴직해서 일시금을 받은 사람에게는 소급 적용하지 않는 게 일반적이죠.",
+    q: "퇴직금이 정확히 300만원이면 어떻게 되나요?",
+    a: "300만원 이하는 일반 계좌로 수령 가능해요. 300만원을 초과하면 IRP로만 수령해야 해요. 딱 300만원이면 일반 계좌도 가능해요.",
   },
   {
-    q: "연금 의무화에 대비해서 뭘 준비하면 되나요?",
-    a: "IRP 계좌를 미리 만들어두세요. 어떤 방식으로든 퇴직금이 IRP를 거치게 되니까요. 운용 상품과 수수료를 비교해서 유리한 금융기관을 선택하는 게 좋아요.",
+    q: "회사가 IRP 대신 현금으로 주겠다고 하면?",
+    a: "300만원 초과 퇴직금을 IRP 이외 방법으로 지급하면 위법이에요. 고용노동부(1350)에 신고하면 돼요.",
   },
   {
-    q: "소액 퇴직금도 연금으로 받아야 하나요?",
-    a: "현재 IRP 의무 이체 예외 기준이 있어요(300만 원 이하 등). 연금 의무화가 시행되더라도 소액에 대해서는 예외가 유지될 가능성이 높죠.",
+    q: "IRP 없이 퇴직금이 들어오면 어떻게 되나요?",
+    a: "회사가 이체할 수 없어서 지급이 지연돼요. 이 경우 회사 귀책이 아닌 근로자 귀책으로 볼 수 있어요. 퇴직 전에 반드시 IRP를 개설하고 계좌번호를 알려줘야 해요.",
   },
 ];
 
@@ -49,105 +98,84 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로자퇴직급여 보장법 — 퇴직연금 수령 규정", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+      { label: "근로자퇴직급여보장법 제9조 — IRP 이체 의무 (2022년 4월 14일 시행)", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용노동부 — 퇴직연금 제도 개편 논의", url: "https://www.moel.go.kr" },
-      { label: "금융감독원 — 퇴직연금 가이드", url: "https://www.fss.or.kr" },
+      { label: "고용노동부 — IRP 의무화 시행 안내", url: "https://www.moel.go.kr" },
+      { label: "금융감독원 — IRP 가입 안내", url: "https://www.fss.or.kr" },
     ],
   },
 ];
 
 const RELATED = [
-  {
-    slug: "퇴직금-연금-전환",
-    title: "퇴직금 연금 전환",
-    description: "연금으로 전환하는 방법과 세금 혜택을 정리했어요.",
-  },
-  {
-    slug: "퇴직금-irp-지급-의무화",
-    title: "IRP 지급 의무화",
-    description: "퇴직금 IRP 의무 이체 제도를 안내해요.",
-  },
-  {
-    slug: "퇴직금-일시금-수령-방법",
-    title: "퇴직금 일시금 수령",
-    description: "일시금으로 받는 방법과 세금을 정리했어요.",
-  },
+  { slug: "퇴직금-IRP-계좌", title: "IRP 계좌 개설 방법", description: "어느 금융사가 유리한지, 수수료 비교까지." },
+  { slug: "퇴직금-irp-지급-의무화", title: "퇴직금 IRP 지급 의무화 총정리", description: "의무화 대상과 예외 사항을 설명해요." },
+  { slug: "퇴직금-세금", title: "퇴직금 세금, 얼마나 떼나요?", description: "IRP 연금 수령 시 절세 효과를 계산해요." },
 ];
 
 export default function Page() {
   return (
     <ArticleLayout
-      sidebar={
-        <Sidebar
-          heading="퇴직금 가이드"
-          items={퇴직금_SIDEBAR}
-          currentSlug="퇴직금-연금-의무화-언제부터"
-        />
-      }
+      sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} currentSlug="퇴직금-연금-의무화-언제부터" />}
     >
-      <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 연금 의무화 · 제도 변경</p>
+      <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · IRP의무화 · 시행일</p>
 
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
-        퇴직금 연금 의무화,<br />
-        언제부터 어떻게 바뀌나요?
+        퇴직금 IRP 의무화, 언제부터 적용되나요?<br />
+        2022년 4월 기준 대상과 예외 총정리
       </h1>
 
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
-        &ldquo;퇴직금을 나중에는 무조건 연금으로만 받아야 한다는데, 사실인가요?&rdquo;<br />
-        아직 확정된 건 아니에요. 정부가 퇴직금의 연금화 비율을 높이는 방안을 논의 중이지만, 전면 의무화 시행 시점은 정해지지 않았죠.
-        현재 제도가 어떻게 되어 있고, 의무화되면 무엇이 바뀌는지, 지금 준비할 건 뭔지 정리해드릴게요.
+        퇴직금 300만원 초과 시 <a href="/w/퇴직금-IRP-계좌" style={{ color: "#1D9E75", textDecoration: "underline" }}>IRP 계좌</a>로만 수령해야 하는 의무화는 2022년 4월 14일부터 시행됐어요.
+        입사 시점이 아니라 퇴직 시점이 기준이에요.
+        IRP 없이 퇴직하면 회사가 이체할 수 없어 지급이 지연되고, 지연이자(연 20%) 문제로 이어질 수 있어요.
+        퇴직 전에 미리 개설해두면 이런 문제가 생기지 않아요.
       </p>
 
       <Divider />
       <ArticleAd position="intro" />
 
-      <H2>퇴직금 연금 의무화가 언제부터인가요?</H2>
+      <H2>IRP 의무화 대상, 내가 해당되는지 확인해보세요</H2>
       <p style={body}>
-        2026년 3월 현재, 퇴직금 전액 연금 의무화는 <strong>확정되지 않았어요</strong>. 정부가 &ldquo;퇴직연금의 연금 수령 비율을 높이겠다&rdquo;는 방향을 제시했지만, 구체적인 법안이 국회를 통과한 건 아니죠.
+        2022년 4월 14일 이후에 퇴직하는 모든 근로자가 대상이에요.
+        퇴직금이 300만원을 초과하면 IRP로만 수령 가능하고, 300만원 이하라면 일반 계좌로도 받을 수 있어요.
+        퇴직연금(DB·DC형)에 가입된 회사라면 이미 IRP 수령 절차가 설계되어 있어요.
       </p>
       <p style={body}>
-        현재까지의 변화를 보면, 2022년부터 퇴직금을 <strong>IRP 계좌로 의무 이체</strong>하도록 바뀌었어요. 이건 &ldquo;연금 의무화&rdquo;와는 다른데, IRP에 넣기는 하되 일시금으로 바로 인출할 수 있거든요. 실질적 연금 전환 의무는 아직 없는 셈이죠.
-      </p>
-      <p style={body}>
-        다만 장기적으로 연금 수령을 유도하는 정책이 강화되는 추세예요. 연금으로 받으면 세금 혜택을 주고, 일시금으로 받으면 혜택을 줄이는 방식이 점점 확대되고 있죠.
+        IRP 계좌가 없으면 회사가 이체할 곳이 없어서 지급 자체가 지연돼요.
+        이 경우엔 근로자 귀책으로 볼 수도 있어서, 퇴직 전에 반드시 개설해야 해요.
       </p>
 
-      <GreenBox title="현재 상황 정리 (2026년 3월 기준)">
-        <strong>IRP 이체 의무</strong>: 시행 중 (2022년~)<br />
-        <strong>연금 수령 의무</strong>: 미확정 (논의 중)<br />
-        <strong>절세 유도</strong>: 연금 수령 시 퇴직소득세 30~40% 감면
+      <GreenBox title="IRP 의무화 핵심 정리">
+        시행일: 2022년 4월 14일 (근로자퇴직급여보장법 제9조)<br />
+        대상: 퇴직금 300만원 초과 모든 근로자<br />
+        예외: 300만원 이하는 일반 계좌 수령 가능
       </GreenBox>
 
-      <SectionBadge>내 상황 체크</SectionBadge>
+      <SectionBadge>내 상황 체크해보세요</SectionBadge>
       <EligibilityChecker
         items={CHECK_ITEMS}
-        allMatchText="아직 의무화가 확정되지 않았지만, IRP 계좌 준비는 미리 해두는 게 좋아요."
-        partialMatchText="퇴직 예정이라면 IRP 개설과 수령 방식 비교를 먼저 진행하세요."
+        allMatchText="IRP 의무 수령 대상이에요. 아래 계산기로 퇴직금 예상액을 확인하세요."
+        partialMatchText="조건에 따라 다를 수 있어요. 고용노동부(1350) 상담을 권해요."
       />
 
       <Divider />
 
-      <H2>의무화되면 일시금 수령이 안 되나요?</H2>
+      <H2>IRP 의무 수령 해당 여부 계산</H2>
       <p style={body}>
-        완전 의무화가 시행된다 해도 <strong>예외 규정</strong>이 있을 가능성이 높아요. 무주택자의 주택 구입, 6개월 이상 요양, 파산 등 긴급한 상황에서는 일시금 인출을 허용하는 게 국제적 추세이기도 하죠.
-      </p>
-      <p style={body}>
-        참고로 호주, 싱가포르 같은 나라에서는 퇴직연금의 연금 수령을 의무화하면서도 주택 구입이나 의료비 사유에 한해 조기 인출을 허용하고 있어요. 한국에서도 비슷한 방향이 될 거라는 관측이 많죠.
-      </p>
-      <p style={body}>
-        현재로서는 걱정보다 <strong>준비</strong>가 중요해요. IRP 계좌를 만들어두고, 일시금과 연금의 세금 차이를 미리 계산해놓으면 어떤 제도 변경에도 대응할 수 있죠.
+        월 평균임금과 근속 기간을 입력하면 퇴직금 예상액과 IRP 의무 수령 해당 여부를 바로 확인할 수 있어요.
+        300만원 기준을 넘는지 미리 파악해서 IRP 개설 시점을 결정하세요.
       </p>
 
-      <BorderBox title="일시금이 꼭 필요하다면">
-        연금 의무화 시행 전에 퇴직하면 현행 제도가 적용돼요.<br />
-        시행 후에도 법정 사유(주택·질병 등)에 해당하면 일시금 인출이 가능할 전망이에요.<br />
-        급하지 않다면 연금 수령이 세금 면에서 유리하니 비교해보세요.
-      </BorderBox>
+      <SectionBadge>퇴직금 IRP 의무 해당 계산기</SectionBadge>
+      <Calculator
+        sliders={CALC_SLIDERS}
+        results={CALC_RESULTS}
+        note="※ 법정 최저 기준. 실제 퇴직금은 상여금·수당 포함 시 달라질 수 있어요."
+      />
 
       <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
       <RelatedArticles items={RELATED} />
@@ -155,58 +183,52 @@ export default function Page() {
 
       <Divider />
 
-      <H2>현재 일시금 수령 중인 사람은 어떻게 되나요?</H2>
+      <H2>IRP 개설에 필요한 서류</H2>
       <p style={body}>
-        이미 퇴직해서 일시금을 받은 사람에게 소급 적용하진 않아요. 법이 바뀌더라도 시행일 이후 퇴직하는 사람부터 적용되는 게 원칙이죠.
+        신분증 하나로 대부분 앱에서 10분 안에 개설 가능해요.
+        수수료가 낮은 증권사를 선택하면 장기적으로 유리해요.
       </p>
-      <p style={body}>
-        현재 IRP에 퇴직금이 들어와 있고 아직 인출하지 않은 상태라면, 의무화 시행 전에 일시금으로 뺄 수 있어요. 다만 세금 차이를 따져보고 결정하세요. 연금으로 받으면 세금이 30~40% 줄어드니까요.
-      </p>
-      <p style={body}>
-        퇴직 예정이라면 제도 변경 시점을 주시하면서 IRP 계좌를 미리 준비해두세요. 어떤 방식으로든 퇴직금은 IRP를 거치게 되니까, 수수료가 낮고 운용 상품이 다양한 금융기관을 비교하는 게 좋아요.
-      </p>
+
+      <SectionBadge>준비 서류 목록</SectionBadge>
+      <DocTable docs={DOCS} />
 
       <Divider />
 
-      <H2>의무화에 대비해 준비할 것들은?</H2>
+      <H2>IRP 의무화 대응 4단계</H2>
       <p style={body}>
-        첫째, <strong>IRP 계좌를 개설</strong>하세요. 이미 퇴직금 수령 시 IRP 이체가 의무이니까, 아직 없다면 지금 만들어두는 게 좋아요. 은행, 증권사, 보험사에서 개설 가능하고 수수료와 운용 상품을 비교해서 선택하세요.
-      </p>
-      <p style={body}>
-        둘째, <strong>일시금 vs 연금 세금 차이</strong>를 미리 계산해보세요. 홈택스 모의계산이나 금융기관 상담을 통해 내 퇴직금 규모에서 세금 차이가 얼마나 나는지 파악해두면 의사결정이 수월하죠.
-      </p>
-      <p style={body}>
-        셋째, <strong>정부 발표를 주시</strong>하세요. 고용노동부와 기획재정부에서 퇴직연금 개편 관련 발표를 할 때마다 시행 시점과 예외 규정이 구체화돼요. <a href="https://www.moel.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용노동부</a> 홈페이지에서 관련 보도자료를 확인할 수 있죠.
+        퇴직금 금액 확인 → IRP 개설 → 계좌번호 통보 → 수령 방식 선택 순서예요.
+        14일 기한 내에 이체가 완료되는지 꼭 확인하세요.
       </p>
 
-      <SectionBadge>대비 체크리스트</SectionBadge>
+      <Steps steps={STEPS} />
+
+      <Divider />
+
+      <H2>IRP 의무화 대응 체크리스트</H2>
+      <p style={body}>
+        IRP 개설을 미루면 지급이 지연돼요. 퇴직이 확정되면 바로 개설하세요.
+      </p>
+
+      <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <Divider />
-
-      <H2>연금 의무화 예외 대상이 있나요?</H2>
-      <p style={body}>
-        현재 IRP 이체 의무에도 예외가 있으니, 연금 의무화가 시행되더라도 예외 규정이 있을 거예요. <strong>55세 이상</strong>으로 퇴직하는 사람, <strong>퇴직금이 소액</strong>(300만 원 이하 등)인 경우가 대표적인 예외 후보죠.
-      </p>
-      <p style={body}>
-        해외 사례를 보면 일정 연령 이상이면 일시금 수령을 허용하는 경우가 많아요. 은퇴 후 바로 생활비로 써야 하는 상황을 감안한 거죠. 한국에서도 비슷한 기준이 적용될 가능성이 높아요.
-      </p>
-      <p style={body}>
-        예외 대상인지 아닌지는 법 확정 후에나 정확히 알 수 있어요. 지금은 &ldquo;IRP를 준비해두고, 일시금과 연금의 장단점을 모두 파악해두는 것&rdquo;이 가장 현실적인 대비 방법이에요.
-      </p>
+      <GreenBox title="IRP에 넣어두면 세금이 줄어요">
+        IRP 안에 두면 운용 수익에 세금이 없어요(과세 이연).<br />
+        55세 이후 연금으로 수령하면 퇴직소득세를 30~40% 절감할 수 있어요.
+      </GreenBox>
 
       <Divider />
 
       <H2>자주 묻는 것들</H2>
       <p style={{ ...body, marginBottom: 14 }}>
-        퇴직금 연금 의무화에 대해 자주 나오는 질문이에요.
+        퇴직금 IRP 의무화에 대해 실제로 많이 나오는 질문만 골랐어요.
       </p>
       <FAQ items={FAQS} />
 
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 정보를 바탕으로 작성됐어요. 연금 의무화는 미확정 상태이며, 최신 동향은 고용노동부(moel.go.kr)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인하세요." />
     </ArticleLayout>
   );
 }

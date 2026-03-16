@@ -2,46 +2,104 @@
 
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
-  EligibilityChecker, Checklist, FAQ, References, Disclaimer,
+  Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
   ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
+// ─── 데이터 ──────────────────────────────────────────
+
 const CHECK_ITEMS = [
-  { id: "c1", label: "퇴직 예정이고 IRP 계좌가 아직 없어요" },
-  { id: "c2", label: "은행·증권사·보험사 중 어디서 개설할지 고민 중이에요" },
-  { id: "c3", label: "수수료와 운용 상품을 비교하고 싶어요" },
-  { id: "c4", label: "온라인(앱)으로 개설 가능한지 궁금해요" },
+  { id: "c1", label: "퇴직을 앞두고 퇴직금 수령 계좌를 만들어야 해요" },
+  { id: "c2", label: "퇴직금이 300만원을 초과할 것 같아요" },
+  { id: "c3", label: "IRP 계좌가 뭔지, 어디서 만드는지 모르겠어요" },
+  { id: "c4", label: "세액공제 혜택도 같이 받고 싶어요" },
+];
+
+const CALC_SLIDERS = [
+  { id: "deposit", label: "연간 IRP 추가 납입액", min: 0, max: 900, step: 50, defaultValue: 300, format: (v: number) => `${v.toLocaleString()}만원` },
+  { id: "income", label: "연 소득 구간", min: 1, max: 2, step: 1, defaultValue: 1, format: (v: number) => v === 1 ? "5,500만원 이하" : "5,500만원 초과" },
+];
+
+const CALC_RESULTS = [
+  {
+    label: "세액공제 환급액",
+    getValue: (v: Record<string, number>) => {
+      const rate = v.income === 1 ? 0.165 : 0.132;
+      return Math.round(Math.min(v.deposit * 10000, 9000000) * rate);
+    },
+    format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원`,
+    highlight: true,
+  },
+  {
+    label: "실질 납입 부담 (납입-공제)",
+    getValue: (v: Record<string, number>) => {
+      const rate = v.income === 1 ? 0.165 : 0.132;
+      const deduction = Math.round(Math.min(v.deposit * 10000, 9000000) * rate);
+      return Math.max(0, v.deposit * 10000 - deduction);
+    },
+    format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원`,
+  },
+];
+
+const DOCS = [
+  { name: "신분증 (주민등록증·운전면허증)", required: true, where: "본인 지참" },
+  { name: "공동인증서 또는 간편인증", required: true, where: "앱 또는 금융인증서" },
+  { name: "기존 금융계좌 (이체용)", required: true, where: "본인 은행 계좌" },
+  { name: "재직증명서 (일부 금융사 요구)", required: false, where: "회사 인사팀 발급" },
+];
+
+const STEPS = [
+  {
+    title: "금융기관 선택",
+    desc: "IRP 계좌는 은행, 증권사, 보험사에서 만들 수 있어요. 수수료가 낮은 증권사(미래에셋·삼성증권·NH투자증권 등)를 먼저 비교해보세요. 퇴직금 수령만 목적이라면 수수료 0% 상품도 있어요.",
+    tip: "증권사 IRP는 ETF 투자도 가능해서 유리해요",
+  },
+  {
+    title: "앱으로 10분 이내 개설",
+    desc: "해당 금융사 앱을 설치하고 IRP 계좌 개설 메뉴로 들어가요. 신분증 촬영과 간편인증만으로 10분 이내에 개설 완료가 돼요. 일부 은행은 비대면 한도 제한이 있어 방문이 필요할 수 있어요.",
+    tip: "앱 개설이 방문보다 훨씬 빠르고 간편해요",
+  },
+  {
+    title: "계좌번호 인사팀에 통보",
+    desc: "IRP 계좌 개설 후 계좌번호(은행명, 계좌번호, 예금주명)를 인사팀에 문자나 메일로 알려줘요. 회사는 퇴직 후 14일 이내에 이 계좌로 퇴직금을 이체해야 해요.",
+    tip: "구두 통보보다 메일이나 문자로 남기는 게 증거로 좋아요",
+  },
+  {
+    title: "운용 지시 및 세액공제 활용",
+    desc: "퇴직금이 들어오면 어떻게 운용할지 선택해요. 원리금보장형(예금)과 실적배당형(ETF) 중 선택할 수 있어요. 추가 납입하면 연 900만원 한도로 세액공제(최대 16.5%)를 받을 수 있어요.",
+    tip: "운용 지시 안 하면 기본 원리금보장형으로 배정돼요",
+  },
 ];
 
 const CHECKLIST = [
-  "신분증 준비 — 주민등록증 또는 운전면허증",
-  "금융기관 비교 — 수수료·운용 상품·앱 편의성",
-  "개설 방법 선택 — 온라인(앱) 또는 지점 방문",
-  "계좌 번호 확인 — 개설 후 회사 인사팀에 전달",
-  "운용 상품 선택 — 예금·펀드·ETF 중 투자 성향에 맞게",
+  "금융기관 비교 — 증권사 수수료 0.2~0.3% vs 은행 0.5%",
+  "앱으로 10분 이내 개설 가능",
+  "계좌번호 인사팀에 문자·메일 통보",
+  "세액공제 — 연 900만원 한도, 최대 16.5%",
+  "운용 지시 — 원리금보장형 vs ETF",
 ];
 
 const FAQS = [
   {
-    q: "IRP 계좌는 무료로 만들 수 있나요?",
-    a: "개설 자체는 대부분 무료예요. 다만 운용 관리 수수료가 매년 부과되는 곳이 있죠. 최근에는 수수료 무료 IRP를 내놓는 곳도 많으니 비교해보세요.",
+    q: "퇴직금 통장이 따로 필요한가요?",
+    a: "퇴직금 300만원 초과 시 IRP 계좌로만 수령해야 해요. IRP가 사실상 퇴직금 전용 통장이에요. 일반 은행 계좌로는 받을 수 없어요.",
   },
   {
-    q: "온라인으로 바로 만들 수 있나요?",
-    a: "네, 은행·증권사 앱에서 10~20분이면 개설할 수 있어요. 비대면 인증(공동인증서, 간편인증 등)만 있으면 지점 방문 없이 가능하죠.",
+    q: "IRP 계좌는 어디서 만드는 게 좋나요?",
+    a: "수수료가 낮은 증권사를 권해요. 미래에셋·삼성증권·NH투자증권 등이 연 0.2~0.3% 수준이에요. 은행은 0.5%까지 올라가요. 퇴직금 수령만 목적이면 수수료 0% 상품도 있어요.",
   },
   {
-    q: "여러 금융기관에 IRP를 만들 수 있나요?",
-    a: "가능해요. 다만 퇴직금은 하나의 IRP로만 받게 되니, 가장 유리한 계좌를 선택해서 회사에 알려주세요.",
+    q: "IRP 계좌를 여러 개 만들 수 있나요?",
+    a: "만들 수 있어요. 하지만 세액공제 한도는 IRP+연금저축 합산 연 900만원이에요. 하나만 만들어도 충분해요.",
   },
   {
-    q: "퇴직 후에 개설해도 되나요?",
-    a: "되긴 하지만, 퇴직금 입금이 지연될 수 있어요. 퇴직 전에 미리 개설하고 계좌 번호를 인사팀에 전달하는 게 가장 효율적이죠.",
+    q: "IRP 계좌를 만들었는데 퇴직금이 안 들어왔어요",
+    a: "회사가 퇴직 후 14일 이내에 이체해야 해요. 14일이 지났는데 입금이 안 됐으면 인사팀에 문의하고, 그래도 안 되면 고용노동부에 진정을 낼 수 있어요.",
   },
   {
-    q: "은행 IRP와 증권사 IRP, 어떤 게 좋나요?",
-    a: "안정적 운용을 원하면 은행(예금 상품 다양), 적극 투자를 원하면 증권사(ETF·펀드 다양)가 유리해요. 본인 성향에 맞게 선택하세요.",
+    q: "IRP 계좌에 추가로 돈을 넣으면 세금 혜택이 있나요?",
+    a: "있어요. IRP+연금저축 합산 연 900만원까지 납입 시 소득 5,500만원 이하라면 16.5%, 초과라면 13.2% 세액공제를 받아요. 퇴직금 수령분은 이 한도에 포함되지 않아요.",
   },
 ];
 
@@ -49,101 +107,96 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로자퇴직급여 보장법 — IRP 계좌 개설", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+      { label: "근로자퇴직급여보장법 — IRP 계좌 의무화", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+      { label: "소득세법 제59조의3 — IRP 세액공제", url: "https://www.law.go.kr/법령/소득세법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "금융감독원 — IRP 계좌 비교 서비스", url: "https://www.fss.or.kr" },
+      { label: "금융감독원 — IRP 가입 안내", url: "https://www.fss.or.kr" },
     ],
   },
 ];
 
 const RELATED = [
-  {
-    slug: "퇴직금-통장",
-    title: "퇴직금 통장 종류",
-    description: "어떤 통장으로 퇴직금을 받을 수 있는지 안내해요.",
-  },
-  {
-    slug: "퇴직금-IRP-계좌",
-    title: "IRP 계좌 안내",
-    description: "IRP가 뭔지, 꼭 만들어야 하는지 정리했어요.",
-  },
-  {
-    slug: "퇴직금-통장-종류",
-    title: "퇴직금 통장 종류 비교",
-    description: "IRP, DB형, DC형 계좌의 차이를 비교해요.",
-  },
+  { slug: "퇴직금-IRP-계좌", title: "IRP 계좌 개설 방법", description: "은행·증권사 비교와 개설 절차." },
+  { slug: "퇴직금-통장-종류", title: "퇴직금 통장 종류", description: "법정퇴직금·DB형·DC형·IRP 차이." },
+  { slug: "퇴직금-수령방법", title: "퇴직금 수령 방법", description: "IRP 계좌로 안전하게 받는 방법." },
 ];
+
+// ─── 페이지 ──────────────────────────────────────────
 
 export default function Page() {
   return (
     <ArticleLayout
-      sidebar={
-        <Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} currentSlug="퇴직금-통장-만들기" />
-      }
+      sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} currentSlug="퇴직금-통장-만들기" />}
     >
-      <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 통장 개설 · IRP</p>
+      <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · IRP · 계좌개설</p>
 
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
-        퇴직금 통장 만들기,<br />
-        어디서 어떻게 하나요?
+        퇴직금 통장, 어디서 어떻게 만드나요?<br />
+        IRP 계좌 개설부터 세액공제 혜택까지 한 번에
       </h1>
 
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
-        &ldquo;퇴직금 받을 통장을 만들어야 하는데, 어디서 만들어요?&rdquo;<br />
-        IRP(개인형 퇴직연금) 계좌를 개설하면 돼요.
-        은행, 증권사, 보험사 어디서든 만들 수 있고, 앱으로도 10분이면 개설 가능하죠.
-        어디서 만드는 게 유리한지, 수수료와 운용 상품 차이를 비교해드릴게요.
+        퇴직금이 300만원을 넘으면 일반 통장으로는 받을 수 없어요.
+        <a href="/w/퇴직금-IRP-계좌" style={{ color: "#1D9E75", textDecoration: "underline" }}>IRP(개인형퇴직연금) 계좌</a>가 사실상 퇴직금 전용 통장이에요.
+        어디서 만드느냐에 따라 수수료가 달라지고, 추가 납입 시 연 최대 148.5만원 세액공제 혜택도 받을 수 있어요.
+      </p>
+      <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
+        퇴직이 확정된 뒤에 만들어도 되지만, 미리 만들어두면 <a href="/w/퇴직금-수령방법" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직 후 14일 이내 수령</a>이 훨씬 수월해요.
+        아래에서 어디서 만들면 유리한지, 서류는 뭐가 필요한지 단계별로 짚어드릴게요.
       </p>
 
       <Divider />
       <ArticleAd position="intro" />
 
-      <H2>퇴직금 통장은 어디서 만드나요?</H2>
+      <H2>퇴직금 통장은 IRP 계좌예요</H2>
       <p style={body}>
-        <strong>은행, 증권사, 보험사</strong> 세 곳에서 만들 수 있어요. 어디서 만들든 퇴직금 수령 기능은 동일하죠. 차이가 나는 건 수수료, 운용 가능 상품, 앱 편의성이에요.
+        퇴직금 300만원 초과 시 법적으로 IRP 계좌로만 받을 수 있어요.
+        <a href="/w/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여보장법</a>에서 이를 의무화하고 있어요.
+        IRP 계좌가 없으면 회사가 이체할 방법이 없어서 지급이 지연될 수 있어요.
       </p>
       <p style={body}>
-        은행은 접근성이 좋고 원금 보장 상품(예금)이 다양해요. 증권사는 ETF, 펀드 등 투자 상품 선택지가 넓죠. 보험사는 보험 연계 상품이 있지만 수수료가 상대적으로 높을 수 있어요.
-      </p>
-      <p style={body}>
-        최근에는 비대면 개설이 일반적이에요. 은행·증권사 앱을 설치하고, 비대면 인증(공동인증서 또는 간편인증)으로 본인 확인을 거치면 지점 방문 없이 개설이 끝나죠.
+        IRP는 퇴직금 수령 용도 외에도 본인이 직접 돈을 넣으면 연말정산에서 세금을 돌려받을 수 있어요.
+        연 소득 5,500만원 이하라면 납입액의 16.5%, 초과라면 13.2%를 돌려받아요.
+        연 900만원 꽉 채우면 최대 148.5만원이 환급돼요.
       </p>
 
-      <GreenBox title="IRP 개설 가능한 곳">
-        <strong>은행</strong>: 국민, 신한, 하나, 우리 등 — 예금 상품 다양<br />
-        <strong>증권사</strong>: 미래에셋, 삼성, 한국투자 등 — ETF·펀드 다양<br />
-        <strong>보험사</strong>: 삼성생명, 한화 등 — 보험 연계 상품
+      <GreenBox title="IRP 세액공제 핵심 정리">
+        퇴직금 300만원 초과 → IRP 계좌 필수 수령<br />
+        연 900만원(IRP+연금저축 합산) 납입 시 세액공제<br />
+        소득 5,500만원 이하: 16.5% → 최대 148.5만원 환급<br />
+        소득 5,500만원 초과: 13.2% → 최대 118.8만원 환급
       </GreenBox>
 
-      <SectionBadge>내 상황 체크</SectionBadge>
+      <SectionBadge>내 상황 체크해보세요</SectionBadge>
       <EligibilityChecker
         items={CHECK_ITEMS}
-        allMatchText="금융기관을 비교해서 IRP를 개설하세요. 퇴직 전에 만들어두면 좋아요."
-        partialMatchText="먼저 수수료와 상품을 비교한 뒤 개설 여부를 결정하세요."
+        allMatchText="IRP 계좌 개설이 꼭 필요해요. 아래 계산기로 세액공제 혜택도 미리 확인해보세요."
+        partialMatchText="상황에 따라 다를 수 있어요. 금융감독원(1332) 상담을 권해요."
       />
 
       <Divider />
 
-      <H2>IRP 계좌 개설 방법은?</H2>
+      <H2>IRP 납입 시 세액공제 혜택 계산해보세요</H2>
       <p style={body}>
-        <strong>온라인</strong>: 금융기관 앱 설치 → IRP 개설 메뉴 → 본인 인증 → 약관 동의 → 완료. 10~20분이면 끝나요. 앱에서 &ldquo;퇴직연금&rdquo; 또는 &ldquo;IRP&rdquo;를 검색하면 메뉴가 나오죠.
+        추가로 납입하면 납입액 기준으로 세금을 돌려받아요.
+        슬라이더로 납입액과 소득 구간을 조정하면 예상 환급액을 바로 볼 수 있어요.
+        퇴직금으로 들어온 금액은 이 한도와 별개예요.
       </p>
       <p style={body}>
-        <strong>지점 방문</strong>: 신분증을 들고 가면 직원이 안내해줘요. 상품 상담도 함께 받을 수 있어서 처음 개설하는 분에게 편하죠. 다만 대기 시간이 있을 수 있어요.
-      </p>
-      <p style={body}>
-        개설 후 계좌 번호를 회사 인사팀에 알려주세요. 회사가 퇴직금을 이 계좌로 보내게 되니까요. 퇴사 전에 미리 전달하면 퇴직금이 바로 입금될 수 있어요.
+        예를 들어 연 소득 5,500만원 이하인 분이 300만원을 넣으면 약 49만원이 돌아와요.
+        실질 부담은 251만원인 셈이에요. 납입 금액이 클수록 환급액도 커지는 구조예요.
       </p>
 
-      <BorderBox title="개설 전 준비물">
-        <strong>필수</strong>: 신분증 (주민등록증 또는 운전면허증)<br />
-        <strong>온라인</strong>: 공동인증서 또는 간편인증 (카카오, PASS 등)<br />
-        <strong>지점 방문</strong>: 신분증만 있으면 OK
-      </BorderBox>
+      <SectionBadge>IRP 세액공제 계산기</SectionBadge>
+      <Calculator
+        sliders={CALC_SLIDERS}
+        results={CALC_RESULTS}
+        note="※ IRP+연금저축 합산 최대 900만원 세액공제. 소득 5,500만원 이하 16.5%, 초과 13.2% 기준."
+      />
 
       <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
       <RelatedArticles items={RELATED} />
@@ -151,58 +204,63 @@ export default function Page() {
 
       <Divider />
 
-      <H2>은행마다 혜택이 다른가요?</H2>
+      <H2>IRP 개설에 필요한 서류</H2>
       <p style={body}>
-        수수료 차이가 제일 크죠. 일부 은행·증권사는 IRP 수수료를 면제해주고, 다른 곳은 연 0.2~0.5% 정도 수수료를 부과해요. 금액이 클수록 수수료 차이가 체감되니 꼭 비교하세요.
+        신분증 하나로 대부분 가능해요. 앱으로 개설하면 신분증 촬영과 간편인증만 있으면 돼요.
+        재직증명서는 일부 금융사에서만 요구하니, 미리 해당 앱에서 확인해두세요.
       </p>
       <p style={body}>
-        운용 가능 상품도 달라요. 은행은 예금·적금 상품이 풍부하고, 증권사는 ETF·펀드가 수백 종류까지 있죠. 안정적 운용을 원하면 은행, 적극 투자를 원하면 증권사가 맞아요.
+        이체용 기존 계좌는 본인 명의 계좌면 어디든 돼요.
+        앱 개설 과정에서 이 계좌로 1원을 입금해 본인 확인을 하는 경우가 있어요.
+        준비가 다 됐으면 금융사 앱을 설치하고 IRP 계좌 개설 메뉴로 바로 들어가면 돼요.
       </p>
-      <p style={body}>
-        <a href="https://www.fss.or.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>금융감독원</a> 홈페이지에서 IRP 수수료 비교 서비스를 제공하고 있어요. 금융기관별 수수료와 수익률을 한눈에 볼 수 있으니 활용하세요.
-      </p>
+
+      <SectionBadge>준비 서류 목록</SectionBadge>
+      <DocTable docs={DOCS} />
 
       <Divider />
 
-      <H2>통장 개설 시 필요한 서류는?</H2>
+      <H2>IRP 계좌 개설 4단계</H2>
       <p style={body}>
-        <strong>신분증</strong>만 있으면 돼요. 주민등록증 또는 운전면허증이 필수이고, 온라인 개설 시에는 공동인증서나 간편인증(카카오·PASS 등)이 추가로 필요하죠.
+        앱으로 10분이면 끝나요. 수수료 비교만 먼저 해두면 개설 자체는 어렵지 않아요.
+        개설 후 계좌번호를 인사팀에 바로 알려줘야 회사가 퇴직금을 이체할 수 있어요.
       </p>
       <p style={body}>
-        별도의 재직증명서나 퇴사 증빙은 필요 없어요. IRP는 누구나 만들 수 있는 계좌거든요. 재직 중에 미리 만들어둬도 되고, 퇴직 후에 만들어도 되죠.
+        금융기관마다 운용 가능한 상품과 수수료가 달라요. 퇴직금 수령만 목적이라면 수수료 0% 상품이 있는 증권사가 유리하고, 세액공제와 장기 운용까지 생각한다면 ETF 라인업도 함께 비교해보세요.
       </p>
-      <p style={body}>
-        개설 과정에서 투자 성향 테스트를 받게 돼요. 이건 운용 상품 추천을 위한 것이지 개설 조건은 아니에요. 솔직하게 응답하면 본인에 맞는 상품을 안내받을 수 있죠.
-      </p>
+
+      <Steps steps={STEPS} />
 
       <Divider />
 
-      <H2>어떤 은행 IRP가 유리한가요?</H2>
+      <H2>IRP 개설 체크리스트</H2>
       <p style={body}>
-        &ldquo;이 은행이 무조건 좋다&rdquo;라고 말하기는 어려워요. 본인 상황에 따라 달라지거든요. 수수료가 낮은 곳, 운용 상품이 다양한 곳, 앱이 편한 곳 — 우선순위를 정해서 비교하세요.
-      </p>
-      <p style={body}>
-        수수료 무료 프로모션을 자주 하는 곳도 있어요. 가입 시점에 수수료 면제 기간이 1~3년인 경우가 많으니, 프로모션 조건을 확인하고 이후 수수료도 따져보세요.
-      </p>
-      <p style={body}>
-        주거래 은행이나 증권사가 있다면 그곳에서 개설하는 게 편할 수 있어요. 기존 앱에 IRP 기능이 함께 들어가 있으니 별도 앱 설치 없이 관리할 수 있죠.
+        수수료와 세액공제 한도를 꼭 챙기세요. 수수료 차이만 해도 연 수십만 원이 달라질 수 있어요.
+        인사팀 통보는 구두보다 문자나 메일로 남겨야 나중에 분쟁이 생겨도 증거가 돼요.
       </p>
 
-      <SectionBadge>개설 체크리스트</SectionBadge>
+      <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
+
+      <GreenBox title="퇴직 전에 IRP 미리 만들어두세요">
+        IRP 계좌가 있어야 14일 이내에 퇴직금을 받을 수 있어요.
+        퇴직 후에 만들면 그사이 지급이 밀릴 수 있고, 14일 초과 시 회사는 연 20% 지연이자를 내야 해요.
+        10분이면 만들 수 있으니 퇴직이 확정되면 바로 개설하세요.
+      </GreenBox>
 
       <Divider />
 
       <H2>자주 묻는 것들</H2>
       <p style={{ ...body, marginBottom: 14 }}>
-        퇴직금 통장 만들기에 대해 자주 나오는 질문이에요.
+        IRP 계좌 개설과 퇴직금 수령에 대해 실제로 많이 나오는 질문만 골랐어요.
+        상황이 다르다면 금융감독원(1332)에 직접 물어보는 게 정확해요.
       </p>
       <FAQ items={FAQS} />
 
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준으로 작성됐어요. 금융 상품과 수수료는 변동될 수 있으니, 가입 금융기관에 직접 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법과 소득세법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 금융감독원(1332)에서 확인하세요." />
     </ArticleLayout>
   );
 }

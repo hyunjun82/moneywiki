@@ -2,46 +2,95 @@
 
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
-  EligibilityChecker, Checklist, FAQ, References, Disclaimer,
+  Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
   ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
 const CHECK_ITEMS = [
-  { id: "c1", label: "퇴직금을 IRP 계좌로 받았거나 받을 예정이에요" },
-  { id: "c2", label: "55세 이후에 연금으로 수령할 계획이 있어요" },
-  { id: "c3", label: "세금을 줄이고 싶어요" },
-  { id: "c4", label: "당장 목돈이 필요한 상황은 아니에요" },
+  { id: "c1", label: "IRP에 받은 퇴직금을 연금으로 전환하고 싶어요" },
+  { id: "c2", label: "55세 이상이에요" },
+  { id: "c3", label: "세금을 줄이는 방법으로 수령하고 싶어요" },
+  { id: "c4", label: "연금 수령 기간과 금액을 미리 계산해보고 싶어요" },
+];
+
+const CALC_SLIDERS = [
+  { id: "balance", label: "IRP 잔액", min: 1000, max: 20000, step: 500, defaultValue: 5000, format: (v: number) => `${v.toLocaleString()}만원` },
+  { id: "period", label: "연금 수령 기간", min: 10, max: 30, step: 1, defaultValue: 10, format: (v: number) => `${v}년` },
+];
+
+const CALC_RESULTS = [
+  {
+    label: "연간 연금 수령액 (원금 기준)",
+    getValue: (v: Record<string, number>) => Math.round(v.balance * 10000 / v.period),
+    format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원/년`,
+    highlight: true,
+  },
+  {
+    label: "월 연금 수령액",
+    getValue: (v: Record<string, number>) => Math.round(v.balance * 10000 / v.period / 12),
+    format: (v: number) => `약 ${Math.round(v / 10000 * 10) / 10}만원/월`,
+  },
+];
+
+const DOCS = [
+  { name: "IRP 계좌 (퇴직금 수령 후)", required: true, where: "은행·증권사" },
+  { name: "연금 수령 신청서", required: true, where: "IRP 금융기관 앱 또는 방문" },
+  { name: "신분증", required: true, where: "본인 지참" },
+  { name: "주민등록등본 (만 55세 이상 확인)", required: false, where: "정부24에서 무료 발급" },
+];
+
+const STEPS = [
+  {
+    title: "IRP 연금 수령 요건 확인",
+    desc: "IRP에서 연금으로 수령하려면 만 55세 이상이어야 해요. 가입 기간이 5년 이상이어야 하는 조건도 있어요. 퇴직금이 IRP에 들어온 경우, 55세 이후 언제든지 연금 수령 신청이 가능해요.",
+    tip: "55세 이전에는 일시금 인출만 가능 (기타소득세 16.5% 부과)",
+  },
+  {
+    title: "연금 수령 기간 설정",
+    desc: "연금 수령 기간은 최소 10년 이상으로 설정해야 퇴직소득세 30% 절감 혜택을 받아요. 기간이 길수록 월 수령액이 줄지만 세금도 줄어요. 금융기관 앱에서 수령 기간과 금액을 미리 시뮬레이션할 수 있어요.",
+    tip: "10년 이상 수령 시 퇴직소득세 30% 절감, 20년 이상 시 40% 절감",
+  },
+  {
+    title: "연금 수령 신청",
+    desc: "IRP 금융기관 앱 또는 방문 신청으로 연금 전환을 신청해요. 연금 수령 시작일, 수령 방식(매월·매분기 등), 금액을 설정해요. 개시 후에도 중도 변경이 가능해요.",
+    tip: "앱에서 10분이면 신청 가능해요",
+  },
+  {
+    title: "연금 수령 및 세금 납부",
+    desc: "매월 또는 분기별로 연금이 지급돼요. 연금 수령 시 연금소득세(3.3~5.5%)가 원천징수돼요. 퇴직소득세 30% 절감 효과도 자동 적용돼요.",
+    tip: "연금소득이 연 1,500만원 초과 시 종합소득세 신고 대상",
+  },
 ];
 
 const CHECKLIST = [
-  "IRP 계좌 개설 — 퇴직금 수령 전에 개설 필요",
-  "퇴직금 이체 확인 — 회사에서 IRP로 입금됐는지 확인",
-  "연금 수령 개시 — 55세 이후 금융기관에 연금 전환 신청",
-  "수령 기간 설정 — 최소 10년 이상 (세금 혜택 극대화)",
-  "수령 후 세금 확인 — 연금소득세 원천징수 확인",
+  "만 55세 이상 + IRP 가입 5년 이상 — 연금 수령 요건",
+  "연금 수령 기간 10년 이상 — 퇴직소득세 30% 절감",
+  "IRP 금융기관 앱에서 신청 — 10분 내 완료",
+  "연금소득세 3.3~5.5% — 자동 원천징수",
+  "연 1,500만원 초과 시 — 종합소득세 신고 필요",
 ];
 
 const FAQS = [
   {
-    q: "연금으로 받으면 세금이 얼마나 줄어드나요?",
-    a: "퇴직소득세의 60~70%만 내면 돼요. 연금 수령 기간이 길수록 세율이 더 낮아지죠. 10년 이상 나눠 받으면 절세 효과가 극대화돼요.",
+    q: "퇴직금을 연금으로 받으면 세금이 얼마나 절약되나요?",
+    a: "10년 이상 연금으로 수령하면 퇴직소득세의 30%를 절감해요. 예를 들어 퇴직소득세 300만원이라면 연금 수령 시 210만원만 내면 돼요. 20년 이상 수령 시 40% 절감이에요.",
   },
   {
-    q: "연금 전환 후에 일시금으로 바꿀 수 있나요?",
-    a: "가능하지만, 일시금으로 인출하면 퇴직소득세가 100% 부과돼요. 연금 전환의 세금 혜택이 사라지니까 신중하게 결정하세요.",
+    q: "55세 이전에 퇴직금을 연금으로 받을 수 있나요?",
+    a: "55세 이전에는 연금 수령이 불가해요. IRP에서 일시금으로 인출하면 기타소득세 16.5%가 부과돼요. 55세까지 기다리거나 연금저축계좌로 이전하는 방법이 있어요.",
   },
   {
-    q: "연금은 매달 얼마씩 받나요?",
-    a: "IRP에 쌓인 금액을 수령 기간으로 나눈 금액이에요. 예를 들어 5,000만 원을 10년간 받으면 월 약 42만 원이죠. 운용 수익이 붙으면 금액이 달라질 수 있어요.",
+    q: "연금 수령 중 갑자기 돈이 필요하면 인출할 수 있나요?",
+    a: "연금 수령 중에도 중도 인출이 가능해요. 하지만 인출 금액에 대해 퇴직소득세 절감 혜택이 취소될 수 있어요. 필요한 경우만 부분 인출하는 게 좋아요.",
   },
   {
-    q: "IRP 없이 연금저축계좌로도 가능한가요?",
-    a: "가능하지만 조건이 달라요. 퇴직금은 IRP로 받는 게 원칙이고, 연금저축계좌로 이전하려면 별도 절차가 필요하죠. 세금 혜택도 차이가 있어요.",
+    q: "IRP 연금과 국민연금을 동시에 받을 수 있나요?",
+    a: "맞아요. IRP 연금과 국민연금은 별개예요. 두 가지를 합산해서 노후 소득을 구성할 수 있어요. 연금소득 합산액이 연 1,500만원을 초과하면 종합소득세 신고를 해야 해요.",
   },
   {
-    q: "55세 전에 퇴직하면 연금 전환이 안 되나요?",
-    a: "IRP에 넣어두고 55세까지 기다리면 돼요. 55세가 될 때까지 운용하면서 수익도 쌓을 수 있죠. 다만 급하게 필요하면 중도 인출(법정 사유만)도 가능해요.",
+    q: "연금 수령 기간을 10년으로 하면 매월 얼마를 받나요?",
+    a: "IRP 잔액이 5,000만원이라면 10년 수령 시 연 약 500만원, 월 약 41만원이에요. 운용 수익이 있으면 더 받을 수 있어요.",
   },
 ];
 
@@ -49,167 +98,171 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로자퇴직급여 보장법 — IRP 및 연금 수령", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
-      { label: "소득세법 — 퇴직소득세 및 연금소득세", url: "https://www.law.go.kr/법령/소득세법" },
+      { label: "소득세법 제20조의3 — 연금소득 과세", url: "https://www.law.go.kr/법령/소득세법" },
+      { label: "근로자퇴직급여보장법 제7조 — IRP 운용 규정", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "금융감독원 — 퇴직연금 안내", url: "https://www.fss.or.kr" },
-      { label: "국세청 — 연금소득세 안내", url: "https://www.nts.go.kr" },
+      { label: "금융감독원 — IRP 연금 수령 안내", url: "https://www.fss.or.kr" },
+      { label: "국세청 — 연금소득 과세 안내", url: "https://www.nts.go.kr" },
     ],
   },
 ];
 
 const RELATED = [
-  {
-    slug: "퇴직금-연금저축계좌-수령",
-    title: "연금저축계좌 수령 방법",
-    description: "연금저축계좌와 IRP의 차이, 수령 시 세금을 비교해요.",
-  },
-  {
-    slug: "irp-퇴직금-인출",
-    title: "IRP 퇴직금 인출",
-    description: "IRP에서 퇴직금을 인출하는 방법과 세금 절감법을 안내해요.",
-  },
-  {
-    slug: "퇴직금-일시금-세금",
-    title: "퇴직금 일시금 세금",
-    description: "일시금으로 받을 때 세금이 얼마나 되는지 안내해요.",
-  },
+  { slug: "퇴직금-IRP-수령방법", title: "퇴직금 IRP 수령 절차", description: "IRP 계좌로 퇴직금 받는 4단계." },
+  { slug: "퇴직금-세금-절세-방법-IRP-연말정산", title: "퇴직금 절세 방법", description: "연금 수령으로 세금 줄이는 법." },
+  { slug: "퇴직금-일시금-세금", title: "퇴직금 일시금 세금", description: "일시금 vs 연금 세금 비교." },
 ];
 
 export default function Page() {
+  const currentSlug = "퇴직금-연금-전환";
+
+  const sidebar = <Sidebar data={퇴직금_SIDEBAR} currentSlug={currentSlug} />;
+
   return (
-    <ArticleLayout
-      sidebar={
-        <Sidebar
-          heading="퇴직금 가이드"
-          items={퇴직금_SIDEBAR}
-          currentSlug="퇴직금-연금-전환"
-        />
-      }
-    >
-      <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 연금 전환 · 절세</p>
+    <ArticleLayout sidebar={sidebar}>
+      {/* Breadcrumb */}
+      <div style={{ fontSize: 13, color: "#6b7280", marginBottom: 12 }}>
+        퇴직금 · 연금전환 · 절세
+      </div>
 
-      <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
-        퇴직금 연금 전환,<br />
-        일시금보다 유리한가요?
+      {/* H1 */}
+      <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.4, color: "#111827", marginBottom: 8 }}>
+        퇴직금을 연금으로 받으면 세금이 얼마나 줄어드나요?
       </h1>
-
-      <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
-        &ldquo;퇴직금을 한꺼번에 받을까, 연금으로 나눠 받을까?&rdquo;<br />
-        세금만 놓고 보면 연금이 유리해요.
-        퇴직소득세의 60~70%만 내면 되니까요.
-        연금 전환 방법, 수령 기간, 일시금과의 세금 차이를 비교해서 정리해드릴게요.
+      <p style={{ fontSize: 17, color: "#374151", fontWeight: 500, marginBottom: 20 }}>
+        IRP 연금 전환 절차와 퇴직소득세 30% 절감 방법
       </p>
 
-      <Divider />
+      {/* Intro */}
+      <p style={{ ...body, marginBottom: 12 }}>
+        퇴직금을 IRP 계좌로 받았다면 그냥 일시금으로 꺼내지 마세요. 연금으로 전환하면 퇴직소득세를 최대 40%까지 줄일 수 있어요. 퇴직소득세가 300만원이라면 연금 수령으로 210만원만 내면 되는 거죠.
+      </p>
+      <p style={{ ...body, marginBottom: 12 }}>
+        IRP 연금 수령의 핵심 요건은 두 가지예요. 만 55세 이상이어야 하고, IRP 가입 기간이 5년을 넘어야 해요. 퇴직금이 IRP로 입금된 경우 가입 기간 요건은 퇴직금 납입 시점부터 계산해요.
+      </p>
+      <p style={{ ...body, marginBottom: 20 }}>
+        수령 기간을 10년 이상으로 설정하면 퇴직소득세 30% 절감, 20년 이상이면 40% 절감이에요. 월 수령액이 줄어드는 대신 세금 부담이 크게 낮아지는 구조예요. 지금부터 단계별로 정리해드릴게요.
+      </p>
+
       <ArticleAd position="intro" />
 
-      <H2>퇴직금을 연금으로 전환하는 방법은?</H2>
-      <p style={body}>
-        퇴직할 때 퇴직금을 <strong>IRP 계좌</strong>로 받으면 연금 전환 준비가 끝나요. 이후 55세가 되면 금융기관에 연금 수령을 신청하면 되죠. 매달 또는 매분기 일정 금액을 나눠 받는 구조예요.
+      {/* H2-1 */}
+      <H2>IRP 연금으로 받으면 세금이 얼마나 줄어드나요?</H2>
+      <p style={{ ...body, marginBottom: 12 }}>
+        퇴직금을 일시금으로 받으면 퇴직소득세를 100% 내야 해요. 반면 IRP에서 연금으로 수령하면 <a href="/w/퇴직금-세금-절세-방법-IRP-연말정산" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직소득세가 자동으로 줄어드는 혜택</a>이 붙어요. 수령 기간이 길수록 절감 폭이 커지는 구조예요.
       </p>
-      <p style={body}>
-        IRP에 입금된 퇴직금은 운용 기간 동안 예금, 펀드, ETF 등에 투자할 수 있어요. 운용 수익에 대해서는 퇴직소득세가 이연(뒤로 미뤄짐)되기 때문에 복리 효과를 누릴 수 있죠. 수수료와 운용 상품은 가입한 금융기관에 따라 달라요.
-      </p>
-      <p style={body}>
-        연금 수령 개시 후에는 <strong>최소 10년 이상</strong> 나눠 받아야 세금 혜택이 극대화돼요. 10년 미만으로 받으면 세율이 좀 더 높아지니까, 수령 기간을 설정할 때 이 점을 꼭 고려하세요.
+      <p style={{ ...body, marginBottom: 16 }}>
+        연금 수령 기간 10년 이상이면 퇴직소득세의 30%를 깎아줘요. 20년 이상이면 40%예요. 퇴직소득세 500만원짜리 퇴직금이라면 10년 수령 시 350만원, 20년 수령 시 300만원만 내면 되는 거예요. 이 절감분은 따로 신청하지 않아도 자동 적용돼요.
       </p>
 
-      <GreenBox title="연금 전환 핵심 요약">
-        1. 퇴직금 → <strong>IRP 계좌</strong>로 수령<br />
-        2. <strong>55세 이후</strong> 연금 수령 개시 신청<br />
-        3. <strong>10년 이상</strong> 나눠 받으면 세금 혜택 극대화
+      <GreenBox>
+        <strong>퇴직소득세 절감률 한눈에 보기</strong><br />
+        · 10년 이상 연금 수령 → 퇴직소득세 <strong>30% 절감</strong><br />
+        · 20년 이상 연금 수령 → 퇴직소득세 <strong>40% 절감</strong><br />
+        · 연금 수령 시 과세: 연금소득세 3.3~5.5% (나이에 따라 다름)<br />
+        · 55세 이전 일시금 인출 시: 기타소득세 16.5% 부과
       </GreenBox>
 
-      <SectionBadge>내 상황 체크</SectionBadge>
-      <EligibilityChecker
-        items={CHECK_ITEMS}
-        allMatchText="연금 전환이 유리할 수 있어요. IRP 계좌를 확인하고 수령 계획을 세워보세요."
-        partialMatchText="일부 조건이 부족해요. 당장 목돈이 필요하다면 일시금 수령도 검토하세요."
-      />
+      <p style={{ ...body, marginTop: 12, marginBottom: 20 }}>
+        연금 수령 중에는 매월 연금소득세(3.3~5.5%)가 원천징수돼요. 만 70세 미만은 5.5%, 70~80세는 4.4%, 80세 이상은 3.3%예요. 퇴직소득세 절감 혜택까지 합치면 일시금보다 세 부담이 크게 낮아요.
+      </p>
+
+      <CategoryButton slug="퇴직금" label="퇴직금 전체 가이드 보기" />
+      <RelatedArticles items={RELATED} />
 
       <Divider />
 
-      <H2>연금 전환 시 세금이 줄어드나요?</H2>
-      <p style={body}>
-        줄어들어요. 일시금으로 받으면 퇴직소득세 100%를 내지만, 연금으로 나눠 받으면 <strong>60~70%만</strong> 내면 되죠. <a href="https://www.law.go.kr/법령/소득세법" style={{ color: "#1D9E75", textDecoration: "underline" }}>소득세법</a>에서 연금 수령 시 퇴직소득세의 일정 비율만 부과하도록 정하고 있어요.
+      {/* H2-2 */}
+      <H2>연금 수령액 미리 계산해보세요</H2>
+      <p style={{ ...body, marginBottom: 12 }}>
+        IRP 잔액과 수령 기간을 입력하면 연 수령액과 월 수령액을 바로 볼 수 있어요. 아래 계산기는 원금 기준이라 실제 운용 수익이 더해지면 수령액이 늘어요.
       </p>
-      <p style={body}>
-        수령 기간이 길수록 세율이 낮아져요. 10년까지는 퇴직소득세의 70%를 내고, 10년을 넘기면 60%만 내죠. 예를 들어 퇴직소득세가 500만 원이면, 10년 이상 연금 수령 시 300만 원만 내는 셈이에요.
-      </p>
-      <p style={body}>
-        IRP에서 추가 운용한 수익(이자·배당)에 대해서도 세금이 낮아져요. 일반 금융소득세(15.4%)가 아닌 연금소득세(3.3~5.5%)가 적용되니까, 장기 운용할수록 세금 차이가 커지죠.
+      <p style={{ ...body, marginBottom: 16 }}>
+        수령 기간을 10년에서 20년으로 늘리면 월 수령액은 절반이 되지만 퇴직소득세 절감은 30%에서 40%로 늘어요. 노후 생활비가 넉넉하다면 기간을 길게 잡는 게 세금 측면에서 유리해요.
       </p>
 
-      <BorderBox title="일시금 vs 연금 세금 비교 예시">
-        퇴직소득세 500만 원 기준:<br />
-        <strong>일시금</strong>: 500만 원 전액 납부<br />
-        <strong>연금 (10년 이상)</strong>: 약 300만 원 (60%)<br />
-        → 차이: <strong>약 200만 원 절세</strong>
-      </BorderBox>
+      <Calculator sliders={CALC_SLIDERS} results={CALC_RESULTS} />
 
-      <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
-      <RelatedArticles items={RELATED} />
+      <p style={{ ...body, marginTop: 16, marginBottom: 20 }}>
+        계산기는 단순 원금 분할 기준이에요. 실제 IRP 연금은 운용 수익이 붙기 때문에 금융기관 앱에서 정확한 예상 수령액을 시뮬레이션해볼 수 있어요.
+      </p>
+
       <ArticleAd position="mid" />
 
       <Divider />
 
-      <H2>연금 수령 기간과 금액은 어떻게 되나요?</H2>
-      <p style={body}>
-        수령 기간은 본인이 설정할 수 있어요. 다만 세금 혜택을 최대로 받으려면 <strong>10년 이상</strong>으로 설정하는 게 좋죠. 기간을 짧게 하면 매달 받는 금액은 커지지만 세율이 높아져요.
+      {/* H2-3 */}
+      <H2>연금 신청에 필요한 서류</H2>
+      <p style={{ ...body, marginBottom: 12 }}>
+        IRP 연금 수령 신청은 서류가 많지 않아요. 대부분 금융기관 앱에서 비대면으로 처리할 수 있고, 방문이 필요한 경우도 준비 서류가 간단해요.
       </p>
-      <p style={body}>
-        월 수령액은 IRP 잔액을 수령 기간(개월 수)으로 나눈 금액이에요. 잔액 5,000만 원을 10년(120개월)간 받으면 월 약 42만 원이죠. 운용 수익이 붙으면 실제 수령액이 달라질 수 있고요.
+      <p style={{ ...body, marginBottom: 16 }}>
+        주민등록등본은 만 55세 이상 확인용으로 필요할 수 있어요. 정부24에서 무료로 발급받을 수 있고, 앱 신청 시에는 본인인증으로 대체되는 경우가 많아요.
       </p>
-      <p style={body}>
-        연금 수령 중에도 IRP의 나머지 잔액은 계속 운용돼요. 수익률에 따라 총 수령액이 처음 예상보다 많아질 수 있죠. 반대로 손실이 나면 줄어들 수도 있으니 안정적인 운용 상품을 선택하는 게 중요해요.
+
+      <DocTable docs={DOCS} />
+
+      <p style={{ ...body, marginTop: 16, marginBottom: 20 }}>
+        연금 수령 신청서는 IRP를 개설한 금융기관에서 양식을 제공해요. 수령 시작일, 수령 주기(매월·매분기·매년), 수령 금액 또는 기간을 함께 기재해야 해요.
       </p>
 
       <Divider />
 
-      <H2>연금 전환 후 취소할 수 있나요?</H2>
-      <p style={body}>
-        취소라기보다 <strong>일시금 인출</strong>로 전환할 수 있어요. 연금 수령 중에 급하게 목돈이 필요하면 남은 잔액을 한꺼번에 인출할 수 있죠. 다만 이때 퇴직소득세가 100%로 다시 부과돼요.
+      {/* H2-4 */}
+      <H2>IRP 연금 전환 절차 4단계</H2>
+      <p style={{ ...body, marginBottom: 12 }}>
+        IRP 연금 전환은 4단계로 진행돼요. 요건 확인부터 실제 수령까지 순서대로 따라가면 헷갈리지 않아요. 앱에서 진행하면 1~3단계를 한 번에 처리할 수 있어요.
       </p>
-      <p style={body}>
-        이미 연금으로 받은 부분은 돌이킬 수 없고, 앞으로 받을 부분만 일시금으로 전환하는 거예요. 그래서 연금 전환을 결정할 때 &ldquo;당분간 목돈이 필요한 일은 없을까?&rdquo;를 충분히 고민해보세요.
+      <p style={{ ...body, marginBottom: 16 }}>
+        신청 이후에도 수령 기간이나 금액을 변경할 수 있으니 처음부터 완벽하게 설정하지 않아도 돼요. 단, 퇴직소득세 절감 요건인 10년 이상은 반드시 지켜야 해요.
       </p>
-      <p style={body}>
-        법정 사유(6개월 이상 요양, 파산 등)에 해당하면 중도 인출도 가능하긴 해요. 이 경우에도 인출 금액에 대해 세금이 부과되니까, IRP 계좌 운영사에 미리 세금 시뮬레이션을 요청하는 게 좋죠.
+
+      <Steps steps={STEPS} />
+
+      <p style={{ ...body, marginTop: 16, marginBottom: 20 }}>
+        연금 수령을 시작한 뒤에도 <a href="/w/퇴직금-IRP-수령방법" style={{ color: "#1D9E75", textDecoration: "underline" }}>IRP 계좌 관리</a>는 계속 필요해요. 잔액을 어떤 상품으로 운용하느냐에 따라 실제 수령액이 달라지거든요. 예금, ETF, 채권 등으로 분산해두는 게 일반적이에요.
       </p>
 
       <Divider />
 
-      <H2>연금 전환이 유리한 경우는?</H2>
-      <p style={body}>
-        <strong>당장 목돈이 필요하지 않고</strong>, 노후 생활비를 꾸준히 받고 싶은 사람에게 유리해요. 세금을 30~40% 절감하면서 안정적인 소득 흐름을 만들 수 있으니까요.
+      {/* H2-5 */}
+      <H2>연금 전환 체크리스트</H2>
+      <p style={{ ...body, marginBottom: 12 }}>
+        연금 전환 전에 아래 항목을 하나씩 짚어보세요. 요건이 충족되지 않으면 원하는 세금 혜택을 못 받을 수 있어요.
       </p>
-      <p style={body}>
-        반대로 부채 상환, 주택 구입 등 <strong>급하게 써야 할 곳</strong>이 있다면 일시금이 현실적이에요. 세금이 조금 더 나오더라도 자금 운용의 자유도가 높으니까요. 상황에 맞게 비교하고 결정하세요.
-      </p>
-      <p style={body}>
-        일부만 일시금으로 받고 나머지를 연금으로 전환하는 방법도 있어요. IRP에서 필요한 금액만 인출하고 나머지는 연금으로 돌리면 절세와 유동성을 동시에 챙길 수 있죠.
+      <p style={{ ...body, marginBottom: 16 }}>
+        특히 연금소득이 연 1,500만원을 넘으면 종합소득세 신고 대상이 돼요. IRP 연금 외에 국민연금, 개인연금까지 합산해서 계산해야 하니 미리 파악해두는 게 좋아요.
       </p>
 
-      <SectionBadge>연금 전환 준비 체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
+      <GreenBox style={{ marginTop: 16 }}>
+        <strong>연금소득 합산 주의사항</strong><br />
+        IRP 연금 + 국민연금 + 연금저축 합산액이 연 1,500만원을 넘으면 종합소득세 신고 대상이에요. 초과분에 대해 종합소득세율(6~45%)이 적용돼요. 연금 수령 금액 설계 시 이 기준선을 고려하는 게 좋아요.
+      </GreenBox>
+
+      <p style={{ ...body, marginTop: 16, marginBottom: 20 }}>
+        종합소득세 신고가 걱정된다면 <a href="/w/퇴직금-일시금-세금" style={{ color: "#1D9E75", textDecoration: "underline" }}>일시금 수령과 세금 비교</a>를 먼저 해보세요. 퇴직소득 규모와 다른 소득 상황에 따라 유리한 선택이 달라질 수 있어요.
+      </p>
+
       <Divider />
 
+      {/* H2-6 */}
       <H2>자주 묻는 것들</H2>
-      <p style={{ ...body, marginBottom: 14 }}>
-        퇴직금 연금 전환에 대해 자주 나오는 질문이에요.
+      <p style={{ ...body, marginBottom: 16 }}>
+        IRP 연금 전환 관련해서 가장 많이 물어보는 질문들이에요. 내 상황에 맞는 답을 찾아보세요.
       </p>
+
       <FAQ items={FAQS} />
 
       <Divider />
 
-      <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 소득세법과 근로자퇴직급여 보장법을 바탕으로 작성됐어요. 세율 변동이 있을 수 있으니, 최신 기준은 국세청(nts.go.kr)에서 확인하세요." />
+      <References data={REFERENCES} />
+      <Disclaimer />
     </ArticleLayout>
   );
 }

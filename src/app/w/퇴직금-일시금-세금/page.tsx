@@ -2,40 +2,114 @@
 
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
-  EligibilityChecker, Checklist, FAQ, References, Disclaimer,
+  Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
   ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
-// ─── 데이터 ──────────────────────────────────────────
+const currentSlug = "퇴직금-일시금-세금";
 
 const CHECK_ITEMS = [
   { id: "c1", label: "퇴직금을 일시금으로 받을 예정이에요" },
-  { id: "c2", label: "연금 수령과 세금 차이가 궁금해요" },
-  { id: "c3", label: "일시금 수령 후 세금 처리 방법을 알고 싶어요" },
-  { id: "c4", label: "IRP에 넣었다가 나중에 일시금으로 뺄 수 있는지 궁금해요" },
+  { id: "c2", label: "근속기간이 10년 이상이에요" },
+  { id: "c3", label: "퇴직금이 2,000만원 이상 예상돼요" },
+  { id: "c4", label: "절세 방법을 알고 싶어요" },
+];
+
+const CALC_SLIDERS = [
+  { id: "salary", label: "월 평균급여", min: 200, max: 800, step: 50, defaultValue: 350, format: (v: number) => `${v}만원` },
+  { id: "years", label: "근속 기간", min: 1, max: 30, step: 1, defaultValue: 10, format: (v: number) => `${v}년` },
+];
+
+const CALC_RESULTS = [
+  {
+    label: "예상 퇴직금",
+    getValue: (v: Record<string, number>) => v.salary * 10000 * v.years,
+    format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원`,
+    highlight: true,
+  },
+  {
+    label: "예상 퇴직소득세 (근속공제 후)",
+    getValue: (v: Record<string, number>) => {
+      const total = v.salary * 10000 * v.years;
+      // 근속연수공제: 5년이하 30만×년, 10년이하 50만×년, 20년이하 80만×년, 초과 120만×년
+      let deduction = 0;
+      if (v.years <= 5) deduction = 300000 * v.years;
+      else if (v.years <= 10) deduction = 1500000 + 500000 * (v.years - 5);
+      else if (v.years <= 20) deduction = 4000000 + 800000 * (v.years - 10);
+      else deduction = 12000000 + 1200000 * (v.years - 20);
+      const taxBase = Math.max(0, total - deduction);
+      // 환산급여공제 및 세율 적용 (간략 추정)
+      const annualTax = taxBase / v.years;
+      let rate = 0;
+      if (annualTax <= 14000000) rate = 0.06;
+      else if (annualTax <= 50000000) rate = 0.15;
+      else if (annualTax <= 88000000) rate = 0.24;
+      else rate = 0.35;
+      return Math.round(taxBase * rate * 0.5); // 퇴직소득 분리과세 50% 경감
+    },
+    format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원`,
+  },
+];
+
+const DOCS = [
+  { name: "퇴직소득 원천징수영수증", required: true, where: "회사 인사팀 발급" },
+  { name: "근로계약서 (근속기간 확인용)", required: true, where: "회사 인사팀" },
+  { name: "IRP 계좌 (선택)", required: false, where: "은행·증권사" },
+  { name: "연금계좌 수령 신청서 (IRP 연금 선택 시)", required: false, where: "IRP 금융기관" },
+];
+
+const STEPS = [
+  {
+    title: "퇴직소득세 계산",
+    desc: "회사 인사팀에서 퇴직소득 원천징수영수증을 발급해줘요. 근속연수 공제 후 세율을 적용해 세금이 결정돼요. 근속기간이 길수록 공제액이 커져서 세금이 줄어요.",
+    tip: "근속 5년마다 공제 구간이 바뀌어 세금 차이가 커져요",
+  },
+  {
+    title: "IRP 수령 vs 일시금 직접 수령 선택",
+    desc: "퇴직금 300만원 초과 시 IRP 계좌로만 수령 가능해요. IRP에서 일시금으로 인출하면 퇴직소득세를 납부해요. 연금으로 10년 이상 수령하면 퇴직소득세를 30% 절감할 수 있어요.",
+    tip: "IRP 연금 수령 선택 시 연금소득세 3.3~5.5%로 절세 가능",
+  },
+  {
+    title: "원천징수 확인",
+    desc: "회사가 퇴직금 지급 시 퇴직소득세를 원천징수하고 이미 납부해요. 별도 종합소득세 신고는 불필요해요. 퇴직소득은 분리과세라서 다른 소득과 합산되지 않아요.",
+    tip: "원천징수영수증을 꼭 받아두세요 — 나중에 필요해요",
+  },
+  {
+    title: "세금 환급 여부 확인",
+    desc: "중간정산 이력이 있으면 정산 시점 근속기간으로 재계산해요. 세금을 더 냈다면 5월 종합소득세 신고로 환급받을 수 있어요. 퇴직소득공제 계산이 잘못된 경우도 경정청구로 환급 가능해요.",
+    tip: "국세청 홈택스(www.hometax.go.kr)에서 퇴직소득세 자기검증 가능",
+  },
+];
+
+const CHECKLIST = [
+  "퇴직소득 원천징수영수증 — 인사팀에서 반드시 수령",
+  "근속연수 공제 적용 확인 — 5·10·20년 구간별",
+  "IRP 연금 수령 검토 — 퇴직소득세 30% 절감 가능",
+  "중간정산 이력 있으면 재계산 여부 확인",
+  "경정청구 기한 — 납부 후 5년 이내",
 ];
 
 const FAQS = [
   {
-    q: "일시금으로 받으면 세금이 더 많은 건가요?",
-    a: "연금 수령과 비교하면 그렇죠. 일시금은 퇴직소득세 100%를 내지만, 연금은 60~70%만 내면 되니까요.",
+    q: "퇴직금 일시금 수령 시 세금이 얼마나 나오나요?",
+    a: "근속기간과 퇴직금 규모에 따라 달라요. 근속 10년에 퇴직금 3,500만원이라면 실제 세금은 수십만 원 수준이에요. 근속연수 공제가 크기 때문에 대부분 세율이 낮아요.",
   },
   {
-    q: "일시금 세금 신고를 별도로 해야 하나요?",
-    a: "아니에요. 회사(또는 IRP 금융기관)가 원천징수해요. 세금을 뺀 금액이 입금되죠.",
+    q: "퇴직금은 종합소득세에 포함되나요?",
+    a: "아니에요. 퇴직소득은 분리과세라서 다른 소득(근로·사업·이자)과 합산하지 않아요. 별도로 퇴직소득세만 납부하면 돼요.",
   },
   {
-    q: "IRP에 넣었다가 바로 일시금으로 빼도 되나요?",
-    a: "가능해요. 다만 바로 인출하면 퇴직소득세가 원래대로 전액 부과돼서 절세 효과가 없어지죠.",
+    q: "IRP로 받으면 세금이 줄어드나요?",
+    a: "IRP 계좌에 받는 것 자체로는 세금이 달라지지 않아요. 그 돈을 연금으로 10년 이상 수령하면 퇴직소득세의 30%를 감면받아요. 일시금으로 인출하면 동일하게 퇴직소득세를 내요.",
   },
   {
-    q: "일시금과 연금을 섞어서 받을 수 있나요?",
-    a: "IRP에서 일부를 일시금으로, 나머지를 연금으로 받을 수 있어요. 전략적으로 조합하면 절세에 도움이 되죠.",
+    q: "퇴직소득세는 회사가 알아서 내나요?",
+    a: "맞아요. 회사가 퇴직금 지급 시 퇴직소득세를 원천징수하고 세무서에 납부해요. 별도 신고 없이 처리돼요. 다만 원천징수영수증은 꼭 받아두세요.",
   },
   {
-    q: "일시금 수령 후 연말정산에 영향이 있나요?",
-    a: "퇴직소득은 분류과세라서 근로소득과 합산되지 않아요. 연말정산에 직접적인 영향은 없죠.",
+    q: "근속 30년 이상이면 세금이 거의 없나요?",
+    a: "근속공제가 크기 때문에 과세표준이 많이 줄어요. 근속 30년이면 공제액이 2,400만원 이상이에요. 퇴직금 규모에 따라 다르지만 세율이 낮게 적용돼요.",
   },
 ];
 
@@ -43,164 +117,198 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "소득세법 제22조 — 퇴직소득의 범위", url: "https://www.law.go.kr/법령/소득세법" },
-      { label: "소득세법 제146조의2 — 퇴직소득 원천징수", url: "https://www.law.go.kr/법령/소득세법" },
+      { label: "소득세법 제22조 — 퇴직소득 범위", url: "https://www.law.go.kr/법령/소득세법" },
+      { label: "소득세법 제48조 — 퇴직소득공제", url: "https://www.law.go.kr/법령/소득세법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "국세청 — 퇴직소득세 안내", url: "https://www.nts.go.kr" },
-      { label: "금융감독원 — IRP 연금 수령 안내", url: "https://www.fss.or.kr" },
+      { label: "국세청 — 퇴직소득세 계산 안내", url: "https://www.nts.go.kr" },
+      { label: "홈택스 — 퇴직소득 원천징수 조회", url: "https://www.hometax.go.kr" },
     ],
   },
 ];
 
 const RELATED = [
-  {
-    slug: "퇴직금-일시금-수령-방법",
-    title: "퇴직금 일시금 수령 방법",
-    description: "일시금으로 퇴직금을 받는 구체적인 절차를 정리했어요.",
-  },
-  {
-    slug: "퇴직금-연금-전환",
-    title: "퇴직금 연금 전환, 어떻게 하나요?",
-    description: "퇴직금을 연금으로 전환하는 절차와 세금 혜택을 정리했어요.",
-  },
-  {
-    slug: "퇴직금-세금",
-    title: "퇴직금 세금, 얼마나 떼이나요?",
-    description: "퇴직소득세의 기본 구조와 계산 방법을 정리했어요.",
-  },
+  { slug: "퇴직금-세금", title: "퇴직금 세금, 얼마나 떼나요?", description: "퇴직소득세 계산 구조를 정리했어요." },
+  { slug: "퇴직금-IRP-수령방법", title: "퇴직금 IRP 수령 절차", description: "IRP 연금 절세 효과를 비교해요." },
+  { slug: "퇴직금-세금-절세-방법-IRP-연말정산", title: "퇴직금 절세 방법", description: "IRP 연금 수령으로 세금 30% 아끼는 법." },
 ];
-
-// ─── 페이지 ──────────────────────────────────────────
 
 export default function Page() {
   return (
     <ArticleLayout
-      sidebar={
-        <Sidebar
-          heading="퇴직금 가이드"
-          items={퇴직금_SIDEBAR}
-          currentSlug="퇴직금-일시금-세금"
-        />
-      }
+      sidebar={<Sidebar items={퇴직금_SIDEBAR} currentSlug={currentSlug} />}
     >
-      <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 일시금 · 세금</p>
+      {/* 타이틀 */}
+      <div style={{ marginBottom: 24 }}>
+        <p style={{ ...body.badge, marginBottom: 8 }}>퇴직금 · 일시금 · 세금</p>
+        <h1 style={body.h1}>
+          퇴직금 일시금으로 받으면 세금이 얼마나 나오나요?
+          <br />
+          <span style={body.h1sub}>퇴직소득세 계산 구조부터 절세 방법까지</span>
+        </h1>
+      </div>
 
-      <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
-        퇴직금 일시금으로 받으면<br />
-        세금이 더 많나요?
-      </h1>
-
-      <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
-        &ldquo;퇴직금을 한 번에 받고 싶은데, 세금이 더 많이 나오나요?&rdquo;<br />
-        연금 수령과 비교하면 그래요. 일시금으로 받으면 퇴직소득세 <strong>100%</strong>를 내야 하지만, IRP에 넣고 연금으로 받으면 <strong>60~70%</strong>만 내면 되거든요.
-        그래도 사정상 일시금이 필요한 경우가 있으니, 세금 차이와 절세 방법을 함께 정리해드릴게요.
+      {/* 인트로 */}
+      <p style={body.prose}>
+        퇴직금을 일시금으로 받을 때 가장 먼저 드는 의문이 "세금이 얼마나 나오지?"예요. 근속기간이 짧으면 부담스럽고, 길면 공제가 커서 생각보다 세금이 적게 나오죠.{" "}
+        <a href="/w/퇴직금-세금" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직소득세</a>는
+        일반 소득세와 계산 방식이 완전히 달라서, 구조를 알면 절세 여지도 보여요.
+      </p>
+      <p style={body.prose}>
+        회사가 원천징수해서 알아서 처리해주긴 하지만, 공제가 제대로 적용됐는지는 직접 챙겨야 해요.
+        퇴직소득 원천징수영수증을 받아서 근속연수 공제와 세액을 직접 대조해보는 게 중요해요.
+        아래에서 계산 구조, 절세 방법, 필요 서류까지 순서대로 정리할게요.
       </p>
 
       <Divider />
+
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 */}
-      <H2>퇴직금을 일시금으로 받으면 세금이 어떻게 되나요?</H2>
-      <p style={body}>
-        <a href="https://www.law.go.kr/법령/소득세법" style={{ color: "#1D9E75", textDecoration: "underline" }}>소득세법</a>에 따라 계산된 퇴직소득세 전액이 원천징수돼요. 회사가 퇴직금을 지급할 때 세금을 떼고 나머지를 통장에 넣어주죠. IRP를 거치지 않고 바로 받는 경우가 여기에 해당해요.
+      {/* 섹션 1: 세금 계산 구조 */}
+      <H2>퇴직금 일시금 세금, 어떻게 계산하나요?</H2>
+
+      <p style={body.prose}>
+        퇴직소득세는 근속기간 전체를 단번에 받는 특성을 반영해서 일반 소득세보다 훨씬 낮게 설계돼 있어요.{" "}
+        <a href="https://www.law.go.kr/법령/소득세법" style={{ color: "#1D9E75", textDecoration: "underline" }} target="_blank" rel="noopener noreferrer">소득세법 제48조</a>에서
+        근속연수 공제를 정하고 있는데, 근속기간에 따라 수백만 원에서 수천만 원을 퇴직금에서 먼저 빼줘요.
+        그 나머지에만 세율이 적용돼요.
       </p>
-      <p style={body}>
-        퇴직소득세는 연분연승법으로 계산되기 때문에 근속연수가 길수록 실효세율이 낮아져요. 하지만 일시금 수령이라는 이유로 추가 세금이 붙는 건 아니에요. &ldquo;일시금이라서 불이익을 받는다&rdquo;기보다는 &ldquo;연금으로 받으면 혜택이 있다&rdquo;는 구조인 거죠.
+
+      <GreenBox>
+        퇴직소득세 = 근속연수 공제 후 분리과세<br />
+        · 5년 이하: 근속연수 × 30만원 공제<br />
+        · 10년 이하: 150만원 + (근속연수-5) × 50만원<br />
+        · 20년 이하: 400만원 + (근속연수-10) × 80만원<br />
+        · 20년 초과: 1,200만원 + (근속연수-20) × 120만원
+      </GreenBox>
+
+      <p style={body.prose}>
+        공제 이후에도 '환산급여공제'가 한 번 더 적용돼요. 퇴직소득을 연 단위로 나눠서 계산하는 방식이기 때문에,
+        장기 근속자일수록 유리하게 설계돼 있어요. 두 번의 공제를 거치고 나면 최종 실질 세율은
+        퇴직금의 5~10% 수준으로 낮아져요.
       </p>
-      <p style={body}>
-        지방소득세(퇴직소득세의 10%)까지 합산한 금액이 실제 공제되는 세금이에요. 퇴직금 5,000만 원에 퇴직소득세가 150만 원이면, 지방소득세 15만 원을 더해 총 165만 원이 떼이고 4,835만 원이 입금되는 거죠.
+      <p style={body.prose}>
+        퇴직소득은 다른 소득과 합산되지 않는 분리과세예요. 연봉이 높아도 퇴직금 세금에는 영향이 없어요.
+        근로소득세, 사업소득세와 완전히 별개로 계산돼요.
       </p>
 
       <Divider />
 
-      {/* 섹션 2 */}
-      <H2>연금으로 나눠 받을 때와 비교하면?</H2>
-      <p style={body}>
-        IRP에 넣고 55세 이후 10년 이상 나눠 받으면 퇴직소득세의 <strong>60~70%</strong>만 부과돼요. 나머지 30~40%는 면제되는 셈이죠. 같은 퇴직금인데 세금이 30~40% 줄어드는 건 꽤 큰 차이예요.
-      </p>
-      <p style={body}>
-        예를 들어 퇴직소득세가 200만 원이라면, 일시금으로 받으면 200만 원을 다 내지만, 연금으로 받으면 약 120~140만 원만 내면 돼요. 퇴직금이 클수록 절세 금액도 커지죠.
-      </p>
-      <p style={body}>
-        다만 연금 수령에는 조건이 있어요. <strong>55세 이후</strong>에 <strong>10년 이상</strong> 나눠 받아야 하거든요. 10년 미만으로 받으면 감면율이 줄어들고, 55세 이전에 인출하면 일시금과 동일한 세금이 부과돼요.
+      {/* 섹션 2: 계산기 */}
+      <H2>내 퇴직금에 세금이 얼마나 붙나요?</H2>
+
+      <p style={body.prose}>
+        월 평균급여와 근속기간을 입력하면 퇴직금과 예상 세금을 바로 확인할 수 있어요.
+        실제 세금은 환산급여공제 계산이 별도로 있어서 아래 수치는 참고용이에요.
+        정확한 금액은{" "}
+        <a href="https://www.hometax.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }} target="_blank" rel="noopener noreferrer">국세청 홈택스</a>에서
+        퇴직소득세 모의계산 메뉴로 확인하는 게 맞아요.
       </p>
 
-      <BorderBox title="세금 비교 예시 (퇴직소득세 200만 원 기준)">
-        <strong>일시금 수령</strong> — 200만 원 전액 납부<br />
-        <strong>연금 수령(10년 이상)</strong> — 약 120~140만 원 납부<br />
-        <strong>절세 효과</strong> — 60~80만 원 절감
-      </BorderBox>
+      <Calculator
+        sliders={CALC_SLIDERS}
+        results={CALC_RESULTS}
+        note="※ 실제 세금은 근속연수공제+환산급여공제 적용 후 결정돼요. 홈택스 모의계산으로 정확히 확인하세요."
+      />
 
-      {/* ── 섹션 2 끝 → 버튼 + 관련 글 ── */}
-      <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/퇴직금" />
-      <RelatedArticles items={RELATED} />
+      <p style={body.prose}>
+        근속기간을 늘려보면 세금 항목 숫자가 줄어드는 걸 볼 수 있어요.
+        같은 퇴직금이라도 10년 근속과 20년 근속의 세금 차이가 크게 나요. 이게 근속연수 공제의 효과예요.
+        퇴직이 가까운 분이라면 근속기간을 한두 해 더 채우는 게 세금 면에서도 차이를 만들어줘요.
+      </p>
+
+      <CategoryButton href="/w/퇴직금" label="퇴직금 가이드 전체 보기" />
+
+      <RelatedArticles articles={RELATED} />
+
       <ArticleAd position="mid" />
 
       <Divider />
 
-      {/* 섹션 3 */}
-      <H2>일시금 수령 시 절세 방법이 있나요?</H2>
-      <p style={body}>
-        일시금으로 받더라도 절세 여지가 있어요. 첫째, 퇴직금을 일단 <strong>IRP에 이체</strong>한 뒤, 필요한 만큼만 인출하는 거예요. IRP에 남아 있는 금액은 운용수익에 대해 과세이연(세금 유예)을 받을 수 있죠.
+      {/* 섹션 3: 필요 서류 */}
+      <H2>퇴직금 수령 시 필요한 서류</H2>
+
+      <p style={body.prose}>
+        퇴직소득세는 회사가 원천징수하지만, 이게 제대로 됐는지 확인하려면 원천징수영수증이 꼭 있어야 해요.
+        퇴직할 때 인사팀에 요청하면 발급해줘요. 퇴직 후에도 재발급 요청이 가능해요.
       </p>
-      <p style={body}>
-        둘째, <strong>일부는 연금, 일부는 일시금</strong>으로 나눠 받는 전략이에요. 당장 필요한 금액만 일시금으로 빼고, 나머지는 IRP에 두고 연금으로 받으면 연금 부분에 대해서는 세금 감면을 받을 수 있거든요.
+
+      <DocTable docs={DOCS} />
+
+      <p style={body.prose}>
+        IRP 계좌는 퇴직금 300만원 초과 시 의무적으로 개설해야 해요.
+        이미 IRP 계좌가 있으면 그 계좌로 받으면 되고, 없으면 은행이나 증권사에서 개설하면 돼요.
+        IRP 연금 수령을 선택할 생각이라면 연금계좌 수령 신청서도 함께 준비해야 해요.
       </p>
-      <p style={body}>
-        셋째, 퇴직 시기를 조절해서 <strong>근속연수를 늘리는 것</strong>도 방법이에요. 1년이라도 더 채우면 퇴직소득공제가 커지고 환산급여가 줄어들어서 세금이 낮아지죠. 일시금이든 연금이든 상관없이 적용되는 절세 방법이에요.
+      <p style={body.prose}>
+        서류가 많아 보여도 필수는 원천징수영수증과 근로계약서 두 가지예요.
+        나머지는 IRP 연금 절세를 선택할 때만 필요해요.
+        우선 퇴직하면서 원천징수영수증부터 챙기는 게 가장 중요해요.
       </p>
 
       <Divider />
 
-      {/* 섹션 4 */}
-      <H2>IRP에 넣고 나중에 받는 게 유리한가요?</H2>
-      <p style={body}>
-        세금만 놓고 보면 <strong>유리해요</strong>. IRP에 넣어두면 퇴직소득세가 바로 원천징수되지 않고, 나중에 인출할 때 부과되거든요. 그 사이에 운용수익이 생기면 복리 효과까지 누릴 수 있죠.
+      {/* 섹션 4: 수령 절차 */}
+      <H2>퇴직금 일시금 수령 절차</H2>
+
+      <p style={body.prose}>
+        퇴직금 수령 과정에서 세금 관련 선택을 두 번 해야 해요.
+        첫 번째는 IRP로 받을지 직접 일시금으로 받을지, 두 번째는 IRP에 들어온 돈을 연금으로 받을지
+        일시금으로 인출할지예요. 이 선택에 따라 최종 세금이 달라질 수 있어요.
       </p>
-      <p style={body}>
-        하지만 돈이 IRP에 묶이는 단점이 있어요. 55세 이전에 인출하면 퇴직소득세 전액 + 기타소득세(16.5%)가 추가될 수 있거든요. 당장 목돈이 필요한 상황이라면 IRP에 넣는 게 불리할 수 있죠.
-      </p>
-      <p style={body}>
-        그래서 본인의 <strong>자금 상황</strong>을 먼저 판단해야 해요. 당장 쓸 돈이 아니라면 IRP에 넣어두는 게 절세 면에서 확실히 유리하고, 급하게 써야 한다면 일시금으로 받되 최소한의 세금만 내는 전략을 세우세요.
+
+      <Steps steps={STEPS} />
+
+      <p style={body.prose}>
+        세금 환급 여부 확인은 놓치기 쉬운 단계예요.
+        특히 중간정산 이력이 있거나, 근속기간 계산에 오류가 있었던 경우라면 납부한 세금을 돌려받을 수 있어요.
+        경정청구 기한이 5년이라서 급하지 않지만, 이왕이면 퇴직 직후에 챙기는 게 편해요.
       </p>
 
       <Divider />
 
-      {/* 섹션 5 */}
-      <H2>일시금 수령 후 세금 신고는 어떻게 하나요?</H2>
-      <p style={body}>
-        별도 신고가 필요 없어요. 회사(또는 IRP 금융기관)가 퇴직소득세를 <strong>원천징수</strong>해서 국세청에 납부하거든요. 본인 통장에는 세금을 뺀 금액이 입금되죠.
-      </p>
-      <p style={body}>
-        다만 같은 해에 두 군데 이상에서 퇴직금을 받았다면 다음 해 5월에 <strong>종합소득세 신고</strong>를 통해 퇴직소득을 합산 정산해야 해요. <a href="https://www.hometax.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>홈택스</a>에서 온라인으로 할 수 있고, 과다 납부 시 환급도 가능하죠.
-      </p>
-      <p style={body}>
-        퇴직소득 원천징수영수증은 퇴직 시 회사에서 발급해줘요. 이 서류에 퇴직금 금액, 퇴직소득세, 지방소득세가 다 나와 있으니 꼭 보관하세요. 나중에 세금 환급이나 연금 수령 시 필요하거든요.
+      {/* 섹션 5: 체크리스트 */}
+      <H2>세금 관련 체크리스트</H2>
+
+      <p style={body.prose}>
+        퇴직 전후로 해야 할 세금 관련 항목들을 정리했어요.
+        회사가 알아서 처리해주는 부분도 있지만, 내가 직접 챙겨야 하는 것도 있어요.
+        하나씩 체크해두면 나중에 후회할 일이 없어요.
       </p>
 
-      <SectionBadge>내 상황에 해당되는지 체크해보세요</SectionBadge>
+      <Checklist items={CHECKLIST} />
+
+      <GreenBox>
+        IRP 연금 수령으로 30% 절세 가능해요<br />
+        · 55세 이후 연금 수령 시 퇴직소득세 30% 감면<br />
+        · 10년 초과 수령하면 최대 40% 추가 감면 (총 최대 60%)<br />
+        · 일시금 인출 시 감면 없음 — 연금 수령이 핵심이에요
+      </GreenBox>
+
+      <p style={body.prose}>
+        IRP 연금 절세는 퇴직금 규모가 클수록 효과가 커요.
+        퇴직금이 5,000만원 이상이고 55세까지 시간 여유가 있다면 연금 수령 방식을 검토해볼 만해요.
+        단순히 세금 30%를 아끼는 게 아니라, 수십만 원에서 수백만 원의 실제 차이가 날 수 있거든요.
+      </p>
+
       <EligibilityChecker
+        title="IRP 절세 해당 여부 확인"
         items={CHECK_ITEMS}
-        allMatchText="일시금 세금이 걱정되시군요. IRP에 일단 넣고 필요한 만큼만 인출하는 전략을 검토해보세요."
-        partialMatchText="일부만 해당돼요. 국세청(126)이나 금융기관에 상담을 받아보세요."
       />
 
       <Divider />
 
+      {/* 섹션 6: FAQ */}
       <H2>자주 묻는 것들</H2>
-      <p style={{ ...body, marginBottom: 14 }}>
-        퇴직금 일시금 세금에 대해 자주 나오는 질문이에요.
-      </p>
+
       <FAQ items={FAQS} />
 
-      <Divider />
+      <References items={REFERENCES} />
 
-      <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 소득세법을 바탕으로 작성됐어요. 세법 개정이 있을 수 있으니, 최신 기준은 국세청(126) 또는 홈택스에서 확인하세요." />
+      <Disclaimer />
     </ArticleLayout>
   );
 }

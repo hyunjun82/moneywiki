@@ -2,48 +2,107 @@
 
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
-  EligibilityChecker, Checklist, FAQ, References, Disclaimer,
+  Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
   ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
-// ─── 데이터 ──────────────────────────────────────────
+const currentSlug = "퇴직금-DC형-계산법";
 
 const CHECK_ITEMS = [
-  { id: "c1", label: "우리 회사가 DC형(확정기여형) 퇴직연금을 운영해요" },
-  { id: "c2", label: "매년 연봉의 1/12가 퇴직연금 계좌에 적립되고 있어요" },
-  { id: "c3", label: "적립금 운용 상품(예금, 펀드 등)을 직접 선택하고 있어요" },
-  { id: "c4", label: "퇴직연금 사업자(은행·증권사) 앱에서 잔액을 확인할 수 있어요" },
+  { id: "c1", label: "회사가 DC형(확정기여형) 퇴직연금을 운영해요" },
+  { id: "c2", label: "매년 IRP에 얼마가 적립되는지 알고 싶어요" },
+  { id: "c3", label: "DC형과 DB형 중 어느 게 유리한지 모르겠어요" },
+  { id: "c4", label: "퇴직 시 IRP 잔액을 어떻게 받는지 궁금해요" },
+];
+
+const CALC_SLIDERS = [
+  {
+    id: "annual",
+    label: "연봉 (세전)",
+    min: 2400, max: 12000, step: 200, defaultValue: 5000,
+    format: (v: number) => `${v.toLocaleString()}만원`,
+  },
+  {
+    id: "years",
+    label: "근속 기간",
+    min: 1, max: 30, step: 1, defaultValue: 5,
+    format: (v: number) => `${v}년`,
+  },
+];
+
+const CALC_RESULTS = [
+  {
+    label: "DC형 연간 적립액 (연봉÷12)",
+    getValue: (v: Record<string, number>) => Math.round(v.annual * 10000 / 12),
+    format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원/년`,
+    highlight: true,
+  },
+  {
+    label: "DC형 총 적립 원금 (운용수익 제외)",
+    getValue: (v: Record<string, number>) => Math.round(v.annual * 10000 / 12) * v.years,
+    format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원`,
+  },
+];
+
+const DOCS = [
+  { name: "퇴직연금 적립금 확인서", required: true, where: "금융기관(은행·증권사) 앱 또는 방문" },
+  { name: "근로계약서 (DC형 명시 여부)", required: true, where: "인사팀" },
+  { name: "IRP 계좌 (퇴직금 수령용)", required: true, where: "은행·증권사" },
+  { name: "퇴직 확인서", required: false, where: "회사 인사팀" },
+];
+
+const STEPS = [
+  {
+    title: "DC형 적립 금융기관 확인",
+    desc: "회사가 어느 금융기관에 DC형 퇴직연금을 적립했는지 인사팀에 확인해요. 은행·증권사·보험사 중 하나예요. 해당 기관 앱에서 적립금 잔액을 실시간으로 조회할 수 있어요.",
+    tip: "인사팀에 '퇴직연금 운용 기관'을 물어보세요",
+  },
+  {
+    title: "적립금 잔액 조회",
+    desc: "DC형 퇴직연금 계좌에는 회사가 매년 연봉의 1/12 이상을 적립해야 해요. 운용 수익이 붙으면 잔액이 더 늘어날 수 있어요. 원리금보장형(예금)이나 실적배당형(ETF·펀드)으로 운용돼요.",
+    tip: "ETF 운용 중이라면 시장 변동에 따라 잔액이 달라질 수 있어요",
+  },
+  {
+    title: "퇴직 시 IRP 계좌로 이전",
+    desc: "퇴직하면 DC형 계좌 잔액 전액이 본인 IRP 계좌로 이전돼요. IRP에서 일시금 인출 시 퇴직소득세가 원천징수돼요. 연금으로 10년 이상 수령하면 퇴직소득세의 30%를 절감해요.",
+    tip: "IRP 계좌를 퇴직 전에 미리 만들어두세요",
+  },
+  {
+    title: "일시금 또는 연금 수령 선택",
+    desc: "IRP 잔액을 일시금으로 인출할 수도 있고, 55세 이후 연금으로 수령할 수도 있어요. 연금으로 나눠 받으면 세금이 줄고, 노후 수입이 안정적으로 생겨요. 연금 수령 기간이 10년 이상이면 절세 효과가 최대예요.",
+    tip: "55세 이전 인출 시 기타소득세 16.5% 부과",
+  },
 ];
 
 const CHECKLIST = [
-  "퇴직연금 사업자 앱/웹 — 적립금 잔액과 운용 수익률 확인",
-  "매년 적립 내역 — 회사가 1/12를 제때 넣었는지 확인",
-  "운용 상품 목록 — 예금, 채권형, 주식형 등 현재 배분 비율",
-  "근로계약서 — DC형 가입 사실과 부담금 기준 확인",
-  "IRP 계좌 — 퇴직 시 적립금 이전받을 계좌 준비",
+  "DC형 적립 금융기관 확인 — 인사팀 문의",
+  "연간 적립액 — 연봉 ÷ 12 이상인지 확인",
+  "운용 방식 — 원리금보장형 vs 실적배당형",
+  "IRP 계좌 — 퇴직 전 미리 개설",
+  "연금 수령 선택 — 10년 이상 시 세금 30% 절감",
 ];
 
 const FAQS = [
   {
-    q: "DC형은 퇴직금이 정해져 있지 않나요?",
-    a: "맞아요. 회사가 넣어주는 금액(연봉의 1/12)은 정해져 있지만, 운용 수익에 따라 최종 수령액이 달라지죠. 수익이 나면 더 받고, 손실이 나면 덜 받아요.",
+    q: "DC형 퇴직연금 적립금은 내가 직접 운용하나요?",
+    a: "맞아요. DC형은 근로자 본인이 운용 지시를 해요. 원리금보장형(예금), 실적배당형(ETF·펀드) 중 선택할 수 있어요. 운용 지시를 안 하면 기본 원리금보장형으로 배정돼요.",
   },
   {
-    q: "DC형에서 원금 손실이 나면 회사가 보전해주나요?",
-    a: "안 해줘요. 운용 책임은 근로자에게 있어요. 그래서 원금 보장형 상품(예금, ELB 등)을 선택하는 분이 많죠.",
+    q: "DC형과 DB형 중 어느 게 퇴직금이 더 많나요?",
+    a: "임금 인상률이 높을수록 DB형이 유리해요. DC형은 운용 수익을 직접 가져가서 ETF 투자 시 DB형보다 많아질 수 있어요. 임금 인상이 낮은 회사에서는 DC형이 유리한 경우도 많아요.",
   },
   {
-    q: "DB형에서 DC형으로 전환하면 유리한가요?",
-    a: "임금 인상률이 낮고 본인이 투자에 자신 있다면 DC형이 유리할 수 있어요. 반대로 매년 급여가 많이 오르는 직장이라면 DB형이 낫죠.",
+    q: "회사가 적립 의무를 안 지키면 어떻게 되나요?",
+    a: "매년 연봉의 1/12 이상을 적립해야 하는 법적 의무가 있어요. 미적립 시 고용노동부에 신고할 수 있고, 회사는 과태료 대상이 돼요. 미적립 금액은 퇴직 시 추가 지급받을 수 있어요.",
   },
   {
-    q: "DC형 적립금은 중도 인출이 되나요?",
-    a: "법정 사유(주택 구입, 6개월 이상 요양 등)에 해당하면 중도 인출이 가능해요. 단순 생활비 용도로는 안 되죠.",
+    q: "DC형 퇴직연금도 IRP로 받아야 하나요?",
+    a: "맞아요. 퇴직 시 DC형 잔액 전체가 자동으로 IRP로 이전돼요. IRP에서 일시금 인출 또는 연금 수령을 선택할 수 있어요.",
   },
   {
-    q: "퇴직 시 DC형 적립금은 어떻게 받나요?",
-    a: "IRP 계좌로 이전한 뒤 인출하는 게 원칙이에요. 55세 이상이면 연금으로 받을 수도 있고, 일시금 수령도 가능하죠.",
+    q: "중도 인출(중간정산)이 가능한가요?",
+    a: "DC형은 법정 사유에 해당하면 중도 인출이 가능해요. 주택 구입, 요양, 천재지변 등이 법정 사유예요. 중도 인출 시 퇴직소득세가 원천징수돼요.",
   },
 ];
 
@@ -51,179 +110,174 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로자퇴직급여보장법 제20조 — 확정기여형 부담금", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
-      { label: "근로자퇴직급여보장법 제17조 — 퇴직연금 운용", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+      { label: "근로자퇴직급여보장법 제20조 — DC형 사용자 부담금", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
       { label: "고용노동부 — 퇴직연금제도 안내", url: "https://www.moel.go.kr" },
-      { label: "금융감독원 — 퇴직연금 비교공시", url: "https://www.fss.or.kr" },
+      { label: "금융감독원 — 퇴직연금 비교 공시", url: "https://www.fss.or.kr" },
     ],
   },
 ];
 
 const RELATED = [
-  {
-    slug: "퇴직금-제도-종류",
-    title: "퇴직금 제도 종류, DB형 DC형 IRP 비교",
-    description: "DB형·DC형·IRP의 구조와 특징을 한눈에 비교해요.",
-  },
-  {
-    slug: "dc형-퇴직금-수령방법",
-    title: "DC형 퇴직금 수령 방법과 절차",
-    description: "퇴직 후 IRP 이전부터 인출까지의 절차를 정리했어요.",
-  },
-  {
-    slug: "퇴직금-계산-방법",
-    title: "퇴직금 계산 방법, 공식과 실제 사례",
-    description: "DB형 기준 퇴직금 계산 공식을 사례로 풀어드려요.",
-  },
+  { slug: "db형-퇴직금-수령방법", title: "DB형 퇴직금 수령 방법", description: "DB형 퇴직연금 수령 절차와 차이점." },
+  { slug: "퇴직금-IRP-계좌", title: "IRP 계좌 개설 방법", description: "은행·증권사 비교와 개설 절차." },
+  { slug: "퇴직금-세금", title: "퇴직금 세금, 얼마나 떼나요?", description: "IRP 연금 절세 효과를 계산해요." },
 ];
-
-// ─── 페이지 ──────────────────────────────────────────
 
 export default function Page() {
   return (
     <ArticleLayout
-      sidebar={
-        <Sidebar
-          heading="퇴직금 가이드"
-          items={퇴직금_SIDEBAR}
-          currentSlug="퇴직금-DC형-계산법"
-        />
-      }
+      sidebar={<Sidebar items={퇴직금_SIDEBAR} currentSlug={currentSlug} />}
     >
-      <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 근로기준법 · 계산법</p>
+      {/* 타이틀 */}
+      <div style={{ marginBottom: 24 }}>
+        <p style={{ ...body.badge, marginBottom: 8 }}>퇴직금 · DC형 · 퇴직연금</p>
+        <h1 style={body.h1}>
+          DC형 퇴직연금, 퇴직하면 얼마를 받나요?
+          <br />
+          <span style={body.h1sub}>적립 방식부터 수령까지, DB형과 비교도 해드려요</span>
+        </h1>
+      </div>
 
-      <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
-        DC형 퇴직금 계산법,<br />
-        DB형이랑 뭐가 다른가요?
-      </h1>
-
-      <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
-        &ldquo;DC형이라 퇴직금을 얼마 받을지 모르겠어요.&rdquo; DC형(확정기여형)은 회사가 매년 <strong>연봉의 1/12</strong>를 적립하고, 근로자가 직접 운용하는 방식이에요.
-        <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여보장법</a>이 정한 이 구조에서는 운용 수익에 따라 퇴직금이 늘어나기도, 줄어들기도 하죠.
-        DB형(확정급여형)과 어떻게 다르고, 내 적립금은 어떻게 확인하는지, 유불리 판단 기준은 뭔지 지금부터 정리해드릴게요.
+      {/* 인트로 */}
+      <p style={body.prose}>
+        DC형 퇴직연금은 회사가 매년 연봉의 1/12을 IRP 계좌에 적립하는 방식이에요. 근로자 본인이 직접 그 돈을 운용하고, 퇴직 시 잔액을 통째로 가져가는 구조예요. DB형처럼 회사가 최종 퇴직금을 책임지는 게 아니라, 운용 결과에 따라 받는 금액이 달라질 수 있어요.
+      </p>
+      <p style={body.prose}>
+        어느 금융기관에 적립됐는지, 지금 잔액이 얼마인지, 퇴직 시 어떻게 수령하는지 — 아래에서 단계별로 풀어드릴게요. DC형과 DB형 중 어느 쪽이 유리한지 비교도 해드려요.
       </p>
 
-      <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 */}
-      <H2>DC형 퇴직금 계산 방식은 어떻게 되나요?</H2>
-      <p style={body}>
-        DC형의 계산은 사실 &ldquo;계산&rdquo;이라기보다 &ldquo;적립 + 운용 결과&rdquo;에 가까워요. 회사가 매년 <strong>연간 임금 총액의 1/12 이상</strong>을 퇴직연금 사업자(은행·증권사)에 넣어주고, 근로자가 그 돈으로 예금, 펀드, 채권 등을 골라 운용하죠.
-      </p>
-      <p style={body}>
-        퇴직 시 받는 금액은 <strong>적립금 원금 + 운용 수익(또는 - 운용 손실)</strong>이에요. 예를 들어 연봉 4,800만 원인 직장인이 5년 근무했다면, 회사가 넣은 원금은 400만 x 5 = 2,000만 원이죠. 여기에 연평균 3% 수익이 났다면 약 2,185만 원을 받게 돼요.
-      </p>
-      <p style={body}>
-        DB형처럼 &ldquo;평균임금 x 30일 x 근속연수&rdquo; 공식이 아니라, 적립된 금액 자체가 곧 퇴직금이에요. 그래서 DC형은 매년 얼마가 적립되고 있는지, 수익률은 어떤지를 꾸준히 확인하는 게 중요하죠.
+      <Divider />
+
+      {/* 섹션 1: DC형 적립 구조 */}
+      <H2>DC형 퇴직연금, 어떻게 쌓이나요?</H2>
+
+      <p style={body.prose}>
+        <a href="/w/퇴직금-제도-종류" style={body.link}>근로자퇴직급여보장법 제20조</a>에 따라, DC형을 운영하는 회사는 매년 근로자 연봉의 1/12 이상을 IRP 계좌에 납입해야 해요. 이 의무를 지키지 않으면 고용노동부 과태료 대상이 되고, 미납금은 퇴직 시 추가 지급 청구가 가능해요.
       </p>
 
-      <GreenBox title="DC형 퇴직금 구조">
-        회사 부담금: 매년 연간 임금 총액의 <strong>1/12 이상</strong><br />
-        퇴직 시 수령액: 적립금 원금 + 운용 수익(또는 - 손실)<br />
-        운용 책임: <strong>근로자 본인</strong>
+      <GreenBox>
+        DC형 연간 적립 공식<br />
+        연봉 ÷ 12 = 연간 적립액 (최소 기준)<br />
+        예: 연봉 6,000만원 → 연 500만원 적립<br />
+        운용 수익 발생 시 잔액이 더 늘어요 (근로자 몫)
       </GreenBox>
 
-      <SectionBadge>내 상황 체크</SectionBadge>
-      <EligibilityChecker
-        items={CHECK_ITEMS}
-        allMatchText="4가지 모두 해당돼요. 아래 내용을 참고해서 적립금을 점검해보세요."
-        partialMatchText="일부 항목이 빠져 있네요. 회사 인사팀이나 퇴직연금 사업자에 문의해보세요."
-      />
+      <p style={body.prose}>
+        DB형은 퇴직 직전 3개월 평균 임금 기준으로 계산하지만, DC형은 재직 중 매년 쌓인 원금과 운용 수익이 합산돼요. 임금 인상이 크지 않거나 ETF·펀드로 적극 운용하는 경우, DC형이 DB형보다 유리하게 나올 수 있어요.
+      </p>
+
+      <BorderBox>
+        <strong>DC형 vs DB형 핵심 비교</strong><br />
+        · DC형: 연봉 ÷ 12 매년 적립, 근로자 운용, 운용 결과 근로자 책임<br />
+        · DB형: 퇴직 직전 3개월 평균임금 × 근속연수, 회사 운용, 최종 금액 회사 보장<br />
+        · 임금 인상률 높음 → DB형 유리 / 임금 인상 낮고 ETF 운용 → DC형 유리
+      </BorderBox>
+
+      <p style={body.prose}>
+        DC형 계좌는 본인이 직접 운용 지시를 해야 해요. 지시를 안 하면 원리금보장형(예금)으로 자동 배정돼요. ETF나 펀드를 선택하면 수익이 더 날 수 있지만, 원금 손실 가능성도 있으니 본인 성향에 맞게 고르는 게 중요해요.
+      </p>
 
       <Divider />
 
-      {/* 섹션 2 */}
-      <H2>DB형과 DC형, 계산 결과가 왜 다른가요?</H2>
-      <p style={body}>
-        가장 큰 차이는 <strong>기준 시점</strong>이에요. DB형은 퇴직 시점의 평균임금으로 계산하니까, 재직 중 급여가 올랐다면 그 인상분이 전부 반영되죠. 입사 때 월급 250만 원이었는데 퇴직 때 400만 원이면, 400만 원 기준으로 퇴직금을 받아요.
-      </p>
-      <p style={body}>
-        DC형은 <strong>매년 그해 임금 기준</strong>으로 적립하니까, 입사 초기 낮은 급여로 적립된 금액은 그대로 남아요. 같은 조건이라면 임금 인상률이 높을수록 DB형이 유리하고, 임금 인상이 거의 없다면 DC형이 운용 수익만큼 유리해질 수 있죠.
-      </p>
-      <p style={body}>
-        숫자로 비교해볼게요. 연봉 3,600만 원으로 시작해서 매년 5%씩 10년 올랐다면, DB형 퇴직금은 마지막 평균임금 기준으로 약 5,860만 원이에요. DC형은 매년 적립한 원금 합계가 약 4,530만 원이고, 여기에 운용 수익이 붙어야 DB형을 따라잡을 수 있죠.
+      {/* 섹션 2: 계산기 */}
+      <H2>내 DC형 적립금 예상액 계산해보세요</H2>
+
+      <p style={body.prose}>
+        연봉과 근속 기간을 입력하면 DC형 기준 연간 적립액과 총 원금이 나와요. 운용 수익은 포함하지 않으니, 실제 잔액은 이보다 많거나 적을 수 있어요. 금융기관 앱에서 실시간 잔액을 조회하는 게 가장 정확해요.
       </p>
 
-      <BorderBox title="DB형 vs DC형 간단 비교">
-        <strong>DB형</strong>: 퇴직 시 평균임금 기준 → 임금 인상률이 높으면 유리<br />
-        <strong>DC형</strong>: 매년 적립 + 운용 수익 → 투자 수익이 좋으면 유리<br />
-        임금 인상률 &gt; 운용 수익률이면 DB형, 반대면 DC형이 유리해요.
-      </BorderBox>
+      <Calculator
+        sliders={CALC_SLIDERS}
+        results={CALC_RESULTS}
+        note="※ 운용 수익 미포함 원금 기준 계산. 실제 잔액은 금융기관 앱에서 조회하세요."
+      />
 
-      {/* ── 섹션 2 끝 → 버튼 + 관련 글 ── */}
-      <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
+      <p style={body.prose}>
+        근속 5년이면 연봉 5,000만원 기준으로 원금만 약 2,083만원이 쌓여요. 여기에 운용 수익이 더해지면 최종 수령액이 달라져요. ETF 운용 중이라면 시장 상황에 따라 이 금액보다 많이 받을 수도 있어요.
+      </p>
+
+      <CategoryButton href="/w/퇴직금" label="퇴직금 가이드 전체 보기" />
+
       <RelatedArticles items={RELATED} />
+
       <ArticleAd position="mid" />
 
       <Divider />
 
-      {/* 섹션 3 */}
-      <H2>DC형에서 운용 손실이 나면 퇴직금이 줄어드나요?</H2>
-      <p style={body}>
-        네, 줄어들 수 있어요. DC형의 운용 책임은 온전히 근로자에게 있으니까요. 주식형 펀드에 투자했다가 시장이 하락하면 적립금 원금보다 적은 금액을 받게 되죠. 이 부분이 DC형의 가장 큰 리스크예요.
+      {/* 섹션 3: 서류 */}
+      <H2>퇴직 시 필요한 서류</H2>
+
+      <p style={body.prose}>
+        DC형 퇴직연금을 수령하려면 IRP 계좌가 먼저 있어야 해요. 퇴직 직전에 IRP 계좌를 열어두지 않으면 수령 절차가 지연될 수 있어요. 아래 서류들을 미리 챙겨두면 퇴직 처리가 훨씬 수월해요.
       </p>
-      <p style={body}>
-        그래서 원금 보장을 원하는 분은 <strong>예금, 원금보장형 ELB(주가연계파생결합사채), GIC(이율보증보험)</strong> 같은 상품을 선택해요. 수익률은 낮지만 적어도 회사가 넣어준 원금은 지켜지죠. 실제로 DC형 가입자의 약 80%가 원금 보장형 상품에 자금을 배분하고 있어요.
-      </p>
-      <p style={body}>
-        반대로 적극적으로 운용해서 수익을 내면 DB형보다 훨씬 많이 받을 수 있어요. 연평균 5% 수익을 10년 유지했다면, 원금 대비 약 63%가 더 붙죠. 다만 이건 시장 상황에 달려 있으니 보장은 안 돼요.
+
+      <DocTable docs={DOCS} />
+
+      <p style={body.prose}>
+        퇴직연금 적립금 확인서는 금융기관 앱이나 영업점 방문으로 바로 발급받을 수 있어요. 잔액과 운용 현황, 미납 여부 등을 한번에 볼 수 있어서 퇴직 전 꼭 확인해두는 게 좋아요.
       </p>
 
       <Divider />
 
-      {/* 섹션 4 */}
-      <H2>DC형 적립금은 어떻게 확인하나요?</H2>
-      <p style={body}>
-        퇴직연금 사업자(은행·증권사)의 <strong>앱이나 웹사이트</strong>에서 확인할 수 있어요. 로그인 후 &ldquo;퇴직연금&rdquo; 또는 &ldquo;DC형 계좌&rdquo; 메뉴에 들어가면 적립금 잔액, 운용 수익률, 상품별 배분 비율이 전부 보이죠.
+      {/* 섹션 4: 수령 절차 */}
+      <H2>DC형 퇴직금 수령 절차 4단계</H2>
+
+      <p style={body.prose}>
+        DC형 퇴직금은 퇴직 시 자동으로 IRP로 이전돼요. 이 흐름을 미리 알아두면 퇴직 후에 당황하지 않아요. 특히 IRP 계좌 개설 여부와 연금 수령 방식 선택은 세금에 직접 영향을 줘서 사전에 결정해두는 게 유리해요.
       </p>
-      <p style={body}>
-        매년 회사가 부담금을 제때 넣었는지도 같이 살펴보세요. <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여보장법 제20조</a>는 사용자가 매년 1회 이상 부담금을 납입하도록 규정하고 있어요. 밀린 부담금이 있다면 회사에 즉시 납입을 요구할 수 있죠.
-      </p>
-      <p style={body}>
-        <a href="https://www.fss.or.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>금융감독원 퇴직연금 비교공시</a>에서 다른 사업자의 수익률과 수수료를 비교해볼 수 있어요. 수수료 차이가 장기적으로 수백만 원 차이를 만들 수 있으니, 한 번쯤 비교해보는 게 좋죠.
+
+      <Steps steps={STEPS} />
+
+      <p style={body.prose}>
+        IRP로 이전된 잔액은 55세 이전에 꺼내면 기타소득세 16.5%가 붙어요. 55세 이후 연금으로 나눠 받으면 <a href="/w/퇴직금-소득세" style={body.link}>퇴직소득세의 30%를 감면</a>받아요. 수령 기간이 10년을 넘으면 감면율이 40%까지 올라가요.
       </p>
 
       <Divider />
 
-      {/* 섹션 5 */}
-      <H2>DC형이 유리한 경우는 언제인가요?</H2>
-      <p style={body}>
-        첫째, <strong>임금 인상률이 낮은 경우</strong>예요. DB형은 퇴직 시점 평균임금이 기준이니, 급여가 거의 안 오르면 DB형의 이점이 사라지죠. 이때 DC형에서 운용 수익을 내면 DB형보다 유리해질 수 있어요.
-      </p>
-      <p style={body}>
-        둘째, <strong>이직이 잦은 경우</strong>예요. DB형은 퇴직할 때마다 그 시점의 평균임금으로 정산되니, 이직 후 새 회사에서 처음부터 다시 시작하죠. DC형은 적립금이 본인 계좌에 쌓이니 이직해도 그대로 가져갈 수 있어요.
-      </p>
-      <p style={body}>
-        셋째, <strong>투자 경험이 있는 경우</strong>죠. DC형의 핵심은 운용이에요. 장기 투자에 대한 이해가 있고 적절한 분산 투자를 할 수 있다면, 예금 이자보다 높은 수익을 기대할 수 있어요. 반대로 투자에 관심이 없다면 DB형이 편하고 안전하죠.
+      {/* 섹션 5: 체크리스트 */}
+      <H2>DC형 퇴직연금 체크리스트</H2>
+
+      <p style={body.prose}>
+        DC형 퇴직연금은 본인이 챙겨야 할 것들이 DB형보다 많아요. 운용 지시부터 수령 방식 선택까지, 아래 목록대로 하나씩 확인하면 손해 없이 마무리할 수 있어요.
       </p>
 
-      <GreenBox title="DC형 유리 조건 정리">
-        임금 인상률이 낮거나 동결된 직장<br />
-        이직이 잦아서 한 회사에 오래 머물지 않는 경우<br />
-        장기 투자 경험이 있고 적극 운용할 의향이 있는 경우
-      </GreenBox>
-
-      <SectionBadge>DC형 점검 체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
+      <GreenBox>
+        ETF 운용 시 DB형보다 많아질 수 있어요<br />
+        임금 인상이 연 3% 미만이고 ETF 연수익이 5% 이상이라면, DC형 잔액이 DB형 기준 퇴직금보다 많아질 수 있어요. 퇴직 전 두 방식을 비교해보는 게 좋아요.
+      </GreenBox>
+
+      <p style={body.prose}>
+        체크리스트 중 IRP 계좌 개설이 제일 먼저예요. 퇴직 당일에 급하게 만들려면 시간이 부족할 수 있거든요. 퇴직 한 달 전부터 준비해두면 수령 지연 없이 진행돼요.
+      </p>
+
+      <EligibilityChecker
+        title="DC형 퇴직연금 해당 여부 확인"
+        items={CHECK_ITEMS}
+      />
+
       <Divider />
 
+      {/* 섹션 6: FAQ */}
       <H2>자주 묻는 것들</H2>
-      <p style={{ ...body, marginBottom: 14 }}>
-        DC형 퇴직금에 대해 실제로 자주 나오는 질문을 모았어요.
+
+      <p style={body.prose}>
+        DC형 퇴직연금을 처음 접하는 분들이 헷갈려하는 부분들을 모았어요. 운용 방식, DB형 비교, IRP 수령까지 핵심만 골라서 답변해드릴게요.
       </p>
+
       <FAQ items={FAQS} />
 
-      <Divider />
-
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니, 최신 기준은 고용노동부(1350)나 금융감독원(1332)에서 확인하세요." />
+
+      <Disclaimer />
     </ArticleLayout>
   );
 }

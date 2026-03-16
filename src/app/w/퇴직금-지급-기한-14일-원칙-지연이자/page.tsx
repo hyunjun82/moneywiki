@@ -1,225 +1,269 @@
 "use client";
-
-import {
-  H2, SectionBadge, GreenBox, BorderBox, Divider, body,
-  EligibilityChecker, Checklist, FAQ, References, Disclaimer,
-  ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
-} from "@/components/article-ui";
+import { H2, SectionBadge, GreenBox, BorderBox, Divider, body, Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer, ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd } from "@/components/article-ui";
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
-// ─── 데이터 ──────────────────────────────────────────
-
-const CHECK_ITEMS = [
-  { id: "c1", label: "퇴사일로부터 14일이 지났는데 퇴직금을 못 받았어요" },
-  { id: "c2", label: "회사와 기한 연장 합의를 한 적이 없어요" },
-  { id: "c3", label: "1년 이상 근무한 정규직·계약직이에요" },
-  { id: "c4", label: "퇴사한 지 아직 3년이 안 됐어요" },
-];
-
-const CHECKLIST = [
-  "퇴사일 기준 14일 경과 여부 확인 — 달력 기준(토·일 포함)",
-  "미지급 퇴직금 금액 확인 — 퇴직금 명세서 또는 직접 계산",
-  "지연이자 계산 — 미지급액 x 20% x (지연일수 / 365)",
-  "내용증명 발송 — 퇴직금 + 지연이자 지급 요청",
-  "노동청 진정 접수 — 고용노동부 민원마당 또는 관할 노동청 방문",
-];
-
-const FAQS = [
-  {
-    q: "14일 원칙은 어떤 법 조항에 근거하나요?",
-    a: "근로기준법 제36조예요. '사용자는 근로자가 퇴직한 경우 14일 이내에 모든 금품을 지급하여야 한다'고 명시하고 있죠.",
-  },
-  {
-    q: "지연이자 연 20%는 단리인가요 복리인가요?",
-    a: "단리예요. 미지급 원금에 대해서만 연 20%를 적용하죠. 이자에 이자가 붙는 복리 방식은 아니에요.",
-  },
-  {
-    q: "14일 안에 일부만 지급하면 지연이자는 어떻게 되나요?",
-    a: "미지급 잔액에 대해서만 지연이자가 붙어요. 예를 들어 퇴직금 1,000만 원 중 600만 원을 14일 안에 줬다면, 나머지 400만 원에 대해 연 20%가 적용되죠.",
-  },
-  {
-    q: "회사가 경영난이라 못 준다고 하면 지연이자가 면제되나요?",
-    a: "원칙적으로 면제되지 않아요. 다만 법원이 '천재지변, 회생 절차 등 정당한 사유'를 인정하면 감면될 수 있죠. 단순 자금난은 정당한 사유에 해당하지 않아요.",
-  },
-  {
-    q: "퇴직연금(DB형)도 14일 원칙이 적용되나요?",
-    a: "적용돼요. DB형은 회사가 운용하는 퇴직연금이니까, 14일 이내에 IRP 계좌로 이전해야 하죠. 이전이 늦어지면 마찬가지로 지연이자 대상이에요.",
-  },
-];
-
-const REFERENCES = [
-  {
-    category: "법령",
-    items: [
-      { label: "근로기준법 제36조 — 금품 청산 (14일 이내 지급)", url: "https://www.law.go.kr/법령/근로기준법" },
-      { label: "근로기준법 시행령 제18조 — 미지급 임금 지연이자 연 20%", url: "https://www.law.go.kr/법령/근로기준법시행령" },
-    ],
-  },
-  {
-    category: "공식 자료",
-    items: [
-      { label: "고용노동부 — 퇴직급여 제도 해설", url: "https://www.moel.go.kr" },
-      { label: "대한법률구조공단 — 퇴직금 미지급 상담", url: "https://www.klac.or.kr" },
-    ],
-  },
-];
-
-const RELATED = [
-  {
-    slug: "퇴직금-지급-기한",
-    title: "퇴직금 지급 기한 총정리",
-    description: "퇴사 후 14일 이내 지급이 원칙이고, 위반 시 대응 방법을 정리했어요.",
-  },
-  {
-    slug: "퇴직금-지연이자-받기",
-    title: "퇴직금 지연이자 실제로 받는 방법",
-    description: "지연이자 청구 절차와 성공 포인트를 정리했어요.",
-  },
-  {
-    slug: "퇴직금-미지급-신고",
-    title: "퇴직금 미지급 노동청 신고",
-    description: "노동청에 신고하는 구체적인 절차를 안내해요.",
-  },
-];
-
-// ─── 페이지 ──────────────────────────────────────────
+const currentSlug = "퇴직금-지급-기한-14일-원칙-지연이자";
 
 export default function Page() {
   return (
     <ArticleLayout
-      sidebar={
-        <Sidebar
-          heading="퇴직금 가이드"
-          items={퇴직금_SIDEBAR}
-          currentSlug="퇴직금-지급-기한-14일-원칙-지연이자"
-        />
-      }
+      sidebar={<Sidebar data={퇴직금_SIDEBAR} currentSlug={currentSlug} />}
     >
-      <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 근로기준법 · 지급기한</p>
+      <article>
+        {/* 타이틀 */}
+        <div style={{ marginBottom: "2rem" }}>
+          <div style={{ fontSize: "0.85rem", color: "#6b7280", marginBottom: "0.5rem" }}>
+            퇴직금 · 14일기한 · 지연이자
+          </div>
+          <h1 style={{ fontSize: "1.75rem", fontWeight: 700, lineHeight: 1.3, color: "#111827", marginBottom: "0.5rem" }}>
+            퇴직금 지급 기한 14일 원칙, 넘기면 연 20%?
+          </h1>
+          <p style={{ fontSize: "1.1rem", color: "#374151", fontWeight: 500 }}>
+            지연이자 계산법부터 신고 절차까지
+          </p>
+        </div>
 
-      <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
-        퇴직금 14일 지급 원칙,<br />
-        어기면 지연이자가 붙나요?
-      </h1>
+        {/* 인트로 */}
+        <p style={body.prose}>
+          퇴직금은 퇴직 후 14일 이내에 받아야 해요. <a href="https://www.law.go.kr/법령/근로기준법" style={{ color: "#1D9E75" }}>근로기준법 제36조</a>에 명시된 기한이에요. 14일이 지나면 연 20% 지연이자가 붙기 시작해요. 1,000만원 퇴직금이 60일 지연되면 이자만 약 33만원이에요. 기한 체크부터 지연이자 청구까지 정리했어요.
+        </p>
 
-      <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
-        &ldquo;퇴직금이 14일 안에 안 들어왔는데, 이자를 받을 수 있는 건가요?&rdquo;<br />
-        받을 수 있죠.
-        <a href="https://www.law.go.kr/법령/근로기준법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로기준법 제36조</a>가 정한 14일 기한을 넘기면, <a href="https://www.law.go.kr/법령/근로기준법시행령" style={{ color: "#1D9E75", textDecoration: "underline" }}>같은 법 시행령 제18조</a>에 따라 <strong>연 20%</strong>의 지연이자가 자동으로 붙어요.
-        회사가 &ldquo;곧 줄게&rdquo;라고 해도 법적으로는 이미 이자가 돌아가고 있는 셈이죠.
-        14일 원칙의 정확한 의미, 지연이자 계산법, 청구 방법을 차례로 정리해드릴게요.
-      </p>
+        <Divider />
 
-      <Divider />
-      <ArticleAd position="intro" />
+        {/* 섹션 1: 14일 기한 원칙 */}
+        <H2>14일 기한, 어디서 어떻게 세는 건가요</H2>
+        <SectionBadge>기한 계산법</SectionBadge>
 
-      {/* 섹션 1 */}
-      <H2>14일 원칙이 정확히 뭔가요?</H2>
-      <p style={body}>
-        <a href="https://www.law.go.kr/법령/근로기준법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로기준법 제36조</a>의 핵심이에요. 근로자가 퇴직하면 사용자는 퇴직일로부터 <strong>14일 이내</strong>에 퇴직금을 포함한 모든 금품을 지급해야 하죠. 여기서 14일은 달력 기준이에요. 주말이나 공휴일도 포함해서 세니까 &ldquo;영업일 14일&rdquo;이 아니에요.
-      </p>
-      <p style={body}>
-        기산점(세기 시작하는 날)은 퇴직일 다음 날이에요. 3월 10일에 퇴사했다면 3월 11일이 1일째, 3월 24일이 14일째가 되죠. 이 날까지 퇴직금이 통장이나 IRP 계좌에 들어와야 해요. 15일째부터는 지연이자가 발생하기 시작하죠.
-      </p>
-      <p style={body}>
-        예외가 딱 하나 있어요. &ldquo;당사자 간 합의&rdquo;로 지급 기한을 연장하는 경우죠. 이건 근로자가 자발적으로 동의해야만 유효해요. 회사가 일방적으로 통보하는 건 합의가 아니니까, 동의하지 않았다면 14일 원칙이 그대로 적용돼요.
-      </p>
+        <p style={body.prose}>
+          퇴직일 다음 날부터 14일째가 지급 마감이에요. 3월 1일에 퇴직했다면 3월 15일이 기한이에요. 공휴일이나 주말도 기한에 포함되니까, "이번 주말 빼고" 같은 계산은 통하지 않아요.
+        </p>
 
-      <GreenBox title="14일 원칙 요약">
-        기한 = 퇴직일 다음 날부터 <strong>달력 기준 14일</strong><br />
-        근거 = 근로기준법 제36조<br />
-        예외 = 당사자 간 <strong>합의</strong>로 연장 가능 (일방 통보는 무효)
-      </GreenBox>
+        <GreenBox>
+          <strong>14일 기한 계산 공식</strong><br />
+          퇴직일 + 1일 = 기산일 → 기산일부터 14일째 = 마감일<br />
+          예) 3월 1일 퇴직 → 3월 2일 기산 → 3월 15일까지 지급 필수
+        </GreenBox>
 
-      <SectionBadge>내 상황을 체크해보세요</SectionBadge>
-      <EligibilityChecker
-        items={CHECK_ITEMS}
-        allMatchText="4가지 다 해당되네요. 지연이자를 청구할 수 있는 상황이에요. 내용증명부터 보내세요."
-        partialMatchText="일부만 해당돼요. 기한 연장 합의 여부와 소멸시효를 먼저 확인하고 고용노동부(1350)에 상담받아보세요."
-      />
+        <p style={body.prose}>
+          단, 당사자 간 <strong>서면 합의</strong>가 있으면 기한을 연장할 수 있어요. 핵심은 "서면"이에요. 회사가 전화나 말로 "다음 달에 주겠다"고 해도 법적 효력이 없어요. 서면 합의 없이 14일이 지나면 그 순간부터 지연이자가 발생해요.
+        </p>
 
-      <Divider />
+        <BorderBox>
+          <strong>기한 연장이 가능한 경우</strong><br />
+          - 당사자 간 서면(서명 있는 문서) 합의가 있을 때<br />
+          - 회사 도산·경영난으로 지급이 불가능할 때 (단, 신고 후 법원 판단)
+        </BorderBox>
 
-      {/* 섹션 2 */}
-      <H2>14일 이후에는 자동으로 지연이자가 붙나요?</H2>
-      <p style={body}>
-        네, 자동이에요. 별도 청구를 하지 않아도 법적으로는 15일째부터 이자가 발생하죠. <a href="https://www.law.go.kr/법령/근로기준법시행령" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로기준법 시행령 제18조</a>가 &ldquo;지급 기일 후 지연 기간에 대해 연 20%의 지연이자를 지급하여야 한다&rdquo;고 규정하고 있어요.
-      </p>
-      <p style={body}>
-        &ldquo;자동&rdquo;이라는 건 법률상 발생한다는 뜻이지, 회사가 알아서 이자를 보내준다는 뜻은 아니에요. 실제로 받으려면 근로자가 직접 청구해야 하죠. 내용증명으로 &ldquo;퇴직금 원금 + 지연이자를 지급해달라&rdquo;고 요청하거나, 노동청 진정 시 지연이자를 함께 청구하면 돼요.
-      </p>
-      <p style={body}>
-        다만 예외가 있어요. 회사가 <strong>회생 절차</strong>에 들어갔거나 <strong>천재지변</strong> 같은 불가항력 사유가 있으면 법원이 지연이자를 감면해줄 수 있죠. 하지만 &ldquo;매출이 줄었다&rdquo;, &ldquo;자금 사정이 어렵다&rdquo; 같은 단순 경영난은 감면 사유에 해당하지 않아요.
-      </p>
+        <p style={body.prose}>
+          "회사 자금이 없다"는 건 기한 면제 사유가 아니에요. 그건 회사 내부 사정이고, 법적 의무는 그대로예요. 14일을 넘긴 순간 <a href="/w/퇴직금-지연이자">지연이자 청구권</a>이 자동으로 생겨요.
+        </p>
 
-      <BorderBox title="지연이자 발생 시점 예시">
-        퇴사일: 3월 10일 → 지급 기한: 3월 24일<br />
-        3월 25일부터 지연이자(연 20%) 발생<br />
-        4월 24일에 지급하면 → 31일분의 지연이자를 함께 받을 수 있어요
-      </BorderBox>
+        <Divider />
 
-      {/* ── 섹션 2 끝 → 버튼 + 관련 글 ── */}
-      <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/퇴직금" />
-      <RelatedArticles items={RELATED} />
-      <ArticleAd position="mid" />
+        {/* 섹션 2: 지연이자 계산기 */}
+        <H2>지연이자 얼마나 붙을지 바로 계산해보세요</H2>
+        <SectionBadge>지연이자 계산기</SectionBadge>
 
-      <Divider />
+        <p style={body.prose}>
+          연 20% 기준으로 하루하루 쌓여요. 미지급 퇴직금에 0.2를 곱하고, 지연 일수를 365로 나누면 돼요. 금액이 클수록, 기간이 길수록 이자도 눈덩이처럼 불어나요.
+        </p>
 
-      {/* 섹션 3 */}
-      <H2>지연이자 계산 방법은?</H2>
-      <p style={body}>
-        공식은 간단해요. <strong>미지급 퇴직금 x 20% x (지연일수 / 365)</strong>이죠. 예를 들어 퇴직금 1,000만 원을 60일 늦게 받았다면 → 1,000만 원 x 0.2 x (60/365) = 약 32만 8,767원이에요.
-      </p>
-      <p style={body}>
-        지연일수는 14일 기한 다음 날부터 실제 지급일까지 세면 돼요. 달력 기준이니까 주말과 공휴일도 포함하죠. 연 20%라는 이율은 단리예요. 이자에 이자가 붙는 복리 방식이 아니라서 계산이 단순하죠.
-      </p>
-      <p style={body}>
-        퇴직금 일부만 받은 경우에는 미지급 잔액에 대해서만 이자가 붙어요. 퇴직금 1,000만 원 중 700만 원을 14일 안에 받고 나머지 300만 원을 30일 뒤에 받았다면, 300만 원 x 0.2 x (30/365) = 약 4만 9,315원이 지연이자가 되죠.
-      </p>
+        <Calculator
+          sliders={[
+            {
+              key: "amount",
+              label: "미지급 퇴직금",
+              min: 100,
+              max: 5000,
+              step: 100,
+              defaultValue: 1000,
+              format: (v) => `${v.toLocaleString()}만원`,
+            },
+            {
+              key: "days",
+              label: "14일 초과 지연 일수",
+              min: 1,
+              max: 365,
+              step: 1,
+              defaultValue: 60,
+              format: (v) => `${v}일`,
+            },
+          ]}
+          results={[
+            {
+              key: "result1",
+              label: "지연이자 (연 20%)",
+              highlight: true,
+              getValue: (v) => Math.round(v.amount * 10000 * 0.2 * v.days / 365),
+              format: (v) => v < 10000 ? `${v.toLocaleString()}원` : `약 ${Math.round(v / 10000).toLocaleString()}만원`,
+            },
+            {
+              key: "result2",
+              label: "총 청구 금액 (원금+이자)",
+              highlight: false,
+              getValue: (v) => v.amount * 10000 + Math.round(v.amount * 10000 * 0.2 * v.days / 365),
+              format: (v) => `약 ${Math.round(v / 10000).toLocaleString()}만원`,
+            },
+          ]}
+          note="※ 근로기준법 제37조 연 20% 기준. 퇴직 후 14일 초과 시점부터 계산."
+        />
 
-      <Divider />
+        <CategoryButton href="/w/퇴직금" label="퇴직금 전체 가이드 보기" />
 
-      {/* 섹션 4 */}
-      <H2>지연이자를 받으려면 어떻게 해야 하나요?</H2>
-      <p style={body}>
-        가장 먼저 할 일은 <strong>내용증명</strong>을 보내는 거예요. &ldquo;퇴직금 원금 ○○원과 지연이자 ○○원을 ○일까지 지급해주세요&rdquo;라는 내용을 우체국 내용증명으로 발송하죠. 이게 &ldquo;공식적으로 청구했다&rdquo;는 기록이 돼요.
-      </p>
-      <p style={body}>
-        회사가 내용증명을 무시하면 <a href="/w/퇴직금-미지급-신고" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용노동부 민원마당</a>(minwon.moel.go.kr)에서 &ldquo;임금체불 진정&rdquo;을 접수하세요. 진정서에 지연이자 청구도 함께 기재하면 돼요. 근로감독관이 회사에 시정지시를 내리면 퇴직금 원금과 지연이자를 함께 지급받을 수 있죠.
-      </p>
-      <p style={body}>
-        노동청 시정지시로도 해결이 안 되면 <strong>민사소송</strong>으로 넘어가야 해요. 소액사건(3,000만 원 이하)이면 소액심판으로 빠르게 진행할 수 있고, 대한법률구조공단(klac.or.kr)에서 무료 법률 상담과 소송 지원을 받을 수 있죠.
-      </p>
+        <RelatedArticles
+          items={[
+            { href: "/w/퇴직금-지급-기한", label: "퇴직금 지급 기한 14일", desc: "기한 초과 시 대응" },
+            { href: "/w/퇴직금-지연이자", label: "퇴직금 지연이자 연 20%", desc: "청구 방법" },
+            { href: "/w/퇴직금-미지급-신고", label: "퇴직금 미지급 신고", desc: "노동청 진정 절차" },
+          ]}
+        />
 
-      <Divider />
+        <Divider />
 
-      {/* 섹션 5 */}
-      <H2>회사가 사정이 어렵다고 하면 어떻게 하나요?</H2>
-      <p style={body}>
-        &ldquo;돈이 없어서 못 줘&rdquo;라는 말은 법적으로 통하지 않아요. 경영난은 지연이자 면제 사유가 아니거든요. 법원 판례에서도 단순 자금 부족을 &ldquo;정당한 사유&rdquo;로 인정한 적이 없죠. 회사가 아무리 어렵다 해도 퇴직금과 지연이자 지급 의무는 그대로 남아요.
-      </p>
-      <p style={body}>
-        다만 회사가 <strong>법원 회생 절차</strong>(기업 회생)에 들어갔다면 이야기가 달라져요. 이 경우 모든 채권이 동결되니까 퇴직금 지급도 법원 결정에 따라 유예될 수 있죠. 하지만 퇴직금은 &ldquo;최우선변제권&rdquo;이 있어서 다른 채권보다 먼저 배분받아요.
-      </p>
-      <p style={body}>
-        회사가 완전히 <a href="/w/회사-폐업-퇴직금" style={{ color: "#1D9E75", textDecoration: "underline" }}>폐업</a>한 상태라면 정부의 <strong>체당금 제도</strong>를 활용하세요. 고용노동부에 체당금을 신청하면 국가가 퇴직금을 대신 지급하고, 나중에 사업주에게 구상권을 행사하는 구조예요. 체당금 상한은 퇴직 당시 나이와 금액에 따라 달라지지만, 최대 700만 원까지 받을 수 있죠.
-      </p>
+        {/* 섹션 3: 나에게 해당하는지 체크 */}
+        <H2>지연이자 청구 대상인지 먼저 체크해보세요</H2>
+        <SectionBadge>해당 여부 확인</SectionBadge>
 
-      <SectionBadge>서류 체크리스트</SectionBadge>
-      <Checklist items={CHECKLIST} />
+        <p style={body.prose}>
+          지연이자는 아무나 받는 게 아니에요. 아래 항목에 해당해야 청구권이 생겨요. 4개 중 하나라도 빠지면 상황이 달라질 수 있으니 꼼꼼히 체크해요.
+        </p>
 
-      <Divider />
+        <EligibilityChecker
+          title="지연이자 청구 가능 여부"
+          items={[
+            "퇴사일로부터 14일이 넘었어요",
+            "회사에서 입금 날짜를 미루고 있어요",
+            "기한 연장 서면 동의를 한 적 없어요",
+            "퇴직 후 3년이 안 됐어요",
+          ]}
+          passMessage="지연이자 청구 가능해요. 아래 절차대로 진행하세요."
+          failMessage="일부 항목이 해당되지 않아요. 상황에 따라 법률 전문가 상담이 필요할 수 있어요."
+        />
 
-      <H2>자주 묻는 것들</H2>
-      <p style={{ ...body, marginBottom: 14 }}>
-        퇴직금 14일 원칙과 지연이자에 대해 자주 나오는 질문을 모았어요.
-      </p>
-      <FAQ items={FAQS} />
+        <p style={body.prose}>
+          소멸시효는 퇴직일부터 3년이에요. 3년이 지나면 <a href="/w/퇴직금-소멸시효">청구권이 사라져요</a>. 늦어질수록 불리하니까 가능한 빨리 행동하는 게 맞아요.
+        </p>
 
-      <Divider />
+        <Divider />
 
-      <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로기준법과 같은 법 시행령을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니, 최신 기준은 고용노동부(moel.go.kr)나 고용노동부 고객센터(1350)에서 확인하세요." />
+        {/* 섹션 4: 신고 절차 */}
+        <H2>기한 넘겼을 때 이렇게 단계별로 움직이세요</H2>
+        <SectionBadge>단계별 대응</SectionBadge>
+
+        <p style={body.prose}>
+          막막하게 느껴지지만 순서대로 하면 어렵지 않아요. 첫 단계는 증거 남기기, 마지막 단계는 노동청 진정이에요. 각 단계마다 팁도 챙겨두면 실전에서 훨씬 수월해요.
+        </p>
+
+        <Steps
+          items={[
+            {
+              title: "14일 기한 확인",
+              description: "퇴직일 다음날부터 14일째가 마감",
+              tip: "공휴일·주말도 기한에 포함",
+            },
+            {
+              title: "지급 요청 문자 발송",
+              description: "\"○월 ○일 기준 14일 경과, 지급 요청\" 문자 발송",
+              tip: "날짜 명시해서 증거 남기기",
+            },
+            {
+              title: "내용증명 발송",
+              description: "지연이자 포함 청구",
+              tip: "카카오 전자내용증명 10분 완성",
+            },
+            {
+              title: "노동청 진정",
+              description: "임금체불 진정 접수, 지연이자 항목 포함 명시",
+              tip: "minwon.moel.go.kr 온라인 접수",
+            },
+          ]}
+        />
+
+        <p style={body.prose}>
+          노동청 진정을 넣을 때 "지연이자 청구"를 명시해야 해요. 그냥 "퇴직금 못 받았다"만 적으면 지연이자는 빠질 수 있어요. 진정서에 <strong>근로기준법 제37조, 연 20% 지연이자</strong>를 직접 써넣으세요.
+        </p>
+
+        <DocTable
+          docs={[
+            { name: "퇴직일 증빙", required: true, source: "본인보관" },
+            { name: "근로계약서", required: true, source: "인사팀" },
+            { name: "급여명세서", required: true, source: "인사팀" },
+            { name: "문자·메일 기록", required: false, source: "직접캡처" },
+          ]}
+        />
+
+        <Divider />
+
+        {/* 섹션 5: 체크리스트 + FAQ */}
+        <H2>놓치기 쉬운 포인트, 하나씩 짚어볼게요</H2>
+        <SectionBadge>핵심 체크리스트</SectionBadge>
+
+        <p style={body.prose}>
+          퇴직금 분쟁에서 패하는 이유 대부분은 증거 부족이에요. 특히 기한 계산을 잘못하거나, IRP 계좌 준비를 안 해서 입금 자체가 안 되는 경우가 많아요. 아래 항목은 출력해서 옆에 두고 하나씩 체크해요.
+        </p>
+
+        <Checklist
+          items={[
+            "14일 기한 계산 — 퇴직일 다음날부터",
+            "지급 요청 — 문자·메일 증거 보관",
+            "지연이자 명시 — 내용증명에 연 20% 포함",
+            "소멸시효 3년 — 퇴직일 기준",
+            "IRP 계좌 — 300만원 초과 시 필수",
+          ]}
+        />
+
+        <p style={body.prose}>
+          퇴직금이 300만원을 넘으면 IRP(개인형 퇴직연금) 계좌로만 받을 수 있어요. 계좌가 없으면 회사가 입금 자체를 못 해요. 퇴직 전에 미리 <a href="/w/IRP-계좌-개설">IRP 계좌를 개설</a>해두는 게 안전해요.
+        </p>
+
+        <ArticleAd />
+
+        <FAQ
+          items={[
+            {
+              question: "14일이 언제부터인가요?",
+              answer: "퇴직일 다음 날부터 계산해요. 3월 1일 퇴직이면 3월 15일까지가 기한이에요.",
+            },
+            {
+              question: "기한 연장이 가능한가요?",
+              answer: "당사자 간 서면 합의가 있으면 연장 가능해요. 회사가 일방적으로 \"다음 달에 준다\"고 하는 건 불법이에요.",
+            },
+            {
+              question: "지연이자는 자동으로 받나요?",
+              answer: "자동 발생하지만 청구해야 받아요. 진정·소송에서 명시적으로 요청해야 해요.",
+            },
+            {
+              question: "14일 초과했는데 회사가 자금 없다고 하면?",
+              answer: "그건 회사 사정이에요. 법적 의무는 변하지 않아요. 바로 신고 가능해요.",
+            },
+            {
+              question: "회사가 폐업하면 퇴직금을 못 받나요?",
+              answer: "체당금 제도로 정부가 대신 지급해줘요. 대표이사 개인에게도 진정 가능해요.",
+            },
+          ]}
+        />
+
+        <Divider />
+
+        <References
+          items={[
+            {
+              label: "근로기준법 제36조 (14일 이내 지급)",
+              href: "https://www.law.go.kr/법령/근로기준법",
+            },
+            {
+              label: "근로기준법 제37조 (지연이자 연 20%)",
+              href: "https://www.law.go.kr/법령/근로기준법",
+            },
+            {
+              label: "고용노동부 민원마당",
+              href: "https://minwon.moel.go.kr",
+            },
+          ]}
+        />
+
+        <Disclaimer />
+      </article>
     </ArticleLayout>
   );
 }
