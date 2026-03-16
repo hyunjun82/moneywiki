@@ -203,9 +203,35 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 3. **한 소제목에 컴포넌트 1개만. 중복 금지.**
 4. 글 전체에서 같은 컴포넌트 2번 사용 가능 (예: Calculator 2개는 안 됨, 하지만 Steps + Checklist는 됨)
 
+### ★ 필수 컴포넌트 배치 규칙 (절대 생략 금지)
+
+**모든 글에 최소 4종 인터랙티브 컴포넌트 필수:**
+
+| H2 키워드 | 필수 컴포넌트 | 생략 시 |
+|----------|------------|--------|
+| "얼마" "계산" "금액" "수령액" | **Calculator** (슬라이더형) | 글 작성 불가 |
+| "자격" "조건" "대상" "해당" | **EligibilityChecker** (체크박스형) | 글 작성 불가 |
+| "절차" "방법" "순서" "단계" | **Steps** (스테퍼형) | 글 작성 불가 |
+| "서류" "준비물" "목록" | **DocTable** (테이블형) | 글 작성 불가 |
+| "준비" "챙겨야" "미리" | **Checklist** (체크리스트형) | 글 작성 불가 |
+| "자주 묻는" "Q&A" | **FAQ** (아코디언형, 5~7개) | 글 작성 불가 |
+
+**키워드 매칭 안 되는 섹션 → GreenBox 또는 BorderBox**
+**모든 글 = EligibilityChecker(필수) + FAQ(필수) + H2별 매칭 컴포넌트 2종 이상**
+
+### 글 작성 완료 전 체크 (빠뜨리면 재작성)
+- [ ] H2에 "얼마/계산/금액" 키워드 → Calculator 넣었나?
+- [ ] H2에 "절차/방법/단계" 키워드 → Steps 넣었나?
+- [ ] H2에 "서류/준비물" 키워드 → DocTable 넣었나?
+- [ ] H2에 "준비/챙겨" 키워드 → Checklist 넣었나?
+- [ ] EligibilityChecker 있나?
+- [ ] FAQ 5개 이상 있나?
+- [ ] 최소 4종 인터랙티브 컴포넌트가 들어갔나?
+
 ### 주제별 컴포넌트 조합 예시
 
 ```
+퇴직금       → EligibilityChecker + Calculator + Steps + DocTable + Checklist
 실업급여     → EligibilityChecker + Calculator + DateCalc + Steps
 양도소득세   → TaxRateTable + Calculator + Timeline + PenaltyTable
 청년지원금   → IncomeBracket + SupportAmountCard + RegionTable + Steps
