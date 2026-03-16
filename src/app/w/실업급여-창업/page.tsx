@@ -130,7 +130,7 @@ export default function Page() {
 
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
         실업급여 받으면서 창업하면?<br />
-        사업자등록 후 수급 조건
+        사업자등록과 수급 조건
       </h1>
 
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
@@ -144,7 +144,7 @@ export default function Page() {
       <ArticleAd position="intro" />
 
       {/* 섹션 1 — 창업 준비 vs 사업자등록 */}
-      <H2>창업 준비 중에는 실업급여를 받을 수 있나요?</H2>
+      <H2>사업자등록 전이면 수급 조건에 문제없나요?</H2>
       <p style={body}>
         받을 수 있죠. <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>에서 수급 중단 사유로 보는 건 "취업" 또는 "자영업 개시"예요. 사업자등록 전 단계인 시장조사, 사업 계획 수립, 자금 준비 같은 활동은 취업이 아니에요. 이 기간에는 실업급여를 받으면서 창업을 준비할 수 있죠.
       </p>
@@ -171,7 +171,7 @@ export default function Page() {
       <Divider />
 
       {/* 섹션 2 — 사업자등록 후 수급 중단 */}
-      <H2>사업자등록하면 정확히 어떻게 되나요?</H2>
+      <H2>사업자등록 후 수급은 어떻게 바뀌나요?</H2>
       <p style={body}>
         등록일부터 수급이 중단돼요. 사업자등록이 곧 취업으로 간주되기 때문이에요. 등록한 날 바로 고용센터에 취업 신고를 해야 하죠. 신고 방법은 간단해요. <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 온라인으로 취업 신고를 하거나, 고용센터(1350)에 전화하면 돼요.
       </p>
@@ -197,7 +197,7 @@ export default function Page() {
       <Divider />
 
       {/* 섹션 3 — 조기재취업수당 */}
-      <H2>창업해도 조기재취업수당을 받을 수 있나요?</H2>
+      <H2>사업자등록 후 받을 수 있는 조기재취업수당</H2>
       <p style={body}>
         받을 수 있죠. 자영업 창업도 조기재취업수당 대상이에요. <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 제64조</a>에서 재취업뿐 아니라 자영업 창업도 명시하고 있어요. 다만 조건이 두 가지 붙어요.
       </p>
@@ -223,7 +223,7 @@ export default function Page() {
       <Divider />
 
       {/* 섹션 4 — 부정수급 주의사항 */}
-      <H2>창업할 때 부정수급에 걸리는 경우</H2>
+      <H2>수급 조건 위반으로 부정수급이 되는 경우</H2>
       <p style={body}>
         가장 흔한 케이스는 사업자등록을 하고 취업 신고를 안 하는 거예요. "등록만 했지 아직 매출이 없는데"라고 생각하기 쉽지만, 등록 자체가 취업 간주 사유예요. 매출 유무와 관계없이 등록일부터 신고해야 하죠.
       </p>
@@ -244,7 +244,7 @@ export default function Page() {
       <Divider />
 
       {/* 섹션 5 — 실전 체크리스트 */}
-      <H2>창업할 때 실업급여 관련 체크리스트</H2>
+      <H2>사업자등록 전 이 순서대로 준비하세요</H2>
       <p style={body}>
         타이밍이 핵심이에요. 창업 준비 기간을 최대한 활용하면서, 소정급여일수의 절반 이상을 남긴 시점에 등록하는 게 가장 유리하죠. 아래 순서대로 진행하면 실업급여와 조기재취업수당을 모두 챙길 수 있어요.
       </p>

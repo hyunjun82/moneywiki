@@ -99,7 +99,7 @@ export default function Page() {
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>실업급여 · 고용보험 · 자발적퇴사</p>
 
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
-        자발적 퇴사해도 실업급여 받을 수 있을까?<br />
+        자발적 퇴사도 실업급여 된다고?<br />
         정당한 사유 7가지
       </h1>
 
@@ -115,7 +115,7 @@ export default function Page() {
       <ArticleAd position="intro" />
 
       {/* 섹션 1 — 정당한 사유 7가지 */}
-      <H2>어떤 사유가 정당한 이직 사유로 인정되나요?</H2>
+      <H2>정당한 사유 7가지, 구체적으로 뭐가 있나요?</H2>
       <p style={body}>
         <a href="https://www.law.go.kr/법령/고용보험법시행규칙" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 시행규칙</a>에서 정한 정당한 이직 사유는 크게 7가지예요. 가장 많은 게 <strong>임금 관련 문제</strong>예요. 월급의 30% 이상을 안 줬거나, 2개월 이상 밀렸으면 정당한 사유예요. 최저임금 미만으로 받은 경우도 해당되죠.
       </p>
@@ -146,7 +146,7 @@ export default function Page() {
       <Divider />
 
       {/* 섹션 2 — 안 되는 경우 */}
-      <H2>실업급여를 못 받는 자발적 퇴사도 있나요?</H2>
+      <H2>정당한 사유에 해당 안 되는 경우도 있나요?</H2>
       <p style={body}>
         당연히 있죠. <strong>단순 이직 목적</strong>의 퇴사가 대표적이에요. "더 좋은 회사가 있어서", "연봉이 낮아서" 같은 이유로 퇴사하면 정당한 사유가 아니에요. 이미 다른 회사에 합격한 상태에서 퇴사하는 것도 마찬가지예요.
       </p>
@@ -172,7 +172,7 @@ export default function Page() {
       <Divider />
 
       {/* 섹션 3 — 증빙자료 */}
-      <H2>증빙자료가 핵심이에요</H2>
+      <H2>사유별 증빙자료 준비법</H2>
       <p style={body}>
         정당한 사유를 주장하려면 증거가 있어야 해요. 말로만 "임금체불이었다"고 하면 고용센터에서 인정해주기 어렵죠. 사유별로 필요한 증빙이 달라요.
       </p>
@@ -189,7 +189,7 @@ export default function Page() {
       <Divider />
 
       {/* 섹션 4 — 심사 절차 */}
-      <H2>고용센터 심사는 어떻게 진행되나요?</H2>
+      <H2>정당한 사유를 고용센터에서 심사하는 절차</H2>
       <p style={body}>
         실업급여를 신청하면 고용센터 담당자가 퇴직 사유를 심사해요. 이직확인서에 기재된 퇴직 사유를 확인하고, 필요하면 추가 증빙자료를 요청하죠. 임금체불이면 "정말 2개월 이상 밀렸는지" 통장 내역으로 확인하는 식이에요.
       </p>
@@ -209,7 +209,7 @@ export default function Page() {
       <Divider />
 
       {/* 섹션 5 — 실전 팁 */}
-      <H2>실업급여 받으려면 이것만 기억하세요</H2>
+      <H2>퇴직 전에 이 3가지부터 챙기세요</H2>
       <p style={body}>
         핵심은 두 가지예요. <strong>증빙자료 확보</strong>와 <strong>퇴직 전 상담</strong>이에요. 정당한 사유가 있어도 증빙이 없으면 인정받기 어렵고, 사전에 상담을 받으면 어떤 서류를 준비해야 하는지 미리 알 수 있죠.
       </p>

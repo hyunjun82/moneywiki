@@ -98,8 +98,8 @@ export default function Page() {
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>실업급여 · 고용보험 · 부정수급</p>
 
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
-        실업급여 부정수급 처벌 기준<br />
-        최대 5배 환수와 형사처벌
+        실업급여 부정수급, 적발되면?<br />
+        최대 5배 환수 기준
       </h1>
 
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
@@ -114,7 +114,7 @@ export default function Page() {
       <ArticleAd position="intro" />
 
       {/* 섹션 1 — 부정수급이란 */}
-      <H2>어떤 행위가 부정수급에 해당하나요?</H2>
+      <H2>환수 기준에 해당하는 행위는 뭔가요?</H2>
       <p style={body}>
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 제62조</a>에서 말하는 부정수급은 "거짓이나 부정한 방법으로 실업급여를 받은 경우"예요. 가장 흔한 유형은 취업 사실 미신고예요. 알바를 하면서 실업인정일에 "일하지 않았다"고 신고하는 거죠.
       </p>
@@ -135,7 +135,7 @@ export default function Page() {
       <Divider />
 
       {/* 섹션 2 — 처벌 수위 */}
-      <H2>부정수급 처벌은 얼마나 무거운가요?</H2>
+      <H2>최대 5배 환수, 실제 처벌은 얼마나 되나요?</H2>
       <p style={body}>
         처벌은 크게 세 단계로 나눠져요. 첫째, <strong>전액 반환</strong>이에요. 부정수급으로 받은 실업급여를 전액 돌려줘야 하죠. 이건 자진신고를 해도 면제되지 않아요.
       </p>
@@ -161,7 +161,7 @@ export default function Page() {
       <Divider />
 
       {/* 섹션 3 — 적발 경로 */}
-      <H2>부정수급은 어떻게 적발되나요?</H2>
+      <H2>환수 기준 적용을 위한 적발 경로</H2>
       <p style={body}>
         적발은 생각보다 쉽게 돼요. 가장 흔한 경로는 <strong>자동 데이터 연계</strong>예요. 4대보험 자료, 국세청 소득 자료, 사업장 신고 자료가 고용보험 시스템과 자동으로 연동돼요. 하루 알바를 했어도 사업주가 일용직 신고를 하면 기록이 남죠.
       </p>
@@ -175,7 +175,7 @@ export default function Page() {
       <Divider />
 
       {/* 섹션 4 — 자진신고 */}
-      <H2>자진신고하면 어떻게 되나요?</H2>
+      <H2>자진신고 시 환수 기준 감면 여부</H2>
       <p style={body}>
         적발되기 전에 자진신고하면 <strong>추가 징수를 면제</strong>받을 수 있어요. 반환 의무는 남지만, 최대 5배까지 붙는 추가 징수가 없어지는 거예요. 100만원 부정수급이라면 반환 100만원만 내면 되는 거죠. 자진신고 없이 적발됐으면 최대 300~600만원이 될 수 있는 것과 비교하면 차이가 크죠.
       </p>
@@ -192,7 +192,7 @@ export default function Page() {
       <Divider />
 
       {/* 섹션 5 — 예방 */}
-      <H2>부정수급을 피하려면 어떻게 해야 하나요?</H2>
+      <H2>5배 환수를 피하려면 이렇게 하세요</H2>
       <p style={body}>
         핵심은 단 하나예요. <strong>소득이 생기면 신고하는 거</strong>예요. 알바, 프리랜서, 배달, 과외 등 형태와 관계없이 돈을 벌었으면 실업인정일에 정직하게 신고하면 돼요. 신고만 하면 월 60시간 미만 단시간 취업은 문제없이 수급을 유지할 수 있죠.
       </p>

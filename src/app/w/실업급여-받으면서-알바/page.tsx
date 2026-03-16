@@ -97,7 +97,7 @@ export default function Page() {
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>실업급여 · 고용보험 · 아르바이트</p>
 
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
-        실업급여 중 알바하면 끊길까?<br />
+        실업급여 받으면서 알바, 가능할까?<br />
         60시간 기준과 신고 방법
       </h1>
 
@@ -112,7 +112,7 @@ export default function Page() {
       <ArticleAd position="intro" />
 
       {/* 섹션 1 — 알바 가능 조건 */}
-      <H2>실업급여 받으면서 알바, 언제 가능한가요?</H2>
+      <H2>60시간 기준, 정확히 어떤 조건인가요?</H2>
       <p style={body}>
         세 가지 조건을 모두 충족해야 해요. 첫째, 월 근로시간이 <strong>60시간 미만</strong>(주 15시간 미만)이어야 해요. 둘째, 계약기간이 <strong>3개월 미만</strong>이어야 하죠. 셋째, 알바한 사실을 실업인정일에 <strong>반드시 신고</strong>해야 해요.
       </p>
@@ -139,7 +139,7 @@ export default function Page() {
       <Divider />
 
       {/* 섹션 2 — 60시간 기준 */}
-      <H2>월 60시간 기준이 정확히 뭔가요?</H2>
+      <H2>60시간을 넘기면 어떻게 되나요?</H2>
       <p style={body}>
         월 60시간 미만은 <strong>주 15시간 미만</strong>으로 환산한 거예요. 주 5일 근무 기준으로 하루 3시간 미만이에요. 이 기준을 넘으면 "취업 상태"로 보고 실업급여 지급이 중단되죠.
       </p>
@@ -165,7 +165,7 @@ export default function Page() {
       <Divider />
 
       {/* 섹션 3 — 알바한 날의 급여 처리 */}
-      <H2>알바한 날은 실업급여가 어떻게 되나요?</H2>
+      <H2>알바한 날의 실업급여 지급 구조</H2>
       <p style={body}>
         알바한 날은 실업급여가 지급되지 않고, 그만큼 <strong>뒤로 밀려요</strong>. 줄어드는 게 아니에요. 예를 들어 한 달 30일 중 10일 알바했다면, 10일분의 실업급여는 지급되지 않고 수급 종료일이 10일 뒤로 연장되는 구조예요.
       </p>
@@ -185,7 +185,7 @@ export default function Page() {
       <Divider />
 
       {/* 섹션 4 — 신고 방법 */}
-      <H2>알바 신고는 어떻게 하나요?</H2>
+      <H2>신고 방법과 신고 대상 정리</H2>
       <p style={body}>
         <strong>실업인정일</strong>에 해요. 2주에 한 번 고용센터에 출석하거나 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 온라인으로 실업인정을 받을 때, "지난 2주간 근로 여부"를 체크하는 항목이 있어요. 여기에 알바한 날짜, 근로시간, 수입 금액을 정확히 적으면 돼요.
       </p>
@@ -202,7 +202,7 @@ export default function Page() {
       <Divider />
 
       {/* 섹션 5 — 미신고 시 처벌 */}
-      <H2>신고 안 하면 어떻게 되나요?</H2>
+      <H2>미신고 시 부정수급 처벌, 이렇게 피하세요</H2>
       <p style={body}>
         <strong>부정수급으로 처벌받아요.</strong> 알바하고 신고하지 않으면 <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 제62조</a>에 따라 이미 받은 실업급여를 반환해야 하고, 추가로 <strong>최대 5배까지 추가 징수</strong>를 당할 수 있어요.
       </p>
