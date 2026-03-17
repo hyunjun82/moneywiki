@@ -33,4 +33,5 @@ export { ArticleAd } from "./ArticleAd";
 // 글 하단
 export { FAQ } from "./FAQ";
 export { References } from "./References";
+export { SourceNote } from "./SourceNote";
 export { Disclaimer } from "./Disclaimer";

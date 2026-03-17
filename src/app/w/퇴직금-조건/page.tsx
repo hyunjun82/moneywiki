@@ -1,13 +1,13 @@
 "use client";
 
 import {
-  H2, SectionBadge, GreenBox, BorderBox, Divider, body,
-  Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
+  H2, SectionBadge, GreenBox, Divider, body,
+  Calculator, EligibilityChecker, Steps, Checklist, FAQ, SourceNote, Disclaimer,
   ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
-// ─── 데이터 ──────────────────────────────────────────
+// ─── 데이터 (변경 없음) ──────────────────────────────
 
 const CHECK_ITEMS = [
   { id: "c1", label: "같은 사업장에서 1년 이상 계속 근무했어요" },
@@ -20,19 +20,13 @@ const CALC_SLIDERS = [
   {
     id: "salary",
     label: "월 평균임금",
-    min: 150,
-    max: 800,
-    step: 10,
-    defaultValue: 300,
+    min: 150, max: 800, step: 10, defaultValue: 300,
     format: (v: number) => `${v}만원`,
   },
   {
     id: "years",
     label: "근속기간",
-    min: 1,
-    max: 35,
-    step: 1,
-    defaultValue: 5,
+    min: 1, max: 35, step: 1, defaultValue: 5,
     format: (v: number) => `${v}년`,
   },
 ];
@@ -51,13 +45,6 @@ const CALC_RESULTS = [
   },
 ];
 
-const DOCS = [
-  { name: "근로계약서", required: true, where: "인사팀 또는 입사 시 수령본" },
-  { name: "급여명세서 (최근 3개월)", required: true, where: "회사 인사팀 요청" },
-  { name: "4대보험 가입 이력 확인서", required: false, where: "고용24(ei.go.kr) 또는 국민건강보험공단" },
-  { name: "통장 입금 내역", required: false, where: "은행 앱 출력 (근무 사실 증빙용)" },
-];
-
 const STEPS = [
   {
     title: "1년·주 15시간 조건 확인",
@@ -67,12 +54,12 @@ const STEPS = [
   },
   {
     title: "퇴직금 계산",
-    desc: "퇴직 전 3개월 평균임금 × 30일 × (근속일수 ÷ 365)로 계산해요. 기본급만이 아니라 상여금·연차수당도 평균임금에 포함돼요.",
+    desc: "퇴직 전 3개월 평균임금 x 30일 x (근속일수 / 365)로 계산해요. 기본급만이 아니라 상여금·연차수당도 평균임금에 포함돼요.",
     tip: "위 계산기로 대략적인 금액 확인 후 급여명세서로 검증해보세요",
   },
   {
     title: "회사에 지급 요청",
-    desc: "퇴직 후 14일 이내에 지급해야 해요. 자동으로 입금되지 않으면 회사에 지급 요청을 해야 해요. 문자·메일로 요청하면 나중에 증거로 쓸 수 있어요.",
+    desc: "퇴직 후 14일 이내에 지급해야 해요. 자동으로 입금되지 않으면 회사에 지급 요청을 해야 하죠. 문자·메일로 요청하면 나중에 증거로 쓸 수 있어요.",
     tip: "300만원 초과 시 IRP 계좌가 필요해요. 미리 개설해두면 이체가 빨라요",
   },
   {
@@ -84,25 +71,25 @@ const STEPS = [
 ];
 
 const CHECKLIST = [
-  "입사일·퇴직일 정확히 확인 — 1일 차이로 조건이 달라질 수 있어요",
-  "4주 평균 주 15시간 이상 — 근무시간 변동이 있어도 평균으로 판단해요",
-  "최근 3개월 급여명세서 — 평균임금 산정에 필요해요",
-  "IRP 계좌 개설 — 퇴직금 300만원 초과 시 의무적으로 IRP에 이체돼요",
-  "소멸시효 3년 — 퇴직일 기준 3년 내에 청구해야 해요",
+  "입사일·퇴직일 정확히 확인: 1일 차이로 조건이 달라질 수 있어요",
+  "4주 평균 주 15시간 이상: 근무시간 변동이 있어도 평균으로 판단해요",
+  "최근 3개월 급여명세서: 평균임금 산정에 필요해요",
+  "IRP 계좌 개설: 퇴직금 300만원 초과 시 의무적으로 IRP에 이체돼요",
+  "소멸시효 3년: 퇴직일 기준 3년 내에 청구해야 해요",
 ];
 
 const FAQS = [
   {
     q: "계약직·알바도 퇴직금을 받을 수 있나요?",
-    a: "받을 수 있어요. 계약직, 아르바이트, 파트타임 모두 1년 이상·주 15시간 이상 조건만 충족하면 정규직과 동일하게 적용돼요. 고용 형태는 관계없어요.",
+    a: "받을 수 있어요. 계약직, 아르바이트, 파트타임 모두 1년 이상·주 15시간 이상 조건만 충족하면 정규직과 동일하게 적용돼요. 고용 형태는 관계없죠.",
   },
   {
     q: "11개월 29일 근무하면 퇴직금이 없나요?",
-    a: "맞아요. 1년을 채워야 퇴직금이 발생해요. 11개월 29일이면 한 푼도 없어요. 1년을 채우면 그때부터 1개월치가 기준이 되는 거예요.",
+    a: "맞아요. 1년을 채워야 퇴직금이 발생해요. 11개월 29일이면 한 푼도 없죠. 1년을 채우면 그때부터 1개월치가 기준이 되는 거예요.",
   },
   {
-    q: "5인 미만 사업장도 퇴직금이 있나요?",
-    a: "있어요. 2010년부터 5인 미만 사업장에도 퇴직금 지급 의무가 동일하게 적용돼요. 1인 사업장, 가사 사용인 등 극히 일부 예외를 제외하면 모두 해당돼요.",
+    q: "5인 미만 사업장도 퇴직금 의무 대상인가요?",
+    a: "맞아요. 2010년부터 5인 미만 사업장에도 퇴직금 지급 의무가 동일하게 적용돼요. 1인 사업장, 가사 사용인 등 극히 일부 예외를 제외하면 모두 해당되죠.",
   },
   {
     q: "주 14시간 일했는데 퇴직금이 안 되나요?",
@@ -110,50 +97,27 @@ const FAQS = [
   },
   {
     q: "육아휴직 기간도 근속연수에 포함되나요?",
-    a: "포함돼요. 육아휴직은 법적 권리라서 근속 기간이 계속 유지돼요. 퇴직금 계산 시 육아휴직 기간도 근속기간에 그대로 산입돼요.",
+    a: "포함돼요. 육아휴직은 법적 권리라서 근속 기간이 계속 유지되죠. 퇴직금 계산 시 육아휴직 기간도 근속기간에 그대로 산입돼요.",
   },
   {
     q: "계약이 갱신된 경우 1년을 새로 세나요?",
-    a: "아니에요. 계약이 갱신되더라도 실질적으로 같은 사업장에서 이어졌다면 최초 입사일부터 합산해요. 중간에 계약 공백이 짧다면 대부분 계속 근로로 인정돼요.",
+    a: "아니에요. 계약이 갱신되더라도 실질적으로 같은 사업장에서 이어졌다면 최초 입사일부터 합산해요. 중간에 계약 공백이 짧다면 대부분 계속 근로로 인정되죠.",
   },
 ];
 
-const REFERENCES = [
-  {
-    category: "법령",
-    items: [
-      { label: "근로자퇴직급여보장법: 퇴직급여제도 설정 의무", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
-      { label: "근로기준법 제2조: 근로자 정의", url: "https://www.law.go.kr/법령/근로기준법" },
-    ],
-  },
-  {
-    category: "공식 자료",
-    items: [
-      { label: "고용노동부: 퇴직금 제도 안내", url: "https://www.moel.go.kr" },
-      { label: "고용24: 고용보험 이력 조회", url: "https://www.ei.go.kr" },
-    ],
-  },
+const SOURCES = [
+  { name: "고용노동부", href: "https://www.moel.go.kr" },
+  { name: "고용24", href: "https://www.ei.go.kr" },
+  { name: "법제처", href: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
 ];
 
 const RELATED = [
-  {
-    slug: "퇴직금-계산법",
-    title: "퇴직금 계산법, 얼마나 받을 수 있을까?",
-    description: "평균임금 공식부터 상여금 포함 계산까지.",
-  },
-  {
-    slug: "퇴직금-1년미만",
-    title: "퇴직금 1년 미만, 예외 케이스는?",
-    description: "1년 미만 근무 시 퇴직금이 발생하는 예외 상황.",
-  },
-  {
-    slug: "퇴직금-미지급-신고",
-    title: "퇴직금 미지급 신고 방법",
-    description: "회사가 안 줄 때 신고 절차와 지연이자 청구법.",
-  },
+  { slug: "퇴직금-계산법", title: "퇴직금 계산법, 얼마나 받을 수 있을까?", description: "평균임금 공식부터 상여금 포함 계산까지." },
+  { slug: "퇴직금-1년미만", title: "퇴직금 1년 미만, 예외 케이스는?", description: "1년 미만 근무 시 퇴직금이 발생하는 예외 상황." },
+  { slug: "퇴직금-미지급-신고", title: "퇴직금 미지급 신고 방법", description: "회사가 안 줄 때 신고 절차와 지연이자 청구법." },
 ];
 
-// ─── 페이지 ──────────────────────────────────────────
+// ─── 페이지 (가능형: GreenBox 결론 먼저) ─────────────
 
 export default function Page() {
   return (
@@ -168,27 +132,26 @@ export default function Page() {
       </h1>
 
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
-        퇴직금 조건이 헷갈리는 건 핵심이 딱 두 가지라서 오히려 기준이 명확하기 때문이에요.
-        1년 이상 계속 근무, 4주 평균 주 15시간 이상 — 이 두 가지만 충족하면
+        퇴직금 조건은 딱 두 가지예요. 1년 이상 계속 근무, 4주 평균 주 15시간 이상.
         <a href="/w/계약직-퇴직금" style={{ color: "#1D9E75", textDecoration: "underline" }}>계약직</a>도,
         <a href="/w/알바-퇴직금" style={{ color: "#1D9E75", textDecoration: "underline" }}>알바</a>도,
-        <a href="/w/일용직-퇴직금" style={{ color: "#1D9E75", textDecoration: "underline" }}>일용직</a>도 퇴직금을 받을 수 있어요.
+        <a href="/w/일용직-퇴직금" style={{ color: "#1D9E75", textDecoration: "underline" }}>일용직</a>도 조건만 맞으면 받을 수 있어요.
         <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여보장법</a>은
-        고용 형태나 사업장 규모를 따지지 않아요.
+        고용 형태나 사업장 규모를 따지지 않죠.
       </p>
 
       <Divider />
       <ArticleAd position="intro" />
 
+      {/* H2-1: GreenBox 결론 + EligibilityChecker (가능형 -> 결론 먼저) */}
       <H2>퇴직금 조건, 딱 두 가지예요</H2>
       <p style={body}>
-        퇴직금은 고용 형태나 회사 규모와 무관해요. 정규직이든 계약직이든, 5인 이상이든 1인 사업장이든
-        조건만 충족하면 똑같이 적용돼요. 4대보험 미가입 상태여도 실질적 근무 사실이 있으면 청구할 수 있어요.
+        정규직이든 계약직이든, 5인 이상이든 1인 사업장이든 조건만 충족하면 똑같이 적용돼요.
+        4대보험 미가입 상태여도 실질적 근무 사실이 증명되면 청구할 수 있어요.
       </p>
       <p style={body}>
         "계속 근로"라는 표현이 중요해요. 계약이 갱신되더라도 실질적으로 같은 사업장에서 이어졌다면
-        최초 입사일부터 합산해요. 단, 계약 사이에 공백이 크거나 완전히 다른 직무로 전환됐다면
-        끊길 수 있어요.
+        최초 입사일부터 합산하죠. 단, 계약 사이에 공백이 크거나 완전히 다른 직무로 전환됐다면 끊길 수 있어요.
       </p>
 
       <GreenBox title="퇴직금 발생 조건 2가지">
@@ -204,18 +167,22 @@ export default function Page() {
         partialMatchText="조건 일부가 다를 수 있어요. 고용노동부(1350)에서 상담받으세요."
       />
 
+      <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
+      <RelatedArticles items={RELATED} />
+
       <Divider />
 
+      {/* H2-2: Calculator */}
       <H2>조건 충족 시 얼마나 받을 수 있을까?</H2>
       <p style={body}>
         퇴직금은 1년 근무할 때마다 월급 1개월치가 쌓이는 구조예요.
         월급 300만원으로 5년 근무하면 1,500만원이 기준이 되죠.
-        정확하게는 퇴직 전 3개월 평균임금 × 30일 × (근속일수 ÷ 365)로 계산해요.
+        정확하게는 퇴직 전 3개월 평균임금 x 30일 x (근속일수 / 365)로 계산해요.
       </p>
       <p style={body}>
         여기서 평균임금은 기본급만이 아니에요. 상여금·연차수당도 포함하기 때문에
         <a href="/w/퇴직금-계산법" style={{ color: "#1D9E75", textDecoration: "underline" }}>실제 계산</a>하면
-        단순 월급보다 높게 나오는 경우가 많아요.
+        단순 월급보다 높게 나오는 경우가 많죠.
       </p>
 
       <SectionBadge>퇴직금 예상 금액 계산기</SectionBadge>
@@ -225,31 +192,13 @@ export default function Page() {
         note="※ 월 평균임금 기준 추정치. 상여금·연차수당 포함 시 실제 금액이 더 높을 수 있어요."
       />
 
-      <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
-      <RelatedArticles items={RELATED} />
-
       <Divider />
 
-      <H2>조건 입증에 필요한 서류</H2>
-      <p style={body}>
-        퇴직금 조건을 입증하려면 근무 기간과 근무 시간, 두 가지를 증명해야 해요.
-        근로계약서가 없더라도 포기하지 않아도 돼요. 통장 입금 내역이나 4대보험 가입 이력만으로도
-        근무 사실을 증명할 수 있어요.
-      </p>
-      <p style={body}>
-        회사가 서류 제공을 거부하는 경우엔 고용24에서 고용보험 이력을 직접 조회할 수 있어요.
-        입사일·퇴직일·평균 근무시간을 확인하는 데 유용해요.
-      </p>
-
-      <SectionBadge>준비 서류 목록</SectionBadge>
-      <DocTable docs={DOCS} />
-
-      <Divider />
-
-      <H2>조건 확인부터 수령 절차까지</H2>
+      {/* H2-3: Steps */}
+      <H2>조건 확인부터 수령까지 절차</H2>
       <p style={body}>
         조건을 충족했다고 해서 퇴직금이 자동으로 들어오지는 않아요.
-        퇴직 후 14일 이내에 지급하는 게 원칙이지만, 회사에 요청해야 처리가 시작되는 경우가 많아요.
+        퇴직 후 14일 이내에 지급하는 게 원칙이지만, 회사에 요청해야 처리가 시작되는 경우가 많죠.
       </p>
       <p style={body}>
         안 줄 때 신고하면 대부분 해결돼요. 소멸시효 3년을 넘기기 전에
@@ -260,6 +209,7 @@ export default function Page() {
 
       <Divider />
 
+      {/* H2-4: Checklist */}
       <H2>받기 전 꼭 챙겨야 할 것들</H2>
       <p style={body}>
         날짜 하루 차이로 조건이 달라질 수 있어요. 특히 입사일과 퇴직일은
@@ -277,6 +227,7 @@ export default function Page() {
 
       <Divider />
 
+      {/* H2-5: FAQ */}
       <H2>자주 묻는 것들</H2>
       <p style={{ ...body, marginBottom: 14 }}>
         퇴직금 조건에 대해 실제로 많이 들어오는 질문만 골랐어요.
@@ -285,7 +236,7 @@ export default function Page() {
 
       <Divider />
 
-      <References groups={REFERENCES} />
+      <SourceNote sources={SOURCES} />
       <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 상담받으세요." />
     </ArticleLayout>
   );

@@ -69,23 +69,12 @@ npm run build    # 유일한 검증 수단. Turbopack 불안정 → 빌드로 �
 - 구어체: "~할까?", "~됐다면?" 허용 / "~정리했어요", "~알아봤어요", "~해드릴게요" 금지
 - **타이틀 line2 키워드가 H2 소제목에 최소 3개 반영 — 타이틀과 H2 불일치 금지**
 
-### 소제목(H2) — 5+1 구조 필수
-```
-H2-1: 핵심 개념/자격   → EligibilityChecker
-H2-2: 금액/계산        → Calculator
-H2-3: 서류/증빙        → DocTable
-H2-4: 절차/방법        → Steps
-H2-5: 준비/주의사항    → Checklist + GreenBox
-H2-6: 자주 묻는 것들  → FAQ (고정, 5개 이상)
-```
-- H2에 번호(1. 2.) 금지 / H2에 대시(ㅡ, —) 금지
-- 질문형 H2 2개, 서술형 2개, 행동형 1개 — 같은 톤 3연속 금지
-
-### 필수 컴포넌트 (빠지면 글 작성 불가)
-EligibilityChecker + Calculator + Steps + DocTable + Checklist + FAQ
-- **EligibilityChecker 항목**: 진짜 조건(~했어요, ~해요) — "궁금해요" 식 관심 항목 절대 금지
-- **Steps**: 반드시 Steps 컴포넌트 사용 — 텍스트에 "1단계:", "2단계:" 직접 서술 금지
-- **각 H2에 컴포넌트 1개**: 텍스트 2~3문단 → SectionBadge → 컴포넌트 → 마무리 1~2문단
+### 소제목(H2) + 시각화
+- SKILL.md `## 0-1` 검색 의도별 구조 + `## 2` 16개 컴포넌트 매핑 참조
+- `node scripts/suggest-structure.js "타이틀"` → 의도 분류 → H2 구조 자동 제안
+- 타이틀 질문에 H2-1이 바로 답 + 소제목 키워드에 맞는 시각화 선택
+- FAQ(5개+)만 고정, 나머지는 주제에 맞을 때만
+- 출처: SourceNote (토스뱅크 스타일 한 줄) — `*이 글은 OO, OO의 자료를 참고했어요.`
 
 ### 구어체 (절대 규칙)
 - ~해요, ~이에요, ~예요, ~하죠, ~거든요
@@ -118,6 +107,34 @@ EligibilityChecker + Calculator + Steps + DocTable + Checklist + FAQ
 - 컴포넌트 매핑 → SKILL.md `## 2. 컴포넌트 매핑 테이블`
 - 글쓰기/문체 → SKILL.md `## 6. 글쓰기 규칙`
 - 작성 절차 → SKILL.md `## 7. 글 작성 절차`
+
+---
+
+## 대량 작업: Agent Teams 워크플로우
+
+키워드/타이틀 목록을 받으면 아래 구조로 병렬 작업.
+
+### 글쓰기 Agent (최대 5개 병렬)
+- 각 Agent는 담당 slug 목록을 받아서 글 작성
+- **같은 파일 동시 수정 금지** — Agent마다 slug 분리
+- 작성 규칙: SKILL.md `## 0-1` 의도 분류 → `## 2` 16개 컴포넌트 매핑 → `## 6` 문체
+- 레퍼런스: SKILL.md `## 8` 참조
+- 계산 로직(calcRetirementTax 등) 절대 불변
+
+### 검증: 파일 1개 쓸 때마다 즉시 (Post-hook)
+- `Write|Edit` 발생 → `verify-tsx-article.js` 자동 실행 (이미 설정됨)
+- 검증 항목: 구어체/금지단어/타이틀-H2 일치/시각화 적합성/계산 로직 불변
+- **FAIL 나면 그 자리에서 바로 수정** → 다음 파일로 넘어가지 않음
+- 다 쓰고 한꺼번에 잡는 게 아니라, 1개씩 쓰고 1개씩 잡는 구조
+
+### 실행 순서
+```
+1. 키워드 목록 수령
+2. suggest-structure.js로 각 타이틀 의도 분류
+3. slug별 Agent 배분 (5개 이내, 파일 충돌 방지)
+4. 각 Agent: 1개 작성 → 훅 검증 → PASS면 다음 / FAIL이면 즉시 수정
+5. 전체 완료 후 npm run build 최종 확인
+```
 
 ---
 

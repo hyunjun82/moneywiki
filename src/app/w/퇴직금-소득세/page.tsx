@@ -1,20 +1,13 @@
 "use client";
 
 import {
-  H2, SectionBadge, GreenBox, BorderBox, Divider, body,
-  Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
+  H2, SectionBadge, GreenBox, Divider, body,
+  Calculator, Steps, Checklist, FAQ, SourceNote, Disclaimer,
   ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
-// ─── 데이터 ──────────────────────────────────────────
-
-const CHECK_ITEMS = [
-  { id: "c1", label: "퇴직금(퇴직소득)이 300만원을 초과했어요" },
-  { id: "c2", label: "IRP 계좌를 개설하고 퇴직금을 이체받았어요" },
-  { id: "c3", label: "현재 만 55세 미만이에요" },
-  { id: "c4", label: "IRP에서 아직 인출하지 않고 유지 중이에요" },
-];
+// ─── 계산기 로직 (소득세법 제48조, 제55조) — 절대 변경 금지 ───
 
 const CALC_SLIDERS = [
   {
@@ -31,7 +24,6 @@ const CALC_SLIDERS = [
   },
 ];
 
-// 실제 퇴직소득세 계산 로직 (소득세법 제48조, 제55조)
 function calcRetirementTax(amountMan: number, years: number): number {
   const amount = amountMan * 10000;
 
@@ -116,12 +108,7 @@ const CALC_RESULTS = [
   },
 ];
 
-const DOCS = [
-  { name: "퇴직소득원천징수영수증", required: true, where: "회사 인사팀 (퇴직 후 재발급 가능)" },
-  { name: "근로계약서 (입사일·퇴직일 확인용)", required: true, where: "인사팀 또는 입사 당시 수령본" },
-  { name: "IRP 계좌 개설 확인서 (해당자)", required: false, where: "IRP 금융기관 앱 또는 창구" },
-  { name: "급여명세서 최근 3개월 (평균임금 이의 시)", required: false, where: "회사 인사팀" },
-];
+// ─── 데이터 ──────────────────────────────────────────
 
 const STEPS = [
   {
@@ -183,22 +170,10 @@ const FAQS = [
   },
 ];
 
-const REFERENCES = [
-  {
-    category: "법령",
-    items: [
-      { label: "소득세법 제22조: 퇴직소득 범위", url: "https://www.law.go.kr/법령/소득세법" },
-      { label: "소득세법 제48조: 퇴직소득 근속연수공제", url: "https://www.law.go.kr/법령/소득세법" },
-      { label: "소득세법 제55조: 퇴직소득 세액 계산", url: "https://www.law.go.kr/법령/소득세법" },
-    ],
-  },
-  {
-    category: "공식 자료",
-    items: [
-      { label: "국세청 홈택스: 퇴직소득세 모의계산", url: "https://www.hometax.go.kr" },
-      { label: "국세청: 퇴직소득 과세 안내", url: "https://www.nts.go.kr" },
-    ],
-  },
+const SOURCES = [
+  { name: "국세청", href: "https://www.nts.go.kr" },
+  { name: "홈택스", href: "https://www.hometax.go.kr" },
+  { name: "법제처", href: "https://www.law.go.kr/법령/소득세법" },
 ];
 
 const RELATED = [
@@ -231,41 +206,15 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      <H2>퇴직소득세 과세이연, 내가 받을 수 있나요?</H2>
-      <p style={body}>
-        퇴직금이 300만원을 초과하면 반드시 IRP 계좌로 받아야 해요. IRP로 이체되는 순간 퇴직소득세를 내지 않고,
-        실제로 수령할 때까지 세금 납부를 미룰 수 있어요. 이걸 과세이연이라고 해요.
-      </p>
-      <p style={body}>
-        만 55세 이후에 연금으로 나눠 받으면 퇴직소득세가 30% 줄어요. 10년 이상 나눠 받으면 40% 감면까지 돼요.
-        퇴직금이 클수록 이 절세 효과가 커지기 때문에, IRP를 어떻게 운용하느냐가 실수령액 차이를 만들어요.
-      </p>
-
-      <GreenBox title="퇴직소득세 계산 구조 (소득세법 제48조·제55조)">
-        ① 퇴직금 − 근속연수공제 = 퇴직소득<br />
-        ② 퇴직소득 × 12 ÷ 근속연수 = 환산급여<br />
-        ③ 환산급여 − 환산급여공제 = 환산과세표준<br />
-        ④ 세율 적용 → ÷ 12 × 근속연수 = 퇴직소득세<br />
-        ⑤ 퇴직소득세 × 10% = 지방소득세 (합산 납부)
-      </GreenBox>
-
-      <SectionBadge>내 상황 체크해보세요</SectionBadge>
-      <EligibilityChecker
-        items={CHECK_ITEMS}
-        allMatchText="IRP 과세이연 혜택을 받을 수 있어요. 55세까지 유지하면 연금 수령 시 30~40% 절세가 가능해요."
-        partialMatchText="일부 조건이 맞지 않을 수 있어요. 국세청(126) 또는 IRP 금융기관에 문의해보세요."
-      />
-
-      <Divider />
-
-      <H2>퇴직소득세 얼마나 나오나요?</H2>
+      {/* ── H2-1: Calculator (얼마형 → 답 먼저) ── */}
+      <H2>내 퇴직금에서 세금이 얼마나 빠지나요?</H2>
       <p style={body}>
         근속연수가 길수록 세금이 적어요. 같은 5,000만원 퇴직금이라도 10년 근무와 20년 근무는 세금이 두 배 이상 차이 나요.
-        계산기로 내 상황에 맞는 금액을 먼저 확인해보세요.
+        아래 계산기에 퇴직금과 근속 기간을 넣어보세요.
       </p>
       <p style={body}>
-        이 계산기는 소득세법 제48조 근속연수공제와 제55조 환산급여공제 공식을 적용한 추정치예요.
-        정확한 수치는 홈택스 모의계산이나 원천징수영수증 기준이 우선이에요.
+        <a href="https://www.law.go.kr/법령/소득세법" style={{ color: "#1D9E75", textDecoration: "underline" }}>소득세법 제48조</a> 근속연수공제와
+        제55조 환산급여공제 공식을 적용한 추정치예요. 정확한 수치는 홈택스 모의계산이나 원천징수영수증 기준이 우선이에요.
       </p>
 
       <SectionBadge>퇴직소득세 계산기</SectionBadge>
@@ -280,28 +229,57 @@ export default function Page() {
 
       <Divider />
 
-      <H2>세액 검증에 필요한 서류</H2>
+      {/* ── H2-2: GreenBox (세금 구조 설명) ── */}
+      <H2>퇴직소득세는 왜 이렇게 계산되나요?</H2>
       <p style={body}>
-        세금 계산이 맞는지 확인하려면 원천징수영수증이 핵심이에요. 근속연수, 공제 금액, 세율이 모두 이 서류에 나와 있어요.
-        퇴직 후에도 언제든 회사 인사팀에 재발급을 요청할 수 있어요.
+        퇴직소득세는 월급에 붙는 근로소득세와 완전히 다른 구조예요. 종합소득에 합산하지 않고 따로 계산하는 분류과세 방식이라서,
+        같은 금액이라도 세금이 훨씬 적게 나와요.
+      </p>
+      <p style={body}>
+        핵심은 공제를 두 번 받는다는 거예요. 먼저 근속연수에 따라 공제를 한 번 받고(근속연수공제),
+        그 금액을 다시 연단위로 환산해서 한 번 더 공제를 받아요(환산급여공제). 오래 일할수록 세금이 줄어드는 이유가 여기 있어요.
       </p>
 
-      <SectionBadge>준비 서류 목록</SectionBadge>
-      <DocTable docs={DOCS} />
+      <GreenBox title="퇴직소득세 계산 구조 (소득세법 제48조·제55조)">
+        ① 퇴직금 - 근속연수공제 = 퇴직소득<br />
+        ② 퇴직소득 x 12 / 근속연수 = 환산급여<br />
+        ③ 환산급여 - 환산급여공제 = 환산과세표준<br />
+        ④ 세율 적용 → / 12 x 근속연수 = 퇴직소득세<br />
+        ⑤ 퇴직소득세 x 10% = 지방소득세 (합산 납부)
+      </GreenBox>
+
+      <GreenBox title="근속연수별 공제 금액 기준 (소득세법 제48조)">
+        5년 이하: 근속연수 x 30만원<br />
+        6~10년: 150만원 + (근속연수 - 5) x 50만원<br />
+        11~20년: 400만원 + (근속연수 - 10) x 80만원<br />
+        20년 초과: 1,200만원 + (근속연수 - 20) x 120만원
+      </GreenBox>
+
+      <p style={body}>
+        <a href="/w/퇴직금-IRP-수령방법" style={{ color: "#1D9E75", textDecoration: "underline" }}>IRP 계좌</a>로 퇴직금을 받으면 이 세금을 당장 안 내도 돼요.
+        과세이연이라고 해서, 나중에 실제로 인출할 때 납부하는 방식이에요.
+        만 55세 이후 연금으로 10년 이상 나눠 받으면 퇴직소득세가 40%까지 줄어요.
+      </p>
 
       <Divider />
 
-      <H2>퇴직소득세 처리 절차</H2>
+      {/* ── H2-3: Steps (세금 처리 절차) ── */}
+      <H2>퇴직소득세, 확인하고 처리하는 절차</H2>
       <p style={body}>
-        원천징수영수증 수령부터 환급 신청까지 4단계예요. 세금이 맞으면 IRP 운용 계획만 세우면 되고,
-        잘못 계산됐으면 경정청구로 되돌려 받을 수 있어요.
+        회사가 원천징수한 세금이 맞게 계산됐는지 확인하는 게 첫 번째예요. 원천징수영수증은 퇴직 후 회사 인사팀에 요청하거나,
+        <a href="https://www.hometax.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>홈택스</a> My홈택스에서 직접 발급받을 수 있어요.
+      </p>
+      <p style={body}>
+        세금이 맞으면 IRP 운용 계획만 세우면 되고, 잘못 계산됐으면 경정청구로 돌려받을 수 있어요.
+        퇴직일로부터 5년이 지나면 환급 청구권이 소멸하니까 퇴직 직후에 처리하는 게 좋아요.
       </p>
 
       <Steps steps={STEPS} />
 
       <Divider />
 
-      <H2>퇴직소득세 처리 전 체크리스트</H2>
+      {/* ── H2-4: Checklist (절세 체크리스트) ── */}
+      <H2>세금 덜 내려면 이것부터 챙기세요</H2>
       <p style={body}>
         퇴직 후 세금 관련 처리는 한 번에 끝내는 게 좋아요. 나중에 다시 챙기려면 서류 재발급부터 번거로워지거든요.
         아래 항목을 퇴직 직후 순서대로 확인해보세요.
@@ -310,15 +288,9 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="근속연수별 공제 금액 기준 (소득세법 제48조)">
-        5년 이하: 근속연수 × 30만원<br />
-        6~10년: 150만원 + (근속연수 − 5) × 50만원<br />
-        11~20년: 400만원 + (근속연수 − 10) × 80만원<br />
-        20년 초과: 1,200만원 + (근속연수 − 20) × 120만원
-      </GreenBox>
-
       <Divider />
 
+      {/* ── H2-5: FAQ ── */}
       <H2>자주 묻는 것들</H2>
       <p style={{ ...body, marginBottom: 14 }}>
         퇴직소득세에서 실제로 많이 나오는 질문만 골랐어요.
@@ -327,7 +299,7 @@ export default function Page() {
 
       <Divider />
 
-      <References groups={REFERENCES} />
+      <SourceNote sources={SOURCES} />
       <Disclaimer text="이 글은 2026년 3월 기준 소득세법을 바탕으로 작성됐어요. 세율·공제 한도는 법 개정에 따라 달라질 수 있으니 최신 기준은 국세청(126) 또는 홈택스에서 확인해요." />
     </ArticleLayout>
   );

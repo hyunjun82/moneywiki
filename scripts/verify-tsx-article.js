@@ -65,18 +65,17 @@ for (const isQ of questionH2) {
   else consecutiveQ = 0;
 }
 
-// ─── 3. 필수 컴포넌트 체크 ───────────────────────────
-const REQUIRED = [
-  { name: "EligibilityChecker", pattern: /EligibilityChecker/ },
-  { name: "Calculator",         pattern: /\bCalculator\b/ },
-  { name: "Steps",              pattern: /\bSteps\b/ },
-  { name: "DocTable",           pattern: /\bDocTable\b/ },
-  { name: "Checklist",          pattern: /\bChecklist\b/ },
-  { name: "FAQ",                pattern: /\bFAQ\b/ },
+// ─── 3. 컴포넌트 체크 (FAQ 필수 + 시각화 3종 이상) ───
+if (!/\bFAQ\b/.test(src)) ERRORS.push(`❌ FAQ 컴포넌트 누락 (필수)`);
+
+const VISUAL_COMPONENTS = [
+  "Calculator", "EligibilityChecker", "Steps", "DocTable", "Checklist",
+  "CompareTable", "Timeline", "IncomeBracket", "TaxRateTable", "DateCalc",
+  "FlowChart", "PenaltyTable", "RegionTable", "DiagnoseCard", "SupportAmountCard",
+  "GreenBox", "BorderBox",
 ];
-for (const { name, pattern } of REQUIRED) {
-  if (!pattern.test(src)) ERRORS.push(`❌ 필수 컴포넌트 누락: ${name}`);
-}
+const usedCount = VISUAL_COMPONENTS.filter(c => new RegExp(`\\b${c}\\b`).test(src)).length;
+if (usedCount < 3) ERRORS.push(`❌ 시각화 컴포넌트 ${usedCount}개 — 최소 3종 필요`);
 
 // ─── 4. AI 냄새 단어 ─────────────────────────────────
 const AI_WORDS = [
@@ -98,10 +97,10 @@ for (const f of FORMAL) {
 if (formalCount > 0) ERRORS.push(`❌ 합니다/입니다 체 ${formalCount}회 — 구어체(~해요/~이에요)로 변경`);
 
 // ─── 6. EligibilityChecker 품질 ──────────────────────
-// "궁금해요" 류 가짜 항목 감지
+// 가짜 항목 감지: 관심/의향/궁금증은 자격 조건이 아님
 const checkLabels = [...src.matchAll(/label:\s*["'](.*?)["']/g)].map(m => m[1]);
-const fakeChecks = checkLabels.filter(l => /궁금|알고 싶|궁금해요|알아보|확인하/.test(l));
-if (fakeChecks.length > 0) ERRORS.push(`❌ EligibilityChecker 가짜 항목 (조건이 아닌 궁금증): "${fakeChecks[0]}"`);
+const fakeChecks = checkLabels.filter(l => /궁금|알고 싶|궁금해요|알아보|확인하|하고 싶|받고 싶|할 예정|할 계획/.test(l));
+if (fakeChecks.length > 0) ERRORS.push(`❌ EligibilityChecker 가짜 항목 (조건이 아닌 관심/의향): "${fakeChecks[0]}"`);
 
 // ─── 7. Steps 크램드 텍스트 감지 ─────────────────────
 // 단락 텍스트에 "1단계:", "2단계:" 직접 서술 (Steps 컴포넌트 대신 텍스트로 쓴 경우)
