@@ -1,6 +1,7 @@
 "use client";
 
 import { colors } from "./styles";
+import { ArticleAd } from "./ArticleAd";
 
 export interface RelatedItem {
   slug: string;
@@ -18,6 +19,8 @@ export function RelatedArticles({
   items,
 }: Props) {
   return (
+    <>
+      <ArticleAd position="mid" />
     <div
       style={{
         border: `1px solid ${colors.line}`,
@@ -86,5 +89,6 @@ export function RelatedArticles({
         ))}
       </div>
     </div>
+    </>
   );
 }
