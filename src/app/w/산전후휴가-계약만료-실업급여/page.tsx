@@ -97,15 +97,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 수급자격 및 비자발적 이직 기준", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "근로기준법 제74조 — 산전후휴가 규정", url: "https://www.law.go.kr/법령/근로기준법" },
+      { label: "고용보험법: 수급자격 및 비자발적 이직 기준", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "근로기준법 제74조: 산전후휴가 규정", url: "https://www.law.go.kr/법령/근로기준법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 신청 안내", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 모성보호 제도 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 신청 안내", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 모성보호 제도 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -160,7 +160,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 계약만료 = 비자발적 퇴사 */}
+      {/* 섹션 1: 계약만료 = 비자발적 퇴사 */}
       <H2>출산휴가 중 계약만료, 수급 자격이 되나요?</H2>
       <p style={body}>
         계약직이 계약기간 만료로 퇴직하면 <strong>비자발적 퇴사</strong>예요. 본인은 더 일하고 싶었는데 회사가 연장하지 않은 거니까요. 출산휴가 중이든 아니든 이 원칙은 똑같이 적용되죠.
@@ -187,7 +187,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 출산휴가급여와 실업급여 수급 순서 */}
+      {/* 섹션 2: 출산휴가급여와 실업급여 수급 순서 */}
       <H2>출산휴가급여와 실업급여 신청 절차는 어떤 순서인가요?</H2>
       <p style={body}>
         산전후휴가 중이라면 <strong>출산전후휴가급여</strong>를 받고 있을 거예요. 고용보험에서 90일 동안 지급되는 급여죠. 여기서 중요한 건 출산전후휴가급여와 실업급여가 <strong>중복 수급이 안 된다</strong>는 점이에요.
@@ -219,7 +219,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 수급기간 연장 */}
+      {/* 섹션 3: 수급기간 연장 */}
       <H2>출산·육아 사유로 수급 자격 유지하며 기간 연장 가능</H2>
       <p style={body}>
         신생아를 돌보면서 당장 구직활동을 하기란 현실적으로 쉽지 않죠. 이런 상황을 위해 <strong>수급기간 연장 제도</strong>가 마련돼 있어요. 임신, 출산, 육아로 취업이 어려운 경우 수급기간을 <strong>최대 1년</strong>까지 늘릴 수 있죠.
@@ -236,7 +236,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 임신 중 퇴직과 육아휴직 */}
+      {/* 섹션 4: 임신 중 퇴직과 육아휴직 */}
       <H2>임신 중 퇴직이나 육아휴직 만료도 수급 자격 인정</H2>
       <p style={body}>
         임신 상태에서 퇴직해도 <strong>비자발적 퇴직</strong>이면 실업급여 대상이에요. 계약만료, 권고사직, 회사 사정에 의한 퇴직이 전부 해당되죠. 임신으로 건강이 나빠져 일을 못 하게 된 경우에도 의사 소견서가 있으면 <strong>정당한 이직 사유</strong>로 인정받을 수 있고요.
@@ -259,7 +259,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 실업급여 금액과 실전 정리 */}
+      {/* 섹션 5: 실업급여 금액과 실전 정리 */}
       <H2>계약만료 후 신청 절차와 금액</H2>
       <p style={body}>
         실업급여는 퇴직 전 평균임금의 <strong>60%</strong>예요. 2026년 기준 <strong>1일 상한액 68,100원</strong>, <strong>1일 하한액 66,048원</strong>이 적용되죠. 월로 환산하면 최대 약 <strong>204만 원</strong>이에요.

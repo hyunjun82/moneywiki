@@ -96,15 +96,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 실업급여 수급자격 요건", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "파견근로자보호법 — 파견근로 관계 정의", url: "https://www.law.go.kr/법령/파견근로자보호등에관한법률" },
+      { label: "고용보험법: 실업급여 수급자격 요건", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "파견근로자보호법: 파견근로 관계 정의", url: "https://www.law.go.kr/법령/파견근로자보호등에관한법률" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 인터넷 신청", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 파견근로자 권익보호", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 인터넷 신청", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 파견근로자 권익보호", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -159,13 +159,13 @@ export default function Page() {
       </p>
       <p style={body}>
         다만 파견직은 &quot;누가 내 사업주인지&quot;부터 헷갈리는 경우가 많아요.
-        이직확인서를 어디에 요청해야 하는지, 사용사업체가 바뀌면 어떻게 되는지 — 이런 부분을 정리했어요.
+        이직확인서를 어디에 요청해야 하는지, 사용사업체가 바뀌면 어떻게 되는지: 이런 부분을 정리했어요.
       </p>
 
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 파견직 고용 구조 + 자격 체크 */}
+      {/* 섹션 1: 파견직 고용 구조 + 자격 체크 */}
       <H2>수급 조건을 알려면 파견 구조부터 알아야 하나요?</H2>
       <SectionBadge>핵심 개념</SectionBadge>
       <p style={body}>
@@ -178,7 +178,7 @@ export default function Page() {
         이 구조를 모르면 퇴직 시 혼란이 생겨요.
         &quot;실제로 출근한 공장이 내 회사 아닌가요?&quot; 하고 사용사업체에 연락하는 분이 많죠.
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>상 사업주는 파견회사예요.
-        고용보험 상실 신고, 이직확인서 발급, 퇴직금 정산 — 전부 파견회사가 처리하는 거예요.
+        고용보험 상실 신고, 이직확인서 발급, 퇴직금 정산: 전부 파견회사가 처리하는 거예요.
       </p>
       <p style={body}>
         파견회사가 동일하면 사용사업체가 바뀌어도 고용보험이 끊기지 않아요.
@@ -193,7 +193,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 수급 조건 + 계산기 */}
+      {/* 섹션 2: 수급 조건 + 계산기 */}
       <H2>신청 절차에 필요한 조건은 무엇인가요?</H2>
       <p style={body}>
         조건 자체는 일반 근로자와 같아요.{" "}
@@ -242,7 +242,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 신청 절차 + 체크리스트 */}
+      {/* 섹션 3: 신청 절차 + 체크리스트 */}
       <H2>파견직 신청 절차와 이직확인서</H2>
       <SectionBadge>신청 가이드</SectionBadge>
       <p style={body}>
@@ -268,7 +268,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 복잡한 상황 */}
+      {/* 섹션 4: 복잡한 상황 */}
       <H2>사용사업체 종료 시 수급 조건 변화</H2>
       <p style={body}>
         &quot;출근하던 공장에서 파견을 안 받겠다고 했어요. 퇴직인가요?&quot;
@@ -303,7 +303,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 수급기간과 금액 */}
+      {/* 섹션 5: 수급기간과 금액 */}
       <H2>수급 조건별 기간과 금액을 정리하세요</H2>
       <p style={body}>
         수급기간은 고용보험 가입기간과 나이로 결정돼요.
@@ -323,7 +323,7 @@ export default function Page() {
         <a href="/w/실업급여-구직활동-횟수" style={{ color: "#1D9E75", textDecoration: "underline" }}>실업인정</a>을 빠뜨리면 해당 기간 급여가 지급되지 않으니까, 달력에 실업인정일을 미리 표시해두는 게 좋아요.
       </p>
 
-      <GreenBox title="수급기간 — 가입기간별 정리">
+      <GreenBox title="수급기간: 가입기간별 정리">
         <p style={{ margin: "0 0 4px" }}>1년 미만 → 120일</p>
         <p style={{ margin: "0 0 4px" }}>1~3년 → 150일 (50세 이상 180일)</p>
         <p style={{ margin: "0 0 4px" }}>3~5년 → 180일 (50세 이상 210일)</p>

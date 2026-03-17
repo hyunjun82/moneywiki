@@ -20,7 +20,7 @@ const CHECKLIST = [
   "적발 전이라면 고용24 또는 고용센터(1350)에 자진신고",
   "자진신고 시 추가 징수(최대 5배)를 면제받을 수 있음",
   "부정수급 금액은 전액 반환해야 함 (자진신고와 무관)",
-  "형사처벌 면제는 별개 — 양형 참작은 가능",
+  "형사처벌 면제는 별개: 양형 참작은 가능",
   "법률 전문가 상담 (금액이 크거나 고의성이 명백한 경우)",
 ];
 
@@ -51,15 +51,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제62조 — 반환명령 및 추가 징수", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 제116조 — 벌칙 (5년 이하 징역/5천만원 이하 벌금)", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 제62조: 반환명령 및 추가 징수", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 제116조: 벌칙 (5년 이하 징역/5천만원 이하 벌금)", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 부정수급 자진신고", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 부정수급 신고센터", url: "https://www.moel.go.kr" },
+      { label: "고용24: 부정수급 자진신고", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 부정수급 신고센터", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -120,7 +120,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 부정수급이란 */}
+      {/* 섹션 1: 부정수급이란 */}
       <H2>환수 기준에 해당하는 행위는 뭔가요?</H2>
       <p style={body}>
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 제62조</a>가 말하는 부정수급은
@@ -149,7 +149,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 처벌 수위 */}
+      {/* 섹션 2: 처벌 수위 */}
       <H2>최대 5배 환수, 실제 처벌은 얼마나 되나요?</H2>
       <p style={body}>
         처벌은 세 단계로 올라가요.
@@ -171,10 +171,10 @@ export default function Page() {
       </p>
 
       <BorderBox title="처벌 수위 단계별 정리">
-        반환 명령 — 부정수급액 전액 (자진신고와 무관하게 반환)<br />
-        추가징수 — 최대 2배(단독) / 최대 5배(사업주 공모)<br />
-        형사처벌 — 5년 이하 징역 또는 5천만원 이하 벌금<br />
-        남은 급여 — <strong>전액 중단</strong> (잔여 수급일수 소멸)
+        반환 명령: 부정수급액 전액 (자진신고와 무관하게 반환)<br />
+        추가징수: 최대 2배(단독) / 최대 5배(사업주 공모)<br />
+        형사처벌: 5년 이하 징역 또는 5천만원 이하 벌금<br />
+        남은 급여: <strong>전액 중단</strong> (잔여 수급일수 소멸)
       </BorderBox>
 
       {/* ── 섹션 2 끝 → 버튼 + 관련 글 ── */}
@@ -184,7 +184,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 적발 경로 */}
+      {/* 섹션 3: 적발 경로 */}
       <H2>환수 기준 적용을 위한 적발 경로</H2>
       <p style={body}>
         적발은 생각보다 쉬워요.
@@ -193,7 +193,7 @@ export default function Page() {
         하루짜리 알바라도 사업주가 일용직 신고를 하면 기록이 남아요.
       </p>
       <p style={body}>
-        &ldquo;현금으로 받았으니 괜찮겠지&rdquo; — 이 생각이 제일 흔한 착각이에요.
+        &ldquo;현금으로 받았으니 괜찮겠지&rdquo;: 이 생각이 제일 흔한 착각이에요.
         사업주가 비용 처리를 위해 지급 내역을 세무서에 신고하면 결국 드러나죠.
         배달앱이나 플랫폼 노동도 마찬가지예요.
         앱 운영사가 소득 신고를 하기 때문에 기록이 고스란히 남아요.
@@ -207,7 +207,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 자진신고 */}
+      {/* 섹션 4: 자진신고 */}
       <H2>자진신고 시 환수 기준 감면 여부</H2>
       <p style={body}>
         적발되기 전에 자진신고하면 <strong>추가징수를 면제</strong>받을 수 있죠.
@@ -232,7 +232,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 예방 */}
+      {/* 섹션 5: 예방 */}
       <H2>5배 환수를 피하려면 이렇게 하세요</H2>
       <p style={body}>
         핵심은 딱 하나예요.

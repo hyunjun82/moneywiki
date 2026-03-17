@@ -103,15 +103,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 구직급여 수급자격 및 제한 사유", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행규칙 — 이직 사유 분류 기준", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
+      { label: "고용보험법: 구직급여 수급자격 및 제한 사유", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행규칙: 이직 사유 분류 기준", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 신청·조회 안내", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 고용보험 제도 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 신청·조회 안내", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 고용보험 제도 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -172,7 +172,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 명예퇴직과 실업급여 자격 */}
+      {/* 섹션 1: 명예퇴직과 실업급여 자격 */}
       <H2>명예퇴직하면 수급 조건에 해당하나요?</H2>
       <SectionBadge>수급 자격 체크</SectionBadge>
 
@@ -183,7 +183,7 @@ export default function Page() {
         비자발적 이직이니까 실업급여 수급 자격이 생기는 거예요.
       </p>
       <p style={body}>
-        명예퇴직, 희망퇴직, 조기퇴직 — 명칭은 회사마다 달라요.
+        명예퇴직, 희망퇴직, 조기퇴직: 명칭은 회사마다 달라요.
         이름이 뭐든 실질적으로 회사 주도의 퇴직 권유라면 전부 같은 취급을 받죠.{" "}
         <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 이직확인서를 볼 때도 퇴직 명칭이 아니라 실질적 사유가 판단 기준이에요.
       </p>
@@ -208,7 +208,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 수급액 계산 */}
+      {/* 섹션 2: 수급액 계산 */}
       <H2>수급 금액은 얼마나 나올까요?</H2>
 
       <p style={body}>
@@ -242,7 +242,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 이직확인서 */}
+      {/* 섹션 3: 이직확인서 */}
       <H2>수급 자격을 가르는 이직확인서 기재 내용</H2>
       <SectionBadge>퇴직 전 체크리스트</SectionBadge>
 
@@ -273,7 +273,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 명예퇴직금과 실업급여 관계 */}
+      {/* 섹션 4: 명예퇴직금과 실업급여 관계 */}
       <H2>명예퇴직금과 수급 금액은 별개 재원이에요</H2>
 
       <p style={body}>
@@ -294,14 +294,14 @@ export default function Page() {
       </p>
 
       <GreenBox title="명예퇴직 시 받을 수 있는 돈 3가지">
-        법정 퇴직금 — 1년 이상 근무 시 발생 (근로기준법)<br />
-        명예퇴직금(위로금) — 회사 자체 재원에서 지급<br />
-        실업급여 — 고용보험 기금에서 지급 (별도 신청 필요)
+        법정 퇴직금: 1년 이상 근무 시 발생 (근로기준법)<br />
+        명예퇴직금(위로금): 회사 자체 재원에서 지급<br />
+        실업급여: 고용보험 기금에서 지급 (별도 신청 필요)
       </GreenBox>
 
       <Divider />
 
-      {/* 섹션 5 — 신청 절차 */}
+      {/* 섹션 5: 신청 절차 */}
       <H2>퇴직 후 수급 조건 충족하면 바로 신청하세요</H2>
 
       <p style={body}>

@@ -51,16 +51,16 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 외국인 근로자 적용 범위", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법: 외국인 근로자 적용 범위", url: "https://www.law.go.kr/법령/고용보험법" },
       { label: "외국인근로자의 고용 등에 관한 법률", url: "https://www.law.go.kr/법령/외국인근로자의고용등에관한법률" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 신청 안내", url: "https://www.ei.go.kr" },
-      { label: "출입국외국인정책본부 — 체류 자격 안내", url: "https://www.immigration.go.kr" },
-      { label: "외국인력상담센터 — 다국어 상담", url: "https://www.eps.go.kr" },
+      { label: "고용24: 실업급여 신청 안내", url: "https://www.ei.go.kr" },
+      { label: "출입국외국인정책본부: 체류 자격 안내", url: "https://www.immigration.go.kr" },
+      { label: "외국인력상담센터: 다국어 상담", url: "https://www.eps.go.kr" },
     ],
   },
 ];
@@ -124,7 +124,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* ── 섹션 1 — 비자별 자격 조건 ── */}
+      {/* ── 섹션 1: 비자별 자격 조건 ── */}
       <H2>비자별 자격 조건이 어떻게 나뉘나요?</H2>
       <p style={body}>
         외국인이라고 전부 고용보험에서 빠지는 게 아니에요.
@@ -139,16 +139,16 @@ export default function Page() {
       </p>
       <p style={body}>
         이 비자를 가진 근로자라면 내국인과 완전히 동일한 절차로 실업급여를 신청할 수 있죠.
-        <a href="/w/실업급여-피보험기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험 180일</a> 이상 가입, 비자발적 퇴사, 재취업 의사 — 이 세 가지만 충족하면 되죠.
+        <a href="/w/실업급여-피보험기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험 180일</a> 이상 가입, 비자발적 퇴사, 재취업 의사: 이 세 가지만 충족하면 되죠.
         추가 조건이 있다면 체류 자격을 유지하고 있어야 한다는 것 정도예요.
       </p>
 
       <GreenBox title="의무가입 비자 5종">
-        F-2 (거주) — 장기 체류 자격<br />
-        F-4 (재외동포) — 재외동포 취업 자격<br />
-        F-5 (영주) — 영주권자<br />
-        F-6 (결혼이민) — 한국인 배우자<br />
-        H-2 (방문취업) — 동포 방문취업 자격
+        F-2 (거주): 장기 체류 자격<br />
+        F-4 (재외동포): 재외동포 취업 자격<br />
+        F-5 (영주): 영주권자<br />
+        F-6 (결혼이민): 한국인 배우자<br />
+        H-2 (방문취업): 동포 방문취업 자격
       </GreenBox>
 
       <SectionBadge>내 자격 체크</SectionBadge>
@@ -160,7 +160,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 2 — E-9 비자 ── */}
+      {/* ── 섹션 2: E-9 비자 ── */}
       <H2>E-9 비자는 왜 신청 자격이 없나요?</H2>
       <p style={body}>
         먼저 전문인력 비자부터 볼게요.
@@ -192,7 +192,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 3 — 수급 조건 + 체류 자격 유지 ── */}
+      {/* ── 섹션 3: 수급 조건 + 체류 자격 유지 ── */}
       <H2>비자별 수급 조건과 체류 자격 유지</H2>
       <p style={body}>
         기본 조건은 내국인과 같아요.
@@ -216,12 +216,12 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 4 — 신청 서류·접수 절차 ── */}
+      {/* ── 섹션 4: 신청 서류·접수 절차 ── */}
       <H2>신청 서류 준비와 접수 절차</H2>
       <p style={body}>
         절차는 내국인과 같아요.
         먼저 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 온라인 수급자격 교육을 이수하고, 관할 고용센터에 방문해서 수급자격 인정 신청을 하면 돼요.
-        준비물은 여권, 외국인등록증, 이직확인서 — 이 세 가지예요.
+        준비물은 여권, 외국인등록증, 이직확인서: 이 세 가지예요.
       </p>
       <p style={body}>
         한국어가 어렵다면 <strong>외국인력상담센터(1577-0071)</strong>를 이용하세요.
@@ -236,7 +236,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 5 — 출국 시 반환일시금 ── */}
+      {/* ── 섹션 5: 출국 시 반환일시금 ── */}
       <H2>출국 전 신청 서류 챙기고 반환일시금 받으세요</H2>
       <p style={body}>
         실업급여를 받다가 본국으로 돌아가면 지급이 중단돼요.
@@ -254,7 +254,7 @@ export default function Page() {
         두 가지를 동시에 받을 수는 없으니, 본인 상황에 맞는 쪽을 선택하면 되죠.
       </p>
 
-      <BorderBox title="체류 vs 출국 — 뭘 받을까?">
+      <BorderBox title="체류 vs 출국: 뭘 받을까?">
         한국에서 재취업 예정 → <strong>실업급여</strong> (구직활동 필수)<br />
         본국 귀국 예정 → <strong>반환일시금</strong> (출국 전 신청)<br />
         E-9 비자 → <strong>출국만기보험금</strong> (출국 시 자동 지급)

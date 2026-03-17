@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 /tmp/write_page.py)",
+      "Bash(node -e \":*)",
+      "Bash(node -e \"require\\(''fs''\\).writeFileSync\\(''c:/tmp/test.txt'', ''hello'', ''utf8''\\); console.log\\(''ok''\\)\")",
+      "Bash(node /tmp/writer.js)",
+      "Bash(node \"c:/tmp/writer.js\")",
+      "Bash(node -e \"console.log\\(encodeURIComponent\\(''퇴직금-압류''\\)\\)\")",
+      "Bash(node -e \"const fs=require\\(''fs''\\); const s=fs.statSync\\(''c:/Users/user/wiki-site/src/app/w/\\\\uD1F4\\\\uC9C1\\\\uAE08-\\\\uC555\\\\uB958/page.tsx''\\); console.log\\(''size:'', s.size, ''bytes''\\);\")",
+      "Read(//usr/**)",
+      "Read(//c/download_auto/venv/Scripts/**)",
+      "Bash(/c/download_auto/venv/Scripts/python /c/tmp/write_page2.py)",
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Bash(find c:/Users/user/wiki-site -name *양육비*)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "Bash(grep -l \"<strong>\" /c/Users/user/wiki-site/src/app/w/*/page.tsx)",
+      "Bash(grep -v \"//\")",
+      "Bash(sed -i 's/    key: \"\"amount\"\"/    id: \"\"amount\"\"/' /c/Users/user/wiki-site/src/app/w/irp-퇴직금-인출/page.tsx)",
+      "Bash(sed -i 's/    key: \"\"age\"\"/    id: \"\"age\"\"/' /c/Users/user/wiki-site/src/app/w/irp-퇴직금-인출/page.tsx)",
+      "Bash(sed -i '/    key: \"\"result1\"\"/d' /c/Users/user/wiki-site/src/app/w/irp-퇴직금-인출/page.tsx)",
+      "Bash(sed -i '/    key: \"\"result2\"\"/d' /c/Users/user/wiki-site/src/app/w/irp-퇴직금-인출/page.tsx)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\user\\wiki-site\\src\\app\\w\\퇴직금-소득세",
+      "c:\\tmp",
+      "C:\\Users\\user\\wiki-site\\src\\app\\w\\irp-퇴직금-인출",
+      "C:\\Users\\user\\wiki-site\\src\\app\\w\\개인형-irp-퇴직금-수령방법"
+    ]
+  }
+}

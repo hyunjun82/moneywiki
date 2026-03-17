@@ -52,15 +52,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 시행규칙 — 정당한 이직 사유 세부 기준", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
-      { label: "고용보험법 제58조 — 수급자격의 제한", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행규칙: 정당한 이직 사유 세부 기준", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
+      { label: "고용보험법 제58조: 수급자격의 제한", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 신청 안내", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 통근 곤란 상담", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 신청 안내", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 통근 곤란 상담", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -99,16 +99,16 @@ export default function Page() {
       {/* breadcrumb */}
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>실업급여 · 고용보험 · 통근곤란</p>
 
-      {/* h1 — 2줄 */}
+      {/* h1: 2줄 */}
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
         출퇴근 3시간 넘으면 실업급여?<br />
         정당 사유와 신청 방법
       </h1>
 
-      {/* intro — 숫자 + 법령 */}
+      {/* intro: 숫자 + 법령 */}
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
         회사가 갑자기 다른 도시로 이전했어요. 편도 2시간, 왕복 4시간을 매일 길에서 보내고 있죠.
-        체력도 마음도 한계인데 — 이걸로 퇴사하면 실업급여를 받을 수 있을까요?<br /><br />
+        체력도 마음도 한계인데: 이걸로 퇴사하면 실업급여를 받을 수 있을까요?<br /><br />
         받을 수 있죠.{" "}
         <a href="https://www.law.go.kr/법령/고용보험법시행규칙" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 시행규칙</a>이
         대중교통 기준 <strong>왕복 3시간 이상</strong>이면 정당한 이직 사유로 인정해요.
@@ -118,7 +118,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* ── 섹션 1 — 통근 곤란 기준 ── */}
+      {/* ── 섹션 1: 통근 곤란 기준 ── */}
       <H2>왕복 3시간이 정당한 사유가 되나요?</H2>
       <p style={body}>
         고용보험법 시행규칙에서 말하는 통근 곤란은 단순히 &ldquo;먼 거리&rdquo;가 아니에요.
@@ -148,7 +148,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 2 — 4가지 유형 상세 ── */}
+      {/* ── 섹션 2: 4가지 유형 상세 ── */}
       <H2>어떤 사유가 정당한 통근 곤란으로 인정되나요?</H2>
       <p style={body}>
         <strong>첫 번째, 회사가 다른 지역으로 이전한 경우</strong>예요.
@@ -186,7 +186,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 3 — 주의사항 ── */}
+      {/* ── 섹션 3: 주의사항 ── */}
       <H2>신청 방법에서 놓치기 쉬운 3가지</H2>
 
       <SectionBadge>실수하면 수급 자격을 잃어요</SectionBadge>
@@ -211,7 +211,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 4 — 신청 절차 ── */}
+      {/* ── 섹션 4: 신청 절차 ── */}
       <H2>정당 사유 인정 후 신청 방법 순서</H2>
       <p style={body}>
         퇴직 후 회사가 <a href="/w/실업급여-이직확인서-거부" style={{ color: "#1D9E75", textDecoration: "underline" }}>이직확인서</a>를 고용센터에 제출해야 해요. 법적으로 퇴직 후 10일 이내에 처리해야 하죠.
@@ -232,7 +232,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 5 — 거부당했을 때 대처 ── */}
+      {/* ── 섹션 5: 거부당했을 때 대처 ── */}
       <H2>거부당하면 이의신청으로 다시 신청하세요</H2>
       <p style={body}>
         고용센터에서 통근 곤란을 인정하지 않는 경우가 간혹 있죠.

@@ -70,7 +70,7 @@ const CALC_RESULTS = [
 ];
 
 const CHECKLIST = [
-  "고용24(ei.go.kr) 로그인 후 피보험자격 이력내역서 조회 — 가입 여부 확인",
+  "고용24(ei.go.kr) 로그인 후 피보험자격 이력내역서 조회: 가입 여부 확인",
   "피보험단위기간이 실제 근무일 기준 180일 이상인지 확인",
   "수급자격 신청자 온라인 교육 이수 (고용24)",
   "거주지 관할 고용센터 방문 후 수급자격 인정 신청",
@@ -104,16 +104,16 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제43조 — 일용근로자 수급자격 특례", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 제46조 — 구직급여일액 산정 기준", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행령 — 일용근로자 피보험단위기간 산정", url: "https://www.law.go.kr/법령/고용보험법시행령" },
+      { label: "고용보험법 제43조: 일용근로자 수급자격 특례", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 제46조: 구직급여일액 산정 기준", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행령: 일용근로자 피보험단위기간 산정", url: "https://www.law.go.kr/법령/고용보험법시행령" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 일용근로자 실업급여 안내", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 일용직 고용보험 가입 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 일용근로자 실업급여 안내", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 일용직 고용보험 가입 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -174,7 +174,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 고용보험 가입 확인 + 자격 체크 */}
+      {/* 섹션 1: 고용보험 가입 확인 + 자격 체크 */}
       <H2>자격을 갖추려면 며칠 일해야 하나요?</H2>
       <SectionBadge>수급 자격 체크</SectionBadge>
 
@@ -193,7 +193,7 @@ export default function Page() {
       </p>
       <p style={body}>
         여러 현장에서 일한 기간을 합산할 수 있다는 게 핵심이에요.
-        A현장 80일, B현장 60일, C현장 50일 — 이렇게 다 합쳐서 190일이 되면 조건을 충족하죠.
+        A현장 80일, B현장 60일, C현장 50일: 이렇게 다 합쳐서 190일이 되면 조건을 충족하죠.
         소규모 현장에서 고용주가 신고를 안 했다면? 고용센터(1350)에 신고하면 소급 가입이 가능해요.
       </p>
 
@@ -211,7 +211,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 수급 조건과 금액 계산 */}
+      {/* 섹션 2: 수급 조건과 금액 계산 */}
       <H2>금액은 어떻게 계산되나요?</H2>
 
       <p style={body}>
@@ -231,7 +231,7 @@ export default function Page() {
         일반 직장인은 수급자격 인정 후 7일을 기다려야 하는데, 일용직은 실업인정 다음 날부터 바로 지급이 시작돼요.
       </p>
 
-      <BorderBox title="일용직 vs 일반 직장인 — 이렇게 달라요">
+      <BorderBox title="일용직 vs 일반 직장인: 이렇게 달라요">
         <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}>
           <strong>피보험단위기간</strong> 일반 = 재직일수 포함 / 일용직 = 실제 근무일만
         </p>
@@ -259,7 +259,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 신청 절차 */}
+      {/* 섹션 3: 신청 절차 */}
       <H2>자격 확인 후 신청 절차</H2>
       <SectionBadge>신청 절차 체크리스트</SectionBadge>
 
@@ -287,7 +287,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 일하면서 수급 + 부정수급 */}
+      {/* 섹션 4: 일하면서 수급 + 부정수급 */}
       <H2>금액을 받으면서 일할 때 주의할 점</H2>
 
       <p style={body}>
@@ -308,7 +308,7 @@ export default function Page() {
         단기 일감을 여러 개 잡다 보면 본인도 모르게 60시간을 넘기는 경우가 생기니까, 근무시간을 미리 계산해두는 게 안전해요.
       </p>
 
-      <GreenBox title="부정수급 예방 — 이 3가지만 기억하세요">
+      <GreenBox title="부정수급 예방: 이 3가지만 기억하세요">
         <p style={{ margin: "0 0 4px" }}>일한 날은 실업인정 때 빠짐없이 신고할 것</p>
         <p style={{ margin: "0 0 4px" }}>미신고 적발 시 받은 금액의 최대 5배 추징</p>
         <p style={{ margin: 0 }}>월 60시간(주 15시간) 이상 근무하면 수급 중단 가능</p>
@@ -316,7 +316,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 고용보험 미가입 대응 */}
+      {/* 섹션 5: 고용보험 미가입 대응 */}
       <H2>고용보험 미가입 시 자격을 확보하세요</H2>
 
       <p style={body}>

@@ -51,15 +51,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "소득세법 제12조 — 비과세 소득 (실업급여 포함)", url: "https://www.law.go.kr/법령/소득세법" },
-      { label: "고용보험법 — 실업급여 지급 근거", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "소득세법 제12조: 비과세 소득 (실업급여 포함)", url: "https://www.law.go.kr/법령/소득세법" },
+      { label: "고용보험법: 실업급여 지급 근거", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "국세청 홈택스 — 종합소득세 신고", url: "https://www.hometax.go.kr" },
-      { label: "국세청 — 중도퇴사자 연말정산 안내", url: "https://www.nts.go.kr" },
+      { label: "국세청 홈택스: 종합소득세 신고", url: "https://www.hometax.go.kr" },
+      { label: "국세청: 중도퇴사자 연말정산 안내", url: "https://www.nts.go.kr" },
     ],
   },
 ];
@@ -121,7 +121,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 실업급여가 비과세인 이유 */}
+      {/* 섹션 1: 실업급여가 비과세인 이유 */}
       <H2>비과세 소득이면 세금 처리를 안 하나요?</H2>
       <SectionBadge>비과세 소득 판단</SectionBadge>
 
@@ -154,7 +154,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 중도퇴사자 종합소득세 신고 */}
+      {/* 섹션 2: 중도퇴사자 종합소득세 신고 */}
       <H2>중도퇴사자의 세금 처리 기준은 뭐가 다르나요?</H2>
 
       <p style={body}>
@@ -190,7 +190,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 환급 가능성 */}
+      {/* 섹션 3: 환급 가능성 */}
       <H2>비과세 소득 제외 후 환급 가능성</H2>
       <SectionBadge>환급 가능성 체크</SectionBadge>
 
@@ -214,7 +214,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 실업급여 기간 공제 */}
+      {/* 섹션 4: 실업급여 기간 공제 */}
       <H2>세금 처리 시 소득공제 기준과 적용 범위</H2>
 
       <p style={body}>
@@ -240,7 +240,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 흔한 실수와 주의사항 */}
+      {/* 섹션 5: 흔한 실수와 주의사항 */}
       <H2>비과세 소득 잘못 신고하지 않도록 챙기세요</H2>
 
       <p style={body}>

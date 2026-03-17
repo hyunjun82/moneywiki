@@ -64,11 +64,11 @@ const STEPS = [
 ];
 
 const CHECKLIST = [
-  "근속 1년 이상 — 계약직도 퇴직금 지급 의무",
+  "근속 1년 이상: 계약직도 퇴직금 지급 의무",
   "1년 미만이라도 주 15시간 이상이면 일할 계산 지급",
   "계약 갱신 반복 시 전체 기간 합산",
   "300만원 초과 시 IRP 계좌로만 수령",
-  "소멸시효 3년 — 계약 만료일로부터 3년 내 청구",
+  "소멸시효 3년: 계약 만료일로부터 3년 내 청구",
 ];
 
 const FAQS = [
@@ -98,14 +98,14 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로자퇴직급여보장법 제4조 — 퇴직금 지급 요건", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+      { label: "근로자퇴직급여보장법 제4조: 퇴직금 지급 요건", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
       { label: "기간제 및 단시간근로자 보호 등에 관한 법률", url: "https://www.law.go.kr/법령/기간제및단시간근로자보호등에관한법률" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용노동부 — 계약직 퇴직금 지급 기준", url: "https://www.moel.go.kr" },
+      { label: "고용노동부: 계약직 퇴직금 지급 기준", url: "https://www.moel.go.kr" },
     ],
   },
 ];

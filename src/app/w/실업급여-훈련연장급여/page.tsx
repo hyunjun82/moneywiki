@@ -76,15 +76,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제51조 — 훈련연장급여 지급 요건", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행령 제73조 — 훈련연장급여 세부 기준", url: "https://www.law.go.kr/법령/고용보험법시행령" },
+      { label: "고용보험법 제51조: 훈련연장급여 지급 요건", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행령 제73조: 훈련연장급여 세부 기준", url: "https://www.law.go.kr/법령/고용보험법시행령" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 연장급여 안내", url: "https://www.ei.go.kr" },
-      { label: "직업훈련포털 HRD-Net — 훈련과정 검색", url: "https://www.hrd.go.kr" },
+      { label: "고용24: 연장급여 안내", url: "https://www.ei.go.kr" },
+      { label: "직업훈련포털 HRD-Net: 훈련과정 검색", url: "https://www.hrd.go.kr" },
     ],
   },
 ];
@@ -144,7 +144,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 훈련연장급여란 */}
+      {/* 섹션 1: 훈련연장급여란 */}
       <H2>훈련연장급여로 기간이 얼마나 늘어나나요?</H2>
       <SectionBadge>제도 이해</SectionBadge>
 
@@ -165,10 +165,10 @@ export default function Page() {
       </p>
 
       <GreenBox title="훈련연장급여 핵심 정리">
-        대상 — 실업급여 수급 중 + 고용센터 지정 직업훈련 참여자<br />
-        기간 — 훈련 종료 시까지 (최대 2년)<br />
-        금액 — 기존 1일 수급액 100% 동일 (+ 직업능력개발수당 별도 지급)<br />
-        조건 — 출석률 80% 이상 유지, 실업인정일 보고 필수
+        대상: 실업급여 수급 중 + 고용센터 지정 직업훈련 참여자<br />
+        기간: 훈련 종료 시까지 (최대 2년)<br />
+        금액: 기존 1일 수급액 100% 동일 (+ 직업능력개발수당 별도 지급)<br />
+        조건: 출석률 80% 이상 유지, 실업인정일 보고 필수
       </GreenBox>
 
       <EligibilityChecker
@@ -179,7 +179,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 연장급여 금액 계산 */}
+      {/* 섹션 2: 연장급여 금액 계산 */}
       <H2>훈련연장급여 금액은 얼마나 받을 수 있나요?</H2>
 
       <p style={body}>
@@ -212,7 +212,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 신청 조건과 절차 */}
+      {/* 섹션 3: 신청 조건과 절차 */}
       <H2>훈련연장급여 신청 조건과 절차</H2>
       <SectionBadge>신청 절차</SectionBadge>
 
@@ -245,7 +245,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 주의사항 */}
+      {/* 섹션 4: 주의사항 */}
       <H2>훈련연장급여 기간 중 주의할 점</H2>
 
       <p style={body}>
@@ -267,18 +267,18 @@ export default function Page() {
       </p>
 
       <GreenBox title="연장급여가 끊기는 3가지 상황">
-        출석률 80% 미달 — 미달한 달부터 급여 중단<br />
-        실업인정일 보고 누락 — 훈련 참여 사실을 안 알리면 중단 사유<br />
-        훈련 중도 포기 — 그만두는 즉시 연장급여 종료 (과정 변경은 사전 승인 필수)
+        출석률 80% 미달: 미달한 달부터 급여 중단<br />
+        실업인정일 보고 누락: 훈련 참여 사실을 안 알리면 중단 사유<br />
+        훈련 중도 포기: 그만두는 즉시 연장급여 종료 (과정 변경은 사전 승인 필수)
       </GreenBox>
 
       <Divider />
 
-      {/* 섹션 5 — 다른 연장급여와 비교 */}
+      {/* 섹션 5: 다른 연장급여와 비교 */}
       <H2>개별연장·특별연장급여와 이렇게 비교하세요</H2>
 
       <p style={body}>
-        연장급여는 세 종류예요 — <strong>훈련연장급여</strong>, <strong>개별연장급여</strong>, <strong>특별연장급여</strong>.
+        연장급여는 세 종류예요: <strong>훈련연장급여</strong>, <strong>개별연장급여</strong>, <strong>특별연장급여</strong>.
         이름이 비슷해서 헷갈리기 쉬운데, 지급 요건과 기간이 전부 달라요.
         본인 상황에 맞는 걸 골라야 하니까 차이를 정확히 알아두는 게 중요하죠.
       </p>

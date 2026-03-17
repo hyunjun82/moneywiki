@@ -64,11 +64,11 @@ const STEPS = [
 ];
 
 const CHECKLIST = [
-  "혼인 기간 기여분 계산 — 근속 기간 중 혼인 기간 비율",
-  "미지급 퇴직금도 분할 대상 — 장래 수령액 현가 청구 가능",
-  "퇴직연금(DB·DC)도 포함 — IRP 계좌 잔액까지 분할 대상",
-  "협의이혼 시 재산분할 협의서 작성 — 공증 추천",
-  "소멸시효 2년 — 이혼 확정 후 2년 내 청구해야 해요",
+  "혼인 기간 기여분 계산: 근속 기간 중 혼인 기간 비율",
+  "미지급 퇴직금도 분할 대상: 장래 수령액 현가 청구 가능",
+  "퇴직연금(DB·DC)도 포함: IRP 계좌 잔액까지 분할 대상",
+  "협의이혼 시 재산분할 협의서 작성: 공증 추천",
+  "소멸시효 2년: 이혼 확정 후 2년 내 청구해야 해요",
 ];
 
 const FAQS = [
@@ -98,14 +98,14 @@ const REFERENCES = [
   {
     category: "법령 및 판례",
     items: [
-      { label: "민법 제839조의2 — 재산분할청구권", url: "https://www.law.go.kr/법령/민법" },
-      { label: "대법원 2014므1378 — 미지급 퇴직금 재산분할", url: "https://glaw.scourt.go.kr" },
+      { label: "민법 제839조의2: 재산분할청구권", url: "https://www.law.go.kr/법령/민법" },
+      { label: "대법원 2014므1378: 미지급 퇴직금 재산분할", url: "https://glaw.scourt.go.kr" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "법원행정처 — 가사소송 재산분할 안내", url: "https://www.scourt.go.kr" },
+      { label: "법원행정처: 가사소송 재산분할 안내", url: "https://www.scourt.go.kr" },
     ],
   },
 ];

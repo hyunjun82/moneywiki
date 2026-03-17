@@ -64,11 +64,11 @@ const STEPS = [
 ];
 
 const CHECKLIST = [
-  "DC 계좌 잔액 — 퇴직 전 평가금액 확인",
-  "IRP 계좌 — 300만원 초과 시 미리 개설 필수",
-  "마지막 부담금 — 퇴직 달 부담금 이체 여부 확인",
-  "운용 상품 — 퇴직 전 안전 자산 전환 고려",
-  "연금 수령 — 55세 이후 10년 이상 받으면 세금 40% 감면",
+  "DC 계좌 잔액: 퇴직 전 평가금액 확인",
+  "IRP 계좌: 300만원 초과 시 미리 개설 필수",
+  "마지막 부담금: 퇴직 달 부담금 이체 여부 확인",
+  "운용 상품: 퇴직 전 안전 자산 전환 고려",
+  "연금 수령: 55세 이후 10년 이상 받으면 세금 40% 감면",
 ];
 
 const FAQS = [
@@ -98,15 +98,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로자퇴직급여보장법 제20조 — DC형 부담금 기준", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
-      { label: "근로자퇴직급여보장법 제9조 — IRP 이체 의무", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+      { label: "근로자퇴직급여보장법 제20조: DC형 부담금 기준", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+      { label: "근로자퇴직급여보장법 제9조: IRP 이체 의무", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "금융감독원 — 퇴직연금 통합공시", url: "https://www.fss.or.kr" },
-      { label: "고용노동부 — 퇴직연금 제도 안내", url: "https://www.moel.go.kr" },
+      { label: "금융감독원: 퇴직연금 통합공시", url: "https://www.fss.or.kr" },
+      { label: "고용노동부: 퇴직연금 제도 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];

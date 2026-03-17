@@ -7,13 +7,11 @@ import {
 } from "@/components/article-ui";
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
-// ─── 데이터 ──────────────────────────────────────────
-
 const CHECK_ITEMS = [
-  { id: "c1", label: "퇴직을 앞두고 퇴직금 수령 계좌를 만들어야 해요" },
-  { id: "c2", label: "퇴직금이 300만원을 초과할 것 같아요" },
-  { id: "c3", label: "IRP 계좌가 뭔지, 어디서 만드는지 모르겠어요" },
-  { id: "c4", label: "세액공제 혜택도 같이 받고 싶어요" },
+  { id: "c1", label: "퇴직을 앞두고 있고 퇴직금이 300만원을 초과할 예정이에요" },
+  { id: "c2", label: "IRP 계좌가 아직 없어요" },
+  { id: "c3", label: "인사팀에 IRP 계좌번호를 아직 전달하지 않았어요" },
+  { id: "c4", label: "세액공제 혜택도 활용하고 싶어요" },
 ];
 
 const CALC_SLIDERS = [
@@ -73,11 +71,11 @@ const STEPS = [
 ];
 
 const CHECKLIST = [
-  "금융기관 비교 — 증권사 수수료 0.2~0.3% vs 은행 0.5%",
+  "금융기관 비교: 증권사 수수료 0.2~0.3% vs 은행 0.5%",
   "앱으로 10분 이내 개설 가능",
   "계좌번호 인사팀에 문자·메일 통보",
-  "세액공제 — 연 900만원 한도, 최대 16.5%",
-  "운용 지시 — 원리금보장형 vs ETF",
+  "세액공제: 연 900만원 한도, 최대 16.5%",
+  "운용 지시: 원리금보장형 vs ETF",
 ];
 
 const FAQS = [
@@ -107,25 +105,23 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로자퇴직급여보장법 — IRP 계좌 의무화", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
-      { label: "소득세법 제59조의3 — IRP 세액공제", url: "https://www.law.go.kr/법령/소득세법" },
+      { label: "근로자퇴직급여보장법: IRP 계좌 의무화", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+      { label: "소득세법 제59조의3: IRP 세액공제", url: "https://www.law.go.kr/법령/소득세법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "금융감독원 — IRP 가입 안내", url: "https://www.fss.or.kr" },
+      { label: "금융감독원: IRP 가입 안내", url: "https://www.fss.or.kr" },
     ],
   },
 ];
 
 const RELATED = [
-  { slug: "퇴직금-IRP-계좌", title: "IRP 계좌 개설 방법", description: "은행·증권사 비교와 개설 절차." },
-  { slug: "퇴직금-통장-종류", title: "퇴직금 통장 종류", description: "법정퇴직금·DB형·DC형·IRP 차이." },
-  { slug: "퇴직금-수령방법", title: "퇴직금 수령 방법", description: "IRP 계좌로 안전하게 받는 방법." },
+  { slug: "퇴직금-통장", title: "퇴직금 통장 종류와 선택 방법", description: "IRP와 일반 통장의 세금 차이를 비교해요." },
+  { slug: "퇴직금-지급-절차", title: "퇴직금 지급 절차", description: "IRP 계좌 준비부터 입금 확인까지 단계별 안내." },
+  { slug: "퇴직금-지급-기한", title: "퇴직금 지급 기한 14일 원칙", description: "14일 초과 시 지연이자 청구 방법이에요." },
 ];
-
-// ─── 페이지 ──────────────────────────────────────────
 
 export default function Page() {
   return (
@@ -136,35 +132,31 @@ export default function Page() {
 
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
         퇴직금 통장, 어디서 어떻게 만드나요?<br />
-        IRP 계좌 개설부터 세액공제 혜택까지 한 번에
+        IRP 계좌 개설부터 세액공제 혜택까지
       </h1>
 
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
         퇴직금이 300만원을 넘으면 일반 통장으로는 받을 수 없어요.
-        <a href="/w/퇴직금-IRP-계좌" style={{ color: "#1D9E75", textDecoration: "underline" }}>IRP(개인형퇴직연금) 계좌</a>가 사실상 퇴직금 전용 통장이에요.
+        <a href="/w/퇴직금-통장" style={{ color: "#1D9E75", textDecoration: "underline" }}>IRP(개인형퇴직연금) 계좌</a>가 사실상 퇴직금 전용 통장이에요.
         어디서 만드느냐에 따라 수수료가 달라지고, 추가 납입 시 연 최대 148.5만원 세액공제 혜택도 받을 수 있어요.
-      </p>
-      <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
-        퇴직이 확정된 뒤에 만들어도 되지만, 미리 만들어두면 <a href="/w/퇴직금-수령방법" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직 후 14일 이내 수령</a>이 훨씬 수월해요.
-        아래에서 어디서 만들면 유리한지, 서류는 뭐가 필요한지 단계별로 짚어드릴게요.
       </p>
 
       <Divider />
       <ArticleAd position="intro" />
 
-      <H2>퇴직금 통장은 IRP 계좌예요</H2>
+      <H2>IRP 계좌가 꼭 필요한 상황인지 확인해보세요</H2>
       <p style={body}>
         퇴직금 300만원 초과 시 법적으로 IRP 계좌로만 받을 수 있어요.
-        <a href="/w/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여보장법</a>에서 이를 의무화하고 있어요.
+        <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여보장법</a>에서 이를 의무화하고 있어요.
         IRP 계좌가 없으면 회사가 이체할 방법이 없어서 지급이 지연될 수 있어요.
       </p>
       <p style={body}>
-        IRP는 퇴직금 수령 용도 외에도 본인이 직접 돈을 넣으면 연말정산에서 세금을 돌려받을 수 있어요.
-        연 소득 5,500만원 이하라면 납입액의 16.5%, 초과라면 13.2%를 돌려받아요.
-        연 900만원 꽉 채우면 최대 148.5만원이 환급돼요.
+        IRP는 퇴직금 수령 용도 외에도 본인이 직접 납입하면 연말정산에서 세금을 돌려받을 수 있어요.
+        연 소득 5,500만원 이하라면 납입액의 16.5%, 초과라면 13.2%를 환급받아요.
+        연 900만원 꽉 채우면 최대 148.5만원이 돌아와요.
       </p>
 
-      <GreenBox title="IRP 세액공제 핵심 정리">
+      <GreenBox title="IRP 계좌 핵심 정리">
         퇴직금 300만원 초과 → IRP 계좌 필수 수령<br />
         연 900만원(IRP+연금저축 합산) 납입 시 세액공제<br />
         소득 5,500만원 이하: 16.5% → 최대 148.5만원 환급<br />
@@ -174,7 +166,7 @@ export default function Page() {
       <SectionBadge>내 상황 체크해보세요</SectionBadge>
       <EligibilityChecker
         items={CHECK_ITEMS}
-        allMatchText="IRP 계좌 개설이 꼭 필요해요. 아래 계산기로 세액공제 혜택도 미리 확인해보세요."
+        allMatchText="IRP 계좌 개설이 필요해요. 아래 계산기로 세액공제 혜택도 미리 확인해보세요."
         partialMatchText="상황에 따라 다를 수 있어요. 금융감독원(1332) 상담을 권해요."
       />
 
@@ -185,10 +177,6 @@ export default function Page() {
         추가로 납입하면 납입액 기준으로 세금을 돌려받아요.
         슬라이더로 납입액과 소득 구간을 조정하면 예상 환급액을 바로 볼 수 있어요.
         퇴직금으로 들어온 금액은 이 한도와 별개예요.
-      </p>
-      <p style={body}>
-        예를 들어 연 소득 5,500만원 이하인 분이 300만원을 넣으면 약 49만원이 돌아와요.
-        실질 부담은 251만원인 셈이에요. 납입 금액이 클수록 환급액도 커지는 구조예요.
       </p>
 
       <SectionBadge>IRP 세액공제 계산기</SectionBadge>
@@ -209,11 +197,6 @@ export default function Page() {
         신분증 하나로 대부분 가능해요. 앱으로 개설하면 신분증 촬영과 간편인증만 있으면 돼요.
         재직증명서는 일부 금융사에서만 요구하니, 미리 해당 앱에서 확인해두세요.
       </p>
-      <p style={body}>
-        이체용 기존 계좌는 본인 명의 계좌면 어디든 돼요.
-        앱 개설 과정에서 이 계좌로 1원을 입금해 본인 확인을 하는 경우가 있어요.
-        준비가 다 됐으면 금융사 앱을 설치하고 IRP 계좌 개설 메뉴로 바로 들어가면 돼요.
-      </p>
 
       <SectionBadge>준비 서류 목록</SectionBadge>
       <DocTable docs={DOCS} />
@@ -225,9 +208,6 @@ export default function Page() {
         앱으로 10분이면 끝나요. 수수료 비교만 먼저 해두면 개설 자체는 어렵지 않아요.
         개설 후 계좌번호를 인사팀에 바로 알려줘야 회사가 퇴직금을 이체할 수 있어요.
       </p>
-      <p style={body}>
-        금융기관마다 운용 가능한 상품과 수수료가 달라요. 퇴직금 수령만 목적이라면 수수료 0% 상품이 있는 증권사가 유리하고, 세액공제와 장기 운용까지 생각한다면 ETF 라인업도 함께 비교해보세요.
-      </p>
 
       <Steps steps={STEPS} />
 
@@ -235,7 +215,7 @@ export default function Page() {
 
       <H2>IRP 개설 체크리스트</H2>
       <p style={body}>
-        수수료와 세액공제 한도를 꼭 챙기세요. 수수료 차이만 해도 연 수십만 원이 달라질 수 있어요.
+        수수료와 세액공제 한도를 꼭 챙기세요.
         인사팀 통보는 구두보다 문자나 메일로 남겨야 나중에 분쟁이 생겨도 증거가 돼요.
       </p>
 
@@ -243,8 +223,8 @@ export default function Page() {
       <Checklist items={CHECKLIST} />
 
       <GreenBox title="퇴직 전에 IRP 미리 만들어두세요">
-        IRP 계좌가 있어야 14일 이내에 퇴직금을 받을 수 있어요.
-        퇴직 후에 만들면 그사이 지급이 밀릴 수 있고, 14일 초과 시 회사는 연 20% 지연이자를 내야 해요.
+        IRP 계좌가 있어야 14일 이내에 퇴직금을 받을 수 있어요.<br />
+        퇴직 후에 만들면 그사이 지급이 밀릴 수 있고, 14일 초과 시 연 20% 지연이자가 발생해요.<br />
         10분이면 만들 수 있으니 퇴직이 확정되면 바로 개설하세요.
       </GreenBox>
 
@@ -253,7 +233,6 @@ export default function Page() {
       <H2>자주 묻는 것들</H2>
       <p style={{ ...body, marginBottom: 14 }}>
         IRP 계좌 개설과 퇴직금 수령에 대해 실제로 많이 나오는 질문만 골랐어요.
-        상황이 다르다면 금융감독원(1332)에 직접 물어보는 게 정확해요.
       </p>
       <FAQ items={FAQS} />
 

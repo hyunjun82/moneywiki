@@ -12,8 +12,8 @@ import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 const CHECK_ITEMS = [
   { id: "c1", label: "IRP에 퇴직금이 들어와 있어요" },
   { id: "c2", label: "연금저축계좌도 보유하고 있어요" },
-  { id: "c3", label: "55세 이후 연금으로 받고 싶어요" },
-  { id: "c4", label: "IRP와 연금저축을 합산 관리하고 싶어요" },
+  { id: "c3", label: "만 55세 이상이에요" },
+  { id: "c4", label: "IRP 가입 기간이 5년 이상이에요" },
 ];
 
 const CALC_SLIDERS = [
@@ -69,11 +69,11 @@ const STEPS = [
 ];
 
 const CHECKLIST = [
-  "연금 개시 연령 — 55세 이후",
+  "연금 개시 연령: 55세 이후",
   "IRP 퇴직금 → 연금 수령 시 퇴직소득세 30% 절감",
   "연금저축 납입분 → 연금소득세 3.3~5.5%",
-  "연간 1,200만원 이하 수령 — 분리과세 적용",
-  "세액공제 한도 — IRP+연금저축 합산 연 900만원",
+  "연간 1,200만원 이하 수령: 분리과세 적용",
+  "세액공제 한도: IRP+연금저축 합산 연 900만원",
 ];
 
 const FAQS = [
@@ -103,15 +103,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "소득세법 제20조의3 — 연금소득 과세", url: "https://www.law.go.kr/법령/소득세법" },
-      { label: "근로자퇴직급여보장법 제48조 — IRP 연금 수령 세율 특례", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+      { label: "소득세법 제20조의3: 연금소득 과세", url: "https://www.law.go.kr/법령/소득세법" },
+      { label: "근로자퇴직급여보장법 제48조: IRP 연금 수령 세율 특례", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "금융감독원 — 연금저축 및 IRP 안내", url: "https://www.fss.or.kr" },
-      { label: "국세청 — 연금소득 세금 안내", url: "https://www.nts.go.kr" },
+      { label: "금융감독원: 연금저축 및 IRP 안내", url: "https://www.fss.or.kr" },
+      { label: "국세청: 연금소득 세금 안내", url: "https://www.nts.go.kr" },
     ],
   },
 ];

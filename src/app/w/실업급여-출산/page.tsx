@@ -17,7 +17,7 @@ const CHECK_ITEMS = [
 ];
 
 const CHECKLIST = [
-  "고용24(ei.go.kr)에서 피보험자격 이력 조회 — 가입기간 180일 확인",
+  "고용24(ei.go.kr)에서 피보험자격 이력 조회: 가입기간 180일 확인",
   "출산전후휴가 급여 수급이 완전히 종료됐는지 확인 (중복 수급 불가)",
   "이직확인서 퇴직 사유가 비자발적으로 기재됐는지 확인",
   "출산으로 구직활동이 어려우면 수급기간 연장 신청 (최대 4년)",
@@ -51,15 +51,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제52조 — 수급기간 연장 (출산·육아 사유)", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행령 제71조 — 수급기간 연장 신청 절차 및 첨부서류", url: "https://www.law.go.kr/법령/고용보험법시행령" },
+      { label: "고용보험법 제52조: 수급기간 연장 (출산·육아 사유)", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행령 제71조: 수급기간 연장 신청 절차 및 첨부서류", url: "https://www.law.go.kr/법령/고용보험법시행령" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 인터넷 신청 및 수급기간 연장 안내", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 모성보호 제도(출산전후휴가·육아휴직) 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 인터넷 신청 및 수급기간 연장 안내", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 모성보호 제도(출산전후휴가·육아휴직) 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -113,7 +113,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 수급 조건 + EligibilityChecker */}
+      {/* 섹션 1: 수급 조건 + EligibilityChecker */}
       <H2>수급기간 연장 기준을 충족하려면 어떤 조건이 필요한가요?</H2>
       <p style={body}>
         기본 조건은 일반 실업급여와 같아요. 퇴직 전 18개월 내 <strong>고용보험 가입기간 180일 이상</strong>, 그리고 <strong>비자발적 퇴직</strong>이면 돼요. 출산을 했든 안 했든, 이 두 가지가 맞으면 수급자격이 생기죠.
@@ -141,7 +141,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 출산전후휴가 급여와 중복 불가 */}
+      {/* 섹션 2: 출산전후휴가 급여와 중복 불가 */}
       <H2>출산전후휴가 급여와 실업급여, 수급 기준이 어떻게 다른가요?</H2>
       <p style={body}>
         동시에 받는 건 안 돼요. 출산전후휴가 급여와 실업급여(구직급여)는 둘 다 고용보험 기금에서 나오는 돈이에요. 같은 재원이라 <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>이 중복 수급을 막아놨죠. 순서를 지키면 문제 없어요.
@@ -166,7 +166,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 수급기간 연장 + Checklist */}
+      {/* 섹션 3: 수급기간 연장 + Checklist */}
       <H2>수급기간 연장 기준에 따라 최대 4년까지 미룰 수 있어요</H2>
       <p style={body}>
         실업급여는 퇴직 다음 날부터 <strong>12개월 이내</strong>에 소진해야 해요. 기한을 넘기면 남은 수급일수가 남아도 그냥 날아가죠. 그런데 신생아를 안고 면접을 보러 다니라는 건 말이 안 되잖아요.
@@ -192,7 +192,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 육아휴직 후 퇴직 */}
+      {/* 섹션 4: 육아휴직 후 퇴직 */}
       <H2>육아휴직 후 퇴직 시 수급기간 연장 적용 기준</H2>
       <p style={body}>
         출산 뒤 출산휴가와 육아휴직을 쓰다가 복직 없이 퇴직하는 분이 꽤 많죠. 이 경우에도 실업급여를 받을 수 있어요. 육아휴직 기간 전부가 고용보험 가입기간으로 잡히기 때문에 180일 조건은 오히려 넉넉하게 넘기는 편이에요.
@@ -214,7 +214,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 구직활동 현실적 방법 */}
+      {/* 섹션 5: 구직활동 현실적 방법 */}
       <H2>출산 후 수급기간 연장, 이렇게 신청하세요</H2>
       <p style={body}>
         면접장을 돌아다녀야만{" "}

@@ -8,10 +8,10 @@ import {
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
 const CHECK_ITEMS = [
-  "퇴직일이 정해졌어요",
-  "퇴직금 300만원 이상 예상돼요",
-  "아직 IRP 계좌가 없어요",
-  "퇴직 전에 계좌를 미리 만들어야 하는지 궁금해요",
+  { id: "c1", label: "퇴직일이 정해졌어요" },
+  { id: "c2", label: "퇴직금 300만원 이상 예상돼요" },
+  { id: "c3", label: "아직 IRP 계좌가 없어요" },
+  { id: "c4", label: "퇴직 전에 계좌를 미리 만들어야 하는지 궁금해요" },
 ];
 
 const CALC_SLIDERS = [
@@ -54,7 +54,7 @@ const CALC_RESULTS = [
 
 const DOCS = [
   { name: "신분증", required: true, where: "본인 지참" },
-  { name: "재직증명서", required: false, where: "선택 — 일부 금융사 요구" },
+  { name: "재직증명서", required: false, where: "선택: 일부 금융사 요구" },
   { name: "공동인증서 또는 간편인증", required: true, where: "금융인증서 또는 앱" },
   { name: "기존 금융계좌", required: true, where: "이체용 기존 계좌" },
 ];
@@ -62,32 +62,32 @@ const DOCS = [
 const STEPS = [
   {
     title: "IRP 계좌 개설 (퇴직 전)",
-    desc: "은행/증권사 앱으로 10분",
+    desc: "은행/증권사 앱으로 10분 안에 개설할 수 있어요. 수수료가 낮은 증권사 IRP가 유리한 경우가 많아요. 퇴직 전에 미리 만들어두는 게 좋아요.",
     tip: "수수료 낮은 증권사 추천",
   },
   {
     title: "회사 인사팀에 계좌번호 통보",
-    desc: "문자/메일로",
-    tip: "구두보다 서면 증거",
+    desc: "IRP 계좌번호를 인사팀에 문자나 메일로 전달해요. 구두보다 서면으로 남겨두면 나중에 분쟁 시 증거가 돼요.",
+    tip: "구두보다 서면 증거가 안전해요",
   },
   {
     title: "퇴직 후 14일 이내 이체 확인",
-    desc: "IRP 앱으로 확인",
-    tip: "안 오면 인사팀→노동청 순서",
+    desc: "퇴직일로부터 14일 이내에 IRP 계좌로 퇴직금이 입금돼야 해요. IRP 앱에서 입금 내역을 확인하고, 14일이 지나도 안 오면 인사팀→고용노동부 순서로 문의하세요.",
+    tip: "14일 초과 시 연 20% 지연이자 발생",
   },
   {
     title: "연금/일시금 운용 방식 결정",
-    desc: "55세 이후 연금이 유리",
+    desc: "55세 이후 연금으로 수령하면 퇴직소득세가 30~40% 감면돼요. 목돈이 필요하지 않다면 연금 운용이 세금 면에서 유리하죠.",
     tip: "연금 수령 시 퇴직소득세 30% 감면",
   },
 ];
 
 const CHECKLIST = [
-  "IRP 계좌 — 퇴직 확정 즉시 개설",
-  "계좌번호 인사팀 통보 — 문자·메일 증거 보관",
-  "14일 이내 입금 확인 — 안 오면 즉시 요청",
-  "수수료 — 증권사 0.2% vs 은행 0.5% 비교",
-  "55세 이후 연금 수령 — 퇴직소득세 30% 감면",
+  "IRP 계좌: 퇴직 확정 즉시 개설",
+  "계좌번호 인사팀 통보: 문자·메일 증거 보관",
+  "14일 이내 입금 확인: 안 오면 즉시 요청",
+  "수수료: 증권사 0.2% vs 은행 0.5% 비교",
+  "55세 이후 연금 수령: 퇴직소득세 30% 감면",
 ];
 
 const FAQS = [
@@ -115,19 +115,16 @@ const FAQS = [
 
 const REFERENCES = [
   {
-    label: "법령",
+    category: "법령",
     items: [
-      {
-        name: "근로자퇴직급여보장법 제9조",
-        url: "https://www.law.go.kr/법령/근로자퇴직급여보장법",
-      },
+      { label: "근로자퇴직급여보장법 제9조", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
     ],
   },
   {
-    label: "공식",
+    category: "공식 자료",
     items: [
-      { name: "금융감독원 — IRP 안내", url: "https://www.fss.or.kr" },
-      { name: "고용노동부 — 퇴직급여 제도", url: "https://www.moel.go.kr" },
+      { label: "금융감독원: IRP 안내", url: "https://www.fss.or.kr" },
+      { label: "고용노동부: 퇴직급여 제도", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -136,17 +133,17 @@ const RELATED = [
   {
     slug: "퇴직금-IRP-계좌",
     title: "퇴직금 IRP 계좌 개설",
-    desc: "수수료 비교부터 개설 절차까지",
+    description:"수수료 비교부터 개설 절차까지",
   },
   {
     slug: "퇴직금-IRP-수령방법",
     title: "퇴직금 IRP 수령 방법",
-    desc: "계좌 개설 후 이체까지",
+    description:"계좌 개설 후 이체까지",
   },
   {
     slug: "퇴직금-세금",
     title: "퇴직금 세금, 얼마나 떼나요?",
-    desc: "IRP 절세 효과 계산",
+    description:"IRP 절세 효과 계산",
   },
 ];
 

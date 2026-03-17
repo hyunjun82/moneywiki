@@ -66,11 +66,11 @@ const STEPS = [
 ];
 
 const CHECKLIST = [
-  "수급 조건 — 1년 이상, 주 15시간 이상",
-  "퇴직금 계산 — 1일 평균임금 × 30 × 근속연수",
-  "IRP 계좌 — 300만원 초과 시 필수",
-  "14일 이내 지급 — 초과 시 연 20% 지연이자",
-  "소멸시효 — 퇴직일로부터 3년",
+  "수급 조건: 1년 이상, 주 15시간 이상",
+  "퇴직금 계산: 1일 평균임금 × 30 × 근속연수",
+  "IRP 계좌: 300만원 초과 시 필수",
+  "14일 이내 지급: 초과 시 연 20% 지연이자",
+  "소멸시효: 퇴직일로부터 3년",
 ];
 
 const FAQS = [
@@ -100,15 +100,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로자퇴직급여보장법 제8조 — 퇴직금 지급 기준", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
-      { label: "근로기준법 제36조 — 금품 청산 (14일 이내)", url: "https://www.law.go.kr/법령/근로기준법" },
+      { label: "근로자퇴직급여보장법 제8조: 퇴직금 지급 기준", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+      { label: "근로기준법 제36조: 금품 청산 (14일 이내)", url: "https://www.law.go.kr/법령/근로기준법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용노동부 — 퇴직금 제도 안내", url: "https://www.moel.go.kr" },
-      { label: "고용24 — 퇴직금 계산기", url: "https://www.work.go.kr" },
+      { label: "고용노동부: 퇴직금 제도 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 퇴직금 계산기", url: "https://www.work.go.kr" },
     ],
   },
 ];
@@ -129,7 +129,7 @@ export default function Page() {
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 수급조건 · 계산방법</p>
 
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
-        퇴직금 완전 정리 — 조건·계산·수령까지<br />
+        퇴직금 완전 정리: 조건·계산·수령까지<br />
         1년 이상 근무하면 누구나 받을 수 있어요
       </h1>
 

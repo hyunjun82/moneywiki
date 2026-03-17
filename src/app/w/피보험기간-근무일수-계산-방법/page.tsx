@@ -43,15 +43,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 피보험기간 산정 기준", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행령 — 피보험단위기간 계산 세부 규정", url: "https://www.law.go.kr/법령/고용보험법시행령" },
+      { label: "고용보험법: 피보험기간 산정 기준", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행령: 피보험단위기간 계산 세부 규정", url: "https://www.law.go.kr/법령/고용보험법시행령" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 피보험자격 이력내역 조회", url: "https://www.ei.go.kr" },
-      { label: "4대사회보험포털 — 고용보험 가입 이력 확인", url: "https://www.4insure.or.kr" },
+      { label: "고용24: 피보험자격 이력내역 조회", url: "https://www.ei.go.kr" },
+      { label: "4대사회보험포털: 고용보험 가입 이력 확인", url: "https://www.4insure.or.kr" },
     ],
   },
 ];
@@ -96,7 +96,7 @@ export default function Page() {
         계산 방법
       </h1>
 
-      {/* intro — 숫자 + 법령 */}
+      {/* intro: 숫자 + 법령 */}
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
         &quot;180일이 대체 몇 개월이에요? 달력으로 6개월이면 되는 거 아닌가요?&quot;
       </p>
@@ -114,7 +114,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 피보험기간이 뭔지 + GreenBox + SectionBadge + EligibilityChecker */}
+      {/* 섹션 1: 피보험기간이 뭔지 + GreenBox + SectionBadge + EligibilityChecker */}
       <H2>피보험기간 근무일수, 정확히 뭘 세는 건가요?</H2>
       <p style={body}>
         피보험기간은 <strong>고용보험에 가입된 채로 보수를 받은 날수</strong>예요.
@@ -147,7 +147,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 계산 방법 + BorderBox + Calculator */}
+      {/* 섹션 2: 계산 방법 + BorderBox + Calculator */}
       <H2>180일은 실제로 몇 개월 걸리나요?</H2>
       <p style={body}>
         먼저 포함되는 날과 빠지는 날을 구분해야 해요.
@@ -221,7 +221,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 확인 방법 + SectionBadge + Checklist */}
+      {/* 섹션 3: 확인 방법 + SectionBadge + Checklist */}
       <H2>내 피보험기간 근무일수 확인하는 곳</H2>
       <p style={body}>
         가장 정확한 방법은 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>(www.ei.go.kr)에 로그인해서 조회하는 거예요.
@@ -249,7 +249,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 여러 직장 합산 */}
+      {/* 섹션 4: 여러 직장 합산 */}
       <H2>여러 직장 근무일수를 합산하는 계산 방법</H2>
       <p style={body}>
         한 직장에서 180일을 다 못 채웠다고 포기할 필요 없어요.
@@ -275,7 +275,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 부족할 때 대처 */}
+      {/* 섹션 5: 부족할 때 대처 */}
       <H2>180일이 안 되면 계산 방법부터 다시 점검하세요</H2>
       <p style={body}>
         합산까지 해봤는데도 180일이 안 되면 실업급여 수급자격이 없어요.

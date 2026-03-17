@@ -51,14 +51,14 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제87조~제90조 — 심사청구·재심사청구 규정", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 제87조~제90조: 심사청구·재심사청구 규정", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 심사청구 안내", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 고용보험 상담(1350)", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 심사청구 안내", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 고용보험 상담(1350)", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -119,7 +119,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 이의신청 대상 */}
+      {/* 섹션 1: 이의신청 대상 */}
       <H2>90일 기한 안에 어떤 처분을 다툴 수 있나요?</H2>
       <SectionBadge>이의신청 대상 확인</SectionBadge>
 
@@ -152,7 +152,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 3단계 절차 */}
+      {/* 섹션 2: 3단계 절차 */}
       <H2>증거 준비 전에 알아야 할 3단계 방법은?</H2>
 
       <p style={body}>
@@ -185,13 +185,13 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 심사청구서 작성법 */}
+      {/* 섹션 3: 심사청구서 작성법 */}
       <H2>증거 준비와 심사청구서 작성 방법</H2>
       <SectionBadge>작성 가이드</SectionBadge>
 
       <p style={body}>
         심사청구서에 빠지면 안 되는 게 네 가지예요.
-        첫 번째는 <strong>청구인 정보</strong> — 이름, 주민등록번호, 주소, 연락처를 적으면 되죠.
+        첫 번째는 <strong>청구인 정보</strong>: 이름, 주민등록번호, 주소, 연락처를 적으면 되죠.
         두 번째는 <strong>처분 내용</strong>이에요. 어떤 처분을 언제 받았는지 구체적으로 쓰고, 처분 통보서 사본을 반드시 첨부하세요.
       </p>
       <p style={body}>
@@ -202,7 +202,7 @@ export default function Page() {
       </p>
       <p style={body}>
         네 번째는 <strong>증거 자료</strong>예요.
-        근로계약서, 급여명세서, 통장 입금 내역, 문자·카톡 기록, 녹음 파일, 증인 진술서 — 주장을 뒷받침할 수 있는 서류라면 전부 첨부하세요.
+        근로계약서, 급여명세서, 통장 입금 내역, 문자·카톡 기록, 녹음 파일, 증인 진술서: 주장을 뒷받침할 수 있는 서류라면 전부 첨부하세요.
         증거가 구체적이고 두꺼울수록 인용 가능성이 올라가요.
       </p>
 
@@ -210,7 +210,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 심사 결과 유형 */}
+      {/* 섹션 4: 심사 결과 유형 */}
       <H2>90일 기한 내 심사 결과와 대응 방법</H2>
 
       <p style={body}>
@@ -237,7 +237,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 실전 팁 */}
+      {/* 섹션 5: 실전 팁 */}
       <H2>증거 준비가 부족해도 기한 내 접수부터 하세요</H2>
 
       <p style={body}>

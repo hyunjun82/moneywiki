@@ -91,14 +91,14 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 직업능력개발수당 지급 근거", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법: 직업능력개발수당 지급 근거", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 부가급여 안내", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 직업훈련 지원 정책 (상담 1350)", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 부가급여 안내", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 직업훈련 지원 정책 (상담 1350)", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -154,7 +154,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 직업능력개발수당이란 + 자격 */}
+      {/* 섹션 1: 직업능력개발수당이란 + 자격 */}
       <H2>직업능력개발수당, 정확히 어떤 수당인가요?</H2>
       <SectionBadge>수급 자격 체크</SectionBadge>
 
@@ -189,7 +189,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 금액 계산 + Calculator */}
+      {/* 섹션 2: 금액 계산 + Calculator */}
       <H2>금액은 얼마나 되고 어떻게 계산하나요?</H2>
 
       <p style={body}>
@@ -225,7 +225,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 신청 방법과 지급 절차 */}
+      {/* 섹션 3: 신청 방법과 지급 절차 */}
       <H2>직업능력개발수당 신청 방법과 지급 절차</H2>
       <SectionBadge>신청·지급 체크리스트</SectionBadge>
 
@@ -249,7 +249,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 훈련비 지원과 구분 */}
+      {/* 섹션 4: 훈련비 지원과 구분 */}
       <H2>훈련비 지원과 직업능력개발수당의 차이</H2>
 
       <p style={body}>
@@ -270,7 +270,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 주의사항 */}
+      {/* 섹션 5: 주의사항 */}
       <H2>직업능력개발수당 받을 때 이것만 주의하세요</H2>
 
       <p style={body}>

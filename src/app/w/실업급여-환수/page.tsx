@@ -88,15 +88,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제62조 — 부정수급에 따른 반환명령 및 추가징수", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 제116조 — 부정수급 벌칙 규정", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 제62조: 부정수급에 따른 반환명령 및 추가징수", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 제116조: 부정수급 벌칙 규정", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 부정수급 안내", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 부정수급 신고·제보 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 부정수급 안내", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 부정수급 신고·제보 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -157,7 +157,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 부정수급 환수 구조 */}
+      {/* 섹션 1: 부정수급 환수 구조 */}
       <H2>반환 금액은 어떻게 정해지나요?</H2>
       <SectionBadge>환수 구조 이해</SectionBadge>
 
@@ -180,9 +180,9 @@ export default function Page() {
       </p>
 
       <GreenBox title="환수 구조 요약">
-        원금 반환 — 부정수급한 실업급여 전액<br />
-        추가징수 — 원금의 2~5배 (위반 정도에 따라 차등)<br />
-        일반적 총 부담 — 원금 x 3배 (원금 + 추가징수 2배)
+        원금 반환: 부정수급한 실업급여 전액<br />
+        추가징수: 원금의 2~5배 (위반 정도에 따라 차등)<br />
+        일반적 총 부담: 원금 x 3배 (원금 + 추가징수 2배)
       </GreenBox>
 
       <EligibilityChecker
@@ -193,7 +193,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 환수금 계산 */}
+      {/* 섹션 2: 환수금 계산 */}
       <H2>반환 금액과 추가징수, 구체적으로 얼마인가요?</H2>
 
       <p style={body}>
@@ -226,7 +226,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 대표적 부정수급 유형 */}
+      {/* 섹션 3: 대표적 부정수급 유형 */}
       <H2>환수 대상이 되는 부정수급 유형</H2>
       <SectionBadge>적발 유형 정리</SectionBadge>
 
@@ -247,16 +247,16 @@ export default function Page() {
       </p>
 
       <BorderBox title="환수 대상 부정수급 대표 유형">
-        취업 사실 미신고 — 알바·프리랜서 등 소득활동 중 급여 수급<br />
-        구직활동 허위 보고 — 하지 않은 면접·교육을 실적으로 제출<br />
-        이직 사유 허위 기재 — 자발적 퇴사를 권고사직으로 조작
+        취업 사실 미신고: 알바·프리랜서 등 소득활동 중 급여 수급<br />
+        구직활동 허위 보고: 하지 않은 면접·교육을 실적으로 제출<br />
+        이직 사유 허위 기재: 자발적 퇴사를 권고사직으로 조작
       </BorderBox>
 
       <Checklist items={CHECKLIST} />
 
       <Divider />
 
-      {/* 섹션 4 — 분할납부와 이의신청 */}
+      {/* 섹션 4: 분할납부와 이의신청 */}
       <H2>분할납부와 이의신청 절차 안내</H2>
 
       <p style={body}>
@@ -277,14 +277,14 @@ export default function Page() {
       </p>
 
       <GreenBox title="납부가 어렵거나 이의가 있을 때">
-        분할납부 — 고용센터 신청, 최대 24개월 분납<br />
-        납부 유예 — 천재지변·중대 질병 등 특수 사정 시 가능<br />
-        이의신청 — 통보일로부터 90일 이내 심사청구
+        분할납부: 고용센터 신청, 최대 24개월 분납<br />
+        납부 유예: 천재지변·중대 질병 등 특수 사정 시 가능<br />
+        이의신청: 통보일로부터 90일 이내 심사청구
       </GreenBox>
 
       <Divider />
 
-      {/* 섹션 5 — 부정수급 이후 영향 */}
+      {/* 섹션 5: 부정수급 이후 영향 */}
       <H2>이의신청 후에도 이력은 남으니 주의하세요</H2>
 
       <p style={body}>

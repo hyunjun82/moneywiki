@@ -51,15 +51,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제10조 — 적용 범위 및 적용 제외", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행령 — 적용 제외 근로자 세부 기준", url: "https://www.law.go.kr/법령/고용보험법시행령" },
+      { label: "고용보험법 제10조: 적용 범위 및 적용 제외", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행령: 적용 제외 근로자 세부 기준", url: "https://www.law.go.kr/법령/고용보험법시행령" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 피보험자격 조회 및 확인청구", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 고용보험 적용 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 피보험자격 조회 및 확인청구", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 고용보험 적용 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -114,7 +114,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 적용 제외 대상 7가지 */}
+      {/* 섹션 1: 적용 제외 대상 7가지 */}
       <H2>7가지 대상 기준에 나도 포함될까요?</H2>
       <p style={body}>
         제일 헷갈리는 게 <strong>65세 이후 신규 취업자</strong>예요.
@@ -135,13 +135,13 @@ export default function Page() {
       </p>
 
       <GreenBox title="적용 제외 대상 7가지">
-        1. 65세 이후 신규 취업자 — 기존 재직자는 해당 안 됨<br />
-        2. 주 15시간 미만 근로자 — 3개월 이상 근무 시 예외<br />
-        3. 공무원 — 공무원연금 적용<br />
-        4. 사립학교 교직원 — 사학연금 적용<br />
-        5. 별정우체국 직원 — 별도 연금 적용<br />
-        6. 외국인 근로자 일부 — 체류자격에 따라 다름<br />
-        7. 자영업자 — 임의가입은 가능
+        1. 65세 이후 신규 취업자: 기존 재직자는 해당 안 됨<br />
+        2. 주 15시간 미만 근로자: 3개월 이상 근무 시 예외<br />
+        3. 공무원: 공무원연금 적용<br />
+        4. 사립학교 교직원: 사학연금 적용<br />
+        5. 별정우체국 직원: 별도 연금 적용<br />
+        6. 외국인 근로자 일부: 체류자격에 따라 다름<br />
+        7. 자영업자: 임의가입은 가능
       </GreenBox>
 
       <SectionBadge>내가 고용보험 가입 대상인지 체크해보세요</SectionBadge>
@@ -153,7 +153,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 제외 대상인데 가입되는 예외 */}
+      {/* 섹션 2: 제외 대상인데 가입되는 예외 */}
       <H2>대상 기준에 해당해도 예외가 있나요?</H2>
       <p style={body}>
         제외 대상에 포함돼도 예외로 가입되는 케이스가 꽤 많아요.
@@ -188,7 +188,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 외국인 근로자 체류자격별 */}
+      {/* 섹션 3: 외국인 근로자 체류자격별 */}
       <H2>외국인 근로자의 대상 기준은 체류자격이에요</H2>
       <p style={body}>
         외국인 근로자는 비자(체류자격)에 따라 고용보험 가입 여부가 갈려요.
@@ -217,7 +217,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 가입 여부 확인 방법 */}
+      {/* 섹션 4: 가입 여부 확인 방법 */}
       <H2>내 대상 여부를 직접 조회하는 방법</H2>
       <p style={body}>
         본인이 고용보험에 가입돼 있는지 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24(ei.go.kr)</a>에서 바로 조회할 수 있죠.
@@ -227,7 +227,7 @@ export default function Page() {
       <p style={body}>
         조회했더니 미가입 상태라면, 바로 걱정하지 말고 회사 인사팀부터 따져보세요.
         소규모 사업장이나 아르바이트 자리에서 사업주가 보험료를 아끼려고 일부러 신고를 안 한 경우가 의외로 많거든요.
-        이건 적용 제외가 아니라 <strong><a href="/w/실업급여-고용보험-미가입" style={{ color: "#1D9E75", textDecoration: "underline" }}>사업주의 신고 누락</a></strong>이에요 — 전혀 다른 문제죠.
+        이건 적용 제외가 아니라 <strong><a href="/w/실업급여-고용보험-미가입" style={{ color: "#1D9E75", textDecoration: "underline" }}>사업주의 신고 누락</a></strong>이에요: 전혀 다른 문제죠.
       </p>
       <p style={body}>
         회사가 고의로 미신고한 거라면 <strong>고용센터에 피보험자격 확인청구</strong>를 할 수 있죠.
@@ -238,7 +238,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 실업급여와의 관계 */}
+      {/* 섹션 5: 실업급여와의 관계 */}
       <H2>고용24에서 가입 여부부터 조회하세요</H2>
       <p style={body}>
         고용보험에 가입돼 있지 않으면 실업급여를 받을 수 없어요. 원칙은 단순하죠.

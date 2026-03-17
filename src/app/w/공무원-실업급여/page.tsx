@@ -51,15 +51,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 적용 제외 대상 (공무원 포함)", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "공무원연금법 — 퇴직급여·퇴직수당 규정", url: "https://www.law.go.kr/법령/공무원연금법" },
+      { label: "고용보험법: 적용 제외 대상 (공무원 포함)", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "공무원연금법: 퇴직급여·퇴직수당 규정", url: "https://www.law.go.kr/법령/공무원연금법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "공무원연금공단 — 퇴직급여 안내·신청", url: "https://www.geps.or.kr" },
-      { label: "고용24 — 피보험자격 이력 조회", url: "https://www.ei.go.kr" },
+      { label: "공무원연금공단: 퇴직급여 안내·신청", url: "https://www.geps.or.kr" },
+      { label: "고용24: 피보험자격 이력 조회", url: "https://www.ei.go.kr" },
     ],
   },
 ];
@@ -122,7 +122,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 공무원 퇴직급여 vs 실업급여 */}
+      {/* 섹션 1: 공무원 퇴직급여 vs 실업급여 */}
       <H2>공무원 퇴직급여는 실업급여와 뭐가 다른가요?</H2>
       <p style={body}>
         민간 근로자는 고용보험에 가입하고, 퇴직하면 고용센터에서 실업급여를 받아요.
@@ -156,7 +156,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 퇴직급여 종류별 금액 */}
+      {/* 섹션 2: 퇴직급여 종류별 금액 */}
       <H2>퇴직급여 종류별 금액은 얼마나 되나요?</H2>
       <p style={body}>
         공무원연금에서 지급하는 퇴직급여는 세 가지예요.
@@ -190,7 +190,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 임기제공무원 적용 기준 */}
+      {/* 섹션 3: 임기제공무원 적용 기준 */}
       <H2>임기제공무원의 퇴직급여 적용 기준</H2>
       <p style={body}>
         &quot;저는 정규직 공무원이 아니라 임기제인데, 저도 실업급여가 안 되나요?&quot;
@@ -221,7 +221,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 민간 전직 시 비교 */}
+      {/* 섹션 4: 민간 전직 시 비교 */}
       <H2>민간 전직 시 실업급여와 퇴직급여 비교</H2>
       <p style={body}>
         공무원을 그만두고 민간기업에 취업하면, 그때부터 고용보험에 가입돼요.
@@ -242,7 +242,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 퇴직급여 금액 조회·신청 */}
+      {/* 섹션 5: 퇴직급여 금액 조회·신청 */}
       <H2>퇴직급여 금액 조회하고 신청하세요</H2>
       <p style={body}>
         퇴직급여 예상액부터 알고 싶다면 공무원연금공단 콜센터(<strong>1588-4321</strong>)에 전화하세요.
@@ -251,7 +251,7 @@ export default function Page() {
       </p>
       <p style={body}>
         실제 청구는 <a href="https://www.geps.or.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>공무원연금공단 홈페이지</a>에서 온라인으로 할 수 있죠.
-        퇴직증명서, 신분증 사본, 통장 사본 — 이 세 가지만 준비하면 되죠.
+        퇴직증명서, 신분증 사본, 통장 사본: 이 세 가지만 준비하면 되죠.
         온라인 신청이 어려우면 전국에 있는 공무원연금공단 지사에 직접 방문해도 돼요.
       </p>
       <p style={body}>

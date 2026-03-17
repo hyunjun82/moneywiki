@@ -51,15 +51,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 수급자격의 제한 (정당한 이직 사유)", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행규칙 — 정당한 이직 사유 세부 기준", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
+      { label: "고용보험법: 수급자격의 제한 (정당한 이직 사유)", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행규칙: 정당한 이직 사유 세부 기준", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 신청 안내", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 부당전보 구제신청", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 신청 안내", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 부당전보 구제신청", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -117,7 +117,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* ── 섹션 1 — 정당한 이직 사유 + GreenBox + EligibilityChecker ── */}
+      {/* ── 섹션 1: 정당한 이직 사유 + GreenBox + EligibilityChecker ── */}
       <H2>어떤 업무전환이 실업급여 인정 기준에 맞나요?</H2>
       <p style={body}>
         근로계약서에 &quot;개발 업무&quot;로 적혀 있는데 영업을 시키면, 이건 사실상 계약 위반이에요. <a href="https://www.law.go.kr/법령/고용보험법시행규칙" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 시행규칙</a>은 채용 시 제시된 <a href="/w/근로조건-변경-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로조건</a>이 본질적으로 달라진 경우를 정당한 이직 사유로 명시하고 있죠. 여기서 판단 기준은 <strong>직무의 성격 자체가 바뀌었느냐</strong>예요.
@@ -145,7 +145,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 2 — 인정 안 되는 경우 + BorderBox ── */}
+      {/* ── 섹션 2: 인정 안 되는 경우 + BorderBox ── */}
       <H2>인정 기준에서 빠지는 경우도 있나요?</H2>
       <p style={body}>
         같은 계열 안에서 역할만 바뀐 경우는 정당한 이직 사유로 인정받기 어려워요. 영업팀에서 담당 지역이 바뀌거나, 마케팅팀 내에서 SNS 담당이 광고 담당으로 변경되는 건 본질적 변경이 아니죠. 직무의 핵심 성격이 그대로이니까요.
@@ -171,7 +171,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 3 — 발령 거부 vs 퇴직 + SectionBadge + Checklist ── */}
+      {/* ── 섹션 3: 발령 거부 vs 퇴직 + SectionBadge + Checklist ── */}
       <H2>발령 거부와 퇴직, 인정받으려면 어느 쪽이 유리해요</H2>
       <p style={body}>
         발령이 부당하다면 거부부터 고려해보세요. 근로계약에 명시된 업무와 완전히 다르거나 보복성 인사에 해당하면 법적으로 거부할 권리가 있죠. <a href="https://www.moel.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용노동부</a> 노동위원회에 <strong>부당전보 구제신청</strong>을 넣으면 발령 자체를 취소시킬 수도 있고요.
@@ -188,7 +188,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 4 — 증빙자료와 신청 절차 ── */}
+      {/* ── 섹션 4: 증빙자료와 신청 절차 ── */}
       <H2>인정 기준 충족을 위한 증빙자료 준비법</H2>
       <p style={body}>
         1순위 증빙은 <strong>근로계약서</strong>예요. 채용 당시 &quot;어떤 업무를 하기로 했는지&quot;가 적혀 있으니, 발령과의 차이를 명확히 보여줄 수 있죠. 2순위는 <strong>발령 통지서</strong>예요. 언제, 어떤 부서로, 어떤 업무를 지시받았는지 공식적으로 기록된 문서이니까요.
@@ -202,7 +202,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 5 — 실업급여 금액과 실전 팁 ── */}
+      {/* ── 섹션 5: 실업급여 금액과 실전 팁 ── */}
       <H2>퇴직 후 실업급여 신청부터 바로 시작하세요</H2>
       <p style={body}>
         업무전환 발령으로 퇴직이 인정되면 퇴직 전 평균임금의 <strong>60%</strong>를 실업급여로 받아요. 2026년 기준 1일 상한액 <strong>68,100원</strong>, 하한액 <strong>66,048원</strong>이죠. 월로 환산하면 최대 약 204만 원 수준이에요.

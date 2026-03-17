@@ -107,15 +107,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 특수형태근로종사자 고용보험 적용", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "예술인복지법 — 예술인 고용보험 가입 근거", url: "https://www.law.go.kr/법령/예술인복지법" },
+      { label: "고용보험법: 특수형태근로종사자 고용보험 적용", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "예술인복지법: 예술인 고용보험 가입 근거", url: "https://www.law.go.kr/법령/예술인복지법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 인터넷 신청", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 특수고용·예술인 고용보험 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 인터넷 신청", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 특수고용·예술인 고용보험 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -177,7 +177,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 누가 가입 대상인지 + 자격 체크 */}
+      {/* 섹션 1: 누가 가입 대상인지 + 자격 체크 */}
       <H2>고용보험 가입 대상은 누구인가요?</H2>
       <SectionBadge>핵심 개념</SectionBadge>
       <p style={body}>
@@ -208,7 +208,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 수급 조건 + 계산기 */}
+      {/* 섹션 2: 수급 조건 + 계산기 */}
       <H2>고용보험 가입 후 신청 조건은 뭔가요?</H2>
       <p style={body}>
         고용보험에 가입돼 있다고 무조건 받는 건 아니에요.
@@ -250,7 +250,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 일반 프리랜서 + 체크리스트 */}
+      {/* 섹션 3: 일반 프리랜서 + 체크리스트 */}
       <H2>고용보험 미가입 프리랜서의 대안</H2>
       <SectionBadge>예외 상황</SectionBadge>
       <p style={body}>
@@ -275,7 +275,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 금액과 기간 */}
+      {/* 섹션 4: 금액과 기간 */}
       <H2>가입 기간별 수급액과 수급기간</H2>
       <p style={body}>
         1일 구직급여액은 기준보수일액의 <strong>60%</strong>예요.
@@ -298,7 +298,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 신청 절차와 주의사항 */}
+      {/* 섹션 5: 신청 절차와 주의사항 */}
       <H2>가입 이력 확인하고 바로 신청하세요</H2>
       <p style={body}>
         계약이 끝나면 사업주가 <strong>이직확인서</strong>를 제출해야 해요.{" "}

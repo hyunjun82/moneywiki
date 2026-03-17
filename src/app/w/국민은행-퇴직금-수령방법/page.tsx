@@ -73,11 +73,11 @@ const STEPS = [
 ];
 
 const CHECKLIST = [
-  "IRP 계좌 — KB국민은행 앱으로 10분 이내 개설",
-  "계좌번호 인사팀 통보 — 메일·문자로 기록 남기기",
-  "14일 이내 입금 — 초과 시 연 20% 지연이자 청구 가능",
-  "운용 지시 — 원리금보장형 or ETF 선택",
-  "연금 전환 — 55세 이후 수령 시 세금 30% 절감",
+  "IRP 계좌: KB국민은행 앱으로 10분 이내 개설",
+  "계좌번호 인사팀 통보: 메일·문자로 기록 남기기",
+  "14일 이내 입금: 초과 시 연 20% 지연이자 청구 가능",
+  "운용 지시: 원리금보장형 or ETF 선택",
+  "연금 전환: 55세 이후 수령 시 세금 30% 절감",
 ];
 
 const FAQS = [
@@ -107,14 +107,14 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로자퇴직급여보장법 — IRP 계좌 의무 이전", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+      { label: "근로자퇴직급여보장법: IRP 계좌 의무 이전", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "금융감독원 — IRP 가입 및 운용 안내", url: "https://www.fss.or.kr" },
-      { label: "고용노동부 — 퇴직연금 제도 안내", url: "https://www.moel.go.kr" },
+      { label: "금융감독원: IRP 가입 및 운용 안내", url: "https://www.fss.or.kr" },
+      { label: "고용노동부: 퇴직연금 제도 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];

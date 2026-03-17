@@ -19,9 +19,9 @@ const CHECK_ITEMS = [
 const CHECKLIST = [
   "야간·주말 대학원이면 별도 입증 없이 실업급여 수급 가능",
   "전일제 대학원이면 구직활동 기록을 꼼꼼히 남기기 (입사지원·면접)",
-  "대학원 수업은 구직활동이 아님 — 별도로 입사지원·면접 필요",
+  "대학원 수업은 구직활동이 아님: 별도로 입사지원·면접 필요",
   "실업인정 때 구직활동 횟수 채우기 (1~2차 1회, 3차 이후 2회)",
-  "취업하면 실업급여 종료 — 조기재취업수당 확인",
+  "취업하면 실업급여 종료: 조기재취업수당 확인",
 ];
 
 const FAQS = [
@@ -51,14 +51,14 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 실업급여 수급자격 (재취업 의사와 능력)", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법: 실업급여 수급자격 (재취업 의사와 능력)", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 신청 안내 및 피보험 이력 조회", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 실업급여 상담(1350)", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 신청 안내 및 피보험 이력 조회", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 실업급여 상담(1350)", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -120,7 +120,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 대학원생 수급 자격 */}
+      {/* 섹션 1: 대학원생 수급 자격 */}
       <H2>RA·TA 계약이 끝나면 수급 조건이 되나요?</H2>
       <SectionBadge>수급 자격 체크</SectionBadge>
 
@@ -133,7 +133,7 @@ export default function Page() {
       <p style={body}>
         수급 자격의 핵심 조건은 세 가지예요.
         첫째, 퇴직 전 18개월간 고용보험 가입기간이 <strong>180일 이상</strong>이어야 해요.
-        둘째, <strong>비자발적으로 퇴직</strong>해야 하죠 — RA 계약만료나 연구과제 종료는 비자발적 퇴사로 인정돼요.
+        둘째, <strong>비자발적으로 퇴직</strong>해야 하죠: RA 계약만료나 연구과제 종료는 비자발적 퇴사로 인정돼요.
         셋째, <strong>재취업 의사와 능력</strong>이 있어야 해요.
       </p>
       <p style={body}>
@@ -157,7 +157,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 야간 vs 전일제 차이 */}
+      {/* 섹션 2: 야간 vs 전일제 차이 */}
       <H2>야간과 전일제, 수급 조건이 다른가요?</H2>
 
       <p style={body}>
@@ -192,7 +192,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 구직활동 체크리스트 */}
+      {/* 섹션 3: 구직활동 체크리스트 */}
       <H2>구직활동 체크리스트와 실업인정 기준</H2>
       <SectionBadge>구직활동 체크리스트</SectionBadge>
 
@@ -220,7 +220,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 수급 금액과 기간 */}
+      {/* 섹션 4: 수급 금액과 기간 */}
       <H2>RA·TA 수급액과 수급기간 계산</H2>
 
       <p style={body}>
@@ -252,7 +252,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 주의사항과 전략 */}
+      {/* 섹션 5: 주의사항과 전략 */}
       <H2>수급 조건 체크리스트로 준비하세요</H2>
 
       <p style={body}>

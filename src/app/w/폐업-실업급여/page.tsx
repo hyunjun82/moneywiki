@@ -99,15 +99,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 자영업자 고용보험 가입 및 실업급여", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "임금채권보장법 — 체당금 지급 기준", url: "https://www.law.go.kr/법령/임금채권보장법" },
+      { label: "고용보험법: 자영업자 고용보험 가입 및 실업급여", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "임금채권보장법: 체당금 지급 기준", url: "https://www.law.go.kr/법령/임금채권보장법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 자영업자 실업급여 신청", url: "https://www.ei.go.kr" },
-      { label: "근로복지공단 — 체당금 신청 안내", url: "https://www.comwel.or.kr" },
+      { label: "고용24: 자영업자 실업급여 신청", url: "https://www.ei.go.kr" },
+      { label: "근로복지공단: 체당금 신청 안내", url: "https://www.comwel.or.kr" },
     ],
   },
 ];
@@ -156,7 +156,7 @@ export default function Page() {
       <p style={body}>
         자영업자도 실업급여를 받을 수 있죠.
         단, 일반 근로자처럼 자동 가입이 아니라 <strong>본인이 직접 고용보험에 가입</strong>했어야 하죠.
-        <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>이 정한 조건은 두 가지예요 — 가입기간 1년 이상, 그리고 비자발적 폐업.
+        <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>이 정한 조건은 두 가지예요: 가입기간 1년 이상, 그리고 비자발적 폐업.
       </p>
       <p style={body}>
         내가 해당되는지, 얼마를 받을 수 있는지 아래에서 바로 확인해 보세요.
@@ -166,7 +166,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 자영업자 고용보험 구조 + 자격 체크 */}
+      {/* 섹션 1: 자영업자 고용보험 구조 + 자격 체크 */}
       <H2>신청 절차 전에 고용보험 가입 여부부터 확인해야 하나요?</H2>
       <SectionBadge>핵심 개념</SectionBadge>
       <p style={body}>
@@ -186,13 +186,13 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 수급 조건 + 계산기 */}
+      {/* 섹션 2: 수급 조건 + 계산기 */}
       <H2>서류를 준비하기 전에 수급 조건이 되나요?</H2>
       <p style={body}>
         핵심 조건 두 가지를 넘어야 해요. 첫째, <strong>고용보험 가입기간 1년(12개월) 이상</strong>이에요. 일반 근로자는 180일이면 되는데, 자영업자는 기준이 더 높죠. 11개월까지 냈어도 1년을 못 채우면 수급 대상에서 빠져요.
       </p>
       <p style={body}>
-        둘째, <strong>비자발적 폐업</strong>이어야 해요. &quot;업종을 전환하겠다&quot;거나 &quot;다른 사업을 시작하려고&quot; 접는 건 자발적 폐업이라 해당이 안 되죠. 매출이 전년 대비 30% 이상 급감했거나, 6개월 연속 적자이거나, 건강이 악화됐거나 — 이런 게 비자발적 폐업 사유로 인정돼요.
+        둘째, <strong>비자발적 폐업</strong>이어야 해요. &quot;업종을 전환하겠다&quot;거나 &quot;다른 사업을 시작하려고&quot; 접는 건 자발적 폐업이라 해당이 안 되죠. 매출이 전년 대비 30% 이상 급감했거나, 6개월 연속 적자이거나, 건강이 악화됐거나: 이런 게 비자발적 폐업 사유로 인정돼요.
       </p>
       <p style={body}>
         두 조건 외에 하나 더 챙겨야 할 게 있죠. <strong>사업자등록 폐업 처리가 완료</strong>된 상태여야 신청이 가능해요. 국세청 홈택스에서 폐업 신고를 먼저 해야 하고, 폐업 후에는 재취업이나 재창업 의사가 있다는 걸 고용센터에 보여줘야 하고요.
@@ -218,14 +218,14 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 신청 절차 + 체크리스트 */}
+      {/* 섹션 3: 신청 절차 + 체크리스트 */}
       <H2>폐업 후 신청 절차와 필요한 서류</H2>
       <SectionBadge>신청 절차</SectionBadge>
       <p style={body}>
         첫 번째 할 일은 국세청 <a href="https://www.hometax.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>홈택스</a>에서 사업자등록 폐업 신고를 하는 거예요. 폐업일이 확정돼야 고용보험 상실 처리가 진행되죠. 폐업일 기준 25일 이내에 부가가치세 확정신고까지 함께 해야 해요.
       </p>
       <p style={body}>
-        폐업 처리가 완료됐으면 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 수급자격 신청자 온라인 교육(약 1시간)을 이수하세요. 그다음 관할 고용센터에 직접 방문해서 수급자격 인정을 신청하면 돼요. 이때 비자발적 폐업을 증명할 서류 — 매출 감소 증빙이나 건강진단서 같은 걸 같이 내야 하죠.
+        폐업 처리가 완료됐으면 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 수급자격 신청자 온라인 교육(약 1시간)을 이수하세요. 그다음 관할 고용센터에 직접 방문해서 수급자격 인정을 신청하면 돼요. 이때 비자발적 폐업을 증명할 서류: 매출 감소 증빙이나 건강진단서 같은 걸 같이 내야 하죠.
       </p>
       <p style={body}>
         심사를 통과하면 4주마다 실업인정일에 구직활동을 보고하고 급여를 수령하는 구조예요. 자영업자 특이한 점이 하나 있는데, 재창업 준비 활동도 <a href="/w/실업급여-구직활동-횟수" style={{ color: "#1D9E75", textDecoration: "underline" }}>구직활동으로 인정</a>받을 수 있다는 거예요. <a href="/w/실업급여-창업" style={{ color: "#1D9E75", textDecoration: "underline" }}>창업 교육 수강</a>이나 사업계획서 작성이 여기에 해당되죠. 고용센터 상담사에게 어떤 활동이 인정되는지 미리 물어보는 게 좋아요.
@@ -235,7 +235,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 수급기간과 금액 */}
+      {/* 섹션 4: 수급기간과 금액 */}
       <H2>신청 절차 이후 수급액과 지급 기간</H2>
       <p style={body}>
         일반 근로자보다 수급기간이 짧은 편이에요. 가입기간 1년 이상~3년 미만이면 <strong>120일</strong>, 3~5년이면 150일, 5~10년이면 180일, 10년 이상이면 최대 <strong>210일</strong>까지 받을 수 있죠. 일반 근로자와 달리 나이는 영향을 주지 않고, 가입기간만으로 결정돼요.
@@ -256,7 +256,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 체당금과 직원 실업급여 */}
+      {/* 섹션 5: 체당금과 직원 실업급여 */}
       <H2>서류 정리와 체당금 신청을 동시에 진행하세요</H2>
       <p style={body}>
         폐업하면서 직원들에게 임금을 다 못 준 경우가 많죠. 이런 상황에서 쓸 수 있는 제도가 <strong>체당금</strong>이에요. <a href="https://www.law.go.kr/법령/임금채권보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>임금채권보장법</a>에 따라 <a href="https://www.comwel.or.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로복지공단</a>이 사업주 대신 밀린 임금을 지급해주는 거예요.

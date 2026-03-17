@@ -12,8 +12,8 @@ import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 const CHECK_ITEMS = [
   { id: "c1", label: "퇴직금이 300만원을 초과해요" },
   { id: "c2", label: "연 소득이 있어 연말정산 또는 종합소득세를 내요" },
-  { id: "c3", label: "IRP에 추가 납입해서 세액공제를 받고 싶어요" },
-  { id: "c4", label: "55세 이후 연금으로 수령하면 세금이 줄어드는지 궁금해요" },
+  { id: "c3", label: "IRP 계좌가 이미 개설돼 있어요" },
+  { id: "c4", label: "현재 만 55세 미만이에요" },
 ];
 
 const CALC_SLIDERS = [
@@ -73,11 +73,11 @@ const STEPS = [
 ];
 
 const CHECKLIST = [
-  "IRP 의무 이전 — 300만원 초과 시 (2022년 4월 14일 기준)",
-  "세액공제 한도 — 연 900만원 (IRP+연금저축 합산)",
-  "세액공제율 — 5,500만원 이하 16.5% / 초과 13.2%",
-  "추가 납입 — 연 1,800만원까지 납입 가능",
-  "연금 수령 — 55세 이후, 퇴직소득세 30% 절감",
+  "IRP 의무 이전: 300만원 초과 시 (2022년 4월 14일 기준)",
+  "세액공제 한도: 연 900만원 (IRP+연금저축 합산)",
+  "세액공제율: 5,500만원 이하 16.5% / 초과 13.2%",
+  "추가 납입: 연 1,800만원까지 납입 가능",
+  "연금 수령: 55세 이후, 퇴직소득세 30% 절감",
 ];
 
 const FAQS = [
@@ -107,15 +107,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로자퇴직급여보장법 — IRP 계좌 의무 이전", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
-      { label: "소득세법 제59조의3 — IRP 세액공제", url: "https://www.law.go.kr/법령/소득세법" },
+      { label: "근로자퇴직급여보장법: IRP 계좌 의무 이전", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+      { label: "소득세법 제59조의3: IRP 세액공제", url: "https://www.law.go.kr/법령/소득세법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "금융감독원 — IRP 세액공제 안내", url: "https://www.fss.or.kr" },
-      { label: "국세청 — 연금계좌 세액공제 한도", url: "https://www.nts.go.kr" },
+      { label: "금융감독원: IRP 세액공제 안내", url: "https://www.fss.or.kr" },
+      { label: "국세청: 연금계좌 세액공제 한도", url: "https://www.nts.go.kr" },
     ],
   },
 ];

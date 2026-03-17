@@ -50,15 +50,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 실업의 인정 및 취업 간주 기준", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 제62조 — 부정수급 제재", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법: 실업의 인정 및 취업 간주 기준", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 제62조: 부정수급 제재", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 수급 중 취업활동 안내", url: "https://www.ei.go.kr" },
-      { label: "고용센터 — 실업인정 신고 방법", url: "https://www.ei.go.kr" },
+      { label: "고용24: 실업급여 수급 중 취업활동 안내", url: "https://www.ei.go.kr" },
+      { label: "고용센터: 실업인정 신고 방법", url: "https://www.ei.go.kr" },
     ],
   },
 ];
@@ -106,7 +106,7 @@ export default function Page() {
       </p>
       <p style={body}>
         해도 돼요, 조건만 맞으면요.
-        <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>이 정해놓은 기준은 딱 두 가지예요 — <strong>월 60시간 미만</strong>, 계약기간 <strong>3개월 미만</strong>.
+        <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>이 정해놓은 기준은 딱 두 가지예요: <strong>월 60시간 미만</strong>, 계약기간 <strong>3개월 미만</strong>.
         이 안에만 들어오면 실업급여를 유지하면서 알바할 수 있죠.
       </p>
       <p style={body}>
@@ -119,7 +119,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 알바 가능 조건 */}
+      {/* 섹션 1: 알바 가능 조건 */}
       <H2>60시간 기준, 정확히 어떤 조건인가요?</H2>
       <p style={body}>
         조건은 세 가지예요. 첫째, 한 달 동안 일하는 시간이 <strong>60시간을 넘지 않아야</strong> 해요. 주 15시간 미만이라고 생각하면 쉽죠. 둘째, 알바 계약기간이 <strong>3개월 미만</strong>이어야 하고요. 셋째, 알바한 날을 실업인정일에 <strong>빠짐없이 신고</strong>해야 해요.
@@ -146,7 +146,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 60시간 기준 */}
+      {/* 섹션 2: 60시간 기준 */}
       <H2>60시간을 넘기면 어떻게 되나요?</H2>
       <p style={body}>
         월 60시간은 주 15시간으로 환산한 수치예요. 주 5일 기준이면 하루 3시간 미만이죠. 이걸 넘기는 순간 고용보험 시스템에서 &quot;취업 상태&quot;로 잡히고, 실업급여 지급이 중단돼요. 한 시간 차이로 수백만 원이 왔다 갔다 하는 거예요.
@@ -172,7 +172,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 알바한 날의 급여 처리 */}
+      {/* 섹션 3: 알바한 날의 급여 처리 */}
       <H2>알바한 날의 실업급여 지급 구조</H2>
       <p style={body}>
         &quot;알바하면 실업급여가 깎이나요?&quot; 이 질문이 가장 많아요. 깎이는 게 아니라, 알바한 날만큼 <strong>뒤로 밀리는</strong> 구조예요. 한 달 중 10일 알바했다면, 10일분 실업급여는 지급되지 않는 대신 수급 종료일이 10일 뒤로 늘어나요.
@@ -192,13 +192,13 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 신고 방법 */}
+      {/* 섹션 4: 신고 방법 */}
       <H2>신고 방법과 신고 대상 정리</H2>
       <p style={body}>
         신고 타이밍은 <strong>실업인정일</strong>이에요. 2주에 한 번 고용센터에 출석하거나 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 온라인 실업인정을 받을 때, &quot;지난 2주간 근로 여부&quot;를 체크하는 란이 나와요. 거기에 알바한 날짜, 근로시간, 수입 금액을 정확히 기재하면 끝이에요.
       </p>
       <p style={body}>
-        뭘 신고해야 하냐면, <strong>소득이 발생한 모든 활동</strong>이에요. 일용직이든, 배달앱이든, 대리운전이든, 과외든 — 형태는 상관없죠. <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>은 &quot;취업 또는 자영업에 종사한 경우&quot;라고 넓게 규정하고 있어서, 현금으로 받았든 계좌로 받았든 다 포함돼요.
+        뭘 신고해야 하냐면, <strong>소득이 발생한 모든 활동</strong>이에요. 일용직이든, 배달앱이든, 대리운전이든, 과외든: 형태는 상관없죠. <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>은 &quot;취업 또는 자영업에 종사한 경우&quot;라고 넓게 규정하고 있어서, 현금으로 받았든 계좌로 받았든 다 포함돼요.
       </p>
       <p style={body}>
         의외로 빠뜨리기 쉬운 게 가족 가게 일이에요. &quot;가족이니까 괜찮겠지&quot; 싶지만, 보수를 받았거나 4대보험에 가입된 상태라면 고용센터 시스템에서 바로 확인이 되죠. 돈을 안 받고 순수하게 도운 봉사활동만 신고 대상에서 빠져요.
@@ -209,7 +209,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 미신고 시 처벌 */}
+      {/* 섹션 5: 미신고 시 처벌 */}
       <H2>미신고 시 부정수급 처벌, 이렇게 피하세요</H2>
       <p style={body}>
         알바하고 신고를 안 하면 <a href="/w/실업급여-환수" style={{ color: "#1D9E75", textDecoration: "underline" }}>부정수급</a>이에요. <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 제62조</a>가 명확하게 정해놓은 규정이죠. 이미 받은 실업급여 전액을 반환해야 하고, 거기에 <strong>최대 5배 추가 징수</strong>까지 붙어요. 30만 원 알바비를 숨기다가 수백만 원을 토해내는 거예요.

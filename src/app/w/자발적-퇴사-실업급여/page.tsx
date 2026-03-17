@@ -52,15 +52,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 수급자격의 제한 (정당한 이직 사유)", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행규칙 — 정당한 이직 사유 세부 기준", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
+      { label: "고용보험법: 수급자격의 제한 (정당한 이직 사유)", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행규칙: 정당한 이직 사유 세부 기준", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 신청 안내", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 정당한 이직 사유 상담", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 신청 안내", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 정당한 이직 사유 상담", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -114,13 +114,13 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 정당한 사유 7가지 */}
+      {/* 섹션 1: 정당한 사유 7가지 */}
       <H2>정당한 사유 7가지, 구체적으로 뭐가 있나요?</H2>
       <p style={body}>
         <a href="https://www.law.go.kr/법령/고용보험법시행규칙" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 시행규칙</a>이 정한 사유는 크게 7가지예요. 가장 흔한 건 <strong><a href="/w/임금체불-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>임금 관련 문제</a></strong>죠. 월급의 30% 이상을 안 줬거나 2개월 넘게 밀렸다면 정당한 사유에 해당돼요. 최저임금에 못 미치는 급여를 받은 경우도 마찬가지고요.
       </p>
       <p style={body}>
-        두 번째는 <strong><a href="/w/직장내-괴롭힘-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>직장 내 괴롭힘</a>과 성희롱</strong>이에요. 상사나 동료한테 지속적으로 괴롭힘을 당하거나 성희롱 피해를 입고 퇴사한 경우죠. 세 번째는 <strong>통근 곤란</strong> — 사업장 이전이나 본인 이사 때문에 출퇴근 왕복이 3시간을 넘겨버린 경우예요.
+        두 번째는 <strong><a href="/w/직장내-괴롭힘-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>직장 내 괴롭힘</a>과 성희롱</strong>이에요. 상사나 동료한테 지속적으로 괴롭힘을 당하거나 성희롱 피해를 입고 퇴사한 경우죠. 세 번째는 <strong>통근 곤란</strong>: 사업장 이전이나 본인 이사 때문에 출퇴근 왕복이 3시간을 넘겨버린 경우예요.
       </p>
       <p style={body}>
         네 번째는 <strong>본인 건강 문제</strong>예요. 의사 진단서로 &quot;계속 근로가 어렵다&quot;는 판단이 나와야 하죠. 다섯 번째 <strong><a href="/w/간병-사유-퇴직-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>가족 간병</a></strong>은 30일 이상 직접 간병이 필요한 경우에 해당돼요. 여섯 번째 <strong>근로계약 위반</strong>은 채용 때 약속한 것과 실제 업무가 크게 다른 경우이고, 일곱 번째 <strong>사업장 법 위반</strong>은 산업안전보건법을 심각하게 어긴 사업장이 대상이에요.
@@ -145,7 +145,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 안 되는 경우 */}
+      {/* 섹션 2: 안 되는 경우 */}
       <H2>정당한 사유에 해당 안 되는 경우도 있나요?</H2>
       <p style={body}>
         당연히 있죠. <strong>단순 이직 목적</strong> 퇴사가 대표적이에요. &quot;더 좋은 회사 갈 거라서&quot;, &quot;연봉이 낮아서&quot; 같은 이유는 정당한 사유가 아니에요. 이미 다른 곳에 합격한 상태에서 퇴사하는 것도 마찬가지죠.
@@ -171,7 +171,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 증빙자료 */}
+      {/* 섹션 3: 증빙자료 */}
       <H2>사유별 증빙자료 준비법</H2>
       <p style={body}>
         정당한 사유를 말로만 주장하면 고용센터에서 인정이 어려워요. 서류로 뒷받침해야 하죠. 사유마다 필요한 증빙이 다르니 본인 상황에 맞는 걸 미리 챙겨두세요.
@@ -180,7 +180,7 @@ export default function Page() {
         <strong>임금체불</strong>이라면 급여명세서, 통장 입금 내역, 체불 확인서가 핵심 증거예요. <strong>직장 내 괴롭힘</strong>은 녹음 파일, 이메일, 문자 대화, 증인 진술서를 확보해야 하죠. <strong>통근 곤란</strong>은 사업장 이전 공문이나 이사 증빙서류와 함께 출퇴근 소요시간을 보여줄 수 있는 경로 검색 캡처가 효과적이에요.
       </p>
       <p style={body}>
-        <strong>건강 문제</strong>는 의사 진단서가 필수예요. &quot;좀 힘들었다&quot; 수준이 아니라 의학적으로 &quot;계속 근로가 어렵다&quot;는 판단이 담겨야 하죠. 공통 포인트는 하나 — <strong>퇴직 전에 미리 확보</strong>하는 거예요. 퇴직 후에는 회사 자료에 접근이 막히니까요.
+        <strong>건강 문제</strong>는 의사 진단서가 필수예요. &quot;좀 힘들었다&quot; 수준이 아니라 의학적으로 &quot;계속 근로가 어렵다&quot;는 판단이 담겨야 하죠. 공통 포인트는 하나: <strong>퇴직 전에 미리 확보</strong>하는 거예요. 퇴직 후에는 회사 자료에 접근이 막히니까요.
       </p>
 
       <SectionBadge>퇴직 전 체크리스트</SectionBadge>
@@ -188,7 +188,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 심사 절차 */}
+      {/* 섹션 4: 심사 절차 */}
       <H2>정당한 사유를 고용센터에서 심사하는 절차</H2>
       <p style={body}>
         실업급여를 신청하면 고용센터 담당자가 퇴직 사유를 심사해요. 이직확인서에 적힌 퇴직 사유를 먼저 보고, 필요하면 추가 증빙을 요청하죠. 임금체불 건이면 &quot;2개월 이상 밀린 게 맞는지&quot; 통장 내역으로 대조하는 식이에요.
@@ -208,7 +208,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 실전 팁 */}
+      {/* 섹션 5: 실전 팁 */}
       <H2>퇴직 전에 이 3가지부터 챙기세요</H2>
       <p style={body}>
         첫째, <strong>증빙자료를 퇴직 전에 확보</strong>하세요. 정당한 사유가 있어도 증거가 없으면 심사에서 인정받기 어려워요. 회사 시스템에 접근이 가능할 때 급여명세서, 계약서, 대화 기록 등을 전부 저장해두는 게 핵심이죠.

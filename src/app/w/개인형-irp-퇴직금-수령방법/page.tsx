@@ -8,15 +8,15 @@ import {
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
 const CHECK_ITEMS = [
-  "퇴직금을 개인형 IRP로 받을 예정이에요",
-  "연금으로 나눠 받고 싶어요",
-  "세액공제 혜택도 받고 싶어요",
-  "중도인출 없이 노후까지 운용할 계획이에요",
+  { id: "c1", label: "퇴직금을 개인형 IRP로 받을 예정이에요" },
+  { id: "c2", label: "연금으로 나눠 받고 싶어요" },
+  { id: "c3", label: "세액공제 혜택도 받고 싶어요" },
+  { id: "c4", label: "중도인출 없이 노후까지 운용할 계획이에요" },
 ];
 
 const CALC_SLIDERS = [
   {
-    key: "amount",
+    id: "amount",
     label: "퇴직금",
     min: 300,
     max: 10000,
@@ -25,7 +25,7 @@ const CALC_SLIDERS = [
     format: (v: number) => `${v.toLocaleString()}만원`,
   },
   {
-    key: "years",
+    id: "years",
     label: "연금 수령 기간",
     min: 10,
     max: 30,
@@ -37,7 +37,6 @@ const CALC_SLIDERS = [
 
 const CALC_RESULTS = [
   {
-    key: "result1",
     label: "연간 연금 수령액",
     highlight: true,
     getValue: (v: Record<string, number>) =>
@@ -60,30 +59,26 @@ const DOCS = [
   { name: "신분증", required: true, where: "본인 지참" },
   { name: "퇴직 확인서", required: true, where: "회사 인사팀" },
   { name: "IRP 계좌 개설 서류", required: true, where: "금융기관 앱 또는 방문" },
-  { name: "수익자 지정 서류", required: false, where: "금융기관 — 선택 사항" },
+  { name: "수익자 지정 서류", required: false, where: "금융기관: 선택 사항" },
 ];
 
 const STEPS = [
   {
-    step: 1,
     title: "개인형 IRP 개설",
     desc: "증권사·은행 앱으로 신분증+인증서로 10분",
     tip: "수수료 낮은 증권사 권장",
   },
   {
-    step: 2,
     title: "납입금 이체",
     desc: "회사에서 이체하거나 본인이 추가 납입 가능",
     tip: "본인 추가 납입 시 세액공제 혜택",
   },
   {
-    step: 3,
     title: "운용 지시",
     desc: "ETF, 펀드, 예금 중 선택해서 운용",
     tip: "장기 운용이라면 분산 투자 권장",
   },
   {
-    step: 4,
     title: "55세 이후 연금 수령",
     desc: "10년 이상 분산 수령 시 퇴직소득세 30% 감면",
     tip: "연금 수령 방법은 수령 직전에 금융기관에 신청",
@@ -91,11 +86,11 @@ const STEPS = [
 ];
 
 const CHECKLIST = [
-  { label: "개인형 IRP 개설", desc: "퇴직 전에 미리" },
-  { label: "추가 납입", desc: "연 1,800만원 한도, 세액공제 900만원 한도" },
-  { label: "운용 지시", desc: "방치하면 원리금보장형 자동 배정" },
-  { label: "55세 이후 연금 전환", desc: "퇴직소득세 30% 감면" },
-  { label: "수수료 비교", desc: "증권사 0.2% vs 은행 0.5%" },
+  "개인형 IRP 개설 — 퇴직 전에 미리",
+  "추가 납입 — 연 1,800만원 한도, 세액공제 900만원 한도",
+  "운용 지시 — 방치하면 원리금보장형 자동 배정",
+  "55세 이후 연금 전환 — 퇴직소득세 30% 감면",
+  "수수료 비교 — 증권사 0.2% vs 은행 0.5%",
 ];
 
 const FAQS = [
@@ -123,19 +118,17 @@ const FAQS = [
 
 const REFERENCES = [
   {
-    type: "법령" as const,
-    name: "근로자퇴직급여보장법 — 개인형 IRP",
-    url: "https://www.law.go.kr/법령/근로자퇴직급여보장법",
+    category: "법령",
+    items: [
+      { label: "근로자퇴직급여보장법: 개인형 IRP", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+    ],
   },
   {
-    type: "공식" as const,
-    name: "금융감독원 — 퇴직연금 비교공시",
-    url: "https://www.fss.or.kr",
-  },
-  {
-    type: "공식" as const,
-    name: "고용노동부 — 퇴직연금 제도 안내",
-    url: "https://www.moel.go.kr",
+    category: "공식 자료",
+    items: [
+      { label: "금융감독원: 퇴직연금 비교공시", url: "https://www.fss.or.kr" },
+      { label: "고용노동부: 퇴직연금 제도 안내", url: "https://www.moel.go.kr" },
+    ],
   },
 ];
 
@@ -143,23 +136,24 @@ const RELATED = [
   {
     slug: "퇴직금-IRP-계좌",
     title: "퇴직금 IRP 계좌 개설",
-    desc: "수수료 비교부터 개설까지",
+    description: "수수료 비교부터 개설까지",
   },
   {
     slug: "퇴직금-IRP-수령방법",
     title: "퇴직금 IRP 수령 방법",
-    desc: "이체부터 연금 전환까지",
+    description: "이체부터 연금 전환까지",
   },
   {
     slug: "퇴직금-세금",
     title: "퇴직금 세금, 얼마나 떼나요?",
-    desc: "IRP 절세 효과 계산",
+    description: "IRP 절세 효과 계산",
   },
 ];
 
 export default function Page() {
   const sidebar = (
     <Sidebar
+      heading="퇴직금 가이드"
       items={퇴직금_SIDEBAR}
       currentSlug="개인형-irp-퇴직금-수령방법"
     />
@@ -180,16 +174,17 @@ export default function Page() {
         가입부터 수령 방식 선택까지 한 번에
       </p>
 
-      {/* 체크리스트 — 이 글이 맞는지 확인 */}
+      {/* 체크리스트: 이 글이 맞는지 확인 */}
       <EligibilityChecker
-        title="이 글이 필요한 분인가요?"
         items={CHECK_ITEMS}
+        allMatchText="모두 해당된다면, 이 글이 딱 맞아요."
+        partialMatchText="일부 해당된다면 아래 내용을 참고해보세요."
       />
 
       <Divider />
 
-      {/* 섹션 1 — 개인형 IRP란 */}
-      <SectionBadge text="개요" />
+      {/* 섹션 1: 개인형 IRP란 */}
+      <SectionBadge>개요</SectionBadge>
       <H2>개인형 IRP, 퇴직금을 담는 그릇이에요</H2>
 
       <p style={body}>
@@ -208,8 +203,8 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 수령 절차 */}
-      <SectionBadge text="절차" />
+      {/* 섹션 2: 수령 절차 */}
+      <SectionBadge>절차</SectionBadge>
       <H2>IRP 퇴직금 수령 절차, 4단계예요</H2>
 
       <p style={body}>
@@ -219,20 +214,19 @@ export default function Page() {
         특히 3단계 '운용 지시'를 많이들 놓쳐요. 아무것도 안 하면 원리금보장형(예금 수준)으로 자동 배정되는데, 10~20년 장기로 굴리는 돈이라면 ETF나 펀드로 분산해두는 게 더 유리할 수 있어요. 물론 원금 손실 가능성도 있으니 본인의 성향에 맞게 골라야 해요.
       </p>
 
-      <Steps items={STEPS} />
+      <Steps steps={STEPS} />
 
       <CategoryButton
         label="퇴직금 IRP 계좌 개설 방법"
-        slug="퇴직금-IRP-계좌"
-        desc="증권사별 수수료 비교 포함"
+        href="/w/퇴직금-IRP-계좌"
       />
 
       <RelatedArticles items={RELATED} />
 
       <Divider />
 
-      {/* 섹션 3 — 연금 수령 시뮬레이터 */}
-      <SectionBadge text="계산기" />
+      {/* 섹션 3: 연금 수령 시뮬레이터 */}
+      <SectionBadge>계산기</SectionBadge>
       <H2>연금 수령액, 미리 계산해 보세요</H2>
 
       <p style={body}>
@@ -250,8 +244,8 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 필요 서류 */}
-      <SectionBadge text="서류" />
+      {/* 섹션 4: 필요 서류 */}
+      <SectionBadge>서류</SectionBadge>
       <H2>IRP 계좌 개설에 필요한 서류예요</H2>
 
       <p style={body}>
@@ -266,8 +260,8 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 체크리스트 */}
-      <SectionBadge text="체크리스트" />
+      {/* 섹션 5: 체크리스트 */}
+      <SectionBadge>체크리스트</SectionBadge>
       <H2>IRP 수령 전 꼭 챙겨야 할 5가지예요</H2>
 
       <p style={body}>
@@ -280,20 +274,20 @@ export default function Page() {
         수수료는 생각보다 크게 차이 나요. 증권사는 연 0.2% 수준인데, 은행은 0.5%까지 올라가는 경우도 있어요. 퇴직금 5,000만원을 20년 운용한다면 수수료 차이만으로 수백만원이 갈릴 수 있어요. 금융감독원의 <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer" style={{ color: "#1D9E75" }}>퇴직연금 비교공시</a>에서 금융기관별로 비교해볼 수 있어요.
       </p>
 
-      <ArticleAd />
+      <ArticleAd position="mid" />
 
       <Divider />
 
       {/* FAQ */}
-      <SectionBadge text="자주 묻는 질문" />
+      <SectionBadge>자주 묻는 것들</SectionBadge>
       <FAQ items={FAQS} />
 
       <Divider />
 
       {/* 출처 */}
-      <References items={REFERENCES} />
+      <References groups={REFERENCES} />
 
-      <Disclaimer />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법을 바탕으로 작성됐어요. 최신 기준은 금융감독원(1332)에서 확인하세요." />
     </ArticleLayout>
   );
 }

@@ -51,15 +51,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제58조 — 수급자격의 제한 (정당한 이직 사유)", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행규칙 별표2 — 정당한 이직 사유 세부 기준", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
+      { label: "고용보험법 제58조: 수급자격의 제한 (정당한 이직 사유)", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행규칙 별표2: 정당한 이직 사유 세부 기준", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 신청 안내", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 임금체불 신고 및 상담", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 신청 안내", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 임금체불 신고 및 상담", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -125,7 +125,7 @@ export default function Page() {
         여기서 중요한 건 &quot;내가 먼저 퇴사했느냐&quot;가 아니에요. <strong>왜 나갈 수밖에 없었느냐</strong>가 판단 기준이죠. 월급도 안 주는 회사에서 계속 일하라고 강제할 수 없으니까, 그 퇴사가 정당한 선택으로 인정되는 거예요.
       </p>
 
-      <GreenBox title="체불 인정 기준 — 하나만 충족하면 돼요">
+      <GreenBox title="체불 인정 기준: 하나만 충족하면 돼요">
         1. 2개월 이상 임금 지급이 지연된 경우<br />
         2. 임금의 30% 이상이 체불된 경우<br />
         3. 반복적으로 임금이 제때 지급되지 않은 경우

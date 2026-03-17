@@ -68,15 +68,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제45조~50조 — 구직급여 수급일수 및 상한액 기준", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행령 — 소정급여일수 산정 기준", url: "https://www.law.go.kr/법령/고용보험법시행령" },
+      { label: "고용보험법 제45조~50조: 구직급여 수급일수 및 상한액 기준", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행령: 소정급여일수 산정 기준", url: "https://www.law.go.kr/법령/고용보험법시행령" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 상한액·하한액 안내", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 2026년 실업급여 기준", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 상한액·하한액 안내", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 2026년 실업급여 기준", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -133,7 +133,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 최대금액 계산법 + 자격 체크 */}
+      {/* 섹션 1: 최대금액 계산법 + 자격 체크 */}
       <H2>2026년 상한액 기준으로 최대 총액은 얼마일까?</H2>
       <p style={body}>
         공식은 단순해요. <strong>1일 수급액 x 수급일수</strong>가 곧 최대 수령 총액이죠. 2026년 1일 상한액은 68,100원인데, <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 매년 초에 고시하는 금액이에요. 퇴직 전 평균임금의 60%가 이 금액을 넘으면 상한액으로 잘려요.
@@ -160,10 +160,10 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 나이별·가입기간별 최대금액 + 계산기 */}
+      {/* 섹션 2: 나이별·가입기간별 최대금액 + 계산기 */}
       <H2>나이와 가입기간에 따라 상한액 기준 총액이 어떻게 달라질까?</H2>
       <p style={body}>
-        수급일수를 가르는 변수는 딱 두 가지예요 — <strong>퇴직 당시 나이</strong>와 <strong>고용보험 피보험기간</strong>이죠. <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>이 만 50세를 기준선으로 잡고 있어서, 50세 이상이거나 장애인이면 같은 가입기간이라도 수급일수가 더 길어요.
+        수급일수를 가르는 변수는 딱 두 가지예요: <strong>퇴직 당시 나이</strong>와 <strong>고용보험 피보험기간</strong>이죠. <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>이 만 50세를 기준선으로 잡고 있어서, 50세 이상이거나 장애인이면 같은 가입기간이라도 수급일수가 더 길어요.
       </p>
       <p style={body}>
         구간별로 정리하면 이래요. 가입기간 <strong>1년 미만</strong>이면 나이 상관없이 120일(상한액 기준 약 817만원)이에요. <strong>1~3년</strong>이면 50세 미만은 150일(약 1,022만원), 50세 이상은 180일(약 1,226만원)이죠. <strong>3~5년</strong> 구간에서는 50세 미만 180일(약 1,226만원), 50세 이상 210일(약 1,430만원)이에요.
@@ -245,7 +245,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 최대금액 받으려면 + 체크리스트 */}
+      {/* 섹션 3: 최대금액 받으려면 + 체크리스트 */}
       <H2>상한액 기준 최대금액을 받기 위한 세 가지 조건</H2>
       <p style={body}>
         세 가지를 전부 갖춰야 해요. 첫째, <strong>고용보험 가입기간 10년 이상</strong>이죠. 여러 직장에서 일한 기간을 합산할 수 있어요. 중간에 1년쯤 쉬었다고 기간이 리셋되진 않지만, 이전 직장에서 실업급여를 이미 수급했다면 그 시점 이전 기간은 합산에서 빠지니까 주의하세요.
@@ -262,7 +262,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 중간에 취업하면 */}
+      {/* 섹션 4: 중간에 취업하면 */}
       <H2>2026년 기준 중간에 취업하면 남은 금액의 처리</H2>
       <p style={body}>
         재취업하는 순간 남은 수급일수의 실업급여는 소멸돼요. 270일을 인정받았는데 150일째에 취업했다면 나머지 120일분은 받을 수 없죠. 68,100원 x 120일 = 약 817만원이 그대로 사라지는 구조예요.
@@ -276,7 +276,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 실전 정리 */}
+      {/* 섹션 5: 실전 정리 */}
       <H2>내 상한액 기준 최대금액을 지금 계산해보세요</H2>
       <p style={body}>
         나이와 고용보험 가입기간만 알면 바로 계산이 돼요. 가입기간을 정확히 모르겠다면 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에 로그인해서 &quot;피보험기간 조회&quot;를 해보세요. 여러 직장 기간이 자동으로 합산돼서 나오니까 따로 더할 필요가 없죠.

@@ -97,14 +97,14 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제48조 — 수급기간 및 수급권 소멸", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 제50조 — 구직급여의 수급 요건", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 제48조: 수급기간 및 수급권 소멸", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 제50조: 구직급여의 수급 요건", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 신청 안내", url: "https://www.ei.go.kr" },
+      { label: "고용24: 실업급여 신청 안내", url: "https://www.ei.go.kr" },
       { label: "고용노동부 고객상담센터 (1350)", url: "https://1350.moel.go.kr" },
     ],
   },
@@ -144,7 +144,7 @@ export default function Page() {
       {/* breadcrumb */}
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>실업급여 · 고용보험 · 신청기간</p>
 
-      {/* h1 — 2줄 */}
+      {/* h1: 2줄 */}
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
         퇴사 후 실업급여, 언제까지 신청해야?<br />
         12개월 기한과 절차
@@ -168,7 +168,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* ── 섹션 1 — 수급기간 12개월의 의미 ── */}
+      {/* ── 섹션 1: 수급기간 12개월의 의미 ── */}
       <H2>12개월 기한은 정확히 뭘 뜻하나요?</H2>
       <p style={body}>
         많은 분이 헷갈리는 부분이에요.
@@ -191,7 +191,7 @@ export default function Page() {
         퇴직일 다음 날부터 12개월 = 수급기간<br />
         12개월 안에 신청 + 수급 완료해야 해요<br />
         12개월 지나면 수급일수가 남아도 지급 불가<br />
-        고용보험법 제48조 강행규정 — 예외 거의 없음
+        고용보험법 제48조 강행규정: 예외 거의 없음
       </GreenBox>
 
       <SectionBadge>내 상황에 해당되는지 체크해보세요</SectionBadge>
@@ -207,7 +207,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 2 — 손해 계산 + 계산기 ── */}
+      {/* ── 섹션 2: 손해 계산 + 계산기 ── */}
       <H2>기한을 넘기면 얼마나 손해인가요?</H2>
       <p style={body}>
         수급기간 12개월은 퇴직일 기준이라, 내가 언제 신청하든 <strong>끝나는 날짜는 똑같아요</strong>.
@@ -248,7 +248,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 3 — 신청 절차와 타임라인 ── */}
+      {/* ── 섹션 3: 신청 절차와 타임라인 ── */}
       <H2>퇴사 후 신청 절차 순서</H2>
 
       <SectionBadge>신청 전 체크리스트</SectionBadge>
@@ -276,7 +276,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 4 — 수급기간 연장 예외 ── */}
+      {/* ── 섹션 4: 수급기간 연장 예외 ── */}
       <H2>12개월 기한이 연장되는 예외</H2>
       <p style={body}>
         원칙적으로 12개월이 지나면 수급권이 사라져요.
@@ -293,19 +293,19 @@ export default function Page() {
         연장이 승인되면 최대 <strong>4년</strong>까지 수급기간이 늘어나요.
         단, 자동 연장이 아니라 본인이 직접 증빙서류와 함께 신청해야 하죠.
         &quot;몰랐다&quot;, &quot;바빠서 못 했다&quot;는 연장 사유가 아니에요.
-        해당 사유가 생기면 즉시 고용센터에 연락하세요 — 늦으면 연장 자체가 불가능해질 수 있어요.
+        해당 사유가 생기면 즉시 고용센터에 연락하세요: 늦으면 연장 자체가 불가능해질 수 있어요.
       </p>
 
       <GreenBox title="수급기간 연장 가능 사유">
-        질병·부상 — 의사 진단서 필요<br />
-        출산·육아 — 만 8세 이하 자녀<br />
-        군복무 — 의무 복무 기간<br />
+        질병·부상: 의사 진단서 필요<br />
+        출산·육아: 만 8세 이하 자녀<br />
+        군복무: 의무 복무 기간<br />
         최대 4년까지 연장 가능 (증빙서류 + 본인 신청 필수)
       </GreenBox>
 
       <Divider />
 
-      {/* ── 섹션 5 — 기한 놓쳤을 때 ── */}
+      {/* ── 섹션 5: 기한 놓쳤을 때 ── */}
       <H2>기한을 놓쳤을 때 대처 방법</H2>
       <p style={body}>
         수급기간 12개월이 지나면 <strong>법적으로 수급권이 소멸</strong>돼요.
@@ -320,7 +320,7 @@ export default function Page() {
         이전에 실업급여를 못 받았다고 해서 불이익이 가중되지는 않아요.
       </p>
       <p style={body}>
-        결국 교훈은 하나예요 — 퇴사하면 <strong>가능한 빨리 신청</strong>하세요.
+        결국 교훈은 하나예요: 퇴사하면 <strong>가능한 빨리 신청</strong>하세요.
         쉬고 싶으면 실업급여를 받으면서 쉬면 돼요.
         <a href="/w/실업급여-구직활동-횟수" style={{ color: "#1D9E75", textDecoration: "underline" }}>구직활동 보고</a>는 2~4주에 한 번이라 부담이 크지 않아요.
         미루는 하루마다 1일 6만원 이상을 그냥 버리는 거라고 생각하면, 늦출 이유가 없죠.

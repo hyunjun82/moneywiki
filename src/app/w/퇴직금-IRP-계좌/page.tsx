@@ -7,13 +7,11 @@ import {
 } from "@/components/article-ui";
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
-// ─── 데이터 ──────────────────────────────────────────
-
 const CHECK_ITEMS = [
-  { id: "c1", label: "퇴직을 앞두고 있어요" },
-  { id: "c2", label: "퇴직금이 300만원을 초과할 것 같아요" },
-  { id: "c3", label: "연간 세액공제 혜택도 받고 싶어요" },
-  { id: "c4", label: "수수료가 낮은 곳을 찾고 있어요" },
+  { id: "c1", label: "퇴직을 앞두고 있거나 이미 퇴직했어요" },
+  { id: "c2", label: "퇴직금이 300만원을 초과해요" },
+  { id: "c3", label: "현재 만 55세 미만이에요" },
+  { id: "c4", label: "IRP 계좌가 아직 없어요" },
 ];
 
 const CALC_SLIDERS = [
@@ -52,16 +50,16 @@ const DOCS = [
 const STEPS = [
   {
     title: "금융기관 비교 선택",
-    desc: "은행, 증권사, 보험사 중에서 선택해요. 수수료(연 0.2~0.5%)와 운용 상품을 비교해서 고르세요. 증권사 IRP는 ETF 투자가 가능하고 수수료가 낮은 편이에요.",
-    tip: "퇴직금 수령만 목적이라면 수수료 0% 상품도 있어요 (일부 증권사)",
+    desc: "은행, 증권사, 보험사 중에서 선택해요. 수수료(연 0.2~0.5%)와 운용 상품을 비교해서 고르세요. 증권사 IRP는 ETF 투자가 가능하고 수수료가 낮은 편이에요. 퇴직금 수령만 목적이라면 수수료 0% 상품도 있어요.",
+    tip: "수수료 차이가 장기적으로 수십만 원 차이가 나요",
   },
   {
     title: "앱 또는 방문으로 개설",
     desc: "대부분 금융사 앱으로 10분 안에 개설 가능해요. 신분증과 공동인증서(또는 간편인증)만 있으면 돼요. 방문 개설도 가능하지만 앱이 훨씬 편해요.",
-    tip: "앱 개설 시 비대면 한도 확인 — 일부 은행은 방문 필요",
+    tip: "일부 은행은 비대면 한도 제한으로 방문이 필요할 수 있어요",
   },
   {
-    title: "운용 지시",
+    title: "운용 지시 설정",
     desc: "개설 후 퇴직금이 들어오면 어떻게 운용할지 선택해야 해요. 원리금보장형(예금), 실적배당형(ETF·펀드) 중 선택할 수 있어요. 운용 지시 안 하면 기본 원리금보장형으로 배정돼요.",
     tip: "장기 운용이라면 ETF 분산 투자가 유리해요",
   },
@@ -73,11 +71,11 @@ const STEPS = [
 ];
 
 const CHECKLIST = [
-  "금융기관 수수료 비교 — 증권사 0.2% vs 은행 0.5%",
+  "금융기관 수수료 비교: 증권사 0.2% vs 은행 0.5%",
   "앱으로 10분 이내 개설 가능",
-  "운용 지시 — 원리금보장 vs ETF 선택",
+  "운용 지시: 원리금보장 vs ETF 선택",
   "계좌번호 인사팀에 문자·메일로 통보",
-  "세액공제 한도 — 연 900만원 (IRP+연금저축 합산)",
+  "세액공제 한도: 연 900만원 (IRP+연금저축 합산)",
 ];
 
 const FAQS = [
@@ -107,15 +105,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로자퇴직급여보장법 — IRP 계좌 의무화", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
-      { label: "소득세법 제59조의3 — IRP 세액공제", url: "https://www.law.go.kr/법령/소득세법" },
+      { label: "근로자퇴직급여보장법: IRP 계좌 의무화", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+      { label: "소득세법 제59조의3: IRP 세액공제", url: "https://www.law.go.kr/법령/소득세법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "금융감독원 — IRP 가입 안내", url: "https://www.fss.or.kr" },
-      { label: "고용노동부 — 퇴직연금 제도 안내", url: "https://www.moel.go.kr" },
+      { label: "금융감독원: IRP 가입 안내", url: "https://www.fss.or.kr" },
+      { label: "고용노동부: 퇴직연금 제도 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -125,8 +123,6 @@ const RELATED = [
   { slug: "퇴직금-수령방법", title: "퇴직금 수령 방법 전체 정리", description: "일시금·연금 비교부터 절차까지." },
   { slug: "퇴직금-세금", title: "퇴직금 세금, 얼마나 떼나요?", description: "IRP 절세 효과를 계산해요." },
 ];
-
-// ─── 페이지 ──────────────────────────────────────────
 
 export default function Page() {
   return (
@@ -143,7 +139,9 @@ export default function Page() {
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
         IRP(개인형퇴직연금) 계좌는 퇴직금 300만원 초과 시 반드시 필요한 계좌예요.
         은행, 증권사, 보험사 중 어디서 만드느냐에 따라 수수료와 운용 가능한 상품이 달라져요.
-        연 최대 148.5만원 세액공제 혜택도 있어서, <a href="/w/퇴직금-IRP-수령방법" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직금 수령</a> 전에 미리 만들어두면 좋아요.
+        연 최대 148.5만원 세액공제 혜택도 있어서,{" "}
+        <a href="/w/퇴직금-IRP-수령방법" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직금 수령</a>{" "}
+        전에 미리 만들어두면 좋아요.
       </p>
 
       <Divider />
@@ -209,6 +207,7 @@ export default function Page() {
       <H2>IRP 계좌 개설 4단계</H2>
       <p style={body}>
         앱으로 10분이면 끝나요. 수수료 비교만 먼저 해두면 개설 자체는 어렵지 않아요.
+        퇴직 전에 미리 만들어두고 계좌번호만 인사팀에 전달하면 돼요.
       </p>
 
       <Steps steps={STEPS} />
@@ -224,7 +223,7 @@ export default function Page() {
       <Checklist items={CHECKLIST} />
 
       <GreenBox title="퇴직금 수령 전에 IRP 꼭 만들어두세요">
-        퇴직 후 계좌가 없으면 회사가 이체를 못 해서 지급이 지연돼요.
+        퇴직 후 계좌가 없으면 회사가 이체를 못 해서 지급이 지연돼요.<br />
         10분이면 만들 수 있으니 퇴직 확정되면 바로 개설하세요.
       </GreenBox>
 

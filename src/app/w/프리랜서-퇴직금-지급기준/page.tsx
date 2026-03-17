@@ -38,7 +38,7 @@ const CALC_RESULTS = [
 const DOCS = [
   { name: "업무계약서", required: true, where: "계약 시 수령 · 없다면 이메일·메시지 내역으로 대체" },
   { name: "급여 이체 내역", required: true, where: "은행 앱 출력 · 매월 고정 지급 내역" },
-  { name: "업무지시서·메시지", required: true, where: "이메일·카카오톡 — 업무 지시, 출근 요청 내용" },
+  { name: "업무지시서·메시지", required: true, where: "이메일·카카오톡: 업무 지시, 출근 요청 내용" },
   { name: "출퇴근 기록", required: false, where: "출퇴근 앱·사무실 출입카드·사진 등" },
 ];
 
@@ -66,11 +66,11 @@ const STEPS = [
 ];
 
 const CHECKLIST = [
-  "업무계약서 또는 이메일 계약 내용 — 업무 지시 구조 확인",
-  "급여 이체 내역 — 매월 고정 지급 여부 증빙",
-  "업무 지시 카카오톡·이메일 — 사용종속관계 입증",
-  "출퇴근 기록·사무실 출입 이력 — 근무 장소·시간 고정 여부",
-  "한 곳에서만 일했다는 증빙 — 전속성 입증 용도",
+  "업무계약서 또는 이메일 계약 내용: 업무 지시 구조 확인",
+  "급여 이체 내역: 매월 고정 지급 여부 증빙",
+  "업무 지시 카카오톡·이메일: 사용종속관계 입증",
+  "출퇴근 기록·사무실 출입 이력: 근무 장소·시간 고정 여부",
+  "한 곳에서만 일했다는 증빙: 전속성 입증 용도",
 ];
 
 const FAQS = [
@@ -100,15 +100,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로기준법 제2조 — 근로자의 정의", url: "https://www.law.go.kr/법령/근로기준법" },
+      { label: "근로기준법 제2조: 근로자의 정의", url: "https://www.law.go.kr/법령/근로기준법" },
       { label: "근로자퇴직급여 보장법", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용노동부 — 근로자성 판단 기준", url: "https://www.moel.go.kr" },
-      { label: "고용노동부 민원마당 — 임금체불 진정", url: "https://minwon.moel.go.kr" },
+      { label: "고용노동부: 근로자성 판단 기준", url: "https://www.moel.go.kr" },
+      { label: "고용노동부 민원마당: 임금체불 진정", url: "https://minwon.moel.go.kr" },
     ],
   },
 ];
@@ -167,9 +167,9 @@ export default function Page() {
       </p>
 
       <GreenBox title="프리랜서 퇴직금 핵심">
-        계약 형식(프리랜서)이 아니라 <strong>근로 실태</strong>가 기준이에요<br />
+        계약 형식(프리랜서)이 아니라 근로 실태가 기준이에요<br />
         출퇴근 관리 + 업무 지시 + 전속성 → 근로자성 인정 가능<br />
-        근로자성 인정 + 1년 이상 근무 → <strong>퇴직금 발생</strong>
+        근로자성 인정 + 1년 이상 근무 → 퇴직금 발생
       </GreenBox>
 
       <SectionBadge>내 상황 체크해보세요</SectionBadge>
@@ -184,7 +184,7 @@ export default function Page() {
       <H2>근로자 인정 시 퇴직금, 얼마나 나올까?</H2>
       <p style={body}>
         근로자성이 인정되면 일반 퇴직금 공식이 그대로 적용돼요.
-        <strong>월 평균임금 × 근속연수</strong>예요.
+        월 평균임금 × 근속연수예요.
         아래에서 월 수입과 근무기간을 조절해보세요.
       </p>
       <p style={body}>

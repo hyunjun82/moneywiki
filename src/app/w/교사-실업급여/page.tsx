@@ -97,15 +97,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 피보험자격 및 수급자격", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "교육공무원법 — 교육공무원의 신분", url: "https://www.law.go.kr/법령/교육공무원법" },
+      { label: "고용보험법: 피보험자격 및 수급자격", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "교육공무원법: 교육공무원의 신분", url: "https://www.law.go.kr/법령/교육공무원법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 신청 안내", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 고용보험 가입 대상 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 신청 안내", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 고용보험 가입 대상 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -166,7 +166,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 교사 유형별 실업급여 대상 여부 */}
+      {/* 섹션 1: 교사 유형별 실업급여 대상 여부 */}
       <H2>유형별로 수급 조건이 어떻게 다른가요?</H2>
       <p style={body}>
         &quot;교사&quot;라는 직함은 같아도 법적 신분은 전부 달라요.
@@ -177,7 +177,7 @@ export default function Page() {
       </p>
       <p style={body}>
         <strong>사립학교 교사</strong>는 학교법인에 소속된 민간 근로자예요.
-        급여명세서를 보면 고용보험료가 빠져나가고 있을 거예요 — 이미 가입된 상태라는 뜻이죠.
+        급여명세서를 보면 고용보험료가 빠져나가고 있을 거예요: 이미 가입된 상태라는 뜻이죠.
         비자발적으로 퇴직하면 실업급여를 신청할 수 있죠.
         본인이 먼저 사직서를 냈다면 원칙적으로 대상이 아니지만, <a href="/w/임금체불-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>임금체불</a>이나 괴롭힘 같은 정당한 사유가 있으면 예외적으로 인정받을 수 있죠.
       </p>
@@ -204,7 +204,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 기간제 교사 실업급여 핵심 + 계산기 */}
+      {/* 섹션 2: 기간제 교사 실업급여 핵심 + 계산기 */}
       <H2>기간제 교사의 수급 조건은 무엇인가요?</H2>
       <p style={body}>
         기간제 교사에게 가장 중요한 숫자는 <a href="/w/실업급여-피보험기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>피보험기간</a> <strong>180일</strong>이에요.
@@ -233,7 +233,7 @@ export default function Page() {
         note="※ 2026년 기준 1일 상한액 68,100원, 하한액 66,048원 적용. 실제 금액은 고용센터 심사에 따라 달라질 수 있어요."
       />
 
-      <BorderBox title="기간제 교사 — 꼭 체크할 4가지">
+      <BorderBox title="기간제 교사: 꼭 체크할 4가지">
         <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}>
           <strong>피보험기간</strong> 180일 이상인지 고용24에서 조회
         </p>
@@ -255,7 +255,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 사립학교 교사·강사 */}
+      {/* 섹션 3: 사립학교 교사·강사 */}
       <H2>사립학교 교사와 강사의 수급 조건</H2>
       <p style={body}>
         사립학교 교사는 고용보험 가입 대상이지만, 실업급여를 받으려면 <strong>퇴직 사유</strong>가 갈림길이에요.
@@ -265,7 +265,7 @@ export default function Page() {
       <p style={body}>
         본인이 먼저 사직서를 쓴 경우는 원칙적으로 대상이 아니에요.
         다만 임금체불, 직장 내 괴롭힘, 근로조건 일방 변경 같은 정당한 사유가 있으면 자발적 퇴사여도 인정받을 수 있죠.
-        이때 증빙이 핵심이에요 — 문자 기록, 녹음 파일, 급여명세서 등을 퇴직 전에 미리 확보해두세요.
+        이때 증빙이 핵심이에요: 문자 기록, 녹음 파일, 급여명세서 등을 퇴직 전에 미리 확보해두세요.
       </p>
       <p style={body}>
         <strong>시간강사나 학원 강사</strong>도 같은 기준이에요.
@@ -277,7 +277,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 신청 방법 */}
+      {/* 섹션 4: 신청 방법 */}
       <H2>유형별 수급 조건 확인 후 신청 절차</H2>
       <p style={body}>
         신청 절차 자체는 일반 근로자와 동일해요.
@@ -306,7 +306,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 공무원 교사의 대안 */}
+      {/* 섹션 5: 공무원 교사의 대안 */}
       <H2>공무원 교사는 연금으로 갈아타세요</H2>
       <p style={body}>
         공립학교 정교사는 실업급여 대신 <strong>공무원연금</strong>이 적용돼요.

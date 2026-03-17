@@ -66,11 +66,11 @@ const STEPS = [
 ];
 
 const CHECKLIST = [
-  "지급 기한 14일 — 퇴직일 기준 경과 여부 확인",
-  "지연이자 — 14일 초과 시 연 20% 자동 발생",
-  "내용증명 — 지급 요청 공식 기록",
-  "고용노동청 진정 — 고용24 온라인 접수",
-  "소멸시효 — 퇴직일로부터 3년 이내",
+  "지급 기한 14일: 퇴직일 기준 경과 여부 확인",
+  "지연이자: 14일 초과 시 연 20% 자동 발생",
+  "내용증명: 지급 요청 공식 기록",
+  "고용노동청 진정: 고용24 온라인 접수",
+  "소멸시효: 퇴직일로부터 3년 이내",
 ];
 
 const FAQS = [
@@ -100,15 +100,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로기준법 제36조 — 금품 청산 (14일 이내 지급)", url: "https://www.law.go.kr/법령/근로기준법" },
-      { label: "근로기준법 제37조 — 미지급 임금 지연이자 연 20%", url: "https://www.law.go.kr/법령/근로기준법" },
+      { label: "근로기준법 제36조: 금품 청산 (14일 이내 지급)", url: "https://www.law.go.kr/법령/근로기준법" },
+      { label: "근로기준법 제37조: 미지급 임금 지연이자 연 20%", url: "https://www.law.go.kr/법령/근로기준법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용노동부 — 퇴직금 체불 신고 안내", url: "https://www.moel.go.kr" },
-      { label: "고용24 — 온라인 체불 진정 접수", url: "https://www.work.go.kr" },
+      { label: "고용노동부: 퇴직금 체불 신고 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 온라인 체불 진정 접수", url: "https://www.work.go.kr" },
     ],
   },
 ];

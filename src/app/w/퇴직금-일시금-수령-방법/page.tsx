@@ -8,10 +8,10 @@ import {
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
 const CHECK_ITEMS = [
-  { id: "c1", label: "퇴직금을 IRP가 아닌 현금으로 바로 받고 싶어요" },
-  { id: "c2", label: "IRP에서 일시금으로 인출하는 방법을 알고 싶어요" },
-  { id: "c3", label: "퇴직소득세가 얼마나 떼이는지 궁금해요" },
-  { id: "c4", label: "연금보다 일시금이 유리한지 비교해보고 싶어요" },
+  { id: "c1", label: "퇴직금을 IRP가 아닌 일반 계좌로 받았어요" },
+  { id: "c2", label: "IRP 계좌에 퇴직금이 들어와 있어요" },
+  { id: "c3", label: "퇴직소득 원천징수영수증을 받았어요" },
+  { id: "c4", label: "55세 이후이거나 곧 55세가 돼요" },
 ];
 
 const CALC_SLIDERS = [
@@ -73,11 +73,11 @@ const STEPS = [
 ];
 
 const CHECKLIST = [
-  "300만원 이하 — 일반 계좌로 일시금 수령 가능",
-  "300만원 초과 — IRP 이체 후 일시금 인출 신청",
-  "퇴직소득세 — 일시금 수령 시 한꺼번에 납부",
-  "연금 비교 — 55세 이후 연금 수령 시 세금 30~40% 절세",
-  "원천징수영수증 — 세액 확인 후 수령",
+  "300만원 이하: 일반 계좌로 일시금 수령 가능",
+  "300만원 초과: IRP 이체 후 일시금 인출 신청",
+  "퇴직소득세: 일시금 수령 시 한꺼번에 납부",
+  "연금 비교: 55세 이후 연금 수령 시 세금 30~40% 절세",
+  "원천징수영수증: 세액 확인 후 수령",
 ];
 
 const FAQS = [
@@ -107,15 +107,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로자퇴직급여보장법 제9조 — IRP 이체 의무", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
-      { label: "소득세법 제22조 — 퇴직소득세 계산 기준", url: "https://www.law.go.kr/법령/소득세법" },
+      { label: "근로자퇴직급여보장법 제9조: IRP 이체 의무", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+      { label: "소득세법 제22조: 퇴직소득세 계산 기준", url: "https://www.law.go.kr/법령/소득세법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "국세청 홈택스 — 퇴직소득세 모의계산", url: "https://www.hometax.go.kr" },
-      { label: "금융감독원 — IRP 일시금 인출 안내", url: "https://www.fss.or.kr" },
+      { label: "국세청 홈택스: 퇴직소득세 모의계산", url: "https://www.hometax.go.kr" },
+      { label: "금융감독원: IRP 일시금 인출 안내", url: "https://www.fss.or.kr" },
     ],
   },
 ];

@@ -21,7 +21,7 @@ const CHECKLIST = [
   "이직확인서 처리 당일 수급자격 신청 + 온라인 교육 이수",
   "고용24에 본인 통장번호 등록 확인",
   "1차 실업인정일 달력에 표시 (고용24 앱 알림 설정)",
-  "실업인정일 절대 놓치지 않기 — 놓치면 입금이 밀려요",
+  "실업인정일 절대 놓치지 않기: 놓치면 입금이 밀려요",
 ];
 
 const FAQS = [
@@ -51,14 +51,14 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제49조 — 대기기간 및 구직급여 지급 절차", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 제49조: 대기기간 및 구직급여 지급 절차", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 신청·조회", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 실업급여 제도 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 신청·조회", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 실업급여 제도 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -118,7 +118,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 첫 입금까지 전체 일정 + 자격 체크 */}
+      {/* 섹션 1: 첫 입금까지 전체 일정 + 자격 체크 */}
       <H2>첫 입금까지 일정은 어떻게 되나요?</H2>
       <p style={body}>
         퇴직하면 곧바로 돈이 나오는 게 아니라, 5단계를 순서대로 밟아야 해요.
@@ -155,7 +155,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 대기기간 7일 + 계산기 */}
+      {/* 섹션 2: 대기기간 7일 + 계산기 */}
       <H2>대기기간 7일은 왜 기다려야 하나요?</H2>
       <p style={body}>
         수급자격을 인정받은 날부터 <strong>7일간은 실업급여가 지급되지 않아요</strong>.
@@ -175,10 +175,10 @@ export default function Page() {
       </p>
 
       <BorderBox title="대기기간 핵심 포인트">
-        수급자격 인정일부터 연속 7일 — 이 기간은 급여 미지급<br />
+        수급자격 인정일부터 연속 7일: 이 기간은 급여 미지급<br />
         모든 수급자에게 동일 적용 (나이·소득 불문, 예외 없음)<br />
-        구직활동 의무 없음 — 준비 기간으로 활용<br />
-        첫 지급에만 해당 — 2회차부터는 대기기간 차감 없음
+        구직활동 의무 없음: 준비 기간으로 활용<br />
+        첫 지급에만 해당: 2회차부터는 대기기간 차감 없음
       </BorderBox>
 
       <Calculator
@@ -228,7 +228,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 1차 실업인정과 입금 타이밍 + 체크리스트 */}
+      {/* 섹션 3: 1차 실업인정과 입금 타이밍 + 체크리스트 */}
       <H2>1차 실업인정과 입금 일정</H2>
       <p style={body}>
         대기기간 7일이 끝나면 고용센터가 <strong>1차 실업인정일</strong>을 잡아줘요.
@@ -253,7 +253,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 첫 입금 금액이 적은 이유 */}
+      {/* 섹션 4: 첫 입금 금액이 적은 이유 */}
       <H2>첫 입금 금액이 적은 이유</H2>
       <p style={body}>
         통장에 찍힌 첫 금액을 보고 &quot;이게 다야?&quot; 싶은 분이 정말 많아요.
@@ -280,7 +280,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 빨리 받으려면 */}
+      {/* 섹션 5: 빨리 받으려면 */}
       <H2>입금 일정을 최대한 앞당기는 방법</H2>
       <p style={body}>
         첫 입금을 하루라도 빨리 받으려면 <strong>퇴직 직후부터 바로 움직여야</strong> 해요.
@@ -302,7 +302,7 @@ export default function Page() {
 
       <SectionBadge>입금 빨리 받는 3가지 핵심</SectionBadge>
       <BorderBox title="실전 체크리스트">
-        퇴직 즉시 회사에 이직확인서 처리 요청 — 이게 가장 큰 병목<br />
+        퇴직 즉시 회사에 이직확인서 처리 요청: 이게 가장 큰 병목<br />
         이직확인서 처리 당일, 수급자격 신청 + 교육 이수 완료<br />
         1차 실업인정일 절대 놓치지 않기 (고용24 앱 알림 설정)
       </BorderBox>

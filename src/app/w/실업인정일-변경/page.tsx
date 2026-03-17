@@ -51,15 +51,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제44조 — 실업인정 및 구직급여 지급", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행규칙 제92조 — 실업인정일 지정 및 변경", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
+      { label: "고용보험법 제44조: 실업인정 및 구직급여 지급", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행규칙 제92조: 실업인정일 지정 및 변경", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업인정 온라인 신청", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 실업급여 제도 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업인정 온라인 신청", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 실업급여 제도 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -115,7 +115,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 변경 가능한 사유 */}
+      {/* 섹션 1: 변경 가능한 사유 */}
       <H2>어떤 사유로 변경 신청이 가능한가요?</H2>
       <SectionBadge>인정 사유 확인</SectionBadge>
 
@@ -139,11 +139,11 @@ export default function Page() {
       </p>
 
       <GreenBox title="실업인정일 변경 가능 사유">
-        채용 면접 — 면접확인서 제출 (구직활동 인정 겸용)<br />
-        질병·부상 — 진단서 또는 의사소견서 제출<br />
-        국가시험·자격증 시험 — 수험표 또는 접수 확인서 제출<br />
-        경조사(결혼·사망) — 가족관계 증빙 + 경조사 확인서<br />
-        천재지변·법원 출석 — 해당 증빙서류 제출
+        채용 면접: 면접확인서 제출 (구직활동 인정 겸용)<br />
+        질병·부상: 진단서 또는 의사소견서 제출<br />
+        국가시험·자격증 시험: 수험표 또는 접수 확인서 제출<br />
+        경조사(결혼·사망): 가족관계 증빙 + 경조사 확인서<br />
+        천재지변·법원 출석: 해당 증빙서류 제출
       </GreenBox>
 
       <EligibilityChecker
@@ -154,7 +154,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 변경 신청 방법 */}
+      {/* 섹션 2: 변경 신청 방법 */}
       <H2>변경 신청 절차는 어떻게 되나요?</H2>
 
       <p style={body}>
@@ -176,10 +176,10 @@ export default function Page() {
       </p>
 
       <BorderBox title="실업인정일 변경 신청 방법">
-        전화 — 고용센터 대표번호 1350으로 사전 연락 (가장 빠름)<br />
-        온라인 — 고용24(ei.go.kr) 실업인정일 변경 메뉴<br />
-        방문 — 관할 고용센터 직접 방문 (증빙서류 원본 지참)<br />
-        팩스 — 증빙서류를 관할 고용센터 팩스로 송부
+        전화: 고용센터 대표번호 1350으로 사전 연락 (가장 빠름)<br />
+        온라인: 고용24(ei.go.kr) 실업인정일 변경 메뉴<br />
+        방문: 관할 고용센터 직접 방문 (증빙서류 원본 지참)<br />
+        팩스: 증빙서류를 관할 고용센터 팩스로 송부
       </BorderBox>
 
       <CategoryButton label="실업급여 정보" count={실업급여_SIDEBAR.length} href="/category/고용" />
@@ -188,7 +188,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 증빙서류 상세 */}
+      {/* 섹션 3: 증빙서류 상세 */}
       <H2>변경 신청에 필요한 증빙서류</H2>
       <SectionBadge>서류 준비</SectionBadge>
 
@@ -213,7 +213,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 변경 안 하고 빠지면 어떻게 되나요 */}
+      {/* 섹션 4: 변경 안 하고 빠지면 어떻게 되나요 */}
       <H2>변경 없이 빠졌을 때 불이익</H2>
 
       <p style={body}>
@@ -234,14 +234,14 @@ export default function Page() {
       </p>
 
       <GreenBox title="실업인정일 불출석 시 불이익">
-        해당 기간 급여 미지급 — 1~4주치 실업급여를 못 받음<br />
-        반복 불출석 시 수급자격 재심사 — 구직 의사 없음으로 판단 가능<br />
-        사후 변경 여지 있음 — 정당한 사유 + 증빙 제출 시 (사전보다 기준 엄격)
+        해당 기간 급여 미지급: 1~4주치 실업급여를 못 받음<br />
+        반복 불출석 시 수급자격 재심사: 구직 의사 없음으로 판단 가능<br />
+        사후 변경 여지 있음: 정당한 사유 + 증빙 제출 시 (사전보다 기준 엄격)
       </GreenBox>
 
       <Divider />
 
-      {/* 섹션 5 — 온라인 실업인정 활용 */}
+      {/* 섹션 5: 온라인 실업인정 활용 */}
       <H2>온라인 실업인정으로 변경 부담 줄이기</H2>
 
       <p style={body}>

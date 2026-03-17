@@ -9,9 +9,9 @@ import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
 const CHECK_ITEMS = [
   { id: "c1", label: "퇴직금이 IRP 계좌로 이체됐어요" },
-  { id: "c2", label: "IRP에서 바로 빼면 세금이 얼마나 나오는지 궁금해요" },
-  { id: "c3", label: "연금으로 받으면 세금이 줄어드는지 알고 싶어요" },
-  { id: "c4", label: "퇴직소득세 계산 방법을 모르겠어요" },
+  { id: "c2", label: "퇴직소득 원천징수영수증을 받았어요" },
+  { id: "c3", label: "IRP에서 아직 인출하지 않았어요" },
+  { id: "c4", label: "현재 만 55세 미만이에요" },
 ];
 
 const CALC_SLIDERS = [
@@ -75,11 +75,11 @@ const STEPS = [
 ];
 
 const CHECKLIST = [
-  "IRP 이체 시 세금 없음 — IRP 안에 있는 동안은 과세 이연",
-  "일시금 인출 — 퇴직소득세 한꺼번에 납부",
-  "연금 수령 — 퇴직소득세 30~40% 감면 (55세 이후, 10년 이상)",
-  "연금소득세 — 3.3~5.5% (퇴직소득세보다 낮음)",
-  "연간 1,200만원 초과 — 종합소득세 신고 검토 필요",
+  "IRP 이체 시 세금 없음: IRP 안에 있는 동안은 과세 이연",
+  "일시금 인출: 퇴직소득세 한꺼번에 납부",
+  "연금 수령: 퇴직소득세 30~40% 감면 (55세 이후, 10년 이상)",
+  "연금소득세: 3.3~5.5% (퇴직소득세보다 낮음)",
+  "연간 1,200만원 초과: 종합소득세 신고 검토 필요",
 ];
 
 const FAQS = [
@@ -109,15 +109,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "소득세법 제22조 — 퇴직소득세 계산 기준", url: "https://www.law.go.kr/법령/소득세법" },
-      { label: "소득세법 시행령 제40조의2 — IRP 연금 수령 감면", url: "https://www.law.go.kr/법령/소득세법시행령" },
+      { label: "소득세법 제22조: 퇴직소득세 계산 기준", url: "https://www.law.go.kr/법령/소득세법" },
+      { label: "소득세법 시행령 제40조의2: IRP 연금 수령 감면", url: "https://www.law.go.kr/법령/소득세법시행령" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "국세청 — 퇴직소득세 계산 안내", url: "https://www.nts.go.kr" },
-      { label: "금융감독원 — IRP 세금 안내", url: "https://www.fss.or.kr" },
+      { label: "국세청: 퇴직소득세 계산 안내", url: "https://www.nts.go.kr" },
+      { label: "금융감독원: IRP 세금 안내", url: "https://www.fss.or.kr" },
     ],
   },
 ];

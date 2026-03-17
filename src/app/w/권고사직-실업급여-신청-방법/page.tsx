@@ -97,15 +97,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 실업급여 수급자격 및 이직 사유", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법: 실업급여 수급자격 및 이직 사유", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 신청 및 이직확인서 조회", url: "https://www.ei.go.kr" },
-      { label: "워크넷 — 구직등록", url: "https://www.work.go.kr" },
-      { label: "고용노동부 — 고용센터 찾기", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 신청 및 이직확인서 조회", url: "https://www.ei.go.kr" },
+      { label: "워크넷: 구직등록", url: "https://www.work.go.kr" },
+      { label: "고용노동부: 고용센터 찾기", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -159,7 +159,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 권고사직과 실업급여 */}
+      {/* 섹션 1: 권고사직과 실업급여 */}
       <H2>권고사직이면 실업급여 바로 받을 수 있나요?</H2>
       <p style={body}>
         결론부터 말하면, 받을 수 있죠. 권고사직은 회사가 먼저 &ldquo;나가주세요&rdquo;라고 권유하고 근로자가 동의해서 퇴직하는 거예요. 본인 의사가 아니라 회사 사정으로 나가는 거니까 <strong>비자발적 이직</strong>에 해당되죠. <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>이 이런 경우에 실업급여 수급자격을 보장하고 있어요.
@@ -187,7 +187,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 금액과 기간 + 계산기 */}
+      {/* 섹션 2: 금액과 기간 + 계산기 */}
       <H2>금액과 수급기간, 얼마 받을까?</H2>
       <p style={body}>
         퇴직 전 평균임금의 <strong>60%</strong>를 받아요. 2026년 기준 <strong>1일 상한 68,100원</strong>, <strong>하한 66,048원</strong>이죠. 월로 환산하면 최대 약 <strong>204만 원</strong> 수준이에요. 상한과 하한 차이가 크지 않아서 대부분의 근로자가 비슷한 금액을 수령하게 되고요.
@@ -221,7 +221,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 신청 절차 6단계 */}
+      {/* 섹션 3: 신청 절차 6단계 */}
       <H2>신청 절차와 필요 서류</H2>
       <p style={body}>
         먼저 <strong>이직확인서 처리 상태</strong>를 체크하세요. 회사가 퇴직 후 10일 이내에 이직확인서를 고용센터에 제출하게 돼 있어요. <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a> → 개인서비스 → 이직확인서 처리현황에서 이직사유가 &lsquo;권고사직&rsquo;으로 나오는지 꼭 살펴보세요.
@@ -238,10 +238,10 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 이직확인서 문제 대처법 */}
+      {/* 섹션 4: 이직확인서 문제 대처법 */}
       <H2>이직확인서 서류가 잘못 적혀 있다면</H2>
       <p style={body}>
-        실무에서 가장 흔한 문제예요. 분명 권고사직인데 회사가 이직확인서에 &lsquo;자발적 퇴사&rsquo;로 적어버리는 거죠. 이유는 간단해요 — 권고사직으로 기재하면 회사 쪽 고용보험료 부담이 올라갈 수 있으니까요.
+        실무에서 가장 흔한 문제예요. 분명 권고사직인데 회사가 이직확인서에 &lsquo;자발적 퇴사&rsquo;로 적어버리는 거죠. 이유는 간단해요: 권고사직으로 기재하면 회사 쪽 고용보험료 부담이 올라갈 수 있으니까요.
       </p>
       <p style={body}>
         이럴 땐 <strong>고용센터에 <a href="/w/실업급여-이의신청" style={{ color: "#1D9E75", textDecoration: "underline" }}>이의신청</a></strong>을 하면 돼요. 담당자가 회사에 확인 전화를 하고 사실관계를 조사하죠. 이때 <strong>증빙자료</strong>가 승패를 갈라요. 회사가 퇴직을 권유한 문자, 이메일, 면담 녹음이 있으면 유리한데, 본인이 직접 녹음한 건 합법이에요.
@@ -252,7 +252,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 권고사직 vs 해고 */}
+      {/* 섹션 5: 권고사직 vs 해고 */}
       <H2>권고사직과 해고, 서류부터 챙기세요</H2>
       <p style={body}>
         둘의 차이를 명확히 알아야 서류를 제대로 챙길 수 있어요. 권고사직은 회사가 퇴직을 <strong>권유</strong>하고 근로자가 <strong>동의</strong>해서 나가는 거예요. 해고는 회사가 <strong>일방적으로</strong> 근로관계를 끊는 거죠. 실업급여 관점에서 보면 둘 다 비자발적 퇴사이기 때문에 수급 대상이에요. 단, 횡령이나 무단결근 같은 <a href="/w/중대귀책사유-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>중대 귀책사유</a>로 해고된 경우는 제한될 수 있고요.

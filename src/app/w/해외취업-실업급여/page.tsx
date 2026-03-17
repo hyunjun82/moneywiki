@@ -51,14 +51,14 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 실업급여 수급자격 및 실업인정 요건", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법: 실업급여 수급자격 및 실업인정 요건", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 신청 및 실업인정 안내", url: "https://www.ei.go.kr" },
-      { label: "월드잡플러스 — 해외취업 지원사업 안내", url: "https://www.worldjob.or.kr" },
+      { label: "고용24: 실업급여 신청 및 실업인정 안내", url: "https://www.ei.go.kr" },
+      { label: "월드잡플러스: 해외취업 지원사업 안내", url: "https://www.worldjob.or.kr" },
     ],
   },
 ];
@@ -103,7 +103,7 @@ export default function Page() {
         실업급여 자격 조건과 신청 방법
       </h1>
 
-      {/* intro — 숫자 + 법령 */}
+      {/* intro: 숫자 + 법령 */}
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
         &quot;해외에서 일하다 돌아왔는데, 실업급여를 받을 수 있나요?&quot;<br /><br />
         결론은 <strong>한국 고용보험에 가입돼 있었느냐</strong>에 달렸어요.{" "}
@@ -116,7 +116,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 해외취업과 실업급여의 관계 + GreenBox + SectionBadge + EligibilityChecker */}
+      {/* 섹션 1: 해외취업과 실업급여의 관계 + GreenBox + SectionBadge + EligibilityChecker */}
       <H2>실업급여 자격 조건에 해외 근무가 포함되나요?</H2>
       <p style={body}>
         실업급여의 핵심 전제는 &quot;국내에서 다시 취업하려는 의사와 능력&quot;이에요.
@@ -150,7 +150,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 해외 체류 중 실업인정 + BorderBox */}
+      {/* 섹션 2: 해외 체류 중 실업인정 + BorderBox */}
       <H2>신청 방법에서 해외 체류 기간은 어떻게 처리되나요?</H2>
       <p style={body}>
         이미 실업급여를 받고 있는 상태에서 해외에 나가면, 그 기간 동안에는 <strong>실업인정이 안 돼요</strong>.
@@ -183,7 +183,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 해외 파견 vs 현지 채용 + SectionBadge + Checklist */}
+      {/* 섹션 3: 해외 파견 vs 현지 채용 + SectionBadge + Checklist */}
       <H2>해외 파견과 현지 채용의 자격 조건 차이</H2>
       <p style={body}>
         가장 중요한 기준은 <strong>한국 고용보험에 가입돼 있었느냐</strong>예요.
@@ -208,10 +208,10 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 수급기간과 귀국 타이밍 */}
+      {/* 섹션 4: 수급기간과 귀국 타이밍 */}
       <H2>수급기간과 귀국 신청 방법의 타이밍</H2>
       <p style={body}>
-        &quot;해외에 있었으니까 수급기간이 연장되지 않나요?&quot; — 안 돼요.
+        &quot;해외에 있었으니까 수급기간이 연장되지 않나요?&quot;: 안 돼요.
         <a href="/w/실업급여-수급기간-몇개월-받나요" style={{ color: "#1D9E75", textDecoration: "underline" }}>실업급여 수급기간</a>은 퇴직 후 <strong>12개월</strong>로 고정이에요.
         해외에 6개월 있었다고 6개월 더 연장되는 구조가 아니죠.
         퇴직일 기준으로 1년이 되면 무조건 끝나요.
@@ -235,7 +235,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 실전 행동 */}
+      {/* 섹션 5: 실전 행동 */}
       <H2>귀국 후 신청 방법을 미리 준비하세요</H2>
       <p style={body}>
         해외 취업이 목표라면 처음부터 실업급여가 아닌 해외취업 지원사업을 알아보는 게 맞아요.

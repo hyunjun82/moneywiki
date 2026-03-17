@@ -51,15 +51,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 피보험기간 산정 기준", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행령 — 피보험단위기간 세부 규정", url: "https://www.law.go.kr/법령/고용보험법시행령" },
+      { label: "고용보험법: 피보험기간 산정 기준", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행령: 피보험단위기간 세부 규정", url: "https://www.law.go.kr/법령/고용보험법시행령" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 피보험기간 조회 및 실업급여 신청", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 고용보험 상담(1350)", url: "https://www.moel.go.kr" },
+      { label: "고용24: 피보험기간 조회 및 실업급여 신청", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 고용보험 상담(1350)", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -111,14 +111,14 @@ export default function Page() {
         달력상 7개월을 다녀도 무급일이 많으면 실제 <a href="/w/피보험기간-근무일수-계산-방법" style={{ color: "#1D9E75", textDecoration: "underline" }}>피보험기간</a>은 160일밖에 안 될 수 있죠.
       </p>
       <p style={body}>
-        왜 이런 일이 생기는지, 내 피보험기간이 지금 얼마인지, 부족하면 어떻게 채우는지 — 아래에서 순서대로 정리해뒀어요.
+        왜 이런 일이 생기는지, 내 피보험기간이 지금 얼마인지, 부족하면 어떻게 채우는지: 아래에서 순서대로 정리해뒀어요.
         퇴직을 앞두고 있다면 끝까지 읽어보세요. 지금 점검하면 돈을 지킬 수 있죠.
       </p>
 
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 피보험기간 180일이 뭔지 + EligibilityChecker */}
+      {/* 섹션 1: 피보험기간 180일이 뭔지 + EligibilityChecker */}
       <H2>피보험기간 180일, 계산 기준이 정확히 뭔가요?</H2>
       <p style={body}>
         피보험기간은 단순히 &quot;회사에 다닌 기간&quot;이 아니에요.
@@ -151,7 +151,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 무급휴무일이 만드는 문제 */}
+      {/* 섹션 2: 무급휴무일이 만드는 문제 */}
       <H2>무급휴무일이 많으면 피보험기간에 어떤 문제가 생기나요?</H2>
       <p style={body}>
         구체적인 예시를 하나 볼게요.
@@ -183,7 +183,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 180일 안 되면 해결법 + Checklist */}
+      {/* 섹션 3: 180일 안 되면 해결법 + Checklist */}
       <H2>180일 미달 시 피보험기간 합산으로 해결하는 방법</H2>
       <p style={body}>
         가장 현실적인 방법은 <strong>이전 직장 고용보험 가입기간을 합산</strong>하는 거예요.
@@ -212,7 +212,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 피보험기간 확인하는 방법 */}
+      {/* 섹션 4: 피보험기간 확인하는 방법 */}
       <H2>내 피보험기간 계산 기준 확인하는 곳</H2>
       <p style={body}>
         가장 간편한 방법은 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24(www.ei.go.kr)</a>에 공인인증서나 간편인증으로 로그인하는 거예요.
@@ -239,7 +239,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 실전 정리 */}
+      {/* 섹션 5: 실전 정리 */}
       <H2>퇴직 전에 피보험기간 계산 기준부터 챙기세요</H2>
       <p style={body}>
         실업급여 수급자격의 첫 번째 관문이 피보험기간 180일이에요.

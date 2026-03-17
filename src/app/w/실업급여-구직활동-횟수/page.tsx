@@ -51,15 +51,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 실업인정 및 구직활동 기준", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행규칙 — 구직활동 인정 횟수 세부 기준", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
+      { label: "고용보험법: 실업인정 및 구직활동 기준", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행규칙: 구직활동 인정 횟수 세부 기준", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업인정 신청 및 구직활동 입력", url: "https://www.ei.go.kr" },
-      { label: "워크넷 — 구인구직 매칭 및 입사지원", url: "https://www.work.go.kr" },
+      { label: "고용24: 실업인정 신청 및 구직활동 입력", url: "https://www.ei.go.kr" },
+      { label: "워크넷: 구인구직 매칭 및 입사지원", url: "https://www.work.go.kr" },
     ],
   },
 ];
@@ -116,7 +116,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 차수별 구직활동 횟수 */}
+      {/* 섹션 1: 차수별 구직활동 횟수 */}
       <H2>차수별 인정 기준이 다른가요?</H2>
       <SectionBadge>수급 자격 체크</SectionBadge>
 
@@ -153,7 +153,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 인정되는 구직활동 종류 */}
+      {/* 섹션 2: 인정되는 구직활동 종류 */}
       <H2>어떤 방법이 구직활동으로 인정되나요?</H2>
 
       <p style={body}>
@@ -177,10 +177,10 @@ export default function Page() {
       </p>
 
       <BorderBox title="구직활동으로 인정되는 것들">
-        온라인 입사지원 — 워크넷 자동 연동, 사람인/잡코리아는 캡처 필요<br />
-        면접 참석 — 면접 확인서 또는 안내 이메일 증빙<br />
-        직업훈련 수강 — 별도 구직활동 면제<br />
-        채용박람회 참가 — 참가 확인 증빙<br />
+        온라인 입사지원: 워크넷 자동 연동, 사람인/잡코리아는 캡처 필요<br />
+        면접 참석: 면접 확인서 또는 안내 이메일 증빙<br />
+        직업훈련 수강: 별도 구직활동 면제<br />
+        채용박람회 참가: 참가 확인 증빙<br />
         고용센터 직업상담 / 온라인 취업특강
       </BorderBox>
 
@@ -190,7 +190,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 직업훈련 면제와 워크넷 활용 */}
+      {/* 섹션 3: 직업훈련 면제와 워크넷 활용 */}
       <H2>직업훈련 중 인정 기준과 면제 방법</H2>
       <SectionBadge>구직활동 전 체크리스트</SectionBadge>
 
@@ -216,7 +216,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 주의사항 */}
+      {/* 섹션 4: 주의사항 */}
       <H2>차수별 인정에서 주의할 점</H2>
 
       <p style={body}>
@@ -238,14 +238,14 @@ export default function Page() {
       </p>
 
       <GreenBox title="구직활동 3대 주의사항">
-        기간 내 활동만 인정 — 해당 실업인정 기간 안에서 해야 해요<br />
-        성실한 지원만 인정 — 무작위/반복 지원은 불인정 가능<br />
-        횟수 미달 시 해당 차수 미지급 — 소급 지급 안 되니 빠뜨리지 마세요
+        기간 내 활동만 인정: 해당 실업인정 기간 안에서 해야 해요<br />
+        성실한 지원만 인정: 무작위/반복 지원은 불인정 가능<br />
+        횟수 미달 시 해당 차수 미지급: 소급 지급 안 되니 빠뜨리지 마세요
       </GreenBox>
 
       <Divider />
 
-      {/* 섹션 5 — 실전 정리 */}
+      {/* 섹션 5: 실전 정리 */}
       <H2>실업인정 때 구직활동 입력하는 방법</H2>
 
       <p style={body}>

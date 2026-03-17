@@ -51,16 +51,16 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 훈련연장급여 및 직업능력개발 지원", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행령 — 훈련연장급여 세부 요건", url: "https://www.law.go.kr/법령/고용보험법시행령" },
+      { label: "고용보험법: 훈련연장급여 및 직업능력개발 지원", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행령: 훈련연장급여 세부 요건", url: "https://www.law.go.kr/법령/고용보험법시행령" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 및 내일배움카드 안내", url: "https://www.ei.go.kr" },
-      { label: "HRD-Net — 직업훈련 과정 검색", url: "https://www.hrd.go.kr" },
-      { label: "고용노동부 — 직업능력개발 정책 (상담 1350)", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 및 내일배움카드 안내", url: "https://www.ei.go.kr" },
+      { label: "HRD-Net: 직업훈련 과정 검색", url: "https://www.hrd.go.kr" },
+      { label: "고용노동부: 직업능력개발 정책 (상담 1350)", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -117,7 +117,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 내일배움카드 */}
+      {/* 섹션 1: 내일배움카드 */}
       <H2>내일배움카드로 훈련비를 얼마나 지원받을 수 있나요?</H2>
       <SectionBadge>훈련 자격 체크</SectionBadge>
 
@@ -151,7 +151,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 신청 방법과 절차 */}
+      {/* 섹션 2: 신청 방법과 절차 */}
       <H2>내일배움카드 신청 조건과 절차, 어떻게 되나요?</H2>
 
       <p style={body}>
@@ -183,7 +183,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 훈련연장급여 */}
+      {/* 섹션 3: 훈련연장급여 */}
       <H2>실업급여 수급 중 훈련연장급여 조건</H2>
       <SectionBadge>훈련연장급여 체크리스트</SectionBadge>
 
@@ -207,7 +207,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 훈련 중 받을 수 있는 금액 */}
+      {/* 섹션 4: 훈련 중 받을 수 있는 금액 */}
       <H2>내일배움카드 훈련 기간에 받을 수 있는 금액</H2>
 
       <p style={body}>
@@ -234,7 +234,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 실전 전략 */}
+      {/* 섹션 5: 실전 전략 */}
       <H2>내일배움카드 신청부터 훈련까지 이렇게 활용하세요</H2>
 
       <p style={body}>

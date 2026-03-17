@@ -97,15 +97,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로기준법 제76조의2 — 직장 내 괴롭힘의 금지", url: "https://www.law.go.kr/법령/근로기준법" },
-      { label: "근로기준법 제76조의3 — 직장 내 괴롭힘 발생 시 조치", url: "https://www.law.go.kr/법령/근로기준법" },
-      { label: "고용보험법 제58조 — 이직 사유에 따른 수급자격의 제한", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "근로기준법 제76조의2: 직장 내 괴롭힘의 금지", url: "https://www.law.go.kr/법령/근로기준법" },
+      { label: "근로기준법 제76조의3: 직장 내 괴롭힘 발생 시 조치", url: "https://www.law.go.kr/법령/근로기준법" },
+      { label: "고용보험법 제58조: 이직 사유에 따른 수급자격의 제한", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 안내", url: "https://www.ei.go.kr" },
+      { label: "고용24: 실업급여 안내", url: "https://www.ei.go.kr" },
       { label: "고용노동부 직장 내 괴롭힘 신고센터 (1350)", url: "https://1350.moel.go.kr" },
     ],
   },
@@ -151,7 +151,7 @@ export default function Page() {
 
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
         상사한테 매일 모욕당하고, 동료한테 따돌림당하고.<br />
-        더 버틸 수 없어서 나왔는데 — 실업급여는 받을 수 있을까요?<br /><br />
+        더 버틸 수 없어서 나왔는데: 실업급여는 받을 수 있을까요?<br /><br />
         받을 수 있죠.{" "}
         <a href="https://www.law.go.kr/법령/근로기준법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로기준법 제76조의2</a>가 직장 내 괴롭힘을 명확히 금지하고 있고,
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}> 고용보험법 제58조</a>에 따라 비자발적 퇴사로 인정돼요.<br />
@@ -161,7 +161,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 괴롭힘과 실업급여 */}
+      {/* 섹션 1: 괴롭힘과 실업급여 */}
       <H2>괴롭힘 퇴사도 신청 절차에 들어갈 수 있나요?</H2>
       <p style={body}>
         사직서를 직접 쓴 건 맞아요. 그런데 실업급여에서 보는 건 사직서가 아니라 <strong>퇴직의 실질적 원인</strong>이에요. 괴롭힘을 견디다 못해 나온 거라면, 형식적으로 자진 퇴사여도 실질적으로는 내몰린 퇴직이죠.
@@ -192,7 +192,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 증거 종류 */}
+      {/* 섹션 2: 증거 종류 */}
       <H2>어떤 증거가 신청 절차에서 인정되나요?</H2>
       <p style={body}>
         고용센터에서 괴롭힘 퇴사를 인정받으려면 &ldquo;이런 일이 있었다&rdquo;를 보여줄 수 있는 자료가 필요해요. 가장 강력한 증거는 <strong>문서 기록</strong>이에요. 카카오톡, 이메일, 사내 메신저에서 모욕적 언행이나 부당한 지시가 담긴 대화를 캡처해 두세요. 날짜와 발신자가 보이도록 전체 화면을 찍는 게 좋아요.
@@ -223,7 +223,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 증거 수집 실전 + 체크리스트 */}
+      {/* 섹션 3: 증거 수집 실전 + 체크리스트 */}
       <H2>증거 수집 방법과 유효한 자료 목록</H2>
       <p style={body}>
         증거를 모을 때 가장 중요한 건 <strong>퇴사 전에 끝내야 한다</strong>는 거예요. 회사를 나오면 사내 시스템 접근이 차단되죠. 사내 메신저 대화, 이메일, 내부 게시판 기록은 퇴사 전에 개인 이메일이나 클라우드로 백업해두세요. 회사 컴퓨터에만 저장하면 소용없어요.
@@ -244,7 +244,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 신청 절차 */}
+      {/* 섹션 4: 신청 절차 */}
       <H2>신청 절차와 고용센터 심사 과정</H2>
       <p style={body}>
         퇴사 후 가장 먼저 할 일은 <a href="https://www.worknet.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>워크넷</a>에서 구직등록을 하는 거예요. 그다음 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 수급자격 신청자 온라인 교육을 수료하세요. 여기까지는 일반 실업급여와 같아요. 괴롭힘 퇴사가 다른 점은 고용센터 방문 때 <strong>증거 자료를 추가로 제출</strong>해야 한다는 거죠.
@@ -265,7 +265,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 거부 시 이의신청 */}
+      {/* 섹션 5: 거부 시 이의신청 */}
       <H2>증거 수집 후 거부당하면 이의신청하세요</H2>
       <p style={body}>
         증거를 모아서 제출했는데도 고용센터에서 괴롭힘을 인정하지 않는 경우가 있죠. 이때 바로 포기하면 안 돼요. <a href="/w/실업급여-이의신청" style={{ color: "#1D9E75", textDecoration: "underline" }}>심사청구</a>를 처분을 안 날로부터 90일 이내에 고용보험심사관에게 제출하면 다시 판단을 받을 수 있죠.
@@ -274,7 +274,7 @@ export default function Page() {
         심사청구에서도 기각되면 <strong>재심사청구</strong>를 30일 이내에 고용보험심사위원회에 할 수 있죠. 그래도 안 되면 행정소송까지 갈 수 있고요. 괴롭힘 사건은 사실관계가 복잡해서 첫 심사에서 부정적이더라도, 추가 증거를 보강하면 결과가 뒤집히는 사례가 꽤 되거든요.
       </p>
       <p style={body}>
-        이의신청 단계에서 유리한 전략이 하나 있죠. 실업급여와 별도로 고용노동부(1350)에 <strong>직장 내 괴롭힘 진정</strong>을 함께 넣는 거예요. 진정이 받아들여지면 그 결과가 실업급여 재심사에서 강력한 근거가 되죠. 노동청 진정, 실업급여 이의신청, 민사 손해배상 — 세 가지를 동시에 진행할 수 있으니 포기하지 마세요.
+        이의신청 단계에서 유리한 전략이 하나 있죠. 실업급여와 별도로 고용노동부(1350)에 <strong>직장 내 괴롭힘 진정</strong>을 함께 넣는 거예요. 진정이 받아들여지면 그 결과가 실업급여 재심사에서 강력한 근거가 되죠. 노동청 진정, 실업급여 이의신청, 민사 손해배상: 세 가지를 동시에 진행할 수 있으니 포기하지 마세요.
       </p>
 
       <Divider />

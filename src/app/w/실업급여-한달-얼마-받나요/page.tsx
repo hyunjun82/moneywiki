@@ -103,15 +103,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 구직급여 지급 기준 (상한액·하한액)", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행령 — 소정급여일수 산정표", url: "https://www.law.go.kr/법령/고용보험법시행령" },
+      { label: "고용보험법: 구직급여 지급 기준 (상한액·하한액)", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행령: 소정급여일수 산정표", url: "https://www.law.go.kr/법령/고용보험법시행령" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 모의계산", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 고용보험 제도 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 모의계산", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 고용보험 제도 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -150,13 +150,13 @@ export default function Page() {
       {/* breadcrumb */}
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>실업급여 · 고용보험 · 월수급액</p>
 
-      {/* h1 — 2줄 */}
+      {/* h1: 2줄 */}
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
         실업급여 한 달에 얼마 받을까?<br />
         2026년 월 수령액과 상·하한
       </h1>
 
-      {/* intro — 숫자 + 법령 */}
+      {/* intro: 숫자 + 법령 */}
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
         &ldquo;퇴사하면 한달에 얼마나 나올까?&rdquo; 이게 제일 궁금하죠.<br />
         2026년 기준 실업급여는 <strong>한달 최대 약 204만원</strong>이에요.<br /><br />
@@ -168,7 +168,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 한달 금액 핵심 + GreenBox + SectionBadge + EligibilityChecker */}
+      {/* 섹션 1: 한달 금액 핵심 + GreenBox + SectionBadge + EligibilityChecker */}
       <H2>2026년 월 수령액, 상·하한 핵심은 얼마일까?</H2>
       <p style={body}>
         바로 답부터 드릴게요. <strong>월 198만~204만원</strong>이에요. 실업급여는 1일 단위로 계산하는데, 2026년 기준 <strong>1일 상한액이 68,100원</strong>이에요. 30일을 곱하면 68,100원 x 30일 = <strong>월 2,043,000원</strong>이 나오죠.
@@ -195,7 +195,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 월급별 예상 금액 + BorderBox + Calculator */}
+      {/* 섹션 2: 월급별 예상 금액 + BorderBox + Calculator */}
       <H2>내 월급 기준 월 수령액은 얼마가 될까?</H2>
       <p style={body}>
         실업급여 기본 공식은 퇴직 전 3개월 <a href="/w/실업급여-평균임금-계산" style={{ color: "#1D9E75", textDecoration: "underline" }}>평균임금</a>의 60%예요. 그런데 여기에 상한액·하한액이라는 천장과 바닥이 걸리면서 실제 금액이 정해지죠. 월급이 낮아도 하한액이 받쳐주고, 월급이 높아도 상한액이 잘라내요.
@@ -229,7 +229,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 실제 수령액이 다른 이유 + SectionBadge + Checklist */}
+      {/* 섹션 3: 실제 수령액이 다른 이유 + SectionBadge + Checklist */}
       <H2>실제 통장에 찍히는 월 수령액이 달라지는 이유</H2>
       <p style={body}>
         위에서 말한 월 198만~204만원은 <strong>30일 기준 이론치</strong>예요. 실제로 통장에 찍히는 금액은 조금 다를 수 있죠. 이유를 알아야 당황하지 않아요.
@@ -238,7 +238,7 @@ export default function Page() {
         첫 번째 이유는 <strong>대기기간 7일</strong>이에요. 실업급여를 처음 신청하면 7일 동안은 급여가 안 나와요. 첫 달 수령액은 23일분만 계산되니까, 상한액 기준으로 68,100원 x 23일 = 약 <strong>156만원</strong> 정도가 첫 달 금액이에요. 두 번째 달부터 정상 금액이 나오죠.
       </p>
       <p style={body}>
-        두 번째 이유는 <strong>실업인정</strong> 제도예요. 1~4주마다 고용센터에 출석하거나 온라인으로 실업인정을 받아야 해요. 구직활동을 빠뜨려서 실업인정이 안 되면 그 기간만큼 급여가 줄어들죠. 대신 좋은 소식도 있죠 — 실업급여는 <strong>비과세</strong>예요. 소득세, 건강보험료 같은 공제 항목이 없어서 지급액 그대로 입금돼요.
+        두 번째 이유는 <strong>실업인정</strong> 제도예요. 1~4주마다 고용센터에 출석하거나 온라인으로 실업인정을 받아야 해요. 구직활동을 빠뜨려서 실업인정이 안 되면 그 기간만큼 급여가 줄어들죠. 대신 좋은 소식도 있죠: 실업급여는 <strong>비과세</strong>예요. 소득세, 건강보험료 같은 공제 항목이 없어서 지급액 그대로 입금돼요.
       </p>
 
       <SectionBadge>실업급여 신청 전 확인사항</SectionBadge>
@@ -246,7 +246,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 총 수급 금액 */}
+      {/* 섹션 4: 총 수급 금액 */}
       <H2>상·하한 적용 후 총 수령액 비교</H2>
       <p style={body}>
         한달 금액도 중요하지만 <a href="/w/실업급여-수급기간-몇개월-받나요" style={{ color: "#1D9E75", textDecoration: "underline" }}>총 수급 기간</a>이 진짜 변수예요. 같은 204만원이라도 4개월 받느냐 8개월 받느냐에 따라 총액이 두 배로 달라지니까요. <a href="https://www.law.go.kr/법령/고용보험법시행령" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 시행령</a>에 따라 피보험기간과 나이에 따라 120일~270일까지 받을 수 있죠.
@@ -267,7 +267,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 더 많이 받는 방법 */}
+      {/* 섹션 5: 더 많이 받는 방법 */}
       <H2>월 수령액을 최대한 오래 받으려면 이렇게 하세요</H2>
       <p style={body}>
         실업급여 금액 자체는 상한액·하한액에 막혀 있어서 늘리기가 어려워요. 진짜 전략은 <strong>수급 기간을 최대한 확보</strong>하는 거예요. 같은 204만원이라도 4개월 받으면 약 817만원, 8개월 받으면 약 1,634만원이에요. 기간 하나로 두 배 차이가 나죠.
@@ -281,7 +281,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* FAQ — 5개 */}
+      {/* FAQ: 5개 */}
       <H2>자주 묻는 것들</H2>
       <p style={{ ...body, marginBottom: 14 }}>
         실업급여 월 수급액에 대해 실제로 많이 물어보시는 내용만 골랐어요.

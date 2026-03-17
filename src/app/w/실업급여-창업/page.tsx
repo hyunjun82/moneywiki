@@ -52,7 +52,7 @@ const CHECKLIST = [
   "소정급여일수의 절반 이상 남은 시점에 사업자등록",
   "등록 즉시 고용센터에 취업 신고 (1350 또는 고용24)",
   "12개월 이상 사업 영위 후 조기재취업수당 신청",
-  "폐업 시 조기재취업수당 자격 상실 — 12개월 반드시 채울 것",
+  "폐업 시 조기재취업수당 자격 상실: 12개월 반드시 채울 것",
 ];
 
 const FAQS = [
@@ -82,15 +82,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제64조 — 조기재취업수당 요건", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 제62조 — 부정수급 제재", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 제64조: 조기재취업수당 요건", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 제62조: 부정수급 제재", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 수급자격자 창업 안내", url: "https://www.ei.go.kr" },
-      { label: "고용센터 — 조기재취업수당 신청", url: "https://www.ei.go.kr" },
+      { label: "고용24: 수급자격자 창업 안내", url: "https://www.ei.go.kr" },
+      { label: "고용센터: 조기재취업수당 신청", url: "https://www.ei.go.kr" },
     ],
   },
 ];
@@ -149,13 +149,13 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 창업 준비 vs 사업자등록 */}
+      {/* 섹션 1: 창업 준비 vs 사업자등록 */}
       <H2>사업자등록 전이면 수급 조건에 문제없나요?</H2>
       <p style={body}>
         문제없어요. <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>이 수급 중단 사유로 보는 건 &quot;취업&quot; 또는 &quot;자영업 개시&quot;예요. 시장조사를 하거나, 사업 계획을 세우거나, 자금을 모으는 건 개시가 아니죠. 이 기간에는 실업급여를 받으면서 마음 놓고 준비할 수 있죠.
       </p>
       <p style={body}>
-        그럼 어디까지가 &quot;준비&quot;이고, 어디부터가 &quot;개시&quot;일까요? 기준이 세 가지예요. 사업자등록을 하거나, 실질적으로 영업을 시작하거나, 소득이 발생하는 순간 — 이 셋 중 <strong>가장 이른 시점</strong>이 수급 중단일이에요. 등록 없이 시험 판매를 했더라도, 매출이 생긴 그날부터 취업으로 잡히죠.
+        그럼 어디까지가 &quot;준비&quot;이고, 어디부터가 &quot;개시&quot;일까요? 기준이 세 가지예요. 사업자등록을 하거나, 실질적으로 영업을 시작하거나, 소득이 발생하는 순간: 이 셋 중 <strong>가장 이른 시점</strong>이 수급 중단일이에요. 등록 없이 시험 판매를 했더라도, 매출이 생긴 그날부터 취업으로 잡히죠.
       </p>
       <p style={body}>
         가장 흔한 실수가 &quot;등록만 안 하면 괜찮겠지&quot;라는 판단이에요. <a href="/w/프리랜서-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>프리랜서</a> 프로젝트를 맡거나 현금 거래를 해도, 소득이 발생했으면 그날부터 신고 대상이죠. 국세청 소득 자료와 고용보험 시스템이 연동돼서 나중에 적발되죠.
@@ -176,10 +176,10 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 사업자등록 후 수급 중단 */}
+      {/* 섹션 2: 사업자등록 후 수급 중단 */}
       <H2>사업자등록 후 수급은 어떻게 바뀌나요?</H2>
       <p style={body}>
-        등록일부터 바로 수급이 멈춰요. 매출이 0원이어도 상관없죠. 사업자등록 자체가 취업 간주 사유이기 때문이에요. 등록한 날 고용센터에 취업 신고를 해야 하고, 방법은 간단해요 — <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 온라인으로 하거나, 1350에 전화하면 돼요.
+        등록일부터 바로 수급이 멈춰요. 매출이 0원이어도 상관없죠. 사업자등록 자체가 취업 간주 사유이기 때문이에요. 등록한 날 고용센터에 취업 신고를 해야 하고, 방법은 간단해요: <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 온라인으로 하거나, 1350에 전화하면 돼요.
       </p>
       <p style={body}>
         취업 신고를 안 하고 수급을 이어가면 부정수급이에요. <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 제62조</a>에 따라 받은 실업급여 전액 반환에 <strong>최대 5배 추가 징수</strong>까지 붙어요. 형사처벌 대상이기도 하죠. 사업자등록 날짜는 국세청과 자동 연동되니까, 숨기는 건 불가능해요.
@@ -189,9 +189,9 @@ export default function Page() {
       </p>
 
       <BorderBox title="수급 중단 시점 3가지">
-        1. <strong>사업자등록일</strong> — 관할 세무서에 등록한 날<br />
-        2. <strong>실질적 영업 시작일</strong> — 등록 없이 영업을 시작한 날<br />
-        3. <strong>소득 발생일</strong> — 창업 관련 수입이 생긴 날<br /><br />
+        1. <strong>사업자등록일</strong>: 관할 세무서에 등록한 날<br />
+        2. <strong>실질적 영업 시작일</strong>: 등록 없이 영업을 시작한 날<br />
+        3. <strong>소득 발생일</strong>: 창업 관련 수입이 생긴 날<br /><br />
         세 가지 중 가장 이른 날이 수급 중단일이에요.
       </BorderBox>
 
@@ -202,7 +202,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 조기재취업수당 */}
+      {/* 섹션 3: 조기재취업수당 */}
       <H2>사업자등록 후 받을 수 있는 조기재취업수당</H2>
       <p style={body}>
         자영업 창업도 조기재취업수당 대상이에요. <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 제64조</a>가 재취업뿐 아니라 창업까지 명시하고 있고요. 다만 조건이 두 가지 붙어요. 하나라도 빠지면 수당을 못 받으니 꼼꼼히 봐야 하죠.
@@ -228,7 +228,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 부정수급 주의사항 */}
+      {/* 섹션 4: 부정수급 주의사항 */}
       <H2>수급 조건 위반으로 부정수급이 되는 경우</H2>
       <p style={body}>
         가장 흔한 케이스가 사업자등록을 해놓고 취업 신고를 안 하는 거예요. &quot;아직 매출이 없는데 뭘 신고해&quot;라고 생각하기 쉽지만, 등록 자체가 취업 간주 사유죠. 매출 0원이어도 등록일부터 수급 자격이 사라져요.
@@ -249,7 +249,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 실전 체크리스트 */}
+      {/* 섹션 5: 실전 체크리스트 */}
       <H2>사업자등록 전 이 순서대로 준비하세요</H2>
       <p style={body}>
         전부 타이밍 문제예요. 창업 준비 기간을 최대한 활용하면서, 소정급여일수의 절반 이상이 남은 시점에 딱 맞춰 등록하는 게 가장 유리하죠. 아래 순서를 따르면 실업급여와 조기재취업수당을 둘 다 놓치지 않아요.
@@ -262,7 +262,7 @@ export default function Page() {
         조기재취업수당 신청은 사업자등록 후 12개월이 지나야 가능해요. 12개월간 사업을 유지했다는 증빙(매출 내역, 세금 신고 자료 등)을 함께 내야 하죠. <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 온라인으로 접수할 수 있죠.
       </p>
       <p style={body}>
-        한 가지 더 — 실업급여를 신청하기 전부터 준비하던 사업이면 <a href="/w/실업급여-취업촉진수당" style={{ color: "#1D9E75", textDecoration: "underline" }}>조기재취업수당</a> 대상에서 빠질 수 있죠. 수급이 시작된 이후에 창업을 결심한 경우에만 해당되고요. 이전부터 준비 중이었다면 고용센터(1350)에 먼저 상담하는 게 안전해요.
+        한 가지 더: 실업급여를 신청하기 전부터 준비하던 사업이면 <a href="/w/실업급여-취업촉진수당" style={{ color: "#1D9E75", textDecoration: "underline" }}>조기재취업수당</a> 대상에서 빠질 수 있죠. 수급이 시작된 이후에 창업을 결심한 경우에만 해당되고요. 이전부터 준비 중이었다면 고용센터(1350)에 먼저 상담하는 게 안전해요.
       </p>
 
       <Divider />

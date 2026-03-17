@@ -87,15 +87,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 피보험기간 산정 기준", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행령 — 소정급여일수 산정표", url: "https://www.law.go.kr/법령/고용보험법시행령" },
+      { label: "고용보험법: 피보험기간 산정 기준", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행령: 소정급여일수 산정표", url: "https://www.law.go.kr/법령/고용보험법시행령" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 피보험자격 이력 조회", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 실업급여 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 피보험자격 이력 조회", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 실업급여 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -134,13 +134,13 @@ export default function Page() {
       {/* breadcrumb */}
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>실업급여 · 고용보험 · 피보험기간</p>
 
-      {/* h1 — 2줄 */}
+      {/* h1: 2줄 */}
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
         피보험기간 180일, 어떻게 채울까?<br />
         직장 합산과 계산 방법
       </h1>
 
-      {/* intro — 숫자 + 법령 */}
+      {/* intro: 숫자 + 법령 */}
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
         &quot;피보험기간이 뭐예요? 실업급여 서류마다 피보험기간이 나오는데 뭘 말하는 건지 모르겠어요.&quot;
       </p>
@@ -150,14 +150,14 @@ export default function Page() {
         그리고 이 기간이 길수록 실업급여를 오래 받죠. <strong>1년 미만이면 120일, 10년 이상이면 최대 270일</strong>까지 나와요.
       </p>
       <p style={body}>
-        내 피보험기간이 얼마인지, 이전 직장이랑 합산이 되는지, 그래서 소정급여일수가 몇 일인지 — 이걸 알아야 실업급여 전략을 세울 수 있죠.
+        내 피보험기간이 얼마인지, 이전 직장이랑 합산이 되는지, 그래서 소정급여일수가 몇 일인지: 이걸 알아야 실업급여 전략을 세울 수 있죠.
         아래에 전부 정리해뒀으니까 하나씩 따라가 보세요.
       </p>
 
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 피보험기간이란 + GreenBox + EligibilityChecker */}
+      {/* 섹션 1: 피보험기간이란 + GreenBox + EligibilityChecker */}
       <H2>피보험기간이 뭐고, 계산 방법이 왜 중요한가요?</H2>
       <p style={body}>
         피보험기간은 고용보험 피보험자격을 유지한 기간이에요.
@@ -180,9 +180,9 @@ export default function Page() {
       </p>
 
       <GreenBox title="피보험기간이 결정하는 것">
-        <p style={{ margin: "0 0 4px" }}>1. <strong>수급자격</strong> — 피보험단위기간 180일 이상이어야 신청 가능</p>
-        <p style={{ margin: "0 0 4px" }}>2. <strong>소정급여일수</strong> — 기간이 길수록 오래 받음 (120~270일)</p>
-        <p style={{ margin: 0 }}>3. <strong>합산</strong> — 여러 직장 피보험기간을 합쳐서 계산할 수 있음</p>
+        <p style={{ margin: "0 0 4px" }}>1. <strong>수급자격</strong>: 피보험단위기간 180일 이상이어야 신청 가능</p>
+        <p style={{ margin: "0 0 4px" }}>2. <strong>소정급여일수</strong>: 기간이 길수록 오래 받음 (120~270일)</p>
+        <p style={{ margin: 0 }}>3. <strong>합산</strong>: 여러 직장 피보험기간을 합쳐서 계산할 수 있음</p>
       </GreenBox>
 
       <SectionBadge>내 수급자격 체크해 보세요</SectionBadge>
@@ -194,7 +194,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 계산 방법 + 합산 조건 + Calculator */}
+      {/* 섹션 2: 계산 방법 + 합산 조건 + Calculator */}
       <H2>직장 합산 조건은 어떻게 되나요?</H2>
       <p style={body}>
         기본 계산 자체는 단순해요. <strong>피보험자격 취득일(입사일)부터 상실일(퇴사일)</strong>까지가 한 직장의 피보험기간이에요.
@@ -236,7 +236,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 소정급여일수표 + SectionBadge + Checklist */}
+      {/* 섹션 3: 소정급여일수표 + SectionBadge + Checklist */}
       <H2>피보험기간별 소정급여일수 계산 방법</H2>
       <p style={body}>
         피보험기간이 정해지면 그 다음은 소정급여일수예요. 나이(50세 기준)와 피보험기간 조합으로 결정되죠.
@@ -286,7 +286,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 포함/제외 항목 */}
+      {/* 섹션 4: 포함/제외 항목 */}
       <H2>피보험기간 계산에 포함되는 것과 제외되는 것</H2>
       <p style={body}>
         재직 기간이 전부 피보험기간이 되는 건 아니에요.
@@ -296,7 +296,7 @@ export default function Page() {
       </p>
       <p style={body}>
         반대로 <a href="/w/무급휴무일-180일-미달" style={{ color: "#1D9E75", textDecoration: "underline" }}>무급휴직</a>은 빠져요. 고용보험료 자체를 안 내는 기간이니까요.
-        <strong>이직 후 구직 기간</strong>도 마찬가지예요 — 어떤 회사에도 소속돼 있지 않으면 피보험기간에 잡히지 않죠.
+        <strong>이직 후 구직 기간</strong>도 마찬가지예요: 어떤 회사에도 소속돼 있지 않으면 피보험기간에 잡히지 않죠.
         이 공백이 1년을 넘기면 이전 직장 합산까지 끊기니까 주의가 필요해요.
       </p>
       <p style={body}>
@@ -312,7 +312,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 실전 팁 */}
+      {/* 섹션 5: 실전 팁 */}
       <H2>직장 합산으로 피보험기간을 유리하게 관리하세요</H2>
       <p style={body}>
         피보험기간을 늘리는 가장 확실한 방법은 <strong>오래 일하는 것</strong>이에요.
@@ -321,7 +321,7 @@ export default function Page() {
       </p>
       <p style={body}>
         주의할 건 <strong>직장 사이 공백 기간</strong>이에요. 1년 넘게 쉬면 이전 피보험기간이 합산에서 빠져요.
-        퇴사하고 이직까지 시간이 걸릴 것 같다면 선택을 해야 하죠 — 실업급여를 받고 기간을 리셋할 건지, 합산을 위해 빠르게 재취업할 건지.
+        퇴사하고 이직까지 시간이 걸릴 것 같다면 선택을 해야 하죠: 실업급여를 받고 기간을 리셋할 건지, 합산을 위해 빠르게 재취업할 건지.
         두 가지를 동시에 가져갈 순 없으니까 본인 상황에 맞게 판단해야 해요.
       </p>
       <p style={body}>
@@ -332,7 +332,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* FAQ — 5개 */}
+      {/* FAQ: 5개 */}
       <H2>자주 묻는 것들</H2>
       <p style={{ ...body, marginBottom: 14 }}>
         피보험기간 계산이랑 합산을 놓고 가장 자주 들어오는 질문이에요.

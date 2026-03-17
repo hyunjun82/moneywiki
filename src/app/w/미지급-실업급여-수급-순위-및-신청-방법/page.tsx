@@ -51,15 +51,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제59조 — 미지급 구직급여", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 제59조: 미지급 구직급여", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 신청 안내", url: "https://www.ei.go.kr" },
-      { label: "찾기쉬운 생활법령정보 — 미지급 실업급여", url: "https://easylaw.go.kr" },
-      { label: "정부24 — 가족관계증명서 발급", url: "https://www.gov.kr" },
+      { label: "고용24: 실업급여 신청 안내", url: "https://www.ei.go.kr" },
+      { label: "찾기쉬운 생활법령정보: 미지급 실업급여", url: "https://easylaw.go.kr" },
+      { label: "정부24: 가족관계증명서 발급", url: "https://www.gov.kr" },
     ],
   },
 ];
@@ -111,13 +111,13 @@ export default function Page() {
         다만 아무 유족이나 받을 수 있는 건 아니에요. 법이 정한 수급 순위가 있고, 소멸시효도 3년이에요. <a href="/w/실업급여-이의신청" style={{ color: "#1D9E75", textDecoration: "underline" }}>이의신청 절차</a>도 알아두면 도움이 돼요.
       </p>
       <p style={body}>
-        누가 받을 수 있는지, 서류는 뭘 준비해야 하는지, 금액은 어떻게 계산되는지 — 아래에서 하나씩 짚어볼게요.
+        누가 받을 수 있는지, 서류는 뭘 준비해야 하는지, 금액은 어떻게 계산되는지: 아래에서 하나씩 짚어볼게요.
       </p>
 
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 미지급 실업급여란 + EligibilityChecker */}
+      {/* 섹션 1: 미지급 실업급여란 + EligibilityChecker */}
       <H2>수급 순위에 해당하는 유족은 누구인가요?</H2>
       <p style={body}>
         실업급여를 받던 사람이 사망하면, 아직 지급받지 못한 급여가 남을 수 있죠. 이걸 <strong>유족이 대신 청구해서 받는 제도</strong>가 미지급 실업급여예요. 사망 전에 실업인정을 받은 기간 분만 급여로 인정되고, 사망일 이후 분은 아무리 수급일수가 남아 있어도 지급 대상이 아니에요.
@@ -138,7 +138,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 수급 순위 */}
+      {/* 섹션 2: 수급 순위 */}
       <H2>청구 기준에서 같은 순위 유족은 어떻게 나누나요?</H2>
       <p style={body}>
         법이 정한 순위가 있죠. <strong>1순위는 배우자</strong>이고, 사실혼 관계도 포함되죠. 그다음이 자녀 &rarr; 부모 &rarr; 손자녀 &rarr; 조부모 &rarr; 형제자매 순서예요. 상위 순위자가 한 명이라도 있으면 하위 순위자는 청구권을 행사할 수 없어요.
@@ -167,7 +167,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 신청 방법과 서류 + Checklist */}
+      {/* 섹션 3: 신청 방법과 서류 + Checklist */}
       <H2>청구 기준에 맞는 서류와 신청 절차</H2>
       <p style={body}>
         관할 고용센터를 직접 방문하거나 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 온라인으로 신청할 수 있죠. <strong>미지급 급여 청구서</strong>를 작성하고, 사망 사실과 유족 관계를 증명하는 서류를 함께 내면 되죠.
@@ -192,7 +192,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 소멸시효와 금액 */}
+      {/* 섹션 4: 소멸시효와 금액 */}
       <H2>수급 순위별 소멸시효와 청구 금액</H2>
       <p style={body}>
         <strong>소멸시효는 3년</strong>이에요. 사망일로부터 3년이 지나면 청구권 자체가 소멸되죠. 2026년 1월 15일에 사망했다면 2029년 1월 14일까지가 마감이에요. 슬픔에 빠져 시기를 놓치는 분이 적지 않으니, 기한만큼은 꼭 머릿속에 넣어두세요.
@@ -206,7 +206,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 주의사항 */}
+      {/* 섹션 5: 주의사항 */}
       <H2>청구 기준에 맞춰 서류부터 준비하세요</H2>
       <p style={body}>
         가장 흔한 실수가 <strong>실업인정 기간을 착각하는 거</strong>예요. 미지급 급여는 사망 전에 실업인정이 완료된 구간에 대해서만 발생하죠. 소정급여일수가 아무리 많이 남아 있어도, 실업인정을 아직 안 받은 구간은 청구 대상이 아니에요.

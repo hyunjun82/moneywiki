@@ -82,14 +82,14 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제63조 — 상병급여", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 제63조: 상병급여", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "찾기쉬운 생활법령정보 — 상병급여", url: "https://easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=5&cnpClsNo=1" },
-      { label: "고용24 — 실업급여 안내", url: "https://www.ei.go.kr" },
+      { label: "찾기쉬운 생활법령정보: 상병급여", url: "https://easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=5&cnpClsNo=1" },
+      { label: "고용24: 실업급여 안내", url: "https://www.ei.go.kr" },
       { label: "고용노동부 고객상담센터 (1350)", url: "https://1350.moel.go.kr" },
     ],
   },
@@ -149,7 +149,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 상병급여 개념 */}
+      {/* 섹션 1: 상병급여 개념 */}
       <H2>상병급여 조건, 실업급여랑 뭐가 다른가요?</H2>
       <p style={body}>
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 제63조</a>에서 정한 특별 급여예요. 실업급여를 받는 중에 질병, 부상, 출산으로 취업이 불가능해졌을 때, 구직활동 대신 치료에 집중할 수 있도록 보호해주는 제도죠.
@@ -158,7 +158,7 @@ export default function Page() {
         일반 실업급여와 다른 점은 딱 하나예요. 실업급여는 구직활동을 해야 받고, 상병급여는 아파서 구직을 못 하는 기간에 받는 거예요. 그 외엔 같아요. 금액도 평균임금의 60% 기준이고, 2026년 기준 1일 최대 68,100원, 최소 66,048원이에요.
       </p>
       <p style={body}>
-        쉽게 말하면 실업급여의 &quot;병가 버전&quot;이에요. 아프다고 급여가 끊기는 게 아니라, 아픈 기간만큼 이름만 바뀌어서 계속 나오는 구조죠. 단, 아무 병이나 다 되는 건 아니에요 — 14일 이상 취업이 불가능해야 하고, 완치 후 14일 이내에 신청해야 해요. <a href="/w/실업급여-질병-부상" style={{ color: "#1D9E75", textDecoration: "underline" }}>질병·부상 시 전환 절차</a>를 먼저 파악해두면 좋아요.
+        쉽게 말하면 실업급여의 &quot;병가 버전&quot;이에요. 아프다고 급여가 끊기는 게 아니라, 아픈 기간만큼 이름만 바뀌어서 계속 나오는 구조죠. 단, 아무 병이나 다 되는 건 아니에요: 14일 이상 취업이 불가능해야 하고, 완치 후 14일 이내에 신청해야 해요. <a href="/w/실업급여-질병-부상" style={{ color: "#1D9E75", textDecoration: "underline" }}>질병·부상 시 전환 절차</a>를 먼저 파악해두면 좋아요.
       </p>
       <p style={body}>
         구직활동 의무가 면제된다는 것도 큰 장점이에요. 4주마다 실업인정 받으러 고용센터에 갈 필요가 없죠. 치료에만 집중하고, 나은 다음에 다시 구직활동을 시작하면 돼요.
@@ -172,7 +172,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 신청 조건 */}
+      {/* 섹션 2: 신청 조건 */}
       <H2>상병급여 조건 4가지를 충족하면 누가 받나요?</H2>
       <p style={body}>
         &quot;그냥 아프다고 하면 되나요?&quot; 그건 아니에요. 네 가지 조건을 전부 갖춰야 하고, 의료 증빙과 시간 제한이 붙어요. 하나라도 빠지면 신청 자체가 안 되죠.
@@ -202,13 +202,13 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 필요 서류 */}
+      {/* 섹션 3: 필요 서류 */}
       <H2>상병급여 금액 계산법과 필요 서류</H2>
       <p style={body}>
         금액부터 짚고 가면, 계산할 게 없어요. 본인이 받던 구직급여와 완전히 같은 금액이 나오거든요. 이직 전 평균임금의 60%가 기본이고, 2026년 기준 1일 상한액 68,100원, 하한액 66,048원이에요. 아프다고 금액이 깎이는 일은 없죠.
       </p>
       <p style={body}>
-        서류 준비의 핵심은 진단서예요. 병원에서 &quot;상병급여 신청용 진단서가 필요하다&quot;고 말하세요. 진단서에 반드시 들어가야 하는 내용이 세 가지 — 병명, 진료 기간, &quot;이 기간 동안 취업이 불가능하다&quot;는 의사 소견이에요.
+        서류 준비의 핵심은 진단서예요. 병원에서 &quot;상병급여 신청용 진단서가 필요하다&quot;고 말하세요. 진단서에 반드시 들어가야 하는 내용이 세 가지: 병명, 진료 기간, &quot;이 기간 동안 취업이 불가능하다&quot;는 의사 소견이에요.
       </p>
       <p style={body}>
         &quot;척추 수술로 4주 절대 안정 필요&quot;처럼 구체적일수록 승인이 빨라요. 반면 &quot;감기 증상이 있다&quot; 같은 모호한 표현은 인정이 안 될 수 있죠. 발급비는 보통 무료~5천원이고, 대부분 당일 발급이 가능해요.
@@ -223,7 +223,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 신청 절차 */}
+      {/* 섹션 4: 신청 절차 */}
       <H2>상병급여 조건에 맞는 신청 절차</H2>
       <p style={body}>
         가장 빠른 방법은 온라인이에요. <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24(ei.go.kr)</a>에 로그인해서 상병급여 메뉴를 찾으면 돼요. 입원 중이라 바깥에 나갈 수 없을 때 특히 편리하죠.
@@ -241,7 +241,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 주의사항 체크리스트 */}
+      {/* 섹션 5: 주의사항 체크리스트 */}
       <H2>금액 계산 전에 이 체크리스트부터 챙기세요</H2>
       <p style={body}>
         상병급여 신청에서 가장 흔한 실수가 <strong>14일 기한 초과</strong>예요. 완치됐는데 &quot;좀 쉬고 가야지&quot; 하다가 2주가 훌쩍 넘어가는 거죠. 기한을 넘기면 해당 기간의 상병급여를 아예 청구할 수 없어요.

@@ -51,15 +51,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 실업급여 수급자격 요건", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "국민기초생활보장법 — 소득인정액 산정 및 신고의무", url: "https://www.law.go.kr/법령/국민기초생활보장법" },
+      { label: "고용보험법: 실업급여 수급자격 요건", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "국민기초생활보장법: 소득인정액 산정 및 신고의무", url: "https://www.law.go.kr/법령/국민기초생활보장법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 신청·수급 내역 확인", url: "https://www.ei.go.kr" },
-      { label: "복지로 — 기초생활보장 소득 변동 신고", url: "https://www.bokjiro.go.kr" },
+      { label: "고용24: 실업급여 신청·수급 내역 확인", url: "https://www.ei.go.kr" },
+      { label: "복지로: 기초생활보장 소득 변동 신고", url: "https://www.bokjiro.go.kr" },
     ],
   },
 ];
@@ -114,7 +114,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 두 제도는 별개 */}
+      {/* 섹션 1: 두 제도는 별개 */}
       <H2>수급 기준이 기초수급자라서 달라지나요?</H2>
       <p style={body}>
         결론부터 말하면, <strong>달라지지 않아요</strong>. 기초생활보장제도는{" "}
@@ -145,7 +145,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 생계급여 중복 */}
+      {/* 섹션 2: 생계급여 중복 */}
       <H2>생계급여 중복 수급은 가능한가요?</H2>
       <p style={body}>
         <strong>동시에 받을 수 있지만, 생계급여가 조정돼요.</strong>{" "}
@@ -173,7 +173,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 신고 의무 */}
+      {/* 섹션 3: 신고 의무 */}
       <H2>생계급여 중복 시 주민센터 신고 의무</H2>
       <p style={body}>
         <strong>반드시 신고해야 해요.</strong>{" "}
@@ -200,7 +200,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 의료급여 등 다른 급여 영향 */}
+      {/* 섹션 4: 의료급여 등 다른 급여 영향 */}
       <H2>수급 기준 변화에 따른 의료급여 영향</H2>
       <p style={body}>
         <strong>영향이 생길 수 있어요.</strong> 실업급여로 소득인정액이 올라가면 생계급여뿐 아니라 의료급여, 주거급여 자격에도 변화가 생기죠.
@@ -222,7 +222,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 실업급여 끝난 후 */}
+      {/* 섹션 5: 실업급여 끝난 후 */}
       <H2>생계급여 복원을 위해 수급 종료 후 바로 신고하세요</H2>
       <p style={body}>
         실업급여 수급이 끝나면 소득이 줄어든 거니까, <strong>주민센터에 다시 신고</strong>해야 해요. 신고하면 생계급여가 원래 금액으로 복원되죠. 자동 복원이 아니라 본인이 직접 알려야 한다는 게 핵심이에요.

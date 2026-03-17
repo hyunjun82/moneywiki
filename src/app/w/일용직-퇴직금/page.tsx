@@ -71,10 +71,10 @@ const STEPS = [
 
 const CHECKLIST = [
   "주 15시간 기준 충족 여부 계산",
-  "통장 입금 내역 보관 — 급여 증빙",
-  "근무일 기록 — 문자·카카오톡 등",
-  "1년 근속 계산 — 동일 사업장 기준",
-  "소멸시효 — 퇴직 후 3년 내 청구",
+  "통장 입금 내역 보관: 급여 증빙",
+  "근무일 기록: 문자·카카오톡 등",
+  "1년 근속 계산: 동일 사업장 기준",
+  "소멸시효: 퇴직 후 3년 내 청구",
 ];
 
 const FAQS = [
@@ -104,7 +104,7 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로기준법 제2조 — 근로자 정의", url: "https://www.law.go.kr/법령/근로기준법" },
+      { label: "근로기준법 제2조: 근로자 정의", url: "https://www.law.go.kr/법령/근로기준법" },
       { label: "근로자퇴직급여보장법 제4조", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
     ],
   },
@@ -151,7 +151,7 @@ export default function Page() {
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
         일당으로 급여를 받는 일용직이라도 퇴직금을 받을 수 있어요.
         <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여 보장법</a>은 일용직이라고 예외를 두지 않아요.
-        핵심은 같은 사업주 아래서 <strong>1년 이상, 주 15시간 이상</strong> 일했느냐예요.
+        핵심은 같은 사업주 아래서 1년 이상, 주 15시간 이상 일했느냐예요.
         건설 일용직이라면 <a href="/w/건설근로자-퇴직금" style={{ color: "#1D9E75", textDecoration: "underline" }}>건설근로자공제회 퇴직공제금</a>도 별도로 받을 수 있죠.
         조건 체크부터 증빙 준비, 신고 방법까지 정리했어요.
       </p>
@@ -161,7 +161,7 @@ export default function Page() {
 
       <H2>일용직도 퇴직금을 받을 수 있는 조건</H2>
       <p style={body}>
-        조건은 두 가지예요. 같은 사업주 아래서 <strong>1년 이상 계속 근로</strong>하고, <strong>4주 평균 주 15시간 이상</strong> 일하면 퇴직금이 발생해요.
+        조건은 두 가지예요. 같은 사업주 아래서 1년 이상 계속 근로하고, 4주 평균 주 15시간 이상 일하면 퇴직금이 발생해요.
         매일 출근하지 않아도 같은 고용주에게 반복적으로 불려서 일했다면 계속 근로로 인정될 가능성이 높아요.
       </p>
       <p style={body}>
@@ -170,9 +170,9 @@ export default function Page() {
       </p>
 
       <GreenBox title="일용직 퇴직금 핵심 조건">
-        1. <strong>1년 이상</strong> 같은 사업주 아래 계속 근로<br />
-        2. 4주 평균 <strong>주 15시간 이상</strong> 근무<br />
-        3. 4대보험 미가입이어도 <strong>근무 사실 증빙</strong>으로 청구 가능
+        1년 이상 같은 사업주 아래 계속 근로<br />
+        4주 평균 주 15시간 이상 근무<br />
+        4대보험 미가입이어도 근무 사실 증빙으로 청구 가능
       </GreenBox>
 
       <SectionBadge>내 상황 체크해보세요</SectionBadge>

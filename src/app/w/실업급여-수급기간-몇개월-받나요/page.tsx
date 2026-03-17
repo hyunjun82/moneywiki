@@ -97,14 +97,14 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제48조 — 구직급여의 수급기간", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행령 — 소정급여일수 산정표", url: "https://www.law.go.kr/법령/고용보험법시행령" },
+      { label: "고용보험법 제48조: 구직급여의 수급기간", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행령: 소정급여일수 산정표", url: "https://www.law.go.kr/법령/고용보험법시행령" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 수급자격 조회", url: "https://www.ei.go.kr" },
+      { label: "고용24: 실업급여 수급자격 조회", url: "https://www.ei.go.kr" },
       { label: "고용노동부 고객상담센터 (1350)", url: "https://1350.moel.go.kr" },
     ],
   },
@@ -144,7 +144,7 @@ export default function Page() {
       {/* breadcrumb */}
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>실업급여 · 수급기간 · 소정급여일수</p>
 
-      {/* h1 — 2줄 */}
+      {/* h1: 2줄 */}
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
         실업급여 몇 개월 받을까?<br />
         나이·가입기간별 수급 기간표
@@ -158,7 +158,7 @@ export default function Page() {
         짧으면 4개월, 길면 9개월이에요. 사람마다 다르죠.
         <a href="https://www.law.go.kr/법령/고용보험법시행령" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 시행령</a>이 정한 소정급여일수가 120일에서 270일 사이예요.
         나이랑 고용보험 가입기간, 딱 이 두 가지로 결정되죠.
-        50세 이상이면 같은 가입기간이라도 30일을 더 받아요 — 한 달치 급여가 통째로 늘어나는 셈이에요.
+        50세 이상이면 같은 가입기간이라도 30일을 더 받아요: 한 달치 급여가 통째로 늘어나는 셈이에요.
       </p>
       <p style={body}>
         아래에 나이별·가입기간별 수급 기간표를 정리해뒀어요.
@@ -169,12 +169,12 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* ── 섹션 1 — 연령·가입기간별 기간표 ── */}
+      {/* ── 섹션 1: 연령·가입기간별 기간표 ── */}
       <H2>나이와 가입기간에 따라 수급 기간이 얼마나 달라지나요?</H2>
       <p style={body}>
         수급 기간을 정하는 변수는 딱 두 개예요. <strong>퇴직할 때 나이</strong>랑 <strong>고용보험 가입기간</strong>이죠.
         <a href="https://www.law.go.kr/법령/고용보험법시행령" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 시행령</a> 별표1에 산정표가 나와 있는데, 50세를 기준으로 수급기간이 확 갈려요.
-        49세에 퇴직하면 210일인데 50세에 퇴직하면 240일 — 나이 한 살 차이로 한 달치 급여가 왔다 갔다 하는 거예요.
+        49세에 퇴직하면 210일인데 50세에 퇴직하면 240일: 나이 한 살 차이로 한 달치 급여가 왔다 갔다 하는 거예요.
       </p>
 
       <div style={{ overflowX: "auto", margin: "18px 0" }}>
@@ -231,7 +231,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 2 — 계산기 + 금액 비교 ── */}
+      {/* ── 섹션 2: 계산기 + 금액 비교 ── */}
       <H2>내 수급 기간과 예상 금액은 얼마나 되나요?</H2>
       <p style={body}>
         표에서 대략적인 수급기간을 봤다면, 이번엔 계산기로 정확한 수급기간과 예상 수령액을 한 번에 뽑아보세요.
@@ -263,7 +263,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 3 — 12개월 기한과의 관계 ── */}
+      {/* ── 섹션 3: 12개월 기한과의 관계 ── */}
       <H2>수급 기간 12개월 기한이 중요한 이유</H2>
 
       <SectionBadge>수급기간 관리 체크리스트</SectionBadge>
@@ -288,7 +288,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 4 — 소정급여일수 vs 수급기간 차이 ── */}
+      {/* ── 섹션 4: 소정급여일수 vs 수급기간 차이 ── */}
       <H2>소정급여일수와 수급 기간의 차이</H2>
       <p style={body}>
         이 두 개념을 헷갈려하는 분이 정말 많아요.
@@ -332,7 +332,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 5 — 지금 당장 해야 할 것 ── */}
+      {/* ── 섹션 5: 지금 당장 해야 할 것 ── */}
       <H2>수급 기간 내 전액 받으려면 지금 움직이세요</H2>
       <p style={body}>
         퇴직했다면 가만히 있을 시간이 없어요.

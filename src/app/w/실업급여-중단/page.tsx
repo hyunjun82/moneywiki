@@ -51,15 +51,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 실업급여 수급자격 및 정지 사유", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 제62조 — 부정수급 환수 및 제재금", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법: 실업급여 수급자격 및 정지 사유", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 제62조: 부정수급 환수 및 제재금", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 신청 및 실업인정 안내", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 구직급여 지급 기준 (상담 1350)", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 신청 및 실업인정 안내", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 구직급여 지급 기준 (상담 1350)", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -119,7 +119,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 중단 사유 4가지 */}
+      {/* 섹션 1: 중단 사유 4가지 */}
       <H2>중단 사유에는 어떤 것들이 있나요?</H2>
       <SectionBadge>수급 상태 체크</SectionBadge>
 
@@ -142,10 +142,10 @@ export default function Page() {
       </p>
 
       <GreenBox title="중단 사유 4가지">
-        취업 — 정규직·계약직·알바·자영업 전부 해당<br />
-        구직활동 미이행 — 증빙 없는 실업인정 → 불인정 처리<br />
-        실업인정일 불참 — 해당 기간 급여 미지급<br />
-        해외 출국 — 출국 기간 동안 자동 정지
+        취업: 정규직·계약직·알바·자영업 전부 해당<br />
+        구직활동 미이행: 증빙 없는 실업인정 → 불인정 처리<br />
+        실업인정일 불참: 해당 기간 급여 미지급<br />
+        해외 출국: 출국 기간 동안 자동 정지
       </GreenBox>
 
       <EligibilityChecker
@@ -156,7 +156,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 불인정 vs 출국 정지 */}
+      {/* 섹션 2: 불인정 vs 출국 정지 */}
       <H2>불인정과 출국 정지, 중단 사유가 다른가요?</H2>
 
       <p style={body}>
@@ -189,7 +189,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 중단 방지 체크리스트 */}
+      {/* 섹션 3: 중단 방지 체크리스트 */}
       <H2>중단을 막는 대처 방법 5가지</H2>
       <SectionBadge>중단 방지 체크리스트</SectionBadge>
 
@@ -213,7 +213,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 취업 후 재실업 */}
+      {/* 섹션 4: 취업 후 재실업 */}
       <H2>취업 후 재실업 시 대처 방법</H2>
 
       <p style={body}>
@@ -236,7 +236,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 중단 vs 환수 차이 */}
+      {/* 섹션 5: 중단 vs 환수 차이 */}
       <H2>중단 사유와 환수를 혼동하지 마세요</H2>
 
       <p style={body}>
@@ -257,8 +257,8 @@ export default function Page() {
       </p>
 
       <GreenBox title="중단 vs 환수">
-        중단 — 급여 일시 정지, 사유 해소 시 재개 가능, 반환 의무 없음<br />
-        환수 — 부정수급 적발 시 수령액 전액 반환 + 최대 5배 추가징수
+        중단: 급여 일시 정지, 사유 해소 시 재개 가능, 반환 의무 없음<br />
+        환수: 부정수급 적발 시 수령액 전액 반환 + 최대 5배 추가징수
       </GreenBox>
 
       <Divider />

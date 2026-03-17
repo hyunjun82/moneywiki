@@ -2,46 +2,95 @@
 
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
-  EligibilityChecker, Checklist, FAQ, References, Disclaimer,
+  Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
   ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
 const CHECK_ITEMS = [
-  { id: "c1", label: "곧 퇴직 예정이고 퇴직금을 받을 통장이 필요해요" },
-  { id: "c2", label: "IRP 계좌를 아직 개설하지 않았어요" },
-  { id: "c3", label: "어떤 통장이 세금 면에서 유리한지 궁금해요" },
-  { id: "c4", label: "일시금으로 바로 쓸지 연금으로 받을지 고민 중이에요" },
+  { id: "c1", label: "퇴직 예정이고 퇴직금이 300만원을 초과할 것 같아요" },
+  { id: "c2", label: "IRP 계좌가 아직 없어요" },
+  { id: "c3", label: "퇴직금을 세금 혜택을 받으면서 수령하고 싶어요" },
+  { id: "c4", label: "퇴직 전에 미리 계좌 준비를 해두고 싶어요" },
+];
+
+const CALC_SLIDERS = [
+  { id: "severance", label: "퇴직금 예상액", min: 100, max: 10000, step: 100, defaultValue: 2000, format: (v: number) => `${v.toLocaleString()}만원` },
+  { id: "years", label: "연금 수령 기간", min: 10, max: 30, step: 1, defaultValue: 20, format: (v: number) => `${v}년` },
+];
+
+const CALC_RESULTS = [
+  {
+    label: "연금 수령 시 연간 수령액",
+    getValue: (v: Record<string, number>) => Math.round(v.severance * 10000 / v.years),
+    format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원/년`,
+    highlight: true,
+  },
+  {
+    label: "월 수령액 기준",
+    getValue: (v: Record<string, number>) => Math.round(v.severance * 10000 / v.years / 12),
+    format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원/월`,
+  },
+];
+
+const DOCS = [
+  { name: "신분증", required: true, where: "본인 지참" },
+  { name: "공동인증서 또는 간편인증", required: true, where: "앱 또는 금융인증서" },
+  { name: "기존 금융계좌 (이체용)", required: true, where: "본인 은행 계좌" },
+  { name: "재직증명서 (일부 금융사 요구)", required: false, where: "회사 인사팀 발급" },
+];
+
+const STEPS = [
+  {
+    title: "IRP 계좌 개설",
+    desc: "은행·증권사·보험사에서 IRP 계좌를 만들 수 있어요. 앱으로 신분증 촬영과 간편인증만으로 10분 이내 개설이 가능해요. 수수료가 낮은 증권사를 먼저 비교해보세요.",
+    tip: "수수료 0% 상품도 있으니 퇴직금 수령만 목적이면 활용해보세요",
+  },
+  {
+    title: "계좌번호 인사팀에 통보",
+    desc: "개설 후 계좌번호(은행명·계좌번호·예금주명)를 인사팀에 문자나 메일로 알려줘요. 이 정보가 있어야 회사가 퇴직금을 이체할 수 있어요. 퇴직 전에 미리 전달해두는 게 좋아요.",
+    tip: "문자나 메일로 전달해서 기록을 남겨두세요",
+  },
+  {
+    title: "퇴직금 입금 확인",
+    desc: "퇴직 후 14일 이내에 IRP 계좌에 입금됐는지 확인하세요. 14일이 지났는데 입금이 없으면 인사팀에 서면으로 지급 요청을 하고, 그래도 안 되면 고용노동부에 임금체불 진정을 내면 돼요.",
+    tip: "14일 초과 시 연 20% 지연이자가 발생해요",
+  },
+  {
+    title: "운용 방식 및 수령 선택",
+    desc: "IRP에 들어온 퇴직금은 원리금보장형(예금)이나 실적배당형(ETF) 중 선택해서 운용할 수 있어요. 만 55세 이후부터 연금으로 수령하면 퇴직소득세가 30~40% 줄어요. 당장 필요하면 일시금 인출도 가능해요.",
+    tip: "연금 수령 시 세금이 줄어들어 장기적으로 유리해요",
+  },
 ];
 
 const CHECKLIST = [
-  "IRP 계좌 개설 — 퇴직 전 미리 개설 (은행·증권사·보험사)",
-  "수수료 비교 — 금융기관별 IRP 수수료 차이 확인",
-  "운용 상품 확인 — 예금, 펀드, ETF 등 가능 상품 비교",
-  "예외 대상 확인 — 55세 이상, 300만 원 이하 등 IRP 면제 여부",
-  "수령 방식 결정 — 일시금 인출 vs 연금 수령 비교",
+  "IRP 계좌 개설: 퇴직 전 미리 개설 (은행·증권사·보험사)",
+  "수수료 비교: 금융기관별 IRP 수수료 차이 확인",
+  "계좌번호 인사팀 통보: 문자나 메일로 기록 남기기",
+  "예외 대상 확인: 55세 이상, 300만원 이하 등 IRP 면제 여부",
+  "수령 방식 결정: 일시금 인출 vs 연금 수령 세금 비교",
 ];
 
 const FAQS = [
   {
     q: "일반 예금 통장으로 퇴직금을 받을 수 있나요?",
-    a: "원칙적으로 IRP 계좌로 받아야 해요. 다만 55세 이상 퇴직자, 퇴직금 300만 원 이하, 기타 법정 예외에 해당하면 일반 통장으로 받을 수 있죠.",
+    a: "원칙적으로 IRP 계좌로 받아야 해요. 다만 55세 이상 퇴직자, 퇴직금 300만원 이하, 기타 법정 예외에 해당하면 일반 통장으로 받을 수 있어요.",
   },
   {
     q: "IRP에 넣으면 바로 꺼낼 수 없나요?",
-    a: "꺼낼 수 있어요. IRP에 입금된 후 일시금 인출을 신청하면 되죠. 다만 퇴직소득세가 원천징수되고, 연금으로 수령할 때의 세금 감면 혜택은 사라져요.",
-  },
-  {
-    q: "퇴직금 전용 통장이 따로 있나요?",
-    a: "별도의 '퇴직금 전용 통장'은 없어요. IRP가 사실상 퇴직금 수령 전용 계좌 역할을 하죠. IRP 외에 퇴직금만을 위한 특별한 통장은 존재하지 않아요.",
+    a: "꺼낼 수 있어요. IRP에 입금된 후 일시금 인출을 신청하면 돼요. 다만 퇴직소득세가 원천징수되고, 연금으로 수령할 때의 세금 감면 혜택은 사라져요.",
   },
   {
     q: "IRP 계좌가 여러 개여도 되나요?",
-    a: "네, 여러 금융기관에 IRP를 개설할 수 있어요. 다만 퇴직금은 한 곳의 IRP로만 받게 되니, 가장 유리한 계좌를 선택해서 회사에 알려주세요.",
+    a: "여러 금융기관에 IRP를 개설할 수 있어요. 퇴직금은 한 곳의 IRP로만 받게 되니, 가장 유리한 계좌를 선택해서 회사에 알려주세요.",
   },
   {
     q: "통장 선택에 따라 세금이 달라지나요?",
-    a: "IRP로 받으면 세금 이연·감면 혜택이 있고, 일반 통장으로 받으면 바로 퇴직소득세가 부과돼요. 같은 퇴직금이라도 수령 통장에 따라 세금 차이가 생기죠.",
+    a: "IRP로 받으면 세금 이연·감면 혜택이 있고, 일반 통장으로 받으면 바로 퇴직소득세가 부과돼요. 퇴직금이 클수록 IRP 활용 여부에 따라 수십~수백만원의 절세가 가능해요.",
+  },
+  {
+    q: "IRP 계좌를 만들었는데 퇴직금이 안 들어왔어요",
+    a: "퇴직 후 14일 이내에 이체해야 해요. 14일이 지났는데 입금이 안 됐으면 인사팀에 문의하고, 그래도 안 되면 고용노동부에 임금체불 진정을 낼 수 있어요.",
   },
 ];
 
@@ -49,76 +98,63 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로자퇴직급여 보장법 — IRP 이체 의무", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+      { label: "근로자퇴직급여 보장법: IRP 이체 의무", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "금융감독원 — IRP 계좌 비교", url: "https://www.fss.or.kr" },
-      { label: "고용노동부 — 퇴직급여 안내", url: "https://www.moel.go.kr" },
+      { label: "금융감독원: IRP 계좌 비교", url: "https://www.fss.or.kr" },
+      { label: "고용노동부: 퇴직급여 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
 
 const RELATED = [
-  {
-    slug: "퇴직금-통장-만들기",
-    title: "퇴직금 통장 만들기",
-    description: "IRP 계좌 개설 방법과 은행별 혜택을 안내해요.",
-  },
-  {
-    slug: "퇴직금-IRP-계좌",
-    title: "퇴직금 IRP 계좌",
-    description: "IRP가 뭔지, 꼭 만들어야 하는지 안내해요.",
-  },
-  {
-    slug: "퇴직금-수령방법",
-    title: "퇴직금 수령 방법",
-    description: "일시금과 연금 수령의 장단점을 비교해요.",
-  },
+  { slug: "퇴직금-통장-만들기", title: "퇴직금 IRP 계좌 만들기", description: "IRP 계좌 개설 방법과 수수료 비교를 안내해요." },
+  { slug: "퇴직금-지급-절차", title: "퇴직금 지급 절차", description: "퇴직일부터 IRP 입금까지 단계별로 정리했어요." },
+  { slug: "퇴직금-지급-기한", title: "퇴직금 지급 기한 14일 원칙", description: "14일 초과 시 지연이자 청구 방법이에요." },
 ];
 
 export default function Page() {
   return (
     <ArticleLayout
-      sidebar={
-        <Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} currentSlug="퇴직금-통장" />
-      }
+      sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} currentSlug="퇴직금-통장" />}
     >
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 통장 · IRP</p>
 
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
-        퇴직금 통장,<br />
-        어떤 계좌로 받아야 하나요?
+        퇴직금 통장, 어떤 계좌로 받아야 하나요?<br />
+        IRP vs 일반 통장 차이와 세금 혜택
       </h1>
 
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
-        &ldquo;퇴직금을 내 월급 통장으로 받으면 안 되나요?&rdquo;<br />
-        원칙적으로 안 돼요. 2022년부터 퇴직금은 <strong>IRP(개인형 퇴직연금) 계좌</strong>로 받는 게 의무예요.
-        일반 통장 수령이 가능한 예외, IRP와 일반 통장의 세금 차이, 어떤 통장을 선택해야 하는지 정리해드릴게요.
+        퇴직금을 월급 통장으로 받으면 안 되나요? 원칙적으로 안 돼요.
+        2022년부터 퇴직금 300만원 초과 시 <a href="/w/퇴직금-통장-만들기" style={{ color: "#1D9E75", textDecoration: "underline" }}>IRP(개인형 퇴직연금) 계좌</a>로 받는 게 의무예요.
+        IRP로 받으면 연금 수령 시 퇴직소득세가 30~40% 줄어드는 혜택도 있어요.
       </p>
 
       <Divider />
       <ArticleAd position="intro" />
 
-      <H2>퇴직금을 받을 수 있는 통장 종류는?</H2>
+      <H2>내 퇴직금은 어떤 통장으로 받아야 하나요?</H2>
       <p style={body}>
-        크게 두 가지예요. <strong>IRP 계좌</strong>와 <strong>일반 예금 통장</strong>이죠. 원칙은 IRP이고, 일반 통장은 예외적으로만 가능해요. <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여 보장법</a>에서 IRP 이체를 의무로 정하고 있거든요.
+        크게 두 가지예요. IRP 계좌와 일반 예금 통장이에요. 원칙은 IRP이고, 일반 통장은 예외적으로만 가능해요.
+        <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여 보장법</a>에서 IRP 이체를 의무로 정하고 있어요.
       </p>
       <p style={body}>
-        IRP는 은행, 증권사, 보험사에서 개설할 수 있어요. 어디서 만들든 퇴직금 수령 기능은 동일하고, 차이가 나는 건 수수료와 운용 가능 상품이에요. 개설 전에 비교하는 게 유리하죠.
-      </p>
-      <p style={body}>
-        IRP 외에 &ldquo;퇴직금 전용 통장&rdquo; 같은 건 없어요. IRP 자체가 퇴직금을 받기 위한 계좌라고 보면 돼요. 일반 적금이나 예금 통장과는 성격이 다르죠.
+        IRP는 은행, 증권사, 보험사에서 개설할 수 있어요.
+        어디서 만들든 퇴직금 수령 기능은 동일하고, 차이가 나는 건 수수료와 운용 가능 상품이에요.
+        IRP로 받으면 세금이 이연되고, 연금으로 수령하면 세금이 30~40% 줄어들어요.
       </p>
 
       <GreenBox title="퇴직금 수령 가능 통장">
-        <strong>원칙</strong>: IRP(개인형 퇴직연금) 계좌<br />
-        <strong>예외</strong>: 일반 예금 통장 (55세 이상, 300만 원 이하 등)
+        원칙: IRP(개인형 퇴직연금) 계좌<br />
+        예외: 일반 예금 통장 (55세 이상, 300만원 이하 등)<br />
+        IRP 장점: 세금 이연·감면, 운용 가능, 연금 수령 시 30~40% 세금 절감
       </GreenBox>
 
-      <SectionBadge>내 상황 체크</SectionBadge>
+      <SectionBadge>내 상황 체크해보세요</SectionBadge>
       <EligibilityChecker
         items={CHECK_ITEMS}
         allMatchText="IRP 계좌를 미리 개설해두세요. 퇴직 전에 준비하면 수령이 지연되지 않아요."
@@ -127,21 +163,19 @@ export default function Page() {
 
       <Divider />
 
-      <H2>IRP 통장과 일반 통장, 뭐가 다른가요?</H2>
+      <H2>IRP로 받으면 연금이 얼마나 될까요?</H2>
       <p style={body}>
-        가장 큰 차이는 <strong>세금</strong>이에요. IRP로 받으면 퇴직소득세가 이연(뒤로 미뤄짐)되고, 연금으로 수령하면 세금이 30~40% 줄어들죠. 일반 통장으로 받으면 바로 퇴직소득세 전액이 부과돼요.
-      </p>
-      <p style={body}>
-        IRP는 <strong>운용</strong>이 가능해요. 입금된 퇴직금을 예금, 펀드, ETF 등에 투자해서 수익을 낼 수 있죠. 일반 통장은 그냥 보통예금이니까 이자가 거의 없어요.
-      </p>
-      <p style={body}>
-        다만 IRP에서 돈을 꺼내려면 <strong>인출 절차</strong>가 필요해요. 일반 통장처럼 ATM에서 바로 인출할 수 없고, 금융기관에 인출 신청을 해야 하죠. 1~3영업일이면 처리되지만 자유도는 일반 통장보다 낮아요.
+        IRP에 들어온 퇴직금을 연금으로 수령하면 만 55세 이후 일정 기간 나눠 받을 수 있어요.
+        퇴직금 규모와 수령 기간에 따라 월 수령액이 달라져요.
+        연금으로 받으면 퇴직소득세가 30~40% 줄어드는 혜택이 있어요.
       </p>
 
-      <BorderBox title="한눈에 비교">
-        <strong>IRP</strong>: 세금 이연/감면, 운용 가능, 인출 절차 필요<br />
-        <strong>일반 통장</strong>: 세금 즉시 부과, 운용 불가, 자유 인출
-      </BorderBox>
+      <SectionBadge>연금 수령 계산기</SectionBadge>
+      <Calculator
+        sliders={CALC_SLIDERS}
+        results={CALC_RESULTS}
+        note="※ 운용 수익 제외 단순 계산. 실제 수령액은 운용 성과에 따라 달라질 수 있어요."
+      />
 
       <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
       <RelatedArticles items={RELATED} />
@@ -149,58 +183,53 @@ export default function Page() {
 
       <Divider />
 
-      <H2>퇴직금 전용 통장이 따로 있나요?</H2>
+      <H2>IRP 계좌 개설에 필요한 서류</H2>
       <p style={body}>
-        따로 없어요. &ldquo;퇴직금 전용 통장&rdquo;이라는 이름의 상품은 존재하지 않죠. IRP가 사실상 퇴직금 수령 전용 계좌 역할을 하는 거예요.
+        신분증 하나로 대부분 가능해요. 앱으로 개설하면 신분증 촬영과 간편인증만 있으면 돼요.
+        재직증명서는 일부 금융사에서만 요구하니, 미리 해당 앱에서 확인해두세요.
       </p>
-      <p style={body}>
-        간혹 &ldquo;퇴직 적금&rdquo;이나 &ldquo;퇴직 플랜&rdquo;이라는 이름의 금융 상품이 있는데, 이건 개인이 자발적으로 가입하는 저축 상품이에요. 회사가 지급하는 퇴직금을 받는 계좌와는 다르죠.
-      </p>
-      <p style={body}>
-        퇴직 전에 IRP를 개설해두면 별도의 통장을 고민할 필요가 없어요. <a href="/w/퇴직금-통장-만들기" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직금 통장 만들기</a>에서 개설 방법을 자세히 안내하고 있으니 참고하세요.
-      </p>
+
+      <SectionBadge>준비 서류 목록</SectionBadge>
+      <DocTable docs={DOCS} />
 
       <Divider />
 
-      <H2>통장 선택 시 세금 차이가 있나요?</H2>
+      <H2>퇴직금 통장 준비부터 수령까지 4단계</H2>
       <p style={body}>
-        IRP로 받으면 퇴직소득세를 <strong>나중에</strong> 내고, 연금으로 수령하면 <strong>30~40% 적게</strong> 내요. 일반 통장으로 받으면 퇴직소득세를 <strong>바로 전액</strong> 내죠. 같은 퇴직금이라도 통장에 따라 실수령액이 달라요.
+        IRP 개설 → 계좌번호 통보 → 입금 확인 → 운용·수령 방식 선택 순서예요.
+        퇴직 전에 미리 준비해두면 14일 이내 수령이 훨씬 수월해져요.
       </p>
-      <p style={body}>
-        예를 들어 퇴직소득세가 200만 원이면, IRP에서 연금으로 받으면 약 120~140만 원만 내면 돼요. 일반 통장이면 200만 원 전액이 빠지죠. 60~80만 원 차이가 나는 셈이에요.
-      </p>
-      <p style={body}>
-        퇴직금이 클수록 세금 차이도 커져요. 수천만 원 단위의 퇴직금이라면 IRP 활용 여부에 따라 수십~수백만 원의 절세가 가능하죠. 당장 목돈이 필요하지 않다면 IRP가 압도적으로 유리해요.
-      </p>
+
+      <Steps steps={STEPS} />
 
       <Divider />
 
-      <H2>퇴직금 통장 개설 방법은?</H2>
+      <H2>퇴직금 통장 준비 체크리스트</H2>
       <p style={body}>
-        IRP 계좌는 은행, 증권사, 보험사에서 개설할 수 있어요. 온라인(앱)으로도 가능하고, 지점 방문으로도 되죠. 신분증만 있으면 10~20분이면 개설 완료예요.
-      </p>
-      <p style={body}>
-        개설할 때 수수료와 운용 상품을 비교하세요. 은행 IRP는 원금 보장 상품(예금)이 다양하고, 증권사 IRP는 ETF·펀드 선택지가 넓어요. 본인 투자 성향에 맞는 곳을 고르면 되죠.
-      </p>
-      <p style={body}>
-        퇴직 전에 미리 개설하고 계좌 번호를 회사 인사팀에 알려주세요. 퇴사 후에 급하게 개설하면 퇴직금 입금이 늦어질 수 있어요. 여유 있게 준비하는 게 좋죠.
+        IRP 계좌 미개설로 수령이 늦어지는 경우가 많아요.
+        퇴직이 확정됐다면 이 체크리스트를 하나씩 확인해보세요.
       </p>
 
-      <SectionBadge>통장 준비 체크리스트</SectionBadge>
+      <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
+
+      <GreenBox title="IRP 수령이 일반 통장보다 세금에서 유리해요">
+        IRP로 받으면 퇴직소득세가 이연되고, 연금으로 수령하면 30~40%가 줄어요.<br />
+        당장 목돈이 필요하지 않다면 IRP를 유지하면서 연금으로 받는 게 절세에 유리해요.
+      </GreenBox>
 
       <Divider />
 
       <H2>자주 묻는 것들</H2>
       <p style={{ ...body, marginBottom: 14 }}>
-        퇴직금 통장에 대해 자주 나오는 질문이에요.
+        퇴직금 통장에 대해 실제로 많이 나오는 질문만 골랐어요.
       </p>
       <FAQ items={FAQS} />
 
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여 보장법을 바탕으로 작성됐어요. 금융 상품 조건은 변동될 수 있으니, 가입 금융기관에 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여 보장법을 바탕으로 작성됐어요. 금융 상품 조건은 변동될 수 있으니, 가입 금융기관에서 확인하세요." />
     </ArticleLayout>
   );
 }

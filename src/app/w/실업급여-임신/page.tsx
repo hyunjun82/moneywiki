@@ -51,15 +51,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 수급기간 연장 (임신·출산 사유)", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행규칙 — 수급기간 연장 신청 절차", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
+      { label: "고용보험법: 수급기간 연장 (임신·출산 사유)", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행규칙: 수급기간 연장 신청 절차", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 신청 안내", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 임신·출산 근로자 지원", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 신청 안내", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 임신·출산 근로자 지원", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -113,7 +113,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 임신 중 실업급여 수급자격 + 자격확인 */}
+      {/* 섹션 1: 임신 중 실업급여 수급자격 + 자격확인 */}
       <H2>수급기간 연장 조건에 해당하는 사람은 누구인가요?</H2>
       <p style={body}>
         임신이 수급자격을 없애진 않아요. 기본 요건은 딱 두 가지예요. 퇴직 전 18개월 내 <strong>고용보험 가입기간 180일 이상</strong>, 그리고 <strong>비자발적 퇴직</strong>(또는 정당한 사유가 있는 자발적 퇴직)이죠.
@@ -143,7 +143,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 수급기간 연장 제도 */}
+      {/* 섹션 2: 수급기간 연장 제도 */}
       <H2>연장 신청 방법과 필요 서류는 뭐가 있나요?</H2>
       <p style={body}>
         실업급여는 퇴직 다음 날부터 <strong>12개월</strong> 안에 소진해야 해요. 기한이 지나면 남은 수급일수가 남았어도 그냥 사라지죠.
@@ -173,7 +173,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 연장 신청 방법 + 체크리스트 */}
+      {/* 섹션 3: 연장 신청 방법 + 체크리스트 */}
       <H2>수급기간 연장 조건 충족 시 신청 절차</H2>
       <p style={body}>
         고용센터에 <strong>수급기간 연장 신청서</strong>를 내면 돼요. 임신확인서나 산모수첩 사본을 함께 첨부해야 하죠.
@@ -193,7 +193,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 출산전후휴가 급여와의 관계 */}
+      {/* 섹션 4: 출산전후휴가 급여와의 관계 */}
       <H2>출산전후휴가 급여와 실업급여 수급 조건 비교</H2>
       <p style={body}>
         재직 중 출산전후휴가 급여를 받고 있거나 받을 예정이라면 이 부분을 꼭 알아야 해요. 출산전후휴가 급여와 실업급여는 <strong>동시에 못 받아요</strong>.
@@ -211,7 +211,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 실전 행동 정리 */}
+      {/* 섹션 5: 실전 행동 정리 */}
       <H2>임신 중 수급기간 연장 신청, 이 순서대로 하세요</H2>
       <p style={body}>
         첫 번째로 할 일은 고용센터에서 <strong>수급자격 인정 신청</strong>을 하는 거예요. 퇴직하면 최대한 빨리 움직이세요.

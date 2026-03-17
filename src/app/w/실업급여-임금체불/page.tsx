@@ -97,15 +97,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 수급자격의 제한 (정당한 이직 사유)", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "근로기준법 제43조 — 임금 지급 의무", url: "https://www.law.go.kr/법령/근로기준법" },
+      { label: "고용보험법: 수급자격의 제한 (정당한 이직 사유)", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "근로기준법 제43조: 임금 지급 의무", url: "https://www.law.go.kr/법령/근로기준법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 인터넷 신청", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 체불 임금 진정 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 인터넷 신청", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 체불 임금 진정 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -161,7 +161,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 왜 정당한 사유인지 + 자격확인 */}
+      {/* 섹션 1: 왜 정당한 사유인지 + 자격확인 */}
       <H2>2개월 기준이 왜 중요한가요?</H2>
       <p style={body}>
         월급을 한 달 밀렸다고 바로 실업급여가 나오진 않아요.
@@ -183,9 +183,9 @@ export default function Page() {
       </p>
 
       <GreenBox title="이 세 가지 중 하나만 해당되면 정당한 사유예요">
-        임금의 30% 이상 미지급 — 월급 300만원인데 90만원 이상 못 받은 경우<br />
-        2개월 이상 연속 체불 — 두 달째 통장에 입금 안 된 경우<br />
-        최저임금 미만 지급 — 법정 최저 시급보다 적게 받은 경우
+        임금의 30% 이상 미지급: 월급 300만원인데 90만원 이상 못 받은 경우<br />
+        2개월 이상 연속 체불: 두 달째 통장에 입금 안 된 경우<br />
+        최저임금 미만 지급: 법정 최저 시급보다 적게 받은 경우
       </GreenBox>
 
       <SectionBadge>내 상황에 해당되는지 체크해보세요</SectionBadge>
@@ -197,7 +197,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 수급액 계산 + 증빙자료 */}
+      {/* 섹션 2: 수급액 계산 + 증빙자료 */}
       <H2>증빙 서류는 뭘 준비해야 하나요?</H2>
       <p style={body}>
         체불 사실을 입으로만 말해서는 안 돼요. 고용센터가 인정해줄 수 있도록 <strong>서류로 증명</strong>해야 하죠.
@@ -237,7 +237,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 신청 절차 + 체크리스트 */}
+      {/* 섹션 3: 신청 절차 + 체크리스트 */}
       <H2>증빙 서류 기반 신청 절차</H2>
       <p style={body}>
         퇴직하면 바로 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에
@@ -252,7 +252,7 @@ export default function Page() {
       </p>
       <p style={body}>
         수급자격이 인정되면 <strong>7일 대기기간</strong>을 거쳐 8일째부터 실업급여가 통장에 들어와요.
-        임금체불 사유라도 대기기간은 면제되지 않아요 — 다른 퇴사 사유와 동일하죠.
+        임금체불 사유라도 대기기간은 면제되지 않아요: 다른 퇴사 사유와 동일하죠.
         이후 1~4주마다 실업인정(구직활동 보고)을 하면 수급일수가 끝날 때까지 계속 받을 수 있죠.
       </p>
 
@@ -261,7 +261,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 밀린 월급 별도 청구 */}
+      {/* 섹션 4: 밀린 월급 별도 청구 */}
       <H2>2개월 기준 미달이면 수급이 안 되는 경우</H2>
       <p style={body}>
         체불 기간이 2개월이 안 되고, 미지급 금액도 30% 미만이면 정당한 사유로 인정받기 어려워요.
@@ -281,7 +281,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 이직확인서와 주의사항 */}
+      {/* 섹션 5: 이직확인서와 주의사항 */}
       <H2>증빙 서류와 이직확인서를 먼저 챙기세요</H2>
       <p style={body}>
         이직확인서는 회사가 고용센터에 제출하는 서류예요.

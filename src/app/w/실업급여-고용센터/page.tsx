@@ -51,14 +51,14 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 실업급여 수급자격 요건", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법: 실업급여 수급자격 요건", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 고용센터 찾기 및 방문 예약", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 고용센터 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 고용센터 찾기 및 방문 예약", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 고용센터 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -115,7 +115,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* ── 섹션 1 — 방문 전 체크 + 고용센터란 ── */}
+      {/* ── 섹션 1: 방문 전 체크 + 고용센터란 ── */}
       <H2>고용센터 위치 조회는 어떻게 하나요?</H2>
       <p style={body}>
         고용센터는 <a href="https://www.moel.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용노동부</a> 산하 기관이에요. 실업급여 신청 말고도 취업 알선, 직업훈련 안내 같은 고용 관련 업무를 한 곳에서 다 처리하죠. 전국에 약 130개가 운영되고 있으니, 어디에 살든 비교적 가까운 곳에서 이용할 수 있죠.
@@ -142,7 +142,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 2 — 방문 준비물 + BorderBox ── */}
+      {/* ── 섹션 2: 방문 준비물 + BorderBox ── */}
       <H2>방문 전에 뭘 준비해야 하나요?</H2>
       <p style={body}>
         제일 많이 하는 실수가 뭔지 아세요? <a href="/w/실업급여-온라인-교육" style={{ color: "#1D9E75", textDecoration: "underline" }}>온라인 교육</a>을 안 듣고 가는 거예요. <strong>수급자격 신청자 온라인 교육</strong>을 이수하지 않으면 고용센터에서 접수 자체를 안 받아줘요. &quot;집에서 교육부터 듣고 오세요&quot; 한 마디에 그대로 돌아와야 하죠.
@@ -169,7 +169,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 3 — 영업시간과 예약 + 체크리스트 ── */}
+      {/* ── 섹션 3: 영업시간과 예약 + 체크리스트 ── */}
       <H2>고용센터 방문 시간과 예약 방법</H2>
       <p style={body}>
         고용센터 문 여는 시간은 <strong>평일 오전 9시</strong>, 닫는 시간은 <strong>오후 6시</strong>예요. 주말과 공휴일은 쉬죠. 점심시간(12시~1시)에는 상담이 거의 이뤄지지 않으니 이 시간대는 피하세요.
@@ -186,7 +186,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 4 — 고용센터에서 하는 일 ── */}
+      {/* ── 섹션 4: 고용센터에서 하는 일 ── */}
       <H2>방문 후 진행되는 절차</H2>
       <p style={body}>
         도착하면 번호표를 뽑고 대기해요. 순서가 되면 담당자가 <strong>이직 사유를 확인</strong>하고 수급자격이 되는지 심사하죠. 이직확인서와 제출한 서류를 대조하면서 퇴직 경위를 물어보는데, 솔직하게 답하면 돼요.
@@ -206,7 +206,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 5 — 수급자격 인정 후 ── */}
+      {/* ── 섹션 5: 수급자격 인정 후 ── */}
       <H2>수급자격 인정 후 바로 해야 할 일</H2>
       <p style={body}>
         수급자격이 인정된 뒤 바로 돈이 들어오는 건 아니에요. <strong>7일간의 대기기간</strong>이 먼저 적용되죠. 이 기간은 어차피 기다려야 하니까, 그동안 구직활동 계획을 세워두면 시간 낭비가 줄어요.

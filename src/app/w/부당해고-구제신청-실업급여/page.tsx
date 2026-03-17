@@ -129,15 +129,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 실업급여 수급자격 및 제한 사유", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "근로기준법 제28조 — 부당해고 구제신청 절차", url: "https://www.law.go.kr/법령/근로기준법" },
+      { label: "고용보험법: 실업급여 수급자격 및 제한 사유", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "근로기준법 제28조: 부당해고 구제신청 절차", url: "https://www.law.go.kr/법령/근로기준법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 인터넷 신청", url: "https://www.ei.go.kr" },
-      { label: "중앙노동위원회 — 부당해고 구제신청 안내", url: "https://www.nlrc.go.kr" },
+      { label: "고용24: 실업급여 인터넷 신청", url: "https://www.ei.go.kr" },
+      { label: "중앙노동위원회: 부당해고 구제신청 안내", url: "https://www.nlrc.go.kr" },
     ],
   },
 ];
@@ -197,7 +197,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 부당해고 구제신청이란 */}
+      {/* 섹션 1: 부당해고 구제신청이란 */}
       <H2>구제신청 중에도 수급 기준을 충족하나요?</H2>
       <p style={body}>
         부당하게 해고됐다고 판단되면{" "}
@@ -230,7 +230,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 구제신청 중 실업급여 + 계산기 */}
+      {/* 섹션 2: 구제신청 중 실업급여 + 계산기 */}
       <H2>수급 금액과 기간은 얼마나 되나요?</H2>
       <p style={body}>
         구제신청 중이라도 실업급여 신청 절차는 일반 해고와 똑같아요.
@@ -270,7 +270,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 결과별 실업급여 처리 */}
+      {/* 섹션 3: 결과별 실업급여 처리 */}
       <H2>복직·보상·기각별 수급 처리 방식</H2>
       <p style={body}>
         결과는 크게 세 갈래예요. <strong>복직</strong>, <strong>금전보상</strong>, <strong>기각</strong>이죠.
@@ -303,7 +303,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 주의할 점 */}
+      {/* 섹션 4: 주의할 점 */}
       <H2>복직 전 수급 중 주의할 점</H2>
       <p style={body}>
         가장 흔한 실수가 <strong>구직활동 미이행</strong>이에요.
@@ -326,11 +326,11 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 실전 행동 */}
+      {/* 섹션 5: 실전 행동 */}
       <H2>구제신청과 수급 신청을 동시에 시작하세요</H2>
       <p style={body}>
         부당해고를 당했다면 가장 먼저 할 일은 <strong>증거 확보</strong>예요.
-        해고통보서, 문자 메시지, 이메일, 녹음 파일 — 해고 사실을 증명할 수 있는 자료를 전부 모아두세요.
+        해고통보서, 문자 메시지, 이메일, 녹음 파일: 해고 사실을 증명할 수 있는 자료를 전부 모아두세요.
         구제신청에서도, 실업급여 심사에서도 증빙이 결과를 좌우하죠.
       </p>
       <p style={body}>

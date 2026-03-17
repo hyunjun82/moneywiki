@@ -97,14 +97,14 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제58조 — 이직 사유에 따른 수급자격의 제한", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행규칙 별표2 — 수급자격이 제한되는 이직 사유", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
+      { label: "고용보험법 제58조: 이직 사유에 따른 수급자격의 제한", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행규칙 별표2: 수급자격이 제한되는 이직 사유", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 안내", url: "https://www.ei.go.kr" },
+      { label: "고용24: 실업급여 안내", url: "https://www.ei.go.kr" },
       { label: "고용노동부 고객상담센터 (1350)", url: "https://1350.moel.go.kr" },
     ],
   },
@@ -165,7 +165,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 중대한 귀책사유란 */}
+      {/* 섹션 1: 중대한 귀책사유란 */}
       <H2>어떤 사유가 자격 제한에 해당하나요?</H2>
       <p style={body}>
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 제58조</a>에서 실업급여 수급을 제한하는 이직 사유를 정해놨어요.
@@ -206,7 +206,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 금액 계산 */}
+      {/* 섹션 2: 금액 계산 */}
       <H2>자격이 인정되면 금액은 얼마나 나올까요?</H2>
       <p style={body}>
         중대한 귀책사유에 해당하지 않아서 수급이 가능하다면, 금액 계산법은 일반적인 비자발적 퇴사와 동일해요.
@@ -241,7 +241,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 경미한 귀책사유 상세 + 체크리스트 */}
+      {/* 섹션 3: 경미한 귀책사유 상세 + 체크리스트 */}
       <H2>자격 제한 대상이 아닌 경미한 사유</H2>
       <p style={body}>
         실무에서 가장 헷갈리는 영역이에요.
@@ -270,7 +270,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 대응 방법 */}
+      {/* 섹션 4: 대응 방법 */}
       <H2>자격 제한 결정 후 이의신청 절차</H2>
       <p style={body}>
         고용센터가 중대한 귀책사유에 해당한다고 결정하면 실업급여가 바로 거부돼요.
@@ -297,7 +297,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 퇴직금과 해고예고수당 */}
+      {/* 섹션 5: 퇴직금과 해고예고수당 */}
       <H2>이의신청과 함께 퇴직금도 반드시 챙기세요</H2>
       <p style={body}>
         실업급여와 퇴직금은 전혀 다른 제도예요.

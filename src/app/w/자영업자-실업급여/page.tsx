@@ -107,15 +107,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제69조의2~69조의11 — 자영업자 고용보험 가입 및 수급", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행령 제104조의6 — 기준보수 등급표", url: "https://www.law.go.kr/법령/고용보험법시행령" },
+      { label: "고용보험법 제69조의2~69조의11: 자영업자 고용보험 가입 및 수급", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행령 제104조의6: 기준보수 등급표", url: "https://www.law.go.kr/법령/고용보험법시행령" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 자영업자 고용보험 안내", url: "https://www.ei.go.kr" },
-      { label: "근로복지공단 — 고용·산재보험 토탈서비스", url: "https://total.comwel.or.kr" },
+      { label: "고용24: 자영업자 고용보험 안내", url: "https://www.ei.go.kr" },
+      { label: "근로복지공단: 고용·산재보험 토탈서비스", url: "https://total.comwel.or.kr" },
     ],
   },
 ];
@@ -177,7 +177,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 가입 자격과 절차 */}
+      {/* 섹션 1: 가입 자격과 절차 */}
       <H2>가입 조건은 누가 어떻게 충족하나요?</H2>
       <p style={body}>
         50인 미만 사업장을 운영하는 사업주라면 가입할 수 있죠.
@@ -202,7 +202,7 @@ export default function Page() {
 
       <GreenBox title="자영업자 고용보험 핵심 요약">
         <p style={{ margin: "0 0 4px" }}>가입 대상: 50인 미만 사업장 사업주 (1인 사업자 포함)</p>
-        <p style={{ margin: "0 0 4px" }}>가입 방법: 본인 직접 신청 — 근로복지공단 토탈서비스(online) 또는 방문</p>
+        <p style={{ margin: "0 0 4px" }}>가입 방법: 본인 직접 신청: 근로복지공단 토탈서비스(online) 또는 방문</p>
         <p style={{ margin: "0 0 4px" }}>보험료: 기준보수 x 2.25% (월 40,950~76,050원)</p>
         <p style={{ margin: 0 }}>수급 조건: <strong>1년 이상 가입 + 비자발적 폐업 + 재취업 의사</strong></p>
       </GreenBox>
@@ -216,7 +216,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 수급액 계산 */}
+      {/* 섹션 2: 수급액 계산 */}
       <H2>가입 등급에 따라 수급액이 달라지나요?</H2>
       <p style={body}>
         자영업자 구직급여는 <strong>기준보수 / 30일 x 60%</strong>로 계산해요.
@@ -257,7 +257,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 비자발적 폐업 기준 */}
+      {/* 섹션 3: 비자발적 폐업 기준 */}
       <H2>비자발적 폐업 조건과 인정 기준</H2>
       <p style={body}>
         자영업자 구직급여에서 가장 까다로운 관문이 바로 폐업 사유예요.
@@ -285,7 +285,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 수급기간과 금액 정리 */}
+      {/* 섹션 4: 수급기간과 금액 정리 */}
       <H2>가입기간별 수급기간과 신청 기한</H2>
       <p style={body}>
         수급기간은 고용보험 가입기간에 따라 4단계로 나뉘어요.
@@ -316,7 +316,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 재창업 시 주의사항 */}
+      {/* 섹션 5: 재창업 시 주의사항 */}
       <H2>수급기간 확인하고 재창업 전략 세우세요</H2>
       <p style={body}>
         구직급여 수급 중에 재창업하면 구직급여는 <strong>중단</strong>돼요.

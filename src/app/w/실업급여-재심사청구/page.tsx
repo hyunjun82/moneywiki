@@ -17,10 +17,10 @@ const CHECK_ITEMS = [
 ];
 
 const CHECKLIST = [
-  "심사청구 기각 결정서 사본 — 재심사청구서에 반드시 첨부",
-  "결정 통지서 받은 날짜 확인 — 이 날부터 90일이 기한",
-  "기각 사유별 반박 논리 정리 — 구체적으로 어떤 점이 잘못됐는지 기재",
-  "추가 증빙자료 목록 작성 — 새로 확보한 서류(진단서, 급여내역, 녹음 등)",
+  "심사청구 기각 결정서 사본: 재심사청구서에 반드시 첨부",
+  "결정 통지서 받은 날짜 확인: 이 날부터 90일이 기한",
+  "기각 사유별 반박 논리 정리: 구체적으로 어떤 점이 잘못됐는지 기재",
+  "추가 증빙자료 목록 작성: 새로 확보한 서류(진단서, 급여내역, 녹음 등)",
   "행정소송 대비 법률구조공단(132) 무료 상담 활용",
 ];
 
@@ -51,14 +51,14 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 심사청구·재심사청구 규정 (제87조~제105조)", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법: 심사청구·재심사청구 규정 (제87조~제105조)", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 심사·재심사청구 안내", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 고용보험심사위원회", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 심사·재심사청구 안내", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 고용보험심사위원회", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -119,7 +119,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 불복 3단계 전체 흐름 + GreenBox + EligibilityChecker */}
+      {/* 섹션 1: 불복 3단계 전체 흐름 + GreenBox + EligibilityChecker */}
       <H2>재심사청구까지 포함한 절차가 몇 단계인가요?</H2>
       <p style={body}>
         고용센터의 실업급여 결정에 이의가 있으면 최대 3단계까지 다툴 수 있죠.
@@ -153,7 +153,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 심사청구 (1차 불복) + BorderBox */}
+      {/* 섹션 2: 심사청구 (1차 불복) + BorderBox */}
       <H2>90일 기한 안에 심사청구를 먼저 해야 하나요?</H2>
       <p style={body}>
         재심사청구를 하려면 먼저 심사청구(1차)를 거쳐야 해요.
@@ -185,7 +185,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 재심사청구 (2차 불복) + SectionBadge + Checklist */}
+      {/* 섹션 3: 재심사청구 (2차 불복) + SectionBadge + Checklist */}
       <H2>재심사청구 절차와 접수 방법</H2>
       <p style={body}>
         심사청구가 기각됐다면 <strong>고용보험심사위원회</strong>에 재심사청구를 넣을 수 있죠.
@@ -212,7 +212,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 행정소송 */}
+      {/* 섹션 4: 행정소송 */}
       <H2>재심사청구 기각 후 행정소송 절차</H2>
       <p style={body}>
         재심사에서도 기각됐는데 여전히 납득이 안 된다면 <strong>행정법원에 행정소송</strong>을 제기할 수 있죠.
@@ -231,14 +231,14 @@ export default function Page() {
       </p>
 
       <GreenBox title="단계별 비용 정리">
-        심사청구 — 무료 (접수 수수료 없음)<br />
-        재심사청구 — 무료 (접수 수수료 없음)<br />
-        행정소송 — 법원 비용 + 변호사 비용 발생 (법률구조공단 무료 지원 가능)
+        심사청구: 무료 (접수 수수료 없음)<br />
+        재심사청구: 무료 (접수 수수료 없음)<br />
+        행정소송: 법원 비용 + 변호사 비용 발생 (법률구조공단 무료 지원 가능)
       </GreenBox>
 
       <Divider />
 
-      {/* 섹션 5 — 실전 팁 */}
+      {/* 섹션 5: 실전 팁 */}
       <H2>90일 기한 놓치지 말고 접수부터 하세요</H2>
       <p style={body}>
         가장 많이 하는 실수가 &quot;증빙자료를 좀 더 모으고 넣어야지&quot; 하다가 <strong>90일 기한</strong>을 넘기는 거예요.

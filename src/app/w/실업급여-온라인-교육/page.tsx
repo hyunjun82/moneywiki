@@ -51,14 +51,14 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 수급자격 신청자 교육 근거", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법: 수급자격 신청자 교육 근거", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 수급자격 신청자 온라인 교육", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 실업급여 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 수급자격 신청자 온라인 교육", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 실업급여 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -114,7 +114,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 교육을 들어야 하는 이유 */}
+      {/* 섹션 1: 교육을 들어야 하는 이유 */}
       <H2>이수 기준은 어떻게 되나요?</H2>
       <SectionBadge>필수 이수 사항</SectionBadge>
 
@@ -143,7 +143,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 온라인 교육 수강 방법 */}
+      {/* 섹션 2: 온라인 교육 수강 방법 */}
       <H2>수강 순서는 어떻게 진행되나요?</H2>
 
       <p style={body}>
@@ -168,7 +168,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 온라인이 어려울 때 */}
+      {/* 섹션 3: 온라인이 어려울 때 */}
       <H2>온라인 수강이 어려울 때 대면 이수 방법</H2>
       <SectionBadge>대면 교육 안내</SectionBadge>
 
@@ -186,7 +186,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 교육 후 실업급여 신청 절차 */}
+      {/* 섹션 4: 교육 후 실업급여 신청 절차 */}
       <H2>이수 완료 후 실업급여 신청 순서</H2>
 
       <p style={body}>
@@ -207,7 +207,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 실전 팁 */}
+      {/* 섹션 5: 실전 팁 */}
       <H2>수강을 빠르게 끝내는 방법</H2>
 
       <p style={body}>

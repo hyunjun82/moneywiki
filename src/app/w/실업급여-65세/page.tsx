@@ -98,15 +98,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제10조 — 적용 제외 근로자 (65세 이후 신규 취업자)", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행령 — 일용직 근로자 적용 기준", url: "https://www.law.go.kr/법령/고용보험법시행령" },
+      { label: "고용보험법 제10조: 적용 제외 근로자 (65세 이후 신규 취업자)", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행령: 일용직 근로자 적용 기준", url: "https://www.law.go.kr/법령/고용보험법시행령" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 피보험자격 이력 조회 및 실업급여 신청", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 고용보험 적용 기준 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 피보험자격 이력 조회 및 실업급여 신청", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 고용보험 적용 기준 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -161,7 +161,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 65세 기준의 핵심 */}
+      {/* 섹션 1: 65세 기준의 핵심 */}
       <H2>가입 시점 기준이 정확히 뭔가요?</H2>
       <p style={body}>
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 제10조</a>가 <strong>65세 이후에 새로 취업한 사람</strong>을 고용보험 적용 대상에서 빼놨어요. 65세가 넘어서 새로 취업하면 고용보험에 가입이 안 되죠. 보험료도 안 내고, 퇴직해도 실업급여를 못 받는 구조예요.
@@ -188,7 +188,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 받을 수 있는 경우 vs 못 받는 경우 */}
+      {/* 섹션 2: 받을 수 있는 경우 vs 못 받는 경우 */}
       <H2>수급 조건에 맞는 경우와 안 맞는 경우는?</H2>
       <p style={body}>
         64세에 취업해서 68세에 퇴직했다면? 받을 수 있죠. 취업 시점이 65세 이전이니까요. 60세에 들어가서 70세에 나와도 마찬가지예요. 중간에 65세를 넘겼어도 같은 직장에서 계속 일했으면 고용보험이 유지되죠.
@@ -220,7 +220,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 일용직 예외 */}
+      {/* 섹션 3: 일용직 예외 */}
       <H2>일용직은 가입 시점과 관계없이 수급 조건 충족</H2>
       <p style={body}>
         여기서 중요한 예외가 하나 있죠. <strong>일용직 근로자</strong>는 나이에 관계없이 고용보험이 적용돼요. 건설 현장 일용직, 단기 알바처럼 하루 단위로 고용되는 형태가 이에 해당하죠.
@@ -237,7 +237,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 수급기간과 금액 */}
+      {/* 섹션 4: 수급기간과 금액 */}
       <H2>가입 시점별 수급 조건과 기간 비교</H2>
       <p style={body}>
         65세 이상이라고 수급기간이 짧아지거나 금액이 깎이진 않아요. <strong>50세 이상</strong>과 동일한 기준을 적용받죠. 오히려 50세 미만보다 유리한 편이에요.
@@ -259,7 +259,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 실전 확인 방법 */}
+      {/* 섹션 5: 실전 확인 방법 */}
       <H2>가입 시점과 수급 조건, 지금 바로 점검하세요</H2>
       <p style={body}>
         가장 먼저 할 일은 <strong>본인의 고용보험 가입 여부</strong>를 따져보는 거예요. <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에 접속해서 피보험자격 이력을 조회하면, 현재 고용보험에 가입돼 있는지, 언제부터 가입됐는지 한 번에 나오죠.

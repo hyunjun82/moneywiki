@@ -40,10 +40,10 @@ const CALC_RESULTS = [
 ];
 
 const CHECKLIST = [
-  "조기재취업수당 — 수급기간 절반 이상 남기고 재취업 + 12개월 고용 유지 후 신청",
-  "직업능력개발수당 — 고용센터 소장이 지시한 훈련에 참여 + 실업인정일에 자동 반영",
-  "광역구직활동비 — 거주지에서 50km 이상 면접 전 고용센터에 사전 승인 필수",
-  "이주비 — 취업·훈련 목적 이사 전 고용센터에 사전 승인 필수",
+  "조기재취업수당: 수급기간 절반 이상 남기고 재취업 + 12개월 고용 유지 후 신청",
+  "직업능력개발수당: 고용센터 소장이 지시한 훈련에 참여 + 실업인정일에 자동 반영",
+  "광역구직활동비: 거주지에서 50km 이상 면접 전 고용센터에 사전 승인 필수",
+  "이주비: 취업·훈련 목적 이사 전 고용센터에 사전 승인 필수",
   "증빙서류(면접확인서, 훈련수료증, 이사비 영수증 등) 반드시 보관",
 ];
 
@@ -74,15 +74,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제64조~제69조 — 취업촉진수당 4종 지급 요건 및 금액", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행규칙 — 취업촉진수당 신청 절차 및 증빙서류", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
+      { label: "고용보험법 제64조~제69조: 취업촉진수당 4종 지급 요건 및 금액", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행규칙: 취업촉진수당 신청 절차 및 증빙서류", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 취업촉진수당 신청 안내 및 온라인 접수", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 실업급여 및 취업촉진수당 제도 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 취업촉진수당 신청 안내 및 온라인 접수", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 실업급여 및 취업촉진수당 제도 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -131,7 +131,7 @@ export default function Page() {
       <p style={body}>
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 제64조~제69조</a>에 따르면
         실업급여 수급자가 적극적으로 재취업하거나 직업훈련을 받으면 <strong>추가 수당</strong>을 지급하도록 돼 있죠.
-        조기재취업수당, 직업능력개발수당, 광역구직활동비, 이주비 — 이 네 가지를 통칭해서 <strong>취업촉진수당</strong>이라고 해요.
+        조기재취업수당, 직업능력개발수당, 광역구직활동비, 이주비: 이 네 가지를 통칭해서 <strong>취업촉진수당</strong>이라고 해요.
       </p>
       <p style={body}>
         구직급여와 별도로 지급되기 때문에 조건만 맞추면 둘 다 챙길 수 있어요.
@@ -141,7 +141,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 취업촉진수당 개요 + EligibilityChecker */}
+      {/* 섹션 1: 취업촉진수당 개요 + EligibilityChecker */}
       <H2>취업촉진수당 종류별로 뭐가 다른가요?</H2>
       <p style={body}>
         구직급여는 실직 후 구직활동을 하는 동안 <strong>매달 정기적으로</strong> 받는 기본 급여예요.
@@ -157,10 +157,10 @@ export default function Page() {
       </p>
 
       <GreenBox title="취업촉진수당 4가지 한눈에 보기">
-        1. <strong>조기재취업수당</strong> — 수급기간 절반 이상 남기고 재취업 시 남은 급여의 50% 일시금<br />
-        2. <strong>직업능력개발수당</strong> — 고용센터 지시 훈련 참여 시 참여일수에 따라 지급<br />
-        3. <strong>광역구직활동비</strong> — 거주지에서 50km 이상 면접 시 교통비·숙박비 실비 지급<br />
-        4. <strong>이주비</strong> — 취업·훈련 목적 이사 시 이사 비용 실비 지급
+        1. <strong>조기재취업수당</strong>: 수급기간 절반 이상 남기고 재취업 시 남은 급여의 50% 일시금<br />
+        2. <strong>직업능력개발수당</strong>: 고용센터 지시 훈련 참여 시 참여일수에 따라 지급<br />
+        3. <strong>광역구직활동비</strong>: 거주지에서 50km 이상 면접 시 교통비·숙박비 실비 지급<br />
+        4. <strong>이주비</strong>: 취업·훈련 목적 이사 시 이사 비용 실비 지급
       </GreenBox>
 
       <SectionBadge>내 상황에 해당되는지 체크해보세요</SectionBadge>
@@ -172,7 +172,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 조기재취업수당 상세 + Calculator */}
+      {/* 섹션 2: 조기재취업수당 상세 + Calculator */}
       <H2>조기재취업수당 금액, 얼마나 받을 수 있나요?</H2>
       <p style={body}>
         조기재취업수당은 취업촉진수당 중에서 금액이 가장 커요.
@@ -211,7 +211,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 직업능력개발수당 + 광역구직활동비 + 이주비 + Checklist */}
+      {/* 섹션 3: 직업능력개발수당 + 광역구직활동비 + 이주비 + Checklist */}
       <H2>직업능력개발수당, 광역구직활동비, 이주비 조건 비교</H2>
       <p style={body}>
         <strong>직업능력개발수당</strong>은 고용센터 소장이 지시한 직업훈련을 받을 때 지급돼요.
@@ -231,7 +231,7 @@ export default function Page() {
         이것도 이사 전에 고용센터에서 <strong>사전 승인이 필수</strong>이고, 지방에서 수도권으로 이동하거나 다른 도시로 옮기는 경우에 활용하면 돼요.
       </p>
 
-      <GreenBox title="사전 승인이 필요한 수당 — 순서를 지키세요">
+      <GreenBox title="사전 승인이 필요한 수당: 순서를 지키세요">
         <strong>광역구직활동비</strong>: 면접 출발 전 고용센터 승인 → 면접 → 증빙 제출<br />
         <strong>이주비</strong>: 이사 전 고용센터 승인 → 이사 → 증빙 제출<br /><br />
         먼저 하고 나중에 신청하면 지급 대상에서 빠져요. 순서가 핵심이죠.
@@ -242,7 +242,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 여러 수당 동시 수급 + 전략 */}
+      {/* 섹션 4: 여러 수당 동시 수급 + 전략 */}
       <H2>여러 종류 동시 수급과 금액 전략</H2>
       <p style={body}>
         조건만 맞으면 <strong>여러 취업촉진수당을 동시에</strong> 챙길 수 있어요.
@@ -269,7 +269,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 실전 전략 */}
+      {/* 섹션 5: 실전 전략 */}
       <H2>종류별 조건에 맞춰 수당을 최대로 챙기세요</H2>
       <p style={body}>
         가장 큰 금액은 단연 조기재취업수당이에요.

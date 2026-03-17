@@ -51,15 +51,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제77조의6 — 특수형태근로종사자 실업급여", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행령 — 특고 적용 직종 범위", url: "https://www.law.go.kr/법령/고용보험법시행령" },
+      { label: "고용보험법 제77조의6: 특수형태근로종사자 실업급여", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행령: 특고 적용 직종 범위", url: "https://www.law.go.kr/법령/고용보험법시행령" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 특고·플랫폼 종사자 실업급여 신청", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 특수형태근로종사자 고용보험 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 특고·플랫폼 종사자 실업급여 신청", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 특수형태근로종사자 고용보험 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -172,7 +172,7 @@ export default function Page() {
       {/* breadcrumb */}
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>실업급여 · 고용보험 · 특수형태근로종사자</p>
 
-      {/* h1 — 2줄 */}
+      {/* h1: 2줄 */}
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
         특고 실업급여, 배달·대리기사도 될까?<br />
         14개 직종 수급 기준
@@ -197,7 +197,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* ── 섹션 1 — 특고란 + 대상 직종 ── */}
+      {/* ── 섹션 1: 특고란 + 대상 직종 ── */}
       <H2>14개 직종에 내 일이 포함되나요?</H2>
       <p style={body}>
         <strong>특수형태근로종사자(특고)</strong>는 회사에 고용된 직원은 아니지만, 특정 업체에 소속되어 계속 일하는 분들이에요.
@@ -235,7 +235,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 2 — 수급자격 조건 + 계산기 ── */}
+      {/* ── 섹션 2: 수급자격 조건 + 계산기 ── */}
       <H2>수급 기준을 갖추려면 뭐가 필요하나요?</H2>
       <p style={body}>
         특고 실업급여 수급 조건은 일반 근로자와 좀 달라요.
@@ -276,7 +276,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 3 — 보험료와 가입 제외 ── */}
+      {/* ── 섹션 3: 보험료와 가입 제외 ── */}
       <H2>14개 직종의 보험료와 가입 기준</H2>
 
       <SectionBadge>가입 유지가 유리한 이유</SectionBadge>
@@ -304,7 +304,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 4 — 신청 방법 ── */}
+      {/* ── 섹션 4: 신청 방법 ── */}
       <H2>수급 신청 절차와 필요 서류</H2>
       <p style={body}>
         가장 먼저 할 일은{" "}
@@ -335,7 +335,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 5 — 수급기간과 금액 정리 ── */}
+      {/* ── 섹션 5: 수급기간과 금액 정리 ── */}
       <H2>수급기간 확인하고 기준에 맞춰 준비하세요</H2>
       <p style={body}>
         수급기간은 고용보험 가입기간(피보험기간)에 따라 결정돼요.

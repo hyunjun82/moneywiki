@@ -24,7 +24,7 @@ const CHECKLIST = [
   "고용센터 방문 시 계약서, 보수 지급 증빙 지참",
 ];
 
-/** 예술인 기준보수등급 월액 (원) — 2026년 기준 */
+/** 예술인 기준보수등급 월액 (원): 2026년 기준 */
 const GRADE_MONTHLY = [
   800_000, 1_000_000, 1_200_000, 1_400_000, 1_600_000,
   1_800_000, 2_000_000, 2_400_000, 2_800_000, 3_200_000, 3_600_000,
@@ -116,16 +116,16 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 예술인 피보험자격 및 구직급여", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "예술인 복지법 — 예술인 정의 및 복지 지원", url: "https://www.law.go.kr/법령/예술인복지법" },
+      { label: "고용보험법: 예술인 피보험자격 및 구직급여", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "예술인 복지법: 예술인 정의 및 복지 지원", url: "https://www.law.go.kr/법령/예술인복지법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 예술인 실업급여 신청", url: "https://www.ei.go.kr" },
-      { label: "예술인복지재단 — 고용보험 가입 안내", url: "https://www.kawf.kr" },
-      { label: "근로복지공단 — 피보험자격 확인", url: "https://www.comwel.or.kr" },
+      { label: "고용24: 예술인 실업급여 신청", url: "https://www.ei.go.kr" },
+      { label: "예술인복지재단: 고용보험 가입 안내", url: "https://www.kawf.kr" },
+      { label: "근로복지공단: 피보험자격 확인", url: "https://www.comwel.or.kr" },
     ],
   },
 ];
@@ -189,7 +189,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* ── 섹션 1 — 기준보수 등급 ── */}
+      {/* ── 섹션 1: 기준보수 등급 ── */}
       <H2>기준보수 등급은 어떻게 정해지나요?</H2>
       <p style={body}>
         예술인 고용보험은 월급이 아니라 <strong>기준보수등급</strong>을 기반으로 보험료와 수급액을 산정해요.
@@ -209,8 +209,8 @@ export default function Page() {
       </p>
 
       <GreenBox title="기준보수등급 구간 예시">
-        1등급 — 월 80만원 / 5등급 — 월 160만원<br />
-        7등급 — 월 200만원 / 11등급 — 월 360만원<br />
+        1등급: 월 80만원 / 5등급: 월 160만원<br />
+        7등급: 월 200만원 / 11등급: 월 360만원<br />
         계약 보수에 따라 자동 산정, 총 11개 등급<br />
         보험료 = 기준보수의 1.6% (본인 0.8% + 사업자 0.8%)
       </GreenBox>
@@ -224,7 +224,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 2 — 기준보수 기반 수급액 계산 ── */}
+      {/* ── 섹션 2: 기준보수 기반 수급액 계산 ── */}
       <H2>기준보수로 수급액을 어떻게 계산하나요?</H2>
       <p style={body}>
         계산 공식은 간단해요. <strong>1일 구직급여 = 기초일액 x 60%</strong>예요.
@@ -242,9 +242,9 @@ export default function Page() {
       </p>
 
       <BorderBox title="일반 실업급여와 뭐가 다를까?">
-        일반 근로자 — 18개월 중 <strong>180일</strong> 이상 가입<br />
-        예술인 — 24개월 중 <strong>9개월</strong> 이상 가입<br />
-        예술인 보험료율 — 보수의 <strong>1.6%</strong> (본인 0.8% + 사업자 0.8%)<br />
+        일반 근로자: 18개월 중 <strong>180일</strong> 이상 가입<br />
+        예술인: 24개월 중 <strong>9개월</strong> 이상 가입<br />
+        예술인 보험료율: 보수의 <strong>1.6%</strong> (본인 0.8% + 사업자 0.8%)<br />
         최대 수급일수: 일반 270일 / 예술인 210일
       </BorderBox>
 
@@ -262,7 +262,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 3 — 가입기간별 수급기간 ── */}
+      {/* ── 섹션 3: 가입기간별 수급기간 ── */}
       <H2>가입기간별 수급기간과 계산 방법</H2>
       <p style={body}>
         수급기간은 고용보험에 가입한 기간에 따라 달라져요.
@@ -285,7 +285,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 4 — 기준보수 기반 신청 방법·보험료 ── */}
+      {/* ── 섹션 4: 기준보수 기반 신청 방법·보험료 ── */}
       <H2>기준보수 기반 신청 방법과 보험료 구조</H2>
       <p style={body}>
         신청은 네 단계예요.
@@ -307,7 +307,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 5 — 기준보수 확인·실전 팁 ── */}
+      {/* ── 섹션 5: 기준보수 확인·실전 팁 ── */}
       <H2>기준보수 확인하고 계산해보세요</H2>
       <p style={body}>
         내 기준보수등급은 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 피보험 이력을 조회하면 나와요.

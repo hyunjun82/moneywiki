@@ -8,10 +8,10 @@ import {
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
 const CHECK_ITEMS = [
-  { id: "c1", label: "육아휴직을 사용했어요" },
-  { id: "c2", label: "육아휴직 기간이 퇴직금 근속기간에 포함되는지 궁금해요" },
-  { id: "c3", label: "육아휴직 중 퇴직금 계산 기준이 달라지는지 알고 싶어요" },
-  { id: "c4", label: "육아휴직 후 퇴직 시 퇴직금을 받을 수 있나요?" },
+  { id: "c1", label: "육아휴직을 사용했어요 (현재 중이거나 사용 후 복직했어요)" },
+  { id: "c2", label: "입사일부터 퇴직일까지 총 1년 이상이에요" },
+  { id: "c3", label: "육아휴직 전 급여명세서 3개월치가 있어요" },
+  { id: "c4", label: "퇴직금을 아직 한 번도 받지 못했어요" },
 ];
 
 const CALC_SLIDERS = [
@@ -43,7 +43,7 @@ const DOCS = [
 const STEPS = [
   {
     title: "육아휴직 기간의 근속 산입 여부 확인",
-    desc: "육아휴직 기간은 퇴직금 근속기간에 포함돼요. 근로기준법과 남녀고용평등법에 따라 육아휴직은 계속 근로기간으로 인정해요. 육아휴직 1년을 썼어도 입사일부터 퇴직일까지 전체가 근속기간이에요.",
+    desc: "육아휴직 기간은 퇴직금 근속기간에 포함돼요. 남녀고용평등법과 근로기준법에 따라 육아휴직은 계속 근로기간으로 인정해요. 육아휴직 1년을 썼어도 입사일부터 퇴직일까지 전체가 근속기간이에요.",
     tip: "육아휴직 기간 = 퇴직금 근속기간에 포함",
   },
   {
@@ -64,11 +64,11 @@ const STEPS = [
 ];
 
 const CHECKLIST = [
-  "육아휴직 기간 — 퇴직금 근속기간에 반드시 포함",
-  "평균임금 — 육아휴직 직후 퇴직 시 기준 확인",
-  "퇴직금 계산 확인 — 전체 근속기간 기준인지",
-  "IRP 계좌 — 300만원 초과 시 필수 개설",
-  "지급 기한 — 퇴직 후 14일 이내",
+  "육아휴직 기간: 퇴직금 근속기간에 반드시 포함",
+  "평균임금: 육아휴직 직후 퇴직 시 기준 인사팀 확인",
+  "퇴직금 계산 확인: 전체 근속기간 기준인지 확인",
+  "IRP 계좌: 300만원 초과 시 필수 개설",
+  "지급 기한: 퇴직 후 14일 이내 (초과 시 연 20% 지연이자)",
 ];
 
 const FAQS = [
@@ -98,14 +98,14 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "남녀고용평등법 제19조 — 육아휴직 계속근로기간 산입", url: "https://www.law.go.kr/법령/남녀고용평등과일·가정양립지원에관한법률" },
-      { label: "근로자퇴직급여보장법 제8조 — 퇴직금 산정 기준", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+      { label: "남녀고용평등법 제19조: 육아휴직 계속근로기간 산입", url: "https://www.law.go.kr/법령/남녀고용평등과일·가정양립지원에관한법률" },
+      { label: "근로자퇴직급여보장법 제8조: 퇴직금 산정 기준", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용노동부 — 육아휴직 퇴직금 안내", url: "https://www.moel.go.kr" },
+      { label: "고용노동부: 육아휴직 퇴직금 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -117,134 +117,126 @@ const RELATED = [
 ];
 
 export default function Page() {
-  const sidebar = <Sidebar items={퇴직금_SIDEBAR} currentSlug="퇴직금-육아휴직" />;
-
   return (
-    <ArticleLayout sidebar={sidebar}>
-      {/* 브레드크럼 */}
-      <div style={{ fontSize: 13, color: "#6b7280", marginBottom: 8 }}>
-        퇴직금 · 육아휴직 · 근속기간
-      </div>
+    <ArticleLayout
+      sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} currentSlug="퇴직금-육아휴직" />}
+    >
+      <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 육아휴직 · 근속기간</p>
 
-      {/* H1 */}
-      <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.4, color: "#111827", marginBottom: 6 }}>
-        육아휴직 기간도 퇴직금 계산에 포함되나요?
-      </h1>
-      <p style={{ fontSize: 17, color: "#374151", fontWeight: 500, marginBottom: 20 }}>
+      <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
+        육아휴직 기간도 퇴직금 계산에 포함되나요?<br />
         근속기간 산입 기준부터 평균임금 주의사항까지
+      </h1>
+
+      <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
+        육아휴직을 쓰고 나면 퇴직금이 줄어들까 걱정되죠.
+        결론부터 말하면 육아휴직 기간은 퇴직금 근속기간에 그대로 포함돼요.
+        <a href="https://www.law.go.kr/법령/남녀고용평등과일·가정양립지원에관한법률" style={{ color: "#1D9E75", textDecoration: "underline" }}>남녀고용평등법 제19조</a>에서 이걸 명시적으로 보장하기 때문에 회사가 임의로 뺄 수 없어요.
+        단, 육아휴직 중이나 직후에 퇴직하면 평균임금이 낮게 잡힐 수 있어요. 이 부분만 정확히 알면 퇴직금을 온전히 받을 수 있어요.
       </p>
 
-      {/* Intro */}
-      <p style={{ ...body, marginBottom: 12 }}>
-        육아휴직을 쓰고 나면 퇴직금이 줄어들까 걱정되죠. 결론부터 말하면, 육아휴직 기간은 퇴직금 근속기간에 그대로 포함돼요.{" "}
-        <a href="https://www.law.go.kr/법령/남녀고용평등과일·가정양립지원에관한법률" target="_blank" rel="noopener noreferrer" style={{ color: "#1D9E75" }}>
-          남녀고용평등법 제19조
-        </a>
-        에서 이걸 명시적으로 보장하고 있어서, 회사가 임의로 뺄 수 없어요.
-      </p>
-      <p style={{ ...body, marginBottom: 20 }}>
-        다만 주의할 지점이 하나 있어요. 퇴직금 근속기간은 문제없지만, 평균임금 계산은 달라질 수 있거든요. 육아휴직 중이나 직후에 퇴직하면 퇴직 전 3개월 임금이 낮게 잡혀서 퇴직금이 줄어드는 상황이 생길 수 있어요. 이 부분만 정확히 알면 퇴직금을 온전히 받을 수 있어요.
-      </p>
-
+      <Divider />
       <ArticleAd position="intro" />
 
-      {/* H2-1 */}
       <H2>육아휴직, 퇴직금 계산에 어떻게 반영되나요?</H2>
-
-      <p style={{ ...body, marginBottom: 12 }}>
-        퇴직금은 '계속 근로기간 1년에 30일분 평균임금'으로 계산해요. 여기서 핵심은 '계속 근로기간'인데, 육아휴직 기간은 이 계속 근로기간에 포함돼요. 육아휴직을 1년 썼어도 입사일부터 퇴직일 사이 기간 전부가 근속기간이에요.
+      <p style={body}>
+        퇴직금은 '계속 근로기간 1년에 30일분 평균임금'으로 계산해요. 여기서 핵심은 '계속 근로기간'인데, 육아휴직 기간은 이 계속 근로기간에 포함돼요.
+        육아휴직을 1년 썼어도 입사일부터 퇴직일 사이 기간 전부가 근속기간이에요.
+      </p>
+      <p style={body}>
+        예를 들어 5년 근무 중 1년 육아휴직을 썼다면, 퇴직금 계산의 근속기간은 5년이에요. 육아휴직 기간을 뺀 4년이 아니에요.
+        이 차이가 꽤 커요. 5년 기준이면 4년 기준보다 퇴직금이 25% 더 많아지거든요.
       </p>
 
-      <GreenBox>
-        <strong>육아휴직 기간 = 퇴직금 근속기간 포함</strong><br />
-        남녀고용평등법 제19조 4항에 따라 육아휴직 기간은 근속기간(계속 근로기간)으로 인정돼요. 회사가 이를 제외하고 퇴직금을 계산하면 위법이에요.
+      <GreenBox title="육아휴직 기간 = 퇴직금 근속기간 포함">
+        남녀고용평등법 제19조 4항에 따라 육아휴직 기간은 계속 근로기간으로 인정돼요.<br />
+        배우자 출산휴가, 출산전후휴가도 동일하게 포함돼요. 회사가 이를 제외하고 계산하면 위법이에요.
       </GreenBox>
 
-      <p style={{ ...body, marginTop: 16, marginBottom: 12 }}>
-        예를 들어 5년 근무 중 1년 육아휴직을 썼다면, 퇴직금 계산의 근속기간은 5년이에요. 육아휴직 기간을 뺀 4년이 아니에요. 이 차이가 꽤 커요. 5년 기준이면 4년 기준보다 퇴직금이 25% 더 많아지거든요.
-      </p>
-      <p style={{ ...body, marginBottom: 20 }}>
-        배우자 출산휴가나 출산전후휴가도 같은 원칙이 적용돼요. 법정 휴가로 보장된 기간은 모두 계속 근로기간에 포함돼요. 회사가 이를 빼고 계산했다면 차액을 청구할 수 있고, 소멸시효 3년 안이라면 이미 퇴직한 뒤에도 청구 가능해요.
-      </p>
+      <SectionBadge>내 상황 체크해보세요</SectionBadge>
+      <EligibilityChecker
+        items={CHECK_ITEMS}
+        allMatchText="육아휴직 기간을 포함한 전체 근속기간으로 퇴직금을 받을 수 있어요. 아래 계산기로 예상 금액을 확인해보세요."
+        partialMatchText="상황에 따라 판단이 달라질 수 있어요. 고용노동부(1350) 상담을 받아보세요."
+      />
 
-      {/* H2-2 */}
+      <Divider />
+
       <H2>육아휴직 포함 예상 퇴직금 계산해보세요</H2>
-
-      <p style={{ ...body, marginBottom: 12 }}>
-        아래 계산기는 육아휴직 전 월 평균급여와 입사~퇴직 전체 기간을 기준으로 퇴직금을 추산해요. 육아휴직 기간을 포함한 전체 근속기간을 입력하면 돼요.
+      <p style={body}>
+        아래 계산기는 육아휴직 전 월 평균급여와 입사~퇴직 전체 기간을 기준으로 퇴직금을 추산해요.
+        육아휴직 기간을 포함한 전체 근속기간을 입력하면 돼요.
       </p>
-      <p style={{ ...body, marginBottom: 16 }}>
-        실제 퇴직금은 퇴직 전 3개월 평균임금을 쓰는데, 육아휴직 직후 퇴직 시 평균임금이 낮게 산정될 수 있어요. 이 경우 아래 계산값과 차이가 날 수 있으니 인사팀에 정확한 평균임금을 확인하는 게 좋아요.
+      <p style={body}>
+        육아휴직 직후 퇴직 시 평균임금이 낮게 산정될 수 있어요. 이 경우 아래 계산값과 차이가 날 수 있으니 인사팀에 정확한 평균임금을 확인하는 게 좋아요.
       </p>
 
-      <Calculator sliders={CALC_SLIDERS} results={CALC_RESULTS} />
+      <SectionBadge>퇴직금 계산기</SectionBadge>
+      <Calculator
+        sliders={CALC_SLIDERS}
+        results={CALC_RESULTS}
+        note="※ 육아휴직 전 월 평균급여 기준 추산. 육아휴직 직후 퇴직 시 실제 금액과 차이가 있을 수 있어요."
+      />
 
-      <CategoryButton slug="퇴직금-계산기" label="퇴직금 정밀 계산기로 이동" />
-
-      <RelatedArticles articles={RELATED} />
-
+      <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
+      <RelatedArticles items={RELATED} />
       <ArticleAd position="mid" />
 
-      {/* H2-3 */}
+      <Divider />
+
       <H2>퇴직금 수령에 필요한 서류</H2>
-
-      <p style={{ ...body, marginBottom: 12 }}>
-        육아휴직 후 퇴직 시에는 일반 퇴직보다 서류가 조금 더 필요해요. 회사가 평균임금을 어떻게 산정했는지 확인하려면 급여명세서가 핵심이에요. 육아휴직 전 3개월치와 퇴직 전 3개월치를 모두 받아두는 게 좋아요.
+      <p style={body}>
+        육아휴직 후 퇴직 시에는 일반 퇴직보다 서류가 조금 더 필요해요.
+        회사가 평균임금을 어떻게 산정했는지 확인하려면 급여명세서가 핵심이에요.
+        육아휴직 전 3개월치와 퇴직 전 3개월치를 모두 받아두세요.
       </p>
-      <p style={{ ...body, marginBottom: 16 }}>
-        IRP 계좌는 퇴직금 300만원 초과 시 필수예요. 퇴직 전에 미리 만들어두지 않으면 지급이 지연될 수 있어요. 은행이나 증권사 앱에서 5분이면 개설할 수 있어요.
+      <p style={body}>
+        IRP 계좌는 퇴직금 300만원 초과 시 필수예요. 퇴직 전에 미리 만들어두지 않으면 지급이 지연될 수 있어요.
+        은행이나 증권사 앱에서 10분이면 개설할 수 있어요.
       </p>
 
+      <SectionBadge>준비 서류 목록</SectionBadge>
       <DocTable docs={DOCS} />
 
-      {/* H2-4 */}
-      <H2>육아휴직 후 퇴직금 수령 절차 4단계</H2>
+      <Divider />
 
-      <p style={{ ...body, marginBottom: 12 }}>
-        육아휴직 후 퇴직금 수령 과정에서 가장 많이 놓치는 게 평균임금 산정 기준이에요. 회사가 자동으로 유리하게 계산해주지 않는 경우도 있어서, 직접 확인하는 게 필요해요.
-      </p>
-      <p style={{ ...body, marginBottom: 16 }}>
-        아래 4단계를 순서대로 따르면 퇴직금을 빠짐없이 챙길 수 있어요. 특히 2단계 평균임금 확인이 금액 차이를 만드는 핵심이에요.
+      <H2>육아휴직 후 퇴직금 수령 4단계 절차</H2>
+      <p style={body}>
+        육아휴직 후 퇴직금 수령 과정에서 가장 많이 놓치는 게 평균임금 산정 기준이에요.
+        회사가 자동으로 유리하게 계산해주지 않는 경우도 있어서 직접 확인이 필요해요.
+        4단계를 순서대로 진행하면 손해 없이 퇴직금을 받을 수 있어요.
       </p>
 
       <Steps steps={STEPS} />
 
-      {/* H2-5 */}
-      <H2>육아휴직 퇴직금 체크리스트</H2>
+      <Divider />
 
-      <p style={{ ...body, marginBottom: 12 }}>
-        퇴직 전에 아래 항목을 하나씩 점검해두면 퇴직금 손해를 막을 수 있어요. 특히 평균임금과 IRP 계좌는 퇴직 전날까지 준비해야 해요.
+      <H2>육아휴직 퇴직금 체크리스트</H2>
+      <p style={body}>
+        퇴직 전에 아래 항목을 하나씩 점검해두면 퇴직금 손해를 막을 수 있어요.
+        특히 평균임금과 IRP 계좌는 퇴직 전날까지 준비해야 해요.
       </p>
 
+      <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <p style={{ ...body, marginTop: 16, marginBottom: 12 }}>
-        체크리스트를 점검하면서 회사 계산서와 본인이 직접 계산한 금액을 비교해보세요. 근속기간이나 평균임금에서 차이가 나면 바로 이의를 제기해야 해요.
-      </p>
-
-      <GreenBox>
-        <strong>회사가 육아휴직을 제외하고 계산했다면?</strong><br />
-        즉시 인사팀에 서면으로 이의를 신청하세요. 거부하면{" "}
-        <a href="https://www.moel.go.kr" target="_blank" rel="noopener noreferrer" style={{ color: "#1D9E75" }}>
-          고용노동부
-        </a>
-        에 진정을 낼 수 있어요. 퇴직 후라도 소멸시효 3년 안이면 청구 가능해요.
+      <GreenBox title="회사가 육아휴직을 제외하고 계산했다면?">
+        즉시 인사팀에 서면으로 이의를 신청하세요.<br />
+        거부하면 고용노동부(1350)에 진정을 낼 수 있어요. 퇴직 후라도 소멸시효 3년 안이면 청구 가능해요.
       </GreenBox>
 
-      {/* H2-6 */}
+      <Divider />
+
       <H2>자주 묻는 것들</H2>
-
-      <p style={{ ...body, marginBottom: 16 }}>
-        육아휴직과 퇴직금을 둘러싼 질문 중 가장 많이 나오는 것들만 모았어요. 상황이 비슷하다면 참고하세요.
+      <p style={{ ...body, marginBottom: 14 }}>
+        육아휴직과 퇴직금을 둘러싼 질문 중 가장 많이 나오는 것들만 모았어요.
       </p>
-
       <FAQ items={FAQS} />
 
       <Divider />
 
-      <References sections={REFERENCES} />
-
-      <Disclaimer />
+      <References groups={REFERENCES} />
+      <Disclaimer text="이 글은 2026년 3월 기준 남녀고용평등법과 근로자퇴직급여보장법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인하세요." />
     </ArticleLayout>
   );
 }

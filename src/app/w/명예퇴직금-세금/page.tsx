@@ -7,7 +7,7 @@ const currentSlug = "명예퇴직금-세금";
 export default function Page() {
   return (
     <ArticleLayout
-      sidebar={<Sidebar items={퇴직금_SIDEBAR} currentSlug={currentSlug} title="퇴직금 가이드" />}
+      sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} currentSlug={currentSlug} />}
     >
       {/* 타이틀 */}
       <div style={{ marginBottom: 24 }}>
@@ -29,13 +29,14 @@ export default function Page() {
 
       {/* 섹션 1: 해당 여부 체크 */}
       <EligibilityChecker
-        title="명예퇴직금 세금, 해당되는지 체크해보세요"
         items={[
-          "명예퇴직을 권고받았어요",
-          "일반 퇴직금 외에 추가 명예퇴직금이 있어요",
-          "비과세 한도가 얼마인지 모르겠어요",
-          "세금을 어떻게 계산하는지 알고 싶어요",
+          { id: "c1", label: "명예퇴직을 권고받았어요" },
+          { id: "c2", label: "일반 퇴직금 외에 추가 명예퇴직금이 있어요" },
+          { id: "c3", label: "비과세 한도가 얼마인지 모르겠어요" },
+          { id: "c4", label: "세금을 어떻게 계산하는지 알고 싶어요" },
         ]}
+        allMatchText="모두 해당된다면, 이 글이 딱 맞아요."
+        partialMatchText="일부 해당된다면 아래 내용을 참고해보세요."
       />
 
       <Divider />
@@ -50,13 +51,13 @@ export default function Page() {
       </p>
       <GreenBox>
         비과세 한도 공식: 근속연수 × 150만원 (최대 3억원)<br />
-        한도 초과분만 퇴직소득세 부과 — 소득세법 제22조
+        한도 초과분만 퇴직소득세 부과: 소득세법 제22조
       </GreenBox>
       <p style={{ ...body, marginTop: 16, marginBottom: 16 }}>
         일반 퇴직금은 전액이 퇴직소득세 과세 대상이에요. 반면 명예퇴직금은 비과세 한도만큼 먼저 제외하고, 나머지에만 세금을 매기죠. 같은 금액이라도 명예퇴직금이 세금 부담이 훨씬 작은 이유예요.
       </p>
 
-      <ArticleAd />
+      <ArticleAd position="mid" />
 
       {/* 섹션 2: 계산기 */}
       <H2>명예퇴직금 세금 계산기</H2>
@@ -66,7 +67,7 @@ export default function Page() {
       <Calculator
         sliders={[
           {
-            key: "amount",
+            id: "amount",
             label: "명예퇴직금",
             min: 1000,
             max: 20000,
@@ -75,7 +76,7 @@ export default function Page() {
             format: (v: number) => `${v.toLocaleString()}만원`,
           },
           {
-            key: "years",
+            id: "years",
             label: "근속 기간",
             min: 5,
             max: 35,
@@ -115,10 +116,10 @@ export default function Page() {
       <CategoryButton href="/w/퇴직금" label="퇴직금 완전 가이드 보기" />
 
       <RelatedArticles
-        articles={[
-          { href: "/w/퇴직금-세금-몇프로", title: "퇴직금 세금 몇 퍼센트", desc: "퇴직소득세 계산기" },
-          { href: "/w/퇴직금-소득세", title: "퇴직금 소득세 계산", desc: "환급도 가능해요" },
-          { href: "/w/퇴직금-IRP-수령방법", title: "퇴직금 IRP 수령", desc: "연금 수령 시 30% 절세" },
+        items={[
+          { slug: "퇴직금-세금-몇프로", title: "퇴직금 세금 몇 퍼센트", description: "퇴직소득세 계산기" },
+          { slug: "퇴직금-소득세", title: "퇴직금 소득세 계산", description: "환급도 가능해요" },
+          { slug: "퇴직금-IRP-수령방법", title: "퇴직금 IRP 수령", description: "연금 수령 시 30% 절세" },
         ]}
       />
 
@@ -185,10 +186,10 @@ export default function Page() {
       </p>
       <Checklist
         items={[
-          "비과세 한도 계산 — 근속연수×150만원",
+          "비과세 한도 계산: 근속연수×150만원",
           "한도 초과분 세금 계산",
           "원천징수영수증 수령 확인",
-          "IRP 절세 검토 — 금액 크면 유리",
+          "IRP 절세 검토: 금액 크면 유리",
           "소득세법 제22조 근거 확인",
         ]}
       />
@@ -225,23 +226,24 @@ export default function Page() {
 
       {/* 출처 */}
       <References
-        items={[
+        groups={[
           {
-            label: "소득세법 제22조 퇴직소득 비과세",
-            href: "https://www.law.go.kr/법령/소득세법",
+            category: "법령",
+            items: [
+              { label: "소득세법 제22조 퇴직소득 비과세", url: "https://www.law.go.kr/법령/소득세법" },
+              { label: "근로자퇴직급여보장법", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+            ],
           },
           {
-            label: "근로자퇴직급여보장법",
-            href: "https://www.law.go.kr/법령/근로자퇴직급여보장법",
-          },
-          {
-            label: "국세청",
-            href: "https://www.nts.go.kr",
+            category: "공식 자료",
+            items: [
+              { label: "국세청", url: "https://www.nts.go.kr" },
+            ],
           },
         ]}
       />
 
-      <Disclaimer />
+      <Disclaimer text="이 글은 2026년 3월 기준 소득세법을 바탕으로 작성됐어요. 최신 기준은 국세청(126)에서 확인하세요." />
     </ArticleLayout>
   );
 }

@@ -51,15 +51,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제52조 — 수급기간 연장 사유", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행령 — 수급기간 연장 세부 기준", url: "https://www.law.go.kr/법령/고용보험법시행령" },
+      { label: "고용보험법 제52조: 수급기간 연장 사유", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행령: 수급기간 연장 세부 기준", url: "https://www.law.go.kr/법령/고용보험법시행령" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 신청 및 수급기간 연장 안내", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 고용보험 상담(1350)", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 신청 및 수급기간 연장 안내", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 고용보험 상담(1350)", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -107,7 +107,7 @@ export default function Page() {
       </p>
       <p style={body}>
         사라지지 않아요. <strong>군복무 기간만큼 수급기간이 연장</strong>되죠.
-        <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 제52조</a>가 이걸 보장해요 — 본인 의사와 관계없이 구직활동이 불가능한 경우, 그 기간만큼 수급기간을 뒤로 밀어주는 거예요.
+        <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 제52조</a>가 이걸 보장해요: 본인 의사와 관계없이 구직활동이 불가능한 경우, 그 기간만큼 수급기간을 뒤로 밀어주는 거예요.
       </p>
       <p style={body}>
         다시 말하면, 입대 전에 못 받은 실업급여는 전역 후에 이어서 받을 수 있죠.
@@ -118,7 +118,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 군입대 시 실업급여 중단 */}
+      {/* 섹션 1: 군입대 시 실업급여 중단 */}
       <H2>수급 중단은 왜 발생하나요?</H2>
       <p style={body}>
         실업급여를 받으려면 2주마다 <strong>구직활동</strong>을 하고 실업인정을 받아야 해요. 고용센터에 출석하거나 온라인으로 신청하는 거죠. 군복무 중에는 이게 물리적으로 불가능해요. 그래서 입대하는 순간 실업급여 지급이 멈추는 거예요.
@@ -147,7 +147,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 입대 전 신고 절차 */}
+      {/* 섹션 2: 입대 전 신고 절차 */}
       <H2>재개 절차를 위해 입대 전 뭘 해야 하나요?</H2>
       <p style={body}>
         수급기간 연장을 받으려면 <strong>입대 전에 고용센터에 신고</strong>해야 해요. 입대 예정일, 복무 기간, 군별(육군·해군·공군·해병대)을 알려주면 돼요. 이 신고를 빠뜨리면 연장 처리가 늦어지고, 전역 후에 서류 절차가 복잡해지죠.
@@ -172,7 +172,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 전역 후 복귀 절차 */}
+      {/* 섹션 3: 전역 후 복귀 절차 */}
       <H2>전역 후 재개 절차와 복귀 신고</H2>
       <p style={body}>
         전역하면 <strong>고용센터에 복귀 신고</strong>를 해야 해요. 이걸 안 하면 실업급여가 자동으로 재개되지 않아요. 전역증명서를 가지고 관할 고용센터에 방문하면 되고, 그 자리에서 실업인정 일정도 다시 잡아주죠.
@@ -181,7 +181,7 @@ export default function Page() {
         복귀 신고가 끝나면 입대 전과 동일하게 <a href="/w/실업급여-구직활동-횟수" style={{ color: "#1D9E75", textDecoration: "underline" }}>구직활동</a>을 해야 해요. 2주마다 실업인정을 받아야 실업급여가 나오는 구조는 그대로예요. <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 온라인 실업인정도 가능하니까 일정을 미리 확인해 두세요.
       </p>
       <p style={body}>
-        한 가지 주의할 점 — 수급기간이 연장됐다고 무한정 미룰 수 있는 게 아니에요. 연장된 기간 안에 남은 일수를 소진해야 하죠. 전역 후에 늑장을 부리면 받을 수 있는 금액이 줄어들 수 있으니, 가능한 빨리 복귀 신고하는 게 이득이에요.
+        한 가지 주의할 점: 수급기간이 연장됐다고 무한정 미룰 수 있는 게 아니에요. 연장된 기간 안에 남은 일수를 소진해야 하죠. 전역 후에 늑장을 부리면 받을 수 있는 금액이 줄어들 수 있으니, 가능한 빨리 복귀 신고하는 게 이득이에요.
       </p>
 
       <SectionBadge>전역 후 체크리스트</SectionBadge>
@@ -189,7 +189,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 산업기능요원·예비군 등 특수 경우 */}
+      {/* 섹션 4: 산업기능요원·예비군 등 특수 경우 */}
       <H2>복무 유형별 수급 중단 여부 정리</H2>
       <p style={body}>
         <strong>산업기능요원</strong>은 현역과 상황이 달라요. 기업에서 일하면서 복무하는 형태라 실업 상태가 아니거든요. 수급기간 연장 대상에 해당하지 않아요. 복무가 끝나고 해당 기업에서 퇴직하면 그때 새로 실업급여를 신청할 수 있죠.
@@ -210,7 +210,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 실전 팁 */}
+      {/* 섹션 5: 실전 팁 */}
       <H2>입대 전후, 이 순서대로 진행하세요</H2>
       <p style={body}>
         입대까지 시간이 남아 있으면 <strong>받을 수 있는 만큼 미리 받아두세요</strong>. 실업급여는 지금 받든 전역 후에 받든 상관없어요. 생활비가 필요하면 입대 전에 최대한 수령하고, 남은 일수만 전역 후에 이어서 받는 게 현실적이죠.

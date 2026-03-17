@@ -51,15 +51,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 수급자격 및 이직 사유 기준", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "근로기준법 — 퇴직금 지급 기준", url: "https://www.law.go.kr/법령/근로기준법" },
+      { label: "고용보험법: 수급자격 및 이직 사유 기준", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "근로기준법: 퇴직금 지급 기준", url: "https://www.law.go.kr/법령/근로기준법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 인터넷 신청", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 퇴직 관련 상담", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 인터넷 신청", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 퇴직 관련 상담", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -104,7 +104,7 @@ export default function Page() {
         수급 조건과 금액
       </h1>
 
-      {/* intro — 숫자 + 법령 */}
+      {/* intro: 숫자 + 법령 */}
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
         &quot;희망퇴직 공고가 났어요. 위로금도 준다는데, 실업급여까지 받을 수 있나요?&quot;<br />
         받을 수 있어요. 회사가 먼저 공고를 내고 퇴직을 유도한 거라면 <strong>권고사직</strong>으로 보거든요.<br /><br />
@@ -116,7 +116,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 희망퇴직이 권고사직인 이유 + GreenBox + SectionBadge + EligibilityChecker */}
+      {/* 섹션 1: 희망퇴직이 권고사직인 이유 + GreenBox + SectionBadge + EligibilityChecker */}
       <H2>희망퇴직이 수급 조건에 해당하나요?</H2>
       <p style={body}>
         &quot;내가 신청한 거니까 자발적 퇴사 아니야?&quot;라고 생각하기 쉬워요. 하지만 본질을 보면 달라요. 회사가 구조조정이나 경영 악화를 이유로 인원을 줄이려고 위로금을 제시하고 퇴직 신청을 유도한 거잖아요. 이건 회사가 먼저 &quot;나가주세요&quot;라고 한 거예요.
@@ -143,7 +143,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 본인 주도 vs 회사 주도 + BorderBox + Calculator */}
+      {/* 섹션 2: 본인 주도 vs 회사 주도 + BorderBox + Calculator */}
       <H2>본인 주도 희망퇴직은 조건이 달라지나요?</H2>
       <p style={body}>
         네, 달라져요. 회사 공고 없이 <strong>본인이 먼저</strong> &quot;퇴직하고 싶다&quot;고 요청한 경우라면 자발적 퇴사로 볼 수 있어서 실업급여 수급이 어려워지죠. 회사 공고가 먼저 나오고 내가 신청한 거면 권고사직이지만, 내가 먼저 &quot;나가겠다&quot;고 하고 회사가 &quot;그래, 위로금 줄게&quot;라고 한 거면 성격이 완전히 달라요.
@@ -242,7 +242,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 위로금·퇴직금·실업급여 관계 + SectionBadge + Checklist */}
+      {/* 섹션 3: 위로금·퇴직금·실업급여 관계 + SectionBadge + Checklist */}
       <H2>위로금과 수급 금액은 별개예요</H2>
       <p style={body}>
         &quot;위로금 받았는데 실업급여도 되나요?&quot;라는 질문이 정말 많죠. 결론부터 말하면 <strong>셋 다 받을 수 있어요</strong>. 위로금, 퇴직금, 실업급여는 출처가 전부 다른 돈이니까요. 하나를 받았다고 다른 게 줄어들거나 하지 않죠.
@@ -255,9 +255,9 @@ export default function Page() {
       </p>
 
       <GreenBox title="받을 수 있는 돈 3가지">
-        위로금 — 회사가 자체 지급 (퇴직 유도 대가)<br />
-        퇴직금 — 근로기준법에 따른 법정 지급<br />
-        실업급여 — 고용보험에서 지급 (전부 별개)
+        위로금: 회사가 자체 지급 (퇴직 유도 대가)<br />
+        퇴직금: 근로기준법에 따른 법정 지급<br />
+        실업급여: 고용보험에서 지급 (전부 별개)
       </GreenBox>
 
       <SectionBadge>신청 전 체크리스트</SectionBadge>
@@ -265,7 +265,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 수급 금액과 기간 */}
+      {/* 섹션 4: 수급 금액과 기간 */}
       <H2>수급 금액과 지급 기간 계산법</H2>
       <p style={body}>
         희망퇴직자도 일반 근로자와 동일한 기준으로 실업급여를 받아요. 퇴직 전 3개월 평균임금의 <strong>60%</strong>가 1일 수급액이 되죠. 여기에 상한액(68,100원)과 하한액(66,048원)이 적용돼요. 월급이 높든 낮든 하루 수급액은 이 범위 안에서 정해지는 거예요.
@@ -285,7 +285,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 신청 절차와 주의사항 */}
+      {/* 섹션 5: 신청 절차와 주의사항 */}
       <H2>조건 충족 여부를 먼저 살펴보세요</H2>
       <p style={body}>
         실업급여 신청 전에 가장 먼저 할 일은 <strong>이직확인서 확인</strong>이에요. 퇴직 사유가 &quot;권고사직&quot; 또는 &quot;경영상 필요에 의한 퇴직&quot;으로 기재돼야 하죠. &quot;자진퇴사&quot;로 적혀 있으면 수급이 어려워지니까 퇴직 전에 회사에 반드시 확인해야 해요.

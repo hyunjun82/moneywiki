@@ -51,16 +51,16 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 피보험자격 취득·상실 및 소급가입", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법: 피보험자격 취득·상실 및 소급가입", url: "https://www.law.go.kr/법령/고용보험법" },
       { label: "고용보험 및 산업재해보상보험의 보험료징수 등에 관한 법률", url: "https://www.law.go.kr/법령/고용보험및산업재해보상보험의보험료징수등에관한법률" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 피보험자격 이력 조회", url: "https://www.ei.go.kr" },
-      { label: "근로복지공단 — 고용보험 가입 확인", url: "https://www.comwel.or.kr" },
-      { label: "고용노동부 — 고용보험 제도 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 피보험자격 이력 조회", url: "https://www.ei.go.kr" },
+      { label: "근로복지공단: 고용보험 가입 확인", url: "https://www.comwel.or.kr" },
+      { label: "고용노동부: 고용보험 제도 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -115,7 +115,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* ── 섹션 1 — 자격 체크 + 미가입 이유 ── */}
+      {/* ── 섹션 1: 자격 체크 + 미가입 이유 ── */}
       <H2>소급가입 조건에 해당되는지 어떻게 알 수 있나요?</H2>
       <p style={body}>
         소급가입으로 실업급여를 받으려면 몇 가지 조건이 맞아야 해요. 가장 중요한 건 <strong>근무 사실을 증명할 수 있느냐</strong>죠. 아무런 증빙 없이 &quot;거기서 일했어요&quot;라고만 하면 처리가 어려워요.
@@ -135,15 +135,15 @@ export default function Page() {
       />
 
       <GreenBox title="미가입이 생기는 원인 4가지">
-        1. <strong>사업주 미신고</strong> — 보험료 아끼려고 일부러 안 한 경우<br />
-        2. <strong>착오 누락</strong> — 실수로 빠진 경우<br />
-        3. <strong>적용제외 오해</strong> — 아르바이트라서 안 된다고 착각한 경우<br />
-        4. <strong>사업장 미등록</strong> — 사업장 자체가 등록되지 않은 경우
+        1. <strong>사업주 미신고</strong>: 보험료 아끼려고 일부러 안 한 경우<br />
+        2. <strong>착오 누락</strong>: 실수로 빠진 경우<br />
+        3. <strong>적용제외 오해</strong>: 아르바이트라서 안 된다고 착각한 경우<br />
+        4. <strong>사업장 미등록</strong>: 사업장 자체가 등록되지 않은 경우
       </GreenBox>
 
       <Divider />
 
-      {/* ── 섹션 2 — 소급가입 절차 ── */}
+      {/* ── 섹션 2: 소급가입 절차 ── */}
       <H2>소급가입 신청 방법은 어떤 절차인가요?</H2>
       <p style={body}>
         소급가입은 원래 가입했어야 할 과거 기간을 지금이라도 가입 처리하는 제도예요. 완료되면 그 기간이 피보험기간으로 인정되고, 실업급여 수급자격을 얻을 수 있죠.
@@ -152,7 +152,7 @@ export default function Page() {
         절차는 이래요. 먼저 <strong>고용노동부(1350) 또는 근로복지공단(1588-0075)</strong>에 고용보험 미가입 사업장을 신고해요. 그러면 담당자가 조사에 들어가죠. 이때 근로 사실을 증명할 자료를 내야 해요.
       </p>
       <p style={body}>
-        조사가 끝나면 소급가입 처리가 돼요. 밀린 보험료를 납부하고, 피보험기간이 확정되면 실업급여를 신청할 수 있죠. 사업주가 <a href="/w/실업급여-이직확인서-거부" style={{ color: "#1D9E75", textDecoration: "underline" }}>협조를 거부</a>해도 괜찮아요 — <strong>고용노동부에서 직권으로 가입 처리</strong>할 수 있으니까요.
+        조사가 끝나면 소급가입 처리가 돼요. 밀린 보험료를 납부하고, 피보험기간이 확정되면 실업급여를 신청할 수 있죠. 사업주가 <a href="/w/실업급여-이직확인서-거부" style={{ color: "#1D9E75", textDecoration: "underline" }}>협조를 거부</a>해도 괜찮아요: <strong>고용노동부에서 직권으로 가입 처리</strong>할 수 있으니까요.
       </p>
 
       <BorderBox title="소급가입 처리 흐름">
@@ -170,7 +170,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 3 — 증빙자료 + 체크리스트 ── */}
+      {/* ── 섹션 3: 증빙자료 + 체크리스트 ── */}
       <H2>소급가입 신청에 필요한 증빙자료</H2>
       <p style={body}>
         핵심은 <strong>&quot;내가 그 회사에서 일했다&quot;</strong>는 사실을 증명하는 거예요. 서류가 많을수록 유리하죠. 하나만 있어도 되지만, 여러 개를 갖추면 조사가 빨라져요.
@@ -187,7 +187,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 4 — 보험료와 과태료 ── */}
+      {/* ── 섹션 4: 보험료와 과태료 ── */}
       <H2>소급가입 조건 충족 시 보험료와 과태료</H2>
       <p style={body}>
         소급가입하면 밀린 보험료를 납부해야 해요. 원래 고용보험료는 사업주와 근로자가 <strong>각각 0.9%씩</strong> 부담하는 구조죠. 월급 200만원 기준이면 각 18,000원, 합쳐서 매달 36,000원이에요.
@@ -208,7 +208,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* ── 섹션 5 — 주의사항 ── */}
+      {/* ── 섹션 5: 주의사항 ── */}
       <H2>소급가입 신청 전에 이것부터 챙기세요</H2>
       <p style={body}>
         가장 중요한 건 <strong>시간</strong>이에요. 실업급여 신청 기한은 퇴직 후 12개월이죠. 소급가입 처리에 1~2개월이 걸리니까, 퇴직하자마자 바로 신고해야 기한 안에 실업급여를 받을 수 있어요.
@@ -217,7 +217,7 @@ export default function Page() {
         소급가입 진행 중이라도 <strong>12개월 기한은 연장되지 않아요</strong>. 처리가 늦어지면 실업급여를 아예 못 받는 상황이 벌어질 수 있죠. 퇴직 후 최대한 빨리 움직이세요.
       </p>
       <p style={body}>
-        신고 채널은 여러 곳이에요. 고용노동부 고객상담센터(1350), 근로복지공단(1588-0075), <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>, 관할 고용센터 직접 방문까지 — 편한 곳에서 진행하면 돼요. 전화 한 통이면 절차가 시작되죠.
+        신고 채널은 여러 곳이에요. 고용노동부 고객상담센터(1350), 근로복지공단(1588-0075), <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>, 관할 고용센터 직접 방문까지: 편한 곳에서 진행하면 돼요. 전화 한 통이면 절차가 시작되죠.
       </p>
 
       <Divider />

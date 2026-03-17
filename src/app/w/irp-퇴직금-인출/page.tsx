@@ -18,7 +18,7 @@ const CHECK_ITEMS = [
 
 const CALC_SLIDERS = [
   {
-    key: "amount",
+    id: "amount",
     label: "IRP 잔액",
     min: 500,
     max: 10000,
@@ -27,7 +27,7 @@ const CALC_SLIDERS = [
     format: (v: number) => `${v.toLocaleString()}만원`,
   },
   {
-    key: "age",
+    id: "age",
     label: "현재 나이",
     min: 30,
     max: 70,
@@ -39,7 +39,6 @@ const CALC_SLIDERS = [
 
 const CALC_RESULTS = [
   {
-    key: "result1",
     label: "55세 이전 인출 시 세금 (기타소득세 16.5%)",
     highlight: true,
     getValue: (v: Record<string, number>) =>
@@ -49,7 +48,6 @@ const CALC_RESULTS = [
     format: (v: number) => `약 ${Math.round(v / 10000).toLocaleString()}만원`,
   },
   {
-    key: "result2",
     label: "실수령액 (세후)",
     highlight: false,
     getValue: (v: Record<string, number>) => {
@@ -94,11 +92,11 @@ const STEPS = [
 ];
 
 const CHECKLIST = [
-  { id: "cl1", label: "나이 확인 — 55세 기준으로 세금이 달라져요" },
-  { id: "cl2", label: "인출 사유 — 부득이한 사유면 세금 혜택이 있어요" },
-  { id: "cl3", label: "세금 계산 — 기타소득세 16.5% vs 연금소득세 3.3%" },
-  { id: "cl4", label: "부득이한 사유 증빙 — 해당 시 서류를 미리 준비해요" },
-  { id: "cl5", label: "인출 전 연금 전환 검토 — 세금 차이가 크므로 신중히" },
+  "나이 확인: 55세 기준으로 세금이 달라져요",
+  "인출 사유: 부득이한 사유면 세금 혜택이 있어요",
+  "세금 계산: 기타소득세 16.5% vs 연금소득세 3.3%",
+  "부득이한 사유 증빙: 해당 시 서류를 미리 준비해요",
+  "인출 전 연금 전환 검토: 세금 차이가 크므로 신중히",
 ];
 
 const FAQS = [
@@ -126,19 +124,17 @@ const FAQS = [
 
 const REFERENCES = [
   {
-    type: "법령" as const,
-    name: "소득세법 제22조 — 퇴직소득세",
-    url: "https://www.law.go.kr/법령/소득세법",
+    category: "법령",
+    items: [
+      { label: "소득세법 제22조: 퇴직소득세", url: "https://www.law.go.kr/법령/소득세법" },
+      { label: "근로자퇴직급여보장법: IRP 중도인출 요건", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+    ],
   },
   {
-    type: "법령" as const,
-    name: "근로자퇴직급여보장법 — IRP 중도인출 요건",
-    url: "https://www.law.go.kr/법령/근로자퇴직급여보장법",
-  },
-  {
-    type: "공식" as const,
-    name: "금융감독원 — IRP 중도인출 안내",
-    url: "https://www.fss.or.kr",
+    category: "공식 자료",
+    items: [
+      { label: "금융감독원: IRP 중도인출 안내", url: "https://www.fss.or.kr" },
+    ],
   },
 ];
 
@@ -146,22 +142,22 @@ const RELATED = [
   {
     slug: "퇴직금-IRP-수령방법",
     title: "퇴직금 IRP 수령 방법",
-    desc: "14일 이내 이체까지 4단계",
+    description: "14일 이내 이체까지 4단계를 정리했어요.",
   },
   {
     slug: "퇴직금-IRP-계좌",
     title: "퇴직금 IRP 계좌 개설",
-    desc: "어디서 만드는 게 유리한지",
+    description: "어디서 만드는 게 유리한지 정리했어요.",
   },
   {
     slug: "퇴직금-세금",
     title: "퇴직금 세금, 얼마나 떼나요?",
-    desc: "IRP 절세 효과 계산",
+    description: "IRP 절세 효과까지 계산해드려요.",
   },
 ];
 
 export default function Page() {
-  const sidebar = <Sidebar items={퇴직금_SIDEBAR} currentSlug={currentSlug} />;
+  const sidebar = <Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} currentSlug={currentSlug} />;
 
   return (
     <ArticleLayout sidebar={sidebar}>
@@ -183,12 +179,12 @@ export default function Page() {
         IRP에 들어온 퇴직금을 꺼내는 건 원칙적으로 55세 이후에 해야 세금이 적어요. 55세 이전에 인출하면 기타소득세 16.5%가 원금 전체에 붙어요. 급하게 꺼내기 전에 세금 계산부터 해보세요.
       </p>
 
-      {/* 체크리스트 — 해당 상황 확인 */}
-      <SectionBadge text="지금 이런 상황이죠?" />
+      {/* 체크리스트: 해당 상황 확인 */}
+      <SectionBadge>내 상황 체크해보세요</SectionBadge>
       <EligibilityChecker
-        title="해당 상황 체크"
         items={CHECK_ITEMS}
-        resultText="아래 내용을 꼼꼼히 읽어보세요."
+        allMatchText="인출 가능한 상황이에요. 아래 조건과 세금을 확인하세요."
+        partialMatchText="일부만 해당돼요. IRP 가입 금융사에 정확한 인출 가능 여부를 문의하세요."
       />
 
       <Divider />
@@ -202,7 +198,7 @@ export default function Page() {
         중도인출이 허용되는 경우는 두 가지로 나뉘어요. 첫째, 부득이한 사유(무주택자 주택 구입, 6개월 이상 요양 등)가 있을 때 일부 인출이 가능해요. 둘째, 그 외 경우에는 전액 해지만 가능하고 기타소득세 16.5%가 원금 전체에 붙어요.
       </p>
       <GreenBox>
-        <strong>핵심 요약</strong><br />
+        <b>핵심 요약</b><br />
         • 55세 이전 일반 해지 → 기타소득세 16.5% (원금 전체 과세)<br />
         • 부득이한 사유 일부 인출 → 퇴직소득세만 적용 (세금 ↓)<br />
         • 55세 이후 연금 수령 → 연금소득세 3.3~5.5% (세금 대폭 ↓)
@@ -225,8 +221,8 @@ export default function Page() {
       />
 
       {/* 관련 글 */}
-      <CategoryButton category="퇴직금" href="/w/퇴직금-IRP-수령방법" />
-      <RelatedArticles articles={RELATED} />
+      <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
+      <RelatedArticles items={RELATED} />
 
       <Divider />
 
@@ -247,7 +243,7 @@ export default function Page() {
       <DocTable docs={DOCS} />
 
       <BorderBox>
-        <strong>부득이한 사유 증빙 서류 예시</strong><br />
+        <b>부득이한 사유 증빙 서류 예시</b><br />
         • 무주택자 주택 구입: 매매계약서, 주민등록등본<br />
         • 6개월 이상 요양: 진단서, 입원확인서<br />
         • 파산·개인회생: 법원 결정문
@@ -262,7 +258,7 @@ export default function Page() {
       </p>
       <Checklist items={CHECKLIST} />
 
-      <ArticleAd />
+      <ArticleAd position="mid" />
 
       <Divider />
 
@@ -273,9 +269,9 @@ export default function Page() {
       <Divider />
 
       {/* 참고 자료 */}
-      <References items={REFERENCES} />
+      <References groups={REFERENCES} />
 
-      <Disclaimer />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법을 바탕으로 작성됐어요. 최신 기준은 금융감독원(1332)에서 확인하세요." />
     </ArticleLayout>
   );
 }

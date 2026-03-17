@@ -81,7 +81,7 @@ const CHECKLIST = [
   "고용24(ei.go.kr)에서 이전 수급이력과 남은 수급일수 확인",
   "재취업한 회사에서 이직확인서 발급 요청 (퇴직 사유 확인)",
   "워크넷(work.go.kr) 구직등록 완료",
-  "관할 고용센터 방문 — 신분증, 통장 사본 지참",
+  "관할 고용센터 방문: 신분증, 통장 사본 지참",
   "조기재취업수당 수령 여부 확인 (받았으면 남은 급여 소멸)",
 ];
 
@@ -112,16 +112,16 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제40조 — 구직급여 수급 요건", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 제48조 — 수급기간 및 재수급 규정", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행규칙 별표2 — 정당한 이직 사유", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
+      { label: "고용보험법 제40조: 구직급여 수급 요건", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 제48조: 수급기간 및 재수급 규정", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행규칙 별표2: 정당한 이직 사유", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 인터넷 신청", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 실업급여 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 인터넷 신청", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 실업급여 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -176,7 +176,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 수급기간 내 남은 급여 */}
+      {/* 섹션 1: 수급기간 내 남은 급여 */}
       <H2>재수급 조건을 충족하는 경우는 어떤 건가요?</H2>
       <p style={body}>
         실업급여 수급기간은 <strong>첫 퇴직일로부터 12개월</strong>이에요.
@@ -209,7 +209,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 상황별 정리 + 계산기 */}
+      {/* 섹션 2: 상황별 정리 + 계산기 */}
       <H2>계산법은 남은 급여와 새 자격 중 어디에 해당되나요?</H2>
       <p style={body}>
         재취업 후 재퇴직은 크게 네 가지 상황으로 나뉘어요.
@@ -249,7 +249,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 조기재취업수당 받은 경우 */}
+      {/* 섹션 3: 조기재취업수당 받은 경우 */}
       <H2>조기재취업수당 수령 후 재수급 조건</H2>
       <p style={body}>
         <a href="/w/실업급여-조기재취업수당" style={{ color: "#1D9E75", textDecoration: "underline" }}>조기재취업수당</a>은 남은 실업급여의 절반을 일시금으로 미리 받는 제도예요.
@@ -277,7 +277,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 수급기간 만료 후 */}
+      {/* 섹션 4: 수급기간 만료 후 */}
       <H2>수급기간 만료 후 재수급 계산법</H2>
       <p style={body}>
         수급기간은 <strong>첫 퇴직일로부터 12개월</strong>이에요. 이 기한이 지나면 남은 급여가 있어도 사라져요.
@@ -298,7 +298,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 재수급 신청 방법 */}
+      {/* 섹션 5: 재수급 신청 방법 */}
       <H2>재수급 신청서를 제출하세요</H2>
       <p style={body}>
         <strong>남은 급여를 이어 받는 경우</strong>는 절차가 간단해요.
@@ -313,7 +313,7 @@ export default function Page() {
       <p style={body}>
         어떤 경우든 재취업한 회사에서 <strong>이직확인서</strong>를 받아야 하는 건 마찬가지예요.
         이직 사유가 &quot;비자발적&quot;으로 정확히 기재됐는지 꼭 따져봐야 해요.
-        회사가 발급을 거부하면 고용센터(1350)에 신고할 수 있죠 — 퇴직 후 10일 이내 발급이 법적 의무니까요.
+        회사가 발급을 거부하면 고용센터(1350)에 신고할 수 있죠: 퇴직 후 10일 이내 발급이 법적 의무니까요.
       </p>
 
       <SectionBadge>재수급 신청 전 체크리스트</SectionBadge>

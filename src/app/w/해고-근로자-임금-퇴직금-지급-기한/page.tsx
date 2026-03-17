@@ -41,15 +41,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로기준법 제36조 — 금품 청산", url: "https://www.law.go.kr/법령/근로기준법" },
-      { label: "근로기준법 제26조 — 해고의 예고", url: "https://www.law.go.kr/법령/근로기준법" },
+      { label: "근로기준법 제36조: 금품 청산", url: "https://www.law.go.kr/법령/근로기준법" },
+      { label: "근로기준법 제26조: 해고의 예고", url: "https://www.law.go.kr/법령/근로기준법" },
       { label: "근로자퇴직급여 보장법", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용노동부 — 해고 관련 안내", url: "https://www.moel.go.kr" },
+      { label: "고용노동부: 해고 관련 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];

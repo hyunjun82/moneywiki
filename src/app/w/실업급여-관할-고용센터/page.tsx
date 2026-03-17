@@ -51,14 +51,14 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 실업급여 수급자격 및 신청 절차", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법: 실업급여 수급자격 및 신청 절차", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 고용센터 찾기 및 실업급여 신청", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 전국 고용센터 안내", url: "https://www.moel.go.kr/local/localList.do" },
+      { label: "고용24: 고용센터 찾기 및 실업급여 신청", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 전국 고용센터 안내", url: "https://www.moel.go.kr/local/localList.do" },
     ],
   },
 ];
@@ -114,7 +114,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 관할 고용센터란 */}
+      {/* 섹션 1: 관할 고용센터란 */}
       <H2>거주지 기준으로 관할이 정해지나요?</H2>
       <SectionBadge>수급 자격 체크</SectionBadge>
 
@@ -129,7 +129,7 @@ export default function Page() {
       </p>
 
       <GreenBox title="관할 고용센터 결정 기준">
-        주민등록상 주소지만 따져요 — 실거주지나 직장 소재지는 무관<br />
+        주민등록상 주소지만 따져요: 실거주지나 직장 소재지는 무관<br />
         등본에 찍힌 주소가 기준이니, 주소 불일치 시 전입신고 먼저<br />
         수급 중 이사 → 전입신고 후 이관 신청 필수
       </GreenBox>
@@ -142,7 +142,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 관할 고용센터 조회 방법 */}
+      {/* 섹션 2: 관할 고용센터 조회 방법 */}
       <H2>내 관할 고용센터는 어떻게 조회하나요?</H2>
 
       <p style={body}>
@@ -167,7 +167,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 방문 준비와 체크리스트 */}
+      {/* 섹션 3: 방문 준비와 체크리스트 */}
       <H2>고용센터 방문 전 거주지 기준 준비사항</H2>
       <SectionBadge>신청 전 체크리스트</SectionBadge>
 
@@ -185,7 +185,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 방문 vs 온라인 */}
+      {/* 섹션 4: 방문 vs 온라인 */}
       <H2>방문 조회와 온라인 조회법의 차이</H2>
 
       <p style={body}>
@@ -207,7 +207,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 흔한 실수 */}
+      {/* 섹션 5: 흔한 실수 */}
       <H2>관할 조회 후 바로 해야 할 일</H2>
 
       <p style={body}>

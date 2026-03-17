@@ -118,14 +118,14 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 수급자격 및 피보험기간 산정", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법: 수급자격 및 피보험기간 산정", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 인터넷 신청", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 고용보험 상담(1350)", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 인터넷 신청", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 고용보험 상담(1350)", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -180,7 +180,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 핵심 조건 + GreenBox + EligibilityChecker */}
+      {/* 섹션 1: 핵심 조건 + GreenBox + EligibilityChecker */}
       <H2>재수급 자격은 어떤 조건이 필요한가요?</H2>
       <p style={body}>
         처음 받을 때와 기본 구조가 같아요.
@@ -201,7 +201,7 @@ export default function Page() {
         마지막으로 퇴직 후 <strong>12개월 이내</strong>에 신청해야 한다는 것도 잊으면 안 돼요.
       </p>
 
-      <GreenBox title="재신청 4가지 조건 — 하나라도 빠지면 안 돼요">
+      <GreenBox title="재신청 4가지 조건: 하나라도 빠지면 안 돼요">
         1. 이전 수급 이후 고용보험 180일 이상 새로 가입<br />
         2. 비자발적 퇴사 (권고사직, 계약만료, 정당한 사유 등)<br />
         3. 적극적 구직 의사 + 근로 능력 보유<br />
@@ -217,7 +217,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 가입기간 리셋과 수급기간 변화 + 계산기 */}
+      {/* 섹션 2: 가입기간 리셋과 수급기간 변화 + 계산기 */}
       <H2>재수급 기간은 이전과 왜 달라지나요?</H2>
       <p style={body}>
         이게 재신청에서 가장 중요한 부분이에요.
@@ -256,7 +256,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 중간 취업 후 조기퇴사한 경우 + Checklist */}
+      {/* 섹션 3: 중간 취업 후 조기퇴사한 경우 + Checklist */}
       <H2>재수급 자격과 조기재취업수당의 관계</H2>
       <p style={body}>
         수급 도중에 취업해서 남은 급여가 있었다면, 그 <strong>남은 일수는 소멸</strong>돼요.
@@ -277,16 +277,16 @@ export default function Page() {
 
       <SectionBadge>재신청 전 반드시 체크하세요</SectionBadge>
       <Checklist items={[
-        "이전 수급 이력 확인 — 고용24에서 수급 이력 조회 가능",
-        "새 직장 고용보험 180일 가입 여부 — 피보험단위기간 확인",
-        "퇴직 사유 확인 — 이직확인서에 비자발적 퇴사로 기재됐는지",
-        "12개월 이내 신청 기한 — 퇴직일 기준 1년 넘기면 수급 불가",
-        "조기재취업수당 해당 여부 — 이전 수급 시 절반 이상 남겼는지",
+        "이전 수급 이력 확인: 고용24에서 수급 이력 조회 가능",
+        "새 직장 고용보험 180일 가입 여부: 피보험단위기간 확인",
+        "퇴직 사유 확인: 이직확인서에 비자발적 퇴사로 기재됐는지",
+        "12개월 이내 신청 기한: 퇴직일 기준 1년 넘기면 수급 불가",
+        "조기재취업수당 해당 여부: 이전 수급 시 절반 이상 남겼는지",
       ]} />
 
       <Divider />
 
-      {/* 섹션 4 — 재신청 절차 */}
+      {/* 섹션 4: 재신청 절차 */}
       <H2>재수급 기간에 맞춰 신청 절차 진행하기</H2>
       <p style={body}>
         절차 자체는 처음 받을 때와 같아요.
@@ -307,7 +307,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 핵심 정리 */}
+      {/* 섹션 5: 핵심 정리 */}
       <H2>재수급 자격을 미리 조회하세요</H2>
       <p style={body}>
         재신청에서 가장 흔한 실수는 &quot;이전 가입기간이 합산되겠지&quot;라는 오해예요.

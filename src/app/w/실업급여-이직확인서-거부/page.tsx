@@ -51,14 +51,14 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제42조 — 이직확인서 발급 의무 및 과태료", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 제42조: 이직확인서 발급 의무 및 과태료", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 이직확인서 미발급 신고", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 실업급여 상담 (1350)", url: "https://www.moel.go.kr" },
+      { label: "고용24: 이직확인서 미발급 신고", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 실업급여 상담 (1350)", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -119,7 +119,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 이직확인서가 필요한 이유 + 자격확인 */}
+      {/* 섹션 1: 이직확인서가 필요한 이유 + 자격확인 */}
       <H2>거부당하면 과태료 기준이 어떻게 되나요?</H2>
       <p style={body}>
         이직확인서에는 퇴사 사유, 근무 기간, 급여 정보가 전부 담겨 있죠.
@@ -153,7 +153,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 회사가 거부하는 유형과 대처법 */}
+      {/* 섹션 2: 회사가 거부하는 유형과 대처법 */}
       <H2>거부 유형별 신고 방법이 다른가요?</H2>
       <p style={body}>
         가장 흔한 유형이 <strong>사장이 연락을 안 받는 경우</strong>예요.
@@ -185,7 +185,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 고용센터 신고 절차 */}
+      {/* 섹션 3: 고용센터 신고 절차 */}
       <H2>거부 신고 접수부터 과태료 부과까지 절차</H2>
       <p style={body}>
         <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>(ei.go.kr)에 접속하면
@@ -216,7 +216,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 퇴사 사유가 잘못 기재된 경우 */}
+      {/* 섹션 4: 퇴사 사유가 잘못 기재된 경우 */}
       <H2>신고 후 퇴사 사유가 다르게 기재된 경우</H2>
       <p style={body}>
         이직확인서를 받긴 받았는데 <strong>퇴사 사유가 사실과 다른 경우</strong>도 있죠.
@@ -238,7 +238,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 이직확인서 없이 먼저 신청하기 */}
+      {/* 섹션 5: 이직확인서 없이 먼저 신청하기 */}
       <H2>거부 상태에서도 실업급여 신청부터 넣으세요</H2>
       <p style={body}>
         이직확인서가 안 나왔다고 마냥 기다리면 안 돼요.

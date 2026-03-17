@@ -70,14 +70,14 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제41조 — 피보험단위기간 정의 및 수급자격 요건", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 제41조: 피보험단위기간 정의 및 수급자격 요건", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 피보험단위기간 조회·실업급여 신청", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 고용보험 상담(1350)", url: "https://www.moel.go.kr" },
+      { label: "고용24: 피보험단위기간 조회·실업급여 신청", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 고용보험 상담(1350)", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -116,13 +116,13 @@ export default function Page() {
       {/* breadcrumb */}
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>실업급여 · 고용보험 · 피보험단위기간</p>
 
-      {/* h1 — 2줄 */}
+      {/* h1: 2줄 */}
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
         피보험단위기간 180일 계산, 어떻게?<br />
         유급·무급 포함 기준
       </h1>
 
-      {/* intro — 숫자 + 법령 */}
+      {/* intro: 숫자 + 법령 */}
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
         &quot;6개월 넘게 다녔는데 왜 180일이 안 되죠?&quot;
       </p>
@@ -140,7 +140,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 피보험단위기간이란 + GreenBox + SectionBadge + EligibilityChecker */}
+      {/* 섹션 1: 피보험단위기간이란 + GreenBox + SectionBadge + EligibilityChecker */}
       <H2>유급과 무급, 포함 기준이 어떻게 다른가요?</H2>
       <p style={body}>
         고용보험에 가입된 기간을 통째로 세는 게 아니에요.
@@ -173,7 +173,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 실제 계산 예시 + BorderBox + Calculator */}
+      {/* 섹션 2: 실제 계산 예시 + BorderBox + Calculator */}
       <H2>주 5일 근무하면 한 달에 며칠이 포함되나요?</H2>
       <p style={body}>
         주 5일 근무자를 기준으로 따져볼게요. 월~금 출근하면 한 달 근무일이 약 22일이에요.
@@ -212,7 +212,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 특수 케이스 + SectionBadge + Checklist */}
+      {/* 섹션 3: 특수 케이스 + SectionBadge + Checklist */}
       <H2>일용직·단시간 근로자의 유급·무급 포함 기준</H2>
       <p style={body}>
         일용직은 일반 근로자와 계산 방식이 달라요. 출근한 날만 피보험단위기간으로 잡히죠.
@@ -235,7 +235,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 확인 방법 */}
+      {/* 섹션 4: 확인 방법 */}
       <H2>내 피보험단위기간 포함 일수 확인하는 곳</H2>
       <p style={body}>
         <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24(ei.go.kr)</a>에 로그인하면 바로 나와요.
@@ -255,7 +255,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 180일 미달 시 대처 + 개념 비교 */}
+      {/* 섹션 5: 180일 미달 시 대처 + 개념 비교 */}
       <H2>180일 미달이면 유급·무급 기준부터 점검하세요</H2>
       <p style={body}>
         피보험단위기간 180일은 <strong>실업급여 수급자격의 최소 관문</strong>이에요.
@@ -280,7 +280,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* FAQ — 5개 */}
+      {/* FAQ: 5개 */}
       <H2>자주 묻는 것들</H2>
       <p style={{ ...body, marginBottom: 14 }}>
         피보험단위기간을 놓고 실제로 가장 많이 들어오는 질문이에요.

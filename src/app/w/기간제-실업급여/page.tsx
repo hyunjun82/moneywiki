@@ -103,15 +103,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 실업급여 수급자격 및 이직 사유", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "기간제법 — 기간제 근로자 보호 및 2년 사용 제한", url: "https://www.law.go.kr/법령/기간제및단시간근로자보호등에관한법률" },
+      { label: "고용보험법: 실업급여 수급자격 및 이직 사유", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "기간제법: 기간제 근로자 보호 및 2년 사용 제한", url: "https://www.law.go.kr/법령/기간제및단시간근로자보호등에관한법률" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 신청 및 이직확인서 조회", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 기간제 근로자 권리 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 신청 및 이직확인서 조회", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 기간제 근로자 권리 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -167,7 +167,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 기간제 근로자와 실업급여 자격 */}
+      {/* 섹션 1: 기간제 근로자와 실업급여 자격 */}
       <H2>수급액을 받으려면 어떤 조건이 필요한가요?</H2>
       <SectionBadge>수급 자격 체크</SectionBadge>
 
@@ -196,7 +196,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 수급액 계산 */}
+      {/* 섹션 2: 수급액 계산 */}
       <H2>수급액 계산법은 어떻게 되나요?</H2>
 
       <p style={body}>
@@ -223,7 +223,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 신청 절차와 체크리스트 */}
+      {/* 섹션 3: 신청 절차와 체크리스트 */}
       <H2>수급액 신청 절차와 체크리스트</H2>
       <SectionBadge>신청 전 체크리스트</SectionBadge>
 
@@ -242,7 +242,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 2년 무기계약 전환 */}
+      {/* 섹션 4: 2년 무기계약 전환 */}
       <H2>2년 초과 근무 시 수급액과 무기계약 전환</H2>
 
       <p style={body}>
@@ -265,7 +265,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 퇴직금 */}
+      {/* 섹션 5: 퇴직금 */}
       <H2>퇴직금과 수급액을 함께 챙기세요</H2>
 
       <p style={body}>

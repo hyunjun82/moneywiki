@@ -17,11 +17,11 @@ const CHECK_ITEMS = [
 ];
 
 const CHECKLIST = [
-  "사유별 증빙자료 확보 — 급여명세서, 통장 내역, 녹음 파일, 진단서 등",
-  "퇴직 전 고용센터(1350) 사전 상담 — 인정 가능성 미리 확인",
-  "이직확인서 퇴직 사유 확인 — 회사 기재 내용이 사실과 다르면 정정 요청",
-  "퇴직 후 12개월 이내 실업급여 신청 — 기한 넘기면 수급 불가",
-  "불인정 시 60일 이내 이의신청 가능 — 추가 증거 첨부해서 재심사 요청",
+  "사유별 증빙자료 확보: 급여명세서, 통장 내역, 녹음 파일, 진단서 등",
+  "퇴직 전 고용센터(1350) 사전 상담: 인정 가능성 미리 확인",
+  "이직확인서 퇴직 사유 확인: 회사 기재 내용이 사실과 다르면 정정 요청",
+  "퇴직 후 12개월 이내 실업급여 신청: 기한 넘기면 수급 불가",
+  "불인정 시 60일 이내 이의신청 가능: 추가 증거 첨부해서 재심사 요청",
 ];
 
 const FAQS = [
@@ -51,15 +51,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 수급자격의 제한 (정당한 이직 사유)", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행규칙 — 정당한 이직 사유 세부 기준", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
+      { label: "고용보험법: 수급자격의 제한 (정당한 이직 사유)", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행규칙: 정당한 이직 사유 세부 기준", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 신청 안내", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 실업급여 제도 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 신청 안내", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 실업급여 제도 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -114,7 +114,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 정당한 이직 사유 + GreenBox + SectionBadge + EligibilityChecker */}
+      {/* 섹션 1: 정당한 이직 사유 + GreenBox + SectionBadge + EligibilityChecker */}
       <H2>어떤 조건이면 정당한 퇴사 사유로 인정되나요?</H2>
       <p style={body}>
         <a href="https://www.law.go.kr/법령/고용보험법시행규칙" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 시행규칙</a>이 정당한 이직 사유를 구체적으로 나열하고 있어요. 가장 흔한 게 <strong><a href="/w/임금체불-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>임금 관련 문제</a></strong>죠. 월급의 30% 이상을 안 줬거나, 2개월 이상 밀렸거나, 최저임금에 미달하는 급여를 받았다면 전부 해당돼요. 체불 금액이 적더라도 반복되면 인정 가능성이 높아지고요.
@@ -127,11 +127,11 @@ export default function Page() {
       </p>
 
       <GreenBox title="정당한 이직 사유 한눈에">
-        1. 임금체불 — 30% 이상 또는 2개월 이상 미지급<br />
-        2. 직장 내 괴롭힘 · 성희롱 — 회사 미조치 시<br />
-        3. 출퇴근 왕복 3시간 이상 — 사업장 이전·전근<br />
-        4. 본인 건강 문제 — 의사 진단서 필수<br />
-        5. 가족 간병 — 30일 이상 직접 돌봄<br />
+        1. 임금체불: 30% 이상 또는 2개월 이상 미지급<br />
+        2. 직장 내 괴롭힘 · 성희롱: 회사 미조치 시<br />
+        3. 출퇴근 왕복 3시간 이상: 사업장 이전·전근<br />
+        4. 본인 건강 문제: 의사 진단서 필수<br />
+        5. 가족 간병: 30일 이상 직접 돌봄<br />
         6. 근로계약 위반 · 사업장 법 위반
       </GreenBox>
 
@@ -144,7 +144,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 인정 안 되는 경우 + BorderBox */}
+      {/* 섹션 2: 인정 안 되는 경우 + BorderBox */}
       <H2>증빙 서류 없이도 인정받을 수 있나요?</H2>
       <p style={body}>
         증빙 서류가 없으면 사실상 어려워요. 고용센터 담당자가 퇴직 사유를 심사할 때 가장 먼저 보는 게 이직확인서이고, 그다음이 본인이 제출한 증빙자료죠. 말로만 &quot;임금체불이었다&quot;고 주장하면 인정해주기 힘들어요.
@@ -171,7 +171,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 증빙자료 + SectionBadge + Checklist */}
+      {/* 섹션 3: 증빙자료 + SectionBadge + Checklist */}
       <H2>조건별로 필요한 증빙 서류가 달라요</H2>
       <p style={body}>
         <strong>임금체불</strong>이라면 급여명세서, 근로계약서, 통장 입금 내역이 핵심이에요. &quot;월급이 2개월째 안 들어왔다&quot;는 걸 통장으로 바로 보여줄 수 있으니까요. 노동청에 체불 진정을 넣은 기록까지 있으면 고용센터 심사가 훨씬 수월해지죠.
@@ -188,7 +188,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 심사 절차와 이의신청 */}
+      {/* 섹션 4: 심사 절차와 이의신청 */}
       <H2>서류 제출 후 심사 과정과 이의신청</H2>
       <p style={body}>
         고용센터에 실업급여를 신청하면 담당자가 퇴직 사유를 심사해요. 먼저 회사가 제출한 이직확인서를 보고, 본인이 낸 증빙자료와 대조하죠. 임금체불 사유라면 &quot;정말 2개월 이상 밀렸는지&quot; 통장 내역으로 확인하는 식이에요. 심사 기간은 보통 2주 안팎이고요.
@@ -208,7 +208,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 핵심 정리 */}
+      {/* 섹션 5: 핵심 정리 */}
       <H2>퇴사 전 증빙 서류부터 챙기세요</H2>
       <p style={body}>
         핵심은 딱 두 가지예요. <strong>증빙자료 확보</strong>와 <strong>고용센터 사전 상담</strong>이죠. 정당한 사유가 분명해도 증빙이 없으면 인정받기 어렵고, 사전 상담을 받으면 어떤 서류를 챙겨야 하는지 미리 파악할 수 있죠.

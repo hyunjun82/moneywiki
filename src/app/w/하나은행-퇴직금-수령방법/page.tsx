@@ -18,7 +18,7 @@ const CHECKLIST = [
   "하나원큐 앱 설치 및 로그인 확인",
   "IRP 계좌 내 퇴직금 입금 여부 확인",
   "운용 상품 환매 여부 점검",
-  "해지 신청 — 앱 또는 영업점",
+  "해지 신청: 앱 또는 영업점",
   "퇴직소득원천징수영수증 보관",
 ];
 
@@ -49,8 +49,8 @@ const REFERENCES = [
   {
     category: "공식 자료",
     items: [
-      { label: "하나은행 — IRP 퇴직연금 안내", url: "https://www.kebhana.com" },
-      { label: "금융감독원 — 퇴직연금 비교공시", url: "https://www.fss.or.kr" },
+      { label: "하나은행: IRP 퇴직연금 안내", url: "https://www.kebhana.com" },
+      { label: "금융감독원: 퇴직연금 비교공시", url: "https://www.fss.or.kr" },
     ],
   },
 ];

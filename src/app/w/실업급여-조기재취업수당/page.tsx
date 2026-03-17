@@ -82,14 +82,14 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제64조 — 조기재취업수당 요건 및 금액", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 제64조: 조기재취업수당 요건 및 금액", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 조기재취업수당 신청", url: "https://www.ei.go.kr" },
-      { label: "고용센터 — 취업촉진수당 안내", url: "https://www.ei.go.kr" },
+      { label: "고용24: 조기재취업수당 신청", url: "https://www.ei.go.kr" },
+      { label: "고용센터: 취업촉진수당 안내", url: "https://www.ei.go.kr" },
     ],
   },
 ];
@@ -148,7 +148,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 조기재취업수당이란 */}
+      {/* 섹션 1: 조기재취업수당이란 */}
       <H2>조기재취업수당, 어떤 조건을 갖춰야 받을 수 있나요?</H2>
       <p style={body}>
         빨리 취업한 사람에게 주는 보상이에요. 실업급여를 오래 받으면서 천천히 구직하는 것보다, 빠르게 재취업하는 게 본인에게도 사회에도 이득이니까요.
@@ -180,7 +180,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 조건 상세 */}
+      {/* 섹션 2: 조건 상세 */}
       <H2>조기재취업수당 계산법, 실제 금액은 얼마나 되나요?</H2>
       <p style={body}>
         네 가지 조건을 모두 충족해야 해요. 첫째, <strong>소정급여일수의 절반 이상</strong>을 남긴 상태에서 취업해야 하죠.
@@ -209,7 +209,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 금액 계산 */}
+      {/* 섹션 3: 금액 계산 */}
       <H2>조기재취업수당 신청 절차와 필요 서류</H2>
       <p style={body}>
         계산 방법은 단순해요. <strong>남은 소정급여일수 x 1일 구직급여액 x 50%</strong>이죠.
@@ -235,7 +235,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 신청 방법 */}
+      {/* 섹션 4: 신청 방법 */}
       <H2>조건 충족 전에 퇴사하면 생기는 문제</H2>
       <p style={body}>
         가장 큰 실수가 <strong>12개월을 못 채우고 퇴사하는 거</strong>예요.
@@ -257,7 +257,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 주의사항 */}
+      {/* 섹션 5: 주의사항 */}
       <H2>조기재취업수당 놓치지 않으려면 이렇게 하세요</H2>
       <p style={body}>
         두 번째로 많은 실수가 <strong>신청 기한을 놓치는 거</strong>예요.

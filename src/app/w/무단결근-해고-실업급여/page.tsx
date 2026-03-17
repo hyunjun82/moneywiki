@@ -51,15 +51,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 수급자격의 제한 (중대한 귀책사유)", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행규칙 — 중대한 귀책사유 세부 기준", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
+      { label: "고용보험법: 수급자격의 제한 (중대한 귀책사유)", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행규칙: 중대한 귀책사유 세부 기준", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 신청 안내", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 실업급여 상담(1350)", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 신청 안내", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 실업급여 상담(1350)", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -120,7 +120,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 중대한 귀책사유란 + EligibilityChecker */}
+      {/* 섹션 1: 중대한 귀책사유란 + EligibilityChecker */}
       <H2>무단결근 횟수별 인정 기준이 다른가요?</H2>
       <p style={body}>
         중대한 귀책사유란, 근로자 본인의 잘못이 심각해서 해고당할 만한 수준을 말해요.
@@ -154,7 +154,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 실업급여 받을 수 있는 경우 */}
+      {/* 섹션 2: 실업급여 받을 수 있는 경우 */}
       <H2>인정 여부가 유리해지는 경우는 언제일까요?</H2>
       <p style={body}>
         첫째, <strong>결근 횟수가 경미한 경우</strong>예요.
@@ -186,7 +186,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 실업급여 못 받는 경우 + Checklist */}
+      {/* 섹션 3: 실업급여 못 받는 경우 + Checklist */}
       <H2>인정 기준에서 탈락하는 경우</H2>
       <p style={body}>
         가장 대표적인 건 <strong>장기 무단결근</strong>이에요.
@@ -216,7 +216,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 증빙자료와 소명 */}
+      {/* 섹션 4: 증빙자료와 소명 */}
       <H2>인정 여부를 뒤집는 증빙자료 확보법</H2>
       <p style={body}>
         무단결근 해고 후 실업급여를 받으려면 <strong>증빙자료</strong>가 핵심이에요.
@@ -236,7 +236,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 불인정 시 이의신청 */}
+      {/* 섹션 5: 불인정 시 이의신청 */}
       <H2>불인정 결정 받으면 이의신청으로 다투세요</H2>
       <p style={body}>
         고용센터 심사에서 수급자격이 불인정됐다고 끝이 아니에요.

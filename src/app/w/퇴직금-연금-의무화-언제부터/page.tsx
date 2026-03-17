@@ -8,10 +8,10 @@ import {
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
 const CHECK_ITEMS = [
-  { id: "c1", label: "2022년 4월 이후에 퇴직했거나 퇴직 예정이에요" },
+  { id: "c1", label: "2022년 4월 14일 이후에 퇴직했거나 퇴직 예정이에요" },
   { id: "c2", label: "퇴직금이 300만원을 초과할 것 같아요" },
   { id: "c3", label: "IRP 계좌를 아직 개설하지 않았어요" },
-  { id: "c4", label: "IRP 의무화 이전에 입사했어요" },
+  { id: "c4", label: "만 55세 미만이에요" },
 ];
 
 const CALC_SLIDERS = [
@@ -49,7 +49,7 @@ const STEPS = [
   {
     title: "IRP 계좌 개설",
     desc: "증권사나 은행 앱으로 10분이면 개설 가능해요. 수수료가 낮은 증권사(미래에셋, 삼성증권, NH투자증권 등)를 권해요. 퇴직 전에 미리 만들어두면 이체 지연을 막을 수 있어요.",
-    tip: "수수료 0% 상품도 있어요 (일부 증권사 — 퇴직금 수령 전용)",
+    tip: "수수료 0% 상품도 있어요 (일부 증권사 퇴직금 수령 전용)",
   },
   {
     title: "인사팀에 IRP 계좌번호 통보",
@@ -57,18 +57,18 @@ const STEPS = [
     tip: "14일 초과 시 연 20% 지연이자를 청구할 수 있어요",
   },
   {
-    title: "IRP에서 일시금 or 연금 수령",
-    desc: "IRP에 들어온 퇴직금을 바로 일시금으로 빼면 퇴직소득세를 냅니다. 55세 이후 연금으로 받으면 퇴직소득세를 30~40% 절감해요. 연금 수령이 가능한 나이라면 연금을 선택하는 게 유리해요.",
+    title: "IRP에서 일시금 또는 연금 수령",
+    desc: "IRP에 들어온 퇴직금을 바로 일시금으로 빼면 퇴직소득세를 내요. 55세 이후 연금으로 받으면 퇴직소득세를 30~40% 절감해요. 연금 수령이 가능한 나이라면 연금을 선택하는 게 유리해요.",
     tip: "10년 이상 연금 수령 시 퇴직소득세 40% 감면",
   },
 ];
 
 const CHECKLIST = [
   "2022년 4월 14일부터 300만원 초과 퇴직금 → IRP 의무 수령",
-  "IRP 계좌 — 퇴직 전 미리 개설 (수수료 비교 후 선택)",
-  "계좌번호 인사팀 통보 — 메일·문자로 증거 남기기",
-  "14일 기한 준수 — 초과 시 지연이자(연 20%) 청구 가능",
-  "연금 수령 — 55세 이후 받으면 퇴직소득세 30~40% 절세",
+  "IRP 계좌: 퇴직 전 미리 개설 (수수료 비교 후 선택)",
+  "계좌번호 인사팀 통보: 메일·문자로 증거 남기기",
+  "14일 기한 준수: 초과 시 지연이자(연 20%) 청구 가능",
+  "연금 수령: 55세 이후 받으면 퇴직소득세 30~40% 절세",
 ];
 
 const FAQS = [
@@ -90,7 +90,7 @@ const FAQS = [
   },
   {
     q: "IRP 없이 퇴직금이 들어오면 어떻게 되나요?",
-    a: "회사가 이체할 수 없어서 지급이 지연돼요. 이 경우 회사 귀책이 아닌 근로자 귀책으로 볼 수 있어요. 퇴직 전에 반드시 IRP를 개설하고 계좌번호를 알려줘야 해요.",
+    a: "회사가 이체할 수 없어서 지급이 지연돼요. 근로자 귀책으로 볼 수도 있어서 퇴직 전에 반드시 IRP를 개설하고 계좌번호를 알려줘야 해요.",
   },
 ];
 
@@ -98,21 +98,21 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로자퇴직급여보장법 제9조 — IRP 이체 의무 (2022년 4월 14일 시행)", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+      { label: "근로자퇴직급여보장법 제9조: IRP 이체 의무 (2022년 4월 14일 시행)", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용노동부 — IRP 의무화 시행 안내", url: "https://www.moel.go.kr" },
-      { label: "금융감독원 — IRP 가입 안내", url: "https://www.fss.or.kr" },
+      { label: "고용노동부: IRP 의무화 시행 안내", url: "https://www.moel.go.kr" },
+      { label: "금융감독원: IRP 가입 안내", url: "https://www.fss.or.kr" },
     ],
   },
 ];
 
 const RELATED = [
   { slug: "퇴직금-IRP-계좌", title: "IRP 계좌 개설 방법", description: "어느 금융사가 유리한지, 수수료 비교까지." },
-  { slug: "퇴직금-irp-지급-의무화", title: "퇴직금 IRP 지급 의무화 총정리", description: "의무화 대상과 예외 사항을 설명해요." },
+  { slug: "퇴직금-irp-의무", title: "IRP 의무 가입 대상", description: "의무 대상과 예외 사항을 설명해요." },
   { slug: "퇴직금-세금", title: "퇴직금 세금, 얼마나 떼나요?", description: "IRP 연금 수령 시 절세 효과를 계산해요." },
 ];
 
@@ -125,14 +125,13 @@ export default function Page() {
 
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
         퇴직금 IRP 의무화, 언제부터 적용되나요?<br />
-        2022년 4월 기준 대상과 예외 총정리
+        2022년 4월 기준 대상과 예외 조건
       </h1>
 
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
         퇴직금 300만원 초과 시 <a href="/w/퇴직금-IRP-계좌" style={{ color: "#1D9E75", textDecoration: "underline" }}>IRP 계좌</a>로만 수령해야 하는 의무화는 2022년 4월 14일부터 시행됐어요.
         입사 시점이 아니라 퇴직 시점이 기준이에요.
         IRP 없이 퇴직하면 회사가 이체할 수 없어 지급이 지연되고, 지연이자(연 20%) 문제로 이어질 수 있어요.
-        퇴직 전에 미리 개설해두면 이런 문제가 생기지 않아요.
       </p>
 
       <Divider />
@@ -147,12 +146,13 @@ export default function Page() {
       <p style={body}>
         IRP 계좌가 없으면 회사가 이체할 곳이 없어서 지급 자체가 지연돼요.
         이 경우엔 근로자 귀책으로 볼 수도 있어서, 퇴직 전에 반드시 개설해야 해요.
+        수수료 비교만 먼저 해두면 개설은 앱으로 10분이면 돼요.
       </p>
 
       <GreenBox title="IRP 의무화 핵심 정리">
         시행일: 2022년 4월 14일 (근로자퇴직급여보장법 제9조)<br />
         대상: 퇴직금 300만원 초과 모든 근로자<br />
-        예외: 300만원 이하는 일반 계좌 수령 가능
+        예외: 300만원 이하 또는 만 55세 이상은 일반 계좌 수령 가능
       </GreenBox>
 
       <SectionBadge>내 상황 체크해보세요</SectionBadge>
@@ -174,7 +174,7 @@ export default function Page() {
       <Calculator
         sliders={CALC_SLIDERS}
         results={CALC_RESULTS}
-        note="※ 법정 최저 기준. 실제 퇴직금은 상여금·수당 포함 시 달라질 수 있어요."
+        note="※ 법정 최저 기준이에요. 실제 퇴직금은 상여금·수당 포함 시 달라질 수 있어요."
       />
 
       <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
@@ -187,6 +187,7 @@ export default function Page() {
       <p style={body}>
         신분증 하나로 대부분 앱에서 10분 안에 개설 가능해요.
         수수료가 낮은 증권사를 선택하면 장기적으로 유리해요.
+        퇴직 전에 미리 만들어두고 계좌번호만 인사팀에 전달하면 돼요.
       </p>
 
       <SectionBadge>준비 서류 목록</SectionBadge>
@@ -198,6 +199,7 @@ export default function Page() {
       <p style={body}>
         퇴직금 금액 확인 → IRP 개설 → 계좌번호 통보 → 수령 방식 선택 순서예요.
         14일 기한 내에 이체가 완료되는지 꼭 확인하세요.
+        지연이 발생하면 연 20% 지연이자를 청구할 수 있어요.
       </p>
 
       <Steps steps={STEPS} />
@@ -207,6 +209,7 @@ export default function Page() {
       <H2>IRP 의무화 대응 체크리스트</H2>
       <p style={body}>
         IRP 개설을 미루면 지급이 지연돼요. 퇴직이 확정되면 바로 개설하세요.
+        연금 수령 방식을 선택하면 세금도 줄어들어요.
       </p>
 
       <SectionBadge>체크리스트</SectionBadge>

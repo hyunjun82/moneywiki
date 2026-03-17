@@ -70,14 +70,14 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제53조 — 특별연장급여 근거 규정", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 제53조: 특별연장급여 근거 규정", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 연장급여 안내", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 고용정책 보도자료", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 연장급여 안내", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 고용정책 보도자료", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -137,7 +137,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 특별연장급여란 */}
+      {/* 섹션 1: 특별연장급여란 */}
       <H2>특별연장급여, 어떤 조건에서 시행되나요?</H2>
       <p style={body}>
         경제 위기 때 정부가 실업급여 수급기간을 <strong>일괄 연장</strong>해주는 제도예요.
@@ -157,10 +157,10 @@ export default function Page() {
       </p>
 
       <GreenBox title="특별연장급여 핵심 요약">
-        대상 — 구직급여 수급자 전체 (자동 적용, 별도 신청 불필요)<br />
-        기간 — 최대 60일<br />
-        금액 — 기존 구직급여의 70% (2026년 기준 하루 최대 47,670원)<br />
-        조건 — 연장 기간 중에도 실업인정 + 구직활동 유지 필수
+        대상: 구직급여 수급자 전체 (자동 적용, 별도 신청 불필요)<br />
+        기간: 최대 60일<br />
+        금액: 기존 구직급여의 70% (2026년 기준 하루 최대 47,670원)<br />
+        조건: 연장 기간 중에도 실업인정 + 구직활동 유지 필수
       </GreenBox>
 
       <SectionBadge>내 상황에 해당되는지 체크해보세요</SectionBadge>
@@ -172,7 +172,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 금액 계산 */}
+      {/* 섹션 2: 금액 계산 */}
       <H2>특별연장급여 금액은 얼마나 되나요?</H2>
       <p style={body}>
         금액은 <strong>기존 구직급여 일액의 70%</strong>예요.
@@ -207,7 +207,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 시행 조건과 확인 방법 */}
+      {/* 섹션 3: 시행 조건과 확인 방법 */}
       <H2>특별연장급여 시행 시기와 신청 절차</H2>
       <p style={body}>
         평상시에는 시행 자체가 안 돼요.
@@ -234,10 +234,10 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 다른 연장급여와 비교 */}
+      {/* 섹션 4: 다른 연장급여와 비교 */}
       <H2>개별연장급여, 훈련연장급여와의 조건 비교</H2>
       <p style={body}>
-        연장급여는 총 3가지예요 — 특별연장급여, 개별연장급여, 훈련연장급여.
+        연장급여는 총 3가지예요: 특별연장급여, 개별연장급여, 훈련연장급여.
         이름이 비슷해서 자주 헷갈리는데, 결정적인 차이는 <strong>&ldquo;누가 시작하느냐&rdquo;</strong>예요.
         특별연장급여는 정부가 결정하고, 나머지 둘은 개인이 조건을 갖추거나 직접 신청해야 하죠.
       </p>
@@ -254,14 +254,14 @@ export default function Page() {
       </p>
 
       <BorderBox title="연장급여 3종 한눈에 비교">
-        <strong>특별연장급여</strong> — 정부가 결정, 자동 적용 / 60일 / 구직급여의 70%<br />
-        <strong>개별연장급여</strong> — 본인이 신청, 심사 필요 / 60일 / 구직급여의 70%<br />
-        <strong>훈련연장급여</strong> — 훈련 참여 시 적용 / 훈련 기간(최대 2년) / 구직급여의 100%
+        <strong>특별연장급여</strong>: 정부가 결정, 자동 적용 / 60일 / 구직급여의 70%<br />
+        <strong>개별연장급여</strong>: 본인이 신청, 심사 필요 / 60일 / 구직급여의 70%<br />
+        <strong>훈련연장급여</strong>: 훈련 참여 시 적용 / 훈련 기간(최대 2년) / 구직급여의 100%
       </BorderBox>
 
       <Divider />
 
-      {/* 섹션 5 — 실전 정리 */}
+      {/* 섹션 5: 실전 정리 */}
       <H2>수급자라면 이것만 챙기세요</H2>
       <p style={body}>
         특별연장급여는 개인이 직접 할 수 있는 게 많지 않아요.

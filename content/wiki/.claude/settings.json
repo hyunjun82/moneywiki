@@ -18,11 +18,41 @@
       "Bash(grep -v -E \"^\\(CLAUDE|README\\)\\\\.md$\")",
       "Bash(xargs rm:*)",
       "Bash(grep -v -E \"^\\(node_modules|\\\\.next|\\\\.git|\\\\.claude|\\\\.vscode|\\\\.github|content|public|scripts|src|nul\\)$\")",
-      "Bash(grep -v -E \"^\\(node_modules|\\\\.next|\\\\.git|\\\\.claude|\\\\.vscode|\\\\.github|content|public|scripts|src|data\\)$\")"
+      "Bash(grep -v -E \"^\\(node_modules|\\\\.next|\\\\.git|\\\\.claude|\\\\.vscode|\\\\.github|content|public|scripts|src|data\\)$\")",
+      "Bash(git status:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(ls -d /c/Users/user/wiki-site/src/app/w/*실업급여* /c/Users/user/wiki-site/src/app/w/*고용보험* /c/Users/user/wiki-site/src/app/w/*피보험* /c/Users/user/wiki-site/src/app/w/*상병* /c/Users/user/wiki-site/src/app/w/*재취업* /c/Users/user/wiki-site/src/app/w/*퇴사* /c/Users/user/wiki-site/src/app/w/*퇴직*)",
+      "Bash(find src/app/w -name page.tsx -path *실업* -o -name page.tsx -path *고용* -o -name page.tsx -path *피보험* -o -name page.tsx -path *상병* -o -name page.tsx -path *일용직* -o -name page.tsx -path *계약만료* -o -name page.tsx -path *권고사직* -o -name page.tsx -path *자영업* -o -name page.tsx -path *프리랜서* -o -name page.tsx -path *특고*)",
+      "Bash(xargs -I{} dirname {})",
+      "Bash(sed \"s|.*/w/||\")",
+      "Read(//tmp/**)",
+      "Read(//c/Users/user/wiki-site/s/.*slug: \"/;s/**)",
+      "Bash(f=\"src/app/w/계약만료-실업급여/page.tsx\")",
+      "Read(//c/Users/user/wiki-site/**)",
+      "Bash(sed \"s/.*slug: \"\"//;s/\"\".*//\")",
+      "Bash(for slug:*)",
+      "Bash(do grep:*)",
+      "Bash(mv /tmp/all-slugs-tmp.txt /tmp/all-slugs.txt done)",
+      "Bash(grep -rl EligibilityChecker src/app/w/*/page.tsx)",
+      "Bash(grep -rl ArticleAd.*currentSlug src/app/w/*/page.tsx)",
+      "Bash(ls src/app/w/*/page.tsx)",
+      "Read(//c/dev/**)",
+      "Read(//c/Users/user/Downloads/**)",
+      "Bash(git -C c:/Users/user/wiki-site log --all --diff-filter=D -- \"all-articles-by-category.txt\" --oneline)",
+      "Bash(git -C c:/Users/user/wiki-site log --all --diff-filter=D --name-only --oneline -- \"*all-articles*\")",
+      "Bash(git -C c:/Users/user/wiki-site log --all --oneline -- \"all-articles-by-category.txt\")",
+      "Read(//c/Users/user/**)",
+      "Read(//c/Users/user/wiki-site/content/wiki/**)",
+      "Read(//c/Users/user/wiki-site/content/wiki/s/.*>/;s/**)",
+      "Read(//c/Users/user/wiki-site/content/wiki/s/>/;s/**)",
+      "Read(//c/Users/user/wiki-site/content/wiki/s/**)"
     ],
     "additionalDirectories": [
       "c:\\Users\\user\\wiki-site\\src\\data",
-      "c:\\Users\\user\\wiki-site\\scripts"
+      "c:\\Users\\user\\wiki-site\\scripts",
+      "c:\\Users\\user\\wiki-site"
     ]
   }
 }

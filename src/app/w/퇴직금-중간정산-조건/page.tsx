@@ -7,8 +7,6 @@ import {
 } from "@/components/article-ui";
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
-const currentSlug = "퇴직금-중간정산-조건";
-
 const CHECK_ITEMS = [
   { id: "c1", label: "무주택자이고 주택 구입 또는 전세 계약을 앞두고 있어요" },
   { id: "c2", label: "본인 또는 부양가족이 6개월 이상 요양 중이에요" },
@@ -60,17 +58,17 @@ const STEPS = [
   },
   {
     title: "지급 및 이후 관리",
-    desc: "승인되면 14일 이내에 지급받아요. 중간정산 후 남은 재직기간도 퇴직금이 다시 적립돼요. 단, IRP 의무화 이후 중간정산 자체가 더 어려워졌어요.",
+    desc: "승인되면 14일 이내에 지급받아요. 중간정산 후 남은 재직기간도 퇴직금이 다시 적립돼요. IRP 의무화 이후 중간정산 자체가 더 엄격해졌어요.",
     tip: "IRP 계좌가 있으면 중간정산금도 IRP로 받을 수 있어요",
   },
 ];
 
 const CHECKLIST = [
-  "법정 사유 해당 여부 — 주택구입·요양·재해·파산만 가능",
-  "증빙서류 — 사유별 서류 목록 인사팀 확인",
-  "퇴직소득세 원천징수 — 중간정산도 세금 납부",
-  "근속기간 초기화 — 중간정산 후 재근속 0년",
-  "IRP 의무가입 여부 — 300만원 초과 시 IRP 수령",
+  "법정 사유 해당 여부: 주택구입·요양·재해·파산만 가능",
+  "증빙서류: 사유별 서류 목록 인사팀 확인",
+  "퇴직소득세 원천징수: 중간정산도 세금 납부",
+  "근속기간 초기화: 중간정산 후 재근속 0년",
+  "IRP 의무가입 여부: 300만원 초과 시 IRP 수령",
 ];
 
 const FAQS = [
@@ -100,13 +98,13 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로자퇴직급여보장법 제8조 3항 — 중간정산 허용 사유", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+      { label: "근로자퇴직급여보장법 제8조 3항: 중간정산 허용 사유", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용노동부 — 퇴직금 중간정산 안내", url: "https://www.moel.go.kr" },
+      { label: "고용노동부: 퇴직금 중간정산 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -120,43 +118,37 @@ const RELATED = [
 export default function Page() {
   return (
     <ArticleLayout
-      sidebar={<Sidebar items={퇴직금_SIDEBAR} currentSlug={currentSlug} />}
+      sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} currentSlug="퇴직금-중간정산-조건" />}
     >
-      {/* 타이틀 */}
-      <div style={{ marginBottom: 24 }}>
-        <p style={{ ...body.badge, marginBottom: 8 }}>퇴직금 · 중간정산 · 조건</p>
-        <h1 style={body.h1}>
-          퇴직금 중간정산, 어떤 경우에 받을 수 있나요?
-          <br />
-          <span style={body.h1sub}>법정 허용 사유 5가지부터 신청 절차까지</span>
-        </h1>
-      </div>
+      <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 중간정산 · 조건</p>
 
-      {/* 인트로 */}
-      <p style={body.prose}>
-        퇴직금 중간정산은 아무나 받을 수 있는 게 아니에요.{" "}
-        <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={body.link} target="_blank" rel="noopener noreferrer">
-          근로자퇴직급여보장법 제8조 3항
-        </a>
-        에서 정한 법정 사유에 해당해야만 신청할 수 있어요. 주택 구입, 전세보증금, 장기 요양, 천재지변, 파산·회생이 대표적이에요.
-      </p>
-      <p style={body.prose}>
-        법정 사유가 없는데 요청하면 회사가 거부해도 문제없어요. 반대로 사유가 명확한데 거부당하면 고용노동부에 진정할 수 있어요. 아래에서 5가지 사유와 신청 절차를 정리할게요.
+      <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
+        퇴직금 중간정산, 어떤 경우에 받을 수 있나요?<br />
+        법정 허용 사유 5가지부터 신청 절차까지
+      </h1>
+
+      <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
+        <a href="/w/퇴직금-중간정산" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직금 중간정산</a>은 아무나 받을 수 있는 게 아니에요.
+        <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여보장법 제8조 3항</a>에서
+        정한 법정 사유에 해당해야만 신청할 수 있어요.
+        주택 구입, 전세보증금, 장기 요양, 천재지변, 파산·회생이 대표적이에요.
       </p>
 
       <Divider />
-
       <ArticleAd position="intro" />
 
-      {/* 섹션 1: 조건 */}
       <H2>중간정산이 되는 조건이 뭔가요?</H2>
-
-      <p style={body.prose}>
-        <a href="/w/퇴직금-중간정산" style={body.link}>퇴직금 중간정산</a>은 퇴직 전에 이미 쌓인 퇴직금을 미리 받는 제도예요. 고용노동부가 인정한 법정 사유가 있어야만 신청 가능하고, 사유 없이 받으면 나중에 세금 문제가 생길 수 있어요.
+      <p style={body}>
+        법정 사유 없이 요청하면 회사가 거부해도 문제없어요.
+        반대로 사유가 명확한데 거부당하면 고용노동부에 진정할 수 있어요.
+        주택 구입 조건에서 '무주택자'가 핵심이에요. 세대원 전체가 무주택이어야 해요.
+      </p>
+      <p style={body}>
+        요양 사유는 '6개월 이상'이라는 기간 요건이 있어요. 단순 입원이나 짧은 치료는 해당 안 돼요.
+        의사 진단서로 6개월 이상 요양이 필요하다는 걸 증명해야 하고, 배우자·자녀·부모도 포함돼요.
       </p>
 
-      <GreenBox>
-        중간정산 법정 허용 사유 5가지 (근로자퇴직급여보장법 제8조 3항)<br />
+      <GreenBox title="중간정산 법정 허용 사유 5가지">
         ① 무주택 근로자가 주택을 구입하는 경우<br />
         ② 무주택 근로자의 전세보증금이 부족한 경우<br />
         ③ 본인 또는 부양가족이 6개월 이상 요양이 필요한 경우<br />
@@ -164,118 +156,86 @@ export default function Page() {
         ⑤ 파산선고·개인회생 절차 개시를 받은 경우
       </GreenBox>
 
-      <p style={body.prose}>
-        주택 구입 조건에서 '무주택자'가 핵심이에요. 본인 명의 집이 한 채라도 있으면 안 돼요. 세대원(배우자 포함) 전체가 무주택이어야 해요. 전세보증금 부족도 마찬가지로 무주택 근로자에게만 해당해요.
-      </p>
-
-      <p style={body.prose}>
-        요양 사유는 '6개월 이상'이라는 기간 요건이 있어요. 단순 입원이나 짧은 치료는 해당 안 돼요. 의사 진단서로 6개월 이상 요양이 필요하다는 걸 증명해야 하고, 부양가족(배우자, 자녀, 부모)도 포함돼요.
-      </p>
-
+      <SectionBadge>내 상황 체크해보세요</SectionBadge>
       <EligibilityChecker
-        title="중간정산 해당 여부 확인"
         items={CHECK_ITEMS}
+        allMatchText="중간정산 신청 사유에 해당해요. 아래 계산기로 예상 금액을 확인하세요."
+        partialMatchText="사유 해당 여부를 고용노동부(1350) 또는 노무사 상담을 통해 확인하세요."
       />
-
-      <p style={body.prose}>
-        위 사유 중 하나라도 해당한다면 중간정산 신청이 가능해요. 단, 사유를 증명하는 서류를 반드시 갖춰야 해요. 서류 없이 구두로만 신청하면 회사가 거부할 수 있어요.
-      </p>
 
       <Divider />
 
-      {/* 섹션 2: 계산기 */}
       <H2>중간정산으로 얼마나 받을 수 있나요?</H2>
-
-      <p style={body.prose}>
-        중간정산 금액은 일반 퇴직금 계산 방식과 동일해요. 퇴직 전 3개월 평균임금 × 근속연수(중간정산 시점까지)로 계산하면 돼요. 아래 슬라이더로 대략적인 금액을 먼저 확인해보세요.
+      <p style={body}>
+        중간정산 금액은 일반 퇴직금 계산 방식과 동일해요.
+        퇴직 전 3개월 평균임금 × 근속연수(중간정산 시점까지)로 계산하면 돼요.
+        중간정산을 받으면 근속기간이 0년으로 초기화돼요.
       </p>
 
+      <SectionBadge>중간정산 금액 계산기</SectionBadge>
       <Calculator
         sliders={CALC_SLIDERS}
         results={CALC_RESULTS}
         note="※ 실제 금액은 퇴직 전 3개월 평균임금 기준. 상여금·수당 포함 여부에 따라 달라질 수 있어요."
       />
 
-      <p style={body.prose}>
-        중간정산을 받으면 근속기간이 0년으로 초기화돼요. 이후 재직기간부터 퇴직금이 새로 적립돼요. 중간정산 전에 받는 게 유리한지, 퇴직까지 기다리는 게 나은지는{" "}
-        <a href="/w/퇴직금-중간정산-세금" style={body.link}>중간정산 세금 계산</a>
-        에서 비교해볼 수 있어요.
-      </p>
-
-      <BorderBox>
-        <strong>중간정산 시 세금 주의사항</strong><br />
-        · 중간정산 금액에도 퇴직소득세가 원천징수돼요<br />
-        · 근속연수가 짧으면 공제가 적게 적용돼 세금이 늘어날 수 있어요<br />
-        · 나중에 퇴직 시 재정산되므로 이중 과세는 아니에요
-      </BorderBox>
-
-      <CategoryButton href="/w/퇴직금" label="퇴직금 가이드 전체 보기" />
-
-      <RelatedArticles articles={RELATED} />
-
+      <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
+      <RelatedArticles items={RELATED} />
       <ArticleAd position="mid" />
 
       <Divider />
 
-      {/* 섹션 3: 서류 */}
       <H2>중간정산 신청에 필요한 서류</H2>
-
-      <p style={body.prose}>
-        사유마다 제출해야 하는 서류가 달라요. 주택 구입이라면 매매계약서나 등기서류, 요양이라면 진단서와 치료비 영수증이 필요해요. 사유를 증명하지 못하면 신청이 반려될 수 있어요.
+      <p style={body}>
+        사유마다 제출해야 하는 서류가 달라요. 주택 구입이라면 매매계약서나 등기서류, 요양이라면 진단서와 치료비 영수증이 필요해요.
+        사유를 증명하지 못하면 신청이 반려될 수 있어요.
       </p>
 
+      <SectionBadge>준비 서류 목록</SectionBadge>
       <DocTable docs={DOCS} />
-
-      <p style={body.prose}>
-        인사팀에 제출하기 전에 서류가 빠진 게 없는지 먼저 확인하는 게 좋아요. 사유에 맞지 않는 서류를 냈다가 반려되면 다시 준비하는 데 시간이 걸려요. 처음부터 한 번에 맞게 제출하는 게 가장 빠른 방법이에요.
-      </p>
 
       <Divider />
 
-      {/* 섹션 4: 절차 */}
       <H2>중간정산 신청 절차 4단계</H2>
-
-      <p style={body.prose}>
-        법정 사유가 있다는 걸 확인했다면, 신청 절차를 밟으면 돼요. 회사마다 처리 기간이 다를 수 있지만, 승인 후 14일 이내에 지급받는 게 원칙이에요.
+      <p style={body}>
+        법정 사유가 있다는 걸 확인했다면, 신청 절차를 밟으면 돼요.
+        회사마다 처리 기간이 다를 수 있지만, 승인 후 14일 이내에 지급받는 게 원칙이에요.
       </p>
 
       <Steps steps={STEPS} />
 
-      <p style={body.prose}>
-        중간정산이 완료되면 회사는 퇴직소득원천징수영수증을 발급해줘요. 이 서류는 나중에{" "}
-        <a href="/w/퇴직금-소득세" style={body.link}>퇴직소득세</a>를 신고하거나 환급받을 때 필요하니까 잘 보관해두세요.
+      <p style={body}>
+        중간정산이 완료되면 회사는 퇴직소득원천징수영수증을 발급해줘요.
+        이 서류는 나중에 <a href="/w/퇴직금-소득세" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직소득세</a>를 신고하거나 환급받을 때 필요하니까 잘 보관해두세요.
       </p>
 
       <Divider />
 
-      {/* 섹션 5: 체크리스트 */}
-      <H2>중간정산 체크리스트</H2>
-
-      <p style={body.prose}>
+      <H2>중간정산 신청 전 체크리스트</H2>
+      <p style={body}>
         신청하기 전에 아래 항목을 하나씩 점검해보세요. 빠뜨리는 것 없이 준비해야 한 번에 통과할 수 있어요.
       </p>
 
+      <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox>
-        중간정산 후 근속기간 초기화 주의<br />
-        중간정산을 받으면 그 시점부터 근속기간이 0년으로 다시 시작돼요. 퇴직금 계산에서 근속연수가 짧아지면 나중에 받는 퇴직금도 줄어들 수 있어요. 퇴직 시기가 얼마 안 남았다면 중간정산 대신 퇴직까지 기다리는 게 세금 면에서 유리할 수 있어요.
+      <GreenBox title="중간정산 후 근속기간 초기화 주의">
+        중간정산을 받으면 그 시점부터 근속기간이 0년으로 다시 시작돼요.<br />
+        퇴직 시기가 얼마 안 남았다면 중간정산 대신 퇴직까지 기다리는 게 세금 면에서 유리할 수 있어요.
       </GreenBox>
-
-      <p style={body.prose}>
-        IRP 의무화도 챙겨야 해요. 2022년부터 퇴직금 300만원 초과 시 IRP 계좌로만 수령해야 해요. 중간정산도 예외가 없어요. IRP 계좌가 없다면 신청 전에 미리 개설해두세요.
-      </p>
 
       <Divider />
 
-      {/* FAQ */}
       <H2>자주 묻는 것들</H2>
-
+      <p style={{ ...body, marginBottom: 14 }}>
+        퇴직금 중간정산 조건에 대해 실제로 많이 나오는 질문만 골랐어요.
+      </p>
       <FAQ items={FAQS} />
 
-      <References items={REFERENCES} />
+      <Divider />
 
-      <Disclaimer />
+      <References groups={REFERENCES} />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인하세요." />
     </ArticleLayout>
   );
 }

@@ -52,15 +52,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 — 수급자격 신청 및 필요서류", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법: 수급자격 신청 및 필요서류", url: "https://www.law.go.kr/법령/고용보험법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 신청 안내", url: "https://www.ei.go.kr" },
-      { label: "워크넷 — 구직등록", url: "https://www.work.go.kr" },
-      { label: "고용노동부 — 고용센터 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 신청 안내", url: "https://www.ei.go.kr" },
+      { label: "워크넷: 구직등록", url: "https://www.work.go.kr" },
+      { label: "고용노동부: 고용센터 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -107,7 +107,7 @@ export default function Page() {
         &quot;뭘 들고 가야 하는 거죠?&quot;
       </p>
       <p style={body}>
-        답은 간단해요. <strong>신분증, 통장 사본, 증명사진</strong> — 이 세 가지면 돼요.
+        답은 간단해요. <strong>신분증, 통장 사본, 증명사진</strong>: 이 세 가지면 돼요.
         하나라도 빠뜨리면 고용센터를 다시 방문해야 하니까, 출발 전에 꼭 점검하세요.
         이직확인서는 <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>에 따라 회사가 제출하는 거고,
         온라인 교육은 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 미리 들어야 해요.
@@ -116,7 +116,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 필수 준비물 3가지 */}
+      {/* 섹션 1: 필수 준비물 3가지 */}
       <H2>필수 서류는 몇 가지가 필요한가요?</H2>
       <p style={body}>
         <strong>신분증 원본</strong>이 첫 번째예요. 주민등록증, 운전면허증, 여권 중 아무거나 하나면 되죠. 사본은 안 되고 반드시 원본이어야 해요. 의외로 유효기간이 지난 신분증을 가져오는 분들이 많은데, 만료된 건 인정이 안 되니 미리 점검하세요.
@@ -129,9 +129,9 @@ export default function Page() {
       </p>
 
       <GreenBox title="필수 준비물 3가지">
-        신분증 원본 — 주민등록증·운전면허증·여권 중 하나<br />
-        본인 명의 통장 사본 — 실업급여 수령 계좌<br />
-        증명사진 1장 — 반명함판 3x4cm, 최근 6개월 이내
+        신분증 원본: 주민등록증·운전면허증·여권 중 하나<br />
+        본인 명의 통장 사본: 실업급여 수령 계좌<br />
+        증명사진 1장: 반명함판 3x4cm, 최근 6개월 이내
       </GreenBox>
 
       <SectionBadge>출발 전 체크해보세요</SectionBadge>
@@ -143,7 +143,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 이직확인서 */}
+      {/* 섹션 2: 이직확인서 */}
       <H2>이직확인서도 직접 챙겨야 하나요?</H2>
       <p style={body}>
         &quot;이직확인서는 어디서 떼나요?&quot; 이 질문이 진짜 많아요. 결론부터 말하면, 본인이 준비하는 서류가 아니에요. <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>에 따라 회사가 퇴직 후 <strong>10일 이내</strong>에 고용센터로 제출해야 하는 법적 의무 서류이죠.
@@ -167,7 +167,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 미리 해두면 좋은 것 */}
+      {/* 섹션 3: 미리 해두면 좋은 것 */}
       <H2>온라인으로 미리 준비할 서류 체크리스트</H2>
       <p style={body}>
         <a href="https://www.work.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>워크넷(work.go.kr)</a>에서 <strong>구직등록</strong>을 미리 해두면 현장 대기 시간이 확 줄어요. 희망 직종, 희망 급여, 경력 사항을 입력하면 5분 안에 끝나죠. 센터에서도 할 수 있지만, 사람이 많으면 30분 이상 기다려야 해요.
@@ -184,7 +184,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 특수한 경우 추가 서류 */}
+      {/* 섹션 4: 특수한 경우 추가 서류 */}
       <H2>고용 형태별 추가 필요 서류</H2>
       <p style={body}>
         <strong>일용직</strong>이었다면 일용근로내역서가 필요할 수 있는데, 고용센터에서 직접 조회가 가능하니 따로 준비하지 않아도 돼요. <strong>건설일용직</strong>이라면 퇴직공제부금 가입 확인서를 함께 가져가면 처리 속도가 빨라지죠.
@@ -205,7 +205,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 방문 시간 줄이는 팁 */}
+      {/* 섹션 5: 방문 시간 줄이는 팁 */}
       <H2>서류 체크리스트 완성 후 방문 시간 줄이기</H2>
       <p style={body}>
         <strong>월요일</strong>이 가장 붐비는 날이에요. 주말 동안 퇴직한 사람들이 몰려드니까요. 화요일부터 목요일 사이가 한산하고, 금요일 오후도 비교적 여유로운 편이죠.

@@ -46,6 +46,17 @@
           }
         ]
       }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node c:/Users/user/wiki-site/scripts/verify-tsx-article.js"
+          }
+        ]
+      }
     ]
   },
   "editMode": "ask"

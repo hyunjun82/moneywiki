@@ -7,13 +7,11 @@ import {
 } from "@/components/article-ui";
 import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
 
-// ─── 데이터 ──────────────────────────────────────────
-
 const CHECK_ITEMS = [
   { id: "c1", label: "퇴직금이 300만원을 초과해요" },
   { id: "c2", label: "IRP 계좌가 아직 없어요" },
-  { id: "c3", label: "퇴직 후 바로 일시금으로 받고 싶어요" },
-  { id: "c4", label: "세금을 최대한 줄이는 방법이 궁금해요" },
+  { id: "c3", label: "퇴직 확정이 됐어요 (또는 이미 퇴직했어요)" },
+  { id: "c4", label: "퇴직금을 아직 받지 못했어요" },
 ];
 
 const CALC_SLIDERS = [
@@ -23,7 +21,7 @@ const CALC_SLIDERS = [
 
 const CALC_RESULTS = [
   {
-    label: "IRP 수령 후 연금 선택 시 절세액 (30%)",
+    label: "IRP 연금 수령 시 절세액 (30% 감면)",
     getValue: (v: Record<string, number>) => {
       const tax = Math.round(v.amount * 10000 * 0.06 * (1 - Math.min(v.years, 30) * 0.015));
       return Math.round(tax * 0.3);
@@ -58,22 +56,22 @@ const STEPS = [
   },
   {
     title: "이체 확인 (14일 이내)",
-    desc: "퇴직 후 14일 이내에 IRP 계좌로 입금됐는지 확인해요. 안 들어왔다면 인사팀에 먼저 확인하고, 그래도 안 되면 고용노동부에 신고할 수 있어요.",
-    tip: "IRP 앱 알림 설정 켜두면 입금 시 즉시 확인 가능",
+    desc: "퇴직 후 14일 이내에 IRP 계좌로 입금됐는지 확인해요. 안 들어왔다면 인사팀에 먼저 확인하고, 그래도 안 되면 고용노동부(1350)에 신고할 수 있어요.",
+    tip: "IRP 앱 알림 설정 켜두면 입금 시 즉시 확인 가능해요",
   },
   {
     title: "연금 또는 일시금 선택",
     desc: "55세 이전이면 일시금만 가능해요. 55세 이후엔 연금으로 10년 이상 나눠 받으면 퇴직소득세의 30%를 감면받아요. 연금 수령이 세금 면에서 훨씬 유리해요.",
-    tip: "연금 수령 시 퇴직소득세 30% 감면 — 오래 둘수록 이득",
+    tip: "연금 수령 시 퇴직소득세 30% 감면 — 오래 둘수록 이득이에요",
   },
 ];
 
 const CHECKLIST = [
-  "IRP 계좌 — 퇴직 전에 미리 개설",
-  "계좌번호 — 인사팀에 문자·메일로 통보",
-  "14일 이내 입금 확인 — 안 오면 즉시 연락",
-  "연금 vs 일시금 — 55세 이후라면 연금이 세금 유리",
-  "수수료 비교 — 증권사 IRP가 은행보다 낮은 경우 많음",
+  "IRP 계좌: 퇴직 전에 미리 개설",
+  "계좌번호: 인사팀에 문자·메일로 통보",
+  "14일 이내 입금 확인: 안 오면 즉시 연락",
+  "연금 vs 일시금: 55세 이후라면 연금이 세금 유리",
+  "수수료 비교: 증권사 IRP가 은행보다 낮은 경우 많음",
 ];
 
 const FAQS = [
@@ -103,15 +101,15 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "근로자퇴직급여보장법 제9조 — 퇴직금 IRP 이전 의무", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
-      { label: "소득세법 제22조 — 퇴직소득세 감면 규정", url: "https://www.law.go.kr/법령/소득세법" },
+      { label: "근로자퇴직급여보장법 제9조: 퇴직금 IRP 이전 의무", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
+      { label: "소득세법 제22조: 퇴직소득세 감면 규정", url: "https://www.law.go.kr/법령/소득세법" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "금융감독원 — IRP 가입 및 수령 안내", url: "https://www.fss.or.kr" },
-      { label: "고용노동부 — 퇴직급여 제도 안내", url: "https://www.moel.go.kr" },
+      { label: "금융감독원: IRP 가입 및 수령 안내", url: "https://www.fss.or.kr" },
+      { label: "고용노동부: 퇴직급여 제도 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -122,8 +120,6 @@ const RELATED = [
   { slug: "퇴직금-세금", title: "퇴직금 세금, 얼마나 떼나요?", description: "IRP 절세 효과까지 계산해요." },
 ];
 
-// ─── 페이지 ──────────────────────────────────────────
-
 export default function Page() {
   return (
     <ArticleLayout
@@ -133,14 +129,16 @@ export default function Page() {
 
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
         퇴직금 IRP 수령 방법, 어떻게 받나요?<br />
-        계좌 개설부터 이체 완료까지
+        계좌 개설부터 연금·일시금 선택까지
       </h1>
 
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
         퇴직금이 300만원을 초과하면 IRP(개인형 퇴직연금) 계좌로만 받을 수 있어요.
-        <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여보장법 제9조</a>에서 정한 의무라 회사가 마음대로 일반 계좌로 보낼 수 없어요.
+        <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여보장법 제9조</a>에서
+        정한 의무라 회사가 마음대로 일반 계좌로 보낼 수 없어요.
         IRP 계좌를 미리 만들어두고 계좌번호를 회사에 알려주면 14일 이내에 이체돼요.
-        <a href="/w/퇴직금-세금" style={{ color: "#1D9E75", textDecoration: "underline" }}>세금 절약</a>도 IRP에서 연금으로 받을 때 가장 유리하죠.
+        <a href="/w/퇴직금-세금" style={{ color: "#1D9E75", textDecoration: "underline" }}>세금 절약</a>도
+        IRP에서 연금으로 받을 때 가장 유리하죠.
       </p>
 
       <Divider />
@@ -158,9 +156,9 @@ export default function Page() {
       </p>
 
       <GreenBox title="IRP 수령 핵심 3가지">
-        1. 퇴직금 300만원 초과 → IRP 계좌 필수<br />
-        2. 퇴직 전 IRP 개설 → 계좌번호 인사팀 통보<br />
-        3. 55세 이후 연금 수령 → 퇴직소득세 30% 감면
+        퇴직금 300만원 초과 → IRP 계좌 필수<br />
+        퇴직 전 IRP 개설 → 계좌번호 인사팀 통보<br />
+        55세 이후 연금 수령 → 퇴직소득세 30% 감면
       </GreenBox>
 
       <SectionBadge>내 상황 체크해보세요</SectionBadge>
@@ -176,7 +174,9 @@ export default function Page() {
       <p style={body}>
         IRP로 받은 퇴직금을 55세 이후에 연금으로 10년 이상 분산 수령하면 퇴직소득세의 30%를 감면받아요.
         퇴직금이 크고 근속기간이 짧을수록 절세 효과가 커요.
-        아래 계산기로 절세 가능 금액을 확인해보세요.
+      </p>
+      <p style={body}>
+        퇴직소득세 추정액과 절세액을 비교해서 연금 수령이 얼마나 유리한지 아래에서 바로 확인해보세요.
       </p>
 
       <SectionBadge>IRP 절세 효과 계산기</SectionBadge>
@@ -222,7 +222,7 @@ export default function Page() {
       <Checklist items={CHECKLIST} />
 
       <GreenBox title="IRP 연금 수령, 오래 둘수록 이득이에요">
-        퇴직금을 IRP에 넣어두고 55세부터 연금으로 받으면 세금이 30% 줄어요.
+        퇴직금을 IRP에 넣어두고 55세부터 연금으로 받으면 세금이 30% 줄어요.<br />
         지금 당장 꺼내는 것보다 수백만 원 차이가 날 수 있어요.
       </GreenBox>
 

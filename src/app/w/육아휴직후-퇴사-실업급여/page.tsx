@@ -51,16 +51,16 @@ const REFERENCES = [
   {
     category: "법령",
     items: [
-      { label: "고용보험법 제40조 — 구직급여 수급요건", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행규칙 — 이직 사유 분류 기준", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
-      { label: "남녀고용평등법 — 육아휴직 중 해고 금지", url: "https://www.law.go.kr/법령/남녀고용평등과일ㆍ가정양립지원에관한법률" },
+      { label: "고용보험법 제40조: 구직급여 수급요건", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용보험법 시행규칙: 이직 사유 분류 기준", url: "https://www.law.go.kr/법령/고용보험법시행규칙" },
+      { label: "남녀고용평등법: 육아휴직 중 해고 금지", url: "https://www.law.go.kr/법령/남녀고용평등과일ㆍ가정양립지원에관한법률" },
     ],
   },
   {
     category: "공식 자료",
     items: [
-      { label: "고용24 — 실업급여 신청·조회", url: "https://www.ei.go.kr" },
-      { label: "고용노동부 — 육아휴직 제도 안내", url: "https://www.moel.go.kr" },
+      { label: "고용24: 실업급여 신청·조회", url: "https://www.ei.go.kr" },
+      { label: "고용노동부: 육아휴직 제도 안내", url: "https://www.moel.go.kr" },
     ],
   },
 ];
@@ -114,7 +114,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1 — 비자발적 퇴사 */}
+      {/* 섹션 1: 비자발적 퇴사 */}
       <H2>퇴사 압박 받았을 때 수급 조건에 해당되나요?</H2>
       <SectionBadge>수급 자격 체크</SectionBadge>
 
@@ -150,7 +150,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2 — 자발적 퇴사와 정당한 사유 */}
+      {/* 섹션 2: 자발적 퇴사와 정당한 사유 */}
       <H2>본인이 퇴사를 선택해도 수급 조건을 충족할 수 있나요?</H2>
 
       <p style={body}>
@@ -184,7 +184,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3 — 이직확인서 */}
+      {/* 섹션 3: 이직확인서 */}
       <H2>이직확인서가 수급 조건 판단의 핵심이에요</H2>
       <SectionBadge>퇴직 전 체크리스트</SectionBadge>
 
@@ -208,7 +208,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 4 — 육아휴직 중 해고와 남녀고용평등법 */}
+      {/* 섹션 4: 육아휴직 중 해고와 남녀고용평등법 */}
       <H2>육아휴직 중 해고 통보는 불법, 대처법이 달라요</H2>
 
       <p style={body}>
@@ -237,7 +237,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5 — 수급기간 연장과 실전 팁 */}
+      {/* 섹션 5: 수급기간 연장과 실전 팁 */}
       <H2>퇴사 압박 시 수급 조건 확보와 대처법 정리</H2>
 
       <p style={body}>
