@@ -87,7 +87,7 @@ export default function RootLayout({
         <Script
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2442517902625121"
           crossOrigin="anonymous"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
         {/* Microsoft Clarity */}
         <Script id="clarity-analytics" strategy="lazyOnload">

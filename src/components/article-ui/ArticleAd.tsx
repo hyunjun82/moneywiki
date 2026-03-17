@@ -12,15 +12,7 @@ export function ArticleAd({ position }: Props) {
   const format = position === "intro" ? "horizontal" : "auto";
 
   return (
-    <div
-      style={{
-        margin: "24px 0",
-        minHeight: 90,
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <div style={{ margin: "24px 0" }}>
       <AdSense slot={slot} format={format} />
     </div>
   );
