@@ -8,12 +8,11 @@ interface Props {
 }
 
 export function ArticleAd({ position }: Props) {
-  const slot = AD_SLOTS.HORIZONTAL;
-  const format = "horizontal";
+  const slot = position === "intro" ? AD_SLOTS.HORIZONTAL : AD_SLOTS.VERTICAL;
 
   return (
-    <div style={{ margin: "24px 0", overflow: "hidden", maxHeight: 120 }}>
-      <AdSense slot={slot} format={format} />
+    <div style={{ margin: "24px 0" }}>
+      <AdSense slot={slot} format="auto" />
     </div>
   );
 }
