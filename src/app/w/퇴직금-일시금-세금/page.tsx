@@ -179,7 +179,7 @@ export default function Page() {
       <H2>퇴직금 일시금 세금, 어떻게 계산되나요?</H2>
       <p style={body}>
         퇴직소득세는 퇴직금에서 근속연수 공제를 먼저 뺀 뒤 세율을 적용해요.
-        <a href="https://www.law.go.kr/법령/소득세법" style={{ color: "#1D9E75", textDecoration: "underline" }} target="_blank" rel="noopener noreferrer">소득세법 제48조</a>가
+        <a href="https://www.law.go.kr/법령/소득세법" style={{ color: "#1D9E75", textDecoration: "underline" }}>소득세법 제48조</a>가
         근속연수 공제 기준을 정하고 있는데, 근속기간에 따라 수십~수천만 원을 먼저 공제해줘요.
         공제 후 남은 금액에만 세율이 붙어요.
       </p>
@@ -209,7 +209,7 @@ export default function Page() {
       <p style={body}>
         월 평균급여와 근속 기간을 조정하면 예상 퇴직금, 근속연수 공제액, 퇴직소득세 참고값을 바로 볼 수 있어요.
         실제 세액은 환산급여공제 계산이 별도로 있어서 아래 수치보다 낮게 나오는 경우가 많아요.
-        정확한 금액은 <a href="https://www.hometax.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }} target="_blank" rel="noopener noreferrer">홈택스 퇴직소득 모의계산</a>으로
+        정확한 금액은 <a href="https://www.hometax.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>홈택스 퇴직소득 모의계산</a>으로
         확인하세요.
       </p>
 

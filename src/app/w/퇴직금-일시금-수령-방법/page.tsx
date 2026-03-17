@@ -186,7 +186,7 @@ export default function Page() {
       <p style={body}>
         일시금 수령은 퇴직 후 누구나 선택할 수 있어요.
         퇴직금이 300만원 이하면 IRP 없이 일반 계좌로 받을 수 있고, 300만원 초과라면 IRP를 통해 받아야 해요.
-        <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }} target="_blank" rel="noopener noreferrer">근로자퇴직급여보장법 제9조</a>에서
+        <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여보장법 제9조</a>에서
         이를 의무화하고 있어요.
       </p>
       <p style={body}>
@@ -214,7 +214,7 @@ export default function Page() {
       <p style={body}>
         퇴직금 금액과 근속 기간을 조정하면 퇴직소득세 추정액과 세후 실수령액을 바로 확인할 수 있어요.
         실제 세액은 환산급여공제 계산이 별도로 있어서 아래 수치보다 낮게 나오는 경우가 많아요.
-        정확한 금액은 <a href="https://www.hometax.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }} target="_blank" rel="noopener noreferrer">홈택스 퇴직소득 모의계산</a>으로
+        정확한 금액은 <a href="https://www.hometax.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>홈택스 퇴직소득 모의계산</a>으로
         확인하세요.
       </p>
 

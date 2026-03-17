@@ -62,8 +62,6 @@ export function References({ groups }: ReferencesProps) {
               >
                 <a
                   href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   style={{
                     color: colors.mainGreen,
                     textDecoration: "none",

@@ -99,8 +99,6 @@ export function Steps({ steps }: StepsProps) {
             {step.link && (
               <a
                 href={step.link.href}
-                target="_blank"
-                rel="noopener noreferrer"
                 style={{
                   display: "inline-block",
                   marginTop: 8,

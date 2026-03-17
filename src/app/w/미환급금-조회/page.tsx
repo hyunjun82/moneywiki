@@ -35,8 +35,8 @@ export default function RefundPage() {
           {/* CTA */}
           <a
             href="https://www.gov.kr/mw/AA040OfferMainFrm.do?capp_biz_cd=PG4CADM4005"
-            target="_blank"
-            rel="noopener noreferrer"
+           
+           
             className="inline-flex items-center gap-3 bg-slate-900 hover:bg-slate-800 text-white text-lg font-semibold px-8 py-4 rounded-full transition-all hover:scale-[1.02] hover:shadow-xl"
           >
             내 환급금 조회하기
@@ -128,8 +128,8 @@ export default function RefundPage() {
           <div className="text-center mt-12">
             <a
               href="https://www.gov.kr/mw/AA040OfferMainFrm.do?capp_biz_cd=PG4CADM4005"
-              target="_blank"
-              rel="noopener noreferrer"
+             
+             
               className="inline-flex items-center gap-3 bg-slate-900 hover:bg-slate-800 text-white font-semibold px-8 py-4 rounded-full transition-all hover:scale-[1.02] hover:shadow-xl"
             >
               정부24에서 조회하기

@@ -181,7 +181,7 @@ export default function Page() {
         법정 사유 없이 55세 이전에 해지하면 기타소득세 16.5%가 원금 전체에 추가로 붙어요.
       </p>
       <p style={body}>
-        <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" target="_blank" rel="noopener noreferrer" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여보장법</a>에서
+        <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여보장법</a>에서
         정한 법정 사유는 무주택자 주택 구입, 6개월 이상 요양, 파산·개인회생, 천재지변이에요.
         이 사유에 해당하면 필요한 금액만 일부 인출이 가능해요.
       </p>

@@ -44,7 +44,7 @@ export default function Page() {
       {/* 섹션 1: 비과세 한도 */}
       <H2>명예퇴직금 비과세 한도, 얼마까지 안 내도 되나요</H2>
       <p style={{ ...body, marginBottom: 16 }}>
-        명예퇴직금에는 일반 퇴직금에 없는 별도 비과세 혜택이 있어요. <a href="https://www.law.go.kr/법령/소득세법" target="_blank" rel="noopener noreferrer" style={{ color: "#1D9E75", textDecoration: "underline" }}>소득세법 제22조</a>에 따라 근속연수×150만원까지는 세금을 전혀 안 내도 돼요.
+        명예퇴직금에는 일반 퇴직금에 없는 별도 비과세 혜택이 있어요. <a href="https://www.law.go.kr/법령/소득세법" style={{ color: "#1D9E75", textDecoration: "underline" }}>소득세법 제22조</a>에 따라 근속연수×150만원까지는 세금을 전혀 안 내도 돼요.
       </p>
       <p style={{ ...body, marginBottom: 16 }}>
         근속 10년이면 1,500만원, 20년이면 3,000만원, 30년이면 4,500만원까지 비과세예요. 단, 최대 한도는 3억원이에요. 근속 200년이 아닌 이상 3억 한도에 걸릴 일은 없지만, 법령상 상한선이 있다는 점은 알아두세요.

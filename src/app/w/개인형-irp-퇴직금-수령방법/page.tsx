@@ -271,7 +271,7 @@ export default function Page() {
       <Checklist items={CHECKLIST} />
 
       <p style={body}>
-        수수료는 생각보다 크게 차이 나요. 증권사는 연 0.2% 수준인데, 은행은 0.5%까지 올라가는 경우도 있어요. 퇴직금 5,000만원을 20년 운용한다면 수수료 차이만으로 수백만원이 갈릴 수 있어요. 금융감독원의 <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer" style={{ color: "#1D9E75" }}>퇴직연금 비교공시</a>에서 금융기관별로 비교해볼 수 있어요.
+        수수료는 생각보다 크게 차이 나요. 증권사는 연 0.2% 수준인데, 은행은 0.5%까지 올라가는 경우도 있어요. 퇴직금 5,000만원을 20년 운용한다면 수수료 차이만으로 수백만원이 갈릴 수 있어요. 금융감독원의 <a href="https://www.fss.or.kr" style={{ color: "#1D9E75" }}>퇴직연금 비교공시</a>에서 금융기관별로 비교해볼 수 있어요.
       </p>
 
       <ArticleAd position="mid" />
