@@ -47,7 +47,7 @@ const STEPS = [
     title: "적립일수 확인",
     desc: "252일 이상이어야 퇴직공제금을 받을 수 있어요. 여러 현장의 적립일수는 합산돼요.",
     tip: "앱에서 바로 확인 가능: 적립내역도 현장별로 볼 수 있어요",
-    link: { label: "적립일수 조회하기", href: "https://www.cw.or.kr" },
+    link: { label: "적립일수 조회하기", href: "https://eum.cw.or.kr/web/fir/WEBFIR090M00" },
   },
   {
     title: "청구 자격 확인",
@@ -58,7 +58,7 @@ const STEPS = [
     title: "온라인 또는 방문 청구",
     desc: "전국 지부를 방문하거나 온라인으로 청구해요. 신분증, 청구서, 통장 사본이 필요해요. 청구 후 보통 5~10일 내에 입금돼요.",
     tip: "온라인 청구가 가장 빠르고 편해요",
-    link: { label: "온라인 청구하기", href: "https://www.cw.or.kr" },
+    link: { label: "온라인 청구하기", href: "https://eum.cw.or.kr/web/fir/WEBFIR130M00" },
   },
   {
     title: "세금 납부 및 수령",

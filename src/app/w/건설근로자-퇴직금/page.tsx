@@ -45,7 +45,7 @@ const STEPS = [
     title: "공제부금 적립 내역 확인",
     desc: "원청 또는 하청 사업주가 근무일당 9,600원씩 적립해줘요. 미적립 기간이 있으면 사업주에게 소급 적립 요청을 해야 해요.",
     tip: "건설근로자공제회 앱에서 적립 내역 실시간 조회 가능",
-    link: { label: "적립 내역 조회하기", href: "https://www.cretirement.or.kr" },
+    link: { label: "적립 내역 조회하기", href: "https://eum.cw.or.kr/web/fir/WEBFIR090M00" },
   },
   {
     title: "수령 자격 252일 확인",
@@ -56,7 +56,7 @@ const STEPS = [
     title: "온라인 또는 방문 신청",
     desc: "방문 신청은 전국 지부에서 할 수 있어요. 신분증과 통장 사본만 있으면 되고, 공인인증서로 본인 확인이 돼요.",
     tip: "온라인 신청이 방문보다 빠르게 처리돼요",
-    link: { label: "온라인 신청하기", href: "https://www.cretirement.or.kr" },
+    link: { label: "온라인 신청하기", href: "https://eum.cw.or.kr/web/fir/WEBFIR130M00" },
   },
   {
     title: "퇴직공제금 수령",
@@ -106,7 +106,7 @@ const REFERENCES = [
   {
     category: "공식 자료",
     items: [
-      { label: "건설근로자공제회: 퇴직공제금 신청 안내", url: "https://www.cretirement.or.kr" },
+      { label: "건설근로자공제회: 퇴직공제금 신청 안내", url: "https://cw.or.kr" },
       { label: "고용노동부: 건설근로자 퇴직공제 제도", url: "https://www.moel.go.kr" },
     ],
   },
@@ -133,7 +133,7 @@ export default function Page() {
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
         건설현장을 여러 곳 옮겨 다니면 퇴직금을 받기 어렵다고 생각하는 분들이 많아요.
         건설근로자는 일반 근로자와 다른 퇴직금 제도가 있어요.
-        바로 <a href="https://www.cretirement.or.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>건설근로자공제회</a> 퇴직공제금이에요.
+        바로 <a href="https://cw.or.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>건설근로자공제회</a> 퇴직공제금이에요.
         현장이 바뀌어도 근무일수가 합산되는 구조라서, 여러 곳에서 일했더라도 252일이 채워지면 받을 수 있어요.
         공제부금 조회 방법부터 신청 절차까지 정리했어요.
       </p>
