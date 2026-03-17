@@ -6,6 +6,7 @@ interface StepItem {
   title: string;
   desc: string;
   tip?: string;
+  link?: { label: string; href: string };
 }
 
 interface StepsProps {
@@ -94,6 +95,26 @@ export function Steps({ steps }: StepsProps) {
               >
                 TIP: {step.tip}
               </p>
+            )}
+            {step.link && (
+              <a
+                href={step.link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-block",
+                  marginTop: 8,
+                  padding: "6px 14px",
+                  backgroundColor: colors.mainGreen,
+                  color: "#fff",
+                  fontSize: 13,
+                  fontWeight: 600,
+                  borderRadius: 6,
+                  textDecoration: "none",
+                }}
+              >
+                {step.link.label} →
+              </a>
             )}
           </div>
         </div>
