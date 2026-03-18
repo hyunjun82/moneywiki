@@ -168,7 +168,7 @@ export default function Page() {
       <EligibilityChecker
         items={CHECK_ITEMS}
         allMatchText="특례 없이 퇴직 전 3개월 그대로 산정할 수 있어요. 아래 계산기로 바로 확인해보세요."
-        partialMatchText="산정 제외 기간이 있을 수 있어요. 3단계 절차를 따라 제외 기간을 먼저 확인하세요."
+        partialMatchText="산정 제외 기간이 있을 수 있어요. 3단계 절차를 따라 제외 기간을 먼저 확인해봐요."
       />
 
       <Divider />
@@ -217,7 +217,7 @@ export default function Page() {
 
       <H2>산정 전 체크리스트</H2>
       <p style={body}>
-        빠뜨리기 쉬운 항목들이에요. 특히 제외 기간과 상여금 환산은 꼭 확인하세요.
+        빠뜨리기 쉬운 항목들이에요. 특히 제외 기간과 상여금 환산은 꼭 확인해봐요.
         이미 퇴직금을 받았어도 3년 내라면 차액을 청구할 수 있어요.
       </p>
 
@@ -240,7 +240,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로기준법 및 시행령을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로기준법 및 시행령을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인해봐요." />
     </ArticleLayout>
   );
 }

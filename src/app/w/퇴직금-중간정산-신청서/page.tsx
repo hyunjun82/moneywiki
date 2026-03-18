@@ -127,7 +127,7 @@ const REFERENCES = [
 ];
 
 const RELATED = [
-  { slug: "퇴직금-중간정산", title: "퇴직금 중간정산 완전 정리", description: "중간정산 요건·절차를 한 번에 정리해요." },
+  { slug: "퇴직금-중간정산", title: "퇴직금 중간정산 조건과 절차", description: "중간정산 요건·절차를 한 번에 정리해요." },
   { slug: "퇴직금-중간정산-신청-법정-사유-절차", title: "중간정산 법정 사유 7가지", description: "어떤 사유에 해당하는지 확인해보세요." },
   { slug: "퇴직금-중간정산-사유별-증빙서류", title: "사유별 증빙서류 목록", description: "사유마다 다른 서류를 한눈에 정리해요." },
 ];

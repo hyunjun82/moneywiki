@@ -234,7 +234,7 @@ export default function Page() {
       <SectionBadge>내 상황 체크해보세요</SectionBadge>
       <EligibilityChecker
         items={CHECK_ITEMS}
-        allMatchText="IRP 연금 전환 요건을 갖췄어요. 아래 계산기로 수령액과 절감 세금을 바로 확인하세요."
+        allMatchText="IRP 연금 전환 요건을 갖췄어요. 아래 계산기로 수령액과 절감 세금을 바로 확인해봐요."
         partialMatchText="요건이 부족한 항목이 있어요. 55세 이후 또는 IRP 가입 5년 후에 신청하세요."
       />
 
@@ -247,7 +247,7 @@ export default function Page() {
       </p>
       <p style={body}>
         계산기는 원금 분할 기준이에요. 실제 IRP는 운용 수익이 붙기 때문에 수령액이 더 높아요.
-        정확한 시뮬레이션은 IRP를 개설한 금융기관 앱에서 확인하세요.
+        정확한 시뮬레이션은 IRP를 개설한 금융기관 앱에서 확인해봐요.
       </p>
 
       <SectionBadge>IRP 연금 수령액 계산기</SectionBadge>
@@ -314,7 +314,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 소득세법과 근로자퇴직급여보장법을 바탕으로 작성됐어요. 세율·공제 기준이 변경될 수 있으니 최신 기준은 국세청(126) 또는 금융감독원(1332)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 소득세법과 근로자퇴직급여보장법을 바탕으로 작성됐어요. 세율·공제 기준이 변경될 수 있으니 최신 기준은 국세청(126) 또는 금융감독원(1332)에서 확인해봐요." />
     </ArticleLayout>
   );
 }

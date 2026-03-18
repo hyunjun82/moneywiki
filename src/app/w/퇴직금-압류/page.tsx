@@ -178,7 +178,7 @@ export default function Page() {
       <SectionBadge>내 상황 체크해보세요</SectionBadge>
       <EligibilityChecker
         items={CHECK_ITEMS}
-        allMatchText="지금 압류 대응이 필요한 상황이에요. 아래 계산기로 보호 금액부터 확인하세요."
+        allMatchText="지금 압류 대응이 필요한 상황이에요. 아래 계산기로 보호 금액부터 확인해봐요."
         partialMatchText="상황에 따라 다를 수 있어요. 대한법률구조공단(132) 무료 상담을 권해요."
       />
 
@@ -237,7 +237,7 @@ export default function Page() {
       <H2>압류 대응 체크리스트와 주의사항</H2>
       <p style={body}>
         압류 상황에서 놓치기 쉬운 포인트를 항목별로 정리했어요. 퇴직 전이라면 IRP 계좌 개설이 가장 효과적인 사전 대비예요.
-        이미 압류 통지가 온 상태라면 이의신청 기한부터 즉시 확인하세요.
+        이미 압류 통지가 온 상태라면 이의신청 기한부터 즉시 확인해봐요.
       </p>
 
       <SectionBadge>체크리스트</SectionBadge>
@@ -259,7 +259,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 민사집행법과 근로자퇴직급여보장법을 바탕으로 작성됐어요. 법 개정이 있을 수 있으니 최신 기준은 대한법률구조공단(132) 또는 법제처(www.law.go.kr)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 민사집행법과 근로자퇴직급여보장법을 바탕으로 작성됐어요. 법 개정이 있을 수 있으니 최신 기준은 대한법률구조공단(132) 또는 법제처(www.law.go.kr)에서 확인해봐요." />
     </ArticleLayout>
   );
 }

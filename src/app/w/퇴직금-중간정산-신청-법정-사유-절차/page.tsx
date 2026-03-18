@@ -186,7 +186,7 @@ export default function Page() {
       <SectionBadge>내 상황 체크해보세요</SectionBadge>
       <EligibilityChecker
         items={CHECK_ITEMS}
-        allMatchText="중간정산 법정 사유에 해당해요. 아래 계산기로 예상 금액과 세금을 먼저 확인하세요."
+        allMatchText="중간정산 법정 사유에 해당해요. 아래 계산기로 예상 금액과 세금을 먼저 확인해봐요."
         partialMatchText="사유 해당 여부가 불분명하면 고용노동부(1350) 또는 노무사 상담을 권해요."
       />
 

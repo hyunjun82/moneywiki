@@ -49,7 +49,7 @@ const STEPS = [
   {
     title: "예외 조건 해당 여부 확인",
     desc: "퇴직일 기준 만 55세 이상인지, 퇴직금 세전 총액이 300만원 이하인지 먼저 확인해요. 55세는 생일이 퇴직일 이전이어야 해요. 생일 당일 퇴직은 예외에 해당하지 않아요.",
-    tip: "하루 차이로 의무 여부가 바뀌니 정확히 확인하세요",
+    tip: "하루 차이로 의무 여부가 바뀌니 정확히 확인해봐요",
   },
   {
     title: "회사 인사팀에 예외 사유 전달",
@@ -173,7 +173,7 @@ export default function Page() {
       <EligibilityChecker
         items={CHECK_ITEMS}
         allMatchText="IRP 의무 예외 조건에 해당해요. 인사팀에 일반 계좌 번호를 전달하고 수령하세요."
-        partialMatchText="일부 조건만 체크됐어요. 해당하는 항목이 하나라도 있으면 예외 적용이 가능해요. 인사팀과 확인하세요."
+        partialMatchText="일부 조건만 체크됐어요. 해당하는 항목이 하나라도 있으면 예외 적용이 가능해요. 인사팀과 확인해봐요."
       />
 
       <Divider />
@@ -246,7 +246,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법 제9조를 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법 제9조를 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인해봐요." />
     </ArticleLayout>
   );
 }

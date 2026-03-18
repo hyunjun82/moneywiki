@@ -160,7 +160,7 @@ export default function Page() {
       <Calculator
         sliders={CALC_SLIDERS}
         results={CALC_RESULTS}
-        note="※ 월 평균 임금 × 근속연수 기준 간이 계산이에요. 정확한 금액은 고용24 퇴직금 계산기(work.go.kr)에서 확인하세요."
+        note="※ 월 평균 임금 × 근속연수 기준 간이 계산이에요. 정확한 금액은 고용24 퇴직금 계산기(work.go.kr)에서 확인해봐요."
       />
       <p style={body}>
         금액을 확인했으면 이제 실제로 받는 절차가 궁금하죠. IRP 계좌부터 준비해야 해요.
@@ -225,7 +225,7 @@ export default function Page() {
       <ArticleAd position="mid" />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법과 근로기준법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법과 근로기준법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인해봐요." />
 
       <p style={{ ...body, fontSize: 13, color: "#888", marginTop: 20 }}>
         *이 글은 고용노동부, 법제처의 자료를 참고했어요.

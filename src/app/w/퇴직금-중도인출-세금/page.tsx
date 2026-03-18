@@ -55,12 +55,12 @@ const STEPS = [
   {
     title: "인출 유형 확인 (법정 사유 vs 임의 인출)",
     desc: "DC형 퇴직연금 중도인출에는 두 가지 유형이 있어요. 법정 사유(주택구입·요양·파산·천재지변)가 있으면 퇴직소득세만 납부해요. 법정 사유 없이 임의로 IRP를 해지하면 퇴직소득세에 기타소득세 16.5%가 추가돼요. 퇴직금 3,000만원이라면 세금 차이가 495만원이에요.",
-    tip: "사유 해당 여부가 불분명하면 금융감독원(1332)에 먼저 확인하세요",
+    tip: "사유 해당 여부가 불분명하면 금융감독원(1332)에 먼저 확인해봐요",
   },
   {
     title: "사유별 증빙서류 준비",
     desc: "법정 사유 인출이라면 사유에 맞는 서류를 준비해요. 주택 구입이라면 매매계약서 + 무주택 확인서, 요양이라면 진단서 + 요양비 영수증, 파산·회생이라면 법원 결정문 사본이에요. 서류 없이 신청하면 임의 인출로 처리돼요.",
-    tip: "금융기관마다 요구 서류가 조금씩 다를 수 있어요. 신청 전 고객센터에 확인하세요",
+    tip: "금융기관마다 요구 서류가 조금씩 다를 수 있어요. 신청 전 고객센터에 확인해봐요",
   },
   {
     title: "DC형 금융기관에 중도인출 신청",
@@ -174,7 +174,7 @@ export default function Page() {
       <EligibilityChecker
         items={CHECK_ITEMS}
         allMatchText="법정 사유 인출 조건에 해당해요. 아래 계산기로 세금 차이를 확인해보세요."
-        partialMatchText="IRP 금융기관 또는 금융감독원(1332)에 인출 유형을 확인하세요."
+        partialMatchText="IRP 금융기관 또는 금융감독원(1332)에 인출 유형을 확인해봐요."
       />
 
       <Divider />
@@ -189,7 +189,7 @@ export default function Page() {
       <Calculator
         sliders={CALC_SLIDERS}
         results={CALC_RESULTS}
-        note="※ 퇴직소득세는 근속연수공제 후 추정값이에요. 정확한 세액은 국세청 홈택스(hometax.go.kr)에서 확인하세요."
+        note="※ 퇴직소득세는 근속연수공제 후 추정값이에요. 정확한 세액은 국세청 홈택스(hometax.go.kr)에서 확인해봐요."
       />
 
       <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
@@ -208,7 +208,7 @@ export default function Page() {
 
       <p style={body}>
         금융기관마다 요구 서류가 조금씩 다를 수 있어요.
-        신청 전에 DC형을 운용하는 금융기관 고객센터나 앱에서 먼저 확인하세요.
+        신청 전에 DC형을 운용하는 금융기관 고객센터나 앱에서 먼저 확인해봐요.
       </p>
 
       <Divider />
@@ -249,7 +249,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법 시행령과 소득세법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 금융감독원(1332) 또는 국세청(126)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법 시행령과 소득세법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 금융감독원(1332) 또는 국세청(126)에서 확인해봐요." />
     </ArticleLayout>
   );
 }

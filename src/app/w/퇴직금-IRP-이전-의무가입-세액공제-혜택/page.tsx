@@ -146,7 +146,7 @@ const REFERENCES = [
 
 const RELATED = [
   { slug: "퇴직금-IRP-계좌", title: "IRP 계좌 개설 방법", description: "은행·증권사 비교부터 개설 절차까지." },
-  { slug: "퇴직금-세금-절세-방법-IRP-연말정산", title: "퇴직금 절세 방법 총정리", description: "IRP 이전으로 세금 줄이는 구체적인 방법." },
+  { slug: "퇴직금-세금-절세-방법-IRP-연말정산", title: "퇴직금 절세 방법, IRP로 줄이는 법", description: "IRP 이전으로 세금 줄이는 구체적인 방법." },
   { slug: "irp-계좌-퇴직금-수령방법", title: "IRP 계좌로 퇴직금 받는 방법", description: "개설 후 이체·수령까지 단계별 안내." },
 ];
 
@@ -270,7 +270,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법과 소득세법을 바탕으로 작성됐어요. 세액공제율은 소득에 따라 다르니 최신 기준은 국세청(126)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법과 소득세법을 바탕으로 작성됐어요. 세액공제율은 소득에 따라 다르니 최신 기준은 국세청(126)에서 확인해봐요." />
     </ArticleLayout>
   );
 }

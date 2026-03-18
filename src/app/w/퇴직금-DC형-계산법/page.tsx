@@ -195,7 +195,7 @@ export default function Page() {
       <EligibilityChecker
         items={CHECK_ITEMS}
         allMatchText="DC형 퇴직연금 적용 대상이에요. 아래 계산기로 예상 수령액을 확인해보세요."
-        partialMatchText="회사 퇴직연금 방식을 인사팀에 먼저 확인하세요. DB형일 수도 있어요."
+        partialMatchText="회사 퇴직연금 방식을 인사팀에 먼저 확인해봐요. DB형일 수도 있어요."
       />
 
       <Divider />
@@ -266,7 +266,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법을 바탕으로 작성됐어요. 운용 상품별 수익률은 보장되지 않으며, 최신 제도 기준은 고용노동부(1350)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법을 바탕으로 작성됐어요. 운용 상품별 수익률은 보장되지 않으며, 최신 제도 기준은 고용노동부(1350)에서 확인해봐요." />
     </ArticleLayout>
   );
 }

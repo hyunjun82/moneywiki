@@ -174,7 +174,7 @@ export default function Page() {
       <SectionBadge>내 상황 체크해보세요</SectionBadge>
       <EligibilityChecker
         items={CHECK_ITEMS}
-        allMatchText="동의서를 검토하고 서명할 조건을 갖추고 있어요. 아래 계산기로 연장 기간 중 지연이자를 미리 확인하세요."
+        allMatchText="동의서를 검토하고 서명할 조건을 갖추고 있어요. 아래 계산기로 연장 기간 중 지연이자를 미리 확인해봐요."
         partialMatchText="동의서 조건에 문제가 있을 수 있어요. 서명 전 고용노동부(1350)에 상담받아보세요."
       />
 
@@ -245,7 +245,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로기준법 및 근로자퇴직급여보장법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로기준법 및 근로자퇴직급여보장법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인해봐요." />
     </ArticleLayout>
   );
 }

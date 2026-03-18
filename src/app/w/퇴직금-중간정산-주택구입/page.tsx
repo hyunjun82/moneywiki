@@ -177,7 +177,7 @@ export default function Page() {
       <EligibilityChecker
         items={CHECK_ITEMS}
         allMatchText="주택 구입 중간정산 신청 조건에 해당해요. 아래 계산기로 예상 금액을 먼저 확인해보세요."
-        partialMatchText="일부 조건이 맞지 않아요. 고용노동부(1350) 또는 인사팀에 상황을 먼저 설명하고 확인하세요."
+        partialMatchText="일부 조건이 맞지 않아요. 고용노동부(1350) 또는 인사팀에 상황을 먼저 설명하고 확인해봐요."
       />
 
       <Divider />
@@ -262,7 +262,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법 시행령을 바탕으로 작성됐어요. 법령 개정이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법 시행령을 바탕으로 작성됐어요. 법령 개정이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인해봐요." />
     </ArticleLayout>
   );
 }

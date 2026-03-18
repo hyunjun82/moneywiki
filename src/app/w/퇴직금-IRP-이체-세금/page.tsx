@@ -206,7 +206,7 @@ export default function Page() {
       <Calculator
         sliders={CALC_SLIDERS}
         results={CALC_RESULTS}
-        note="※ 추정치. 실제 퇴직소득세는 근속공제·환산산식 적용으로 다를 수 있어요. 퇴직소득 원천징수영수증으로 정확한 세액을 확인하세요."
+        note="※ 추정치. 실제 퇴직소득세는 근속공제·환산산식 적용으로 다를 수 있어요. 퇴직소득 원천징수영수증으로 정확한 세액을 확인해봐요."
       />
 
       <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
@@ -261,7 +261,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 소득세법 및 근로자퇴직급여 보장법을 바탕으로 작성됐어요. 세법 개정이 있을 수 있으니 최신 기준은 국세청(126)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 소득세법 및 근로자퇴직급여 보장법을 바탕으로 작성됐어요. 세법 개정이 있을 수 있으니 최신 기준은 국세청(126)에서 확인해봐요." />
     </ArticleLayout>
   );
 }

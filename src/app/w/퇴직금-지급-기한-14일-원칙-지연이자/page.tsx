@@ -221,7 +221,7 @@ export default function Page() {
       <p style={body}>
         노동청 진정에서 지연이자를 받으려면 진정서에 '지연이자 연 20% 청구'를 명확히 써야 해요.
         퇴직금 미지급만 신고하면 이자는 빠질 수 있어요.
-        소멸시효 3년도 꼭 확인하세요.
+        소멸시효 3년도 꼭 확인해봐요.
       </p>
 
       <SectionBadge>체크리스트</SectionBadge>
@@ -243,7 +243,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로기준법 제36조·제37조 및 근로자퇴직급여보장법 제9조를 바탕으로 작성됐어요. 개별 사안에 따라 적용이 달라질 수 있으니 고용노동부(1350) 또는 관할 노동청에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로기준법 제36조·제37조 및 근로자퇴직급여보장법 제9조를 바탕으로 작성됐어요. 개별 사안에 따라 적용이 달라질 수 있으니 고용노동부(1350) 또는 관할 노동청에서 확인해봐요." />
     </ArticleLayout>
   );
 }

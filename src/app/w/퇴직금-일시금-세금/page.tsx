@@ -199,7 +199,7 @@ export default function Page() {
       <SectionBadge>내 상황 체크해보세요</SectionBadge>
       <EligibilityChecker
         items={CHECK_ITEMS}
-        allMatchText="퇴직소득세 확인이 필요한 상황이에요. 아래 계산기로 예상 세금을 먼저 확인하세요."
+        allMatchText="퇴직소득세 확인이 필요한 상황이에요. 아래 계산기로 예상 세금을 먼저 확인해봐요."
         partialMatchText="상황에 따라 다를 수 있어요. 국세청(126) 또는 세무사 상담을 권해요."
       />
 
@@ -210,14 +210,14 @@ export default function Page() {
         월 평균급여와 근속 기간을 조정하면 예상 퇴직금, 근속연수 공제액, 퇴직소득세 참고값을 바로 볼 수 있어요.
         실제 세액은 환산급여공제 계산이 별도로 있어서 아래 수치보다 낮게 나오는 경우가 많아요.
         정확한 금액은 <a href="https://www.hometax.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>홈택스 퇴직소득 모의계산</a>으로
-        확인하세요.
+        확인해봐요.
       </p>
 
       <SectionBadge>퇴직소득세 계산기</SectionBadge>
       <Calculator
         sliders={CALC_SLIDERS}
         results={CALC_RESULTS}
-        note="※ 환산급여공제 미적용 참고값. 실제 세금은 홈택스 모의계산으로 확인하세요."
+        note="※ 환산급여공제 미적용 참고값. 실제 세금은 홈택스 모의계산으로 확인해봐요."
       />
 
       <p style={body}>
@@ -293,7 +293,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 소득세법을 바탕으로 작성됐어요. 세법 개정이 있을 수 있으니 최신 기준은 국세청(126)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 소득세법을 바탕으로 작성됐어요. 세법 개정이 있을 수 있으니 최신 기준은 국세청(126)에서 확인해봐요." />
     </ArticleLayout>
   );
 }

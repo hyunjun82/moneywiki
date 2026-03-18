@@ -168,7 +168,7 @@ export default function Page() {
       <EligibilityChecker
         items={CHECK_ITEMS}
         allMatchText="IRP 계좌를 미리 개설해두세요. 퇴직 전에 준비해야 수령이 지연되지 않아요."
-        partialMatchText="IRP 의무 예외 여부를 먼저 확인하세요. 예외에 해당하면 일반 통장도 가능해요."
+        partialMatchText="IRP 의무 예외 여부를 먼저 확인해봐요. 예외에 해당하면 일반 통장도 가능해요."
       />
 
       <Divider />
@@ -188,7 +188,7 @@ export default function Page() {
       <Calculator
         sliders={CALC_SLIDERS}
         results={CALC_RESULTS}
-        note="※ 퇴직소득세는 근속연수 공제 후 세율 기준. 실제 세금은 홈택스 퇴직소득세 계산기로 확인하세요."
+        note="※ 퇴직소득세는 근속연수 공제 후 세율 기준. 실제 세금은 홈택스 퇴직소득세 계산기로 확인해봐요."
       />
 
       <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
@@ -246,7 +246,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여 보장법을 바탕으로 작성됐어요. 금융 상품 조건은 변동될 수 있으니, 가입 금융기관에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여 보장법을 바탕으로 작성됐어요. 금융 상품 조건은 변동될 수 있으니, 가입 금융기관에서 확인해봐요." />
     </ArticleLayout>
   );
 }

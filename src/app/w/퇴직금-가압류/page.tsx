@@ -170,7 +170,7 @@ export default function Page() {
       <EligibilityChecker
         items={CHECK_ITEMS}
         allMatchText="IRP 계좌를 지금 바로 개설하세요. 퇴직금이 IRP로 입금되면 전액 가압류 금지예요. 아래 계산기로 보호 금액도 확인해보세요."
-        partialMatchText="일부 조건만 해당돼요. 가압류 범위와 IRP 전환 여부를 아래에서 확인하세요."
+        partialMatchText="일부 조건만 해당돼요. 가압류 범위와 IRP 전환 여부를 아래에서 확인해봐요."
       />
 
       <Divider />

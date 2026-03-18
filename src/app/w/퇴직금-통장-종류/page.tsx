@@ -242,7 +242,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법을 바탕으로 작성됐어요. IRP 수수료와 상품 구성은 금융기관별로 변동될 수 있으니 가입 전 최신 조건을 직접 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법을 바탕으로 작성됐어요. IRP 수수료와 상품 구성은 금융기관별로 변동될 수 있으니 가입 전 최신 조건을 직접 확인해봐요." />
     </ArticleLayout>
   );
 }

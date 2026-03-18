@@ -172,7 +172,7 @@ export default function Page() {
       <EligibilityChecker
         items={CHECK_ITEMS}
         allMatchText="최종 퇴직금 계산이 가능한 상황이에요. 아래 계산기로 재근속 기간 기준 예상액을 확인해보세요."
-        partialMatchText="중간정산 이력이나 재근속 기간을 인사팀에 먼저 확인하세요."
+        partialMatchText="중간정산 이력이나 재근속 기간을 인사팀에 먼저 확인해봐요."
       />
 
       <Divider />
@@ -224,7 +224,7 @@ export default function Page() {
       <Steps steps={STEPS} />
 
       <p style={body}>
-        받은 퇴직금 지급 명세서에서 적용된 근속기간 항목을 직접 확인하세요.
+        받은 퇴직금 지급 명세서에서 적용된 근속기간 항목을 직접 확인해봐요.
         퇴직금 지급이 14일을 넘기면{" "}
         <a href="/w/퇴직금-지연이자" style={{ color: "#1D9E75", textDecoration: "underline" }}>연 20% 지연이자</a>를 청구할 수 있어요.
       </p>
@@ -258,7 +258,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법을 바탕으로 작성됐어요. 법령 개정이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법을 바탕으로 작성됐어요. 법령 개정이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인해봐요." />
     </ArticleLayout>
   );
 }

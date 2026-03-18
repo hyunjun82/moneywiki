@@ -251,7 +251,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법을 바탕으로 작성됐어요. DC형 납입액은 회사 실제 납입 현황에 따라 다를 수 있으니 운용 금융기관에서 잔액을 직접 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법을 바탕으로 작성됐어요. DC형 납입액은 회사 실제 납입 현황에 따라 다를 수 있으니 운용 금융기관에서 잔액을 직접 확인해봐요." />
     </ArticleLayout>
   );
 }

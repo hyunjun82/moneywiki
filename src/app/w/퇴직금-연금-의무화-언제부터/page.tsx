@@ -143,7 +143,7 @@ export default function Page() {
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
         2022년 4월 14일부터 새로 설립된 사업장은 <a href="/w/퇴직금-제도-종류" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직연금</a>을 의무로 도입해야 해요.
         이전에 문을 연 기존 사업장은 아직 임의 가입 대상이지만, 단계적 의무화가 논의 중이에요.
-        신설 사업장인지 기존 사업장인지에 따라 적용 시점과 절차가 달라지니, 먼저 설립 시점을 확인하세요.
+        신설 사업장인지 기존 사업장인지에 따라 적용 시점과 절차가 달라지니, 먼저 설립 시점을 확인해봐요.
       </p>
 
       <Divider />
@@ -240,7 +240,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법을 바탕으로 작성됐어요. 기존 사업장 의무화 시행일은 아직 미확정이에요. 최신 기준은 고용노동부(1350) 또는 퇴직연금 포털(pension.moel.go.kr)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법을 바탕으로 작성됐어요. 기존 사업장 의무화 시행일은 아직 미확정이에요. 최신 기준은 고용노동부(1350) 또는 퇴직연금 포털(pension.moel.go.kr)에서 확인해봐요." />
     </ArticleLayout>
   );
 }

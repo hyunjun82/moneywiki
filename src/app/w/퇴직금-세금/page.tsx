@@ -135,7 +135,7 @@ const FAQS = [
   },
   {
     q: "회사에서 세금을 알아서 떼주나요?",
-    a: "네, 회사가 원천징수해요. 퇴직소득세를 차감한 금액이 입금돼요. 계산이 맞는지 퇴직소득원천징수영수증으로 꼭 확인하세요.",
+    a: "네, 회사가 원천징수해요. 퇴직소득세를 차감한 금액이 입금돼요. 계산이 맞는지 퇴직소득원천징수영수증으로 꼭 확인해봐요.",
   },
   {
     q: "퇴직금 1,000만원이면 세금이 얼마인가요?",
@@ -238,7 +238,7 @@ export default function Page() {
       <Calculator
         sliders={CALC_SLIDERS}
         results={CALC_RESULTS}
-        note="※ 소득세법 기준 간략 계산이에요. 정확한 금액은 홈택스 퇴직소득세 계산기에서 확인하세요."
+        note="※ 소득세법 기준 간략 계산이에요. 정확한 금액은 홈택스 퇴직소득세 계산기에서 확인해봐요."
       />
 
       <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
@@ -300,7 +300,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 소득세법을 바탕으로 작성됐어요. 세율·공제 기준은 변경될 수 있으니 최신 기준은 국세청(126) 또는 홈택스에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 소득세법을 바탕으로 작성됐어요. 세율·공제 기준은 변경될 수 있으니 최신 기준은 국세청(126) 또는 홈택스에서 확인해봐요." />
     </ArticleLayout>
   );
 }

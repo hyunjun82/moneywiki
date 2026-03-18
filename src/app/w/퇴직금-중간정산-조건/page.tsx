@@ -179,8 +179,8 @@ export default function Page() {
       <SectionBadge>내 상황 체크해보세요</SectionBadge>
       <EligibilityChecker
         items={CHECK_ITEMS}
-        allMatchText="중간정산 신청 사유에 해당할 가능성이 높아요. 아래 계산기로 예상 금액을 확인하세요."
-        partialMatchText="해당 사유와 세부 조건을 고용노동부(1350) 또는 노무사 상담으로 확인하세요."
+        allMatchText="중간정산 신청 사유에 해당할 가능성이 높아요. 아래 계산기로 예상 금액을 확인해봐요."
+        partialMatchText="해당 사유와 세부 조건을 고용노동부(1350) 또는 노무사 상담으로 확인해봐요."
       />
 
       <Divider />
@@ -263,7 +263,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법 및 시행령을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법 및 시행령을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인해봐요." />
     </ArticleLayout>
   );
 }
