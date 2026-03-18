@@ -1,4 +1,11 @@
 "use client";
+/*
+ * Q1: 회사가 퇴직금을 안 주거나 미루고 있음. 어떻게 받아야 할지 막막함
+ * Q2: 내용증명 발송 → 고용노동부 진정 접수 → 퇴직금 수령 완료
+ * Q2-1: 고용24(ei.go.kr) 임금체불 온라인 진정 접수 또는 고용노동부 민원마당(minwon.moel.go.kr)
+ * Q3: 진정 절차 3단계, 체당금 조건, 소액심판 방법, 소멸시효 3년
+ * Q4: EligibilityChecker + Calculator(지연이자) + DocTable + Steps + FAQ
+ */
 
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
@@ -94,7 +101,7 @@ const FAQS = [
   },
   {
     q: "지연이자도 같이 받을 수 있나요?",
-    a: "받을 수 있어요. 진정서나 소송장에 '연 20% 지연이자 포함'을 명시해야 받을 수 있어요. 자동으로 주지 않으니 반드시 명시하세요.",
+    a: "받을 수 있어요. 진정서나 소송장에 '연 20% 지연이자 포함'을 명시해야 받을 수 있어요. 자동으로 주지 않으니 진정서 작성 시 꼭 명시해야 해요.",
   },
   {
     q: "소액심판이 뭔가요?",
@@ -116,6 +123,7 @@ const REFERENCES = [
     items: [
       { label: "고용24: 임금체불 진정 접수", url: "https://www.ei.go.kr" },
       { label: "고용노동부: 임금체불 처리 절차 안내", url: "https://www.moel.go.kr" },
+      { label: "고용노동부 민원마당: 진정 접수 딥링크", url: "https://minwon.moel.go.kr" },
       { label: "대한법률구조공단: 무료 법률 지원 (132)", url: "https://www.klac.or.kr" },
     ],
   },

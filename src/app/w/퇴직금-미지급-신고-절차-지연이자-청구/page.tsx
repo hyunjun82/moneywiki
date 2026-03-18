@@ -1,4 +1,11 @@
 "use client";
+/*
+ * Q1: 퇴직금을 14일 넘게 못 받았고, 지연이자도 함께 받을 수 있는지 알고 싶음
+ * Q2: 고용노동부에 진정 접수 → 지연이자 포함해서 청구 완료
+ * Q2-1: 고용24(ei.go.kr) 임금체불 온라인 진정 접수 또는 고용노동부 민원마당(minwon.moel.go.kr)
+ * Q3: 지연이자 연 20% 계산법, 진정 4단계 절차, 필요 서류, 소멸시효 3년
+ * Q4: Calculator(지연이자 계산기) + EligibilityChecker + DocTable + Steps + FAQ
+ */
 
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
@@ -115,6 +122,7 @@ const REFERENCES = [
     items: [
       { label: "고용24: 임금체불 온라인 진정 접수", url: "https://www.ei.go.kr" },
       { label: "고용노동부: 임금체불 신고·처리 안내", url: "https://www.moel.go.kr" },
+      { label: "고용노동부 민원마당: 진정 신청 (진정서 작성 딥링크)", url: "https://minwon.moel.go.kr" },
       { label: "대한법률구조공단: 무료 법률 지원 (132)", url: "https://www.klac.or.kr" },
     ],
   },
