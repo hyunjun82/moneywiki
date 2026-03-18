@@ -5,170 +5,164 @@
  * Q2: 17가지 지원금 중 본인에게 해당되는 것을 찾아서 신청한다
  * Q2-1: 각 지원금 개별 글 → 해당 정부 신청 페이지
  * Q3: 지원금 종류, 대상자, 금액, 신청처
- * Q4: 카드 그리드 + Checklist + FAQ
+ * Q4: 리스트형 카드 (정부공감 스타일) + FAQ
  */
-"use client";
 
 import Link from "next/link";
-import { H2, FAQ, Checklist, GreenBox, BorderBox, References, Disclaimer } from "@/components/article-ui";
-
+import { useState } from "react";
+import { H2, FAQ, References, Disclaimer } from "@/components/article-ui";
 
 const BENEFITS = [
-  { num: "01", slug: "기본형-공익직불제",         title: "기본형 공익직불제",         tag: "농업인",    color: "#2E7D32", amount: "ha당 최대 205만원" },
-  { num: "02", slug: "장애수당",                   title: "장애수당",                   tag: "장애인",    color: "#1565C0", amount: "월 최대 6만원" },
-  { num: "03", slug: "장애인연금",                 title: "장애인연금",                 tag: "중증장애인", color: "#6A1B9A", amount: "월 최대 42만원" },
-  { num: "04", slug: "저소득-지역가입자-보험료-지원", title: "저소득 지역가입자 보험료 지원", tag: "지역가입자", color: "#00695C", amount: "보험료 50%" },
-  { num: "05", slug: "독거노인-장애인-응급안전안심서비스", title: "독거노인·장애인 응급안전안심서비스", tag: "독거노인", color: "#E65100", amount: "무료 설치" },
-  { num: "06", slug: "여성청소년-생리용품-지원",   title: "여성청소년 생리용품 지원",   tag: "여성청소년", color: "#AD1457", amount: "월 13,000원" },
-  { num: "07", slug: "청소년복지시설-퇴소청소년-자립지원수당", title: "퇴소청소년 자립지원수당", tag: "퇴소청소년", color: "#4527A0", amount: "월 50만원" },
-  { num: "08", slug: "장애아동수당",               title: "장애아동수당",               tag: "장애아동",  color: "#0277BD", amount: "월 최대 22만원" },
-  { num: "09", slug: "위기청소년-특별지원",         title: "위기청소년 특별지원",         tag: "위기청소년", color: "#558B2F", amount: "연 최대 200만원" },
-  { num: "10", slug: "고용촉진장려금",             title: "고용촉진장려금",             tag: "사업주",    color: "#1B5E20", amount: "1인당 720만원" },
-  { num: "11", slug: "임신-사전건강관리-지원사업", title: "임신 사전건강관리 지원",     tag: "예비부모",  color: "#880E4F", amount: "무료 검진" },
-  { num: "12", slug: "농업인-건강연금보험료-지원", title: "농업인 건강·연금보험료 지원", tag: "농업인",    color: "#33691E", amount: "50% 지원" },
-  { num: "13", slug: "영농도우미-지원",             title: "영농도우미 지원",             tag: "농가",      color: "#827717", amount: "일당 5만원" },
-  { num: "14", slug: "저소득-청소년한부모-아동양육-자립지원", title: "청소년한부모 아동양육·자립지원", tag: "청소년한부모", color: "#BF360C", amount: "월 35만원" },
-  { num: "15", slug: "저소득-청소년부모-아동양육비-지원", title: "청소년부모 아동양육비 지원", tag: "청소년부모", color: "#4E342E", amount: "월 20만원" },
-  { num: "16", slug: "다문화가족-자녀-교육활동비", title: "다문화가족 자녀 교육활동비",  tag: "다문화가족", color: "#006064", amount: "교육비 지원" },
-  { num: "17", slug: "예술인-국민연금-보험료-지원", title: "예술인 국민연금 보험료 지원", tag: "예술인",    color: "#4A148C", amount: "보험료 50%" },
+  { num: "01", slug: "기본형-공익직불제", title: "기본형 공익직불제", who: "농업인", amount: "ha당 최대 205만원", grad: "linear-gradient(135deg, #2E7D32, #43A047)" },
+  { num: "02", slug: "장애수당", title: "장애수당", who: "장애인", amount: "월 최대 6만원", grad: "linear-gradient(135deg, #1565C0, #1E88E5)" },
+  { num: "03", slug: "장애인연금", title: "장애인연금", who: "중증장애인", amount: "월 최대 42만원", grad: "linear-gradient(135deg, #6A1B9A, #8E24AA)" },
+  { num: "04", slug: "저소득-지역가입자-보험료-지원", title: "저소득 지역가입자 보험료 지원", who: "지역가입자", amount: "보험료 50%", grad: "linear-gradient(135deg, #00695C, #00897B)" },
+  { num: "05", slug: "독거노인-장애인-응급안전안심서비스", title: "독거노인·장애인 응급안전안심서비스", who: "독거노인", amount: "무료 설치", grad: "linear-gradient(135deg, #E65100, #EF6C00)" },
+  { num: "06", slug: "여성청소년-생리용품-지원", title: "여성청소년 생리용품 지원", who: "여성청소년", amount: "월 13,000원", grad: "linear-gradient(135deg, #AD1457, #D81B60)" },
+  { num: "07", slug: "청소년복지시설-퇴소청소년-자립지원수당", title: "퇴소청소년 자립지원수당", who: "퇴소청소년", amount: "월 50만원", grad: "linear-gradient(135deg, #4527A0, #5E35B1)" },
+  { num: "08", slug: "장애아동수당", title: "장애아동수당", who: "장애아동", amount: "월 최대 22만원", grad: "linear-gradient(135deg, #0277BD, #0288D1)" },
+  { num: "09", slug: "위기청소년-특별지원", title: "위기청소년 특별지원", who: "위기청소년", amount: "연 최대 200만원", grad: "linear-gradient(135deg, #558B2F, #689F38)" },
+  { num: "10", slug: "고용촉진장려금", title: "고용촉진장려금", who: "사업주", amount: "1인당 720만원", grad: "linear-gradient(135deg, #1B5E20, #2E7D32)" },
+  { num: "11", slug: "임신-사전건강관리-지원사업", title: "임신 사전건강관리 지원", who: "예비부모", amount: "무료 검진", grad: "linear-gradient(135deg, #880E4F, #AD1457)" },
+  { num: "12", slug: "농업인-건강연금보험료-지원", title: "농업인 건강·연금보험료 지원", who: "농업인", amount: "50% 지원", grad: "linear-gradient(135deg, #33691E, #558B2F)" },
+  { num: "13", slug: "영농도우미-지원", title: "영농도우미 지원", who: "농가", amount: "일당 5만원", grad: "linear-gradient(135deg, #827717, #9E9D24)" },
+  { num: "14", slug: "저소득-청소년한부모-아동양육-자립지원", title: "청소년한부모 아동양육·자립지원", who: "청소년한부모", amount: "월 35만원", grad: "linear-gradient(135deg, #BF360C, #D84315)" },
+  { num: "15", slug: "저소득-청소년부모-아동양육비-지원", title: "청소년부모 아동양육비 지원", who: "청소년부모", amount: "월 20만원", grad: "linear-gradient(135deg, #4E342E, #6D4C41)" },
+  { num: "16", slug: "다문화가족-자녀-교육활동비", title: "다문화가족 자녀 교육활동비", who: "다문화가족", amount: "교육비 지원", grad: "linear-gradient(135deg, #006064, #00838F)" },
+  { num: "17", slug: "예술인-국민연금-보험료-지원", title: "예술인 국민연금 보험료 지원", who: "예술인", amount: "보험료 50%", grad: "linear-gradient(135deg, #4A148C, #6A1B9A)" },
 ];
 
 export default function Page() {
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+
   return (
     <div style={{ maxWidth: "720px", margin: "0 auto", padding: "0 16px 40px" }}>
-      <h1 style={{ fontSize: "clamp(20px, 4vw, 26px)", fontWeight: 800, lineHeight: 1.35, marginBottom: "16px" }}>
-        몰라서 못 받는 정부지원금<br />
-        <span style={{ color: "#1D9E75" }}>17가지 지금 바로 신청 가능해요</span>
+      <h1 style={{ fontSize: "clamp(22px, 4.5vw, 28px)", fontWeight: 800, lineHeight: 1.35, marginBottom: "8px", color: "#111" }}>
+        숨은 정부지원금 17가지
       </h1>
-
-      <p style={{ fontSize: "16px", lineHeight: 1.8, color: "#374151", marginBottom: "8px" }}>
-        매년 수십 개의 정부지원금이 생기지만, 신청하지 않으면 한 푼도 받지 못해요. 국가가 알아서 지급하는 게 아니라 본인이 직접 신청해야 받을 수 있는 구조예요. 아래 17가지 중 내 상황에 해당하는 지원금이 있는지 찾아보세요.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#6B7280", marginBottom: "28px" }}>
-        농업인, 장애인, 청소년, 예술인, 저소득 가구 등 여러 계층에게 지원되는 혜택이에요. 각 항목을 클릭하면 자격 조건과 신청 방법을 자세히 볼 수 있죠. 30초만 살펴봐도 내가 받을 수 있는 혜택을 찾을 수 있고, 중복으로 여러 지원금을 받을 수도 있죠. 아는 만큼 더 받을 수 있는 게 정부지원금이에요.
+      <p style={{ fontSize: "16px", lineHeight: 1.7, color: "#374151", marginBottom: "24px" }}>
+        신청 안 하면 한 푼도 안 줘요. 아래 목록에서 내 상황에 해당하는 게 있는지 눌러보세요.
       </p>
 
-      {/* 17개 카드 그리드 */}
-      <H2>숨은 정부지원금 17가지 목록</H2>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        아래 카드를 클릭하면 해당 지원금의 신청 자격, 지원 금액, 신청 방법을 자세히 볼 수 있죠. 신청처가 지원금마다 달라서, 본인 상황에 맞는 지원금부터 하나씩 살펴보는 게 좋아요. 같은 지원금이라도 지자체마다 추가 혜택이 있는 경우도 있어서 거주 지역 읍면동 주민센터에 추가 지원 여부를 물어보면 예상치 못한 혜택을 받을 수도 있죠. 중복 신청이 가능한 경우가 많기 때문에 내 상황에 해당하는 지원금을 여러 개 찾아두는 게 유리해요.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
-        카드에 표시된 금액은 최대 지원 기준이에요. 실제 지급액은 소득 수준, 가구 구성, 장애 정도 등에 따라 달라질 수 있죠. 각 지원금 글에서 구체적인 금액 기준을 확인하면 내가 실제로 받을 수 있는 금액을 미리 가늠할 수 있죠. 연간 지급 총액이 월 금액보다 클 수 있는 지원금도 있어서 꼼꼼하게 보는 게 중요해요. 처음 보는 지원금이 많더라도 해당 글로 가면 자격 체크리스트가 있어서 5분 안에 대상 여부를 파악할 수 있죠.
-      </p>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "12px", marginBottom: "32px" }}>
-        {BENEFITS.map((b) => (
+      {/* 17개 리스트 — 정부공감 스타일 */}
+      <div style={{
+        borderRadius: "16px",
+        overflow: "hidden",
+        boxShadow: "0 2px 16px rgba(29,158,117,0.12)",
+        marginBottom: "32px",
+      }}>
+        {/* 헤더 */}
+        <div style={{
+          background: "linear-gradient(135deg, #1D9E75, #0D8B66)",
+          padding: "20px 24px",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}>
+          <span style={{ color: "#fff", fontSize: "17px", fontWeight: 700 }}>
+            숨은 정부지원금 찾기
+          </span>
+          <span style={{
+            background: "rgba(255,255,255,0.25)",
+            color: "#fff",
+            fontSize: "12px",
+            fontWeight: 700,
+            padding: "4px 12px",
+            borderRadius: "99px",
+          }}>
+            17개
+          </span>
+        </div>
+
+        {/* 리스트 아이템 */}
+        {BENEFITS.map((b, i) => (
           <Link
             key={b.slug}
             href={`/w/${b.slug}`}
-            style={{ textDecoration: "none" }}
+            style={{ textDecoration: "none", display: "block" }}
+            onMouseEnter={() => setHoveredIdx(i)}
+            onMouseLeave={() => setHoveredIdx(null)}
           >
             <div style={{
-              border: "1px solid #E5E7EB",
-              borderRadius: "12px",
-              padding: "16px",
-              background: "#fff",
-              transition: "box-shadow 0.2s",
-              cursor: "pointer",
-              borderLeft: `4px solid ${b.color}`,
+              display: "flex",
+              alignItems: "center",
+              padding: "14px 20px",
+              background: hoveredIdx === i ? "#F0FDF4" : (i % 2 === 0 ? "#fff" : "#FAFBFC"),
+              borderBottom: i < BENEFITS.length - 1 ? "1px solid #F0F0F0" : "none",
+              transition: "background 0.15s",
+              gap: "14px",
             }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
-                <span style={{ fontSize: "11px", fontWeight: 700, color: "#9CA3AF" }}>{b.num}</span>
-                <span style={{ fontSize: "11px", fontWeight: 600, color: b.color, background: `${b.color}15`, padding: "2px 8px", borderRadius: "99px" }}>{b.tag}</span>
+              {/* 번호 뱃지 */}
+              <span style={{
+                background: b.grad,
+                color: "#fff",
+                fontSize: "11px",
+                fontWeight: 700,
+                width: "28px",
+                height: "28px",
+                borderRadius: "50%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexShrink: 0,
+              }}>
+                {b.num}
+              </span>
+
+              {/* 제목 + 대상 */}
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <p style={{ fontSize: "14.5px", fontWeight: 600, color: "#111", margin: 0, lineHeight: 1.4 }}>
+                  {b.title}
+                </p>
               </div>
-              <p style={{ fontSize: "14px", fontWeight: 700, color: "#111827", lineHeight: 1.4, margin: "0 0 8px" }}>{b.title}</p>
-              <p style={{ fontSize: "13px", color: b.color, fontWeight: 600, margin: 0 }}>{b.amount}</p>
+
+              {/* 금액 태그 */}
+              <span style={{
+                fontSize: "12px",
+                fontWeight: 700,
+                color: "#1D9E75",
+                whiteSpace: "nowrap",
+                flexShrink: 0,
+              }}>
+                {b.amount}
+              </span>
+
+              {/* 화살표 */}
+              <span style={{ color: "#9CA3AF", fontSize: "14px", flexShrink: 0 }}>&#10095;</span>
             </div>
           </Link>
         ))}
       </div>
 
-      <H2>이 지원금들, 왜 모르는 걸까요?</H2>
+      {/* 간단한 안내 */}
+      <H2>왜 모르고 지나칠까요?</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        정부지원금이 잘 알려지지 않는 가장 큰 이유는 홍보 채널이 분산돼 있어서예요. 복지로, 정부24, 고용24, 국민연금공단, 지자체 홈페이지에 각각 흩어져 있어서 한곳에서 보기 어렵죠. 신청 기간도 짧고, 시군구 담당자를 통해야만 접수되는 경우도 있어서 모르는 사람은 계속 모르고 지나치게 돼요. 알림 서비스나 정기적인 안내 없이는 새 지원금이 생겨도 내 주변에 알려지기까지 시간이 걸리는 게 현실이에요. 복지로에서 '복지서비스 모의계산'을 해보면 내가 받을 수 있는 지원이 한꺼번에 조회되니 활용해보는 게 좋아요.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        특히 중간 소득 계층은 "나는 기준 초과 아닐까?" 하고 지레 포기하는 경우가 많아요. 하지만 실제로 신청 자격을 보면 기준 중위소득 65~80% 이하로 생각보다 범위가 넓은 경우가 꽤 있죠. 장애 등록을 했어도 추가로 신청해야 받을 수 있는 수당이 여러 가지예요. 신청하지 않으면 자동으로 지급되지 않고, 소급 적용도 안 되기 때문에 늦게 알수록 손해예요. 매년 기준 중위소득 기준이 달라지기 때문에 작년에 기준을 초과했더라도 올해 다시 확인해보는 게 좋아요.
+        복지로, 정부24, 고용24, 국민연금공단에 각각 흩어져 있어서 한곳에서 모아보기 어려워요. 신청 안 하면 자동으로 지급되지 않고, 소급 적용도 안 되죠.
       </p>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        농업인의 경우 공익직불제와 건강·연금보험료 지원을 동시에 받을 수 있는데도 한 가지만 알고 나머지는 놓치는 분들이 많아요. 예술인이라면 예술인복지재단을 통한 국민연금 보험료 지원이 있는데, 이걸 모르고 본인이 전액 내는 분들도 여전히 많죠. 청소년 자녀가 있는 가정에서도 여성청소년 생리용품 지원이나 다문화가족 교육활동비 같은 소소한 지원을 놓치는 경우가 많아요.
+        "나는 기준 초과 아닐까?" 하고 지레 포기하는 분이 많은데, 소득 산정 시 근로소득 공제가 적용돼 실제로는 기준을 충족하는 경우가 꽤 있죠. 주민센터에서 무료로 모의 산정을 받아볼 수 있어요.
       </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
-        이 글에 소개된 17가지 지원금은 각각 별도의 신청 창구와 자격 기준이 있죠. 하나씩 클릭해서 자격 조건을 보면 의외로 해당되는 지원금이 여러 개 나올 수 있죠. 특히 가구 구성이 복잡하거나 여러 취약 계층 조건을 동시에 갖추고 있다면, 꼼꼼하게 모든 항목을 살펴보는 게 중요해요.
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "24px" }}>
+        한 가정에서도 구성원마다 받을 수 있는 지원금이 달라요. 농업인 부모 + 장애 자녀 + 다문화 가정이라면 세 가지 이상 동시에 신청 가능하죠.
       </p>
-
-      <GreenBox>
-        <strong>✅ 신청 전 반드시 확인할 것</strong><br />
-        동일 지원금도 거주 지자체마다 신청 기간이 달라요. 읍면동 주민센터에 먼저 전화해서 현재 신청 가능한지 확인하는 게 가장 빠른 방법이에요.
-      </GreenBox>
-
-      <H2>대상별로 신청할 수 있는 지원금</H2>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        아래에서 본인 상황에 해당하는 대상 유형을 확인해봐요. 중복 신청이 가능한 경우도 많아서 꼼꼼히 보는 게 중요해요. 각 항목 옆에 연결된 지원금을 클릭하면 자세한 자격 조건과 신청 방법을 바로 볼 수 있어서, 내 상황을 먼저 파악한 다음 해당 글로 넘어가는 게 가장 빠른 방법이에요. 대상자가 여러 유형에 해당한다면 각 항목을 모두 신청해보는 게 최대한 많은 혜택을 받는 방법이에요.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "16px" }}>
-        한 가정 안에서도 구성원마다 받을 수 있는 지원금이 다를 수 있죠. 예를 들어 농업인 부모가 있고, 장애가 있는 자녀가 있고, 다문화 가정이라면 세 가지 지원금을 동시에 신청할 수 있죠. 이런 가정이라면 아래 목록에서 여러 항목이 해당되는 경우도 많아요. 항목마다 신청 기관이 다르니 여러 곳에 따로 신청해야 하는 점을 기억해두세요. 같은 날 하루에 여러 기관을 방문해서 한 번에 처리하는 방법도 있죠.
-      </p>
-      <Checklist
-        items={[
-          "농업인 (농업경영체 등록) → 기본형 공익직불제 + 농업인 건강·연금보험료 지원 + 영농도우미",
-          "장애인 → 장애수당 or 장애인연금 (중증) + 장애아동수당 (18세 미만 자녀)",
-          "국민연금 지역가입자 (저소득) → 저소득 지역가입자 보험료 지원 50%",
-          "65세 이상 독거노인 → 독거노인·장애인 응급안전안심서비스 (무료 장비 설치)",
-          "만 9~24세 여성청소년 (저소득) → 여성청소년 생리용품 지원 월 13,000원",
-          "청소년복지시설 퇴소자 → 자립지원수당 월 50만원",
-          "위기 상황 청소년 → 특별지원 연 최대 200만원 (1388 상담)",
-          "취약계층 채용한 사업주 → 고용촉진장려금 1인당 최대 720만원",
-          "임신 예정 부부 → 임신 사전건강관리 지원사업 무료 검진",
-          "청소년 한부모 or 부모 → 아동양육비 월 20~35만원",
-          "다문화가족 자녀 → 기초학습·진로설계·교육활동비 지원",
-          "예술인 (예술활동증명 완료) → 국민연금 보험료 50% 지원",
-        ]}
-      />
 
       <H2>자주 묻는 질문</H2>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        지원금 신청 과정에서 막히는 부분들을 모아봤어요. 신청 전에 아래 내용을 미리 보면 훨씬 수월하게 진행할 수 있죠. 신청 기간, 중복 수급 여부, 소득 기준 해석 방법 등 헷갈리는 부분이 많은데, 아래 질문과 답변에서 대부분 해결할 수 있죠. 그래도 궁금한 점이 있다면 복지로 콜센터(129) 또는 읍면동 주민센터에 전화하면 담당자에게 직접 안내받을 수 있죠.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        소득 기준이 아슬아슬하게 넘는다고 생각해서 포기하는 분들도 많은데, 소득 산정 시 근로소득 공제나 재산 공제 같은 항목이 적용돼 실제로는 기준을 충족하는 경우도 꽤 있죠. 서류 준비 전에 주민센터에서 모의 산정을 받아보는 게 정확해요. 일단 상담을 해보고 판단하는 게 맞는 방법이죠. 상담에는 비용이 전혀 들지 않으니 일단 물어보는 게 최선이에요.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "16px" }}>
-        신청에 필요한 서류 중 가장 많이 헷갈리는 게 소득·재산 증빙이에요. 건강보험료 납부 확인서나 금융 정보 제공 동의서를 제출하면 소득 조사가 진행되고, 별도의 서류를 다 모으지 않아도 되는 경우도 많아요. 담당자에게 어떤 서류가 필요한지 먼저 물어보는 게 가장 정확해요. 주민등록등본, 통장 사본, 건강보험료 납부 확인서 세 가지는 거의 모든 지원금에 공통으로 필요하니 미리 준비해 두면 창구에서 시간을 절약할 수 있죠. 맞벌이 가구의 경우 배우자 소득 자료까지 한꺼번에 챙겨 가면 재방문 없이 한 번에 처리할 수 있어서 편리해요.
-      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "16px" }}>정부지원금 신청에 대해 자주 묻는 질문이에요.</p>
       <FAQ
         items={[
-          {
-            q: "중복으로 여러 지원금을 동시에 받을 수 있나요?",
-            a: "대부분 가능해요. 예를 들어 농업인은 공익직불제와 건강·연금보험료 지원을 동시에 신청할 수 있죠. 단, 일부 지원금은 동일 성격의 타 지원금과 중복 수급이 제한돼요. 각 지원금 안내 글에서 중복 제한 여부를 꼭 확인해봐요.",
-          },
-          {
-            q: "신청은 모두 읍면동 주민센터에서 해야 하나요?",
-            a: "복지 관련 지원금(장애수당, 아동양육비 등)은 주민센터 또는 복지로(bokjiro.go.kr) 온라인 신청이 가능해요. 고용 관련(고용촉진장려금)은 고용24(work24.go.kr), 연금 관련은 국민연금공단에서 처리해요. 농업 관련은 농업기술센터나 농협 지역조합이 창구예요.",
-          },
-          {
-            q: "소득 기준을 넘으면 무조건 탈락인가요?",
-            a: "소득 기준은 지원금마다 달라요. '기준 중위소득 65% 이하'처럼 조건이 달려 있는 경우도 있지만, 기본형 공익직불제나 임신 사전건강관리 지원처럼 소득 제한 없이 대상자라면 누구나 받을 수 있는 것도 있죠. 일단 각 지원금 글에서 자격 조건을 직접 확인해봐요.",
-          },
-          {
-            q: "신청 기간을 놓치면 다음 해에 신청할 수 있나요?",
-            a: "대부분 연도별로 신청 기간이 정해져 있어서, 해당 기간을 놓치면 내년에 다시 신청해야 해요. 수시 신청이 가능한 지원금도 있지만 예산 소진 시 마감되는 경우가 많죠. 빠를수록 유리해요.",
-          },
-          {
-            q: "대리 신청도 가능한가요?",
-            a: "본인 신청이 원칙이지만, 대리인이 위임장과 신분증을 지참하면 주민센터에서 대리 신청이 가능한 경우가 많아요. 온라인 신청은 본인 인증이 필요한 경우가 대부분이에요.",
-          },
+          { q: "여러 지원금을 동시에 받을 수 있나요?", a: "대부분 가능해요. 농업인은 공익직불제와 건강·연금보험료 지원을 동시에 신청할 수 있죠. 단, 장애수당과 장애인연금처럼 동일 성격의 지원금은 중복이 제한돼요." },
+          { q: "신청은 어디서 하나요?", a: "복지 관련(장애수당, 아동양육비 등)은 주민센터 또는 복지로, 고용 관련(고용촉진장려금)은 고용24, 연금 관련은 국민연금공단에서 처리해요." },
+          { q: "소득 기준을 넘으면 무조건 탈락인가요?", a: "아니에요. 기본형 공익직불제나 임신 사전건강관리 지원처럼 소득 제한 없는 것도 있죠. 각 글에서 자격 조건을 직접 확인해봐요." },
+          { q: "대리 신청도 되나요?", a: "주민센터 방문 시 위임장과 대리인 신분증이 있으면 대리 신청이 가능한 경우가 많아요. 온라인 신청은 본인 인증이 필요해요." },
         ]}
       />
 
-      <References
-        groups={[{ category: "출처", items: [
-          { label: "복지로 :복지서비스 모의계산 및 신청", url: "https://www.bokjiro.go.kr" },
-          { label: "정부24 :정부 서비스 통합 신청", url: "https://www.gov.kr" },
-          { label: "고용24 :고용 관련 지원금 신청", url: "https://www.work24.go.kr" },
-          { label: "국민연금공단 :지역가입자 보험료 지원", url: "https://www.nps.or.kr" },
-        ]}]}
-      />
+      <References groups={[{ category: "출처", items: [
+        { label: "복지로 — 복지서비스 모의계산 및 신청", url: "https://www.bokjiro.go.kr" },
+        { label: "정부24 — 정부 서비스 통합 신청", url: "https://www.gov.kr" },
+        { label: "고용24 — 고용 관련 지원금 신청", url: "https://www.work24.go.kr" },
+        { label: "국민연금공단 — 보험료 지원", url: "https://www.nps.or.kr" },
+      ]}]} />
       <Disclaimer text="이 글은 일반적인 정보 제공 목적이며, 법적 조언이 아니에요." />
     </div>
   );
