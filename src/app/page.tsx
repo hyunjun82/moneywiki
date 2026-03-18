@@ -6,24 +6,24 @@ export const dynamic = "force-static";
 
 /* ── 계산기 ── */
 const CALCULATORS = [
-  { name: "연봉 실수령액", slug: "연봉-실수령액-계산기" },
-  { name: "퇴직금 계산기", slug: "퇴직금-계산기" },
-  { name: "실업급여 계산기", slug: "실업급여-계산기" },
-  { name: "연말정산 계산기", slug: "연말정산-계산기" },
-  { name: "양도소득세", slug: "양도소득세-계산기" },
-  { name: "대출이자 계산기", slug: "대출이자-계산기" },
-  { name: "4대보험료", slug: "4대보험료-계산기" },
-  { name: "국민연금 수령액", slug: "국민연금-계산기" },
+  { name: "연봉 실수령액", desc: "세후 월급 바로 확인", slug: "연봉-실수령액-계산기" },
+  { name: "퇴직금 계산기", desc: "세전·세후 금액 비교", slug: "퇴직금-계산기" },
+  { name: "실업급여 계산기", desc: "수급액·기간 확인", slug: "실업급여-계산기" },
+  { name: "연말정산 계산기", desc: "환급액 미리 확인", slug: "연말정산-계산기" },
+  { name: "양도소득세", desc: "양도세 자동 계산", slug: "양도소득세-계산기" },
+  { name: "대출이자 계산기", desc: "원리금 상환 비교", slug: "대출이자-계산기" },
+  { name: "4대보험료", desc: "급여별 보험료 확인", slug: "4대보험료-계산기" },
+  { name: "국민연금 수령액", desc: "예상 연금액 조회", slug: "국민연금-계산기" },
 ];
 
 /* ── 인기 가이드 ── */
 const POPULAR_GUIDES = [
-  { title: "퇴직금 완벽 가이드", desc: "퇴직금 계산법, 세율, 중간정산까지.", href: "/w/퇴직금", category: "근로·급여" },
-  { title: "연말정산 절세 전략", desc: "소득공제·세액공제 항목별 핵심 정리.", href: "/w/연말정산", category: "세금" },
-  { title: "전세자금대출 총정리", desc: "전세대출 조건, 금리, 한도 비교.", href: "/w/전세자금대출", category: "부동산" },
-  { title: "실업급여 받는 법", desc: "자격요건, 신청 절차, 수급 기간 안내.", href: "/w/실업급여", category: "실업급여" },
-  { title: "개인사업자 대출 갈아타기", desc: "스마트폰으로 신용대출 금리 비교·갈아타기.", href: "/w/개인사업자-신용대출-갈아타기", category: "금융" },
-  { title: "이혼 퇴직금 재산분할", desc: "재산분할 대상 여부와 청구 방법.", href: "/w/이혼-퇴직금-재산분할-대상", category: "법률" },
+  { title: "퇴직금 완벽 가이드", desc: "퇴직금 계산법부터 세율, 중간정산 조건까지 한 번에 정리했어요.", href: "/w/퇴직금", category: "근로·급여" },
+  { title: "연말정산 절세 전략", desc: "소득공제·세액공제 항목별로 놓치기 쉬운 핵심을 짚어줘요.", href: "/w/연말정산", category: "세금" },
+  { title: "전세자금대출 총정리", desc: "전세대출 조건, 금리, 한도를 은행별로 비교할 수 있어요.", href: "/w/전세자금대출", category: "부동산" },
+  { title: "실업급여 받는 법", desc: "자격요건부터 신청 절차, 수급 기간까지 단계별로 안내해요.", href: "/w/실업급여", category: "실업급여" },
+  { title: "개인사업자 대출 갈아타기", desc: "스마트폰으로 신용대출 금리를 비교하고 갈아타는 방법이에요.", href: "/w/개인사업자-신용대출-갈아타기", category: "금융" },
+  { title: "이혼 퇴직금 재산분할", desc: "퇴직금 재산분할 대상 여부와 청구 조건, 절차를 정리했어요.", href: "/w/이혼-퇴직금-재산분할-대상", category: "법률" },
 ];
 
 /* ── 관련 사이트 ── */
@@ -43,46 +43,60 @@ export default function Home() {
   return (
     <div>
       {/* ===== Hero ===== */}
-      <section className="bg-white border-b border-gray-100">
-        <div className="max-w-[1100px] mx-auto px-6 py-16 md:py-20">
-          <div className="text-center">
-            <h1 className="text-3xl md:text-[40px] font-bold tracking-tight mb-4 text-gray-900 leading-tight">
-              경제·금융 정보를
-              <br /><span className="text-[#1D9E75]">쉽고 정확하게</span>
+      <section className="bg-[#F8FBF9]">
+        <div className="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+          <div className="max-w-2xl mx-auto text-center">
+            <p className="text-[#1D9E75] font-semibold text-sm mb-4 tracking-wide">경제·금융·법률 정보 위키</p>
+            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 leading-[1.2] mb-5">
+              어려운 금융 정보를<br />
+              <span className="text-[#1D9E75]">쉽고 정확하게</span>
             </h1>
-            <p className="text-gray-500 mb-8 text-base md:text-lg leading-relaxed">
-              {allDocs.length.toLocaleString()}개 문서 · 계산기 · 체크리스트 · 가이드
+            <p className="text-gray-500 text-lg leading-relaxed mb-10">
+              {allDocs.length.toLocaleString()}개 문서, 8개 계산기, 12개 카테고리.<br className="hidden sm:block" />
+              정부 사이트보다 쉽고, 블로그보다 정확하게.
             </p>
-            <Link
-              href="/search"
-              className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-[#1D9E75] rounded-lg hover:bg-[#17875f] transition-colors text-white font-medium"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-              문서 검색
-            </Link>
+            <div className="flex items-center justify-center gap-3">
+              <Link
+                href="/search"
+                className="inline-flex items-center gap-2.5 px-7 py-4 bg-[#1D9E75] rounded-xl hover:bg-[#17875f] transition-all text-white font-semibold text-[15px] shadow-lg shadow-[#1D9E75]/20 hover:shadow-xl hover:shadow-[#1D9E75]/30 hover:-translate-y-0.5"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                문서 검색
+              </Link>
+              <Link
+                href="/#calculators"
+                className="inline-flex items-center gap-2 px-6 py-4 rounded-xl border border-gray-200 text-gray-600 hover:border-[#1D9E75]/40 hover:text-[#1D9E75] hover:bg-white transition-all font-medium text-[15px]"
+              >
+                계산기 바로가기
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ===== 계산기 ===== */}
-      <section id="calculators" className="py-14 bg-white">
+      <section id="calculators" className="py-16 md:py-20 bg-white">
         <div className="max-w-[1100px] mx-auto px-6">
-          <h2 className="text-xl font-bold text-gray-900 mb-6">계산기</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">계산기</h2>
+            <p className="text-gray-400 text-sm">궁금한 금액을 바로 계산해보세요</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {CALCULATORS.map((calc) => (
               <Link
                 key={calc.slug}
                 href={`/w/${calc.slug}`}
-                className="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-xl hover:border-[#1D9E75]/40 hover:shadow-sm transition-all group"
+                className="flex flex-col items-center text-center p-6 bg-white border border-gray-100 rounded-2xl hover:shadow-lg hover:shadow-gray-100 hover:-translate-y-1 transition-all duration-200 group"
               >
-                <div className="w-10 h-10 rounded-lg bg-[#E1F5EE] flex items-center justify-center shrink-0">
-                  <svg className="w-5 h-5 text-[#1D9E75]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-14 h-14 rounded-2xl bg-[#E1F5EE] flex items-center justify-center mb-4 group-hover:bg-[#1D9E75] transition-colors duration-200">
+                  <svg className="w-6 h-6 text-[#1D9E75] group-hover:text-white transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <span className="text-sm font-medium text-gray-700 group-hover:text-[#1D9E75] transition-colors">{calc.name}</span>
+                <span className="text-sm font-bold text-gray-900 group-hover:text-[#1D9E75] transition-colors mb-1">{calc.name}</span>
+                <span className="text-xs text-gray-400">{calc.desc}</span>
               </Link>
             ))}
           </div>
@@ -90,22 +104,25 @@ export default function Home() {
       </section>
 
       {/* ===== 카테고리 ===== */}
-      <section className="py-14 bg-[#F9FAFB]">
+      <section className="py-16 md:py-20 bg-[#F9FAFB]">
         <div className="max-w-[1100px] mx-auto px-6">
-          <h2 className="text-xl font-bold text-gray-900 mb-6">카테고리</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">카테고리</h2>
+            <p className="text-gray-400 text-sm">주제별로 필요한 정보를 찾아보세요</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {categories.map((cat) => (
               <Link
                 key={cat.slug}
                 href={`/category/${cat.slug}`}
-                className="flex items-center gap-3 p-4 bg-white border border-gray-100 rounded-xl hover:border-[#1D9E75]/30 hover:shadow-sm transition-all group"
+                className="flex items-center gap-4 p-5 bg-white rounded-2xl border border-gray-100 hover:shadow-lg hover:shadow-gray-100 hover:-translate-y-0.5 transition-all duration-200 group"
               >
-                <div className="w-9 h-9 rounded-lg bg-[#E1F5EE] flex items-center justify-center shrink-0">
-                  <span className="text-[#1D9E75] text-sm font-bold">{cat.name.charAt(0)}</span>
+                <div className="w-11 h-11 rounded-xl bg-[#E1F5EE] flex items-center justify-center shrink-0 group-hover:bg-[#1D9E75] transition-colors duration-200">
+                  <span className="text-[#1D9E75] text-sm font-bold group-hover:text-white transition-colors duration-200">{cat.name.charAt(0)}</span>
                 </div>
                 <div className="min-w-0">
-                  <span className="text-sm font-semibold text-gray-900 group-hover:text-[#1D9E75] transition-colors">{cat.name}</span>
-                  <p className="text-xs text-gray-400 truncate">{cat.description}</p>
+                  <span className="text-sm font-bold text-gray-900 group-hover:text-[#1D9E75] transition-colors">{cat.name}</span>
+                  <p className="text-xs text-gray-400 truncate mt-0.5">{cat.description}</p>
                 </div>
               </Link>
             ))}
@@ -114,19 +131,22 @@ export default function Home() {
       </section>
 
       {/* ===== 인기 가이드 ===== */}
-      <section className="py-14 bg-white">
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-[1100px] mx-auto px-6">
-          <h2 className="text-xl font-bold text-gray-900 mb-6">인기 가이드</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">인기 가이드</h2>
+            <p className="text-gray-400 text-sm">가장 많이 찾는 가이드를 모았어요</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {POPULAR_GUIDES.map((guide) => (
               <Link
                 key={guide.href}
                 href={guide.href}
-                className="bg-white border border-gray-200 rounded-xl p-5 hover:border-[#1D9E75]/30 hover:shadow-sm transition-all group"
+                className="bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-lg hover:shadow-gray-100 hover:-translate-y-0.5 transition-all duration-200 group"
               >
-                <span className="inline-block text-xs font-medium text-[#1D9E75] bg-[#E1F5EE] px-2 py-0.5 rounded mb-3">{guide.category}</span>
-                <h3 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-[#1D9E75] transition-colors">{guide.title}</h3>
-                <p className="text-xs text-gray-500 leading-relaxed">{guide.desc}</p>
+                <span className="inline-block text-xs font-semibold text-[#1D9E75] bg-[#E1F5EE] px-2.5 py-1 rounded-lg mb-4">{guide.category}</span>
+                <h3 className="text-base font-bold text-gray-900 mb-2 group-hover:text-[#1D9E75] transition-colors">{guide.title}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed">{guide.desc}</p>
               </Link>
             ))}
           </div>
@@ -134,9 +154,10 @@ export default function Home() {
       </section>
 
       {/* ===== 관련 사이트 ===== */}
-      <section className="py-8 border-t border-gray-100 bg-[#F9FAFB]">
+      <section className="py-10 border-t border-gray-100">
         <div className="max-w-[1100px] mx-auto px-6">
-          <div className="flex flex-wrap items-center justify-center gap-6">
+          <p className="text-xs text-gray-300 text-center mb-4">참고 사이트</p>
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
             {PARTNER_SITES.map((site) => (
               <a
                 key={site.name}

@@ -117,59 +117,57 @@ export default function RootLayout({
 
 function Footer() {
   return (
-    <footer className="bg-[#1D9E75] text-white">
-      {/* 상단: 주요 링크 */}
+    <footer className="bg-[#F9FAFB] border-t border-gray-200">
       <div className="max-w-[1100px] mx-auto px-6 py-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <h3 className="text-sm font-semibold text-white/90 mb-3">카테고리</h3>
-            <ul className="space-y-2 text-sm text-white/60">
-              <li><Link href="/부동산" className="hover:text-white transition-colors">부동산</Link></li>
-              <li><Link href="/세금" className="hover:text-white transition-colors">세금</Link></li>
-              <li><Link href="/금융" className="hover:text-white transition-colors">금융·투자</Link></li>
-              <li><Link href="/근로" className="hover:text-white transition-colors">근로·급여</Link></li>
-              <li><Link href="/법률" className="hover:text-white transition-colors">법률</Link></li>
-              <li><Link href="/복지" className="hover:text-white transition-colors">복지·지원금</Link></li>
+            <h3 className="text-sm font-semibold text-gray-900 mb-3">카테고리</h3>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li><Link href="/category/부동산" className="hover:text-[#1D9E75] transition-colors">부동산</Link></li>
+              <li><Link href="/category/세금" className="hover:text-[#1D9E75] transition-colors">세금</Link></li>
+              <li><Link href="/category/금융" className="hover:text-[#1D9E75] transition-colors">금융·투자</Link></li>
+              <li><Link href="/category/근로" className="hover:text-[#1D9E75] transition-colors">근로·급여</Link></li>
+              <li><Link href="/category/법률" className="hover:text-[#1D9E75] transition-colors">법률</Link></li>
+              <li><Link href="/category/복지" className="hover:text-[#1D9E75] transition-colors">복지·지원금</Link></li>
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-semibold text-white/90 mb-3">계산기</h3>
-            <ul className="space-y-2 text-sm text-white/60">
-              <li><Link href="/w/퇴직금-계산기" className="hover:text-white transition-colors">퇴직금 계산기</Link></li>
-              <li><Link href="/w/연봉-실수령액-계산기" className="hover:text-white transition-colors">연봉 실수령액</Link></li>
-              <li><Link href="/w/양도소득세-계산기" className="hover:text-white transition-colors">양도소득세</Link></li>
-              <li><Link href="/w/대출이자-계산기" className="hover:text-white transition-colors">대출이자</Link></li>
+            <h3 className="text-sm font-semibold text-gray-900 mb-3">계산기</h3>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li><Link href="/w/퇴직금-계산기" className="hover:text-[#1D9E75] transition-colors">퇴직금 계산기</Link></li>
+              <li><Link href="/w/연봉-실수령액-계산기" className="hover:text-[#1D9E75] transition-colors">연봉 실수령액</Link></li>
+              <li><Link href="/w/양도소득세-계산기" className="hover:text-[#1D9E75] transition-colors">양도소득세</Link></li>
+              <li><Link href="/w/대출이자-계산기" className="hover:text-[#1D9E75] transition-colors">대출이자</Link></li>
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-semibold text-white/90 mb-3">인기 가이드</h3>
-            <ul className="space-y-2 text-sm text-white/60">
-              <li><Link href="/w/퇴직금" className="hover:text-white transition-colors">퇴직금 완벽 가이드</Link></li>
-              <li><Link href="/w/연말정산" className="hover:text-white transition-colors">연말정산 절세</Link></li>
-              <li><Link href="/w/전세자금대출" className="hover:text-white transition-colors">전세자금대출</Link></li>
-              <li><Link href="/w/실업급여" className="hover:text-white transition-colors">실업급여 신청</Link></li>
+            <h3 className="text-sm font-semibold text-gray-900 mb-3">인기 가이드</h3>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li><Link href="/w/퇴직금" className="hover:text-[#1D9E75] transition-colors">퇴직금 완벽 가이드</Link></li>
+              <li><Link href="/w/연말정산" className="hover:text-[#1D9E75] transition-colors">연말정산 절세</Link></li>
+              <li><Link href="/w/전세자금대출" className="hover:text-[#1D9E75] transition-colors">전세자금대출</Link></li>
+              <li><Link href="/w/실업급여" className="hover:text-[#1D9E75] transition-colors">실업급여 신청</Link></li>
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-semibold text-white/90 mb-3">안내</h3>
-            <ul className="space-y-2 text-sm text-white/60">
-              <li><Link href="/about" className="hover:text-white transition-colors">소개</Link></li>
-              <li><Link href="/search" className="hover:text-white transition-colors">문서 검색</Link></li>
-              <li><Link href="/privacy" className="hover:text-white transition-colors">개인정보처리방침</Link></li>
-              <li><Link href="/terms" className="hover:text-white transition-colors">이용약관</Link></li>
+            <h3 className="text-sm font-semibold text-gray-900 mb-3">안내</h3>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li><Link href="/about" className="hover:text-[#1D9E75] transition-colors">소개</Link></li>
+              <li><Link href="/search" className="hover:text-[#1D9E75] transition-colors">문서 검색</Link></li>
+              <li><Link href="/privacy" className="hover:text-[#1D9E75] transition-colors">개인정보처리방침</Link></li>
+              <li><Link href="/terms" className="hover:text-[#1D9E75] transition-colors">이용약관</Link></li>
             </ul>
           </div>
         </div>
 
-        {/* 하단: 저작권 */}
-        <div className="pt-6 border-t border-white/15 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <div className="pt-6 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-3">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 bg-white/20 rounded flex items-center justify-center">
+            <div className="w-6 h-6 bg-[#1D9E75] rounded flex items-center justify-center">
               <span className="text-white font-bold text-xs">M</span>
             </div>
-            <span className="text-sm text-white/60">© 2026 머니위키. All rights reserved.</span>
+            <span className="text-sm text-gray-400">© 2026 머니위키. All rights reserved.</span>
           </div>
-          <p className="text-xs text-white/40">
+          <p className="text-xs text-gray-300">
             본 사이트의 정보는 참고용이며, 법적 효력이 없습니다.
           </p>
         </div>
