@@ -81,7 +81,7 @@ if (usedCount < 3) ERRORS.push(`❌ 시각화 컴포넌트 ${usedCount}개 — �
 const AI_WORDS = [
   "또한 ", "결론적으로", "다양한 ", "매우 중요", "확인하세요",
   "총정리", "있거든요", " 있어요", "알아보겠습니다", "살펴보겠습니다",
-  " — ", "정리해드릴게요", "알아볼게요",
+  " — ", "정리해드릴게요", "알아볼게요", "체크하세요", "명시하세요",
 ];
 for (const word of AI_WORDS) {
   const count = (src.match(new RegExp(word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g")) || []).length;
@@ -109,10 +109,84 @@ const crammedSteps = (src.match(/[1-9]단계[:：]/g) || []).length;
 const inParagraph = (src.match(/<p[^>]*>[^<]*[1-9]단계[:：]/g) || []).length;
 if (inParagraph > 0) ERRORS.push(`❌ 단락에 "N단계:" 직접 서술 — Steps 컴포넌트 사용 필요`);
 
-// ─── 8. 섹션 텍스트 분량 ─────────────────────────────
-// H2 이후 컴포넌트 바로 나오는 경우 (텍스트 없이 컴포넌트만)
-const noTextBeforeComp = (src.match(/<H2>[^<]+<\/H2>\s*<SectionBadge>/g) || []).length;
-if (noTextBeforeComp > 0) WARNINGS.push(`⚠️ H2 바로 다음 SectionBadge — 컴포넌트 앞 설명 텍스트 2~3문단 필요`);
+// ─── 8. 텍스트 밀도 검증 ──────────────────────────────
+// p태그 텍스트 정제 함수
+function extractPText(html) {
+  return html
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\{`[^`]*`\}/g, "")
+    .replace(/\{"[^"]*"\}/g, "")
+    .replace(/\{'[^']*'\}/g, "")
+    .replace(/\{[^}]{0,200}\}/g, "")
+    .replace(/&[a-z]+;/gi, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+const returnStart = src.indexOf("return (");
+const returnBlock = returnStart >= 0 ? src.substring(returnStart) : src;
+
+// 전체 p태그 텍스트 수집 (return 블록 안)
+const allPTexts = [];
+const pRe = /<p\b[^>]*>([\s\S]*?)<\/p>/g;
+let pm;
+while ((pm = pRe.exec(returnBlock)) !== null) {
+  const t = extractPText(pm[1]);
+  if ((t.match(/[가-힣]/g) || []).length > 10) allPTexts.push(t);
+}
+const totalBodyKo = allPTexts.reduce((s, t) => s + (t.match(/[가-힣]/g) || []).length, 0);
+
+if (totalBodyKo < 2000) {
+  ERRORS.push(
+    `❌ [텍스트 밀도] 전체 p태그 한국어 ${totalBodyKo}자 — 2,000자 이상 필요\n` +
+    `     → Q3을 더 깊게 파라: 각 섹션에 독자가 부딪히는 예외·저항·실제상황 추가`
+  );
+}
+
+// H2 섹션별 p태그 텍스트 300자 체크
+const h2Sections = returnBlock.split(/<H2>/);
+h2Sections.slice(1).forEach((section) => {
+  const h2End = section.indexOf("</H2>");
+  const h2Title = h2End >= 0 ? section.substring(0, h2End).replace(/<[^>]+>/g, "").trim() : "?";
+  const afterH2 = h2End >= 0 ? section.substring(h2End + 5) : section;
+
+  const secTexts = [];
+  const secPRe = /<p\b[^>]*>([\s\S]*?)<\/p>/g;
+  let spm;
+  while ((spm = secPRe.exec(afterH2)) !== null) {
+    const t = extractPText(spm[1]);
+    if ((t.match(/[가-힣]/g) || []).length > 10) secTexts.push(t);
+  }
+  const secKo = secTexts.reduce((s, t) => s + (t.match(/[가-힣]/g) || []).length, 0);
+  const display = h2Title.slice(0, 20);
+
+  if (secKo < 300) {
+    ERRORS.push(
+      `❌ [텍스트 밀도] H2 "${display}" 섹션 ${secKo}자 — 300자 이상 필요\n` +
+      `     → 이 섹션에서 독자가 부딪히는 예외·저항·실제상황을 추가하라`
+    );
+  }
+});
+
+// 주요 컴포넌트 직전 p태그 문장 수 (3문장 이상)
+const GATED_COMPS = ["<Steps", "<Calculator", "<Checklist", "<DocTable", "<EligibilityChecker", "<CompareTable"];
+for (const comp of GATED_COMPS) {
+  const idx = returnBlock.indexOf(comp);
+  if (idx < 0) continue;
+  const before = returnBlock.substring(Math.max(0, idx - 1000), idx);
+  const allPBefore = [...before.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/g)];
+  const lastP = allPBefore.pop();
+  if (!lastP) continue;
+  const pText = extractPText(lastP[1]);
+  const sentences = pText.split(/[.!?]/).filter(s => (s.match(/[가-힣]/g) || []).length > 5);
+  if (sentences.length <= 2) {
+    const compName = comp.replace("<", "");
+    ERRORS.push(
+      `❌ [텍스트 밀도] <${compName}> 앞 텍스트 ${sentences.length}문장 — 3문장 이상 필요\n` +
+      `     → 이 섹션에서 독자가 부딪히는 예외·저항·실제상황을 추가하라`
+    );
+  }
+}
 
 // ─── 결과 출력 ────────────────────────────────────────
 const slug = filePath.match(/src\/app\/w\/([^/]+)\/page\.tsx/)?.[1] || filePath;
