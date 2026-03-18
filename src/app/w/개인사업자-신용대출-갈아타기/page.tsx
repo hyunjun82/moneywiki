@@ -4,6 +4,7 @@
  * Q3: 대상 조건(운전자금 10억 이하, 제외 대출), 신청 절차(어디서·어떻게), 숨은 비용(중도상환수수료)
  * Q4: EligibilityChecker(대상 확인) + Steps(절차) + Checklist(비용 체크)
  */
+export const dynamic = "force-static";
 "use client";
 
 import { useState } from "react";
