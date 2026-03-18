@@ -1,0 +1,21 @@
+import type { Metadata } from "next";
+
+export const dynamic = "force-static";
+
+export const metadata: Metadata = {
+  title: "사업자 대출 이자가 높아서 고민이라면? 개인사업자 신용대출 갈아타기 조건과 신청 방법 | 머니위키",
+  description: "2026년 3월 18일부터 개인사업자도 스마트폰으로 신용대출을 갈아탈 수 있어요. 대출비교 플랫폼 5곳, 신청 조건, 제외 대출까지 정리했어요.",
+  alternates: { canonical: "https://www.jjyu.co.kr/w/개인사업자-신용대출-갈아타기" },
+  openGraph: {
+    title: "사업자 대출 이자가 높아서 고민이라면? 개인사업자 신용대출 갈아타기 조건과 신청 방법 | 머니위키",
+    description: "2026년 3월 18일부터 개인사업자도 스마트폰으로 신용대출을 갈아탈 수 있어요. 대출비교 플랫폼 5곳, 신청 조건, 제외 대출까지 정리했어요.",
+    url: "https://www.jjyu.co.kr/w/개인사업자-신용대출-갈아타기",
+    type: "article",
+    siteName: "머니위키",
+    locale: "ko_KR",
+  },
+};
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return children;
+}
