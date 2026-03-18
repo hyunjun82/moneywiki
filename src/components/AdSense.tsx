@@ -30,7 +30,6 @@ export default function AdSense({ slot, format = "auto", className = "" }: AdSen
       data-ad-client="ca-pub-2442517902625121"
       data-ad-slot={slot}
       data-ad-format={format}
-      data-full-width-responsive="true"
     />
   );
 }
