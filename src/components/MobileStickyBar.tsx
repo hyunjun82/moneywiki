@@ -1,107 +1,163 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface MobileStickyBarProps {
-  text?: string
-  amount?: string
-  href?: string
-  badgeText?: string
+  text?: string;
+  sub?: string;
+  href?: string;
+  buttonText?: string;
 }
 
 export default function MobileStickyBar({
-  text = '30초 안에 내 숨은 환급금 찾기',
-  amount = '평균 13만원 환급',
-  href = '/w/미환급금-조회',
-  badgeText = '무료'
+  text = '숨은 정부지원금 17가지 지금 확인',
+  sub = '30초면 내가 받을 수 있는지 알 수 있어요',
+  href = '/w/숨은-정부지원금',
+  buttonText = '확인하기',
 }: MobileStickyBarProps) {
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [visible, setVisible] = useState(true);
+  const lastY = useRef(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      // 스크롤 내릴 때 숨기기, 올릴 때 보이기 (선택적)
-      // 현재는 항상 보이게 설정
-      setIsVisible(true);
-      setLastScrollY(currentScrollY);
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (y > lastY.current + 8) setVisible(false);
+      else if (y < lastY.current - 4) setVisible(true);
+      lastY.current = y;
     };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  const slideStyle = {
+    transform: visible ? 'translateY(0)' : 'translateY(100%)',
+    transition: 'transform 0.28s ease',
+  };
 
-  if (!isVisible) return null;
+  const buttonStyle: React.CSSProperties = {
+    flexShrink: 0,
+    backgroundColor: '#fff',
+    color: '#0BAF7A',
+    fontWeight: 700,
+    fontSize: '13px',
+    borderRadius: '999px',
+    whiteSpace: 'nowrap',
+    boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
+  };
 
   return (
     <>
-      {/* 모바일 스티키 바가 차지하는 공간 확보 */}
-      <div className="md:hidden" style={{ height: '70px' }} />
+      <style>{`
+        @keyframes waveGreen {
+          0%   { background-position: 0% 50%; }
+          50%  { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        @keyframes shimmerMove {
+          0%   { transform: translateX(-100%); }
+          100% { transform: translateX(250%); }
+        }
+        .sbar-wave {
+          background: linear-gradient(110deg, #0BAF7A, #1DE0A0, #0BAF7A, #05C47E, #1DC98E);
+          background-size: 300% 300%;
+          animation: waveGreen 3.5s ease infinite;
+        }
+        .sbar-shimmer {
+          position: relative;
+          overflow: hidden;
+        }
+        .sbar-shimmer::after {
+          content: '';
+          position: absolute;
+          top: 0; bottom: 0;
+          left: 0;
+          width: 40%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+          animation: shimmerMove 2.6s ease-in-out infinite;
+          pointer-events: none;
+        }
+      `}</style>
 
-      {/* 모바일 스티키 바 (기존 스타일 유지) */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
-        <Link
-          href={href}
-          className="flex items-center justify-between w-full px-4 py-4"
-          style={{
-            backgroundColor: '#191F28',
-            minHeight: '70px',
-            boxShadow: '0 -4px 20px rgba(0,0,0,0.3)'
-          }}
-        >
-          <div className="flex-1">
-            <h3 className="font-bold text-white text-base leading-tight">
-              {text}
-            </h3>
-            <p className="text-sm mt-1" style={{ color: '#B0B8C1' }}>
-              {badgeText}
-            </p>
-          </div>
-          <button
-            className="flex items-center gap-1 rounded-full px-6 py-3 font-bold text-sm transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
-            style={{
-              backgroundColor: '#FFEB3B',
-              color: '#333333'
-            }}
-          >
-            <span>조회하기</span>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </Link>
-      </div>
+      {/* 스티바가 차지하는 공간 */}
+      <div style={{ height: '64px' }} />
 
-      {/* PC 스티키 바 - 바닥 고정, 본문 영역 내에서만 */}
+      {/* ── 모바일 (md 미만) ─────────────────────────── */}
       <div
-        className="hidden lg:block fixed bottom-0 z-40"
+        className="md:hidden"
         style={{
-          left: 'max(1rem, calc((100vw - 720px) / 2))',
-          right: 'max(1rem, calc((100vw - 720px) / 2))',
-          maxWidth: '720px'
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          zIndex: 50,
+          ...slideStyle,
         }}
       >
         <Link
           href={href}
-          className="flex items-center justify-between w-full px-5 py-3"
+          className="sbar-wave sbar-shimmer"
           style={{
-            background: 'linear-gradient(135deg, #1E3A5F 0%, #2B5280 100%)',
-            borderTopLeftRadius: '12px',
-            borderTopRightRadius: '12px',
+            display: 'flex',
+            alignItems: 'center',
+            minHeight: '64px',
+            padding: '0 16px',
+            boxShadow: '0 -2px 16px rgba(11,175,122,0.35)',
+            textDecoration: 'none',
           }}
         >
-          <span className="flex-1 flex items-center justify-start">
-            <span className="px-3 py-1 bg-white text-[#1E3A5F] rounded-full text-xs font-bold">
-              {amount}
-            </span>
+          <span style={{ fontSize: '22px', marginRight: '10px', flexShrink: 0 }}>🎁</span>
+          <div style={{ flex: 1, minWidth: 0, marginRight: '10px' }}>
+            <p style={{ color: '#fff', fontWeight: 700, fontSize: '14px', lineHeight: '1.3', margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+              {text}
+            </p>
+            <p style={{ color: 'rgba(255,255,255,0.82)', fontSize: '11px', margin: '2px 0 0', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+              {sub}
+            </p>
+          </div>
+          <span style={{ ...buttonStyle, padding: '8px 16px' }}>
+            {buttonText}
           </span>
-          <span className="flex-1 text-center font-bold text-white text-sm">
-            {text}
-          </span>
-          <span className="flex-1 font-bold text-white text-sm text-right">
-            조회하기 →
+        </Link>
+      </div>
+
+      {/* ── PC (md 이상) ──────────────────────────────── */}
+      <div
+        className="hidden md:block"
+        style={{
+          position: 'fixed',
+          bottom: 0,
+          left: '50%',
+          transform: visible
+            ? 'translateX(-50%) translateY(0)'
+            : 'translateX(-50%) translateY(100%)',
+          transition: 'transform 0.28s ease',
+          width: '100%',
+          maxWidth: '760px',
+          zIndex: 40,
+        }}
+      >
+        <Link
+          href={href}
+          className="sbar-wave sbar-shimmer"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            minHeight: '52px',
+            padding: '0 24px',
+            borderTopLeftRadius: '14px',
+            borderTopRightRadius: '14px',
+            boxShadow: '0 -2px 20px rgba(11,175,122,0.3)',
+            textDecoration: 'none',
+          }}
+        >
+          <span style={{ fontSize: '18px', marginRight: '10px', flexShrink: 0 }}>🎁</span>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <span style={{ color: '#fff', fontWeight: 700, fontSize: '14px' }}>{text}</span>
+            <span style={{ color: 'rgba(255,255,255,0.82)', fontSize: '12px', marginLeft: '10px' }}>{sub}</span>
+          </div>
+          <span style={{ ...buttonStyle, padding: '7px 20px' }}>
+            {buttonText} →
           </span>
         </Link>
       </div>
