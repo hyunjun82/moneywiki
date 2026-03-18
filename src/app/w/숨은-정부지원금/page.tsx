@@ -44,7 +44,7 @@ export default function Page() {
         신청 안 하면 한 푼도 안 줘요. 아래 목록에서 내 상황에 해당하는 게 있는지 눌러보세요.
       </p>
 
-      {/* 17개 리스트 — 정부공감 스타일 */}
+      {/* 17개 리스트   정부공감 스타일 */}
       <div style={{
         borderRadius: "16px",
         overflow: "hidden",
@@ -140,7 +140,7 @@ export default function Page() {
         복지로, 정부24, 고용24, 국민연금공단에 각각 흩어져 있어서 한곳에서 모아보기 어려워요. 신청 안 하면 자동으로 지급되지 않고, 소급 적용도 안 되죠.
       </p>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        "나는 기준 초과 아닐까?" 하고 지레 포기하는 분이 많은데, 소득 산정 시 근로소득 공제가 적용돼 실제로는 기준을 충족하는 경우가 꽤 있죠. 주민센터에서 무료로 모의 산정을 받아볼 수 있어요.
+        "나는 기준 초과 아닐까?" 하고 지레 포기하는 분이 많은데, 소득 산정 시 근로소득 공제가 적용돼 실제로는 기준을 충족하는 경우가 꽤 있죠. 주민센터에서 무료로 모의 산정을 받아볼 수 있죠.
       </p>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "24px" }}>
         한 가정에서도 구성원마다 받을 수 있는 지원금이 달라요. 농업인 부모 + 장애 자녀 + 다문화 가정이라면 세 가지 이상 동시에 신청 가능하죠.
@@ -158,10 +158,10 @@ export default function Page() {
       />
 
       <References groups={[{ category: "출처", items: [
-        { label: "복지로 — 복지서비스 모의계산 및 신청", url: "https://www.bokjiro.go.kr" },
-        { label: "정부24 — 정부 서비스 통합 신청", url: "https://www.gov.kr" },
-        { label: "고용24 — 고용 관련 지원금 신청", url: "https://www.work24.go.kr" },
-        { label: "국민연금공단 — 보험료 지원", url: "https://www.nps.or.kr" },
+        { label: "복지로   복지서비스 모의계산 및 신청", url: "https://www.bokjiro.go.kr" },
+        { label: "정부24   정부 서비스 통합 신청", url: "https://www.gov.kr" },
+        { label: "고용24   고용 관련 지원금 신청", url: "https://www.work24.go.kr" },
+        { label: "국민연금공단   보험료 지원", url: "https://www.nps.or.kr" },
       ]}]} />
       <Disclaimer text="이 글은 일반적인 정보 제공 목적이며, 법적 조언이 아니에요." />
     </div>
