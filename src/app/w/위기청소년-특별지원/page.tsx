@@ -96,7 +96,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 항목에 해당하면 청소년상담복지센터에 연락해 상담부터 시작해 보세요. 상황에 따라 빠르게 지원이 연결될 수 있죠. 신청이 어렵거나 무섭게 느껴진다면 1388에 전화해 먼저 상담만 받는 것도 좋아요.
       </p>
-      <EligibilityChecker title="위기청소년 특별지원 자격 체크" items={CHECK_ITEMS} />
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>지원 종류와 월 지원 금액</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -124,7 +124,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         심사 결과는 통상 2~3주 내에 나와요. 긴급한 상황이라면 긴급 지원을 먼저 받고 나중에 정식 신청을 하는 방법도 있죠. 긴급 상황은 상담 당일 즉시 연결이 가능해요. 지원 승인 후에도 정기적으로 상담사와 만나 상황을 점검하면서 필요에 따라 지원 내용을 조정받을 수 있죠.
       </p>
-      <Steps items={STEPS} />
+      <Steps steps={STEPS} />
 
       <H2>자주 묻는 질문</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -137,8 +137,8 @@ export default function Page() {
         지원이 거절된 경우 재신청이 가능한지도 자주 물어봐요. 상황이 바뀌거나 추가 서류를 보완하면 재신청할 수 있죠. 센터 상담사와 계속 연락을 유지하면서 도움을 받는 게 좋아요. 처음 거절되더라도 포기하지 말고 상담사에게 이유를 물어보면 개선 방법을 안내받을 수 있죠. 첫 상담에서 많은 걸 준비하지 않아도 되고, 지금 겪고 있는 상황을 솔직하게 이야기하는 것만으로도 도움의 실마리가 생겨요. 급한 상황이라면 전화 한 통으로 즉시 연결이 가능하고, 야간에도 1388은 24시간 운영되고 있죠.
       </p>
       <FAQ items={FAQ_ITEMS} />
-      <References items={REFS} />
-      <Disclaimer />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 일반적인 정보 제공 목적이며, 법적 조언이 아니에요." />
     </div>
   );
 }

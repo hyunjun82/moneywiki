@@ -100,7 +100,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 항목에 해당하면 보험료 지원 신청이 가능해요. 농업경영체 등록이 안 된 경우 먼저 등록을 진행해야 해요. 등록과 지원 신청은 별도 기관에서 처리되므로 순서대로 진행하는 게 중요해요.
       </p>
-      <EligibilityChecker title="농업인 보험료 지원 자격 체크" items={CHECK_ITEMS} />
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>지원 금액과 혜택</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -123,7 +123,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         신청 후 심사를 거쳐 승인되면 다음 달 고지서부터 지원이 반영돼요. 농업경영체 등록 정보가 갱신되면 별도 신청 없이 지원이 유지돼요. 다만 경작 규모가 기준 이하로 줄어들거나 등록이 취소되면 지원도 중단돼요. 경작 면적이 변동됐을 때 농관원에 갱신 신고를 빠르게 하면 지원이 원활하게 이어져요. 신고 누락으로 지원이 중단됐다가 재신청하면 중단 기간 소급 지원이 안 되니 변경 사항은 즉시 처리하는 게 중요해요.
       </p>
-      <DocTable title="신청 시 필요 서류" items={DOCS} />
+      <DocTable docs={DOCS} />
 
       <H2>자주 묻는 질문</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -136,8 +136,8 @@ export default function Page() {
         지원 기간 제한이 있는지도 자주 물어봐요. 농업경영체 등록이 유지되는 한 지원이 계속돼요. 매년 별도 갱신 없이 자동으로 유지되지만, 3년마다 경영체 실태 조사가 있어서 경작 상황을 보고해야 해요. 실태 조사에서 경작 사실이 확인되지 않으면 등록이 취소되고 지원도 중단될 수 있죠. 은퇴 후에도 농업경영체 등록을 유지하고 경작을 지속하는 경우 지원이 이어지기 때문에, 나이에 관계없이 농업을 계속하는 한 혜택을 이어갈 수 있죠.
       </p>
       <FAQ items={FAQ_ITEMS} />
-      <References items={REFS} />
-      <Disclaimer />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 일반적인 정보 제공 목적이며, 법적 조언이 아니에요." />
     </div>
   );
 }

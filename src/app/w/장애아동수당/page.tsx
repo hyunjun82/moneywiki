@@ -99,7 +99,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 항목을 모두 체크해 보세요. 해당하는 경우 바로 신청 가능하고, 불분명한 항목이 있다면 주민센터에서 확인해 보면 돼요. 장애인 등록이 안 된 경우는 먼저 등록 절차를 진행해야 수당 신청이 가능해요.
       </p>
-      <EligibilityChecker title="장애아동수당 자격 체크" items={CHECK_ITEMS} />
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>장애 정도별 월 지급액</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -125,7 +125,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         신청 후 심사에 2~4주가 걸려요. 승인되면 다음 달 20일부터 수당이 입금돼요. 매년 자격 확인 절차가 있어서 소득이나 장애 정도에 변화가 있으면 주민센터에 신고해야 해요. 자격 확인 안내가 오면 기한 내에 서류를 제출해야 수당이 유지돼요. 주소 이전이나 가구 변동이 생긴 경우에도 바로 신고해야 수당 지급이 끊기지 않아요.
       </p>
-      <DocTable title="신청 시 필요 서류" items={DOCS} />
+      <DocTable docs={DOCS} />
 
       <H2>자주 묻는 질문</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -138,8 +138,8 @@ export default function Page() {
         수당이 제때 안 들어왔을 때 어떻게 해야 하는지도 자주 물어봐요. 매달 20일 전후로 입금되는데, 주말·공휴일인 경우 앞뒤 영업일에 들어와요. 며칠이 지나도 입금이 안 되면 담당 주민센터나 복지로 콜센터(129)에 문의하면 돼요. 계좌 변경이나 주소 이전이 있었던 경우에도 수당 지급이 지연될 수 있죠.
       </p>
       <FAQ items={FAQ_ITEMS} />
-      <References items={REFS} />
-      <Disclaimer />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 일반적인 정보 제공 목적이며, 법적 조언이 아니에요." />
     </div>
   );
 }

@@ -107,7 +107,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 자격 항목에 해당하면 가까운 보건소에서 바로 신청 가능해요. 신분증 하나만 챙겨가면 검사를 받을 수 있고, 별도 비용 없이 모든 검사를 받을 수 있죠. 처음 방문이라면 보건소 모자보건팀에 '임신 사전건강관리 검사'를 받으러 왔다고 말하면 돼요.
       </p>
-      <EligibilityChecker title="임신 사전건강관리 검사 대상 체크" items={CHECK_ITEMS} />
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>무료 검사 12가지 항목</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -122,7 +122,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 체크리스트는 보건소에서 제공하는 무료 검사 12가지 항목이에요. 담당 간호사와 상담 시 어떤 항목이 자신에게 꼭 필요한지 안내받을 수 있죠. 이전에 받은 검사 결과가 있다면 가져가면 중복 검사를 줄일 수도 있죠.
       </p>
-      <Checklist items={EXAM_ITEMS} title="임신 사전건강관리 무료 검사 항목" />
+      <Checklist items={EXAM_ITEMS.map(i => i.label)} />
 
       <H2>신청 방법과 보건소 방문 절차</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -137,7 +137,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         신분증 외에 별도 서류는 필요 없어요. 보건소 담당자가 검사 항목 선택을 도와주고 전체 과정을 안내해 주기 때문에 처음 방문해도 어렵지 않게 진행할 수 있죠. 아래 단계를 미리 숙지해두면 당일 방문이 훨씬 수월해요.
       </p>
-      <Steps items={STEPS} />
+      <Steps steps={STEPS} />
 
       <H2>자주 묻는 질문</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -150,8 +150,8 @@ export default function Page() {
         검사 결과에서 이상이 발견되면 어떻게 해야 하는지 걱정하는 분도 있죠. 이상 소견이 있다고 해서 임신이 불가능한 건 아니에요. 예방접종, 치료, 추가 검사 등을 통해 임신 전 건강을 개선할 수 있죠. 보건소에서 적절한 후속 조치를 안내해 주기 때문에 결과를 받은 뒤 당황하지 않아도 돼요. 이상 소견 발견 후 필요한 후속 치료나 접종 비용은 별도로 발생할 수 있어서 미리 마음의 준비를 해두면 흔들리지 않아요. 보건소 담당자에게 예상 비용을 미리 물어보면 큰 부담 없이 치료 계획을 세울 수 있죠.
       </p>
       <FAQ items={FAQ_ITEMS} />
-      <References items={REFS} />
-      <Disclaimer />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 일반적인 정보 제공 목적이며, 법적 조언이 아니에요." />
     </div>
   );
 }

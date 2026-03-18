@@ -99,7 +99,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 항목을 체크해 사업주와 채용 근로자가 모두 요건에 해당하는지 먼저 살펴보세요. 모두 해당한다면 신청 절차로 넘어가면 돼요. 확실하지 않은 항목은 고용센터 전화 상담을 통해 미리 확인하는 게 안전해요. 고용24(work24.go.kr)에서도 자격 요건 안내를 받을 수 있죠.
       </p>
-      <EligibilityChecker title="고용촉진장려금 자격 체크" items={CHECK_ITEMS} />
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>지원 금액과 지급 방식</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -122,7 +122,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         신청 기한은 채용일로부터 6개월 이후 3개월 이내예요. 기한을 놓치면 지원받지 못하니 달력에 메모해 두는 게 좋아요. 고용24 알림 서비스를 신청하면 신청 기한을 자동으로 알려줘요. 신청 기한 내에 제출하지 않으면 소멸 처리되니 기한 관리가 중요해요. 처음 신청하는 경우 고용센터 방문 상담을 통해 서류 누락 없이 제출하는 게 첫 수령 시 가장 안전한 방법이에요.
       </p>
-      <DocTable title="고용촉진장려금 신청 서류" items={DOCS} />
+      <DocTable docs={DOCS} />
 
       <H2>자주 묻는 질문</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -138,8 +138,8 @@ export default function Page() {
         다른 고용 장려금(일자리 안정자금 등)과 중복 수령이 가능한지도 자주 물어봐요. 일부 지원금과는 중복이 제한되기 때문에 고용센터에서 사전에 중복 수령 가능 여부를 확인하는 게 좋아요. 중복이 허용되지 않는 제도를 동시에 신청했다가는 두 가지 모두 환수 처리될 수 있죠.
       </p>
       <FAQ items={FAQ_ITEMS} />
-      <References items={REFS} />
-      <Disclaimer />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 일반적인 정보 제공 목적이며, 법적 조언이 아니에요." />
     </div>
   );
 }

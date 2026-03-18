@@ -101,7 +101,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 항목에 해당하면 신청이 가능해요. 소득 기준이 애매하다면 주민센터에서 미리 확인해 보는 게 좋아요. 소득 조사 없이 간단한 상담만으로도 해당 여부를 파악할 수 있죠.
       </p>
-      <EligibilityChecker title="다문화가족 자녀 교육활동비 자격 체크" items={CHECK_ITEMS} />
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>지원 금액과 사용 방법</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -127,7 +127,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         신청 후 심사에 2~4주가 걸려요. 승인되면 지정 계좌로 교육활동비가 입금돼요. 매년 재신청이 필요하기 때문에 매학기 초에 신청 일정을 확인하는 게 좋아요. 신청 기간을 놓치면 그 해 지원을 받지 못하기 때문에 학교에서 안내하는 공지를 미리 확인해 두는 게 중요해요.
       </p>
-      <DocTable title="신청 시 필요 서류" items={DOCS} />
+      <DocTable docs={DOCS} />
 
       <H2>자주 묻는 질문</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -143,8 +143,8 @@ export default function Page() {
         학기 중에 신청해도 되는지 궁금한 분도 있죠. 보통 학기 초에 신청 기간이 집중되지만, 중간에도 신청 가능해요. 다만 지원금 예산이 소진되면 지원이 마감될 수 있어서 이른 시기에 신청하는 게 유리해요. 신청 마감일은 지자체마다 다를 수 있어서 거주지 주민센터에 일정을 미리 확인하는 게 중요해요. 신청 마감 전에 공지를 놓치지 않으려면 복지로 알림 서비스나 다누리 앱 알림을 켜두는 것도 좋은 방법이에요.
       </p>
       <FAQ items={FAQ_ITEMS} />
-      <References items={REFS} />
-      <Disclaimer />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 일반적인 정보 제공 목적이며, 법적 조언이 아니에요." />
     </div>
   );
 }

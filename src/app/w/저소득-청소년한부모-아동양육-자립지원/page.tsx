@@ -100,7 +100,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 항목을 체크해 자격을 확인해 보세요. 소득 기준이 애매하다면 주민센터에서 사전 상담을 받으면 돼요. 신청 전 상담만으로도 내 상황이 해당되는지 명확하게 파악할 수 있죠.
       </p>
-      <EligibilityChecker title="청소년 한부모 지원 자격 체크" items={CHECK_ITEMS} />
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>지원 금액과 추가 혜택</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -126,7 +126,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         신청 후 소득·재산 조사에 2~4주가 걸려요. 승인되면 다음 달부터 매달 수당이 계좌로 입금돼요. 매년 소득 변동 여부를 확인하는 갱신 절차가 있어서 연락처와 주소 정보를 최신으로 유지해야 해요. 소득이 늘거나 주소가 바뀌면 주민센터에 변경 신고를 해야 지원이 끊기지 않아요. 갱신 시점에 서류를 미리 챙겨두면 지원 공백 없이 이어서 받을 수 있죠.
       </p>
-      <DocTable title="신청 시 필요 서류" items={DOCS} />
+      <DocTable docs={DOCS} />
 
       <H2>자주 묻는 질문</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -142,8 +142,8 @@ export default function Page() {
         취업을 해도 계속 받을 수 있는지 궁금한 분도 있죠. 소득이 생겨도 소득 기준(기준 중위소득 65%) 이하라면 계속 받을 수 있죠. 취업 후 소득이 기준을 초과하면 지원이 중단되니 소득 변동 시 신고해야 해요. 소득 신고를 늦추면 초과 수령액을 환수당할 수 있어서 변동 즉시 신고하는 게 중요해요.
       </p>
       <FAQ items={FAQ_ITEMS} />
-      <References items={REFS} />
-      <Disclaimer />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 일반적인 정보 제공 목적이며, 법적 조언이 아니에요." />
     </div>
   );
 }

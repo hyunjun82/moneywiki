@@ -20,7 +20,6 @@ export default function Page() {
       <p style={{fontSize:"15px",lineHeight:1.8,color:"#374151",marginBottom:"12px"}}>만 65세 이상이 되면 기초연금으로 전환돼요. 자동 전환이 아니라 별도로 기초연금을 신청해야 해요. 기초연금과 장애인연금 중 유리한 것을 선택하거나 동시 지급이 되는 경우도 있으니 담당자에게 문의해봐요.</p>
       <p style={{fontSize:"15px",lineHeight:1.8,color:"#374151",marginBottom:"20px"}}>중증 장애인이지만 직계 가족의 재산이 많으면 소득인정액에 포함될 수 있죠. 가구원 소득과 재산도 함께 산정하기 때문에 혼자 살더라도 부양 의무자 기준이 영향을 줄 수 있죠. 아래 항목을 하나씩 확인하고 모두 해당되면 신청을 바로 진행해봐요.</p>
       <EligibilityChecker
-        title="장애인연금 신청 자격 체크"
         items={[
           {id:"e1",label:"장애 정도가 심한 중증 장애인으로 등록되어 있죠"},
           {id:"e2",label:"만 18세 이상이에요"},
@@ -36,11 +35,10 @@ export default function Page() {
       <p style={{fontSize:"15px",lineHeight:1.8,color:"#374151",marginBottom:"20px"}}>금액은 매년 기준 중위소득 변동에 따라 조정돼요. 매년 1월에 기준이 바뀌니까 해마다 지급액이 달라질 수 있죠. 지급액 변동이 생기면 사전에 안내 문자를 받게 돼요.</p>
       <p style={{fontSize:"15px",lineHeight:1.8,color:"#374151",marginBottom:"12px"}}>연금 지급이 시작되면 매년 수급 자격 유지 여부를 확인해요. 소득이나 재산에 변동이 생기면 주민센터에 신고해야 하고 신고하지 않으면 과지급분을 환수당할 수 있죠. 아래 표에서 본인 수급 유형에 따른 연금 금액을 확인해봐요.</p>
       <DocTable
-        headers={["구분","기초급여","부가급여","합계"]}
-        rows={[
-          ["기초수급자 재가","월 최대 ~34만원","월 최대 8만원","월 최대 42만원"],
-          ["차상위 계층","월 최대 ~34만원","월 7만원","최대 41만원"],
-          ["일반(기준 이하)","월 최대 ~34만원","월 2만원","최대 36만원"],
+        docs={[
+          { name: "기초수급자 재가", required: true, where: "기초급여 최대 ~34만원 + 부가급여 8만원 = 월 최대 42만원" },
+          { name: "차상위 계층", required: true, where: "기초급여 최대 ~34만원 + 부가급여 7만원 = 최대 41만원" },
+          { name: "일반(기준 이하)", required: true, where: "기초급여 최대 ~34만원 + 부가급여 2만원 = 최대 36만원" },
         ]}
       />
 
@@ -86,12 +84,12 @@ export default function Page() {
         ]}
       />
       <References
-        items={[
+        groups={[{ category: "출처", items: [
           {label:"복지로 장애인연금 신청",url:"https://www.bokjiro.go.kr"},
           {label:"보건복지부 장애인연금 안내",url:"https://www.mohw.go.kr"},
-        ]}
+        ]}]}
       />
-      <Disclaimer />
+      <Disclaimer text="이 글은 일반적인 정보 제공 목적이며, 법적 조언이 아니에요." />
     </div>
   );
 }

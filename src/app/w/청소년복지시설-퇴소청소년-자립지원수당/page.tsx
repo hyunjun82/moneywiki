@@ -92,7 +92,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 자격 항목에 모두 해당한다면 바로 신청할 수 있죠. 퇴소 직후 가능한 빨리 신청하는 게 지원 기간을 최대한 활용하는 방법이에요. 퇴소 전 시설 사회복지사와 미리 상담해두면 퇴소 당일 신청도 가능해요. 신청일이 늦어지면 그만큼 수급 기간이 줄어들기 때문에 퇴소 준비와 동시에 신청 준비를 병행하는 게 좋아요. 퇴소 후 거주지 주민등록 이전이 선행되어야 주민센터 신청이 빠르게 처리돼요.
       </p>
-      <EligibilityChecker title="퇴소청소년 자립지원수당 자격 체크" items={CHECK_ITEMS} />
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>지원 금액과 지원 기간</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -120,7 +120,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         신청 후 심사에는 약 2~4주가 걸려요. 승인되면 다음 달부터 매달 30만원이 계좌로 입금돼요. 매년 자격 유지 여부를 확인하는 갱신 안내가 오기 때문에 연락처와 거주지 정보를 최신으로 유지하는 게 중요해요. 이사 후 주소 이전을 미루면 갱신 안내가 누락될 수 있어서 주소 변경 시 바로 신고하는 게 좋아요.
       </p>
-      <Steps items={STEPS} />
+      <Steps steps={STEPS} />
 
       <H2>자주 묻는 질문</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -133,8 +133,8 @@ export default function Page() {
         갱신을 빠뜨리면 어떻게 되는지 걱정하는 분도 있죠. 갱신을 하지 않으면 지원이 일시 중단될 수 있죠. 갱신 안내가 오면 기한 내에 서류를 제출하면 중단 없이 이어갈 수 있죠. 갱신 안내가 오지 않는 경우도 있으니 스스로 만료 시점을 기억해두는 게 중요해요. 휴대폰 알림이나 달력에 미리 표시해 놓으면 갱신 시기를 놓칠 일이 없죠.
       </p>
       <FAQ items={FAQ_ITEMS} />
-      <References items={REFS} />
-      <Disclaimer />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 일반적인 정보 제공 목적이며, 법적 조언이 아니에요." />
     </div>
   );
 }

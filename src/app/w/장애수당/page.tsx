@@ -20,7 +20,6 @@ export default function Page() {
       <p style={{fontSize:"15px",lineHeight:1.8,color:"#374151",marginBottom:"12px"}}>소득인정액 기준은 기준 중위소득 50% 이하(수급자) 또는 차상위 계층(중위소득 50~100%)이에요. 소득인정액에는 근로소득뿐 아니라 재산 환산액도 포함돼요. 정확한 기준은 주민센터에서 산정받는 게 가장 정확해요.</p>
       <p style={{fontSize:"15px",lineHeight:1.8,color:"#374151",marginBottom:"20px"}}>중증 장애인(장애 정도가 심한)은 장애수당 대신 장애인연금 대상이에요. 2019년 장애 등급제 폐지 이후 중증·경증 구분이 생겼으니 본인이 어느 쪽인지 먼저 파악해야 해요. 잘못 신청하면 반려될 수 있죠. 경증과 중증 구분이 2019년부터 바뀌어서 오래된 장애 등록증이라면 재확인이 필요해요. 아래 4가지 조건을 모두 충족하면 신청 자격을 갖춘 거예요. 하나라도 불확실하다면 주민센터에서 먼저 확인해봐요.</p>
       <EligibilityChecker
-        title="장애수당 신청 자격 체크"
         items={[
           {id:"e1",label:"장애인복지법에 따라 장애인으로 등록되어 있죠"},
           {id:"e2",label:"만 18세 이상이에요"},
@@ -36,11 +35,10 @@ export default function Page() {
       <p style={{fontSize:"15px",lineHeight:1.8,color:"#374151",marginBottom:"20px"}}>수당을 받다가 소득이 늘거나 재산이 증가하면 자격 요건에서 벗어날 수 있죠. 변동 사항이 생기면 주민센터에 신고 의무가 있죠. 신고하지 않으면 부정 수급으로 환수될 수 있죠.</p>
       <p style={{fontSize:"15px",lineHeight:1.8,color:"#374151",marginBottom:"12px"}}>정확한 지급 금액은 주민센터에서 소득인정액을 산정받아야 확정돼요. 수급 유형(기초수급/차상위)에 따라 금액이 달라지니 신청 전에 본인 자격을 확인해봐요. 아래 표에서 본인 상황에 맞는 금액을 확인해봐요.</p>
       <DocTable
-        headers={["대상","지급액","비고"]}
-        rows={[
-          ["기초수급자 재가","월 6만원","가정 거주 기준"],
-          ["기초수급자 시설","월 3만원","시설 입소 기준"],
-          ["차상위 계층","월 3만원","중위소득 50~100%"],
+        docs={[
+          { name: "기초수급자 재가", required: true, where: "월 6만원, 가정 거주 기준" },
+          { name: "기초수급자 시설", required: true, where: "월 3만원, 시설 입소 기준" },
+          { name: "차상위 계층", required: true, where: "월 3만원, 중위소득 50~100%" },
         ]}
       />
 
@@ -84,12 +82,12 @@ export default function Page() {
         ]}
       />
       <References
-        items={[
+        groups={[{ category: "출처", items: [
           {label:"복지로 장애수당 신청",url:"https://www.bokjiro.go.kr"},
           {label:"보건복지부 장애수당 안내",url:"https://www.mohw.go.kr"},
-        ]}
+        ]}]}
       />
-      <Disclaimer />
+      <Disclaimer text="이 글은 일반적인 정보 제공 목적이며, 법적 조언이 아니에요." />
     </div>
   );
 }

@@ -92,7 +92,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 자격 항목에 해당하면 신청을 진행할 수 있죠. 4가지 모두 해당한다면 바로 신청 가능하고, 일부 항목이 불분명하다면 주민센터 담당자와 상담을 통해 결정하면 돼요. 대상이 맞는지 판단이 어려울 때는 복지로 콜센터(129)에 문의하는 것도 좋은 방법이에요. 전화 상담으로 방문 전 서류 목록을 미리 파악해두면 헛걸음을 줄일 수 있죠.
       </p>
-      <EligibilityChecker title="응급안전안심서비스 신청 자격 체크" items={CHECK_ITEMS} />
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>제공 서비스와 장비 종류</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -119,7 +119,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         설치 완료 후에는 별도 조작 없이 바로 서비스가 시작돼요. 장비 사용법이 익숙하지 않으면 담당자에게 추가 교육을 요청할 수 있죠. 장비에 문제가 생기면 전화(관제센터 또는 주민센터)로 신청하면 무상 수리 또는 교체가 돼요. 정기적으로 장비 점검 방문도 이루어져서 고장을 미리 발견할 수 있죠.
       </p>
-      <Steps items={STEPS} />
+      <Steps steps={STEPS} />
 
       <H2>자주 묻는 질문</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -132,8 +132,8 @@ export default function Page() {
         이사를 가면 장비를 그대로 사용할 수 있는지 궁금한 분도 많아요. 이사 후에는 새 주소지 주민센터에 이전 신청을 하면 장비도 함께 이전 설치해 줘요. 다른 시·군·구로 이사할 경우에는 재신청이 필요한 경우도 있죠. 이사 전에 미리 담당 주민센터에 알려두면 서비스 공백 없이 이전할 수 있죠. 이사 후 장비 이전 설치에는 통상 1~2주 정도가 소요되므로, 이사 예정일 2주 전에 담당 주민센터에 미리 연락하는 게 좋아요.
       </p>
       <FAQ items={FAQ_ITEMS} />
-      <References items={REFS} />
-      <Disclaimer />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 일반적인 정보 제공 목적이며, 법적 조언이 아니에요." />
     </div>
   );
 }

@@ -98,7 +98,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 자격 항목에 모두 해당한다면 바로 신청 가능해요. 소득 기준이 불분명하다면 주민센터에서 복지 담당자와 상담을 통해 파악할 수 있죠. 보호자 소득이 기준에 가까운 경우 근로소득 공제나 재산 공제 항목 적용 여부에 따라 결과가 달라질 수 있어서, 상담으로 직접 확인하는 게 확실해요.
       </p>
-      <EligibilityChecker title="여성청소년 생리용품 바우처 자격 체크" items={CHECK_ITEMS} />
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>지원 금액과 사용처</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -121,7 +121,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         신청 후 보통 1~2주 내에 승인 결과를 문자나 우편으로 안내받아요. 승인 후 다음 달부터 바우처가 충전되기 시작해요. 신청이 거절된 경우에는 사유를 확인하고 서류를 보완해서 재신청할 수 있죠. 서류 미비로 거절되는 경우가 많아서 제출 전 목록을 꼼꼼히 살펴보는 게 좋아요.
       </p>
-      <DocTable title="신청 시 필요 서류" items={DOCS} />
+      <DocTable docs={DOCS} />
 
       <H2>신청 절차 단계별 안내</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -133,7 +133,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         주민센터 방문 신청은 서류를 직접 제출하기 때문에 즉시 접수가 가능해요. 담당자와 대면 상담을 통해 자격 요건이나 서류 미비 사항을 바로 해결할 수 있죠. 방문 전에 전화로 필요 서류를 확인하면 헛걸음을 줄일 수 있죠. 신청이 처음이라면 방문 신청을 통해 전 과정을 안내받는 게 더 확실해요.
       </p>
-      <Steps items={STEPS} />
+      <Steps steps={STEPS} />
 
       <H2>자주 묻는 질문</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -146,8 +146,8 @@ export default function Page() {
         보호자가 아닌 본인이 직접 신청할 수 있는지도 자주 물어봐요. 만 14세 이상이라면 본인이 직접 신청 가능해요. 만 14세 미만은 법정 대리인인 보호자가 신청해야 해요. 기초수급자 증명서 같은 서류는 보호자 명의로 발급받아 함께 제출해야 해요.
       </p>
       <FAQ items={FAQ_ITEMS} />
-      <References items={REFS} />
-      <Disclaimer />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 일반적인 정보 제공 목적이며, 법적 조언이 아니에요." />
     </div>
   );
 }

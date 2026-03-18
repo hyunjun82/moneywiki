@@ -21,7 +21,6 @@ export default function Page() {
       <p style={{fontSize:"15px",lineHeight:1.8,color:"#374151",marginBottom:"20px"}}>자격 여부가 불확실하면 읍면동 주민센터에 문의하면 빠르게 안내받을 수 있죠. 담당자가 농업경영체 등록 정보를 직접 조회해줄 수 있죠.</p>
       <p style={{fontSize:"15px",lineHeight:1.8,color:"#374151",marginBottom:"12px"}}>아래 항목을 하나씩 체크해봐요. 모두 해당된다면 바로 신청 가능한 상태예요. 하나라도 불확실하다면 주민센터에 전화해서 먼저 확인해봐요.</p>
       <EligibilityChecker
-        title="기본형 공익직불제 자격 체크"
         items={[
           {id:"e1",label:"농업경영체에 등록되어 있죠"},
           {id:"e2",label:"신청 농지가 본인 소유 또는 임차 중이에요"},
@@ -37,12 +36,11 @@ export default function Page() {
       <p style={{fontSize:"15px",lineHeight:1.8,color:"#374151",marginBottom:"20px"}}>임차 농지도 본인이 실경작하고 있다면 직불금을 받을 수 있죠. 임대인이 아닌 실경작자가 신청하는 구조예요. 임차 계약서를 반드시 지참해야 신청이 처리돼요.</p>
       <p style={{fontSize:"15px",lineHeight:1.8,color:"#374151",marginBottom:"12px"}}>소농 직불금은 0.5ha 미만 농가를 위한 특례예요. 실제 경작 면적과 무관하게 연 120만원을 정액으로 지급받아요. 0.5ha가 안 되더라도 0.1ha 이상이라면 소농 직불금 대상이에요.</p>
       <DocTable
-        headers={["구분","단가(ha당)","비고"]}
-        rows={[
-          ["소농 직불금(0.5ha 미만)","연 120만원 정액","면적 무관"],
-          ["논","약 178만원","임차 포함"],
-          ["밭","약 136만원","과수원·채소밭 포함"],
-          ["상한","최대 6ha","초과분 미지급"],
+        docs={[
+          { name: "소농 직불금(0.5ha 미만)", required: true, where: "연 120만원 정액, 면적 무관" },
+          { name: "논", required: true, where: "ha당 약 178만원, 임차 포함" },
+          { name: "밭", required: true, where: "ha당 약 136만원, 과수원·채소밭 포함" },
+          { name: "상한", required: true, where: "최대 6ha, 초과분 미지급" },
         ]}
       />
 
@@ -69,12 +67,11 @@ export default function Page() {
       <p style={{fontSize:"15px",lineHeight:1.8,color:"#374151",marginBottom:"20px"}}>부부 공동 소유 농지는 실제 경작자 중 1명이 신청해야 해요. 공동 명의라도 2명이 동시에 신청할 수 없어요. 누가 신청할지 미리 정해두고 그 사람 명의로만 진행해야 해요.</p>
       <p style={{fontSize:"15px",lineHeight:1.8,color:"#374151",marginBottom:"12px"}}>농지 소재지와 신청자 주소지가 다른 경우에도 실경작 사실만 확인되면 신청 가능해요. 다만 확인 과정이 일반 신청보다 조금 더 걸릴 수 있죠. 이 경우에는 경작 사실 확인서를 별도로 제출하도록 요청받을 수 있죠.</p>
       <Checklist
-        title="신청 전 체크리스트"
         items={[
-          {id:"ch1",label:"농업경영체 등록 정보가 현재 경작 농지와 일치하는지 확인",checked:false},
-          {id:"ch2",label:"임차 농지라면 서면 임차 계약서 준비",checked:false},
-          {id:"ch3",label:"신청 기간(2~5월) 내 접수",checked:false},
-          {id:"ch4",label:"이행 조건 내용 파악",checked:false},
+          "농업경영체 등록 정보가 현재 경작 농지와 일치하는지 확인",
+          "임차 농지라면 서면 임차 계약서 준비",
+          "신청 기간(2~5월) 내 접수",
+          "이행 조건 내용 파악",
         ]}
       />
         <a href="https://www.gov.kr/portal/service/serviceInfo/SD0000052052" style={{display:"block",background:"linear-gradient(135deg,#1D9E75,#0D8B66)",color:"#fff",textAlign:"center" as const,padding:"16px 24px",borderRadius:"12px",fontWeight:700,fontSize:"16px",margin:"24px 0",textDecoration:"none",boxShadow:"0 4px 12px rgba(29,158,117,0.3)"}}>
@@ -95,13 +92,13 @@ export default function Page() {
         ]}
       />
       <References
-        items={[
+        groups={[{ category: "출처", items: [
           {label:"농림축산식품부 공익직불제 안내",url:"https://www.mafra.go.kr"},
           {label:"정부24 기본형 공익직불금 신청",url:"https://www.gov.kr/portal/service/serviceInfo/SD0000052052"},
           {label:"국립농산물품질관리원 농업경영체 등록",url:"https://www.agrix.go.kr"},
-        ]}
+        ]}]}
       />
-      <Disclaimer />
+      <Disclaimer text="이 글은 일반적인 정보 제공 목적이며, 법적 조언이 아니에요." />
     </div>
   );
 }

@@ -100,7 +100,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 자격 체크 항목으로 내가 지원 대상에 해당하는지 먼저 살펴보세요. 4가지 항목이 모두 해당된다면 바로 신청 단계로 넘어갈 수 있고, 일부 항목이 걸린다면 공단 상담을 통해 예외 사항이나 대안 제도를 안내받을 수 있죠. 온라인 상담은 공단 홈페이지에서, 전화 상담은 1577-1000으로 연결돼요.
       </p>
-      <EligibilityChecker title="저소득 지역가입자 건강보험료 지원 자격 체크" items={CHECK_ITEMS} />
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>지원 금액과 감면 방식</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -130,7 +130,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         신청서를 제출하면 심사 후 결과를 문자 또는 우편으로 안내해요. 승인된 경우 다음 달 보험료 고지서부터 감면된 금액이 반영돼요. 반려된 경우에는 사유를 확인하고 서류를 보완해서 재신청할 수 있죠. 재신청 횟수에는 제한이 없어요.
       </p>
-      <DocTable title="신청 시 필요 서류" items={DOCS} />
+      <DocTable docs={DOCS} />
 
       <H2>신청 단계별 안내</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -142,7 +142,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         신청 후 심사 결과는 보통 2~3주 내에 통보돼요. 승인되면 다음 달 보험료부터 자동으로 감면이 적용되고, 별도로 추가 조치를 할 필요가 없어요. 1년 후 갱신 시점이 되면 공단에서 안내 문자를 보내주기도 해요. 문자가 오지 않더라도 만료 전에 스스로 재신청 일정을 챙기는 게 안전해요.
       </p>
-      <Steps items={STEPS} />
+      <Steps steps={STEPS} />
 
       <H2>자주 묻는 질문</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -155,8 +155,8 @@ export default function Page() {
         다른 복지 혜택과 중복 수혜가 가능한지 궁금한 분도 많아요. 기초생활수급자나 차상위계층으로 이미 보험료 감면을 받고 있다면 이 제도는 중복 신청이 안 돼요. 하지만 다른 현금성 지원과는 중복 수령이 가능한 경우가 많으니 개별 확인이 필요해요.
       </p>
       <FAQ items={FAQ_ITEMS} />
-      <References items={REFS} />
-      <Disclaimer />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 일반적인 정보 제공 목적이며, 법적 조언이 아니에요." />
     </div>
   );
 }

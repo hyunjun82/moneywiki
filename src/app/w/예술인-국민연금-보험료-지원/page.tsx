@@ -99,7 +99,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 항목을 모두 충족하면 신청이 가능해요. 예술활동증명이 아직 안 된 경우 먼저 예술인복지재단에서 증명 신청부터 진행해야 해요. 증명 신청은 kawf.kr에서 온라인으로 할 수 있고, 심사에 1~3개월이 소요될 수 있죠.
       </p>
-      <EligibilityChecker title="예술인 국민연금 보험료 지원 자격 체크" items={CHECK_ITEMS} />
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>지원 금액과 지원 기간</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -125,7 +125,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         신청 후 심사에 2~4주가 걸려요. 승인되면 다음 달 국민연금 고지서부터 50% 감면된 금액이 반영돼요. 3년 후 갱신 시에는 예술활동증명 갱신과 함께 보험료 지원도 다시 신청해야 해요. 갱신 시점을 놓치지 않으려면 예술활동증명 만료 3~4개월 전에 미리 갱신 신청을 시작하는 게 좋아요. 갱신이 늦어지면 보험료 지원이 중단되는 공백이 생길 수 있고 소급 지원도 안 되니 미리 일정을 챙겨야 해요.
       </p>
-      <DocTable title="신청 시 필요 서류" items={DOCS} />
+      <DocTable docs={DOCS} />
 
       <H2>자주 묻는 질문</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -141,8 +141,8 @@ export default function Page() {
         예술활동증명이 취소되면 이미 지원받은 금액을 반환해야 하는지도 자주 물어봐요. 사기나 부정 수급이 아닌 일반적인 취소라면 환수 조치가 없는 경우가 많아요. 하지만 구체적인 상황은 재단 규정에 따라 다를 수 있으니 재단에 문의하는 게 정확해요. 부정 수급으로 인한 환수는 이자까지 부과될 수 있어서 신청 자격을 정확히 확인한 후 신청하는 게 중요해요.
       </p>
       <FAQ items={FAQ_ITEMS} />
-      <References items={REFS} />
-      <Disclaimer />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 일반적인 정보 제공 목적이며, 법적 조언이 아니에요." />
     </div>
   );
 }

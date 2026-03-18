@@ -99,7 +99,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 항목에 해당하면 신청 가능해요. 농번기에는 수요가 집중되므로 농작업 시작 2~3주 전에 미리 신청하는 게 좋아요. 지역에 따라 선착순으로 파견 인력이 배정되기 때문에 빠른 신청이 유리해요. 전년도에 이용 경험이 있더라도 매년 새로 신청해야 하고, 농업경영체 등록 확인서도 새로 제출해야 하는 경우도 있죠.
       </p>
-      <EligibilityChecker title="영농도우미 신청 자격 체크" items={CHECK_ITEMS} />
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>지원 범위와 이용 한도</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -122,7 +122,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         신청 후 담당자가 검토하고 파견 가능 여부와 일정을 연락해요. 농번기에는 신청자가 많아 대기가 생길 수 있죠. 작업 예정일보다 2~3주 전에 신청하면 원하는 날짜에 지원받을 가능성이 높아요. 파견 일정이 확정되면 당일 도우미와 작업 시작 전 업무 내용을 확인하는 게 좋아요.
       </p>
-      <DocTable title="영농도우미 신청 서류" items={DOCS} />
+      <DocTable docs={DOCS} />
 
       <H2>자주 묻는 질문</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -135,8 +135,8 @@ export default function Page() {
         다음 해에도 연속 신청이 가능한지도 자주 물어봐요. 매년 새로 신청해야 해요. 이용 실적이 누적되더라도 연간 한도가 초기화되기 때문에 매년 신청하면 돼요. 작년에 이용했더라도 올해 새로 농업경영체 등록 확인서를 제출해야 하는 경우도 있죠. 신청 기간이 별도로 있는 지역도 있어서 연초에 미리 담당 기관에 문의하면 빠짐없이 신청할 수 있죠.
       </p>
       <FAQ items={FAQ_ITEMS} />
-      <References items={REFS} />
-      <Disclaimer />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 일반적인 정보 제공 목적이며, 법적 조언이 아니에요." />
     </div>
   );
 }
