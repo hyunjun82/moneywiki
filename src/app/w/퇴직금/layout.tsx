@@ -3,12 +3,12 @@ import type { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "퇴직금이 뭔지 모르겠다면? 기본 개념과 수령 조건 | 머니위키",
-  description: "퇴직금은 1년 이상 근무한 근로자가 퇴직할 때 받는 법정 급여로, 근로자퇴직급여보장법에 따라 사업주가 반드시 지급해야 합니다. 기본 개념부터 수령 조건, 금액 계산, 지급 시기까지 정리했습니다.",
+  title: "퇴직금, 나는 얼마 받을 수 있을까? 계산법부터 수령 절차까지 | 머니위키",
+  description: "퇴직금 계산기로 내 금액 바로 확인하고, IRP 개설부터 입금까지 수령 절차를 4단계로 따라가봐요. 14일 넘기면 연 20% 지연이자도 청구할 수 있어요.",
   alternates: { canonical: "https://www.jjyu.co.kr/w/퇴직금" },
   openGraph: {
-    title: "퇴직금이 뭔지 모르겠다면? 기본 개념과 수령 조건 | 머니위키",
-    description: "퇴직금은 1년 이상 근무한 근로자가 퇴직할 때 받는 법정 급여로, 근로자퇴직급여보장법에 따라 사업주가 반드시 지급해야 합니다.",
+    title: "퇴직금, 나는 얼마 받을 수 있을까? 계산법부터 수령 절차까지 | 머니위키",
+    description: "퇴직금 계산기로 내 금액 바로 확인하고, IRP 개설부터 입금까지 수령 절차를 4단계로 따라가봐요.",
     url: "https://www.jjyu.co.kr/w/퇴직금",
     type: "article",
     siteName: "머니위키",
