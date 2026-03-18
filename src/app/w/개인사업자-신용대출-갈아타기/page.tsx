@@ -1,11 +1,10 @@
+"use client";
 /*
  * Q1: 개인사업자 신용대출을 이미 갖고 있는데 이자 부담이 큼. 갈아타기가 된다는 뉴스를 봤거나, 직접 방법을 찾고 있음
  * Q2: 내 대출이 대상인지 확인 → 여러 은행 금리 비교 → 유리한 곳으로 갈아타기 신청
  * Q3: 대상 조건(운전자금 10억 이하, 제외 대출), 신청 절차(어디서·어떻게), 숨은 비용(중도상환수수료)
  * Q4: EligibilityChecker(대상 확인) + Steps(절차) + Checklist(비용 체크)
  */
-export const dynamic = "force-static";
-"use client";
 
 import { useState } from "react";
 import {
