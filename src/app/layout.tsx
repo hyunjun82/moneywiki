@@ -117,7 +117,7 @@ export default function RootLayout({
 
 function Footer() {
   return (
-    <footer className="bg-[#1B3A5C] text-white">
+    <footer className="bg-[#1D9E75] text-white">
       {/* 상단: 주요 링크 */}
       <div className="max-w-[1100px] mx-auto px-6 py-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
