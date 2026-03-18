@@ -107,7 +107,7 @@ export default function Page() {
         아니에요, 받을 수 있죠.
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>은 가족 간병 때문에 어쩔 수 없이 퇴직한 경우를 <a href="/w/실업급여-정당한-퇴사-사유" style={{ color: "#1D9E75", textDecoration: "underline" }}>정당한 이직 사유</a>로 인정하죠.
         진단서 하나, 휴직 거절 증빙 하나: 이 두 가지만 갖추면 자진퇴사여도 실업급여 대상이 되죠.
-        지금부터 자격 기준, 인정·불인정 사례, 서류 준비, 신청 절차까지 순서대로 정리해드릴게요.
+        지금부터 자격 기준, 인정·불인정 사례, 서류 준비, 신청 절차까지 순서로 짚어볼게요.
       </p>
 
       <Divider />
@@ -225,7 +225,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 고용보험법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니, 최신 기준은 고용24(ei.go.kr)나 고용센터(1350)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 고용보험법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니, 최신 기준은 고용24(ei.go.kr)나 고용센터(1350)에 직접 문의하세요." />
     </ArticleLayout>
   );
 }

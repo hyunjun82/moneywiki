@@ -1,4 +1,11 @@
 "use client";
+/*
+ * Q1: 주택 구입·의료비 등 사정이 생겨 퇴직금 중간정산을 신청하고 싶은데 조건이 맞는지 모름
+ * Q2: 법정 사유 해당 여부 확인 → 증빙서류 준비 → 회사에 신청 완료
+ * Q2-1: 고용노동부 민원마당(minwon.moel.go.kr)에서 중간정산 신청서 서식 다운로드 및 진정 접수
+ * Q3: 법정 사유 7가지(시행령 제3조), 사유별 증빙서류, 신청 절차 4단계, IRP 수령 조건
+ * Q4: GreenBox(사유 목록) + EligibilityChecker + Calculator + DocTable + Steps + Checklist
+ */
 
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
@@ -143,7 +150,7 @@ export default function Page() {
 
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
         퇴직금 중간정산, 아무때나 신청되지 않죠?<br />
-        법정 사유 7가지와 신청 절차 완전 정리
+        법정 사유 7가지 조건과 신청 절차
       </h1>
 
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
@@ -256,7 +263,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법 시행령 제3조를 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법 시행령 제3조를 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에 직접 문의하세요." />
     </ArticleLayout>
   );
 }

@@ -153,7 +153,7 @@ export default function Page() {
         받을 수 있죠. <strong>정리해고는 대표적인 비자발적 퇴사</strong>니까요.<br /><br />
         <a href="https://www.law.go.kr/법령/근로기준법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로기준법 제24조</a>에서 정한 경영상 해고에 해당하고,
         <a href="/w/실업급여-피보험기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험 가입기간</a> 180일만 넘으면 월급의 60%를 최대 270일까지 받을 수 있죠.
-        얼마를 받는지, 어떤 순서로 신청하는지 바로 정리해 드릴게요.
+        얼마를 받는지, 어떤 순서로 신청하는지 바로 짚어볼게요.
       </p>
 
       <Divider />
@@ -283,7 +283,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 고용보험법과 근로기준법을 바탕으로 작성됐어요. 법령은 개정될 수 있으니 중요한 결정 전에 고용24(ei.go.kr)나 고용센터(1350)에서 직접 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 고용보험법과 근로기준법을 바탕으로 작성됐어요. 법령은 개정될 수 있으니 중요한 결정 전에 고용24(ei.go.kr)나 고용센터(1350)에 직접 문의하세요." />
     </ArticleLayout>
   );
 }

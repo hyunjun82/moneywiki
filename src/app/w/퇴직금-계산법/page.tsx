@@ -197,7 +197,7 @@ export default function Page() {
         기본급만 넣으면 퇴직금이 실제보다 낮게 나와요. 상여금, 연차수당, 고정 식대까지 포함해야
         <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여보장법</a>에서
         정한 올바른 평균임금이에요.
-        1일 평균임금 × 30 × 근속연수 공식부터, 상여금 포함 계산 예시, 수령 절차까지 한 번에 정리했어요.
+        1일 평균임금 × 30 × 근속연수 공식부터, 상여금 포함 계산 예시, 수령 절차까지 한 글에 담았어요.
       </p>
 
       <Divider />
@@ -308,7 +308,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로기준법과 근로자퇴직급여보장법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로기준법과 근로자퇴직급여보장법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에 직접 문의하세요." />
     </ArticleLayout>
   );
 }

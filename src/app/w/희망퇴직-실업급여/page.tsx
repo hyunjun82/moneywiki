@@ -110,7 +110,7 @@ export default function Page() {
         받을 수 있어요. 회사가 먼저 공고를 내고 퇴직을 유도한 거라면 <strong>권고사직</strong>으로 보거든요.<br /><br />
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>에서는
         회사의 경영상 필요에 의한 퇴직을 비자발적 이직으로 인정하고 있죠.
-        수급 조건, 금액, 위로금과의 관계까지 한 번에 정리해 드릴게요.
+        수급 조건, 금액, 위로금과의 관계까지 한 글에 담았어요.
       </p>
 
       <Divider />

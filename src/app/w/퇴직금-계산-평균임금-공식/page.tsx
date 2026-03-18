@@ -1,4 +1,11 @@
 "use client";
+/*
+ * Q1: 퇴직금 계산 시 상여금·수당이 얼마나 포함되는지 모르고, 회사 계산이 맞는지 의심됨
+ * Q2: 평균임금을 직접 계산해서 퇴직금 예상액을 확인하고, 차이가 나면 진정 신청
+ * Q2-1: 고용노동부 민원마당(minwon.moel.go.kr) 퇴직금 진정 신청
+ * Q3: 1일 평균임금 공식, 상여금 월 환산법, 3개월 총일수 계산, IRP 수령 조건
+ * Q4: Calculator(계산기) + GreenBox(공식) + Steps(계산 절차) + Checklist(포함 항목)
+ */
 
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
@@ -109,6 +116,7 @@ const REFERENCES = [
     category: "공식 자료",
     items: [
       { label: "고용노동부: 퇴직금 산정 기준 안내", url: "https://www.moel.go.kr" },
+      { label: "고용노동부 민원마당: 퇴직금 미지급 진정 신청", url: "https://minwon.moel.go.kr" },
     ],
   },
 ];
@@ -128,7 +136,7 @@ export default function Page() {
 
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
         퇴직금 평균임금 공식, 정확히 어떻게 되나요?<br />
-        법정 공식부터 상여금 환산까지 완전 정리
+        법정 공식, 상여금 환산, 계산 절차까지
       </h1>
 
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
@@ -209,7 +217,7 @@ export default function Page() {
 
       <H2>계산 전 체크리스트</H2>
       <p style={body}>
-        자주 실수하는 항목들이에요. 상여금 환산과 IRP 계좌는 꼭 확인하세요.
+        자주 실수하는 항목들이에요. 상여금 환산과 IRP 계좌를 빠뜨리지 않도록 하나씩 짚어보세요.
       </p>
 
       <SectionBadge>체크리스트</SectionBadge>
@@ -231,7 +239,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로기준법과 근로자퇴직급여보장법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로기준법과 근로자퇴직급여보장법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에 직접 문의하세요." />
     </ArticleLayout>
   );
 }

@@ -237,7 +237,7 @@ export default function Page() {
       <Checklist items={CHECKLIST} />
 
       <GreenBox title="상여금 환산이 빠지면 수백만원 차이가 나요">
-        연간 상여금 ÷ 12 = 월 환산액, 이 금액이 3개월 임금 합산에 포함됐는지 꼭 확인하세요.<br />
+        연간 상여금 ÷ 12 = 월 환산액, 이 금액이 3개월 임금 합산에 포함됐는지 꼭 짚어봐요.<br />
         포함 안 됐다면 인사팀에 재계산을 요청할 수 있어요. 거부하면 고용노동부(1350)에 진정을 낼 수 있고요.
       </GreenBox>
 
@@ -253,7 +253,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법·근로기준법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법·근로기준법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에 직접 문의하세요." />
     </ArticleLayout>
   );
 }
