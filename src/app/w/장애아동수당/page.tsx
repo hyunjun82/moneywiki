@@ -6,8 +6,8 @@
 // Q3. 장애 등급별 금액, 소득 기준, 신청 방법, 지급 시기
 // Q4. EligibilityChecker(자격) + DocTable(서류) + Steps(신청 절차) + FAQ
 
-import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { H2, FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
+
 
 const CHECK_ITEMS = [
   { id: "c1", label: "만 18세 미만 장애아동이에요" },

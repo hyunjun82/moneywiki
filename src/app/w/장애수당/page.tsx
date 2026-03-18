@@ -1,6 +1,6 @@
 "use client";
-import { FAQ, Checklist, GreenBox, Steps, DocTable, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { H2, FAQ, Checklist, GreenBox, Steps, DocTable, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
+
 export default function Page() {
   return (
     <div style={{maxWidth:"720px",margin:"0 auto",padding:"0 16px 40px"}}>

@@ -6,8 +6,8 @@
 // Q3. 지원 대상, 초등 연 20만원/중학 30만원, 사용처, 신청 방법
 // Q4. EligibilityChecker(자격) + DocTable(서류) + Steps(신청 절차) + FAQ
 
-import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { H2, FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
+
 
 const CHECK_ITEMS = [
   { id: "c1", label: "국제결혼 가정 또는 외국인 부모 가정의 자녀예요" },

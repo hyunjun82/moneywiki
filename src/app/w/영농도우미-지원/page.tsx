@@ -6,8 +6,8 @@
 // Q3. 이용 대상, 지원 조건(저소득 무료/일반 시간당 지원), 신청 시기, 이용 한도
 // Q4. EligibilityChecker(자격) + DocTable(서류) + Steps(신청 절차) + FAQ
 
-import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { H2, FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
+
 
 const CHECK_ITEMS = [
   { id: "c1", label: "농업경영체에 등록된 농업인이에요" },

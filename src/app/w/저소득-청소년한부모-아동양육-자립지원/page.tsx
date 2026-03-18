@@ -6,8 +6,8 @@
 // Q3. 지원 대상 연령, 양육비 월 35만원, 자립지원수당 월 10만원, 신청 방법
 // Q4. EligibilityChecker(자격) + DocTable(서류) + Steps(신청 절차) + FAQ
 
-import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { H2, FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
+
 
 const CHECK_ITEMS = [
   { id: "c1", label: "만 24세 이하 한부모(모 또는 부)예요" },

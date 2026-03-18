@@ -6,8 +6,8 @@
 // Q3. 지원 대상 시설 종류, 수당 금액, 지원 기간, 사용 제한, 신청 시기
 // Q4. EligibilityChecker(자격) + GreenBox(지원 내용) + Steps(신청 절차) + FAQ
 
-import { FAQ, GreenBox, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { H2, FAQ, GreenBox, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
+
 
 const CHECK_ITEMS = [
   { id: "c1", label: "청소년복지시설(청소년자립생활관, 청소년쉼터 등)에서 퇴소했어요" },

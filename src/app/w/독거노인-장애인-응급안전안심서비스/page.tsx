@@ -6,8 +6,8 @@
 // Q3. 서비스 대상, 장비 종류, 응급 대응 절차, 신청 방법
 // Q4. EligibilityChecker(자격) + GreenBox(서비스 내용) + Steps(신청 절차) + FAQ
 
-import { FAQ, GreenBox, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { H2, FAQ, GreenBox, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
+
 
 const CHECK_ITEMS = [
   { id: "c1", label: "만 65세 이상 독거노인이거나 독거 중증장애인이에요" },

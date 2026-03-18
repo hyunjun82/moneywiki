@@ -6,8 +6,8 @@
 // Q3. 지원 대상, 지원 종류(생활비·의료비 등), 지원 금액, 신청 경로
 // Q4. EligibilityChecker(자격) + GreenBox(지원 종류) + Steps(신청 절차) + FAQ
 
-import { FAQ, GreenBox, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { H2, FAQ, GreenBox, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
+
 
 const CHECK_ITEMS = [
   { id: "c1", label: "만 9세 이상 만 24세 이하 청소년이에요" },

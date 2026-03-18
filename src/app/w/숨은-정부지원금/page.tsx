@@ -10,8 +10,8 @@
 "use client";
 
 import Link from "next/link";
-import { FAQ, Checklist, GreenBox, BorderBox, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { H2, FAQ, Checklist, GreenBox, BorderBox, References, Disclaimer } from "@/components/article-ui";
+
 
 const BENEFITS = [
   { num: "01", slug: "기본형-공익직불제",         title: "기본형 공익직불제",         tag: "농업인",    color: "#2E7D32", amount: "ha당 최대 205만원" },

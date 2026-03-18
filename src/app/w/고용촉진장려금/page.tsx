@@ -6,8 +6,8 @@
 // Q3. 지원 대상 근로자 유형, 지원 금액, 지급 기간, 신청 시기, 사후 관리
 // Q4. EligibilityChecker(자격) + DocTable(서류) + Steps(신청 절차) + FAQ
 
-import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { H2, FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
+
 
 const CHECK_ITEMS = [
   { id: "c1", label: "고용보험에 가입된 사업장을 운영하고 있죠" },

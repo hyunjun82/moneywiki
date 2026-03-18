@@ -6,8 +6,8 @@
 // Q3. 청소년부모 정의, 아동 1인당 월 20만원, 소득 기준, 신청 절차
 // Q4. EligibilityChecker(자격) + DocTable(서류) + Steps(신청 절차) + FAQ
 
-import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { H2, FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
+
 
 const CHECK_ITEMS = [
   { id: "c1", label: "부 또는 모 중 한 명이라도 만 24세 이하예요" },

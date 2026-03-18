@@ -6,8 +6,8 @@
 // Q3. 지원 대상 소득 기준, 감면율, 감면 기간, 신청 서류
 // Q4. EligibilityChecker(자격 체크) + DocTable(서류) + Steps(신청 절차) + FAQ
 
-import { FAQ, GreenBox, Steps, DocTable, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { H2, FAQ, GreenBox, Steps, DocTable, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
+
 
 const CHECK_ITEMS = [
   { id: "c1", label: "직장에 다니지 않고 지역가입자로 건강보험에 가입되어 있죠" },

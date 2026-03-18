@@ -6,8 +6,8 @@
 // Q3. 농업경영체 등록 요건, 지원 금액(건강보험 22%, 연금 50%), 신청 방법
 // Q4. EligibilityChecker(자격) + DocTable(서류) + Steps(신청 절차) + FAQ
 
-import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { H2, FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
+
 
 const CHECK_ITEMS = [
   { id: "c1", label: "농업경영체 등록이 완료된 상태예요" },

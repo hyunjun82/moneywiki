@@ -6,8 +6,8 @@
 // Q3. 검사 대상자, 검사 항목(12가지), 검사 방법, 신청 절차
 // Q4. EligibilityChecker(자격) + Checklist(검사 항목) + Steps(신청 절차) + FAQ
 
-import { FAQ, Checklist, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { H2, FAQ, Checklist, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
+
 
 const CHECK_ITEMS = [
   { id: "c1", label: "현재 임신을 계획 중이거나 임신을 준비하고 있죠" },

@@ -6,8 +6,8 @@
 // Q3. 예술활동증명 요건, 지원 금액(50%, 월 최대 4.5만원), 지원 기간, 신청 방법
 // Q4. EligibilityChecker(자격) + DocTable(서류) + Steps(신청 절차) + FAQ
 
-import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { H2, FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
+
 
 const CHECK_ITEMS = [
   { id: "c1", label: "한국예술인복지재단에서 예술활동증명이 완료된 상태예요" },
