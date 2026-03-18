@@ -255,7 +255,7 @@ export default function Page() {
         전부 타이밍 문제예요. 창업 준비 기간을 최대한 활용하면서, 소정급여일수의 절반 이상이 남은 시점에 딱 맞춰 등록하는 게 가장 유리하죠. 아래 순서를 따르면 실업급여와 조기재취업수당을 둘 다 놓치지 않아요.
       </p>
 
-      <SectionBadge>순서대로 체크하세요</SectionBadge>
+      <SectionBadge>순서대로 짚어봐요</SectionBadge>
       <Checklist items={CHECKLIST} />
 
       <p style={body}>

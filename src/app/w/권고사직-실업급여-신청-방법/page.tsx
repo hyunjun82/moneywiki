@@ -224,7 +224,7 @@ export default function Page() {
       {/* 섹션 3: 신청 절차 6단계 */}
       <H2>신청 절차와 필요 서류</H2>
       <p style={body}>
-        먼저 <strong>이직확인서 처리 상태</strong>를 체크하세요. 회사가 퇴직 후 10일 이내에 이직확인서를 고용센터에 제출하게 돼 있어요. <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a> → 개인서비스 → 이직확인서 처리현황에서 이직사유가 &lsquo;권고사직&rsquo;으로 나오는지 꼭 살펴보세요.
+        먼저 <strong>이직확인서 처리 상태</strong>를 먼저 봐야 해요. 회사가 퇴직 후 10일 이내에 이직확인서를 고용센터에 제출하게 돼 있어요. <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a> → 개인서비스 → 이직확인서 처리현황에서 이직사유가 &lsquo;권고사직&rsquo;으로 나오는지 꼭 살펴보세요.
       </p>
       <p style={body}>
         이직확인서가 확인되면 <a href="https://www.work.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>워크넷</a>에서 구직등록을 하세요. 희망 직종, 급여, 경력을 입력하면 끝이에요. 그다음 관할 고용센터에 방문해서 수급자격을 신청하면 되죠. 신분증, 통장 사본, 증명사진 1장이 준비물이에요.

@@ -188,7 +188,7 @@ export default function Page() {
       <EligibilityChecker
         items={CHECK_ITEMS}
         allMatchText="환수 대응 준비가 됐어요. 이의신청이나 분할납부 절차를 진행하세요."
-        partialMatchText="아직 확인하지 못한 항목이 있어요. 빠뜨리지 말고 하나씩 체크하세요."
+        partialMatchText="아직 확인하지 못한 항목이 있어요. 빠뜨리지 말고 하나씩 따져봐요."
       />
 
       <Divider />
