@@ -5,7 +5,7 @@
 // Q3: 만 9~24세, 기초수급/차상위, 월 13,000원 국민행복카드 충전
 // Q4: EligibilityChecker + Steps + FAQ
 
-import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer , H2 } from "@/components/article-ui";
+import { FAQ, DocTable, GreenBox, Steps, EligibilityChecker, References, Disclaimer, H2 } from "@/components/article-ui";
 
 const CHECK_ITEMS = [
   { id: "c1", label: "만 9세 이상 만 24세 이하 여성청소년이에요" },

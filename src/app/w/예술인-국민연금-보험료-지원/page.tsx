@@ -5,7 +5,7 @@
 // Q3: 예술활동증명 완료 필수, 월 소득 기준, 보험료 50% 지원
 // Q4: EligibilityChecker + GreenBox + Steps + FAQ
 
-import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer , H2 } from "@/components/article-ui";
+import { FAQ, DocTable, GreenBox, Steps, EligibilityChecker, References, Disclaimer, H2 } from "@/components/article-ui";
 
 const CHECK_ITEMS = [
   { id: "c1", label: "한국예술인복지재단에서 예술활동증명이 완료된 상태예요" },

@@ -5,7 +5,7 @@
 // Q3: 만 24세 이하 부모, 중위소득 60% 이하, 아동 1인당 월 20만원
 // Q4: EligibilityChecker + GreenBox + Steps + FAQ
 
-import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer , H2 } from "@/components/article-ui";
+import { FAQ, DocTable, GreenBox, Steps, EligibilityChecker, References, Disclaimer, H2 } from "@/components/article-ui";
 
 const CHECK_ITEMS = [
   { id: "c1", label: "부 또는 모 중 한 명이라도 만 24세 이하예요" },

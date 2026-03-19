@@ -5,7 +5,7 @@
 // Q3: 다문화가족 만 18세 이하 자녀, 기초학습·진로설계·교육활동비
 // Q4: EligibilityChecker + GreenBox + Steps + FAQ
 
-import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer , H2 } from "@/components/article-ui";
+import { FAQ, DocTable, GreenBox, Steps, EligibilityChecker, References, Disclaimer, H2 } from "@/components/article-ui";
 
 const CHECK_ITEMS = [
   { id: "c1", label: "국제결혼 가정 또는 외국인 부모 가정의 자녀예요" },

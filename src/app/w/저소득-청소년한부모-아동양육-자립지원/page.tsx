@@ -5,7 +5,7 @@
 // Q3: 만 24세 이하 한부모, 중위소득 72% 이하, 월 35만원+자립촉진수당
 // Q4: EligibilityChecker + GreenBox + Steps + FAQ
 
-import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer , H2 } from "@/components/article-ui";
+import { FAQ, DocTable, GreenBox, Steps, EligibilityChecker, References, Disclaimer, H2 } from "@/components/article-ui";
 
 const CHECK_ITEMS = [
   { id: "c1", label: "만 24세 이하 한부모(모 또는 부)예요" },

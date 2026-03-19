@@ -5,7 +5,7 @@
 // Q3: 농업경영체 등록, 연 최대 90일, 일당 5만원
 // Q4: EligibilityChecker + GreenBox + Steps + FAQ
 
-import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer , H2 } from "@/components/article-ui";
+import { FAQ, DocTable, GreenBox, Steps, EligibilityChecker, References, Disclaimer, H2 } from "@/components/article-ui";
 
 const CHECK_ITEMS = [
   { id: "c1", label: "농업경영체에 등록된 농업인이에요" },
