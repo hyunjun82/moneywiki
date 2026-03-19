@@ -5,7 +5,7 @@
 // Q3: 농업경영체 등록 필수, 건강보험료+연금 각 50% 지원
 // Q4: EligibilityChecker + Steps + FAQ
 
-import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer , H2 } from "@/components/article-ui";
+import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer, H2, GreenBox } from "@/components/article-ui";
 
 const CHECK_ITEMS = [
   { id: "c1", label: "농업경영체 등록이 완료된 상태예요" },
