@@ -52,6 +52,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/w/%EA%B5%AD%EB%AF%BC%EC%97%B0%EA%B8%88-%EA%B3%84%EC%82%B0%EA%B8%B0",
+        destination: "/w/%EA%B5%AD%EB%AF%BC%EC%97%B0%EA%B8%88-%EC%88%98%EB%A0%B9%EC%95%A1-%EA%B3%84%EC%82%B0%EA%B8%B0",
+        permanent: true,
+      },
+      {
         source: "/recent",
         destination: "/",
         permanent: false,

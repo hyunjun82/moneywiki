@@ -31,6 +31,8 @@ const categoryEmoji: Record<string, string> = {
   "투자": "📉",
   "양식·서식": "📥",
   "일반": "📄",
+  "퇴직": "💼",
+  "생활경제": "🏪",
 };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -53,8 +55,10 @@ export async function generateStaticParams() {
     categories.add(category);
   });
 
-  // 정부지원금 카테고리도 추가
+  // 정부지원금, 퇴직, 생활경제 카테고리도 추가
   categories.add("정부지원금");
+  categories.add("퇴직");
+  categories.add("생활경제");
 
   // URL에서 슬래시(/)를 대시(-)로 변환
   return Array.from(categories).map((name) => ({
@@ -85,8 +89,15 @@ export default async function CategoryPage({ params }: PageProps) {
     ).slice(0, 30);
   }
 
-  // 정부지원금 외 카테고리: 문서 없으면 404
-  if (docs.length === 0 && categoryName !== "정부지원금") {
+  // 퇴직 카테고리: 퇴직 관련 문서 자동 추천
+  if (categoryName === "퇴직" && docs.length === 0) {
+    docs = allDocs.filter(doc =>
+      doc.title.includes("퇴직") || doc.slug.includes("퇴직")
+    ).slice(0, 30);
+  }
+
+  // 정부지원금·퇴직·생활경제 외 카테고리: 문서 없으면 404
+  if (docs.length === 0 && !["정부지원금", "퇴직", "생활경제"].includes(categoryName)) {
     notFound();
   }
 
