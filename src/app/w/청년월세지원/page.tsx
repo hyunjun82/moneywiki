@@ -52,7 +52,7 @@ const REFERENCES = [
 const RELATED = [
   { slug: "청년월세지원-신청방법", title: "청년월세지원 신청방법", description: "복지로 온라인 신청 절차를 단계별로 정리했어요." },
   { slug: "청년월세지원-자격조건", title: "청년월세지원 자격조건 상세", description: "소득·자산·주거 조건을 자세히 풀어서 정리했어요." },
-  { slug: "청년월세지원-소득기준", title: "중위소득 60% 기준 계산", description: "내 소득이 기준 이하인지 계산하는 방법이에요." },
+  { slug: "K-패스-청년-환급", title: "K-패스 교통비 30% 환급", description: "청년월세지원과 함께 받으면 월 최대 24만원 절감이에요." },
 ];
 
 const STEPS = [
