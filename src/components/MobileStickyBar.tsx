@@ -127,39 +127,39 @@ export default function MobileStickyBar({
         style={{
           position: 'fixed',
           bottom: 0,
-          left: '50%',
-          transform: visible
-            ? 'translateX(-50%) translateY(0)'
-            : 'translateX(-50%) translateY(100%)',
-          transition: 'transform 0.28s ease',
-          width: '100%',
-          maxWidth: '720px',
+          left: 0,
+          right: 0,
           zIndex: 40,
+          ...slideStyle,
         }}
       >
-        <Link
-          href={href}
-          className="sbar-wave sbar-shimmer"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            minHeight: '52px',
-            padding: '0 24px',
-            borderTopLeftRadius: '14px',
-            borderTopRightRadius: '14px',
-            boxShadow: '0 -2px 20px rgba(11,175,122,0.3)',
-            textDecoration: 'none',
-          }}
-        >
-          <span style={{ fontSize: '18px', marginRight: '10px', flexShrink: 0 }}>🎁</span>
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <span style={{ color: '#fff', fontWeight: 700, fontSize: '14px' }}>{text}</span>
-            <span style={{ color: 'rgba(255,255,255,0.82)', fontSize: '12px', marginLeft: '10px' }}>{sub}</span>
+        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 1.5rem' }}>
+          <div style={{ maxWidth: 720 }}>
+            <Link
+              href={href}
+              className="sbar-wave sbar-shimmer"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                minHeight: '52px',
+                padding: '0 24px',
+                borderTopLeftRadius: '14px',
+                borderTopRightRadius: '14px',
+                boxShadow: '0 -2px 20px rgba(11,175,122,0.3)',
+                textDecoration: 'none',
+              }}
+            >
+              <span style={{ fontSize: '18px', marginRight: '10px', flexShrink: 0 }}>🎁</span>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: '14px' }}>{text}</span>
+                <span style={{ color: 'rgba(255,255,255,0.82)', fontSize: '12px', marginLeft: '10px' }}>{sub}</span>
+              </div>
+              <span style={{ ...buttonStyle, padding: '7px 20px' }}>
+                {buttonText} →
+              </span>
+            </Link>
           </div>
-          <span style={{ ...buttonStyle, padding: '7px 20px' }}>
-            {buttonText} →
-          </span>
-        </Link>
+        </div>
       </div>
     </>
   );
