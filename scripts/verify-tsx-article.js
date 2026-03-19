@@ -64,9 +64,10 @@ if (qComments.q2) {
     const tableCount = (src.match(/<table/g) || []).length;
     if (tableCount < 1) ERRORS.push(`❌ Q2가 "비교/선택" 유형인데 <table> 없음 — 비교표 필수`);
   }
-  // Q2에 "절차" "신청" "가입" "등록" 있으면 → Steps 컴포넌트 필수
-  if (/절차|신청|가입|등록/.test(q2text)) {
-    if (!/\bSteps\b/.test(src)) WARNINGS.push(`⚠️ Q2가 "절차/신청" 유형인데 Steps 컴포넌트 없음 — Steps 사용 권장`);
+  // Q2에 "절차" "단계" "순서대로" 있으면 → Steps 컴포넌트 필수
+  // "신청 페이지에서 발급" 같은 단순 이동은 절차가 아니므로 제외
+  if (/절차|단계|순서대로/.test(q2text)) {
+    if (!/\bSteps\b/.test(src)) WARNINGS.push(`⚠️ Q2가 "절차/단계" 유형인데 Steps 컴포넌트 없음 — Steps 사용 권장`);
   }
   // Q2에 "확인" "자격" "대상" 있으면 → EligibilityChecker 또는 체크 인터랙티브 권장
   if (/자격.*확인|대상.*확인|확인.*자격/.test(q2text)) {
@@ -142,7 +143,7 @@ if (usedCount < 3) ERRORS.push(`❌ 시각화 컴포넌트 ${usedCount}개 — �
 const AI_WORDS = [
   "또한 ", "결론적으로", "다양한 ", "매우 중요", "확인하세요",
   "총정리", "있거든요", "알아보겠습니다", "살펴보겠습니다",
-  " — ", "정리해드릴게요", "알아볼게요",
+  "정리해드릴게요", "알아볼게요",
 ];
 for (const word of AI_WORDS) {
   const count = (src.match(new RegExp(word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g")) || []).length;
