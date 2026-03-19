@@ -8,7 +8,7 @@
     "validate-static": "node scripts/validate-force-static.js",
     "quality": "node scripts/verify-quality.js",
     "prebuild": "node scripts/validate-force-static.js && node scripts/verify-quality.js",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint"
   },
