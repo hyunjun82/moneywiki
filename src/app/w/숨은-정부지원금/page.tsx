@@ -8,8 +8,9 @@
  * Q4: 리스트형 카드 (정부공감 스타일) + FAQ
  */
 
+import { useState } from "react";
 import Link from "next/link";
-import { FAQ, Checklist, GreenBox, BorderBox, References, Disclaimer , H2 } from "@/components/article-ui";
+import { FAQ, Checklist, GreenBox, BorderBox, References, Disclaimer, H2 } from "@/components/article-ui";
 
 const BENEFITS = [
   { num: "01", slug: "기본형-공익직불제", title: "기본형 공익직불제", who: "농업인", amount: "ha당 최대 205만원", grad: "linear-gradient(135deg, #2E7D32, #43A047)" },
