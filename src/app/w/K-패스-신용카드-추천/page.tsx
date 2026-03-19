@@ -85,51 +85,19 @@ export default function Page() {
       </h1>
 
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
-        K-패스 신용카드는 교통비 환급에 추가 할인이 붙는 카드예요.
-        전월실적 30만원을 채우면 카페·편의점·쇼핑 할인까지 함께 받을 수 있어요.
-        연회비는 5,000~10,000원인데 첫 달 환급액으로 이미 넘어요.
+        K-패스 카드 종류가 너무 많아서 뭘 골라야 할지 모르겠죠?
+        월 카드 소비가 30만원 이상이라면 신용카드가 유리해요.
+        교통비 환급은 기본이고, 편의점·카페·쇼핑 추가 할인까지 받을 수 있거든요.
+        연회비는 5,000~10,000원인데 첫 달 환급으로 벌써 뽑아요.
       </p>
 
       <Divider />
       <ArticleAd position="intro" />
 
-      <H2>신용카드 vs 체크카드 — 뭘 골라야 해요</H2>
+      <H2>내 소비 패턴에 맞는 카드 고르기</H2>
       <p style={body}>
-        K-패스 환급률은 신용이든 체크든 동일해요.
-        차이는 추가 할인과 연회비·실적 조건이에요.
-      </p>
-
-      <GreenBox>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-          <thead>
-            <tr style={{ borderBottom: "1px solid rgba(0,0,0,0.1)" }}>
-              <th style={{ textAlign: "left", padding: "5px 8px" }}>항목</th>
-              <th style={{ textAlign: "center", padding: "5px 8px" }}>신용카드</th>
-              <th style={{ textAlign: "center", padding: "5px 8px" }}>체크카드</th>
-            </tr>
-          </thead>
-          <tbody>
-            {[
-              { item: "K-패스 환급률", credit: "동일 (20%/30%/53%)", check: "동일 (20%/30%/53%)" },
-              { item: "연회비", credit: "5,000~10,000원", check: "없음" },
-              { item: "전월실적 조건", credit: "30만원 이상", check: "없음" },
-              { item: "추가 할인 혜택", credit: "편의점·카페·쇼핑 등", check: "상대적으로 적음" },
-              { item: "추천 대상", credit: "월 30만원+ 소비자", check: "실적 관리 어려운 분" },
-            ].map((r, i) => (
-              <tr key={i} style={{ borderBottom: "1px solid rgba(0,0,0,0.05)" }}>
-                <td style={{ padding: "5px 8px", fontWeight: 600 }}>{r.item}</td>
-                <td style={{ textAlign: "center", padding: "5px 8px", fontSize: 12 }}>{r.credit}</td>
-                <td style={{ textAlign: "center", padding: "5px 8px", fontSize: 12, color: "#7C3AED" }}>{r.check}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </GreenBox>
-
-      <H2>추천 신용카드 5종 — 상황별 선택</H2>
-      <p style={body}>
-        연회비 대비 실제 혜택이 큰 카드 위주로 골랐어요.
-        환급 방식과 추가 할인 카테고리가 카드마다 달라서 내 소비 패턴에 맞는 걸 골라요.
+        K-패스 신용카드는 전부 전월실적 30만원 조건이고 환급률도 동일해요.
+        차이는 추가 할인 카테고리뿐이라 내가 돈 쓰는 곳에 맞춰 골라야 해요.
       </p>
 
       <BorderBox>

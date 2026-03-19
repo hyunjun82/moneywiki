@@ -62,48 +62,19 @@ export default function Page() {
       </h1>
 
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
-        K-패스 체크카드는 전월실적 조건도, 연회비도 없어요.
-        카드를 발급받고 k-pass.or.kr에 가입만 하면 월 15회 이상 탈 때마다 교통비가 환급돼요.
-        카카오뱅크·토스뱅크·케이뱅크처럼 앱 발급이 편한 곳도 많아요.
+        신용카드 실적 채우기 부담스럽고 연회비도 내기 싫은데 K-패스 혜택은 받고 싶죠?
+        체크카드는 실적 조건도, 연회비도 없어요.
+        카카오뱅크·토스뱅크처럼 앱에서 5분이면 발급까지 끝나요.
       </p>
 
       <Divider />
       <ArticleAd position="intro" />
 
-      <H2>K-패스 체크카드 공통 조건</H2>
+      <H2>내 주거래 은행으로 고르기</H2>
       <p style={body}>
-        어떤 은행 체크카드를 써도 아래 조건은 동일해요.
-        다른 건 앱 편의성과 ATM 수수료, 작은 추가 혜택 차이예요.
-      </p>
-
-      <GreenBox>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-          <thead>
-            <tr style={{ borderBottom: "1px solid rgba(0,0,0,0.1)" }}>
-              <th style={{ textAlign: "left", padding: "5px 8px" }}>항목</th>
-              <th style={{ textAlign: "left", padding: "5px 8px" }}>내용</th>
-            </tr>
-          </thead>
-          <tbody>
-            {[
-              { item: "연회비", val: "없음 (전 은행 공통)" },
-              { item: "전월실적 조건", val: "없음 (전 은행 공통)" },
-              { item: "K-패스 환급률", val: "일반 20% / 청년 30% / 저소득 53%" },
-              { item: "월 환급 조건", val: "월 15회 이상 대중교통 이용" },
-              { item: "연말정산 공제율", val: "30% (신용카드 15%보다 높음)" },
-            ].map((r, i) => (
-              <tr key={i} style={{ borderBottom: "1px solid rgba(0,0,0,0.05)" }}>
-                <td style={{ padding: "5px 8px", fontWeight: 600 }}>{r.item}</td>
-                <td style={{ padding: "5px 8px", color: i < 2 ? GREEN : "#333", fontWeight: i < 2 ? 700 : 400 }}>{r.val}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </GreenBox>
-
-      <H2>은행별 체크카드 특징</H2>
-      <p style={body}>
-        환급률은 같지만 어떤 앱을 쓰느냐, 어떤 은행 계좌가 있느냐에 따라 편의가 달라져요.
+        체크카드는 연회비 0원, 실적 조건 없음, 환급률 동일 — 전 은행 공통이에요.
+        차이는 앱 편의성, ATM 수수료, 연말정산 공제율(30%로 신용카드 15%보다 높음)뿐이라
+        이미 쓰는 은행 카드를 고르면 돼요.
       </p>
 
       <BorderBox>
