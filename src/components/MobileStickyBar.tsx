@@ -11,8 +11,8 @@ interface MobileStickyBarProps {
 }
 
 export default function MobileStickyBar({
-  text = '숨은 정부지원금 17가지 지금 확인',
-  sub = '30초면 내가 받을 수 있는지 알 수 있어요',
+  text = '숨은 정부지원금 17가지',
+  sub = '나도 받을 수 있는지 30초 체크',
   href = '/w/숨은-정부지원금',
   buttonText = '확인하기',
 }: MobileStickyBarProps) {

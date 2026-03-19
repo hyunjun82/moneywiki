@@ -1,7 +1,9 @@
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getAllWikiDocuments } from "@/lib/wiki";
+import { categories as definedCategories } from "@/data/categories";
+import fs from "fs";
+import path from "path";
 
 interface PageProps {
   params: Promise<{ name: string }>;
@@ -30,6 +32,12 @@ const categoryEmoji: Record<string, string> = {
   "연금": "👴",
   "투자": "📉",
   "양식·서식": "📥",
+  "퇴직": "🏦",
+  "생활경제": "🛒",
+  "복지": "🤝",
+  "보험": "🛡️",
+  "교육": "📚",
+  "창업": "🚀",
   "일반": "📄",
 };
 
@@ -44,7 +52,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export async function generateStaticParams() {
-  // 실제 문서에서 모든 카테고리 추출
   const allDocs = getAllWikiDocuments();
   const categories = new Set<string>();
 
@@ -53,14 +60,30 @@ export async function generateStaticParams() {
     categories.add(category);
   });
 
-  // 정부지원금 카테고리도 추가
+  // categories.ts에 정의된 카테고리도 추가 (퇴직, 생활경제 등)
+  definedCategories.forEach(c => categories.add(c.slug));
   categories.add("정부지원금");
 
-  // URL에서 슬래시(/)를 대시(-)로 변환
   return Array.from(categories).map((name) => ({
     name: name.replace(/\//g, '-'),
   }));
 }
+
+// TSX 글 디렉토리에서 slug 목록 수집
+function getTsxArticleSlugs(keyword: string): string[] {
+  const wDir = path.join(process.cwd(), "src/app/w");
+  try {
+    return fs.readdirSync(wDir).filter(d =>
+      d.includes(keyword) && fs.existsSync(path.join(wDir, d, "page.tsx"))
+    );
+  } catch { return []; }
+}
+
+// 카테고리별 키워드 매핑
+const categoryKeywords: Record<string, string[]> = {
+  "퇴직": ["퇴직금", "퇴직", "irp", "IRP", "db형", "dc형", "퇴사"],
+  "생활경제": ["물가", "교통", "통신", "소비"],
+};
 
 // 정부지원금 카테고리 추천 문서 (복지/고용 관련)
 const governmentSupportKeywords = [
@@ -85,9 +108,25 @@ export default async function CategoryPage({ params }: PageProps) {
     ).slice(0, 30);
   }
 
-  // 정부지원금 외 카테고리: 문서 없으면 404
+  // MD 문서 없는 경우: TSX 글 디렉토리에서 수집 시도
   if (docs.length === 0 && categoryName !== "정부지원금") {
-    notFound();
+    const keywords = categoryKeywords[categoryName] || [categoryName];
+    const tsxSlugs = keywords.flatMap(k => getTsxArticleSlugs(k));
+    const uniqueSlugs = [...new Set(tsxSlugs)];
+    if (uniqueSlugs.length > 0) {
+      docs = uniqueSlugs.map(slug => ({
+        slug,
+        title: slug.replace(/-/g, ' '),
+        description: "",
+        summary: "",
+        category: categoryName,
+        keywords: [],
+        sources: [],
+        body: "",
+        lastUpdated: "",
+        datePublished: "",
+      }));
+    }
   }
 
   // 가나다순 정렬

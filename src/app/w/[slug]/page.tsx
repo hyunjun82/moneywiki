@@ -612,8 +612,8 @@ export default async function WikiPage({ params }: PageProps) {
           )}
 
           {/* 광고 - 본문 상단 */}
-          <div className="mb-8">
-            <AdSense slot={AD_SLOTS.HORIZONTAL} className="w-full" />
+          <div className="mb-8 max-h-[120px] overflow-hidden">
+            <AdSense slot={AD_SLOTS.HORIZONTAL} format="horizontal" className="w-full" />
           </div>
 
           {/* 본문 (H2 섹션들) */}
@@ -663,8 +663,8 @@ export default async function WikiPage({ params }: PageProps) {
           )}
 
           {/* 광고 - 본문 하단 */}
-          <div className="mt-12">
-            <AdSense slot={AD_SLOTS.VERTICAL} className="w-full" />
+          <div className="mt-12 max-h-[120px] overflow-hidden">
+            <AdSense slot={AD_SLOTS.VERTICAL} format="horizontal" className="w-full" />
           </div>
 
           {/* 키워드 태그 */}
@@ -699,8 +699,8 @@ export default async function WikiPage({ params }: PageProps) {
         <aside className="w-72 shrink-0 hidden lg:block space-y-4">
           <div className="sticky top-4">
             {/* 사이드바 광고 */}
-            <div className="mb-4">
-              <AdSense slot={AD_SLOTS.SQUARE} className="w-full" />
+            <div className="mb-4 max-w-[300px]">
+              <AdSense slot={AD_SLOTS.SQUARE} format="rectangle" className="w-full" />
             </div>
 
             {/* CTA 버튼 - 노란색 깜박임 효과 */}
