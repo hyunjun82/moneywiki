@@ -133,7 +133,7 @@ export default function MobileStickyBar({
             : 'translateX(-50%) translateY(100%)',
           transition: 'transform 0.28s ease',
           width: '100%',
-          maxWidth: '720px',
+          maxWidth: '760px',
           zIndex: 40,
         }}
       >

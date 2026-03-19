@@ -39,7 +39,7 @@ const CARDS: KPassCard[] = [
     minSpend: 30,
     monthlyLimit: 6,
     extra: "편의점·커피전문점 5% 할인",
-    applyUrl: "https://www.shinhancard.com/pconts/html/card/apply/transportation/1229619_2216.html",
+    applyUrl: "https://www.shinhancard.com/pconts/html/card/apply/credit/1225543_2207.html",
   },
   {
     id: "shinhan-credit-2",
@@ -50,7 +50,7 @@ const CARDS: KPassCard[] = [
     minSpend: 30,
     monthlyLimit: 6,
     extra: "신한은행 주거래 고객 추가 포인트",
-    applyUrl: "https://www.shinhancard.com/pconts/html/card/apply/transportation/1229619_2216.html",
+    applyUrl: "https://www.shinhancard.com/pconts/html/card/apply/credit/1225543_2207.html",
   },
   {
     id: "nh-credit",
@@ -398,46 +398,62 @@ const CARDS: KPassCard[] = [
 ];
 
 /* ── 카드사별 장단점 데이터 ───────────────────────────── */
-const BANK_INFO: { issuer: string; pros: string; cons: string }[] = [
+const BANK_INFO: { issuer: string; pros: string; cons: string; applyUrl: string; applyLabel: string }[] = [
   {
     issuer: "신한카드",
     pros: "신용·체크 라인업 가장 풍부 (6종). 신한SOL 앱에서 환급 현황 한눈에 확인. 편의점·카페 할인 겸용 가능.",
     cons: "신용카드는 전월실적 30만원 조건 있음. 카드 종류 많아서 비교에 시간 걸림.",
+    applyUrl: "https://www.shinhancard.com/pconts/html/card/apply/credit/1225543_2207.html",
+    applyLabel: "신한카드 K-패스 신청",
   },
   {
     issuer: "NH농협카드",
     pros: "농협ATM 수수료 면제. 농협몰·하나로마트 이용자에게 추가 할인. BC망 선택 가능.",
     cons: "BC망 카드는 연회비가 8,000원으로 비교적 높음. 타 은행 대비 추가 혜택 폭 좁음.",
+    applyUrl: "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010471",
+    applyLabel: "NH농협 K-패스 신청",
   },
   {
     issuer: "KB국민카드",
     pros: "KB스타뱅킹 자동 적립 연동. 국내 가맹점 범위 넓음.",
     cons: "신용카드 연회비 7,000원으로 동급 중 높은 편. 체크카드는 KB은행 계좌 필수.",
+    applyUrl: "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?mainCC=a&cooperationcode=09322",
+    applyLabel: "KB국민 K-패스 신청",
   },
   {
     issuer: "카카오뱅크",
     pros: "실적 조건 없음 (체크카드). 연회비 0원. 카카오페이 연동으로 앱 하나로 관리 가능.",
     cons: "신용카드 없음. 추가 할인 혜택이 상대적으로 적음.",
+    applyUrl: "https://www.kakaobank.com/products/k-pass",
+    applyLabel: "카카오뱅크 K-패스 신청",
   },
   {
     issuer: "토스뱅크",
     pros: "실적·연회비 0원. 토스앱에서 K-패스 환급 현황 실시간 확인. 간편한 발급.",
     cons: "신용카드 없음. 해외 결제 불가.",
+    applyUrl: "https://www.tossbank.com/card/k-pass",
+    applyLabel: "토스뱅크 K-패스 신청",
   },
   {
     issuer: "케이뱅크",
     pros: "케이뱅크 예금 0.1% 이자 우대. 발급 절차 전부 앱으로 가능.",
     cons: "신용카드 없음. 오프라인 지점 없음.",
+    applyUrl: "https://m.kbanknow.com/k/cqtKtFT",
+    applyLabel: "케이뱅크 K-패스 신청",
   },
   {
     issuer: "삼성카드",
     pros: "삼성페이 NFC 결제 지원. M포인트 신용카드와 겸용 가능. 온라인쇼핑 환급 폭 넓음.",
     cons: "연회비 8,000원(신용). 삼성계열 이용자 위주 혜택.",
+    applyUrl: "https://www.samsungcard.com/home/card/cardinfo/PGHPPCCCardCardinfoDetails001?code=AAP1830",
+    applyLabel: "삼성카드 K-패스 신청",
   },
   {
     issuer: "티머니",
     pros: "기존 티머니 카드를 K-패스로 전환 가능. 별도 은행 계좌 불필요. 실물·모바일 모두 지원.",
     cons: "선불 충전 방식이라 잔액 관리 필요. 추가 할인 혜택 없음.",
+    applyUrl: "https://www.t-money.co.kr/ncs/pct/tmnyCard/ReadKpassMain.dev",
+    applyLabel: "티머니 K-패스 신청",
   },
 ];
 
@@ -717,8 +733,8 @@ export default function Page() {
                 </td>
                 <td style={{ padding: "9px 8px", fontSize: 11, color: "#555" }}>{card.extra}</td>
                 <td style={{ textAlign: "center", padding: "9px 8px" }}>
-                  <a
-                    href={card.applyUrl}
+                  <button
+                    onClick={() => scrollToIssuer(card.issuer)}
                     style={{
                       display: "inline-block",
                       padding: "5px 12px",
@@ -727,11 +743,12 @@ export default function Page() {
                       color: "#fff",
                       fontWeight: 700,
                       fontSize: 11,
-                      textDecoration: "none",
+                      border: "none",
+                      cursor: "pointer",
                     }}
                   >
                     신청
-                  </a>
+                  </button>
                 </td>
               </tr>
             ))}
@@ -759,6 +776,23 @@ export default function Page() {
             <strong style={{ fontSize: 14, color: GREEN }}>{b.issuer}</strong><br />
             <span style={{ fontWeight: 700 }}>장점:</span> {b.pros}<br />
             <span style={{ fontWeight: 700 }}>주의:</span> {b.cons}
+            <div style={{ marginTop: 10 }}>
+              <a
+                href={b.applyUrl}
+                style={{
+                  display: "inline-block",
+                  padding: "7px 18px",
+                  borderRadius: 6,
+                  background: GREEN,
+                  color: "#fff",
+                  fontWeight: 700,
+                  fontSize: 12,
+                  textDecoration: "none",
+                }}
+              >
+                {b.applyLabel} →
+              </a>
+            </div>
           </BorderBox>
         </div>
       ))}
