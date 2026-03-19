@@ -35,6 +35,67 @@ const src = fs.readFileSync(filePath, "utf8");
 const ERRORS = [];
 const WARNINGS = [];
 
+// ─── 0. Q1-Q4 필수 사고 + Q→구조 매핑 검증 ─────────
+const qComments = {
+  q1: src.match(/\/\/\s*Q1[.:]?\s*(.+)/),
+  q2: src.match(/\/\/\s*Q2[.:]?\s*(.+)/),
+  q3: src.match(/\/\/\s*Q3[.:]?\s*(.+)/),
+  q4: src.match(/\/\/\s*Q4[.:]?\s*(.+)/),
+};
+
+// 0-A. Q1~Q4 주석 존재 여부
+if (!qComments.q1) ERRORS.push(`❌ Q1 주석 없음 — "이 키워드를 검색하는 사람은 지금 어떤 상황인가?" 필수`);
+if (!qComments.q2) ERRORS.push(`❌ Q2 주석 없음 — "이 사람이 글을 읽고 할 수 있어야 하는 행동은?" 필수`);
+if (!qComments.q3) ERRORS.push(`❌ Q3 주석 없음 — "이 행동을 하려면 반드시 알아야 하는 정보는?" 필수`);
+if (!qComments.q4) ERRORS.push(`❌ Q4 주석 없음 — "이 정보를 가장 잘 전달하는 형태는?" 필수`);
+
+// 0-B. Q1~Q4 내용이 구체적인지 (10자 미만이면 불충분)
+for (const [key, match] of Object.entries(qComments)) {
+  if (match && match[1].trim().length < 10) {
+    ERRORS.push(`❌ ${key.toUpperCase()} 주석이 너무 짧음 (${match[1].trim().length}자) — 구체적인 상황/행동/정보/형태 기술 필수`);
+  }
+}
+
+// 0-C. Q2 글 형태 분류 → 구조 일치 검증
+if (qComments.q2) {
+  const q2text = qComments.q2[1];
+  // Q2에 "비교" "고른다" "선택" 있으면 → 비교표 중심 글이어야 함 (table 태그 필수)
+  if (/비교|고른다|골라|선택/.test(q2text)) {
+    const tableCount = (src.match(/<table/g) || []).length;
+    if (tableCount < 1) ERRORS.push(`❌ Q2가 "비교/선택" 유형인데 <table> 없음 — 비교표 필수`);
+  }
+  // Q2에 "절차" "신청" "가입" "등록" 있으면 → Steps 컴포넌트 필수
+  if (/절차|신청|가입|등록/.test(q2text)) {
+    if (!/\bSteps\b/.test(src)) WARNINGS.push(`⚠️ Q2가 "절차/신청" 유형인데 Steps 컴포넌트 없음 — Steps 사용 권장`);
+  }
+  // Q2에 "확인" "자격" "대상" 있으면 → EligibilityChecker 또는 체크 인터랙티브 권장
+  if (/자격.*확인|대상.*확인|확인.*자격/.test(q2text)) {
+    if (!/EligibilityChecker|input|onChange|useState/.test(src)) WARNINGS.push(`⚠️ Q2가 "자격 확인" 유형인데 인터랙티브 요소 없음 — 체커/계산기 권장`);
+  }
+}
+
+// 0-D. Q3 정보 항목 수 vs H2 개수 비교 (Q3의 "/" 구분자 수로 추정)
+if (qComments.q3) {
+  const q3text = qComments.q3[1];
+  const q3items = q3text.split(/[/／]/).filter(s => s.trim().length > 3).length;
+  const h2count = [...src.matchAll(/<H2>([\s\S]*?)<\/H2>/g)].length;
+  // FAQ H2는 정보 항목이 아니므로 -1
+  const contentH2 = h2count > 0 ? h2count - 1 : 0;  // FAQ 제외
+  if (q3items > 0 && contentH2 > q3items + 2) {
+    WARNINGS.push(`⚠️ Q3 정보 항목 약 ${q3items}개인데 H2가 ${h2count}개 — Q3에 없는 내용이 H2로 들어갔을 수 있음`);
+  }
+}
+
+// 0-E. Q1 → 서론 첫 문장 공감 체크 (첫 <p> 태그 내용)
+const firstP = src.match(/<p\s+style=\{\s*\{\s*\.\.\.body[^}]*\}[^>]*>([\s\S]*?)<\/p>/);
+if (qComments.q1 && firstP) {
+  const intro = firstP[1].replace(/<[^>]+>/g, "").replace(/&[a-z]+;/g, "").trim();
+  // 서론이 제도 설명으로 시작하면 경고 (독자 상황 공감이 아닌 경우)
+  if (/^[가-힣]+은\s|^[가-힣]+는\s/.test(intro) && !/죠|하죠|싶죠|되죠|나죠|보죠|모르|궁금|부담|고민|막막|헷갈/.test(intro.slice(0, 50))) {
+    WARNINGS.push(`⚠️ 서론 첫 문장이 제도 설명으로 시작 — Q1 독자 상황 공감(질문/고민)으로 시작해야 해요`);
+  }
+}
+
 // ─── 1. 타이틀 규칙 ──────────────────────────────────
 const h1Match = src.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
 const titleText = h1Match ? h1Match[1].replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim() : "";
@@ -80,7 +141,7 @@ if (usedCount < 3) ERRORS.push(`❌ 시각화 컴포넌트 ${usedCount}개 — �
 // ─── 4. AI 냄새 단어 ─────────────────────────────────
 const AI_WORDS = [
   "또한 ", "결론적으로", "다양한 ", "매우 중요", "확인하세요",
-  "총정리", "있거든요", " 있어요", "알아보겠습니다", "살펴보겠습니다",
+  "총정리", "있거든요", "알아보겠습니다", "살펴보겠습니다",
   " — ", "정리해드릴게요", "알아볼게요",
 ];
 for (const word of AI_WORDS) {
