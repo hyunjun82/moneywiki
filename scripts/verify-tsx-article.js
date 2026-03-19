@@ -56,44 +56,63 @@ for (const [key, match] of Object.entries(qComments)) {
   }
 }
 
-// 0-C. Q2 글 형태 분류 → 구조 일치 검증
-if (qComments.q2) {
-  const q2text = qComments.q2[1];
-  // Q2에 "비교" "고른다" "선택" 있으면 → 비교표 중심 글이어야 함 (table 태그 필수)
-  if (/비교|고른다|골라|선택/.test(q2text)) {
-    const tableCount = (src.match(/<table/g) || []).length;
-    if (tableCount < 1) ERRORS.push(`❌ Q2가 "비교/선택" 유형인데 <table> 없음 — 비교표 필수`);
+// 0-C. MAP 블록 필수 검증 ─────────────────────────────
+const mapIntro = src.match(/\/\/\s*MAP-INTRO:\s*(.+)/);
+const mapType  = src.match(/\/\/\s*MAP-TYPE:\s*(.+)/);
+const mapH2    = src.match(/\/\/\s*MAP-H2:\s*(.+)/);
+const mapComp  = src.match(/\/\/\s*MAP-COMP:\s*(.+)/);
+
+if (!mapIntro) ERRORS.push(`❌ MAP-INTRO 없음 — "// MAP-INTRO: 서론 첫 문장 내용" 필수`);
+if (!mapType)  ERRORS.push(`❌ MAP-TYPE 없음 — "// MAP-TYPE: 비교표|절차|텍스트|계산기|자격확인" 필수`);
+if (!mapH2)    ERRORS.push(`❌ MAP-H2 없음 — "// MAP-H2: 섹션1 > 섹션2 > ... > FAQ" 필수`);
+if (!mapComp)  ERRORS.push(`❌ MAP-COMP 없음 — "// MAP-COMP: GreenBox > Steps > BorderBox > FAQ" 필수`);
+
+// 0-D. MAP-H2 vs 실제 H2 대조 ─────────────────────────
+const h2All = [...src.matchAll(/<H2>([\s\S]*?)<\/H2>/g)].map(m => m[1].trim());
+if (mapH2 && h2All.length > 0) {
+  const planned = mapH2[1].split(">").map(s => s.trim()).filter(Boolean);
+  // 개수 비교
+  if (Math.abs(planned.length - h2All.length) > 1) {
+    ERRORS.push(`❌ MAP-H2 ${planned.length}개 vs 실제 H2 ${h2All.length}개 — 불일치 (허용 오차 1개)`);
   }
-  // Q2에 "절차" "단계" "순서대로" 있으면 → Steps 컴포넌트 필수
-  // "신청 페이지에서 발급" 같은 단순 이동은 절차가 아니므로 제외
-  if (/절차|단계|순서대로/.test(q2text)) {
-    if (!/\bSteps\b/.test(src)) WARNINGS.push(`⚠️ Q2가 "절차/단계" 유형인데 Steps 컴포넌트 없음 — Steps 사용 권장`);
+  // 순서 비교: 계획한 H2 키워드가 실제 H2에 포함되는지
+  planned.forEach((p, i) => {
+    if (i < h2All.length) {
+      const pNorm = p.replace(/\s/g, "");
+      const hNorm = h2All[i].replace(/\s/g, "");
+      // 계획 키워드의 핵심 단어(2글자 이상)가 실제 H2에 포함되는지
+      const keywords = pNorm.match(/[가-힣a-zA-Z]{2,}/g) || [];
+      const matched = keywords.some(kw => hNorm.includes(kw));
+      if (!matched && pNorm !== "FAQ") {
+        ERRORS.push(`❌ MAP-H2[${i+1}] "${p}" ↔ 실제 H2 "${h2All[i]}" — 키워드 불일치. MAP대로 써야 해요`);
+      }
+    }
+  });
+}
+
+// 0-E. MAP-TYPE vs 컴포넌트 대조 ──────────────────────
+if (mapType) {
+  const type = mapType[1].trim();
+  if (/비교표/.test(type)) {
+    if ((src.match(/<table/g) || []).length < 1) ERRORS.push(`❌ MAP-TYPE "비교표"인데 <table> 없음`);
   }
-  // Q2에 "확인" "자격" "대상" 있으면 → EligibilityChecker 또는 체크 인터랙티브 권장
-  if (/자격.*확인|대상.*확인|확인.*자격/.test(q2text)) {
-    if (!/EligibilityChecker|input|onChange|useState/.test(src)) WARNINGS.push(`⚠️ Q2가 "자격 확인" 유형인데 인터랙티브 요소 없음 — 체커/계산기 권장`);
+  if (/절차/.test(type)) {
+    if (!/\bSteps\b/.test(src)) ERRORS.push(`❌ MAP-TYPE "절차"인데 Steps 컴포넌트 없음`);
+  }
+  if (/계산기/.test(type)) {
+    if (!/Calculator|useState|onChange|calcRefund/.test(src)) ERRORS.push(`❌ MAP-TYPE "계산기"인데 인터랙티브 요소 없음`);
+  }
+  if (/자격확인/.test(type)) {
+    if (!/EligibilityChecker|input|onChange|useState/.test(src)) WARNINGS.push(`⚠️ MAP-TYPE "자격확인"인데 인터랙티브 요소 없음 — 체커 권장`);
   }
 }
 
-// 0-D. Q3 정보 항목 수 vs H2 개수 비교 (Q3의 "/" 구분자 수로 추정)
-if (qComments.q3) {
-  const q3text = qComments.q3[1];
-  const q3items = q3text.split(/[/／]/).filter(s => s.trim().length > 3).length;
-  const h2count = [...src.matchAll(/<H2>([\s\S]*?)<\/H2>/g)].length;
-  // FAQ H2는 정보 항목이 아니므로 -1
-  const contentH2 = h2count > 0 ? h2count - 1 : 0;  // FAQ 제외
-  if (q3items > 0 && contentH2 > q3items + 2) {
-    WARNINGS.push(`⚠️ Q3 정보 항목 약 ${q3items}개인데 H2가 ${h2count}개 — Q3에 없는 내용이 H2로 들어갔을 수 있음`);
-  }
-}
-
-// 0-E. Q1 → 서론 첫 문장 공감 체크 (첫 <p> 태그 내용)
+// 0-F. Q1 → 서론 첫 문장 공감 체크 ────────────────────
 const firstP = src.match(/<p\s+style=\{\s*\{\s*\.\.\.body[^}]*\}[^>]*>([\s\S]*?)<\/p>/);
 if (qComments.q1 && firstP) {
   const intro = firstP[1].replace(/<[^>]+>/g, "").replace(/&[a-z]+;/g, "").trim();
-  // 서론이 제도 설명으로 시작하면 경고 (독자 상황 공감이 아닌 경우)
   if (/^[가-힣]+은\s|^[가-힣]+는\s/.test(intro) && !/죠|하죠|싶죠|되죠|나죠|보죠|모르|궁금|부담|고민|막막|헷갈/.test(intro.slice(0, 50))) {
-    WARNINGS.push(`⚠️ 서론 첫 문장이 제도 설명으로 시작 — Q1 독자 상황 공감(질문/고민)으로 시작해야 해요`);
+    WARNINGS.push(`⚠️ 서론 첫 문장이 제도 설명으로 시작 — Q1 독자 상황 공감으로 시작해야 해요`);
   }
 }
 
