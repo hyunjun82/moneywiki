@@ -94,10 +94,18 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      <H2>K-패스 환급 시작까지 전 과정</H2>
+      {/* [승] 핵심 결론 먼저 */}
+      <H2>핵심: 카드 발급 ≠ 환급 시작</H2>
+      <GreenBox>
+        <strong>카드 발급</strong> → <strong style={{ color: GREEN }}>k-pass.or.kr 회원 가입 (필수!)</strong> → <strong>월 15회 이상 이용</strong> → <strong>다음 달 환급</strong>
+        <br /><br />
+        2단계 회원 가입을 빠뜨리면 아무리 타도 환급이 0원이에요.
+        카카오뱅크·토스뱅크는 해당 앱 안에서 바로 등록 가능해요.
+      </GreenBox>
+
+      <H2>단계별 상세 절차</H2>
       <p style={body}>
-        카드 발급부터 첫 환급까지 4단계예요.
-        2단계 회원 등록을 빠뜨리면 아무리 타도 환급이 없어요.
+        아래 4단계를 순서대로 따라가면 돼요.
       </p>
 
       <Steps steps={STEPS} />
