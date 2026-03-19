@@ -8,8 +8,9 @@
 import {
   H2, GreenBox, BorderBox, Divider, body,
   FAQ, References, Disclaimer,
-  ArticleLayout, RelatedArticles, ArticleAd,
+  ArticleLayout, RelatedArticles, ArticleAd, Sidebar,
 } from "@/components/article-ui";
+import { 청년월세지원_SIDEBAR } from "@/data/청년월세지원-guide";
 
 const FAQS = [
   {
@@ -63,7 +64,7 @@ function fmt(n: number) {
 
 export default function Page() {
   return (
-    <ArticleLayout>
+    <ArticleLayout sidebar={<Sidebar heading="청년월세지원 가이드" items={청년월세지원_SIDEBAR} currentSlug="청년월세지원-소득기준" />}>
       <p style={{ fontSize: 13, color: GREEN, fontWeight: 600, marginBottom: 10 }}>
         청년 지원 · 월세 · 소득 기준
       </p>

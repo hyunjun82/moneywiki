@@ -8,8 +8,9 @@
 import {
   H2, GreenBox, BorderBox, Divider, body,
   FAQ, References, Disclaimer,
-  ArticleLayout, RelatedArticles, ArticleAd,
+  ArticleLayout, RelatedArticles, ArticleAd, Sidebar,
 } from "@/components/article-ui";
+import { K패스_SIDEBAR } from "@/data/K-패스-guide";
 
 const GREEN = "#1D9E75";
 
@@ -82,7 +83,7 @@ const RELATED = [
 
 export default function Page() {
   return (
-    <ArticleLayout>
+    <ArticleLayout sidebar={<Sidebar heading="K-패스 가이드" items={K패스_SIDEBAR} currentSlug="청년-패스" />}>
       <p style={{ fontSize: 13, color: GREEN, fontWeight: 600, marginBottom: 10 }}>
         청년 혜택 · 교통 · 주거 · 소득
       </p>
