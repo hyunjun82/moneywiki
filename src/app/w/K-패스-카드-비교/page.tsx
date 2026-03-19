@@ -9,8 +9,9 @@ import { useState, useRef } from "react";
 import {
   H2, GreenBox, BorderBox, Divider, body,
   FAQ, References, Disclaimer,
-  ArticleLayout, RelatedArticles, ArticleAd,
+  ArticleLayout, RelatedArticles, ArticleAd, Sidebar,
 } from "@/components/article-ui";
+import { K패스_SIDEBAR } from "@/data/K-패스-guide";
 
 /* ── 카드 데이터 ─────────────────────────────────────── */
 type CardType = "신용" | "체크" | "선불";
@@ -530,7 +531,7 @@ export default function Page() {
   const issuersInData = [...new Set(BANK_INFO.map((b) => b.issuer))];
 
   return (
-    <ArticleLayout>
+    <ArticleLayout sidebar={<Sidebar heading="K-패스 가이드" items={K패스_SIDEBAR} currentSlug="K-패스-카드-비교" />}>
       {/* 카테고리 태그 */}
       <p style={{ fontSize: 13, color: GREEN, fontWeight: 600, marginBottom: 10 }}>
         교통 · K-패스 · 카드 비교

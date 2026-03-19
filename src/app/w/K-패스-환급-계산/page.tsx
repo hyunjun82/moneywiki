@@ -9,8 +9,9 @@ import { useState } from "react";
 import {
   H2, GreenBox, BorderBox, Divider, body,
   FAQ, References, Disclaimer,
-  ArticleLayout, RelatedArticles, ArticleAd,
+  ArticleLayout, RelatedArticles, ArticleAd, Sidebar,
 } from "@/components/article-ui";
+import { K패스_SIDEBAR } from "@/data/K-패스-guide";
 
 const FAQS = [
   {
@@ -69,7 +70,7 @@ export default function Page() {
   const colorMap = { "일반": "#6B7280", "청년": GREEN, "저소득": "#7C3AED" };
 
   return (
-    <ArticleLayout>
+    <ArticleLayout sidebar={<Sidebar heading="K-패스 가이드" items={K패스_SIDEBAR} currentSlug="K-패스-환급-계산" />}>
       <p style={{ fontSize: 13, color: GREEN, fontWeight: 600, marginBottom: 10 }}>
         교통 · K-패스 · 환급 계산
       </p>
