@@ -6,8 +6,7 @@
 // Q3. 서비스 대상, 장비 종류, 응급 대응 절차, 신청 방법
 // Q4. EligibilityChecker(자격) + GreenBox(서비스 내용) + Steps(신청 절차) + FAQ
 
-import { FAQ, GreenBox, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { FAQ, GreenBox, Steps, EligibilityChecker, References, Disclaimer , H2 } from "@/components/article-ui";
 
 const CHECK_ITEMS = [
   { id: "c1", label: "만 65세 이상 독거노인이거나 독거 중증장애인이에요" },
@@ -76,7 +75,7 @@ export default function Page() {
           boxShadow: "0 4px 12px rgba(29,158,117,0.3)",
         }}
       >
-        복지로에서 신청하기 →
+        응급안전서비스 신청하기 →
       </a>
 
       <H2>신청 자격과 대상</H2>
@@ -92,7 +91,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 자격 항목에 해당하면 신청을 진행할 수 있죠. 4가지 모두 해당한다면 바로 신청 가능하고, 일부 항목이 불분명하다면 주민센터 담당자와 상담을 통해 결정하면 돼요. 대상이 맞는지 판단이 어려울 때는 복지로 콜센터(129)에 문의하는 것도 좋은 방법이에요. 전화 상담으로 방문 전 서류 목록을 미리 파악해두면 헛걸음을 줄일 수 있죠.
       </p>
-      <EligibilityChecker title="응급안전안심서비스 신청 자격 체크" items={CHECK_ITEMS} />
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>제공 서비스와 장비 종류</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -105,7 +104,7 @@ export default function Page() {
         관제센터는 24시간 365일 운영되고, 신호가 접수되면 담당자가 전화로 먼저 상황을 파악해요. 전화 연결이 안 되거나 응답이 없으면 지역 담당자나 119에 즉시 연락해요. 가족 연락처도 미리 등록되어 있어 가족에게도 동시에 연락이 가요. 응급 대응 이력은 기록으로 남아서 이후 상황 파악에 활용되기도 해요.
       </p>
 
-      <GreenBox title="제공 장비 요약">
+      <GreenBox>
         응급호출기(목걸이·손목형), 화재감지기, 활동감지기를 무료로 설치해요. 24시간 관제센터 연동으로 위기 상황 시 119 및 가족에게 즉시 연락해요.
       </GreenBox>
 
@@ -119,21 +118,13 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         설치 완료 후에는 별도 조작 없이 바로 서비스가 시작돼요. 장비 사용법이 익숙하지 않으면 담당자에게 추가 교육을 요청할 수 있죠. 장비에 문제가 생기면 전화(관제센터 또는 주민센터)로 신청하면 무상 수리 또는 교체가 돼요. 정기적으로 장비 점검 방문도 이루어져서 고장을 미리 발견할 수 있죠.
       </p>
-      <Steps items={STEPS} />
+      <Steps steps={STEPS} />
 
       <H2>자주 묻는 질문</H2>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        응급안전안심서비스를 이용하면서 가장 많이 궁금해하는 게 응급 버튼을 잘못 눌렀을 때 어떻게 되느냐예요. 실수로 누른 경우 관제센터에 전화해서 오작동이라고 알려주면 돼요. 실수 신고가 반복되더라도 벌칙은 없으니 걱정하지 않아도 돼요. 오히려 버튼이 제대로 작동하는지 가끔 테스트해 보는 게 도움이 돼요.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        장비 배터리 교체나 AS는 서비스 제공 기관이 담당해요. 배터리 잔량이 낮아지면 자동으로 관제센터에 알림이 가고, 담당자가 방문해 교체해 줘요. 이용자가 직접 배터리를 교체할 필요는 없어요. 장비 점검은 통상 6개월~1년 주기로 이루어지고, 문제가 있으면 무상으로 수리해줘요.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
-        이사를 가면 장비를 그대로 사용할 수 있는지 궁금한 분도 많아요. 이사 후에는 새 주소지 주민센터에 이전 신청을 하면 장비도 함께 이전 설치해 줘요. 다른 시·군·구로 이사할 경우에는 재신청이 필요한 경우도 있죠. 이사 전에 미리 담당 주민센터에 알려두면 서비스 공백 없이 이전할 수 있죠. 이사 후 장비 이전 설치에는 통상 1~2주 정도가 소요되므로, 이사 예정일 2주 전에 담당 주민센터에 미리 연락하는 게 좋아요.
-      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "16px" }}>응급안전서비스에 대해 자주 묻는 질문이에요.</p>
       <FAQ items={FAQ_ITEMS} />
-      <References items={REFS} />
-      <Disclaimer />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 공식 발표 기준으로 작성됐어요. 정책 내용은 변경될 수 있으니 신청 전 해당 기관에서 최신 내용을 확인하세요." />
     </div>
   );
 }

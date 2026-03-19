@@ -179,7 +179,7 @@ export default function Page() {
         30일 미예고 즉시 해고라면 해고예고수당도 같은 기한 내 청구 대상이에요.
       </p>
 
-      <GreenBox title="해고 근로자 지급 기한 핵심">
+      <GreenBox>
         해고일로부터 14일 이내 임금 + 퇴직금 전액 지급 의무<br />
         30일 미예고 즉시 해고 → 해고예고수당(30일치 통상임금) 추가 청구 가능<br />
         14일 초과 시 연 20% 지연이자 자동 발생
@@ -250,7 +250,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="지연이자는 자동으로 발생해요">
+      <GreenBox>
         14일이 지났다면 따로 신청하지 않아도 연 20% 지연이자가 붙어요.
         소송이나 신고 시 원금에 지연이자를 더해 청구할 수 있고, 법원에서 인정돼요.
       </GreenBox>

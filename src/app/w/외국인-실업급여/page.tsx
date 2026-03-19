@@ -143,7 +143,7 @@ export default function Page() {
         추가 조건이 있다면 체류 자격을 유지하고 있어야 한다는 것 정도예요.
       </p>
 
-      <GreenBox title="의무가입 비자 5종">
+      <GreenBox>
         F-2 (거주): 장기 체류 자격<br />
         F-4 (재외동포): 재외동포 취업 자격<br />
         F-5 (영주): 영주권자<br />
@@ -179,7 +179,7 @@ export default function Page() {
         회사가 폐업해도 해고돼도 마찬가지예요. 실업급여가 아니라 출국만기보험금을 받게 돼요.
       </p>
 
-      <BorderBox title="E-9 비자 핵심">
+      <BorderBox>
         고용보험 가입 대상 아님 → <strong>실업급여 수급 불가</strong><br />
         대신 출국만기보험 가입 → <strong>출국 시 적립금 수령</strong><br />
         회사 폐업·해고되어도 → 실업급여가 아닌 <strong>출국만기보험금</strong>
@@ -254,7 +254,7 @@ export default function Page() {
         두 가지를 동시에 받을 수는 없으니, 본인 상황에 맞는 쪽을 선택하면 되죠.
       </p>
 
-      <BorderBox title="체류 vs 출국: 뭘 받을까?">
+      <BorderBox>
         한국에서 재취업 예정 → <strong>실업급여</strong> (구직활동 필수)<br />
         본국 귀국 예정 → <strong>반환일시금</strong> (출국 전 신청)<br />
         E-9 비자 → <strong>출국만기보험금</strong> (출국 시 자동 지급)

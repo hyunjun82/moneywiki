@@ -179,7 +179,7 @@ export default function Page() {
         조건만 맞으면 A회사 3년 + B회사 4년 = 총 7년으로 잡히니까, 소정급여일수가 확 늘어나거든요.
       </p>
 
-      <GreenBox title="피보험기간이 결정하는 것">
+      <GreenBox>
         <p style={{ margin: "0 0 4px" }}>1. <strong>수급자격</strong>: 피보험단위기간 180일 이상이어야 신청 가능</p>
         <p style={{ margin: "0 0 4px" }}>2. <strong>소정급여일수</strong>: 기간이 길수록 오래 받음 (120~270일)</p>
         <p style={{ margin: 0 }}>3. <strong>합산</strong>: 여러 직장 피보험기간을 합쳐서 계산할 수 있음</p>
@@ -216,7 +216,7 @@ export default function Page() {
         이 차이가 소정급여일수에 바로 영향을 줘요.
       </p>
 
-      <BorderBox title="합산 가능 vs 불가능">
+      <BorderBox>
         <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}>가능: 이전 직장에서 실업급여를 <strong>받지 않았고</strong>, 1년 이내 재취업</p>
         <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}>불가: 실업급여 수급 완료 → 이전 기간 <strong>리셋</strong></p>
         <p style={{ margin: 0, lineHeight: 1.9 }}>불가: 퇴사 후 1년 넘게 공백 → 이전 기간 <strong>합산 불가</strong></p>

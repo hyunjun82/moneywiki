@@ -166,7 +166,7 @@ export default function Page() {
         법정 사유가 확인됐다면 회사는 신청을 거부할 수 없고, 승인 후 <a href="/w/퇴직금-지급-기한" style={{ color: "#1D9E75", textDecoration: "underline" }}>14일 이내</a>에 지급해야 해요.
       </p>
 
-      <GreenBox title="신청서 제출 가능 조건">
+      <GreenBox>
         법정 사유 해당: 시행령 제3조 7가지 중 하나<br />
         증빙서류 완비: 계약서·진단서·결정문 등 사유별 원본<br />
         IRP 계좌: 정산액 300만원 초과 시 반드시 사전 개설
@@ -236,7 +236,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="신청서 반려 막는 3가지">
+      <GreenBox>
         증빙서류는 원본 또는 공증 사본으로 제출<br />
         정산 금액은 인사팀 확인 후 기재<br />
         IRP 계좌는 신청서 제출 전에 미리 개설

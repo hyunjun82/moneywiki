@@ -159,7 +159,7 @@ export default function Page() {
         퇴직금은 그 예외 목록에 없어요. 사업주가 5인 미만을 이유로 거부하면 고용노동부(1350)에 신고할 수 있어요.
       </p>
 
-      <GreenBox title="5인 미만 퇴직금 지급 기준 요약">
+      <GreenBox>
         적용 시점: 2010년 12월 1일 이후 퇴직자부터 전면 적용<br />
         지급 조건: 1년 이상 계속 근무 + 4주 평균 주 15시간 이상<br />
         지급 기한: 퇴직일로부터 14일 이내 (지연 시 연 20% 이자 발생)
@@ -241,7 +241,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="폐업 사업주라도 체당금으로 회수 가능해요">
+      <GreenBox>
         고용노동부 체당금 신청 → 퇴직 전 최종 3개월 임금 + 퇴직금 최대 3개월치 지급<br />
         신청 방법: 고용노동부 공식 사이트(moel.go.kr)에서 온라인 접수 가능해요.
       </GreenBox>

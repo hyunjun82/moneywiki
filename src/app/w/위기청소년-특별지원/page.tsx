@@ -6,8 +6,7 @@
 // Q3. 지원 대상, 지원 종류(생활비·의료비 등), 지원 금액, 신청 경로
 // Q4. EligibilityChecker(자격) + GreenBox(지원 종류) + Steps(신청 절차) + FAQ
 
-import { FAQ, GreenBox, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { FAQ, GreenBox, Steps, EligibilityChecker, References, Disclaimer , H2 } from "@/components/article-ui";
 
 const CHECK_ITEMS = [
   { id: "c1", label: "만 9세 이상 만 24세 이하 청소년이에요" },
@@ -77,7 +76,7 @@ export default function Page() {
           boxShadow: "0 4px 12px rgba(29,158,117,0.3)",
         }}
       >
-        청소년상담복지센터 신청하기 →
+        특별지원 신청하기 →
       </a>
 
       <H2>지원 대상과 자격 요건</H2>
@@ -96,14 +95,14 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 항목에 해당하면 청소년상담복지센터에 연락해 상담부터 시작해 보세요. 상황에 따라 빠르게 지원이 연결될 수 있죠. 신청이 어렵거나 무섭게 느껴진다면 1388에 전화해 먼저 상담만 받는 것도 좋아요.
       </p>
-      <EligibilityChecker title="위기청소년 특별지원 자격 체크" items={CHECK_ITEMS} />
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>지원 종류와 월 지원 금액</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
         위기청소년 특별지원은 생활비, 의료비, 학업 지원, 직업훈련비, 법률 지원, 심리·정서 지원 등 여러 항목으로 구성돼요. 생활비 지원이 가장 큰 비중을 차지하고, 개인 상황에 따라 여러 항목을 복합적으로 지원받을 수 있죠. 각 항목의 한도는 전체 월 65만원 안에서 배분되는 방식이에요.
       </p>
 
-      <GreenBox title="위기청소년 특별지원 종류">
+      <GreenBox>
         생활비·의료비·학업지원비·직업훈련비·법률 지원비·심리·정서 상담비. 월 최대 65만원까지 지원하며, 개인 상황에 따라 항목별 금액이 달라져요.
       </GreenBox>
 
@@ -124,21 +123,13 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         심사 결과는 통상 2~3주 내에 나와요. 긴급한 상황이라면 긴급 지원을 먼저 받고 나중에 정식 신청을 하는 방법도 있죠. 긴급 상황은 상담 당일 즉시 연결이 가능해요. 지원 승인 후에도 정기적으로 상담사와 만나 상황을 점검하면서 필요에 따라 지원 내용을 조정받을 수 있죠.
       </p>
-      <Steps items={STEPS} />
+      <Steps steps={STEPS} />
 
       <H2>자주 묻는 질문</H2>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        위기청소년 특별지원에서 가장 많이 궁금해하는 게 익명 또는 비밀 보장 여부예요. 상담과 지원 신청 과정에서 개인 정보는 철저히 보호돼요. 가족에게 알리고 싶지 않은 경우 그 의사를 상담사에게 전달하면 최대한 배려해요. 단, 생명 위협 등 긴급 상황에서는 예외적으로 보호자나 기관에 알릴 수 있죠.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        타 지역에 있어도 신청이 가능한지 묻는 분도 있죠. 현재 거주지나 머무르고 있는 곳 기준으로 가까운 청소년상담복지센터에 연락하면 돼요. 전국 어디서든 1388로 연락하면 인근 센터로 연결해 줘요. 주민등록 주소와 실제 거주지가 다르더라도 현재 있는 곳 기준으로 지원받을 수 있죠.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
-        지원이 거절된 경우 재신청이 가능한지도 자주 물어봐요. 상황이 바뀌거나 추가 서류를 보완하면 재신청할 수 있죠. 센터 상담사와 계속 연락을 유지하면서 도움을 받는 게 좋아요. 처음 거절되더라도 포기하지 말고 상담사에게 이유를 물어보면 개선 방법을 안내받을 수 있죠. 첫 상담에서 많은 걸 준비하지 않아도 되고, 지금 겪고 있는 상황을 솔직하게 이야기하는 것만으로도 도움의 실마리가 생겨요. 급한 상황이라면 전화 한 통으로 즉시 연결이 가능하고, 야간에도 1388은 24시간 운영되고 있죠.
-      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "16px" }}>특별지원에 대해 자주 묻는 질문이에요.</p>
       <FAQ items={FAQ_ITEMS} />
-      <References items={REFS} />
-      <Disclaimer />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 공식 발표 기준으로 작성됐어요. 정책 내용은 변경될 수 있으니 신청 전 해당 기관에서 최신 내용을 확인하세요." />
     </div>
   );
 }

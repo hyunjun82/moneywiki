@@ -159,7 +159,7 @@ export default function Page() {
         주 15시간 미만 초단시간 근로자는 해당되지 않아요.
       </p>
 
-      <GreenBox title="퇴직금 발생 조건">
+      <GreenBox>
         1년 이상 계속 근무 (같은 사업주)<br />
         주 소정근로시간 15시간 이상<br />
         두 조건을 모두 충족해야 퇴직금이 발생해요
@@ -233,7 +233,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="14일 안에 퇴직금 못 받았다면">
+      <GreenBox>
         퇴직 후 14일이 지난 날부터 연 20% 지연이자가 발생해요.<br />
         고용노동부(1350) 또는{" "}
         <a href="https://minwon.moel.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>

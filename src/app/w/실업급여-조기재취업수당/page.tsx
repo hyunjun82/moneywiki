@@ -165,7 +165,7 @@ export default function Page() {
         12개월 안에 퇴사하면 수당 자격이 사라지니까 이 부분을 꼭 기억해두세요.
       </p>
 
-      <GreenBox title="조기재취업수당 핵심 요약">
+      <GreenBox>
         소정급여일수의 <strong>절반 이상 남기고</strong> 취업<br />
         <strong>12개월 이상</strong> 고용 유지 후 신청<br />
         남은 일수 x 1일 구직급여 x <strong>50%</strong> 일시금 지급
@@ -196,7 +196,7 @@ export default function Page() {
         넷째, <strong>이전 직장 복귀는 안 돼요</strong>. 실업급여를 받기 전에 다니던 회사에 다시 들어가는 건 대상이 아니에요.
       </p>
 
-      <BorderBox title="자영업(창업)도 받을 수 있나요?">
+      <BorderBox>
         네, 가능해요. 사업자등록 후 <strong>12개월 이상 사업을 영위</strong>하면 신청 자격이 생기죠.<br />
         12개월 안에 폐업하면 자격이 사라지니 주의하세요.<br />
         실업급여 수급 시작 전부터 준비하던 사업은 대상에서 제외될 수 있고요.

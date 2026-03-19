@@ -161,7 +161,7 @@ export default function Page() {
         판례에서도 등기임원이지만 실질 근로자로 본 사례가 있어요.
       </p>
 
-      <GreenBox title="임원 퇴직금 지급 조건 3가지">
+      <GreenBox>
         ① 정관 조항 또는 주주총회·이사회 결의로 지급 근거 존재<br />
         ② 세법 한도 이내: 월 보수 × 재임연수 × 1/10 × 최대 3배<br />
         ③ IRP 수령: 300만원 초과 시 IRP 계좌로만 수령 (2022년 4월 이후)
@@ -228,7 +228,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="IRP로 받으면 세금 부담을 줄일 수 있어요">
+      <GreenBox>
         임원 퇴직금도 IRP에 넣어두면 과세 이연 효과가 있어요.
         55세 이후 연금으로 받으면 퇴직소득세를 30~40% 절감할 수 있어요.
       </GreenBox>

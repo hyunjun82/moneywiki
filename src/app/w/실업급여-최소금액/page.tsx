@@ -172,7 +172,7 @@ export default function Page() {
         상한선도 같이 알아둬야 해요. 1일 최대 금액은 <strong>68,100원</strong>이에요. 상한과 하한 사이 폭이 고작 2,052원이라서, 결국 대부분의 수급자가 66,048~68,100원 사이에서 정해지는 구조죠. 월 환산으로 보면 약 198만~204만원 범위이고요.
       </p>
 
-      <GreenBox title="2026년 하한액 계산 과정">
+      <GreenBox>
         최저임금 시급 10,030원 x 8시간 = 일당 80,240원<br />
         80,240원 x 80% = <strong>하한액 66,048원</strong> (소수점 절사)<br />
         월 환산: 66,048원 x 30일 = 약 <strong>198만원</strong>
@@ -206,7 +206,7 @@ export default function Page() {
         note="※ 2026년 기준 1일 하한액 66,048원, 상한액 68,100원 적용. 실제 금액은 고용센터 심사 후 확정돼요."
       />
 
-      <BorderBox title="가입기간 · 나이별 수급일수">
+      <BorderBox>
         <strong>[50세 미만]</strong><br />
         1년 미만 → 120일 / 1~3년 → 150일 / 3~5년 → 180일 / 5~10년 → 210일 / 10년 이상 → 240일<br /><br />
         <strong>[50세 이상 또는 장애인]</strong><br />
@@ -231,7 +231,7 @@ export default function Page() {
         퇴직을 앞두고 있다면 내 <a href="/w/실업급여-피보험기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>피보험기간</a>이 다음 구간까지 얼마나 남았는지 꼭 따져보세요. 가입기간이 2년 11개월이라면 한 달만 더 버티면 3년 구간(180일)으로 올라가요. 150일에서 180일로 바뀌면 <strong>약 198만원</strong>을 더 받는 셈이니까요.
       </p>
 
-      <BorderBox title="하한액 66,048원 기준 수급기간별 총액">
+      <BorderBox>
         120일 → <strong>7,925,760원</strong> (약 793만원)<br />
         150일 → <strong>9,907,200원</strong> (약 991만원)<br />
         180일 → <strong>11,888,640원</strong> (약 1,189만원)<br />
@@ -271,7 +271,7 @@ export default function Page() {
         직장을 여러 곳 다녔다면 이전 직장 가입기간이 합산되는지 꼭 따져보세요. A회사 5개월 + B회사 7개월이면 합산 12개월로, 120일이 아니라 <strong>150일</strong> 구간에 해당돼요. 가입기간 합산 하나로 약 200만원을 더 받게 되니까 놓치면 손해가 커요.
       </p>
 
-      <GreenBox title="지금 당장 할 일 3가지">
+      <GreenBox>
         1. <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 피보험자격 이력 조회: 가입기간 정확히 확인<br />
         2. 퇴직 전 3개월 급여명세서 확보: 평균임금 계산용<br />
         3. 수급자격 신청자 온라인 교육 이수: 이수 후 고용센터 방문

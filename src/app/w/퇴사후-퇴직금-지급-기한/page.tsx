@@ -158,7 +158,7 @@ export default function Page() {
         구체적인 지급일과 이자 조항이 빠진 동의서는 서명하지 않는 게 유리해요.
       </p>
 
-      <GreenBox title="퇴직금 지급 기한 핵심 규정">
+      <GreenBox>
         지급 기한: 퇴직일 다음 날부터 14일 이내 달력일 기준 (근로기준법 제36조)<br />
         지연이자: 14일 초과 시 연 20% 자동 발생 (근로기준법 제37조)<br />
         소멸시효: 퇴직일로부터 3년
@@ -224,7 +224,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="3년 이내라면 지금 청구할 수 있어요">
+      <GreenBox>
         퇴직금 청구권 소멸시효는 3년이에요.
         퇴직한 지 1~2년이 지났어도 청구할 수 있어요.
         고용노동청 진정은 무료이고 고용24에서 온라인으로 바로 접수할 수 있어요.

@@ -162,7 +162,7 @@ export default function Page() {
         청구 사실을 서면으로 남겨두지 않으면 나중에 분쟁이 생겼을 때 불리해질 수 있어요.
       </p>
 
-      <GreenBox title="퇴직금 청구 핵심 기준">
+      <GreenBox>
         지급 기한: 퇴직일로부터 14일 이내 (서면 합의 시 연장 가능)<br />
         지연이자: 14일 초과분에 연 20% 자동 발생<br />
         소멸시효: 퇴직일로부터 3년 (내용증명·진정 신청 시 중단)
@@ -240,7 +240,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="노동청 진정, 생각보다 쉬워요">
+      <GreenBox>
         고용노동부 민원마당(minwon.moel.go.kr)에서 집에서 바로 신고할 수 있어요.<br />
         진정 접수 후 보통 2~4주 내에 처리되고, 대부분 퇴직금 지급으로 이어져요.
       </GreenBox>

@@ -209,7 +209,7 @@ export default function Page() {
         퇴직금이 크거나 근속이 길수록 절세 전략이 더 중요해져요.
       </p>
 
-      <GreenBox title="퇴직소득세 핵심 3가지">
+      <GreenBox>
         원천징수: 회사가 자동 차감 후 지급 (별도 신고 불필요)<br />
         IRP 절세: 연금으로 받으면 세금 30~40% 감면<br />
         합산 신고: 두 곳 이상 수령 시 이듬해 5월 종합소득세 신고 필요
@@ -283,7 +283,7 @@ export default function Page() {
       <SectionBadge>절세 체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="IRP 연금 수령 vs 일시금 — 세금 차이">
+      <GreenBox>
         퇴직금 5,000만원·15년 근속 기준으로 일시금 수령 시 세금이 100만원대라면,<br />
         IRP 연금(10년 이상 분할) 수령 시엔 그 60~70%만 내요.<br />
         금액이 클수록 절세 효과도 비례해서 커져요.

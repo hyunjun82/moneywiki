@@ -156,7 +156,7 @@ export default function Page() {
         중간에 취업하면 그 시점에서 바로 중단되고요.
       </p>
 
-      <GreenBox title="특별연장급여 핵심 요약">
+      <GreenBox>
         대상: 구직급여 수급자 전체 (자동 적용, 별도 신청 불필요)<br />
         기간: 최대 60일<br />
         금액: 기존 구직급여의 70% (2026년 기준 하루 최대 47,670원)<br />
@@ -253,7 +253,7 @@ export default function Page() {
         최대 2년까지 가능하니까 연장 기간이 압도적으로 길어요.
       </p>
 
-      <BorderBox title="연장급여 3종 한눈에 비교">
+      <BorderBox>
         <strong>특별연장급여</strong>: 정부가 결정, 자동 적용 / 60일 / 구직급여의 70%<br />
         <strong>개별연장급여</strong>: 본인이 신청, 심사 필요 / 60일 / 구직급여의 70%<br />
         <strong>훈련연장급여</strong>: 훈련 참여 시 적용 / 훈련 기간(최대 2년) / 구직급여의 100%

@@ -153,7 +153,7 @@ export default function Page() {
         이때는 상여금 월 환산액을 직접 계산해서 차이를 확인하고 수정 요청을 해야 하죠.
       </p>
 
-      <GreenBox title="평균임금 공식 한 줄 정리">
+      <GreenBox>
         1일 평균임금 = 3개월 총임금 ÷ 3개월 총 일수(89~92일)<br />
         퇴직금 = 1일 평균임금 × 30 × 근속연수
       </GreenBox>
@@ -215,7 +215,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="공식보다 중요한 건 포함 항목">
+      <GreenBox>
         공식 자체는 단순해요. 핵심은 어떤 항목이 3개월 총임금에 들어가느냐예요.<br />
         상여금·연차수당을 빠뜨리면 실제보다 적은 퇴직금을 받게 돼요.
       </GreenBox>

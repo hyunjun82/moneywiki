@@ -195,7 +195,7 @@ export default function Page() {
         당장 목돈이 필요한 경우에 일시금을 선택하는 게 맞아요.
       </p>
 
-      <GreenBox title="일시금 vs 연금 핵심 비교">
+      <GreenBox>
         일시금: 즉시 수령, 퇴직소득세 전액 납부<br />
         연금 (55세 이후 10년 이상): 퇴직소득세 최대 40% 감면<br />
         300만원 이하 퇴직금: IRP 없이 일반 계좌로 수령 가능
@@ -270,7 +270,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="일시금 인출 전 연금 수령도 검토하세요">
+      <GreenBox>
         55세 이후 연금으로 받으면 퇴직소득세 30% 감면, 10년 이상이면 최대 40% 감면이에요.<br />
         당장 급한 사정이 없다면 IRP에 두고 연금 수령을 선택하는 게 세금 면에서 유리해요.
       </GreenBox>

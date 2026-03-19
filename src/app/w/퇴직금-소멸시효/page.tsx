@@ -171,7 +171,7 @@ export default function Page() {
         시효가 남아있는 지금 행동하는 게 가장 확실해요.
       </p>
 
-      <GreenBox title="소멸시효 핵심 3가지">
+      <GreenBox>
         기산점: 퇴직일 당일 (근로기준법 제49조)<br />
         기간: 3년 — 이후 법적 청구권 소멸<br />
         중단: 내용증명 발송(6개월) → 소송·지급명령 신청(완전 중단)
@@ -236,7 +236,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="시효가 촉박하다면 지금 바로 내용증명부터">
+      <GreenBox>
         내용증명 발송 하나로 6개월을 벌 수 있어요.<br />
         '퇴직금 ○○만원 지급 요청, 미지급 시 법적 조치 예정' — 이 정도면 충분해요.<br />
         카카오 전자내용증명으로 10분 안에 발송 가능하고, 발송 기록이 법적 증거가 돼요.

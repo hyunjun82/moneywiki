@@ -6,8 +6,7 @@
 // Q3. 농업경영체 등록 요건, 지원 금액(건강보험 22%, 연금 50%), 신청 방법
 // Q4. EligibilityChecker(자격) + DocTable(서류) + Steps(신청 절차) + FAQ
 
-import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer , H2 } from "@/components/article-ui";
 
 const CHECK_ITEMS = [
   { id: "c1", label: "농업경영체 등록이 완료된 상태예요" },
@@ -84,7 +83,7 @@ export default function Page() {
           boxShadow: "0 4px 12px rgba(29,158,117,0.3)",
         }}
       >
-        국민연금공단에서 신청하기 →
+        보험료 지원 신청하기 →
       </a>
 
       <H2>지원 자격과 농업경영체 등록</H2>
@@ -100,7 +99,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 항목에 해당하면 보험료 지원 신청이 가능해요. 농업경영체 등록이 안 된 경우 먼저 등록을 진행해야 해요. 등록과 지원 신청은 별도 기관에서 처리되므로 순서대로 진행하는 게 중요해요.
       </p>
-      <EligibilityChecker title="농업인 보험료 지원 자격 체크" items={CHECK_ITEMS} />
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>지원 금액과 혜택</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -123,21 +122,13 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         신청 후 심사를 거쳐 승인되면 다음 달 고지서부터 지원이 반영돼요. 농업경영체 등록 정보가 갱신되면 별도 신청 없이 지원이 유지돼요. 다만 경작 규모가 기준 이하로 줄어들거나 등록이 취소되면 지원도 중단돼요. 경작 면적이 변동됐을 때 농관원에 갱신 신고를 빠르게 하면 지원이 원활하게 이어져요. 신고 누락으로 지원이 중단됐다가 재신청하면 중단 기간 소급 지원이 안 되니 변경 사항은 즉시 처리하는 게 중요해요.
       </p>
-      <DocTable title="신청 시 필요 서류" items={DOCS} />
+      <DocTable docs={DOCS} />
 
       <H2>자주 묻는 질문</H2>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        농업인 보험료 지원에서 가장 자주 묻는 게 도시에 살면서 농사를 짓는 경우도 해당되는지예요. 주소지와 농지 위치가 달라도 농업경영체 등록 기준을 충족하면 지원받을 수 있죠. 농지는 지방에 있어도 주소지가 도시이면 등록 가능해요. 실제로 경작하고 있다는 것을 증명할 수 있어야 해요. 영농일지나 농자재 구입 영수증, 농산물 판매 실적 증빙 자료 등이 경작 사실 증명으로 활용될 수 있죠.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        임차 농지로 농사를 짓는 경우도 해당되는지 궁금한 분도 있죠. 직접 경작하는 경우라면 임차 농지도 면적 산정에 포함돼요. 임대차 계약서를 제출하면 경작 면적으로 인정받을 수 있죠. 계약서가 없는 경우 구두 합의만으로는 인정되지 않을 수 있어서, 임차 시 반드시 계약서를 작성해두는 게 좋아요.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
-        지원 기간 제한이 있는지도 자주 물어봐요. 농업경영체 등록이 유지되는 한 지원이 계속돼요. 매년 별도 갱신 없이 자동으로 유지되지만, 3년마다 경영체 실태 조사가 있어서 경작 상황을 보고해야 해요. 실태 조사에서 경작 사실이 확인되지 않으면 등록이 취소되고 지원도 중단될 수 있죠. 은퇴 후에도 농업경영체 등록을 유지하고 경작을 지속하는 경우 지원이 이어지기 때문에, 나이에 관계없이 농업을 계속하는 한 혜택을 이어갈 수 있죠.
-      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "16px" }}>보험료 지원에 대해 자주 묻는 질문이에요.</p>
       <FAQ items={FAQ_ITEMS} />
-      <References items={REFS} />
-      <Disclaimer />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 공식 발표 기준으로 작성됐어요. 정책 내용은 변경될 수 있으니 신청 전 해당 기관에서 최신 내용을 확인하세요." />
     </div>
   );
 }

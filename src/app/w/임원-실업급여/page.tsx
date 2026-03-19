@@ -139,13 +139,13 @@ export default function Page() {
         직함이 아니라 <strong>실질</strong>이 판단 기준이에요.
       </p>
 
-      <BorderBox title="유형별 고용보험 적용">
+      <BorderBox>
         대표이사 &rarr; 고용보험 <strong>미적용</strong> (실업급여 불가)<br />
         등기이사 &rarr; 고용보험 <strong>미적용</strong> (원칙적 불가)<br />
         비등기이사 &rarr; 근로자성 인정 시 <strong>적용 가능</strong>
       </BorderBox>
 
-      <GreenBox title="핵심 판단 기준">
+      <GreenBox>
         고용보험법은 직함이 아니라 <strong>실질</strong>을 봐요.<br />
         등기부에 이름이 있어도 실제로 근로자처럼 일했다면 예외 가능,<br />
         등기부에 이름이 없는 비등기이사는 근로자 인정이 훨씬 수월하죠.
@@ -180,7 +180,7 @@ export default function Page() {
         퇴직 후에는 회사 시스템 접근이 막히니까, <strong>재직 중에 챙기는 게 필수</strong>예요.
       </p>
 
-      <BorderBox title="근로자성 판단 기준 4가지">
+      <BorderBox>
         1. 업무 지시를 받고 일했는지 (지휘·감독 여부)<br />
         2. 출퇴근 시간이 정해져 있었는지<br />
         3. 고정 급여를 받았는지 (성과급만인지 여부)<br />
@@ -256,7 +256,7 @@ export default function Page() {
         사전 상담은 무료이고, 심사 결과에 영향을 주지 않으니 부담 없이 연락하면 돼요. 불인정 통보를 받더라도 <a href="/w/실업급여-이의신청" style={{ color: "#1D9E75", textDecoration: "underline" }}>이의신청</a>으로 다툴 수 있고요.
       </p>
 
-      <GreenBox title="유형별 행동 정리">
+      <GreenBox>
         대표이사 &rarr; 실업급여 불가, 임원퇴직금 규정 확인<br />
         등기이사 &rarr; 근로자성 입증 시 예외 가능, 증빙자료 필수<br />
         비등기이사 &rarr; 고용보험 가입 확인, 180일 이상이면 신청 가능

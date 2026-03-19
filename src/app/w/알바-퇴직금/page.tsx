@@ -166,7 +166,7 @@ export default function Page() {
         4대보험에 미가입됐어도 실제 근무 사실만 증명하면 받을 수 있어요.
       </p>
 
-      <GreenBox title="알바 퇴직금 핵심 조건">
+      <GreenBox>
         1년 이상 같은 사업장에서 계속 근무<br />
         4주 평균 주 15시간 이상 근로<br />
         업종·규모·4대보험 가입 여부 무관
@@ -236,7 +236,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="증거 없어도 진정 접수 가능해요">
+      <GreenBox>
         카카오톡 출근 요청, 통장 입금 내역, 동료 증언만 있어도 진정 접수가 가능해요.<br />
         4대보험 가입 이력은 고용24(ei.go.kr)에서 무료로 조회할 수 있어요.
       </GreenBox>

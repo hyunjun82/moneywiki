@@ -180,7 +180,7 @@ export default function Page() {
         상한액은 <a href="https://www.moel.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용노동부</a>가 매년 초에 고시해요. 하한액은 최저시급 × 8시간 × 80%로 산출하죠: 2026년 최저시급 10,320원 기준이에요. 이 두 숫자가 사실상 모든 직장인의 실업급여 월 수령액을 결정하는 셈이에요.
       </p>
 
-      <GreenBox title="2026년 핵심 수치 정리">
+      <GreenBox>
         1일 상한액: 68,100원 → 월 약 204만원<br />
         1일 하한액: 66,048원 → 월 약 198만원<br />
         계산 공식: 퇴직 전 3개월 평균임금 × 60% ÷ 30일<br />
@@ -220,7 +220,7 @@ export default function Page() {
         계산기 결과에서 눈여겨볼 건 &quot;예상 총 수령액&quot;이에요. 월 수령액은 비슷해 보여도, 수급기간에 따라 총액이 800만원대에서 1,800만원대까지 크게 벌어지니까요.
       </p>
 
-      <BorderBox title="월급별 실업급여 요약 (2026년)">
+      <BorderBox>
         월급 330만원 이하 → 하한액 적용 → 월 약 198만원<br />
         월급 341만원 이상 → 상한액 적용 → 월 약 204만원<br />
         대부분 직장인은 월 198~204만원 범위<br />
@@ -268,7 +268,7 @@ export default function Page() {
         <a href="/w/실업급여-부정수급" style={{ color: "#1D9E75", textDecoration: "underline" }}>부정수급</a>이 되니까 꼭 신고하세요.
       </p>
 
-      <GreenBox title="금액이 다르다면 이렇게 하세요">
+      <GreenBox>
         고용센터에 &quot;평균임금 산정 내역서&quot;를 요청하세요<br />
         포함된 항목과 제외된 항목이 상세하게 나와요<br />
         이의가 있으면 14일 이내 이의신청이 가능해요

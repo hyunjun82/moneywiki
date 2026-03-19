@@ -156,7 +156,7 @@ export default function Page() {
         네 종류를 간략히 정리하면 이렇죠. <strong>조기재취업수당</strong>은 빨리 취업한 보상, <strong>직업능력개발수당</strong>은 직업훈련 참여 지원금, <strong>광역구직활동비</strong>는 먼 거리 면접 교통비, <strong>이주비</strong>는 취업 목적 이사 비용이에요. 대상과 신청 방식이 다 다르니 하나씩 살펴볼게요.
       </p>
 
-      <GreenBox title="취업촉진수당 4가지 한눈에 보기">
+      <GreenBox>
         1. <strong>조기재취업수당</strong>: 수급기간 절반 이상 남기고 재취업 시 남은 급여의 50% 일시금<br />
         2. <strong>직업능력개발수당</strong>: 고용센터 지시 훈련 참여 시 참여일수에 따라 지급<br />
         3. <strong>광역구직활동비</strong>: 거주지에서 50km 이상 면접 시 교통비·숙박비 실비 지급<br />
@@ -197,7 +197,7 @@ export default function Page() {
         note="※ 수급기간 절반 이상 남기고 재취업 + 12개월 고용 유지가 전제 조건이에요. 실제 금액은 고용센터 심사 후 확정돼요."
       />
 
-      <BorderBox title="조기재취업수당 계산 예시">
+      <BorderBox>
         수급기간 180일 중 60일 수급 후 재취업 → 남은 일수 120일<br />
         지급 일수: 120일 x 50% = <strong>60일</strong><br />
         1일 구직급여 66,048원 x 60일 = <strong>3,962,880원 일시금</strong><br /><br />
@@ -231,7 +231,7 @@ export default function Page() {
         이것도 이사 전에 고용센터에서 <strong>사전 승인이 필수</strong>이고, 지방에서 수도권으로 이동하거나 다른 도시로 옮기는 경우에 활용하면 돼요.
       </p>
 
-      <GreenBox title="사전 승인이 필요한 수당: 순서를 지키세요">
+      <GreenBox>
         <strong>광역구직활동비</strong>: 면접 출발 전 고용센터 승인 → 면접 → 증빙 제출<br />
         <strong>이주비</strong>: 이사 전 고용센터 승인 → 이사 → 증빙 제출<br /><br />
         먼저 하고 나중에 신청하면 지급 대상에서 빠져요. 순서가 핵심이죠.
@@ -260,7 +260,7 @@ export default function Page() {
         &quot;사후 신청 불가&quot;라는 원칙을 반드시 기억하세요.
       </p>
 
-      <BorderBox title="수당별 신청 시점과 방법">
+      <BorderBox>
         <strong>조기재취업수당</strong> → 재취업 후 12개월 고용 유지 → 고용24 온라인 신청<br />
         <strong>직업능력개발수당</strong> → 훈련 참여 → 실업인정일에 자동 반영 (별도 신청 불필요)<br />
         <strong>광역구직활동비</strong> → 면접 전 고용센터 사전 승인 → 면접 후 증빙 제출<br />
@@ -288,7 +288,7 @@ export default function Page() {
         &quot;몰라서 못 받는 돈&quot;이 가장 아까운 돈이에요. 해당되는 건 전부 신청하세요.
       </p>
 
-      <GreenBox title="수당 최대 활용 전략">
+      <GreenBox>
         구직급여 수급 시작 → 직업훈련 참여 → <strong>직업능력개발수당</strong> 수령<br />
         먼 거리 면접 시 → 출발 전 사전 승인 → <strong>광역구직활동비</strong> 수령<br />
         수급기간 절반 이상 남기고 재취업 → 12개월 유지 → <strong>조기재취업수당</strong> 수령<br />

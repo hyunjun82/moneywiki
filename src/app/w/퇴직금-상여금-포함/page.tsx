@@ -180,7 +180,7 @@ export default function Page() {
         단, '최소 OO만원 보장' 같은 하한선이 있는 성과급은 그 하한선 금액만큼은 고정성이 인정돼요.
       </p>
 
-      <GreenBox title="상여금 포함 여부 기준 요약">
+      <GreenBox>
         정기·일률·고정 지급 상여금 → 퇴직금 계산에 포함<br />
         명절 상여, 분기 상여, 고정 하한선 성과급 → 포함<br />
         실적 변동 성과급, 일회성 특별 포상금 → 제외
@@ -262,7 +262,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="차액이 클수록, 빨리 청구할수록 유리해요">
+      <GreenBox>
         연 상여금 600만원 × 근속 10년 → 약 500만원 차이<br />
         상여금이 크고 근속기간이 길수록 차이도 커져요<br />
         소멸시효 3년: 퇴직일 기준, 지나면 청구권 소멸

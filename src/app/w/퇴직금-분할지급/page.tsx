@@ -163,7 +163,7 @@ export default function Page() {
         합의서를 쓸 때는 각 회차 지급일과 금액을 구체적으로 적어야 해요.
       </p>
 
-      <GreenBox title="분할지급 합의 핵심 조건">
+      <GreenBox>
         근로자 자발적 동의 + 서면 합의 = 유효<br />
         회사 일방 분할지급 = 근로자퇴직급여보장법 위반<br />
         합의하더라도 14일 초과분: 연 20% 지연이자 청구 가능
@@ -236,7 +236,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="이자 포기 조항, 이렇게 대응하세요">
+      <GreenBox>
         합의서에 '이자 포기', '지연이자 면제' 등의 조항이 있다면 삭제 요청하거나 서명을 거부할 수 있어요.<br />
         지연이자는 근로기준법 제37조에서 보장하는 법적 권리예요. 포기 조항은 무효가 될 수 있어요.<br />
         확신이 안 서면 법률구조공단(132)에서 무료 상담을 받아보세요.

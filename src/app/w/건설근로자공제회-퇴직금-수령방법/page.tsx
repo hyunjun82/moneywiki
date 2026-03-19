@@ -156,7 +156,7 @@ export default function Page() {
         공제회 앱이나 홈페이지(cw.or.kr)에서 바로 확인할 수 있어요.
       </p>
 
-      <GreenBox title="퇴직공제금 수급 조건">
+      <GreenBox>
         적립일수 252일 이상 (여러 현장 합산)<br />
         건설업 완전 종료 또는 만 65세 이상<br />
         사망·장해·외국인 출국 시 예외 적용
@@ -221,7 +221,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="건설 현장 여러 곳에서 일했다면 합산해요">
+      <GreenBox>
         공제회에 가입된 현장이라면 어디서든 적립된 날수가 모두 합산돼요.
         공제회 앱에서 현장별 적립내역을 바로 확인할 수 있어요.
       </GreenBox>

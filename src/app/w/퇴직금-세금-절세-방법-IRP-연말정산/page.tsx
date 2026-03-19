@@ -177,7 +177,7 @@ export default function Page() {
         연 900만원 한도(연금저축 합산) 안에서 소득 구간에 따라 13.2~16.5%를 돌려받아요.
       </p>
 
-      <GreenBox title="IRP 절세 방법 3가지">
+      <GreenBox>
         ① 과세이연: IRP 이체 → 퇴직소득세 납부 시점을 연금 수령 때로 연기<br />
         ② 감면 수령: 55세 이후 10년+ 연금 수령 → 퇴직소득세 40% 감면<br />
         ③ 세액공제: IRP 추가 납입 연 900만원 한도 → 연말정산 최대 148만 5,000원 환급
@@ -258,7 +258,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="55세 전 인출하면 오히려 손해예요">
+      <GreenBox>
         55세 이전 인출 → 퇴직소득세 전액 + 기타소득세(16.5%) 부과<br />
         운용 중 발생한 수익에도 세금이 붙어서 절세 효과가 완전히 사라져요.<br />
         급하게 쓸 돈이 있다면 일부는 처음부터 일시금으로 수령하는 방법도 있어요.

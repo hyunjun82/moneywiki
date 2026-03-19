@@ -319,7 +319,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="퇴직 시 한 번에 받는 게 유리한 경우가 있어요">
+      <GreenBox>
         목돈이 급하지 않다면 퇴직 시 전액 받는 게 세금 면에서 나아요.
         근속기간이 길수록 근속연수공제가 커져서 최종 퇴직 시 세금이 더 적고,
         <a href="/w/퇴직금-IRP-수령방법" style={{ color: "#1D9E75", textDecoration: "underline" }}>IRP 연금 수령</a>을 선택하면 추가로 30~40% 절세 효과도 볼 수 있어요.

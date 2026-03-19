@@ -169,7 +169,7 @@ export default function Page() {
         두 방법 모두 퇴직 후 바로 챙겨야 놓치지 않아요.
       </p>
 
-      <GreenBox title="퇴직소득세 환급·절세 방법 요약">
+      <GreenBox>
         근속 기간 오기재 → 경정청구로 차액 환급 (5년 내)<br />
         퇴직금 산정 기초 오류 → 경정청구로 차액 환급 (5년 내)<br />
         IRP 연금 수령 전환 → 퇴직소득세 30~40% 감면
@@ -238,7 +238,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="연금으로 받으면 세금이 덜 나와요">
+      <GreenBox>
         IRP에서 바로 빼지 않고 55세 이후 연금으로 받으면 퇴직소득세를 30~40% 줄일 수 있어요.<br />
         이미 낸 세금 중 과다 납부된 부분은 경정청구로 돌려받을 수 있어요.
       </GreenBox>

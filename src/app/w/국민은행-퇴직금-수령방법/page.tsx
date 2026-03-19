@@ -163,7 +163,7 @@ export default function Page() {
         증권사 IRP보다 ETF 상품 종류가 적을 수 있지만, 편의성과 접근성은 국민은행이 높아요.
       </p>
 
-      <GreenBox title="KB국민은행 IRP 핵심 정보">
+      <GreenBox>
         수수료: 원리금보장형 0%, 실적배당형 연 0.2~0.5%<br />
         개설 방법: KB스타뱅킹 앱 또는 영업점 방문 (10분 이내)<br />
         연금 수령: 55세 이후, 퇴직소득세 30% 절감 가능
@@ -228,7 +228,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="55세 이후 연금으로 받으면 세금이 줄어요">
+      <GreenBox>
         IRP에서 바로 인출하지 않고 55세부터 연금으로 받으면 퇴직소득세의 30%를 아낄 수 있어요.
         장기 보유 계획이라면 연금 전환을 고려해보세요.
       </GreenBox>

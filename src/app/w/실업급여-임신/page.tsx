@@ -128,7 +128,7 @@ export default function Page() {
         고용센터에 임신 사실을 알리면 담당자가 구직활동 방식을 조정해줘요. 면접 대신 워크넷 온라인 입사지원이나 직업상담으로 인정해주는 경우가 많죠. 만삭인데 면접장을 돌아다녀야 하는 건 아니에요.
       </p>
 
-      <GreenBox title="핵심 요건 정리">
+      <GreenBox>
         퇴직 전 18개월 내 고용보험 가입 180일 이상<br />
         비자발적 퇴직 또는 정당한 사유의 자발적 퇴직<br />
         임신 여부는 수급자격 판단에 영향을 주지 않아요
@@ -159,7 +159,7 @@ export default function Page() {
         대부분의 분이 출산 후 6개월~1년쯤에 구직활동을 시작하니까 시간은 넉넉한 편이에요.
       </p>
 
-      <BorderBox title="수급기간 연장 요약">
+      <BorderBox>
         원래 수급기간: 퇴직 다음 날부터 12개월<br />
         연장 사유: 임신, 출산, 질병, 부상 등<br />
         연장 한도: 최대 4년<br />
@@ -228,7 +228,7 @@ export default function Page() {
         <a href="https://www.moel.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용노동부</a> 상담 전화 1350은 무료이고, 내 상황에 딱 맞는 안내를 받을 수 있죠. 연장 기한이 얼마나 남았는지도 이때 같이 살펴보세요.
       </p>
 
-      <GreenBox title="한 줄 정리">
+      <GreenBox>
         퇴직 → 수급자격 인정 + 연장 신청 → 출산 → 회복 후 구직활동 → 실업급여 수급
       </GreenBox>
 

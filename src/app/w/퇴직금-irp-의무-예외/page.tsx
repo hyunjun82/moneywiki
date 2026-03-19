@@ -161,7 +161,7 @@ export default function Page() {
         외국인 출국 예외는 출국 전 정산을 해야 하니 퇴직 타이밍이 중요해요.
       </p>
 
-      <GreenBox title="IRP 의무 예외 조건 5가지 (근로자퇴직급여보장법 제9조)">
+      <GreenBox>
         1. 퇴직급여 300만원 이하 (세전 총액 기준)<br />
         2. 만 55세 이상 퇴직 (퇴직일 기준, 생일이 퇴직일 이전이어야 함)<br />
         3. 외국인 근로자 출국<br />
@@ -230,7 +230,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="예외라도 IRP를 선택하면 세금을 줄일 수 있어요">
+      <GreenBox>
         만 55세 이상이어도 IRP를 선택할 수 있어요.<br />
         55세 이후 연금으로 수령하면 퇴직소득세를 30% 줄일 수 있어서, 노후 자금으로 쓸 계획이라면 IRP를 고려하는 게 유리해요.
       </GreenBox>

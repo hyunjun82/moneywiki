@@ -179,7 +179,7 @@ export default function Page() {
         가입 여부가 헷갈린다면 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 바로 조회할 수 있죠. 가입기간까지 한눈에 나오니까, 폐업을 결정하기 전에 가입 상태부터 점검하세요. 아래 체크리스트로 내 상황을 먼저 확인해 보세요.
       </p>
 
-      <GreenBox title="나의 수급자격 체크">
+      <GreenBox>
         4가지를 모두 충족하면 자영업자 실업급여를 신청할 수 있죠.
       </GreenBox>
       <EligibilityChecker items={CHECK_ITEMS} />
@@ -198,7 +198,7 @@ export default function Page() {
         두 조건 외에 하나 더 챙겨야 할 게 있죠. <strong>사업자등록 폐업 처리가 완료</strong>된 상태여야 신청이 가능해요. 국세청 홈택스에서 폐업 신고를 먼저 해야 하고, 폐업 후에는 재취업이나 재창업 의사가 있다는 걸 고용센터에 보여줘야 하고요.
       </p>
 
-      <BorderBox title="자영업자 vs 일반 근로자 수급 조건 비교">
+      <BorderBox>
         <strong>[자영업자]</strong><br />
         고용보험 가입 1년 이상 / 비자발적 폐업 / 재취업·재창업 의사<br /><br />
         <strong>[일반 근로자]</strong><br />
@@ -247,7 +247,7 @@ export default function Page() {
         이 구조를 알면 하나가 보이죠. 사업이 안정적일 때 등급을 올려놓는 게 보험 차원에서 훨씬 유리해요. 보험료가 좀 더 나가더라도, 폐업이라는 최악의 상황에서 받는 금액이 크게 달라지니까요. 지금 가입 중이라면 등급 변경을 한번 검토해 보세요.
       </p>
 
-      <BorderBox title="자영업자 수급기간 (나이 무관, 가입기간 기준)">
+      <BorderBox>
         1년 이상~3년 미만 → 120일<br />
         3년 이상~5년 미만 → 150일<br />
         5년 이상~10년 미만 → 180일<br />
@@ -268,7 +268,7 @@ export default function Page() {
         사업주 입장에서 마지막으로 반드시 챙겨야 할 게 하나 남았어요. 직원들의 <strong>이직확인서 발급</strong>이죠. 고용보험 상실신고와 이직확인서 제출은 사업주 의무예요. 이걸 안 하면 직원들이 실업급여를 신청할 수 없어서 고용센터에서 사업주를 추적하게 돼요. 폐업 정리와 함께 깔끔하게 처리하세요.
       </p>
 
-      <GreenBox title="폐업 시 사업주가 처리할 것">
+      <GreenBox>
         1. 사업자등록 폐업 신고 (홈택스)<br />
         2. 직원 고용보험 상실신고 + 이직확인서 발급<br />
         3. 체불임금이 있으면 근로복지공단 체당금 안내<br />

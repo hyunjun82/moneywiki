@@ -6,8 +6,7 @@
 // Q3. 지원 대상, 초등 연 20만원/중학 30만원, 사용처, 신청 방법
 // Q4. EligibilityChecker(자격) + DocTable(서류) + Steps(신청 절차) + FAQ
 
-import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer , H2 } from "@/components/article-ui";
 
 const CHECK_ITEMS = [
   { id: "c1", label: "국제결혼 가정 또는 외국인 부모 가정의 자녀예요" },
@@ -85,7 +84,7 @@ export default function Page() {
           boxShadow: "0 4px 12px rgba(29,158,117,0.3)",
         }}
       >
-        복지로에서 신청하기 →
+        교육활동비 신청하기 →
       </a>
 
       <H2>신청 자격과 다문화가족 기준</H2>
@@ -101,7 +100,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 항목에 해당하면 신청이 가능해요. 소득 기준이 애매하다면 주민센터에서 미리 확인해 보는 게 좋아요. 소득 조사 없이 간단한 상담만으로도 해당 여부를 파악할 수 있죠.
       </p>
-      <EligibilityChecker title="다문화가족 자녀 교육활동비 자격 체크" items={CHECK_ITEMS} />
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>지원 금액과 사용 방법</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -127,24 +126,13 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         신청 후 심사에 2~4주가 걸려요. 승인되면 지정 계좌로 교육활동비가 입금돼요. 매년 재신청이 필요하기 때문에 매학기 초에 신청 일정을 확인하는 게 좋아요. 신청 기간을 놓치면 그 해 지원을 받지 못하기 때문에 학교에서 안내하는 공지를 미리 확인해 두는 게 중요해요.
       </p>
-      <DocTable title="신청 시 필요 서류" items={DOCS} />
+      <DocTable docs={DOCS} />
 
       <H2>자주 묻는 질문</H2>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        교육활동비를 신청하면서 처음에 서류 목록이 너무 많아 당황하는 경우가 많아요. 실제로 꼭 필요한 핵심 서류는 가족관계증명서, 재학증명서, 소득 증빙 서류 세 가지예요. 나머지는 사정에 따라 제출하거나 생략할 수 있는 경우가 많아서 주민센터에서 먼저 확인하는 게 빠르죠. 처음 신청이라면 방문 상담이 서류 준비 시간을 크게 줄여줘요.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        다문화가족 교육활동비에서 가장 많이 묻는 게 외국인 어머니 또는 아버지가 있으면 무조건 해당되는지예요. 다문화가족이라도 소득 기준을 초과하면 지원 대상에서 제외돼요. 소득 기준 중위소득 100% 이하라는 조건이 함께 충족되어야 해요. 소득 기준을 정확히 모르면 복지로 상담 전화(129)에 문의하면 바로 확인할 수 있죠.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        이미 다른 교육 지원을 받고 있으면 중복 수령이 안 되는지 궁금한 분도 있죠. 일부 교육 지원과는 중복 수령이 제한될 수 있죠. 어떤 지원을 받고 있는지 주민센터 담당자에게 알리고 중복 여부를 살펴보는 게 좋아요. 중복 수령이 금지된 제도는 대부분 명시적으로 안내되기 때문에 미리 파악해두면 불이익을 피할 수 있죠.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
-        학기 중에 신청해도 되는지 궁금한 분도 있죠. 보통 학기 초에 신청 기간이 집중되지만, 중간에도 신청 가능해요. 다만 지원금 예산이 소진되면 지원이 마감될 수 있어서 이른 시기에 신청하는 게 유리해요. 신청 마감일은 지자체마다 다를 수 있어서 거주지 주민센터에 일정을 미리 확인하는 게 중요해요. 신청 마감 전에 공지를 놓치지 않으려면 복지로 알림 서비스나 다누리 앱 알림을 켜두는 것도 좋은 방법이에요.
-      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "16px" }}>교육활동비에 대해 자주 묻는 질문이에요.</p>
       <FAQ items={FAQ_ITEMS} />
-      <References items={REFS} />
-      <Disclaimer />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 공식 발표 기준으로 작성됐어요. 정책 내용은 변경될 수 있으니 신청 전 해당 기관에서 최신 내용을 확인하세요." />
     </div>
   );
 }

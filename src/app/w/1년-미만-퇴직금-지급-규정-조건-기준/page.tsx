@@ -166,7 +166,7 @@ export default function Page() {
         퇴직 시 그 금액을 <a href="/w/퇴직금-IRP-계좌" style={{ color: "#1D9E75", textDecoration: "underline" }}>IRP 계좌</a>로 받을 수 있어요.
       </p>
 
-      <GreenBox title="1년 미만 퇴직금 지급 여부">
+      <GreenBox>
         법정 퇴직금(DB형·퇴직금 제도): 1년 미만 → 지급 의무 없음<br />
         DC형 퇴직연금: 1년 미만도 → 납입된 금액은 수령 가능<br />
         회사 자발적 지급: 가능하지만 의무는 아님
@@ -244,7 +244,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="DC형이면 1년 미만도 포기하지 마세요">
+      <GreenBox>
         회사에 DC형 퇴직연금이 있다면 납입된 금액만큼은 받을 수 있어요.<br />
         금융감독원 통합연금포털(100lifeplan.fss.or.kr)에서 내 퇴직연금 유형을 조회하세요.
       </GreenBox>

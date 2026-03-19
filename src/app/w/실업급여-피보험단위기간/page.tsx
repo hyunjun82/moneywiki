@@ -159,7 +159,7 @@ export default function Page() {
         달력상 6개월이 넘어도 무급일이 많은 직장이면 180일에 못 미칠 수 있죠.
       </p>
 
-      <GreenBox title="포함 vs 제외 기준">
+      <GreenBox>
         <p style={{ margin: "0 0 4px" }}><strong>포함</strong>: 출근일, 유급휴일(일요일, 공휴일), 연차휴가, 유급병가</p>
         <p style={{ margin: 0 }}><strong>제외</strong>: 무급휴일(무급 토요일 등), 결근일, 무급휴직 기간</p>
       </GreenBox>
@@ -191,7 +191,7 @@ export default function Page() {
         퇴직 전에 반드시 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 조회해보세요.
       </p>
 
-      <BorderBox title="월별 적립 추정 (주 5일, 토요 무급 기준)">
+      <BorderBox>
         <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}>6개월 → 약 156일 (180일 미달)</p>
         <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}>7개월 → 약 182일 (180일 충족)</p>
         <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}>9개월 → 약 234일</p>
@@ -273,7 +273,7 @@ export default function Page() {
         &quot;수급자격&quot;은 피보험단위기간으로, &quot;수급기간&quot;은 피보험기간으로 결정된다고 기억해두세요.
       </p>
 
-      <GreenBox title="피보험단위기간 vs 피보험기간">
+      <GreenBox>
         <p style={{ margin: "0 0 4px" }}><strong>피보험단위기간</strong>: 실제 근무일 + 유급휴일 → 수급자격 판단 (180일)</p>
         <p style={{ margin: 0 }}><strong>피보험기간</strong>: 고용보험 가입 총 기간 → 소정급여일수 결정 (1년/3년/5년/10년 구간)</p>
       </GreenBox>

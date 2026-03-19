@@ -185,7 +185,7 @@ export default function Page() {
         임금 인상폭이 낮거나 ETF 투자에 관심 있는 분들에게 DC형이 유리할 수 있어요.
       </p>
 
-      <GreenBox title="DC형 핵심 구조">
+      <GreenBox>
         연봉 ÷ 12 = 연간 납입액 (법정 최소 기준)<br />
         예: 연봉 6,000만원 → 연 500만원 IRP 계좌에 납입<br />
         운용 수익은 전부 근로자 본인 몫 (손실도 본인 부담)
@@ -249,7 +249,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="DB형과 DC형 중 어느 게 유리한지 비교하는 방법">
+      <GreenBox>
         퇴직 직전 3개월 평균임금 × 근속연수가 DC형 잔액보다 크다면 DB형이 유리해요.
         반대로 ETF 수익률이 임금 인상률보다 높게 쌓였다면 DC형이 유리해요.
         <a href="/w/퇴직금-제도-종류" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직금 제도 종류 비교</a>에서 더 자세히 확인할 수 있어요.

@@ -180,7 +180,7 @@ export default function Page() {
         하한액은 최저임금 시급의 80%에 1일 8시간을 곱해서 매년 새로 정해져요. <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>이 이 최저 보장선을 두고 있죠. 최저임금이 오르면 하한액도 같이 올라가는 구조라서, 저소득 근로자도 일정 수준 이상은 보장받게 되죠.
       </p>
 
-      <GreenBox title="2026년 실업급여 월 금액 요약">
+      <GreenBox>
         상한: 1일 68,100원 x 30일 = 월 약 <strong>204만원</strong><br />
         하한: 1일 66,048원 x 30일 = 월 약 <strong>198만원</strong><br />
         대부분의 수급자 → <strong>198만~204만원</strong> 범위
@@ -207,7 +207,7 @@ export default function Page() {
         월급이 <strong>340만원 이상</strong>이었다면 반대 상황이에요. 60%를 계산하면 상한액을 넘기거든요. 월급 400만원의 60%는 240만원인데, 상한액(204만원)이 적용돼서 실제로는 <strong>월 약 204만원</strong>만 받게 돼요. 월급 1,000만원이었어도 결과는 같죠.
       </p>
 
-      <BorderBox title="월급별 실업급여 예상 금액">
+      <BorderBox>
         월급 200만원 → 하한액 적용 → <strong>월 약 198만원</strong><br />
         월급 300만원 → 하한액 적용 → <strong>월 약 198만원</strong><br />
         월급 340만원 → 상한액 근처 → <strong>월 약 204만원</strong><br />
@@ -258,7 +258,7 @@ export default function Page() {
         <strong>50세 이상이거나 장애인</strong>이면 수급일수가 더 많아요. 피보험기간 10년 이상일 때 최대 270일(약 9개월)까지 받을 수 있죠. 270일 기준 68,100원 x 270일 = <strong>약 1,839만원</strong>이에요. 나이와 가입기간이 수급일수를 바꾸니까, 이 표를 미리 보고 본인 구간을 파악해두는 게 좋아요.
       </p>
 
-      <BorderBox title="총 수급 가능 금액 (상한액 기준)">
+      <BorderBox>
         120일(약 4개월) → 약 <strong>817만원</strong><br />
         180일(약 6개월) → 약 <strong>1,226만원</strong><br />
         240일(약 8개월) → 약 <strong>1,634만원</strong><br />

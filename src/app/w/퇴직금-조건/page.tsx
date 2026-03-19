@@ -154,7 +154,7 @@ export default function Page() {
         최초 입사일부터 합산하죠. 단, 계약 사이에 공백이 크거나 완전히 다른 직무로 전환됐다면 끊길 수 있어요.
       </p>
 
-      <GreenBox title="퇴직금 발생 조건 2가지">
+      <GreenBox>
         조건 1: 같은 사업장에서 1년 이상 계속 근로<br />
         조건 2: 4주 평균 주 15시간 이상 근무<br />
         고용 형태·사업장 규모·4대보험 가입 여부 무관
@@ -219,7 +219,7 @@ export default function Page() {
       <SectionBadge>수령 전 체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="퇴직금 못 받았을 때 대응 방법">
+      <GreenBox>
         인사팀에 서면으로 지급 요청해요 (문자·메일로 증거 남기기)<br />
         14일 초과 시 내용증명 발송 → 연 20% 지연이자 자동 발생<br />
         그래도 안 주면 <a href="https://minwon.moel.go.kr" style={{ color: "#fff", textDecoration: "underline" }}>고용노동부 민원마당</a>에서 온라인 진정 접수

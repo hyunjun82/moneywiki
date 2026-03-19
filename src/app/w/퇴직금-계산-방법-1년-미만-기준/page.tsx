@@ -162,7 +162,7 @@ export default function Page() {
         운용 금융기관(은행·증권사) 앱에서 내 계좌가 있는지 확인하는 방법도 있어요.
       </p>
 
-      <GreenBox title="DC형 vs 법정 퇴직금 — 1년 미만 수령 차이">
+      <GreenBox>
         DC형(확정기여형): 재직 기간 비례 납입 → 1년 미만도 수령 가능<br />
         DB형(확정급여형)·법정 퇴직금: 만 1년 이상 필요 → 1년 미만은 0원<br />
         기준 법령: 근로자퇴직급여보장법 제20조 (DC형 납입 의무)
@@ -234,7 +234,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="법정 퇴직금이 없어도 DC형은 별도예요">
+      <GreenBox>
         DC형은 법정 퇴직금과 별개 제도예요.<br />
         1년 미만이어도 사용자가 납입한 금액은 내 DC형 계좌에 있어요.<br />
         퇴직 후 IRP로 이전하거나 일시금으로 받을 수 있어요.

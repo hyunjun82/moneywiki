@@ -6,8 +6,7 @@
 // Q3. 지원 대상 연령, 양육비 월 35만원, 자립지원수당 월 10만원, 신청 방법
 // Q4. EligibilityChecker(자격) + DocTable(서류) + Steps(신청 절차) + FAQ
 
-import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer , H2 } from "@/components/article-ui";
 
 const CHECK_ITEMS = [
   { id: "c1", label: "만 24세 이하 한부모(모 또는 부)예요" },
@@ -84,7 +83,7 @@ export default function Page() {
           boxShadow: "0 4px 12px rgba(29,158,117,0.3)",
         }}
       >
-        복지로에서 신청하기 →
+        자립지원 신청하기 →
       </a>
 
       <H2>신청 자격과 소득 기준</H2>
@@ -100,7 +99,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 항목을 체크해 자격을 확인해 보세요. 소득 기준이 애매하다면 주민센터에서 사전 상담을 받으면 돼요. 신청 전 상담만으로도 내 상황이 해당되는지 명확하게 파악할 수 있죠.
       </p>
-      <EligibilityChecker title="청소년 한부모 지원 자격 체크" items={CHECK_ITEMS} />
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>지원 금액과 추가 혜택</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -126,24 +125,13 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         신청 후 소득·재산 조사에 2~4주가 걸려요. 승인되면 다음 달부터 매달 수당이 계좌로 입금돼요. 매년 소득 변동 여부를 확인하는 갱신 절차가 있어서 연락처와 주소 정보를 최신으로 유지해야 해요. 소득이 늘거나 주소가 바뀌면 주민센터에 변경 신고를 해야 지원이 끊기지 않아요. 갱신 시점에 서류를 미리 챙겨두면 지원 공백 없이 이어서 받을 수 있죠.
       </p>
-      <DocTable title="신청 시 필요 서류" items={DOCS} />
+      <DocTable docs={DOCS} />
 
       <H2>자주 묻는 질문</H2>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        신청한 달과 수당 입금 달 사이에 시차가 있어서 처음 신청하면 왜 아직 안 들어왔냐고 묻는 분이 많아요. 승인이 나도 당월이 아니라 다음 달 20일 전후에 입금되는 구조예요. 승인 통보가 왔다면 1~2주 기다렸다가 통장을 확인하면 돼요. 장기간 미입금이 계속되면 주민센터에 확인을 요청하는 게 좋아요.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        청소년 한부모 지원에서 가장 많이 묻는 게 미혼인 경우도 신청 가능한지예요. 미혼모·부도 신청 가능해요. 혼인한 적이 없어도 아이를 혼자 양육하고 있다면 한부모로 인정돼요. 아이의 다른 쪽 부모가 행방불명이거나 연락이 되지 않는 경우에도 해당될 수 있죠. 해당 사유를 증명하는 서류가 있다면 함께 제출하면 돼요.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        복지로에서 직접 신청할 수 있는지 궁금한 분도 있죠. 복지로에서 한부모가족 지원 신청이 가능해요. 회원 가입 후 서비스 신청 메뉴에서 한부모가족 지원을 선택하고 온라인으로 신청하면 돼요. 신청서 작성 중 모르는 항목이 있으면 복지로 상담 전화(129)에 문의하면 돼요.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
-        취업을 해도 계속 받을 수 있는지 궁금한 분도 있죠. 소득이 생겨도 소득 기준(기준 중위소득 65%) 이하라면 계속 받을 수 있죠. 취업 후 소득이 기준을 초과하면 지원이 중단되니 소득 변동 시 신고해야 해요. 소득 신고를 늦추면 초과 수령액을 환수당할 수 있어서 변동 즉시 신고하는 게 중요해요.
-      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "16px" }}>자립지원에 대해 자주 묻는 질문이에요.</p>
       <FAQ items={FAQ_ITEMS} />
-      <References items={REFS} />
-      <Disclaimer />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 공식 발표 기준으로 작성됐어요. 정책 내용은 변경될 수 있으니 신청 전 해당 기관에서 최신 내용을 확인하세요." />
     </div>
   );
 }

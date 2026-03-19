@@ -179,7 +179,7 @@ export default function Page() {
         인사팀에 문의하거나 퇴직연금 가입 계약서를 보면 알 수 있어요.
       </p>
 
-      <GreenBox title="법정 사유 대표 5가지 (시행령 제3조)">
+      <GreenBox>
         무주택자인 근로자의 주택 구입<br />
         전세 보증금이 월 임금의 3배를 초과하는 전세 계약 체결<br />
         본인 또는 부양가족의 6개월 이상 요양이 필요한 질병·부상<br />
@@ -235,7 +235,7 @@ export default function Page() {
       <SectionBadge>사유별 제출 서류</SectionBadge>
       <DocTable docs={DOCS} />
 
-      <BorderBox title="DC형 퇴직연금이라면">
+      <BorderBox>
         DC형은 회사뿐 아니라 퇴직연금 운용 금융기관에도 별도 신청이 필요해요.
         회사 인사팀과 함께 금융기관 담당자에게 처리 절차를 먼저 확인하세요.
         금융기관마다 서류 요구 사항이 조금씩 다를 수 있어요.
@@ -264,7 +264,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="임금이 오르는 직장이라면 중간정산을 신중하게 결정하세요">
+      <GreenBox>
         퇴직금은 퇴직 시 마지막 임금 기준으로 전체 근속 기간을 계산해요.<br />
         중간정산을 하면 기산점이 초기화돼서 이후 기간 분만 받을 수 있어요.<br />
         임금이 꾸준히 오른다면 퇴직 시까지 퇴직금을 그대로 두는 게 더 유리한 경우가 많아요.

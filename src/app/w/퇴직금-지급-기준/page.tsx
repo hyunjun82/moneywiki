@@ -161,7 +161,7 @@ export default function Page() {
         주 15시간 기준은 4주 평균이라서, 특정 주에 15시간을 못 채웠어도 평균이 15시간 이상이면 조건을 충족해요.
       </p>
 
-      <GreenBox title="퇴직금 지급 기준 2가지">
+      <GreenBox>
         1. 같은 사업장에서 1년 이상 계속 근로<br />
         2. 4주 평균 주 15시간 이상 근무<br />
         사업장 규모·고용 형태·4대보험 가입 여부 무관 (5인 미만도 2010년부터 의무 적용)
@@ -235,7 +235,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="퇴직금 포기각서는 무효예요">
+      <GreenBox>
         사업주가 퇴직금 포기각서에 서명을 요구해도 거부할 수 있어요.<br />
         서명했더라도 <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여 보장법</a>에 따라 무효로 퇴직금을 청구할 수 있어요.
       </GreenBox>

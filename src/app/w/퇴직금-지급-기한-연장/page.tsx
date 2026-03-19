@@ -158,7 +158,7 @@ export default function Page() {
         합의서에 '지연이자 포기' 문구가 있으면 이자 청구가 제한될 수 있으니 서명 전에 반드시 내용을 확인해야 해요.
       </p>
 
-      <GreenBox title="연장 합의 유효 조건">
+      <GreenBox>
         퇴직 전(재직 중) 서면 합의 — 퇴직 후 사후 합의는 무효<br />
         구두 합의 불인정 — 반드시 서면이어야 해요<br />
         합의 기한 초과 시 — 다음 날부터 연 20% 지연이자 발생
@@ -224,7 +224,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="지연이자는 포기하지 마세요">
+      <GreenBox>
         합의서에 지연이자 포기 문구가 없으면 합의 기한 초과분에 대해 연 20% 청구 가능해요.
         근로기준법 제37조로 보장된 권리예요.
       </GreenBox>

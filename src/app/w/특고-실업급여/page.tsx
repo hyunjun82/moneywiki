@@ -217,7 +217,7 @@ export default function Page() {
         목록에 없더라도 2025년 이후 추가된 직종이 있을 수 있으니까요.
       </p>
 
-      <GreenBox title="고용보험 적용 대상 특고 직종 (14개)">
+      <GreenBox>
         <p style={{ margin: "0 0 4px" }}>배달: 배달 라이더, 퀵서비스기사</p>
         <p style={{ margin: "0 0 4px" }}>운전: 대리운전, 택배기사, 화물차주</p>
         <p style={{ margin: "0 0 4px" }}>교육: 학습지교사, 방문판매원</p>
@@ -256,7 +256,7 @@ export default function Page() {
         아래 계산기에서 본인의 예상 수급액과 수급기간을 직접 계산해보세요.
       </p>
 
-      <BorderBox title="특고 vs 일반 근로자 수급 조건 비교">
+      <BorderBox>
         <p style={{ margin: "0 0 4px", lineHeight: 1.9 }}>특고: 이직일 전 24개월 중 <strong>12개월 이상</strong> 보험료 납부</p>
         <p style={{ margin: "0 0 4px", lineHeight: 1.9 }}>일반 근로자: 이직일 전 18개월 중 <strong>180일 이상</strong> 피보험 단위기간</p>
         <p style={{ margin: 0, lineHeight: 1.9 }}>공통: 비자발적 이직 + 재취업 의사 필요</p>
@@ -326,7 +326,7 @@ export default function Page() {
         신청부터 첫 입금까지는 대략 3~4주 걸린다고 보면 돼요.
       </p>
 
-      <GreenBox title="신청 절차 순서">
+      <GreenBox>
         <p style={{ margin: "0 0 4px" }}>1단계: 고용24에서 온라인 교육 이수 (약 1시간)</p>
         <p style={{ margin: "0 0 4px" }}>2단계: 고용센터 방문 또는 온라인 수급자격 신청</p>
         <p style={{ margin: "0 0 4px" }}>3단계: 계약서·소득 증빙·활동 내역서 제출</p>

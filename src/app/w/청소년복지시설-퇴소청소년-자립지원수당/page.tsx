@@ -6,8 +6,7 @@
 // Q3. 지원 대상 시설 종류, 수당 금액, 지원 기간, 사용 제한, 신청 시기
 // Q4. EligibilityChecker(자격) + GreenBox(지원 내용) + Steps(신청 절차) + FAQ
 
-import { FAQ, GreenBox, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { FAQ, GreenBox, Steps, EligibilityChecker, References, Disclaimer , H2 } from "@/components/article-ui";
 
 const CHECK_ITEMS = [
   { id: "c1", label: "청소년복지시설(청소년자립생활관, 청소년쉼터 등)에서 퇴소했어요" },
@@ -76,7 +75,7 @@ export default function Page() {
           boxShadow: "0 4px 12px rgba(29,158,117,0.3)",
         }}
       >
-        복지로에서 신청하기 →
+        자립지원수당 신청하기 →
       </a>
 
       <H2>신청 자격과 대상 시설</H2>
@@ -92,14 +91,14 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 자격 항목에 모두 해당한다면 바로 신청할 수 있죠. 퇴소 직후 가능한 빨리 신청하는 게 지원 기간을 최대한 활용하는 방법이에요. 퇴소 전 시설 사회복지사와 미리 상담해두면 퇴소 당일 신청도 가능해요. 신청일이 늦어지면 그만큼 수급 기간이 줄어들기 때문에 퇴소 준비와 동시에 신청 준비를 병행하는 게 좋아요. 퇴소 후 거주지 주민등록 이전이 선행되어야 주민센터 신청이 빠르게 처리돼요.
       </p>
-      <EligibilityChecker title="퇴소청소년 자립지원수당 자격 체크" items={CHECK_ITEMS} />
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>지원 금액과 지원 기간</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
         자립지원수당은 매달 30만원이 지정한 계좌로 입금돼요. 1년에 360만원이 지원되고, 최대 5년이면 총 1,800만원까지 받을 수 있죠. 퇴소 후 자립 기반을 다지는 데 실질적인 도움이 되는 금액이에요. 주거비, 생활비, 직업훈련비 등 자립에 필요한 여러 용도로 활용할 수 있죠. 수당을 지속적으로 저축해두면 전세 보증금이나 직업훈련 비용 등 목돈이 필요한 상황에 대비할 수도 있죠.
       </p>
 
-      <GreenBox title="자립지원수당 지원 내용">
+      <GreenBox>
         월 30만원씩 최대 5년(최대 총 1,800만원)까지 지원해요. 퇴소 후 자립 준비 기간 동안 주거비, 생활비, 직업훈련 비용 등에 자유롭게 사용할 수 있죠.
       </GreenBox>
 
@@ -120,21 +119,13 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         신청 후 심사에는 약 2~4주가 걸려요. 승인되면 다음 달부터 매달 30만원이 계좌로 입금돼요. 매년 자격 유지 여부를 확인하는 갱신 안내가 오기 때문에 연락처와 거주지 정보를 최신으로 유지하는 게 중요해요. 이사 후 주소 이전을 미루면 갱신 안내가 누락될 수 있어서 주소 변경 시 바로 신고하는 게 좋아요.
       </p>
-      <Steps items={STEPS} />
+      <Steps steps={STEPS} />
 
       <H2>자주 묻는 질문</H2>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        퇴소청소년 자립지원수당에서 가장 많이 헷갈리는 게 어떤 시설이 대상인지예요. 여성가족부 인정 청소년복지시설이면 해당돼요. 사설 위탁 시설이나 아동복지시설(보육원 등)은 별도의 자립 지원 제도가 적용돼요. 내 시설이 해당되는지 모를 때는 시설 담당 사회복지사에게 먼저 물어보는 게 좋아요.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        퇴소 후 바로 신청하지 않고 나중에 신청해도 5년 내라면 수급이 가능해요. 다만 신청일부터 지원이 시작되기 때문에 늦게 신청할수록 받을 수 있는 총 금액이 줄어요. 자격이 된다면 빠를수록 유리해요. 소급 적용이 되지 않기 때문에 시간이 지날수록 받지 못한 금액이 쌓이게 돼요.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
-        갱신을 빠뜨리면 어떻게 되는지 걱정하는 분도 있죠. 갱신을 하지 않으면 지원이 일시 중단될 수 있죠. 갱신 안내가 오면 기한 내에 서류를 제출하면 중단 없이 이어갈 수 있죠. 갱신 안내가 오지 않는 경우도 있으니 스스로 만료 시점을 기억해두는 게 중요해요. 휴대폰 알림이나 달력에 미리 표시해 놓으면 갱신 시기를 놓칠 일이 없죠.
-      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "16px" }}>자립지원수당에 대해 자주 묻는 질문이에요.</p>
       <FAQ items={FAQ_ITEMS} />
-      <References items={REFS} />
-      <Disclaimer />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 공식 발표 기준으로 작성됐어요. 정책 내용은 변경될 수 있으니 신청 전 해당 기관에서 최신 내용을 확인하세요." />
     </div>
   );
 }

@@ -165,7 +165,7 @@ export default function Page() {
         이런 문구에 서명하면 나중에 오류를 발견해도 청구하기가 훨씬 어려워질 수 있어요.
       </p>
 
-      <GreenBox title="정산서 3대 핵심 확인 항목">
+      <GreenBox>
         근속기간: 입사일·퇴직일 정확한지, 총 일수 맞는지<br />
         평균임금: 3개월 총임금에 상여금·고정수당 포함 여부<br />
         이의 제기 문구: 서명 전 제한 문구 유무 반드시 확인
@@ -245,7 +245,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="오류 발견 시 행동 요약">
+      <GreenBox>
         서명 전: 인사팀에 재계산 요청 → 거부 시 고용노동부 진정<br />
         서명 후: 명백한 오류라면 소멸시효 3년 이내 차액 청구 가능<br />
         지연 지급: 퇴직일로부터 14일 초과 시 연 20% 지연이자 청구 가능

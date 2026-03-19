@@ -174,7 +174,7 @@ export default function Page() {
         지급받는 날까지 매일 누적되니 늦게 받을수록 이자가 더 커요.
       </p>
 
-      <GreenBox title="소멸시효와 지연이자 핵심 기준">
+      <GreenBox>
         소멸시효: 퇴직일 다음 날부터 3년 (근로기준법 제49조)<br />
         지연이자: 14일 초과분에 연 20% (근로기준법 제37조)<br />
         시효 중단: 내용증명·노동청 진정·소송 접수 시 중단
@@ -244,7 +244,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="지연이자도 청구하세요">
+      <GreenBox>
         퇴직금만 받으면 손해예요. 14일 초과분부터 연 20% 지연이자까지 함께 청구하는 게 원칙이에요.<br />
         모르고 포기하는 경우가 많으니 꼭 챙기세요.
       </GreenBox>

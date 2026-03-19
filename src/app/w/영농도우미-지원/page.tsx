@@ -6,8 +6,7 @@
 // Q3. 이용 대상, 지원 조건(저소득 무료/일반 시간당 지원), 신청 시기, 이용 한도
 // Q4. EligibilityChecker(자격) + DocTable(서류) + Steps(신청 절차) + FAQ
 
-import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer , H2 } from "@/components/article-ui";
 
 const CHECK_ITEMS = [
   { id: "c1", label: "농업경영체에 등록된 농업인이에요" },
@@ -83,7 +82,7 @@ export default function Page() {
           boxShadow: "0 4px 12px rgba(29,158,117,0.3)",
         }}
       >
-        정부24에서 신청하기 →
+        영농도우미 신청하기 →
       </a>
 
       <H2>신청 자격과 이용 조건</H2>
@@ -99,7 +98,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 항목에 해당하면 신청 가능해요. 농번기에는 수요가 집중되므로 농작업 시작 2~3주 전에 미리 신청하는 게 좋아요. 지역에 따라 선착순으로 파견 인력이 배정되기 때문에 빠른 신청이 유리해요. 전년도에 이용 경험이 있더라도 매년 새로 신청해야 하고, 농업경영체 등록 확인서도 새로 제출해야 하는 경우도 있죠.
       </p>
-      <EligibilityChecker title="영농도우미 신청 자격 체크" items={CHECK_ITEMS} />
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>지원 범위와 이용 한도</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -122,21 +121,13 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         신청 후 담당자가 검토하고 파견 가능 여부와 일정을 연락해요. 농번기에는 신청자가 많아 대기가 생길 수 있죠. 작업 예정일보다 2~3주 전에 신청하면 원하는 날짜에 지원받을 가능성이 높아요. 파견 일정이 확정되면 당일 도우미와 작업 시작 전 업무 내용을 확인하는 게 좋아요.
       </p>
-      <DocTable title="영농도우미 신청 서류" items={DOCS} />
+      <DocTable docs={DOCS} />
 
       <H2>자주 묻는 질문</H2>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        영농도우미와 관련해 가장 많이 묻는 게 이용료 계산 방법이에요. 이용료는 파견 시간에 따라 계산되고, 지자체별로 지원 비율이 달라요. 일반적으로 도우미 인건비의 50~70%를 지자체에서 부담하고, 나머지를 이용자가 내요. 정확한 이용료는 신청 전 담당자에게 문의하면 돼요.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        도우미 파견이 당일 취소되거나 작업이 달라질 경우 어떻게 해야 하는지 궁금한 분도 있죠. 파견 취소는 작업 예정일 하루 전까지 연락하면 돼요. 당일 취소는 일부 지역에서 불이익이 생길 수 있죠. 취소가 반복되면 다음 신청에 불이익이 생길 수 있어서 일정을 신중하게 잡는 게 좋아요. 날씨 등 불가항력적인 사유로 취소해야 할 경우는 담당자에게 미리 연락해 사유를 설명하면 불이익을 피할 수 있죠.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
-        다음 해에도 연속 신청이 가능한지도 자주 물어봐요. 매년 새로 신청해야 해요. 이용 실적이 누적되더라도 연간 한도가 초기화되기 때문에 매년 신청하면 돼요. 작년에 이용했더라도 올해 새로 농업경영체 등록 확인서를 제출해야 하는 경우도 있죠. 신청 기간이 별도로 있는 지역도 있어서 연초에 미리 담당 기관에 문의하면 빠짐없이 신청할 수 있죠.
-      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "16px" }}>영농도우미에 대해 자주 묻는 질문이에요.</p>
       <FAQ items={FAQ_ITEMS} />
-      <References items={REFS} />
-      <Disclaimer />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 공식 발표 기준으로 작성됐어요. 정책 내용은 변경될 수 있으니 신청 전 해당 기관에서 최신 내용을 확인하세요." />
     </div>
   );
 }

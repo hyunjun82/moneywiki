@@ -135,7 +135,7 @@ export default function Page() {
         <a href="https://www.worldjob.or.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>월드잡플러스</a>에서 프로그램별 신청 조건을 확인할 수 있죠.
       </p>
 
-      <GreenBox title="해외취업과 실업급여는 별개의 제도예요">
+      <GreenBox>
         해외 취업 목표 → 실업급여 수급자격 <strong>불인정</strong><br />
         해외 구직활동 → 실업인정 구직활동으로 <strong>불인정</strong><br />
         해외취업 지원 → K-Move, 월드잡플러스 <strong>별도 사업</strong> 이용
@@ -170,7 +170,7 @@ export default function Page() {
         여행 계획을 짜기 전에 실업인정일 일정부터 확인하는 게 순서예요.
       </p>
 
-      <BorderBox title="해외 체류 시 실업인정 규칙">
+      <BorderBox>
         해외 체류 기간 → 실업인정 <strong>불가</strong><br />
         실업인정일에 해외 체류 → <strong>불인정</strong> (출입국 기록으로 확인)<br />
         짧은 해외여행 → 가능하지만, 실업인정일에는 <strong>반드시 국내 체류</strong>
@@ -227,7 +227,7 @@ export default function Page() {
         그 날짜 안에 돌아올 수 있는지 여부가 실업급여를 살리느냐 잃느냐의 갈림길이에요.
       </p>
 
-      <GreenBox title="수급기간은 해외 체류와 무관하게 12개월이에요">
+      <GreenBox>
         수급기간 = 퇴직일로부터 <strong>12개월</strong> (연장 불가)<br />
         12개월 내 귀국 → 남은 급여일수 수급 가능<br />
         12개월 초과 → 남은 급여 <strong>전액 소멸</strong>
@@ -254,7 +254,7 @@ export default function Page() {
         미리 확인해두면 퇴직 후 바로 움직일 수 있죠.
       </p>
 
-      <BorderBox title="해외 근무 유형별 실업급여 가능 여부">
+      <BorderBox>
         한국 본사 → 해외 파견 (고용보험 유지) → <strong>수급 가능</strong><br />
         해외 현지 채용 (고용보험 미가입) → <strong>수급 불가</strong><br />
         해외 파견 중 회사 폐업 → 귀국 후 <strong>수급 가능</strong>

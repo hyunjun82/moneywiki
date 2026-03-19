@@ -173,7 +173,7 @@ export default function Page() {
         급하지 않다면 55세까지 기다리는 게 세금 면에서 훨씬 유리해요.
       </p>
 
-      <GreenBox title="연금 수령 3대 조건">
+      <GreenBox>
         만 55세 이상 (연금 개시 나이)<br />
         IRP 계좌 가입 후 5년 이상 유지<br />
         수령 기간 10년 이상 설정 → 퇴직소득세 30% 감면
@@ -241,7 +241,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="10년 이상 연금 수령이 핵심이에요">
+      <GreenBox>
         수령 기간을 9년으로 설정하면 세금 감면이 전혀 없어요.<br />
         10년 이상으로 설정해야 퇴직소득세 30%를 덜 낼 수 있어요.<br />
         신청 후에도 수령 기간 연장은 가능하니 일단 10년 이상으로 시작하세요.

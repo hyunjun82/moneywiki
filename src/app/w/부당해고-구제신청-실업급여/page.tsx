@@ -217,7 +217,7 @@ export default function Page() {
         그래서 그 기간 동안 실업급여를 받을 수 있는 구조가 되는 거예요.
       </p>
 
-      <GreenBox title="내가 신청 대상인지 체크해 보세요">
+      <GreenBox>
         아래 4가지를 모두 충족하면 구제신청과 실업급여를 동시에 진행할 수 있어요.
       </GreenBox>
 
@@ -257,7 +257,7 @@ export default function Page() {
         note="2026년 기준 추정치예요. 실제 금액은 고용센터 심사 후 확정돼요."
       />
 
-      <BorderBox title="구제신청 절차 요약">
+      <BorderBox>
         해고 발생 → 3개월 내 지방노동위원회 신청<br />
         → 심사·판정 (약 60일 소요)<br />
         → 불복 시 중앙노동위원회 재심 (10일 내 신청)<br />
@@ -294,7 +294,7 @@ export default function Page() {
         반면 중대한 귀책사유가 아닌 통상 해고라면 실업급여는 그대로 유지돼요.
       </p>
 
-      <BorderBox title="결과별 실업급여 정리">
+      <BorderBox>
         복직 판정 → 실업급여 반환 + 밀린 임금 수령<br />
         금전보상 → 실업급여 유지 (반환 불필요)<br />
         기각 (귀책사유 X) → 실업급여 유지<br />

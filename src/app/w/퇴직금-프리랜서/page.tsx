@@ -163,7 +163,7 @@ export default function Page() {
         세금 처리 방식과 실제 근무 형태는 별개거든요.
       </p>
 
-      <GreenBox title="근로자성 3대 핵심 기준">
+      <GreenBox>
         출퇴근 강제: 정해진 시간에 출근·퇴근 의무가 있었어요<br />
         업무 지시: 업무 방식·절차·순서를 사용자가 지시했어요<br />
         전속성: 다른 업체 일 없이 한 곳에서만 일했어요
@@ -231,7 +231,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="3.3% 원천징수를 했어도 퇴직금 청구 가능해요">
+      <GreenBox>
         세금 처리 방식은 근로자성 판단과 별개예요.<br />
         사업소득세 3.3%를 납부했더라도 실질적으로 근로자였다면 퇴직금을 청구할 수 있어요.
       </GreenBox>

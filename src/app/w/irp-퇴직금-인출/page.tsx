@@ -186,7 +186,7 @@ export default function Page() {
         이 사유에 해당하면 필요한 금액만 일부 인출이 가능해요.
       </p>
 
-      <GreenBox title="인출 방법별 세금 비교">
+      <GreenBox>
         55세 이전 일반 해지 → 기타소득세 16.5% (원금 전체 과세)<br />
         법정 사유 일부 인출 → 퇴직소득세만 적용 (기타소득세 없음)<br />
         55세 이후 연금 수령 → 연금소득세 3.3~5.5% (가장 유리)
@@ -267,7 +267,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="지금 당장 인출해야 하는 상황이라면">
+      <GreenBox>
         법정 사유(주택 구입, 요양 등) 해당 여부 먼저 확인<br />
         해당 시: 퇴직소득세만 내고 일부 인출 가능<br />
         해당 없을 때: 기타소득세 16.5% 각오하고 전액 해지

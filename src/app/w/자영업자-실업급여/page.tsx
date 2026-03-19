@@ -200,7 +200,7 @@ export default function Page() {
         1등급이면 월 40,950원, 7등급이면 월 76,050원을 내게 돼요.
       </p>
 
-      <GreenBox title="자영업자 고용보험 핵심 요약">
+      <GreenBox>
         <p style={{ margin: "0 0 4px" }}>가입 대상: 50인 미만 사업장 사업주 (1인 사업자 포함)</p>
         <p style={{ margin: "0 0 4px" }}>가입 방법: 본인 직접 신청: 근로복지공단 토탈서비스(online) 또는 방문</p>
         <p style={{ margin: "0 0 4px" }}>보험료: 기준보수 x 2.25% (월 40,950~76,050원)</p>
@@ -237,7 +237,7 @@ export default function Page() {
         등급 고민이 된다면, 보험료 부담과 수급액 차이를 아래에서 비교해보세요.
       </p>
 
-      <BorderBox title="등급별 보험료 vs 수급액 비교">
+      <BorderBox>
         <p style={{ margin: "0 0 4px", lineHeight: 1.9 }}>1등급(182만 원): 월 보험료 40,950원 → 1일 수급액 66,048원(하한)</p>
         <p style={{ margin: "0 0 4px", lineHeight: 1.9 }}>4등급(260만 원): 월 보험료 58,500원 → 1일 수급액 66,048원(하한)</p>
         <p style={{ margin: 0, lineHeight: 1.9 }}>7등급(338만 원): 월 보험료 76,050원 → 1일 수급액 67,600원</p>
@@ -307,7 +307,7 @@ export default function Page() {
         지금 가게를 운영 중이라면 자동이체부터 설정해두세요.
       </p>
 
-      <BorderBox title="자영업자 vs 일반 근로자 구직급여 비교">
+      <BorderBox>
         <p style={{ margin: "0 0 4px", lineHeight: 1.9 }}>가입 방식: 자영업자 임의가입 / 근로자 의무가입</p>
         <p style={{ margin: "0 0 4px", lineHeight: 1.9 }}>최소 가입기간: 자영업자 1년 / 근로자 180일</p>
         <p style={{ margin: "0 0 4px", lineHeight: 1.9 }}>산정 기준: 자영업자 기준보수 / 근로자 평균임금</p>
@@ -337,7 +337,7 @@ export default function Page() {
         이전에 10년을 납부했더라도 재가입하면 0부터 시작이에요. 이 점을 꼭 기억해두세요.
       </p>
 
-      <GreenBox title="재창업 시 선택지 정리">
+      <GreenBox>
         <p style={{ margin: "0 0 4px" }}>수급일수 절반 이상 남음 → 조기재취업수당 (일시금) 신청 가능</p>
         <p style={{ margin: "0 0 4px" }}>수급일수 절반 미만 → 남은 급여 소멸, 수당 없음</p>
         <p style={{ margin: 0 }}>재가입 시 가입기간 → 0부터 다시 시작</p>

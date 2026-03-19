@@ -6,8 +6,7 @@
 // Q3. 예술활동증명 요건, 지원 금액(50%, 월 최대 4.5만원), 지원 기간, 신청 방법
 // Q4. EligibilityChecker(자격) + DocTable(서류) + Steps(신청 절차) + FAQ
 
-import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer , H2 } from "@/components/article-ui";
 
 const CHECK_ITEMS = [
   { id: "c1", label: "한국예술인복지재단에서 예술활동증명이 완료된 상태예요" },
@@ -83,7 +82,7 @@ export default function Page() {
           boxShadow: "0 4px 12px rgba(29,158,117,0.3)",
         }}
       >
-        예술인복지재단에서 신청하기 →
+        보험료 지원 신청하기 →
       </a>
 
       <H2>신청 자격과 예술활동증명</H2>
@@ -99,7 +98,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 항목을 모두 충족하면 신청이 가능해요. 예술활동증명이 아직 안 된 경우 먼저 예술인복지재단에서 증명 신청부터 진행해야 해요. 증명 신청은 kawf.kr에서 온라인으로 할 수 있고, 심사에 1~3개월이 소요될 수 있죠.
       </p>
-      <EligibilityChecker title="예술인 국민연금 보험료 지원 자격 체크" items={CHECK_ITEMS} />
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>지원 금액과 지원 기간</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -125,24 +124,13 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         신청 후 심사에 2~4주가 걸려요. 승인되면 다음 달 국민연금 고지서부터 50% 감면된 금액이 반영돼요. 3년 후 갱신 시에는 예술활동증명 갱신과 함께 보험료 지원도 다시 신청해야 해요. 갱신 시점을 놓치지 않으려면 예술활동증명 만료 3~4개월 전에 미리 갱신 신청을 시작하는 게 좋아요. 갱신이 늦어지면 보험료 지원이 중단되는 공백이 생길 수 있고 소급 지원도 안 되니 미리 일정을 챙겨야 해요.
       </p>
-      <DocTable title="신청 시 필요 서류" items={DOCS} />
+      <DocTable docs={DOCS} />
 
       <H2>자주 묻는 질문</H2>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        예술인 국민연금 보험료 지원을 받으면 노후 연금 수령액이 줄어드는 게 아닌지 걱정하는 분들이 많아요. 국가가 보험료 절반을 대신 내주더라도 납부 기간은 그대로 쌓이고, 월 납부 기준액도 변동이 없어요. 즉, 노후에 받는 국민연금액은 전액을 본인이 낸 것과 동일하게 계산돼요. 보험료 부담만 줄고 노후 혜택은 그대로 유지되는 구조예요.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        예술인 보험료 지원에서 가장 많이 묻는 게 예술활동증명 심사 기준이에요. 예술 분야 활동 실적이 있어야 하고, 활동 분야가 다양하기 때문에 구체적인 기준은 분야별로 달라요. 예술인복지재단 홈페이지에서 분야별 심사 기준을 확인하거나 재단에 문의하면 돼요. 처음 신청하는 경우 재단 상담을 통해 내 분야에 맞는 증빙 서류를 미리 확인하는 게 유리해요.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        겸업을 하면서 예술 활동도 하는 경우에 지원받을 수 있는지 궁금한 분도 있죠. 직장에서 4대 보험에 가입된 직장가입자가 아닌 경우라면 신청 가능해요. 부업으로 예술 활동을 하더라도 지역가입자이면 지원 대상에 해당돼요. 단, 직장 계약 형태가 바뀌어 직장가입자가 되면 즉시 지원 대상에서 제외되니 재단에 변경 사항을 신고해야 해요.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
-        예술활동증명이 취소되면 이미 지원받은 금액을 반환해야 하는지도 자주 물어봐요. 사기나 부정 수급이 아닌 일반적인 취소라면 환수 조치가 없는 경우가 많아요. 하지만 구체적인 상황은 재단 규정에 따라 다를 수 있으니 재단에 문의하는 게 정확해요. 부정 수급으로 인한 환수는 이자까지 부과될 수 있어서 신청 자격을 정확히 확인한 후 신청하는 게 중요해요.
-      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "16px" }}>보험료 지원에 대해 자주 묻는 질문이에요.</p>
       <FAQ items={FAQ_ITEMS} />
-      <References items={REFS} />
-      <Disclaimer />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 공식 발표 기준으로 작성됐어요. 정책 내용은 변경될 수 있으니 신청 전 해당 기관에서 최신 내용을 확인하세요." />
     </div>
   );
 }

@@ -160,7 +160,7 @@ export default function Page() {
         정부가 단계적 의무화를 추진 중이지만, 2026년 현재 기존 사업장에 대한 구체적인 의무화 시행일은 아직 확정되지 않았어요.
       </p>
 
-      <GreenBox title="퇴직연금 의무화 핵심 기준">
+      <GreenBox>
         신설 사업장(2022.4.14 이후 설립): 퇴직연금 의무 도입<br />
         기존 사업장(2022.4.13 이전 설립): 현재 임의 선택 (단계적 의무화 논의 중)<br />
         법적 근거: 근로자퇴직급여보장법 제4조 (2022년 4월 14일 시행)
@@ -224,7 +224,7 @@ export default function Page() {
       <SectionBadge>도입 전 체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="기존 사업장도 도입하면 세금이 줄어요">
+      <GreenBox>
         DC형 부담금은 전액 손비(비용) 처리돼서 법인세·소득세 절감 효과가 있어요.<br />
         근로자도 퇴직연금 계좌 안에서 운용 수익이 쌓이는 동안 세금이 없어요(과세 이연).
       </GreenBox>

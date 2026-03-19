@@ -129,7 +129,7 @@ export default function Page() {
         <a href="/w/퇴사후-실업급여-신청-기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직 후 12개월 이내</a>에 신청해야 한다는 점도 동일하죠. 기초수급자라고 우대하거나 불이익을 주는 조항이 따로 없기 때문에, 고용보험 자격 조건만 맞으면 누구나 동일하게 신청할 수 있어요.
       </p>
 
-      <GreenBox title="실업급여 수급 조건 (기초수급자 동일)">
+      <GreenBox>
         1. 고용보험 가입 사업장 180일 이상 근무<br />
         2. 비자발적 퇴사 (또는 정당한 사유)<br />
         3. 적극적 구직활동 의사<br />
@@ -160,7 +160,7 @@ export default function Page() {
         그래도 총 수입은 늘어나는 경우가 대부분이에요. 원래 생계급여 71만 원(2026년 1인 가구 기준)을 받던 분이 실업급여 150만 원을 받으면, 생계급여는 0원이 되지만 총 수입은 71만 원에서 150만 원으로 올라가죠. 실업급여를 안 받는 게 오히려 손해예요.
       </p>
 
-      <BorderBox title="1인 가구 계산 예시 (2026년 기준)">
+      <BorderBox>
         <strong>실업급여 수급 전</strong><br />
         기준 중위소득(30%): 약 71만 원 / 소득인정액: 0원 → 생계급여 71만 원<br /><br />
         <strong>실업급여 수급 후 (월 150만 원)</strong><br />
@@ -192,7 +192,7 @@ export default function Page() {
       <SectionBadge>신고 절차 체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="신고 안 하면 어떻게 되나요?">
+      <GreenBox>
         소득이 생겼는데 신고 안 하고 생계급여를 그대로 받으면 <strong>부정수급</strong>이에요.<br />
         국민기초생활보장법 제46조에 따라 받은 금액 전액 환수 + 최대 40% 가산금이 부과되죠.
         향후 급여 지급이 제한될 수도 있어요. &quot;몰랐다&quot;는 건 구제 사유가 되기 어렵고요.
@@ -213,7 +213,7 @@ export default function Page() {
         국민취업지원제도의 구직촉진수당(월 50만 원, 최대 6개월)과 실업급여는 동시에 못 받는다는 점도 알아두세요. 실업급여 자격이 되면 실업급여를 먼저 받는 편이 금액적으로 유리한 경우가 많아요. 실업급여 수급이 끝난 뒤에 국민취업지원제도를 신청하는 것도 방법이죠. <a href="/w/실업급여-한달-얼마-받나요" style={{ color: "#1D9E75", textDecoration: "underline" }}>실업급여 월 수령액</a>을 미리 계산해보면 판단이 쉬워요.
       </p>
 
-      <BorderBox title="실업급여가 다른 급여에 미치는 영향">
+      <BorderBox>
         <strong>생계급여</strong>: 소득인정액 증가 → 감액 또는 0원<br />
         <strong>의료급여</strong>: 1종→2종 변경 또는 자격 상실 가능<br />
         <strong>주거급여</strong>: 소득인정액 기준 초과 시 감액 가능<br />
@@ -236,7 +236,7 @@ export default function Page() {
       </p>
 
       <SectionBadge>핵심 정리</SectionBadge>
-      <BorderBox title="기초수급자 실업급여 체크포인트">
+      <BorderBox>
         1. 기초수급자도 고용보험 가입 이력 있으면 실업급여 수급 가능<br />
         2. 실업급여는 소득으로 잡혀 생계급여가 줄어들 수 있음<br />
         3. 그래도 총 수입은 늘어나는 경우가 대부분<br />

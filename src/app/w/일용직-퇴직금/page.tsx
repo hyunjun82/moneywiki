@@ -168,7 +168,7 @@ export default function Page() {
         4대보험 미가입이어도 실제 근무 사실을 입증하면 퇴직금을 청구할 수 있어요.
       </p>
 
-      <GreenBox title="일용직 퇴직금 핵심 조건">
+      <GreenBox>
         같은 사업주 아래 1년 이상 계속 근로<br />
         4주 평균 주 15시간 이상 근무<br />
         계약서·4대보험 없어도 실제 근무 사실로 청구 가능
@@ -219,7 +219,7 @@ export default function Page() {
       <SectionBadge>준비 서류 목록</SectionBadge>
       <DocTable docs={DOCS} />
 
-      <BorderBox title="계약서·4대보험이 없어도 신고 가능해요">
+      <BorderBox>
         통장 입금 내역, 카카오톡·문자 대화, 동료 근로자 증언만 있어도 진정 접수가 가능해요.
         법원·노동청 모두 실질적인 근무 관계를 중심으로 판단해요.
       </BorderBox>
@@ -245,7 +245,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="일용직 퇴직금, 주 15시간이 핵심이에요">
+      <GreenBox>
         1년 기준을 충족해도 주 15시간 미달이면 퇴직금이 발생하지 않아요.
         4주 평균으로 계산하기 때문에, 매주 정확히 15시간이 아니어도 평균만 맞으면 돼요.
         근무 시간 기록을 지금부터 메모해두는 게 가장 중요해요.

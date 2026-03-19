@@ -173,7 +173,7 @@ export default function Page() {
         반면 65세 이전부터 일하던 사람은 <strong>기득권을 인정</strong>해서 고용보험이 계속 유지돼요. 이미 보험료를 내고 있던 사람의 권리를 갑자기 빼앗을 순 없으니까요. 핵심은 딱 하나, <strong>&ldquo;언제 취업했느냐&rdquo;</strong>죠.
       </p>
 
-      <GreenBox title="65세 기준 핵심 요약">
+      <GreenBox>
         65세 이전 취업 + 계속 근무 → 고용보험 유지 → <strong>실업급여 가능</strong><br />
         65세 이후 신규 취업 → 고용보험 가입 불가 → <strong>실업급여 불가</strong><br />
         일용직 → 나이 무관 → <strong>실업급여 가능</strong>
@@ -200,7 +200,7 @@ export default function Page() {
         주의할 건 <strong>65세 이후 이직</strong>이에요. 65세 이전에 A회사에서 일하다가 65세 이후에 B회사로 옮기면, B회사 입장에서는 <strong>신규 취업</strong>으로 봐요. <a href="/w/고용보험-적용-제외" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험 적용 제외 기준</a>에 걸리는 거죠. B회사에서는 고용보험 가입이 안 되니 실업급여도 못 받죠. 65세 이후에 이직을 고려하고 있다면 이 부분을 반드시 따져봐야 해요.
       </p>
 
-      <BorderBox title="65세 이후 이직, 이게 함정이에요">
+      <BorderBox>
         A회사(64세 입사) → 65세 이후 퇴직 → <strong>실업급여 가능</strong><br />
         A회사(64세 입사) → 66세에 B회사로 이직 → B회사 퇴직 시 <strong>실업급여 불가</strong><br />
         이직하는 순간 신규 취업 취급을 받으니 주의하세요.
@@ -249,7 +249,7 @@ export default function Page() {
         금액도 마찬가지예요. 퇴직 전 3개월 <a href="/w/실업급여-평균임금-계산" style={{ color: "#1D9E75", textDecoration: "underline" }}>평균임금</a>의 60%를 기준으로 계산하고, 상한액·하한액이 정해져 있죠. 2026년 기준 1일 상한액 68,100원, 하한액 66,048원이에요. 나이가 많다고 깎이는 건 없어요.
       </p>
 
-      <GreenBox title="50세 이상 수급기간 (65세도 동일 적용)">
+      <GreenBox>
         1년 미만: 120일<br />
         1~3년: 180일<br />
         3~5년: 210일<br />

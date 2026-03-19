@@ -161,7 +161,7 @@ export default function Page() {
         회사는 퇴직일로부터 14일 이내에 지급해야 하고, 늦으면 <a href="/w/퇴직금-지연이자" style={{ color: "#1D9E75", textDecoration: "underline" }}>연 20% 지연이자</a>를 청구할 수 있어요.
       </p>
 
-      <GreenBox title="외국인 퇴직금 핵심 조건">
+      <GreenBox>
         1년 이상 근무 + 주 15시간 이상 (비자·국적 무관)<br />
         300만원 초과 시 IRP 계좌 원칙 (출국 시 예외 — 일반 계좌 수령 가능)<br />
         퇴직소득세 원천징수 후 실수령 (조세조약 감면 가능)
@@ -226,7 +226,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="퇴직금을 못 받으면 신고할 수 있어요">
+      <GreenBox>
         외국인도 고용노동청(1350)에 체불 신고 권한이 있어요.<br />
         한국어가 불편하면 통역 서비스를 요청할 수 있고, 불법체류자도 체불 임금 신고는 가능해요.
       </GreenBox>

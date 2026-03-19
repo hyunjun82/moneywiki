@@ -163,7 +163,7 @@ export default function Page() {
         노동청 진정 후 형사 처벌 가능성만으로도 대부분 지급이 이뤄져요.
       </p>
 
-      <GreenBox title="14일 기한 초과 시 발생하는 권리">
+      <GreenBox>
         지연이자 연 20%: 14일 초과분부터 실제 지급일까지 자동 발생<br />
         노동청 진정: 근로자퇴직급여보장법 위반으로 신고 가능<br />
         형사 고발: 3년 이하 징역 또는 3,000만원 이하 벌금<br />
@@ -226,7 +226,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="지연이자는 포기하지 마세요">
+      <GreenBox>
         14일 초과분은 법으로 보장된 이자예요.<br />
         퇴직금 원금만 받으면 손해예요. 지연이자까지 함께 청구하세요.
       </GreenBox>

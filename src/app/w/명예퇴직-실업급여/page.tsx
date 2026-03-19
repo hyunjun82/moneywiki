@@ -194,7 +194,7 @@ export default function Page() {
         다만 회사 공고나 권유가 먼저 나온 뒤에 신청한 거라면 문제없고요.
       </p>
 
-      <GreenBox title="명예퇴직 = 실업급여 가능한 경우">
+      <GreenBox>
         회사가 구조조정·경영 악화·인력감축으로 퇴직을 권유했고,<br />
         이직확인서에 '권고사직' 또는 '조기퇴직 프로그램'으로 기재된 경우<br />
         → 비자발적 이직으로 실업급여 수급 자격이 생겨요
@@ -262,7 +262,7 @@ export default function Page() {
         이런 증빙자료는 퇴직 전에 미리 확보해두는 게 훨씬 안전해요.
       </p>
 
-      <BorderBox title="이직확인서 퇴직 사유별 실업급여 가능 여부">
+      <BorderBox>
         권고사직 → 가능<br />
         경영상 필요에 의한 퇴직 → 가능<br />
         조기퇴직 프로그램 → 가능<br />
@@ -293,7 +293,7 @@ export default function Page() {
         참고로 퇴직금 지급기한은 퇴직일로부터 <strong>14일</strong>이고, 미지급 시 지연이자는 <strong>연 20%</strong>예요. <a href="/w/실업급여-피보험기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>피보험기간</a>이 길수록 수급기간도 늘어나니 미리 조회해보세요.
       </p>
 
-      <GreenBox title="명예퇴직 시 받을 수 있는 돈 3가지">
+      <GreenBox>
         법정 퇴직금: 1년 이상 근무 시 발생 (근로기준법)<br />
         명예퇴직금(위로금): 회사 자체 재원에서 지급<br />
         실업급여: 고용보험 기금에서 지급 (별도 신청 필요)

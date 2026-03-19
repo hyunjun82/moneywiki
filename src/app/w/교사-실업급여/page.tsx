@@ -188,7 +188,7 @@ export default function Page() {
         시간강사나 학원 강사도 고용보험에 가입돼 있다면 마찬가지 조건이에요.
       </p>
 
-      <GreenBox title="교사 유형별 실업급여 대상 여부">
+      <GreenBox>
         <p style={{ margin: "0 0 4px" }}>공립학교 정교사 (공무원) → 실업급여 대상 아님, 공무원연금 수급</p>
         <p style={{ margin: "0 0 4px" }}>사립학교 교사 → 고용보험 가입 대상, 비자발적 퇴직 시 수급 가능</p>
         <p style={{ margin: "0 0 4px" }}>기간제 교사 (공립/사립) → 고용보험 가입 대상, 계약 만료 시 수급 가능</p>
@@ -233,7 +233,7 @@ export default function Page() {
         note="※ 2026년 기준 1일 상한액 68,100원, 하한액 66,048원 적용. 실제 금액은 고용센터 심사에 따라 달라질 수 있어요."
       />
 
-      <BorderBox title="기간제 교사: 꼭 체크할 4가지">
+      <BorderBox>
         <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}>
           <strong>피보험기간</strong> 180일 이상인지 고용24에서 조회
         </p>

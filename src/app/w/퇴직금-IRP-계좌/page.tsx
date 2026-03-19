@@ -191,7 +191,7 @@ export default function Page() {
         연 300만원 납입 시 최대 49만원 환급이에요.
       </p>
 
-      <GreenBox title="IRP 세액공제 한도 요약">
+      <GreenBox>
         IRP + 연금저축 합산 연 900만원까지 세액공제 적용<br />
         소득 5,500만원 이하: 16.5% → 최대 148.5만원 환급<br />
         소득 5,500만원 초과: 13.2% → 최대 118.8만원 환급<br />
@@ -257,7 +257,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="퇴직 결정 나면 그날 바로 IRP 계좌 만드세요">
+      <GreenBox>
         계좌가 없으면 회사가 퇴직금을 이체할 수 없어서 14일 지급기한을 넘기는 상황이 생겨요.<br />
         앱으로 10분이면 개설되고, 개설 후 계좌번호를 인사팀에 메일로 남겨두면 끝이에요.
       </GreenBox>

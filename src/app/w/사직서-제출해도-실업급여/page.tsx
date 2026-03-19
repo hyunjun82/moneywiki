@@ -125,7 +125,7 @@ export default function Page() {
         <strong><a href="/w/근로조건-변경-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로조건이 악화</a></strong>돼서 퇴사한 경우에도 받을 수 있죠. <a href="/w/임금체불-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>임금을 30% 이상 안 줬거나 2개월 이상 밀린 경우</a>, 최저임금 미달, 주 52시간 초과 강요 등이 대표적이에요. 회사 잘못으로 정상적인 근무가 불가능했다면 정당한 이직 사유로 인정받을 수 있고요.
       </p>
 
-      <GreenBox title="사직서 내도 실업급여 받을 수 있는 대표 사례">
+      <GreenBox>
         권고사직 (구조조정, 희망퇴직, 퇴사 권유)<br />
         계약 만료 (회사가 연장 거부)<br />
         임금체불 (30% 이상 또는 2개월 이상 밀림)<br />
@@ -156,7 +156,7 @@ export default function Page() {
         <strong>본인의 중대한 귀책사유</strong>로 해고된 경우에도 수급이 제한돼요. 횡령, 무단결근, 업무상 비위행위 같은 사유가 해당하죠. &quot;해고당할 것 같아서 사직서를 먼저 냈다&quot;고 해도, 근본 원인이 본인 잘못이면 동일한 기준이 적용돼요.
       </p>
 
-      <BorderBox title="한눈에 비교">
+      <BorderBox>
         권고사직 + 사직서 → <strong>실업급여 가능</strong><br />
         임금체불 + 사직서 → <strong>실업급여 가능</strong><br />
         단순 이직 목적 + 사직서 → <strong>불가</strong><br />
@@ -199,7 +199,7 @@ export default function Page() {
         넷째, 사직서 제출 타이밍도 신경 써야 해요. 퇴직 권유 증거(녹음, 문자 등)를 <strong>먼저 확보한 뒤에</strong> 사직서를 내는 순서가 맞아요. 사직서를 먼저 내버리면 회사 쪽에서 &quot;자기가 알아서 나간 거다&quot;라고 주장할 여지를 주게 되죠. 증거 확보가 끝난 다음에 움직이세요.
       </p>
 
-      <BorderBox title="사직서 사유별 인정 가능성">
+      <BorderBox>
         &quot;회사의 권고에 따라 퇴사&quot; → <strong>권고사직 인정 가능성 높음</strong><br />
         &quot;구조조정에 따른 퇴사&quot; → <strong>권고사직 인정 가능성 높음</strong><br />
         &quot;개인 사정&quot; / &quot;일신상의 사유&quot; → <strong>자진퇴사로 처리될 위험</strong><br />
@@ -220,7 +220,7 @@ export default function Page() {
         정정 결과에 불복하면 <strong>60일 이내 <a href="/w/실업급여-이의신청" style={{ color: "#1D9E75", textDecoration: "underline" }}>이의신청</a></strong>으로 재심사를 받을 수 있죠. 추가 증거를 첨부하면 뒤집히는 경우도 있고요. 이의신청마저 안 되면 심사청구와 재심사청구 절차가 남아 있으니 끝까지 포기하지 마세요. 퇴직 전에 <a href="https://www.moel.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용노동부</a> 상담(1350)을 미리 받아두면 훨씬 수월하게 대응할 수 있죠.
       </p>
 
-      <GreenBox title="핵심 정리">
+      <GreenBox>
         사직서를 냈다고 실업급여를 못 받는 게 아니에요.<br />
         이직확인서의 이직 사유 코드가 수급 여부를 결정하죠.<br />
         사유가 사실과 다르면 고용센터에서 정정이 가능해요.

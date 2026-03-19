@@ -189,7 +189,7 @@ export default function Page() {
         퇴직소득은 분리과세라 연봉이나 다른 소득과 합산되지 않아요.
       </p>
 
-      <GreenBox title="근속연수 공제 기준 (소득세법 제48조)">
+      <GreenBox>
         · 5년 이하: 근속연수 × 30만원<br />
         · 6~10년: 150만원 + (근속연수-5) × 50만원<br />
         · 11~20년: 400만원 + (근속연수-10) × 80만원<br />
@@ -271,7 +271,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="IRP 연금 수령으로 최대 40% 절세">
+      <GreenBox>
         · 55세 이후 연금 수령 시 퇴직소득세 30% 감면<br />
         · 10년 초과 수령 시 추가 10% 감면 (총 최대 40%)<br />
         · 일시금 인출 시 감면 없음: 연금 수령 여부가 핵심

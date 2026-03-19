@@ -6,8 +6,7 @@
 // Q3. 청소년부모 정의, 아동 1인당 월 20만원, 소득 기준, 신청 절차
 // Q4. EligibilityChecker(자격) + DocTable(서류) + Steps(신청 절차) + FAQ
 
-import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { FAQ, DocTable, Steps, EligibilityChecker, References, Disclaimer , H2 } from "@/components/article-ui";
 
 const CHECK_ITEMS = [
   { id: "c1", label: "부 또는 모 중 한 명이라도 만 24세 이하예요" },
@@ -84,7 +83,7 @@ export default function Page() {
           boxShadow: "0 4px 12px rgba(29,158,117,0.3)",
         }}
       >
-        복지로에서 신청하기 →
+        양육비 지원 신청하기 →
       </a>
 
       <H2>신청 자격과 청소년부모 기준</H2>
@@ -100,7 +99,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 항목에 모두 해당한다면 바로 신청할 수 있죠. 소득 기준이 불분명하면 주민센터에서 사전 소득 조사를 받아보는 게 좋아요. 판단이 어려운 경우 복지로 상담 전화(129)에서도 안내받을 수 있죠. 특히 소득 경계선에 걸린다면 공제 항목 적용 여부에 따라 결과가 달라질 수 있으니 담당자와 직접 확인하는 게 안전해요. 전화 상담보다 방문 상담이 더 정확하게 판단해 주는 경우가 많고, 서류 준비 안내도 함께 받을 수 있죠. 방문 전 필요한 서류 목록을 미리 물어두면 시간을 크게 아낄 수 있죠.
       </p>
-      <EligibilityChecker title="저소득 청소년부모 아동양육비 자격 체크" items={CHECK_ITEMS} />
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>지원 금액과 추가 지원</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -126,24 +125,13 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         신청 후 소득·재산 조사에 2~4주가 걸려요. 승인 후 다음 달부터 아동양육비가 입금돼요. 소득이 변동되면 주민센터에 신고해야 하고, 매년 소득 갱신 조사가 있죠. 소득 증가를 신고하지 않으면 초과 수령액을 환수당할 수 있어서 소득 변동 시 즉시 신고하는 게 중요해요.
       </p>
-      <DocTable title="신청 시 필요 서류" items={DOCS} />
+      <DocTable docs={DOCS} />
 
       <H2>자주 묻는 질문</H2>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        지원을 받다가 갑자기 입금이 끊겼다는 연락을 받는 경우가 있죠. 주로 소득 갱신 조사 시점에 서류를 제출하지 않거나 연락처가 바뀌어 통보가 안 됐을 때 발생해요. 이런 경우 주민센터에 방문해 상황을 설명하고 갱신 절차를 다시 진행하면 지원이 재개될 수 있죠. 중단 기간에 대한 소급 지급은 안 되기 때문에 빠르게 처리하는 게 유리해요.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        청소년부모 아동양육비에서 가장 자주 묻는 게 청소년 한부모 지원과 동시에 받을 수 있는지예요. 청소년부모 지원과 청소년 한부모 지원은 중복 신청이 안 돼요. 두 부모가 함께 양육하면 청소년부모 지원, 혼자 양육하면 청소년 한부모 지원을 받아야 해요. 어떤 제도가 더 유리한지는 주민센터에서 비교 상담을 받아보면 명확해져요.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        부 또는 모가 학교를 다니고 있어도 신청이 가능한지 궁금한 분도 있죠. 학생 여부와 관계없이 연령과 소득 기준을 충족하면 신청할 수 있죠. 학교를 다니면서 받는 장학금 등은 소득 계산에서 제외되는 경우도 있으니 상담을 통해 살펴보는 게 좋아요. 대학 장학금 처리 방식은 지자체마다 다를 수 있어서 반드시 사전에 확인하는 게 안전해요.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
-        이혼이나 별거로 가족 구성이 바뀌면 어떻게 되는지도 자주 물어봐요. 이혼 또는 별거가 확정되면 청소년부모 지원 대상에서 제외되고 청소년 한부모 지원으로 전환 신청해야 해요. 가족 상황이 바뀌면 빠르게 주민센터에 신고하는 게 중요해요. 전환 신청이 늦어지면 지원 공백이 생길 수 있어서 상황 변경 즉시 처리하는 게 유리해요.
-      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "16px" }}>양육비 지원에 대해 자주 묻는 질문이에요.</p>
       <FAQ items={FAQ_ITEMS} />
-      <References items={REFS} />
-      <Disclaimer />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 공식 발표 기준으로 작성됐어요. 정책 내용은 변경될 수 있으니 신청 전 해당 기관에서 최신 내용을 확인하세요." />
     </div>
   );
 }

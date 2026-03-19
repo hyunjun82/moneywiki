@@ -159,7 +159,7 @@ export default function Page() {
         청구권 소멸시효는 3년으로, 퇴직일 기준 3년이 지나면 법적으로 청구 자체가 막혀요.
       </p>
 
-      <GreenBox title="지연이자 발생 조건 요약">
+      <GreenBox>
         퇴직일 기준 14일 초과 시 다음 날부터 연 20% 자동 발생<br />
         서면 합의로 기한 연장 시 — 합의 기간 내에는 이자 없음<br />
         소멸시효 3년: 퇴직일로부터 3년 안에 청구해야 해요
@@ -227,7 +227,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="지연이자는 퇴직금과 별도로 청구해요">
+      <GreenBox>
         퇴직금을 뒤늦게 받았더라도 지연된 기간의 이자는 따로 청구할 수 있어요.
         받은 날 기준으로 14일 초과분을 계산해서 노동청이나 소액심판으로 청구하면 돼요.
       </GreenBox>

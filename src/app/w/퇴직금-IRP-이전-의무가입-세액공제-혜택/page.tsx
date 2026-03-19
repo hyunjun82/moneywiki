@@ -187,7 +187,7 @@ export default function Page() {
         연금저축 계좌가 있다면 두 계좌 납입액 합산 기준 연 900만원 한도예요.
       </p>
 
-      <GreenBox title="IRP 혜택 세 가지">
+      <GreenBox>
         ① 과세 이연: 퇴직금 이전 시 세금을 당장 내지 않아요<br />
         ② 세액공제: 추가 납입액의 최대 16.5% 환급 (연 900만원 한도)<br />
         ③ 절세: 55세 이후 연금 수령 시 퇴직소득세 30% 감면
@@ -254,7 +254,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="IRP 납입 전 꼭 계산해보세요">
+      <GreenBox>
         연금저축 납입액이 있다면 두 계좌 합산 900만원 한도를 초과하지 않도록 조정해야 해요.
         초과 납입분은 세액공제 없이 그냥 넣은 것과 같아요.
       </GreenBox>

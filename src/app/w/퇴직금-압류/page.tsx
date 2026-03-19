@@ -169,7 +169,7 @@ export default function Page() {
         이것만 챙겨도 채권자로부터 퇴직금 전체를 지킬 수 있어요.
       </p>
 
-      <GreenBox title="압류 보호 구조 요약">
+      <GreenBox>
         일반 계좌 수령: 퇴직금 1/2은 압류 금지 (민사집행법 제246조)<br />
         IRP 계좌 수령: 계좌 잔액 전액 압류 금지 (근로자퇴직급여보장법 제7조)<br />
         퇴직연금(DB·DC): 적립 잔액 전액 압류 금지 (동법 제7조)
@@ -243,7 +243,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="IRP 계좌 수령 = 전액 압류 금지">
+      <GreenBox>
         퇴직금을 IRP 계좌로 받으면 근로자퇴직급여보장법 제7조에 따라 계좌 잔액 전액이 압류·양도·담보 제공 금지 대상이에요.<br />
         일반 계좌(1/2 보호)보다 훨씬 강한 보호예요. 퇴직 전 IRP 계좌를 미리 개설하고 회사에 서면으로 요청해두는 게 핵심이에요.
       </GreenBox>

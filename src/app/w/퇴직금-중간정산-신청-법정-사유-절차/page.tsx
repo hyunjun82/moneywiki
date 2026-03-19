@@ -166,7 +166,7 @@ export default function Page() {
         DC형 퇴직연금 가입자라면 중간정산이 아니라 중도인출 제도를 이용해야 해요.
       </p>
 
-      <GreenBox title="중간정산 법정 사유 7가지 (시행령 제3조)">
+      <GreenBox>
         ① 무주택자가 주택을 구입할 때<br />
         ② 무주택자가 전세 계약을 체결할 때 (주거 목적)<br />
         ③ 본인·배우자·부양가족의 의료비가 6개월치 월급을 넘을 때<br />
@@ -240,7 +240,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="중간정산 전에 세금부터 계산하세요">
+      <GreenBox>
         근속 기간이 짧아지면 최종 퇴직 때 세금이 더 나와요.<br />
         IRP로 받으면 과세 이연이 되니, 수령 방법도 함께 고려하세요.
       </GreenBox>

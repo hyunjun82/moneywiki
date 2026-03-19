@@ -187,7 +187,7 @@ export default function Page() {
         <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 이직확인서 처리 완료가 확인되면 곧바로 움직이세요.
       </p>
 
-      <GreenBox title="수급기간 핵심 정리">
+      <GreenBox>
         퇴직일 다음 날부터 12개월 = 수급기간<br />
         12개월 안에 신청 + 수급 완료해야 해요<br />
         12개월 지나면 수급일수가 남아도 지급 불가<br />
@@ -227,7 +227,7 @@ export default function Page() {
         아래 계산기에서 본인 예상 수령액을 조회해보세요.
       </p>
 
-      <BorderBox title="늦게 신청할수록 이만큼 손해">
+      <BorderBox>
         1월 퇴직 → 2월 신청: 수급기간 11개월 남음 (여유 충분)<br />
         1월 퇴직 → 7월 신청: 수급기간 6개월 남음 (빠듯할 수 있음)<br />
         1월 퇴직 → 11월 신청: 수급기간 2개월 남음 (대부분 못 채움)
@@ -296,7 +296,7 @@ export default function Page() {
         해당 사유가 생기면 즉시 고용센터에 연락하세요: 늦으면 연장 자체가 불가능해질 수 있어요.
       </p>
 
-      <GreenBox title="수급기간 연장 가능 사유">
+      <GreenBox>
         질병·부상: 의사 진단서 필요<br />
         출산·육아: 만 8세 이하 자녀<br />
         군복무: 의무 복무 기간<br />

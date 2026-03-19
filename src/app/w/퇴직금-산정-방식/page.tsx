@@ -175,7 +175,7 @@ export default function Page() {
         그럴 때 통상임금 기준이 더 유리해요.
       </p>
 
-      <GreenBox title="두 기준 선택 원칙">
+      <GreenBox>
         평균임금 = 퇴직 전 3개월 총임금 ÷ 총 일수 (상여금·연차수당 포함)<br />
         통상임금 = 기본급 + 매달 고정 지급 수당<br />
         <strong>평균임금 &lt; 통상임금이면 → 통상임금 사용 (근로기준법 제2조 제2항)</strong>
@@ -248,7 +248,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="퇴직금 300만원 초과 시 IRP 계좌 필요해요">
+      <GreenBox>
         퇴직금이 300만원을 넘으면 <a href="/w/퇴직금-IRP-계좌" style={{ color: "#1D9E75", textDecoration: "underline" }}>IRP(개인형 퇴직연금) 계좌</a>로만 받을 수 있어요.<br />
         300만원 이하이거나 만 55세 이상이면 일반 계좌로도 수령 가능해요.<br />
         IRP로 수령하면 퇴직소득세 납부를 연금 수령 시점까지 미룰 수 있어요.

@@ -6,8 +6,7 @@
 // Q3. 검사 대상자, 검사 항목(12가지), 검사 방법, 신청 절차
 // Q4. EligibilityChecker(자격) + Checklist(검사 항목) + Steps(신청 절차) + FAQ
 
-import { FAQ, Checklist, Steps, EligibilityChecker, References, Disclaimer } from "@/components/article-ui";
-import H2 from "@/components/article-ui/H2";
+import { FAQ, Checklist, Steps, EligibilityChecker, References, Disclaimer , H2 } from "@/components/article-ui";
 
 const CHECK_ITEMS = [
   { id: "c1", label: "현재 임신을 계획 중이거나 임신을 준비하고 있죠" },
@@ -17,18 +16,18 @@ const CHECK_ITEMS = [
 ];
 
 const EXAM_ITEMS = [
-  { id: "e1", label: "풍진 항체 검사 임신 중 풍진 감염 시 태아 기형 위험 예방" },
-  { id: "e2", label: "B형간염 검사 표면항원·항체 검사로 예방접종 필요 여부 확인" },
-  { id: "e3", label: "빈혈 검사(혈색소) 임신 중 빈혈 예방을 위한 사전 파악" },
-  { id: "e4", label: "매독 검사 선천성 매독 예방을 위한 항체 검사" },
-  { id: "e5", label: "에이즈(HIV) 검사 수직 감염 예방을 위한 선별 검사" },
-  { id: "e6", label: "결핵 검사 임신 중 치료 제한을 대비한 사전 검사" },
-  { id: "e7", label: "혈액형 검사 Rh(-)형 등 임신 관련 혈액형 위험 확인" },
-  { id: "e8", label: "성병(클라미디아·임균) 검사 자궁경부 감염 여부 확인" },
-  { id: "e9", label: "갑상선 기능 검사 임신 중 갑상선 이상이 태아에 영향" },
-  { id: "e10", label: "당 검사(공복혈당) 임신성 당뇨 위험 사전 파악" },
-  { id: "e11", label: "자궁경부세포 검사(PAP smear) 자궁경부 이상 조기 발견" },
-  { id: "e12", label: "소변 검사 요로감염 등 임신 전 비뇨기계 이상 확인" },
+  "풍진 항체 검사 — 임신 중 풍진 감염 시 태아 기형 위험 예방",
+  "B형간염 검사 — 표면항원·항체 검사로 예방접종 필요 여부 확인",
+  "빈혈 검사(혈색소) — 임신 중 빈혈 예방을 위한 사전 파악",
+  "매독 검사 — 선천성 매독 예방을 위한 항체 검사",
+  "에이즈(HIV) 검사 — 수직 감염 예방을 위한 선별 검사",
+  "결핵 검사 — 임신 중 치료 제한을 대비한 사전 검사",
+  "혈액형 검사 — Rh(-)형 등 임신 관련 혈액형 위험 확인",
+  "성병(클라미디아·임균) 검사 — 자궁경부 감염 여부 확인",
+  "갑상선 기능 검사 — 임신 중 갑상선 이상이 태아에 영향",
+  "당 검사(공복혈당) — 임신성 당뇨 위험 사전 파악",
+  "자궁경부세포 검사(PAP smear) — 자궁경부 이상 조기 발견",
+  "소변 검사 — 요로감염 등 임신 전 비뇨기계 이상 확인",
 ];
 
 const STEPS = [
@@ -91,7 +90,7 @@ export default function Page() {
           boxShadow: "0 4px 12px rgba(29,158,117,0.3)",
         }}
       >
-        정부24에서 신청하기 →
+        사전건강관리 신청하기 →
       </a>
 
       <H2>검사 대상과 신청 자격</H2>
@@ -107,7 +106,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 자격 항목에 해당하면 가까운 보건소에서 바로 신청 가능해요. 신분증 하나만 챙겨가면 검사를 받을 수 있고, 별도 비용 없이 모든 검사를 받을 수 있죠. 처음 방문이라면 보건소 모자보건팀에 '임신 사전건강관리 검사'를 받으러 왔다고 말하면 돼요.
       </p>
-      <EligibilityChecker title="임신 사전건강관리 검사 대상 체크" items={CHECK_ITEMS} />
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>무료 검사 12가지 항목</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -122,7 +121,7 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         아래 체크리스트는 보건소에서 제공하는 무료 검사 12가지 항목이에요. 담당 간호사와 상담 시 어떤 항목이 자신에게 꼭 필요한지 안내받을 수 있죠. 이전에 받은 검사 결과가 있다면 가져가면 중복 검사를 줄일 수도 있죠.
       </p>
-      <Checklist items={EXAM_ITEMS} title="임신 사전건강관리 무료 검사 항목" />
+      <Checklist items={EXAM_ITEMS} />
 
       <H2>신청 방법과 보건소 방문 절차</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
@@ -137,21 +136,13 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
         신분증 외에 별도 서류는 필요 없어요. 보건소 담당자가 검사 항목 선택을 도와주고 전체 과정을 안내해 주기 때문에 처음 방문해도 어렵지 않게 진행할 수 있죠. 아래 단계를 미리 숙지해두면 당일 방문이 훨씬 수월해요.
       </p>
-      <Steps items={STEPS} />
+      <Steps steps={STEPS} />
 
       <H2>자주 묻는 질문</H2>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        임신 사전검사와 관련해 가장 많이 묻는 게 검사 항목을 다 받아야 하는지예요. 12가지를 모두 받을 필요는 없고, 본인 상황에 맞게 필요한 항목만 골라서 받을 수 있죠. 보건소 담당자와 상담 후 결정하면 되고, 이전에 결과가 있는 항목은 생략해도 돼요.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
-        이전에 같은 검사를 받은 적이 있으면 어떻게 하는지 궁금해하는 분도 있죠. 이전 결과가 최근 6개월~1년 이내라면 해당 항목은 생략할 수도 있죠. 이전 검사 결과지를 가져가면 담당자가 판단해 줘요. 다만 감염 여부처럼 변동이 생길 수 있는 항목은 재검사를 권유하는 경우도 있죠.
-      </p>
-      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
-        검사 결과에서 이상이 발견되면 어떻게 해야 하는지 걱정하는 분도 있죠. 이상 소견이 있다고 해서 임신이 불가능한 건 아니에요. 예방접종, 치료, 추가 검사 등을 통해 임신 전 건강을 개선할 수 있죠. 보건소에서 적절한 후속 조치를 안내해 주기 때문에 결과를 받은 뒤 당황하지 않아도 돼요. 이상 소견 발견 후 필요한 후속 치료나 접종 비용은 별도로 발생할 수 있어서 미리 마음의 준비를 해두면 흔들리지 않아요. 보건소 담당자에게 예상 비용을 미리 물어보면 큰 부담 없이 치료 계획을 세울 수 있죠.
-      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "16px" }}>사전건강관리에 대해 자주 묻는 질문이에요.</p>
       <FAQ items={FAQ_ITEMS} />
-      <References items={REFS} />
-      <Disclaimer />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 공식 발표 기준으로 작성됐어요. 정책 내용은 변경될 수 있으니 신청 전 해당 기관에서 최신 내용을 확인하세요." />
     </div>
   );
 }

@@ -159,7 +159,7 @@ export default function Page() {
         퇴직공제금은 일한 날짜를 누적해서 적립하는 방식이라 일반 퇴직금과는 별개예요.
       </p>
 
-      <GreenBox title="일용직 퇴직금 인정 기준">
+      <GreenBox>
         계속 근로: 반복·정기 출근, 실질적 고용 관계 지속<br />
         주 15시간 이상: 4주 평균 기준<br />
         → 두 조건 충족 시 일용직이어도 퇴직금 지급 의무 발생
@@ -226,7 +226,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="계약서에 일용직이라고 적혀 있어도 청구할 수 있어요">
+      <GreenBox>
         계약 형식이 아닌 실질 근로 관계가 기준이에요.
         반복·정기 출근 사실만 입증되면 노동청과 법원에서 인정받을 수 있어요.
       </GreenBox>

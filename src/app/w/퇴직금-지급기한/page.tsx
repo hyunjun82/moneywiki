@@ -161,7 +161,7 @@ export default function Page() {
         구두 합의는 인정되지 않아요. 합의 없이 14일을 넘기면 그 다음 날부터 <a href="/w/퇴직금-지연이자" style={{ color: "#1D9E75", textDecoration: "underline" }}>연 20% 지연이자</a>가 붙어요.
       </p>
 
-      <GreenBox title="14일 지급 기한 핵심">
+      <GreenBox>
         기산일: 퇴직일 다음 날부터 14일 (달력일 기준)<br />
         300만원 초과: IRP 계좌로만 이체 가능<br />
         기한이 주말·공휴일: 다음 영업일로 자동 연장<br />
@@ -232,7 +232,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="IRP 계좌번호를 미리 알려줘야 이체돼요">
+      <GreenBox>
         퇴직금 300만원 초과 시 IRP 계좌로만 받을 수 있어요.<br />
         퇴직 전에 IRP 계좌를 개설하고 계좌번호를 인사팀에 문자·메일로 통보해 두세요.<br />
         계좌 정보 없이는 회사가 이체 자체를 못 해요.

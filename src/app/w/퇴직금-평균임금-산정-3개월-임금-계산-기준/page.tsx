@@ -156,7 +156,7 @@ export default function Page() {
         <a href="/w/퇴직금-상여금-포함" style={{ color: "#1D9E75", textDecoration: "underline" }}>상여금 포함 기준</a>이 더 궁금하다면 별도 글을 보세요.
       </p>
 
-      <GreenBox title="3개월 임금 포함 vs 제외 항목">
+      <GreenBox>
         포함: 기본급, 직책·직무수당, 가족수당(고정), 연장·야간·휴일 수당, 상여금(연간 환산분), 연차수당(기간 내 지급분)<br />
         제외: 식대·교통비(실비), 출장비, 경조금, 임시 지급 금품, 해고예고수당, 퇴직금 자체
       </GreenBox>
@@ -218,7 +218,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="통상임금이 더 높다면 통상임금으로 받아요">
+      <GreenBox>
         평균임금이 통상임금보다 낮으면 통상임금으로 퇴직금을 계산할 수 있어요.<br />
         근로기준법 제2조 2항이 이를 보장하고 있어요. 두 가지 모두 계산해서 높은 쪽을 선택하세요.
       </GreenBox>

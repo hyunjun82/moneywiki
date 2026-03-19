@@ -164,7 +164,7 @@ export default function Page() {
         소멸시효 3년이 임박했다면 내용증명부터 발송해서 시효를 끊는 게 먼저예요.
       </p>
 
-      <GreenBox title="퇴직금 미지급 해결 핵심 경로">
+      <GreenBox>
         1단계: 문자·이메일로 지급 요청 (기록 남기기)<br />
         2단계: 내용증명 발송 (지연이자 명시 + 소멸시효 중단)<br />
         3단계: 고용노동부 임금체불 진정 (무료, 1~3개월 처리)<br />
@@ -211,7 +211,7 @@ export default function Page() {
       <SectionBadge>준비 서류 목록</SectionBadge>
       <DocTable docs={DOCS} />
 
-      <BorderBox title="서류가 없다면?">
+      <BorderBox>
         통장 입금 내역 + 카카오톡 대화 + 동료 증언만 있어도 진정 접수는 가능해요.
         4대보험 가입 이력은{" "}
         <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서
@@ -239,7 +239,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="지연이자는 자동으로 안 줘요">
+      <GreenBox>
         진정서나 소송장에 "퇴직금 ○○만원 및 이에 대한 연 20% 지연손해금"으로 명시해야 받을 수 있어요.<br />
         빠뜨리면 원금만 받게 될 수 있으니 꼭 포함하세요.
       </GreenBox>
