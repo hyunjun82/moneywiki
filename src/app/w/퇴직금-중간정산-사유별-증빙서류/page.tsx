@@ -156,7 +156,7 @@ export default function Page() {
         사유 해당 여부가 불분명하면 고용노동부(1350)에 먼저 문의하는 게 빠를 수 있어요.
       </p>
 
-      <GreenBox title="중간정산 법정 사유 7가지">
+      <GreenBox>
         주택 구입·임차 / 의료비 과다 (월급 6개월치 초과)<br />
         파산·개인회생 / 천재지변 / 임금피크제 적용<br />
         무주택 전세보증금 상환 / 학자금 납부
@@ -226,7 +226,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="중간정산은 회사 재량이에요">
+      <GreenBox>
         법정 사유와 서류가 완비돼도 회사가 거부할 수 있어요.<br />
         취업규칙이나 단체협약에 중간정산 관련 규정이 있다면 그 기준이 우선돼요.<br />
         신청 전에 인사팀에서 내부 기준과 필요 서류 목록을 먼저 받아두세요.

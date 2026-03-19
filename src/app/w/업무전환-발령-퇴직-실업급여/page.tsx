@@ -129,7 +129,7 @@ export default function Page() {
         <strong>보복성 인사</strong>도 인정 기준에 포함돼요. 내부 문제를 제기했더니 한직으로 발령내는 경우가 대표적이죠. 이런 징벌적 인사 조치 뒤에 퇴직하면 정당한 이직 사유로 인정받을 수 있고요. <a href="https://www.moel.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용노동부</a>도 인사권 남용에 해당하는 전보를 부당하다고 판단하고 있죠.
       </p>
 
-      <GreenBox title="정당한 이직 사유로 인정되는 업무전환">
+      <GreenBox>
         채용 시 약속과 완전히 다른 업무 지시 (개발 → 영업 등)<br />
         전문성과 무관한 업무로의 강제 발령<br />
         보복성·징벌성 인사 발령<br />
@@ -157,7 +157,7 @@ export default function Page() {
         내 상황이 어디에 해당하는지 판단하는 기준은 <strong>근로계약서</strong>예요. 계약서에 &quot;개발 업무&quot;라고 적혀 있는데 영업을 시키면 명백한 계약 위반이죠. 반면 &quot;회사가 정하는 업무&quot;라고 포괄적으로 적혀 있으면 다툴 여지가 생겨요. 퇴직 전에 계약서 문구부터 꼼꼼히 살펴보세요.
       </p>
 
-      <BorderBox title="인정 vs 불인정 구분">
+      <BorderBox>
         개발 → 영업 (본질적 변경) → <strong>인정</strong><br />
         프론트엔드 → 백엔드 (같은 계열) → <strong>불인정</strong><br />
         보복성 한직 발령 → <strong>인정</strong><br />
@@ -214,7 +214,7 @@ export default function Page() {
         퇴직 전에 <strong>고용센터(1350) 사전 상담</strong>을 받아두는 게 가장 좋은 방법이에요. 내 상황이 인정 기준에 맞는지, 증빙을 뭘 더 모아야 하는지 무료로 안내받을 수 있죠. 사전 상담은 심사 결과에 영향을 주지 않으니 부담 없이 전화하세요.
       </p>
 
-      <GreenBox title="핵심 정리">
+      <GreenBox>
         채용 시 약속과 본질적으로 다른 업무 발령 = 정당한 이직 사유<br />
         근로계약서 + 발령 통지서 + 업무 비교표 = 3대 증빙<br />
         퇴직 전 고용센터(1350) 사전 상담 = 가장 확실한 준비

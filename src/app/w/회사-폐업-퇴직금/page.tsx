@@ -178,7 +178,7 @@ export default function Page() {
         소멸시효는 퇴직일로부터 3년이라 3년 안에 반드시 움직여야 해요.
       </p>
 
-      <GreenBox title="폐업 시 퇴직금 회수 경로">
+      <GreenBox>
         체당금: 근로복지공단 신청 → 상한액 내 국가 지급<br />
         우선변제권: 파산 절차 채권 신고 → 다른 채권자보다 먼저 배당<br />
         민사 소송: 사업주 개인 재산으로 잔액 추가 회수
@@ -226,7 +226,7 @@ export default function Page() {
       <SectionBadge>준비 서류 목록</SectionBadge>
       <DocTable docs={DOCS} />
 
-      <BorderBox title="4대보험 없어도 체당금 신청 가능해요">
+      <BorderBox>
         4대보험 가입 여부가 아닌 실제 근무 사실이 기준이에요.
         통장 입금 내역, 카카오톡 업무 대화, 동료 근로자 증언도 증거로 활용돼요.
       </BorderBox>
@@ -253,7 +253,7 @@ export default function Page() {
       <SectionBadge>준비 체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="임금·퇴직금은 최우선 변제 순위예요">
+      <GreenBox>
         근로기준법 제38조에 따라 임금과 퇴직금은 세금·보험료보다도 먼저 변제돼요.
         파산 재산이 남아 있다면 다른 채권자보다 먼저 배당받을 수 있어요.
       </GreenBox>

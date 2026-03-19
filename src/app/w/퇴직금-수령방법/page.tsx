@@ -145,7 +145,7 @@ export default function Page() {
 
       <Steps steps={STEPS} />
 
-      <GreenBox title="IRP 의무 vs 일반 계좌 수령">
+      <GreenBox>
         IRP 의무: 300만원 초과 + 만 55세 미만{"\n"}
         일반 계좌 가능: 300만원 이하 / 만 55세 이상 / 외국인 귀국
       </GreenBox>

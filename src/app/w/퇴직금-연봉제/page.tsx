@@ -160,7 +160,7 @@ export default function Page() {
         계약서에 DC형 조항이 있는지 먼저 확인해봐요. '연봉 4,200만원(퇴직금 포함)'처럼 총액만 적혀 있고 별도 적립이 없었다면, 그 약정은 법적으로 효력이 약해요.
       </p>
 
-      <GreenBox title="연봉 포함 약정 핵심 정리">
+      <GreenBox>
         단순 포함 약정만으로는 퇴직금 청구권이 사라지지 않아요<br />
         실제로 별도 적립이 없었다면 퇴직 시 추가 청구 가능해요<br />
         DC형으로 매년 연봉 1/12 적립한 경우만 별도 지급으로 인정돼요
@@ -230,7 +230,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="DC형이라면 IRP 적립 내역 조회해봐요">
+      <GreenBox>
         회사가 매년 연봉 1/12을 IRP에 넣고 있는지 잔액 조회로 바로 확인할 수 있어요.<br />
         적립이 누락된 기간이 있으면 회사에 소급 청구가 가능해요.<br />
         <a href="/w/퇴직금-소멸시효" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직금 소멸시효</a>는 연봉제도 퇴직일로부터 3년이에요.

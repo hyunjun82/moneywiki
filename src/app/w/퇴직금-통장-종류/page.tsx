@@ -158,7 +158,7 @@ export default function Page() {
         DC형 퇴직연금에 가입된 직장인이라면 퇴직 시 DC형 잔액이 본인 IRP로 자동 이전되니까 미리 개설해두면 좋아요.
       </p>
 
-      <GreenBox title="퇴직금 통장 종류 한눈에 보기">
+      <GreenBox>
         ① 일반 계좌: 퇴직금 300만원 이하인 경우만 수령 가능<br />
         ② IRP(개인형 퇴직연금): 300만원 초과 시 필수, 세액공제 혜택 병행<br />
         ③ 연금저축펀드: 퇴직금 수령 불가, 추가 납입·세액공제 전용
@@ -224,7 +224,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="은행 IRP vs 증권사 IRP 비교 (2026년 기준)">
+      <GreenBox>
         증권사: 연 0.2~0.3%, ETF·채권·리츠 투자 가능 (일부 수수료 0%)<br />
         은행: 연 0.4~0.5%, 예·적금·원리금 보장 상품 중심<br />
         보험사: 연 0.3~0.5%, 변액보험 연계 상품 운영<br />

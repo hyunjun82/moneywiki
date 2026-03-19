@@ -126,7 +126,7 @@ export default function Page() {
         네 번째는 <strong>본인 건강 문제</strong>예요. 의사 진단서로 &quot;계속 근로가 어렵다&quot;는 판단이 나와야 하죠. 다섯 번째 <strong><a href="/w/간병-사유-퇴직-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>가족 간병</a></strong>은 30일 이상 직접 간병이 필요한 경우에 해당돼요. 여섯 번째 <strong>근로계약 위반</strong>은 채용 때 약속한 것과 실제 업무가 크게 다른 경우이고, 일곱 번째 <strong>사업장 법 위반</strong>은 산업안전보건법을 심각하게 어긴 사업장이 대상이에요.
       </p>
 
-      <GreenBox title="정당한 이직 사유 7가지 정리">
+      <GreenBox>
         1. 임금체불 (30% 이상 또는 2개월 이상)<br />
         2. 직장 내 괴롭힘 · 성희롱<br />
         3. 출퇴근 왕복 3시간 이상 (통근 곤란)<br />
@@ -157,7 +157,7 @@ export default function Page() {
         <strong>본인 귀책사유 해고</strong>도 실업급여 대상이 아니에요. 무단결근, 횡령, 업무상 비위행위로 징계해고된 경우에는 &quot;내 잘못으로 일자리를 잃은 것&quot;이라 수급이 제한되죠. 다만 부당해고라고 판단되면 구제신청 후 다시 다툴 수 있죠.
       </p>
 
-      <BorderBox title="이건 돼요 vs 이건 안 돼요">
+      <BorderBox>
         권고사직 &rarr; <strong>비자발적</strong> (실업급여 대상)<br />
         사직서 제출 + 정당한 사유 &rarr; <strong>가능</strong><br />
         이직 목적 퇴사 &rarr; <strong>불가</strong><br />
@@ -200,7 +200,7 @@ export default function Page() {
         심사에서 불인정 결정이 나와도 길이 끝난 건 아니죠. <strong>60일 이내에 <a href="/w/실업급여-이의신청" style={{ color: "#1D9E75", textDecoration: "underline" }}>이의신청</a></strong>을 할 수 있죠. 추가 증거를 첨부해서 이의신청서를 제출하면 재심사를 받게 돼요. 그래도 안 되면 심사청구, 재심사청구까지 3단계의 불복 절차가 남아 있으니까요.
       </p>
 
-      <GreenBox title="애매하면 퇴직 전 상담이 답이에요">
+      <GreenBox>
         고용센터(1350)에 전화해서 &quot;내 상황이 정당한 사유에 해당하는지&quot; 먼저 물어보세요.<br />
         상담은 무료이고, 어떤 서류가 필요한지까지 안내받을 수 있죠.<br />
         사전 상담이 심사 결과에 불이익을 주는 일은 없으니 걱정 마세요.

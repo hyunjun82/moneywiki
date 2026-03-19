@@ -155,7 +155,7 @@ export default function Page() {
         <a href="/w/퇴직금-육아휴직" style={{ color: "#1D9E75", textDecoration: "underline" }}>육아휴직 중 퇴직금 계산</a>이 헷갈린다면 별도 글을 참고하세요.
       </p>
 
-      <GreenBox title="평균임금 산정 제외 기간 (근로기준법 시행령 제2조)">
+      <GreenBox>
         업무상 재해 요양 기간<br />
         출산전후휴가 기간<br />
         육아휴직 기간<br />
@@ -224,7 +224,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="평균임금 vs 통상임금, 높은 쪽으로 받을 수 있어요">
+      <GreenBox>
         평균임금이 통상임금보다 낮게 나오면 통상임금으로 퇴직금을 계산해요.<br />
         근로기준법 제2조 2항이 근로자 보호 조항으로 이를 명시해요.
       </GreenBox>

@@ -132,7 +132,7 @@ export default function Page() {
         본인이 직접 계산하거나 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 조회하면 정확한 일수가 나와요.
       </p>
 
-      <GreenBox title="피보험기간 핵심 정리">
+      <GreenBox>
         <p style={{ margin: "0 0 4px" }}>고용보험 가입 상태에서 보수가 지급된 날수 = 피보험기간</p>
         <p style={{ margin: "0 0 4px" }}>퇴직 전 18개월 내 180일 이상이어야 수급자격 충족</p>
         <p style={{ margin: 0 }}>달력 기준이 아니라 실제 근무일 + 유급휴일 기준</p>
@@ -168,7 +168,7 @@ export default function Page() {
         6개월 딱 채우고 나오면 아슬아슬하거나 모자랄 확률이 높죠.
       </p>
 
-      <BorderBox title="주 5일 근무 기준 계산 예시">
+      <BorderBox>
         <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}>월~금 출근 5일 + 유급 주휴일 1일 = 주 6일</p>
         <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}>한 달(4.3주) 약 24~26일 적립</p>
         <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}>180일 / 26일 = 약 7개월</p>
@@ -268,7 +268,7 @@ export default function Page() {
         전화가 편하다면 고용센터(1350)에 &quot;이전 직장 기간이 합산되는지&quot; 한마디만 물어보면 돼요.
       </p>
 
-      <BorderBox title="합산 가능 vs 불가능">
+      <BorderBox>
         <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}>A회사 100일 + B회사 90일 = 190일 (실업급여 미수급 시 합산 가능)</p>
         <p style={{ margin: 0, lineHeight: 1.9 }}>실업급여 수급 후 재취업 = 이전 기간 리셋, 0일부터 다시 시작</p>
       </BorderBox>
@@ -293,7 +293,7 @@ export default function Page() {
         실업급여랑 중복은 안 되지만, 피보험기간이 부족해서 실업급여를 못 받는 분에겐 현실적인 대안이 되죠.
       </p>
 
-      <GreenBox title="180일 부족할 때 대안">
+      <GreenBox>
         <p style={{ margin: "0 0 4px" }}>1. 추가 근무로 피보험기간 채우기 (일용직, 단기 알바 포함)</p>
         <p style={{ margin: 0 }}>2. 국민취업지원제도 구직촉진수당 (월 50만원, 최대 6개월)</p>
       </GreenBox>

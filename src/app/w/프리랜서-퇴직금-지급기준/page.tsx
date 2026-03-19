@@ -173,7 +173,7 @@ export default function Page() {
         4대보험 미가입이나 3.3% 원천징수는 근로자성을 부정하는 결정적 이유가 아니에요.
       </p>
 
-      <GreenBox title="프리랜서 근로자성 핵심 판단 기준">
+      <GreenBox>
         출퇴근 시간·장소 지정 여부<br />
         업무 내용·방법에 대한 지휘·감독 여부<br />
         다른 클라이언트 없이 전속적으로 근무했는지<br />
@@ -225,7 +225,7 @@ export default function Page() {
       <SectionBadge>준비 서류</SectionBadge>
       <DocTable docs={DOCS} />
 
-      <BorderBox title="근로자성 판단 7대 기준 (대법원)">
+      <BorderBox>
         1. 업무 내용을 사용자가 정하는가<br />
         2. 취업규칙·복무규정 적용을 받는가<br />
         3. 업무 수행 시 지휘·감독을 받는가<br />
@@ -256,7 +256,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="소멸시효는 퇴직일로부터 3년">
+      <GreenBox>
         퇴직금 청구권은 퇴직일로부터 3년 이내에 행사해야 해요.
         근로자성 인정에 시간이 걸리더라도 3년 이내라면 법적으로 청구할 수 있어요.
       </GreenBox>

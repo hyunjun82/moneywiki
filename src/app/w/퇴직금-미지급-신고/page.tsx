@@ -170,7 +170,7 @@ export default function Page() {
         4대보험 가입 이력은 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 무료로 출력할 수 있어요.
       </p>
 
-      <GreenBox title="퇴직금 미지급 신고 핵심 조건">
+      <GreenBox>
         법적 청구 가능: 퇴직 후 14일 초과 + 소멸시효 3년 이내<br />
         신고처: 사업장 소재지 관할 지방고용노동청 (온라인·방문 무료)<br />
         서류 없어도: 통장 내역·카톡 기록으로 접수 가능
@@ -223,7 +223,7 @@ export default function Page() {
       <SectionBadge>제출 서류 목록</SectionBadge>
       <DocTable docs={DOCS} />
 
-      <BorderBox title="서류가 하나도 없다면?">
+      <BorderBox>
         통장 입금 내역 + 카카오톡 대화 + 동료 증언만 있어도 진정 접수는 할 수 있어요.
         4대보험 가입 이력은 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서
         무료로 확인하고 출력할 수 있어요.
@@ -252,7 +252,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="소멸시효 3년, 절대 놓치지 마세요">
+      <GreenBox>
         퇴직금 청구권은 퇴직일로부터 3년이 지나면 소멸해요.<br />
         내용증명 발송만으로도 시효를 6개월 중단할 수 있어요.<br />
         당장 신고하기 어렵더라도 내용증명만이라도 먼저 보내두세요.

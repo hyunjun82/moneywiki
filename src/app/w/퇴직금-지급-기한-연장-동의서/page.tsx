@@ -165,7 +165,7 @@ export default function Page() {
         지급 예정일이 "조속한 시일 내" 같은 모호한 표현이면 효력을 인정받기 어려워요.
       </p>
 
-      <GreenBox title="연장 동의서 유효 조건 3가지">
+      <GreenBox>
         ① 서면 합의: 구두 합의는 입증 어려움, 서명 문서 필수<br />
         ② 사전 합의: 원칙적으로 퇴직 전에 이뤄져야 해요<br />
         ③ 구체적 지급일 명시: "조속한 시일" 같은 표현은 무효 논란 가능
@@ -229,7 +229,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="거부해도 지연이자는 그대로 받을 수 있어요">
+      <GreenBox>
         서명 거부 시 14일 초과분부터 지연이자(연 20%)가 자동 발생해요.<br />
         거부 의사는 문자나 이메일로 기록을 남겨두세요.
       </GreenBox>

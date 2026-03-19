@@ -163,7 +163,7 @@ export default function Page() {
         접수하는 순간 소멸시효도 멈춰요.
       </p>
 
-      <GreenBox title="지연이자 청구 핵심 조건">
+      <GreenBox>
         발생 시점: 퇴직 후 14일 초과 다음 날부터 자동 발생<br />
         이율: 연 20% (근로기준법 제37조 기준)<br />
         청구 방법: 진정서·소송장에 반드시 지연이자 명시 필수
@@ -210,7 +210,7 @@ export default function Page() {
       <SectionBadge>준비 서류 목록</SectionBadge>
       <DocTable docs={DOCS} />
 
-      <BorderBox title="서류를 회사에서 안 줄 때는?">
+      <BorderBox>
         4대보험 가입 이력은{" "}
         <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서
         무료로 출력할 수 있어요. 근로 사실은 동료 진술이나 카카오톡 대화로도 인정돼요.
@@ -237,7 +237,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="진정서에 지연이자를 꼭 명시하세요">
+      <GreenBox>
         단순히 "퇴직금을 지급해 달라"는 내용만으로는 지연이자 청구 의사가 전달되지 않아요.<br />
         진정서에 "퇴직금 ○○만원 및 14일 초과분 연 20% 지연이자를 함께 청구합니다"라고 써야 해요.<br />
         이 한 문장이 협상력을 크게 높여주고, 이후 민사 소송에서도 근거가 돼요.

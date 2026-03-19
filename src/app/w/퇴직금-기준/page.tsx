@@ -169,7 +169,7 @@ export default function Page() {
         급여 이체 내역이나 출퇴근 기록이 있다면 충분한 증거가 돼요.
       </p>
 
-      <GreenBox title="퇴직금 발생 기준 2가지">
+      <GreenBox>
         만 1년 이상 계속 근무 (같은 사업주, 입사일 기준)<br />
         4주 평균 주 소정근로시간 15시간 이상<br />
         두 조건 모두 충족 시 정규직·계약직·파트타임 전부 동일 적용
@@ -249,7 +249,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="상여금 환산 꼭 챙기세요">
+      <GreenBox>
         연간 상여금 ÷ 12 = 월 환산액, 이 금액을 월 평균임금에 더해요.<br />
         연 600만원 상여금 기준 월 50만원 추가 → 3년 근속 시 퇴직금 150만원 이상 차이 나요.<br />
         회사가 상여금을 빼고 계산했다면 이의를 제기할 수 있어요.

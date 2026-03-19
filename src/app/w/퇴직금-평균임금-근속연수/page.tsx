@@ -172,7 +172,7 @@ export default function Page() {
         두 금액을 모두 계산해보고 더 높은 쪽으로 청구하면 돼요.
       </p>
 
-      <GreenBox title="퇴직금 계산 공식 (근로자퇴직급여보장법 제8조)">
+      <GreenBox>
         ① 1일 평균임금 = 퇴직 전 3개월 총임금 ÷ 3개월 총 일수<br />
         ② 퇴직금 = 1일 평균임금 × 30일 × 근속연수<br />
         예시: 3개월 총임금 900만원, 91일, 근속 5년<br />
@@ -238,7 +238,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="계산 결과 검증 방법">
+      <GreenBox>
         고용노동부 퇴직금 계산기(moel.go.kr)와 비교해보세요<br />
         차이가 5만원 이상이면 인사팀에 재계산 요청<br />
         1일 평균임금이 통상임금보다 낮으면 통상임금 기준으로 재계산

@@ -163,7 +163,7 @@ export default function Page() {
         세금 처리를 사업소득으로 했어도 실질 관계가 근로자이면 청구 가능해요.
       </p>
 
-      <GreenBox title="근로자성 판단 4가지 기준">
+      <GreenBox>
         ① 업무 지시·감독: 회사가 업무 내용과 방식을 정해줘요<br />
         ② 고정급 지급: 성과와 무관하게 일정 금액을 매달 받아요<br />
         ③ 시간·장소 통제: 출근 시간·근무 장소가 회사에 의해 정해져요<br />
@@ -230,7 +230,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="계약서 명칭보다 실제 근무 형태가 기준이에요">
+      <GreenBox>
         법원과 고용노동부 모두 계약서 이름이 아닌 실제 업무 방식을 봐요.
         업무 지시를 받고 고정급을 받았다면 근로자로 인정받을 수 있어요.
       </GreenBox>

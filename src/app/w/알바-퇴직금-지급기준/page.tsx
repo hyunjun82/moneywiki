@@ -161,7 +161,7 @@ export default function Page() {
         "알바는 퇴직금 없어요"라고 해도 조건을 충족하면 법으로 보장된 권리예요.
       </p>
 
-      <GreenBox title="알바 퇴직금 지급 조건 (근로자퇴직급여보장법 제4조)">
+      <GreenBox>
         ① 4주 평균 주 15시간 이상 근무<br />
         ② 같은 사업장에서 1년 이상 계속 근무<br />
         → 두 조건 충족 시 사업장 규모와 무관하게 지급 의무 발생
@@ -204,7 +204,7 @@ export default function Page() {
       <SectionBadge>준비 서류 목록</SectionBadge>
       <DocTable docs={DOCS} />
 
-      <BorderBox title="증거가 없을 때 활용할 수 있는 방법">
+      <BorderBox>
         고용노동부 민원마당(minwon.moel.go.kr)에서 진정을 제기하면<br />
         근로감독관이 사업장을 조사해 근무 사실을 확인해줘요.
       </BorderBox>
@@ -229,7 +229,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="여러 매장에서 알바했다면 각각 청구해요">
+      <GreenBox>
         각 사업장별로 별도 계산이고, 별도 청구해야 해요.<br />
         한 매장에서만 1년 이상 일했다면 그 사업장에만 청구하면 돼요.
       </GreenBox>

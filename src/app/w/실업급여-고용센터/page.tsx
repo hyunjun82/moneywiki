@@ -134,7 +134,7 @@ export default function Page() {
         partialMatchText="아직 준비가 부족해요. 미완료 항목을 먼저 처리하고 방문하세요."
       />
 
-      <GreenBox title="고용24에서 관할 센터 찾는 순서">
+      <GreenBox>
         고용24(ei.go.kr) 접속 → 메뉴에서 &lsquo;고용센터 찾기&rsquo; 클릭<br />
         주소 또는 지역명 입력 → 관할 고용센터 이름·전화번호·약도 확인<br />
         방문 예약도 같은 사이트에서 바로 가능
@@ -154,7 +154,7 @@ export default function Page() {
         온라인 교육 말고 <strong>구직등록</strong>도 미리 해두면 현장 대기 시간이 확 줄어들어요. 워크넷(work.go.kr)이나 고용24에서 5분이면 되는 일이죠. <a href="/w/실업급여-신청-준비물-목록" style={{ color: "#1D9E75", textDecoration: "underline" }}>신분증, 통장 사본</a>까지 챙기면 준비 끝이에요.
       </p>
 
-      <BorderBox title="방문 전 필수 준비물">
+      <BorderBox>
         신분증 원본 (주민등록증·운전면허증·여권 중 하나)<br />
         본인 명의 통장 사본 (실업급여 수령 계좌)<br />
         이직확인서 (회사가 미제출 시 직접 지참)<br />
@@ -198,7 +198,7 @@ export default function Page() {
         혹시 불인정 결정이 나오더라도 당황하지 마세요. <strong>60일 이내에 <a href="/w/실업급여-이의신청" style={{ color: "#1D9E75", textDecoration: "underline" }}>이의신청</a></strong>을 넣을 수 있으니까요. 추가 증빙 자료를 첨부해서 재심사를 요청하면 되죠. 현장에서 담당자에게 &quot;어떤 자료가 더 필요한지&quot; 바로 물어보는 게 가장 정확해요.
       </p>
 
-      <GreenBox title="방문 당일 순서 요약">
+      <GreenBox>
         번호표 뽑기 → 대기 → 담당자 면담(이직 사유 확인)<br />
         수급자격 인정 → 실업인정 일정 안내 → 첫 입금까지 2~3주<br />
         불인정 시 → 60일 이내 이의신청 가능

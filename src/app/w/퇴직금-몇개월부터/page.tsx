@@ -182,7 +182,7 @@ export default function Page() {
         정규직·계약직·아르바이트 구분 없이 동일한 기준이 적용돼요.
       </p>
 
-      <GreenBox title="퇴직금 발생 조건 2가지 (둘 다 충족해야 해요)">
+      <GreenBox>
         조건 1. 계속근로 만 1년(12개월) 이상 — 하루라도 모자라면 0원<br />
         조건 2. 주 평균 소정근로시간 15시간 이상 — 파트타임도 해당 가능<br />
         정규직·계약직·아르바이트 모두 동일 적용 (근로자퇴직급여보장법 제8조)
@@ -259,7 +259,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="1년 미만 퇴사 시 챙길 수 있는 권리">
+      <GreenBox>
         연차수당: 월 개근 시 발생, 최대 11일치 청구 가능 (근로기준법 제60조 제2항)<br />
         실업급여: 비자발적 퇴사 + 피보험기간 180일 이상이면 수령 가능<br />
         부당해고 구제: 1년 직전 의도적 해고는 노동위원회에 구제신청 가능

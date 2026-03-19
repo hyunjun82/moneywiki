@@ -150,7 +150,7 @@ export default function Page() {
         같은 순위에 유족이 여러 명이면 어떻게 될까요? <strong>균등 배분</strong>이에요. 자녀가 2명이면 50%씩, 3명이면 약 33%씩 나눠 받게 되죠. 한 명이 전부 가져가는 건 불가능해요. 유족 간 합의로 한 명에게 몰아줄 수도 없고요.
       </p>
 
-      <GreenBox title="미지급 실업급여 수급 순위">
+      <GreenBox>
         1순위: 배우자 (사실혼 포함)<br />
         2순위: 자녀<br />
         3순위: 부모<br />
@@ -179,7 +179,7 @@ export default function Page() {
         가족관계증명서와 주민등록등본은 <a href="https://www.gov.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>정부24(gov.kr)</a>에서 온라인 발급이 가능해요. 관할 고용센터가 어디인지, 추가로 필요한 서류가 없는지 궁금하면 고용센터 대표번호 <strong>1350</strong>으로 먼저 전화해 보세요. 한 통이면 확인 끝이에요.
       </p>
 
-      <BorderBox title="신청 시 필요한 서류 목록">
+      <BorderBox>
         미지급 급여 청구서<br />
         사망진단서 또는 사망확인서<br />
         가족관계증명서<br />

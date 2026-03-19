@@ -170,7 +170,7 @@ export default function Page() {
         아래 체크리스트로 내 준비 상태를 먼저 확인해보세요.
       </p>
 
-      <GreenBox title="퇴직금 지급 절차 핵심 4단계">
+      <GreenBox>
         ① 사직서 제출 (퇴직일 확정) → ② IRP 계좌 개설<br />
         → ③ IRP 계좌번호 인사팀 전달 → ④ 퇴직일 후 14일 이내 입금 확인<br />
         ※ 퇴직금 300만원 초과 시 IRP 계좌 필수 (2022년부터 의무)
@@ -241,7 +241,7 @@ export default function Page() {
       <SectionBadge>수령 전 준비 목록</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="IRP로 받으면 세금이 바로 안 나가요">
+      <GreenBox>
         IRP 계좌로 퇴직금을 받으면 퇴직소득세가 유예돼요.<br />
         IRP에서 꺼낼 때 세금이 정산되는 구조예요.<br />
         55세 이후 연금 형태로 꺼내면 세율이 낮아져서 절세 효과가 있어요.

@@ -165,7 +165,7 @@ export default function Page() {
         <a href="/w/퇴직금-통상임금-계산" style={{ color: "#1D9E75", textDecoration: "underline" }}>통상임금</a>과 비교해서 높은 쪽을 선택하는 것도 가능하기 때문에, 두 방법을 모두 계산해봐야 해요.
       </p>
 
-      <GreenBox title="평균임금 포함 여부 기준">
+      <GreenBox>
         포함: 기본급, 정기 상여금(월 환산), 고정 야근수당, 연차수당(3개월 내 지급분)<br />
         조건부 포함: 식대·교통비 (취업규칙 명시 또는 매월 정기 지급 시)<br />
         제외: 실비 보전비, 임시·특별 지급분, 퇴직금 자체
@@ -235,7 +235,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="평균임금이 통상임금보다 낮게 나오면?">
+      <GreenBox>
         산출한 평균임금이 통상임금보다 낮을 때는 통상임금을 기준으로 계산할 수 있어요.<br />
         근로기준법 제2조 2항이 보장하는 권리예요. 두 가지를 모두 계산해서 높은 쪽을 선택하세요.
       </GreenBox>

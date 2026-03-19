@@ -157,7 +157,7 @@ export default function Page() {
         55세 생일이 퇴직일 당일인 경우는 <a href="/w/퇴직금-irp-의무-예외" style={{ color: "#1D9E75", textDecoration: "underline" }}>예외 조건</a>에 해당해 일반 계좌로 받을 수 있어요.
       </p>
 
-      <GreenBox title="IRP 의무 이전 조건 한눈에">
+      <GreenBox>
         의무 대상: 만 55세 미만 + 퇴직금 세전 300만원 초과<br />
         예외 대상: 만 55세 이상 OR 퇴직금 300만원 이하 OR 근로자 사망<br />
         시행일: 2022년 4월 14일 이후 퇴직자 전체 적용
@@ -228,7 +228,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="IRP에 추가 납입하면 세금 혜택도 생겨요">
+      <GreenBox>
         퇴직금 수령분 외에도 연간 900만원까지 추가 납입하면 세액공제를 받아요.<br />
         연봉 5,500만원 이하 16.5%, 초과 13.2% — 연 300만원 납입 시 최대 49.5만원 환급이에요.
       </GreenBox>

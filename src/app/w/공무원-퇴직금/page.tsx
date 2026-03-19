@@ -155,7 +155,7 @@ export default function Page() {
         5년 미만부터 10년 미만까지는 퇴직일시금만 가능해요.
       </p>
 
-      <GreenBox title="재직 기간별 수령 형태">
+      <GreenBox>
         5년 미만: 퇴직일시금만 가능<br />
         5년 이상 ~ 10년 미만: 퇴직일시금만 가능<br />
         10년 이상: 퇴직연금(매월) 또는 퇴직일시금 선택 가능
@@ -203,7 +203,7 @@ export default function Page() {
       <SectionBadge>준비 서류 목록</SectionBadge>
       <DocTable docs={DOCS} />
 
-      <BorderBox title="연금이 유리한 경우">
+      <BorderBox>
         건강 상태가 좋고 장수 가능성이 높을 때<br />
         퇴직 후 소득이 거의 없을 때 (감액 위험이 낮아요)<br />
         배우자가 있고 유족연금까지 고려할 때
@@ -230,7 +230,7 @@ export default function Page() {
       <SectionBadge>준비 체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="공무원연금 수급 중 재취업 시 주의사항">
+      <GreenBox>
         연금 수급 중 소득이 발생하면 연금이 일부 감액될 수 있어요.<br />
         감액 폭은 소득 수준에 따라 달라지기 때문에 공무원연금공단(1588-4321)에 미리 문의하세요.
       </GreenBox>

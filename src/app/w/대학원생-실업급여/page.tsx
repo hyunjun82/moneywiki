@@ -143,7 +143,7 @@ export default function Page() {
         야간이냐 전일제냐에 따라 입증 방법이 달라질 뿐이에요.
       </p>
 
-      <GreenBox title="대학원생 실업급여 자격 요건">
+      <GreenBox>
         <p style={{ margin: "0 0 4px" }}>고용보험 가입 이력 (RA·TA·계약직 등) 필수</p>
         <p style={{ margin: "0 0 4px" }}>비자발적 퇴직 (계약만료, 연구과제 종료 등)</p>
         <p style={{ margin: 0 }}>피보험기간 180일 이상 + 재취업 의사</p>
@@ -180,7 +180,7 @@ export default function Page() {
         <a href="https://www.moel.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용노동부</a> 상담전화(1350)로 먼저 확인하는 게 안전하죠.
       </p>
 
-      <BorderBox title="야간 vs 전일제 대학원 비교">
+      <BorderBox>
         <p style={{ margin: "0 0 4px", lineHeight: 1.9 }}>야간·주말 대학원 → 별도 입증 불필요, 일반 수급자와 동일</p>
         <p style={{ margin: "0 0 4px", lineHeight: 1.9 }}>전일제 대학원 → 입사지원·면접 기록으로 구직 의사 입증 필요</p>
         <p style={{ margin: 0, lineHeight: 1.9 }}>휴학 상태 → 전일제든 야간이든 구직 의사 인정 용이</p>
@@ -244,7 +244,7 @@ export default function Page() {
         <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 모의계산을 해볼 수 있죠.
       </p>
 
-      <GreenBox title="대학원생 실업급여 핵심 요약">
+      <GreenBox>
         <p style={{ margin: "0 0 4px" }}>1일 상한액 68,100원 / 하한액 66,048원 (2026년 기준)</p>
         <p style={{ margin: "0 0 4px" }}>퇴직 전 평균임금의 60%로 계산</p>
         <p style={{ margin: 0 }}>수급기간: 나이·피보험기간에 따라 120~270일</p>

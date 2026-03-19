@@ -176,7 +176,7 @@ export default function Page() {
         IRP를 퇴직 직전에 만든 경우라면 가입일 기준으로 5년이 지난 뒤 신청하세요.
       </p>
 
-      <GreenBox title="연금 수령 조건 요약">
+      <GreenBox>
         만 55세 이상 + IRP 가입 5년 이상 → 연금 수령 가능<br />
         수령 기간 5년 이상 → 퇴직소득세 30% 감면<br />
         수령 기간 10년 이상 → 퇴직소득세 40% 감면
@@ -254,7 +254,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="14일 지나도 입금이 안 됐다면">
+      <GreenBox>
         1단계: 인사팀에 IRP 계좌번호 재확인 요청<br />
         2단계: 고용노동부 퇴직급여 지급 지연 신고 (☎ 1350)<br />
         3단계: 신고 시 지연이자 연 20% 청구 가능

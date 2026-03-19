@@ -158,7 +158,7 @@ export default function Page() {
         체불 확인서 발급 후 1년 이내에 근로복지공단에 신청해요.
       </p>
 
-      <GreenBox title="대지급금 신청 조건">
+      <GreenBox>
         퇴직 후 2년 이내 (기준: 퇴직일)<br />
         체불 확인서 발급 후 1년 이내<br />
         상한액: 2,100만원 (퇴직금+임금 합산)<br />
@@ -224,7 +224,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="DB·DC 퇴직연금 미납분도 대지급금 대상이에요">
+      <GreenBox>
         사업주가 퇴직연금 납입을 안 했거나 운용사가 지급을 못 하는 경우,
         대지급금으로 청구할 수 있어요. 고용노동청 신고가 첫 번째 단계예요.
       </GreenBox>

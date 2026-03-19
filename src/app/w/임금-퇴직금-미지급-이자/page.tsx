@@ -169,7 +169,7 @@ export default function Page() {
         두 항목의 이자 기산점이 다르기 때문에, 아래 체크리스트로 청구 가능 여부를 먼저 확인하고 금액 정리를 시작하세요.
       </p>
 
-      <GreenBox title="임금·퇴직금 지연이자 핵심 기준">
+      <GreenBox>
         이자율: 연 20% (사업장 규모 무관)<br />
         임금 기산점: 약정 지급일 다음 날<br />
         퇴직금 기산점: 퇴직 후 15일째 (14일 기한 초과 시)<br />
@@ -216,7 +216,7 @@ export default function Page() {
       <SectionBadge>제출 서류 목록</SectionBadge>
       <DocTable docs={DOCS} />
 
-      <BorderBox title="미지급 내역 정리 방법">
+      <BorderBox>
         임금: 몇 월 급여 / 지급 예정일 / 미지급 금액 / 이자 기산 시작일<br />
         퇴직금: 퇴직일 / 예상 퇴직금 / 14일 기한 초과 날짜 / 이자 기산 시작일<br />
         이렇게 분리해서 정리하면 진정서 처리 속도가 빨라져요.
@@ -243,7 +243,7 @@ export default function Page() {
       <SectionBadge>청구 전 준비 목록</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="임금·퇴직금, 한 번에 청구하세요">
+      <GreenBox>
         노동청 진정서에 임금 미지급과 퇴직금 미지급을 모두 기재할 수 있어요.
         별도로 두 번 신청할 필요가 없어요. 지연이자도 각각 명시해서 청구하면
         근로감독관이 두 항목을 함께 검토해 시정 지시를 내려요.

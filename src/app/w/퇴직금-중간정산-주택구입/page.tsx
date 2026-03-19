@@ -166,7 +166,7 @@ export default function Page() {
         퇴직한 뒤에는 중간정산이 아닌 퇴직금 지급 절차로 진행돼요.
       </p>
 
-      <GreenBox title="주택 구입 중간정산 핵심 조건">
+      <GreenBox>
         본인·배우자 명의 주택 없음 (무주택자)<br />
         주택 매매계약서 또는 임대차계약서 보유<br />
         계약서에 본인이 매수인·임차인으로 기재<br />
@@ -245,7 +245,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="중간정산 후 꼭 기억할 것">
+      <GreenBox>
         근속기간이 0년으로 초기화돼요 — 퇴직금은 중간정산일 다음 날부터 다시 쌓여요<br />
         퇴직소득세는 지급 금액에서 바로 차감돼요<br />
         원천징수영수증을 반드시 보관해요 — 나중에 최종 퇴직금 계산에 필요해요

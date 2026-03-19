@@ -155,7 +155,7 @@ export default function Page() {
         퇴직금이 300만원을 넘으면 IRP 계좌로만 수령해야 해요.
       </p>
 
-      <GreenBox title="퇴직금 수급 기본 조건">
+      <GreenBox>
         1년 이상 근무 + 주 15시간 이상<br />
         고용 형태 무관 (정규직·계약직·알바 동일)<br />
         퇴직금 = 1일 평균임금 × 30 × 근속연수
@@ -219,7 +219,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="퇴직금을 못 받으면 바로 신고하세요">
+      <GreenBox>
         14일이 지나도 입금이 없으면 연 20% 지연이자를 청구할 수 있어요.
         고용24(work.go.kr) 온라인 진정 접수로 빠르게 해결할 수 있어요.
       </GreenBox>

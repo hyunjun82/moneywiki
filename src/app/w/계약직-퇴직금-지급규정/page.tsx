@@ -158,7 +158,7 @@ export default function Page() {
         계약 만료 후 갱신 없이 종료되는 것도 퇴직으로 인정되고 퇴직금이 발생해요.
       </p>
 
-      <GreenBox title="계약직 퇴직금 지급 규정 핵심">
+      <GreenBox>
         1. 1년 이상 계속 근로 — 계약 갱신 합산 포함<br />
         2. 4주 평균 주 15시간 이상 근무<br />
         3. 고용 형태 무관 — 정규직·계약직·단시간 모두 동일 적용
@@ -224,7 +224,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="지연이자도 함께 청구할 수 있어요">
+      <GreenBox>
         계약 만료 후 14일이 지나도 퇴직금이 안 나오면 연 20% 지연이자를 청구할 수 있어요.
         고용노동부 진정 접수 시 사업주에게 시정 명령이 내려지고, 지연이자도 함께 받을 수 있어요.
       </GreenBox>

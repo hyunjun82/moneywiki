@@ -164,7 +164,7 @@ export default function Page() {
         구직활동 의무가 면제된다는 것도 큰 장점이에요. 4주마다 실업인정 받으러 고용센터에 갈 필요가 없죠. 치료에만 집중하고, 나은 다음에 다시 구직활동을 시작하면 돼요.
       </p>
 
-      <GreenBox title="핵심만 정리하면 이래요">
+      <GreenBox>
         실업급여 수급 중 아프면 → 상병급여로 전환 (금액 동일)<br />
         14일 이상 취업 불가능해야 인정<br />
         완치 후 14일 이내에 반드시 신청
@@ -256,7 +256,7 @@ export default function Page() {
       <SectionBadge>신청 전 체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <BorderBox title="산재보험이랑 중복은 안 돼요">
+      <BorderBox>
         산재보험 휴업급여를 이미 받고 있다면 같은 기간에 상병급여는 나오지 않아요.<br />
         근로기준법 휴업보상, 국가배상법 보상금도 마찬가지로 중복 수급이 안 되죠.<br />
         다른 보상금을 받고 있다면 어떤 게 더 유리한지 고용센터(1350)에 먼저 물어보세요.

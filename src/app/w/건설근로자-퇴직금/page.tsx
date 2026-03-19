@@ -152,7 +152,7 @@ export default function Page() {
         여러 현장에서 일한 일수를 모두 합산하기 때문에, 오늘은 A 현장, 내일은 B 현장에서 일해도 두 곳의 근무일수가 모두 내 계좌에 쌓여요.
       </p>
 
-      <GreenBox title="건설근로자 퇴직공제금 핵심 구조">
+      <GreenBox>
         적립 주체: 원청·하청 사업주(근로자 본인 부담 없음)<br />
         적립 단가: 근무일당 9,600원(2024년 기준)<br />
         수령 자격: 건설업 종사 252일 이상<br />
@@ -198,7 +198,7 @@ export default function Page() {
       <SectionBadge>준비 서류 목록</SectionBadge>
       <DocTable docs={DOCS} />
 
-      <BorderBox title="미적립 기간도 소급 청구 가능해요">
+      <BorderBox>
         사업주가 적립을 빠뜨린 기간이 있다면 건설근로자공제회에 신고하세요.
         사업주에게 소급 납부 명령이 내려지고, 미적립 기간 공제금도 받을 수 있어요.
       </BorderBox>
@@ -225,7 +225,7 @@ export default function Page() {
       <SectionBadge>준비 체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="252일 미만이어도 건설업 계속 하면 일수가 쌓여요">
+      <GreenBox>
         지금 당장 못 받더라도 나중에 다시 건설업에 취업하면 이전 일수에 합산돼요.<br />
         건설업을 완전히 그만둘 경우에는 일정 요건에서 반환 신청도 가능해요.<br />
         문의: 건설근로자공제회 1588-0075

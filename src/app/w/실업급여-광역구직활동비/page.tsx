@@ -191,7 +191,7 @@ export default function Page() {
         <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 신청할 수 있죠.
       </p>
 
-      <GreenBox title="광역구직활동비 핵심 요약">
+      <GreenBox>
         대상: 실업급여 수급 중인 사람<br />
         조건: 거주지~면접 장소 왕복 50km 이상<br />
         지원: 교통비(실비) + 숙박비(1박 약 55,000원 한도) + 일비(25,000원)<br />
@@ -286,7 +286,7 @@ export default function Page() {
         횟수를 아껴서 쓰되, 좋은 기회가 오면 주저하지 마세요.
       </p>
 
-      <BorderBox title="이 3가지를 어기면 지급 불가">
+      <BorderBox>
         사전 신청: 면접 전에 고용24 또는 고용센터에서 접수해야 해요. 사후 신청은 안 됨<br />
         면접 확인서 + 영수증: 둘 중 하나라도 없으면 정산이 안 돼요<br />
         횟수 제한: 수급기간 중 보통 5회. 먼 거리 면접에만 쓰는 게 현명해요

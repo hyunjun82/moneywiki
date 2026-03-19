@@ -184,7 +184,7 @@ export default function Page() {
         해고됐다고 바로 포기하면 안 되는 이유가 여기에 있어요.
       </p>
 
-      <GreenBox title="중대한 귀책사유 vs 경미한 귀책사유">
+      <GreenBox>
         <strong>중대한 귀책사유 (실업급여 제한)</strong><br />
         횡령·배임, 고의 기물파손, 기밀 유출, 7일+ 무단결근, 폭행<br /><br />
         <strong>경미한 귀책사유 (실업급여 가능)</strong><br />
@@ -288,7 +288,7 @@ export default function Page() {
         &ldquo;회사가 교육이나 배치전환 없이 바로 해고했다&rdquo;, &ldquo;손해 금액이 경미했다&rdquo;, &ldquo;고의가 아니라 과실이었다&rdquo; 같은 점을 소명하면 뒤집힐 가능성이 올라가죠.
       </p>
 
-      <BorderBox title="이의신청 시 준비할 서류">
+      <BorderBox>
         해고통지서 또는 징계 결정서 사본<br />
         회사의 취업규칙 또는 인사규정 사본<br />
         해고 사유에 대한 본인 의견서 (경위를 구체적으로 작성)<br />

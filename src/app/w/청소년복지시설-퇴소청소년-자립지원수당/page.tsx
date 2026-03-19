@@ -5,7 +5,41 @@
 // Q3: 대상 시설(쉼터, 자립생활관), 나이(만 18~24세), 월 50만원, 5년간
 // Q4: EligibilityChecker + Steps + FAQ
 
-import { H2, FAQ, EligibilityChecker, Steps, GreenBox, References, Disclaimer } from "@/components/article-ui";
+import { FAQ, GreenBox, Steps, EligibilityChecker, References, Disclaimer , H2 } from "@/components/article-ui";
+
+const CHECK_ITEMS = [
+  { id: "c1", label: "청소년복지시설(청소년자립생활관, 청소년쉼터 등)에서 퇴소했어요" },
+  { id: "c2", label: "퇴소 당시 만 18세 이상 만 24세 이하였어요" },
+  { id: "c3", label: "시설 퇴소 후 5년이 지나지 않았어요" },
+  { id: "c4", label: "다른 자립지원 급여(국민기초생활보장 등)를 중복 수급하고 있지 않아요" },
+];
+
+const STEPS = [
+  { title: "퇴소 전 사전 상담", desc: "시설 퇴소 전에 담당 사회복지사와 자립지원수당에 대해 미리 상담해요. 퇴소 후 신청이 가능한 시기와 필요 서류를 파악해 두면 좋아요." },
+  { title: "주민센터 또는 복지로 신청", desc: "퇴소 후 거주지 읍·면·동 주민센터를 방문하거나 복지로에서 온라인으로 신청해요." },
+  { title: "서류 제출 및 자격 심사", desc: "퇴소 확인서, 신분증 등을 제출하고 자격 심사를 받아요. 시설에서 발급하는 퇴소 확인서가 핵심 서류예요." },
+  { title: "수당 지급 시작", desc: "승인 후 매달 30만원이 지정한 계좌로 입금돼요. 최대 5년간 지원받을 수 있죠." },
+];
+
+const FAQ_ITEMS = [
+  {
+    q: "청소년쉼터에서 퇴소해도 신청할 수 있나요?",
+    a: "네, 단기·중기·장기청소년쉼터 모두 대상이에요. 청소년자립생활관, 청소년복지시설 등 여성가족부가 인정하는 시설에서 퇴소한 경우에 해당돼요.",
+  },
+  {
+    q: "수당을 어디에 쓰든 제한이 없나요?",
+    a: "자립을 위한 주거, 교육, 직업훈련 등 자립 관련 용도로 사용하는 걸 권장해요. 다만 사용처 증빙을 요구하지는 않아요. 일부 지자체는 자립 계획서 제출을 요구하기도 해요.",
+  },
+  {
+    q: "취업을 했어도 계속 받을 수 있나요?",
+    a: "취업 여부와 관계없이 자격 요건을 유지하면 계속 받을 수 있죠. 다만 소득이 생겨 기초생활수급자 등 다른 급여와 중복되는 경우는 제한될 수 있죠.",
+  },
+];
+
+const REFS = [
+  { label: "복지로 청소년 자립지원 신청", url: "https://www.bokjiro.go.kr" },
+  { label: "여성가족부 청소년 자립지원 안내", url: "https://www.mogef.go.kr" },
+];
 
 export default function Page() {
   return (
@@ -16,7 +50,29 @@ export default function Page() {
       <p style={{ fontSize: "15.5px", lineHeight: 2.0, color: "#374151", marginBottom: "1.1rem" }}>
         청소년쉼터나 자립생활관 같은 복지시설에서 퇴소한 뒤 자립을 준비하고 있다면, 매달 50만원씩 최대 5년간 지원받을 수 있죠. 따로 신청해야 받을 수 있는 제도예요.
       </p>
-      <a href="https://www.bokjiro.go.kr" style={{ display: "block", background: "linear-gradient(135deg,#1D9E75,#0D8B66)", color: "#fff", textAlign: "center" as const, padding: "16px 24px", borderRadius: "12px", fontWeight: 700, fontSize: "16px", margin: "24px 0", textDecoration: "none", boxShadow: "0 4px 12px rgba(29,158,117,0.3)" }}>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
+        퇴소청소년 자립지원수당은 청소년쉼터, 청소년자립생활관 등 여성가족부 산하 청소년복지시설에서 퇴소한 청소년에게 지급돼요. 시설에서 나온 뒤 5년 이내라면 신청 가능하고, 자립 준비 기간 동안 안정적인 생활비로 활용할 수 있죠.
+      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
+        이 글에서는 퇴소청소년 자립지원수당의 자격 요건, 지원 기간, 신청 방법을 단계별로 안내할게요. 퇴소 전에 미리 준비하면 퇴소 후 바로 신청해서 공백 없이 지원받을 수 있죠. 퇴소 시점을 앞두고 있다면 시설 사회복지사와 미리 이야기해두는 게 가장 빠른 준비 방법이에요.
+      </p>
+
+      <a
+        href="https://www.bokjiro.go.kr"
+        style={{
+          display: "block",
+          background: "linear-gradient(135deg,#1D9E75,#0D8B66)",
+          color: "#fff",
+          textAlign: "center" as const,
+          padding: "16px 24px",
+          borderRadius: "12px",
+          fontWeight: 700,
+          fontSize: "16px",
+          margin: "24px 0",
+          textDecoration: "none",
+          boxShadow: "0 4px 12px rgba(29,158,117,0.3)",
+        }}
+      >
         자립지원수당 신청하기 →
       </a>
 
@@ -24,43 +80,51 @@ export default function Page() {
       <p style={{ fontSize: "15.5px", lineHeight: 2.0, color: "#374151", marginBottom: "1.1rem" }}>
         여성가족부가 지정한 청소년복지시설(청소년쉼터, 자립생활관, 회복지원시설 등)에서 퇴소한 만 18세~24세 청소년이 대상이에요. 퇴소 후 5년 이내에 신청해야 하고, 소득 기준은 별도로 없죠.
       </p>
-      <EligibilityChecker items={[
-        { id: "e1", label: "청소년복지시설(쉼터, 자립생활관 등)에서 퇴소했어요" },
-        { id: "e2", label: "퇴소 당시 만 18세 이상 만 24세 이하예요" },
-        { id: "e3", label: "퇴소한 지 5년이 지나지 않았어요" },
-      ]} />
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
+        연령 기준은 퇴소 당시 만 18세 이상 만 24세 이하예요. 퇴소 후 5년이 지나지 않은 경우에만 신청할 수 있죠. 예를 들어 만 20세에 퇴소했다면 만 25세 전까지, 최소 5년 내에 신청하고 수급을 유지할 수 있죠. 퇴소 당시 나이가 만 17세라면 만 18세 생일 이후부터 신청이 가능하기 때문에 나이 도달 시점을 미리 파악해두는 게 중요해요.
+      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
+        기초생활수급자나 한부모가족 급여 등 다른 자립 관련 급여를 중복 수급하고 있으면 지원이 제한될 수 있죠. 단, 모든 급여와 중복이 안 되는 건 아니라서 정확한 중복 수급 여부는 담당 공무원과 상담을 통해 확인하는 게 좋아요. 현재 받고 있는 급여 종류를 미리 목록으로 정리해서 상담에 가면 더 빠르게 확인할 수 있죠.
+      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
+        아래 자격 항목에 모두 해당한다면 바로 신청할 수 있죠. 퇴소 직후 가능한 빨리 신청하는 게 지원 기간을 최대한 활용하는 방법이에요. 퇴소 전 시설 사회복지사와 미리 상담해두면 퇴소 당일 신청도 가능해요. 신청일이 늦어지면 그만큼 수급 기간이 줄어들기 때문에 퇴소 준비와 동시에 신청 준비를 병행하는 게 좋아요. 퇴소 후 거주지 주민등록 이전이 선행되어야 주민센터 신청이 빠르게 처리돼요.
+      </p>
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>얼마나 받을 수 있나요?</H2>
       <p style={{ fontSize: "15.5px", lineHeight: 2.0, color: "#374151", marginBottom: "1.1rem" }}>
         매달 50만원이 계좌로 입금돼요. 신청일부터 지급이 시작되고, 소급 적용은 안 되죠. 최대 5년간 받을 수 있으니 자격이 되면 빠르게 신청하는 게 유리해요.
       </p>
+
       <GreenBox>
-        <strong>지급 정보</strong><br />
-        월 50만원 · 최대 5년간 · 신청일 기준 지급 시작 · 소득 기준 없음
+        월 30만원씩 최대 5년(최대 총 1,800만원)까지 지원해요. 퇴소 후 자립 준비 기간 동안 주거비, 생활비, 직업훈련 비용 등에 자유롭게 사용할 수 있죠.
       </GreenBox>
 
       <H2>신청 방법</H2>
       <p style={{ fontSize: "15.5px", lineHeight: 2.0, color: "#374151", marginBottom: "1.1rem" }}>
         주민센터 방문 또는 복지로 온라인 신청이 가능해요. 퇴소 확인서, 신분증, 통장 사본이 필요하죠. 서류 준비가 어려우면 시설 사회복지사에게 도움을 요청할 수 있죠.
       </p>
-      <Steps steps={[
-        { title: "퇴소 확인서 준비", desc: "퇴소한 시설에서 퇴소 확인서를 발급받아요." },
-        { title: "주민센터 또는 복지로 신청", desc: "신분증, 통장 사본, 퇴소 확인서를 지참하고 신청해요." },
-        { title: "자격 확인 후 지급 시작", desc: "승인되면 다음 달부터 매월 50만원이 입금돼요." },
-      ]} />
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
+        수당 사용에 큰 제한은 없지만, 자립 계획서를 제출하거나 상담을 받아야 하는 경우가 있죠. 지자체에 따라 운영 방식이 조금씩 다를 수 있어서 거주지 담당 공무원에게 구체적인 내용을 물어보는 게 좋아요. 자립 계획서가 있으면 본인의 방향성을 구체화하는 데도 도움이 돼요. 처음 작성이 막막하면 주민센터 담당 복지사에게 함께 작성해달라고 요청할 수도 있죠.
+      </p>
+
+      <H2>신청 방법과 단계별 안내</H2>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
+        신청은 퇴소 후 거주지 읍·면·동 주민센터 방문 또는 복지로 온라인으로 할 수 있죠. 퇴소 전에 시설 담당 사회복지사와 미리 상담해두면 퇴소 직후 빠르게 신청이 가능해요. 핵심 서류는 시설에서 발급하는 퇴소 확인서이기 때문에 퇴소 시 반드시 챙겨야 해요. 퇴소 당일이나 바로 다음 날 신청하면 수당 시작 시점을 최대한 앞당길 수 있죠.
+      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
+        신청 서류는 신분증, 퇴소 확인서, 통장 사본, 주민등록등본이 기본이에요. 복지로에서 온라인 신청 시에는 서류를 파일로 첨부하면 되고, 주민센터 방문 시에는 원본을 지참해요. 서류 준비가 어려운 경우 시설 사회복지사에게 도움을 요청할 수 있죠. 퇴소 직후 주민등록 주소 이전이 안 됐다면 신청 전에 주소 이전부터 완료하는 게 좋아요.
+      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
+        신청 후 심사에는 약 2~4주가 걸려요. 승인되면 다음 달부터 매달 30만원이 계좌로 입금돼요. 매년 자격 유지 여부를 확인하는 갱신 안내가 오기 때문에 연락처와 거주지 정보를 최신으로 유지하는 게 중요해요. 이사 후 주소 이전을 미루면 갱신 안내가 누락될 수 있어서 주소 변경 시 바로 신고하는 게 좋아요.
+      </p>
+      <Steps steps={STEPS} />
 
       <H2>자주 묻는 질문</H2>
-      <p style={{ fontSize: "15.5px", lineHeight: 2.0, color: "#374151", marginBottom: "1.1rem" }}>자립지원수당에 대해 자주 묻는 질문이에요.</p>
-      <FAQ items={[
-        { q: "퇴소 후 바로 신청하지 않으면 소급 지급이 되나요?", a: "안 돼요. 신청일부터 지급이 시작되기 때문에 늦게 신청할수록 받을 수 있는 총액이 줄어들죠." },
-        { q: "취업하면 수당이 끊기나요?", a: "취업해도 계속 받을 수 있죠. 소득 기준이 별도로 없기 때문에 자격 요건만 유지되면 지급이 계속돼요." },
-        { q: "아동복지시설(보육원) 퇴소자도 받을 수 있나요?", a: "아동복지시설 퇴소자는 자립정착금(별도 제도)이 지원되고, 이 수당은 청소년복지시설 퇴소자만 대상이에요. 시설 유형을 먼저 확인해봐요." },
-      ]} />
-      <References groups={[{ category: "출처", items: [
-        { label: "복지로 자립지원수당 안내", url: "https://www.bokjiro.go.kr" },
-        { label: "여성가족부 청소년 자립지원", url: "https://www.mogef.go.kr" },
-      ]}]} />
-      <Disclaimer text="이 글은 일반적인 정보 제공 목적이며, 법적 조언이 아니에요." />
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "16px" }}>자립지원수당에 대해 자주 묻는 질문이에요.</p>
+      <FAQ items={FAQ_ITEMS} />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 공식 발표 기준으로 작성됐어요. 정책 내용은 변경될 수 있으니 신청 전 해당 기관에서 최신 내용을 확인하세요." />
     </div>
   );
 }

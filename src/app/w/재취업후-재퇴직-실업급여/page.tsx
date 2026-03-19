@@ -194,7 +194,7 @@ export default function Page() {
         본인이 그냥 &quot;안 맞아서&quot; 나온 자발적 퇴사라면 남은 급여를 받을 수 없고, 조기재취업수당을 이미 받은 경우도 마찬가지예요.
       </p>
 
-      <GreenBox title="남은 급여를 이어 받으려면 이 3가지가 다 맞아야 해요">
+      <GreenBox>
         1. 수급기간(첫 퇴직일로부터 12개월) 안이어야 함<br />
         2. 재취업한 회사에서 비자발적으로 퇴직해야 함<br />
         3. 조기재취업수당을 받지 않았어야 함
@@ -217,7 +217,7 @@ export default function Page() {
         어디에 해당되느냐에 따라 남은 급여를 받을지, 새 수급자격을 받을지, 아무것도 못 받을지가 갈려요.
       </p>
 
-      <BorderBox title="4가지 상황별 수급 가능 여부">
+      <BorderBox>
         12개월 미만 + 비자발적 퇴직 → <strong>남은 급여 수급 가능</strong> (수급기간 내 한정)<br />
         12개월 미만 + 자발적 퇴직 → <strong>불가</strong> (남은 급여도, 새 자격도 안 됨)<br />
         12개월 이상 + 비자발적 퇴직 → <strong>새로운 수급자격 발생</strong><br />
@@ -269,7 +269,7 @@ export default function Page() {
       </p>
 
       <SectionBadge>조기재취업수당 받은 후 정리</SectionBadge>
-      <GreenBox title="조기재취업수당 후 재퇴직하면?">
+      <GreenBox>
         남은 실업급여 → <strong>소멸</strong> (이미 절반 수령 완료)<br />
         새 수급자격 → 12개월 이상 근무 + 비자발적 퇴직 시 <strong>가능</strong><br />
         12개월 미달 → <strong>수급 불가</strong>

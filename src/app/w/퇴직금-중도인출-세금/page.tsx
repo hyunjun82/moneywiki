@@ -164,7 +164,7 @@ export default function Page() {
         이 중 하나에 해당하고 증빙서류를 갖추면 기타소득세 16.5%를 내지 않아요.
       </p>
 
-      <GreenBox title="법정 사유 인출 vs 임의 인출 세금 비교">
+      <GreenBox>
         법정 사유 인출: 퇴직소득세만 (근속연수 공제 후)<br />
         임의 인출 (IRP 해지): 퇴직소득세 + 기타소득세 16.5% 추가<br />
         퇴직금 3,000만원 기준 차이: 최대 495만원 이상
@@ -232,7 +232,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="55세까지 기다릴 수 있다면">
+      <GreenBox>
         55세 이후 연금으로 수령하면 퇴직소득세의 30%를 추가 절감할 수 있어요.<br />
         일시금으로 인출하면 퇴직소득세 전액을 내야 해요.<br />
         급하지 않은 상황이라면 연금 수령이 세금 측면에서 가장 유리해요.

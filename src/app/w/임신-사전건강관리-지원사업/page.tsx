@@ -5,7 +5,56 @@
 // Q3: 임신 전 여성 누구나(소득 제한 없음), 검사 항목, 무료
 // Q4: GreenBox(검사 항목) + Steps + FAQ
 
-import { H2, FAQ, EligibilityChecker, Steps, GreenBox, References, Disclaimer } from "@/components/article-ui";
+import { FAQ, Checklist, Steps, EligibilityChecker, References, Disclaimer , H2 } from "@/components/article-ui";
+
+const CHECK_ITEMS = [
+  { id: "c1", label: "현재 임신을 계획 중이거나 임신을 준비하고 있죠" },
+  { id: "c2", label: "아직 임신이 확인되지 않은 임신 준비 단계예요" },
+  { id: "c3", label: "나이 제한이나 소득 기준 없이 누구나 신청 가능한 상태예요" },
+  { id: "c4", label: "가까운 보건소를 방문할 수 있는 상황이에요" },
+];
+
+const EXAM_ITEMS = [
+  "풍진 항체 검사 — 임신 중 풍진 감염 시 태아 기형 위험 예방",
+  "B형간염 검사 — 표면항원·항체 검사로 예방접종 필요 여부 확인",
+  "빈혈 검사(혈색소) — 임신 중 빈혈 예방을 위한 사전 파악",
+  "매독 검사 — 선천성 매독 예방을 위한 항체 검사",
+  "에이즈(HIV) 검사 — 수직 감염 예방을 위한 선별 검사",
+  "결핵 검사 — 임신 중 치료 제한을 대비한 사전 검사",
+  "혈액형 검사 — Rh(-)형 등 임신 관련 혈액형 위험 확인",
+  "성병(클라미디아·임균) 검사 — 자궁경부 감염 여부 확인",
+  "갑상선 기능 검사 — 임신 중 갑상선 이상이 태아에 영향",
+  "당 검사(공복혈당) — 임신성 당뇨 위험 사전 파악",
+  "자궁경부세포 검사(PAP smear) — 자궁경부 이상 조기 발견",
+  "소변 검사 — 요로감염 등 임신 전 비뇨기계 이상 확인",
+];
+
+const STEPS = [
+  { title: "보건소 방문 예약", desc: "가까운 보건소에 전화하거나 정부24를 통해 방문 예약을 해요. 예약 없이 방문도 가능하지만 대기 시간이 길 수 있죠." },
+  { title: "신분증 지참 방문", desc: "신분증을 지참하고 보건소 모자보건실을 방문해요. 검사 당일 4시간 이상 공복 상태를 유지해야 하는 검사가 있죠." },
+  { title: "검사 항목 선택 및 채혈", desc: "담당 보건간호사와 상담 후 필요한 검사 항목을 선택하고 채혈 및 검체를 채취해요." },
+  { title: "결과 확인 및 후속 조치", desc: "1~2주 후 결과가 나오면 보건소에서 연락이 와요. 이상 소견이 있으면 추가 진료나 예방접종 등을 안내받아요." },
+];
+
+const FAQ_ITEMS = [
+  {
+    q: "무료 검사가 맞나요? 비용이 전혀 없나요?",
+    a: "보건소에서 받는 임신 사전건강관리 검사는 무료예요. 단, 이상 소견이 발견돼 추가 정밀 검사가 필요한 경우 그 비용은 본인이 부담해야 할 수 있죠.",
+  },
+  {
+    q: "남편(파트너)도 함께 검사를 받을 수 있나요?",
+    a: "남성 파트너도 풍진, 간염 등 일부 항목을 보건소에서 검사받을 수 있죠. 남성 대상 검사 항목은 보건소마다 다를 수 있어서 방문 전 전화로 확인하는 게 좋아요.",
+  },
+  {
+    q: "이미 임신이 됐는데 이 검사를 받을 수 있나요?",
+    a: "임신 사전건강관리 지원은 임신 전 예방 목적의 검사예요. 임신이 확인된 후에는 임신 초기 검사 항목이 따로 있죠. 임신 중 검사는 산부인과 산전 검사로 받을 수 있죠.",
+  },
+];
+
+const REFS = [
+  { label: "정부24 임신 사전건강관리 신청", url: "https://www.gov.kr" },
+  { label: "질병관리청 모자보건 안내", url: "https://www.kdca.go.kr" },
+];
 
 export default function Page() {
   return (
@@ -16,7 +65,29 @@ export default function Page() {
       <p style={{ fontSize: "15.5px", lineHeight: 2.0, color: "#374151", marginBottom: "1.1rem" }}>
         임신을 계획하고 있다면 보건소에서 무료로 건강 검사를 받을 수 있죠. 풍진 항체, B형간염, 빈혈, 자궁경부 상태 등을 미리 확인해서 임신 중 위험을 줄이는 예방 검사예요. 소득 기준 없이 누구나 받을 수 있죠.
       </p>
-      <a href="https://www.gov.kr" style={{ display: "block", background: "linear-gradient(135deg,#1D9E75,#0D8B66)", color: "#fff", textAlign: "center" as const, padding: "16px 24px", borderRadius: "12px", fontWeight: 700, fontSize: "16px", margin: "24px 0", textDecoration: "none", boxShadow: "0 4px 12px rgba(29,158,117,0.3)" }}>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
+        임신 사전건강관리 지원사업은 임신 전 여성이 감염 여부, 혈액 이상, 자궁 상태 등을 미리 확인해 임신 중 위험을 줄이는 예방 목적의 검사예요. 가까운 보건소를 방문하면 무료로 받을 수 있죠. 검사 결과에 따라 예방접종이나 치료가 필요한 경우 안내도 받을 수 있죠. 특히 첫 임신을 준비하는 경우 전반적인 건강 상태를 파악할 좋은 기회예요.
+      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
+        이 글에서는 무료 검사 항목 12가지와 신청 방법을 안내할게요. 임신을 준비하고 있다면 되도록 임신 전에 받아두는 게 좋아요. 검사 결과에 따라 예방접종이나 치료가 필요한 경우도 있기 때문에 임신 계획보다 3~6개월 전에 받아두면 여유롭게 대응할 수 있죠.
+      </p>
+
+      <a
+        href="https://www.gov.kr"
+        style={{
+          display: "block",
+          background: "linear-gradient(135deg,#1D9E75,#0D8B66)",
+          color: "#fff",
+          textAlign: "center" as const,
+          padding: "16px 24px",
+          borderRadius: "12px",
+          fontWeight: 700,
+          fontSize: "16px",
+          margin: "24px 0",
+          textDecoration: "none",
+          boxShadow: "0 4px 12px rgba(29,158,117,0.3)",
+        }}
+      >
         사전건강관리 신청하기 →
       </a>
 
@@ -24,43 +95,52 @@ export default function Page() {
       <p style={{ fontSize: "15.5px", lineHeight: 2.0, color: "#374151", marginBottom: "1.1rem" }}>
         보건소마다 검사 항목이 조금 다를 수 있지만, 기본적으로 아래 항목을 무료로 검사해요.
       </p>
-      <GreenBox>
-        <strong>무료 검사 항목</strong><br />
-        풍진 항체 검사 · B형간염 항원/항체 · 빈혈(혈색소) · 혈액형 · 매독 · 에이즈(HIV) · 소변검사 · 자궁경부 세포진 검사
-      </GreenBox>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
+        단, 이미 임신이 된 상태라면 이 검사의 대상이 아니에요. 임신 전 예방과 준비 목적이기 때문에 임신이 확인된 경우에는 산전 검사 체계로 넘어가야 해요. 임신 여부가 불분명하다면 보건소에서 임신 테스트부터 함께 받을 수 있죠. 검사 예약 시 임신 여부가 불확실하다고 알려두면 담당 간호사가 적합한 검사 순서를 안내해줘요.
+      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
+        보건소마다 운영 방식이 조금씩 다를 수 있죠. 일부 보건소는 예약이 필요하고 일부는 당일 방문도 가능해요. 방문 전 전화로 검사 가능 여부와 예약 방법을 먼저 확인하면 헛걸음을 줄일 수 있죠. 일부 지역에서는 모자보건실을 따로 운영해 더 세밀한 상담이 가능해요.
+      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
+        아래 자격 항목에 해당하면 가까운 보건소에서 바로 신청 가능해요. 신분증 하나만 챙겨가면 검사를 받을 수 있고, 별도 비용 없이 모든 검사를 받을 수 있죠. 처음 방문이라면 보건소 모자보건팀에 '임신 사전건강관리 검사'를 받으러 왔다고 말하면 돼요.
+      </p>
+      <EligibilityChecker items={CHECK_ITEMS} />
 
       <H2>누가 받을 수 있나요?</H2>
       <p style={{ fontSize: "15.5px", lineHeight: 2.0, color: "#374151", marginBottom: "1.1rem" }}>
         임신을 계획하거나 준비 중인 여성이라면 나이, 소득과 관계없이 누구나 받을 수 있죠. 결혼 여부나 임신 경험과도 무관해요. 다만 이미 임신 중이라면 이 검사 대신 산전 검사 체계로 넘어가야 해요.
       </p>
-      <EligibilityChecker items={[
-        { id: "e1", label: "임신을 계획하거나 준비 중인 여성이에요" },
-        { id: "e2", label: "현재 임신 상태가 아니에요" },
-        { id: "e3", label: "거주지 관할 보건소를 방문할 수 있죠" },
-      ]} />
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
+        풍진 검사는 임신 초기 감염 시 태아 기형을 유발할 수 있어서 특히 중요해요. 항체가 없다면 임신 전 예방접종을 맞고 일정 기간 후 임신을 준비하는 게 안전해요. 갑상선 검사도 임신과 태아 발달에 큰 영향을 미치기 때문에 빠뜨리지 않는 게 좋아요. 빈혈 검사는 임신 중 빈혈이 심해지면 태아 성장에 직접 영향을 줄 수 있어서 사전에 파악해두는 게 중요해요.
+      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
+        혈액형 검사는 Rh(-)형 혈액형인 경우 특별 관리가 필요하기 때문에 임신 전 미리 파악해두면 임신 중 위험에 빠르게 대응할 수 있죠. 성병 검사(클라미디아·임균)는 자궁경부 감염이 임신에 영향을 줄 수 있어서 임신 전 치료 기회가 주어져요. 에이즈 검사는 수직 감염 예방을 위한 필수 항목이에요.
+      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
+        아래 체크리스트는 보건소에서 제공하는 무료 검사 12가지 항목이에요. 담당 간호사와 상담 시 어떤 항목이 자신에게 꼭 필요한지 안내받을 수 있죠. 이전에 받은 검사 결과가 있다면 가져가면 중복 검사를 줄일 수도 있죠.
+      </p>
+      <Checklist items={EXAM_ITEMS} />
 
       <H2>보건소 방문 절차</H2>
       <p style={{ fontSize: "15.5px", lineHeight: 2.0, color: "#374151", marginBottom: "1.1rem" }}>
         거주지 관할 보건소에 신분증만 가지고 방문하면 돼요. 사전 예약 없이도 가능하지만, 보건소별로 운영 시간이 다르니 전화(보건소 대표번호)로 미리 확인하는 게 좋아요.
       </p>
-      <Steps steps={[
-        { title: "보건소 방문", desc: "거주지 보건소에 신분증을 가지고 방문해요." },
-        { title: "검사 접수 및 채혈", desc: "담당 간호사가 검사 항목을 안내하고 채혈해요. 공복이 필요한 항목이 있으니 아침 식사 전에 가는 게 좋아요." },
-        { title: "결과 확인", desc: "1~2주 후 보건소를 다시 방문하거나 전화로 결과를 확인해요." },
-      ]} />
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
+        혈당 검사가 포함되면 검사 당일 4시간 이상 공복 상태가 필요해요. 혈당 검사를 포함할 예정이라면 아침에 식사를 하지 않고 방문하는 게 좋아요. 검사 항목에 따라 소변 검사가 포함되므로 충분한 수분 섭취도 도움이 돼요. 자궁경부세포 검사는 생리 기간 외의 날에 방문하는 게 정확한 결과를 얻는 데 유리해요.
+      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
+        검사 결과는 보통 1~2주 후에 나와요. 보건소에서 연락이 오거나 직접 방문해서 결과를 받을 수 있죠. 이상 소견이 있으면 추가 검사나 예방접종, 의료기관 연계 등을 안내받아요. 풍진 항체가 없는 경우 예방접종 후 1개월 이상 피임이 권고되는 경우도 있어서 일정 조율이 필요할 수 있죠.
+      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
+        신분증 외에 별도 서류는 필요 없어요. 보건소 담당자가 검사 항목 선택을 도와주고 전체 과정을 안내해 주기 때문에 처음 방문해도 어렵지 않게 진행할 수 있죠. 아래 단계를 미리 숙지해두면 당일 방문이 훨씬 수월해요.
+      </p>
+      <Steps steps={STEPS} />
 
       <H2>자주 묻는 질문</H2>
-      <p style={{ fontSize: "15.5px", lineHeight: 2.0, color: "#374151", marginBottom: "1.1rem" }}>사전건강관리에 대해 자주 묻는 질문이에요.</p>
-      <FAQ items={[
-        { q: "남편(배우자)도 함께 검사받을 수 있나요?", a: "보건소에 따라 배우자 검사를 함께 제공하는 곳도 있죠. 방문 전에 해당 보건소에 전화로 확인해봐요." },
-        { q: "이상 소견이 나오면 어떻게 되나요?", a: "풍진 항체가 없으면 예방접종을 안내받고, 접종 후 1개월간 피임이 권고돼요. 다른 이상 소견도 보건소에서 후속 조치를 안내해주죠." },
-        { q: "검사 비용이 정말 전액 무료인가요?", a: "기본 검사 항목은 전액 무료예요. 다만 추가 정밀 검사가 필요한 경우 의료기관 진료비는 별도로 발생할 수 있죠." },
-      ]} />
-      <References groups={[{ category: "출처", items: [
-        { label: "정부24 임신 사전건강관리 안내", url: "https://www.gov.kr" },
-        { label: "보건복지부 모자보건", url: "https://www.mohw.go.kr" },
-      ]}]} />
-      <Disclaimer text="이 글은 일반적인 정보 제공 목적이며, 법적 조언이 아니에요." />
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "16px" }}>사전건강관리에 대해 자주 묻는 질문이에요.</p>
+      <FAQ items={FAQ_ITEMS} />
+      <References groups={[{ category: "출처", items: REFS }]} />
+      <Disclaimer text="이 글은 공식 발표 기준으로 작성됐어요. 정책 내용은 변경될 수 있으니 신청 전 해당 기관에서 최신 내용을 확인하세요." />
     </div>
   );
 }

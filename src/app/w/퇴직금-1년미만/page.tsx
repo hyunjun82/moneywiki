@@ -163,7 +163,7 @@ export default function Page() {
         퇴직금은 없어도 연차수당·실업급여를 받을 수 있는 조건은 따로 있어요.
       </p>
 
-      <GreenBox title="1년 기준 퇴직금 발생 여부">
+      <GreenBox>
         만 1년(365일) 이상 + 주 15시간 이상 근무 → 퇴직금 발생<br />
         만 1년 미만(364일 이하) 근무 → 법정 퇴직금 0원<br />
         주 15시간 미만 근무 → 기간 무관하게 퇴직금 없음
@@ -235,7 +235,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="연차수당은 퇴직금과 완전히 별개예요">
+      <GreenBox>
         1년 미만 근무자도 월 개근 시 1일씩 연차가 쌓여요.<br />
         11개월 근무 시 최대 11일치 연차수당을 청구할 수 있어요.<br />
         연차수당 청구권의 소멸시효는 퇴직일 다음 날부터 3년이에요.

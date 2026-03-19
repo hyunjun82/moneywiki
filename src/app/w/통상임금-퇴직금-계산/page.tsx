@@ -160,7 +160,7 @@ export default function Page() {
         이런 경우 통상임금 기준으로 재계산을 요청할 수 있고, 거부 시 <a href="/w/퇴직금-미지급-신고" style={{ color: "#1D9E75", textDecoration: "underline" }}>노동청 진정</a>을 낼 수 있어요.
       </p>
 
-      <GreenBox title="통상임금 = 기본급 + 고정·정기 수당">
+      <GreenBox>
         월 고정 식대 20만원 + 직책수당 30만원이 있다면<br />
         통상임금 = 기본급 + 50만원이에요.<br />
         이를 기준으로 퇴직금을 다시 계산해보세요.
@@ -225,7 +225,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="통상임금 분쟁, 증빙 있으면 대부분 근로자가 이겨요">
+      <GreenBox>
         고정 수당이 명확히 있고 정기적으로 지급됐다면 통상임금에 포함돼요.
         고용노동부 진정 또는 소액심판으로 대부분 해결 가능해요.
       </GreenBox>

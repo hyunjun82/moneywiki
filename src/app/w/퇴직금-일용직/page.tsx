@@ -167,7 +167,7 @@ export default function Page() {
         증거만 충분하다면 충분히 청구할 수 있어요.
       </p>
 
-      <GreenBox title="일용직 퇴직금 수급 조건">
+      <GreenBox>
         계속 근로 1년 이상 (공백 7일 미만 기준)<br />
         주 15시간 이상 근무 (4주 평균 기준)<br />
         증거: 통장 거래내역·출근부·업무 지시 메시지
@@ -236,7 +236,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="일용직도 퇴직금을 받을 권리가 있어요">
+      <GreenBox>
         고용 형태가 아니라 실제 근무 형태가 기준이에요.<br />
         1년 이상, 주 15시간 이상이라면 고용노동청에 신고해서 청구할 수 있어요.
       </GreenBox>

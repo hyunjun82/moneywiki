@@ -215,7 +215,7 @@ export default function Page() {
         A회사 3년 + B회사 2년이면 총 5년으로 잡혀서 소정급여일수가 180일(50세 미만 기준)이 돼요.
       </p>
 
-      <GreenBox title="핵심만 짚으면">
+      <GreenBox>
         <p style={{ margin: "0 0 4px" }}>최소 120일(4개월) ~ 최대 270일(9개월)이에요.</p>
         <p style={{ margin: "0 0 4px" }}>50세 이상이면 같은 가입기간이라도 30일이 더 붙어요.</p>
         <p style={{ margin: "0 0 4px" }}>장애인은 나이 상관없이 50세 이상 기준을 적용받아요.</p>
@@ -350,7 +350,7 @@ export default function Page() {
         12개월이라는 기한은 어떤 사유로도 연장되지 않으니까, 하루라도 빨리 첫 걸음을 떼세요.
       </p>
 
-      <BorderBox title="소정급여일수별 안전한 신청 시점">
+      <BorderBox>
         <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}>
           <strong>120일</strong> → 퇴직 후 8개월까지 여유
         </p>

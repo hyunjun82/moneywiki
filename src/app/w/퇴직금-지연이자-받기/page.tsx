@@ -162,7 +162,7 @@ export default function Page() {
         내용증명 발송만으로도 소멸시효를 중단시킬 수 있으니, 기한이 임박했다면 먼저 내용증명부터 보내세요.
       </p>
 
-      <GreenBox title="지연이자 청구 핵심 기준">
+      <GreenBox>
         발생 시점: 퇴직 후 14일 초과 시점부터 자동 발생<br />
         이율: 연 20%, 실제 지급일까지 일할 계산<br />
         소멸시효: 퇴직일로부터 3년<br />
@@ -234,7 +234,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="지연이자는 퇴직금과 별도로 청구해요">
+      <GreenBox>
         퇴직금이 늦게라도 들어왔다고 끝이 아니에요.<br />
         14일 초과분 지연이자는 따로 청구해야 받을 수 있어요.<br />
         내용증명 한 통으로 청구권과 소멸시효를 동시에 보전하세요.

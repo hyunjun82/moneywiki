@@ -162,7 +162,7 @@ export default function Page() {
         단, 재근속 기간이 1년 미만이면 퇴직금 자체가 발생하지 않아요.
       </p>
 
-      <GreenBox title="최종 퇴직금 계산 공식 (중간정산 이력자)">
+      <GreenBox>
         최종 퇴직금 = 퇴직 전 3개월 평균임금 × 30일 × 재근속 연수<br />
         재근속 기간 = 중간정산일 다음 날 ~ 최종 퇴직일<br />
         중간정산 전 기간 = 이미 수령 완료 → 포함 안 됨
@@ -240,7 +240,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="이것만 기억하세요">
+      <GreenBox>
         최종 퇴직금 = 재근속 기간만 계산 (전체 기간 아님)<br />
         세금도 재근속 기간 근속연수 공제 적용<br />
         원천징수영수증 = 재근속 기산일 증빙 → 반드시 보관<br />

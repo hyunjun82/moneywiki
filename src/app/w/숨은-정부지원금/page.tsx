@@ -9,8 +9,7 @@
  */
 
 import Link from "next/link";
-import { useState } from "react";
-import { H2, FAQ, References, Disclaimer } from "@/components/article-ui";
+import { FAQ, Checklist, GreenBox, BorderBox, References, Disclaimer , H2 } from "@/components/article-ui";
 
 const BENEFITS = [
   { num: "01", slug: "기본형-공익직불제", title: "기본형 공익직불제", who: "농업인", amount: "ha당 최대 205만원", grad: "linear-gradient(135deg, #2E7D32, #43A047)" },
@@ -145,6 +144,38 @@ export default function Page() {
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "24px" }}>
         한 가정에서도 구성원마다 받을 수 있는 지원금이 달라요. 농업인 부모 + 장애 자녀 + 다문화 가정이라면 세 가지 이상 동시에 신청 가능하죠.
       </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "20px" }}>
+        이 글에 소개된 17가지 지원금은 각각 별도의 신청 창구와 자격 기준이 있죠. 하나씩 클릭해서 자격 조건을 보면 의외로 해당되는 지원금이 여러 개 나올 수 있죠. 특히 가구 구성이 복잡하거나 여러 취약 계층 조건을 동시에 갖추고 있다면, 꼼꼼하게 모든 항목을 살펴보는 게 중요해요.
+      </p>
+
+      <GreenBox>
+        <strong>✅ 신청 전 반드시 확인할 것</strong><br />
+        동일 지원금도 거주 지자체마다 신청 기간이 달라요. 읍면동 주민센터에 먼저 전화해서 현재 신청 가능한지 확인하는 게 가장 빠른 방법이에요.
+      </GreenBox>
+
+      <H2>대상별로 신청할 수 있는 지원금</H2>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "12px" }}>
+        아래에서 본인 상황에 해당하는 대상 유형을 확인해봐요. 중복 신청이 가능한 경우도 많아서 꼼꼼히 보는 게 중요해요. 각 항목 옆에 연결된 지원금을 클릭하면 자세한 자격 조건과 신청 방법을 바로 볼 수 있어서, 내 상황을 먼저 파악한 다음 해당 글로 넘어가는 게 가장 빠른 방법이에요. 대상자가 여러 유형에 해당한다면 각 항목을 모두 신청해보는 게 최대한 많은 혜택을 받는 방법이에요.
+      </p>
+      <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "16px" }}>
+        한 가정 안에서도 구성원마다 받을 수 있는 지원금이 다를 수 있죠. 예를 들어 농업인 부모가 있고, 장애가 있는 자녀가 있고, 다문화 가정이라면 세 가지 지원금을 동시에 신청할 수 있죠. 이런 가정이라면 아래 목록에서 여러 항목이 해당되는 경우도 많아요. 항목마다 신청 기관이 다르니 여러 곳에 따로 신청해야 하는 점을 기억해두세요. 같은 날 하루에 여러 기관을 방문해서 한 번에 처리하는 방법도 있죠.
+      </p>
+      <Checklist
+        items={[
+          "농업인 (농업경영체 등록) → 기본형 공익직불제 + 농업인 건강·연금보험료 지원 + 영농도우미",
+          "장애인 → 장애수당 or 장애인연금 (중증) + 장애아동수당 (18세 미만 자녀)",
+          "국민연금 지역가입자 (저소득) → 저소득 지역가입자 보험료 지원 50%",
+          "65세 이상 독거노인 → 독거노인·장애인 응급안전안심서비스 (무료 장비 설치)",
+          "만 9~24세 여성청소년 (저소득) → 여성청소년 생리용품 지원 월 13,000원",
+          "청소년복지시설 퇴소자 → 자립지원수당 월 50만원",
+          "위기 상황 청소년 → 특별지원 연 최대 200만원 (1388 상담)",
+          "취약계층 채용한 사업주 → 고용촉진장려금 1인당 최대 720만원",
+          "임신 예정 부부 → 임신 사전건강관리 지원사업 무료 검진",
+          "청소년 한부모 or 부모 → 아동양육비 월 20~35만원",
+          "다문화가족 자녀 → 기초학습·진로설계·교육활동비 지원",
+          "예술인 (예술활동증명 완료) → 국민연금 보험료 50% 지원",
+        ]}
+      />
 
       <H2>자주 묻는 질문</H2>
       <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", marginBottom: "16px" }}>정부지원금 신청에 대해 자주 묻는 질문이에요.</p>
@@ -157,13 +188,18 @@ export default function Page() {
         ]}
       />
 
-      <References groups={[{ category: "출처", items: [
-        { label: "복지로   복지서비스 모의계산 및 신청", url: "https://www.bokjiro.go.kr" },
-        { label: "정부24   정부 서비스 통합 신청", url: "https://www.gov.kr" },
-        { label: "고용24   고용 관련 지원금 신청", url: "https://www.work24.go.kr" },
-        { label: "국민연금공단   보험료 지원", url: "https://www.nps.or.kr" },
-      ]}]} />
-      <Disclaimer text="이 글은 일반적인 정보 제공 목적이며, 법적 조언이 아니에요." />
+      <References
+        groups={[{
+          category: "출처",
+          items: [
+            { label: "복지로 :복지서비스 모의계산 및 신청", url: "https://www.bokjiro.go.kr" },
+            { label: "정부24 :정부 서비스 통합 신청", url: "https://www.gov.kr" },
+            { label: "고용24 :고용 관련 지원금 신청", url: "https://www.work24.go.kr" },
+            { label: "국민연금공단 :지역가입자 보험료 지원", url: "https://www.nps.or.kr" },
+          ]
+        }]}
+      />
+      <Disclaimer text="이 글은 공식 발표 기준으로 작성됐어요. 정책 내용은 변경될 수 있으니 신청 전 해당 기관에서 최신 내용을 확인하세요." />
     </div>
   );
 }

@@ -160,7 +160,7 @@ export default function Page() {
         잔액이 법정 최저 기준보다 낮으면 회사가 차액을 보전해줘야 해요.
       </p>
 
-      <GreenBox title="DC형 부담금 법정 기준">
+      <GreenBox>
         연간 임금 총액의 1/12 이상 → 매달 월급의 1/12 납입<br />
         운용 수익 나면 수령액 증가, 손실 나면 감소<br />
         법정 최저 기준보다 낮으면 회사가 차액 보전 의무
@@ -225,7 +225,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="DC형도 연금 수령이 절세에 유리해요">
+      <GreenBox>
         IRP로 이전 후 55세 이후 10년 이상 연금으로 받으면 퇴직소득세가 40% 감면돼요.<br />
         일시금으로 바로 빼면 퇴직소득세를 전액 납부해야 해요.
       </GreenBox>

@@ -134,7 +134,7 @@ export default function Page() {
         폐업 시 실업급여를 받을 수 있으니까, 1인 사업자라면 가입 여부를 한 번 따져볼 만하죠.
       </p>
 
-      <GreenBox title="적용 제외 대상 7가지">
+      <GreenBox>
         1. 65세 이후 신규 취업자: 기존 재직자는 해당 안 됨<br />
         2. 주 15시간 미만 근로자: 3개월 이상 근무 시 예외<br />
         3. 공무원: 공무원연금 적용<br />
@@ -174,7 +174,7 @@ export default function Page() {
         가입해두면 나중에 폐업할 때 실업급여를 받을 수 있어서 안전장치가 되어줘요.
       </p>
 
-      <BorderBox title="제외 대상인데 가입되는 경우">
+      <BorderBox>
         일용직 근로자 → 나이 무관, <strong>무조건 가입</strong><br />
         초단시간 근로자 + 3개월 이상 근무 → <strong>가입 대상</strong><br />
         65세 이전 입사자 → 65세 넘어도 고용보험 <strong>유지</strong><br />
@@ -206,7 +206,7 @@ export default function Page() {
         <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 외국인 고용보험 가입 기준을 상세히 안내하고 있으니 참고하세요.
       </p>
 
-      <GreenBox title="비자별 고용보험 가입 여부">
+      <GreenBox>
         의무가입: 거주(F-2), 재외동포(F-4), 영주(F-5), 결혼이민(F-6)<br />
         임의가입(선택): 비전문취업(E-9), 방문취업(H-2)<br />
         가입 불가: 단기 체류 비자, 불법체류

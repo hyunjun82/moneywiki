@@ -164,7 +164,7 @@ export default function Page() {
         강요로 서명했는지 여부와 관계없이, 각서 자체가 법 위반이기 때문이에요.
       </p>
 
-      <GreenBox title="핵심: 포기각서는 강행법규 위반으로 무효">
+      <GreenBox>
         서명 여부와 무관하게 퇴직금 청구권은 그대로예요<br />
         강압 여부를 증명하지 못해도 청구 가능해요<br />
         단, 퇴직금을 실제로 받은 뒤 서명한 영수확인서는 유효해요
@@ -239,7 +239,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="받고 쓴 영수증 vs 받기 전에 쓴 포기각서">
+      <GreenBox>
         구별 기준은 딱 하나 — 돈이 먼저냐, 각서가 먼저냐예요.<br />
         퇴직금을 먼저 받은 뒤 서명한 영수확인서는 유효해요.<br />
         한 푼도 받지 않은 상태에서 쓴 포기각서는 처음부터 무효예요.

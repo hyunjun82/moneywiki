@@ -162,7 +162,7 @@ export default function Page() {
         연간 상여금 ÷ 12가 3개월 임금 합산에 포함됐는지 꼭 체크하세요.
       </p>
 
-      <GreenBox title="정산 전 핵심 체크 2가지">
+      <GreenBox>
         상여금 월 환산: 연간 상여금 ÷ 12 × 3개월분이 포함됐는지 확인<br />
         IRP 계좌: 퇴직금 300만원 초과 시 퇴직 전 미리 개설해서 인사팀에 번호 전달
       </GreenBox>
@@ -236,7 +236,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="상여금 환산이 빠지면 수백만원 차이가 나요">
+      <GreenBox>
         연간 상여금 ÷ 12 = 월 환산액, 이 금액이 3개월 임금 합산에 포함됐는지 꼭 확인하세요.<br />
         포함 안 됐다면 인사팀에 재계산을 요청할 수 있어요. 거부하면 고용노동부(1350)에 진정을 낼 수 있고요.
       </GreenBox>

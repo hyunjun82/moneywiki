@@ -160,7 +160,7 @@ export default function Page() {
         회사에 따라 DB형과 DC형을 혼합 적용하는 경우도 있어요. 이 경우 각 제도에서 별도로 수령해요.
       </p>
 
-      <GreenBox title="DB형 퇴직급여 법정 산정 기준">
+      <GreenBox>
         퇴직 직전 3개월 평균임금 × 근속연수 (1년 = 30일치)<br />
         월 350만원 · 근속 10년 → 약 3,500만원<br />
         300만원 초과 시 반드시 IRP 계좌로만 수령
@@ -225,7 +225,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="연금 수령이 일시금보다 절세에 유리한 이유">
+      <GreenBox>
         55세 이후 연금으로 10년 이상 받으면 퇴직소득세가 40% 감면돼요.<br />
         일시금으로 바로 빼면 퇴직소득세를 한꺼번에 전부 내야 해요. 시간 여유가 있다면 연금이 유리해요.
       </GreenBox>

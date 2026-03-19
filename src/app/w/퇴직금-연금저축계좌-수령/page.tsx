@@ -173,7 +173,7 @@ export default function Page() {
         연금저축과 IRP는 합산해서 연 900만원 세액공제 한도가 적용돼요.
       </p>
 
-      <GreenBox title="IRP vs 연금저축 핵심 차이">
+      <GreenBox>
         IRP: 퇴직금 이전분 + 본인 납입 / 연금저축: 본인 납입만 가능<br />
         퇴직금 이전분은 IRP에서만 수령 (연금저축 이전 불가)<br />
         연금 수령 조건: 만 55세 이상 + 계좌 가입 5년 이상
@@ -238,7 +238,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="연금으로 받으면 세금이 두 번 줄어요">
+      <GreenBox>
         IRP에서 연금 수령 시 퇴직소득세 30% 절감 + 연금소득세 3.3~5.5%만 부담해요.
         일시금으로 받을 때보다 수백만 원 이상 세금이 줄 수 있어요.
       </GreenBox>

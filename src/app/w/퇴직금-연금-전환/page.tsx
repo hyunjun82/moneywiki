@@ -225,7 +225,7 @@ export default function Page() {
         급하게 써야 할 돈이 아니라면 55세까지 그대로 두는 게 훨씬 유리해요.
       </p>
 
-      <GreenBox title="퇴직소득세 절감률 한눈에 보기">
+      <GreenBox>
         10년 이상 연금 수령 → 퇴직소득세 30% 절감<br />
         20년 이상 연금 수령 → 퇴직소득세 40% 절감<br />
         55세 이전 일시금 인출 → 기타소득세 16.5% 추가 부과
@@ -298,7 +298,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="연금소득 합산 주의사항">
+      <GreenBox>
         IRP 연금 + 국민연금 + 연금저축 합산액이 연 1,500만원을 넘으면 종합소득세 신고 대상이에요.<br />
         초과분에 대해 종합소득세율(6~45%)이 적용돼요. 연금 수령액 설계 시 이 기준선을 먼저 따져보세요.
       </GreenBox>

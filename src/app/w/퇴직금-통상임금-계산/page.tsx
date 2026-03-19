@@ -166,7 +166,7 @@ export default function Page() {
         이미 퇴직했어도 3년 내라면 차액을 받을 수 있어요.
       </p>
 
-      <GreenBox title="통상임금 포함 항목 vs 제외 항목">
+      <GreenBox>
         포함: 기본급, 매월 고정 식대, 교통비(고정), 직책수당, 고정 자격수당<br />
         제외: 성과급·인센티브, 연장·야간·휴일 수당, 불규칙 상여금, 실비 식대
       </GreenBox>
@@ -230,7 +230,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="두 기준 중 높은 쪽으로 청구하세요">
+      <GreenBox>
         평균임금 기준과 통상임금 기준을 모두 계산해서 높은 쪽을 선택할 수 있어요.<br />
         근로기준법 제2조 제2항이 보장하는 권리예요. 회사가 거부하면 고용노동부(1350)에 진정을 낼 수 있어요.
       </GreenBox>

@@ -157,7 +157,7 @@ export default function Page() {
         계약 만료로 퇴직한 경우도 퇴직금 발생 사유로 인정돼요.
       </p>
 
-      <GreenBox title="계약직 퇴직금 발생 조건">
+      <GreenBox>
         1. 1년 이상 계속 근무 — 갱신 반복 시 전체 합산<br />
         2. 4주 평균 주 15시간 이상 근무<br />
         3. 고용 형태·사업장 규모 무관, 소멸시효 3년
@@ -224,7 +224,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="퇴직금 포기각서를 써줬어도 받을 수 있어요">
+      <GreenBox>
         사업주가 계약 갱신 조건으로 퇴직금 포기각서를 요구해도 거부할 수 있어요.
         서명했더라도 근로자퇴직급여보장법에 따라 퇴직금 청구권은 그대로 유지돼요.
       </GreenBox>

@@ -188,7 +188,7 @@ export default function Page() {
         IRP와 연금저축 합산 연 900만원 꽉 채우면 최대 148.5만원이 돌아와요.
       </p>
 
-      <GreenBox title="IRP 계좌 핵심 정리">
+      <GreenBox>
         퇴직금 300만원 초과 → IRP 계좌 필수 수령 (근로자퇴직급여보장법)<br />
         연 900만원(IRP+연금저축 합산) 납입 시 세액공제 적용<br />
         소득 5,500만원 이하: 납입액의 16.5% → 최대 148.5만원 환급<br />
@@ -266,7 +266,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="퇴직 전에 IRP 미리 만들어두세요">
+      <GreenBox>
         IRP 계좌가 있어야 14일 이내에 퇴직금을 받을 수 있어요.<br />
         퇴직 후에 만들면 그사이 지급이 밀릴 수 있고, 14일 초과 시{" "}
         <a href="/w/퇴직금-지연이자" style={{ color: "#1D9E75", textDecoration: "underline" }}>

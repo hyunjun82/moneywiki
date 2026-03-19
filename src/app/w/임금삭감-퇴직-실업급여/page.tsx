@@ -197,7 +197,7 @@ export default function Page() {
         내 임금이 직접 깎이지 않은 경우도 해당될 수 있죠. <strong>동종업계 같은 직급 평균보다 현저히 낮아진 경우</strong>에도 <a href="/w/실업급여-정당한-퇴사-사유" style={{ color: "#1D9E75", textDecoration: "underline" }}>정당한 사유</a>가 되죠. 같은 업종, 같은 경력인데 내 급여만 터무니없이 낮다면 이직 사유로 충분해요.
       </p>
 
-      <GreenBox title="15% 삭감 기준 핵심">
+      <GreenBox>
         종전 임금(3개월 평균) 대비 15% 이상 삭감 &rarr; 정당한 이직 사유<br />
         동종업계 평균보다 현저히 낮은 경우 &rarr; 정당한 이직 사유<br />
         총 임금 = 기본급 + 수당 + 상여금 + 식대 전부 합산
@@ -227,7 +227,7 @@ export default function Page() {
         <strong>연봉협상 결렬</strong>은 흔히 헷갈리는 부분이죠. 올려주지 않아서 퇴직하는 건 정당한 사유가 아니에요. 하지만 &quot;연봉을 삭감하겠다&quot;는 통보를 거부하고 퇴직하는 건 다른 이야기예요. 핵심은 <strong>명목 금액이 실제로 줄었느냐</strong>에 달려 있죠.
       </p>
 
-      <BorderBox title="인정 vs 불인정 사례">
+      <BorderBox>
         기본급 300만원 &rarr; 250만원 삭감 &rarr; <strong>인정</strong><br />
         야근수당 50만원 폐지 &rarr; <strong>인정</strong> (총 임금 15% 이상 감소 시)<br />
         고정 성과급 100% &rarr; 50% 축소 &rarr; <strong>인정 가능</strong><br />
@@ -297,7 +297,7 @@ export default function Page() {
         신청은 퇴직 후 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a> 온라인 또는 관할 <a href="/w/실업급여-고용센터" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용센터</a> 방문으로 진행하면 돼요. 퇴직일 다음 날부터 <strong>12개월 이내</strong>에 신청해야 하니 미루지 마세요. 이직확인서가 나오는 즉시 움직이는 게 가장 좋죠.
       </p>
 
-      <GreenBox title="퇴직 전 사전 상담을 추천해요">
+      <GreenBox>
         고용센터(1350)에 전화해서 &quot;임금삭감인데 정당한 사유에 해당하는지&quot; 먼저 물어보세요.<br />
         어떤 증빙을 갖춰야 하는지까지 안내받을 수 있고, 상담은 무료예요.
       </GreenBox>

@@ -162,7 +162,7 @@ export default function Page() {
         하나은행 외에 다른 금융기관 IRP로 이전도 자유롭게 할 수 있어요.
       </p>
 
-      <GreenBox title="하나은행 IRP 퇴직금 수령 핵심">
+      <GreenBox>
         퇴직금 300만원 초과 → IRP 계좌 필수<br />
         IRP 수령 시 퇴직소득세 납부 이연 (나중에 납부)<br />
         55세 이후 연금 수령 시 세금 30~40% 감면
@@ -228,7 +228,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="55세 이후라면 연금 수령을 고려해보세요">
+      <GreenBox>
         IRP에서 연금으로 받으면 퇴직소득세의 30%(10년 이상 수령 시 40%)를 감면받아요.
         세금을 줄이고 싶다면 55세 이후 연금 수령 방식을 선택하세요.
       </GreenBox>

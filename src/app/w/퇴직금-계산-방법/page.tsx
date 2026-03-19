@@ -177,7 +177,7 @@ export default function Page() {
         실질적으로 근로관계가 있었다면 <a href="/w/퇴직금-조건" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직금 청구권</a>이 인정돼요.
       </p>
 
-      <GreenBox title="퇴직금 계산 3가지 공식">
+      <GreenBox>
         평균임금 = 퇴직 전 3개월 임금 총액 ÷ 3개월 총 일수<br />
         1일 퇴직금 = 1일 평균임금 × 30일<br />
         최종 퇴직금 = 1일 퇴직금 × (근속일수 ÷ 365)
@@ -256,7 +256,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="소멸시효 3년, 퇴직 후 꼭 챙기세요">
+      <GreenBox>
         퇴직금 청구권은 퇴직일로부터 3년이 지나면 소멸해요.<br />
         퇴직 후 바로 받지 못했다면 소멸시효 전에 청구해야 해요.<br />
         내용증명 발송만으로도 6개월 시효 중단 효과가 생겨요.

@@ -161,7 +161,7 @@ export default function Page() {
         방치하면 기본 원리금보장형(초저금리)으로 배정되니 운용 지시를 꼭 직접 해야 해요.
       </p>
 
-      <GreenBox title="퇴직급여 3가지 제도 한눈에 비교">
+      <GreenBox>
         법정 퇴직금: 회사 사내 적립 → 도산 시 미지급 위험<br />
         DB형(확정급여형): 금융기관 적립, 퇴직 시점 임금 기준으로 수령액 확정<br />
         DC형(확정기여형): 매년 연봉÷12 적립, 본인이 직접 운용해 수익 결정
@@ -242,7 +242,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="IRP 세액공제 최대 절세 금액">
+      <GreenBox>
         연 900만원 납입 × 16.5%(소득 5,500만원 이하) = 최대 148.5만원 환급<br />
         소득 5,500만원 초과라면 13.2% 적용, 최대 118.8만원 환급<br />
         IRP와 연금저축 합산 한도 기준이에요

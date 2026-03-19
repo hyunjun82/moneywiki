@@ -140,7 +140,7 @@ export default function Page() {
         제도 목적은 비슷하지만 운영 체계가 완전히 분리돼 있다는 점, 꼭 기억해두세요.
       </p>
 
-      <GreenBox title="제도별 비교">
+      <GreenBox>
         민간 근로자 → 고용보험 가입 → 퇴직 시 실업급여(구직급여)<br />
         공무원 → 공무원연금 가입 → 퇴직 시 퇴직급여·퇴직수당<br />
         군인 → 군인연금 가입 → 퇴직 시 퇴직급여<br />
@@ -177,7 +177,7 @@ export default function Page() {
         다만 기관별로 선발 기준이 다르기 때문에, 모든 명예퇴직에 수당이 나오는 건 아니에요.
       </p>
 
-      <BorderBox title="수령 방식 정리">
+      <BorderBox>
         재직 10년 이상 → 퇴직연금(월 수령) 또는 퇴직일시금 <strong>선택</strong><br />
         재직 10년 미만 → 퇴직일시금만 수령 가능<br />
         퇴직수당 → 재직연수에 따라 <strong>일시금</strong> 별도 지급<br />
@@ -209,7 +209,7 @@ export default function Page() {
         가입 이력 자체가 없다면 공무원연금 쪽에서 퇴직급여를 받는 게 맞아요.
       </p>
 
-      <GreenBox title="유형별 적용 제도">
+      <GreenBox>
         일반임기제공무원 → 공무원연금 적용 (실업급여 대상 아님)<br />
         한시임기제공무원 → 임용 조건에 따라 고용보험 가입 가능<br />
         시간선택제임기제공무원 → 임용 조건에 따라 고용보험 가입 가능<br />
@@ -261,7 +261,7 @@ export default function Page() {
         서류만 미리 챙겨두면 신청 자체는 금방 끝나요.
       </p>
 
-      <BorderBox title="문의처 안내">
+      <BorderBox>
         공무원연금공단 콜센터: <strong>1588-4321</strong><br />
         온라인 신청: <a href="https://www.geps.or.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>geps.or.kr</a><br />
         방문 신청: 전국 공무원연금공단 지사

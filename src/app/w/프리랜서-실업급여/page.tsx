@@ -201,7 +201,7 @@ export default function Page() {
         피보험자격 이력을 조회하면 가입 여부를 바로 확인할 수 있으니까, 한번 들어가보세요.
       </p>
 
-      <GreenBox title="나의 수급자격 체크">
+      <GreenBox>
         <p style={{ margin: 0 }}>아래 항목을 체크해서 조건을 충족하는지 따져보세요.</p>
       </GreenBox>
       <EligibilityChecker items={CHECK_ITEMS} />
@@ -231,7 +231,7 @@ export default function Page() {
         이 세 가지를 모두 갖춰야 수급자격이 생기는 거예요.
       </p>
 
-      <BorderBox title="프리랜서 실업급여 3대 조건">
+      <BorderBox>
         <p style={{ margin: "0 0 4px", lineHeight: 1.9 }}>1. 이직 전 24개월 중 피보험기간 12개월 이상</p>
         <p style={{ margin: "0 0 4px", lineHeight: 1.9 }}>2. 비자발적 이직 (계약 만료, 소득 50% 이상 감소 등)</p>
         <p style={{ margin: 0, lineHeight: 1.9 }}>3. 재취업 의사와 능력 보유 (구직활동 가능 상태)</p>
@@ -321,7 +321,7 @@ export default function Page() {
         계약이 끝나면 바로 움직이세요.
       </p>
 
-      <GreenBox title="프리랜서 실업급여 핵심 정리">
+      <GreenBox>
         <p style={{ margin: "0 0 4px" }}>특고·예술인 → 의무가입 대상, 12개월 이상 가입하면 수급 가능</p>
         <p style={{ margin: "0 0 4px" }}>일반 프리랜서 → 근로자성 인정 시 일반 근로자 기준 적용</p>
         <p style={{ margin: 0 }}>신청 기한 → 퇴직 다음날부터 12개월 이내 (기한 엄수)</p>

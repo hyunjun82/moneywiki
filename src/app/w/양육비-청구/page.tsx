@@ -254,7 +254,7 @@ export default function Page() {
         예를 들어 부모 합산 소득 400만원대에 8세 자녀 한 명이라면 월 약 90만원 수준이에요.
         이걸 기준으로 각자 소득 비율에 따라 부담을 나눠요.
       </p>
-      <GreenBox title="이것만 기억해요">
+      <GreenBox>
         <p style={{ margin: "0 0 4px" }}>이혼해도 부모 의무는 그대로예요. 양쪽 모두 내야 해요.</p>
         <p style={{ margin: "0 0 4px" }}>만 19세까지예요. 대학 가고 안 가고 상관없어요.</p>
         <p style={{ margin: 0 }}>과거 양육비도 청구 가능해요. 혼자 키운 기간도 소급돼요.</p>
@@ -377,7 +377,7 @@ export default function Page() {
       <p style={body}>
         아래는 법이 정해놓은 제재 수단이에요. 강도가 점점 올라가는 구조예요.
       </p>
-      <BorderBox title="미지급 시 제재 수단 (강도순)">
+      <BorderBox>
         <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}>
           <strong>1단계</strong> 이행명령 → 위반 시 1천만원 이하 과태료
         </p>

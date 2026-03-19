@@ -161,7 +161,7 @@ export default function Page() {
         가장 흔한 실수가 &quot;등록만 안 하면 괜찮겠지&quot;라는 판단이에요. <a href="/w/프리랜서-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>프리랜서</a> 프로젝트를 맡거나 현금 거래를 해도, 소득이 발생했으면 그날부터 신고 대상이죠. 국세청 소득 자료와 고용보험 시스템이 연동돼서 나중에 적발되죠.
       </p>
 
-      <GreenBox title="수급 유지 vs 중단, 한눈에 보기">
+      <GreenBox>
         사업자등록 전 (시장조사·계획·자금 준비) → <strong>수급 유지</strong><br />
         사업자등록일 또는 영업 시작일 또는 소득 발생일 → <strong>수급 중단</strong><br />
         미신고 수급 시 → <strong>부정수급 (최대 5배 환수)</strong>
@@ -188,7 +188,7 @@ export default function Page() {
         여기서 핵심은 타이밍이에요. 소정급여일수의 절반 이상을 남긴 상태에서 등록하면 조기재취업수당까지 챙길 수 있죠. 급하게 등록하기보다, <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 남은 급여일수를 먼저 확인하고 최적 시점을 계산하는 게 유리하죠.
       </p>
 
-      <BorderBox title="수급 중단 시점 3가지">
+      <BorderBox>
         1. <strong>사업자등록일</strong>: 관할 세무서에 등록한 날<br />
         2. <strong>실질적 영업 시작일</strong>: 등록 없이 영업을 시작한 날<br />
         3. <strong>소득 발생일</strong>: 창업 관련 수입이 생긴 날<br /><br />
@@ -240,7 +240,7 @@ export default function Page() {
         <a href="/w/실업급여-부정수급" style={{ color: "#1D9E75", textDecoration: "underline" }}>부정수급</a>이 확정되면 피해가 커요. 받은 급여 전액 반환에 <strong>최대 5배 추가 징수</strong>가 붙어요. 100만 원을 부정수급했으면 최대 600만 원을 내야 하는 거죠. 남은 실업급여도 전액 중단돼요. 신고 한 번이면 피할 수 있는 일인데, 아까워서 미루다가 훨씬 큰 금액을 잃게 되는 거예요.
       </p>
 
-      <GreenBox title="부정수급 피하는 핵심">
+      <GreenBox>
         사업자등록 → 즉시 취업 신고<br />
         등록 없이 영업 시작 → 즉시 취업 신고<br />
         소득 발생 → 실업인정일에 신고<br />

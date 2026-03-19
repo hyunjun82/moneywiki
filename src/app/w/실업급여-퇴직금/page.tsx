@@ -168,7 +168,7 @@ export default function Page() {
         <a href="/w/퇴직금-조건" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직금 조건</a>은 별도로 1년 이상 근속, 주 15시간 이상 근무예요.
       </p>
 
-      <GreenBox title="퇴직금 vs 실업급여 핵심 차이">
+      <GreenBox>
         퇴직금: 회사가 지급, 퇴직 후 14일 이내, 1년 이상 근속 기준<br />
         실업급여: 고용보험 기금 지급, 퇴직 후 12개월 내 신청, 구직활동 조건<br />
         두 제도 완전 독립 → 퇴직금 수령이 실업급여에 영향 없어요
@@ -233,7 +233,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="퇴직금도 받고 실업급여도 받으세요">
+      <GreenBox>
         두 가지 모두 근로자의 법적 권리예요.<br />
         퇴직금을 받았다고 실업급여를 포기할 이유가 없어요.
       </GreenBox>

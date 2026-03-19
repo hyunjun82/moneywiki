@@ -134,7 +134,7 @@ export default function Page() {
         partialMatchText="일부 조건이 부족해요. 증빙자료를 더 확보하거나 고용노동부(1350)에 상담받아보세요."
       />
 
-      <GreenBox title="미가입이 생기는 원인 4가지">
+      <GreenBox>
         1. <strong>사업주 미신고</strong>: 보험료 아끼려고 일부러 안 한 경우<br />
         2. <strong>착오 누락</strong>: 실수로 빠진 경우<br />
         3. <strong>적용제외 오해</strong>: 아르바이트라서 안 된다고 착각한 경우<br />
@@ -155,7 +155,7 @@ export default function Page() {
         조사가 끝나면 소급가입 처리가 돼요. 밀린 보험료를 납부하고, 피보험기간이 확정되면 실업급여를 신청할 수 있죠. 사업주가 <a href="/w/실업급여-이직확인서-거부" style={{ color: "#1D9E75", textDecoration: "underline" }}>협조를 거부</a>해도 괜찮아요: <strong>고용노동부에서 직권으로 가입 처리</strong>할 수 있으니까요.
       </p>
 
-      <BorderBox title="소급가입 처리 흐름">
+      <BorderBox>
         1. 미가입 신고 (고용노동부 또는 근로복지공단)<br />
         2. 근로 사실 확인 (증빙자료 제출)<br />
         3. 조사 후 소급가입 처리 (1~2개월 소요)<br />
@@ -199,7 +199,7 @@ export default function Page() {
         사업주에게는 과태료도 따로 붙어요. <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>에 따르면 미가입 사업주에게 <strong>최대 300만원</strong>의 과태료가 부과되죠. 미가입 기간과 근로자 수에 따라 금액이 달라져요.
       </p>
 
-      <GreenBox title="보험료 부담 구조">
+      <GreenBox>
         고용보험료 = 월급 × 0.9% (사업주) + 월급 × 0.9% (근로자)<br />
         소급가입 시 → 밀린 기간 전체 보험료 납부 필요<br />
         사업주 귀책 → 전액 사업주 부담 가능<br />

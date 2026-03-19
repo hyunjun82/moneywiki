@@ -250,7 +250,7 @@ export default function Page() {
         같은 퇴직금이어도 근속 5년과 15년의 세금이 두 배 이상 차이 나는 이유가 여기에 있어요.
       </p>
 
-      <GreenBox title="퇴직소득세 계산 구조">
+      <GreenBox>
         근속연수공제 (최대 1년당 120만원) → 과세표준 감소<br />
         환산급여공제 (60% 수준) → 세율 적용 기준 대폭 하락<br />
         실효세율: 근속 10년·3,000만원 기준 약 3~5%대
@@ -328,7 +328,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="IRP 연금 수령 절세 핵심">
+      <GreenBox>
         55세 이후 연금 수령 시작 → 퇴직소득세 30% 감면<br />
         10년 초과 연금 수령 → 퇴직소득세 40% 감면<br />
         일시금 수령 → 감면 없이 전액 납부

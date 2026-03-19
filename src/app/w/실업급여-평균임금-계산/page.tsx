@@ -154,7 +154,7 @@ export default function Page() {
         이 계산법의 법적 근거는 <a href="https://www.law.go.kr/법령/근로기준법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로기준법 제2조</a>예요. <a href="/w/실업급여-한달-얼마-받나요" style={{ color: "#1D9E75", textDecoration: "underline" }}>실업급여 월 수령액</a>뿐 아니라 퇴직금 산정에도 동일한 공식을 쓰죠. 한 번 익혀두면 두 군데서 활용할 수 있고요.
       </p>
 
-      <GreenBox title="평균임금 공식 요약">
+      <GreenBox>
         1일 평균임금 = 퇴직 전 3개월 임금 총액 / 3개월 총 달력 일수<br /><br />
         예) 3개월 총액 900만원, 92일 &rarr; 1일 약 97,826원
       </GreenBox>
@@ -181,7 +181,7 @@ export default function Page() {
         note="※ 3개월 총 일수 90일 기준 간이 계산. 2026년 기준 상한액 68,100원, 하한액 66,048원 적용. 실제 금액은 퇴직월에 따라 총 일수가 달라질 수 있어요."
       />
 
-      <BorderBox title="포함 vs 제외 항목">
+      <BorderBox>
         <strong>포함</strong>: 기본급, 직책수당, 직무수당, 연장/야간/휴일수당, 상여금, 연차수당, 고정 식대, 고정 교통비, 가족수당<br /><br />
         <strong>제외</strong>: 퇴직금, 출장비(실비), 경조사비, 학자금 지원, 복리후생적 금품
       </BorderBox>
@@ -225,7 +225,7 @@ export default function Page() {
         1일 평균임금은 1,030만원 / 92일 = <strong>약 111,957원</strong>이에요. 여기에 60%를 곱하면 약 67,174원이 1일 실업급여가 되죠. 2026년 <a href="/w/실업급여-최대금액" style={{ color: "#1D9E75", textDecoration: "underline" }}>상한액</a>(68,100원)보다 낮으니까 67,174원이 그대로 적용돼요. 반대로 월급이 더 높아서 60%가 상한액을 넘겼다면 68,100원에서 잘리고요.
       </p>
 
-      <GreenBox title="계산 결과 정리">
+      <GreenBox>
         3개월 임금 총액: 약 1,030만원<br />
         총 일수: 92일<br />
         1일 평균임금: 약 111,957원<br />
@@ -246,7 +246,7 @@ export default function Page() {
         정확한 금액을 알고 싶다면 퇴직 전 3개월 <strong>급여명세서</strong>부터 확보하세요. 각 항목별 금액이 적혀 있으니까 직접 합산이 가능하죠. 퇴직 후에도 회사에 요청하면 발급해줘야 하고, <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a> 모의계산으로 미리 확인해볼 수도 있고요.
       </p>
 
-      <BorderBox title="2026년 상한액 / 하한액 기준">
+      <BorderBox>
         1일 상한액: <strong>68,100원</strong> (월 약 204만원)<br />
         1일 하한액: <strong>66,048원</strong> (월 약 198만원)<br /><br />
         평균임금의 60%가 상한액 초과 &rarr; 68,100원 적용<br />

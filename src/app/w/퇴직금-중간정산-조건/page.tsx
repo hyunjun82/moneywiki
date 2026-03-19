@@ -165,7 +165,7 @@ export default function Page() {
         단순 입원이나 짧은 치료는 인정 안 돼요.
       </p>
 
-      <GreenBox title="퇴직금 중간정산 법정 허용 사유 8가지">
+      <GreenBox>
         ① 무주택 근로자가 주택을 구입하는 경우<br />
         ② 무주택 근로자의 전세보증금이 부족한 경우<br />
         ③ 본인 또는 부양가족이 6개월 이상 요양이 필요한 경우<br />
@@ -246,7 +246,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="중간정산 후 근속기간 초기화 — 퇴직이 가깝다면 신중하게">
+      <GreenBox>
         중간정산을 받으면 그 시점부터 근속기간이 0년으로 다시 시작돼요.<br />
         퇴직이 1~2년 내라면 중간정산 대신 퇴직 때까지 기다리는 게 세금 절세 면에서 유리할 수 있어요.<br />
         <a href="/w/퇴직금-중간정산-세금" style={{ color: "#1D9E75", textDecoration: "underline" }}>중간정산 세금 계산기</a>로 비교해보세요.

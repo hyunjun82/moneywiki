@@ -137,7 +137,7 @@ export default function Page() {
         하루라도 넘기면 청구 자체가 각하(심사 없이 반려)돼요. 증거를 아무리 잘 모아도 기한을 놓치면 끝이에요.
       </p>
 
-      <GreenBox title="이의신청 대상 처분">
+      <GreenBox>
         수급자격 불인정 → 정당한 사유 인정 여부에 불복<br />
         급여 금액 오류 → 기초일액·수급일수 산정 이의<br />
         부정수급 환수 → 환수 판정 자체에 불복<br />
@@ -173,7 +173,7 @@ export default function Page() {
         이 단계부터는 법원 비용이 발생하고, 변호사 선임이 필요할 수도 있죠.
       </p>
 
-      <BorderBox title="단계별 기한 정리">
+      <BorderBox>
         심사청구 → 처분 안 날부터 <strong>90일 이내</strong> / 결정 50일<br />
         재심사청구 → 심사 결정 안 날부터 <strong>90일 이내</strong> / 결정 60일<br />
         행정소송 → 재심사 결정 안 날부터 <strong>90일 이내</strong>
@@ -229,7 +229,7 @@ export default function Page() {
         각하를 피하려면 기한을 꼭 지키고, 내 처분이 심사청구 대상인지 먼저 점검하세요.
       </p>
 
-      <GreenBox title="결과별 대응 방법">
+      <GreenBox>
         인용 → 처분 취소/변경, 실업급여 수급 가능<br />
         기각 → 90일 이내 재심사청구 또는 행정소송 검토<br />
         각하 → 기한 초과나 대상 오류, 보정 후 재청구 가능 여부 확인

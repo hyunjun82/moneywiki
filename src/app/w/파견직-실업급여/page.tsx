@@ -186,7 +186,7 @@ export default function Page() {
         피보험기간이 이어진다는 뜻이에요. 이 점을 알아두면 수급 조건을 판단할 때 유리해요.
       </p>
 
-      <GreenBox title="나의 수급자격을 체크해보세요">
+      <GreenBox>
         <p style={{ margin: 0 }}>아래 4가지 항목을 모두 충족하면 파견직 실업급여 대상이에요.</p>
       </GreenBox>
       <EligibilityChecker items={CHECK_ITEMS} />
@@ -217,7 +217,7 @@ export default function Page() {
         피보험 이력을 조회하면 한눈에 볼 수 있죠.
       </p>
 
-      <BorderBox title="파견직 실업급여 3가지 핵심 조건">
+      <BorderBox>
         <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}>
           <strong>180일</strong> 퇴직 전 18개월 내 고용보험 가입기간 180일 이상
         </p>
@@ -289,7 +289,7 @@ export default function Page() {
         <a href="/w/임금체불-실업급여" style={{ color: "#1D9E75", textDecoration: "underline" }}>임금체불</a>에 해당할 수 있으니 체불 진정도 함께 검토하는 게 좋아요.
       </p>
 
-      <BorderBox title="파견회사가 바뀌는 3가지 경우">
+      <BorderBox>
         <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}>
           <strong>사업체만 이동</strong> 같은 파견회사 내에서 A→B공장 배치 변경 → 계속 근무 (가입기간 유지)
         </p>
@@ -323,7 +323,7 @@ export default function Page() {
         <a href="/w/실업급여-구직활동-횟수" style={{ color: "#1D9E75", textDecoration: "underline" }}>실업인정</a>을 빠뜨리면 해당 기간 급여가 지급되지 않으니까, 달력에 실업인정일을 미리 표시해두는 게 좋아요.
       </p>
 
-      <GreenBox title="수급기간: 가입기간별 정리">
+      <GreenBox>
         <p style={{ margin: "0 0 4px" }}>1년 미만 → 120일</p>
         <p style={{ margin: "0 0 4px" }}>1~3년 → 150일 (50세 이상 180일)</p>
         <p style={{ margin: "0 0 4px" }}>3~5년 → 180일 (50세 이상 210일)</p>

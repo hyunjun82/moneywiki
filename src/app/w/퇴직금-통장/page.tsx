@@ -158,7 +158,7 @@ export default function Page() {
         나머지는 IRP 계좌를 미리 개설해두지 않으면 수령이 지연될 수 있어요.
       </p>
 
-      <GreenBox title="퇴직금 통장 수령 원칙">
+      <GreenBox>
         원칙: IRP(개인형 퇴직연금) 계좌 — 퇴직금 300만원 초과 시 의무<br />
         예외: 일반 예금 통장 — 55세 이상·300만원 이하·외국인 출국·법정 사유<br />
         IRP 장점: 퇴직소득세 이연, 연금 수령 시 30~40% 세금 감면
@@ -230,7 +230,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="IRP 계좌가 일반 통장보다 세금에서 유리한 이유">
+      <GreenBox>
         IRP로 받으면 퇴직소득세 납부가 미뤄지고, 연금으로 수령하면 세금이 30~40% 줄어요.<br />
         당장 목돈이 필요하지 않다면 IRP를 유지하면서 55세 이후 연금으로 받는 게 절세에 유리해요.
       </GreenBox>

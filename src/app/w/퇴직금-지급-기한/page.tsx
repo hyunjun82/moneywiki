@@ -167,7 +167,7 @@ export default function Page() {
         구두로 동의해줬더라도 서면이 없으면 법적으로 연장된 게 아니에요.
       </p>
 
-      <GreenBox title="14일 기한 계산 기준">
+      <GreenBox>
         퇴직일 당일은 포함하지 않아요. 다음 날부터 14일을 세요.<br />
         14일 초과 시 그 다음 날부터 연 20% 지연이자 발생<br />
         청구권 소멸시효: 퇴직일로부터 3년
@@ -240,7 +240,7 @@ export default function Page() {
       <SectionBadge>대응 체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="소멸시효 3년, 이것만은 꼭">
+      <GreenBox>
         퇴직금과 지연이자 청구권 모두 퇴직일로부터 3년이 지나면 소멸해요.<br />
         내용증명 발송이나 진정 접수만 해도 시효가 끊기고 새로 3년이 시작돼요.<br />
         미루지 말고 지금 바로 기록을 남겨두세요.

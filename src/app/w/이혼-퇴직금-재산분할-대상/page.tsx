@@ -172,7 +172,7 @@ export default function Page() {
         시효만 주의하면 돼요. 이혼 확정 후 2년이 지나면 청구 자체가 막혀요.
       </p>
 
-      <GreenBox title="재산분할 대상 퇴직금 범위">
+      <GreenBox>
         분할 대상: 혼인신고일 이후 ~ 이혼 시점까지 근무 기간 해당 퇴직금<br />
         분할 제외: 혼인 전 적립분, 이혼 후 새로 쌓이는 부분<br />
         재산분할 청구권 소멸시효: 이혼 확정일로부터 2년
@@ -256,7 +256,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="사실혼도 재산분할 청구 가능해요">
+      <GreenBox>
         법적 혼인뿐 아니라 사실혼 관계도 재산분할 대상이에요.
         동거 기간, 생활비 공유, 자녀 등 사실혼을 입증할 자료를 함께 준비해야 해요.
       </GreenBox>

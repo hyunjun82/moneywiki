@@ -161,7 +161,7 @@ export default function Page() {
         퇴직금은 생계 자금이라 법이 특별히 절반을 보호해줘요.
       </p>
 
-      <GreenBox title="퇴직금 가압류 보호 원칙">
+      <GreenBox>
         민사집행법 제246조: 퇴직금 1/2은 가압류 금지<br />
         근로자퇴직급여보장법 제7조: IRP 계좌 잔액 전액 가압류 금지
       </GreenBox>
@@ -231,7 +231,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="IRP 계좌로 수령하면 전액 가압류 불가예요">
+      <GreenBox>
         근로자퇴직급여보장법 제7조에 따라 IRP 계좌 잔액은 압류·가압류 금지예요.<br />
         가압류 통보 전이라도 IRP 계좌를 미리 개설하고 인사팀에 알려주면 돼요.
       </GreenBox>

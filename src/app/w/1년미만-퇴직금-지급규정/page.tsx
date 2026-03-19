@@ -163,7 +163,7 @@ export default function Page() {
         다만 법적 의무가 없다는 것과 회사가 줄 수 없다는 건 다른 얘기예요. 회사가 자발적으로 줄 수는 있어요.
       </p>
 
-      <GreenBox title="1년 미만 퇴직금 법 규정 요약">
+      <GreenBox>
         근로자퇴직급여보장법 제4조: 계속 근로 1년 이상이 법적 지급 요건<br />
         1년 미만 → 사업주에게 법적 지급 의무 없음<br />
         예외: 취업규칙 별도 규정 / DC형 퇴직연금 납입금 수령
@@ -226,7 +226,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="법정 퇴직금은 없어도 DC형은 확인하세요">
+      <GreenBox>
         법적 의무는 없지만 DC형 퇴직연금에 납입된 금액은 내 것이에요.<br />
         금융감독원 통합연금포털(100lifeplan.fss.or.kr)에서 내 연금 적립금을 바로 조회할 수 있어요.
       </GreenBox>

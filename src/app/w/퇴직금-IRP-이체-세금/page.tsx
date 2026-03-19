@@ -175,7 +175,7 @@ export default function Page() {
         중도에 규정 외 사유로 인출하면 퇴직소득세에 기타소득세 16.5%까지 더 나올 수 있어요.
       </p>
 
-      <GreenBox title="IRP 이체 후 세금 핵심">
+      <GreenBox>
         이체 시: 세금 없음 (과세 이연)<br />
         일시금 인출: 퇴직소득세 전액 납부<br />
         연금 수령(만 55세 이후, 10년 미만): 퇴직소득세 30% 감면<br />
@@ -244,7 +244,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="절세 핵심: 연금 수령 기간 10년 이상">
+      <GreenBox>
         수령 기간 10년 미만: 퇴직소득세 30% 감면<br />
         수령 기간 10년 이상: 퇴직소득세 40% 감면<br />
         연간 1,200만원 이하 수령 시 분리과세 선택 가능해요

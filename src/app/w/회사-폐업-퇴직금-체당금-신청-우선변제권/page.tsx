@@ -183,7 +183,7 @@ export default function Page() {
         시간이 지날수록 증빙 서류를 구하기 어려워지니 폐업 소식을 들은 즉시 움직이는 게 맞아요.
       </p>
 
-      <GreenBox title="일반체당금 vs 소액체당금 차이">
+      <GreenBox>
         일반체당금: 파산·회생 결정 또는 사실상 도산 인정 필요, 연령·근속별 상한액 적용<br />
         소액체당금: 법원 확정 없이 신청 가능, 최대 1,000만원 한도, 절차 빠름<br />
         둘 중 하나만 선택해 수령 가능 (중복 수령 불가)
@@ -258,7 +258,7 @@ export default function Page() {
       <SectionBadge>준비 체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="최우선 변제 범위 (근로기준법 제38조)">
+      <GreenBox>
         최종 3개월분 임금: 은행 담보채권보다 우선 변제<br />
         최종 3년분 퇴직금: 은행 담보채권보다 우선 변제<br />
         이 범위를 넘는 금액은 일반 우선변제권 적용 (담보채권보다 후순위)

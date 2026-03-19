@@ -137,7 +137,7 @@ export default function Page() {
         무급휴무일이 한 달에 4~8일씩 쌓이면, 6개월을 성실히 다녀도 피보험기간은 150~160일에 그치는 거예요.
       </p>
 
-      <GreenBox title="피보험기간 포함/제외 기준">
+      <GreenBox>
         <p style={{ margin: "0 0 4px" }}>포함: 근무일, 주휴일(유급), 유급휴가, 유급 공휴일</p>
         <p style={{ margin: 0 }}>제외: 무급휴무일, 무급휴가, 결근일, 무급휴업일</p>
       </GreenBox>
@@ -170,7 +170,7 @@ export default function Page() {
         퇴직하고 나서 &quot;몇 일 모자라요&quot; 하면 돌이킬 수 없으니까요.
       </p>
 
-      <BorderBox title="근무 형태별 180일 도달 기간">
+      <BorderBox>
         <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}>주 5일 근무 (주 6일 산정) → 약 <strong>7.5개월</strong></p>
         <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}>주 4일 근무 (주 5일 산정) → 약 <strong>9개월</strong></p>
         <p style={{ margin: 0, lineHeight: 1.9 }}>주 3일 근무 (주 4일 산정) → 약 <strong>11개월</strong></p>
@@ -201,7 +201,7 @@ export default function Page() {
         <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 본인의 전체 피보험기간(직장별 내역 포함)을 조회할 수 있으니 퇴직하기 전에 미리 살펴보세요.
       </p>
 
-      <GreenBox title="합산 가능 여부 판단 기준">
+      <GreenBox>
         <p style={{ margin: "0 0 4px" }}>이전 직장에서 실업급여 안 받고 이직 → 합산 <strong>가능</strong></p>
         <p style={{ margin: "0 0 4px" }}>이전 직장에서 실업급여를 받음 → 합산 <strong>불가</strong> (리셋)</p>
         <p style={{ margin: 0 }}>일용직 기간 → 고용보험 가입됐다면 합산 <strong>가능</strong></p>
@@ -231,7 +231,7 @@ export default function Page() {
         퇴직 전에 한 번 전화해서 &quot;제 피보험기간이 180일 넘는지&quot; 물어보면 끝이에요.
       </p>
 
-      <BorderBox title="피보험기간 확인 3단계">
+      <BorderBox>
         <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}>1단계: 고용24(www.ei.go.kr) 로그인 → 피보험기간 조회</p>
         <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}>2단계: 급여명세서에서 근무일수 + 유급휴일 직접 합산</p>
         <p style={{ margin: 0, lineHeight: 1.9 }}>3단계: 확실하지 않으면 고용센터(1350) 전화 문의</p>

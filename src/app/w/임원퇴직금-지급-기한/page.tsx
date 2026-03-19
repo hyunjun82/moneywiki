@@ -161,7 +161,7 @@ export default function Page() {
         이 기간을 넘기면 지연이자 청구와 민사소송이 가능해요.
       </p>
 
-      <GreenBox title="임원 퇴직금 지급 기한 기준 순서">
+      <GreenBox>
         ① 정관에 기한 명시 → 그 기한 적용<br />
         ② 주주총회 결의로 별도 지정 → 결의 기한 적용<br />
         ③ 기한 없으면 → 상당한 기간 (보통 수개월)<br />
@@ -226,7 +226,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="정관에 지급 기한이 없으면 분쟁이 길어져요">
+      <GreenBox>
         지급 기한이 없으면 '상당한 기간'이 얼마인지 다퉈야 해서 소송 기간이 길어질 수 있어요.
         정관 작성 단계에서 지급 시기를 명시해두는 게 분쟁을 예방하는 가장 확실한 방법이에요.
       </GreenBox>

@@ -157,7 +157,7 @@ export default function Page() {
         본인 상황이 예외에 해당하는지 아래에서 먼저 체크해보세요.
       </p>
 
-      <GreenBox title="IRP 의무화 적용 기준 (2022.4.14~)">
+      <GreenBox>
         의무 대상: 2022.4.14 이후 퇴직 + 퇴직금 300만원 초과 + 만 55세 미만<br />
         예외 대상: 55세 이상 / 퇴직금 300만원 이하 / 사망 / 외국인 국외이주 / 파산·회생
       </GreenBox>
@@ -235,7 +235,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="IRP에서 연금으로 받으면 퇴직소득세가 30% 줄어요">
+      <GreenBox>
         55세 이후 10년 이상 연금 방식으로 수령하면 퇴직소득세를 30% 절감할 수 있어요.
         지금 당장 쓸 계획이 없다면 연금 수령을 미리 고려해 두세요.
       </GreenBox>

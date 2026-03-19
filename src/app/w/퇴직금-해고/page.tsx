@@ -173,7 +173,7 @@ export default function Page() {
         실업급여는 고용보험 피보험기간이 180일 이상이면 해고 직후 신청할 수 있어요.
       </p>
 
-      <GreenBox title="해고 시 청구 가능한 3가지">
+      <GreenBox>
         퇴직금: 1년 이상 근무 + 주 15시간 이상이면 해고 사유 무관하게 지급 의무<br />
         해고예고수당: 30일 전 서면 예고 없이 즉시 해고 시 → 30일분 통상임금 추가<br />
         실업급여: 해고는 비자발적 이직 → 고용보험 180일 이상이면 바로 신청 가능
@@ -250,7 +250,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="부당해고 구제신청 3개월 기한, 절대 놓치지 마세요">
+      <GreenBox>
         해고일로부터 3개월이 지나면 노동위원회 구제신청이 완전히 차단돼요.<br />
         퇴직금 청구와 동시에 진행할 수 있으니 부당해고라는 생각이 들면 바로 신청하세요.<br />
         신청은 <a href="https://www.nlrc.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>노동위원회 홈페이지</a>에서 온라인으로 할 수 있어요.

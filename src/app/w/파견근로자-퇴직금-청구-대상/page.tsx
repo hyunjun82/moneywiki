@@ -175,7 +175,7 @@ export default function Page() {
         A 업체 6개월, B 업체 8개월 일했어도 파견 업체 소속으로 총 14개월이면 <a href="/w/퇴직금-조건" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직금 발생 조건</a>을 충족해요.
       </p>
 
-      <GreenBox title="파견 근로자 퇴직금 청구 기본 원칙">
+      <GreenBox>
         청구 대상: 파견 업체(파견사업주) — 사용 업체 아님<br />
         발생 조건: 파견 업체 기준 1년 이상 + 주 15시간 이상<br />
         예외: 불법 파견 인정 시 사용 업체에 직접 청구 가능<br />
@@ -227,7 +227,7 @@ export default function Page() {
       <SectionBadge>준비 서류 목록</SectionBadge>
       <DocTable docs={DOCS} />
 
-      <BorderBox title="불법 파견이면 사용 업체에 청구할 수 있어요">
+      <BorderBox>
         2년 초과 파견이나 허용 업종 외 파견이 인정되면 사용 업체에 직접 고용 의무가 발생해요.
         고용노동부에 불법 파견 여부 확인을 신청하고, 법률구조공단(132)에서 무료 법률 지원을 받을 수 있어요.
       </BorderBox>
@@ -253,7 +253,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="파견 업체 폐업 시 체당금 제도 활용">
+      <GreenBox>
         파견 업체가 폐업해도 근로복지공단 체당금 신청으로 퇴직금 일부를 받을 수 있어요.
         상한액이 있으니 금액을 먼저 확인하고 신청하세요.
       </GreenBox>

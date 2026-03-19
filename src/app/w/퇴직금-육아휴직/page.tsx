@@ -176,7 +176,7 @@ export default function Page() {
         육아휴직을 2년 썼다면 그 차이는 두 달분이고요.
       </p>
 
-      <GreenBox title="육아휴직 기간 = 퇴직금 근속기간 포함 (법적 의무)">
+      <GreenBox>
         남녀고용평등법 제19조 4항: 육아휴직 기간은 계속 근로기간으로 인정해요.<br />
         배우자 출산휴가·출산전후휴가도 동일하게 포함돼요.<br />
         회사가 이 기간을 제외하고 계산하면 근로기준법 위반이에요.
@@ -247,7 +247,7 @@ export default function Page() {
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="회사가 육아휴직을 제외하고 계산했다면?">
+      <GreenBox>
         인사팀에 서면으로 재산정 요청을 하세요.<br />
         거부하면 고용노동부(1350)에 진정을 낼 수 있어요.<br />
         퇴직 후라도 소멸시효 3년 이내라면 차액 청구가 가능해요.

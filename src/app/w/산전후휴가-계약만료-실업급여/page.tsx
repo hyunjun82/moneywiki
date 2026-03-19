@@ -172,7 +172,7 @@ export default function Page() {
         이직확인서에 퇴직 사유가 <strong>&ldquo;계약기간 만료&rdquo;</strong>로 적혀 있는지 꼭 살펴보세요. 회사가 &ldquo;자발적 퇴사&rdquo;로 기재하면 실업급여 심사에서 문제가 생기죠. 기재가 잘못됐다면 고용센터(1350)에 정정을 요청할 수 있어요.
       </p>
 
-      <GreenBox title="핵심 정리">
+      <GreenBox>
         계약만료 = 비자발적 퇴사 = 실업급여 대상<br />
         산전후휴가 중이라도 동일하게 적용돼요<br />
         이직확인서 퇴직 사유 &ldquo;계약기간 만료&rdquo; 기재 필수
@@ -199,7 +199,7 @@ export default function Page() {
         <a href="/w/퇴사후-실업급여-신청-기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>실업급여 수급기간</a>은 <strong>퇴직일(계약만료일)로부터 1년</strong>이에요. 산전후휴가 90일은 약 3개월이니까, 남은 9개월 동안 실업급여를 받을 수 있어요. 시간은 넉넉한 편이라 조급해할 필요 없죠.
       </p>
 
-      <BorderBox title="수급 순서 정리">
+      <BorderBox>
         1단계: 산전후휴가 90일 → 출산전후휴가급여 수급<br />
         2단계: 휴가 종료 후 → 실업급여 신청<br />
         수급기간: 퇴직일로부터 1년 (휴가 기간 포함)
@@ -250,7 +250,7 @@ export default function Page() {
         <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>이 이 조건을 명시하고 있어요. 지금 당장 임신 중이더라도 출산 뒤에 취업하겠다는 의사만 있으면 충분히 인정돼요.
       </p>
 
-      <GreenBox title="수급기간 연장 조건">
+      <GreenBox>
         사유: 임신, 출산, 만 8세 이하 육아<br />
         연장 기간: 최대 1년<br />
         필요 서류: 출산증명서, 가족관계증명서 등<br />

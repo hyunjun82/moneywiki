@@ -214,7 +214,7 @@ export default function Page() {
         여러 직장을 다녔다면 각 직장별로 따로 계산해요. 합산 기준은 없어요.
       </p>
 
-      <GreenBox title="퇴직금 발생 조건 2가지">
+      <GreenBox>
         같은 사업장에서 계속 근로 1년 이상<br />
         4주 평균 주 15시간 이상 근무<br />
         정규직·계약직·파트타임·아르바이트 모두 동일 적용
@@ -290,7 +290,7 @@ export default function Page() {
       <SectionBadge>퇴직금 계산 체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
-      <GreenBox title="1년 미만으로 끊기는 경우 주의">
+      <GreenBox>
         11개월 29일에 퇴직하도록 유도하는 사례가 있어요.<br />
         실질적으로 계속 근로라는 증거가 있으면 고용노동부에 진정을 넣을 수 있어요.<br />
         급여 이체 내역, 업무 지시 문자, 근태 기록이 증거가 돼요.
