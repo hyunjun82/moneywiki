@@ -79,8 +79,8 @@ export default function MobileStickyBar({
         }
       `}</style>
 
-      {/* 스티바가 차지하는 공간 */}
-      <div style={{ height: '64px' }} />
+      {/* 스티바가 차지하는 공간 — 모바일 64px / PC 52px */}
+      <div className="h-[64px] md:h-[52px]" />
 
       {/* ── 모바일 (md 미만) ─────────────────────────── */}
       <div
