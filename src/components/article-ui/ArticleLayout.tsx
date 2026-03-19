@@ -29,6 +29,7 @@ export function ArticleLayout({ children, sidebar }: Props) {
         <div style={{ flex: 1, minWidth: 0, maxWidth: 720 }}>{children}</div>
         <aside
           className="article-sidebar"
+          data-ad-region="exclude"
           style={{ width: 280, flexShrink: 0 }}
         >
           {sidebar}
