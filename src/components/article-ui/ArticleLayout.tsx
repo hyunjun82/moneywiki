@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
-  sidebar: ReactNode;
+  sidebar?: ReactNode;
 }
 
 export function ArticleLayout({ children, sidebar }: Props) {
