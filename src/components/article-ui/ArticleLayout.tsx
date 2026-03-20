@@ -14,6 +14,16 @@ export function ArticleLayout({ children, sidebar }: Props) {
         @media (max-width: 1024px) {
           .article-sidebar { display: none !important; }
         }
+        .article-sidebar ins.adsbygoogle,
+        .article-sidebar iframe[id^="aswift"],
+        .article-sidebar iframe[id^="google_ads"],
+        .article-sidebar > div[data-google-query-id],
+        .article-sidebar div[id^="google_ads"] {
+          display: none !important;
+          height: 0 !important;
+          max-height: 0 !important;
+          overflow: hidden !important;
+        }
       `}</style>
       <div
         style={{
@@ -30,7 +40,8 @@ export function ArticleLayout({ children, sidebar }: Props) {
         <aside
           className="article-sidebar"
           data-ad-region="exclude"
-          style={{ width: 280, flexShrink: 0 }}
+          data-nosnippet="true"
+          style={{ width: 280, flexShrink: 0, position: "relative", overflow: "hidden" }}
         >
           {sidebar}
         </aside>
