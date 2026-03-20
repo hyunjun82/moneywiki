@@ -1,4 +1,25 @@
+---
+name: article-writing
+description: "머니위키 글 작성 SKILL. 키워드를 받으면 Q1-Q4 사고 → 타이틀 → H2 구조 → 컴포넌트 선택 → TSX 페이지 생성. 글 작성, 수정, 리라이트 시 사용. 사용법: /article-writing [신규|리라이트] [메인 키워드]"
+argument-hint: "[신규|리라이트] [메인 키워드]"
+allowed-tools: Read, Write, Edit, Grep, Glob, Bash(node scripts/*), WebFetch, WebSearch
+---
+
 # 머니위키 글 작성 SKILL
+
+## 모드 분기
+
+### 신규 모드 (`/article-writing 신규 [키워드]`)
+1. 메인 키워드 분석 → 허브 타이틀 생성
+2. 롱테일 스포크 10~15개 키워드 자동 도출 (사용자 확인 후 진행)
+3. 허브 page.tsx + 각 스포크 page.tsx 순차 작성
+4. 각 파일 작성 시 PreToolUse/PostToolUse 훅이 자동 검증
+
+### 리라이트 모드 (`/article-writing 리라이트 [키워드]`)
+1. 기존 page.tsx 읽기
+2. Q1-Q4 재사고 (기존 글의 문제점 파악)
+3. 기존 구조 분석 → 개선점 도출 → 리라이트
+4. 기존 URL 유지, 내용만 업그레이드
 
 ## 개요
 키워드 하나 → 필수 사고(Q1-Q4) → 타이틀 생성 → 소제목 분석 → 컴포넌트 자동 선택 → TSX 페이지 생성

@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 /**
- * PreToolUse 훅: Write/Edit 전 Q1-Q4 + MAP 블록 사전 검증
+ * PreToolUse 훅: Write 전 Q1-Q4 + MAP 블록 사전 검증
  * src/app/w/{slug}/page.tsx 파일만 대상
  *
  * stdin으로 JSON 입력 받음 (Claude Code hooks 표준)
  * exit 0 = 허용, exit 2 = 차단 (stderr 메시지가 Claude에게 전달됨)
  */
+const path = require("path");
+const CALC_SLUGS = require(path.join(__dirname, "calc-protected-slugs.json"));
 
 let input = "";
 process.stdin.setEncoding("utf8");
@@ -22,26 +24,17 @@ process.stdin.on("end", () => {
     }
 
     // 계산기 페이지 제외
-    const CALC_SLUGS = [
-      "실업급여-계산기","퇴직금-계산기","연말정산-계산기","4대보험료-계산기",
-      "DSR-계산기","건강보험료-계산기","국민연금-수령액-계산기","근로소득세-계산기",
-      "대출상환-계산기","대출이자-계산기","양도소득세-계산기","연봉-계산기",
-      "시급-계산기","주휴수당-계산기","취득세-계산기","증여세-계산기",
-      "상속세-계산기","종합부동산세-계산기","재산세-계산기",
-    ];
     if (CALC_SLUGS.some(s => filePath.includes(`/w/${s}/`))) {
       process.exit(0);
     }
 
-    // Write → content, Edit → new_string
-    const content = toolInput.content || toolInput.new_string || "";
-
-    // Edit의 경우 부분 수정이므로 Q1-Q4 체크 불필요 (전체 파일이 아님)
+    // Edit(부분 수정)은 Q1-Q4 체크 불필요
     if (toolInput.old_string && toolInput.new_string) {
       process.exit(0);
     }
 
-    // Write(전체 파일 쓰기)만 Q1-Q4 + MAP 검증
+    // Write(전체 파일 쓰기)만 검증
+    const content = toolInput.content || "";
     if (!content) {
       process.exit(0);
     }
@@ -77,8 +70,7 @@ process.stdin.on("end", () => {
     }
 
     process.exit(0);
-  } catch (e) {
-    // 파싱 실패 시 허용 (안전하게)
+  } catch {
     process.exit(0);
   }
 });
