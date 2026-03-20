@@ -1,9 +1,9 @@
 "use client";
 
-// Q1. 퇴직이 확정됐거나 곧 퇴직할 예정인데, 회사 인사팀이 퇴직금 받을 계좌 정보를 요구하는 상황 — 어떤 통장을 써야 하는지 몰라서 검색 중
+// Q1. 퇴직이 확정됐거나 곧 퇴직할 예정인데, 회사 인사팀이 퇴직금 받을 계좌 정보를 요구하는 상황 어떤 통장을 써야 하는지 몰라서 검색 중
 // Q2. IRP 계좌를 개설하고 계좌번호를 인사팀에 전달해 퇴직 후 14일 이내에 퇴직금을 수령하는 것
 // Q3. IRP 의무 기준(300만원·55세), 예외 조건 4가지, 개설 방법(앱/영업점), 수수료 비교, 입금 지연 시 대응(14일·연 20%)
-// Q4. Steps(4단계 절차) + GreenBox(핵심 결론) + DocTable(서류) + Checklist + FAQ(자주 막히는 상황) — 절차 중심 구성
+// Q4. Steps(4단계 절차) + GreenBox(핵심 결론) + DocTable(서류) + Checklist + FAQ(자주 막히는 상황) 절차 중심 구성
 
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
@@ -155,7 +155,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      <H2>퇴직금 IRP 의무 — 내가 해당되나요?</H2>
+      <H2>퇴직금 IRP 의무 내가 해당되나요?</H2>
       <p style={body}>
         2022년 4월부터 퇴직금 300만원 초과 시 IRP 계좌 수령이 의무예요.
         <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여 보장법 제9조</a>에서 정한 규정이에요.
@@ -168,8 +168,8 @@ export default function Page() {
       </p>
 
       <GreenBox>
-        원칙: IRP(개인형 퇴직연금) 계좌 — 퇴직금 300만원 초과 시 의무<br />
-        예외: 일반 예금 통장 — 55세 이상·300만원 이하·외국인 출국·법정 사유<br />
+        원칙: IRP(개인형 퇴직연금) 계좌 퇴직금 300만원 초과 시 의무<br />
+        예외: 일반 예금 통장 55세 이상·300만원 이하·외국인 출국·법정 사유<br />
         IRP 장점: 퇴직소득세 이연, 연금 수령 시 30~40% 세금 감면
       </GreenBox>
 
@@ -182,7 +182,7 @@ export default function Page() {
 
       <Divider />
 
-      <H2>IRP vs 일반 통장 — 세금 차이 계산</H2>
+      <H2>IRP vs 일반 통장 세금 차이 계산</H2>
       <p style={body}>
         같은 퇴직금이라도 어떤 통장으로 받느냐에 따라 세금이 달라져요.
         일반 통장으로 받으면 수령 즉시 퇴직소득세가 부과되고, IRP로 받으면 세금 납부가 이연돼요.

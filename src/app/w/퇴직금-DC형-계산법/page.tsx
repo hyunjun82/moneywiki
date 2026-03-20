@@ -155,7 +155,7 @@ const REFERENCES = [
 ];
 
 const RELATED = [
-  { slug: "퇴직금-제도-종류", title: "퇴직금 제도 종류 — DB형 vs DC형 비교", description: "어느 방식이 나에게 유리한지 한눈에 비교해요." },
+  { slug: "퇴직금-제도-종류", title: "퇴직금 제도 종류 DB형 vs DC형 비교", description: "어느 방식이 나에게 유리한지 한눈에 비교해요." },
   { slug: "db형-퇴직금-수령방법", title: "DB형 퇴직금 수령 방법", description: "확정급여형 수령 절차와 세금 계산." },
   { slug: "퇴직금-IRP-수령방법", title: "IRP 퇴직금 수령 방법", description: "일시금·연금 선택과 절세 전략." },
 ];

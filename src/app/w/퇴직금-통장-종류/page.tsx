@@ -12,8 +12,8 @@ import { 퇴직금_SIDEBAR, 퇴직금_HIGHLIGHT } from "@/data/퇴직금-guide";
 const CHECK_ITEMS = [
   { id: "c1", label: "퇴직금이 300만원을 초과할 것 같아요" },
   { id: "c2", label: "IRP 계좌가 아직 없어요" },
-  { id: "c3", label: "세액공제 혜택도 같이 받고 싶어요" },
-  { id: "c4", label: "수수료가 낮은 금융기관을 고르고 싶어요" },
+  { id: "c3", label: "IRP 추가 납입 여력이 있어요" },
+  { id: "c4", label: "IRP 수수료를 비교해봤어요" },
 ];
 
 const CALC_SLIDERS = [

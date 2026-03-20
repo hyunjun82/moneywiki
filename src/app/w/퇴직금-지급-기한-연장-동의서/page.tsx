@@ -165,14 +165,14 @@ export default function Page() {
         서명 전에 지연이자 포기 조항이 있는지 반드시 짚어봐야 해요.
         이 조항이 들어 있으면 서명 순간{" "}
         <a href="/w/퇴직금-지연이자" style={{ color: "#1D9E75", textDecoration: "underline" }}>지연이자(연 20%)</a>{" "}
-        청구권을 잃을 수 있거든요.
+        청구권을 잃을 수 있죠.
         거부해도 불이익은 없고, 14일 초과분부터 이자는 그대로 발생해요.
       </p>
 
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* H2-1: 유효 조건 — 알아야 결정 */}
+      {/* H2-1: 유효 조건 알아야 결정 */}
       <H2>연장 동의서가 유효하려면 갖춰야 할 조건</H2>
       <p style={body}>
         <a href="/w/퇴직금-지급-기한" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직금 지급 기한</a>은{" "}
@@ -202,7 +202,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* H2-2: 이자 계산 — 숫자로 파악 */}
+      {/* H2-2: 이자 계산 숫자로 파악 */}
       <H2>합의 기한도 넘기면 지연이자가 또 붙어요</H2>
       <p style={body}>
         동의서를 써줬더라도 합의한 기한을 또 넘기면 그 시점부터 다시 지연이자가 발생해요.

@@ -38,7 +38,7 @@ const CALC_SLIDERS = [
 
 const CALC_RESULTS = [
   {
-    label: "압류 금지 금액 — 반드시 내 손에 남는 금액",
+    label: "압류 금지 금액 반드시 내 손에 남는 금액",
     getValue: (v: Record<string, number>) => Math.round(v.severance / 2),
     format: (v: number) => `약 ${v.toLocaleString()}만원`,
     highlight: true,
@@ -65,7 +65,7 @@ const DOCS = [
 
 const STEPS = [
   {
-    title: "압류 범위 파악 — 1/2 보호 규칙",
+    title: "압류 범위 파악 1/2 보호 규칙",
     desc: "민사집행법 제246조에 따라 퇴직금의 1/2을 초과하는 금액만 압류할 수 있죠. 퇴직금 3,000만원이면 최대 1,500만원까지만 압류 가능해요. 회사 인사팀에 퇴직금 계산 내역서를 요청해서 정확한 보호 금액부터 파악하세요.",
     tip: "채권이 아무리 커도 퇴직금 절반은 반드시 보호되죠",
   },
@@ -275,7 +275,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 민사집행법과 근로자퇴직급여보장법을 바탕으로 작성됐어요. 법 개정이 있을 수 있으니 최신 기준은 대한법률구조공단(132) 또는 법제처(www.law.go.kr)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 민사집행법과 근로자퇴직급여보장법을 바탕으로 작성됐어요. 법 개정이 있을 수 있으니 최신 기준은 대한법률구조공단(132) 또는 법제처(www.law.go.kr)에서 파악해보세요." />
     </ArticleLayout>
   );
 }

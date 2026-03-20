@@ -65,8 +65,8 @@ const CALC_RESULTS = [
 
 const DOCS = [
   { name: "육아휴직 확인서 (또는 육아휴직 발령통지서)", required: true, where: "회사 인사팀" },
-  { name: "급여명세서 — 육아휴직 전 3개월치", required: true, where: "회사 인사팀" },
-  { name: "급여명세서 — 퇴직 전 3개월치 (비교용)", required: false, where: "회사 인사팀" },
+  { name: "급여명세서 육아휴직 전 3개월치", required: true, where: "회사 인사팀" },
+  { name: "급여명세서 퇴직 전 3개월치 (비교용)", required: false, where: "회사 인사팀" },
   { name: "근로계약서 (입사일 확인)", required: false, where: "회사 인사팀" },
   { name: "IRP 계좌번호 (퇴직금 300만원 초과 시)", required: true, where: "은행·증권사 앱에서 개설" },
 ];

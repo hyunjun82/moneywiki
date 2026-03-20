@@ -253,7 +253,7 @@ export default function Page() {
       </p>
       <p style={body}>
         상여금 환산 포함 여부와 총 일수는 달력을 직접 보면서 세는 게 좋아요.
-        회사 시스템 입력 오류로 1~2일 차이가 나는 경우도 있거든요.
+        회사 시스템 입력 오류로 1~2일 차이가 나는 경우도 있죠.
       </p>
 
       <SectionBadge>체크리스트</SectionBadge>

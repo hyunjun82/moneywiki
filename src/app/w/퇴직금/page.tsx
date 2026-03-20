@@ -20,7 +20,7 @@ import { 퇴직금_SIDEBAR, 퇴직금_HIGHLIGHT } from "@/data/퇴직금-guide";
 const CHECK_ITEMS = [
   { id: "c1", label: "같은 사업장에서 1년 이상 근무했어요" },
   { id: "c2", label: "주 15시간 이상 일했어요" },
-  { id: "c3", label: "퇴직했거나 곧 퇴직할 예정이에요" },
+  { id: "c3", label: "1년 이상 같은 사업장에서 근무했어요" },
   { id: "c4", label: "아직 퇴직금을 받지 못했어요" },
 ];
 

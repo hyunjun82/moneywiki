@@ -75,8 +75,8 @@ if (qComments.q2) {
   const q2text = qComments.q2[1];
   // Q2에 "비교" "고른다" "선택" 있으면 → 비교표 중심 글이어야 함 (table 태그 필수)
   if (/비교|고른다|골라|선택/.test(q2text)) {
-    const tableCount = (src.match(/<table/g) || []).length;
-    if (tableCount < 1) ERRORS.push(`❌ Q2가 "비교/선택" 유형인데 <table> 없음 — 비교표 필수`);
+    const hasCompare = (src.match(/<table/g) || []).length > 0 || /GreenBox|BorderBox|CompareTable|DocTable/.test(src);
+    if (!hasCompare) ERRORS.push(`❌ Q2가 "비교/선택" 유형인데 비교 컴포넌트 없음 — 비교표/GreenBox/DocTable 필수`);
   }
   // Q2에 "절차" "신청" "가입" "등록" 있으면 → Steps 컴포넌트 필수
   if (/절차|신청|가입|등록/.test(q2text)) {

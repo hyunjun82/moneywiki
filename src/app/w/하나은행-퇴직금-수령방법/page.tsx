@@ -16,8 +16,8 @@ import { 퇴직금_SIDEBAR, 퇴직금_HIGHLIGHT } from "@/data/퇴직금-guide";
 
 const CHECK_ITEMS = [
   { id: "c1", label: "퇴직 또는 퇴직 예정이에요" },
-  { id: "c2", label: "하나은행 IRP 계좌가 개설돼 있죠 (또는 개설할 예정이고요)" },
-  { id: "c3", label: "회사 인사·급여 담당자에게 IRP 계좌번호를 전달했죠 (또는 전달할 예정이고요)" },
+  { id: "c2", label: "하나은행 계좌를 보유하고 있어요" },
+  { id: "c3", label: "인사팀에 IRP 계좌번호를 전달했어요" },
   { id: "c4", label: "퇴직금이 300만원을 넘죠" },
 ];
 

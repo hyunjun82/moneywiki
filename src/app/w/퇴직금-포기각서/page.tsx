@@ -48,7 +48,7 @@ const DOCS = [
   { name: "급여명세서 (최근 3개월 이상)", required: true, where: "인사팀 또는 온라인 급여 시스템" },
   { name: "4대보험 가입이력 확인서", required: true, where: "국민건강보험공단 홈페이지(무료)" },
   { name: "퇴직 사실 증빙 (퇴직 발령 통보 등)", required: true, where: "인사팀" },
-  { name: "포기각서 사본", required: false, where: "본인 보관 — 있으면 유리한 증거" },
+  { name: "포기각서 사본", required: false, where: "본인 보관 있으면 유리한 증거" },
 ];
 
 const STEPS = [
@@ -66,7 +66,7 @@ const STEPS = [
   {
     title: "내용증명 발송",
     desc: "'포기각서는 강행법규 위반으로 무효이며, 퇴직금 ○○만원을 청구해요'라는 내용으로 내용증명을 보내세요. 소멸시효를 6개월 중단하는 효과가 생겨서 청구 기한을 늦출 수 있고요. 우체국 내용증명 서비스를 이용하면 돼요.",
-    tip: "발송일 기준 소멸시효 중단 — 시효 만료 직전이어도 내용증명 먼저 보내세요",
+    tip: "발송일 기준 소멸시효 중단 시효 만료 직전이어도 내용증명 먼저 보내세요",
     link: { label: "우체국 내용증명 안내", href: "https://www.epost.go.kr" },
   },
   {
@@ -118,7 +118,7 @@ const REFERENCES = [
     category: "법령",
     items: [
       { label: "근로자퇴직급여보장법 제9조: 퇴직금 지급 의무", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법" },
-      { label: "근로기준법 제15조: 강행법규 원칙 — 기준 미달 근로조건 무효", url: "https://www.law.go.kr/법령/근로기준법" },
+      { label: "근로기준법 제15조: 강행법규 원칙 기준 미달 근로조건 무효", url: "https://www.law.go.kr/법령/근로기준법" },
     ],
   },
   {
@@ -248,7 +248,7 @@ export default function Page() {
       <Checklist items={CHECKLIST} />
 
       <GreenBox>
-        구별 기준은 딱 하나 — 돈이 먼저냐, 각서가 먼저냐예요.<br />
+        구별 기준은 딱 하나 돈이 먼저냐, 각서가 먼저냐예요.<br />
         퇴직금을 먼저 받은 뒤 서명한 영수확인서는 유효해요.<br />
         한 푼도 받지 않은 상태에서 쓴 포기각서는 처음부터 무효죠.
       </GreenBox>

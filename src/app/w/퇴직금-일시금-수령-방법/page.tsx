@@ -197,7 +197,7 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* H2-1: Steps (절차형 — 핵심 행동 먼저) */}
+      {/* H2-1: Steps (절차형 핵심 행동 먼저) */}
       <H2>IRP에서 일시금 인출하는 4단계 절차예요</H2>
       <p style={body}>
         IRP 계좌에 퇴직금이 들어왔다면 바로 인출할 수 있죠.
@@ -216,7 +216,7 @@ export default function Page() {
 
       <Divider />
 
-      {/* H2-2: Calculator (얼마형 — 세금 먼저 확인) */}
+      {/* H2-2: Calculator (얼마형 세금 먼저 확인) */}
       <H2>일시금 받으면 세금이 얼마나 빠질까요?</H2>
       <p style={body}>
         퇴직소득세는 고정 세율이 아니에요. 근속 기간이 길수록 공제가 커져서 세금이 줄어드는 구조죠.

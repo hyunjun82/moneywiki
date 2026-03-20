@@ -153,7 +153,7 @@ export default function Page() {
 
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
         퇴직금은 고용 형태와 사업장 규모에 상관없이 두 조건만 충족하면 받을 수 있는 권리에요.
-        만 1년 이상 계속 근무, 주 평균 15시간 이상 근무 — 이 두 가지죠.
+        만 1년 이상 계속 근무, 주 평균 15시간 이상 근무 이 두 가지죠.
         <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여보장법 제8조</a>에서
         정한 기준이고요. 계약직이든 파트타임이든 5인 미만 사업장이든 예외가 없어요.
       </p>
