@@ -12,7 +12,7 @@ import {
   FAQ, References, Disclaimer,
   ArticleLayout, RelatedArticles, ArticleAd, Sidebar,
 } from "@/components/article-ui";
-import { K패스_SIDEBAR } from "@/data/K-패스-guide";
+import { K패스_SIDEBAR, K패스_HIGHLIGHT } from "@/data/K-패스-guide";
 
 const FAQS = [
   { q: "월 15회 미만이면 환급이 아예 없나요?", a: "맞아요, 14회 이하면 환급이 0원이에요. 15회가 기준선이에요. 출퇴근 주 4일 × 왕복이면 주 8회, 월 32회 정도 되니까 직장인이면 대부분 충족돼요. 재택근무가 많은 분은 주말 이동도 합산되니까 그걸로 채울 수 있어요. 택시는 합산에서 빠지니까 주의하고요." },
@@ -53,7 +53,7 @@ export default function Page() {
   const colorMap = { "일반": "#6B7280", "청년": GREEN, "저소득": "#7C3AED" };
 
   return (
-    <ArticleLayout sidebar={<Sidebar heading="K-패스 가이드" items={K패스_SIDEBAR} currentSlug="K-패스-환급-계산" />}>
+    <ArticleLayout sidebar={<Sidebar heading="K-패스 가이드" items={K패스_SIDEBAR} highlightSlugs={K패스_HIGHLIGHT} currentSlug="K-패스-환급-계산" />}>
       <p style={{ fontSize: 13, color: GREEN, fontWeight: 600, marginBottom: 10 }}>
         교통 · K-패스 · 환급 계산
       </p>

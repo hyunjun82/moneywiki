@@ -11,7 +11,7 @@ import {
   FAQ, References, Disclaimer,
   ArticleLayout, RelatedArticles, ArticleAd, Steps, Sidebar,
 } from "@/components/article-ui";
-import { 청년월세지원_SIDEBAR } from "@/data/청년월세지원-guide";
+import { 청년월세지원_SIDEBAR, 청년월세지원_HIGHLIGHT } from "@/data/청년월세지원-guide";
 
 const FAQS = [
   { q: "온라인 신청이 안 되면 방문해도 되나요?", a: "맞아요. 거주지 관할 행정복지센터(동 주민센터)에 방문해서 신청할 수 있어요. 신청 기간 중 평일 09:00~18:00에 방문하면 담당자가 서류 확인부터 입력까지 도와줘요. 특히 온라인에 익숙하지 않은 분이라면 방문이 더 편해요." },
@@ -56,7 +56,7 @@ const GREEN = "#1D9E75";
 
 export default function Page() {
   return (
-    <ArticleLayout sidebar={<Sidebar heading="청년월세지원 가이드" items={청년월세지원_SIDEBAR} currentSlug="청년월세지원-신청방법" />}>
+    <ArticleLayout sidebar={<Sidebar heading="청년월세지원 가이드" items={청년월세지원_SIDEBAR} highlightSlugs={청년월세지원_HIGHLIGHT} currentSlug="청년월세지원-신청방법" />}>
       <p style={{ fontSize: 13, color: GREEN, fontWeight: 600, marginBottom: 10 }}>
         청년 지원 · 월세 · 신청 방법
       </p>

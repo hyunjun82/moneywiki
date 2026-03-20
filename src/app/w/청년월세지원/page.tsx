@@ -11,7 +11,7 @@ import {
   FAQ, References, Disclaimer,
   ArticleLayout, RelatedArticles, ArticleAd, Steps, Sidebar,
 } from "@/components/article-ui";
-import { 청년월세지원_SIDEBAR } from "@/data/청년월세지원-guide";
+import { 청년월세지원_SIDEBAR, 청년월세지원_HIGHLIGHT } from "@/data/청년월세지원-guide";
 
 const FAQS = [
   { q: "2026년에 처음 신청하는 건데, 이전 사업과 다른가요?", a: "크게 두 가지가 달라졌어요. 첫째, 이전까지는 한시사업이었는데 2026년부터 계속사업으로 전환돼서 매년 신청할 수 있어요. 사업이 갑자기 종료될 걱정이 없어진 거죠. 둘째, 청약통장 보유 요건이 삭제됐어요. 이전에는 청약통장이 없으면 신청 자체가 안 됐는데, 이제는 없어도 돼요." },
@@ -59,7 +59,7 @@ const GREEN = "#1D9E75";
 
 export default function Page() {
   return (
-    <ArticleLayout sidebar={<Sidebar heading="청년월세지원 가이드" items={청년월세지원_SIDEBAR} currentSlug="청년월세지원" />}>
+    <ArticleLayout sidebar={<Sidebar heading="청년월세지원 가이드" items={청년월세지원_SIDEBAR} highlightSlugs={청년월세지원_HIGHLIGHT} currentSlug="청년월세지원" />}>
       <p style={{ fontSize: 13, color: GREEN, fontWeight: 600, marginBottom: 10 }}>
         청년 지원 · 주거 · 월세
       </p>

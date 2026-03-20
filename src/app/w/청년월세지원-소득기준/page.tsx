@@ -11,7 +11,7 @@ import {
   FAQ, References, Disclaimer,
   ArticleLayout, RelatedArticles, ArticleAd, Sidebar,
 } from "@/components/article-ui";
-import { 청년월세지원_SIDEBAR } from "@/data/청년월세지원-guide";
+import { 청년월세지원_SIDEBAR, 청년월세지원_HIGHLIGHT } from "@/data/청년월세지원-guide";
 
 const FAQS = [
   { q: "소득이 없어도 중위소득 기준에서 걸릴 수 있나요?", a: "소득이 0원이면 소득 기준은 당연히 충족해요. 하지만 자산 기준은 별개예요. 소득이 없어도 예적금·부동산·자동차 합산이 1.22억을 넘으면 자산 기준에서 탈락해요. 소득과 자산은 별도로 심사하기 때문에 둘 다 챙겨야 해요." },
@@ -50,7 +50,7 @@ function fmt(n: number) {
 
 export default function Page() {
   return (
-    <ArticleLayout sidebar={<Sidebar heading="청년월세지원 가이드" items={청년월세지원_SIDEBAR} currentSlug="청년월세지원-소득기준" />}>
+    <ArticleLayout sidebar={<Sidebar heading="청년월세지원 가이드" items={청년월세지원_SIDEBAR} highlightSlugs={청년월세지원_HIGHLIGHT} currentSlug="청년월세지원-소득기준" />}>
       <p style={{ fontSize: 13, color: GREEN, fontWeight: 600, marginBottom: 10 }}>
         청년 지원 · 월세 · 소득 기준
       </p>

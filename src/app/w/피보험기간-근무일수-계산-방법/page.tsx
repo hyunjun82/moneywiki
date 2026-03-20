@@ -5,7 +5,7 @@ import {
   Calculator, EligibilityChecker, Checklist, FAQ, References, Disclaimer,
   ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
-import { 실업급여_SIDEBAR } from "@/data/실업급여-guide";
+import { 실업급여_SIDEBAR, 실업급여_HIGHLIGHT } from "@/data/실업급여-guide";
 
 // ─── 데이터 ──────────────────────────────────────────
 
@@ -82,7 +82,7 @@ export default function Page() {
       sidebar={
         <Sidebar
           heading="실업급여 가이드"
-          items={실업급여_SIDEBAR}
+          items={실업급여_SIDEBAR} highlightSlugs={실업급여_HIGHLIGHT}
           currentSlug="피보험기간-근무일수-계산-방법"
         />
       }

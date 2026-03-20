@@ -4,7 +4,7 @@ import {
   Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
   ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
-import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
+import { 퇴직금_SIDEBAR, 퇴직금_HIGHLIGHT } from "@/data/퇴직금-guide";
 
 // ─── 데이터 ──────────────────────────────────────────
 
@@ -185,7 +185,7 @@ export default function Page() {
       sidebar={
         <Sidebar
           heading="퇴직금 가이드"
-          items={퇴직금_SIDEBAR}
+          items={퇴직금_SIDEBAR} highlightSlugs={퇴직금_HIGHLIGHT}
           currentSlug="퇴직금-연금-전환"
         />
       }

@@ -1,5 +1,10 @@
 import type { SidebarItem } from "@/components/article-ui";
 
+/** 사이드바에서 반짝이 효과를 줄 계산기 slug */
+export const 퇴직금_HIGHLIGHT: string[] = [
+  "퇴직금-계산기",
+];
+
 /** 퇴직금 가이드 사이드바 목록 */
 export const 퇴직금_SIDEBAR: SidebarItem[] = [
   // ── 기본 개념 ──
