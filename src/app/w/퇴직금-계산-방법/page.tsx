@@ -1,19 +1,27 @@
 "use client";
+// Q1. 퇴직을 앞두고 또는 이미 퇴직한 뒤 퇴직금이 얼마인지 스스로 계산해보고 싶은 상황
+// Q2. 공식에 숫자를 대입해서 내 퇴직금 예상액을 직접 산출한다
+// Q3. 평균임금 산정 기준(포함/제외 항목), 근속일수 계산, 공식 적용 순서, IRP 계좌 조건
+// Q4. GreenBox(공식), Calculator(슬라이더), Steps(4단계), Checklist(주의사항), EligibilityChecker(대상여부)
+// MAP: Q1→서론(상황공감) Q2→H2순서(계산기→단계별) Q3→H2깊이(포함/제외 명시) Q4→컴포넌트
 
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
-  Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
+  Calculator, EligibilityChecker, Steps, DocTable, Checklist,
   ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
+import { FAQ } from "@/components/article-ui/FAQ";
+import { References } from "@/components/article-ui/References";
+import { Disclaimer } from "@/components/article-ui/Disclaimer";
 import { 퇴직금_SIDEBAR, 퇴직금_HIGHLIGHT } from "@/data/퇴직금-guide";
 
 // ─── 데이터 ──────────────────────────────────────────
 
 const CHECK_ITEMS = [
-  { id: "c1", label: "같은 사업장에서 1년 이상 계속 근무했어요" },
-  { id: "c2", label: "4주 평균 주 15시간 이상 근무했어요" },
-  { id: "c3", label: "최근 3개월 급여명세서를 가지고 있어요" },
-  { id: "c4", label: "퇴직일(마지막 근무일)이 확정됐어요" },
+  { id: "c1", label: "같은 사업장에서 1년 이상 계속 근무했죠" },
+  { id: "c2", label: "4주 평균 주 15시간 이상 근무했죠" },
+  { id: "c3", label: "최근 3개월 급여명세서를 갖고 있죠" },
+  { id: "c4", label: "퇴직일(마지막 근무일)이 확정됐죠" },
 ];
 
 const CALC_SLIDERS = [
@@ -71,8 +79,8 @@ const STEPS = [
   },
   {
     title: "근속일수 계산",
-    desc: "입사일부터 퇴직일 전날까지 실제 날수를 세요. 고용24에서 고용보험 가입 이력을 조회하면 정확한 입사일과 퇴직일을 확인할 수 있어요. 1년 6개월이면 549일이에요.",
-    tip: "고용24(ei.go.kr) → 고용보험 이력 조회로 날짜 확인",
+    desc: "입사일부터 퇴직일 전날까지 실제 날수를 세요. 고용24에서 고용보험 가입 이력을 조회하면 정확한 입사일과 퇴직일을 파악할 수 있죠. 1년 6개월이면 549일이에요.",
+    tip: "고용24(ei.go.kr) → 고용보험 이력 조회로 날짜 파악",
     link: { label: "고용24 이력 조회", href: "https://www.ei.go.kr" },
   },
   {
@@ -94,11 +102,11 @@ const CHECKLIST = [
 const FAQS = [
   {
     q: "퇴직금 공식이 정확히 뭔가요?",
-    a: "1일 평균임금 × 30일 × (근속일수 ÷ 365)예요. 평균임금은 퇴직 전 3개월 임금 총액을 그 기간 총 일수로 나눈 값이에요. 월급 × 근속연수는 편의상 추정치일 뿐, 정확한 계산은 일 단위로 해야 해요.",
+    a: "1일 평균임금 × 30일 × (근속일수 ÷ 365)예요. 평균임금은 퇴직 전 3개월 임금 총액을 그 기간 총 일수로 나눈 값이죠. 월급 × 근속연수는 편의상 추정치일 뿐, 정확한 계산은 일 단위로 해야 해요.",
   },
   {
     q: "기본급으로만 계산해도 되나요?",
-    a: "안 돼요. 평균임금에는 정기적으로 지급된 수당과 상여금 월 환산액이 전부 포함돼요. 기본급만으로 계산하면 실제보다 10~30% 적게 나와요. 회사가 기본급만 기준으로 지급했다면 차액을 청구할 수 있어요.",
+    a: "안 돼요. 평균임금에는 정기적으로 지급된 수당과 상여금 월 환산액이 전부 포함돼요. 기본급만으로 계산하면 실제보다 10~30% 적게 나와요. 회사가 기본급만 기준으로 지급했다면 차액을 청구할 수 있죠.",
   },
   {
     q: "수습 기간도 근속기간에 포함되나요?",
@@ -110,7 +118,7 @@ const FAQS = [
   },
   {
     q: "회사 계산과 내 계산이 다르면 어떻게 해요?",
-    a: "급여명세서를 기준으로 직접 검토해요. 차이가 있으면 고용노동부(1350)에 상담하거나 노동청에 진정을 넣을 수 있어요. 근로감독관이 재산정해줘요. 지연 지급이면 연 20% 지연이자도 받을 수 있어요.",
+    a: "급여명세서를 기준으로 직접 검토해요. 차이가 나면 고용노동부(1350)에 상담하거나 노동청에 진정을 넣을 수 있죠. 근로감독관이 재산정해줘요. 지연 지급이면 연 20% 지연이자도 받을 수 있고요.",
   },
   {
     q: "육아휴직 기간도 근속기간에 포함되나요?",
@@ -137,7 +145,7 @@ const REFERENCES = [
 
 const RELATED = [
   { slug: "퇴직금-평균임금", title: "퇴직금 평균임금 계산 방법", description: "상여금·수당 포함 기준을 정확히 설명해요." },
-  { slug: "퇴직금-조건", title: "퇴직금 받을 수 있는 조건", description: "1년·주 15시간 조건을 확인해요." },
+  { slug: "퇴직금-조건", title: "퇴직금 받을 수 있는 조건", description: "1년·주 15시간 조건을 정리했어요." },
   { slug: "퇴직금-세금", title: "퇴직금 세금, 얼마나 떼나요?", description: "IRP 절세 방법까지 정리했어요." },
 ];
 
@@ -158,15 +166,15 @@ export default function Page() {
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
         퇴직금 공식은 <strong>1일 평균임금 × 30일 × 근속연수</strong>예요.
         쉽게 말하면 <a href="/w/퇴직금-평균임금" style={{ color: "#1D9E75", textDecoration: "underline" }}>월 평균임금</a> × 근속연수인데,
-        기본급만으로 계산하면 실제보다 적게 나와요.
-        <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여보장법 제8조</a>에서 정한 기준이에요.
+        기본급만으로 계산하면 실제보다 적게 나올 수 있죠.
+        <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여보장법 제8조</a>에서 정한 기준이죠.
         상여금·수당 포함 방법부터 실제 예시까지 단계별로 정리했어요.
       </p>
 
       <Divider />
       <ArticleAd position="intro" />
 
-      <H2>내가 퇴직금 계산 대상인지 확인해보세요</H2>
+      <H2>내가 퇴직금 계산 대상인지 따져보기</H2>
       <p style={body}>
         퇴직금을 받으려면 같은 사업장에서 <strong>1년 이상 계속 근무</strong>하고, <strong>4주 평균 주 15시간 이상</strong> 일해야 해요.
         정규직·계약직·아르바이트 구분 없이 동일하게 적용되고, 5인 미만 사업장도 2010년부터 전원 해당돼요.
@@ -183,11 +191,11 @@ export default function Page() {
         최종 퇴직금 = 1일 퇴직금 × (근속일수 ÷ 365)
       </GreenBox>
 
-      <SectionBadge>내 상황 체크해보세요</SectionBadge>
+      <SectionBadge>내 상황 체크</SectionBadge>
       <EligibilityChecker
         items={CHECK_ITEMS}
-        allMatchText="퇴직금 계산 조건을 갖추고 있어요. 아래 계산기로 예상 금액을 확인해보세요."
-        partialMatchText="조건 일부가 다를 수 있어요. 고용노동부(1350)에 상담해보세요."
+        allMatchText="퇴직금 계산 조건을 갖추고 있죠. 아래 계산기로 예상 금액을 바로 뽑아보세요."
+        partialMatchText="조건 일부가 다를 수 있죠. 고용노동부(1350)에 상담해보세요."
       />
 
       <Divider />
@@ -207,7 +215,7 @@ export default function Page() {
       <Calculator
         sliders={CALC_SLIDERS}
         results={CALC_RESULTS}
-        note="※ 월 평균임금 기준 추정치. 상여금·연차수당 포함 시 실제 금액이 더 높을 수 있어요."
+        note="※ 월 평균임금 기준 추정치. 상여금·연차수당 포함 시 실제 금액이 더 높을 수 있죠."
       />
 
       <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
@@ -218,13 +226,13 @@ export default function Page() {
       <H2>계산에 필요한 서류</H2>
       <p style={body}>
         정확한 퇴직금 계산의 핵심은 급여명세서 3개월치예요.
-        기본급 외에 상여금·수당이 얼마였는지 확인할 수 있는 유일한 자료거든요.
-        퇴직 후엔 회사가 서류 제공을 거부하거나 연락이 끊기는 경우도 있어요.
+        기본급 외에 상여금·수당이 얼마였는지 파악할 수 있는 유일한 자료거든요.
+        퇴직 후엔 회사가 서류 제공을 거부하거나 연락이 끊기는 경우도 있죠.
       </p>
       <p style={body}>
         재직 중에 급여명세서를 미리 챙겨두는 게 좋아요.
         근로계약서에 급여 구성이 적혀 있다면 함께 보관하면 더 좋고요.
-        4대보험 가입 이력은 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 무료로 조회할 수 있어요.
+        4대보험 가입 이력은 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 무료로 조회할 수 있죠.
       </p>
 
       <SectionBadge>준비 서류 목록</SectionBadge>
@@ -235,11 +243,11 @@ export default function Page() {
       <H2>단계별 계산 방법</H2>
       <p style={body}>
         핵심은 평균임금을 정확히 산정하는 거예요.
-        상여금·수당을 빠뜨리면 실제보다 낮게 계산될 수 있어요.
+        상여금·수당을 빠뜨리면 실제보다 낮게 계산될 수 있죠.
         아래 4단계를 순서대로 따라가면 돼요.
       </p>
       <p style={body}>
-        계산 후 14일 안에 퇴직금이 들어오지 않으면 <a href="/w/퇴직금-미지급-신고" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용노동부 민원마당</a>에서 진정을 넣을 수 있어요.
+        계산 후 14일 안에 퇴직금이 들어오지 않으면 <a href="/w/퇴직금-미지급-신고" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용노동부 민원마당</a>에서 진정을 넣을 수 있죠.
         진정이 접수되면 회사는 원금 외에 <a href="/w/퇴직금-지연이자" style={{ color: "#1D9E75", textDecoration: "underline" }}>지연이자 연 20%</a>까지 물어야 해요.
       </p>
 
@@ -249,7 +257,7 @@ export default function Page() {
 
       <H2>계산 전 주의사항</H2>
       <p style={body}>
-        하나라도 놓치면 퇴직금이 낮게 계산될 수 있어요.
+        하나라도 놓치면 퇴직금이 낮게 계산될 수 있죠.
         특히 상여금 처리와 IRP 계좌 개설은 미리 챙겨두지 않으면 수령 당일에 막혀요.
       </p>
 
@@ -273,7 +281,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로기준법과 근로자퇴직급여보장법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로기준법과 근로자퇴직급여보장법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 파악해 주세요." />
     </ArticleLayout>
   );
 }

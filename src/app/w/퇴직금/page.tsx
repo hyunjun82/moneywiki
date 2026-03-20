@@ -1,10 +1,18 @@
 "use client";
+// Q1. 퇴직을 앞두고 있거나 막 퇴직한 사람이 내 퇴직금이 얼마인지, 어떻게 받는지 모르는 상황
+// Q2. 퇴직금 수급 자격을 판단하고 금액을 계산한 뒤 IRP 계좌로 수령하는 행동
+// Q3. 지급 조건(1년+주15시간), 계산 공식(1일 평균임금×30×근속연수), IRP 의무화(300만원 초과), 14일 지급 기한, 연 20% 지연이자, 소멸시효 3년
+// Q4. EligibilityChecker(조건 체크) → Calculator(금액 계산) → Steps(절차) → DocTable(서류) → Checklist(요약) → FAQ
+// MAP: Q1→서론(상황 공감) Q2→H2순서(조건→계산→절차→서류→요약) Q3→H2깊이(각 섹션 핵심 수치 명시) Q4→컴포넌트 배치
 
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
-  Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
+  Calculator, EligibilityChecker, Steps, DocTable, Checklist,
   ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
+import { FAQ } from "@/components/article-ui/FAQ";
+import { References } from "@/components/article-ui/References";
+import { Disclaimer } from "@/components/article-ui/Disclaimer";
 import { 퇴직금_SIDEBAR, 퇴직금_HIGHLIGHT } from "@/data/퇴직금-guide";
 
 // ─── 데이터 ──────────────────────────────────────────
@@ -44,8 +52,8 @@ const DOCS = [
 
 const STEPS = [
   {
-    title: "퇴직금 수급 자격 확인",
-    desc: "1년 이상 근무 + 주 15시간 이상이 기본 조건이에요. 계약직·아르바이트·파견직도 동일하게 적용돼요. 1년 미만이면 일할 계산(근속일수 ÷ 365)으로 일부만 받아요.",
+    title: "퇴직금 수급 자격 판단",
+    desc: "1년 이상 근무 + 주 15시간 이상이 기본 조건이죠. 계약직·아르바이트·파견직도 동일하게 적용돼요. 1년 미만이면 법적 퇴직금이 발생하지 않아요.",
     tip: "주 15시간 조건은 4주 평균으로 계산해요",
   },
   {
@@ -55,12 +63,12 @@ const STEPS = [
   },
   {
     title: "IRP 계좌 개설 및 통보",
-    desc: "퇴직금 300만원 초과 시 IRP 계좌로만 받을 수 있어요. 은행·증권사 앱으로 10분이면 개설 가능해요. 계좌번호를 인사팀에 문자·메일로 알려줘야 해요.",
+    desc: "퇴직금 300만원 초과 시 IRP 계좌로만 받을 수 있죠. 은행·증권사 앱으로 10분이면 개설 가능해요. 계좌번호를 인사팀에 문자·메일로 알려줘야 해요.",
     tip: "퇴직 전 미리 개설해두면 지급 지연 없이 바로 받아요",
   },
   {
     title: "수령 및 세금 처리",
-    desc: "IRP로 받으면 퇴직소득세가 원천징수돼요. 55세 이후 연금으로 받으면 세율이 30% 낮아져요. 300만원 이하라면 일반 계좌로 직접 받을 수 있어요.",
+    desc: "IRP로 받으면 퇴직소득세가 원천징수돼요. 55세 이후 연금으로 받으면 세율이 30% 낮아져요. 300만원 이하라면 일반 계좌로 직접 받을 수 있죠.",
     tip: "IRP로 받고 연금 수령하면 퇴직소득세 30% 절세",
   },
 ];
@@ -76,7 +84,7 @@ const CHECKLIST = [
 const FAQS = [
   {
     q: "퇴직금은 무조건 받을 수 있나요?",
-    a: "1년 이상 근무하고 주 15시간 이상 일했다면 받을 수 있어요. 자발적 퇴직이든 해고든 관계없어요. 사업주가 지급을 거부하면 고용노동청에 신고할 수 있어요.",
+    a: "1년 이상 근무하고 주 15시간 이상 일했다면 받을 수 있죠. 자발적 퇴직이든 해고든 관계없어요. 사업주가 지급을 거부하면 고용노동청에 신고할 수 있죠.",
   },
   {
     q: "퇴직금 지급은 언제까지 해야 하나요?",
@@ -84,7 +92,7 @@ const FAQS = [
   },
   {
     q: "퇴직금을 IRP가 아닌 통장으로 받을 수 있나요?",
-    a: "300만원 이하라면 일반 계좌로 받을 수 있어요. 초과하면 IRP 계좌로만 받아야 해요. 2022년 4월 14일부터 의무화됐어요.",
+    a: "300만원 이하라면 일반 계좌로 받을 수 있죠. 초과하면 IRP 계좌로만 받아야 해요. 2022년 4월 14일부터 의무화됐어요.",
   },
   {
     q: "1년 미만 근무하면 퇴직금이 없나요?",
@@ -92,7 +100,7 @@ const FAQS = [
   },
   {
     q: "퇴직금에 상여금도 포함되나요?",
-    a: "포함돼요. 정기적·일률적으로 지급된 상여금은 연간 총액 ÷ 12로 월 환산해서 평균임금에 포함해야 해요. 회사가 빠뜨렸다면 재계산 요청을 할 수 있어요.",
+    a: "포함되죠. 정기적·일률적으로 지급된 상여금은 연간 총액 ÷ 12로 월 환산해서 평균임금에 포함해야 해요. 회사가 빠뜨렸다면 재계산 요청을 할 수 있죠.",
   },
 ];
 
@@ -130,11 +138,11 @@ export default function Page() {
 
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
         퇴직금 완전 정리: 조건·계산·수령까지<br />
-        1년 이상 근무하면 누구나 받을 수 있어요
+        1년 이상 근무하면 누구나 받을 수 있죠
       </h1>
 
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
-        퇴직금은 1년 이상 근무하고 주 15시간 이상 일했다면 누구나 받을 수 있어요.
+        퇴직금은 1년 이상 근무하고 주 15시간 이상 일했다면 누구나 받을 수 있죠.
         계약직·아르바이트·파견직도 동일하게 적용돼요.
         <a href="/w/퇴직금-계산-방법" style={{ color: "#1D9E75", textDecoration: "underline" }}>계산 방법</a>은 1일 평균임금 × 30 × 근속연수예요.
         300만원 초과 시 <a href="/w/퇴직금-IRP-계좌" style={{ color: "#1D9E75", textDecoration: "underline" }}>IRP 계좌</a>로만 받을 수 있고, 퇴직일로부터 14일 이내에 지급해야 해요.
@@ -147,7 +155,7 @@ export default function Page() {
       <p style={body}>
         근로자퇴직급여보장법에 따라 1년 이상 근무 + 주 15시간 이상이 기본 조건이에요.
         고용 형태에 관계없이 정규직·계약직·알바·파견직 모두 동일하게 적용돼요.
-        자발적 퇴직이든 해고든 조건을 충족하면 퇴직금을 받을 수 있어요.
+        자발적 퇴직이든 해고든 조건을 충족하면 퇴직금을 받을 수 있죠.
       </p>
       <p style={body}>
         1년 미만 근무했다면 법적 퇴직금이 발생하지 않아요.
@@ -161,18 +169,18 @@ export default function Page() {
         퇴직금 = 1일 평균임금 × 30 × 근속연수
       </GreenBox>
 
-      <SectionBadge>내 상황 체크해보세요</SectionBadge>
+      <SectionBadge>내 상황 체크</SectionBadge>
       <EligibilityChecker
         items={CHECK_ITEMS}
-        allMatchText="퇴직금 수급 조건을 충족해요. 아래 계산기로 예상 금액을 확인해보세요."
-        partialMatchText="일부 조건에 따라 달라질 수 있어요. 고용노동부(1350) 상담을 권해요."
+        allMatchText="퇴직금 수급 조건을 충족해요. 아래 계산기로 예상 금액을 바로 볼 수 있죠."
+        partialMatchText="일부 조건에 따라 달라질 수 있죠. 고용노동부(1350) 상담을 권해요."
       />
 
       <Divider />
 
       <H2>내 퇴직금 예상액 계산</H2>
       <p style={body}>
-        월 평균 임금과 근속기간을 입력하면 예상 퇴직금을 바로 확인할 수 있어요.
+        월 평균 임금과 근속기간을 입력하면 예상 퇴직금을 바로 볼 수 있죠.
         상여금이 있다면 연간 총액 ÷ 12를 월 임금에 더해서 계산하면 더 정확해요.
       </p>
 
@@ -193,7 +201,7 @@ export default function Page() {
       <p style={body}>
         신분증과 IRP 계좌 정보가 핵심이에요.
         급여명세서는 퇴직금 계산 기준이 되니 퇴직 전에 챙겨두세요.
-        퇴직 후엔 발급이 어려울 수 있어요.
+        퇴직 후엔 발급이 어려울 수 있죠.
       </p>
 
       <SectionBadge>준비 서류 목록</SectionBadge>
@@ -203,7 +211,7 @@ export default function Page() {
 
       <H2>퇴직금 수령 절차 4단계</H2>
       <p style={body}>
-        자격 확인부터 수령까지 단계별로 따라가면 헷갈리지 않아요.
+        자격 판단부터 수령까지 단계별로 따라가면 헷갈리지 않아요.
         IRP 개설이 핵심이고, 퇴직 전에 미리 해두는 게 좋아요.
       </p>
 
@@ -213,15 +221,15 @@ export default function Page() {
 
       <H2>퇴직금 수령 체크리스트</H2>
       <p style={body}>
-        소멸시효 3년과 IRP 의무화는 꼭 기억하세요.
+        소멸시효 3년과 IRP 의무화는 꼭 기억해두세요.
       </p>
 
       <SectionBadge>체크리스트</SectionBadge>
       <Checklist items={CHECKLIST} />
 
       <GreenBox>
-        14일이 지나도 입금이 없으면 연 20% 지연이자를 청구할 수 있어요.
-        고용24(work.go.kr) 온라인 진정 접수로 빠르게 해결할 수 있어요.
+        14일이 지나도 입금이 없으면 연 20% 지연이자를 청구할 수 있죠.
+        고용24(work.go.kr) 온라인 진정 접수로 빠르게 해결할 수 있죠.
       </GreenBox>
 
       <Divider />
@@ -235,7 +243,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법과 근로기준법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법과 근로기준법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인 가능해요." />
     </ArticleLayout>
   );
 }

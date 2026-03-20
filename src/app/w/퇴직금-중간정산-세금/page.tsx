@@ -1,10 +1,18 @@
 "use client";
+// Q1. 중간정산을 신청하려는데 세금이 얼마나 빠져나갈지 몰라서 실제 수령액이 걱정되는 재직자 상황
+// Q2. 세금 계산 후 중간정산 신청 여부를 결정한다
+// Q3. 퇴직소득세 계산 공식(근속연수공제→환산급여공제→기본세율), 근속기간 리셋 불이익, IRP 과세이연 불가, 원천징수 타이밍
+// Q4. 계산기(세금 추정) + 순서도(절차) + DocTable(서류) + Checklist(주의사항) + FAQ
+// MAP: Q1→서론(수령액 걱정 공감) Q2→H2순서(조건→계산→서류→절차→주의사항) Q3→H2깊이(리셋·두번납부 강조) Q4→Calculator+Steps+DocTable+Checklist
 
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
-  Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
+  Calculator, EligibilityChecker, Steps, DocTable, Checklist,
   ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
+import { FAQ } from "@/components/article-ui/FAQ";
+import { References } from "@/components/article-ui/References";
+import { Disclaimer } from "@/components/article-ui/Disclaimer";
 import { 퇴직금_SIDEBAR, 퇴직금_HIGHLIGHT } from "@/data/퇴직금-guide";
 
 // ─── 데이터 ──────────────────────────────────────────
@@ -12,8 +20,8 @@ import { 퇴직금_SIDEBAR, 퇴직금_HIGHLIGHT } from "@/data/퇴직금-guide";
 const CHECK_ITEMS = [
   { id: "c1", label: "법정 허용 사유(무주택 주택 구입·전세보증금·요양 등)에 해당해요" },
   { id: "c2", label: "현재 재직 중인 회사가 중간정산 신청을 받아주는 곳이에요" },
-  { id: "c3", label: "정산 후 근속기간이 리셋된다는 걸 알고 있어요" },
-  { id: "c4", label: "세금이 원천징수되어 실제 수령액이 줄어든다는 걸 알고 있어요" },
+  { id: "c3", label: "정산 후 근속기간이 리셋된다는 걸 알고 있죠" },
+  { id: "c4", label: "세금이 원천징수되어 실제 수령액이 줄어든다는 걸 알고 있죠" },
 ];
 
 const CALC_SLIDERS = [
@@ -112,9 +120,9 @@ const DOCS = [
 
 const STEPS = [
   {
-    title: "법정 허용 사유 해당 여부 확인",
+    title: "법정 허용 사유 해당 여부 체크",
     desc: "중간정산은 무주택자 주택 구입, 전세보증금 부담, 본인·부양가족 6개월 이상 요양, 파산·회생절차, 천재지변 등 법에서 정한 사유가 있어야만 돼요. 사유가 없으면 회사가 허용해줘도 세금 불이익이 생겨요.",
-    tip: "근로자퇴직급여보장법 시행령 제3조에 허용 사유 전체 목록이 있어요",
+    tip: "근로자퇴직급여보장법 시행령 제3조에 허용 사유 전체 목록이 나와 있죠",
     link: { label: "법정 사유 전체 보기", href: "https://www.law.go.kr/법령/근로자퇴직급여보장법시행령" },
   },
   {
@@ -126,17 +134,17 @@ const STEPS = [
   {
     title: "신청서·증빙서류 인사팀 제출",
     desc: "중간정산 신청서와 사유 증빙서류를 인사팀에 제출해요. 주택 구입이면 매매계약서, 전세면 임대차계약서, 요양이면 의사 진단서가 필요해요. 회사가 서류를 검토한 뒤 승인하면 정산이 진행돼요.",
-    tip: "서류 기준은 회사마다 다를 수 있으니 인사팀에 먼저 문의해요",
+    tip: "서류 기준은 회사마다 다를 수 있으니 인사팀에 먼저 물어봐요",
   },
   {
     title: "퇴직소득세 원천징수 확인 및 영수증 수령",
     desc: "정산금이 지급될 때 퇴직소득세가 미리 공제돼요. 지급 후 퇴직소득원천징수영수증을 꼭 받아두세요. 이 영수증은 최종 퇴직 시 세금 합산 계산에 쓰이기 때문에 잃어버리면 나중에 번거로워요.",
-    tip: "영수증 없어도 인사팀에 재발급 요청할 수 있어요",
+    tip: "영수증을 분실해도 인사팀에 재발급 요청할 수 있죠",
   },
 ];
 
 const CHECKLIST = [
-  "법정 허용 사유 해당 여부 확인 — 사유 없으면 신청 불가",
+  "법정 허용 사유 해당 여부 체크 — 사유 없으면 신청 불가",
   "홈택스 퇴직소득세 모의계산으로 세금 사전 파악",
   "정산 후 근속기간 리셋 인지 — 이후 1년 미만 퇴직 시 퇴직금 없음",
   "세금 두 번 납부 구조 인지 — 중간정산 때 1회, 최종 퇴직 때 1회",
@@ -159,11 +167,11 @@ const FAQS = [
   },
   {
     q: "중간정산 금액이 작으면 세금이 0원일 수 있나요?",
-    a: "가능해요. 근속연수공제 후 과세표준이 0이 되면 세금이 안 나와요. 근속기간이 짧고 금액이 작을수록 이런 경우가 생겨요. 아래 계산기로 미리 확인해볼 수 있어요.",
+    a: "그런 경우도 생겨요. 근속연수공제 후 과세표준이 0이 되면 세금이 나오지 않아요. 근속기간이 짧고 금액이 작을수록 이런 상황이 되고요. 아래 계산기로 미리 추정해볼 수 있죠.",
   },
   {
     q: "법정 사유 없이 중간정산하면 어떻게 되나요?",
-    a: "회사가 법을 위반하는 게 돼요. 세금 혜택도 줄어들 수 있고, 근로자퇴직급여보장법 위반으로 회사에 과태료가 부과될 수 있어요. 법정 사유가 없다면 중간정산보다 퇴직 시 전액 받는 게 세금·법 양쪽에서 유리해요.",
+    a: "회사가 법을 위반하는 게 돼요. 세금 혜택도 줄어들 수 있고, 근로자퇴직급여보장법 위반으로 회사에 과태료가 부과될 수도 있죠. 법정 사유가 없다면 중간정산보다 퇴직 시 전액 받는 게 세금·법 양쪽에서 유리해요.",
   },
   {
     q: "IRP로 중간정산을 받을 수 있나요?",
@@ -222,31 +230,31 @@ export default function Page() {
       </h1>
 
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
-        중간정산을 받으면 <strong>퇴직소득세</strong>가 원천징수돼요. 최종 퇴직이 아니어도 세금을 내야 하는 구조예요.
+        중간정산을 받으면 <strong>퇴직소득세</strong>가 원천징수돼요. 최종 퇴직이 아니어도 세금을 내야 하는 구조죠.
         게다가 정산 후에는 <a href="/w/퇴직금-중간정산-후-퇴직금-계산" style={{ color: "#1D9E75", textDecoration: "underline" }}>근속기간이 리셋</a>되기 때문에
         세금을 모르고 받으면 예상보다 적게 들어오고, 나중에도 손해가 생겨요.
-        세금 계산 방법과 <a href="/w/퇴직금-중간정산-조건" style={{ color: "#1D9E75", textDecoration: "underline" }}>신청 조건</a>, 주의사항을 미리 파악해두면 불이익을 막을 수 있어요.
+        세금 계산 방법과 <a href="/w/퇴직금-중간정산-조건" style={{ color: "#1D9E75", textDecoration: "underline" }}>신청 조건</a>, 주의사항을 미리 파악해두면 불이익을 막을 수 있죠.
       </p>
 
       <Divider />
       <ArticleAd position="intro" />
 
-      <H2>중간정산 신청 전 조건 확인부터 해요</H2>
+      <H2>중간정산 신청 전 조건 체크가 먼저예요</H2>
       <p style={body}>
         중간정산은 아무 때나 신청할 수 있는 게 아니에요.
         <a href="https://www.law.go.kr/법령/근로자퇴직급여보장법시행령" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로자퇴직급여보장법 시행령 제3조</a>에서
         허용하는 사유가 있어야 해요. 무주택 세대주의 주택 구입, 전세보증금 부담, 본인·부양가족 6개월 이상 요양, 파산·회생절차, 천재지변이 대표적인 사유예요.
       </p>
       <p style={body}>
-        법정 사유 없이 중간정산을 진행하면 회사가 법을 위반하는 게 돼요. 세금 혜택도 줄어들 수 있어요.
+        법정 사유 없이 중간정산을 진행하면 회사가 법을 위반하는 게 돼요. 세금 혜택도 줄어들 수 있죠.
         신청 전에 내 사유가 여기에 해당하는지 먼저 체크해봐야 해요.
       </p>
 
       <SectionBadge>중간정산 신청 조건 체크</SectionBadge>
       <EligibilityChecker
         items={CHECK_ITEMS}
-        allMatchText="중간정산 신청이 가능한 조건이에요. 아래 계산기로 예상 세금을 확인해보세요."
-        partialMatchText="조건이 일부 맞지 않아요. 고용노동부(1350) 또는 인사팀에 먼저 상담해보세요."
+        allMatchText="중간정산 신청이 가능한 조건이에요. 아래 계산기로 예상 세금을 추정해봐요."
+        partialMatchText="조건이 일부 맞지 않아요. 고용노동부(1350) 또는 인사팀에 먼저 상담해봐요."
       />
 
       <Divider />
@@ -260,17 +268,17 @@ export default function Page() {
       <p style={body}>
         계산 순서는 이래요. 먼저 정산금에서 근속연수공제를 빼요. 남은 금액을 연 단위로 환산(×12÷근속연수)하고,
         환산급여공제를 한 번 더 빼요. 그 결과에 기본세율을 곱하고, 다시 근속연수로 되돌리면(÷12×근속연수) 퇴직소득산출세액이 나와요.
-        지방소득세(10%) 포함해서 납부해요.
+        지방소득세(10%) 포함해서 납부하고요.
       </p>
       <p style={body}>
-        아래 계산기는 이 공식을 반영한 추정치예요. 실제 납부액은 <a href="https://www.hometax.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>국세청 홈택스</a> 퇴직소득세 모의계산이 더 정확해요.
+        아래 계산기는 이 공식을 반영한 추정치예요. 실제 납부액은 <a href="https://www.hometax.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>국세청 홈택스</a> 퇴직소득세 모의계산이 더 정확하죠.
       </p>
 
       <SectionBadge>중간정산 세금 계산기</SectionBadge>
       <Calculator
         sliders={CALC_SLIDERS}
         results={CALC_RESULTS}
-        note="※ 근속연수공제·환산급여공제·지방소득세(10%) 반영 추정치. 퇴직금여 종류, 공제 항목에 따라 실제와 차이가 날 수 있어요."
+        note="※ 근속연수공제·환산급여공제·지방소득세(10%) 반영 추정치. 퇴직금 종류, 공제 항목에 따라 실제와 차이가 날 수 있죠."
       />
 
       <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
@@ -281,10 +289,10 @@ export default function Page() {
       <H2>신청에 필요한 서류</H2>
       <p style={body}>
         사유에 따라 증빙서류가 달라요. 주택 구입이면 매매계약서, 전세면 임대차계약서, 요양이면 의사 진단서가 필요해요.
-        서류 기준은 회사마다 다를 수 있으니, 신청 전에 인사팀에 확인하는 게 먼저예요.
+        서류 기준은 회사마다 다를 수 있으니, 신청 전에 인사팀에 먼저 물어보는 게 좋아요.
       </p>
       <p style={body}>
-        퇴직소득원천징수영수증은 정산 후 인사팀에서 받을 수 있어요.
+        퇴직소득원천징수영수증은 정산 후 인사팀에서 받을 수 있고요.
         최종 퇴직 시 세금 계산에도 쓰이기 때문에 꼭 챙겨두는 게 좋아요.
       </p>
 
@@ -296,8 +304,8 @@ export default function Page() {
       <H2>중간정산 신청 절차 4단계</H2>
       <p style={body}>
         신청 전에 세금을 미리 계산해보는 게 제일 중요해요.
-        세금이 예상보다 많다면 중간정산 대신 퇴직 시 한 번에 받는 게 유리할 수 있어요.
-        아래 순서대로 진행하면 빠짐없이 처리할 수 있어요.
+        세금이 예상보다 많다면 중간정산 대신 퇴직 시 한 번에 받는 게 유리할 수도 있죠.
+        아래 순서대로 진행하면 빠짐없이 처리할 수 있죠.
       </p>
 
       <Steps steps={STEPS} />
@@ -322,7 +330,7 @@ export default function Page() {
       <GreenBox>
         목돈이 급하지 않다면 퇴직 시 전액 받는 게 세금 면에서 나아요.
         근속기간이 길수록 근속연수공제가 커져서 최종 퇴직 시 세금이 더 적고,
-        <a href="/w/퇴직금-IRP-수령방법" style={{ color: "#1D9E75", textDecoration: "underline" }}>IRP 연금 수령</a>을 선택하면 추가로 30~40% 절세 효과도 볼 수 있어요.
+        <a href="/w/퇴직금-IRP-수령방법" style={{ color: "#1D9E75", textDecoration: "underline" }}>IRP 연금 수령</a>을 선택하면 추가로 30~40% 절세 효과도 볼 수 있죠.
       </GreenBox>
 
       <Divider />
@@ -336,7 +344,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 소득세법과 근로자퇴직급여보장법을 바탕으로 작성됐어요. 세율·공제 한도 변경이 있을 수 있으니 최신 기준은 국세청(126) 또는 홈택스에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 소득세법과 근로자퇴직급여보장법을 바탕으로 작성됐어요. 세율·공제 한도 변경이 있을 수 있으니 최신 기준은 국세청(126) 또는 홈택스에서 직접 확인해봐요." />
     </ArticleLayout>
   );
 }

@@ -3,12 +3,12 @@ import type { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "해고 근로자 임금·퇴직금 지급 기한, 언제까지인가요? | 머니위키",
-  description: "해고 시 임금과 퇴직금은 퇴직일로부터 14일 이내에 지급해야 해요. 기한 초과 시 지연이자와 신고 방법을 정리했어요.",
+  title: "해고됐는데 임금·퇴직금을 못 받았나요? 지급 기한과 청구 절차 | 머니위키",
+  description: "해고 시 임금·퇴직금은 14일 이내 지급 의무예요. 해고예고수당, 연 20% 지연이자, 고용노동부 신고 절차까지 다뤄요.",
   alternates: { canonical: "https://www.jjyu.co.kr/w/해고-근로자-임금-퇴직금-지급-기한" },
   openGraph: {
-    title: "해고 근로자 임금·퇴직금 지급 기한, 언제까지인가요? | 머니위키",
-    description: "해고 시 임금과 퇴직금은 퇴직일로부터 14일 이내에 지급해야 해요. 기한 초과 시 지연이자와 신고 방법을 정리했어요.",
+    title: "해고됐는데 임금·퇴직금을 못 받았나요? 지급 기한과 청구 절차 | 머니위키",
+    description: "해고 시 임금·퇴직금은 14일 이내 지급 의무예요. 해고예고수당, 연 20% 지연이자, 고용노동부 신고 절차까지 다뤄요.",
     url: "https://www.jjyu.co.kr/w/해고-근로자-임금-퇴직금-지급-기한",
     type: "article",
     siteName: "머니위키",

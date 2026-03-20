@@ -3,12 +3,12 @@ import type { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "퇴직금 IRP 수령 방법, 어떻게 찾아 쓰나요? | 머니위키",
-  description: "IRP에 들어온 퇴직금을 인출하는 방법을 정리했어요. 중도 인출 조건, 해지와의 차이, 세금 처리까지 안내해요.",
+  title: "IRP에 퇴직금이 들어왔는데 어떻게 꺼내야 하죠? | 머니위키",
+  description: "연금 vs 일시금 세금 차이와 IRP 수령 신청 4단계를 정리했어요. 퇴직소득세 30% 감면 조건(55세·5년·10년)부터 서류까지 안내해요.",
   alternates: { canonical: "https://www.jjyu.co.kr/w/퇴직금-IRP-수령방법" },
   openGraph: {
-    title: "퇴직금 IRP 수령 방법, 어떻게 찾아 쓰나요? | 머니위키",
-    description: "IRP에 들어온 퇴직금을 인출하는 방법을 정리했어요. 중도 인출 조건, 해지와의 차이, 세금 처리까지 안내해요.",
+    title: "IRP에 퇴직금이 들어왔는데 어떻게 꺼내야 하죠? | 머니위키",
+    description: "연금 vs 일시금 세금 차이와 IRP 수령 신청 4단계를 정리했어요. 퇴직소득세 30% 감면 조건(55세·5년·10년)부터 서류까지 안내해요.",
     url: "https://www.jjyu.co.kr/w/퇴직금-IRP-수령방법",
     type: "article", siteName: "머니위키", locale: "ko_KR",
   },

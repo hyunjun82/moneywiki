@@ -3,12 +3,12 @@ import type { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "퇴직금 제도 종류, DB형·DC형·IRP 뭐가 다를까? | 머니위키",
-  description: "퇴직금 제도는 퇴직금(DB형), 확정기여형(DC형), 개인형퇴직연금(IRP) 세 가지로 나뉩니다. 각 제도의 차이점, 유불리 비교, 중간 전환 방법을 정리했습니다.",
+  title: "DB형·DC형·법정 퇴직금, 뭐가 달라요? | 머니위키",
+  description: "법정 퇴직금, DB형(확정급여형), DC형(확정기여형) 세 제도의 차이와 유불리 기준을 정리했어요. DC형 방치 위험, IRP 개설 시기, 연금 수령 절세까지 한 번에.",
   alternates: { canonical: "https://www.jjyu.co.kr/w/퇴직금-제도-종류" },
   openGraph: {
-    title: "퇴직금 제도 종류, DB형·DC형·IRP 뭐가 다를까? | 머니위키",
-    description: "퇴직금 제도는 퇴직금(DB형), 확정기여형(DC형), 개인형퇴직연금(IRP) 세 가지로 나뉩니다. 각 제도의 차이점과 유불리를 비교했습니다.",
+    title: "DB형·DC형·법정 퇴직금, 뭐가 달라요? | 머니위키",
+    description: "법정 퇴직금, DB형, DC형 세 제도 차이와 유불리 기준, DC형 방치 위험, IRP 개설 시기까지 정리했어요.",
     url: "https://www.jjyu.co.kr/w/퇴직금-제도-종류",
     type: "article",
     siteName: "머니위키",
