@@ -1,5 +1,11 @@
 import type { SidebarItem } from "@/components/article-ui";
 
+/** 사이드바에서 반짝이 효과를 줄 계산기 slug */
+export const 실업급여_HIGHLIGHT: string[] = [
+  "실업급여-모의계산",
+  "실업급여-계산기",
+];
+
 /** 실업급여 가이드 사이드바 목록 (가나다순) */
 export const 실업급여_SIDEBAR: SidebarItem[] = [
   // ── TSX 리라이트 글 ──

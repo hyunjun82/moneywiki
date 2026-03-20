@@ -5,7 +5,7 @@ import {
   Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
   ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
-import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
+import { 퇴직금_SIDEBAR, 퇴직금_HIGHLIGHT } from "@/data/퇴직금-guide";
 
 const CHECK_ITEMS = [
   { id: "c1", label: "정기적으로 받는 상여금이 있어요" },
@@ -122,7 +122,7 @@ const RELATED = [
 export default function Page() {
   return (
     <ArticleLayout
-      sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} currentSlug="퇴직금-계산-평균임금-공식" />}
+      sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} highlightSlugs={퇴직금_HIGHLIGHT} currentSlug="퇴직금-계산-평균임금-공식" />}
     >
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 평균임금공식 · 계산</p>
 

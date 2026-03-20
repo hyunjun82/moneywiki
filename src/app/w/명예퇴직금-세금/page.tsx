@@ -1,13 +1,13 @@
 "use client";
 import { H2, SectionBadge, GreenBox, BorderBox, Divider, body, Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer, ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd } from "@/components/article-ui";
-import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
+import { 퇴직금_SIDEBAR, 퇴직금_HIGHLIGHT } from "@/data/퇴직금-guide";
 
 const currentSlug = "명예퇴직금-세금";
 
 export default function Page() {
   return (
     <ArticleLayout
-      sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} currentSlug={currentSlug} />}
+      sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} highlightSlugs={퇴직금_HIGHLIGHT} currentSlug={currentSlug} />}
     >
       {/* 타이틀 */}
       <div style={{ marginBottom: 24 }}>

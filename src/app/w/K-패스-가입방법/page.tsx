@@ -11,7 +11,7 @@ import {
   FAQ, References, Disclaimer,
   ArticleLayout, RelatedArticles, ArticleAd, Steps, Sidebar,
 } from "@/components/article-ui";
-import { K패스_SIDEBAR } from "@/data/K-패스-guide";
+import { K패스_SIDEBAR, K패스_HIGHLIGHT } from "@/data/K-패스-guide";
 
 const FAQS = [
   { q: "카드 발급만 했는데 환급이 안 왔어요. 왜 그런가요?", a: "K-패스 회원 가입을 별도로 해야 해요. 카드는 교통카드로 쓸 수 있지만, 환급은 k-pass.or.kr 또는 카드사 앱에서 K-패스 회원으로 등록해야 시작돼요. 가입 안 하면 아무리 오래 써도 환급이 0원이에요. 가입 후 해당 월 15회 이상 이용분부터 다음 달에 정산돼요." },
@@ -57,7 +57,7 @@ const GREEN = "#1D9E75";
 
 export default function Page() {
   return (
-    <ArticleLayout sidebar={<Sidebar heading="K-패스 가이드" items={K패스_SIDEBAR} currentSlug="K-패스-가입방법" />}>
+    <ArticleLayout sidebar={<Sidebar heading="K-패스 가이드" items={K패스_SIDEBAR} highlightSlugs={K패스_HIGHLIGHT} currentSlug="K-패스-가입방법" />}>
       <p style={{ fontSize: 13, color: GREEN, fontWeight: 600, marginBottom: 10 }}>
         교통 · K-패스 · 가입 안내
       </p>

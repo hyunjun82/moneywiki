@@ -12,7 +12,7 @@ import {
   FAQ, References, Disclaimer,
   ArticleLayout, RelatedArticles, ArticleAd, Sidebar,
 } from "@/components/article-ui";
-import { K패스_SIDEBAR } from "@/data/K-패스-guide";
+import { K패스_SIDEBAR, K패스_HIGHLIGHT } from "@/data/K-패스-guide";
 
 const FAQS = [
   { q: "청년 30%는 따로 서류를 내야 하나요?", a: "아니에요, 서류가 전혀 필요 없어요. k-pass.or.kr에 가입할 때 주민등록번호로 나이가 자동 확인돼요. 만 19~34세면 별도 인증이나 증빙 없이 바로 청년 30% 환급이 적용돼요. 군 복무 기간이 있더라도 만 나이 기준이라 따로 신청할 게 없어요." },
@@ -46,7 +46,7 @@ export default function Page() {
   const isOver = age !== null && age > 34;
 
   return (
-    <ArticleLayout sidebar={<Sidebar heading="K-패스 가이드" items={K패스_SIDEBAR} currentSlug="K-패스-청년-환급" />}>
+    <ArticleLayout sidebar={<Sidebar heading="K-패스 가이드" items={K패스_SIDEBAR} highlightSlugs={K패스_HIGHLIGHT} currentSlug="K-패스-청년-환급" />}>
       <p style={{ fontSize: 13, color: GREEN, fontWeight: 600, marginBottom: 10 }}>
         교통 · K-패스 · 청년 할인
       </p>

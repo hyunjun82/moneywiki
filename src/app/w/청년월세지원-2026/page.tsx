@@ -11,7 +11,7 @@ import {
   FAQ, References, Disclaimer,
   ArticleLayout, RelatedArticles, ArticleAd, Sidebar,
 } from "@/components/article-ui";
-import { 청년월세지원_SIDEBAR } from "@/data/청년월세지원-guide";
+import { 청년월세지원_SIDEBAR, 청년월세지원_HIGHLIGHT } from "@/data/청년월세지원-guide";
 
 const FAQS = [
   { q: "1차·2차 때 이미 받은 사람도 다시 신청할 수 있나요?", a: "청년월세지원은 생애 1회 한정이에요. 이전에 24개월을 전부 수령했으면 다시 신청할 수 없어요. 다만 이전에 선정됐지만 중도 포기하거나 일부만 받은 경우에는 잔여 기간만큼 재신청이 가능할 수 있어요. 정확한 건 행정복지센터에 문의하는 게 확실해요." },
@@ -38,7 +38,7 @@ const GREEN = "#1D9E75";
 
 export default function Page() {
   return (
-    <ArticleLayout sidebar={<Sidebar heading="청년월세지원 가이드" items={청년월세지원_SIDEBAR} currentSlug="청년월세지원-2026" />}>
+    <ArticleLayout sidebar={<Sidebar heading="청년월세지원 가이드" items={청년월세지원_SIDEBAR} highlightSlugs={청년월세지원_HIGHLIGHT} currentSlug="청년월세지원-2026" />}>
       <p style={{ fontSize: 13, color: GREEN, fontWeight: 600, marginBottom: 10 }}>
         청년 지원 · 월세 · 2026년 변경
       </p>

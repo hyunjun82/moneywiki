@@ -11,7 +11,7 @@ import {
   FAQ, References, Disclaimer,
   ArticleLayout, RelatedArticles, ArticleAd, Sidebar,
 } from "@/components/article-ui";
-import { 청년월세지원_SIDEBAR } from "@/data/청년월세지원-guide";
+import { 청년월세지원_SIDEBAR, 청년월세지원_HIGHLIGHT } from "@/data/청년월세지원-guide";
 
 const FAQS = [
   { q: "만 34세 생일이 올해인데 신청할 수 있나요?", a: "신청일 기준으로 만 34세면 가능해요. 신청 기간(3월 30일~5월 29일) 중에 생일이 지나서 만 35세가 되더라도, 신청 시점에 만 34세였으면 해당돼요. 다만 선정 이후에 35세가 되면 남은 지원 기간에는 영향 없이 계속 받을 수 있어요." },
@@ -38,7 +38,7 @@ const GREEN = "#1D9E75";
 
 export default function Page() {
   return (
-    <ArticleLayout sidebar={<Sidebar heading="청년월세지원 가이드" items={청년월세지원_SIDEBAR} currentSlug="청년월세지원-자격조건" />}>
+    <ArticleLayout sidebar={<Sidebar heading="청년월세지원 가이드" items={청년월세지원_SIDEBAR} highlightSlugs={청년월세지원_HIGHLIGHT} currentSlug="청년월세지원-자격조건" />}>
       <p style={{ fontSize: 13, color: GREEN, fontWeight: 600, marginBottom: 10 }}>
         청년 지원 · 월세 · 자격 조건
       </p>

@@ -5,7 +5,7 @@ import {
   Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
   ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
-import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
+import { 퇴직금_SIDEBAR, 퇴직금_HIGHLIGHT } from "@/data/퇴직금-guide";
 
 // ─── 데이터 ──────────────────────────────────────────
 
@@ -132,7 +132,7 @@ const RELATED = [
 export default function Page() {
   return (
     <ArticleLayout
-      sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} currentSlug="방문판매원-독립계약자-퇴직금-미지급-대응" />}
+      sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} highlightSlugs={퇴직금_HIGHLIGHT} currentSlug="방문판매원-독립계약자-퇴직금-미지급-대응" />}
     >
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 방문판매원 · 근로자성 판단</p>
 

@@ -5,7 +5,7 @@ import {
   Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
   ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
-import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
+import { 퇴직금_SIDEBAR, 퇴직금_HIGHLIGHT } from "@/data/퇴직금-guide";
 
 const CHECK_ITEMS = [
   { id: "c1", label: "퇴직금을 개인형 IRP로 받을 예정이에요" },
@@ -154,7 +154,7 @@ export default function Page() {
   const sidebar = (
     <Sidebar
       heading="퇴직금 가이드"
-      items={퇴직금_SIDEBAR}
+      items={퇴직금_SIDEBAR} highlightSlugs={퇴직금_HIGHLIGHT}
       currentSlug="개인형-irp-퇴직금-수령방법"
     />
   );

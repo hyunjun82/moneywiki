@@ -5,7 +5,7 @@ import {
   Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
   ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
-import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
+import { 퇴직금_SIDEBAR, 퇴직금_HIGHLIGHT } from "@/data/퇴직금-guide";
 
 // ─── 데이터 ──────────────────────────────────────────
 
@@ -132,7 +132,7 @@ const RELATED = [
 export default function Page() {
   return (
     <ArticleLayout
-      sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} currentSlug="1년미만-퇴직금-지급규정" />}
+      sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} highlightSlugs={퇴직금_HIGHLIGHT} currentSlug="1년미만-퇴직금-지급규정" />}
     >
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 1년 미만 · 지급 규정</p>
 

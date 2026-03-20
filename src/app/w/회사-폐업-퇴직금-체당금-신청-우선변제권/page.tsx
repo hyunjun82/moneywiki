@@ -5,7 +5,7 @@ import {
   Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
   ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
-import { 퇴직금_SIDEBAR } from "@/data/퇴직금-guide";
+import { 퇴직금_SIDEBAR, 퇴직금_HIGHLIGHT } from "@/data/퇴직금-guide";
 
 // ─── 데이터 ──────────────────────────────────────────
 
@@ -149,7 +149,7 @@ const RELATED = [
 export default function Page() {
   return (
     <ArticleLayout
-      sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} currentSlug="회사-폐업-퇴직금-체당금-신청-우선변제권" />}
+      sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} highlightSlugs={퇴직금_HIGHLIGHT} currentSlug="회사-폐업-퇴직금-체당금-신청-우선변제권" />}
     >
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · 체당금 · 우선변제권</p>
 
