@@ -110,6 +110,55 @@ if (qComments.q1 && firstP) {
   }
 }
 
+// ─── 0-F. MAP-H2 ↔ 실제 H2 순서 대조 ─────────────────
+const mapH2Match = src.match(/\/\/\s*MAP-H2:\s*(.+)/);
+const mapCompMatch = src.match(/\/\/\s*MAP-COMP:\s*(.+)/);
+
+if (mapH2Match) {
+  const mapH2List = mapH2Match[1].split(/\s*>\s*/).map(s => s.trim()).filter(Boolean);
+  const actualH2List = [...src.matchAll(/<H2>([\s\S]*?)<\/H2>/g)].map(m => m[1].replace(/<[^>]+>/g, "").trim());
+
+  // 순서 대조: MAP-H2의 각 항목이 실제 H2에서 같은 순서로 등장하는지
+  if (mapH2List.length >= 2 && actualH2List.length >= 2) {
+    let lastIdx = -1;
+    let orderMismatch = false;
+    for (const mapItem of mapH2List) {
+      // FAQ는 <FAQ> 컴포넌트로 구현되므로 H2 매칭 불필요
+      if (/^FAQ$/i.test(mapItem.trim())) continue;
+      // MAP 항목의 핵심 키워드(2자 이상)를 실제 H2에서 찾기
+      const keywords = mapItem.split(/[\s,·]+/).filter(w => w.length >= 2);
+      const foundIdx = actualH2List.findIndex((h2, i) => i > lastIdx && keywords.some(kw => h2.includes(kw)));
+      if (foundIdx === -1) {
+        WARNINGS.push(`⚠️ MAP-H2 "${mapItem}" 키워드가 실제 H2에서 안 보여요`);
+      } else if (foundIdx <= lastIdx) {
+        orderMismatch = true;
+      } else {
+        lastIdx = foundIdx;
+      }
+    }
+    if (orderMismatch) {
+      ERRORS.push(`❌ MAP-H2 순서와 실제 H2 순서가 불일치 — Q2 행동 순서대로 H2를 배치했는지 확인`);
+    }
+  }
+} else {
+  WARNINGS.push(`⚠️ MAP-H2 블록 없음 — H2 구조를 MAP-H2로 사전 정의해야 해요`);
+}
+
+// ─── 0-G. MAP-COMP ↔ 실제 컴포넌트 대조 ───────────────
+if (mapCompMatch) {
+  const mapCompList = mapCompMatch[1].split(/\s*>\s*/).map(s => s.trim()).filter(Boolean);
+  const missingComps = mapCompList.filter(comp => {
+    // FAQ, GreenBox 등 실제 사용 체크
+    const compName = comp.replace(/\(.*\)/, "").trim();
+    return compName.length >= 2 && !new RegExp(`\\b${compName}\\b`).test(src);
+  });
+  if (missingComps.length > 0) {
+    ERRORS.push(`❌ MAP-COMP에 선언했지만 미사용: ${missingComps.join(", ")} — Q4에서 정한 컴포넌트는 반드시 구현`);
+  }
+} else {
+  WARNINGS.push(`⚠️ MAP-COMP 블록 없음 — 사용할 컴포넌트를 MAP-COMP로 사전 정의해야 해요`);
+}
+
 // ─── 1. 타이틀 규칙 ──────────────────────────────────
 const h1Match = src.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
 const titleText = h1Match ? h1Match[1].replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim() : "";
