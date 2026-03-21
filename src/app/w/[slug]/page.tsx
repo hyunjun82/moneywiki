@@ -32,7 +32,15 @@ export async function generateStaticParams() {
 // 메타데이터 생성 - SEO 최적화
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug: rawSlug } = await params;
-  const slug = decodeURIComponent(rawSlug);
+  let slug: string;
+  try {
+    slug = decodeURIComponent(rawSlug);
+  } catch {
+    return { title: "페이지를 찾을 수 없습니다 | 머니위키" };
+  }
+  if (slug.includes(' ') || slug.includes('%')) {
+    return { title: "페이지를 찾을 수 없습니다 | 머니위키" };
+  }
 
   const doc = await getWikiDocument(slug);
 
@@ -272,7 +280,15 @@ function addSectionIds(html: string): string {
 
 export default async function WikiPage({ params }: PageProps) {
   const { slug: rawSlug } = await params;
-  const slug = decodeURIComponent(rawSlug);
+  let slug: string;
+  try {
+    slug = decodeURIComponent(rawSlug);
+  } catch {
+    notFound();
+  }
+  if (slug.includes(' ') || slug.includes('%')) {
+    notFound();
+  }
 
   const doc = await getWikiDocument(slug);
 
