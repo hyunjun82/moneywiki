@@ -1,10 +1,21 @@
 "use client";
+// Q1: RA·TA 계약이 끝난 대학원생이 실업급여를 받을 수 있는지 궁금한 상황
+// Q2: 본인 수급 자격을 확인하고 고용24에서 실업급여를 신청하는 행동
+// Q3: 고용보험 가입 여부, 야간/전일제 차이, 구직활동 인정 기준, 수급액 계산법
+// Q4: EligibilityChecker(자격 체크) + BorderBox(야간vs전일제 비교) + Checklist(구직활동) + GreenBox(수급액)
+// MAP-INTRO: RA 계약이 끝났는데 대학원생이라서 실업급여를 못 받는 건 아닌지 걱정되죠?
+// MAP-TYPE: 자격확인
+// MAP-H2: 대학원생 실업급여 수급 자격 조건 > 야간 대학원 vs 전일제 대학원 차이 > 대학원생 구직활동 인정 기준 > RA·TA 실업급여 수급액과 기간 > 실업급여 신청 절차와 주의사항 > 자주 묻는 질문
+// MAP-COMP: EligibilityChecker > BorderBox > Checklist > GreenBox > FAQ
 
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
-  EligibilityChecker, Checklist, FAQ, References, Disclaimer,
+  EligibilityChecker, Checklist,
   ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
+import { FAQ } from "@/components/article-ui/FAQ";
+import { References } from "@/components/article-ui/References";
+import { Disclaimer } from "@/components/article-ui/Disclaimer";
 import { 실업급여_SIDEBAR, 실업급여_HIGHLIGHT } from "@/data/실업급여-guide";
 
 // ─── 데이터 ──────────────────────────────────────────
@@ -19,9 +30,9 @@ const CHECK_ITEMS = [
 const CHECKLIST = [
   "야간·주말 대학원이면 별도 입증 없이 실업급여 수급 가능",
   "전일제 대학원이면 구직활동 기록을 꼼꼼히 남기기 (입사지원·면접)",
-  "대학원 수업은 구직활동이 아님: 별도로 입사지원·면접 필요",
+  "대학원 수업은 구직활동이 아님, 별도로 입사지원·면접 필요",
   "실업인정 때 구직활동 횟수 채우기 (1~2차 1회, 3차 이후 2회)",
-  "취업하면 실업급여 종료: 조기재취업수당 확인",
+  "취업하면 실업급여 종료, 조기재취업수당도 챙기기",
 ];
 
 const FAQS = [
@@ -42,8 +53,12 @@ const FAQS = [
     a: "네, 오히려 수월해요. 휴학 상태면 전일제든 야간이든 상관없이 구직 의사를 인정받기 쉽죠. 학업에 시간을 쓰고 있지 않다는 게 분명하니까요.",
   },
   {
-    q: "대학원생인데 RA로 일하다 계약이 끝났어요. 실업급여 대상인가요?",
+    q: "RA로 일하다 계약이 끝났어요. 실업급여 대상인가요?",
     a: "RA 계약이 고용보험에 가입된 상태였다면 대상이에요. 계약만료는 비자발적 퇴사이니까요. 고용24에서 가입 이력을 먼저 조회해보세요.",
+  },
+  {
+    q: "수급 기간 중에 취업하면 어떻게 되나요?",
+    a: "취업 시점부터 실업급여가 중단돼요. 수급일수 절반 이상 남기고 취업하면 조기재취업수당(남은 일수의 절반)을 받을 수 있으니 꼭 챙기세요.",
   },
 ];
 
@@ -77,7 +92,7 @@ const RELATED = [
   {
     slug: "실업급여-구직활동-횟수",
     title: "실업급여 구직활동 횟수와 인정 방법",
-    description: "실업인정 때 필요한 구직활동 횟수와 인정되는 활동을 정리했어요.",
+    description: "실업인정 때 필요한 구직활동 횟수와 인정되는 활동이에요.",
   },
 ];
 
@@ -97,57 +112,50 @@ export default function Page() {
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>실업급여 · 고용보험 · 대학원</p>
 
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
-        대학원생도 실업급여 된다고?<br />
-        RA·TA 수급 조건 체크리스트
+        대학원생 실업급여 수급 조건<br />
+        RA·TA 자격 확인부터 신청까지
       </h1>
 
       <p style={{ ...body, fontSize: 16, lineHeight: 2.1 }}>
-        &quot;대학원 다니면 실업급여 못 받는 거 아니에요?&quot;
+        RA 계약이 끝났는데 대학원생이라서 실업급여를 못 받는 건 아닌지 걱정되죠?
       </p>
       <p style={body}>
-        많은 분이 그렇게 알고 있는데, 아니에요.{" "}
-        <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>에서
-        실업급여 수급의 핵심 조건은 <strong>재취업 의사와 능력</strong>이죠.
-        야간·주말 대학원이면 거의 문제없고, 전일제라도 구직활동을 입증하면 받을 수 있죠.
+        결론부터 말하면, 대학원 재학 중이라도 실업급여를 받을 수 있어요.{" "}
+        <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>이
+        보는 핵심은 <strong>재취업 의사와 능력</strong>이지, 학적 상태가 아니거든요.
+        야간·주말 대학원은 거의 문제없고, 전일제라도 구직활동을 입증하면 수급 자격이 생기죠.
       </p>
       <p style={body}>
         다만 대학원 수업 자체는 구직활동으로 인정되지 않아요.
-        별도로 입사지원이나 면접 기록을 남겨야 하죠.
-        이 차이를 모르고 &quot;수업 열심히 들었으니 괜찮겠지&quot; 했다가 실업인정에서 탈락하는 분이 꽤 많죠.
-        지금부터 어떻게 준비해야 하는지 하나씩 짚어볼게요.
+        이 차이를 모르고 실업인정에서 탈락하는 분이 꽤 많죠.
+        아래에서 자격 조건부터 구직활동 방법, 수급액까지 순서대로 정리했어요.
       </p>
 
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1: 대학원생 수급 자격 */}
-      <H2>RA·TA 계약이 끝나면 수급 조건이 되나요?</H2>
-      <SectionBadge>수급 자격 체크</SectionBadge>
+      {/* 섹션 1: 수급 자격 */}
+      <H2>대학원생 실업급여 수급 자격 조건</H2>
+      <SectionBadge>자격 체크</SectionBadge>
 
       <p style={body}>
         실업급여를 받으려면 고용보험에 가입돼 있어야 하죠.
-        대학원생 중에서 <strong>RA(연구조교), TA(교육조교), 계약직 연구원</strong> 등으로 일했다면 고용보험에 가입돼 있을 가능성이 높아요.
-        학교나 연구소에서 근로계약을 체결하고 급여를 받았다면 가입 대상이에요.{" "}
-        <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 본인의 가입 이력을 바로 조회할 수 있죠.
+        대학원생 중 <strong>RA(연구조교), TA(교육조교), 계약직 연구원</strong> 등으로 일했다면 고용보험 가입 대상이에요.
+        학교나 연구소에서 근로계약을 체결하고 급여를 받았다면 해당되죠.{" "}
+        <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 본인의 가입 이력을 바로 조회할 수 있어요.
       </p>
       <p style={body}>
         수급 자격의 핵심 조건은 세 가지예요.
-        첫째, 퇴직 전 18개월간 고용보험 가입기간이 <strong>180일 이상</strong>이어야 해요.
-        둘째, <strong>비자발적으로 퇴직</strong>해야 하죠: RA 계약만료나 연구과제 종료는 비자발적 퇴사로 인정돼요.
-        셋째, <strong>재취업 의사와 능력</strong>이 있어야 해요.
+        첫째, 퇴직 전 18개월간 고용보험 가입기간이 <strong>180일 이상</strong>이어야 하죠.
+        둘째, <strong>비자발적으로 퇴직</strong>해야 해요. RA 계약만료나 연구과제 종료는 비자발적 퇴사로 인정돼요.
+        셋째, <strong>재취업 의사와 능력</strong>이 있어야 하죠.
       </p>
       <p style={body}>
-        이 세 번째 조건이 대학원생에게 가장 중요한 부분이에요.
+        세 번째 조건이 대학원생에게 가장 중요한 부분이에요.
         &quot;대학원에 다니니까 취업 의사가 없는 거 아니냐&quot;고 걱정하는 분이 많은데, 그렇지 않아요.
         고용센터에서는 대학원 재학 자체를 취업 의사 부재로 보지 않죠.
-        야간이냐 전일제냐에 따라 입증 방법이 달라질 뿐이에요.
+        야간이냐 전일제냐에 따라 입증 방법만 달라질 뿐이에요.
       </p>
-
-      <GreenBox>
-        <p style={{ margin: "0 0 4px" }}>고용보험 가입 이력 (RA·TA·계약직 등) 필수</p>
-        <p style={{ margin: "0 0 4px" }}>비자발적 퇴직 (계약만료, 연구과제 종료 등)</p>
-        <p style={{ margin: 0 }}>피보험기간 180일 이상 + 재취업 의사</p>
-      </GreenBox>
 
       <EligibilityChecker
         items={CHECK_ITEMS}
@@ -157,8 +165,9 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 2: 야간 vs 전일제 차이 */}
-      <H2>야간과 전일제, 수급 조건이 다른가요?</H2>
+      {/* 섹션 2: 야간 vs 전일제 */}
+      <H2>야간 대학원 vs 전일제 대학원 차이</H2>
+      <SectionBadge>핵심 비교</SectionBadge>
 
       <p style={body}>
         <strong>야간·주말 대학원</strong>을 다니면 평일 낮에 근무할 수 있죠.
@@ -169,21 +178,20 @@ export default function Page() {
       <p style={body}>
         <strong>전일제 대학원</strong>은 상황이 달라요.
         평일 낮에 수업이 있으니까 고용센터에서 &quot;낮에 일할 수 있는 건지&quot; 확인하죠.
-        입증 방법은 어렵지 않아요. 워크넷이나 채용사이트에서 <strong>실제로 입사지원한 기록</strong>을 남기면 돼요.
-        면접에 참여한 기록이 있다면 그건 더 강력한 증빙이 되죠.
+        입증 방법은 어렵지 않아요. 워크넷이나 채용사이트에서 <strong>실제로 입사지원한 기록</strong>을 남기면 되거든요.
+        면접에 참여한 기록이 있다면 더 강력한 증빙이 되죠.
       </p>
       <p style={body}>
         &quot;오전 수업이 없는 날에 근무 가능하다&quot;거나 &quot;재택근무 가능한 일자리를 찾고 있다&quot;고 설명하는 것도 방법이에요.
         대학원 시간표를 고용센터에 가져가서 취업 가능한 시간대를 보여주면 더 좋죠.
-        핵심은 <strong>&quot;학업만 하려는 게 아니라 취업도 하려고 한다&quot;</strong>는 걸 명확히 하는 거예요.
         고용센터마다 판단이 조금씩 다를 수 있으니, 신청 전에{" "}
-        <a href="https://www.moel.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용노동부</a> 상담전화(1350)로 먼저 확인하는 게 안전하죠.
+        <a href="https://www.moel.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용노동부</a> 상담전화(1350)로 먼저 확인하는 게 안전해요.
       </p>
 
       <BorderBox>
-        <p style={{ margin: "0 0 4px", lineHeight: 1.9 }}>야간·주말 대학원 → 별도 입증 불필요, 일반 수급자와 동일</p>
-        <p style={{ margin: "0 0 4px", lineHeight: 1.9 }}>전일제 대학원 → 입사지원·면접 기록으로 구직 의사 입증 필요</p>
-        <p style={{ margin: 0, lineHeight: 1.9 }}>휴학 상태 → 전일제든 야간이든 구직 의사 인정 용이</p>
+        <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}><strong>야간·주말 대학원</strong> → 별도 입증 불필요, 일반 수급자와 동일</p>
+        <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}><strong>전일제 대학원</strong> → 입사지원·면접 기록으로 구직 의사 입증 필요</p>
+        <p style={{ margin: 0, lineHeight: 1.9 }}><strong>휴학 상태</strong> → 전일제든 야간이든 구직 의사 인정이 수월해요</p>
       </BorderBox>
 
       <CategoryButton label="실업급여 정보" count={실업급여_SIDEBAR.length} href="/category/고용" />
@@ -192,36 +200,36 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 3: 구직활동 체크리스트 */}
-      <H2>구직활동 체크리스트와 실업인정 기준</H2>
+      {/* 섹션 3: 구직활동 */}
+      <H2>대학원생 구직활동 인정 기준</H2>
       <SectionBadge>구직활동 체크리스트</SectionBadge>
 
       <p style={body}>
         여기서 많이 헷갈리는 부분이 하나 있죠.
         대학원 수업을 듣는 건 <strong>구직활동으로 인정되지 않아요</strong>.
         학업이지 취업 준비가 아니니까요.
-        실업인정을 받으려면 수업과 별개로 구직활동을 해야 해요.
+        실업인정을 받으려면 수업과 별개로 구직활동을 해야 하죠.
       </p>
       <p style={body}>
         인정되는{" "}
         <a href="/w/실업급여-구직활동-횟수" style={{ color: "#1D9E75", textDecoration: "underline" }}>구직활동</a>은 <strong>입사지원, 면접, 취업특강 참석, 직업훈련</strong> 등이에요.{" "}
         <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 지정한 직업훈련을 듣는 건 구직활동으로 인정되죠.
-        대학원 수업과 직업훈련은 성격이 완전히 달라요.
-        자격증 공부나 개인 학습도 구직활동에 해당하지 않으니 주의하세요.
+        자격증 공부나 개인 학습은 구직활동에 해당하지 않으니 주의가 필요해요.
       </p>
       <p style={body}>
         실업인정 때 필요한 구직활동 횟수도 챙겨야 하죠.
         1~2차 실업인정은 <strong>1회</strong>, 3차부터는 <strong>2회 이상</strong>이에요.
         대학원 수업이 아무리 바빠도 이 횟수는 반드시 채워야 실업급여가 지급돼요.
-        입사지원은 온라인으로도 가능하니까, 10분이면 끝나는 일이에요.
+        입사지원은 온라인으로도 가능하니까 10분이면 끝나는 일이죠.
       </p>
 
       <Checklist items={CHECKLIST} />
 
       <Divider />
 
-      {/* 섹션 4: 수급 금액과 기간 */}
-      <H2>RA·TA 수급액과 수급기간 계산</H2>
+      {/* 섹션 4: 수급액과 기간 */}
+      <H2>RA·TA 실업급여 수급액과 기간</H2>
+      <SectionBadge>수급액 계산</SectionBadge>
 
       <p style={body}>
         대학원생이라고 금액이 다르지 않아요.
@@ -252,36 +260,34 @@ export default function Page() {
 
       <Divider />
 
-      {/* 섹션 5: 주의사항과 전략 */}
-      <H2>수급 조건 체크리스트로 준비하세요</H2>
+      {/* 섹션 5: 신청 절차 */}
+      <H2>실업급여 신청 절차와 주의사항</H2>
 
+      <p style={body}>
+        신청은{" "}
+        <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 온라인으로 시작할 수 있어요.
+        먼저 피보험 이력을 조회하고, 수급자격{" "}
+        <a href="/w/실업급여-온라인-교육" style={{ color: "#1D9E75", textDecoration: "underline" }}>온라인 교육</a>을 이수한 뒤, 관할 고용센터에 방문하면 되죠.
+        전일제 대학원생이라면 시간표와 구직활동 기록을 준비해 가는 게 좋아요.
+      </p>
       <p style={body}>
         취업하면 실업급여는 바로 끝나요.
         대학원 다니면서 취업하면 그때부터 실업급여가 중단되죠.
-        다만 수급일수의 절반 이상을 남기고 취업하면{" "}
-        <a href="/w/실업급여-취업촉진수당" style={{ color: "#1D9E75", textDecoration: "underline" }}>조기재취업수당</a>을 받을 수 있죠.
+        수급일수의 절반 이상을 남기고 취업하면{" "}
+        <a href="/w/실업급여-취업촉진수당" style={{ color: "#1D9E75", textDecoration: "underline" }}>조기재취업수당</a>을 받을 수 있어요.
         남은 수급일수의 절반을 일시금으로 주는 제도이니까 꼭 챙기세요.
-      </p>
-      <p style={body}>
-        휴학 상태면 오히려 수월해요.
-        대학원을 휴학했다면 전일제든 야간이든 상관없이 구직 의사를 인정받기 쉽죠.
-        학업에 시간을 쓰고 있지 않다는 게 명확하니까요.
-        실업급여 수급 기간에만 휴학하는 것도 현실적인 전략이에요.
       </p>
       <p style={body}>
         고용센터마다 판단이 조금씩 다를 수 있다는 점은 알아두세요.
         전일제 대학원의 경우 담당자에 따라 심사 기준이 다소 차이가 나죠.
-        그래서 신청 전에{" "}
+        신청 전에{" "}
         <a href="https://www.moel.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용노동부</a> 상담전화(1350)로 먼저 확인하는 게 안전해요.
         사전 상담은 무료이고, 내 상황에서 어떤 서류를 준비해야 하는지 구체적으로 안내받을 수 있죠.
       </p>
 
       <Divider />
 
-      <H2>자주 묻는 것들</H2>
-      <p style={{ ...body, marginBottom: 14 }}>
-        대학원생 실업급여에 대해 실제로 많이 물어보는 내용만 골랐어요.
-      </p>
+      <H2>자주 묻는 질문</H2>
       <FAQ items={FAQS} />
 
       <Divider />

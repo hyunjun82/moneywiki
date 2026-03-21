@@ -17,8 +17,19 @@
       "Bash(npm run build:*)",
       "Bash(node scripts/*)",
       "Bash(node -e :*)",
+      "Bash(cd :*)",
+      "Bash(echo :*)",
+      "Bash(ls :*)",
+      "Bash(ls:*)",
+      "Bash(cat :*)",
+      "Bash(mkdir :*)",
+      "Bash(printf :*)",
       "Write(content/wiki/**)",
       "Edit(content/wiki/**)",
+      "Write(src/app/w/**)",
+      "Edit(src/app/w/**)",
+      "Write(src/data/**)",
+      "Edit(src/data/**)",
       "WebSearch",
       "WebFetch",
       "Read(//c/Users/user/law-jjyu/**)"
@@ -29,6 +40,17 @@
     ]
   },
   "hooks": {
+    "PermissionRequest": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/auto-approve-bash.js"
+          }
+        ]
+      }
+    ],
     "PreToolUse": [
       {
         "matcher": "Write|Edit",

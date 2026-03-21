@@ -1,25 +1,20 @@
 "use client";
-
-// Q1. 퇴직이 확정됐거나 앞둔 직장인이 DB형 퇴직연금을 어떻게 받아야 하는지 몰라 막막한 상황
-// Q2. IRP 계좌를 개설하고 인사팀에 전달해서 퇴직급여를 실제로 수령하는 행동
-// Q3. DB형 수령 조건(300만원 초과→IRP 의무), 4단계 절차, 14일 기한과 지연이자, 연금 vs 일시금 세금 차이
-// Q4. EligibilityChecker(수령 조건) + Calculator(금액 계산) + DocTable(준비 서류) + Steps(절차) + Checklist(체크리스트)
-//
-// MAP:
-// - Q1 → 서론 톤: 퇴직 확정 직장인 공감으로 시작
-// - Q2 → H2 순서: 수령 조건 → 예상 금액 → 필요 서류 → 4단계 절차 → 마무리 체크
-// - Q3 → H2 5개, 절차 단계별 팁 포함
-// - Q4 → EligibilityChecker, Calculator, DocTable, Steps, Checklist 순 배치
+// Q1. DB형 퇴직연금 가입자인데 퇴직이 확정됐거나 앞둔 상황에서 수령 절차를 모르는 직장인
+// Q2. IRP 계좌 개설 후 인사팀에 전달해서 퇴직급여를 실제로 수령하고 연금·일시금 중 선택하는 행동
+// Q3. DB형 수령 조건(300만원 초과→IRP 의무), 예상 금액 계산, 필요 서류, 4단계 절차, 14일 기한과 지연이자, 연금 vs 일시금 세금 차이
+// Q4. EligibilityChecker(수령 조건 확인) + Calculator(예상 금액) + DocTable(준비 서류) + Steps(절차) + Checklist(마무리 점검)
+// MAP-INTRO: 퇴직 확정됐는데 DB형 퇴직금 어떻게 받는지 막막하죠
+// MAP-TYPE: 절차
+// MAP-H2: 수령 조건 확인 > 예상 금액 계산 > 필요 서류 > 수령 절차 4단계 > 마무리 체크 > FAQ
+// MAP-COMP: EligibilityChecker > Calculator > DocTable > Steps > Checklist > FAQ
 
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
   Calculator, EligibilityChecker, Steps, DocTable, Checklist,
-  ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
 import { FAQ } from "@/components/article-ui/FAQ";
 import { References } from "@/components/article-ui/References";
 import { Disclaimer } from "@/components/article-ui/Disclaimer";
-import { 퇴직금_SIDEBAR, 퇴직금_HIGHLIGHT } from "@/data/퇴직금-guide";
 
 // ─── 데이터 ──────────────────────────────────────────
 
@@ -62,7 +57,7 @@ const DOCS = [
 const STEPS = [
   {
     title: "IRP 계좌 미리 개설",
-    desc: "DB형 퇴직급여 300만원 초과 시 IRP 계좌로만 수령 가능하죠. 퇴직이 확정되면 바로 증권사나 은행 앱에서 개설하세요. 수수료가 낮은 미래에셋, 삼성증권, 키움증권 같은 증권사가 장기 운용에 유리하죠.",
+    desc: "DB형 퇴직급여 300만원 초과 시 IRP 계좌로만 수령 가능하죠. 퇴직이 확정되면 바로 증권사나 은행 앱에서 개설하세요. 수수료가 낮은 미래에셋, 삼성증권, 키움증권 같은 증권사가 장기 운용에 유리하고요.",
     tip: "개설 즉시 계좌번호를 메모해두세요. 인사팀에 전달해야 하거든요.",
   },
   {
@@ -93,7 +88,7 @@ const CHECKLIST = [
 const FAQS = [
   {
     q: "DB형과 DC형 퇴직금 수령 방법이 어떻게 달라요?",
-    a: "수령 절차는 비슷하지만 적립 구조가 달리 적용되죠. DB형은 회사가 적립·운용하다가 퇴직 시 IRP로 이체해주고요. DC형은 근로자 개인 계좌에 이미 쌓여 있고, 퇴직 시 그 잔액을 받죠. DB형은 수령액이 평균임금 기준으로 확정되고, DC형은 운용 결과에 따라 달라지고요.",
+    a: "적립 구조가 다르죠. DB형은 회사가 적립·운용하다가 퇴직 시 IRP로 이체해주고요. DC형은 근로자 개인 계좌에 이미 쌓여 있고, 퇴직 시 그 잔액을 받죠. DB형 수령액은 평균임금 기준으로 확정되고, DC형은 운용 결과에 따라 달라지고요.",
   },
   {
     q: "DB형 퇴직급여 금액은 어떻게 계산돼요?",
@@ -104,7 +99,7 @@ const FAQS = [
     a: "300만원 초과 퇴직급여는 IRP로만 수령해야 하죠. 현금이나 일반 통장으로 지급하면 위법이고요. 거부 시 고용노동부(1350)에 신고하면 되죠.",
   },
   {
-    q: "DB형에서 55세 이전에 퇴직하면 연금 못 받아요?",
+    q: "DB형에서 55세 이전에 퇴직하면 연금 못 받나요?",
     a: "IRP에 이체된 금액은 55세 이전엔 연금으로 수령하지 못하죠. 55세가 되면 그때 연금 신청하면 되고요. 그 전에 일시금으로 빼면 퇴직소득세를 전부 내야 하죠.",
   },
   {
@@ -114,6 +109,10 @@ const FAQS = [
   {
     q: "퇴직급여를 IRP 말고 연금저축계좌에 받을 수 있나요?",
     a: "퇴직급여는 IRP 계좌로만 수령 가능하죠. 연금저축계좌는 세액공제용으로 개인이 납입하는 계좌라 퇴직급여 수령 계좌로 쓸 수 없고요.",
+  },
+  {
+    q: "퇴직급여가 300만원 이하면 IRP 없이 받을 수 있나요?",
+    a: "네, 300만원 이하면 일반 계좌로 수령 가능하죠. IRP 개설 의무가 면제되고요. 다만 연금으로 전환해 절세하려면 IRP를 개설하는 게 유리하죠.",
   },
 ];
 
@@ -134,19 +133,12 @@ const REFERENCES = [
   },
 ];
 
-const RELATED = [
-  { slug: "퇴직금-제도-종류", title: "퇴직금 제도 종류 비교", description: "DB·DC·IRP 차이와 내 상황에 맞는 선택 기준." },
-  { slug: "dc형-퇴직금-수령방법", title: "DC형 퇴직금 수령 방법", description: "확정기여형 계좌 잔액 확인부터 IRP 이전까지." },
-  { slug: "퇴직금-IRP-수령방법", title: "IRP에서 퇴직금 받는 방법", description: "일시금·연금 선택과 세금 절감 전략." },
-];
-
 // ─── 페이지 ──────────────────────────────────────────
 
 export default function Page() {
   return (
-    <ArticleLayout
-      sidebar={<Sidebar heading="퇴직금 가이드" items={퇴직금_SIDEBAR} highlightSlugs={퇴직금_HIGHLIGHT} currentSlug="db형-퇴직금-수령방법" />}
-    >
+    <div style={{ maxWidth: 720, margin: "0 auto", padding: "2rem 1.5rem",
+      fontFamily: "'Pretendard', 'Apple SD Gothic Neo', sans-serif", color: "#111" }}>
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · DB형 · 확정급여형</p>
 
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
@@ -155,23 +147,23 @@ export default function Page() {
       </h1>
 
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
+        퇴직 확정됐는데 DB형 퇴직금 어떻게 받는지 막막하죠.
         DB형(확정급여형) 퇴직연금은 회사가 적립·운용하다가 퇴직 시 <a href="/w/퇴직금-IRP-계좌" style={{ color: "#1D9E75", textDecoration: "underline" }}>IRP 계좌</a>로 이체해주는 구조이죠.
-        수령액은 퇴직 직전 3개월 평균임금 × 근속연수로 확정되고, 운용 결과에 관계없이 그 금액을 받게 되죠.
-        300만원 초과 시 IRP 계좌로만 수령 가능하고, 55세 이후 연금으로 받으면 <a href="/w/퇴직금-세금" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직소득세</a>를 최대 40%까지 줄일 수 있죠.
+        수령액은 퇴직 직전 3개월 평균임금 × 근속연수로 확정되고, 운용 실적과 관계없이 그 금액을 받게 되죠.
+        300만원 초과 시 IRP 계좌로만 수령해야 하고, 55세 이후 연금으로 받으면 <a href="/w/퇴직금-세금" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직소득세</a>를 최대 40%까지 줄일 수 있죠.
       </p>
 
       <Divider />
-      <ArticleAd position="intro" />
 
       <H2>DB형 퇴직급여, 내가 받을 수 있는 조건인가요?</H2>
       <p style={body}>
         DB형 퇴직연금은 회사가 가입을 결정하는 제도이죠. 근로자가 직접 선택하는 게 아니라 회사가 DB형을 도입한 경우에만 해당되고요.
         근속 1년 이상이면 퇴직 시 퇴직급여를 받을 수 있고, 수령액은 퇴직 직전 3개월 평균임금을 기준으로 산정되죠.
-        회사가 더 높은 기준을 내규로 정했다면 그 기준을 따르고, 법정 기준 아래로는 내려갈 수 없죠.
       </p>
       <p style={body}>
+        회사가 더 높은 기준을 내규로 정했다면 그 기준을 따르죠. 법정 기준 아래로는 내려갈 수 없고요.
         DB형인지 DC형인지 모르겠다면 인사팀에 직접 문의하거나 금융감독원 통합연금포털에서 조회하면 되죠.
-        회사에 따라 DB형과 DC형을 혼합 적용하는 경우도 있고요. 이 경우 각 제도에서 별도로 수령하게 되죠.
+        회사에 따라 DB형과 DC형을 혼합 적용하는 경우도 있고, 이 경우 각 제도에서 별도로 수령하게 되죠.
       </p>
 
       <GreenBox>
@@ -183,7 +175,7 @@ export default function Page() {
       <SectionBadge>내 상황 체크해보세요</SectionBadge>
       <EligibilityChecker
         items={CHECK_ITEMS}
-        allMatchText="DB형 퇴직급여 수령 조건을 갖추고 있죠. 아래 계산기로 예상 금액을 확인해보세요."
+        allMatchText="DB형 퇴직급여 수령 조건을 갖추고 있죠. 아래 계산기로 예상 금액을 파악해보세요."
         partialMatchText="조건에 따라 절차가 달라질 수 있죠. 고용노동부(1350) 상담을 권해드려요."
       />
 
@@ -191,7 +183,7 @@ export default function Page() {
 
       <H2>DB형 퇴직급여 예상 금액은 얼마인가요?</H2>
       <p style={body}>
-        퇴직 직전 3개월 평균 월급과 근속 기간을 입력하면 법정 최저 기준 퇴직급여를 바로 확인할 수 있죠.
+        퇴직 직전 3개월 평균 월급과 근속 기간을 입력하면 법정 최저 기준 퇴직급여를 바로 파악할 수 있죠.
         상여금이 포함된 경우 <a href="/w/퇴직금-평균임금" style={{ color: "#1D9E75", textDecoration: "underline" }}>평균임금 계산</a> 시 함께 넣으면 더 정확하고요.
         세금 차감 전 금액이니 실제 수령액은 퇴직소득세를 제외한 금액이 되죠.
       </p>
@@ -202,9 +194,6 @@ export default function Page() {
         results={CALC_RESULTS}
         note="※ 법정 최저 기준(평균임금 × 근속연수) 기준 세전 금액이죠. 회사 규정이 더 높을 수도 있고요."
       />
-
-      <CategoryButton label="퇴직금 정보" count={퇴직금_SIDEBAR.length} href="/category/고용" />
-      <RelatedArticles items={RELATED} />
 
       <Divider />
 
@@ -222,8 +211,8 @@ export default function Page() {
 
       <H2>DB형 퇴직급여 수령 절차 4단계</H2>
       <p style={body}>
-        IRP 개설부터 수령 방법 선택까지 퇴직 전에 미리 파악해두면 이체 지연 없이 처리할 수 있죠.
-        14일 기한을 넘기면 지연이자를 받을 수 있으니 기한도 꼭 챙기고요.
+        IRP 개설부터 수령 방법 선택까지, 퇴직 전에 미리 파악해두면 이체 지연 없이 처리할 수 있죠.
+        14일 기한을 넘기면 <a href="/w/퇴직금-지연이자" style={{ color: "#1D9E75", textDecoration: "underline" }}>연 20% 지연이자</a>를 받을 수 있으니 기한도 꼭 챙기고요.
       </p>
 
       <Steps steps={STEPS} />
@@ -241,21 +230,18 @@ export default function Page() {
 
       <GreenBox>
         55세 이후 연금으로 10년 이상 받으면 퇴직소득세가 40% 감면되죠.<br />
-        일시금으로 바로 빼면 퇴직소득세를 한꺼번에 전부 납부해야 하죠. 시간 여유가 있다면 연금이 유리하죠.
+        일시금으로 바로 빼면 퇴직소득세를 한꺼번에 전부 납부해야 하고요. 시간 여유가 있다면 연금 수령이 유리하죠.
       </GreenBox>
 
       <Divider />
 
       <H2>자주 묻는 것들</H2>
-      <p style={{ ...body, marginBottom: 14 }}>
-        DB형 퇴직급여 수령에 대해 실제로 많이 나오는 질문만 골랐죠.
-      </p>
       <FAQ items={FAQS} />
 
       <Divider />
 
       <References groups={REFERENCES} />
       <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법을 바탕으로 작성됐죠. 제도 변경이 생길 수 있으니 최신 기준은 고용노동부(1350)에서 직접 문의하세요." />
-    </ArticleLayout>
+    </div>
   );
 }
