@@ -1,13 +1,13 @@
 "use client";
 
 // Q1: 사업주가 직원 사회보험료 부담 줄이고 싶어 두루누리 지원제도 찾는 상황
-// Q2: 두루누리 지원 대상 확인 후 고용24에서 신청 완료
-// Q3: 지원 대상·조건·지원율, 신청 방법, 지원 제외 대상
-// Q4: EligibilityChecker + Steps + Checklist + FAQ
+// Q2: 우리 사업장이 두루누리 지원 대상인지 자격 조건을 정확히 확인
+// Q3: 지원 대상 조건(10인 미만·270만 원), 지원 제외 업종, 지원율·기간, 대상 판정 기준
+// Q4: EligibilityChecker + BorderBox + Checklist + FAQ (자격 판단 중심)
 
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
-  EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
+  EligibilityChecker, Steps, Checklist, FAQ, References, Disclaimer,
   ArticleLayout, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
 
@@ -39,14 +39,6 @@ const STEPS = [
     desc: "지원 기간 중 근로자 수가 10인 이상으로 늘거나, 보수가 270만 원을 초과하거나, 근로자가 퇴직하면 변동 신고를 해야 해요. 변동 신고 없이 지원받으면 나중에 환수될 수 있어요.",
     tip: "근로자 채용·퇴직이 있을 때마다 고용24에서 즉시 신고하세요",
   },
-];
-
-const DOCS = [
-  { name: "사업자등록증", required: true, where: "홈택스에서 출력" },
-  { name: "근로계약서", required: true, where: "사업장에서 직접 작성" },
-  { name: "임금대장 또는 급여명세서", required: true, where: "사업장 보관 서류" },
-  { name: "공동인증서", required: true, where: "고용24 온라인 신청에 필요" },
-  { name: "4대보험 가입확인서", required: false, where: "국민건강보험공단 요청 시" },
 ];
 
 const CHECKLIST = [
@@ -127,7 +119,11 @@ export default function Page() {
       <H2>지원 대상 조건, 이 두 가지가 핵심이에요</H2>
       <p style={body}>
         두루누리 지원을 받으려면 사업장 규모와 개별 근로자 보수 조건 둘 다 맞아야 해요.
-        어느 하나라도 안 맞으면 지원에서 제외될 수 있어요.
+        어느 하나라도 안 맞으면 지원에서 제외돼요.
+      </p>
+      <p style={body}>
+        근로자 수는 사업장 전체 기준이고, 보수는 개별 근로자 기준이에요.
+        일용직·파견근로자·건설 일용직 등은 별도 기준이 적용되니 주의해야 해요.
       </p>
 
       <BorderBox>
@@ -149,26 +145,29 @@ export default function Page() {
 
       <Divider />
 
-      <H2>신청 절차 4단계</H2>
+      <H2>지원 제외 대상도 꼭 알아둬야 해요</H2>
       <p style={body}>
-        사업주가 고용24에서 온라인으로 신청하면 돼요. 공동인증서와 근로계약서·임금대장이 있으면 신청이 빠르게 처리돼요.
-        승인 후 그달 보험료부터 자동 차감돼요.
+        10인 미만이고 270만 원 이하라도 제외되는 경우가 있어요.
+        재산세 과세표준 합계 6억 원 초과이거나 종합소득 4,300만 원 초과인 근로자는 제외돼요.
+        사업주의 배우자, 직계 존비속도 제외 대상이에요.
+      </p>
+      <p style={body}>
+        지원 기간 중에 근로자 수가 10인 이상으로 늘어나면 그달부터 지원이 중단돼요.
+        다시 10인 미만이 돼도 재신청해야 이어받을 수 있어요.
+      </p>
+
+      <Divider />
+
+      <H2>신청은 고용24에서 온라인으로 해요</H2>
+      <p style={body}>
+        자격 조건이 맞으면 고용24에서 바로 신청할 수 있어요. 구체적인 신청 절차와 필요 서류는{" "}
+        <a href="/w/두루누리-지원금-신청-조건-서류" style={{ color: "#1D9E75", textDecoration: "underline" }}>두루누리 지원금 신청 조건과 서류</a> 글에서 단계별로 정리했어요.
       </p>
 
       <Steps steps={STEPS} />
 
       <CategoryButton label="고용·복지 정보" count={10} href="/category/복지" />
       <RelatedArticles items={RELATED} />
-
-      <Divider />
-
-      <H2>필요 서류</H2>
-      <p style={body}>
-        기본 서류는 사업자등록증·근로계약서·임금대장이에요. 온라인 신청이라 방문할 필요는 없고, 추가 서류 요청이 올 때만 제출하면 돼요.
-      </p>
-
-      <SectionBadge>서류 목록</SectionBadge>
-      <DocTable docs={DOCS} />
 
       <Divider />
 

@@ -8,10 +8,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "1가구2주택 양도소득세 비과세 일시적2주택 기간",
     description: "신규주택 취득 후 3년 이내에 기존 집 팔면 양도세 없음. 3가지 조건 확인.",
-    url: "https://jjyu.co.kr/w/1가구2주택-양도소득세-비과세-요건-및-일시적2주택-기간",
+    url: "https://jjyu.co.kr/w/1가구2주택-양도세-비과세-일시적2주택",
   },
   alternates: {
-    canonical: "https://jjyu.co.kr/w/1가구2주택-양도소득세-비과세-요건-및-일시적2주택-기간",
+    canonical: "https://jjyu.co.kr/w/1가구2주택-양도세-비과세-일시적2주택",
   },
 };
 

@@ -9,8 +9,6 @@
 // MAP-H2: 세율표 > 공제 항목 > 신고 기한·가산세 > 절세 포인트 > FAQ
 // MAP-COMP: table > BorderBox > GreenBox > Steps > FAQ
 
-"use client";
-
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
   Steps, Checklist, FAQ, References, Disclaimer,

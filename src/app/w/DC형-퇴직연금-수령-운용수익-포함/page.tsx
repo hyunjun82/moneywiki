@@ -5,8 +5,6 @@
 // Q3. 적립금 계산 방식, 운용수익 과세, 일시금 vs 연금 세금 차이, 수익률별 시뮬레이션
 // Q4. 수익률별 수령액 비교표 + 세금 계산 구조 + Steps
 
-"use client";
-
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
   Steps, DocTable, Checklist, FAQ, References, Disclaimer,

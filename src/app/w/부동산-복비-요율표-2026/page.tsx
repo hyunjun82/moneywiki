@@ -205,7 +205,7 @@ export default function Page() {
       <p style={body}>
         계약 전에 미리 협의해야 협상력이 있어요.
         영수증을 받지 않으면 나중에 문제 생겨도 증거가 없어요.
-        부가세 포함 여부도 계약 전에 꼭 확인하세요.
+        부가세 포함 여부도 계약 전에 꼭 따져봐야 해요.
       </p>
 
       <SectionBadge>체크리스트</SectionBadge>

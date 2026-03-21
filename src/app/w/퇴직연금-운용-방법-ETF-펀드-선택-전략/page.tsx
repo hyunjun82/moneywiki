@@ -1,9 +1,9 @@
+"use client";
+
 // Q1. DC형·IRP에 돈이 쌓여 있는데 예금만 넣고 있어서 손해 보는 게 아닐까 걱정하는 상황
 // Q2. 나이와 위험 성향에 맞는 ETF·펀드 포트폴리오를 직접 설정할 수 있어야 함
 // Q3. 70/30 규칙 의무, ETF vs TDF 비교, 나이별 전략, 세금 혜택, 주의사항
 // Q4. 비교표 (ETF vs TDF) + 나이별 포트폴리오 표 + Checklist + FAQ
-
-"use client";
 
 export const dynamic = "force-static";
 

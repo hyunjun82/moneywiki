@@ -1,9 +1,9 @@
 "use client";
 
-// Q1: 소규모 사업장 사업주 또는 근로자로 두루누리 지원받을 수 있는지 알고 싶은 사람
-// Q2: 신청 자격 확인 후 고용24에서 신청 완료
-// Q3: 10인 미만 사업장, 월 보수 270만 원 이하, 지원율 80%, 신청 서류
-// Q4: EligibilityChecker + Steps + DocTable + FAQ
+// Q1: 두루누리 지원 대상인 건 아는데 실제로 어떻게 신청하고 뭘 준비해야 하는지 모르는 사업주
+// Q2: 고용24에서 신청을 완료하고 서류까지 제출
+// Q3: 신청 절차 4단계, 필요 서류 목록, 심사 기간, 변동 신고 방법
+// Q4: Steps(절차 중심) + DocTable(서류 상세) + Checklist + FAQ
 
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
@@ -123,18 +123,12 @@ export default function Page() {
       <Divider />
       <ArticleAd position="intro" />
 
-      <H2>우리 사업장이 지원 대상인지 먼저 체크해봐요</H2>
+      <H2>지원 대상 조건 간단 체크</H2>
       <p style={body}>
-        두루누리 지원을 받으려면 두 가지 핵심 조건을 모두 충족해야 해요.
-        근로자 수와 월 보수 기준 둘 다 해당해야 해요.
+        신청 전에 자격 조건부터 간단히 짚고 넘어갈게요. 10인 미만 사업장 + 월 보수 270만 원 이하 근로자가 핵심이에요.
+        자격 조건을 더 자세히 보려면{" "}
+        <a href="/w/두루누리-사회보험료-지원-대상-신청" style={{ color: "#1D9E75", textDecoration: "underline" }}>두루누리 사회보험료 지원 대상</a> 글을 참고하세요.
       </p>
-
-      <BorderBox>
-        <strong>사업장 기준</strong>: 근로자 수 10인 미만 (지원 기간 내내)<br />
-        <strong>근로자 기준</strong>: 월 보수 270만 원 이하 (비과세 제외)<br />
-        <strong>지원 보험</strong>: 고용보험 + 국민연금 (동시 신청 가능)<br />
-        <strong>지원율</strong>: 최대 80% (신규 가입자·저소득 기준)
-      </BorderBox>
 
       <SectionBadge>내 상황 체크해보세요</SectionBadge>
       <EligibilityChecker
@@ -145,7 +139,7 @@ export default function Page() {
 
       <Divider />
 
-      <H2>신청 절차 4단계</H2>
+      <H2>신청 절차 4단계, 고용24에서 바로 해요</H2>
       <p style={body}>
         사업주가 고용24에서 온라인으로 신청하면 돼요. 공동인증서와 근로계약서·임금대장이 미리 있으면 신청이 빠르게 처리돼요.
         신청 후 심사를 거쳐 그달 보험료부터 지원이 적용돼요.
@@ -158,10 +152,14 @@ export default function Page() {
 
       <Divider />
 
-      <H2>신청 시 필요한 서류</H2>
+      <H2>신청 시 필요한 서류 총 5가지</H2>
       <p style={body}>
         기본 서류는 사업자등록증, 근로계약서, 임금대장이에요. 온라인 신청이라 직접 방문할 필요는 없어요.
         추가 서류가 필요하면 건강보험공단에서 연락이 와요.
+      </p>
+      <p style={body}>
+        근로계약서는 근로자별로 각각 있어야 하고, 임금대장은 최근 3개월치를 준비하면 심사가 빨라요.
+        공동인증서가 없으면 고용24 로그인 자체가 안 되니 미리 발급받아 두세요.
       </p>
 
       <SectionBadge>제출 서류</SectionBadge>
