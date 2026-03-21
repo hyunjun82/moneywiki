@@ -1,5 +1,10 @@
 "use client";
 
+// Q1. 회사에서 퇴직금을 IRP로만 지급한다고 하는데 내 상황이 해당되는지 확인하려는 상황
+// Q2. 의무화 대상 여부 확인 → IRP 개설 → 수령 후 세금 처리 (일시금 vs 연금)
+// Q3. 2022.4.14 이후 퇴직 / 퇴직금 300만원 초과 / 만 55세 미만 / 예외 대상 (55세 이상, 300만원 이하) / IRP 일시금 vs 연금 수령 세금 차이
+// Q4. EligibilityChecker(의무화 대상 체크) + Steps(IRP 개설·수령 절차) + GreenBox(세금 비교) + FAQ
+
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
   Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
@@ -70,7 +75,7 @@ const CHECKLIST = [
   "퇴직 확정 전에 IRP 계좌 미리 개설하기",
   "계좌번호를 인사팀에 문자·이메일로 전달하고 기록 보관",
   "퇴직일 기준 14일 이내 입금 여부 확인",
-  "미입금 시 지연이자(연 20%) 청구 가능 — 고용노동부(1350) 신고",
+  "미입금 시 지연이자(연 20%) 청구 가능 : 고용노동부(1350) 신고",
   "55세 이후 연금 수령 선택 시 퇴직소득세 30% 절감",
 ];
 
@@ -133,8 +138,8 @@ export default function Page() {
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>퇴직금 · IRP · 의무화</p>
 
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
-        퇴직금 IRP로만 줘야 한다는데, 나도 해당되나요?<br />
-        300만원 기준과 IRP 수령 절차
+        퇴직금 IRP 지급 의무화 대상인가요?<br />
+        300만원 기준과 수령 방법
       </h1>
 
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
@@ -251,7 +256,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 직접 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 직접 살펴봐요." />
     </ArticleLayout>
   );
 }

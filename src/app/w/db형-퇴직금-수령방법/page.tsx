@@ -1,5 +1,10 @@
 "use client";
 
+// Q1. DB형 퇴직연금 가입자가 퇴직 후 IRP 계좌에서 돈을 꺼내거나 세금 처리 방법을 찾는 상황
+// Q2. IRP 수령 방법 결정(일시금 vs 연금) → 세금 계산 → 실제 신청
+// Q3. 일시금 수령 시 퇴직소득세 vs 연금 수령 시 30~40% 절세 / 55세 이전 해지 시 기타소득세 16.5% / IRP 수수료 비교
+// Q4. EligibilityChecker(수령 가능 여부) + Steps(수령 절차) + GreenBox(세금 비교) + FAQ
+
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
   Calculator, EligibilityChecker, Steps, DocTable, Checklist, FAQ, References, Disclaimer,
@@ -58,7 +63,7 @@ const STEPS = [
   },
   {
     title: "IRP 계좌로 입금 확인",
-    desc: "이체 후 IRP 계좌에서 입금 내역을 확인하세요. DB형은 회사가 이체 주체라 금융사가 아닌 회사 쪽에서 처리해요. 금액이 예상과 다르다면 인사팀에 산정 내역서를 요청하세요.",
+    desc: "이체 후 IRP 계좌에서 입금 내역을 살펴봐요. DB형은 회사가 이체 주체라 금융사가 아닌 회사 쪽에서 처리해요. 금액이 예상과 다르다면 인사팀에 산정 내역서를 요청하세요.",
     tip: "퇴직소득 원천징수영수증도 함께 받아두면 연말정산에 유용해요.",
   },
   {
@@ -241,7 +246,7 @@ export default function Page() {
       <Divider />
 
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 확인하세요." />
+      <Disclaimer text="이 글은 2026년 3월 기준 근로자퇴직급여보장법을 바탕으로 작성됐어요. 제도 변경이 있을 수 있으니 최신 기준은 고용노동부(1350)에서 살펴봐요." />
     </ArticleLayout>
   );
 }

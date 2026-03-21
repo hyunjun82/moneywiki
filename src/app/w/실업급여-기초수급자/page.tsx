@@ -1,5 +1,10 @@
 "use client";
 
+// Q1. 기초생활수급자인 상태에서 실업급여 수급 가능 여부와 중복 수령 여부를 찾고 있는 상황
+// Q2. 수급 자격 확인 → 기초생활급여와 중복 처리 방식 이해 → 고용24 신청
+// Q3. 실업급여와 기초생활급여 중복 여부 / 생계급여에서 실업급여가 소득으로 인정 / 해지 조건 / 취업 시 처리
+// Q4. EligibilityChecker(수급 자격 체크) + Checklist(준비사항) + FAQ
+
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
   EligibilityChecker, Checklist, FAQ, References, Disclaimer,

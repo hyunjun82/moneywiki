@@ -4,7 +4,8 @@ import { colors } from "./styles";
 
 interface StepItem {
   title: string;
-  desc: string;
+  desc?: string;
+  description?: string;
   tip?: string;
   link?: { label: string; href: string };
 }
@@ -82,7 +83,7 @@ export function Steps({ steps }: StepsProps) {
                 margin: 0,
               }}
             >
-              {step.desc}
+              {step.desc || step.description}
             </p>
             {step.tip && (
               <p

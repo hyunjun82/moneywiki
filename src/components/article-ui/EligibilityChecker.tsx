@@ -9,13 +9,14 @@ interface CheckItem {
 }
 
 interface EligibilityCheckerProps {
-  items: CheckItem[];
+  items?: CheckItem[];
   allMatchText?: string;
   partialMatchText?: string;
+  [key: string]: unknown;
 }
 
 export function EligibilityChecker({
-  items,
+  items = [],
   allMatchText = "모든 조건을 충족해요! 신청 자격이 있어요.",
   partialMatchText = "일부 조건이 충족되지 않았어요. 해당 항목을 다시 확인해 보세요.",
 }: EligibilityCheckerProps) {

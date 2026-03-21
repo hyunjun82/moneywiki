@@ -1,255 +1,99 @@
 "use client";
 
+// Q1. 실업급여 신청하려는데 피보험기간이 180일이 됐는지, 이전 직장까지 합산되는지 모르는 상황
+// Q2. 고용24에서 피보험기간 조회 → 180일 충족 여부 확인 → 미충족이면 합산 방법 파악
+// Q3. 18개월 내 180일, 합산 조건(이전 수급 안 했고 1년 내 재취업), 포함/제외 항목, 수급일수 결정
+// Q4. GreenBox(수급일수 표) + BorderBox(합산 조건) + Steps(고용24 조회 방법) + FAQ
+
 import {
-  H2, SectionBadge, GreenBox, BorderBox, Divider, body, Calculator,
-  EligibilityChecker, Checklist, FAQ, References, Disclaimer,
-  ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
+  H2, GreenBox, BorderBox, Steps, Divider, body,
+  FAQ, References, Disclaimer,
+  ArticleLayout, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
-import { 실업급여_SIDEBAR, 실업급여_HIGHLIGHT } from "@/data/실업급여-guide";
-
-// ─── 계산 로직 ──────────────────────────────────────────
-
-function getDays(age: number, years: number): number {
-  if (age >= 50) {
-    if (years < 1) return 120;
-    if (years < 3) return 180;
-    if (years < 5) return 210;
-    if (years < 10) return 240;
-    return 270;
-  }
-  if (years < 1) return 120;
-  if (years < 3) return 150;
-  if (years < 5) return 180;
-  if (years < 10) return 210;
-  return 240;
-}
-
-// ─── 데이터 ──────────────────────────────────────────
-
-const CHECK_ITEMS = [
-  { id: "c1", label: "고용24(ei.go.kr)에서 피보험자격 이력을 조회했어요" },
-  { id: "c2", label: "이전 직장 피보험기간 합산 가능 여부를 확인했어요" },
-  { id: "c3", label: "퇴직 전 18개월 내 피보험단위기간이 180일 이상이에요" },
-  { id: "c4", label: "피보험기간별 소정급여일수(수급기간) 표를 확인했어요" },
-];
-
-const CALC_SLIDERS = [
-  { id: "years", label: "총 피보험기간", min: 1, max: 20, step: 1, defaultValue: 5, format: (v: number) => `${v}년` },
-  { id: "age", label: "퇴직 시 나이", min: 25, max: 68, step: 1, defaultValue: 40, format: (v: number) => `만 ${v}세` },
-];
-
-const CALC_RESULTS = [
-  {
-    label: "소정급여일수",
-    getValue: (v: Record<string, number>) => getDays(v.age, v.years),
-    format: (v: number) => `${v}일`,
-    highlight: true,
-  },
-  {
-    label: "수급기간 (월 환산)",
-    getValue: (v: Record<string, number>) => Math.round(getDays(v.age, v.years) / 30),
-    format: (v: number) => `약 ${v}개월`,
-  },
-];
-
-const CHECKLIST = [
-  "고용24(ei.go.kr) → 개인서비스 → 피보험자격 이력 조회",
-  "직장별 취득일·상실일 확인해서 합산 가능 여부 체크",
-  "이전 직장에서 실업급여를 받았는지 여부 확인 (받았으면 해당 기간 리셋)",
-  "퇴직 전 18개월 내 피보험단위기간이 180일 이상인지 확인",
-  "합산 조건: 이전 직장 퇴사 후 1년 이내 재취업 여부 확인",
-];
 
 const FAQS = [
   {
-    q: "피보험기간 180일은 달력 기준인가요, 근무일 기준인가요?",
-    a: "달력 기준이 아니라 피보험단위기간 기준이에요. 유급일(실제 일한 날 + 유급휴일)을 세서 180일 이상이어야 하죠.",
+    q: "피보험기간 180일이 뭐예요?",
+    a: "고용보험에 가입되어 일한 기간이 퇴직 전 18개월 안에 180일 이상이어야 해요. 이 조건을 충족해야 실업급여를 받을 수 있어요.",
   },
   {
-    q: "이전 직장 피보험기간을 합산하려면 어떤 조건이 필요한가요?",
-    a: "두 가지 조건이 필요해요. 이전 직장에서 실업급여를 받지 않았어야 하고, 퇴사 후 1년 이내에 재취업했어야 하죠.",
-  },
-  {
-    q: "실업급여를 받으면 피보험기간이 리셋되나요?",
-    a: "맞아요. 실업급여를 수급하면 그 이전 피보험기간은 소진된 걸로 처리되죠. 새 직장에서 다시 쌓아야 해요.",
+    q: "이전 직장 기간도 합산되나요?",
+    a: "네. 이전 직장에서 실업급여를 받지 않았고, 퇴사 후 1년 이내에 재취업했으면 합산돼요. 조건만 맞으면 여러 직장 기간을 모두 더할 수 있어요.",
   },
   {
     q: "육아휴직 기간도 피보험기간에 포함되나요?",
-    a: "포함돼요. 육아휴직 중에도 고용보험 가입 상태가 유지되니까요. 산재 휴업 기간도 마찬가지예요.",
+    a: "네. 육아휴직 기간은 고용보험 가입이 유지돼요. 피보험기간으로 인정돼요. 무급휴직은 제외돼요.",
   },
   {
-    q: "프리랜서 기간은 피보험기간에 들어가나요?",
-    a: "고용보험에 가입되지 않은 프리랜서·자영업 기간은 피보험기간에 포함되지 않아요. 고용보험 임의가입을 한 자영업자는 예외적으로 가능하죠.",
+    q: "실업급여 받고 다시 취업하면 피보험기간이 리셋되나요?",
+    a: "네. 실업급여를 받으면 그 이전 피보험기간은 리셋돼요. 다시 취업해서 새로 쌓아야 해요.",
+  },
+  {
+    q: "피보험기간은 어디서 확인해요?",
+    a: "고용24(ei.go.kr)에 로그인 후 [개인서비스] → [조회] → [피보험자격 이력 조회]에서 확인할 수 있어요. 언제부터 언제까지 어느 회사에서 가입됐는지 나와요.",
   },
 ];
 
 const REFERENCES = [
   {
-    category: "법령",
-    items: [
-      { label: "고용보험법: 피보험기간 산정 기준", url: "https://www.law.go.kr/법령/고용보험법" },
-      { label: "고용보험법 시행령: 소정급여일수 산정표", url: "https://www.law.go.kr/법령/고용보험법시행령" },
-    ],
-  },
-  {
     category: "공식 자료",
     items: [
-      { label: "고용24: 피보험자격 이력 조회", url: "https://www.ei.go.kr" },
-      { label: "고용노동부: 실업급여 안내", url: "https://www.moel.go.kr" },
+      { label: "고용보험법 (피보험기간 규정)", url: "https://www.law.go.kr/법령/고용보험법" },
+      { label: "고용24 - 피보험자격 이력 조회", url: "https://www.ei.go.kr" },
     ],
   },
 ];
 
 const RELATED = [
-  {
-    slug: "실업급여-피보험단위기간",
-    title: "피보험단위기간 180일 계산법",
-    description: "실제 근무일과 유급휴일을 더해 180일을 채우는 방법이에요.",
-  },
-  {
-    slug: "피보험기간-근무일수-계산-방법",
-    title: "피보험기간 근무일수 계산 방법",
-    description: "피보험기간과 근무일수가 어떻게 연결되는지 정리했어요.",
-  },
-  {
-    slug: "실업급여-수급기간-몇개월-받나요",
-    title: "실업급여 수급기간 12개월 기한",
-    description: "퇴직 후 12개월 안에 소정급여일수를 다 받아야 하는 이유예요.",
-  },
+  { slug: "실업급여-180일", title: "실업급여 180일 조건", description: "180일 계산 방법을 자세히 정리했어요." },
+  { slug: "실업급여-수급기간", title: "실업급여 수급기간", description: "피보험기간에 따라 얼마나 받는지예요." },
+  { slug: "실업급여-수급자격", title: "실업급여 수급자격", description: "자발적 퇴사, 권고사직 등 자격 조건이에요." },
 ];
 
-// ─── 페이지 ──────────────────────────────────────────
+const STEPS = [
+  { title: "고용24 접속 후 로그인", desc: "ei.go.kr에 접속해서 공동인증서 또는 간편인증으로 로그인해요." },
+  { title: "[개인서비스] → [조회] 클릭", desc: "상단 메뉴에서 개인서비스를 선택하고 조회 항목을 눌러요." },
+  { title: "[피보험자격 이력 조회] 선택", desc: "내가 다닌 회사별 고용보험 가입 기간이 날짜별로 나와요." },
+  { title: "피보험 단위기간 합산 확인", desc: "18개월 내 피보험기간이 180일 이상인지 확인해요. 이전 직장 기간도 함께 표시돼요." },
+];
 
 export default function Page() {
   return (
-    <ArticleLayout
-      sidebar={
-        <Sidebar
-          heading="실업급여 가이드"
-          items={실업급여_SIDEBAR} highlightSlugs={실업급여_HIGHLIGHT}
-          currentSlug="실업급여-피보험기간"
-        />
-      }
-    >
-      {/* breadcrumb */}
+    <ArticleLayout>
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>실업급여 · 고용보험 · 피보험기간</p>
 
-      {/* h1: 2줄 */}
       <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.45, marginBottom: 14 }}>
-        피보험기간 180일, 어떻게 채울까?<br />
-        직장 합산과 계산 방법
+        실업급여 피보험기간 180일<br />
+        계산법과 이전 직장 합산 조건
       </h1>
 
-      {/* intro: 숫자 + 법령 */}
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
-        &quot;피보험기간이 뭐예요? 실업급여 서류마다 피보험기간이 나오는데 뭘 말하는 건지 모르겠어요.&quot;
-      </p>
-      <p style={body}>
-        쉽게 말하면 <strong>고용보험에 가입돼서 일한 기간</strong>이에요.
-        <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법</a>에서 이 기간이 180일 이상이어야 실업급여를 신청할 수 있다고 정하고 있죠.
-        그리고 이 기간이 길수록 실업급여를 오래 받죠. <strong>1년 미만이면 120일, 10년 이상이면 최대 270일</strong>까지 나와요.
-      </p>
-      <p style={body}>
-        내 피보험기간이 얼마인지, 이전 직장이랑 합산이 되는지, 그래서 소정급여일수가 몇 일인지: 이걸 알아야 실업급여 전략을 세울 수 있죠.
-        아래에 전부 정리해뒀으니까 하나씩 따라가 보세요.
+        피보험기간은 고용보험에 가입되어 일한 기간이에요. 퇴직 전 18개월 안에 180일 이상이어야 실업급여를 받을 수 있고,
+        기간이 길수록 더 오래 받아요. 이전 직장 기간도 조건만 맞으면 합산돼요.
       </p>
 
       <Divider />
       <ArticleAd position="intro" />
 
-      {/* 섹션 1: 피보험기간이란 + GreenBox + EligibilityChecker */}
-      <H2>피보험기간이 뭐고, 계산 방법이 왜 중요한가요?</H2>
+      <H2>피보험기간이 왜 중요한가요</H2>
       <p style={body}>
-        피보험기간은 고용보험 피보험자격을 유지한 기간이에요.
-        회사에 입사하면 고용보험에 자동 가입되고, 퇴사하면 자격을 잃죠. 그 사이가 곧 피보험기간이에요.
-        정규직이든 계약직이든 고용보험에 가입돼 있기만 하면 피보험기간이 쌓여요.
+        두 가지를 결정해요. 첫째, 수급자격이에요. 퇴직 전 <strong>18개월 내 피보험기간이 180일 이상</strong>이어야 해요.
+        180일이 안 되면 실업급여를 아예 받지 못해요.
       </p>
       <p style={body}>
-        이게 중요한 이유가 두 가지예요. 첫째, <strong>수급자격의 출입문</strong>이에요.
-        퇴직 전 18개월 내 <a href="/w/실업급여-피보험단위기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>피보험단위기간</a>(실제 근무일 + 유급휴일)이 180일을 넘어야 실업급여를 신청할 수 있죠.
-        180일이 안 되면 아무리 억울하게 잘렸어도 수급 자체가 안 돼요.
-      </p>
-      <p style={body}>
-        둘째, <a href="/w/실업급여-수급기간-몇개월-받나요" style={{ color: "#1D9E75", textDecoration: "underline" }}>소정급여일수</a>를 결정해요. 피보험기간이 길수록 실업급여를 오래 받는 구조예요.
-        <a href="https://www.law.go.kr/법령/고용보험법시행령" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 시행령</a>에 따르면 1년 미만이면 120일, 10년 이상이면 최대 270일이죠.
-        같은 나이인데 피보험기간 차이 하나로 수급일수가 120일(약 4개월) 벌어질 수 있죠.
-      </p>
-      <p style={body}>
-        여러 직장을 옮겨 다닌 분이라면 합산이 되는지도 꼭 따져봐야 해요.
-        조건만 맞으면 A회사 3년 + B회사 4년 = 총 7년으로 잡히니까, 소정급여일수가 확 늘어나거든요.
+        둘째, 수급일수예요. 피보험기간이 길수록 실업급여를 오래 받아요.
+        1년 미만이면 120일, 10년 이상이면 최대 270일까지 받을 수 있어요.
       </p>
 
       <GreenBox>
-        <p style={{ margin: "0 0 4px" }}>1. <strong>수급자격</strong>: 피보험단위기간 180일 이상이어야 신청 가능</p>
-        <p style={{ margin: "0 0 4px" }}>2. <strong>소정급여일수</strong>: 기간이 길수록 오래 받음 (120~270일)</p>
-        <p style={{ margin: 0 }}>3. <strong>합산</strong>: 여러 직장 피보험기간을 합쳐서 계산할 수 있음</p>
-      </GreenBox>
-
-      <SectionBadge>내 수급자격 체크해 보세요</SectionBadge>
-      <EligibilityChecker
-        items={CHECK_ITEMS}
-        allMatchText="수급자격 조건을 충족했을 가능성이 높아요!"
-        partialMatchText="일부 조건이 미충족이에요. 해당 항목을 확인해 보세요."
-      />
-
-      <Divider />
-
-      {/* 섹션 2: 계산 방법 + 합산 조건 + Calculator */}
-      <H2>직장 합산 조건은 어떻게 되나요?</H2>
-      <p style={body}>
-        기본 계산 자체는 단순해요. <strong>피보험자격 취득일(입사일)부터 상실일(퇴사일)</strong>까지가 한 직장의 피보험기간이에요.
-        A회사에서 2년, B회사에서 3년 일했다면 합산 피보험기간은 총 5년이죠.
-      </p>
-      <p style={body}>
-        그런데 합산하려면 조건이 두 가지 붙어요.
-        첫째, <strong>이전 직장에서 실업급여를 받지 않았어야</strong>해요. 실업급여를 수급하면 그 이전 피보험기간은 &quot;이미 써버린 것&quot;으로 처리되죠.
-        통째로 리셋이 돼요. <a href="https://www.law.go.kr/법령/고용보험법" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 제50조</a>에 명시된 규정이에요.
-      </p>
-      <p style={body}>
-        둘째, <strong>이전 직장 퇴사 후 1년 안에 재취업</strong>했어야 해요.
-        1년 넘게 쉬고 나서 다시 일을 시작했다면 그 이전 기간은 합산에서 빠지죠.
-        이직을 자주 해도 괜찮아요. 이 두 조건만 맞으면 직장 3~4곳을 옮겨 다녔어도 전부 이어붙일 수 있죠.
-      </p>
-      <p style={body}>
-        예를 들어 A회사 2년(실업급여 미수급) → 3개월 쉼 → B회사 3년이라면 총 5년이에요.
-        반면 A회사 2년(실업급여 수급) → B회사 3년이면 A회사 기간은 리셋이라 B회사 3년만 인정되죠.
-        이 차이가 소정급여일수에 바로 영향을 줘요.
-      </p>
-
-      <BorderBox>
-        <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}>가능: 이전 직장에서 실업급여를 <strong>받지 않았고</strong>, 1년 이내 재취업</p>
-        <p style={{ margin: "0 0 6px", lineHeight: 1.9 }}>불가: 실업급여 수급 완료 → 이전 기간 <strong>리셋</strong></p>
-        <p style={{ margin: 0, lineHeight: 1.9 }}>불가: 퇴사 후 1년 넘게 공백 → 이전 기간 <strong>합산 불가</strong></p>
-      </BorderBox>
-
-      <Calculator
-        title="피보험기간별 수급기간 계산기"
-        sliders={CALC_SLIDERS}
-        results={CALC_RESULTS}
-        note="50세 기준으로 소정급여일수가 달라져요. 정확한 기간은 고용24(ei.go.kr)에서 확인하세요."
-      />
-
-      {/* 섹션 2 끝 → 버튼 + 관련 글 */}
-      <CategoryButton label="실업급여 정보" count={실업급여_SIDEBAR.length} href="/category/고용" />
-      <RelatedArticles items={RELATED} />
-      <ArticleAd position="mid" />
-
-      <Divider />
-
-      {/* 섹션 3: 소정급여일수표 + SectionBadge + Checklist */}
-      <H2>피보험기간별 소정급여일수 계산 방법</H2>
-      <p style={body}>
-        피보험기간이 정해지면 그 다음은 소정급여일수예요. 나이(50세 기준)와 피보험기간 조합으로 결정되죠.
-        <a href="https://www.law.go.kr/법령/고용보험법시행령" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용보험법 시행령</a>에 기준표가 나와 있는데, 50세 이상이거나 장애인이면 같은 피보험기간이라도 수급일수가 한 단계 높아져요.
-      </p>
-
-      <div style={{ overflowX: "auto", margin: "18px 0" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14, lineHeight: 1.7 }}>
+        <strong>피보험기간별 수급일수 (2026년 기준)</strong><br />
+        <br />
+        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
           <thead>
-            <tr style={{ background: "#F0FDF4" }}>
-              <th style={{ padding: "10px 14px", textAlign: "left", borderBottom: "2px solid #D1FAE5", fontWeight: 600 }}>피보험기간</th>
-              <th style={{ padding: "10px 14px", textAlign: "center", borderBottom: "2px solid #D1FAE5", fontWeight: 600 }}>50세 미만</th>
-              <th style={{ padding: "10px 14px", textAlign: "center", borderBottom: "2px solid #D1FAE5", fontWeight: 600 }}>50세 이상·장애인</th>
+            <tr style={{ borderBottom: "1px solid rgba(0,0,0,0.1)" }}>
+              <th style={{ textAlign: "left", padding: "4px 8px" }}>피보험기간</th>
+              <th style={{ textAlign: "left", padding: "4px 8px" }}>50세 미만</th>
+              <th style={{ textAlign: "left", padding: "4px 8px" }}>50세 이상</th>
             </tr>
           </thead>
           <tbody>
@@ -259,91 +103,63 @@ export default function Page() {
               ["3~5년", "180일", "210일"],
               ["5~10년", "210일", "240일"],
               ["10년 이상", "240일", "270일"],
-            ].map(([period, under50, over50], i) => (
-              <tr key={i} style={{ borderBottom: "1px solid #E5E7EB" }}>
-                <td style={{ padding: "10px 14px", fontWeight: 500 }}>{period}</td>
-                <td style={{ padding: "10px 14px", textAlign: "center" }}>{under50}</td>
-                <td style={{ padding: "10px 14px", textAlign: "center" }}>{over50}</td>
+            ].map((row, i) => (
+              <tr key={i} style={{ borderBottom: "1px solid rgba(0,0,0,0.05)" }}>
+                <td style={{ padding: "4px 8px", fontWeight: 600 }}>{row[0]}</td>
+                <td style={{ padding: "4px 8px" }}>{row[1]}</td>
+                <td style={{ padding: "4px 8px" }}>{row[2]}</td>
               </tr>
             ))}
           </tbody>
         </table>
-      </div>
+        <p style={{ fontSize: 12, color: "#666", marginTop: 8, marginBottom: 0 }}>
+          ★ 장애인, 만 60세 이상은 50세 이상 기준 적용
+        </p>
+      </GreenBox>
 
+      <H2>이전 직장 기간 합산하는 방법</H2>
       <p style={body}>
-        10년 이상 일한 50세 이상 근로자가 가장 오래 받아요. 270일이면 약 9개월이죠.
-        반면 1년 미만이면 나이에 상관없이 120일(약 4개월)로 동일해요.
-        피보험기간 1년을 넘기느냐 못 넘기느냐에서 수급일수가 30일씩 차이 나니까, 가능하면 다음 구간까지 채우고 퇴직하는 게 유리해요.
-      </p>
-      <p style={body}>
-        1일 상한액 68,100원 기준으로 30일 차이는 약 204만원이에요.
-        퇴직 시점을 한두 달만 조절해도 받는 금액이 수백만원 달라질 수 있다는 뜻이죠.
-        퇴직을 결심했다면 고용24에서 본인의 피보험기간부터 조회해보세요.
+        여러 직장에 다닌 경우 기간을 합산할 수 있어요. A회사 2년 + B회사 3년 = 피보험기간 5년이에요.
+        단, 두 가지 조건을 모두 충족해야 해요.
       </p>
 
-      <SectionBadge>피보험기간 확인 체크리스트</SectionBadge>
-      <Checklist items={CHECKLIST} />
+      <BorderBox>
+        <strong>합산 조건 2가지</strong><br />
+        <br />
+        ① <strong>이전 직장에서 실업급여를 받지 않았어야</strong> 해요<br />
+        이미 실업급여를 받았으면 그 기간은 사용한 거예요. 합산 안 돼요.<br />
+        <br />
+        ② <strong>이전 직장 퇴사 후 1년 이내에 재취업</strong>했어야 해요<br />
+        1년 넘게 쉬었다면 그 이전 기간은 합산 안 돼요.<br />
+        <br />
+        이 두 조건만 충족하면 여러 직장 기간을 전부 합산할 수 있어요.
+      </BorderBox>
 
-      <Divider />
+      <RelatedArticles items={RELATED} />
+      <ArticleAd position="mid" />
 
-      {/* 섹션 4: 포함/제외 항목 */}
-      <H2>피보험기간 계산에 포함되는 것과 제외되는 것</H2>
+      <H2>피보험기간에 포함되는 것과 제외되는 것</H2>
       <p style={body}>
-        재직 기간이 전부 피보험기간이 되는 건 아니에요.
-        <strong>유급휴일</strong>(주휴일, 공휴일, 유급연차)은 포함되죠.
-        <strong>육아휴직</strong>이나 <strong>산재 휴업</strong> 기간도 고용보험 가입 상태가 유지되니까 피보험기간으로 인정받아요.
-        월급이 안 나오더라도 보험 자격이 살아 있으면 기간이 쌓이는 거예요.
+        유급휴일(주휴일·공휴일·유급연차), 육아휴직, 산재 휴업 기간은 피보험기간에 포함돼요.
+        고용보험 가입이 유지되는 기간은 전부 인정돼요.
       </p>
       <p style={body}>
-        반대로 <a href="/w/무급휴무일-180일-미달" style={{ color: "#1D9E75", textDecoration: "underline" }}>무급휴직</a>은 빠져요. 고용보험료 자체를 안 내는 기간이니까요.
-        <strong>이직 후 구직 기간</strong>도 마찬가지예요: 어떤 회사에도 소속돼 있지 않으면 피보험기간에 잡히지 않죠.
-        이 공백이 1년을 넘기면 이전 직장 합산까지 끊기니까 주의가 필요해요.
+        무급휴직, 퇴사 후 구직 기간, 고용보험 미가입 기간(프리랜서·자영업 등)은 피보험기간에 들어가지 않아요.
+        급여에서 고용보험료가 빠져나갔으면 피보험기간으로 인정된다고 보면 돼요.
       </p>
-      <p style={body}>
-        <strong>고용보험 미가입 기간</strong>도 제외돼요.
-        프리랜서나 자영업으로 일한 기간은 고용보험에 가입돼 있지 않으면 피보험기간에 들어갈 수 없어요.
-        다만 사업주가 고용보험 가입 의무를 안 지켜서 미가입 상태였던 거라면, <a href="/w/실업급여-고용보험-미가입" style={{ color: "#1D9E75", textDecoration: "underline" }}>소급가입</a>을 신청해서 기간을 복원할 수 있죠.
-      </p>
-      <p style={body}>
-        정리하면 이래요. 고용보험 가입 상태 + 보수가 지급되거나 유급 처리되는 기간이면 피보험기간에 포함돼요.
-        그 외에는 전부 빠진다고 생각하면 맞아요.
-        본인의 재직 기간 중 어디까지가 피보험기간인지 헷갈리면 <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 직접 조회해보는 게 가장 정확하죠.
-      </p>
+
+      <H2>고용24에서 피보험기간 확인하는 법</H2>
+      <Steps steps={STEPS} />
 
       <Divider />
 
-      {/* 섹션 5: 실전 팁 */}
-      <H2>직장 합산으로 피보험기간을 유리하게 관리하세요</H2>
-      <p style={body}>
-        피보험기간을 늘리는 가장 확실한 방법은 <strong>오래 일하는 것</strong>이에요.
-        단순하지만 사실이죠. 이직을 자주 해도 문제없어요.
-        합산 조건(1년 이내 재취업 + 실업급여 미수급)만 맞추면 직장을 몇 번 옮기든 기간이 전부 이어지니까요.
-      </p>
-      <p style={body}>
-        주의할 건 <strong>직장 사이 공백 기간</strong>이에요. 1년 넘게 쉬면 이전 피보험기간이 합산에서 빠져요.
-        퇴사하고 이직까지 시간이 걸릴 것 같다면 선택을 해야 하죠: 실업급여를 받고 기간을 리셋할 건지, 합산을 위해 빠르게 재취업할 건지.
-        두 가지를 동시에 가져갈 순 없으니까 본인 상황에 맞게 판단해야 해요.
-      </p>
-      <p style={body}>
-        <a href="https://www.ei.go.kr" style={{ color: "#1D9E75", textDecoration: "underline" }}>고용24</a>에서 피보험자격 이력을 조회하면 지금까지 다닌 모든 직장의 가입 이력이 한 화면에 나와요.
-        퇴직하기 전에 한 번 조회해두면 수급자격 여부를 미리 파악할 수 있죠.
-        50세 전후라면 소정급여일수가 크게 달라지니, 나이 기준도 반드시 함께 챙겨보세요.
-      </p>
-
-      <Divider />
-
-      {/* FAQ: 5개 */}
       <H2>자주 묻는 것들</H2>
-      <p style={{ ...body, marginBottom: 14 }}>
-        피보험기간 계산이랑 합산을 놓고 가장 자주 들어오는 질문이에요.
-      </p>
       <FAQ items={FAQS} />
 
       <Divider />
 
-      {/* References + Disclaimer */}
       <References groups={REFERENCES} />
-      <Disclaimer text="이 글은 2026년 3월 기준 고용보험법을 바탕으로 작성됐어요. 피보험기간 합산 여부는 개별 사안에 따라 다르니, 고용24(ei.go.kr)에서 직접 조회하거나 고용센터(1350)에 상담받아보세요." />
+      <Disclaimer text="이 글은 2026년 1월 고용보험법 기준으로 작성됐어요. 피보험기간 규정은 변경될 수 있으니 고용24 또는 고용노동부에 살펴봐요." />
     </ArticleLayout>
   );
 }
