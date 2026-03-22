@@ -67,6 +67,15 @@
             "command": "node scripts/verify-reader-perspective.js"
           }
         ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/verify-search-intent.js"
+          }
+        ]
       }
     ]
   }

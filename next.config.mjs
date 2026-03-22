@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Vercel OOM 방지: 정적 페이지 생성 워커를 1개로 제한
+  experimental: {
+    cpus: 1,
+  },
   // 이미지 최적화
   images: {
     formats: ["image/avif", "image/webp"],
