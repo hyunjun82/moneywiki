@@ -75,3 +75,5 @@ extracted-*.json
 
 # 임시 이미지
 *-rewrite.png
+.claude/worktrees/
+.clone/

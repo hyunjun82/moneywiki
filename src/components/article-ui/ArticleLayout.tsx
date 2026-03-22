@@ -34,9 +34,11 @@ export function ArticleLayout({ children, sidebar }: Props) {
           gap: 40,
           fontFamily: "'Pretendard', 'Apple SD Gothic Neo', sans-serif",
           color: "#111",
+          position: "relative",
+          zIndex: 1,
         }}
       >
-        <div style={{ flex: 1, minWidth: 0, maxWidth: 720 }}>{children}</div>
+        <div style={{ flex: 1, minWidth: 0, maxWidth: 720, position: "relative", zIndex: 2 }}>{children}</div>
         <aside
           className="article-sidebar"
           data-ad-region="exclude"

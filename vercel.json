@@ -1,5 +1,8 @@
 {
   "buildCommand": "npm run prebuild && next build --webpack",
+  "git": {
+    "deploymentEnabled": true
+  },
   "redirects": [
     {
       "source": "/:path*",
