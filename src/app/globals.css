@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── AdSense 사이드레일 광고 PC 레이아웃 보호 ── */
+body {
+  overflow-x: hidden; /* 가로 스크롤 방지 */
+}
+
+/* 구글이 삽입하는 사이드레일 광고 컨테이너 강제 제한 */
+ins.adsbygoogle {
+  max-width: 100% !important;
+}
+
+/* 1400px 이하에서 사이드레일 광고 숨기기 — 본문 침범 방지 */
+@media screen and (max-width: 1400px) {
+  /* 구글 사이드레일 광고 (body 직속 fixed/absolute 광고) */
+  body > ins.adsbygoogle[data-ad-format="auto"],
+  body > div[id^="google_ads_iframe"] {
+    display: none !important;
+  }
+}
+
 :root {
   /* 기본 */
   --background: #ffffff;
