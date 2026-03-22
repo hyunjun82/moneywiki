@@ -144,7 +144,7 @@ export default function Page() {
 
       <RelatedArticles items={RELATED} />
 
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       {/* ── 섹션 3: 갱신·종료 절차 ── */}
       <H2>계약 끝날 때 어떻게 해야 하나요?</H2>

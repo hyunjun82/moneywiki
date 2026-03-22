@@ -153,7 +153,7 @@ export default function Page() {
 
       <RelatedArticles items={RELATED} />
 
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       {/* ── 섹션 3: 10단계 절차 ── */}
       <H2>재개발 10단계 추진 절차</H2>
