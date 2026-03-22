@@ -136,7 +136,7 @@ export default function Page() {
       <RelatedArticles items={RELATED} />
 
       <Divider />
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       {/* ── 섹션 3: 필요 서류 ── */}
       <H2>어떤 서류를 준비해야 하나요?</H2>
