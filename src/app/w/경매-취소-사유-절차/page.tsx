@@ -124,7 +124,7 @@ export default function Page() {
 
       <FAQ items={FAQS} />
       <Divider />
-      <RelatedArticles articles={RELATED} />
+      <RelatedArticles items={RELATED} />
       <References groups={REFERENCES} />
       <Disclaimer text="이 글은 2026년 3월 기준 민사집행법 공개 자료를 바탕으로 작성했어요. 경매 취소는 법적으로 복잡한 절차이니 변호사·법무사 상담을 권장해요." />
     </ArticleLayout>

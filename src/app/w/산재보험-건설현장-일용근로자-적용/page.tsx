@@ -122,7 +122,7 @@ export default function Page() {
       </BorderBox>
 
       <Divider />
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       <H2>자주 묻는 질문</H2>
       <p style={{ ...body, marginBottom: 14 }}>건설 일용직 산재보험에 대해 많이 궁금해하는 것들이에요.</p>

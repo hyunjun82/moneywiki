@@ -152,7 +152,7 @@ export default function Page() {
       </p>
 
       <Divider />
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       <H2>대금납부 후 이렇게 움직이세요</H2>
       <p style={body}>
@@ -165,7 +165,7 @@ export default function Page() {
 
       <FAQ items={FAQS} />
       <Divider />
-      <SourceNote items={SOURCES} />
+      <SourceNote sources={SOURCES} />
       <Disclaimer text="이 글은 법률 정보를 제공하며 법률 자문이 아니에요. 구체적인 사안은 법무사나 변호사와 상담하세요." />
     </ArticleLayout>
   );

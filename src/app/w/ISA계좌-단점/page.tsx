@@ -149,7 +149,7 @@ export default function Page() {
       </p>
 
       <Divider />
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       <RelatedArticles items={RELATED} />
 

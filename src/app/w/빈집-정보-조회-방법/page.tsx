@@ -125,7 +125,7 @@ export default function Page() {
 
       <FAQ items={FAQS} />
       <Divider />
-      <RelatedArticles articles={RELATED} />
+      <RelatedArticles items={RELATED} />
       <References groups={REFERENCES} />
       <Disclaimer text="이 글은 2026년 3월 기준 행정안전부·한국부동산원 공개 자료를 바탕으로 작성했어요. 빈집 현황은 수시로 변동되니 최신 정보를 직접 확인하세요." />
     </ArticleLayout>

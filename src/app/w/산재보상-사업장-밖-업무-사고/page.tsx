@@ -135,7 +135,7 @@ export default function Page() {
 
       <FAQ items={FAQS} />
       <Divider />
-      <RelatedArticles articles={RELATED} />
+      <RelatedArticles items={RELATED} />
       <References groups={REFERENCES} />
       <Disclaimer text="이 글은 2026년 3월 기준 산업재해보상보험법 및 근로복지공단 공개 자료를 바탕으로 작성했어요. 산재 인정 여부는 개별 사안에 따라 달라지니 공단(1588-0075)에 상담하세요." />
     </ArticleLayout>

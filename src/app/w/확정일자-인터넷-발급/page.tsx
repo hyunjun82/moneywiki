@@ -161,7 +161,7 @@ export default function Page() {
 
       <Divider />
 
-      <ArticleAd />
+      <ArticleAd position="mid" />
 
       <FAQ items={FAQS} />
 

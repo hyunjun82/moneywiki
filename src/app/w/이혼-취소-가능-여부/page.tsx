@@ -142,7 +142,7 @@ export default function Page() {
       <Checklist items={EVIDENCE_CHECKLIST} />
 
       <Divider />
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       <RelatedArticles items={RELATED} />
 

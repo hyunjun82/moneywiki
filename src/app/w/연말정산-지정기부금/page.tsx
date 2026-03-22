@@ -6,8 +6,8 @@ import {
   ArticleLayout, RelatedArticles,
 } from "@/components/article-ui";
 
-const FAQS = [];
-const REFERENCES = [];
+const FAQS: { q: string; a: string }[] = [];
+const REFERENCES: { category: string; items: { label: string; url: string }[] }[] = [];
 const RELATED: { slug: string; title: string; description: string }[] = [];
 
 export default function Page() {

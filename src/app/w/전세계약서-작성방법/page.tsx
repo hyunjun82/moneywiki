@@ -128,7 +128,7 @@ export default function Page() {
       </p>
 
       <Divider />
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       <H2>계약 관련 자주 묻는 질문</H2>
       <p style={{ ...body, marginBottom: 14 }}>전세 계약할 때 많이 헷갈리는 것만 모았어요.</p>

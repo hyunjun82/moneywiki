@@ -47,7 +47,7 @@ const RELATED = [
   {
     "slug": "이혼-재산명의-일방-분할청구",
     "title": "이혼 재산분할 청구",
-    "desc": "재산 명의가 한쪽에 있어도 분할 가능해요."
+    "description": "재산 명의가 한쪽에 있어도 분할 가능해요."
   }
 ];
 
@@ -82,7 +82,7 @@ export default function Page() {
       <p style={body}>
         이 부분이 핵심이에요.
       </p>
-      <Steps steps={[{"title":"가압류 신청","desc":"법원에 가압류 신청서를 제출해요.","tip":"보증금(청구금액의 10~20%)이 필요해요"},{"title":"법원 결정","desc":"심리 후 가압류 결정이 나와요."},{"title":"집행","desc":"등기소에 가압류 등기가 촉탁돼요."}]} />
+      <Steps steps={[{"title":"가압류 신청","description":"법원에 가압류 신청서를 제출해요.","tip":"보증금(청구금액의 10~20%)이 필요해요"},{"title":"법원 결정","description":"심리 후 가압류 결정이 나와요."},{"title":"집행","description":"등기소에 가압류 등기가 촉탁돼요."}]} />
       <Divider />
 
       <H2>자주 묻는 것들</H2>

@@ -138,7 +138,7 @@ export default function Page() {
       <Steps steps={STEPS} />
 
       <Divider />
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       <H2>계절직이 자주 놓치는 함정 3가지</H2>
       <p style={body}>

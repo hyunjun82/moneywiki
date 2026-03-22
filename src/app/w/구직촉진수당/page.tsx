@@ -140,7 +140,7 @@ export default function Page() {
 
       <FAQ items={FAQS} />
       <Divider />
-      <RelatedArticles articles={RELATED} />
+      <RelatedArticles items={RELATED} />
       <References groups={REFERENCES} />
       <Disclaimer text="이 글은 2026년 3월 기준 고용노동부 및 고용24 공개 자료를 바탕으로 작성했어요. 개인별 자격 여부는 관할 고용센터(1350)에서 최종 확인하세요." />
     </ArticleLayout>

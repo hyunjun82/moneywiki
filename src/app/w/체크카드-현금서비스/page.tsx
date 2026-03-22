@@ -145,7 +145,7 @@ export default function Page() {
       </p>
 
       <Divider />
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       <H2>소액신용결제, 잔액 부족할 때 최대 30만원</H2>
       <p style={body}>
@@ -162,7 +162,7 @@ export default function Page() {
 
       <FAQ items={FAQS} />
       <Divider />
-      <SourceNote items={SOURCES} />
+      <SourceNote sources={SOURCES} />
       <Disclaimer text="이 글은 금융 정보를 제공하며 특정 금융 상품을 추천하지 않아요. 자세한 조건은 카드사에 문의하세요." />
     </ArticleLayout>
   );

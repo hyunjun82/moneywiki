@@ -47,7 +47,7 @@ const RELATED = [
   {
     "slug": "아동수당-지역사랑상품권-지급",
     "title": "아동수당 상품권 지급",
-    "desc": "아동수당이 상품권으로 나오는 지역이 있어요."
+    "description": "아동수당이 상품권으로 나오는 지역이 있어요."
   }
 ];
 
@@ -82,7 +82,7 @@ export default function Page() {
       <p style={body}>
         여기서 중요한 내용을 짚어볼게요.
       </p>
-      <Steps steps={[{"title":"잔액 확인","desc":"문화누리 홈페이지 또는 ARS 1544-3412로 확인해요."},{"title":"재발급","desc":"카드 분실 시 주민센터에서 재발급 신청해요.","tip":"신분증 지참 필요"}]} />
+      <Steps steps={[{"title":"잔액 확인","description":"문화누리 홈페이지 또는 ARS 1544-3412로 확인해요."},{"title":"재발급","description":"카드 분실 시 주민센터에서 재발급 신청해요.","tip":"신분증 지참 필요"}]} />
       <Divider />
 
       <H2>자주 묻는 것들</H2>

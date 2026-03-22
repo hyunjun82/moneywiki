@@ -129,7 +129,7 @@ export default function Page() {
       </GreenBox>
 
       <Divider />
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       <H2>보장기금 신청, 이 순서대로 해요</H2>
       <p style={body}>

@@ -124,7 +124,7 @@ export default function Page() {
       <Steps steps={PREVENT_STEPS} />
 
       <Divider />
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       <RelatedArticles items={RELATED} />
 

@@ -126,7 +126,7 @@ export default function Page() {
 
       <FAQ items={FAQS} />
       <Divider />
-      <RelatedArticles articles={RELATED} />
+      <RelatedArticles items={RELATED} />
       <References groups={REFERENCES} />
       <Disclaimer text="이 글은 2026년 3월 기준 자동차손해배상보장법 및 자동차손해배상진흥원 공개 자료를 바탕으로 작성했어요. 보상 한도와 절차는 법 개정에 따라 변동될 수 있어요." />
     </ArticleLayout>

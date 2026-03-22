@@ -120,7 +120,7 @@ export default function Page() {
       </BorderBox>
 
       <Divider />
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       <H2>자주 묻는 질문</H2>
       <p style={{ ...body, marginBottom: 14 }}>임신 중 단축근무에 대해 많이 궁금해하는 것들이에요.</p>

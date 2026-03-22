@@ -169,7 +169,7 @@ export default function Page() {
       <Checklist items={CHECKLIST} />
 
       <Divider />
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       <RelatedArticles items={RELATED} />
 

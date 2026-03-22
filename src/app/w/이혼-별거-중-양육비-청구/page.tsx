@@ -129,7 +129,7 @@ export default function Page() {
 
       <FAQ items={FAQS} />
       <Divider />
-      <RelatedArticles articles={RELATED} />
+      <RelatedArticles items={RELATED} />
       <References groups={REFERENCES} />
       <Disclaimer text="이 글은 2026년 3월 기준 가사소송법 및 찾기쉬운 생활법령정보를 바탕으로 작성했어요. 개별 사건의 양육비 금액은 법원 판단에 따라 달라지니 법률 전문가 상담을 권장해요." />
     </ArticleLayout>

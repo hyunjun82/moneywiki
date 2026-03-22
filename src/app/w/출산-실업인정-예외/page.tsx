@@ -116,7 +116,7 @@ export default function Page() {
 
       <FAQ items={FAQS} />
       <Divider />
-      <RelatedArticles articles={RELATED} />
+      <RelatedArticles items={RELATED} />
       <References groups={REFERENCES} />
       <Disclaimer text="이 글은 2026년 3월 기준 고용보험법 및 고용24 공개 자료를 바탕으로 작성했어요. 개별 수급 조건은 관할 고용센터에서 최종 확인하세요." />
     </ArticleLayout>

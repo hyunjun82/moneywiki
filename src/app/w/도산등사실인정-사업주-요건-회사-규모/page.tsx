@@ -137,7 +137,7 @@ export default function Page() {
       </p>
 
       <Divider />
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       <H2>신청부터 대지급금 수령까지 5단계예요</H2>
       <p style={body}>
@@ -154,7 +154,7 @@ export default function Page() {
 
       <FAQ items={FAQS} />
       <Divider />
-      <SourceNote items={SOURCES} />
+      <SourceNote sources={SOURCES} />
       <Disclaimer text="이 글은 노동법 정보를 제공하며 법률 자문이 아니에요. 구체적인 사안은 고용노동부(1350)나 노무사와 상담하세요." />
     </ArticleLayout>
   );

@@ -139,7 +139,7 @@ export default function Page() {
       <Steps steps={CONSULT_STEPS} />
 
       <Divider />
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       <RelatedArticles items={RELATED} />
 

@@ -122,7 +122,7 @@ export default function Page() {
       </BorderBox>
 
       <Divider />
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       <H2>배당소득세 줄이는 방법</H2>
       <p style={body}>

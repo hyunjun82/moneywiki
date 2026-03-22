@@ -108,7 +108,7 @@ export default function Page() {
 
       <FAQ items={FAQS} />
       <Divider />
-      <RelatedArticles articles={RELATED} />
+      <RelatedArticles items={RELATED} />
       <References groups={REFERENCES} />
       <Disclaimer text="이 글은 2026년 3월 기준 기획재정부·정책브리핑 공개 자료를 바탕으로 작성했어요. 유류세 인하 기간은 정부 결정에 따라 변동될 수 있어요." />
     </ArticleLayout>

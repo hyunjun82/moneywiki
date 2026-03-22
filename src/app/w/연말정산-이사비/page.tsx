@@ -102,7 +102,7 @@ export default function Page() {
 
       <FAQ items={FAQS} />
       <Divider />
-      <RelatedArticles articles={RELATED} />
+      <RelatedArticles items={RELATED} />
       <References groups={REFERENCES} />
       <Disclaimer text="이 글은 2026년 3월 기준 소득세법 시행령 및 국세청 공개 자료를 바탕으로 작성했어요. 개별 비과세 적용 여부는 회사 경리팀이나 세무사에게 확인하세요." />
     </ArticleLayout>

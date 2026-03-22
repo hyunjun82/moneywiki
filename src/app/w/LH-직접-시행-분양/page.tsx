@@ -155,7 +155,7 @@ export default function Page() {
       </p>
 
       <Divider />
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       <H2>지금부터 이렇게 준비하세요</H2>
       <p style={body}>
@@ -168,7 +168,7 @@ export default function Page() {
 
       <FAQ items={FAQS} />
       <Divider />
-      <SourceNote items={SOURCES} />
+      <SourceNote sources={SOURCES} />
       <Disclaimer text="이 글은 부동산 정보를 제공하며 투자 권유가 아니에요. 정확한 분양 일정은 LH 공식 발표를 참고하세요." />
     </ArticleLayout>
   );

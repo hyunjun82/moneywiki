@@ -158,7 +158,7 @@ export default function Page() {
       </p>
 
       <Divider />
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       <H2>신청은 이렇게 하세요</H2>
       <p style={body}>
@@ -171,7 +171,7 @@ export default function Page() {
 
       <FAQ items={FAQS} />
       <Divider />
-      <SourceNote items={SOURCES} />
+      <SourceNote sources={SOURCES} />
       <Disclaimer text="이 글은 고용보험 정보를 제공하며 법률 자문이 아니에요. 정확한 수급 자격은 고용24 또는 고용센터(1350)에 문의하세요." />
     </ArticleLayout>
   );

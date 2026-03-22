@@ -122,7 +122,7 @@ export default function Page() {
       </p>
 
       <Divider />
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       <H2>연말정산 전 이것만 챙기세요</H2>
       <p style={body}>

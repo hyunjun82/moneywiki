@@ -96,7 +96,7 @@ export default function Page() {
       </BorderBox>
 
       <Divider />
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       <H2>이렇게 쓰면 안전해요</H2>
       <p style={body}>

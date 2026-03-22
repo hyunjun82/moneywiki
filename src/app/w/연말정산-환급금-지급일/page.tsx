@@ -126,7 +126,7 @@ export default function Page() {
       </BorderBox>
 
       <Divider />
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       <RelatedArticles items={RELATED} />
 

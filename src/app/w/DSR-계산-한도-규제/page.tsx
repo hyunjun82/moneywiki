@@ -104,7 +104,7 @@ export default function Page() {
       </p>
 
       <Divider />
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       <H2>DSR에서 빠지는 항목이 있어요</H2>
       <p style={body}>
