@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    cpus: 1,
+  },
+  staticPageGenerationTimeout: 600,
   // 이미지 최적화
   images: {
     formats: ["image/avif", "image/webp"],
