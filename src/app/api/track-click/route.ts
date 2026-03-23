@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { NextRequest, NextResponse } from "next/server";
 import { recordAdClick, blockIP, isBlocked, CLICK_LIMIT } from "@/lib/redis";
 
