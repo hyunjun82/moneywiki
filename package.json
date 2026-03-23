@@ -9,7 +9,8 @@
     "quality": "node scripts/verify-quality.js",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prebuild": "echo skip"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
