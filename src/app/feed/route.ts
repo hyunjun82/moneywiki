@@ -1,4 +1,4 @@
-export const runtime = 'edge';
+export const dynamic = 'force-static';
 import { getAllWikiDocuments } from "@/lib/wiki";
 
 export async function GET() {
