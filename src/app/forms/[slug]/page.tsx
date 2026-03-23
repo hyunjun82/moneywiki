@@ -1,5 +1,4 @@
-export const runtime = 'edge';
-export const dynamic = 'force-dynamic';
+export const dynamic = 'force-static';
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -279,6 +278,10 @@ import AdSense, { AD_SLOTS } from "@/components/AdSense";
 import ShareButtons from "@/components/ShareButtons";
 import { getAllFormSlugs, getFormData, FormData } from "@/lib/forms-loader";
 
+
+export async function generateStaticParams() {
+    return getAllFormSlugs().map((slug) => ({ slug }));
+}
 // 프리뷰 데이터 매핑 (previewDataKey -> 실제 데이터)
 const PREVIEW_DATA_MAP: Record<string, typeof 표준근로계약서_DATA> = {
   "표준근로계약서_DATA": 표준근로계약서_DATA,
