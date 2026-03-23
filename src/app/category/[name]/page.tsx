@@ -1,5 +1,4 @@
-export const runtime = 'edge';
-export const dynamic = 'force-dynamic';
+export const dynamic = 'force-static';
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -7,6 +6,12 @@ import { getAllWikiDocuments } from "@/lib/wiki";
 
 interface PageProps {
   params: Promise<{ name: string }>;
+}
+
+export async function generateStaticParams() {
+    const docs = getAllWikiDocuments();
+    const categories = new Set(docs.flatMap((doc) => doc.categories || []));
+    return Array.from(categories).map((name) => ({ name: encodeURIComponent(name) }));
 }
 
 
