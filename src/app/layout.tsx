@@ -83,7 +83,13 @@ export default function RootLayout({
   return (
     <html lang="ko" className={inter.variable}>
       <head>
-        {/* Google AdSense - lazyOnload로 변경하여 LCP 개선 */}
+        {/* Google AdSense — 자동광고(사이드레일/앵커/비네트) 비활성화, 수동 배치만 사용 */}
+        <Script id="adsense-disable-auto" strategy="beforeInteractive">
+          {`(window.adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-2442517902625121",
+            enable_page_level_ads: false
+          });`}
+        </Script>
         <Script
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2442517902625121"
           crossOrigin="anonymous"
