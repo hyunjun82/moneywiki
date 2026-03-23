@@ -144,7 +144,7 @@ export default function Page() {
 
       <RelatedArticles items={RELATED} />
 
-      <ArticleAd position="middle" />
+      <ArticleAd position="mid" />
 
       {/* ── 섹션 3: 거부 방법 절차 ── */}
       <H2>이혼 거부, 구체적으로 어떻게 하나요?</H2>
