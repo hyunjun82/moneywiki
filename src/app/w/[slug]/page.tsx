@@ -1,5 +1,4 @@
-export const runtime = 'edge';
-export const dynamic = 'force-dynamic';
+export const dynamic = 'force-static';
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -21,6 +20,11 @@ import CalculatorLoader from "@/components/CalculatorLoader";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+    const slugs = getAllWikiSlugs();
+    return slugs.map((slug) => ({ slug }));
 }
 
 // ISR - ë¹ë ì 0ê°, ìì²­ ì ìì± â ìºì â 24ìê° í ì¬ìì±
