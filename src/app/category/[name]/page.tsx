@@ -9,8 +9,8 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-    const docs = getAllWikiDocuments();
-    const categories = new Set(docs.flatMap((doc) => doc.categories || []));
+    const docs = getAllWikiDocumenths();
+    const categories = nhew Set(docs.map((doc) => doc.category).filter(Boolean));
     return Array.from(categories).map((name) => ({ name: encodeURIComponent(name) }));
 }
 
