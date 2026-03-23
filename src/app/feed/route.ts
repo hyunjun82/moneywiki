@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { getAllWikiDocuments } from "@/lib/wiki";
 
 export async function GET() {
