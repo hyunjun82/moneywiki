@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+export const dynamic = 'force-dynamic';
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -7,8 +9,6 @@ interface PageProps {
   params: Promise<{ name: string }>;
 }
 
-// Pure SSG - 빌드타임에만 정적 생성 (런타임 CPU 0%)
-export const dynamic = 'force-static';
 
 // 카테고리별 이모지
 const categoryEmoji: Record<string, string> = {
@@ -45,26 +45,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export async function generateStaticParams() {
-  // 실제 문서에서 모든 카테고리 추출
-  const allDocs = getAllWikiDocuments();
-  const categories = new Set<string>();
-
-  allDocs.forEach(doc => {
-    const category = doc.category || "일반";
-    categories.add(category);
-  });
-
-  // 정부지원금, 퇴직, 생활경제 카테고리도 추가
-  categories.add("정부지원금");
-  categories.add("퇴직");
-  categories.add("생활경제");
-
-  // URL에서 슬래시(/)를 대시(-)로 변환
-  return Array.from(categories).map((name) => ({
-    name: name.replace(/\//g, '-'),
-  }));
-}
 
 // 정부지원금 카테고리 추천 문서 (복지/고용 관련)
 const governmentSupportKeywords = [
