@@ -1,9 +1,9 @@
+export const runtime = 'edge';
+export const dynamic = 'force-dynamic';
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-// Pure SSG - 빌드타임에만 정적 생성 (런타임 CPU 0%)
-export const dynamic = 'force-static';
 
 import FormPreview, {
   표준근로계약서_DATA,
@@ -606,13 +606,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: form.description,
     },
   };
-}
-
-export async function generateStaticParams() {
-  const slugs = getAllFormSlugs();
-  return slugs.map((slug) => ({
-    slug: slug,
-  }));
 }
 
 export default async function FormDownloadPage({ params }: PageProps) {
