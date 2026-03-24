@@ -29,19 +29,20 @@ const STEPS = [
   { title: "신청 완료 확인", desc: "접수번호가 나오면 신청이 끝난 거예요. 심사는 보통 14일 이내에 완료되고, 결과는 문자로 와요." },
 ];
 
-const DOCS = [
-  { doc: "신청자 신분증", desc: "주민등록증·운전면허증·여권 중 하나. 온라인 신청 시 본인인증으로 대체돼요." },
-  { doc: "아동 기준 가족관계증명서", desc: "대법원 전자가족관계등록시스템에서 무료 발급. 출생신고 시 자동 생성돼요." },
-  { doc: "보호자 명의 통장 사본", desc: "입금받을 계좌. 온라인 신청 시 계좌번호 입력으로 대체 가능해요." },
+const DOC_HEADERS = ["서류", "설명", "비고"];
+const DOC_ROWS = [
+  ["신청자 신분증", "주민등록증·운전면허증·여권 중 하나", "온라인 시 본인인증 대체"],
+  ["가족관계증명서", "아동 기준으로 발급", "전자가족관계등록시스템 무료"],
+  ["보호자 명의 통장 사본", "입금받을 계좌 확인용", "온라인 시 계좌번호 입력 대체"],
 ];
 
 const CHECK_ITEMS = [
-  { id: "c1", label: "아이가 만 8세(2026년부터 만 9세 미만)인지 확인했어요" },
-  { id: "c2", label: "주민등록상 주소와 실거주지가 같아요" },
-  { id: "c3", label: "보호자 명의 계좌를 준비했어요 (아이 명의 불가)" },
-  { id: "c4", label: "출생 후 60일이 지나지 않았어요 (소급 대상)" },
-  { id: "c5", label: "복지로 또는 정부24 회원가입이 돼 있어요" },
-  { id: "c6", label: "공동인증서나 간편인증 수단이 있어요" },
+  "아이가 만 8세(2026년부터 만 9세 미만)인지 확인했어요",
+  "주민등록상 주소와 실거주지가 같아요",
+  "보호자 명의 계좌를 준비했어요 (아이 명의 불가)",
+  "출생 후 60일이 지나지 않았어요 (소급 대상)",
+  "복지로 또는 정부24 회원가입이 돼 있어요",
+  "공동인증서나 간편인증 수단이 있어요",
 ];
 
 const FAQ_ITEMS = [
@@ -54,10 +55,12 @@ const FAQ_ITEMS = [
 ];
 
 const REFS = [
-  { title: "아동수당법", url: "https://www.law.go.kr/법령/아동수당법" },
-  { title: "복지로 아동수당 신청", url: "https://www.bokjiro.go.kr" },
-  { title: "정부24 아동수당 안내", url: "https://www.gov.kr" },
-  { title: "보건복지부 아동수당 안내", url: "https://www.mohw.go.kr" },
+  { category: "출처", items: [
+    { label: "아동수당법", url: "https://www.law.go.kr/법령/아동수당법" },
+    { label: "복지로 아동수당 신청", url: "https://www.bokjiro.go.kr" },
+    { label: "정부24 아동수당 안내", url: "https://www.gov.kr" },
+    { label: "보건복지부 아동수당 안내", url: "https://www.mohw.go.kr" },
+  ]},
 ];
 
 // ─── 본문 ──────────────────────────────────────────
@@ -75,7 +78,7 @@ export default function Page() {
     >
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>복지 · 아동수당 · 신청</p>
 
-        <ArticleAd />
+        <ArticleAd position="intro" />
 
         <p style={body}>
           아이가 태어나면 할 일이 한두 가지가 아니에요.
@@ -109,7 +112,7 @@ export default function Page() {
           주민센터 방문 신청도 가능한데, 평일 오전 9시~오후 6시만 되고 대기 시간이 있어요.
         </p>
 
-        <ArticleAd />
+        <ArticleAd position="mid" />
 
         <Divider />
 
@@ -122,7 +125,7 @@ export default function Page() {
           <a href="https://efamily.scourt.go.kr" target="_blank" rel="noopener noreferrer" style={{ color: "#1D9E75" }}>대법원 전자가족관계등록시스템</a>에서
           가족관계증명서는 무료로 발급받을 수 있어요.
         </p>
-        <DocTable docs={DOCS} />
+        <DocTable headers={DOC_HEADERS} rows={DOC_ROWS} />
 
         <Divider />
 
@@ -160,11 +163,11 @@ export default function Page() {
 
         <FAQ items={FAQ_ITEMS} />
 
-        <References items={REFS} />
+        <References groups={REFS} />
 
-        <ArticleAd />
+        <ArticleAd position="mid" />
 
-        <Disclaimer />
+        <Disclaimer text="이 글은 2026년 3월 기준 아동수당법에 따라 작성됐어요. 최신 정보는 복지로 또는 주민센터에서 확인하세요." />
     </ArticleLayout>
   );
 }
