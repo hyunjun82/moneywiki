@@ -74,6 +74,7 @@ export default function Page() {
       sidebar={<Sidebar heading="아동수당 가이드" items={SIDEBAR_ITEMS} currentSlug="아동수당-신청방법" />}
     >
       <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>복지 · 아동수당 · 신청</p>
+
         <ArticleAd />
 
         <p style={body}>
@@ -164,7 +165,6 @@ export default function Page() {
         <ArticleAd />
 
         <Disclaimer />
-      </article>
     </ArticleLayout>
   );
 }
