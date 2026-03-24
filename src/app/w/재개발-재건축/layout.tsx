@@ -1,4 +1,3 @@
-export const dynamic = "force-dynamic";
 import type { Metadata } from "next";
 export const dynamic = "force-static";
 export const metadata: Metadata = {

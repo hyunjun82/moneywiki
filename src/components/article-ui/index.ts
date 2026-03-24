@@ -29,6 +29,8 @@ export type { RelatedItem } from "./RelatedArticles";
 
 // 광고
 export { ArticleAd } from "./ArticleAd";
+export { InArticleAd } from "./InArticleAd";
+export { MobileAnchorAd } from "./MobileAnchorAd";
 
 // 글 하단
 export { FAQ } from "./FAQ";
