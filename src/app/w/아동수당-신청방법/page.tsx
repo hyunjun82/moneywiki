@@ -3,7 +3,7 @@
 import {
   H2, GreenBox, Divider, body,
   Steps, DocTable, Checklist, FAQ, References, Disclaimer,
-  ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd, InArticleAd,
+  ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
 } from "@/components/article-ui";
 
 // ─── Q1-Q4 MAP ──────────────────────────────────────────
@@ -110,7 +110,7 @@ export default function Page() {
           주민센터 방문 신청도 가능한데, 평일 오전 9시~오후 6시만 되고 대기 시간이 있어요.
         </p>
 
-        <InArticleAd />
+        <ArticleAd />
 
         <Divider />
 
