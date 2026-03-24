@@ -3,91 +3,66 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getAllWikiDocuments } from "@/lib/wiki";
+import { categories, CATEGORY_MIGRATION_MAP } from "@/data/categories";
 
 interface PageProps {
   params: Promise<{ name: string }>;
 }
 
 export async function generateStaticParams() {
-    const docs = getAllWikiDocuments();
-    const categories = new Set(docs.map((doc) => doc.category).filter(Boolean));
-        return Array.from(categories).map((name) => ({ name }));
+  return categories.map((cat) => ({ name: cat.slug }));
 }
-
 
 // 카테고리별 이모지
 const categoryEmoji: Record<string, string> = {
-  "정부지원금": "💰",
-  "연말정산": "📊",
-  "실업급여": "📋",
-  "퇴직금": "💵",
-  "퇴직연금": "🏦",
   "부동산": "🏠",
-  "세금": "💰",
-  "경제": "📈",
-  "금융": "💳",
-  "급여": "💼",
-  "고용": "🤝",
   "근로": "👔",
+  "세금": "🧾",
+  "금융": "💳",
+  "실업급여": "📋",
+  "복지": "🤝",
   "법률": "⚖️",
-  "정책": "📜",
-  "노동": "🔧",
-  "연금": "👴",
-  "투자": "📉",
-  "양식·서식": "📥",
-  "일반": "📄",
   "퇴직": "💼",
-  "생활경제": "🏪",
+  "생활경제": "🛒",
+  "보험": "🛡️",
+  "교육": "📚",
+  "창업": "🚀",
 };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { name } = await params;
-  const categoryName = decodeURIComponent(name);
+  const slug = decodeURIComponent(name);
+  const cat = categories.find((c) => c.slug === slug);
+  const displayName = cat?.name || slug;
 
   return {
-    title: `${categoryName} - 머니위키`,
-    description: `${categoryName} 관련 문서 모음. 머니위키에서 쉽고 정확하게 찾아보세요.`,
+    title: `${displayName} - 머니위키`,
+    description: cat?.description || `${displayName} 관련 문서 모음. 머니위키에서 쉽고 정확하게 찾아보세요.`,
   };
 }
 
-
-// 정부지원금 카테고리 추천 문서 (복지/고용 관련)
-const governmentSupportKeywords = [
-  "지원금", "보조금", "급여", "수당", "혜택", "지원", "장려금", "청년", "출산", "육아",
-  "복지", "실업", "고용", "근로장려", "자녀장려", "긴급", "소득", "저소득"
-];
-
 export default async function CategoryPage({ params }: PageProps) {
   const { name } = await params;
-  // URL에서 대시(-)를 슬래시(/)로 변환
-  const categoryName = decodeURIComponent(name).replace(/-/g, '/');
+  const slug = decodeURIComponent(name);
+  const catInfo = categories.find((c) => c.slug === slug);
+  if (!catInfo) notFound();
+
   const allDocs = getAllWikiDocuments();
 
-  let docs = allDocs.filter(doc => (doc.category || "일반") === categoryName);
-
-  // 정부지원금 카테고리: 문서가 없으면 복지/고용 관련 문서 자동 추천
-  if (categoryName === "정부지원금" && docs.length === 0) {
-    docs = allDocs.filter(doc =>
-      governmentSupportKeywords.some(keyword =>
-        doc.title.includes(keyword) || doc.slug.includes(keyword)
-      )
-    ).slice(0, 30);
+  // CATEGORY_MIGRATION_MAP에서 이 슬러그로 매핑되는 모든 원본 카테고리 값 수집
+  const mappedToThisSlug = new Set<string>();
+  mappedToThisSlug.add(slug);
+  for (const [original, mapped] of Object.entries(CATEGORY_MIGRATION_MAP)) {
+    if (mapped === slug) {
+      mappedToThisSlug.add(original);
+    }
   }
 
-  // 퇴직 카테고리: 퇴직 관련 문서 자동 추천
-  if (categoryName === "퇴직" && docs.length === 0) {
-    docs = allDocs.filter(doc =>
-      doc.title.includes("퇴직") || doc.slug.includes("퇴직")
-    ).slice(0, 30);
-  }
+  const docs = allDocs
+    .filter((doc) => mappedToThisSlug.has(doc.category || "일반"))
+    .sort((a, b) => a.title.localeCompare(b.title, "ko"));
 
-  // 정부지원금·퇴직·생활경제 외 카테고리: 문서 없으면 404
-  if (docs.length === 0 && !["정부지원금", "퇴직", "생활경제"].includes(categoryName)) {
-    notFound();
-  }
-
-  // 가나다순 정렬
-  const sortedDocs = docs.sort((a, b) => a.title.localeCompare(b.title, 'ko'));
+  const displayName = catInfo.name;
 
   return (
     <main className="max-w-5xl mx-auto px-6 py-12">
@@ -97,38 +72,18 @@ export default async function CategoryPage({ params }: PageProps) {
           ← 홈으로
         </Link>
         <div className="flex items-center gap-3">
-          <span className="text-3xl">{categoryEmoji[categoryName] || "📄"}</span>
+          <span className="text-3xl">{categoryEmoji[slug] || "📄"}</span>
           <div>
-            <h1 className="text-2xl font-bold">{categoryName}</h1>
+            <h1 className="text-2xl font-bold">{displayName}</h1>
             <p className="text-neutral-500">{docs.length}개 문서</p>
           </div>
         </div>
       </div>
 
-      {/* 정부지원금 특별 안내 */}
-      {categoryName === "정부지원금" && (
-        <div className="mb-8 p-6 bg-gradient-to-br from-yellow-50 to-yellow-100 border-2 border-yellow-300 rounded-xl">
-          <h2 id="gov-support" className="text-lg font-bold text-gray-900 mb-2">💰 숨은 정부지원금 찾기</h2>
-          <p className="text-sm text-gray-700 mb-4">
-            청년 지원금, 출산 혜택, 근로장려금 등 내가 받을 수 있는 정부 지원금을 확인하세요.
-          </p>
-          <div className="flex flex-wrap gap-2">
-            <a href="https://www.gov.kr" target="_blank" rel="noopener noreferrer"
-               className="px-4 py-2 bg-[#1E3A5F] text-white text-sm font-medium rounded-lg hover:bg-[#162F4F] transition-colors">
-              정부24 바로가기 →
-            </a>
-            <a href="https://www.bokjiro.go.kr" target="_blank" rel="noopener noreferrer"
-               className="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors">
-              복지로 바로가기 →
-            </a>
-          </div>
-        </div>
-      )}
-
       {/* 문서 목록 */}
       {docs.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {sortedDocs.map((doc) => (
+          {docs.map((doc) => (
             <Link
               key={doc.slug}
               href={`/w/${encodeURIComponent(doc.slug)}`}
