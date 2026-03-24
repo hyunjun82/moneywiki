@@ -3,7 +3,7 @@
 import {
   H2, GreenBox, Divider, body,
   Steps, DocTable, Checklist, FAQ, References, Disclaimer,
-  ArticleLayout, Sidebar, CategoryButton, RelatedArticles, ArticleAd,
+  ArticleLayout, Sidebar, ArticleAd,
 } from "@/components/article-ui";
 
 // ─── Q1-Q4 MAP ──────────────────────────────────────────
@@ -62,20 +62,18 @@ const REFS = [
 
 // ─── 본문 ──────────────────────────────────────────
 
+const SIDEBAR_ITEMS = [
+  { slug: "아동수당", title: "아동수당 총정리" },
+  { slug: "아동수당-신청방법", title: "아동수당 신청방법" },
+  { slug: "부모급여", title: "부모급여 지급 기준" },
+];
+
 export default function Page() {
   return (
-    <ArticleLayout>
-      <Sidebar>
-        <CategoryButton category="복지" />
-        <RelatedArticles
-          links={[
-            { title: "아동수당 총정리", href: "/w/아동수당" },
-            { title: "부모급여 지급 기준과 신청법", href: "/w/부모급여" },
-          ]}
-        />
-      </Sidebar>
-
-      <article>
+    <ArticleLayout
+      sidebar={<Sidebar heading="아동수당 가이드" items={SIDEBAR_ITEMS} currentSlug="아동수당-신청방법" />}
+    >
+      <p style={{ fontSize: 13, color: "#1D9E75", fontWeight: 600, marginBottom: 10 }}>복지 · 아동수당 · 신청</p>
         <ArticleAd />
 
         <p style={body}>
