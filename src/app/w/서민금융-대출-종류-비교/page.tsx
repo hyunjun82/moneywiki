@@ -202,13 +202,13 @@ function ProductFinder() {
         ))}
       </div>
 
-      {situation && guides[situation] && (
+      {situation && guides[situation as keyof typeof guides] && (
         <div style={{ marginTop: 12, padding: "12px 16px", borderRadius: 8, background: GL, color: GD, fontSize: 13, lineHeight: 1.8 }}>
-          <strong style={{ display: "block", marginBottom: 6 }}>{guides[situation].title}</strong>
-          {guides[situation].recommendation}
+          <strong style={{ display: "block", marginBottom: 6 }}>{guides[situation as keyof typeof guides].title}</strong>
+          {guides[situation as keyof typeof guides].recommendation}
           <div style={{ marginTop: 10, paddingTop: 10, borderTop: `1px solid ${G}40` }}>
             <p style={{ fontSize: 11, color: "#0F6E56", margin: "5px 0", fontWeight: 600 }}>추천 상품:</p>
-            {guides[situation].products.map((prod, idx) => (
+            {guides[situation as keyof typeof guides].products.map((prod, idx) => (
               <div key={idx} style={{ fontSize: 12, color: "#0F6E56", marginLeft: 8 }}>• {prod}</div>
             ))}
           </div>
