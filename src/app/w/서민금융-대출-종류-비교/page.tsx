@@ -139,7 +139,7 @@ function ProductComparisonTable() {
 
 // 상품 선택 가이드 (EligibilityChecker 스타일)
 function ProductFinder() {
-  const [situation, setSituation] = useState<number | null>(null);
+  const [situation, setSituation] = useState<string | null>(null);
 
   const guides = {
     young: {
