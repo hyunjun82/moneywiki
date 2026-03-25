@@ -12,8 +12,7 @@ export const metadata: Metadata = {
   keywords: ["햇살론유스", "청년대출", "서민금융", "저금리대출", "신용불량대출"],
 };
 
-export const generateStaticParams = () => [{}];
-export const revalidate = 3600; // 1시간
+export const dynamic = "force-static";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return children;

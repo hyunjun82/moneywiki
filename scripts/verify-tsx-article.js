@@ -49,6 +49,25 @@ const src = fs.readFileSync(filePath, "utf8");
 const ERRORS = [];
 const WARNINGS = [];
 
+// ─── -1. 템플릿 구조 강제 검증 (빌드 실패 방지) ──────
+// article-ui import 감지 → 즉시 FAIL
+const articleUiImport = src.match(/import\s+\{[^}]+\}\s+from\s+["']@\/components\/article-ui[^"']*["']/g);
+if (articleUiImport) {
+  ERRORS.push(`❌ article-ui import 감지 → 빌드 에러 원인! → 파일 안에서 자체 정의해야 해요\n    발견: ${articleUiImport[0]}`);
+}
+// "use client" 확인
+if (!/^["']use client["']/.test(src)) {
+  ERRORS.push(`❌ "use client" 없음 → useState 빌드 에러`);
+}
+// Sidebar 자체 정의 확인 (article-ui Sidebar는 props 불일치)
+if (/import.*Sidebar.*from.*article-ui/.test(src)) {
+  ERRORS.push(`❌ article-ui Sidebar import → props 불일치 빌드 에러 → 자체 정의 필요`);
+}
+// ArticleLayout 사용 금지
+if (/import.*ArticleLayout.*from.*article-ui/.test(src)) {
+  ERRORS.push(`❌ ArticleLayout import → 자체 레이아웃으로 교체 필요`);
+}
+
 // ─── 0. Q1-Q4 필수 사고 + Q→구조 매핑 검증 ─────────
 const qComments = {
   q1: src.match(/\/\/\s*Q1[.:]?\s*(.+)/),

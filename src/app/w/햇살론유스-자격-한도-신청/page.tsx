@@ -10,10 +10,10 @@ import { useState } from "react";
 const G = "#1D9E75";
 const GL = "#E1F5EE";
 const GD = "#085041";
-const body = { fontSize: 14, color: "#374151", lineHeight: 2.1, marginBottom: "1rem" };
+const body = { fontSize: 14, color: "#374151", lineHeight: 2.1, marginBottom: "1rem" } as const;
 
 // 헤더, 제목
-function H2({ children }) {
+function H2({ children }: { children: React.ReactNode }) {
   return (
     <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111", borderLeft: `3px solid ${G}`, paddingLeft: 12, margin: "2rem 0 14px", lineHeight: 1.5 }}>
       {children}
@@ -21,7 +21,7 @@ function H2({ children }) {
   );
 }
 
-function Bdg({ children }) {
+function Bdg({ children }: { children: React.ReactNode }) {
   return (
     <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: GL, color: "#0F6E56", marginRight: 8 }}>
       {children}
@@ -29,7 +29,7 @@ function Bdg({ children }) {
   );
 }
 
-function GreenBox({ title, children }) {
+function GreenBox({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div style={{ background: GL, borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95, color: GD }}>
       <strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>
@@ -38,7 +38,7 @@ function GreenBox({ title, children }) {
   );
 }
 
-function BorderBox({ title, children }) {
+function BorderBox({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div style={{ border: "1px solid #9FE1CB", borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95 }}>
       <strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>
@@ -53,8 +53,8 @@ function Divider() {
 
 // 자격 체커
 function EligibilityChecker() {
-  const [checked, setChecked] = useState({});
-  const toggle = (id) => setChecked((p) => ({ ...p, [id]: !p[id] }));
+  const [checked, setChecked] = useState<Record<string, boolean>>({});
+  const toggle = (id: string) => setChecked((p: Record<string, boolean>) => ({ ...p, [id]: !p[id] }));
 
   const allPass =
     checked["age"] &&
@@ -261,7 +261,7 @@ function FAQ() {
     },
   ];
 
-  const [open, setOpen] = useState(null);
+  const [open, setOpen] = useState<number | null>(null);
 
   return (
     <div>

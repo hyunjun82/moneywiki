@@ -2,7 +2,7 @@
 const nextConfig = {
     output: 'export',
     experimental: {
-          cpus: 1,
+        cpus: 1,
     },
     staticPageGenerationTimeout: 600,
     images: {

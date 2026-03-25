@@ -7,6 +7,47 @@ allowed-tools: Read, Write, Edit, Grep, Glob, Bash(node scripts/*), WebFetch, We
 
 # 머니위키 글 작성 SKILL
 
+## ★★★ 템플릿 필수 사용 (최우선 규칙)
+
+**모든 글 작성 시 반드시 `TEMPLATE.tsx`를 먼저 읽고 그 구조를 100% 따른다.**
+
+```
+경로: .claude/skills/article-writing/TEMPLATE.tsx
+```
+
+### 왜? (2025.03 빌드 실패 10회+ 교훈)
+- article-ui 컴포넌트를 import하면 props 타입 불일치로 빌드 에러 발생
+- ArticleLayout, Sidebar, ArticleAd 등 공용 컴포넌트도 사용하면 에러 발생
+- 템플릿은 모든 UI를 파일 안에서 자체 정의 → 에러 원천 차단
+- **유일한 외부 import: `useState` from "react"** — 이것 외에 아무것도 import하지 않음
+
+### 템플릿 사용 절차
+1. `TEMPLATE.tsx`를 Read로 읽는다
+2. 파일 전체를 복사해서 `src/app/w/{slug}/page.tsx`로 만든다
+3. 최상단 `"use client"` 유지 확인
+4. 데이터 상수(FAQS, DOCS, STEPS, CHECKLIST 등)를 주제에 맞게 교체
+5. 본문 텍스트(h1, p, H2 섹션 내용)를 주제에 맞게 교체
+6. 사이드바(SIDEBAR_LINKS)와 허브링크(HUB_LINKS)를 카테고리에 맞게 교체
+7. export default 함수명을 주제에 맞게 변경 (예: AlimonyPage → ChildAllowancePage)
+8. layout.tsx는 템플릿 하단 주석의 형식대로 만든다 (metadata + force-static 필수)
+9. **article-ui에서 어떤 컴포넌트도 import하지 않는다** (H2, GreenBox, Steps, FAQ, References, Disclaimer, ArticleLayout, Sidebar, ArticleAd 전부 금지)
+
+### 빌드 실패 금지 사항 (절대 규칙)
+- `import { H2 } from "@/components/article-ui"` ← 이런 거 하면 빌드 터짐
+- `import { ArticleLayout } from "@/components/article-ui"` ← 이것도 터짐
+- `"use client"` 빠뜨리면 useState 에러로 빌드 터짐
+- layout.tsx 없으면 SEO metadata 없이 배포됨
+
+### 품질 기준 (양육비 글 = 최소 기준선)
+- H2당 최소 3~4문단 (1~2문장 섹션은 글이 아님)
+- 인터랙티브 요소(계산기/체커/체크리스트) 1개 이상
+- 출처: 법령·판례·공식자료 카테고리별 분류 (References 컴포넌트 사용)
+- FAQ: 실제 검색/상담 기반 5개 이상, 답변 3문장 이상
+- 사이드바: 카테고리 관련 글 링크 10개 이상
+- CTA: 글 하단에 행동 유도 블록 필수
+
+---
+
 ## 모드 분기
 
 ### 신규 모드 (`/article-writing 신규 [키워드]`)
