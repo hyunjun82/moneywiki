@@ -154,7 +154,7 @@ function Calculator() {
 // ─── 면제 조건 체커 ────────────────────────────────────────
 function ExemptionChecker() {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
-  const toggle = (id) => setChecked((p) => ({ ...p, [id]: !p[id] }));
+  const toggle = (id: string) => setChecked((p) => ({ ...p, [id]: !p[id] }));
   const passCount = Object.values(checked).filter(Boolean).length;
   return (
     <div style={{ margin: "10px 0 1.2rem" }}>

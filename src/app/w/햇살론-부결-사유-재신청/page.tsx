@@ -122,7 +122,7 @@ const ALTS = [
   }
 ];
 
-function RejectionReasonCard({ reason, index }) {
+function RejectionReasonCard({ reason, index }: { reason: typeof REJECTION_REASONS[number]; index: number }) {
   const [expanded, setExpanded] = useState(false);
   return (
     <div key={index} style={{ border: `1px solid #e5e7eb`, borderRadius: 10, padding: "16px 18px", marginBottom: 12, cursor: "pointer", background: expanded ? GL : "#f9fafb" }} onClick={() => setExpanded(!expanded)}>
@@ -149,7 +149,7 @@ function RejectionReasonCard({ reason, index }) {
   );
 }
 
-function AltCard({ alt }) {
+function AltCard({ alt }: { alt: typeof ALTS[number] }) {
   return (
     <div style={{ border: `1px solid #9FE1CB`, borderRadius: 10, padding: "18px 20px", marginBottom: 16, background: "#fff" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 10 }}>
@@ -192,7 +192,7 @@ function AltCard({ alt }) {
 
 function EligibilityChecker() {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
-  const toggle = (id) => setChecked((p) => ({ ...p, [id]: !p[id] }));
+  const toggle = (id: string) => setChecked((p) => ({ ...p, [id]: !p[id] }));
 
   const failCount = [
     checked.c1, // 신용점수 600 미만

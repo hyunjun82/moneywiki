@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     images: [{ url: "https://jjyu.co.kr/og-hatsalon.jpg" }],
   },
   robots: "index, follow",
-  canonical: `https://jjyu.co.kr/w/${slug}`,
+  alternates: { canonical: `https://jjyu.co.kr/w/${slug}` },
 };
 
 export const revalidate = 3600; // 1시간마다 재검증 (ISR)
