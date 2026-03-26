@@ -1,434 +1,397 @@
 "use client";
 import { useState } from "react";
 
-// Q1. 햇살론 신청했다가 부결 받은 직장인이 부결 사유를 이해하고 재신청 전략을 세움
-// Q2. 부결 사유 파악 → 신용개선/기대출 정리 → 재신청 준비 또는 대안 선택
-// Q3. 주요 5가지 부결 사유 + 재신청 타이밍 + 대안 상품 정보
-// Q4. EligibilityChecker(부결 위험도 자가진단) + H2 섹션별 상세 설명 + FAQ + References
+// ─── Q1-Q5 사고 ────────────────────────────────────────
+// Q1. ① 방금 부결 통보 받음(패닉) ② 왜 부결인지 모름 ③ 재신청 타이밍 궁금 ④ 대안 대출 찾는 중
+// Q2. 부결 사유 파악 → 해당 사유 개선 → 재신청 or 대안 상품 신청
+// Q3. 부결 사유 7가지, 사유별 개선법+타임라인, 재신청 시기, 대안 상품 4종
+// Q4. 계산할 숫자 없음 → Calculator 생략
+// Q5. UrgentBanner + RejectionDiagnosis(인터랙티브) + FAQ(아코디언) + HubLinks+CTA+Sidebar
+//     — Calculator ✕, EligibilityChecker ✕, ProcessSteps ✕, Checklist ✕
 
-const G = "#1D9E75";
-const GL = "#E1F5EE";
-const GD = "#085041";
-const body = { fontSize: 14, color: "#374151", lineHeight: 2.1, marginBottom: "1rem" };
-
-function Divider() {
-  return <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />;
-}
-
-function H2({ children }: { children: React.ReactNode }) {
-  return (
-    <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111", borderLeft: `3px solid ${G}`, paddingLeft: 12, margin: "0 0 14px", lineHeight: 1.5 }}>
-      {children}
-    </h2>
-  );
-}
-
-function Bdg({ children }: { children: React.ReactNode }) {
-  return <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: GL, color: "#0F6E56", marginBottom: 10 }}>{children}</span>;
-}
-
-function GreenBox({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div style={{ background: GL, borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95, color: GD }}>
-      <strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>
-      {children}
-    </div>
-  );
-}
-
-function BorderBox({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div style={{ border: "1px solid #9FE1CB", borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95 }}>
-      <strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>
-      {children}
-    </div>
-  );
-}
-
-const REJECTION_REASONS = [
-  {
-    title: "기대출 과다 (DSR 초과)",
-    icon: "📊",
-    desc: "월소득 대비 빌린 돈 비율이 너무 높아요.",
-    detail: "햇살론은 DSR(Debt Service Ratio) 기준을 엄격하게 봐요. 기존 대출금 + 햇살론 월상환액이 월소득의 40~50%를 넘으면 부결돼요. 직장인 대출자 대부분이 이 이유로 떨어져요.",
-    howToFix: "기존 대출을 일부 상환해서 월 부담을 낮추거나, 소득이 증가할 때까지 3~6개월 대기하세요."
-  },
-  {
-    title: "연체 이력 (최근 3년)",
-    icon: "⏰",
-    desc: "신용카드·대출금을 연체했거나 미납이 있어요.",
-    detail: "최근 3년 내 30일 이상 연체 기록이 있으면 부결될 확률이 매우 높아요. 그것도 여러 건이면 더 떨어질 가능성이 커요. 소액 미납(휴대폰료, 공과금 등)도 기록되므로 주의하세요.",
-    howToFix: "미납금을 모두 해소하고 3~6개월 이상 깨끗하게 관리한 후 재신청하세요. 신용점수가 회복되는 데 6개월~1년 걸릴 수 있어요."
-  },
-  {
-    title: "신용점수 미달",
-    icon: "🎯",
-    desc: "신용점수가 600점 이하예요.",
-    detail: "햇살론 심사 기준은 신용점수 600점 이상이에요. 600점 미만이면 자동으로 부결돼요. 서민금융진흥원이 발표하는 신용점수는 조회 시점마다 달라서, 300점 차이도 날 수 있어요.",
-    howToFix: "신용카드 연체 해소, 소액 미납 정리, 기존 대출 상환으로 신용점수를 올리세요. 6개월~1년의 신용 관리 후 재신청하면 통과 가능성이 높아져요."
-  },
-  {
-    title: "소득 증빙 불일치",
-    icon: "📋",
-    desc: "신청서에 적힌 소득과 실제 증빙 소득이 다르거나, 증빙이 부족해요.",
-    detail: "국세청 소득자료와 신청서 소득이 20% 이상 차이 나면 부결돼요. 또는 최근 1년 소득 증빙(원천징수영수증, 급여명세서 등)이 없으면 심사 대상에도 오르지 않아요.",
-    howToFix: "정확한 소득을 증빙하고, 최근 급여명세서 또는 연말정산영수증을 준비해서 재신청하세요."
-  },
-  {
-    title: "앱컷 또는 자동 탈락",
-    icon: "⚠️",
-    desc: "자동심사 단계에서 불합격 판정을 받았어요.",
-    detail: "햇살론 앱에서 신청하면 서류 제출 전 자동으로 심사돼요. 신용점수·기대출·연체 이력·소득 검증이 순간적으로 이루어져요. 이 단계에서 떨어지면 '앱컷'이라고 불러요. 앱컷은 서류 심사로 넘어가지 않아요.",
-    howToFix: "1~3개월 후 신용점수가 개선되면 재신청해보세요. 이번엔 일반 심사 단계까지 진행될 가능성이 높아져요."
-  }
-];
+// ─── 데이터 ──────────────────────────────────────────
+const REASONS = [
+  { id: "dti", title: "소득 대비 부채비율 과다 (DSR)", desc: "월소득 대비 기존 대출 상환액이 40~50%를 넘으면 부결돼요.",
+    fixes: ["기존 대출 일부 상환으로 월 부담 줄이기", "소득 증빙자료 재확인 (최근 3~6개월 급여명세)", "고금리 카드론 → 저금리 갈아타기로 DSR 낮추기"],
+    timeline: "부채 감소 후 1~2개월", action: "상환 계획 수립 → 1~2개월 부채 감소 → 재신청" },
+  { id: "delinquency", title: "연체 기록 (90일+ or 3개월 내 30일+)", desc: "최근 연체 기록이 있으면 자동 부결이에요. 소액 미납도 포함돼요.",
+    fixes: ["현재 연체 중인 금액 즉시 상환", "신용카드 결제 자동이체 설정", "통신료·공과금 미납 해소", "신용정보조회로 정확한 기록 확인"],
+    timeline: "연체 해결 후 3~6개월", action: "전액 상환 → 3개월 이상 깨끗한 기록 → 재신청" },
+  { id: "credit", title: "신용점수 부족 (NICE 600점 미만)", desc: "600점 미만이면 앱컷 단계에서 자동 탈락돼요.",
+    fixes: ["신용카드 소액 사용 + 제때 결제 (실적 쌓기)", "휴면 카드 활성화로 신용 이력 늘리기", "기존 대출 조기 상환", "신용정보 오류 있으면 이의신청 (10~15일 소요)"],
+    timeline: "신용 관리 3~6개월 이상", action: "카드 깔끔 사용 3~6개월 → 50~100점 상승 → 재신청" },
+  { id: "card", title: "최근 신용카드 발급", desc: "1~2개월 내 카드를 만들었으면 신용도 평가와 겹쳐서 부결돼요.",
+    fixes: ["카드 발급 후 최소 2~3개월 대기", "그 사이 소액 결제 3~4회로 실사용 기록 만들기", "불필요한 카드 추가 발급 자제"],
+    timeline: "카드 발급 후 2~3개월", action: "3개월 대기 → 실사용 기록 쌓기 → 재신청" },
+  { id: "loan", title: "최근 1~2개월 내 다른 대출", desc: "새 대출 기록이 신용도를 일시적으로 떨어뜨려요.",
+    fixes: ["새 대출 기록이 3개월 경과하도록 대기", "1~2개월간 건강한 상환 실적 만들기", "재신청 전 신용조회 1회만으로 제한"],
+    timeline: "대출 후 2~3개월", action: "3개월 건강 상환 → 신용도 회복 → 재신청" },
+  { id: "docs", title: "서류 미비·소득 불일치", desc: "증빙 서류가 부족하거나 신청서 소득과 실제 소득이 20% 이상 다르면 부결돼요.",
+    fixes: ["워크넷 구직신청 (일용직·구직자용 소득 증빙)", "최근 3~6개월 급여명세서 전부 준비", "자영업자: 사업자등록증 + 소득금액증명원", "홈택스 소득과 신청서 소득 일치 확인"],
+    timeline: "서류 준비 후 즉시", action: "서류 재준비 → 정확성 확인 → 바로 재신청 가능" },
+  { id: "guarantee", title: "보증한도 초과", desc: "신용보증기금의 누적 보증 한도를 초과하면 추가 보증이 안 돼요.",
+    fixes: ["보증재단 홈페이지에서 누적 보증금 조회", "기존 보증대출 상환으로 한도 확보", "다른 보증기관(기술보증기금) 활용 검토"],
+    timeline: "기존 대출 상환 후 1~2주", action: "보증한도 확인 → 기존 대출 상환 → 한도 확보 후 재신청" },
+] as const;
 
 const ALTS = [
-  {
-    name: "햇살론 특례보증",
-    badge: "같은 상품, 덜 까다로워요",
-    rate: "4.1~9.9%",
-    amount: "최대 2,000만원",
-    pros: ["신용점수 600점 미만도 가능", "기대출 1,500만원 이하면 심사 유리", "부결 받은 지 1개월 후 재신청 가능"],
-    cons: ["보증료 있음 (1.5~2.5%)", "햇살론보다 금리 더 높을 수 있음"],
-    link: "https://www.kinfa.or.kr"
-  },
-  {
-    name: "불법사금융예방대출",
-    badge: "최후의 선택",
-    rate: "12.0~20.0%",
-    amount: "최대 1,000만원",
-    pros: ["신용점수 관계없음", "아무 신용정보도 조회 안 함", "부결 경험자도 대출 가능"],
-    cons: ["금리가 매우 높음", "이 상품 이용 자체가 신용이력에 남음", "단기 어려움 극복용만 권장"],
-    link: "https://www.kinfa.or.kr/illicit"
-  },
-  {
-    name: "미소금융",
-    badge: "저신용자 전용",
-    rate: "2.0~6.0%",
-    amount: "최대 2,000만원",
-    pros: ["금리 매우 낮음", "신용점수 500점대도 가능", "창업·사업자금으로도 쓸 수 있음"],
-    cons: ["심사 기간 1~2주 걸림", "사업 목적이어야 함"],
-    link: "https://www.kinfa.or.kr/micro"
-  },
-  {
-    name: "새희망홀씨",
-    badge: "보증금 필요",
-    rate: "4.5~7.5%",
-    amount: "최대 1,000만원",
-    pros: ["햇살론보다 기준 더 관대함", "금리 낮은 편", "신용회복 중인 사람도 가능"],
-    cons: ["담보 필요 (부동산/보험 등)", "신청 자격 제한 있음"],
-    link: "https://www.kinfa.or.kr/newhope"
-  }
-];
-
-function RejectionReasonCard({ reason, index }: { reason: typeof REJECTION_REASONS[number]; index: number }) {
-  const [expanded, setExpanded] = useState(false);
-  return (
-    <div key={index} style={{ border: `1px solid #e5e7eb`, borderRadius: 10, padding: "16px 18px", marginBottom: 12, cursor: "pointer", background: expanded ? GL : "#f9fafb" }} onClick={() => setExpanded(!expanded)}>
-      <div style={{ display: "flex", alignItems: "center", gap: 12, justifyContent: "space-between" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <span style={{ fontSize: 20 }}>{reason.icon}</span>
-          <div>
-            <div style={{ fontSize: 14, fontWeight: 700, color: "#111", marginBottom: 2 }}>{reason.title}</div>
-            <div style={{ fontSize: 13, color: "#6b7280" }}>{reason.desc}</div>
-          </div>
-        </div>
-        <span style={{ fontSize: 18, color: G, flexShrink: 0 }}>{expanded ? "−" : "+"}</span>
-      </div>
-      {expanded && (
-        <>
-          <Divider />
-          <p style={body}>{reason.detail}</p>
-          <GreenBox title="어떻게 해야 하나요?">
-            {reason.howToFix}
-          </GreenBox>
-        </>
-      )}
-    </div>
-  );
-}
-
-function AltCard({ alt }: { alt: typeof ALTS[number] }) {
-  return (
-    <div style={{ border: `1px solid #9FE1CB`, borderRadius: 10, padding: "18px 20px", marginBottom: 16, background: "#fff" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 10 }}>
-        <div>
-          <h3 style={{ fontSize: 15, fontWeight: 700, color: "#111", margin: "0 0 6px" }}>{alt.name}</h3>
-          <Bdg>{alt.badge}</Bdg>
-        </div>
-        <div style={{ textAlign: "right" }}>
-          <div style={{ fontSize: 12, color: "#6b7280", marginBottom: 2 }}>금리</div>
-          <div style={{ fontSize: 15, fontWeight: 700, color: G }}>{alt.rate}</div>
-        </div>
-      </div>
-      <div style={{ background: "#f9fafb", borderRadius: 6, padding: "10px 12px", marginBottom: 12, fontSize: 13, color: "#374151" }}>
-        한도: {alt.amount}
-      </div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 12 }}>
-        <div>
-          <div style={{ fontSize: 12, fontWeight: 700, color: "#111", marginBottom: 6 }}>장점</div>
-          <ul style={{ margin: 0, paddingLeft: 16, fontSize: 13 }}>
-            {alt.pros.map((p, i) => (
-              <li key={i} style={{ color: "#374151", marginBottom: 4, lineHeight: 1.5 }}>{p}</li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <div style={{ fontSize: 12, fontWeight: 700, color: "#111", marginBottom: 6 }}>단점</div>
-          <ul style={{ margin: 0, paddingLeft: 16, fontSize: 13 }}>
-            {alt.cons.map((c, i) => (
-              <li key={i} style={{ color: "#d97706", marginBottom: 4, lineHeight: 1.5 }}>{c}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      <a href={alt.link} target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", fontSize: 13, fontWeight: 600, color: G, textDecoration: "none", borderBottom: `1px solid ${G}` }}>
-        서민금융진흥원에서 신청하기
-      </a>
-    </div>
-  );
-}
-
-function EligibilityChecker() {
-  const [checked, setChecked] = useState<Record<string, boolean>>({});
-  const toggle = (id: string) => setChecked((p) => ({ ...p, [id]: !p[id] }));
-
-  const failCount = [
-    checked.c1, // 신용점수 600 미만
-    checked.c2, // 최근 3년 연체
-    checked.c3, // DSR 초과 (기대출 많음)
-    checked.c4, // 소득 증빙 부족
-  ].filter(Boolean).length;
-
-  let riskLevel = "낮음";
-  let riskColor = "#10b981";
-  if (failCount === 1) {
-    riskLevel = "중간";
-    riskColor = "#f59e0b";
-  } else if (failCount >= 2) {
-    riskLevel = "높음";
-    riskColor = "#ef4444";
-  }
-
-  return (
-    <div style={{ margin: "10px 0 1.2rem" }}>
-      <p style={{ fontSize: 13, color: "#6b7280", marginBottom: 14 }}>해당하는 항목을 모두 체크해보세요.</p>
-      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-        {[
-          { id: "c1", label: "신용점수가 600점 미만이에요" },
-          { id: "c2", label: "최근 3년 내 신용카드·대출 연체 이력이 있어요" },
-          { id: "c3", label: "기존 대출이 1,500만원 이상 있어요" },
-          { id: "c4", label: "최근 1년 소득 증빙 서류가 없거나 불일치해요" },
-        ].map((item) => (
-          <label
-            key={item.id}
-            onClick={() => toggle(item.id)}
-            style={{
-              display: "flex",
-              alignItems: "flex-start",
-              gap: 10,
-              padding: "10px 14px",
-              borderRadius: 8,
-              cursor: "pointer",
-              border: `1px solid ${checked[item.id] ? G : "#e5e7eb"}`,
-              background: checked[item.id] ? GL : "#f9fafb",
-            }}
-          >
-            <input
-              type="checkbox"
-              checked={!!checked[item.id]}
-              readOnly
-              style={{ accentColor: G, marginTop: 3, flexShrink: 0 }}
-            />
-            <span style={{ fontSize: 13, lineHeight: 1.6 }}>{item.label}</span>
-          </label>
-        ))}
-      </div>
-
-      {Object.values(checked).some(Boolean) && (
-        <div style={{ background: "#f0fdf4", borderRadius: 10, padding: "16px 18px", marginTop: 16, border: `1px solid ${riskColor}40` }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-            <span style={{ display: "inline-block", width: 12, height: 12, borderRadius: "50%", background: riskColor }}></span>
-            <span style={{ fontSize: 12, fontWeight: 700, color: riskColor }}>부결 위험도: {riskLevel}</span>
-          </div>
-          {failCount === 0 && (
-            <p style={{ fontSize: 13, color: "#374151", margin: 0, lineHeight: 1.6 }}>
-              체크된 항목이 없으면 햇살론 심사 통과 가능성이 높아요. 바로 신청해보세요.
-            </p>
-          )}
-          {failCount === 1 && (
-            <p style={{ fontSize: 13, color: "#374151", margin: 0, lineHeight: 1.6 }}>
-              1개 항목이 걱정된다면, 아래 '재신청 전 준비사항' 섹션을 읽고 2~3개월 준비 후 신청하는 게 좋아요.
-            </p>
-          )}
-          {failCount >= 2 && (
-            <p style={{ fontSize: 13, color: "#374151", margin: 0, lineHeight: 1.6 }}>
-              2개 이상 해당된다면 햇살론 통과가 어려워요. 아래 '대안 상품' 섹션에서 다른 대출을 찾거나, 3~6개월 신용개선 후 재신청하세요.
-            </p>
-          )}
-        </div>
-      )}
-    </div>
-  );
-}
+  { name: "미소금융", badge: "저신용자 전용", rate: "2.0~6.0%", amount: "최대 2,000만원",
+    pros: ["신용점수 500점대도 가능", "금리 매우 낮음", "창업·사업자금으로도 활용"],
+    cons: ["심사 1~2주 소요", "사업 목적이어야 함"] },
+  { name: "새희망홀씨", badge: "신용회복 중도 가능", rate: "4.5~7.5%", amount: "최대 1,000만원",
+    pros: ["햇살론보다 기준 관대", "금리 낮은 편", "신용회복 중인 사람 가능"],
+    cons: ["담보 필요할 수 있음", "신청 자격 제한"] },
+  { name: "사잇돌대출", badge: "빠른 심사", rate: "6.9~8.9%", amount: "최대 500만원",
+    pros: ["불법사금융 차용자 가능", "개인회생 준비자 가능", "심사 빠름"],
+    cons: ["한도 낮음", "금리 높은 편"] },
+  { name: "긴급복지생활비", badge: "이자 무료", rate: "무이자", amount: "최대 500만원 (월 100만원)",
+    pros: ["이자 0%", "위기상황 지원", "서민금융통합지원센터 신청"],
+    cons: ["위기상황 증빙 필요", "3개월 이내 신청"] },
+] as const;
 
 const FAQS = [
-  {
-    q: "햇살론 부결 받았는데, 바로 다시 신청해도 돼요?",
-    a: "안 돼요. 최소 1개월 대기가 필요해요. 더 좋은 결과를 원하면 3~6개월을 권장해요. 그 사이에 신용점수가 올라가거나 기대출을 줄일 수 있거든요. 너무 자주 신청하면 오히려 신용점수가 떨어질 수 있어요.",
-  },
-  {
-    q: "앱컷과 심사 부결이 뭐가 다르나요?",
-    a: "앱컷은 서류 제출 전 자동으로 떨어지는 거고, 심사 부결은 서류를 다 제출한 후에 떨어지는 거예요. 앱컷은 기술적으로 되돌리기 어렵고, 심사 부결은 2~3개월 신용 개선 후 재신청하면 통과 가능성이 있어요.",
-  },
-  {
-    q: "부결 받은 이유를 직접 물어볼 수 있나요?",
-    a: "햇살론 앱이나 서민금융진흥원 고객센터(1599-8900)에 전화하면 부결 사유 몇 개를 알려줘요. 하지만 세부 사항은 공개 안 하는 경우도 있어요. 그럼 위의 자가진단으로 예상 사유를 파악하고 준비하세요.",
-  },
-  {
-    q: "신용점수 600점을 넘으면 꼭 통과되나요?",
-    a: "아니에요. 신용점수는 필요조건일 뿐 충분조건은 아니에요. 600점 이상이어도 기대출이 많거나 최근 연체 이력이 있으면 떨어질 수 있어요. 다만 600점 이상이면 심사 단계에 진입할 기회는 생겨요.",
-  },
-  {
-    q: "대출 금리를 미리 알 수 있나요?",
-    a: "햇살론은 심사 후에 금리가 결정돼요. 신용점수·기대출·연체 이력·소득 수준에 따라 4.1~9.9% 범위에서 달라져요. 더 좋은 금리를 원하면 신용점수를 올리고 기대출을 줄인 후 신청하세요.",
-  },
-];
+  { tag: "긴급", q: "부결 직후 바로 재신청해도 돼요?",
+    a: "안 돼요. 바로 신청하면 또 떨어져요. 부결 사유를 파악하고 개선한 후에 신청해야 해요. 서류 미비만 문제였으면 즉시 재신청 가능하지만, DSR이나 신용점수 문제면 최소 1~3개월 후가 좋아요." },
+  { tag: "긴급", q: "부결 사유를 직접 물어볼 수 있어요?",
+    a: "네. 신청한 은행(KB국민, 우리, 농협 등) 콜센터에 전화하면 부결 사유 1~2개를 알려줘요. 서민금융진흥원 고객센터(1599-8900)에도 물어볼 수 있어요. 세부 사항은 안 알려주는 경우도 있으니, 위 자가진단을 같이 활용하세요." },
+  { tag: "긴급", q: "신용점수 450점인데 햇살론 말고 방법이 있나요?",
+    a: "있어요. 미소금융이나 긴급복지생활비는 신용점수를 안 봐요. 서민금융통합지원센터(1397)에 전화하면 본인 상황에 맞는 상품을 무료로 추천받을 수 있어요." },
+  { tag: null, q: "앱컷이랑 심사 부결이 뭐가 달라요?",
+    a: "앱컷은 서류 제출 전에 자동으로 떨어지는 거고, 심사 부결은 서류를 다 낸 후에 떨어지는 거예요. 앱컷은 신용점수·연체 기록 등 기본 조건에서 걸린 거라 개선에 시간이 더 걸려요." },
+  { tag: null, q: "신용점수 600점 넘으면 무조건 통과돼요?",
+    a: "아니에요. 600점은 필요조건이지 충분조건이 아니에요. 600점 이상이어도 기대출이 많거나 연체 이력이 있으면 떨어져요. 600점 이상이면 심사 단계에 진입할 기회가 생기는 거예요." },
+  { tag: null, q: "부결 후 다른 서민금융도 계속 부결되나요?",
+    a: "아뇨. 상품마다 심사 기준이 달라요. 햇살론은 신용점수·연체를 중요하게 보지만, 미소금융이나 새희망홀씨는 소득과 서류를 더 봐요. 하나 떨어졌다고 다 떨어지는 건 아니에요." },
+  { tag: null, q: "재신청 전에 카드 만들거나 다른 대출 받으면 안 돼요?",
+    a: "피하세요. 신용도를 다시 내려요. 재신청 3개월 전부터는 새 금융상품 신청을 멈추고, 기존 대출·카드만 깨끗하게 관리하세요." },
+  { tag: null, q: "햇살론 금리는 미리 알 수 있어요?",
+    a: "심사 후에 결정돼요. 신용점수·기대출·연체·소득에 따라 4.1~9.9% 범위에서 달라져요. 신용점수를 올리고 기대출을 줄인 후 신청하면 더 낮은 금리를 받을 수 있어요." },
+] as const;
+
+const SIDEBAR = [
+  { cat: "햇살론", items: ["햇살론유스 자격·한도·신청", "햇살론 보증료 계산·면제", "햇살론 대환대출 갈아타기", "햇살론 금리 비교", "햇살론 심사 기간", "햇살론 한도 늘리기"] },
+  { cat: "신용관리", items: ["신용점수 올리는 방법", "신용점수 무료 조회", "연체 기록 삭제 방법", "신용카드 현명하게 쓰기", "신용조회 영향"] },
+  { cat: "서민금융", items: ["미소금융 신청 방법", "새희망홀씨 조건", "사잇돌대출 자격", "긴급복지생활비", "서민금융 상품 비교"] },
+  { cat: "대출 기초", items: ["DSR이란?", "대출 갈아타기 조건", "개인회생 vs 워크아웃", "대출 이자 계산"] },
+] as const;
 
 const REFS = [
   { category: "공식 자료", items: [
-    { label: "서민금융진흥원 햇살론", url: "https://www.kinfa.or.kr" },
-    { label: "금융감독원 서민금융 가이드", url: "https://www.fss.or.kr" },
-    { label: "한국신용정보원 신용점수 조회", url: "https://www.kcredit.or.kr" },
+    { label: "서민금융진흥원 — 햇살론 안내", url: "https://www.kinfa.or.kr" },
+    { label: "금융감독원 — 서민금융 가이드", url: "https://www.fss.or.kr" },
+    { label: "한국신용정보원 — 신용점수 조회", url: "https://www.kcredit.or.kr" },
+    { label: "서민금융통합지원센터 — 1397", url: "https://www.서민금융콜센터.kr" },
   ]},
-];
+] as const;
 
+// ─── 디자인 토큰 ──────────────────────────────────────
+const G = "#1D9E75";
+const GL = "#E1F5EE";
+const GD = "#085041";
+const body = { fontSize: 14, color: "#374151", lineHeight: 2.1, marginBottom: "1rem" } as const;
+
+// ─── 공통 UI ──────────────────────────────────────────
+function Divider() { return <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />; }
+function H2({ children }: { children: React.ReactNode }) {
+  return <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111", borderLeft: `3px solid ${G}`, paddingLeft: 12, margin: "0 0 14px", lineHeight: 1.5 }}>{children}</h2>;
+}
+function Bdg({ children }: { children: React.ReactNode }) {
+  return <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: GL, color: "#0F6E56", marginBottom: 10 }}>{children}</span>;
+}
+function GreenBox({ title, children }: { title: string; children: React.ReactNode }) {
+  return <div style={{ background: GL, borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95, color: GD }}><strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>{children}</div>;
+}
+function BorderBox({ title, children }: { title: string; children: React.ReactNode }) {
+  return <div style={{ border: "1px solid #9FE1CB", borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95 }}><strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>{children}</div>;
+}
+
+// ─── UrgentBanner ────────────────────────────────────
+function UrgentBanner() {
+  const [type, setType] = useState<string | null>(null);
+  type MsgKey = "panic" | "unknown" | "reapply" | "alt";
+  const messages: Record<MsgKey, { title: string; color: string; bg: string; text: string }> = {
+    panic: { title: "방금 부결 받으셨다면", color: "#DC2626", bg: "#FEF2F2",
+      text: "당황하지 마세요. 부결은 끝이 아니에요. 아래에서 7가지 사유 중 내 상황을 찾고, 사유별 개선법을 따라하면 충분히 재신청할 수 있어요." },
+    unknown: { title: "왜 부결인지 모르겠다면", color: "#7C3AED", bg: "#F5F3FF",
+      text: "은행 콜센터(신청한 은행)나 서민금융진흥원(1599-8900)에 전화하면 사유 1~2개를 알려줘요. 안 알려주면 아래 진단으로 예상 사유를 찾아보세요." },
+    reapply: { title: "재신청 타이밍이 궁금하다면", color: G, bg: GL,
+      text: "서류 미비만 문제였으면 바로 재신청 가능해요. DSR·신용점수 문제면 최소 1~3개월 후. 아래 타이밍 가이드에서 내 사유별 최적 시점을 확인하세요." },
+    alt: { title: "대안 대출을 찾고 있다면", color: "#2563EB", bg: "#EFF6FF",
+      text: "햇살론 말고도 미소금융, 새희망홀씨, 사잇돌대출, 긴급복지생활비가 있어요. 신용점수가 낮아도 받을 수 있는 상품들이에요. 아래에서 비교해보세요." },
+  };
+  if (!type) return (
+    <div style={{ background: "#FFF7ED", border: "1px solid #FED7AA", borderRadius: 10, padding: "16px 18px", marginBottom: "1.5rem" }}>
+      <p style={{ fontSize: 13, fontWeight: 700, color: "#C2410C", marginBottom: 10 }}>지금 상황이 어떻게 되세요?</p>
+      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+        {([
+          { id: "panic" as const, label: "방금 부결 통보 받았어요" },
+          { id: "unknown" as const, label: "왜 부결됐는지 모르겠어요" },
+          { id: "reapply" as const, label: "재신청 타이밍이 궁금해요" },
+          { id: "alt" as const, label: "대안 대출을 찾고 있어요" },
+        ]).map((item) => (
+          <button key={item.id} onClick={() => setType(item.id)} style={{
+            display: "flex", alignItems: "center", gap: 10, padding: "10px 14px",
+            borderRadius: 8, border: "1px solid #FED7AA", background: "#fff",
+            fontSize: 13, color: "#374151", cursor: "pointer", textAlign: "left",
+          }}>
+            <span style={{ color: "#F97316", flexShrink: 0 }}>→</span>{item.label}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+  const m = messages[type as MsgKey];
+  return (
+    <div style={{ background: m.bg, border: `1px solid ${m.color}40`, borderRadius: 10, padding: "16px 18px", marginBottom: "1.5rem" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
+        <p style={{ fontSize: 13, fontWeight: 700, color: m.color, margin: 0 }}>{m.title}</p>
+        <button onClick={() => setType(null)} style={{ background: "none", border: "none", fontSize: 12, color: "#9ca3af", cursor: "pointer", padding: 0, flexShrink: 0, marginLeft: 12 }}>다시 선택</button>
+      </div>
+      <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.85, margin: 0 }}>{m.text}</p>
+    </div>
+  );
+}
+
+// ─── 부결 사유 진단 (인터랙티브) ──────────────────────
+function RejectionDiagnosis() {
+  const [selected, setSelected] = useState<string | null>(null);
+  const reason = selected ? REASONS.find((r) => r.id === selected) : null;
+  return (
+    <div style={{ margin: "10px 0 1.2rem" }}>
+      <p style={{ fontSize: 13, color: "#6b7280", marginBottom: 14 }}>의심되는 사유를 눌러보세요. 사유별 개선법과 재신청 타이밍이 바로 나와요.</p>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 8, marginBottom: selected ? 16 : 0 }}>
+        {REASONS.map((r) => (
+          <button key={r.id} onClick={() => setSelected(selected === r.id ? null : r.id)} style={{
+            padding: "10px 14px", borderRadius: 8, cursor: "pointer", textAlign: "left", fontSize: 13, lineHeight: 1.5,
+            border: selected === r.id ? `2px solid ${G}` : "1px solid #e5e7eb",
+            background: selected === r.id ? GL : "#f9fafb",
+            fontWeight: selected === r.id ? 700 : 500,
+            color: selected === r.id ? GD : "#374151",
+          }}>
+            {r.title}
+          </button>
+        ))}
+      </div>
+      {reason && (
+        <div style={{ background: GL, border: `1px solid ${G}`, borderRadius: 10, padding: "18px 20px" }}>
+          <p style={{ fontSize: 14, fontWeight: 700, color: GD, marginBottom: 8 }}>{reason.title}</p>
+          <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.8, marginBottom: 14 }}>{reason.desc}</p>
+          <p style={{ fontSize: 12, fontWeight: 700, color: "#111", marginBottom: 8 }}>개선 방법</p>
+          <ul style={{ margin: 0, paddingLeft: 16, fontSize: 13, lineHeight: 1.8, color: "#374151", marginBottom: 14 }}>
+            {reason.fixes.map((f: string, i: number) => <li key={i} style={{ marginBottom: 4 }}>{f}</li>)}
+          </ul>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+            <div style={{ background: "#fff", borderRadius: 6, padding: "10px 14px", border: "1px solid #e5e7eb" }}>
+              <div style={{ fontSize: 11, color: "#9ca3af", marginBottom: 4 }}>예상 대기 기간</div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: GD }}>{reason.timeline}</div>
+            </div>
+            <div style={{ background: "#fff", borderRadius: 6, padding: "10px 14px", border: "1px solid #e5e7eb" }}>
+              <div style={{ fontSize: 11, color: "#9ca3af", marginBottom: 4 }}>액션 플랜</div>
+              <div style={{ fontSize: 13, color: "#374151", lineHeight: 1.5 }}>{reason.action}</div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── FAQ (아코디언) ──────────────────────────────────
+function FAQSection() {
+  const [open, setOpen] = useState<number | null>(null);
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 10, margin: "10px 0 1.2rem" }}>
+      {FAQS.map((faq, i: number) => (
+        <div key={i}>
+          <button onClick={() => setOpen(open === i ? null : i)} style={{
+            width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center",
+            padding: "12px 16px", borderRadius: open === i ? "8px 8px 0 0" : 8,
+            border: faq.tag ? `1px solid #F97316` : `1px solid #e5e7eb`,
+            background: open === i ? GL : (faq.tag ? "#FFF7ED" : "#f9fafb"),
+            fontSize: 13, fontWeight: 600, color: "#111", cursor: "pointer", textAlign: "left", gap: 8,
+          }}>
+            <span style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              {faq.tag && <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 8px", borderRadius: 10, background: "#F97316", color: "#fff" }}>{faq.tag}</span>}
+              {faq.q}
+            </span>
+            <span style={{ fontSize: 14, flexShrink: 0 }}>{open === i ? "▼" : "▶"}</span>
+          </button>
+          {open === i && (
+            <div style={{ padding: "12px 16px", background: GL, border: `1px solid ${G}`, borderTop: "none", borderRadius: "0 0 8px 8px", fontSize: 13, lineHeight: 1.85, color: "#374151" }}>
+              {faq.a}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// ─── 메인 컴포넌트 ──────────────────────────────────────
 export default function Page() {
   return (
     <article style={{ maxWidth: 640, margin: "0 auto", padding: "24px 20px" }}>
+      {/* ─── H1 + 도입부 (감정→행동 전환) ─── */}
       <h1 style={{ fontSize: 26, fontWeight: 800, color: "#111", marginBottom: 8, lineHeight: 1.4 }}>
-        햇살론 부결 사유 & 재신청 전략
+        햇살론 부결됐다고요? 사유별 해결법과 재신청 타이밍까지
       </h1>
-      <p style={{ fontSize: 15, color: "#6b7280", marginBottom: 24, lineHeight: 1.7 }}>
-        신청했다가 떨어졌다면, 부결 이유를 알고 준비해야 다시 통과해요.
+      <p style={{ fontSize: 15, color: "#6b7280", marginBottom: 6, lineHeight: 1.7 }}>
+        떨어졌다고 끝이 아니에요.
+      </p>
+      <p style={body}>
+        햇살론 부결 사유는 대부분 7가지 중 하나예요.
+        사유를 정확히 알면 고칠 수 있고, 고치면 재신청에서 통과돼요.
+        지금 내 상황부터 확인해보세요.
       </p>
 
-      <GreenBox title="지금 상황이 어떻게 되세요?">
-        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-          <div style={{ fontSize: 13, lineHeight: 1.6 }}>
-            <strong>방금 부결 받았어요</strong><br />
-            아래 '부결 사유 확인' 섹션에서 당신의 상황과 맞는 이유를 찾으세요. 앱에서 안내한 사유 1~2개가 나올 거예요.
-          </div>
-          <div style={{ fontSize: 13, lineHeight: 1.6 }}>
-            <strong>언제 다시 신청할 수 있나요?</strong><br />
-            최소 1개월 후예요. 하지만 3~6개월 대기하면서 신용점수·기대출을 개선하면 통과 확률이 훨씬 높아져요.
-          </div>
-          <div style={{ fontSize: 13, lineHeight: 1.6 }}>
-            <strong>다른 대출도 고려 중이에요</strong><br />
-            아래 '대안 상품' 섹션에서 햇살론보다 까다롭지 않은 상품들을 찾을 수 있어요.
-          </div>
+      <UrgentBanner />
+
+      <Divider />
+
+      {/* ─── H2-1: 부결 사유 진단 ─── */}
+      <H2>왜 부결됐을까? 7가지 사유 한눈에</H2>
+      <p style={body}>
+        햇살론 부결 사유는 크게 7가지예요. DSR 초과가 가장 많고, 연체 기록이 그 다음이에요.
+        아래에서 의심되는 사유를 눌러보면 개선법과 재신청 타이밍이 바로 나와요.
+      </p>
+      <RejectionDiagnosis />
+
+      <Divider />
+
+      {/* ─── H2-2: 재신청 타이밍 ─── */}
+      <H2>재신청, 언제 하는 게 좋을까?</H2>
+      <p style={body}>
+        무작정 다시 넣으면 또 떨어져요. 사유별로 최적 타이밍이 달라요.
+      </p>
+      <GreenBox title="사유별 재신청 타이밍">
+        <div style={{ fontSize: 13, lineHeight: 2 }}>
+          <strong>서류 미비:</strong> 해결 후 즉시 재신청 가능<br />
+          <strong>DSR 과다:</strong> 부채 감소 후 1~2개월<br />
+          <strong>신용점수 부족:</strong> 신용 관리 후 3~6개월<br />
+          <strong>연체 기록:</strong> 상환 후 3~6개월<br />
+          <strong>최근 카드/대출:</strong> 2~3개월 대기
         </div>
       </GreenBox>
-
-      <Divider />
-
-      <H2>부결 위험도 자가진단</H2>
-      <p style={body}>
-        당신이 햇살론 심사에서 어떤 항목에 걸렸는지 체크해보세요. 점수가 높을수록 부결 가능성이 커요.
-      </p>
-      <EligibilityChecker />
-
-      <Divider />
-
-      <H2>부결 사유 5가지 (+ 대처법)</H2>
-      <p style={body}>
-        햇살론을 떨어뜨리는 가장 흔한 사유들이에요. 각 항목을 펼쳐서 당신의 상황을 확인하세요.
-      </p>
-      {REJECTION_REASONS.map((reason, idx) => (
-        <RejectionReasonCard key={idx} reason={reason} index={idx} />
-      ))}
-
-      <Divider />
-
-      <H2>재신청 전 준비사항</H2>
-      <p style={body}>
-        부결 후 3~6개월 동안 이렇게 준비하면 재신청 통과 확률이 크게 올라가요.
-      </p>
-
-      <BorderBox title="1단계: 신용점수 올리기 (1~3개월)">
-        <ul style={{ margin: 0, paddingLeft: 16, fontSize: 14, lineHeight: 2, color: "#374151" }}>
-          <li><a href="/w/신용점수-올리는-방법" style={{ color: G, textDecoration: "none", borderBottom: `1px solid ${G}` }}>신용카드 연체 즉시 해소</a> — 미납금이 있으면 무조건 먼저 갚으세요.</li>
-          <li>최근 6개월간 신용카드 결제 기록 남기기 — 정상 사용 기록이 신용점수를 올려요.</li>
-          <li>신용조회 건수 줄이기 — 한 달에 2~3회 이상 신용 조회하면 신용점수가 떨어져요.</li>
-        </ul>
-      </BorderBox>
-
-      <BorderBox title="2단계: 기대출 정리하기 (1~3개월)">
-        <ul style={{ margin: 0, paddingLeft: 16, fontSize: 14, lineHeight: 2, color: "#374151" }}>
-          <li>고금리 대출(카드론, 신용대출) 우선 상환 — 월 부담을 최대 200만원 이상 줄여야 해요.</li>
-          <li><a href="/w/대출-갈아타기-조건" style={{ color: G, textDecoration: "none", borderBottom: `1px solid ${G}` }}>저금리 상품으로 갈아타기</a> — 같은 금액이라도 금리가 낮으면 월상환액이 줄어들어요.</li>
-          <li>단기 현금부채 정리하기 — 선결제 카드 잔액, 휴대폰 분납금도 다 포함돼요.</li>
-        </ul>
-      </BorderBox>
-
-      <BorderBox title="3단계: 소득 증빙 정리하기 (신청 1주일 전)">
-        <ul style={{ margin: 0, paddingLeft: 16, fontSize: 14, lineHeight: 2, color: "#374151" }}>
-          <li>최근 급여명세서 3개월분 준비 — 홈택스 소득과 일치해야 해요.</li>
-          <li>원천징수영수증 또는 연말정산영수증 보관 — 국세청 소득 증빙용이에요.</li>
-          <li>자영업자면 사업자등록증·통장·세금계산서 준비 — 소득 일관성을 보여줘야 해요.</li>
+      <BorderBox title="재신청 전 반드시 확인">
+        <ul style={{ margin: 0, paddingLeft: 16, fontSize: 13, lineHeight: 2, color: "#374151" }}>
+          <li>부결 사유를 은행에 직접 확인했는가?</li>
+          <li>해당 사유를 실제로 개선했는가?</li>
+          <li>최근 3개월간 새 금융상품 신청을 안 했는가?</li>
+          <li>소득 증빙 서류가 최신인가?</li>
+          <li>신용점수를 조회해서 600점 이상인가?</li>
         </ul>
       </BorderBox>
 
       <Divider />
 
-      <H2>대안 상품: 햇살론 떨어진 사람을 위한 선택지</H2>
+      {/* ─── H2-3: 대안 상품 ─── */}
+      <H2>햇살론 말고 다른 길은 없을까?</H2>
       <p style={body}>
-        햇살론이 안 되면 서민금융진흥원의 다른 상품들을 살펴보세요. 덜 까다롭고 금리도 비슷하거나 더 낮을 수 있어요.
+        신용점수가 낮거나 연체가 있어도 받을 수 있는 서민금융 상품이 있어요. 상품마다 기준이 다르니까 하나 떨어졌다고 포기하지 마세요.
       </p>
-      {ALTS.map((alt, idx) => (
-        <AltCard key={idx} alt={alt} />
-      ))}
-
-      <Divider />
-
-      <H2>자주 묻는 질문 (FAQ)</H2>
-      {FAQS.map((faq, idx) => (
-        <div key={idx} style={{ marginBottom: 20 }}>
-          <h3 style={{ fontSize: 14, fontWeight: 700, color: "#111", marginBottom: 8 }}>Q. {faq.q}</h3>
-          <p style={{ ...body, marginBottom: 0 }}>A. {faq.a}</p>
+      {ALTS.map((alt, idx: number) => (
+        <div key={idx} style={{ border: "1px solid #9FE1CB", borderRadius: 10, padding: "18px 20px", marginBottom: 16, background: "#fff" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 10 }}>
+            <div>
+              <h3 style={{ fontSize: 15, fontWeight: 700, color: "#111", margin: "0 0 6px" }}>{alt.name}</h3>
+              <Bdg>{alt.badge}</Bdg>
+            </div>
+            <div style={{ textAlign: "right" }}>
+              <div style={{ fontSize: 12, color: "#6b7280", marginBottom: 2 }}>금리</div>
+              <div style={{ fontSize: 15, fontWeight: 700, color: G }}>{alt.rate}</div>
+            </div>
+          </div>
+          <div style={{ background: "#f9fafb", borderRadius: 6, padding: "10px 12px", marginBottom: 12, fontSize: 13, color: "#374151" }}>한도: {alt.amount}</div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+            <div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: "#111", marginBottom: 6 }}>장점</div>
+              <ul style={{ margin: 0, paddingLeft: 16, fontSize: 13 }}>
+                {alt.pros.map((p: string, i: number) => <li key={i} style={{ color: "#374151", marginBottom: 4, lineHeight: 1.5 }}>{p}</li>)}
+              </ul>
+            </div>
+            <div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: "#111", marginBottom: 6 }}>단점</div>
+              <ul style={{ margin: 0, paddingLeft: 16, fontSize: 13 }}>
+                {alt.cons.map((c: string, i: number) => <li key={i} style={{ color: "#d97706", marginBottom: 4, lineHeight: 1.5 }}>{c}</li>)}
+              </ul>
+            </div>
+          </div>
         </div>
       ))}
 
       <Divider />
 
+      {/* ─── FAQ ─── */}
+      <H2>자주 묻는 질문</H2>
+      <FAQSection />
+
+      <Divider />
+
+      {/* ─── HubLinks ─── */}
+      <H2>관련 글 더 보기</H2>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: "1.5rem" }}>
+        {[
+          { title: "햇살론유스 자격·한도·신청 완벽 가이드", slug: "/w/햇살론유스-자격-한도-신청" },
+          { title: "햇살론 보증료 계산·면제 조건", slug: "/w/햇살론-보증료-계산-면제" },
+          { title: "햇살론 대환대출 갈아타기", slug: "/w/햇살론-대환대출-갈아타기" },
+          { title: "신용점수 올리는 방법", slug: "/w/신용점수-올리는-방법" },
+          { title: "서민금융 대출 종류 비교", slug: "/w/서민금융-대출-종류-비교" },
+        ].map((link, i: number) => (
+          <a key={i} href={link.slug} style={{
+            display: "block", padding: "12px 14px", background: "#f9fafb", border: "1px solid #e5e7eb",
+            borderRadius: 8, fontSize: 13, color: "#374151", textDecoration: "none", lineHeight: 1.5,
+          }}>{link.title}</a>
+        ))}
+      </div>
+
+      {/* ─── CTA ─── */}
+      <div style={{ background: GL, borderRadius: 10, padding: "20px 22px", textAlign: "center", marginBottom: "2rem" }}>
+        <p style={{ fontSize: 14, fontWeight: 700, color: GD, marginBottom: 8 }}>전문가 무료 상담 받고 싶으세요?</p>
+        <p style={{ fontSize: 13, color: "#6b7280", marginBottom: 14, lineHeight: 1.6 }}>
+          서민금융통합지원센터는 부결 원인 분석·맞춤 상품 추천을 무료로 해줘요.
+        </p>
+        <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap" }}>
+          <a href="tel:1397" style={{ display: "inline-block", padding: "10px 20px", background: G, color: "#fff", borderRadius: 6, fontSize: 13, fontWeight: 700, textDecoration: "none" }}>
+            1397 전화 상담
+          </a>
+          <a href="https://www.kinfa.or.kr" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", padding: "10px 20px", background: "#fff", color: GD, borderRadius: 6, fontSize: 13, fontWeight: 700, textDecoration: "none", border: `1px solid ${G}` }}>
+            서민금융진흥원 방문
+          </a>
+        </div>
+      </div>
+
+      <Divider />
+
+      {/* ─── Sidebar ─── */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20, marginBottom: "2rem" }}>
+        {SIDEBAR.map((sec, idx: number) => (
+          <div key={idx}>
+            <p style={{ fontSize: 13, fontWeight: 700, color: GD, marginBottom: 8 }}>{sec.cat}</p>
+            <ul style={{ margin: 0, paddingLeft: 16, fontSize: 12, lineHeight: 2, listStyle: "none" }}>
+              {sec.items.map((item: string, i: number) => (
+                <li key={i}><a href="#" style={{ color: "#6b7280", textDecoration: "none" }}>{item}</a></li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <Divider />
+
+      {/* ─── 출처 ─── */}
       <H2>출처</H2>
-      {REFS.map((ref, idx) => (
+      {REFS.map((ref, idx: number) => (
         <div key={idx} style={{ marginBottom: 18 }}>
           <p style={{ fontSize: 13, fontWeight: 700, color: "#111", marginBottom: 8 }}>{ref.category}</p>
           <ul style={{ margin: 0, paddingLeft: 16, fontSize: 13, lineHeight: 1.8 }}>
-            {ref.items.map((item, i) => (
+            {ref.items.map((item: { label: string; url: string }, i: number) => (
               <li key={i}>
-                <a href={item.url} target="_blank" rel="noopener noreferrer" style={{ color: G, textDecoration: "none" }}>
-                  {item.label}
-                </a>
+                <a href={item.url} target="_blank" rel="noopener noreferrer" style={{ color: G, textDecoration: "none" }}>{item.label}</a>
               </li>
             ))}
           </ul>
         </div>
       ))}
-
-      <Divider />
-
-      <div style={{ background: GL, borderRadius: 10, padding: "18px 20px", textAlign: "center" }}>
-        <p style={{ fontSize: 14, fontWeight: 700, color: GD, marginBottom: 8 }}>지금 바로 햇살론 재신청하기</p>
-        <p style={{ fontSize: 13, color: "#6b7280", marginBottom: 12, lineHeight: 1.6 }}>
-          위의 준비사항을 모두 확인했다면, 서민금융진흥원 앱에서 재신청할 수 있어요.
-        </p>
-        <a href="https://www.kinfa.or.kr" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", padding: "10px 20px", background: G, color: "#fff", borderRadius: 6, fontSize: 13, fontWeight: 700, textDecoration: "none" }}>
-          서민금융진흥원 방문하기
-        </a>
-      </div>
     </article>
   );
 }

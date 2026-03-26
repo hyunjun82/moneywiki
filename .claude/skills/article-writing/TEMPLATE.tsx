@@ -10,8 +10,11 @@ const TABLE = {
   "9-11": [667, 782, 988, 1163, 1318, 1494, 1630, 1887, 2137, 2180, 2405],
   "12-14":[679, 790, 998, 1280, 1423, 1598, 1711, 1984, 2159, 2223, 2476],
   "15-18":[703, 957,1227, 1402, 1604, 1794, 1964, 2163, 2246, 2540, 2883],
-};
-function getAgeGroup(age) {
+} as const;
+
+type AgeGroup = keyof typeof TABLE;
+
+function getAgeGroup(age: number): AgeGroup {
   if (age <= 2)  return "0-2";
   if (age <= 5)  return "3-5";
   if (age <= 8)  return "6-8";
@@ -19,7 +22,7 @@ function getAgeGroup(age) {
   if (age <= 14) return "12-14";
   return "15-18";
 }
-function getIncomeIdx(income) {
+function getIncomeIdx(income: number): number {
   // 소득 구간 인덱스 (만원 단위)
   if (income < 200)  return 0;
   if (income < 300)  return 1;
@@ -35,13 +38,19 @@ function getIncomeIdx(income) {
 }
 // 자녀수 가감: 1인이면 가산(표준은 2인 기준), 3인 이상이면 감산
 // 실무상 1인 약 +10~15%, 3인 이상 약 -10% 적용 (해설서 기준)
-function childrenAdjust(base, children) {
+function childrenAdjust(base: number, children: number): number {
   if (children === 1) return Math.round(base * 1.12); // 1인 가산
   if (children === 2) return base;                    // 2인 = 표준
   if (children === 3) return Math.round(base * 0.92); // 3인 감산
   return Math.round(base * 0.88);                     // 4인 이상
 }
-function calcAlimony(myIncome, theirIncome, age, children) {
+function calcAlimony(myIncome: number, theirIncome: number, age: number, children: number): {
+  fullCost: number;
+  theirShare: number;
+  totalSum: number;
+  ratio: number;
+  total: number;
+} {
   const total = myIncome + theirIncome;
   const ageGroup = getAgeGroup(age);
   const idx = getIncomeIdx(total);
@@ -54,13 +63,13 @@ function calcAlimony(myIncome, theirIncome, age, children) {
   const totalSum = theirShare * months; // 천원
   return { fullCost, theirShare, totalSum, ratio, total };
 }
-function fmtW(val) {
+function fmtW(val: number): string {
   // 천원 → "약 XXX만원" or "약 X,XXX만원"
   const man = Math.round(val / 10) / 10; // 만원 단위, 소수점1자리
   if (man >= 10000) return `약 ${(man / 10000).toFixed(1)}억원`;
   return `약 ${Math.round(man).toLocaleString()}만원`;
 }
-function fmtMon(val) {
+function fmtMon(val: number): string {
   const man = Math.round(val / 10);
   return `약 ${man.toLocaleString()}만원`;
 }
@@ -92,7 +101,8 @@ const FAQS = [
     a: "돼요. 물가 상승, 자녀 상급학교 진학, 고액 치료비 발생 시 증액 청구 가능해요. 반대로 양육비 내는 쪽이 실직·파산하거나, 양육하는 쪽 소득이 크게 늘었다면 감액 청구도 돼요. 양쪽 합의 또는 법원 심판으로 변경해요." },
   { tag: null, q: "자녀가 성인이 된 후에도 못 받은 과거 양육비를 청구할 수 있나요?",
     a: "가능해요. 다만 2024년 7월 대법원 판례 변경으로 소멸시효가 생겼어요. ① 합의나 판결로 확정된 양육비 → 확정일부터 10년(합의만 한 경우 3년). ② 한 번도 정해진 적 없는 경우 → 자녀가 성년이 된 후 10년 이내에 청구 가능해요. 기간이 지나면 청구권이 소멸하니 빠르게 대응하세요." },
-];
+] as const;
+
 const DOCS = [
   { name: "양육비 심판청구 소장", required: true, where: "법원 민원실, 법원 홈페이지" },
   { name: "가족관계증명서", required: true, where: "정부24, 주민센터" },
@@ -101,7 +111,8 @@ const DOCS = [
   { name: "소득 증빙 서류", required: true, where: "홈택스 원천징수영수증" },
   { name: "자녀 양육 사실 증명", required: true, where: "어린이집·학교 재학증명서" },
   { name: "상대방 재산·소득 자료", required: false, where: "건강보험 납부내역, 차량등록증 등" },
-];
+] as const;
+
 const STEPS = [
   { title: "양육비이행관리원 상담 — 무료예요",
     desc: "법원 가기 전에 여기서 먼저 시작하세요. 상담·협의 지원·소송 대리까지 전부 무료예요. 미혼 부모, 사실혼 케이스도 다 도와줘요.",
@@ -115,7 +126,8 @@ const STEPS = [
   { title: "그래도 안 주면 강제 수단",
     desc: "이행명령 → 감치(구치소 최대 30일) → 운전면허 정지 → 출국금지 → 급여·예금 압류 순서로 단계적으로 올라가요.",
     tip: "양육비이행관리원이 이 과정도 함께해요" },
-];
+] as const;
+
 const CHECKLIST = [
   "가족관계증명서·혼인관계증명서 발급",
   "내 소득 증빙 서류 준비 (원천징수영수증 등)",
@@ -123,7 +135,8 @@ const CHECKLIST = [
   "상대방 직장·수입 관련 자료 수집",
   "양육비이행관리원 or 법률구조공단 상담 예약",
   "관할 가정법원 확인 및 소장 양식 다운로드",
-];
+] as const;
+
 const PAYMENT_METHODS = [
   { title: "급여 자동이체", badge: "가장 확실해요",
     desc: "상대방 직장이 있다면 급여에서 자동으로 빠져나오게 법원에 신청할 수 있어요. 상대방이 의도적으로 안 주는 상황을 원천 차단해요.", highlight: true },
@@ -133,7 +146,8 @@ const PAYMENT_METHODS = [
     desc: "매달 받는 대신 한 번에 전액을 받을 수 있어요. 상대방 동의가 있거나 법원이 인정하면 가능해요.", highlight: false },
   { title: "부동산·차량 등 실물", badge: null,
     desc: "현금 대신 상대방 소유 부동산이나 차량으로 받는 것도 가능해요. 합의 또는 법원 결정으로 처리해요.", highlight: false },
-];
+] as const;
+
 const REFERENCES = [
   { category: "법령", items: [
     { label: "민법 제837조 — 이혼과 자녀의 양육책임", url: "https://www.law.go.kr/LSW/LsiJoLinkP.do?docType=JO&lsNm=%EB%AF%BC%EB%B2%95&joNo=083700000&languageType=KO&paras=1" },
@@ -149,23 +163,25 @@ const REFERENCES = [
     { label: "찾기쉬운 생활법령 — 자녀 양육비 부담", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=233&ccfNo=5&cciNo=3&cnpClsNo=1" },
     { label: "양육비이행관리원 공식 홈페이지", url: "https://www.childsupport.or.kr" },
   ]},
-];
+] as const;
+
 // ─── 디자인 토큰 ──────────────────────────────────────
 const G = "#1D9E75";
 const GL = "#E1F5EE";
 const GD = "#085041";
-const body = { fontSize: 14, color: "#374151", lineHeight: 2.1, marginBottom: "1rem" };
+const body = { fontSize: 14, color: "#374151", lineHeight: 2.1, marginBottom: "1rem" } as const;
+
 // ─── 공통 UI ──────────────────────────────────────────
 function Divider() {
   return <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />;
 }
-function H2({ children }) {
+function H2({ children }: { children: React.ReactNode }) {
   return <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111", borderLeft: `3px solid ${G}`, paddingLeft: 12, margin: "0 0 14px", lineHeight: 1.5 }}>{children}</h2>;
 }
-function Bdg({ children }) {
+function Bdg({ children }: { children: React.ReactNode }) {
   return <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: GL, color: "#0F6E56", marginBottom: 10 }}>{children}</span>;
 }
-function GreenBox({ title, children }) {
+function GreenBox({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div style={{ background: GL, borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95, color: GD }}>
       <strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>
@@ -173,7 +189,7 @@ function GreenBox({ title, children }) {
     </div>
   );
 }
-function BorderBox({ title, children }) {
+function BorderBox({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div style={{ border: "1px solid #9FE1CB", borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95 }}>
       <strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>
@@ -181,10 +197,12 @@ function BorderBox({ title, children }) {
     </div>
   );
 }
+
 // ─── 긴급 배너 ────────────────────────────────────────
 function UrgentBanner() {
-  const [type, setType] = useState(null);
-  const messages = {
+  const [type, setType] = useState<string | null>(null);
+  type MessageType = "new" | "stopped" | "noncompliance";
+  const messages: Record<MessageType, { title: string; color: string; bg: string; text: string }> = {
     new:           { title: "처음 청구하신다면", color: G, bg: GL,
       text: "양육비이행관리원(1644-6621)에 먼저 전화하세요. 무료로 전 과정을 도와줘요. 아래 계산기로 예상 금액 먼저 확인하고, 체크리스트 챙긴 뒤 상담 예약하면 돼요." },
     stopped:       { title: "갑자기 끊겼다면", color: "#DC2626", bg: "#FEF2F2",
@@ -197,9 +215,9 @@ function UrgentBanner() {
       <p style={{ fontSize: 13, fontWeight: 700, color: "#C2410C", marginBottom: 10 }}>지금 상황이 어떻게 되세요?</p>
       <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
         {[
-          { id: "new", label: "처음 청구해요. 아직 아무것도 안 했어요." },
-          { id: "stopped", label: "받다가 갑자기 끊겼어요." },
-          { id: "noncompliance", label: "법원 결정이 났는데 안 줘요." },
+          { id: "new" as const, label: "처음 청구해요. 아직 아무것도 안 했어요." },
+          { id: "stopped" as const, label: "받다가 갑자기 끊겼어요." },
+          { id: "noncompliance" as const, label: "법원 결정이 났는데 안 줘요." },
         ].map((item) => (
           <button key={item.id} onClick={() => setType(item.id)} style={{
             display: "flex", alignItems: "center", gap: 10, padding: "10px 14px",
@@ -212,7 +230,7 @@ function UrgentBanner() {
       </div>
     </div>
   );
-  const m = messages[type];
+  const m = messages[type as MessageType];
   return (
     <div style={{ background: m.bg, border: `1px solid ${m.color}40`, borderRadius: 10, padding: "16px 18px", marginBottom: "1.5rem" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
@@ -223,12 +241,13 @@ function UrgentBanner() {
     </div>
   );
 }
+
 // ─── 계산기 ──────────────────────────────────────────
 function Calculator() {
-  const [myIncome, setMyIncome] = useState(200);
-  const [theirIncome, setTheirIncome] = useState(300);
-  const [age, setAge] = useState(8);
-  const [children, setChildren] = useState(1);
+  const [myIncome, setMyIncome] = useState<number>(200);
+  const [theirIncome, setTheirIncome] = useState<number>(300);
+  const [age, setAge] = useState<number>(8);
+  const [children, setChildren] = useState<number>(1);
   const { fullCost, theirShare, totalSum, ratio, total } =
     calcAlimony(myIncome, theirIncome, age, children);
   const childLabel = children === 1 ? "1명 (가산 적용)" : children === 2 ? "2명 (기준)" : `${children}명 (감산 적용)`;
@@ -270,11 +289,12 @@ function Calculator() {
     </div>
   );
 }
+
 // ─── 자격 체커 ────────────────────────────────────────
 function EligibilityChecker() {
-  const [checked, setChecked] = useState({});
-  const [altC1, setAltC1] = useState(false);
-  const toggle = (id) => setChecked((p) => ({ ...p, [id]: !p[id] }));
+  const [checked, setChecked] = useState<Record<string, boolean>>({});
+  const [altC1, setAltC1] = useState<boolean>(false);
+  const toggle = (id: string) => setChecked((p) => ({ ...p, [id]: !p[id] }));
   const c1Pass = checked["c1"] || altC1;
   const allPass = c1Pass && checked["c2"] && checked["c3"] && checked["c4"];
   const someChecked = checked["c2"] || checked["c3"] || checked["c4"];
@@ -332,6 +352,7 @@ function EligibilityChecker() {
     </div>
   );
 }
+
 // ─── 수령 방법 ────────────────────────────────────────
 function PaymentMethods() {
   return (
@@ -348,6 +369,7 @@ function PaymentMethods() {
     </div>
   );
 }
+
 // ─── 서류 테이블 ──────────────────────────────────────
 function DocTable() {
   return (
@@ -377,6 +399,7 @@ function DocTable() {
     </div>
   );
 }
+
 // ─── 절차 스텝 ────────────────────────────────────────
 function ProcessSteps() {
   return (
@@ -414,12 +437,13 @@ function ProcessSteps() {
     </div>
   );
 }
+
 // ─── 체크리스트 ──────────────────────────────────────
 function Checklist() {
-  const [done, setDone] = useState(new Array(CHECKLIST.length).fill(false));
+  const [done, setDone] = useState<boolean[]>(new Array(CHECKLIST.length).fill(false));
   const doneCount = done.filter(Boolean).length;
   const pct = Math.round((doneCount / CHECKLIST.length) * 100);
-  const toggle = (i) => setDone((p) => p.map((v, idx) => (idx === i ? !v : v)));
+  const toggle = (i: number) => setDone((p) => p.map((v, idx) => (idx === i ? !v : v)));
   return (
     <div>
       <div style={{ height: 5, background: "#f3f4f6", borderRadius: 3, margin: "10px 0 4px" }}>
@@ -439,9 +463,10 @@ function Checklist() {
     </div>
   );
 }
+
 // ─── FAQ ─────────────────────────────────────────────
 function FAQ() {
-  const [open, setOpen] = useState(null);
+  const [open, setOpen] = useState<number | null>(null);
   return (
     <div>
       {FAQS.map((f, i) => (
@@ -465,6 +490,7 @@ function FAQ() {
     </div>
   );
 }
+
 // ─── CTA ─────────────────────────────────────────────
 function CTA() {
   return (
@@ -499,6 +525,7 @@ function CTA() {
     </div>
   );
 }
+
 // ─── 출처 ─────────────────────────────────────────────
 function References() {
   return (
@@ -525,13 +552,15 @@ function References() {
     </div>
   );
 }
+
 // ─── 허브 링크 데이터 ─────────────────────────────────
 const HUB_LINKS = [
   { title: "이혼 위자료, 얼마나 받을 수 있을까?", desc: "유책 배우자 기준과 실제 판결 금액", href: "#" },
   { title: "친권과 양육권, 뭐가 달라요?", desc: "이혼 후 자녀 결정권 완전 정리", href: "#" },
   { title: "재산분할 비율, 법원은 어떻게 정하나?", desc: "기여도·혼인 기간별 실제 분할 사례", href: "#" },
   { title: "협의이혼 절차와 기간 총정리", desc: "신청부터 완료까지 단계별 가이드", href: "#" },
-];
+] as const;
+
 // ─── 사이드바 링크 데이터 ─────────────────────────────
 const SIDEBAR_LINKS = [
   "이혼 위자료 청구 방법",
@@ -554,7 +583,8 @@ const SIDEBAR_LINKS = [
   "이혼 후 국민연금 분할",
   "별거 기간 재산분할 영향",
   "이혼 조정 신청 방법",
-];
+] as const;
+
 // ─── 허브 링크 박스 ───────────────────────────────────
 function HubLinks() {
   return (
@@ -588,6 +618,7 @@ function HubLinks() {
     </div>
   );
 }
+
 // ─── 사이드바 ─────────────────────────────────────────
 function Sidebar() {
   return (
@@ -616,6 +647,7 @@ function Sidebar() {
     </div>
   );
 }
+
 // ─── 메인 ─────────────────────────────────────────────
 export default function AlimonyPage() {
   return (

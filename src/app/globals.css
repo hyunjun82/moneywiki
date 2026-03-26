@@ -800,8 +800,8 @@ article .table-wrap,
 }
 
 /* 테이블 헤더 */
-article table thead th,
-.prose table thead th {
+article table:not([data-custom-style]) thead th,
+.prose table:not([data-custom-style]) thead th {
   background: linear-gradient(135deg, #1E3A5F 0%, #2B5280 100%);
   color: #ffffff;
   font-weight: 600;
@@ -813,18 +813,18 @@ article table thead th,
   border-right: 1px solid rgba(255,255,255,0.15);
 }
 
-article table thead th:last-child,
-.prose table thead th:last-child {
+article table:not([data-custom-style]) thead th:last-child,
+.prose table:not([data-custom-style]) thead th:last-child {
   border-right: none;
 }
 
-article table thead th:first-child,
-.prose table thead th:first-child {
+article table:not([data-custom-style]) thead th:first-child,
+.prose table:not([data-custom-style]) thead th:first-child {
   border-radius: 8px 0 0 0;
 }
 
-article table thead th:last-child,
-.prose table thead th:last-child {
+article table:not([data-custom-style]) thead th:last-child,
+.prose table:not([data-custom-style]) thead th:last-child {
   border-radius: 0 8px 0 0;
 }
 
