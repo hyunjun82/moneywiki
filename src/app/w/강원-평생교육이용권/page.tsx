@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from "react";
 
 // ─── 데이터 ──────────────────────────────────────────────
