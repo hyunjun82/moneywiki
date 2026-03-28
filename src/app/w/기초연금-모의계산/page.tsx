@@ -97,7 +97,7 @@ const RELATED = [
 ];
 
 // ─── 빠른 입력 버튼 ───
-function QuickBtn({ label, onClick }: { label: string; onClick: () => void }) {
+function QuickBtn({ label, onClick }: { label: string; onClick: () => void }: any) {
   return (
     <button type="button" onClick={onClick} style={{
       padding: "4px 10px", fontSize: 12, color: C.main, background: C.bg,

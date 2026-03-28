@@ -28,13 +28,13 @@ const body = { fontSize: 14, color: "#374151", lineHeight: 2.1, marginBottom: "1
 function Divider() {
   return <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />;
 }
-function H2({ children }) {
+function H2({ children }: any) {
   return <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111", borderLeft: "3px solid #1D9E75", paddingLeft: 12, margin: "0 0 14px", lineHeight: 1.5 }}>{children}</h2>;
 }
-function Bdg({ children }) {
+function Bdg({ children }: any) {
   return <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: "#E1F5EE", color: "#0F6E56", marginBottom: 10 }}>{children}</span>;
 }
-function GreenBox({ title, children }) {
+function GreenBox({ title, children }: any) {
   return (
     <div style={{ background: "#E1F5EE", borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95, color: "#085041" }}>
       <strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>
@@ -42,7 +42,7 @@ function GreenBox({ title, children }) {
     </div>
   );
 }
-function BorderBox({ title, children }) {
+function BorderBox({ title, children }: any) {
   return (
     <div style={{ border: "1px solid #9FE1CB", borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95 }}>
       <strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>
@@ -95,7 +95,7 @@ function UrgentBanner() {
 }
 
 // ─── 상단 신청 버튼
-function ApplyButtons({ url, cardUrl, label }) {
+function ApplyButtons({ url, cardUrl, label }: any) {
   return (
     <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 10, margin: "1.4rem 0" }}>
       <a href={url} target="_self"
@@ -111,7 +111,7 @@ function ApplyButtons({ url, cardUrl, label }) {
 }
 
 // ─── D-day
-function Deadline({ isoDate, label }) {
+function Deadline({ isoDate, label }: any) {
   const [days, setDays] = React.useState(null);
   React.useEffect(() => {
     const calc = () => {
@@ -141,7 +141,7 @@ function Deadline({ isoDate, label }) {
 }
 
 // ─── 유형 체커
-function TypeChecker({ types }) {
+function TypeChecker({ types }: any) {
   const [age, setAge] = React.useState("");
   const ageNum = parseInt(age, 10);
   function getResult() {
@@ -178,7 +178,7 @@ function TypeChecker({ types }) {
 }
 
 // ─── 절차 스텝
-function ProcessSteps({ steps }) {
+function ProcessSteps({ steps }: any) {
   return (
     <div style={{ margin: "10px 0 1rem" }}>
       {steps.map((s, i) => (
@@ -213,7 +213,7 @@ function ProcessSteps({ steps }) {
 }
 
 // ─── FAQ
-function FAQ({ faqs }) {
+function FAQ({ faqs }: any) {
   const [open, setOpen] = React.useState(null);
   return (
     <div>
@@ -239,7 +239,7 @@ function FAQ({ faqs }) {
 }
 
 // ─── CTA
-function CTA({ url, deadline, ctaTitle, ctaDesc }) {
+function CTA({ url, deadline, ctaTitle, ctaDesc }: any) {
   return (
     <div style={{ background: "#E1F5EE", borderRadius: 12, padding: "26px 22px", margin: "2rem 0 1rem", textAlign: "center" }}>
       <p style={{ fontSize: 13, color: "#085041", fontWeight: 600, marginBottom: 6 }}>{deadline} 마감이에요</p>
@@ -260,7 +260,7 @@ function CTA({ url, deadline, ctaTitle, ctaDesc }) {
 }
 
 // ─── 허브 링크
-function HubLinks({ links }) {
+function HubLinks({ links }: any) {
   return (
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 다른 지역 신청도 확인해보세요</p>
@@ -281,7 +281,7 @@ function HubLinks({ links }) {
 }
 
 // ─── 출처
-function References({ refs }) {
+function References({ refs }: any) {
   return (
     <div style={{ marginTop: "2rem" }}>
       <h3 style={{ fontSize: 15, fontWeight: 600, color: "#374151", marginBottom: 14, display: "flex", alignItems: "center", gap: 8 }}>
@@ -309,7 +309,7 @@ function References({ refs }) {
 }
 
 // ─── 사이드바
-function Sidebar({ links }) {
+function Sidebar({ links }: any) {
   return (
     <div style={{ width: 176, flexShrink: 0, position: "sticky", top: 24, alignSelf: "flex-start" }}>
       <div style={{ background: "#f9fafb", borderRadius: 10, padding: "14px" }}>
