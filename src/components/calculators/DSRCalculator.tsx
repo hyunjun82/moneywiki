@@ -30,12 +30,12 @@ export default function DSRCalculator() {
   const [maxLoanAmount, setMaxLoanAmount] = useState<number>(0);
   const [stressMaxLoanAmount, setStressMaxLoanAmount] = useState<number>(0);
 
-  // 스트레스 금리 가산 (2024.10.15 대책 기준)
+  // 스트레스 금리 가산 (금융위 3단계, 2025.7.1 시행)
   const getStressRate = useCallback((): number => {
     if (loanType === "mortgage") {
       // 주택담보대출
-      if (region === "capital") return 3.0; // 수도권/규제지역
-      return 0.75; // 지방 (2025년 말까지)
+      if (region === "capital") return 1.5; // 수도권 (3단계 확정 1.50%p)
+      return 0.75; // 지방 (2025년 말까지 유예)
     } else if (loanType === "credit") {
       // 신용대출 (1억원 초과 시에만 적용, 여기서는 기본 적용)
       return 1.5;

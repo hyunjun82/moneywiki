@@ -29,11 +29,11 @@ export default function StressDSRCalculator() {
   const [newLoanMonthlyPayment, setNewLoanMonthlyPayment] = useState<number>(0);
   const [maxLoanAmount, setMaxLoanAmount] = useState<number>(0);
 
-  // 스트레스 금리 반환 (2026년 기준)
+  // 스트레스 금리 반환 (금융위 3단계, 2025.7.1 시행)
   const getStressRate = useCallback((type: LoanType): number => {
     switch (type) {
       case "metro-mortgage":
-        return 3.0; // 수도권 주담대
+        return 1.5; // 수도권 주담대 (3단계 확정 1.50%p)
       case "local-mortgage":
         return 0.75; // 지방 주담대 (2026년 6월까지)
       case "credit":
