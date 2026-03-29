@@ -13,7 +13,7 @@ const GD = "#085041";
 const body = { fontSize: 14, color: "#374151", lineHeight: 2.1, marginBottom: "1rem" } as const;
 
 // 헤더, 제목
-function H2({ children }: { children: React.ReactNode }: any) {
+function H2({ children }: { children: React.ReactNode }) {
   return (
     <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111", borderLeft: `3px solid ${G}`, paddingLeft: 12, margin: "2rem 0 14px", lineHeight: 1.5 }}>
       {children}
@@ -21,7 +21,7 @@ function H2({ children }: { children: React.ReactNode }: any) {
   );
 }
 
-function Bdg({ children }: { children: React.ReactNode }: any) {
+function Bdg({ children }: { children: React.ReactNode }) {
   return (
     <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: GL, color: "#0F6E56", marginRight: 8 }}>
       {children}
@@ -29,7 +29,7 @@ function Bdg({ children }: { children: React.ReactNode }: any) {
   );
 }
 
-function GreenBox({ title, children }: { title: string; children: React.ReactNode }: any) {
+function GreenBox({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div style={{ background: GL, borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95, color: GD }}>
       <strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>
@@ -38,7 +38,7 @@ function GreenBox({ title, children }: { title: string; children: React.ReactNod
   );
 }
 
-function BorderBox({ title, children }: { title: string; children: React.ReactNode }: any) {
+function BorderBox({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div style={{ border: "1px solid #9FE1CB", borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95 }}>
       <strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>

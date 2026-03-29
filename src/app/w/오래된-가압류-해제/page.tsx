@@ -127,7 +127,7 @@ function LimitationTable() {
   );
 }
 
-function ProcessSteps({ steps }: any) {
+function ProcessSteps({ steps }) {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 0, marginBottom: "1.5rem" }}>
       {steps.map((step, i) => (
