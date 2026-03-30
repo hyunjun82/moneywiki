@@ -77,3 +77,4 @@ extracted-*.json
 *-rewrite.png
 .claude/worktrees/
 .clone/
+.next_bak 

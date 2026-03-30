@@ -138,7 +138,7 @@ function Calculator() {
   const limits66 = [250, 250, 300, 350, 400, 450];
   const limitsGeneral = [250, 250, 250, 200, 200, 200];
 
-  const calc = (limits) => limits.map(lim => Math.min(wage, lim));
+  const calc = (limits: number[]) => limits.map(lim => Math.min(wage, lim));
   const payments66 = calc(limits66);
   const paymentsGeneral = calc(limitsGeneral);
   const total66 = payments66.reduce((a, b) => a + b, 0);
