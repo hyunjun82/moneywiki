@@ -1,8 +1,6 @@
 "use client";
 // @ts-nocheck
 import { useState } from "react";
-$BDG
-$DIVIDER
 
 // 5번: 개인파산 면책 신청 | 비용·절차·면책 안 되는 빚
 // 4번과 주제가 겹치므로 비용·면책불가 채무 중심으로 차별화
