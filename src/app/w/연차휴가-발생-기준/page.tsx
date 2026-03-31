@@ -1,6 +1,12 @@
 "use client";
 // @ts-nocheck
 import { useState } from "react";
+function Divider() { return <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />; }
+function Bdg({ children }: any) { return <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: "#E1F5EE", color: "#0F6E56", marginBottom: 10 }}>{children}</span>; }
+function BorderBox({ title, children }: any) { return <div style={{ border: "1px solid #9FE1CB", borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95 }}><strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>{children}</div>; }
+$BBOX
+$BDG
+$DIVIDER
 
 // 9번: 연차휴가 발생 기준 | 연차수당 계산·보상·촉진제도
 

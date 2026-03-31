@@ -1,6 +1,10 @@
 "use client";
 // @ts-nocheck
 import { useState } from "react";
+function Divider() { return <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />; }
+function Bdg({ children }: any) { return <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: "#E1F5EE", color: "#0F6E56", marginBottom: 10 }}>{children}</span>; }
+$BDG
+$DIVIDER
 
 // 5번: 개인파산 면책 신청 | 비용·절차·면책 안 되는 빚
 // 4번과 주제가 겹치므로 비용·면책불가 채무 중심으로 차별화
