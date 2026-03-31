@@ -1,8 +1,6 @@
 "use client";
 // @ts-nocheck
 import { useState } from "react";
-$BDG
-$DIVIDER
 
 // 10번: 오래된 가압류 해제 방법 | 소멸시효·취소 신청 절차
 

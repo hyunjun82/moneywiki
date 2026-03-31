@@ -2,8 +2,6 @@
 // @ts-nocheck
 import { useState } from "react";
 $BBOX
-$BDG
-$DIVIDER
 
 // 9번: 연차휴가 발생 기준 | 연차수당 계산·보상·촉진제도
 

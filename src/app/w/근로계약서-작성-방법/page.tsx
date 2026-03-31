@@ -1,8 +1,6 @@
 "use client";
 // @ts-nocheck
 import { useState } from "react";
-$BDG
-$DIVIDER
 
 // 6번: 근로계약서 작성 방법 | 필수 기재사항과 못 받았을 때 대처법
 
