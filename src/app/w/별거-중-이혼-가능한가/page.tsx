@@ -1,7 +1,6 @@
 "use client";
 // @ts-nocheck
 import { useState } from "react";
-function Divider() { return <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />; }
 $DIVIDER
 const SIDEBAR_LINKS = ["협의이혼 절차","이혼 무료 법률상담","이혼 위자료 청구","이혼 재산분할 비율","이혼 친권·양육권","이혼 양육비 청구","가정폭력 이혼 방법","이혼 소송 증거 수집","이혼 전 재산 빼돌림","이혼 별거 중 양육비","이혼 배우자 가출","이혼 빚 공동부담","재산분할 청구 기한","위자료 소멸시효","이혼 후 공동명의 대출","이혼 퇴직금 재산분할","면접교섭권 신청","양육비 미지급 대응","대한법률구조공단 상담","이혼 일방 거부"];
 const HUB_LINKS = [

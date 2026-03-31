@@ -1,8 +1,6 @@
 "use client";
 // @ts-nocheck
 import { useState } from "react";
-function Divider() { return <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />; }
-function Bdg({ children }: any) { return <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: "#E1F5EE", color: "#0F6E56", marginBottom: 10 }}>{children}</span>; }
 $BDG
 $DIVIDER
 
