@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 
 // ─── 핵심 데이터 (JSON 검증 기준)

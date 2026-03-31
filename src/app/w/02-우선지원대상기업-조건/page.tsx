@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 
 // ─── 고용보험법 시행령 제12조 별표1 (2026.1.2. 시행)

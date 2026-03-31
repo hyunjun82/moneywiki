@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 
 // ─── 2025.9.7 발표 국토교통부 주택공급 확대방안 (공식 발표 수치)

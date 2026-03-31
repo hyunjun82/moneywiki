@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 
 // ─── 민사집행법 기준

@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 
 // ─── 2026년 기준 (고용보험법 시행령 제29조, 2026.1.1. 시행 개정 포함)

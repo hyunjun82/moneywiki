@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 
 // ─── 2026년 기준 (소득세법 §89①3, 시행령 §154①, §95②, §155의3)

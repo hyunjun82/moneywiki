@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 
 // ─── 2026년 기준 (서민금융진흥원 햇살론 대환 운영 기준)

@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 
 // ─── 2026년 기준 (남녀고용평등법 제19조제4항)

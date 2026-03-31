@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 
 // ─── 2026년 기준 (남녀고용평등과 일·가정 양립 지원에 관한 법률)

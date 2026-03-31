@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 
 // ─── 개발제한구역의 지정 및 관리에 관한 특별조치법 기준
