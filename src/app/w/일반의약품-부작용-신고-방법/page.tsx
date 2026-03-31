@@ -155,13 +155,13 @@ const body = { fontSize: 14, color: "#374151", lineHeight: 2.1, marginBottom: "1
 function Divider() {
   return <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />;
 }
-function H2({ children }) {
+function H2({ children }: any) {
   return <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111", borderLeft: `3px solid ${G}`, paddingLeft: 12, margin: "0 0 14px", lineHeight: 1.5 }}>{children}</h2>;
 }
-function Bdg({ children }) {
+function Bdg({ children }: any) {
   return <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: GL, color: "#0F6E56", marginBottom: 10 }}>{children}</span>;
 }
-function GreenBox({ title, children }) {
+function GreenBox({ title, children }: any) {
   return (
     <div style={{ background: GL, borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95, color: GD }}>
       <strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>
@@ -169,7 +169,7 @@ function GreenBox({ title, children }) {
     </div>
   );
 }
-function BorderBox({ title, children }) {
+function BorderBox({ title, children }: any) {
   return (
     <div style={{ border: "1px solid #9FE1CB", borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95 }}>
       <strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>
@@ -198,8 +198,8 @@ function UrgentBanner() {
           { id: "mild",   label: "약 먹고 이상 반응이 생겼어요." },
           { id: "severe", label: "부작용이 심해서 병원에 갔어요." },
           { id: "cost",   label: "부작용 때문에 든 병원비를 돌려받고 싶어요." },
-        ].map((item) => (
-          <button key={item.id} onClick={() => setType(item.id)} style={{
+        ].map((item: any) => (
+          <button key={item.id} onClick={(: any) => setType(item.id)} style={{
             display: "flex", alignItems: "center", gap: 10, padding: "10px 14px",
             borderRadius: 8, border: "1px solid #FED7AA", background: "#fff",
             fontSize: 13, color: "#374151", cursor: "pointer", textAlign: "left",
@@ -216,7 +216,7 @@ function UrgentBanner() {
     <div style={{ background: m.bg, border: `1px solid ${m.color}40`, borderRadius: 10, padding: "16px 18px", marginBottom: "1.5rem" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
         <p style={{ fontSize: 13, fontWeight: 700, color: m.color, margin: 0 }}>{m.title}</p>
-        <button onClick={() => setType(null)} style={{ background: "none", border: "none", fontSize: 12, color: "#9ca3af", cursor: "pointer", padding: 0, flexShrink: 0, marginLeft: 12 }}>다시 선택</button>
+        <button onClick={(: any) => setType(null)} style={{ background: "none", border: "none", fontSize: 12, color: "#9ca3af", cursor: "pointer", padding: 0, flexShrink: 0, marginLeft: 12 }}>다시 선택</button>
       </div>
       <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.85, margin: 0 }}>{m.text}</p>
     </div>
@@ -245,8 +245,8 @@ function CompensationCalc() {
       </p>
 
       <div style={{ display: "flex", gap: 6, marginBottom: 16 }}>
-        {labels.map((l, i) => (
-          <button key={i} onClick={() => setType(i)} style={{
+        {labels.map((l: any, i: any) => (
+          <button key={i} onClick={(: any) => setType(i)} style={{
             flex: 1, padding: "8px 4px", borderRadius: 6, fontSize: 12, fontWeight: type === i ? 700 : 400,
             border: `1px solid ${type === i ? G : "#e5e7eb"}`, background: type === i ? GL : "#fff",
             color: type === i ? GD : "#6b7280", cursor: "pointer",
@@ -258,7 +258,7 @@ function CompensationCalc() {
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
           <label style={{ fontSize: 13, color: "#6b7280", width: 110, flexShrink: 0 }}>실제 진료비</label>
           <input type="range" min={10} max={5000} step={10} value={medicalCost}
-            onChange={(e) => setMedicalCost(+e.target.value)} style={{ flex: 1, accentColor: G }} />
+            onChange={(e: any) => setMedicalCost(+e.target.value)} style={{ flex: 1, accentColor: G }} />
           <span style={{ fontSize: 12, fontWeight: 700, minWidth: 90, textAlign: "right", color: "#111" }}>{medicalCost}만원</span>
         </div>
       )}
@@ -267,7 +267,7 @@ function CompensationCalc() {
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
           <label style={{ fontSize: 13, color: "#6b7280", width: 110, flexShrink: 0 }}>장애 등급</label>
           <input type="range" min={0} max={3} step={1} value={grade}
-            onChange={(e) => setGrade(+e.target.value)} style={{ flex: 1, accentColor: G }} />
+            onChange={(e: any) => setGrade(+e.target.value)} style={{ flex: 1, accentColor: G }} />
           <span style={{ fontSize: 12, fontWeight: 700, minWidth: 90, textAlign: "right", color: "#111" }}>{grade + 1}급 ({DISABILITY_RATES[grade] * 100}%)</span>
         </div>
       )}
@@ -314,8 +314,8 @@ function EligibilityChecker() {
   return (
     <div style={{ margin: "10px 0 1.2rem" }}>
       <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-        {conditions.map((c) => (
-          <label key={c.id} onClick={() => toggle(c.id)} style={{
+        {conditions.map((c: any) => (
+          <label key={c.id} onClick={(: any) => toggle(c.id)} style={{
             display: "flex", alignItems: "flex-start", gap: 10, padding: "10px 14px", borderRadius: 8, cursor: "pointer",
             border: `1px solid ${checked[c.id] ? G : "#e5e7eb"}`,
             background: checked[c.id] ? GL : "#f9fafb",
@@ -351,13 +351,13 @@ function DocTable() {
       <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
         <thead>
           <tr style={{ background: "#f9fafb" }}>
-            {["서류", "구분", "발급처"].map((h) => (
+            {["서류", "구분", "발급처"].map((h: any) => (
               <th key={h} style={{ padding: "8px 12px", textAlign: "left", fontWeight: 500, color: "#6b7280", borderBottom: "1px solid #e5e7eb" }}>{h}</th>
             ))}
           </tr>
         </thead>
         <tbody>
-          {DOCS.map((d, i) => (
+          {DOCS.map((d: any, i: any) => (
             <tr key={i}>
               <td style={{ padding: "9px 12px", borderBottom: "1px solid #f3f4f6" }}>{d.name}</td>
               <td style={{ padding: "9px 12px", borderBottom: "1px solid #f3f4f6" }}>
@@ -375,10 +375,10 @@ function DocTable() {
 }
 
 // ─── 절차 스텝
-function ProcessSteps({ steps }) {
+function ProcessSteps({ steps }: any) {
   return (
     <div style={{ margin: "10px 0 1rem" }}>
-      {steps.map((s, i) => (
+      {steps.map((s: any, i: any) => (
         <div key={i} style={{ display: "flex", gap: 14, paddingBottom: 20, position: "relative" }}>
           {i < steps.length - 1 && (
             <div style={{ position: "absolute", left: 15, top: 32, bottom: 0, width: 1, background: "#e5e7eb" }} />
@@ -410,7 +410,7 @@ function ChecklistUI() {
   const [done, setDone] = useState(new Array(CHECKLIST.length).fill(false));
   const doneCount = done.filter(Boolean).length;
   const pct = Math.round((doneCount / CHECKLIST.length) * 100);
-  const toggle = (i) => setDone((p) => p.map((v, idx) => (idx === i ? !v : v)));
+  const toggle = (i) => setDone((p) => p.map((v: any, idx: any) => (idx === i ? !v : v)));
   return (
     <div>
       <div style={{ height: 5, background: "#f3f4f6", borderRadius: 3, margin: "10px 0 4px" }}>
@@ -418,8 +418,8 @@ function ChecklistUI() {
       </div>
       <p style={{ fontSize: 12, color: "#9ca3af", marginBottom: 10 }}>{doneCount} / {CHECKLIST.length} 완료</p>
       <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-        {CHECKLIST.map((item, i) => (
-          <div key={i} onClick={() => toggle(i)} style={{ display: "flex", alignItems: "center", gap: 10, padding: "9px 12px", borderRadius: 8, cursor: "pointer", border: "1px solid #e5e7eb", background: done[i] ? "#f9fafb" : "#fff" }}>
+        {CHECKLIST.map((item: any, i: any) => (
+          <div key={i} onClick={(: any) => toggle(i)} style={{ display: "flex", alignItems: "center", gap: 10, padding: "9px 12px", borderRadius: 8, cursor: "pointer", border: "1px solid #e5e7eb", background: done[i] ? "#f9fafb" : "#fff" }}>
             <div style={{ width: 18, height: 18, borderRadius: 4, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", background: done[i] ? G : "#fff", border: `1.5px solid ${done[i] ? G : "#d1d5db"}`, color: "#fff", fontSize: 11 }}>
               {done[i] && "\u2713"}
             </div>
@@ -436,9 +436,9 @@ function FAQ() {
   const [open, setOpen] = useState(null);
   return (
     <div>
-      {FAQS.map((f, i) => (
+      {FAQS.map((f: any, i: any) => (
         <div key={i} style={{ border: `1px solid ${f.urgent ? "#FED7AA" : "#e5e7eb"}`, borderRadius: 8, marginBottom: 8, overflow: "hidden" }}>
-          <div onClick={() => setOpen(open === i ? null : i)} style={{
+          <div onClick={(: any) => setOpen(open === i ? null : i)} style={{
             padding: "12px 16px", fontSize: 14, fontWeight: f.urgent ? 600 : 500, cursor: "pointer",
             display: "flex", justifyContent: "space-between", alignItems: "center",
             background: open === i ? "#f9fafb" : f.urgent ? "#FFF7ED" : "#fff",
@@ -489,7 +489,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>의약품 부작용 관련 글도 함께 보세요</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a key={i} href={link.href} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 4px", borderBottom: i < HUB_LINKS.length - 1 ? "1px solid #f3f4f6" : "none", textDecoration: "none" }}>
             <span style={{ color: G, fontSize: 14, flexShrink: 0, fontWeight: 700 }}>{"\u203A"}</span>
             <span style={{ flex: 1 }}>
@@ -511,11 +511,11 @@ function References() {
         <span style={{ width: 3, height: 16, background: "#d1d5db", borderRadius: 2, display: "inline-block" }} />
         출처 및 참고자료
       </h3>
-      {REFERENCES.map((group) => (
+      {REFERENCES.map((group: any) => (
         <div key={group.category} style={{ marginBottom: 16 }}>
           <p style={{ fontSize: 11, fontWeight: 600, color: "#9ca3af", letterSpacing: "0.06em", marginBottom: 6 }}>{group.category.toUpperCase()}</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            {group.items.map((item) => (
+            {group.items.map((item: any) => (
               <a key={item.label} href={item.url} style={{ display: "flex", alignItems: "center", gap: 8, padding: "7px 12px", borderRadius: 6, border: "1px solid #f3f4f6", background: "#fafafa", fontSize: 13, color: "#374151", textDecoration: "none" }}>
                 <span style={{ color: G, fontSize: 11, flexShrink: 0 }}>{"\u2197"}</span>{item.label}
               </a>
@@ -536,7 +536,7 @@ function Sidebar() {
     <div style={{ width: 176, flexShrink: 0, position: "sticky", top: 24, alignSelf: "flex-start" }}>
       <div style={{ background: "#f9fafb", borderRadius: 10, padding: "14px 14px" }}>
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>의약품 안전 관련 글</p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a key={i} href="#" style={{ display: "flex", alignItems: "center", gap: 5, padding: "6px 0", fontSize: 12, color: "#374151", textDecoration: "none", borderBottom: "1px solid #f0f0f0", lineHeight: 1.5 }}>
             <span style={{ color: "#d1d5db", fontSize: 10, flexShrink: 0 }}>{"\u203A"}</span>{label}
           </a>

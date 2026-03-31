@@ -79,7 +79,7 @@ function InstantAnswer() {
           { q: "소득 없는 대학생·취준생도 받을 수 있나요?", a: "받을 수 있어요. 소득 0원이어도 취업준비생(미취업청년)으로 신청 가능해요. 단, 자금 사용 계획을 구체적으로 작성해야 해요." },
           { q: "한도가 얼마예요?", a: "최대 1,200만원. 평생 1회만 부여돼요. 다 갚아도 재신청 불가예요. 꼭 필요한 만큼만 신청하세요." },
           { q: "금리가 얼마예요?", a: "일반 청년 연 5.0%(금리 4.0% + 보증료 1.0%). 기초수급자·차상위 등 사회적 배려 대상자는 연 2.0%예요." },
-        ].map((item, i) => (
+        ].map((item: any, i: any) => (
           <div key={i} style={{ background: "#fff", borderRadius: 8, padding: "12px 14px", border: "1px solid #d1fae5" }}>
             <p style={{ fontSize: 13, fontWeight: 700, color: "#111", margin: "0 0 4px" }}>{item.q}</p>
             <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.8, margin: 0 }}>{item.a}</p>
@@ -102,7 +102,7 @@ function EligibilityChecker() {
     <div style={{ margin: "12px 0 1.2rem" }}>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 14 }}>
         {Object.entries(types).map(([key, val]) => (
-          <button key={key} onClick={() => setType(type === key ? null : key)}
+          <button key={key} onClick={(: any) => setType(type === key ? null : key)}
             style={{ padding: "8px 14px", borderRadius: 20, border: `1px solid ${type === key ? G : "#e5e7eb"}`, background: type === key ? GL : "#fff", color: type === key ? GD : "#374151", fontSize: 12, fontWeight: type === key ? 700 : 400, cursor: "pointer" }}>
             {val.label}
           </button>
@@ -115,9 +115,9 @@ function EligibilityChecker() {
           </div>
           <div style={{ padding: "14px 16px" }}>
             <p style={{ fontSize: 12, fontWeight: 700, color: "#374151", margin: "0 0 8px" }}>✓ 확인할 조건</p>
-            {types[type].check.map((c, i) => <p key={i} style={{ fontSize: 13, color: "#374151", margin: "0 0 4px", display: "flex", gap: 6 }}><span style={{ color: G, flexShrink: 0 }}>✓</span>{c}</p>)}
+            {types[type].check.map((c: any, i: any) => <p key={i} style={{ fontSize: 13, color: "#374151", margin: "0 0 4px", display: "flex", gap: 6 }}><span style={{ color: G, flexShrink: 0 }}>✓</span>{c}</p>)}
             <p style={{ fontSize: 12, fontWeight: 700, color: "#374151", margin: "14px 0 8px" }}>📄 필요 서류</p>
-            {types[type].docs.map((d, i) => <p key={i} style={{ fontSize: 13, color: "#374151", margin: "0 0 4px", display: "flex", gap: 6 }}><span style={{ color: "#9ca3af", flexShrink: 0 }}>·</span>{d}</p>)}
+            {types[type].docs.map((d: any, i: any) => <p key={i} style={{ fontSize: 13, color: "#374151", margin: "0 0 4px", display: "flex", gap: 6 }}><span style={{ color: "#9ca3af", flexShrink: 0 }}>·</span>{d}</p>)}
           </div>
         </div>
       )}
@@ -143,7 +143,7 @@ function LimitTable() {
           </tr>
         </thead>
         <tbody>
-          {rows.map((r, i) => (
+          {rows.map((r: any, i: any) => (
             <tr key={i} style={{ borderBottom: "1px solid #e5e7eb", background: i % 2 === 0 ? "#fff" : "#fafafa" }}>
               <td style={{ padding: "9px 10px", fontWeight: 600, color: "#374151" }}>{r.type}</td>
               <td style={{ padding: "9px 10px", color: G, fontWeight: 700 }}>{r.limit}</td>
@@ -168,7 +168,7 @@ function Steps() {
   ];
   return (
     <div style={{ margin: "12px 0 1.2rem" }}>
-      {steps.map((step, i) => (
+      {steps.map((step: any, i: any) => (
         <div key={i} style={{ display: "flex", gap: 14, marginBottom: 14 }}>
           <div style={{ width: 28, height: 28, borderRadius: "50%", background: G, color: "#fff", fontSize: 13, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2 }}>{i + 1}</div>
           <div style={{ flex: 1 }}>
@@ -187,9 +187,9 @@ function FAQ() {
   const toggle = i => setOpen(p => ({ ...p, [i]: !p[i] }));
   return (
     <div style={{ margin: "12px 0 1.2rem" }}>
-      {FAQS.map((faq, i) => (
+      {FAQS.map((faq: any, i: any) => (
         <div key={i} style={{ borderBottom: "1px solid #f3f4f6" }}>
-          <button onClick={() => toggle(i)} style={{ width: "100%", textAlign: "left", padding: "13px 4px", display: "flex", alignItems: "flex-start", gap: 8, background: "none", border: "none", cursor: "pointer" }}>
+          <button onClick={(: any) => toggle(i)} style={{ width: "100%", textAlign: "left", padding: "13px 4px", display: "flex", alignItems: "flex-start", gap: 8, background: "none", border: "none", cursor: "pointer" }}>
             {faq.urgent && <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 20, background: "#FEE2E2", color: "#DC2626", flexShrink: 0, marginTop: 2 }}>급한 상황</span>}
             <span style={{ fontSize: 13, fontWeight: 600, color: "#111", flex: 1, lineHeight: 1.6 }}>{faq.q}</span>
             <span style={{ color: "#9ca3af", fontSize: 16, flexShrink: 0 }}>{open[i] ? "▲" : "▼"}</span>
@@ -206,7 +206,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 햇살론 관련 글도 함께 보세요</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a key={i} href={link.href} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 4px", borderBottom: i < HUB_LINKS.length - 1 ? "1px solid #f3f4f6" : "none", textDecoration: "none" }}>
             <span style={{ color: G, fontSize: 14, flexShrink: 0, fontWeight: 700 }}>›</span>
             <span style={{ flex: 1 }}><span style={{ fontSize: 13, fontWeight: 600, color: "#111", display: "block" }}>{link.title}</span><span style={{ fontSize: 12, color: "#9ca3af" }}>{link.desc}</span></span>
@@ -245,7 +245,7 @@ function Sidebar() {
     <div style={{ width: 176, flexShrink: 0, position: "sticky", top: 24, alignSelf: "flex-start" }}>
       <div style={{ background: "#f9fafb", borderRadius: 10, padding: "14px 14px" }}>
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>햇살론유스 관련 글</p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a key={i} href="#" style={{ display: "flex", alignItems: "center", gap: 5, padding: "6px 0", fontSize: 12, color: "#374151", textDecoration: "none", borderBottom: "1px solid #f0f0f0", lineHeight: 1.5 }}>
             <span style={{ color: "#d1d5db", fontSize: 10, flexShrink: 0 }}>›</span>{label}
           </a>

@@ -17,7 +17,7 @@ const FAQS = [
 const G = "#1D9E75", GL = "#E1F5EE", GD = "#085041";
 const body = { fontSize: 14, color: "#374151", lineHeight: 2.1, marginBottom: "1rem" };
 const Divider = () => <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />;
-const H2 = ({ children }) => <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111", borderLeft: `3px solid ${G}`, paddingLeft: 12, margin: "0 0 14px", lineHeight: 1.5 }}>{children}</h2>;
+const H2 = ({ children }: any) => <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111", borderLeft: `3px solid ${G}`, paddingLeft: 12, margin: "0 0 14px", lineHeight: 1.5 }}>{children}</h2>;
 function FAQ() {
   const [open, setOpen] = useState(null);
   return (

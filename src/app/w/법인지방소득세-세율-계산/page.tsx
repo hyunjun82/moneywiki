@@ -73,13 +73,13 @@ const body = { fontSize: 14, color: "#374151", lineHeight: 2.1, marginBottom: "1
 function Divider() {
   return <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />;
 }
-function H2({ children }) {
+function H2({ children }: any) {
   return <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111", borderLeft: `3px solid ${G}`, paddingLeft: 12, margin: "0 0 14px", lineHeight: 1.5 }}>{children}</h2>;
 }
-function Bdg({ children }) {
+function Bdg({ children }: any) {
   return <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: GL, color: "#0F6E56", marginBottom: 10 }}>{children}</span>;
 }
-function GreenBox({ title, children }) {
+function GreenBox({ title, children }: any) {
   return (
     <div style={{ background: GL, borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95, color: GD }}>
       <strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>
@@ -156,9 +156,9 @@ function FAQ() {
   const [open, setOpen] = useState(null);
   return (
     <div>
-      {FAQS.map((f, i) => (
+      {FAQS.map((f: any, i: any) => (
         <div key={i} style={{ border: `1px solid ${f.urgent ? "#FED7AA" : "#e5e7eb"}`, borderRadius: 8, marginBottom: 8, overflow: "hidden" }}>
-          <div onClick={() => setOpen(open === i ? null : i)}
+          <div onClick={(: any) => setOpen(open === i ? null : i)}
             style={{ padding: "12px 16px", fontSize: 14, fontWeight: f.urgent ? 600 : 500, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", background: open === i ? "#f9fafb" : f.urgent ? "#FFF7ED" : "#fff" }}>
             <span>
               {f.urgent && <span style={{ fontSize: 11, background: "#F97316", color: "#fff", borderRadius: 4, padding: "1px 6px", marginRight: 8, fontWeight: 600 }}>긴급</span>}
@@ -180,7 +180,7 @@ function SpokeLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 법인지방소득세 관련 글</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {SPOKE_LINKS.map((link, i) => (
+        {SPOKE_LINKS.map((link: any, i: any) => (
           <a key={i} href={link.href} target="_self"
             style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 4px", borderBottom: i < SPOKE_LINKS.length - 1 ? "1px solid #f3f4f6" : "none", textDecoration: "none" }}>
             <span style={{ color: G, fontSize: 14, flexShrink: 0, fontWeight: 700 }}>›</span>
@@ -228,7 +228,7 @@ function Sidebar() {
     <div style={{ width: 176, flexShrink: 0, position: "sticky", top: 24, alignSelf: "flex-start" }}>
       <div style={{ background: "#f9fafb", borderRadius: 10, padding: "14px 14px" }}>
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>관련 검색어</p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a key={i} href="#" target="_self"
             style={{ display: "flex", alignItems: "center", gap: 5, padding: "6px 0", fontSize: 12, color: "#374151", textDecoration: "none", borderBottom: "1px solid #f0f0f0", lineHeight: 1.5 }}>
             <span style={{ color: "#d1d5db", fontSize: 10, flexShrink: 0 }}>›</span>{label}
@@ -288,7 +288,7 @@ export default function CorporateLocalTaxRatePage() {
                 { range: "2억원 ~ 200억원",     rate: "1.9%",  deduct: "200만원",      note: "" },
                 { range: "200억원 ~ 3,000억원", rate: "2.1%",  deduct: "3,800만원",    note: "" },
                 { range: "3,000억원 초과",      rate: "2.4%",  deduct: "13,800만원",   note: "대기업" },
-              ].map((row, i) => (
+              ].map((row: any, i: any) => (
                 <tr key={i} style={{ background: i === 0 ? GL : i % 2 === 0 ? "#fff" : "#fafafa" }}>
                   <td style={{ padding: "9px 14px", borderBottom: "1px solid #f3f4f6", fontWeight: i === 0 ? 600 : 400 }}>{row.range}</td>
                   <td style={{ padding: "9px 14px", borderBottom: "1px solid #f3f4f6", fontWeight: 700, color: G }}>{row.rate}</td>
@@ -335,7 +335,7 @@ export default function CorporateLocalTaxRatePage() {
             { label: "창업중소기업 세액감면",   detail: "지방세특례제한법에 따라 법인지방소득세도 감면 가능", ok: true },
             { label: "중소기업 특별세액감면",    detail: "지방세법상 별도 조항 있음, 위택스에서 항목 선택 필요", ok: true },
             { label: "연구·인력개발비 세액공제", detail: "국세(홈택스)에서만 적용, 법인지방소득세는 별도 확인", ok: false },
-          ].map((row, i) => (
+          ].map((row: any, i: any) => (
             <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 12, padding: "10px 14px", borderRadius: 8, background: row.ok ? GL : "#f9fafb", border: `1px solid ${row.ok ? "#9FE1CB" : "#e5e7eb"}` }}>
               <span style={{ fontSize: 14, flexShrink: 0, marginTop: 2 }}>{row.ok ? "✅" : "⚠️"}</span>
               <span>
@@ -357,7 +357,7 @@ export default function CorporateLocalTaxRatePage() {
             { step: "①", label: "법인세 신고서 과세표준 확인", detail: "홈택스 → 법인세 신고내역 → 과세표준 금액" },
             { step: "②", label: "위택스 법인지방소득세 신고 화면에 입력", detail: "신고하기 → 지방소득세 → 법인소득분 → 과세표준 입력란" },
             { step: "③", label: "세율 자동 계산 확인", detail: "0.9%~2.4% 누진세율이 자동 적용되어 산출세액이 나와요" },
-          ].map((s, i) => (
+          ].map((s: any, i: any) => (
             <div key={i} style={{ display: "flex", gap: 12, padding: "10px 16px", borderRadius: 8, background: "#f9fafb", border: "1px solid #e5e7eb" }}>
               <span style={{ fontSize: 13, fontWeight: 700, color: "#1D9E75", flexShrink: 0 }}>{s.step}</span>
               <span>

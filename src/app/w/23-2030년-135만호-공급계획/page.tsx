@@ -100,7 +100,7 @@ function Divider() {
   return <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />;
 }
 
-function H2({ children }) {
+function H2({ children }: any) {
   return (
     <h2 style={{
       fontSize: 18,
@@ -116,7 +116,7 @@ function H2({ children }) {
   );
 }
 
-function Bdg({ children }) {
+function Bdg({ children }: any) {
   return (
     <span style={{
       display: "inline-block",
@@ -133,7 +133,7 @@ function Bdg({ children }) {
   );
 }
 
-function GreenBox({ title, children }) {
+function GreenBox({ title, children }: any) {
   return (
     <div style={{
       background: GL,
@@ -150,7 +150,7 @@ function GreenBox({ title, children }) {
   );
 }
 
-function WarnBox({ title, children }) {
+function WarnBox({ title, children }: any) {
   return (
     <div style={{
       background: "#FFF7ED",
@@ -208,10 +208,10 @@ function UrgentBanner() {
             { id: "wait",  label: "수도권에서 분양을 기다리는 중인데, 이 계획이 나한테 도움이 되나요?" },
             { id: "price", label: "수도권 집값이 앞으로 어떻게 될지 걱정돼요." },
             { id: "lh",    label: "LH 직접시행이 내 집 마련에 어떤 영향을 주는지 궁금해요." },
-          ].map((item) => (
+          ].map((item: any) => (
             <button
               key={item.id}
-              onClick={() => setType(item.id)}
+              onClick={(: any) => setType(item.id)}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -252,7 +252,7 @@ function UrgentBanner() {
       }}>
         <p style={{ fontSize: 13, fontWeight: 700, color: m.color, margin: 0 }}>{m.title}</p>
         <button
-          onClick={() => setType(null)}
+          onClick={(: any) => setType(null)}
           style={{
             background: "none",
             border: "none",
@@ -280,11 +280,11 @@ function SupplyChart() {
     { label: "신축매입임대 등",             val: 21.9, color: "#34d399" },
     { label: "노후시설·유휴부지",           val: 3.8,  color: "#6ee7b7" },
   ];
-  const total = items.reduce((s, i) => s + i.val, 0);
+  const total = items.reduce((s: any, i: any) => s + i.val, 0);
 
   return (
     <div style={{ margin: "12px 0 1.2rem" }}>
-      {items.map((item, i) => (
+      {items.map((item: any, i: any) => (
         <div key={i} style={{ marginBottom: 12 }}>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
             <span style={{ fontSize: 13, color: "#374151" }}>{item.label}</span>
@@ -312,10 +312,10 @@ function FAQ() {
   const toggle = (i) => setOpen((p) => ({ ...p, [i]: !p[i] }));
   return (
     <div style={{ margin: "10px 0 1.2rem" }}>
-      {FAQS.map((faq, i) => (
+      {FAQS.map((faq: any, i: any) => (
         <div key={i} style={{ borderBottom: "1px solid #f3f4f6" }}>
           <button
-            onClick={() => toggle(i)}
+            onClick={(: any) => toggle(i)}
             style={{
               width: "100%",
               textAlign: "left",
@@ -366,7 +366,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 같이 보면 도움 되는 글</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a
             key={i}
             href={link.href}
@@ -400,13 +400,13 @@ function References() {
         <span style={{ width: 3, height: 16, background: "#d1d5db", borderRadius: 2, display: "inline-block" }} />
         출처 및 참고자료
       </h3>
-      {REFERENCES.map((group) => (
+      {REFERENCES.map((group: any) => (
         <div key={group.category} style={{ marginBottom: 16 }}>
           <p style={{ fontSize: 11, fontWeight: 600, color: "#9ca3af", letterSpacing: "0.06em", marginBottom: 6 }}>
             {group.category.toUpperCase()}
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            {group.items.map((item) => (
+            {group.items.map((item: any) => (
               <a
                 key={item.label}
                 href={item.url}
@@ -444,7 +444,7 @@ function Sidebar() {
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>
           주택 공급 관련 글
         </p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a
             key={i}
             href="#"
@@ -523,7 +523,7 @@ export default function Supply135Page() {
             { step: "착공", time: "2026~2030년", desc: "공사 시작. 분양주택은 착공 3~6개월 후 청약 접수 시작.", color: G },
             { step: "분양·청약", time: "착공 3~6개월 후", desc: "계약금·중도금·잔금 납부 일정 시작. 이때 내 자금 계획 필요.", color: "#059669" },
             { step: "입주", time: "분양 후 2~3년", desc: "실제 이사 가능. 2026년 착공 → 2028~2029년 입주 가능.", color: "#10b981" },
-          ].map((item, i) => (
+          ].map((item: any, i: any) => (
             <div
               key={i}
               style={{
@@ -600,7 +600,7 @@ export default function Supply135Page() {
                 "과거 공급 목표 미달 선례 반복 우려",
               ],
             },
-          ].map((col, i) => (
+          ].map((col: any, i: any) => (
             <div
               key={i}
               style={{
@@ -613,7 +613,7 @@ export default function Supply135Page() {
               <p style={{ fontSize: 13, fontWeight: 700, color: col.color, marginBottom: 10 }}>
                 {col.title}
               </p>
-              {col.items.map((item, j) => (
+              {col.items.map((item: any, j: any) => (
                 <p key={j} style={{
                   fontSize: 12,
                   color: "#374151",

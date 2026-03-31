@@ -63,10 +63,10 @@ const REFERENCES = [
 const G = "#1D9E75"; const GL = "#E1F5EE"; const GD = "#085041";
 const body = { fontSize: 14, color: "#374151", lineHeight: 2.1, marginBottom: "1rem" };
 function Divider() { return <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />; }
-function H2({ children }) { return <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111", borderLeft: `3px solid ${G}`, paddingLeft: 12, margin: "0 0 14px", lineHeight: 1.5 }}>{children}</h2>; }
-function Bdg({ children }) { return <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: GL, color: "#0F6E56", marginBottom: 10 }}>{children}</span>; }
-function GreenBox({ title, children }) { return <div style={{ background: GL, borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95, color: GD }}><strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>{children}</div>; }
-function BorderBox({ title, children }) { return <div style={{ border: "1px solid #9FE1CB", borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95 }}><strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>{children}</div>; }
+function H2({ children }: any) { return <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111", borderLeft: `3px solid ${G}`, paddingLeft: 12, margin: "0 0 14px", lineHeight: 1.5 }}>{children}</h2>; }
+function Bdg({ children }: any) { return <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: GL, color: "#0F6E56", marginBottom: 10 }}>{children}</span>; }
+function GreenBox({ title, children }: any) { return <div style={{ background: GL, borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95, color: GD }}><strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>{children}</div>; }
+function BorderBox({ title, children }: any) { return <div style={{ border: "1px solid #9FE1CB", borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95 }}><strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>{children}</div>; }
 
 function InstantAnswer() {
   return (
@@ -77,7 +77,7 @@ function InstantAnswer() {
           { q: "보증료가 뭔가요?", a: "서민금융진흥원이 은행에 보증을 서주는 대가로 내는 수수료예요. 대출금리에 더해지는 추가 비용이에요. 실질 부담 금리 = 대출금리 + 보증료율로 계산해요." },
           { q: "감면받는 방법이 있나요?", a: "있어요. 사회적 배려 대상자(기초수급자·차상위 등)는 0.5%p, 금융교육 이수·복지멤버십 가입자는 0.1%p 인하돼요. 단, 약정 전에 신청해야 해요. 약정 후엔 소급 안 돼요." },
           { q: "중도 상환하면 보증료를 돌려받나요?", a: "네, 환급돼요. 남은 기간의 보증료를 서민금융진흥원에 신청하면 돌려받을 수 있어요." },
-        ].map((item, i) => (
+        ].map((item: any, i: any) => (
           <div key={i} style={{ background: "#fff", borderRadius: 8, padding: "12px 14px", border: "1px solid #d1fae5" }}>
             <p style={{ fontSize: 13, fontWeight: 700, color: "#111", margin: "0 0 4px" }}>{item.q}</p>
             <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.8, margin: 0 }}>{item.a}</p>
@@ -106,7 +106,7 @@ function RateTable() {
           </tr>
         </thead>
         <tbody>
-          {rows.map((r, i) => (
+          {rows.map((r: any, i: any) => (
             <tr key={i} style={{ borderBottom: "1px solid #e5e7eb", background: i % 2 === 0 ? "#fff" : "#fafafa" }}>
               <td style={{ padding: "9px 10px", fontWeight: 600, color: "#374151" }}>{r.product}</td>
               <td style={{ padding: "9px 10px", color: G, fontWeight: 700 }}>{r.rate}</td>
@@ -152,7 +152,7 @@ function Calculator() {
         <p style={{ fontSize: 12, color: "#374151", marginBottom: 6, fontWeight: 700 }}>상품 유형</p>
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
           {[{ id: "general", label: "일반보증 2.5%" }, { id: "special", label: "특례보증 5.5%" }, { id: "youth", label: "유스 일반 1.0%" }, { id: "youth_care", label: "유스 배려 0.1%" }].map(opt => (
-            <button key={opt.id} onClick={() => setRateType(opt.id)}
+            <button key={opt.id} onClick={(: any) => setRateType(opt.id)}
               style={{ padding: "6px 12px", borderRadius: 20, border: `1px solid ${rateType === opt.id ? G : "#e5e7eb"}`, background: rateType === opt.id ? GL : "#fff", color: rateType === opt.id ? GD : "#374151", fontSize: 12, fontWeight: rateType === opt.id ? 700 : 400, cursor: "pointer" }}>
               {opt.label}
             </button>
@@ -163,7 +163,7 @@ function Calculator() {
         <p style={{ fontSize: 12, color: "#374151", marginBottom: 6, fontWeight: 700 }}>대출 기간</p>
         <div style={{ display: "flex", gap: 8 }}>
           {[1, 2, 3, 5, 7].map(y => (
-            <button key={y} onClick={() => setYears(y)}
+            <button key={y} onClick={(: any) => setYears(y)}
               style={{ flex: 1, padding: "8px 0", borderRadius: 8, border: `1px solid ${years === y ? G : "#e5e7eb"}`, background: years === y ? GL : "#fff", color: years === y ? GD : "#374151", fontSize: 12, fontWeight: years === y ? 700 : 400, cursor: "pointer" }}>
               {y}년
             </button>
@@ -174,7 +174,7 @@ function Calculator() {
         <p style={{ fontSize: 12, color: "#374151", marginBottom: 6, fontWeight: 700 }}>감면 조건</p>
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
           {[{ id: "none", label: "해당 없음" }, { id: "care", label: "사회적 배려 대상자 (-0.5%p)" }, { id: "edu", label: "금융교육·복지멤버십 (-0.1%p)" }].map(opt => (
-            <button key={opt.id} onClick={() => setDiscount(opt.id)}
+            <button key={opt.id} onClick={(: any) => setDiscount(opt.id)}
               style={{ padding: "6px 12px", borderRadius: 20, border: `1px solid ${discount === opt.id ? G : "#e5e7eb"}`, background: discount === opt.id ? GL : "#fff", color: discount === opt.id ? GD : "#374151", fontSize: 12, fontWeight: discount === opt.id ? 700 : 400, cursor: "pointer" }}>
               {opt.label}
             </button>
@@ -211,7 +211,7 @@ function DiscountTable() {
   ];
   return (
     <div style={{ margin: "12px 0 1.2rem" }}>
-      {rows.map((r, i) => (
+      {rows.map((r: any, i: any) => (
         <div key={i} style={{ display: "flex", gap: 12, padding: "12px 0", borderBottom: "1px solid #f3f4f6", alignItems: "flex-start" }}>
           <span style={{ fontSize: 12, fontWeight: 700, padding: "3px 8px", borderRadius: 20, background: i === 0 ? GL : "#f3f4f6", color: i === 0 ? GD : "#374151", flexShrink: 0, marginTop: 2 }}>{r.discount}</span>
           <div style={{ flex: 1 }}>
@@ -234,9 +234,9 @@ function FAQ() {
   const toggle = i => setOpen(p => ({ ...p, [i]: !p[i] }));
   return (
     <div style={{ margin: "12px 0 1.2rem" }}>
-      {FAQS.map((faq, i) => (
+      {FAQS.map((faq: any, i: any) => (
         <div key={i} style={{ borderBottom: "1px solid #f3f4f6" }}>
-          <button onClick={() => toggle(i)} style={{ width: "100%", textAlign: "left", padding: "13px 4px", display: "flex", alignItems: "flex-start", gap: 8, background: "none", border: "none", cursor: "pointer" }}>
+          <button onClick={(: any) => toggle(i)} style={{ width: "100%", textAlign: "left", padding: "13px 4px", display: "flex", alignItems: "flex-start", gap: 8, background: "none", border: "none", cursor: "pointer" }}>
             {faq.urgent && <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 20, background: "#FEE2E2", color: "#DC2626", flexShrink: 0, marginTop: 2 }}>급한 상황</span>}
             <span style={{ fontSize: 13, fontWeight: 600, color: "#111", flex: 1, lineHeight: 1.6 }}>{faq.q}</span>
             <span style={{ color: "#9ca3af", fontSize: 16, flexShrink: 0 }}>{open[i] ? "▲" : "▼"}</span>
@@ -253,7 +253,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 햇살론 관련 글도 함께 보세요</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a key={i} href={link.href} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 4px", borderBottom: i < HUB_LINKS.length - 1 ? "1px solid #f3f4f6" : "none", textDecoration: "none" }}>
             <span style={{ color: G, fontSize: 14, flexShrink: 0, fontWeight: 700 }}>›</span>
             <span style={{ flex: 1 }}><span style={{ fontSize: 13, fontWeight: 600, color: "#111", display: "block" }}>{link.title}</span><span style={{ fontSize: 12, color: "#9ca3af" }}>{link.desc}</span></span>
@@ -292,7 +292,7 @@ function Sidebar() {
     <div style={{ width: 176, flexShrink: 0, position: "sticky", top: 24, alignSelf: "flex-start" }}>
       <div style={{ background: "#f9fafb", borderRadius: 10, padding: "14px 14px" }}>
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>햇살론 관련 글</p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a key={i} href="#" style={{ display: "flex", alignItems: "center", gap: 5, padding: "6px 0", fontSize: 12, color: "#374151", textDecoration: "none", borderBottom: "1px solid #f0f0f0", lineHeight: 1.5 }}>
             <span style={{ color: "#d1d5db", fontSize: 10, flexShrink: 0 }}>›</span>{label}
           </a>

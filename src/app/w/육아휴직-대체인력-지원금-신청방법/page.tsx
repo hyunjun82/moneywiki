@@ -157,8 +157,8 @@ function UrgentBanner() {
           { id: "new",    label: "대체인력 채용했어요. 처음 신청해요." },
           { id: "reject", label: "신청했다가 거절됐어요." },
           { id: "check",  label: "어떤 지원금 받을 수 있는지 확인하고 싶어요." },
-        ].map((item) => (
-          <button key={item.id} onClick={() => setType(item.id)} style={{
+        ].map((item: any) => (
+          <button key={item.id} onClick={(: any) => setType(item.id)} style={{
             display: "flex", alignItems: "center", gap: 10, padding: "10px 14px",
             borderRadius: 8, border: "1px solid #FED7AA", background: "#fff",
             fontSize: 13, color: "#374151", cursor: "pointer", textAlign: "left",
@@ -175,7 +175,7 @@ function UrgentBanner() {
     <div style={{ background: m.bg, border: `1px solid ${m.color}40`, borderRadius: 10, padding: "16px 18px", marginBottom: "1.5rem" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
         <strong style={{ fontSize: 14, color: m.color }}>{m.title}</strong>
-        <button onClick={() => setType(null)} style={{ fontSize: 11, color: "#9ca3af", background: "none", border: "none", cursor: "pointer" }}>다시 선택</button>
+        <button onClick={(: any) => setType(null)} style={{ fontSize: 11, color: "#9ca3af", background: "none", border: "none", cursor: "pointer" }}>다시 선택</button>
       </div>
       <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.9, margin: 0 }}>{m.text}</p>
     </div>
@@ -202,7 +202,7 @@ function SupportTable() {
           </tr>
         </thead>
         <tbody>
-          {rows.map((r, i) => (
+          {rows.map((r: any, i: any) => (
             <tr key={i} style={{ borderBottom: "1px solid #e5e7eb", background: i % 2 === 0 ? "#fff" : "#fafafa" }}>
               <td style={{ padding: "9px 10px", fontWeight: 600, color: "#111" }}>{r.name}</td>
               <td style={{ padding: "9px 10px", color: G, fontWeight: 700, whiteSpace: "pre-line" }}>{r.amount}</td>
@@ -233,7 +233,7 @@ function EligibilityChecker() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 8, padding: "16px 18px", margin: "12px 0 1.2rem" }}>
       {items.map(item => (
         <label key={item.id} style={{ display: "flex", alignItems: "flex-start", gap: 10, padding: "8px 0", borderBottom: "1px solid #f3f4f6", cursor: "pointer" }}>
-          <input type="checkbox" checked={!!checked[item.id]} onChange={() => toggle(item.id)}
+          <input type="checkbox" checked={!!checked[item.id]} onChange={(: any) => toggle(item.id)}
             style={{ marginTop: 3, accentColor: G, width: 15, height: 15, flexShrink: 0 }} />
           <span style={{ fontSize: 13, color: "#374151", lineHeight: 1.7 }}>{item.text}</span>
         </label>
@@ -256,7 +256,7 @@ function EligibilityChecker() {
 function DocTable() {
   return (
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 8, overflow: "hidden", margin: "12px 0 1.2rem" }}>
-      {DOCS.map((doc, i) => (
+      {DOCS.map((doc: any, i: any) => (
         <div key={i} style={{ display: "flex", gap: 12, padding: "10px 14px", borderBottom: i < DOCS.length - 1 ? "1px solid #f3f4f6" : "none", background: i % 2 === 0 ? "#fff" : "#fafafa" }}>
           <span style={{ fontSize: 11, fontWeight: 700, padding: "2px 8px", borderRadius: 20, background: doc.required ? GL : "#f3f4f6", color: doc.required ? GD : "#9ca3af", flexShrink: 0, alignSelf: "flex-start", marginTop: 2 }}>
             {doc.required ? "필수" : "해당 시"}
@@ -275,7 +275,7 @@ function DocTable() {
 function ProcessSteps() {
   return (
     <div style={{ margin: "12px 0 1.2rem" }}>
-      {STEPS.map((step, i) => (
+      {STEPS.map((step: any, i: any) => (
         <div key={i} style={{ display: "flex", gap: 14, marginBottom: 14 }}>
           <div style={{ width: 28, height: 28, borderRadius: "50%", background: G, color: "#fff", fontSize: 13, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2 }}>{i + 1}</div>
           <div style={{ flex: 1 }}>
@@ -301,9 +301,9 @@ function Checklist() {
   const toggle = (i) => setDone(p => ({ ...p, [i]: !p[i] }));
   return (
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 8, padding: "14px 16px", margin: "12px 0 1.2rem" }}>
-      {CHECKLIST.map((item, i) => (
+      {CHECKLIST.map((item: any, i: any) => (
         <label key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10, padding: "7px 0", borderBottom: i < CHECKLIST.length - 1 ? "1px solid #f3f4f6" : "none", cursor: "pointer" }}>
-          <input type="checkbox" checked={!!done[i]} onChange={() => toggle(i)}
+          <input type="checkbox" checked={!!done[i]} onChange={(: any) => toggle(i)}
             style={{ marginTop: 3, accentColor: G, width: 15, height: 15, flexShrink: 0 }} />
           <span style={{ fontSize: 13, color: done[i] ? "#9ca3af" : "#374151", textDecoration: done[i] ? "line-through" : "none", lineHeight: 1.7 }}>{item}</span>
         </label>
@@ -318,9 +318,9 @@ function FAQ() {
   const toggle = (i) => setOpen(p => ({ ...p, [i]: !p[i] }));
   return (
     <div style={{ margin: "12px 0 1.2rem" }}>
-      {FAQS.map((faq, i) => (
+      {FAQS.map((faq: any, i: any) => (
         <div key={i} style={{ borderBottom: "1px solid #f3f4f6" }}>
-          <button onClick={() => toggle(i)} style={{ width: "100%", textAlign: "left", padding: "13px 4px", display: "flex", alignItems: "flex-start", gap: 8, background: "none", border: "none", cursor: "pointer" }}>
+          <button onClick={(: any) => toggle(i)} style={{ width: "100%", textAlign: "left", padding: "13px 4px", display: "flex", alignItems: "flex-start", gap: 8, background: "none", border: "none", cursor: "pointer" }}>
             {faq.urgent && <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 20, background: "#FEE2E2", color: "#DC2626", flexShrink: 0, marginTop: 2 }}>급한 상황</span>}
             <span style={{ fontSize: 13, fontWeight: 600, color: "#111", flex: 1, lineHeight: 1.6 }}>{faq.q}</span>
             <span style={{ color: "#9ca3af", fontSize: 16, flexShrink: 0 }}>{open[i] ? "▲" : "▼"}</span>
@@ -355,7 +355,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 육아휴직 대체인력 관련 글도 함께 보세요</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a key={i} href={link.href} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 4px", borderBottom: i < HUB_LINKS.length - 1 ? "1px solid #f3f4f6" : "none", textDecoration: "none" }}>
             <span style={{ color: G, fontSize: 14, flexShrink: 0, fontWeight: 700 }}>›</span>
             <span style={{ flex: 1 }}>
@@ -380,11 +380,11 @@ function References() {
         <span style={{ width: 3, height: 16, background: "#d1d5db", borderRadius: 2, display: "inline-block" }} />
         출처 및 참고자료
       </h3>
-      {REFERENCES.map((group) => (
+      {REFERENCES.map((group: any) => (
         <div key={group.category} style={{ marginBottom: 16 }}>
           <p style={{ fontSize: 11, fontWeight: 600, color: "#9ca3af", letterSpacing: "0.06em", marginBottom: 6 }}>{group.category.toUpperCase()}</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            {group.items.map((item) => (
+            {group.items.map((item: any) => (
               <a key={item.label} href={item.url} style={{ display: "flex", alignItems: "center", gap: 8, padding: "7px 12px", borderRadius: 6, border: "1px solid #f3f4f6", background: "#fafafa", fontSize: 13, color: "#374151", textDecoration: "none" }}>
                 <span style={{ color: G, fontSize: 11, flexShrink: 0 }}>↗</span>{item.label}
               </a>
@@ -405,7 +405,7 @@ function Sidebar() {
     <div style={{ width: 176, flexShrink: 0, position: "sticky", top: 24, alignSelf: "flex-start" }}>
       <div style={{ background: "#f9fafb", borderRadius: 10, padding: "14px 14px" }}>
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>육아휴직 관련 글</p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a key={i} href="#" style={{ display: "flex", alignItems: "center", gap: 5, padding: "6px 0", fontSize: 12, color: "#374151", textDecoration: "none", borderBottom: "1px solid #f0f0f0", lineHeight: 1.5 }}>
             <span style={{ color: "#d1d5db", fontSize: 10, flexShrink: 0 }}>›</span>{label}
           </a>

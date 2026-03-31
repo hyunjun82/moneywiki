@@ -58,20 +58,20 @@ const G = "#1D9E75", GL = "#E1F5EE", GD = "#085041";
 const body = { fontSize: 14, color: "#374151", lineHeight: 2.1, marginBottom: "1rem" };
 
 function Divider() { return <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />; }
-function H2({ children }) {
+function H2({ children }: any) {
   return <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111", borderLeft: `3px solid ${G}`, paddingLeft: 12, margin: "0 0 14px", lineHeight: 1.5 }}>{children}</h2>;
 }
-function Bdg({ children }) {
+function Bdg({ children }: any) {
   return <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: GL, color: "#0F6E56", marginBottom: 10 }}>{children}</span>;
 }
-function GreenBox({ title, children }) {
+function GreenBox({ title, children }: any) {
   return (
     <div style={{ background: GL, borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95, color: GD }}>
       <strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>{children}
     </div>
   );
 }
-function BorderBox({ title, children }) {
+function BorderBox({ title, children }: any) {
   return (
     <div style={{ border: "1px solid #9FE1CB", borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95 }}>
       <strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>{children}
@@ -97,8 +97,8 @@ function UrgentBanner() {
           { id: "want",   label: "이혼하면서 양육권을 제가 갖고 싶어요." },
           { id: "taken",  label: "이혼 소송 중에 상대방이 아이를 데려갔어요." },
           { id: "change", label: "이혼 판결 후 양육권을 변경하고 싶어요." },
-        ].map((item) => (
-          <button key={item.id} onClick={() => setType(item.id)}
+        ].map((item: any) => (
+          <button key={item.id} onClick={(: any) => setType(item.id)}
             style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", borderRadius: 8, border: "1px solid #FED7AA", background: "#fff", fontSize: 13, color: "#374151", cursor: "pointer", textAlign: "left" }}>
             <span style={{ color: "#F97316", flexShrink: 0 }}>→</span>{item.label}
           </button>
@@ -111,7 +111,7 @@ function UrgentBanner() {
     <div style={{ background: m.bg, border: `1px solid ${m.color}40`, borderRadius: 10, padding: "16px 18px", marginBottom: "1.5rem" }}>
       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
         <p style={{ fontSize: 13, fontWeight: 700, color: m.color, margin: 0 }}>{m.title}</p>
-        <button onClick={() => setType(null)} style={{ background: "none", border: "none", fontSize: 12, color: "#9ca3af", cursor: "pointer" }}>다시 선택</button>
+        <button onClick={(: any) => setType(null)} style={{ background: "none", border: "none", fontSize: 12, color: "#9ca3af", cursor: "pointer" }}>다시 선택</button>
       </div>
       <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.85, margin: 0 }}>{m.text}</p>
     </div>
@@ -125,8 +125,8 @@ function CriteriaChecker() {
   return (
     <div style={{ margin: "10px 0 1.2rem" }}>
       <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-        {CRITERIA.map((c) => (
-          <label key={c.id} onClick={() => toggle(c.id)}
+        {CRITERIA.map((c: any) => (
+          <label key={c.id} onClick={(: any) => toggle(c.id)}
             style={{ display: "flex", alignItems: "flex-start", gap: 10, padding: "10px 14px", borderRadius: 8, cursor: "pointer", border: `1px solid ${checked[c.id] ? G : "#e5e7eb"}`, background: checked[c.id] ? GL : "#f9fafb" }}>
             <input type="checkbox" checked={!!checked[c.id]} readOnly style={{ accentColor: G, marginTop: 3, flexShrink: 0 }} />
             <span style={{ fontSize: 13, lineHeight: 1.6 }}>
@@ -154,9 +154,9 @@ function FAQ() {
   const [open, setOpen] = useState(null);
   return (
     <div>
-      {FAQS.map((f, i) => (
+      {FAQS.map((f: any, i: any) => (
         <div key={i} style={{ border: `1px solid ${f.urgent ? "#FED7AA" : "#e5e7eb"}`, borderRadius: 8, marginBottom: 8, overflow: "hidden" }}>
-          <div onClick={() => setOpen(open === i ? null : i)}
+          <div onClick={(: any) => setOpen(open === i ? null : i)}
             style={{ padding: "12px 16px", fontSize: 14, fontWeight: f.urgent ? 600 : 500, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", background: open === i ? "#f9fafb" : f.urgent ? "#FFF7ED" : "#fff" }}>
             <span>
               {f.urgent && <span style={{ fontSize: 11, background: "#F97316", color: "#fff", borderRadius: 4, padding: "1px 6px", marginRight: 8, fontWeight: 600 }}>긴급</span>}
@@ -176,7 +176,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 친권·양육권 관련 글도 함께 보세요</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a key={i} href={link.href}
             style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 4px", borderBottom: i < HUB_LINKS.length - 1 ? "1px solid #f3f4f6" : "none", textDecoration: "none" }}>
             <span style={{ color: G, fontSize: 14, flexShrink: 0, fontWeight: 700 }}>›</span>
@@ -210,11 +210,11 @@ function References() {
       <h3 style={{ fontSize: 15, fontWeight: 600, color: "#374151", marginBottom: 14, display: "flex", alignItems: "center", gap: 8 }}>
         <span style={{ width: 3, height: 16, background: "#d1d5db", borderRadius: 2, display: "inline-block" }} />출처 및 참고자료
       </h3>
-      {REFERENCES.map((group) => (
+      {REFERENCES.map((group: any) => (
         <div key={group.category} style={{ marginBottom: 16 }}>
           <p style={{ fontSize: 11, fontWeight: 600, color: "#9ca3af", letterSpacing: "0.06em", marginBottom: 6 }}>{group.category.toUpperCase()}</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            {group.items.map((item) => (
+            {group.items.map((item: any) => (
               <a key={item.label} href={item.url}
                 style={{ display: "flex", alignItems: "center", gap: 8, padding: "7px 12px", borderRadius: 6, border: "1px solid #f3f4f6", background: "#fafafa", fontSize: 13, color: "#374151", textDecoration: "none" }}>
                 <span style={{ color: G, fontSize: 11, flexShrink: 0 }}>↗</span>{item.label}
@@ -235,7 +235,7 @@ function Sidebar() {
     <div style={{ width: 176, flexShrink: 0, position: "sticky", top: 24, alignSelf: "flex-start" }}>
       <div style={{ background: "#f9fafb", borderRadius: 10, padding: "14px 14px" }}>
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>이혼·양육 관련 글</p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a key={i} href="#" style={{ display: "flex", alignItems: "center", gap: 5, padding: "6px 0", fontSize: 12, color: "#374151", textDecoration: "none", borderBottom: "1px solid #f0f0f0", lineHeight: 1.5 }}>
             <span style={{ color: "#d1d5db", fontSize: 10, flexShrink: 0 }}>›</span>{label}
           </a>

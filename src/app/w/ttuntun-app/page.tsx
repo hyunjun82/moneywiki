@@ -189,8 +189,8 @@ function UrgentBanner() {
           { id: "change",  label: "홈페이지로 인증했는데 이제 앱으로 바꿔야 한다고 해요." },
           { id: "new",     label: "처음 시작해요. 앱 어디서 받아요?" },
           { id: "trouble", label: "앱 설치했는데 로그인이 안 돼요." },
-        ].map((item) => (
-          <button key={item.id} onClick={() => setType(item.id)} style={{
+        ].map((item: any) => (
+          <button key={item.id} onClick={(: any) => setType(item.id)} style={{
             display: "flex", alignItems: "center", gap: 10, padding: "10px 14px",
             borderRadius: 8, border: "1px solid #FED7AA", background: "#fff",
             fontSize: 13, color: "#374151", cursor: "pointer", textAlign: "left",
@@ -207,7 +207,7 @@ function UrgentBanner() {
     <div style={{ background: m.bg, border: `1px solid ${m.color}40`, borderRadius: 10, padding: "16px 18px", marginBottom: "1.5rem" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
         <p style={{ fontSize: 13, fontWeight: 700, color: m.color, margin: 0 }}>{m.title}</p>
-        <button onClick={() => setType(null)} style={{ background: "none", border: "none", fontSize: 12, color: "#9ca3af", cursor: "pointer", padding: 0, flexShrink: 0, marginLeft: 12 }}>다시 선택</button>
+        <button onClick={(: any) => setType(null)} style={{ background: "none", border: "none", fontSize: 12, color: "#9ca3af", cursor: "pointer", padding: 0, flexShrink: 0, marginLeft: 12 }}>다시 선택</button>
       </div>
       <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.85, margin: 0 }}>{m.text}</p>
     </div>
@@ -250,8 +250,8 @@ function BeforeAfterChecker() {
         앱 출시 전과 후 어떻게 달라지는지 선택해서 확인해보세요.
       </p>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 14 }}>
-        {["before", "after"].map((key) => (
-          <button key={key} onClick={() => setPeriod(period === key ? null : key)}
+        {["before", "after"].map((key: any) => (
+          <button key={key} onClick={(: any) => setPeriod(period === key ? null : key)}
             style={{ padding: "12px 14px", borderRadius: 8, border: `2px solid ${period === key ? info[key].color : "#e5e7eb"}`, background: period === key ? info[key].bg : "#fff", cursor: "pointer", fontSize: 13, fontWeight: 600, color: period === key ? info[key].color : "#374151", textAlign: "center" }}>
             {info[key].label}
           </button>
@@ -259,7 +259,7 @@ function BeforeAfterChecker() {
       </div>
       {period && (
         <div style={{ padding: "14px 16px", borderRadius: 8, background: info[period].bg, border: `1px solid ${info[period].color}33` }}>
-          {info[period].items.map((item, i) => (
+          {info[period].items.map((item: any, i: any) => (
             <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 8, marginBottom: 8 }}>
               <span style={{ fontSize: 14, color: item.ok ? G : "#DC2626", flexShrink: 0, marginTop: 1 }}>{item.ok ? "✓" : "✗"}</span>
               <p style={{ fontSize: 13, color: "#374151", margin: 0, lineHeight: 1.7 }}>{item.text}</p>
@@ -275,7 +275,7 @@ function BeforeAfterChecker() {
 function ProcessSteps() {
   return (
     <div style={{ margin: "10px 0 1rem" }}>
-      {INSTALL_STEPS.map((s, i) => (
+      {INSTALL_STEPS.map((s: any, i: any) => (
         <div key={i} style={{ display: "flex", gap: 14, paddingBottom: 20, position: "relative" }}>
           {i < INSTALL_STEPS.length - 1 && (
             <div style={{ position: "absolute", left: 15, top: 32, bottom: 0, width: 1, background: "#e5e7eb" }} />
@@ -303,9 +303,9 @@ function FAQ() {
   const [open, setOpen] = useState(null);
   return (
     <div>
-      {FAQS.map((f, i) => (
+      {FAQS.map((f: any, i: any) => (
         <div key={i} style={{ border: `1px solid ${f.urgent ? "#FED7AA" : "#e5e7eb"}`, borderRadius: 8, marginBottom: 8, overflow: "hidden" }}>
-          <div onClick={() => setOpen(open === i ? null : i)}
+          <div onClick={(: any) => setOpen(open === i ? null : i)}
             style={{ padding: "12px 16px", fontSize: 14, fontWeight: f.urgent ? 600 : 500, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", background: open === i ? "#f9fafb" : f.urgent ? "#FFF7ED" : "#fff" }}>
             <span>
               {f.urgent && <span style={{ fontSize: 11, background: "#F97316", color: "#fff", borderRadius: 4, padding: "1px 6px", marginRight: 8, fontWeight: 600 }}>긴급</span>}
@@ -356,7 +356,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 튼튼머니 관련 글도 함께 보세요</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a key={i} href={link.href} target="_self"
             style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 4px", borderBottom: i < HUB_LINKS.length - 1 ? "1px solid #f3f4f6" : "none", textDecoration: "none" }}>
             <span style={{ color: G, fontSize: 14, flexShrink: 0, fontWeight: 700 }}>›</span>
@@ -389,11 +389,11 @@ function References() {
           { label: "국민체력100 공식 홈페이지 (nfa.kspo.or.kr)", url: "https://nfa.kspo.or.kr" },
           { label: "국민체육진흥공단 문의 ☎02-410-1414", url: "tel:0241011414" },
         ]},
-      ].map((group) => (
+      ].map((group: any) => (
         <div key={group.category} style={{ marginBottom: 16 }}>
           <p style={{ fontSize: 11, fontWeight: 600, color: "#9ca3af", letterSpacing: "0.06em", marginBottom: 6 }}>{group.category.toUpperCase()}</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            {group.items.map((item) => (
+            {group.items.map((item: any) => (
               <a key={item.label} href={item.url} target="_self"
                 style={{ display: "flex", alignItems: "center", gap: 8, padding: "7px 12px", borderRadius: 6, border: "1px solid #f3f4f6", background: "#fafafa", fontSize: 13, color: "#374151", textDecoration: "none" }}>
                 <span style={{ color: G, fontSize: 11, flexShrink: 0 }}>↗</span>{item.label}
@@ -415,7 +415,7 @@ function Sidebar() {
     <div style={{ width: 176, flexShrink: 0, position: "sticky", top: 24, alignSelf: "flex-start" }}>
       <div style={{ background: "#f9fafb", borderRadius: 10, padding: "14px 14px" }}>
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>튼튼머니 관련 글</p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a key={i} href="#" target="_self"
             style={{ display: "flex", alignItems: "center", gap: 5, padding: "6px 0", fontSize: 12, color: "#374151", textDecoration: "none", borderBottom: "1px solid #f0f0f0", lineHeight: 1.5 }}>
             <span style={{ color: "#d1d5db", fontSize: 10, flexShrink: 0 }}>›</span>{label}
@@ -478,7 +478,7 @@ export default function TtuntunMoneyAppPage() {
           특히 위치 기반 시설 지도 검색은 홈페이지보다 훨씬 편리해요.
         </p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 10, margin: "12px 0 1.2rem" }}>
-          {APP_FEATURES.map((f, i) => (
+          {APP_FEATURES.map((f: any, i: any) => (
             <div key={i} style={{ background: "#f9fafb", borderRadius: 8, padding: "14px 16px", border: "1px solid #e5e7eb" }}>
               <p style={{ fontSize: 20, marginBottom: 8 }}>{f.icon}</p>
               <p style={{ fontSize: 13, fontWeight: 700, color: "#111", marginBottom: 6 }}>{f.title}</p>
@@ -498,7 +498,7 @@ export default function TtuntunMoneyAppPage() {
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
             <thead>
               <tr style={{ background: "#f9fafb" }}>
-                {["앱 이름", "주요 역할", "사용 시점"].map((h) => (
+                {["앱 이름", "주요 역할", "사용 시점"].map((h: any) => (
                   <th key={h} style={{ padding: "10px 12px", textAlign: "left", fontWeight: 600, color: "#374151", borderBottom: "2px solid #e5e7eb", whiteSpace: "nowrap" }}>{h}</th>
                 ))}
               </tr>
@@ -509,7 +509,7 @@ export default function TtuntunMoneyAppPage() {
                 { app: "제로페이맵 앱", role: "튼튼머니→스포츠상품권 전환·가맹점 검색·결제", when: "포인트 전환할 때" },
                 { app: "더헬스(The Health) 앱", role: "튼튼머니→슬리머니 전환·슬리몰 쇼핑", when: "슬리머니 전환할 때" },
                 { app: "국민체력100 홈페이지", role: "회원가입·체력측정 예약·포인트 조회 (QR 인증 불가)", when: "가입·예약할 때" },
-              ].map((row, i) => (
+              ].map((row: any, i: any) => (
                 <tr key={i} style={{ borderBottom: "1px solid #f3f4f6" }}>
                   <td style={{ padding: "10px 12px", fontWeight: 600, color: G }}>{row.app}</td>
                   <td style={{ padding: "10px 12px", color: "#374151" }}>{row.role}</td>

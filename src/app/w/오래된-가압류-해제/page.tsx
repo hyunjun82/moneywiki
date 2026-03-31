@@ -69,8 +69,8 @@ const FAQS = [
 const G = "#1D9E75", GL = "#E1F5EE", GD = "#085041";
 const body = { fontSize: 14, color: "#374151", lineHeight: 2.1, marginBottom: "1rem" };
 const Divider = () => <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />;
-const H2 = ({ children }) => <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111", borderLeft: `3px solid ${G}`, paddingLeft: 12, margin: "0 0 14px", lineHeight: 1.5 }}>{children}</h2>;
-const Bdg = ({ children }) => <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: GL, color: "#0F6E56", marginBottom: 10 }}>{children}</span>;
+const H2 = ({ children }: any) => <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111", borderLeft: `3px solid ${G}`, paddingLeft: 12, margin: "0 0 14px", lineHeight: 1.5 }}>{children}</h2>;
+const Bdg = ({ children }: any) => <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: GL, color: "#0F6E56", marginBottom: 10 }}>{children}</span>;
 
 function UrgentBanner() {
   const [type, setType] = useState(null);
@@ -90,8 +90,8 @@ function UrgentBanner() {
           { id: "debtor", label: "오래된 가압류를 없애고 싶어요 (채무자)." },
           { id: "creditor", label: "내가 건 가압류가 취소될까봐 걱정돼요 (채권자)." },
           { id: "check", label: "등기부에 가압류가 있는지 확인하고 싶어요." },
-        ].map((item) => (
-          <button key={item.id} onClick={() => setType(item.id)} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", borderRadius: 8, border: "1px solid #FED7AA", background: "#fff", fontSize: 13, color: "#374151", cursor: "pointer", textAlign: "left" }}>
+        ].map((item: any) => (
+          <button key={item.id} onClick={(: any) => setType(item.id)} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", borderRadius: 8, border: "1px solid #FED7AA", background: "#fff", fontSize: 13, color: "#374151", cursor: "pointer", textAlign: "left" }}>
             <span style={{ color: "#F97316", flexShrink: 0 }}>→</span>{item.label}
           </button>
         ))}
@@ -103,7 +103,7 @@ function UrgentBanner() {
     <div style={{ background: m.bg, border: `1px solid ${m.color}40`, borderRadius: 10, padding: "16px 18px", marginBottom: "1.5rem" }}>
       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
         <strong style={{ fontSize: 14, color: m.color }}>{m.title}</strong>
-        <button onClick={() => setType(null)} style={{ fontSize: 12, color: "#9ca3af", background: "none", border: "none", cursor: "pointer" }}>다시 선택</button>
+        <button onClick={(: any) => setType(null)} style={{ fontSize: 12, color: "#9ca3af", background: "none", border: "none", cursor: "pointer" }}>다시 선택</button>
       </div>
       <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.9, margin: 0 }}>{m.text}</p>
     </div>
@@ -116,7 +116,7 @@ function LimitationTable() {
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", background: "#f9fafb", padding: "8px 14px", borderBottom: "1px solid #e5e7eb" }}>
         {["신청 시기", "취소 가능 기간", "근거"].map(h => <span key={h} style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af" }}>{h}</span>)}
       </div>
-      {LIMITATION_TABLE.map((row, i) => (
+      {LIMITATION_TABLE.map((row: any, i: any) => (
         <div key={i} style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", padding: "10px 14px", borderBottom: i < LIMITATION_TABLE.length - 1 ? "1px solid #f3f4f6" : "none", alignItems: "center" }}>
           <span style={{ fontSize: 13, fontWeight: 600, color: "#111" }}>{row.period}</span>
           <span style={{ fontSize: 13, color: G, fontWeight: 700 }}>{row.limit}</span>
@@ -130,7 +130,7 @@ function LimitationTable() {
 function ProcessSteps({ steps }: any) {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 0, marginBottom: "1.5rem" }}>
-      {steps.map((step, i) => (
+      {steps.map((step: any, i: any) => (
         <div key={i} style={{ display: "flex", gap: 14 }}>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flexShrink: 0 }}>
             <div style={{ width: 28, height: 28, borderRadius: "50%", background: G, color: "#fff", fontSize: 12, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{i + 1}</div>
@@ -151,9 +151,9 @@ function FAQ() {
   const [open, setOpen] = useState(null);
   return (
     <div style={{ marginBottom: "1.5rem" }}>
-      {FAQS.map((faq, i) => (
+      {FAQS.map((faq: any, i: any) => (
         <div key={i} style={{ border: "1px solid #e5e7eb", borderRadius: 8, marginBottom: 8 }}>
-          <button onClick={() => setOpen(open === i ? null : i)} style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 14px", background: "none", border: "none", cursor: "pointer", textAlign: "left", gap: 10 }}>
+          <button onClick={(: any) => setOpen(open === i ? null : i)} style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 14px", background: "none", border: "none", cursor: "pointer", textAlign: "left", gap: 10 }}>
             <span style={{ fontSize: 13, fontWeight: 600, color: "#111", lineHeight: 1.5, display: "flex", alignItems: "center", gap: 8 }}>
               {faq.urgent && <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 10, background: "#FEE2E2", color: "#DC2626", flexShrink: 0 }}>긴급</span>}
               {faq.q}
@@ -172,7 +172,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 관련 글도 함께 보세요</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a key={i} href={link.href} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 4px", borderBottom: i < HUB_LINKS.length - 1 ? "1px solid #f3f4f6" : "none", textDecoration: "none" }}>
             <span style={{ color: G, fontSize: 14, flexShrink: 0, fontWeight: 700 }}>›</span>
             <span style={{ flex: 1 }}><span style={{ fontSize: 13, fontWeight: 600, color: "#111", display: "block" }}>{link.title}</span><span style={{ fontSize: 12, color: "#9ca3af" }}>{link.desc}</span></span>
@@ -188,7 +188,7 @@ function Sidebar() {
     <div style={{ width: 176, flexShrink: 0, position: "sticky", top: 24, alignSelf: "flex-start" }}>
       <div style={{ background: "#f9fafb", borderRadius: 10, padding: "14px 14px" }}>
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>가압류·채권 관련 글</p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a key={i} href="#" style={{ display: "flex", alignItems: "center", gap: 5, padding: "6px 0", fontSize: 12, color: "#374151", textDecoration: "none", borderBottom: "1px solid #f0f0f0", lineHeight: 1.5 }}>
             <span style={{ color: "#d1d5db", fontSize: 10, flexShrink: 0 }}>›</span>{label}
           </a>
@@ -262,7 +262,7 @@ export default function OldAttachmentReleasePage() {
               { label: "대한법률구조공단 (132)", url: "tel:132", sub: "가압류 취소 신청 무료 법률 지원" },
               { label: "인터넷등기소 — 등기부 열람", url: "https://www.iros.go.kr", sub: "부동산 가압류 기재 확인 (700원)" },
               { label: "대법원 전자소송 — 가압류취소 신청", url: "https://ecfs.scourt.go.kr", sub: "온라인으로 취소 신청서 제출" },
-            ].map((item, i) => (
+            ].map((item: any, i: any) => (
               <a key={i} href={item.url} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px 14px", borderRadius: 8, background: "#fff", textDecoration: "none", border: "1px solid #9FE1CB" }}>
                 <div><span style={{ fontSize: 13, fontWeight: 600, color: "#111", display: "block" }}>{item.label}</span><span style={{ fontSize: 11, color: "#6b7280" }}>{item.sub}</span></div>
                 <span style={{ color: G, fontWeight: 700 }}>→</span>

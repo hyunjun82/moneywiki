@@ -122,7 +122,7 @@ function Divider() {
   return <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />;
 }
 
-function H2({ children }) {
+function H2({ children }: any) {
   return (
     <h2 style={{
       fontSize: 18,
@@ -138,7 +138,7 @@ function H2({ children }) {
   );
 }
 
-function Bdg({ children }) {
+function Bdg({ children }: any) {
   return (
     <span style={{
       display: "inline-block",
@@ -155,7 +155,7 @@ function Bdg({ children }) {
   );
 }
 
-function GreenBox({ title, children }) {
+function GreenBox({ title, children }: any) {
   return (
     <div style={{
       background: GL,
@@ -213,10 +213,10 @@ function UrgentBanner() {
             { id: "calc",  label: "6+6을 쓰면 급여가 얼마인지 계산해보고 싶어요." },
             { id: "order", label: "동시 사용해야 하는지, 순차 사용도 되는지 헷갈려요." },
             { id: "retro", label: "배우자가 이미 육아휴직 중인데 내가 쓰면 소급이 되나요?" },
-          ].map((item) => (
+          ].map((item: any) => (
             <button
               key={item.id}
-              onClick={() => setType(item.id)}
+              onClick={(: any) => setType(item.id)}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -257,7 +257,7 @@ function UrgentBanner() {
       }}>
         <p style={{ fontSize: 13, fontWeight: 700, color: m.color, margin: 0 }}>{m.title}</p>
         <button
-          onClick={() => setType(null)}
+          onClick={(: any) => setType(null)}
           style={{
             background: "none",
             border: "none",
@@ -295,7 +295,7 @@ function SalaryCalc() {
           max={600}
           step={10}
           value={wage}
-          onChange={(e) => setWage(+e.target.value)}
+          onChange={(e: any) => setWage(+e.target.value)}
           style={{ flex: 1, accentColor: G }}
         />
         <span style={{ fontSize: 12, fontWeight: 700, minWidth: 70, textAlign: "right" }}>
@@ -303,7 +303,7 @@ function SalaryCalc() {
         </span>
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8 }}>
-        {SALARY_TABLE.map((row, i) => {
+        {SALARY_TABLE.map((row: any, i: any) => {
           const actual = Math.min(wage, row.upper);
           return (
             <div
@@ -338,10 +338,10 @@ function FAQ() {
   const toggle = (i) => setOpen((p) => ({ ...p, [i]: !p[i] }));
   return (
     <div style={{ margin: "10px 0 1.2rem" }}>
-      {FAQS.map((faq, i) => (
+      {FAQS.map((faq: any, i: any) => (
         <div key={i} style={{ borderBottom: "1px solid #f3f4f6" }}>
           <button
-            onClick={() => toggle(i)}
+            onClick={(: any) => toggle(i)}
             style={{
               width: "100%",
               textAlign: "left",
@@ -392,7 +392,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 같이 보면 도움 되는 글</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a
             key={i}
             href={link.href}
@@ -434,13 +434,13 @@ function References() {
         <span style={{ width: 3, height: 16, background: "#d1d5db", borderRadius: 2, display: "inline-block" }} />
         출처 및 참고자료
       </h3>
-      {REFERENCES.map((group) => (
+      {REFERENCES.map((group: any) => (
         <div key={group.category} style={{ marginBottom: 16 }}>
           <p style={{ fontSize: 11, fontWeight: 600, color: "#9ca3af", letterSpacing: "0.06em", marginBottom: 6 }}>
             {group.category.toUpperCase()}
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            {group.items.map((item) => (
+            {group.items.map((item: any) => (
               <a
                 key={item.label}
                 href={item.url}
@@ -478,7 +478,7 @@ function Sidebar() {
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>
           육아휴직 관련 글
         </p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a
             key={i}
             href="#"
@@ -574,7 +574,7 @@ export default function ParentalLeave66Page() {
               desc: "첫 번째 사용자도 소급해서 인상분을 받아요. 두 번째 신청 시 함께 정산해요.",
               color: G,
             },
-          ].map((item, i) => (
+          ].map((item: any, i: any) => (
             <div
               key={i}
               style={{
@@ -628,7 +628,7 @@ export default function ParentalLeave66Page() {
             { step: "내가 먼저 육아휴직 시작", desc: "일반 육아휴직 급여(80%)로 우선 지급돼요.", color: "#9ca3af" },
             { step: "배우자가 2024.1.1 이후 육아휴직 시작", desc: "이 시점에 6+6 적용 조건이 충족돼요.", color: G },
             { step: "배우자 신청 시 내 급여도 함께 정산 신청", desc: "내가 먼저 받은 급여와 6+6 인상분의 차액을 한꺼번에 받아요.", color: G },
-          ].map((item, i) => (
+          ].map((item: any, i: any) => (
             <div key={i} style={{ display: "flex", gap: 12, padding: "12px 14px", borderRadius: 8, border: "1px solid #e5e7eb", background: i % 2 === 0 ? "#fafafa" : "#fff", marginBottom: 8 }}>
               <div style={{
                 width: 28, height: 28, borderRadius: "50%",

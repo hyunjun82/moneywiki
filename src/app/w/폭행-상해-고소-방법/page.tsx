@@ -3,10 +3,10 @@ import { useState } from "react";
 const G = "#1D9E75", GL = "#E1F5EE", GD = "#085041";
 const body = { fontSize: 14, color: "#374151", lineHeight: 2.1, marginBottom: "1rem" };
 function Divider() { return <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />; }
-function H2({ children }) { return <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111", borderLeft: `3px solid ${G}`, paddingLeft: 12, margin: "0 0 14px", lineHeight: 1.5 }}>{children}</h2>; }
-function Bdg({ children }) { return <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: GL, color: "#0F6E56", marginBottom: 10 }}>{children}</span>; }
-function GreenBox({ title, children }) { return <div style={{ background: GL, borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95, color: GD }}><strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>{children}</div>; }
-function BorderBox({ title, children }) { return <div style={{ border: "1px solid #9FE1CB", borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95 }}><strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>{children}</div>; }
+function H2({ children }: any) { return <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111", borderLeft: `3px solid ${G}`, paddingLeft: 12, margin: "0 0 14px", lineHeight: 1.5 }}>{children}</h2>; }
+function Bdg({ children }: any) { return <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: GL, color: "#0F6E56", marginBottom: 10 }}>{children}</span>; }
+function GreenBox({ title, children }: any) { return <div style={{ background: GL, borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95, color: GD }}><strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>{children}</div>; }
+function BorderBox({ title, children }: any) { return <div style={{ border: "1px solid #9FE1CB", borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95 }}><strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>{children}</div>; }
 const SIDEBAR_LINKS = ["폭행 고소 방법","상해 고소 방법","가정폭력 신고","가정폭력 이혼","성폭력 고소","스토킹 신고 방법","모욕죄 고소","협박죄 고소","이혼 소송 증거 수집","이혼 무료 법률상담","이혼 위자료 청구","이혼 재산분할 비율","이혼 친권·양육권","이혼 양육비 청구","협의이혼 절차","이혼 일방 거부","이혼 소송 기간","이혼 소송 비용","이혼 전 재산 빼돌림","대한법률구조공단"];
 const FAQS = [
   { urgent: true, q: "맞고 나서 얼마 만에 고소해야 하나요?", a: "폭행죄는 친고죄이므로 고소기간이 있어요. '폭행을 안 날로부터 6개월 이내'에 고소해야 해요(형사소송법 230조). 상해죄는 비친고죄라 기간 제한이 없어요. 하지만 빠를수록 증거가 살아있어요. 진단서는 지금 바로 발급받으세요." },

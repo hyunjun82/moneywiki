@@ -3,10 +3,10 @@ import { useState } from "react";
 const G = "#1D9E75", GL = "#E1F5EE", GD = "#085041";
 const body = { fontSize: 14, color: "#374151", lineHeight: 2.1, marginBottom: "1rem" };
 function Divider() { return <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />; }
-function H2({ children }) { return <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111", borderLeft: `3px solid ${G}`, paddingLeft: 12, margin: "0 0 14px", lineHeight: 1.5 }}>{children}</h2>; }
-function Bdg({ children }) { return <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: GL, color: "#0F6E56", marginBottom: 10 }}>{children}</span>; }
-function GreenBox({ title, children }) { return <div style={{ background: GL, borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95, color: GD }}><strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>{children}</div>; }
-function BorderBox({ title, children }) { return <div style={{ border: "1px solid #9FE1CB", borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95 }}><strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>{children}</div>; }
+function H2({ children }: any) { return <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111", borderLeft: `3px solid ${G}`, paddingLeft: 12, margin: "0 0 14px", lineHeight: 1.5 }}>{children}</h2>; }
+function Bdg({ children }: any) { return <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: GL, color: "#0F6E56", marginBottom: 10 }}>{children}</span>; }
+function GreenBox({ title, children }: any) { return <div style={{ background: GL, borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95, color: GD }}><strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>{children}</div>; }
+function BorderBox({ title, children }: any) { return <div style={{ border: "1px solid #9FE1CB", borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95 }}><strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>{children}</div>; }
 const SIDEBAR_LINKS = ["출산전후휴가 급여","배우자 출산휴가","육아휴직 기간","육아휴직 급여 계산","출산휴가 신청 방법","고용보험 출산급여","임신부 보호휴가","유산 사산 휴가","유산 후 휴가","임신 중 근로조건","근로기준법 모성보호","사업주 출산 지원금","배우자 출산휴가 거부","출산휴가 중 해고","육아기 근로시간 단축","육아 지원금","임신 출산 진료비","고운맘카드 사용처","산후조리원 지원","대한법률구조공단"];
 const FAQS = [
   { urgent: true, q: "배우자 출산휴가 20일은 모두 유급인가요?", a: "네. 배우자 출산휴가 20일 전체가 유급이에요. 중소기업(우선지원대상기업)은 고용보험에서 통상임금 100%를 지급해요. 대기업은 최초 5일은 사업주 지급, 나머지 15일은 고용보험에서 지급해요. 2025. 2. 23. 시행으로 10일에서 20일로 늘었어요. 3회 분할(최대 4번) 사용 가능, 사용 기한도 90일에서 120일로 확대됐어요." },

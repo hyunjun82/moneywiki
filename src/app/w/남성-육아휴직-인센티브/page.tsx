@@ -86,7 +86,7 @@ function IncTable() {
           { label: "총 지원금", val: `${total}만원`, note: `${months}개월` },
           { label: "휴직 중 50%", val: `${halfDuring}만원`, note: "3개월 단위 신청" },
           { label: "복직 후 50%", val: `${halfAfter}만원`, note: "복직 후 6개월 이상 고용 시" },
-        ].map((r, i) => (
+        ].map((r: any, i: any) => (
           <div key={i} style={{ flex: 1, minWidth: 100, background: i === 0 ? GL : "#f9fafb", borderRadius: 8, padding: "10px 12px", border: `1px solid ${i === 0 ? G : "#e5e7eb"}` }}>
             <p style={{ fontSize: 11, color: "#9ca3af", margin: "0 0 2px" }}>{r.label}</p>
             <p style={{ fontSize: 16, fontWeight: 700, color: i === 0 ? GD : "#111", margin: "0 0 2px" }}>{r.val}</p>
@@ -112,7 +112,7 @@ function SupportMap() {
       <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
         <thead><tr style={{ background: GL }}>{["유형", "특례", "사업주 지원금", "대체인력지원금"].map(h => <th key={h} style={{ padding: "8px 10px", textAlign: "left", fontWeight: 700, color: GD, borderBottom: `2px solid ${G}` }}>{h}</th>)}</tr></thead>
         <tbody>
-          {rows.map((r, i) => (
+          {rows.map((r: any, i: any) => (
             <tr key={i} style={{ borderBottom: "1px solid #e5e7eb", background: i % 2 === 0 ? "#fff" : "#fafafa" }}>
               <td style={{ padding: "9px 10px", fontWeight: 600, color: "#111" }}>{r.type}</td>
               <td style={{ padding: "9px 10px", color: "#374151" }}>{r.special}</td>
@@ -131,9 +131,9 @@ function FAQ() {
   const toggle = i => setOpen(p => ({ ...p, [i]: !p[i] }));
   return (
     <div style={{ margin: "12px 0 1.2rem" }}>
-      {FAQS.map((faq, i) => (
+      {FAQS.map((faq: any, i: any) => (
         <div key={i} style={{ borderBottom: "1px solid #f3f4f6" }}>
-          <button onClick={() => toggle(i)} style={{ width: "100%", textAlign: "left", padding: "13px 4px", display: "flex", alignItems: "flex-start", gap: 8, background: "none", border: "none", cursor: "pointer" }}>
+          <button onClick={(: any) => toggle(i)} style={{ width: "100%", textAlign: "left", padding: "13px 4px", display: "flex", alignItems: "flex-start", gap: 8, background: "none", border: "none", cursor: "pointer" }}>
             {faq.urgent && <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 20, background: "#FEE2E2", color: "#DC2626", flexShrink: 0, marginTop: 2 }}>급한 상황</span>}
             <span style={{ fontSize: 13, fontWeight: 600, color: "#111", flex: 1, lineHeight: 1.6 }}>{faq.q}</span>
             <span style={{ color: "#9ca3af", fontSize: 16, flexShrink: 0 }}>{open[i] ? "▲" : "▼"}</span>
@@ -150,7 +150,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 육아휴직 지원금 관련 글도 함께 보세요</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a key={i} href={link.href} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 4px", borderBottom: i < HUB_LINKS.length - 1 ? "1px solid #f3f4f6" : "none", textDecoration: "none" }}>
             <span style={{ color: G, fontSize: 14, flexShrink: 0, fontWeight: 700 }}>›</span>
             <span style={{ flex: 1 }}><span style={{ fontSize: 13, fontWeight: 600, color: "#111", display: "block" }}>{link.title}</span><span style={{ fontSize: 12, color: "#9ca3af" }}>{link.desc}</span></span>
@@ -190,7 +190,7 @@ function Sidebar() {
     <div style={{ width: 176, flexShrink: 0, position: "sticky", top: 24, alignSelf: "flex-start" }}>
       <div style={{ background: "#f9fafb", borderRadius: 10, padding: "14px 14px" }}>
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>육아휴직 사업주 지원금</p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a key={i} href="#" style={{ display: "flex", alignItems: "center", gap: 5, padding: "6px 0", fontSize: 12, color: "#374151", textDecoration: "none", borderBottom: "1px solid #f0f0f0", lineHeight: 1.5 }}>
             <span style={{ color: "#d1d5db", fontSize: 10, flexShrink: 0 }}>›</span>{label}
           </a>

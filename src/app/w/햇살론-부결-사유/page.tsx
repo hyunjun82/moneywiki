@@ -75,7 +75,7 @@ function InstantAnswer() {
           { q: "부결 사유 확인이 먼저예요", a: "서민금융진흥원 앱 > 신청내역 또는 1397 전화로 부결 사유를 확인하세요. 사유를 모르면 해결할 수 없어요." },
           { q: "바로 재신청하면 안 되는 이유", a: "신청할 때마다 신용조회 이력이 생겨요. 사유 해결 없이 반복 신청하면 오히려 승인율이 낮아져요. 1~3개월 후 재신청하세요." },
           { q: "부결돼도 다른 선택지가 있어요", a: "서민금융통합지원센터(1397) 방문 상담을 받으면 내 상황에 맞는 다른 상품(소액생계비 대출, 미소금융 등)을 연결해줘요." },
-        ].map((item, i) => (
+        ].map((item: any, i: any) => (
           <div key={i} style={{ background: "#fff", borderRadius: 8, padding: "12px 14px", border: "1px solid #FECACA" }}>
             <p style={{ fontSize: 13, fontWeight: 700, color: "#111", margin: "0 0 4px" }}>{item.q}</p>
             <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.8, margin: 0 }}>{item.a}</p>
@@ -96,7 +96,7 @@ function RejectReasonTable() {
   ];
   return (
     <div style={{ margin: "12px 0 1.2rem" }}>
-      {reasons.map((r, i) => (
+      {reasons.map((r: any, i: any) => (
         <div key={i} style={{ display: "flex", gap: 12, padding: "12px 0", borderBottom: "1px solid #f3f4f6", alignItems: "flex-start" }}>
           <div style={{ width: 52, flexShrink: 0 }}>
             <span style={{ fontSize: 11, fontWeight: 700, padding: "3px 8px", borderRadius: 20, background: r.hard ? "#FEE2E2" : GL, color: r.hard ? "#DC2626" : GD }}>{r.rank}</span>
@@ -122,7 +122,7 @@ function RetryTimeline() {
   ];
   return (
     <div style={{ margin: "12px 0 1.2rem" }}>
-      {steps.map((step, i) => (
+      {steps.map((step: any, i: any) => (
         <div key={i} style={{ display: "flex", gap: 14, marginBottom: 12 }}>
           <div style={{ width: 28, height: 28, borderRadius: "50%", background: G, color: "#fff", fontSize: 11, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2 }}>{i + 1}</div>
           <div style={{ flex: 1 }}>
@@ -147,7 +147,7 @@ function OtherOptions() {
   ];
   return (
     <div style={{ display: "flex", gap: 12, flexWrap: "wrap", margin: "12px 0 1.2rem" }}>
-      {opts.map((o, i) => (
+      {opts.map((o: any, i: any) => (
         <div key={i} style={{ flex: 1, minWidth: 160, border: "1px solid #e5e7eb", borderRadius: 8, padding: "12px 14px", background: "#fafafa" }}>
           <p style={{ fontSize: 13, fontWeight: 700, color: "#111", margin: "0 0 4px" }}>{o.name}</p>
           <p style={{ fontSize: 12, color: "#374151", lineHeight: 1.7, margin: "0 0 6px" }}>{o.desc}</p>
@@ -163,9 +163,9 @@ function FAQ() {
   const toggle = i => setOpen(p => ({ ...p, [i]: !p[i] }));
   return (
     <div style={{ margin: "12px 0 1.2rem" }}>
-      {FAQS.map((faq, i) => (
+      {FAQS.map((faq: any, i: any) => (
         <div key={i} style={{ borderBottom: "1px solid #f3f4f6" }}>
-          <button onClick={() => toggle(i)} style={{ width: "100%", textAlign: "left", padding: "13px 4px", display: "flex", alignItems: "flex-start", gap: 8, background: "none", border: "none", cursor: "pointer" }}>
+          <button onClick={(: any) => toggle(i)} style={{ width: "100%", textAlign: "left", padding: "13px 4px", display: "flex", alignItems: "flex-start", gap: 8, background: "none", border: "none", cursor: "pointer" }}>
             {faq.urgent && <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 20, background: "#FEE2E2", color: "#DC2626", flexShrink: 0, marginTop: 2 }}>급한 상황</span>}
             <span style={{ fontSize: 13, fontWeight: 600, color: "#111", flex: 1, lineHeight: 1.6 }}>{faq.q}</span>
             <span style={{ color: "#9ca3af", fontSize: 16, flexShrink: 0 }}>{open[i] ? "▲" : "▼"}</span>
@@ -182,7 +182,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 햇살론 관련 글도 함께 보세요</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a key={i} href={link.href} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 4px", borderBottom: i < HUB_LINKS.length - 1 ? "1px solid #f3f4f6" : "none", textDecoration: "none" }}>
             <span style={{ color: G, fontSize: 14, flexShrink: 0, fontWeight: 700 }}>›</span>
             <span style={{ flex: 1 }}><span style={{ fontSize: 13, fontWeight: 600, color: "#111", display: "block" }}>{link.title}</span><span style={{ fontSize: 12, color: "#9ca3af" }}>{link.desc}</span></span>
@@ -221,7 +221,7 @@ function Sidebar() {
     <div style={{ width: 176, flexShrink: 0, position: "sticky", top: 24, alignSelf: "flex-start" }}>
       <div style={{ background: "#f9fafb", borderRadius: 10, padding: "14px 14px" }}>
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>햇살론 관련 글</p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a key={i} href="#" style={{ display: "flex", alignItems: "center", gap: 5, padding: "6px 0", fontSize: 12, color: "#374151", textDecoration: "none", borderBottom: "1px solid #f0f0f0", lineHeight: 1.5 }}>
             <span style={{ color: "#d1d5db", fontSize: 10, flexShrink: 0 }}>›</span>{label}
           </a>

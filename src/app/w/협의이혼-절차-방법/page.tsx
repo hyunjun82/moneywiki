@@ -3,10 +3,10 @@ import { useState } from "react";
 const G = "#1D9E75", GL = "#E1F5EE", GD = "#085041";
 const body = { fontSize: 14, color: "#374151", lineHeight: 2.1, marginBottom: "1rem" };
 function Divider() { return <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />; }
-function H2({ children }) { return <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111", borderLeft: `3px solid ${G}`, paddingLeft: 12, margin: "0 0 14px", lineHeight: 1.5 }}>{children}</h2>; }
-function Bdg({ children }) { return <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: GL, color: "#0F6E56", marginBottom: 10 }}>{children}</span>; }
-function GreenBox({ title, children }) { return <div style={{ background: GL, borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95, color: GD }}><strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>{children}</div>; }
-function BorderBox({ title, children }) { return <div style={{ border: "1px solid #9FE1CB", borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95 }}><strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>{children}</div>; }
+function H2({ children }: any) { return <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111", borderLeft: `3px solid ${G}`, paddingLeft: 12, margin: "0 0 14px", lineHeight: 1.5 }}>{children}</h2>; }
+function Bdg({ children }: any) { return <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: GL, color: "#0F6E56", marginBottom: 10 }}>{children}</span>; }
+function GreenBox({ title, children }: any) { return <div style={{ background: GL, borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95, color: GD }}><strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>{children}</div>; }
+function BorderBox({ title, children }: any) { return <div style={{ border: "1px solid #9FE1CB", borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95 }}><strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>{children}</div>; }
 const SIDEBAR_LINKS = ["이혼 재산분할 비율","재산분할 청구기한","이혼 위자료 청구","이혼 양육비 청구","이혼 친권·양육권","면접교섭권 신청","이혼 일방 거부","별거 중 이혼","이혼 무료 법률상담","이혼 소송 증거 수집","이혼 전 재산 빼돌림","이혼 후 공동명의","이혼 퇴직금 분할","이혼 빚 공동부담","이혼 재산분할 집 취득세","재산분할 대상 범위","이혼 소송 기간","이혼 소송 비용","위자료 소멸시효","대한법률구조공단"];
 const STEPS = [
   { n: 1, title: "가정법원에 협의이혼의사확인 신청 + 상담 권고", desc: "부부 쌍방이 법원에 신청서를 제출해요. 법원 양식(협의이혼의사확인신청서)을 작성하고, 가족관계증명서·혼인관계증명서를 첨부해요. 법원이 이혼 안내를 해줘요. 자녀가 있으면 양육비·친권 협의서도 함께 제출해야 해요.", note: "미성년 자녀 있으면 자녀 양육·친권 협의서 필수" },

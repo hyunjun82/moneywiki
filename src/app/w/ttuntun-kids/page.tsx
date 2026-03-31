@@ -174,8 +174,8 @@ function UrgentBanner() {
           { id: "age",      label: "우리 아이 나이가 되는지 확인하고 싶어요." },
           { id: "use",      label: "아이 포인트를 어디서 써야 하는지 모르겠어요." },
           { id: "facility", label: "아이 태권도장·수영장도 적립이 되는지 확인하고 싶어요." },
-        ].map((item) => (
-          <button key={item.id} onClick={() => setType(item.id)} style={{
+        ].map((item: any) => (
+          <button key={item.id} onClick={(: any) => setType(item.id)} style={{
             display: "flex", alignItems: "center", gap: 10, padding: "10px 14px",
             borderRadius: 8, border: "1px solid #FED7AA", background: "#fff",
             fontSize: 13, color: "#374151", cursor: "pointer", textAlign: "left",
@@ -192,7 +192,7 @@ function UrgentBanner() {
     <div style={{ background: m.bg, border: `1px solid ${m.color}40`, borderRadius: 10, padding: "16px 18px", marginBottom: "1.5rem" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
         <p style={{ fontSize: 13, fontWeight: 700, color: m.color, margin: 0 }}>{m.title}</p>
-        <button onClick={() => setType(null)} style={{ background: "none", border: "none", fontSize: 12, color: "#9ca3af", cursor: "pointer", padding: 0, flexShrink: 0, marginLeft: 12 }}>다시 선택</button>
+        <button onClick={(: any) => setType(null)} style={{ background: "none", border: "none", fontSize: 12, color: "#9ca3af", cursor: "pointer", padding: 0, flexShrink: 0, marginLeft: 12 }}>다시 선택</button>
       </div>
       <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.85, margin: 0 }}>{m.text}</p>
     </div>
@@ -218,11 +218,11 @@ function FamilyCalc() {
       {[
         { label: "가족 구성원 수", display: `${members}명`, min: 1, max: 6, step: 1, val: members, set: setMembers },
         { label: "14세 미만 아이", display: `${kids}명`, min: 0, max: members, step: 1, val: kidsUnder14, set: (v) => setKidsUnder14(Math.min(v, members)) },
-      ].map((s) => (
+      ].map((s: any) => (
         <div key={s.label} style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
           <label style={{ fontSize: 13, color: "#6b7280", width: 120, flexShrink: 0 }}>{s.label}</label>
           <input type="range" min={s.min} max={s.max} step={s.step} value={s.val}
-            onChange={(e) => s.set(+e.target.value)}
+            onChange={(e: any) => s.set(+e.target.value)}
             style={{ flex: 1, accentColor: G }} />
           <span style={{ fontSize: 13, fontWeight: 700, minWidth: 60, textAlign: "right", color: "#111" }}>{s.display}</span>
         </div>
@@ -303,13 +303,13 @@ function AgeChecker() {
       </p>
       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
         <label style={{ fontSize: 13, color: "#6b7280", flexShrink: 0 }}>만 나이</label>
-        <input type="number" value={age} onChange={(e) => setAge(e.target.value)} placeholder="예: 8"
+        <input type="number" value={age} onChange={(e: any) => setAge(e.target.value)} placeholder="예: 8"
           style={{ flex: 1, padding: "9px 12px", borderRadius: 7, border: "1px solid #d1d5db", fontSize: 14 }} />
       </div>
       {info && (
         <div style={{ marginTop: 14, padding: "14px 16px", borderRadius: 8, background: info.bg, border: `1px solid ${info.color}33` }}>
           <p style={{ fontSize: 14, fontWeight: 700, color: info.color, marginBottom: 10 }}>{details[info.type].title}</p>
-          {details[info.type].items.map((item, i) => (
+          {details[info.type].items.map((item: any, i: any) => (
             <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 8, marginBottom: 6 }}>
               <span style={{ fontSize: 14, color: item.ok ? G : "#DC2626", flexShrink: 0 }}>{item.ok ? "✓" : "✗"}</span>
               <p style={{ fontSize: 13, color: "#374151", margin: 0, lineHeight: 1.7 }}>{item.text}</p>
@@ -325,7 +325,7 @@ function AgeChecker() {
 function ProcessSteps() {
   return (
     <div style={{ margin: "10px 0 1rem" }}>
-      {STEPS.map((s, i) => (
+      {STEPS.map((s: any, i: any) => (
         <div key={i} style={{ display: "flex", gap: 14, paddingBottom: 20, position: "relative" }}>
           {i < STEPS.length - 1 && (
             <div style={{ position: "absolute", left: 15, top: 32, bottom: 0, width: 1, background: "#e5e7eb" }} />
@@ -361,9 +361,9 @@ function FAQ() {
   const [open, setOpen] = useState(null);
   return (
     <div>
-      {FAQS.map((f, i) => (
+      {FAQS.map((f: any, i: any) => (
         <div key={i} style={{ border: `1px solid ${f.urgent ? "#FED7AA" : "#e5e7eb"}`, borderRadius: 8, marginBottom: 8, overflow: "hidden" }}>
-          <div onClick={() => setOpen(open === i ? null : i)}
+          <div onClick={(: any) => setOpen(open === i ? null : i)}
             style={{ padding: "12px 16px", fontSize: 14, fontWeight: f.urgent ? 600 : 500, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", background: open === i ? "#f9fafb" : f.urgent ? "#FFF7ED" : "#fff" }}>
             <span>
               {f.urgent && <span style={{ fontSize: 11, background: "#F97316", color: "#fff", borderRadius: 4, padding: "1px 6px", marginRight: 8, fontWeight: 600 }}>긴급</span>}
@@ -414,7 +414,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 튼튼머니 관련 글도 함께 보세요</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a key={i} href={link.href} target="_self"
             style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 4px", borderBottom: i < HUB_LINKS.length - 1 ? "1px solid #f3f4f6" : "none", textDecoration: "none" }}>
             <span style={{ color: G, fontSize: 14, flexShrink: 0, fontWeight: 700 }}>›</span>
@@ -447,11 +447,11 @@ function References() {
           { label: "국민체력100 공식 홈페이지 (nfa.kspo.or.kr)", url: "https://nfa.kspo.or.kr" },
           { label: "국민체육진흥공단 문의 ☎02-410-1414", url: "tel:0241011414" },
         ]},
-      ].map((group) => (
+      ].map((group: any) => (
         <div key={group.category} style={{ marginBottom: 16 }}>
           <p style={{ fontSize: 11, fontWeight: 600, color: "#9ca3af", letterSpacing: "0.06em", marginBottom: 6 }}>{group.category.toUpperCase()}</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            {group.items.map((item) => (
+            {group.items.map((item: any) => (
               <a key={item.label} href={item.url} target="_self"
                 style={{ display: "flex", alignItems: "center", gap: 8, padding: "7px 12px", borderRadius: 6, border: "1px solid #f3f4f6", background: "#fafafa", fontSize: 13, color: "#374151", textDecoration: "none" }}>
                 <span style={{ color: G, fontSize: 11, flexShrink: 0 }}>↗</span>{item.label}
@@ -473,7 +473,7 @@ function Sidebar() {
     <div style={{ width: 176, flexShrink: 0, position: "sticky", top: 24, alignSelf: "flex-start" }}>
       <div style={{ background: "#f9fafb", borderRadius: 10, padding: "14px 14px" }}>
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>튼튼머니 관련 글</p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a key={i} href="#" target="_self"
             style={{ display: "flex", alignItems: "center", gap: 5, padding: "6px 0", fontSize: 12, color: "#374151", textDecoration: "none", borderBottom: "1px solid #f0f0f0", lineHeight: 1.5 }}>
             <span style={{ color: "#d1d5db", fontSize: 10, flexShrink: 0 }}>›</span>{label}
@@ -559,7 +559,7 @@ export default function TtuntunMoneyKidsPage() {
             { icon: "🏋️", label: "피트니스·헬스" },
             { icon: "🎾", label: "테니스·스쿼시" },
             { icon: "🏃", label: "국민체력인증센터" },
-          ].map((f, i) => (
+          ].map((f: any, i: any) => (
             <div key={i} style={{ background: GL, borderRadius: 8, padding: "12px 14px", textAlign: "center", border: "1px solid #9FE1CB" }}>
               <p style={{ fontSize: 22, marginBottom: 6 }}>{f.icon}</p>
               <p style={{ fontSize: 12, color: GD, fontWeight: 600, margin: 0, lineHeight: 1.4 }}>{f.label}</p>

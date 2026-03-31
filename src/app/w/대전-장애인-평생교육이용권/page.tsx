@@ -72,8 +72,8 @@ function UrgentBanner() {
             { id: "apply", label: "신청 기간인 거 알았어요. 바로 신청하고 싶어요." },
             { id: "check", label: "내가 자격이 되는지 확인하고 싶어요." },
             { id: "use",   label: "이미 선정됐는데 사용법을 모르겠어요." },
-          ].map((item) => (
-            <button key={item.id} onClick={() => setType(item.id)}
+          ].map((item: any) => (
+            <button key={item.id} onClick={(: any) => setType(item.id)}
               style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", borderRadius: 8, border: "1px solid #FED7AA", background: "#fff", fontSize: 13, color: "#374151", cursor: "pointer", textAlign: "left" }}>
               <span style={{ color: "#F97316", flexShrink: 0 }}>→</span>{item.label}
             </button>
@@ -87,7 +87,7 @@ function UrgentBanner() {
     <div style={{ background: m.bg, border: `1px solid ${m.color}40`, borderRadius: 10, padding: "16px 18px", marginBottom: "1.5rem" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
         <p style={{ fontSize: 13, fontWeight: 700, color: m.color, margin: 0 }}>{m.title}</p>
-        <button onClick={() => setType(null)} style={{ background: "none", border: "none", fontSize: 12, color: "#9ca3af", cursor: "pointer", padding: 0, flexShrink: 0, marginLeft: 12 }}>다시 선택</button>
+        <button onClick={(: any) => setType(null)} style={{ background: "none", border: "none", fontSize: 12, color: "#9ca3af", cursor: "pointer", padding: 0, flexShrink: 0, marginLeft: 12 }}>다시 선택</button>
       </div>
       <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.85, margin: 0 }}>{m.text}</p>
     </div>
@@ -146,7 +146,7 @@ function TypeChecker({ types }: any) {
   const ageNum = parseInt(age, 10);
   function getResult() {
     if (!age || isNaN(ageNum)) return null;
-    const sorted = [...types].sort((a, b) => b.minAge - a.minAge);
+    const sorted = [...types].sort((a: any, b: any) => b.minAge - a.minAge);
     return sorted.find(t => ageNum >= t.minAge) || null;
   }
   const result = getResult();
@@ -155,7 +155,7 @@ function TypeChecker({ types }: any) {
       <p style={{ fontSize: 13, color: "#6b7280", marginBottom: 14, lineHeight: 1.7 }}>만 나이를 입력하면 바로 결과가 나와요.</p>
       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
         <label style={{ fontSize: 13, color: "#6b7280", flexShrink: 0 }}>만 나이</label>
-        <input type="number" value={age} onChange={(e) => setAge(e.target.value)} placeholder="예: 42"
+        <input type="number" value={age} onChange={(e: any) => setAge(e.target.value)} placeholder="예: 42"
           style={{ flex: 1, padding: "9px 12px", borderRadius: 7, border: "1px solid #d1d5db", fontSize: 14 }} />
       </div>
       {result && (
@@ -181,7 +181,7 @@ function TypeChecker({ types }: any) {
 function ProcessSteps({ steps }: any) {
   return (
     <div style={{ margin: "10px 0 1rem" }}>
-      {steps.map((s, i) => (
+      {steps.map((s: any, i: any) => (
         <div key={i} style={{ display: "flex", gap: 14, paddingBottom: 20, position: "relative" }}>
           {i < steps.length - 1 && (
             <div style={{ position: "absolute", left: 15, top: 32, bottom: 0, width: 1, background: "#e5e7eb" }} />
@@ -217,9 +217,9 @@ function FAQ({ faqs }: any) {
   const [open, setOpen] = React.useState(null);
   return (
     <div>
-      {faqs.map((f, i) => (
+      {faqs.map((f: any, i: any) => (
         <div key={i} style={{ border: `1px solid ${f.urgent ? "#FED7AA" : "#e5e7eb"}`, borderRadius: 8, marginBottom: 8, overflow: "hidden" }}>
-          <div onClick={() => setOpen(open === i ? null : i)}
+          <div onClick={(: any) => setOpen(open === i ? null : i)}
             style={{ padding: "12px 16px", fontSize: 14, fontWeight: f.urgent ? 600 : 500, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", background: open === i ? "#f9fafb" : f.urgent ? "#FFF7ED" : "#fff" }}>
             <span>
               {f.urgent && <span style={{ fontSize: 11, background: "#F97316", color: "#fff", borderRadius: 4, padding: "1px 6px", marginRight: 8, fontWeight: 600 }}>긴급</span>}
@@ -265,7 +265,7 @@ function HubLinks({ links }: any) {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 다른 지역 신청도 확인해보세요</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {links.map((link, i) => (
+        {links.map((link: any, i: any) => (
           <a key={i} href={link.href} target="_self"
             style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 4px", borderBottom: i < links.length - 1 ? "1px solid #f3f4f6" : "none", textDecoration: "none" }}>
             <span style={{ color: "#1D9E75", fontSize: 14, flexShrink: 0, fontWeight: 700 }}>›</span>
@@ -288,11 +288,11 @@ function References({ refs }: any) {
         <span style={{ width: 3, height: 16, background: "#d1d5db", borderRadius: 2, display: "inline-block" }} />
         출처 및 참고자료
       </h3>
-      {refs.map((group) => (
+      {refs.map((group: any) => (
         <div key={group.category} style={{ marginBottom: 16 }}>
           <p style={{ fontSize: 11, fontWeight: 600, color: "#9ca3af", letterSpacing: "0.06em", marginBottom: 6 }}>{group.category.toUpperCase()}</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            {group.items.map((item) => (
+            {group.items.map((item: any) => (
               <a key={item.label} href={item.url} target="_self"
                 style={{ display: "flex", alignItems: "center", gap: 8, padding: "7px 12px", borderRadius: 6, border: "1px solid #f3f4f6", background: "#fafafa", fontSize: 13, color: "#374151", textDecoration: "none" }}>
                 <span style={{ color: "#1D9E75", fontSize: 11, flexShrink: 0 }}>↗</span>{item.label}
@@ -314,7 +314,7 @@ function Sidebar({ links }: any) {
     <div style={{ width: 176, flexShrink: 0, position: "sticky", top: 24, alignSelf: "flex-start" }}>
       <div style={{ background: "#f9fafb", borderRadius: 10, padding: "14px" }}>
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>평생교육 관련 글</p>
-        {links.map((label, i) => (
+        {links.map((label: any, i: any) => (
           <a key={i} href="#" target="_self"
             style={{ display: "flex", alignItems: "center", gap: 5, padding: "6px 0", fontSize: 12, color: "#374151", textDecoration: "none", borderBottom: "1px solid #f0f0f0", lineHeight: 1.5 }}>
             <span style={{ color: "#d1d5db", fontSize: 10, flexShrink: 0 }}>›</span>{label}
@@ -376,13 +376,13 @@ export default function DaejeonDisabledPage() {
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
             <thead>
               <tr style={{ background: "#f9fafb" }}>
-                {["유형", "신청 나이", "소득 조건"].map((h) => (
+                {["유형", "신청 나이", "소득 조건"].map((h: any) => (
                   <th key={h} style={{ padding: "10px 12px", textAlign: "left", fontWeight: 600, color: "#374151", borderBottom: "2px solid #e5e7eb", whiteSpace: "nowrap" }}>{h}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
-              {TYPES.map((t, i) => (
+              {TYPES.map((t: any, i: any) => (
                 <tr key={i} style={{ borderBottom: "1px solid #f3f4f6" }}>
                   <td style={{ padding: "10px 12px", fontWeight: 600, color: t.color }}>{t.name}</td>
                   <td style={{ padding: "10px 12px", color: "#374151" }}>{t.age}</td>
@@ -425,10 +425,10 @@ export default function DaejeonDisabledPage() {
           실제 강좌 목록은 www.gov.kr에서 검색하세요.
         </p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 10, margin: "12px 0 1.2rem" }}>
-          {COURSES.map((group) => (
+          {COURSES.map((group: any) => (
             <div key={group.cat} style={{ background: "#f9fafb", borderRadius: 8, padding: "14px 16px" }}>
               <p style={{ fontSize: 13, fontWeight: 700, color: group.col, marginBottom: 8 }}>{group.cat}</p>
-              {group.items.map((item, j) => (
+              {group.items.map((item: any, j: any) => (
                 <p key={j} style={{ fontSize: 12, color: "#374151", margin: "4px 0", lineHeight: 1.6 }}>· {item}</p>
               ))}
             </div>

@@ -131,8 +131,8 @@ function UrgentBanner() {
           { id: "now", label: "지금 위험한 상황이에요. 당장 어떻게 해야 하나요?" },
           { id: "evidence", label: "증거를 모아두고 싶어요. 뭐가 필요한가요?" },
           { id: "divorce", label: "이혼 절차를 시작하려고 해요." },
-        ].map((item) => (
-          <button key={item.id} onClick={() => setType(item.id)} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", borderRadius: 8, border: "1px solid #FED7AA", background: "#fff", fontSize: 13, color: "#374151", cursor: "pointer", textAlign: "left" }}>
+        ].map((item: any) => (
+          <button key={item.id} onClick={(: any) => setType(item.id)} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", borderRadius: 8, border: "1px solid #FED7AA", background: "#fff", fontSize: 13, color: "#374151", cursor: "pointer", textAlign: "left" }}>
             <span style={{ color: "#F97316", flexShrink: 0 }}>→</span>{item.label}
           </button>
         ))}
@@ -144,7 +144,7 @@ function UrgentBanner() {
     <div style={{ background: m.bg, border: `1px solid ${m.color}40`, borderRadius: 10, padding: "16px 18px", marginBottom: "1.5rem" }}>
       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
         <strong style={{ fontSize: 14, color: m.color }}>{m.title}</strong>
-        <button onClick={() => setType(null)} style={{ fontSize: 12, color: "#9ca3af", background: "none", border: "none", cursor: "pointer" }}>다시 선택</button>
+        <button onClick={(: any) => setType(null)} style={{ fontSize: 12, color: "#9ca3af", background: "none", border: "none", cursor: "pointer" }}>다시 선택</button>
       </div>
       <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.9, margin: 0 }}>{m.text}</p>
     </div>
@@ -162,14 +162,14 @@ function EvidenceChecker() {
         <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", margin: 0 }}>📋 증거 체크리스트</p>
         <span style={{ fontSize: 12, color: count > 0 ? G : "#9ca3af", fontWeight: 600 }}>{count}/{total} 확보</span>
       </div>
-      {EVIDENCE.map((group) => (
+      {EVIDENCE.map((group: any) => (
         <div key={group.type} style={{ borderBottom: "1px solid #f3f4f6" }}>
           <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", letterSpacing: "0.05em", padding: "10px 16px 4px", margin: 0 }}>{group.type.toUpperCase()}</p>
-          {group.items.map((item) => {
+          {group.items.map((item: any) => {
             const key = group.type + item;
             return (
               <label key={key} style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 16px", cursor: "pointer", borderBottom: "1px solid #f9fafb" }}>
-                <input type="checkbox" checked={!!checked[key]} onChange={() => toggle(key)} style={{ accentColor: G, width: 15, height: 15, flexShrink: 0 }} />
+                <input type="checkbox" checked={!!checked[key]} onChange={(: any) => toggle(key)} style={{ accentColor: G, width: 15, height: 15, flexShrink: 0 }} />
                 <span style={{ fontSize: 13, color: checked[key] ? G : "#374151", textDecoration: checked[key] ? "none" : "none" }}>{item}</span>
               </label>
             );
@@ -188,7 +188,7 @@ function EvidenceChecker() {
 function ProcessSteps() {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 0, marginBottom: "1.5rem" }}>
-      {STEPS.map((step, i) => (
+      {STEPS.map((step: any, i: any) => (
         <div key={i} style={{ display: "flex", gap: 14, position: "relative" }}>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flexShrink: 0 }}>
             <div style={{ width: 28, height: 28, borderRadius: "50%", background: G, color: "#fff", fontSize: 12, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{i + 1}</div>
@@ -211,9 +211,9 @@ function FAQ() {
   const [open, setOpen] = useState(null);
   return (
     <div style={{ marginBottom: "1.5rem" }}>
-      {FAQS.map((faq, i) => (
+      {FAQS.map((faq: any, i: any) => (
         <div key={i} style={{ border: "1px solid #e5e7eb", borderRadius: 8, marginBottom: 8 }}>
-          <button onClick={() => setOpen(open === i ? null : i)} style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 14px", background: "none", border: "none", cursor: "pointer", textAlign: "left", gap: 10 }}>
+          <button onClick={(: any) => setOpen(open === i ? null : i)} style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 14px", background: "none", border: "none", cursor: "pointer", textAlign: "left", gap: 10 }}>
             <span style={{ fontSize: 13, fontWeight: 600, color: "#111", lineHeight: 1.5, display: "flex", alignItems: "center", gap: 8 }}>
               {faq.urgent && <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 10, background: "#FEE2E2", color: "#DC2626", flexShrink: 0 }}>긴급</span>}
               {faq.q}
@@ -240,7 +240,7 @@ function CTA() {
           { label: "여성긴급전화 1366 (24시간)", url: "tel:1366", sub: "폭력 신고·상담·쉼터 연계" },
           { label: "대한법률구조공단 (132)", url: "tel:132", sub: "무료 법률상담·소송구조 신청" },
           { label: "가정폭력 상담소 — 복지로 검색", url: "https://www.bokjiro.go.kr", sub: "가까운 상담소 찾기" },
-        ].map((item, i) => (
+        ].map((item: any, i: any) => (
           <a key={i} href={item.url} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px 14px", borderRadius: 8, background: "#fff", textDecoration: "none", border: "1px solid #9FE1CB" }}>
             <div>
               <span style={{ fontSize: 13, fontWeight: 600, color: "#111", display: "block" }}>{item.label}</span>
@@ -259,7 +259,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 관련 글도 함께 보세요</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a key={i} href={link.href} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 4px", borderBottom: i < HUB_LINKS.length - 1 ? "1px solid #f3f4f6" : "none", textDecoration: "none" }}>
             <span style={{ color: G, fontSize: 14, flexShrink: 0, fontWeight: 700 }}>›</span>
             <span style={{ flex: 1 }}>
@@ -280,11 +280,11 @@ function References() {
         <span style={{ width: 3, height: 16, background: "#d1d5db", borderRadius: 2, display: "inline-block" }} />
         출처 및 참고자료
       </h3>
-      {REFERENCES.map((group) => (
+      {REFERENCES.map((group: any) => (
         <div key={group.category} style={{ marginBottom: 16 }}>
           <p style={{ fontSize: 11, fontWeight: 600, color: "#9ca3af", letterSpacing: "0.06em", marginBottom: 6 }}>{group.category.toUpperCase()}</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            {group.items.map((item) => (
+            {group.items.map((item: any) => (
               <a key={item.label} href={item.url} style={{ display: "flex", alignItems: "center", gap: 8, padding: "7px 12px", borderRadius: 6, border: "1px solid #f3f4f6", background: "#fafafa", fontSize: 13, color: "#374151", textDecoration: "none" }}>
                 <span style={{ color: G, fontSize: 11, flexShrink: 0 }}>↗</span>{item.label}
               </a>
@@ -302,7 +302,7 @@ function Sidebar() {
     <div style={{ width: 176, flexShrink: 0, position: "sticky", top: 24, alignSelf: "flex-start" }}>
       <div style={{ background: "#f9fafb", borderRadius: 10, padding: "14px 14px" }}>
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>이혼·가정폭력 관련 글</p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a key={i} href="#" style={{ display: "flex", alignItems: "center", gap: 5, padding: "6px 0", fontSize: 12, color: "#374151", textDecoration: "none", borderBottom: "1px solid #f0f0f0", lineHeight: 1.5 }}>
             <span style={{ color: "#d1d5db", fontSize: 10, flexShrink: 0 }}>›</span>{label}
           </a>

@@ -105,7 +105,7 @@ function Divider() {
   return <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />;
 }
 
-function H2({ children }) {
+function H2({ children }: any) {
   return (
     <h2 style={{
       fontSize: 18,
@@ -121,7 +121,7 @@ function H2({ children }) {
   );
 }
 
-function Bdg({ children }) {
+function Bdg({ children }: any) {
   return (
     <span style={{
       display: "inline-block",
@@ -138,7 +138,7 @@ function Bdg({ children }) {
   );
 }
 
-function GreenBox({ title, children }) {
+function GreenBox({ title, children }: any) {
   return (
     <div style={{
       background: GL,
@@ -155,7 +155,7 @@ function GreenBox({ title, children }) {
   );
 }
 
-function WarnBox({ title, children }) {
+function WarnBox({ title, children }: any) {
   return (
     <div style={{
       background: "#FFF7ED",
@@ -213,10 +213,10 @@ function UrgentBanner() {
             { id: "bid",      label: "경매 입찰을 준비 중이에요." },
             { id: "after",    label: "낙찰받은 후 권리 관계 문제가 생겼어요." },
             { id: "confused", label: "어떤 권리가 소멸하고 어떤 게 인수되는지 헷갈려요." },
-          ].map((item) => (
+          ].map((item: any) => (
             <button
               key={item.id}
-              onClick={() => setType(item.id)}
+              onClick={(: any) => setType(item.id)}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -257,7 +257,7 @@ function UrgentBanner() {
       }}>
         <p style={{ fontSize: 13, fontWeight: 700, color: m.color, margin: 0 }}>{m.title}</p>
         <button
-          onClick={() => setType(null)}
+          onClick={(: any) => setType(null)}
           style={{
             background: "none",
             border: "none",
@@ -294,7 +294,7 @@ function RightsTable() {
       <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
         <thead>
           <tr style={{ background: GL }}>
-            {["권리 종류", "경매 후 처리", "비고"].map((h) => (
+            {["권리 종류", "경매 후 처리", "비고"].map((h: any) => (
               <th
                 key={h}
                 style={{
@@ -311,7 +311,7 @@ function RightsTable() {
           </tr>
         </thead>
         <tbody>
-          {rows.map((r, i) => (
+          {rows.map((r: any, i: any) => (
             <tr
               key={i}
               style={{
@@ -344,10 +344,10 @@ function FAQ() {
   const toggle = (i) => setOpen((p) => ({ ...p, [i]: !p[i] }));
   return (
     <div style={{ margin: "10px 0 1.2rem" }}>
-      {FAQS.map((faq, i) => (
+      {FAQS.map((faq: any, i: any) => (
         <div key={i} style={{ borderBottom: "1px solid #f3f4f6" }}>
           <button
-            onClick={() => toggle(i)}
+            onClick={(: any) => toggle(i)}
             style={{
               width: "100%",
               textAlign: "left",
@@ -398,7 +398,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 같이 보면 도움 되는 글</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a
             key={i}
             href={link.href}
@@ -432,13 +432,13 @@ function References() {
         <span style={{ width: 3, height: 16, background: "#d1d5db", borderRadius: 2, display: "inline-block" }} />
         출처 및 참고자료
       </h3>
-      {REFERENCES.map((group) => (
+      {REFERENCES.map((group: any) => (
         <div key={group.category} style={{ marginBottom: 16 }}>
           <p style={{ fontSize: 11, fontWeight: 600, color: "#9ca3af", letterSpacing: "0.06em", marginBottom: 6 }}>
             {group.category.toUpperCase()}
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            {group.items.map((item) => (
+            {group.items.map((item: any) => (
               <a
                 key={item.label}
                 href={item.url}
@@ -476,7 +476,7 @@ function Sidebar() {
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>
           경매 권리분석 관련 글
         </p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a
             key={i}
             href="#"
@@ -556,7 +556,7 @@ export default function AuctionRightsPage() {
             { step: "말소기준권리 파악", desc: "최선순위 저당권·근저당권 또는 압류·가압류 중 접수 날짜가 가장 빠른 것이 말소기준권리예요." },
             { step: "선순위 권리 확인", desc: "말소기준권리보다 접수일이 빠른 권리를 찾아요. 이것이 낙찰자가 인수해야 할 권리예요." },
             { step: "인수 금액 계산", desc: "선순위 전세권·대항력 있는 임차인 보증금을 합산해요. 낙찰가에서 이 금액을 빼면 실제 취득 비용이에요." },
-          ].map((item, i) => (
+          ].map((item: any, i: any) => (
             <div
               key={i}
               style={{

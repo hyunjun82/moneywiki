@@ -104,7 +104,7 @@ function Divider() {
   return <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />;
 }
 
-function H2({ children }) {
+function H2({ children }: any) {
   return (
     <h2 style={{
       fontSize: 18,
@@ -120,7 +120,7 @@ function H2({ children }) {
   );
 }
 
-function Bdg({ children }) {
+function Bdg({ children }: any) {
   return (
     <span style={{
       display: "inline-block",
@@ -137,7 +137,7 @@ function Bdg({ children }) {
   );
 }
 
-function GreenBox({ title, children }) {
+function GreenBox({ title, children }: any) {
   return (
     <div style={{
       background: GL,
@@ -154,7 +154,7 @@ function GreenBox({ title, children }) {
   );
 }
 
-function WarnBox({ title, children }) {
+function WarnBox({ title, children }: any) {
   return (
     <div style={{
       background: "#FFF7ED",
@@ -212,10 +212,10 @@ function UrgentBanner() {
             { id: "got",    label: "이행강제금 부과 처분을 받았어요." },
             { id: "before", label: "개발제한구역 내 건축·공작물 설치를 하려고 해요." },
             { id: "check",  label: "내 토지가 개발제한구역인지 확인하고 싶어요." },
-          ].map((item) => (
+          ].map((item: any) => (
             <button
               key={item.id}
-              onClick={() => setType(item.id)}
+              onClick={(: any) => setType(item.id)}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -256,7 +256,7 @@ function UrgentBanner() {
       }}>
         <p style={{ fontSize: 13, fontWeight: 700, color: m.color, margin: 0 }}>{m.title}</p>
         <button
-          onClick={() => setType(null)}
+          onClick={(: any) => setType(null)}
           style={{
             background: "none",
             border: "none",
@@ -295,7 +295,7 @@ function FineCalc() {
           max={50000}
           step={100}
           value={price}
-          onChange={(e) => setPrice(+e.target.value)}
+          onChange={(e: any) => setPrice(+e.target.value)}
           style={{ flex: 1, accentColor: G }}
         />
         <span style={{ fontSize: 12, fontWeight: 700, minWidth: 90, textAlign: "right" }}>
@@ -328,10 +328,10 @@ function FAQ() {
   const toggle = (i) => setOpen((p) => ({ ...p, [i]: !p[i] }));
   return (
     <div style={{ margin: "10px 0 1.2rem" }}>
-      {FAQS.map((faq, i) => (
+      {FAQS.map((faq: any, i: any) => (
         <div key={i} style={{ borderBottom: "1px solid #f3f4f6" }}>
           <button
-            onClick={() => toggle(i)}
+            onClick={(: any) => toggle(i)}
             style={{
               width: "100%",
               textAlign: "left",
@@ -382,7 +382,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 같이 보면 도움 되는 글</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a
             key={i}
             href={link.href}
@@ -424,13 +424,13 @@ function References() {
         <span style={{ width: 3, height: 16, background: "#d1d5db", borderRadius: 2, display: "inline-block" }} />
         출처 및 참고자료
       </h3>
-      {REFERENCES.map((group) => (
+      {REFERENCES.map((group: any) => (
         <div key={group.category} style={{ marginBottom: 16 }}>
           <p style={{ fontSize: 11, fontWeight: 600, color: "#9ca3af", letterSpacing: "0.06em", marginBottom: 6 }}>
             {group.category.toUpperCase()}
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            {group.items.map((item) => (
+            {group.items.map((item: any) => (
               <a
                 key={item.label}
                 href={item.url}
@@ -468,7 +468,7 @@ function Sidebar() {
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>
           개발제한구역 관련 글
         </p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a
             key={i}
             href="#"
@@ -564,7 +564,7 @@ export default function GreenBeltFinePage() {
               desc: "3년 이하 징역 또는 3,000만원 이하 벌금 (허가 없이 건축·토지 형질변경 등).",
               color: "#7C3AED",
             },
-          ].map((item, i) => (
+          ].map((item: any, i: any) => (
             <div
               key={i}
               style={{

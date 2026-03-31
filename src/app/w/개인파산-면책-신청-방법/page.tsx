@@ -130,8 +130,8 @@ function UrgentBanner() {
           { id: "qualify", label: "자격이 되는지 먼저 확인하고 싶어요." },
           { id: "cost", label: "비용이 얼마인지 알고 싶어요." },
           { id: "exempt", label: "면책 안 되는 빚이 있는지 확인하고 싶어요." },
-        ].map((item) => (
-          <button key={item.id} onClick={() => setType(item.id)} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", borderRadius: 8, border: "1px solid #FED7AA", background: "#fff", fontSize: 13, color: "#374151", cursor: "pointer", textAlign: "left" }}>
+        ].map((item: any) => (
+          <button key={item.id} onClick={(: any) => setType(item.id)} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", borderRadius: 8, border: "1px solid #FED7AA", background: "#fff", fontSize: 13, color: "#374151", cursor: "pointer", textAlign: "left" }}>
             <span style={{ color: "#F97316", flexShrink: 0 }}>→</span>{item.label}
           </button>
         ))}
@@ -143,7 +143,7 @@ function UrgentBanner() {
     <div style={{ background: m.bg, border: `1px solid ${m.color}40`, borderRadius: 10, padding: "16px 18px", marginBottom: "1.5rem" }}>
       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
         <strong style={{ fontSize: 14, color: m.color }}>{m.title}</strong>
-        <button onClick={() => setType(null)} style={{ fontSize: 12, color: "#9ca3af", background: "none", border: "none", cursor: "pointer" }}>다시 선택</button>
+        <button onClick={(: any) => setType(null)} style={{ fontSize: 12, color: "#9ca3af", background: "none", border: "none", cursor: "pointer" }}>다시 선택</button>
       </div>
       <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.9, margin: 0 }}>{m.text}</p>
     </div>
@@ -167,9 +167,9 @@ function EligibilityChecker() {
         <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", margin: 0 }}>✅ 자격 체크리스트</p>
         <span style={{ fontSize: 12, color: count >= 4 ? G : "#9ca3af", fontWeight: 600 }}>{count}/{items.length} 해당</span>
       </div>
-      {items.map((item, i) => (
+      {items.map((item: any, i: any) => (
         <label key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 16px", cursor: "pointer", borderBottom: "1px solid #f3f4f6" }}>
-          <input type="checkbox" checked={!!checked[i]} onChange={() => setChecked(p => ({ ...p, [i]: !p[i] }))} style={{ accentColor: G, width: 15, height: 15, flexShrink: 0 }} />
+          <input type="checkbox" checked={!!checked[i]} onChange={(: any) => setChecked(p => ({ ...p, [i]: !p[i] }))} style={{ accentColor: G, width: 15, height: 15, flexShrink: 0 }} />
           <span style={{ fontSize: 13, color: "#374151" }}>{item}</span>
         </label>
       ))}
@@ -185,7 +185,7 @@ function EligibilityChecker() {
 function ProcessSteps() {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 0, marginBottom: "1.5rem" }}>
-      {STEPS.map((step, i) => (
+      {STEPS.map((step: any, i: any) => (
         <div key={i} style={{ display: "flex", gap: 14 }}>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flexShrink: 0 }}>
             <div style={{ width: 28, height: 28, borderRadius: "50%", background: G, color: "#fff", fontSize: 12, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{i + 1}</div>
@@ -207,9 +207,9 @@ function FAQ() {
   const [open, setOpen] = useState(null);
   return (
     <div style={{ marginBottom: "1.5rem" }}>
-      {FAQS.map((faq, i) => (
+      {FAQS.map((faq: any, i: any) => (
         <div key={i} style={{ border: "1px solid #e5e7eb", borderRadius: 8, marginBottom: 8 }}>
-          <button onClick={() => setOpen(open === i ? null : i)} style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 14px", background: "none", border: "none", cursor: "pointer", textAlign: "left", gap: 10 }}>
+          <button onClick={(: any) => setOpen(open === i ? null : i)} style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 14px", background: "none", border: "none", cursor: "pointer", textAlign: "left", gap: 10 }}>
             <span style={{ fontSize: 13, fontWeight: 600, color: "#111", lineHeight: 1.5, display: "flex", alignItems: "center", gap: 8 }}>
               {faq.urgent && <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 10, background: "#FEE2E2", color: "#DC2626", flexShrink: 0 }}>긴급</span>}
               {faq.q}
@@ -228,7 +228,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 관련 글도 함께 보세요</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a key={i} href={link.href} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 4px", borderBottom: i < HUB_LINKS.length - 1 ? "1px solid #f3f4f6" : "none", textDecoration: "none" }}>
             <span style={{ color: G, fontSize: 14, flexShrink: 0, fontWeight: 700 }}>›</span>
             <span style={{ flex: 1 }}><span style={{ fontSize: 13, fontWeight: 600, color: "#111", display: "block" }}>{link.title}</span><span style={{ fontSize: 12, color: "#9ca3af" }}>{link.desc}</span></span>
@@ -245,11 +245,11 @@ function References() {
       <h3 style={{ fontSize: 15, fontWeight: 600, color: "#374151", marginBottom: 14, display: "flex", alignItems: "center", gap: 8 }}>
         <span style={{ width: 3, height: 16, background: "#d1d5db", borderRadius: 2, display: "inline-block" }} />출처 및 참고자료
       </h3>
-      {REFERENCES.map((group) => (
+      {REFERENCES.map((group: any) => (
         <div key={group.category} style={{ marginBottom: 16 }}>
           <p style={{ fontSize: 11, fontWeight: 600, color: "#9ca3af", letterSpacing: "0.06em", marginBottom: 6 }}>{group.category.toUpperCase()}</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            {group.items.map((item) => (
+            {group.items.map((item: any) => (
               <a key={item.label} href={item.url} style={{ display: "flex", alignItems: "center", gap: 8, padding: "7px 12px", borderRadius: 6, border: "1px solid #f3f4f6", background: "#fafafa", fontSize: 13, color: "#374151", textDecoration: "none" }}>
                 <span style={{ color: G, fontSize: 11, flexShrink: 0 }}>↗</span>{item.label}
               </a>
@@ -267,7 +267,7 @@ function Sidebar() {
     <div style={{ width: 176, flexShrink: 0, position: "sticky", top: 24, alignSelf: "flex-start" }}>
       <div style={{ background: "#f9fafb", borderRadius: 10, padding: "14px 14px" }}>
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>파산·채무 관련 글</p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a key={i} href="#" style={{ display: "flex", alignItems: "center", gap: 5, padding: "6px 0", fontSize: 12, color: "#374151", textDecoration: "none", borderBottom: "1px solid #f0f0f0", lineHeight: 1.5 }}>
             <span style={{ color: "#d1d5db", fontSize: 10, flexShrink: 0 }}>›</span>{label}
           </a>
@@ -308,7 +308,7 @@ export default function ParasanMyeonchackPage() {
           반대로 카드빚·대출·사업 빚이 주라면 파산 면책이 가능해요.
         </p>
         <div style={{ border: "1px solid #FEE2E2", borderRadius: 8, padding: "14px 18px", marginBottom: "1.5rem", background: "#fff" }}>
-          {DISQUALIFICATIONS[0].items.map((item, i) => (
+          {DISQUALIFICATIONS[0].items.map((item: any, i: any) => (
             <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10, padding: "6px 0", borderBottom: i < DISQUALIFICATIONS[0].items.length - 1 ? "1px solid #f3f4f6" : "none" }}>
               <span style={{ color: "#DC2626", fontSize: 11, flexShrink: 0, marginTop: 2 }}>✕</span>
               <span style={{ fontSize: 13, color: "#374151" }}>{item}</span>
@@ -343,7 +343,7 @@ export default function ParasanMyeonchackPage() {
               { label: "서울회생법원 — 02-530-1672", url: "tel:025301672", sub: "파산·면책 전문 법원" },
               { label: "대한법률구조공단 (132)", url: "tel:132", sub: "무료 법률상담·소송구조 신청" },
               { label: "신용회복위원회 (1600-5500)", url: "tel:16005500", sub: "파산 전 채무조정 상담" },
-            ].map((item, i) => (
+            ].map((item: any, i: any) => (
               <a key={i} href={item.url} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px 14px", borderRadius: 8, background: "#fff", textDecoration: "none", border: "1px solid #9FE1CB" }}>
                 <div><span style={{ fontSize: 13, fontWeight: 600, color: "#111", display: "block" }}>{item.label}</span><span style={{ fontSize: 11, color: "#6b7280" }}>{item.sub}</span></div>
                 <span style={{ color: G, fontWeight: 700 }}>→</span>

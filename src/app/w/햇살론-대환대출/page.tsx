@@ -74,7 +74,7 @@ function InstantAnswer() {
           { q: "어떤 대출을 갈아탈 수 있나요?", a: "연 20% 이상 고금리 대출, 대부업, 불법사금융 대출이 대상이에요. 제도권 은행 대출도 고금리라면 갈아탈 수 있어요." },
           { q: "얼마까지 갈아탈 수 있나요?", a: "일반보증 최대 2,000만원(금리 10% 이내), 특례보증 최대 1,000만원(금리 12.5%). 연소득·신용점수에 따라 실제 한도는 달라져요." },
           { q: "지금 당장 뭘 해야 하나요?", a: "서민금융진흥원 앱을 설치하고 내 조건(소득·신용점수)에 맞는 상품을 먼저 확인하세요. 모르겠으면 1397로 전화해서 내 상황을 말하면 맞는 상품을 안내해줘요." },
-        ].map((item, i) => (
+        ].map((item: any, i: any) => (
           <div key={i} style={{ background: "#fff", borderRadius: 8, padding: "12px 14px", border: "1px solid #d1fae5" }}>
             <p style={{ fontSize: 13, fontWeight: 700, color: "#111", margin: "0 0 4px" }}>{item.q}</p>
             <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.8, margin: 0 }}>{item.a}</p>
@@ -92,7 +92,7 @@ function ProductCompare() {
   ];
   return (
     <div style={{ display: "flex", gap: 12, margin: "12px 0 1.2rem", flexWrap: "wrap" }}>
-      {products.map((p, i) => (
+      {products.map((p: any, i: any) => (
         <div key={i} style={{ flex: 1, minWidth: 220, border: `1px solid ${i === 0 ? G : "#FED7AA"}`, borderRadius: 10, padding: "14px 16px", background: i === 0 ? GL : "#FFF7ED" }}>
           <p style={{ fontSize: 14, fontWeight: 700, color: i === 0 ? GD : "#C2410C", margin: "0 0 10px" }}>{p.name}</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
@@ -166,7 +166,7 @@ function Steps() {
   ];
   return (
     <div style={{ margin: "12px 0 1.2rem" }}>
-      {steps.map((step, i) => (
+      {steps.map((step: any, i: any) => (
         <div key={i} style={{ display: "flex", gap: 14, marginBottom: 14 }}>
           <div style={{ width: 28, height: 28, borderRadius: "50%", background: G, color: "#fff", fontSize: 13, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2 }}>{i + 1}</div>
           <div style={{ flex: 1 }}>
@@ -185,9 +185,9 @@ function FAQ() {
   const toggle = i => setOpen(p => ({ ...p, [i]: !p[i] }));
   return (
     <div style={{ margin: "12px 0 1.2rem" }}>
-      {FAQS.map((faq, i) => (
+      {FAQS.map((faq: any, i: any) => (
         <div key={i} style={{ borderBottom: "1px solid #f3f4f6" }}>
-          <button onClick={() => toggle(i)} style={{ width: "100%", textAlign: "left", padding: "13px 4px", display: "flex", alignItems: "flex-start", gap: 8, background: "none", border: "none", cursor: "pointer" }}>
+          <button onClick={(: any) => toggle(i)} style={{ width: "100%", textAlign: "left", padding: "13px 4px", display: "flex", alignItems: "flex-start", gap: 8, background: "none", border: "none", cursor: "pointer" }}>
             {faq.urgent && <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 20, background: "#FEE2E2", color: "#DC2626", flexShrink: 0, marginTop: 2 }}>급한 상황</span>}
             <span style={{ fontSize: 13, fontWeight: 600, color: "#111", flex: 1, lineHeight: 1.6 }}>{faq.q}</span>
             <span style={{ color: "#9ca3af", fontSize: 16, flexShrink: 0 }}>{open[i] ? "▲" : "▼"}</span>
@@ -204,7 +204,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 햇살론 관련 글도 함께 보세요</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a key={i} href={link.href} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 4px", borderBottom: i < HUB_LINKS.length - 1 ? "1px solid #f3f4f6" : "none", textDecoration: "none" }}>
             <span style={{ color: G, fontSize: 14, flexShrink: 0, fontWeight: 700 }}>›</span>
             <span style={{ flex: 1 }}><span style={{ fontSize: 13, fontWeight: 600, color: "#111", display: "block" }}>{link.title}</span><span style={{ fontSize: 12, color: "#9ca3af" }}>{link.desc}</span></span>
@@ -243,7 +243,7 @@ function Sidebar() {
     <div style={{ width: 176, flexShrink: 0, position: "sticky", top: 24, alignSelf: "flex-start" }}>
       <div style={{ background: "#f9fafb", borderRadius: 10, padding: "14px 14px" }}>
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>햇살론 관련 글</p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a key={i} href="#" style={{ display: "flex", alignItems: "center", gap: 5, padding: "6px 0", fontSize: 12, color: "#374151", textDecoration: "none", borderBottom: "1px solid #f0f0f0", lineHeight: 1.5 }}>
             <span style={{ color: "#d1d5db", fontSize: 10, flexShrink: 0 }}>›</span>{label}
           </a>

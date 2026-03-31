@@ -84,7 +84,7 @@ function InstantAnswer() {
           { q: "6+6을 적용받으려면 무엇이 필요한가요?", a: "생후 18개월 이내 자녀 + 부모 둘 다 육아휴직 사용. 동시·순차 모두 가능해요. 한 명이라도 2024년 1월 이후 최초 사용이면 돼요." },
           { q: "일반 육아휴직보다 얼마나 더 받나요?", a: "1~3개월은 같아요(상한 250만원). 4개월차부터 달라져요. 일반은 200만원, 6+6은 350만원이에요. 6개월차엔 일반 200만원 vs 6+6 450만원으로 차이가 최대 250만원이에요." },
           { q: "부부가 각각 6개월 쓰면 합산 얼마까지 받나요?", a: "통상임금이 상한액 이상인 경우 6개월 합산 최대 2,000만원(한 명 기준), 부부 합산 최대 4,000만원이에요. 이후 6개월 연장까지 쓰면 더 늘어나요." },
-        ].map((item, i) => (
+        ].map((item: any, i: any) => (
           <div key={i} style={{ background: "#fff", borderRadius: 8, padding: "12px 14px", border: "1px solid #d1fae5" }}>
             <p style={{ fontSize: 13, fontWeight: 700, color: "#111", margin: "0 0 4px" }}>{item.q}</p>
             <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.8, margin: 0 }}>{item.a}</p>
@@ -116,7 +116,7 @@ function MonthlyTable() {
           </tr>
         </thead>
         <tbody>
-          {rows.map((r, i) => (
+          {rows.map((r: any, i: any) => (
             <tr key={i} style={{ borderBottom: "1px solid #e5e7eb", background: i >= 3 && i <= 5 ? GL : i % 2 === 0 ? "#fff" : "#fafafa" }}>
               <td style={{ padding: "9px 10px", fontWeight: 600, color: "#374151" }}>{r.month}</td>
               <td style={{ padding: "9px 10px", color: G, fontWeight: 700 }}>{r.limit6}</td>
@@ -141,8 +141,8 @@ function Calculator() {
   const calc = (limits: number[]) => limits.map(lim => Math.min(wage, lim));
   const payments66 = calc(limits66);
   const paymentsGeneral = calc(limitsGeneral);
-  const total66 = payments66.reduce((a, b) => a + b, 0);
-  const totalGeneral = paymentsGeneral.reduce((a, b) => a + b, 0);
+  const total66 = payments66.reduce((a: any, b: any) => a + b, 0);
+  const totalGeneral = paymentsGeneral.reduce((a: any, b: any) => a + b, 0);
 
   return (
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "12px 0 1.2rem" }}>
@@ -157,14 +157,14 @@ function Calculator() {
       </div>
       <div style={{ display: "flex", gap: 8, marginBottom: 14 }}>
         {[{ id: "66", label: "6+6 부모육아휴직제" }, { id: "general", label: "일반 육아휴직" }].map(opt => (
-          <button key={opt.id} onClick={() => setMode(opt.id)}
+          <button key={opt.id} onClick={(: any) => setMode(opt.id)}
             style={{ flex: 1, padding: "8px 0", borderRadius: 8, border: `1px solid ${mode === opt.id ? G : "#e5e7eb"}`, background: mode === opt.id ? GL : "#fff", color: mode === opt.id ? GD : "#374151", fontSize: 12, fontWeight: mode === opt.id ? 700 : 400, cursor: "pointer" }}>
             {opt.label}
           </button>
         ))}
       </div>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 10 }}>
-        {(mode === "66" ? payments66 : paymentsGeneral).map((amt, i) => (
+        {(mode === "66" ? payments66 : paymentsGeneral).map((amt: any, i: any) => (
           <div key={i} style={{ flex: 1, minWidth: 60, textAlign: "center", padding: "10px 6px", borderRadius: 8, background: GL, border: `1px solid ${G}` }}>
             <p style={{ fontSize: 11, color: "#9ca3af", margin: "0 0 4px" }}>{i + 1}개월</p>
             <p style={{ fontSize: 14, fontWeight: 700, color: GD, margin: 0 }}>{amt}만원</p>
@@ -199,7 +199,7 @@ function ConditionChecker() {
   return (
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "12px 0 1.2rem" }}>
       {items.map(item => (
-        <div key={item.id} onClick={() => toggle(item.id)}
+        <div key={item.id} onClick={(: any) => toggle(item.id)}
           style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 0", borderBottom: "1px solid #f3f4f6", cursor: "pointer" }}>
           <div style={{ width: 20, height: 20, borderRadius: 4, border: `2px solid ${checks[item.id] ? G : "#d1d5db"}`, background: checks[item.id] ? G : "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
             {checks[item.id] && <span style={{ color: "#fff", fontSize: 12, fontWeight: 700 }}>✓</span>}
@@ -225,7 +225,7 @@ function Steps() {
   ];
   return (
     <div style={{ margin: "12px 0 1.2rem" }}>
-      {steps.map((step, i) => (
+      {steps.map((step: any, i: any) => (
         <div key={i} style={{ display: "flex", gap: 14, marginBottom: 14 }}>
           <div style={{ width: 28, height: 28, borderRadius: "50%", background: G, color: "#fff", fontSize: 13, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2 }}>{i + 1}</div>
           <div style={{ flex: 1 }}>
@@ -244,9 +244,9 @@ function FAQ() {
   const toggle = i => setOpen(p => ({ ...p, [i]: !p[i] }));
   return (
     <div style={{ margin: "12px 0 1.2rem" }}>
-      {FAQS.map((faq, i) => (
+      {FAQS.map((faq: any, i: any) => (
         <div key={i} style={{ borderBottom: "1px solid #f3f4f6" }}>
-          <button onClick={() => toggle(i)} style={{ width: "100%", textAlign: "left", padding: "13px 4px", display: "flex", alignItems: "flex-start", gap: 8, background: "none", border: "none", cursor: "pointer" }}>
+          <button onClick={(: any) => toggle(i)} style={{ width: "100%", textAlign: "left", padding: "13px 4px", display: "flex", alignItems: "flex-start", gap: 8, background: "none", border: "none", cursor: "pointer" }}>
             {faq.urgent && <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 20, background: "#FEE2E2", color: "#DC2626", flexShrink: 0, marginTop: 2 }}>급한 상황</span>}
             <span style={{ fontSize: 13, fontWeight: 600, color: "#111", flex: 1, lineHeight: 1.6 }}>{faq.q}</span>
             <span style={{ color: "#9ca3af", fontSize: 16, flexShrink: 0 }}>{open[i] ? "▲" : "▼"}</span>
@@ -263,7 +263,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 육아휴직 관련 글도 함께 보세요</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a key={i} href={link.href} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 4px", borderBottom: i < HUB_LINKS.length - 1 ? "1px solid #f3f4f6" : "none", textDecoration: "none" }}>
             <span style={{ color: G, fontSize: 14, flexShrink: 0, fontWeight: 700 }}>›</span>
             <span style={{ flex: 1 }}><span style={{ fontSize: 13, fontWeight: 600, color: "#111", display: "block" }}>{link.title}</span><span style={{ fontSize: 12, color: "#9ca3af" }}>{link.desc}</span></span>
@@ -303,7 +303,7 @@ function Sidebar() {
     <div style={{ width: 176, flexShrink: 0, position: "sticky", top: 24, alignSelf: "flex-start" }}>
       <div style={{ background: "#f9fafb", borderRadius: 10, padding: "14px 14px" }}>
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>육아휴직 관련 글</p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a key={i} href="#" style={{ display: "flex", alignItems: "center", gap: 5, padding: "6px 0", fontSize: 12, color: "#374151", textDecoration: "none", borderBottom: "1px solid #f0f0f0", lineHeight: 1.5 }}>
             <span style={{ color: "#d1d5db", fontSize: 10, flexShrink: 0 }}>›</span>{label}
           </a>

@@ -71,18 +71,18 @@ const S = { black: "#000", text: "#111", muted: "#555", subtle: "#888", border: 
 const f = { xs: 10, sm: 11, base: 12, md: 13, lg: 14, xl: 18, h2: 26, family: "'Pretendard','Apple SD Gothic Neo',-apple-system,sans-serif" };
 
 // ── 공통
-function Sec({ id, children }) {
+function Sec({ id, children }: any) {
   return <section id={id} style={{ padding: "28px 24px", borderBottom: `1px solid ${S.border}` }}>{children}</section>;
 }
-function SQ({ children }) {
+function SQ({ children }: any) {
   return <p style={{ fontSize: 18, fontWeight: 700, color: S.black, letterSpacing: "-0.4px", marginBottom: 6, lineHeight: 1.3 }}>{children}</p>;
 }
-function SH({ children }) {
+function SH({ children }: any) {
   return <p style={{ fontSize: f.base, color: S.subtle, marginBottom: 20, lineHeight: 1.6 }}>{children}</p>;
 }
 
 // ── 히어로
-function Hero({ viewers }) {
+function Hero({ viewers }: any) {
   return (
     <div style={{ padding: "28px 24px 24px", borderBottom: `1px solid ${S.border}` }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 18 }}>
@@ -97,7 +97,7 @@ function Hero({ viewers }) {
 
       {/* KPI */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", border: `1px solid ${S.border}`, borderRadius: 8, overflow: "hidden", marginBottom: 20 }}>
-        {META.kpis.map((k, i) => (
+        {META.kpis.map((k: any, i: any) => (
           <div key={k.label} style={{ padding: "14px 12px", borderRight: i < 2 ? `1px solid ${S.border}` : "none", textAlign: "center" }}>
             <p style={{ fontSize: f.xl, fontWeight: 700, color: S.black, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>{k.num}</p>
             <p style={{ fontSize: f.xs, color: S.subtle, lineHeight: 1.4 }}>{k.label}</p>
@@ -126,11 +126,11 @@ const NAV_TABS = [
   { id: "s4", label: "지금 뭐 해야?" },
   { id: "s5", label: "주의사항" },
 ];
-function StickyNav({ active, onNav }) {
+function StickyNav({ active, onNav }: any) {
   return (
     <nav style={{ display: "flex", overflowX: "auto", scrollbarWidth: "none", background: "rgba(255,255,255,.96)", backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)", borderBottom: `1px solid ${S.border}`, position: "sticky", top: 0, zIndex: 50, height: 40 }}>
-      {NAV_TABS.map((t) => (
-        <button key={t.id} onClick={() => onNav(t.id)} style={{ flex: "0 0 auto", height: 40, padding: "0 13px", fontSize: f.base, color: active === t.id ? S.black : S.subtle, fontWeight: active === t.id ? 600 : 400, background: "none", border: "none", borderBottom: active === t.id ? `1px solid ${S.black}` : "1px solid transparent", cursor: "pointer", whiteSpace: "nowrap", fontFamily: f.family, transition: "color 0.1s" }}>{t.label}</button>
+      {NAV_TABS.map((t: any) => (
+        <button key={t.id} onClick={(: any) => onNav(t.id)} style={{ flex: "0 0 auto", height: 40, padding: "0 13px", fontSize: f.base, color: active === t.id ? S.black : S.subtle, fontWeight: active === t.id ? 600 : 400, background: "none", border: "none", borderBottom: active === t.id ? `1px solid ${S.black}` : "1px solid transparent", cursor: "pointer", whiteSpace: "nowrap", fontFamily: f.family, transition: "color 0.1s" }}>{t.label}</button>
       ))}
     </nav>
   );
@@ -165,7 +165,7 @@ function CheckerSection() {
       <SQ>나 받을 수 있나요?</SQ>
       <SH>3가지만 확인하면 돼요. 30초 걸려요.</SH>
 
-      {CHECKER_QS.map((q, i) => {
+      {CHECKER_QS.map((q: any, i: any) => {
         const enabled = i === 0 || ans[i - 1] === "Y";
         return (
           <div key={i} style={{ marginBottom: 20 }}>
@@ -175,8 +175,8 @@ function CheckerSection() {
               {q.hint && <span style={{ fontSize: f.xs, color: S.subtle }}>{q.hint}</span>}
             </div>
             <div style={{ display: "flex", gap: 8 }}>
-              {["Y", "N"].map((v) => (
-                <button key={v} disabled={!enabled} onClick={() => setQ(i, v)} style={{ flex: 1, padding: 10, border: `1px solid ${ans[i] === v ? (v === "Y" ? S.black : "#f43f5e") : S.border}`, borderRadius: 6, background: ans[i] === v ? (v === "Y" ? S.black : "#fff5f5") : S.white, color: ans[i] === v ? (v === "Y" ? S.white : "#f43f5e") : S.muted, fontSize: f.base, fontWeight: 500, cursor: enabled ? "pointer" : "not-allowed", opacity: enabled ? 1 : 0.35, fontFamily: f.family, transition: "all 0.1s" }}>
+              {["Y", "N"].map((v: any) => (
+                <button key={v} disabled={!enabled} onClick={(: any) => setQ(i, v)} style={{ flex: 1, padding: 10, border: `1px solid ${ans[i] === v ? (v === "Y" ? S.black : "#f43f5e") : S.border}`, borderRadius: 6, background: ans[i] === v ? (v === "Y" ? S.black : "#fff5f5") : S.white, color: ans[i] === v ? (v === "Y" ? S.white : "#f43f5e") : S.muted, fontSize: f.base, fontWeight: 500, cursor: enabled ? "pointer" : "not-allowed", opacity: enabled ? 1 : 0.35, fontFamily: f.family, transition: "all 0.1s" }}>
                   {v === "Y" ? "네, 해당돼요" : "아니요"}
                 </button>
               ))}
@@ -196,9 +196,9 @@ function CheckerSection() {
       {pass && (
         <div style={{ marginTop: 14, padding: "14px 16px", border: `1px solid ${S.border}`, borderRadius: 8, background: S.surface }}>
           <p style={{ fontSize: f.base, fontWeight: 600, color: S.black, marginBottom: 10 }}>🎯 우대형(12%)도 해당되나요?</p>
-          {UPGRADE_OPTIONS.map((opt, i) => (
+          {UPGRADE_OPTIONS.map((opt: any, i: any) => (
             <label key={i} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: f.base, color: S.muted, cursor: "pointer", marginBottom: 6 }}>
-              <input type="checkbox" checked={upgrade[i]} onChange={(e) => { const n = [...upgrade]; n[i] = e.target.checked; setUpgrade(n); }} style={{ accentColor: S.black }} />
+              <input type="checkbox" checked={upgrade[i]} onChange={(e: any) => { const n = [...upgrade]; n[i] = e.target.checked; setUpgrade(n); }} style={{ accentColor: S.black }} />
               {opt}
             </label>
           ))}
@@ -228,8 +228,8 @@ function CalcSection() {
       <SH>월 납입액을 조절해보세요.</SH>
 
       <div style={{ display: "flex", gap: 6, marginBottom: 16 }}>
-        {["일반", "우대"].map((t) => (
-          <button key={t} onClick={() => setType(t)} style={{ flex: 1, padding: 10, border: `1px solid ${type === t ? S.black : S.border}`, borderRadius: 6, background: type === t ? S.black : S.white, color: type === t ? S.white : S.muted, fontSize: f.base, fontWeight: 500, cursor: "pointer", fontFamily: f.family, transition: "all 0.1s", textAlign: "center" }}>
+        {["일반", "우대"].map((t: any) => (
+          <button key={t} onClick={(: any) => setType(t)} style={{ flex: 1, padding: 10, border: `1px solid ${type === t ? S.black : S.border}`, borderRadius: 6, background: type === t ? S.black : S.white, color: type === t ? S.white : S.muted, fontSize: f.base, fontWeight: 500, cursor: "pointer", fontFamily: f.family, transition: "all 0.1s", textAlign: "center" }}>
             {t}형 (기여율 {t === "일반" ? "6%" : "12%"})
           </button>
         ))}
@@ -240,7 +240,7 @@ function CalcSection() {
           <span style={{ fontSize: f.base, color: S.muted }}>월 납입액</span>
           <span style={{ fontSize: f.lg, fontWeight: 700, color: S.black, letterSpacing: "-0.3px" }}>{monthly}만원</span>
         </div>
-        <input type="range" min={1} max={50} step={1} value={monthly} onChange={(e) => setMonthly(Number(e.target.value))} style={{ width: "100%", accentColor: S.black }} />
+        <input type="range" min={1} max={50} step={1} value={monthly} onChange={(e: any) => setMonthly(Number(e.target.value))} style={{ width: "100%", accentColor: S.black }} />
         <div style={{ display: "flex", justifyContent: "space-between", marginTop: 4, fontSize: f.xs, color: "#ccc" }}><span>1만원</span><span>50만원</span></div>
       </div>
 
@@ -250,7 +250,7 @@ function CalcSection() {
           { label: "정부 기여금",         val: `+${g.toLocaleString()}만원` },
           { label: "은행 이자 (연 5% 가정)", val: `+${taxBase.toLocaleString()}만원` },
           { label: "절약된 세금 (비과세)", val: `+${tax.toLocaleString()}만원` },
-        ].map((row) => (
+        ].map((row: any) => (
           <div key={row.label} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "11px 16px", borderBottom: `1px solid ${S.line}`, fontSize: f.base }}>
             <span style={{ color: S.subtle }}>{row.label}</span>
             <span style={{ fontWeight: 600, color: S.text }}>{row.val}</span>
@@ -269,7 +269,7 @@ function CalcSection() {
 // ── 도약계좌 비교
 function CompareSection() {
   const [sel, setSel] = useState("none");
-  const cur = COMPARE_OPTIONS.find((o) => o.key === sel);
+  const cur = COMPARE_OPTIONS.find((o: any) => o.key === sel);
 
   return (
     <Sec id="s3">
@@ -278,8 +278,8 @@ function CompareSection() {
 
       <p style={{ fontSize: f.base, color: S.muted, marginBottom: 8 }}>지금 도약계좌 가입 상태는?</p>
       <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 14 }}>
-        {COMPARE_OPTIONS.map((o) => (
-          <button key={o.key} onClick={() => setSel(o.key)} style={{ padding: "7px 14px", border: `1px solid ${sel === o.key ? S.black : S.border}`, borderRadius: 20, fontSize: f.base, color: sel === o.key ? S.white : S.muted, background: sel === o.key ? S.black : S.white, cursor: "pointer", fontFamily: f.family, transition: "all 0.1s", whiteSpace: "nowrap" }}>
+        {COMPARE_OPTIONS.map((o: any) => (
+          <button key={o.key} onClick={(: any) => setSel(o.key)} style={{ padding: "7px 14px", border: `1px solid ${sel === o.key ? S.black : S.border}`, borderRadius: 20, fontSize: f.base, color: sel === o.key ? S.white : S.muted, background: sel === o.key ? S.black : S.white, cursor: "pointer", fontFamily: f.family, transition: "all 0.1s", whiteSpace: "nowrap" }}>
             {o.label}
           </button>
         ))}
@@ -297,7 +297,7 @@ function CompareSection() {
           <span style={{ fontSize: f.sm, fontWeight: 700, color: S.black, textAlign: "center" }}>미래적금</span>
           <span style={{ fontSize: f.sm, fontWeight: 600, color: S.subtle, textAlign: "center" }}>도약계좌</span>
         </div>
-        {COMPARE_TABLE.map((row, i) => (
+        {COMPARE_TABLE.map((row: any, i: any) => (
           <div key={row.label} style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", padding: "10px 14px", borderBottom: i < COMPARE_TABLE.length - 1 ? `1px solid ${S.line}` : "none", alignItems: "center" }}>
             <span style={{ fontSize: f.base, color: S.subtle }}>{row.label}</span>
             <span style={{ fontSize: f.base, textAlign: "center", color: row.hI ? S.black : S.muted, fontWeight: row.hI ? 600 : 400 }}>{row.mine}</span>
@@ -315,7 +315,7 @@ function StepsSection() {
     <Sec id="s4">
       <SQ>지금 당장 뭘 해야 하나요?</SQ>
       <SH>6월 출시 전 미리 준비하면 첫날 바로 신청할 수 있어요.</SH>
-      {STEPS.map((step, i) => (
+      {STEPS.map((step: any, i: any) => (
         <div key={i} style={{ display: "flex", gap: 14, padding: "12px 0", borderBottom: i < STEPS.length - 1 ? `1px solid ${S.line}` : "none", alignItems: "flex-start" }}>
           <span style={{ fontSize: f.sm, fontWeight: 700, color: S.black, width: 32, flexShrink: 0, paddingTop: 2 }}>{step.when}</span>
           <div style={{ flex: 1 }}>
@@ -336,9 +336,9 @@ function FaqSection() {
     <Sec id="s5">
       <SQ>결정 전에 꼭 확인할 것들</SQ>
       <SH>모르고 넘기면 손해 보는 것들이에요.</SH>
-      {FAQS.map((item, i) => (
+      {FAQS.map((item: any, i: any) => (
         <div key={i} style={{ borderBottom: i < FAQS.length - 1 ? `1px solid ${S.line}` : "none" }}>
-          <button onClick={() => setOpen(open === i ? null : i)} style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 0", background: "none", border: "none", cursor: "pointer", textAlign: "left", gap: 12, fontFamily: f.family }}>
+          <button onClick={(: any) => setOpen(open === i ? null : i)} style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 0", background: "none", border: "none", cursor: "pointer", textAlign: "left", gap: 12, fontFamily: f.family }}>
             <span style={{ fontSize: f.base, fontWeight: 500, color: S.text, lineHeight: 1.5, flex: 1 }}>{item.q}</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={S.subtle} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transform: open === i ? "rotate(180deg)" : "none", transition: "transform 0.15s", flexShrink: 0 }}>
               <polyline points="6 9 12 15 18 9" />
@@ -360,12 +360,12 @@ export default function PolicyPage() {
 
   // 스크롤스파이
   useEffect(() => {
-    const ids = NAV_TABS.map((t) => t.id);
+    const ids = NAV_TABS.map((t: any) => t.id);
     const obs = new IntersectionObserver(
-      (entries) => entries.forEach((e) => { if (e.isIntersecting) setActive(e.target.id); }),
+      (entries) => entries.forEach((e: any) => { if (e.isIntersecting) setActive(e.target.id); }),
       { rootMargin: "-45% 0px -45% 0px" }
     );
-    ids.forEach((id) => { const el = document.getElementById(id); if (el) obs.observe(el); });
+    ids.forEach((id: any) => { const el = document.getElementById(id); if (el) obs.observe(el); });
     return () => obs.disconnect();
   }, []);
 

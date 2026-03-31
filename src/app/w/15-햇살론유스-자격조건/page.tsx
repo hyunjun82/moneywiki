@@ -100,7 +100,7 @@ function Divider() {
   return <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />;
 }
 
-function H2({ children }) {
+function H2({ children }: any) {
   return (
     <h2 style={{
       fontSize: 18,
@@ -116,7 +116,7 @@ function H2({ children }) {
   );
 }
 
-function Bdg({ children }) {
+function Bdg({ children }: any) {
   return (
     <span style={{
       display: "inline-block",
@@ -133,7 +133,7 @@ function Bdg({ children }) {
   );
 }
 
-function GreenBox({ title, children }) {
+function GreenBox({ title, children }: any) {
   return (
     <div style={{
       background: GL,
@@ -150,7 +150,7 @@ function GreenBox({ title, children }) {
   );
 }
 
-function WarnBox({ title, children }) {
+function WarnBox({ title, children }: any) {
   return (
     <div style={{
       background: "#FFF7ED",
@@ -208,10 +208,10 @@ function UrgentBanner() {
             { id: "student",  label: "대학교 재학 중이거나 휴학 중이에요." },
             { id: "jobseeker",label: "졸업 후 취업 준비 중이에요." },
             { id: "worker",   label: "중소기업에 취업한 지 얼마 안 됐어요." },
-          ].map((item) => (
+          ].map((item: any) => (
             <button
               key={item.id}
-              onClick={() => setType(item.id)}
+              onClick={(: any) => setType(item.id)}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -252,7 +252,7 @@ function UrgentBanner() {
       }}>
         <p style={{ fontSize: 13, fontWeight: 700, color: m.color, margin: 0 }}>{m.title}</p>
         <button
-          onClick={() => setType(null)}
+          onClick={(: any) => setType(null)}
           style={{
             background: "none",
             border: "none",
@@ -317,10 +317,10 @@ function TypeChecker() {
   return (
     <div style={{ margin: "10px 0 1.2rem" }}>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
-        {types.map((t) => (
+        {types.map((t: any) => (
           <button
             key={t.id}
-            onClick={() => setSelected(selected === t.id ? null : t.id)}
+            onClick={(: any) => setSelected(selected === t.id ? null : t.id)}
             style={{
               padding: "12px 14px",
               borderRadius: 8,
@@ -338,7 +338,7 @@ function TypeChecker() {
         ))}
       </div>
       {selected && (() => {
-        const t = types.find((x) => x.id === selected);
+        const t = types.find((x: any) => x.id === selected);
         return (
           <div style={{
             marginTop: 12,
@@ -374,10 +374,10 @@ function FAQ() {
   const toggle = (i) => setOpen((p) => ({ ...p, [i]: !p[i] }));
   return (
     <div style={{ margin: "10px 0 1.2rem" }}>
-      {FAQS.map((faq, i) => (
+      {FAQS.map((faq: any, i: any) => (
         <div key={i} style={{ borderBottom: "1px solid #f3f4f6" }}>
           <button
-            onClick={() => toggle(i)}
+            onClick={(: any) => toggle(i)}
             style={{
               width: "100%",
               textAlign: "left",
@@ -428,7 +428,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 같이 보면 도움 되는 글</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a
             key={i}
             href={link.href}
@@ -470,13 +470,13 @@ function References() {
         <span style={{ width: 3, height: 16, background: "#d1d5db", borderRadius: 2, display: "inline-block" }} />
         출처 및 참고자료
       </h3>
-      {REFERENCES.map((group) => (
+      {REFERENCES.map((group: any) => (
         <div key={group.category} style={{ marginBottom: 16 }}>
           <p style={{ fontSize: 11, fontWeight: 600, color: "#9ca3af", letterSpacing: "0.06em", marginBottom: 6 }}>
             {group.category.toUpperCase()}
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            {group.items.map((item) => (
+            {group.items.map((item: any) => (
               <a
                 key={item.label}
                 href={item.url}
@@ -514,7 +514,7 @@ function Sidebar() {
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>
           햇살론 관련 글
         </p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a
             key={i}
             href="#"
@@ -596,7 +596,7 @@ export default function HatSalYouthPage() {
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
             <thead>
               <tr style={{ background: GL }}>
-                {["유형", "무소득 가능 여부", "소득 상한"].map((h) => (
+                {["유형", "무소득 가능 여부", "소득 상한"].map((h: any) => (
                   <th key={h} style={{
                     padding: "8px 10px",
                     textAlign: "left",
@@ -615,7 +615,7 @@ export default function HatSalYouthPage() {
                 ["취준생",       "가능 (아르바이트 소득 증빙 유리)",    "연 3,500만원 이하"],
                 ["사회초년생",   "불가 (재직 소득 필요)",               "연 3,500만원 이하"],
                 ["군 장병",      "가능 (복무 급여 인정)",               "연 3,500만원 이하"],
-              ].map((row, i) => (
+              ].map((row: any, i: any) => (
                 <tr key={i} style={{ borderBottom: "1px solid #e5e7eb", background: i % 2 === 0 ? "#fff" : "#fafafa" }}>
                   <td style={{ padding: "9px 10px", fontWeight: 600 }}>{row[0]}</td>
                   <td style={{ padding: "9px 10px" }}>{row[1]}</td>
@@ -649,7 +649,7 @@ export default function HatSalYouthPage() {
               step: "심사 및 실행",
               desc: "서류 심사 후 결과 통보. 승인 시 지정 계좌로 입금돼요.",
             },
-          ].map((item, i) => (
+          ].map((item: any, i: any) => (
             <div
               key={i}
               style={{
@@ -734,7 +734,7 @@ export default function HatSalYouthPage() {
             { q: "한도 증액",         a: "불가. 유형별 한도가 고정이에요.", bad: true },
             { q: "다른 햇살론 중복",  a: "불가. 햇살론 계열 중복 이용 안 돼요.", bad: true },
             { q: "한도 부족 시 대안", a: "1397 상담 → 다른 서민금융 상품 안내", bad: false },
-          ].map((item, i) => (
+          ].map((item: any, i: any) => (
             <div
               key={i}
               style={{

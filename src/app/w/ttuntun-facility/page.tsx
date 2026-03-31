@@ -208,8 +208,8 @@ function UrgentBanner() {
           { id: "check",     label: "내가 다니는 헬스장이 적립시설인지 확인하고 싶어요." },
           { id: "notlisted", label: "검색했는데 목록에 없어요." },
           { id: "register",  label: "시설 운영자인데 등록하고 싶어요." },
-        ].map((item) => (
-          <button key={item.id} onClick={() => setType(item.id)} style={{
+        ].map((item: any) => (
+          <button key={item.id} onClick={(: any) => setType(item.id)} style={{
             display: "flex", alignItems: "center", gap: 10, padding: "10px 14px",
             borderRadius: 8, border: "1px solid #FED7AA", background: "#fff",
             fontSize: 13, color: "#374151", cursor: "pointer", textAlign: "left",
@@ -226,7 +226,7 @@ function UrgentBanner() {
     <div style={{ background: m.bg, border: `1px solid ${m.color}40`, borderRadius: 10, padding: "16px 18px", marginBottom: "1.5rem" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
         <p style={{ fontSize: 13, fontWeight: 700, color: m.color, margin: 0 }}>{m.title}</p>
-        <button onClick={() => setType(null)} style={{ background: "none", border: "none", fontSize: 12, color: "#9ca3af", cursor: "pointer", padding: 0, flexShrink: 0, marginLeft: 12 }}>다시 선택</button>
+        <button onClick={(: any) => setType(null)} style={{ background: "none", border: "none", fontSize: 12, color: "#9ca3af", cursor: "pointer", padding: 0, flexShrink: 0, marginLeft: 12 }}>다시 선택</button>
       </div>
       <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.85, margin: 0 }}>{m.text}</p>
     </div>
@@ -243,8 +243,8 @@ function FacilityChecker() {
         내가 운동하는 시설 종류를 선택해서 적립 가능 여부를 바로 확인하세요.
       </p>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: 8 }}>
-        {FACILITY_TYPES.map((f, i) => (
-          <button key={i} onClick={() => setSelected(i === selected ? null : i)}
+        {FACILITY_TYPES.map((f: any, i: any) => (
+          <button key={i} onClick={(: any) => setSelected(i === selected ? null : i)}
             style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 12px", borderRadius: 8, border: `1px solid ${selected === i ? (f.ok === true ? G : f.ok === false ? "#DC2626" : "#D97706") : "#e5e7eb"}`, background: selected === i ? (f.ok === true ? GL : f.ok === false ? "#FEF2F2" : "#FFFBEB") : "#fff", cursor: "pointer", textAlign: "left", fontSize: 13, color: "#374151" }}>
             <span style={{ fontSize: 18 }}>{f.icon}</span>
             <span style={{ flex: 1, lineHeight: 1.4 }}>{f.name}</span>
@@ -281,7 +281,7 @@ function FacilityChecker() {
 function ProcessSteps({ steps }: any) {
   return (
     <div style={{ margin: "10px 0 1rem" }}>
-      {steps.map((s, i) => (
+      {steps.map((s: any, i: any) => (
         <div key={i} style={{ display: "flex", gap: 14, paddingBottom: 20, position: "relative" }}>
           {i < steps.length - 1 && (
             <div style={{ position: "absolute", left: 15, top: 32, bottom: 0, width: 1, background: "#e5e7eb" }} />
@@ -317,9 +317,9 @@ function FAQ() {
   const [open, setOpen] = useState(null);
   return (
     <div>
-      {FAQS.map((f, i) => (
+      {FAQS.map((f: any, i: any) => (
         <div key={i} style={{ border: `1px solid ${f.urgent ? "#FED7AA" : "#e5e7eb"}`, borderRadius: 8, marginBottom: 8, overflow: "hidden" }}>
-          <div onClick={() => setOpen(open === i ? null : i)}
+          <div onClick={(: any) => setOpen(open === i ? null : i)}
             style={{ padding: "12px 16px", fontSize: 14, fontWeight: f.urgent ? 600 : 500, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", background: open === i ? "#f9fafb" : f.urgent ? "#FFF7ED" : "#fff" }}>
             <span>
               {f.urgent && <span style={{ fontSize: 11, background: "#F97316", color: "#fff", borderRadius: 4, padding: "1px 6px", marginRight: 8, fontWeight: 600 }}>긴급</span>}
@@ -370,7 +370,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 튼튼머니 관련 글도 함께 보세요</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a key={i} href={link.href} target="_self"
             style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 4px", borderBottom: i < HUB_LINKS.length - 1 ? "1px solid #f3f4f6" : "none", textDecoration: "none" }}>
             <span style={{ color: G, fontSize: 14, flexShrink: 0, fontWeight: 700 }}>›</span>
@@ -403,11 +403,11 @@ function References() {
           { label: "국민체력100 — 적립시설 등록신청", url: "https://nfa.kspo.or.kr" },
           { label: "국민체육진흥공단 문의 ☎02-410-1414", url: "tel:0241011414" },
         ]},
-      ].map((group) => (
+      ].map((group: any) => (
         <div key={group.category} style={{ marginBottom: 16 }}>
           <p style={{ fontSize: 11, fontWeight: 600, color: "#9ca3af", letterSpacing: "0.06em", marginBottom: 6 }}>{group.category.toUpperCase()}</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            {group.items.map((item) => (
+            {group.items.map((item: any) => (
               <a key={item.label} href={item.url} target="_self"
                 style={{ display: "flex", alignItems: "center", gap: 8, padding: "7px 12px", borderRadius: 6, border: "1px solid #f3f4f6", background: "#fafafa", fontSize: 13, color: "#374151", textDecoration: "none" }}>
                 <span style={{ color: G, fontSize: 11, flexShrink: 0 }}>↗</span>{item.label}
@@ -429,7 +429,7 @@ function Sidebar() {
     <div style={{ width: 176, flexShrink: 0, position: "sticky", top: 24, alignSelf: "flex-start" }}>
       <div style={{ background: "#f9fafb", borderRadius: 10, padding: "14px 14px" }}>
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>튼튼머니 관련 글</p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a key={i} href="#" target="_self"
             style={{ display: "flex", alignItems: "center", gap: 5, padding: "6px 0", fontSize: 12, color: "#374151", textDecoration: "none", borderBottom: "1px solid #f0f0f0", lineHeight: 1.5 }}>
             <span style={{ color: "#d1d5db", fontSize: 10, flexShrink: 0 }}>›</span>{label}
@@ -496,10 +496,10 @@ export default function TtuntunMoneyFacilityPage() {
           {[
             { label: "✅ 가능한 시설", items: ["헬스장·피트니스센터", "수영장", "필라테스·요가원", "탁구장·볼링장", "무도장 (검도·태권도 등)", "국민체력인증센터"], color: G, bg: GL },
             { label: "❌ 불가한 시설", items: ["아파트 공용 헬스장", "회사 내 피트니스", "개인 홈짐", "공공체육관 미등록 시설"], color: "#DC2626", bg: "#FEF2F2" },
-          ].map((group, i) => (
+          ].map((group: any, i: any) => (
             <div key={i} style={{ background: group.bg, borderRadius: 8, padding: "14px 16px", border: `1px solid ${group.color}22` }}>
               <p style={{ fontSize: 13, fontWeight: 700, color: group.color, marginBottom: 10 }}>{group.label}</p>
-              {group.items.map((item, j) => (
+              {group.items.map((item: any, j: any) => (
                 <p key={j} style={{ fontSize: 13, color: "#374151", margin: "4px 0", lineHeight: 1.6 }}>· {item}</p>
               ))}
             </div>

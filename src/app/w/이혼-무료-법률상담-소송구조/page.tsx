@@ -153,7 +153,7 @@ function IncomeChecker() {
         <label style={{ fontSize: 12, color: "#6b7280", display: "block", marginBottom: 4 }}>가구원 수</label>
         <div style={{ display: "flex", gap: 8 }}>
           {[1,2,3,4,5].map(n => (
-            <button key={n} onClick={() => setPeople(n)} style={{ padding: "7px 16px", borderRadius: 20, border: `1px solid ${people === n ? G : "#e5e7eb"}`, background: people === n ? GL : "#fff", color: people === n ? GD : "#374151", fontSize: 13, fontWeight: people === n ? 700 : 400, cursor: "pointer" }}>{n}인</button>
+            <button key={n} onClick={(: any) => setPeople(n)} style={{ padding: "7px 16px", borderRadius: 20, border: `1px solid ${people === n ? G : "#e5e7eb"}`, background: people === n ? GL : "#fff", color: people === n ? GD : "#374151", fontSize: 13, fontWeight: people === n ? 700 : 400, cursor: "pointer" }}>{n}인</button>
           ))}
         </div>
       </div>
@@ -171,7 +171,7 @@ function IncomeChecker() {
 function SupportTable() {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: "1.5rem" }}>
-      {SUPPORT_TYPES.map((item, i) => (
+      {SUPPORT_TYPES.map((item: any, i: any) => (
         <div key={i} style={{ border: "1px solid #e5e7eb", borderRadius: 8, padding: "14px 16px" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 6 }}>
             <span style={{ fontSize: 13, fontWeight: 700, color: "#111" }}>{item.org}</span>
@@ -189,7 +189,7 @@ function SupportTable() {
 function ProcessSteps() {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 0, marginBottom: "1.5rem" }}>
-      {STEPS.map((step, i) => (
+      {STEPS.map((step: any, i: any) => (
         <div key={i} style={{ display: "flex", gap: 14 }}>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flexShrink: 0 }}>
             <div style={{ width: 28, height: 28, borderRadius: "50%", background: G, color: "#fff", fontSize: 12, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center" }}>{i + 1}</div>
@@ -211,9 +211,9 @@ function FAQ() {
   const [open, setOpen] = useState(null);
   return (
     <div style={{ marginBottom: "1.5rem" }}>
-      {FAQS.map((faq, i) => (
+      {FAQS.map((faq: any, i: any) => (
         <div key={i} style={{ border: "1px solid #e5e7eb", borderRadius: 8, marginBottom: 8 }}>
-          <button onClick={() => setOpen(open === i ? null : i)} style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 14px", background: "none", border: "none", cursor: "pointer", textAlign: "left", gap: 10 }}>
+          <button onClick={(: any) => setOpen(open === i ? null : i)} style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 14px", background: "none", border: "none", cursor: "pointer", textAlign: "left", gap: 10 }}>
             <span style={{ fontSize: 13, fontWeight: 600, color: "#111", lineHeight: 1.5, display: "flex", alignItems: "center", gap: 8 }}>
               {faq.urgent && <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 10, background: "#FEE2E2", color: "#DC2626", flexShrink: 0 }}>긴급</span>}
               {faq.q}
@@ -232,7 +232,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 관련 글도 함께 보세요</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a key={i} href={link.href} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 4px", borderBottom: i < HUB_LINKS.length - 1 ? "1px solid #f3f4f6" : "none", textDecoration: "none" }}>
             <span style={{ color: G, fontSize: 14, flexShrink: 0, fontWeight: 700 }}>›</span>
             <span style={{ flex: 1 }}>
@@ -251,7 +251,7 @@ function Sidebar() {
     <div style={{ width: 176, flexShrink: 0, position: "sticky", top: 24, alignSelf: "flex-start" }}>
       <div style={{ background: "#f9fafb", borderRadius: 10, padding: "14px 14px" }}>
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>이혼 관련 글</p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a key={i} href="#" style={{ display: "flex", alignItems: "center", gap: 5, padding: "6px 0", fontSize: 12, color: "#374151", textDecoration: "none", borderBottom: "1px solid #f0f0f0", lineHeight: 1.5 }}>
             <span style={{ color: "#d1d5db", fontSize: 10, flexShrink: 0 }}>›</span>{label}
           </a>
@@ -315,7 +315,7 @@ export default function IhonMuroPAge() {
               { label: "대한법률구조공단 (132)", url: "tel:132", sub: "이혼 소송구조 신청 · 무료 법률상담" },
               { label: "대법원 혼자하는 소송", url: "https://pro-se.scourt.go.kr", sub: "이혼 소장 양식 무료 제공" },
               { label: "여성긴급전화 (1366)", url: "tel:1366", sub: "가정폭력 피해자 법률 지원 연계 (24시간)" },
-            ].map((item, i) => (
+            ].map((item: any, i: any) => (
               <a key={i} href={item.url} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px 14px", borderRadius: 8, background: "#fff", textDecoration: "none", border: "1px solid #9FE1CB" }}>
                 <div>
                   <span style={{ fontSize: 13, fontWeight: 600, color: "#111", display: "block" }}>{item.label}</span>
@@ -332,11 +332,11 @@ export default function IhonMuroPAge() {
           <h3 style={{ fontSize: 15, fontWeight: 600, color: "#374151", marginBottom: 14, display: "flex", alignItems: "center", gap: 8 }}>
             <span style={{ width: 3, height: 16, background: "#d1d5db", borderRadius: 2, display: "inline-block" }} />출처 및 참고자료
           </h3>
-          {REFERENCES.map((group) => (
+          {REFERENCES.map((group: any) => (
             <div key={group.category} style={{ marginBottom: 16 }}>
               <p style={{ fontSize: 11, fontWeight: 600, color: "#9ca3af", letterSpacing: "0.06em", marginBottom: 6 }}>{group.category.toUpperCase()}</p>
               <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-                {group.items.map((item) => (
+                {group.items.map((item: any) => (
                   <a key={item.label} href={item.url} style={{ display: "flex", alignItems: "center", gap: 8, padding: "7px 12px", borderRadius: 6, border: "1px solid #f3f4f6", background: "#fafafa", fontSize: 13, color: "#374151", textDecoration: "none" }}>
                     <span style={{ color: G, fontSize: 11, flexShrink: 0 }}>↗</span>{item.label}
                   </a>

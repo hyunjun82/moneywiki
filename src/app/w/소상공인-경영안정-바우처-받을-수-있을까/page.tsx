@@ -95,13 +95,13 @@ const body = { fontSize: 14, color: "#374151", lineHeight: 2.1, marginBottom: "1
 function Divider() {
   return <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />;
 }
-function H2({ children }) {
+function H2({ children }: any) {
   return <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111", borderLeft: `3px solid ${G}`, paddingLeft: 12, margin: "0 0 14px", lineHeight: 1.5 }}>{children}</h2>;
 }
-function Bdg({ children }) {
+function Bdg({ children }: any) {
   return <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: GL, color: "#0F6E56", marginBottom: 10 }}>{children}</span>;
 }
-function GreenBox({ title, children }) {
+function GreenBox({ title, children }: any) {
   return (
     <div style={{ background: GL, borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95, color: GD }}>
       <strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>
@@ -109,7 +109,7 @@ function GreenBox({ title, children }) {
     </div>
   );
 }
-function BorderBox({ title, children }) {
+function BorderBox({ title, children }: any) {
   return (
     <div style={{ border: "1px solid #9FE1CB", borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95 }}>
       <strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>
@@ -162,7 +162,7 @@ function UrgentBanner() {
           { id: "industry", label: "내 업종이 제외 대상인지 확인하고 싶어요." },
           { id: "multiple", label: "사업체가 여러 개인데 어떻게 해야 하나요." },
         ].map(item => (
-          <button key={item.id} onClick={() => setType(item.id)} style={{
+          <button key={item.id} onClick={(: any) => setType(item.id)} style={{
             display: "flex", alignItems: "center", gap: 10, padding: "10px 14px",
             borderRadius: 8, border: "1px solid #FED7AA", background: "#fff",
             fontSize: 13, color: "#374151", cursor: "pointer", textAlign: "left",
@@ -179,7 +179,7 @@ function UrgentBanner() {
     <div style={{ background: m.bg, border: `1px solid ${m.color}40`, borderRadius: 10, padding: "16px 18px", marginBottom: "1.5rem" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
         <p style={{ fontSize: 13, fontWeight: 700, color: m.color, margin: 0 }}>{m.title}</p>
-        <button onClick={() => setType(null)} style={{ background: "none", border: "none", fontSize: 12, color: "#9ca3af", cursor: "pointer", padding: 0, flexShrink: 0, marginLeft: 12 }}>다시 선택</button>
+        <button onClick={(: any) => setType(null)} style={{ background: "none", border: "none", fontSize: 12, color: "#9ca3af", cursor: "pointer", padding: 0, flexShrink: 0, marginLeft: 12 }}>다시 선택</button>
       </div>
       <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.85, margin: 0 }}>{m.text}</p>
     </div>
@@ -209,7 +209,7 @@ function SalesCalculator() {
           { id: "before", label: "2024년 이전 개업" },
           { id: "new2025", label: "2025년 개업" },
         ].map(tab => (
-          <button key={tab.id} onClick={() => setOpenType(tab.id)} style={{
+          <button key={tab.id} onClick={(: any) => setOpenType(tab.id)} style={{
             padding: "8px 18px", borderRadius: 20,
             border: `2px solid ${openType === tab.id ? G : "#e5e7eb"}`,
             background: openType === tab.id ? GL : "#fff",
@@ -306,7 +306,7 @@ function EligibilityChecker() {
           { id: "c3", label: "신청일 기준 영업 중이에요 (휴·폐업 아님)", sub: "국세청 신고 기준" },
           { id: "c4", label: "유흥업·도박·금융업·병원 등 제외 업종이 아니에요", sub: "소상공인 정책자금 융자제외 업종 해당 여부 확인 필요" },
         ].map(c => (
-          <label key={c.id} onClick={() => toggle(c.id)} style={{
+          <label key={c.id} onClick={(: any) => toggle(c.id)} style={{
             display: "flex", alignItems: "flex-start", gap: 10, padding: "10px 14px", borderRadius: 8, cursor: "pointer",
             border: `1px solid ${checked[c.id] ? G : "#e5e7eb"}`,
             background: checked[c.id] ? GL : "#f9fafb",
@@ -338,9 +338,9 @@ function FAQ() {
   const [open, setOpen] = useState(null);
   return (
     <div>
-      {FAQS.map((f, i) => (
+      {FAQS.map((f: any, i: any) => (
         <div key={i} style={{ border: `1px solid ${f.urgent ? "#FED7AA" : "#e5e7eb"}`, borderRadius: 8, marginBottom: 8, overflow: "hidden" }}>
-          <div onClick={() => setOpen(open === i ? null : i)}
+          <div onClick={(: any) => setOpen(open === i ? null : i)}
             style={{ padding: "12px 16px", fontSize: 14, fontWeight: f.urgent ? 600 : 500, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", background: open === i ? "#f9fafb" : f.urgent ? "#FFF7ED" : "#fff" }}>
             <span>
               {f.urgent && <span style={{ fontSize: 11, background: "#F97316", color: "#fff", borderRadius: 4, padding: "1px 6px", marginRight: 8, fontWeight: 600 }}>긴급</span>}
@@ -364,7 +364,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 소상공인 경영안정 바우처 관련 글</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a key={i} href={link.href} target="_self"
             style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 4px", borderBottom: i < HUB_LINKS.length - 1 ? "1px solid #f3f4f6" : "none", textDecoration: "none" }}>
             <span style={{ color: G, fontSize: 14, flexShrink: 0, fontWeight: 700 }}>›</span>
@@ -413,7 +413,7 @@ function Sidebar() {
     <div style={{ width: 176, flexShrink: 0, position: "sticky", top: 24, alignSelf: "flex-start" }}>
       <div style={{ background: "#f9fafb", borderRadius: 10, padding: "14px 14px" }}>
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>소상공인 경영안정 바우처 관련 글</p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a key={i} href="#" target="_self"
             style={{ display: "flex", alignItems: "center", gap: 5, padding: "6px 0", fontSize: 12, color: "#374151", textDecoration: "none", borderBottom: "1px solid #f0f0f0", lineHeight: 1.5 }}>
             <span style={{ color: "#d1d5db", fontSize: 10, flexShrink: 0 }}>›</span>{label}
@@ -484,7 +484,7 @@ export default function VoucherEligibilityPage() {
             { label: "2024년 12월 31일 이전 개업", method: "2025년 국세청 신고 1년 매출액 적용", ok: true },
             { label: "2025년 1월 1일 ~ 12월 31일 개업", method: "개업 이후 월 평균 매출 × 12개월로 환산", ok: true },
             { label: "2025년 12월 31일 이후 개업", method: "개업일 기준 미충족 — 신청 불가", ok: false },
-          ].map((row, i) => (
+          ].map((row: any, i: any) => (
             <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 12, padding: "11px 14px", borderRadius: 8, background: row.ok ? GL : "#FEF2F2", border: `1px solid ${row.ok ? "#9FE1CB" : "#FCA5A5"}` }}>
               <span style={{ fontSize: 14, fontWeight: 700, color: row.ok ? G : "#DC2626", flexShrink: 0, marginTop: 1 }}>{row.ok ? "✅" : "❌"}</span>
               <span>
@@ -503,7 +503,7 @@ export default function VoucherEligibilityPage() {
           대표적인 제외 업종을 아래에서 확인하세요. 헷갈리면 업종코드로 콜센터에 문의하세요.
         </p>
         <div style={{ display: "flex", flexDirection: "column", gap: 8, margin: "12px 0 1.2rem" }}>
-          {EXCLUDED_INDUSTRIES.map((item, i) => (
+          {EXCLUDED_INDUSTRIES.map((item: any, i: any) => (
             <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 12, padding: "10px 14px", borderRadius: 8, background: "#FEF2F2", border: "1px solid #FCA5A5" }}>
               <span style={{ fontSize: 14, color: "#DC2626", flexShrink: 0, marginTop: 1 }}>❌</span>
               <span>

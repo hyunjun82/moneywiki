@@ -105,7 +105,7 @@ function Divider() {
   return <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />;
 }
 
-function H2({ children }) {
+function H2({ children }: any) {
   return (
     <h2 style={{
       fontSize: 18,
@@ -121,7 +121,7 @@ function H2({ children }) {
   );
 }
 
-function Bdg({ children }) {
+function Bdg({ children }: any) {
   return (
     <span style={{
       display: "inline-block",
@@ -138,7 +138,7 @@ function Bdg({ children }) {
   );
 }
 
-function GreenBox({ title, children }) {
+function GreenBox({ title, children }: any) {
   return (
     <div style={{
       background: GL,
@@ -196,10 +196,10 @@ function UrgentBanner() {
             { id: "apply",  label: "보금자리론을 신청하려는데 자격이 되는지 확인하고 싶어요." },
             { id: "method", label: "원리금균등과 원금균등 중 어느 방식을 선택할지 모르겠어요." },
             { id: "income", label: "소득이 기준보다 조금 높을 것 같아 걱정이에요." },
-          ].map((item) => (
+          ].map((item: any) => (
             <button
               key={item.id}
-              onClick={() => setType(item.id)}
+              onClick={(: any) => setType(item.id)}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -240,7 +240,7 @@ function UrgentBanner() {
       }}>
         <p style={{ fontSize: 13, fontWeight: 700, color: m.color, margin: 0 }}>{m.title}</p>
         <button
-          onClick={() => setType(null)}
+          onClick={(: any) => setType(null)}
           style={{
             background: "none",
             border: "none",
@@ -300,7 +300,7 @@ function PaymentCalc() {
             max={42000}
             step={500}
             value={principal}
-            onChange={(e) => setPrincipal(+e.target.value)}
+            onChange={(e: any) => setPrincipal(+e.target.value)}
             style={{ flex: 1, accentColor: G }}
           />
           <span style={{ fontSize: 12, fontWeight: 700, color: G, minWidth: 80, textAlign: "right" }}>
@@ -319,10 +319,10 @@ function PaymentCalc() {
           금리 선택 (2026.3.1 공시)
         </p>
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-          {rates.map(({ v, l }) => (
+          {rates.map(({ v, l }: any) => (
             <button
               key={v}
-              onClick={() => setRate(v)}
+              onClick={(: any) => setRate(v)}
               style={{
                 padding: "6px 12px",
                 borderRadius: 20,
@@ -343,10 +343,10 @@ function PaymentCalc() {
       <div style={{ marginBottom: 12 }}>
         <p style={{ fontSize: 12, fontWeight: 700, color: "#374151", marginBottom: 6 }}>만기</p>
         <div style={{ display: "flex", gap: 6 }}>
-          {[10, 20, 30, 40, 50].map((y) => (
+          {[10, 20, 30, 40, 50].map((y: any) => (
             <button
               key={y}
-              onClick={() => setYears(y)}
+              onClick={(: any) => setYears(y)}
               style={{
                 flex: 1,
                 padding: "6px 0",
@@ -368,10 +368,10 @@ function PaymentCalc() {
       <div style={{ marginBottom: 14 }}>
         <p style={{ fontSize: 12, fontWeight: 700, color: "#374151", marginBottom: 6 }}>상환 방식</p>
         <div style={{ display: "flex", gap: 8 }}>
-          {[{ v: "equal", l: "원리금균등" }, { v: "decr", l: "원금균등" }].map(({ v, l }) => (
+          {[{ v: "equal", l: "원리금균등" }, { v: "decr", l: "원금균등" }].map(({ v, l }: any) => (
             <button
               key={v}
-              onClick={() => setMethod(v)}
+              onClick={(: any) => setMethod(v)}
               style={{
                 flex: 1,
                 padding: "9px 0",
@@ -426,10 +426,10 @@ function FAQ() {
   const toggle = (i) => setOpen((p) => ({ ...p, [i]: !p[i] }));
   return (
     <div style={{ margin: "10px 0 1.2rem" }}>
-      {FAQS.map((faq, i) => (
+      {FAQS.map((faq: any, i: any) => (
         <div key={i} style={{ borderBottom: "1px solid #f3f4f6" }}>
           <button
-            onClick={() => toggle(i)}
+            onClick={(: any) => toggle(i)}
             style={{
               width: "100%",
               textAlign: "left",
@@ -480,7 +480,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 같이 보면 도움 되는 글</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a
             key={i}
             href={link.href}
@@ -514,13 +514,13 @@ function References() {
         <span style={{ width: 3, height: 16, background: "#d1d5db", borderRadius: 2, display: "inline-block" }} />
         출처 및 참고자료
       </h3>
-      {REFERENCES.map((group) => (
+      {REFERENCES.map((group: any) => (
         <div key={group.category} style={{ marginBottom: 16 }}>
           <p style={{ fontSize: 11, fontWeight: 600, color: "#9ca3af", letterSpacing: "0.06em", marginBottom: 6 }}>
             {group.category.toUpperCase()}
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            {group.items.map((item) => (
+            {group.items.map((item: any) => (
               <a
                 key={item.label}
                 href={item.url}
@@ -558,7 +558,7 @@ function Sidebar() {
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>
           보금자리론 관련 글
         </p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a
             key={i}
             href="#"
@@ -652,7 +652,7 @@ export default function BogeumjarilonPage() {
               cons: "첫달 납입이 가장 많아요",
               for: "초기 부담을 견딜 수 있고 이자를 아끼고 싶을 때",
             },
-          ].map((item, i) => (
+          ].map((item: any, i: any) => (
             <div
               key={i}
               style={{ border: "1px solid #e5e7eb", borderRadius: 8, padding: "14px 16px", background: "#fafafa" }}
@@ -694,7 +694,7 @@ export default function BogeumjarilonPage() {
             "부부합산 소득 7,000만원 초과 (신혼·다자녀 예외 있음)",
             "2주택 이상 보유 (1주택자는 3년 내 처분 약정 가능)",
             "DTI(총부채상환비율) 초과",
-          ].map((item, i) => (
+          ].map((item: any, i: any) => (
             <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 8, marginBottom: 6 }}>
               <span style={{ color: "#DC2626", fontWeight: 700, flexShrink: 0 }}>✗</span>
               <span style={{ fontSize: 13, color: "#374151" }}>{item}</span>

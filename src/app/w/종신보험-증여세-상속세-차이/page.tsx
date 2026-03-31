@@ -84,13 +84,13 @@ const body = { fontSize: 14, color: "#374151", lineHeight: 2.1, marginBottom: "1
 function Divider() {
   return <hr style={{ border: "none", borderTop: "1px solid #e5e7eb", margin: "2.5rem 0" }} />;
 }
-function H2({ children }) {
+function H2({ children }: any) {
   return <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111", borderLeft: `3px solid ${G}`, paddingLeft: 12, margin: "0 0 14px", lineHeight: 1.5 }}>{children}</h2>;
 }
-function Bdg({ children }) {
+function Bdg({ children }: any) {
   return <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20, background: GL, color: "#0F6E56", marginBottom: 10 }}>{children}</span>;
 }
-function GreenBox({ title, children }) {
+function GreenBox({ title, children }: any) {
   return (
     <div style={{ background: GL, borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95, color: GD }}>
       <strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>
@@ -98,7 +98,7 @@ function GreenBox({ title, children }) {
     </div>
   );
 }
-function BorderBox({ title, children }) {
+function BorderBox({ title, children }: any) {
   return (
     <div style={{ border: "1px solid #9FE1CB", borderRadius: 8, padding: "14px 18px", margin: "12px 0 1.2rem", fontSize: 14, lineHeight: 1.95 }}>
       <strong style={{ display: "block", marginBottom: 6 }}>{title}</strong>
@@ -137,7 +137,7 @@ function UrgentBanner() {
           { id: "tax",     label: "내 종신보험에 상속세가 나오는지 확인하고 싶어요." },
           { id: "premium", label: "부모가 보험료를 대신 내주고 있어요." },
         ].map(item => (
-          <button key={item.id} onClick={() => setType(item.id)} style={{
+          <button key={item.id} onClick={(: any) => setType(item.id)} style={{
             display: "flex", alignItems: "center", gap: 10, padding: "10px 14px",
             borderRadius: 8, border: "1px solid #FED7AA", background: "#fff",
             fontSize: 13, color: "#374151", cursor: "pointer", textAlign: "left",
@@ -154,7 +154,7 @@ function UrgentBanner() {
     <div style={{ background: m.bg, border: `1px solid ${m.color}40`, borderRadius: 10, padding: "16px 18px", marginBottom: "1.5rem" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
         <p style={{ fontSize: 13, fontWeight: 700, color: m.color, margin: 0 }}>{m.title}</p>
-        <button onClick={() => setType(null)} style={{ background: "none", border: "none", fontSize: 12, color: "#9ca3af", cursor: "pointer", padding: 0, flexShrink: 0, marginLeft: 12 }}>다시 선택</button>
+        <button onClick={(: any) => setType(null)} style={{ background: "none", border: "none", fontSize: 12, color: "#9ca3af", cursor: "pointer", padding: 0, flexShrink: 0, marginLeft: 12 }}>다시 선택</button>
       </div>
       <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.85, margin: 0 }}>{m.text}</p>
     </div>
@@ -208,12 +208,12 @@ function ContractChecker() {
           { id: "child",   label: "자녀 (본인)" },
           { id: "notHeir", label: "제3자" },
         ]},
-      ].map(({ label, state, set, opts }) => (
+      ].map(({ label, state, set, opts }: any) => (
         <div key={label} style={{ marginBottom: 16 }}>
           <p style={{ fontSize: 13, fontWeight: 600, color: "#374151", marginBottom: 8 }}>{label}</p>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             {opts.map(opt => (
-              <button key={opt.id} onClick={() => set(opt.id)} style={{
+              <button key={opt.id} onClick={(: any) => set(opt.id)} style={{
                 padding: "8px 16px", borderRadius: 20, cursor: "pointer", fontSize: 12,
                 border: `2px solid ${state === opt.id ? G : "#e5e7eb"}`,
                 background: state === opt.id ? GL : "#fff",
@@ -286,9 +286,9 @@ function FAQ() {
   const [open, setOpen] = useState(null);
   return (
     <div>
-      {FAQS.map((f, i) => (
+      {FAQS.map((f: any, i: any) => (
         <div key={i} style={{ border: `1px solid ${f.urgent ? "#FED7AA" : "#e5e7eb"}`, borderRadius: 8, marginBottom: 8, overflow: "hidden" }}>
-          <div onClick={() => setOpen(open === i ? null : i)}
+          <div onClick={(: any) => setOpen(open === i ? null : i)}
             style={{ padding: "12px 16px", fontSize: 14, fontWeight: f.urgent ? 600 : 500, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", background: open === i ? "#f9fafb" : f.urgent ? "#FFF7ED" : "#fff" }}>
             <span>
               {f.urgent && <span style={{ fontSize: 11, background: "#F97316", color: "#fff", borderRadius: 4, padding: "1px 6px", marginRight: 8, fontWeight: 600 }}>긴급</span>}
@@ -310,7 +310,7 @@ function HubLinks() {
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>📋 관련 글도 확인해보세요</p>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {HUB_LINKS.map((link, i) => (
+        {HUB_LINKS.map((link: any, i: any) => (
           <a key={i} href={link.href} target="_self"
             style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 4px", borderBottom: i < HUB_LINKS.length - 1 ? "1px solid #f3f4f6" : "none", textDecoration: "none" }}>
             <span style={{ color: G, fontSize: 14, flexShrink: 0, fontWeight: 700 }}>›</span>
@@ -355,7 +355,7 @@ function Sidebar() {
     <div style={{ width: 176, flexShrink: 0, position: "sticky", top: 24, alignSelf: "flex-start" }}>
       <div style={{ background: "#f9fafb", borderRadius: 10, padding: "14px 14px" }}>
         <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.05em" }}>관련 검색어</p>
-        {SIDEBAR_LINKS.map((label, i) => (
+        {SIDEBAR_LINKS.map((label: any, i: any) => (
           <a key={i} href="#" target="_self"
             style={{ display: "flex", alignItems: "center", gap: 5, padding: "6px 0", fontSize: 12, color: "#374151", textDecoration: "none", borderBottom: "1px solid #f0f0f0", lineHeight: 1.5 }}>
             <span style={{ color: "#d1d5db", fontSize: 10, flexShrink: 0 }}>›</span>{label}
@@ -425,7 +425,7 @@ export default function JongsinInsuranceTaxPage() {
             { icon: "⚠️", tag: "증여세 주의", tagColor: "#D97706", bg: "#FFFBEB",
               label: "자녀 계약자이지만 부모가 보험료 납입",
               desc: "국세청이 실질 납입자를 부모로 보아 납입 보험료 기준 과세 가능 (상증법 제34조)" },
-          ].map((row, i) => (
+          ].map((row: any, i: any) => (
             <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 12, padding: "12px 16px", borderRadius: 8, background: row.bg, border: `1px solid ${row.tagColor}30` }}>
               <span style={{ fontSize: 18, flexShrink: 0, marginTop: 2 }}>{row.icon}</span>
               <span style={{ flex: 1 }}>
@@ -458,7 +458,7 @@ export default function JongsinInsuranceTaxPage() {
                 { 시점: "살아있을 때 계약자 변경", 세금: "증여세", 기준: "해지환급금", 절세: "해지환급금 ≤ 5,000만원이면 0원" },
                 { 시점: "사망 후 보험금 수령", 세금: "상속세", 기준: "사망보험금 전액", 절세: "계약자 변경 완료 시 제외" },
                 { 시점: "자녀가 처음부터 계약·납입", 세금: "없음", 기준: "해당 없음", 절세: "가장 깔끔한 구조" },
-              ].map((row, i) => (
+              ].map((row: any, i: any) => (
                 <tr key={i} style={{ background: i % 2 === 0 ? "#fff" : "#fafafa" }}>
                   <td style={{ padding: "9px 14px", borderBottom: "1px solid #f3f4f6", color: "#374151" }}>{row.시점}</td>
                   <td style={{ padding: "9px 14px", borderBottom: "1px solid #f3f4f6",
