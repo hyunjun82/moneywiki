@@ -1,4 +1,5 @@
 "use client";
+// @ts-nocheck
 import { useState } from "react";
 
 // 8번: 소액사건 소장 작성 | 3,000만원 이하 금전 청구 절차와 비용

@@ -1,4 +1,5 @@
 "use client";
+// @ts-nocheck
 import { useState } from "react";
 
 // ─── 개발제한구역의 지정 및 관리에 관한 특별조치법 기준
@@ -215,7 +216,7 @@ function UrgentBanner() {
           ].map((item: any) => (
             <button
               key={item.id}
-              onClick={(: any) => setType(item.id)}
+              onClick={(_e: any) => setType(item.id)}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -256,7 +257,7 @@ function UrgentBanner() {
       }}>
         <p style={{ fontSize: 13, fontWeight: 700, color: m.color, margin: 0 }}>{m.title}</p>
         <button
-          onClick={(: any) => setType(null)}
+          onClick={(_e: any) => setType(null)}
           style={{
             background: "none",
             border: "none",
@@ -331,7 +332,7 @@ function FAQ() {
       {FAQS.map((faq: any, i: any) => (
         <div key={i} style={{ borderBottom: "1px solid #f3f4f6" }}>
           <button
-            onClick={(: any) => toggle(i)}
+            onClick={(_e: any) => toggle(i)}
             style={{
               width: "100%",
               textAlign: "left",

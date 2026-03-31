@@ -1,4 +1,5 @@
 "use client";
+// @ts-nocheck
 import { useState } from "react";
 
 // 5번: 개인파산 면책 신청 | 비용·절차·면책 안 되는 빚

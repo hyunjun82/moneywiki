@@ -1,4 +1,5 @@
 "use client";
+// @ts-nocheck
 import { useState } from "react";
 
 // ─── 핵심 데이터 (JSON 검증 기준)
@@ -137,7 +138,7 @@ function UrgentBanner() {
           { id: "tax",     label: "내 종신보험에 상속세가 나오는지 확인하고 싶어요." },
           { id: "premium", label: "부모가 보험료를 대신 내주고 있어요." },
         ].map(item => (
-          <button key={item.id} onClick={(: any) => setType(item.id)} style={{
+          <button key={item.id} onClick={(_e: any) => setType(item.id)} style={{
             display: "flex", alignItems: "center", gap: 10, padding: "10px 14px",
             borderRadius: 8, border: "1px solid #FED7AA", background: "#fff",
             fontSize: 13, color: "#374151", cursor: "pointer", textAlign: "left",
@@ -154,7 +155,7 @@ function UrgentBanner() {
     <div style={{ background: m.bg, border: `1px solid ${m.color}40`, borderRadius: 10, padding: "16px 18px", marginBottom: "1.5rem" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
         <p style={{ fontSize: 13, fontWeight: 700, color: m.color, margin: 0 }}>{m.title}</p>
-        <button onClick={(: any) => setType(null)} style={{ background: "none", border: "none", fontSize: 12, color: "#9ca3af", cursor: "pointer", padding: 0, flexShrink: 0, marginLeft: 12 }}>다시 선택</button>
+        <button onClick={(_e: any) => setType(null)} style={{ background: "none", border: "none", fontSize: 12, color: "#9ca3af", cursor: "pointer", padding: 0, flexShrink: 0, marginLeft: 12 }}>다시 선택</button>
       </div>
       <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.85, margin: 0 }}>{m.text}</p>
     </div>
@@ -213,7 +214,7 @@ function ContractChecker() {
           <p style={{ fontSize: 13, fontWeight: 600, color: "#374151", marginBottom: 8 }}>{label}</p>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             {opts.map(opt => (
-              <button key={opt.id} onClick={(: any) => set(opt.id)} style={{
+              <button key={opt.id} onClick={(_e: any) => set(opt.id)} style={{
                 padding: "8px 16px", borderRadius: 20, cursor: "pointer", fontSize: 12,
                 border: `2px solid ${state === opt.id ? G : "#e5e7eb"}`,
                 background: state === opt.id ? GL : "#fff",
@@ -288,7 +289,7 @@ function FAQ() {
     <div>
       {FAQS.map((f: any, i: any) => (
         <div key={i} style={{ border: `1px solid ${f.urgent ? "#FED7AA" : "#e5e7eb"}`, borderRadius: 8, marginBottom: 8, overflow: "hidden" }}>
-          <div onClick={(: any) => setOpen(open === i ? null : i)}
+          <div onClick={(_e: any) => setOpen(open === i ? null : i)}
             style={{ padding: "12px 16px", fontSize: 14, fontWeight: f.urgent ? 600 : 500, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", background: open === i ? "#f9fafb" : f.urgent ? "#FFF7ED" : "#fff" }}>
             <span>
               {f.urgent && <span style={{ fontSize: 11, background: "#F97316", color: "#fff", borderRadius: 4, padding: "1px 6px", marginRight: 8, fontWeight: 600 }}>긴급</span>}

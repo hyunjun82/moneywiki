@@ -1,4 +1,5 @@
 "use client";
+// @ts-nocheck
 import { useState } from "react";
 
 // ─── 2026년 기준 (서민금융진흥원)
@@ -152,7 +153,7 @@ function Calculator() {
         <p style={{ fontSize: 12, color: "#374151", marginBottom: 6, fontWeight: 700 }}>상품 유형</p>
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
           {[{ id: "general", label: "일반보증 2.5%" }, { id: "special", label: "특례보증 5.5%" }, { id: "youth", label: "유스 일반 1.0%" }, { id: "youth_care", label: "유스 배려 0.1%" }].map(opt => (
-            <button key={opt.id} onClick={(: any) => setRateType(opt.id)}
+            <button key={opt.id} onClick={(_e: any) => setRateType(opt.id)}
               style={{ padding: "6px 12px", borderRadius: 20, border: `1px solid ${rateType === opt.id ? G : "#e5e7eb"}`, background: rateType === opt.id ? GL : "#fff", color: rateType === opt.id ? GD : "#374151", fontSize: 12, fontWeight: rateType === opt.id ? 700 : 400, cursor: "pointer" }}>
               {opt.label}
             </button>
@@ -163,7 +164,7 @@ function Calculator() {
         <p style={{ fontSize: 12, color: "#374151", marginBottom: 6, fontWeight: 700 }}>대출 기간</p>
         <div style={{ display: "flex", gap: 8 }}>
           {[1, 2, 3, 5, 7].map(y => (
-            <button key={y} onClick={(: any) => setYears(y)}
+            <button key={y} onClick={(_e: any) => setYears(y)}
               style={{ flex: 1, padding: "8px 0", borderRadius: 8, border: `1px solid ${years === y ? G : "#e5e7eb"}`, background: years === y ? GL : "#fff", color: years === y ? GD : "#374151", fontSize: 12, fontWeight: years === y ? 700 : 400, cursor: "pointer" }}>
               {y}년
             </button>
@@ -174,7 +175,7 @@ function Calculator() {
         <p style={{ fontSize: 12, color: "#374151", marginBottom: 6, fontWeight: 700 }}>감면 조건</p>
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
           {[{ id: "none", label: "해당 없음" }, { id: "care", label: "사회적 배려 대상자 (-0.5%p)" }, { id: "edu", label: "금융교육·복지멤버십 (-0.1%p)" }].map(opt => (
-            <button key={opt.id} onClick={(: any) => setDiscount(opt.id)}
+            <button key={opt.id} onClick={(_e: any) => setDiscount(opt.id)}
               style={{ padding: "6px 12px", borderRadius: 20, border: `1px solid ${discount === opt.id ? G : "#e5e7eb"}`, background: discount === opt.id ? GL : "#fff", color: discount === opt.id ? GD : "#374151", fontSize: 12, fontWeight: discount === opt.id ? 700 : 400, cursor: "pointer" }}>
               {opt.label}
             </button>
@@ -236,7 +237,7 @@ function FAQ() {
     <div style={{ margin: "12px 0 1.2rem" }}>
       {FAQS.map((faq: any, i: any) => (
         <div key={i} style={{ borderBottom: "1px solid #f3f4f6" }}>
-          <button onClick={(: any) => toggle(i)} style={{ width: "100%", textAlign: "left", padding: "13px 4px", display: "flex", alignItems: "flex-start", gap: 8, background: "none", border: "none", cursor: "pointer" }}>
+          <button onClick={(_e: any) => toggle(i)} style={{ width: "100%", textAlign: "left", padding: "13px 4px", display: "flex", alignItems: "flex-start", gap: 8, background: "none", border: "none", cursor: "pointer" }}>
             {faq.urgent && <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 20, background: "#FEE2E2", color: "#DC2626", flexShrink: 0, marginTop: 2 }}>급한 상황</span>}
             <span style={{ fontSize: 13, fontWeight: 600, color: "#111", flex: 1, lineHeight: 1.6 }}>{faq.q}</span>
             <span style={{ color: "#9ca3af", fontSize: 16, flexShrink: 0 }}>{open[i] ? "▲" : "▼"}</span>

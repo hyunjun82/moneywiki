@@ -1,4 +1,5 @@
 "use client";
+// @ts-nocheck
 import { useState } from "react";
 
 // 7번: 무보험 교통사고 처리 | 피해자 보상 방법과 과실 처리

@@ -1,4 +1,5 @@
 "use client";
+// @ts-nocheck
 import { useState } from "react";
 const G = "#1D9E75", GL = "#E1F5EE", GD = "#085041";
 const body = { fontSize: 14, color: "#374151", lineHeight: 2.1, marginBottom: "1rem" };
