@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 임대차계약 집 압류 임차인 권리 관련 정보가 필요한 상황

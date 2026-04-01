@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 기초연금 관련 글을 읽다가 "기준연금액", "부가연금액" 용어가 나와서 뭔 차이인지 헷갈리는 상황

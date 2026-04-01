@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 공인중개사 시험에 합격했는데 바로 사무소를 열 수 있는지, 어떤 절차를 거쳐야 하는지 궁금한 상황.

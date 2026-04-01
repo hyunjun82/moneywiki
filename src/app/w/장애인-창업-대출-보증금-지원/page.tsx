@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 장애인이 창업하려는데 점포 보증금이나 운영자금이 부족한 상황

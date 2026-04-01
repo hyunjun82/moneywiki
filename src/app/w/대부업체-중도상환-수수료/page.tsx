@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 대부업체에서 돈 빌린 뒤 빨리 갚으려는데, 중도상환 수수료를 내야 하는지 불안한 상황이에요.

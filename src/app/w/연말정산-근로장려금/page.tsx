@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산 시즌에 근로장려금도 같이 신청할 수 있는지, 얼마나 받는지 궁금한 저소득 근로자

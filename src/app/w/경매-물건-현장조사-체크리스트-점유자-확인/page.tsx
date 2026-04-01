@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 경매 입찰 전에 물건을 직접 보러 가려는데 현장에서 뭘 확인해야 하는지 모르는 상황

@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 프리랜서로 일하는데 통장에 들어온 금액이 계약서보다 적어서 왜 3.3%를 떼는지 궁금한 상황

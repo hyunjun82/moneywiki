@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산 시즌에 연금저축 세액공제 얼마 받는지 확인하거나, 올해 얼마 넣을지 계획하는 직장인

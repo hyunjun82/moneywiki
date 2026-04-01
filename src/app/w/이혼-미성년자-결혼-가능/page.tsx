@@ -4,7 +4,6 @@
 // Q4. GreenBox(결론) + BorderBox(법적 근거 정리) + Steps(재혼 절차) + FAQ
 
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 export const dynamic = "force-static";

@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 배달하다 사고가 났는데 산재보험이 적용되는지, 어떻게 신청하는지 모르겠는 상황이에요.

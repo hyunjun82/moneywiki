@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 여러 명이 함께 돈을 빌려주고, 각자 명의로 동순위 근저당권을 설정하고 싶은데 방법을 모르는 상황

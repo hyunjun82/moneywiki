@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 부모님 농지를 상속받았는데 농사를 못 짓고 어떻게 해야 할지 모르는 비농업인

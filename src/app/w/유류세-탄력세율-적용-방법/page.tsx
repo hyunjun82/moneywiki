@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 뉴스에서 유류세 인하 연장 소식을 듣고 실제로 기름값이 얼마나 싸지는지, 언제까지인지 확인하려는 운전자

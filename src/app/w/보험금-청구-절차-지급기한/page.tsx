@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 보험사고가 발생해서 보험금을 청구해야 하는데 절차를 모르고, 빨리 받고 싶은 상황이에요.

@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 주택을 임대하려는데 임대사업자 등록을 해야 하는지, 어디에 어떻게 하는지 궁금한 상황.

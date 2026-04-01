@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 법인을 운영 중인 대표자/경리담당자가 법인세 신고 시즌(3월)을 앞두고 기한과 세율을 확인하려는 상황

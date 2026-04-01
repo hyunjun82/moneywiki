@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연차를 2시간만 쓸 수 있는지, 반반차 제도가 법적으로 보장되는 건지 궁금한 직장인이에요.

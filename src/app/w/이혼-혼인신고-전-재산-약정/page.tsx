@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 혼인 전에 재산 약정(부부재산계약)을 했는데, 이혼 시 효력이 있는지 궁금한 상황

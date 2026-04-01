@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 무보험 차량에 교통사고를 당했는데 가해자에게 보상을 받을 수 없어서 어떻게 해야 하는지 모르는 상황.

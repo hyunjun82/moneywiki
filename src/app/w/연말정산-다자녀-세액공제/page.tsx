@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 자녀가 여러 명인데 세액공제 얼마 받는지, 출산했으면 추가 공제도 되는지 궁금

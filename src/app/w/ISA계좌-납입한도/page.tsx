@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. ISA 개설했거나 가입 예정인 사람이 "연간 얼마까지 넣을 수 있어?" 한도 확인하는 상황

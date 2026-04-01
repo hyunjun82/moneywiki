@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 퇴직 후 실업급여를 신청하려는데 실제로 얼마를 받을 수 있는지 계산해보고 싶은 상황

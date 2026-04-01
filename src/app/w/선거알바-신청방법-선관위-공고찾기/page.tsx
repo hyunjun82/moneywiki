@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 선거 알바를 하고 싶은데 어디서 어떻게 신청하는지, 공고는 어디서 보는지 모르는 상황

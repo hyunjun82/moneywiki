@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 퇴직연금 계좌에 돈이 쌓여 있는데 언제부터 받을 수 있는지 모르거나 지금 급해서 빼고 싶은 상황

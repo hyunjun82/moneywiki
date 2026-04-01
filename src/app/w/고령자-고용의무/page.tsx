@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 회사에서 고령자를 몇 명 고용해야 하는지, 안 지키면 벌금이 있는지 궁금한 사업주 상황이에요.

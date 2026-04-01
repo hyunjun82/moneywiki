@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이혼을 준비하는데 배우자가 재산을 빼돌릴까 봐 걱정되는 상황. 예금 인출이나 부동산 처분을 막고 싶어요.

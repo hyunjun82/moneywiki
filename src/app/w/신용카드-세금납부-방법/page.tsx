@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 종합소득세·부가세 등 국세를 현금 없이 신용카드로 내고 싶은 납세자

@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 무보험 차량이나 뺑소니 사고를 당했을 때 보상받을 수 있는지, 이 특약을 가입해야 하는지 궁금한 상황

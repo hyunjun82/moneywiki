@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 가족이 노인을 직접 돌보는데 정부 지원금을 받을 수 있는지 궁금한 상황. 요양보호사 자격증 없이도 가능한지 확인하려는 목적.

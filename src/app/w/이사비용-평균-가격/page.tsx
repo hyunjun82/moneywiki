@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이사를 앞두고 비용이 얼마나 드는지, 포장이사가 좋은지 반포장이 좋은지 가격 감을 잡고 싶어요.

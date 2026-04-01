@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 퇴직연금에서 수수료가 자동으로 빠져나가는 걸 알았는데, 얼마나 나가는지·줄일 수 있는지 모르는 상황

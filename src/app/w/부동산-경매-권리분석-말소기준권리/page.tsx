@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 경매 물건을 보는데 등기부에 근저당·가압류·전세권이 많아서 뭐가 남고 뭐가 사라지는지 모르는 입찰 예정자

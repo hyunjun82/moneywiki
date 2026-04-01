@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 전세 만기 다가오는데 2년 더 살고 싶어서 계약갱신청구권 행사 방법이 궁금한 임차인

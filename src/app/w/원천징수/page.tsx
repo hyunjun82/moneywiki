@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 월급에서 세금이 왜 미리 빠지는지, 원천징수가 무엇인지 궁금한 직장인 또는 프리랜서

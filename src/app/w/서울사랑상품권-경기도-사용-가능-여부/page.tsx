@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 서울사랑상품권을 경기도에서 쓰려고 했는데 안 됐거나, 쓸 수 있는지 미리 확인하고 싶은 상황이에요.

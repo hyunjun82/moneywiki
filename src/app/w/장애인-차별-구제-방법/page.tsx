@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 장애인 차별을 당했는데 어디에 신고하고 어떤 법적 조치를 받을 수 있는지 궁금한 상황이에요.

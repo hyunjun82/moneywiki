@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 파견직으로 일하는데 정규직 동료들은 상여금을 받는데 자신은 못 받고 있어서 억울한 상황

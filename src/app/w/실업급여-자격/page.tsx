@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 퇴사했거나 퇴사 예정인 사람이 자기가 실업급여 대상인지 확인하려는 상황

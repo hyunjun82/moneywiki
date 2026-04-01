@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 사회초년생이나 연말정산을 처음 하는 사람이 연말정산이 뭔지, 어떻게 하면 세금을 돌려받는지 기본 개념을 알고 싶은 상황.

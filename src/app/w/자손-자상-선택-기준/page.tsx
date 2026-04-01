@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 자동차보험 갱신할 때 자손·자상 중 뭘 선택해야 할지 모르는 상황

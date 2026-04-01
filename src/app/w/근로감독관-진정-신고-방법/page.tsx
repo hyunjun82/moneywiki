@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 월급이나 퇴직금을 못 받아서 근로감독관에게 신고하려는데 방법을 모르는 상황

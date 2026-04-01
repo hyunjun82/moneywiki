@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 별거 중인 배우자가 다른 사람을 만났는데 위자료를 받을 수 있는지 궁금한 상황이에요.

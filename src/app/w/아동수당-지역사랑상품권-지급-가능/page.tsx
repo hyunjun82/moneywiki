@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 지자체에서 아동수당을 상품권으로 준다는데 이게 합법인지, 거부할 수 있는지 확인하려는 보호자

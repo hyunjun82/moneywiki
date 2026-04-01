@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 청년형 장기펀드에 가입했거나 가입하려는 직장인이 소득공제 혜택을 알고 싶은 상황

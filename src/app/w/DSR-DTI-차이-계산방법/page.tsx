@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 대출 상담 중 DSR/DTI 용어를 처음 듣고 내 대출 한도가 얼마인지 모르는 상황

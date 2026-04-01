@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 여성 근로자가 연말정산에서 부녀자 공제 받을 수 있는지 조건 확인하는 상황

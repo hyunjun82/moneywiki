@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 경매로 부동산을 낙찰받았는데 등기를 어떻게 하는지, 직접 등기소에 가야 하는지 궁금한 상황

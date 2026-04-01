@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 미사용 연차가 남았는데 수당으로 받으면 세금이 얼마나 빠지는지, 연말정산에 어떻게 잡히는지 궁금한 직장인

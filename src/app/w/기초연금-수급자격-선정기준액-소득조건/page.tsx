@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 65세가 됐거나 부모님이 곧 65세인데 기초연금 받을 수 있는지 자격 조건을 확인하려는 상황

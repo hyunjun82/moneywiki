@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 청년월세지원 신청하려는데 내가 자격이 되는지 정확하게 확인하고 싶은 상황. 조건이 복잡해서 내가 해당되는지 판단이 안 됨.

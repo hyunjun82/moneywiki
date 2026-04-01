@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 급여명세서에 식대가 있는데 연말정산에서 비과세 처리가 맞는지 확인하려는 직장인

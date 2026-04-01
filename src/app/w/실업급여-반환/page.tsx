@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 실업급여 부정수급으로 적발됐거나 적발될까 불안한데, 반환금과 추가징수가 얼마나 나오는지 알고 싶은 상황이에요.

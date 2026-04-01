@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 명절에 거래처·공무원에게 선물을 보내려는데 청탁금지법에 걸릴까 봐 걱정되는 상황.

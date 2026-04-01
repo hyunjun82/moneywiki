@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 1차 놓쳤거나 탈락한 대학생이 "2차 신청 기간이랑 금액이 어떻게 되지?" 검색

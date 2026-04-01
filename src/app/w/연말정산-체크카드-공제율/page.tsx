@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 체크카드가 신용카드보다 공제율이 높다는데 실제로 얼마나 차이나는지, 어떻게 써야 유리한지 궁금한 직장인

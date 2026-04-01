@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 만 19~34세 청년인데 K-패스 30% 환급이 나한테도 적용되는지, 언제까지 받을 수 있는지 확인하고 싶은 상황

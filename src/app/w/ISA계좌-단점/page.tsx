@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. ISA 계좌 가입하려는데 단점이 뭔지 정확히 알고 싶은 상황

@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 여유 자금을 안전하게 굴리고 싶은데 MMF가 뭔지, 예금과 뭐가 다른지 궁금한 상황.

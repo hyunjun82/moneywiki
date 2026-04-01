@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 연말정산에서 공제 증빙을 못 챙겼는데 표준공제를 받을 수 있는지 궁금한 직장인

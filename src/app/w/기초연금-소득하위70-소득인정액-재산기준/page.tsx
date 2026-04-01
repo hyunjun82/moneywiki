@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. "소득 하위 70%"라고 하니까 내가 해당되는지, 정확히 어떤 기준인지 모르겠는 상황

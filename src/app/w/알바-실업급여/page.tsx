@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 알바하다 그만뒀는데 정규직 아니라 실업급여 못 받는 건 아닌지 걱정되는 상태

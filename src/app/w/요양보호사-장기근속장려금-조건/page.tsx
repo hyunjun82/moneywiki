@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 요양보호사로 일하는데 장기근속장려금을 받을 수 있는 조건이 뭔지, 얼마를 받는지 알고 싶은 상황.

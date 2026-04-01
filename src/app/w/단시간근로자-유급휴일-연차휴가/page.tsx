@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 아르바이트나 파트타임으로 일하는데 "나도 연차·주휴수당 받을 수 있나?" 궁금한 상황

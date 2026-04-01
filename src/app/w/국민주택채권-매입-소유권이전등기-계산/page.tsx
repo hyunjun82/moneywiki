@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 // Q1. 처음 집을 사고 소유권이전등기를 하려는데 국민주택채권을 사야 한다고 들어서 뭔지 모르는 매수인
 // Q2. 국민주택채권 액면가와 실납부액을 계산해 등기 예산에 포함하는 행동

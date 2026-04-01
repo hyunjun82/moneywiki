@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 부당해고를 당했는데 변호사·노무사 비용이 부담돼서 포기하려는 상황이에요.

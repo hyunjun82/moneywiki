@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 육아 중인데 NH농협카드 아이행복카드가 어떤 혜택이 있는지 궁금한 상황이에요.

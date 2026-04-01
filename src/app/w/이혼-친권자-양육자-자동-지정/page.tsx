@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이혼하면 친권자·양육자가 자동으로 정해지는지 궁금한 상황이에요.

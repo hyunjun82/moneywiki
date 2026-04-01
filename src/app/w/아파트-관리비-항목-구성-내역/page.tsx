@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 아파트 관리비 고지서 받고 "이게 다 뭐지?" 궁금한 입주자

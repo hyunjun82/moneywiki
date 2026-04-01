@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 퇴직 후 실업급여를 받을 예정인데, 내 연봉 기준으로 하루에 얼마나 받을 수 있는지 궁금한 상황

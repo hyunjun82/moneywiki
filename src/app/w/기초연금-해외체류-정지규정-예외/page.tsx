@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 해외여행이나 해외 거주를 계획 중인 기초연금 수급자가 연금이 끊기는지 걱정되는 상황

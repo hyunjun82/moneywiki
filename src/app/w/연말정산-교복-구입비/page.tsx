@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 중고등학생 자녀 교복을 샀는데 연말정산에서 공제받을 수 있는지, 어떻게 신청하는지 궁금한 상황

@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 월세가 부담되는 만 19~34세 청년인데, 정부에서 월세를 지원해준다는 걸 알게 됐고 내가 받을 수 있는지 확인하려는 상황

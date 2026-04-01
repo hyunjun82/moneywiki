@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 대출 심사에서 DSR 때문에 안 된다고 들었는데 직접 계산해보고 싶은 상황

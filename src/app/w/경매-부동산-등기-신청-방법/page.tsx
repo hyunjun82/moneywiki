@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 경매 낙찰 후 소유권이전등기를 어떻게 해야 하는지 모르는 사람

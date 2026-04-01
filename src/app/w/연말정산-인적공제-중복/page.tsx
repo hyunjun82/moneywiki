@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 형제끼리 또는 맞벌이 부부끼리 부양가족을 중복 공제하면 어떻게 되는지 궁금한 상황

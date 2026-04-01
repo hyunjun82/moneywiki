@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 실업급여 수급 중 가족이 사망해서, 남은 급여를 유족이 받을 수 있는지 찾는 상황

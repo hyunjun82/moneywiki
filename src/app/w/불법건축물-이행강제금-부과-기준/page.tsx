@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 불법 증축 있는 집을 샀거나, 직접 증축해서 구청에서 이행강제금 고지서를 받은 상황

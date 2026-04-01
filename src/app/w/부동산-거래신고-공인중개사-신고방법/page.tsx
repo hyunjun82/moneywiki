@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 공인중개사를 통해 아파트를 매수한 후 부동산 거래신고를 누가 어떻게 해야 하는지 모르는 상황

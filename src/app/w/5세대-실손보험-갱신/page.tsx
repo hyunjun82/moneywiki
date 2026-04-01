@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 기존 실손보험 갱신일이 다가왔거나 5세대 전환 안내문을 받은 가입자가 갱신을 그냥 해도 되는지 판단하는 상황

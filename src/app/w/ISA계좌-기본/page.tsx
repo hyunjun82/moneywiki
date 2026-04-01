@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. ISA 계좌를 처음 들어봤거나 세금 아끼려고 어떤 계좌를 만들어야 할지 고민하는 직장인

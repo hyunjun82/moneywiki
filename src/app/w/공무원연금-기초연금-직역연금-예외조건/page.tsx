@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 공무원연금(또는 사학·군인연금)을 받고 있는데 기초연금도 받을 수 있는지 궁금한 상황

@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 2026 지방선거 알바 일정을 전체적으로 파악해서 언제 신청하고 언제 일하는지 알고 싶은 상황

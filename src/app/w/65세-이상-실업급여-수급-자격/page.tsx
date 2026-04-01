@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 65세가 넘었거나 곧 넘는 직장인이 퇴직 후 실업급여를 받을 수 있는지 확인하는 상황

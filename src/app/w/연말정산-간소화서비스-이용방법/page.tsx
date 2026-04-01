@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 회사에서 연말정산 서류 제출 요청이 왔는데 간소화서비스를 어떻게 이용해서 PDF를 제출해야 할지 모르는 상황

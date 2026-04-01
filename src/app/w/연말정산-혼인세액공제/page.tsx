@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 올해 결혼했는데 연말정산에서 세금 혜택이 있는지, 얼마 받을 수 있는지 궁금한 상황

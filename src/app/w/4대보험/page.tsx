@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 첫 취업하거나 이직한 직장인이 월급에서 빠지는 4대보험료가 정확히 얼마인지 궁금한 상황

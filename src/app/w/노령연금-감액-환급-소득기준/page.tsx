@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 노령연금을 받고 있는데 소득이 있어 감액되거나, 과거 감액분을 돌려받을 수 있는지 궁금한 상황

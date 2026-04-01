@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 기초연금이랑 생계급여를 동시에 받고 있는데 혹시 깎이는 건 아닌지 걱정되는 어르신/보호자

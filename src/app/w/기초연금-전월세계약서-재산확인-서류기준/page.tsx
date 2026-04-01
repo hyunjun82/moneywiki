@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 기초연금 신청 서류에 전월세 계약서가 왜 필요한지 모르겠는 어르신/보호자

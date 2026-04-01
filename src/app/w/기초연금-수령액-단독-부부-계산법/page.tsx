@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 기초연금을 받게 됐는데(또는 받을 예정인데) 정확히 얼마 받는지 알고 싶은 상황

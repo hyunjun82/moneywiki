@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 사업자등록 후 부가세를 얼마나 내는지, 언제 신고하는지 모르는 초보 사업자

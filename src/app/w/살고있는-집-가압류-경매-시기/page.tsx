@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 살고 있는 집에 가압류가 걸렸는데 언제 경매로 넘어가는지, 대응 방법이 있는지 불안한 채무자

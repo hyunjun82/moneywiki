@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 보험설계사로 등록했는데 의무교육을 매년 받아야 하는지, 언제까지 얼마나 들어야 하는지 궁금한 상황.

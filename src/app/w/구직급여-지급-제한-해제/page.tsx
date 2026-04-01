@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 자발적 이직 또는 귀책 사유로 구직급여 지급 제한이 걸렸는데, 해제 방법을 알고 싶은 상황이에요.

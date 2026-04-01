@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 회사가 법원 파산 없이 문 닫아서 밀린 임금을 못 받고 있는 상황이에요.

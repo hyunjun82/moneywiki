@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 실업급여를 받을 예정인데 2026년 상한액이 얼마인지, 본인이 얼마를 받을 수 있는지 알고 싶은 상황.

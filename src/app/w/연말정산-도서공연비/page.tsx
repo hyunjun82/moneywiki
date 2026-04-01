@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 책이나 공연 관람에 쓴 돈이 연말정산에서 공제되는지 궁금한 직장인

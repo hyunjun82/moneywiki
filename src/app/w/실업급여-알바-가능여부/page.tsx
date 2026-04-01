@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 실업급여 받는 중인데 생활비가 부족해서 알바를 하고 싶은 상황이에요.

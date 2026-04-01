@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 교통사고가 났는데 내 과실이 있어서 보험금이 줄어든다는 얘기를 듣고, 자손과 자상 중 어떤 게 유리한지 확인하려는 상황

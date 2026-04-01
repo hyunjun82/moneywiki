@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 의심 문자를 받았거나, 링크 클릭 후 소액결제 피해를 당해서 어떻게 차단하고 대처하는지 알고 싶은 상황이에요.

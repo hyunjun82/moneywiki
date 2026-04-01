@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. ISA 계좌 개설했는데 뭘 사야 할지 모르는 투자자가 ETF 선택하는 상황

@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 예금 이자나 주식 배당을 받고 통장에 생각보다 적게 찍혀서 세금 구조를 궁금해하는 투자자

@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 책·영화·공연 지출이 많은 직장인이 연말정산에서 추가 혜택이 있는지 확인하려는 상황

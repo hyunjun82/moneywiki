@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이직하면서 퇴직연금을 옮기지 않아서 어딘가에 돈이 묶여있는지 모르는 상황

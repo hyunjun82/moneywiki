@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 보험중개사 등록을 마쳤는데 영업보증금을 언제까지 예탁해야 하는지 모르는 상황

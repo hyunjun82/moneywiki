@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 가사도우미 일하는데(또는 고용하는데) 최저임금이 적용되는지 궁금한 상황

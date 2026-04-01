@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 실업급여 신청하려는데 피보험기간이 180일이 됐는지, 이전 직장까지 합산되는지 모르는 상황

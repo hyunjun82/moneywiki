@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 청년월세지원 자격이 되는 것 같은데, 어디서 어떻게 신청하는지 모르는 상황. 복지로? 주민센터? 서류는 뭐가 필요한지?

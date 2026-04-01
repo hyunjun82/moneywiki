@@ -4,7 +4,6 @@
 // Q4. GreenBox(면제한도) + Calculator(증여세 계산) + Steps(신고방법) + FAQ
 
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 export const dynamic = "force-static";

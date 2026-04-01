@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 관심 있는 아파트 분양이 상한제 적용인지 아닌지 알고 싶고, 적용되면 뭐가 유리한지 궁금한 상황이에요.

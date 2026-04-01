@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 신용카드 발급이 거부됐는데 왜 거절당했는지, 어떻게 하면 발급받을 수 있는지 알고 싶은 상황.

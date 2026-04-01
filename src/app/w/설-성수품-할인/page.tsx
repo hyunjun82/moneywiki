@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 설 차례상 준비하면서 물가 부담을 줄이려고 정부 할인 혜택이 있는지 찾는 소비자

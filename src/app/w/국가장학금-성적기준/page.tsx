@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 성적이 애매한 대학생이 "내 학점으로 국가장학금 받을 수 있나?" 걱정하는 상황

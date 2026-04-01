@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 회사에서 갑자기 무급휴가를 통보받고 월급이 끊길 위기에 처한 상황이에요.

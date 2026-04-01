@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. ISA 계좌를 개설하려는데 중개형/신탁형, 서민형/일반형 뭐가 다른지 모르는 상황

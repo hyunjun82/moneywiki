@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 퇴직했거나 곧 퇴직하는데, 퇴직연금을 어떻게 받는지 절차를 모르는 상황

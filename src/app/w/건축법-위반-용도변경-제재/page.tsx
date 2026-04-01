@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 건물 용도를 무단 변경했거나 변경하려는데 어떤 제재가 있는지 알고 싶은 상황.

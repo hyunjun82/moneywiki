@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 부부 둘 다 65세 이상인데 기초연금을 둘 다 받으면 감액된다고 해서, 얼마나 줄어드는지 궁금한 상황

@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 돈을 못 받아서 가압류 신청하려는데 비용이 얼마나 드는지 모르는 상황

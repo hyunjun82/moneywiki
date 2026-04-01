@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산 시즌에 교육비를 많이 썼는데 얼마나 돌려받는지 계산하고 싶은 직장인

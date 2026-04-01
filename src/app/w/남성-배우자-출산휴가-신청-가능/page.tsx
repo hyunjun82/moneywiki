@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 아내 출산 예정인데 남편도 휴가를 쓸 수 있는지, 며칠인지, 급여는 나오는지 궁금한 상황

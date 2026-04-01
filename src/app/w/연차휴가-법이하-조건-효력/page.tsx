@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 취업규칙이나 근로계약서에 연차가 법정 기준보다 적게 돼 있는데 이게 유효한지 궁금한 근로자

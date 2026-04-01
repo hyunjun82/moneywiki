@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 조정대상지역 주택을 임대 중인데, 거주요건 없이 비과세 받을 방법을 찾는 1주택 예정자

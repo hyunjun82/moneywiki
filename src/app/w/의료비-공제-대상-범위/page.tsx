@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산 때 의료비 공제받으려는데, 내가 쓴 비용 중 뭐가 되고 뭐가 안 되는지 모르겠는 상황이에요.

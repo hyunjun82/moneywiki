@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 은행 입출금 통장 이자가 너무 낮아서 더 높은 금리를 찾는 상황

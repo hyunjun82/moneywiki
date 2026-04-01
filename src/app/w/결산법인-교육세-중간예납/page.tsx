@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 금융·보험업 법인의 세무 담당자가 교육세 중간예납 기한과 납부 방법을 확인하려는 상황

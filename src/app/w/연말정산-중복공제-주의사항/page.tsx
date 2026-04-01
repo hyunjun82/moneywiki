@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 맞벌이 부부나 형제가 같은 부양가족을 중복으로 공제하면 어떤 불이익이 있는지 걱정되는 상황

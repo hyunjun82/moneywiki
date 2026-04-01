@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 65세가 됐거나 곧 되는 본인·가족이 기초연금을 받고 싶은데 어디서 어떻게 신청하는지 모르는 상황

@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 대출 상담 중 DTI는 되는데 DSR이 안 된다는 말을 듣고 둘의 차이를 모르는 상황

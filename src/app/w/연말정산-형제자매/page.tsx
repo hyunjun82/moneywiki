@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산 때 형제자매를 부양가족으로 올릴 수 있는지, 조건이 되는지 확인하는 직장인

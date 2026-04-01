@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 전세 계약 만료가 다가오는데 계약갱신청구권을 언제 행사해야 하는지 모르는 세입자 상황

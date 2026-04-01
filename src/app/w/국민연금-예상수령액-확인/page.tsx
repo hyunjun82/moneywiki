@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 국민연금 매달 내는데 "나중에 얼마 받을 수 있는지" 확인하고 싶은 상황

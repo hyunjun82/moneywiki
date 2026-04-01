@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 실업급여 받는 중에 취업하거나 구직활동을 허위로 제출했는데, 이미 부정수급이 된 것 같아서 얼마나 토해내야 하는지 확인하는 상황

@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 전세 2년 계약이 끝나가는데 집주인이 갱신거절하거나 아직 아무 말이 없어서 불안한 상황

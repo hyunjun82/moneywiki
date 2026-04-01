@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 대지급금을 신청했는데 일부만 지급됐거나 거부당해서 나머지를 어떻게 받을지 고민

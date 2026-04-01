@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 산재 치료 끝났는데 같은 부위가 다시 아프기 시작해서 재요양 신청이 가능한지, 어떻게 하는지 모르는 상황이에요.

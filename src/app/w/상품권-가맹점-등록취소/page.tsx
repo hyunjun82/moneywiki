@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 지역사랑상품권 가맹점을 운영하는데 등록이 취소될 수 있다는 걸 듣고 어떤 행위가 문제인지 미리 알고 싶은 상황이에요.

@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 경차사랑카드로 유류세 환급받고 있는데, 잘못 쓰면 어떤 처벌을 받는지 궁금한 상황

@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 무보험 차량에 사고 당해서 가해자가 돈이 없다고 하는데 병원비를 어디서 받을지 찾는 교통사고 피해자

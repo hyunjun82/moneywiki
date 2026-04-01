@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. RA·TA 계약이 끝났거나 연구과제가 종료된 대학원생이 실업급여를 받을 수 있는지 찾아보는 상황

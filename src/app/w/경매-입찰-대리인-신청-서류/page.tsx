@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 경매 입찰일에 본인이 직접 가지 못해서 대리인을 세워야 하는 상황

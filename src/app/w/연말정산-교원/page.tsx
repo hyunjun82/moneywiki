@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 교사·교수인데 연말정산이 일반 직장인과 같은지, 방과후학교 수당이나 사학연금은 어떻게 되는지 궁금한 상황.

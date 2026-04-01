@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 건설현장에서 일용직으로 일하는데, 다치면 산재보험 적용되는지 궁금한 상황

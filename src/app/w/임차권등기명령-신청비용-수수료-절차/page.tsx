@@ -4,7 +4,6 @@
 // Q4. GreenBox(비용 요약) + Steps(신청 절차) + DocTable(서류) + Checklist(주의사항) + FAQ
 
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 export const dynamic = "force-static";

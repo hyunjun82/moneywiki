@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 곧 65세가 되는데 기초연금을 언제 신청해야 하는지, 늦게 내면 손해인지 궁금한 상황

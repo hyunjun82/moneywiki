@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 매달 교회/절/성당에 헌금·보시금을 내는데, 연말정산에서 공제받을 수 있는지 궁금한 직장인

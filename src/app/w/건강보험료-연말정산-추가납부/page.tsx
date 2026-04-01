@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 4월 급여가 갑자기 적게 들어온 이유를 모르거나, 건강보험료 연말정산 고지서를 받은 상황

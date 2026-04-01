@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 올해 출산한 직장인이 연말정산에서 받을 수 있는 혜택이 뭔지, 총 얼마를 돌려받는지 궁금한 상황

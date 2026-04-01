@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 자동차세를 미리 내면 할인받을 수 있다는데, 얼마나 절약되고 어떻게 신청하는지 궁금해요.

@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산 때 부모님이나 자녀를 부양가족으로 올려 공제받을 수 있는지 확인하려는 직장인

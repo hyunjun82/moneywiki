@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 부양가족 없는 미혼 직장인이 연말정산에서 돌려받을 게 없다고 느끼는 상황

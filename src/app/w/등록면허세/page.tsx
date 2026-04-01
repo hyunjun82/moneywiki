@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 부동산 등기·법인 설립·자동차 등록 시 등록면허세가 얼마인지 궁금한 상황이에요.

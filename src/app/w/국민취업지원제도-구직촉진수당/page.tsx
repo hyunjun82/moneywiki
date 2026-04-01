@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 실직 후 생계비 걱정하며 정부 지원 수당을 받을 수 있는지 찾는 사람

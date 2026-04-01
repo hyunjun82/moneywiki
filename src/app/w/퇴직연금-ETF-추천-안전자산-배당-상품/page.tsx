@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. DC형 퇴직연금 가진 직장인이 "안전자산 30%를 뭘로 채워야 해?" 상품 고르는 상황

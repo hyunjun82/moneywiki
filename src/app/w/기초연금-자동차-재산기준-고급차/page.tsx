@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 차를 가지고 있는데 기초연금에서 탈락할까 걱정되고, "고급차 기준"이 바뀌었다는 뉴스를 본 상황

@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연금저축을 증권사/은행에서 생명보험사로 옮겨서 종신연금을 받고 싶은 상태

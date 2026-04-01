@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 통장이 압류당해서 월급이 들어와도 못 쓰고, 생계비계좌로 해결할 수 있는지 찾는 상황

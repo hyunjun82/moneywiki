@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 검찰청·경찰청이라는 전화를 받았거나 이미 송금했는데 보이스피싱인 것 같아서 어떻게 해야 할지 모르는 상황

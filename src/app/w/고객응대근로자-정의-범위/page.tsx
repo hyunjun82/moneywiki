@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 콜센터·판매직으로 일하면서 고객 폭언에 시달리는데, 내가 법적 보호 대상인지 모르겠는 상황

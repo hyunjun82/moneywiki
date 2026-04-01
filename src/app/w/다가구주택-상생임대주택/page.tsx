@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 다가구주택 팔려는데 상생임대 특례로 양도세 비과세 받을 수 있는지 확인하는 상황

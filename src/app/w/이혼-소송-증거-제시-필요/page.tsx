@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이혼 소송을 하려는데 어떤 증거가 필요한지, 내가 가진 게 효력이 있는지 궁금한 상황이에요.

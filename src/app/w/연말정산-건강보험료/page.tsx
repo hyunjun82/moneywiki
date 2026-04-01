@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산 시즌인데 건강보험료가 공제되는지, 따로 해야 하는 게 있는지 궁금한 직장인

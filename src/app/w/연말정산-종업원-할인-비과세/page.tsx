@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 회사 제품을 직원 할인으로 샀는데 세금이 붙는지 궁금한 상황

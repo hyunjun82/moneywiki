@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 월급에서 빠져나가는 건강보험료가 올랐는데 왜 올랐는지, 얼마나 더 내는지 궁금한 직장인

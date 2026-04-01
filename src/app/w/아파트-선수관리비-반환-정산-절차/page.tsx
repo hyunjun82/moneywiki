@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 아파트를 팔거나 이사 가면서 선수관리비(관리비예치금)를 돌려받을 수 있는지 확인하려는 상황

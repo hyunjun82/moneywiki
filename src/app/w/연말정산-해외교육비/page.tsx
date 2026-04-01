@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 해외 주재원·파견인데 자녀 학비를 연말정산에서 공제받을 수 있는지 궁금한 상황이에요.

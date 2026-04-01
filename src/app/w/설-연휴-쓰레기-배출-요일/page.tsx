@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 설 연휴에 쓰레기를 언제 내놓을 수 있는지, 잘못 버리면 과태료가 나오는지 궁금한 상황

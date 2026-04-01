@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 배달 플랫폼에서 3.3% 떼이는데 세금 신고를 해야 하는지, 하면 돌려받을 수 있는지 궁금한 상황이에요.

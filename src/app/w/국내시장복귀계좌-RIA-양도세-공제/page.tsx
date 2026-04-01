@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 국내시장복귀계좌 RIA 양도세 공제 관련 정보가 필요한 상황

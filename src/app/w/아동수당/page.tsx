@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 아이가 있는 부모가 아동수당을 받을 수 있는지, 얼마인지, 어떻게 신청하는지 궁금한 상황

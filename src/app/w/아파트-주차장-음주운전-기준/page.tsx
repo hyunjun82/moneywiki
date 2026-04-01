@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 아파트 주차장에서 술 먹고 차를 옮겼는데 이것도 음주운전인지, 면허취소 되는지 불안한 상황

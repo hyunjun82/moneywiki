@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연체 때문에 대출·카드 발급이 안 돼서 금융 생활이 막혀 있는데, 다 갚았는데도 이력이 남아서 답답한 상황이에요.

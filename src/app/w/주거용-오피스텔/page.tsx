@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 오피스텔을 사려는데 주거용으로 쓰면 주택 수에 포함되는지, 세금이 얼마나 달라지는지 궁금한 상황

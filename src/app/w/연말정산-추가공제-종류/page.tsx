@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 기본공제 외에 추가로 받을 수 있는 공제가 있는지, 부모님·장애인 자녀 때문에 추가 절세하고 싶은 상황

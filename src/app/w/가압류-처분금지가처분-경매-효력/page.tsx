@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 경매 물건을 검토하는데 등기부에 가압류·가처분이 있어서 낙찰 후 떠안는 건지 걱정하는 상황

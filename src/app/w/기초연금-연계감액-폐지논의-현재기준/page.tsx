@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 국민연금 열심히 냈는데 기초연금이 깎여서 억울하고, 연계감액이 없어질 수 있다는 뉴스를 봤는데 실제로 폐지되는지 궁금한 상황

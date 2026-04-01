@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이사하면서 새 집 사고 기존 집 팔려는 사람이 양도세 안 낼 수 있는지 확인하는 상황

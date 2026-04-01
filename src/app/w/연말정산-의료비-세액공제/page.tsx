@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 올해 병원비가 많이 나왔는데 연말정산에서 얼마나 돌려받을 수 있는지 궁금한 직장인

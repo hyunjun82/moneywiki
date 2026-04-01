@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 화재·태풍·홍수 등으로 재산 피해를 입었는데 연말정산에서 세금 혜택이 있는지 알고 싶은 상황

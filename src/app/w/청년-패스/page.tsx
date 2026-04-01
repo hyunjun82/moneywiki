@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 청년인데 내가 받을 수 있는 정부·지자체 혜택이 뭔지 한번에 확인하고 싶은 상황

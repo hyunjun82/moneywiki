@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 시간선택제 근로자를 채용하거나 전환하려는 사업주인데, 정부 지원금이 얼마나 나오는지 모르는 상황이에요.

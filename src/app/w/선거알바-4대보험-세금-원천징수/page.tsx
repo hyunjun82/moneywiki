@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 선거 알바 수당에서 세금이 빠지는지, 4대보험 가입이 되는지 궁금한 상황

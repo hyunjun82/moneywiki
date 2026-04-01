@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. K-패스 카드를 만들지 말지 결정하려는데, 내 교통비로 실제 얼마가 돌아오는지 계산해보고 싶은 상황

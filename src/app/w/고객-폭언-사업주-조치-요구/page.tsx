@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 고객한테 폭언 당했는데 사장이 아무 조치 안 해줘서 화난 상황

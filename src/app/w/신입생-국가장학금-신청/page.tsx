@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 대학 합격했는데 국가장학금을 언제, 어떻게 신청해야 하는지 모르는 상황이에요. 가구원 동의를 안 하면 탈락한다는데 방법을 모르겠어요.

@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 투자용으로 집을 사서 전세 놓고 한 번도 안 살았는데, 팔 때 양도세 비과세를 받을 수 있는지 확인하려는 상황

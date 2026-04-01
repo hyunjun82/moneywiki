@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 공동인증서를 잃어버렸거나 비밀번호를 잊어버렸거나 컴퓨터를 포맷한 사람이 빠르게 재발급받으려는 상황

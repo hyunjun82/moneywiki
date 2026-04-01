@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 건축법 위반 사실을 알게 됐거나 위반 건축물을 매수·매도하려는 상황

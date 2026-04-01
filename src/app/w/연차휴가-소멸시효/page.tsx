@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 작년에 못 쓴 연차가 남아있는데 아직 쓸 수 있는지, 수당으로 받을 수 있는지 궁금한 상황이에요.

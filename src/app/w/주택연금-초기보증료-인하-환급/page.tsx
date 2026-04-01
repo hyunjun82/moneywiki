@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 주택연금 가입을 앞두고 초기보증료가 부담되는데, 2026년 인하 소식을 듣고 정확히 얼마나 줄었는지·환급 규정이 뭔지 확인하려는 상황

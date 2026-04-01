@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 묵시적갱신이 됐는데 새 계약서를 써야 하는지, 확정일자도 다시 받아야 하는지 궁금한 상황.

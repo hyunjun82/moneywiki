@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 퇴직 후 이전 회사 정보를 새 직장에서 활용해도 되는지, 어디까지가 비밀유지 의무 위반인지 모르겠는 상황

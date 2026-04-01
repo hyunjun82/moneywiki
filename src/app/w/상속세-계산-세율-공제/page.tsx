@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 가족이 돌아가셔서 상속받을 예정인데 상속세가 얼마나 나올지, 공제가 어떻게 되는지 막막한 상황

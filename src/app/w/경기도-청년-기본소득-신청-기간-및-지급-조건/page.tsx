@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 경기도에 사는 24세 청년이 기본소득 받을 수 있는지 자격 확인하는 상황

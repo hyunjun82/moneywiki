@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 귀농·주말농장 목적으로 농지를 샀는데, 농막을 지을 수 있는지 규제가 뭔지 모르는 상황

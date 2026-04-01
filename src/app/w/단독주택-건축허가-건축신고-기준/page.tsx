@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 시골이나 외곽에 작은 단독주택을 짓고 싶은데, 건축허가가 필요한지 건축신고만 하면 되는지 모르겠는 상황

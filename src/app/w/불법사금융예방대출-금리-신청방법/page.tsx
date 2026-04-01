@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 급전이 필요해서 사금융을 알아보고 있는데, 정부지원 저금리 대출이 있다고 들은 상황이에요.

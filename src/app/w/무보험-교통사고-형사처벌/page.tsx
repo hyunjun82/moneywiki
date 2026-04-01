@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 무보험으로 교통사고를 냈는데 형사처벌이 어떻게 되는지 알고 싶은 상황.

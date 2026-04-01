@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산 간소화 서비스에서 자동으로 안 잡히는 공제 항목이 있다는데, 놓치고 있는 게 있는지 확인하고 싶은 상황.

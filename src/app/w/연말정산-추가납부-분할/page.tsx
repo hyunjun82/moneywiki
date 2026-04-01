@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산에서 추가납부가 나왔는데 한 번에 내기 부담스러운 직장인이에요.

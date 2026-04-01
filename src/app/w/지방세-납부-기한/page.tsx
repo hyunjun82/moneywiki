@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 지방세 고지서를 받았는데 납부기한이 지났거나 곧 지날 것 같아서 가산금이 얼마일지 걱정하는 상황

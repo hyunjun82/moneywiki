@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 새 통장을 만들었는데 이체가 막혀서 돈을 보내지 못하는 상황

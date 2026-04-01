@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 고시원 사업자가 관광객 유치를 위해 호스텔로 전환하려는데 인허가 절차가 복잡할까 걱정하는 상황

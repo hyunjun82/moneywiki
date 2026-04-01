@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 개표사무원은 밤에 하는 알바라는데 급여가 얼마고 몇 시간 일하는지 알고 싶은 상황

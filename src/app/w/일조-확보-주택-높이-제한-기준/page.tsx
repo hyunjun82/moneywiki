@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 근처에 아파트나 건물이 들어선다는 소식을 들은 주택 소유자 : 내 집 햇빛이 가려질까 걱정하는 상황

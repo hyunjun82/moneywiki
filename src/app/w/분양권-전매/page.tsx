@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 분양 당첨됐는데 사정이 생겨서 팔고 싶거나, 분양권을 사려는데 전매 제한이 언제 풀리는지 모르겠는 상황

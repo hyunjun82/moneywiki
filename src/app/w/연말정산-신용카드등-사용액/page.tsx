@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 카드를 많이 썼는데 연말정산에서 얼마나 돌려받는지 궁금한 직장인. 공제율과 한도를 모르는 상황.

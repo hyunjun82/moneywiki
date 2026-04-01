@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 경매 입찰하려는데 등기부등본에 가압류가 있어서, 낙찰 후 이게 나한테 넘어오는지 걱정되는 상황.

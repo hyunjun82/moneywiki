@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 집이 있는데 기초연금을 받을 수 있는지 걱정되는 상황, 재산 때문에 탈락할까 봐 불안함

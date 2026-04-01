@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 자녀가 초중고에 입학하는데 입학준비금을 어떻게 신청하는지 모르는 학부모 상황

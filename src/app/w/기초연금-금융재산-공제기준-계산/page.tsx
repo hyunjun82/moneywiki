@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 예금이나 적금이 있는데 기초연금을 받을 수 있는지, 금융재산이 얼마까지 괜찮은지 궁금한 상황

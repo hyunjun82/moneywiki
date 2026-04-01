@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. DC형·IRP에 돈이 쌓여 있는데 예금만 넣고 있어서 손해 보는 게 아닐까 걱정하는 상황

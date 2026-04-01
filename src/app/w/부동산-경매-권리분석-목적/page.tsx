@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 부동산 경매에 관심 있는데 "권리분석부터 하라"는 말을 듣고, 왜 해야 하는지 이해하고 싶은 상황이에요.

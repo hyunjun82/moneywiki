@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. ETF 투자를 시작하고 싶은 초보자가 어떻게 사는지, 수수료와 세금이 얼마인지 기본부터 알고 싶은 상황.

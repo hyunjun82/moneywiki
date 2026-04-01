@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 임차한 상가가 경매에 넘어가서 보증금 날릴까 봐 불안한 상황

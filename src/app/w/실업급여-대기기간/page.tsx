@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 실업급여 신청했는데 바로 안 나와서 7일 대기기간이 뭔지 궁금한 상황이에요.

@@ -4,7 +4,6 @@
 // Q4. EligibilityChecker(요건) + GreenBox(혜택 요약) + Steps(신청절차) + FAQ
 
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 export const dynamic = "force-static";

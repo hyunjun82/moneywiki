@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 2026년에 국민연금이 뭐가 달라졌는지, 내 보험료가 얼마나 오르는지 궁금한 상황이에요.

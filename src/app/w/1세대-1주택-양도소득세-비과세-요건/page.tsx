@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 집 1채 팔려는 사람이 비과세 조건 되는지 / 얼마나 더 보유해야 하는지 확인하는 상황

@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 신용점수가 낮아서 대출 거절당했거나, 점수를 올려서 좋은 금리를 받고 싶은 상황

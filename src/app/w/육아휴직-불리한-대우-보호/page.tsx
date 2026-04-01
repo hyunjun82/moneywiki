@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 육아휴직 쓰고 복직했더니 팀이 바뀌고 연봉이 깎여서 이게 정당한 건지 알고 싶은 상황.

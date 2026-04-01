@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 가게를 운영하는데 고정비 부담이 크고 경영안정바우처 25만원을 받을 수 있는지 확인하려는 상황

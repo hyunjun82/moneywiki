@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 출퇴근 시간 조정이나 재택근무가 가능한지, 어떤 유형이 있고 어떻게 신청하는지 알고 싶은 직장인이에요.

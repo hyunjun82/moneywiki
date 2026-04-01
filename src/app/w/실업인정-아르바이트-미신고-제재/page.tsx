@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 실업급여 받으면서 아르바이트를 했는데 신고를 안 해서 부정수급에 걸릴까 봐 불안한 상황

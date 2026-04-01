@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 // Q1. 자녀 대학 등록금을 냈거나 직접 대학원에 다니면서 연말정산 교육비 공제가 얼마나 되는지 궁금한 직장인
 // Q2. 연말정산 간소화 서비스에서 교육비 영수증을 제출해 세액공제 혜택을 받는 행동

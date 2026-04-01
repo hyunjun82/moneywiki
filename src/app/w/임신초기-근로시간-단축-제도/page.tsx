@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 임신 초기라 입덧이 심하고 피곤한데, 근무시간을 줄일 수 있는지 궁금한 상황

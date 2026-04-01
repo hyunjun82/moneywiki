@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 등기부에 오래된 가압류가 남아 있어서 집을 팔거나 대출받기 어려운 상황이에요.

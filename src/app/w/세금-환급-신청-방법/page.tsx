@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 세금을 더 냈는데 환급금이 있는지 모르거나, 있다는 건 알지만 신청 방법을 모르는 상황

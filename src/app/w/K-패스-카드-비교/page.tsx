@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. K-패스 카드를 발급받으려는데 어떤 카드가 나한테 유리한지 비교하려는 상황

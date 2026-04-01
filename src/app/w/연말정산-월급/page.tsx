@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 매달 월급에서 세금이 빠지는데 연말정산이랑 어떤 관계인지, 환급은 언제 들어오는지 궁금한 직장인.

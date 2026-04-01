@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 국가유공자·유족이 "올해 얼마 오른 거야?" 궁금해서 2026년 지급액 확인하려는 상황

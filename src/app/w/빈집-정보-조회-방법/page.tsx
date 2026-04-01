@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 빈집을 사서 리모델링하거나 투자하고 싶은데 전국 빈집 정보를 어디서 찾는지 모르는 상황

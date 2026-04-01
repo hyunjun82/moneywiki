@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 경매 낙찰받은 뒤 취소 가능한지 궁금하거나, 채무자로서 경매를 막고 싶은 상황

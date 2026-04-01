@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 50대 중반~60대, 정년이 얼마 안 남았거나 이미 퇴직한 상황에서 "재취업 지원금 있다던데 얼마고 어떻게 받지?" 검색

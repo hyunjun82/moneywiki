@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 급여명세서에서 고용보험료가 빠지는데 얼마를 내는 건지, 왜 내는 건지 궁금한 직장인

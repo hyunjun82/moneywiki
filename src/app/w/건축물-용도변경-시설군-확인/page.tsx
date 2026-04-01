@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 가게 업종을 바꾸거나 창고를 판매시설로 고치려는 사람이 용도변경 허가가 필요한지 신고인지 확인하는 상황

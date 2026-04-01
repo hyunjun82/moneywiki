@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 65세 넘었는데 퇴직당했거나 퇴직 예정인 상황. 실업급여를 받을 수 있는지 아닌지 모르겠는 불안한 상태.

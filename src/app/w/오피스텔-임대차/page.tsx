@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 오피스텔을 전세/월세로 계약하려는데 주택임대차보호법이 적용되는지 궁금한 세입자

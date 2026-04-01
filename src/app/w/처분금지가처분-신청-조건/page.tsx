@@ -4,7 +4,6 @@
 // Q4. GreenBox(핵심 요약) + Steps(신청 절차) + DocTable(필요 서류) + FAQ
 
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 export const dynamic = "force-static";

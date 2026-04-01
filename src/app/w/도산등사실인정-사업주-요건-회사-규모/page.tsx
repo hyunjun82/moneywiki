@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 회사가 폐업해서 임금을 못 받았는데, 도산등사실인정 요건을 갖추는지 확인하려는 상황

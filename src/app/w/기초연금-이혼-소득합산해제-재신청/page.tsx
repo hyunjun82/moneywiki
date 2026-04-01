@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 이혼 후 배우자 소득 합산이 풀려서 기초연금을 새로 받을 수 있는지 궁금한 어르신

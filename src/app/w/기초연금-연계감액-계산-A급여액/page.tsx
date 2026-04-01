@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 국민연금을 열심히 냈는데 기초연금이 줄어들어서 억울하고, 정확히 얼마나 깎이는지 알고 싶은 상황

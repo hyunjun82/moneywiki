@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 자동차보험 갱신하면서 자손과 자상 중 뭘 골라야 하는지, 보상 방식이 정확히 어떻게 다른지 비교하려는 상황

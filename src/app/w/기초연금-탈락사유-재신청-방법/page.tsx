@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 기초연금을 신청했다가 탈락 통보를 받고 왜 탈락했는지, 다시 신청할 수 있는지 알고 싶은 상황

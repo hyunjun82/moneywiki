@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 퇴직연금 계좌에 돈이 있는데 급하게 필요해서 빼고 싶은 상황 (집 구입, 병원비 등)

@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 퇴거할 때 집주인이 보증금에서 원상복구비를 빼겠다고 하는데, 어디까지가 정당한 공제인지 모르는 임차인

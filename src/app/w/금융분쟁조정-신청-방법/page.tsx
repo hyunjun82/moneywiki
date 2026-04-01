@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 은행이나 보험사에 억울한 일을 당해서 소송 없이 빠르게 해결하고 싶은 상황

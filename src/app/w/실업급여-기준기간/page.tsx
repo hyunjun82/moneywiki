@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 퇴직 후 실업급여를 신청하려는데 이직 전 여러 회사 근무이력이 있어서 18개월/180일 기준이 헷갈리는 상황

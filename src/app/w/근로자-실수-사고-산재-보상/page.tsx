@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 일하다 본인 실수로 다쳤는데, 내 잘못이라 산재가 안 될까 걱정하는 상황

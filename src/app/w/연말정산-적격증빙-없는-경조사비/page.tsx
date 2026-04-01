@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 회사에서 경조사비를 받았는데 영수증 없이 현금으로 받아서 연말정산 때 비과세 처리가 되는지 걱정하는 직장인

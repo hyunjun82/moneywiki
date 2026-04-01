@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 부모님이 종신보험에 가입해 있고 돌아가신 후 사망보험금을 받게 됐는데 상속세를 내야 하는지 모르는 상황

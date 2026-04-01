@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연금저축이나 IRP로 모은 돈을 받을 때 세금을 줄이고 싶어서, 종신연금으로 전환하면 어떻게 되는지 알고 싶은 상황

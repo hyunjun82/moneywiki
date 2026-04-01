@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 대출 계약 후 후회하거나 급히 서명해서 취소하고 싶은 상황이에요.

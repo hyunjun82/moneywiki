@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 작년에도 실업급여를 받았는데 이번엔 덜 받는다고 해서 감액 기준을 찾는 상황

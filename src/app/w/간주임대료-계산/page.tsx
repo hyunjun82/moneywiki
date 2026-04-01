@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 전세 준 집주인이 종합소득세 신고 앞두고 "간주임대료가 얼마야? 세금 얼마 나와?" 계산하는 상황

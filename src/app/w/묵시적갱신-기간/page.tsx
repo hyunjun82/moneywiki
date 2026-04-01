@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 전세/월세 계약이 자동 연장됐는데 기간이 얼마인지 궁금한 세입자예요.

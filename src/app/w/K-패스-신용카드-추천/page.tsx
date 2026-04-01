@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 월 소비 30만원은 넘기는 직장인인데, K-패스 신용카드가 10종 넘게 나와서 어떤 게 내 소비 패턴에 유리한지 판단이 안 되는 상황

@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 회사에서 "그만두지 않겠냐"고 권유받은 근로자가 "양식에 뭘 써야 실업급여를 못 잃지?" 걱정하는 상황

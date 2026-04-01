@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 뺑소니 당했는데 가해 차량이 무보험이고 범인도 못 찾은 상황이에요. 치료비를 어디서 받아야 할지 모르겠어요.

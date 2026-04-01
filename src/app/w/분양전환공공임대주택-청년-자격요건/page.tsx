@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 35세 무주택 직장인인데 분양전환 공공임대주택 청년 자격이 되는지 확인하고 싶은 상황이에요.

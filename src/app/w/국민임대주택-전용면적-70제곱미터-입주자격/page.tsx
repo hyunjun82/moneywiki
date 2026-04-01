@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 국민임대주택 70㎡ 공고를 보고 신청하고 싶은데 소득·자산 기준이 헷갈리는 상황

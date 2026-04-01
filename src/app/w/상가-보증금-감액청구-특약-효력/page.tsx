@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 상가 시세가 떨어졌는데 임대차계약서에 감액청구 금지 특약이 있어 걱정하는 상가 임차인

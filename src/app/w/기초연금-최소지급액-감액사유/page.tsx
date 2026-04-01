@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 기초연금을 받고 있는데 주변보다 적게 받아서 왜 감액됐는지, 최소 얼마는 받을 수 있는지 알고 싶은 상황

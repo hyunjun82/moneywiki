@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 설 연휴에 KTX/SRT 할인이 있는지, 예매는 어떻게 하는지 알고 싶은 상황. 귀성 비용을 아끼려는 목적.

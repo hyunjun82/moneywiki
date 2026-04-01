@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 급여명세서에 항목이 많은데 뭐가 세금 붙고 뭐가 안 붙는지 확인하려는 직장인

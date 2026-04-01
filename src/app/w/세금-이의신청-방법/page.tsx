@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 세금 고지서를 받았는데 금액이 잘못됐거나 납득이 안 돼서 이의를 제기하고 싶은 상황

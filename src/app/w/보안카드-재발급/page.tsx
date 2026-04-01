@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 보안카드를 분실했거나 번호를 다 써서 인터넷뱅킹을 못 하는 상황

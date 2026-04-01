@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 가족이나 지인의 빚보증을 서달라는 요청을 받았거나, 이미 연대보증을 섰는데 채권자가 본인에게 먼저 청구해서 당혹스러운 상황

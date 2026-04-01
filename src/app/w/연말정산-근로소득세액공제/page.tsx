@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산 하는 직장인이 원천징수영수증에서 "근로소득세액공제"를 보고 이게 뭔지, 내가 얼마나 받는 건지 궁금한 상황

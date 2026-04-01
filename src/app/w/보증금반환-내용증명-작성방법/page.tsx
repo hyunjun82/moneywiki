@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 전세 계약 끝났는데 집주인이 보증금을 안 돌려줘서 내용증명을 보내야 하는 상황

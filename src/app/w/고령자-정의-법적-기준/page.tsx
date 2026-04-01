@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 50~60대 본인 또는 가족이 "나 고령자야? 혜택 받을 수 있어?" 확인하려는 상황

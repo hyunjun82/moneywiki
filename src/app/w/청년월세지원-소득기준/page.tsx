@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 청년월세지원 신청 전에 내 소득이 중위소득 60% 이하인지 확인하고 싶은데, 중위소득이 뭔지도 모르고 어떻게 비교하는지도 모르는 상황

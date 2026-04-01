@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산에서 특별공제가 뭔지, 어떤 항목이 해당하는지 알고 싶은 상황

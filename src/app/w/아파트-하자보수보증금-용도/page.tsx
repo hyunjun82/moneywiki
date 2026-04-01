@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 새 아파트에 입주했는데 관리사무소에서 하자보수보증금을 언급해서, 이게 뭔지 입주자가 내야 하는 건지 궁금한 상황

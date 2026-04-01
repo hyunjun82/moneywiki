@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 부업을 시작했는데 세금 처리를 어떻게 해야 하는지 모르는 직장인

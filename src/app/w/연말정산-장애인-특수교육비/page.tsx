@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 장애인 자녀 재활치료비가 공제되는지, 한도가 얼마인지 확인하려는 상황

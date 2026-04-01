@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 중증장애인을 고용했는데 업무 지도를 위한 작업지도원 배치 비용이 부담되는 사업주 상황이에요.

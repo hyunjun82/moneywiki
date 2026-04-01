@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 해외직구 처음이라 개인통관고유부호가 뭔지 모르거나, 2026년 갱신 의무화 때문에 기존 부호를 갱신하려는 상황.

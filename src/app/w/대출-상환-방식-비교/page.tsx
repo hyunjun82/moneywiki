@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 대출 받으러 갔더니 원금균등/원리금균등 중 선택하라는데 뭔지 모르는 상황

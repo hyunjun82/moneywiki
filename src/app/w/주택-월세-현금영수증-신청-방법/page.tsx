@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 집주인이 현금영수증 안 해준다고 하는데 어떻게 해야 할지 모르는 세입자

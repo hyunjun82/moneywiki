@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 월세 수입이나 소규모 사업소득이 있는데, 이게 기초연금 소득인정액에 어떻게 잡히는지 몰라서 불안한 상황

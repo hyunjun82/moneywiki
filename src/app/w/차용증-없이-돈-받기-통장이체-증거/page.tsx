@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 차용증 없이 친구나 지인에게 빌려준 돈을 못 받고 있는 상황, 증거도 통장 이체 내역뿐

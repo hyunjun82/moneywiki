@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 부동산 계약서나 대출 계약서를 쓰는데 인지세를 붙여야 하는지, 얼마를 내야 하는지 모르는 사람

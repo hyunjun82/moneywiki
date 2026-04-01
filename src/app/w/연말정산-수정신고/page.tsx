@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산 끝났는데 공제를 빠뜨리거나 잘못 신고한 걸 발견해서 어떻게 정정하는지 알고 싶은 상황

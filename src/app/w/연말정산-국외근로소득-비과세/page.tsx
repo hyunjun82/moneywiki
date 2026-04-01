@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 해외에서 근무 중인데 비과세 혜택이 있는지, 한도가 얼마인지 알고 싶은 상태

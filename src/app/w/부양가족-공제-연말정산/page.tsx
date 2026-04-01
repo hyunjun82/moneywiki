@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산에서 부모님이나 자녀를 부양가족으로 등록해서 세금을 줄이고 싶은데, 소득요건이나 나이 조건이 헷갈리는 상황.

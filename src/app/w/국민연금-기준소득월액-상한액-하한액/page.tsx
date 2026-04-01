@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 국민연금 보험료가 오른다는데 기준소득월액이 뭔지, 내 보험료가 얼마인지 확인하려는 상황

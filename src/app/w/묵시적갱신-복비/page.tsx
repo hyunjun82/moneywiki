@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 전세 계약 만료됐는데 자동 갱신(묵시적갱신)되었고, 부동산에서 복비를 달라고 연락이 와서 내야 하는지 모르겠는 상황.

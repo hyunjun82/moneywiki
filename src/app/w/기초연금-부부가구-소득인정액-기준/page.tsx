@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 부부가 함께 기초연금을 신청하려는데 소득을 합산하는지, 기준은 얼마인지 궁금한 어르신

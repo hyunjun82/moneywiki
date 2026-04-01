@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 병원비를 많이 써서 연말정산에서 의료비 공제를 얼마나 받을 수 있는지 확인하려는 직장인

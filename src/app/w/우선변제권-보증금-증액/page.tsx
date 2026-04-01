@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 전세 살다가 보증금 올려줬는데, 증액분도 기존 확정일자로 보호되는지 불안한 상황이에요.

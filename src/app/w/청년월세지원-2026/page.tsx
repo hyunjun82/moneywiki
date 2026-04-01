@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이전에 청년월세지원을 못 받았거나 처음 접하는 사람이 2026년에 뭐가 달라졌는지 파악하려는 상황. "올해도 하나?" "조건 바뀐 거 있나?"

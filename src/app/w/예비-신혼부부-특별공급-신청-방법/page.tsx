@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 아직 혼인신고 전인데 신혼부부 특별공급을 신청할 수 있는지 궁금한 상황

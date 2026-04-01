@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 전세 살고 있는데 집주인이 바뀌었어요. 내 전입신고와 확정일자 효력이 유지되는지 걱정돼요.

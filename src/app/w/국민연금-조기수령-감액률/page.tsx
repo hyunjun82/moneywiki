@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 국민연금을 일찍 받으면 얼마나 깎이는지, 내 상황에서 조기수령이 유리한지 궁금한 상황이에요.

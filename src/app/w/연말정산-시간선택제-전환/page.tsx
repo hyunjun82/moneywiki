@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 전일제에서 시간선택제로 전환했거나 전환 예정인 근로자가 세금 혜택이 있는지 확인하려는 상황

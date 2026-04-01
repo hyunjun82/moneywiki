@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 감염병으로 가게 휴업 중인데 배달기사 산재보험을 계속 내야 하는지 고민

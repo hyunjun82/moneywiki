@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 올해 결혼했는데 연말정산을 어떻게 해야 유리한지 모르겠는 상황이에요.

@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 퇴직연금을 연금으로 받고 싶은데, 조건이 뭔지·세금이 얼마나 줄어드는지·어떻게 신청하는지 모르는 상황

@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 회사에서 해고 통보를 받았는데, 정당한 이유인지 아닌지 판단이 안 되는 상황

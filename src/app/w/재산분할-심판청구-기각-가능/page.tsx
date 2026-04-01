@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이혼 후 재산분할 심판청구를 했는데 기각될까 걱정되거나, 이미 기각당한 상황

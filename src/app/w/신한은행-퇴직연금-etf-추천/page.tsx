@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 신한은행 DC형이나 IRP에서 ETF 투자를 하고 싶은데 어떤 ETF를 담아야 하고 어디서 매수하는지 모르는 상황이에요.

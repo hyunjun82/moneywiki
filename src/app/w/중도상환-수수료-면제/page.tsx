@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 대출을 조기 상환하려는데 중도상환 수수료가 얼마나 나오는지, 면제 조건이 뭔지 확인하려는 상황

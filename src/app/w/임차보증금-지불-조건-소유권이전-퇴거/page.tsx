@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 집이 팔려서 소유권이 넘어갔는데 보증금을 돌려받을 수 있는지 걱정하는 상황

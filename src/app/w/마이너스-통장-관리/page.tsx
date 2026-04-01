@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 마이너스 통장을 이미 쓰고 있거나 개설하려는데, 이자 부담과 신용 영향이 걱정되는 상황이에요.

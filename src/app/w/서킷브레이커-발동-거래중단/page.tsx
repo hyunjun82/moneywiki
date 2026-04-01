@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 // Q1. 뉴스에서 서킷브레이커 발동 소식 들었거나 보유 주식 거래가 갑자기 안 돼서 당황한 투자자
 // Q2. 서킷브레이커 발동 이유와 거래 재개 시점을 파악해 대응 결정

@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 목돈 생겼는데 어디 넣어둘지 고민하는 사람이 은행별 금리 비교하는 상황

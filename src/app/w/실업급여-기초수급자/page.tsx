@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 기초생활수급자인 상태에서 실업급여 수급 가능 여부와 중복 수령 여부를 찾고 있는 상황

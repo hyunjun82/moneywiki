@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 집을 팔려는데 양도소득세를 안 내도 되는 조건이 뭔지, 내 상황이 비과세에 해당하는지 확인하려는 상황

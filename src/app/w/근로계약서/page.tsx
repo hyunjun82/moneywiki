@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 근로계약서를 처음 쓰거나, 회사가 안 줘서 어떻게 해야 하는지 모르는 근로자/사업주

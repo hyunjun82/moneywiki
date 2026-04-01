@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 주식 배당금에 세금이 얼마나 붙는지, 2026년 분리과세가 뭔지 궁금한 상황

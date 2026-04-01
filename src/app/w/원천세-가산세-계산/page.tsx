@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 원천세 신고·납부 기한을 놓쳐서 가산세가 얼마나 나올지 걱정하는 사업자

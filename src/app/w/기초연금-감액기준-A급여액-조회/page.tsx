@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 기초연금이 깎인다고 들었는데, 왜 깎이는지 모르겠고 내 A급여액이 얼마인지 확인하고 싶은 상황

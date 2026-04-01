@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 주담대 이자를 매달 100만원씩 내는 직장인이 연말정산에서 얼마나 공제받을 수 있는지 확인하려는 상황

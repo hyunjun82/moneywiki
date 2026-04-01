@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이혼 시 재산분할 협의가 안 돼서 법적 대응 방법을 알고 싶은 상황

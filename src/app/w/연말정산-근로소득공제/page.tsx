@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 근로소득공제가 뭔지, 내 급여에서 얼마나 빠지는지 궁금한 직장인이에요.

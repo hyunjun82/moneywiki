@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 육아기 단축근무를 하려는데, 급여가 얼마나 줄고 정부 지원은 얼마인지 궁금한 상황이에요.

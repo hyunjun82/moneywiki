@@ -1,5 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
 import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 부동산 경매 관심이 생겨서 어디서 물건 검색하는지 모르는 초보자가 사이트 찾는 상황
