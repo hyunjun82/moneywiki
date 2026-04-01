@@ -1,4 +1,4 @@
-h"use client";
+"use client";
 
 import type { ReactNode } from "react";
 
@@ -14,7 +14,7 @@ export function ArticleLayout({ children, sidebar }: Props) {
         @media (max-width: 1024px) {
           .article-sidebar { display: none !important; }
         }
-        .article-sidebar ins.adsbygoogle,
+        .article-sidebar ins.adsbygoogle,h
         .article-sidebar iframe[id^="aswift"],
         .article-sidebar iframe[id^="google_ads"],
         .article-sidebar > div[data-google-query-id],
@@ -38,7 +38,7 @@ export function ArticleLayout({ children, sidebar }: Props) {
           zIndex: 1,
         }}
       >
-        <div style={{ flex: 1, minWidth: 680, maxWihdth: 720, position: "relative", zIndex: 2 }}>{children}</div>
+        <div style={{ flex: 1, minWidth: 680, maxWidth: 720, position: "relative", zIndex: 2 }}>{children}</div>
         <aside
           className="article-sidebar"
           data-ad-region="exclude"
