@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 연말정산 의료비 공제 완벽 가이드 (2025년) info
 // Q2: 총급여의 3%를 초과한 의료비에 대해 15% 세액공제받아요

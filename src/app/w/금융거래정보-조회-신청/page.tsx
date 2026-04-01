@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 가족이 사망해서 고인의 금융재산·채무를 파악해야 하는데 어디서부터 시작할지 모르는 상황
 // Q2. 상속인 금융거래 조회를 신청해서 고인의 모든 금융거래 내역을 한 번에 확인한다

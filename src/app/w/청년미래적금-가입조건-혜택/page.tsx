@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 // Q1. 청년 저축 상품을 찾다가 청년미래적금을 발견했거나 주변에서 가입했다는 얘기를 들은 20~30대
 // Q2. 내가 가입 조건에 해당하는지 확인하고 실제로 가입하러 은행에 가거나 앱으로 신청
 // Q3. 나이·소득·가구소득 조건 3가지, 우대형/일반형 기여금 차이, 비과세 혜택, 월 최대 50만원 한도

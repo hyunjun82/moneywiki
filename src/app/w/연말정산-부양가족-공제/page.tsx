@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 부모님, 자녀, 배우자를 부양하는데 공제를 얼마나 받을 수 있는지 궁금한 직장인
 // Q2. 부양가족별 나이·소득 요건을 확인하고, 공제 대상을 빠짐없이 등록한다

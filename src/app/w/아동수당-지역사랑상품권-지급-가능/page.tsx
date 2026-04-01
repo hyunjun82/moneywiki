@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 지자체에서 아동수당을 상품권으로 준다는데 이게 합법인지, 거부할 수 있는지 확인하려는 보호자
 // Q2. 상품권 지급 동의 여부를 결정하고, 원하면 현금으로 변경 신청한다

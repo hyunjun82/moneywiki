@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 장애인이 창업하려는데 점포 보증금이나 운영자금이 부족한 상황
 // Q2. 장애인자립자금대여 + 고용공단 창업지원금 파악 → 주민센터/공단 신청 → 창업

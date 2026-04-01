@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 퇴직연금에서 수수료가 자동으로 빠져나가는 걸 알았는데, 얼마나 나가는지·줄일 수 있는지 모르는 상황
 // Q2. 내 퇴직연금 수수료를 확인하고, 더 저렴한 금융사로 이전하거나 저비용 상품으로 바꾸는 행동

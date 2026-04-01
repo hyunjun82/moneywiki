@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 자동차보험 갱신하면서 자동차상해 특약과 자기신체사고 중 뭘 선택해야 할지 고민하는 운전자
 // Q2: 두 특약의 보장 차이를 이해하고 자기 상황에 맞는 특약을 선택

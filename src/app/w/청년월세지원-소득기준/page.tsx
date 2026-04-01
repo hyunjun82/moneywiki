@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 청년월세지원 신청 전에 내 소득이 중위소득 60% 이하인지 확인하고 싶은데, 중위소득이 뭔지도 모르고 어떻게 비교하는지도 모르는 상황
 // Q2. 가구원 수별 중위소득 60% 금액 확인 → 건강보험료로 내 소득 역추산 → "내가 기준 이하다" 판단 → 신청 진행

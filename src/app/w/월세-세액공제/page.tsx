@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산 때 월세 세액공제를 처음 신청하려는 무주택 직장인이 얼마 돌려받는지 계산하려는 상황
 // Q2. 조건 충족 여부 확인 → 공제율·한도 계산 → 연말정산 때 서류 제출 → 환급

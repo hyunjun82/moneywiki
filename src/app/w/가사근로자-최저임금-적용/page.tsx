@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 가사도우미 일하는데(또는 고용하는데) 최저임금이 적용되는지 궁금한 상황
 // Q2. 가사서비스 제공기관 소속 여부 확인 → 최저임금 적용 기준 파악 → 미달 시 신고

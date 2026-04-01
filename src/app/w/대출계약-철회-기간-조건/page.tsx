@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 대출 계약 후 후회하거나 급히 서명해서 취소하고 싶은 상황이에요.
 // Q2. 14일 이내 철회권 행사 조건을 파악하고 내용증명으로 철회 절차를 진행하는 행동.

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 미등록 대부업체에서 돈 빌렸는데 선이자·보증금 떼고 원금 부풀려서 더 갚으라고 하는 상황
 // Q2. 실제 원금(실수령액)을 계산하고, 초과 이자 반환 요구 + 불법 업체 신고

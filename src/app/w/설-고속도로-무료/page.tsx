@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 설 연휴에 귀성하는데 고속도로 통행료가 무료인지, 정확한 기간이 궁금한 운전자
 // Q2. 무료 기간을 확인하고 출발 시간을 맞춰서 통행료를 절약한다

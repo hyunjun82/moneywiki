@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 50~60대 본인 또는 가족이 "나 고령자야? 혜택 받을 수 있어?" 확인하려는 상황
 // Q2. 내 나이가 어느 법 기준에 해당하는지 파악 → 받을 수 있는 혜택 바로 신청

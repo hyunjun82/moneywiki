@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 퇴직 후 실업급여를 신청하려는데 12개월 제한이 뭔지, 실제 수급 기간은 얼마인지 혼란스러운 상황
 // Q2. 12개월은 신청 기한이라는 걸 이해하고, 이직 후 즉시 고용24에서 신청한다

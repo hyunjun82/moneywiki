@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 서울사랑상품권을 경기도에서 쓰려고 했는데 안 됐거나, 쓸 수 있는지 미리 확인하고 싶은 상황이에요.
 // Q2. 지역사랑상품권은 발행 지자체 내에서만 쓸 수 있다는 걸 이해하고, 경기도에서는 경기지역화폐를 사용하는 행동.

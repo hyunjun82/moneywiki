@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 육아휴직을 앞두고 있거나 사용 중인데, 2026년에 급여·기간·지원금이 얼마나 바뀌었는지 확인하려는 직장인 부모예요.

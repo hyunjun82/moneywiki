@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 부업을 시작했는데 세금 처리를 어떻게 해야 하는지 모르는 직장인
 // Q2. 부업 소득 유형을 구분하고, 내 상황에 맞는 세금 처리 방법을 결정한다

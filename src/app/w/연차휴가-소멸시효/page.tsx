@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 작년에 못 쓴 연차가 남아있는데 아직 쓸 수 있는지, 수당으로 받을 수 있는지 궁금한 상황이에요.
 // Q2. 연차 소멸 기한과 수당 청구 시효를 파악해서, 기한 내에 수당을 청구하는 행동.

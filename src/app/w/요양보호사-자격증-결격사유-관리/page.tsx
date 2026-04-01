@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 요양보호사 자격증을 따려고 교육원에 등록하기 전에 결격사유에 해당하는지 불안한 사람
 // Q2. 7가지 결격사유를 확인하고, 본인이 해당하지 않음을 확인한 뒤 자격증 신청을 진행한다

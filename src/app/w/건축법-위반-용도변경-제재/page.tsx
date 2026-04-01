@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 건물 용도를 무단 변경했거나 변경하려는데 어떤 제재가 있는지 알고 싶은 상황.
 // Q2. 건축법 위반 시 이행강제금·벌금 기준을 파악하고 적법한 용도변경 절차를 밟을 수 있어야 해요.

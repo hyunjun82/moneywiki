@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 올해 결혼했는데 연말정산을 어떻게 해야 유리한지 모르겠는 상황이에요.
 // Q2. 배우자 공제·몰아주기 전략·부양가족 분배를 최적화해서 세금을 최대한 줄이는 행동.

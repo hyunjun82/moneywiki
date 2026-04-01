@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 공무원이라 연말정산이 일반 회사원이랑 다른지 궁금한 상태
 // Q2. 공무원도 일반 직장인과 동일하게 연말정산한다는 것을 확인하고 공무원연금 기여금 공제 방식을 이해한다

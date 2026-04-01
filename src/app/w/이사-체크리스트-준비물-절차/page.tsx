@@ -4,6 +4,7 @@
 // Q4. Checklist(체크리스트) + Steps(당일 절차) + DocTable(준비 서류) + FAQ
 
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 export const dynamic = "force-static";
 

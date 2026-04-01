@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 중증장애인을 고용했는데 업무 지도를 위한 작업지도원 배치 비용이 부담되는 사업주 상황이에요.
 // Q2. 작업지도원 자격 요건 확인하고 한국장애인고용공단에 지원금을 신청하는 행동.

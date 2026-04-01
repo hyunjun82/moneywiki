@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 빈집 기준 1년 이상 무인 주택 info
 // Q2: 첫째: 1년 이상 거주·사용하지 않은 주택이 빈집이에요

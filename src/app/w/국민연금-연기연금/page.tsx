@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 국민연금 연기연금 info
 // Q2: 연기연금은 수령을 늦추면 연금이 늘어나는 제도예요.

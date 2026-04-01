@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 보안카드가 불편하거나 이체 한도를 높이려고 OTP 발급을 알아보는 상황
 // Q2. 디지털OTP 또는 토큰형 OTP를 발급받아서 인터넷뱅킹에 등록한다

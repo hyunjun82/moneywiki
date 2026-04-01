@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 외국인근로자(또는 고용주)인데 산재보험이 적용되는지, 불법체류자도 받을 수 있는지 궁금한 상황.
 // Q2. 산재 발생 시 근로복지공단에 신청해서 치료비·휴업급여를 받는 행동. 사업주는 가입 의무 이행.

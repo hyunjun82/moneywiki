@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 재개발 분양신청 안하면 보상금 info
 // Q2: 분양 안 받으면 현금청산으로 토지와 건물 감정평가액 받아요

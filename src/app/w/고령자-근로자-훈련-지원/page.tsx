@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 재취업이나 이직을 위해 새 기술을 배우고 싶은데 비용이 부담되는 고령 근로자·구직자 상황이에요.
 // Q2. 국민내일배움카드를 신청해서 최대 500만원 훈련비 지원을 받고 훈련과정을 수강하는 행동.

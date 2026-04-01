@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 분양 아파트 당첨 후 사정이 생겨 팔아야 하는데, 전매제한 기간이 언제까지인지 모르는 상황이에요.
 // Q2. 본인 분양 아파트의 전매 가능 시점을 정확히 파악하고, 위반 없이 매도 계획을 세우는 행동.

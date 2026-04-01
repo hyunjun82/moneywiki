@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 /*
 Q1. 소득이 적은데 근로장려금을 받을 수 있는지, 얼마 받는지 궁금한 상황

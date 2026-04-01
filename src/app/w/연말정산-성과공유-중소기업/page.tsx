@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 연말정산 성과공유 중소기업 info
 // Q2: 성과공유 중소기업 경영성과급 50% 소득세 감면이에요.

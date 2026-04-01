@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 가정에서 청소·돌봄 일을 하는데 근로기준법 보호를 받을 수 있는지 궁금한 상황
 // Q2. 정부인증 가사서비스업체를 통해 계약해서 근로기준법 보호를 받는다

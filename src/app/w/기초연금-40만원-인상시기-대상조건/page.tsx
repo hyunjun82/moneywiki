@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 기초연금이 40만원으로 오른다는 뉴스를 보고, 언제부터 오르는지·내가 대상인지 확인하려는 상황
 // Q2. 40만원 인상 시기와 대상 조건을 정확히 파악하고, 현재 기준과 향후 계획을 이해할 수 있어야 함

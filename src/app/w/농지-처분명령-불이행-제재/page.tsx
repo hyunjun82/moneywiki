@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 농지 처분명령을 받았는데 기한 내 처분 못 하면 어떤 제재를 받는지 궁금한 상황이에요.
 // Q2. 이행강제금 규모를 파악하고 처분 기한 내에 매도를 결정하는 행동.

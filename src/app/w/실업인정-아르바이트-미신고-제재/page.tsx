@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 실업급여 받으면서 아르바이트를 했는데 신고를 안 해서 부정수급에 걸릴까 봐 불안한 상황
 // Q2. 미신고 시 어떤 제재를 받는지 파악하고, 자진신고 여부를 결정한다

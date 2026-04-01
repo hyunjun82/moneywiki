@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 근로소득공제가 뭔지, 내 급여에서 얼마나 빠지는지 궁금한 직장인이에요.
 // Q2. 본인 총급여에 해당하는 공제율을 파악하고 공제액을 계산하는 행동.

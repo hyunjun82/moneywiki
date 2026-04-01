@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 최저임금으로 일하는 아르바이트생·직장인이 급여명세서 받고 "내가 맞게 받고 있나?" 확인하는 상황
 // Q2. 본인 근무시간 기준 예상 월급·실수령액 계산 후 급여명세서와 대조 → 부족하면 사업주에 정정 요청

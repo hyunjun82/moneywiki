@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 은행 앱이나 홈택스에서 인증서 선택하라고 나오는데 금융인증서와 공동인증서 중 뭘 써야 할지 모르는 상황
 // Q2. 두 인증서 차이를 이해하고 내 상황에 맞는 인증서를 선택해서 발급하는 방법 파악

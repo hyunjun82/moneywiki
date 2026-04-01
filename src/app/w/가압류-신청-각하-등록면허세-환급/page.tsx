@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 가압류 신청이 각하돼서 미리 낸 등록면허세를 돌려받고 싶은 상황이에요.
 // Q2. 미사용증명원을 발급받아 구청에 등록면허세 환급을 신청하는 행동.

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 60세 이상 어르신을 채용하려는 중소기업 사업주인데 인건비 부담이 걱정되는 상황이에요.
 // Q2. 고령자 고용지원금 대상인지 확인하고, 분기별 신청을 해서 지원금을 받는 행동.

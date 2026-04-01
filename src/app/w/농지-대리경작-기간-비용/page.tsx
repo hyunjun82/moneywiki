@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 농지를 가지고 있는데 직접 농사를 못 지어서, 대리경작 제도의 기간·비용·계약 방법이 궁금한 상황이에요.
 // Q2. 대리경작 계약 조건을 이해하고 서면 계약을 체결하는 행동.

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     연말정산 준비 중인 직장인이 IRP로 세액공제를 받으려는데 구체적인 절차와 주의사항을 알고 싶어 하는 상황

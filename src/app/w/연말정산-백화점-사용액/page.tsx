@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 백화점에서 쓴 금액이 연말정산에서 얼마나 공제되는지 궁금한 상황이에요.
 // Q2. 백화점 사용액 공제율을 확인하고 절세 전략을 세우는 행동.

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 회사에서 고령자를 몇 명 고용해야 하는지, 안 지키면 벌금이 있는지 궁금한 사업주 상황이에요.
 // Q2. 업종별 기준고용률을 확인하고, 보고 의무를 이행하는 행동.

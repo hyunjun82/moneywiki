@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 /*
 Q1. 퇴사하면서 회사가 경업금지 서약서를 요구하는데, 서명해도 되는지·효력이 있는지 궁금한 상황이에요.

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. DC형 가입 중인데 수령액이 얼마나 될지, 운용수익이 포함되는지 궁금한 상황
 // Q2. 수령 시점에 내 계좌에서 실제로 얼마가 나오는지 계산할 수 있어야 함

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 교사·교수인데 연말정산이 일반 직장인과 같은지, 방과후학교 수당이나 사학연금은 어떻게 되는지 궁금한 상황.
 // Q2. 교원 특수 항목(방과후수당, 사학연금, 비과세 연구비)을 놓치지 않고 연말정산에 반영하는 행동.

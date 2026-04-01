@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 감염병(코로나 등)으로 회사가 문을 닫았는데 급여를 받을 수 있는지 궁금한 직장인
 // Q2. 휴업 사유에 따라 휴업수당을 청구하거나 고용유지지원금 혜택을 확인한다

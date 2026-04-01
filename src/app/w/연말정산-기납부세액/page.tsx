@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 연말정산 기납부세액 info
 // Q2: 기납부세액은 1년간 매달 급여에서 떼간 소득세 합계예요.

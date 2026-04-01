@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이전에 청년월세지원을 못 받았거나 처음 접하는 사람이 2026년에 뭐가 달라졌는지 파악하려는 상황. "올해도 하나?" "조건 바뀐 거 있나?"
 // Q2. 달라진 점(계속사업 전환·청약통장 삭제) 파악 → 올해 신청 가능한지 판단 → 신청 페이지로 이동

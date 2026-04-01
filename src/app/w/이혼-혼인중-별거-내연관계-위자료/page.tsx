@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 별거 중인 배우자가 다른 사람을 만났는데 위자료를 받을 수 있는지 궁금한 상황이에요.
 // Q2. 혼인파탄 시점을 판단하고, 위자료 청구 가능 여부를 확인해서 소송을 준비하는 행동.

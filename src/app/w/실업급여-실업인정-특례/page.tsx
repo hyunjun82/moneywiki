@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 아파서 구직활동을 못 했는데, 실업급여가 끊길까 봐 걱정되는 상황이에요.
 // Q2. 특례 사유를 확인하고 고용24에서 증빙서류를 첨부해 실업인정 특례를 신청하는 행동.

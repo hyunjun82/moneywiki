@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 5세대 실손보험 도수치료: 제외와 본인부담률 info
 // Q2: 5세대 실손보험에서 도수치료·체외충격파·주사료는 보장 대상에서 완전히 제외됐어요

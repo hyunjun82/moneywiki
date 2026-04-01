@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 /*
 Q1. 육아·출산으로 경력이 끊겼는데 다시 일하고 싶은 여성이 어디서부터 시작해야 할지 모르는 상황이에요.

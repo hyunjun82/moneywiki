@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 대출을 조기 상환하려는데 중도상환 수수료가 얼마나 나오는지, 면제 조건이 뭔지 확인하려는 상황
 // Q2. 내 대출의 금리 유형(변동/고정/혼합)에 따른 면제 조건을 파악하고, 수수료를 최소화하는 방법을 실행한다

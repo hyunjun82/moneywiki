@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 연말정산 시즌에 기간, 환급금, 부양가족 등 기본적인 것들이 매년 헷갈리는 직장인
 // Q2. 자주 묻는 질문 10가지를 확인하고 연말정산 서류를 회사에 제출한다

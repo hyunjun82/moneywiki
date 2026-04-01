@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 2026년에 뭐가 달라지는지 한눈에 보고 싶은 직장인·자영업자·부모. 연초에 검색량 급증.
 // Q2. 내 월급·보험료·세금이 얼마나 달라지는지 파악하고, 해당되는 제도를 미리 준비하는 행동.

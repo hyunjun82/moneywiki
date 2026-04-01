@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 유연근무제 신청 및 해제: 유연근무제 신청 절차 및 유연근무제 해제 방법 info
 // Q2: 유연근무제는 근로자가 신청하고 회사가 승인해요

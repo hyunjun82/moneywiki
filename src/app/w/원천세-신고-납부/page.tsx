@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 직원 급여 지급하고 원천세 신고·납부 어떻게 하는지 모르는 사업자
 // Q2. 홈택스 원천세 신고 → 위택스 지방소득세 신고 → 다음달 10일까지 납부

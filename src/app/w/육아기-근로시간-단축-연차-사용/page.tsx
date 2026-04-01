@@ -4,6 +4,8 @@
 // Q4. GreenBox(결론) + CompareTable(개정 전후 비교) + BorderBox(연차 사용 방법) + FAQ
 
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 export const dynamic = "force-static";
 

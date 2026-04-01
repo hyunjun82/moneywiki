@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 내 땅이 재건축 정비구역인데 소규모 건물을 짓거나 증축하고 싶어서, 허가가 필요한지 확인하려는 상황
 // Q2. 정비구역 내 건축 허가 절차를 이해하고 구청에 허가 신청을 완료한다

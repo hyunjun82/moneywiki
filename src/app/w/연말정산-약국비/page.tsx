@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 약국에서 산 약값이 연말정산 공제 대상인지 궁금한 상황
 // Q2. 어떤 약국비가 공제되는지 확인하고, 빠짐없이 의료비 공제를 챙긴다

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 최저임금 받고 일했는데 실업급여도 적게 나오는 거 아닌지 걱정되는 상황이에요.
 // Q2. 2026년 실업급여 하한액이 1일 66,048원(월 약 198만원)이라는 걸 확인하고, 본인 수급액을 예상하는 행동.

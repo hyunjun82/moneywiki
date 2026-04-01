@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 부동산 경매에 관심 있는데 "권리분석부터 하라"는 말을 듣고, 왜 해야 하는지 이해하고 싶은 상황이에요.
 // Q2. 권리분석의 목적과 핵심(말소기준권리)을 이해하고, 경매 입찰 전 기본 점검을 할 수 있어요.

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 장애인 근로자(또는 사업주)가 업무에 필요한 보조공학기기를 무료로 지원받을 수 있는지 알고 싶은 상황
 // Q2. 한국장애인고용공단에서 보조공학기기 무상지원을 신청한다

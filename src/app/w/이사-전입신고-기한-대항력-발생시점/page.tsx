@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이사를 앞두고 있거나 막 이사한 사람이 전입신고 언제까지 해야 하는지, 확정일자까지 필요한지 궁금한 상황
 // Q2. 이사 당일 전입신고 + 확정일자 동시에 받아서 대항력과 우선변제권을 확보하는 행동

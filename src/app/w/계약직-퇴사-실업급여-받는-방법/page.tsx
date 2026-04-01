@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 계약직(기간제) 근로자가 계약만료로 퇴사한 뒤 실업급여를 받고 싶은데, 비자발적 이직 증빙이 필요하다고 들은 상황
 // Q2. 이직확인서 퇴사 사유가 '계약만료'로 돼 있는지 확인하고, 서류를 갖춰 실업급여를 신청한다

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 소액임차인 기준 금액이 얼마인지, 내 보증금이 최우선변제 대상인지 확인하고 싶은 상황이에요.
 // Q2. 내 보증금이 소액임차인 기준 이하인지 확인하고, 최우선변제금액이 얼마인지 파악하는 행동.

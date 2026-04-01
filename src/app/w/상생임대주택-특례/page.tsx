@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 조정대상지역 주택을 임대 중인데, 거주요건 없이 비과세 받을 방법을 찾는 1주택 예정자
 // Q2. 상생임대주택 특례 요건을 확인하고, 직전계약·상생계약을 맞춰 거주요건 면제를 받는다

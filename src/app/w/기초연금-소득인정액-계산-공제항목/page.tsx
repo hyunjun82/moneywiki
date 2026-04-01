@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 기초연금 신청하려는데 소득인정액이 뭔지 모르겠고, 내 소득과 재산으로 기준을 통과할 수 있는지 계산해보고 싶은 상황
 // Q2. 소득인정액 계산 공식을 이해하고, 각 공제항목을 적용해서 내 소득인정액을 대략 계산해보는 것

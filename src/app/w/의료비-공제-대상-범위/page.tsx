@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산 때 의료비 공제받으려는데, 내가 쓴 비용 중 뭐가 되고 뭐가 안 되는지 모르겠는 상황이에요.
 // Q2. 공제 대상 항목과 제외 항목을 구분해서, 영수증 챙길 걸 정리하고 간소화 서비스에서 누락분을 직접 제출하는 행동.

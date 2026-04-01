@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 근저당권자(회사 또는 본인) 주소가 여러 번 바뀌었는데, 등기부상 주소를 변경하지 않아서 처리 방법이 궁금한 상황이에요.

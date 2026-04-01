@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 회사 제품을 직원 할인으로 샀는데 세금이 붙는지 궁금한 상황
 // Q2. 종업원 할인 비과세 조건(시가 20% + 연 240만원)을 확인하고 내 할인이 비과세인지 판단한다

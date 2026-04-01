@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 회사에서 퇴사 서류를 쓰라고 하는데 의원면직·권고사직·해고 중 뭘로 처리해야 실업급여를 받을 수 있는지 모르는 상황이에요.

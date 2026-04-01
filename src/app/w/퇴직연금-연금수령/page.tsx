@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 퇴직연금을 연금으로 받고 싶은데, 조건이 뭔지·세금이 얼마나 줄어드는지·어떻게 신청하는지 모르는 상황
 // Q2. 연금수령 조건(55세·10년 이상)을 확인하고, 세금 절감 효과를 계산한 뒤 금융사 앱에서 연금개시 신청하는 행동

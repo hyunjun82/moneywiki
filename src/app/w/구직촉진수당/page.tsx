@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 실업급여를 못 받는 상황에서 다른 지원금이 없나 찾아보는 실업자(프리랜서·아르바이트·고용보험 미가입자)
 // Q2. 구직촉진수당 자격 조건을 확인하고 고용센터 또는 온라인으로 신청하는 행동

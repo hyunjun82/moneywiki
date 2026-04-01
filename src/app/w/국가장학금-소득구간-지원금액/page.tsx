@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 대학생이 국가장학금 소득구간별로 얼마 받을 수 있는지, 내 구간이 어떻게 되는지 알고 싶은 상황
 // Q2. 소득구간별 지원금액을 확인하고 한국장학재단에서 신청까지 완료한다

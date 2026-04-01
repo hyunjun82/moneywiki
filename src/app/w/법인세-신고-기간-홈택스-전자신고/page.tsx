@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 /*
 Q1. 법인세 신고 기한이 다가오는데 언제까지 어떻게 신고해야 하는지 막막한 상황

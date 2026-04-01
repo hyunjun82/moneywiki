@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 통장이 압류돼서 월급이 들어와도 못 쓰고 있거나 2026년 2월 생계비계좌 제도 시행으로 신청하려는 상황
 // Q2. 생계비계좌 개설 가능한 은행과 신청 방법 파악 후 즉시 개설, 급여 입금계좌 변경

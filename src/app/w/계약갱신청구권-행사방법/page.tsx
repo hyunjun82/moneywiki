@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 전세·월세 계약 만료 앞두고 계약갱신청구권을 쓸 수 있는지, 어떻게 행사하는지 궁금한 세입자
 // Q2: 계약갱신청구권 행사 요건을 확인하고 집주인에게 갱신 요구

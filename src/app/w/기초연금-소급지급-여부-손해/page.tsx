@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 기초연금을 뒤늦게 알았거나 신청이 늦어져서, 이전 달 것도 받을 수 있는지 궁금한 상황
 // Q2. 소급 지급이 안 되는 걸 이해하고, 최대한 빨리 신청해서 손해를 줄인다

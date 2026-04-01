@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 묵시적갱신 중도해지 2년 전 불가 3개월 통지 2026 info
 // Q2: 묵시적갱신 후에는 임차인이 언제든지 해지 통지 가능해요

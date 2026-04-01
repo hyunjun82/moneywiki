@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     회사에서 사택이나 기숙사를 제공받는데 이게 세금이 붙는 건지, 비과세 조건은 뭔지 궁금한 직장인

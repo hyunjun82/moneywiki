@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 0~1세 아이를 키우고 있거나 곧 출산 예정인데, 부모급여가 얼마인지, 어린이집 보내면 어떻게 되는지, 어떻게 신청하는지 알고 싶은 부모예요.

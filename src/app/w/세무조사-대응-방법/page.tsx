@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 세무조사 사전통지를 받았는데, 뭘 준비해야 하고 어떻게 대응해야 하는지 모르겠는 상황이에요.
 // Q2. 통지서를 분석하고, 자료를 정리하고, 조사 과정에서 적절히 대응해서 불이익을 최소화하는 행동.

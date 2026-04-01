@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 전세/월세 2년 살았는데 집주인이 5% 넘게 올리자고 해서 어떻게 대응해야 할지 모르는 상황이에요.
 // Q2. 계약갱신청구권을 행사해서 5% 초과 인상을 거부하고, 합리적 조건으로 재계약하는 행동.

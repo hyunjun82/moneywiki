@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 은행이나 보험사에 억울한 일을 당해서 소송 없이 빠르게 해결하고 싶은 상황
 // Q2. 금융감독원에 분쟁조정을 신청하고, 조정안을 수락해서 분쟁을 종결한다

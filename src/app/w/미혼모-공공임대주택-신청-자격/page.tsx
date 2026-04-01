@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 혼자 아이를 키우는 미혼모가 주거비 부담으로 공공임대주택 신청 자격이 되는지 확인하려는 상황
 // Q2. LH 청약플러스에서 한부모가족 자격으로 공공임대주택을 신청한다

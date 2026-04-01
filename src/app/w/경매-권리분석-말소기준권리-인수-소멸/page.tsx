@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 경매로 집을 사려는데 등기부에 저당권·전세권·가처분이 잔뜩 있어서 이게 나한테 넘어오는지 없어지는지 모르는 상황
 // Q2. 말소기준권리를 찾아서 인수/소멸 권리를 구분하고, 위험한 물건을 걸러낸다

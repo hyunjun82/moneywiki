@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 선거 알바를 해보고 싶은데 본인이 할 수 있는 자격이 되는지, 결격사유에 해당하는지 확인하고 싶은 상황
 // Q2. 자신이 신청 자격에 해당하는지 결격사유를 대조해서 확인하고, 가능하면 바로 신청한다

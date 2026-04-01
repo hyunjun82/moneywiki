@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 세금 고지서를 받았는데 금액이 잘못됐거나 납득이 안 돼서 이의를 제기하고 싶은 상황
 // Q2. 90일 이내에 이의신청서를 세무서 또는 홈택스에 제출한다

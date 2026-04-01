@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 공휴일이 주말과 겹쳤는데 회사에서 대체공휴일을 안 쉬게 해서, 우리 회사도 적용되는지 궁금한 상황이에요.

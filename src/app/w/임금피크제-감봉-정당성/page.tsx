@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 임금피크제로 월급이 깎인다는 통보를 받았는데 합법인지 궁금한 근로자
 // Q2: 임금피크제의 정당성을 판단하고, 부당하면 노동청 신고 또는 임금 청구

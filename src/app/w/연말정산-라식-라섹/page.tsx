@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 연말정산 라식 라섹 info
 // Q2: 라식, 라섹, 스마일라식, ICL삽입술 모두 의료비 세액공제 대상이에요.

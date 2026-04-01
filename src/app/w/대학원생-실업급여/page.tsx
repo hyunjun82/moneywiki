@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. RA·TA 계약이 끝났거나 연구과제가 종료된 대학원생이 실업급여를 받을 수 있는지 찾아보는 상황
 // Q2. 고용보험 가입 이력 확인 → 수급 자격 판단 → 구직활동 기록 방법 → 고용24 신청

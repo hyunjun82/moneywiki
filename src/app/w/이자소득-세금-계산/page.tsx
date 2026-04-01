@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 예금·적금 이자에서 세금이 얼마나 빠지는지, 금융소득이 많으면 종합과세 대상인지 궁금한 상황.
 // Q2. 본인 이자소득에 대한 세금을 계산하고, 2천만원 초과 시 종합소득세 신고 여부를 판단하는 행동.

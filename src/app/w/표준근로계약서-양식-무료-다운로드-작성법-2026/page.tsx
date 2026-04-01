@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 새로 알바나 계약직을 시작하거나 고용하게 돼서 근로계약서 양식이 당장 필요한 상황이에요.

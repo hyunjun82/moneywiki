@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 // Q1. 월급 명세서 보고 실수령액이 생각보다 적어서 4대보험 공제액이 얼마인지 궁금한 직장인
 // Q2. 2026년 요율로 내 월급에서 빠지는 4대보험 공제액을 직접 계산하는 행동
 // Q3. 2026년 국민연금 4.75%, 건강보험 3.595%, 고용보험 0.9%, 장기요양보험 0.473%, 합계 11.36%, 산재보험은 사업주 100%

@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 비거주자에게 소득을 지급하는 사업자 또는 비거주자 소득을 받는 외국인이 원천징수 세율을 알고 싶은 상황
 // Q2: 소득 유형별 원천징수 세율을 확인하고 정확하게 원천징수 후 신고

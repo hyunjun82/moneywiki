@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산에서 특별공제가 뭔지, 어떤 항목이 해당하는지 알고 싶은 상황
 // Q2. 특별공제 5가지 항목을 파악하고, 내 공제 가능 금액을 계산해서 신고에 반영한다

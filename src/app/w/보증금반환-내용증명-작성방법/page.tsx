@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 전세 계약 끝났는데 집주인이 보증금을 안 돌려줘서 내용증명을 보내야 하는 상황
 // Q2. 보증금반환 내용증명을 직접 작성해서 우체국이나 인터넷으로 발송한다

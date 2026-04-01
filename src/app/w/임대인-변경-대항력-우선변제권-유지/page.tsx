@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 전세 살고 있는데 집주인이 바뀌었어요. 내 전입신고와 확정일자 효력이 유지되는지 걱정돼요.
 // Q2. 대항력·우선변제권이 자동 유지되는 걸 확인하고, 새 집주인 정보를 파악해서 월세 계좌를 변경하는 행동.

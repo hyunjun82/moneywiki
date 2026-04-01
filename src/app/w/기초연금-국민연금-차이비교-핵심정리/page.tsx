@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 기초연금과 국민연금이 뭐가 다른지 헷갈리는 상황 (부모님 또는 본인 노후 준비)
 // Q2. 두 제도의 차이를 이해하고, 본인(또는 부모님)에게 해당하는 제도를 파악한다

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 간소화 자료를 제출 안 했거나, 표준세액공제가 뭔지 몰라서 13만원만 공제받을까 걱정하는 직장인
 // Q2. 표준세액공제(13만원)와 특별공제를 비교해서 유리한 쪽을 선택한다

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산 간소화 서비스에서 자동으로 안 잡히는 공제 항목이 있다는데, 놓치고 있는 게 있는지 확인하고 싶은 상황.
 // Q2. 중소기업 소득세 감면, 기부금 이월공제, 육아휴직 배우자 공제, 월세 세액공제를 확인하고 빠짐없이 신청할 수 있어야 해요.

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 공정선거지원단이 뭔지, 일반인도 할 수 있는지, 돈을 받는 건지 궁금한 상황
 // Q2. 공정선거지원단의 역할과 신청 조건을 파악하고 참여 여부를 결정한다

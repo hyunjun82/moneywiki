@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     자동차보험 갱신하면서 자상(자동차상해)과 자손(자기신체사고) 중 뭘 선택할지 보험료 차이가 궁금한 상황

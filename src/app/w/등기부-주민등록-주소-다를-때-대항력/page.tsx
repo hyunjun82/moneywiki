@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 등기부 주민등록 주소 다를 때 대항력 info
 // Q2: 등기부 주소와 주민등록 주소가 다르면 대항력 발생 안 됨, 정확한 주소 일치 필수

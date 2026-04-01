@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 연말정산 아르바이트 info
 // Q2: 3개월 이상 근무한 아르바이트는 상용직으로 분류되어 연말정산 대상이에요.

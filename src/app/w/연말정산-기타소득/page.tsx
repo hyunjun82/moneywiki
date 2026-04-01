@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 강연료·원고료 등 기타소득을 받았는데 연말정산에서 어떻게 처리하는지 모르는 직장인
 // Q2: 기타소득 분리과세 vs 종합과세 중 유리한 쪽을 선택해서 세금 부담 줄이기

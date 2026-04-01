@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 카드를 많이 썼는데 연말정산에서 얼마나 돌려받는지 궁금한 직장인. 공제율과 한도를 모르는 상황.
 // Q2. 본인 총급여 25% 기준을 확인하고, 체크카드·전통시장 활용 전략을 세우는 행동.

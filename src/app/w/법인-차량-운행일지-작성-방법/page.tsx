@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     법인 차량 비용을 경비 처리하려는데 운행일지를 어떻게 써야 세무조사 시 인정받는지 모르는 상황이에요.

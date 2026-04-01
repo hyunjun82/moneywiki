@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 실업급여 받으면서 알바를 했는데 신고를 안 해서 부정수급에 해당하는지, 걸리면 어떻게 되는지 불안한 상황이에요.
 // Q2. 부정수급 여부를 판단하고, 미신고 상태라면 고용센터(1350)에 자진신고하는 행동.

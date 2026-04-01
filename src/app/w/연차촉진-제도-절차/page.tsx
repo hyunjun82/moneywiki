@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 회사에서 연차 쓰라고 메일 보냈는데, 이게 법적 효력 있는 건지 모르겠고 미사용수당 못 받을까 봐 불안한 상황
 // Q2. 서면 촉진 절차가 유효한지 판단하고, 무효면 미사용수당을 청구하기

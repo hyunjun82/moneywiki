@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 기초연금 신청했다가 탈락했는데 결과가 억울한 어르신/보호자
 // Q2: 이의신청과 심사청구 절차를 파악하고, 기한 내에 접수까지 완료

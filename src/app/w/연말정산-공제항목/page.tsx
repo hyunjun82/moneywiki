@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산에서 어떤 공제를 받을 수 있는지 전체적으로 파악하려는 직장인
 // Q2. 소득공제와 세액공제 차이를 이해하고, 본인에게 해당하는 공제항목을 찾아서 챙긴다

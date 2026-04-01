@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 아내 출산 예정인데 남편도 휴가를 쓸 수 있는지, 며칠인지, 급여는 나오는지 궁금한 상황
 // Q2. 회사에 배우자 출산휴가 20일을 고지하고, 고용보험에서 급여를 신청한다

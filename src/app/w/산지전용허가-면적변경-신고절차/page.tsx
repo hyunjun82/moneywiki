@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 산지전용허가 면적 변경 신고 절차 info
 // Q2: 면적 변경 시 원칙은 변경허가지만, 경미한 사항은 신고로 가능

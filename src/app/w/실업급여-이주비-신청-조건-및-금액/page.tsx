@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 이주비가 있다는 건 알겠는데, 구체적으로 얼마 받는지·서류가 뭔지·언제까지 신청해야 하는지 실행 정보가 필요한 상황이에요.

@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 집이 좁아서 증축하거나 큰 수리를 하려는데, 어떤 서류를 준비해서 어디에 내야 하는지 모르는 상황
 // Q2. 필요한 서류 목록을 확인하고, 관할 구청에 허가 신청서를 제출한다

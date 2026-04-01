@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 해외 소득에 대해 외국에서 세금을 냈는데 국내에서도 세금을 내야 하는지 궁금한 사업자·직장인
 // Q2: 외국납부세액공제를 적용해서 이중과세 방지

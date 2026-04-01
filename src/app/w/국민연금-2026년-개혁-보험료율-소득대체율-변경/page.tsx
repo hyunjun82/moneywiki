@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 급여명세서 보니 국민연금 공제액이 올라서 "얼마나 더 내야 해? 나중에 더 받기는 해?" 확인하려는 직장인·자영업자
 // Q2. 내 월급 기준으로 추가 납부액 계산 + 나중에 더 받는 연금액 파악

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 외상 거래가 많은 중소기업 사장님이 거래처 부도로 대금을 못 받을까 걱정하는 상황
 // Q2. 외상매출채권 보험에 가입해서 거래처 부도 리스크를 줄인다

@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 현금영수증이 연말정산에서 얼마나 공제되는지, 신용카드와 차이가 궁금한 상황
 // Q2. 현금영수증 공제율을 확인하고, 총급여 25% 초과 사용 전략을 세운다

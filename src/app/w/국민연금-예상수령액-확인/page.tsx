@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 국민연금 매달 내는데 "나중에 얼마 받을 수 있는지" 확인하고 싶은 상황
 // Q2. NPS 홈페이지/앱에서 예상수령액 조회 후 부족하면 추납·임의계속가입 검토

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이혼 시 재산분할 협의가 안 돼서 법적 대응 방법을 알고 싶은 상황
 // Q2. 협의 불가 시 법원 조정·심판·소송 절차를 파악하고, 적절한 대응을 선택한다

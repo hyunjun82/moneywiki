@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 의심스러운 전화나 문자를 받았거나, 금융사기 뉴스를 보고 예방법을 알아두려는 상황이에요.

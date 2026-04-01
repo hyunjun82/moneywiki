@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 과세표준이 뭔지, 내 세율이 몇 %인지 알고 싶은 직장인
 // Q2. 총급여에서 과세표준까지 계산 흐름을 이해하고, 내 구간의 세율을 확인한다

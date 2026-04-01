@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 실업급여 수급 중인데 다음 실업인정일이 다가오는데 구직활동을 얼마나, 어떻게 해야 하는지 모르는 상황
 // Q2. 차수에 맞는 구직활동을 하고 증빙 자료를 제출해서 실업인정을 받는 행동

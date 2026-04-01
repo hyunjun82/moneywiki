@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 예금보다 이자를 더 받고 싶은데 주식은 무서워서 안전한 투자처를 찾는 상황
 // Q2. MMF가 뭔지 이해하고 증권사 앱에서 MMF에 가입한다

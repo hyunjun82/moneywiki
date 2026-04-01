@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 기초연금을 받고 있는데 주변보다 적게 받아서 왜 감액됐는지, 최소 얼마는 받을 수 있는지 알고 싶은 상황
 // Q2. 감액 사유를 파악하고, 최소 보장 금액이 얼마인지 확인해서 이의신청 필요 여부를 판단할 수 있어야 함

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. DC형·IRP에 돈이 쌓여 있는데 예금만 넣고 있어서 손해 보는 게 아닐까 걱정하는 상황
 // Q2. 나이와 위험 성향에 맞는 ETF·펀드 포트폴리오를 직접 설정할 수 있어야 함

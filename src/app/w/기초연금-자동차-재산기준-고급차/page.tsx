@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 차를 가지고 있는데 기초연금에서 탈락할까 걱정되고, "고급차 기준"이 바뀌었다는 뉴스를 본 상황
 // Q2. 자동차가 기초연금 재산에 어떻게 반영되는지, 고급차 기준 폐지 내용을 정확히 파악하는 것

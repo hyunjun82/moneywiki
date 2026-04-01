@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 집을 사거나 전세 계약한 뒤 복비를 얼마 내야 하는지 모르겠고, 중개사가 부른 금액이 적정한지 확인하고 싶은 상황
 // Q2. 내 거래금액에 맞는 상한 요율을 확인하고, 계산해서 적정 복비인지 판단한 뒤 협의한다

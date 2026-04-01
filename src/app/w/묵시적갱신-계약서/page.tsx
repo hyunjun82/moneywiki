@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 묵시적갱신이 됐는데 새 계약서를 써야 하는지, 확정일자도 다시 받아야 하는지 궁금한 상황.
 // Q2. 새 계약서가 필요 없다는 걸 확인하고, 기존 확정일자가 유효하다는 걸 알 수 있어야 해요.

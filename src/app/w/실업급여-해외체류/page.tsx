@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 실업급여 받는 중인데 해외여행이나 가족 방문 등으로 출국하고 싶어서, 나가면 수급이 끊기는지 걱정하는 상황이에요.

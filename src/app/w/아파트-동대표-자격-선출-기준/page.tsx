@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 아파트에 살면서 동대표(동별 대표자)에 출마하고 싶은데, 자격 요건이 뭔지 궁금한 입주민
 // Q2. 동대표 자격 요건(소유자·거주자 등)과 선출 절차를 확인해서 출마 여부를 판단한다

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이직 준비 중인데 전 직장에서 경력증명서를 안 줘서 막혀 있는 상황
 // Q2. 노동청에 신고해서 경력증명서를 실제로 받아내기

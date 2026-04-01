@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 퇴직 후 실업급여를 신청하려는데 이직 전 여러 회사 근무이력이 있어서 18개월/180일 기준이 헷갈리는 상황
 // Q2. 기준기간(18개월) 안에 피보험단위기간 180일을 충족했는지 직접 계산하고 확인할 수 있어야 함

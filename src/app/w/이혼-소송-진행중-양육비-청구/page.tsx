@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 이혼 소송이 진행 중인데 당장 아이 양육비가 필요한 상황이에요. 소송 끝날 때까지 기다려야 하는지 궁금해요.
 // Q2. 이혼 소송과 별도로 양육비 청구 소장을 가정법원에 제출하는 행동.

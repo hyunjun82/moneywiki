@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 전세 만기 다가오는데 2년 더 살고 싶어서 계약갱신청구권 행사 방법이 궁금한 임차인
 // Q2. 행사 기간 확인(만료 6~2개월 전) → 내용증명 발송 → 증액 한도 5% 확인

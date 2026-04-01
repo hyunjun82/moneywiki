@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 전세 2채 가진 집주인이 "2026년부터 세금 내야 해?" 변경사항 확인하는 상황
 // Q2. 내 주택 기준시가 확인 → 간주임대료 계산 → 사업자 등록 + 종합소득세 신고

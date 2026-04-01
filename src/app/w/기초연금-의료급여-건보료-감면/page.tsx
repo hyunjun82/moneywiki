@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 기초연금을 받고 있는데 병원비 혜택이 추가로 있는지 궁금한 어르신
 // Q2: 의료급여 연계 구조와 건강보험료 감면 여부를 파악하고, 해당되면 신청

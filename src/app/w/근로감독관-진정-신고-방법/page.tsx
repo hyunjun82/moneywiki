@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 월급이나 퇴직금을 못 받아서 근로감독관에게 신고하려는데 방법을 모르는 상황
 // Q2. 고용노동부 민원마당에서 온라인 진정을 접수하고, 처리 결과를 받는다

@@ -4,6 +4,8 @@
 // Q4. EligibilityChecker(소액임차인 해당 여부) + GreenBox(지역별 기준표) + Steps(배당요구 절차) + FAQ
 
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 export const dynamic = "force-static";
 

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 개인사업자인데 퇴직연금 가입이 되는지, 세금 혜택은 뭔지 궁금한 상황
 // Q2. IRP 가입 여부를 판단하고, 세액공제 한도를 확인해서 가입 신청한다

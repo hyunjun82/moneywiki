@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 신입사원이나 알바생이 근로계약서를 받았는데 어떤 항목을 확인해야 하는지 모르는 상황
 // Q2. 근로계약서에서 반드시 확인해야 할 4가지 필수 항목을 파악하고, 누락 시 회사에 요구하거나 신고한다

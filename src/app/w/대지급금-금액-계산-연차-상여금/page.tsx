@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 대지급금 금액 계산 방법 | 연차 상여금 통상임금 포함 여부 info
 // Q2: 대지급금에는 기본급뿐 아니라 연차수당, 상여금도 포함될 수 있어요.

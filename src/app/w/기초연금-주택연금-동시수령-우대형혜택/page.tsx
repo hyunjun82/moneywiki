@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 주택연금을 받고 있거나 가입 예정인데 기초연금도 같이 받을 수 있는지 궁금한 어르신
 // Q2: 동시 수령 가능 여부 확인 + 우대형 주택연금 혜택 파악 + 유리한 선택

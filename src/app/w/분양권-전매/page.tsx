@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 분양 당첨됐는데 사정이 생겨서 팔고 싶거나, 분양권을 사려는데 전매 제한이 언제 풀리는지 모르겠는 상황
 // Q2. 내 분양권이 전매 가능한 시점인지 확인하고, 전매 절차와 세금까지 파악해서 실행한다

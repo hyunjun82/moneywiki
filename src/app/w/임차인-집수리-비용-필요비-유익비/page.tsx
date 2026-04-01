@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 세 들어 사는 집에서 보일러·수도 등 수리비를 직접 냈는데 돌려받을 수 있는지 궁금한 세입자
 // Q2: 필요비/유익비 구분하고 집주인에게 비용 상환 청구

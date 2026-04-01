@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 편의점 아르바이트 중 다쳤는데 산재보험이 되는지 궁금한 상황
 // Q2. 내가 산재보험 적용 대상인지 확인하고, 산재 신청 절차를 밟는다

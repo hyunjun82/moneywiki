@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 대출 받으러 갔더니 원금균등/원리금균등 중 선택하라는데 뭔지 모르는 상황
 // Q2. 세 가지 상환 방식의 차이를 이해하고 내 상황에 맞는 방식을 선택하는 것

@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 국민연금을 내고 있는데 나중에 얼마나 받을 수 있는지, 구조가 어떻게 되는지 궁금한 상황
 // Q2. 내 국민연금 예상 수령액을 파악하고 수령 시기를 확인한다

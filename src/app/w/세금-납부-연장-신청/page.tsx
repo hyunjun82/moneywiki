@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 세금 고지서 받았는데 당장 낼 돈이 없는 사업자·직장인이 기한 연장 방법 확인하는 상황
 // Q2. 홈택스에서 납부 기한 연장 신청 → 최대 9개월 유예

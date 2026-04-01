@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 농지에 주택을 지으려는 농업인이 농지전용 허가 절차를 알고 싶은 상황
 // Q2. 농지전용 허가 요건과 절차를 파악해서 시·군·구청에 신청한다

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 실업급여 신청했는데 바로 안 나와서 7일 대기기간이 뭔지 궁금한 상황이에요.
 // Q2. 대기기간이 언제부터 시작하고 언제 끝나는지 계산해서 첫 입금일을 파악하는 행동.

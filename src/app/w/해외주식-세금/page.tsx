@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 미국 주식 등 해외주식을 팔아서 수익이 났는데, 세금을 얼마나 내야 하고 어떻게 신고해야 하는지 모르는 상황
 // Q2. 양도차익 계산 → 250만원 공제 → 세금 22% 계산 → 5월에 홈택스 신고

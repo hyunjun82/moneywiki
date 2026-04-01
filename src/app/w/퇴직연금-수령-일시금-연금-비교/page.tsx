@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 55세가 됐거나 곧 퇴직하는데, 퇴직연금을 일시금으로 받을지 연금으로 나눠 받을지 결정해야 해서 세금 차이를 비교하고 싶은 상황이에요.

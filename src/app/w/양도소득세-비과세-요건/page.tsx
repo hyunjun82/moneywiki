@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 집을 팔려는데 양도소득세를 안 내도 되는 조건이 뭔지, 내 상황이 비과세에 해당하는지 확인하려는 상황
 // Q2. 1세대 1주택 비과세 요건(보유·거주·가액)을 확인하고, 내 상황에 맞는 비과세 적용 여부를 판단한다

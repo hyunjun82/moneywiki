@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 본인이나 가족이 국가유공자·참전유공자인데, 보훈급여금을 받을 수 있는지 대상 여부를 확인하고 신청하려는 상황이에요.

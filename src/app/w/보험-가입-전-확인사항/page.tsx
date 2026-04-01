@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 보험에 가입하려는데 뭘 확인해야 하는지, 나중에 후회 안 하려면 어떤 점을 체크해야 하는지 궁금한 상황이에요.

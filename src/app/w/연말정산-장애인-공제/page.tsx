@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 연말정산 장애인 공제 info
 // Q2: 장애인 부양가족 1인당 200만원 추가 소득공제, 세금 약 48만원 돌려받아요.

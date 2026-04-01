@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 자발적 이직 또는 귀책 사유로 구직급여 지급 제한이 걸렸는데, 해제 방법을 알고 싶은 상황이에요.
 // Q2. 1개월 후 재취업 활동 증빙을 준비해서 고용센터에 해제 신청을 할 수 있어요.

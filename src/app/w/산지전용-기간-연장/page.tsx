@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 산지전용 허가를 받았는데 공사가 늦어져서 기간 연장이 필요한 사람
 // Q2: 기간 만료 전에 연장 허가 신청을 완료

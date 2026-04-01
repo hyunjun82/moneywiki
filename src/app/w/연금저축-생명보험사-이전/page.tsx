@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연금저축을 증권사/은행에서 생명보험사로 옮겨서 종신연금을 받고 싶은 상태
 // Q2. 이전 절차를 파악하고 새 생명보험사에서 이전 신청을 완료한다

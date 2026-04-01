@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 임신·출산·육아로 퇴직했거나 구직활동을 못 해서, 실업급여를 받을 수 있는지 걱정되는 상황.
 // Q2. 수급유예 또는 구직활동 면제를 신청해서 실업급여 권리를 보전하는 행동.

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 여유 자금을 안전하게 굴리고 싶은데 MMF가 뭔지, 예금과 뭐가 다른지 궁금한 상황.
 // Q2. MMF 특성(수익률·안전성·유동성)을 이해하고, 증권사 앱에서 MMF에 가입하거나 예금과 비교해서 선택하는 행동.

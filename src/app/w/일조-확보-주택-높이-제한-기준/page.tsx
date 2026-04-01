@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 근처에 아파트나 건물이 들어선다는 소식을 들은 주택 소유자 : 내 집 햇빛이 가려질까 걱정하는 상황
 // Q2. 건축법 기준을 파악해서 이격거리 위반 여부를 스스로 판단하고, 위반이면 구청에 이의 제기

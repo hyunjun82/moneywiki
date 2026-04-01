@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 출장·외근·배달 중 사고가 났는데 회사 밖이라 산재가 안 된다는 말을 듣고 확인하려는 근로자
 // Q2. 본인 사고가 산재 인정 범위에 해당하는지 확인하고 근로복지공단에 요양급여를 신청하는 행동

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 경매 낙찰받은 뒤 취소 가능한지 궁금하거나, 채무자로서 경매를 막고 싶은 상황
 // Q2. 취소 사유에 해당하는지 확인하고 법원에 취소 신청서를 제출하는 행동

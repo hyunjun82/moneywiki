@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 부부가 함께 기초연금을 받고 있는데, 왜 각각 20%씩 깎이는지 이유가 궁금하고 억울한 상황
 // Q2. 부부감액이 적용되는 정확한 기준과 금액을 파악하고, 축소·폐지 논의 상황을 이해하는 것

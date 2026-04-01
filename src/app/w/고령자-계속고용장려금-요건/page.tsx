@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 정년 퇴직 앞둔 직원을 계속 고용하고 싶은 중소기업 사업주가 지원금이 있는지 알아보는 상황
 // Q2. 지원 요건을 확인하고 고용센터에 계속고용장려금을 분기별로 신청한다

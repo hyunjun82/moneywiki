@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 연말정산 체크카드 info
 // Q2: 체크카드는 30% 공제율로 신용카드 15%보다 2배 유리해요.

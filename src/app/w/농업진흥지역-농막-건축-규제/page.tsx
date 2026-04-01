@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 귀농·주말농장 목적으로 농지를 샀는데, 농막을 지을 수 있는지 규제가 뭔지 모르는 상황
 // Q2. 농업진흥지역에서 농막 설치 가능 여부와 크기 제한을 확인하고, 농촌체류형 쉼터 신청까지 완료한다

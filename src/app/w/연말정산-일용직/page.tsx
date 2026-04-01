@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 연말정산 일용직 info
 // Q2: 일용직 근로자는 원천징수로 과세가 종결되어 별도 연말정산이 필요 없어요.

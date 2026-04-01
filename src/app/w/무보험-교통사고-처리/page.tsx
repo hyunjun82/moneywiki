@@ -1,4 +1,5 @@
 "use client";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 // @ts-nocheck
 import { useState } from "react";
 

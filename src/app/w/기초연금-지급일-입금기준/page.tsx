@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 기초연금을 받고 있거나 곧 받을 예정인데 매달 며칠에 입금되는지 궁금한 상황
 // Q2. 지급일(매월 25일)과 예외 상황(주말·공휴일)을 파악하고 입금을 확인한다

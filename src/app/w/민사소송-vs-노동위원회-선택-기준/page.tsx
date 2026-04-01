@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 임금체불이나 부당해고를 당했는데 노동위원회에 갈지 법원에 소송할지 뭘 선택해야 할지 모르는 상황이에요.

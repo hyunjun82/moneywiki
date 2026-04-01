@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 집을 팔려는데 취득가액을 어디까지 인정받을 수 있는지, 증빙 없으면 어떻게 되는지 궁금한 상황이에요.
 // Q2. 본인 취득가액에 포함할 수 있는 항목을 파악하고, 증빙 서류를 미리 준비할 수 있어요.

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 종합소득세·부가세 등 국세를 현금 없이 신용카드로 내고 싶은 납세자
 // Q2. 홈택스 or 카드로택스 접속 → 신용카드 선택 → 수수료 확인 후 납부

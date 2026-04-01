@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산이 복잡해서 세무사에게 맡기고 싶은데 비용이나 방법을 모르는 상황
 // Q2. 전문가 도움이 필요한지 판단하고, 필요하면 적절한 전문가를 찾아 의뢰

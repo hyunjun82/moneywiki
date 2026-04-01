@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 갑자기 계좌 출금이 막혀서 당황한 상황이에요.
 // Q2. 금융거래 제한 원인을 파악하고, 해제 절차를 밟는 행동.

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 건물을 새로 짓거나 관리하면서 급수관 검사를 언제 받아야 하는지 모르는 상황. 준공검사 때 필요한지 궁금.
 // Q2. 본인 건물의 급수관 검사 시기를 확인하고 시군구 수도과에 신청하는 행동.

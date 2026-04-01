@@ -4,6 +4,8 @@
 // Q4. 단계별 Steps + 등기 서류 DocTable + 체크리스트 + FAQ
 
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 export const dynamic = "force-static";
 

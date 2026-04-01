@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 실직했는데 국민연금 보험료를 못 낼 것 같고, 안 내면 나중에 연금이 줄어들까 불안한 상황이에요.
 // Q2. 고용센터에서 실업크레딧을 신청해서 보험료 75% 지원받으면서 가입기간을 유지하는 행동.

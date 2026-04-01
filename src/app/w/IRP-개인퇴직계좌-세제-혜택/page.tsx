@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     퇴직이 가까워지거나 퇴직 직후 IRP 계좌를 어떻게 활용해야 절세되는지 궁금한 직장인

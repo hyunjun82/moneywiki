@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 전세 계약이 끝났는데 집주인도 나도 아무 말 안 해서 묵시적 갱신이 됐는지, 됐다면 어떻게 되는지 궁금한 세입자
 // Q2. 묵시적 갱신 성립 여부를 확인하고, 해지 통보 방법과 시기를 알아서 행동한다

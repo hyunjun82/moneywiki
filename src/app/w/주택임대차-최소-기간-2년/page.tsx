@@ -4,6 +4,8 @@
 // Q4. GreenBox(핵심 결론) + EligibilityChecker(보장 여부) + Steps(갱신·종료 절차) + FAQ
 
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 export const dynamic = "force-static";
 

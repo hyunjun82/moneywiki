@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 맞벌이인데 배우자 공제를 받을 수 있는지, 소득 기준이 정확히 얼마인지 모르는 상황이에요.
 // Q2. 배우자 소득이 100만원 이하인지 확인하고, 맞벌이 절세 전략을 세우는 행동.

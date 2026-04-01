@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 기초연금 신청하러 가려는데 뭘 가져가야 하는지 모르는 상황
 // Q2. 필요한 서류를 빠짐없이 챙겨서 주민센터에 한 번에 접수한다

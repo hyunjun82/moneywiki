@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 계약직으로 2년 가까이 됐는데 정규직 전환되는지, 갱신 거절당하면 어쩌나 불안한 상황
 // Q2. 2년 초과 여부 확인 → 갱신기대권 판단 → 부당해고구제신청

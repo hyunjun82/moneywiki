@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 농촌 빈집을 철거하고 싶은데 비용이 부담되어 지원 제도를 찾는 상황
 // Q2. 우리 집이 지원 대상인지 확인하고 읍면동 사무소에 철거 지원 신청을 한다

@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 회사에서 퇴직금을 IRP로만 지급한다고 하는데 내 상황이 해당되는지 확인하려는 상황
 // Q2. 의무화 대상 여부 확인 → IRP 개설 → 수령 후 세금 처리 (일시금 vs 연금)

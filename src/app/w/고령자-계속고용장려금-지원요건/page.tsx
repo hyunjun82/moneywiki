@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 60세 정년 맞은 직원이 있는 사업주가 "계속고용장려금 얼마나 받고 어떻게 신청하지?" 검색
 // Q2. 지원 요건 확인 후 고용센터에 분기별 장려금 신청

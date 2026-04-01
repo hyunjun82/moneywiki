@@ -4,6 +4,8 @@
 // Q4. GreenBox(기준표) + BorderBox(최대 수령액) + EligibilityChecker(내 일수 확인) + FAQ
 
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 export const dynamic = "force-static";
 

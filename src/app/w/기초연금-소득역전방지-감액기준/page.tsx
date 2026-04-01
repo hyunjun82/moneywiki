@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 기초연금을 받았더니 안 받는 사람보다 소득이 적어지는 역전 현상이 생겨서 이해가 안 되는 상황
 // Q2. 소득역전 방지 감액이 왜 생기는지 이해하고, 내 소득인정액 기준으로 감액 여부를 판단하는 것

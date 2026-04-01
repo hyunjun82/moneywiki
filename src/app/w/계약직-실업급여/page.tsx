@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 /*
 Q1. 계약직으로 일하다 계약이 끝났는데, 실업급여를 받을 수 있는지·조건이 뭔지 모르는 상황이에요.

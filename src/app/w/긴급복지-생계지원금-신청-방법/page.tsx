@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 갑작스러운 실직·사고로 이번 달 생활비가 없어서 당장 어떻게 해야 할지 모르는 상황
 // Q2: 129에 전화하거나 주민센터 방문해서 긴급복지 생계지원금 신청 완료

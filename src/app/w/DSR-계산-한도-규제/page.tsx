@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 대출받으려는데 DSR 때문에 한도가 안 나온다고 해서, DSR이 뭔지·내 한도가 얼마인지 궁금
 // Q2. DSR 계산법을 이해하고 내 대출 가능 한도를 파악한다

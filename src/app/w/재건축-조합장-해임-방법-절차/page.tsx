@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 재건축 조합장이 독단적으로 운영해서 해임하고 싶은데, 절차를 모르는 조합원
 // Q2. 해임 총회를 발의하고, 적법한 절차를 거쳐 조합장을 해임한다

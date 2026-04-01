@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 2026년 최저임금이 얼마인지, 내 월급이 최저임금 위반인지 확인하려는 사람. 알바생이나 신입 직장인이 많아요.
 // Q2. 본인 시급·월급이 최저임금 이상인지 확인하고, 위반 시 신고하는 행동.

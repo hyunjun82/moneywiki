@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 작년에도 실업급여를 받았는데 이번엔 덜 받는다고 해서 감액 기준을 찾는 상황
 // Q2. 내 수급 횟수 확인 후 감액률 파악 → 실제 수령액 계산

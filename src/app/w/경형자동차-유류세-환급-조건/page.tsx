@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 경차를 타는데 유류세 환급 제도가 있다고 들었고 내가 받을 수 있는지 확인하려는 상황
 // Q2. 환급 자격을 확인하고 경차사랑카드를 신청해서 연 30만원 유류세를 돌려받는다

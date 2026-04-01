@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 어린이집 보육료 카드를 발급받으려는 부모. BC카드로 아이행복카드를 만들 수 있는지, 어디서 발급받는지 궁금한 상황.
 // Q2. 12개 은행 중 하나를 골라 BC 아이행복카드를 발급받고, 복지로에 등록해서 보육료 결제를 시작하는 행동.

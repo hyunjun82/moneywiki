@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 회사에서 갑자기 무급휴가를 통보받고 월급이 끊길 위기에 처한 상황이에요.
 // Q2. 무급휴가를 거부하고 휴업수당(평균임금 70%)을 청구하거나 노동청에 진정을 제기하는 행동.

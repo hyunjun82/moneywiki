@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. ISA 계좌에 넣어둔 돈이 급하게 필요해서 해지하면 어떤 손해가 있는지 확인하려는 상황
 // Q2. 중도해지 시 세금 패널티를 파악하고, 원금만 인출할지 전액 해지할지 판단한다

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 선거사무보조원이 뭘 하는 직종인지, 급여가 얼마인지, 언제 모집하는지 궁금한 상황
 // Q2. 선거사무보조원의 업무와 급여를 파악하고, 모집 시기에 맞춰 신청한다

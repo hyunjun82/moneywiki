@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 다단계 판매원이나 보험설계사가 퇴직 후 실업급여를 받을 수 있는지 궁금한 상황
 // Q2: 고용보험 가입 여부를 확인하고 실업급여 수급 가능성 판단

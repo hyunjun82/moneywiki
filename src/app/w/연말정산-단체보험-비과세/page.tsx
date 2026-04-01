@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 회사에서 보험 들어줬는데 급여에 잡혀서 세금을 내야 하나 궁금한 직장인이에요.
 // Q2. 본인의 단체보험이 비과세 대상인지 확인하고, 연말정산에서 정확히 처리하는 행동.

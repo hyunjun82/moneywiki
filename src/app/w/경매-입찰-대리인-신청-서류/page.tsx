@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 경매 입찰일에 본인이 직접 가지 못해서 대리인을 세워야 하는 상황
 // Q2. 위임장·인감증명서 등 서류를 준비해서 대리인이 법원에서 입찰을 완료한다

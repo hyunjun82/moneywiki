@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 출산하거나 질병에 걸려서 지금 당장 구직활동을 할 수 없는데 실업급여를 나중에 받을 수 있는지 궁금한 상황
 // Q2. 수급유예 신청 가능 여부를 파악하고 고용24에서 실제로 신청하는 것

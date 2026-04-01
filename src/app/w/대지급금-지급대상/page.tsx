@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 회사가 망하거나 임금을 안 줘서, 본인이 대지급금 대상인지 궁금한 상황이에요. 파트타이머, 임원, 외국인 등 자기 고용형태가 해당되는지 모르겠는 거예요.

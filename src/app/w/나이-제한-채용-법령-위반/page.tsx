@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 채용 공고에 나이 제한이 있어서 "이거 불법 아니야?" 의심하는 구직자
 // Q2. 위반 사실 확인 후 고용노동부 또는 인권위에 신고

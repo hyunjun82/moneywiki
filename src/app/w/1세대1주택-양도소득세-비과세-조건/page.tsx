@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 집 한 채 보유 중인 사람이 집을 팔기 전에 비과세 조건을 충족하는지 확인하려는 상황
 // Q2. 내 주택이 비과세 요건(2년 보유·거주, 12억 이하)에 해당하는지 판단하고, 해당 안 되면 절세 전략을 세운다

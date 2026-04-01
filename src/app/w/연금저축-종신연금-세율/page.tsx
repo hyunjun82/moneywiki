@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 연금저축 종신연금 세율: 3.3% vs 확정기간형 16.5% 차이 info
 // Q2: 종신연금은 평생 3.3% 저율과세 적용돼요

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 임신 중인 직장인이 산부인과 비용을 연말정산에서 공제받을 수 있는지 궁금한 상황
 // Q2. 임신·출산 관련 의료비 공제 항목을 파악하고, 연말정산 간소화에서 빠짐없이 반영한다

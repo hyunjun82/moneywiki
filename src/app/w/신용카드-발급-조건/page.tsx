@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 /*
 Q1. 신용카드를 처음 만들려는데 내 신용점수·소득으로 발급 가능한지 궁금한 상황

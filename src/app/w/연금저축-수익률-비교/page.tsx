@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     연금저축에 가입했거나 가입을 고민 중인데, 어느 금융사가 수익률이 높은지, 펀드형과 보험형 중 뭐가 나은지 비교하려는 상황이에요.

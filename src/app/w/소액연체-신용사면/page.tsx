@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연체 때문에 대출·카드 발급이 안 돼서 금융 생활이 막혀 있는데, 다 갚았는데도 이력이 남아서 답답한 상황이에요.
 // Q2. 신용사면 대상인지 확인하고, 올크레딧·나이스지키미에서 신용점수를 조회한 뒤 정상 금융 거래를 재개하는 행동.

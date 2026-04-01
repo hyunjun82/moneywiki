@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 부동산 등기·법인 설립·자동차 등록 시 등록면허세가 얼마인지 궁금한 상황이에요.
 // Q2. 내 상황에 맞는 세율을 확인하고 위택스에서 납부하는 행동.

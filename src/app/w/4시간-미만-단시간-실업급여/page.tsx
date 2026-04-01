@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 하루 4시간, 주 15시간 미만으로 일하는 단시간 근로자가 퇴직 후 실업급여를 받을 수 있는지 궁금한 상황
 // Q2. 주 15시간 기준을 확인하고, 본인이 고용보험 가입 대상인지 판단해서 실업급여 신청 여부를 결정한다

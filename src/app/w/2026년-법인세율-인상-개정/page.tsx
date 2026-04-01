@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 법인 대표·경리 담당자가 세율 인상 소식 듣고 우리 회사 세금 얼마 오르는지 확인하려는 상황
 // Q2. 세율표 보고 과세표준 구간 세금 변화를 직접 계산한다

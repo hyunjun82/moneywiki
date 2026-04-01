@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 실업급여 신청하려는데 온라인 교육을 어디서 어떻게 듣는지 모르는 상황
 // Q2: 고용24에서 온라인 교육 수강 완료 → 14일 이내 고용센터 방문해서 수급자격 신청

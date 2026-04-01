@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 대출 상담 중 DTI는 되는데 DSR이 안 된다는 말을 듣고 둘의 차이를 모르는 상황
 // Q2. DSR과 DTI의 차이를 이해하고 내 대출 한도에 어떤 게 적용되는지 판단하는 것

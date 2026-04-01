@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 회사에서 학자금 상환금이 빠지는데 ICL 원천공제가 뭔지, 신고는 어떻게 하는지 궁금
 // Q2. ICL 원천공제 의무 이해 → 신고 방법 확인 → 납부 기한 준수

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 직원에게 급여를 처음 지급하는 소규모 사업자 또는 경리담당자가 원천세를 어떻게 신고하는지 모르는 상황
 // Q2. 매달 10일까지 홈택스에서 원천세 신고·납부를 완료한다

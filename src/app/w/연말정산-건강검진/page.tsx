@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 종합검진 받았는데 연말정산 의료비 공제에 포함되는지 궁금한 직장인
 // Q2. 건강검진 비용 중 공제 가능한 항목을 파악하고, 연말정산에 반영하는 방법을 확인한다

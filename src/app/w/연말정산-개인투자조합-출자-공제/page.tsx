@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 벤처기업에 투자했거나 투자 계획 중인 직장인이 연말정산 소득공제 얼마 받는지 확인하는 상황
 // Q2. 투자 금액·구간별 공제율 확인 → 출자확인서 발급 → 연말정산 직접 신청

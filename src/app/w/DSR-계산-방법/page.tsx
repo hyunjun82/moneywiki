@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 대출 심사에서 DSR 때문에 안 된다고 들었는데 직접 계산해보고 싶은 상황
 // Q2. DSR 공식을 이해하고 내 연봉 기준 최대 대출 가능액을 직접 계산하는 것

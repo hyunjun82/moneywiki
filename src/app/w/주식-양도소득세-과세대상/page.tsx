@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 주식 수익이 났는데 세금을 내야 하는지 모르는 일반 투자자
 // Q2. 내가 양도소득세 과세 대상인지 확인하고, 과세라면 신고 절차를 밟는 것

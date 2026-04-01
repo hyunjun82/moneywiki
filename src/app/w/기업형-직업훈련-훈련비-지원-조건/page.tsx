@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 기업형 직업훈련·훈련비 지원·조건 info
 // Q2: 고용보험 가입한 기업이면 직원 교육을 위한 훈련비를 신청할 수 있어요

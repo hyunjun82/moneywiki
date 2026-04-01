@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 프리랜서·자영업자가 5월 종합소득세 신고를 앞두고, 본인이 단순경비율인지 기준경비율인지 판단하려는 상황이에요.

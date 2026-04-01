@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. K-패스 카드를 발급받으려는데 어떤 카드가 나한테 유리한지 비교하려는 상황
 // Q2. 신용/체크/선불 유형 + 연회비·실적 조건 필터링해서 내게 맞는 카드 1개 골라 바로 신청

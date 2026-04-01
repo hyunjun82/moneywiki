@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 기본 실업급여 기간이 끝나가는데 아직 취업 못 한 사람이 추가 급여가 있는지 찾는 상황
 // Q2. 자신에게 해당하는 연장급여 종류를 파악하고 고용센터 또는 고용24에서 신청한다

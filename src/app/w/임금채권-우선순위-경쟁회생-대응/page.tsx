@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 회사가 경영난·회생 절차에 들어갔는데, 밀린 월급을 받을 수 있을지 불안한 상황
 // Q2. 임금채권 우선순위를 파악하고, 고용노동청에 임금채권보장 신청을 한다

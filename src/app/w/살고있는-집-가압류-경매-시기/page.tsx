@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 살고 있는 집에 가압류가 걸렸는데 언제 경매로 넘어가는지, 대응 방법이 있는지 불안한 채무자
 // Q2. 가압류와 경매 사이의 기간을 파악하고, 합의·변제·개인회생 등 대응 방법을 실행한다

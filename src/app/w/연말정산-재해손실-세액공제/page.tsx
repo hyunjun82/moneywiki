@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 화재·태풍·홍수 등으로 재산 피해를 입었는데 연말정산에서 세금 혜택이 있는지 알고 싶은 상황
 // Q2. 재해손실 세액공제 요건을 확인하고 필요 서류를 준비해서 연말정산 또는 종합소득세 신고 시 신청한다

@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 계약갱신청구권 1회 2년 재계약 거절 사유 info
 // Q2: 임차인은 1회에 한해 2년 계약 갱신을 요구할 수 있음

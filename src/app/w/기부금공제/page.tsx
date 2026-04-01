@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 기부금을 냈는데 연말정산에서 얼마나 돌려받을 수 있는지 궁금한 상황이에요.
 // Q2. 기부금 종류별 공제율과 한도를 확인해서 환급 금액을 예측하는 행동.

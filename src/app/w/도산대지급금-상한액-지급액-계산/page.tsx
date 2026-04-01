@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 회사가 파산해서 밀린 임금·퇴직금을 도산대지급금으로 얼마나 받을 수 있는지 확인하려는 근로자
 // Q2. 연령별 상한액을 확인하고 근로복지공단에 도산대지급금을 신청한다

@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 퇴직 후 실업급여를 받고 싶은데 어디서 어떻게 신청하는지 모르는 상황이에요.
 // Q2. 워크넷 구직등록부터 고용센터 방문까지 전체 절차를 따라해서 실업급여를 수령하는 행동.

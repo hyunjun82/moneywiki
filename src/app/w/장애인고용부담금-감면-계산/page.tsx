@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 장애인 직접 고용이 어려운 사업주가 부담금을 줄일 수 있는 방법(연계고용)이 있는지 알고 싶은 상황.
 // Q2. 부담금 계산 공식을 이해하고 연계고용으로 최대 50% 감면 신청까지 할 수 있어야 해요.

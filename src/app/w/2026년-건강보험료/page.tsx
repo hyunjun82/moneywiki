@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 2026년 급여명세서에서 건강보험료가 올라간 걸 보고 얼마나 올랐는지, 내 보험료가 정확히 얼마인지 확인하고 싶은 직장인이에요.

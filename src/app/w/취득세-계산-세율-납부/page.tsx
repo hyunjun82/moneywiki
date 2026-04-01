@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 아파트 계약을 마친 매수자가 잔금 치르기 전 취득세가 얼마인지, 언제까지 내야 하는지 확인하려는 상황
 // Q2. 내 취득세를 계산하고 잔금일로부터 60일 이내에 위택스에서 신고·납부를 완료한다

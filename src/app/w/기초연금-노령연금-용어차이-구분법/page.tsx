@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 기초연금과 노령연금이 같은 건지 다른 건지 헷갈리는 상황
 // Q2. 두 용어의 차이를 정확히 이해하고 본인에게 해당하는 제도를 구분한다

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 부모님이 아파서 회사를 쉬어야 하는데 사직하지 않고 쉴 수 있는 방법을 찾는 직장인이에요.
 // Q2. 가족돌봄휴직 신청 자격을 확인하고 회사에 신청서를 제출하는 행동.

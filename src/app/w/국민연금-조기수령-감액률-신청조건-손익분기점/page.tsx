@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 은퇴했거나 곧 은퇴할 예정인데 생활비가 부족해서 국민연금을 조기에 받고 싶은데 감액이 얼마인지, 손해인지 계산해보고 싶은 상황이에요.

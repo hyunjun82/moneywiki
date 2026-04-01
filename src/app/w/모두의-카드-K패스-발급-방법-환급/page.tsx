@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. K패스 쓰고 있는데 모두의 카드는 뭔지, 혜택이 더 좋은지, 별도 발급이 필요한지 궁금한 상황이에요.
 // Q2. 모두의 카드 환급 기준을 이해하고, 본인 해당 여부를 확인해서 K패스 앱에서 등록/확인하는 행동.

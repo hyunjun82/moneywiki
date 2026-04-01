@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 수도권 내 집 마련을 고민하는 무주택자가 정부 공급대책 소식 듣고 내 청약 기회가 되는지 알고 싶은 상황
 // Q2. 129 대책 주요 지역·물량을 파악하고 청약 준비를 시작한다

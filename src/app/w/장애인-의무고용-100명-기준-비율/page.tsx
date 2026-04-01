@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 직원이 100명 됐는데 장애인 의무고용 대상이라는 연락을 받아서, 몇 명 고용해야 하고 안 하면 부담금이 얼마인지 알고 싶은 상황이에요.

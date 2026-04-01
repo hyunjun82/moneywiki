@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 65세가 됐거나 곧 되는 본인·가족이 "기초연금 받을 수 있어? 소득 기준이 얼마야?" 확인하려는 상황
 // Q2. 2026년 소득인정액 기준과 내 상황을 대조 후 주민센터·복지로에서 신청

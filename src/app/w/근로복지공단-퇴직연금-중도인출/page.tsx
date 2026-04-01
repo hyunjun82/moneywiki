@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 근로복지공단 퇴직연금(푸른씨앗) 가입자가 급하게 돈이 필요해서 중도인출 가능한지 확인하려는 상황
 // Q2. 법정 사유에 해당하는지 확인하고, 푸른씨앗 홈페이지에서 중도인출을 신청한다

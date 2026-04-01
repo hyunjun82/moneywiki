@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 /*
 Q1. 종합소득세 신고하려는데 기준경비율/단순경비율이 뭔지, 내가 어디에 해당하는지 모르는 상황

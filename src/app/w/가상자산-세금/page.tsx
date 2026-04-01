@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     비트코인·이더리움을 거래 중이거나 수익이 난 상태에서 2027년부터 세금을 내야 한다는 소식을 듣고 구체적인 세율과 신고 방법을 알고 싶은 투자자

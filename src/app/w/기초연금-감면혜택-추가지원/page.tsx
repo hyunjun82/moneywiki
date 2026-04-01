@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 기초연금을 받고 있는데 다른 혜택도 받을 수 있는지 궁금한 어르신/보호자
 // Q2: 기초연금 수급자가 추가로 받을 수 있는 감면 혜택 목록을 파악하고, 신청까지 완료

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 해외에서 근무 중인데 비과세 혜택이 있는지, 한도가 얼마인지 알고 싶은 상태
 // Q2. 내 근무 유형에 맞는 비과세 한도를 확인하고, 연말정산에서 비과세 신청을 한다

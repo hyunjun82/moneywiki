@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 건축법 위반 사실을 알게 됐거나 위반 건축물을 매수·매도하려는 상황
 // Q2. 위반 유형별 제재(이행강제금, 형사처벌, 행정조치) 수준을 파악하고 대응 방향을 결정한다

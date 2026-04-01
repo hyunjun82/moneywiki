@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 부가세 신고 후 환급이 나왔다는 걸 알게 된 사업자가 언제 받는지, 어떻게 신청하는지 모르는 상황
 // Q2. 환급 일정을 확인하고 조기환급 해당 여부를 판단해서 가능하면 빨리 환급받는다

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이혼을 준비하는데 배우자가 재산을 빼돌릴까 봐 걱정되는 상황. 예금 인출이나 부동산 처분을 막고 싶어요.
 // Q2. 가압류·처분금지가처분·재산조회 같은 법적 조치를 파악하고 법원에 신청할 수 있어야 해요.

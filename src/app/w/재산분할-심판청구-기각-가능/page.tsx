@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이혼 후 재산분할 심판청구를 했는데 기각될까 걱정되거나, 이미 기각당한 상황
 // Q2. 기각 사유 3가지를 파악하고, 기각 방지 또는 불복(즉시항고) 행동

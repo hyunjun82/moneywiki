@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 부당해고를 당했는데 변호사·노무사 비용이 부담돼서 포기하려는 상황이에요.
 // Q2. 무료 법률지원 기관(고용노동부·법률구조공단·근로복지공단)에 연락해서 상담을 시작하는 행동.

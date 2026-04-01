@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 월급에서 세금이 얼마나 빠지는지 궁금한 직장인 (300만원~700만원 구간)
 // Q2. 내 월급의 실수령액을 직접 계산하고, 4대보험 공제 내역을 이해한다

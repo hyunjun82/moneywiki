@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 대중교통을 많이 타는데 연말정산에서 얼마나 공제받는지, 80% 공제율이 맞는지 확인하고 싶은 상황이에요.
 // Q2. 본인 대중교통 사용액의 공제율(80%)과 한도를 확인하고, 교통카드 사용을 늘려 절세하는 행동.

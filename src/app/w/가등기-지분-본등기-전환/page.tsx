@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 /*
 Q1. 가등기된 지분만 본등기로 전환할 수 있는지 법적으로 궁금한 상황

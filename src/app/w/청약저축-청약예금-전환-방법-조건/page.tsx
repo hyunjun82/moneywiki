@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 오래된 청약저축·청약예금 보유자가 민영주택도 청약하고 싶어서 전환 방법을 찾는 상황
 // Q2: 은행 앱 또는 영업점에서 주택청약종합저축으로 전환 완료

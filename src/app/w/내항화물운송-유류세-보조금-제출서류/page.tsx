@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 내항화물운송 유류세 보조금 제출 서류 info
 // Q2: 내항화물운송사업자는 유류세 보조금 신청 시 운항일지, 유류 구매 영수증, 사업자등록증 등을 제출해야 해요

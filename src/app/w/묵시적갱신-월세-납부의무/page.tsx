@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 계약 끝났는데 새 계약 안 쓰고 살고 있어요. 월세를 계속 내야 하는지, 해지 통보하면 그때부터 안 내도 되는지 궁금한 상황이에요.

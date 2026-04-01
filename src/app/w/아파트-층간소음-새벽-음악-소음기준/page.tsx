@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 위층에서 새벽마다 음악을 틀어서 잠을 못 자고, 어디에 신고해야 하는지 모르는 상황
 // Q2. 소음 기준(야간 38dB)을 확인하고, 층간소음이웃사이센터에 상담·신고한다

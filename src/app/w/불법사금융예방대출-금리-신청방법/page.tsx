@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 급전이 필요해서 사금융을 알아보고 있는데, 정부지원 저금리 대출이 있다고 들은 상황이에요.
 // Q2. 불법사금융예방대출 신청 조건을 확인하고, 서민금융 잇다 앱이나 센터에서 대출을 신청하는 행동.

@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 자진퇴사했거나 퇴사 예정인데 구직급여를 받을 수 있는지 모르는 상황
 // Q2: 정당 사유를 증빙해서 고용센터에서 구직급여 수급자격 인정

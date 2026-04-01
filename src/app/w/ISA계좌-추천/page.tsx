@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. ISA 계좌를 만들려는데 증권사·은행 중 어디가 좋은지 비교하고 싶은 투자 초보~중급자예요.
 // Q2. 본인 투자 스타일에 맞는 ISA 유형(중개형/신탁형)과 증권사를 선택하는 행동.

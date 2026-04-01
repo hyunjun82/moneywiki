@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. DC형 퇴직연금 가진 직장인이 "안전자산 30%를 뭘로 채워야 해?" 상품 고르는 상황
 // Q2. 국채 ETF·채권혼합형·월배당 ETF 중 선택해서 포트폴리오 구성 → 증권사 앱에서 매수

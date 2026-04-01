@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 곧 65세가 되는데 기초연금을 언제 신청해야 하는지, 늦게 내면 손해인지 궁금한 상황
 // Q2. 정확한 신청 시기를 파악하고, 생일 전 미리 신청해서 연금을 한 달이라도 빨리 받을 수 있어야 함

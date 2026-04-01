@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 건물을 매입했거나 소유 중인데 안전관리 의무가 뭔지 모르겠는 상황
 // Q2. 전기·승강기·가스 등 법정 안전관리 의무를 파악하고 기한 내에 이행한다

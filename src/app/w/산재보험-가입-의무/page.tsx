@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 사업을 시작하거나 직원을 채용했는데 산재보험 가입이 의무인지, 안 하면 어떻게 되는지 몰라서 불안한 상황이에요.
 // Q2. 산재보험 가입 대상인지 확인하고, 14일 이내 4대보험 정보연계센터에서 온라인 신고를 완료하는 행동.

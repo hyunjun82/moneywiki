@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 묵시적갱신된 상태에서 이사를 가야 하는데, 바로 나갈 수 있는지, 통보 절차가 어떤지 모르는 상황이에요.

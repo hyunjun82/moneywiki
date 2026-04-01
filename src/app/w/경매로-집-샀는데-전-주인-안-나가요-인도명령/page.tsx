@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 경매로 집을 낙찰받아서 대금도 다 냈는데 전 주인이 나가지 않아서 법적으로 어떻게 해야 하는지 모르는 상황
 // Q2. 인도명령(6개월 이내)이나 명도소송을 신청해서 집을 인도받는다

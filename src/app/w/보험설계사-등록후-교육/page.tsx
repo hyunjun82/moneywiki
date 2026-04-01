@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 보험설계사로 등록했는데 의무교육을 매년 받아야 하는지, 언제까지 얼마나 들어야 하는지 궁금한 상황.
 // Q2. 교육 주기(4년)와 이수 시간(16시간)을 확인하고 기한 내에 교육을 신청할 수 있어야 해요.

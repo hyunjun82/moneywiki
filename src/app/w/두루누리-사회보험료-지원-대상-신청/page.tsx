@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 사업주가 직원 사회보험료 부담 줄이고 싶어 두루누리 지원제도 찾는 상황
 // Q2: 우리 사업장이 두루누리 지원 대상인지 자격 조건을 정확히 확인

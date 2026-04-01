@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 의료비를 많이 썼는데 공제 한도가 얼마인지, 본인과 부양가족 한도가 다른지 궁금한 상황
 // Q2. 내 의료비 공제 한도를 정확히 파악하고 한도 없는 대상인지 확인한다

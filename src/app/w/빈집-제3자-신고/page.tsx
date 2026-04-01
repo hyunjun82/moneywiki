@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 근처에 위험한 빈집이 있는데 집주인이 아니라서 신고할 수 있는지 모르는 상황이에요.
 // Q2. 특정빈집 조건 확인하고 정부24 또는 시·군·구청에 신고하는 행동.

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 자녀가 여러 명인데 세액공제 얼마 받는지, 출산했으면 추가 공제도 되는지 궁금
 // Q2. 자녀 수별 공제 금액 확인 → 출산·입양 추가 공제 확인 → 연말정산 신청

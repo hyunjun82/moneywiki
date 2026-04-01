@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 월세 살고 있는 직장인인데 연말정산에서 세금 혜택이 있는지 궁금한 상황이에요.
 // Q2. 본인이 월세 세액공제 대상인지 확인하고, 서류를 준비해서 신청하는 행동.

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 배우자와 별거 중인데 양육비를 전혀 안 줘서 법적으로 받을 수 있는 방법을 찾는 양육자
 // Q2. 가정법원에 부양료 심판 청구서를 제출해서 법적으로 양육비를 확보하는 행동

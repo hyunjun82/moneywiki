@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. "소득 하위 70%"라고 하니까 내가 해당되는지, 정확히 어떤 기준인지 모르겠는 상황
 // Q2. 소득 하위 70%가 소득인정액 기준이라는 걸 이해하고, 내 소득인정액을 대략 계산해볼 수 있어야 함

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 퇴직 후 "실업급여 180일"이라는 말이 헷갈려서 실제로 얼마나 받는지 확인하는 상황
 // Q2. 내 나이+가입기간으로 실제 수급일수 확인 → 수급 기간 역산 → 12개월 이내 신청

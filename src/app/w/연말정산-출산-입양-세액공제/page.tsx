@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 올해 출산(또는 입양)했는데 세액공제가 얼마인지, 자녀 세액공제와 별도인지 확인하려는 직장인
 // Q2. 출산·입양 세액공제 금액(30/50/70만원)을 확인하고 자녀 세액공제와 함께 정확히 반영한다

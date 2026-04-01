@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     중도퇴직(또는 퇴직 예정)인데 남은 연차를 수당으로 얼마 받을 수 있는지 궁금한 상황

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 직장어린이집 이용하면서 세금 혜택이 있는지, 보육수당과 별개인지 궁금한 상황
 // Q2. 직장어린이집 비과세와 보육수당 비과세가 별개임을 확인하고 두 혜택을 모두 챙긴다

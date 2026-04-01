@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 맞벌이 부부나 형제가 같은 부양가족을 중복으로 공제하면 어떤 불이익이 있는지 걱정되는 상황
 // Q2. 중복공제가 되는 항목과 안 되는 항목을 구분하고, 가산세 없이 정확히 공제받는다

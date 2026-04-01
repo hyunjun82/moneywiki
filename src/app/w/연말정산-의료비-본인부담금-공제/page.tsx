@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 연말정산 의료비 본인부담금 공제 info
 // Q2: 건강보험 적용 후 본인이 부담한 금액과 비급여 진료비가 공제 대상이에요.

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 국민연금을 한 번도 안 냈는데 기초연금을 받을 수 있는지 걱정하는 65세 전후 어르신
 // Q2: 미가입자도 기초연금 대상인지 확인하고, 조건이 되면 신청까지 완료

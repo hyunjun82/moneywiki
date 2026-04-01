@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 외국인 근로자로 한국에서 일하는데 연말정산을 해야 하는지, 어떻게 하는지 모르는 상황
 // Q2. 내가 거주자/비거주자인지 판단하고 단일세율 vs 누진세율 중 유리한 쪽을 선택한다

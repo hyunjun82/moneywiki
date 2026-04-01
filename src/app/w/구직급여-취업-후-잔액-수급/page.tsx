@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 구직급여 받다가 취업했는데 "남은 금액 못 받나?" 궁금한 상황
 // Q2. 조기재취업수당 조건 확인 후 12개월 근무 뒤 고용센터에 신청

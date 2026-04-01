@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 50~60대 경기도민이 체력 부담 적은 단시간 일자리를 찾으면서 지원금도 받고 싶은 상황
 // Q2. 라이트잡 신청 대상인지 확인하고, 경기도일자리재단에서 신청을 완료한다

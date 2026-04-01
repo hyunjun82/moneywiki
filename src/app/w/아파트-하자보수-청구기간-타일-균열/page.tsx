@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 아파트 하자보수 청구기간 타일 벽 균열 기준 info
 // Q2: 타일공사의 하자담보책임기간은 2년이며, 입주자에게 인도한 날부터 기산해요

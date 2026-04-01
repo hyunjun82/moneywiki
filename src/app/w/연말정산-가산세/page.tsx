@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 연말정산 서류를 늦게 냈거나 안 냈는데 가산세가 얼마나 나오는지 걱정하는 상황이에요 (주로 회사 담당자).
 // Q2. 가산세 종류별 세율을 파악하고, 기한을 놓쳤다면 빨리 지연제출해서 가산세를 줄이는 행동.

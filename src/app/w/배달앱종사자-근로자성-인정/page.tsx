@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 배달앱으로 일하는데 근로자인지 개인사업자인지 모르겠고, 보호받을 수 있는지 궁금한 상황이에요.
 // Q2. 자신의 근무 형태를 기준으로 근로자성 인정 가능성을 판단하고, 필요 시 노무사 상담을 받는 행동.

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 하루 4시간 미만이나 단시간 근무를 하는데, 퇴사하면 실업급여를 받을 수 있는지 궁금한 상황이에요. 주 15시간 기준을 모르거나, 자기가 해당되는지 확인하고 싶은 거예요.

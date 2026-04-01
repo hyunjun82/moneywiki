@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 연말정산 주택자금 info
 // Q2: 장기주택저당차입금 이자는 최대 1,800만원까지 소득공제받아요.

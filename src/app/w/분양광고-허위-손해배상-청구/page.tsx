@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 분양광고를 믿고 계약했는데 광고 내용이 거짓이어서 손해배상을 받고 싶은 상황
 // Q2. 허위광고 증거를 모아서 내용증명 발송 → 협의 안 되면 소송으로 손해배상을 받아낸다

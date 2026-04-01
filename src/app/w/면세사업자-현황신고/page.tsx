@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 면세사업자(병원, 학원, 주택임대 등)인데 현황신고를 해야 하는지, 어떻게 하는지 모르는 상황
 // Q2. 홈택스에서 2월 10일까지 사업장 현황신고를 완료한다

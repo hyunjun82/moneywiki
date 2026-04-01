@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 상가 시세가 떨어졌는데 임대차계약서에 감액청구 금지 특약이 있어 걱정하는 상가 임차인
 // Q2. 감액청구 금지 특약의 법적 효력을 확인하고, 보증금 감액을 청구할 수 있는지 판단한다

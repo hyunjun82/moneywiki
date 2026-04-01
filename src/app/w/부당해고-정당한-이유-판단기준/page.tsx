@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 회사에서 해고 통보를 받았는데, 정당한 이유인지 아닌지 판단이 안 되는 상황
 // Q2. 내 해고가 부당한지 판단하고, 부당하면 노동위원회에 구제신청을 한다

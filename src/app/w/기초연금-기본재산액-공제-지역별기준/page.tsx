@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 집이 있는데 기초연금을 받을 수 있는지 걱정되는 상황, 재산 때문에 탈락할까 봐 불안함
 // Q2. 기본재산액 공제 기준을 확인하고, 내 부동산이 소득인정액에 얼마나 반영되는지 계산하는 것

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 퇴사했거나 퇴사 예정인 사람이 자기가 실업급여 대상인지 확인하려는 상황
 // Q2. 수급자격 3가지 조건을 확인하고 고용24에서 수급자격 인정신청을 한다

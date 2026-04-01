@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 외국인근로자(E-9)인데 회사에서 임금체불이나 부당대우를 당해서 다른 회사로 옮기고 싶은 상황이에요.

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 육아휴직 급여가 얼마인지, 사후지급금이 폐지됐는지, 어떻게 신청하는지 궁금한 상황이에요.
 // Q2. 급여 금액을 확인하고 고용24에서 육아휴직 급여를 신청하는 행동.

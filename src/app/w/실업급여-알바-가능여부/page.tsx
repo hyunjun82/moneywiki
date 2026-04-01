@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 실업급여 받는 중인데 생활비가 부족해서 알바를 하고 싶은 상황이에요.
 // Q2. 실업급여 유지하면서 알바 가능한 조건을 확인하고, 초과하지 않도록 근로시간을 조절하는 행동.

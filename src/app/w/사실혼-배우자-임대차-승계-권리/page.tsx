@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 사실혼 배우자 임대차 승계 권리 2026 info
 // Q2: 사실혼 배우자는 상속인이 없거나 함께 거주하지 않을 때 승계 가능

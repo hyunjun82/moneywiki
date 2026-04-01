@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 채무자가 미등기 건물을 보유하고 있어서, 가압류가 가능한지 방법을 찾고 있는 채권자
 // Q2. 미등기 부동산 가압류 신청서를 작성해서 법원에 제출한다

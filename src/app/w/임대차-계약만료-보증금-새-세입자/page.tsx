@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 전세 계약 만료됐는데 집주인이 "새 세입자 들어오면 보증금 줄게"라고 하는 상황
 // Q2. 새 세입자 입금 조건부 반환의 위험성을 파악하고, 보증금을 안전하게 돌려받는 조치를 취한다

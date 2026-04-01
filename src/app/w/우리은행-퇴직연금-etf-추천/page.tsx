@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 우리은행 퇴직연금(DC형/IRP)에서 ETF 투자하고 싶은데 방법을 모르는 직장인
 // Q2. 우리WON뱅킹 앱에서 퇴직연금 ETF를 매수하고 안전자산 30% 규정에 맞게 포트폴리오를 구성한다

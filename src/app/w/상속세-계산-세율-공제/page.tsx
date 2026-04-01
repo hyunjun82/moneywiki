@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 가족이 돌아가셔서 상속받을 예정인데 상속세가 얼마나 나올지, 공제가 어떻게 되는지 막막한 상황
 // Q2. 상속세 세율표와 공제 항목을 파악해서 예상 세금을 계산하고 신고 기한까지 준비

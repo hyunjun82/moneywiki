@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 자녀 급식비가 연말정산에서 공제되는지 확인하려는 직장인 부모
 // Q2. 어린이집·유치원 vs 초중고 급식비 공제 여부 구분 → 해당되면 교육비 공제 신청

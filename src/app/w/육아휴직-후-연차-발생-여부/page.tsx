@@ -4,6 +4,8 @@
 // Q4. GreenBox(결론) + BorderBox(구체 예시) + Steps(회사가 거부할 때 대응) + FAQ
 
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 export const dynamic = "force-static";
 

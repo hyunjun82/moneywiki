@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 근저당권자(회사 등) 주소가 여러 번 바뀌었는데 변경등기를 안 해서, 중간 주소를 전부 등기해야 하는지 걱정하는 상황이에요.

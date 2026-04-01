@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 카드를 많이 썼는데 연말정산 환급이 적어서 왜 그런지, 실제로 얼마 돌려받는지 확인하려는 직장인
 // Q2. 카드 공제 구조를 이해하고, 25% 이후 체크카드로 전환해서 공제 효과를 극대화한다

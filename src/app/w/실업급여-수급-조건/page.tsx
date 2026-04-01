@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 실업급여 수급조건 피보험기간 180일 | 비자발적 퇴사 자격요건 info
 // Q2: 퇴직 전 18개월 중 고용보험 피보험기간 180일 이상이 첫 번째 조건이에요.

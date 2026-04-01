@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 국민연금을 일찍 받으면 얼마나 깎이는지, 내 상황에서 조기수령이 유리한지 궁금한 상황이에요.
 // Q2. 감액률과 손익분기점을 비교해서 조기수령 여부를 결정하는 행동.

@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 회사에서 갑자기 월급을 깎겠다고 통보하거나 동의서를 내밀었는데, 거부해도 되는지 모르는 상황이에요.
 // Q2. 부당 감봉인지 판단하고, 거부 의사를 서면으로 표시하거나 노동청에 신고하는 행동.

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     집을 팔았거나 팔 예정인 1주택자·다주택자가 세금이 얼마나 나올지 계산하려는 상황

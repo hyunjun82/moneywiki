@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 금융·보험업 법인의 세무 담당자가 교육세 중간예납 기한과 납부 방법을 확인하려는 상황
 // Q2. 2026년 교육세 중간예납 3회분 기한을 확인하고 홈택스에서 신고·납부를 완료한다

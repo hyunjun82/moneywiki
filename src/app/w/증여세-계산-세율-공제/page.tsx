@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 부모·배우자에게 돈 받거나 자녀에게 주려는 사람이 세금 얼마인지 알려는 상황
 // Q2. 공제 한도 확인 → 과세표준 계산 → 세율 적용 → 3개월 이내 신고

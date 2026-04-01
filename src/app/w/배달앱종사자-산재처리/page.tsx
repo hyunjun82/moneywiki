@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 배달하다 사고가 났는데 산재보험이 적용되는지, 어떻게 신청하는지 모르겠는 상황이에요.
 // Q2. 산재보험 적용 대상임을 확인하고, 근로복지공단에 산재 신청을 해서 치료비·휴업급여를 받는 행동.

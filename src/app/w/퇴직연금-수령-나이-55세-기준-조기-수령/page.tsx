@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 퇴직연금 계좌에 돈이 쌓여 있는데 언제부터 받을 수 있는지 모르거나 지금 급해서 빼고 싶은 상황
 // Q2. 수령 신청을 완료하거나 조기 수령 가능 여부를 판단할 수 있어야 함

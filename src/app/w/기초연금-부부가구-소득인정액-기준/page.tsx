@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 부부가 함께 기초연금을 신청하려는데 소득을 합산하는지, 기준은 얼마인지 궁금한 어르신
 // Q2: 부부가구 소득인정액 합산 구조를 이해하고, 둘 다 받을 수 있는지 판단

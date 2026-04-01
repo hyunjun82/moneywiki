@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 설 차례상 준비하면서 물가 부담을 줄이려고 정부 할인 혜택이 있는지 찾는 소비자
 // Q2. 대형마트 앱에서 할인쿠폰을 다운받고, 전통시장에서 온누리상품권을 활용해 최대 50% 절약한다

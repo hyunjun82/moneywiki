@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 경매 물건을 검토하는데 등기부에 가압류·가처분이 있어서 낙찰 후 떠안는 건지 걱정하는 상황
 // Q2. 말소기준권리 전후를 구분해서 인수·말소 여부를 판단하고 안전하게 입찰한다

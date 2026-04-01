@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 대지급금과 우선변제 차이 | 임금채권 대위권 변제 순위 구조 info
 // Q2: 대지급금은 국가가 먼저 지급 후 회사에 구상권(대위권)을 행사하는 제도예요.

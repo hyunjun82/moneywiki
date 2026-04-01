@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 시간선택제 초과근무 의무에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다

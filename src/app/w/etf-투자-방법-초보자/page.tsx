@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. ETF 투자를 시작하고 싶은 초보자가 어떻게 사는지, 수수료와 세금이 얼마인지 기본부터 알고 싶은 상황.
 // Q2. 증권사 계좌 개설부터 ETF 매수까지 직접 할 수 있고, 수수료·세금 구조를 이해할 수 있어야 해요.

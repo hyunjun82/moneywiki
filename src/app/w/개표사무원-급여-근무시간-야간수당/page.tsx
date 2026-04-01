@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 개표사무원은 밤에 하는 알바라는데 급여가 얼마고 몇 시간 일하는지 알고 싶은 상황
 // Q2. 개표사무원의 급여, 근무시간, 야간 수당 체계를 파악하고 신청 여부를 결정한다

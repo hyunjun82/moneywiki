@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 상가 임차인인데 건물주가 보증금을 올려달라고 해서 법적 한도가 얼마인지 확인하려는 상황
 // Q2. 5% 한도 규칙과 1년 제한을 알고, 건물주의 과도한 요구를 법적 근거로 거절한다

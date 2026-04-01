@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 파트타임·시급 알바인데 연말정산을 해야 하는지, 어떻게 하는지 모르는 상황
 // Q2. 본인이 연말정산 대상인지 판단하고, 대상이면 환급받기

@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 배달앱(배민·쿠팡이츠 등) 전속 배달기사가 일을 그만둔 후 구직급여를 받을 수 있는지 궁금한 상황
 // Q2. 내가 고용보험 가입 대상인지 확인하고, 구직급여 신청 절차를 밟는다

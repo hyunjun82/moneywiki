@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 맹지 주위토지통행권 통행료 보상 info
 // Q2: 맹지 소유자는 주위 토지를 통행할 권리가 있어요

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 2026 지방선거 알바 일정을 전체적으로 파악해서 언제 신청하고 언제 일하는지 알고 싶은 상황
 // Q2. 공고 시작부터 급여 지급까지 전체 타임라인을 파악하고, 적절한 시점에 신청한다

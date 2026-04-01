@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 5세대 실손보험 출시 소식을 듣고 기존 4세대와 보험료 차이가 궁금한 상황
 // Q2. 4세대 vs 5세대 보험료·보장 차이를 비교해서 갈아탈지 유지할지 판단한다

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 건설현장에서 일했는데 현장반장이 일당 안 주고 잠적한 상황
 // Q2. 원청 건설사에 직접 임금을 청구하고 노동청 진정을 넣어 체불임금을 받아낸다

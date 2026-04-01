@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 아이가 발달재활서비스 받는 부모가 연말정산 시즌에 "이거 공제받을 수 있나?" 확인하는 상황
 // Q2. 이용증명서 발급받아 회사에 제출 → 장애인 추가공제 200만원 + 의료비·교육비 한도없이 공제

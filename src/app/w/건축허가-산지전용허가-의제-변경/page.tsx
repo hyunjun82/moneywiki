@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 산지에 건축허가 받고 공사 중인데 규모를 변경해야 하는 상황, 의제받은 산지전용허가가 어떻게 되는지 궁금
 // Q2. 건축허가 변경 시 산지전용허가 변경도 함께 신청해서 적법하게 공사를 진행한다

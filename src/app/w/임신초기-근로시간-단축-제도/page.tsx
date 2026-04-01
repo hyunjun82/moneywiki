@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 임신 초기라 입덧이 심하고 피곤한데, 근무시간을 줄일 수 있는지 궁금한 상황
 // Q2. 회사 인사팀에 근로시간 단축 신청서를 제출해서 하루 2시간 단축근무를 한다

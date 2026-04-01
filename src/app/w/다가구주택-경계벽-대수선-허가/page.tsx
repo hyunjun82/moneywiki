@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 다가구주택 경계벽을 변경하는 공사를 하려는데 허가가 필요한지 모르는 상황
 // Q2. 경계벽 공사가 대수선에 해당하는지 판단하고 허가 또는 신고를 진행한다

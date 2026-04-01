@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 전세 계약 후 대항력이 언제 생기는지, 보증금을 지킬 수 있는 시점이 궁금한 상황이에요.
 // Q2. 전입신고와 점유 시점을 맞춰서 대항력을 확보하는 행동.

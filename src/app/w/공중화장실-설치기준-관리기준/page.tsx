@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     건물이나 시설에 공중화장실을 신설하거나 개보수하면서 법적 기준을 확인해야 하는 건축주 또는 시설 관리자.

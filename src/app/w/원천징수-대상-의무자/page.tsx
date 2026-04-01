@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 원천징수 의무가 있는지, 어떤 소득에 원천징수를 해야 하는지 모르는 사업자/경리 담당자
 // Q2: 원천징수 대상 소득과 의무자를 확인하고 기한 내 신고·납부

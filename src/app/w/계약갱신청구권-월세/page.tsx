@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 /*
 Q1. 월세로 살고 있는데 계약갱신청구권이 전세에만 적용되는 줄 알고, 본인도 쓸 수 있는지 궁금한 상황이에요.

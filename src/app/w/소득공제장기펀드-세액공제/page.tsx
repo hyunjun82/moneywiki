@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 소득공제 장기펀드 세액공제 한도 2026 info
 // Q2: 청년형 소득공제 장기펀드는 2026년 1월부터 신규 가입 불가

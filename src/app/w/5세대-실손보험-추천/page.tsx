@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 5세대 실손보험 가입을 고려하면서 어떤 보험사가 좋은지, 1~4세대와 뭐가 다른지 궁금한 사람
 // Q2: 5세대 실손보험 특징을 이해하고 자기 상황에 맞게 가입 여부 판단

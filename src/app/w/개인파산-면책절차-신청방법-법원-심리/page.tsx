@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 빚이 감당 안 되는데 개인파산으로 빚을 탕감받을 수 있는지, 절차가 어떤지 알고 싶은 상황
 // Q2. 파산+면책 동시신청 절차를 파악하고 관할 법원에 신청서를 제출한다

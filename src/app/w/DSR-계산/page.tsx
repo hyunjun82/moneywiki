@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: DSR 계산 방법 2026 info
 // Q2: DSR은 연간 총 부채 원리금 상환액을 연소득으로 나눈 비율이에요

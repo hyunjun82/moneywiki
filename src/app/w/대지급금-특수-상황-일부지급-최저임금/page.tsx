@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 대지급금을 신청했는데 일부만 지급됐거나 거부당해서 나머지를 어떻게 받을지 고민
 // Q2. 일부 지급 사유 확인 → 초과분 별도 청구 → 부정수급 제재 회피

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 직원 고용한 소상공인·사업주가 지급명세서 제출 방법과 기한 확인하는 상황
 // Q2. 홈택스에서 기한 내 제출 → 가산세 회피

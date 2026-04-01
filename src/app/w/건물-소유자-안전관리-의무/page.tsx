@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 /*
 Q1. 건물을 새로 매입했거나 관리사무소에서 안전관리자 선임 연락을 받아 당장 뭘 해야 하는지 모르는 상황이에요.

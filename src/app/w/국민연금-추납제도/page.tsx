@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 실업이나 휴직으로 국민연금을 못 낸 기간이 있어서 나중에 연금이 줄어들까 걱정하는 상황
 // Q2. 추납 가능 기간과 보험료를 확인하고 국민연금공단에 추납 신청을 완료한다

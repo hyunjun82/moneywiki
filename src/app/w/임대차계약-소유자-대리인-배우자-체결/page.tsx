@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 주택 임대차 계약 소유자 대리인 배우자 체결 가능 여부 info
 // Q2: 첫째: 배우자도 명시적 위임 없이는 대리권 없음

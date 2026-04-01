@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 농지를 다른 용도로 쓰려는데 "부담금 얼마 내야 하지?" 계산하고 싶은 상황
 // Q2. 내 농지 지역 확인 → 요율 적용 → 부담금 계산 → 납부

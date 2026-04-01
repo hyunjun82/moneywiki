@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 육아휴직에서 복귀하는데 연차가 어떻게 되는지 궁금한 상황
 // Q2. 복귀 후 사용 가능한 연차 일수를 확인하고, 회사에 권리를 주장한다

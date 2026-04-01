@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. DB형 퇴직연금 가입자가 퇴직 후 IRP 계좌에서 돈을 꺼내거나 세금 처리 방법을 찾는 상황
 // Q2. IRP 수령 방법 결정(일시금 vs 연금) → 세금 계산 → 실제 신청

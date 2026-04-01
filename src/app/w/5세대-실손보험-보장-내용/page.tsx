@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 5세대 실손보험이 기존과 뭐가 달라지는지, 보장 범위가 궁금한 상황
 // Q2. 5세대 보장 변경 내용을 파악하고, 기존 보험 유지·전환 여부를 판단한다

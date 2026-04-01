@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 새 아파트에 입주했는데 관리사무소에서 하자보수보증금을 언급해서, 이게 뭔지 입주자가 내야 하는 건지 궁금한 상황
 // Q2. 하자보수보증금의 정체와 용도를 파악하고, 하자가 발생했을 때 보증금으로 보수를 요청할 수 있다는 걸 확인한다

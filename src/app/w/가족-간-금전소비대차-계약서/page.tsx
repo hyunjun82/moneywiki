@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 부모나 가족에게 돈을 빌리려는데 증여세 문제가 걱정되는 상황
 // Q2. 금전소비대차 계약서를 정확하게 작성해서 증여 추정을 피하고, 이자율과 상환을 제대로 설정한다

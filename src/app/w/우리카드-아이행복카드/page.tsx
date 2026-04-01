@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 우리카드 아이행복카드: 발급 및 혜택 상세 안내 info
 // Q2: 우리카드 아이행복카드는 현재 신규 발급이 제한되어 있어요

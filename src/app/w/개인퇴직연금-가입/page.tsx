@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 /*
 Q1. 노후 대비하면서 세액공제도 받고 싶은데, IRP를 어디서 어떻게 가입하는지 모르는 상황이에요.

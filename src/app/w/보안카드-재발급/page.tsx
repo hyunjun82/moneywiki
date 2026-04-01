@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 보안카드를 분실했거나 번호를 다 써서 인터넷뱅킹을 못 하는 상황
 // Q2. 은행 영업점에 가서 신분증 하나로 보안카드를 즉시 재발급받는다

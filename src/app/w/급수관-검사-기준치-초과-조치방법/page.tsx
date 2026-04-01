@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 아파트나 건물 급수관 검사에서 기준치 초과 통보를 받아 대처법이 궁금한 상황
 // Q2. 기준 초과 항목을 확인하고, 관리사무소·지자체에 조치를 요청한다

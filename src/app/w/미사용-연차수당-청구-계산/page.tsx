@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 퇴사했거나 퇴사 예정인데 못 쓴 연차를 돈으로 받을 수 있는지, 얼마인지, 어떻게 청구하는지 궁금한 상황이에요.

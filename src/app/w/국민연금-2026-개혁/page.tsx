@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 2026년 국민연금 개혁 보험료율 인상 소득대체율 변화 info
 // Q2: 보험료율 9%에서 매년 0.5%p 인상, 2033년 13% 도달 (월 7,700원~15,400원 부담 증가)

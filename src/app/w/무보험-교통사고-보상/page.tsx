@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 무보험 차량에 사고를 당했는데 가해자에게 보상을 못 받을까 걱정하는 상황
 // Q2. 자동차손해배상 보장사업이나 무보험차상해 특약으로 보상을 청구한다

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 국민연금을 열심히 냈는데 기초연금이 줄어들어서 억울하고, 정확히 얼마나 깎이는지 알고 싶은 상황
 // Q2. 본인의 국민연금 수령액 기준으로 기초연금이 얼마나 감액되는지 직접 계산해볼 수 있는 것

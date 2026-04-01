@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 임차한 상가가 경매에 넘어가서 보증금 날릴까 봐 불안한 상황
 // Q2. 우선변제권·최우선변제권 해당 여부 확인하고, 배당요구 기한 내 신청하기

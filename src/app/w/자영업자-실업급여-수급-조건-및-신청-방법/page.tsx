@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 자영업을 하다가 폐업했거나 폐업을 앞두고 있는데, 자영업자도 실업급여를 받을 수 있는지, 조건이 뭔지 구체적으로 알고 싶은 상황이에요.

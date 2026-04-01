@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 소액사건 소장 작성: 필수 기재 사항 및 양식 작성법 info
 // Q2: 소장에는 당사자, 청구 취지, 청구 원인을 반드시 써야 해요.

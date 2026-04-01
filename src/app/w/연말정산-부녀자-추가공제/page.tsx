@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 여성 근로자가 연말정산에서 부녀자 공제 받을 수 있는지 조건 확인하는 상황
 // Q2. 소득·배우자·부양가족 조건 확인 → 원천징수영수증에서 체크 여부 확인 → 연말정산 신청

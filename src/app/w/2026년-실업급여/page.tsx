@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 퇴직했거나 퇴직 예정인데 실업급여를 얼마나 받을 수 있는지, 2026년에 바뀐 게 있는지 확인하고 싶은 상황이에요.

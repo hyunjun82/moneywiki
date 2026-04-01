@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 경매 입찰 전에 물건을 직접 보러 가려는데 현장에서 뭘 확인해야 하는지 모르는 상황
 // Q2. 체크리스트를 들고 현장에 가서 점유자·체납관리비·건물 상태를 확인하고 입찰 여부를 결정한다

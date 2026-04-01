@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산에서 항목별 공제율이 다르다는 건 알겠는데, 정확히 몇 %인지 모르는 상황이에요.
 // Q2. 항목별 공제율을 비교해서 공제 효과가 큰 항목에 지출을 집중하는 행동.

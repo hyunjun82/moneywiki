@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연금 받기 시작했는데 건강보험료가 올라서 왜 그런지 궁금한 상황이에요.
 // Q2. 건보료 인상 원인을 파악하고, 소득 감소 시 조정 신청을 해서 보험료를 낮추는 행동.

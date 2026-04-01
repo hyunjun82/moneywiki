@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 경매로 집을 낙찰받았는데 전 주인이 안 나가서 어떻게 해야 하는지 모르는 상황
 // Q2. 대금납부 후 6개월 안에 인도명령을 신청해서 점유자를 퇴거시킨다

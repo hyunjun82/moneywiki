@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 선택근로제를 도입하려는 사업주나 인사담당자가 법적 절차와 서면 합의 방법을 모르는 상황
 // Q2. 근로자대표와 서면 합의서를 작성하고 취업규칙을 변경해서 선택근로제를 합법적으로 도입한다

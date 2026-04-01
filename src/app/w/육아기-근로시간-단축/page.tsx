@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 육아휴직 대신 근무시간만 줄이면서 일하고 싶은데, 급여가 얼마나 되고 어떻게 신청하는지 궁금해요.
 // Q2. 본인이 신청 대상인지 확인하고, 회사에 30일 전 서면 신청 → 고용센터에 급여 신청하는 행동.

@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 우리 아파트에 CCTV를 의무적으로 달아야 하는지, 기준이 뭔지 궁금한 상황이에요.
 // Q2. 의무 설치 대상인지 확인하고 관리사무소에 설치 요청/점검하는 행동.

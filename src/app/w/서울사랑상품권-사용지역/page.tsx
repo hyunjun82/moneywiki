@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 서울사랑상품권을 갖고 있는데 다른 지역(경기도 등)에서도 쓸 수 있는지 궁금한 상황
 // Q2. 서울 안에서만 쓸 수 있다는 걸 확인하고, 다른 지역 방문 시 해당 지역 상품권을 구매한다

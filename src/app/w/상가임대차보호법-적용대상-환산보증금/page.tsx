@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 상가 계약 전에 내가 상가임대차보호법 보호를 받을 수 있는지 확인하려는 상황
 // Q2: 환산보증금 계산해서 지역별 기준금액 이하인지 판단 완료

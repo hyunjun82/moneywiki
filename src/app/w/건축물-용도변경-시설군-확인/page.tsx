@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 가게 업종을 바꾸거나 창고를 판매시설로 고치려는 사람이 용도변경 허가가 필요한지 신고인지 확인하는 상황
 // Q2. 현재 시설군 확인 → 변경 방향(상위/하위/동일) 판단 → 허가·신고·건축물대장 변경 중 선택

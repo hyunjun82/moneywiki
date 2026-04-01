@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 부동산을 처음 사려는데 계약부터 등기까지 절차가 복잡해서 뭐부터 해야 하는지 모르는 상황이에요.
 // Q2. 등기부등본 확인 → 계약 → 잔금 → 등기까지 전 과정을 순서대로 진행하는 행동.

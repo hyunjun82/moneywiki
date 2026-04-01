@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 올해 병원비가 많이 나왔는데 연말정산에서 얼마나 돌려받을 수 있는지 궁금한 직장인
 // Q2. 내 의료비가 공제 대상인지 확인하고, 총급여 3% 초과분의 15% 환급액을 계산한다

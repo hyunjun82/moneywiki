@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 우리 아파트가 재건축을 추진하는데 절차가 복잡하고 어디서 도움받을 수 있는지 모르는 조합원
 // Q2. 재건축 전체 절차를 이해하고, 공공기관·전문기관 지원을 활용해 분쟁 없이 진행한다

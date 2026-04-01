@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 연말정산에서 의료비·교육비·기부금 등 특별세액공제 항목별 한도를 알고 싶은 직장인
 // Q2: 특별세액공제 항목별 한도를 확인하고 공제 최대화

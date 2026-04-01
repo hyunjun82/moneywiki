@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. K-패스 카드를 발급받았는데 환급이 안 들어오거나, 처음부터 어디서 뭘 해야 하는지 모르는 상황
 // Q2. k-pass.or.kr 회원 가입 완료 → 발급 카드 등록 → 월 15회 이상 이용 → 다음 달 환급 확인

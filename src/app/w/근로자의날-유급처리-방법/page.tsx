@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 근로자의 날 유급처리 방법 info
 // Q2: 근로자의 날은 유급휴일로 쉬어도 급여가 나와요.

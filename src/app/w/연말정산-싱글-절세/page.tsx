@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 부양가족 없는 미혼 직장인이 연말정산에서 돌려받을 게 없다고 느끼는 상황
 // Q2. 연금저축+IRP 최대 납입, 카드 전환 전략으로 148.5만원까지 환급을 확보한다

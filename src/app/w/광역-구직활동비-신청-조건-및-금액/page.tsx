@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 실업급여 받으면서 먼 곳 면접을 앞두고 있는데, 교통비·숙박비가 부담돼서 지원받을 수 있는지 찾아보는 상황이에요.

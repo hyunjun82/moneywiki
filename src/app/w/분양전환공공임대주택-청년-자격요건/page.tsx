@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 35세 무주택 직장인인데 분양전환 공공임대주택 청년 자격이 되는지 확인하고 싶은 상황이에요.
 // Q2. 본인 나이·소득·자산이 청년 자격요건에 맞는지 확인하고 신청 방법을 파악할 수 있어요.

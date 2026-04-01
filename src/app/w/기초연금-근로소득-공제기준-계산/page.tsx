@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 65세 이상인데 아직 일하고 있어서, 근로소득 때문에 기초연금을 못 받을까 걱정되는 상황
 // Q2. 근로소득 공제(112만원+30%)를 이해하고, 내 월급 기준으로 기초연금 수급 가능 여부를 판단하는 것

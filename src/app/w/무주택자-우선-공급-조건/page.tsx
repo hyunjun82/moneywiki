@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 청약을 넣으려는데 무주택자 우선공급이 뭔지, 내가 해당하는지 모르는 상황
 // Q2. 내가 무주택세대구성원인지 확인하고 가점제 점수를 계산한다

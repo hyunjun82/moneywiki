@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 수습기간에 해고 통보를 받았거나, 수습 중인데 해고될까 불안한 상황이에요.
 // Q2. 본인의 해고가 부당한지 판단하고, 부당하다면 노동위원회에 구제신청을 하는 행동.

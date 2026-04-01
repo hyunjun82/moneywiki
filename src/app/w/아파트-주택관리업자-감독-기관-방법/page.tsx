@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 관리비 이상하거나 관리업체가 부당하게 운영되는 것 같아 민원을 넣고 싶은 입주민
 // Q2: 어떤 기관에 신고·민원을 넣는지 결정하고 실제로 접수

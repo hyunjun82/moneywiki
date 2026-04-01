@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 전세 계약 끝났는데 집주인이 보증금 안 돌려줘서, 이사 가면 대항력 잃는지 걱정하는 상황이에요.

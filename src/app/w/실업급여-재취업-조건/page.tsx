@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 실업급여 받다가 빨리 취업했는데, 남은 급여를 날리는 건 아닌지 확인하려는 상황
 // Q2. 조기재취업수당 조건을 확인하고 12개월 근무 후 고용24에서 신청한다

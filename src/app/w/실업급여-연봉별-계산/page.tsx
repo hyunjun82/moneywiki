@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 퇴직 후 실업급여를 받을 예정인데, 내 연봉 기준으로 하루에 얼마나 받을 수 있는지 궁금한 상황
 // Q2. 연봉 구간별 1일 구직급여를 확인하고, 상한·하한액 적용 여부를 판단해서 총 수령액을 예상한다

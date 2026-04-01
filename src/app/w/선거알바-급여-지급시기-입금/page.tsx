@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 선거 알바를 했는데 급여가 언제 들어오는지, 안 들어오면 어떻게 해야 하는지 궁금한 상황
 // Q2. 급여 지급 시기를 파악하고, 미지급 시 대처 방법을 알고 행동한다

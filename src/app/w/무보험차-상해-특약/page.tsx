@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 무보험 차량이나 뺑소니 사고를 당했을 때 보상받을 수 있는지, 이 특약을 가입해야 하는지 궁금한 상황
 // Q2. 무보험차 상해 특약의 보장 내용을 이해하고, 자동차보험 갱신 시 가입 또는 한도를 확인한다

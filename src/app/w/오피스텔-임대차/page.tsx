@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 오피스텔을 전세/월세로 계약하려는데 주택임대차보호법이 적용되는지 궁금한 세입자
 // Q2: 오피스텔이 주거용인지 확인하고 전입신고+확정일자로 대항력 확보

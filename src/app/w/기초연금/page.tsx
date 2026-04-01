@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 본인 또는 부모님이 만 65세에 가까워지면서 기초연금을 받을 수 있는지, 얼마나 받는지 궁금한 상황이에요.

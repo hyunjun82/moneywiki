@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 보이스피싱·스미싱을 당하거나 당할 뻔해서, 예방법과 피해 시 대처법이 궁금한 상황이에요.
 // Q2. 금융사기 유형을 구분하고, 예방 수칙을 지키며, 피해 발생 시 즉시 신고·지급정지하는 행동.

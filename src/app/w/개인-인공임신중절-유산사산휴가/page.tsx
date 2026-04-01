@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 개인 사유로 인공임신중절을 했는데 회사에 휴가를 신청할 수 있는지, 사유를 밝혀야 하는지 걱정되는 상황.
 // Q2. 유산사산휴가 신청이 가능하다는 것을 확인하고, 진단서를 준비해서 회사에 휴가를 신청하는 행동.

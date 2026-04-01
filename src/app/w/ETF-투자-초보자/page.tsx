@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 주식 투자를 시작하고 싶은데 어떤 종목을 사야 할지 모르겠고, 한 종목에 몰빵하기 무서워서 분산 투자 방법을 찾는 상황이에요.

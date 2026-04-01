@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 실업급여 수급자격 인정 기준: 가입기간 180일 및 비자발적 퇴사 요건 info
 // Q2: 고용보험 180일 이상 가입해야 받을 수 있어요.

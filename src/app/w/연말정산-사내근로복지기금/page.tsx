@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     복지기금에서 학자금/의료비를 받았는데 연말정산 때 세금을 내야 하는지 확인하려는 직장인

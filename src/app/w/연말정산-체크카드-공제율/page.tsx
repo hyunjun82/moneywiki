@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 체크카드가 신용카드보다 공제율이 높다는데 실제로 얼마나 차이나는지, 어떻게 써야 유리한지 궁금한 직장인
 // Q2. 총급여 25% 기준으로 신용카드→체크카드 전환 시점을 파악하고 공제 최대화 전략을 실행한다

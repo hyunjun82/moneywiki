@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 /*
  * Q1: 개인사업자 신용대출을 이미 갖고 있는데 이자 부담이 큼. 갈아타기가 된다는 뉴스를 봤거나, 직접 방법을 찾고 있음
  * Q2: 내 대출이 대상인지 확인 → 여러 은행 금리 비교 → 유리한 곳으로 갈아타기 신청

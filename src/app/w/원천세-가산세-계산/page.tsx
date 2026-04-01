@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 원천세 신고·납부 기한을 놓쳐서 가산세가 얼마나 나올지 걱정하는 사업자
 // Q2. 가산세 금액을 계산하고, 감면 여부를 확인한 뒤 자진 수정신고를 한다

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 자녀가 2명 이상인 부모가 연말정산에서 추가 공제를 받을 수 있는지 확인하려는 상황
 // Q2. 자녀세액공제 금액을 확인하고 부양가족공제 신고서에 정확히 기재한다

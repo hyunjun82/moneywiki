@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이직하면서 퇴직연금을 옮기지 않아서 어딘가에 돈이 묶여있는지 모르는 상황
 // Q2. 미청구 퇴직연금이 있는지 조회하고 수령 신청한다

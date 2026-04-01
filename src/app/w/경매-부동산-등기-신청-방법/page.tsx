@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 경매 낙찰 후 소유권이전등기를 어떻게 해야 하는지 모르는 사람
 // Q2: 경매 등기 절차 이해하고 법원에 서류 제출 (또는 일반 매매면 인터넷등기소 이용)

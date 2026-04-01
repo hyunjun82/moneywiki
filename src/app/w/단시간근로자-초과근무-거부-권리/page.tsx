@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 파트타임으로 일하는데 사장님이 초과근무를 시키려 해서 거부할 수 있는지, 거부하면 불이익 받는지 궁금한 상황이에요.

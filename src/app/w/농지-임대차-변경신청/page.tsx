@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 농지를 임대하거나 빌려서 경작하기로 계약했는데, 이용정보 변경신청을 해야 하는지 처음 들어서 궁금한 상황이에요.

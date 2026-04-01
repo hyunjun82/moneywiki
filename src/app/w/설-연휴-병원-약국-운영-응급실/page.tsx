@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 설 연휴에 갑자기 아프거나 약이 필요한데 병원·약국이 다 문을 닫아서 어디로 가야 할지 모르는 상황이에요.
 // Q2. 응급의료포털에서 문 여는 병원·약국을 검색하고, 전화 확인 후 방문하는 행동.

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 공공임대주택에 살고 싶은데 영구임대, 국민임대, 행복주택 등 종류가 많아서 뭐가 다른지 궁금한 상황
 // Q2. 공공임대주택 유형별 차이를 비교해서 본인에게 맞는 유형을 선택한다

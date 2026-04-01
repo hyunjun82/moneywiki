@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 재건축 아파트 조합원인데 부담금이 얼마나 나올지, 어떻게 계산하는지 알고 싶은 상황.
 // Q2. 재건축부담금 산정 공식을 이해하고 본인 부담금을 추정할 수 있어야 해요.

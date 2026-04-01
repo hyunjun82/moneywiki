@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. IRP에 모아둔 퇴직금을 종신연금으로 전환하면 세금이 얼마나 줄어드는지, 어떻게 하는 건지 알고 싶은 상황
 // Q2. 생명보험사로 IRP를 이전해서 종신연금으로 전환하는 절차를 실행하고, 세금 절감 효과를 확인한다

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산에서 부모님이나 자녀를 부양가족으로 등록해서 세금을 줄이고 싶은데, 소득요건이나 나이 조건이 헷갈리는 상황.
 // Q2. 부양가족 공제 대상인지 판단하고, 홈택스에서 부양가족 등록까지 할 수 있어야 해요.

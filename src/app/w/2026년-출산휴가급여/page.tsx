@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 임신 중이거나 출산을 앞두고 있는데, 출산휴가 급여가 2026년에 얼마인지, 회사·고용보험 중 누가 주는지, 어떻게 신청하는지 알고 싶은 상황이에요.

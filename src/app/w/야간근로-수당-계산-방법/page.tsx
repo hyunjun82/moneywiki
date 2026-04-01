@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 밤 10시 넘어서 일하는데 야간근로 수당을 제대로 받고 있는지 확인하고 싶은 상황
 // Q2. 야간근로 수당 계산 공식을 이해하고 내 급여명세서에서 맞게 받고 있는지 확인한다

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 /*
 Q1. 자영업자인데 폐업 후 실업급여를 받을 수 있는지, 조건이 뭔지 궁금한 상황

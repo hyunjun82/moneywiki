@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 콜센터·판매직으로 일하면서 고객 폭언에 시달리는데, 내가 법적 보호 대상인지 모르겠는 상황
 // Q2. 산업안전보건법상 고객응대근로자에 해당하는지 확인하고, 폭언 발생 시 업무 중단을 요청하기

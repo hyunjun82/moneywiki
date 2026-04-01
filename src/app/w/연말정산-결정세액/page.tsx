@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산 원천징수영수증을 받았는데 결정세액이 뭔지 모르겠고 환급금과 뭐가 다른지 궁금한 상황
 // Q2. 결정세액 계산 구조를 이해하고, 결정세액과 기납부세액 차이로 환급/추가납부를 판단한다

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산에서 부양가족 의료비를 공제받을 수 있는지, 한도가 얼마인지 궁금한 상황
 // Q2. 부양가족 의료비를 합산해서 세액공제를 신청하고 환급받는다

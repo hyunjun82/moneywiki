@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. LH 직접시행 분양이 뭔지, 기존 공공분양과 뭐가 다른지 궁금한 예비 청약자
 // Q2. 직접시행 방식을 이해하고, 2026년 착공·청약 일정을 파악해서 청약 준비를 한다

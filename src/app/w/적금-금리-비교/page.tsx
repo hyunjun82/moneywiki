@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     매달 저축을 하는데 어느 은행 적금 금리가 제일 높은지 비교해서 이자를 더 받고 싶은 상황이에요.

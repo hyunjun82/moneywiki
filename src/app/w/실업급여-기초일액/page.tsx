@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 퇴직 후 실업급여를 신청하려는데 실제로 얼마를 받을 수 있는지 계산해보고 싶은 상황
 // Q2. 기초일액(평균임금 × 60%) 계산 후 상한액·하한액 기준으로 실제 수령액을 예측할 수 있어야 함

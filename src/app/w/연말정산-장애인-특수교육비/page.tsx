@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 장애인 자녀 재활치료비가 공제되는지, 한도가 얼마인지 확인하려는 상황
 // Q2. 장애인 특수교육비를 한도 없이 15% 세액공제받고 필요 서류를 준비한다

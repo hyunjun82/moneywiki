@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 회사가 사실상 도산했는데 체불임금·퇴직금을 받으려면 도산등사실인정을 받아야 한다는데 어떻게 신청하는지 모르는 상황.
 // Q2. 고용노동부에 도산등사실인정 신청서를 제출하고, 체당금을 받을 수 있어야 해요.

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 책·영화·공연 지출이 많은 직장인이 연말정산에서 추가 혜택이 있는지 확인하려는 상황
 // Q2. 문화비 소득공제 대상 항목을 확인하고 홈택스 간소화서비스에서 반영 여부를 점검한다

@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 연차휴가 보상 제한 사용촉진제도 적용 info
 // Q2: 사용촉진제도를 적용하면 미사용 연차수당 지급 의무가 없어요.

@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 2030년 135만호 공급계획이 뭔가요? 수도권 27만호 연간 일정과 지역별 배분 info
 // Q2: 2030년까지 수도권 135만호 공급 (연 27만호)

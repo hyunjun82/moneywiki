@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     프리랜서·1인 사업자로 수익이 늘면서 법인 전환을 고민 중이거나, 처음 사업을 시작하면서 개인사업자 vs 법인 중 어떤 게 유리한지 판단하려는 상황이에요.

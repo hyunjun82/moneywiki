@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 퇴사 직후 실업급여를 받고 싶은데 어디서 어떻게 신청하는지 모르는 상태
 // Q2. 고용24 온라인 + 고용센터 방문으로 실업급여 신청을 완료한다

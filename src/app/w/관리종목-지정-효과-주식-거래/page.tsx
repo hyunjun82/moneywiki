@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 내가 가진 주식이 관리종목으로 지정됐거나 될 수 있어서, 거래 제한과 상장폐지 위험이 궁금한 상황이에요.
 // Q2. 관리종목 지정 효과를 이해하고 보유 주식을 팔지 유지할지 판단하는 행동.

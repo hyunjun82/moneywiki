@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 개인사업자의 법인 전환 시기와 세금 비교: 언제가 최적일까 info
 // Q2: 순이익이 5,000만 원 이상이면 법인 전환을 고려해봐야 해요.

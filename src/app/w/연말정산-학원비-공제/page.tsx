@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 아이 학원비가 연말정산에서 공제되는지, 취학전만 되는지 궁금한 상황
 // Q2. 취학전 아동 학원비 300만원 한도 15% 공제를 빠짐없이 신청하고 영수증을 확보한다

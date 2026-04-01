@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 연말정산에서 내가 어느 세율 구간에 해당하는지, 세금이 어떻게 계산되는지 이해하고 싶은 상황이에요.

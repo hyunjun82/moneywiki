@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 연말정산 정치자금 기부금 info
 // Q2: 정치자금 기부금은 10만원까지 거의 전액(100/110) 세액공제돼요.

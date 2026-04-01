@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. ISA 계좌 개설했는데 뭘 사야 할지 모르는 투자자가 ETF 선택하는 상황
 // Q2. 고배당 ETF 위주로 포트폴리오 구성 → 비과세 혜택 최대로 받기

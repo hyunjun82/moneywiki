@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산에서 부양가족 인적공제를 최대한 받고 싶은데, 부모님·자녀 요건이 정확히 뭔지 모르는 상황이에요.
 // Q2. 부양가족별 나이·소득 요건을 확인하고, 누락 없이 등록해서 공제를 최대화하는 행동.

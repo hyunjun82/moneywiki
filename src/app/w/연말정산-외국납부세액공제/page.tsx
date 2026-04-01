@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 /*
 Q1. 해외주식 배당이나 해외소득에 외국 세금 냈는데, 한국에서 또 세금 내야 하는지 궁금한 상황

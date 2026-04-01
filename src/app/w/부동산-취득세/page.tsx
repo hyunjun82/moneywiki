@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 집을 사는데 취득세가 얼마인지, 언제까지 내야 하는지 모르는 상황
 // Q2: 잔금일부터 60일 이내에 위택스에서 취득세 신고·납부 완료

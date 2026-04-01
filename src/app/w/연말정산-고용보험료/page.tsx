@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 고용보험료도 연말정산에서 공제되는지 궁금한 직장인
 // Q2. 고용보험료가 자동으로 소득공제된다는 걸 확인하고, 4대보험 전체 절세 효과를 파악한다

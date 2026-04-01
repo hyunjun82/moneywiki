@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 직장에서 다쳤거나 질병이 생겨서 산재 신청하려는데 절차를 모르는 상황
 // Q2. 산재보험 신청서를 근로복지공단에 제출하고 보상을 받는다

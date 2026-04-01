@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 생명보험 설계사인데 손해보험 상품도 팔 수 있는지, 타 보험사 상품을 모집할 수 있는지 궁금한 상황.
 // Q2. 보험업법상 교차모집 규정을 이해하고 타사 상품 판매 가능 여부를 판단할 수 있어야 해요.

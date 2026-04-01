@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 집이 여러 채인데 세금이 얼마나 되는지, 중과 배제는 언제까지인지 궁금
 // Q2. 취득세·종부세·양도세 각각 확인 → 중과 배제 기간 확인 → 매도 시기 판단

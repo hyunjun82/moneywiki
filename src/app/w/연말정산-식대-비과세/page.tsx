@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 급여명세서에 식대가 있는데 연말정산에서 비과세 처리가 맞는지 확인하려는 직장인
 // Q2. 월 20만원 한도 확인 → 급여명세서 식대 항목 체크 → 원천징수영수증 비과세 반영 확인

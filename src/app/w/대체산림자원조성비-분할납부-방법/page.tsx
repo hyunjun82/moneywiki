@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 산지전용 허가 후 대체산림자원조성비 고지서를 받았는데 금액이 커서 한 번에 내기 부담인 상황
 // Q2. 분할납부 가능 여부를 확인하고 신청서를 관할청에 제출한다

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 경제적으로 너무 어려운데 기초생활수급자가 될 수 있는지 모르는 상황
 // Q2. 소득 기준 확인 후 주민센터에 신청하는 것

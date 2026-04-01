@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 계약갱신청구권 중도해지 info
 // Q2: 계약갱신청구권으로 갱신한 후에도 중도해지 가능해요.

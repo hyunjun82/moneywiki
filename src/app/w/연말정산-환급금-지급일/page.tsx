@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 연말정산 끝났는데 환급금이 언제 들어오는지 궁금한 직장인
 // Q2. 환급금 지급 시기를 확인하고, 홈택스에서 본인 환급액을 조회

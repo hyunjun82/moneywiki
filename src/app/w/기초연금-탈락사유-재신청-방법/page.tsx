@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 기초연금을 신청했다가 탈락 통보를 받고 왜 탈락했는지, 다시 신청할 수 있는지 알고 싶은 상황
 // Q2. 탈락 사유를 정확히 파악하고, 재신청 가능 시점과 방법을 알아서 다시 신청할 수 있어야 함

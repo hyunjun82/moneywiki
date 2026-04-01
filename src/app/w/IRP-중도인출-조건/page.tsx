@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     IRP에 퇴직금이나 추가 납입금을 넣어뒀는데 급하게 돈이 필요해서 55세 전에 뺄 수 있는지 찾고 있는 사람

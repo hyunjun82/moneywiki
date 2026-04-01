@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 신용점수가 낮아서 대출 거절당했거나, 점수를 올려서 좋은 금리를 받고 싶은 상황
 // Q2: 6가지 실천법(연체 방지, 카드 사용률 관리, 체크카드, 비금융정보, 성향설문, 장기 관리)으로 신용점수 상승

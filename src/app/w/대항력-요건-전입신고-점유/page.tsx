@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 전세 계약 앞두고 있거나 이미 입주했는데 대항력이 뭔지, 전입신고만 하면 되는지 점유도 필요한지 헷갈리는 상황이에요.

@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 가압류 신청 송달료 금액 계산 및 납부 방법 info
 // Q2: 송달료는 1회당 5,500원, 당사자 1명당 3회분 내요.

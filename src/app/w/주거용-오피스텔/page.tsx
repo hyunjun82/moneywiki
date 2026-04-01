@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 오피스텔을 사려는데 주거용으로 쓰면 주택 수에 포함되는지, 세금이 얼마나 달라지는지 궁금한 상황
 // Q2. 업무용과 주거용 차이를 파악하고, 세금(취득세·종부세·양도세) 영향을 계산해서 용도 결정을 내린다

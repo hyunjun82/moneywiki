@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 청년인데 내가 받을 수 있는 정부·지자체 혜택이 뭔지 한번에 확인하고 싶은 상황
 // Q2. 카테고리별 혜택 리스트 확인 → 자격 되는 것 골라서 → 각 페이지로 이동해 신청

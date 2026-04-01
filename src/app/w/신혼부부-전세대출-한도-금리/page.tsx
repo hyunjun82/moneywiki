@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 결혼 후 전세 구하려는데, 정부 지원 대출이 뭐가 있고 얼마까지 빌릴 수 있는지 모르겠는 상황
 // Q2. 내 소득 기준으로 신혼부부 전세대출 한도·금리를 파악하고, 은행에 서류 준비해서 신청한다

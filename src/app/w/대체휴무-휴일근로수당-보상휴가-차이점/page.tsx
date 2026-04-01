@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 회사에서 휴일 출근 후 대체휴무를 줬는데, 수당이 안 나와서 차이를 확인하려는 직장인
 // Q2. 대체휴무·보상휴가·휴일대체의 법적 차이를 이해하고 수당 청구 여부를 판단한다

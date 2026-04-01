@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 종합소득세·양도소득세 고지서 받았는데 한 번에 내기 부담스러운 납세자
 // Q2. 세금 종류별 분납 가능 금액 확인 → 홈택스 신고 시 분납 선택 → 2차 납부 기한 준수

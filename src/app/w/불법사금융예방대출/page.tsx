@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 불법사금융예방대출 조건 금리 신청방법 info
 // Q2: 불법사금융 이용자 대상, 최대 100만원 대출

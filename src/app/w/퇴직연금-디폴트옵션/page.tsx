@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. DC형·IRP 가입자인데 운용지시를 한 번도 안 해서 돈이 그냥 예금에 묶여 있는 상황
 // Q2. 디폴트옵션 상품 종류를 비교하고, 본인 나이·성향에 맞는 TDF를 골라 금융사 앱에서 지정하는 행동

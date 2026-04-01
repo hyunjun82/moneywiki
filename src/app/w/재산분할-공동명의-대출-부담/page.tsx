@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 이혼을 앞두고 있는데 부부가 함께 받은 주택담보대출이 남아서, 누가 갚아야 하는지 알고 싶은 상황
 // Q2. 공동명의 대출의 재산분할 기준을 이해하고, 이혼 전 대출 처리 방법을 결정한다

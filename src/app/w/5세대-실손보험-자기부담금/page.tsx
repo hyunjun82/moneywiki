@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 5세대 실손보험 자기부담금이 얼마인지, 4세대보다 얼마나 올랐는지 궁금한 상황. 가입 전 비교하거나 전환 고민 중.
 // Q2. 비급여 50% 부담 구조를 이해하고, 4세대 대비 불리한 점·유리한 점을 파악해서 가입/전환 여부를 판단하는 행동.

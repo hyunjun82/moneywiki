@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 노조 전임자로 활동 중인데 연차휴가를 받을 수 있는지, 어디에 청구하는지 모르는 상황
 // Q2. 전임자 연차휴가 발생 여부를 확인하고, 회사에 연차를 청구한다

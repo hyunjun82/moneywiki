@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 뉴스에서 유류세 인하 연장 소식을 듣고 실제로 기름값이 얼마나 싸지는지, 언제까지인지 확인하려는 운전자
 // Q2. 현재 인하율과 적용 기간을 확인하고 주유 시기를 결정하는 행동

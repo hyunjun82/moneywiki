@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 2026년 설 주차장 무료: 행정·공공기관 5일간 개방 안내 info
 // Q2: 2월 14~18일 5일간 무료개방

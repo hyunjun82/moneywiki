@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 65세가 되면서 장애인연금과 기초연금이 중복되는데 어떻게 되는지 궁금한 중증장애인
 // Q2: 65세 이후 장애인연금 기초급여가 기초연금으로 전환되는 구조를 이해하고 손해 여부 판단

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 예금이나 적금이 있는데 기초연금을 받을 수 있는지, 금융재산이 얼마까지 괜찮은지 궁금한 상황
 // Q2. 금융재산 공제 기준(2,000만원)을 이해하고, 내 금융재산이 소득인정액에 얼마나 반영되는지 계산하는 것

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 전세/월세 계약 만료가 다가오거나 이미 지났는데, 아무 말 없이 계속 살고 있어서 묵시적갱신이 뭔지, 내 상황이 어떤 건지 알고 싶은 상황이에요.

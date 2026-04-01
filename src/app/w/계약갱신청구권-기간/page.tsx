@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 전세 계약 만료가 다가오는데 계약갱신청구권을 언제 행사해야 하는지 모르는 세입자 상황
 // Q2. 만료 6개월~1개월 전 사이에 내용증명을 보내서 계약갱신청구권을 행사한다

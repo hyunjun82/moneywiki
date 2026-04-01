@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 고객한테 폭언 당했는데 사장이 아무 조치 안 해줘서 화난 상황
 // Q2. 사업주에게 서면으로 조치 요구 → 미이행 시 노동청 신고

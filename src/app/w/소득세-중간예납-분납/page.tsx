@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 소득세 중간예납 분납 1000만원 초과 2월 2일까지 분할 납부 info
 // Q2: 중간예납 세액 1,000만원 초과 시 분납 가능

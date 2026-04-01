@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 병원비를 많이 써서 연말정산에서 의료비 공제를 얼마나 받을 수 있는지 확인하려는 직장인
 // Q2. 의료비 공제율과 한도를 확인하고, 공제 대상 항목을 빠짐없이 챙겨 회사에 제출한다

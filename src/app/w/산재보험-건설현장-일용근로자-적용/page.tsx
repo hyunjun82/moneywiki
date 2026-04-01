@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 건설현장에서 일용직으로 일하는데, 다치면 산재보험 적용되는지 궁금한 상황
 // Q2. 산재 발생 시 근로복지공단에 요양급여 신청을 한다

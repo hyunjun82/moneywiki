@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 농지전용허가를 받았는데 바로 공사해도 되는지, 착공 전에 뭘 더 해야 하는지 모르는 상황
 // Q2. 허가→부담금 납부→착공신고 순서를 지켜서 불법전용 처벌을 피한다

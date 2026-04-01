@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 올해 결혼했는데 연말정산에서 세금 혜택이 있는지, 얼마 받을 수 있는지 궁금한 상황
 // Q2. 혼인세액공제 50만원(부부 합산 100만원) 조건을 확인하고 혼인관계증명서를 준비해서 신청한다

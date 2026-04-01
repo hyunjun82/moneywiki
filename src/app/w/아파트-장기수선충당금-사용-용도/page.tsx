@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     아파트 입주민이 장기수선충당금을 다른 용도로 쓰겠다는 관리소 공지를 받거나, 내 돈이 제대로 쓰이는지 확인하고 싶은 상황이에요.

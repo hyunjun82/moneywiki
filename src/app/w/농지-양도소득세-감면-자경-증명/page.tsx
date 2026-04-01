@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 농지를 팔려는데 8년 자경하면 양도세 감면된다고 들었고, 증명 방법이 궁금한 상황이에요.
 // Q2. 자경 증명 서류를 준비해서 양도소득세 100% 감면을 신청하는 행동.

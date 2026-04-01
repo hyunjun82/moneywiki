@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 월급에서 빠져나가는 건강보험료가 올랐는데 왜 올랐는지, 얼마나 더 내는지 궁금한 직장인
 // Q2. 인상 이유와 본인 부담 변화를 이해하고, 급여외소득 추가 부과 해당 여부를 확인한다

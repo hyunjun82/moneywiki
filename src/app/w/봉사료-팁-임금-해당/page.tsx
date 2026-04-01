@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 식당·호텔에서 봉사료(팁)를 받는데, 이게 임금인지 아닌지에 따라 퇴직금·세금이 달라지는 게 궁금한 상황이에요.
 // Q2. 봉사료가 임금인지 판단하고, 세금 처리 방법을 파악하는 행동.

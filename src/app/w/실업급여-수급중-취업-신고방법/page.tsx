@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 실업급여 받는 중에 취업했는데, 신고를 안 하면 부정수급이 될까 봐 불안한 상황이에요.
 // Q2. 고용24에서 온라인 취업신고를 완료하고, 조기재취업수당 신청 자격을 확인할 수 있어요.

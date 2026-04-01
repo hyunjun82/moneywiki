@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 집주인이 현금영수증 안 해준다고 하는데 어떻게 해야 할지 모르는 세입자
 // Q2. 홈택스에서 임대인 동의 없이 직접 신청 → 계약기간 매월 자동 발급

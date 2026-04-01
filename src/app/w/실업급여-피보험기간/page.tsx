@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 실업급여 신청하려는데 피보험기간이 180일이 됐는지, 이전 직장까지 합산되는지 모르는 상황
 // Q2. 고용24에서 피보험기간 조회 → 180일 충족 여부 확인 → 미충족이면 합산 방법 파악

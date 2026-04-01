@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 2026년에 국민연금이 뭐가 달라졌는지, 내 보험료가 얼마나 오르는지 궁금한 상황이에요.
 // Q2. 변경된 보험료율과 소득대체율을 확인하고 내 월 부담액을 파악하는 행동.

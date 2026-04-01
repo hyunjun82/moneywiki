@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 무보험으로 교통사고를 냈는데 형사처벌이 어떻게 되는지 알고 싶은 상황.
 // Q2. 무보험 운전 처벌 기준과 인명피해 시 가중처벌을 파악하고 대응 방향을 잡을 수 있어야 해요.

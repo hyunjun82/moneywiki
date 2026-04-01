@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 /*
 Q1. 경매 입찰일에 갑자기 못 가게 됐는데, 친구나 가족이 대신 참여할 수 있는지 궁금한 상황이에요.

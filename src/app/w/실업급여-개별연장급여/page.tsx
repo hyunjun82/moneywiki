@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1: 구직급여 기간이 끝나가는데 아직 일자리를 못 찾아서 추가 지원을 받고 싶은 상황
 // Q2: 개별연장급여 60일 추가 수급 신청 완료

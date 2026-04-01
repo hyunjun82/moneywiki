@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 공인중개사 시험에 합격했는데 바로 사무소를 열 수 있는지, 어떤 절차를 거쳐야 하는지 궁금한 상황.
 // Q2. 실무교육 이수부터 중개사무소 개설등록까지 전체 절차를 파악하고 시작할 수 있어야 해요.

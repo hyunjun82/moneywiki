@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1. 전세 보증금을 안전하게 지키고 싶은데 우선변제권이 뭔지 궁금한 상황
 // Q2. 우선변제권 요건을 갖추고 경매 시 보증금을 우선 돌려받을 수 있게 준비한다

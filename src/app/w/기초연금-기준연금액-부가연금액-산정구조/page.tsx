@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 기초연금 관련 글을 읽다가 "기준연금액", "부가연금액" 용어가 나와서 뭔 차이인지 헷갈리는 상황
 // Q2. 기준연금액과 부가연금액의 개념을 이해하고, 내 기초연금이 어떤 구조로 산정되는지 파악할 수 있어야 함

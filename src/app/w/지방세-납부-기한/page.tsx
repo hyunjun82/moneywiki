@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 지방세 고지서를 받았는데 납부기한이 지났거나 곧 지날 것 같아서 가산금이 얼마일지 걱정하는 상황
 // Q2. 가산금 계산 후 최대한 빨리 납부하기 : 위택스에서 지금 바로 납부

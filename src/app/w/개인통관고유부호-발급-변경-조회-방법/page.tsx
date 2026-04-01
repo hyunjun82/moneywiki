@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 해외직구 처음이라 개인통관고유부호가 뭔지 모르거나, 2026년 갱신 의무화 때문에 기존 부호를 갱신하려는 상황.
 // Q2. 관세청 유니패스에서 개인통관고유부호를 발급(또는 갱신)하고 배송주소를 등록하는 행동.

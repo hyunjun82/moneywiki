@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 빚 때문에 통장이 압류돼서 월급이나 연금을 못 받는 상황이거나, 그런 상황이 올까봐 미리 대비하려는 상황이에요.

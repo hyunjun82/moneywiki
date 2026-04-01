@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 주택연금 가입을 앞두고 초기보증료가 부담되는데, 2026년 인하 소식을 듣고 정확히 얼마나 줄었는지·환급 규정이 뭔지 확인하려는 상황
 // Q2. 변경된 초기보증료(1.0%)와 환급 기간(5년)을 파악하고, 내 주택 가격 기준으로 절감액을 계산한다

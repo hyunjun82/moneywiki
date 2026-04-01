@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 실업급여 받다가 먼 곳에 취업했는데, 이사비용이 부담돼서 이주비라는 제도를 처음 들어보고 찾아보는 상황이에요.

@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 /*
 Q1. 학자금 대출 갚고 있는데 연말정산에서 공제받을 수 있는지 궁금한 상황

@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 퇴사 후 실업급여를 받는 중인데 건강보험료가 얼마나 나올지, 어떻게 처리해야 할지 걱정되는 사람
 // Q2: 임의계속가입 신청해서 건강보험료 부담 줄이기

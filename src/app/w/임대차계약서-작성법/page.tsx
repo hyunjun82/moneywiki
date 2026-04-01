@@ -1,4 +1,5 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
 
 // Q1: 임대차계약서 작성법 info
 // Q2: 임대차계약서를 직접 작성하거나 확인할 수 있는 능력 확보

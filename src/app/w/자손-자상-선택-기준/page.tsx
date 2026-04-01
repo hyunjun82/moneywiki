@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 자동차보험 갱신할 때 자손·자상 중 뭘 선택해야 할지 모르는 상황
 // Q2. 보장 범위 비교 → 내 직업·운전 빈도 고려 → 자상 선택 또는 자손 유지 결정

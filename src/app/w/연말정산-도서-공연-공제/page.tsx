@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 도서·공연·영화비로 얼마나 공제받을 수 있는지 궁금한 직장인
 // Q2. 공제 대상 항목과 한도를 파악하고, 문화비 지출을 공제에 활용한다

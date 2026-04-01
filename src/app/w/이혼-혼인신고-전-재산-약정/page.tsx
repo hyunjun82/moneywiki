@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 혼인 전에 재산 약정(부부재산계약)을 했는데, 이혼 시 효력이 있는지 궁금한 상황
 // Q2. 부부재산계약의 법적 효력 요건을 확인하고, 이혼 시 재산분할과의 관계를 파악한다

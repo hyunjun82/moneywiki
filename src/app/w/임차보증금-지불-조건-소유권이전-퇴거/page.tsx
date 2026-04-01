@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 집이 팔려서 소유권이 넘어갔는데 보증금을 돌려받을 수 있는지 걱정하는 상황
 // Q2. 새 집주인에게 보증금 반환을 요구하고, 안 주면 법적 대응 절차를 밟는다

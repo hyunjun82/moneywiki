@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 회사가 법원 파산 없이 문 닫아서 밀린 임금을 못 받고 있는 상황이에요.
 // Q2. 도산등사실인정 요건을 확인하고 고용노동부에 신청서를 제출하는 행동.

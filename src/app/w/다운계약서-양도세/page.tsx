@@ -1,4 +1,6 @@
 "use client";
+import { Divider } from "@/components/article-ui/Divider";
+import { BorderBox } from "@/components/article-ui/BorderBox";
 
 // Q1. 부동산 거래하면서 중개사나 매수자가 다운계약서를 제안해서 고민 중인 상황
 // Q2. 다운계약서 쓰면 비과세 배제 + 가산세 + 과태료 얼마나 나오는지 파악하고 절대 쓰지 않기
