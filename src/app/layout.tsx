@@ -83,11 +83,11 @@ export default function RootLayout({
   return (
     <html lang="ko" className={inter.variable}>
       <head>
-        {/* Google AdSense - lazyOnload로 변경하여 LCP 개선 */}
+        {/* Google AdSense - lazyOnload (LCP 개선, pharm-jjyu 검증 배치) */}
         <Script
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2442517902625121"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         {/* Microsoft Clarity */}
         <Script id="clarity-analytics" strategy="lazyOnload">

@@ -1,18 +1,19 @@
 "use client";
 
-import AdSense, { AD_SLOTS } from "@/components/AdSense";
+import { AdSlot } from "@/components/AdSlot";
 
 interface Props {
-  /** 광고 위치: "intro" = 서론 아래 / "mid" = 섹션 2 뒤 (버튼 아래) */
-  position: "intro" | "mid";
+  /** intro=서론 아래(money1) / mid=본문 중간(money2) / bottom=FAQ 아래(money3) / anchor=하단 sticky(money4) */
+  position: "intro" | "mid" | "bottom" | "anchor";
 }
 
-export function ArticleAd({ position }: Props) {
-  const slot = position === "intro" ? AD_SLOTS.HORIZONTAL : AD_SLOTS.VERTICAL;
+const POSITION_MAP = {
+  intro: "top",
+  mid: "hero",
+  bottom: "bottom",
+  anchor: "anchor",
+} as const;
 
-  return (
-    <div style={{ margin: "24px 0" }}>
-      <AdSense slot={slot} format="auto" />
-    </div>
-  );
+export function ArticleAd({ position }: Props) {
+  return <AdSlot slot={POSITION_MAP[position]} />;
 }

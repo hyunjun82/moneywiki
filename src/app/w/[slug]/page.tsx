@@ -12,7 +12,7 @@ import {
   EventSchema,
   ItemListSchema,
 } from "@/components/JsonLd";
-import AdSense, { AD_SLOTS } from "@/components/AdSense";
+import { AdSlot } from "@/components/AdSlot";
 import ShareButtons from "@/components/ShareButtons";
 import CtaCard from "@/components/CtaCard";
 // ê³ì°ê¸° ì»´í¬ëí¸ë í´ë¼ì´ì¸í¸ ëí¼ìì ëì  ë¡ë©
@@ -629,9 +629,8 @@ export default async function WikiPage({ params }: PageProps) {
           )}
 
           {/* ê´ê³  - ë³¸ë¬¸ ìë¨ */}
-          <div className="mb-8 max-h-[120px] overflow-hidden">
-            <AdSense slot={AD_SLOTS.HORIZONTAL} format="horizontal" className="w-full" />
-          </div>
+          {/* 광고 1 (top) */}
+          <AdSlot slot="top" />
 
           {/* ë³¸ë¬¸ (H2 ì¹ìë¤) */}
           <article
@@ -648,6 +647,9 @@ export default async function WikiPage({ params }: PageProps) {
               prose-blockquote:border-l-[3px] prose-blockquote:border-l-[#1E3A5F] prose-blockquote:bg-[#F5F8FB] prose-blockquote:py-3 prose-blockquote:px-5 prose-blockquote:rounded-r-lg prose-blockquote:not-italic"
             dangerouslySetInnerHTML={{ __html: bodyHtml }}
           />
+
+          {/* 광고 2 (hero) — 본문 끝, 소스 위 */}
+          <AdSlot slot="hero" />
 
           {/* ì¶ì² ì¹ì - E-E-A-T ê°í */}
           {doc.sources && doc.sources.length > 0 && (
@@ -680,9 +682,8 @@ export default async function WikiPage({ params }: PageProps) {
           )}
 
           {/* ê´ê³  - ë³¸ë¬¸ íë¨ */}
-          <div className="mt-12 max-h-[120px] overflow-hidden">
-            <AdSense slot={AD_SLOTS.VERTICAL} format="horizontal" className="w-full" />
-          </div>
+          {/* 광고 3 (bottom) — 본문/소스 끝 */}
+          <AdSlot slot="bottom" />
 
           {/* í¤ìë íê·¸ */}
           {doc.keywords && doc.keywords.length > 0 && (
@@ -716,9 +717,7 @@ export default async function WikiPage({ params }: PageProps) {
         <aside className="w-72 shrink-0 hidden lg:block space-y-4">
           <div className="sticky top-4">
             {/* ì¬ì´ëë° ê´ê³  */}
-            <div className="mb-4 max-w-[300px]">
-              <AdSense slot={AD_SLOTS.SQUARE} format="rectangle" className="w-full" />
-            </div>
+            {/* 사이드바 광고 제거: 4-슬롯 체계로 통합 (top/hero/bottom/anchor) */}
 
             {/* CTA ë²í¼ - ë¸ëì ê¹ë°ì í¨ê³¼ */}
             <div className="bg-white border border-neutral-200 rounded-xl overflow-hidden mb-4">
@@ -886,6 +885,9 @@ export default async function WikiPage({ params }: PageProps) {
           </div>
         </aside>
       </div>
+
+      {/* 광고 4 (anchor) — 하단 sticky. 계산기 페이지에서는 표시 안 함 */}
+      {doc.schemaType !== "calculator" && <AdSlot slot="anchor" />}
     </>
   );
 }
