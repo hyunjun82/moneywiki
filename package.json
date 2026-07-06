@@ -10,7 +10,8 @@
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
-    "prebuild": "node fix-imports-v2.js"
+    "prebuild": "node fix-imports-v2.js",
+    "postbuild": "node scripts/clean-out-txt.js"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
