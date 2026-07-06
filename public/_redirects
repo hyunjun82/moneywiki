@@ -1,2 +1,3 @@
 /Sitemaps.xml /sitemap.xml 301
 /Sitemap /sitemap.xml 301
+/w/:category/:slug /w/:slug 301
