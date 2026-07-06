@@ -739,84 +739,25 @@ export default async function FormDownloadPage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* 다운로드 버튼 - <a download> 태그 사용 */}
+        {/* 다운로드 CTA — 다운로드 페이지로 이동 (전면광고 트리거) */}
         <div className="bg-gradient-to-r from-[#F5F8FB] to-teal-50 border border-[#B8D0E8] rounded-xl p-6 mb-8">
-          <h2 id="download" className="text-lg font-semibold text-neutral-800 mb-4">
-            {(form.downloads.hwp || form.downloads.doc || form.downloads.pdf)
-              ? "원하는 포맷으로 다운받으세요"
-              : "외부 사이트에서 다운로드"}
+          <h2 id="download" className="text-lg font-semibold text-neutral-800 mb-2">
+            {form.shortTitle || form.title} 무료 다운로드
           </h2>
-          <div className="flex flex-wrap gap-3">
-            {form.downloads.hwp && (
-              <a
-                href={form.downloads.hwp}
-                download={form.downloadNames?.hwp || "양식.hwp"}
-                className="flex items-center gap-2 px-5 py-3 bg-white border border-neutral-200 rounded-lg hover:border-[#4A7AB5] hover:shadow-md transition-all cursor-pointer"
-              >
-                <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h6v6h6v10H6z"/>
-                  <text x="7" y="17" fontSize="6" fontWeight="bold" fill="currentColor">HWP</text>
-                </svg>
-                <div className="text-left">
-                  <div className="font-medium text-neutral-800">HWP</div>
-                  <div className="text-xs text-neutral-500">한글 파일</div>
-                </div>
-              </a>
-            )}
-            {form.downloads.doc && (
-              <a
-                href={form.downloads.doc}
-                download={form.downloadNames?.doc || "양식.docx"}
-                className="flex items-center gap-2 px-5 py-3 bg-white border border-neutral-200 rounded-lg hover:border-[#4A7AB5] hover:shadow-md transition-all cursor-pointer"
-              >
-                <svg className="w-6 h-6 text-blue-700" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h6v6h6v10H6z"/>
-                  <text x="6" y="17" fontSize="5" fontWeight="bold" fill="currentColor">DOC</text>
-                </svg>
-                <div className="text-left">
-                  <div className="font-medium text-neutral-800">WORD</div>
-                  <div className="text-xs text-neutral-500">워드 파일</div>
-                </div>
-              </a>
-            )}
-            {form.downloads.pdf && (
-              <a
-                href={form.downloads.pdf}
-                download={form.downloadNames?.pdf || "양식.pdf"}
-                className="flex items-center gap-2 px-5 py-3 bg-white border border-neutral-200 rounded-lg hover:border-[#4A7AB5] hover:shadow-md transition-all cursor-pointer"
-              >
-                <svg className="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h6v6h6v10H6z"/>
-                  <text x="6" y="17" fontSize="5" fontWeight="bold" fill="currentColor">PDF</text>
-                </svg>
-                <div className="text-left">
-                  <div className="font-medium text-neutral-800">PDF</div>
-                  <div className="text-xs text-neutral-500">PDF 파일</div>
-                </div>
-              </a>
-            )}
-            {/* 외부 다운로드 링크 (HWP/DOC/PDF 파일이 없을 때만 표시) */}
-            {!form.downloads.hwp && !form.downloads.doc && !form.downloads.pdf && form.externalDownload && (
-              <a
-                href={form.externalDownload.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-3 bg-[#1E3A5F] text-white rounded-lg hover:bg-[#162F4F] hover:shadow-md transition-all cursor-pointer"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-                <div className="text-left">
-                  <div className="font-medium">{form.externalDownload.source}에서 다운로드</div>
-                  <div className="text-xs text-[#EDF2F8]">{form.externalDownload.description}</div>
-                </div>
-              </a>
-            )}
-          </div>
-          <p className="text-xs text-neutral-500 mt-4">
-            {(form.downloads.hwp || form.downloads.doc || form.downloads.pdf)
-              ? `* ${form.source} 공식 양식입니다. 클릭 시 바로 다운로드됩니다. 회원가입/로그인 필요 없음.`
-              : `* ${form.externalDownload?.source || form.source}에서 양식을 다운로드할 수 있어요.`}
+          <p className="text-sm text-neutral-600 mb-4">
+            HWP·Word·PDF 형식 제공 · 회원가입 없음 · {form.source} 기준
+          </p>
+          <Link
+            href={`/forms/${encodeURIComponent(decodedSlug)}/download`}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#1E3A5F] text-white font-medium rounded-lg hover:bg-[#162F4F] transition-all shadow-lg hover:shadow-xl"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            다운로드 페이지로 이동
+          </Link>
+          <p className="text-xs text-neutral-500 mt-3">
+            * 다음 페이지에서 원하는 파일 형식을 선택해 저장할 수 있어요.
           </p>
         </div>
 
