@@ -38,7 +38,7 @@ export function AdSlot({ slot = "top" }: { slot?: AdSlotType }) {
   const pushed = useRef(false);
 
   useEffect(() => {
-    if (pushed.current) return;
+    if (pushed.current || slot === "anchor") return;
     pushed.current = true;
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
@@ -48,33 +48,10 @@ export function AdSlot({ slot = "top" }: { slot?: AdSlotType }) {
   const config = AD_CONFIG[slot];
 
   if (slot === "anchor") {
-    // MobileStickyBar(z-50 mobile / z-40 PC, 64px / 52px)와 충돌 방지: 그 위에 쌓음
-    return (
-      <div
-        className="ad-anchor-fixed"
-        style={{
-          position: "fixed",
-          left: 0,
-          right: 0,
-          bottom: 64,
-          zIndex: 30,
-          background: "#ffffff",
-          borderTop: "1px solid #f3f4f6",
-        }}
-      >
-        <style>{`
-          @media (min-width: 768px) {
-            .ad-anchor-fixed { bottom: 52px !important; }
-          }
-        `}</style>
-        <ins
-          className="adsbygoogle"
-          style={{ display: "block" }}
-          data-ad-client={AD_CLIENT}
-          {...config}
-        />
-      </div>
-    );
+    // 자체 fixed 앵커는 auto 반응형이 384px 대형 광고를 반환해 모바일 화면 절반을
+    // 덮는 정책 위반 소지가 있어 비활성화. 앵커가 필요하면 AdSense 자동광고의
+    // 공식 앵커(높이 제한·닫기 버튼 내장)를 사용할 것.
+    return null;
   }
 
   return (
