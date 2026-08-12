@@ -1,41 +1,117 @@
 name: IndexNow Auto Submit
 
+# 변경된 글 URL을 api.indexnow.org에 직접 제출 → Bing·Yandex·네이버에 전파.
+# 사이트가 output:export 정적 빌드라 /api 라우트가 없으므로 Actions에서 직접 POST한다.
+# 키 파일: public/cf14d2ece5b0438e848760be86604782.txt (배포되어 서빙 중)
+
 on:
   push:
     branches:
       - main
   workflow_dispatch: # 수동 실행 가능
 
+env:
+  SITE_HOST: jjyu.co.kr
+  INDEXNOW_KEY: cf14d2ece5b0438e848760be86604782
+
 jobs:
   submit-indexnow:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Wait for Vercel deployment
-        run: sleep 60  # Vercel 배포 완료 대기 (60초)
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Collect changed article URLs
+        id: collect
+        run: |
+          # push 이벤트면 before..after, 수동 실행이면 직전 커밋 1개
+          BEFORE="${{ github.event.before }}"
+          AFTER="${{ github.event.after }}"
+          if [ -z "$BEFORE" ] || ! git cat-file -e "$BEFORE" 2>/dev/null; then
+            BEFORE="HEAD~1"; AFTER="HEAD"
+          fi
+
+          python3 - "$BEFORE" "$AFTER" <<'EOF'
+          import json, os, re, subprocess, sys, urllib.parse
+
+          before, after = sys.argv[1], sys.argv[2]
+          host = os.environ["SITE_HOST"]
+
+          def run(*args):
+              return subprocess.run(args, capture_output=True, text=True).stdout
+
+          changed = run("git", "diff", "--name-only", "--diff-filter=AM", before, after).splitlines()
+
+          slugs = set()
+          for path in changed:
+              m = re.match(r"content/wiki/(.+)\.md$", path)
+              if m:
+                  slugs.add(m.group(1))
+              m = re.match(r"src/app/w/([^/]+)/page\.tsx$", path)
+              if m:
+                  slugs.add(m.group(1))
+
+          # articles ts 파일은 한 파일에 여러 글 → diff의 추가된 줄에서 slug 필드 추출
+          diff = run("git", "diff", "-U0", "--diff-filter=AM", before, after, "--", "src/data/articles")
+          for line in diff.splitlines():
+              if line.startswith("+"):
+                  m = re.search(r"""slug:\s*["']([^"']+)["']""", line)
+                  if m:
+                      slugs.add(m.group(1))
+
+          urls = sorted(
+              f"https://{host}/w/{urllib.parse.quote(s)}" for s in slugs
+          )
+          print(f"changed article urls: {len(urls)}")
+          for u in urls:
+              print(" ", u)
+
+          with open("urls.json", "w") as f:
+              json.dump(urls, f)
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"count={len(urls)}\n")
+          EOF
+
+      - name: Wait for Cloudflare Pages deploy
+        if: steps.collect.outputs.count != '0'
+        run: sleep 1800  # 빌드 30~50분 — 크롤러가 오기 전 배포가 끝나도록 30분 대기
 
       - name: Submit to IndexNow
+        if: steps.collect.outputs.count != '0'
         run: |
-          echo "Submitting sitemap URLs to IndexNow..."
-          response=$(curl -s -w "\n%{http_code}" https://jjyu.co.kr/api/indexnow)
-          http_code=$(echo "$response" | tail -n1)
-          body=$(echo "$response" | head -n-1)
+          python3 - <<'EOF'
+          import json, os, urllib.request
 
-          echo "HTTP Status: $http_code"
-          echo "Response: $body"
+          urls = json.load(open("urls.json"))
+          payload = json.dumps({
+              "host": os.environ["SITE_HOST"],
+              "key": os.environ["INDEXNOW_KEY"],
+              "keyLocation": f"https://{os.environ['SITE_HOST']}/{os.environ['INDEXNOW_KEY']}.txt",
+              "urlList": urls,
+          }).encode()
 
-          if [ "$http_code" -eq 200 ]; then
-            echo "✅ IndexNow 제출 성공!"
-            echo "$body" | jq '.' || echo "$body"
-          else
-            echo "❌ IndexNow 제출 실패"
-            exit 1
-          fi
+          req = urllib.request.Request(
+              "https://api.indexnow.org/indexnow",
+              data=payload,
+              headers={"Content-Type": "application/json; charset=utf-8"},
+          )
+          try:
+              with urllib.request.urlopen(req) as res:
+                  print("HTTP", res.status)
+                  print(res.read().decode() or "(empty body)")
+          except urllib.error.HTTPError as e:
+              print("HTTP", e.code, e.read().decode())
+              raise SystemExit(1)
+          print(f"submitted {len(urls)} urls")
+          EOF
 
       - name: Summary
         if: always()
         run: |
-          echo "### IndexNow Submission Results" >> $GITHUB_STEP_SUMMARY
+          echo "### IndexNow Submission" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "- Timestamp: $(date)" >> $GITHUB_STEP_SUMMARY
+          echo "- Changed URLs: ${{ steps.collect.outputs.count || 0 }}" >> $GITHUB_STEP_SUMMARY
           echo "- Status: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
