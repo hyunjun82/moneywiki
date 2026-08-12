@@ -30,14 +30,24 @@ FAQ       아코디언 · 3줄 요약 · 스포크 사이드바(허브-스포크
 - "총정리"는 타이틀에 허용 (참고 캡처들이 실제로 사용)
 - 광고: 상단 배너는 CTA와 분리(점선 테두리 유지), 광고에 초록색 금지, 버튼처럼 보이는 배치 금지
 
-### 3. 사실 검증 — Playwright 전용 (WebSearch/WebFetch 금지)
-1. `browser_navigate` → 정부 공식 사이트 (법제처/국세청/복지로/고용노동부 등)
-2. `browser_evaluate` → 조문·수치 원문 텍스트 추출 (의역 금지, literal)
-3. `browser_take_screenshot` → 수치가 보이는 화면 캡처 (증거)
-4. 증거 JSON `scripts/evidence/<slug>.json` 저장
-5. **QA가 글의 모든 숫자를 증거 JSON과 기계 대조** — 근거 없는 숫자 = FAIL
+### 3. 사실 검증 — 스크립트 자동화 (에이전트·웹검색 없음)
 
-파이프라인: `Agent(moneywiki-orchestrator, 키워드)` → researcher → writer → qa (명세: `.claude/agents/moneywiki-*.md`)
+```bash
+# ① 증거 수집: Playwright가 공식 사이트를 열어 원문 추출 + 조문별 스크린샷
+npm run evidence <slug> -- --law 지방세법:75,78,79 --url https://www.wetax.go.kr
+#    → scripts/evidence/<slug>.json + scripts/evidence/<slug>/*.png
+
+# ② 글 작성: 위 증거 JSON의 quote/value 안에서만 숫자를 쓴다 (src/data/articles/<카테고리>.ts)
+
+# ③ 대조: 본문의 모든 수치를 증거와 기계 대조. 근거 없으면 exit 1
+npm run verify:evidence
+
+npm run build   # prebuild에 ③이 걸려 있어 증거 없는 글은 빌드가 실패한다
+```
+
+- 수집기 `scripts/collect-evidence.mjs` — chromium 직접 구동. WebSearch/WebFetch 코드 경로 자체가 없음
+- 대조기 `scripts/verify-evidence.mjs` — 수치 매칭 + 스크린샷 실존 확인. 예시 계산값은 증거 JSON의 `exampleValues`에 선언해야 통과
+- **서브에이전트 파이프라인(moneywiki-orchestrator/researcher/writer/qa)은 2026-08-12 폐기·삭제.** 구 시스템과의 충돌 방지
 
 ---
 

@@ -1,47 +1,46 @@
-{
-  "name": "wiki-site",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "validate": "py scripts/validate-all.py",
-    "validate-static": "node scripts/validate-force-static.js",
-    "quality": "node scripts/verify-quality.js",
-    "verify:articles": "npx tsx scripts/verify-articles.ts",
-    "build": "next build --webpack",
-    "start": "next start",
-    "lint": "eslint",
-    "prebuild": "node fix-imports-v2.js && npx tsx scripts/verify-articles.ts && node scripts/verify-evidence.mjs",
-    "postbuild": "node scripts/clean-out-txt.js",
-    "evidence": "node scripts/collect-evidence.mjs",
-    "verify:evidence": "node scripts/verify-evidence.mjs"
-  },
-  "dependencies": {
-    "@tailwindcss/typography": "^0.5.19",
-    "@upstash/redis": "^1.36.1",
-    "@vercel/analytics": "^1.6.1",
-    "autoprefixer": "^10.4.23",
-    "gray-matter": "^4.0.3",
-    "lucide-react": "^0.576.0",
-    "next": "16.1.1",
-    "postcss": "^8.5.6",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
-    "recharts": "^2.15.3",
-    "remark": "^15.0.1",
-    "remark-gfm": "^4.0.1",
-    "remark-html": "^16.0.1",
-    "tailwindcss": "^3.4.19"
-  },
-  "devDependencies": {
-    "@playwright/test": "^1.57.0",
-    "@types/node": "20.19.30",
-    "@types/react": "19.2.10",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.1.1",
-    "playwright": "^1.57.0",
-    "sharp": "^0.34.5",
-    "typescript": "5.9.3"
-  }
+﻿{
+    "name":  "wiki-site",
+    "version":  "0.1.0",
+    "private":  true,
+    "scripts":  {
+                    "dev":  "next dev",
+                    "validate":  "py scripts/validate-all.py",
+                    "validate-static":  "node scripts/validate-force-static.js",
+                    "verify:articles":  "npx tsx scripts/verify-articles.ts",
+                    "build":  "next build --webpack",
+                    "start":  "next start",
+                    "lint":  "eslint",
+                    "prebuild":  "node fix-imports-v2.js \u0026\u0026 npx tsx scripts/verify-articles.ts \u0026\u0026 node scripts/verify-evidence.mjs",
+                    "postbuild":  "node scripts/clean-out-txt.js",
+                    "evidence":  "node scripts/collect-evidence.mjs",
+                    "verify:evidence":  "node scripts/verify-evidence.mjs"
+                },
+    "dependencies":  {
+                         "@tailwindcss/typography":  "^0.5.19",
+                         "@upstash/redis":  "^1.36.1",
+                         "@vercel/analytics":  "^1.6.1",
+                         "autoprefixer":  "^10.4.23",
+                         "gray-matter":  "^4.0.3",
+                         "lucide-react":  "^0.576.0",
+                         "next":  "16.1.1",
+                         "postcss":  "^8.5.6",
+                         "react":  "19.2.3",
+                         "react-dom":  "19.2.3",
+                         "recharts":  "^2.15.3",
+                         "remark":  "^15.0.1",
+                         "remark-gfm":  "^4.0.1",
+                         "remark-html":  "^16.0.1",
+                         "tailwindcss":  "^3.4.19"
+                     },
+    "devDependencies":  {
+                            "@playwright/test":  "^1.57.0",
+                            "@types/node":  "20.19.30",
+                            "@types/react":  "19.2.10",
+                            "@types/react-dom":  "^19",
+                            "eslint":  "^9",
+                            "eslint-config-next":  "16.1.1",
+                            "playwright":  "^1.57.0",
+                            "sharp":  "^0.34.5",
+                            "typescript":  "5.9.3"
+                        }
 }
