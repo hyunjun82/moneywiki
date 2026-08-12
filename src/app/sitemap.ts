@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { getAllWikiParams } from "@/lib/wiki";
+import { getAllArticleSlugs } from "@/lib/articles";
 import fs from "fs";
 import path from "path";
 
@@ -50,5 +51,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
             }));
   }
 
-  return [...staticUrls, ...wikiUrls, ...tsxUrls];
+  // articles 글 (src/data/articles/*.ts) — MD/TSX에 없는 슬러그만 추가
+  const tsxSlugs = new Set(tsxUrls.map((u) => u.url));
+  const articleUrls: MetadataRoute.Sitemap = getAllArticleSlugs()
+    .map((slug) => `${baseUrl}/w/${encodeURIComponent(slug)}`)
+    .filter((url) => !tsxSlugs.has(url))
+    .filter((url) => {
+      const slug = decodeURIComponent(url.slice(`${baseUrl}/w/`.length));
+      return !mdSlugs.has(slug);
+    })
+    .map((url) => ({
+      url,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    }));
+
+  return [...staticUrls, ...wikiUrls, ...tsxUrls, ...articleUrls];
 }
