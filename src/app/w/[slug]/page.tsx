@@ -3,6 +3,8 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getWikiDocument, getAllWikiSlugs, findRelatedDocuments, getAllWikiDocuments } from "@/lib/wiki";
+import { getArticle, getAllArticleSlugs } from "@/lib/articles";
+import { ArticleShell } from "@/components/article";
 import {
   ArticleSchema,
   FAQSchema,
@@ -15,7 +17,7 @@ import {
 import { AdSlot } from "@/components/AdSlot";
 import ShareButtons from "@/components/ShareButtons";
 import CtaCard from "@/components/CtaCard";
-// ê³ì°ê¸° ì»´í¬ëí¸ë í´ë¼ì´ì¸í¸ ëí¼ìì ëì  ë¡ë©
+// 계산기 컴포넌트는 클라이언트 래퍼에서 동적 로딩
 import CalculatorLoader from "@/components/CalculatorLoader";
 
 interface PageProps {
@@ -23,31 +25,64 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-    const slugs = getAllWikiSlugs();
-    return slugs.map((slug) => ({ slug }));
+    const mdSlugs = getAllWikiSlugs();
+    const articleSlugs = getAllArticleSlugs();
+    // articles 우선: 같은 slug면 articles만 등록되도록 dedup
+    const unique = new Set<string>([...articleSlugs, ...mdSlugs]);
+    return Array.from(unique).map((slug) => ({ slug }));
 }
 
-// ISR - ë¹ë ì 0ê°, ìì²­ ì ìì± â ìºì â 24ìê° í ì¬ìì±
+// ISR - 빌드 시 0개, 요청 시 생성 → 캐시 → 24시간 후 재생성
 
 
-// ë©íë°ì´í° ìì± - SEO ìµì í
+// 메타데이터 생성 - SEO 최적화
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug: rawSlug } = await params;
   let slug: string;
   try {
     slug = decodeURIComponent(rawSlug);
   } catch {
-    return { title: "íì´ì§ë¥¼ ì°¾ì ì ììµëë¤ | ë¨¸ëìí¤" };
+    return { title: "페이지를 찾을 수 없습니다 | 머니위키" };
   }
   if (slug.includes(' ') || slug.includes('%')) {
-    return { title: "íì´ì§ë¥¼ ì°¾ì ì ììµëë¤ | ë¨¸ëìí¤" };
+    return { title: "페이지를 찾을 수 없습니다 | 머니위키" };
+  }
+
+  // ── articles 우선 메타 ──
+  const article = getArticle(slug);
+  if (article) {
+    const articleUrl = `https://www.jjyu.co.kr/w/${slug}`;
+    return {
+      title: article.meta.title,
+      description: article.meta.description,
+      alternates: { canonical: articleUrl },
+      openGraph: {
+        title: `${article.meta.title} | 머니위키`,
+        description: article.meta.description,
+        type: "article",
+        url: articleUrl,
+        siteName: "머니위키",
+        locale: "ko_KR",
+        section: article.category,
+        ...(article.meta.ogImage && {
+          images: [{ url: article.meta.ogImage, width: 1200, height: 630, alt: article.meta.title }],
+        }),
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: `${article.meta.title} | 머니위키`,
+        description: article.meta.description,
+        ...(article.meta.ogImage && { images: [article.meta.ogImage] }),
+      },
+      robots: { index: true, follow: true, "max-snippet": -1, "max-image-preview": "large" },
+    };
   }
 
   const doc = await getWikiDocument(slug);
 
   if (!doc) {
     return {
-      title: "ë¬¸ìë¥¼ ì°¾ì ì ììµëë¤",
+      title: "문서를 찾을 수 없습니다",
     };
   }
 
@@ -57,20 +92,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: doc.title,
     description: doc.description,
     keywords: doc.keywords,
-    authors: [{ name: "ë¨¸ëìí¤" }],
+    authors: [{ name: "머니위키" }],
     alternates: {
       canonical: url,
     },
     openGraph: {
-      title: `${doc.title} | ë¨¸ëìí¤`,
+      title: `${doc.title} | 머니위키`,
       description: doc.description,
       type: "article",
       url: url,
-      siteName: "ë¨¸ëìí¤",
+      siteName: "머니위키",
       locale: "ko_KR",
       publishedTime: doc.datePublished,
       modifiedTime: doc.lastUpdated,
-      authors: ["ë¨¸ëìí¤"],
+      authors: ["머니위키"],
       tags: doc.keywords,
       section: doc.category,
       ...(doc.thumbnail && {
@@ -86,7 +121,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: "summary_large_image",
-      title: `${doc.title} | ë¨¸ëìí¤`,
+      title: `${doc.title} | 머니위키`,
       description: doc.description,
       ...(doc.thumbnail && {
         images: [`https://www.jjyu.co.kr${doc.thumbnail}`],
@@ -102,122 +137,122 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-// ì£¼ì ë³ ê³ì°ê¸° ë§¤í í¨ì (ì ì ê¸°ë° - ê°ì¥ ê´ë ¨ì± ëì ê³ì°ê¸° ë°í)
+// 주제별 계산기 매핑 함수 (점수 기반 - 가장 관련성 높은 계산기 반환)
 function getRelatedCalculator(slug: string, title: string, category: string): { slug: string; title: string } | null {
   const text = `${slug} ${title} ${category}`.toLowerCase();
 
-  // ê³ì°ê¸° ë§¤í íì´ë¸ (í¤ìëì ê°ì¤ì¹)
+  // 계산기 매핑 테이블 (키워드와 가중치)
   const calculatorMappings = [
     {
-      slug: 'í´ì§ê¸-ê³ì°ê¸°',
-      title: 'í´ì§ê¸ ê³ì°ê¸°',
+      slug: '퇴직금-계산기',
+      title: '퇴직금 계산기',
       keywords: [
-        { word: 'í´ì§ê¸', weight: 10 },
-        { word: 'í´ì§ì°ê¸', weight: 8 },
-        { word: 'í´ì§', weight: 5 },
+        { word: '퇴직금', weight: 10 },
+        { word: '퇴직연금', weight: 8 },
+        { word: '퇴직', weight: 5 },
       ]
     },
     {
-      slug: 'ì¤ìê¸ì¬-ê³ì°ê¸°',
-      title: 'ì¤ìê¸ì¬ ê³ì°ê¸°',
+      slug: '실업급여-계산기',
+      title: '실업급여 계산기',
       keywords: [
-        { word: 'ì¤ìê¸ì¬', weight: 10 },
-        { word: 'ê³ ì©ë³´í', weight: 8 },
-        { word: 'êµ¬ì§ê¸ì¬', weight: 8 },
+        { word: '실업급여', weight: 10 },
+        { word: '고용보험', weight: 8 },
+        { word: '구직급여', weight: 8 },
       ]
     },
     {
-      slug: 'ì°ë§ì ì°-ê³ì°ê¸°',
-      title: 'ì°ë§ì ì° ê³ì°ê¸°',
+      slug: '연말정산-계산기',
+      title: '연말정산 계산기',
       keywords: [
-        { word: 'ì°ë§ì ì°', weight: 10 },
-        { word: 'ìëê³µì ', weight: 6 },
-        { word: 'ì¸ì¡ê³µì ', weight: 6 },
+        { word: '연말정산', weight: 10 },
+        { word: '소득공제', weight: 6 },
+        { word: '세액공제', weight: 6 },
       ]
     },
     {
-      slug: 'ìëìëì¸-ê³ì°ê¸°',
-      title: 'ìëìëì¸ ê³ì°ê¸°',
+      slug: '양도소득세-계산기',
+      title: '양도소득세 계산기',
       keywords: [
-        { word: 'ìëìëì¸', weight: 10 },
-        { word: 'ìëì¸', weight: 10 },
-        { word: 'ìë', weight: 5 },
+        { word: '양도소득세', weight: 10 },
+        { word: '양도세', weight: 10 },
+        { word: '양도', weight: 5 },
       ]
     },
     {
-      slug: 'ëì¶ì´ì-ê³ì°ê¸°',
-      title: 'ëì¶ì´ì ê³ì°ê¸°',
+      slug: '대출이자-계산기',
+      title: '대출이자 계산기',
       keywords: [
-        { word: 'ëì¶ì´ì', weight: 10 },
-        { word: 'ëì¶', weight: 6 },
-        { word: 'ê¸ë¦¬', weight: 5 },
-        { word: 'ìë¦¬ê¸', weight: 5 },
+        { word: '대출이자', weight: 10 },
+        { word: '대출', weight: 6 },
+        { word: '금리', weight: 5 },
+        { word: '원리금', weight: 5 },
       ]
     },
     {
-      slug: 'DSR-ê³ì°ê¸°',
-      title: 'DSR ê³ì°ê¸°',
+      slug: 'DSR-계산기',
+      title: 'DSR 계산기',
       keywords: [
         { word: 'dsr', weight: 10 },
-        { word: 'ì´ë¶ì±', weight: 8 },
+        { word: '총부채', weight: 8 },
       ]
     },
     {
-      slug: 'êµ­ë¯¼ì°ê¸-ìë ¹ì¡-ê³ì°ê¸°',
-      title: 'êµ­ë¯¼ì°ê¸ ìë ¹ì¡',
+      slug: '국민연금-수령액-계산기',
+      title: '국민연금 수령액',
       keywords: [
-        { word: 'êµ­ë¯¼ì°ê¸', weight: 10 },
-        { word: 'ì°ê¸ìë ¹', weight: 8 },
+        { word: '국민연금', weight: 10 },
+        { word: '연금수령', weight: 8 },
       ]
     },
     {
-      slug: '4ëë³´íë£-ê³ì°ê¸°',
-      title: '4ëë³´íë£ ê³ì°ê¸°',
+      slug: '4대보험료-계산기',
+      title: '4대보험료 계산기',
       keywords: [
-        { word: '4ëë³´í', weight: 10 },
-        { word: 'ì¬ëë³´í', weight: 10 },
+        { word: '4대보험', weight: 10 },
+        { word: '사대보험', weight: 10 },
       ]
     },
     {
-      slug: 'ê·¼ë¡ìëì¸-ê³ì°ê¸°',
-      title: 'ê·¼ë¡ìëì¸ ê³ì°ê¸°',
+      slug: '근로소득세-계산기',
+      title: '근로소득세 계산기',
       keywords: [
-        { word: 'ê·¼ë¡ìëì¸', weight: 10 },
-        { word: 'ê·¼ë¡ìë', weight: 6 },
+        { word: '근로소득세', weight: 10 },
+        { word: '근로소득', weight: 6 },
       ]
     },
     {
-      slug: 'ì ìì¸-ê³ì°ê¸°',
-      title: 'ì ìì¸ ê³ì°ê¸°',
+      slug: '전월세-계산기',
+      title: '전월세 계산기',
       keywords: [
-        { word: 'ì ì¸', weight: 8 },
-        { word: 'ìì¸', weight: 8 },
-        { word: 'ìëì°¨', weight: 6 },
+        { word: '전세', weight: 8 },
+        { word: '월세', weight: 8 },
+        { word: '임대차', weight: 6 },
       ]
     },
     {
-      slug: 'ì£¼ì-ê³ì°ê¸°',
-      title: 'ì£¼ì ê³ì°ê¸°',
+      slug: '주식-계산기',
+      title: '주식 계산기',
       keywords: [
-        { word: 'ì£¼ì', weight: 8 },
-        { word: 'ë°°ë¹', weight: 6 },
-        { word: 'ì¦ê¶', weight: 5 },
+        { word: '주식', weight: 8 },
+        { word: '배당', weight: 6 },
+        { word: '증권', weight: 5 },
       ]
     },
     {
-      slug: 'ìì ê¸-ê³ì°ê¸°',
-      title: 'ìì ê¸ ê³ì°ê¸°',
+      slug: '예적금-계산기',
+      title: '예적금 계산기',
       keywords: [
-        { word: 'ìê¸', weight: 10 },
-        { word: 'ì ê¸', weight: 10 },
-        { word: 'ìì ê¸', weight: 10 },
-        { word: 'ì ê¸°ìê¸', weight: 8 },
-        { word: 'ì ê¸°ì ê¸', weight: 8 },
+        { word: '예금', weight: 10 },
+        { word: '적금', weight: 10 },
+        { word: '예적금', weight: 10 },
+        { word: '정기예금', weight: 8 },
+        { word: '정기적금', weight: 8 },
       ]
     },
   ];
 
-  // ê° ê³ì°ê¸°ë³ ì ì ê³ì°
+  // 각 계산기별 점수 계산
   let bestMatch: { slug: string; title: string; score: number } | null = null;
 
   for (const calc of calculatorMappings) {
@@ -235,7 +270,7 @@ function getRelatedCalculator(slug: string, title: string, category: string): { 
   return bestMatch ? { slug: bestMatch.slug, title: bestMatch.title } : null;
 }
 
-// HTML ì½íì¸ ìì ëª©ì°¨ ì¶ì¶
+// HTML 콘텐츠에서 목차 추출
 function extractToc(html: string): { id: string; text: string; level: number }[] {
   const toc: { id: string; text: string; level: number }[] = [];
   const regex = /<h([23])[^>]*>(.*?)<\/h\1>/gi;
@@ -245,14 +280,14 @@ function extractToc(html: string): { id: string; text: string; level: number }[]
   while ((match = regex.exec(html)) !== null) {
     toc.push({
       id: `section-${counter++}`,
-      text: match[2].replace(/<[^>]+>/g, ""), // HTML íê·¸ ì ê±°
+      text: match[2].replace(/<[^>]+>/g, ""), // HTML 태그 제거
       level: parseInt(match[1]),
     });
   }
   return toc;
 }
 
-// HTMLì ì¹ì IDì ë²í¸ ì¶ê° (ëë¬´ìí¤ ì¤íì¼)
+// HTML에 섹션 ID와 번호 추가 (나무위키 스타일)
 function addSectionIds(html: string): string {
   let counter = 0;
   let h2Counter = 0;
@@ -291,6 +326,12 @@ export default async function WikiPage({ params }: PageProps) {
     notFound();
   }
 
+  // ── articles 우선 렌더링 ──
+  const article = getArticle(slug);
+  if (article) {
+    return <ArticleShell data={article} />;
+  }
+
   const doc = await getWikiDocument(slug);
 
   if (!doc) {
@@ -301,19 +342,19 @@ export default async function WikiPage({ params }: PageProps) {
   const relatedDocs = findRelatedDocuments(doc.slug, 5);
   const allDocs = getAllWikiDocuments();
 
-  // ì¸ê¸° ë¬¸ì (ì¡°íì ê¸°ë° - íì¬ë ìµì ìì¼ë¡ ëì²´)
+  // 인기 문서 (조회수 기반 - 현재는 최신순으로 대체)
   const popularDocs = allDocs.slice(0, 5);
 
-  // HTML ì²ë¦¬
+  // HTML 처리
   let processedHtml = addSectionIds(doc.htmlContent || "");
 
-  // FAQë¥¼ ë³¸ë¬¸ì ì½ì (ê²°ë¡  ì , ì¶ì² ìì ë§ì§ë§ H2 ìì)
+  // FAQ를 본문에 삽입 (결론 전, 출처 앞의 마지막 H2 앞에)
   if (doc.faq && doc.faq.length > 0) {
     const faqHtml = `
       <section class="faq-section mt-12 pt-8 border-t border-neutral-200">
         <div class="flex items-center gap-2 mb-6">
-          <span class="text-2xl">â</span>
-          <h2 id="faq" class="text-2xl font-bold">ìì£¼ ë¬»ë ì§ë¬¸</h2>
+          <span class="text-2xl">❓</span>
+          <h2 id="faq" class="text-2xl font-bold">자주 묻는 질문</h2>
         </div>
         <div class="space-y-4">
           ${doc.faq.map((item: { question: string; answer: string }, index: number) => `
@@ -330,85 +371,85 @@ export default async function WikiPage({ params }: PageProps) {
       </section>
     `;
 
-    // ë§í¬ë¤ì´ ë³¸ë¬¸ìì "ìì£¼ ë¬»ë ì§ë¬¸" ì¹ì ì ê±° (frontmatter FAQë¡ ëì²´)
-    // addSectionIds í: <h2 id="section-N"><span...>ì«ì.</span>ìì£¼ ë¬»ë ì§ë¬¸</h2>
-    const faqRemovePattern = /<h2[^>]*>(?:<span[^>]*>[^<]*<\/span>)?\s*ìì£¼\s*ë¬»ë\s*ì§ë¬¸<\/h2>[\s\S]*?(?=<hr|<h2|$)/gi;
+    // 마크다운 본문에서 "자주 묻는 질문" 섹션 제거 (frontmatter FAQ로 대체)
+    // addSectionIds 후: <h2 id="section-N"><span...>숫자.</span>자주 묻는 질문</h2>
+    const faqRemovePattern = /<h2[^>]*>(?:<span[^>]*>[^<]*<\/span>)?\s*자주\s*묻는\s*질문<\/h2>[\s\S]*?(?=<hr|<h2|$)/gi;
     processedHtml = processedHtml.replace(faqRemovePattern, '');
 
-    // ë³¸ë¬¸ìì "ì¶ì²" ì¹ì ì ê±° (íë¨ ì¶ì² ë° ì°¸ê³ ìë£ë¡ ëì²´)
-    const sourceRemovePattern = /<h2[^>]*>(?:<span[^>]*>[^<]*<\/span>)?\s*ì¶ì²<\/h2>[\s\S]*?(?=<hr|<h2|<section|$)/gi;
+    // 본문에서 "출처" 섹션 제거 (하단 출처 및 참고자료로 대체)
+    const sourceRemovePattern = /<h2[^>]*>(?:<span[^>]*>[^<]*<\/span>)?\s*출처<\/h2>[\s\S]*?(?=<hr|<h2|<section|$)/gi;
     processedHtml = processedHtml.replace(sourceRemovePattern, '');
 
-    // ë³¸ë¬¸ìì "ê´ë ¨ ë¬¸ì" ì¹ì ì ê±° (ì¬ì´ëë°ë¡ ì´ë)
-    // FIXME: ì ê·ìì´ ëë¬´ ê´ë²ìíê² ë§¤ì¹­ëì´ ë³¸ë¬¸ê¹ì§ ì­ì íë ë¬¸ì  ë°ì
-    // ììë¡ ë¹íì±í
-    // const relatedDocsRemovePattern = /<h2[^>]*>[\s\S]*?ê´ë ¨\s*ë¬¸ì[\s\S]*?<\/h2>[\s\S]*?(?=<hr|<h2|<section|$)/gi;
+    // 본문에서 "관련 문서" 섹션 제거 (사이드바로 이동)
+    // FIXME: 정규식이 너무 광범위하게 매칭되어 본문까지 삭제하는 문제 발생
+    // 임시로 비활성화
+    // const relatedDocsRemovePattern = /<h2[^>]*>[\s\S]*?관련\s*문서[\s\S]*?<\/h2>[\s\S]*?(?=<hr|<h2|<section|$)/gi;
     // processedHtml = processedHtml.replace(relatedDocsRemovePattern, '');
 
-    // ë¨¸ëìí¤ ë°ì¤ HTML ìì±
+    // 머니위키 박스 HTML 생성
     const wikiBoxHtml = relatedDocs.length > 0 ? `
       <div class="my-8 border border-neutral-200 rounded-xl overflow-hidden not-prose">
         <div class="px-4 py-2.5 bg-neutral-50 border-b border-neutral-100 flex items-center gap-2">
-          <span class="text-[#1E3A5F] font-semibold text-sm">ð¡ ë¨¸ëìí¤</span>
+          <span class="text-[#1E3A5F] font-semibold text-sm">💡 머니위키</span>
         </div>
         <div class="divide-y divide-neutral-100">
           ${relatedDocs.slice(0, 3).map((relDoc: { slug: string; title: string }) => `
             <a href="/w/${encodeURIComponent(relDoc.slug)}" class="flex items-center justify-between px-4 py-3 hover:bg-neutral-50 transition-colors group no-underline">
               <span class="text-sm text-neutral-700 group-hover:text-[#1E3A5F] transition-colors">${relDoc.title}</span>
-              <span class="text-[#2B5280] font-bold">â</span>
+              <span class="text-[#2B5280] font-bold">→</span>
             </a>
           `).join('')}
         </div>
       </div>
     ` : '';
 
-    // ë¨¸ëìí¤ ë°ì¤: ë³¸ë¬¸ ë§ì§ë§ H2 ë°ë¡ ìì ì½ì
-    // ìì¤í H2 (FAQ, ì¶ì², ê´ë ¨ ë¬¸ì) ì ì¸íê³  ë§ì§ë§ ë³¸ë¬¸ H2 ì°¾ê¸°
+    // 머니위키 박스: 본문 마지막 H2 바로 위에 삽입
+    // 시스템 H2 (FAQ, 출처, 관련 문서) 제외하고 마지막 본문 H2 찾기
     if (wikiBoxHtml) {
       const h2Regex = /<h2[^>]*>(?:<span[^>]*>[^<]*<\/span>)?([^<]*)<\/h2>/gi;
-      const systemH2Patterns = /ìì£¼\s*ë¬»ë\s*ì§ë¬¸|ì¶ì²|ê´ë ¨\s*ë¬¸ì|ê´ë ¨\s*í¤ìë|ì°¸ê³ \s*ìë£/i;
+      const systemH2Patterns = /자주\s*묻는\s*질문|출처|관련\s*문서|관련\s*키워드|참고\s*자료/i;
 
       let lastContentH2Index: number | null = null;
       let match;
 
       while ((match = h2Regex.exec(processedHtml)) !== null) {
         const h2Text = match[1].trim();
-        // ìì¤í H2ê° ìëë©´ ë§ì§ë§ ë³¸ë¬¸ H2 ìì¹ ìë°ì´í¸
+        // 시스템 H2가 아니면 마지막 본문 H2 위치 업데이트
         if (!systemH2Patterns.test(h2Text)) {
           lastContentH2Index = match.index;
         }
       }
 
-      // ë§ì§ë§ ë³¸ë¬¸ H2 ìì ì½ì
+      // 마지막 본문 H2 앞에 삽입
       if (lastContentH2Index !== null) {
         processedHtml = processedHtml.slice(0, lastContentH2Index) + wikiBoxHtml + processedHtml.slice(lastContentH2Index);
       }
     }
 
-    // FAQ ì½ì: ë³¸ë¬¸ ë§¨ ëì (7ë² ê²°ë¡  ìë)
+    // FAQ 삽입: 본문 맨 끝에 (7번 결론 아래)
     processedHtml = processedHtml + faqHtml;
   }
 
-  // ìë¡ /ë³¸ë¬¸ ë¶ë¦¬ (ì²« ë²ì§¸ <h2> ê¸°ì¤)
+  // 서론/본문 분리 (첫 번째 <h2> 기준)
   const firstH2Index = processedHtml.search(/<h2[\s>]/);
   const introHtml = firstH2Index > 0 ? processedHtml.slice(0, firstH2Index) : "";
   const bodyHtml = firstH2Index > 0 ? processedHtml.slice(firstH2Index) : processedHtml;
 
-  // ëª©ì°¨ ì¶ì¶ (processedHtmlìì - FAQ ì ê±° í)
+  // 목차 추출 (processedHtml에서 - FAQ 제거 후)
   const toc = extractToc(processedHtml).filter(
-    item => !/ìì£¼\s*ë¬»ë\s*ì§ë¬¸/i.test(item.text)
+    item => !/자주\s*묻는\s*질문/i.test(item.text)
   );
 
-  // ë¸ë ëí¬ë¼ ë°ì´í° (ë©ì¸ íì´ì§ ì¹´íê³ ë¦¬ ìµì»¤ë¡ ì°ê²°)
+  // 브레드크럼 데이터 (메인 페이지 카테고리 앵커로 연결)
   const breadcrumbItems = [
-    { name: "í", url: "https://www.jjyu.co.kr" },
+    { name: "홈", url: "https://www.jjyu.co.kr" },
     { name: doc.category, url: `https://www.jjyu.co.kr/#category-${encodeURIComponent(doc.category)}` },
     { name: doc.title, url: url },
   ];
 
   return (
     <>
-      {/* JSON-LD ì¤í¤ë§ - SEO ê·¹ëí */}
+      {/* JSON-LD 스키마 - SEO 극대화 */}
       <ArticleSchema
         title={doc.title}
         description={doc.description}
@@ -420,10 +461,10 @@ export default async function WikiPage({ params }: PageProps) {
       />
       <BreadcrumbSchema items={breadcrumbItems} />
       {doc.faq && doc.faq.length > 0 && <FAQSchema items={doc.faq} />}
-      {/* HowTo ì¤í¤ë§ - ë°°ì´ íì ì§ì (ê³ì°ê¸° ì¬ì©ë² ë±) */}
+      {/* HowTo 스키마 - 배열 형식 지원 (계산기 사용법 등) */}
       {doc.howTo && Array.isArray(doc.howTo) && doc.howTo.length > 0 && (
         <HowToSchema
-          name={`${doc.title} ì¬ì©ë²`}
+          name={`${doc.title} 사용법`}
           description={doc.description}
           steps={doc.howTo.map((item: { step: string; description: string }) => ({
             name: item.step,
@@ -431,7 +472,7 @@ export default async function WikiPage({ params }: PageProps) {
           }))}
         />
       )}
-      {/* HowTo ì¤í¤ë§ - ê°ì²´ íì ì§ì */}
+      {/* HowTo 스키마 - 객체 형식 지원 */}
       {doc.howTo && !Array.isArray(doc.howTo) && doc.howTo.steps && doc.howTo.steps.length > 0 && (
         <HowToSchema
           name={doc.howTo.name}
@@ -440,7 +481,7 @@ export default async function WikiPage({ params }: PageProps) {
           totalTime={doc.howTo.totalTime}
         />
       )}
-      {/* ê³ì°ê¸° íì´ì§ì© SoftwareApplication ì¤í¤ë§ */}
+      {/* 계산기 페이지용 SoftwareApplication 스키마 */}
       {doc.schemaType === "calculator" && (
         <CalculatorSchema
           name={doc.title}
@@ -453,7 +494,7 @@ export default async function WikiPage({ params }: PageProps) {
           featureList={doc.tool?.featureList}
         />
       )}
-      {/* Event ì¤í¤ë§ - ì ì²­ ê¸°ê° ìë ê¸ (CTR 30-50% â) */}
+      {/* Event 스키마 - 신청 기간 있는 글 (CTR 30-50% ↑) */}
       {doc.event && (
         <EventSchema
           name={doc.event.name}
@@ -465,17 +506,17 @@ export default async function WikiPage({ params }: PageProps) {
           organizerUrl={doc.event.organizerUrl}
         />
       )}
-      {/* ItemList ì¤í¤ë§ - Hub íì´ì§ (ë´ë¶ SEO â) */}
+      {/* ItemList 스키마 - Hub 페이지 (내부 SEO ↑) */}
       {doc.itemList && doc.itemList.length > 0 && (
         <ItemListSchema items={doc.itemList} />
       )}
 
       <div className="max-w-7xl mx-auto px-4 py-8 flex gap-8">
-        {/* ë©ì¸ ì½íì¸  */}
+        {/* 메인 콘텐츠 */}
         <main className="flex-1 min-w-0">
-          {/* ë¸ë ëí¬ë¼ */}
+          {/* 브레드크럼 */}
           <nav className="flex items-center gap-2 text-sm text-neutral-500 mb-6" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-black transition-colors">í</Link>
+            <Link href="/" className="hover:text-black transition-colors">홈</Link>
             <span aria-hidden="true">/</span>
             <Link href={`/#category-${encodeURIComponent(doc.category)}`} className="hover:text-black transition-colors">
               {doc.category}
@@ -484,7 +525,7 @@ export default async function WikiPage({ params }: PageProps) {
             <span className="text-black" aria-current="page">{doc.title}</span>
           </nav>
 
-          {/* ë¬¸ì í¤ë */}
+          {/* 문서 헤더 */}
           <header className="mb-8 pb-6 border-b border-neutral-200">
             <div className="flex items-center justify-between mb-4 flex-wrap gap-3">
               <div className="flex items-center gap-3 flex-wrap">
@@ -497,16 +538,16 @@ export default async function WikiPage({ params }: PageProps) {
                   </span>
                 )}
                 <time className="text-xs text-neutral-400" dateTime={doc.lastUpdated}>
-                  ë§ì§ë§ ìì : {doc.lastUpdated}
+                  마지막 수정: {doc.lastUpdated}
                 </time>
               </div>
-              {/* ê³µì  ë²í¼ */}
+              {/* 공유 버튼 */}
               <ShareButtons title={doc.title} url={url} description={doc.description} />
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold mb-4">{doc.title}</h1>
           </header>
 
-          {/* ìë¡  (ì²« ë²ì§¸ H2 ì ê¹ì§) - ì ëª© ë°ë¡ ìë */}
+          {/* 서론 (첫 번째 H2 전까지) - 제목 바로 아래 */}
           {introHtml && (
             <article
               className="prose prose-neutral max-w-none
@@ -516,7 +557,7 @@ export default async function WikiPage({ params }: PageProps) {
             />
           )}
 
-          {/* CTA ì¹´ë - ìë¡  ìë íë ì ë (ê³ì°ê¸° íì´ì§ììë ì¨ê¹) */}
+          {/* CTA 카드 - 서론 아래 행동 유도 (계산기 페이지에서는 숨김) */}
           {doc.schemaType !== "calculator" && doc.ctaCard && (
             <CtaCard
               label={doc.ctaCard.label}
@@ -527,18 +568,18 @@ export default async function WikiPage({ params }: PageProps) {
             />
           )}
 
-          {/* ê³ì°ê¸° ì»´í¬ëí¸ - ëì  ë¡ë© (ì½ë ì¤íë¦¬í) */}
+          {/* 계산기 컴포넌트 - 동적 로딩 (코드 스플리팅) */}
           <CalculatorLoader slug={slug} />
 
-          {/* ëª©ì°¨ - ëë¬´ìí¤ ì¤íì¼ (ê³ì°ê¸° íì´ì§ììë ì¨ê¹) */}
+          {/* 목차 - 나무위키 스타일 (계산기 페이지에서는 숨김) */}
           {doc.schemaType !== "calculator" && toc.length >= 2 && (
               <div className="mb-8 p-4 bg-neutral-50 border border-neutral-200 rounded-lg">
                 <div className="flex items-center justify-between mb-3">
-                  <h2 id="toc" className="text-sm font-semibold text-neutral-600">ëª©ì°¨</h2>
+                  <h2 id="toc" className="text-sm font-semibold text-neutral-600">목차</h2>
                 </div>
                 <ol className="space-y-1 text-sm">
                   {toc.map((item) => {
-                    // íì¤í¸ìì ìë¶ë¶ ë²í¸ ì ê±° (ì´ë¯¸ ë²í¸ê° í¬í¨ëì´ ìì)
+                    // 텍스트에서 앞부분 번호 제거 (이미 번호가 포함되어 있음)
                     return (
                       <li key={item.id} className={item.level === 3 ? "ml-6" : ""}>
                         <a
@@ -554,18 +595,18 @@ export default async function WikiPage({ params }: PageProps) {
               </div>
           )}
 
-          {/* 3ì¤ ìì½ (ê³ì°ê¸° íì´ì§ììë ì¨ê¹) */}
+          {/* 3줄 요약 (계산기 페이지에서는 숨김) */}
           {doc.schemaType !== "calculator" && doc.summary && (
             <div className="mb-8 p-6 bg-gradient-to-r from-[#F5F8FB] to-teal-50 rounded-2xl border border-[#EDF2F8]">
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-xl">ð¡</span>
-                <h2 id="summary" className="font-semibold text-[#132A42]">3ì¤ ìì½</h2>
+                <span className="text-xl">💡</span>
+                <h2 id="summary" className="font-semibold text-[#132A42]">3줄 요약</h2>
               </div>
               {Array.isArray(doc.summary) ? (
                 <ul className="text-neutral-700 leading-relaxed space-y-2">
                   {doc.summary.map((item, index) => (
                     <li key={index} className="flex items-start gap-2">
-                      <span className="text-[#1E3A5F] mt-1">â¢</span>
+                      <span className="text-[#1E3A5F] mt-1">•</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -577,7 +618,7 @@ export default async function WikiPage({ params }: PageProps) {
           )}
 
 
-          {/* ì¸ë¤ì¼ ì´ë¯¸ì§ */}
+          {/* 썸네일 이미지 */}
           {doc.thumbnail && (
             <div className="mb-8">
               <img
@@ -589,7 +630,7 @@ export default async function WikiPage({ params }: PageProps) {
             </div>
           )}
 
-          {/* ctaButton (ë¨ì¼ ê°ì²´ - position: "afterChart"ì¸ ê²½ì°) */}
+          {/* ctaButton (단일 객체 - position: "afterChart"인 경우) */}
           {doc.ctaButton && doc.ctaButton.position === "afterChart" && (
             <div className="mb-8 overflow-hidden">
               <a
@@ -607,7 +648,7 @@ export default async function WikiPage({ params }: PageProps) {
             </div>
           )}
 
-          {/* CTA ë²í¼ (ì¸ë¶ë§í¬ - ë°°ì´) */}
+          {/* CTA 버튼 (외부링크 - 배열) */}
           {doc.cta && doc.cta.length > 0 && (
             <div className="mb-8 space-y-3 overflow-hidden">
               {doc.cta.slice(0, 2).map((item, index) => (
@@ -622,17 +663,17 @@ export default async function WikiPage({ params }: PageProps) {
                     <span className="ext-btn-badge">{item.badge}</span>
                   )}
                   <span className="ext-btn-text">{item.text}</span>
-                  <span className="ext-btn-cta">{item.action || 'ë°ë¡ê°ê¸°'} â</span>
+                  <span className="ext-btn-cta">{item.action || '바로가기'} →</span>
                 </a>
               ))}
             </div>
           )}
 
-          {/* ê´ê³  - ë³¸ë¬¸ ìë¨ */}
+          {/* 광고 - 본문 상단 */}
           {/* 광고 1 (top) */}
           <AdSlot slot="top" />
 
-          {/* ë³¸ë¬¸ (H2 ì¹ìë¤) */}
+          {/* 본문 (H2 섹션들) */}
           <article
             className="prose prose-neutral max-w-none
               prose-headings:font-bold prose-headings:scroll-mt-20
@@ -651,12 +692,12 @@ export default async function WikiPage({ params }: PageProps) {
           {/* 광고 2 (hero) — 본문 끝, 소스 위 */}
           <AdSlot slot="hero" />
 
-          {/* ì¶ì² ì¹ì - E-E-A-T ê°í */}
+          {/* 출처 섹션 - E-E-A-T 강화 */}
           {doc.sources && doc.sources.length > 0 && (
             <section className="mt-8 pt-8 border-t border-neutral-200">
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-xl">ð</span>
-                <h2 id="sources" className="text-lg font-semibold">ì¶ì² ë° ì°¸ê³ ìë£</h2>
+                <span className="text-xl">📚</span>
+                <h2 id="sources" className="text-lg font-semibold">출처 및 참고자료</h2>
               </div>
               <ul className="space-y-2 text-sm">
                 {doc.sources.map((source, index) => (
@@ -672,7 +713,7 @@ export default async function WikiPage({ params }: PageProps) {
                         {source.name}
                       </a>
                       {source.date && (
-                        <span className="text-neutral-400 ml-2">({source.date} íì¸)</span>
+                        <span className="text-neutral-400 ml-2">({source.date} 확인)</span>
                       )}
                     </div>
                   </li>
@@ -681,14 +722,14 @@ export default async function WikiPage({ params }: PageProps) {
             </section>
           )}
 
-          {/* ê´ê³  - ë³¸ë¬¸ íë¨ */}
+          {/* 광고 - 본문 하단 */}
           {/* 광고 3 (bottom) — 본문/소스 끝 */}
           <AdSlot slot="bottom" />
 
-          {/* í¤ìë íê·¸ */}
+          {/* 키워드 태그 */}
           {doc.keywords && doc.keywords.length > 0 && (
             <div className="mt-8 pt-6 border-t border-neutral-200">
-              <h3 className="text-sm font-medium text-neutral-500 mb-3">ê´ë ¨ í¤ìë</h3>
+              <h3 className="text-sm font-medium text-neutral-500 mb-3">관련 키워드</h3>
               <div className="flex flex-wrap gap-2">
                 {doc.keywords.map((keyword) => (
                   <Link
@@ -704,60 +745,60 @@ export default async function WikiPage({ params }: PageProps) {
           )}
 
 
-          {/* ë¬¸ì í¼ëë°± */}
+          {/* 문서 피드백 */}
           <div className="mt-12 p-6 bg-neutral-50 rounded-2xl text-center">
-            <p className="text-sm text-neutral-500 mb-2">ì´ ë¬¸ìê° ëìì´ ëìëì?</p>
+            <p className="text-sm text-neutral-500 mb-2">이 문서가 도움이 되었나요?</p>
             <p className="text-xs text-neutral-400">
-              ìëª»ë ì ë³´ê° ìë¤ë©´ ìë ¤ì£¼ì¸ì. ë ëì ì ë³´ë¥¼ ì ê³µíê¸° ìí´ ë¸ë ¥íê² ìµëë¤.
+              잘못된 정보가 있다면 알려주세요. 더 나은 정보를 제공하기 위해 노력하겠습니다.
             </p>
           </div>
         </main>
 
-        {/* ì¬ì´ëë° */}
+        {/* 사이드바 */}
         <aside className="w-72 shrink-0 hidden lg:block space-y-4">
           <div className="sticky top-4">
-            {/* ì¬ì´ëë° ê´ê³  */}
+            {/* 사이드바 광고 */}
             {/* 사이드바 광고 제거: 4-슬롯 체계로 통합 (top/hero/bottom/anchor) */}
 
-            {/* CTA ë²í¼ - ë¸ëì ê¹ë°ì í¨ê³¼ */}
+            {/* CTA 버튼 - 노란색 깜박임 효과 */}
             <div className="bg-white border border-neutral-200 rounded-xl overflow-hidden mb-4">
               <div className="p-4 space-y-3">
                 <Link
-                  href="/w/ë¯¸íê¸ê¸-ì¡°í"
+                  href="/w/미환급금-조회"
                   className="group flex items-center gap-3 p-3 rounded-lg transition-all border border-transparent hover:border-[#B8D0E8] animate-yellow-blink"
                 >
-                  <span className="w-10 h-10 bg-[#EDF2F8] rounded-lg flex items-center justify-center text-lg group-hover:scale-110 transition-transform">ð°</span>
+                  <span className="w-10 h-10 bg-[#EDF2F8] rounded-lg flex items-center justify-center text-lg group-hover:scale-110 transition-transform">💰</span>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-semibold text-neutral-800 truncate">ë´ ì¨ì íê¸ê¸ ì°¾ê¸°</p>
-                    <p className="text-xs text-neutral-500">íê·  13ë§ì íê¸</p>
+                    <p className="text-sm font-semibold text-neutral-800 truncate">내 숨은 환급금 찾기</p>
+                    <p className="text-xs text-neutral-500">평균 13만원 환급</p>
                   </div>
                   <svg className="w-5 h-5 text-neutral-400 group-hover:text-[#1E3A5F] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
                 <Link
-                  href="/category/ì ë¶ì§ìê¸"
+                  href="/category/정부지원금"
                   className="group flex items-center gap-3 p-3 rounded-lg transition-all border border-transparent hover:border-blue-200 animate-yellow-blink"
                   style={{ animationDelay: '0.3s' }}
                 >
-                  <span className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-lg group-hover:scale-110 transition-transform">ðï¸</span>
+                  <span className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-lg group-hover:scale-110 transition-transform">🏛️</span>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-semibold text-neutral-800 truncate">2026 ì ë¶ì§ìê¸</p>
-                    <p className="text-xs text-neutral-500">30ê°+ ì§ìê¸ ì´ì ë¦¬</p>
+                    <p className="text-sm font-semibold text-neutral-800 truncate">2026 정부지원금</p>
+                    <p className="text-xs text-neutral-500">30개+ 지원금 총정리</p>
                   </div>
                   <svg className="w-5 h-5 text-neutral-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
                 <Link
-                  href="/w/2026ë-ë¬ë¼ì§ë-ì ë"
+                  href="/w/2026년-달라지는-제도"
                   className="group flex items-center gap-3 p-3 rounded-lg transition-all border border-transparent hover:border-amber-200 animate-yellow-blink"
                   style={{ animationDelay: '0.6s' }}
                 >
-                  <span className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center text-lg group-hover:scale-110 transition-transform">ð</span>
+                  <span className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center text-lg group-hover:scale-110 transition-transform">📋</span>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-semibold text-neutral-800 truncate">2026ë ë¬ë¼ì§ë ì ë</p>
-                    <p className="text-xs text-neutral-500">ê¼­ ììì¼ í  ë³ê²½ì¬í­</p>
+                    <p className="text-sm font-semibold text-neutral-800 truncate">2026년 달라지는 제도</p>
+                    <p className="text-xs text-neutral-500">꼭 알아야 할 변경사항</p>
                   </div>
                   <svg className="w-5 h-5 text-neutral-400 group-hover:text-amber-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -766,18 +807,18 @@ export default async function WikiPage({ params }: PageProps) {
               </div>
             </div>
 
-            {/* ê´ë ¨ ë¬¸ì - 1ë² ì¤ìê¸ì¬ ê³ì°ê¸° ê³ ì  */}
+            {/* 관련 문서 - 1번 실업급여 계산기 고정 */}
             <div className="bg-white border border-neutral-200 rounded-xl overflow-hidden mb-4">
               <div className="px-4 py-3 border-b border-neutral-100">
                 <span className="text-sm font-semibold text-neutral-800 flex items-center gap-2">
                   <svg className="w-4 h-4 text-[#1E3A5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                   </svg>
-                  ê´ë ¨ ë¬¸ì
+                  관련 문서
                 </span>
               </div>
               <div className="p-3 space-y-2">
-                {/* 1ë²: ì£¼ì ë³ ê³ì°ê¸° ëì  ë§¤í */}
+                {/* 1번: 주제별 계산기 동적 매핑 */}
                 {(() => {
                   const calculator = getRelatedCalculator(slug, doc.title, doc.category);
                   if (calculator) {
@@ -793,14 +834,14 @@ export default async function WikiPage({ params }: PageProps) {
                           <p className="text-sm text-neutral-700 group-hover:text-[#1E3A5F] line-clamp-2 font-medium transition-colors">
                             {calculator.title}
                           </p>
-                          <p className="text-xs text-neutral-400 mt-0.5">ê³ì°ê¸°</p>
+                          <p className="text-xs text-neutral-400 mt-0.5">계산기</p>
                         </div>
                       </Link>
                     );
                   }
                   return null;
                 })()}
-                {/* ê³ì°ê¸° ìì¼ë©´ 2ë²ë¶í°, ìì¼ë©´ 1ë²ë¶í° relatedDocs íì */}
+                {/* 계산기 있으면 2번부터, 없으면 1번부터 relatedDocs 표시 */}
                 {(() => {
                   const calculator = getRelatedCalculator(slug, doc.title, doc.category);
                   const startIndex = calculator ? 2 : 1;
@@ -829,26 +870,26 @@ export default async function WikiPage({ params }: PageProps) {
               </div>
             </div>
 
-            {/* ì¸ê¸° ê³ì°ê¸° */}
+            {/* 인기 계산기 */}
             <div className="bg-white border border-neutral-200 rounded-xl overflow-hidden mb-4">
               <div className="px-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600">
                 <span className="text-sm font-semibold text-white flex items-center gap-2">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                   </svg>
-                  ì¸ê¸° ê³ì°ê¸°
+                  인기 계산기
                 </span>
               </div>
               <ul className="divide-y divide-neutral-100">
                 {[
-                  { title: 'ì¤ìê¸ì¬ ê³ì°ê¸°', slug: 'ì¤ìê¸ì¬-ê³ì°ê¸°', rank: 1 },
-                  { title: 'í´ì§ê¸ ê³ì°ê¸°', slug: 'í´ì§ê¸-ê³ì°ê¸°', rank: 2 },
-                  { title: 'ì°ë§ì ì° ê³ì°ê¸°', slug: 'ì°ë§ì ì°-ê³ì°ê¸°', rank: 3 },
-                  { title: 'ìëìëì¸ ê³ì°ê¸°', slug: 'ìëìëì¸-ê³ì°ê¸°', rank: 4 },
-                  { title: 'ëì¶ì´ì ê³ì°ê¸°', slug: 'ëì¶ì´ì-ê³ì°ê¸°', rank: 5 },
-                  { title: 'êµ­ë¯¼ì°ê¸ ìë ¹ì¡', slug: 'êµ­ë¯¼ì°ê¸-ìë ¹ì¡-ê³ì°ê¸°', rank: 6 },
-                  { title: 'ê·¼ë¡ìëì¸ ê³ì°ê¸°', slug: 'ê·¼ë¡ìëì¸-ê³ì°ê¸°', rank: 7 },
-                  { title: '4ëë³´íë£ ê³ì°ê¸°', slug: '4ëë³´íë£-ê³ì°ê¸°', rank: 8 },
+                  { title: '실업급여 계산기', slug: '실업급여-계산기', rank: 1 },
+                  { title: '퇴직금 계산기', slug: '퇴직금-계산기', rank: 2 },
+                  { title: '연말정산 계산기', slug: '연말정산-계산기', rank: 3 },
+                  { title: '양도소득세 계산기', slug: '양도소득세-계산기', rank: 4 },
+                  { title: '대출이자 계산기', slug: '대출이자-계산기', rank: 5 },
+                  { title: '국민연금 수령액', slug: '국민연금-수령액-계산기', rank: 6 },
+                  { title: '근로소득세 계산기', slug: '근로소득세-계산기', rank: 7 },
+                  { title: '4대보험료 계산기', slug: '4대보험료-계산기', rank: 8 },
                 ].map((item) => (
                   <li key={item.rank}>
                     <Link
@@ -867,18 +908,18 @@ export default async function WikiPage({ params }: PageProps) {
               </ul>
             </div>
 
-            {/* ë¹ ë¥¸ ë§í¬ */}
+            {/* 빠른 링크 */}
             <div className="p-4 bg-[#F5F8FB] rounded-xl">
-              <h3 className="text-xs font-semibold text-[#162F4F] mb-3">ë¹ ë¥¸ ë§í¬</h3>
+              <h3 className="text-xs font-semibold text-[#162F4F] mb-3">빠른 링크</h3>
               <div className="flex flex-wrap gap-2">
-                <Link href="/w/í´ì§ê¸" className="px-3 py-1.5 bg-white text-xs text-neutral-600 rounded-lg hover:bg-[#1E3A5F] hover:text-white transition-colors border border-neutral-200">
-                  í´ì§ê¸
+                <Link href="/w/퇴직금" className="px-3 py-1.5 bg-white text-xs text-neutral-600 rounded-lg hover:bg-[#1E3A5F] hover:text-white transition-colors border border-neutral-200">
+                  퇴직금
                 </Link>
-                <Link href="/w/ì°ë§ì ì°" className="px-3 py-1.5 bg-white text-xs text-neutral-600 rounded-lg hover:bg-[#1E3A5F] hover:text-white transition-colors border border-neutral-200">
-                  ì°ë§ì ì°
+                <Link href="/w/연말정산" className="px-3 py-1.5 bg-white text-xs text-neutral-600 rounded-lg hover:bg-[#1E3A5F] hover:text-white transition-colors border border-neutral-200">
+                  연말정산
                 </Link>
-                <Link href="/w/ì¤ìê¸ì¬" className="px-3 py-1.5 bg-white text-xs text-neutral-600 rounded-lg hover:bg-[#1E3A5F] hover:text-white transition-colors border border-neutral-200">
-                  ì¤ìê¸ì¬
+                <Link href="/w/실업급여" className="px-3 py-1.5 bg-white text-xs text-neutral-600 rounded-lg hover:bg-[#1E3A5F] hover:text-white transition-colors border border-neutral-200">
+                  실업급여
                 </Link>
               </div>
             </div>

@@ -40,6 +40,7 @@ export function ArticleLayout({ children, sidebar }: Props) {
         }}
       >
         <div style={{ flex: 1, minWidth: 680, maxWidth: 720, position: "relative", zIndex: 2 }}>
+          <AdSlot slot="top" />
           {children}
           <AdSlot slot="bottom" />
         </div>
