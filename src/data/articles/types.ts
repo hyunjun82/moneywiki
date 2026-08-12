@@ -43,6 +43,12 @@ export interface ArticleData {
     why: string;
   };
 
+  /**
+   * heroHook — 서론 문단. 타이틀이 나열한 항목을 결론부터 펼치고 마지막 문장은 행동 유도.
+   * **강조**는 형광 마크로 렌더링. 없으면 directAnswer+why로 대체.
+   */
+  heroHook?: string;
+
   /** heroAct — 서론 직하 대형 CTA 버튼 1개. 공식 사이트(.go.kr/.or.kr)만. (정본 템플릿 .cta-main) */
   heroCta?: {
     label: string;
