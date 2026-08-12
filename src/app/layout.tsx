@@ -153,7 +153,6 @@ function Footer() {
             <h3 className="text-sm font-semibold text-gray-900 mb-3">안내</h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li><Link href="/about" className="hover:text-[#1D9E75] transition-colors">소개</Link></li>
-              <li><Link href="/search" className="hover:text-[#1D9E75] transition-colors">문서 검색</Link></li>
               <li><Link href="/privacy" className="hover:text-[#1D9E75] transition-colors">개인정보처리방침</Link></li>
               <li><Link href="/terms" className="hover:text-[#1D9E75] transition-colors">이용약관</Link></li>
             </ul>

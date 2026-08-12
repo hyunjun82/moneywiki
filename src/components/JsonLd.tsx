@@ -178,15 +178,7 @@ export function WebSiteSchema() {
       name: "머니위키",
       url: "https://www.jjyu.co.kr",
     },
-    // SearchAction: Google 검색 결과에서 사이트 내 검색 가능
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: "https://www.jjyu.co.kr/search?q={search_term_string}",
-      },
-      "query-input": "required name=search_term_string",
-    },
+    // SearchAction 제거: /search 라우트 삭제됨 — 죽은 URL 패턴을 구글에 광고하지 않음
   };
 
   return (

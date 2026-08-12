@@ -96,7 +96,6 @@ export default function Header() {
               <div className="mt-6 pt-6 border-t border-gray-100">
                 <h3 className="text-sm font-semibold text-gray-500 mb-3">바로가기</h3>
                 <div className="space-y-2">
-                  <Link href="/search" onClick={() => setMenuOpen(false)} className="block text-sm text-gray-600 hover:text-[#1D9E75] py-1">문서 검색</Link>
                   <Link href="/w/퇴직금-계산기" onClick={() => setMenuOpen(false)} className="block text-sm text-gray-600 hover:text-[#1D9E75] py-1">퇴직금 계산기</Link>
                   <Link href="/w/연봉-실수령액-계산기" onClick={() => setMenuOpen(false)} className="block text-sm text-gray-600 hover:text-[#1D9E75] py-1">연봉 실수령액 계산기</Link>
                   <Link href="/w/실업급여-계산기" onClick={() => setMenuOpen(false)} className="block text-sm text-gray-600 hover:text-[#1D9E75] py-1">실업급여 계산기</Link>
