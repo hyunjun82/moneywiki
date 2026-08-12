@@ -1,0 +1,510 @@
+{
+  "generatedAt": "2026-08-12",
+  "rule": "jaccard>=0.8 + entity guard",
+  "totalSlugs": 2106,
+  "clusters": 62,
+  "absorbedPages": 67,
+  "map": [
+    {
+      "canonical": "퇴직금",
+      "absorbed": [
+        "퇴직금-기준",
+        "퇴직금-조건",
+        "퇴직금-제도-종류"
+      ],
+      "size": 4,
+      "tier": "review"
+    },
+    {
+      "canonical": "건물-급수관-검사-시기-준공검사",
+      "absorbed": [
+        "건물-급수관-검사-시기-준공검사-일반검사",
+        "건물-급수관-검사-시기-준공검사-정기검사"
+      ],
+      "size": 3,
+      "tier": "review"
+    },
+    {
+      "canonical": "실업급여",
+      "absorbed": [
+        "실업급여-신청",
+        "실업급여-조건"
+      ],
+      "size": 3,
+      "tier": "review"
+    },
+    {
+      "canonical": "중소기업-취업자-소득세-감면",
+      "absorbed": [
+        "중소기업-취업자-소득세-감면-이직",
+        "중소기업-취업자-소득세-감면-신청-방법"
+      ],
+      "size": 3,
+      "tier": "review"
+    },
+    {
+      "canonical": "DSR-계산",
+      "absorbed": [
+        "DSR-계산-방법"
+      ],
+      "size": 2,
+      "tier": "safe"
+    },
+    {
+      "canonical": "ETF-투자-초보자",
+      "absorbed": [
+        "etf-투자-방법-초보자"
+      ],
+      "size": 2,
+      "tier": "safe"
+    },
+    {
+      "canonical": "가압류-신청-법정-출두-필요",
+      "absorbed": [
+        "가압류-신청-법정-출두-필요-여부"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "배달기사-산재보험-유지-휴업",
+      "absorbed": [
+        "감염병-휴업-배달기사-산재보험-유지"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "건물-소유자-안전관리-의무",
+      "absorbed": [
+        "건물-안전관리-소유자-의무"
+      ],
+      "size": 2,
+      "tier": "safe"
+    },
+    {
+      "canonical": "건설일용직-실업급여",
+      "absorbed": [
+        "실업급여-건설일용직"
+      ],
+      "size": 2,
+      "tier": "safe"
+    },
+    {
+      "canonical": "경매-임차권-인수-선택",
+      "absorbed": [
+        "경매-임차권-인수-선택-낙찰자"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "계약만료-실업급여",
+      "absorbed": [
+        "실업급여-계약만료"
+      ],
+      "size": 2,
+      "tier": "safe"
+    },
+    {
+      "canonical": "권고사직-실업급여",
+      "absorbed": [
+        "권고사직-실업급여-신청-방법"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "금융사기-예방",
+      "absorbed": [
+        "금융사기-예방-방법"
+      ],
+      "size": 2,
+      "tier": "safe"
+    },
+    {
+      "canonical": "기초수급자-실업급여",
+      "absorbed": [
+        "실업급여-기초수급자"
+      ],
+      "size": 2,
+      "tier": "safe"
+    },
+    {
+      "canonical": "기한전-변제-이자-정산",
+      "absorbed": [
+        "기한전-변제-이자-정산-방법"
+      ],
+      "size": 2,
+      "tier": "safe"
+    },
+    {
+      "canonical": "다가구주택-경계벽-대수선-허가",
+      "absorbed": [
+        "다가구주택-경계벽-대수선-허가-건축법"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "미등기-부동산-가압류-가능",
+      "absorbed": [
+        "미등기-부동산-가압류-가능-여부"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "배달기사-보험-가입",
+      "absorbed": [
+        "배달기사-보험-가입-종류"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "배달앱종사자-산재처리",
+      "absorbed": [
+        "산재처리-배달앱종사자"
+      ],
+      "size": 2,
+      "tier": "safe"
+    },
+    {
+      "canonical": "보험중개사-영업보증금-예탁-기한",
+      "absorbed": [
+        "보험중개사-등록-영업보증금-예탁-기한"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "부양가족-공제-연말정산",
+      "absorbed": [
+        "연말정산-부양가족-공제"
+      ],
+      "size": 2,
+      "tier": "safe"
+    },
+    {
+      "canonical": "빈집-제3자-신고",
+      "absorbed": [
+        "빈집-신고-제3자-신고-가능여부"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "소액임차인-최우선변제권-경매-보증금",
+      "absorbed": [
+        "상가-소액임차인-최우선변제권-경매-보증금"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "실업급여-받으면서-알바",
+      "absorbed": [
+        "실업급여-받으면서-알바-가능여부"
+      ],
+      "size": 2,
+      "tier": "safe"
+    },
+    {
+      "canonical": "실업급여-임금체불",
+      "absorbed": [
+        "임금체불-실업급여"
+      ],
+      "size": 2,
+      "tier": "safe"
+    },
+    {
+      "canonical": "실업급여-폐업",
+      "absorbed": [
+        "폐업-실업급여"
+      ],
+      "size": 2,
+      "tier": "safe"
+    },
+    {
+      "canonical": "아동수당-지역사랑상품권-지급",
+      "absorbed": [
+        "아동수당-지역사랑상품권-지급-가능"
+      ],
+      "size": 2,
+      "tier": "safe"
+    },
+    {
+      "canonical": "알바-실업급여",
+      "absorbed": [
+        "실업급여-알바-가능여부"
+      ],
+      "size": 2,
+      "tier": "safe"
+    },
+    {
+      "canonical": "연말정산-월세-세액공제",
+      "absorbed": [
+        "연말정산-월세-세액공제-조건"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "연말정산-인적공제",
+      "absorbed": [
+        "연말정산-인적공제-요건"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "연말정산-자녀-세액공제",
+      "absorbed": [
+        "연말정산-자녀-세액공제-조건"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "오래된-가압류-해제",
+      "absorbed": [
+        "오래된-가압류-해제-방법"
+      ],
+      "size": 2,
+      "tier": "safe"
+    },
+    {
+      "canonical": "월세-세액공제",
+      "absorbed": [
+        "월세-세액공제-신청"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "육아기-근로시간-단축-급여-계산",
+      "absorbed": [
+        "육아기-근로시간-단축-급여-계산-신청-서류"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "이혼-전-재산-빼돌림",
+      "absorbed": [
+        "이혼-전-재산-빼돌림-대비"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "일용직-퇴직금",
+      "absorbed": [
+        "퇴직금-일용직"
+      ],
+      "size": 2,
+      "tier": "safe"
+    },
+    {
+      "canonical": "임금명세서-교부-기재-내용",
+      "absorbed": [
+        "임금명세서-교부-의무-기재-내용"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "임차권등기명령",
+      "absorbed": [
+        "임차권등기명령-신청"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "자손-자상-보상-방식",
+      "absorbed": [
+        "자손-자상-보상-방식-차이"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "자손-자상-선택",
+      "absorbed": [
+        "자손-자상-선택-기준"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "자영업자-실업급여",
+      "absorbed": [
+        "자영업자-실업급여-받기"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "장애인-창업-자금-지원",
+      "absorbed": [
+        "장애인-공동-창업-자금-지원"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "장애인-보조공학기기-지원",
+      "absorbed": [
+        "장애인-보조공학기기-지원-신청"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "전세-보증금-보호-대항력-확정일자",
+      "absorbed": [
+        "전세-보증금-보호-확정일자-받기-대항력"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "전세자금대출",
+      "absorbed": [
+        "전세자금대출-조건"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "전입신고-확정일자-대항력-우선변제권",
+      "absorbed": [
+        "전입신고-확정일자-대항력-우선변제권-차이"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "정전-휴업-급여-지급",
+      "absorbed": [
+        "정전-휴업-급여-지급-휴업수당"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "주택-이용-방법-전세-월세-차이",
+      "absorbed": [
+        "주택-이용-방법-전세-월세-사글세-차이"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "중소기업-청년-전세대출-소득기준",
+      "absorbed": [
+        "중소기업-청년-전세대출-소득기준-한도"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "지역사랑상품권-훼손-재발급",
+      "absorbed": [
+        "지역사랑상품권-훼손-재발급-방법"
+      ],
+      "size": 2,
+      "tier": "safe"
+    },
+    {
+      "canonical": "퇴직금-중간정산",
+      "absorbed": [
+        "퇴직금-중간정산-조건"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "퇴직금-지급-기준",
+      "absorbed": [
+        "퇴직금-지급-절차"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "퇴직금-지급-기한-연장",
+      "absorbed": [
+        "퇴직금-지급-기한-연장-동의서"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "퇴직금-지연이자",
+      "absorbed": [
+        "퇴직금-지연이자-받기"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "퇴직금-통장",
+      "absorbed": [
+        "퇴직금-통장-종류"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "퇴직연금",
+      "absorbed": [
+        "퇴직연금-종류"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "퇴직연금-중도인출",
+      "absorbed": [
+        "퇴직연금-중도인출-서류"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "퇴직연금-해지",
+      "absorbed": [
+        "퇴직연금-해지-절차"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "학력-거짓-해고-정당성",
+      "absorbed": [
+        "학력-거짓-이유-해고-정당성"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "육아기-근로시간-단축-대체인력",
+      "absorbed": [
+        "08-육아기-근로시간-단축-대체인력"
+      ],
+      "size": 2,
+      "tier": "review"
+    },
+    {
+      "canonical": "개인파산-면책-신청",
+      "absorbed": [
+        "개인파산-면책-신청-방법"
+      ],
+      "size": 2,
+      "tier": "review"
+    }
+  ]
+}

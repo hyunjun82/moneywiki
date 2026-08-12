@@ -4,196 +4,224 @@
 
 - **사이트**: jjyu.co.kr — 경제·금융 정보 위키
 - **스택**: Next.js 16 + Tailwind CSS + shadcn/ui
-- **배포**: Cloudflare Pages (main 푸시 → 자동 빌드, 약 3~5분)
-- **콘텐츠**: MD 1,961개 (`content/wiki/`) + TSX 신규 글 (`src/app/w/{slug}/`)
+- **배포**: Cloudflare Pages (main 푸시 → 자동 빌드, 30~50분 소요)
+- **콘텐츠 자산** (2026-05-15 기준):
+  - MD 1,961개 (`content/wiki/`) — 기존 글, 점진 리라이트 대상
+  - 직접 TSX 1,518개 (`src/app/w/{slug}/`) — 폐기 패턴, 점진 마이그레이션
+  - 계산기 53개 — **절대 불가침** (`scripts/calc-protected-slugs.json`)
+  - 신규 articles (`src/data/articles/`) — 새 시스템, 점진 추가
+
+---
+
+## ★★★ 글 시스템 (2026-05-15 전면 재설계)
+
+### 콘텐츠 형식 — 오직 하나
+- 모든 신규/리라이트 글은 `src/data/articles/<카테고리>.ts`에 ArticleData로 작성
+- 타입: `src/data/articles/types.ts`
+- 렌더러: `src/components/article/ArticleShell.tsx`
+- 라우팅 우선순위: **articles → MD → 404** (`src/app/w/[slug]/page.tsx` 자동 분기)
+
+### 데이터 구조 (검색자 질문 흐름)
+```ts
+ArticleData {
+  slug, category, meta { title, description, ogImage? }
+  searchIntent { userQuestion, directAnswer, why }   // 검색자 즉답
+  resolution { steps[], alternatives? }              // 해결 흐름
+  context? { legalBasis?, edgeCases?, glossary? }    // 보충 정보 (점진 공개)
+  sources[], lastVerified                            // 신뢰성
+  relatedQuestions?                                  // 자연스러운 거미줄 (1~5개)
+}
+```
+
+빈칸을 못 채우면 글 자체가 성립하지 않는 구조. Q1-Q4 주석 같은 메타 검증 폐기.
+
+### 디자인 시스템
+- 위치: `src/components/article/`
+- 토큰: `tokens.ts` (에메랄드 #1D9E75 유지, 모바일 우선 720px)
+- 컴포넌트: DirectAnswer, ResolutionFlow, EdgeCases, SourceFooter, RelatedQuestions, ArticleShell
+- 원칙: 즉답 우선 · 점진 공개 · 모바일 우선
+
+### 글 작성 — 서브에이전트 파이프라인 (.claude/agents/)
+```
+사용자 키워드
+   ↓
+orchestrator (Opus) — 신규/리라이트 판정 + URL 보존 + 통합맵 확인 + 허브-스포크 분해
+   ↓
+researcher (Sonnet) — 검색의도 추론 + Playwright로 공식 사이트 원문 추출·스크린샷·증거 JSON
+   ↓
+orchestrator — 증거를 scripts/evidence/<slug>.json + 스크린샷 폴더로 저장
+   ↓
+writer (Sonnet) — src/data/articles/<카테고리>.ts에만 작성 (타이틀 공식 + CTA 필수)
+   ↓
+qa (Sonnet) — 17개 기준 PASS/FAIL (증거 JSON 대조 포함, 수정 권한 없음)
+   ↓ FAIL → writer 재호출 (최대 2회)
+   ↓ PASS → 같은 slug의 TSX 폴더 삭제 (그림자 제거) → 완료
+```
+
+각 에이전트 명세: `.claude/agents/moneywiki-*.md`
+
+---
+
+## ★ 절대 규칙
+
+### ★★★ Playwright 1:1 대조 의무 (글 작성 시) — 2026-08-12 Claude in Chrome에서 전환
+글 작성/리라이트할 때 **Playwright로 정부 공식 사이트를 직접 열어** 사실을 1:1 대조한다.
+WebSearch/WebFetch 기반 사실 수집 금지. 학습 데이터에만 의존 금지.
+
+**의무 대조 사이트** (researcher 에이전트가 자동 호출):
+- 법령 → 법제처 (law.go.kr)
+- 세금 → 국세청 (nts.go.kr) / 홈택스 (hometax.go.kr)
+- 근로 → 고용노동부 (moel.go.kr) / 고용보험 (ei.go.kr)
+- 연금 → 국민연금공단 (nps.or.kr)
+- 부동산 → 국토교통부 (molit.go.kr) / 한국부동산원 (reb.or.kr)
+- 복지 → 복지로 (bokjiro.go.kr) / 정부24 (gov.kr)
+- 금융 → 금융감독원 (fss.or.kr) / 금융위원회 (fsc.go.kr)
+
+**대조 절차**:
+1. `mcp__playwright__browser_navigate` → 해당 정부 사이트 열기
+2. `mcp__playwright__browser_evaluate` → 법령 조문/시행일/세율 원문 텍스트 추출 (innerText)
+3. `mcp__playwright__browser_take_screenshot` → 수치·조문이 보이는 화면 캡처 (증거)
+4. ArticleData의 `context.legalBasis[i].excerpt`에 **원문 그대로 복사** (의역/요약 금지)
+5. 시행일·금액·이율은 페이지에서 직접 확인 (절대 추정 금지)
+6. 증거 JSON(`scripts/evidence/<slug>.json`)에 facts 기록 → qa가 글의 모든 수치를 기계 대조
+
+**금지**:
+- 사실 확인 없이 글 작성
+- 학습 데이터 기반 추정으로 숫자/날짜 작성
+- 정부 사이트 안 가고 "약 ~" "보통 ~" 같은 모호한 표현
+
+**글당 소요 시간**: 5~15분 (자료 수집 3분 + 작성 3분 + QA 2분 + 재작성 5분)
+
+---
+
+### 계산기 54개 — 절대 불가침 (slug 기준!)
+`scripts/calc-protected-slugs.json`에 등재된 slug는 어떤 경우에도 수정하지 않는다. 새 시스템에서도 보호.
+**⚠️ 계산기는 TSX만이 아니다 (2026-08-12 확인)**: 54개 중 36개는 `content/wiki/<slug>.md`
+(frontmatter `schemaType: calculator`)로 존재. 보호는 파일 위치가 아니라 slug 기준 —
+해당 slug의 MD 파일도 절대 수정/삭제 금지.
+
+### URL 보존
+리라이트 시 기존 slug 그대로. 새 slug 절대 생성 금지.
+
+### 신규/리라이트 확인
+키워드 받으면 반드시 신규/리라이트 확인 후 작업. 무작정 신규 URL 생성 금지.
+
+### 콘텐츠 형식 단일화
+- 신규 글 ≠ `src/app/w/<slug>/page.tsx`
+- 신규 글 = `src/data/articles/<카테고리>.ts` 의 ArticleData
+- 계산기는 예외 (54개만)
+
+### 타이틀 공식 — 2026-08-12 확정
+`메인키워드 + 행동 세부키워드(신청방법/언제/사용처/조회) + 후킹("~부터 ~까지", "~은?")`
+- 파이프(|)·의문문 허용, 50자 이내
+- **종결어미 금지**: "~나요/~해요/~합니다/~된다" 사용 불가. 명사형 종결 또는 "~까?/~은?"만
+- 예: "민생회복지원금 신청방법과 사용처 조회 | 언제부터 언제까지?"
+
+### 허브-스포크 + 행동 CTA
+- 큰 키워드는 허브(대표글) + 스포크(신청방법/언제/사용처/조회/대상)로 분해, relatedQuestions로 상호 연결
+- 신청/조회형 글은 `resolution.steps[].action`(공식 사이트 버튼) 필수 — "복지로에서 신청하기"
+- 광고를 버튼처럼 배치하는 것은 AdSense 정책 위반 — CTA는 .go.kr/.or.kr 링크만
+
+### TSX 그림자 (리라이트 필수 절차)
+Next.js는 정적 라우트가 [slug]를 이긴다. articles에 글을 써도 같은 slug의
+`src/app/w/<slug>/`가 있으면 새 글이 안 보인다 → **리라이트 완료 시 해당 TSX 폴더 삭제**
+(계산기 slug 제외). 슬러그 충돌 현황: `scripts/conflict-map.json`
+
+### 유사 슬러그 통합
+리라이트 전 `scripts/consolidation-map.json` 확인 — 클러스터 소속이면 대표(canonical) slug에
+작성하고 absorbed는 301 후보로 보고. (301 적용은 사용자 승인 후)
+
+### AdSense 정책 안전
+- "축하해요", "대상이에요!" 등 과장/오해 유발 문구 금지
+- 수익 보장, 확정적 표현 금지
+
+### ★ 작성자/검수자 표기 거짓 금지 (AdSense + 법령 안전)
+- 실제 공인노무사/세무사/변호사가 검수하지 않았다면 **"검수" 표기 절대 금지**
+- AI 작성 글은 **"AI 작성 · 공식 출처 인용"** 으로 솔직하게 표기
+- 저자 bio에 "변호사·노무사의 법률 자문을 대신할 수 없다" 명시
+- 면책 조항(disclaimer)에 "정확한 권리 행사는 전문가 상담 필수" 명시
+- 실제 검수자 확보 전까지 "검수자" "감수자" 표기 일체 금지
 
 ---
 
 ## 파일 구조
 
 ```
-src/app/w/{slug}/
-├── page.tsx      ← "use client" 인터랙티브 글
-└── layout.tsx    ← metadata (title, og, canonical) + force-static
-```
+src/
+├── app/w/[slug]/page.tsx         # 라우터 (articles 우선 → MD fallback)
+├── components/article/           # ★ 새 디자인 시스템
+│   ├── tokens.ts
+│   ├── ArticleShell.tsx          # 최상위 렌더러
+│   ├── DirectAnswer.tsx
+│   ├── ResolutionFlow.tsx
+│   ├── EdgeCases.tsx
+│   ├── SourceFooter.tsx
+│   ├── RelatedQuestions.tsx
+│   └── index.ts
+├── components/article-ui/        # 구 시스템, 점진 폐기 예정
+├── data/articles/                # ★ 새 콘텐츠
+│   ├── types.ts                  # ArticleData 등 타입
+│   └── <카테고리>.ts             # 카테고리별 글
+└── lib/articles.ts               # getArticle, getAllArticleSlugs
 
-- MD 글: `content/wiki/{slug}.md` → `src/app/w/[slug]/page.tsx`에서 렌더링
-- TSX 글: `src/app/w/{slug}/page.tsx` 직접 작성 (MD보다 우선)
-- 양식: `src/app/forms/[slug]/page.tsx`
-- 계산기: `src/components/calculators/`
+.claude/agents/                   # ★ 서브에이전트 파이프라인
+├── moneywiki-orchestrator.md
+├── moneywiki-researcher.md
+├── moneywiki-writer.md
+└── moneywiki-qa.md
+
+scripts/
+├── calc-protected-slugs.json     # 계산기 53개 (불가침)
+├── rewrite-queue.json            # 리라이트 대기열
+├── rewrite-progress.json         # 진행률
+└── verify-calculations.py        # 계산기 오차 검증 (유지)
+
+content/wiki/                     # 기존 MD 1,961개 (점진 리라이트)
+```
 
 ---
 
-## 컴포넌트
+## 폐기된 시스템 (2026-05-15)
 
-```
-src/components/article-ui/
-├── index.ts          # re-export
-├── styles.ts         # body 스타일 상수, 컬러 시스템
-├── H2.tsx            # 소제목 (에메랄드 좌측바)
-├── SectionBadge.tsx  # 섹션 라벨
-├── GreenBox.tsx      # 강조 박스
-├── BorderBox.tsx     # 정보 박스
-├── Divider.tsx       # 구분선
-├── Calculator.tsx    # 슬라이더 계산기 (getValue 외부 주입)
-├── EligibilityChecker.tsx
-├── Steps.tsx
-├── DocTable.tsx
-├── Checklist.tsx
-├── FAQ.tsx
-├── References.tsx
-└── Disclaimer.tsx
-```
-
-모든 컴포넌트: 인라인 스타일, 에메랄드(#1D9E75) 단일 톤
+- **검증 훅 4개**: `pre-guard-calculator.js`, `pre-check-q1q4-map.js`, `verify-tsx-article.js`, `verify-reader-perspective.js` → QA 에이전트로 이동
+- **검증 스크립트 4개**: `verify-search-intent.js`, `verify-quality.js`, `verify_all.py`, `suggest-structure.js`
+- **스킬**: `.claude/skills/article-writing/` 전체 (SKILL.md, TEMPLATE.tsx, writing-rules.md)
+- **TEMPLATE.tsx 자체 정의 패턴**: 글마다 H2/GreenBox/FAQ 자체 정의 폐기 → article 컴포넌트 일관 사용
+- **Q1-Q4 주석 강제**: 데이터 구조 자체가 검색 의도를 강제하므로 불필요
+- **카테고리 guide.ts**: `src/data/실업급여-guide.ts` 등 → articles로 통합 예정
 
 ---
 
 ## 빌드
 
 ```bash
-npm run build    # 유일한 검증 수단. Turbopack 불안정 → 빌드로 확인
+npm run build    # 30~50분 소요. 50개 배치 단위로 1회씩.
 ```
 
----
-
-## ★★★ 글 품질 절대 원칙
-
-> 글 작성/수정 시 반드시 SKILL.md를 읽고 따른다. 어기면 재작성.
-
-### ★ 글 작성 전 필수 사고 (매 글 첫 단계, 생략 금지)
-
-아래 4개 질문에 먼저 답하고, 그 답을 기반으로 글을 쓴다.
-이 답은 글 파일 상단 주석으로 남긴다.
-
-Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
-Q2. 이 사람이 이 글을 읽고 나서 할 수 있어야 하는 행동은?
-Q3. 이 행동을 하려면 반드시 알아야 하는 정보는?
-Q4. 이 정보를 가장 잘 전달하는 형태는? (16개 컴포넌트 중 선택)
-
-- Q2의 답 → 타이틀 line2 + H2 순서 결정
-- Q3의 답 → H2 개수·깊이 결정
-- Q4의 답 → 섹션별 컴포넌트 결정
-- suggest-structure.js는 Q1-Q4 이후 보조 참고용
-
-### 절대 규칙 (위반 시 재작성)
-- **구어체 필수**: ~해요/~이에요/~하죠 — 합니다/입니다 **절대 금지**
-- **금지 단어**: 또한/결론적으로/다양한/매우 중요/확인하세요/총정리/있거든요/있어요/알아보겠습니다/살펴보겠습니다/정리해드릴게요/— (em dash)
-- **타이틀 line2 키워드 → H2 소제목에 최소 3개 반영**
-- 상세: SKILL.md `## 0` 타이틀 / `## 0-1` 소제목 / `## 6` 문체
-
----
-
-## ★★★ 글 작성 시 TEMPLATE.tsx 필수 사용
-
-> **모든 TSX 글 작성 시 `.claude/skills/article-writing/TEMPLATE.tsx`를 먼저 읽고 그 구조를 100% 따른다.**
-
-### 핵심 규칙 (2025.03 빌드 실패 10회+ 교훈)
-- **외부 import는 `useState` 하나뿐** — article-ui에서 어떤 것도 import 금지
-- ArticleLayout, Sidebar, ArticleAd → 사용 금지 (빌드 에러 원인)
-- H2, GreenBox, Steps, DocTable, Checklist, FAQ, References 등 → 파일 안에서 자체 정의
-- 파일 최상단에 `"use client"` 필수 (없으면 useState 빌드 에러)
-- layout.tsx 반드시 함께 생성 (metadata + force-static)
-
-### 빌드 에러 기록 (같은 실수 반복 금지)
-| 에러 | 원인 | 해결 |
-|------|------|------|
-| InArticleAd not exported | article-ui에 없는 컴포넌트 import | 자체 정의로 교체 |
-| Sidebar props 불일치 | children 전달 vs {heading,items,currentSlug} 요구 | 자체 Sidebar 사용 |
-| ArticleAd missing position | position: "intro"\|"mid" 필수인데 누락 | 자체 광고 컴포넌트 사용 |
-| `</article>` without opening | 편집 중 잔여 태그 | 전체 구조 확인 |
-| useState without "use client" | 서버 컴포넌트에서 훅 사용 | "use client" 추가 |
-
-### 품질 최소 기준 (양육비 글 = 기준선)
-- H2당 3~4문단 이상
-- 인터랙티브 요소(계산기/체커/체크리스트) 1개 이상
-- 출처: 법령·판례·공식자료 카테고리별 분류 (References 컴포넌트)
-- FAQ: 실제 검색/상담 기반 5개 이상, 답변 3문장 이상
-- 사이드바: 카테고리 관련 글 링크 10개 이상
-- CTA: 글 하단에 행동 유도 블록 필수
-
----
-
-## 핵심 원칙
-
-0. **계산기·모의계산 절대 불가침** — `schemaType: calculator` MD 페이지, `src/components/calculators/` 계산기 컴포넌트, 인터랙티브 데이터 상수(CALC_SLIDERS, CALC_RESULTS, getDays 등)는 리라이트 시 **절대 건드리지 않음**. TSX로 덮어쓰기 금지
-1. **내부링크 거미줄** — 본문에서 다른 주제 언급 시 내부 글 링크 우선 (나무위키 스타일). 외부 법령 링크는 보조
-2. **숫자에는 출처** — 출처 없는 숫자 생성 금지, 공식 기관 URL 필수
-
----
-
-## 세부 규칙
-
-**글 작성/수정 시 반드시 `.claude/skills/article-writing/SKILL.md`를 읽고 따른다.**
-
-- 타이틀 생성 → SKILL.md `## 0. 타이틀 생성 규칙`
-- 컴포넌트 매핑 → SKILL.md `## 2. 컴포넌트 매핑 테이블`
-- 글쓰기/문체 → SKILL.md `## 6. 글쓰기 규칙`
-- 작성 절차 → SKILL.md `## 7. 글 작성 절차`
-
----
-
-## 대량 작업: Agent Teams 워크플로우
-
-키워드/타이틀 목록을 받으면 아래 구조로 병렬 작업.
-
-### ★ 모든 Agent 필수 첫 단계 (개별이든 팀이든 동일)
-```
-1. TEMPLATE.tsx를 Read로 읽는다 (경로: .claude/skills/article-writing/TEMPLATE.tsx)
-2. 이 구조를 100% 따라서 글을 쓴다
-3. article-ui에서 아무것도 import하지 않는다
-```
-→ 이걸 안 하면 PreToolUse 훅이 Write 자체를 차단함
-
-### 글쓰기 Agent (최대 5개 병렬)
-- 각 Agent는 담당 slug 목록을 받아서 글 작성
-- **같은 파일 동시 수정 금지** — Agent마다 slug 분리
-- 작성 규칙: TEMPLATE.tsx 구조 → Q1-Q4 사고 → 데이터 채우기 → 본문 작성
-- 계산 로직(calcRetirementTax 등) 절대 불변
-
-### 훅 자동 검증 (Write/Edit 시 자동 발동)
-
-**PreToolUse (작성 전 차단 — FAIL이면 저장 안 됨)**
-- `pre-guard-calculator.js`: 계산기 페이지 수정 차단
-- `pre-check-q1q4-map.js`: 템플릿 규칙 강제
-  - "use client" 없으면 → 차단
-  - article-ui import 있으면 → 차단
-  - Q1-Q4 주석 없으면 → 차단
-  - H2, GreenBox, FAQ, Sidebar 자체 정의 없으면 → 차단
-
-**PostToolUse (작성 후 검증 — FAIL이면 즉시 수정)**
-- `verify-tsx-article.js`: 품질 검증
-  - article-ui import 재확인
-  - 금지단어/구어체/H2 개수/FAQ 존재
-  - Q1-Q4 주석 구체성 확인
-- `verify-reader-perspective.js`: 독자 관점 검증
-- **FAIL 나면 그 자리에서 바로 수정** → 다음 파일로 넘어가지 않음
-
-### 실행 순서
-```
-1. 키워드 목록 수령
-2. 모든 Agent: TEMPLATE.tsx Read (필수 첫 단계)
-3. 각 키워드별 Q1-Q4 필수 사고
-4. slug별 Agent 배분 (5개 이내, 파일 충돌 방지)
-5. 각 Agent: 1개 작성 → PreToolUse 통과 → PostToolUse 검증 → PASS면 다음 / FAIL이면 즉시 수정
-6. 전체 완료 후 npm run build 최종 확인
-```
-
----
-
-## 정보 정확성
-
-| 항목 | 값 |
-|------|---|
-| 세액공제 (5,500만 이하) | 16.5% |
-| 세액공제 (5,500만 초과) | 13.2% |
-| 퇴직금 지연이자 | 연 20% |
-| 퇴직금 지급기한 | 14일 |
-| 청구권 소멸시효 | 3년 |
+- 절대 1글 작성 후 빌드하지 않음 (시간 폭증)
+- 카테고리 1개 완료 또는 50개 모이면 빌드
+- 빌드 실패 시 즉시 stop → 원인 분석 후 재시도
 
 ---
 
 ## 환경
 
 - Windows 11
-- `.next` 캐시 프로세스 잠금 주의
+- PowerShell 기본 / Bash 사용 가능
+- 빌드 시 `.next` 캐시 프로세스 잠금 주의
+
+---
+
+## 작업 흐름 (사용자 → 에이전트)
+
+```
+사용자: "퇴직금 1년 미만 키워드 리라이트"
+   ↓
+Claude(메인): Agent(moneywiki-orchestrator) 호출
+   ↓
+orchestrator 내부에서 researcher → writer → qa 순서 실행
+   ↓
+Claude(메인): 결과 보고 (PASS/FAIL, 작성된 파일 경로)
+   ↓
+50개 모이면 npm run build → 통과 시 commit & push
+```
