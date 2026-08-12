@@ -43,6 +43,19 @@ export interface ArticleData {
     why: string;
   };
 
+  /** heroAct — 서론 직하 대형 CTA 버튼 1개. 공식 사이트(.go.kr/.or.kr)만. (정본 템플릿 .cta-main) */
+  heroCta?: {
+    label: string;
+    url: string;
+    org: string;
+  };
+
+  /** 📌 핵심콕콕 카드 7~9행. (정본 템플릿 .kf) */
+  keyFacts?: { label: string; value: string }[];
+
+  /** 3줄 요약 — 정확히 3개. (정본 템플릿 .sum) */
+  summary?: [string, string, string];
+
   mainSections: MainSection[];
 
   resolution: {
