@@ -1,0 +1,81 @@
+{
+  "slug": "단기-육아휴직-방학",
+  "verifiedAt": "2026-08-12",
+  "collectedBy": "playwright (korea.kr 정책브리핑 + law.go.kr 원문 직접 추출)",
+  "facts": [
+    {
+      "value": "8월 20일 시행",
+      "quote": "방학·질병 등 단기 돌봄수요에 대응할 수 있는 단기 육아휴직이 8월 20일부터, 남성 근로자의 배우자 임신 중 육아휴직은 9월 18일부터 시행된다.",
+      "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148969857",
+      "org": "대한민국 정책브리핑 (고용노동부)",
+      "screenshot": "evidence-단기육아휴직-1.png"
+    },
+    {
+      "value": "연 1회, 1주 또는 2주",
+      "quote": "휴원·휴교·방학, 질병·사고 입원 등 집중적으로 자녀를 돌볼 필요가 있는 경우 연 1회, 1주 또는 2주 단기 육아휴직을 사용할 수 있다.",
+      "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148969857",
+      "org": "대한민국 정책브리핑 (고용노동부)",
+      "screenshot": "evidence-단기육아휴직-1.png"
+    },
+    {
+      "value": "육아휴직 기간에서 차감, 분할 횟수 미포함",
+      "quote": "단기 육아휴직을 사용한 기간은 육아휴직 기간에서 차감하되 분할 사용 횟수에는 포함되지 않는다.",
+      "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148969857",
+      "org": "대한민국 정책브리핑 (고용노동부)",
+      "screenshot": "evidence-단기육아휴직-1.png"
+    },
+    {
+      "value": "급여 지급 가능",
+      "quote": "단기 육아휴직 기간에 육아휴직 급여 지급도 가능하다.",
+      "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148969857",
+      "org": "대한민국 정책브리핑 (고용노동부)",
+      "screenshot": "evidence-단기육아휴직-1.png"
+    },
+    {
+      "value": "방학 사유는 30일 전 신청",
+      "quote": "방학을 사유로 단기 육아휴직을 신청할 경우에는 30일 전에 신청해야 하나 휴원·휴교, 자녀의 질병·사고로 인한 입원 등 긴급한 사유로는 당일 개시하는 단기 육아휴직을 신청할 수 있다.",
+      "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148969857",
+      "org": "대한민국 정책브리핑 (고용노동부)",
+      "screenshot": "evidence-단기육아휴직-1.png"
+    },
+    {
+      "value": "배우자 임신 중 육아휴직 9월 18일 시행, 7일 전 신청",
+      "quote": "임신 중인 배우자가 유산·조산 등 건강상 위험이 있는 경우 배우자를 돌보기 위해 자녀 출생 전에도 육아휴직을 사용할 수 있게 된다. 휴직 개시예정일의 7일 전까지 육아휴직을 신청할 수 있다.",
+      "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148969857",
+      "org": "대한민국 정책브리핑 (고용노동부)",
+      "screenshot": "evidence-단기육아휴직-1.png"
+    },
+    {
+      "value": "배우자 출산전후휴가 출산예정일 50일 전~출산 후 120일, 20일",
+      "quote": "출산예정일 50일 전부터 출산 후 120일까지 배우자 출산전후휴가를 사용할 수 있도록 확대된다 ... 사업주는 위의 기간 내 20일 휴가를 부여해야 한다.",
+      "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148969857",
+      "org": "대한민국 정책브리핑 (고용노동부)",
+      "screenshot": "evidence-단기육아휴직-1.png"
+    },
+    {
+      "value": "배우자 유산·사산휴가 5일(최초 3일 유급)",
+      "quote": "남성 근로자의 배우자가 유산·사산한 경우 5일 범위(최초 3일 유급)에서 배우자 유산·사산휴가를 사용할 수 있게 된다.",
+      "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148969857",
+      "org": "대한민국 정책브리핑 (고용노동부)",
+      "screenshot": "evidence-단기육아휴직-1.png"
+    },
+    {
+      "value": "육아휴직 기간 1년, 조건 충족 시 6개월 추가",
+      "quote": "육아휴직의 기간은 1년 이내로 한다. 다만, 다음 각 호의 어느 하나에 해당하는 근로자의 경우 6개월 이내에서 추가로 육아휴직을 사용할 수 있다.",
+      "url": "https://www.law.go.kr/법령/남녀고용평등과일ㆍ가정양립지원에관한법률/제19조",
+      "org": "법제처 (남녀고용평등법 제19조 제2항)",
+      "screenshot": "evidence-단기육아휴직-2.png"
+    },
+    {
+      "value": "만 8세 이하 또는 초등학교 2학년 이하",
+      "quote": "근로자가 만 8세 이하 또는 초등학교 2학년 이하의 자녀(입양한 자녀를 포함한다)를 양육하기 위하여 휴직(이하 “육아휴직”이라 한다)을 신청하는 경우에 이를 허용하여야 한다.",
+      "url": "https://www.law.go.kr/법령/남녀고용평등과일ㆍ가정양립지원에관한법률/제19조",
+      "org": "법제처 (남녀고용평등법 제19조 제1항)",
+      "screenshot": "evidence-단기육아휴직-2.png"
+    }
+  ],
+  "actionTargets": [
+    { "label": "고용보험에서 육아휴직 급여 신청하기", "url": "https://www.ei.go.kr", "org": "고용보험" },
+    { "label": "고용노동부 민원마당에서 확인하기", "url": "https://minwon.moel.go.kr", "org": "고용노동부" }
+  ]
+}

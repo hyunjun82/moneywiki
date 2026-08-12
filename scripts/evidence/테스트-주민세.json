@@ -1,0 +1,52 @@
+{
+  "slug": "테스트-주민세",
+  "verifiedAt": "2026-08-12",
+  "collectedBy": "scripts/collect-evidence.mjs (playwright)",
+  "sources": [
+    {
+      "url": "https://www.law.go.kr/법령/%EC%A7%80%EB%B0%A9%EC%84%B8%EB%B2%95/제78조",
+      "org": "법제처 (지방세법 제78조)"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EC%A7%80%EB%B0%A9%EC%84%B8%EB%B2%95/제79조",
+      "org": "법제처 (지방세법 제79조)"
+    }
+  ],
+  "facts": [
+    {
+      "value": "제78조 / 1만원",
+      "quote": "제78조(세율) ① 개인분의 세율은 1만원을 초과하지 아니하는 범위에서 지방자치단체의 장이 조례로 정한다.",
+      "url": "https://www.law.go.kr/법령/%EC%A7%80%EB%B0%A9%EC%84%B8%EB%B2%95/제78조",
+      "org": "법제처 (지방세법 제78조)",
+      "screenshot": "evidence-테스트-주민세-1.png"
+    },
+    {
+      "value": "5천원",
+      "quote": "② 제1항에도 불구하고 주민의 청구가 있는 경우에는 개인분의 세율을 1만5천원을 초과하지 아니하는 범위에서 조례로 읍ㆍ면ㆍ동별로 달리 정할 수 있다.",
+      "url": "https://www.law.go.kr/법령/%EC%A7%80%EB%B0%A9%EC%84%B8%EB%B2%95/제78조",
+      "org": "법제처 (지방세법 제78조)",
+      "screenshot": "evidence-테스트-주민세-1.png"
+    },
+    {
+      "value": "제79조",
+      "quote": "제79조(징수방법 등) ① 개인분은 납세지를 관할하는 지방자치단체의 장이 보통징수의 방법으로 징수한다.",
+      "url": "https://www.law.go.kr/법령/%EC%A7%80%EB%B0%A9%EC%84%B8%EB%B2%95/제79조",
+      "org": "법제처 (지방세법 제79조)",
+      "screenshot": "evidence-테스트-주민세-2.png"
+    },
+    {
+      "value": "7월 1일",
+      "quote": "② 개인분의 과세기준일은 매년 7월 1일로 한다.",
+      "url": "https://www.law.go.kr/법령/%EC%A7%80%EB%B0%A9%EC%84%B8%EB%B2%95/제79조",
+      "org": "법제처 (지방세법 제79조)",
+      "screenshot": "evidence-테스트-주민세-2.png"
+    },
+    {
+      "value": "8월 16일 / 8월 31일",
+      "quote": "③ 개인분의 납기는 매년 8월 16일부터 8월 31일까지로 한다.",
+      "url": "https://www.law.go.kr/법령/%EC%A7%80%EB%B0%A9%EC%84%B8%EB%B2%95/제79조",
+      "org": "법제처 (지방세법 제79조)",
+      "screenshot": "evidence-테스트-주민세-2.png"
+    }
+  ]
+}

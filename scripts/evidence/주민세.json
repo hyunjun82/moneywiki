@@ -1,0 +1,73 @@
+{
+  "slug": "주민세",
+  "verifiedAt": "2026-08-12",
+  "collectedBy": "playwright (law.go.kr 원문 직접 추출)",
+  "facts": [
+    {
+      "value": "1만원",
+      "quote": "개인분의 세율은 1만원을 초과하지 아니하는 범위에서 지방자치단체의 장이 조례로 정한다.",
+      "url": "https://www.law.go.kr/법령/지방세법/제78조",
+      "org": "법제처 (지방세법 제78조)",
+      "screenshot": "evidence-주민세-1.png"
+    },
+    {
+      "value": "1만5천원",
+      "quote": "주민의 청구가 있는 경우에는 개인분의 세율을 1만5천원을 초과하지 아니하는 범위에서 조례로 읍ㆍ면ㆍ동별로 달리 정할 수 있다.",
+      "url": "https://www.law.go.kr/법령/지방세법/제78조",
+      "org": "법제처 (지방세법 제78조)",
+      "screenshot": "evidence-주민세-1.png"
+    },
+    {
+      "value": "7월 1일",
+      "quote": "개인분의 과세기준일은 매년 7월 1일로 한다.",
+      "url": "https://www.law.go.kr/법령/지방세법/제79조",
+      "org": "법제처 (지방세법 제79조)",
+      "screenshot": "evidence-주민세-2.png"
+    },
+    {
+      "value": "8월 16일부터 8월 31일까지",
+      "quote": "개인분의 납기는 매년 8월 16일부터 8월 31일까지로 한다.",
+      "url": "https://www.law.go.kr/법령/지방세법/제79조",
+      "org": "법제처 (지방세법 제79조)",
+      "screenshot": "evidence-주민세-2.png"
+    },
+    {
+      "value": "기초생활 수급자 면제",
+      "quote": "「국민기초생활 보장법」에 따른 수급자",
+      "url": "https://www.law.go.kr/법령/지방세법/제75조",
+      "org": "법제처 (지방세법 제75조 제1항 단서)",
+      "screenshot": "evidence-주민세-3.png"
+    },
+    {
+      "value": "미성년자 면제",
+      "quote": "「민법」에 따른 미성년자(그 미성년자가 성년자와 「주민등록법」상 같은 세대를 구성하고 있는 경우는 제외한다)",
+      "url": "https://www.law.go.kr/법령/지방세법/제75조",
+      "org": "법제처 (지방세법 제75조 제1항 단서)",
+      "screenshot": "evidence-주민세-3.png"
+    },
+    {
+      "value": "세대원 면제",
+      "quote": "「주민등록법」에 따른 세대원 및 이에 준하는 개인으로서 대통령령으로 정하는 사람",
+      "url": "https://www.law.go.kr/법령/지방세법/제75조",
+      "org": "법제처 (지방세법 제75조 제1항 단서)",
+      "screenshot": "evidence-주민세-3.png"
+    },
+    {
+      "value": "외국인등록 1년 미만 면제",
+      "quote": "「출입국관리법」 제31조에 따른 외국인등록을 한 날부터 1년이 경과되지 아니한 외국인",
+      "url": "https://www.law.go.kr/법령/지방세법/제75조",
+      "org": "법제처 (지방세법 제75조 제1항 단서)",
+      "screenshot": "evidence-주민세-3.png"
+    },
+    {
+      "value": "개인분·사업소분·종업원분 3종",
+      "quote": "사업소분의 납세의무자는 과세기준일 현재 다음 각 호의 어느 하나에 해당하는 사업주 ... 종업원분의 납세의무자는 종업원에게 급여를 지급하는 사업주로 한다.",
+      "url": "https://www.law.go.kr/법령/지방세법/제75조",
+      "org": "법제처 (지방세법 제75조)",
+      "screenshot": "evidence-주민세-3.png"
+    }
+  ],
+  "actionTargets": [
+    { "label": "위택스에서 주민세 조회·납부하기", "url": "https://www.wetax.go.kr", "org": "위택스" }
+  ]
+}

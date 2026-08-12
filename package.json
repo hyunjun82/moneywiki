@@ -7,11 +7,14 @@
     "validate": "py scripts/validate-all.py",
     "validate-static": "node scripts/validate-force-static.js",
     "quality": "node scripts/verify-quality.js",
+    "verify:articles": "npx tsx scripts/verify-articles.ts",
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
-    "prebuild": "node fix-imports-v2.js",
-    "postbuild": "node scripts/clean-out-txt.js"
+    "prebuild": "node fix-imports-v2.js && npx tsx scripts/verify-articles.ts && node scripts/verify-evidence.mjs",
+    "postbuild": "node scripts/clean-out-txt.js",
+    "evidence": "node scripts/collect-evidence.mjs",
+    "verify:evidence": "node scripts/verify-evidence.mjs"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",

@@ -1,0 +1,63 @@
+{
+  "slug": "1년-미만-퇴직금-지급-규정-조건-기준",
+  "verifiedAt": "2026-08-12",
+  "collectedBy": "scripts/collect-evidence.mjs (playwright)",
+  "sources": [
+    {
+      "url": "https://www.law.go.kr/법령/%EA%B7%BC%EB%A1%9C%EC%9E%90%ED%87%B4%EC%A7%81%EA%B8%89%EC%97%AC%EB%B3%B4%EC%9E%A5%EB%B2%95/제4조",
+      "org": "법제처 (근로자퇴직급여보장법 제4조)"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EA%B7%BC%EB%A1%9C%EC%9E%90%ED%87%B4%EC%A7%81%EA%B8%89%EC%97%AC%EB%B3%B4%EC%9E%A5%EB%B2%95/제8조",
+      "org": "법제처 (근로자퇴직급여보장법 제8조)"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EA%B7%BC%EB%A1%9C%EC%9E%90%ED%87%B4%EC%A7%81%EA%B8%89%EC%97%AC%EB%B3%B4%EC%9E%A5%EB%B2%95/제9조",
+      "org": "법제처 (근로자퇴직급여보장법 제9조)"
+    }
+  ],
+  "facts": [
+    {
+      "value": "제4조",
+      "quote": "제4조(퇴직급여제도의 설정) ① 사용자는 퇴직하는 근로자에게 급여를 지급하기 위하여 퇴직급여제도 중 하나 이상의 제도를 설정하여야 한다.",
+      "url": "https://www.law.go.kr/법령/%EA%B7%BC%EB%A1%9C%EC%9E%90%ED%87%B4%EC%A7%81%EA%B8%89%EC%97%AC%EB%B3%B4%EC%9E%A5%EB%B2%95/제4조",
+      "org": "법제처 (근로자퇴직급여보장법 제4조)",
+      "screenshot": "evidence-1년-미만-퇴직금-지급-규정-조건-기준-1.png"
+    },
+    {
+      "value": "1년 / 4주 / 1주 / 15시간",
+      "quote": "다만, 계속근로기간이 1년 미만인 근로자, 4주간을 평균하여 1주간의 소정근로시간이 15시간 미만인 근로자에 대하여는 그러하지 아니하다.",
+      "url": "https://www.law.go.kr/법령/%EA%B7%BC%EB%A1%9C%EC%9E%90%ED%87%B4%EC%A7%81%EA%B8%89%EC%97%AC%EB%B3%B4%EC%9E%A5%EB%B2%95/제4조",
+      "org": "법제처 (근로자퇴직급여보장법 제4조)",
+      "screenshot": "evidence-1년-미만-퇴직금-지급-규정-조건-기준-1.png"
+    },
+    {
+      "value": "제8조 / 1년 / 30일",
+      "quote": "제8조(퇴직금제도의 설정 등) ① 퇴직금제도를 설정하려는 사용자는 계속근로기간 1년에 대하여 30일분 이상의 평균임금을 퇴직금으로 퇴직 근로자에게 지급할 수 있는 제도를 설정하여야 한다.",
+      "url": "https://www.law.go.kr/법령/%EA%B7%BC%EB%A1%9C%EC%9E%90%ED%87%B4%EC%A7%81%EA%B8%89%EC%97%AC%EB%B3%B4%EC%9E%A5%EB%B2%95/제8조",
+      "org": "법제처 (근로자퇴직급여보장법 제8조)",
+      "screenshot": "evidence-1년-미만-퇴직금-지급-규정-조건-기준-2.png"
+    },
+    {
+      "value": "제9조 / 14일",
+      "quote": "제9조(퇴직금의 지급 등) ① 사용자는 근로자가 퇴직한 경우에는 그 지급사유가 발생한 날부터 14일 이내에 퇴직금을 지급하여야 한다.",
+      "url": "https://www.law.go.kr/법령/%EA%B7%BC%EB%A1%9C%EC%9E%90%ED%87%B4%EC%A7%81%EA%B8%89%EC%97%AC%EB%B3%B4%EC%9E%A5%EB%B2%95/제9조",
+      "org": "법제처 (근로자퇴직급여보장법 제9조)",
+      "screenshot": "evidence-1년-미만-퇴직금-지급-규정-조건-기준-3.png"
+    },
+    {
+      "value": "제23조",
+      "quote": "② 제1항에 따른 퇴직금은 근로자가 지정한 개인형퇴직연금제도의 계정 또는 제23조의8제1항에 따른 계정(이하 “개인형퇴직연금제도의 계정등”이라 한다)으로 이전하는 방법으로 지급하여야 한다.",
+      "url": "https://www.law.go.kr/법령/%EA%B7%BC%EB%A1%9C%EC%9E%90%ED%87%B4%EC%A7%81%EA%B8%89%EC%97%AC%EB%B3%B4%EC%9E%A5%EB%B2%95/제9조",
+      "org": "법제처 (근로자퇴직급여보장법 제9조)",
+      "screenshot": "evidence-1년-미만-퇴직금-지급-규정-조건-기준-3.png"
+    },
+    {
+      "value": "55세",
+      "quote": "다만, 근로자가 55세 이후에 퇴직하여 급여를 받는 경우 등 대통령령으로 정하는 사유가 있는 경우에는 그러하지 아니하다.",
+      "url": "https://www.law.go.kr/법령/%EA%B7%BC%EB%A1%9C%EC%9E%90%ED%87%B4%EC%A7%81%EA%B8%89%EC%97%AC%EB%B3%B4%EC%9E%A5%EB%B2%95/제9조",
+      "org": "법제처 (근로자퇴직급여보장법 제9조)",
+      "screenshot": "evidence-1년-미만-퇴직금-지급-규정-조건-기준-3.png"
+    }
+  ]
+}

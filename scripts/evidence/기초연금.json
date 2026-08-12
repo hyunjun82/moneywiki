@@ -1,0 +1,72 @@
+{
+  "slug": "기초연금",
+  "verifiedAt": "2026-08-12",
+  "collectedBy": "playwright (basicpension.mohw.go.kr 공지 + law.go.kr 원문 직접 추출)",
+  "note": "2027년 기준연금액은 아직 고시되지 않음 — 매년 전국소비자물가변동률을 반영해 전년도에 고시(기초연금법 제5조 제2항). 글에서 2027년 금액을 단정하지 말 것. 확정 사실은 2026년 금액과 산정 규칙뿐.",
+  "facts": [
+    {
+      "value": "월 349,700원",
+      "quote": "2026년 기초연금 기준연금액: 월 349,700원",
+      "url": "https://basicpension.mohw.go.kr/",
+      "org": "보건복지부 기초연금 (고시 일부개정 '26.1.21. 시행)",
+      "screenshot": "evidence-기초연금-1.png"
+    },
+    {
+      "value": "단독가구 월 247만원 / 부부가구 월 395.2만원",
+      "quote": "2026년도 선정기준액 : 단독가구 월 247만원 / 부부가구 월 395.2만원",
+      "url": "https://basicpension.mohw.go.kr/",
+      "org": "보건복지부 기초연금 (고시 일부개정 '26.1.1. 시행)",
+      "screenshot": "evidence-기초연금-1.png"
+    },
+    {
+      "value": "근로소득 기본공제 월 116만원",
+      "quote": "2026년 근로소득 기본공제액: 월 116만원",
+      "url": "https://basicpension.mohw.go.kr/",
+      "org": "보건복지부 기초연금",
+      "screenshot": "evidence-기초연금-1.png"
+    },
+    {
+      "value": "2025년 기준연금액 월 342,510원",
+      "quote": "2025년 기초연금 기준연금액 : 월 342,510원",
+      "url": "https://basicpension.mohw.go.kr/",
+      "org": "보건복지부 기초연금",
+      "screenshot": "evidence-기초연금-1.png"
+    },
+    {
+      "value": "매년 물가변동률 반영 고시",
+      "quote": "기준연금액은 보건복지부장관이 그 전년도의 기준연금액에 대통령령으로 정하는 바에 따라 전국소비자물가변동률을 반영하여 매년 고시한다. 이 경우 그 고시한 기준연금액의 적용기간은 해당 조정연도 1월부터 12월까지로 한다.",
+      "url": "https://www.law.go.kr/법령/기초연금법/제5조",
+      "org": "법제처 (기초연금법 제5조 제2항)",
+      "screenshot": "evidence-기초연금-2.png"
+    },
+    {
+      "value": "65세 이상",
+      "quote": "기초연금은 65세 이상인 사람으로서 소득인정액이 보건복지부장관이 정하여 고시하는 금액(이하 “선정기준액”이라 한다) 이하인 사람에게 지급한다.",
+      "url": "https://www.law.go.kr/법령/기초연금법/제3조",
+      "org": "법제처 (기초연금법 제3조 제1항)",
+      "screenshot": "evidence-기초연금-3.png"
+    },
+    {
+      "value": "소득 하위 70%",
+      "quote": "보건복지부장관은 선정기준액을 정하는 경우 65세 이상인 사람 중 기초연금 수급자가 100분의 70 수준이 되도록 한다.",
+      "url": "https://www.law.go.kr/법령/기초연금법/제3조",
+      "org": "법제처 (기초연금법 제3조 제2항)",
+      "screenshot": "evidence-기초연금-3.png"
+    },
+    {
+      "value": "공무원연금 등 직역연금 수급자 제외",
+      "quote": "다음 각 호의 어느 하나에 해당하는 연금의 수급권자와 그 배우자 ... 에게는 기초연금을 지급하지 아니한다.",
+      "url": "https://www.law.go.kr/법령/기초연금법/제3조",
+      "org": "법제처 (기초연금법 제3조 제3항)",
+      "screenshot": "evidence-기초연금-3.png"
+    }
+  ],
+  "actionTargets": [
+    { "label": "기초연금 온라인 신청하기", "url": "https://basicpension.mohw.go.kr/", "org": "보건복지부 기초연금" },
+    { "label": "복지로에서 모의계산하기", "url": "https://www.bokjiro.go.kr", "org": "복지로" }
+  ],
+  "internalLinks": [
+    { "slug": "기초연금-모의계산", "why": "계산기 — 소득인정액 직접 계산" },
+    { "slug": "기초연금-수급-자격-및-소득-하위-70-재산-기준", "why": "허브 후보: 자격/재산 기준 상세" }
+  ]
+}
