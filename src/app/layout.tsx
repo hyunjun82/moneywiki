@@ -38,6 +38,7 @@ export const metadata: Metadata = {
     siteName: "머니위키",
     title: "머니위키 - 경제 · 금융 · 법률 정보",
     description: "퇴직금, 세금, 부동산, 대출 정보를 쉽게 찾아보세요.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "머니위키" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -63,15 +64,10 @@ export const metadata: Metadata = {
       "naver-site-verification": "c59c1c6975687fa229b95b038b1de462b43ff320",
     },
   },
+  // 실존 파일만 참조 — /icon, /apple-icon 등 미생성 경로는 404를 유발 (네이버 접근불가 진단)
   icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon", type: "image/png", sizes: "32x32" },
-      { url: "/icon-192", type: "image/png", sizes: "192x192" },
-      { url: "/icon-512", type: "image/png", sizes: "512x512" },
-    ],
-    apple: "/apple-icon",
-    shortcut: "/favicon.ico",
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    shortcut: "/favicon.svg",
   },
 };
 
