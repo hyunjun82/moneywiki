@@ -88,9 +88,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const url = `https://www.jjyu.co.kr/w/${slug}`;
 
+  // description 누락 시 본문 앞부분으로 폴백 (네이버 SEO 진단: 설명 누락 방지)
+  const fallbackDesc = (doc.htmlContent || "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 150);
+
   return {
     title: doc.title,
-    description: doc.description,
+    description: doc.description || fallbackDesc,
     keywords: doc.keywords,
     authors: [{ name: "머니위키" }],
     alternates: {
@@ -347,6 +354,17 @@ export default async function WikiPage({ params }: PageProps) {
 
   // HTML 처리
   let processedHtml = addSectionIds(doc.htmlContent || "");
+
+  // 본문 마크다운의 h1 처리 — 페이지 자체 <h1>과 중복 방지 (네이버 SEO 진단: H1 2개 이상)
+  // 제목과 같은 첫 h1은 제거, 그 외 h1은 h2로 강등
+  processedHtml = processedHtml.replace(
+    /<h1(\s[^>]*)?>([\s\S]*?)<\/h1>/i,
+    (m, attrs, inner) =>
+      inner.replace(/<[^>]+>/g, "").trim() === doc.title.trim() ? "" : `<h2${attrs ?? ""}>${inner}</h2>`
+  );
+  processedHtml = processedHtml
+    .replace(/<h1(\s[^>]*)?>/gi, "<h2$1>")
+    .replace(/<\/h1>/gi, "</h2>");
 
   // FAQ를 본문에 삽입 (결론 전, 출처 앞의 마지막 H2 앞에)
   if (doc.faq && doc.faq.length > 0) {
