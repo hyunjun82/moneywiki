@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "개인정보처리방침 | 머니위키",
+  title: "개인정보처리방침",
   description: "머니위키(jjyu.co.kr)의 개인정보처리방침입니다. 수집 항목, 쿠키·광고(Google AdSense)·분석 도구 사용 내역을 안내합니다.",
   alternates: { canonical: "https://www.jjyu.co.kr/privacy" },
   robots: { index: false, follow: true },

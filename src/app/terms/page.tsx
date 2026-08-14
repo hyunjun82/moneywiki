@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "이용약관 | 머니위키",
+  title: "이용약관",
   description: "머니위키(jjyu.co.kr) 이용약관입니다. 콘텐츠의 성격, 책임 한계, 저작권 정책을 안내합니다.",
   alternates: { canonical: "https://www.jjyu.co.kr/terms" },
   robots: { index: false, follow: true },
