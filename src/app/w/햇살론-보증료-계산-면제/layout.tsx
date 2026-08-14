@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "햇살론 보증료 계산하고 면제받기 — 머니위키",
+  title: "햇살론 보증료 계산하고 면제받기",
   description: "햇살론 보증료 계산기로 예상 금액 확인하고, 성실상환·이벤트로 보증료를 줄이는 방법을 배우세요. 보증료율 2.0~3.0%, 면제 조건 4가지 정리.",
   openGraph: {
     title: "햇살론 보증료 계산하고 면제받기",
