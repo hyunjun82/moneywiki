@@ -4,3 +4,6 @@ Allow: /
 
 # Sitemap
 Sitemap: https://www.jjyu.co.kr/sitemap.xml
+
+# 다음(Daum) 웹마스터도구 소유확인 키 — 지우지 말 것
+#DaumWebMasterTool:5b296acf379ab6f8bf80a7197388b4d4c3dd056adb3e8ef50dcc5e8131dc4f05:q6rt3xYgBjyGixeDQH9phw==
