@@ -17,6 +17,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
                 changeFrequency: "daily",
                 priority: 1,
       },
+      // 양식 다운로드 허브
+      {
+                url: `${baseUrl}/forms`,
+                lastModified: new Date(),
+                changeFrequency: "weekly",
+                priority: 0.9,
+      },
+      // 정책 페이지 (privacy는 AdSense 필수)
+      ...["about", "privacy", "terms"].map((p) => ({
+                url: `${baseUrl}/${p}`,
+                lastModified: new Date(),
+                changeFrequency: "monthly" as const,
+                priority: 0.3,
+      })),
         ];
 
   // MD 문서 슬러그
