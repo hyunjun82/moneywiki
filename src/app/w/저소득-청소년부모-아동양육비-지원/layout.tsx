@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const dynamic = "force-static";
 export const metadata: Metadata = {
-  title: "저소득 청소년부모 아동양육비 신청 방법 | 머니위키",
+  title: "저소득 청소년부모 아동양육비 신청 방법",
   description: "부 또는 모 만 24세 이하 저소득 청소년부모 아동 1인당 월 20만원 양육비 지원 자격과 신청 방법을 알려드려요.",
   alternates: { canonical: "https://www.jjyu.co.kr/w/저소득-청소년부모-아동양육비-지원" },
   openGraph: {

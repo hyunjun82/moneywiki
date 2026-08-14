@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "가족에게 돈 빌리면 증여세 내야 할까? 금전소비대차 계약서 작성법 | 머니위키",
+  title: "가족에게 돈 빌리면 증여세 내야 할까? 금전소비대차 계약서 작성법",
   description: "가족 간 돈 거래는 증여로 추정돼요. 차용증을 쓰면 대출로 인정받을 수 있고, 적정이자율은 연 4.6%예요. 2억 1,700만원 이하는 무이자도 가능해요.",
   alternates: {
     canonical: "https://www.jjyu.co.kr/w/가족-간-금전소비대차-계약서",

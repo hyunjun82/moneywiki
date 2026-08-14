@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "세금 이의신청 방법 — 90일 기한과 신청 절차 | 머니위키",
+  title: "세금 이의신청 방법 — 90일 기한과 신청 절차",
   description: "세금 고지서에 이의가 있으면 90일 이내에 이의신청서를 제출할 수 있어요. 홈택스 온라인 신청, 필요 서류, 불복 절차까지 정리했어요.",
   alternates: {
     canonical: "https://www.jjyu.co.kr/w/세금-이의신청-방법",

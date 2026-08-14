@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "연말정산 사내근로복지기금, 세금을 내야 할까? | 머니위키",
+  title: "연말정산 사내근로복지기금, 세금을 내야 할까?",
   description: "사내근로복지기금에서 받은 학자금·의료비는 비과세예요. 회사 직접 지급과의 차이, 확인 방법을 정리했어요.",
   alternates: {
     canonical: "https://www.jjyu.co.kr/w/연말정산-사내근로복지기금",

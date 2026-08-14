@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "장애인 창업 대출 보증금 지원 최대 1억원 | 머니위키",
+  title: "장애인 창업 대출 보증금 지원 최대 1억원",
   description: "장애인자립자금대여 점포보증금 7천만원·운영자금 3천만원 연2~3%. 고용공단 창업지원금 최대 1억원 상환 없음. 신청 방법 안내.",
   openGraph: {
     title: "장애인 창업 대출 보증금 지원 최대 1억원",

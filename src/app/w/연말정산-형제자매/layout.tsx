@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "연말정산 형제자매 부양가족 공제 | 머니위키",
+  title: "연말정산 형제자매 부양가족 공제",
   description: "형제자매 부양가족 공제 조건: 만 20세 이하 or 만 60세 이상, 소득 100만원 이하. 신용카드·의료비 공제는 안 돼요.",
   openGraph: {
     title: "연말정산 형제자매 부양가족 공제",

@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "오피스텔 임대차보호법 적용 조건과 대항력 확보법 | 머니위키",
+  title: "오피스텔 임대차보호법 적용 조건과 대항력 확보법",
   description: "오피스텔도 주거용이면 임대차보호법이 적용돼요. 전입신고와 확정일자로 대항력을 확보하는 방법을 정리했어요.",
   openGraph: {
     title: "오피스텔 임대차보호법 적용 조건과 대항력 확보법 | 머니위키",

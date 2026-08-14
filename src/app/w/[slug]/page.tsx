@@ -42,10 +42,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   try {
     slug = decodeURIComponent(rawSlug);
   } catch {
-    return { title: "페이지를 찾을 수 없습니다 | 머니위키" };
+    return { title: "페이지를 찾을 수 없습니다" };
   }
   if (slug.includes(' ') || slug.includes('%')) {
-    return { title: "페이지를 찾을 수 없습니다 | 머니위키" };
+    return { title: "페이지를 찾을 수 없습니다" };
   }
 
   // ── articles 우선 메타 ──

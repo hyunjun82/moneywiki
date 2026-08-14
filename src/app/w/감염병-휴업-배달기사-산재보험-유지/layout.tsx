@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "감염병 휴업 배달기사 산재보험 유지 의무 감면 | 머니위키",
+  title: "감염병 휴업 배달기사 산재보험 유지 의무 감면",
   description: "감염병 휴업 중에도 배달기사 산재보험은 해지 불가. 보험료 감면 신청 방법과 미가입 시 사업주 부담 기준.",
   openGraph: {
     title: "감염병 휴업 배달기사 산재보험 유지 의무 감면",

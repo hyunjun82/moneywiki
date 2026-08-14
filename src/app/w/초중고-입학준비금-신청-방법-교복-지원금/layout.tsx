@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "초중고 입학준비금 신청 방법과 교복 지원금 사용처 | 머니위키",
+  title: "초중고 입학준비금 신청 방법과 교복 지원금 사용처",
   description: "초등 20만원, 중고 30만원. 2월에 온라인 신청, 제로페이 또는 교복으로 수령. 사용 가능 물품 정리.",
   openGraph: {
     title: "초중고 입학준비금 신청 방법과 교복 지원금 사용처",

@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "경기도 청년 기본소득 신청 기간 지급 조건 | 머니위키",
+  title: "경기도 청년 기본소득 신청 기간 지급 조건",
   description: "만 24세 경기도 거주 청년 분기당 25만원, 연 최대 100만원 지역화폐 지급. 잡아바 플랫폼 온라인 신청 방법과 자격 조건.",
   openGraph: {
     title: "경기도 청년 기본소득 신청 기간 지급 조건",

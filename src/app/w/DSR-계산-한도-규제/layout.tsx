@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "DSR 때문에 대출이 안 된다면? 계산법과 한도 | 머니위키",
+  title: "DSR 때문에 대출이 안 된다면? 계산법과 한도",
   description: "DSR은 연소득 대비 대출 원리금 비율이에요. 은행 40%, 비은행 50% 한도에 2026년 스트레스DSR 3단계까지 적용. 계산법과 한도 늘리는 방법을 정리했어요.",
   alternates: {
     canonical: "https://www.jjyu.co.kr/w/DSR-계산-한도-규제",

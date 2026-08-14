@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "연말정산 환급금 지급일 시기 조회 방법 | 머니위키",
+  title: "연말정산 환급금 지급일 시기 조회 방법",
   description: "연말정산 환급금은 2~3월 급여에 포함 지급돼요. 홈택스에서 결정세액과 기납부세액 비교하면 환급액을 미리 확인할 수 있어요.",
   openGraph: {
     title: "연말정산 환급금 지급일 시기 조회 방법",

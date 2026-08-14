@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const dynamic = "force-static";
 export const metadata: Metadata = {
-  title: "저소득 지역가입자 건강보험료 지원 자격 | 머니위키",
+  title: "저소득 지역가입자 건강보험료 지원 자격",
   description: "프리랜서·자영업자 등 저소득 지역가입자 건강보험료 50% 지원 자격과 신청 방법을 알려드려요.",
   alternates: { canonical: "https://www.jjyu.co.kr/w/저소득-지역가입자-보험료-지원" },
   openGraph: {

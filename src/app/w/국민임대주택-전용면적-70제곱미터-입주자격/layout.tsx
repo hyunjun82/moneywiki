@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "국민임대주택 전용 70㎡ 입주자격, 소득·자산·청약통장 조건 정리 | 머니위키",
+  title: "국민임대주택 전용 70㎡ 입주자격, 소득·자산·청약통장 조건 정리",
   description: "국민임대주택 전용 70㎡(60㎡ 초과) 신청 자격이에요. 소득 기준(1인 120%, 2인 110%, 3인 100%), 총자산 3억6100만원 이하, 청약통장 24회 이상 조건을 정리했어요.",
   openGraph: {
     title: "국민임대주택 전용 70㎡ 입주자격, 소득·자산·청약통장 조건 정리 | 머니위키",

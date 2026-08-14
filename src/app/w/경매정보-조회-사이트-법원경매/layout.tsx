@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "경매정보 조회 사이트 법원경매 | 머니위키",
+  title: "경매정보 조회 사이트 법원경매",
   description: "대법원 법원경매 공식 사이트와 무료 민간 플랫폼(경매마당, 우리경매, 옥션원) 비교. 초보자 추천과 입찰 시 주의사항.",
   openGraph: {
     title: "경매정보 조회 사이트 법원경매",

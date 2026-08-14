@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "건축물 용도변경, 허가인가요 신고인가요? 시설군으로 판단하는 방법 | 머니위키",
+  title: "건축물 용도변경, 허가인가요 신고인가요? 시설군으로 판단하는 방법",
   description: "건축물 용도변경 시 허가·신고·건축물대장 변경 중 무엇이 필요한지 시설군으로 판단해요. 9개 시설군 분류와 신청 절차를 정리했어요.",
   alternates: { canonical: "https://www.jjyu.co.kr/w/건축물-용도변경-시설군-확인" },
   openGraph: {

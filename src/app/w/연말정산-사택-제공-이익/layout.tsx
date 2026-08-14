@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "연말정산 사택 제공 이익, 비과세 조건과 과세 계산 | 머니위키",
+  title: "연말정산 사택 제공 이익, 비과세 조건과 과세 계산",
   description: "회사 사택은 전용면적 85㎡ 이하 + 기준시가 3억원 이하면 비과세예요. 조건 미충족 시 과세 금액 계산 방법과 기숙사 적용 기준을 정리했어요.",
   alternates: {
     canonical: "https://www.jjyu.co.kr/w/연말정산-사택-제공-이익",

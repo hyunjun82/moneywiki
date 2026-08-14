@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "65세 이상 실업급여 수급 자격 | 머니위키",
+  title: "65세 이상 실업급여 수급 자격",
   description: "65세 전에 입사했다면 65세 이후 퇴직해도 실업급여 수급 가능. 나이가 아닌 고용보험 가입 시점이 기준. 케이스별 정리.",
   openGraph: {
     title: "65세 이상 실업급여 수급 자격",

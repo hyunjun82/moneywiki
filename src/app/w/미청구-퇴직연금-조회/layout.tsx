@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "미청구 퇴직연금 조회 방법과 수령 절차 | 머니위키",
+  title: "미청구 퇴직연금 조회 방법과 수령 절차",
   description: "금융감독원 통합연금포털에서 미청구 퇴직연금을 한 번에 조회할 수 있어요. 조회 방법, 수령 절차, 소멸시효까지 정리했어요.",
   alternates: { canonical: "https://www.jjyu.co.kr/w/미청구-퇴직연금-조회" },
   openGraph: {

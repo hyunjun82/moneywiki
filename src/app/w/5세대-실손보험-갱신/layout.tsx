@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "5세대 실손보험 갱신, 어떻게 진행되나요? 자동 전환 시기와 보험료 변화 | 머니위키",
+  title: "5세대 실손보험 갱신, 어떻게 진행되나요? 자동 전환 시기와 보험료 변화",
   description: "2026년 7월부터 갱신일 순서대로 5세대 실손보험으로 자동 전환돼요. 별도 신청과 건강 심사 없이 약관만 바뀌어요. 전환 일정과 보험료 변화를 정리했어요.",
   alternates: { canonical: "https://www.jjyu.co.kr/w/5세대-실손보험-갱신" },
   openGraph: {

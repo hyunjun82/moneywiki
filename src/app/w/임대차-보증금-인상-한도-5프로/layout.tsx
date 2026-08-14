@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "보증금 인상 한도 5%, 초과 요구 시 거절하는 방법 | 머니위키",
+  title: "보증금 인상 한도 5%, 초과 요구 시 거절하는 방법",
   description: "주택임대차보호법에 따라 보증금 인상은 기존 금액의 5% 이내로 제한돼요. 보증금 5천만원이면 최대 250만원. 초과 요구 거절 방법과 계산법을 정리했어요.",
   alternates: {
     canonical: "https://www.jjyu.co.kr/w/임대차-보증금-인상-한도-5프로",

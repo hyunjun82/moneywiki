@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "국민연금 — 보험료·수령 나이·가입 조건 정리 | 머니위키",
+  title: "국민연금 — 보험료·수령 나이·가입 조건 정리",
   description: "국민연금 보험료는 소득의 9%(직장인 절반 부담), 최소 10년 가입해야 노령연금을 받아요. 1969년생 이후 만 65세 수령 개시예요.",
   alternates: {
     canonical: "https://www.jjyu.co.kr/w/국민연금",

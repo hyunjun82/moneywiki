@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "연말정산 공제항목 — 소득공제·세액공제 종류와 한도 | 머니위키",
+  title: "연말정산 공제항목 — 소득공제·세액공제 종류와 한도",
   description: "연말정산 공제항목은 소득공제와 세액공제로 나뉘어요. 인적공제, 신용카드, 의료비, 교육비, 연금저축 등 항목별 공제율과 한도를 비교했어요.",
   alternates: {
     canonical: "https://www.jjyu.co.kr/w/연말정산-공제항목",

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "급수관 검사 기준치 초과 조치방법 — 항목별 기준과 대응 | 머니위키",
+  title: "급수관 검사 기준치 초과 조치방법 — 항목별 기준과 대응",
   description: "급수관 검사에서 납·철·탁도 기준치가 초과되면 관리사무소에 즉시 조치를 요청할 수 있어요. 항목별 기준과 배관 교체 절차를 정리했어요.",
   alternates: { canonical: "https://www.jjyu.co.kr/w/급수관-검사-기준치-초과-조치방법" },
   openGraph: {

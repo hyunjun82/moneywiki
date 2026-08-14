@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "연말정산 세무사 조세전문가 대행 비용 | 머니위키",
+  title: "연말정산 세무사 조세전문가 대행 비용",
   description: "연말정산 세무사 대행 비용은 10~30만원이에요. 소득이 복잡하면 전문가 도움으로 환급액을 더 늘릴 수 있어요.",
   openGraph: {
     title: "연말정산 세무사 조세전문가 대행 비용",

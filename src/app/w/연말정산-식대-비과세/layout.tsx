@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "연말정산 식대 비과세 월 20만원 한도 조건 | 머니위키",
+  title: "연말정산 식대 비과세 월 20만원 한도 조건",
   description: "급여명세서에 식대 별도 표시 필수. 월 20만원까지 비과세, 구내식당 전액 비과세. 원천징수영수증에서 반영 여부 확인 방법.",
   openGraph: {
     title: "연말정산 식대 비과세 월 20만원 한도",

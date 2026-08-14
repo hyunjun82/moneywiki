@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "5세대 실손보험 가입 조건 — 신규·전환 대상 구분 방법 | 머니위키",
+  title: "5세대 실손보험 가입 조건 — 신규·전환 대상 구분 방법",
   description: "2026년 4월 이후 신규 가입자는 5세대 실손만 선택 가능해요. 기존 2~4세대는 재가입 시기에 순차 전환, 1세대·초기 2세대는 무심사 재매입 전환이 가능해요.",
   alternates: {
     canonical: "https://www.jjyu.co.kr/w/5세대-실손보험-가입-조건",

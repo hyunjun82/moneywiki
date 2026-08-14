@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "근저당권 등기명의인 주소변경 — 중간 주소 없이 현재 주소로 바로 등기 | 머니위키",
+  title: "근저당권 등기명의인 주소변경 — 중간 주소 없이 현재 주소로 바로 등기",
   description: "근저당권자 주소가 여러 번 바뀌었어도 중간 과정 없이 현재 주소로 1번만 변경등기하면 돼요. 비용 1만원, 인터넷등기소 전자신청 절차를 정리했어요.",
   alternates: { canonical: "https://www.jjyu.co.kr/w/근저당권-주소변경-등기" },
   openGraph: {

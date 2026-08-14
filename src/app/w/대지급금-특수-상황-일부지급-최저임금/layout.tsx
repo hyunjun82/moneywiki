@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "대지급금 일부 지급 사유 부정수급 제재 기준 | 머니위키",
+  title: "대지급금 일부 지급 사유 부정수급 제재 기준",
   description: "대지급금 일부만 지급되는 사유와 초과분 청구 방법. 부정수급 시 전액 환수 + 추가 징수. 최저임금 보정 기준.",
   openGraph: {
     title: "대지급금 일부 지급 사유 부정수급 제재 기준",
