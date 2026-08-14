@@ -19,52 +19,41 @@
       "Bash(node -e :*)",
       "Write(content/wiki/**)",
       "Edit(content/wiki/**)",
-      "WebSearch",
-      "WebFetch",
       "Read(//c/Users/user/law-jjyu/**)"
     ],
-    "deny": [],
-    "additionalDirectories": [
-      "c:\\Users\\user\\wiki-site\\.claude\\skills"
-    ]
+    "deny": [
+      "WebSearch",
+      "WebFetch"
+    ],
+    "additionalDirectories": []
   },
   "hooks": {
-    "PreToolUse": [
+    "UserPromptSubmit": [
       {
-        "matcher": "Write|Edit",
         "hooks": [
           {
             "type": "command",
-            "command": "node scripts/pre-guard-calculator.js"
-          }
-        ]
-      },
-      {
-        "matcher": "Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node scripts/pre-check-q1q4-map.js"
+            "command": "node scripts/hooks/require-template.mjs"
           }
         ]
       }
     ],
-    "PostToolUse": [
+    "PreToolUse": [
       {
-        "matcher": "Write|Edit",
+        "matcher": "WebSearch|WebFetch",
         "hooks": [
           {
             "type": "command",
-            "command": "node scripts/verify-tsx-article.js"
+            "command": "node scripts/hooks/block-websearch.mjs"
           }
         ]
       },
       {
-        "matcher": "Write|Edit",
+        "matcher": "Write|Edit|NotebookEdit|Bash",
         "hooks": [
           {
             "type": "command",
-            "command": "node scripts/verify-reader-perspective.js"
+            "command": "node scripts/hooks/protect-assets.mjs"
           }
         ]
       }
