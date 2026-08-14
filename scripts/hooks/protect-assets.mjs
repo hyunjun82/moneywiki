@@ -50,8 +50,14 @@ function violation(p, slugs) {
 /** Bash 명령에서 파괴적 동작의 대상 경로만 추린다. 읽기 명령은 통과시킨다. */
 function bashTargets(cmd) {
   if (!cmd) return [];
-  if (!/\b(rm|mv|sed\s+-i|truncate|tee|cp)\b|>\s*\S|>>\s*\S/.test(cmd)) return [];
-  return (cmd.match(/[^\s'"|;&<>]*[\/\\][^\s'"|;&<>]*/g) ?? []).map((t) =>
+
+  // 히어독 본문과 -m/-F 메시지는 명령이 아니라 데이터다.
+  // 커밋 메시지에 경로를 언급했다는 이유로 차단되면 안 된다.
+  let scan = cmd.replace(/<<-?\s*(['"]?)(\w+)\1[\s\S]*?^\s*\2\s*$/gm, " ");
+  scan = scan.replace(/-m\s+(['"])[\s\S]*?\1/g, " ");
+
+  if (!/\b(rm|mv|sed\s+-i|truncate|tee|cp)\b|>\s*\S|>>\s*\S/.test(scan)) return [];
+  return (scan.match(/[^\s'"|;&<>]*[\/\\][^\s'"|;&<>]*/g) ?? []).map((t) =>
     t.startsWith("/") || /^[A-Za-z]:/.test(t) ? t : `/${t}`
   );
 }
