@@ -366,7 +366,9 @@ export default async function WikiPage({ params }: PageProps) {
     .replace(/<h1(\s[^>]*)?>/gi, "<h2$1>")
     .replace(/<\/h1>/gi, "</h2>");
 
-  // FAQ를 본문에 삽입 (결론 전, 출처 앞의 마지막 H2 앞에)
+  // FAQ 블록. 서론/본문 분리를 마친 뒤 본문 끝에 붙인다.
+  let pendingFaqHtml = "";
+
   if (doc.faq && doc.faq.length > 0) {
     const faqHtml = `
       <section class="faq-section mt-12 pt-8 border-t border-neutral-200">
@@ -444,16 +446,19 @@ export default async function WikiPage({ params }: PageProps) {
       }
     }
 
-    // FAQ 삽입: 본문 맨 끝에 (7번 결론 아래)
-    processedHtml = processedHtml + faqHtml;
+    // FAQ는 여기서 붙이지 않는다. 서론/본문 분리 이후 본문 끝에 붙인다.
+    // 본문에 H2가 하나도 없는 글(계산기 등)에서 FAQ의 <h2 id="faq">가 첫 H2가 되어
+    // 분리 지점이 FAQ 섹션 한가운데로 잡히고, 섹션이 반토막 나 ❓만 남았다.
+    pendingFaqHtml = faqHtml;
   }
 
-  // 서론/본문 분리 (첫 번째 <h2> 기준)
+  // 서론/본문 분리 (첫 번째 <h2> 기준) — FAQ를 붙이기 전 순수 본문 기준으로 계산
   const firstH2Index = processedHtml.search(/<h2[\s>]/);
   const introHtml = firstH2Index > 0 ? processedHtml.slice(0, firstH2Index) : "";
-  const bodyHtml = firstH2Index > 0 ? processedHtml.slice(firstH2Index) : processedHtml;
+  const bodyHtml =
+    (firstH2Index > 0 ? processedHtml.slice(firstH2Index) : processedHtml) + pendingFaqHtml;
 
-  // 목차 추출 (processedHtml에서 - FAQ 제거 후)
+  // 목차 추출 (FAQ 항목은 제외)
   const toc = extractToc(processedHtml).filter(
     item => !/자주\s*묻는\s*질문/i.test(item.text)
   );
