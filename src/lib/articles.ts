@@ -10,11 +10,14 @@
 import type { ArticleData, ArticleCategory } from "@/data/articles/types";
 
 // ── 카테고리 import ──
-import { 퇴직금 } from "@/data/articles/퇴직금";
+// 새 템플릿(docs/moneywiki-article-template.html) 기준으로 작성·검증을 통과한 글만 등록한다.
+// 미등록 slug는 MD(content/wiki/)로 폴백된다.
+//
+// 보류: 퇴직금 (src/data/articles-parked/퇴직금.ts)
+//   새 템플릿 도입 이전에 작성돼 verify:articles / verify:evidence 미통과.
+//   같은 slug의 MD가 있어 페이지는 정상 서비스 중. 리라이트 후 재등록할 것.
 
-const categories: ArticleCategory[] = [
-  퇴직금,
-];
+const categories: ArticleCategory[] = [];
 
 // slug → ArticleData 인덱스 (빌드 시 1회 생성)
 const indexBySlug: Map<string, ArticleData> = (() => {
