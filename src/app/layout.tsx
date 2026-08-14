@@ -60,7 +60,8 @@ export const metadata: Metadata = {
     google: "kPe6sAN7cMBDG2OVVWHcI8hH-BxkT5Zv6U8TVWTxuwI",
     other: {
       "msvalidate.01": "1945B725690D183CB7825C0D0FB24443",
-      "daum-verification": "9f5b7b51c6f32d3f0e5b6db2a8fc13839e7936f1ef2870bb85967b978c0ffe08:XNG90a1lomEQ6b3Rh86ohQ==",
+      // 2026-08-14 재발급 (구 계정 로그인 불가로 신규 PIN 발급)
+      "daum-verification": "5b296acf379ab6f8bf80a7197388b4d4c3dd056adb3e8ef50dcc5e8131dc4f05:q6rt3xYgBjyGixeDQH9phw==",
       "naver-site-verification": "c59c1c6975687fa229b95b038b1de462b43ff320",
     },
   },
