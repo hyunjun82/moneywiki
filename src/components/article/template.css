@@ -171,6 +171,10 @@
 
 /* globals.css 의 `article table thead th` 남색 그라데이션이 새 템플릿 표까지 덮어써서
    메인 색상(에메랄드)과 어긋났다. 정본 템플릿 값으로 되돌린다. */
+/* globals.css 규칙이 `article table:not([data-custom-style]) thead th` 로 특정성이 높아
+   단순 .aw 규칙으로는 이기지 못한다. 같은 형태로 맞춰 확실히 덮어쓴다. */
+.aw article table:not([data-custom-style]) thead th,
+.aw article table:not([data-custom-style]) th,
 .aw table thead th,
 .aw table th {
   background: #FAFAF9;

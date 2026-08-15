@@ -35,9 +35,9 @@ export const 보험: ArticleCategory = {
         "먼저 오해부터 풀겠습니다. **5세대로 자동 전환되지 않습니다.** 갱신일이 온다고 저절로 넘어가는 것이 아니라 본인이 신청해야 바뀝니다.\n\n전환 자체는 지금 바로 됩니다. 다만 **2013년 3월 이전에 가입한 초기 실손보험이라면 2026년 11월을 기다리는 편이 유리할 수 있습니다.** 그때 계약전환 할인이 시작되기 때문입니다. 내 계약이 어느 쪽인지부터 확인하셔야겠죠.",
 
       heroCta: {
-        label: "내 보험계약현황 무료로 조회하기 →",
-        url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900036",
-        org: "금융감독원 파인",
+        label: "내보험 찾아줌으로 가입내역 조회하기 →",
+        url: "https://cont.insure.or.kr/cont_web/information/popup.do",
+        org: "생명보험협회 내보험 찾아줌",
       },
 
       keyFacts: [
@@ -68,9 +68,9 @@ export const 보험: ArticleCategory = {
           ],
           cta: {
             label: "전환 전 내 계약부터 확인하세요",
-            url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900036",
-            org: "금융감독원 파인",
-            note: "보험계약현황과 보장내역을 무료로 조회할 수 있습니다. 가입 시기를 보면 초기 실손인지 알 수 있습니다.",
+            url: "https://cont.insure.or.kr/cont_web/information/popup.do",
+            org: "생명보험협회 내보험 찾아줌",
+            note: "생명보험·손해보험 가입내역을 한 번에 조회할 수 있습니다. 가입 시기를 보면 초기 실손인지 알 수 있습니다.",
           },
           body:
             "전환은 가입한 보험회사에 직접 신청하는 방식입니다. 기존 실손보험(1~4세대) 가입자는 본인이 가입한 보험회사의 5세대 실손으로 전환할 수 있습니다.\n\n금융위원회는 이 전환이 별도 심사 없이 이루어진다고 밝혔습니다. 그동안 병원을 많이 다녔더라도 전환 자체가 거절되지는 않습니다.\n\n다만 다른 보험사 상품으로는 전환이 안 됩니다. 그쪽은 전환이 아니라 신규 청약이고 인수 심사가 따릅니다. 전환일은 꼭 기록해 두세요. 철회 기간을 세는 기준이 됩니다.",
@@ -178,9 +178,9 @@ export const 보험: ArticleCategory = {
             body:
               "2013년 3월 이전 가입이고 약관변경 조건이 없다면 11월 할인 대상입니다. 그 외에는 지금 전환해도 됩니다.",
             action: {
-              label: "보험계약현황 조회하기",
-              url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900036",
-              org: "금융감독원 파인",
+              label: "가입내역 조회하기",
+              url: "https://cont.insure.or.kr/cont_web/information/popup.do",
+              org: "생명보험협회 내보험 찾아줌",
             },
           },
           {
@@ -273,9 +273,9 @@ export const 보험: ArticleCategory = {
           org: "금융위원회",
         },
         {
-          title: "파인 — 신용정보조회(보험계약현황 및 보장내역 무료조회)",
-          url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900036",
-          org: "금융감독원",
+          title: "내보험 찾아줌 — 보험 가입내역 통합조회",
+          url: "https://cont.insure.or.kr/cont_web/information/popup.do",
+          org: "생명보험협회·손해보험협회",
         },
       ],
 
@@ -324,9 +324,9 @@ export const 보험: ArticleCategory = {
         "5세대 실손보험은 **2026년 5월 6일부터 이미 판매 중입니다.** 기다릴 필요 없이 지금 가입할 수 있습니다.\n\n새로 생긴 선택지가 하나 있습니다. **비급여 특약을 골라서 넣는 선별가입이 가능해졌습니다.** 병원을 얼마나 다니는지에 따라 특약 구성을 다르게 짤 수 있다는 뜻입니다. 내 이용 패턴부터 확인하셔야겠죠.",
 
       heroCta: {
-        label: "내 보험계약현황 무료로 조회하기 →",
-        url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900036",
-        org: "금융감독원 파인",
+        label: "내보험 찾아줌으로 가입내역 조회하기 →",
+        url: "https://cont.insure.or.kr/cont_web/information/popup.do",
+        org: "생명보험협회 내보험 찾아줌",
       },
 
       keyFacts: [
@@ -357,9 +357,9 @@ export const 보험: ArticleCategory = {
           ],
           cta: {
             label: "가입 전 내 계약부터 확인하세요",
-            url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900036",
-            org: "금융감독원 파인",
-            note: "보험계약현황과 보장내역을 무료로 조회할 수 있습니다. 이미 실손보험이 있으면 중복 가입이 되지 않습니다.",
+            url: "https://cont.insure.or.kr/cont_web/information/popup.do",
+            org: "생명보험협회 내보험 찾아줌",
+            note: "생명보험·손해보험 가입내역을 한 번에 조회할 수 있습니다. 이미 실손보험이 있으면 중복 가입이 되지 않습니다.",
           },
           body:
             "가입 경로는 기존 계약 유무로 갈립니다. 이미 실손보험이 있으면 신규 가입이 아니라 전환입니다.\n\n기존 1~4세대 가입자는 본인이 가입한 보험회사의 5세대 실손으로 전환할 수 있고, 금융위원회는 이 전환이 별도 심사 없이 이루어진다고 밝혔습니다. 건강 상태를 다시 묻지 않는다는 뜻입니다.\n\n처음 가입하는 경우에는 보험사별 5세대 상품으로 청약하면 됩니다. 이때 비급여 특약을 어떻게 구성할지가 핵심인데, 5세대부터는 특약을 골라서 넣을 수 있습니다.",
@@ -465,11 +465,11 @@ export const 보험: ArticleCategory = {
           {
             title: "기존 실손보험이 있는지 확인합니다",
             body:
-              "파인에서 보험계약현황을 조회하면 가입 여부와 세대를 알 수 있습니다. 이미 있으면 신규 가입이 아니라 전환입니다.",
+              "내보험 찾아줌에서 가입내역을 조회하면 가입 여부와 세대를 알 수 있습니다. 이미 있으면 신규 가입이 아니라 전환입니다.",
             action: {
-              label: "보험계약현황 조회하기",
-              url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900036",
-              org: "금융감독원 파인",
+              label: "가입내역 조회하기",
+              url: "https://cont.insure.or.kr/cont_web/information/popup.do",
+              org: "생명보험협회 내보험 찾아줌",
             },
           },
           {
@@ -562,9 +562,9 @@ export const 보험: ArticleCategory = {
           org: "금융위원회",
         },
         {
-          title: "파인 — 신용정보조회(보험계약현황 및 보장내역 무료조회)",
-          url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900036",
-          org: "금융감독원",
+          title: "내보험 찾아줌 — 보험 가입내역 통합조회",
+          url: "https://cont.insure.or.kr/cont_web/information/popup.do",
+          org: "생명보험협회·손해보험협회",
         },
       ],
 
@@ -615,9 +615,9 @@ export const 보험: ArticleCategory = {
         "보험료만 놓고 보면 5세대가 확실히 쌉니다. **4세대 대비 약 30%, 1·2세대 대비 절반 이상 절감이 예상됩니다.**\n\n다만 싸진 이유가 보장 축소라는 점이 중요합니다. 비중증 비급여를 자주 쓰면 아낀 보험료보다 더 나갈 수 있습니다. **내가 지난 2년간 병원을 얼마나 다녔는지가 유일한 판단 기준입니다.** 계약부터 확인해 보셔야겠죠.",
 
       heroCta: {
-        label: "내 보험계약현황 무료로 조회하기 →",
-        url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900036",
-        org: "금융감독원 파인",
+        label: "내보험 찾아줌으로 가입내역 조회하기 →",
+        url: "https://cont.insure.or.kr/cont_web/information/popup.do",
+        org: "생명보험협회 내보험 찾아줌",
       },
 
       keyFacts: [
@@ -639,7 +639,7 @@ export const 보험: ArticleCategory = {
             {
               type: "checklist",
               items: [
-                "**내 계약부터 조회** — 파인에서 보험계약현황과 보장내역을 무료로 봅니다",
+                "**내 계약부터 조회** — 내보험 찾아줌에서 생명·손해보험 가입내역을 한 번에 봅니다",
                 "**몇 세대인지 확인** — 1·2세대인지 4세대인지에 따라 절감폭이 다릅니다",
                 "**최근 2년 이용 이력 확인** — 특약2 보험금을 받은 적 있는지가 할인을 가릅니다",
                 "**가입한 보험사에 전환 문의** — 전환은 같은 회사 5세대로만 가능합니다",
@@ -648,12 +648,12 @@ export const 보험: ArticleCategory = {
           ],
           cta: {
             label: "보험료 비교는 내 계약 확인부터입니다",
-            url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900036",
-            org: "금융감독원 파인",
-            note: "보험계약현황과 보장내역을 무료로 조회할 수 있습니다.",
+            url: "https://cont.insure.or.kr/cont_web/information/popup.do",
+            org: "생명보험협회 내보험 찾아줌",
+            note: "생명보험·손해보험 가입내역을 한 번에 조회할 수 있습니다.",
           },
           body:
-            "보험료를 비교하려면 내가 몇 세대에 가입돼 있는지부터 알아야 합니다. 절감폭이 세대별로 다르기 때문입니다.\n\n금융감독원 파인의 신용정보조회에서 보험계약현황과 보장내역을 무료로 확인할 수 있습니다. 여기서 가입 시기와 상품을 보면 세대를 알 수 있습니다.\n\n그다음이 최근 이용 이력입니다. 5세대는 비중증 비급여 이용량에 따라 보험료가 달라지므로, 지난 2년간 특약2에 해당하는 보험금을 받은 적이 있는지가 실제 부담액을 좌우합니다.",
+            "보험료를 비교하려면 내가 몇 세대에 가입돼 있는지부터 알아야 합니다. 절감폭이 세대별로 다르기 때문입니다.\n\n생명보험협회·손해보험협회가 함께 운영하는 내보험 찾아줌에서 가입내역을 확인할 수 있습니다. 여기서 가입 시기와 상품을 보면 세대를 알 수 있습니다.\n\n그다음이 최근 이용 이력입니다. 5세대는 비중증 비급여 이용량에 따라 보험료가 달라지므로, 지난 2년간 특약2에 해당하는 보험금을 받은 적이 있는지가 실제 부담액을 좌우합니다.",
         },
         {
           eyebrow: "절감 폭",
@@ -750,13 +750,13 @@ export const 보험: ArticleCategory = {
       resolution: {
         steps: [
           {
-            title: "파인에서 내 보험계약현황을 조회합니다",
+            title: "내보험 찾아줌에서 가입내역을 조회합니다",
             body:
               "가입 시기와 상품을 보면 몇 세대인지 알 수 있습니다. 세대에 따라 절감폭이 크게 다릅니다.",
             action: {
-              label: "보험계약현황 조회하기",
-              url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900036",
-              org: "금융감독원 파인",
+              label: "가입내역 조회하기",
+              url: "https://cont.insure.or.kr/cont_web/information/popup.do",
+              org: "생명보험협회 내보험 찾아줌",
             },
           },
           {
@@ -849,9 +849,9 @@ export const 보험: ArticleCategory = {
           org: "금융위원회",
         },
         {
-          title: "파인 — 신용정보조회(보험계약현황 및 보장내역 무료조회)",
-          url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900036",
-          org: "금융감독원",
+          title: "내보험 찾아줌 — 보험 가입내역 통합조회",
+          url: "https://cont.insure.or.kr/cont_web/information/popup.do",
+          org: "생명보험협회·손해보험협회",
         },
       ],
 
@@ -902,9 +902,9 @@ export const 보험: ArticleCategory = {
         "5세대 실손보험은 **2026년 5월 6일에 이미 출시됐습니다.** 앞으로 바뀐다는 이야기가 아니라 지금 가입할 수 있는 상품입니다.\n\n핵심은 맞바꿈입니다. **비중증 비급여 보장이 줄어든 대신 보험료가 4세대 대비 약 30% 낮아졌습니다.** 병원을 자주 가는지 아닌지에 따라 유불리가 정반대로 갈립니다. 전환은 되돌릴 수 있는 기간이 정해져 있으니, 내 의료 이용 패턴부터 확인하셔야겠죠.",
 
       heroCta: {
-        label: "내 보험계약현황 무료로 조회하기 →",
-        url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900036",
-        org: "금융감독원 파인",
+        label: "내보험 찾아줌으로 가입내역 조회하기 →",
+        url: "https://cont.insure.or.kr/cont_web/information/popup.do",
+        org: "생명보험협회 내보험 찾아줌",
       },
 
       keyFacts: [
@@ -936,9 +936,9 @@ export const 보험: ArticleCategory = {
           ],
           cta: {
             label: "전환 판단은 내 계약 확인부터입니다",
-            url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900036",
-            org: "금융감독원 파인",
-            note: "보험계약현황과 보장내역을 무료로 조회할 수 있습니다. 몇 세대인지 확인한 뒤 보험사에 전환을 문의하세요.",
+            url: "https://cont.insure.or.kr/cont_web/information/popup.do",
+            org: "생명보험협회 내보험 찾아줌",
+            note: "생명보험·손해보험 가입내역을 한 번에 조회할 수 있습니다. 몇 세대인지 확인한 뒤 보험사에 전환을 문의하세요.",
           },
           body:
             "기존 실손보험(1~4세대) 가입자는 본인이 가입한 보험회사의 5세대 실손으로 전환할 수 있습니다. 금융위원회는 이 전환이 별도 심사 없이 이루어진다고 밝혔습니다.\n\n중요한 것은 되돌릴 수 있다는 점입니다. 계약을 전환한 뒤에도 보험금 수령이 없다면 6개월 이내에 전환을 철회하고 기존 상품으로 돌아갈 수 있습니다. 전환 후 3개월 이내라면 보험금 지급 사유가 발생했더라도 철회가 가능합니다.\n\n즉 판단이 서지 않으면 일단 전환해 보고 몇 달 써 본 뒤 결정하는 선택지가 열려 있습니다. 다만 철회 기간을 넘기면 되돌릴 수 없으니 달력에 표시해 두시는 편이 안전합니다.",
@@ -1073,10 +1073,10 @@ export const 보험: ArticleCategory = {
           {
             title: "내 실손보험이 몇 세대인지 확인합니다",
             body:
-              "금융감독원 파인에서 가입 내역을 조회하면 가입 시기와 상품 종류를 확인할 수 있습니다. 세대에 따라 판단이 완전히 달라집니다.",
+              "내보험 찾아줌에서 가입내역을 조회하면 가입 시기와 상품 종류를 확인할 수 있습니다. 세대에 따라 판단이 완전히 달라집니다.",
             action: {
-              label: "보험계약현황 조회하기",
-              url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900036",
+              label: "가입내역 조회하기",
+              url: "https://cont.insure.or.kr/cont_web/information/popup.do",
               org: "금융감독원",
             },
           },
@@ -1170,9 +1170,9 @@ export const 보험: ArticleCategory = {
           org: "금융위원회",
         },
         {
-          title: "파인 — 신용정보조회(보험계약현황 및 보장내역 무료조회)",
-          url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900036",
-          org: "금융감독원",
+          title: "내보험 찾아줌 — 보험 가입내역 통합조회",
+          url: "https://cont.insure.or.kr/cont_web/information/popup.do",
+          org: "생명보험협회·손해보험협회",
         },
       ],
 
