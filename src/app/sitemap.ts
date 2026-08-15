@@ -24,6 +24,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
                 changeFrequency: "weekly",
                 priority: 0.9,
       },
+      // 금시세 섹션 — 날짜 없는 고정 허브 4개
+      {
+                url: `${baseUrl}/gold`,
+                lastModified: new Date(),
+                changeFrequency: "daily" as const,
+                priority: 0.95,
+      },
+      ...["buy", "sell"].map((p) => ({
+                url: `${baseUrl}/gold/${p}`,
+                lastModified: new Date(),
+                changeFrequency: "daily" as const,
+                priority: 0.85,
+      })),
+      {
+                url: `${baseUrl}/gold/calculator`,
+                lastModified: new Date(),
+                changeFrequency: "weekly" as const,
+                priority: 0.8,
+      },
       // 정책 페이지 (privacy는 AdSense 필수)
       ...["about", "privacy", "terms"].map((p) => ({
                 url: `${baseUrl}/${p}`,
