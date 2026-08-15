@@ -14,8 +14,9 @@ import type { ArticleData, ArticleCategory } from "@/data/articles/types";
 // 미등록 slug는 MD(content/wiki/)로 폴백된다.
 
 import { 퇴직금 } from "@/data/articles/퇴직금";
+import { 보험 } from "@/data/articles/보험";
 
-const categories: ArticleCategory[] = [퇴직금];
+const categories: ArticleCategory[] = [퇴직금, 보험];
 
 // slug → ArticleData 인덱스 (빌드 시 1회 생성)
 const indexBySlug: Map<string, ArticleData> = (() => {

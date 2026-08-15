@@ -155,12 +155,17 @@ function verifyArticle(article: any): VerifyIssue[] {
   }
 
   // 6. why에 법령 조문 인용
+  // 근거 출처 명시 — 법령 조문이 정석이지만, 제도 개편처럼 행정 발표가 1차 근거인
+  // 주제도 있다. 조문 / 보도자료·고시·공고 중 하나를 가리키면 통과시킨다.
   const why: string = article.searchIntent?.why ?? "";
-  if (!/제\s*\d+\s*조/.test(why)) {
+  const hasCitation =
+    /제\s*\d+\s*조/.test(why) ||
+    /(보도자료|고시|공고|지침|사업안내|행정예고)/.test(why);
+  if (!hasCitation) {
     push(
       "why-citation",
       "WARN",
-      "searchIntent.why에 법령 조문(제○조) 인용이 없음"
+      "searchIntent.why에 근거 출처가 없음 — 법령 조문 또는 보도자료·고시를 명시하세요"
     );
   }
 
