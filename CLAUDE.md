@@ -30,6 +30,16 @@ FAQ → summary(정확히 3줄) → 스포크 사이드바
 ```
 톤: 합니다체.
 
+**딥링크 찾는 법** — 기관 홈에서 메뉴를 뒤지지 않는다. 헤매다 엉뚱한 페이지를 걸게 된다.
+구글에 `주제 키워드 + 행동어`를 검색해 나오는 `.go.kr`·`.or.kr` 공식 페이지가 곧 딥링크다.
+```
+"실업급여 신청"        → gov.kr/portal/rcvfvrSvc/dtlEx/SD0000015536
+"에너지바우처 사용처"   → energyv.or.kr/info/use_info.do
+"실손보험 가입내역 조회" → fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395
+```
+넣기 전에 그 페이지를 열어 **글 주제와 맞는 화면인지** 눈으로 확인한다.
+(보험 글에 신용조회 페이지를 걸어 발행한 사고가 있었다.)
+
 ### 3. Playwright로 근거를 뽑아 쓴다
 ```bash
 npm run evidence <slug> -- --law <법령명>:<조,조> --url <공식URL>

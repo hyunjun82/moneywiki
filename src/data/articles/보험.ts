@@ -36,8 +36,8 @@ export const 보험: ArticleCategory = {
 
       heroCta: {
         label: "내보험 찾아줌으로 가입내역 조회하기 →",
-        url: "https://cont.insure.or.kr/cont_web/information/popup.do",
-        org: "생명보험협회 내보험 찾아줌",
+        url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
+        org: "금융감독원 내보험 찾아줌",
       },
 
       keyFacts: [
@@ -68,8 +68,8 @@ export const 보험: ArticleCategory = {
           ],
           cta: {
             label: "전환 전 내 계약부터 확인하세요",
-            url: "https://cont.insure.or.kr/cont_web/information/popup.do",
-            org: "생명보험협회 내보험 찾아줌",
+            url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
+            org: "금융감독원 내보험 찾아줌",
             note: "생명보험·손해보험 가입내역을 한 번에 조회할 수 있습니다. 가입 시기를 보면 초기 실손인지 알 수 있습니다.",
           },
           body:
@@ -179,8 +179,8 @@ export const 보험: ArticleCategory = {
               "2013년 3월 이전 가입이고 약관변경 조건이 없다면 11월 할인 대상입니다. 그 외에는 지금 전환해도 됩니다.",
             action: {
               label: "가입내역 조회하기",
-              url: "https://cont.insure.or.kr/cont_web/information/popup.do",
-              org: "생명보험협회 내보험 찾아줌",
+              url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
+              org: "금융감독원 내보험 찾아줌",
             },
           },
           {
@@ -273,9 +273,9 @@ export const 보험: ArticleCategory = {
           org: "금융위원회",
         },
         {
-          title: "내보험 찾아줌 — 보험 가입내역 통합조회",
-          url: "https://cont.insure.or.kr/cont_web/information/popup.do",
-          org: "생명보험협회·손해보험협회",
+          title: "금융감독원 내보험 찾아줌 — 보험 가입내역 통합조회",
+          url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
+          org: "금융감독원",
         },
       ],
 
@@ -325,8 +325,8 @@ export const 보험: ArticleCategory = {
 
       heroCta: {
         label: "내보험 찾아줌으로 가입내역 조회하기 →",
-        url: "https://cont.insure.or.kr/cont_web/information/popup.do",
-        org: "생명보험협회 내보험 찾아줌",
+        url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
+        org: "금융감독원 내보험 찾아줌",
       },
 
       keyFacts: [
@@ -357,8 +357,8 @@ export const 보험: ArticleCategory = {
           ],
           cta: {
             label: "가입 전 내 계약부터 확인하세요",
-            url: "https://cont.insure.or.kr/cont_web/information/popup.do",
-            org: "생명보험협회 내보험 찾아줌",
+            url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
+            org: "금융감독원 내보험 찾아줌",
             note: "생명보험·손해보험 가입내역을 한 번에 조회할 수 있습니다. 이미 실손보험이 있으면 중복 가입이 되지 않습니다.",
           },
           body:
@@ -468,8 +468,8 @@ export const 보험: ArticleCategory = {
               "내보험 찾아줌에서 가입내역을 조회하면 가입 여부와 세대를 알 수 있습니다. 이미 있으면 신규 가입이 아니라 전환입니다.",
             action: {
               label: "가입내역 조회하기",
-              url: "https://cont.insure.or.kr/cont_web/information/popup.do",
-              org: "생명보험협회 내보험 찾아줌",
+              url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
+              org: "금융감독원 내보험 찾아줌",
             },
           },
           {
@@ -562,9 +562,9 @@ export const 보험: ArticleCategory = {
           org: "금융위원회",
         },
         {
-          title: "내보험 찾아줌 — 보험 가입내역 통합조회",
-          url: "https://cont.insure.or.kr/cont_web/information/popup.do",
-          org: "생명보험협회·손해보험협회",
+          title: "금융감독원 내보험 찾아줌 — 보험 가입내역 통합조회",
+          url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
+          org: "금융감독원",
         },
       ],
 
@@ -616,8 +616,8 @@ export const 보험: ArticleCategory = {
 
       heroCta: {
         label: "내보험 찾아줌으로 가입내역 조회하기 →",
-        url: "https://cont.insure.or.kr/cont_web/information/popup.do",
-        org: "생명보험협회 내보험 찾아줌",
+        url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
+        org: "금융감독원 내보험 찾아줌",
       },
 
       keyFacts: [
@@ -648,8 +648,8 @@ export const 보험: ArticleCategory = {
           ],
           cta: {
             label: "보험료 비교는 내 계약 확인부터입니다",
-            url: "https://cont.insure.or.kr/cont_web/information/popup.do",
-            org: "생명보험협회 내보험 찾아줌",
+            url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
+            org: "금융감독원 내보험 찾아줌",
             note: "생명보험·손해보험 가입내역을 한 번에 조회할 수 있습니다.",
           },
           body:
@@ -755,8 +755,8 @@ export const 보험: ArticleCategory = {
               "가입 시기와 상품을 보면 몇 세대인지 알 수 있습니다. 세대에 따라 절감폭이 크게 다릅니다.",
             action: {
               label: "가입내역 조회하기",
-              url: "https://cont.insure.or.kr/cont_web/information/popup.do",
-              org: "생명보험협회 내보험 찾아줌",
+              url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
+              org: "금융감독원 내보험 찾아줌",
             },
           },
           {
@@ -849,9 +849,9 @@ export const 보험: ArticleCategory = {
           org: "금융위원회",
         },
         {
-          title: "내보험 찾아줌 — 보험 가입내역 통합조회",
-          url: "https://cont.insure.or.kr/cont_web/information/popup.do",
-          org: "생명보험협회·손해보험협회",
+          title: "금융감독원 내보험 찾아줌 — 보험 가입내역 통합조회",
+          url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
+          org: "금융감독원",
         },
       ],
 
@@ -903,8 +903,8 @@ export const 보험: ArticleCategory = {
 
       heroCta: {
         label: "내보험 찾아줌으로 가입내역 조회하기 →",
-        url: "https://cont.insure.or.kr/cont_web/information/popup.do",
-        org: "생명보험협회 내보험 찾아줌",
+        url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
+        org: "금융감독원 내보험 찾아줌",
       },
 
       keyFacts: [
@@ -936,8 +936,8 @@ export const 보험: ArticleCategory = {
           ],
           cta: {
             label: "전환 판단은 내 계약 확인부터입니다",
-            url: "https://cont.insure.or.kr/cont_web/information/popup.do",
-            org: "생명보험협회 내보험 찾아줌",
+            url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
+            org: "금융감독원 내보험 찾아줌",
             note: "생명보험·손해보험 가입내역을 한 번에 조회할 수 있습니다. 몇 세대인지 확인한 뒤 보험사에 전환을 문의하세요.",
           },
           body:
@@ -1076,7 +1076,7 @@ export const 보험: ArticleCategory = {
               "내보험 찾아줌에서 가입내역을 조회하면 가입 시기와 상품 종류를 확인할 수 있습니다. 세대에 따라 판단이 완전히 달라집니다.",
             action: {
               label: "가입내역 조회하기",
-              url: "https://cont.insure.or.kr/cont_web/information/popup.do",
+              url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
               org: "금융감독원",
             },
           },
@@ -1170,9 +1170,9 @@ export const 보험: ArticleCategory = {
           org: "금융위원회",
         },
         {
-          title: "내보험 찾아줌 — 보험 가입내역 통합조회",
-          url: "https://cont.insure.or.kr/cont_web/information/popup.do",
-          org: "생명보험협회·손해보험협회",
+          title: "금융감독원 내보험 찾아줌 — 보험 가입내역 통합조회",
+          url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
+          org: "금융감독원",
         },
       ],
 
