@@ -123,8 +123,11 @@ for (const slug of slugs) {
       });
 
       out.h1 = q("h1")?.textContent?.trim() ?? "";
-      // 카테고리 — 브레드크럼 두 번째 항목
-      out.category = all(".bc span")[0]?.textContent?.trim() ?? "";
+      // 카테고리 — 브레드크럼에서 구분자(›)를 뺀 첫 텍스트
+      out.category =
+        all(".bc span")
+          .map((e) => e.textContent.trim())
+          .find((t) => t && !/^[›>\/|·]+$/.test(t)) ?? "";
       return out;
     }, TEMPLATE_TH_BG);
 
@@ -141,6 +144,11 @@ for (const slug of slugs) {
     //    빡빡하게 요구하면 멀쩡한 링크도 막힌다. 명백한 실패만 걸러내고,
     //    나머지는 대상 페이지 제목을 출력해 사람이 눈으로 확인하게 한다.
     const category = r.category || "";
+    // 합성 카테고리(근로·노동)는 낱말로 쪼개고, 글 제목의 핵심어도 함께 후보로 둔다.
+    const catWords = [
+      ...category.split(/[·/,]/).map((w) => w.trim()).filter((w) => w.length >= 2),
+      ...(r.h1.match(/[가-힣]{2,}/g) || []).slice(0, 3),
+    ];
 
     for (const cta of r.ctas) {
       const p2 = await browser.newPage();
@@ -162,9 +170,10 @@ for (const slug of slugs) {
           problems.push(`CTA "${cta.label}" → 안내·점검 페이지 (제목: ${t})\n      ${cta.href}`);
         } else if (!info.action) {
           problems.push(`CTA "${cta.label}" → 신청·조회 요소가 없는 페이지\n      ${cta.href}\n      대상: ${t}`);
-        } else if (category && !hay.includes(category)) {
+        } else if (catWords.length && !catWords.some((w) => hay.includes(w))) {
+          // 카테고리가 "근로·노동" 처럼 합성어면 통째로는 안 나온다. 낱말 단위로 본다.
           problems.push(
-            `CTA "${cta.label}" → 카테고리("${category}")와 무관해 보임\n      ${cta.href}\n      대상: ${t}`
+            `CTA "${cta.label}" → 카테고리(${catWords.join("/")})와 무관해 보임\n      ${cta.href}\n      대상: ${t}`
           );
         } else {
           // 통과했더라도 어디로 가는지 보여준다. 주제에 맞는지는 눈으로 판단해야 한다.
