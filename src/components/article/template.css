@@ -153,3 +153,18 @@
   .aw .tbl{overflow-x:auto}
   .aw table{min-width:520px}
 }
+
+/* checklist — 정본 템플릿 .check (조건 나열용 비주얼, q1 등에서 사용) */
+.aw .check{border:1px solid var(--line);border-radius:12px;padding:4px 22px}
+.aw .check li{display:flex;gap:12px;padding:16px 0;border-bottom:1px solid var(--line);font-size:var(--fs-body);line-height:1.65;color:var(--ink-700);word-break:keep-all}
+.aw .check li:last-child{border-bottom:0}
+.aw .check li i{flex:none;color:var(--green-700);font-size:17px;font-weight:800;font-style:normal}
+.aw .check b{color:var(--ink-900)}
+
+/* stat 보조 스타일 — 정본 템플릿 .stat .mid / .g */
+.aw .stat .mid{margin-top:8px;font-size:var(--fs-h3);font-weight:800;color:var(--ink-900)}
+.aw .stat .mid.g{color:var(--green-700)}
+
+/* 표 셀 강조 — 정본 템플릿 td.k(항목 라벨) / td.s(보조 강조) */
+.aw td.k{font-weight:600;color:var(--ink-900)}
+.aw td.s{font-weight:700;color:var(--ink-700)}

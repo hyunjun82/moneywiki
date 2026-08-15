@@ -17,8 +17,10 @@ const only = process.argv[2];
 /** ArticleData의 사람이 읽는 텍스트 필드만 뽑아낸다 (TS 파싱 없이 문자열 리터럴 스캔) */
 function articlesInFile(src) {
   const out = [];
-  // slug: "..." 를 기준으로 글 단위 분리 (최상위 4칸 들여쓰기 slug만)
-  const re = /^ {4}slug:\s*["']([^"']+)["']/gm;
+  // 글 단위 분리 — ArticleData는 slug 다음 줄이 반드시 category다 (types.ts).
+  // 들여쓰기 깊이에 의존하지 않으므로 카테고리 파일 구조가 바뀌어도 안전하고,
+  // link.slug / relatedQuestions.slug 같은 하위 slug와도 섞이지 않는다.
+  const re = /^[ \t]*slug:\s*["']([^"']+)["'],\s*\r?\n[ \t]*category:/gm;
   const marks = [...src.matchAll(re)];
   for (let i = 0; i < marks.length; i++) {
     const start = marks[i].index;

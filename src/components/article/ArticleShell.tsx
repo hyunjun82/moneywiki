@@ -39,10 +39,17 @@ function Paragraphs({ text }: { text: string }) {
   );
 }
 
+const CELL_CLASS: Record<string, string> = {
+  ok: "ok",
+  warn: "warn",
+  no: "warn",
+  key: "k",
+  sub: "s",
+};
+
 function Cell({ cell }: { cell: CompareCell }) {
   if (typeof cell === "string") return <td>{cell}</td>;
-  const cls = cell.status === "ok" ? "ok" : cell.status === "warn" || cell.status === "no" ? "warn" : undefined;
-  return <td className={cls}>{cell.text}</td>;
+  return <td className={cell.status ? CELL_CLASS[cell.status] : undefined}>{cell.text}</td>;
 }
 
 function Section({ s, n }: { s: MainSection; n: number }) {
@@ -64,6 +71,14 @@ function Section({ s, n }: { s: MainSection; n: number }) {
         </div>
       )}
       {s.widgets?.map((w, i) => {
+        if (w.type === "checklist")
+          return (
+            <ul className="check viz" key={i}>
+              {w.items.map((it, j) => (
+                <li key={j}><i>✓</i><span><Mk text={it} /></span></li>
+              ))}
+            </ul>
+          );
         if (w.type === "stat-box")
           return (
             <div className="stats viz" key={i}>
@@ -72,6 +87,25 @@ function Section({ s, n }: { s: MainSection; n: number }) {
                 <p className="big">{w.value}</p>
                 {w.note && <p className="sub">{w.note}</p>}
               </div>
+            </div>
+          );
+        if (w.type === "calc-cta")
+          return (
+            <div className="cta-box viz" key={i}>
+              <h3>{w.label ?? "계산기로 바로 확인하기"}</h3>
+              {w.note && <p>{w.note}</p>}
+              <div className="cta-row">
+                <Link className="btn-p" href={`/w/${encodeURIComponent(w.slug)}`}>
+                  계산기 열기
+                </Link>
+              </div>
+            </div>
+          );
+        if (w.type === "def-box")
+          return (
+            <div className="caution viz" key={i}>
+              <i>용어</i>
+              <p><b>{w.term}</b> — <Mk text={w.definition} /></p>
             </div>
           );
         return null;

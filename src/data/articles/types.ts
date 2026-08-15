@@ -98,6 +98,15 @@ export interface NumericClaim {
 
 export type SectionWidget =
   | {
+      /**
+       * 체크리스트 — 정본 템플릿 .check
+       * 조건·요건을 나열하는 비주얼. "비주얼 먼저, 해설 뒤" 원칙의 기본 도구.
+       * items의 **강조**는 형광 마크로 렌더링.
+       */
+      type: 'checklist';
+      items: string[];
+    }
+  | {
       type: 'calc-cta';
       slug: string;
       label?: string;
@@ -140,9 +149,16 @@ export interface MainSection {
   widgets?: SectionWidget[];
 }
 
+/**
+ * 표 셀. status로 강조를 지정한다. (정본 템플릿 td.g / td.k / td.s)
+ *  ok   초록 강조 — 되는 경우, 유리한 값
+ *  warn 모래색 경고 / no 도 동일 처리
+ *  key  항목 라벨 (첫 열)
+ *  sub  보조 강조
+ */
 export type CompareCell =
   | string
-  | { text: string; status?: 'ok' | 'no' | 'warn' };
+  | { text: string; status?: 'ok' | 'no' | 'warn' | 'key' | 'sub' };
 
 export interface ResolutionStep {
   title: string;
