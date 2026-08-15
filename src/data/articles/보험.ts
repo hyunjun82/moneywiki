@@ -35,8 +35,8 @@ export const 보험: ArticleCategory = {
         "5세대 실손보험은 **2026년 5월 6일에 이미 출시됐습니다.** 앞으로 바뀐다는 이야기가 아니라 지금 가입할 수 있는 상품입니다.\n\n핵심은 맞바꿈입니다. **비중증 비급여 보장이 줄어든 대신 보험료가 4세대 대비 약 30% 낮아졌습니다.** 병원을 자주 가는지 아닌지에 따라 유불리가 정반대로 갈립니다. 전환은 되돌릴 수 있는 기간이 정해져 있으니, 내 의료 이용 패턴부터 확인하셔야겠죠.",
 
       heroCta: {
-        label: "파인 보험 코너에서 내 계약 확인하기 →",
-        url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900002",
+        label: "내 보험계약현황 무료로 조회하기 →",
+        url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900036",
         org: "금융감독원 파인",
       },
 
@@ -67,6 +67,12 @@ export const 보험: ArticleCategory = {
               ],
             },
           ],
+          cta: {
+            label: "전환 판단은 내 계약 확인부터입니다",
+            url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900036",
+            org: "금융감독원 파인",
+            note: "보험계약현황과 보장내역을 무료로 조회할 수 있습니다. 몇 세대인지 확인한 뒤 보험사에 전환을 문의하세요.",
+          },
           body:
             "기존 실손보험(1~4세대) 가입자는 본인이 가입한 보험회사의 5세대 실손으로 전환할 수 있습니다. 금융위원회는 이 전환이 별도 심사 없이 이루어진다고 밝혔습니다.\n\n중요한 것은 되돌릴 수 있다는 점입니다. 계약을 전환한 뒤에도 보험금 수령이 없다면 6개월 이내에 전환을 철회하고 기존 상품으로 돌아갈 수 있습니다. 전환 후 3개월 이내라면 보험금 지급 사유가 발생했더라도 철회가 가능합니다.\n\n즉 판단이 서지 않으면 일단 전환해 보고 몇 달 써 본 뒤 결정하는 선택지가 열려 있습니다. 다만 철회 기간을 넘기면 되돌릴 수 없으니 달력에 표시해 두시는 편이 안전합니다.",
           link: {
@@ -202,8 +208,8 @@ export const 보험: ArticleCategory = {
             body:
               "금융감독원 파인에서 가입 내역을 조회하면 가입 시기와 상품 종류를 확인할 수 있습니다. 세대에 따라 판단이 완전히 달라집니다.",
             action: {
-              label: "파인 보험 코너 열기",
-              url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900002",
+              label: "보험계약현황 조회하기",
+              url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900036",
               org: "금융감독원",
             },
           },
@@ -297,8 +303,8 @@ export const 보험: ArticleCategory = {
           org: "금융위원회",
         },
         {
-          title: "금융소비자 포털 파인 — 보험",
-          url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900002",
+          title: "파인 — 신용정보조회(보험계약현황 및 보장내역 무료조회)",
+          url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900036",
           org: "금융감독원",
         },
       ],

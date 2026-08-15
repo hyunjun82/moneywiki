@@ -35,8 +35,8 @@ export const 퇴직금: ArticleCategory = {
         "1년을 못 채우면 퇴직금이 없다는 말은 절반만 맞습니다. **법이 강제하지 않을 뿐, 회사가 주기로 정했다면 받을 수 있고 DC형 퇴직연금이라면 근무한 기간만큼 이미 쌓여 있습니다.**\n\n문제는 이 차이를 모르고 그냥 넘어가는 경우입니다. 퇴직금 청구권은 시효가 있고 회사가 폐업하면 회수가 훨씬 어려워집니다. 내 경우가 어느 쪽인지부터 확인하셔야겠죠.",
 
       heroCta: {
-        label: "노동포털에서 퇴직금 문제 해결하기 →",
-        url: "https://labor.moel.go.kr/main/main.do",
+        label: "임금체불 진정서 신청하기 →",
+        url: "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
         org: "고용노동부 노동포털",
       },
 
@@ -66,6 +66,12 @@ export const 퇴직금: ArticleCategory = {
               ],
             },
           ],
+          cta: {
+            label: "확인 결과 못 받고 있다면 바로 신청하세요",
+            url: "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
+            org: "고용노동부 노동포털",
+            note: "진정서(체불·직장 내 괴롭힘·노동법 위반) · 신청자격 근로자(개인회원)",
+          },
           body:
             "가장 먼저 볼 것은 회사의 퇴직연금 종류와 취업규칙입니다. 둘 중 하나라도 해당되면 1년 미만이어도 받을 수 있고, 둘 다 아니면 법으로는 청구할 근거가 없습니다.\n\nDC형 퇴직연금은 회사가 매년 일정액을 근로자 계정에 넣는 방식이라, 1년을 채우지 못해도 넣어둔 금액과 운용 수익이 그대로 남아 있습니다. 퇴사할 때 그 계정을 찾으면 됩니다. 반면 취업규칙에 지급 규정이 있는 경우는 그 규정이 정한 조건대로 청구하게 됩니다.\n\n확인이 어려우면 고용노동부에 퇴직연금 가입 내역을 조회해 볼 수 있습니다. 회사에 직접 묻기 껄끄러운 상황이라면 이 방법이 안전합니다.",
           link: {
@@ -235,8 +241,8 @@ export const 퇴직금: ArticleCategory = {
             body:
               "DC형 퇴직연금에 가입돼 있는지, 취업규칙에 1년 미만 지급 규정이 있는지 봅니다. 둘 중 하나라도 있으면 청구 근거가 됩니다.",
             action: {
-              label: "노동포털에서 확인하기",
-              url: "https://labor.moel.go.kr/main/main.do",
+              label: "퇴직금 계산기로 금액 확인",
+              url: "https://labor.moel.go.kr/cmmt/calRtrmnt.do",
               org: "고용노동부 노동포털",
             },
           },
@@ -255,9 +261,9 @@ export const 퇴직금: ArticleCategory = {
             body:
               "관할 지방고용노동관서에 접수합니다. 확보한 근거 서류를 함께 제출해야 처리가 진행됩니다.",
             action: {
-              label: "온라인 민원 신청하기",
-              url: "https://www.moel.go.kr/minwon/apply/formApplyList.do",
-              org: "고용노동부",
+              label: "진정서 신청하기",
+              url: "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
+              org: "고용노동부 노동포털",
             },
           },
         ],
@@ -358,8 +364,8 @@ export const 퇴직금: ArticleCategory = {
           org: "법제처",
         },
         {
-          title: "고용노동부 노동포털 — 임금체불 등 노동분야 민원",
-          url: "https://labor.moel.go.kr/main/main.do",
+          title: "노동포털 — 진정서(체불·직장 내 괴롭힘·노동법 위반) 신청",
+          url: "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
           org: "고용노동부",
         },
       ],

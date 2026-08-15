@@ -259,7 +259,26 @@ function verifyArticle(article: any): VerifyIssue[] {
     ...(article.resolution?.steps ?? [])
       .filter((s: any) => s.action?.url)
       .map((s: any, i: number) => ({ label: `steps[${i}] ${s.action.label}`, url: s.action.url })),
+    ...(article.mainSections ?? [])
+      .map((s: any, i: number) => (s.cta?.url ? { label: `q${i + 1} 버튼`, url: s.cta.url } : null))
+      .filter(Boolean),
   ];
+
+  // 12-3. 행동 섹션에는 버튼이 있어야 한다.
+  //       q1 소제목이 "신청 방법"인데 정작 누를 곳이 없으면 행동이 끊긴다.
+  const firstSection = (article.mainSections ?? [])[0];
+  if (
+    firstSection &&
+    /(신청|접수|조회|받는\s*방법|하는\s*방법|절차|다운로드)/.test(firstSection.heading ?? "") &&
+    !firstSection.cta?.url
+  ) {
+    push(
+      "action-section-button",
+      "ERROR",
+      `q1 "${firstSection.heading}"은 행동 섹션인데 버튼(cta)이 없음 — 읽고 바로 누를 곳을 두세요`
+    );
+  }
+
   for (const a of actionUrls) {
     if (isHomepage(a.url)) {
       push(

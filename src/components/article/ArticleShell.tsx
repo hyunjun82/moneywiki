@@ -121,6 +121,20 @@ function Section({ s, n }: { s: MainSection; n: number }) {
           <Link href={`/w/${encodeURIComponent(s.link.slug)}`}>{s.link.label} →</Link>
         </p>
       )}
+
+      {/* 섹션 행동 버튼. 광고와 붙지 않도록 위에 여백을 크게 둔다.
+          AdSense 정책상 광고가 버튼처럼 보이면 안 되므로 시각적으로 분리한다. */}
+      {s.cta && (
+        <div className="cta-box viz" style={{ marginTop: 28 }}>
+          <h3>{s.cta.label}</h3>
+          {s.cta.note && <p>{s.cta.note}</p>}
+          <div className="cta-row">
+            <a className="btn-p" href={s.cta.url} target="_blank" rel="noopener noreferrer">
+              {s.cta.org}에서 바로 진행하기 →
+            </a>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
@@ -214,14 +228,17 @@ export function ArticleShell({ data }: Props) {
             </section>
           )}
 
-          {data.mainSections.slice(0, 2).map((s, i) => (
+          {/* q1은 행동(신청) 섹션이다. 읽고 바로 움직이는 구간이라 주목도가 가장 높다.
+              여기 뒤에 광고를 두고, 행동 버튼은 섹션 안(광고 위)에 둔다.
+              광고가 버튼 위에 오면 CTA로 오인될 수 있어 순서를 이렇게 잡는다. */}
+          {data.mainSections.slice(0, 1).map((s, i) => (
             <Section s={s} n={i + 1} key={i} />
           ))}
 
           <div className="adslot-mid"><AdSlot slot="hero" /></div>
 
-          {data.mainSections.slice(2).map((s, i) => (
-            <Section s={s} n={i + 3} key={i + 2} />
+          {data.mainSections.slice(1).map((s, i) => (
+            <Section s={s} n={i + 2} key={i + 1} />
           ))}
 
           {steps.length > 0 && (
