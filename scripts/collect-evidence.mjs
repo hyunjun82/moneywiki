@@ -48,62 +48,177 @@ function factsFromText(text, meta) {
 }
 
 const browser = await chromium.launch();
-const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
-page.on("dialog", (d) => d.accept().catch(() => {}));
+
+/** 동시 실행 상한. 정부 사이트에 과한 동시 요청을 보내면 차단당하므로 낮게 잡는다. */
+const CONCURRENCY = 3;
+
+/** 추출 성공으로 인정할 최소 본문 길이. 이보다 짧으면 로딩 실패·이미지 본문으로 본다. 조문은 짧을 수 있어 낮게 잡는다. */
+const MIN_TEXT = 200;
+
+/** 실패 시 재시도 횟수 */
+const RETRIES = 2;
+
+/** 같은 도메인에는 한 번에 하나만 붙는다 (law.go.kr 동시 접속 차단 회피) */
+const hostLocks = new Map();
+async function withHostLock(url, fn) {
+  const host = new URL(url).hostname;
+  const prev = hostLocks.get(host) ?? Promise.resolve();
+  let release;
+  const mine = new Promise((r) => (release = r));
+  hostLocks.set(host, prev.then(() => mine));
+  await prev;
+  try {
+    return await fn();
+  } finally {
+    release();
+  }
+}
+
+/** 수집 실패 기록 — 조용히 넘어가지 않고 마지막에 모아 보고한다 */
+const failures = [];
+
+/** 작업 목록을 상한만큼씩 동시에 처리한다 (각 작업은 자기 탭을 쓴다) */
+async function runPool(tasks) {
+  const queue = [...tasks];
+  const workers = Array.from({ length: Math.min(CONCURRENCY, queue.length) }, async () => {
+    while (queue.length) {
+      const { label, url, run } = queue.shift();
+      let ok = false;
+      for (let attempt = 1; attempt <= RETRIES + 1 && !ok; attempt++) {
+        const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+        page.on("dialog", (d) => d.accept().catch(() => {}));
+        try {
+          await withHostLock(url, () => run(page));
+          ok = true;
+        } catch (e) {
+          const msg = e.message.split("\n")[0];
+          if (attempt <= RETRIES) console.log(`  ↻ ${label} 재시도 ${attempt}/${RETRIES} — ${msg}`);
+          else failures.push(`${label} — ${msg}`);
+        } finally {
+          await page.close().catch(() => {});
+        }
+      }
+    }
+  });
+  await Promise.all(workers);
+}
 
 const facts = [];
 let shot = 0;
 
-async function capture(label) {
-  shot++;
-  const file = `evidence-${slug}-${shot}.png`;
+async function capture(page, label) {
+  const file = `evidence-${slug}-${++shot}.png`;
   await page.screenshot({ path: path.join(OUT_DIR, file) });
   console.log(`  캡처 ${file} (${label})`);
   return file;
 }
 
 /** 법제처: 본문이 iframe 안에 있고 조문 단위로 추출 */
-async function collectLaw(spec) {
-  const [lawName, articleList] = spec.split(":");
-  for (const no of (articleList || "").split(",").filter(Boolean)) {
-    const url = `https://www.law.go.kr/법령/${encodeURIComponent(lawName)}/제${no}조`;
-    console.log(`법제처 ${lawName} 제${no}조 …`);
-    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
-    // 법제처는 본문을 iframe에 늦게 채운다 — 조문이 나타날 때까지 폴링
-    let text = "";
-    for (let tries = 0; tries < 15 && !text; tries++) {
-      await page.waitForTimeout(1000);
-      for (const frame of page.frames()) {
-        try {
-          const t = await frame.evaluate(() => document.body?.innerText || "");
-          const i = t.indexOf(`제${no}조`);
-          if (i >= 0 && t.length > 200) { text = t.slice(i, i + 2500); break; }
-        } catch {}
-      }
+async function collectLawArticle(page, lawName, no) {
+  const url = `https://www.law.go.kr/법령/${encodeURIComponent(lawName)}/제${no}조`;
+  console.log(`법제처 ${lawName} 제${no}조 …`);
+  await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
+  // 법제처는 본문을 iframe에 늦게 채운다 — 조문이 나타날 때까지 폴링
+  let text = "";
+  for (let tries = 0; tries < 15 && !text; tries++) {
+    await page.waitForTimeout(1000);
+    for (const frame of page.frames()) {
+      try {
+        const t = await frame.evaluate(() => document.body?.innerText || "");
+        const i = t.indexOf(`제${no}조`);
+        if (i >= 0 && t.length > 200) { text = t.slice(i, i + 2500); break; }
+      } catch {}
     }
-    if (!text) { console.log(`  ⚠ 조문 추출 실패`); continue; }
-    const file = await capture(`${lawName} 제${no}조`);
-    facts.push(...factsFromText(text, {
-      url, org: `법제처 (${lawName} 제${no}조)`, screenshot: file,
-    }));
   }
+  // 짧으면 iframe이 덜 찼거나 본문이 이미지다. 성공으로 넘기지 않는다.
+  if (text.length < MIN_TEXT) {
+    throw new Error(`제${no}조 본문 ${text.length}자 — 최소 ${MIN_TEXT}자 필요 (로딩 실패 또는 이미지 본문)`);
+  }
+  const file = await capture(page, `${lawName} 제${no}조`);
+  facts.push(...factsFromText(text, {
+    url, org: `법제처 (${lawName} 제${no}조)`, screenshot: file,
+  }));
 }
 
-async function collectUrl(url) {
+/** 기관명 — 페이지 제목은 "상세화면" 같은 값이 나와 출처가 뭉개진다. 도메인으로 잡는다. */
+const ORG_BY_HOST = {
+  "law.go.kr": "법제처",
+  "fsc.go.kr": "금융위원회",
+  "fss.or.kr": "금융감독원",
+  "fine.fss.or.kr": "금융감독원 파인",
+  "moel.go.kr": "고용노동부",
+  "nts.go.kr": "국세청",
+  "nhis.or.kr": "국민건강보험공단",
+  "nps.or.kr": "국민연금공단",
+  "molit.go.kr": "국토교통부",
+  "bokjiro.go.kr": "복지로",
+  "gov.kr": "정부24",
+  "work24.go.kr": "고용24",
+};
+function orgOf(url, title) {
+  const host = new URL(url).hostname.replace(/^www\./, "");
+  if (ORG_BY_HOST[host]) return ORG_BY_HOST[host];
+  const base = Object.keys(ORG_BY_HOST).find((h) => host.endsWith(h));
+  if (base) return ORG_BY_HOST[base];
+  const t = (title || "").split(/[-|]/)[0].trim();
+  return t && !/상세|화면|보기/.test(t) ? t : host;
+}
+
+async function collectUrl(page, url) {
   console.log(`페이지 ${url} …`);
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
   await page.waitForTimeout(2500);
-  const { text, org } = await page.evaluate(() => {
+  const { text, title } = await page.evaluate(() => {
     const el = document.querySelector(".article_body, #article_body, .view_cont, article, main") || document.body;
-    return { text: el.innerText.slice(0, 8000), org: document.title.split(/[-|]/)[0].trim() };
+    return { text: el.innerText.slice(0, 8000), title: document.title };
   });
-  const file = await capture(org);
-  facts.push(...factsFromText(text, { url, org, screenshot: file }));
+  const org = orgOf(url, title);
+
+  // 본문이 너무 짧으면 로딩 실패이거나 내용이 이미지다. 재시도 대상.
+  if (text.length < MIN_TEXT) {
+    throw new Error(`${org}: 본문 ${text.length}자 — 최소 ${MIN_TEXT}자 필요 (로딩 실패 또는 이미지 본문)`);
+  }
+
+  const file = await capture(page, org);
+  const got = factsFromText(text, { url, org, screenshot: file });
+
+  // 수치가 하나도 안 잡히면 조용히 빠뜨리지 않고 알린다.
+  // 목록 페이지·로그인 페이지를 잘못 지정했을 때 여기서 드러난다.
+  if (got.length === 0) {
+    console.log(`  ⚠ ${org}: 본문은 받았으나 수치가 있는 문장이 없음 — 근거로 쓸 수 없습니다`);
+    failures.push(`${org} (${url}) — 수치 없음`);
+    return;
+  }
+  console.log(`  ${org}: fact ${got.length}개`);
+  facts.push(...got);
 }
 
-for (const l of laws) await collectLaw(l);
-for (const u of urls) await collectUrl(u);
+// 조문 하나하나와 URL 하나하나가 개별 작업 — 각자 탭을 열어 동시에 처리한다.
+const tasks = [];
+for (const spec of laws) {
+  const [lawName, articleList] = spec.split(":");
+  for (const no of (articleList || "").split(",").filter(Boolean)) {
+    tasks.push({
+      label: `${lawName} 제${no}조`,
+      url: `https://www.law.go.kr/`,
+      run: (page) => collectLawArticle(page, lawName, no),
+    });
+  }
+}
+for (const u of urls) {
+  tasks.push({ label: u, url: u, run: (page) => collectUrl(page, u) });
+}
+
+console.log(`수집 대상 ${tasks.length}건 · 동시 실행 ${Math.min(CONCURRENCY, tasks.length)}개 (같은 도메인은 1개씩)\n`);
+const t0 = Date.now();
+await runPool(tasks);
+console.log(`\n소요 ${((Date.now() - t0) / 1000).toFixed(1)}초`);
 await browser.close();
+
+if (failures.length) {
+  console.error(`\n⚠ 수집 실패 ${failures.length}건 — 이 출처는 근거로 쓸 수 없습니다`);
+  failures.forEach((f) => console.error(`   · ${f}`));
+}
 
 const out = {
   slug,

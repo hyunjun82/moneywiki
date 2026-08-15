@@ -236,12 +236,38 @@ function verifyArticle(article: any): VerifyIssue[] {
     push("template-heroHook", "WARN", `heroHook이 ${hook.length}자로 짧음 (결론 + 행동 유도 2문장 이상 권장)`);
   }
 
-  // 12. heroCta — 서론 직하 대형 CTA 1개, 공식 사이트만
+  // 12. heroCta — 서론 직하 대형 CTA 1개, 공식 사이트의 실제 행동 페이지로
   const cta = article.heroCta;
   if (!cta?.url) {
     push("template-heroCta", "ERROR", "heroCta(서론 아래 행동유도 버튼)가 없음");
   } else if (!isOfficial(cta.url)) {
     push("template-heroCta", "ERROR", `heroCta.url이 공식 사이트가 아님: ${cta.url}`);
+  }
+
+  // 12-2. 딥링크 — 기관 홈페이지로 보내면 사용자가 다시 길을 찾아야 한다.
+  //       "조회하기"를 눌렀는데 홈이 뜨면 행동이 끊긴다. 실제 그 일을 하는 페이지로 보낸다.
+  const isHomepage = (u: string) => {
+    try {
+      const { pathname, search } = new URL(u);
+      return (pathname === "/" || pathname === "") && !search;
+    } catch {
+      return false;
+    }
+  };
+  const actionUrls: { label: string; url: string }[] = [
+    ...(cta?.url ? [{ label: "heroCta", url: cta.url }] : []),
+    ...(article.resolution?.steps ?? [])
+      .filter((s: any) => s.action?.url)
+      .map((s: any, i: number) => ({ label: `steps[${i}] ${s.action.label}`, url: s.action.url })),
+  ];
+  for (const a of actionUrls) {
+    if (isHomepage(a.url)) {
+      push(
+        "cta-deeplink",
+        "ERROR",
+        `${a.label}이 기관 홈페이지로 연결됨 (${a.url}) — 실제 신청·조회 페이지 주소를 넣으세요`
+      );
+    }
   }
 
   // 13. keyFacts — 📌 핵심콕콕 7~9행

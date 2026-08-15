@@ -168,3 +168,19 @@
 /* 표 셀 강조 — 정본 템플릿 td.k(항목 라벨) / td.s(보조 강조) */
 .aw td.k{font-weight:600;color:var(--ink-900)}
 .aw td.s{font-weight:700;color:var(--ink-700)}
+
+/* globals.css 의 `article table thead th` 남색 그라데이션이 새 템플릿 표까지 덮어써서
+   메인 색상(에메랄드)과 어긋났다. 정본 템플릿 값으로 되돌린다. */
+.aw table thead th,
+.aw table th {
+  background: #FAFAF9;
+  background-image: none;
+  color: var(--ink-900);
+  text-align: left;
+  padding: 14px 20px;
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  white-space: normal;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+}

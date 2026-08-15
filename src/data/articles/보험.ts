@@ -35,8 +35,8 @@ export const 보험: ArticleCategory = {
         "5세대 실손보험은 **2026년 5월 6일에 이미 출시됐습니다.** 앞으로 바뀐다는 이야기가 아니라 지금 가입할 수 있는 상품입니다.\n\n핵심은 맞바꿈입니다. **비중증 비급여 보장이 줄어든 대신 보험료가 4세대 대비 약 30% 낮아졌습니다.** 병원을 자주 가는지 아닌지에 따라 유불리가 정반대로 갈립니다. 전환은 되돌릴 수 있는 기간이 정해져 있으니, 내 의료 이용 패턴부터 확인하셔야겠죠.",
 
       heroCta: {
-        label: "내 실손보험 가입 내역 조회하기 →",
-        url: "https://fine.fss.or.kr",
+        label: "파인 보험 코너에서 내 계약 확인하기 →",
+        url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900002",
         org: "금융감독원 파인",
       },
 
@@ -202,8 +202,8 @@ export const 보험: ArticleCategory = {
             body:
               "금융감독원 파인에서 가입 내역을 조회하면 가입 시기와 상품 종류를 확인할 수 있습니다. 세대에 따라 판단이 완전히 달라집니다.",
             action: {
-              label: "파인에서 보험 가입 조회",
-              url: "https://fine.fss.or.kr",
+              label: "파인 보험 코너 열기",
+              url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900002",
               org: "금융감독원",
             },
           },
@@ -297,8 +297,8 @@ export const 보험: ArticleCategory = {
           org: "금융위원회",
         },
         {
-          title: "금융소비자정보포털 파인 — 내 보험 가입 조회",
-          url: "https://fine.fss.or.kr",
+          title: "금융소비자 포털 파인 — 보험",
+          url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900002",
           org: "금융감독원",
         },
       ],
