@@ -72,7 +72,55 @@ export function extractProfile(html) {
 
   const usedVizKinds = new Set(vizPerSection.flat());
 
+  // ── 구조(invariant) vs 분량(indicative) ──
+  //
+  // 프로필은 예시 글 "한 편"에서 뽑는다. 그래서 값의 성격을 구분해야 한다.
+  //
+  //  invariant — 주제가 달라도 변하지 않는 편집 원칙. 어기면 ERROR.
+  //      · 모든 섹션이 비주얼로 시작한다
+  //      · 같은 비주얼을 연달아 쓰지 않는다
+  //      · 소제목 위에 짧은 라벨을 단다 (소제목 재탕 금지)
+  //      · 내부 링크에는 유도 문장이 붙는다
+  //      · 요약은 3줄
+  //
+  //  indicative — 주제에 따라 달라지는 분량. 참고값이며 WARN까지만 낸다.
+  //      · 섹션 수, 핵심콕콕 행수, FAQ 개수, 라벨 길이, 섹션당 문단 수
+  //
+  // 조건이 단순한 주제는 5개 섹션으로 충분하고, 절차가 여러 갈래인 주제는
+  // 10개가 필요하다. 분량을 강제하면 억지로 늘리거나 잘라내게 되어 품질이 나빠진다.
+  const invariant = {
+    allSectionsHaveVisual: vizPerSection.every((v) => v.length > 0),
+    maxSameKindRun: (() => {
+      let run = 1, best = 1;
+      for (let i = 1; i < vizPerSection.length; i++) {
+        const a = vizPerSection[i - 1].join(","), b = vizPerSection[i].join(",");
+        run = a && a === b ? run + 1 : 1;
+        best = Math.max(best, run);
+      }
+      return best;
+    })(),
+    eyebrowRequired: eyebrows.length >= qSections.length,
+    summaryLines: sumLines,
+  };
+
+  /** 예시값 n을 중심으로 한 허용 범위 (±40%, 최소 폭 보장) */
+  const band = (n, minFloor) => ({
+    target: n,
+    min: Math.max(minFloor, Math.round(n * 0.6)),
+    max: Math.round(n * 1.4),
+  });
+
+  const indicative = {
+    sections: band(qSections.length, 5),
+    keyFactsRows: band(kfRows, 6),
+    faqItems: band(faqItems, 3),
+    eyebrowLen: { target: `${Math.min(...ebLens)}~${Math.max(...ebLens)}`, min: 2, max: 10 },
+    paragraphsPerSection: band(Math.round(paraCounts.reduce((a, b) => a + b, 0) / paraCounts.length), 2),
+  };
+
   return {
+    invariant,
+    indicative,
     sections: {
       count: qSections.length,
       // 모든 섹션이 비주얼을 갖는가 (템플릿의 "비주얼 먼저" 원칙)

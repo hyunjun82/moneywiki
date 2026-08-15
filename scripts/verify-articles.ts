@@ -243,16 +243,14 @@ function verifyArticle(article: any): VerifyIssue[] {
   const kf: any[] = article.keyFacts ?? [];
   if (kf.length === 0) {
     push("template-keyFacts", "ERROR", "keyFacts(핵심콕콕)가 없음");
-  } else if (kf.length < 7 || kf.length > 9) {
-    push("template-keyFacts", "WARN", `keyFacts가 ${kf.length}행 (템플릿 기준 7~9행)`);
   }
+  // 행수 검사는 15-6에서 템플릿 프로필 기준으로 수행한다 (여기서 중복 검사하지 않음)
 
   // 14. mainSections 개수 + q1은 행동(신청) 섹션
   const secs: any[] = article.mainSections ?? [];
-  if (secs.length < 5) {
-    push("template-sections", "ERROR", `mainSections가 ${secs.length}개 (템플릿 기준 8개 안팎, 최소 5개)`);
-  } else if (secs.length > 10) {
-    push("template-sections", "WARN", `mainSections가 ${secs.length}개로 많음 (템플릿 기준 8개 안팎)`);
+  // 소제목 개수는 타이틀이 정한다 (15-6에서 대조). 여기서는 최소선만 지킨다.
+  if (secs.length < 4) {
+    push("template-sections", "ERROR", `mainSections가 ${secs.length}개 — 내용이 너무 얇습니다 (최소 4개)`);
   }
   const q1 = secs[0]?.heading ?? "";
   if (q1 && !/(신청|접수|조회|받는\s*방법|하는\s*방법|절차)/.test(q1)) {
@@ -329,17 +327,17 @@ function verifyArticle(article: any): VerifyIssue[] {
     );
   }
 
-  // 15-4. eyebrow 라벨 — 템플릿은 짧은 주제 라벨을 단다 (소제목 재탕 금지)
-  if (TPL.eyebrow.required) {
-    const { min, max } = TPL.eyebrow.len;
+  // 15-4. eyebrow 라벨 — 존재와 중복은 구조(ERROR), 길이는 분량(WARN)
+  if (TPL.invariant.eyebrowRequired) {
+    const len = TPL.indicative.eyebrowLen;
     for (let i = 0; i < secs.length; i++) {
       const eb: string = (secs[i].eyebrow ?? "").trim();
       if (!eb) {
         push("template-eyebrow", "ERROR", `q${i + 1}에 eyebrow 라벨이 없음 (템플릿 예: ${TPL.eyebrow.samples.slice(0, 3).join(", ")})`);
-      } else if (eb.length < min || eb.length > max + 2) {
-        push("template-eyebrow", "WARN", `q${i + 1} eyebrow "${eb}" 길이 ${eb.length}자 — 템플릿 기준 ${min}~${max}자`);
       } else if ((secs[i].heading ?? "").includes(eb)) {
-        push("template-eyebrow", "WARN", `q${i + 1} eyebrow "${eb}"가 소제목에 그대로 들어 있음 — 같은 말 반복`);
+        push("template-eyebrow", "ERROR", `q${i + 1} eyebrow "${eb}"가 소제목에 그대로 들어 있음 — 같은 말 반복`);
+      } else if (eb.length < len.min || eb.length > len.max) {
+        push("template-eyebrow", "WARN", `q${i + 1} eyebrow "${eb}" ${eb.length}자 — 권장 ${len.target}자`);
       }
     }
   }
@@ -364,13 +362,53 @@ function verifyArticle(article: any): VerifyIssue[] {
     }
   }
 
-  // 15-6. 요약/FAQ/핵심콕콕 행수는 템플릿 실측값을 기준으로
-  if (kf.length > 0 && (kf.length < TPL.keyFacts.rows - 1 || kf.length > TPL.keyFacts.rows + 1)) {
-    push("template-keyFacts", "WARN", `keyFacts ${kf.length}행 — 템플릿 기준 ${TPL.keyFacts.rows}행`);
+  // 15-6. 타이틀 ↔ 소제목 일치
+  //
+  // 소제목 개수는 정해진 목표가 없다. 타이틀이 나열한 항목이 곧 본문 구성이다.
+  // 타이틀이 4개를 약속하면 섹션도 그 4개를 다뤄야 하고, 억지로 8개까지 늘리면
+  // 약속하지 않은 이야기가 섞여 검색해서 들어온 사람의 기대와 어긋난다.
+  //
+  // 타이틀에서 나열 항목을 뽑아 각 항목이 소제목이나 라벨에 반영됐는지 본다.
+  const titleItems = String(article.meta?.title ?? "")
+    .replace(/\(\d{4}\)|20\d{2}년?/g, " ")
+    .split(/[·,、|]|부터|까지|그리고|및/)
+    .map((t: string) => t.trim())
+    .filter((t: string) => t.length >= 2 && !kws.some((k) => k === t));
+
+  const sectionText = secs
+    .map((s: any) => `${s.eyebrow ?? ""} ${s.heading ?? ""}`)
+    .join(" ");
+
+  const uncovered = titleItems.filter((item: string) => {
+    // 항목의 핵심 2글자라도 섹션 어딘가에 나오면 다뤘다고 본다
+    const core = item.replace(/\s+/g, "");
+    for (let i = 0; i + 2 <= core.length; i++) {
+      if (sectionText.includes(core.slice(i, i + 2))) return true;
+    }
+    return false;
+  });
+  const missing = titleItems.filter((t: string) => !uncovered.includes(t));
+  if (missing.length > 0) {
+    push(
+      "title-section-match",
+      "WARN",
+      `타이틀이 약속한 항목이 본문에 없음: ${missing.join(", ")} — 소제목으로 다루거나 타이틀에서 빼세요`
+    );
+  }
+
+  // 분량은 참고값이다. 주제에 따라 달라지므로 WARN까지만.
+  const sc = TPL.indicative.sections;
+  if (secs.length > sc.max) {
+    push("template-sections", "WARN", `mainSections ${secs.length}개 — 권장 ${sc.min}~${sc.max}개. 타이틀이 약속한 만큼만 쓰세요`);
+  }
+  const kfB = TPL.indicative.keyFactsRows;
+  if (kf.length > 0 && (kf.length < kfB.min || kf.length > kfB.max)) {
+    push("template-keyFacts", "WARN", `keyFacts ${kf.length}행 — 권장 ${kfB.min}~${kfB.max}행 (소제목 개수와 무관한 사실 요약표입니다)`);
   }
   const faqCount = article.context?.faqList?.length ?? 0;
-  if (faqCount > 0 && faqCount < TPL.faq.items - 1) {
-    push("template-faq", "WARN", `FAQ ${faqCount}개 — 템플릿 기준 ${TPL.faq.items}개`);
+  const faqB = TPL.indicative.faqItems;
+  if (faqCount > 0 && faqCount < faqB.min) {
+    push("template-faq", "WARN", `FAQ ${faqCount}개 — 권장 ${faqB.min}~${faqB.max}개`);
   }
 
   // 16. summary — 정확히 3줄
