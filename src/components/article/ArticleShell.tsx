@@ -60,7 +60,10 @@ function Section({ s, n }: { s: MainSection; n: number }) {
       <h2>{s.heading}</h2>
       {s.compareTable && (
         <div className="tbl viz">
-          <table>
+          {/* data-custom-style — globals.css 의 옛 MD 글용 표 스타일(남색 그라데이션 헤더)이
+              이 표를 건드리지 못하게 끊는다. 그쪽 규칙이 :not([data-custom-style]) 로
+              예외를 허용하고 있어 특정성 싸움 없이 분리된다. */}
+          <table data-custom-style="template">
             <thead><tr>{s.compareTable.headers.map((h, i) => <th key={i}>{h}</th>)}</tr></thead>
             <tbody>
               {s.compareTable.rows.map((row, i) => (
@@ -180,7 +183,10 @@ export function ArticleShell({ data }: Props) {
       )}
 
       <div className="aw">
-        <article>
+        {/* article 요소를 쓰지 않는다 — globals.css 의 옛 MD 글용 규칙이
+            article 선택자로 표·문단·인용구를 전부 덮어써 새 템플릿과 충돌한다.
+            문서 의미는 JSON-LD ArticleSchema 가 담당한다. */}
+        <div className="aw-doc">
           <nav className="bc">
             <Link href="/">홈</Link><span>›</span>
             <span>{data.category}</span><span>›</span>
@@ -317,7 +323,7 @@ export function ArticleShell({ data }: Props) {
             <br />
             {data.context?.disclaimer ?? "본 문서는 일반 정보 제공 목적이며, 개별 사안은 관할 기관 확인이 필요합니다."}
           </p>
-        </article>
+        </div>
 
         <aside>
           {data.relatedQuestions && data.relatedQuestions.length > 0 && (
