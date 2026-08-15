@@ -4,8 +4,6 @@
 // Q4. Steps(대리 신청 절차) + DocTable(서류) + GreenBox(위임장 작성법) + FAQ
 
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 export const dynamic = "force-static";
 
 import {

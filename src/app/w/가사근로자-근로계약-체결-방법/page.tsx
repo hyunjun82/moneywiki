@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 가사근로자 근로계약 체결 방법에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 가사근로자도 일하기 전에 반드시 근로계약서를 작성해야 해요, 임금, 근로시간, 휴일, 연차 등 5가지 필수 항목을 명시해야 해요

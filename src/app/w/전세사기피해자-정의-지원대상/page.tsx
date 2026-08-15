@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 집주인 잠적 또는 경매 통보를 받고 보증금을 돌려받을 수 있는지 모르는 상황
 // Q2. 전세사기피해자로 인정받아 주거·금융·법률 지원을 받는 것
 // Q3. 인정 조건 5가지, 제외 요건, 신청 방법, 지원 내용

@@ -1,6 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
-
 // Q1. 사업을 시작하려는데 사업자등록을 어떻게 하는지 모르는 상황
 // Q2. 홈택스에서 사업자등록 신청을 완료한다
 // Q3. 20일 이내 신고의무, 간이과세자 기준 8,000만원, 필요 서류, 미등록 가산세

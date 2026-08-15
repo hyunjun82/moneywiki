@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 /*
   Q1. 만 65세 가까워졌거나 부모님이 65세인데, 기초연금을 받을 수 있는지 궁금한 사람
   Q2. 소득·재산을 입력해서 예상 수령액을 직접 확인한다

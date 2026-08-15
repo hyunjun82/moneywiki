@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 고용증대 세액공제에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 직원을 늘리면 새로 고용한 인원당 1,300만원을 세금에서 깎을 수 있어요., 하지만 2년 동안 그 직원을 유지해야 혜택을 받을 수 있어요.

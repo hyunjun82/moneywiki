@@ -1,6 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
-
 // Q1. 대학생 자녀 기숙사비를 연말정산에서 공제받을 수 있는지 궁금
 // Q2. 기숙사비는 교육비 공제 안 됨 확인 → 카드 공제 가능 여부 확인
 // Q3. 기숙사비=숙식비라 교육비 공제 불가, 등록금만 공제, 카드로 내면 카드 공제 가능

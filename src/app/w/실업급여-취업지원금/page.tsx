@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 실업급여 외에 다른 지원금도 있다고 들었는데, 뭐가 있고 내가 뭘 받을 수 있는지 한눈에 정리된 정보가 필요한 상황이에요.
 // Q2. 이 사람이 이 글을 읽고 나서 할 수 있어야 하는 행동은?

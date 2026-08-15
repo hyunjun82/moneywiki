@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 /*
 Q1. 육아·출산으로 경력이 끊겼는데 다시 일하고 싶은 여성이 어디서부터 시작해야 할지 모르는 상황이에요.
 Q2. 여성새로일하기센터 방문 → 교육 등록 → 참여수당·인턴 지원금·자격증 비용을 받을 수 있어야 해요.

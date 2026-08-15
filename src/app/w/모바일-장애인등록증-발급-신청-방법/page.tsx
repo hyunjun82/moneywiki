@@ -1,6 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
-
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     장애인등록증을 스마트폰에 저장하고 싶은데 발급 방법을 모르는 장애인 본인 또는 보호자
 // Q2. 이 사람이 이 글을 읽고 나서 할 수 있어야 하는 행동은?

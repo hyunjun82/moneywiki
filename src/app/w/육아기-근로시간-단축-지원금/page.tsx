@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     아이를 키우면서 근로시간을 줄이려는데 생활비가 걱정돼서 지원금이 얼마인지 확인하려는 부모
 // Q2. 이 사람이 이 글을 읽고 나서 할 수 있어야 하는 행동은?

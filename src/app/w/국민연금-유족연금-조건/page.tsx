@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 국민연금 유족연금에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 국민연금 가입자가 사망하면 유족이 연금을 받을 수 있어요., 배우자, 자녀, 부모 순으로 받을 수 있어요.

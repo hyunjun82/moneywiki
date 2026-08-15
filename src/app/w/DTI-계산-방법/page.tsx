@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. DTI에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. DTI는 주담대 원리금과 기타 대출 이자만 포함해요, DSR은 모든 대출의 원리금을 포함해서 더 엄격해요

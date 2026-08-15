@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 연말정산 핵심인력에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 핵심인력 성과보상기금 50% 소득세 감면이에요., 5년 이상 근무 후 수령 시 적용돼요.

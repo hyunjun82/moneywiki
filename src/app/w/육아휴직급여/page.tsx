@@ -4,8 +4,6 @@
 // Q4. Calculator(급여 계산) + EligibilityChecker(자격) + Steps(신청절차) + FAQ
 
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 export const dynamic = "force-static";
 
 import {

@@ -1,6 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
-
 // Q1. 기초연금 받던 부모님이 돌아가셔서 남은 연금을 받을 수 있는지 궁금한 상황
 // Q2. 미지급 기초연금 청구서를 작성해서 주민센터에 제출한다
 // Q2-1. 주민센터 창구에서 미지급분 청구 접수

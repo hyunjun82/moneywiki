@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 회사 전근으로 이사비를 받았는데 세금을 내야 하는지 궁금한 직장인
 // Q2. 이사비가 비과세인지 과세인지 판단하고, 비과세를 받기 위해 영수증을 챙기는 행동
 // Q3. 실비변상 vs 정액 지급 차이, 비과세 조건(전근·실비·증빙), 한도 초과 시 과세, 증빙서류

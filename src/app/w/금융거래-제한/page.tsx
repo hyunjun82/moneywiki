@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 갑자기 계좌 출금이 막혀서 당황한 상황이에요.
 // Q2. 금융거래 제한 원인을 파악하고, 해제 절차를 밟는 행동.
 // Q3. 제한 유형(전자금융거래제한 vs 한도제한), 원인, 조회 방법, 해제 절차, 필요 서류.

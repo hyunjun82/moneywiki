@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 사업자등록 후 부가세를 얼마나 내는지, 언제 신고하는지 모르는 초보 사업자
 // Q2. 홈택스에서 부가가치세 신고를 기한 내에 완료한다
 // Q3. 세율 10%, 일반과세자 vs 간이과세자(1.04억 기준), 신고 기간(1·7월), 매입세액 공제, 가산세

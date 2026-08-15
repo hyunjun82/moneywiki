@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 아파트 엘리베이터·게시판에 광고 붙이려는데 신고 필요한지 궁금한 상황
 // Q2. 관리사무소 동의 받기 → 옥외광고물 해당 여부 확인 → 부착
 // Q3. 아파트 내부는 옥외광고물법 적용 안 됨, 관리규약·관리사무소 동의 필수, 외부는 신고 필요

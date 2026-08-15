@@ -4,8 +4,6 @@
 // Q4. EligibilityChecker(자격확인) + Calculator(공제액) + Steps(신청절차) + DocTable(서류) + FAQ
 
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 export const dynamic = "force-static";
 
 import {

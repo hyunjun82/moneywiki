@@ -1,6 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
-
 // Q1: 산지전용 허가를 받았는데 공사가 늦어져서 기간 연장이 필요한 사람
 // Q2: 기간 만료 전에 연장 허가 신청을 완료
 // Q3: 1회만 연장 가능, 최초 허가 기간 초과 불가, 만료 전 신청 필수, 제출 서류

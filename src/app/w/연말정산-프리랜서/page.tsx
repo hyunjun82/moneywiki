@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 연말정산 프리랜서에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 프리랜서는 연말정산 대상이 아니고 5월 종합소득세 신고로 정산해요., 3.3% 원천징수(소득세 3% + 지방세 0.3%)로 미리 세금을 내요.

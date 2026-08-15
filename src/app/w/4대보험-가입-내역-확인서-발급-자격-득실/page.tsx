@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 이직 준비 중이거나 실업급여 신청하려는 직장인이 "4대보험 가입 내역 확인서 어디서 받아?" 확인하는 상황
 // Q2. 4대사회보험 정보연계센터에서 즉시 발급받아 취업 서류·실업급여 신청에 활용
 // Q3. 4insure.or.kr 한 번에 발급 / 기관별 따로 발급 방법 / 자격 득실 개념 / 조회 안 될 때 대처법

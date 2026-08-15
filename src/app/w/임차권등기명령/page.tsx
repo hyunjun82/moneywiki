@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 임차권등기명령에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 임차권등기명령은 보증금 못 받은 채 이사해도 대항력이 유지되는 제도예요, 법원에 신청하고 비용은 약 1만5천원, 2~3주 걸려요

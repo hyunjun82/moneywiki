@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 보안카드를 분실했거나 번호를 다 써서 인터넷뱅킹을 못 하는 상황
 // Q2. 은행 영업점에 가서 신분증 하나로 보안카드를 즉시 재발급받는다
 // Q3. 영업점 방문 즉시 발급, 온라인 신청(일부 은행), 분실 시 즉시 신고, 수수료(대부분 무료), OTP 전환 옵션

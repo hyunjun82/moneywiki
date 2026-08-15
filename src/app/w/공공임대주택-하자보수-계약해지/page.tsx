@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 공공임대주택 하자보수에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 임대인이 수선의무를 이행하지 않으면 계약 해지 사유가 될 수 있어요, 특약으로 해지권을 유보했거나 채무불이행이 중대하면 해지 가능해요

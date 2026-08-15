@@ -4,8 +4,6 @@
 // Q4. Steps(신청 절차) + DocTable(준비물) + GreenBox(불인정 시 대처) + FAQ
 
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 export const dynamic = "force-static";
 
 import {

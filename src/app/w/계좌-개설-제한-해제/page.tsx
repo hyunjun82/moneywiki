@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 새 통장을 만들었는데 이체가 막혀서 돈을 보내지 못하는 상황
 // Q2. 한도제한계좌를 해제해서 자유롭게 이체할 수 있게 되는 것
 // Q3. 해제 방법 3가지(앱/방문/자동), 필요 서류, 한도 수치

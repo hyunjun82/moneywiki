@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 급여 통장에 돈을 넣어둬도 이자가 거의 안 붙어서 CMA 계좌로 옮기면 유리한지 비교하고 싶은 상황이에요.
 // Q2. 이 사람이 이 글을 읽고 나서 할 수 있어야 하는 행동은?

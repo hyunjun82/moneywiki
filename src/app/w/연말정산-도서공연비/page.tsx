@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1: 책이나 공연 관람에 쓴 돈이 연말정산에서 공제되는지 궁금한 직장인
 // Q2: 도서·공연비 소득공제 적용 여부와 한도 확인
 // Q3: 총급여 7,000만원 이하, 신용카드 등 사용액이 총급여 25% 초과해야, 추가공제 300만원 한도, 대상 항목

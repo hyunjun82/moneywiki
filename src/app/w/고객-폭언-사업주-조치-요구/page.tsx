@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 고객한테 폭언 당했는데 사장이 아무 조치 안 해줘서 화난 상황
 // Q2. 사업주에게 서면으로 조치 요구 → 미이행 시 노동청 신고
 // Q3. 산업안전보건법 제41조, 조치 요구 방법, 사업주 의무, 미이행 시 과태료, 불이익 시 처벌

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 /*
 Q1. 월세로 살고 있는데 계약갱신청구권이 전세에만 적용되는 줄 알고, 본인도 쓸 수 있는지 궁금한 상황이에요.
 Q2. 월세에도 갱신청구권이 적용된다는 걸 확인하고, 인상 한도 5% 기준과 행사 방법을 파악할 수 있어야 해요.

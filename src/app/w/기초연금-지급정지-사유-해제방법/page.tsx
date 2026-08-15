@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 기초연금이 갑자기 안 들어와서 당황한 상황
 // Q2. 정지 사유를 파악하고 해당 사유에 맞는 해제 절차를 밟는다
 // Q2-1. 주민센터 방문 또는 전화(129)로 해제 신청

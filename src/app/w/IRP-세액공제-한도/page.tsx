@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     연말정산 앞두고 IRP에 얼마까지 넣어야 세금을 최대한 돌려받는지 계산하려는 직장인
 // Q2. 이 사람이 이 글을 읽고 나서 할 수 있어야 하는 행동은?

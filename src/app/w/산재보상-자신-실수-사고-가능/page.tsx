@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 내 실수로 다쳤는데 산재 처리가 되는 건지 궁금한 상황
 // Q2. 본인 과실 사고도 산재 인정 가능한지 판단하고 신청한다
 // Q3. 업무 관련성이 핵심, 중과실·고의 제외, 판례 기준, 신청 절차

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 연말정산 시즌인데, 보험료를 많이 내고 있어서 공제가 되는지, 어떤 보험이 해당되는지 궁금한 상황이에요.
 // Q2. 이 사람이 이 글을 읽고 나서 할 수 있어야 하는 행동은?

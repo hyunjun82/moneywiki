@@ -1,6 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
-
 // Q1: DSR 계산 방법 2026 info
 // Q2: DSR은 연간 총 부채 원리금 상환액을 연소득으로 나눈 비율이에요
 // Q3: DSR은 연간 총 부채 원리금 상환액을 연소득으로 나눈 비율이에요, 2026년 스트레스 DSR 3단계는 스트레스 금리 1.5%, 기본 비율 40%가 적용돼요, DSR 계산기를 이용하면 내 대출 가능 한도를 미리 확인할 수 있어요

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 부동산 등기·법인 설립·자동차 등록 시 등록면허세가 얼마인지 궁금한 상황이에요.
 // Q2. 내 상황에 맞는 세율을 확인하고 위택스에서 납부하는 행동.
 // Q3. 부동산 2%, 법인 0.4%, 자동차 5%, 지방교육세 20% 추가, 면허분 세액.

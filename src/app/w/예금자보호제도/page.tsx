@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 은행에 예금을 넣어두는데 은행이 망하면 어떻게 되는지, 1억원 한도가 언제부터 적용되는지 궁금한 상황이에요.
 // Q2. 이 사람이 이 글을 읽고 나서 할 수 있어야 하는 행동은?

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 보일러 수리비 부담에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 보일러는 주요 시설물이므로 원칙적으로 임대인이 수선해야 해요, 세입자 과실로 고장났다면 세입자가 비용을 부담해야 해요

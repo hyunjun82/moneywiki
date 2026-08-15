@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 연말정산에서 추가납부가 나왔는데 한 번에 내기 부담스러운 직장인이에요.
 // Q2. 분할납부 신청해서 3개월로 나눠 내는 행동.
 // Q3. 분할납부 조건(10만원 초과), 이자 없음, 3개월 분할, 신청 방법(회사에 신청), 추가납부 원인.

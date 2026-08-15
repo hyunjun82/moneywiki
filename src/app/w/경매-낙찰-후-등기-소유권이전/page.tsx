@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 /*
 Q1. 경매로 집을 낙찰받았는데, 언제 소유권이 넘어오는지, 등기는 어떻게 하는지 모르는 상황이에요.
 Q2. 매각허가결정 확정 → 대금 납부 → 소유권이전등기까지의 전체 흐름을 파악하고 대금 납부 기한을 지킬 수 있어야 해요.

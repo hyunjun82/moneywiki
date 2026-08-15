@@ -1,6 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
-
 import {
   H2, SectionBadge, GreenBox, Divider, body,
   Calculator, Steps, DocTable, Checklist, FAQ, SourceNote, Disclaimer,

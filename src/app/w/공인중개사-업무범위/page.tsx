@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     공인중개사 자격증을 준비하거나 취득한 후, 실제로 어떤 일을 할 수 있는지 알고 싶은 사람.
 // Q2. 이 사람이 이 글을 읽고 나서 할 수 있어야 하는 행동은?

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     계약직으로 2년 가까이 일하면서 무기계약 전환 시기와 조건이 궁금한 근로자.
 // Q2. 이 사람이 이 글을 읽고 나서 할 수 있어야 하는 행동은?

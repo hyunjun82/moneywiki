@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 국가유공자 본인이거나 유족인데, 영구임대주택에 우선공급 받을 수 있는지 자격과 절차를 알고 싶은 상황이에요.
 // Q2. 이 사람이 이 글을 읽고 나서 할 수 있어야 하는 행동은?

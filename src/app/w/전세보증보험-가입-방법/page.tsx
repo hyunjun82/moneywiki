@@ -4,8 +4,6 @@
 // Q4. 단계별 Steps + 조건 표 + 서류 DocTable + FAQ
 
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 export const dynamic = "force-static";
 
 import {

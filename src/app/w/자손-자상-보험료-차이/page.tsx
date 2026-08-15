@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 자손 자상 보험료에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 자상이 자손보다 연간 3만~5만원 더 비싸요, 자상은 과실 비율 상관없이 위자료·휴업손해까지 보상해요

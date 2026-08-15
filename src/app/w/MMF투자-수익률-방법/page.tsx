@@ -1,6 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
-
 // Q1. 예금보다 이자를 더 받고 싶은데 주식은 무서워서 안전한 투자처를 찾는 상황
 // Q2. MMF가 뭔지 이해하고 증권사 앱에서 MMF에 가입한다
 // Q3. MMF 구조(단기금융상품 투자), 수익률 수준(연 2.5~2.8%), 가입 방법, 예금과 차이점, 장부가 평가

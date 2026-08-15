@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 개인사업자인데 퇴직연금 가입이 되는지, 세금 혜택은 뭔지 궁금한 상황
 // Q2. IRP 가입 여부를 판단하고, 세액공제 한도를 확인해서 가입 신청한다
 // Q3. IRP 가입 자격, 세액공제 한도(900만원), 공제율(16.5%/13.2%), 가입 방법, 수령 조건

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 연말정산 주택담보대출에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 주택담보대출 이자는 연 1,800만원까지 소득공제돼요., 상환기간 15년 이상, 주택가액 6억원 이하 조건 맞아야 해요.

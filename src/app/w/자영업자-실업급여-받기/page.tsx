@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 /*
 Q1. 자영업자인데 폐업 후 실업급여를 받을 수 있는지, 조건이 뭔지 궁금한 상황
 Q2. 고용보험 가입 여부 확인 → 수급 조건 충족 여부 판단 → 폐업 후 신청까지 완료

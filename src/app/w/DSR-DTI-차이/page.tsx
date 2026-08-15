@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 대출 상담 중 DTI는 되는데 DSR이 안 된다는 말을 듣고 둘의 차이를 모르는 상황
 // Q2. DSR과 DTI의 차이를 이해하고 내 대출 한도에 어떤 게 적용되는지 판단하는 것
 // Q3. DSR vs DTI 계산 범위 차이, 적용 대상, 규제 한도(40%/50%), 같은 소득에서 한도 차이, 스트레스DSR

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     자녀가 해외 유학 중인데 연말정산에서 공제받을 수 있는지, 어떤 서류가 필요한지 모르는 부모
 // Q2. 이 사람이 이 글을 읽고 나서 할 수 있어야 하는 행동은?

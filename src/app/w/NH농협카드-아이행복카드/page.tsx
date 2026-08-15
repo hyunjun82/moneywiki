@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 육아 중인데 NH농협카드 아이행복카드가 어떤 혜택이 있는지 궁금한 상황이에요.
 // Q2. 할인 혜택을 확인하고 카드를 발급받는 행동.
 // Q3. 어린이집·병원·온라인쇼핑 10% 할인, 전월 실적 조건, 발급 방법.

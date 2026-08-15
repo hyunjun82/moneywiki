@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 퇴직했거나 곧 퇴직하는데, 퇴직연금을 어떻게 받는지 절차를 모르는 상황
 // Q2. 본인 나이(55세 기준)와 연금 유형(DB/DC/IRP)에 맞는 수령 방법을 파악하고 금융사에서 인출 신청하는 행동
 // Q3. 55세 기준 수령 방법 차이, DB·DC·IRP별 절차, IRP 인출 단계, 필요 서류, 일시금·연금 세금 차이, 중도인출 조건

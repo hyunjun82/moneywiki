@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     2월이 다가오거나 이미 2월이 됐는데, 이번 달 세금 신고 기한을 놓치지 않으려는 사업자·프리랜서·직장인
 // Q2. 이 사람이 이 글을 읽고 나서 할 수 있어야 하는 행동은?

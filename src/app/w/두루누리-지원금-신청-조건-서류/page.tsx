@@ -1,6 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
-
 // Q1: 두루누리 지원 대상인 건 아는데 실제로 어떻게 신청하고 뭘 준비해야 하는지 모르는 사업주
 // Q2: 고용24에서 신청을 완료하고 서류까지 제출
 // Q3: 신청 절차 4단계, 필요 서류 목록, 심사 기간, 변동 신고 방법

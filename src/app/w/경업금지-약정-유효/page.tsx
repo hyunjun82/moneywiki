@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 /*
 Q1. 퇴사하면서 회사가 경업금지 서약서를 요구하는데, 서명해도 되는지·효력이 있는지 궁금한 상황이에요.
 Q2. 경업금지 약정의 유효 조건을 파악하고, 대가 없는 약정은 거부하거나 무효 확인 청구를 할 수 있어야 해요.

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1: 부모님께 상속받은 주택을 팔려는데 거주요건 때문에 비과세를 받을 수 있는지 모르는 상황
 // Q2: 동일세대/별도세대 여부 판단 후 거주요건 충족해서 비과세 양도
 // Q3: 동일세대 기간 합산 vs 별도세대 별도 충족, 조정대상지역 2년 거주, 취득시기=상속개시일

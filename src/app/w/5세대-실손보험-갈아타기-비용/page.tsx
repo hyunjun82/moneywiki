@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 5세대 실손보험 갈아타기에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 5세대 실손보험 전환 시 별도 수수료는 없어요, 보험료는 4세대 대비 30-50% 저렴하지만 비급여 자기부담금은 50%로 늘어나요

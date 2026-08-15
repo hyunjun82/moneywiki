@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 고객 성희롱 사업주 조치에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 근무 장소 변경, 유급휴가 부여 등 즉각 조치 필수, 고객에게 재발 방지 요청, 필요 시 형사 고소 지원

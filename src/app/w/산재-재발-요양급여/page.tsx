@@ -1,6 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
-
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     예전에 산재로 치료받고 종결됐는데 같은 부위가 다시 아파서 재신청 가능한지 알고 싶은 상황
 // Q2. 이 사람이 이 글을 읽고 나서 할 수 있어야 하는 행동은?

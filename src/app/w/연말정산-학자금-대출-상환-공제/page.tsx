@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 /*
 Q1. 학자금 대출 갚고 있는데 연말정산에서 공제받을 수 있는지 궁금한 상황
 Q2. 학자금 대출 상환금이 교육비 공제 대상인지 정확히 판단하고, 가능한 경우 신청까지 완료

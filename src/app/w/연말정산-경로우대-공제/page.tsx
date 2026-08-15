@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 연말정산 경로우대 공제에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 만 70세 이상 부양가족 1인당 100만원 추가 소득공제예요., 기본공제 150만원과 합쳐서 250만원, 세금 약 60만원 돌려받아요.

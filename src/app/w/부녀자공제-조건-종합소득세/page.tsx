@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 부녀자공제에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 종합소득금액 3천만원 이하 여성이 연 50만원 추가 공제받을 수 있어요., 배우자 있으면 무조건 해당되고, 없으면 부양가족 있는 세대주여야 해요.

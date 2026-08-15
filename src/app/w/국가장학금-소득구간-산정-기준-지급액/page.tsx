@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 국가장학금 소득구간에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 소득구간은 월 소득인정액(소득+재산환산액)으로 9단계로 구분돼요., 건강보험료와 기초생활 수급 여부가 주요 기준이에요.

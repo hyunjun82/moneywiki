@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1: 이직·퇴사·해지 후 환급금이 있다는 걸 들었는데 어떻게 찾는지 모르는 상황
 // Q2: 정부24에서 본인인증 후 7가지 환급금 조회 및 신청 완료
 // Q3: 정부24 조회 방법, 7가지 환급금 종류와 금액, 신청 방법, 5년 소멸시효

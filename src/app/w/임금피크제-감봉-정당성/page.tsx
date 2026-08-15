@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1: 임금피크제로 월급이 깎인다는 통보를 받았는데 합법인지 궁금한 근로자
 // Q2: 임금피크제의 정당성을 판단하고, 부당하면 노동청 신고 또는 임금 청구
 // Q3: 동의 필수 여부, 취업규칙 변경 절차, 합리적 기준 유무, 부당 시 대응(체불 임금 청구)

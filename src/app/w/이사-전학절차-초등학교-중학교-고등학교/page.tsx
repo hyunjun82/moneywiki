@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     이사를 앞두고 자녀 학교 전학 절차를 준비하는 학부모, 특히 학교급별 차이가 헷갈리는 상황.
 // Q2. 이 사람이 이 글을 읽고 나서 할 수 있어야 하는 행동은?

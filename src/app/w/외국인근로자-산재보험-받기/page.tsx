@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. [에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 국적과 체류자격에 무관하게 모든 근로자에게 산업재해보상보험법이 적용돼요., 불법체류자도 산재보험을 받을 수 있고, 신청으로 추방되지 않아요.

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 아파트 관리비 고지서 받고 "이게 다 뭐지?" 궁금한 입주자
 // Q2. 관리비 10개 항목이 무엇인지 이해하고, K-apt에서 우리 아파트 내역을 조회한다
 // Q3. 항목별 설명 + 전기료·수도료 별도 이유 + K-apt 공개 의무 + 이의제기 방법

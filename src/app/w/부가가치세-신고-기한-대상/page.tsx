@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 부가가치세에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 개인 일반사업자는 1월 25일까지, 간이과세자는 1년에 한 번 신고해요., 법인사업자는 1년에 4회 신고하고, 개인사업자는 2회 신고해요.

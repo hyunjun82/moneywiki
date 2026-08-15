@@ -4,8 +4,6 @@
 // Q4. GreenBox(필수 기재사항) + DocTable(기재 항목) + Steps(신고 절차) + FAQ
 
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 export const dynamic = "force-static";
 
 import {

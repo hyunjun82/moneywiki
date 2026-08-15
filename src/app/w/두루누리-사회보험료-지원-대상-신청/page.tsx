@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1: 사업주가 직원 사회보험료 부담 줄이고 싶어 두루누리 지원제도 찾는 상황
 // Q2: 우리 사업장이 두루누리 지원 대상인지 자격 조건을 정확히 확인
 // Q3: 지원 대상 조건(10인 미만·270만 원), 지원 제외 업종, 지원율·기간, 대상 판정 기준

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 /*
 Q1. 신용카드를 처음 만들려는데 내 신용점수·소득으로 발급 가능한지 궁금한 상황
 Q2. 발급 조건(신용점수, 소득)을 확인하고 내 상황에서 카드 신청 가능 여부를 판단

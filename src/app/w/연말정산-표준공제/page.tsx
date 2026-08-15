@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1: 연말정산에서 공제 증빙을 못 챙겼는데 표준공제를 받을 수 있는지 궁금한 직장인
 // Q2: 표준공제 13만원 적용 여부 판단 후 유리한 선택
 // Q3: 표준공제 13만원, 항목별 공제 미신청 시 자동 적용, 배우자 없는 1인가구에게 유리할 수 있음

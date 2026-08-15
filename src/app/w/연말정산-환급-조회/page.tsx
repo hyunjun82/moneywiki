@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1: 연말정산 결과 발표 후 환급금 얼마인지, 언제 받는지 궁금한 직장인
 // Q2: 홈택스에서 환급금 확인하고 2월 급여일에 받기
 // Q3: 미리보기 vs 확정조회 차이, 국세+지방소득세 타이밍, 추가납부 케이스

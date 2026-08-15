@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 고용장려금에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 의무고용률 3.1%를 초과해 장애인을 고용한 사업주가 신청 가능해요, 중증 여성 월 80만원, 중증 남성 월 60만원을 지원받아요

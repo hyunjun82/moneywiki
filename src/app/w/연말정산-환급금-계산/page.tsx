@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 연말정산 시즌에 내가 얼마나 돌려받을 수 있는지 궁금한 직장인
 // Q2. 환급금 계산 공식을 이해하고 예상 금액을 직접 계산한다
 // Q3. 환급금 = 기납부세액 - 결정세액 공식, 계산 단계, 환급/추가납부 사례, 환급금 늘리는 방법

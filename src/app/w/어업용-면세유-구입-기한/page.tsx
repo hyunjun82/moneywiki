@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 어업용 면세유에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 면세유 공급카드 유효기간은 발급일로부터 1년이에요, 유효기간 내 미사용 시 재발급 받아야 해요

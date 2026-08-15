@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     집을 사거나 전세 계약을 앞두고 복비가 얼마나 나올지 계산해보려는 사람
 // Q2. 이 사람이 이 글을 읽고 나서 할 수 있어야 하는 행동은?

@@ -4,8 +4,6 @@
 // Q4. Steps(신고 절차) + GreenBox(조기재취업수당 조건) + BorderBox(부정수급 주의) + FAQ
 
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 export const dynamic = "force-static";
 
 import {

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 경매 임차권 인수에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 말소기준권리보다 선순위 임차권은 낙찰자가 의무적으로 인수, 인수되는 임차권은 보증금 반환 의무 부담

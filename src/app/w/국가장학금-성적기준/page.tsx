@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 성적이 애매한 대학생이 "내 학점으로 국가장학금 받을 수 있나?" 걱정하는 상황
 // Q2. 내 성적이 기준을 충족하는지 확인하고, 미달이면 구제 방법 파악
 // Q3. B학점 80점(4.5만점 3.0), 12학점 이수, 기초차상위 C학점, 신입생 면제, C학점 경고제

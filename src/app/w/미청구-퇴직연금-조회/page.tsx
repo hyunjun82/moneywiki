@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 이직하면서 퇴직연금을 옮기지 않아서 어딘가에 돈이 묶여있는지 모르는 상황
 // Q2. 미청구 퇴직연금이 있는지 조회하고 수령 신청한다
 // Q3. 조회 경로(금감원 통합연금포털, 근로복지공단), 미청구 발생 원인, 수령 절차, 소멸시효 5년

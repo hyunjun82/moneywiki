@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 감염병으로 가게 휴업 중인데 배달기사 산재보험을 계속 내야 하는지 고민
 // Q2. 휴업 중에도 유지 의무 확인 → 감면 신청 → 보험료 절감
 // Q3. 산재보험 의무가입, 휴업 시 유지 의무, 보험료 감면 방법, 해지 시 불이익

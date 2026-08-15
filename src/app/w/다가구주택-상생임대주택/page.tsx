@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 다가구주택 팔려는데 상생임대 특례로 양도세 비과세 받을 수 있는지 확인하는 상황
 // Q2. 호별 요건 충족 여부 확인 → 전체 양도 vs 호별 양도 판단
 // Q3. 상생임대주택 요건(직전1년6개월+상생2년), 다가구 전체양도 시 모든 호 충족 필요, 호별 양도 대안

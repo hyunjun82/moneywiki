@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 간이지급명세서에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 사업소득, 기타소득 간이지급명세서는 매월 말일까지 제출, 미제출 시 지급금액의 0.25% 가산세, 1개월 내 제출하면 0.125%

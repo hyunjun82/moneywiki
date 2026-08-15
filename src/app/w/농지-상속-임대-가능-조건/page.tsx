@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 부모님 농지를 상속받았는데 농사를 못 짓고 어떻게 해야 할지 모르는 비농업인
 // Q2. 상속농지 보유·임대 가능 조건 파악 → 한국농어촌공사 위탁임대로 합법적 운용
 // Q3. 1만㎡까지 보유 가능 / 초과분은 처분 or 위탁임대 / 직접임대·방치 시 처분명령

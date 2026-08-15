@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 기초연금 입금 계좌를 다른 은행이나 다른 통장으로 바꾸고 싶은 상황
 // Q2. 주민센터 또는 복지로에서 계좌 변경 신청을 완료한다
 // Q2-1. 주민센터 창구 또는 복지로 계좌 변경 메뉴

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. [에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 온라인 교육 수강, 실업인정(구직활동 보고)은 고용24에서 비대면으로 가능해요., 수급자격 신청(첫 방문)만 고용센터를 한 번 방문해야 해요.

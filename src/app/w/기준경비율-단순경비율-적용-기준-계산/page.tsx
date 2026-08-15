@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 /*
 Q1. 종합소득세 신고하려는데 기준경비율/단순경비율이 뭔지, 내가 어디에 해당하는지 모르는 상황
 Q2. 내 수입금액으로 단순/기준경비율 적용 여부를 판단하고 소득금액을 계산

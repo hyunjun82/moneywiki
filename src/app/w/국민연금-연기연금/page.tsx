@@ -1,6 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
-
 // Q1: 국민연금 연기연금 info
 // Q2: 연기연금은 수령을 늦추면 연금이 늘어나는 제도예요.
 // Q3: 연기연금은 수령을 늦추면 연금이 늘어나는 제도예요., 1년 늦출 때마다 7.2% 증액돼요 (5년이면 36%)., 최대 5년까지 연기할 수 있어요.

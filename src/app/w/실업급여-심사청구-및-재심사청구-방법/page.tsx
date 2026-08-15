@@ -4,8 +4,6 @@
 // Q4. Steps(절차) + GreenBox(기한 정리) + Checklist(증거 준비) + FAQ
 
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 export const dynamic = "force-static";
 
 import {

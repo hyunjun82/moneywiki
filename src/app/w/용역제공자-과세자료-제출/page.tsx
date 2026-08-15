@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 용역제공자 과세자료란에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 용역제공자 과세자료는 사업자가 용역 제공자의 소득을 국세청에 제출하는 거예요, 캐디, 간병인, 대리운전 등 9개 업종이 대상이에요

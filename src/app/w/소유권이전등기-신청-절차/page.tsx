@@ -4,8 +4,6 @@
 // Q4. Steps(절차) + DocTable(서류) + GreenBox(비용 비교) + Checklist + FAQ
 
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 export const dynamic = "force-static";
 
 import {

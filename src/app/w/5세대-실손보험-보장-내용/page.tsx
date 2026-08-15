@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 5세대 실손보험이 기존과 뭐가 달라지는지, 보장 범위가 궁금한 상황
 // Q2. 5세대 보장 변경 내용을 파악하고, 기존 보험 유지·전환 여부를 판단한다
 // Q3. 비급여 자기부담률 50%, 도수치료 제외, 중증질환 상한 500만원, 보험료 변동

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 /*
 Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
     내가 받을 수 있는 정부 혜택이 뭔지 몰라서 답답한 상황이거나, 기준 중위소득이 올랐다는 뉴스를 보고 본인이 해당하는지 찾는 상황이에요.

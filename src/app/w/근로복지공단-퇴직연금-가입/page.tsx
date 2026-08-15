@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 근로복지공단 퇴직연금 가입에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 상시근로자 30인 이하 사업장이면 가입할 수 있어요., 근로복지공단 홈페이지에서 온라인 신청해요.

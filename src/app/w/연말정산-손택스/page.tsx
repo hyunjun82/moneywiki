@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 연말정산 손택스에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 손택스 앱에서 연말정산 간소화자료 조회와 PDF 제출이 가능해요., 간편인증(카카오, 네이버)이나 생체인증으로 로그인할 수 있어요.

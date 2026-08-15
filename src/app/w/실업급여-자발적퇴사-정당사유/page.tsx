@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 회사가 너무 힘들어서 그만두고 싶은데, 자발적 퇴사면 실업급여 못 받는다고 알고 있어서 퇴사를 망설이는 상황이에요.
 // Q2. 이 사람이 이 글을 읽고 나서 할 수 있어야 하는 행동은?

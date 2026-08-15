@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     이혼했거나 이혼을 앞두고 있는데, 결혼 기간 동안 배우자가 낸 국민연금을 나눠 받을 수 있는지 확인하려는 사람
 // Q2. 이 사람이 이 글을 읽고 나서 할 수 있어야 하는 행동은?

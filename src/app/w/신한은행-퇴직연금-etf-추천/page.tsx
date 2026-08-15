@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 신한은행 DC형이나 IRP에서 ETF 투자를 하고 싶은데 어떤 ETF를 담아야 하고 어디서 매수하는지 모르는 상황이에요.
 // Q2. 신한SOL 앱에서 퇴직연금 ETF를 검색해서 위험자산 70%·안전자산 30% 포트폴리오로 첫 매수를 하는 행동.
 // Q3. DC형/IRP만 ETF 투자 가능, 위험자산 70% 한도, 신한SOL 앱 매수 방법, 추천 ETF(S&P500·나스닥100·국고채), 수수료 구조.

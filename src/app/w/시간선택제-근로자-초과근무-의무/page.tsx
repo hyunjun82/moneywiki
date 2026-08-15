@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 시간선택제 초과근무 의무에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 시간선택제 근로자는 약정된 시간만 근무해요, 초과근무는 합의 없이 강요할 수 없어요

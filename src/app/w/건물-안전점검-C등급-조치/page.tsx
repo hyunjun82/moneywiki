@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 건물 안전점검 C등급에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. C등급은 보통등급으로 주요부재 경미한 결함, 보수 및 보강 필요한 단계, 정기안전점검 반기 1회, 정밀안전진단 5년 1회 실시 의무, 미이행 시 과태료 1천만 원

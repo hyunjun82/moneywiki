@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 국민연금을 받고 있거나 받을 예정인데 기초연금도 받을 수 있는지, 감액되는지 궁금한 상황
 // Q2. 동시 수급 가능 여부와 감액 기준을 이해하고, 본인이 감액 대상인지 판단한다
 // Q2-1. 복지로 모의계산기 또는 주민센터 상담

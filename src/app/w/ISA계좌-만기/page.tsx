@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. ISA 만기 3년 됐는데 다음에 뭘 해야 하는지 모르는 가입자
 // Q2. 해지 or 연장 결정 → 앱에서 신청 → 재가입 계획
 // Q3. 자동해지 안됨 / 즉시해지=비과세수령 / 연장=5년+추가비과세 / 재가입 가능 / 만기 전 안정자산 전환

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 오피스텔 관리인에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 법적으로는 임차인도 관리인이 될 수 있어요, 임차인은 관리위원은 될 수 없고 구분소유자만 가능해요

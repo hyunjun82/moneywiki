@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 /*
 Q1. 건물을 새로 매입했거나 관리사무소에서 안전관리자 선임 연락을 받아 당장 뭘 해야 하는지 모르는 상황이에요.
 Q2. 영역별(전기·승강기·가스·보일러) 안전관리자 선임과 정기점검 일정을 확인하고 처리할 수 있어야 해요.

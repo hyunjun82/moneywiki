@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 자동차세 계산에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 자동차 소유자에게 부과되는 지방세로 배기량에 따라 cc당 80~200원이에요., 2,000cc 승용차 기준 연 52만원이고 전기차는 연 13만원 정액이에요.

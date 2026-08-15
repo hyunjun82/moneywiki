@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 연말정산 체크리스트에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 12월부터 준비하고 1월 간소화자료를 확인하는 게 좋아요., 안경 구입비, 교복비, 월세 등 놓치기 쉬운 공제를 챙기세요.

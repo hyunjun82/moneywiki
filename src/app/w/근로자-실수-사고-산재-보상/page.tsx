@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 일하다 본인 실수로 다쳤는데, 내 잘못이라 산재가 안 될까 걱정하는 상황
 // Q2. 본인 과실 사고도 산재 인정되는지 확인하고, 산재 신청을 한다
 // Q3. 근로자 과실과 산재 인정의 관계, 고의·범죄만 제외, 인과관계 기준, 신청 방법

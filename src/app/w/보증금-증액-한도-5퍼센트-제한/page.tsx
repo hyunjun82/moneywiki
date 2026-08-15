@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 집주인이 보증금 많이 올려달라는데 거절할 수 있는지 궁금한 임차인
 // Q2. 5% 제한 규정 확인 → 1년 이내 증액 거절 → 초과 요구 시 대응
 // Q3. 주택임대차보호법 제7조, 5% 상한, 1년 이내 증액 불가, 월세 전환 합산, 위반 시 대응

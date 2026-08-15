@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 월세 군입대 중도해지 보증금 반환 관련 정보가 필요한 상황
 // Q2. 핵심 내용 파악 → 조건·절차 확인 → 실행
 // Q3. 자격 요건, 절차, 기한, 주의사항

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 모델하우스 실제 차이에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 모델하우스와 실제가 다르면 계약 내용 불일치로 손해배상 청구 가능해요, 분양계약서와 설계도서를 기준으로 판단해요

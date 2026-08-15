@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 1차 놓쳤거나 탈락한 대학생이 "2차 신청 기간이랑 금액이 어떻게 되지?" 검색
 // Q2. 한국장학재단에서 2차 신청 완료 + 가구원 동의까지 마치기
 // Q3. 신청 기간(2/3~3/17), 구간별 금액, 신청 방법, 가구원 동의, 성적 기준

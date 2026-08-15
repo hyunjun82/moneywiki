@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 연말정산에서 국민연금이 얼마나 환급에 영향을 주는지 궁금한 직장인
 // Q2. 본인 절세액을 계산해서 공제 항목을 정확히 파악하는 것
 // Q3. 공제율(4.5%), 계산 방법, 세율별 절세액, 추납 활용법, 자동 반영 여부

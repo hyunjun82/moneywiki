@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 약국에서 산 약값이 연말정산 공제 대상인지 궁금한 상황
 // Q2. 어떤 약국비가 공제되는지 확인하고, 빠짐없이 의료비 공제를 챙긴다
 // Q3. 의료비 세액공제 대상 약국비, 건강기능식품·영양제 제외, 공제율·한도, 간소화 자료 확인법

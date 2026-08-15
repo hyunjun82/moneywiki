@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 근로소득 원천징수란에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 회사가 월급 줄 때 미리 세금 떼는 게 근로소득 원천징수예요, 간이세액표 보면 내 세금이 얼마인지 알 수 있어요

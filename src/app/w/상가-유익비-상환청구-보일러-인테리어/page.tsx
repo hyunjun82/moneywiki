@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 상가 유익비 상환청구 보일러 인테리어 관련 정보가 필요한 상황
 // Q2. 핵심 내용 파악 → 조건·절차 확인 → 실행
 // Q3. 자격 요건, 절차, 기한, 주의사항

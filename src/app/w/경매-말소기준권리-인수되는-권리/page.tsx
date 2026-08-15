@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 경매 낙찰 받으려는데 어떤 권리를 떠안게 되는지 불안한 상황
 // Q2. 말소기준권리 파악 → 인수/말소 권리 구분 → 낙찰 전 권리분석
 // Q3. 말소기준권리 정의, 인수되는 권리 목록, 무조건 인수 권리(유치권 등), 실전 확인법

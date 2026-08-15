@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 이혼하면 친권자·양육자가 자동으로 정해지는지 궁금한 상황이에요.
 // Q2. 친권과 양육권 차이를 이해하고, 협의 또는 법원 결정으로 지정하는 행동.
 // Q3. 자동 지정 없음, 친권 vs 양육권 차이, 협의이혼 vs 재판이혼 절차, 변경 가능 여부.

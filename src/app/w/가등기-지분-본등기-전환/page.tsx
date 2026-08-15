@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 /*
 Q1. 가등기된 지분만 본등기로 전환할 수 있는지 법적으로 궁금한 상황
 Q2. 지분 가등기의 본등기 전환 가능 여부를 판단하고 절차를 파악

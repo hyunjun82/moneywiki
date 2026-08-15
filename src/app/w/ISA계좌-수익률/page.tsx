@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. ISA 계좌 평균 수익률에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. ISA 평균 수익률은 연 5-7%로 일반 적금보다 높아요, 고배당 ETF는 배당 4% + 가격 상승 3% = 연 7%예요

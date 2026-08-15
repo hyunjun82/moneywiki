@@ -4,8 +4,6 @@
 // Q4. GreenBox(보호 범위) + Steps(수급계좌 지정) + BorderBox(기 압류 대처) + FAQ
 
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 export const dynamic = "force-static";
 
 import {

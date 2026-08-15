@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1: 기초연금이랑 생계급여를 동시에 받고 있는데 혹시 깎이는 건 아닌지 걱정되는 어르신/보호자
 // Q2: 동시 수급 가능 여부와 삭감 구조를 이해하고, 실제 수령액을 파악
 // Q3: 기초연금이 소득으로 잡히는 구조, 생계급여 삭감 계산, 총수령액 변화

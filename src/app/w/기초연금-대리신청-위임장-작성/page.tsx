@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 부모님이 거동이 불편하거나 바빠서 자녀가 대신 기초연금을 신청하려는 상황
 // Q2. 위임장을 작성해서 주민센터에서 부모님 대신 기초연금을 접수한다
 // Q2-1. 주민센터 창구에서 위임장과 서류를 제출하는 곳

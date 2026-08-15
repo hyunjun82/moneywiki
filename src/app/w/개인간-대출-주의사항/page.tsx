@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 개인간 대출에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 차용증 작성과 공증으로 법적 효력 확보해야 해요, 이자율은 최대 연 20%까지 가능해요

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1: 실직 후 생계비 걱정하며 정부 지원 수당을 받을 수 있는지 찾는 사람
 // Q2: 1유형 자격 확인 후 고용24에서 신청 완료
 // Q3: 1유형/2유형 차이, 소득·재산·취업경험 조건, 월 50만원×6개월

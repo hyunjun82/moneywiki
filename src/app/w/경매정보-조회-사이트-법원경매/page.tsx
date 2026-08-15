@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 부동산 경매 관심이 생겨서 어디서 물건 검색하는지 모르는 초보자가 사이트 찾는 상황
 // Q2. 대법원 공식 사이트 + 민간 플랫폼 파악 → 관심 물건 검색 → 입찰 준비
 // Q3. courtauction.go.kr 공식 / 경매마당·우리경매 초보자용 무료 / 옥션원·한국법원경매정보 전문 / 입찰은 반드시 공식사이트에서만

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 실비보험 청구 방법에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 보험사 앱에서 진료비 영수증 + 세부내역서 사진 업로드, 자기부담금(공단부담금 제외)의 70~90% 돌려받음

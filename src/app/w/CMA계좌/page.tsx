@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 은행 입출금 통장 이자가 너무 낮아서 더 높은 금리를 찾는 상황
 // Q2. CMA 계좌를 개설해서 여유 자금에 매일 이자를 받는 것
 // Q3. CMA 3가지 유형 차이, 2026년 금리 수준, 수수료 혜택, 개설 방법

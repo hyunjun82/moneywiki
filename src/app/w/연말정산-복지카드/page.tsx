@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 연말정산 복지카드에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 장애인 복지카드 결제액도 신용카드 소득공제 대상이에요., 일반 신용카드와 동일하게 15% 공제율 적용돼요.

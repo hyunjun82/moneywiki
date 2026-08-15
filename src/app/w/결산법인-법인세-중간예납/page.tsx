@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 /*
 Q1. 법인 운영 중 8월에 중간예납 고지서를 받았는데, 얼마를 어떻게 내야 하는지 모르는 상황이에요.
 Q2. 중간예납 세액을 계산하고 기한 내에 홈택스로 신고·납부할 수 있어야 해요.

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 /*
 Q1. 소득이 적은데 근로장려금을 받을 수 있는지, 얼마 받는지 궁금한 상황
 Q2. 내 소득·재산 기준으로 자격 확인하고 홈택스에서 신청까지 완료

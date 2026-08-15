@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 연말정산에서 추가 납부 세액이 크게 나와서 한 번에 내기 부담되는 상황
 // Q2. 분납 가능 여부를 확인하고, 분납 신청 또는 회사에 분할 납부를 요청한다
 // Q3. 분납 가능 금액 기준(10만원 초과), 분납 기간(3개월), 신청 방법, 이자 여부

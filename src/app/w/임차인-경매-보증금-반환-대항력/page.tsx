@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 임차인 경매 보증금에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 대항력과 우선변제권이 있으면 경매 낙찰금에서 보증금을 받을 수 있어요, 배당요구를 기한 내에 신청해야 배당받을 수 있어요

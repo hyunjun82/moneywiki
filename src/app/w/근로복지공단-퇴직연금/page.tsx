@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 /*
 Q1. 중소기업 다니는데 퇴직연금이 없어서 근로복지공단 퇴직연금에 대해 알고 싶은 상황
 Q2. 푸른씨앗 가입 조건을 확인하고 사업주에게 가입을 요청

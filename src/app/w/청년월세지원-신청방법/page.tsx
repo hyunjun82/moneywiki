@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 청년월세지원 자격이 되는 것 같은데, 어디서 어떻게 신청하는지 모르는 상황. 복지로? 주민센터? 서류는 뭐가 필요한지?
 // Q2. 복지로(bokjiro.go.kr) 온라인 또는 행정복지센터 방문 → 서류 첨부 → 9월 결과 확인 → 5월분부터 소급 수령
 // Q2-1. 복지로(bokjiro.go.kr) 신청 페이지 클릭

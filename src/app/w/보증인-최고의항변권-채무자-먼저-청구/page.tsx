@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     → 보증 서줬는데 채권자가 주채무자한테 안 가고 나한테 먼저 돈 달라고 해서, 거부할 수 있는 권리가 있는지 궁금한 상황이에요.
 // Q2. 이 사람이 이 글을 읽고 나서 할 수 있어야 하는 행동은?

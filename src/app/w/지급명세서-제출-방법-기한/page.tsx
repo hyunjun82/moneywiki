@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 직원 고용한 소상공인·사업주가 지급명세서 제출 방법과 기한 확인하는 상황
 // Q2. 홈택스에서 기한 내 제출 → 가산세 회피
 // Q3. 소득 종류별 제출 대상 / 홈택스 직접작성 vs 파일변환 / 기한(근로·사업 3월10일, 기타 2월말) / 가산세 1%

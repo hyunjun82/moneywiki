@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1: 기초연금을 받고 있는데 병원비 혜택이 추가로 있는지 궁금한 어르신
 // Q2: 의료급여 연계 구조와 건강보험료 감면 여부를 파악하고, 해당되면 신청
 // Q3: 의료급여 1종/2종 유지 조건, 건보료 경감 대상, 병원비 본인부담 차이

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     연말정산 시즌에 노동조합 회비를 냈는데 세금 환급이 되는지 궁금한 근로자
 // Q2. 이 사람이 이 글을 읽고 나서 할 수 있어야 하는 행동은?

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 연말정산 차량유지비에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 차량유지비는 연말정산 공제 대상이 아니에요., 회사에서 받는 자가운전보조금만 월 20만원까지 비과세예요.

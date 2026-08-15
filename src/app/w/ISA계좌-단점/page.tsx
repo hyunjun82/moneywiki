@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. ISA 계좌 가입하려는데 단점이 뭔지 정확히 알고 싶은 상황
 // Q2. 단점을 파악해서 본인에게 맞는지 판단하고, 가입 여부 결정
 // Q3. 3년 의무가입(중도해지 시 비과세 소멸), 해외주식 직접 불가, ETF 수수료 0.5~0.7%, 1인1계좌, 연2000만원 한도

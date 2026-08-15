@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. KB국민카드 아이행복카드에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. KB국민카드 아이행복카드는 체크카드와 신용카드 선택이 가능해요, 대형마트, 온라인쇼핑, 통신비, 관리비 할인 혜택이 있어요

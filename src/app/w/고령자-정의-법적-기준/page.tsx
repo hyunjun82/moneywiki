@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 50~60대 본인 또는 가족이 "나 고령자야? 혜택 받을 수 있어?" 확인하려는 상황
 // Q2. 내 나이가 어느 법 기준에 해당하는지 파악 → 받을 수 있는 혜택 바로 신청
 // Q3. 복지법 65세 vs 고용법 55세 vs 준고령자 50세 구분 + 나이별 받을 수 있는 혜택 목록

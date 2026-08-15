@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 이 키워드를 검색하는 사람은 지금 어떤 상황인가?
 //     실손보험금을 받았는데 의료비 공제에서 빼야 하는지 모르거나, 안 빼서 추징당할까 걱정하는 직장인
 // Q2. 이 사람이 이 글을 읽고 나서 할 수 있어야 하는 행동은?

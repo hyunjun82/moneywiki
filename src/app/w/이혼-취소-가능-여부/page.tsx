@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 이혼했는데 속임수나 협박 때문이었고 되돌리고 싶은 상황
 // Q2. 이혼 취소 가능 여부를 판단하고, 가능하면 3개월 안에 가정법원에 소송 제기
 // Q3. 사기·강박만 취소 사유, 3개월 제척기간, 재판상이혼은 불가, 조정 전치주의, 증거 준비

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1: 기초연금 신청 서류에 전월세 계약서가 왜 필요한지 모르겠는 어르신/보호자
 // Q2: 전월세 계약서가 재산 확인에 어떻게 쓰이는지 이해하고, 서류를 제대로 준비
 // Q3: 임차보증금의 재산 반영 방식, 자가/전세/월세별 차이, 서류 준비 기준

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 농지전용허가 처벌에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 농업진흥지역은 5년 이하 징역 또는 토지가액 상당 벌금이에요, 농업진흥지역 밖은 3년 이하 징역 또는 토지가액 50% 벌금이에요

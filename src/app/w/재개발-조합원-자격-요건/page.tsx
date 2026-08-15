@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 재개발 조합원 자격에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 정비구역 내 토지·건물 소유자는 자동으로 조합원이 돼요, 투기과열지구는 관리처분계획 인가 후 양수자 조합원 불가해요

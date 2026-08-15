@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1: 관리비 이상하거나 관리업체가 부당하게 운영되는 것 같아 민원을 넣고 싶은 입주민
 // Q2: 어떤 기관에 신고·민원을 넣는지 결정하고 실제로 접수
 // Q3: 입주자대표회의/지자체/국토교통부 역할 구분, K-apt 조회, 과태료 기준

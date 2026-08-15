@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 /*
 Q1. 해외주식 배당이나 해외소득에 외국 세금 냈는데, 한국에서 또 세금 내야 하는지 궁금한 상황
 Q2. 외국납부세액공제 한도를 계산하고 연말정산에서 신청까지 완료

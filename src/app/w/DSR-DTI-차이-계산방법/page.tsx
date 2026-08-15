@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 대출 상담 중 DSR/DTI 용어를 처음 듣고 내 대출 한도가 얼마인지 모르는 상황
 // Q2. DSR 계산해서 추가로 빌릴 수 있는 금액이 얼마인지 파악하는 것
 // Q3. DSR vs DTI 차이, 40% 규제 의미, 계산 공식, 스트레스DSR 3단계

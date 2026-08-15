@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 대출받으려는데 DSR 때문에 한도가 안 나온다고 해서, DSR이 뭔지·내 한도가 얼마인지 궁금
 // Q2. DSR 계산법을 이해하고 내 대출 가능 한도를 파악한다
 // Q3. DSR 공식, 은행40%/비은행50% 한도, 스트레스DSR 3단계, 예외항목, 낮추는 방법

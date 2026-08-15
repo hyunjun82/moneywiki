@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 import {
   H2, SectionBadge, GreenBox, BorderBox, Divider, body,
   EligibilityChecker, Steps, FAQ, References, Disclaimer,

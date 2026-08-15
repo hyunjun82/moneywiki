@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1: 버스·지하철 이용 금액이 연말정산에서 공제되는지, 한도가 얼마인지 궁금한 직장인
 // Q2: 대중교통 소득공제 조건과 한도 확인
 // Q3: 공제율 80%(2024~), 추가공제 300만원 한도, 총급여 25% 초과 시 적용, KTX·시외버스 포함

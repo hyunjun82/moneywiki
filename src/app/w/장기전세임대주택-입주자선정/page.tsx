@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 장기전세임대 입주자선정에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 무주택 세대구성원이면서 소득과 자산 기준 충족해야 해요, 동일순위는 가점, 미성년자녀 수, 추첨 순으로 선정돼요

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 경매 공유자 우선매수신고 최고가낙찰자 관련 정보가 필요한 상황
 // Q2. 핵심 내용 파악 → 조건·절차 확인 → 실행
 // Q3. 자격 요건, 절차, 기한, 주의사항

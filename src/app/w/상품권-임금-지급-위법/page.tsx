@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 상품권 임금 지급에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 임금은 통화(현금, 계좌이체)로 전액 지급이 원칙, 상품권, 현물 지급은 근로기준법 위반, 2년 이하 징역 또는 2천만원 이하 벌금

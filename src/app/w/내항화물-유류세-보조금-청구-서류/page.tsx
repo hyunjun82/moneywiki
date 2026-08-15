@@ -1,6 +1,4 @@
 "use client";
-import { Divider } from "@/components/article-ui/Divider";
-
 // Q1. 내항화물선을 운영하는데 유류세 보조금 청구에 필요한 서류가 뭔지 궁금한 상황이에요.
 // Q2. 필요 서류를 갖춰서 유류세 보조금을 청구하는 행동.
 // Q3. 필수 서류 5가지, 제출처, 청구 기한, 지원 금액 기준.

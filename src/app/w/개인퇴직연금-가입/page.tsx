@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 /*
 Q1. 노후 대비하면서 세액공제도 받고 싶은데, IRP를 어디서 어떻게 가입하는지 모르는 상황이에요.
 Q2. 금융기관별 차이를 비교하고, 온라인으로 IRP 계좌를 개설할 수 있어야 해요.

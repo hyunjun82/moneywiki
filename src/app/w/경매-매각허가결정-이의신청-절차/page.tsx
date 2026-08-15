@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 /*
 Q1. 경매 낙찰 후 매각허가결정에 문제가 있는데, 이의를 제기할 수 있는지·어떻게 하는지 모르는 상황이에요.
 Q2. 이의신청 vs 즉시항고를 구분하고, 7일 이내에 법원에 제출할 수 있어야 해요.

@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 농지를 다른 용도로 쓰려는데 "부담금 얼마 내야 하지?" 계산하고 싶은 상황
 // Q2. 내 농지 지역 확인 → 요율 적용 → 부담금 계산 → 납부
 // Q3. 농업진흥지역 30% vs 비농업진흥지역 20%, 상한 5만원/㎡, 감면·면제 대상, 납부 방법

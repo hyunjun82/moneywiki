@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 개인파산 신청 법원에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 주소지 관할 지방법원에 제출하면 돼요. 서울은 서울회생법원이에요., 방문, 전자소송, 우편 중 선택 가능해요. 전자소송이 편하고 10% 할인돼요.

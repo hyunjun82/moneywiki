@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 근로자대표에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 근로자대표는 근로자 과반수를 대표해서 회사와 협의·합의하는 사람이에요, 임기는 3년이고, 선출 방식은 투표나 합의로 정할 수 있어요

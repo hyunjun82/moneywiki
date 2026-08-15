@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 가사근로자 근로시간에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 가사근로자 최소 근로시간은 주당 15시간 이상이에요, 법정 근로시간은 1주 40시간, 1일 8시간이 원칙이에요

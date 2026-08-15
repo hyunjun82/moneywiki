@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 무보험 교통사고 보험사 청구에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 무보험차상해 특약 가입 시 내 보험사에 청구 가능해요, 최대 2억원까지 보상받을 수 있어요

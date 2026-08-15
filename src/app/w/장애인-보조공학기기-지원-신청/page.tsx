@@ -1,6 +1,4 @@
 "use client";
-import { BorderBox } from "@/components/article-ui/BorderBox";
-
 // Q1. 보조기기에 대해 알아보려는 상황
 // Q2. 관련 정보를 확인하고 실행한다
 // Q3. 중증 장애인은 최대 2,000만원, 일반 장애인은 1,500만원까지 지원받아요, 신청은 한국장애인고용공단에 연중 가능하고, 예산 소진 시까지 접수해요
