@@ -62,6 +62,23 @@ for (const file of fs.readdirSync(ART_DIR).filter((f) => f.endsWith(".ts") && f 
     }
     const ev = JSON.parse(fs.readFileSync(evPath, "utf8"));
 
+    // 증거 신선도 — 2년 된 도메인이라 예전 글의 수치가 지금과 다를 수 있다.
+    // 오래된 증거 JSON을 재사용하면 낡은 값이 그대로 통과하므로 막는다.
+    const days = (Date.now() - new Date(ev.verifiedAt).getTime()) / 86_400_000;
+    if (!ev.verifiedAt || Number.isNaN(days)) {
+      console.error(`❌ [${art.slug}] 증거 JSON에 verifiedAt이 없음`);
+      fail++;
+      continue;
+    }
+    if (days > 30) {
+      console.error(
+        `❌ [${art.slug}] 증거가 ${Math.floor(days)}일 전 수집분 (${ev.verifiedAt}) — ` +
+          `npm run evidence 로 다시 수집하세요. 낡은 수치가 그대로 실릴 수 있습니다.`
+      );
+      fail++;
+      continue;
+    }
+
     // 스크린샷 실존 확인
     const missingShots = [...new Set(ev.facts.map((f) => f.screenshot).filter(Boolean))]
       .filter((s) => !fs.existsSync(path.join(EV_DIR, art.slug, s)));

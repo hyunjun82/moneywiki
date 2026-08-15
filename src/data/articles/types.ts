@@ -131,12 +131,26 @@ export type SectionWidget =
     };
 
 export interface MainSection {
+  /**
+   * 소제목 위 짧은 주제 라벨. (정본 템플릿 .eyebrow — "지원 대상", "구비 서류")
+   * 4~8자. 소제목을 잘라 쓰지 않는다 — 바로 아래 h2와 같은 말이 반복되면 안 된다.
+   */
+  eyebrow: string;
+
   heading: string;
   body: string;
   highlight?: string;
+
+  /**
+   * 내부 유도 — 스포크/허브/계산기로 자연스럽게 넘긴다.
+   * bridge는 링크 앞에 놓이는 유도 문장이며 필수다.
+   *   bridge: "계산 방법을 잘 살펴보셨나요? 그렇다면 실제 금액부터 확인해 보시는 게 좋겠죠."
+   *   label:  "퇴직금 계산 방법 보기"
+   */
   link?: {
     slug: string;
     label: string;
+    bridge: string;
   };
   sourceQuote?: {
     excerpt: string;

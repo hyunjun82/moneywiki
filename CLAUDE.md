@@ -40,11 +40,18 @@ npm run evidence <slug> -- --law <법령명>:<조,조> --url <공식URL>
 
 ### 4. 템플릿·JSON과 대조한다
 ```bash
-npm run verify:articles    # 템플릿 블록 + 키워드 + 출처 + 보호자산
-npm run verify:evidence    # 본문 수치 ↔ 증거 JSON
+npm run verify:articles    # 템플릿 프로필 대조 + 키워드 + 출처 + 보호자산
+npm run verify:evidence    # 본문 수치 ↔ 증거 JSON + 증거 신선도(30일)
 ```
 ERROR면 템플릿을 다시 열어 대조하고 고쳐 쓴다. 통과할 때까지 반복.
 검증기가 못 잡는 오해의 소지·과장·근거 없는 단언은 직접 걷어낸다.
+
+**기준은 템플릿에서 자동으로 나온다.** `scripts/template-profile.mjs`가 정본 HTML을
+파싱해 섹션 수·비주얼 종류·라벨 길이·핵심콕콕 행수 등을 산출하고 검증기가 그걸 쓴다.
+숫자를 코드에 손으로 박지 않는다 — 템플릿을 고치면 기준이 따라온다.
+
+강제되는 것: 전 섹션 비주얼 보유 · 같은 비주얼 연속 금지 · eyebrow 라벨(소제목 재탕 금지)
+· 내부 링크 2개 이상 + 유도 문장 필수 · 증거 30일 이내.
 
 ## 빌드
 

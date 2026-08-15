@@ -56,7 +56,7 @@ function Section({ s, n }: { s: MainSection; n: number }) {
   const id = `q${n}`;
   return (
     <section className="q" id={id}>
-      <div className="eyebrow"><i>{n}</i><span>{s.heading.slice(0, 12)}</span></div>
+      <div className="eyebrow"><i>{n}</i><span>{s.eyebrow}</span></div>
       <h2>{s.heading}</h2>
       {s.compareTable && (
         <div className="tbl viz">
@@ -117,6 +117,7 @@ function Section({ s, n }: { s: MainSection; n: number }) {
       )}
       {s.link && (
         <p className="body" style={{ marginTop: 12 }}>
+          <Mk text={s.link.bridge} />{" "}
           <Link href={`/w/${encodeURIComponent(s.link.slug)}`}>{s.link.label} →</Link>
         </p>
       )}

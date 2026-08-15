@@ -22,6 +22,8 @@
 import * as path from "path";
 import * as fs from "fs";
 import { pathToFileURL } from "url";
+// 정본 템플릿에서 직접 추출한 기준. 기준값을 코드에 박지 않기 위함.
+import { profile as TPL } from "./template-profile.mjs";
 
 type Severity = "ERROR" | "WARN";
 
@@ -276,6 +278,99 @@ function verifyArticle(article: any): VerifyIssue[] {
         `mainSections[${i}] 첫 문장이 질문 — 결론부터 써야 한다: "${first.slice(0, 40)}"`
       );
     }
+  }
+
+  // ── 15-2 ~ 15-6. 정본 템플릿에서 직접 뽑은 프로필과 대조 ──
+  // 기준값을 사람이 옮겨 적지 않는다. docs/moneywiki-article-template.html 이 바뀌면
+  // template-profile.mjs 가 새 기준을 산출하고 아래 검사가 자동으로 따라간다.
+
+  const kindOf = (s: any): string => {
+    if (s.compareTable) return "table";
+    const w = s.widgets?.[0];
+    return w ? String(w.type) : "";
+  };
+
+  // 15-2. 비주얼 먼저 — 템플릿은 모든 섹션이 비주얼을 갖는다
+  if (TPL.sections.allHaveVisual) {
+    const textOnly = secs
+      .map((s: any, i: number) => (kindOf(s) ? -1 : i + 1))
+      .filter((n: number) => n > 0);
+    if (textOnly.length > 0) {
+      push(
+        "template-visual-first",
+        "ERROR",
+        `비주얼 없이 텍스트만 있는 섹션 q${textOnly.join(", q")} ` +
+          `(${textOnly.length}/${secs.length}) — 템플릿은 전 섹션이 비주얼로 시작합니다`
+      );
+    }
+  }
+
+  // 15-3. 비주얼 다양성 — 템플릿은 같은 종류를 연달아 쓰지 않는다
+  const kinds = secs.map(kindOf).filter(Boolean);
+  let run = 1;
+  for (let i = 1; i < kinds.length; i++) {
+    run = kinds[i] === kinds[i - 1] ? run + 1 : 1;
+    if (run > TPL.sections.maxSameKindRun) {
+      push(
+        "template-visual-variety",
+        "WARN",
+        `q${i}과 q${i + 1}이 같은 비주얼(${kinds[i]}) 연속 — 템플릿은 매번 다른 종류를 씁니다`
+      );
+      break;
+    }
+  }
+  const distinct = new Set(kinds).size;
+  const minKinds = Math.min(3, TPL.sections.minVisualKinds);
+  if (distinct < minKinds) {
+    push(
+      "template-visual-variety",
+      "WARN",
+      `비주얼 종류가 ${distinct}가지 — 템플릿은 ${TPL.sections.minVisualKinds}가지를 씁니다 (최소 ${minKinds})`
+    );
+  }
+
+  // 15-4. eyebrow 라벨 — 템플릿은 짧은 주제 라벨을 단다 (소제목 재탕 금지)
+  if (TPL.eyebrow.required) {
+    const { min, max } = TPL.eyebrow.len;
+    for (let i = 0; i < secs.length; i++) {
+      const eb: string = (secs[i].eyebrow ?? "").trim();
+      if (!eb) {
+        push("template-eyebrow", "ERROR", `q${i + 1}에 eyebrow 라벨이 없음 (템플릿 예: ${TPL.eyebrow.samples.slice(0, 3).join(", ")})`);
+      } else if (eb.length < min || eb.length > max + 2) {
+        push("template-eyebrow", "WARN", `q${i + 1} eyebrow "${eb}" 길이 ${eb.length}자 — 템플릿 기준 ${min}~${max}자`);
+      } else if ((secs[i].heading ?? "").includes(eb)) {
+        push("template-eyebrow", "WARN", `q${i + 1} eyebrow "${eb}"가 소제목에 그대로 들어 있음 — 같은 말 반복`);
+      }
+    }
+  }
+
+  // 15-5. 내부 유도 — 스포크·허브·계산기로 넘기는 링크와 유도 문장
+  const links = secs.filter((s: any) => s.link);
+  if (links.length < 2) {
+    push(
+      "internal-link",
+      "WARN",
+      `본문 내부 링크 ${links.length}개 — 최소 2개를 권장합니다 (스포크·계산기 유도)`
+    );
+  }
+  for (const s of links) {
+    const bridge: string = s.link.bridge ?? "";
+    if (bridge.trim().length < 15) {
+      push(
+        "internal-link-bridge",
+        "ERROR",
+        `"${s.link.label}" 링크에 유도 문장이 없거나 너무 짧음 — 뜬금없는 링크는 넣지 않습니다`
+      );
+    }
+  }
+
+  // 15-6. 요약/FAQ/핵심콕콕 행수는 템플릿 실측값을 기준으로
+  if (kf.length > 0 && (kf.length < TPL.keyFacts.rows - 1 || kf.length > TPL.keyFacts.rows + 1)) {
+    push("template-keyFacts", "WARN", `keyFacts ${kf.length}행 — 템플릿 기준 ${TPL.keyFacts.rows}행`);
+  }
+  const faqCount = article.context?.faqList?.length ?? 0;
+  if (faqCount > 0 && faqCount < TPL.faq.items - 1) {
+    push("template-faq", "WARN", `FAQ ${faqCount}개 — 템플릿 기준 ${TPL.faq.items}개`);
   }
 
   // 16. summary — 정확히 3줄
