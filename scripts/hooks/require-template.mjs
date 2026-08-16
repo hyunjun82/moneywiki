@@ -41,7 +41,11 @@ STEP 0 (건너뛰기 금지). 아래 정본 템플릿을 Read로 먼저 열어�
   ${path.relative(ROOT, TEMPLATE).replace(/\\/g, "/")}
 규칙과 템플릿이 다르면 언제나 템플릿이 이긴다.
 
-STEP 1. 타이틀 = 메인키워드 + 세부(행동)키워드 나열 + 후킹
+STEP 1. 검색어 조사 먼저. Playwright로 네이버를 열어 실제 검색어를 수집한다.
+  node scripts/collect-keywords.mjs <slug> --q "메인키워드" [--q "..."]
+  → scripts/keywords/<slug>.json 이 없으면 verify-articles가 FAIL이다.
+  타이틀 = 수집된 검색어 반영 + 세부(행동)키워드 나열 + 후킹. 감으로 짓지 않는다.
+
 STEP 2. 본문 블록을 이 순서 그대로 채운다. 순서 변경·블록 누락 금지.
   1) lead        — 타이틀이 나열한 항목을 결론부터 한 문단으로 편다
   2) heroHook    — 왜 미루면 손해인지 + 마지막 문장은 행동 유도
@@ -58,13 +62,16 @@ STEP 2. 본문 블록을 이 순서 그대로 채운다. 순서 변경·블록 �
 STEP 3. 근거는 Playwright로 연 실제 페이지에서만 얻는다. WebSearch/WebFetch는 차단되어 있다.
   npm run evidence <slug> -- --law <법령명>:<조,조> --url <공식URL>
   증거 JSON의 quote/value 안에 있는 숫자만 본문에 쓴다.
+  CTA는 넣기 전에 반드시 그 주소를 Playwright로 열어 눈으로 확인한다. 복사 금지.
+  버튼 3개 이상이 같은 주소면 verify-articles가 FAIL이다 — 섹션 성격대로 나눈다.
 
 STEP 4. 출력 위치는 src/data/articles/<카테고리>.ts 뿐이다.
   계산기 54개(scripts/calc-protected-slugs.json)와 src/app/forms/** 는 절대 건드리지 않는다.
 
 STEP 5. 검증 후 재작성 루프.
-  npm run verify:articles && npm run verify:evidence
+  npm run verify:articles && npm run verify:evidence && npx tsx scripts/verify-links.ts
   실패하면 템플릿을 다시 열어 대조하고 고쳐 쓴다. 통과할 때까지 반복한다.
+  push하면 pre-push 훅이 위 3종을 다시 강제한다 — 로컬에서 미리 통과시켜 둔다.
 `.trim();
 
   process.stdout.write(

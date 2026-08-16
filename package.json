@@ -14,7 +14,9 @@
     "postbuild": "node scripts/clean-out-txt.js",
     "evidence": "node scripts/collect-evidence.mjs",
     "verify:evidence": "node scripts/verify-evidence.mjs",
-    "verify:rendered": "node scripts/verify-rendered.mjs"
+    "verify:rendered": "node scripts/verify-rendered.mjs",
+    "verify:links": "npx tsx scripts/verify-links.ts",
+    "keywords": "node scripts/collect-keywords.mjs"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",

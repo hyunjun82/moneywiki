@@ -110,6 +110,12 @@ export const 보험: ArticleCategory = {
         {
           eyebrow: "숨은 부담",
           heading: "5세대 실손보험 전환 후 자기부담은 얼마나 늘어나나요",
+          cta: {
+            label: "금융위원회 보도자료 원문 보기",
+            url: "https://www.fsc.go.kr/no010101/86831",
+            org: "금융위원회",
+            note: "이 글의 수치가 나온 원문입니다. 부록 표까지 그대로 볼 수 있습니다.",
+          },
           widgets: [
             {
               type: "stat-box",
@@ -309,7 +315,7 @@ export const 보험: ArticleCategory = {
 
       meta: {
         title:
-          "5세대 실손보험 전환 시기, 신청 방법·할인·철회 기간부터 언제가 유리한지까지 (2026)",
+          "5세대 실손보험 갈아타기 시기, 전환 신청·할인·철회 기간부터 언제가 유리한지까지 (2026)",
         description:
           "5세대 실손보험 전환은 지금 바로 가능합니다. 자동으로 넘어가는 것이 아니라 본인이 신청해야 하고, 보험금 수령이 없으면 6개월 이내에 철회할 수 있습니다. 초기 실손 가입자용 계약전환 할인은 2026년 11월부터 6개월간 시행됩니다.",
         author: { name: "머니위키 편집팀" },
@@ -402,6 +408,12 @@ export const 보험: ArticleCategory = {
         {
           eyebrow: "기한 주의",
           heading: "5세대 실손보험 전환 할인은 얼마나 지속되나요",
+          cta: {
+            label: "금융위원회 보도자료 원문 보기",
+            url: "https://www.fsc.go.kr/no010101/86831",
+            org: "금융위원회",
+            note: "할인 제도 시행 일정이 담긴 원문입니다.",
+          },
           widgets: [
             {
               type: "stat-box",
@@ -691,6 +703,12 @@ export const 보험: ArticleCategory = {
         {
           eyebrow: "연령 기준",
           heading: "5세대 실손보험 가입 나이와 태아 보장은 어떻게 되나요",
+          cta: {
+            label: "금융위원회 보도자료 원문 보기",
+            url: "https://www.fsc.go.kr/no010101/86831",
+            org: "금융위원회",
+            note: "가입 조건이 담긴 원문입니다.",
+          },
           widgets: [
             {
               type: "stat-box",
@@ -950,6 +968,12 @@ export const 보험: ArticleCategory = {
         {
           eyebrow: "절감 폭",
           heading: "5세대 실손보험 보험료는 세대별로 얼마나 차이 나나요",
+          cta: {
+            label: "금융위원회 보도자료 원문 보기",
+            url: "https://www.fsc.go.kr/no010101/86831",
+            org: "금융위원회",
+            note: "세대별 절감폭 수치가 나온 원문입니다.",
+          },
           compareTable: {
             headers: ["현재 가입 세대", "5세대 전환 시", "근거"],
             rows: [
@@ -1176,7 +1200,7 @@ export const 보험: ArticleCategory = {
 
       meta: {
         title:
-          "5세대 실손보험 4세대 차이, 자기부담률·한도·전환 조건부터 갈아탈지 판단까지 (2026)",
+          "5세대 실손보험 차이, 4세대 대비 자기부담률·한도·전환 조건부터 갈아탈지 판단까지 (2026)",
         description:
           "5세대 실손보험은 2026년 5월 6일 출시됐습니다. 비급여를 중증과 비중증으로 나눠 비중증은 한도 1천만원·자기부담률 50%로 조정하고, 보험료는 4세대 대비 약 30% 낮췄습니다. 4세대와 무엇이 다른지, 전환 조건과 철회 기간까지 정리했습니다.",
         author: { name: "머니위키 편집팀" },
@@ -1244,6 +1268,12 @@ export const 보험: ArticleCategory = {
         {
           eyebrow: "보장 구조",
           heading: "4세대와 5세대 실손보험 보장 한도는 무엇이 달라졌나요",
+          cta: {
+            label: "금융위원회 보도자료 원문 보기",
+            url: "https://www.fsc.go.kr/no010101/86831",
+            org: "금융위원회",
+            note: "4세대·5세대 비교표가 담긴 원문입니다.",
+          },
           compareTable: {
             headers: ["구분", "기존", "5세대"],
             rows: [
@@ -1630,6 +1660,12 @@ export const 보험: ArticleCategory = {
         {
           eyebrow: "입원 기준",
           heading: "급여 입원은 자기부담금이 다르게 계산되나요",
+          cta: {
+            label: "금융위원회 보도자료 원문 보기",
+            url: "https://www.fsc.go.kr/no010101/86831",
+            org: "금융위원회",
+            note: "자기부담금 계산 예시가 담긴 원문입니다.",
+          },
           widgets: [
             {
               type: "checklist",
@@ -2008,6 +2044,12 @@ export const 보험: ArticleCategory = {
         {
           eyebrow: "개편 배경",
           heading: "왜 비중증 비급여만 자기부담률을 올렸나요",
+          cta: {
+            label: "금융위원회 보도자료 원문 보기",
+            url: "https://www.fsc.go.kr/no010101/86831",
+            org: "금융위원회",
+            note: "개편 배경 수치가 담긴 원문입니다.",
+          },
           widgets: [
             {
               type: "stat-box",
@@ -2396,6 +2438,12 @@ export const 보험: ArticleCategory = {
         {
           eyebrow: "구조 배경",
           heading: "5세대 실손보험 보장 구조는 왜 이렇게 설계됐나요",
+          cta: {
+            label: "금융위원회 보도자료 원문 보기",
+            url: "https://www.fsc.go.kr/no010101/86831",
+            org: "금융위원회",
+            note: "설계 배경과 통계가 담긴 원문입니다.",
+          },
           widgets: [
             {
               type: "checklist",
@@ -2634,6 +2682,12 @@ export const 보험: ArticleCategory = {
         {
           eyebrow: "가격 비교",
           heading: "5세대 실손보험 보험료는 얼마나 저렴한가요",
+          cta: {
+            label: "금융위원회 보도자료 원문 보기",
+            url: "https://www.fsc.go.kr/no010101/86831",
+            org: "금융위원회",
+            note: "절감폭 수치가 나온 원문입니다.",
+          },
           widgets: [
             {
               type: "stat-box",
@@ -3052,6 +3106,12 @@ export const 보험: ArticleCategory = {
         {
           eyebrow: "개편 이유",
           heading: "왜 도수치료가 조정 대상이 됐나요",
+          cta: {
+            label: "금융위원회 보도자료 원문 보기",
+            url: "https://www.fsc.go.kr/no010101/86831",
+            org: "금융위원회",
+            note: "면책 옵션 구성이 담긴 원문입니다.",
+          },
           widgets: [
             {
               type: "stat-box",
@@ -3302,6 +3362,12 @@ export const 보험: ArticleCategory = {
         {
           eyebrow: "용어 정리",
           heading: "실손보험 갱신과 재가입은 무엇이 다른가요",
+          cta: {
+            label: "금융위원회 보도자료 원문 보기",
+            url: "https://www.fsc.go.kr/no010101/86831",
+            org: "금융위원회",
+            note: "재가입 주기 설명이 담긴 원문입니다.",
+          },
           compareTable: {
             headers: ["구분", "갱신", "재가입"],
             rows: [

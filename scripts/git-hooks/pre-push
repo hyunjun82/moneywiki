@@ -1,0 +1,54 @@
+#!/bin/sh
+#
+# Git Pre-Push: 품질 게이트
+#
+# 이전 버전의 버그 2개를 고쳤다 (2026-08-16):
+#   1. `git diff --cached`는 push 시점에 항상 비어 있어 MD 검증이 한 번도 돈 적이 없었다
+#      → push 범위(원격..HEAD)를 diff한다
+#   2. src/data/articles/*.ts 는 아예 검사 대상이 아니었다
+#      → articles 변경 시 verify:articles + verify:evidence + verify:links 강제
+
+echo ""
+echo "══════════ Pre-Push 품질 게이트 ══════════"
+
+# push 범위 계산 — upstream이 없으면 origin/main 기준
+UPSTREAM=$(git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null || echo origin/main)
+RANGE_FILES=$(git diff --name-only "$UPSTREAM"..HEAD 2>/dev/null)
+if [ -z "$RANGE_FILES" ]; then
+    echo "변경 파일 없음 — 통과"
+    exit 0
+fi
+
+# ── 게이트 1: articles(.ts) 글 변경 시 3종 검증 ──
+if echo "$RANGE_FILES" | grep -q "^src/data/articles/.*\.ts$"; then
+    echo ""
+    echo "▶ articles 변경 감지 — verify:articles"
+    npm run verify:articles || { echo "✗ verify:articles 실패 — push 차단"; exit 1; }
+
+    echo "▶ verify:evidence"
+    node scripts/verify-evidence.mjs || { echo "✗ verify:evidence 실패 — push 차단"; exit 1; }
+
+    echo "▶ verify:links (행동 URL 실접속 검사, 7일 캐시)"
+    npx tsx scripts/verify-links.ts || { echo "✗ verify:links 실패 — push 차단"; exit 1; }
+fi
+
+# ── 게이트 2: MD 글 변경 시 기존 품질 검사 ──
+WIKI_FILES=$(echo "$RANGE_FILES" | grep "^content/wiki/.*\.md$")
+if [ -n "$WIKI_FILES" ]; then
+    FAIL=0
+    for file in $WIKI_FILES; do
+        [ -f "$file" ] || continue
+        if node .claude/scripts/verify-wiki-quality.js "$file" > /dev/null 2>&1; then
+            echo "  ✓ $file"
+        else
+            echo "  ✗ $file"
+            node .claude/scripts/verify-wiki-quality.js "$file" 2>&1 | grep -E "(❌|🔴)" | head -5
+            FAIL=1
+        fi
+    done
+    [ "$FAIL" = "1" ] && { echo "✗ MD 품질 검증 실패 — push 차단"; exit 1; }
+fi
+
+echo "✓ 게이트 통과"
+echo ""
+exit 0

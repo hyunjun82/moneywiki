@@ -289,6 +289,56 @@ function verifyArticle(article: any): VerifyIssue[] {
     }
   }
 
+  // 12-4. CTA 단조로움 — 버튼이 3개 이상인데 전부 같은 주소면 유도가 아니라 도배다.
+  //       실제로 보험 11편의 버튼 44개가 전부 한 링크였다 (2026-08-16 발견).
+  //       섹션마다 하는 일(조회·신청·청구)이 다르면 버튼도 달라야 한다.
+  if (actionUrls.length >= 3) {
+    const unique = new Set(actionUrls.map((a) => a.url));
+    if (unique.size === 1) {
+      push(
+        "cta-monotony",
+        "ERROR",
+        `행동 버튼 ${actionUrls.length}개가 전부 같은 주소(${actionUrls[0].url}) — ` +
+          `섹션 성격에 맞는 딥링크로 나누세요. 각 링크는 열어서 확인한 뒤 넣습니다`
+      );
+    }
+  }
+
+  // 12-5. 검색어 조사 — 감으로 제목을 짓지 않는다.
+  //       collect-keywords.mjs가 네이버에서 뽑은 scripts/keywords/<slug>.json이 있어야 하고,
+  //       타이틀은 수집된 검색어 중 최소 1개와 겹쳐야 한다 (공백 제거 후 부분일치).
+  {
+    const kwFile = path.join(ROOT, "scripts", "keywords", `${article.slug}.json`);
+    if (!fs.existsSync(kwFile)) {
+      push(
+        "keyword-research",
+        "ERROR",
+        `검색어 조사 파일 없음 — node scripts/collect-keywords.mjs ${article.slug} --q "..." 를 먼저 돌리세요`
+      );
+    } else {
+      try {
+        const kw = JSON.parse(fs.readFileSync(kwFile, "utf8"));
+        const collected: string[] = (kw.queries ?? []).flatMap((q: any) => [
+          ...(q.autocomplete ?? []),
+          ...(q.related ?? []),
+        ]);
+        const flat = (s: string) => s.replace(/\s+/g, "");
+        const title = flat(article.meta?.title ?? "");
+        const hit = collected.filter((c) => c && title.includes(flat(c)));
+        if (collected.length > 0 && hit.length === 0) {
+          push(
+            "keyword-research",
+            "ERROR",
+            `타이틀이 수집된 검색어 ${collected.length}개 중 어느 것과도 겹치지 않음 — ` +
+              `실제 검색어(예: ${collected.slice(0, 3).join(", ")})를 타이틀에 반영하세요`
+          );
+        }
+      } catch {
+        push("keyword-research", "ERROR", `검색어 파일이 깨져 있음: ${kwFile}`);
+      }
+    }
+  }
+
   // 13. keyFacts — 📌 핵심콕콕 7~9행
   const kf: any[] = article.keyFacts ?? [];
   if (kf.length === 0) {
