@@ -44,6 +44,10 @@ export interface NewsDoc {
     gold?: { usdPerOz: number; changePct: number; dir: "up" | "down" | "none"; krwPerDon: number };
     silver?: { usdPerOz: number; changePct: number; dir: "up" | "down" | "none"; krwPerDon: number };
   } | null;
+  /** v2: 독자 훅 리드 문단 */
+  lead?: string;
+  /** v2: 소제목(H2) 섹션 구조 */
+  sections?: { heading: string; paragraphs: string[] }[];
   paragraphs: string[];
   sources?: string[];
 }
@@ -128,13 +132,39 @@ export default function NewsView({ doc }: { doc: NewsDoc }) {
 
       <section className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-7 items-start">
         <div className="flex flex-col gap-7">
-          <Card className="p-[26px] flex flex-col gap-5">
-            {doc.paragraphs.map((p) => (
-              <p key={p.slice(0, 24)} className="m-0 text-[16px] leading-[1.85] text-[#3C424A]">
-                {p}
-              </p>
-            ))}
-          </Card>
+          {doc.sections?.length ? (
+            <Card className="p-[26px] flex flex-col gap-6">
+              {doc.lead ? (
+                <p className="m-0 text-[17px] leading-[1.85] text-[#1A1D21] font-medium">
+                  {doc.lead}
+                </p>
+              ) : null}
+              {doc.sections.map((s) => (
+                <section key={s.heading} className="flex flex-col gap-3.5">
+                  <h2 className="m-0 flex items-center gap-2.5 text-[20px] sm:text-[23px] font-extrabold tracking-[-0.02em] text-[#1A1D21]">
+                    <span className="w-2 h-5 rounded-[4px] bg-gradient-to-b from-[#F3DE9C] to-[#C79A22] shrink-0" />
+                    {s.heading}
+                  </h2>
+                  {s.paragraphs.map((p) => (
+                    <p
+                      key={p.slice(0, 24)}
+                      className="m-0 text-[16px] leading-[1.85] text-[#3C424A]"
+                    >
+                      {p}
+                    </p>
+                  ))}
+                </section>
+              ))}
+            </Card>
+          ) : (
+            <Card className="p-[26px] flex flex-col gap-5">
+              {doc.paragraphs.map((p) => (
+                <p key={p.slice(0, 24)} className="m-0 text-[16px] leading-[1.85] text-[#3C424A]">
+                  {p}
+                </p>
+              ))}
+            </Card>
+          )}
 
           {rows.length > 0 ? (
             <Card className="p-[26px] flex flex-col gap-4">
