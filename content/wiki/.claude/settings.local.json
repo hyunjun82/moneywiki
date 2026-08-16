@@ -21,7 +21,9 @@
       "Bash(sed -i 's/    key: \"\"amount\"\"/    id: \"\"amount\"\"/' /c/Users/user/wiki-site/src/app/w/irp-퇴직금-인출/page.tsx)",
       "Bash(sed -i 's/    key: \"\"age\"\"/    id: \"\"age\"\"/' /c/Users/user/wiki-site/src/app/w/irp-퇴직금-인출/page.tsx)",
       "Bash(sed -i '/    key: \"\"result1\"\"/d' /c/Users/user/wiki-site/src/app/w/irp-퇴직금-인출/page.tsx)",
-      "Bash(sed -i '/    key: \"\"result2\"\"/d' /c/Users/user/wiki-site/src/app/w/irp-퇴직금-인출/page.tsx)"
+      "Bash(sed -i '/    key: \"\"result2\"\"/d' /c/Users/user/wiki-site/src/app/w/irp-퇴직금-인출/page.tsx)",
+      "Bash(netstat -ano)",
+      "mcp__playwright__browser_resize"
     ],
     "additionalDirectories": [
       "C:\\Users\\user\\wiki-site\\src\\app\\w\\퇴직금-소득세",

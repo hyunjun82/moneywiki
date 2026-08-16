@@ -38,16 +38,20 @@ export default function SellView() {
     const q = it.userSell;
     // 시안의 매입률(98%·92%·88%)은 데이터에 없는 값이라 쓰지 않는다.
     // 매입가 ÷ (순금 매입가 × 함량) 으로 오늘 값에서 직접 계산한다.
-    const rate = buybackRate(q?.price, sell?.price, it.key);
+    // 순금 24K는 자기 자신이 분모라 % 대신 "기준"으로 표기한다 (100.1% 방지).
+    const rate = it.key === "gold24" ? null : buybackRate(q?.price, sell?.price, it.key);
     return {
       name: it.name,
       don: q ? won(q.price) : null,
       gram: q ? won(perGram(q.price)) : null,
-      last: rate ? (
-        <span className="text-[#8A6A16]">{rate.toFixed(1)}%</span>
-      ) : (
-        <span className="text-[13px] font-normal text-[#9CA1A8]">—</span>
-      ),
+      last:
+        it.key === "gold24" && q ? (
+          <span className="text-[13px] font-semibold text-[#8A6A16]">기준</span>
+        ) : rate ? (
+          <span className="text-[#8A6A16]">{rate.toFixed(1)}%</span>
+        ) : (
+          <span className="text-[13px] font-normal text-[#9CA1A8]">—</span>
+        ),
     };
   });
 
@@ -113,7 +117,8 @@ export default function SellView() {
           <PriceTable head="순도" rows={rows} lastLabel="매입률" />
           <span className="text-[14px] text-[#9CA1A8]">
             매입률은 오늘 고시된 매입가를 순금 매입가와 각인 함량(24K 99.9% · 18K 75% · 14K
-            58.5%)으로 나눈 값입니다. 감정 결과에 따라 실제 매입가는 달라질 수 있습니다.
+            58.5%)으로 나눈 값입니다. 순금 24K는 계산의 기준이라 매입률을 따로 표시하지
+            않습니다. 감정 결과에 따라 실제 매입가는 달라질 수 있습니다.
           </span>
         </Card>
 
@@ -137,7 +142,7 @@ export default function SellView() {
         primary={{
           href: "/gold/buy",
           title: "금 살 때 가격 보기",
-          sub: buy ? `24K 1돈 ${won(buy.price)}원` : "품목별 판매가",
+          sub: buy ? `24K 1돈 ${won(buy.price)}원 · 부가세 별도` : "품목별 판매가",
         }}
         secondary={{ href: "/gold", title: "오늘의 시세 홈", sub: "국내·국제 한눈에" }}
       />

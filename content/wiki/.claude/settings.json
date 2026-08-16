@@ -47,7 +47,8 @@
       "Read(//c/Users/user/wiki-site/content/wiki/**)",
       "Read(//c/Users/user/wiki-site/content/wiki/s/.*>/;s/**)",
       "Read(//c/Users/user/wiki-site/content/wiki/s/>/;s/**)",
-      "Read(//c/Users/user/wiki-site/content/wiki/s/**)"
+      "Read(//c/Users/user/wiki-site/content/wiki/s/**)",
+      "Bash(git -C c:/Users/user/wiki-site push origin main)"
     ],
     "additionalDirectories": [
       "c:\\Users\\user\\wiki-site\\src\\data",

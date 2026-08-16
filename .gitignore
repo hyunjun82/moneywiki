@@ -78,3 +78,6 @@ extracted-*.json
 .claude/worktrees/
 .clone/
 .next_bak 
+
+# Cowork: 삭제 예정 파일 보관함 (커밋 금지)
+_to_delete/
