@@ -3,10 +3,12 @@
 /**
  * 금시세 데이터 계층.
  *
- * 데이터는 jjyu 저장소가 아니라 quiz.jjyu.co.kr 이 1시간마다 갱신한다.
- * 여기서는 브라우저가 그 JSON을 읽기만 한다 — 저장소에 시세를 커밋하면
- * /w/ 글 2,138개가 매번 재빌드되고(월 730회) Cloudflare Pages 무료 한도
- * 500회를 넘긴다. 게다가 output:'export' 라 시세가 빌드 시점에 얼어붙는다.
+ * 데이터는 이 저장소의 금 전용 갱신기(.github/workflows/gold-price.yml +
+ * scripts/gold/update-price.mjs)가 월~토 매시 price-data 브랜치에 발행한다.
+ * 커밋 메시지의 [CI Skip] 덕분에 Cloudflare Pages 빌드는 돌지 않는다 —
+ * 시세를 main에 커밋하면 /w/ 글 2,000여 개가 매번 재빌드되고(월 730회)
+ * Cloudflare Pages 무료 한도 500회를 넘기기 때문. output:'export' 라
+ * 빌드에 넣으면 시세가 그 시점에 얼어붙는 문제도 피한다.
  *
  * 모든 최상위 키는 없을 수 있다. 소스 한 곳이 죽어도 나머지는 살아 있게
  * 설계된 규격이므로 반드시 옵셔널 체이닝으로 접근하고, 값이 없으면 그 칸을
@@ -15,7 +17,8 @@
 
 import { useEffect, useState } from "react";
 
-export const PRICE_URL = "https://quiz.jjyu.co.kr/price.json";
+export const PRICE_URL =
+  "https://raw.githubusercontent.com/hyunjun82/moneywiki/price-data/price.json";
 
 /** 1돈 = 3.75g */
 export const GRAM_PER_DON = 3.75;
