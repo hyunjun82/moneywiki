@@ -1,0 +1,69 @@
+# 금시세 일일 기사 자동 발행
+#
+# 매일 06:00 KST에 src/data/gold-news/YYYY-MM-DD.json 을 생성해 main에 커밋한다.
+# 커밋이 올라가면 Cloudflare Pages가 재빌드하면서 /gold/news/YYYY-MM-DD 가 생기고,
+# 기존 IndexNow 워크플로 + 아래의 직접 핑으로 검색엔진에 즉시 알린다.
+
+name: Gold News Publish
+
+on:
+  schedule:
+    - cron: "0 21 * * *" # UTC 21:00 = KST 06:00 매일
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gold-news
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate today's article
+        run: node scripts/gold/generate-news.mjs
+
+      - name: Commit & push to main
+        id: push
+        run: |
+          git config user.name "gold-news-bot"
+          git config user.email "actions@github.com"
+          git add src/data/gold-news
+          if git diff --cached --quiet; then
+            echo "변경 없음 — 오늘 기사가 이미 있음"
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          TODAY=$(TZ=Asia/Seoul date +%F)
+          git commit -m "feat: 금시세 뉴스 ${TODAY} 자동 발행"
+          git pull --rebase origin main
+          git push origin main
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      - name: IndexNow ping
+        if: steps.push.outputs.pushed == 'true'
+        run: |
+          TODAY=$(TZ=Asia/Seoul date +%F)
+          curl -s -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d '{
+              "host": "www.jjyu.co.kr",
+              "key": "cf14d2ece5b0438e848760be86604782",
+              "keyLocation": "https://www.jjyu.co.kr/cf14d2ece5b0438e848760be86604782.txt",
+              "urlList": [
+                "https://www.jjyu.co.kr/gold/news/'"${TODAY}"'",
+                "https://www.jjyu.co.kr/gold/news",
+                "https://www.jjyu.co.kr/gold"
+              ]
+            }' || true

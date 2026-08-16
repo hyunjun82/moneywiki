@@ -8,6 +8,7 @@ const TABS = [
   { href: "/gold/buy", label: "금 살 때" },
   { href: "/gold/sell", label: "금 팔 때" },
   { href: "/gold/calculator", label: "금 계산기" },
+  { href: "/gold/news", label: "금값 뉴스" },
 ] as const;
 
 /** 금 섹션 4개 페이지를 잇는 탭. 모든 페이지 상단에 같은 자리로 나온다. */

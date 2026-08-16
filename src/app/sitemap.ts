@@ -43,6 +43,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
                 changeFrequency: "weekly" as const,
                 priority: 0.8,
       },
+      // 금시세 뉴스 목록
+      {
+                url: `${baseUrl}/gold/news`,
+                lastModified: new Date(),
+                changeFrequency: "daily" as const,
+                priority: 0.8,
+      },
       // 정책 페이지 (privacy는 AdSense 필수)
       ...["about", "privacy", "terms"].map((p) => ({
                 url: `${baseUrl}/${p}`,
@@ -100,5 +107,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     }));
 
-  return [...staticUrls, ...wikiUrls, ...tsxUrls, ...articleUrls];
+  // 금시세 일일 기사 (src/data/gold-news/*.json)
+  const goldNewsDir = path.join(process.cwd(), "src/data/gold-news");
+  let goldNewsUrls: MetadataRoute.Sitemap = [];
+  if (fs.existsSync(goldNewsDir)) {
+    goldNewsUrls = fs
+      .readdirSync(goldNewsDir)
+      .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
+      .map((f) => ({
+        url: `${baseUrl}/gold/news/${f.replace(".json", "")}`,
+        lastModified: new Date(),
+        changeFrequency: "daily" as const,
+        priority: 0.7,
+      }));
+  }
+
+  return [...staticUrls, ...goldNewsUrls, ...wikiUrls, ...tsxUrls, ...articleUrls];
 }
