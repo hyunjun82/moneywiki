@@ -170,7 +170,10 @@ async function collectUrl(page, url) {
   await page.waitForTimeout(2500);
   const { text, title } = await page.evaluate(() => {
     const el = document.querySelector(".article_body, #article_body, .view_cont, article, main") || document.body;
-    return { text: el.innerText.slice(0, 8000), title: document.title };
+    // 8,000자로 자르면 긴 보도자료의 뒷부분이 통째로 날아간다.
+    // 금융위 5세대 실손 보도자료(11,699자)에서 도수치료·재가입 주기·중복보상
+    // 문장이 8,000자 뒤에 있어 근거가 없는 것처럼 보였다.
+    return { text: el.innerText.slice(0, 16000), title: document.title };
   });
   const org = orgOf(url, title);
 
