@@ -63,6 +63,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
                 changeFrequency: "daily" as const,
                 priority: 0.8,
       },
+      // 로또 번호 추천 — 추첨기 2개
+      {
+                url: `${baseUrl}/lotto`,
+                lastModified: new Date(),
+                changeFrequency: "weekly" as const,
+                priority: 0.8,
+      },
+      {
+                url: `${baseUrl}/lotto/tool`,
+                lastModified: new Date(),
+                changeFrequency: "weekly" as const,
+                priority: 0.75,
+      },
       // 정책 페이지 (privacy는 AdSense 필수)
       ...["about", "privacy", "terms"].map((p) => ({
                 url: `${baseUrl}/${p}`,
