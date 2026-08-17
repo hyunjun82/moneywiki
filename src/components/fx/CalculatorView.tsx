@@ -384,12 +384,7 @@ function DestCard({ rate }: { rate: FxRate }) {
           {rate.code}
         </div>
       ) : null}
-      <Link
-        href={`/fx/${rate.code.toLowerCase()}`}
-        className="mt-3 block text-[13px] font-bold text-[#1F4E79] hover:underline"
-      >
-        {countryOf(rate.name)} 환율 자세히 →
-      </Link>
+
     </Card>
   );
 }
@@ -425,18 +420,12 @@ function RateTable({ rows }: { rows: FxRate[] }) {
                 className={`grid ${cols} gap-4 px-5 sm:px-[30px] py-[15px] border-b border-[#E2DFD7] items-center`}
               >
                 <div className="flex items-center gap-3 min-w-0">
-                  <Link
-                    href={`/fx/${r.code.toLowerCase()}`}
-                    className="flex-none px-2 py-1 rounded-[7px] bg-[#F7F6F3] text-[11.5px] font-extrabold text-[#6C727B] tracking-[0.04em] hover:bg-[#E9F0F7] hover:text-[#1F4E79]"
-                  >
+                  <div className="flex-none px-2 py-1 rounded-[7px] bg-[#F7F6F3] text-[11.5px] font-extrabold text-[#6C727B] tracking-[0.04em]">
                     {r.code}
-                  </Link>
-                  <Link
-                    href={`/fx/${r.code.toLowerCase()}`}
-                    className="text-[15px] font-semibold text-[#1A1D21] truncate hover:text-[#1F4E79]"
-                  >
+                  </div>
+                  <div className="text-[15px] font-semibold text-[#1A1D21] truncate">
                     {countryOf(r.name)}
-                  </Link>
+                  </div>
                   <div className="text-[12.5px] text-[#9CA1A8] whitespace-nowrap">
                     {r.unit} {unitNameOf(r.name)}
                   </div>
