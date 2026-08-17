@@ -1,6 +1,8 @@
 # 금시세 일일 기사 자동 발행
 #
-# 매일 06:00 KST에 src/data/gold-news/YYYY-MM-DD.json 을 생성해 main에 커밋한다.
+# 매일 05:30 KST에 src/data/gold-news/YYYY-MM-DD.json 을 생성해 main에 커밋한다.
+# 새벽에는 아직 당일 국내 고시가가 없어 전 영업일 기준으로 발행되고(언론사도 동일),
+# 오전 09:20 재실행 때 고시가 갱신되어 있으면 같은 날짜 기사를 새 숫자로 정정한다.
 # 커밋이 올라가면 Cloudflare Pages가 재빌드하면서 /gold/news/YYYY-MM-DD 가 생기고,
 # 기존 IndexNow 워크플로 + 아래의 직접 핑으로 검색엔진에 즉시 알린다.
 
@@ -8,7 +10,8 @@ name: Gold News Publish
 
 on:
   schedule:
-    - cron: "0 21 * * *" # UTC 21:00 = KST 06:00 매일
+    - cron: "30 20 * * *" # UTC 20:30 = KST 05:30 — 새벽 선발행
+    - cron: "20 0 * * *"  # UTC 00:20 = KST 09:20 — 당일 고시 반영 정정
   workflow_dispatch: {}
 
 permissions:
@@ -46,7 +49,7 @@ jobs:
             exit 0
           fi
           TODAY=$(TZ=Asia/Seoul date +%F)
-          git commit -m "feat: 금시세 뉴스 ${TODAY} 자동 발행"
+          git commit -m "feat: 금시세 뉴스 ${TODAY} 자동 발행/정정"
           git pull --rebase origin main
           git push origin main
           echo "pushed=true" >> "$GITHUB_OUTPUT"

@@ -1,0 +1,69 @@
+# 환율 갱신기 — fx.json 을 price-data 브랜치에 발행
+#
+# - 외환시장은 평일 24시간 돌아간다. 평일 30분 간격으로 갱신한다.
+# - 깃허브 예약(cron)은 지연·누락이 잦아 매시 2발을 깐다. 이미 갱신된
+#   직후면 값이 같아 커밋 없이 끝나므로 중복 실행 비용은 사실상 0이다.
+# - 수출입은행 공식 매매기준율은 스크립트가 하루 1회만 호출한다
+#   (EXIM_API_KEY 시크릿이 있을 때만. 없으면 시장환율만 발행).
+# - 커밋 메시지의 [CI Skip] 덕분에 Cloudflare Pages 빌드는 돌지 않는다.
+# - 결과 주소: https://raw.githubusercontent.com/hyunjun82/moneywiki/price-data/fx.json
+
+name: FX Rate Update
+
+on:
+  schedule:
+    - cron: "8,38 * * * 1-5"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fx-rate
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout main (스크립트)
+        uses: actions/checkout@v4
+
+      - name: Checkout price-data 브랜치 (이전 데이터)
+        uses: actions/checkout@v4
+        continue-on-error: true
+        with:
+          ref: price-data
+          path: price-data
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run updater
+        env:
+          EXIM_API_KEY: ${{ secrets.EXIM_API_KEY }}
+        run: |
+          mkdir -p price-data
+          node scripts/fx/update-fx.mjs price-data/fx.json /tmp/fx.json
+          cp /tmp/fx.json price-data/fx.json
+
+      - name: Commit & push to price-data
+        run: |
+          cd price-data
+          git config user.name "fx-rate-bot"
+          git config user.email "actions@github.com"
+          if [ ! -d .git ]; then
+            git init -b price-data
+            git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          fi
+          git add fx.json
+          if git diff --cached --quiet; then
+            echo "변경 없음 — 커밋 생략"
+            exit 0
+          fi
+          git commit -m "[CI Skip] fx rate update $(date -u +%Y-%m-%dT%H:%MZ)"
+          git pull --rebase origin price-data || true
+          git push origin HEAD:price-data

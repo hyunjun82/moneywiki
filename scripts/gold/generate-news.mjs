@@ -35,14 +35,38 @@ const korDate = (iso) => {
 
 const today = kstDate();
 const outPath = path.join(OUT_DIR, `${today}.json`);
+
+/**
+ * 이미 오늘 기사가 있어도, 그 사이 국내 고시가가 새로 나왔으면 숫자를 정정한다.
+ *
+ * 새벽에는 아직 당일 고시가 없어 전 영업일 값으로 발행된다(언론사도 같은 방식).
+ * 오전에 고시가 갱신되면 이 스크립트가 다시 돌면서 같은 날짜 기사를 최신 숫자로
+ * 다시 쓴다. 발행 시각은 새벽 그대로 두고 내용만 정확해진다.
+ */
+let existingQuoteDate = null;
 if (fs.existsSync(outPath)) {
-  console.log(`이미 존재: ${outPath} — 생성 생략`);
-  process.exit(0);
+  try {
+    existingQuoteDate = JSON.parse(fs.readFileSync(outPath, "utf8")).quoteDate ?? null;
+  } catch {
+    existingQuoteDate = null;
+  }
 }
 
 const res = await fetch(PRICE_URL, { signal: AbortSignal.timeout(20000) });
 if (!res.ok) throw new Error(`price.json HTTP ${res.status}`);
 const data = await res.json();
+
+const incomingQuoteDate = data?.retail?.quoteDate ?? null;
+if (existingQuoteDate !== null) {
+  if (incomingQuoteDate && incomingQuoteDate !== existingQuoteDate) {
+    console.log(
+      `기사 정정: 고시일 ${existingQuoteDate} → ${incomingQuoteDate} — 같은 날짜 기사를 새 숫자로 다시 씁니다`
+    );
+  } else {
+    console.log(`이미 존재하고 고시일(${existingQuoteDate}) 변동 없음 — 생성 생략`);
+    process.exit(0);
+  }
+}
 
 const items = data?.retail?.items ?? [];
 const find = (k) => items.find((it) => it.key === k);
