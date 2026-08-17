@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-16T11:49:22.888+09:00",
+  "updatedAt": "2026-08-17T09:32:19.487+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -10,7 +10,7 @@
   "retail": {
     "source": "종로금거래소",
     "sourceUrl": "https://www.jongrogx.com/",
-    "quoteDate": "2026-08-16",
+    "quoteDate": "2026-08-17",
     "unit": "원/돈",
     "note": "내가 살 때 가격은 원문에 부가세 별도로 표기되어 있습니다.",
     "items": [
@@ -92,13 +92,6 @@
       "changePct": 0.05
     },
     "history": [
-      {
-        "date": "2026-01-08",
-        "krwPerGram": 207500,
-        "krwPerDon": 778125,
-        "change": -1780,
-        "changePct": -0.85
-      },
       {
         "date": "2026-01-09",
         "krwPerGram": 210240,
@@ -1122,32 +1115,32 @@
         "changePct": 0.05
       }
     ],
-    "fetchedDate": "2026-08-16"
+    "fetchedDate": "2026-08-17"
   },
   "fx": {
-    "usdkrw": 1412,
-    "change": 5,
-    "changePct": 0.36,
-    "dir": "up",
+    "usdkrw": 1416.48,
+    "change": -0.83,
+    "changePct": -0.06,
+    "dir": "down",
     "source": "Yahoo Finance (KRW=X)"
   },
   "intl": {
     "gold": {
       "name": "금",
-      "usdPerOz": 4437.3,
-      "changePct": 1.73,
+      "usdPerOz": 4441.5,
+      "changePct": 1.33,
       "dir": "up",
-      "krwPerGram": 201439,
-      "krwPerDon": 755396,
+      "krwPerGram": 202270,
+      "krwPerDon": 758513,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
       "name": "은",
-      "usdPerOz": 65.11,
-      "changePct": 0,
+      "usdPerOz": 65.35,
+      "changePct": 0.9,
       "dir": "up",
-      "krwPerGram": 2956,
-      "krwPerDon": 11085,
+      "krwPerGram": 2976,
+      "krwPerDon": 11160,
       "source": "COMEX 은 선물 (SI=F)"
     }
   }
