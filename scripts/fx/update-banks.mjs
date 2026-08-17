@@ -116,6 +116,18 @@ try {
   console.log("이전 banks.json 없음 — 새로 생성");
 }
 
+/**
+ * 은행 공시는 하루 단위로 바뀐다. 환율 워크플로가 30분마다 돌아도
+ * 은행연합회는 하루 1회만 조회한다(상대 서버 배려 + 불필요한 트래픽 방지).
+ * 이미 오늘 받아왔으면 이전 파일을 그대로 다시 써서 끝낸다.
+ */
+if (prev.fetchedDate === kstDateStr() && !process.argv.includes("--force")) {
+  fs.mkdirSync(path.dirname(outPath), { recursive: true });
+  fs.writeFileSync(outPath, JSON.stringify(prev, null, 2) + "\n", "utf8");
+  console.log(`오늘 이미 수집됨(${prev.fetchedDate}) — 재사용하고 종료`);
+  process.exit(0);
+}
+
 /* ── 수집 ── */
 const byCurrency = {};
 const failed = [];

@@ -17,22 +17,15 @@ import {
 import {
   changeText,
   convert,
+  countryOf,
   fxColor,
-  korDate,
   korDateTime,
   perUnit,
+  unitNameOf,
   useFx,
   won,
   type FxRate,
 } from "./fxData";
-
-const PERIODS = [
-  { key: "1w", label: "1주", n: 7 },
-  { key: "1m", label: "1달", n: 30 },
-  { key: "3m", label: "3달", n: 90 },
-  { key: "1y", label: "1년", n: 365 },
-] as const;
-type PeriodKey = (typeof PERIODS)[number]["key"];
 
 const QUICK = [10000, 50000, 100000, 500000, 1000000];
 
@@ -47,7 +40,6 @@ export default function CalculatorView() {
   const [amount, setAmount] = useState("1000000");
   const [from, setFrom] = useState("KRW");
   const [to, setTo] = useState("JPY");
-  const [period, setPeriod] = useState<PeriodKey>("1m");
   const [region, setRegion] = useState("전체");
   const [query, setQuery] = useState("");
 
@@ -56,7 +48,7 @@ export default function CalculatorView() {
   const result = valid ? convert(num, from, to, rates) : null;
 
   const options = useMemo(
-    () => [{ code: "KRW", label: "KRW 원" }, ...rates.map((r) => ({ code: r.code, label: `${r.code} ${r.name ?? r.country}` }))],
+    () => [{ code: "KRW", label: "KRW 원" }, ...rates.map((r) => ({ code: r.code, label: `${r.code} ${unitNameOf(r.name)}` }))],
     [rates]
   );
 
@@ -75,13 +67,9 @@ export default function CalculatorView() {
     if (!query.trim()) return true;
     const q = query.trim().toLowerCase();
     return (
-      r.code.toLowerCase().includes(q) ||
-      (r.country ?? "").toLowerCase().includes(q) ||
-      (r.name ?? "").toLowerCase().includes(q)
+      r.code.toLowerCase().includes(q) || (r.name ?? "").toLowerCase().includes(q)
     );
   });
-
-  const chartRate = rates.find((r) => r.code === (to === "KRW" ? from : to)) ?? rates[0];
 
   return (
     <div className="flex flex-col gap-0">
@@ -113,15 +101,16 @@ export default function CalculatorView() {
               >
                 은행 환율 비교하기 →
               </Link>
-              {data?.banks?.length ? (
+              {data?.banks?.currencies?.length ? (
                 <span className="text-[13px] text-white/[0.42]">
-                  {data.banks.length}개 은행 · {rates.length}개 통화
+                  {data.banks.byCurrency[data.banks.currencies[0]]?.length ?? 0}개 은행 ·{" "}
+                  {rates.length}개 통화
                 </span>
               ) : null}
             </div>
 
             <div className="mt-[38px] pt-6 border-t border-white/[0.12] grid grid-cols-3 gap-5">
-              <HeroStat label="기준 환율" value={data?.quoteDate ? korDate(data.quoteDate) : "—"} />
+              <HeroStat label="기준" value={data?.source ? "시장 중간환율" : "—"} />
               <HeroStat label="통화 수" value={rates.length ? `${rates.length}개` : "—"} />
               <HeroStat
                 label="갱신"
@@ -201,13 +190,6 @@ export default function CalculatorView() {
 
       <div className="flex flex-col gap-10 pt-10">
         {status === "error" ? <DataNotice /> : null}
-
-        {/* 01 차트 */}
-        {chartRate?.history && chartRate.history.length > 1 ? (
-          <Card className="p-6 sm:p-8 rounded-[24px]">
-            <RateChart rate={chartRate} period={period} onPeriod={setPeriod} />
-          </Card>
-        ) : null}
 
         <BandAd />
 
@@ -359,7 +341,6 @@ function DestCard({ rate }: { rate: FxRate }) {
   const per = perUnit(rate);
   const per100k = per ? 100000 / per : null;
   const color = fxColor(rate.change);
-  const spark = (rate.history ?? []).slice(-20);
 
   return (
     <Card className="relative p-6 rounded-[18px] overflow-hidden hover:-translate-y-[3px] hover:shadow-[0_16px_32px_-22px_rgba(11,34,51,0.55)] transition-[transform,box-shadow]">
@@ -373,10 +354,9 @@ function DestCard({ rate }: { rate: FxRate }) {
             {rate.code.slice(0, 2)}
           </div>
           <div className="min-w-0">
-            <div className="text-[15.5px] font-bold text-[#1A1D21]">{rate.country}</div>
+            <div className="text-[15.5px] font-bold text-[#1A1D21]">{countryOf(rate.name)}</div>
             <div className="mt-0.5 text-[12.5px] text-[#9CA1A8] font-medium">
-              {rate.unit}
-              {rate.name ?? rate.code}
+              {rate.unit} {unitNameOf(rate.name)}
             </div>
           </div>
         </div>
@@ -387,14 +367,14 @@ function DestCard({ rate }: { rate: FxRate }) {
 
       <div className="mt-[18px] flex items-baseline gap-2">
         <div className="text-[28px] sm:text-[32px] font-extrabold text-[#1A1D21] tracking-[-0.03em] tabular-nums">
-          {won(rate.base, 2)}
+          {won(rate.rate, 2)}
         </div>
         <div className="text-[14px] text-[#6C727B] font-semibold">원</div>
       </div>
 
       <div className="mt-3 flex items-center justify-between gap-3">
-        <ChangeBadge change={rate.change} />
-        {spark.length > 1 ? <Spark values={spark} color={color} /> : null}
+        <ChangeBadge change={rate.changePct} />
+
       </div>
 
       {per100k ? (
@@ -404,43 +384,36 @@ function DestCard({ rate }: { rate: FxRate }) {
           {rate.code}
         </div>
       ) : null}
+      <Link
+        href={`/fx/${rate.code.toLowerCase()}`}
+        className="mt-3 block text-[13px] font-bold text-[#1F4E79] hover:underline"
+      >
+        {countryOf(rate.name)} 환율 자세히 →
+      </Link>
     </Card>
   );
 }
 
-function Spark({ values, color }: { values: number[]; color: string }) {
-  const min = Math.min(...values);
-  const max = Math.max(...values);
-  const span = max - min || 1;
-  const pts = values
-    .map((v, i) => `${(i / (values.length - 1)) * 76},${24 - ((v - min) / span) * 20 - 2}`)
-    .join(" ");
-  return (
-    <svg width="76" height="24" viewBox="0 0 76 24" fill="none" className="opacity-90" aria-hidden>
-      <polyline points={pts} fill="none" stroke={color} strokeWidth="1.6" strokeLinejoin="round" strokeLinecap="round" />
-    </svg>
-  );
-}
-
 function RateTable({ rows }: { rows: FxRate[] }) {
-  const cols = "grid-cols-[minmax(0,1.4fr)_repeat(3,minmax(0,1fr))_90px]";
+  const cols = "grid-cols-[minmax(0,1.6fr)_repeat(2,minmax(0,1fr))_100px]";
   return (
     <div className="overflow-x-auto">
-      <div className="min-w-[680px]">
+      <div className="min-w-[560px]">
         <div
           className={`grid ${cols} gap-4 px-5 sm:px-[30px] py-3.5 bg-[#F7F6F3] border-b border-[#E2DFD7] text-[12.5px] font-bold text-[#6C727B]`}
         >
           <div>통화</div>
-          <div className="text-right">매매기준율</div>
-          <div className="text-right">현찰 살 때</div>
-          <div className="text-right">현찰 팔 때</div>
+          <div className="text-right">환율</div>
+          <div className="text-right">1단위 환산</div>
           <div className="text-right">전일 대비</div>
         </div>
         {rows.length === 0
           ? [0, 1, 2, 3, 4].map((i) => (
-              <div key={i} className={`grid ${cols} gap-4 px-5 sm:px-[30px] py-4 border-b border-[#E2DFD7]`}>
+              <div
+                key={i}
+                className={`grid ${cols} gap-4 px-5 sm:px-[30px] py-4 border-b border-[#E2DFD7]`}
+              >
                 <Skeleton className="w-32 h-4" />
-                <Skeleton className="w-20 h-4 justify-self-end" />
                 <Skeleton className="w-20 h-4 justify-self-end" />
                 <Skeleton className="w-20 h-4 justify-self-end" />
                 <Skeleton className="w-14 h-4 justify-self-end" />
@@ -452,124 +425,36 @@ function RateTable({ rows }: { rows: FxRate[] }) {
                 className={`grid ${cols} gap-4 px-5 sm:px-[30px] py-[15px] border-b border-[#E2DFD7] items-center`}
               >
                 <div className="flex items-center gap-3 min-w-0">
-                  <div className="flex-none px-2 py-1 rounded-[7px] bg-[#F7F6F3] text-[11.5px] font-extrabold text-[#6C727B] tracking-[0.04em]">
+                  <Link
+                    href={`/fx/${r.code.toLowerCase()}`}
+                    className="flex-none px-2 py-1 rounded-[7px] bg-[#F7F6F3] text-[11.5px] font-extrabold text-[#6C727B] tracking-[0.04em] hover:bg-[#E9F0F7] hover:text-[#1F4E79]"
+                  >
                     {r.code}
-                  </div>
-                  <div className="text-[15px] font-semibold text-[#1A1D21] truncate">
-                    {r.country}
-                  </div>
+                  </Link>
+                  <Link
+                    href={`/fx/${r.code.toLowerCase()}`}
+                    className="text-[15px] font-semibold text-[#1A1D21] truncate hover:text-[#1F4E79]"
+                  >
+                    {countryOf(r.name)}
+                  </Link>
                   <div className="text-[12.5px] text-[#9CA1A8] whitespace-nowrap">
-                    {r.unit}
-                    {r.name ?? ""}
+                    {r.unit} {unitNameOf(r.name)}
                   </div>
                 </div>
                 <div className="text-right text-[15px] font-bold text-[#1A1D21] tabular-nums">
-                  {won(r.base, 2)}
+                  {won(r.rate, 2)}
                 </div>
                 <div className="text-right text-[14.5px] text-[#3C424A] tabular-nums">
-                  {r.buy ? won(r.buy, 2) : "—"}
-                </div>
-                <div className="text-right text-[14.5px] text-[#3C424A] tabular-nums">
-                  {r.sell ? won(r.sell, 2) : "—"}
+                  {r.unit === 1 ? "—" : won(perUnit(r), 4)}
                 </div>
                 <div
                   className="text-right text-[13.5px] font-bold tabular-nums"
-                  style={{ color: fxColor(r.change) }}
+                  style={{ color: fxColor(r.changePct) }}
                 >
-                  {changeText(r.change)}
+                  {changeText(r.changePct)}
                 </div>
               </div>
             ))}
-      </div>
-    </div>
-  );
-}
-
-function RateChart({
-  rate,
-  period,
-  onPeriod,
-}: {
-  rate: FxRate;
-  period: PeriodKey;
-  onPeriod: (p: PeriodKey) => void;
-}) {
-  const n = PERIODS.find((p) => p.key === period)!.n;
-  const all = rate.history ?? [];
-  const values = all.slice(-n);
-  if (values.length < 2) return null;
-
-  const min = Math.min(...values);
-  const max = Math.max(...values);
-  const span = max - min || 1;
-  const W = 720;
-  const H = 200;
-  const pad = 20;
-
-  const pts = values.map((v, i) => {
-    const x = (i / (values.length - 1)) * W;
-    const y = pad + (1 - (v - min) / span) * (H - pad * 2);
-    return `${x.toFixed(1)},${y.toFixed(1)}`;
-  });
-  const line = `M ${pts.join(" L ")}`;
-  const area = `${line} L ${W},${H} L 0,${H} Z`;
-
-  const last = values[values.length - 1];
-  const first = values[0];
-  const diff = ((last - first) / first) * 100;
-
-  return (
-    <div className="flex flex-col gap-5">
-      <div className="flex items-start justify-between gap-8 flex-wrap">
-        <div>
-          <div className="text-[13px] tracking-[0.06em] uppercase text-[#9CA1A8] font-bold">
-            {rate.code}/KRW
-          </div>
-          <div className="mt-2.5 flex items-baseline gap-3 flex-wrap">
-            <span className="text-[32px] sm:text-[40px] font-extrabold text-[#1A1D21] tracking-[-0.035em] tabular-nums">
-              {won(last, 2)}
-            </span>
-            <ChangeBadge change={Number(diff.toFixed(2))} />
-            <span className="text-[14px] text-[#9CA1A8]">
-              {PERIODS.find((p) => p.key === period)!.label} 변동
-            </span>
-          </div>
-        </div>
-        <PillTabs
-          tabs={PERIODS.map((p) => ({ key: p.key, label: p.label }))}
-          value={period}
-          onChange={onPeriod}
-        />
-      </div>
-
-      <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" className="w-full h-[180px] sm:h-[230px]" role="img" aria-label={`${rate.code} 환율 추이`}>
-        <defs>
-          <linearGradient id="fxArea" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#1F4E79" stopOpacity="0.18" />
-            <stop offset="100%" stopColor="#1F4E79" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-        {[20, 100, 180].map((y) => (
-          <line key={y} x1="0" y1={y} x2={W} y2={y} stroke="#E2DFD7" strokeWidth="1" vectorEffect="non-scaling-stroke" />
-        ))}
-        <path d={area} fill="url(#fxArea)" />
-        <path d={line} fill="none" stroke="#1F4E79" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
-      </svg>
-
-      <div className="pt-5 border-t border-[#E2DFD7] grid grid-cols-2 sm:grid-cols-4 gap-5">
-        {[
-          ["기간 최고", won(max, 2)],
-          ["기간 최저", won(min, 2)],
-          ["기간 변동", `${diff > 0 ? "+" : ""}${diff.toFixed(2)}%`],
-          ["표본", `${values.length}일`],
-        ].map(([label, value]) => (
-          <div key={label}>
-            <div className="text-[12.5px] font-semibold text-[#9CA1A8]">{label}</div>
-            <div className="mt-1.5 text-[17px] sm:text-[19px] font-bold text-[#1A1D21] tabular-nums">
-              {value}
-            </div>
-          </div>
-        ))}
       </div>
     </div>
   );

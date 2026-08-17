@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { getAllWikiParams } from "@/lib/wiki";
 import { getAllArticleSlugs } from "@/lib/articles";
+import { CURRENCIES as FX_CURRENCIES } from "@/components/fx/currencies";
 import fs from "fs";
 import path from "path";
 
@@ -63,6 +64,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
                 changeFrequency: "daily" as const,
                 priority: 0.8,
       },
+      // 환율 통화별 페이지 — 검색 수요가 "달러 환율"·"엔화 환율" 쪽에 있다
+      ...FX_CURRENCIES.map((c) => ({
+                url: `${baseUrl}/fx/${c.code.toLowerCase()}`,
+                lastModified: new Date(),
+                changeFrequency: "daily" as const,
+                priority: 0.75,
+      })),
       // 정책 페이지 (privacy는 AdSense 필수)
       ...["about", "privacy", "terms"].map((p) => ({
                 url: `${baseUrl}/${p}`,

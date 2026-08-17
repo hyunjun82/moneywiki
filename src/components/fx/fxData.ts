@@ -30,54 +30,66 @@ export const UP_COLOR = "#2E7D5B";
 export const DOWN_COLOR = "#2A6099";
 export const FLAT_COLOR = "#9CA1A8";
 
+/** 갱신기(scripts/fx/update-fx.mjs)가 내보내는 그대로의 모양 */
 export interface FxRate {
   code: string;
-  /** 나라 이름 — "미국" */
-  country: string;
-  /** 통화 이름 — "달러" */
-  name?: string;
-  /** 고시 단위. 엔은 100 */
+  /** "미국 달러" — 나라와 통화가 한 문자열로 온다 */
+  name: string;
+  /** 고시 단위. 엔·동·루피아는 100 */
   unit: number;
-  /** 매매기준율 (원) */
-  base: number;
-  /** 현찰 살 때 (원) */
-  buy?: number;
-  /** 현찰 팔 때 (원) */
-  sell?: number;
-  /** 전일 대비 % */
+  /** 고시 단위 기준 원화 (unit이 100이면 100단위 값) */
+  rate: number;
+  /** 전일 대비 원화 */
   change?: number;
-  /** 차트·스파크라인용 과거 매매기준율. 과거 → 최신 */
-  history?: number[];
+  /** 전일 대비 % */
+  changePct?: number;
+  dir?: "up" | "down" | "flat";
   /** 여행지 묶음 — "일본·중화권" */
   region?: string;
 }
 
 export interface FxBank {
   bank: string;
-  /** 우대 조건 설명 — "KB스타뱅킹 환전" */
-  note?: string;
-  /** 환전수수료율 % (살 때 기준) */
+  /** 환전수수료율 % */
   feeRate: number;
   /** 기본우대율 % */
   basePref: number;
   /** 최대우대율 % */
   maxPref?: number;
-  /** 은행연합회 공시 기준일 YYYY-MM-DD */
+  /** "모바일 80%" 처럼 조건이 붙는 원문 표기 */
+  maxPrefText?: string;
+  /** 우대 조건 설명 */
+  note?: string;
+  /** 은행이 공시한 기준일 YYYY-MM-DD — 화면에 그대로 노출한다 */
   asOf?: string;
-  /** 로고 대체 표기 */
-  mark?: string;
-  markBg?: string;
-  markFg?: string;
+}
+
+export interface FxBanks {
+  source: string;
+  sourceUrl: string;
+  /** 수집된 공시 중 가장 최근 기준일 */
+  latestAsOf?: string | null;
+  note?: string;
+  /** 은행 비교가 가능한 통화 코드 */
+  currencies: string[];
+  byCurrency: Record<string, FxBank[]>;
+}
+
+/** 수출입은행 매매기준율 — EXIM 키가 있을 때만 채워진다 */
+export interface FxOfficial {
+  fetchedDate?: string;
+  source?: string;
+  items?: { code: string; unit: number; base: number }[];
 }
 
 export interface FxData {
   updatedAt?: string;
-  quoteDate?: string;
+  base?: string;
+  source?: string;
+  note?: string;
   rates?: FxRate[];
-  banks?: FxBank[];
-  /** 은행 데이터 출처 표기 */
-  bankSource?: { name: string; url: string };
-  rateSource?: { name: string; url: string };
+  official?: FxOfficial | null;
+  banks?: FxBanks | null;
 }
 
 export type FxStatus = "loading" | "ready" | "error";
@@ -116,8 +128,8 @@ export function useFx(): { data: FxData | null; status: FxStatus } {
 
 /** 1단위당 원화. 엔처럼 unit이 100이면 나눠서 맞춘다. */
 export function perUnit(r: FxRate | undefined): number | null {
-  if (!r || !Number.isFinite(r.base) || !r.unit) return null;
-  return r.base / r.unit;
+  if (!r || !Number.isFinite(r.rate) || !r.unit) return null;
+  return r.rate / r.unit;
 }
 
 /** from 통화 amount를 to 통화로 환산. KRW는 code "KRW"로 다룬다. */
@@ -170,9 +182,23 @@ export function fxColor(change: number | undefined | null): string {
   return change > 0 ? UP_COLOR : DOWN_COLOR;
 }
 
-export function changeText(change: number | undefined | null): string {
-  if (typeof change !== "number" || change === 0) return "0.00%";
-  return `${change > 0 ? "▲" : "▼"} ${Math.abs(change).toFixed(2)}%`;
+export function changeText(changePct: number | undefined | null): string {
+  if (typeof changePct !== "number" || changePct === 0) return "0.00%";
+  return `${changePct > 0 ? "▲" : "▼"} ${Math.abs(changePct).toFixed(2)}%`;
+}
+
+/** 통화 이름에서 나라를 앞 토막으로 뽑는다 — "미국 달러" → "미국" */
+export function countryOf(name: string | undefined): string {
+  if (!name) return "";
+  const parts = name.trim().split(/\s+/);
+  return parts.length > 1 ? parts.slice(0, -1).join(" ") : name;
+}
+
+/** "미국 달러" → "달러" */
+export function unitNameOf(name: string | undefined): string {
+  if (!name) return "";
+  const parts = name.trim().split(/\s+/);
+  return parts[parts.length - 1];
 }
 
 /** "2026-08-17" → "8월 17일". Date 파싱을 안 거쳐 시간대에 흔들리지 않는다. */

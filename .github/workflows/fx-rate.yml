@@ -42,12 +42,16 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Run updater
+      - name: Run updaters (은행 우대율 → 환율 순, fx.json 하나로 합침)
         env:
           EXIM_API_KEY: ${{ secrets.EXIM_API_KEY }}
         run: |
           mkdir -p price-data
-          node scripts/fx/update-fx.mjs price-data/fx.json /tmp/fx.json
+          # 은행 우대율: 하루 1회만 실제 조회하고, 그 외에는 이전 값을 재사용한다
+          node scripts/fx/update-banks.mjs price-data/banks.json /tmp/banks.json || echo "은행 수집 실패 — 환율만 갱신"
+          cp /tmp/banks.json price-data/banks.json 2>/dev/null || true
+          # 환율: banks.json 을 fx.json 의 banks 키로 병합해 발행
+          node scripts/fx/update-fx.mjs price-data/fx.json /tmp/fx.json /tmp/banks.json
           cp /tmp/fx.json price-data/fx.json
 
       - name: Commit & push to price-data
@@ -59,7 +63,7 @@ jobs:
             git init -b price-data
             git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
           fi
-          git add fx.json
+          git add fx.json banks.json
           if git diff --cached --quiet; then
             echo "변경 없음 — 커밋 생략"
             exit 0

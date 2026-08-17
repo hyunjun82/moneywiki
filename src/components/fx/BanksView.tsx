@@ -3,7 +3,17 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { BandAd, Card, DARK_BG, DataNotice, FooterNote, PillTabs, Skeleton } from "./ui";
-import { bankRate, korDate, korDateTime, useFx, won, type FxBank, type FxRate } from "./fxData";
+import {
+  bankRate,
+  korDate,
+  korDateTime,
+  perUnit,
+  unitNameOf,
+  useFx,
+  won,
+  type FxBank,
+  type FxRate,
+} from "./fxData";
 
 const METHODS = [
   { key: "buy", label: "현찰 살 때" },
@@ -26,20 +36,24 @@ const NO_BANKS: FxBank[] = [];
 export default function BanksView() {
   const { data, status } = useFx();
   const rates = data?.rates ?? NO_RATES;
-  const banks = data?.banks ?? NO_BANKS;
+  const bankBook = data?.banks ?? null;
 
   const [cur, setCur] = useState("USD");
   const [amountText, setAmountText] = useState("1000000");
   const [method, setMethod] = useState<Method>("buy");
   const [sort, setSort] = useState<Sort>("best");
 
-  const rate = rates.find((r) => r.code === cur) ?? rates[0];
+  // 은행 비교는 은행연합회가 공시한 통화만 가능하다.
+  const bankCurrencies = bankBook?.currencies ?? [];
+  const curSafe = bankCurrencies.includes(cur) ? cur : (bankCurrencies[0] ?? cur);
+  const banks = bankBook?.byCurrency?.[curSafe] ?? NO_BANKS;
+  const rate = rates.find((r) => r.code === curSafe) ?? rates[0];
   const amount = Number(amountText.replace(/,/g, ""));
   const validAmount = Number.isFinite(amount) && amount > 0;
 
   const rows = useMemo(() => {
     if (!rate || banks.length === 0 || !validAmount) return [];
-    const perUnitBase = rate.base / rate.unit;
+    const perUnitBase = perUnit(rate)!;
     const list = banks.map((b) => {
       // 최대우대율이 공시돼 있으면 그 값을, 없으면 기본우대율을 쓴다.
       const pref = typeof b.maxPref === "number" ? b.maxPref : b.basePref;
@@ -100,7 +114,7 @@ export default function BanksView() {
       <div className="flex flex-col gap-7 pt-10">
         {status === "error" ? <DataNotice /> : null}
 
-        {banks.length === 0 ? (
+        {!bankBook || banks.length === 0 ? (
           <PendingNotice ready={status === "ready"} />
         ) : (
           <>
@@ -108,15 +122,17 @@ export default function BanksView() {
             <Card className="p-5 sm:p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-end">
               <Field label="환전 통화">
                 <select
-                  value={cur}
+                  value={curSafe}
                   onChange={(e) => setCur(e.target.value)}
                   className="w-full border border-[#CFCBC1] rounded-xl px-3.5 py-3 text-[15px] font-semibold text-[#1A1D21] bg-white cursor-pointer outline-none focus:border-[#1F4E79]"
                 >
-                  {rates.map((r) => (
-                    <option key={r.code} value={r.code}>
-                      {r.code} {r.name ?? r.country}
-                    </option>
-                  ))}
+                  {rates
+                    .filter((r) => bankCurrencies.includes(r.code))
+                    .map((r) => (
+                      <option key={r.code} value={r.code}>
+                        {r.code} {unitNameOf(r.name)}
+                      </option>
+                    ))}
                 </select>
               </Field>
               <Field label="원화 금액">
@@ -149,7 +165,7 @@ export default function BanksView() {
                   {best ? won(best.get, 2) : "—"}
                 </div>
                 <div className="mt-1.5 text-[14px] opacity-80">
-                  {best ? `우대율 ${best.pref}% 적용 · ${cur}` : ""}
+                  {best ? `우대율 ${best.pref}% 적용 · ${curSafe}` : ""}
                 </div>
               </div>
               <Card className="p-6">
@@ -168,10 +184,10 @@ export default function BanksView() {
                   매매기준율
                 </div>
                 <div className="mt-3 text-[28px] sm:text-[34px] font-extrabold text-[#1A1D21] tracking-[-0.03em] tabular-nums">
-                  {rate ? won(rate.base, 2) : "—"}
+                  {rate ? won(rate.rate, 2) : "—"}
                 </div>
                 <div className="mt-2 text-[14px] text-[#6C727B] leading-[1.5]">
-                  {rate ? `${rate.unit}${rate.name ?? rate.code} 기준 · 우대 적용 전` : ""}
+                  {rate ? `${rate.unit} ${unitNameOf(rate.name)} 기준 · 우대 적용 전` : ""}
                 </div>
               </Card>
             </section>
@@ -181,17 +197,17 @@ export default function BanksView() {
               <BankTable rows={rows} method={method} />
               <div className="px-5 sm:px-[26px] py-4 text-[13px] text-[#9CA1A8] leading-relaxed border-t border-[#E2DFD7]">
                 환전수수료율과 우대율은{" "}
-                {data?.bankSource ? (
+                {bankBook?.sourceUrl ? (
                   <a
-                    href={data.bankSource.url}
+                    href={bankBook.sourceUrl}
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="text-[#1F4E79] underline underline-offset-2"
                   >
-                    {data.bankSource.name}
+                    {bankBook.source}
                   </a>
                 ) : (
-                  "은행연합회"
+                  "전국은행연합회 외환길잡이"
                 )}{" "}
                 공시값입니다. 은행별 기준일이 다르며 등급·이벤트에 따라 실제 적용 우대율은 달라질 수
                 있습니다. 최대우대율이 공시된 은행은 그 값을 적용해 계산했습니다.
@@ -294,9 +310,9 @@ function BankTable({
             <div className="flex items-center gap-3.5 min-w-0">
               <div
                 className="flex-none w-[34px] h-[34px] rounded-[10px] flex items-center justify-center text-[13px] font-extrabold tracking-[-0.03em] shadow-[inset_0_0_0_1px_rgba(0,0,0,0.06)]"
-                style={{ background: r.bank.markBg ?? "#E9F0F7", color: r.bank.markFg ?? "#1F4E79" }}
+                style={{ background: "#E9F0F7", color: "#1F4E79" }}
               >
-                {r.bank.mark ?? r.bank.bank.slice(0, 2)}
+                {r.bank.bank.slice(0, 2)}
               </div>
               <div className="min-w-0">
                 <div className="text-[15.5px] font-bold text-[#1A1D21] flex items-center gap-2">
@@ -315,6 +331,11 @@ function BankTable({
             </div>
             <div className="text-right text-[15px] font-bold text-[#3C424A] tabular-nums">
               {r.pref}%
+              {r.bank.maxPrefText && r.bank.maxPrefText !== `${r.pref}%` ? (
+                <div className="text-[11.5px] font-medium text-[#9CA1A8]">
+                  {r.bank.maxPrefText}
+                </div>
+              ) : null}
             </div>
             <div className="text-right text-[15px] text-[#3C424A] tabular-nums">
               {won(r.applied, 2)}

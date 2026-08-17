@@ -19,9 +19,9 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const [, , prevPath, outPath] = process.argv;
+const [, , prevPath, outPath, banksPath] = process.argv;
 if (!outPath) {
-  console.error("usage: node update-fx.mjs <prev fx.json> <out path>");
+  console.error("usage: node update-fx.mjs <prev fx.json> <out path> [banks.json]");
   process.exit(1);
 }
 
@@ -201,6 +201,27 @@ if (eximKey && official?.fetchedDate !== today) {
   console.log("EXIM_API_KEY 없음 — 공식 매매기준율 생략(시장환율만 발행)");
 }
 
+/* ── 은행 우대율 합치기 (update-banks.mjs 결과) ──
+ *
+ * 화면이 파일 하나만 읽으면 되도록 fx.json 안에 banks 키로 넣는다.
+ * 파일이 없거나 깨졌으면 이전 fx.json 의 banks 를 유지한다 — 은행 표가
+ * 갑자기 사라지지 않게.
+ */
+let banks = prev.banks ?? null;
+if (banksPath) {
+  try {
+    const b = JSON.parse(fs.readFileSync(banksPath, "utf8"));
+    if (b?.byCurrency?.USD?.length) {
+      banks = b;
+      console.log(`은행 우대율 병합 — 통화 ${b.currencies?.length ?? 0}종, 공시 최신 ${b.latestAsOf}`);
+    } else {
+      console.warn("banks 파일에 USD 데이터가 없어 병합하지 않음");
+    }
+  } catch (e) {
+    console.warn(`banks 파일 읽기 실패(이전 값 유지): ${e.message}`);
+  }
+}
+
 /* ── 출력 ── */
 const out = {
   updatedAt: kstNow(),
@@ -209,6 +230,7 @@ const out = {
   note: "시장 중간환율입니다. 은행 창구·앱의 현찰 환전가는 여기에 수수료와 우대율이 적용됩니다.",
   rates,
   official,
+  banks,
 };
 
 if (failed.length) console.warn("일부 통화 실패:\n - " + failed.join("\n - "));

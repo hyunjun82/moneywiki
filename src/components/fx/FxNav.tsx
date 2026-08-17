@@ -77,13 +77,13 @@ function Ticker({ rates }: { rates: FxRate[] }) {
               {r.code}/KRW
             </span>
             <span className="text-[13.5px] font-bold text-white tabular-nums">
-              {won(r.base, r.base < 100 ? 2 : 2)}
+              {won(r.rate, 2)}
             </span>
             <span
               className="text-[12px] font-bold tabular-nums"
-              style={{ color: r.change && r.change > 0 ? "#3DD68C" : fxColor(r.change) }}
+              style={{ color: r.changePct && r.changePct > 0 ? "#3DD68C" : fxColor(r.changePct) }}
             >
-              {changeText(r.change)}
+              {changeText(r.changePct)}
             </span>
           </div>
         ))}
