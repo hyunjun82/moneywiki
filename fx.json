@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-17T12:08:41.779+09:00",
+  "updatedAt": "2026-08-17T13:22:11.317+09:00",
   "base": "KRW",
   "source": "Yahoo Finance (시장 중간환율)",
   "note": "시장 중간환율입니다. 은행 창구·앱의 현찰 환전가는 여기에 수수료와 우대율이 적용됩니다.",
@@ -9,9 +9,9 @@
       "name": "미국 달러",
       "unit": 1,
       "region": "미주",
-      "rate": 1414.78,
-      "change": -2.53,
-      "changePct": -0.18,
+      "rate": 1414.34,
+      "change": -2.97,
+      "changePct": -0.21,
       "dir": "down"
     },
     {
@@ -19,9 +19,9 @@
       "name": "일본 엔",
       "unit": 100,
       "region": "일본·중화권",
-      "rate": 887.3,
-      "change": -3.19,
-      "changePct": -0.36,
+      "rate": 886.8,
+      "change": -3.69,
+      "changePct": -0.41,
       "dir": "down"
     },
     {
@@ -29,9 +29,9 @@
       "name": "유로",
       "unit": 1,
       "region": "유럽",
-      "rate": 1637.7,
-      "change": 2.34,
-      "changePct": 0.14,
+      "rate": 1637.9,
+      "change": 2.54,
+      "changePct": 0.16,
       "dir": "up"
     },
     {
@@ -39,9 +39,9 @@
       "name": "중국 위안",
       "unit": 1,
       "region": "일본·중화권",
-      "rate": 209.9,
-      "change": -0.14,
-      "changePct": -0.06,
+      "rate": 209.85,
+      "change": -0.18,
+      "changePct": -0.09,
       "dir": "down"
     },
     {
@@ -49,8 +49,8 @@
       "name": "영국 파운드",
       "unit": 1,
       "region": "유럽",
-      "rate": 1915.25,
-      "change": 0.39,
+      "rate": 1915.15,
+      "change": 0.29,
       "changePct": 0.02,
       "dir": "up"
     },
@@ -59,9 +59,9 @@
       "name": "호주 달러",
       "unit": 1,
       "region": "미주",
-      "rate": 1003.75,
-      "change": 3.84,
-      "changePct": 0.38,
+      "rate": 1004.72,
+      "change": 4.81,
+      "changePct": 0.48,
       "dir": "up"
     },
     {
@@ -69,9 +69,9 @@
       "name": "캐나다 달러",
       "unit": 1,
       "region": "미주",
-      "rate": 1020.5,
-      "change": 3.36,
-      "changePct": 0.33,
+      "rate": 1020.24,
+      "change": 3.1,
+      "changePct": 0.3,
       "dir": "up"
     },
     {
@@ -89,9 +89,9 @@
       "name": "홍콩 달러",
       "unit": 1,
       "region": "일본·중화권",
-      "rate": 179.9,
-      "change": -0.75,
-      "changePct": -0.42,
+      "rate": 179.8,
+      "change": -0.85,
+      "changePct": -0.47,
       "dir": "down"
     },
     {
@@ -99,9 +99,9 @@
       "name": "대만 달러",
       "unit": 1,
       "region": "일본·중화권",
-      "rate": 44.37,
-      "change": 0.39,
-      "changePct": 0.89,
+      "rate": 44.38,
+      "change": 0.4,
+      "changePct": 0.91,
       "dir": "up"
     },
     {
@@ -109,8 +109,8 @@
       "name": "싱가포르 달러",
       "unit": 1,
       "region": "동남아",
-      "rate": 1107.14,
-      "change": 0.25,
+      "rate": 1107.09,
+      "change": 0.2,
       "changePct": 0.02,
       "dir": "up"
     },
@@ -119,9 +119,9 @@
       "name": "태국 바트",
       "unit": 1,
       "region": "동남아",
-      "rate": 42.77,
-      "change": -0.19,
-      "changePct": -0.45,
+      "rate": 42.81,
+      "change": -0.15,
+      "changePct": -0.35,
       "dir": "down"
     },
     {
@@ -131,7 +131,7 @@
       "region": "동남아",
       "rate": 5.41,
       "change": -0.01,
-      "changePct": -0.17,
+      "changePct": -0.2,
       "dir": "down"
     },
     {
@@ -139,9 +139,9 @@
       "name": "필리핀 페소",
       "unit": 1,
       "region": "동남아",
-      "rate": 22.99,
-      "change": -0.32,
-      "changePct": -1.39,
+      "rate": 22.98,
+      "change": -0.33,
+      "changePct": -1.41,
       "dir": "down"
     },
     {
@@ -149,9 +149,9 @@
       "name": "인도네시아 루피아",
       "unit": 100,
       "region": "동남아",
-      "rate": 7.93,
+      "rate": 7.94,
       "change": -0.03,
-      "changePct": -0.4,
+      "changePct": -0.37,
       "dir": "down"
     },
     {
@@ -159,9 +159,9 @@
       "name": "말레이시아 링깃",
       "unit": 1,
       "region": "동남아",
-      "rate": 346.91,
-      "change": 0.51,
-      "changePct": 0.15,
+      "rate": 346.95,
+      "change": 0.55,
+      "changePct": 0.16,
       "dir": "up"
     },
     {
