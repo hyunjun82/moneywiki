@@ -1,15 +1,23 @@
 # 금시세 갱신기 — price.json을 price-data 브랜치에 발행
 #
-# - 월~토 09:10~18:10 KST 매시 실행 (일요일 휴장, 종로금거래소도 일요일 휴무)
+# v2: 깃허브 예약(cron) 유실 대비 다중 알람 구조.
+#   GitHub Actions의 schedule은 지연·누락이 잦다(부하 시 건너뜀).
+#   그래서 한 시간대마다 5분 간격으로 여러 발을 깔고, 실제로 살아난
+#   아무 하나가 갱신을 수행한다. 이미 갱신된 직후면 스크립트가 같은 값을
+#   써서 커밋 없이 끝나므로(diff 없음) 중복 실행은 비용이 거의 0이다.
+#
+# - 월~토 KST 09~18시대, 매시 :05/:20/:35/:50 (시간당 4발)
+# - 일요일 휴장(종로금거래소 휴무) — 실행하지 않음
 # - KRX API는 스크립트가 하루 1회만 호출 (공공데이터포털 활용신청 조건)
-# - 커밋 메시지의 [CI Skip] 때문에 Cloudflare Pages 빌드는 돌지 않는다
+# - 커밋 메시지의 [CI Skip] 덕분에 Cloudflare Pages 빌드는 돌지 않는다
 # - 결과 주소: https://raw.githubusercontent.com/hyunjun82/moneywiki/price-data/price.json
 
 name: Gold Price Update
 
 on:
   schedule:
-    - cron: "10 0-9 * * 1-6" # UTC 00:10~09:10 = KST 09:10~18:10, 월~토
+    # UTC 00~09시 = KST 09~18시, 월~토
+    - cron: "5,20,35,50 0-9 * * 1-6"
   workflow_dispatch: {}
 
 permissions:
@@ -37,7 +45,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
 
       - name: Run updater
         env:
@@ -62,4 +70,5 @@ jobs:
             exit 0
           fi
           git commit -m "[CI Skip] gold price update $(date -u +%Y-%m-%dT%H:%MZ)"
+          git pull --rebase origin price-data || true
           git push origin HEAD:price-data
