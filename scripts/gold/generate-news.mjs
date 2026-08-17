@@ -213,3 +213,129 @@ const doc = {
 fs.mkdirSync(OUT_DIR, { recursive: true });
 fs.writeFileSync(outPath, JSON.stringify(doc, null, 2) + "\n", "utf8");
 console.log(`생성: ${outPath} (섹션 ${sections.length}개)`);
+
+/* ─────────────────────────── 카페 원고 ───────────────────────────
+ *
+ * 같은 데이터로 네이버 카페용 원고(.md)를 함께 만든다.
+ * 같은 디렉토리에 두면 워크플로의 `git add src/data/gold-news` 에 함께 잡힌다.
+ * 파일명이 cafe-*.md 라 페이지 라우트(YYYY-MM-DD.json 만 인식)에는 영향이 없다.
+ */
+
+const g18s = find("gold18")?.userSell;
+const g14s = find("gold14")?.userSell;
+const pt = find("platinum");
+const ag = find("silver");
+const ig = data.intl?.gold;
+
+// 후킹 도입부 — 날짜별 순환
+const HOOKS = [
+  `순금 한 돈을 사려니 얼마고, 막상 팔면 얼마나 손에 쥘지 헷갈리셨죠. 저도 예물 반지를 정리하려다 ` +
+    `살 때와 팔 때 값이 한 돈에 ${won(gap)}원이나 벌어진다는 걸 알고 한참을 다시 계산했습니다.`,
+  `금값이 오른다는 얘기는 계속 들리는데, 정작 오늘 내 금이 얼마인지는 검색해도 제각각이라 헷갈리셨을 겁니다. ` +
+    `기준이 되는 고시가부터 정확히 보고 시작하는 게 빠릅니다.`,
+  `장롱 속 반지 하나 팔러 갔다가 생각보다 적은 금액에 놀라신 적 있으신가요. 살 때 가격과 팔 때 가격은 ` +
+    `애초에 다른 숫자이고, 오늘은 그 차이가 한 돈에 ${won(gap)}원입니다.`,
+];
+const hook = HOOKS[dayNum % HOOKS.length];
+
+const cafeTitles = [
+  `오늘 금시세 (금값) 순금 1돈 가격 (${today.slice(0, 4)}년 ${kd}) 살때 팔때`,
+  `오늘 금시세 순금 한 돈 살 때 팔 때, ${kd} 금값 총정리`,
+  `금값 오늘 시세 (${kd}) 순금 1돈 살때 ${won(buy.price)}원 팔때 ${won(sell.price)}원`,
+];
+
+const cafeLines = [];
+cafeLines.push(`## 제목 (하나 골라서 사용)`, ``);
+cafeTitles.forEach((t, i) => cafeLines.push(`${i + 1}. ${t}`));
+cafeLines.push(``, `---`, ``, `## 본문`, ``);
+
+cafeLines.push(
+  `${hook} 오늘 시세만 정확히 알고 움직여도 몇만원은 아낄 수 있으니, ${kd} 순금 1돈 살 때·팔 때 ` +
+    `가격부터 함께 확인해 보겠습니다.`,
+  ``,
+  ``,
+  `더 자세한 내용을 빠르게 확인해보세요`,
+  ``,
+  `▼ ▼ ▼`,
+  ``,
+  `👉 오늘 순금 1돈 실시간 시세 바로 확인하기`,
+  `https://www.jjyu.co.kr/gold`,
+  ``,
+  ``,
+  `### 오늘 순금 1돈 가격 (살 때·팔 때 기준가)`,
+  ``,
+  `종로금거래소 고시 기준, 오늘 ${kd} 순금(24K) 1돈(3.75g) 가격은 살 때 ${won(buy.price)}원, ` +
+    `팔 때 ${won(sell.price)}원입니다. 그램 단위로는 1g당 살 때 약 ${buyPerGram}원, 팔 때 약 ` +
+    `${sellPerGram}원이니 소량 거래라면 그램 시세로 계산해 두는 편이 정확합니다.`,
+  ``,
+  `여기서 살 때 ${won(buy.price)}원은 부가가치세 별도로 고시된 금액입니다. 실제 매장에서 결제할 때는 ` +
+    `부가세 10%가 더해져 약 ${won(buy.price * 1.1)}원 수준이 되므로, 다른 곳 시세와 비교할 때 부가세 ` +
+    `포함인지 별도인지부터 확인해야 착각을 피할 수 있습니다.`,
+  ``
+);
+
+if (g18s?.price && g14s?.price) {
+  cafeLines.push(
+    `### 18K·14K 금시세와 살 때 팔 때 차이`,
+    ``,
+    `집에 있는 금을 팔 계획이라면 함량별 매입가가 더 중요합니다. 오늘 18K 1돈은 팔 때 ` +
+      `${won(g18s.price)}원, 14K 1돈은 팔 때 ${won(g14s.price)}원입니다. 18K·14K는 순금이 아니라 ` +
+      `세공비가 붙는 제품 시세로 판매되기 때문에 살 때 가격이 별도로 표기되지 않는다는 점만 기억하면 됩니다.`,
+    ``,
+    `순금은 살 때 ${won(buy.price)}원, 팔 때 ${won(sell.price)}원으로 한 돈에 ${won(gap)}원, ` +
+      `약 ${gapPct}%의 차이가 납니다. 오늘 사서 오늘 되팔면 그만큼이 고스란히 비용이라는 뜻이라, ` +
+      `실물 금은 시세가 이 간격 이상 올라야 본전에 도달합니다.`,
+    ``
+  );
+}
+
+if (pt?.userSell?.price && ag?.userSell?.price) {
+  const intlLine =
+    ig?.usdPerOz && ig.krwPerDon
+      ? `국제 금값은 온스당 ${ig.usdPerOz.toLocaleString("en-US")}달러 선으로 전일 대비 ` +
+        `${Math.abs(ig.changePct)}% ${ig.dir === "up" ? "올랐고" : ig.dir === "down" ? "내렸고" : "보합이고"}, ` +
+        `국내 환산으로는 한 돈에 약 ${won(ig.krwPerDon)}원 수준입니다. 국내 소매가가 이보다 높은 것은 ` +
+        `유통 마진과 부가가치세가 더해지기 때문입니다.`
+      : "";
+  cafeLines.push(
+    `### 백금·은 시세와 국제 금값 흐름`,
+    ``,
+    `금과 함께 움직이는 백금·은 시세도 참고하면 판단이 쉬워집니다. 오늘 백금 1돈은 ` +
+      `${pt.userBuy?.price ? `살 때 ${won(pt.userBuy.price)}원, ` : ""}팔 때 ${won(pt.userSell.price)}원, ` +
+      `은 1돈은 ${ag.userBuy?.price ? `살 때 ${won(ag.userBuy.price)}원, ` : ""}팔 때 ` +
+      `${won(ag.userSell.price)}원입니다. 은은 단가가 낮아 그램·킬로그램 단위 거래가 많으니 수량을 ` +
+      `넉넉히 잡고 확인하는 편이 좋습니다.`,
+    ``,
+    intlLine,
+    ``
+  );
+}
+
+cafeLines.push(
+  `### 금 살 때 팔 때, 수수료·세금 손해 줄이는 법`,
+  ``,
+  `같은 금이라도 어떻게 사고파느냐에 따라 실수령액이 크게 달라집니다. 실물 골드바는 살 때 부가세 10%에 ` +
+    `매장 수수료가 붙어, 시세가 최소 15% 이상 올라야 본전에 이릅니다. 반면 KRX 금시장은 계좌 안에서만 ` +
+    `거래하면 매매차익 세금이 면제되고 온라인 수수료도 낮은 편입니다.`,
+  ``,
+  `금 통장은 매매차익에 배당소득세 15.4%가 붙는 점을 함께 따져야 합니다. 실물이 꼭 필요하면 부가세와 ` +
+    `수수료를 감안해 되팔 시점의 시세 폭을 넉넉히 잡고, 차익이 목적이라면 세금 부담이 낮은 방식을 ` +
+    `우선 검토하는 게 손해를 줄이는 길입니다.`,
+  ``,
+  ``,
+  `오늘 ${kd} 순금 1돈은 살 때 ${won(buy.price)}원, 팔 때 ${won(sell.price)}원으로 한 돈에 ` +
+    `${won(gap)}원이 벌어집니다.${
+      g18s?.price && g14s?.price
+        ? ` 함량별로는 18K가 팔 때 ${won(g18s.price)}원, 14K가 ${won(g14s.price)}원이니 팔 계획이라면 함량부터 확인하세요.`
+        : ""
+    } 파는 곳만 바꿔도 한 돈에 몇만원이 갈리는 만큼, 여러 매입처의 시세를 비교하고 거래 시점을 정하는 ` +
+    `습관이 결국 이득으로 이어집니다.`,
+  ``,
+  `내 금이 얼마인지 무게만 넣으면 바로 계산됩니다`,
+  `👉 https://www.jjyu.co.kr/gold/calculator`,
+  ``
+);
+
+const cafePath = path.join(OUT_DIR, `cafe-${today}.md`);
+fs.writeFileSync(cafePath, cafeLines.join("\n"), "utf8");
+console.log(`카페 원고 생성: ${cafePath}`);
