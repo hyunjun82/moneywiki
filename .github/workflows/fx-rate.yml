@@ -53,6 +53,7 @@ jobs:
           # 환율: banks.json 을 fx.json 의 banks 키로 병합해 발행
           node scripts/fx/update-fx.mjs price-data/fx.json /tmp/fx.json /tmp/banks.json
           cp /tmp/fx.json price-data/fx.json
+          cp /tmp/fx-history.json price-data/fx-history.json
 
       - name: Commit & push to price-data
         run: |
@@ -63,7 +64,7 @@ jobs:
             git init -b price-data
             git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
           fi
-          git add fx.json banks.json
+          git add fx.json fx-history.json banks.json
           if git diff --cached --quiet; then
             echo "변경 없음 — 커밋 생략"
             exit 0

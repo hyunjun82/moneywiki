@@ -63,6 +63,9 @@ export default function CalculatorView() {
 
   const shown = rates.filter((r) => region === "전체" || r.region === region).slice(0, 6);
 
+  // 차트에 띄울 통화 — 계산기에서 고른 외화를 따라간다
+  const chartRate = rates.find((r) => r.code === (to === "KRW" ? from : to)) ?? rates[0];
+
   const tableRows = rates.filter((r) => {
     if (!query.trim()) return true;
     const q = query.trim().toLowerCase();
@@ -190,6 +193,8 @@ export default function CalculatorView() {
 
       <div className="flex flex-col gap-10 pt-10">
         {status === "error" ? <DataNotice /> : null}
+
+        {chartRate?.history && chartRate.history.length > 1 ? <RateChart rate={chartRate} /> : null}
 
         <BandAd />
 
@@ -446,5 +451,149 @@ function RateTable({ rows }: { rows: FxRate[] }) {
             ))}
       </div>
     </div>
+  );
+}
+
+/* ─────────────────────────── 추이 차트 ───────────────────────────
+ * 시안의 01 섹션. history({date, rate})가 있을 때만 그린다.
+ */
+
+const PERIODS = [
+  { key: "1w", label: "1주", n: 7 },
+  { key: "1m", label: "1개월", n: 30 },
+  { key: "6m", label: "6개월", n: 182 },
+  { key: "1y", label: "1년", n: 365 },
+] as const;
+type PeriodKey = (typeof PERIODS)[number]["key"];
+
+export function RateChart({ rate }: { rate: FxRate }) {
+  const [period, setPeriod] = useState<PeriodKey>("1m");
+  const all = rate.history ?? [];
+  const n = PERIODS.find((p) => p.key === period)!.n;
+  const pts = all.slice(-n);
+  if (pts.length < 2) return null;
+
+  const vals = pts.map((p) => p.rate);
+  const min = Math.min(...vals);
+  const max = Math.max(...vals);
+  const avg = vals.reduce((a, b) => a + b, 0) / vals.length;
+  const span = max - min || 1;
+
+  const W = 720;
+  const H = 200;
+  const pad = 20;
+  const coords = pts.map((p, i) => {
+    const x = (i / (pts.length - 1)) * W;
+    const y = pad + (1 - (p.rate - min) / span) * (H - pad * 2);
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  });
+  const line = `M ${coords.join(" L ")}`;
+  const area = `${line} L ${W},${H} L 0,${H} Z`;
+
+  const first = pts[0].rate;
+  const last = pts[pts.length - 1].rate;
+  const diff = last - first;
+  const diffPct = (diff / first) * 100;
+
+  // x축 라벨 5개
+  const axis = [0, 0.25, 0.5, 0.75, 1].map((r) => {
+    const p = pts[Math.min(pts.length - 1, Math.round(r * (pts.length - 1)))];
+    const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(p.date);
+    return m ? `${Number(m[2])}.${Number(m[3])}` : "";
+  });
+
+  return (
+    <Card className="p-6 sm:p-8 rounded-[24px]">
+      <div className="flex items-start justify-between gap-8 flex-wrap">
+        <div>
+          <div className="text-[13px] tracking-[0.06em] uppercase text-[#9CA1A8] font-bold">
+            {rate.code} / KRW{rate.unit !== 1 ? ` (${rate.unit}단위)` : ""}
+          </div>
+          <div className="mt-2.5 flex items-baseline gap-3 flex-wrap">
+            <span className="text-[32px] sm:text-[40px] font-extrabold text-[#1A1D21] tracking-[-0.035em] tabular-nums">
+              {won(last, 2)}원
+            </span>
+            <span
+              className="text-[15px] font-bold px-2.5 py-1 rounded-lg tabular-nums"
+              style={{
+                color: fxColor(diffPct),
+                background: diffPct > 0 ? "#E7F2EC" : diffPct < 0 ? "#E9F0F7" : "#F7F6F3",
+              }}
+            >
+              {diffPct > 0 ? "▲" : diffPct < 0 ? "▼" : "—"} {Math.abs(diff).toFixed(2)} (
+              {diffPct > 0 ? "+" : ""}
+              {diffPct.toFixed(2)}%)
+            </span>
+            <span className="text-[14px] text-[#9CA1A8]">
+              {PERIODS.find((p) => p.key === period)!.label} 변동
+            </span>
+          </div>
+        </div>
+        <PillTabs
+          tabs={PERIODS.map((p) => ({ key: p.key, label: p.label }))}
+          value={period}
+          onChange={setPeriod}
+        />
+      </div>
+
+      <svg
+        viewBox={`0 0 ${W} ${H}`}
+        preserveAspectRatio="none"
+        className="w-full h-[190px] sm:h-[230px] mt-6"
+        role="img"
+        aria-label={`${rate.code} 환율 ${PERIODS.find((p) => p.key === period)!.label} 추이`}
+      >
+        <defs>
+          <linearGradient id="fxArea" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#1F4E79" stopOpacity="0.18" />
+            <stop offset="100%" stopColor="#1F4E79" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+        {[20, 100, 180].map((y) => (
+          <line
+            key={y}
+            x1="0"
+            y1={y}
+            x2={W}
+            y2={y}
+            stroke="#E2DFD7"
+            strokeWidth="1"
+            vectorEffect="non-scaling-stroke"
+          />
+        ))}
+        <path d={area} fill="url(#fxArea)" />
+        <path
+          d={line}
+          fill="none"
+          stroke="#1F4E79"
+          strokeWidth="2"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+          vectorEffect="non-scaling-stroke"
+        />
+      </svg>
+
+      <div className="flex justify-between mt-2.5 text-[12px] text-[#9CA1A8] tabular-nums">
+        {axis.map((a, i) => (
+          <span key={i}>{a}</span>
+        ))}
+      </div>
+
+      <div className="mt-5 pt-5 border-t border-[#E2DFD7] grid grid-cols-2 sm:grid-cols-4 gap-5">
+        {[
+          ["기간 고가", `${won(max, 2)}원`],
+          ["기간 저가", `${won(min, 2)}원`],
+          ["평균", `${won(avg, 2)}원`],
+          ["변동폭", `${won(max - min, 2)}원`],
+        ].map(([label, value]) => (
+          <div key={label}>
+            <div className="text-[12.5px] font-semibold text-[#9CA1A8]">{label}</div>
+            <div className="mt-1.5 text-[17px] sm:text-[19px] font-bold text-[#1A1D21] tabular-nums">
+              {value}
+            </div>
+          </div>
+        ))}
+      </div>
+    </Card>
   );
 }

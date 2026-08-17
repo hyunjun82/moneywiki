@@ -44,6 +44,8 @@ export interface FxRate {
   /** 전일 대비 % */
   changePct?: number;
   dir?: "up" | "down" | "flat";
+  /** 차트용 과거 시세. 과거 → 최신, 최대 370일 */
+  history?: { date: string; rate: number }[];
   /** 여행지 묶음 — "일본·중화권" */
   region?: string;
 }

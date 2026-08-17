@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { BandAd, Card, DARK_BG, DataNotice, FooterNote, PillTabs, Skeleton } from "./ui";
+import { brandOf } from "./bankBrand";
 import {
   bankRate,
   korDate,
@@ -58,6 +59,8 @@ export default function BanksView() {
       // 최대우대율이 공시돼 있으면 그 값을, 없으면 기본우대율을 쓴다.
       const pref = typeof b.maxPref === "number" ? b.maxPref : b.basePref;
       const applied = bankRate(perUnitBase, b.feeRate, pref, method);
+      // 살 때: 원화를 내고 외화를 받는다 → 원화 ÷ 적용환율
+      // 팔 때: 외화를 내고 원화를 받는다 → 외화 × 적용환율
       const get = method === "buy" ? amount / applied : amount * applied;
       return { bank: b, pref, applied, get };
     });
@@ -135,7 +138,7 @@ export default function BanksView() {
                     ))}
                 </select>
               </Field>
-              <Field label="원화 금액">
+              <Field label={method === "buy" ? "원화 금액" : `${curSafe} 금액`}>
                 <input
                   type="text"
                   inputMode="numeric"
@@ -162,10 +165,14 @@ export default function BanksView() {
                   {best?.bank.bank ?? "—"}
                 </div>
                 <div className="mt-3.5 text-[28px] sm:text-[34px] font-extrabold tracking-[-0.03em] tabular-nums">
-                  {best ? won(best.get, 2) : "—"}
+                  {best ? `${won(best.get, 2)} ${method === "buy" ? curSafe : "원"}` : "—"}
                 </div>
                 <div className="mt-1.5 text-[14px] opacity-80">
-                  {best ? `우대율 ${best.pref}% 적용 · ${curSafe}` : ""}
+                  {best
+                    ? method === "buy"
+                      ? `원화 ${won(amount)}원으로 살 때 가장 많이 받습니다`
+                      : `${curSafe} ${won(amount)}을 팔 때 가장 많이 받습니다`
+                    : ""}
                 </div>
               </div>
               <Card className="p-6">
@@ -176,7 +183,7 @@ export default function BanksView() {
                   {won(gap, 2)}
                 </div>
                 <div className="mt-2 text-[14px] text-[#6C727B] leading-[1.5]">
-                  같은 {won(amount)}원으로 은행을 바꾸면 생기는 차이입니다.
+                  은행을 바꾸면 생기는 차이입니다. 단위는 {method === "buy" ? curSafe : "원"}입니다.
                 </div>
               </Card>
               <Card className="p-6">
@@ -194,7 +201,7 @@ export default function BanksView() {
 
             {/* 순위표 */}
             <Card className="rounded-[20px] overflow-hidden">
-              <BankTable rows={rows} method={method} />
+              <BankTable rows={rows} />
               <div className="px-5 sm:px-[26px] py-4 text-[13px] text-[#9CA1A8] leading-relaxed border-t border-[#E2DFD7]">
                 환전수수료율과 우대율은{" "}
                 {bankBook?.sourceUrl ? (
@@ -282,10 +289,8 @@ function PendingNotice({ ready }: { ready: boolean }) {
 
 function BankTable({
   rows,
-  method,
 }: {
   rows: { bank: FxBank; pref: number; applied: number; get: number; isBest: boolean; diff: number; barW: number }[];
-  method: Method;
 }) {
   const cols = "grid-cols-[minmax(0,1.6fr)_90px_minmax(0,1fr)_minmax(0,1.1fr)_minmax(0,1fr)]";
   return (
@@ -297,7 +302,7 @@ function BankTable({
           <div>은행</div>
           <div className="text-right">우대율</div>
           <div className="text-right">적용 환율</div>
-          <div className="text-right">{method === "buy" ? "받는 외화" : "받는 원화"}</div>
+          <div className="text-right">받는 금액</div>
           <div className="text-right">최저 대비</div>
         </div>
         {rows.map((r) => (
@@ -309,10 +314,10 @@ function BankTable({
           >
             <div className="flex items-center gap-3.5 min-w-0">
               <div
-                className="flex-none w-[34px] h-[34px] rounded-[10px] flex items-center justify-center text-[13px] font-extrabold tracking-[-0.03em] shadow-[inset_0_0_0_1px_rgba(0,0,0,0.06)]"
-                style={{ background: "#E9F0F7", color: "#1F4E79" }}
+                className="flex-none w-[34px] h-[34px] rounded-[10px] flex items-center justify-center text-[12px] font-extrabold tracking-[-0.03em] shadow-[inset_0_0_0_1px_rgba(0,0,0,0.06)]"
+                style={{ background: brandOf(r.bank.bank).bg, color: brandOf(r.bank.bank).fg }}
               >
-                {r.bank.bank.slice(0, 2)}
+                {brandOf(r.bank.bank).mark}
               </div>
               <div className="min-w-0">
                 <div className="text-[15.5px] font-bold text-[#1A1D21] flex items-center gap-2">
