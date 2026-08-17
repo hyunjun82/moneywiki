@@ -50,6 +50,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
                 changeFrequency: "daily" as const,
                 priority: 0.8,
       },
+      // 환율노트 — 날짜 없는 고정 허브 2개
+      {
+                url: `${baseUrl}/fx`,
+                lastModified: new Date(),
+                changeFrequency: "daily" as const,
+                priority: 0.9,
+      },
+      {
+                url: `${baseUrl}/fx/banks`,
+                lastModified: new Date(),
+                changeFrequency: "daily" as const,
+                priority: 0.8,
+      },
       // 정책 페이지 (privacy는 AdSense 필수)
       ...["about", "privacy", "terms"].map((p) => ({
                 url: `${baseUrl}/${p}`,
