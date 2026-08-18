@@ -163,14 +163,23 @@ for (const slug of slugs) {
       try {
         await p2.goto(cta.href, { waitUntil: "domcontentloaded", timeout: 45000 });
         await p2.waitForTimeout(1500);
-        const info = await p2.evaluate(() => ({
-          title: document.title,
-          text: document.body.innerText.replace(/\s+/g, " ").slice(0, 1500),
-          // 실제 행동 요소가 있는가
-          action: [...document.querySelectorAll("a,button,input[type=submit]")]
-            .map((e) => (e.value || e.textContent || "").trim())
-            .some((t) => /신청|조회|검색|로그인|인증|시작|다운로드|발급|계산/.test(t)),
-        }));
+        const probe = () =>
+          p2.evaluate(() => ({
+            title: document.title,
+            text: document.body.innerText.replace(/\s+/g, " ").slice(0, 1500),
+            // 실제 행동 요소가 있는가
+            action: [...document.querySelectorAll("a,button,input[type=submit]")]
+              .map((e) => (e.value || e.textContent || "").trim())
+              .some((t) => /신청|조회|검색|로그인|인증|시작|다운로드|발급|계산/.test(t)),
+          }));
+        let info = await probe();
+        // 늦게 그려지는 화면이 있다. 금융투자협회 다모아는 WebSquare 라 버튼이 뒤에 붙어,
+        // 같은 주소가 한 번은 통과하고 한 번은 "행동 요소 없음"으로 떨어졌다.
+        // 실패로 몰기 전에 한 번 더 기다렸다가 본다.
+        if (!info.action) {
+          await p2.waitForTimeout(3000);
+          info = await probe();
+        }
         const hay = `${info.title} ${info.text}`;
         const t = info.title.trim();
 
