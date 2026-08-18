@@ -104,6 +104,8 @@ async function runPool(tasks) {
 }
 
 const facts = [];
+/** 페이지 원문 — 주장 대조용 */
+const raws = [];
 let shot = 0;
 
 async function capture(page, label) {
@@ -210,6 +212,9 @@ async function collectUrl(page, url) {
   }
 
   const file = await capture(page, org);
+  // 원문도 남긴다. facts 는 숫자가 든 문장만 추리므로 그것만으로는
+  // "출처를 붙인 문장이 원문에 실제로 있는가"를 대조할 수 없다.
+  raws.push({ url, org, screenshot: file, text: text.slice(0, 20000) });
   const got = factsFromText(text, { url, org, screenshot: file });
 
   // 수치가 하나도 안 잡히면 조용히 빠뜨리지 않고 알린다.
@@ -256,6 +261,7 @@ const out = {
   collectedBy: "scripts/collect-evidence.mjs (playwright)",
   sources: [...new Set(facts.map((f) => JSON.stringify({ url: f.url, org: f.org })))].map(JSON.parse),
   facts,
+  raws,
 };
 fs.writeFileSync(path.join("scripts", "evidence", `${slug}.json`), JSON.stringify(out, null, 2));
 console.log(`\n✅ ${facts.length}개 fact / ${shot}장 캡처 → scripts/evidence/${slug}.json`);

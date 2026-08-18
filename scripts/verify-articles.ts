@@ -388,17 +388,20 @@ function verifyArticle(article: any): VerifyIssue[] {
     return w ? String(w.type) : "";
   };
 
-  // 15-2. 비주얼 먼저 — 템플릿은 모든 섹션이 비주얼을 갖는다
-  if (TPL.sections.allHaveVisual) {
-    const textOnly = secs
-      .map((s: any, i: number) => (kindOf(s) ? -1 : i + 1))
-      .filter((n: number) => n > 0);
-    if (textOnly.length > 0) {
+  // 15-2. 비주얼 — "전 섹션 필수"를 풀고 하한만 둔다.
+  //
+  // 예전에는 모든 섹션에 비주얼이 없으면 ERROR였다. 그래서 주제와 무관하게
+  // 칸을 채우게 됐고, 표 하나로 끝나는 게 나은 글도 8개를 억지로 채웠다.
+  // "복사 붙여넣기가 아니라 주제에 맞게" 넣으려면 이 강제를 풀어야 한다.
+  // 대신 하한(과반)만 지키고, 판박이 배치는 verify-repetition 이 ERROR로 막는다.
+  {
+    const withViz = secs.filter((s: any) => kindOf(s)).length;
+    const ratio = secs.length ? withViz / secs.length : 1;
+    if (ratio < 0.5) {
       push(
         "template-visual-first",
         "ERROR",
-        `비주얼 없이 텍스트만 있는 섹션 q${textOnly.join(", q")} ` +
-          `(${textOnly.length}/${secs.length}) — 템플릿은 전 섹션이 비주얼로 시작합니다`
+        `비주얼이 있는 섹션 ${withViz}/${secs.length} — 글의 절반 이상은 표·체크리스트·수치 상자로 보여 주세요`
       );
     }
   }

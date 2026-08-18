@@ -108,9 +108,11 @@ function sentencesOf(a: ArticleData): string[] {
   }
   for (const [key, slugs] of shape) {
     if (slugs.length >= 2) {
+      // 강제(전 섹션 비주얼 필수)를 풀었으니 이쪽을 조인다.
+      // 배치가 통째로 같다는 건 주제를 보고 고른 게 아니라 틀을 복사했다는 뜻이다.
       push(
         "visual-shape-clone",
-        "WARN",
+        "ERROR",
         `비주얼 배치가 똑같은 글 ${slugs.length}편 (${slugs.slice(0, 3).join(", ")}) — ${key}`
       );
     }

@@ -33,6 +33,9 @@ if echo "$RANGE_FILES" | grep -q "^src/data/articles/.*\.ts$"; then
 
     echo "▶ verify:repetition (상투구·복사 문장·판박이 배치)"
     npx tsx scripts/verify-repetition.ts || { echo "✗ verify:repetition 실패 — push 차단"; exit 1; }
+
+    echo "▶ verify:claims (과장 표현·근거 없는 인용)"
+    npx tsx scripts/verify-claims.ts || { echo "✗ verify:claims 실패 — push 차단"; exit 1; }
 fi
 
 # ── 게이트 2: MD 글 변경 시 기존 품질 검사 ──

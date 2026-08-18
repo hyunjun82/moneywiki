@@ -44,7 +44,11 @@ FAQ → summary(정확히 3줄) → 스포크 사이드바
 ```bash
 npm run evidence <slug> -- --law <법령명>:<조,조> --url <공식URL>
 ```
-→ `scripts/evidence/<slug>.json`(원문) + `<slug>/*.png`(스크린샷)
+→ `scripts/evidence/<slug>.json`(facts + raws 전문) + `<slug>/*.png`(스크린샷)
+
+**캡처 PNG를 Read로 열어 본다.** 표와 이미지 안의 값은 텍스트 추출로 안 잡힌다.
+보증한도 표·계산 예시처럼 정작 필요한 정보가 거기 있는 경우가 많다.
+`npm run verify:claims`가 열어 볼 캡처 목록을 찍어 준다.
 **본문의 모든 숫자는 이 JSON의 `quote`/`value` 안에 있는 값만.** WebSearch/WebFetch는 훅이 차단한다.
 출처 사이트 목록: `.claude/rules/wiki-rules.md`
 
@@ -52,6 +56,8 @@ npm run evidence <slug> -- --law <법령명>:<조,조> --url <공식URL>
 ```bash
 npm run verify:articles    # 템플릿 프로필 대조 + 키워드 + 출처 + 보호자산
 npm run verify:evidence    # 본문 수치 ↔ 증거 JSON + 증거 신선도(30일)
+npm run verify:repetition  # 상투구·복사 문장·판박이 배치 (글끼리 대조)
+npm run verify:claims      # 과장 표현 + 출처 붙인 문장이 원문에 있는가
 npm run verify:rendered -- <slug>   # Playwright로 실제 화면을 열어 대조 (푸시 전 필수)
 ```
 
@@ -69,8 +75,12 @@ ERROR면 템플릿을 다시 열어 대조하고 고쳐 쓴다. 통과할 때까
 파싱해 섹션 수·비주얼 종류·라벨 길이·핵심콕콕 행수 등을 산출하고 검증기가 그걸 쓴다.
 숫자를 코드에 손으로 박지 않는다 — 템플릿을 고치면 기준이 따라온다.
 
-강제되는 것: 전 섹션 비주얼 보유 · 같은 비주얼 연속 금지 · eyebrow 라벨(소제목 재탕 금지)
-· 내부 링크 2개 이상 + 유도 문장 필수 · 증거 30일 이내.
+강제되는 것: 비주얼은 **절반 이상 섹션**(전 섹션 필수는 풀었다 — 주제에 맞게 고르라는 뜻)
+· 같은 비주얼 연속 금지 · eyebrow 라벨(소제목 재탕 금지)
+· 내부 링크 2개 이상 + 유도 문장 필수 · 증거 30일 이내
+· **글끼리 배치가 똑같으면 실패** — 틀을 복사하지 말고 주제를 보고 고른다
+· 유도문장 어미가 30% 넘게 쏠리면 실패 · 같은 문장 3회 이상 재사용 실패
+· 과장·확정 표현 실패 · 출처를 붙였는데 원문에 없으면 경고.
 
 ## 빌드
 
