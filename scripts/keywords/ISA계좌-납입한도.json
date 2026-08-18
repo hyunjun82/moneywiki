@@ -1,0 +1,46 @@
+{
+  "slug": "ISA계좌-납입한도",
+  "collectedAt": "2026-08-18",
+  "queries": [
+    {
+      "q": "ISA 납입한도",
+      "autocomplete": [
+        "isa 납입한도",
+        "isa 납입한도 확인",
+        "isa 납입한도 1억",
+        "isa 납입한도 상향",
+        "isa 납입한도 이월",
+        "isa 납입한도 기준일",
+        "isa 납입한도 만기일",
+        "isa 납입한도 조회",
+        "isa 납입한도 보는법",
+        "isa 납입한도 뜻"
+      ],
+      "related": []
+    },
+    {
+      "q": "ISA 계좌 한도",
+      "autocomplete": [
+        "ISA 계좌 한도",
+        "ISA 계좌 한도액",
+        "ISA 계좌 한도 확인",
+        "ISA 계좌 한도 조회하는법",
+        "ISA 계좌 한도 초과",
+        "ISA 계좌 한도 증액 방법",
+        "ISA 계좌 한도 변경",
+        "ISA 계좌 한도 축소",
+        "ISA 계좌 한도 금액",
+        "isa 계좌 한도 감액"
+      ],
+      "related": []
+    },
+    {
+      "q": "ISA 연간 납입한도",
+      "autocomplete": [
+        "isa 연간 납입한도 상향",
+        "isa 연간 납입 한도"
+      ],
+      "related": []
+    }
+  ]
+}

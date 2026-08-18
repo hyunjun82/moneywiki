@@ -322,7 +322,9 @@ function verifyArticle(article: any): VerifyIssue[] {
           ...(q.autocomplete ?? []),
           ...(q.related ?? []),
         ]);
-        const flat = (s: string) => s.replace(/\s+/g, "");
+        // 대소문자는 무시한다. 네이버 자동완성은 같은 검색어를 "ISA"로도 "isa"로도
+        // 돌려주는데, 그 차이 때문에 실제로 반영한 검색어를 안 겹친다고 잡았다.
+        const flat = (s: string) => s.replace(/\s+/g, "").toLowerCase();
         const title = flat(article.meta?.title ?? "");
         const hit = collected.filter((c) => c && title.includes(flat(c)));
         if (collected.length > 0 && hit.length === 0) {

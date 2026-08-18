@@ -1,0 +1,54 @@
+{
+  "slug": "ISA계좌-만기",
+  "collectedAt": "2026-08-18",
+  "queries": [
+    {
+      "q": "ISA 만기",
+      "autocomplete": [
+        "isa 만기 연장",
+        "isa 만기일 확인",
+        "isa 만기일 설정",
+        "isa 만기 변경",
+        "isa 만기 후",
+        "isa 만기 해지",
+        "isa 만기일 변경",
+        "한투 isa 만기일 변경",
+        "미래에셋 isa 만기",
+        "isa 만기일"
+      ],
+      "related": []
+    },
+    {
+      "q": "ISA 만기 연장",
+      "autocomplete": [
+        "미래에셋 isa 만기 연장",
+        "isa 만기 연장 방법",
+        "isa 만기 연장",
+        "한투 isa 만기 연장",
+        "삼성증권 isa 만기 연장",
+        "키움증권 isa 만기 연장",
+        "한투 isa 만기 연장 방법",
+        "isa 만기 연장 후 해지",
+        "isa 만기 연장 기간",
+        "isa 만기 연장 평생"
+      ],
+      "related": []
+    },
+    {
+      "q": "ISA 만기 후",
+      "autocomplete": [
+        "isa 만기 후",
+        "isa 만기 후 재가입",
+        "isa 만기 후 해지",
+        "isa 만기 후 유지",
+        "isa 만기 후 이전",
+        "isa 만기 후 매도",
+        "isa 만기 후 irp 이전",
+        "isa 만기 후 irp",
+        "isa 만기 후 입금",
+        "isa 만기 후 30일"
+      ],
+      "related": []
+    }
+  ]
+}

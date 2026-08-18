@@ -32,7 +32,7 @@ const OUT_DIR = path.join("scripts", "evidence", slug);
 fs.mkdirSync(OUT_DIR, { recursive: true });
 
 /** 숫자·기한·금액·비율을 문장 단위로 뽑는다 (글에 쓸 수 있는 후보) */
-const NUM = /(\d[\d,.]*\s*(?:원|만원|천원|억|%|퍼센트|일|개월|년|주|회|세|시간|분)|제\d+조|\d+월\s*\d+일)/;
+const NUM = /(\d[\d,.]*\s*(?:천만원|백만원|억원|만원|천원|억|원|%|퍼센트|일|개월|년|주|회|세|시간|분)|제\d+조|\d+월\s*\d+일)/;
 function factsFromText(text, meta) {
   const seen = new Set();
   return text
@@ -220,6 +220,33 @@ async function collectUrl(page, url) {
       // 교차 출처 프레임은 읽을 수 없다 — 건너뛴다
     }
   }
+  // 이미지 alt 도 긁는다. 수식은 그림으로 실린다 — innerText 로는 통째로 사라진다.
+  // 조특법 제91조의18 연간 납입한도 계산식이 LaTeX 이미지라 "계산식에 따른 금액일 것"
+  // 뒤가 빈칸으로 읽혔고, 정작 필요한 2천만원이 근거에서 빠졌다.
+  const alts = [];
+  for (const frame of page.frames()) {
+    try {
+      const got = await frame.evaluate(() =>
+        [...document.querySelectorAll("img[alt]")].map((i) => i.alt || "")
+      );
+      alts.push(...got);
+    } catch {
+      // 교차 출처 프레임은 읽을 수 없다 — 건너뛴다
+    }
+  }
+  const formulas = [...new Set(alts)]
+    .map((a) =>
+      a
+        .replace(/@@\/?LATEX@@/g, "")
+        .replace(/\\times/g, "×")
+        .replace(/\\left|\\right/g, "")
+        .replace(/[{}]/g, "")
+        .replace(/\s+/g, " ")
+        .trim()
+    )
+    .filter((a) => a.length >= 15);
+  if (formulas.length) text += "\n\n[수식·이미지]\n" + formulas.join("\n");
+
   // 표 텍스트를 본문 뒤에 붙여 fact 추출 대상에 포함시킨다.
   if (tables?.length) text += "\n\n[표]\n" + tables.join("\n---\n");
   const org = orgOf(url, title);
