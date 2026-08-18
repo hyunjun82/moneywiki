@@ -35,7 +35,7 @@ export const 퇴직금: ArticleCategory = {
         "1년을 못 채우면 퇴직금이 없다는 말은 절반만 맞습니다. **법이 강제하지 않을 뿐, 회사가 주기로 정했다면 받을 수 있고 DC형 퇴직연금이라면 근무한 기간만큼 이미 쌓여 있습니다.**\n\n문제는 이 차이를 모르고 그냥 넘어가는 경우입니다. 퇴직금 청구권은 시효가 있고 회사가 폐업하면 회수가 훨씬 어려워집니다. 내 경우가 어느 쪽인지부터 확인하셔야겠죠.",
 
       heroCta: {
-        label: "임금체불 진정서 신청하기 →",
+        label: "임금체불 진정 신청",
         url: "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
         org: "고용노동부 노동포털",
       },
@@ -67,7 +67,7 @@ export const 퇴직금: ArticleCategory = {
             },
           ],
           cta: {
-            label: "확인 결과 못 받고 있다면 바로 신청하세요",
+            label: "임금체불 진정 신청",
             url: "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
             org: "고용노동부 노동포털",
             note: "진정서(체불·직장 내 괴롭힘·노동법 위반) · 신청자격 근로자(개인회원)",
@@ -241,7 +241,7 @@ export const 퇴직금: ArticleCategory = {
             body:
               "DC형 퇴직연금에 가입돼 있는지, 취업규칙에 1년 미만 지급 규정이 있는지 봅니다. 둘 중 하나라도 있으면 청구 근거가 됩니다.",
             action: {
-              label: "퇴직금 계산기로 금액 확인",
+              label: "퇴직금 계산기 열기",
               url: "https://labor.moel.go.kr/cmmt/calRtrmnt.do",
               org: "고용노동부 노동포털",
             },
@@ -261,7 +261,7 @@ export const 퇴직금: ArticleCategory = {
             body:
               "관할 지방고용노동관서에 접수합니다. 확보한 근거 서류를 함께 제출해야 처리가 진행됩니다.",
             action: {
-              label: "진정서 신청하기",
+              label: "임금체불 진정 신청",
               url: "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
               org: "고용노동부 노동포털",
             },

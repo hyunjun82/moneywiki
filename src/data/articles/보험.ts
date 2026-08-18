@@ -35,7 +35,7 @@ export const 보험: ArticleCategory = {
         "전환할 때 내는 돈은 없습니다. **별도 수수료 없이 같은 보험사의 5세대로 옮길 수 있고 심사도 받지 않습니다.**\n\n진짜 비용은 다른 데 있습니다. **비중증 비급여 자기부담률이 30%에서 50%로 올라 병원 갈 때마다 더 내게 됩니다.** 보험료로 아낀 돈과 치료비로 더 내는 돈, 둘을 같이 봐야 손익이 나옵니다. 내 이용 이력부터 확인하셔야겠죠.",
 
       heroCta: {
-        label: "내보험 찾아줌으로 가입내역 조회하기 →",
+        label: "보험 가입내역 조회",
         url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
         org: "금융감독원 내보험 찾아줌",
       },
@@ -67,7 +67,7 @@ export const 보험: ArticleCategory = {
             },
           ],
           cta: {
-            label: "전환 손익 계산은 내 가입내역 확인부터입니다",
+            label: "내 실손 세대 조회",
             url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
             org: "금융감독원 내보험 찾아줌",
             note: "생명보험·손해보험 가입내역을 한 번에 조회할 수 있습니다.",
@@ -111,7 +111,7 @@ export const 보험: ArticleCategory = {
           eyebrow: "숨은 부담",
           heading: "5세대 실손보험 전환 후 자기부담은 얼마나 늘어나나요",
           cta: {
-            label: "금융위원회 보도자료 원문 보기",
+            label: "금융위 발표 원문",
             url: "https://www.fsc.go.kr/no010101/86831",
             org: "금융위원회",
             note: "이 글의 수치가 나온 원문입니다. 부록 표까지 그대로 볼 수 있습니다.",
@@ -184,7 +184,7 @@ export const 보험: ArticleCategory = {
             body:
               "몇 세대인지, 어떤 특약이 붙어 있는지 확인합니다. 세대에 따라 절감폭이 크게 다릅니다.",
             action: {
-              label: "가입내역 조회하기",
+              label: "보험 가입내역 조회",
               url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
               org: "금융감독원 내보험 찾아줌",
             },
@@ -333,7 +333,7 @@ export const 보험: ArticleCategory = {
         "먼저 오해부터 풀겠습니다. **5세대로 자동 전환되지 않습니다.** 갱신일이 온다고 저절로 넘어가는 것이 아니라 본인이 신청해야 바뀝니다.\n\n전환 자체는 지금 바로 됩니다. 다만 **2013년 3월 이전에 가입한 초기 실손보험이라면 2026년 11월을 기다리는 편이 유리할 수 있습니다.** 그때 계약전환 할인이 시작되기 때문입니다. 내 계약이 어느 쪽인지부터 확인하셔야겠죠.",
 
       heroCta: {
-        label: "내보험 찾아줌으로 가입내역 조회하기 →",
+        label: "보험 가입내역 조회",
         url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
         org: "금융감독원 내보험 찾아줌",
       },
@@ -365,7 +365,7 @@ export const 보험: ArticleCategory = {
             },
           ],
           cta: {
-            label: "전환 전 내 계약부터 확인하세요",
+            label: "내 계약 조회",
             url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
             org: "금융감독원 내보험 찾아줌",
             note: "생명보험·손해보험 가입내역을 한 번에 조회할 수 있습니다. 가입 시기를 보면 초기 실손인지 알 수 있습니다.",
@@ -409,7 +409,7 @@ export const 보험: ArticleCategory = {
           eyebrow: "기한 주의",
           heading: "5세대 실손보험 전환 할인은 얼마나 지속되나요",
           cta: {
-            label: "금융위원회 보도자료 원문 보기",
+            label: "금융위 발표 원문",
             url: "https://www.fsc.go.kr/no010101/86831",
             org: "금융위원회",
             note: "할인 제도 시행 일정이 담긴 원문입니다.",
@@ -482,7 +482,7 @@ export const 보험: ArticleCategory = {
             body:
               "2013년 3월 이전 가입이고 약관변경 조건이 없다면 11월 할인 대상입니다. 그 외에는 지금 전환해도 됩니다.",
             action: {
-              label: "가입내역 조회하기",
+              label: "보험 가입내역 조회",
               url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
               org: "금융감독원 내보험 찾아줌",
             },
@@ -628,7 +628,7 @@ export const 보험: ArticleCategory = {
         "5세대 실손보험은 **2026년 5월 6일부터 이미 판매 중입니다.** 기다릴 필요 없이 지금 가입할 수 있습니다.\n\n새로 생긴 선택지가 하나 있습니다. **비급여 특약을 골라서 넣는 선별가입이 가능해졌습니다.** 병원을 얼마나 다니는지에 따라 특약 구성을 다르게 짤 수 있다는 뜻입니다. 내 이용 패턴부터 확인하셔야겠죠.",
 
       heroCta: {
-        label: "내보험 찾아줌으로 가입내역 조회하기 →",
+        label: "보험 가입내역 조회",
         url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
         org: "금융감독원 내보험 찾아줌",
       },
@@ -660,7 +660,7 @@ export const 보험: ArticleCategory = {
             },
           ],
           cta: {
-            label: "가입 전 내 계약부터 확인하세요",
+            label: "내 계약 조회",
             url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
             org: "금융감독원 내보험 찾아줌",
             note: "생명보험·손해보험 가입내역을 한 번에 조회할 수 있습니다. 이미 실손보험이 있으면 중복 가입이 되지 않습니다.",
@@ -704,7 +704,7 @@ export const 보험: ArticleCategory = {
           eyebrow: "연령 기준",
           heading: "5세대 실손보험 가입 나이와 태아 보장은 어떻게 되나요",
           cta: {
-            label: "금융위원회 보도자료 원문 보기",
+            label: "금융위 발표 원문",
             url: "https://www.fsc.go.kr/no010101/86831",
             org: "금융위원회",
             note: "가입 조건이 담긴 원문입니다.",
@@ -777,7 +777,7 @@ export const 보험: ArticleCategory = {
             body:
               "내보험 찾아줌에서 가입내역을 조회하면 가입 여부와 세대를 알 수 있습니다. 이미 있으면 신규 가입이 아니라 전환입니다.",
             action: {
-              label: "가입내역 조회하기",
+              label: "보험 가입내역 조회",
               url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
               org: "금융감독원 내보험 찾아줌",
             },
@@ -925,7 +925,7 @@ export const 보험: ArticleCategory = {
         "보험료만 놓고 보면 5세대가 확실히 쌉니다. **4세대 대비 약 30%, 1·2세대 대비 절반 이상 절감이 예상됩니다.**\n\n다만 싸진 이유가 보장 축소라는 점이 중요합니다. 비중증 비급여를 자주 쓰면 아낀 보험료보다 더 나갈 수 있습니다. **내가 지난 2년간 병원을 얼마나 다녔는지가 유일한 판단 기준입니다.** 계약부터 확인해 보셔야겠죠.",
 
       heroCta: {
-        label: "내보험 찾아줌으로 가입내역 조회하기 →",
+        label: "보험 가입내역 조회",
         url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
         org: "금융감독원 내보험 찾아줌",
       },
@@ -957,7 +957,7 @@ export const 보험: ArticleCategory = {
             },
           ],
           cta: {
-            label: "보험료 비교는 내 계약 확인부터입니다",
+            label: "내 보험료 조회",
             url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
             org: "금융감독원 내보험 찾아줌",
             note: "생명보험·손해보험 가입내역을 한 번에 조회할 수 있습니다.",
@@ -969,7 +969,7 @@ export const 보험: ArticleCategory = {
           eyebrow: "절감 폭",
           heading: "5세대 실손보험 보험료는 세대별로 얼마나 차이 나나요",
           cta: {
-            label: "금융위원회 보도자료 원문 보기",
+            label: "금융위 발표 원문",
             url: "https://www.fsc.go.kr/no010101/86831",
             org: "금융위원회",
             note: "세대별 절감폭 수치가 나온 원문입니다.",
@@ -1070,7 +1070,7 @@ export const 보험: ArticleCategory = {
             body:
               "가입 시기와 상품을 보면 몇 세대인지 알 수 있습니다. 세대에 따라 절감폭이 크게 다릅니다.",
             action: {
-              label: "가입내역 조회하기",
+              label: "보험 가입내역 조회",
               url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
               org: "금융감독원 내보험 찾아줌",
             },
@@ -1218,7 +1218,7 @@ export const 보험: ArticleCategory = {
         "5세대 실손보험은 **2026년 5월 6일에 이미 출시됐습니다.** 앞으로 바뀐다는 이야기가 아니라 지금 가입할 수 있는 상품입니다.\n\n핵심은 맞바꿈입니다. **비중증 비급여 보장이 줄어든 대신 보험료가 4세대 대비 약 30% 낮아졌습니다.** 병원을 자주 가는지 아닌지에 따라 유불리가 정반대로 갈립니다. 전환은 되돌릴 수 있는 기간이 정해져 있으니, 내 의료 이용 패턴부터 확인하셔야겠죠.",
 
       heroCta: {
-        label: "내보험 찾아줌으로 가입내역 조회하기 →",
+        label: "보험 가입내역 조회",
         url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
         org: "금융감독원 내보험 찾아줌",
       },
@@ -1251,7 +1251,7 @@ export const 보험: ArticleCategory = {
             },
           ],
           cta: {
-            label: "전환 판단은 내 계약 확인부터입니다",
+            label: "내 계약 조회",
             url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
             org: "금융감독원 내보험 찾아줌",
             note: "생명보험·손해보험 가입내역을 한 번에 조회할 수 있습니다. 몇 세대인지 확인한 뒤 보험사에 전환을 문의하세요.",
@@ -1269,7 +1269,7 @@ export const 보험: ArticleCategory = {
           eyebrow: "보장 구조",
           heading: "4세대와 5세대 실손보험 보장 한도는 무엇이 달라졌나요",
           cta: {
-            label: "금융위원회 보도자료 원문 보기",
+            label: "금융위 발표 원문",
             url: "https://www.fsc.go.kr/no010101/86831",
             org: "금융위원회",
             note: "4세대·5세대 비교표가 담긴 원문입니다.",
@@ -1397,7 +1397,7 @@ export const 보험: ArticleCategory = {
             body:
               "내보험 찾아줌에서 가입내역을 조회하면 가입 시기와 상품 종류를 확인할 수 있습니다. 세대에 따라 판단이 완전히 달라집니다.",
             action: {
-              label: "가입내역 조회하기",
+              label: "보험 가입내역 조회",
               url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
               org: "금융감독원",
             },
@@ -1550,7 +1550,7 @@ export const 보험: ArticleCategory = {
         "자기부담금은 하나로 정해진 비율이 아닙니다. **건강보험 본인부담률을 곱한 금액, 의료비의 20%, 최소 자기부담금 1~2만원을 각각 계산해 그중 가장 큰 금액**을 본인이 냅니다.\n\n이 구조가 4세대와 갈리는 지점입니다. **4세대에는 없던 건강보험 본인부담률이 계산에 들어와, 상급·종합병원처럼 본인부담률이 높은 곳일수록 자기부담금이 커집니다.** 내 계약이 몇 세대인지부터 확인하셔야겠죠.",
 
       heroCta: {
-        label: "내보험 찾아줌으로 가입내역 조회하기 →",
+        label: "보험 가입내역 조회",
         url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
         org: "금융감독원 내보험 찾아줌",
       },
@@ -1582,7 +1582,7 @@ export const 보험: ArticleCategory = {
             },
           ],
           cta: {
-            label: "내 실손보험이 몇 세대인지 조회하기",
+            label: "내 실손 세대 조회",
             url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
             org: "금융감독원 내보험 찾아줌",
             note: "생명보험·손해보험 가입내역을 한 번에 조회할 수 있습니다.",
@@ -1661,7 +1661,7 @@ export const 보험: ArticleCategory = {
           eyebrow: "입원 기준",
           heading: "급여 입원은 자기부담금이 다르게 계산되나요",
           cta: {
-            label: "금융위원회 보도자료 원문 보기",
+            label: "금융위 발표 원문",
             url: "https://www.fsc.go.kr/no010101/86831",
             org: "금융위원회",
             note: "자기부담금 계산 예시가 담긴 원문입니다.",
@@ -1763,7 +1763,7 @@ export const 보험: ArticleCategory = {
             body:
               "생명보험과 손해보험 가입내역을 한 번에 확인해 내 계약이 몇 세대인지 파악합니다.",
             action: {
-              label: "가입내역 조회하기",
+              label: "보험 가입내역 조회",
               url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
               org: "금융감독원 내보험 찾아줌",
             },
@@ -1896,7 +1896,7 @@ export const 보험: ArticleCategory = {
         "50%는 모든 비급여에 붙는 숫자가 아닙니다. **비중증 비급여만 자기부담률이 30%에서 50%로 올랐고, 중증 비급여는 30%가 그대로 유지됩니다.**\n\n한도도 함께 줄었습니다. **비중증 비급여 보장한도가 5천만원에서 1천만원으로 낮아져, 자주 받는 치료일수록 부담이 눈에 띄게 커집니다.** 내가 받는 치료가 어느 쪽인지부터 확인하셔야겠죠.",
 
       heroCta: {
-        label: "내보험 찾아줌으로 가입내역 조회하기 →",
+        label: "보험 가입내역 조회",
         url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
         org: "금융감독원 내보험 찾아줌",
       },
@@ -1928,7 +1928,7 @@ export const 보험: ArticleCategory = {
             },
           ],
           cta: {
-            label: "내 실손보험 특약 구성 조회하기",
+            label: "특약 구성 조회",
             url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
             org: "금융감독원 내보험 찾아줌",
             note: "생명보험·손해보험 가입내역을 한 번에 조회할 수 있습니다.",
@@ -2045,7 +2045,7 @@ export const 보험: ArticleCategory = {
           eyebrow: "개편 배경",
           heading: "왜 비중증 비급여만 자기부담률을 올렸나요",
           cta: {
-            label: "금융위원회 보도자료 원문 보기",
+            label: "금융위 발표 원문",
             url: "https://www.fsc.go.kr/no010101/86831",
             org: "금융위원회",
             note: "개편 배경 수치가 담긴 원문입니다.",
@@ -2125,7 +2125,7 @@ export const 보험: ArticleCategory = {
             body:
               "비급여 특약1(중증)과 특약2(비중증)가 어떻게 붙어 있는지 확인합니다.",
             action: {
-              label: "가입내역 조회하기",
+              label: "보험 가입내역 조회",
               url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
               org: "금융감독원 내보험 찾아줌",
             },
@@ -2249,7 +2249,7 @@ export const 보험: ArticleCategory = {
         "5세대는 하나의 덩어리가 아니라 **기본계약(급여) + 특약1(중증 비급여) + 특약2(비중증 비급여)** 세 조각으로 나뉩니다.\n\n조각마다 조건이 다릅니다. **급여 입원은 자기부담률 20%, 중증 비급여는 한도 5천만원에 자기부담 30%, 비중증 비급여는 한도 1천만원에 자기부담 50%입니다.** 비급여 특약은 골라서 가입할 수 있으니 내게 필요한 조합부터 확인하셔야겠죠.",
 
       heroCta: {
-        label: "내보험 찾아줌으로 가입내역 조회하기 →",
+        label: "보험 가입내역 조회",
         url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
         org: "금융감독원 내보험 찾아줌",
       },
@@ -2281,7 +2281,7 @@ export const 보험: ArticleCategory = {
             },
           ],
           cta: {
-            label: "내 실손보험 가입내역 조회하기",
+            label: "실손 가입내역 조회",
             url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
             org: "금융감독원 내보험 찾아줌",
             note: "생명보험·손해보험 가입내역을 한 번에 조회할 수 있습니다.",
@@ -2439,7 +2439,7 @@ export const 보험: ArticleCategory = {
           eyebrow: "구조 배경",
           heading: "5세대 실손보험 보장 구조는 왜 이렇게 설계됐나요",
           cta: {
-            label: "금융위원회 보도자료 원문 보기",
+            label: "금융위 발표 원문",
             url: "https://www.fsc.go.kr/no010101/86831",
             org: "금융위원회",
             note: "설계 배경과 통계가 담긴 원문입니다.",
@@ -2472,7 +2472,7 @@ export const 보험: ArticleCategory = {
             title: "내보험 찾아줌에서 현재 계약을 확인합니다",
             body: "몇 세대인지, 어떤 특약이 붙어 있는지 확인합니다.",
             action: {
-              label: "가입내역 조회하기",
+              label: "보험 가입내역 조회",
               url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
               org: "금융감독원 내보험 찾아줌",
             },
@@ -2602,7 +2602,7 @@ export const 보험: ArticleCategory = {
         "정답은 사람마다 다릅니다. 갈림길은 하나뿐입니다. **비중증 비급여 치료를 얼마나 받느냐입니다.**\n\n보험금을 거의 받지 않는다면 5세대가 유리합니다. **4세대 대비 약 30%, 1·2세대 대비 최소 50% 이상 저렴한 데다 무사고 할인 10%까지 붙습니다.** 반대로 물리치료처럼 비중증 비급여를 자주 받는다면 자기부담률 50%가 절감분을 넘어설 수 있습니다. 내 이용 이력부터 확인하셔야겠죠.",
 
       heroCta: {
-        label: "내보험 찾아줌으로 가입내역 조회하기 →",
+        label: "보험 가입내역 조회",
         url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
         org: "금융감독원 내보험 찾아줌",
       },
@@ -2634,7 +2634,7 @@ export const 보험: ArticleCategory = {
             },
           ],
           cta: {
-            label: "내 실손보험 가입내역 조회하기",
+            label: "실손 가입내역 조회",
             url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
             org: "금융감독원 내보험 찾아줌",
             note: "생명보험·손해보험 가입내역을 한 번에 조회할 수 있습니다.",
@@ -2683,7 +2683,7 @@ export const 보험: ArticleCategory = {
           eyebrow: "가격 비교",
           heading: "5세대 실손보험 보험료는 얼마나 저렴한가요",
           cta: {
-            label: "금융위원회 보도자료 원문 보기",
+            label: "금융위 발표 원문",
             url: "https://www.fsc.go.kr/no010101/86831",
             org: "금융위원회",
             note: "절감폭 수치가 나온 원문입니다.",
@@ -2830,7 +2830,7 @@ export const 보험: ArticleCategory = {
             title: "내보험 찾아줌에서 가입내역을 조회합니다",
             body: "지금 몇 세대이고 어떤 특약이 붙어 있는지 확인합니다.",
             action: {
-              label: "가입내역 조회하기",
+              label: "보험 가입내역 조회",
               url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
               org: "금융감독원 내보험 찾아줌",
             },
@@ -2958,7 +2958,7 @@ export const 보험: ArticleCategory = {
         "도수치료가 5세대에서 통째로 빠지는 것이 아닙니다. **그대로 두면 비급여 물리치료로 남아 비중증 비급여 규정인 자기부담률 50%와 한도 1천만원이 적용됩니다.**\n\n대신 빼는 선택지가 새로 생겼습니다. **초기 실손 가입자는 선택형 할인 특약에서 도수치료 등 비급여 물리치료를 면책으로 고르고 보험료를 30~40% 할인받을 수 있습니다.** 시행은 2026년 11월이니 내가 대상인지부터 확인하셔야겠죠.",
 
       heroCta: {
-        label: "내보험 찾아줌으로 가입내역 조회하기 →",
+        label: "보험 가입내역 조회",
         url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
         org: "금융감독원 내보험 찾아줌",
       },
@@ -2990,7 +2990,7 @@ export const 보험: ArticleCategory = {
             },
           ],
           cta: {
-            label: "내 실손보험 세대와 가입 시점 조회하기",
+            label: "내 실손 세대 조회",
             url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
             org: "금융감독원 내보험 찾아줌",
             note: "생명보험·손해보험 가입내역을 한 번에 조회할 수 있습니다.",
@@ -3107,7 +3107,7 @@ export const 보험: ArticleCategory = {
           eyebrow: "개편 이유",
           heading: "왜 도수치료가 조정 대상이 됐나요",
           cta: {
-            label: "금융위원회 보도자료 원문 보기",
+            label: "금융위 발표 원문",
             url: "https://www.fsc.go.kr/no010101/86831",
             org: "금융위원회",
             note: "면책 옵션 구성이 담긴 원문입니다.",
@@ -3186,7 +3186,7 @@ export const 보험: ArticleCategory = {
             body:
               "2013년 3월 이전 계약이고 재가입 조건이 없어야 선택형 할인 특약 대상입니다.",
             action: {
-              label: "가입내역 조회하기",
+              label: "보험 가입내역 조회",
               url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
               org: "금융감독원 내보험 찾아줌",
             },
@@ -3313,7 +3313,7 @@ export const 보험: ArticleCategory = {
         "갱신일이 온다고 5세대가 되는 것이 아닙니다. **전환은 본인이 가입한 보험회사에 직접 신청해야 이루어집니다.**\n\n헷갈리는 이유는 두 말이 섞여 쓰이기 때문입니다. **갱신은 보험료가 다시 정해지는 것이고, 재가입은 일정 주기마다 그 시점에 팔고 있는 상품으로 계약 자체가 바뀌는 것입니다.** 내 계약에 재가입 조건이 있는지부터 확인하셔야겠죠.",
 
       heroCta: {
-        label: "내보험 찾아줌으로 가입내역 조회하기 →",
+        label: "보험 가입내역 조회",
         url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
         org: "금융감독원 내보험 찾아줌",
       },
@@ -3345,7 +3345,7 @@ export const 보험: ArticleCategory = {
             },
           ],
           cta: {
-            label: "내 실손보험 가입 시점과 세대 조회하기",
+            label: "내 실손 세대 조회",
             url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
             org: "금융감독원 내보험 찾아줌",
             note: "생명보험·손해보험 가입내역을 한 번에 조회할 수 있습니다.",
@@ -3363,7 +3363,7 @@ export const 보험: ArticleCategory = {
           eyebrow: "용어 정리",
           heading: "실손보험 갱신과 재가입은 무엇이 다른가요",
           cta: {
-            label: "금융위원회 보도자료 원문 보기",
+            label: "금융위 발표 원문",
             url: "https://www.fsc.go.kr/no010101/86831",
             org: "금융위원회",
             note: "재가입 주기 설명이 담긴 원문입니다.",
@@ -3537,7 +3537,7 @@ export const 보험: ArticleCategory = {
             body:
               "2013년 3월 이전 계약이면 재가입 조건이 없는 초기 실손일 수 있습니다.",
             action: {
-              label: "가입내역 조회하기",
+              label: "보험 가입내역 조회",
               url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
               org: "금융감독원 내보험 찾아줌",
             },
@@ -3659,7 +3659,7 @@ export const 보험: ArticleCategory = {
         "실손보험은 두 개를 들어도 보험금이 두 배가 되지 않습니다. **여러 상품에 가입하더라도 본인이 실제로 부담한 의료비를 한도로 보상하고, 그 치료비를 가입한 보험회사들이 나누어 지급합니다.** 이것이 비례보상입니다.\n\n그래서 중복가입은 보장이 두터워지는 것이 아니라 **보험료만 두 번 나가는 상태**가 되기 쉽습니다. 2023년 1월부터는 개인실손과 단체실손에 함께 든 사람이 한쪽을 중지하고 보험료를 돌려받을 수 있습니다. 내가 몇 개를 들고 있는지부터 확인해 보셔야겠죠.",
 
       heroCta: {
-        label: "내보험 찾아줌으로 실손보험 가입내역 조회하기 →",
+        label: "실손 가입내역 조회",
         url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
         org: "금융감독원 내보험 찾아줌",
       },
@@ -3692,7 +3692,7 @@ export const 보험: ArticleCategory = {
             },
           ],
           cta: {
-            label: "내 실손보험 가입 개수와 보험회사 조회하기",
+            label: "가입 개수 조회",
             url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
             org: "금융감독원 내보험 찾아줌",
             note: "생명보험·손해보험 가입내역을 한 번에 조회할 수 있습니다.",
@@ -3764,7 +3764,7 @@ export const 보험: ArticleCategory = {
             },
           ],
           cta: {
-            label: "금융위원회 중지제도 시행 보도자료 원문 보기",
+            label: "중지제도 발표 원문",
             url: "https://www.fsc.go.kr/po010101/79180",
             org: "금융위원회",
             note: "신청 대상과 보험회사별 문의처가 담긴 원문입니다.",
@@ -3861,7 +3861,7 @@ export const 보험: ArticleCategory = {
             },
           ],
           cta: {
-            label: "금융위원회 5세대 실손보험 보도자료 원문 보기",
+            label: "5세대 발표 원문",
             url: "https://www.fsc.go.kr/no010101/86831",
             org: "금융위원회",
             note: "5세대 실손보험 개편 내용이 담긴 원문입니다.",
@@ -4011,7 +4011,7 @@ export const 보험: ArticleCategory = {
         "실비보험 청구는 더 이상 병원 창구부터 들르는 일이 아닙니다. **요양기관이 실손24에 연계돼 있으면 진료비 영수증과 세부내역서를 직접 떼지 않고 앱에서 바로 청구할 수 있습니다.**\n\n2025년 11월 28일부터는 실손24 앱을 깔지 않아도 **네이버와 토스에서 같은 서비스를 쓸 수 있습니다.** 다만 모든 병원이 연계된 것은 아니라서, 내가 다니는 병원이 되는지부터 확인하는 편이 빠릅니다.",
 
       heroCta: {
-        label: "금융위원회 청구 전산화 시행 안내 확인하기 →",
+        label: "청구 전산화 안내",
         url: "https://www.fsc.go.kr/no010101/85456",
         org: "금융위원회",
       },
@@ -4044,7 +4044,7 @@ export const 보험: ArticleCategory = {
             },
           ],
           cta: {
-            label: "청구 전산화 시행 내용과 이용 방법 확인하기",
+            label: "청구 전산화 안내",
             url: "https://www.fsc.go.kr/no010101/85456",
             org: "금융위원회",
             note: "2단계 확대 시행 내용과 요양기관 연계 현황이 담긴 원문입니다.",
@@ -4101,7 +4101,7 @@ export const 보험: ArticleCategory = {
             ],
           },
           cta: {
-            label: "네이버·토스 실손24 이용 안내 원문 보기",
+            label: "네이버·토스 안내",
             url: "https://www.fsc.go.kr/no010101/85746",
             org: "금융위원회",
             note: "네이버·토스 연동 개시 내용이 담긴 원문입니다.",
@@ -4337,7 +4337,7 @@ export const 보험: ArticleCategory = {
         "지역가입자 건강보험료는 월급 하나로 끝나는 직장가입자와 계산 방식이 다릅니다. **소득에 보험료율을 곱한 금액과, 재산을 점수로 환산해 점수당 금액을 곱한 금액을 더해서 정합니다.**\n\n2026년 기준으로 보험료율은 7.19%, 재산보험료부과점수당 금액은 211.5원입니다. 소득이 적어도 집이나 차가 있으면 보험료가 붙는 구조라 **소득만 보고 예상하면 실제 고지서와 어긋납니다.** 내 보험료가 어떻게 매겨졌는지부터 확인해 보셔야겠죠.",
 
       heroCta: {
-        label: "민원여기요 로그인하고 내 건강보험료 조회하기 →",
+        label: "건강보험료 조회",
         url: "https://www.nhis.or.kr/nhis/minwon/jpAba00101.do",
         org: "국민건강보험공단 민원여기요",
       },
@@ -4369,7 +4369,7 @@ export const 보험: ArticleCategory = {
             },
           ],
           cta: {
-            label: "민원여기요에서 내 보험료 부과 내역 조회하기",
+            label: "부과 내역 조회",
             url: "https://www.nhis.or.kr/nhis/minwon/jpAba00101.do",
             org: "국민건강보험공단 민원여기요",
             note: "로그인 후 보험료 조회·납부와 부과 내역을 확인합니다.",
@@ -4441,7 +4441,7 @@ export const 보험: ArticleCategory = {
             },
           ],
           cta: {
-            label: "노인장기요양보험 제도 내용 확인하기",
+            label: "장기요양보험 안내",
             url: "https://www.longtermcare.or.kr/npbs/e/b/101/npeb101m01.web",
             org: "국민건강보험공단 노인장기요양보험",
             note: "장기요양보험이 무엇이고 무엇을 보장하는지 확인합니다.",
@@ -4660,7 +4660,7 @@ export const 보험: ArticleCategory = {
         "연금을 받기 시작하고 보험료 고지서가 두꺼워졌다면 착오가 아닙니다. **연금소득은 건강보험료를 매기는 소득에 그대로 들어갑니다.**\n\n특히 은퇴하면서 직장가입자에서 지역가입자로 바뀌면 계산 방식까지 달라집니다. 지역가입자는 **연간소득을 12개월로 나눈 소득월액에 보험료율 7.19%를 곱하고, 여기에 재산 점수까지 더합니다.** 회사가 절반을 내주던 구조도 사라집니다. 내 보험료가 어떻게 매겨졌는지부터 확인해 보셔야겠죠.",
 
       heroCta: {
-        label: "민원여기요 로그인하고 내 건강보험료 부과 내역 조회하기 →",
+        label: "건강보험료 조회",
         url: "https://www.nhis.or.kr/nhis/minwon/jpAba00101.do",
         org: "국민건강보험공단 민원여기요",
       },
@@ -4692,7 +4692,7 @@ export const 보험: ArticleCategory = {
             },
           ],
           cta: {
-            label: "민원여기요에서 보험료 부과 내역 조회하기",
+            label: "부과 내역 조회",
             url: "https://www.nhis.or.kr/nhis/minwon/jpAba00101.do",
             org: "국민건강보험공단 민원여기요",
             note: "로그인 후 보험료 조회·납부와 부과 내역을 확인합니다.",
@@ -4990,9 +4990,9 @@ export const 보험: ArticleCategory = {
         "자손과 자상은 같은 줄에 놓고 비교하기 어려운 상대입니다. **자손(자기신체사고)은 자동차보험 표준약관이 정한 여섯 개 보장종목 중 하나지만, 자상(자동차상해)은 표준약관에 아예 등장하지 않는 특별약관입니다.**\n\n그래서 자손은 어느 회사에서 가입하든 뼈대가 같고, 자상은 **회사가 만든 특약이라 보장 범위와 한도가 회사마다 다릅니다.** 내 증권에 무엇이 붙어 있는지부터 확인해 보셔야겠죠.",
 
       heroCta: {
-        label: "자동차보험 표준약관 원문에서 보장종목 확인하기 →",
-        url: "https://carinfo.knia.or.kr/lmxsrv/law/lawFullView.do?SEQ=3&LAWGROUP=1",
-        org: "손해보험협회 자동차보험 종합포털",
+        label: "자동차보험 가입내역 조회",
+        url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
+        org: "금융감독원 내보험 찾아줌",
       },
 
       keyFacts: [
@@ -5022,10 +5022,10 @@ export const 보험: ArticleCategory = {
             },
           ],
           cta: {
-            label: "표준약관에서 청구 절차 조문 확인하기",
-            url: "https://carinfo.knia.or.kr/lmxsrv/law/lawFullView.do?SEQ=3&LAWGROUP=1",
-            org: "손해보험협회 자동차보험 종합포털",
-            note: "제25조 청구할 수 있는 경우, 제26조 청구 절차가 담겨 있습니다.",
+            label: "내 보장종목 조회",
+            url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
+            org: "금융감독원 내보험 찾아줌",
+            note: "가입한 자동차보험에 자손이 있는지, 자상 특약이 붙어 있는지 바로 보입니다.",
           },
           body:
             "청구는 내 증권에 무엇이 붙어 있는지 확인하는 데서 시작합니다. 자손과 자상은 이름이 비슷하지만 근거 문서가 다릅니다.\n\n표준약관은 보험금을 청구할 수 있는 경우를 제25조에, 청구 절차와 유의 사항을 제26조에 두고 있습니다. 자기신체사고는 이 조문을 그대로 따릅니다.\n\n지급 기한도 정해져 있습니다. 표준약관은 보험회사가 청구 서류를 받으면 지체 없이 지급할 보험금액을 정하고, 정해진 날부터 7일 이내에 지급하도록 하고 있습니다.",
@@ -5156,10 +5156,10 @@ export const 보험: ArticleCategory = {
             },
           ],
           cta: {
-            label: "자동차사고 과실비율 분쟁심의위원회에서 확인하기",
+            label: "과실비율 기준 보기",
             url: "https://accident.knia.or.kr/faq",
             org: "자동차사고 과실비율 분쟁심의위원회",
-            note: "과실비율 산정과 관련한 실제 문답이 정리돼 있습니다.",
+            note: "무과실 인정, 중과실 사고 등 실제로 다투는 쟁점이 문답으로 정리돼 있습니다.",
           },
           body:
             "먼저 사유를 서면으로 받으셔야 합니다. 표준약관은 보험회사가 서류를 받은 때부터 30일 이내에 거절 또는 연기 사유를 서면으로 통지하도록 하고 있습니다.\n\n다투는 지점이 과실비율이라면 자동차사고 과실비율 분쟁심의위원회 자료가 도움이 됩니다. 무과실 인정이 왜 어려운지, 중과실이면 상대 과실이 100%가 되는지 같은 실제 문답이 정리돼 있습니다.\n\n자손은 표준약관 조문과, 자상은 회사 약관과 하나씩 대조해 보시면 어디서 어긋났는지 드러납니다.",
@@ -5304,9 +5304,9 @@ export const 보험: ArticleCategory = {
         "자손과 자상을 함께 들었다고 보험금이 두 배가 되지 않습니다. **자동차보험 표준약관 제33조는 보상책임이 전부 또는 일부 중복되는 다른 보험계약이 있으면 산식에 따라 산출한 보험금을 지급하도록 정하고 있습니다.**\n\n손해액을 넘겨 받을 수 없다는 뜻입니다. 그러니 중복이 있다면 **보험료만 두 번 나가는 상태인지** 먼저 확인해 보셔야겠죠.",
 
       heroCta: {
-        label: "자동차보험 표준약관 제33조 보험금의 분담 확인하기 →",
-        url: "https://carinfo.knia.or.kr/lmxsrv/law/lawFullView.do?SEQ=3&LAWGROUP=1",
-        org: "손해보험협회 자동차보험 종합포털",
+        label: "중복 가입 조회",
+        url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
+        org: "금융감독원 내보험 찾아줌",
       },
 
       keyFacts: [
@@ -5336,10 +5336,10 @@ export const 보험: ArticleCategory = {
             },
           ],
           cta: {
-            label: "표준약관에서 청구 조문과 분담 규정 확인하기",
-            url: "https://carinfo.knia.or.kr/lmxsrv/law/lawFullView.do?SEQ=3&LAWGROUP=1",
-            org: "손해보험협회 자동차보험 종합포털",
-            note: "제25조 청구할 수 있는 경우와 제33조 보험금의 분담이 담겨 있습니다.",
+            label: "중복 가입 조회",
+            url: "https://www.fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395",
+            org: "금융감독원 내보험 찾아줌",
+            note: "생명·손해보험 가입내역을 한 번에 조회해 중복 여부를 봅니다.",
           },
           body:
             "중복인지부터 확인하셔야 합니다. 같은 사고에 보상책임이 겹치는 계약이 둘 이상이면 분담 규정이 작동합니다.\n\n표준약관은 보험금을 청구할 수 있는 경우를 제25조에 두고 있습니다. 중복이 있더라도 청구 자체는 각 계약에 대해 하셔야 합니다.\n\n분담 지급이라 한 곳에만 청구하면 그 회사가 부담하는 몫만 받게 됩니다. 겹치는 계약이 있다면 양쪽 모두에 청구하시는 편이 안전합니다.",
@@ -5615,7 +5615,7 @@ export const 보험: ArticleCategory = {
         "\"자상은 과실이 있어도 다 준다\"는 말을 자주 보셨을 겁니다. 그런데 **자동차상해는 자동차보험 표준약관에 없는 특별약관입니다.** 회사가 각자 설계하므로 과실을 어떻게 반영하는지도 회사 약관에 달려 있습니다.\n\n자기신체사고는 표준약관이 정한 보장종목이라 뼈대가 공통입니다. **먼저 내 과실비율이 어떻게 정해졌는지부터 확인하는 편이 빠릅니다.**",
 
       heroCta: {
-        label: "과실비율 분쟁심의위원회에서 산정 기준 확인하기 →",
+        label: "과실비율 기준 보기",
         url: "https://accident.knia.or.kr/faq",
         org: "자동차사고 과실비율 분쟁심의위원회",
       },
@@ -5647,7 +5647,7 @@ export const 보험: ArticleCategory = {
             },
           ],
           cta: {
-            label: "과실비율 산정 기준과 실제 문답 확인하기",
+            label: "과실비율 사례 보기",
             url: "https://accident.knia.or.kr/faq",
             org: "자동차사고 과실비율 분쟁심의위원회",
             note: "무과실 인정, 중과실 사고 등 자주 다투는 쟁점이 정리돼 있습니다.",

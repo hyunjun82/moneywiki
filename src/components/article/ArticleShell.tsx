@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Fragment } from "react";
 import "./template.css";
 import { Toc, Faq } from "./Interactive";
@@ -98,9 +97,9 @@ function Section({ s, n }: { s: MainSection; n: number }) {
               <h3>{w.label ?? "계산기로 바로 확인하기"}</h3>
               {w.note && <p>{w.note}</p>}
               <div className="cta-row">
-                <Link className="btn-p" href={`/w/${encodeURIComponent(w.slug)}`}>
+                <a className="btn-p" href={`/w/${encodeURIComponent(w.slug)}`}>
                   계산기 열기
-                </Link>
+                </a>
               </div>
             </div>
           );
@@ -121,21 +120,26 @@ function Section({ s, n }: { s: MainSection; n: number }) {
       {s.link && (
         <p className="body" style={{ marginTop: 12 }}>
           <Mk text={s.link.bridge} />{" "}
-          <Link href={`/w/${encodeURIComponent(s.link.slug)}`}>{s.link.label} →</Link>
+          <a href={`/w/${encodeURIComponent(s.link.slug)}`}>{s.link.label} →</a>
         </p>
       )}
 
       {/* 섹션 행동 버튼. 광고와 붙지 않도록 위에 여백을 크게 둔다.
           AdSense 정책상 광고가 버튼처럼 보이면 안 되므로 시각적으로 분리한다. */}
+      {/* 버튼 글자는 label 그대로 쓴다.
+          예전에는 label을 h3 제목으로 올리고 버튼에는 "{기관명}에서 바로 진행하기"를
+          하드코딩했다. 그래서 글이 뭐든 모든 버튼이 똑같은 문장이 됐고,
+          읽는 사람 이익이 아니라 기관 이름만 보였다.
+          새 창(target=_blank)도 뺐다 — 누르는 순간 사이트 밖 새 탭으로 튕겨 나갔다. */}
       {s.cta && (
         <div className="cta-box viz" style={{ marginTop: 28 }}>
-          <h3>{s.cta.label}</h3>
           {s.cta.note && <p>{s.cta.note}</p>}
           <div className="cta-row">
-            <a className="btn-p" href={s.cta.url} target="_blank" rel="noopener noreferrer">
-              {s.cta.org}에서 바로 진행하기 →
+            <a className="btn-p" href={s.cta.url} rel="noopener">
+              {s.cta.label} →
             </a>
           </div>
+          <p className="fine">{s.cta.org}</p>
         </div>
       )}
     </section>
@@ -188,7 +192,7 @@ export function ArticleShell({ data }: Props) {
             문서 의미는 JSON-LD ArticleSchema 가 담당한다. */}
         <div className="aw-doc">
           <nav className="bc">
-            <Link href="/">홈</Link><span>›</span>
+            <a href="/">홈</a><span>›</span>
             <span>{data.category}</span><span>›</span>
             <b>{data.primaryKeywords[0]}</b>
           </nav>
@@ -208,8 +212,8 @@ export function ArticleShell({ data }: Props) {
           </div>
 
           {data.heroCta && (
-            <a className="cta-main" href={data.heroCta.url} target="_blank" rel="noopener noreferrer">
-              {data.heroCta.label}
+            <a className="cta-main" href={data.heroCta.url} rel="noopener">
+              {data.heroCta.label} →
             </a>
           )}
 
@@ -256,7 +260,7 @@ export function ArticleShell({ data }: Props) {
                   <h3>지금 바로 {firstAction.label.includes("신청") ? "신청하기" : "확인하기"}</h3>
                   <p>{firstAction.org}에서 바로 진행할 수 있습니다.</p>
                   <div className="cta-row">
-                    <a className="btn-p" href={firstAction.url} target="_blank" rel="noopener noreferrer">
+                    <a className="btn-p" href={firstAction.url} rel="noopener">
                       {firstAction.label}
                     </a>
                   </div>
@@ -270,7 +274,7 @@ export function ArticleShell({ data }: Props) {
                       <b>{st.title}</b>
                       <p>{st.body}</p>
                       {st.action && i > 0 && (
-                        <p><a href={st.action.url} target="_blank" rel="noopener noreferrer">{st.action.label} →</a></p>
+                        <p><a href={st.action.url} rel="noopener">{st.action.label} →</a></p>
                       )}
                     </div>
                   </li>
@@ -335,9 +339,9 @@ export function ArticleShell({ data }: Props) {
               <ul>
                 {data.relatedQuestions.map((r, i) => (
                   <li key={i}>
-                    <Link href={`/w/${encodeURIComponent(r.slug)}`}>
+                    <a href={`/w/${encodeURIComponent(r.slug)}`}>
                       <b>{r.question}</b>
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
