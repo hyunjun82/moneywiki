@@ -19,10 +19,11 @@ import fs from "node:fs";
 import path from "node:path";
 import { 보험 } from "@/data/articles/보험";
 import { 퇴직금 } from "@/data/articles/퇴직금";
+import { 금융 } from "@/data/articles/금융";
 import type { ArticleData } from "@/data/articles/types";
 
 const only = process.argv.slice(2);
-const all: ArticleData[] = [...보험.articles, ...퇴직금.articles];
+const all: ArticleData[] = [...보험.articles, ...퇴직금.articles, ...금융.articles];
 const articles = only.length ? all.filter((a) => only.includes(a.slug)) : all;
 
 type Level = "ERROR" | "WARN";

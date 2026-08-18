@@ -88,8 +88,14 @@ for (const slug of slugs) {
           ? "CTA박스"
           : "";
         kinds.push(k);
-        if (!k) out.problems.push(`q${i + 1}에 비주얼이 그려지지 않음 (텍스트만)`);
       });
+      // 전 섹션 필수는 풀었다 — verify-articles 와 같은 기준(과반)을 쓴다.
+      // 주제에 따라 해설만으로 충분한 섹션이 있고, 억지로 채우면 판박이가 된다.
+      const withViz = kinds.filter(Boolean).length;
+      if (secs.length && withViz / secs.length < 0.5)
+        out.problems.push(
+          `비주얼이 있는 섹션 ${withViz}/${secs.length} — 절반 이상은 표·체크리스트·수치로 보여 주세요`
+        );
       for (let i = 1; i < kinds.length; i++)
         if (kinds[i] && kinds[i] === kinds[i - 1])
           out.problems.push(`q${i}와 q${i + 1}이 같은 비주얼(${kinds[i]}) 연속`);

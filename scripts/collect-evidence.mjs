@@ -85,7 +85,7 @@ async function runPool(tasks) {
       const { label, url, run } = queue.shift();
       let ok = false;
       for (let attempt = 1; attempt <= RETRIES + 1 && !ok; attempt++) {
-        const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+        const page = await browser.newPage({ viewport: { width: 1100, height: 800 } });
         page.on("dialog", (d) => d.accept().catch(() => {}));
         try {
           await withHostLock(url, () => run(page));
@@ -170,7 +170,7 @@ async function collectUrl(page, url) {
   console.log(`페이지 ${url} …`);
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
   await page.waitForTimeout(2500);
-  let { text, title } = await page.evaluate(() => {
+  let { text, title, tables } = await page.evaluate(() => {
     // 첫 번째로 걸린 후보를 그대로 쓰면 껍데기만 읽는다.
     // 자동차보험 표준약관은 main 이 목차뿐이고 본문은 다른 곳에 있어
     // 본문 60자로 읽히고 "수치 없음"으로 버려졌다. 가장 긴 후보를 고른다.
@@ -188,7 +188,23 @@ async function collectUrl(page, url) {
     // 문장이 8,000자 뒤에 있어 근거가 없는 것처럼 보였다.
     // 16,000자도 모자랐다 — 자동차보험 표준약관(38,168자)은 자기신체사고 장이
     // 그 뒤에 있어 조문을 통째로 놓쳤다.
-    return { text: el.innerText.slice(0, 40000), title: document.title };
+    // 표는 따로 뽑는다. innerText 로는 칸 구분이 뭉개져 "1억원 2,000만원" 처럼
+    // 붙어 나오고, 어느 항목의 값인지 사라진다. 정작 필요한 값이 표에 있는 경우가 많다.
+    const tables = [...document.querySelectorAll("table")]
+      .map((t) =>
+        [...t.querySelectorAll("tr")]
+          .map((r) =>
+            [...r.querySelectorAll("th,td")]
+              .map((c) => (c.innerText || "").replace(/\s+/g, " ").trim())
+              .filter(Boolean)
+              .join(" | ")
+          )
+          .filter((r) => r.length > 4)
+          .join("\n")
+      )
+      .filter((t) => t.length > 20)
+      .slice(0, 30);
+    return { text: el.innerText.slice(0, 40000), title: document.title, tables };
   });
 
   // 본문이 iframe 안에 실린 사이트가 있다. 법령 수집 경로는 프레임을 훑는데
@@ -204,6 +220,8 @@ async function collectUrl(page, url) {
       // 교차 출처 프레임은 읽을 수 없다 — 건너뛴다
     }
   }
+  // 표 텍스트를 본문 뒤에 붙여 fact 추출 대상에 포함시킨다.
+  if (tables?.length) text += "\n\n[표]\n" + tables.join("\n---\n");
   const org = orgOf(url, title);
 
   // 본문이 너무 짧으면 로딩 실패이거나 내용이 이미지다. 재시도 대상.
