@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-19T06:42:51.412+09:00",
+  "updatedAt": "2026-08-19T07:01:53.887+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -1118,9 +1118,9 @@
     "fetchedDate": "2026-08-19"
   },
   "fx": {
-    "usdkrw": 1412.47,
-    "change": 0.29,
-    "changePct": 0.02,
+    "usdkrw": 1412.29,
+    "change": 0.11,
+    "changePct": 0.01,
     "dir": "up",
     "source": "Yahoo Finance (KRW=X)"
   },
@@ -1130,8 +1130,8 @@
       "usdPerOz": 4389.5,
       "changePct": 0.59,
       "dir": "up",
-      "krwPerGram": 199336,
-      "krwPerDon": 747510,
+      "krwPerGram": 199310,
+      "krwPerDon": 747413,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
