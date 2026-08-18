@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import {
   BandAd,
   Card,
@@ -62,7 +61,7 @@ function QuickButtons({ buy, sell }: { buy?: number | null; sell?: number | null
   return (
     <div className="grid grid-cols-3 gap-2.5 sm:gap-4">
       {items.map((it) => (
-        <Link
+        <a
           key={it.href}
           href={it.href}
           className="bg-[linear-gradient(145deg,#F5E3A6_0%,#E0BE55_45%,#C79A22_100%)] rounded-[14px] px-3 py-3.5 sm:px-5 sm:py-4 flex flex-col items-center gap-0.5 text-[#17181C] hover:brightness-105 transition-[filter]"
@@ -73,7 +72,7 @@ function QuickButtons({ buy, sell }: { buy?: number | null; sell?: number | null
           <span className="text-[12px] sm:text-[13px] font-semibold opacity-80 tabular-nums">
             {it.sub}
           </span>
-        </Link>
+        </a>
       ))}
     </div>
   );

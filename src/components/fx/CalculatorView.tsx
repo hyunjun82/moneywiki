@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useMemo, useState } from "react";
 import {
   BandAd,
@@ -98,12 +97,12 @@ export default function CalculatorView() {
               한 화면에서 비교하세요.
             </p>
             <div className="mt-[30px] flex items-center gap-2.5 flex-wrap">
-              <Link
+              <a
                 href="/fx/banks"
                 className="inline-flex items-center gap-2 px-6 py-[15px] rounded-[13px] bg-white text-[#0B2233] text-[15px] font-bold hover:bg-[#E9F0F7] transition-colors"
               >
                 은행 환율 비교하기 →
-              </Link>
+              </a>
               {data?.banks?.currencies?.length ? (
                 <span className="text-[13px] text-white/[0.42]">
                   {data.banks.byCurrency[data.banks.currencies[0]]?.length ?? 0}개 은행 ·{" "}
@@ -266,12 +265,12 @@ export default function CalculatorView() {
                 <br />
                 실제 환전 금액은 다릅니다
               </h3>
-              <Link
+              <a
                 href="/fx/banks"
                 className="mt-5 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#1F4E79] text-white text-[15px] font-semibold hover:bg-[#2A6099] transition-colors"
               >
                 은행별 실제 환전가 비교 →
-              </Link>
+              </a>
             </div>
             <div className="grid gap-3.5">
               {[

@@ -8,7 +8,6 @@
  * 한국에서 초록 하락은 반대로 읽힌다.
  */
 
-import Link from "next/link";
 import { useState } from "react";
 import { AdSlot } from "@/components/AdSlot";
 import { type Dir, dirColor, dirMark, won } from "./priceData";
@@ -187,13 +186,13 @@ export function TipsCard({ title, tips }: { title: string; tips: string[] }) {
 /** 시안의 금색 CTA 버튼 */
 export function GoldCta({ href, label }: { href: string; label: string }) {
   return (
-    <Link
+    <a
       href={href}
       className="bg-[linear-gradient(145deg,#F5E3A6_0%,#E0BE55_45%,#C79A22_100%)] rounded-[16px] p-5 flex items-center justify-between text-[#17181C] hover:brightness-105 transition-[filter]"
     >
       <span className="text-[18px] font-extrabold tracking-[-0.02em]">{label}</span>
       <span className="text-[22px]">→</span>
-    </Link>
+    </a>
   );
 }
 
@@ -222,7 +221,7 @@ export function CrossLinks({
 }) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-      <Link
+      <a
         href={primary.href}
         className="bg-white border-[1.5px] border-[#D4AF37] rounded-[18px] px-6 py-6 flex items-center justify-between gap-3 hover:brightness-[0.99] transition-[filter]"
       >
@@ -233,8 +232,8 @@ export function CrossLinks({
           <span className="text-[14px] text-[#6C727B]">{primary.sub}</span>
         </span>
         <span className="text-[24px] text-[#C79A22] shrink-0">→</span>
-      </Link>
-      <Link
+      </a>
+      <a
         href={secondary.href}
         className="bg-white border border-[#E2DFD7] rounded-[18px] px-6 py-6 flex items-center justify-between gap-3 hover:border-[#CFCBC1] transition-colors"
       >
@@ -245,7 +244,7 @@ export function CrossLinks({
           <span className="text-[14px] text-[#6C727B]">{secondary.sub}</span>
         </span>
         <span className="text-[24px] text-[#6C727B] shrink-0">→</span>
-      </Link>
+      </a>
     </div>
   );
 }

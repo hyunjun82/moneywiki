@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useMemo, useState } from "react";
 import { BandAd, Card, DARK_BG, DataNotice, FooterNote, PillTabs, Skeleton } from "./ui";
 import { brandOf } from "./bankBrand";
@@ -105,12 +104,12 @@ export default function BanksView() {
               은행연합회가 공시하는 환전수수료율과 우대율을 적용해 실제로 받는 금액을 비교합니다.
             </p>
           </div>
-          <Link
+          <a
             href="/fx"
             className="px-5 py-3.5 rounded-xl border border-white/20 text-white text-[15px] font-semibold hover:bg-white/10 transition-colors"
           >
             ← 환율 계산기로
-          </Link>
+          </a>
         </div>
       </section>
 
@@ -277,12 +276,12 @@ function PendingNotice({ ready }: { ready: boolean }) {
         은행연합회가 공시하는 환전수수료율과 우대율을 확인한 뒤 공개합니다. 확인되지 않은 우대율로
         &ldquo;어느 은행이 유리하다&rdquo;고 표시하지 않습니다.
       </p>
-      <Link
+      <a
         href="/fx"
         className="mt-6 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#1F4E79] text-white text-[15px] font-semibold hover:bg-[#2A6099] transition-colors"
       >
         환율 계산기 보기 →
-      </Link>
+      </a>
     </Card>
   );
 }

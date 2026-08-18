@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import {
   BandAd,
@@ -113,7 +112,7 @@ export default function HubView() {
 
       {/* 큰 액션 버튼 2개 */}
       <div className="flex flex-col gap-4">
-        <Link
+        <a
           href="/gold/buy"
           className="bg-[linear-gradient(145deg,#F7E7B0_0%,#E3C15C_34%,#D4AF37_68%,#A8801A_100%)] rounded-[18px] px-6 sm:px-8 py-6 min-h-[104px] flex items-center justify-between gap-4 shadow-[0_16px_34px_rgba(140,105,10,.28)] hover:brightness-105 transition-[filter]"
         >
@@ -126,9 +125,9 @@ export default function HubView() {
             </span>
           </span>
           <span className="text-[28px] sm:text-[34px] text-[#17181C]">→</span>
-        </Link>
+        </a>
 
-        <Link
+        <a
           href="/gold/sell"
           className="bg-[#14161A] border-[1.5px] border-[#D4AF37] rounded-[18px] px-6 sm:px-8 py-6 min-h-[104px] flex items-center justify-between gap-4 hover:brightness-125 transition-[filter]"
         >
@@ -141,7 +140,7 @@ export default function HubView() {
             </span>
           </span>
           <span className="text-[28px] sm:text-[34px] text-[#E3C15C]">→</span>
-        </Link>
+        </a>
       </div>
 
       {/* 국내 / 국제 */}
@@ -303,7 +302,7 @@ export default function HubView() {
             </div>
             <span className="text-[12px] text-[#4A3400]">감정 결과에 따라 달라집니다</span>
           </div>
-          <Link
+          <a
             href="/gold/calculator"
             className="bg-[linear-gradient(145deg,#F5E3A6_0%,#E0BE55_45%,#C79A22_100%)] rounded-[14px] px-5 py-4 flex items-center justify-between text-[#17181C] hover:brightness-105 transition-[filter]"
           >
@@ -311,7 +310,7 @@ export default function HubView() {
               순도·중량 넣고 계산하기
             </span>
             <span className="text-[20px]">→</span>
-          </Link>
+          </a>
         </div>
 
         {krx?.latest ? (

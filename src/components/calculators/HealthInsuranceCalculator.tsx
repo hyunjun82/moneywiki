@@ -19,7 +19,8 @@ const CRITERIA_2026 = {
     rate: 0.0719,           // 7.19%
     employeeRate: 0.03595,  // 본인 부담 3.595%
     maxSalary: 9183480 / 0.0719, // 상한액 기준 월급
-    maxPremium: 9183480,    // 월 상한액
+    maxPremium: 9183480,    // 월 상한액 (고시 제2조, 보수월액보험료 총액)
+    minPremium: 20160,      // 월 하한액 (고시 제3조, 보수월액보험료 총액)
   },
   // 장기요양보험
   longTermCare: {
@@ -27,7 +28,7 @@ const CRITERIA_2026 = {
   },
   // 지역가입자 (간이 계산)
   regional: {
-    scorePerWon: 211,       // 점수당 금액 (2026년 예상)
+    scorePerWon: 211.5,     // 재산보험료 부과점수당 금액 (2026년 공단 고시)
   },
 };
 
@@ -84,10 +85,18 @@ export default function HealthInsuranceCalculator() {
     if (type === "workplace") {
       // 직장가입자
       const salary = Math.min(monthlySalary, CRITERIA_2026.workplace.maxSalary);
-      
-      // 건강보험료 (본인 부담분)
-      const health = salary * CRITERIA_2026.workplace.employeeRate;
-      setHealthInsurance(Math.min(health, CRITERIA_2026.workplace.maxPremium / 2));
+
+      // 고시는 상·하한을 "총 보험료"에 건다. 총액에 먼저 적용한 뒤 절반이 본인 부담이다.
+      // 하한을 안 걸면 보수월액 280,389원 미만 구간이 실제 고지액보다 적게 나온다.
+      const totalHealth =
+        salary <= 0
+          ? 0
+          : Math.min(
+              Math.max(salary * CRITERIA_2026.workplace.rate, CRITERIA_2026.workplace.minPremium),
+              CRITERIA_2026.workplace.maxPremium,
+            );
+      const health = totalHealth / 2;
+      setHealthInsurance(health);
 
       // 장기요양보험료
       const longTerm = health * CRITERIA_2026.longTermCare.rate;
@@ -217,7 +226,7 @@ export default function HealthInsuranceCalculator() {
               <li>2026년 보험료율 7.19% 기준이에요 (본인 3.595%)</li>
               <li>장기요양보험료는 건강보험료의 13.14%예요</li>
               <li>직장가입자는 회사와 절반씩 부담해요</li>
-              <li>월 상한액은 9,183,480원이에요</li>
+              <li>월 상한액은 9,183,480원, 하한액은 20,160원이에요 (총 보험료 기준)</li>
             </ul>
           </div>
         </div>

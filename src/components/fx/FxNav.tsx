@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { changeText, fxColor, useFx, won, type FxRate } from "./fxData";
 
@@ -29,7 +28,7 @@ export default function FxNav() {
     <>
       <header className="sticky top-0 z-20 bg-[rgba(9,29,45,0.92)] backdrop-blur-[16px] border-b border-white/10">
         <div className="max-w-[1180px] mx-auto px-4 sm:px-8 h-[70px] flex items-center justify-between gap-6">
-          <Link href="/fx" className="flex items-center gap-2.5 shrink-0">
+          <a href="/fx" className="flex items-center gap-2.5 shrink-0">
             <span className="w-7 h-7 rounded-[9px] bg-white text-[#0B2233] flex items-center justify-center text-[14px] font-extrabold tracking-[-0.04em]">
               ₩
             </span>
@@ -37,12 +36,12 @@ export default function FxNav() {
             <span className="ml-1.5 px-2 py-[3px] rounded-md border border-white/20 text-[10.5px] font-bold text-white/70 tracking-[0.08em] hidden sm:inline">
               BETA
             </span>
-          </Link>
+          </a>
           <nav className="flex items-center gap-1 bg-white/10 p-1 rounded-full">
             {TABS.map((t) => {
               const on = current === t.href;
               return (
-                <Link
+                <a
                   key={t.href}
                   href={t.href}
                   aria-current={on ? "page" : undefined}
@@ -51,7 +50,7 @@ export default function FxNav() {
                   }`}
                 >
                   {t.label}
-                </Link>
+                </a>
               );
             })}
           </nav>

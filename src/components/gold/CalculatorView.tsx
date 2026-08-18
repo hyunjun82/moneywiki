@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import { BandAd, Card, DataNotice, FooterNote, Hero, SideAd, Skeleton } from "./ui";
 import { GRAM_PER_DON, korDate, korDateTime, perGram, usePrice, won } from "./priceData";
@@ -187,18 +186,18 @@ export default function CalculatorView() {
           <SideAd />
 
           <div className="grid grid-cols-2 gap-3">
-            <Link
+            <a
               href="/gold/buy"
               className="bg-white border-[1.5px] border-[#D4AF37] rounded-[16px] p-[18px] text-center text-[16px] font-bold text-[#1A1D21] hover:brightness-[0.99] transition-[filter]"
             >
               금 살 때 가격
-            </Link>
-            <Link
+            </a>
+            <a
               href="/gold/sell"
               className="bg-white border-[1.5px] border-[#D4AF37] rounded-[16px] p-[18px] text-center text-[16px] font-bold text-[#1A1D21] hover:brightness-[0.99] transition-[filter]"
             >
               금 팔 때 가격
-            </Link>
+            </a>
           </div>
         </div>
       </section>

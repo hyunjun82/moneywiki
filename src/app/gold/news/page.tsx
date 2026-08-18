@@ -1,7 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { Metadata } from "next";
-import Link from "next/link";
 
 /**
  * /gold/news — 금시세 일일 기사 목록.
@@ -58,7 +57,7 @@ export default function GoldNewsListPage() {
       ) : (
         <div className="flex flex-col gap-3">
           {docs.map((d) => (
-            <Link
+            <a
               key={d.date}
               href={`/gold/news/${d.date}`}
               className="bg-white border border-[#E2DFD7] rounded-[16px] px-6 py-5 flex flex-col gap-1.5 hover:border-[#D4AF37] transition-colors"
@@ -67,7 +66,7 @@ export default function GoldNewsListPage() {
                 {d.title}
               </span>
               <span className="text-[14px] text-[#6C727B] line-clamp-2">{d.description}</span>
-            </Link>
+            </a>
           ))}
         </div>
       )}

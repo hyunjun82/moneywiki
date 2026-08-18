@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const TABS = [
@@ -20,19 +19,19 @@ export default function GoldNav() {
     <div className="bg-[#14161A] border-b border-[rgba(212,175,55,.28)]">
       <div className="max-w-[1120px] mx-auto px-4 sm:px-8">
         <div className="flex items-center gap-5 sm:gap-8 h-[60px]">
-          <Link href="/gold" className="flex items-center gap-2.5 shrink-0">
+          <a href="/gold" className="flex items-center gap-2.5 shrink-0">
             <span className="w-7 h-7 rounded-lg bg-[linear-gradient(140deg,#F5E3A6,#D4AF37_55%,#A8801A)] flex items-center justify-center text-[#14161A] text-[13px] font-extrabold">
               金
             </span>
             <span className="text-[17px] font-extrabold tracking-[-0.02em] text-white hidden sm:inline">
               금시세
             </span>
-          </Link>
+          </a>
           <nav className="flex items-center gap-4 sm:gap-6 overflow-x-auto">
             {TABS.map((t) => {
               const active = current === t.href;
               return (
-                <Link
+                <a
                   key={t.href}
                   href={t.href}
                   aria-current={active ? "page" : undefined}
@@ -43,7 +42,7 @@ export default function GoldNav() {
                   }`}
                 >
                   {t.label}
-                </Link>
+                </a>
               );
             })}
           </nav>
