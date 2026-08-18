@@ -168,13 +168,40 @@ async function collectUrl(page, url) {
   console.log(`페이지 ${url} …`);
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
   await page.waitForTimeout(2500);
-  const { text, title } = await page.evaluate(() => {
-    const el = document.querySelector(".article_body, #article_body, .view_cont, article, main") || document.body;
+  let { text, title } = await page.evaluate(() => {
+    // 첫 번째로 걸린 후보를 그대로 쓰면 껍데기만 읽는다.
+    // 자동차보험 표준약관은 main 이 목차뿐이고 본문은 다른 곳에 있어
+    // 본문 60자로 읽히고 "수치 없음"으로 버려졌다. 가장 긴 후보를 고른다.
+    const cands = [
+      ...document.querySelectorAll(".article_body, #article_body, .view_cont, article, main"),
+      document.body,
+    ].filter(Boolean);
+    let el = document.body;
+    for (const c of cands) {
+      if ((c.innerText || "").length > (el.innerText || "").length) el = c;
+    }
+    // 자르는 길이를 늘려 왔다. 8,000자 → 16,000자 → 40,000자.
     // 8,000자로 자르면 긴 보도자료의 뒷부분이 통째로 날아간다.
     // 금융위 5세대 실손 보도자료(11,699자)에서 도수치료·재가입 주기·중복보상
     // 문장이 8,000자 뒤에 있어 근거가 없는 것처럼 보였다.
-    return { text: el.innerText.slice(0, 16000), title: document.title };
+    // 16,000자도 모자랐다 — 자동차보험 표준약관(38,168자)은 자기신체사고 장이
+    // 그 뒤에 있어 조문을 통째로 놓쳤다.
+    return { text: el.innerText.slice(0, 40000), title: document.title };
   });
+
+  // 본문이 iframe 안에 실린 사이트가 있다. 법령 수집 경로는 프레임을 훑는데
+  // URL 경로에는 그게 없어 자동차보험 표준약관(carinfo.knia.or.kr)을 못 읽었다.
+  // "짧을 때만" 훑으면 안 된다 — 이 사이트는 메인 문서에 머리말·푸터만 335자가 있어
+  // 200자 문턱을 넘어버리고, 정작 약관 본문이 든 프레임은 열어 보지도 않았다.
+  for (const frame of page.frames()) {
+    if (frame === page.mainFrame()) continue;
+    try {
+      const t = await frame.evaluate(() => document.body?.innerText || "");
+      if (t.length > text.length) text = t.slice(0, 40000);
+    } catch {
+      // 교차 출처 프레임은 읽을 수 없다 — 건너뛴다
+    }
+  }
   const org = orgOf(url, title);
 
   // 본문이 너무 짧으면 로딩 실패이거나 내용이 이미지다. 재시도 대상.
