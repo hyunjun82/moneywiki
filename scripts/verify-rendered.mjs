@@ -129,6 +129,8 @@ for (const slug of slugs) {
       });
 
       out.h1 = q("h1")?.textContent?.trim() ?? "";
+      // 본문 전체 텍스트 — CTA 대상 페이지 이름을 글이 실제로 언급하는지 대조할 때 쓴다.
+      out.text = (document.body.innerText || "").replace(/\s+/g, " ");
       // 카테고리 — 브레드크럼에서 구분자(›)를 뺀 첫 텍스트
       out.category =
         all(".bc span")
@@ -176,7 +178,15 @@ for (const slug of slugs) {
           problems.push(`CTA "${cta.label}" → 안내·점검 페이지 (제목: ${t})\n      ${cta.href}`);
         } else if (!info.action) {
           problems.push(`CTA "${cta.label}" → 신청·조회 요소가 없는 페이지\n      ${cta.href}\n      대상: ${t}`);
-        } else if (catWords.length && !catWords.some((w) => hay.includes(w))) {
+        } else if (
+          catWords.length &&
+          !catWords.some((w) => hay.includes(w)) &&
+          // 글이 그 페이지 이름을 실제로 부르고 있으면 무관한 링크가 아니다.
+          // 정부 서비스 이름은 글의 검색어와 다른 말을 쓴다 — 서민형 ISA 증빙은
+          // 정부24에서 "소득확인증명서(개인종합자산관리계좌 가입용)"이라 불려
+          // "서민형"도 "금융"도 그 페이지에 한 번도 안 나온다.
+          !(info.title.match(/[가-힣]{4,}/g) || []).some((w) => (r.text || "").includes(w))
+        ) {
           // 카테고리가 "근로·노동" 처럼 합성어면 통째로는 안 나온다. 낱말 단위로 본다.
           problems.push(
             `CTA "${cta.label}" → 카테고리(${catWords.join("/")})와 무관해 보임\n      ${cta.href}\n      대상: ${t}`
