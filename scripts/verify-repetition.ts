@@ -74,6 +74,25 @@ function sentencesOf(a: ArticleData): string[] {
   }
 }
 
+// ── 1-2. 타이틀 마무리 쏠림 ──────────────────────────────
+// 유도문장과 같은 이유로 본다. 타이틀 21개가 전부 "…까지"로 끝나거나 전부
+// "…나요"로 끝나면 목록에서 찍어낸 티가 난다. 후킹은 형태를 바꿔 가며 쓴다.
+{
+  const tails = articles.map((a) => ending(a.meta.title.replace(/\s*\(\d{4}\)\s*$/, "")));
+  const byTail = new Map<string, number>();
+  for (const t of tails) byTail.set(t, (byTail.get(t) ?? 0) + 1);
+  for (const [tail, n] of [...byTail.entries()].sort((x, y) => y[1] - x[1])) {
+    const share = tails.length ? n / tails.length : 0;
+    if (share > 0.3 && n >= 3) {
+      push(
+        "title-tail-skew",
+        "ERROR",
+        `타이틀 ${n}/${tails.length}편이 "${tail}"로 끝납니다 — 후킹을 한 형태로 찍어내고 있습니다`
+      );
+    }
+  }
+}
+
 // ── 2. 문장 통째 중복 ────────────────────────────────────
 {
   const where = new Map<string, string[]>();

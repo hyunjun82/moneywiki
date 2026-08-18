@@ -3,16 +3,71 @@
   "collectedAt": "2026-08-18",
   "queries": [
     {
-      "q": "ISA 계좌 기본",
-      "autocomplete": [],
-      "related": []
-    },
-    {
       "q": "ISA 계좌란",
       "autocomplete": [
         "ISA 계좌란",
         "중개형 ISA 계좌란",
         "ISA 계좌란돈넣는방법"
+      ],
+      "related": [
+        "ISA 계좌 개설",
+        "ISA 계좌 단점",
+        "중개형 ISA 계좌란",
+        "ISA 계좌 뜻",
+        "ISA 계좌 개편",
+        "ISA 계좌 추천",
+        "청년 ISA 계좌",
+        "ISA 계좌 한도",
+        "ISA 계좌 혜택",
+        "토스 ISA 계좌 개설",
+        "isa 계좌 출금",
+        "ISA 계좌 개설방법",
+        "ISA 계좌 만기 연장",
+        "ISA 계좌 만들기",
+        "isa 계좌 해지",
+        "isa 계좌 이전",
+        "ISA 계좌 해지 후 재가입",
+        "ISA 계좌 서민형"
+      ]
+    },
+    {
+      "q": "ISA 계좌 뜻",
+      "autocomplete": [
+        "ISA 계좌 뜻",
+        "ISA 계좌 뜻 사용방법",
+        "ISA 계좌 뜻 특징",
+        "청년 ISA 계좌 뜻",
+        "ISA 계좌 뜻 미국주식"
+      ],
+      "related": [
+        "ISA 계좌 개설 요즘 인기",
+        "ISA 계좌 단점",
+        "ISA 계좌 개편",
+        "ISA 계좌 추천",
+        "ISA 계좌 뜻 사용방법",
+        "중개형 ISA 계좌 뜻"
+      ]
+    },
+    {
+      "q": "ISA 뜻",
+      "autocomplete": [
+        "isa 뜻",
+        "주식 isa 뜻",
+        "isa뜻주식차이"
+      ],
+      "related": [
+        "ISA 계좌 요즘 인기",
+        "ISA 계좌 뜻",
+        "ISA 계좌 단점",
+        "isa 중개형 뜻",
+        "Isa중계형뜻",
+        "주식 isa 뜻"
+      ]
+    },
+    {
+      "q": "ISA 계좌 개념",
+      "autocomplete": [
+        "ISA 계좌 개념"
       ],
       "related": []
     }

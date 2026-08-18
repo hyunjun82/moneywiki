@@ -16,7 +16,18 @@
         "isa etf 추천 종목",
         "isa etf 방법"
       ],
-      "related": []
+      "related": [
+        "isa etf 추천",
+        "isa 해외etf",
+        "isa 미국 etf",
+        "ISA 계좌 etf",
+        "isa etf 차이",
+        "ISA 계좌 ETF 추천",
+        "isa 배당 etf",
+        "isa 계좌에 담을 etf",
+        "isa 계좌 미국etf",
+        "ISA 계좌 해외etf"
+      ]
     },
     {
       "q": "ISA ETF 추천",
@@ -26,6 +37,47 @@
         "isa etf 추천10종목",
         "isa etf 추천 월배당"
       ],
+      "related": [
+        "ISA 계좌 ETF 추천",
+        "isa 추천 etf 종목",
+        "isa 배당 etf 추천",
+        "isa 미국 etf 추천",
+        "ISA 계좌 배당 etf 추천",
+        "isa etf 추천10종목",
+        "isa 해외 etf 추천",
+        "isa 국내 etf 추천",
+        "isa 투자 추천 etf",
+        "20대 isa etf 추천",
+        "중개형 isa etf추천",
+        "삼성증권ISA ETF추천"
+      ]
+    },
+    {
+      "q": "ISA 계좌 ETF",
+      "autocomplete": [
+        "ISA 계좌 etf",
+        "ISA 계좌 etf 매수 방법",
+        "ISA 계좌 ETF 투자",
+        "ISA 계좌 etf 세금",
+        "isa 계좌 etf 추천",
+        "ISA 계좌 etf 배당금",
+        "ISA 계좌 etf 매도 방법",
+        "ISA 계좌 etf 수수료",
+        "ISA 계좌 etf 매수",
+        "isa 계좌 etf 투자하는법"
+      ],
+      "related": [
+        "ISA 계좌 개설",
+        "ISA 계좌 ETF 추천",
+        "ISA 계좌 해외etf",
+        "isa 계좌에 담을 etf",
+        "isa 계좌 미국etf",
+        "ISA 계좌 etf 매수 방법"
+      ]
+    },
+    {
+      "q": "ISA 담을 상품",
+      "autocomplete": [],
       "related": []
     }
   ]

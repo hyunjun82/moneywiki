@@ -122,6 +122,51 @@ function verifyArticle(article: any): VerifyIssue[] {
     );
   }
 
+  // 2-2. 타이틀 공식 — 메인키워드 + 세부(행동)키워드 나열 + 후킹
+  //
+  // 정본 템플릿의 타이틀이 기준이다.
+  //   "어린이집 방과후 보육료 지원 대상·지원금액·신청방법 총정리 (2026)"
+  //    └ 메인키워드 ──────────┘ └ 세부·행동 나열(중점) ─┘ └ 후킹 ┘
+  //
+  // 이 검사가 없던 동안 21편이 전부 "ISA 계좌 단점 — 출금이 막히는데 어디까지 맞나요"
+  // 같은 형태로 나갔다. 대시로 자르고, 요로 끝내고, 나열이 없다. 감으로 쓴 결과다.
+  {
+    // 요 어미 — 타이틀은 검색어에 얹는 자리라 말끝을 늘이지 않는다
+    const politeEnding = title.match(/(나요|까요|세요|어요|에요|예요|해요|았나|었나)/);
+    if (politeEnding) {
+      push(
+        "title-form",
+        "ERROR",
+        `타이틀에 "${politeEnding[1]}" 어미가 있음 — 타이틀에서 요 어미는 뺀다: "${title}"`
+      );
+    }
+
+    // 대시로 자르지 않는다. 정본은 중점(·)으로 나열하고 쉼표로 끊는다.
+    if (/[—–]/.test(title)) {
+      push("title-form", "ERROR", `타이틀에 대시(—)를 씀 — 중점(·)과 쉼표로 나열한다: "${title}"`);
+    }
+
+    // 세부 키워드 나열 — 중점이 최소 1개 있어야 "나열"이다
+    if (!title.includes("·")) {
+      push(
+        "title-form",
+        "ERROR",
+        `타이틀에 세부 키워드 나열(중점 ·)이 없음 — "대상·지원금액·신청방법" 처럼 묶는다: "${title}"`
+      );
+    }
+
+    // 행동 키워드 — 검색자가 하려는 일이 타이틀에 있어야 한다
+    const ACTION =
+      /(신청|접수|조회|발급|개설|가입|해지|인출|출금|연장|전환|청구|계산|비교|확인|납입|수령|신고|받는\s*법|하는\s*법|방법|기준|조건|서류)/;
+    if (!ACTION.test(title)) {
+      push(
+        "title-form",
+        "ERROR",
+        `타이틀에 행동 키워드가 없음 (신청·조회·개설·계산·비교 등): "${title}"`
+      );
+    }
+  }
+
   // 3. description에 ≥1개 포함
   const desc: string = article.meta?.description ?? "";
   if (countContains(desc, kws) < 1) {
@@ -496,7 +541,9 @@ function verifyArticle(article: any): VerifyIssue[] {
   if (missing.length > 0) {
     push(
       "title-section-match",
-      "WARN",
+      // WARN이던 것을 올린다. 경고로 두니 타이틀만 갈아 끼우고 본문은 그대로 두는 일이
+      // 실제로 벌어졌다. 타이틀이 약속한 항목은 소제목이 답해야 한다.
+      "ERROR",
       `타이틀이 약속한 항목이 본문에 없음: ${missing.join(", ")} — 소제목으로 다루거나 타이틀에서 빼세요`
     );
   }

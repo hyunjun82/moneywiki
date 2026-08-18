@@ -14,7 +14,8 @@ export const 금융: ArticleCategory = {
       primaryKeywords: ["ISA 계좌", "개설", "한도"],
 
       meta: {
-        title: "ISA 계좌 개설방법 — 가입 자격·납입한도부터 서민형 비과세·중복 개설까지 (2026)",
+        title:
+          "ISA 계좌 개설방법·가입조건·나이 기준, 은행과 증권사 어디서 열까",
         description:
           "만 19세 이상이면 누구나, 15세 이상은 근로소득이 있으면 개설할 수 있습니다. 총납입한도는 1억원이고 비과세 한도는 200만원 또는 400만원으로 갈립니다. 계좌는 한 사람당 하나만 됩니다.",
         author: { name: "머니위키 편집팀" },
@@ -51,7 +52,7 @@ export const 금융: ArticleCategory = {
       mainSections: [
         {
           eyebrow: "첫 단계",
-          heading: "ISA 계좌 개설 신청하는 순서와 준비할 서류",
+          heading: "ISA 계좌 개설 신청 순서와 은행·증권사 중 어디로 갈지",
           widgets: [
             {
               type: "checklist",
@@ -78,8 +79,8 @@ export const 금융: ArticleCategory = {
           },
         },
         {
-          eyebrow: "자격 요건",
-          heading: "ISA 계좌 가입 자격은 몇 살부터인가요",
+          eyebrow: "나이 기준",
+          heading: "ISA 계좌 가입 자격은 몇 살부터이고 자녀도 되나요",
           compareTable: {
             headers: ["구분", "나이", "추가 요건"],
             rows: [
@@ -312,7 +313,7 @@ export const 금융: ArticleCategory = {
 
       meta: {
         title:
-          "ISA 계좌 한도 확인 방법 — 연 2천만원 납입한도 이월과 총 1억원 채우는 순서 (2026)",
+          "ISA 계좌 납입한도 확인·이월·기준일, 연 2천만원이 쌓이는 순서 (2026)",
         description:
           "ISA 계좌 납입한도는 해마다 2천만원이고, 넣지 못한 몫은 이월돼 총 1억원까지 쌓입니다. 남은 한도를 어디서 보는지, 재형저축이 있으면 얼마가 깎이는지 정리했습니다.",
         author: { name: "머니위키 편집팀" },
@@ -477,7 +478,7 @@ export const 금융: ArticleCategory = {
         },
         {
           eyebrow: "빼는 경우",
-          heading: "ISA 계좌에서 인출하면 납입한도가 되살아나나요",
+          heading: "ISA 계좌에서 출금하면 납입한도가 되살아나나요",
           compareTable: {
             headers: ["인출 범위", "계약", "한도"],
             rows: [
@@ -623,7 +624,7 @@ export const 금융: ArticleCategory = {
 
       meta: {
         title:
-          "ISA 중개형 서민형 차이 — 조건·서류·전환 시점까지, 둘은 고르는 자리가 다릅니다 (2026)",
+          "ISA 중개형·서민형·신탁형 차이와 서민형 조건 비교 (2026)",
         description:
           "ISA 중개형은 계좌를 누구와 계약하느냐이고, 서민형은 소득으로 갈리는 비과세 한도입니다. 서민형 조건과 서류, 언제 다시 판정되는지까지 정리했습니다.",
         author: { name: "머니위키 편집팀" },
@@ -684,7 +685,7 @@ export const 금융: ArticleCategory = {
         },
         {
           eyebrow: "운용 주체",
-          heading: "ISA 중개형·일임형·신탁형은 어디가 다른가요",
+          heading: "ISA 중개형·일임형·신탁형은 뜻이 어떻게 다른가요",
           compareTable: {
             headers: ["종류", "계약 상대", "굴리는 사람"],
             rows: [
@@ -931,7 +932,7 @@ export const 금융: ArticleCategory = {
 
       meta: {
         title:
-          "ISA 중도해지 세금 — 추징 기준과 부득이한 사유, 해지 후 재가입까지 (2026)",
+          "ISA 중도해지 방법·세금·출금 한도·재가입 기간 (2026)",
         description:
           "ISA를 3년 전에 해지하면 감면받은 소득세 상당액을 추징합니다. 추징을 면하는 부득이한 사유, 인출만 해도 해지가 되는 선, 해지 후 재가입 조건을 정리했습니다.",
         author: { name: "머니위키 편집팀" },
@@ -968,7 +969,7 @@ export const 금융: ArticleCategory = {
       mainSections: [
         {
           eyebrow: "누르기 전",
-          heading: "ISA 계좌 중도해지 절차와 그 전에 맞춰 볼 것",
+          heading: "ISA 중도해지 방법, 신청 전에 맞춰 볼 세 가지",
           widgets: [
             {
               type: "checklist",
@@ -991,7 +992,7 @@ export const 금융: ArticleCategory = {
         },
         {
           eyebrow: "돌려주는 몫",
-          heading: "ISA 중도해지 세금은 무엇을 얼마나 토해내는 건가요",
+          heading: "ISA 중도해지 불이익, 세금은 얼마나 토해내나요",
           compareTable: {
             headers: ["해지 시점", "과세특례", "세금"],
             rows: [
@@ -1053,10 +1054,10 @@ export const 금융: ArticleCategory = {
           },
         },
         {
-          eyebrow: "인출 함정",
-          heading: "ISA 계좌에서 돈만 빼도 중도해지가 되나요",
+          eyebrow: "출금 한도",
+          heading: "ISA 계좌 출금은 어디까지 되나요",
           compareTable: {
-            headers: ["인출 금액", "처리", "세금"],
+            headers: ["출금 금액", "처리", "세금"],
             rows: [
               [
                 { text: "납입원금 이내", status: "key" },
@@ -1071,7 +1072,7 @@ export const 금융: ArticleCategory = {
             ],
           },
           body:
-            "됩니다. 해지 신청을 하지 않아도 인출 금액이 선을 넘으면 해지로 처리됩니다.\n\n법은 최초 계약일부터 3년이 되는 날 전에 계약기간 중 납입한 금액의 합계액을 초과하는 금액을 인출하면 그 인출일에 계약이 중도해지된 것으로 본다고 정합니다. 넣은 원금까지는 빼도 되지만, 그 위의 이익을 건드리는 순간 계약이 끝난다는 뜻입니다.\n\n금융투자협회도 의무가입기간 경과 전에는 납입원금을 초과하지 않는 범위에서 중도인출을 허용하고, 초과분은 중도해지로 간주한다고 안내합니다.",
+            "넣은 원금까지는 자유롭게 출금됩니다. 걸리는 것은 그 위입니다.\n\n법은 최초 계약일부터 3년이 되는 날 전에 계약기간 중 납입한 금액의 합계액을 초과하는 금액을 인출하면 그 인출일에 계약이 중도해지된 것으로 본다고 정합니다. 해지 신청을 한 적이 없어도 출금 금액이 선을 넘으면 그날로 계약이 끝난다는 뜻입니다.\n\n금융투자협회도 의무가입기간 경과 전에는 납입원금을 초과하지 않는 범위에서 중도인출을 허용하고, 초과분은 중도해지로 간주한다고 안내합니다. 그래서 출금 가능 금액의 기준은 계좌 잔고가 아니라 그동안 넣은 원금입니다.",
           link: {
             slug: "ISA계좌-납입한도",
             label: "인출과 납입한도의 관계 보기",
@@ -1094,10 +1095,10 @@ export const 금융: ArticleCategory = {
             "해지일이 계산 기준일입니다. 법은 이자소득등의 합계액을 계좌의 계약 해지일을 기준으로, 그 재산에서 발생한 손실을 차감해 계산한다고 정합니다.\n\n그래서 손실 난 상품을 정리하지 않은 채 해지하면 그 손실도 계산에 들어갑니다. 이익만 뽑아 과세하는 구조가 아닙니다.\n\n이 점이 일반 계좌와 갈리는 지점입니다. 일반 계좌는 상품별로 따로 과세되지만 ISA는 계좌 안에서 통산한 뒤의 순소득만 남깁니다.",
         },
         {
-          eyebrow: "다시 만들기",
-          heading: "ISA 계좌 해지 후 재가입은 바로 되나요",
+          eyebrow: "재가입 기간",
+          heading: "ISA 계좌 해지 후 재가입은 얼마나 기다려야 하나요",
           body:
-            "다시 만들 수 있습니다. 법은 1명당 1개의 계좌만 보유할 것을 요건으로 두므로, 기존 계좌를 해지했다면 그 자리가 비워집니다.\n\n대신 기간이 처음부터 다시 시작됩니다. 3년을 세는 기준이 최초 계약일이라, 새로 연 계좌는 그날부터 다시 3년을 채워야 합니다.\n\n비과세 한도도 새 가입일 기준으로 다시 판정됩니다. 서민형 요건은 가입일 또는 연장일을 기준으로 정해지기 때문입니다.",
+            "기다리는 기간은 법에 없습니다. 조문이 정한 것은 1명당 1개의 계좌만 보유할 것이라는 요건뿐이라, 기존 계좌를 해지해 그 자리가 비면 새로 열 수 있습니다.\n\n대신 시계가 처음으로 돌아갑니다. 3년을 세는 기준이 최초 계약일이라, 새로 연 계좌는 그날부터 다시 3년을 채워야 감면세액이 확정됩니다.\n\n비과세 한도도 새 가입일 기준으로 다시 판정됩니다. 서민형 요건은 가입일 또는 연장일을 기준으로 정해지므로, 그사이 소득이 늘었다면 400만원에서 200만원으로 내려앉을 수 있습니다.",
         },
         {
           eyebrow: "옮기는 길",
@@ -1215,7 +1216,7 @@ export const 금융: ArticleCategory = {
 
       meta: {
         title:
-          "ISA 만기 연장 방법 — 만기일 확인부터 연금계좌 전환 세액공제까지 (2026)",
+          "ISA 만기 연장 방법·만기일 변경·연금계좌 전환 선택 (2026)",
         description:
           "ISA는 만기일 전에 계약기간을 연장할 수 있고, 연장일 기준으로 비과세 한도가 다시 정해집니다. 만기 자금을 연금계좌로 옮기면 전환금액의 100분의 10을 추가로 세액공제받습니다.",
         author: { name: "머니위키 편집팀" },
@@ -1307,7 +1308,7 @@ export const 금융: ArticleCategory = {
         },
         {
           eyebrow: "날짜 계산",
-          heading: "ISA 만기일은 어떻게 정해지나요",
+          heading: "ISA 만기일 확인과 변경은 어떻게 하나요",
           widgets: [
             {
               type: "stat-box",
@@ -1525,7 +1526,7 @@ export const 금융: ArticleCategory = {
 
       meta: {
         title:
-          "ISA 계좌 세금 계산 방법 — 손익통산·비과세 한도·분리과세 순서로 따집니다 (2026)",
+          "ISA 계좌 세금 계산 방법·비과세 한도·손익통산으로 아끼는 금액",
         description:
           "ISA 세금은 계좌 안 손익을 합친 순소득에 매깁니다. 비과세 한도까지는 세금이 없고 초과분은 9.9% 분리과세이며 종합소득에 합산되지 않습니다.",
         author: { name: "머니위키 편집팀" },
@@ -1630,7 +1631,7 @@ export const 금융: ArticleCategory = {
           },
         },
         {
-          eyebrow: "낮은 세율",
+          eyebrow: "9.9% 구간",
           heading: "ISA 비과세 한도를 넘으면 세율은 얼마인가요",
           widgets: [
             {
@@ -1688,7 +1689,7 @@ export const 금융: ArticleCategory = {
         },
         {
           eyebrow: "정산 시점",
-          heading: "ISA 계좌 세금은 언제 떼어 가나요",
+          heading: "ISA 계좌 세금은 언제 떼고 신고는 따로 하나요",
           widgets: [
             {
               type: "stat-box",
@@ -1828,7 +1829,7 @@ export const 금융: ArticleCategory = {
 
       meta: {
         title:
-          "ISA 계좌 가입 조건 확인 — 나이·제외 대상·3년 유지까지, 세제혜택 받는법 (2026)",
+          "ISA 계좌 가입조건 확인·나이·가입기간 설정과 세제혜택 받는 법",
         description:
           "ISA 계좌 가입은 나이와 거주자 요건, 금융소득종합과세 제외 조건을 함께 봅니다. 세제혜택은 3년을 유지해야 남고, 서민형은 소득 증빙을 내야 붙습니다.",
         author: { name: "머니위키 편집팀" },
@@ -1937,7 +1938,7 @@ export const 금융: ArticleCategory = {
         },
         {
           eyebrow: "유지 기간",
-          heading: "ISA 세제혜택은 몇 년을 유지해야 남나요",
+          heading: "ISA 가입기간은 몇 년으로 설정하고 유지해야 하나요",
           widgets: [
             {
               type: "stat-box",
@@ -2133,7 +2134,7 @@ export const 금융: ArticleCategory = {
 
       meta: {
         title:
-          "ISA 계좌 단점 정리 — 출금 제한·3년 의무기간·수수료까지 확인하고 고릅니다 (2026)",
+          "ISA 계좌 단점, 출금 제한·세액공제·수수료로 따져보기 (2026)",
         description:
           "ISA 계좌 단점은 대부분 조문에서 나옵니다. 3년 전 해지 추징, 납입원금까지만 되는 출금, 1인 1계좌, 한도 차감을 근거와 함께 정리했습니다.",
         author: { name: "머니위키 편집팀" },
@@ -2311,7 +2312,7 @@ export const 금융: ArticleCategory = {
         },
         {
           eyebrow: "비용 확인",
-          heading: "ISA 계좌 수수료는 어디서 비교하나요",
+          heading: "ISA 계좌 수수료와 은행·증권사 차이는 어디서 비교하나요",
           cta: {
             label: "신탁형 보수·수수료 비교하기",
             url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISATrustCms.xml&divisionId=MDIS07004001000000&serviceId=SDIS07004001000",
@@ -2441,7 +2442,7 @@ export const 금융: ArticleCategory = {
 
       meta: {
         title:
-          "ISA ETF 추천 종목을 찾기 전에 — 담기는 범위·세금·한도를 먼저 봅니다 (2026)",
+          "ISA 계좌 ETF 담는 범위·해외 ETF·분배금 세금 확인 (2026)",
         description:
           "ISA 계좌에 ETF는 집합투자증권으로 담깁니다. 외국 집합투자증권은 제외되고, 계좌 안 손익을 통산한 뒤 한도까지 비과세, 초과분은 9.9%로 정산합니다.",
         author: { name: "머니위키 편집팀" },
@@ -2581,7 +2582,7 @@ export const 금융: ArticleCategory = {
         },
         {
           eyebrow: "받는 돈",
-          heading: "ISA 계좌 ETF 분배금에도 세금이 붙나요",
+          heading: "ISA 계좌 ETF 배당금(분배금)에도 세금이 붙나요",
           widgets: [
             {
               type: "stat-box",
@@ -2742,7 +2743,7 @@ export const 금융: ArticleCategory = {
 
       meta: {
         title:
-          "ISA 계좌 수익률 비교하는 법 — 대표 수익률이 무엇이고 내 계좌와 왜 다른가 (2026)",
+          "ISA 수익률 보는 법, 다모아 대표 수익률·수수료 비교와 내 계좌 차이",
         description:
           "ISA 일임형 수익률은 금융투자협회가 회사별로 공시합니다. 대표 수익률은 1,000만원을 거치식으로 넣었다고 가정해 보수를 뺀 값이라 실제 계좌 수익률과 다릅니다.",
         author: { name: "머니위키 편집팀" },
@@ -2779,7 +2780,7 @@ export const 금융: ArticleCategory = {
       mainSections: [
         {
           eyebrow: "여는 순서",
-          heading: "ISA 계좌 수익률 조회하고 비교하는 방법",
+          heading: "ISA 계좌 수익률 순위 조회하고 비교하는 방법",
           widgets: [
             {
               type: "checklist",
@@ -3043,7 +3044,7 @@ export const 금융: ArticleCategory = {
 
       meta: {
         title:
-          "ISA 계좌 추천 증권사 비교 기준 — 수수료·취급 상품·운용 방식으로 고릅니다 (2026)",
+          "ISA 계좌 추천 증권사 비교, 수수료·취급 상품·운용 방식 기준",
         description:
           "ISA는 어디서 열든 세제가 같습니다. 갈리는 것은 수수료와 취급 상품, 운용 방식이라 금융투자협회 비교공시로 직접 견주는 편이 빠릅니다.",
         author: { name: "머니위키 편집팀" },
@@ -3347,7 +3348,7 @@ export const 금융: ArticleCategory = {
 
       meta: {
         title:
-          "ISA 계좌란 무엇인가 — 기본 구조·담는 상품·유지 기간을 처음부터 (2026)",
+          "ISA 계좌란 뜻·기본 구조·담는 상품, 처음 여는 사람 기준 정리 (2026)",
         description:
           "ISA는 개인종합자산관리계좌의 약자로, 여러 금융상품을 한 계좌에 담아 손익을 합친 뒤 과세하는 그릇입니다. 담기는 상품과 유지 기간, 한도를 기본부터 정리했습니다.",
         author: { name: "머니위키 편집팀" },
@@ -3407,8 +3408,8 @@ export const 금융: ArticleCategory = {
             "시작은 자격 확인입니다. 법은 가입일 또는 연장일 기준 19세 이상인 거주자, 또는 15세 이상이면서 직전 과세기간에 근로소득이 있는 자를 대상으로 정합니다.\n\n다음이 유형과 회사입니다. 총납입한도와 비과세 한도는 법이 정하므로 회사가 바꿀 수 없고, 갈리는 것은 수수료와 취급 상품입니다.\n\n마지막이 기간입니다. 계좌 요건에 계약기간이 3년 이상일 것이 들어 있어, 3년 안에 써야 할 돈이라면 다른 방법을 찾는 편이 낫습니다.",
         },
         {
-          eyebrow: "이름 풀이",
-          heading: "ISA 계좌는 어떤 계좌를 말하나요",
+          eyebrow: "기본 구조",
+          heading: "ISA 계좌 뜻과 특징은 무엇인가요",
           widgets: [
             {
               type: "def-box",
@@ -3654,7 +3655,7 @@ export const 금융: ArticleCategory = {
 
       meta: {
         title:
-          "ISA 계좌 개설부터 한도·세금·해지까지 (2026)",
+          "ISA 계좌 개설·한도·세금·출금·해지 한 장 정리 (2026)",
         description:
           "ISA 계좌의 가입 자격, 총납입한도 1억원, 비과세 한도, 3년 의무기간, 만기 선택지를 한 장에 모았습니다. 항목마다 자세한 정리로 이어집니다.",
         author: { name: "머니위키 편집팀" },
@@ -3795,7 +3796,7 @@ export const 금융: ArticleCategory = {
           },
         },
         {
-          eyebrow: "불편한 점",
+          eyebrow: "출금 제한",
           heading: "ISA 계좌 단점은 무엇인가요",
           compareTable: {
             headers: ["제약", "내용", "피하는 법"],
@@ -3828,7 +3829,7 @@ export const 금융: ArticleCategory = {
         },
         {
           eyebrow: "중간에 끝낼 때",
-          heading: "ISA 계좌를 중도해지하면 어떻게 되나요",
+          heading: "ISA 계좌 출금과 중도해지는 어떻게 되나요",
           widgets: [
             {
               type: "stat-box",
@@ -4000,7 +4001,7 @@ export const 금융: ArticleCategory = {
 
       meta: {
         title:
-          "IRP 가입자격과 가입 절차 — 대상·나이·적립금 운용까지 (2026)",
+          "IRP 가입자격·가입방법·가입자격유형 선택 (2026)",
         description:
           "IRP는 퇴직급여 일시금을 받은 사람, DB·DC 가입자, 자영업자 등이 설정할 수 있습니다. 가입 나이 제한과 수령 연령은 다르고, 적립금 운용에는 별도 비율 제한이 붙습니다.",
         author: { name: "머니위키 편집팀" },
@@ -4037,7 +4038,7 @@ export const 금융: ArticleCategory = {
       mainSections: [
         {
           eyebrow: "여는 순서",
-          heading: "IRP 가입 절차는 어떻게 되나요",
+          heading: "IRP 가입방법과 가입자격유형 선택 절차",
           widgets: [
             {
               type: "checklist",
@@ -4155,7 +4156,7 @@ export const 금융: ArticleCategory = {
         },
         {
           eyebrow: "받는 방식",
-          heading: "IRP는 언제부터 어떻게 받나요",
+          heading: "IRP 의무가입기간이 지나면 언제부터 받나요",
           widgets: [
             {
               type: "checklist",
@@ -4313,7 +4314,7 @@ export const 금융: ArticleCategory = {
 
       meta: {
         title:
-          "IRP 중도인출 사유와 조건 — 주택구입·전세금·의료비별 세율까지 (2026)",
+          "IRP 중도인출 사유·조건·세율, 주택구입과 의료비 비교 (2026)",
         description:
           "IRP는 법이 정한 사유에 해당할 때만 중도인출할 수 있습니다. 주택구입과 전세금은 기타소득세 16.5%, 의료비와 파산은 연금소득세 5.5~3.3%로 세율이 갈립니다.",
         author: { name: "머니위키 편집팀" },
@@ -4372,7 +4373,7 @@ export const 금융: ArticleCategory = {
             "인출은 사유 확인에서 시작합니다. 법이 열거한 경우가 아니면 신청 자체가 되지 않습니다.\n\n금융감독원은 사유에 해당하는지 여부는 고용노동부에 확인하고, 신청 절차는 본인이 가입된 퇴직연금사업자에 문의하라고 안내합니다. 세율 적용은 기획재정부와 국세청 소관입니다.\n\n증빙은 사유별로 다릅니다. 주택구입이면 매매계약서, 의료비면 진단서와 영수증처럼 각 사유를 확인할 수 있는 자료를 사업자에 냅니다.",
         },
         {
-          eyebrow: "인정 목록",
+          eyebrow: "사유별 세율",
           heading: "IRP 중도인출 사유에는 무엇이 들어가나요",
           compareTable: {
             headers: ["사유", "조건", "세율"],
@@ -4621,7 +4622,7 @@ export const 금융: ArticleCategory = {
 
       meta: {
         title:
-          "IRP 해지 세금 — 기타소득세 16.5% 계산과 해지 신청 절차 (2026)",
+          "IRP 해지 세금 계산·기타소득세·부득이한 사유 확인 (2026)",
         description:
           "IRP를 해지하면 세액공제 받은 납입원금과 운용수익에 기타소득세 16.5%가 원천징수됩니다. 부득이한 사유는 5.5~3.3%로 낮아지고, 홈택스 확인서를 내야 정확히 계산됩니다.",
         author: { name: "머니위키 편집팀" },
@@ -4680,7 +4681,7 @@ export const 금융: ArticleCategory = {
             "해지는 서류에서 갈립니다. 세금이 얼마나 나오는지가 제출 자료로 정해지기 때문입니다.\n\n금융감독원은 정확한 기타소득세 원천징수를 위해 국세청 홈택스에서 연금보험료 등 소득·세액공제 확인서를 발급받아 금융회사에 제출하거나, 확인서 발급번호를 해지처리 화면에 입력해야 한다고 안내합니다.\n\n처리 자체는 가입한 퇴직연금사업자가 합니다. 세금을 떼고 남은 금액이 계좌로 들어옵니다.",
         },
         {
-          eyebrow: "떼는 비율",
+          eyebrow: "기타소득세",
           heading: "IRP 해지하면 세금이 얼마나 나오나요",
           widgets: [
             {
@@ -4726,7 +4727,7 @@ export const 금융: ArticleCategory = {
           },
         },
         {
-          eyebrow: "낮아지는 때",
+          eyebrow: "부득이한 사유",
           heading: "IRP 해지 세율이 5.5~3.3%로 낮아지는 경우",
           widgets: [
             {
@@ -4922,7 +4923,7 @@ export const 금융: ArticleCategory = {
 
       meta: {
         title:
-          "IRP 세액공제 한도 900만원 — 연금저축 600만원과 합산 계산법 (2026)",
+          "IRP 세액공제 한도 900만원·연금저축 600만원 합산 계산 (2026)",
         description:
           "IRP 세액공제 한도는 900만원이고, 연금저축 한도 600만원을 포함한 금액입니다. 공제율은 소득에 따라 16.5%와 13.2%로 갈리며 ISA 만기 자금 전환분은 따로 얹힙니다.",
         author: { name: "머니위키 편집팀" },
@@ -5230,7 +5231,7 @@ export const 금융: ArticleCategory = {
 
       meta: {
         title:
-          "IRP 세액공제 신청 방법 — 연말정산 반영 시점과 제외되는 납입액 (2026)",
+          "IRP 세액공제 신청 방법·반영 시점·제외되는 납입액 (2026)",
         description:
           "IRP 세액공제는 납입한 날이 속하는 과세기간에 반영됩니다. 과세이연된 퇴직소득과 계좌 간 이전 금액은 공제 대상에서 빠지고, 공제받은 돈은 나중에 연금소득세로 정산됩니다.",
         author: { name: "머니위키 편집팀" },
@@ -5335,8 +5336,8 @@ export const 금융: ArticleCategory = {
           },
         },
         {
-          eyebrow: "빠지는 돈",
-          heading: "IRP 세액공제 대상에서 제외되는 납입액",
+          eyebrow: "제외 납입액",
+          heading: "IRP 세액공제에서 퇴직금과 이전 금액이 빠지는 이유",
           widgets: [
             {
               type: "checklist",
@@ -5544,7 +5545,7 @@ export const 금융: ArticleCategory = {
 
       meta: {
         title:
-          "IRP 세제혜택 정리 — 과세이연부터 연금 수령 세율·수령 요건까지 (2026)",
+          "IRP 세제혜택, 과세이연·연금 수령 세율·수령 요건 확인 (2026)",
         description:
           "IRP는 운용수익 과세를 수급 시점까지 미루고, 연금으로 받으면 5.5~3.3%가 적용됩니다. 퇴직소득을 연금으로 받으면 연금외수령 세율의 일부만 붙습니다.",
         author: { name: "머니위키 편집팀" },
@@ -5853,7 +5854,7 @@ export const 금융: ArticleCategory = {
 
       meta: {
         title:
-          "연금저축 수익률 비교하는 법 — 회사별 공시 보는 순서와 세금까지 (2026)",
+          "연금저축 수익률 비교 방법·수수료 확인·세제 계산 (2026)",
         description:
           "연금저축 수익률은 금융감독원이 상품별로 공시합니다. 권역마다 취급 상품이 다르고, 수익률만 보면 세액공제와 수령 시 세율을 놓치게 됩니다.",
         author: { name: "머니위키 편집팀" },
@@ -5890,7 +5891,7 @@ export const 금융: ArticleCategory = {
       mainSections: [
         {
           eyebrow: "여는 순서",
-          heading: "연금저축 수익률 조회하고 비교하는 방법",
+          heading: "연금저축 수익률 순위 조회하고 비교하는 방법",
           widgets: [
             {
               type: "checklist",
@@ -6159,7 +6160,7 @@ export const 금융: ArticleCategory = {
 
       meta: {
         title:
-          "개인퇴직연금 가입부터 한도·세금·수령시기까지 (2026)",
+          "개인퇴직연금 가입·한도·세금·중도인출·수령시기 총정리 (2026)",
         description:
           "개인퇴직연금은 연간 1,800만원까지 넣고 900만원 한도로 세액공제를 받습니다. 55세부터 연금으로 받고, 중간에 해지하면 세금 16.5%가 원천징수됩니다.",
         author: { name: "머니위키 편집팀" },
