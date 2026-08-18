@@ -1,0 +1,22 @@
+{
+  "slug": "ISA계좌-수익률",
+  "collectedAt": "2026-08-18",
+  "queries": [
+    {
+      "q": "ISA 수익률",
+      "autocomplete": [
+        "isa 수익률 비교",
+        "isa 수익률 보는 법"
+      ],
+      "related": []
+    },
+    {
+      "q": "ISA 계좌 수익률",
+      "autocomplete": [
+        "ISA 계좌 수익률 비교",
+        "isa계좌 수익률 계산 방법"
+      ],
+      "related": []
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "slug": "ISA계좌-기본",
+  "collectedAt": "2026-08-18",
+  "queries": [
+    {
+      "q": "ISA 계좌 기본",
+      "autocomplete": [],
+      "related": []
+    },
+    {
+      "q": "ISA 계좌란",
+      "autocomplete": [
+        "ISA 계좌란",
+        "중개형 ISA 계좌란",
+        "ISA 계좌란돈넣는방법"
+      ],
+      "related": []
+    }
+  ]
+}
