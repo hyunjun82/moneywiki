@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-19T16:01:37.616+09:00",
+  "updatedAt": "2026-08-19T16:50:46.239+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -18,13 +18,13 @@
         "key": "gold24",
         "name": "순금 24K",
         "userSell": {
-          "price": 724000,
-          "change": 10000,
+          "price": 722000,
+          "change": 12000,
           "dir": "down"
         },
         "userBuy": {
-          "price": 780000,
-          "change": 17000,
+          "price": 777000,
+          "change": 20000,
           "dir": "down"
         }
       },
@@ -32,8 +32,8 @@
         "key": "gold18",
         "name": "18K",
         "userSell": {
-          "price": 532200,
-          "change": 7300,
+          "price": 530700,
+          "change": 8800,
           "dir": "down"
         },
         "userBuy": null
@@ -42,8 +42,8 @@
         "key": "gold14",
         "name": "14K",
         "userSell": {
-          "price": 412700,
-          "change": 5700,
+          "price": 411600,
+          "change": 6800,
           "dir": "down"
         },
         "userBuy": null
@@ -71,8 +71,8 @@
           "dir": "none"
         },
         "userBuy": {
-          "price": 10630,
-          "change": 530,
+          "price": 10600,
+          "change": 560,
           "dir": "down"
         }
       }
@@ -1118,8 +1118,8 @@
     "fetchedDate": "2026-08-19"
   },
   "fx": {
-    "usdkrw": 1397.89,
-    "change": -18.57,
+    "usdkrw": 1397.87,
+    "change": -18.59,
     "changePct": -1.31,
     "dir": "down",
     "source": "Yahoo Finance (KRW=X)"
@@ -1127,17 +1127,17 @@
   "intl": {
     "gold": {
       "name": "금",
-      "usdPerOz": 4400.7,
-      "changePct": 0.46,
+      "usdPerOz": 4411.3,
+      "changePct": 0.71,
       "dir": "up",
-      "krwPerGram": 197782,
-      "krwPerDon": 741683,
+      "krwPerGram": 198255,
+      "krwPerDon": 743456,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
       "name": "은",
-      "usdPerOz": 63.19,
-      "changePct": -2.77,
+      "usdPerOz": 63.2,
+      "changePct": -2.76,
       "dir": "down",
       "krwPerGram": 2840,
       "krwPerDon": 10650,
