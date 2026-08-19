@@ -410,6 +410,26 @@ function verifyArticle(article: any): VerifyIssue[] {
     }
   }
 
+  // 12-6. 훅이 버튼을 부르는가.
+  //   정본은 heroHook 마지막 문장이 바로 아래 버튼을 누를 이유가 된다.
+  //   실제로는 "증권사 고를 때 수수료만 따지면 된다"로 끝나 놓고 버튼이
+  //   소득확인증명서 발급인 글이 나갔다. 누를 이유가 없다.
+  if (cta?.label && article.heroHook) {
+    const core = String(cta.label)
+      .replace(/(하기|받기|보기|열기|이동|진행|신청하기)$/g, "")
+      .split(/[·,\s]+/)
+      .map((t) => t.replace(/(을|를|은|는|이|가|에서|으로|로)$/, ""))
+      .filter((t) => t.length >= 2);
+    const hook = String(article.heroHook);
+    if (core.length && !core.some((t) => hook.includes(t))) {
+      push(
+        "hero-hook-cta",
+        "ERROR",
+        `heroHook이 버튼("${cta.label}")을 부르지 않습니다 — 마지막 문장이 그 버튼을 누를 이유가 되어야 합니다`
+      );
+    }
+  }
+
   // 13. keyFacts — 📌 핵심콕콕 7~9행
   const kf: any[] = article.keyFacts ?? [];
   if (kf.length === 0) {
@@ -430,6 +450,61 @@ function verifyArticle(article: any): VerifyIssue[] {
       "WARN",
       `q1이 행동 섹션이 아님 — hero 버튼이 받을 신청·절차 섹션이어야 한다: "${q1}"`
     );
+  }
+
+  // 14-2. 소제목에 얹은 검색어를 본문도 쓰는가.
+  //
+  //   소제목만 검색어에 맞춰 갈아 끼우고 본문은 그대로 둔 글이 실제로 나갔다.
+  //   "자녀도 되나요"인데 본문에 자녀가 한 번도 안 나오고, "순위"를 달아 놓고
+  //   본문은 순위 이야기를 안 하는 식이다. 들어와서 읽는 사람은 답을 못 찾는다.
+  //
+  //   판정은 수집된 검색어에 있는 낱말로만 한다. 어휘를 통째로 맞추라고 하면
+  //   "제한", "종류" 같은 말까지 본문에 억지로 심게 된다 — 그건 글을 망친다.
+  {
+    const kwFile = path.join(ROOT, "scripts", "keywords", `${article.slug}.json`);
+    let searchWords: string[] = [];
+    try {
+      const kw = JSON.parse(fs.readFileSync(kwFile, "utf8"));
+      const collected: string[] = (kw.queries ?? []).flatMap((q: any) => [
+        ...(q.autocomplete ?? []),
+        ...(q.related ?? []),
+      ]);
+      searchWords = [
+        ...new Set(
+          collected
+            .flatMap((c: string) => c.split(/\s+/))
+            .map((w) => w.replace(/[()]/g, "").toLowerCase())
+            .filter((w) => w.length >= 2)
+        ),
+      ];
+    } catch {
+      /* 검색어 파일 없음은 12-5에서 이미 ERROR */
+    }
+
+    for (let i = 0; i < secs.length; i++) {
+      const h: string = secs[i].heading ?? "";
+      const body: string = (secs[i].body ?? "").toLowerCase();
+      // 주제어(ISA·IRP·계좌…)는 뺀다. 모든 문단에 상표를 심으라는 뜻이 아니다.
+      const TOPIC = new Set(["isa", "irp", "계좌", "연금", "보험", "퇴직금"]);
+      // 조사·어미가 붙은 토막과 뼈대 없는 말은 뺀다. 남는 것은 내용을 가리키는 낱말뿐이다.
+      const FUNC = /(요|게|나|지|고|며|서|든|을|를|에|와|과|도|만|이|가|은|는)$/;
+      const STOP = new Set(["방법", "무엇", "때문", "경우", "이유", "정리", "총정리", "확인", "언제", "얼마"]);
+      const isTopic = (w: string) =>
+        TOPIC.has(w) ||
+        STOP.has(w) ||
+        FUNC.test(w) ||
+        kws.some((k) => k.toLowerCase().replace(/\s+/g, "").includes(w));
+      const hits = searchWords.filter((w) => h.toLowerCase().includes(w) && !isTopic(w));
+      const missing = hits.filter((w) => !body.includes(w));
+      // 소제목이 검색어를 여러 개 담았다면 그중 하나라도 본문에 있으면 통과로 본다.
+      if (hits.length && missing.length === hits.length) {
+        push(
+          "heading-body-match",
+          "ERROR",
+          `q${i + 1} 소제목에 얹은 검색어를 본문이 쓰지 않습니다: "${h}" — 본문에 ${missing.slice(0, 3).join(", ")} 가 없습니다`
+        );
+      }
+    }
   }
 
   // 15. 각 섹션 첫 문장은 결론 — 질문으로 시작하면 안 된다
