@@ -4,96 +4,57 @@ Next.js 16 · Cloudflare Pages (main 푸시 → 자동 빌드 ~15분)
 
 ## 절대 규칙
 
-1. **계산기 54개**(`scripts/calc-protected-slugs.json`)와 **양식 다운로드**(`src/app/forms/**`)는 건드리지 않는다 — 훅이 차단한다
+1. **계산기 54개**(`scripts/calc-protected-slugs.json`)와 **양식**(`src/app/forms/**`)은 건드리지 않는다
 2. **리라이트는 기존 slug 그대로.** 새 slug 생성 금지
-3. 글은 `src/data/articles/<카테고리>.ts`에만 쓴다 (타입 `types.ts`, 렌더러 `ArticleShell.tsx`)
-4. AdSense: 과장("축하해요", "확정 지급") 금지, 광고를 CTA처럼 위장 금지
+3. 글은 `src/data/articles/<카테고리>.ts`에만 (타입 `types.ts`, 렌더러 `ArticleShell.tsx`)
+4. AdSense: 과장·확정 표현 금지, 광고를 CTA처럼 위장 금지
 
-## 글쓰기 4단계
+## 글쓰기
 
-### 1. 템플릿 구조를 본다
-`docs/moneywiki-article-template.html`을 Read로 **먼저 연다.** 규칙과 템플릿이 다르면 템플릿이 이긴다.
+**0. 정본 템플릿을 먼저 연다** — `docs/moneywiki-article-template.html`.
+규칙과 템플릿이 다르면 템플릿이 이긴다. 검증 기준도 이 파일에서 자동 산출된다.
 
-### 2. 타이틀·본문을 구성한다
-타이틀 = `메인키워드 + 세부(행동)키워드 2~3개 나열 + 후킹`
+**1. 검색어를 모은다** — `node scripts/collect-keywords.mjs <slug> --q "..." --q "..."`
+질의는 4개 이상. 자동완성 + 연관검색어("함께 많이 찾는")가 모두 잡혀야 한다.
+
+**2. 타이틀** = `메인키워드 + 세부(행동)키워드 2~3개 나열 + 후킹`
 정본 예: `어린이집 방과후 보육료 지원 대상·지원금액·신청방법 총정리 (2026)`
+중점(·)으로 묶는다 · 대시(—) 금지 · "요" 어미 금지 · 후킹 형태는 매번 바꾼다
+**타이틀이 나열한 항목은 소제목이 답한다.** 타이틀만 갈아 끼우면 리라이트가 아니다.
 
-- 세부 키워드는 **중점(·)으로 묶는다**. 대시(—)로 자르지 않는다.
-- 행동어가 반드시 하나 들어간다 (신청·조회·발급·개설·계산·비교·확인·해지·인출).
-- **타이틀에서 "요" 어미는 뺀다** (~나요/~까요/~세요). 검색어에 얹는 자리다.
-- 후킹은 매번 형태를 바꾼다. 전 글이 "…까지 (2026)"로 끝나면 찍어낸 티가 난다.
-- **타이틀이 나열한 항목은 소제목이 답한다.** 타이틀만 갈아 끼우는 것은 리라이트가 아니다.
-
-`verify-articles`가 위를 ERROR로 검사한다(title-form, title-section-match).
-`verify-repetition`은 타이틀 마무리가 30% 넘게 같은 형태면 ERROR.
-
-본문 블록 순서 (변경·누락 금지):
+**3. 본문 블록** (순서 고정, 톤은 합니다체)
 ```
-lead      타이틀이 나열한 항목을 결론부터 편다
-heroHook  왜 미루면 손해인지 + 마지막 문장은 행동 유도
-heroCta   대형 CTA 1개 — 공식 사이트(.go.kr/.or.kr)만
-목차 → keyFacts(핵심콕콕 7~9행)
-q1~q8     소제목 = 검색자 질문형. q1은 반드시 행동(신청).
-          각 섹션 첫 문장이 결론. 비주얼(체크리스트/통계/표/스텝) 먼저, 해설 뒤
-FAQ → summary(정확히 3줄) → 스포크 사이드바
+lead → heroHook(마지막 문장은 아래 버튼을 누를 이유) → heroCta(대형 버튼 1개)
+목차 → keyFacts 7~9행 → q1~q8 → FAQ → summary 3줄 → 스포크
+q1은 행동 섹션. 각 섹션 첫 문장이 결론, 비주얼 먼저 해설 뒤.
 ```
-톤: 합니다체.
 
-**딥링크 찾는 법** — 기관 홈에서 메뉴를 뒤지지 않는다. 헤매다 엉뚱한 페이지를 걸게 된다.
-구글에 `주제 키워드 + 행동어`를 검색해 나오는 `.go.kr`·`.or.kr` 공식 페이지가 곧 딥링크다.
-```
-"실업급여 신청"        → gov.kr/portal/rcvfvrSvc/dtlEx/SD0000015536
-"에너지바우처 사용처"   → energyv.or.kr/info/use_info.do
-"실손보험 가입내역 조회" → fss.or.kr/main/prc/is/sub/is006.jsp?menuNo=900395
-```
-넣기 전에 그 페이지를 열어 **글 주제와 맞는 화면인지** 눈으로 확인한다.
-(보험 글에 신용조회 페이지를 걸어 발행한 사고가 있었다.)
+**4. 버튼(CTA)** — 문구는 사용자가 할 **행동 그대로**.
+`가입 자격 확인하기` `소득확인증명서 발급하기` `수수료 비교하기` `해지 신청하기`
+"보기 / 열기 / 펼쳐 보기 / 요약표 확인" 같은 열람형 문구는 버튼이 아니다.
+주소는 `.go.kr`·`.or.kr`의 **그 일을 하는 화면**. 기관 홈 금지, 넣기 전 Playwright로 연다.
 
-### 3. Playwright로 근거를 뽑아 쓴다
+**5. 근거** — `npm run evidence <slug> -- --url <공식URL>`
+본문 숫자는 증거 JSON의 `quote`/`value` 안에 있는 값만. WebSearch·WebFetch는 훅이 차단한다.
+표·수식은 이미지로 실리는 경우가 많다 → 캡처 PNG를 Read로 열어 본다.
+출처 목록: `.claude/rules/wiki-rules.md`
+
+## 검증 (통과할 때까지 반복)
+
 ```bash
-npm run evidence <slug> -- --law <법령명>:<조,조> --url <공식URL>
-```
-→ `scripts/evidence/<slug>.json`(facts + raws 전문) + `<slug>/*.png`(스크린샷)
-
-**캡처 PNG를 Read로 열어 본다.** 표와 이미지 안의 값은 텍스트 추출로 안 잡힌다.
-보증한도 표·계산 예시처럼 정작 필요한 정보가 거기 있는 경우가 많다.
-`npm run verify:claims`가 열어 볼 캡처 목록을 찍어 준다.
-**본문의 모든 숫자는 이 JSON의 `quote`/`value` 안에 있는 값만.** WebSearch/WebFetch는 훅이 차단한다.
-출처 사이트 목록: `.claude/rules/wiki-rules.md`
-
-### 4. 템플릿·JSON과 대조한다
-```bash
-npm run verify:articles    # 템플릿 프로필 대조 + 키워드 + 출처 + 보호자산
-npm run verify:evidence    # 본문 수치 ↔ 증거 JSON + 증거 신선도(30일)
-npm run verify:repetition  # 상투구·복사 문장·판박이 배치 (글끼리 대조)
-npm run verify:claims      # 과장 표현 + 출처 붙인 문장이 원문에 있는가
-npm run verify:rendered -- <slug>   # Playwright로 실제 화면을 열어 대조 (푸시 전 필수)
+npm run verify:articles     # 타이틀 공식·키워드·CTA·템플릿 프로필
+npm run verify:evidence     # 본문 수치 ↔ 증거 JSON (30일 신선도)
+npm run verify:repetition   # 상투구·복사 문장·판박이 배치
+npm run verify:claims       # 과장 표현·출처 대조
+npm run verify:rendered -- <slug>   # 실제 화면 + CTA 실접속 (푸시 전 필수)
 ```
 
-**푸시 전에 `verify:rendered`를 반드시 돌린다.** 데이터 검증은 "값이 있는가"만 본다.
-화면이 어떻게 나오는지는 모른다. 실제로 이 구멍으로 두 번 사고가 났다 —
-표 헤더가 옛 CSS에 덮여 남색으로 나온 것, 보험 글 CTA가 신용조회로 간 것.
-
-이 검사기는 화면을 열어 블록 렌더링·비주얼 연속·표 색상·라벨을 보고,
-**CTA 링크를 실제로 따라가** 그 페이지가 주제에 맞는 신청·조회 화면인지 확인한다.
-안내·점검 페이지이거나 행동 요소가 없으면 실패시킨다.
-ERROR면 템플릿을 다시 열어 대조하고 고쳐 쓴다. 통과할 때까지 반복.
-검증기가 못 잡는 오해의 소지·과장·근거 없는 단언은 직접 걷어낸다.
-
-**기준은 템플릿에서 자동으로 나온다.** `scripts/template-profile.mjs`가 정본 HTML을
-파싱해 섹션 수·비주얼 종류·라벨 길이·핵심콕콕 행수 등을 산출하고 검증기가 그걸 쓴다.
-숫자를 코드에 손으로 박지 않는다 — 템플릿을 고치면 기준이 따라온다.
-
-강제되는 것: 비주얼은 **절반 이상 섹션**(전 섹션 필수는 풀었다 — 주제에 맞게 고르라는 뜻)
-· 같은 비주얼 연속 금지 · eyebrow 라벨(소제목 재탕 금지)
-· 내부 링크 2개 이상 + 유도 문장 필수 · 증거 30일 이내
-· **글끼리 배치가 똑같으면 실패** — 틀을 복사하지 말고 주제를 보고 고른다
-· 유도문장 어미가 30% 넘게 쏠리면 실패 · 같은 문장 3회 이상 재사용 실패
-· 과장·확정 표현 실패 · 출처를 붙였는데 원문에 없으면 경고.
+데이터 검증은 "값이 있는가"만 본다. 화면은 `verify:rendered`가 본다 — 이 구멍으로
+표 헤더가 남색으로 나가고, 보험 글 CTA가 신용조회로 간 사고가 났다.
+검증기가 못 잡는 오해의 소지·근거 없는 단언은 직접 걷어낸다.
 
 ## 빌드
 
-`npm run build` ~15분. **글 1개마다 빌드 금지** — 50개 배치 단위. prebuild에 4단계 검증이 걸려 어긴 글은 빌드가 실패한다.
-같은 slug의 `src/app/w/<slug>/`가 있으면 글이 가려진다 → 완료 후 삭제 (`scripts/conflict-map.json`).
-
-훅 3종은 `.claude/settings.json` → `scripts/hooks/` (템플릿 주입 · 웹검색 차단 · 계산기·양식 보호).
+`npm run build` ~15분. **글 1개마다 빌드 금지** — 50개 배치.
+같은 slug의 `src/app/w/<slug>/`가 있으면 새 글이 가려진다 → 완료 후 삭제.
+훅 3종: `.claude/settings.json` → `scripts/hooks/`

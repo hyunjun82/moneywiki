@@ -299,13 +299,19 @@ function verifyArticle(article: any): VerifyIssue[] {
       return false;
     }
   };
-  const actionUrls: { label: string; url: string }[] = [
-    ...(cta?.url ? [{ label: "heroCta", url: cta.url }] : []),
+  const actionUrls: { label: string; url: string; labelText: string }[] = [
+    ...(cta?.url ? [{ label: "heroCta", url: cta.url, labelText: cta.label ?? "" }] : []),
     ...(article.resolution?.steps ?? [])
       .filter((s: any) => s.action?.url)
-      .map((s: any, i: number) => ({ label: `steps[${i}] ${s.action.label}`, url: s.action.url })),
+      .map((s: any, i: number) => ({
+        label: `steps[${i}] 버튼`,
+        url: s.action.url,
+        labelText: s.action.label ?? "",
+      })),
     ...(article.mainSections ?? [])
-      .map((s: any, i: number) => (s.cta?.url ? { label: `q${i + 1} 버튼`, url: s.cta.url } : null))
+      .map((s: any, i: number) =>
+        s.cta?.url ? { label: `q${i + 1} 버튼`, url: s.cta.url, labelText: s.cta.label ?? "" } : null
+      )
       .filter(Boolean),
   ];
 
@@ -331,6 +337,24 @@ function verifyArticle(article: any): VerifyIssue[] {
         "ERROR",
         `${a.label}이 기관 홈페이지로 연결됨 (${a.url}) — 실제 신청·조회 페이지 주소를 넣으세요`
       );
+    }
+  }
+
+  // 12-3-2. 버튼 문구는 행동이어야 한다.
+  //   "제도 요약표 펼쳐 보기", "가입자격 요약표 확인하기" 같은 열람형 문구가 실제로 나갔다.
+  //   버튼을 누르는 사람은 자료를 열람하러 가는 게 아니라 무언가를 하러 간다.
+  //   "가입 자격 확인하기", "소득확인증명서 발급하기" 처럼 할 일을 그대로 쓴다.
+  {
+    const BROWSE = /(펼쳐|열어\s*보기|열기$|보기$|요약표|안내표|공시 화면|화면으로 이동|다시 보기|함께 보기)/;
+    const ACT_LABEL = /(하기|받기|신청|발급|조회|확인|비교|계산|개설|가입|이체|인출|해지|수령)/;
+    for (const a of actionUrls) {
+      const label = (a as any).labelText ?? "";
+      if (!label) continue;
+      if (BROWSE.test(label)) {
+        push("cta-label-browse", "ERROR", `${a.label} 문구가 열람형입니다: "${label}" — 할 일을 그대로 씁니다`);
+      } else if (!ACT_LABEL.test(label)) {
+        push("cta-label-browse", "ERROR", `${a.label} 문구에 행동이 없습니다: "${label}"`);
+      }
     }
   }
 

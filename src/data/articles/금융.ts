@@ -30,7 +30,7 @@ export const 금융: ArticleCategory = {
       },
 
       heroHook:
-        "ISA는 증권사마다 조건이 달라 보이지만 **뼈대는 법으로 정해져 있습니다.** 조세특례제한법 제91조의18이 가입 자격, 총납입한도, 비과세 한도를 직접 규정합니다.\n\n그래서 증권사를 고를 때 따질 것은 **수수료와 상품 구성뿐입니다.** 한도나 세금 혜택은 어디서 열든 같습니다. 다만 **계좌는 한 사람당 하나**라 처음 고를 때 잘못 고르면 옮기는 수고가 듭니다.",
+        "ISA는 증권사마다 조건이 달라 보이지만 **뼈대는 법으로 정해져 있습니다.** 조세특례제한법 제91조의18이 가입 자격, 총납입한도, 비과세 한도를 직접 규정합니다.\n\n그래서 증권사를 고를 때 따질 것은 **수수료와 상품 구성뿐입니다.** 한도나 세금 혜택은 어디서 열든 같습니다.\n\n대신 열기 전에 갈리는 것이 하나 있습니다. 비과세 한도가 **400만원이냐 200만원이냐**는 소득확인증명서 한 장으로 정해집니다. 계좌를 만들기 전에 이것부터 떼어 두는 편이 빠릅니다.",
 
       heroCta: {
         label: "소득확인증명서 발급하기",
@@ -65,7 +65,7 @@ export const 금융: ArticleCategory = {
             },
           ],
           cta: {
-            label: "서민형 요건 확인하기",
+            label: "서민형 소득확인증명서 발급하기",
             url: "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000353",
             org: "정부24",
             note: "비과세 400만원으로 열려면 소득확인증명서가 필요합니다. 발급부터 하세요.",
@@ -331,7 +331,7 @@ export const 금융: ArticleCategory = {
         "ISA 한도는 **한 해 단위로 사라지지 않습니다.** 법이 정한 계산식이 지난해에 못 채운 몫을 올해 한도에 얹어 주기 때문입니다.\n\n대신 얹히는 데도 끝이 있습니다. 경과연수는 **4년에서 멈추고**, 그 지점이 총한도 1억원입니다. 늦게 넣기 시작해도 총액은 따라잡을 수 있지만, 계좌가 없으면 경과연수 자체가 쌓이지 않습니다. **한도가 언제부터 세어졌는지**부터 확인해 보시죠.",
 
       heroCta: {
-        label: "ISA 납입한도 기준 표 열기",
+        label: "납입한도 확인하기",
         url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISANotice.xml&divisionId=MDIS07001001000000&serviceId=SDIS07001001000",
         org: "금융투자협회 ISA 다모아",
       },
@@ -367,7 +367,7 @@ export const 금융: ArticleCategory = {
             },
           ],
           cta: {
-            label: "내 ISA 계좌 어디 있는지 찾기",
+            label: "내 계좌 조회하기",
             url: "https://fine.fss.or.kr/fine/main/contents.do?menuNo=900029",
             org: "금융감독원 파인",
             note: "계좌를 어느 회사에서 열었는지 기억나지 않을 때 쓰는 통합조회 서비스입니다.",
@@ -495,7 +495,7 @@ export const 금융: ArticleCategory = {
             ],
           },
           cta: {
-            label: "ISA 계좌이전 절차 보기",
+            label: "계좌이전 신청하기",
             url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISAAccTransNotice.xml&divisionId=MDIS07001003000000&serviceId=SDIS07001003000",
             org: "금융투자협회 ISA 다모아",
             note: "회사를 옮기고 싶을 때는 해지가 아니라 계좌이전으로 기간과 한도를 지킵니다.",
@@ -675,7 +675,7 @@ export const 금융: ArticleCategory = {
             },
           ],
           cta: {
-            label: "신탁형 수수료 회사별로 비교하기",
+            label: "신탁형 수수료 비교하기",
             url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISATrustCms.xml&divisionId=MDIS07004001000000&serviceId=SDIS07004001000",
             org: "금융투자협회 ISA 다모아",
             note: "회사·기준일자를 넣으면 신탁보수와 편입상품보수가 회사별로 나옵니다.",
@@ -828,7 +828,7 @@ export const 금융: ArticleCategory = {
             title: "소득확인증명서를 발급받습니다",
             body: "개인종합자산관리계좌 가입용 증명서를 정부24에서 발급합니다.",
             action: {
-              label: "정부24에서 증명서 신청하기",
+              label: "소득확인증명서 신청하기",
               url: "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000353",
               org: "정부24",
             },
@@ -950,7 +950,7 @@ export const 금융: ArticleCategory = {
         "해지 버튼 하나로 **그동안 아낀 세금이 되돌아갑니다.** 법은 최초 계약일부터 3년이 되는 날 전에 해지하면 과세특례를 적용받은 소득세에 상당하는 세액을 추징하도록 정합니다.\n\n예외도 법 안에 있습니다. 사망·해외이주 같은 **부득이한 사유**로 해지하면 추징에서 빠집니다. 급한 돈이 필요한 것뿐이라면 해지가 아니라 인출이나 계좌이전으로 끝나는 경우도 많으니, **해지 버튼을 누르기 전에** 어디에 해당하는지부터 맞춰 보시죠.",
 
       heroCta: {
-        label: "해지 대신 계좌이전 절차 확인하기",
+        label: "계좌이전 신청하기",
         url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISAAccTransNotice.xml&divisionId=MDIS07001003000000&serviceId=SDIS07001003000",
         org: "금융투자협회 ISA 다모아",
       },
@@ -982,7 +982,7 @@ export const 금융: ArticleCategory = {
             },
           ],
           cta: {
-            label: "ISA 제도 요건 다시 보기",
+            label: "의무가입기간 확인하기",
             url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISANotice.xml&divisionId=MDIS07001001000000&serviceId=SDIS07001001000",
             org: "금융투자협회 ISA 다모아",
             note: "의무가입기간과 중도해지·중도인출 기준이 한 표에 정리돼 있습니다.",
@@ -1126,7 +1126,7 @@ export const 금융: ArticleCategory = {
             title: "회사를 바꾸는 것이라면 이전을 신청합니다",
             body: "해지하지 않고 옮기면 가입기간과 세제혜택이 그대로 유지됩니다.",
             action: {
-              label: "계좌이전 제도 내용 보기",
+              label: "계좌이전 조건 확인하기",
               url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISAAccTransNotice.xml&divisionId=MDIS07001003000000&serviceId=SDIS07001003000",
               org: "금융투자협회 ISA 다모아",
             },
@@ -1234,7 +1234,7 @@ export const 금융: ArticleCategory = {
         "만기에 아무것도 하지 않으면 **선택지가 하나 줄어듭니다.** 법은 계약기간 만료일 전에만 연장할 수 있다고 정하기 때문입니다.\n\n연장에는 덤이 붙습니다. 비과세 한도는 **연장일을 기준으로 다시 판정**되므로, 그동안 소득이 줄었다면 이번에 400만원 쪽으로 넘어갈 수 있습니다. 반대로 만기 자금을 연금계좌로 옮기면 전환금액의 **100분의 10**을 세액공제로 돌려받습니다. 어느 쪽이 나은지는 옮길 곳부터 비교해 보시면 보입니다.",
 
       heroCta: {
-        label: "만기 자금 옮길 연금계좌 비교하기",
+        label: "연금저축 상품 비교하기",
         url: "https://www.fss.or.kr/fss/lifeplan/goodsCmpr/list3.do?menuNo=201272",
         org: "금융감독원 통합연금포털",
       },
@@ -1266,7 +1266,7 @@ export const 금융: ArticleCategory = {
             },
           ],
           cta: {
-            label: "ISA 의무가입기간 기준 보기",
+            label: "의무가입기간 확인하기",
             url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISANotice.xml&divisionId=MDIS07001001000000&serviceId=SDIS07001001000",
             org: "금융투자협회 ISA 다모아",
             note: "의무가입기간과 중도해지 기준이 한 표에 정리돼 있습니다.",
@@ -1419,7 +1419,7 @@ export const 금융: ArticleCategory = {
             title: "옮길 연금계좌를 비교합니다",
             body: "전환금액은 연금저축·퇴직연금계좌로 납입할 때 공제 대상이 됩니다.",
             action: {
-              label: "연금저축 회사별 공시 열기",
+              label: "연금저축 상품 비교하기",
               url: "https://www.fss.or.kr/fss/lifeplan/goodsCmpr/list3.do?menuNo=201272",
               org: "금융감독원 통합연금포털",
             },
@@ -1544,7 +1544,7 @@ export const 금융: ArticleCategory = {
         "ISA의 절세는 **세 단계로 쌓입니다.** 먼저 계좌 안 이익에서 손실을 빼고, 남은 순소득에서 비과세 한도를 덜어 내고, 그래도 남는 금액에 낮은 세율을 매깁니다.\n\n마지막 단계가 특히 큽니다. 초과분은 **종합소득과세표준에 합산되지 않아** 다른 소득 때문에 세율이 뛰지 않습니다. 다만 400만원 한도로 갈지 200만원에서 멈출지는 소득 자료가 정합니다. **어느 쪽인지부터** 확인해 두시죠.",
 
       heroCta: {
-        label: "내 소득 요건 증명서 떼어 보기",
+        label: "소득확인증명서 발급받기",
         url: "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000353",
         org: "정부24",
       },
@@ -1576,7 +1576,7 @@ export const 금융: ArticleCategory = {
             },
           ],
           cta: {
-            label: "세제혜택 요약표 확인하기",
+            label: "세제혜택 확인하기",
             url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISANotice.xml&divisionId=MDIS07001001000000&serviceId=SDIS07001001000",
             org: "금융투자협회 ISA 다모아",
             note: "일반 금융상품과 ISA의 세제를 나란히 놓은 표가 있습니다.",
@@ -1847,7 +1847,7 @@ export const 금융: ArticleCategory = {
         "가입 자격은 넓지만 **혜택 조건은 따로 붙습니다.** 열아홉이면 소득과 무관하게 계좌를 열 수 있는데, 감면받은 세금은 **3년을 채워야** 내 것으로 남습니다.\n\n놓치기 쉬운 대목은 두 가지입니다. 직전 3개년 금융소득종합과세 대상자는 **입구에서 걸리고**, 비과세 한도를 400만원으로 올리려면 소득 증빙을 따로 내야 합니다. 자격부터 한 줄씩 맞춰 보시죠.",
 
       heroCta: {
-        label: "가입자격 요약표 확인하기",
+        label: "가입자격 확인하기",
         url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISANotice.xml&divisionId=MDIS07001001000000&serviceId=SDIS07001001000",
         org: "금융투자협회 ISA 다모아",
       },
@@ -1879,7 +1879,7 @@ export const 금융: ArticleCategory = {
             },
           ],
           cta: {
-            label: "소득확인증명서 발급 절차 보기",
+            label: "소득확인증명서 발급 신청하기",
             url: "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000353",
             org: "정부24",
             note: "서민형 한도로 열려면 이 증명서가 필요합니다. 발급 조건과 방법이 안내돼 있습니다.",
@@ -2035,7 +2035,7 @@ export const 금융: ArticleCategory = {
             title: "서민형 증빙을 준비합니다",
             body: "소득확인증명서를 내면 400만원 한도로 계좌가 열립니다.",
             action: {
-              label: "정부24 발급 안내 열기",
+              label: "정부24에서 발급 신청하기",
               url: "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000353",
               org: "정부24",
             },
@@ -2149,11 +2149,11 @@ export const 금융: ArticleCategory = {
       },
 
       heroHook:
-        "ISA의 단점은 대부분 **혜택의 뒷면입니다.** 세금을 깎아 주는 대신 3년을 묶고, 원금 위로는 손대지 못하게 합니다.\n\n문제는 이 조건들이 **가입 화면에 크게 적혀 있지 않다는 점입니다.** 특히 납입원금을 넘겨 인출하면 신청하지 않아도 계약이 끝난다는 규정은 겪고 나서 아는 경우가 많습니다. 어떤 제약이 붙는지 미리 맞춰 보시죠.",
+        "ISA의 단점은 대부분 **혜택의 뒷면입니다.** 세금을 깎아 주는 대신 3년을 묶고, 원금 위로는 손대지 못하게 합니다.\n\n문제는 이 조건들이 **가입 화면에 크게 적혀 있지 않다는 점입니다.** 특히 납입원금을 넘겨 인출하면 신청하지 않아도 계약이 끝난다는 규정은 겪고 나서 아는 경우가 많습니다. 열기 전에 어떤 제약이 붙는지부터 확인해 두면 겪을 일이 없습니다.",
 
       heroCta: {
-        label: "해지 대신 옮기는 방법 보기",
-        url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISAAccTransNotice.xml&divisionId=MDIS07001003000000&serviceId=SDIS07001003000",
+        label: "가입 전 조건 확인하기",
+        url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISANotice.xml&divisionId=MDIS07001001000000&serviceId=SDIS07001001000",
         org: "금융투자협회 ISA 다모아",
       },
 
@@ -2184,7 +2184,7 @@ export const 금융: ArticleCategory = {
             },
           ],
           cta: {
-            label: "제도 요건표에서 제약 확인하기",
+            label: "중도인출 조건 확인하기",
             url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISANotice.xml&divisionId=MDIS07001001000000&serviceId=SDIS07001001000",
             org: "금융투자협회 ISA 다모아",
             note: "의무가입기간·중도해지·중도인출 기준이 한 표에 모여 있습니다.",
@@ -2314,7 +2314,7 @@ export const 금융: ArticleCategory = {
           eyebrow: "비용 확인",
           heading: "ISA 계좌 수수료와 은행·증권사 차이는 어디서 비교하나요",
           cta: {
-            label: "신탁형 보수·수수료 비교하기",
+            label: "신탁형 수수료 비교하기",
             url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISATrustCms.xml&divisionId=MDIS07004001000000&serviceId=SDIS07004001000",
             org: "금융투자협회 ISA 다모아",
             note: "회사와 기준일자를 넣으면 신탁보수·편입상품보수가 회사별로 나옵니다.",
@@ -2342,7 +2342,7 @@ export const 금융: ArticleCategory = {
             title: "회사별 수수료와 취급 상품을 비교합니다",
             body: "세제는 같으므로 남는 기준은 비용과 담을 수 있는 상품입니다.",
             action: {
-              label: "회사별 공시 화면 열기",
+              label: "신탁형 수수료 비교하기",
               url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISATrustCms.xml&divisionId=MDIS07004001000000&serviceId=SDIS07004001000",
               org: "금융투자협회 ISA 다모아",
             },
@@ -2460,7 +2460,7 @@ export const 금융: ArticleCategory = {
         "ISA에서 ETF를 고를 때 첫 질문은 종목이 아니라 **범위입니다.** 법이 담을 수 있는 재산을 열거해 두었고, 외국 집합투자증권은 그 목록에서 빠져 있습니다.\n\n두 번째 질문은 세금입니다. 계좌 안에서는 **손익을 통산한 뒤** 한도까지 비과세하고 초과분만 낮은 세율로 정산합니다. 그래서 무엇을 담느냐만큼 어디에 담느냐가 결과를 바꿉니다. 실제로 어떤 자산이 담기고 있는지부터 보시죠.",
 
       heroCta: {
-        label: "ISA 운용자산 공시 열어 보기",
+        label: "운용자산 현황 확인하기",
         url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISATop10Stat.xml&divisionId=MDIS07003002000000&serviceId=SDIS07003002000",
         org: "금융투자협회 ISA 다모아",
       },
@@ -2492,7 +2492,7 @@ export const 금융: ArticleCategory = {
             },
           ],
           cta: {
-            label: "취급 상품 기준 확인하기",
+            label: "편입 가능 상품 확인하기",
             url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISANotice.xml&divisionId=MDIS07001001000000&serviceId=SDIS07001001000",
             org: "금융투자협회 ISA 다모아",
             note: "편입 가능 금융상품이 항목별로 정리돼 있습니다.",
@@ -2761,7 +2761,7 @@ export const 금융: ArticleCategory = {
         "ISA 수익률을 회사끼리 견주는 자리는 **한 곳뿐입니다.** 금융투자협회가 일임형 모델 포트폴리오의 대표 수익률을 회사별·기간별로 공시합니다.\n\n다만 그 숫자는 **내 계좌 수익률이 아닙니다.** 최초 출시일에 1,000만원을 한 번에 넣고 추가납입도 인출도 없다고 가정한 값입니다. 무엇을 가정한 숫자인지 알고 봐야 비교가 됩니다. 공시 화면을 열어 놓고 읽어 보시죠.",
 
       heroCta: {
-        label: "회사별 대표 수익률 열어 보기",
+        label: "회사별 수익률 비교하기",
         url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISAMPROPCmpAnnNew.xml&divisionId=MDIS07005002500000&serviceId=SDIS07005002050",
         org: "금융투자협회 ISA 다모아",
       },
@@ -2793,7 +2793,7 @@ export const 금융: ArticleCategory = {
             },
           ],
           cta: {
-            label: "MP 산출 기준 확인하기",
+            label: "수익률 산출기준 확인하기",
             url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISAMPNotice.xml&divisionId=MDIS07005004000000&serviceId=SDIS07005004000",
             org: "금융투자협회 ISA 다모아",
             note: "대표 수익률이 어떤 가정으로 산출되는지 단계별로 적혀 있습니다.",
@@ -2941,7 +2941,7 @@ export const 금융: ArticleCategory = {
             title: "공시 화면에서 기준일자를 고릅니다",
             body: "월말 기준으로 자료가 쌓여 있어 시점을 맞춰야 비교가 됩니다.",
             action: {
-              label: "대표 수익률 공시 열기",
+              label: "회사별 수익률 비교하기",
               url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISAMPROPCmpAnnNew.xml&divisionId=MDIS07005002500000&serviceId=SDIS07005002050",
               org: "금융투자협회 ISA 다모아",
             },
@@ -3062,7 +3062,7 @@ export const 금융: ArticleCategory = {
         "회사를 고를 때 **세금은 판단 기준이 되지 못합니다.** 총납입한도도 비과세 한도도 법이 정하므로 어디서 열든 같습니다.\n\n남는 기준은 셋입니다. **수수료, 취급 상품, 운용 방식.** 이 가운데 수수료는 금융투자협회가 회사별로 공시하고 있어 직접 견줄 수 있습니다. 광고 문구 대신 공시 화면을 먼저 열어 보시죠.",
 
       heroCta: {
-        label: "회사별 신탁보수 견줘 보기",
+        label: "신탁형 수수료 비교하기",
         url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISATrustCms.xml&divisionId=MDIS07004001000000&serviceId=SDIS07004001000",
         org: "금융투자협회 ISA 다모아",
       },
@@ -3094,7 +3094,7 @@ export const 금융: ArticleCategory = {
             },
           ],
           cta: {
-            label: "일임형 MP 수수료 확인하기",
+            label: "일임형 수수료 비교하기",
             url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISAMPStutCmsCmpNew.xml&divisionId=MDIS07005001500000&serviceId=SDIS07005001050",
             org: "금융투자협회 ISA 다모아",
             note: "MP별 자산배분 비중과 상품보수·일임보수 합계가 함께 나옵니다.",
@@ -3224,7 +3224,7 @@ export const 금융: ArticleCategory = {
           eyebrow: "바꾸는 길",
           heading: "ISA 계좌를 잘못 골랐다면 어떻게 하나요",
           cta: {
-            label: "계좌이전 신청 절차 보기",
+            label: "계좌이전 신청하기",
             url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISAAccTransNotice.xml&divisionId=MDIS07001003000000&serviceId=SDIS07001003000",
             org: "금융투자협회 ISA 다모아",
             note: "온라인 이전은 일임형 ISA에 한해 가능하며 절차가 단계별로 적혀 있습니다.",
@@ -3244,7 +3244,7 @@ export const 금융: ArticleCategory = {
             title: "회사별 보수를 공시로 견줍니다",
             body: "신탁형은 신탁보수와 편입상품보수, 일임형은 보수 합계를 봅니다.",
             action: {
-              label: "신탁형 보수 공시 열기",
+              label: "신탁형 수수료 비교하기",
               url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISATrustCms.xml&divisionId=MDIS07004001000000&serviceId=SDIS07004001000",
               org: "금융투자협회 ISA 다모아",
             },
@@ -3363,10 +3363,10 @@ export const 금융: ArticleCategory = {
       },
 
       heroHook:
-        "ISA는 상품이 아니라 **그릇입니다.** 예금과 펀드, 상장주식을 한 계좌에 담아 두면 그 안에서 난 이익과 손실을 합쳐 계산합니다.\n\n그릇에 붙는 규칙이 세 가지입니다. **무엇을 담을 수 있는지**, **얼마나 담을 수 있는지**, **얼마나 오래 두어야 하는지.** 셋 다 법에 적혀 있어 회사마다 다르지 않습니다. 규칙부터 한 번 훑어 두면 나머지는 쉬워집니다.",
+        "ISA는 상품이 아니라 **그릇입니다.** 예금과 펀드, 상장주식을 한 계좌에 담아 두면 그 안에서 난 이익과 손실을 합쳐 계산합니다.\n\n그릇에 붙는 규칙이 세 가지입니다. **무엇을 담을 수 있는지**, **얼마나 담을 수 있는지**, **얼마나 오래 두어야 하는지.** 셋 다 법에 적혀 있어 회사마다 다르지 않습니다. 가입자격과 한도부터 확인해 두면 나머지는 따라옵니다.",
 
       heroCta: {
-        label: "제도 개요 한 장으로 보기",
+        label: "가입자격·한도 확인하기",
         url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISANotice.xml&divisionId=MDIS07001001000000&serviceId=SDIS07001001000",
         org: "금융투자협회 ISA 다모아",
       },
@@ -3399,7 +3399,7 @@ export const 금융: ArticleCategory = {
             },
           ],
           cta: {
-            label: "가입 자격 요건 확인하기",
+            label: "가입 자격 확인하기",
             url: "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000353",
             org: "정부24",
             note: "서민형 한도를 적용받으려면 이 증명서가 필요합니다.",
@@ -3670,10 +3670,10 @@ export const 금융: ArticleCategory = {
       },
 
       heroHook:
-        "ISA를 알아볼 때 헷갈리는 이유는 **한도가 두 종류**이기 때문입니다. 넣을 수 있는 돈의 한도와 세금을 면제받는 한도가 따로 있고, 이름이 비슷합니다.\n\n둘을 갈라 놓으면 나머지는 단순합니다. 넣는 쪽은 총 1억원, 면제받는 쪽은 400만원 또는 200만원입니다. 여기에 **3년이라는 기간**만 얹으면 제도의 뼈대가 끝납니다. 항목별로 짚어 가시죠.",
+        "ISA를 알아볼 때 헷갈리는 이유는 **한도가 두 종류**이기 때문입니다. 넣을 수 있는 돈의 한도와 세금을 면제받는 한도가 따로 있고, 이름이 비슷합니다.\n\n둘을 갈라 놓으면 나머지는 단순합니다. 넣는 쪽은 총 1억원, 면제받는 쪽은 400만원 또는 200만원입니다. 여기에 **3년이라는 기간**만 얹으면 제도의 뼈대가 끝납니다. 내가 어디에 해당하는지는 가입자격과 한도표에서 바로 확인됩니다.",
 
       heroCta: {
-        label: "제도 요약표 펼쳐 보기",
+        label: "가입자격·한도 확인하기",
         url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISANotice.xml&divisionId=MDIS07001001000000&serviceId=SDIS07001001000",
         org: "금융투자협회 ISA 다모아",
       },
@@ -3706,7 +3706,7 @@ export const 금융: ArticleCategory = {
             },
           ],
           cta: {
-            label: "가입용 소득확인증명서 보기",
+            label: "가입용 소득확인증명서 발급하기",
             url: "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000353",
             org: "정부24",
             note: "개인종합자산관리계좌 가입용으로 발급되는 전용 증명서입니다.",
@@ -3874,7 +3874,7 @@ export const 금융: ArticleCategory = {
           eyebrow: "어디서 열까",
           heading: "ISA 계좌는 어느 회사에서 여는 것이 좋을까요",
           cta: {
-            label: "회사별 보수 공시 열기",
+            label: "신탁형 수수료 비교하기",
             url: "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISATrustCms.xml&divisionId=MDIS07004001000000&serviceId=SDIS07004001000",
             org: "금융투자협회 ISA 다모아",
             note: "신탁보수와 편입상품보수가 업권·회사별로 공시돼 있습니다.",
@@ -4019,7 +4019,7 @@ export const 금융: ArticleCategory = {
         "IRP는 **회사가 열어 주는 계좌가 아닙니다.** 법이 정한 대상에 해당하면 본인이 퇴직연금사업자와 직접 계약해 설정합니다.\n\n헷갈리는 지점은 나이입니다. 가입에는 나이 문턱이 없지만 **연금으로 받으려면 55세**를 넘겨야 합니다. 두 숫자를 섞으면 계획이 어긋납니다. 어느 회사에서 열지부터 견줘 보시죠.",
 
       heroCta: {
-        label: "퇴직연금사업자 수익률 비교하기",
+        label: "퇴직연금 수익률 비교하기",
         url: "https://www.fss.or.kr/fss/lifeplan/rtrmCmpr/list.do?menuNo=200965",
         org: "금융감독원 통합연금포털",
       },
@@ -4051,7 +4051,7 @@ export const 금융: ArticleCategory = {
             },
           ],
           cta: {
-            label: "가입할 회사 골라 신청하기",
+            label: "IRP 가입 신청하기",
             url: "https://www.fss.or.kr/fss/lifeplan/bnacJoin/list.do?menuNo=200954",
             org: "금융감독원 통합연금포털",
             note: "권역(은행·증권·보험)과 회사를 고르면 각 사 가입 화면으로 이어집니다.",
@@ -4203,7 +4203,7 @@ export const 금융: ArticleCategory = {
             title: "사업자별 수익률과 비용을 비교합니다",
             body: "금융감독원이 퇴직연금사업자별로 수익률과 총비용 부담률을 공시합니다.",
             action: {
-              label: "비교공시 화면 열기",
+              label: "퇴직연금 수익률 비교하기",
               url: "https://www.fss.or.kr/fss/lifeplan/rtrmCmpr/list.do?menuNo=200965",
               org: "금융감독원 통합연금포털",
             },
@@ -4332,7 +4332,7 @@ export const 금융: ArticleCategory = {
         "IRP는 아무 때나 꺼낼 수 없지만 **길이 아예 없는 것도 아닙니다.** 시행령이 인출 가능한 사유를 목록으로 정해 두었습니다.\n\n중요한 것은 사유마다 **세율이 다르다는 점입니다.** 주택구입과 전세금은 기타소득세 16.5%, 의료비와 파산·개인회생은 연금소득세 5.5~3.3%가 붙습니다. 같은 인출이라도 손에 남는 금액이 달라집니다. 내 사유가 어디에 들어가는지부터 맞춰 보시죠.",
 
       heroCta: {
-        label: "중도인출 사유별 세율 확인하기",
+        label: "중도인출 세율 확인하기",
         url: "https://www.fss.or.kr/fss/lifeplan/bnacCncltn/list.do?menuNo=200956",
         org: "금융감독원 통합연금포털",
       },
@@ -4364,7 +4364,7 @@ export const 금융: ArticleCategory = {
             },
           ],
           cta: {
-            label: "가입한 회사에서 인출 신청하기",
+            label: "중도인출 신청하기",
             url: "https://www.fss.or.kr/fss/lifeplan/bnacCncltn/list.do?menuNo=200956",
             org: "금융감독원 통합연금포털",
             note: "권역과 회사를 고르면 해당 사업자 처리 화면으로 이어집니다.",
@@ -4518,7 +4518,7 @@ export const 금융: ArticleCategory = {
             title: "사유별 세율을 확인합니다",
             body: "주택·전세금은 기타소득세 16.5%, 의료비·파산은 연금소득세 5.5~3.3%입니다.",
             action: {
-              label: "세율 안내표 열기",
+              label: "인출 세율 확인하기",
               url: "https://www.fss.or.kr/fss/main/contents.do?menuNo=201008",
               org: "금융감독원 통합연금포털",
             },
@@ -4637,10 +4637,10 @@ export const 금융: ArticleCategory = {
       },
 
       heroHook:
-        "해지에서 가장 아픈 대목은 **돌려받은 세금을 다시 내는 부분입니다.** 금융감독원은 개인형IRP 해지 시 기타소득세율 16.5%(지방소득세 포함)가 원천징수된다고 안내합니다.\n\n계산식도 공개돼 있습니다. **세액공제 받은 납입원금에 운용수익을 더한 금액**에 16.5%를 곱합니다. 다만 부득이한 사유라면 5.5~3.3%로 내려가고, 회사를 옮기는 것뿐이라면 해지할 이유가 없습니다. 어느 쪽인지부터 가려 보시죠.",
+        "해지에서 가장 아픈 대목은 **돌려받은 세금을 다시 내는 부분입니다.** 금융감독원은 개인형IRP 해지 시 기타소득세율 16.5%(지방소득세 포함)가 원천징수된다고 안내합니다.\n\n계산식도 공개돼 있습니다. **세액공제 받은 납입원금에 운용수익을 더한 금액**에 16.5%를 곱합니다. 다만 부득이한 사유라면 5.5~3.3%로 내려갑니다. 해지 신청은 가입한 회사 화면에서 시작하니, 어느 쪽에 해당하는지 가린 뒤 진행하시면 됩니다.",
 
       heroCta: {
-        label: "해지 처리 화면으로 이동하기",
+        label: "IRP 해지 신청하기",
         url: "https://www.fss.or.kr/fss/lifeplan/bnacCncltn/list.do?menuNo=200956",
         org: "금융감독원 통합연금포털",
       },
@@ -4672,7 +4672,7 @@ export const 금융: ArticleCategory = {
             },
           ],
           cta: {
-            label: "권역·회사 골라 해지 진행하기",
+            label: "IRP 해지 신청하기",
             url: "https://www.fss.or.kr/fss/lifeplan/bnacCncltn/list.do?menuNo=200956",
             org: "금융감독원 통합연금포털",
             note: "은행·증권·보험 중 가입한 회사를 고르면 해당 사 처리 화면으로 이어집니다.",
@@ -4772,7 +4772,7 @@ export const 금융: ArticleCategory = {
             },
           ],
           cta: {
-            label: "계좌 이체 절차 확인하기",
+            label: "IRP 계좌 이체 신청하기",
             url: "https://www.fss.or.kr/fss/lifeplan/bnacTrans/list.do?menuNo=200955",
             org: "금융감독원 통합연금포털",
             note: "가입한 회사가 마음에 들지 않을 때는 해지가 아니라 이체를 씁니다.",
@@ -4818,7 +4818,7 @@ export const 금융: ArticleCategory = {
             title: "부득이한 사유인지 확인합니다",
             body: "해당하면 세율이 5.5~3.3%로 낮아지고, 확인된 날부터 6개월 이내에 신청해야 합니다.",
             action: {
-              label: "부득이한 사유 목록 보기",
+              label: "부득이한 사유 확인하기",
               url: "https://www.fss.or.kr/fss/main/contents.do?menuNo=201008",
               org: "금융감독원 통합연금포털",
             },
@@ -4941,7 +4941,7 @@ export const 금융: ArticleCategory = {
         "900만원이라는 숫자는 **IRP만의 한도가 아닙니다.** 연금저축에 넣은 금액까지 합쳐서 900만원입니다.\n\n그래서 연금저축을 이미 하고 있다면 IRP에 넣을 몫이 그만큼 줄어듭니다. 반대로 IRP만 쓴다면 900만원을 혼자 채울 수 있습니다. **어느 계좌에 얼마를 배분할지**가 연말정산 결과를 바꿉니다. 내 소득 구간부터 확인해 보시죠.",
 
       heroCta: {
-        label: "소득별 공제율 표 확인하기",
+        label: "공제율 확인하기",
         url: "https://www.fss.or.kr/fss/main/contents.do?menuNo=201011",
         org: "금융감독원 통합연금포털",
       },
@@ -5126,7 +5126,7 @@ export const 금융: ArticleCategory = {
             title: "소득 구간으로 공제율을 확인합니다",
             body: "종합소득 45백만원·총급여 55백만원 이하면 16.5%, 넘으면 13.2%입니다.",
             action: {
-              label: "퇴직연금 세제 안내 열기",
+              label: "IRP 공제 한도 확인하기",
               url: "https://www.fss.or.kr/fss/main/contents.do?menuNo=201011",
               org: "금융감독원 통합연금포털",
             },
@@ -5249,7 +5249,7 @@ export const 금융: ArticleCategory = {
         "IRP 세액공제는 **넣은 해에 붙습니다.** 그해가 끝나기 전에 계좌에 들어간 금액이 그해 연말정산 대상입니다.\n\n다만 넣는다고 전부 잡히지는 않습니다. 과세가 이연된 퇴직소득이나 다른 연금계좌에서 옮겨 온 금액은 **처음부터 공제 대상에서 빠집니다.** 어떤 돈이 공제되고 어떤 돈이 빠지는지 가려 두면 12월에 허둥대지 않습니다. 계좌부터 열어 두시죠.",
 
       heroCta: {
-        label: "IRP 계좌 개설하러 가기",
+        label: "IRP 계좌 개설하기",
         url: "https://www.fss.or.kr/fss/lifeplan/bnacJoin/list.do?menuNo=200954",
         org: "금융감독원 통합연금포털",
       },
@@ -5281,7 +5281,7 @@ export const 금융: ArticleCategory = {
             },
           ],
           cta: {
-            label: "공제율·한도 안내 열기",
+            label: "공제 한도 확인하기",
             url: "https://www.fss.or.kr/fss/main/contents.do?menuNo=201011",
             org: "금융감독원 통합연금포털",
             note: "소득 구간별 공제율과 한도가 한 표에 정리돼 있습니다.",
@@ -5426,7 +5426,7 @@ export const 금융: ArticleCategory = {
             title: "IRP 계좌를 설정합니다",
             body: "퇴직연금사업자와 계약해 개인형 IRP를 엽니다.",
             action: {
-              label: "가입 화면으로 이동",
+              label: "IRP 계좌 개설하기",
               url: "https://www.fss.or.kr/fss/lifeplan/bnacJoin/list.do?menuNo=200954",
               org: "금융감독원 통합연금포털",
             },
@@ -5563,7 +5563,7 @@ export const 금융: ArticleCategory = {
         "IRP의 혜택은 **세 겹입니다.** 넣을 때 세액공제를 받고, 굴리는 동안 과세를 미루고, 받을 때 낮은 세율로 냅니다.\n\n가장 크게 갈리는 지점은 마지막입니다. 같은 돈을 **연금으로 받느냐 한 번에 찾느냐**에 따라 세율이 몇 배 차이 납니다. 받는 방법을 정하는 순간 세금이 정해지니, 수령 요건부터 맞춰 보시죠.",
 
       heroCta: {
-        label: "연금수령 개시 신청하기",
+        label: "연금수령 신청하기",
         url: "https://www.fss.or.kr/fss/lifeplan/bnacAply/list.do?menuNo=200957",
         org: "금융감독원 통합연금포털",
       },
@@ -5595,7 +5595,7 @@ export const 금융: ArticleCategory = {
             },
           ],
           cta: {
-            label: "권역·회사 골라 수령 신청하기",
+            label: "연금수령 신청하기",
             url: "https://www.fss.or.kr/fss/lifeplan/bnacAply/list.do?menuNo=200957",
             org: "금융감독원 통합연금포털",
             note: "가입한 회사를 고르면 해당 사 연금수령 신청 화면으로 이어집니다.",
@@ -5748,7 +5748,7 @@ export const 금융: ArticleCategory = {
             title: "한 해 수령액을 한도 안으로 맞춥니다",
             body: "한도를 넘긴 금액에는 16.5%가 적용됩니다.",
             action: {
-              label: "연금수령 세율표 열기",
+              label: "연금수령 세율 확인하기",
               url: "https://www.fss.or.kr/fss/main/contents.do?menuNo=201009",
               org: "금융감독원 통합연금포털",
             },
@@ -5872,7 +5872,7 @@ export const 금융: ArticleCategory = {
         "연금저축은 상품이 아니라 **계좌의 이름입니다.** 은행·증권사·보험회사가 각각 다른 상품을 그 계좌에 담아 팝니다.\n\n그래서 수익률을 견주려면 **어떤 상품끼리 비교하는지**부터 맞춰야 합니다. 금융감독원이 회사별 적립금과 상품별 수익률·수수료율을 함께 공시하니, 광고 대신 그 화면을 여는 편이 빠릅니다.",
 
       heroCta: {
-        label: "상품별 수익률 공시 열기",
+        label: "연금저축 수익률 비교하기",
         url: "https://www.fss.or.kr/fss/lifeplan/goodsCmpr/list3.do?menuNo=201272",
         org: "금융감독원 통합연금포털",
       },
@@ -5904,7 +5904,7 @@ export const 금융: ArticleCategory = {
             },
           ],
           cta: {
-            label: "연금저축 세제 안내 함께 보기",
+            label: "연금저축 공제 한도 확인하기",
             url: "https://www.fss.or.kr/fss/main/contents.do?menuNo=201007",
             org: "금융감독원 통합연금포털",
             note: "수익률과 함께 계산해야 할 공제 한도와 공제율이 표로 나옵니다.",
@@ -6049,7 +6049,7 @@ export const 금융: ArticleCategory = {
             title: "비교공시 화면을 엽니다",
             body: "판매회사별 적립금과 상품별 수익률·수수료율 탭이 따로 있습니다.",
             action: {
-              label: "연금저축 비교공시 열기",
+              label: "연금저축 수익률 비교하기",
               url: "https://www.fss.or.kr/fss/lifeplan/goodsCmpr/list3.do?menuNo=201272",
               org: "금융감독원 통합연금포털",
             },
@@ -6175,10 +6175,10 @@ export const 금융: ArticleCategory = {
       },
 
       heroHook:
-        "개인퇴직연금은 **한 계좌에 세 가지 규칙이 겹쳐 있습니다.** 얼마나 넣을 수 있는지, 얼마까지 공제받는지, 언제부터 받을 수 있는지가 각각 다른 법에서 나옵니다.\n\n숫자로 정리하면 단순합니다. 연 **1,800만원** 납입, **900만원** 공제, **55세** 수령입니다. 나머지는 이 셋에 붙는 조건들입니다. 항목별로 짚어 가시죠.",
+        "개인퇴직연금은 **한 계좌에 세 가지 규칙이 겹쳐 있습니다.** 얼마나 넣을 수 있는지, 얼마까지 공제받는지, 언제부터 받을 수 있는지가 각각 다른 법에서 나옵니다.\n\n숫자로 정리하면 단순합니다. 연 **1,800만원** 납입, **900만원** 공제, **55세** 수령입니다. 나머지는 이 셋에 붙는 조건들이고, 공제를 받으려면 그해 안에 계좌가 열려 있어야 합니다.",
 
       heroCta: {
-        label: "IRP 계좌 개설 화면 열기",
+        label: "IRP 계좌 개설하기",
         url: "https://www.fss.or.kr/fss/lifeplan/bnacJoin/list.do?menuNo=200954",
         org: "금융감독원 통합연금포털",
       },
@@ -6211,7 +6211,7 @@ export const 금융: ArticleCategory = {
             },
           ],
           cta: {
-            label: "권역별 회사 골라 가입하기",
+            label: "IRP 가입 신청하기",
             url: "https://www.fss.or.kr/fss/lifeplan/bnacJoin/list.do?menuNo=200954",
             org: "금융감독원 통합연금포털",
             note: "은행·증권·보험 권역을 고르면 각 사 가입 화면으로 이어집니다.",
@@ -6368,7 +6368,7 @@ export const 금융: ArticleCategory = {
             },
           ],
           cta: {
-            label: "사업자별 수익률 비교하기",
+            label: "퇴직연금 수익률 비교하기",
             url: "https://www.fss.or.kr/fss/lifeplan/rtrmCmpr/list.do?menuNo=200965",
             org: "금융감독원 통합연금포털",
             note: "년도와 분기를 고르면 사업자별 수익률과 총비용 부담률이 나옵니다.",
@@ -6400,7 +6400,7 @@ export const 금융: ArticleCategory = {
             title: "사업자를 고르고 계좌를 엽니다",
             body: "세제는 같으므로 수익률과 총비용 부담률, 취급 상품으로 판단합니다.",
             action: {
-              label: "비교공시 화면 열기",
+              label: "퇴직연금 수익률 비교하기",
               url: "https://www.fss.or.kr/fss/lifeplan/rtrmCmpr/list.do?menuNo=200965",
               org: "금융감독원 통합연금포털",
             },
