@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-20T16:16:00.267+09:00",
+  "updatedAt": "2026-08-20T17:01:26.824+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -1125,29 +1125,29 @@
     "fetchedDate": "2026-08-20"
   },
   "fx": {
-    "usdkrw": 1394.04,
-    "change": -22.81,
-    "changePct": -1.61,
+    "usdkrw": 1393.28,
+    "change": -23.57,
+    "changePct": -1.66,
     "dir": "down",
     "source": "Yahoo Finance (KRW=X)"
   },
   "intl": {
     "gold": {
       "name": "금",
-      "usdPerOz": 4544.8,
-      "changePct": 2.87,
+      "usdPerOz": 4545.5,
+      "changePct": 2.89,
       "dir": "up",
-      "krwPerGram": 203695,
-      "krwPerDon": 763856,
+      "krwPerGram": 203616,
+      "krwPerDon": 763560,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
       "name": "은",
-      "usdPerOz": 66.96,
-      "changePct": 1.26,
+      "usdPerOz": 66.75,
+      "changePct": 0.95,
       "dir": "up",
-      "krwPerGram": 3001,
-      "krwPerDon": 11254,
+      "krwPerGram": 2990,
+      "krwPerDon": 11213,
       "source": "COMEX 은 선물 (SI=F)"
     }
   }
