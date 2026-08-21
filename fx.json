@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-21T18:47:45.139+09:00",
+  "updatedAt": "2026-08-21T19:40:07.475+09:00",
   "base": "KRW",
   "source": "Yahoo Finance (시장 중간환율)",
   "note": "시장 중간환율입니다. 은행 창구·앱의 현찰 환전가는 여기에 수수료와 우대율이 적용됩니다.",
@@ -10,9 +10,9 @@
       "name": "미국 달러",
       "unit": 1,
       "region": "미주",
-      "rate": 1384.02,
-      "change": -31.35,
-      "changePct": -2.21,
+      "rate": 1383.96,
+      "change": -31.41,
+      "changePct": -2.22,
       "dir": "down",
       "history": [
         {
@@ -33,7 +33,7 @@
         },
         {
           "date": "2026-08-21",
-          "rate": 1384.02
+          "rate": 1383.96
         }
       ]
     },
@@ -42,9 +42,9 @@
       "name": "일본 엔",
       "unit": 100,
       "region": "일본·중화권",
-      "rate": 870.6,
-      "change": -18.31,
-      "changePct": -2.06,
+      "rate": 870.5,
+      "change": -18.41,
+      "changePct": -2.07,
       "dir": "down",
       "history": [
         {
@@ -65,7 +65,7 @@
         },
         {
           "date": "2026-08-21",
-          "rate": 870.6
+          "rate": 870.5
         }
       ]
     },
@@ -74,9 +74,9 @@
       "name": "유로",
       "unit": 1,
       "region": "유럽",
-      "rate": 1619,
-      "change": 36.91,
-      "changePct": 2.33,
+      "rate": 1619.8,
+      "change": 37.71,
+      "changePct": 2.38,
       "dir": "up",
       "history": [
         {
@@ -97,7 +97,7 @@
         },
         {
           "date": "2026-08-21",
-          "rate": 1619
+          "rate": 1619.8
         }
       ]
     },
@@ -106,9 +106,9 @@
       "name": "중국 위안",
       "unit": 1,
       "region": "일본·중화권",
-      "rate": 205.97,
-      "change": -1.19,
-      "changePct": -0.57,
+      "rate": 206,
+      "change": -1.15,
+      "changePct": -0.56,
       "dir": "down",
       "history": []
     },
@@ -117,9 +117,9 @@
       "name": "영국 파운드",
       "unit": 1,
       "region": "유럽",
-      "rate": 1888.3,
-      "change": -29.05,
-      "changePct": -1.52,
+      "rate": 1889.16,
+      "change": -28.19,
+      "changePct": -1.47,
       "dir": "down",
       "history": [
         {
@@ -140,7 +140,7 @@
         },
         {
           "date": "2026-08-21",
-          "rate": 1888.3
+          "rate": 1889.16
         }
       ]
     },
@@ -149,9 +149,9 @@
       "name": "호주 달러",
       "unit": 1,
       "region": "미주",
-      "rate": 990.91,
-      "change": -11.92,
-      "changePct": -1.19,
+      "rate": 991.42,
+      "change": -11.41,
+      "changePct": -1.14,
       "dir": "down",
       "history": [
         {
@@ -172,7 +172,7 @@
         },
         {
           "date": "2026-08-21",
-          "rate": 990.91
+          "rate": 991.42
         }
       ]
     },
@@ -181,9 +181,9 @@
       "name": "캐나다 달러",
       "unit": 1,
       "region": "미주",
-      "rate": 1006.5,
-      "change": -13.79,
-      "changePct": -1.35,
+      "rate": 1007.63,
+      "change": -12.66,
+      "changePct": -1.24,
       "dir": "down",
       "history": [
         {
@@ -204,7 +204,7 @@
         },
         {
           "date": "2026-08-21",
-          "rate": 1006.5
+          "rate": 1007.63
         }
       ]
     },
@@ -213,9 +213,9 @@
       "name": "스위스 프랑",
       "unit": 1,
       "region": "유럽",
-      "rate": 1732.48,
-      "change": -9.15,
-      "changePct": -0.53,
+      "rate": 1733.46,
+      "change": -8.17,
+      "changePct": -0.47,
       "dir": "down",
       "history": [
         {
@@ -236,7 +236,7 @@
         },
         {
           "date": "2026-08-21",
-          "rate": 1732.48
+          "rate": 1733.46
         }
       ]
     },
@@ -245,9 +245,9 @@
       "name": "홍콩 달러",
       "unit": 1,
       "region": "일본·중화권",
-      "rate": 176.03,
-      "change": -4.34,
-      "changePct": -2.41,
+      "rate": 176.09,
+      "change": -4.28,
+      "changePct": -2.37,
       "dir": "down",
       "history": [
         {
@@ -268,7 +268,7 @@
         },
         {
           "date": "2026-08-21",
-          "rate": 176.03
+          "rate": 176.09
         }
       ]
     },
@@ -309,9 +309,9 @@
       "name": "싱가포르 달러",
       "unit": 1,
       "region": "동남아",
-      "rate": 1090.63,
-      "change": -15.92,
-      "changePct": -1.44,
+      "rate": 1091.1,
+      "change": -15.45,
+      "changePct": -1.4,
       "dir": "down",
       "history": [
         {
@@ -332,7 +332,7 @@
         },
         {
           "date": "2026-08-21",
-          "rate": 1090.63
+          "rate": 1091.1
         }
       ]
     },
@@ -341,9 +341,9 @@
       "name": "태국 바트",
       "unit": 1,
       "region": "동남아",
-      "rate": 42.36,
-      "change": -0.36,
-      "changePct": -0.85,
+      "rate": 42.38,
+      "change": -0.34,
+      "changePct": -0.79,
       "dir": "down",
       "history": [
         {
@@ -364,7 +364,7 @@
         },
         {
           "date": "2026-08-21",
-          "rate": 42.36
+          "rate": 42.38
         }
       ]
     },
@@ -409,9 +409,9 @@
       "name": "필리핀 페소",
       "unit": 1,
       "region": "동남아",
-      "rate": 22.44,
-      "change": -0.59,
-      "changePct": -2.55,
+      "rate": 22.45,
+      "change": -0.58,
+      "changePct": -2.51,
       "dir": "down",
       "history": [
         {
@@ -432,7 +432,7 @@
         },
         {
           "date": "2026-08-21",
-          "rate": 22.44
+          "rate": 22.45
         }
       ]
     },
@@ -443,7 +443,7 @@
       "region": "동남아",
       "rate": 7.82,
       "change": -0.11,
-      "changePct": -1.44,
+      "changePct": -1.45,
       "dir": "down",
       "history": [
         {
@@ -473,9 +473,9 @@
       "name": "말레이시아 링깃",
       "unit": 1,
       "region": "동남아",
-      "rate": 342.67,
-      "change": -3.74,
-      "changePct": -1.08,
+      "rate": 342.72,
+      "change": -3.69,
+      "changePct": -1.07,
       "dir": "down",
       "history": [
         {
@@ -496,7 +496,7 @@
         },
         {
           "date": "2026-08-21",
-          "rate": 342.67
+          "rate": 342.72
         }
       ]
     },
@@ -505,9 +505,9 @@
       "name": "뉴질랜드 달러",
       "unit": 1,
       "region": "미주",
-      "rate": 827.1,
-      "change": -6.64,
-      "changePct": -0.8,
+      "rate": 827.6,
+      "change": -6.14,
+      "changePct": -0.74,
       "dir": "down",
       "history": [
         {
@@ -528,7 +528,7 @@
         },
         {
           "date": "2026-08-21",
-          "rate": 827.1
+          "rate": 827.6
         }
       ]
     }
