@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-23T05:35:23.129+09:00",
+  "updatedAt": "2026-08-23T06:07:54.768+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -92,13 +92,6 @@
       "changePct": 3.09
     },
     "history": [
-      {
-        "date": "2026-01-14",
-        "krwPerGram": 220460,
-        "krwPerDon": 826725,
-        "change": 2610,
-        "changePct": 1.2
-      },
       {
         "date": "2026-01-15",
         "krwPerGram": 218580,
@@ -1122,7 +1115,7 @@
         "changePct": 3.09
       }
     ],
-    "fetchedDate": "2026-08-22"
+    "fetchedDate": "2026-08-23"
   },
   "fx": {
     "usdkrw": 1383.9,
