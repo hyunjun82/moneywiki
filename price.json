@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-22T09:23:36.895+09:00",
+  "updatedAt": "2026-08-22T11:03:01.237+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -18,12 +18,12 @@
         "key": "gold24",
         "name": "순금 24K",
         "userSell": {
-          "price": 743000,
-          "change": 5000,
+          "price": 751000,
+          "change": 8000,
           "dir": "up"
         },
         "userBuy": {
-          "price": 811000,
+          "price": 818000,
           "change": 7000,
           "dir": "up"
         }
@@ -32,8 +32,8 @@
         "key": "gold18",
         "name": "18K",
         "userSell": {
-          "price": 546200,
-          "change": 3700,
+          "price": 552000,
+          "change": 5800,
           "dir": "up"
         },
         "userBuy": null
@@ -42,8 +42,8 @@
         "key": "gold14",
         "name": "14K",
         "userSell": {
-          "price": 423600,
-          "change": 2900,
+          "price": 428100,
+          "change": 4500,
           "dir": "up"
         },
         "userBuy": null
@@ -52,13 +52,13 @@
         "key": "platinum",
         "name": "백금",
         "userSell": {
-          "price": 220000,
-          "change": 0,
-          "dir": "none"
+          "price": 240000,
+          "change": 20000,
+          "dir": "up"
         },
         "userBuy": {
-          "price": 334000,
-          "change": 7000,
+          "price": 388000,
+          "change": 54000,
           "dir": "up"
         }
       },
@@ -66,14 +66,14 @@
         "key": "silver",
         "name": "은",
         "userSell": {
-          "price": 8000,
-          "change": 0,
-          "dir": "none"
+          "price": 9000,
+          "change": 1000,
+          "dir": "up"
         },
         "userBuy": {
           "price": 11560,
-          "change": 230,
-          "dir": "up"
+          "change": 0,
+          "dir": "none"
         }
       }
     ]
