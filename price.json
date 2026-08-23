@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-23T12:12:17.932+09:00",
+  "updatedAt": "2026-08-23T13:06:14.158+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -1128,7 +1128,7 @@
     "gold": {
       "name": "금",
       "usdPerOz": 4680.6,
-      "changePct": 5.95,
+      "changePct": 7.21,
       "dir": "up",
       "krwPerGram": 208256,
       "krwPerDon": 780960,
@@ -1137,7 +1137,7 @@
     "silver": {
       "name": "은",
       "usdPerOz": 69.53,
-      "changePct": 5.16,
+      "changePct": 8.74,
       "dir": "up",
       "krwPerGram": 3094,
       "krwPerDon": 11603,
