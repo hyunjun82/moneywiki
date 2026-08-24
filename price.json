@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-24T13:10:52.980+09:00",
+  "updatedAt": "2026-08-24T14:06:20.398+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -18,13 +18,13 @@
         "key": "gold24",
         "name": "순금 24K",
         "userSell": {
-          "price": 754000,
-          "change": 3000,
+          "price": 755000,
+          "change": 4000,
           "dir": "up"
         },
         "userBuy": {
-          "price": 822000,
-          "change": 4000,
+          "price": 825000,
+          "change": 7000,
           "dir": "up"
         }
       },
@@ -32,8 +32,8 @@
         "key": "gold18",
         "name": "18K",
         "userSell": {
-          "price": 554200,
-          "change": 2200,
+          "price": 555000,
+          "change": 3000,
           "dir": "up"
         },
         "userBuy": null
@@ -42,8 +42,8 @@
         "key": "gold14",
         "name": "14K",
         "userSell": {
-          "price": 429800,
-          "change": 1700,
+          "price": 430400,
+          "change": 2300,
           "dir": "up"
         },
         "userBuy": null
@@ -71,8 +71,8 @@
           "dir": "none"
         },
         "userBuy": {
-          "price": 11480,
-          "change": 80,
+          "price": 11530,
+          "change": 30,
           "dir": "down"
         }
       }
@@ -1111,29 +1111,29 @@
     "fetchedDate": "2026-08-24"
   },
   "fx": {
-    "usdkrw": 1380.98,
-    "change": -33.75,
-    "changePct": -2.39,
+    "usdkrw": 1378.78,
+    "change": -35.95,
+    "changePct": -2.54,
     "dir": "down",
     "source": "Yahoo Finance (KRW=X)"
   },
   "intl": {
     "gold": {
       "name": "금",
-      "usdPerOz": 4695,
+      "usdPerOz": 4694.8,
       "changePct": 4.58,
       "dir": "up",
-      "krwPerGram": 208456,
-      "krwPerDon": 781710,
+      "krwPerGram": 208115,
+      "krwPerDon": 780431,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
       "name": "은",
       "usdPerOz": 68.9,
-      "changePct": 4.81,
+      "changePct": 4.82,
       "dir": "up",
-      "krwPerGram": 3059,
-      "krwPerDon": 11471,
+      "krwPerGram": 3054,
+      "krwPerDon": 11453,
       "source": "COMEX 은 선물 (SI=F)"
     }
   }
