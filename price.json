@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-25T05:43:42.644+09:00",
+  "updatedAt": "2026-08-25T06:14:58.754+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -85,20 +85,13 @@
     "unit": "원/그램",
     "note": "하루 1회 갱신되는 전 영업일 종가입니다. 실시간 시세가 아닙니다.",
     "latest": {
-      "date": "2026-08-20",
-      "krwPerGram": 201620,
-      "krwPerDon": 756075,
-      "change": 6040,
-      "changePct": 3.09
+      "date": "2026-08-21",
+      "krwPerGram": 203410,
+      "krwPerDon": 762788,
+      "change": 1790,
+      "changePct": 0.89
     },
     "history": [
-      {
-        "date": "2026-01-16",
-        "krwPerGram": 218720,
-        "krwPerDon": 820200,
-        "change": 140,
-        "changePct": 0.06
-      },
       {
         "date": "2026-01-19",
         "krwPerGram": 221930,
@@ -1106,34 +1099,41 @@
         "krwPerDon": 756075,
         "change": 6040,
         "changePct": 3.09
+      },
+      {
+        "date": "2026-08-21",
+        "krwPerGram": 203410,
+        "krwPerDon": 762788,
+        "change": 1790,
+        "changePct": 0.89
       }
     ],
-    "fetchedDate": "2026-08-24"
+    "fetchedDate": "2026-08-25"
   },
   "fx": {
-    "usdkrw": 1382.57,
-    "change": -32.16,
-    "changePct": -2.27,
+    "usdkrw": 1382.81,
+    "change": -31.92,
+    "changePct": -2.26,
     "dir": "down",
     "source": "Yahoo Finance (KRW=X)"
   },
   "intl": {
     "gold": {
       "name": "금",
-      "usdPerOz": 4705,
-      "changePct": 4.8,
+      "usdPerOz": 4710,
+      "changePct": 4.91,
       "dir": "up",
-      "krwPerGram": 209140,
-      "krwPerDon": 784275,
+      "krwPerGram": 209399,
+      "krwPerDon": 785246,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
       "name": "은",
-      "usdPerOz": 68.84,
-      "changePct": 4.73,
+      "usdPerOz": 68.97,
+      "changePct": 4.92,
       "dir": "up",
-      "krwPerGram": 3060,
-      "krwPerDon": 11475,
+      "krwPerGram": 3066,
+      "krwPerDon": 11498,
       "source": "COMEX 은 선물 (SI=F)"
     }
   }
