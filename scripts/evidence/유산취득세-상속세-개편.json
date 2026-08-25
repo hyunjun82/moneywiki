@@ -1,0 +1,794 @@
+{
+  "slug": "유산취득세-상속세-개편",
+  "verifiedAt": "2026-08-25",
+  "collectedBy": "scripts/collect-evidence.mjs (playwright)",
+  "sources": [
+    {
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/민법/제1000조",
+      "org": "법제처"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/민법/제1003조",
+      "org": "법제처"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/민법/제1009조",
+      "org": "법제처"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/상속세및증여세법/제26조",
+      "org": "법제처"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/상속세및증여세법/제19조",
+      "org": "법제처"
+    },
+    {
+      "url": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2324&cntntsId=7718",
+      "org": "국세청"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/상속세및증여세법/제21조",
+      "org": "법제처"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/상속세및증여세법/제67조",
+      "org": "법제처"
+    }
+  ],
+  "facts": [
+    {
+      "value": "2025년 / 3월 12일",
+      "quote": "이 자료는 2025년 3월 12일(수) 11:30부터 보도하여 주시기 바랍니다.",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "10억원 / 50억원 / 10억원",
+      "quote": "* 예) 자녀 1인 가구 상속재산 10억원 vs 자녀 5인 가구 상속재산 50억원(각각 10억원)",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "10억원",
+      "quote": "각자 받은 유산은 동일(10억원)해도 5인 가구 각 자녀가 약 4배 더 상속세 부담",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "10년",
+      "quote": "ㅇ 증여세는 받는 자(수증자)가 받은 재산(10년간 받은 재산 합산)에 과세, 상속세는 주는 자(피상속인) 입장에서 피상속인이 상속인 외에 제3자에게 생전 증여한 재산도 모두 합산하여 과세",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "82.3% / 85.3%",
+      "quote": "ㅇ (상속세 개편) 일반국민은 82.3%, 전문가는 85.3%의 응답자가 상속세 제도의 개편이 필요하다고 응답",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "71.5% / 79.4%",
+      "quote": "ㅇ (유산취득세 전환) 일반국민은 71.5%, 전문가는 79.4%의 응답자가",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "23년",
+      "quote": "【참고2】 ’00~’23년간 상속세 세수 및 과세자 수 추이",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "0.48% / 2.48%",
+      "quote": "□ 국세수입 중 상속세수 비중은 5.1배((‘00)0.48%→(‘23)2.48%) 증가",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "0.66% / 6.82%",
+      "quote": "ㅇ 과세자 인원은 14.4배((‘00)0.14만명→(‘23)1.99만명), 과세자 비율은 10.4배((‘00)0.66%→(‘23)6.82%) 증가",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "6개월 / 9개월",
+      "quote": "▶ 신고기한(6개월) 이후 별도 상속재산 분할기한(9개월) 설정",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "10년 / 5년",
+      "quote": "* 상속개시일 이전 10년 동안 국내에 주소‧거소를 둔 기간 합계가 5년 이하",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "10년 / 5년",
+      "quote": "ㅇ 상속인은 피상속인 사망전 10년(증여세 합산기간과 동일)까지, 수유자 등은 5년전*까지 사전증여재산 합산",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "5년",
+      "quote": "* 5년으로 제한한 것은 합산으로 인한 상속인의 과도한 상속세부담 경감 취지",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "10년",
+      "quote": "ㅇ 상속인․수유자 동일 기간(10년) 합산 → 증여세 합산기간과 같아짐",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "10년",
+      "quote": "10년 이내 증여받은 재산*",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "5년",
+      "quote": "※ (경과조치) 법시행 전 이미 5년이 경과한 수유자의 사전증여재산은 합산에서 제외",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "10년 / 15년",
+      "quote": "▪사전증여재산 합산기간: 독일(10년), 프랑스(15년) / 상속인․수유자의 합산기간 동일",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "25억원 / 15억원",
+      "quote": "◆ 【사례】 A기업 창업주는 사망 전 임직원에게 25억원 기부, 자녀(1인)에 15억원 상속",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "15억원 / 25억원",
+      "quote": "(상속재산 15억원 + 사전증여재산 25억원)",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "35억원 / 5억원",
+      "quote": "35억원(공제: 5억원 차감후)",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "19세 / 1천만원",
+      "quote": "ㅇ(미성년) 19세까지 연수 x 1천만원",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "1천만원",
+      "quote": "ㅇ(장애인) 기대여명 x 1천만원",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "5천만원",
+      "quote": "ㅇ(연로자) 1인당 5천만원",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "10억원",
+      "quote": "* 10억원(인적공제 최저한)까지 추가 가능",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "5억원",
+      "quote": "□ (현행) 자녀공제 대신 대부분 일괄공제(총 5억원) 적용",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "5억원 / 5천만원",
+      "quote": "ㅇ 기초‧자녀공제 합계와 일괄공제(5억원) 중 큰 금액을 공제하나, 자녀공제(1인당 5천만원)가 매우 적어 대부분 일괄공제 적용",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "5억원 / 2억원 / 0.5억원",
+      "quote": "* ‘일괄공제 5억원’ = ‘기초공제 2억원 + 자녀공제 0.5억원 x 6인’",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "0.3% / 3.0% / 0.4%",
+      "quote": "* 적용 비율: (미성년자 공제) 0.3%, (장애인 공제) 3.0%, (연로자 공제) 0.4%",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "5억원 / 2억원",
+      "quote": "▪(상속인) 직계존비속(예: 자녀) 5억원, 기타 상속인(예: 형제) 2억원",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "5억원",
+      "quote": "* 자녀인 상속인은 각자 현행 일괄공제(5억원) 만큼 받도록 상향",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "2억원",
+      "quote": "기타 상속인은 기초공제(2억원) 수준",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "5천만원 / 1천만원",
+      "quote": "▪(수유자) 직계존비속 5천만원, 기타 친족 1천만원",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "5천만원 / 1천만원",
+      "quote": "* 現 증여공제 수준과 동일(직계존비속 5천만원/4촌이내 혈족 등 1천만원)",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "5억원 / 0.5억원",
+      "quote": "기본공제 5억원 + 추가공제 0.5억원*",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "5년 / 0.1억원",
+      "quote": "* 미성년자 공제 5년 x 0.1억원",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "5억원 / 1억원",
+      "quote": "기본공제 5억원 + 추가공제 1억원*",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "10년 / 0.1억원",
+      "quote": "* 미성년자 공제 10년 x 0.1억원",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "5억원",
+      "quote": "(최저) 5억원(배우자 상속이 없어도 공제)",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "10억원",
+      "quote": "10억원까지 법정상속분 초과도 인정",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "30억원",
+      "quote": "(최대 한도) min(법정상속분, 30억원)",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "5억원",
+      "quote": "□ (현행) 배우자가 실제 상속받은 금액과 관계 없이 피상속인의 전체 상속재산에서 5억원 전액 공제",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "10억원",
+      "quote": "□ (개정) 배우자가 받은 상속재산이 10억원 이하인 경우 법정상속분과 관계없이 전액 공제",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "18억원",
+      "quote": "◆ 【사례】 배우자+자녀 3인 가구, 상속재산: 18억원*",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "6억원 / 4억원",
+      "quote": "* 법정상속분= 배우자 6억원 + 자녀 3인 각각 4억원",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "5억원",
+      "quote": "* 5억원 초과시 법정상속분 한도",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "10억원",
+      "quote": "□ (현행) 배우자, 자녀 등이 상속받는 경우 통상 전체 상속재산 10억원*까지는 인적공제가 적용되어 상속세가 과세되지 않음 → 일종의 면세점 기능",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "10억원 / 5억원 / 5억원",
+      "quote": "* 10억원 = 배우자공제 최소공제액 5억원 + 일괄공제 5억원",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "10억원",
+      "quote": "□ (개정) 현행 면세점 수준을 고려하여 인적공제 최저한을 10억원(모든 상속인․수유자의 공제합계 기준)으로 설정",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "10억원",
+      "quote": "ㅇ 인적공제 합계가 10억원 미만인 경우 그 미달액을 직계존비속인 상속인에게 추가 공제 적용",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "10억원",
+      "quote": "◆ 【사례】 배우자+자녀 1인 가구, 상속재산: 10억원",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "8억원 / 3억원 / 5억원 / 10억원",
+      "quote": "* 인적공제 합계액 8억원(= 배우자공제 3억원 + 기본공제(자녀) 5억원) < 10억원",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "2억원 / 10억원 / 8억원",
+      "quote": "→ 미달액인 2억원(=10억원-8억원)을 자녀A에게 추가 공제",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "2억원",
+      "quote": "□ (현행) 기초공제(2억원)만 허용",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "2억원 / 1억원",
+      "quote": "ㅇ (상속인) 배우자 2억원, 그 외 1억원",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "1천만원",
+      "quote": "ㅇ (수유자*) 1천만원 * 4촌 이내 혈족 및 3촌 이내 인척 한정",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "10년",
+      "quote": "□ (현행) 10년 이상 계속하여 경영한 중소･중견기업 상속시, 가업상속 재산가액에 상당하는 금액 공제",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "600억원",
+      "quote": "ㅇ 공제한도는 가업상속공제 300~600억원*",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "20년 / 300억원 / 30년 / 400억원 / 30년 / 600억원",
+      "quote": "* 경영기간: (10~20년) 300억원 / (20~30년) 400억원 / (30년 이상) 600억원",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "1,200억원 / 600억원 / 600억원",
+      "quote": "◆ 【사례】 자녀 2인, 상속재산 1,200억원(가업재산 600억원, 가업외재산 600억원)",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "30년 / 600억원",
+      "quote": "※ 30년이상 경영한 기업: 총 한도 600억원",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "6개월",
+      "quote": "□ (신고기한) 상속개시 후 6개월 이내 ※ 현행과 동일",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "9개월",
+      "quote": "□ (분할기한) 신고기한 후 9개월내 분할 허용",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "9개월",
+      "quote": "※ 현행 배우자 상속재산 분할기한인 9개월과 동일기간 적용",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "6개월",
+      "quote": "+ 부득이한 사유 시 6개월 or",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "6개월",
+      "quote": "+ 소송 등 종료일로부터 6개월",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "10년 / 15년",
+      "quote": "□ (현행) 상속세의 경우 10년, 허위․누락신고 등 부정행위 15년",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "10년 / 15년",
+      "quote": "□ (개정) 위장분할*이 있는 경우 부과제척기간 10년 → 15년 연장",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "30억원 / 5년",
+      "quote": "ㅇ (대상) 상속재산 30억원 이상 / (기간) 상속개시후 5년내 증여",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "30억원 / 5년",
+      "quote": "※ 현행 고액상속자 사후관리 기준(상속재산 30억원 이상, 상속후 5년내) 고려",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "30%",
+      "quote": "* 지배주주등(지배주주 및 그 친족)의 직･간접 주식보유비율이 30% 이상인 영리법인",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "28년 / 25년",
+      "quote": "□ (시행시기) ‘28년 시행 (’25년 법률안 국회 통과 전제)",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "25년",
+      "quote": "ㅇ (‘25년) 입법예고, 공청회 등 의견수렴을 거쳐 법률안 국회 제출",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "27년",
+      "quote": "ㅇ (‘26~’27년) 유산취득 과세 집행시스템 마련 및 보완 입법",
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png"
+    },
+    {
+      "value": "제1000조",
+      "quote": "제1000조(상속의 순위) ①상속에 있어서는 다음 순위로 상속인이 된다.",
+      "url": "https://www.law.go.kr/법령/민법/제1000조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-2.png"
+    },
+    {
+      "value": "제1003조 / 제1000조",
+      "quote": "제1003조(배우자의 상속순위) ①피상속인의 배우자는 제1000조제1항제1호와 제2호의 규정에 의한 상속인이 있는 경우에는 그 상속인과 동순위로 공동상속인이 되고 그 상속인이 없는 때에는 단독상속인이 된다.",
+      "url": "https://www.law.go.kr/법령/민법/제1003조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-3.png"
+    },
+    {
+      "value": "제1001조",
+      "quote": "②제1001조의 경우에 상속개시전에 사망한 사람의 배우자는 동조의 규정에 의한 상속인과 동순위로 공동상속인이 되고 그 상속인이 없는 때에는 단독상속인이 된다.",
+      "url": "https://www.law.go.kr/법령/민법/제1003조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-3.png"
+    },
+    {
+      "value": "제1009조",
+      "quote": "제1009조(법정상속분) ①동순위의 상속인이 수인인 때에는 그 상속분은 균분으로 한다.",
+      "url": "https://www.law.go.kr/법령/민법/제1009조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-4.png"
+    },
+    {
+      "value": "제26조 / 제25조",
+      "quote": "제26조(상속세 세율) 상속세는 제25조에 따른 상속세의 과세표준에 다음의 세율을 적용하여 계산한 금액(이하 “상속세산출세액”이라 한다)으로 한다.",
+      "url": "https://www.law.go.kr/법령/상속세및증여세법/제26조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-5.png"
+    },
+    {
+      "value": "1억원 / 100분 / 1억원 / 5억원 / 1천만원 / 1억원 / 100분 / 5억원 / 10억원 / 9천만원 / 5억원 / 100분 / 10억원 / 30억원 / 2억 / 4천만원 / 10억원 / 100분 / 30억원 / 10억 / 4천만원 / 30억원 / 100분",
+      "quote": "<과세표준> <세 율> 1억원 이하 과세표준의 100분의 10 1억원 초과 5억원 이하 1천만원 + (1억원을초과하는금액의100분의20) 5억원 초과 10억원 이하 9천만원 + (5억원을초과하는금액의100분의30) 10억원 초과 30억원 이하 2억4천만원 + (10억원을초과하는금액의100분의40) 30억원 초과 10억4천만원 + (30억원을초과하는금액의100분의50)",
+      "url": "https://www.law.go.kr/법령/상속세및증여세법/제26조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-5.png"
+    },
+    {
+      "value": "제19조",
+      "quote": "제19조(배우자 상속공제) ① 거주자의 사망으로 상속이 개시되어 배우자가 실제 상속받은 금액의 경우 다음 각 호의 금액 중 작은 금액을 한도로 상속세 과세가액에서 공제한다.",
+      "url": "https://www.law.go.kr/법령/상속세및증여세법/제19조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-6.png"
+    },
+    {
+      "value": "제67조 / 9개월",
+      "quote": "② 제1항에 따른 배우자 상속공제는 제67조에 따른 상속세과세표준신고기한의 다음날부터 9개월이 되는 날(이하 이 조에서 “배우자상속재산분할기한”이라 한다)까지 배우자의 상속재산을 분할(등기ㆍ등록ㆍ명의개서 등이 필요한 경우에는 그 등기ㆍ등록ㆍ명의개서 등이 된 것에 한정한다.",
+      "url": "https://www.law.go.kr/법령/상속세및증여세법/제19조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-6.png"
+    },
+    {
+      "value": "6개월 / 6개월 / 제76조",
+      "quote": "③ 제2항에도 불구하고 대통령령으로 정하는 부득이한 사유로 배우자상속재산분할기한까지 배우자의 상속재산을 분할할 수 없는 경우로서 배우자상속재산분할기한[부득이한 사유가 소(訴)의 제기나 심판청구로 인한 경우에는 소송 또는 심판청구가 종료된 날]의 다음날부터 6개월이 되는 날(배우자상속재산분할기한의 다음날부터 6개월이 지나 제76조에 따른 과세표준과 세액의 결정이 있는 경우에는 그 결정일을 말한다)까지 상속재산을 분할하여 신고하는 경우에는 배우자상속재산분할기한까지 분할한 것으로 본다.",
+      "url": "https://www.law.go.kr/법령/상속세및증여세법/제19조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-6.png"
+    },
+    {
+      "value": "5억원 / 5억원",
+      "quote": "④ 제1항의 경우에 배우자가 실제 상속받은 금액이 없거나 상속받은 금액이 5억원 미만이면 제2항에도 불구하고 5억원을 공제한다.",
+      "url": "https://www.law.go.kr/법령/상속세및증여세법/제19조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-6.png"
+    },
+    {
+      "value": "제13조",
+      "quote": "\\mathrm한도금액 = (A- B + C) × D- E A: 대통령령으로 정하는 상속재산의 가액 B: 상속재산 중 상속인이 아닌 수유자가 유증등을 받은 재산의 가액 C: 제13조제1항제1호에 따른 재산가액 D: 「민법」",
+      "url": "https://www.law.go.kr/법령/상속세및증여세법/제19조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-6.png"
+    },
+    {
+      "value": "제1009조 / 제13조 / 제55조",
+      "quote": "제1009조에 따른 배우자의 법정상속분(공동상속인 중 상속을 포기한 사람이 있는 경우에는 그 사람이 포기하지 아니한 경우의 배우자 법정상속분을 말한다) E: 제13조에 따라 상속재산에 가산한 증여재산 중 배우자가 사전증여받은 재산에 대한 제55조제1항에 따른 증여세 과세표준",
+      "url": "https://www.law.go.kr/법령/상속세및증여세법/제19조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-6.png"
+    },
+    {
+      "value": "24시간",
+      "quote": "평일 9시~18시 (탈세제보는 24시간)",
+      "url": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2324&cntntsId=7718",
+      "org": "국세청",
+      "screenshot": "evidence-유산취득세-상속세-개편-7.png"
+    },
+    {
+      "value": "제1000조",
+      "quote": "[상속의 순위(민법 제1000조)]",
+      "url": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2324&cntntsId=7718",
+      "org": "국세청",
+      "screenshot": "evidence-유산취득세-상속세-개편-7.png"
+    },
+    {
+      "value": "2014년 / 1월 1일",
+      "quote": "다만, 2014년 1월 1일 이후 상속개시분부터는 그 영리법인의 주주 또는 출자자 중 상속인과 그 직계비속이 있는 경우에는 지분상당액을 그 상속인 및 직계비속이 납부하여야 합니다.",
+      "url": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2324&cntntsId=7718",
+      "org": "국세청",
+      "screenshot": "evidence-유산취득세-상속세-개편-7.png"
+    },
+    {
+      "value": "제2조",
+      "quote": "[거주자와 비거주자의 판단(상속세 및 증여세법 제2조]",
+      "url": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2324&cntntsId=7718",
+      "org": "국세청",
+      "screenshot": "evidence-유산취득세-상속세-개편-7.png"
+    },
+    {
+      "value": "183일",
+      "quote": "(거주자) 국내에 주소*를 두거나 183일 이상 거소를 둔 사람",
+      "url": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2324&cntntsId=7718",
+      "org": "국세청",
+      "screenshot": "evidence-유산취득세-상속세-개편-7.png"
+    },
+    {
+      "value": "제2조 / 제4조",
+      "quote": "* 국내에 주소를 둔 경우에 해당하는지 여부는 소득세법 시행령 제2조, 제4조 제1항․제2항 및 제4항을 따릅니다.",
+      "url": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2324&cntntsId=7718",
+      "org": "국세청",
+      "screenshot": "evidence-유산취득세-상속세-개편-7.png"
+    },
+    {
+      "value": "30128 세",
+      "quote": "(우)30128 세종특별자치시 국세청로 8-14 국세청 (정부세종2청사 국세청동)",
+      "url": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2324&cntntsId=7718",
+      "org": "국세청",
+      "screenshot": "evidence-유산취득세-상속세-개편-7.png"
+    },
+    {
+      "value": "제21조 / 제18조 / 제20조 / 5억원",
+      "quote": "제21조(일괄공제) ① 거주자의 사망으로 상속이 개시되는 경우에 상속인이나 수유자는 제18조와 제20조제1항에 따른 공제액을 합친 금액과 5억원 중 큰 금액으로 공제받을 수 있다.",
+      "url": "https://www.law.go.kr/법령/상속세및증여세법/제21조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-8.png"
+    },
+    {
+      "value": "제67조",
+      "quote": "다만, 제67조 또는 「국세기본법」",
+      "url": "https://www.law.go.kr/법령/상속세및증여세법/제21조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-8.png"
+    },
+    {
+      "value": "제45조 / 5억원",
+      "quote": "제45조의3에 따른 신고가 없는 경우에는 5억원을 공제한다.",
+      "url": "https://www.law.go.kr/법령/상속세및증여세법/제21조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-8.png"
+    },
+    {
+      "value": "제18조 / 제20조",
+      "quote": "② 제1항을 적용할 때 피상속인의 배우자가 단독으로 상속받는 경우에는 제18조와 제20조제1항에 따른 공제액을 합친 금액으로만 공제한다.",
+      "url": "https://www.law.go.kr/법령/상속세및증여세법/제21조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-8.png"
+    },
+    {
+      "value": "제67조 / 제3조 / 6개월 / 제13조 / 제25조",
+      "quote": "제67조(상속세 과세표준신고) ① 제3조의2에 따라 상속세 납부의무가 있는 상속인 또는 수유자는 상속개시일이 속하는 달의 말일부터 6개월 이내에 제13조와 제25조제1항에 따른 상속세의 과세가액 및 과세표준을 대통령령으로 정하는 바에 따라 납세지 관할세무서장에게 신고하여야 한다.",
+      "url": "https://www.law.go.kr/법령/상속세및증여세법/제67조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-9.png"
+    },
+    {
+      "value": "9개월",
+      "quote": "④ 피상속인이나 상속인이 외국에 주소를 둔 경우에는 제1항의 기간을 9개월로 한다.",
+      "url": "https://www.law.go.kr/법령/상속세및증여세법/제67조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-9.png"
+    },
+    {
+      "value": "30일",
+      "quote": "⑤ 제1항의 신고기한까지 상속인이 확정되지 아니한 경우에는 제1항의 신고와는 별도로 상속인이 확정된 날부터 30일 이내에 확정된 상속인의 상속관계를 적어 납세지 관할세무서장에게 제출하여야 한다.",
+      "url": "https://www.law.go.kr/법령/상속세및증여세법/제67조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-9.png"
+    }
+  ],
+  "raws": [
+    {
+      "url": "https://www.mofe.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000028494&fileSn=3",
+      "org": "재정경제부",
+      "screenshot": "evidence-유산취득세-상속세-개편-1.png",
+      "text": "보도자료\n\n\t\n\n \n\n\t\n\n 이 자료는 2025년 3월 12일(수) 11:30부터 보도하여 주시기 바랍니다.\n\n \n\n \n\n \n\n \n\n \n\n\n\n\n상속세 과세체계 합리화를 위한 \n\n유산취득세 도입 방안\n\n\n\n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n2025. 3. 12.\n\n \n\n \n\n기 획 재 정 부\n\n \n\n순    서\n\n \n\nⅠ. 추진배경.... 1\n\n   1. 상속세 과세방식....1\n\n   2. 유산취득세 전환 필요성....2\n\n \n\nⅡ. 유산취득세 전환 방안.... 4\n\n  1. 과세방식 및 과세대상 .... 5\n\n  2. 인적 공제제도.... 7\n\n  3. 물적 공제제도....11\n\n  4. 납세절차.... 12\n\n  5. 조세회피 대응....13\n\n \n\nⅢ. 시행시기 및 향후 추진계획 .... 14\n\n \n\nⅠ. 추진배경\n\n \n\n1\n\n\t\n\n \n\n\t\n\n 상속세 과세방식\n\n \n\n□ (과세방식 분류) 유산세와 유산취득세 방식으로 구분\n\n \n\n ㅇ (유산세) 사망자(피상속인)의 전체 유산을 기준으로 과세\n\n \n\n   - 전체 유산 규모만 파악하면 과세가 가능하므로 집행 용이\n\n \n\n   - 각자 받은 재산에 관계없이 내야할 전체 세금이 결정\n\n \n\n ㅇ (유산취득세) 상속인들이 취득한 각 상속재산별로 과세\n\n \n\n   - 각자 받은 재산에 따라 세금이 결정되어 과세형평 개선\n\n \n\n   - 상속인별 유산취득 현황 파악, 과세정보 관리 등 행정부담 추가\n\n \n\n               유산세(현행)                              유산취득세(개정)   \n\n피상속인의 전체 상속재산\n\n\n\n\n \n\n\t\n\n \n\n\t\n\n \n\n\t\n\n \n\n\n\n\n \n\n\t\n\n \n\n\t\n\n \n\n\t\n\n \n\n\t\n\n \n\n\n\n\n상속인별 상속취득재산\n\n\t\n\n \n\n\t\n\n상속인별 상속취득재산\n\n\n\n\n \n\n\t\n\n \n\n\t\n\n \n\n\t\n\n \n\n\t\n\n \n\n\n\n\n \n\n\t\n\n(–) 상속인별 공제\n\n\t\n\n \n\n\t\n\n \n\n\t\n\n \n\n\t\n\n(–) 상속인별 공제\n\n\t\n\n \n\n\n\n\n \n\n\t\n\n \n\n\t\n\n \n\n\t\n\n \n\n\t\n\n \n\n\n\n\n상속인별 과표\n\n\t\n\n \n\n\t\n\n상속인별 과표\n\n\n\n\n(×) 세율\n\n\t\n\n \n\n\t\n\n(×) 세율\n\n\n\n\n상속인별 세액\n\n\t\n\n \n\n\t\n\n상속인별 세액\n\n  \n\n피상속인의 전체 상속재산\n\n\n\n\n \n\n\t\n\n \n\n\n\n\n \n\n\t\n\n(–) 일괄공제 등\n\n\t\n\n \n\n\n\n\n \n\n\t\n\n \n\n\n\n\n상속세 과세표준\n\n\n\n\n(×) 세율\n\n\n\n\n상속세 세액\n\n\n\n\n \n\n\t\n\n \n\n\t\n\n \n\n\t\n\n \n\n\n\n\n \n\n\t\n\n \n\n\t\n\n \n\n\t\n\n \n\n\n\n\n상속인별 납부세액\n\n\t\n\n \n\n\t\n\n상속인별 납부세액\n\n \n\n \n\n□ (각국 동향) 상속세가 있는 OECD 국가 대부분 유산취득세 채택 \n\n \n\n  * (유산세) 한국, 미국, 영국, 덴마크 / (유산취득세) 일본, 프랑스, 독일 등 20개국\n\n \n\n ㅇ OECD, IMF는 유산취득세가 상속인 특성을 반영하고, 부의 분산을 유도할 수 있으므로 형평 측면에서 바람직하다고 평가\n\n \n\n * OECD, 「Inheritance Taxation in OECD countries, ’21.5.」\n“Inheritance tax may be more equitable than estate tax …(중략) may encourage the division of estates and further reduce concentrations of wealth”\n\n \n\n * IMF, 「How to tax wealth, ’24.5.」\n“In terms of equity outcomes, an inheritance tax is preferable to an estate tax, because it is directly linked to the wealth inequality after the transfer”\n\n \n\n2\n\n\t\n\n \n\n\t\n\n 유산취득세 전환 필요성\n\n \n\n １ 받은 만큼 세금을 부담함으로써 과세형평 제고\n\n \n\n ㅇ 물려받은 유산 크기가 같다면 세금도 같은 것이 형평에 부합\n\n  \n\n ㅇ 현 제도는 사망자의 전체 유산을 기준으로 상속세 과세\n\n    → 각 상속인이 받은 유산에 비해 높은 세율 적용(과도한 누진과세)\n\n \n\n    * 예) 자녀 1인 가구 상속재산 10억원 vs 자녀 5인 가구 상속재산 50억원(각각 10억원)\n각자 받은 유산은 동일(10억원)해도 5인 가구 각 자녀가 약 4배 더 상속세 부담\n\n  \n\n  ⇒ 상속인이 받은 만큼 세금을 내도록 개편하여 세부담 형평 개선\n\n \n\n ２ 납세자별로 공제를 적용하여 공제의 실효성 개선\n\n \n\n ㅇ 각 상속인에게 부여된 공제는 각자가 혜택을 받는 것이 타당\n\n \n\n ㅇ 현재는 전체 유산에서 상속인들이 받는 공제 합계를 일괄 차감\n\n    → 특정 상속인의 공제를 다른 상속인들이 수혜 가능(공제효과 이전)\n\n \n\n    * 예) 장애인 공제 효과를 다른 상속인도 함께 받아 장애인 지원 실효성 저하\n\n \n\n  ⇒ 상속인별 받은 유산에서 공제를 적용함으로써 공제 실효성 개선\n\n \n\n ３ 상속과 증여간 과세기준 일치로 과세범위 합리화\n\n \n\n ㅇ 자산 무상이전인 ‘증여’와 ‘상속(마지막 증여)’은 동일 방식 과세가 합리적\n\n \n\n ㅇ 증여세는 받는 자(수증자)가 받은 재산(10년간 받은 재산 합산)에 과세, 상속세는 주는 자(피상속인) 입장에서 피상속인이 상속인 외에 제3자에게 생전 증여한 재산도 모두 합산하여 과세\n\n \n\n    → 상속인은 유산 외에 제3자가 받은 재산에 대한 세금도 부담*\n\n \n\n    * 창업자인 피상속인이 임직원에게 생전 증여한 재산도 상속세 계산시 합산과세\n\n \n\n  ⇒ 상속도 증여와 같이, 취득자 기준으로 자기가 받은 재산(유산+사전증여재산)만 과세함으로써 세부담 합리화\n\n \n\n【참고1】 상속세 개편 설문조사 결과\n\n \n\n  * (2.26~3.5) 일반국민(10,000명) 및 전문가(34명) 대상 온라인․대면 설문조사 실시\n\n \n\n□ 일반국민․조세전문가 중 상당수가 현행 상속세 제도 개편과 유산취득세로의 전환 필요성에 동의\n\n \n\n ㅇ (상속세 개편) 일반국민은 82.3%, 전문가는 85.3%의 응답자가 상속세 제도의 개편이 필요하다고 응답\n\n \n\n ㅇ (유산취득세 전환) 일반국민은 71.5%, 전문가는 79.4%의 응답자가 \n유산취득세로의 전환이 필요하다고 응답\n\n \n\n<상속세 개편 필요성 응답>\n\n\t\n\n<유산취득세 전환 필요성 응답>\n\n\n\n\n \n\n\t\n\n \n\n \n\n【참고2】 ’00~’23년간 상속세 세수 및 과세자 수 추이\n\n \n\n□ 국세수입 중 상속세수 비중은 5.1배((‘00)0.48%→(‘23)2.48%) 증가\n\n \n\n ㅇ 과세자 인원은 14.4배((‘00)0.14만명→(‘23)1.99만명), 과세자 비율은 10.4배((‘00)0.66%→(‘23)6.82%) 증가\n\n \n\n<상속세 세수(단위: 조원)>\n\n구 분\n\n\t\n\n‘00\n\n\t\n\n‘10\n\n\t\n\n‘15\n\n\t\n\n‘20\n\n\t\n\n‘21\n\n\t\n\n‘22\n\n\t\n\n‘23\n\n\n\n\n국  세(A)\n\n\t\n\n92.9\n\n\t\n\n177.7\n\n\t\n\n217.9\n\n\t\n\n285.5\n\n\t\n\n344.1\n\n\t\n\n395.9\n\n\t\n\n344.1\n\n\n\n\n상속세(B)\n\n\t\n\n0.4\n\n\t\n\n1.2\n\n\t\n\n1.9\n\n\t\n\n3.9\n\n\t\n\n6.9\n\n\t\n\n7.6\n\n\t\n\n8.5\n\n\n\n\n비중(B/A)\n\n\t\n\n0.5%\n\n\t\n\n0.7%\n\n\t\n\n0.9%\n\n\t\n\n1.4%\n\n\t\n\n2.0%\n\n\t\n\n1.9%\n\n\t\n\n2.5%\n\n\t\n\n<과세자 비율(단위: 만명)>\n\n구 분\n\n\t\n\n‘00\n\n\t\n\n‘10\n\n\t\n\n‘15\n\n\t\n\n‘20\n\n\t\n\n‘21\n\n\t\n\n‘22\n\n\t\n\n‘23\n\n\n\n\n결정인원(A)\n\n\t\n\n21.2\n\n\t\n\n32.5\n\n\t\n\n32.4\n\n\t\n\n35.2\n\n\t\n\n34.4\n\n\t\n\n34.8\n\n\t\n\n29.3\n\n\n\n\n과세인원(B)\n\n\t\n\n0.14\n\n\t\n\n0.45\n\n\t\n\n0.66\n\n\t\n\n1.02\n\n\t\n\n1.27\n\n\t\n\n1.58\n\n\t\n\n1.99\n\n\n\n\n비율(B/A)\n\n\t\n\n0.7%\n\n\t\n\n1.4%\n\n\t\n\n2.0%\n\n\t\n\n2.9%\n\n\t\n\n3.7%\n\n\t\n\n4.5%\n\n\t\n\n6.8%\n\n\n\n\n \n\n\t\n\n \n\n Ⅱ. 유산취득세 전환 방안\n\n유산취득세 개편 추진 기본원칙\n\n\n\n\n \n\n\n\n\n ◎ 최고세율 인하 등은 유산취득세 전환과 별개로 사회적 합의 등을 바탕으로 별도 검토\n\n\n\n\n \n\n\n\n\n １ 유산취득세 전환을 위해 반드시 필요한 제도 중심으로 개편\n\n  \n\n  ▶ 과세방식을 전체 유산 → 각 상속인별 취득 유산으로 변경\n\n \n\n  ▶ 과세대상(국내-해외 재산)을 유산취득세 전환에 맞게 조정\n\n \n\n  ▶ 세액공제, 부과방식 등 기본 체계는 현행 유지\n\n\n\n\n \n\n\n\n\n ２ 자녀, 배우자 등에 대한 인적공제의 실효성 강화\n\n \n\n  ▶ 자녀 등: 현행 일괄공제 수준 등을 고려한 기본공제 현실화\n\n \n\n  ▶ 배우자: 받은 재산만큼 공제받을 수 있도록 제도 합리화\n\n \n\n  ▶ 일률 적용되는 기초공제와 일괄공제는 인적공제로 흡수\n\n\n\n\n \n\n\n\n\n ３ 가업상속공제, 금융재산공제 등 물적공제 현행 혜택 유지\n\n \n\n  ▶ 현행 제도에서의 혜택을 그대로 받도록 설계\n\n\n\n\n \n\n\n\n\n ４ 납세 편의 고려\n\n \n\n  ▶ 상속인들이 각자 신고하거나 공동으로 신고도 가능\n\n \n\n  ▶ 신고기한(6개월) 이후 별도 상속재산 분할기한(9개월) 설정\n\n\n\n\n \n\n\n\n\n ５ 조세회피 방지 및 과세행정 효율성 고려\n\n \n\n  ▶ 위장분할, 우회상속 등에 대한 조세회피 대응 방안 마련\n\n \n\n  ▶ 과세관할(납세지)은 피상속인 주소지로 단일화(현행 유지)\n\n \n\n1\n\n\t\n\n \n\n\t\n\n 과세방식 및 과세대상\n\n \n\n(1) 과세방식\n\n \n\n□ (현행) 피상속인(사망자)의 전체 상속재산을 기준으로 과세\n\n \n\n□ (개정) 상속인이 취득하는 상속재산(상속취득재산) 기준으로 개편\n\n \n\n(2) 납세의무\n\n \n\n□ (현행) 전체 상속세를 상속인․수유자* 간 연대납세(각자 받는 상속재산 한도)\n\n \n\n    * 상속인이 아니면서 유언 등에 따라 상속재산을 취득하는 자\n\n \n\n□ (개정) 각자의 상속세에 대한 납세의무를 부담하되, 상속인 간에는 조세채권 확보가 어려운 경우 등 제한적으로 연대납세의무 부과\n\n \n\n(3) 과세대상\n\n \n\n□ (현행) 피상속인 기준만으로 판단\n\n \n\n ㅇ 피상속인이 거주자인 경우 전세계 상속재산 과세, 비거주자인 경우 국내 소재 재산만 과세\n\n \n\n□ (개정) 피상속인 및 상속인 기준을 종합하여 판단\n\n \n\n ㅇ 피상속인 또는 상속인이 거주자인 경우 전세계 상속재산 과세, 모두 비거주자면 국내 소재 재산만 과세 → 現 증여세 체계와 동일\n\n \n\n ㅇ 다만, 상속인 또는 피상속인이 외국 국적자로 국내 단기 거주*한 거주자인 경우 국내 소재 재산만 과세(“예외 허용”)\n\n \n\n     * 상속개시일 이전 10년 동안 국내에 주소‧거소를 둔 기간 합계가 5년 이하\n\n \n\n< 현 행 >\n\n\t\n\n \n\n\t\n\n< 개 정 >\n\n\n\n\n  피상속인\n\n상속인\n\n\t\n\n거주자\n\n\t\n\n비거주자\n\n\n\n\n거주자\n\n\t\n\n전세계 상속재산\n\n\t\n\n국내 소재 상속재산\n\n\n\n\n비거주자\n\n\t\n\n전세계 상속재산\n\n\t\n\n국내 소재 상속재산\n\n\t\n\n⇒\n\n\t\n\n \n\n  피상속인\n\n상속인\n\n\t\n\n거주자\n\n\t\n\n비거주자*\n\n\n\n\n거주자\n\n\t\n\n전세계 상속재산\n\n\t\n\n전세계 상속재산\n\n\n\n\n비거주자*\n\n\t\n\n전세계 상속재산\n\n\t\n\n국내 소재 상속재산\n\n\n\n\n \n\n\t\n\n \n\n\t\n\n   * 단기 거주 외국인 포함\n\n \n\n \n\n(4) 사전증여재산\n\n \n\n□ (현행) 피상속인이 생전에 증여한 재산(사전증여재산)도 상속재산에 합산하여 상속세 과세(→ 누진 과세 적용)\n\n \n\n ㅇ 상속인은 피상속인 사망전 10년(증여세 합산기간과 동일)까지, 수유자 등은 5년전*까지 사전증여재산 합산\n\n \n\n    * 5년으로 제한한 것은 합산으로 인한 상속인의 과도한 상속세부담 경감 취지\n\n \n\n → 생전 제3자 증여(예: 기부)도 상속재산에 합산되어 상속인이 받지도 않은 재산에 상속세 부담 \n\n \n\n□ (개정) 각자 받은 사전증여재산만 각자의 상속세 계산시 합산\n\n \n\n ㅇ 상속인․수유자 동일 기간(10년) 합산 → 증여세 합산기간과 같아짐\n\n \n\n ㅇ 그 외 제3자는 상속세 과세 없음 → 기부과된 증여세로 종결\n\n \n\n \n\n\t\n\n현  행\n\n\t\n\n개  정\n\n\n\n\n상속인\n\n\t\n\n10년 이내 증여받은 재산\n\n\t\n\n10년 이내 증여받은 재산*\n\n\n\n\n수유자\n\n\t\n\n5년 이내 증여받은 재산\n\n\n\n\n그 외\n\n\t\n\n5년 이내 증여받은 재산\n\n\t\n\n불필요(증여세 부과로 종결)\n\n  ※ (경과조치) 법시행 전 이미 5년이 경과한 수유자의 사전증여재산은 합산에서 제외\n\n \n\n < 관련 해외제도 >\n\n \n\n ▪사전증여재산 합산기간: 독일(10년), 프랑스(15년) / 상속인․수유자의 합산기간 동일\n\n \n\n◆ 【사례】 A기업 창업주는 사망 전 임직원에게 25억원 기부, 자녀(1인)에 15억원 상속\n\n \n\n \n\n\t\n\n현 행\n\n\t\n\n개 정\n\n\n\n\n과세대상\n\n\t\n\n40억원\n\n(상속재산 15억원 + 사전증여재산 25억원)\n\n\t\n\n15억원\n\n\n\n\n공제\n\n\t\n\n5억원(가정)\n\n\n\n\n과세표준\n\n\t\n\n35억원(공제: 5억원 차감후)\n\n\t\n\n10억원\n\n\n\n\n세율\n\n\t\n\n50% 세율 구간\n\n\t\n\n30% 세율 구간\n\n \n\n2\n\n\t\n\n \n\n\t\n\n 인적 공제제도\n\n \n\n◇ 현행과 달리 유산취득세는 인적공제 효과를 당사자가 직접 받을 수 있으므로 상속인의 개별 인적 특성을 고려하여 제도 재설계 \n\n \n\n    ▪ (유산세) 모든 공제액을 합산하여 피상속인의 상속재산에서 차감하므로 특정 상속인 대상 공제의 효과가 다른 상속인에게 영향\n\n    ▪ (유산취득세) 상속인별 각자의 상속취득재산에 각자의 공제액 차감\n\n \n\n ㅇ 피상속인의 상속재산에서 일률 차감하는 일괄공제․기초공제를 인적공제로 흡수\n\n \n\n ㅇ 자녀공제 등을 현 일괄공제 수준을 고려하여 상향하고, 추가공제(미성년, 장애인, 연로자) 실효성 강화\n\n \n\n ㅇ 배우자공제는 배우자가 받은 재산만큼 공제받도록 제도 합리화\n\n \n\n ㅇ 현행 인적공제 최소금액을 고려하여 인적공제 최저한 설정\n\n \n\n １ 자녀 등에 대한 공제 개편\n\n \n\n\t\n\n<현 행>\n\n\t\n\n \n\n\n\n\n \n\n\t\n\n \n\n\n\n\n  \n\n \n\n\t\n\n \n\n\t\n\n \n\n\t\n\n \n\n\t\n\n \n\n\t\n\n \n\n\t\n\n \n\n\n\n\n일괄공제\n\n\t\n\nor\n\n\t\n\n \n\n\t\n\n기초공제\n\n\t\n\n+\n\n\t\n\n추가공제\n\n\t\n\n \n\n\n\n\n5억원\n\n\t\n\n \n\n\t\n\n \n\n\t\n\n2억원\n\n\t\n\n \n\n\t\n\n다음의 합계액\n\nㅇ(자녀) 1인당 5천만원\n\nㅇ(미성년) 19세까지 연수 x 1천만원\n\nㅇ(장애인) 기대여명 x 1천만원\n\nㅇ(연로자) 1인당 5천만원\n\n * 자녀공제-연로자공제 동시적용 불가\n\n\t\n\n \n\n\n\n\n \n\n\t\n\n \n\n\n\n\n \n\n\t\n\n \n\n\t\n\n \n\n\t\n\n \n\n\t\n\n \n\n\t\n\n \n\n\t\n\n \n\n \n\n\t\n\n<개 정>\n\n\t\n\n \n\n\n\n\n \n\n\t\n\n \n\n\n\n\n \n\n\t\n\n기본공제\n\n\t\n\n+\n\n\t\n\n추가공제\n\n\n\n\n상속인\n\n\t\n\nㅇ(직계존비속*) 5억원\n\n  * 10억원(인적공제 최저한)까지 추가 가능\n\nㅇ(그 외) 2억원\n\n\t\n\n \n\n\t\n\n다음의 합계액\n\nㅇ(미성년) 19세까지 연수 x 1천만원\n\nㅇ(장애인) 기대여명 x 1천만원\n\nㅇ(연로자) 1인당 5천만원\n\n * 직계비속은 연로자공제 적용 불가\n\n\n\n\n \n\n\t\n\n \n\n\n\n\n수유자\n\n\t\n\nㅇ(직계존비속) 5천만원\n\nㅇ(기타 친족*) 1천만원\n\n  * 4촌 이내 혈족 및 3촌 이내 인척\n\n\n\n\n \n\n \n\n□ (현행) 자녀공제 대신 대부분 일괄공제(총 5억원) 적용\n\n \n\n ㅇ 기초‧자녀공제 합계와 일괄공제(5억원) 중 큰 금액을 공제하나, 자녀공제(1인당 5천만원)가 매우 적어 대부분 일괄공제 적용\n\n     → 자녀 수가 1명이든 6명이든 공제액 동일*\n\n \n\n    * ‘일괄공제 5억원’ = ‘기초공제 2억원 + 자녀공제 0.5억원 x 6인’\n\n \n\n ㅇ 또한, 일괄공제 선택에 따라 미성년․장애인․연로자에 대한 추가 공제 적용도 매우 저조*\n\n \n\n    * 적용 비율: (미성년자 공제) 0.3%, (장애인 공제) 3.0%, (연로자 공제) 0.4%\n\n \n\n□ (개정) 일괄공제 및 기초공제를 자녀 등 상속인별 공제로 흡수\n\n \n\n ㅇ (기본공제) 상속인․수유자별로 공제액 규정\n\n \n\n   - 피상속인과의 친소관계(생계보장 필요 정도) 등 고려 \n\n \n\n  ▪(상속인) 직계존비속(예: 자녀) 5억원, 기타 상속인(예: 형제) 2억원\n\n \n\n    * 자녀인 상속인은 각자 현행 일괄공제(5억원) 만큼 받도록 상향\n기타 상속인은 기초공제(2억원) 수준\n\n \n\n  ▪(수유자) 직계존비속 5천만원, 기타 친족 1천만원\n\n \n\n    * 現 증여공제 수준과 동일(직계존비속 5천만원/4촌이내 혈족 등 1천만원)\n\n   ※ 현행에서는 수유자에 대해 사실상 인적공제 배제\n\n \n\n ㅇ (추가공제) 자녀공제 등 상속인별 공제 개편으로 제도 실효성 강화\n\n \n\n◆ 【사례】 미성년자 자녀 2인이 상속받는 경우\n\n\n \n\n\t\n\n현 행\n\n\t\n\n개 정\n\n\n\n\n자녀A\n\n\t\n\n14세\n\n\t\n\n일괄공제 5억원\n\n\t\n\n기본공제 5억원 + 추가공제 0.5억원*\n\n       * 미성년자 공제 5년 x 0.1억원\n\n\n\n\n자녀B\n\n\t\n\n9세\n\n\t\n\n기본공제 5억원 + 추가공제 1억원*\n\n       * 미성년자 공제 10년 x 0.1억원\n\n\n\n\n합계\n\n\t\n\n5억원\n\n\t\n\n11.5억원\n\n \n\n ２ 배우자공제 합리화\n\n현  행\n\n\t\n\n개  정\n\n\n\n\n(기본) 배우자 실제 상속분\n\n\t\n\n(기본) 배우자 실제 상속분\n\n\n\n\n(최저) 5억원(배우자 상속이 없어도 공제)\n\n\t\n\n       10억원까지 법정상속분 초과도 인정\n\n\n\n\n(최대 한도) min(법정상속분, 30억원)\n\n\t\n\n(최대 한도) min(법정상속분, 30억원)\n\n \n\n□ (현행) 배우자가 실제 상속받은 금액과 관계 없이 피상속인의 전체 상속재산에서 5억원 전액 공제\n\n \n\n□ (개정) 배우자가 받은 상속재산이 10억원 이하인 경우 법정상속분과 관계없이 전액 공제\n\n \n\n  → 배우자가 상속받은 만큼 배우자의 상속세 경감\n\n \n\n \n\n◆ 【사례】 배우자+자녀 3인 가구, 상속재산: 18억원*\n      * 법정상속분= 배우자 6억원 + 자녀 3인 각각 4억원\n\n \n\n｢상황1｣\n\n\t\n\n실제 상속재산\n\n\t\n\n공제액\n\n\n\n\n현 행\n\n\t\n\n개 정\n\n\n\n\n배우자\n\n\t\n\n9억원\n\n\t\n\n배우자공제 6억원*\n\n* 5억원 초과시 법정상속분 한도\n\n \n\n일괄공제 5억원\n\n \n\n\t\n\n배우자공제 9억원\n\n\n\n\n자녀A\n\n\t\n\n3억원\n\n\t\n\n기본공제 3억원\n\n\n\n\n자녀B\n\n\t\n\n3억원\n\n\t\n\n기본공제 3억원\n\n\n\n\n자녀C\n\n\t\n\n3억원\n\n\t\n\n기본공제 3억원\n\n\n\n\n합계\n\n\t\n\n18억원\n\n\t\n\n11억원\n\n\t\n\n18억원\n\n \n\n ３ 인적공제 최저한 설정\n\n \n\n□ (현행) 배우자, 자녀 등이 상속받는 경우 통상 전체 상속재산 10억원*까지는 인적공제가 적용되어 상속세가 과세되지 않음 → 일종의 면세점 기능\n\n \n\n    * 10억원 = 배우자공제 최소공제액 5억원 + 일괄공제 5억원\n\n \n\n□ (개정) 현행 면세점 수준을 고려하여 인적공제 최저한을 10억원(모든 상속인․수유자의 공제합계 기준)으로 설정\n\n \n\n ㅇ 인적공제 합계가 10억원 미만인 경우 그 미달액을 직계존비속인 상속인에게 추가 공제 적용 \n\n \n\n◆ 【사례】 배우자+자녀 1인 가구, 상속재산: 10억원\n\n \n\n \n\n\t\n\n실제 상속재산\n\n\t\n\n공제액\n\n\n\n\n현 행\n\n\t\n\n개 정\n\n\n\n\n배우자\n\n\t\n\n3억원\n\n\t\n\n배우자공제 5억원\n\n일괄공제 5억원\n\n\t\n\n배우자공제 3억원\n\n\n\n\n자녀A\n\n\t\n\n7억원\n\n\t\n\n기본공제 5억원\n\n+\n\n최저한 추가 공제 2억원*\n\n\n\n\n합계\n\n\t\n\n10억원\n\n\t\n\n10억원\n\n\t\n\n10억원\n\n   * 인적공제 합계액 8억원(= 배우자공제 3억원 + 기본공제(자녀) 5억원) < 10억원\n→ 미달액인 2억원(=10억원-8억원)을 자녀A에게 추가 공제\n\n \n\n ４ 비거주자 등에 대한 인적공제*\n\n \n\n    * 피상속인과 상속인이 모두 비거주자인 경우\n\n \n\n□ (현행) 기초공제(2억원)만 허용\n\n \n\n   ※ 비거주자는 국내 소재 상속취득재산에 한정하여 제한적 납세의무를 지는 점 고려\n\n \n\n□ (개정) 인별 공제액 설정(현행 공제수준, 피상속인과 친소관계 등 고려)\n\n \n\n ㅇ (상속인) 배우자 2억원, 그 외 1억원\n\n \n\n ㅇ (수유자*) 1천만원         * 4촌 이내 혈족 및 3촌 이내 인척 한정\n\n \n\n3\n\n\t\n\n \n\n\t\n\n 물적 공제제도\n\n \n\n◇ 가업상속공제 등 물적공제는 피상속인이 보유한 재산의 특성(가업, 영농, 금융 등)에 기반한 공제항목\n\n \n\n → 해당 재산을 취득하는 상속인에게는 현행 공제혜택 유지\n\n \n\n １ 가업상속공제\n\n \n\n□ (현행) 10년 이상 계속하여 경영한 중소･중견기업 상속시, 가업상속 재산가액에 상당하는 금액 공제\n\n \n\n ㅇ 공제한도는 가업상속공제 300~600억원*\n\n \n\n    * 경영기간: (10~20년) 300억원 / (20~30년) 400억원 / (30년 이상) 600억원\n\n \n\n□ (개정) 현행과 같이 가업을 승계하는 상속인에 적용\n\n \n\n   ※ 공동 승계시 가업재산 비율로 한도 안분하되 상속인간 협의한 한도도 인정\n\n \n\n◆ 【사례】 자녀 2인, 상속재산 1,200억원(가업재산 600억원, 가업외재산 600억원)\n\n \n\n           ※ 30년이상 경영한 기업: 총 한도 600억원\n\n \n\n < 상황: 자녀A 가업재산 취득 가업승계, 자녀B 가업외재산 취득 >\n\n(단위: 억원)\n\n\t\n\n실제 상속재산\n\n\t\n\n현 행\n\n\t\n\n개 정\n\n\n\n\n가업\n\n\t\n\n가업외\n\n\t\n\n계\n\n\t\n\n공제한도\n\n\t\n\n공제액\n\n\t\n\n공제한도\n\n\t\n\n공제액\n\n\n\n\n자녀A\n\n\t\n\n600\n\n\t\n\n-\n\n\t\n\n600\n\n\t\n\n600\n\n\t\n\n600\n\n\t\n\n600\n\n\t\n\n600\n\n\n\n\n자녀B\n\n\t\n\n-\n\n\t\n\n600\n\n\t\n\n600\n\n\t\n\n-\n\n\t\n\n-\n\n\n\n\n합 계\n\n\t\n\n600\n\n\t\n\n600\n\n\t\n\n1,200\n\n\t\n\n600\n\n\t\n\n600\n\n\t\n\n600\n\n\t\n\n600\n\n    ※ 영농상속공제도 같은 방식으로 적용\n\n \n\n ２ 기타 물적공제\n\n \n\n□ (현행) 금융재산공제, 동거주택상속공제 등 운영 중\n\n \n\n□ (개정) 현행과 같이 적용  ※ 상속인 2인 이상 해당시 인별 안분\n\n \n\n4\n\n\t\n\n \n\n\t\n\n 납세절차\n\n \n\n◇ 현행 납세절차의 기본틀을 유지하는 가운데, 상속재산의 분할 관련 별도의 분할기한 설정\n\n \n\n□ (신고의무) 각 상속인 및 수유자가 각자 신고하되 공동신고도 허용\n\n \n\n□ (과세관할) 피상속인 기준*으로 과세관할을 결정하는 현행 제도 유지\n\n \n\n    * 피상속인의 주소지(거소지)가 국내: 주소지(거소지) 관할 세무서장\n           “              국외: 주된 국내 상속재산 소재지 관할 세무서장\n\n \n\n□ (신고기한) 상속개시 후 6개월 이내    ※ 현행과 동일\n\n \n\n□ (분할기한) 신고기한 후 9개월내 분할 허용\n\n \n\n    ※ 현행 배우자 상속재산 분할기한인 9개월과 동일기간 적용\n\n \n\n ㅇ 신고기한 내 상속재산 분할을 완료하지 못했더라도 법정상속분에 따라 분할된 것으로 하여 신고 후 재산분할 확정시 수정 허용\n\n \n\n    ※ 수정신고 등에 따른 가산세 면제\n\n \n\n ㅇ 소송 등 특별한 사정없이 분할을 지연하여 분할기한을 도과한 경우 법정상속 비율에 따라 과세(이후 분할시 별도의 증여로 의제)\n\n \n\n상속재산 분할기한\n\n \n\n\t\n\n \n\n\t\n\n+ 6개월\n\n\t\n\n \n\n\t\n\n+ 9개월\n\n\t\n\n \n\n\t\n\n+ 부득이한 사유 시 6개월 or\n\n+ 소송 등 종료일로부터 6개월\n\n\n\n\n-----▼--------------▼------------------▼----------------------------▼--------------\n\n\n\n\n상속개시일\n\n\t\n\n \n\n\t\n\n신고기한\n\n\t\n\n \n\n\t\n\n(원칙)\n\n \n\n상속재산 분할기한\n\n\t\n\n \n\n\t\n\n(예외) 부득이한 사유\n\n \n\n상속재산 분할기한으로 보는날\n\n \n\n□ (납부) 분납, 연부연납, 물납 등 납부절차는 현행과 같이 운영\n\n \n\n5\n\n\t\n\n \n\n\t\n\n 조세회피 대응\n\n◇ 유산취득세 전환 시 발생할 수 있는 조세회피를 방지하기 위해 위장분할, 우회상속 등에 대한 대응방안 마련\n\n \n\n ㅇ 처분재산의 사용처 불분명시 상속재산으로 추정하는 현행 제도 등 유지\n\n \n\n    ※ 위장분할, 우회상속이 있는 경우 그와 관련된 자들 간 연대납세 적용\n\n \n\n １ 위장분할에 대한 부과제척기간 보완\n\n \n\n□ (현행) 상속세의 경우 10년, 허위․누락신고 등 부정행위 15년\n\n \n\n□ (개정) 위장분할*이 있는 경우 부과제척기간 10년 → 15년 연장\n\n \n\n    * 상속취득재산의 명의자와 사실상의 귀속되는 자가 다르게 분할하여 상속세 과세표준과 세액을 거짓으로 신고한 경우\n\n \n\n ２ 우회상속 비교과세 특례 신설\n\n \n\n□ 우회상속 결과, 실제 상속세 부담이 줄어드는 경우 추가 과세*\n\n \n\n    * 피상속인의 특수관계인이 상속받은 재산을 다른 상속인에게 증여한 경우, 피상속인이 해당 상속인에게 직접 상속한 경우와 비교하여 감소액 과세\n\n \n\n ㅇ (대상) 상속재산 30억원 이상 / (기간) 상속개시후 5년내 증여\n\n \n\n    ※ 현행 고액상속자 사후관리 기준(상속재산 30억원 이상, 상속후 5년내) 고려\n\n \n\n ３ 영리법인을 활용한 상속에 대한 과세방식 합리화\n\n \n\n□ (현행) 영리법인에 피상속인이 유증시, 그 법인의 주주인 상속인(상속인의 직계비속 포함)에게 상속세 과세 \n\n \n\n□ (개정) 특정법인*에 피상속인(지배주주와 특수관계)이 유증시, 그 법인의 지배주주등이 상속재산으로 취득한 것으로 보아 상속세 과세\n\n \n\n    * 지배주주등(지배주주 및 그 친족)의 직･간접 주식보유비율이 30% 이상인 영리법인\n\n \n\n Ⅲ. 시행시기 및 향후 추진계획\n\n \n\n□ (시행시기) ‘28년 시행 (’25년 법률안 국회 통과 전제)\n\n \n\n□ (향후 추진계획)\n\n \n\n ㅇ (‘25년) 입법예고, 공청회 등 의견수렴을 거쳐 법률안 국회 제출\n\n \n\n   - (3월) ｢상속세 및 증여세법｣ 등 관련 법률안 입법예고\n\n \n\n   - (4월) 공청회\n\n \n\n   - (5월) 법률안 제출\n\n \n\n ㅇ (‘26~’27년) 유산취득 과세 집행시스템 마련 및 보완 입법\n\n[수식·이미지]\n그림입니다. 원본 그림의 이름: CLP000043ec0001.bmp 원본 그림의 크기: 가로 483pixel, 세로 293pixel"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/민법/제1000조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-2.png",
+      "text": "법령\n\n화면내검색 \n \n \n민법\n[시행 2026. 3. 17.] [법률 제21454호, 2026. 3. 17., 일부개정]\n\n법무부(법무심의관실), 02-2110-3164\n\n 제1000조(상속의 순위) ①상속에 있어서는 다음 순위로 상속인이 된다.  <개정 1990. 1. 13.>\n\n1. 피상속인의 직계비속\n\n2. 피상속인의 직계존속\n\n3. 피상속인의 형제자매\n\n4. 피상속인의 4촌 이내의 방계혈족\n\n②전항의 경우에 동순위의 상속인이 수인인 때에는 최근친을 선순위로 하고 동친등의 상속인이 수인인 때에는 공동상속인이 된다.\n\n③태아는 상속순위에 관하여는 이미 출생한 것으로 본다.  <개정 1990. 1. 13.>\n\n[제목개정 1990. 1. 13.]"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/민법/제1003조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-3.png",
+      "text": "법령\n\n화면내검색 \n \n \n민법\n[시행 2026. 3. 17.] [법률 제21454호, 2026. 3. 17., 일부개정]\n\n법무부(법무심의관실), 02-2110-3164\n\n 제1003조(배우자의 상속순위) ①피상속인의 배우자는 제1000조제1항제1호와 제2호의 규정에 의한 상속인이 있는 경우에는 그 상속인과 동순위로 공동상속인이 되고 그 상속인이 없는 때에는 단독상속인이 된다.  <개정 1990. 1. 13.>\n\n②제1001조의 경우에 상속개시전에 사망한 사람의 배우자는 동조의 규정에 의한 상속인과 동순위로 공동상속인이 되고 그 상속인이 없는 때에는 단독상속인이 된다.  <개정 1990. 1. 13., 2026. 3. 17.>\n\n[제목개정 1990. 1. 13.]"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/민법/제1009조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-4.png",
+      "text": "법령\n\n화면내검색 \n \n \n민법\n[시행 2026. 3. 17.] [법률 제21454호, 2026. 3. 17., 일부개정]\n\n법무부(법무심의관실), 02-2110-3164\n\n 제1009조(법정상속분) ①동순위의 상속인이 수인인 때에는 그 상속분은 균분으로 한다.  <개정 1977. 12. 31., 1990. 1. 13.>\n\n②피상속인의 배우자의 상속분은 직계비속과 공동으로 상속하는 때에는 직계비속의 상속분의 5할을 가산하고, 직계존속과 공동으로 상속하는 때에는 직계존속의 상속분의 5할을 가산한다.  <개정 1990. 1. 13.>\n\n③ 삭제  <1990. 1. 13.>"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/상속세및증여세법/제26조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-5.png",
+      "text": "법령\n\n화면내검색 \n \n \n상속세 및 증여세법\n[시행 2025. 10. 1.] [법률 제21065호, 2025. 10. 1., 타법개정]\n\n재정경제부(재산세제과), 044-215-4311\n\n 제26조(상속세 세율) 상속세는 제25조에 따른 상속세의 과세표준에 다음의 세율을 적용하여 계산한 금액(이하 “상속세산출세액”이라 한다)으로 한다.\n\n\n[전문개정 2010. 1. 1.]\n\n[수식·이미지]\n<과세표준> <세 율> 1억원 이하 과세표준의 100분의 10 1억원 초과 5억원 이하 1천만원 + (1억원을초과하는금액의100분의20) 5억원 초과 10억원 이하 9천만원 + (5억원을초과하는금액의100분의30) 10억원 초과 30억원 이하 2억4천만원 + (10억원을초과하는금액의100분의40) 30억원 초과 10억4천만원 + (30억원을초과하는금액의100분의50)"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/상속세및증여세법/제19조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-6.png",
+      "text": "법령\n\n화면내검색 \n \n \n상속세 및 증여세법\n[시행 2025. 10. 1.] [법률 제21065호, 2025. 10. 1., 타법개정]\n\n재정경제부(재산세제과), 044-215-4311\n\n 제19조(배우자 상속공제) ① 거주자의 사망으로 상속이 개시되어 배우자가 실제 상속받은 금액의 경우 다음 각 호의 금액 중 작은 금액을 한도로 상속세 과세가액에서 공제한다.  <개정 2016. 12. 20.>\n\n1. 다음 계산식에 따라 계산한 한도금액\n\n\n2. 30억원\n\n② 제1항에 따른 배우자 상속공제는 제67조에 따른 상속세과세표준신고기한의 다음날부터 9개월이 되는 날(이하 이 조에서 “배우자상속재산분할기한”이라 한다)까지 배우자의 상속재산을 분할(등기ㆍ등록ㆍ명의개서 등이 필요한 경우에는 그 등기ㆍ등록ㆍ명의개서 등이 된 것에 한정한다. 이하 이 조에서 같다)한 경우에 적용한다. 이 경우 상속인은 상속재산의 분할사실을 배우자상속재산분할기한까지 납세지 관할세무서장에게 신고하여야 한다.  <개정 2020. 12. 22.>\n\n③ 제2항에도 불구하고 대통령령으로 정하는 부득이한 사유로 배우자상속재산분할기한까지 배우자의 상속재산을 분할할 수 없는 경우로서 배우자상속재산분할기한[부득이한 사유가 소(訴)의 제기나 심판청구로 인한 경우에는 소송 또는 심판청구가 종료된 날]의 다음날부터 6개월이 되는 날(배우자상속재산분할기한의 다음날부터 6개월이 지나 제76조에 따른 과세표준과 세액의 결정이 있는 경우에는 그 결정일을 말한다)까지 상속재산을 분할하여 신고하는 경우에는 배우자상속재산분할기한까지 분할한 것으로 본다. 다만, 상속인이 그 부득이한 사유를 대통령령으로 정하는 바에 따라 배우자상속재산분할기한까지 납세지 관할세무서장에게 신고하는 경우에 한정한다.  <개정 2014. 1. 1., 2019. 12. 31., 2020. 6. 9.>\n\n④ 제1항의 경우에 배우자가 실제 상속받은 금액이 없거나 상속받은 금액이 5억원 미만이면 제2항에도 불구하고 5억원을 공제한다.\n\n[전문개정 2010. 1. 1.]\n[2014. 1. 1. 법률 제12168호에 의하여 2012. 5. 31. 위헌결정된 이 조 제3항을 개정함.]\n\n[수식·이미지]\n\\mathrm한도금액 = (A- B + C) × D- E A: 대통령령으로 정하는 상속재산의 가액 B: 상속재산 중 상속인이 아닌 수유자가 유증등을 받은 재산의 가액 C: 제13조제1항제1호에 따른 재산가액 D: 「민법」 제1009조에 따른 배우자의 법정상속분(공동상속인 중 상속을 포기한 사람이 있는 경우에는 그 사람이 포기하지 아니한 경우의 배우자 법정상속분을 말한다) E: 제13조에 따라 상속재산에 가산한 증여재산 중 배우자가 사전증여받은 재산에 대한 제55조제1항에 따른 증여세 과세표준"
+    },
+    {
+      "url": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2324&cntntsId=7718",
+      "org": "국세청",
+      "screenshot": "evidence-유산취득세-상속세-개편-7.png",
+      "text": "주메뉴 바로가기\n본문으로 바로가기\n\n이 누리집은 대한민국 공식 전자정부 누리집입니다.\n\nENGLISH\n \n화면크기\n화면크기 축소\n화면크기 원래대로\n화면크기 확대\n국세청\n검색창\n통합검색\n검색\n알림·소식\n국민소통\n국세신고안내\n국세정책/제도\n정보공개\n국세청 소개\n국세신고안내\n개인신고안내\n닫힘\n열림\n종합소득세\n닫힘\n주택임대소득\n닫힘\n종교인소득\n닫힘\n부가가치세\n닫힘\n사업장현황신고\n닫힘\n원천세\n닫힘\n연말정산\n닫힘\n양도소득세\n닫힘\n밑줄 쫙, 부동산세금 체크포인트\n국세청이 알려주는 양도(종부)세 실수사례\n양도소득세 월간 질의 TOP10\n상속 · 증여 안심 가이드\n상속세\n닫힘\n열림\n기본정보\n상속세 개요\n신고납부기한\n세액계산흐름도\n가산세\n신고시 유의사항\n항목별 설명\n상속재산의 평가\n상속세 납부\n상속재산의 확인\n가업승계 지원제도\n주요서식\n주요서식 작성요령/사례\n동영상자료실\n증여세\n닫힘\n종합부동산세\n닫힘\n세금납부 안내\n닫힘\n법인신고안내\n닫힘\n\n국세상담센터\n\n국세관련 모든 상담은 국번없이 126\n전국 어디서나 편리하게 상담받으세요.\n\n평일 9시~18시 (탈세제보는 24시간)\n\n상속세 개요\n홈\n국세신고안내\n개인신고안내\n상속세\n기본정보\n상속세 개요\n공유하기\n인쇄\n글자크기\n가\n가\n가\n가\n상속세란?\n\n상속세란 사망으로 그 재산이 가족이나 친족 등에게 무상으로 이전되는 경우에 당해 상속재산에 대하여 부과하는 세금을 말합니다.\n\n상속세 납세의무자는?\n상속세 신고·납부의무가 있는 납세의무자에는 상속을 원인으로 재산을 물려받는 “상속인”과 유언이나 증여계약 후 증여자의 사망으로 재산을 취득하는 “수유자”가 있습니다.\n상속인이란 혈족인 법정상속인과 대습상속인, 사망자(피상속인)의 배우자 등을 말하며, 납세의무가 있는 상속포기자, 특별연고자도 포함됩니다.\n민법에서는 상속이 개시되면 유언 등에 의한 지정상속분을 제외하고 피상속인의 유산은 그의 직계비속․직계존속·형제자매․4촌 이내의 방계혈족 및 배우자에게 상속권을 부여하고 있습니다.\n\n[상속의 순위(민법 제1000조)]\n\n상속의 순위 - 우선순위, 피상속인과의 관계, 상속인 해당 여부 포함\n우선순위\t피상속인과의 관계\t상속인 해당 여부\n1순위\t직계비속과 배우자\t항상 상속인\n2순위\t직계존속과 배우자\t직계비속이 없는 경우 상속인\n3순위\t형제자매\t1, 2순위가 없는 경우 상속인\n4순위\t4촌 이내의 방계혈족\t1, 2, 3순위가 없는 경우 상속인\n같은 순위의 상속인이 여러 명인 경우에는 피상속인과 촌수가 가까운 자가 상속인이 되고, 촌수가 같은 상속인이 여러 명인 경우에는 공동 상속인이 됩니다.\n(예시) 아들 A, 딸 B, 손자녀 C와 D가 있는 경우\n⟹ 아들 A와 딸 B가 공동 상속인이 되며, 손자녀 C와 D는 상속인이 될 수 없습니다.\n태아는 상속순위를 결정할 때는 이미 출생한 것으로 봅니다.\n배우자는 직계비속과 같은 순위로 공동상속인이 되며, 직계비속이 없는 경우에는 2순위 상속인인 직계존속과 공동상속인이 됩니다. 직계비속과 직계존속이 없는 경우에는 단독 상속인이 됩니다.\n상속인이 될 직계비속 또는 형제자매가 상속개시 전에 사망하거나 결격자가 된 경우에 그 직계비속이 있는 때에는 그 직계비속이 사망하거나 결격된 자의 순위에 갈음하여 상속인이 됩니다.\n(예시) 아들 E와 아들 E의 배우자, 아들의 자녀인 F가 있는 경우에 아들 E가 상속개시일 전 사망한 경우\n⟹ 아들 E가 상속인이나 사망했기 때문에 아들 E의 배우자와 아들의 자녀인 F가 상속인이 됩니다.\n특별연고자나 수유자가 영리법인인 경우에는 당해 영리법인이 납부할 상속세는 면제됩니다. 다만, 2014년 1월 1일 이후 상속개시분부터는 그 영리법인의 주주 또는 출자자 중 상속인과 그 직계비속이 있는 경우에는 지분상당액을 그 상속인 및 직계비속이 납부하여야 합니다.\n상속세 과세대상은?\n사망자(피상속인)이 상속개시일 현재 거주자인지 비거주자인지 여부에 따라 과세대상 범위가 달라집니다.\n(거주자인 경우)국내 및 국외에 있는 모든 상속재산\n(비거주자인 경우)국내에 있는 모든 상속재산\n\n[거주자와 비거주자의 판단(상속세 및 증여세법 제2조]\n\n(거주자) 국내에 주소*를 두거나 183일 이상 거소를 둔 사람\n\n* 국내에 주소를 둔 경우에 해당하는지 여부는 소득세법 시행령 제2조, 제4조 제1항․제2항 및 제4항을 따릅니다.\n\n(비거주자) 거주자가 아닌 사람\n상속세 연대납부 책임은?\n상속인이나 수유자는 세법에 의하여 부과된 상속세에 대하여 각자가 받았거나 받을 재산(=자산총액-부채총액-상속세액)을 한도로 연대하여 납부할 의무가 있습니다.\n각자가 받았거나 받을 재산에는 상속재산에 가산하는 증여재산이나 추정상속재산 중 상속인이나 수유자의 지분 상당액이 포함됩니다.\n따라서 상속세 납세의무자 등 일부가 상속세를 납부하지 아니한 경우에는 다른 상속세 납부의무자들이 미납된 상속세에 대하여 자기가 받았거나 받을 재산을 한도로 연대 납부할 책임이 있습니다.\n콘텐츠 만족도 조사\n\n페이지에서 제공하는 정보에 대하여 만족하셨습니까?\n\n만족도 조사\n 매우만족  만족  보통  불만족  매우불만족 \n(우)30128 세종특별자치시 국세청로 8-14 국세청 (정부세종2청사 국세청동)\n국세청 대표 상담전화는 전국 어디서나 국번 없이 126번(유료)\n국세청 유튜브\n국세청 인스타그램\n국세청 페이스북\n국세청 네이버 블로그\n국세청 X\n카카오스토리\n누리집 이용안내\n누리집 안내지도\n개인정보처리방침\n저작권정책\n만족도조사\n오류오타신고\n읽기 전용 프로그램 안내\n\nCOPYRIGHT(c) National Tax Service. All Rights Reserved.\n\n맨위로\n\n[수식·이미지]\n(사)한국장애인단체총연합회 한국웹접근성인증평가원 웹 접근성 우수사이트 인증마크(WA인증마크)\n\n[표]\n우선순위 | 피상속인과의 관계 | 상속인 해당 여부\n1순위 | 직계비속과 배우자 | 항상 상속인\n2순위 | 직계존속과 배우자 | 직계비속이 없는 경우 상속인\n3순위 | 형제자매 | 1, 2순위가 없는 경우 상속인\n4순위 | 4촌 이내의 방계혈족 | 1, 2, 3순위가 없는 경우 상속인"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/상속세및증여세법/제21조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-8.png",
+      "text": "법령\n\n화면내검색 \n \n \n상속세 및 증여세법\n[시행 2025. 10. 1.] [법률 제21065호, 2025. 10. 1., 타법개정]\n\n재정경제부(재산세제과), 044-215-4311\n\n 제21조(일괄공제) ① 거주자의 사망으로 상속이 개시되는 경우에 상속인이나 수유자는 제18조와 제20조제1항에 따른 공제액을 합친 금액과 5억원 중 큰 금액으로 공제받을 수 있다. 다만, 제67조 또는 「국세기본법」 제45조의3에 따른 신고가 없는 경우에는 5억원을 공제한다.  <개정 2019. 12. 31., 2022. 12. 31.>\n\n② 제1항을 적용할 때 피상속인의 배우자가 단독으로 상속받는 경우에는 제18조와 제20조제1항에 따른 공제액을 합친 금액으로만 공제한다.\n\n[전문개정 2010. 1. 1.]"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/상속세및증여세법/제67조",
+      "org": "법제처",
+      "screenshot": "evidence-유산취득세-상속세-개편-9.png",
+      "text": "법령\n\n화면내검색 \n \n \n상속세 및 증여세법\n[시행 2025. 10. 1.] [법률 제21065호, 2025. 10. 1., 타법개정]\n\n재정경제부(재산세제과), 044-215-4311\n\n 제67조(상속세 과세표준신고) ① 제3조의2에 따라 상속세 납부의무가 있는 상속인 또는 수유자는 상속개시일이 속하는 달의 말일부터 6개월 이내에 제13조와 제25조제1항에 따른 상속세의 과세가액 및 과세표준을 대통령령으로 정하는 바에 따라 납세지 관할세무서장에게 신고하여야 한다.  <개정 2015. 12. 15.>\n\n② 제1항에 따른 신고를 할 때에는 그 신고서에 상속세 과세표준의 계산에 필요한 상속재산의 종류, 수량, 평가가액, 재산분할 및 각종 공제 등을 증명할 수 있는 서류 등 대통령령으로 정하는 것을 첨부하여야 한다.\n\n③ 제1항의 기간은 유언집행자 또는 상속재산관리인에 대해서는 그들이 제1항의 기간 내에 지정되거나 선임되는 경우에 한정하며, 그 지정되거나 선임되는 날부터 계산한다.  <개정 2014. 1. 1.>\n\n④ 피상속인이나 상속인이 외국에 주소를 둔 경우에는 제1항의 기간을 9개월로 한다.\n\n⑤ 제1항의 신고기한까지 상속인이 확정되지 아니한 경우에는 제1항의 신고와는 별도로 상속인이 확정된 날부터 30일 이내에 확정된 상속인의 상속관계를 적어 납세지 관할세무서장에게 제출하여야 한다.\n\n[전문개정 2010. 1. 1.]"
+    }
+  ]
+}

@@ -84,3 +84,4 @@ _to_delete/
 
 # 링크 검사 캐시 (verify-links)
 scripts/.link-check-cache.json
+scripts/meaning-cache/

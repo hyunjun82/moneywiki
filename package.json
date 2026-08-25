@@ -18,7 +18,9 @@
     "verify:links": "npx tsx scripts/verify-links.ts",
     "keywords": "node scripts/collect-keywords.mjs",
     "verify:repetition": "npx tsx scripts/verify-repetition.ts",
-    "verify:claims": "npx tsx scripts/verify-claims.ts"
+    "verify:claims": "npx tsx scripts/verify-claims.ts",
+    "verify:meaning": "npx tsx scripts/verify-meaning.ts",
+    "brief": "node scripts/brief.mjs"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",

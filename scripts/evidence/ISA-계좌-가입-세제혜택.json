@@ -1,6 +1,6 @@
 {
   "slug": "ISA-계좌-가입-세제혜택",
-  "verifiedAt": "2026-08-18",
+  "verifiedAt": "2026-08-25",
   "collectedBy": "scripts/collect-evidence.mjs (playwright)",
   "sources": [
     {
@@ -14,6 +14,10 @@
     {
       "url": "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISAAccTransNotice.xml&divisionId=MDIS07001003000000&serviceId=SDIS07001003000",
       "org": "ISA 다모아"
+    },
+    {
+      "url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000353",
+      "org": "정부24"
     }
   ],
   "facts": [
@@ -331,6 +335,41 @@
       "url": "https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISAAccTransNotice.xml&divisionId=MDIS07001003000000&serviceId=SDIS07001003000",
       "org": "ISA 다모아",
       "screenshot": "evidence-ISA-계좌-가입-세제혜택-3.png"
+    },
+    {
+      "value": "24시간",
+      "quote": "소비자24 24시간 열린 소비자포털",
+      "url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000353",
+      "org": "정부24",
+      "screenshot": "evidence-ISA-계좌-가입-세제혜택-4.png"
+    },
+    {
+      "value": "5일",
+      "quote": "처리기간이 5일 이하인 경우 | 민원 접수 시각부터 \"시간\" 단위로 계산(토·공휴일 제외)",
+      "url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000353",
+      "org": "정부24",
+      "screenshot": "evidence-ISA-계좌-가입-세제혜택-4.png"
+    },
+    {
+      "value": "3일",
+      "quote": "(예: 민원의 처리기간이 3일이고 '22.9.20.(화) 14:00 민원 접수 시, '22.9.23.(금) 14:00까지 처리 완료)",
+      "url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000353",
+      "org": "정부24",
+      "screenshot": "evidence-ISA-계좌-가입-세제혜택-4.png"
+    },
+    {
+      "value": "6일",
+      "quote": "처리기간이 6일 이상인 경우 | 민원 접수일을 포함하여 \"일\" 단위로 계산(토·공휴일 제외)",
+      "url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000353",
+      "org": "정부24",
+      "screenshot": "evidence-ISA-계좌-가입-세제혜택-4.png"
+    },
+    {
+      "value": "8일",
+      "quote": "(예: 민원의 처리기간이 8일이고 '22.9.20.(화) 14:00 민원 접수 시, '22.9.29.(목) 23:59까지 처리 완료)",
+      "url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000353",
+      "org": "정부24",
+      "screenshot": "evidence-ISA-계좌-가입-세제혜택-4.png"
     }
   ],
   "raws": [
@@ -351,6 +390,12 @@
       "org": "ISA 다모아",
       "screenshot": "evidence-ISA-계좌-가입-세제혜택-3.png",
       "text": "공지사항보고서 및 근거기준시스템 이용가이드업무지원서비스사이트 맵\n펀드\n\t\n메뉴검색\n\n현재서비스모드\n\n투자예정자\n\t\n펀드공시\n금융투자회사공시\n펀드매니저/애널리스트\n기타공시\nISA비교공시\n펀드다모아\n금융상품한눈에\n디딤펀드\n전체메뉴\n마이서비스Zone 바로가기\nISA 제도 개요\nISA 제도 개요\nISA 계좌이전제도 개요\nISA 가입 현황\n운용현황\n신탁형 수수료 비교공시\n일임형 MP 비교\nISA 계좌이전제도 개요\n\n계좌이전 제도 개요\nISA가입자가 가입 금융회사 또는 가입 상품유형(신탁형↔일임형↔투자중개형)을 변경하고자 할 때, 세제상 불이익 없이 변경이 가능하도록 한 제도\n계좌이전의 효과\n\n\n계좌이전 제도에 따라 이전된 계좌에 대해서는 비과세 및 손익통산 등 세제혜택이 유지되며, 가입기간 계산에 있어서도 기존 계약 체결일을 기준으로 적용됨\n\n\n다만, 계좌 내 일부 금액의 이전을 불가능하며, 압류, 가입류, 질권 설정 등이 설정되거나 국세청으로부터 부적격자로 통보받은 계좌 등의 경우 이전이 금지됨\n\n\n※ (주의사항) 기존 금융기관의 통화(해피콜 등) 등을 통해 신청자의 이전의사가 확인되지 않는 경우, 계좌이전 신청을 했더라도 사후에 이전이 제한될 수 있음\n온라인 계좌이전 (일임형 ISA에 한해 가능)\n① (신규 금융기관) 이체신청서 작성, 계좌 개설, 향후 운용할 MP 상품 선택\n→ ② (신규 금융기관) SMS, 이메일 등으로 기존 계좌의 재산현황 안내 받음\n→ ③ (기존 금융기관) 가입 의사 확인(해피콜)\n→ ④ 계좌이전 최종 결과 안내 받음 (기존 계좌의 자산매각, 자금 이전 등으로 통상 신청일로부터 2~3일 소요, 편입자산의 환매일정에 따라 다름)\n오늘본메뉴\n위로\n아래로\n용어사전\n개인정보처리방침|이메일무단수집거부\n유관기관바로가기\n\t\n이동\nFamily Site\n\t\n이동\n서울시 영등포구 의사당대로 143 금투센터 | TEL 02-2003-9000 | Copyright＠2008 KOFIA 업무서비스. All right reserved.\n금융투자협회에서 제공하는 정보는 참고용이며 이용자의 판단에 따른 투자수익 및 정보의 오류등에 따른 손익에 대해서는 책임지지 않습니다.\n\n[수식·이미지]\n선택한 메뉴를 My Menu로 저장\n파생결합증권등 청약정보 비교공시\n펀드정보 One-click시스템"
+    },
+    {
+      "url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000353",
+      "org": "정부24",
+      "screenshot": "evidence-ISA-계좌-가입-세제혜택-4.png",
+      "text": "[{\"state\":1,\"once\":3,\"_errors\":4,\"serverRendered\":6,\"path\":7,\"pinia\":8,\"prerenderedAt\":24},[\"Reactive\",2],{},[\"Set\"],[\"ShallowReactive\",5],{},true,\"/login/govLogout\",{\"sorryPageStore\":9,\"sessionStore\":17},{\"blockedUrls\":10,\"isLoading\":13,\"blockedPattern\":15},[\"Ref\",11],[\"Reactive\",12],[],[\"EmptyRef\",14],\"false\",[\"EmptyRef\",16],\"\\\"\\\"\",{\"sessionInfo\":18,\"timroutDuration\":20,\"isSessionTimerRunning\":21,\"isOpenAutoLogoutModal\":22,\"generalLogoutYn\":23},[\"EmptyRef\",19],\"_\",[\"EmptyRef\",19],[\"EmptyRef\",19],[\"Ref\",6],[\"EmptyRef\",14],1787277934653]\nwindow.__NUXT__={};window.__NUXT__.config={public:{siteName:\"정부24\",portalApiUrl:\"/api/portal/v1.0\",portalSvcApiUrl:\"/api/ptl/svcapi/v2.0\",portalCommonApiUrl:\"/api/ptl/common/v1.0\",fcltApiUrl:\"/api/fclt/v1.0\",userApiUrl:\"/api/member/v1.0\",memberApiUrl:\"/api/user/v1.0\",gov24Url:\"https://www.gov.kr\",bcqreEzcertVersion:\"5,0,0,3\",searchApiUrl:\"/api/iwcas/guide/v1.0\",payApiUrl:\"/govpay\",issueApiUrl:\"/api/iwcas/issue/v1.0\",minwonApiUrl:\"/api/iwcas/apply/v1.0\",asyncMinwonApiUrl:\"/api/iwcas/apply-13100000026/v1.0\",lisApiUrl:\"/api/lis/v1.0\",otsdApiUrl:\"\",otsdApiUrlFull:\"\",mobileCertUrl:\"https://plus.gov.kr\",commonApiUrl:\"/api/iwcas/common/v1.0\",brnoApiUrl:\"https://api.odcloud.kr/api/nts-businessman/v1/status\",brnoApiKey:\"qNnBoKg0EFF7xN%2FKV1hdHBotuqPcR7W4X7fA5%2B8K8WHmWsFNmOL8d%2FZYXu4ixmzwlimvec0nTHJZnC86EVkPFQ%3D%3D\",contentUrl:\"https://static.gov.kr/content\",portalmngUrl:\"https://static.gov.kr/portalmng\",cssFilePath:\"prod/\",excnInfo:\"prod\",fidoApiUrl:\"https://fido.gov.kr/\",tracerServiceType:\"https\",tracerDomain:\"tracer.gov.kr\",tracerPort:\"443\",buildTime:1787277540427,kuploadApiUrl:\"/api/iwcas/apply/v1.0\",kuploadCssUrl:\"https://plus.gov.kr/static/minwonsrvc/css/prod\",kidsUrl:\"https://kids.gov.kr\",foreignerUrl:\"https://foreigner.gov.kr\",hipassApiKey:\"HIPASS2523150983\",naverApiUrl:\"https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=9no30dfn8l\",kakaoApiKey:\"55b48cb14413f8cd9de3740bb6161b6d\",device:{defaultUserAgent:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36\",enabled:true,refreshOnResize:false}},app:{baseURL:\"/\",buildId:\"59bf5ae9-0a95-4e1a-aea0-deda23a2bccc\",buildAssetsDir:\"/_nuxt/\",cdnURL:\"\"}}\n\n\n\n\n\n[수식·이미지]\n정부혁신 지식정보 포털 혁신24\n대한민국 법원-전자가족관계등록시스템\n안전 Dream 아동·여성·장애인 경찰지원센터\nopen.go.kr 정보공개\n공공개방자원 다 가치나눔터 공유누리\n국민권익위원회가 운영하는 청렴포털 부패공익신고\n소비자24 24시간 열린 소비자포털\n위험할 땐 119 힘겨울 땐 129\n\n[표]\n처리기간이 5일 이하인 경우 | 민원 접수 시각부터 \"시간\" 단위로 계산(토·공휴일 제외)\n(예: 민원의 처리기간이 3일이고 '22.9.20.(화) 14:00 민원 접수 시, '22.9.23.(금) 14:00까지 처리 완료)\n처리기간이 6일 이상인 경우 | 민원 접수일을 포함하여 \"일\" 단위로 계산(토·공휴일 제외)\n(예: 민원의 처리기간이 8일이고 '22.9.20.(화) 14:00 민원 접수 시, '22.9.29.(목) 23:59까지 처리 완료)\n처리기간을 주(週,week), 월(月,month), 연(年,year)으로 정한 경우 | 민원 접수일을 포함하여 \"달력\"을 기준으로 계산하며,기간의 마지막 날이 공휴일 또는 토요일인 경우 그 다음날이 기간 만료\n(예: 민원의 처리기간이 1월이고 '22.9.20.(화) 14:00 민원 접수 시, '22.10.19.(수) 23:59까지 처리 완료)"
     }
   ]
 }

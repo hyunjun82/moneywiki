@@ -41,7 +41,11 @@ function evidenceHas(ev, token) {
   const norm = (s) => s.replace(/[,\s]/g, "");
   const t = norm(token);
   if ((ev.exampleValues || []).some((e) => norm(e) === t)) return true; // 예시 계산값(글쓴이 선언)
-  return ev.facts.some((f) => norm(f.value || "").includes(t) || norm(f.quote || "").includes(t));
+  if (ev.facts.some((f) => norm(f.value || "").includes(t) || norm(f.quote || "").includes(t))) return true;
+  // facts 는 숫자가 든 문장만 추린 것이라 표·사례 안의 값이 빠진다.
+  // 재정경제부 사례표의 "배우자 9억원 / 합계 11억원"이 원문에 있는데도 근거 없음으로 몰렸다.
+  // 같은 페이지에서 뜯어온 원문(raws)까지 본다 — 출처는 동일하다.
+  return (ev.raws || []).some((r) => norm(r.text || "").includes(t));
 }
 
 /** 검증 제외: 연도 표기(2026년)는 서술 맥락이라 대조 대상에서 뺀다 */

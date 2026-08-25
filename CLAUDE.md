@@ -47,7 +47,15 @@ npm run verify:evidence     # 본문 수치 ↔ 증거 JSON (30일 신선도)
 npm run verify:repetition   # 상투구·복사 문장·판박이 배치
 npm run verify:claims       # 과장 표현·출처 대조
 npm run verify:rendered -- <slug>   # 실제 화면 + CTA 실접속 (푸시 전 필수)
+npm run verify:meaning -- <slug>    # 뜻 검사 — 훅↔버튼·소제목↔본문·근거 초과 단언
 ```
+
+위 넷은 형태를 본다. `verify:meaning`만 뜻을 본다 — 글·증거 JSON·검색어 JSON을
+헤드리스 판정자(`claude -p`)에게 함께 던져 다섯 가지를 묻는다.
+hook-cta(훅이 부른 행동과 버튼이 같은 일인가) · heading-answer(첫 문장이 소제목을 답하는가) ·
+overclaim(증거 quote 밖 단언·오해의 소지) · keyfacts-fit(핵심콕콕이 타이틀 항목을 답하는가) ·
+intent-coverage(검색어가 드러낸 궁금증 중 안 답한 것). ERROR면 pre-push가 막는다.
+판정은 글 내용 해시로 캐시되니 안 고친 글은 다시 묻지 않는다. `--all` `--images` `--fresh`.
 
 데이터 검증은 "값이 있는가"만 본다. 화면은 `verify:rendered`가 본다 — 이 구멍으로
 표 헤더가 남색으로 나가고, 보험 글 CTA가 신용조회로 간 사고가 났다.

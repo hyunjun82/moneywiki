@@ -150,6 +150,8 @@ const ORG_BY_HOST = {
   "fine.fss.or.kr": "금융감독원 파인",
   "moel.go.kr": "고용노동부",
   "nts.go.kr": "국세청",
+  "mofe.go.kr": "재정경제부",
+  "moef.go.kr": "기획재정부",
   "nhis.or.kr": "국민건강보험공단",
   "nps.or.kr": "국민연금공단",
   "molit.go.kr": "국토교통부",
@@ -170,6 +172,15 @@ async function collectUrl(page, url) {
   console.log(`페이지 ${url} …`);
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
   await page.waitForTimeout(2500);
+  // 문서뷰어(재정경제부 synap 등)는 iframe 안에 또 iframe 을 늦게 그린다.
+  // 2.5초로는 목차만 읽히고 본문이 통째로 비었다. 프레임이 있으면 더 기다린다.
+  if (page.frames().length > 1) {
+    await page.waitForTimeout(6000);
+    for (const f of page.frames()) {
+      try { await f.waitForLoadState("domcontentloaded", { timeout: 8000 }); } catch {}
+    }
+    await page.waitForTimeout(2000);
+  }
   let { text, title, tables } = await page.evaluate(() => {
     // 첫 번째로 걸린 후보를 그대로 쓰면 껍데기만 읽는다.
     // 자동차보험 표준약관은 main 이 목차뿐이고 본문은 다른 곳에 있어
@@ -211,14 +222,22 @@ async function collectUrl(page, url) {
   // URL 경로에는 그게 없어 자동차보험 표준약관(carinfo.knia.or.kr)을 못 읽었다.
   // "짧을 때만" 훑으면 안 된다 — 이 사이트는 메인 문서에 머리말·푸터만 335자가 있어
   // 200자 문턱을 넘어버리고, 정작 약관 본문이 든 프레임은 열어 보지도 않았다.
+  // 가장 긴 프레임 하나만 고르면 안 된다. 재정경제부 문서뷰어는 본문이
+  // 부모 프레임(표지·목차)과 자식 프레임(본문)에 나뉘어 실려, 하나만 고르면
+  // "'28년 시행" 같은 결론이 통째로 빠진다. 프레임을 전부 이어 붙인다.
+  const framePieces = [];
   for (const frame of page.frames()) {
     if (frame === page.mainFrame()) continue;
     try {
       const t = await frame.evaluate(() => document.body?.innerText || "");
-      if (t.length > text.length) text = t.slice(0, 40000);
+      if (t.trim().length >= 50) framePieces.push(t.trim());
     } catch {
       // 교차 출처 프레임은 읽을 수 없다 — 건너뛴다
     }
+  }
+  if (framePieces.length) {
+    const joined = [...new Set(framePieces)].join("\n");
+    if (joined.length > text.length) text = joined.slice(0, 60000);
   }
   // 이미지 alt 도 긁는다. 수식은 그림으로 실린다 — innerText 로는 통째로 사라진다.
   // 조특법 제91조의18 연간 납입한도 계산식이 LaTeX 이미지라 "계산식에 따른 금액일 것"
@@ -259,7 +278,9 @@ async function collectUrl(page, url) {
   const file = await capture(page, org);
   // 원문도 남긴다. facts 는 숫자가 든 문장만 추리므로 그것만으로는
   // "출처를 붙인 문장이 원문에 실제로 있는가"를 대조할 수 없다.
-  raws.push({ url, org, screenshot: file, text: text.slice(0, 20000) });
+  // 20,000자에서 잘랐더니 자동차보험 표준약관 제33조가 통째로 잘려 나갔다.
+  // 근거로 쓸 조문이 뒤쪽에 있는 문서가 많다 — 넉넉히 남긴다.
+  raws.push({ url, org, screenshot: file, text: text.slice(0, 60000) });
   const got = factsFromText(text, { url, org, screenshot: file });
 
   // 수치가 하나도 안 잡히면 조용히 빠뜨리지 않고 알린다.
