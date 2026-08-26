@@ -187,7 +187,7 @@ export default function DownloadPage() {
       {/* 히어로 */}
       <section className="dl-hero" style={{ padding: "56px 28px 40px" }}>
         <div>
-          <h1 style={{ fontSize: "clamp(56px, 9vw, 118px)", lineHeight: 0.92, fontWeight: 800, letterSpacing: "-0.045em", margin: 0 }}>
+          <h1 style={{ fontSize: "clamp(56px, 10.5vw, 151px)", lineHeight: 0.86, fontWeight: 800, letterSpacing: "-0.055em", margin: 0 }}>
             DOWNLOAD
             <br />
             INDEX<span style={{ color: LIME }}>.</span>
@@ -233,7 +233,7 @@ export default function DownloadPage() {
       {/* 이번 주 최다 다운로드 */}
       <section style={{ padding: "0 28px 72px" }}>
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 20 }}>
-          <h2 style={{ fontSize: "clamp(30px,4.4vw,46px)", fontWeight: 800, letterSpacing: "-0.04em", margin: 0 }}>이번 주 최다 다운로드</h2>
+          <h2 style={{ fontSize: "clamp(30px,4.4vw,63px)", lineHeight: 0.95, fontWeight: 800, letterSpacing: "-0.05em", margin: 0 }}>이번 주 최다 다운로드</h2>
           <span style={{ fontFamily: MONO, fontSize: 11, letterSpacing: "0.1em", color: MUTE }}>2026.08.18 — 08.24 / TOP 08</span>
         </div>
         <ul style={{ listStyle: "none", margin: "26px 0 0", padding: 0 }}>
@@ -263,7 +263,7 @@ export default function DownloadPage() {
       <section className="dl-bottom" style={{ padding: "0 28px 72px" }}>
         <div>
           <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 20 }}>
-            <h2 style={{ fontSize: "clamp(26px,3.6vw,38px)", fontWeight: 800, letterSpacing: "-0.04em", margin: 0 }}>제조사별 드라이버</h2>
+            <h2 style={{ fontSize: "clamp(26px,3.6vw,52px)", lineHeight: 0.95, fontWeight: 800, letterSpacing: "-0.05em", margin: 0 }}>제조사별 드라이버</h2>
             <span style={{ fontSize: 13, color: MUTE, whiteSpace: "nowrap" }}>전체 보기 →</span>
           </div>
           <div className="dl-makers" style={{ marginTop: 22, background: LINE, border: `1px solid ${LINE}` }}>
