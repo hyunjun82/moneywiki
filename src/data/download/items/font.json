@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "근로계약서-표준서식",
+    "category": "font",
+    "kicker": "FORM",
+    "trail": ["폰트·서식", "인사·노무"],
+    "badges": ["HWP", "무료", "고용노동부 배포"],
+    "titleTop": "근로계약서 표준 서식",
+    "titleBottom": "무료 양식 다운로드",
+    "listTitle": "근로계약서 표준 서식 무료 양식",
+    "listMeta": "HWP · 무료 · 고용노동부 배포",
+    "ctaPlatforms": "HWP · 편집 가능",
+    "ctaLabel": "근로계약서 서식 받기",
+    "sourceNote": "SOURCE: 고용노동부(MOEL.GO.KR) 배포 표준근로계약서 서식 원본",
+    "description": "고용노동부가 배포하는 표준근로계약서 서식(HWP) 원본으로 연결합니다. 작성할 때 빠뜨리기 쉬운 항목과 교부 의무를 함께 정리했습니다.",
+    "updatedAt": "2026-08-26",
+    "specs": [
+      { "label": "FILE TYPE", "value": "HWP" },
+      { "label": "BATCH", "value": "표준근로계약서" },
+      { "label": "LANG", "value": "한국어" },
+      { "label": "LICENSE", "value": "무료 배포" },
+      { "label": "SOURCE", "value": "고용노동부" }
+    ],
+    "howTitle": "작성 요령",
+    "steps": [
+      { "title": "근로 기간과 장소 기재", "body": "기간을 정하지 않았다면 '기간의 정함 없음'으로 적습니다. 근무 장소와 담당 업무는 구체적으로 씁니다." },
+      { "title": "근로시간·휴게시간 명시", "body": "시작·종료 시각과 휴게시간을 적습니다. 주 소정근로시간이 40시간을 넘지 않는지 확인하세요." },
+      { "title": "임금 구성 항목 분리", "body": "기본급·수당·상여를 항목별로 나누고 지급일과 지급 방법을 함께 적습니다." },
+      { "title": "서명 후 1부씩 보관", "body": "양 당사자가 서명·날인하고 근로자에게 1부를 교부합니다. 교부하지 않으면 과태료 대상입니다." }
+    ],
+    "faqs": [
+      { "q": "아르바이트도 근로계약서를 써야 하나요?", "a": "근로시간이 짧아도 작성하고 교부할 의무가 있습니다. 단시간 근로자는 그에 맞는 항목을 채워 쓰세요." },
+      { "q": "HWP가 열리지 않습니다.", "a": "한글 프로그램이 없다면 한컴이 무료로 배포하는 한글 뷰어로 열 수 있습니다. 다만 뷰어에서는 편집이 되지 않습니다." },
+      { "q": "종이 대신 전자문서로 써도 되나요?", "a": "고용노동부가 운영하는 전자근로계약서 서비스를 쓰면 온라인에서 작성·보관할 수 있습니다. 아래 RELATED FORMS에 주소를 넣어 두었습니다." }
+    ],
+    "buildsTitle": "OTHER BUILDS",
+    "builds": [
+      { "name": "표준근로계약서 (HWP)", "note": "고용노동부 배포 원본", "size": "HWP", "platform": "HWP · 편집 가능", "url": "https://www.moel.go.kr/common/downloadEtcFile.do?file_name=retire2019.hwp&org_file_name=%ed%91%9c%ec%a4%80%ea%b7%bc%eb%a1%9c%ea%b3%84%ec%95%bd%ec%84%9c(%ec%84%9c%ec%8b%9d).hwp&web_path=etcdownload" }
+    ],
+    "relatedTitle": "RELATED FORMS",
+    "related": [
+      { "tag": "WEB", "name": "전자근로계약서 작성 (고용24)", "href": "http://www.work.go.kr/useInfo/workContract/workContractInfo.do" },
+      { "tag": "CALC", "name": "최저임금 모의계산기", "href": "https://www.moel.go.kr/miniWageMain.do" }
+    ],
+    "requestNote": "필요한 서식이 없다면 요청 게시판에 이름을 남겨주세요. 공공기관이 배포하는 서식 위주로 확인해 추가합니다."
+  }
+]

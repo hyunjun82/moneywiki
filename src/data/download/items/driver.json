@@ -1,0 +1,51 @@
+[
+  {
+    "slug": "삼성-SL-M2020-드라이버",
+    "category": "driver",
+    "kicker": "DRIVER",
+    "trail": ["드라이버", "삼성"],
+    "badges": ["공식 원본", "무료", "V3.00.16 / 2022-07-21"],
+    "titleTop": "삼성 SL-M2020",
+    "titleBottom": "프린터 드라이버",
+    "listTitle": "삼성 SL-M2020 프린터 드라이버",
+    "listMeta": "WIN 통합 · 21.6MB · 공식 원본",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "SL-M2020 드라이버 받기",
+    "sourceNote": "SOURCE: SAMSUNG.COM 다운로드센터 원본 · 설치 시 관리자 권한 필요",
+    "description": "삼성 SL-M2020 프린터 드라이버를 삼성전자 공식 다운로드센터 원본으로 연결합니다. Windows·macOS 파일과 설치 순서, 국문 사용설명서를 함께 정리했습니다.",
+    "updatedAt": "2026-08-26",
+    "specs": [
+      { "label": "FILE SIZE", "value": "21.6MB" },
+      { "label": "VERSION", "value": "V3.00.16.00.01" },
+      { "label": "LANG", "value": "한국어" },
+      { "label": "LICENSE", "value": "무료" },
+      { "label": "UPDATED", "value": "2022.07.21" }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      { "title": "설치 파일 다운로드", "body": "위 버튼으로 삼성 다운로드센터 원본을 받습니다. 브라우저가 경고를 띄우면 '유지'를 선택하세요." },
+      { "title": "프린터 전원과 케이블 연결", "body": "설치를 시작하기 전에 프린터를 켜고 USB 케이블을 PC에 연결합니다." },
+      { "title": "압축 해제 후 실행", "body": "받은 zip 파일을 풀고 설치 파일을 관리자 권한으로 실행합니다." },
+      { "title": "연결 방식 선택 후 완료", "body": "USB 또는 무선을 선택하고, 테스트 페이지가 출력되면 정상 설치입니다." }
+    ],
+    "faqs": [
+      { "q": "Windows 11에서 설치가 중단됩니다.", "a": "구버전 드라이버가 남아 있는 경우가 많습니다. 설정 › 앱에서 기존 Samsung Printer 항목을 삭제하고 재부팅한 뒤 다시 설치해 보세요." },
+      { "q": "ARM 노트북(Windows on ARM)에서도 되나요?", "a": "일반 설치 파일과 별개로 WoA 전용 드라이버가 따로 있습니다. 아래 OTHER BUILDS에서 WoA 판을 고르세요." },
+      { "q": "macOS에서도 쓸 수 있나요?", "a": "Mac 프린터 드라이버 패키지가 따로 있습니다. 아래 OTHER BUILDS에서 macOS 판을 받으세요." }
+    ],
+    "buildsTitle": "OTHER BUILDS",
+    "builds": [
+      { "name": "Windows 프린터 드라이버", "note": "V3.00.16 · 통합 패키지", "size": "21.6MB", "platform": "WINDOWS · 통합", "url": "https://downloadcenter.samsung.com/content/DR/202207/20220721171709384/M2020_Series_WIN_Printer_V3.00.16.00.01_CDV1.37.zip" },
+      { "name": "Windows 통합 설치 프로그램", "note": "V3.00.16 · UPD", "size": "33.1MB", "platform": "WINDOWS · UPD", "url": "https://downloadcenter.samsung.com/content/DR/202207/20220721171709384/M2020_Series_WIN_UPD_V3.00.16.00.01_CDV1.37.exe" },
+      { "name": "macOS 프린터 드라이버", "note": "V3.33.00", "size": "11.3MB", "platform": "MACOS", "url": "https://downloadcenter.samsung.com/content/DR/201706/20170609162930347/Mac_PrinterDriver_V3.33.00.zip" },
+      { "name": "Windows on ARM 드라이버", "note": "ARM 노트북용", "size": "공식 원본", "platform": "WINDOWS ON ARM", "url": "https://downloadcenter.samsung.com/content/DR/202406/20240617142902632/WoA_mono_SPL_Driver.exe" }
+    ],
+    "relatedTitle": "SAME DEVICE",
+    "related": [
+      { "tag": "PDF", "name": "SL-M2020 사용설명서 (국문)", "href": "https://downloadcenter.samsung.com/content/UM/201604/20160401155417099/KO/M202x_korean.pdf" },
+      { "tag": "SW", "name": "삼성 통합 프린터 드라이버 (UPD)", "href": "https://downloadcenter.samsung.com/content/DR/201912/20191206143301306/SamsungUniversalPrintDriver3.exe" },
+      { "tag": "PAGE", "name": "삼성 SL-M2020 지원 페이지", "href": "https://www.samsung.com/sec/support/model/SL-M2020/" }
+    ],
+    "requestNote": "같은 시리즈의 다른 모델이나 구버전 OS가 필요하면 요청 게시판에 모델명을 남겨주세요."
+  }
+]

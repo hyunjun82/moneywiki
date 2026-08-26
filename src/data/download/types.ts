@@ -1,0 +1,75 @@
+/**
+ * 다운로드 색인 — 항목 하나의 모양.
+ *
+ * 카테고리별로 수천·수만 건이 들어온다. 그래서 항목은 파일이 아니라 데이터다.
+ * 항목이 늘어도 소스 파일 수는 그대로고, 라우트는 아래 4개뿐이다.
+ *   /download                     색인
+ *   /download/[category]/[slug]   상세
+ *   /download/go/[slug]?b=N       내려받기 게이트(광고 → 공식 딥링크)
+ *   /download/request             요청 게시판
+ */
+
+export type DownloadCategory = "software" | "driver" | "game" | "font" | "app";
+
+export const CATEGORY_LABEL: Record<DownloadCategory, string> = {
+  software: "소프트웨어",
+  driver: "드라이버·설명서",
+  game: "게임",
+  font: "폰트·서식",
+  app: "앱·미디어",
+};
+
+export interface DownloadBuild {
+  /** 예: "Windows 64bit" */
+  name: string;
+  /** 예: "V2026.08.1 · 최신" */
+  note?: string;
+  /** 예: "32.4MB" */
+  size: string;
+  /**
+   * 공식 배포처의 실제 파일 주소. 게이트에서 이 주소로만 내보낸다.
+   * 제조사·개발사 공식 도메인이 아니면 넣지 않는다.
+   */
+  url: string;
+  /** 게이트 화면 상단에 쓸 한 줄. 없으면 name 을 쓴다. */
+  platform?: string;
+}
+
+export interface DownloadItem {
+  slug: string;
+  category: DownloadCategory;
+  /** 히어로 왼쪽 라임 배지 — SOFTWARE / DRIVER / FORM / GAME / APP */
+  kicker: string;
+  /** 빵부스러기의 가운데 마디들. 마지막은 항목 이름이 자동으로 붙는다. */
+  trail: string[];
+  /** 제목 옆 작은 테두리 배지들 */
+  badges: string[];
+  /** h1 은 두 줄이다 */
+  titleTop: string;
+  titleBottom: string;
+  /** 큰 버튼 위 작은 글씨 — "WINDOWS · MAC · ANDROID" */
+  ctaPlatforms: string;
+  /** 큰 버튼 문구 — 읽는 사람이 할 행동 그대로 */
+  ctaLabel: string;
+  /** 버튼 아래 한 줄 — "SOURCE: GOMLAB.COM 공식 원본 · ..." */
+  sourceNote: string;
+  specs: { label: string; value: string }[];
+  /** "설치 방법" / "작성 요령" */
+  howTitle: string;
+  steps: { title: string; body: string }[];
+  faqs: { q: string; a: string }[];
+  /** "OTHER BUILDS" */
+  buildsTitle: string;
+  builds: DownloadBuild[];
+  /** "RELATED FILES" / "RELATED FORMS" / "SAME DEVICE" */
+  relatedTitle: string;
+  related: { tag: string; name: string; href?: string }[];
+  /** 하단 "찾는 파일이 없나요?" 문단 */
+  requestNote: string;
+  /** 목록·추천에 쓰는 한 줄 요약 — "무료 · 32/64BIT · 32.4MB" */
+  listMeta: string;
+  /** 목록에 쓰는 제목(h1 두 줄을 합치지 않고 따로 둔다) */
+  listTitle: string;
+  updatedAt: string;
+  description: string;
+}
