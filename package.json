@@ -22,7 +22,8 @@
     "verify:meaning": "npx tsx scripts/verify-meaning.ts",
     "brief": "node scripts/brief.mjs",
     "scaffold": "node scripts/scaffold.mjs",
-    "autofix": "node scripts/autofix.mjs"
+    "autofix": "node scripts/autofix.mjs",
+    "write": "node scripts/write.mjs"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
