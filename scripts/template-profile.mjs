@@ -111,7 +111,10 @@ export function extractProfile(html) {
   });
 
   const indicative = {
-    sections: band(qSections.length, 5),
+    // 소제목 수는 예시 글에서 뽑아 목표로 삼으면 안 된다.
+    // 예시가 8개라는 이유로 모든 글을 8개로 채웠고, 타이틀이 3개만 약속한 글에도
+    // 곁가지 5개가 붙었다. 소제목 수는 타이틀이 나열한 항목 수가 정한다.
+    sections: { target: null, min: 2, max: 12, note: "타이틀이 나열한 항목 수와 같아야 한다" },
     keyFactsRows: band(kfRows, 6),
     faqItems: band(faqItems, 3),
     eyebrowLen: { target: `${Math.min(...ebLens)}~${Math.max(...ebLens)}`, min: 2, max: 10 },

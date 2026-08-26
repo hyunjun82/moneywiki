@@ -20,7 +20,9 @@
     "verify:repetition": "npx tsx scripts/verify-repetition.ts",
     "verify:claims": "npx tsx scripts/verify-claims.ts",
     "verify:meaning": "npx tsx scripts/verify-meaning.ts",
-    "brief": "node scripts/brief.mjs"
+    "brief": "node scripts/brief.mjs",
+    "scaffold": "node scripts/scaffold.mjs",
+    "autofix": "node scripts/autofix.mjs"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",

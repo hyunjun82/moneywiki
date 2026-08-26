@@ -440,8 +440,8 @@ function verifyArticle(article: any): VerifyIssue[] {
   // 14. mainSections 개수 + q1은 행동(신청) 섹션
   const secs: any[] = article.mainSections ?? [];
   // 소제목 개수는 타이틀이 정한다 (15-6에서 대조). 여기서는 최소선만 지킨다.
-  if (secs.length < 4) {
-    push("template-sections", "ERROR", `mainSections가 ${secs.length}개 — 내용이 너무 얇습니다 (최소 4개)`);
+  if (secs.length < 2) {
+    push("template-sections", "ERROR", `mainSections가 ${secs.length}개 — 내용이 너무 얇습니다 (최소 2개)`);
   }
   const q1 = secs[0]?.heading ?? "";
   if (q1 && !/(신청|접수|조회|받는\s*방법|하는\s*방법|절차)/.test(q1)) {
@@ -622,7 +622,10 @@ function verifyArticle(article: any): VerifyIssue[] {
     .replace(/\(\d{4}\)|20\d{2}년?/g, " ")
     .split(/[·,、|]|부터|까지|그리고|및/)
     .map((t: string) => t.trim())
-    .filter((t: string) => t.length >= 2 && !kws.some((k) => k === t));
+    // primaryKeywords 와 같다는 이유로 항목에서 빼면 안 된다.
+    // "…받는법·실비조건·BMI 기준·동반질환까지" 에서 실비조건·BMI 기준이 메인키워드에
+    // 들어 있다는 이유로 사라져 4개가 2개로 세어졌다. 타이틀이 나열한 대로 센다.
+    .filter((t: string) => t.length >= 2);
 
   const sectionText = secs
     .map((s: any) => `${s.eyebrow ?? ""} ${s.heading ?? ""}`)
@@ -647,10 +650,57 @@ function verifyArticle(article: any): VerifyIssue[] {
     );
   }
 
+  // 15-5-9. 골격의 TODO 가 그대로 나가는 것을 막는다.
+  //   scaffold.mjs 가 만든 빈칸은 문장으로 채워야 한다. 남으면 그대로 발행된다.
+  {
+    const blob = JSON.stringify(article);
+    const n = (blob.match(/TODO/g) || []).length;
+    if (n > 0) {
+      push("scaffold-todo", "ERROR", `골격의 TODO 가 ${n}곳 남아 있습니다 — 문장으로 채우세요`);
+    }
+  }
+
+  // 15-6-2. 역방향 — 타이틀에 없는 소제목은 곁가지다.
+  //
+  // 지금까지는 "타이틀 항목이 소제목에 있는가"만 봤다. 그 반대는 안 봤다.
+  // 그래서 타이틀이 4개를 약속했는데 소제목을 8개까지 늘려도 통과했고,
+  // 검색해서 들어온 사람은 약속하지 않은 이야기를 절반이나 읽게 됐다.
+  //
+  // 규칙은 1:1이다. 소제목을 늘리려면 타이틀에 그 항목을 먼저 넣는다.
+  const hasCore = (item: string, text: string) => {
+    const core = item.replace(/\s+/g, "");
+    for (let i = 0; i + 2 <= core.length; i++) {
+      if (text.includes(core.slice(i, i + 2))) return true;
+    }
+    return false;
+  };
+  if (titleItems.length > 0 && secs.length > 0) {
+    const strays = secs.filter((sec: any) => {
+      const t = `${sec.eyebrow ?? ""} ${sec.heading ?? ""}`.replace(/\s+/g, "");
+      return !titleItems.some((item: string) => hasCore(item, t));
+    });
+    if (strays.length > 0) {
+      push(
+        "heading-not-in-title",
+        "ERROR",
+        `타이틀이 나열하지 않은 소제목 ${strays.length}개: ` +
+          strays.map((x: any) => `"${x.heading}"`).join(", ") +
+          ` — 타이틀에 항목을 넣거나 섹션을 빼세요`
+      );
+    }
+    if (secs.length !== titleItems.length) {
+      push(
+        "title-section-count",
+        "ERROR",
+        `타이틀은 ${titleItems.length}개(${titleItems.join("·")})를 나열했는데 소제목은 ${secs.length}개 — 개수를 맞추세요`
+      );
+    }
+  }
+
   // 분량은 참고값이다. 주제에 따라 달라지므로 WARN까지만.
   const sc = TPL.indicative.sections;
   if (secs.length > sc.max) {
-    push("template-sections", "WARN", `mainSections ${secs.length}개 — 권장 ${sc.min}~${sc.max}개. 타이틀이 약속한 만큼만 쓰세요`);
+    // 권장 범위는 두지 않는다 — 소제목 수는 title-section-count 가 타이틀 기준으로 본다.
   }
   const kfB = TPL.indicative.keyFactsRows;
   if (kf.length > 0 && (kf.length < kfB.min || kf.length > kfB.max)) {

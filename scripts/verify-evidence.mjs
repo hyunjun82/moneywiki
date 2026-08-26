@@ -48,6 +48,33 @@ function evidenceHas(ev, token) {
   return (ev.raws || []).some((r) => norm(r.text || "").includes(t));
 }
 
+/** 원문에 그 문장이 실제로 있는가 — 조사·공백 차이를 무시하고 본다 */
+function quoteInEvidence(ev, quote) {
+  const norm = (x) => String(x || "").replace(/[\s,.·「」“”"'()]/g, "");
+  const q = norm(quote);
+  if (q.length < 12) return true; // 너무 짧으면 우연히 겹치므로 검사하지 않는다
+  const hay = norm((ev.raws || []).map((r) => r.text).join(" ") + (ev.facts || []).map((f) => f.quote).join(" "));
+  if (hay.includes(q)) return true;
+  // 원문을 통째로 옮기지 않고 앞뒤를 다듬는 경우가 있다. 가운데 토막이 그대로면 인정한다.
+  for (let len = Math.floor(q.length * 0.6); len >= 20; len -= 10) {
+    for (let i = 0; i + len <= q.length; i += 5) {
+      if (hay.includes(q.slice(i, i + len))) return true;
+    }
+  }
+  return false;
+}
+
+/** 본문에서 "원문을 그대로 옮겼다"고 주장하는 자리 — sourceQuote 와 「」 인용 */
+function claimedQuotes(body) {
+  const out = [];
+  const EXCERPT = new RegExp('excerpt:\\s*\\n?\\s*"((?:[^"\\\\]|\\\\.)*)"', "g");
+  for (const m of body.matchAll(EXCERPT)) out.push(m[1]);
+  // 「」 는 인용부호이자 법령·서류 제목 표기다. 제목까지 원문 대조를 걸면
+  // "「연금보험료 등 소득·세액공제 확인서」" 같은 서류 이름이 전부 걸린다.
+  // 원문을 옮겼다고 선언한 자리(sourceQuote.excerpt)만 검사한다.
+  return [...new Set(out.map((q) => q.replace(/\\n/g, " ")))];
+}
+
 /** 검증 제외: 연도 표기(2026년)는 서술 맥락이라 대조 대상에서 뺀다 */
 const IGNORE = /^(19|20)\d{2}년$/;
 
@@ -100,8 +127,20 @@ for (const file of fs.readdirSync(ART_DIR).filter((f) => f.endsWith(".ts") && f 
     if (unproven.length) {
       console.error(`❌ [${art.slug}] 증거 없는 수치 ${unproven.length}개: ${unproven.join(", ")}`);
       fail++;
-    } else if (!missingShots.length) {
-      console.log(`✅ [${art.slug}] 수치 전부 증거 매칭 (fact ${ev.facts.length}개, verifiedAt ${ev.verifiedAt})`);
+    }
+
+    // 인용문 대조 — 숫자만 보던 구멍을 막는다.
+    //   "협회는 왜곡현상이라 적고 있습니다" 처럼 출처를 붙여 원문에 없는 말을 하는 것이
+    //   지금까지 기계 검사를 그냥 통과했다. 숫자가 맞아도 이게 제일 위험하다.
+    const badQuotes = claimedQuotes(art.body).filter((q) => !quoteInEvidence(ev, q));
+    if (badQuotes.length) {
+      const lines = badQuotes.map((q) => `      "${q.slice(0, 70)}…"`).join("\n");
+      console.error(`❌ [${art.slug}] 원문에 없는 인용 ${badQuotes.length}건:\n${lines}`);
+      fail++;
+    }
+
+    if (!unproven.length && !badQuotes.length && !missingShots.length) {
+      console.log(`✅ [${art.slug}] 수치·인용 전부 증거 매칭 (fact ${ev.facts.length}개, verifiedAt ${ev.verifiedAt})`);
     }
   }
 }

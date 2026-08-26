@@ -32,11 +32,13 @@ if (!slug || slug.startsWith("--")) {
 const queries = [];
 const urls = [];
 const laws = [];
+const sites = [];
 let refresh = false;
 for (let i = 1; i < argv.length; i++) {
   if (argv[i] === "--q") queries.push(argv[++i]);
   else if (argv[i] === "--url") urls.push(argv[++i]);
   else if (argv[i] === "--law") laws.push(argv[++i]);
+  else if (argv[i] === "--site") sites.push(argv[++i]);
   else if (argv[i] === "--refresh") refresh = true;
 }
 
@@ -61,6 +63,42 @@ if (refresh || !fs.existsSync(KW)) {
   run("scripts/collect-keywords.mjs", [slug, ...queries.flatMap((q) => ["--q", q])]);
 } else {
   console.log("▶ 검색어 — 기존 파일 사용 (--refresh 로 다시 수집)");
+}
+
+// ── 1-2. 기관 게시판 검색 — 근거 URL 을 손으로 뒤지지 않는다 ───────────
+// 금융위 보도자료 47건을 손으로 넘겨 6분을 썼다. 그 일은 스크립트가 한다.
+const SITE_SEARCH = {
+  "fsc.go.kr": (q) => `https://www.fsc.go.kr/no010101?curPage=1&srchKey=sj&srchText=${encodeURIComponent(q)}`,
+  "mofe.go.kr": (q) => `https://www.mofe.go.kr/nw/nes/nesdta.do?bbsId=MOSFBBS_000000000028&menuNo=4010100&searchKeyword1=${encodeURIComponent(q)}`,
+  "moel.go.kr": (q) => `https://www.moel.go.kr/news/enews/report/enewsList.do?searchType=TITLE&searchWord=${encodeURIComponent(q)}`,
+};
+if (sites.length) {
+  const b0 = await chromium.launch();
+  for (const site of sites) {
+    const key = Object.keys(SITE_SEARCH).find((k) => site.includes(k));
+    if (!key) { console.log(`  ⚠ ${site} 는 아직 검색 경로를 모릅니다 — --url 로 직접 주세요`); continue; }
+    const page = await b0.newPage({ viewport: { width: 1400, height: 1000 } });
+    try {
+      await page.goto(SITE_SEARCH[key](queries[0] || slug), { waitUntil: "domcontentloaded", timeout: 60000 });
+      await page.waitForTimeout(5000);
+      const hits = await page.evaluate(() => {
+        const out = [];
+        document.querySelectorAll("a[href]").forEach((a) => {
+          const t = (a.textContent || "").replace(/\s+/g, " ").trim();
+          const h = a.href;
+          if (t.length > 8 && t.length < 90 && /\/\d{4,6}(\?|$)|NttId/.test(h)) out.push({ t, h: h.split("?")[0] });
+        });
+        return [...new Map(out.map((x) => [x.h, x])).values()].slice(0, 12);
+      });
+      console.log(`▶ ${key} 검색 — ${hits.length}건`);
+      hits.forEach((x) => console.log(`   ${x.t.slice(0, 60)}\n     ${x.h}`));
+      hits.forEach((x) => { if (!urls.includes(x.h)) urls.push(x.h); });
+    } catch (e) {
+      console.log(`  ⚠ ${key} 검색 실패 — ${String(e.message).split("\n")[0].slice(0, 60)}`);
+    }
+    await page.close().catch(() => {});
+  }
+  await b0.close();
 }
 
 // ── 2. 근거 (Playwright 원문 + 캡처) ──────────────────────────────────
