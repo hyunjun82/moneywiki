@@ -14,6 +14,8 @@
  *   overclaim       증거 quote/value를 넘어선 단언·오해의 소지가 있는 문장인가
  *   keyfacts-fit    핵심콕콕이 타이틀이 약속한 항목을 담고 있는가
  *   intent-coverage 수집된 검색어가 드러낸 궁금증 중 글이 안 답한 것이 있는가
+ *   self-contradiction 훅·요약·핵심콕콕·본문이 서로 어긋나는가
+ *   unnatural-korean  뜻이 안 통하거나 번역체·양산형 문구인가
  *
  * 판정 결과는 글 내용 해시로 캐시한다 — 글이 안 바뀌면 다시 묻지 않는다.
  *
@@ -84,10 +86,22 @@ const RUBRIC = `너는 머니위키 글의 "의미"를 보는 심사자다. 맞�
 4. keyfacts-fit — 핵심콕콕 각 행이 타이틀이 나열한 항목을 답하는가.
    타이틀에 없는 곁가지로 채웠으면 WARN, 타이틀 항목이 통째로 빠졌으면 ERROR다.
 5. intent-coverage — keywords가 드러낸 궁금증 중 글이 한 번도 안 답한 게 있는가. WARN.
+6. self-contradiction — 글 안에서 문장끼리 어긋나는가.
+   훅·요약·핵심콕콕·본문·FAQ 가 같은 사실을 다르게 말하면 ERROR다.
+   특히 훅이 조건을 빼고 단정했는데 본문이 조건을 다는 경우를 잡아라.
+   (실제 사고: 훅은 "서류 없이 청구한다", 본문은 "미참여 병원은 서류를 떼야 한다")
+7. unnatural-korean — 뜻이 통하지 않거나 한국어로 어색한 문장이 있는가. ERROR.
+   · 뜻이 안 통하는 표현 — 무엇을 하라는 건지 알 수 없는 문장
+     (실제 사고: "서류 없이 바로 넣을 수 있으니 먼저 청구부터 걸어 두시죠")
+   · 번역체 — "~에 대해서", "~를 통해", "~할 수 있습니다"의 남발, 주어 없는 수동형
+   · AI 양산형 문구 — "중요한 것은", "핵심은", "결론적으로", 뜻 없이 반복되는 대구
+   · 책임 주체가 흐린 문장 — 누가 하는 일인지 사라진 문장
+   문장이 그럴듯해 보여도 뜻이 안 통하면 잡아라. 이 항목은 문법 교정이 아니라 뜻 검사다.
 
 출력은 JSON 하나뿐. 설명·머리말·코드펜스 금지.
-{"findings":[{"severity":"ERROR"|"WARN","rule":"hook-cta"|"heading-answer"|"overclaim"|"keyfacts-fit"|"intent-coverage","where":"heroHook | q3 | keyFacts[4] 처럼 위치","quote":"문제가 된 문장 그대로","why":"무엇이 왜 어긋났는지 한 문장","fix":"어떻게 고칠지 한 문장"}]}
-근거가 확실한 것만 적는다. 트집을 잡으려고 억지로 채우지 않는다. 문제가 없으면 {"findings":[]}.`;
+{"findings":[{"severity":"ERROR"|"WARN","rule":"hook-cta"|"heading-answer"|"overclaim"|"keyfacts-fit"|"intent-coverage"|"self-contradiction"|"unnatural-korean","where":"heroHook | q3 | keyFacts[4] 처럼 위치","quote":"문제가 된 문장 그대로","why":"무엇이 왜 어긋났는지 한 문장","fix":"어떻게 고칠지 한 문장"}]}
+근거가 확실한 것만 적는다. 트집을 잡으려고 억지로 채우지 않는다. 문제가 없으면 {"findings":[]}.
+고쳐 쓴 문장을 돌려주지 마라. 어디가 왜 잘못됐는지만 적는다 — 수정은 사람이 확인한 뒤 따로 한다.`;
 
 function stripTags(s: unknown): string {
   return String(s || "")
