@@ -3,47 +3,126 @@
     "slug": "곰플레이어-무료-다운로드",
     "category": "software",
     "kicker": "SOFTWARE",
-    "trail": ["소프트웨어", "미디어 플레이어"],
-    "badges": ["무료 (개인)", "한국어", "공식 배포처 원본"],
+    "trail": [
+      "소프트웨어",
+      "미디어 플레이어"
+    ],
+    "badges": [
+      "무료 (개인)",
+      "한국어",
+      "공식 배포처 원본"
+    ],
     "titleTop": "곰플레이어 최신버전",
     "titleBottom": "무료 다운로드",
     "listTitle": "곰플레이어 최신버전 무료 다운로드",
     "listMeta": "개인 무료 · WIN/MAC/ANDROID · 32.1MB",
     "ctaPlatforms": "WINDOWS · MAC · ANDROID",
     "ctaLabel": "곰플레이어 설치 파일 받기",
-    "sourceNote": "SOURCE: GOMLAB.COM 공식 원본 · 설치 중 제휴 프로그램 해제 권장",
+    "sourceNote": "SOURCE: GOMLAB.COM 공식 다운로드 화면 · 설치 중 제휴 프로그램 해제 권장",
     "description": "곰플레이어 무료 설치 파일을 공식 배포처(gomlab.com) 원본으로 연결합니다. Windows·Mac·Android 파일과 설치 방법을 함께 정리했습니다.",
     "updatedAt": "2026-08-26",
     "specs": [
-      { "label": "FILE SIZE", "value": "32.1MB" },
-      { "label": "OS", "value": "WIN · MAC · ANDROID" },
-      { "label": "LANG", "value": "한국어" },
-      { "label": "LICENSE", "value": "개인 무료" },
-      { "label": "SOURCE", "value": "GOMLAB.COM" }
+      {
+        "label": "FILE SIZE",
+        "value": "32.1MB"
+      },
+      {
+        "label": "OS",
+        "value": "WIN · MAC · ANDROID"
+      },
+      {
+        "label": "LANG",
+        "value": "한국어"
+      },
+      {
+        "label": "LICENSE",
+        "value": "개인 무료"
+      },
+      {
+        "label": "SOURCE",
+        "value": "GOMLAB.COM"
+      }
     ],
     "howTitle": "설치 방법",
     "steps": [
-      { "title": "설치 파일 다운로드", "body": "위 버튼으로 공식 배포처 원본을 받습니다. Windows 설치 파일은 GOMPLAYERKORSETUP.EXE 하나로 32bit·64bit를 함께 담고 있습니다." },
-      { "title": "설치 마법사 실행", "body": "받은 파일을 실행하고 사용자 계약에 동의합니다. 브라우저가 경고를 띄우면 '유지'를 선택하세요." },
-      { "title": "제휴 프로그램 체크 해제", "body": "선택 설치 항목(툴바·검색 설정)은 모두 해제해도 재생 기능에 영향이 없습니다." },
-      { "title": "코덱 확인 후 재생", "body": "설치 후 코덱이 필요한 파일은 자동으로 안내됩니다. 자막은 영상과 같은 폴더에 같은 이름으로 두면 자동으로 불러옵니다." }
+      {
+        "title": "설치 파일 다운로드",
+        "body": "위 버튼을 누르면 곰랩 공식 다운로드 화면이 열립니다. 거기서 Windows 설치 파일을 받으세요. 하나로 32bit·64bit를 함께 담고 있습니다."
+      },
+      {
+        "title": "설치 마법사 실행",
+        "body": "받은 파일을 실행하고 사용자 계약에 동의합니다. 브라우저가 경고를 띄우면 '유지'를 선택하세요."
+      },
+      {
+        "title": "제휴 프로그램 체크 해제",
+        "body": "선택 설치 항목(툴바·검색 설정)은 모두 해제해도 재생 기능에 영향이 없습니다."
+      },
+      {
+        "title": "코덱 확인 후 재생",
+        "body": "설치 후 코덱이 필요한 파일은 자동으로 안내됩니다. 자막은 영상과 같은 폴더에 같은 이름으로 두면 자동으로 불러옵니다."
+      }
     ],
     "faqs": [
-      { "q": "영상은 열리는데 소리가 안 납니다.", "a": "환경설정 › 오디오에서 출력 장치를 기본 장치로 바꿔 보세요. DTS·AC3 오디오는 코덱을 따로 설치해야 소리가 납니다." },
-      { "q": "광고 없이 쓸 수 있나요?", "a": "무료판은 실행할 때 배너가 나옵니다. 배너 제거는 유료 라이선스 영역이며, 이 색인은 공식 무료판만 연결합니다." },
-      { "q": "Mac에서도 쓸 수 있나요?", "a": "gomplayer_mac.dmg 파일이 따로 있습니다. 아래 OTHER BUILDS에서 Mac 판을 고르세요." }
+      {
+        "q": "영상은 열리는데 소리가 안 납니다.",
+        "a": "환경설정 › 오디오에서 출력 장치를 기본 장치로 바꿔 보세요. DTS·AC3 오디오는 코덱을 따로 설치해야 소리가 납니다."
+      },
+      {
+        "q": "광고 없이 쓸 수 있나요?",
+        "a": "무료판은 실행할 때 배너가 나옵니다. 배너 제거는 유료 라이선스 영역이며, 이 색인은 공식 무료판만 연결합니다."
+      },
+      {
+        "q": "Mac에서도 쓸 수 있나요?",
+        "a": "gomplayer_mac.dmg 파일이 따로 있습니다. 아래 '공식 화면에 있는 파일'에서 Mac 판을 고르면 곰랩 공식 화면으로 갑니다."
+      }
     ],
-    "buildsTitle": "OTHER BUILDS",
+    "buildsTitle": "공식 화면에 있는 파일",
     "builds": [
-      { "name": "Windows 설치 파일", "note": "32 / 64bit 통합", "size": "32.1MB", "platform": "WINDOWS 11 / 10 · 32/64BIT", "url": "https://app.gomtv.com/gom/GOMPLAYERKORSETUP.EXE" },
-      { "name": "Mac 설치 파일", "note": "gomplayer_mac.dmg", "size": "21.7MB", "platform": "MACOS", "url": "https://cdn2.gomlab.com/gretech/playermac/gomplayer_mac.dmg" },
-      { "name": "Android 앱", "note": "Google Play", "size": "Play 스토어", "platform": "ANDROID", "url": "https://play.google.com/store/apps/details?id=com.gretech.gomplayerko" },
-      { "name": "전체 제품 목록", "note": "곰믹스·곰녹음기 등", "size": "공식 페이지", "platform": "GOMLAB", "url": "https://www.gomlab.com/download" }
+      {
+        "name": "Windows 설치 파일",
+        "note": "32 / 64bit 통합",
+        "size": "32.1MB",
+        "platform": "WINDOWS 11 / 10 · 32/64BIT",
+        "url": "https://www.gomlab.com/download",
+        "kind": "page"
+      },
+      {
+        "name": "Mac 설치 파일",
+        "note": "gomplayer_mac.dmg",
+        "size": "21.7MB",
+        "platform": "MACOS",
+        "url": "https://www.gomlab.com/download",
+        "kind": "page"
+      },
+      {
+        "name": "Android 앱",
+        "note": "Google Play",
+        "size": "Play 스토어",
+        "platform": "ANDROID",
+        "url": "https://play.google.com/store/apps/details?id=com.gretech.gomplayerko",
+        "kind": "page"
+      },
+      {
+        "name": "이전 버전",
+        "note": "저사양 PC",
+        "size": "공식 목록",
+        "platform": "WINDOWS · 구버전",
+        "url": "https://www.gomlab.com/download",
+        "kind": "page"
+      }
     ],
     "relatedTitle": "RELATED FILES",
     "related": [
-      { "tag": "SW", "name": "곰랩 전체 제품 다운로드", "href": "https://www.gomlab.com/download" },
-      { "tag": "GUIDE", "name": "곰플레이어 공식 제품 안내", "href": "https://www.gomlab.com/gomplayer-media-player/" }
+      {
+        "tag": "PAGE",
+        "name": "곰랩 공식 다운로드",
+        "href": "https://www.gomlab.com/download"
+      },
+      {
+        "tag": "PAGE",
+        "name": "곰플레이어 제품 안내",
+        "href": "https://www.gomlab.com/gomplayer-media-player/"
+      }
     ],
     "requestNote": "구버전이나 다른 언어판이 필요하면 요청 게시판에 남겨주세요. 공식 배포처에 있는 파일만 확인해 추가합니다."
   }

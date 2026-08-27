@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DownloadShell, Breadcrumb } from "@/components/download/Chrome";
-import { DownloadCta } from "@/components/download/DownloadCta";
 import { INK, LINE, LIME, MUTE, CARD, MONO } from "@/components/download/theme";
 import { ALL_ITEMS, getItem, gateHref, categoryLabel } from "@/data/download";
 
@@ -68,7 +67,26 @@ export default async function DownloadDetailPage({ params }: PageProps) {
           <span style={{ color: MUTE }}>{it.titleBottom}</span>
         </h1>
 
-        <DownloadCta platforms={it.ctaPlatforms} label={it.ctaLabel} href={gateHref(it, 0)} />
+        {/* 받기 버튼 — 누르면 곧바로 게이트로 간다.
+            전에는 여기서 전면 오버레이 광고를 띄웠는데 걷어냈다. 화면을 덮는 광고는
+            애드센스가 자기 자동광고(비네트)로만 허용한다. 직접 만든 오버레이는 정책 위반이고,
+            이 도메인에는 기존 글 수천 편이 같이 얹혀 있어서 제재를 맞으면 사이트 전체가 맞는다.
+            광고는 게이트 페이지 안의 일반 디스플레이 자리에서만 노출된다. */}
+        <Link
+          href={gateHref(it, 0)}
+          style={{
+            display: "block", width: "100%", maxWidth: 620, textDecoration: "none",
+            background: LIME, color: INK, padding: "24px 26px", marginTop: 34,
+          }}
+        >
+          <span style={{ display: "block", fontFamily: MONO, fontSize: 11, letterSpacing: "0.16em", opacity: 0.72 }}>
+            {it.ctaPlatforms}
+          </span>
+          <span style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, marginTop: 8 }}>
+            <span style={{ fontSize: 22, fontWeight: 800, letterSpacing: "-0.02em" }}>{it.ctaLabel}</span>
+            <span style={{ fontSize: 20 }}>↓</span>
+          </span>
+        </Link>
 
         <p style={{ marginTop: 16, fontFamily: MONO, fontSize: 11, letterSpacing: "0.08em", color: MUTE }}>
           {it.sourceNote}
