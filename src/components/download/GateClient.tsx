@@ -16,12 +16,10 @@ const AD_SLOT = "6190024232";
  */
 export function GateClient({ builds, sourceNote }: { builds: DownloadBuild[]; sourceNote: string }) {
   const [i, setI] = useState(0);
-  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const n = Number(new URLSearchParams(window.location.search).get("b"));
     if (Number.isInteger(n) && n >= 0 && n < builds.length) setI(n);
-    setReady(true);
     try {
       const w = window as unknown as { adsbygoogle: unknown[] };
       w.adsbygoogle = w.adsbygoogle || [];
@@ -66,6 +64,7 @@ export function GateClient({ builds, sourceNote }: { builds: DownloadBuild[]; so
         <a
           href={b.url}
           rel="nofollow noopener"
+          className="dl-btn-paper"
           style={{
             display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16,
             background: PAPER, color: INK, textDecoration: "none",
@@ -90,25 +89,33 @@ export function GateClient({ builds, sourceNote }: { builds: DownloadBuild[]; so
           </p>
         ) : null}
 
-        {/* 다른 파일이 있으면 여기서 갈아 끼운다 */}
-        {ready && builds.length > 1 ? (
+        {/* 다른 파일 — 누르면 그 파일이 있는 공식 화면으로 나간다.
+            전에는 화면 안에서 표시만 바꾸는 버튼이었다. 누른 사람 입장에서는
+            아무 일도 안 일어난 것처럼 보인다. 눌렀으면 가야 한다. */}
+        {builds.length > 1 ? (
           <div style={{ marginTop: 24, borderTop: `1px solid ${LINE}`, paddingTop: 18 }}>
             <div style={{ fontFamily: MONO, fontSize: 10, letterSpacing: "0.16em", color: MUTE }}>다른 파일</div>
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 12 }}>
               {builds.map((x, n) =>
                 n === i ? null : (
-                  <button
+                  <a
                     key={n}
-                    type="button"
-                    onClick={() => setI(n)}
-                    style={{ background: "transparent", color: PAPER, border: `1px solid ${LINE}`, padding: "10px 14px", fontSize: 13, cursor: "pointer" }}
+                    href={x.url}
+                    rel="nofollow noopener"
+                    className="dl-a"
+                    // color 를 인라인으로 박으면 호버 클래스가 못 이긴다. 바깥에서 물려받게 둔다.
+                    style={{ display: "inline-flex", alignItems: "center", gap: 8, border: `1px solid ${LINE}`, padding: "10px 14px", fontSize: 13 }}
                   >
-                    {x.name}
-                    <span style={{ fontFamily: MONO, fontSize: 11, color: MUTE, marginLeft: 8 }}>{x.size}</span>
-                  </button>
+                    <span>{x.name}</span>
+                    <span style={{ fontFamily: MONO, fontSize: 11, color: MUTE }}>{x.size}</span>
+                    <span style={{ fontSize: 12, color: MUTE }}>↗</span>
+                  </a>
                 )
               )}
             </div>
+            <p style={{ marginTop: 10, fontSize: 12, color: "#5A5A5E" }}>
+              누르면 그 파일이 있는 공식 화면으로 이동합니다.
+            </p>
           </div>
         ) : null}
 

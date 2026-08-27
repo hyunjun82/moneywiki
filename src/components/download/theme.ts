@@ -42,12 +42,22 @@ export const SHELL_CSS = `
   @keyframes dl-marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }
   .dl-marquee { animation: dl-marquee 38s linear infinite; }
   @media (prefers-reduced-motion: reduce) { .dl-marquee { animation: none } }
+  /* 마우스를 올리면 흰 글자가 형광색으로 바뀐다.
+     자식에 색을 따로 박아 둔 곳(회색 보조문구·라임 번호)은 그대로 두고,
+     색을 물려받는 흰 글자만 갈아 끼운다 — 그래야 위계가 안 무너진다. */
+  .dl-a { color: inherit; text-decoration: none; transition: color .14s ease; }
+  .dl-a:hover, .dl-a:focus-visible { color: ${LIME}; }
+  .dl-row { transition: background .14s ease; }
   .dl-row:hover { background: ${CARD}; }
+  .dl-row:hover .dl-a, .dl-row:hover .dl-get { color: ${LIME}; }
+  .dl-get { transition: color .14s ease; }
   .dl-get:hover { color: ${LIME}; }
   .dl-cat { transition: transform .18s ease; }
   .dl-cat:hover { transform: translateY(-4px); }
-  .dl-a { color: inherit; text-decoration: none; }
-  .dl-a:hover { color: ${LIME}; }
+  /* 흰 바탕 버튼(게이트의 받기 버튼)도 올리면 형광색이 된다.
+     바탕색을 인라인 style 로 박아 놨는데 인라인이 클래스를 이긴다. 그래서 !important 가 필요하다. */
+  .dl-btn-paper { transition: background .14s ease; }
+  .dl-btn-paper:hover, .dl-btn-paper:focus-visible { background: ${LIME} !important; }
 
   .dl-hero { display: grid; grid-template-columns: minmax(0,1fr) 380px; gap: 48px; align-items: start; }
   .dl-cats { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 2px; }

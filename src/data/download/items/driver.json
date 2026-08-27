@@ -1,5 +1,1003 @@
 [
   {
+    "slug": "캐논-프린터-드라이버-다운로드",
+    "category": "driver",
+    "kicker": "DRIVER",
+    "trail": [
+      "드라이버",
+      "프린터"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "모델별"
+    ],
+    "titleTop": "캐논 프린터",
+    "titleBottom": "드라이버 다운로드",
+    "listTitle": "캐논 프린터 드라이버 다운로드",
+    "listMeta": "무료 · 캐논 공식 · 모델별",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "캐논 드라이버 받으러 가기",
+    "sourceNote": "SOURCE: 캐논코리아 고객지원 다운로드 화면 · 모델명으로 골라 받습니다",
+    "description": "캐논 프린터 드라이버를 캐논코리아 공식 다운로드 화면으로 연결합니다. 모델명 찾는 곳과 설치 순서를 함께 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "캐논코리아"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "모델명부터 확인",
+        "body": "프린터 앞면이나 뒷면 스티커에 적힌 모델명을 그대로 봅니다. MG3090, G3910처럼 숫자까지 같아야 맞는 드라이버가 나옵니다."
+      },
+      {
+        "title": "공식 다운로드 화면 열기",
+        "body": "위 버튼을 누르면 캐논 고객지원 다운로드 화면이 열립니다. 제품 검색창에 모델명을 넣거나 제품 유형으로 찾아 들어갑니다."
+      },
+      {
+        "title": "운영체제 선택",
+        "body": "Windows 11·10 또는 macOS 중 쓰는 것을 고릅니다. 잘못 고르면 설치가 끝까지 가지 않습니다."
+      },
+      {
+        "title": "설치 후 테스트 출력",
+        "body": "프린터를 켜고 USB나 Wi-Fi로 연결한 뒤 설치합니다. 테스트 페이지가 나오면 정상입니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "모델명을 모르겠습니다.",
+        "a": "프린터 앞면 또는 뒷면 스티커를 보세요. 본체에 적힌 표기가 가장 정확합니다. 박스나 보증서에도 같은 이름이 있습니다."
+      },
+      {
+        "q": "복합기도 같은 곳에서 받나요?",
+        "a": "네. 캐논 다운로드 화면에서 복합기 모델명으로 찾으면 인쇄·스캔 드라이버가 함께 제공됩니다."
+      },
+      {
+        "q": "무선으로 연결하려면 어떻게 하나요?",
+        "a": "설치 도중 연결 방식을 고르는 단계에서 무선을 선택하고, 프린터 화면에서 같은 Wi-Fi를 지정하면 됩니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "캐논 공식 다운로드 화면",
+        "note": "모델명으로 검색",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://svc.kr.canon/solution/solutionList",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "SAME BRAND",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "캐논코리아 고객지원",
+        "href": "https://svc.kr.canon/solution/solutionList"
+      }
+    ],
+    "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
+  },
+  {
+    "slug": "삼성-프린터-드라이버-다운로드",
+    "category": "driver",
+    "kicker": "DRIVER",
+    "trail": [
+      "드라이버",
+      "프린터"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "모델별"
+    ],
+    "titleTop": "삼성 프린터",
+    "titleBottom": "드라이버 다운로드",
+    "listTitle": "삼성 프린터 드라이버 다운로드",
+    "listMeta": "무료 · 삼성 공식 · 모델별",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "삼성 드라이버 받으러 가기",
+    "sourceNote": "SOURCE: 삼성전자 다운로드 센터 · 모델명으로 골라 받습니다",
+    "description": "삼성 프린터 드라이버를 삼성전자 공식 다운로드 센터로 연결합니다. SL·SCX·ML 모델명 확인법과 설치 순서를 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "삼성전자"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "모델명부터 확인",
+        "body": "프린터 앞면 스티커의 표기를 그대로 봅니다. SL-M2020, SCX-3405처럼 앞자리와 숫자가 모두 같아야 합니다."
+      },
+      {
+        "title": "공식 다운로드 센터 열기",
+        "body": "위 버튼을 누르면 삼성전자 다운로드 센터가 열립니다. 검색창에 모델명을 넣으면 그 모델의 드라이버와 설명서가 나옵니다."
+      },
+      {
+        "title": "운영체제 선택",
+        "body": "Windows용과 macOS용이 따로 있습니다. ARM 노트북을 쓴다면 Windows on ARM 전용 드라이버를 골라야 합니다."
+      },
+      {
+        "title": "관리자 권한으로 설치",
+        "body": "프린터를 켜고 연결한 뒤 받은 파일을 관리자 권한으로 실행합니다. 테스트 페이지가 나오면 정상입니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "SL과 SCX는 뭐가 다른가요?",
+        "a": "제품 계열 표기입니다. 드라이버는 계열이 아니라 모델명 단위로 달라서, 스티커에 적힌 이름 그대로 검색해야 맞는 파일이 나옵니다."
+      },
+      {
+        "q": "구형 모델도 받을 수 있나요?",
+        "a": "다운로드 센터에 구형 모델의 드라이버가 그대로 남아 있는 경우가 많습니다. 모델명으로 검색해 보세요."
+      },
+      {
+        "q": "Windows 11에서 설치가 중단됩니다.",
+        "a": "구버전 드라이버가 남아 있으면 자주 그렇습니다. 설정 › 앱에서 기존 Samsung Printer 항목을 지우고 재부팅한 뒤 다시 설치해 보세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "삼성 다운로드 센터",
+        "note": "모델명으로 검색",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.samsung.com/sec/support/download-center/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "SAME BRAND",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "삼성전자 다운로드 센터",
+        "href": "https://www.samsung.com/sec/support/download-center/"
+      },
+      {
+        "tag": "MODEL",
+        "name": "SL-M2020 드라이버 (모델별 예시)",
+        "href": "https://www.samsung.com/sec/support/model/SL-M2020/"
+      }
+    ],
+    "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
+  },
+  {
+    "slug": "HP-프린터-드라이버-다운로드",
+    "category": "driver",
+    "kicker": "DRIVER",
+    "trail": [
+      "드라이버",
+      "프린터"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "모델별"
+    ],
+    "titleTop": "HP 프린터",
+    "titleBottom": "드라이버 다운로드",
+    "listTitle": "HP 프린터 드라이버 다운로드",
+    "listMeta": "무료 · HP 공식 · 모델별",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "HP 드라이버 받으러 가기",
+    "sourceNote": "SOURCE: HP 고객지원 드라이버 및 소프트웨어 화면 · 모델명으로 골라 받습니다",
+    "description": "HP 프린터 드라이버를 HP 공식 드라이버 화면으로 연결합니다. LaserJet·DeskJet·OfficeJet 모델명 확인법과 설치 순서를 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "HP"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "모델명부터 확인",
+        "body": "프린터 앞면이나 뒷면 스티커를 봅니다. LaserJet M15w, DeskJet 2320처럼 계열 이름과 숫자를 함께 적어야 정확합니다."
+      },
+      {
+        "title": "공식 드라이버 화면 열기",
+        "body": "위 버튼을 누르면 HP 드라이버 및 소프트웨어 화면이 열립니다. 제품명을 입력하거나 자동 인식을 쓰면 됩니다."
+      },
+      {
+        "title": "운영체제 선택",
+        "body": "Windows 11·10, macOS 중 쓰는 것을 고릅니다. HP는 전체 기능 드라이버와 기본 드라이버를 나눠 제공하는 경우가 있습니다."
+      },
+      {
+        "title": "설치 후 테스트 출력",
+        "body": "프린터를 켜고 연결한 뒤 설치합니다. 무선이면 프린터와 PC가 같은 Wi-Fi에 있어야 합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "전체 기능 드라이버와 기본 드라이버 중 뭘 받나요?",
+        "a": "스캔이나 팩스까지 쓰려면 전체 기능 드라이버를 받습니다. 인쇄만 하면 기본 드라이버로 충분하고 용량도 작습니다."
+      },
+      {
+        "q": "HP Smart 앱을 꼭 설치해야 하나요?",
+        "a": "아닙니다. 드라이버만으로 인쇄가 됩니다. 앱은 모바일 인쇄나 잉크 잔량 확인 같은 부가 기능용입니다."
+      },
+      {
+        "q": "삼성 프린터도 HP에서 받나요?",
+        "a": "삼성 모델은 삼성전자 다운로드 센터에서 모델명으로 찾는 것이 확실합니다. 이 색인의 삼성 프린터 항목에 주소를 넣어 두었습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "HP 공식 드라이버 화면",
+        "note": "모델명으로 검색",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://support.hp.com/kr-ko/drivers",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "SAME BRAND",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "HP 드라이버 및 소프트웨어",
+        "href": "https://support.hp.com/kr-ko/drivers"
+      }
+    ],
+    "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
+  },
+  {
+    "slug": "지포스-드라이버-다운로드",
+    "category": "driver",
+    "kicker": "DRIVER",
+    "trail": [
+      "드라이버",
+      "그래픽카드"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "GEFORCE"
+    ],
+    "titleTop": "지포스",
+    "titleBottom": "드라이버 다운로드",
+    "listTitle": "지포스(NVIDIA) 드라이버 다운로드",
+    "listMeta": "무료 · NVIDIA 공식 · GeForce",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "NVIDIA 드라이버 받으러 가기",
+    "sourceNote": "SOURCE: NVIDIA 공식 드라이버 다운로드 화면 · 그래픽카드 모델로 골라 받습니다",
+    "description": "지포스(GeForce) 그래픽카드 드라이버를 NVIDIA 공식 다운로드 화면으로 연결합니다. 내 그래픽카드 확인법과 설치 순서를 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "NVIDIA"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "내 그래픽카드 확인",
+        "body": "Windows 키 + R 을 누르고 dxdiag 를 실행하면 디스플레이 탭에 그래픽카드 이름이 나옵니다. RTX 4060, GTX 1660처럼 적혀 있습니다."
+      },
+      {
+        "title": "공식 다운로드 화면 열기",
+        "body": "위 버튼을 누르면 NVIDIA 드라이버 다운로드 화면이 열립니다. 제품 계열과 모델, 운영체제를 차례로 고릅니다."
+      },
+      {
+        "title": "드라이버 종류 선택",
+        "body": "게임용은 Game Ready, 영상·설계 작업 위주라면 Studio 드라이버를 고릅니다. 둘 다 무료입니다."
+      },
+      {
+        "title": "설치 후 재부팅",
+        "body": "설치 중 화면이 잠깐 깜빡이는 것은 정상입니다. 끝나면 재부팅해야 완전히 적용됩니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Game Ready와 Studio 중 뭘 받나요?",
+        "a": "게임을 주로 하면 Game Ready, 영상 편집이나 3D 작업이 많으면 Studio가 안정적입니다. 나중에 바꿔 설치해도 됩니다."
+      },
+      {
+        "q": "노트북 내장 그래픽도 여기서 받나요?",
+        "a": "지포스가 달린 노트북이면 여기서 받을 수 있습니다. 다만 제조사가 따로 손본 버전을 쓰는 모델은 노트북 제조사 지원 페이지가 더 맞습니다."
+      },
+      {
+        "q": "최신 버전으로 꼭 올려야 하나요?",
+        "a": "잘 돌아가고 있으면 서두를 필요는 없습니다. 새 게임이 안 돌거나 화면 문제가 있을 때 올리는 것이 보통입니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "NVIDIA 공식 드라이버 화면",
+        "note": "모델·OS 선택",
+        "size": "공식 화면",
+        "platform": "WINDOWS · LINUX",
+        "url": "https://www.nvidia.com/ko-kr/drivers/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "SAME BRAND",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "NVIDIA 드라이버 다운로드",
+        "href": "https://www.nvidia.com/ko-kr/drivers/"
+      }
+    ],
+    "requestNote": "찾는 모델이 안 보이면 요청 게시판에 그래픽카드 이름을 남겨주세요."
+  },
+  {
+    "slug": "AMD-그래픽카드-드라이버-다운로드",
+    "category": "driver",
+    "kicker": "DRIVER",
+    "trail": [
+      "드라이버",
+      "그래픽카드"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "RADEON"
+    ],
+    "titleTop": "AMD 그래픽카드",
+    "titleBottom": "드라이버 다운로드",
+    "listTitle": "AMD 그래픽카드 드라이버 다운로드",
+    "listMeta": "무료 · AMD 공식 · Radeon",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "AMD 드라이버 받으러 가기",
+    "sourceNote": "SOURCE: AMD 공식 드라이버 및 지원 화면 · 제품을 골라 받습니다",
+    "description": "AMD 라데온(Radeon) 그래픽카드와 라이젠 내장 그래픽 드라이버를 AMD 공식 다운로드 화면으로 연결합니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "AMD"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "내 그래픽카드 확인",
+        "body": "Windows 키 + R 을 누르고 dxdiag 를 실행하면 디스플레이 탭에 이름이 나옵니다. Radeon RX 6600, Radeon Graphics처럼 적혀 있습니다."
+      },
+      {
+        "title": "공식 다운로드 화면 열기",
+        "body": "위 버튼을 누르면 AMD 드라이버 및 지원 화면이 열립니다. 제품을 직접 고르거나 자동 감지 도구를 쓸 수 있습니다."
+      },
+      {
+        "title": "운영체제 선택",
+        "body": "Windows 11·10 중 쓰는 것을 고릅니다. 라이젠 노트북 내장 그래픽은 제품 목록에서 프로세서 쪽을 봐야 합니다."
+      },
+      {
+        "title": "설치 후 재부팅",
+        "body": "설치 중 화면이 깜빡이는 것은 정상입니다. 끝나면 재부팅해야 적용됩니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "라이젠 CPU 내장 그래픽도 여기서 받나요?",
+        "a": "네. 다만 그래픽카드 목록이 아니라 프로세서 목록에서 해당 모델을 골라야 합니다."
+      },
+      {
+        "q": "자동 감지 도구를 써도 되나요?",
+        "a": "AMD가 직접 제공하는 도구라 안전합니다. 모델을 잘 모를 때 편합니다."
+      },
+      {
+        "q": "노트북인데 제조사 드라이버와 뭐가 다른가요?",
+        "a": "노트북은 제조사가 전원 관리에 맞춰 손본 버전을 쓰는 경우가 있습니다. 화면 문제가 생기면 제조사 지원 페이지 버전을 먼저 써 보세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "AMD 공식 드라이버 화면",
+        "note": "제품 선택 또는 자동 감지",
+        "size": "공식 화면",
+        "platform": "WINDOWS · LINUX",
+        "url": "https://www.amd.com/ko/support/download/drivers.html",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "SAME BRAND",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "AMD 드라이버 및 지원",
+        "href": "https://www.amd.com/ko/support/download/drivers.html"
+      }
+    ],
+    "requestNote": "찾는 모델이 안 보이면 요청 게시판에 그래픽카드 이름을 남겨주세요."
+  },
+  {
+    "slug": "그래픽카드-드라이버-다운로드",
+    "category": "driver",
+    "kicker": "DRIVER",
+    "trail": [
+      "드라이버",
+      "그래픽카드"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "NVIDIA · AMD · INTEL"
+    ],
+    "titleTop": "그래픽카드",
+    "titleBottom": "드라이버 다운로드",
+    "listTitle": "그래픽카드 드라이버 다운로드",
+    "listMeta": "무료 · NVIDIA / AMD / 인텔 공식",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "내 그래픽카드 드라이버 받으러 가기",
+    "sourceNote": "SOURCE: NVIDIA · AMD · 인텔 공식 다운로드 화면",
+    "description": "그래픽카드 드라이버를 제조사 공식 화면으로 연결합니다. 내 그래픽카드가 무엇인지 확인하는 방법부터 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제조사 공식"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "내 그래픽카드부터 확인",
+        "body": "Windows 키 + R 을 누르고 dxdiag 를 실행합니다. 디스플레이 탭의 이름이 NVIDIA면 지포스, Radeon이면 AMD, Intel이면 인텔입니다."
+      },
+      {
+        "title": "제조사 화면 열기",
+        "body": "확인한 제조사의 공식 다운로드 화면을 엽니다. 아래 목록에서 고르면 됩니다."
+      },
+      {
+        "title": "모델과 운영체제 선택",
+        "body": "dxdiag에서 본 이름 그대로 고릅니다. 숫자가 한 자리만 달라도 다른 드라이버입니다."
+      },
+      {
+        "title": "설치 후 재부팅",
+        "body": "설치가 끝나면 재부팅해야 완전히 적용됩니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "그래픽카드가 두 개로 보입니다.",
+        "a": "노트북에서 흔합니다. CPU 내장 그래픽과 외장 그래픽이 함께 있는 것으로, 둘 다 드라이버가 필요합니다."
+      },
+      {
+        "q": "윈도우 업데이트로 자동 설치되지 않나요?",
+        "a": "기본 동작에 필요한 수준까지는 자동으로 잡힙니다. 게임 성능이나 최신 기능을 쓰려면 제조사 드라이버를 따로 받는 편이 낫습니다."
+      },
+      {
+        "q": "제조사를 모르겠습니다.",
+        "a": "dxdiag 화면의 이름을 보면 됩니다. GeForce·RTX·GTX면 NVIDIA, Radeon·RX면 AMD, Intel Iris·UHD면 인텔입니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "NVIDIA (지포스·RTX·GTX)",
+        "note": "GeForce 계열",
+        "size": "공식 화면",
+        "platform": "NVIDIA",
+        "url": "https://www.nvidia.com/ko-kr/drivers/",
+        "kind": "page"
+      },
+      {
+        "name": "AMD (라데온·RX)",
+        "note": "Radeon 계열",
+        "size": "공식 화면",
+        "platform": "AMD",
+        "url": "https://www.amd.com/ko/support/download/drivers.html",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "NVIDIA 드라이버 다운로드",
+        "href": "https://www.nvidia.com/ko-kr/drivers/"
+      },
+      {
+        "tag": "PAGE",
+        "name": "AMD 드라이버 및 지원",
+        "href": "https://www.amd.com/ko/support/download/drivers.html"
+      }
+    ],
+    "requestNote": "쓰는 그래픽카드가 목록에 없으면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "리얼텍-드라이버-다운로드",
+    "category": "driver",
+    "kicker": "DRIVER",
+    "trail": [
+      "드라이버",
+      "사운드·메인보드"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "AUDIO · LAN"
+    ],
+    "titleTop": "리얼텍",
+    "titleBottom": "드라이버 다운로드",
+    "listTitle": "리얼텍 사운드 드라이버 다운로드",
+    "listMeta": "무료 · Realtek 공식 · 사운드/랜",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "리얼텍 드라이버 받으러 가기",
+    "sourceNote": "SOURCE: Realtek 공식 다운로드 화면 · 메인보드 제조사 배포본이 더 맞을 수 있습니다",
+    "description": "리얼텍 사운드·랜 드라이버를 Realtek 공식 다운로드 화면으로 연결합니다. 메인보드 제조사 배포본과 어느 쪽을 받아야 하는지도 함께 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Realtek"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "메인보드 제조사부터 확인",
+        "body": "리얼텍 칩은 메인보드에 들어갑니다. 그래서 ASUS·MSI·기가바이트 같은 메인보드 제조사가 그 보드에 맞춰 배포한 버전이 가장 잘 맞습니다."
+      },
+      {
+        "title": "제조사 배포본이 없으면 Realtek 공식",
+        "body": "위 버튼을 누르면 Realtek 공식 다운로드 화면이 열립니다. 사운드는 오디오 코덱, 인터넷은 이더넷 항목에서 찾습니다."
+      },
+      {
+        "title": "운영체제 선택",
+        "body": "Windows 11·10 중 쓰는 것을 고릅니다."
+      },
+      {
+        "title": "설치 후 재부팅",
+        "body": "설치가 끝나면 재부팅해야 소리 장치가 새로 잡힙니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "제조사 것과 Realtek 것 중 뭘 받나요?",
+        "a": "메인보드 제조사 배포본이 우선입니다. 그 보드에 맞춰 조정된 버전이라서요. 제조사 페이지에 없을 때 Realtek 공식을 씁니다."
+      },
+      {
+        "q": "사운드용과 랜용이 다른가요?",
+        "a": "다릅니다. 소리 문제면 오디오 코덱, 인터넷이 안 잡히면 이더넷 드라이버입니다."
+      },
+      {
+        "q": "메인보드 모델명은 어디서 보나요?",
+        "a": "Windows 키 + R 에서 msinfo32 를 실행하면 시스템 요약에 베이스보드 제조업체와 제품이 나옵니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Realtek 공식 다운로드 화면",
+        "note": "오디오 · 이더넷",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.realtek.com/Download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Realtek 다운로드",
+        "href": "https://www.realtek.com/Download"
+      }
+    ],
+    "requestNote": "메인보드 모델명을 남겨주시면 제조사 배포본 주소를 찾아 추가합니다."
+  },
+  {
+    "slug": "삼성-노트북-드라이버-다운로드",
+    "category": "driver",
+    "kicker": "DRIVER",
+    "trail": [
+      "드라이버",
+      "노트북"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "모델별"
+    ],
+    "titleTop": "삼성 노트북",
+    "titleBottom": "드라이버 다운로드",
+    "listTitle": "삼성 노트북 드라이버 다운로드",
+    "listMeta": "무료 · 삼성 공식 · 모델별",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "삼성 노트북 드라이버 받으러 가기",
+    "sourceNote": "SOURCE: 삼성전자 다운로드 센터 · 모델명으로 골라 받습니다",
+    "description": "삼성 노트북 드라이버를 삼성전자 공식 다운로드 센터로 연결합니다. 모델명 확인법과 설치 순서를 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "삼성전자"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "모델명부터 확인",
+        "body": "노트북 바닥면 스티커에 NT750XDA 같은 표기가 있습니다. 앞의 NT까지 포함해 그대로 적어야 정확합니다."
+      },
+      {
+        "title": "공식 다운로드 센터 열기",
+        "body": "위 버튼을 누르면 삼성전자 다운로드 센터가 열립니다. 검색창에 모델명을 넣으면 그 모델의 드라이버가 나옵니다."
+      },
+      {
+        "title": "필요한 항목만 고르기",
+        "body": "그래픽·사운드·랜·터치패드가 따로 있습니다. 문제가 있는 것만 골라 받아도 됩니다."
+      },
+      {
+        "title": "설치 후 재부팅",
+        "body": "여러 개를 설치했다면 마지막에 한 번 재부팅합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "삼성 업데이트 앱으로도 되나요?",
+        "a": "삼성 노트북에 기본으로 들어 있는 업데이트 도구를 쓰면 필요한 드라이버를 한 번에 확인할 수 있습니다. 앱이 지워졌다면 다운로드 센터에서 다시 받으면 됩니다."
+      },
+      {
+        "q": "모델명이 스티커에서 지워졌습니다.",
+        "a": "Windows 키 + R 에서 msinfo32 를 실행하면 시스템 모델 항목에 표기가 나옵니다."
+      },
+      {
+        "q": "포맷 후 무엇부터 설치하나요?",
+        "a": "칩셋을 먼저 설치하고 그다음 그래픽·사운드·랜 순서로 하면 충돌이 적습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "삼성 다운로드 센터",
+        "note": "모델명으로 검색",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.samsung.com/sec/support/download-center/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "SAME BRAND",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "삼성전자 다운로드 센터",
+        "href": "https://www.samsung.com/sec/support/download-center/"
+      }
+    ],
+    "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
+  },
+  {
+    "slug": "LG-노트북-드라이버-다운로드",
+    "category": "driver",
+    "kicker": "DRIVER",
+    "trail": [
+      "드라이버",
+      "노트북"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "그램 포함"
+    ],
+    "titleTop": "LG 노트북",
+    "titleBottom": "드라이버 다운로드",
+    "listTitle": "LG 노트북 드라이버 다운로드",
+    "listMeta": "무료 · LG 공식 · 그램 포함",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "LG 노트북 드라이버 받으러 가기",
+    "sourceNote": "SOURCE: LG전자 고객지원 매뉴얼·소프트웨어 다운로드 화면",
+    "description": "LG 노트북(그램 포함) 드라이버를 LG전자 공식 고객지원 화면으로 연결합니다. 모델명 확인법과 설치 순서를 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "LG전자"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "모델명부터 확인",
+        "body": "노트북 바닥면 스티커에 16Z90R 같은 표기가 있습니다. 화면 크기 숫자까지 포함해 그대로 적습니다."
+      },
+      {
+        "title": "공식 지원 화면 열기",
+        "body": "위 버튼을 누르면 LG전자 고객지원 화면이 열립니다. 매뉴얼·소프트웨어 다운로드에서 모델명으로 찾습니다."
+      },
+      {
+        "title": "필요한 항목 선택",
+        "body": "드라이버와 함께 LG에서 제공하는 관리 프로그램도 같은 화면에 있습니다."
+      },
+      {
+        "title": "설치 후 재부팅",
+        "body": "여러 개를 설치했다면 마지막에 한 번 재부팅합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "그램도 여기서 받나요?",
+        "a": "네. 그램은 LG 노트북 계열이라 같은 고객지원 화면에서 모델명으로 찾습니다."
+      },
+      {
+        "q": "모델명이 안 보입니다.",
+        "a": "Windows 키 + R 에서 msinfo32 를 실행하면 시스템 모델에 표기가 나옵니다."
+      },
+      {
+        "q": "LG Update 프로그램은 뭔가요?",
+        "a": "LG가 제공하는 업데이트 도구로, 필요한 드라이버를 한 번에 확인해 줍니다. 같은 지원 화면에서 받을 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "LG전자 고객지원",
+        "note": "매뉴얼·소프트웨어 다운로드",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.lge.co.kr/support",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "SAME BRAND",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "LG전자 고객지원",
+        "href": "https://www.lge.co.kr/support"
+      }
+    ],
+    "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
+  },
+  {
+    "slug": "신도리코-드라이버-다운로드",
+    "category": "driver",
+    "kicker": "DRIVER",
+    "trail": [
+      "드라이버",
+      "프린터"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "모델별"
+    ],
+    "titleTop": "신도리코",
+    "titleBottom": "드라이버 다운로드",
+    "listTitle": "신도리코 프린터 드라이버 다운로드",
+    "listMeta": "무료 · 신도리코 공식 · 모델별",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "신도리코 드라이버 받으러 가기",
+    "sourceNote": "SOURCE: 신도리코 공식 다운로드 화면 · 모델명으로 골라 받습니다",
+    "description": "신도리코 프린터·복합기 드라이버를 신도리코 공식 다운로드 화면으로 연결합니다. 모델명 확인법과 설치 순서를 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "신도리코"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "모델명부터 확인",
+        "body": "프린터 앞면 표기를 그대로 봅니다. D202, N612처럼 앞자리와 숫자가 모두 같아야 합니다."
+      },
+      {
+        "title": "공식 다운로드 화면 열기",
+        "body": "위 버튼을 누르면 신도리코 다운로드 화면이 열립니다. 제품 분류나 모델명으로 찾아 들어갑니다."
+      },
+      {
+        "title": "운영체제 선택",
+        "body": "Windows 11·10 또는 macOS 중 쓰는 것을 고릅니다."
+      },
+      {
+        "title": "설치 후 테스트 출력",
+        "body": "프린터를 켜고 연결한 뒤 설치합니다. 테스트 페이지가 나오면 정상입니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "복합기도 같은 곳에서 받나요?",
+        "a": "네. 다운로드 화면에서 복합기 모델명으로 찾으면 인쇄·스캔 드라이버를 함께 받을 수 있습니다."
+      },
+      {
+        "q": "사무실에서 네트워크로 쓰려면요?",
+        "a": "설치 중 연결 방식에서 네트워크를 고르고, 프린터에 배정된 IP 주소를 입력하면 됩니다. IP는 프린터 화면에서 확인할 수 있습니다."
+      },
+      {
+        "q": "모델명을 모르겠습니다.",
+        "a": "프린터 앞면이나 상단 표기를 보세요. 본체에 적힌 이름이 가장 정확합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "신도리코 공식 다운로드",
+        "note": "모델명으로 검색",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.sindoh.com/support/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "SAME BRAND",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "신도리코 다운로드",
+        "href": "https://www.sindoh.com/support/download"
+      }
+    ],
+    "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
+  },
+  {
     "slug": "삼성-SL-M2020-드라이버",
     "category": "driver",
     "kicker": "DRIVER",
