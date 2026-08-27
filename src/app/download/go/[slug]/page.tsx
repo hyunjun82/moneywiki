@@ -44,7 +44,7 @@ export default async function DownloadGatePage({ params }: PageProps) {
           </Link>
         </div>
 
-        <GateClient builds={it.builds} sourceNote={it.sourceNote} />
+        <GateClient builds={it.builds} sourceNote={it.sourceNote} label={it.ctaLabel} />
       </section>
 
       {also.length > 0 ? (

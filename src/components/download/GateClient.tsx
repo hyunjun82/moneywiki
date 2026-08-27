@@ -14,7 +14,16 @@ const AD_SLOT = "6190024232";
  * 항목 하나가 페이지 네 장이 되어 빌드가 못 버틴다. 그래서 페이지는 항목당 한 장이고
  * 파일 선택만 브라우저에서 읽는다.
  */
-export function GateClient({ builds, sourceNote }: { builds: DownloadBuild[]; sourceNote: string }) {
+export function GateClient({
+  builds,
+  sourceNote,
+  label,
+}: {
+  builds: DownloadBuild[];
+  sourceNote: string;
+  /** 버튼 문구 — 검색어 그대로 쓴다("크롬 다운로드"). 어디로 가는지는 아래 한 줄이 알려 준다. */
+  label: string;
+}) {
   const [i, setI] = useState(0);
 
   useEffect(() => {
@@ -71,9 +80,7 @@ export function GateClient({ builds, sourceNote }: { builds: DownloadBuild[]; so
             padding: "24px 26px", marginTop: 40,
           }}
         >
-          <span style={{ fontSize: 22, fontWeight: 800, letterSpacing: "-0.02em" }}>
-            {isFile ? "다운로드 시작" : "공식 다운로드 화면 열기"}
-          </span>
+          <span style={{ fontSize: 22, fontWeight: 800, letterSpacing: "-0.02em" }}>{label}</span>
           <span style={{ fontFamily: MONO, fontSize: 13 }}>{isFile ? `${b.size} ↓` : "→"}</span>
         </a>
 
