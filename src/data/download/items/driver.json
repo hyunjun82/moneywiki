@@ -1,5 +1,201 @@
 [
   {
+    "slug": "레노버-노트북-드라이버-다운로드",
+    "category": "driver",
+    "kicker": "DRIVER",
+    "trail": [
+      "드라이버",
+      "노트북"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "모델별"
+    ],
+    "titleTop": "레노버 노트북",
+    "titleBottom": "드라이버 다운로드",
+    "listTitle": "레노버 노트북 드라이버 다운로드",
+    "listMeta": "무료 · 레노버 공식 · 씽크패드 포함",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "레노버 드라이버 받으러 가기",
+    "sourceNote": "SOURCE: Lenovo Support KR 드라이버 및 소프트웨어 화면",
+    "description": "레노버 노트북(씽크패드·아이디어패드 포함) 드라이버를 레노버 공식 지원 화면으로 연결합니다. 모델명과 일련번호 확인법을 함께 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "레노버"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "모델명 또는 일련번호 확인",
+        "body": "노트북 바닥면 스티커에 모델명과 S/N(일련번호)이 함께 적혀 있습니다. 레노버는 일련번호로 찾는 쪽이 훨씬 정확합니다."
+      },
+      {
+        "title": "공식 지원 화면 열기",
+        "body": "위 버튼을 누르면 레노버 드라이버 및 소프트웨어 화면이 열립니다. 일련번호를 넣거나 제품 계열에서 골라 들어갑니다."
+      },
+      {
+        "title": "운영체제와 항목 선택",
+        "body": "Windows 버전을 고르면 그 모델에 맞는 드라이버 목록이 나옵니다. 문제가 있는 항목만 골라 받아도 됩니다."
+      },
+      {
+        "title": "설치 후 재부팅",
+        "body": "여러 개를 설치했다면 마지막에 한 번 재부팅합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "일련번호는 어디서 보나요?",
+        "a": "노트북 바닥면 스티커의 S/N 항목입니다. 스티커가 지워졌다면 Windows 키 + R 에서 msinfo32 를 실행해 시스템 모델을 확인하세요."
+      },
+      {
+        "q": "씽크패드도 같은 곳에서 받나요?",
+        "a": "네. 씽크패드·아이디어패드·리전 모두 같은 지원 화면에서 모델이나 일련번호로 찾습니다."
+      },
+      {
+        "q": "Lenovo Vantage 앱으로도 되나요?",
+        "a": "레노버가 제공하는 관리 도구로, 필요한 드라이버를 한 번에 확인해 줍니다. 앱이 없다면 지원 화면에서 직접 받으면 됩니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "레노버 드라이버 및 소프트웨어",
+        "note": "일련번호 또는 모델로 검색",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://pcsupport.lenovo.com/kr/ko/selectproduct?linkto=downloads",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "SAME BRAND",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Lenovo Support KR",
+        "href": "https://pcsupport.lenovo.com/kr/ko"
+      }
+    ],
+    "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명이나 일련번호를 남겨주세요."
+  },
+  {
+    "slug": "MSI-메인보드-드라이버-다운로드",
+    "category": "driver",
+    "kicker": "DRIVER",
+    "trail": [
+      "드라이버",
+      "메인보드"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "모델별"
+    ],
+    "titleTop": "MSI 메인보드",
+    "titleBottom": "드라이버 다운로드",
+    "listTitle": "MSI 메인보드 드라이버 다운로드",
+    "listMeta": "무료 · MSI 공식 · 메인보드",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "MSI 드라이버 받으러 가기",
+    "sourceNote": "SOURCE: MSI 코리아 메인보드 다운로드 화면",
+    "description": "MSI 메인보드 드라이버를 MSI 코리아 공식 다운로드 화면으로 연결합니다. 메인보드 모델명 확인법과 설치 순서를 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "MSI"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "메인보드 모델명 확인",
+        "body": "Windows 키 + R 에서 msinfo32 를 실행하면 시스템 요약의 베이스보드 제품 항목에 모델명이 나옵니다. B550M PRO-VDH 처럼 적혀 있습니다."
+      },
+      {
+        "title": "공식 다운로드 화면 열기",
+        "body": "위 버튼을 누르면 MSI 메인보드 다운로드 화면이 열립니다. 검색창에 모델명을 넣어 그 보드의 페이지로 들어갑니다."
+      },
+      {
+        "title": "드라이버 탭에서 필요한 항목 선택",
+        "body": "칩셋·랜·사운드가 따로 있습니다. 포맷 직후라면 칩셋을 가장 먼저 설치합니다."
+      },
+      {
+        "title": "설치 후 재부팅",
+        "body": "여러 개를 설치했다면 마지막에 한 번 재부팅합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "메인보드 모델명을 모르겠습니다.",
+        "a": "Windows 키 + R 에서 msinfo32 를 실행하고 시스템 요약의 베이스보드 제품 항목을 보세요. 본체를 열어 보드 위 인쇄를 직접 확인해도 됩니다."
+      },
+      {
+        "q": "리얼텍 사운드도 여기서 받나요?",
+        "a": "네. 메인보드 제조사가 그 보드에 맞춰 배포한 버전이라 Realtek 공식본보다 잘 맞는 경우가 많습니다."
+      },
+      {
+        "q": "무엇부터 설치해야 하나요?",
+        "a": "칩셋을 먼저 설치하고 그다음 랜·사운드 순서로 하면 충돌이 적습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "MSI 메인보드 다운로드",
+        "note": "모델명으로 검색",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://kr.msi.com/support/download/mb",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "MSI 메인보드 다운로드",
+        "href": "https://kr.msi.com/support/download/mb"
+      }
+    ],
+    "requestNote": "찾는 보드가 안 보이면 요청 게시판에 모델명을 남겨주세요."
+  },
+  {
     "slug": "캐논-프린터-드라이버-다운로드",
     "category": "driver",
     "kicker": "DRIVER",
@@ -606,104 +802,6 @@
     "requestNote": "쓰는 그래픽카드가 목록에 없으면 요청 게시판에 이름을 남겨주세요."
   },
   {
-    "slug": "리얼텍-드라이버-다운로드",
-    "category": "driver",
-    "kicker": "DRIVER",
-    "trail": [
-      "드라이버",
-      "사운드·메인보드"
-    ],
-    "badges": [
-      "공식 배포처",
-      "무료",
-      "AUDIO · LAN"
-    ],
-    "titleTop": "리얼텍",
-    "titleBottom": "드라이버 다운로드",
-    "listTitle": "리얼텍 사운드 드라이버 다운로드",
-    "listMeta": "무료 · Realtek 공식 · 사운드/랜",
-    "ctaPlatforms": "WINDOWS",
-    "ctaLabel": "리얼텍 드라이버 받으러 가기",
-    "sourceNote": "SOURCE: Realtek 공식 다운로드 화면 · 메인보드 제조사 배포본이 더 맞을 수 있습니다",
-    "description": "리얼텍 사운드·랜 드라이버를 Realtek 공식 다운로드 화면으로 연결합니다. 메인보드 제조사 배포본과 어느 쪽을 받아야 하는지도 함께 정리했습니다.",
-    "updatedAt": "2026-08-27",
-    "specs": [
-      {
-        "label": "요금",
-        "value": "무료"
-      },
-      {
-        "label": "OS",
-        "value": "WINDOWS"
-      },
-      {
-        "label": "언어",
-        "value": "한국어"
-      },
-      {
-        "label": "배포처",
-        "value": "Realtek"
-      },
-      {
-        "label": "확인일",
-        "value": "2026.08.27"
-      }
-    ],
-    "howTitle": "설치 방법",
-    "steps": [
-      {
-        "title": "메인보드 제조사부터 확인",
-        "body": "리얼텍 칩은 메인보드에 들어갑니다. 그래서 ASUS·MSI·기가바이트 같은 메인보드 제조사가 그 보드에 맞춰 배포한 버전이 가장 잘 맞습니다."
-      },
-      {
-        "title": "제조사 배포본이 없으면 Realtek 공식",
-        "body": "위 버튼을 누르면 Realtek 공식 다운로드 화면이 열립니다. 사운드는 오디오 코덱, 인터넷은 이더넷 항목에서 찾습니다."
-      },
-      {
-        "title": "운영체제 선택",
-        "body": "Windows 11·10 중 쓰는 것을 고릅니다."
-      },
-      {
-        "title": "설치 후 재부팅",
-        "body": "설치가 끝나면 재부팅해야 소리 장치가 새로 잡힙니다."
-      }
-    ],
-    "faqs": [
-      {
-        "q": "제조사 것과 Realtek 것 중 뭘 받나요?",
-        "a": "메인보드 제조사 배포본이 우선입니다. 그 보드에 맞춰 조정된 버전이라서요. 제조사 페이지에 없을 때 Realtek 공식을 씁니다."
-      },
-      {
-        "q": "사운드용과 랜용이 다른가요?",
-        "a": "다릅니다. 소리 문제면 오디오 코덱, 인터넷이 안 잡히면 이더넷 드라이버입니다."
-      },
-      {
-        "q": "메인보드 모델명은 어디서 보나요?",
-        "a": "Windows 키 + R 에서 msinfo32 를 실행하면 시스템 요약에 베이스보드 제조업체와 제품이 나옵니다."
-      }
-    ],
-    "buildsTitle": "공식 화면에 있는 파일",
-    "builds": [
-      {
-        "name": "Realtek 공식 다운로드 화면",
-        "note": "오디오 · 이더넷",
-        "size": "공식 화면",
-        "platform": "WINDOWS",
-        "url": "https://www.realtek.com/Download",
-        "kind": "page"
-      }
-    ],
-    "relatedTitle": "RELATED",
-    "related": [
-      {
-        "tag": "PAGE",
-        "name": "Realtek 다운로드",
-        "href": "https://www.realtek.com/Download"
-      }
-    ],
-    "requestNote": "메인보드 모델명을 남겨주시면 제조사 배포본 주소를 찾아 추가합니다."
-  },
-  {
     "slug": "삼성-노트북-드라이버-다운로드",
     "category": "driver",
     "kicker": "DRIVER",
@@ -820,7 +918,7 @@
     "listMeta": "무료 · LG 공식 · 그램 포함",
     "ctaPlatforms": "WINDOWS",
     "ctaLabel": "LG 노트북 드라이버 받으러 가기",
-    "sourceNote": "SOURCE: LG전자 고객지원 매뉴얼·소프트웨어 다운로드 화면",
+    "sourceNote": "SOURCE: LG전자 매뉴얼·소프트웨어 다운로드 화면",
     "description": "LG 노트북(그램 포함) 드라이버를 LG전자 공식 고객지원 화면으로 연결합니다. 모델명 확인법과 설치 순서를 정리했습니다.",
     "updatedAt": "2026-08-27",
     "specs": [
@@ -852,8 +950,8 @@
         "body": "노트북 바닥면 스티커에 16Z90R 같은 표기가 있습니다. 화면 크기 숫자까지 포함해 그대로 적습니다."
       },
       {
-        "title": "공식 지원 화면 열기",
-        "body": "위 버튼을 누르면 LG전자 고객지원 화면이 열립니다. 매뉴얼·소프트웨어 다운로드에서 모델명으로 찾습니다."
+        "title": "공식 다운로드 화면 열기",
+        "body": "위 버튼을 누르면 LG전자 매뉴얼·소프트웨어 다운로드 화면이 열립니다. 모델명을 넣으면 그 모델의 드라이버와 매뉴얼이 나옵니다."
       },
       {
         "title": "필요한 항목 선택",
@@ -885,7 +983,7 @@
         "note": "매뉴얼·소프트웨어 다운로드",
         "size": "공식 화면",
         "platform": "WINDOWS",
-        "url": "https://www.lge.co.kr/support",
+        "url": "https://www.lge.co.kr/support/product-manuals",
         "kind": "page"
       }
     ],
@@ -893,8 +991,8 @@
     "related": [
       {
         "tag": "PAGE",
-        "name": "LG전자 고객지원",
-        "href": "https://www.lge.co.kr/support"
+        "name": "LG전자 매뉴얼/소프트웨어 다운로드",
+        "href": "https://www.lge.co.kr/support/product-manuals"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."

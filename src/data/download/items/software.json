@@ -125,5 +125,3965 @@
       }
     ],
     "requestNote": "구버전이나 다른 언어판이 필요하면 요청 게시판에 남겨주세요. 공식 배포처에 있는 파일만 확인해 추가합니다."
+  },
+  {
+    "slug": "크롬-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "웹 브라우저"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "크롬",
+    "titleBottom": "다운로드",
+    "listTitle": "크롬 다운로드",
+    "listMeta": "무료 · 구글 · WIN/MAC/리눅스",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "크롬 받으러 가기",
+    "sourceNote": "SOURCE: 구글 크롬 공식 다운로드 화면",
+    "description": "구글 크롬을 공식 다운로드 화면으로 연결합니다. 온라인 설치와 오프라인 설치 파일의 차이, 32bit·64bit 고르는 법을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "구글"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 구글 크롬 공식 화면이 열립니다. 접속한 기기에 맞는 파일이 자동으로 안내됩니다."
+      },
+      {
+        "title": "온라인 설치 파일 받기",
+        "body": "기본으로 받는 파일은 1MB 남짓한 설치 관리자입니다. 실행하면 그때 본체를 내려받습니다."
+      },
+      {
+        "title": "인터넷이 불안하면 오프라인 설치",
+        "body": "설치 도중 끊기는 환경이라면 오프라인(독립 실행형) 설치 파일을 쓰는 편이 낫습니다. 공식 화면의 '다른 플랫폼용' 항목에서 고를 수 있습니다."
+      },
+      {
+        "title": "기존 브라우저에서 가져오기",
+        "body": "처음 실행할 때 즐겨찾기와 저장된 비밀번호를 기존 브라우저에서 가져올지 물어봅니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "32bit와 64bit 중 뭘 받나요?",
+        "a": "요즘 PC는 대부분 64bit입니다. 설정 › 시스템 › 정보에서 시스템 종류를 확인할 수 있고, 공식 화면은 접속한 기기에 맞는 것을 먼저 보여 줍니다."
+      },
+      {
+        "q": "오프라인 설치 파일은 뭐가 다른가요?",
+        "a": "본체가 통째로 들어 있어 설치 중에 인터넷이 필요 없습니다. 여러 대에 설치하거나 회선이 불안정할 때 씁니다."
+      },
+      {
+        "q": "설치했는데 기본 브라우저가 안 바뀝니다.",
+        "a": "설정 › 앱 › 기본 앱에서 웹 브라우저를 크롬으로 직접 지정해야 바뀌는 경우가 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "크롬 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.google.com/intl/ko/chrome/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "구글 공식 다운로드",
+        "href": "https://www.google.com/intl/ko/chrome/"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "알집-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "압축 프로그램"
+    ],
+    "badges": [
+      "공식 배포처",
+      "개인 무료",
+      "한국어"
+    ],
+    "titleTop": "알집",
+    "titleBottom": "다운로드",
+    "listTitle": "알집 다운로드",
+    "listMeta": "개인 무료 · 이스트소프트 · 압축",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "알집 받으러 가기",
+    "sourceNote": "SOURCE: 알툴즈 알집 제품 화면 · 개인 사용자 무료",
+    "description": "알집을 알툴즈 공식 화면으로 연결합니다. 무료로 쓸 수 있는 범위와 설치 중 제휴 프로그램을 빼는 방법을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "개인 무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "이스트소프트"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 알툴즈 알집 제품 화면이 열립니다. 화면의 설치하기 버튼을 누르면 설치 파일을 받습니다. 다운로드가 아니라 설치하기라고 적혀 있습니다."
+      },
+      {
+        "title": "제휴 프로그램 체크 해제",
+        "body": "설치 도중 다른 알툴즈 제품이나 부가 프로그램을 함께 설치할지 묻는 화면이 나옵니다. 압축 기능만 쓸 거라면 모두 해제해도 됩니다."
+      },
+      {
+        "title": "연결 프로그램 지정",
+        "body": "설치 마지막에 어떤 압축 파일을 알집으로 열지 고를 수 있습니다. 나중에 알집 설정에서 바꿀 수 있습니다."
+      },
+      {
+        "title": "설치 확인",
+        "body": "압축 파일에서 오른쪽 버튼을 눌렀을 때 알집 메뉴가 보이면 정상입니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "회사에서 써도 되나요?",
+        "a": "알집 무료판은 가정과 개인 사용자 기준입니다. 기업이나 공공기관에서 쓰려면 별도 라이선스가 필요합니다. 업무용 PC라면 쓰려는 압축 프로그램의 라이선스 안내를 먼저 확인하세요."
+      },
+      {
+        "q": "광고가 뜹니다.",
+        "a": "무료판은 실행 중 광고가 나옵니다. 알툴즈 화면에도 광고 없이 쓰려면 별도 구독(AD-ZERO)을 안내하고 있습니다. 광고가 싫다면 구독하거나 7-Zip·반디집 같은 다른 프로그램을 쓰는 방법이 있습니다."
+      },
+      {
+        "q": "알집으로 안 열리는 압축 파일이 있습니다.",
+        "a": "분할 압축이 일부만 있거나 암호가 걸린 경우입니다. 조각 파일이 모두 같은 폴더에 있는지 먼저 확인하세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "알집 설치 파일",
+        "note": "알툴즈 알집 제품 화면",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://altools.co.kr/product/ALZIP",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "알툴즈 알집 제품 화면",
+        "href": "https://altools.co.kr/product/ALZIP"
+      },
+      {
+        "tag": "SW",
+        "name": "반디집 (무료 압축)",
+        "href": "https://www.bandisoft.com/bandizip/"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "반디집-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "압축 프로그램"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "반디집",
+    "titleBottom": "다운로드",
+    "listTitle": "반디집 다운로드",
+    "listMeta": "무료 · 반디소프트 · ALZ/EGG/7Z/RAR",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "반디집 받으러 가기",
+    "sourceNote": "SOURCE: 반디소프트 반디집 공식 화면 · 무료 소프트웨어 / 상용 소프트웨어",
+    "description": "반디집을 반디소프트 공식 화면으로 연결합니다. 무료로 쓸 수 있는 범위와 RAR 파일을 만들 수 없는 이유, 분할 압축 방법을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "반디소프트"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 반디소프트 반디집 공식 화면이 열립니다. 무료 다운로드 항목에서 설치 파일을 받습니다."
+      },
+      {
+        "title": "연결할 형식 고르기",
+        "body": "설치 중 어떤 압축 형식을 반디집으로 열지 정할 수 있습니다. ZIP·RAR·7Z를 켜 두면 대부분 해결됩니다."
+      },
+      {
+        "title": "설치 후 우클릭 확인",
+        "body": "압축 파일에서 오른쪽 버튼을 눌렀을 때 반디집 메뉴가 보이면 정상입니다."
+      },
+      {
+        "title": "암호 압축이 필요하면",
+        "body": "새 압축 만들기에서 암호를 걸 수 있습니다. 형식은 ZIP 또는 7Z를 고르면 됩니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료로 쓸 수 있나요?",
+        "a": "공식 화면에 무료로도 사용할 수 있고 유료 프로페셔널 에디션이 고급 기능을 더한다고 적혀 있습니다. 압축을 풀고 만드는 기본 기능은 무료판으로 됩니다. 업무용으로 쓸 계획이라면 공식 화면의 라이선스 안내를 한 번 확인하고 쓰시는 편이 안전합니다."
+      },
+      {
+        "q": "RAR 파일을 만들 수 있나요?",
+        "a": "RAR 형식은 만들 수 없고 여는 것만 됩니다. RAR 만들기는 WinRAR에서만 됩니다. ZIP이나 7Z로 만들면 상대방도 대부분 열 수 있습니다."
+      },
+      {
+        "q": "분할 압축은 어떻게 하나요?",
+        "a": "새 압축 만들기 화면에서 분할 크기를 지정하면 조각으로 나뉩니다. 풀 때는 첫 번째 조각만 열면 나머지를 자동으로 찾습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "반디집 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.bandisoft.com/bandizip/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "반디소프트 공식 다운로드",
+        "href": "https://www.bandisoft.com/bandizip/"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "7집-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "압축 프로그램"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "7-Zip",
+    "titleBottom": "다운로드",
+    "listTitle": "7-Zip 다운로드",
+    "listMeta": "무료 · 오픈소스 · 압축",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "7-Zip 받으러 가기",
+    "sourceNote": "SOURCE: 7-Zip 공식 다운로드 화면 · 오픈소스",
+    "description": "7-Zip을 공식 다운로드 화면으로 연결합니다. Windows 11에서 우클릭 메뉴에 안 보일 때 찾는 법까지 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "7-Zip"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 7-Zip 공식 다운로드 화면이 열립니다. 목록 맨 위가 최신판입니다."
+      },
+      {
+        "title": "64bit 파일 고르기",
+        "body": "x64 라고 적힌 파일이 64bit용입니다. 요즘 PC는 대부분 여기에 해당합니다."
+      },
+      {
+        "title": "설치 후 우클릭 확인",
+        "body": "압축 파일에서 오른쪽 버튼을 눌러 7-Zip 메뉴가 보이면 정상입니다."
+      },
+      {
+        "title": "Windows 11이라면 한 단계 더",
+        "body": "Windows 11은 우클릭 메뉴가 줄어 있어 7-Zip이 바로 안 보입니다. '더 많은 옵션 표시'를 누르거나 Shift + F10 을 누르면 나옵니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Windows 11에서 우클릭 메뉴에 안 보입니다.",
+        "a": "Windows 11이 기본 우클릭 메뉴를 줄여 놓아서 그렇습니다. '더 많은 옵션 표시'를 누르거나 파일 선택 후 Shift + F10 을 누르면 7-Zip 항목이 나옵니다."
+      },
+      {
+        "q": "한국어로 쓸 수 있나요?",
+        "a": "설치 후 도구 › 옵션 › 언어에서 한국어를 고르면 됩니다."
+      },
+      {
+        "q": "알집·반디집과 뭐가 다른가요?",
+        "a": "7-Zip은 오픈소스라 광고가 전혀 없고 압축률이 높은 편입니다. 대신 화면이 투박하고 한국에서 흔한 일부 형식 처리는 국산 프로그램이 편할 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "7-Zip 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.7-zip.org/download.html",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "7-Zip 공식 다운로드",
+        "href": "https://www.7-zip.org/download.html"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "VLC-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "미디어 플레이어"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "VLC",
+    "titleBottom": "미디어 플레이어 다운로드",
+    "listTitle": "VLC 미디어 플레이어 다운로드",
+    "listMeta": "무료 · 오픈소스 · 코덱 내장",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "VLC 받으러 가기",
+    "sourceNote": "SOURCE: VideoLAN 공식 다운로드 화면 · 오픈소스",
+    "description": "VLC 미디어 플레이어를 VideoLAN 공식 화면으로 연결합니다. 코덱을 따로 안 받아도 되는 이유와 자막 붙이는 법을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "VideoLAN"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 VideoLAN 공식 다운로드 화면이 열립니다. 접속한 기기에 맞는 파일이 먼저 표시됩니다."
+      },
+      {
+        "title": "설치",
+        "body": "설치 과정에 제휴 프로그램이 없습니다. 기본값 그대로 진행해도 됩니다."
+      },
+      {
+        "title": "코덱은 따로 받지 않습니다",
+        "body": "VLC는 코덱을 안에 담고 있어 코덱팩을 별도로 설치할 필요가 없습니다. 다른 플레이어에서 안 열리던 파일이 VLC에서는 열리는 경우가 많은 이유입니다."
+      },
+      {
+        "title": "자막 넣기",
+        "body": "영상과 같은 폴더에 같은 이름의 자막 파일을 두면 자동으로 불러옵니다. 수동으로는 자막 › 자막 파일 추가를 씁니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "코덱을 따로 설치해야 하나요?",
+        "a": "아닙니다. VLC는 코덱이 내장되어 있어 대부분의 영상이 추가 설치 없이 재생됩니다."
+      },
+      {
+        "q": "자막이 깨져 보입니다.",
+        "a": "도구 › 환경설정 › 자막에서 글꼴을 한글이 있는 것으로 바꾸고 인코딩을 유니코드나 CP949로 지정하면 해결되는 경우가 많습니다."
+      },
+      {
+        "q": "소리가 안 납니다.",
+        "a": "오디오 › 오디오 장치에서 출력 장치를 바꿔 보세요. 특정 오디오 형식은 오디오 트랙을 다른 것으로 바꿔야 나오기도 합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "VLC 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.videolan.org/vlc/index.ko.html",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "VideoLAN 공식 다운로드",
+        "href": "https://www.videolan.org/vlc/index.ko.html"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "팟플레이어-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "미디어 플레이어"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "팟플레이어",
+    "titleBottom": "다운로드",
+    "listTitle": "팟플레이어 다운로드",
+    "listMeta": "무료 · 카카오 · 32/64BIT",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "팟플레이어 받으러 가기",
+    "sourceNote": "SOURCE: 팟플레이어 공식 다운로드 화면",
+    "description": "팟플레이어를 공식 다운로드 화면으로 연결합니다. 32bit·64bit 고르는 법과 코덱 설정을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "카카오"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 팟플레이어 공식 화면이 열립니다."
+      },
+      {
+        "title": "32bit와 64bit 고르기",
+        "body": "두 가지가 따로 있습니다. 요즘 PC는 64bit를 받으면 되고, 오래된 PC나 특정 코덱을 써야 하면 32bit가 필요할 수 있습니다."
+      },
+      {
+        "title": "설치",
+        "body": "설치 중 부가 항목이 있으면 필요 없는 것은 해제해도 재생에 영향이 없습니다."
+      },
+      {
+        "title": "자막과 코덱 확인",
+        "body": "자막은 영상과 같은 폴더에 같은 이름으로 두면 자동으로 잡힙니다. 안 열리는 파일은 환경설정에서 코덱을 추가할 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "32bit와 64bit 중 뭘 받나요?",
+        "a": "64bit가 기본입니다. 다만 일부 오래된 코덱은 32bit에서만 동작해서, 특정 파일이 안 열리면 32bit 판을 써 보는 방법이 있습니다."
+      },
+      {
+        "q": "곰플레이어와 뭐가 다른가요?",
+        "a": "자막 싱크 조정과 간편함은 곰플레이어, 코덱 세부 설정과 하드웨어 가속 옵션은 팟플레이어가 더 깊습니다."
+      },
+      {
+        "q": "영상은 나오는데 소리가 안 납니다.",
+        "a": "환경설정 › 소리에서 출력 장치를 기본 장치로 바꿔 보세요. DTS·AC3는 코덱을 추가해야 소리가 나기도 합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "팟플레이어 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://potplayer.tv/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "카카오 공식 다운로드",
+        "href": "https://potplayer.tv/"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "카카오톡-PC-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "메신저"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "카카오톡 PC",
+    "titleBottom": "다운로드",
+    "listTitle": "카카오톡 PC 다운로드",
+    "listMeta": "무료 · 카카오 · WIN/MAC",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "카카오톡 PC 받으러 가기",
+    "sourceNote": "SOURCE: 카카오 공식 '카카오톡 PC버전 정식 다운로드' 화면",
+    "description": "카카오톡 PC 버전을 카카오 공식 화면으로 연결합니다. 설치 후 로그인 방법과 대화 내용이 어떻게 되는지 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "카카오"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 다운로드 화면 열기",
+        "body": "위 버튼을 누르면 카카오가 운영하는 카카오톡 PC버전 정식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "내 PC에 맞는 파일 고르기",
+        "body": "Windows 32bit, 64bit, ARM64 세 가지가 있습니다. 설정 › 시스템 › 정보의 시스템 종류를 보고 고르세요. 요즘 PC는 대부분 64bit입니다."
+      },
+      {
+        "title": "로그인",
+        "body": "휴대폰에서 쓰던 계정으로 로그인합니다. 처음 로그인할 때는 휴대폰에서 인증을 한 번 거칩니다."
+      },
+      {
+        "title": "대화 내용 확인",
+        "body": "PC 버전은 로그인 이후에 오는 대화부터 보입니다. 휴대폰에 있던 지난 대화가 자동으로 옮겨 오지는 않습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "휴대폰에 있던 지난 대화도 PC에서 보이나요?",
+        "a": "아닙니다. PC 버전은 로그인한 다음부터의 대화를 받습니다. 지난 대화는 휴대폰에서 백업하고 옮기는 별도 과정이 필요합니다."
+      },
+      {
+        "q": "휴대폰 없이 쓸 수 있나요?",
+        "a": "처음 로그인할 때는 휴대폰 인증이 필요합니다. 이후에는 PC에서 바로 로그인됩니다."
+      },
+      {
+        "q": "회사 PC에서 설치가 막힙니다.",
+        "a": "관리자 권한이 없으면 설치가 안 될 수 있습니다. 이 경우 웹 브라우저로 접속하는 방법을 알아보세요."
+      },
+      {
+        "q": "32bit·64bit·ARM64 중 뭘 받나요?",
+        "a": "설정 › 시스템 › 정보에서 시스템 종류를 확인하세요. x64 기반이면 64bit, ARM 기반 프로세서면 ARM64입니다. 모르겠으면 64bit를 받으면 대부분 맞습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "카카오톡 PC 설치 파일",
+        "note": "카카오톡 PC버전 정식 다운로드",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.kakaocorp.com/page/service/all",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "카카오톡 PC버전 정식 다운로드",
+        "href": "https://www.kakaocorp.com/page/service/all"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "네이버-웨일-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "웹 브라우저"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "네이버 웨일",
+    "titleBottom": "다운로드",
+    "listTitle": "네이버 웨일 다운로드",
+    "listMeta": "무료 · 네이버 · WIN/MAC",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "웨일 받으러 가기",
+    "sourceNote": "SOURCE: 네이버 웨일 공식 다운로드 화면",
+    "description": "네이버 웨일 브라우저를 공식 다운로드 화면으로 연결합니다. 크롬 확장 프로그램을 그대로 쓸 수 있는지까지 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "네이버"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 네이버 웨일 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "운영체제 선택",
+        "body": "Windows와 Mac 판이 따로 있습니다."
+      },
+      {
+        "title": "기존 브라우저에서 가져오기",
+        "body": "처음 실행할 때 즐겨찾기와 저장된 비밀번호를 다른 브라우저에서 가져올 수 있습니다."
+      },
+      {
+        "title": "사이드바 확인",
+        "body": "웨일의 특징인 사이드바는 오른쪽 가장자리에 있습니다. 필요 없으면 설정에서 끌 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "크롬 확장 프로그램을 쓸 수 있나요?",
+        "a": "웨일은 크로미움 기반이라 크롬 웹스토어의 확장 프로그램을 대부분 그대로 설치할 수 있습니다."
+      },
+      {
+        "q": "크롬과 뭐가 다른가요?",
+        "a": "핵심 엔진은 같고, 사이드바와 화면 분할 같은 네이버가 더한 기능이 다릅니다. 국내 사이트 호환은 비슷합니다."
+      },
+      {
+        "q": "모바일과 동기화되나요?",
+        "a": "네이버 계정으로 로그인하면 즐겨찾기와 열어 둔 탭이 기기 사이에 이어집니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "네이버 웨일 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://whale.naver.com/ko/download/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "네이버 공식 다운로드",
+        "href": "https://whale.naver.com/ko/download/"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "알약-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "백신"
+    ],
+    "badges": [
+      "공식 배포처",
+      "개인 무료",
+      "한국어"
+    ],
+    "titleTop": "알약",
+    "titleBottom": "다운로드",
+    "listTitle": "알약 다운로드",
+    "listMeta": "개인 무료 · 이스트시큐리티 · 백신",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "알약 받으러 가기",
+    "sourceNote": "SOURCE: 알툴즈 알약 제품 화면 · 개인 사용자 무료",
+    "description": "알약을 알툴즈 공식 화면으로 연결합니다. 무료로 쓸 수 있는 범위와 다른 백신과 겹칠 때 생기는 문제를 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "개인 무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "이스트시큐리티"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 알툴즈 알약 제품 화면이 열립니다. 화면의 설치하기 버튼을 누르면 설치 파일을 받습니다. 다운로드가 아니라 설치하기라고 적혀 있습니다."
+      },
+      {
+        "title": "기존 백신 정리",
+        "body": "백신을 두 개 이상 동시에 켜 두면 서로를 위협으로 잡아 PC가 느려집니다. 쓰던 백신이 있으면 먼저 제거하세요."
+      },
+      {
+        "title": "설치와 첫 검사",
+        "body": "설치 후 전체 검사를 한 번 돌립니다. 시간이 걸리니 쓰지 않을 때 실행하는 편이 낫습니다."
+      },
+      {
+        "title": "실시간 감시 확인",
+        "body": "실시간 감시가 켜져 있는지 확인합니다. 꺼져 있으면 설치만 해 둔 것과 다르지 않습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "회사에서 써도 되나요?",
+        "a": "알약 무료판은 개인 사용자 기준입니다. 기업이나 공공기관은 별도 라이선스가 필요합니다."
+      },
+      {
+        "q": "Windows 보안(디펜더)과 같이 써도 되나요?",
+        "a": "다른 백신을 설치하면 Windows 보안의 실시간 보호가 자동으로 물러나는 것이 보통입니다. 굳이 둘 다 켜 둘 필요는 없습니다."
+      },
+      {
+        "q": "PC가 느려졌습니다.",
+        "a": "검사 중이거나 다른 백신과 겹쳤을 때 그렇습니다. 백신은 하나만 남기고 정리하세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "알약 설치 파일",
+        "note": "알툴즈 알약 제품 화면",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://altools.co.kr/product/ALYAC",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "알툴즈 알약 제품 화면",
+        "href": "https://altools.co.kr/product/ALYAC"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "한글-뷰어-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "문서"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "한글 뷰어",
+    "titleBottom": "무료 다운로드",
+    "listTitle": "한글 뷰어 무료 다운로드",
+    "listMeta": "무료 · 한글과컴퓨터 · HWP/HWPX 보기",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "한글 뷰어 받으러 가기",
+    "sourceNote": "SOURCE: 한글과컴퓨터 다운로드 센터 · 한컴오피스 뷰어(통합뷰어)",
+    "description": "한글 뷰어(한컴오피스 통합뷰어)를 한컴 공식 다운로드 센터로 연결합니다. 편집이 안 되는 이유와 HWPX가 안 열릴 때 확인할 점을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "한글과컴퓨터"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 한컴 다운로드 센터가 열립니다. 목록에서 한컴오피스 뷰어(통합뷰어)를 고릅니다. 한글 뷰어라고 부르는 것이 이 프로그램입니다."
+      },
+      {
+        "title": "뷰어와 정품 구분",
+        "body": "뷰어는 보기 전용이라 무료입니다. 문서를 고치려면 한글 정품이 필요합니다."
+      },
+      {
+        "title": "설치",
+        "body": "설치 후 HWP 파일을 두 번 누르면 뷰어로 열립니다."
+      },
+      {
+        "title": "HWPX도 확인",
+        "body": "최근 공공기관 문서는 HWPX 형식이 많습니다. 뷰어 버전이 오래되면 안 열릴 수 있으니 최신판을 받으세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "다운로드 센터에 '한글 뷰어'라는 이름이 안 보입니다.",
+        "a": "지금은 한컴오피스 뷰어(통합뷰어)라는 이름으로 제공됩니다. 한글 문서뿐 아니라 한컴오피스 문서를 함께 열 수 있는 통합 뷰어입니다."
+      },
+      {
+        "q": "뷰어로 문서를 고칠 수 있나요?",
+        "a": "아닙니다. 뷰어는 보기와 인쇄만 됩니다. 내용을 고치려면 한글 정품이나 편집이 되는 다른 프로그램이 필요합니다."
+      },
+      {
+        "q": "HWPX 파일이 안 열립니다.",
+        "a": "뷰어가 오래된 버전이면 그렇습니다. 다운로드 센터에서 최신 뷰어를 다시 받아 설치해 보세요."
+      },
+      {
+        "q": "HWP를 워드나 PDF로 바꿀 수 있나요?",
+        "a": "뷰어에서 인쇄를 고르고 PDF로 저장하면 PDF는 만들 수 있습니다. 워드로 바꾸려면 편집 가능한 프로그램이 필요합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "한글 뷰어 설치 파일",
+        "note": "한컴오피스 뷰어(통합뷰어)",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.hancom.com/support/downloadCenter/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "한글과컴퓨터 공식 다운로드",
+        "href": "https://www.hancom.com/support/downloadCenter/download"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "어도비-리더-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "문서"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "어도비 리더",
+    "titleBottom": "무료 다운로드",
+    "listTitle": "어도비 리더 무료 다운로드",
+    "listMeta": "무료 · 어도비 · PDF 보기",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "어도비 리더 받으러 가기",
+    "sourceNote": "SOURCE: 어도비 공식 다운로드 화면",
+    "description": "어도비 아크로뱃 리더를 어도비 공식 화면으로 연결합니다. 무료로 되는 범위와 PDF를 기본으로 여는 프로그램 지정 방법을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "어도비"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 어도비 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "받기 전에 조건 확인",
+        "body": "다운로드 버튼 근처에 함께 설치할 항목을 고르는 칸이 있으면 필요 없는 것은 해제하고 진행합니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행하면 본체를 내려받아 설치합니다."
+      },
+      {
+        "title": "기본 프로그램 지정",
+        "body": "설정 › 앱 › 기본 앱에서 PDF를 어도비 리더로 지정하면 두 번 눌러 바로 열립니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료로 어디까지 되나요?",
+        "a": "공식 화면에 무료 PDF 뷰어로 안내되어 있습니다. 보기와 인쇄, 주석 달기까지 무료판으로 됩니다."
+      },
+      {
+        "q": "PDF가 브라우저에서 열립니다.",
+        "a": "설정 › 앱 › 기본 앱에서 .pdf를 어도비 리더로 지정하면 두 번 눌렀을 때 프로그램으로 열립니다."
+      },
+      {
+        "q": "PDF를 편집할 수 있나요?",
+        "a": "무료 리더는 보기·인쇄·주석까지입니다. 내용을 고치려면 유료인 아크로뱃이 필요합니다."
+      },
+      {
+        "q": "더 가벼운 PDF 뷰어는 없나요?",
+        "a": "SumatraPDF나 폭싯 리더가 가볍습니다. 브라우저에서 바로 열어 보는 방법도 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "어도비 리더 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://get.adobe.com/kr/reader/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "어도비 공식 다운로드",
+        "href": "https://get.adobe.com/kr/reader/"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "반디캠-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "화면 녹화"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료 체험",
+      "한국어"
+    ],
+    "titleTop": "반디캠",
+    "titleBottom": "다운로드",
+    "listTitle": "반디캠 다운로드",
+    "listMeta": "무료 체험 · 반디캠컴퍼니 · 화면 녹화",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "반디캠 받으러 가기",
+    "sourceNote": "SOURCE: 반디캠 공식 다운로드 화면 · 무료판은 제한이 있습니다",
+    "description": "반디캠을 공식 다운로드 화면으로 연결합니다. 무료판의 워터마크와 녹화 시간 제한, 녹화 모드 고르는 법을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료 체험"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "반디캠컴퍼니"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 반디캠 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "무료판 제한 확인",
+        "body": "무료로 쓰면 영상에 워터마크가 찍히고 한 번에 녹화할 수 있는 시간이 제한됩니다. 제한 내용은 공식 화면에 적혀 있습니다."
+      },
+      {
+        "title": "녹화 모드 고르기",
+        "body": "화면 사각형 지정, 전체 화면, 게임(DirectX/OpenGL), 기기(웹캠) 중에서 고릅니다. 게임 녹화는 게임 모드를 써야 프레임이 안 떨어집니다."
+      },
+      {
+        "title": "저장 위치와 형식 확인",
+        "body": "설정에서 저장 폴더와 형식(MP4/AVI)을 미리 정해 두면 나중에 찾기 편합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료로 쓰면 뭐가 제한되나요?",
+        "a": "영상에 워터마크가 들어가고 한 번에 녹화할 수 있는 길이가 제한됩니다. 정확한 제한은 공식 화면의 무료판 안내에서 확인하세요."
+      },
+      {
+        "q": "게임 녹화가 검은 화면으로 나옵니다.",
+        "a": "화면 지정 모드로 잡으면 게임에 따라 검게 나옵니다. 게임 녹화 모드로 바꿔 보세요."
+      },
+      {
+        "q": "소리가 안 녹음됩니다.",
+        "a": "설정 › 소리에서 기본 소리 장치가 맞는지, 마이크를 함께 녹음할지 확인하세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "반디캠 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.bandicam.co.kr/downloads/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "반디캠컴퍼니 공식 다운로드",
+        "href": "https://www.bandicam.co.kr/downloads/"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "줌-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "화상회의"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "줌",
+    "titleBottom": "다운로드",
+    "listTitle": "줌 다운로드",
+    "listMeta": "무료 · Zoom · 화상회의",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "줌 받으러 가기",
+    "sourceNote": "SOURCE: Zoom 공식 다운로드 화면",
+    "description": "줌(Zoom)을 공식 다운로드 화면으로 연결합니다. 회의 참여만 할 때와 개설할 때의 차이, 무료 계정 제한을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Zoom"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Zoom 공식 다운로드 화면이 열립니다. 목록 맨 위의 데스크톱 클라이언트가 PC용입니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행하면 설치됩니다. 관리자 권한이 없어도 설치되는 경우가 많습니다."
+      },
+      {
+        "title": "참여만 할 거면 로그인 불필요",
+        "body": "회의에 참여만 한다면 계정 없이 회의 ID와 암호만으로 들어갈 수 있습니다."
+      },
+      {
+        "title": "회의를 열려면 로그인",
+        "body": "직접 회의를 만들려면 계정이 필요합니다. 무료 계정으로도 회의를 열 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료 계정은 뭐가 제한되나요?",
+        "a": "여러 명이 참여하는 회의는 시간 제한이 있습니다. 정확한 시간과 조건은 Zoom 공식 안내에서 확인하세요. 1:1 회의는 조건이 다릅니다."
+      },
+      {
+        "q": "설치 없이 쓸 수 있나요?",
+        "a": "브라우저로 참여하는 방법이 있습니다. 회의 링크를 열었을 때 '브라우저에서 참가' 항목을 고르면 됩니다."
+      },
+      {
+        "q": "소리나 화면이 공유가 안 됩니다.",
+        "a": "Windows 설정 › 개인 정보 및 보안에서 마이크와 카메라 권한이 Zoom에 허용되어 있는지 확인하세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "줌 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://zoom.us/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Zoom 공식 다운로드",
+        "href": "https://zoom.us/download"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "디스코드-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "메신저"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "디스코드",
+    "titleBottom": "다운로드",
+    "listTitle": "디스코드 다운로드",
+    "listMeta": "무료 · Discord · 음성/채팅",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "디스코드 받으러 가기",
+    "sourceNote": "SOURCE: Discord 공식 다운로드 화면",
+    "description": "디스코드를 공식 다운로드 화면으로 연결합니다. 업데이트가 무한 반복될 때 푸는 법과 브라우저로 쓰는 방법을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Discord"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Discord 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행하면 자동으로 설치되고 바로 실행됩니다."
+      },
+      {
+        "title": "로그인",
+        "body": "계정이 없으면 가입하고, 있으면 로그인합니다. 처음 로그인할 때 이메일 인증을 거칩니다."
+      },
+      {
+        "title": "마이크 권한 확인",
+        "body": "음성 채널을 쓰려면 Windows 설정 › 개인 정보 및 보안 › 마이크에서 권한이 허용돼 있어야 합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "업데이트 화면에서 계속 멈춥니다.",
+        "a": "설치 파일이 꼬였을 때 흔합니다. 디스코드를 완전히 종료하고 작업 관리자에서 관련 프로세스를 끝낸 뒤, %localappdata% 폴더의 Discord 폴더를 지우고 다시 설치하면 대부분 풀립니다."
+      },
+      {
+        "q": "설치 안 하고 쓸 수 있나요?",
+        "a": "브라우저에서 바로 쓸 수 있습니다. 다만 일부 기능은 앱에서만 됩니다."
+      },
+      {
+        "q": "소리가 상대에게 안 들립니다.",
+        "a": "사용자 설정 › 음성 및 비디오에서 입력 장치가 맞는지 확인하고, 입력 감도를 수동으로 낮춰 보세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "디스코드 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://discord.com/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Discord 공식 다운로드",
+        "href": "https://discord.com/download"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "엣지-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "웹 브라우저"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "엣지",
+    "titleBottom": "다운로드",
+    "listTitle": "엣지 다운로드",
+    "listMeta": "무료 · 마이크로소프트 · 브라우저",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "엣지 받으러 가기",
+    "sourceNote": "SOURCE: 마이크로소프트 엣지 공식 다운로드 화면",
+    "description": "마이크로소프트 엣지를 공식 다운로드 화면으로 연결합니다. Windows에 이미 들어 있는데 다시 받아야 하는 경우를 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "마이크로소프트"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "이미 설치돼 있는지 먼저 확인",
+        "body": "Windows 10·11에는 엣지가 기본으로 들어 있습니다. 시작 메뉴에서 Edge를 검색해 보세요."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "지웠거나 망가졌다면 위 버튼으로 공식 다운로드 화면을 엽니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행하면 설치됩니다. 기존 설정은 계정에 로그인하면 다시 불러옵니다."
+      },
+      {
+        "title": "가져오기",
+        "body": "다른 브라우저의 즐겨찾기와 비밀번호를 처음 실행할 때 가져올 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Windows에 이미 있는데 왜 받나요?",
+        "a": "대부분 받을 필요가 없습니다. 지웠거나 업데이트가 막혔을 때, 또는 Mac이나 다른 OS에 설치할 때 받습니다."
+      },
+      {
+        "q": "크롬 확장 프로그램을 쓸 수 있나요?",
+        "a": "엣지는 크로미움 기반이라 크롬 웹스토어의 확장 프로그램을 설치할 수 있습니다. 설정에서 다른 스토어의 확장 허용을 켜면 됩니다."
+      },
+      {
+        "q": "기본 브라우저를 바꾸고 싶습니다.",
+        "a": "설정 › 앱 › 기본 앱에서 원하는 브라우저를 직접 지정하면 됩니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "엣지 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.microsoft.com/ko-kr/edge/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "마이크로소프트 공식 다운로드",
+        "href": "https://www.microsoft.com/ko-kr/edge/download"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "파이어폭스-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "웹 브라우저"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "파이어폭스",
+    "titleBottom": "다운로드",
+    "listTitle": "파이어폭스 다운로드",
+    "listMeta": "무료 · Mozilla · 브라우저",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "파이어폭스 받으러 가기",
+    "sourceNote": "SOURCE: Mozilla 파이어폭스 공식 다운로드 화면",
+    "description": "파이어폭스를 Mozilla 공식 화면으로 연결합니다. 다른 브라우저에서 즐겨찾기를 옮기는 법과 느려졌을 때 확인할 점을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Mozilla"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Mozilla 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행하면 설치됩니다. 제휴 프로그램이 붙지 않습니다."
+      },
+      {
+        "title": "기존 브라우저에서 가져오기",
+        "body": "처음 실행할 때 즐겨찾기와 비밀번호를 다른 브라우저에서 가져올 수 있습니다."
+      },
+      {
+        "title": "계정으로 동기화",
+        "body": "Mozilla 계정에 로그인하면 다른 기기와 즐겨찾기·탭이 이어집니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "즐겨찾기를 옮길 수 있나요?",
+        "a": "처음 실행할 때 다른 브라우저의 즐겨찾기와 저장된 비밀번호를 가져올지 물어봅니다. 나중에도 설정에서 가져오기를 할 수 있습니다."
+      },
+      {
+        "q": "국내 은행이나 관공서 사이트가 안 됩니다.",
+        "a": "일부 사이트가 특정 브라우저만 지원하는 경우가 있습니다. 그럴 때는 엣지나 크롬으로 접속하는 편이 빠릅니다."
+      },
+      {
+        "q": "느려졌습니다.",
+        "a": "확장 프로그램이 많으면 느려집니다. 도움말 › 문제 해결 모드로 켜서 확장 없이도 느린지 확인해 보세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "파이어폭스 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.mozilla.org/ko/firefox/new/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Mozilla 공식 다운로드",
+        "href": "https://www.mozilla.org/ko/firefox/new/"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "스팀-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "게임 플랫폼"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "스팀",
+    "titleBottom": "다운로드",
+    "listTitle": "스팀 다운로드",
+    "listMeta": "무료 · Valve · 게임 플랫폼",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "스팀 받으러 가기",
+    "sourceNote": "SOURCE: Steam 공식 설치 안내 화면",
+    "description": "스팀(Steam)을 공식 화면으로 연결합니다. 설치 위치를 SSD로 잡는 이유와 게임 저장 폴더를 나누는 법을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Valve"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Steam 공식 설치 화면이 열립니다."
+      },
+      {
+        "title": "설치 위치 정하기",
+        "body": "스팀 본체는 작지만 게임은 큽니다. 처음부터 여유 있는 드라이브에 설치하는 편이 낫습니다."
+      },
+      {
+        "title": "로그인",
+        "body": "계정이 없으면 만들고, 있으면 로그인합니다. 처음 로그인할 때 이메일이나 모바일 인증을 거칩니다."
+      },
+      {
+        "title": "게임 저장 폴더 추가",
+        "body": "설정 › 다운로드 › 스팀 라이브러리 폴더에서 다른 드라이브를 추가할 수 있습니다. 용량 큰 게임을 따로 둘 때 씁니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "게임을 다른 드라이브에 설치할 수 있나요?",
+        "a": "설정에서 라이브러리 폴더를 추가하면 게임마다 설치할 드라이브를 고를 수 있습니다."
+      },
+      {
+        "q": "다운로드가 너무 느립니다.",
+        "a": "설정 › 다운로드에서 다운로드 지역을 가까운 곳으로 바꿔 보세요. 지역이 엉뚱하게 잡혀 있는 경우가 있습니다."
+      },
+      {
+        "q": "이미 산 게임을 다른 PC에서 받을 수 있나요?",
+        "a": "계정에 로그인하면 구매한 게임을 어느 PC에서든 다시 받을 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "스팀 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://store.steampowered.com/about/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Valve 공식 다운로드",
+        "href": "https://store.steampowered.com/about/"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "팀뷰어-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "원격제어"
+    ],
+    "badges": [
+      "공식 배포처",
+      "개인 무료",
+      "한국어"
+    ],
+    "titleTop": "팀뷰어",
+    "titleBottom": "다운로드",
+    "listTitle": "팀뷰어 다운로드",
+    "listMeta": "개인 무료 · TeamViewer · 원격제어",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "팀뷰어 받으러 가기",
+    "sourceNote": "SOURCE: TeamViewer 공식 다운로드 화면 · 개인 사용은 무료",
+    "description": "팀뷰어를 공식 다운로드 화면으로 연결합니다. 상업적 사용으로 감지돼 연결이 끊길 때의 원인과 개인 사용 조건을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "개인 무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "TeamViewer"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 TeamViewer 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치 방식 고르기",
+        "body": "설치해서 계속 쓸지, 설치 없이 한 번만 실행할지 고를 수 있습니다. 남의 PC를 잠깐 도와줄 때는 실행만 하는 쪽이 편합니다."
+      },
+      {
+        "title": "개인 사용 선택",
+        "body": "설치 중 개인 용도인지 상업 용도인지 묻습니다. 개인이면 개인 용도를 고릅니다."
+      },
+      {
+        "title": "ID와 비밀번호 확인",
+        "body": "연결하려면 상대 PC의 ID와 비밀번호가 필요합니다. 실행하면 화면에 표시됩니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "연결이 몇 분 만에 끊깁니다.",
+        "a": "상업적 사용으로 감지되면 세션이 짧게 끊기거나 막힙니다. 회사 PC나 업무용 네트워크에서 쓰면 개인 용도로 골랐어도 그렇게 판정될 수 있습니다. 공식 화면에서 개인 사용 인정 요청을 넣거나, 업무용이라면 라이선스가 필요합니다."
+      },
+      {
+        "q": "상대가 없어도 원격 접속할 수 있나요?",
+        "a": "무인 접속을 설정해 두면 됩니다. 다만 비밀번호 관리에 주의해야 합니다."
+      },
+      {
+        "q": "무료로 쓸 수 있는 다른 프로그램은요?",
+        "a": "애니데스크도 개인 용도로 많이 씁니다. 다만 프로그램마다 무료로 되는 범위가 다르니 각 공식 화면의 라이선스 안내를 확인하고 쓰세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "팀뷰어 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.teamviewer.com/ko/download/windows/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "TeamViewer 공식 다운로드",
+        "href": "https://www.teamviewer.com/ko/download/windows/"
+      },
+      {
+        "tag": "SW",
+        "name": "애니데스크 (원격제어)",
+        "href": "https://anydesk.com/ko/downloads/windows"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "애니데스크-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "원격제어"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료 다운로드",
+      "한국어"
+    ],
+    "titleTop": "애니데스크",
+    "titleBottom": "다운로드",
+    "listTitle": "애니데스크 다운로드",
+    "listMeta": "무료 다운로드 · AnyDesk · 원격제어",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "애니데스크 받으러 가기",
+    "sourceNote": "SOURCE: AnyDesk 공식 다운로드 화면",
+    "description": "애니데스크를 공식 다운로드 화면으로 연결합니다. 설치 없이 바로 쓰는 법과 모르는 사람의 접속 요청을 수락하면 안 되는 이유를 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료 다운로드"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "AnyDesk"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 AnyDesk 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치 없이 실행 가능",
+        "body": "받은 파일을 그냥 실행하면 설치 없이 바로 쓸 수 있습니다. 남의 PC를 잠깐 도와줄 때 편합니다."
+      },
+      {
+        "title": "주소 확인",
+        "body": "실행하면 아홉 자리 주소가 표시됩니다. 연결하려면 상대의 주소가 필요합니다."
+      },
+      {
+        "title": "연결 수락",
+        "body": "상대가 수락해야 화면이 연결됩니다. 모르는 사람이 요청하면 절대 수락하지 마세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "설치를 꼭 해야 하나요?",
+        "a": "아닙니다. 받은 파일을 실행만 해도 됩니다. 자주 쓸 거라면 설치하는 편이 편합니다."
+      },
+      {
+        "q": "모르는 사람이 연결을 요청합니다.",
+        "a": "수락하지 마세요. 전화로 접속을 유도하는 사기가 많습니다. 은행이나 검찰을 사칭해 원격 접속을 요구하면 바로 끊으세요."
+      },
+      {
+        "q": "회사에서 써도 되나요?",
+        "a": "공식 화면은 전문적으로 사용하는 경우 구매를 안내하고 있습니다. 업무용으로 쓸 계획이라면 받기 전에 공식 화면의 라이선스 안내를 확인하세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "애니데스크 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://anydesk.com/ko/downloads/windows",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "AnyDesk 공식 다운로드",
+        "href": "https://anydesk.com/ko/downloads/windows"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "아이튠즈-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "미디어"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "아이튠즈",
+    "titleBottom": "다운로드",
+    "listTitle": "아이튠즈 다운로드",
+    "listMeta": "무료 · 애플 · 아이폰 백업",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "아이튠즈 받으러 가기",
+    "sourceNote": "SOURCE: 애플 공식 아이튠즈 안내 화면",
+    "description": "아이튠즈를 애플 공식 화면으로 연결합니다. 스토어 버전과 데스크톱 버전의 차이, 아이폰 백업 용도로 쓸 때 알아 둘 점을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "애플"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 애플 공식 아이튠즈 안내 화면이 열립니다."
+      },
+      {
+        "title": "설치 방식 고르기",
+        "body": "Microsoft Store 버전과 애플이 직접 배포하는 데스크톱 버전이 있습니다. 스토어 버전이 업데이트가 자동이라 편합니다."
+      },
+      {
+        "title": "아이폰 연결",
+        "body": "케이블로 연결하면 아이폰에서 이 컴퓨터를 신뢰할지 물어봅니다. 신뢰를 눌러야 인식됩니다."
+      },
+      {
+        "title": "백업 위치 확인",
+        "body": "백업은 기본적으로 C 드라이브에 쌓입니다. 용량이 크니 남은 공간을 미리 확인하세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "아이폰이 인식되지 않습니다.",
+        "a": "아이폰 화면에서 이 컴퓨터를 신뢰를 눌렀는지 확인하세요. 케이블이 데이터 전송용이 아닌 충전 전용이면 인식되지 않습니다."
+      },
+      {
+        "q": "Mac에도 설치하나요?",
+        "a": "macOS 카탈리나부터는 아이튠즈가 없어지고 음악·팟캐스트·Finder로 나뉘었습니다. 아이폰 백업은 Finder에서 합니다."
+      },
+      {
+        "q": "백업 위치를 옮길 수 있나요?",
+        "a": "기본 위치를 바꾸려면 별도 설정이 필요합니다. 백업 전에 C 드라이브 여유 공간을 확인하는 편이 간단합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "아이튠즈 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.apple.com/kr/itunes/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "애플 공식 다운로드",
+        "href": "https://www.apple.com/kr/itunes/"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "곰믹스-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "영상 편집"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료 체험",
+      "한국어"
+    ],
+    "titleTop": "곰믹스",
+    "titleBottom": "다운로드",
+    "listTitle": "곰믹스 다운로드",
+    "listMeta": "무료 체험 · 곰랩 · 영상 편집",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "곰믹스 받으러 가기",
+    "sourceNote": "SOURCE: 곰랩 공식 다운로드 화면",
+    "description": "곰믹스를 곰랩 공식 다운로드 화면으로 연결합니다. 무료판으로 어디까지 되는지와 곰플레이어와 다른 점을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료 체험"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "곰랩"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 곰랩 공식 다운로드 화면이 열립니다. 제품 목록에서 곰믹스를 고릅니다."
+      },
+      {
+        "title": "무료판 조건 확인",
+        "body": "무료로 쓸 수 있는 범위와 유료판에서 풀리는 기능이 제품 안내에 적혀 있습니다. 받기 전에 한 번 보세요."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다. 함께 설치할 항목을 묻는 화면이 나오면 필요 없는 것은 해제해도 됩니다."
+      },
+      {
+        "title": "첫 편집",
+        "body": "영상을 끌어다 놓고 자르기와 자막부터 익히면 됩니다. 내보내기에서 해상도와 형식을 고릅니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "곰플레이어와 뭐가 다른가요?",
+        "a": "곰플레이어는 재생 프로그램이고 곰믹스는 편집 프로그램입니다. 같은 곰랩에서 만들지만 하는 일이 다릅니다."
+      },
+      {
+        "q": "무료판으로 어디까지 되나요?",
+        "a": "기본 편집은 무료로 됩니다. 다만 일부 효과나 내보내기 조건에 제한이 있을 수 있으니 공식 제품 안내를 확인하세요."
+      },
+      {
+        "q": "내보낸 영상에 표시가 남습니다.",
+        "a": "무료판 제한 때문입니다. 제한 없이 쓰려면 유료판이 필요합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "곰믹스 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.gomlab.com/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "곰랩 공식 다운로드",
+        "href": "https://www.gomlab.com/download"
+      },
+      {
+        "tag": "SW",
+        "name": "곰플레이어 (재생)",
+        "href": "https://www.gomlab.com/download"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "알씨-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "이미지"
+    ],
+    "badges": [
+      "공식 배포처",
+      "개인 무료",
+      "한국어"
+    ],
+    "titleTop": "알씨",
+    "titleBottom": "다운로드",
+    "listTitle": "알씨 다운로드",
+    "listMeta": "개인 무료 · 이스트소프트 · 사진 뷰어",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "알씨 받으러 가기",
+    "sourceNote": "SOURCE: 알툴즈 알씨 제품 화면 · 개인 사용자 무료",
+    "description": "알씨를 알툴즈 공식 제품 화면으로 연결합니다. 무료로 쓸 수 있는 범위와 사진 여러 장을 한 번에 줄이는 법을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "개인 무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "이스트소프트"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 알툴즈 알씨 제품 화면이 열립니다. 화면의 설치하기 버튼을 누르면 설치 파일을 받습니다. 다운로드가 아니라 설치하기라고 적혀 있습니다."
+      },
+      {
+        "title": "함께 설치 항목 해제",
+        "body": "설치 도중 다른 알툴즈 제품을 함께 설치할지 묻는 화면이 나오면 필요 없는 것은 해제해도 됩니다."
+      },
+      {
+        "title": "기본 뷰어 지정",
+        "body": "설치 후 사진 파일을 알씨로 열지 물어봅니다. 나중에 설정 › 앱 › 기본 앱에서도 바꿀 수 있습니다."
+      },
+      {
+        "title": "여러 장 한 번에 줄이기",
+        "body": "사진을 여러 장 고른 뒤 크기 변경을 쓰면 한 번에 줄일 수 있습니다. 메일이나 게시판에 올릴 때 씁니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "회사에서 써도 되나요?",
+        "a": "알씨 무료판은 개인 사용자 기준입니다. 기업이나 공공기관에서 쓰려면 별도 라이선스가 필요합니다."
+      },
+      {
+        "q": "HEIC 사진이 안 열립니다.",
+        "a": "아이폰에서 찍은 HEIC는 별도 지원이 필요합니다. 아이폰 설정에서 촬영 형식을 호환성 우선(JPEG)으로 바꾸는 방법도 있습니다."
+      },
+      {
+        "q": "사진 용량을 줄이고 싶습니다.",
+        "a": "크기 변경에서 가로 픽셀을 줄이면 용량이 크게 줍니다. 화질을 유지하려면 저장 품질을 높게 두세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "알씨 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://altools.co.kr/product/ALSEE",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "이스트소프트 공식 다운로드",
+        "href": "https://altools.co.kr/product/ALSEE"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "윈라-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "압축 프로그램"
+    ],
+    "badges": [
+      "공식 배포처",
+      "유료 라이선스",
+      "한국어"
+    ],
+    "titleTop": "WinRAR",
+    "titleBottom": "다운로드",
+    "listTitle": "WinRAR 다운로드",
+    "listMeta": "win.rar GmbH · 압축 · 한국어판 제공",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "WinRAR 받으러 가기",
+    "sourceNote": "SOURCE: WinRAR 공식 다운로드 화면 · 한국어판 제공",
+    "description": "WinRAR를 공식 다운로드 화면으로 연결합니다. RAR 파일을 직접 만들 수 있는 유일한 프로그램인 점과 시험 기간이 지난 뒤를 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "유료 라이선스"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "win.rar GmbH"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 WinRAR 공식 다운로드 화면이 열립니다. 언어별로 파일이 나뉘어 있어 Korean 이라고 적힌 것을 고르면 한국어판입니다."
+      },
+      {
+        "title": "32bit·64bit 고르기",
+        "body": "요즘 PC는 64bit입니다. 설정 › 시스템 › 정보에서 시스템 종류를 확인할 수 있습니다."
+      },
+      {
+        "title": "설치",
+        "body": "설치 중 어떤 압축 형식을 WinRAR로 열지 고를 수 있습니다."
+      },
+      {
+        "title": "RAR로 압축하기",
+        "body": "파일을 고르고 오른쪽 버튼 › 압축하기에서 형식을 RAR로 두면 됩니다. RAR를 만들 수 있는 것은 WinRAR뿐입니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "RAR 파일을 다른 프로그램으로 만들 수 없나요?",
+        "a": "여는 것은 반디집·7-Zip 등으로 되지만 RAR로 새로 압축하는 것은 WinRAR에서만 됩니다. 상대가 특별히 RAR를 요구하지 않는다면 ZIP이나 7Z로 만들어도 대부분 열립니다."
+      },
+      {
+        "q": "계속 무료로 쓸 수 있나요?",
+        "a": "WinRAR는 라이선스를 파는 프로그램입니다. 사용 조건은 공식 화면과 설치 시 안내를 확인하세요. 비용 없이 쓰려면 7-Zip이나 반디집 같은 프로그램이 대안입니다."
+      },
+      {
+        "q": "암호가 걸린 압축 파일을 풀 수 없습니다.",
+        "a": "암호를 모르면 풀 수 없습니다. 보낸 사람에게 암호를 받아야 합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "WinRAR 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.win-rar.com/download.html",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "WinRAR 공식 다운로드",
+        "href": "https://www.win-rar.com/download.html"
+      },
+      {
+        "tag": "SW",
+        "name": "7-Zip (무료 대안)",
+        "href": "https://www.7-zip.org/download.html"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "노트패드++-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "텍스트 편집"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "노트패드++",
+    "titleBottom": "다운로드",
+    "listTitle": "노트패드++ 다운로드",
+    "listMeta": "무료 · 오픈소스 · 텍스트 편집",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "노트패드++ 받으러 가기",
+    "sourceNote": "SOURCE: Notepad++ 공식 다운로드 화면 · 오픈소스",
+    "description": "노트패드++를 공식 다운로드 화면으로 연결합니다. 한글이 깨질 때 인코딩 바꾸는 법과 설치판·무설치판의 차이를 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Notepad++"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Notepad++ 공식 다운로드 화면이 열립니다. 맨 위가 최신 버전입니다."
+      },
+      {
+        "title": "설치판과 무설치판 고르기",
+        "body": "Installer는 설치판, Portable(zip/7z)은 압축만 풀어 쓰는 무설치판입니다. USB에 넣어 다니려면 무설치판을 고릅니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다. 설치 중 언어에서 한국어를 고를 수 있습니다."
+      },
+      {
+        "title": "인코딩 확인",
+        "body": "메뉴의 인코딩에서 현재 파일이 어떤 방식으로 저장돼 있는지 볼 수 있습니다. 한글이 깨지면 여기서 바꿉니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "한글이 깨져 보입니다.",
+        "a": "인코딩 메뉴에서 ANSI(CP949)와 UTF-8을 바꿔 가며 확인하세요. 국내에서 만든 오래된 파일은 CP949, 요즘 파일은 UTF-8인 경우가 많습니다."
+      },
+      {
+        "q": "설치판과 무설치판 중 뭘 받나요?",
+        "a": "PC에 계속 쓸 거면 설치판, USB에 넣어 여러 PC에서 쓸 거면 무설치판입니다."
+      },
+      {
+        "q": "메모장 대신 기본으로 쓰고 싶습니다.",
+        "a": "텍스트 파일에서 오른쪽 버튼 › 연결 프로그램 › 다른 앱 선택에서 노트패드++를 고르고 항상 사용을 체크하면 됩니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "노트패드++ 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://notepad-plus-plus.org/downloads/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Notepad++ 공식 다운로드",
+        "href": "https://notepad-plus-plus.org/downloads/"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "파이썬-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "개발 도구"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "파이썬",
+    "titleBottom": "다운로드",
+    "listTitle": "파이썬 다운로드",
+    "listMeta": "무료 · Python.org · 프로그래밍",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "파이썬 받으러 가기",
+    "sourceNote": "SOURCE: Python.org 공식 다운로드 화면",
+    "description": "파이썬을 공식 다운로드 화면으로 연결합니다. 설치할 때 PATH 체크를 빠뜨리면 생기는 문제와 버전 고르는 법을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Python Software Foundation"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Python.org 공식 다운로드 화면이 열립니다. 접속한 기기에 맞는 최신 버전이 먼저 표시됩니다."
+      },
+      {
+        "title": "설치 시작 화면에서 PATH 체크",
+        "body": "설치 첫 화면 아래에 Add python.exe to PATH 라는 체크가 있습니다. 이걸 켜야 명령 프롬프트에서 python 명령이 먹습니다. 가장 많이 빠뜨리는 부분입니다."
+      },
+      {
+        "title": "설치",
+        "body": "체크를 켠 뒤 Install Now 를 누르면 됩니다."
+      },
+      {
+        "title": "확인",
+        "body": "명령 프롬프트에서 python --version 을 쳐서 버전이 나오면 정상입니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "명령 프롬프트에서 python 을 쳤는데 인식이 안 됩니다.",
+        "a": "설치할 때 Add python.exe to PATH 를 체크하지 않은 경우입니다. 설치 파일을 다시 실행해 Modify 에서 고치거나, 지우고 체크를 켜서 다시 설치하면 됩니다."
+      },
+      {
+        "q": "어떤 버전을 받아야 하나요?",
+        "a": "특별한 이유가 없으면 공식 화면이 먼저 보여 주는 최신 안정 버전을 받으면 됩니다. 쓰려는 교재나 라이브러리가 특정 버전을 요구하면 그것에 맞추세요."
+      },
+      {
+        "q": "Microsoft Store 에도 파이썬이 있습니다.",
+        "a": "스토어 판도 있지만 경로와 권한이 달라 교재와 어긋나는 경우가 있습니다. 처음 배우는 중이라면 공식 화면에서 받는 편이 헷갈리지 않습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "파이썬 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.python.org/downloads/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Python Software Foundation 공식 다운로드",
+        "href": "https://www.python.org/downloads/"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "VS-Code-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "개발 도구"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "VS Code",
+    "titleBottom": "다운로드",
+    "listTitle": "VS Code 다운로드",
+    "listMeta": "무료 · 마이크로소프트 · 코드 편집",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "VS Code 받으러 가기",
+    "sourceNote": "SOURCE: Visual Studio Code 공식 다운로드 화면",
+    "description": "VS Code를 공식 다운로드 화면으로 연결합니다. User와 System 설치의 차이와 한국어로 바꾸는 법을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "마이크로소프트"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Visual Studio Code 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "운영체제 고르기",
+        "body": "Windows, Mac, Linux 중 쓰는 것을 고릅니다. Windows는 버튼을 누르면 개인 계정용 설치 파일이 받아져 관리자 권한 없이도 설치됩니다."
+      },
+      {
+        "title": "설치",
+        "body": "설치 중 PATH 추가와 우클릭 메뉴 등록 항목을 켜 두면 나중에 편합니다."
+      },
+      {
+        "title": "한국어로 바꾸기",
+        "body": "확장에서 Korean Language Pack 을 설치하고 다시 시작하면 메뉴가 한국어가 됩니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "관리자 권한이 없어도 설치되나요?",
+        "a": "Windows 다운로드 버튼으로 받는 파일은 사용자 계정에 설치되는 방식이라 관리자 권한 없이 설치되는 것이 보통입니다. PC 전체에 설치해야 한다면 공식 화면의 다른 설치 파일 목록을 확인하세요."
+      },
+      {
+        "q": "메뉴를 한국어로 바꾸려면요?",
+        "a": "확장 탭에서 Korean Language Pack for Visual Studio Code 를 설치하고 프로그램을 다시 켜면 됩니다."
+      },
+      {
+        "q": "Visual Studio 와 다른 건가요?",
+        "a": "이름은 비슷하지만 다른 프로그램입니다. VS Code 는 가벼운 편집기이고 Visual Studio 는 훨씬 큰 개발 도구입니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "VS Code 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://code.visualstudio.com/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "마이크로소프트 공식 다운로드",
+        "href": "https://code.visualstudio.com/download"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "씨클리너-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "시스템 정리"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "CCleaner",
+    "titleBottom": "다운로드",
+    "listTitle": "CCleaner 다운로드",
+    "listMeta": "무료판 있음 · Piriform · 정리",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "CCleaner 받으러 가기",
+    "sourceNote": "SOURCE: CCleaner 공식 다운로드 화면 · 무료판과 유료판이 나뉩니다",
+    "description": "CCleaner를 공식 다운로드 화면으로 연결합니다. 무료판을 고르는 법과 레지스트리 청소를 함부로 하면 안 되는 이유를 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Piriform"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 CCleaner 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "무료판 고르기",
+        "body": "화면에 무료판과 유료판이 나란히 있습니다. 무료판 쪽의 다운로드를 눌러야 결제 없이 씁니다."
+      },
+      {
+        "title": "함께 설치 항목 확인",
+        "body": "설치 중 다른 프로그램을 같이 설치할지 묻는 칸이 있으면 필요 없는 것은 해제하세요."
+      },
+      {
+        "title": "청소 전 확인",
+        "body": "청소 목록에서 무엇을 지울지 먼저 봅니다. 브라우저 쿠키를 지우면 로그인이 모두 풀립니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료로 쓸 수 있나요?",
+        "a": "공식 화면에 무료판과 유료판이 함께 안내되어 있습니다. 무료판 쪽 다운로드를 골라야 합니다."
+      },
+      {
+        "q": "레지스트리 청소를 해도 되나요?",
+        "a": "권하지 않습니다. 얻는 것은 거의 없고 잘못 지우면 프로그램이 안 열립니다. 굳이 한다면 백업을 만들겠냐는 물음에 반드시 예를 고르세요."
+      },
+      {
+        "q": "청소했더니 로그인이 다 풀렸습니다.",
+        "a": "쿠키를 지우면 그렇게 됩니다. 청소 목록에서 쿠키 항목을 빼면 로그인이 유지됩니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "CCleaner 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.ccleaner.com/ko-kr/ccleaner/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Piriform 공식 다운로드",
+        "href": "https://www.ccleaner.com/ko-kr/ccleaner/download"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "에브리씽-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "유틸리티"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "에브리씽",
+    "titleBottom": "다운로드",
+    "listTitle": "에브리씽 다운로드",
+    "listMeta": "무료 · voidtools · 파일 검색",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "에브리씽 받으러 가기",
+    "sourceNote": "SOURCE: voidtools Everything 공식 다운로드 화면",
+    "description": "에브리씽(Everything)을 공식 다운로드 화면으로 연결합니다. NTFS에서만 즉시 검색이 되는 이유와 관리자 권한이 필요한 이유를 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "voidtools"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 voidtools 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치판과 무설치판 고르기",
+        "body": "Installer 는 설치판, Portable Zip 은 압축만 풀어 쓰는 무설치판입니다."
+      },
+      {
+        "title": "설치와 첫 색인",
+        "body": "처음 실행하면 드라이브를 훑어 목록을 만듭니다. 몇 초에서 몇십 초면 끝납니다."
+      },
+      {
+        "title": "검색",
+        "body": "창에 글자를 치면 결과가 즉시 나옵니다. 파일 이름 일부만 쳐도 됩니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "외장 하드나 USB가 검색되지 않습니다.",
+        "a": "Everything 은 NTFS 드라이브의 파일 기록을 읽어 즉시 검색합니다. USB에 흔한 exFAT·FAT32 는 방식이 달라 별도 설정에서 폴더를 직접 추가해야 합니다."
+      },
+      {
+        "q": "관리자 권한을 왜 요구하나요?",
+        "a": "드라이브의 파일 기록을 직접 읽으려면 권한이 필요합니다. 그래서 처음 실행할 때 물어봅니다."
+      },
+      {
+        "q": "파일 내용으로도 찾을 수 있나요?",
+        "a": "기본은 파일 이름 검색입니다. 내용 검색은 따로 설정해야 하고 훨씬 느립니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "에브리씽 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.voidtools.com/downloads/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "voidtools 공식 다운로드",
+        "href": "https://www.voidtools.com/downloads/"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "오다시티-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "음성 편집"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "오다시티",
+    "titleBottom": "다운로드",
+    "listTitle": "오다시티 다운로드",
+    "listMeta": "무료 · 오픈소스 · 음성 편집",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "오다시티 받으러 가기",
+    "sourceNote": "SOURCE: Audacity 공식 다운로드 화면 · 오픈소스",
+    "description": "오다시티(Audacity)를 공식 다운로드 화면으로 연결합니다. MP3로 저장하는 법과 PC 소리를 녹음할 때 필요한 설정을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Audacity Team"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Audacity 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "운영체제 선택",
+        "body": "Windows, macOS, Linux 판이 있습니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다. 설치 중 언어에서 한국어를 고를 수 있습니다."
+      },
+      {
+        "title": "MP3로 내보내기",
+        "body": "파일 › 내보내기에서 MP3를 고르면 됩니다. 예전에는 인코더를 따로 받아야 했지만 지금은 그 과정이 없습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "MP3로 저장하려면 뭘 더 받아야 하나요?",
+        "a": "요즘 버전은 따로 받을 것이 없습니다. 파일 › 내보내기에서 MP3를 고르면 바로 저장됩니다."
+      },
+      {
+        "q": "PC에서 나는 소리를 녹음하고 싶습니다.",
+        "a": "Windows 소리 설정에서 스테레오 믹스를 켜고 오다시티의 입력 장치로 고르면 됩니다. 장치가 없으면 사운드 드라이버 설정에서 숨김 장치 표시를 켜 보세요."
+      },
+      {
+        "q": "녹음이 너무 작게 들립니다.",
+        "a": "입력 볼륨 슬라이더를 올리고, 그래도 작으면 효과 › 증폭으로 키우면 됩니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "오다시티 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.audacityteam.org/download/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Audacity Team 공식 다운로드",
+        "href": "https://www.audacityteam.org/download/"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "네이버-MYBOX-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "클라우드"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "네이버 MYBOX",
+    "titleBottom": "다운로드",
+    "listTitle": "네이버 MYBOX 다운로드",
+    "listMeta": "무료 30GB · 네이버 · 클라우드",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "네이버 MYBOX 받으러 가기",
+    "sourceNote": "SOURCE: 네이버 MYBOX 공식 화면",
+    "description": "네이버 MYBOX PC 프로그램을 공식 화면으로 연결합니다. 무료 30GB 범위와 PC 폴더 자동 올리기 설정을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "네이버"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 네이버 MYBOX 공식 화면이 열립니다. PC 프로그램 항목에서 설치 파일을 받습니다."
+      },
+      {
+        "title": "네이버 계정으로 로그인",
+        "body": "쓰던 네이버 계정으로 로그인하면 됩니다. 별도 가입이 필요 없습니다."
+      },
+      {
+        "title": "올릴 폴더 정하기",
+        "body": "PC의 어느 폴더를 자동으로 올릴지 고릅니다. 사진 폴더를 지정해 두면 알아서 올라갑니다."
+      },
+      {
+        "title": "용량 확인",
+        "body": "공식 화면에 국내 최대 무료 용량 30GB로 안내되어 있습니다. 넘으면 더 올릴 수 없으니 큰 파일을 올리기 전에 남은 용량을 보세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료 용량은 얼마인가요?",
+        "a": "공식 화면에 국내 최대 무료 용량 30GB로 적혀 있습니다. 더 필요하면 유료 요금제를 쓰면 됩니다. 정책이 바뀔 수 있으니 받기 전에 화면에서 한 번 확인하세요."
+      },
+      {
+        "q": "PC 폴더가 자동으로 올라가나요?",
+        "a": "올릴 폴더를 지정해 두면 파일이 생기거나 바뀔 때 자동으로 올라갑니다."
+      },
+      {
+        "q": "휴대폰 사진도 같이 보이나요?",
+        "a": "휴대폰 앱에서 같은 계정으로 로그인하고 자동 올리기를 켜면 PC에서도 함께 보입니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "네이버 MYBOX 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://mybox.naver.com/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "네이버 공식 다운로드",
+        "href": "https://mybox.naver.com/"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "김프-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "이미지 편집"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "김프",
+    "titleBottom": "다운로드",
+    "listTitle": "김프 다운로드",
+    "listMeta": "무료 · 오픈소스 · 이미지 편집",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "김프 받으러 가기",
+    "sourceNote": "SOURCE: GIMP 공식 다운로드 화면 · 오픈소스",
+    "description": "김프(GIMP)를 공식 다운로드 화면으로 연결합니다. 포토샵 대신 쓸 때 알아 둘 점과 PSD 파일을 여는 방법을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "GIMP"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 GIMP 공식 다운로드 화면이 열립니다. 접속한 기기에 맞는 파일이 먼저 표시됩니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다. 용량이 큰 편이라 다운로드에 시간이 걸립니다."
+      },
+      {
+        "title": "한국어 확인",
+        "body": "설치 후 메뉴가 영어로 나오면 Edit › Preferences › Interface 에서 언어를 한국어로 바꾸고 다시 켜면 됩니다."
+      },
+      {
+        "title": "작업 저장 형식 정하기",
+        "body": "편집 중인 파일은 XCF 로 저장하고, 남에게 줄 때는 파일 › 내보내기에서 JPG나 PNG로 내보냅니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "포토샵 파일(PSD)을 열 수 있나요?",
+        "a": "열 수 있습니다. 다만 레이어 효과나 일부 기능은 그대로 재현되지 않을 수 있습니다."
+      },
+      {
+        "q": "저장했는데 JPG가 아니라 XCF로 됩니다.",
+        "a": "김프는 저장이 작업 파일(XCF), 내보내기가 이미지 파일입니다. JPG나 PNG로 만들려면 파일 › 내보내기를 쓰세요."
+      },
+      {
+        "q": "포토샵 대신 쓸 만한가요?",
+        "a": "사진 보정과 합성 같은 일반 작업은 충분합니다. 다만 단축키와 화면 구성이 달라 익숙해지는 데 시간이 걸립니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "김프 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.gimp.org/downloads/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "GIMP 공식 다운로드",
+        "href": "https://www.gimp.org/downloads/"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "블렌더-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "3D 제작"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "블렌더",
+    "titleBottom": "다운로드",
+    "listTitle": "블렌더 다운로드",
+    "listMeta": "무료 · 오픈소스 · 3D",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "블렌더 받으러 가기",
+    "sourceNote": "SOURCE: Blender 공식 다운로드 화면 · 오픈소스",
+    "description": "블렌더를 공식 다운로드 화면으로 연결합니다. 그래픽카드 요구 사항과 LTS 판을 골라야 하는 경우를 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Blender Foundation"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Blender 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "최신판과 LTS 고르기",
+        "body": "화면 아래에 LTS(장기 지원) 판이 따로 있습니다. 강의나 플러그인이 특정 버전을 요구하면 LTS 쪽이 안전합니다."
+      },
+      {
+        "title": "설치",
+        "body": "설치판(msi/exe)과 압축만 풀어 쓰는 무설치판이 있습니다."
+      },
+      {
+        "title": "그래픽 설정 확인",
+        "body": "편집 › 환경 설정 › 시스템에서 렌더링에 쓸 장치를 고를 수 있습니다. 그래픽카드가 잡히면 렌더링이 훨씬 빠릅니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "어떤 PC 사양이 필요한가요?",
+        "a": "간단한 모델링은 일반 PC로도 됩니다. 다만 렌더링은 그래픽카드 성능을 많이 타서, 무거운 작업을 하려면 외장 그래픽카드가 있는 편이 낫습니다."
+      },
+      {
+        "q": "LTS 판은 뭔가요?",
+        "a": "오래 유지 보수되는 버전입니다. 수업 자료나 애드온이 특정 버전을 요구할 때 씁니다."
+      },
+      {
+        "q": "한국어로 쓸 수 있나요?",
+        "a": "편집 › 환경 설정 › 인터페이스에서 번역을 켜고 한국어를 고르면 됩니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "블렌더 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.blender.org/download/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Blender Foundation 공식 다운로드",
+        "href": "https://www.blender.org/download/"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "구글-드라이브-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "클라우드"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "구글 드라이브",
+    "titleBottom": "PC 다운로드",
+    "listTitle": "구글 드라이브 PC 다운로드",
+    "listMeta": "무료 15GB · 구글 · 클라우드",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "구글 드라이브 받으러 가기",
+    "sourceNote": "SOURCE: 구글 공식 드라이브 안내 화면",
+    "description": "구글 드라이브 PC 프로그램(데스크톱용 Drive)을 구글 공식 화면으로 연결합니다. 스트리밍과 미러링의 차이를 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "구글"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 구글 드라이브 공식 화면이 열립니다. 데스크톱용 Drive 다운로드 항목을 찾습니다."
+      },
+      {
+        "title": "설치와 로그인",
+        "body": "받은 파일을 실행해 설치하고 구글 계정으로 로그인합니다."
+      },
+      {
+        "title": "스트리밍과 미러링 고르기",
+        "body": "스트리밍은 파일 목록만 PC에 두고 열 때 받아옵니다. 미러링은 PC에도 실제 파일을 둡니다. 저장 공간이 빠듯하면 스트리밍이 낫습니다."
+      },
+      {
+        "title": "탐색기에서 확인",
+        "body": "설치가 끝나면 파일 탐색기에 구글 드라이브가 하나의 드라이브처럼 나타납니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "스트리밍과 미러링 중 뭘 고르나요?",
+        "a": "PC 저장 공간이 넉넉하지 않으면 스트리밍입니다. 인터넷이 끊긴 곳에서도 파일을 열어야 하면 미러링을 고르세요."
+      },
+      {
+        "q": "무료 용량은 얼마인가요?",
+        "a": "구글 계정 하나에 15GB가 무료로 제공되며 지메일과 사진이 이 용량을 함께 씁니다. 더 필요하면 유료 요금제를 쓰면 됩니다."
+      },
+      {
+        "q": "PC에서 지우면 클라우드에서도 지워지나요?",
+        "a": "동기화 중이라면 함께 지워집니다. 지우기 전에 꼭 확인하세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "구글 드라이브 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://workspace.google.com/intl/ko_kr/products/drive/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "구글 공식 다운로드",
+        "href": "https://workspace.google.com/intl/ko_kr/products/drive/"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "원드라이브-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "클라우드"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "원드라이브",
+    "titleBottom": "다운로드",
+    "listTitle": "원드라이브 다운로드",
+    "listMeta": "무료 5GB · 마이크로소프트 · 클라우드",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "원드라이브 받으러 가기",
+    "sourceNote": "SOURCE: 마이크로소프트 원드라이브 공식 다운로드 화면",
+    "description": "원드라이브를 마이크로소프트 공식 화면으로 연결합니다. Windows에 이미 들어 있는 경우와 바탕화면 백업이 켜져 있을 때 생기는 혼란을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "마이크로소프트"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "이미 있는지 먼저 확인",
+        "body": "Windows 10·11에는 원드라이브가 기본으로 들어 있습니다. 작업 표시줄 오른쪽 아래에 구름 모양이 있으면 이미 설치된 것입니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "지웠거나 Mac에 설치한다면 위 버튼으로 공식 다운로드 화면을 엽니다."
+      },
+      {
+        "title": "로그인",
+        "body": "마이크로소프트 계정으로 로그인합니다. Windows 로그인 계정과 같으면 자동으로 이어집니다."
+      },
+      {
+        "title": "백업 폴더 확인",
+        "body": "설정에서 바탕화면·문서·사진 폴더를 원드라이브로 백업할지 고를 수 있습니다. 켜 두면 그 폴더가 클라우드로 옮겨집니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "바탕화면 파일이 사라진 것 같습니다.",
+        "a": "원드라이브 백업이 켜지면 바탕화면 폴더가 원드라이브 안으로 옮겨집니다. 파일은 그대로 있고 위치만 바뀐 것입니다. 원드라이브 설정 › 동기화 및 백업에서 확인할 수 있습니다."
+      },
+      {
+        "q": "무료 용량은 얼마인가요?",
+        "a": "기본 제공은 5GB입니다. Microsoft 365를 쓰면 훨씬 큰 용량이 함께 제공됩니다."
+      },
+      {
+        "q": "동기화를 잠시 멈출 수 있나요?",
+        "a": "작업 표시줄의 원드라이브 아이콘을 눌러 동기화 일시 중지를 고르면 됩니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "원드라이브 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.microsoft.com/ko-kr/microsoft-365/onedrive/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "마이크로소프트 공식 다운로드",
+        "href": "https://www.microsoft.com/ko-kr/microsoft-365/onedrive/download"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "리브레오피스-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "문서"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "리브레오피스",
+    "titleBottom": "다운로드",
+    "listTitle": "리브레오피스 다운로드",
+    "listMeta": "무료 · 오픈소스 · 오피스",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "리브레오피스 받으러 가기",
+    "sourceNote": "SOURCE: LibreOffice 한국어 공식 다운로드 화면 · 오픈소스",
+    "description": "리브레오피스를 공식 한국어 다운로드 화면으로 연결합니다. MS 오피스 파일 호환 범위와 저장 형식 고르는 법을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "The Document Foundation"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 리브레오피스 한국어 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "버전 고르기",
+        "body": "최신 기능이 담긴 판과 안정성을 앞세운 판이 나뉘어 있습니다. 업무용이면 안정판 쪽이 무난합니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다. 워드·엑셀·파워포인트에 해당하는 프로그램이 한 번에 설치됩니다."
+      },
+      {
+        "title": "저장 형식 정하기",
+        "body": "도구 › 옵션 › 불러오기/저장에서 기본 저장 형식을 docx·xlsx로 바꿀 수 있습니다. 남과 주고받을 일이 많으면 바꿔 두는 편이 낫습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "엑셀·워드 파일이 열리나요?",
+        "a": "xlsx·docx·pptx를 열고 저장할 수 있습니다. 다만 복잡한 수식이나 매크로, 정교한 서식은 배치가 달라질 수 있습니다."
+      },
+      {
+        "q": "한글(HWP) 파일도 열리나요?",
+        "a": "버전에 따라 일부 열리기도 하지만 안정적이지 않습니다. HWP는 한컴 뷰어로 여는 편이 확실합니다."
+      },
+      {
+        "q": "오픈오피스와 뭐가 다른가요?",
+        "a": "뿌리가 같은 프로그램인데 리브레오피스 쪽이 개발이 더 활발합니다. 새로 시작한다면 리브레오피스가 무난합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "리브레오피스 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://ko.libreoffice.org/download/libreoffice/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "The Document Foundation 공식 다운로드",
+        "href": "https://ko.libreoffice.org/download/libreoffice/"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "깃-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "개발 도구"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "Git",
+    "titleBottom": "다운로드",
+    "listTitle": "Git 다운로드",
+    "listMeta": "무료 · 오픈소스 · 버전 관리",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "Git 받으러 가기",
+    "sourceNote": "SOURCE: Git 공식 설치 화면 (git-scm.com) · 오픈소스",
+    "description": "Git을 공식 다운로드 화면으로 연결합니다. 설치 중 줄바꿈 설정과 기본 편집기 선택에서 헤매지 않도록 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Git"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Git 공식 설치 화면이 열립니다. Windows·macOS·Linux 중 쓰는 것을 고르면 그 OS의 설치 방법이 나옵니다."
+      },
+      {
+        "title": "설치 옵션은 기본값으로",
+        "body": "설치 중 선택 화면이 여러 번 나옵니다. 처음이라면 대부분 기본값 그대로 두고 넘어가면 됩니다."
+      },
+      {
+        "title": "기본 편집기 고르기",
+        "body": "Vim이 기본으로 잡혀 있어 당황하기 쉽습니다. VS Code를 쓴다면 목록에서 VS Code를 골라 두세요."
+      },
+      {
+        "title": "설치 확인",
+        "body": "명령 프롬프트에서 git --version 을 쳐서 버전이 나오면 정상입니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "설치 중 옵션이 너무 많습니다.",
+        "a": "처음이라면 기본값으로 계속 진행해도 문제없습니다. 나중에 필요하면 설정으로 바꿀 수 있습니다."
+      },
+      {
+        "q": "커밋하려는데 Vim 화면에서 못 빠져나옵니다.",
+        "a": "i 를 눌러 입력하고, ESC 를 누른 뒤 :wq 를 치고 엔터를 누르면 저장하고 나갑니다. 편집기를 VS Code로 바꿔 두면 이 상황이 안 생깁니다."
+      },
+      {
+        "q": "GitHub Desktop 과 다른 건가요?",
+        "a": "Git은 도구 자체이고 GitHub Desktop은 그것을 편하게 쓰는 화면입니다. 명령어가 어려우면 Desktop 같은 프로그램을 함께 쓰면 됩니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Git 설치 파일",
+        "note": "OS 선택 화면",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://git-scm.com/install/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Git 공식 설치 화면",
+        "href": "https://git-scm.com/install/"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "파일질라-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "개발 도구"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "파일질라",
+    "titleBottom": "다운로드",
+    "listTitle": "파일질라 다운로드",
+    "listMeta": "무료 · 오픈소스 · FTP",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "파일질라 받으러 가기",
+    "sourceNote": "SOURCE: FileZilla 공식 다운로드 화면 · 오픈소스",
+    "description": "파일질라를 공식 다운로드 화면으로 연결합니다. Client와 Server를 헷갈리지 않는 법과 설치 중 부가 제안을 빼는 법을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "FileZilla"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "Client 인지 확인",
+        "body": "파일을 올리고 받는 쪽은 FileZilla Client 입니다. Server 는 내 PC를 서버로 만드는 별도 프로그램이니 헷갈리지 마세요."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 FileZilla 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치 중 함께 설치 항목 확인",
+        "body": "설치 과정에 다른 프로그램을 함께 설치할지 묻는 화면이 나올 수 있습니다. 필요 없는 것은 해제하고 진행하세요."
+      },
+      {
+        "title": "접속 정보 입력",
+        "body": "호스트·사용자명·비밀번호·포트를 넣고 연결합니다. 포트는 FTP가 21, SFTP가 22인 경우가 많습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Client 와 Server 중 뭘 받나요?",
+        "a": "웹서버에 파일을 올리려는 것이라면 Client 입니다. Server 는 내 PC를 남이 접속하는 서버로 만들 때 씁니다."
+      },
+      {
+        "q": "연결이 안 됩니다.",
+        "a": "포트가 맞는지 먼저 보세요. FTP는 21, SFTP는 22가 흔합니다. 방화벽이나 공유기에서 막는 경우도 있습니다."
+      },
+      {
+        "q": "비밀번호가 그대로 저장되나요?",
+        "a": "설정에 따라 저장됩니다. 공용 PC에서는 저장하지 않도록 설정하는 편이 안전합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "파일질라 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://filezilla-project.org/download.php",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "FileZilla 공식 다운로드",
+        "href": "https://filezilla-project.org/download.php"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "푸티-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "개발 도구"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "푸티",
+    "titleBottom": "다운로드",
+    "listTitle": "푸티 다운로드",
+    "listMeta": "무료 · 오픈소스 · SSH 접속",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "푸티 받으러 가기",
+    "sourceNote": "SOURCE: PuTTY 제작자 공식 배포 화면 (chiark.greenend.org.uk)",
+    "description": "푸티(PuTTY)를 제작자 공식 배포 화면으로 연결합니다. 검색 결과에 뜨는 가짜 배포처를 피하는 법과 한글 깨짐 설정을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Simon Tatham"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 배포처 확인",
+        "body": "푸티의 공식 배포처는 제작자가 운영하는 chiark.greenend.org.uk 입니다. 비슷한 이름의 다른 사이트에서 받으면 변조된 파일일 수 있으니 주소를 꼭 확인하세요."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 제작자 배포 화면이 열립니다. 목록 위쪽이 최신 안정판입니다."
+      },
+      {
+        "title": "설치판과 단일 실행 파일 고르기",
+        "body": "MSI 설치판과 putty.exe 하나만 받는 방식이 있습니다. 한 번만 쓸 거면 exe 하나로 충분합니다."
+      },
+      {
+        "title": "한글 설정",
+        "body": "접속 전 Window › Translation 에서 문자셋을 UTF-8 로 바꿔 두면 한글이 깨지지 않습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "검색하면 다른 사이트가 먼저 나옵니다.",
+        "a": "푸티는 이름이 널리 알려져 다른 사이트가 상단에 뜨는 경우가 있습니다. 제작자가 직접 배포하는 chiark.greenend.org.uk 에서 받는 것이 가장 확실합니다."
+      },
+      {
+        "q": "한글이 깨져 보입니다.",
+        "a": "접속 전 설정 창에서 Window › Translation 의 문자셋을 UTF-8 로 바꾸세요. 접속한 뒤에는 창 제목 오른쪽 버튼 › Change Settings 에서도 바꿀 수 있습니다."
+      },
+      {
+        "q": "Windows 터미널로도 SSH가 되나요?",
+        "a": "요즘 Windows에는 ssh 명령이 기본으로 들어 있어 명령 프롬프트에서 바로 접속할 수 있습니다. 설정을 저장해 두고 쓰려면 푸티가 편합니다."
+      },
+      {
+        "q": "사이트 접속이 가끔 느립니다.",
+        "a": "푸티는 제작자가 직접 운영하는 서버에서 배포합니다. 상업 사이트가 아니라 접속이 느릴 때가 있습니다. 느리다고 다른 사이트에서 받지 마세요. 변조된 파일이 도는 프로그램입니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "푸티 설치 파일",
+        "note": "제작자 배포 서버",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Simon Tatham 공식 다운로드",
+        "href": "https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "구글-어스-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "지도"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "데스크톱판 종료 예정"
+    ],
+    "titleTop": "구글 어스",
+    "titleBottom": "다운로드",
+    "listTitle": "구글 어스 다운로드",
+    "listMeta": "무료 · 구글 · 데스크톱판 종료 예정",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "구글 어스 받으러 가기",
+    "sourceNote": "SOURCE: 구글 어스 공식 버전 안내 화면 · 데스크톱판 다운로드 종료 공지 있음",
+    "description": "구글 어스를 공식 화면으로 연결합니다. 웹판과 데스크톱 프로판의 차이, 그리고 데스크톱판 다운로드가 언제까지인지 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "구글"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 구글 어스 버전 안내 화면이 열립니다. 웹판과 데스크톱판을 여기서 고릅니다."
+      },
+      {
+        "title": "설치 없이 쓸지 정하기",
+        "body": "브라우저에서 바로 쓰는 웹판이 있습니다. 가볍게 볼 목적이면 설치가 필요 없습니다."
+      },
+      {
+        "title": "데스크톱 프로판은 기한 확인",
+        "body": "측정이나 GIS 데이터 내보내기가 필요하면 데스크톱용 Google 어스 프로를 받습니다. 다만 공식 화면에 2027년 6월 25일부터 데스크톱판을 더 이상 내려받을 수 없다는 공지가 붙어 있습니다. 쓸 계획이라면 미리 받아 두세요."
+      },
+      {
+        "title": "설치 후 확인",
+        "body": "처음 실행하면 지도를 내려받느라 잠깐 느릴 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "데스크톱판이 없어진다고 하던데요?",
+        "a": "공식 화면에 2027년 6월 25일부터 데스크톱용 Google 어스 프로를 더 이상 내려받을 수 없다고 공지되어 있습니다. GIS 데이터 내보내기나 과거 이미지 다시 보기 같은 기능이 필요하면 그 전에 받아 두는 편이 낫습니다."
+      },
+      {
+        "q": "웹판과 데스크톱판 중 뭘 쓰나요?",
+        "a": "그냥 둘러볼 거면 웹판이 편합니다. 거리·면적 측정이나 고해상도 이미지 저장이 필요하면 데스크톱판을 쓰세요."
+      },
+      {
+        "q": "Google Earth Pro 는 유료인가요?",
+        "a": "무료로 제공됩니다. 다만 공식 화면에 2027년 6월 25일부터 데스크톱판 다운로드가 종료된다는 공지가 있습니다. 이후에는 웹판과 모바일판을 쓰게 됩니다."
+      },
+      {
+        "q": "과거 사진을 볼 수 있나요?",
+        "a": "데스크톱판에서 시간 슬라이더를 켜면 예전에 찍힌 위성 사진을 볼 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "구글 어스 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.google.com/intl/ko/earth/about/versions/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "구글 공식 다운로드",
+        "href": "https://www.google.com/intl/ko/earth/about/versions/"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "에픽게임즈-런처-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "게임 플랫폼"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "에픽게임즈 런처",
+    "titleBottom": "다운로드",
+    "listTitle": "에픽게임즈 런처 다운로드",
+    "listMeta": "무료 · Epic Games · 게임 플랫폼",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "에픽게임즈 런처 받으러 가기",
+    "sourceNote": "SOURCE: Epic Games 스토어 공식 다운로드 화면",
+    "description": "에픽게임즈 런처를 공식 다운로드 화면으로 연결합니다. 매주 주는 무료 게임을 받는 법과 설치 위치를 바꾸는 법을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Epic Games"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Epic Games 스토어 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치와 로그인",
+        "body": "받은 파일을 실행해 설치하고 계정으로 로그인합니다. 구글이나 다른 계정으로도 가입할 수 있습니다."
+      },
+      {
+        "title": "설치 위치 확인",
+        "body": "게임은 용량이 큽니다. 설정에서 기본 설치 위치를 여유 있는 드라이브로 바꿔 두면 나중에 편합니다."
+      },
+      {
+        "title": "무료 게임 받기",
+        "body": "스토어의 무료 게임 항목에서 받아 두면 계정에 계속 남습니다. 받아 두기만 해도 나중에 언제든 설치할 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료 게임은 계속 쓸 수 있나요?",
+        "a": "받아 둔 게임은 계정에 남아 나중에도 설치해 쓸 수 있습니다. 기간 안에 받아 두는 것이 중요합니다."
+      },
+      {
+        "q": "게임 설치 위치를 바꿀 수 있나요?",
+        "a": "설정에서 기본 설치 경로를 바꾸거나, 게임마다 설치할 때 위치를 고를 수 있습니다."
+      },
+      {
+        "q": "스팀에서 산 게임을 여기서 쓸 수 있나요?",
+        "a": "아닙니다. 플랫폼마다 계정과 라이브러리가 따로입니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "에픽게임즈 런처 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://store.epicgames.com/ko/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Epic Games 공식 다운로드",
+        "href": "https://store.epicgames.com/ko/download"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
   }
 ]
