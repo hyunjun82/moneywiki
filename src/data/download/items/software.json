@@ -12461,5 +12461,5483 @@
       }
     ],
     "picksTitle": "압축 파일을 풀 때 쓰는 프로그램"
+  },
+  {
+    "slug": "꿀뷰-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "이미지"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "꿀뷰",
+    "titleBottom": "다운로드",
+    "listTitle": "꿀뷰 다운로드",
+    "listMeta": "무료 · 반디소프트 · 이미지 뷰어",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "꿀뷰 다운로드",
+    "sourceNote": "SOURCE: 반디소프트 꿀뷰 공식 화면 · 무료 이미지 뷰어",
+    "description": "꿀뷰(Honeyview)를 반디소프트 공식 화면으로 연결합니다. 압축 파일 안의 이미지를 풀지 않고 보는 기능과 만화 보기에 강한 이유를 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "반디소프트"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 반디소프트 꿀뷰 공식 화면이 열립니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다. 설치 중 어떤 이미지 형식을 꿀뷰로 열지 고를 수 있습니다."
+      },
+      {
+        "title": "압축 파일 그대로 열기",
+        "body": "ZIP 이나 RAR 안에 든 이미지를 풀지 않고 바로 볼 수 있습니다. 만화나 사진 묶음을 볼 때 편합니다."
+      },
+      {
+        "title": "움직이는 이미지 확인",
+        "body": "GIF 나 WebP 같은 움직이는 이미지도 그대로 재생됩니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "압축을 풀지 않고도 볼 수 있나요?",
+        "a": "됩니다. ZIP·RAR 안의 이미지를 그대로 넘겨 볼 수 있어 만화 파일을 볼 때 많이 씁니다."
+      },
+      {
+        "q": "알씨와 뭐가 다른가요?",
+        "a": "꿀뷰는 보기에 집중해 가볍고 광고가 없습니다. 알씨는 사진 편집과 변환 기능이 더 있습니다."
+      },
+      {
+        "q": "무료인가요?",
+        "a": "공식 화면에 무료 이미지 뷰어로 안내되어 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "꿀뷰 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.bandisoft.com/honeyview/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "꿀뷰 공식 화면",
+        "href": "https://www.bandisoft.com/honeyview/"
+      },
+      {
+        "tag": "SW",
+        "name": "알씨 (사진 편집)",
+        "href": "/download/software/%EC%95%8C%EC%94%A8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "반디뷰-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "이미지"
+    ],
+    "badges": [
+      "공식 배포처",
+      "유료",
+      "한국어"
+    ],
+    "titleTop": "반디뷰",
+    "titleBottom": "다운로드",
+    "listTitle": "반디뷰 다운로드",
+    "listMeta": "유료 · 반디소프트 · 고속 이미지 뷰어",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "반디뷰 다운로드",
+    "sourceNote": "SOURCE: 반디소프트 반디뷰 공식 화면 · 고속 이미지 뷰어",
+    "description": "반디뷰를 반디소프트 공식 화면으로 연결합니다. 무료인 꿀뷰와 어느 쪽을 골라야 하는지 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "유료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "반디소프트"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "꿀뷰와 먼저 비교하세요",
+        "body": "같은 회사에서 나온 꿀뷰는 무료입니다. 일반적인 이미지 보기라면 꿀뷰로 충분한 경우가 많으니 먼저 써 보세요."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 반디소프트 반디뷰 공식 화면이 열립니다. 요금 조건을 화면에서 확인하세요."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다."
+      },
+      {
+        "title": "고해상도 이미지 확인",
+        "body": "큰 이미지를 빠르게 넘겨 보는 데 강점이 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "꿀뷰와 뭐가 다른가요?",
+        "a": "같은 회사 제품입니다. 꿀뷰는 무료이고, 반디뷰는 요금 조건이 따로 있습니다. 어느 쪽이 맞는지는 공식 화면에서 기능과 조건을 비교해 보세요."
+      },
+      {
+        "q": "무료로 쓸 수 있나요?",
+        "a": "공식 화면에서 지금 조건을 확인하세요. 비용 없이 쓰려면 꿀뷰가 대안입니다."
+      },
+      {
+        "q": "어떤 형식을 지원하나요?",
+        "a": "일반 사진 형식과 함께 압축 파일 안의 이미지도 다룹니다. 자세한 목록은 공식 화면에 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "반디뷰 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.bandisoft.com/bandiview/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "반디뷰 공식 화면",
+        "href": "https://www.bandisoft.com/bandiview/"
+      },
+      {
+        "tag": "SW",
+        "name": "꿀뷰 (무료 대안)",
+        "href": "/download/software/%EA%BF%80%EB%B7%B0-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "반디컷-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "영상 편집"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료 체험",
+      "한국어"
+    ],
+    "titleTop": "반디컷",
+    "titleBottom": "다운로드",
+    "listTitle": "반디컷 다운로드",
+    "listMeta": "무료 체험 · 반디캠컴퍼니 · 동영상 자르기",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "반디컷 다운로드",
+    "sourceNote": "SOURCE: 반디캠컴퍼니 반디컷 공식 화면 · 동영상 자르기/붙이기",
+    "description": "반디컷을 공식 화면으로 연결합니다. 화질 손실 없이 자르는 원리와 무료판 제한을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료 체험"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "반디캠컴퍼니"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 반디컷 공식 화면이 열립니다."
+      },
+      {
+        "title": "무료판 제한 확인",
+        "body": "무료로 쓰면 결과물에 표시가 남거나 제한이 걸립니다. 조건은 공식 화면에 적혀 있으니 받기 전에 확인하세요."
+      },
+      {
+        "title": "고속 모드로 자르기",
+        "body": "다시 인코딩하지 않고 자르는 모드가 있습니다. 화질이 그대로 유지되고 처리도 빠릅니다. 단순히 앞뒤를 잘라낼 때 씁니다."
+      },
+      {
+        "title": "붙이기",
+        "body": "여러 영상을 이어 붙일 수 있습니다. 형식이 다르면 다시 인코딩되어 시간이 걸립니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "자르면 화질이 나빠지나요?",
+        "a": "고속 모드로 자르면 다시 인코딩하지 않아 화질이 그대로입니다. 인코딩 모드를 쓰면 설정에 따라 달라집니다."
+      },
+      {
+        "q": "무료로 계속 쓸 수 있나요?",
+        "a": "무료판은 제한이 있습니다. 비용 없이 쓰려면 샷컷 같은 오픈소스 편집기가 대안입니다."
+      },
+      {
+        "q": "반디캠과 다른 건가요?",
+        "a": "반디캠은 화면 녹화, 반디컷은 영상 자르기입니다. 같은 회사에서 나오지만 하는 일이 다릅니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "반디컷 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.bandicam.co.kr/bandicut-video-cutter/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "반디컷 공식 화면",
+        "href": "https://www.bandicam.co.kr/bandicut-video-cutter/"
+      },
+      {
+        "tag": "SW",
+        "name": "샷컷 (무료 편집)",
+        "href": "/download/software/%EC%83%B7%EC%BB%B7-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "클로바노트-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "메모"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "클로바노트",
+    "titleBottom": "다운로드",
+    "listTitle": "클로바노트 다운로드",
+    "listMeta": "무료 · 네이버 · 음성 기록",
+    "ctaPlatforms": "WINDOWS · MACOS · 웹",
+    "ctaLabel": "클로바노트 다운로드",
+    "sourceNote": "SOURCE: 네이버 클로바노트 공식 화면",
+    "description": "네이버 클로바노트를 공식 화면으로 연결합니다. 회의나 강의를 녹음해 글로 바꿔 주는 서비스로, 무료 시간 제한을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · 웹"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "네이버"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 클로바노트 공식 화면이 열립니다. 웹으로 쓰거나 앱을 받을 수 있습니다."
+      },
+      {
+        "title": "네이버 계정 로그인",
+        "body": "쓰던 네이버 계정으로 로그인하면 됩니다."
+      },
+      {
+        "title": "녹음 또는 파일 올리기",
+        "body": "그 자리에서 녹음하거나 이미 있는 음성 파일을 올려 글로 바꿉니다."
+      },
+      {
+        "title": "사용 시간 확인",
+        "body": "무료로 쓸 수 있는 시간에 한도가 있습니다. 공식 화면에서 지금 조건을 확인하세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료로 얼마나 쓸 수 있나요?",
+        "a": "월별 사용 시간에 한도가 있습니다. 정책이 바뀌는 편이라 공식 화면에서 지금 기준을 확인하세요."
+      },
+      {
+        "q": "녹음 파일을 올려도 되나요?",
+        "a": "이미 녹음한 파일을 올려 글로 바꿀 수 있습니다. 형식과 용량 제한은 화면에 안내되어 있습니다."
+      },
+      {
+        "q": "사람마다 구분해 주나요?",
+        "a": "화자 구분 기능이 있습니다. 다만 목소리가 겹치거나 잡음이 많으면 정확도가 떨어집니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "클로바노트 공식 화면",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · 웹",
+        "url": "https://clovanote.naver.com/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "네이버 공식 다운로드",
+        "href": "https://clovanote.naver.com/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "곰랩-프로그램-다운로드",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "미디어"
+    ],
+    "badges": [
+      "공식 배포처",
+      "제품별 상이",
+      "한국어"
+    ],
+    "titleTop": "곰랩 프로그램",
+    "titleBottom": "다운로드",
+    "listTitle": "곰랩 프로그램 다운로드",
+    "listMeta": "곰플레이어·곰믹스·곰캠 등 한곳에",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "곰랩 프로그램 다운로드",
+    "sourceNote": "SOURCE: 곰랩 공식 다운로드 화면 · 제품 전체 목록",
+    "description": "곰랩 제품을 공식 다운로드 화면으로 연결합니다. 어떤 것이 무료이고 어떤 것이 유료인지 갈라 두었습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "제품별 상이"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "곰랩"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 곰랩 공식 다운로드 화면이 열립니다. 제품 전체가 한 화면에 있습니다."
+      },
+      {
+        "title": "무료와 유료 구분",
+        "body": "곰플레이어는 무료, 곰믹스·곰캠은 체험 후 구매 방식입니다. 화면에서 각 제품의 조건을 확인하세요."
+      },
+      {
+        "title": "필요한 것만 설치",
+        "body": "통합 설치를 권하는 화면이 나와도 쓸 제품만 고르면 됩니다."
+      },
+      {
+        "title": "이전 버전",
+        "body": "같은 화면에 이전 버전 다운로드 항목이 있습니다. 최신판에서 문제가 생겼을 때 씁니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "어떤 것이 무료인가요?",
+        "a": "곰플레이어는 무료로 씁니다. 곰믹스·곰캠 같은 제작 도구는 체험 후 구매하는 방식입니다. 화면에서 제품별 조건을 확인하세요."
+      },
+      {
+        "q": "이전 버전을 받을 수 있나요?",
+        "a": "공식 화면에 이전 버전 다운로드 항목이 있습니다."
+      },
+      {
+        "q": "여러 제품을 한 번에 설치할 수 있나요?",
+        "a": "통합 설치 방식이 안내되는 경우가 있습니다. 필요 없는 것은 빼고 고르면 됩니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "곰랩 공식 다운로드",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.gomlab.com/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "곰랩 공식 다운로드",
+        "href": "https://www.gomlab.com/download"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "곰플레이어",
+        "note": "무료 동영상 재생기.",
+        "href": "/download/software/%EA%B3%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "곰믹스",
+        "note": "영상 편집. 무료판에 제한이 있습니다.",
+        "href": "/download/software/%EA%B3%B0%EB%AF%B9%EC%8A%A4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "곰캠",
+        "note": "화면 녹화. 체험 후 구매 방식.",
+        "href": "/download/software/%EA%B3%B0%EC%BA%A0-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "곰랩 제품"
+  },
+  {
+    "slug": "알툴즈-다운로드",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "유틸리티"
+    ],
+    "badges": [
+      "공식 배포처",
+      "개인 무료",
+      "한국어"
+    ],
+    "titleTop": "알툴즈",
+    "titleBottom": "다운로드",
+    "listTitle": "알툴즈 다운로드",
+    "listMeta": "알집·알약·알씨·알PDF 등 한곳에",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "알툴즈 다운로드",
+    "sourceNote": "SOURCE: 알툴즈 공식 화면 · 제품별 설치하기 버튼",
+    "description": "알툴즈 제품을 공식 화면으로 연결합니다. 개인 무료 조건과 광고 없이 쓰는 방법을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "개인 무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "이스트소프트"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 알툴즈 공식 화면이 열립니다. 제품마다 페이지가 따로 있습니다."
+      },
+      {
+        "title": "설치하기 버튼",
+        "body": "각 제품 화면의 버튼은 '다운로드' 가 아니라 '설치하기' 라고 적혀 있습니다."
+      },
+      {
+        "title": "개인 무료 조건 확인",
+        "body": "알툴즈 무료판은 가정과 개인 사용자 기준입니다. 기업이나 공공기관은 별도 라이선스가 필요합니다."
+      },
+      {
+        "title": "광고가 싫다면",
+        "body": "무료판은 실행 중 광고가 나옵니다. 알툴즈 화면에도 광고 없이 쓰려면 별도 구독을 안내하고 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "회사에서 써도 되나요?",
+        "a": "알툴즈 무료판은 개인 사용자 기준입니다. 업무용 PC 라면 별도 라이선스가 필요합니다. 무료로 업무에 쓰려면 7-Zip 같은 다른 프로그램을 알아보세요."
+      },
+      {
+        "q": "광고를 없앨 수 있나요?",
+        "a": "알툴즈 화면에서 광고 없이 쓰는 별도 구독을 안내하고 있습니다."
+      },
+      {
+        "q": "다운로드 버튼이 안 보입니다.",
+        "a": "'설치하기' 라고 적혀 있습니다. 그 버튼을 누르면 설치 파일을 받습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "알툴즈 공식 화면",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://altools.co.kr/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "알툴즈 공식 화면",
+        "href": "https://altools.co.kr/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "알집",
+        "note": "압축 프로그램.",
+        "href": "/download/software/%EC%95%8C%EC%A7%91-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "알약",
+        "note": "백신. 하나만 켜세요.",
+        "href": "/download/software/%EC%95%8C%EC%95%BD-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "알씨",
+        "note": "사진 보기와 편집.",
+        "href": "/download/software/%EC%95%8C%EC%94%A8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "알PDF",
+        "note": "PDF 합치기·나누기.",
+        "href": "/download/software/%EC%95%8CPDF-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "알캡처",
+        "note": "화면 캡처.",
+        "href": "/download/software/%EC%95%8C%EC%BA%A1%EC%B2%98-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "알드라이브",
+        "note": "FTP 접속.",
+        "href": "/download/software/%EC%95%8C%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "알송",
+        "note": "음악 재생과 가사.",
+        "href": "/download/software/%EC%95%8C%EC%86%A1-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "알툴즈 제품"
+  },
+  {
+    "slug": "반디소프트-프로그램-다운로드",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "유틸리티"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "반디소프트 프로그램",
+    "titleBottom": "다운로드",
+    "listTitle": "반디소프트 프로그램 다운로드",
+    "listMeta": "반디집·꿀뷰·반디뷰",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "반디소프트 프로그램 다운로드",
+    "sourceNote": "SOURCE: 반디소프트 공식 화면",
+    "description": "반디소프트 제품을 공식 화면으로 연결합니다. 무료인 것과 유료인 것을 갈라 두었습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "반디소프트"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무료와 유료를 먼저 구분",
+        "body": "반디집과 꿀뷰는 무료로 씁니다. 반디뷰는 요금 조건이 따로 있습니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 반디집 공식 화면이 열립니다. 다른 제품은 아래 목록에서 고르세요."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다. 광고나 끼워 파는 프로그램이 붙지 않습니다."
+      },
+      {
+        "title": "연결 형식 지정",
+        "body": "설치 중 어떤 파일을 이 프로그램으로 열지 정할 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "반디집은 무료인가요?",
+        "a": "공식 화면에 무료로도 사용할 수 있고 유료 에디션이 고급 기능을 더한다고 적혀 있습니다. 기본 압축·해제는 무료판으로 됩니다."
+      },
+      {
+        "q": "꿀뷰와 반디뷰 중 뭘 받나요?",
+        "a": "꿀뷰가 무료입니다. 일반적인 이미지 보기라면 꿀뷰로 충분합니다."
+      },
+      {
+        "q": "반디캠도 같은 회사인가요?",
+        "a": "반디캠과 반디컷은 반디캠컴퍼니 제품으로 사이트가 다릅니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "반디집 공식 화면",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.bandisoft.com/bandizip/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "반디소프트 반디집",
+        "href": "https://www.bandisoft.com/bandizip/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "반디집",
+        "note": "압축 프로그램. 무료로 쓸 수 있습니다.",
+        "href": "/download/software/%EB%B0%98%EB%94%94%EC%A7%91-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "꿀뷰",
+        "note": "무료 이미지 뷰어. 압축 파일도 그대로 봅니다.",
+        "href": "/download/software/%EA%BF%80%EB%B7%B0-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "반디뷰",
+        "note": "고속 이미지 뷰어. 요금 조건이 따로 있습니다.",
+        "href": "/download/software/%EB%B0%98%EB%94%94%EB%B7%B0-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "반디소프트 제품"
+  },
+  {
+    "slug": "이미지-뷰어-무료-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "이미지"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "이미지 뷰어",
+    "titleBottom": "무료 프로그램",
+    "listTitle": "이미지 뷰어 무료 프로그램",
+    "listMeta": "무료 4가지 · 용도별",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "이미지 뷰어 무료 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 배포 화면",
+    "description": "사진을 빠르게 넘겨 보는 무료 뷰어를 정리했습니다. 윈도우 기본 사진 앱으로 충분한 경우도 함께 담았습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "윈도우 기본 앱으로 될지 먼저 확인",
+        "body": "Windows 10·11 의 사진 앱으로도 일반적인 사진 보기는 됩니다. 느리거나 특정 형식이 안 열릴 때 다른 뷰어를 찾게 됩니다."
+      },
+      {
+        "title": "가볍게 보기만 하면 꿀뷰",
+        "body": "위 버튼으로 꿀뷰를 받습니다. 무료이고 광고가 없으며 압축 파일 안의 이미지도 그대로 봅니다."
+      },
+      {
+        "title": "편집까지 하려면 알씨",
+        "body": "크기 변경이나 간단한 보정까지 하려면 알씨가 편합니다. 개인 무료입니다."
+      },
+      {
+        "title": "일괄 변환이 필요하면 IrfanView",
+        "body": "여러 장을 한 번에 바꾸는 작업은 IrfanView 가 강합니다. 플러그인을 함께 설치해야 하는 형식이 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "HEIC 사진이 안 열립니다.",
+        "a": "아이폰 사진 형식입니다. 알씨로 변환하거나 아이폰 설정에서 촬영 형식을 바꾸면 됩니다. 이 색인에 따로 정리해 두었습니다."
+      },
+      {
+        "q": "만화 파일(zip)을 보고 싶습니다.",
+        "a": "꿀뷰가 압축을 풀지 않고 안의 이미지를 넘겨 볼 수 있어 이 용도로 많이 씁니다."
+      },
+      {
+        "q": "회사에서 써도 되나요?",
+        "a": "알툴즈 제품은 개인 무료 기준입니다. 업무용이라면 꿀뷰처럼 조건이 다른 것을 확인해 보세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "꿀뷰 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.bandisoft.com/honeyview/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "꿀뷰",
+        "note": "무료·광고 없음. 압축 파일 안 이미지도 봅니다.",
+        "href": "/download/software/%EA%BF%80%EB%B7%B0-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "알씨",
+        "note": "보기 + 편집 + 변환. 개인 무료.",
+        "href": "/download/software/%EC%95%8C%EC%94%A8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "IrfanView",
+        "note": "여러 장 일괄 변환에 강합니다.",
+        "href": "/download/software/IrfanView-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "XnView",
+        "note": "많은 형식을 지원합니다.",
+        "href": "/download/software/XnView-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "이미지 뷰어 고르기"
+  },
+  {
+    "slug": "동영상-자르기-무료-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "영상 편집"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "동영상 자르기",
+    "titleBottom": "무료 프로그램",
+    "listTitle": "동영상 자르기 무료 프로그램",
+    "listMeta": "무료 3가지 · 화질 손실 여부",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "동영상 자르기 무료 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 배포 화면",
+    "description": "동영상 앞뒤를 잘라내는 무료 프로그램을 정리했습니다. 화질이 그대로인 방법과 다시 인코딩되는 방법을 갈랐습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "단순히 자르기만 하면 화질을 지킬 수 있습니다",
+        "body": "다시 인코딩하지 않고 자르는 방식이 있습니다. 이러면 화질이 그대로이고 처리도 빠릅니다. 편집 프로그램에서 자르고 내보내면 대부분 다시 인코딩됩니다."
+      },
+      {
+        "title": "무료로 하려면 샷컷",
+        "body": "위 버튼으로 샷컷을 받습니다. 오픈소스라 워터마크가 없습니다."
+      },
+      {
+        "title": "윈도우 기본 기능도 있습니다",
+        "body": "Windows 사진 앱에서도 간단한 자르기가 됩니다. 한 번만 잘라내면 되는 경우 설치가 필요 없습니다."
+      },
+      {
+        "title": "내보내기 형식",
+        "body": "mp4(H.264)로 내보내면 대부분의 기기에서 열립니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "자르면 화질이 나빠지나요?",
+        "a": "다시 인코딩하는 방식이면 설정에 따라 나빠질 수 있습니다. 앞뒤만 잘라낼 거라면 인코딩 없이 자르는 기능을 쓰는 편이 낫습니다."
+      },
+      {
+        "q": "설치 없이 자를 수 없나요?",
+        "a": "Windows 사진 앱에 간단한 자르기 기능이 있습니다. 영상을 열고 편집을 고르면 됩니다."
+      },
+      {
+        "q": "무료판에 워터마크가 남나요?",
+        "a": "샷컷은 오픈소스라 남지 않습니다. 반디컷 무료판은 제한이 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Shotcut 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://shotcut.org/download/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "샷컷",
+        "note": "무료·오픈소스. 워터마크가 없습니다.",
+        "href": "/download/software/%EC%83%B7%EC%BB%B7-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "반디컷",
+        "note": "고속 모드로 화질 그대로. 무료판에 제한이 있습니다.",
+        "href": "/download/software/%EB%B0%98%EB%94%94%EC%BB%B7-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "핸드브레이크",
+        "note": "자르기보다 형식 변환·용량 줄이기용입니다.",
+        "href": "/download/software/%ED%95%B8%EB%93%9C%EB%B8%8C%EB%A0%88%EC%9D%B4%ED%81%AC-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "동영상 자르기에 쓰는 프로그램"
+  },
+  {
+    "slug": "회의-녹음-기록-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "메모"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "회의 녹음·기록",
+    "titleBottom": "프로그램",
+    "listTitle": "회의 녹음·기록 프로그램",
+    "listMeta": "무료 3가지 · 글로 바꾸기",
+    "ctaPlatforms": "WINDOWS · MACOS · 웹",
+    "ctaLabel": "회의 녹음·기록 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 화면",
+    "description": "회의나 강의를 녹음하고 글로 바꾸는 방법을 정리했습니다. 녹음만 할지 글로 바꿀지에 따라 쓰는 것이 다릅니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · 웹"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "녹음만 할지 글로 바꿀지 정하기",
+        "body": "소리만 남기면 되면 윈도우 기본 녹음기로 충분합니다. 글로 바꿔야 하면 별도 서비스가 필요합니다."
+      },
+      {
+        "title": "글로 바꾸려면 클로바노트",
+        "body": "위 버튼으로 네이버 클로바노트를 엽니다. 녹음한 것을 글로 바꿔 주고 화자도 구분합니다. 무료 사용 시간에 한도가 있습니다."
+      },
+      {
+        "title": "녹음 파일을 다듬으려면 오다시티",
+        "body": "잡음을 줄이거나 필요한 구간만 남기려면 오다시티로 편집합니다."
+      },
+      {
+        "title": "동의를 먼저 구하세요",
+        "body": "회의나 통화를 녹음할 때는 참석자에게 알리고 동의를 받는 것이 원칙입니다. 상황에 따라 법적 문제가 될 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "녹음한 것을 글로 바꿀 수 있나요?",
+        "a": "클로바노트 같은 서비스가 음성을 글로 바꿔 줍니다. 무료 사용 시간에 한도가 있으니 화면에서 조건을 확인하세요."
+      },
+      {
+        "q": "PC 에서 나는 소리를 녹음하려면요?",
+        "a": "Windows 소리 설정에서 스테레오 믹스를 켜고 오다시티의 입력 장치로 고르면 됩니다."
+      },
+      {
+        "q": "녹음해도 되나요?",
+        "a": "참석자에게 알리고 동의를 받는 것이 원칙입니다. 상황에 따라 법적 문제가 될 수 있으니 미리 확인하세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "클로바노트 공식 화면",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · 웹",
+        "url": "https://clovanote.naver.com/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "클로바노트",
+        "note": "녹음을 글로 바꿔 줍니다. 화자 구분도 됩니다.",
+        "href": "/download/software/%ED%81%B4%EB%A1%9C%EB%B0%94%EB%85%B8%ED%8A%B8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "오다시티",
+        "note": "녹음과 편집. 잡음 제거까지 무료.",
+        "href": "/download/software/%EC%98%A4%EB%8B%A4%EC%8B%9C%ED%8B%B0-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "OBS",
+        "note": "화면과 소리를 함께 남길 때.",
+        "href": "/download/software/OBS-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "녹음·기록에 쓰는 것"
+  },
+  {
+    "slug": "슬랙-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "메신저"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "슬랙",
+    "titleBottom": "다운로드",
+    "listTitle": "슬랙 다운로드",
+    "listMeta": "무료판 있음 · Slack · 업무 메신저",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "슬랙 다운로드",
+    "sourceNote": "SOURCE: Slack 한국어 공식 Windows 다운로드 화면",
+    "description": "슬랙을 공식 다운로드 화면으로 연결합니다. 무료 요금제의 메시지 기록 제한과 여러 워크스페이스를 함께 쓰는 법을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Slack"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Slack 한국어 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다. 관리자 권한 없이 설치되는 경우가 많습니다."
+      },
+      {
+        "title": "워크스페이스 참여",
+        "body": "초대받은 주소로 참여하거나 새 워크스페이스를 만듭니다. 여러 곳에 동시에 속할 수 있습니다."
+      },
+      {
+        "title": "알림 설정",
+        "body": "채널이 많아지면 알림이 쏟아집니다. 채널마다 알림 수준을 따로 정할 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료로 어디까지 되나요?",
+        "a": "무료 요금제는 지난 메시지를 볼 수 있는 범위에 제한이 있습니다. 정확한 조건은 공식 화면에서 확인하세요."
+      },
+      {
+        "q": "여러 회사 워크스페이스를 같이 쓸 수 있나요?",
+        "a": "됩니다. 왼쪽 목록에서 워크스페이스를 전환합니다."
+      },
+      {
+        "q": "설치 없이 쓸 수 있나요?",
+        "a": "브라우저에서 그대로 쓸 수 있습니다. 알림이나 단축키는 앱이 편합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "슬랙 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://slack.com/intl/ko-kr/downloads/windows",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Slack 공식 다운로드",
+        "href": "https://slack.com/intl/ko-kr/downloads/windows"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "노션-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "메모"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "노션",
+    "titleBottom": "다운로드",
+    "listTitle": "노션 다운로드",
+    "listMeta": "무료판 있음 · Notion · 메모/문서",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "노션 다운로드",
+    "sourceNote": "SOURCE: Notion 한국어 데스크톱 다운로드 화면",
+    "description": "노션 데스크톱 앱을 공식 화면으로 연결합니다. 웹으로 써도 되는 이유와 오프라인 사용 조건을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Notion"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "웹으로 될지 먼저 생각하세요",
+        "body": "노션은 브라우저에서 그대로 씁니다. 앱을 깔면 알림과 단축키가 편해지는 정도입니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Notion 한국어 데스크톱 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치와 로그인",
+        "body": "받은 파일을 실행해 설치하고 계정으로 로그인합니다."
+      },
+      {
+        "title": "오프라인 확인",
+        "body": "인터넷이 끊긴 상태에서는 제한이 있습니다. 중요한 문서는 미리 열어 두거나 내보내 두세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료로 쓸 수 있나요?",
+        "a": "개인 용도의 무료 요금제가 있습니다. 팀으로 쓰거나 기능이 더 필요하면 유료입니다. 조건은 공식 화면에서 확인하세요."
+      },
+      {
+        "q": "앱을 꼭 깔아야 하나요?",
+        "a": "아닙니다. 브라우저에서 같은 기능을 씁니다. 앱은 알림과 단축키가 편할 뿐입니다."
+      },
+      {
+        "q": "인터넷 없이 볼 수 있나요?",
+        "a": "제한이 있습니다. 오프라인에서 봐야 할 문서는 미리 열어 두거나 PDF 로 내보내 두는 편이 안전합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "노션 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.notion.com/ko/desktop",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Notion 공식 다운로드",
+        "href": "https://www.notion.com/ko/desktop"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "트렐로-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "메모"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "트렐로",
+    "titleBottom": "다운로드",
+    "listTitle": "트렐로 다운로드",
+    "listMeta": "무료판 있음 · Atlassian · 업무 보드",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "트렐로 다운로드",
+    "sourceNote": "SOURCE: Trello 공식 플랫폼 화면",
+    "description": "트렐로 데스크톱 앱을 공식 화면으로 연결합니다. 카드 방식으로 일을 관리하는 도구로, 웹과의 차이를 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Atlassian"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Trello 공식 플랫폼 화면이 열립니다. Windows·Mac·모바일 앱을 여기서 고릅니다."
+      },
+      {
+        "title": "설치와 로그인",
+        "body": "받은 파일을 실행해 설치하고 계정으로 로그인합니다."
+      },
+      {
+        "title": "보드 만들기",
+        "body": "할 일·진행 중·완료 같은 목록을 만들고 카드를 옮기며 씁니다."
+      },
+      {
+        "title": "웹과 같은 내용",
+        "body": "앱과 웹이 같은 데이터를 봅니다. 어디서 고쳐도 바로 반영됩니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료로 어디까지 되나요?",
+        "a": "개인 용도의 무료 요금제가 있습니다. 보드 수나 자동화 횟수에 제한이 있으니 공식 화면에서 확인하세요."
+      },
+      {
+        "q": "앱과 웹이 다른가요?",
+        "a": "같은 데이터를 봅니다. 앱은 알림이 편한 정도의 차이입니다."
+      },
+      {
+        "q": "한국어로 쓸 수 있나요?",
+        "a": "설정에서 언어를 한국어로 바꿀 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "트렐로 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://trello.com/platforms",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Atlassian 공식 다운로드",
+        "href": "https://trello.com/platforms"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "피그마-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "디자인"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "피그마",
+    "titleBottom": "다운로드",
+    "listTitle": "피그마 다운로드",
+    "listMeta": "무료판 있음 · Figma · 디자인",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "피그마 다운로드",
+    "sourceNote": "SOURCE: Figma 한국어 다운로드 화면",
+    "description": "피그마 데스크톱 앱을 공식 화면으로 연결합니다. 브라우저로도 되는 점과 글꼴을 쓰려면 앱이 필요한 이유를 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Figma"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Figma 한국어 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다."
+      },
+      {
+        "title": "PC 글꼴을 쓰려면 앱이 유리",
+        "body": "브라우저에서는 내 PC 에 설치된 글꼴을 바로 못 씁니다. 앱을 쓰거나 폰트 설치 도우미를 따로 깔아야 합니다."
+      },
+      {
+        "title": "계정 로그인",
+        "body": "작업 파일은 계정에 저장됩니다. 다른 PC 에서도 그대로 이어서 할 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "브라우저로 써도 되나요?",
+        "a": "됩니다. 다만 PC 에 설치된 글꼴을 쓰려면 앱이나 별도 도우미가 필요합니다."
+      },
+      {
+        "q": "무료로 어디까지 되나요?",
+        "a": "개인 용도의 무료 요금제가 있습니다. 파일 수나 협업 인원에 제한이 있으니 공식 화면에서 확인하세요."
+      },
+      {
+        "q": "인터넷 없이 작업할 수 있나요?",
+        "a": "기본적으로 온라인 도구입니다. 오프라인에서는 제한이 큽니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "피그마 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.figma.com/ko-kr/downloads/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Figma 공식 다운로드",
+        "href": "https://www.figma.com/ko-kr/downloads/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "캔바-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "디자인"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "캔바",
+    "titleBottom": "다운로드",
+    "listTitle": "캔바 다운로드",
+    "listMeta": "무료판 있음 · Canva · 디자인",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "캔바 다운로드",
+    "sourceNote": "SOURCE: Canva 한국어 Windows 다운로드 화면",
+    "description": "캔바 데스크톱 앱을 공식 화면으로 연결합니다. 무료로 쓸 수 있는 범위와 유료 소재를 구분하는 법을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Canva"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Canva 한국어 Windows 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치와 로그인",
+        "body": "받은 파일을 실행해 설치하고 계정으로 로그인합니다."
+      },
+      {
+        "title": "무료 소재만 고르기",
+        "body": "템플릿과 이미지에 유료 표시가 붙은 것이 섞여 있습니다. 필터에서 무료만 보이게 하면 나중에 결제 안내를 안 만납니다."
+      },
+      {
+        "title": "내보내기",
+        "body": "PNG·PDF 로 내보낼 수 있습니다. 유료 소재를 썼다면 내보낼 때 결제를 요구합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료로 쓸 수 있나요?",
+        "a": "무료 요금제가 있고 무료 템플릿과 소재도 많습니다. 다만 유료 표시가 붙은 것을 쓰면 내보낼 때 결제가 필요합니다."
+      },
+      {
+        "q": "유료 소재를 미리 거를 수 있나요?",
+        "a": "소재 목록의 필터에서 무료만 보이게 할 수 있습니다. 작업을 다 하고 나서 결제 안내를 만나는 것보다 낫습니다."
+      },
+      {
+        "q": "앱과 웹이 다른가요?",
+        "a": "기능은 비슷합니다. 앱이 조금 더 빠르게 느껴지는 정도입니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "캔바 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.canva.com/ko_kr/download/windows",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Canva 공식 다운로드",
+        "href": "https://www.canva.com/ko_kr/download/windows"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "ChatGPT-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "AI"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "ChatGPT",
+    "titleBottom": "다운로드",
+    "listTitle": "ChatGPT 다운로드",
+    "listMeta": "무료판 있음 · OpenAI · AI 대화",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "ChatGPT 다운로드",
+    "sourceNote": "SOURCE: OpenAI ChatGPT 한국어 다운로드 화면",
+    "description": "ChatGPT 데스크톱 앱을 공식 화면으로 연결합니다. 가짜 앱을 피하는 법과 무료 사용 범위를 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "OpenAI"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면에서만 받으세요",
+        "body": "이름이 비슷한 가짜 앱이 많습니다. OpenAI 공식 화면에서만 받으세요. 다른 곳에서 받은 것은 계정 정보를 노릴 수 있습니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 ChatGPT 한국어 다운로드 화면이 열립니다. Windows·Mac 판이 있습니다."
+      },
+      {
+        "title": "설치와 로그인",
+        "body": "받은 파일을 실행해 설치하고 계정으로 로그인합니다."
+      },
+      {
+        "title": "단축키 확인",
+        "body": "화면 어디서든 창을 부르는 단축키가 있습니다. 설정에서 바꿀 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료로 쓸 수 있나요?",
+        "a": "무료로 쓸 수 있는 범위가 있고 사용량에 한도가 있습니다. 조건이 자주 바뀌니 공식 화면에서 확인하세요."
+      },
+      {
+        "q": "가짜 앱을 어떻게 구분하나요?",
+        "a": "공식 화면 주소에서 받는 것이 가장 확실합니다. 검색 결과 상단의 광고나 앱 스토어의 비슷한 이름은 주의하세요."
+      },
+      {
+        "q": "앱과 웹이 다른가요?",
+        "a": "기능은 비슷하고 앱은 단축키로 빠르게 부를 수 있는 점이 다릅니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "ChatGPT 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://chatgpt.com/ko-KR/download/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "OpenAI 공식 다운로드",
+        "href": "https://chatgpt.com/ko-KR/download/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "텔레그램-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "메신저"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "텔레그램",
+    "titleBottom": "다운로드",
+    "listTitle": "텔레그램 다운로드",
+    "listMeta": "무료 · 오픈소스(GPL v3) · 메신저",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "텔레그램 다운로드",
+    "sourceNote": "SOURCE: 텔레그램 데스크톱 공식 화면 · GPL v3 라이센스",
+    "description": "텔레그램 PC 버전을 공식 화면으로 연결합니다. 설치판과 무설치 버전의 차이, 휴대폰 인증이 필요한 구조를 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Telegram"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Telegram Desktop 공식 화면이 열립니다."
+      },
+      {
+        "title": "설치판과 무설치 버전 고르기",
+        "body": "화면에 윈도우 x64 텔레그램 받기와 무설치 버전이 함께 있습니다. USB 에 넣어 여러 PC 에서 쓰려면 무설치 버전을 고르세요. 다른 운영체제는 모든 플랫폼 보기에서 찾을 수 있습니다."
+      },
+      {
+        "title": "휴대폰으로 로그인",
+        "body": "PC 로그인에는 휴대폰 인증이 필요합니다. 휴대폰의 텔레그램으로 코드를 받거나 QR 을 찍습니다."
+      },
+      {
+        "title": "2단계 인증 켜기",
+        "body": "설정에서 2단계 인증을 켜 두면 계정 도용을 막는 데 도움이 됩니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "휴대폰 없이 PC 에서만 쓸 수 있나요?",
+        "a": "처음 로그인할 때는 휴대폰 인증이 필요합니다. 이후에는 PC 에서 바로 쓸 수 있습니다."
+      },
+      {
+        "q": "지난 대화가 PC 에서도 보이나요?",
+        "a": "텔레그램은 대화를 서버에 두는 방식이라 PC 에서도 지난 대화가 보입니다. 비밀 대화는 기기에만 남아 보이지 않습니다."
+      },
+      {
+        "q": "무료인가요?",
+        "a": "기본 기능은 무료입니다."
+      },
+      {
+        "q": "무설치 버전이 뭔가요?",
+        "a": "설치하지 않고 압축만 풀어 바로 실행하는 방식입니다. 공용 PC 나 USB 에서 쓸 때 씁니다."
+      },
+      {
+        "q": "오픈소스인가요?",
+        "a": "공식 화면에 GPL v3 라이센스로 제공하며 소스코드를 GitHub 에서 공개한다고 적혀 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "윈도우 x64 텔레그램 받기",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://desktop.telegram.org/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Telegram 공식 다운로드",
+        "href": "https://desktop.telegram.org/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "라인-PC-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "메신저"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "라인 PC",
+    "titleBottom": "다운로드",
+    "listTitle": "라인 PC 다운로드",
+    "listMeta": "무료 · LINE · 메신저",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "라인 PC 다운로드",
+    "sourceNote": "SOURCE: LINE 한국어 공식 화면",
+    "description": "라인 PC 버전을 공식 화면으로 연결합니다. 휴대폰 계정과 연결하는 방법과 지난 대화가 어떻게 되는지 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "LINE"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 LINE 한국어 공식 화면이 열립니다. PC 버전 다운로드 항목을 고릅니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다."
+      },
+      {
+        "title": "휴대폰 계정으로 로그인",
+        "body": "쓰던 라인 계정으로 로그인합니다. 처음에는 휴대폰에서 인증을 거칩니다."
+      },
+      {
+        "title": "지난 대화 확인",
+        "body": "PC 버전은 로그인 이후의 대화부터 보입니다. 휴대폰의 지난 대화가 자동으로 넘어오지는 않습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "휴대폰의 지난 대화도 보이나요?",
+        "a": "아닙니다. 로그인한 다음부터의 대화를 받습니다. 카카오톡 PC 와 같은 방식입니다."
+      },
+      {
+        "q": "일본이나 대만 친구와도 되나요?",
+        "a": "라인은 해외에서 많이 쓰여 국가와 상관없이 대화할 수 있습니다."
+      },
+      {
+        "q": "무료인가요?",
+        "a": "기본 메시지와 통화는 무료입니다. 스티커 같은 일부 항목은 유료입니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "라인 PC 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.line.me/ko/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "LINE 공식 다운로드",
+        "href": "https://www.line.me/ko/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "업무-메신저-비교",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "메신저"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "업무 메신저",
+    "titleBottom": "다운로드",
+    "listTitle": "업무 메신저 다운로드",
+    "listMeta": "슬랙·팀즈·라인웍스 비교",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "업무 메신저 다운로드",
+    "sourceNote": "SOURCE: 각 제작사 공식 다운로드 화면",
+    "description": "회사에서 쓰는 메신저를 비교했습니다. 이미 쓰는 오피스 제품이 무엇이냐에 따라 고르는 것이 달라집니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "이미 쓰는 것에 맞추는 편이 낫습니다",
+        "body": "Microsoft 365 를 쓰면 팀즈가 이미 포함돼 있습니다. 새로 결제할 필요가 없습니다."
+      },
+      {
+        "title": "무료로 시작하려면 슬랙",
+        "body": "위 버튼으로 슬랙을 받습니다. 무료 요금제로 시작할 수 있고 지난 메시지 범위에 제한이 있습니다."
+      },
+      {
+        "title": "계정 종류를 먼저 확인",
+        "body": "팀즈는 직장·학교용과 개인용이 나뉩니다. 회사 계정으로 초대받았는데 개인 계정으로 로그인하면 회의에 못 들어갑니다."
+      },
+      {
+        "title": "설치 없이 시작해 보기",
+        "body": "셋 다 브라우저로 먼저 써 볼 수 있습니다. 팀이 정한 다음에 설치해도 늦지 않습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "팀즈와 슬랙 중 뭐가 낫나요?",
+        "a": "Microsoft 365 를 이미 쓰면 팀즈가 포함돼 있어 유리합니다. 그렇지 않다면 슬랙이 무료로 시작하기 쉽습니다."
+      },
+      {
+        "q": "무료로 어디까지 되나요?",
+        "a": "둘 다 무료 요금제가 있고 각각 제한이 다릅니다. 슬랙은 지난 메시지 범위, 팀즈는 회의 시간 같은 조건이 있습니다."
+      },
+      {
+        "q": "회의에 못 들어갑니다.",
+        "a": "팀즈에서 흔합니다. 회사 계정으로 초대받았는데 개인 계정으로 로그인한 경우입니다. 로그아웃하고 초대받은 주소로 다시 들어가세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Slack 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://slack.com/intl/ko-kr/downloads/windows",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "슬랙",
+        "note": "무료로 시작하기 쉽습니다. 지난 메시지에 제한이 있습니다.",
+        "href": "/download/software/%EC%8A%AC%EB%9E%99-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "팀즈",
+        "note": "Microsoft 365 를 쓰면 이미 포함돼 있습니다.",
+        "href": "/download/software/%ED%8C%80%EC%A6%88-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "줌",
+        "note": "회의 위주라면. 무료 회의 시간에 제한이 있습니다.",
+        "href": "/download/software/%EC%A4%8C-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "업무 메신저 고르기"
+  },
+  {
+    "slug": "디자인-무료-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "디자인"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "디자인",
+    "titleBottom": "무료 프로그램",
+    "listTitle": "디자인 무료 프로그램",
+    "listMeta": "무료 4가지 · 용도별",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "디자인 무료 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 다운로드 화면",
+    "description": "디자인 작업에 쓰는 무료 프로그램을 용도별로 정리했습니다. 무엇을 만들지에 따라 고르는 것이 달라집니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무엇을 만들지부터 정하기",
+        "body": "카드뉴스나 발표 자료는 캔바, 화면 설계는 피그마, 사진 보정은 김프, 로고나 아이콘은 잉크스케이프가 맞습니다."
+      },
+      {
+        "title": "템플릿으로 시작하려면 캔바",
+        "body": "위 버튼으로 캔바를 엽니다. 만들어진 틀에 내용만 바꾸면 되어 가장 빠릅니다."
+      },
+      {
+        "title": "무료 소재만 고르기",
+        "body": "캔바는 유료 소재가 섞여 있습니다. 필터에서 무료만 보이게 하면 내보낼 때 결제 안내를 안 만납니다."
+      },
+      {
+        "title": "전문 작업은 오픈소스로",
+        "body": "김프와 잉크스케이프는 완전 무료이고 상업적 사용에 제한이 없습니다. 대신 익히는 데 시간이 걸립니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "포토샵 대신 뭘 쓰나요?",
+        "a": "사진 보정과 합성은 김프가 가장 가깝습니다. 무료이고 상업적 사용도 됩니다."
+      },
+      {
+        "q": "일러스트레이터 대신은요?",
+        "a": "로고나 아이콘 같은 벡터 작업은 잉크스케이프입니다. 무료입니다."
+      },
+      {
+        "q": "가장 쉬운 것은 뭔가요?",
+        "a": "캔바입니다. 템플릿에 내용만 바꾸면 되어 처음 하는 사람도 금방 만듭니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Canva 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.canva.com/ko_kr/download/windows",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "캔바",
+        "note": "카드뉴스·발표자료. 템플릿으로 가장 빠릅니다.",
+        "href": "/download/software/%EC%BA%94%EB%B0%94-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "피그마",
+        "note": "화면 설계와 협업.",
+        "href": "/download/software/%ED%94%BC%EA%B7%B8%EB%A7%88-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "김프",
+        "note": "사진 보정과 합성. 완전 무료.",
+        "href": "/download/software/%EA%B9%80%ED%94%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "잉크스케이프",
+        "note": "로고·아이콘 같은 벡터 작업. 완전 무료.",
+        "href": "/download/software/%EC%9E%89%ED%81%AC%EC%8A%A4%EC%BC%80%EC%9D%B4%ED%94%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "용도별 디자인 프로그램"
+  },
+  {
+    "slug": "Rufus-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "유틸리티"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "Rufus",
+    "titleBottom": "다운로드",
+    "listTitle": "Rufus 다운로드",
+    "listMeta": "무료 · 오픈소스 · USB 부팅 디스크",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "Rufus 다운로드",
+    "sourceNote": "SOURCE: Rufus 한국어 공식 화면 · 부팅 가능한 USB 만들기",
+    "description": "Rufus 를 공식 한국어 화면으로 연결합니다. 윈도우 설치 USB 를 만드는 도구로, USB 안의 자료가 지워지는 점부터 짚었습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Rufus"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "USB 안의 자료는 전부 지워집니다",
+        "body": "부팅 USB 를 만들면 그 USB 가 통째로 포맷됩니다. 안에 든 파일을 먼저 다른 곳에 옮기세요. 8GB 이상 USB 가 필요합니다."
+      },
+      {
+        "title": "ISO 파일 먼저 준비",
+        "body": "만들려는 운영체제의 ISO 파일이 있어야 합니다. 윈도우는 마이크로소프트 공식 화면에서 받습니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Rufus 한국어 공식 화면이 열립니다. 설치판과 휴대용 판이 있습니다."
+      },
+      {
+        "title": "USB 만들기",
+        "body": "USB 를 꽂고 Rufus 를 실행해 ISO 를 고른 뒤 시작을 누릅니다. 몇 분 걸립니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "USB 안의 파일은 어떻게 되나요?",
+        "a": "전부 지워집니다. 시작하기 전에 반드시 다른 곳으로 옮기세요."
+      },
+      {
+        "q": "몇 GB 짜리 USB 가 필요한가요?",
+        "a": "윈도우 설치용은 8GB 이상을 권합니다. 요즘 이미지가 커져서 여유 있는 편이 안전합니다."
+      },
+      {
+        "q": "만든 USB 로 부팅이 안 됩니다.",
+        "a": "PC 부팅 순서에서 USB 를 먼저 읽도록 바꿔야 합니다. 부팅할 때 F2 나 Del 로 설정에 들어가거나 F12 같은 부팅 메뉴 키를 씁니다."
+      },
+      {
+        "q": "여러 운영체제를 한 USB 에 담을 수 있나요?",
+        "a": "Rufus 는 하나만 담습니다. 여러 개를 담으려면 Ventoy 를 쓰세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Rufus 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://rufus.ie/ko/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Rufus 공식 화면",
+        "href": "https://rufus.ie/ko/"
+      },
+      {
+        "tag": "SW",
+        "name": "윈도우11 다운로드 (ISO)",
+        "href": "/download/software/%EC%9C%88%EB%8F%84%EC%9A%B011-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "Ventoy-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "유틸리티"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "Ventoy",
+    "titleBottom": "다운로드",
+    "listTitle": "Ventoy 다운로드",
+    "listMeta": "무료 · 오픈소스 · 멀티 부팅 USB",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "Ventoy 다운로드",
+    "sourceNote": "SOURCE: Ventoy 공식 다운로드 화면 · 오픈소스",
+    "description": "Ventoy 를 공식 다운로드 화면으로 연결합니다. USB 하나에 여러 운영체제를 담는 도구로, Rufus 와 다른 점을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Ventoy"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "ISO 를 복사만 하면 되는 방식입니다",
+        "body": "Ventoy 는 USB 에 한 번 설치해 두면 그다음부터는 ISO 파일을 그냥 복사해 넣기만 하면 됩니다. 매번 USB 를 다시 만들 필요가 없습니다."
+      },
+      {
+        "title": "첫 설치 때만 포맷됩니다",
+        "body": "Ventoy 를 USB 에 처음 설치할 때 그 USB 가 포맷됩니다. 이후에는 파일 복사만 하면 됩니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Ventoy 공식 다운로드 화면이 열립니다. 화면이 영어입니다."
+      },
+      {
+        "title": "ISO 복사",
+        "body": "설치 후 USB 에 ISO 파일들을 복사해 넣습니다. 부팅하면 목록에서 고를 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Rufus 와 뭐가 다른가요?",
+        "a": "Rufus 는 USB 하나에 운영체제 하나입니다. Ventoy 는 한 번 설치하면 ISO 를 복사해 넣기만 하면 되고 여러 개를 담을 수 있습니다."
+      },
+      {
+        "q": "USB 를 매번 포맷해야 하나요?",
+        "a": "아닙니다. 처음 Ventoy 를 설치할 때만 포맷됩니다. 이후에는 파일 복사로 끝입니다."
+      },
+      {
+        "q": "화면이 영어입니다.",
+        "a": "공식 화면은 영어입니다. 다만 조작은 단순해서 USB 를 고르고 설치 버튼을 누르는 것이 전부입니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Ventoy 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.ventoy.net/en/download.html",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Ventoy 공식 다운로드",
+        "href": "https://www.ventoy.net/en/download.html"
+      },
+      {
+        "tag": "SW",
+        "name": "Rufus (하나만 담을 때)",
+        "href": "/download/software/Rufus-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "balenaEtcher-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "유틸리티"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "balenaEtcher",
+    "titleBottom": "다운로드",
+    "listTitle": "balenaEtcher 다운로드",
+    "listMeta": "무료 · 오픈소스 · 이미지 굽기",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "balenaEtcher 다운로드",
+    "sourceNote": "SOURCE: balenaEtcher 공식 화면 · 오픈소스",
+    "description": "balenaEtcher 를 공식 화면으로 연결합니다. SD 카드나 USB 에 이미지를 굽는 도구로, 라즈베리파이 같은 기기에 많이 씁니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "balena"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무엇에 쓰는지 확인",
+        "body": "USB 나 SD 카드에 운영체제 이미지를 굽는 도구입니다. 라즈베리파이나 리눅스 설치 미디어를 만들 때 많이 씁니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 balenaEtcher 공식 화면이 열립니다. Windows·Mac·Linux 판이 있습니다."
+      },
+      {
+        "title": "이미지·드라이브·굽기",
+        "body": "화면이 세 단계로 단순합니다. 이미지를 고르고, 대상 드라이브를 고르고, 굽기를 누릅니다."
+      },
+      {
+        "title": "드라이브를 잘못 고르지 마세요",
+        "body": "선택한 드라이브의 내용이 전부 지워집니다. 외장하드를 잘못 고르면 자료가 날아갑니다. 용량을 보고 확인하세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Rufus 와 뭐가 다른가요?",
+        "a": "Etcher 는 화면이 단순하고 Windows·Mac·Linux 에서 모두 씁니다. 윈도우 설치 USB 를 만드는 세부 옵션은 Rufus 가 더 많습니다."
+      },
+      {
+        "q": "SD 카드도 되나요?",
+        "a": "됩니다. 라즈베리파이용 SD 카드를 만들 때 많이 씁니다."
+      },
+      {
+        "q": "실수로 다른 드라이브를 골랐습니다.",
+        "a": "굽기가 진행됐다면 그 드라이브의 내용이 지워집니다. 시작 전에 용량과 드라이브 이름을 꼭 확인하세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "balenaEtcher 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://etcher.balena.io/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "balena 공식 다운로드",
+        "href": "https://etcher.balena.io/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "Macrium-Reflect-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "백업"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "Macrium Reflect",
+    "titleBottom": "다운로드",
+    "listTitle": "Macrium Reflect 다운로드",
+    "listMeta": "무료판 있음 · Macrium · 백업",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "Macrium Reflect 다운로드",
+    "sourceNote": "SOURCE: Macrium Reflect Free 공식 화면",
+    "description": "Macrium Reflect 를 공식 화면으로 연결합니다. 디스크를 통째로 백업하는 도구로, 복구용 USB 를 미리 만들어야 하는 이유를 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Macrium"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무엇을 하는 도구인지",
+        "body": "파일 하나씩이 아니라 디스크 전체를 이미지로 떠 둡니다. 윈도우가 아예 안 켜질 때 그 시점으로 통째로 되돌릴 수 있습니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Macrium Reflect Free 화면이 열립니다. 무료판 조건을 화면에서 확인하세요."
+      },
+      {
+        "title": "복구 USB 를 반드시 먼저",
+        "body": "백업만 떠 두면 소용없습니다. 윈도우가 안 켜지는 상황에서 복구하려면 부팅 가능한 복구 미디어가 있어야 합니다. 프로그램 안에 만드는 기능이 있습니다."
+      },
+      {
+        "title": "백업 저장 위치",
+        "body": "같은 디스크에 백업하면 그 디스크가 고장 났을 때 백업도 함께 잃습니다. 외장하드나 다른 디스크에 저장하세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "복구 USB 를 꼭 만들어야 하나요?",
+        "a": "네. 윈도우가 안 켜지는 상황에서 복구하려면 부팅할 수 있는 미디어가 필요합니다. 백업만 있고 복구 미디어가 없으면 쓸 수가 없습니다."
+      },
+      {
+        "q": "무료판으로 어디까지 되나요?",
+        "a": "디스크 이미지 백업과 복구는 무료판으로 됩니다. 조건이 바뀔 수 있으니 공식 화면에서 확인하세요."
+      },
+      {
+        "q": "백업을 어디에 저장하나요?",
+        "a": "반드시 원본과 다른 디스크에 저장하세요. 같은 디스크에 두면 그 디스크가 망가질 때 백업도 함께 사라집니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Macrium Reflect Free",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.macrium.com/reflectfree",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Macrium 공식 다운로드",
+        "href": "https://www.macrium.com/reflectfree"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "Speccy-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "유틸리티"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "Speccy",
+    "titleBottom": "다운로드",
+    "listTitle": "Speccy 다운로드",
+    "listMeta": "무료판 있음 · Piriform · 시스템 정보",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "Speccy 다운로드",
+    "sourceNote": "SOURCE: Speccy 한국어 공식 다운로드 화면",
+    "description": "Speccy 를 공식 화면으로 연결합니다. 내 PC 사양을 한눈에 보여 주는 도구로, 무엇을 확인할 수 있는지 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Piriform"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Speccy 한국어 공식 다운로드 화면이 열립니다. 무료판과 유료판이 나뉩니다."
+      },
+      {
+        "title": "설치",
+        "body": "설치 중 다른 프로그램을 함께 설치할지 묻는 화면이 나오면 필요 없는 것은 해제하세요."
+      },
+      {
+        "title": "사양 확인",
+        "body": "CPU·메모리·메인보드·그래픽카드·저장장치를 한 화면에서 봅니다. 부품을 사거나 중고로 팔 때 유용합니다."
+      },
+      {
+        "title": "온도도 함께",
+        "body": "각 부품의 온도가 표시됩니다. 이상하게 높으면 먼지나 쿨러 문제를 의심해 볼 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "윈도우 기본 기능으로는 안 되나요?",
+        "a": "Windows 키 + R 에서 msinfo32 나 dxdiag 로도 기본 정보는 봅니다. Speccy 는 한 화면에 정리해 보여 주고 온도까지 표시하는 점이 편합니다."
+      },
+      {
+        "q": "메모리 규격을 알 수 있나요?",
+        "a": "메모리 탭에서 종류와 속도, 슬롯 사용 현황을 볼 수 있습니다. 램을 추가할 때 확인하면 좋습니다."
+      },
+      {
+        "q": "무료판으로 충분한가요?",
+        "a": "사양 확인은 무료판으로 됩니다. 자동 업데이트 같은 기능은 유료판입니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Speccy 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.ccleaner.com/ko-kr/speccy/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Speccy 공식 다운로드",
+        "href": "https://www.ccleaner.com/ko-kr/speccy/download"
+      },
+      {
+        "tag": "SW",
+        "name": "CCleaner (같은 회사)",
+        "href": "/download/software/%EC%94%A8%ED%81%B4%EB%A6%AC%EB%84%88-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "HWiNFO-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "유틸리티"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "HWiNFO",
+    "titleBottom": "다운로드",
+    "listTitle": "HWiNFO 다운로드",
+    "listMeta": "무료 · HWiNFO · 하드웨어 정보",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "HWiNFO 다운로드",
+    "sourceNote": "SOURCE: HWiNFO 공식 다운로드 화면 · Installer & Portable",
+    "description": "HWiNFO 를 공식 다운로드 화면으로 연결합니다. 온도와 전압까지 자세히 보는 도구로, Speccy 와 어느 쪽을 쓸지 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "HWiNFO"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 HWiNFO 공식 다운로드 화면이 열립니다. 설치판(Installer)과 무설치판(Portable)이 있습니다."
+      },
+      {
+        "title": "실행 방식 고르기",
+        "body": "처음 실행하면 요약만 볼지 센서만 볼지 고르는 창이 나옵니다. 온도를 보려면 센서 항목을 켭니다."
+      },
+      {
+        "title": "온도 확인",
+        "body": "CPU·그래픽카드·저장장치 온도를 실시간으로 봅니다. 게임 중 온도를 확인할 때 많이 씁니다."
+      },
+      {
+        "title": "항목이 너무 많으면",
+        "body": "정보가 아주 많아 처음에는 복잡합니다. 사양만 간단히 보려면 Speccy 가 편합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Speccy 와 뭐가 다른가요?",
+        "a": "Speccy 는 사양을 한눈에 정리해 보여 줍니다. HWiNFO 는 온도·전압·팬 속도까지 훨씬 자세하지만 항목이 많아 복잡합니다."
+      },
+      {
+        "q": "게임 중 온도를 볼 수 있나요?",
+        "a": "센서 정보를 화면에 띄우는 기능이 있습니다. 다른 오버레이 프로그램과 연동해 쓰기도 합니다."
+      },
+      {
+        "q": "무료인가요?",
+        "a": "공식 화면에 무료 다운로드로 안내되어 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "HWiNFO 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.hwinfo.com/download/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "HWiNFO 공식 다운로드",
+        "href": "https://www.hwinfo.com/download/"
+      },
+      {
+        "tag": "SW",
+        "name": "Speccy (간단히 보기)",
+        "href": "/download/software/Speccy-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "윈도우-설치-USB-만들기",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "유틸리티"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "윈도우 설치 USB",
+    "titleBottom": "만들기",
+    "listTitle": "윈도우 설치 USB 만들기",
+    "listMeta": "무료 3가지 · ISO + USB 도구",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "윈도우 설치 USB 만들기",
+    "sourceNote": "SOURCE: 마이크로소프트 공식 Windows 11 다운로드 · 각 도구 공식 화면",
+    "description": "윈도우 설치 USB 를 만드는 방법을 정리했습니다. 마이크로소프트 도구로 끝나는 경우와 별도 프로그램이 필요한 경우를 갈랐습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "마이크로소프트 · 각 제작사"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "마이크로소프트 도구로 될지 먼저 확인",
+        "body": "윈도우 공식 화면에 USB 만들기 도구가 있습니다. 그냥 윈도우 설치 USB 만 만들면 되면 이걸로 끝입니다. 별도 프로그램이 필요 없습니다."
+      },
+      {
+        "title": "USB 안의 자료를 먼저 옮기세요",
+        "body": "어떤 방법이든 USB 가 통째로 포맷됩니다. 8GB 이상 USB 를 준비하고 안의 파일을 미리 옮기세요."
+      },
+      {
+        "title": "세부 설정이 필요하면 Rufus",
+        "body": "파티션 방식(MBR/GPT)이나 TPM 우회 같은 설정이 필요하면 Rufus 를 씁니다."
+      },
+      {
+        "title": "부팅 순서 바꾸기",
+        "body": "만든 USB 로 부팅하려면 PC 설정에서 USB 를 먼저 읽도록 바꿔야 합니다. 부팅할 때 F2·Del 로 설정에 들어가거나 F12 같은 부팅 메뉴 키를 씁니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "마이크로소프트 도구만으로 되나요?",
+        "a": "일반적인 윈도우 설치라면 됩니다. 공식 화면의 USB 만들기 도구를 받아 실행하면 ISO 받기부터 USB 만들기까지 한 번에 처리합니다."
+      },
+      {
+        "q": "Rufus 가 왜 필요한가요?",
+        "a": "이미 ISO 가 있거나, 파티션 방식을 지정하거나, 여러 번 만들 때 편합니다. 세부 설정이 필요할 때 씁니다."
+      },
+      {
+        "q": "만든 USB 로 부팅이 안 됩니다.",
+        "a": "부팅 순서가 USB 보다 하드디스크가 먼저인 경우입니다. 부팅 메뉴 키(보통 F12)를 눌러 USB 를 직접 고르면 빠릅니다."
+      },
+      {
+        "q": "USB 몇 GB 가 필요한가요?",
+        "a": "8GB 이상을 권합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Windows 11 다운로드",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.microsoft.com/ko-kr/software-download/windows11",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "윈도우11 (공식 도구)",
+        "note": "USB 만들기 도구가 공식 화면에 있습니다.",
+        "href": "/download/software/%EC%9C%88%EB%8F%84%EC%9A%B011-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "Rufus",
+        "note": "세부 설정이 필요할 때. 한국어 화면.",
+        "href": "/download/software/Rufus-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "Ventoy",
+        "note": "여러 운영체제를 한 USB 에 담을 때.",
+        "href": "/download/software/Ventoy-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "balenaEtcher",
+        "note": "SD 카드나 리눅스 이미지에.",
+        "href": "/download/software/balenaEtcher-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "USB 만들기에 쓰는 것"
+  },
+  {
+    "slug": "PC-사양-확인-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "유틸리티"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "PC 사양 확인",
+    "titleBottom": "프로그램",
+    "listTitle": "PC 사양 확인 프로그램",
+    "listMeta": "무료 3가지 · 설치 없이도 가능",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "PC 사양 확인 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 다운로드 화면",
+    "description": "내 PC 사양을 확인하는 방법을 정리했습니다. 프로그램을 깔지 않고도 되는 방법부터 담았습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "설치 없이 먼저 해 보세요",
+        "body": "Windows 키 + R 에서 msinfo32 를 치면 시스템 정보가 나옵니다. dxdiag 를 치면 그래픽카드와 사운드 정보가 나옵니다. 기본 사양은 이걸로 충분합니다."
+      },
+      {
+        "title": "한눈에 보려면 Speccy",
+        "body": "위 버튼으로 Speccy 를 받습니다. CPU·램·메인보드·그래픽카드가 한 화면에 정리됩니다."
+      },
+      {
+        "title": "온도까지 보려면 HWiNFO",
+        "body": "부품 온도나 전압까지 봐야 하면 HWiNFO 입니다. 대신 항목이 아주 많습니다."
+      },
+      {
+        "title": "디스크 상태는 따로",
+        "body": "SSD·하드디스크 수명은 CrystalDiskInfo 로 확인합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "프로그램 없이 사양을 볼 수 있나요?",
+        "a": "됩니다. Windows 키 + R 에서 msinfo32 또는 dxdiag 를 실행하면 기본 정보가 나옵니다."
+      },
+      {
+        "q": "램 규격을 알고 싶습니다.",
+        "a": "Speccy 의 메모리 탭에서 종류와 속도, 슬롯 사용 현황을 볼 수 있습니다. 램을 추가할 때 필요합니다."
+      },
+      {
+        "q": "게임이 돌아갈지 알고 싶습니다.",
+        "a": "그래픽카드와 램 용량이 관건입니다. dxdiag 나 Speccy 로 확인한 뒤 게임의 권장 사양과 비교하세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Speccy 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.ccleaner.com/ko-kr/speccy/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "Speccy",
+        "note": "한 화면에 정리해 보여 줍니다.",
+        "href": "/download/software/Speccy-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "HWiNFO",
+        "note": "온도·전압까지 자세히.",
+        "href": "/download/software/HWiNFO-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "CrystalDiskInfo",
+        "note": "SSD·하드디스크 수명.",
+        "href": "/download/software/CrystalDiskInfo-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "사양 확인에 쓰는 프로그램"
+  },
+  {
+    "slug": "PC-백업-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "백업"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "PC 백업",
+    "titleBottom": "프로그램",
+    "listTitle": "PC 백업 프로그램",
+    "listMeta": "무료 · 통째 백업 vs 파일 백업",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "PC 백업 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 화면",
+    "description": "PC 를 백업하는 방법을 정리했습니다. 디스크를 통째로 뜨는 방식과 파일만 올리는 방식은 목적이 다릅니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무엇을 대비할지 정하기",
+        "body": "실수로 파일을 지우는 것이 걱정이면 클라우드 동기화로 충분합니다. 윈도우가 아예 안 켜지는 상황까지 대비하려면 디스크 이미지 백업이 필요합니다."
+      },
+      {
+        "title": "통째로 뜨려면 Macrium",
+        "body": "위 버튼으로 Macrium Reflect Free 를 받습니다. 디스크 전체를 이미지로 떠 두고 문제가 생기면 그 시점으로 되돌립니다."
+      },
+      {
+        "title": "복구 USB 를 반드시 함께",
+        "body": "이미지 백업만 있고 부팅 가능한 복구 미디어가 없으면 정작 필요할 때 쓸 수 없습니다. 프로그램 안에서 만들 수 있습니다."
+      },
+      {
+        "title": "저장 위치는 다른 디스크",
+        "body": "원본과 같은 디스크에 백업하면 그 디스크가 고장 났을 때 함께 잃습니다. 외장하드에 두세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "클라우드만으로는 부족한가요?",
+        "a": "파일을 지웠을 때 되살리는 데는 충분합니다. 다만 윈도우가 안 켜지는 상황에서는 도움이 안 됩니다. 목적이 다릅니다."
+      },
+      {
+        "q": "윈도우 기본 백업 기능도 있지 않나요?",
+        "a": "설정에 백업 기능이 있습니다. 다만 전체 이미지 백업과 복구는 전용 프로그램이 더 확실합니다."
+      },
+      {
+        "q": "얼마나 자주 백업해야 하나요?",
+        "a": "중요한 작업 전이나 큰 변경 전에 한 번씩 떠 두면 충분합니다. 매일 할 필요는 없습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Macrium Reflect Free",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.macrium.com/reflectfree",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "Macrium Reflect",
+        "note": "디스크 통째로. 복구 USB 필수.",
+        "href": "/download/software/Macrium-Reflect-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "구글 드라이브",
+        "note": "파일 동기화. 15GB 무료.",
+        "href": "/download/software/%EA%B5%AC%EA%B8%80-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "원드라이브",
+        "note": "윈도우에 기본 포함. 5GB.",
+        "href": "/download/software/%EC%9B%90%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "네이버 MYBOX",
+        "note": "무료 30GB.",
+        "href": "/download/software/%EB%84%A4%EC%9D%B4%EB%B2%84-MYBOX-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "백업에 쓰는 것"
+  },
+  {
+    "slug": "압축-프로그램-비교",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "압축 프로그램"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "압축 프로그램",
+    "titleBottom": "무료 비교",
+    "listTitle": "압축 프로그램 무료 비교",
+    "listMeta": "무료 4가지 · 형식과 라이선스",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "압축 프로그램 무료 비교",
+    "sourceNote": "SOURCE: 각 제작사 공식 배포 화면",
+    "description": "압축 프로그램을 라이선스와 지원 형식으로 비교했습니다. 회사에서 쓸 때 문제가 되는 지점을 먼저 짚었습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "회사에서 쓸지부터 확인",
+        "body": "알집·알약 같은 알툴즈 제품은 무료판이 개인 사용자 기준입니다. 업무용 PC 라면 라이선스를 확인해야 합니다. 7-Zip 은 오픈소스라 이런 부담이 없습니다."
+      },
+      {
+        "title": "만들 형식 정하기",
+        "body": "RAR 로 새로 압축하는 것은 WinRAR 에서만 됩니다. 여는 것은 대부분 프로그램에서 됩니다. 상대가 특별히 요구하지 않으면 ZIP 이나 7Z 로 만드세요."
+      },
+      {
+        "title": "국산 형식이 필요하면",
+        "body": "ALZ·EGG 는 국내에서 쓰는 형식입니다. 알집이나 반디집으로 열립니다."
+      },
+      {
+        "title": "설치",
+        "body": "위 버튼으로 7-Zip 을 받거나, 아래 목록에서 맞는 것을 고르세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "회사에서 무료로 쓸 수 있는 것은?",
+        "a": "7-Zip 은 오픈소스라 라이선스 부담이 없습니다. 알집은 개인 사용자 기준이니 업무용 PC 에는 확인이 필요합니다."
+      },
+      {
+        "q": "ALZ·EGG 가 안 열립니다.",
+        "a": "국내에서 쓰는 형식이라 해외 프로그램은 못 여는 경우가 있습니다. 알집이나 반디집으로 열면 됩니다."
+      },
+      {
+        "q": "RAR 를 만들고 싶습니다.",
+        "a": "WinRAR 에서만 됩니다. 다른 프로그램은 열기만 됩니다. 상대가 요구하지 않으면 ZIP 이나 7Z 로 만드는 편이 무난합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "7-Zip 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.7-zip.org/download.html",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "SW",
+        "name": "압축 파일 안 풀릴 때",
+        "href": "/download/software/%EC%95%95%EC%B6%95%ED%8C%8C%EC%9D%BC-%EC%95%88%ED%92%80%EB%A6%B4%EB%95%8C"
+      },
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "7-Zip",
+        "note": "오픈소스. 라이선스 부담이 없습니다.",
+        "href": "/download/software/7%EC%A7%91-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "반디집",
+        "note": "ALZ·EGG 지원. 무료로 쓸 수 있습니다.",
+        "href": "/download/software/%EB%B0%98%EB%94%94%EC%A7%91-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "알집",
+        "note": "국산 형식의 원조. 개인 무료.",
+        "href": "/download/software/%EC%95%8C%EC%A7%91-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "WinRAR",
+        "note": "RAR 를 만들 수 있는 유일한 프로그램.",
+        "href": "/download/software/%EC%9C%88%EB%9D%BC-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "압축 프로그램 고르기"
+  },
+  {
+    "slug": "Zotero-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "학습"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "Zotero",
+    "titleBottom": "다운로드",
+    "listTitle": "Zotero 다운로드",
+    "listMeta": "무료 · 오픈소스 · 참고문헌 관리",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "Zotero 다운로드",
+    "sourceNote": "SOURCE: Zotero 공식 다운로드 화면 · 오픈소스",
+    "description": "Zotero 를 공식 다운로드 화면으로 연결합니다. 논문 참고문헌을 모으고 인용을 자동으로 만드는 도구입니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Zotero"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Zotero 공식 다운로드 화면이 열립니다. Windows·Mac·Linux 판이 있습니다."
+      },
+      {
+        "title": "브라우저 확장도 함께",
+        "body": "같은 화면에 브라우저 확장(Connector)이 있습니다. 논문 페이지에서 버튼 한 번으로 서지 정보를 담으려면 이것도 설치해야 합니다."
+      },
+      {
+        "title": "워드 연동 확인",
+        "body": "설치하면 워드나 리브레오피스에 Zotero 탭이 생깁니다. 안 보이면 설정에서 워드 프로세서 플러그인을 다시 설치하세요."
+      },
+      {
+        "title": "인용 양식 고르기",
+        "body": "APA·MLA 같은 양식을 고르면 인용과 참고문헌 목록이 그 형식으로 자동 생성됩니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료인가요?",
+        "a": "프로그램은 오픈소스로 무료입니다. 다만 파일을 온라인에 동기화하는 저장 공간은 기본 용량을 넘으면 유료입니다."
+      },
+      {
+        "q": "워드에 Zotero 탭이 안 보입니다.",
+        "a": "워드 프로세서 플러그인이 설치되지 않은 경우입니다. Zotero 설정의 인용 항목에서 다시 설치할 수 있습니다."
+      },
+      {
+        "q": "Mendeley 와 뭐가 다른가요?",
+        "a": "Zotero 는 오픈소스이고 Mendeley 는 엘스비어가 운영합니다. 기능은 비슷하니 소속 기관에서 지원하는 쪽을 쓰는 것도 방법입니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Zotero 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.zotero.org/download/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Zotero 공식 다운로드",
+        "href": "https://www.zotero.org/download/"
+      },
+      {
+        "tag": "SW",
+        "name": "Mendeley (다른 선택지)",
+        "href": "/download/software/Mendeley-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "Mendeley-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "학습"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료 계정",
+      "한국어"
+    ],
+    "titleTop": "Mendeley",
+    "titleBottom": "다운로드",
+    "listTitle": "Mendeley 다운로드",
+    "listMeta": "무료 계정 · Elsevier · 참고문헌 관리",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "Mendeley 다운로드",
+    "sourceNote": "SOURCE: Mendeley Reference Manager 공식 다운로드 화면",
+    "description": "Mendeley 를 공식 다운로드 화면으로 연결합니다. 논문 관리와 인용 생성에 쓰며, 계정이 필요한 구조를 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료 계정"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Elsevier"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "계정이 필요합니다",
+        "body": "Mendeley 는 계정을 만들어 쓰는 구조입니다. 논문과 서지 정보가 계정에 저장돼 다른 기기에서도 이어집니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Mendeley Reference Manager 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치와 로그인",
+        "body": "받은 파일을 실행해 설치하고 계정으로 로그인합니다."
+      },
+      {
+        "title": "워드 플러그인",
+        "body": "인용을 자동으로 넣으려면 워드 플러그인을 따로 설치해야 합니다. 프로그램 안에서 설치할 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료인가요?",
+        "a": "기본 사용은 무료 계정으로 됩니다. 저장 공간이 더 필요하면 유료입니다. 소속 기관이 계약한 경우도 있으니 확인해 보세요."
+      },
+      {
+        "q": "Zotero 와 뭐가 다른가요?",
+        "a": "Mendeley 는 엘스비어가 운영하고 Zotero 는 오픈소스입니다. 기능은 비슷합니다. 연구실에서 쓰는 쪽에 맞추는 것이 협업에 편합니다."
+      },
+      {
+        "q": "PDF 에 메모를 남길 수 있나요?",
+        "a": "프로그램 안에서 PDF 를 열고 하이라이트와 메모를 남길 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Mendeley Reference Manager",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.mendeley.com/download-reference-manager/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Elsevier 공식 다운로드",
+        "href": "https://www.mendeley.com/download-reference-manager/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "Anki-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "학습"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "Anki",
+    "titleBottom": "다운로드",
+    "listTitle": "Anki 다운로드",
+    "listMeta": "무료 · 오픈소스 · 암기 카드",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "Anki 다운로드",
+    "sourceNote": "SOURCE: Anki 공식 화면 · 오픈소스",
+    "description": "Anki 를 공식 화면으로 연결합니다. 반복 간격을 조절해 외우게 하는 암기 카드 프로그램으로, 아이폰 앱만 유료인 점을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Anki"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Anki 공식 화면이 열립니다. Windows·Mac·Linux 판이 있습니다."
+      },
+      {
+        "title": "설치와 덱 만들기",
+        "body": "설치 후 덱(카드 묶음)을 만들고 앞면·뒷면에 내용을 넣습니다."
+      },
+      {
+        "title": "공유 덱 받기",
+        "body": "다른 사람이 만든 덱을 받아 쓸 수도 있습니다. 어학이나 자격증 덱이 많습니다."
+      },
+      {
+        "title": "동기화 계정",
+        "body": "AnkiWeb 계정을 만들면 PC 와 휴대폰이 같은 카드를 봅니다. 무료입니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료인가요?",
+        "a": "PC 판과 안드로이드 앱은 무료입니다. 아이폰용 AnkiMobile 만 유료입니다. 아이폰에서도 브라우저로 AnkiWeb 을 쓰면 무료로 복습할 수 있습니다."
+      },
+      {
+        "q": "어떻게 외워지나요?",
+        "a": "맞힌 카드는 간격을 늘려 다시 보여 주고 틀린 카드는 자주 보여 줍니다. 이 간격 조절이 이 프로그램의 핵심입니다."
+      },
+      {
+        "q": "휴대폰과 같이 쓸 수 있나요?",
+        "a": "AnkiWeb 계정으로 동기화하면 PC 와 휴대폰이 같은 카드를 봅니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Anki 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://apps.ankiweb.net/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Anki 공식 다운로드",
+        "href": "https://apps.ankiweb.net/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "학습-무료-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "학습"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "학습",
+    "titleBottom": "무료 프로그램",
+    "listTitle": "학습 무료 프로그램",
+    "listMeta": "무료 4가지 · 논문/암기/필기",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "학습 무료 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 화면",
+    "description": "공부에 쓰는 무료 프로그램을 용도별로 정리했습니다. 외우기·논문 정리·필기로 나눴습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무엇이 필요한지 정하기",
+        "body": "단어나 개념을 외우는 것이면 Anki, 논문 참고문헌 정리면 Zotero, 자료를 모아 두는 것이면 Notion 이 맞습니다."
+      },
+      {
+        "title": "외우기는 Anki",
+        "body": "위 버튼으로 Anki 를 받습니다. 무료이고 반복 간격을 알아서 조절해 줍니다."
+      },
+      {
+        "title": "논문은 Zotero",
+        "body": "브라우저 확장을 함께 설치하면 논문 페이지에서 버튼 한 번으로 서지 정보가 담깁니다."
+      },
+      {
+        "title": "문서 작성은 리브레오피스",
+        "body": "한글이나 MS 오피스가 없어도 무료로 문서를 쓰고 PDF 로 낼 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "아이패드나 태블릿에서도 되나요?",
+        "a": "Anki 는 안드로이드 앱이 무료, 아이폰·아이패드용은 유료입니다. Notion 과 Zotero 는 각각 앱이 있습니다."
+      },
+      {
+        "q": "논문 인용을 자동으로 만들 수 있나요?",
+        "a": "Zotero 나 Mendeley 에서 워드 플러그인을 설치하면 인용과 참고문헌 목록이 자동으로 생성됩니다."
+      },
+      {
+        "q": "무료로 문서를 쓰려면요?",
+        "a": "리브레오피스로 워드·엑셀·파워포인트에 해당하는 작업을 할 수 있습니다. docx 로 저장할 수도 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Anki 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://apps.ankiweb.net/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "Anki",
+        "note": "암기 카드. 반복 간격을 알아서 조절합니다.",
+        "href": "/download/software/Anki-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "Zotero",
+        "note": "논문 참고문헌 관리와 인용 자동 생성.",
+        "href": "/download/software/Zotero-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "노션",
+        "note": "자료 정리와 메모.",
+        "href": "/download/software/%EB%85%B8%EC%85%98-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "리브레오피스",
+        "note": "무료 문서 작성. docx 로 저장됩니다.",
+        "href": "/download/software/%EB%A6%AC%EB%B8%8C%EB%A0%88%EC%98%A4%ED%94%BC%EC%8A%A4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "용도별 학습 프로그램"
+  },
+  {
+    "slug": "온라인-수업-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "학습"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "온라인 수업",
+    "titleBottom": "프로그램",
+    "listTitle": "온라인 수업 프로그램",
+    "listMeta": "무료 4가지 · 수업/과제",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "온라인 수업 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 다운로드 화면",
+    "description": "온라인 수업이나 화상 강의에 필요한 프로그램을 정리했습니다. 참여만 할 때와 진행할 때 준비가 다릅니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "참여만 하면 준비가 적습니다",
+        "body": "수업에 들어가기만 한다면 링크를 열고 브라우저에서 참여하는 방법도 있습니다. 앱을 깔면 화면 공유나 소회의실 기능이 편해집니다."
+      },
+      {
+        "title": "줌부터 받기",
+        "body": "위 버튼으로 Zoom 을 받습니다. 국내 학교와 학원에서 가장 많이 씁니다."
+      },
+      {
+        "title": "마이크·카메라 권한",
+        "body": "Windows 설정 › 개인 정보 및 보안에서 마이크와 카메라 접근이 허용돼 있어야 합니다. 이걸 몰라 소리가 안 나오는 경우가 많습니다."
+      },
+      {
+        "title": "녹화가 필요하면 OBS",
+        "body": "수업을 녹화해 두려면 OBS 를 씁니다. 다만 강의 녹화는 진행자의 동의를 받아야 합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "설치 없이 수업에 들어갈 수 있나요?",
+        "a": "줌과 팀즈 모두 브라우저로 참여하는 방법이 있습니다. 회의 링크를 열었을 때 나오는 브라우저 참여 항목을 고르세요."
+      },
+      {
+        "q": "마이크가 안 됩니다.",
+        "a": "Windows 설정 › 개인 정보 및 보안 › 마이크에서 앱의 접근이 허용돼 있는지 확인하세요. 그다음 프로그램 안에서 장치를 고릅니다."
+      },
+      {
+        "q": "수업을 녹화해도 되나요?",
+        "a": "진행자의 동의를 받아야 합니다. 저작권과 초상권 문제가 생길 수 있으니 미리 확인하세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Zoom 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://zoom.us/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "줌",
+        "note": "국내 학교·학원에서 가장 많이 씁니다.",
+        "href": "/download/software/%EC%A4%8C-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "팀즈",
+        "note": "학교가 Microsoft 365 를 쓰면 이쪽.",
+        "href": "/download/software/%ED%8C%80%EC%A6%88-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "OBS",
+        "note": "녹화가 필요할 때. 동의를 먼저 받으세요.",
+        "href": "/download/software/OBS-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "노션",
+        "note": "수업 정리와 과제 관리.",
+        "href": "/download/software/%EB%85%B8%EC%85%98-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "온라인 수업에 쓰는 것"
+  },
+  {
+    "slug": "사진-편집-무료-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "이미지 편집"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "사진 편집",
+    "titleBottom": "무료 프로그램",
+    "listTitle": "사진 편집 무료 프로그램",
+    "listMeta": "무료 4가지 · 용도별",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "사진 편집 무료 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 배포 화면",
+    "description": "사진을 보정하고 합성하는 무료 프로그램을 정리했습니다. 간단한 크기 조절부터 본격 합성까지 단계별로 나눴습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "얼마나 손볼지 정하기",
+        "body": "크기만 줄이면 알씨나 윈도우 기본 사진 앱으로 충분합니다. 합성이나 정밀 보정이 필요하면 김프가 맞습니다."
+      },
+      {
+        "title": "본격 작업은 김프",
+        "body": "위 버튼으로 김프를 받습니다. 무료이고 상업적 작업에도 쓸 수 있습니다."
+      },
+      {
+        "title": "저장과 내보내기 구분",
+        "body": "김프는 저장이 작업 파일(XCF), 내보내기가 이미지 파일입니다. JPG 로 만들려면 파일 › 내보내기를 씁니다."
+      },
+      {
+        "title": "여러 장을 한 번에",
+        "body": "크기나 형식을 한꺼번에 바꾸려면 알씨나 IrfanView 의 일괄 변환이 빠릅니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "포토샵 대신 쓸 수 있나요?",
+        "a": "사진 보정과 합성은 김프로 대부분 됩니다. 다만 단축키와 화면 구성이 달라 익숙해지는 데 시간이 걸립니다."
+      },
+      {
+        "q": "사진 용량만 줄이고 싶습니다.",
+        "a": "알씨나 IrfanView 의 일괄 변환에서 가로 픽셀을 줄이면 용량이 크게 줍니다."
+      },
+      {
+        "q": "무료인데 상업적으로 써도 되나요?",
+        "a": "김프와 페인트닷넷은 상업적 사용에 제한이 없습니다. 알씨는 개인 무료 기준이라 업무용은 확인이 필요합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "GIMP 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.gimp.org/downloads/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "김프",
+        "note": "합성과 정밀 보정. 완전 무료.",
+        "href": "/download/software/%EA%B9%80%ED%94%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "페인트닷넷",
+        "note": "가벼운 편집. 레이어도 됩니다.",
+        "href": "/download/software/%ED%8E%98%EC%9D%B8%ED%8A%B8%EB%8B%B7%EB%84%B7-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "포토스케이프",
+        "note": "일괄 편집과 이어붙이기.",
+        "href": "/download/software/%ED%8F%AC%ED%86%A0%EC%8A%A4%EC%BC%80%EC%9D%B4%ED%94%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "알씨",
+        "note": "크기 변경과 형식 변환. 개인 무료.",
+        "href": "/download/software/%EC%95%8C%EC%94%A8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "용도별 사진 편집 프로그램"
+  },
+  {
+    "slug": "브라우저-비교-다운로드",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "웹 브라우저"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "브라우저",
+    "titleBottom": "다운로드",
+    "listTitle": "브라우저 다운로드",
+    "listMeta": "6가지 · 국내 사이트 호환까지",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "브라우저 다운로드",
+    "sourceNote": "SOURCE: 각 제작사 공식 다운로드 화면",
+    "description": "브라우저를 비교했습니다. 국내 은행이나 관공서 사이트 호환까지 함께 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무난한 것은 크롬",
+        "body": "위 버튼으로 크롬을 받습니다. 확장 프로그램이 가장 많고 국내 사이트 호환도 무난합니다."
+      },
+      {
+        "title": "Windows 라면 엣지가 이미 있습니다",
+        "body": "따로 받을 필요 없이 시작 메뉴에서 Edge 를 찾으면 됩니다. 크로미움 기반이라 크롬 확장도 씁니다."
+      },
+      {
+        "title": "국내 사이트가 안 되면 바꿔 보세요",
+        "body": "일부 은행·관공서 사이트가 특정 브라우저만 지원합니다. 크롬이나 엣지로 접속하면 대개 해결됩니다."
+      },
+      {
+        "title": "광고 차단이 필요하면 브레이브",
+        "body": "기본으로 광고를 막습니다. 다만 그 때문에 사이트 기능이 깨지는 경우가 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "어떤 브라우저가 가장 빠른가요?",
+        "a": "요즘은 크로미움 기반 브라우저들이 비슷합니다. 확장 프로그램이 많으면 어느 것이든 느려집니다."
+      },
+      {
+        "q": "국내 은행 사이트가 안 됩니다.",
+        "a": "크롬이나 엣지로 접속해 보세요. 파이어폭스는 일부 국내 사이트에서 문제가 생길 수 있습니다."
+      },
+      {
+        "q": "확장 프로그램을 옮길 수 있나요?",
+        "a": "크롬·웨일·엣지는 크로미움 기반이라 크롬 웹스토어 확장을 공유합니다. 파이어폭스는 따로 받아야 합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "크롬 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.google.com/intl/ko/chrome/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "SW",
+        "name": "브라우저 확장 프로그램 설치",
+        "href": "/download/software/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%ED%99%95%EC%9E%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EC%84%A4%EC%B9%98"
+      },
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "크롬",
+        "note": "확장이 가장 많고 호환이 무난합니다.",
+        "href": "/download/software/%ED%81%AC%EB%A1%AC-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "엣지",
+        "note": "Windows 에 이미 있습니다. 크롬 확장도 됩니다.",
+        "href": "/download/software/%EC%97%A3%EC%A7%80-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "네이버 웨일",
+        "note": "사이드바와 화면 분할. 국내 서비스 연동.",
+        "href": "/download/software/%EB%84%A4%EC%9D%B4%EB%B2%84-%EC%9B%A8%EC%9D%BC-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "파이어폭스",
+        "note": "크롬 확장은 안 됩니다.",
+        "href": "/download/software/%ED%8C%8C%EC%9D%B4%EC%96%B4%ED%8F%AD%EC%8A%A4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "브레이브",
+        "note": "광고를 기본으로 막습니다.",
+        "href": "/download/software/%EB%B8%8C%EB%A0%88%EC%9D%B4%EB%B8%8C-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "오페라",
+        "note": "내장 VPN 과 광고 차단.",
+        "href": "/download/software/%EC%98%A4%ED%8E%98%EB%9D%BC-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "브라우저 고르기"
+  },
+  {
+    "slug": "백신-무료-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "백신"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "백신",
+    "titleBottom": "무료 프로그램",
+    "listTitle": "백신 무료 프로그램",
+    "listMeta": "무료 5가지 · 하나만 켜세요",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "백신 무료 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 다운로드 화면",
+    "description": "무료 백신을 비교했습니다. 가장 중요한 원칙인 '하나만 켜기' 부터 짚었습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "백신은 하나만 켭니다",
+        "body": "두 개 이상 실시간 감시를 켜면 서로를 위협으로 잡아 PC 가 크게 느려집니다. 새로 설치하기 전에 쓰던 것을 먼저 지우세요."
+      },
+      {
+        "title": "Windows 보안만으로도 됩니다",
+        "body": "Windows 10·11 에는 Windows 보안이 기본으로 들어 있습니다. 일반적인 용도라면 이것만으로도 부족하지 않습니다. 다른 백신을 깔면 자동으로 물러납니다."
+      },
+      {
+        "title": "국산 백신을 원하면",
+        "body": "위 버튼으로 V3 Lite 를 받습니다. 공식 화면에 개인 사용자는 무료라고 적혀 있습니다."
+      },
+      {
+        "title": "검사 전용은 따로",
+        "body": "실시간 감시 없이 검사만 돌리는 도구(멀웨어바이트·스파이봇)는 쓰던 백신과 함께 둘 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "백신을 두 개 깔면 더 안전한가요?",
+        "a": "아닙니다. 서로를 위협으로 잡아 PC 가 느려지고 오히려 보호가 불안정해집니다. 하나만 켜세요."
+      },
+      {
+        "q": "Windows 보안만 써도 되나요?",
+        "a": "일반적인 용도라면 충분합니다. 별도 백신이 꼭 필요한 것은 아닙니다."
+      },
+      {
+        "q": "검사만 하는 프로그램은 같이 써도 되나요?",
+        "a": "멀웨어바이트나 스파이봇 무료판은 실시간 감시가 없어 다른 백신과 함께 두고 검사용으로 쓰기 좋습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "V3 Lite 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.ahnlab.com/ko/product/v3-lite",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "V3 Lite",
+        "note": "국산. 개인 사용자 무료.",
+        "href": "/download/software/V3-Lite-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "알약",
+        "note": "국산. 개인 무료. V3 와 둘 중 하나만.",
+        "href": "/download/software/%EC%95%8C%EC%95%BD-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "어베스트",
+        "note": "해외 백신. 무료판이 있습니다.",
+        "href": "/download/software/%EC%96%B4%EB%B2%A0%EC%8A%A4%ED%8A%B8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "멀웨어바이트",
+        "note": "검사 전용으로 함께 쓰기 좋습니다.",
+        "href": "/download/software/%EB%A9%80%EC%9B%A8%EC%96%B4%EB%B0%94%EC%9D%B4%ED%8A%B8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "스파이봇",
+        "note": "무료판은 실시간 감시가 없어 병행이 가능합니다.",
+        "href": "/download/software/%EC%8A%A4%ED%8C%8C%EC%9D%B4%EB%B4%87-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "무료 백신 고르기"
+  },
+  {
+    "slug": "클라우드-무료-용량-비교",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "클라우드"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "클라우드",
+    "titleBottom": "무료 용량 비교",
+    "listTitle": "클라우드 무료 용량 비교",
+    "listMeta": "무료 용량 · 4곳",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "클라우드 무료 용량 비교",
+    "sourceNote": "SOURCE: 각 제작사 공식 화면",
+    "description": "클라우드 저장소의 무료 용량을 비교했습니다. 화면에 적힌 숫자만 옮겼습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무료 용량을 먼저 비교하세요",
+        "body": "네이버 MYBOX 가 공식 화면에 국내 최대 무료 용량 30GB 로 안내하고 있습니다. 구글 드라이브는 15GB, 원드라이브는 5GB 입니다."
+      },
+      {
+        "title": "이미 쓰는 서비스에 맞추기",
+        "body": "안드로이드 폰이면 구글 드라이브, Windows 나 Microsoft 365 를 쓰면 원드라이브가 이미 연결돼 있습니다."
+      },
+      {
+        "title": "PC 프로그램 설치",
+        "body": "위 버튼으로 네이버 MYBOX 를 받거나, 아래 목록에서 쓰는 서비스를 고르세요."
+      },
+      {
+        "title": "저장 공간 아끼기",
+        "body": "PC 저장 공간이 빠듯하면 파일 목록만 두고 필요할 때 받아오는 방식(스트리밍)을 고르세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료 용량이 가장 큰 곳은?",
+        "a": "네이버 MYBOX 가 공식 화면에 국내 최대 무료 용량 30GB 로 적고 있습니다. 구글 드라이브 15GB, 원드라이브 5GB 입니다."
+      },
+      {
+        "q": "구글 드라이브 15GB 는 어떻게 쓰이나요?",
+        "a": "지메일과 구글 포토가 같은 15GB 를 함께 씁니다. 메일함이 크면 드라이브에 쓸 공간이 줄어듭니다."
+      },
+      {
+        "q": "PC 에서 지우면 클라우드에서도 지워지나요?",
+        "a": "동기화 중이면 함께 지워집니다. 지우기 전에 확인하세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "네이버 MYBOX 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://mybox.naver.com/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "네이버 MYBOX",
+        "note": "공식 화면에 무료 30GB 로 안내.",
+        "href": "/download/software/%EB%84%A4%EC%9D%B4%EB%B2%84-MYBOX-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "구글 드라이브",
+        "note": "15GB. 지메일·사진과 공유합니다.",
+        "href": "/download/software/%EA%B5%AC%EA%B8%80-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "원드라이브",
+        "note": "5GB. Windows 에 기본 포함.",
+        "href": "/download/software/%EC%9B%90%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "드롭박스",
+        "note": "무료 계정. 용량은 화면에서 확인하세요.",
+        "href": "/download/software/%EB%93%9C%EB%A1%AD%EB%B0%95%EC%8A%A4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "클라우드 고르기"
+  },
+  {
+    "slug": "PDF-편집-무료-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "문서"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "PDF 편집",
+    "titleBottom": "무료 프로그램",
+    "listTitle": "PDF 편집 무료 프로그램",
+    "listMeta": "무료 4가지 · 보기/합치기/변환",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "PDF 편집 무료 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 배포 화면",
+    "description": "PDF 를 다루는 무료 프로그램을 작업별로 정리했습니다. 무료로 되는 것과 유료가 필요한 것을 갈랐습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무엇을 할지부터 정하기",
+        "body": "보기만 하면 무료 뷰어로 끝납니다. 합치기·나누기·압축도 무료로 됩니다. 다만 PDF 안의 글자를 직접 고치는 편집은 대부분 유료입니다."
+      },
+      {
+        "title": "합치기·나누기는 PDF24",
+        "body": "위 버튼으로 PDF24 Creator 를 받습니다. 도구가 아이콘으로 나뉘어 있어 쓰기 쉽고 PC 안에서 처리합니다."
+      },
+      {
+        "title": "보기만 하면 가벼운 것으로",
+        "body": "SumatraPDF 가 가장 가볍습니다. 주석까지 필요하면 어도비 리더나 폭싯 리더입니다."
+      },
+      {
+        "title": "PDF 만들기는 윈도우 기본으로",
+        "body": "어떤 프로그램에서든 인쇄를 누르고 Microsoft Print to PDF 를 고르면 PDF 가 만들어집니다. 따로 설치할 것이 없습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "PDF 안의 글자를 고칠 수 있나요?",
+        "a": "무료 프로그램으로는 대부분 안 됩니다. 편집은 유료 아크로뱃 같은 제품이 필요합니다. 원본 문서가 있다면 그것을 고쳐 다시 PDF 로 만드는 편이 빠릅니다."
+      },
+      {
+        "q": "PDF 를 워드로 바꿀 수 있나요?",
+        "a": "PDF24 나 알PDF 에 변환 기능이 있습니다. 다만 표나 서식이 복잡하면 배치가 흐트러집니다."
+      },
+      {
+        "q": "온라인 도구를 써도 되나요?",
+        "a": "계약서나 개인 정보가 든 문서는 권하지 않습니다. 파일을 남의 서버에 올려야 하기 때문입니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "PDF24 Creator 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://tools.pdf24.org/ko/creator",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "SW",
+        "name": "PDF 합치기 무료 프로그램",
+        "href": "/download/software/PDF-%ED%95%A9%EC%B9%98%EA%B8%B0-%EB%AC%B4%EB%A3%8C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8"
+      },
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "PDF24 Creator",
+        "note": "합치기·나누기·압축·변환. 100% 무료.",
+        "href": "/download/software/PDF24-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "알PDF",
+        "note": "합치기와 OCR. 개인 무료.",
+        "href": "/download/software/%EC%95%8CPDF-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "SumatraPDF",
+        "note": "가장 가벼운 뷰어.",
+        "href": "/download/software/SumatraPDF-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "어도비 리더",
+        "note": "주석까지. 편집은 유료.",
+        "href": "/download/software/%EC%96%B4%EB%8F%84%EB%B9%84-%EB%A6%AC%EB%8D%94-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "작업별 PDF 프로그램"
+  },
+  {
+    "slug": "옵시디언-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "메모"
+    ],
+    "badges": [
+      "공식 배포처",
+      "개인 무료",
+      "한국어"
+    ],
+    "titleTop": "옵시디언",
+    "titleBottom": "다운로드",
+    "listTitle": "옵시디언 다운로드",
+    "listMeta": "개인 무료 · Obsidian · 메모",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "옵시디언 다운로드",
+    "sourceNote": "SOURCE: Obsidian 공식 다운로드 화면",
+    "description": "옵시디언을 공식 다운로드 화면으로 연결합니다. 메모를 내 PC 에 파일로 두는 방식이라 노션과 성격이 다릅니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "개인 무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Obsidian"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "메모가 내 PC 에 남습니다",
+        "body": "옵시디언은 메모를 마크다운 파일로 내 컴퓨터에 저장합니다. 서비스가 없어져도 파일은 그대로 남습니다. 노션처럼 서버에 두는 방식과 다른 점입니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Obsidian 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "보관함(Vault) 만들기",
+        "body": "처음 실행하면 메모를 담을 폴더를 정합니다. 이 폴더가 곧 내 메모 전부입니다."
+      },
+      {
+        "title": "백업은 직접",
+        "body": "내 PC 에 있는 파일이라 백업도 직접 해야 합니다. 클라우드 폴더 안에 보관함을 두면 자동으로 올라갑니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료인가요?",
+        "a": "개인 용도는 무료입니다. 공식 동기화나 상업적 사용은 별도 조건이 있으니 화면에서 확인하세요."
+      },
+      {
+        "q": "노션과 뭐가 다른가요?",
+        "a": "노션은 서버에 저장하고 옵시디언은 내 PC 에 파일로 둡니다. 인터넷 없이도 열리고 파일을 직접 관리한다는 점이 다릅니다."
+      },
+      {
+        "q": "휴대폰과 같이 쓸 수 있나요?",
+        "a": "공식 동기화 서비스를 쓰거나, 보관함 폴더를 클라우드에 두고 동기화하는 방법이 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "옵시디언 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://obsidian.md/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Obsidian 공식 다운로드",
+        "href": "https://obsidian.md/download"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "조플린-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "메모"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "조플린",
+    "titleBottom": "다운로드",
+    "listTitle": "조플린 다운로드",
+    "listMeta": "무료 · 오픈소스 · 메모",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "조플린 다운로드",
+    "sourceNote": "SOURCE: Joplin 공식 다운로드 화면 · 오픈소스",
+    "description": "조플린(Joplin)을 공식 다운로드 화면으로 연결합니다. 에버노트에서 옮겨 오는 기능이 있는 오픈소스 메모 프로그램입니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Joplin"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Joplin 공식 다운로드 화면이 열립니다. Windows·Mac·Linux 판이 있습니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다. 광고나 끼워 파는 프로그램이 없습니다."
+      },
+      {
+        "title": "에버노트에서 가져오기",
+        "body": "에버노트에서 내보낸 파일을 그대로 불러올 수 있습니다. 요금제가 바뀌어 옮기려는 경우에 씁니다."
+      },
+      {
+        "title": "동기화 선택",
+        "body": "드롭박스나 원드라이브 같은 클라우드를 골라 기기 사이를 맞출 수 있습니다. 별도 계정 가입이 필요 없습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료인가요?",
+        "a": "오픈소스로 무료입니다. 동기화도 이미 쓰는 클라우드를 연결하는 방식이라 추가 비용이 없습니다."
+      },
+      {
+        "q": "에버노트에서 옮길 수 있나요?",
+        "a": "에버노트에서 내보낸 파일을 불러오는 기능이 있습니다. 옮기기 전에 원본을 백업해 두세요."
+      },
+      {
+        "q": "휴대폰에서도 되나요?",
+        "a": "안드로이드와 iOS 앱이 있습니다. 같은 클라우드로 동기화하면 이어서 볼 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "조플린 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://joplinapp.org/download/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Joplin 공식 다운로드",
+        "href": "https://joplinapp.org/download/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "DeepL-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "번역"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "DeepL",
+    "titleBottom": "다운로드",
+    "listTitle": "DeepL 다운로드",
+    "listMeta": "무료판 있음 · DeepL · 번역",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "DeepL 다운로드",
+    "sourceNote": "SOURCE: DeepL 공식 Windows 앱 화면 · 'Windows용 DeepL 무료 다운로드'",
+    "description": "DeepL 번역 앱을 공식 화면으로 연결합니다. 단축키로 어디서든 번역하는 기능과 무료 사용 범위를 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "DeepL"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 DeepL 공식 Windows 앱 화면이 열립니다. Mac 은 macOS 앱 화면이 따로 있습니다."
+      },
+      {
+        "title": "설치와 단축키",
+        "body": "설치하면 문장을 선택하고 Ctrl 을 두 번 누르는 식으로 어디서든 번역창을 부를 수 있습니다. 설정에서 바꿀 수 있습니다."
+      },
+      {
+        "title": "무료 범위 확인",
+        "body": "무료로 쓸 수 있는 글자 수와 기능에 한도가 있습니다. 화면에서 지금 조건을 확인하세요."
+      },
+      {
+        "title": "문서 번역은 별도",
+        "body": "워드나 PDF 파일을 통째로 번역하는 기능은 요금제에 따라 횟수 제한이 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료로 얼마나 쓸 수 있나요?",
+        "a": "글자 수와 문서 번역 횟수에 한도가 있습니다. 조건이 바뀌는 편이니 공식 화면에서 확인하세요."
+      },
+      {
+        "q": "파파고와 뭐가 다른가요?",
+        "a": "둘 다 기계 번역이고 문장에 따라 결과가 다릅니다. 파파고는 웹과 앱으로 쓰고 PC 프로그램이 따로 없습니다."
+      },
+      {
+        "q": "설치 없이 쓸 수 있나요?",
+        "a": "브라우저에서 그대로 쓸 수 있습니다. 앱은 단축키로 빠르게 부르는 점이 편합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Windows용 DeepL 무료 다운로드",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.deepl.com/ko/windows-app",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Windows용 DeepL",
+        "href": "https://www.deepl.com/ko/windows-app"
+      },
+      {
+        "tag": "PAGE",
+        "name": "Mac용 DeepL",
+        "href": "https://www.deepl.com/ko/macos-app"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "메모-프로그램-비교",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "메모"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "메모 프로그램",
+    "titleBottom": "무료 비교",
+    "listTitle": "메모 프로그램 무료 비교",
+    "listMeta": "무료 5가지 · 저장 방식이 다릅니다",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "메모 프로그램 무료 비교",
+    "sourceNote": "SOURCE: 각 제작사 공식 화면",
+    "description": "메모 프로그램을 저장 방식으로 비교했습니다. 서버에 두는 것과 내 PC 에 파일로 두는 것은 성격이 다릅니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "어디에 저장되는지부터 보세요",
+        "body": "노션과 에버노트는 서버에 저장합니다. 옵시디언과 조플린은 내 PC 에 파일로 둡니다. 서비스가 바뀌거나 요금제가 오를 때 차이가 큽니다."
+      },
+      {
+        "title": "협업까지 하려면 노션",
+        "body": "위 버튼으로 노션을 받습니다. 팀과 함께 쓰기 좋고 무료 요금제가 있습니다."
+      },
+      {
+        "title": "내 파일로 남기려면 옵시디언",
+        "body": "메모가 마크다운 파일로 남아 어떤 프로그램으로도 열립니다. 개인 용도 무료입니다."
+      },
+      {
+        "title": "옮길 계획도 미리",
+        "body": "나중에 다른 프로그램으로 옮길 수 있는지 확인해 두면 좋습니다. 조플린은 에버노트에서 가져오는 기능이 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료로 쓸 수 있는 것은?",
+        "a": "노션은 개인 무료 요금제, 옵시디언은 개인 무료, 조플린은 완전 오픈소스입니다. 에버노트는 무료 요금제에 기기 수 제한이 있습니다."
+      },
+      {
+        "q": "나중에 옮길 수 있나요?",
+        "a": "옵시디언과 조플린은 파일로 남아 옮기기 쉽습니다. 서버형은 내보내기 기능을 확인해 두세요."
+      },
+      {
+        "q": "인터넷 없이 쓸 수 있나요?",
+        "a": "옵시디언과 조플린은 파일이 PC 에 있어 그대로 됩니다. 노션은 제한이 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Notion 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.notion.com/ko/desktop",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "노션",
+        "note": "서버 저장. 협업에 강합니다.",
+        "href": "/download/software/%EB%85%B8%EC%85%98-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "옵시디언",
+        "note": "내 PC 에 파일로. 개인 무료.",
+        "href": "/download/software/%EC%98%B5%EC%8B%9C%EB%94%94%EC%96%B8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "조플린",
+        "note": "오픈소스. 에버노트에서 가져오기 가능.",
+        "href": "/download/software/%EC%A1%B0%ED%94%8C%EB%A6%B0-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "에버노트",
+        "note": "무료 요금제에 기기 수 제한이 있습니다.",
+        "href": "/download/software/%EC%97%90%EB%B2%84%EB%85%B8%ED%8A%B8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "클로바노트",
+        "note": "음성을 글로 바꾸는 용도.",
+        "href": "/download/software/%ED%81%B4%EB%A1%9C%EB%B0%94%EB%85%B8%ED%8A%B8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "메모 프로그램 고르기"
+  },
+  {
+    "slug": "무설치-포터블-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "유틸리티"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "무설치 포터블",
+    "titleBottom": "프로그램",
+    "listTitle": "무설치 포터블 프로그램",
+    "listMeta": "USB 에 넣어 쓰는 것 · 5가지",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "무설치 포터블 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 배포 화면",
+    "description": "설치하지 않고 USB 에 넣어 쓰는 프로그램을 정리했습니다. 회사 PC 처럼 설치 권한이 없을 때 씁니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무설치판이 있는지 확인",
+        "body": "많은 프로그램이 설치판과 무설치판(Portable)을 함께 배포합니다. 공식 화면에서 Portable 이나 zip 이라고 적힌 것을 찾으면 됩니다."
+      },
+      {
+        "title": "압축을 풀어 실행",
+        "body": "무설치판은 압축을 풀고 실행 파일을 두 번 누르면 바로 켜집니다. 레지스트리를 건드리지 않습니다."
+      },
+      {
+        "title": "USB 에 넣어 쓰기",
+        "body": "USB 에 폴더째 넣어 두면 다른 PC 에서도 그대로 씁니다. 설치 권한이 없는 회사 PC 에서 유용합니다."
+      },
+      {
+        "title": "설정이 함께 따라갑니다",
+        "body": "무설치판은 설정도 그 폴더에 저장되는 경우가 많아 어디서 켜도 같은 환경이 됩니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무설치판이 왜 필요한가요?",
+        "a": "회사 PC 처럼 설치 권한이 없을 때, 또는 여러 PC 를 오가며 같은 환경을 쓰고 싶을 때 유용합니다."
+      },
+      {
+        "q": "기능에 차이가 있나요?",
+        "a": "대체로 같습니다. 다만 파일 연결이나 우클릭 메뉴 등록 같은 시스템 기능은 설치판에서만 됩니다."
+      },
+      {
+        "q": "어디서 받나요?",
+        "a": "각 프로그램 공식 화면에서 Portable 이나 zip 이라고 적힌 것을 고르면 됩니다. 아래 목록의 프로그램들이 무설치판을 제공합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "7-Zip 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.7-zip.org/download.html",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "7-Zip",
+        "note": "압축. 무설치판이 있습니다.",
+        "href": "/download/software/7%EC%A7%91-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "노트패드++",
+        "note": "텍스트 편집. Portable 판.",
+        "href": "/download/software/%EB%85%B8%ED%8A%B8%ED%8C%A8%EB%93%9C%2B%2B-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "에브리씽",
+        "note": "파일 검색. Portable Zip.",
+        "href": "/download/software/%EC%97%90%EB%B8%8C%EB%A6%AC%EC%94%BD-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "SumatraPDF",
+        "note": "PDF 뷰어. exe 하나로 실행.",
+        "href": "/download/software/SumatraPDF-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "HWiNFO",
+        "note": "하드웨어 정보. Portable 판.",
+        "href": "/download/software/HWiNFO-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "무설치판이 있는 프로그램"
+  },
+  {
+    "slug": "동영상-플레이어-비교",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "미디어 플레이어"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "동영상 플레이어",
+    "titleBottom": "무료 비교",
+    "listTitle": "동영상 플레이어 무료 비교",
+    "listMeta": "무료 4가지 · 코덱과 자막",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "동영상 플레이어 무료 비교",
+    "sourceNote": "SOURCE: 각 제작사 공식 배포 화면",
+    "description": "동영상 재생 프로그램을 비교했습니다. 코덱 내장 여부와 자막 처리에서 차이가 납니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "코덱 문제를 겪었다면 VLC",
+        "body": "위 버튼으로 VLC 를 받습니다. 코덱이 내장이라 다른 플레이어에서 안 열리던 파일도 대개 열립니다. 공식 안내에 광고와 추적이 없다고 적혀 있습니다."
+      },
+      {
+        "title": "자막 조정이 잦으면 곰플레이어",
+        "body": "자막 싱크를 맞추는 조작이 간편합니다. 다만 무료판에는 배너가 나옵니다."
+      },
+      {
+        "title": "세부 설정을 만지려면 팟플레이어",
+        "body": "코덱과 하드웨어 가속 옵션이 가장 깊습니다. 32bit 와 64bit 가 따로 있습니다."
+      },
+      {
+        "title": "코덱팩은 마지막 수단",
+        "body": "플레이어를 바꿔도 안 되면 그때 K-Lite 코덱팩을 설치합니다. 여러 개 깔면 충돌합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "어떤 것이 가장 잘 열리나요?",
+        "a": "VLC 가 코덱을 안에 담고 있어 가장 폭넓게 열립니다. 코덱팩을 깔기 전에 VLC 로 먼저 시도해 보세요."
+      },
+      {
+        "q": "자막이 안 나옵니다.",
+        "a": "영상과 같은 폴더에 같은 이름의 자막 파일이 있어야 자동으로 잡힙니다. 이름이 다르면 플레이어에서 직접 불러오세요."
+      },
+      {
+        "q": "광고 없는 것은?",
+        "a": "VLC 는 공식 안내에 광고가 없다고 적혀 있습니다. 곰플레이어 무료판은 배너가 나옵니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "VLC 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.videolan.org/vlc/index.ko.html",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "SW",
+        "name": "동영상 재생 안 될 때",
+        "href": "/download/software/%EB%8F%99%EC%98%81%EC%83%81-%EC%9E%AC%EC%83%9D-%EC%95%88%EB%90%A0%EB%95%8C"
+      },
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "VLC",
+        "note": "코덱 내장. 광고와 추적이 없습니다.",
+        "href": "/download/software/VLC-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "곰플레이어",
+        "note": "자막 조작이 간편. 무료판에 배너.",
+        "href": "/download/software/%EA%B3%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "팟플레이어",
+        "note": "코덱 세부 설정이 깊습니다.",
+        "href": "/download/software/%ED%8C%9F%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "K-Lite 코덱팩",
+        "note": "플레이어를 바꿔도 안 될 때.",
+        "href": "/download/software/K-Lite-%EC%BD%94%EB%8D%B1-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "동영상 플레이어 고르기"
+  },
+  {
+    "slug": "새-컴퓨터-설정-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "설치 가이드"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "새 컴퓨터",
+    "titleBottom": "설정 프로그램",
+    "listTitle": "새 컴퓨터 설정 프로그램",
+    "listMeta": "처음 켰을 때 할 것 · 순서대로",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "새 컴퓨터 설정 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 배포 화면",
+    "description": "새 PC 나 노트북을 처음 켰을 때 할 일을 순서대로 정리했습니다. 프로그램을 깔기 전에 해야 할 것이 있습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "윈도우 업데이트부터",
+        "body": "프로그램을 깔기 전에 설정 › Windows 업데이트를 끝내세요. 업데이트 도중 설치하면 충돌이 나기 쉽습니다."
+      },
+      {
+        "title": "제조사 프로그램 정리",
+        "body": "새 노트북에는 제조사가 미리 넣어 둔 프로그램(체험판 백신·광고 앱)이 있습니다. 설정 › 앱에서 안 쓸 것을 지우면 부팅이 빨라집니다."
+      },
+      {
+        "title": "브라우저부터 설치",
+        "body": "위 버튼으로 크롬을 받습니다. 나머지를 받으러 다닐 창이 먼저 있어야 합니다."
+      },
+      {
+        "title": "나머지는 필요할 때",
+        "body": "포맷 후 필수 프로그램 목록을 참고하되 전부 깔 필요는 없습니다. 실제로 쓸 것만 고르세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "체험판 백신을 지워도 되나요?",
+        "a": "새 노트북에 미리 깔린 체험판은 기간이 끝나면 결제를 요구합니다. 안 쓸 거라면 지우고 Windows 보안을 쓰거나 다른 백신을 하나만 설치하세요."
+      },
+      {
+        "q": "드라이버는 어떻게 하나요?",
+        "a": "새 PC 는 대부분 잡혀 있습니다. 화면이나 소리가 이상하면 제조사 지원 화면에서 모델명으로 받으세요."
+      },
+      {
+        "q": "무엇부터 깔아야 하나요?",
+        "a": "브라우저 → 백신 하나 → 압축 프로그램 순서가 무난합니다. 나머지는 쓸 때 깔면 됩니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "크롬 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.google.com/intl/ko/chrome/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "DRV",
+        "name": "노트북 포맷 후 드라이버 설치",
+        "href": "/download/driver/%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8F%AC%EB%A7%B7-%ED%9B%84-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98"
+      },
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "포맷 후 필수 프로그램",
+        "note": "15개 목록. 전부 깔 필요는 없습니다.",
+        "href": "/download/software/%ED%8F%AC%EB%A7%B7-%ED%9B%84-%ED%95%84%EC%88%98-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8"
+      },
+      {
+        "title": "크롬",
+        "note": "브라우저부터.",
+        "href": "/download/software/%ED%81%AC%EB%A1%AC-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "무료 백신",
+        "note": "하나만 켜세요.",
+        "href": "/download/software/%EB%B0%B1%EC%8B%A0-%EB%AC%B4%EB%A3%8C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8"
+      },
+      {
+        "title": "압축 프로그램",
+        "note": "회사 PC 라면 라이선스 확인.",
+        "href": "/download/software/%EC%95%95%EC%B6%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EB%B9%84%EA%B5%90"
+      }
+    ],
+    "picksTitle": "새 컴퓨터에 먼저 깔 것"
+  },
+  {
+    "slug": "국산-프로그램-다운로드",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "유틸리티"
+    ],
+    "badges": [
+      "공식 배포처",
+      "제품별 상이",
+      "한국어"
+    ],
+    "titleTop": "국산 프로그램",
+    "titleBottom": "다운로드",
+    "listTitle": "국산 프로그램 다운로드",
+    "listMeta": "알툴즈·곰랩·반디 등",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "국산 프로그램 다운로드",
+    "sourceNote": "SOURCE: 각 제작사 공식 화면",
+    "description": "국내에서 많이 쓰는 프로그램을 회사별로 정리했습니다. 개인 무료와 업무용 라이선스가 갈리는 지점을 먼저 짚었습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "제품별 상이"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "국내 제작사"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "업무용인지 먼저 확인하세요",
+        "body": "알툴즈 제품은 무료판이 개인 사용자 기준입니다. 회사 PC 에 쓰려면 라이선스가 필요합니다. 이걸 모르고 쓰다 문제가 되는 경우가 있습니다."
+      },
+      {
+        "title": "회사별로 사이트가 다릅니다",
+        "body": "알집·알약은 알툴즈, 곰플레이어·곰믹스는 곰랩, 반디집·꿀뷰는 반디소프트, 반디캠·반디컷은 반디캠컴퍼니입니다."
+      },
+      {
+        "title": "공식 화면에서만 받기",
+        "body": "국산 프로그램은 이름이 비슷한 배포 사이트가 많습니다. 원본에 다른 것을 끼워 넣은 경우가 있으니 제작사 공식 화면에서만 받으세요."
+      },
+      {
+        "title": "설치 중 함께 설치 항목 해제",
+        "body": "같은 회사의 다른 제품을 함께 설치할지 묻는 화면이 나오면 필요 없는 것은 해제하세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "회사에서 무료로 쓸 수 있는 것은?",
+        "a": "반디집은 공식 화면에 무료로도 쓸 수 있다고 안내되어 있습니다. 알툴즈 제품은 개인 사용자 기준이라 업무용은 확인이 필요합니다."
+      },
+      {
+        "q": "광고를 없앨 수 있나요?",
+        "a": "알툴즈는 광고 없이 쓰는 별도 구독을 안내하고 있습니다. 곰플레이어 무료판도 배너가 나옵니다."
+      },
+      {
+        "q": "어디서 받아야 안전한가요?",
+        "a": "제작사 공식 화면에서만 받으세요. 자료실 사이트의 파일은 원본에 다른 프로그램이 끼워져 있을 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "알툴즈 공식 화면",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://altools.co.kr/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "알툴즈",
+        "note": "알집·알약·알씨·알PDF 등. 개인 무료.",
+        "href": "/download/software/%EC%95%8C%ED%88%B4%EC%A6%88-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "곰랩",
+        "note": "곰플레이어·곰믹스·곰캠.",
+        "href": "/download/software/%EA%B3%B0%EB%9E%A9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "반디소프트",
+        "note": "반디집·꿀뷰·반디뷰.",
+        "href": "/download/software/%EB%B0%98%EB%94%94%EC%86%8C%ED%94%84%ED%8A%B8-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "V3 Lite",
+        "note": "안랩. 개인 사용자 무료.",
+        "href": "/download/software/V3-Lite-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "네이버 웨일",
+        "note": "네이버 브라우저.",
+        "href": "/download/software/%EB%84%A4%EC%9D%B4%EB%B2%84-%EC%9B%A8%EC%9D%BC-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "회사별 국산 프로그램"
+  },
+  {
+    "slug": "설치-파일-안전하게-받기",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "설치 가이드"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "설치 파일",
+    "titleBottom": "안전하게 받기",
+    "listTitle": "설치 파일 안전하게 받기",
+    "listMeta": "가짜 사이트 피하는 법",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "설치 파일 안전하게 받기",
+    "sourceNote": "SOURCE: 각 제작사 공식 배포 화면",
+    "description": "설치 파일을 어디서 받아야 안전한지 정리했습니다. 이 색인이 제작사 공식 화면으로만 연결하는 이유이기도 합니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "제작사 공식 화면에서만",
+        "body": "자료실이나 모아 놓은 사이트의 파일은 원본에 다른 프로그램을 끼워 넣은 경우가 있습니다. 만든 회사의 공식 화면에서 받는 것이 가장 확실합니다."
+      },
+      {
+        "title": "검색 결과 상단의 광고를 조심하세요",
+        "body": "프로그램 이름으로 검색하면 광고가 먼저 나옵니다. 비슷한 이름의 다른 사이트인 경우가 있습니다. 주소를 확인하고 들어가세요. 푸티(PuTTY)가 대표적인 사례입니다."
+      },
+      {
+        "title": "설치 화면을 끝까지 읽기",
+        "body": "다음을 연달아 누르면 원하지 않는 프로그램이 함께 깔립니다. 매 화면에서 체크 항목을 확인하세요."
+      },
+      {
+        "title": "이미 깔렸다면",
+        "body": "설정 › 앱에서 최근 설치 순으로 정렬하면 같이 들어온 것이 보입니다. 지우면 됩니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "자료실 사이트에서 받으면 안 되나요?",
+        "a": "권하지 않습니다. 원본에 광고 프로그램이나 툴바를 끼워 넣은 경우가 있습니다. 제작사 공식 화면에서 받으세요."
+      },
+      {
+        "q": "공식 사이트를 어떻게 구분하나요?",
+        "a": "주소를 확인하는 것이 가장 확실합니다. 검색 결과 상단의 광고는 다른 사이트인 경우가 있습니다."
+      },
+      {
+        "q": "설치했더니 이상한 프로그램이 같이 깔렸습니다.",
+        "a": "설치 화면의 제안을 거절하지 않으면 그렇게 됩니다. 설정 › 앱에서 최근 설치 순으로 보면 찾아 지울 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "크롬 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.google.com/intl/ko/chrome/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "ImgBurn",
+        "note": "설치 중 제안이 여러 번 나옵니다.",
+        "href": "/download/software/ImgBurn-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "어도비 리더",
+        "note": "함께 설치 항목을 확인하세요.",
+        "href": "/download/software/%EC%96%B4%EB%8F%84%EB%B9%84-%EB%A6%AC%EB%8D%94-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "푸티",
+        "note": "putty.org 는 공식이 아닙니다.",
+        "href": "/download/software/%ED%91%B8%ED%8B%B0-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "CCleaner",
+        "note": "무료판 쪽을 눌러야 합니다.",
+        "href": "/download/software/%EC%94%A8%ED%81%B4%EB%A6%AC%EB%84%88-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "설치할 때 주의할 프로그램"
   }
 ]
