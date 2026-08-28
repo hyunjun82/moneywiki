@@ -836,5 +836,1192 @@
       }
     ],
     "picksTitle": "한게임에서 많이 찾는 게임"
+  },
+  {
+    "slug": "서든어택-다운로드",
+    "category": "game",
+    "kicker": "GAME",
+    "trail": [
+      "게임",
+      "FPS"
+    ],
+    "badges": [
+      "공식 배포처",
+      "넥슨",
+      "한국어"
+    ],
+    "titleTop": "서든어택",
+    "titleBottom": "다운로드",
+    "listTitle": "서든어택 다운로드",
+    "listMeta": "넥슨 · 공식 자료실 · HDD 40GB",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "서든어택 다운로드",
+    "sourceNote": "SOURCE: SA.NEXON.COM 공식 다운로드 화면",
+    "description": "서든어택을 넥슨 공식 다운로드 화면으로 연결합니다. 설치 전 확인할 용량과 사양, 초고속 다운로드 동의 항목을 공식 안내 그대로 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS 10 이상"
+      },
+      {
+        "label": "서비스",
+        "value": "넥슨"
+      },
+      {
+        "label": "용량",
+        "value": "HDD 40GB"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "하드 용량부터 확인합니다",
+        "body": "공식 안내는 「서든어택의 원활한 설치를 위해 최소 20GB 이상의 하드용량이 필요하오니 설치 전 하드디스크 용량을 꼭 확인 해주세요」입니다. 같은 화면의 사양표에는 HDD용량이 「40GB 이상」으로 적혀 있으니, 넉넉하게 40GB를 비워 두는 편이 안전합니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 넥슨 서든어택 고객지원의 다운로드 화면이 열립니다. 화면 안내 문구는 「다운로드 게임 클라이언트와 최신 드라이버를 설치해 주세요」입니다."
+      },
+      {
+        "title": "자동설치와 직접 다운로드 중 고르기",
+        "body": "화면에 정식 클라이언트가 두 갈래로 놓여 있습니다. 하나는 「자동설치(권장)」, 다른 하나는 그냥 「다운로드」입니다. 자동설치 쪽에 권장 표시가 붙어 있습니다."
+      },
+      {
+        "title": "초고속 다운로드 동의 내용을 읽어 봅니다",
+        "body": "공식 안내에 「서든어택 클라이언트 초고속 다운로드을 위해 서비스 사용동의가 반드시 필요합니다」, 「초고속 다운로드 서비스 제공을 위하여, 이용자의 IP정보가 솔루션 업체 카뮤즈에 서비스 기간 동안 제공됩니다」라고 적혀 있습니다. 내 IP가 외부 업체로 넘어간다는 뜻이니 확인하고 진행하세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "제 컴퓨터에서 돌아갈까요?",
+        "a": "공식 사양표 기준 운영체제는 Windows 10 이상, 최소 CPU는 Intel Core2 Duo E6300, 권장은 Intel i5-2500입니다. 메모리는 최소 2GB·권장 8GB, 그래픽은 최소 GeForce 7600GT·권장 GeForce 9600GT입니다."
+      },
+      {
+        "q": "설치는 됐는데 실행이 안 됩니다.",
+        "a": "공식 안내에 「서든어택은 DirectX 9.0c에 최적화 되어 있습니다」라고 되어 있고, 같은 화면에서 다이렉트X와 그래픽 드라이버를 함께 받도록 안내합니다. 그래픽 드라이버부터 최신으로 맞춰 보세요."
+      },
+      {
+        "q": "다운로드가 너무 느립니다.",
+        "a": "공식 화면의 사양 안내에 네트워크 항목이 「VDSL 이상」으로 적혀 있습니다. 회선과 함께, 초고속 다운로드 서비스 동의 여부에 따라 속도가 달라질 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "서든어택 정식 클라이언트",
+        "note": "자동설치 · 직접 다운로드",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://sa.nexon.com/customer/pds.aspx",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "넥슨 공식 다운로드",
+        "href": "https://sa.nexon.com/customer/pds.aspx"
+      },
+      {
+        "tag": "GAME",
+        "name": "넥슨플레이 다운로드",
+        "href": "/download/game/넥슨플레이-다운로드"
+      },
+      {
+        "tag": "GAME",
+        "name": "발로란트 다운로드",
+        "href": "/download/game/발로란트-다운로드"
+      },
+      {
+        "tag": "DRIVER",
+        "name": "그래픽카드 드라이버 다운로드",
+        "href": "/download/driver/그래픽카드-드라이버-다운로드"
+      }
+    ],
+    "requestNote": "다른 넥슨 게임의 설치 화면이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "발로란트-다운로드",
+    "category": "game",
+    "kicker": "GAME",
+    "trail": [
+      "게임",
+      "FPS"
+    ],
+    "badges": [
+      "공식 배포처",
+      "라이엇게임즈",
+      "무료 플레이"
+    ],
+    "titleTop": "발로란트",
+    "titleBottom": "다운로드",
+    "listTitle": "발로란트 다운로드",
+    "listMeta": "무료 플레이 · 라이엇게임즈",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "발로란트 다운로드",
+    "sourceNote": "SOURCE: PLAYVALORANT.COM 공식 다운로드 화면",
+    "description": "발로란트를 라이엇게임즈 공식 다운로드 화면으로 연결합니다. 지역마다 설치 파일이 달라 파일 링크 대신 공식 화면으로 보냅니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료 플레이"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "서비스",
+        "value": "라이엇게임즈"
+      },
+      {
+        "label": "용량",
+        "value": "공식 화면"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 라이엇게임즈의 발로란트 다운로드 화면이 열립니다. 화면에 「게임 다운로드」와 「다운로드」 버튼이 있습니다."
+      },
+      {
+        "title": "설치 파일은 지역마다 다릅니다",
+        "body": "이 화면이 내려주는 설치 파일은 접속 지역에 따라 다른 파일이 배정됩니다. 그래서 이 사이트는 파일 주소를 직접 걸지 않고 공식 화면으로 보냅니다. 한국에서 접속한 채로 받아야 한국 서버용으로 설치됩니다."
+      },
+      {
+        "title": "라이엇 클라이언트가 함께 깔립니다",
+        "body": "발로란트는 라이엇 클라이언트를 통해 설치·실행됩니다. 리그 오브 레전드를 이미 쓰고 있다면 같은 계정으로 이어집니다."
+      },
+      {
+        "title": "PC방에서 하려면",
+        "body": "공식 다운로드 화면에 「PC방」 항목이 따로 있습니다. PC방은 설치 방식이 다를 수 있어 그쪽 안내를 보는 편이 빠릅니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "돈을 내야 하나요?",
+        "a": "발로란트 공식 홈에 「무료로 플레이하기」로 표기되어 있습니다. 게임 자체는 무료이고 요원·스킨 같은 유료 상품이 별도로 있습니다."
+      },
+      {
+        "q": "어떤 게임인가요?",
+        "a": "공식 소개는 「발로란트는 고유한 스킬을 지닌 요원이 등장하는 5대5 전술 슈팅 게임입니다」입니다."
+      },
+      {
+        "q": "누가 서비스하나요?",
+        "a": "공식 사이트 하단에 라이엇게임즈코리아 유한회사와 사업자등록번호가 표기되어 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "발로란트 설치 파일",
+        "note": "지역별 파일 자동 배정",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://playvalorant.com/ko-kr/download/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "라이엇 공식 다운로드",
+        "href": "https://playvalorant.com/ko-kr/download/"
+      },
+      {
+        "tag": "GAME",
+        "name": "롤 다운로드",
+        "href": "/download/game/롤-다운로드"
+      },
+      {
+        "tag": "GAME",
+        "name": "오버워치 다운로드",
+        "href": "/download/game/오버워치-다운로드"
+      },
+      {
+        "tag": "GAME",
+        "name": "서든어택 다운로드",
+        "href": "/download/game/서든어택-다운로드"
+      }
+    ],
+    "requestNote": "Mac 판이나 PC방 설치 안내가 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "배틀그라운드-다운로드",
+    "category": "game",
+    "kicker": "GAME",
+    "trail": [
+      "게임",
+      "배틀로얄"
+    ],
+    "badges": [
+      "공식 배포처",
+      "카카오 · 스팀",
+      "한국어"
+    ],
+    "titleTop": "배틀그라운드",
+    "titleBottom": "다운로드",
+    "listTitle": "배틀그라운드 다운로드",
+    "listMeta": "카카오판 · 스팀판 · HDD 30GB",
+    "ctaPlatforms": "WINDOWS 10 64BIT 이상",
+    "ctaLabel": "배틀그라운드 다운로드",
+    "sourceNote": "SOURCE: 카카오게임즈 공식 자료실 · STEAM 상점",
+    "description": "배틀그라운드를 공식 다운로드 화면으로 연결합니다. 한국에는 카카오판과 스팀판이 따로 있어 계정과 설치 경로가 갈립니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료 플레이"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS 10 64BIT"
+      },
+      {
+        "label": "서비스",
+        "value": "카카오게임즈 · 스팀"
+      },
+      {
+        "label": "용량",
+        "value": "HDD 30GB"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "카카오판과 스팀판 중 먼저 고릅니다",
+        "body": "한국에서는 두 갈래입니다. 카카오판은 카카오게임즈 계정으로, 스팀판은 스팀 계정으로 합니다. 계정과 전적이 서로 넘어가지 않으니 친구가 어느 쪽인지 먼저 확인하는 편이 낫습니다."
+      },
+      {
+        "title": "카카오판 받기",
+        "body": "위 버튼은 카카오게임즈 공식 자료실의 다운로드 화면으로 갑니다. 화면 주의사항에 「설치 전 하드디스크 여유 공간을 8GB이상 확보해주시기 바라며」라고 적혀 있고, 같은 화면 사양표의 HDD 항목은 30GB입니다. 30GB를 기준으로 비워 두세요."
+      },
+      {
+        "title": "스팀판 받기",
+        "body": "스팀 상점 페이지는 열면 생년월일 확인 화면이 먼저 나옵니다. 「계속 진행하려면 생년월일을 입력하세요」라는 안내이고, 통과해야 상점 페이지가 보입니다."
+      },
+      {
+        "title": "설치 후 첫 실행",
+        "body": "두 판 모두 첫 실행 때 추가 파일을 더 받습니다. 다운로드가 끝났다고 바로 게임이 시작되지는 않습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "제 컴퓨터 사양이 되나요?",
+        "a": "카카오게임즈 공식 사양표 기준 최소는 Windows 10 64-bit 이상, CPU intel Core i5-4430 또는 AMD FX-6300, RAM 8GB, 그래픽 GeForce GTX 960 2GB 또는 Radeon R7 370 2GB, DirectX 11 이상입니다. 권장은 CPU i5-6600K 또는 Ryzen 5 1600, RAM 16GB, 그래픽 GTX 1060 3GB 또는 RX 580 4GB입니다."
+      },
+      {
+        "q": "카카오판과 스팀판을 같이 할 수 있나요?",
+        "a": "계정 체계가 다릅니다. 각각 따로 설치하고 따로 로그인해야 하며, 구매한 아이템이나 전적은 공유되지 않습니다."
+      },
+      {
+        "q": "용량이 얼마나 필요한가요?",
+        "a": "카카오게임즈 사양표의 HDD 항목이 최소·권장 모두 30GB입니다. 같은 화면 위쪽 주의사항의 8GB는 설치를 시작하기 위한 여유 공간 안내로 적혀 있어 숫자가 다릅니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "배틀그라운드 (카카오)",
+        "note": "카카오게임즈 자료실",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://pubg.kakaogames.com/pubg/pds/download/index",
+        "kind": "page"
+      },
+      {
+        "name": "PUBG: BATTLEGROUNDS (스팀)",
+        "note": "생년월일 확인 후 진입",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://store.steampowered.com/app/578080/?l=koreana",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "카카오게임즈 공식 자료실",
+        "href": "https://pubg.kakaogames.com/pubg/pds/download/index"
+      },
+      {
+        "tag": "SW",
+        "name": "스팀 다운로드",
+        "href": "/download/software/스팀-다운로드"
+      },
+      {
+        "tag": "GAME",
+        "name": "발로란트 다운로드",
+        "href": "/download/game/발로란트-다운로드"
+      },
+      {
+        "tag": "SW",
+        "name": "PC 사양 확인 프로그램",
+        "href": "/download/software/PC-사양-확인-프로그램"
+      }
+    ],
+    "requestNote": "PC방 설치나 다른 지역 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "마인크래프트-다운로드",
+    "category": "game",
+    "kicker": "GAME",
+    "trail": [
+      "게임",
+      "샌드박스"
+    ],
+    "badges": [
+      "공식 배포처",
+      "Mojang · MS",
+      "유료"
+    ],
+    "titleTop": "마인크래프트",
+    "titleBottom": "다운로드",
+    "listTitle": "마인크래프트 다운로드",
+    "listMeta": "유료 ₩49,800 · 무료 체험 있음",
+    "ctaPlatforms": "WINDOWS · MAC · LINUX",
+    "ctaLabel": "마인크래프트 다운로드",
+    "sourceNote": "SOURCE: MINECRAFT.NET 공식 다운로드 화면",
+    "description": "마인크래프트를 공식 다운로드 화면으로 연결합니다. 런처는 무료로 받지만 게임 자체는 유료라, 가격과 무료 체험을 먼저 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "₩49,800 시작"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MAC · LINUX"
+      },
+      {
+        "label": "서비스",
+        "value": "Mojang · MS"
+      },
+      {
+        "label": "용량",
+        "value": "공식 화면"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "받는 것과 사는 것이 다릅니다",
+        "body": "공식 화면에서 무료로 내려받는 것은 런처입니다. 게임은 별도로 사야 하고, 같은 화면의 게임 구매 항목에 상품명 「Minecraft: Java & Bedrock」과 가격 「시작 ₩49,800」이 적혀 있습니다. 무료인 줄 알고 받았다가 결제 화면에서 막히는 경우가 여기서 생깁니다."
+      },
+      {
+        "title": "먼저 해 보고 싶다면",
+        "body": "공식 화면에 「Minecraft 무료 체험」 항목이 따로 있습니다. 사기 전에 돌아가는지 확인하는 용도로 쓸 수 있습니다."
+      },
+      {
+        "title": "런처 받기",
+        "body": "위 버튼을 누르면 공식 다운로드 화면이 열립니다. 「WINDOWS용 다운로드」가 기본이고, 안내 문구는 「하나의 런처로 모든 Minecraft 게임을 플레이하세요」입니다."
+      },
+      {
+        "title": "다른 기기라면",
+        "body": "같은 화면 아래에 WINDOWS 10/11, WINDOWS 레거시, MAC, ARCH, DEBIAN, RASPBERRY PI, ANDROID, IOS 항목이 따로 있습니다. 친구와 서버를 열려면 JAVA EDITION 서버와 BEDROCK EDITION 서버도 같은 자리에 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "얼마인가요?",
+        "a": "공식 화면의 게임 구매 항목에 Minecraft: Java & Bedrock의 가격이 「시작 ₩49,800」으로 표기되어 있습니다. 자바판과 베드락판이 함께 묶인 상품입니다."
+      },
+      {
+        "q": "자바판과 베드락판을 따로 사야 하나요?",
+        "a": "공식 화면의 상품명이 Minecraft: Java & Bedrock입니다. 두 판이 하나의 상품으로 표기되어 있습니다."
+      },
+      {
+        "q": "받을 때 동의하는 게 있나요?",
+        "a": "공식 화면 하단에 「이 페이지에서 안내하는 소프트웨어를 다운로드하면 Minecraft 최종 사용자 사용권 계약 및 개인정보처리방침에 동의하는 것으로 간주됩니다」라고 적혀 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Minecraft 런처",
+        "note": "게임은 별도 구매",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.minecraft.net/ko-kr/download",
+        "kind": "page"
+      },
+      {
+        "name": "Minecraft 무료 체험",
+        "note": "사기 전 확인용",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.minecraft.net/ko-kr/free-trial",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Minecraft 공식 다운로드",
+        "href": "https://www.minecraft.net/ko-kr/download"
+      },
+      {
+        "tag": "GAME",
+        "name": "로블록스 다운로드",
+        "href": "/download/game/로블록스-다운로드"
+      },
+      {
+        "tag": "SW",
+        "name": "자바 JDK 다운로드",
+        "href": "/download/software/자바-JDK-다운로드"
+      },
+      {
+        "tag": "GAME",
+        "name": "무료 PC 게임 다운로드",
+        "href": "/download/game/무료-PC-게임-다운로드"
+      }
+    ],
+    "requestNote": "교육용 판이나 서버 파일이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "배틀넷-다운로드",
+    "category": "game",
+    "kicker": "GAME",
+    "trail": [
+      "게임",
+      "게임 런처"
+    ],
+    "badges": [
+      "공식 배포처",
+      "블리자드",
+      "무료"
+    ],
+    "titleTop": "배틀넷",
+    "titleBottom": "다운로드",
+    "listTitle": "배틀넷 다운로드",
+    "listMeta": "무료 · 블리자드 게임 런처",
+    "ctaPlatforms": "WINDOWS · MAC",
+    "ctaLabel": "배틀넷 다운로드",
+    "sourceNote": "SOURCE: DOWNLOAD.BATTLE.NET 공식 다운로드 화면",
+    "description": "배틀넷 데스크톱 앱을 공식 다운로드 화면으로 연결합니다. 오버워치·디아블로·스타크래프트 같은 블리자드 게임은 이 앱으로 설치합니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MAC"
+      },
+      {
+        "label": "서비스",
+        "value": "블리자드"
+      },
+      {
+        "label": "용량",
+        "value": "공식 화면"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 블리자드 공식 다운로드 화면이 열립니다. 화면 제목은 「Battle.net® 데스크톱 앱」입니다."
+      },
+      {
+        "title": "받기가 저절로 시작됩니다",
+        "body": "이 화면은 열리는 순간 설치 파일 내려받기가 시작됩니다. 화면에는 「다운로드 중」이 표시되고, 그 아래에 「다운로드가 시작되지 않으면」 「다시 시도하세요」라는 안내가 이어집니다."
+      },
+      {
+        "title": "설치 후 로그인",
+        "body": "배틀넷 앱은 게임이 아니라 게임을 설치·실행하는 도구입니다. 블리자드 계정으로 로그인해야 목록이 보입니다."
+      },
+      {
+        "title": "게임은 앱 안에서 고릅니다",
+        "body": "앱 안에서 게임을 골라 설치합니다. 게임마다 용량이 크게 다르니 설치 전에 남은 디스크 공간을 확인하세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "배틀넷만 깔면 게임이 되나요?",
+        "a": "아닙니다. 배틀넷은 게임을 설치하고 실행해 주는 앱입니다. 게임은 앱 안에서 따로 설치해야 하고, 유료 게임은 구매가 필요합니다."
+      },
+      {
+        "q": "오버워치도 여기서 받나요?",
+        "a": "오버워치는 한국에서 넥슨이 서비스합니다. 블리자드 오버워치 공식 화면에도 「넥슨에서 플레이하기」 안내가 함께 나오니, 한국 계정이라면 넥슨 쪽 안내를 먼저 확인하세요."
+      },
+      {
+        "q": "받기가 안 시작됩니다.",
+        "a": "공식 화면 자체가 「다운로드가 시작되지 않으면」 다시 시도하라고 안내합니다. 브라우저가 자동 내려받기를 막는 경우가 있으니 주소창의 차단 표시를 확인해 보세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Battle.net 데스크톱 앱",
+        "note": "열면 받기 자동 시작",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://download.battle.net/ko-kr/?product=bnetdesk",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "블리자드 공식 다운로드",
+        "href": "https://download.battle.net/ko-kr/?product=bnetdesk"
+      },
+      {
+        "tag": "GAME",
+        "name": "오버워치 다운로드",
+        "href": "/download/game/오버워치-다운로드"
+      },
+      {
+        "tag": "SW",
+        "name": "PC 게임 플랫폼 다운로드",
+        "href": "/download/software/PC-게임-플랫폼-비교"
+      },
+      {
+        "tag": "SW",
+        "name": "스팀 다운로드",
+        "href": "/download/software/스팀-다운로드"
+      }
+    ],
+    "requestNote": "Mac 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "오버워치-다운로드",
+    "category": "game",
+    "kicker": "GAME",
+    "trail": [
+      "게임",
+      "FPS"
+    ],
+    "badges": [
+      "공식 배포처",
+      "넥슨 서비스",
+      "무료 플레이"
+    ],
+    "titleTop": "오버워치",
+    "titleBottom": "다운로드",
+    "listTitle": "오버워치 다운로드",
+    "listMeta": "무료 플레이 · 한국은 넥슨 서비스",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "오버워치 다운로드",
+    "sourceNote": "SOURCE: OVERWATCH.NEXON.COM 한국 공식 화면",
+    "description": "오버워치를 한국 공식 서비스 화면으로 연결합니다. 한국은 넥슨이 서비스하고 배틀넷 계정과 연동하는 구조라 경로가 둘로 갈립니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료 플레이"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "서비스",
+        "value": "넥슨 · 블리자드"
+      },
+      {
+        "label": "용량",
+        "value": "공식 화면"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "한국은 넥슨 쪽이 기준입니다",
+        "body": "블리자드 오버워치 공식 화면에도 「넥슨에서 오버워치를 만나보세요!」와 「넥슨에서 플레이하기」가 함께 걸려 있습니다. 넥슨 오버워치 화면에는 「넥슨 서비스 런칭」과 「넥슨 & 블리자드 정식 계정 연동」이 표시되어 있습니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 넥슨 오버워치 공식 화면이 열립니다. 화면에 「PLAY NOW」 버튼이 있습니다."
+      },
+      {
+        "title": "계정 연동을 먼저 확인합니다",
+        "body": "넥슨 계정과 배틀넷 계정을 연동하는 구조입니다. 공지 중에 「해외 국가로 설정된 배틀넷 계정의 넥슨 계정 연동 지원 안내」가 따로 올라와 있으니, 예전에 해외로 설정해 둔 계정이라면 그 글을 먼저 보세요."
+      },
+      {
+        "title": "클라이언트 설치",
+        "body": "게임 클라이언트 자체는 블리자드 배틀넷 데스크톱 앱을 통해 설치·실행합니다. 배틀넷 앱이 없다면 먼저 받아 두면 됩니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "돈을 내야 하나요?",
+        "a": "블리자드 오버워치 공식 화면에 「팀 기반 액션 • 무료 플레이」로 표기되어 있습니다. 게임 자체는 무료이고 배틀패스나 상점 상품이 별도입니다."
+      },
+      {
+        "q": "왜 넥슨에서 하나요?",
+        "a": "한국 서비스를 넥슨이 맡고 있습니다. 넥슨 오버워치 공식 화면에 「넥슨에서 펼쳐질 최고의 플레이!」와 함께 런칭 안내가 올라와 있고, PC방 혜택 안내도 넥슨 쪽에서 제공됩니다."
+      },
+      {
+        "q": "기존 배틀넷 계정은 어떻게 되나요?",
+        "a": "넥슨 계정과 연동하는 방식으로 안내되고 있습니다. 계정 국가 설정 때문에 연동이 막히는 경우가 있어 공식 공지에 별도 안내 글이 올라와 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "오버워치 (넥슨 한국 서비스)",
+        "note": "PLAY NOW",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://overwatch.nexon.com/main",
+        "kind": "page"
+      },
+      {
+        "name": "배틀넷 데스크톱 앱",
+        "note": "클라이언트 설치용",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://download.battle.net/ko-kr/?product=bnetdesk",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "넥슨 오버워치 공식",
+        "href": "https://overwatch.nexon.com/main"
+      },
+      {
+        "tag": "GAME",
+        "name": "배틀넷 다운로드",
+        "href": "/download/game/배틀넷-다운로드"
+      },
+      {
+        "tag": "GAME",
+        "name": "발로란트 다운로드",
+        "href": "/download/game/발로란트-다운로드"
+      },
+      {
+        "tag": "GAME",
+        "name": "넥슨플레이 다운로드",
+        "href": "/download/game/넥슨플레이-다운로드"
+      }
+    ],
+    "requestNote": "계정 연동이나 PC방 이용 안내가 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "로스트아크-다운로드",
+    "category": "game",
+    "kicker": "GAME",
+    "trail": [
+      "게임",
+      "MMORPG"
+    ],
+    "badges": [
+      "공식 배포처",
+      "스마일게이트",
+      "무료 플레이"
+    ],
+    "titleTop": "로스트아크",
+    "titleBottom": "다운로드",
+    "listTitle": "로스트아크 다운로드",
+    "listMeta": "무료 플레이 · 스토브 클라이언트 필요",
+    "ctaPlatforms": "WINDOWS 10 이상",
+    "ctaLabel": "로스트아크 다운로드",
+    "sourceNote": "SOURCE: STORE.ONSTOVE.COM 공식 다운로드 화면",
+    "description": "로스트아크를 공식 경로인 스토브 클라이언트 다운로드 화면으로 연결합니다. 설치가 막힐 때 쓰는 전체 파일 받기까지 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료 플레이"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS 10 이상"
+      },
+      {
+        "label": "서비스",
+        "value": "스마일게이트"
+      },
+      {
+        "label": "용량",
+        "value": "공식 화면"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "스토브 클라이언트를 먼저 받습니다",
+        "body": "로스트아크는 단독 설치 파일이 아니라 스토브 PC 클라이언트를 통해 설치합니다. 로스트아크 공식 홈의 게임시작 버튼도 설치된 스토브를 불러내는 방식이라, 스토브가 없으면 아무 일도 일어나지 않습니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 스토브 공식 다운로드 화면이 열립니다. 안내 문구는 「클라이언트를 통해서 다채롭게 마련되어 있는 게임을 설치하고 실행해 보세요」입니다."
+      },
+      {
+        "title": "설치가 막히면 전체 파일로",
+        "body": "같은 화면에 「만약 설치에 어려움을 겪고 계시다면 풀클라이언트를 다운로드 하신 후 설치를 진행해 보시기 바랍니다」라는 안내와 「클라이언트 전체 파일 다운로드」가 따로 있습니다. 설치 중 오류가 나면 이 쪽을 쓰면 됩니다."
+      },
+      {
+        "title": "스토브 안에서 로스트아크 설치",
+        "body": "스토브 설치가 끝나면 그 안에서 로스트아크를 골라 내려받습니다. 게임 본체 용량이 커서 시간이 걸립니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "스토브 없이 받을 수 없나요?",
+        "a": "공식 경로는 스토브 클라이언트입니다. 로스트아크 공식 홈의 게임시작 버튼도 스토브를 실행하는 방식으로 되어 있습니다."
+      },
+      {
+        "q": "스토브 설치 사양은 어떻게 되나요?",
+        "a": "스토브 공식 화면에 「Windows 10 이상의 운영체제, 1Ghz 이상의 프로세서, 1GB 이상의 RAM, 500MB 이상의 하드디스크 공간, 인터넷 연결」로 적혀 있습니다. 이는 스토브 자체 기준이며 게임 본체는 별도로 더 필요합니다."
+      },
+      {
+        "q": "설치가 자꾸 실패합니다.",
+        "a": "공식 화면이 안내하는 방법이 전체 파일 받기입니다. 같은 화면의 「클라이언트 전체 파일 다운로드」로 받아 설치해 보세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "스토브 PC 클라이언트",
+        "note": "로스트아크 설치 경로",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://store.onstove.com/ko/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "스토브 공식 다운로드",
+        "href": "https://store.onstove.com/ko/download"
+      },
+      {
+        "tag": "GAME",
+        "name": "스토브 다운로드",
+        "href": "/download/game/스토브-다운로드"
+      },
+      {
+        "tag": "GAME",
+        "name": "메이플스토리 다운로드",
+        "href": "/download/game/메이플스토리-다운로드"
+      },
+      {
+        "tag": "SW",
+        "name": "PC 사양 확인 프로그램",
+        "href": "/download/software/PC-사양-확인-프로그램"
+      }
+    ],
+    "requestNote": "설치 오류 화면을 캡처해 요청 게시판에 남겨 주시면 확인해 드립니다."
+  },
+  {
+    "slug": "FC온라인-다운로드",
+    "category": "game",
+    "kicker": "GAME",
+    "trail": [
+      "게임",
+      "스포츠"
+    ],
+    "badges": [
+      "공식 배포처",
+      "넥슨",
+      "HDD 40GB"
+    ],
+    "titleTop": "FC온라인",
+    "titleBottom": "다운로드",
+    "listTitle": "FC온라인 다운로드",
+    "listMeta": "넥슨 · EA SPORTS · HDD 40GB",
+    "ctaPlatforms": "WINDOWS 64BIT",
+    "ctaLabel": "FC온라인 다운로드",
+    "sourceNote": "SOURCE: FCONLINE.NEXON.COM 공식 자료실",
+    "description": "FC온라인을 넥슨 공식 자료실의 다운로드 화면으로 연결합니다. 설치 전 사양 검사와 필요 용량을 공식 안내 그대로 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료 플레이"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS 64BIT"
+      },
+      {
+        "label": "서비스",
+        "value": "넥슨 · EA"
+      },
+      {
+        "label": "용량",
+        "value": "HDD 40GB"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "용량부터 확인합니다",
+        "body": "공식 안내는 「필요 하드디스크 용량 : 40GB 이상의 여유 공간이 필요합니다」입니다. 사양표의 하드디스크 여유공간도 최소·권장 모두 40GB로 같습니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 넥슨 FC온라인 자료실의 다운로드·설치 화면이 열립니다. 「PC 클라이언트 설치 (PC)」, 「FC 온라인 M (APP)」, 「FC LOUNGE」 세 가지가 나뉘어 있으니 PC용을 고르세요."
+      },
+      {
+        "title": "사양 검사를 써 볼 수 있습니다",
+        "body": "같은 화면에 내 PC 사양 확인 기능이 있습니다. 공식 안내는 「[내 PC 사양확인] 버튼을 클릭한 후 브라우저 하단의 경고 메시지에서 FCOSystemInfoCheck.exe 파일을 실행하세요」이며, 수집된 정보는 「게임 실행/설치의 문제 해결 이외에 다른 용도로 사용하지 않습니다」로 표기되어 있습니다."
+      },
+      {
+        "title": "설치 후 첫 실행",
+        "body": "첫 실행 때 추가 데이터를 더 받습니다. 시즌 업데이트 뒤에는 받는 양이 늘어납니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "제 컴퓨터에서 돌아갈까요?",
+        "a": "공식 사양표 기준 운영체제는 Windows 7/8/8.1/10 - 64-Bit입니다. 최소 CPU는 Intel Core i3-2100 @ 3.1GHz, 권장은 Intel i5-2550K @ 3.4Ghz이고, 메모리는 최소 4GB·권장 8GB, DirectX는 11입니다."
+      },
+      {
+        "q": "그래픽카드는 어느 정도가 필요한가요?",
+        "a": "공식 표 기준 최소는 Geforce GT 730 또는 ATI Radeon HD 7570이고 권장은 NVIDIA GeForce GTX 460 또는 AMD Radeon HD 6870입니다. GPU 메모리는 최소 1024MB, 권장 3GB입니다."
+      },
+      {
+        "q": "모바일에서도 되나요?",
+        "a": "같은 자료실 화면에 FC 온라인 M이 앱으로 따로 안내되어 있습니다. PC 클라이언트와는 다른 항목입니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "FC온라인 PC 클라이언트",
+        "note": "넥슨 공식 자료실",
+        "size": "공식 화면",
+        "platform": "WINDOWS 64BIT",
+        "url": "https://fconline.nexon.com/pds/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "넥슨 공식 자료실",
+        "href": "https://fconline.nexon.com/pds/download"
+      },
+      {
+        "tag": "GAME",
+        "name": "넥슨플레이 다운로드",
+        "href": "/download/game/넥슨플레이-다운로드"
+      },
+      {
+        "tag": "GAME",
+        "name": "서든어택 다운로드",
+        "href": "/download/game/서든어택-다운로드"
+      },
+      {
+        "tag": "SW",
+        "name": "PC 사양 확인 프로그램",
+        "href": "/download/software/PC-사양-확인-프로그램"
+      }
+    ],
+    "requestNote": "FC 온라인 M이나 FC LOUNGE 설치 안내가 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "스토브-다운로드",
+    "category": "game",
+    "kicker": "GAME",
+    "trail": [
+      "게임",
+      "게임 런처"
+    ],
+    "badges": [
+      "공식 배포처",
+      "스마일게이트",
+      "무료"
+    ],
+    "titleTop": "스토브",
+    "titleBottom": "다운로드",
+    "listTitle": "스토브 다운로드",
+    "listMeta": "무료 · 스마일게이트 게임 런처",
+    "ctaPlatforms": "WINDOWS 10 이상",
+    "ctaLabel": "스토브 다운로드",
+    "sourceNote": "SOURCE: STORE.ONSTOVE.COM 공식 다운로드 화면",
+    "description": "스토브 PC 클라이언트를 공식 다운로드 화면으로 연결합니다. 로스트아크와 스토브 인디 게임을 설치하는 도구입니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS 10 이상"
+      },
+      {
+        "label": "서비스",
+        "value": "스마일게이트"
+      },
+      {
+        "label": "용량",
+        "value": "디스크 500MB"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 스토브 공식 다운로드 화면이 열립니다. 화면에 스토브 PC 클라이언트와 스토브 앱(모바일)이 나뉘어 있으니 PC 클라이언트 쪽을 고르세요."
+      },
+      {
+        "title": "설치 사양 확인",
+        "body": "공식 표기는 「Windows 10 이상의 운영체제, 1Ghz 이상의 프로세서, 1GB 이상의 RAM, 500MB 이상의 하드디스크 공간, 인터넷 연결」입니다. 런처 자체는 가볍고, 게임 용량은 별도입니다."
+      },
+      {
+        "title": "설치가 막히면 전체 파일로",
+        "body": "공식 화면에 「만약 설치에 어려움을 겪고 계시다면 풀클라이언트를 다운로드 하신 후 설치를 진행해 보시기 바랍니다」라고 적혀 있고 「클라이언트 전체 파일 다운로드」가 따로 있습니다."
+      },
+      {
+        "title": "게임은 런처 안에서",
+        "body": "설치 후 스토브 안에서 게임을 골라 내려받습니다. 스토브 인디에는 소규모 개발사 게임이 모여 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "스토브는 뭘 하는 프로그램인가요?",
+        "a": "공식 설명은 유저와 게임을 연결하는 공간이라며 「클라이언트를 통해서 다채롭게 마련되어 있는 게임을 설치하고 실행해 보세요」라고 안내합니다. 게임 자체가 아니라 게임을 설치·실행하는 도구입니다."
+      },
+      {
+        "q": "누가 만드나요?",
+        "a": "공식 화면 하단에 Smilegate 표기가 있습니다."
+      },
+      {
+        "q": "런처가 자꾸 멈춥니다.",
+        "a": "공식 화면이 안내하는 방법은 전체 파일을 받아 다시 설치하는 것입니다. 일반 설치 파일 대신 「클라이언트 전체 파일 다운로드」로 받아 보세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "스토브 PC 클라이언트",
+        "note": "전체 파일 받기도 같은 화면",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://store.onstove.com/ko/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "스토브 공식 다운로드",
+        "href": "https://store.onstove.com/ko/download"
+      },
+      {
+        "tag": "GAME",
+        "name": "로스트아크 다운로드",
+        "href": "/download/game/로스트아크-다운로드"
+      },
+      {
+        "tag": "SW",
+        "name": "PC 게임 플랫폼 다운로드",
+        "href": "/download/software/PC-게임-플랫폼-비교"
+      },
+      {
+        "tag": "GAME",
+        "name": "배틀넷 다운로드",
+        "href": "/download/game/배틀넷-다운로드"
+      }
+    ],
+    "requestNote": "스토브에서 특정 게임을 찾기 어려우면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "무료-PC-게임-다운로드",
+    "category": "game",
+    "kicker": "GAME",
+    "trail": [
+      "게임",
+      "묶음"
+    ],
+    "badges": [
+      "묶음",
+      "무료 플레이",
+      "공식 배포처"
+    ],
+    "titleTop": "무료 PC 게임",
+    "titleBottom": "다운로드",
+    "listTitle": "무료 PC 게임 다운로드",
+    "listMeta": "묶음 · 공식 화면으로 연결",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "발로란트 다운로드",
+    "sourceNote": "SOURCE: 각 서비스사 공식 다운로드 화면",
+    "description": "돈을 내지 않고 시작할 수 있는 PC 게임을 모았습니다. 각 항목은 서비스사 공식 다운로드 화면으로 연결됩니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "묶음",
+        "value": "6개"
+      },
+      {
+        "label": "요금",
+        "value": "무료 플레이"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "받는 곳",
+        "value": "공식 화면"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "고르는 기준",
+    "steps": [
+      {
+        "title": "무료 플레이와 무료는 다릅니다",
+        "body": "여기 모은 게임은 시작할 때 돈을 내지 않는 쪽입니다. 대부분 게임 안에 유료 상품이 따로 있습니다. 마인크래프트처럼 아예 사야 하는 게임은 이 묶음에 넣지 않았습니다."
+      },
+      {
+        "title": "사양이 낮은 PC라면",
+        "body": "총 쏘는 게임은 사양을 많이 탑니다. 서든어택은 공식 최소 사양이 다른 FPS보다 낮게 잡혀 있어 오래된 PC에서 먼저 시도해 볼 만합니다."
+      },
+      {
+        "title": "용량을 먼저 봅니다",
+        "body": "게임마다 필요한 디스크 공간이 크게 다릅니다. 공식 표기 기준 배틀그라운드는 30GB, FC온라인과 서든어택은 40GB입니다. 받기 전에 남은 공간을 확인하세요."
+      },
+      {
+        "title": "런처가 필요한 게임이 있습니다",
+        "body": "오버워치는 배틀넷, 로스트아크는 스토브를 먼저 깔아야 합니다. 게임 파일만 찾다가 안 나오는 경우가 여기서 생깁니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "정말 공짜인가요?",
+        "a": "설치와 접속에 요금이 들지 않는다는 뜻입니다. 게임 안의 스킨·배틀패스 같은 유료 상품은 별도이고, 게임마다 정책이 다릅니다."
+      },
+      {
+        "q": "불법 사이트에서 받으면 안 되나요?",
+        "a": "공식 배포처가 아닌 곳의 설치 파일은 변조 여부를 확인할 수 없습니다. 이 묶음의 링크는 모두 서비스사 공식 화면입니다."
+      },
+      {
+        "q": "성인 인증이 필요한 게임도 있나요?",
+        "a": "게임마다 이용등급이 다릅니다. 스팀의 배틀그라운드 상점 페이지는 들어갈 때 생년월일 확인 화면이 먼저 나옵니다."
+      }
+    ],
+    "buildsTitle": "바로 받기",
+    "builds": [
+      {
+        "name": "발로란트",
+        "note": "무료 플레이 · 라이엇게임즈",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://playvalorant.com/ko-kr/download/",
+        "kind": "page"
+      }
+    ],
+    "picksTitle": "이 묶음에 담긴 게임",
+    "picks": [
+      {
+        "title": "발로란트 다운로드",
+        "note": "5대5 전술 슈팅 · 공식 표기 무료 플레이",
+        "href": "/download/game/발로란트-다운로드"
+      },
+      {
+        "title": "오버워치 다운로드",
+        "note": "한국은 넥슨 서비스 · 공식 표기 무료 플레이",
+        "href": "/download/game/오버워치-다운로드"
+      },
+      {
+        "title": "서든어택 다운로드",
+        "note": "최소 사양이 낮은 편 · 넥슨",
+        "href": "/download/game/서든어택-다운로드"
+      },
+      {
+        "title": "배틀그라운드 다운로드",
+        "note": "카카오판·스팀판 · HDD 30GB",
+        "href": "/download/game/배틀그라운드-다운로드"
+      },
+      {
+        "title": "로스트아크 다운로드",
+        "note": "스토브 클라이언트 필요",
+        "href": "/download/game/로스트아크-다운로드"
+      },
+      {
+        "title": "롤 다운로드",
+        "note": "라이엇 클라이언트",
+        "href": "/download/game/롤-다운로드"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "GAME",
+        "name": "배틀넷 다운로드",
+        "href": "/download/game/배틀넷-다운로드"
+      },
+      {
+        "tag": "GAME",
+        "name": "스토브 다운로드",
+        "href": "/download/game/스토브-다운로드"
+      },
+      {
+        "tag": "SW",
+        "name": "스팀 다운로드",
+        "href": "/download/software/스팀-다운로드"
+      },
+      {
+        "tag": "SW",
+        "name": "PC 게임 플랫폼 다운로드",
+        "href": "/download/software/PC-게임-플랫폼-비교"
+      }
+    ],
+    "requestNote": "찾는 게임이 없으면 요청 게시판에 남겨주세요."
   }
 ]

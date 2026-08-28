@@ -6916,5 +6916,239 @@
       }
     ],
     "picksTitle": "제조사별 저장장치 도구"
+  },
+  {
+    "slug": "3DP-Chip-다운로드",
+    "category": "driver",
+    "kicker": "DRIVER",
+    "trail": [
+      "드라이버",
+      "드라이버 도구"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "3DP Chip",
+    "titleBottom": "다운로드",
+    "listTitle": "3DP Chip 다운로드",
+    "listMeta": "무료 · 드라이버 확인·설치 · v2608",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "3DP Chip 다운로드",
+    "sourceNote": "SOURCE: 3DPCHIP.COM 공식 다운로드 화면",
+    "description": "3DP Chip을 공식 다운로드 화면으로 연결합니다. 윈도우 설치 후 드라이버를 한 번에 확인할 때 쓰는 국산 도구입니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "3DP"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 3DP Chip 공식 다운로드 화면이 열립니다. 확인 시점의 파일명은 3DP_Chip_v2608입니다."
+      },
+      {
+        "title": "화면에서 받기 링크를 정확히 누릅니다",
+        "body": "이 화면에는 제휴 광고가 함께 표시됩니다. 광고 영역에도 누르게 만드는 버튼이 들어 있고 내용이 수시로 바뀌니, 문구로 구분하려 하지 마세요. 프로그램 설명 바로 아래 「최신 버전 다운로드는 이곳을 클릭하세요」 줄이 실제 받기 링크입니다."
+      },
+      {
+        "title": "실행해서 목록 확인",
+        "body": "공식 설명 기준으로 CPU, 메인보드, 그래픽, 사운드 등 주요 장치의 드라이버를 확인할 수 있습니다."
+      },
+      {
+        "title": "설치는 하나씩",
+        "body": "공식 설명은 최신 버전뿐 아니라 호환되는 이전 드라이버까지 연동한다고 밝히고 있습니다. 한 번에 전부 바꾸기보다 문제가 있는 장치부터 하나씩 처리하는 편이 되돌리기 쉽습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "이게 뭘 하는 프로그램인가요?",
+        "a": "공식 설명은 「저용량 파일로서 윈도우 설치 후 드라이버 설치 혹은 드라이버 업데이트, 시스템 사양 확인시 쉽게 사용 가능합니다」입니다."
+      },
+      {
+        "q": "포맷했더니 인터넷이 안 됩니다.",
+        "a": "그 경우에는 3DP Chip이 아니라 3DP Net입니다. 랜 드라이버를 먼저 잡아야 인터넷이 열리고, 그다음 3DP Chip으로 나머지를 설치하는 순서라고 공식 설명에 되어 있습니다."
+      },
+      {
+        "q": "공식 주소가 어디인가요?",
+        "a": "3dpchip.com이며, 제작 측이 운영하는 게시판 공지에 프로그램별 공식 다운로드 주소가 정리되어 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "3DP Chip",
+        "note": "드라이버 확인·설치",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.3dpchip.com/3dp/chip_down_kor.php",
+        "kind": "page"
+      },
+      {
+        "name": "3DP Cleaner",
+        "note": "같은 제작사 정리 도구",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.3dpchip.com/3dp/cleaner_down_kor.php",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "3DP 공식 다운로드",
+        "href": "https://www.3dpchip.com/3dp/chip_down_kor.php"
+      },
+      {
+        "tag": "DRIVER",
+        "name": "3DP Net 다운로드",
+        "href": "/download/driver/3DP-Net-다운로드"
+      },
+      {
+        "tag": "SW",
+        "name": "윈도우 재설치 준비물",
+        "href": "/download/software/윈도우-재설치-준비"
+      },
+      {
+        "tag": "SW",
+        "name": "PC 사양 확인 프로그램",
+        "href": "/download/software/PC-사양-확인-프로그램"
+      }
+    ],
+    "requestNote": "특정 장치의 제조사 드라이버가 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "3DP-Net-다운로드",
+    "category": "driver",
+    "kicker": "DRIVER",
+    "trail": [
+      "드라이버",
+      "랜카드"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "3DP Net",
+    "titleBottom": "다운로드",
+    "listTitle": "3DP Net 다운로드",
+    "listMeta": "무료 · 랜카드 통합 드라이버",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "3DP Net 다운로드",
+    "sourceNote": "SOURCE: 3DPCHIP.COM 공식 다운로드 화면",
+    "description": "3DP Net을 공식 다운로드 화면으로 연결합니다. 윈도우를 새로 깐 뒤 인터넷이 아예 잡히지 않을 때 쓰는 랜카드 통합 드라이버입니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "3DP"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "인터넷이 되는 다른 기기에서 받습니다",
+        "body": "이 프로그램이 필요한 상황은 대개 새로 깐 PC에 인터넷이 없는 경우입니다. 다른 PC나 휴대폰으로 받아 USB에 옮겨 두는 순서가 됩니다."
+      },
+      {
+        "title": "윈도우 버전에 맞는 파일 고르기",
+        "body": "공식 화면에 「최신 버전 다운 (윈7 이상만 지원)」과 「구 버전 다운 (XP & 비스타)」이 나뉘어 있습니다."
+      },
+      {
+        "title": "설치해서 랜을 먼저 살립니다",
+        "body": "공식 설명은 「윈도우즈 설치 후 랜 드라이버를 잡아주어 인터넷 연결이 가능합니다」입니다. 핵심 특징은 「모든 랜 카드를 지원하는 랜카드 통합 드라이버」로 표기되어 있습니다."
+      },
+      {
+        "title": "나머지는 3DP Chip으로",
+        "body": "공식 설명에 「그 후 3DP Chip 이용시 다른 드라이버도 설치됩니다」라고 이어집니다. 인터넷이 열린 다음 그래픽·사운드를 처리하면 됩니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "3DP Chip과 뭐가 다른가요?",
+        "a": "3DP Net은 랜카드만 다루는 통합 드라이버이고, 3DP Chip은 인터넷이 연결된 뒤 나머지 장치의 드라이버를 확인·설치하는 도구입니다. 순서가 정해져 있습니다."
+      },
+      {
+        "q": "파일이 좀 큰가요?",
+        "a": "여러 제조사의 랜카드 드라이버를 함께 담고 있어 3DP Chip보다 큽니다. USB에 미리 넣어 두면 다음 포맷 때도 그대로 씁니다."
+      },
+      {
+        "q": "무선 랜도 잡히나요?",
+        "a": "공식 표기는 「모든 랜 카드를 지원하는 랜카드 통합 드라이버」입니다. 다만 노트북의 무선 모듈은 제조사 전용 드라이버가 필요한 경우가 있어, 안 잡히면 제조사 지원 페이지에서 받는 편이 확실합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "3DP Net",
+        "note": "윈7 이상 · 구버전 별도",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.3dpchip.com/3dp/net_down_kor.php",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "3DP 공식 다운로드",
+        "href": "https://www.3dpchip.com/3dp/net_down_kor.php"
+      },
+      {
+        "tag": "DRIVER",
+        "name": "3DP Chip 다운로드",
+        "href": "/download/driver/3DP-Chip-다운로드"
+      },
+      {
+        "tag": "SW",
+        "name": "윈도우 재설치 준비물",
+        "href": "/download/software/윈도우-재설치-준비"
+      },
+      {
+        "tag": "SW",
+        "name": "윈도우 설치 USB 만들기",
+        "href": "/download/software/윈도우-설치-USB-만들기"
+      }
+    ],
+    "requestNote": "특정 노트북의 무선 랜 드라이버가 필요하면 모델명과 함께 요청 게시판에 남겨주세요."
   }
 ]
