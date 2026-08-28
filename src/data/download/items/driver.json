@@ -1361,5 +1361,108 @@
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
+  },
+  {
+    "slug": "기가바이트-드라이버-다운로드",
+    "category": "driver",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "드라이버",
+      "메인보드"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "기가바이트",
+    "titleBottom": "드라이버 다운로드",
+    "listTitle": "기가바이트 드라이버 다운로드",
+    "listMeta": "무료 · GIGABYTE · 메인보드/그래픽카드",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "기가바이트 드라이버 다운로드",
+    "sourceNote": "SOURCE: GIGABYTE 코리아 고객지원 다운로드 화면",
+    "description": "기가바이트 메인보드·그래픽카드 드라이버를 공식 고객지원 화면으로 연결합니다. 메인보드 모델명 확인법과 설치 순서를 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "GIGABYTE"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "메인보드 모델명 확인",
+        "body": "Windows 키 + R 에서 msinfo32 를 실행하면 시스템 요약의 베이스보드 제품 항목에 모델명이 나옵니다. B650M DS3H 처럼 적혀 있습니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 기가바이트 고객지원 다운로드 화면이 열립니다. 모델명으로 검색해 그 보드의 지원 페이지로 들어갑니다."
+      },
+      {
+        "title": "칩셋을 가장 먼저",
+        "body": "드라이버 탭에서 칩셋을 먼저 설치합니다. 그다음 랜·사운드 순서로 하면 충돌이 적습니다."
+      },
+      {
+        "title": "설치 후 재부팅",
+        "body": "여러 개를 설치했다면 마지막에 한 번 재부팅합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "메인보드 모델명을 모르겠습니다.",
+        "a": "Windows 키 + R 에서 msinfo32 를 실행하고 시스템 요약의 베이스보드 제품을 보세요. 본체를 열어 보드 위 인쇄를 직접 확인해도 됩니다."
+      },
+      {
+        "q": "무엇부터 설치해야 하나요?",
+        "a": "칩셋이 먼저입니다. 칩셋을 깔아야 나머지가 제자리를 찾습니다."
+      },
+      {
+        "q": "리얼텍 사운드도 여기서 받나요?",
+        "a": "네. 메인보드 제조사가 그 보드에 맞춰 배포한 버전이라 Realtek 공식본보다 잘 맞는 경우가 많습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "기가바이트 고객지원 다운로드",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.gigabyte.com/kr/Support/Consumer/Download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "GIGABYTE 코리아 다운로드",
+        "href": "https://www.gigabyte.com/kr/Support/Consumer/Download"
+      },
+      {
+        "tag": "SW",
+        "name": "MSI 메인보드 드라이버",
+        "href": "/download/driver/MSI-%EB%A9%94%EC%9D%B8%EB%B3%B4%EB%93%9C-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "requestNote": "다른 것이 필요하면 요청 게시판에 이름을 남겨주세요."
   }
 ]
