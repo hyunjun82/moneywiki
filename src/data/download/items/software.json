@@ -17939,5 +17939,5297 @@
       }
     ],
     "picksTitle": "설치할 때 주의할 프로그램"
+  },
+  {
+    "slug": "OpenShot-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "영상 편집"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "OpenShot",
+    "titleBottom": "다운로드",
+    "listTitle": "OpenShot 다운로드",
+    "listMeta": "무료 · 오픈소스 · 영상 편집",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "OpenShot 다운로드",
+    "sourceNote": "SOURCE: OpenShot 한국어 공식 다운로드 화면 · 오픈소스",
+    "description": "OpenShot 을 공식 한국어 화면으로 연결합니다. 화면이 단순해 처음 영상 편집을 하는 사람에게 맞는 프로그램입니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "OpenShot"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 OpenShot 한국어 다운로드 화면이 열립니다. Windows·Mac·Linux 판이 있습니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다. 오픈소스라 광고나 끼워 파는 프로그램이 없습니다."
+      },
+      {
+        "title": "영상 넣고 자르기",
+        "body": "영상을 타임라인에 끌어다 놓고 자르거나 이어 붙입니다. 화면이 단순해 익히기 쉽습니다."
+      },
+      {
+        "title": "내보내기",
+        "body": "내보내기에서 형식을 고릅니다. mp4 로 두면 대부분의 기기에서 열립니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "워터마크가 남나요?",
+        "a": "오픈소스라 남지 않습니다. 무료판 표시 없이 그대로 씁니다."
+      },
+      {
+        "q": "샷컷과 뭐가 다른가요?",
+        "a": "OpenShot 이 화면이 더 단순해 처음 하기 쉽습니다. 샷컷은 기능이 조금 더 많고 무거운 편입니다."
+      },
+      {
+        "q": "한국어로 나오나요?",
+        "a": "설정에서 언어를 한국어로 바꿀 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "OpenShot 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.openshot.org/ko/download/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "OpenShot 공식 다운로드",
+        "href": "https://www.openshot.org/ko/download/"
+      },
+      {
+        "tag": "SW",
+        "name": "샷컷 (다른 선택지)",
+        "href": "/download/software/%EC%83%B7%EC%BB%B7-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "Kdenlive-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "영상 편집"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "Kdenlive",
+    "titleBottom": "다운로드",
+    "listTitle": "Kdenlive 다운로드",
+    "listMeta": "무료 · 오픈소스 · 영상 편집",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "Kdenlive 다운로드",
+    "sourceNote": "SOURCE: Kdenlive 공식 다운로드 화면 · 오픈소스",
+    "description": "Kdenlive 를 공식 다운로드 화면으로 연결합니다. 트랙을 여러 개 쓰는 편집에 강한 오픈소스 프로그램입니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Kdenlive"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Kdenlive 공식 다운로드 화면이 열립니다. 화면이 영어입니다."
+      },
+      {
+        "title": "설치판과 무설치판",
+        "body": "Windows 는 설치판과 압축만 풀어 쓰는 판이 있습니다."
+      },
+      {
+        "title": "한국어 설정",
+        "body": "설치 후 Settings 에서 언어를 한국어로 바꿀 수 있습니다."
+      },
+      {
+        "title": "자동 저장 확인",
+        "body": "작업 중 프로그램이 꺼지는 경우를 대비해 자동 저장 간격을 설정에서 확인해 두세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "워터마크가 남나요?",
+        "a": "오픈소스라 남지 않습니다."
+      },
+      {
+        "q": "샷컷·OpenShot 과 뭐가 다른가요?",
+        "a": "Kdenlive 는 트랙을 여러 개 쌓는 작업에 강합니다. 대신 화면이 복잡해 처음에는 어렵게 느껴질 수 있습니다."
+      },
+      {
+        "q": "무거운가요?",
+        "a": "고화질 영상을 다루면 사양을 탑니다. 미리보기 화질을 낮추고 편집한 뒤 내보낼 때만 원본 화질로 하면 됩니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Kdenlive 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://kdenlive.org/download/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Kdenlive 공식 다운로드",
+        "href": "https://kdenlive.org/download/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "다빈치리졸브-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "영상 편집"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "다빈치 리졸브",
+    "titleBottom": "다운로드",
+    "listTitle": "다빈치 리졸브 다운로드",
+    "listMeta": "무료판 있음 · Blackmagic · 영상 편집",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "다빈치 리졸브 다운로드",
+    "sourceNote": "SOURCE: Blackmagic Design DaVinci Resolve 공식 화면",
+    "description": "다빈치 리졸브를 공식 화면으로 연결합니다. 무료판으로도 색보정까지 되는 대신 PC 사양을 많이 타는 점을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Blackmagic Design"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "PC 사양을 먼저 확인",
+        "body": "그래픽카드 성능을 많이 탑니다. 내장 그래픽만 있는 노트북에서는 버거울 수 있습니다. 가볍게 자르기만 하면 샷컷이 낫습니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Blackmagic Design 공식 화면이 열립니다. 무료 다운로드와 유료 스튜디오판이 나뉩니다."
+      },
+      {
+        "title": "무료판 고르기",
+        "body": "무료 다운로드 쪽을 골라야 결제 없이 씁니다. 받기 전에 정보 입력을 요구합니다."
+      },
+      {
+        "title": "설치 후 프로젝트 설정",
+        "body": "처음 실행하면 해상도와 프레임을 정합니다. 원본 영상과 맞추면 됩니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료판으로 어디까지 되나요?",
+        "a": "편집·색보정·음향까지 무료판으로 됩니다. 일부 고급 효과와 협업 기능이 유료 스튜디오판입니다."
+      },
+      {
+        "q": "워터마크가 남나요?",
+        "a": "무료판에 워터마크는 없습니다. 다만 일부 기능이 제한됩니다."
+      },
+      {
+        "q": "사양이 낮은 PC 에서도 되나요?",
+        "a": "버겁습니다. 그래픽카드가 없거나 오래된 PC 라면 샷컷이나 OpenShot 을 쓰는 편이 낫습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "DaVinci Resolve 무료 다운로드",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.blackmagicdesign.com/kr/products/davinciresolve",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "DaVinci Resolve 공식",
+        "href": "https://www.blackmagicdesign.com/kr/products/davinciresolve"
+      },
+      {
+        "tag": "SW",
+        "name": "샷컷 (가벼운 대안)",
+        "href": "/download/software/%EC%83%B7%EC%BB%B7-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "LMMS-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "음악"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "LMMS",
+    "titleBottom": "다운로드",
+    "listTitle": "LMMS 다운로드",
+    "listMeta": "무료 · 오픈소스 · 작곡",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "LMMS 다운로드",
+    "sourceNote": "SOURCE: LMMS 한국어 공식 다운로드 화면 · 오픈소스",
+    "description": "LMMS 를 공식 한국어 화면으로 연결합니다. 무료로 곡을 만드는 프로그램으로, 음원을 따로 구해야 하는 점을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "LMMS"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 LMMS 한국어 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다. 오픈소스라 무료입니다."
+      },
+      {
+        "title": "기본 음원으로 시작",
+        "body": "설치하면 기본 악기 음원이 함께 들어옵니다. 이걸로도 곡을 만들 수 있습니다."
+      },
+      {
+        "title": "음원을 늘리려면",
+        "body": "더 좋은 소리를 쓰려면 SoundFont 나 VST 음원을 따로 구해 넣어야 합니다. 무료로 배포되는 것도 많습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료인가요?",
+        "a": "오픈소스로 완전 무료입니다. 만든 곡을 상업적으로 써도 됩니다. 다만 쓰는 음원의 라이선스는 따로 확인해야 합니다."
+      },
+      {
+        "q": "악기 소리가 빈약합니다.",
+        "a": "기본 음원의 한계입니다. SoundFont 파일을 구해 넣으면 훨씬 나아집니다. 무료로 배포되는 것이 많습니다."
+      },
+      {
+        "q": "MIDI 키보드를 연결할 수 있나요?",
+        "a": "USB MIDI 키보드를 연결해 쓸 수 있습니다. 설정에서 입력 장치를 지정합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "LMMS 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://lmms.io/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "LMMS 공식 다운로드",
+        "href": "https://lmms.io/download"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "MuseScore-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "음악"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "MuseScore",
+    "titleBottom": "다운로드",
+    "listTitle": "MuseScore 다운로드",
+    "listMeta": "무료 · 오픈소스 · 악보 제작",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "MuseScore 다운로드",
+    "sourceNote": "SOURCE: MuseScore 한국어 공식 다운로드 화면 · 오픈소스",
+    "description": "MuseScore 를 공식 한국어 화면으로 연결합니다. 악보를 그리고 소리로 들어 보는 프로그램으로, 무료판 범위를 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "MuseScore"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 MuseScore 한국어 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다. 프로그램 자체는 무료입니다."
+      },
+      {
+        "title": "악보 만들기",
+        "body": "악기와 조표를 고르고 음표를 찍으면 됩니다. 그린 악보를 바로 소리로 들어 볼 수 있습니다."
+      },
+      {
+        "title": "악보 공유 사이트는 별개",
+        "body": "musescore.com 에서 남이 만든 악보를 보는 것은 별도 구독입니다. 프로그램과 혼동하기 쉽습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료인가요?",
+        "a": "프로그램은 오픈소스로 무료입니다. 다만 악보 공유 사이트(musescore.com)에서 남의 악보를 보는 것은 별도 구독입니다. 둘을 구분하세요."
+      },
+      {
+        "q": "PDF 로 낼 수 있나요?",
+        "a": "악보를 PDF 나 이미지로 내보낼 수 있습니다. MIDI 나 음원 파일로도 됩니다."
+      },
+      {
+        "q": "기타 타브 악보도 되나요?",
+        "a": "타브 악보를 지원합니다. 악기를 고를 때 기타를 선택하면 됩니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "MuseScore 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://musescore.org/ko/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "MuseScore 공식 다운로드",
+        "href": "https://musescore.org/ko/download"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "Darktable-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "이미지 편집"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "Darktable",
+    "titleBottom": "다운로드",
+    "listTitle": "Darktable 다운로드",
+    "listMeta": "무료 · 오픈소스 · RAW 사진 보정",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "Darktable 다운로드",
+    "sourceNote": "SOURCE: darktable 공식 설치 화면 · 오픈소스",
+    "description": "Darktable 을 공식 화면으로 연결합니다. 카메라 RAW 파일을 보정하는 프로그램으로, 라이트룸 대신 쓰는 무료 선택지입니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "darktable"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "RAW 파일을 다루는 프로그램입니다",
+        "body": "일반 JPG 사진 편집이라면 김프나 포토스케이프가 맞습니다. Darktable 은 카메라로 찍은 RAW 파일을 보정하는 데 특화돼 있습니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 darktable 공식 설치 화면이 열립니다. 화면이 영어입니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다. 오픈소스라 무료입니다."
+      },
+      {
+        "title": "원본은 그대로 남습니다",
+        "body": "보정 내용이 별도로 저장되고 원본 RAW 는 건드리지 않습니다. 언제든 처음으로 되돌릴 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "라이트룸 대신 쓸 수 있나요?",
+        "a": "RAW 현상과 보정은 대부분 됩니다. 다만 조작 방식이 달라 익히는 데 시간이 걸립니다."
+      },
+      {
+        "q": "JPG 사진도 편집되나요?",
+        "a": "됩니다. 다만 RAW 에 특화된 프로그램이라 단순 편집에는 무겁습니다."
+      },
+      {
+        "q": "원본이 바뀌나요?",
+        "a": "아닙니다. 보정 정보만 따로 저장되고 원본 파일은 그대로 남습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "darktable 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.darktable.org/install/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "darktable 공식 설치",
+        "href": "https://www.darktable.org/install/"
+      },
+      {
+        "tag": "SW",
+        "name": "RawTherapee (다른 선택지)",
+        "href": "/download/software/RawTherapee-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "RawTherapee-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "이미지 편집"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "RawTherapee",
+    "titleBottom": "다운로드",
+    "listTitle": "RawTherapee 다운로드",
+    "listMeta": "무료 · 오픈소스 · RAW 사진 보정",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "RawTherapee 다운로드",
+    "sourceNote": "SOURCE: RawTherapee 공식 다운로드 화면 · 오픈소스",
+    "description": "RawTherapee 를 공식 다운로드 화면으로 연결합니다. RAW 파일 보정 프로그램으로, Darktable 과 어느 쪽을 쓸지 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "RawTherapee"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 RawTherapee 공식 다운로드 화면이 열립니다. 화면이 영어입니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다."
+      },
+      {
+        "title": "RAW 파일 열기",
+        "body": "카메라에서 찍은 RAW 파일을 열면 보정 항목이 오른쪽에 나옵니다."
+      },
+      {
+        "title": "내보내기",
+        "body": "보정이 끝나면 JPG 로 내보냅니다. 원본 RAW 는 그대로 남습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Darktable 과 뭐가 다른가요?",
+        "a": "둘 다 무료 RAW 보정 프로그램입니다. 조작 방식과 화면이 달라 취향에 맞는 쪽을 쓰면 됩니다. 둘 다 받아 비교해 봐도 됩니다."
+      },
+      {
+        "q": "내 카메라 RAW 를 지원하나요?",
+        "a": "대부분의 카메라를 지원합니다. 아주 최신 기종은 업데이트를 기다려야 할 수 있습니다."
+      },
+      {
+        "q": "무료인가요?",
+        "a": "오픈소스로 무료입니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "RawTherapee 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.rawtherapee.com/downloads/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "RawTherapee 공식 다운로드",
+        "href": "https://www.rawtherapee.com/downloads/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "FreeCAD-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "3D 제작"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "FreeCAD",
+    "titleBottom": "다운로드",
+    "listTitle": "FreeCAD 다운로드",
+    "listMeta": "무료 · 오픈소스 · 3D 설계",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "FreeCAD 다운로드",
+    "sourceNote": "SOURCE: FreeCAD 공식 다운로드 화면 · 오픈소스",
+    "description": "FreeCAD 를 공식 다운로드 화면으로 연결합니다. 치수를 넣어 설계하는 프로그램으로, 오토캐드 대신 쓰는 무료 선택지입니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "FreeCAD"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무엇에 쓰는지 확인",
+        "body": "치수를 정해 부품이나 구조물을 설계하는 프로그램입니다. 3D 프린터용 모델을 만들 때도 씁니다. 캐릭터나 애니메이션은 블렌더가 맞습니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 FreeCAD 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치",
+        "body": "설치판과 압축만 풀어 쓰는 판이 있습니다."
+      },
+      {
+        "title": "작업대 고르기",
+        "body": "용도에 따라 작업대(Workbench)를 바꿔 씁니다. Part Design 으로 시작하면 무난합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "오토캐드 대신 쓸 수 있나요?",
+        "a": "3D 설계는 상당 부분 됩니다. 다만 2D 도면 작업 방식이나 파일 호환에서 차이가 있어 업무용이라면 미리 확인이 필요합니다."
+      },
+      {
+        "q": "DWG 파일이 열리나요?",
+        "a": "추가 설정이 필요하고 완벽하지 않습니다. 상대에게 STEP 이나 STL 형식으로 받는 편이 안전합니다."
+      },
+      {
+        "q": "3D 프린터용으로 쓸 수 있나요?",
+        "a": "STL 로 내보내면 3D 프린터 슬라이서에서 쓸 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "FreeCAD 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.freecad.org/downloads.php",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "FreeCAD 공식 다운로드",
+        "href": "https://www.freecad.org/downloads.php"
+      },
+      {
+        "tag": "SW",
+        "name": "블렌더 (모델링·애니메이션)",
+        "href": "/download/software/%EB%B8%94%EB%A0%8C%EB%8D%94-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "영상-편집-프로그램-비교",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "영상 편집"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "영상 편집 프로그램",
+    "titleBottom": "무료 비교",
+    "listTitle": "영상 편집 프로그램 무료 비교",
+    "listMeta": "무료 5가지 · 사양과 난이도",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "영상 편집 프로그램 무료 비교",
+    "sourceNote": "SOURCE: 각 제작사 공식 배포 화면",
+    "description": "무료 영상 편집 프로그램을 사양과 난이도로 비교했습니다. 워터마크가 남는 것과 안 남는 것도 갈랐습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "PC 사양부터 보세요",
+        "body": "다빈치 리졸브는 그래픽카드 성능을 많이 탑니다. 내장 그래픽만 있으면 샷컷이나 OpenShot 이 현실적입니다."
+      },
+      {
+        "title": "처음이면 OpenShot 이나 샷컷",
+        "body": "위 버튼으로 샷컷을 받습니다. 둘 다 오픈소스라 워터마크가 없고 가볍습니다."
+      },
+      {
+        "title": "색보정까지 하려면 다빈치",
+        "body": "무료판으로도 색보정과 음향 작업이 됩니다. 대신 사양이 받쳐 줘야 합니다."
+      },
+      {
+        "title": "워터마크 확인",
+        "body": "샷컷·OpenShot·Kdenlive·다빈치 무료판은 표시가 남지 않습니다. 곰믹스·반디컷 무료판은 제한이 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "워터마크 없는 무료 프로그램은?",
+        "a": "샷컷·OpenShot·Kdenlive·다빈치 리졸브 무료판 모두 표시가 남지 않습니다."
+      },
+      {
+        "q": "가장 쉬운 것은?",
+        "a": "OpenShot 이 화면이 단순해 처음 하기 좋습니다. 샷컷이 그다음입니다."
+      },
+      {
+        "q": "사양이 낮은데 어떤 것을 쓰나요?",
+        "a": "샷컷이나 OpenShot 을 쓰고 미리보기 화질을 낮춰 편집하세요. 다빈치는 버겁습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Shotcut 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://shotcut.org/download/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "샷컷",
+        "note": "가볍고 워터마크 없음. 무난한 선택.",
+        "href": "/download/software/%EC%83%B7%EC%BB%B7-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "OpenShot",
+        "note": "화면이 가장 단순. 처음 하기 좋습니다.",
+        "href": "/download/software/OpenShot-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "Kdenlive",
+        "note": "트랙을 여러 개 쓰는 작업에 강합니다.",
+        "href": "/download/software/Kdenlive-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "다빈치 리졸브",
+        "note": "색보정까지. 사양을 많이 탑니다.",
+        "href": "/download/software/%EB%8B%A4%EB%B9%88%EC%B9%98%EB%A6%AC%EC%A1%B8%EB%B8%8C-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "곰믹스",
+        "note": "쉽지만 무료판에 제한이 있습니다.",
+        "href": "/download/software/%EA%B3%B0%EB%AF%B9%EC%8A%A4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "무료 영상 편집 프로그램"
+  },
+  {
+    "slug": "창작-무료-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "디자인"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "창작",
+    "titleBottom": "무료 프로그램",
+    "listTitle": "창작 무료 프로그램",
+    "listMeta": "그림·음악·3D·사진 · 오픈소스",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "창작 무료 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 배포 화면",
+    "description": "그림·음악·3D·사진 작업에 쓰는 무료 프로그램을 분야별로 정리했습니다. 상업적 사용에 제한이 없는 것들입니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "분야를 먼저 정하기",
+        "body": "그림은 크리타, 3D 는 블렌더, 작곡은 LMMS, 악보는 MuseScore, RAW 사진은 Darktable 입니다."
+      },
+      {
+        "title": "상업적 사용을 확인하세요",
+        "body": "여기 있는 것은 대부분 오픈소스라 만든 결과물을 팔아도 됩니다. 다만 안에 쓴 소재나 음원의 라이선스는 따로 확인해야 합니다."
+      },
+      {
+        "title": "3D 부터 시작하려면 블렌더",
+        "body": "위 버튼으로 블렌더를 받습니다. 모델링부터 애니메이션까지 무료로 됩니다."
+      },
+      {
+        "title": "사양 확인",
+        "body": "3D 와 영상은 사양을 많이 탑니다. 그림이나 악보는 일반 PC 로도 충분합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "만든 결과물을 팔아도 되나요?",
+        "a": "오픈소스 프로그램으로 만든 결과물은 대부분 자유롭게 쓸 수 있습니다. 다만 안에 쓴 브러시·음원·폰트의 라이선스는 따로 확인하세요."
+      },
+      {
+        "q": "포토샵·일러스트 대신 쓸 것은?",
+        "a": "사진 보정은 김프, 벡터는 잉크스케이프, 그림 그리기는 크리타입니다. 모두 무료입니다."
+      },
+      {
+        "q": "사양이 낮아도 되나요?",
+        "a": "그림·악보·작곡은 일반 PC 로 됩니다. 3D 와 영상 편집은 그래픽카드가 있는 편이 낫습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Blender 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.blender.org/download/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "크리타",
+        "note": "그림 그리기. 타블렛 필압 지원.",
+        "href": "/download/software/%ED%81%AC%EB%A6%AC%ED%83%80-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "블렌더",
+        "note": "3D 모델링과 애니메이션.",
+        "href": "/download/software/%EB%B8%94%EB%A0%8C%EB%8D%94-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "LMMS",
+        "note": "작곡. 기본 음원 포함.",
+        "href": "/download/software/LMMS-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "MuseScore",
+        "note": "악보 제작. 소리로 들어 볼 수 있습니다.",
+        "href": "/download/software/MuseScore-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "Darktable",
+        "note": "카메라 RAW 사진 보정.",
+        "href": "/download/software/Darktable-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "FreeCAD",
+        "note": "치수를 넣는 3D 설계.",
+        "href": "/download/software/FreeCAD-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "분야별 창작 프로그램"
+  },
+  {
+    "slug": "VirtualBox-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "개발 도구"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "VirtualBox",
+    "titleBottom": "다운로드",
+    "listTitle": "VirtualBox 다운로드",
+    "listMeta": "무료 · Oracle · 가상머신",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "VirtualBox 다운로드",
+    "sourceNote": "SOURCE: Oracle VirtualBox 공식 다운로드 화면",
+    "description": "VirtualBox 를 공식 다운로드 화면으로 연결합니다. PC 안에 다른 운영체제를 돌리는 도구로, 가상화 설정을 켜야 하는 점을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Oracle"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "BIOS 에서 가상화를 켜야 합니다",
+        "body": "가상머신이 안 돌아가는 가장 흔한 원인입니다. 부팅할 때 BIOS 에 들어가 Intel VT-x 또는 AMD-V 항목을 켜세요. 작업 관리자 성능 탭에서 가상화 사용 여부를 확인할 수 있습니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Oracle VirtualBox 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "본체와 확장팩",
+        "body": "본체를 설치한 뒤 Extension Pack 을 따로 설치하면 USB 3.0 같은 기능이 추가됩니다. 확장팩은 라이선스 조건이 다르니 화면에서 확인하세요."
+      },
+      {
+        "title": "메모리 배분",
+        "body": "가상머신에 메모리를 너무 많이 주면 본 PC 가 느려집니다. 전체의 절반을 넘기지 않는 편이 안전합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "가상머신이 실행되지 않습니다.",
+        "a": "BIOS 에서 가상화(VT-x/AMD-V)가 꺼져 있는 경우가 대부분입니다. 작업 관리자 › 성능 › CPU 에서 가상화 항목을 확인하세요."
+      },
+      {
+        "q": "무료인가요?",
+        "a": "본체는 무료입니다. Extension Pack 은 라이선스 조건이 따로 있으니 상업적 사용이라면 화면의 안내를 확인하세요."
+      },
+      {
+        "q": "VMware 와 뭐가 다른가요?",
+        "a": "VirtualBox 는 본체가 무료이고 가볍습니다. VMware 는 성능이 나은 편이지만 제품에 따라 요금이 다릅니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "VirtualBox 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.virtualbox.org/wiki/Downloads",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Oracle 공식 다운로드",
+        "href": "https://www.virtualbox.org/wiki/Downloads"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "VMware-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "개발 도구"
+    ],
+    "badges": [
+      "공식 배포처",
+      "제품별 상이",
+      "한국어"
+    ],
+    "titleTop": "VMware",
+    "titleBottom": "다운로드",
+    "listTitle": "VMware 다운로드",
+    "listMeta": "제품별 상이 · Broadcom · 가상머신",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "VMware 다운로드",
+    "sourceNote": "SOURCE: VMware Fusion and Workstation 공식 화면",
+    "description": "VMware Workstation 을 공식 화면으로 연결합니다. 개인 사용 조건이 바뀌어 온 제품이라 화면에서 직접 확인해야 하는 점을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "제품별 상이"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Broadcom"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "사용 조건을 화면에서 확인하세요",
+        "body": "VMware 는 개인 사용 조건이 여러 번 바뀌었습니다. 지금 무료로 쓸 수 있는지, 계정이 필요한지는 공식 화면에서 직접 보고 판단하세요."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 VMware Fusion and Workstation 공식 화면이 열립니다."
+      },
+      {
+        "title": "가상화 설정 확인",
+        "body": "BIOS 에서 Intel VT-x 또는 AMD-V 가 켜져 있어야 가상머신이 돌아갑니다."
+      },
+      {
+        "title": "설치와 메모리 배분",
+        "body": "가상머신에 줄 메모리는 전체의 절반을 넘기지 않는 편이 안전합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료로 쓸 수 있나요?",
+        "a": "개인 사용 조건이 여러 번 바뀌었습니다. 공식 화면에서 지금 조건을 확인하세요. 비용 없이 확실하게 쓰려면 VirtualBox 가 대안입니다."
+      },
+      {
+        "q": "VirtualBox 와 뭐가 다른가요?",
+        "a": "VMware 가 성능과 안정성에서 나은 편이라는 평이 많습니다. VirtualBox 는 본체가 무료입니다."
+      },
+      {
+        "q": "가상머신이 실행되지 않습니다.",
+        "a": "BIOS 의 가상화 설정이 꺼져 있거나, Windows 의 Hyper-V 와 충돌하는 경우입니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "VMware Workstation",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.vmware.com/products/desktop-hypervisor.html",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "VMware 공식 화면",
+        "href": "https://www.vmware.com/products/desktop-hypervisor.html"
+      },
+      {
+        "tag": "SW",
+        "name": "VirtualBox (무료 대안)",
+        "href": "/download/software/VirtualBox-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "Docker-Desktop-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "개발 도구"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "Docker Desktop",
+    "titleBottom": "다운로드",
+    "listTitle": "Docker Desktop 다운로드",
+    "listMeta": "무료판 있음 · Docker · 컨테이너",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "Docker Desktop 다운로드",
+    "sourceNote": "SOURCE: Docker Desktop 공식 화면",
+    "description": "Docker Desktop 을 공식 화면으로 연결합니다. 규모에 따라 유료로 바뀌는 조건과 WSL2 가 필요한 점을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Docker"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "WSL2 가 필요합니다",
+        "body": "Windows 에서는 WSL2 를 켜야 합니다. 설치 과정에서 안내가 나오며, BIOS 의 가상화 설정도 켜져 있어야 합니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Docker Desktop 공식 화면이 열립니다."
+      },
+      {
+        "title": "사용 조건 확인",
+        "body": "개인과 소규모는 무료로 쓸 수 있지만 회사 규모에 따라 유료 구독이 필요합니다. 조건이 바뀌어 왔으니 화면에서 지금 기준을 확인하세요."
+      },
+      {
+        "title": "설치 후 재부팅",
+        "body": "WSL2 설정이 바뀌면 재부팅이 필요합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료로 쓸 수 있나요?",
+        "a": "개인과 소규모 사용은 무료 조건이 있습니다. 회사 규모가 크면 유료 구독이 필요합니다. 기준이 바뀌어 왔으니 공식 화면에서 확인하세요."
+      },
+      {
+        "q": "설치했는데 실행되지 않습니다.",
+        "a": "WSL2 가 설치되지 않았거나 BIOS 의 가상화가 꺼진 경우입니다. 설치 화면의 안내를 따라 WSL2 를 먼저 준비하세요."
+      },
+      {
+        "q": "Docker 없이 컨테이너를 쓸 수 있나요?",
+        "a": "WSL2 안에서 직접 도커 엔진을 쓰는 방법도 있습니다. 다만 설정이 번거롭습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Docker Desktop 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.docker.com/products/docker-desktop/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Docker 공식 다운로드",
+        "href": "https://www.docker.com/products/docker-desktop/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "Node.js-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "개발 도구"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "Node.js",
+    "titleBottom": "다운로드",
+    "listTitle": "Node.js 다운로드",
+    "listMeta": "무료 · 오픈소스 · 자바스크립트 실행",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "Node.js 다운로드",
+    "sourceNote": "SOURCE: Node.js 한국어 공식 다운로드 화면",
+    "description": "Node.js 를 공식 한국어 화면으로 연결합니다. LTS 와 최신판 중 무엇을 골라야 하는지 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "OpenJS Foundation"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "LTS 를 고르세요",
+        "body": "화면에 LTS 와 Current 가 있습니다. 특별한 이유가 없으면 LTS(장기 지원)를 받으세요. 강의나 라이브러리가 대부분 LTS 기준입니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Node.js 한국어 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치",
+        "body": "기본값으로 진행하면 npm 도 함께 설치됩니다."
+      },
+      {
+        "title": "설치 확인",
+        "body": "명령 프롬프트에서 node -v 와 npm -v 를 쳐서 버전이 나오면 정상입니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "LTS 와 Current 중 뭘 받나요?",
+        "a": "LTS 입니다. Current 는 최신 기능이 들어가지만 안정성과 라이브러리 호환에서 문제가 생길 수 있습니다."
+      },
+      {
+        "q": "npm 을 따로 설치해야 하나요?",
+        "a": "아닙니다. Node.js 를 설치하면 npm 이 함께 들어옵니다."
+      },
+      {
+        "q": "여러 버전을 쓰고 싶습니다.",
+        "a": "nvm 같은 버전 관리 도구를 쓰면 프로젝트마다 다른 버전을 쓸 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Node.js LTS 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://nodejs.org/ko/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "OpenJS Foundation 공식 다운로드",
+        "href": "https://nodejs.org/ko/download"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "자바-JDK-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "개발 도구"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "자바 JDK",
+    "titleBottom": "다운로드",
+    "listTitle": "자바 JDK 다운로드",
+    "listMeta": "무료 · Adoptium · Temurin",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "자바 JDK 다운로드",
+    "sourceNote": "SOURCE: Adoptium Temurin 공식 릴리스 화면",
+    "description": "자바 JDK 를 Adoptium 공식 화면으로 연결합니다. 오라클 JDK 와 라이선스가 다른 점과 버전 고르는 법을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Eclipse Adoptium"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "Adoptium 을 쓰는 이유",
+        "body": "오라클 JDK 는 사용 조건에 제약이 있어 왔습니다. Adoptium 의 Temurin 은 같은 자바를 무료로 쓸 수 있게 배포합니다. 회사에서 쓸 때 이 차이가 중요합니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Adoptium Temurin 릴리스 화면이 열립니다."
+      },
+      {
+        "title": "버전 고르기",
+        "body": "LTS 버전(8, 11, 17, 21 등)을 고릅니다. 쓰는 프로그램이나 교재가 요구하는 버전에 맞추세요."
+      },
+      {
+        "title": "설치 확인",
+        "body": "명령 프롬프트에서 java -version 을 쳐서 버전이 나오면 정상입니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "오라클 JDK 와 뭐가 다른가요?",
+        "a": "같은 자바 표준을 구현한 것이라 동작은 같습니다. 차이는 라이선스입니다. Temurin 은 조건 없이 무료로 쓸 수 있어 회사에서 쓰기 편합니다."
+      },
+      {
+        "q": "어떤 버전을 받아야 하나요?",
+        "a": "쓰는 프로그램이 요구하는 버전에 맞추세요. 새로 배우는 중이라면 최신 LTS 를 고르면 됩니다."
+      },
+      {
+        "q": "java 명령이 인식되지 않습니다.",
+        "a": "설치 후 PATH 가 잡히지 않은 경우입니다. 설치 프로그램에서 PATH 추가 항목을 켜거나 시스템 환경 변수에 직접 넣어야 합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Temurin JDK 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://adoptium.net/temurin/releases/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Eclipse Adoptium 공식 다운로드",
+        "href": "https://adoptium.net/temurin/releases/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "MySQL-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "개발 도구"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "MySQL",
+    "titleBottom": "다운로드",
+    "listTitle": "MySQL 다운로드",
+    "listMeta": "무료판 있음 · Oracle · 데이터베이스",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "MySQL 다운로드",
+    "sourceNote": "SOURCE: MySQL Community Server 공식 다운로드 화면",
+    "description": "MySQL 을 공식 다운로드 화면으로 연결합니다. Community 판이 무료인 점과 설치 시 비밀번호를 잊으면 안 되는 이유를 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Oracle"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "Community 판을 받으세요",
+        "body": "위 버튼이 여는 화면이 무료인 Community Server 입니다. Enterprise 는 유료입니다."
+      },
+      {
+        "title": "설치 방식 고르기",
+        "body": "Installer 를 쓰면 서버·워크벤치·커넥터를 한 번에 설치할 수 있습니다. 처음이면 이쪽이 편합니다."
+      },
+      {
+        "title": "root 비밀번호를 기억하세요",
+        "body": "설치 중 정하는 root 비밀번호는 나중에 바꾸기가 번거롭습니다. 반드시 적어 두세요."
+      },
+      {
+        "title": "포트 확인",
+        "body": "기본 포트는 3306 입니다. 다른 프로그램과 겹치면 설치 중에 바꿀 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료인가요?",
+        "a": "Community Server 는 무료입니다. 다만 라이선스가 GPL 이라 상용 제품에 넣어 배포할 때는 조건을 확인해야 합니다."
+      },
+      {
+        "q": "root 비밀번호를 잊었습니다.",
+        "a": "복구 절차가 번거롭습니다. 설치할 때 반드시 적어 두세요."
+      },
+      {
+        "q": "MariaDB 와 뭐가 다른가요?",
+        "a": "MySQL 에서 갈라져 나온 데이터베이스입니다. 기본 사용법이 비슷해 옮기기 쉽습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "MySQL Community Server",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://dev.mysql.com/downloads/mysql/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Oracle 공식 다운로드",
+        "href": "https://dev.mysql.com/downloads/mysql/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "PostgreSQL-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "개발 도구"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "PostgreSQL",
+    "titleBottom": "다운로드",
+    "listTitle": "PostgreSQL 다운로드",
+    "listMeta": "무료 · 오픈소스 · 데이터베이스",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "PostgreSQL 다운로드",
+    "sourceNote": "SOURCE: PostgreSQL Windows installers 공식 화면",
+    "description": "PostgreSQL 을 공식 Windows 설치 화면으로 연결합니다. 완전 오픈소스라 상용 제품에도 쓸 수 있는 점을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "PostgreSQL"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 PostgreSQL Windows 설치 화면이 열립니다."
+      },
+      {
+        "title": "설치",
+        "body": "설치 프로그램에 서버·pgAdmin·명령줄 도구가 함께 들어 있습니다."
+      },
+      {
+        "title": "비밀번호를 기억하세요",
+        "body": "설치 중 정하는 postgres 계정 비밀번호는 접속할 때마다 필요합니다. 적어 두세요."
+      },
+      {
+        "title": "포트 확인",
+        "body": "기본 포트는 5432 입니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료인가요?",
+        "a": "오픈소스로 완전 무료입니다. 상용 제품에 써도 라이선스 부담이 없습니다."
+      },
+      {
+        "q": "MySQL 과 뭐가 다른가요?",
+        "a": "PostgreSQL 이 표준 SQL 을 더 충실히 따르고 복잡한 질의에 강한 편입니다. MySQL 은 널리 쓰여 자료가 많습니다."
+      },
+      {
+        "q": "pgAdmin 은 뭔가요?",
+        "a": "브라우저로 데이터베이스를 관리하는 도구입니다. 설치 프로그램에 함께 들어 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "PostgreSQL Windows 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.postgresql.org/download/windows/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "PostgreSQL 공식 다운로드",
+        "href": "https://www.postgresql.org/download/windows/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "DBeaver-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "개발 도구"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "DBeaver",
+    "titleBottom": "다운로드",
+    "listTitle": "DBeaver 다운로드",
+    "listMeta": "무료 · 오픈소스 · DB 관리 도구",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "DBeaver 다운로드",
+    "sourceNote": "SOURCE: DBeaver Community 공식 다운로드 화면 · Free Download",
+    "description": "DBeaver 를 공식 다운로드 화면으로 연결합니다. 여러 종류의 데이터베이스를 하나로 관리하는 도구입니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "DBeaver"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "Community 판이 무료입니다",
+        "body": "위 버튼이 여는 화면의 Community 판이 무료입니다. PRO 는 유료입니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "설치판과 압축만 풀어 쓰는 판이 있습니다."
+      },
+      {
+        "title": "드라이버는 처음 접속할 때 받습니다",
+        "body": "MySQL·PostgreSQL 같은 데이터베이스에 처음 연결할 때 해당 드라이버를 자동으로 내려받습니다. 인터넷이 필요합니다."
+      },
+      {
+        "title": "접속 정보 입력",
+        "body": "호스트·포트·계정·비밀번호를 넣고 연결합니다. 로컬이면 호스트는 localhost 입니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료인가요?",
+        "a": "Community 판은 오픈소스로 무료입니다. 공식 화면에 Free Download 로 안내되어 있습니다."
+      },
+      {
+        "q": "어떤 데이터베이스를 지원하나요?",
+        "a": "MySQL·PostgreSQL·SQLite·Oracle 등 대부분을 지원합니다. 하나의 프로그램으로 여러 종류를 관리할 수 있는 점이 장점입니다."
+      },
+      {
+        "q": "자바가 필요한가요?",
+        "a": "설치 프로그램에 자바가 포함된 판이 있습니다. 없는 판을 받으면 자바를 따로 설치해야 합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "DBeaver Community",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://dbeaver.io/download/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "DBeaver 공식 다운로드",
+        "href": "https://dbeaver.io/download/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "Postman-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "개발 도구"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "Postman",
+    "titleBottom": "다운로드",
+    "listTitle": "Postman 다운로드",
+    "listMeta": "무료판 있음 · Postman · API 테스트",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "Postman 다운로드",
+    "sourceNote": "SOURCE: Postman 공식 다운로드 화면 · Get Started for Free",
+    "description": "Postman 을 공식 다운로드 화면으로 연결합니다. API 를 시험하는 도구로, 계정 없이 쓰는 방법도 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Postman"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Postman 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다."
+      },
+      {
+        "title": "계정 없이도 됩니다",
+        "body": "로그인을 권하지만 건너뛰고 쓸 수 있습니다. 다만 작업 내용이 이 PC 에만 남습니다."
+      },
+      {
+        "title": "요청 보내기",
+        "body": "주소와 방식(GET·POST)을 정하고 보내면 응답이 바로 보입니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료로 쓸 수 있나요?",
+        "a": "무료 요금제가 있습니다. 팀 협업 기능이나 사용량이 늘면 유료입니다. 공식 화면에서 조건을 확인하세요."
+      },
+      {
+        "q": "로그인을 꼭 해야 하나요?",
+        "a": "건너뛸 수 있습니다. 다만 로그인하면 여러 기기에서 같은 컬렉션을 볼 수 있습니다."
+      },
+      {
+        "q": "가벼운 대안은 없나요?",
+        "a": "명령줄에서 curl 을 쓰거나, VS Code 확장으로 요청을 보내는 방법도 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Postman 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.postman.com/downloads/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Postman 공식 다운로드",
+        "href": "https://www.postman.com/downloads/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "개발-환경-설치-순서",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "개발 도구"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "개발 환경",
+    "titleBottom": "설치 순서",
+    "listTitle": "개발 환경 설치 순서",
+    "listMeta": "무엇부터 깔지 · 순서대로",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "개발 환경 설치 순서",
+    "sourceNote": "SOURCE: 각 제작사 공식 다운로드 화면",
+    "description": "프로그래밍을 시작할 때 무엇부터 설치해야 하는지 순서대로 정리했습니다. 순서를 지키면 나중에 다시 깔 일이 줄어듭니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "편집기부터",
+        "body": "위 버튼으로 VS Code 를 받습니다. 어떤 언어를 하든 코드를 쓸 곳이 먼저 있어야 합니다."
+      },
+      {
+        "title": "언어 실행 환경",
+        "body": "자바를 하면 JDK, 자바스크립트면 Node.js, 파이썬이면 Python 을 설치합니다. 설치할 때 PATH 추가를 반드시 켜세요. 가장 많이 빠뜨리는 부분입니다."
+      },
+      {
+        "title": "Git 은 처음부터",
+        "body": "코드를 관리하려면 Git 이 필요합니다. 나중에 깔면 그동안의 기록이 남지 않습니다."
+      },
+      {
+        "title": "데이터베이스는 필요할 때",
+        "body": "웹 개발을 한다면 MySQL 이나 PostgreSQL 을 설치합니다. 처음부터 깔 필요는 없습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무엇부터 깔아야 하나요?",
+        "a": "편집기(VS Code) → 언어 실행 환경 → Git 순서가 무난합니다. 데이터베이스는 필요해질 때 깔면 됩니다."
+      },
+      {
+        "q": "PATH 추가가 왜 중요한가요?",
+        "a": "PATH 에 추가하지 않으면 명령 프롬프트에서 python·java·node 같은 명령이 인식되지 않습니다. 설치 화면에서 체크를 켜는 것이 가장 쉽습니다."
+      },
+      {
+        "q": "Git 을 나중에 깔면 안 되나요?",
+        "a": "깔 수는 있지만 그전까지의 변경 기록은 남지 않습니다. 처음부터 쓰는 편이 낫습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "VS Code 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://code.visualstudio.com/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "1. VS Code",
+        "note": "코드를 쓸 편집기부터.",
+        "href": "/download/software/VS-Code-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "2-A. 파이썬",
+        "note": "PATH 추가 체크를 꼭 켜세요.",
+        "href": "/download/software/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "2-B. Node.js",
+        "note": "LTS 를 고르세요.",
+        "href": "/download/software/Node.js-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "2-C. 자바 JDK",
+        "note": "Temurin 이 라이선스가 편합니다.",
+        "href": "/download/software/%EC%9E%90%EB%B0%94-JDK-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "3. Git",
+        "note": "처음부터 쓰는 편이 낫습니다.",
+        "href": "/download/software/%EA%B9%83-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "4. DBeaver",
+        "note": "데이터베이스를 쓸 때.",
+        "href": "/download/software/DBeaver-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "설치 순서"
+  },
+  {
+    "slug": "PowerToys-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "유틸리티"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "PowerToys",
+    "titleBottom": "다운로드",
+    "listTitle": "PowerToys 다운로드",
+    "listMeta": "무료 · 마이크로소프트 · 윈도우 도구 모음",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "PowerToys 다운로드",
+    "sourceNote": "SOURCE: 마이크로소프트 PowerToys 설치 안내 화면",
+    "description": "PowerToys 를 마이크로소프트 공식 화면으로 연결합니다. 마이크로소프트가 만든 무료 도구 모음으로, 창 배치와 이미지 크기 변경 같은 기능이 들어 있습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "마이크로소프트"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무엇이 들어 있는지",
+        "body": "화면을 격자로 나눠 창을 붙이는 FancyZones, 사진 여러 장의 크기를 우클릭으로 바꾸는 Image Resizer, 파일 이름을 한 번에 바꾸는 PowerRename 등이 한 묶음입니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 마이크로소프트 PowerToys 설치 안내가 열립니다. 설치 방법이 여러 가지로 안내됩니다."
+      },
+      {
+        "title": "설치",
+        "body": "안내에 따라 설치 파일을 받거나 Microsoft Store 에서 설치합니다."
+      },
+      {
+        "title": "필요한 것만 켜기",
+        "body": "설정에서 도구마다 켜고 끌 수 있습니다. 안 쓰는 것은 꺼 두면 자원을 덜 씁니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료인가요?",
+        "a": "마이크로소프트가 무료로 배포합니다."
+      },
+      {
+        "q": "어떤 기능이 가장 쓸모 있나요?",
+        "a": "화면이 크다면 FancyZones 로 창을 격자에 붙이는 기능이 편합니다. 사진을 자주 다루면 우클릭으로 크기를 바꾸는 Image Resizer 가 유용합니다."
+      },
+      {
+        "q": "PC 가 느려지지 않나요?",
+        "a": "설정에서 안 쓰는 도구를 꺼 두면 부담이 적습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "PowerToys 설치 안내",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://learn.microsoft.com/ko-kr/windows/powertoys/install",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "마이크로소프트 공식 다운로드",
+        "href": "https://learn.microsoft.com/ko-kr/windows/powertoys/install"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "윈도우-터미널-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "개발 도구"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "윈도우 터미널",
+    "titleBottom": "다운로드",
+    "listTitle": "윈도우 터미널 다운로드",
+    "listMeta": "무료 · 마이크로소프트 · 명령줄",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "윈도우 터미널 다운로드",
+    "sourceNote": "SOURCE: 마이크로소프트 Windows 터미널 설치 안내 화면",
+    "description": "윈도우 터미널을 마이크로소프트 공식 화면으로 연결합니다. 명령 프롬프트·PowerShell·WSL 을 탭으로 함께 쓰는 도구입니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "마이크로소프트"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "Windows 11 에는 이미 있습니다",
+        "body": "Windows 11 은 터미널이 기본으로 들어 있습니다. Windows 10 이거나 최신판을 쓰고 싶을 때 설치합니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 마이크로소프트 Windows 터미널 설치 안내가 열립니다."
+      },
+      {
+        "title": "설치",
+        "body": "Microsoft Store 나 안내된 방법으로 설치합니다."
+      },
+      {
+        "title": "기본 프로필 정하기",
+        "body": "설정에서 처음 열릴 셸(PowerShell·명령 프롬프트·WSL)을 정할 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "이미 있는지 어떻게 확인하나요?",
+        "a": "시작 메뉴에서 터미널을 검색해 보세요. Windows 11 에는 기본으로 들어 있습니다."
+      },
+      {
+        "q": "PowerShell 과 다른 건가요?",
+        "a": "터미널은 여러 셸을 담는 창입니다. PowerShell 은 그 안에서 돌아가는 셸입니다."
+      },
+      {
+        "q": "WSL 도 여기서 쓰나요?",
+        "a": "WSL 을 설치하면 터미널 탭에서 리눅스 셸을 열 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Windows 터미널 설치 안내",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://learn.microsoft.com/ko-kr/windows/terminal/install",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "마이크로소프트 공식 다운로드",
+        "href": "https://learn.microsoft.com/ko-kr/windows/terminal/install"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "WinGet-사용법",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "유틸리티"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "WinGet",
+    "titleBottom": "설치와 사용법",
+    "listTitle": "WinGet 설치와 사용법",
+    "listMeta": "무료 · 마이크로소프트 · 명령줄 설치",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "WinGet 설치와 사용법",
+    "sourceNote": "SOURCE: 마이크로소프트 WinGet 공식 안내 화면",
+    "description": "WinGet 을 마이크로소프트 공식 화면으로 연결합니다. 명령 한 줄로 프로그램을 설치하는 도구로, 여러 대를 세팅할 때 시간을 크게 줄여 줍니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "마이크로소프트"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "Windows 에 이미 있는 경우가 많습니다",
+        "body": "요즘 Windows 10·11 에는 winget 이 기본으로 들어 있습니다. 명령 프롬프트에서 winget --version 을 쳐서 나오면 설치할 필요가 없습니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 마이크로소프트 WinGet 공식 안내가 열립니다. 없다면 설치 방법이 안내됩니다."
+      },
+      {
+        "title": "설치해 보기",
+        "body": "winget install 프로그램이름 형식으로 씁니다. 예를 들어 winget install Google.Chrome 을 치면 크롬이 설치됩니다."
+      },
+      {
+        "title": "여러 개를 한 번에",
+        "body": "명령을 이어 쓰면 여러 프로그램을 순서대로 설치할 수 있습니다. 포맷 후 세팅에 편합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "이미 있는지 어떻게 확인하나요?",
+        "a": "명령 프롬프트에서 winget --version 을 쳐 보세요. 버전이 나오면 이미 있는 것입니다."
+      },
+      {
+        "q": "어떤 프로그램을 설치할 수 있나요?",
+        "a": "winget search 이름 으로 검색해 볼 수 있습니다. 크롬·VS Code·7-Zip 같은 대부분의 프로그램이 등록돼 있습니다."
+      },
+      {
+        "q": "사이트에서 받는 것과 뭐가 다른가요?",
+        "a": "같은 프로그램을 명령으로 받아 설치할 뿐입니다. 여러 대를 세팅하거나 포맷 후 한 번에 깔 때 시간이 크게 줄어듭니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "WinGet 공식 안내",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://learn.microsoft.com/ko-kr/windows/package-manager/winget/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "WinGet 공식 안내",
+        "href": "https://learn.microsoft.com/ko-kr/windows/package-manager/winget/"
+      },
+      {
+        "tag": "SW",
+        "name": "Chocolatey (다른 선택지)",
+        "href": "/download/software/Chocolatey-%EC%84%A4%EC%B9%98"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "Chocolatey-설치",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "유틸리티"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "Chocolatey",
+    "titleBottom": "설치",
+    "listTitle": "Chocolatey 설치",
+    "listMeta": "무료판 있음 · Chocolatey · 명령줄 설치",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "Chocolatey 설치",
+    "sourceNote": "SOURCE: Chocolatey 공식 설치 화면",
+    "description": "Chocolatey 를 공식 설치 화면으로 연결합니다. 명령으로 프로그램을 설치하는 도구로, WinGet 과 어느 쪽을 쓸지 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Chocolatey"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "WinGet 으로 될지 먼저 보세요",
+        "body": "Windows 에 기본으로 들어 있는 winget 으로 대부분 해결됩니다. Chocolatey 는 등록된 프로그램이 더 많고 세부 설정이 가능한 점이 다릅니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Chocolatey 공식 설치 화면이 열립니다. 화면이 영어입니다."
+      },
+      {
+        "title": "관리자 권한으로 설치",
+        "body": "설치는 PowerShell 을 관리자 권한으로 열어 화면에 적힌 명령을 붙여 넣는 방식입니다."
+      },
+      {
+        "title": "사용해 보기",
+        "body": "choco install 프로그램이름 형식으로 씁니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "WinGet 과 뭐가 다른가요?",
+        "a": "둘 다 명령으로 프로그램을 설치합니다. WinGet 은 Windows 에 기본으로 있고, Chocolatey 는 등록된 프로그램이 더 많은 편입니다."
+      },
+      {
+        "q": "무료인가요?",
+        "a": "개인 사용은 무료입니다. 회사에서 쓰는 기능은 유료 제품이 따로 있으니 화면에서 확인하세요."
+      },
+      {
+        "q": "설치 명령이 길고 복잡합니다.",
+        "a": "공식 화면의 명령을 그대로 복사해 관리자 권한 PowerShell 에 붙여 넣으면 됩니다. 직접 입력할 필요가 없습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Chocolatey 설치 안내",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://chocolatey.org/install",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Chocolatey 공식 다운로드",
+        "href": "https://chocolatey.org/install"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "Sysinternals-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "유틸리티"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "Sysinternals",
+    "titleBottom": "다운로드",
+    "listTitle": "Sysinternals 다운로드",
+    "listMeta": "무료 · 마이크로소프트 · 시스템 도구",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "Sysinternals 다운로드",
+    "sourceNote": "SOURCE: 마이크로소프트 Sysinternals 유틸리티 공식 화면 · '프로세스 유틸리티' 분류",
+    "description": "Sysinternals 를 마이크로소프트 공식 화면으로 연결합니다. 시스템을 깊이 들여다보는 무료 도구 모음입니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "마이크로소프트"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무엇이 들어 있는지",
+        "body": "프로세스 유틸리티, 파일과 디스크, 네트워크, 보안 같은 분류로 도구가 나뉘어 있습니다. 공식 설명에 Autoruns 는 부팅할 때 자동으로 시작되도록 구성된 프로그램을 확인하는 도구로, 또 다른 명령줄 도구는 어떤 파일이 어떤 프로세스에 의해 열려 있는지 보여 준다고 적혀 있습니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 마이크로소프트 Sysinternals 공식 화면이 열립니다. 도구를 하나씩 받거나 묶음으로 받을 수 있습니다."
+      },
+      {
+        "title": "설치가 필요 없습니다",
+        "body": "대부분 압축을 풀어 실행 파일을 바로 실행하는 방식입니다. USB 에 넣어 다닐 수 있습니다."
+      },
+      {
+        "title": "관리자 권한",
+        "body": "시스템 정보를 읽는 도구라 관리자 권한으로 실행해야 하는 경우가 많습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료인가요?",
+        "a": "마이크로소프트가 무료로 배포합니다."
+      },
+      {
+        "q": "어떤 도구가 유용한가요?",
+        "a": "PC 가 느릴 때는 Autoruns 로 자동 시작 프로그램을 정리하는 것이 효과가 큽니다. 파일이 사용 중이라 안 지워질 때는 어떤 프로세스가 그 파일을 열고 있는지 보여 주는 도구가 쓸모 있습니다."
+      },
+      {
+        "q": "설치해야 하나요?",
+        "a": "대부분 압축을 풀어 바로 실행합니다. 설치 과정이 없습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Sysinternals 유틸리티",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://learn.microsoft.com/ko-kr/sysinternals/downloads/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Sysinternals 공식",
+        "href": "https://learn.microsoft.com/ko-kr/sysinternals/downloads/"
+      },
+      {
+        "tag": "SW",
+        "name": "Process Explorer",
+        "href": "/download/software/Process-Explorer-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "Process-Explorer-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "유틸리티"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "Process Explorer",
+    "titleBottom": "다운로드",
+    "listTitle": "Process Explorer 다운로드",
+    "listMeta": "무료 · 마이크로소프트 · 작업 관리자 대체",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "Process Explorer 다운로드",
+    "sourceNote": "SOURCE: 마이크로소프트 프로세스 탐색기 공식 화면",
+    "description": "Process Explorer 를 마이크로소프트 공식 화면으로 연결합니다. 작업 관리자보다 자세히 보여 주는 도구로, 파일이 잠겨 삭제가 안 될 때 쓰는 법을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "마이크로소프트"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "작업 관리자로 안 될 때 씁니다",
+        "body": "어떤 프로그램이 자원을 쓰는지, 어떤 프로그램이 파일을 붙잡고 있는지 작업 관리자보다 자세히 보여 줍니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 마이크로소프트 프로세스 탐색기 공식 화면이 열립니다."
+      },
+      {
+        "title": "설치 없이 실행",
+        "body": "압축을 풀고 실행 파일을 바로 실행합니다. 관리자 권한으로 실행하면 더 많은 정보가 보입니다."
+      },
+      {
+        "title": "잠긴 파일 찾기",
+        "body": "Find › Find Handle or DLL 에서 파일 이름을 넣으면 그 파일을 잡고 있는 프로그램이 나옵니다. 삭제가 안 될 때 이 방법으로 원인을 찾습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "파일이 사용 중이라 삭제가 안 됩니다.",
+        "a": "Process Explorer 의 Find Handle or DLL 에서 파일 이름을 검색하면 그 파일을 잡고 있는 프로그램이 나옵니다. 그 프로그램을 닫으면 삭제됩니다."
+      },
+      {
+        "q": "작업 관리자와 뭐가 다른가요?",
+        "a": "프로세스의 부모·자식 관계, 열려 있는 파일과 DLL 까지 보여 줍니다. 원인을 찾을 때 훨씬 자세합니다."
+      },
+      {
+        "q": "무료인가요?",
+        "a": "마이크로소프트가 무료로 배포합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Process Explorer",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://learn.microsoft.com/ko-kr/sysinternals/downloads/process-explorer",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "마이크로소프트 공식 다운로드",
+        "href": "https://learn.microsoft.com/ko-kr/sysinternals/downloads/process-explorer"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "NirSoft-도구-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "유틸리티"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "NirSoft 도구",
+    "titleBottom": "다운로드",
+    "listTitle": "NirSoft 도구 다운로드",
+    "listMeta": "무료 · NirSoft · 소형 유틸리티",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "NirSoft 도구 다운로드",
+    "sourceNote": "SOURCE: NirSoft Freeware Tools 공식 화면",
+    "description": "NirSoft 유틸리티를 공식 화면으로 연결합니다. 한 가지 일만 하는 작은 무료 도구가 수백 개 모여 있습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "NirSoft"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무엇에 쓰는지",
+        "body": "저장된 Wi-Fi 비밀번호 보기, USB 연결 기록 확인, 브라우저 방문 기록 보기처럼 한 가지 일만 하는 작은 도구들입니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 NirSoft 공식 도구 목록이 열립니다. 화면이 영어이고 목록이 아주 깁니다."
+      },
+      {
+        "title": "설치 없이 실행",
+        "body": "대부분 exe 하나만 받아 바로 실행합니다."
+      },
+      {
+        "title": "백신 경고가 뜰 수 있습니다",
+        "body": "비밀번호나 시스템 정보를 읽는 도구라 백신이 위험으로 잡는 경우가 있습니다. 공식 화면에서 받은 것이라면 오탐인 경우가 많지만, 용도를 이해하고 쓰세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "백신이 위험하다고 합니다.",
+        "a": "시스템 정보나 저장된 비밀번호를 읽는 도구라 백신이 경계합니다. 공식 화면에서 받았다면 오탐인 경우가 많습니다. 다만 정말 필요한 도구인지 먼저 생각해 보세요."
+      },
+      {
+        "q": "무료인가요?",
+        "a": "무료로 배포됩니다. 다만 일부 도구는 상업적 사용에 조건이 있으니 각 도구 페이지를 확인하세요."
+      },
+      {
+        "q": "Wi-Fi 비밀번호를 볼 수 있나요?",
+        "a": "내 PC 에 저장된 것을 보여 주는 도구가 있습니다. 남의 PC 나 네트워크에 쓰면 문제가 됩니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "NirSoft 도구 목록",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.nirsoft.net/utils/index.html",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "NirSoft 공식 다운로드",
+        "href": "https://www.nirsoft.net/utils/index.html"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "Foxit-PDF-Editor-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "문서"
+    ],
+    "badges": [
+      "공식 배포처",
+      "체험판",
+      "한국어"
+    ],
+    "titleTop": "Foxit PDF Editor",
+    "titleBottom": "다운로드",
+    "listTitle": "Foxit PDF Editor 다운로드",
+    "listMeta": "체험판 · Foxit · PDF 편집",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "Foxit PDF Editor 다운로드",
+    "sourceNote": "SOURCE: Foxit PDF Editor 공식 화면 · 체험판 제공",
+    "description": "Foxit PDF Editor 를 공식 화면으로 연결합니다. PDF 안의 글자를 직접 고치는 유료 프로그램으로, 무료로 되는 범위를 먼저 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "체험판"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Foxit"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무료 뷰어로 될지 먼저 확인",
+        "body": "보기·인쇄·주석까지는 무료 Foxit Reader 로 됩니다. 편집이 정말 필요한지 먼저 생각해 보세요."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Foxit PDF Editor 공식 화면이 열립니다. 체험판을 받을 수 있습니다."
+      },
+      {
+        "title": "체험 기간 확인",
+        "body": "유료 제품이라 체험 후 구매하는 방식입니다. 조건을 화면에서 확인하세요."
+      },
+      {
+        "title": "원본이 있으면 그쪽이 빠릅니다",
+        "body": "PDF 를 만든 원본 문서(워드·한글)가 있다면 그것을 고쳐 다시 PDF 로 만드는 편이 결과가 깔끔합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료로 PDF 를 편집할 수 없나요?",
+        "a": "글자를 직접 고치는 편집은 무료 프로그램으로 거의 안 됩니다. 합치기·나누기·주석은 무료로 됩니다."
+      },
+      {
+        "q": "어도비 아크로뱃과 뭐가 다른가요?",
+        "a": "둘 다 유료 PDF 편집기입니다. 가격과 기능 구성이 다르니 체험판으로 비교해 보세요."
+      },
+      {
+        "q": "보기만 하면 되는데요.",
+        "a": "무료 Foxit Reader 를 쓰면 됩니다. 이 색인에 따로 정리해 두었습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Foxit PDF Editor 체험판",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.foxit.com/pdf-editor/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Foxit PDF Editor 공식",
+        "href": "https://www.foxit.com/pdf-editor/"
+      },
+      {
+        "tag": "SW",
+        "name": "폭싯 리더 (무료 뷰어)",
+        "href": "/download/software/%ED%8F%AD%EC%8B%AF-%EB%A6%AC%EB%8D%94-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "윈도우-숨은-기능-도구",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "유틸리티"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "윈도우 숨은 기능",
+    "titleBottom": "도구",
+    "listTitle": "윈도우 숨은 기능 도구",
+    "listMeta": "무료 4가지 · 마이크로소프트 배포",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "윈도우 숨은 기능 도구",
+    "sourceNote": "SOURCE: 마이크로소프트 공식 배포 화면",
+    "description": "마이크로소프트가 무료로 배포하는데 잘 알려지지 않은 도구를 모았습니다. 따로 프로그램을 사거나 받을 필요가 없는 것들입니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "마이크로소프트"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "만든 곳이 마이크로소프트입니다",
+        "body": "여기 있는 도구는 모두 마이크로소프트가 무료로 배포합니다. 다른 곳에서 비슷한 기능을 유료로 파는 경우가 있어 먼저 확인해 볼 만합니다."
+      },
+      {
+        "title": "창 배치와 이름 바꾸기는 PowerToys",
+        "body": "위 버튼으로 PowerToys 를 받습니다. 화면 격자 배치, 사진 크기 일괄 변경, 파일 이름 일괄 변경이 한 묶음입니다."
+      },
+      {
+        "title": "시스템을 깊이 보려면 Sysinternals",
+        "body": "PC 가 느리거나 파일이 안 지워질 때 원인을 찾는 도구 모음입니다. 공식 설명에 Autoruns 는 부팅할 때 자동으로 시작되는 프로그램을 확인하는 도구라고 적혀 있습니다."
+      },
+      {
+        "title": "설치를 명령으로 하려면 WinGet",
+        "body": "이미 Windows 에 들어 있는 경우가 많습니다. 포맷 후 여러 프로그램을 한 번에 깔 때 편합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "따로 프로그램을 사야 하나요?",
+        "a": "여기 있는 것은 모두 마이크로소프트가 무료로 배포합니다. 창 배치나 파일 이름 일괄 변경 같은 기능을 유료로 사기 전에 먼저 써 보세요."
+      },
+      {
+        "q": "PC 가 느린데 뭘 쓰나요?",
+        "a": "Sysinternals 의 Autoruns 로 시작 프로그램을 정리하고 Process Explorer 로 자원을 쓰는 프로그램을 찾는 조합이 실용적입니다."
+      },
+      {
+        "q": "파일이 삭제되지 않습니다.",
+        "a": "Process Explorer 로 그 파일을 잡고 있는 프로그램을 찾을 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "PowerToys 설치 안내",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://learn.microsoft.com/ko-kr/windows/powertoys/install",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "PowerToys",
+        "note": "창 배치·이미지 크기·이름 일괄 변경.",
+        "href": "/download/software/PowerToys-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "Sysinternals",
+        "note": "시스템을 깊이 보는 도구 모음.",
+        "href": "/download/software/Sysinternals-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "Process Explorer",
+        "note": "작업 관리자보다 자세히.",
+        "href": "/download/software/Process-Explorer-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "윈도우 터미널",
+        "note": "명령줄을 탭으로 씁니다.",
+        "href": "/download/software/%EC%9C%88%EB%8F%84%EC%9A%B0-%ED%84%B0%EB%AF%B8%EB%84%90-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "WinGet",
+        "note": "명령 한 줄로 프로그램 설치.",
+        "href": "/download/software/WinGet-%EC%82%AC%EC%9A%A9%EB%B2%95"
+      }
+    ],
+    "picksTitle": "마이크로소프트 무료 도구"
+  },
+  {
+    "slug": "프로그램-한번에-설치하기",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "설치 가이드"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "프로그램 한 번에",
+    "titleBottom": "설치하기",
+    "listTitle": "프로그램 한 번에 설치하기",
+    "listMeta": "포맷 후 세팅 시간 줄이기",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "프로그램 한 번에 설치하기",
+    "sourceNote": "SOURCE: 마이크로소프트 WinGet 공식 안내 · Chocolatey 공식 화면",
+    "description": "포맷 후 프로그램을 하나씩 받아 설치하는 대신 명령으로 한 번에 끝내는 방법을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "마이크로소프트"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "winget 이 이미 있는지 확인",
+        "body": "명령 프롬프트에서 winget --version 을 쳐 보세요. 버전이 나오면 바로 쓸 수 있습니다. Windows 10·11 에는 대부분 들어 있습니다."
+      },
+      {
+        "title": "이름 찾기",
+        "body": "winget search 크롬 처럼 검색하면 설치할 이름이 나옵니다. 예를 들어 크롬은 Google.Chrome 입니다."
+      },
+      {
+        "title": "한 줄씩 설치",
+        "body": "winget install Google.Chrome 처럼 씁니다. 여러 개를 이어 쓰면 순서대로 설치됩니다."
+      },
+      {
+        "title": "설치 파일을 직접 받아야 하는 것도 있습니다",
+        "body": "등록되지 않은 국산 프로그램이나 라이선스가 필요한 것은 공식 화면에서 직접 받아야 합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "정말 시간이 줄어드나요?",
+        "a": "프로그램 열 개를 사이트마다 들어가 받는 것과 명령 열 줄을 붙여 넣는 것의 차이입니다. 여러 대를 세팅하면 차이가 더 큽니다."
+      },
+      {
+        "q": "어떤 프로그램이 등록돼 있나요?",
+        "a": "winget search 이름 으로 검색해 보면 됩니다. 크롬·VS Code·7-Zip 같은 대부분의 프로그램이 있습니다."
+      },
+      {
+        "q": "안전한가요?",
+        "a": "마이크로소프트가 운영하는 저장소에서 각 제작사의 공식 파일을 받습니다. 자료실 사이트에서 받는 것보다 안전합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "WinGet 공식 안내",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://learn.microsoft.com/ko-kr/windows/package-manager/winget/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "WinGet",
+        "note": "Windows 에 이미 있습니다.",
+        "href": "/download/software/WinGet-%EC%82%AC%EC%9A%A9%EB%B2%95"
+      },
+      {
+        "title": "Chocolatey",
+        "note": "등록된 프로그램이 더 많습니다.",
+        "href": "/download/software/Chocolatey-%EC%84%A4%EC%B9%98"
+      },
+      {
+        "title": "포맷 후 필수 프로그램",
+        "note": "무엇을 깔지 정하는 목록.",
+        "href": "/download/software/%ED%8F%AC%EB%A7%B7-%ED%9B%84-%ED%95%84%EC%88%98-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8"
+      }
+    ],
+    "picksTitle": "한 번에 설치하는 도구"
+  },
+  {
+    "slug": "윈도우10-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "운영체제"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료 도구",
+      "한국어"
+    ],
+    "titleTop": "윈도우10",
+    "titleBottom": "다운로드",
+    "listTitle": "윈도우10 다운로드",
+    "listMeta": "무료 도구 · 마이크로소프트 · 설치 미디어",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "윈도우10 다운로드",
+    "sourceNote": "SOURCE: 마이크로소프트 공식 Windows 10 다운로드 화면",
+    "description": "윈도우10 설치 파일을 마이크로소프트 공식 화면으로 연결합니다. 지원 종료를 앞둔 점과 USB 만드는 법을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료 도구"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "마이크로소프트"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "지원 기간을 먼저 확인하세요",
+        "body": "윈도우10 은 마이크로소프트가 정한 지원 종료 일정이 있습니다. 새로 설치하려는 것이라면 윈도우11 이 가능한 PC 인지 먼저 확인하는 편이 낫습니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 마이크로소프트 공식 Windows 10 다운로드 화면이 열립니다. 미디어 생성 도구와 ISO 가 있습니다."
+      },
+      {
+        "title": "자료부터 백업",
+        "body": "새로 설치하면 그 드라이브의 자료가 전부 지워집니다. 사진·문서·즐겨찾기를 먼저 옮기세요."
+      },
+      {
+        "title": "USB 만들기",
+        "body": "미디어 생성 도구를 받아 실행하고 8GB 이상 USB 를 꽂으면 설치 USB 가 만들어집니다. USB 안의 자료는 지워집니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "윈도우11 대신 10 을 써도 되나요?",
+        "a": "쓸 수는 있지만 지원 종료 일정이 있습니다. 보안 업데이트가 끊기면 위험해지니 공식 화면에서 일정을 확인하고 결정하세요."
+      },
+      {
+        "q": "정품 인증은 어떻게 하나요?",
+        "a": "설치 파일은 무료지만 인증에는 제품 키나 기존 라이선스가 필요합니다."
+      },
+      {
+        "q": "내 PC 가 윈도우11 을 지원하나요?",
+        "a": "TPM 2.0 같은 요구 사항이 있습니다. 마이크로소프트의 PC 상태 검사 도구로 확인할 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Windows 10 다운로드",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.microsoft.com/ko-kr/software-download/windows10",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Windows 10 공식 다운로드",
+        "href": "https://www.microsoft.com/ko-kr/software-download/windows10"
+      },
+      {
+        "tag": "SW",
+        "name": "윈도우11 다운로드",
+        "href": "/download/software/%EC%9C%88%EB%8F%84%EC%9A%B011-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "아이클라우드-Windows-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "클라우드"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "아이클라우드",
+    "titleBottom": "Windows 다운로드",
+    "listTitle": "아이클라우드 Windows 다운로드",
+    "listMeta": "무료 · 애플 · 사진/파일 동기화",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "아이클라우드 Windows 다운로드",
+    "sourceNote": "SOURCE: Apple 공식 'Windows용 iCloud 다운로드하기' 지원 문서",
+    "description": "Windows용 iCloud 를 애플 공식 화면으로 연결합니다. 아이폰 사진을 PC 에서 보는 가장 간단한 방법입니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Apple"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무엇을 할 수 있는지",
+        "body": "아이폰에서 찍은 사진과 iCloud 드라이브 파일을 Windows 탐색기에서 볼 수 있습니다. 아이폰을 케이블로 연결하지 않아도 됩니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Apple 공식 지원 문서가 열립니다. 설치 방법이 안내되어 있습니다."
+      },
+      {
+        "title": "Apple 계정 로그인",
+        "body": "아이폰에서 쓰는 Apple 계정으로 로그인합니다. 2단계 인증 코드가 아이폰으로 옵니다."
+      },
+      {
+        "title": "동기화 항목 고르기",
+        "body": "사진·드라이브·북마크 중 필요한 것만 켤 수 있습니다. 사진을 전부 내려받으면 용량이 크니 주의하세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "아이폰 사진이 PC 에서 안 보입니다.",
+        "a": "iCloud 사진이 켜져 있는지 아이폰 설정에서 확인하고, PC 의 iCloud 에서도 사진 항목을 켜야 합니다."
+      },
+      {
+        "q": "HEIC 사진이 안 열립니다.",
+        "a": "아이폰 사진 형식입니다. 변환하거나 아이폰 설정에서 촬영 형식을 바꾸면 됩니다. 이 색인에 따로 정리해 두었습니다."
+      },
+      {
+        "q": "아이튠즈와 다른 건가요?",
+        "a": "아이튠즈는 케이블로 연결해 백업·동기화하는 프로그램이고, iCloud 는 인터넷으로 사진과 파일을 주고받습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Windows용 iCloud",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://support.apple.com/ko-kr/103232",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Windows용 iCloud (Apple 지원)",
+        "href": "https://support.apple.com/ko-kr/103232"
+      },
+      {
+        "tag": "SW",
+        "name": "HEIC JPG 변환",
+        "href": "/download/software/HEIC-JPG-%EB%B3%80%ED%99%98-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "OneNote-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "메모"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "OneNote",
+    "titleBottom": "다운로드",
+    "listTitle": "OneNote 다운로드",
+    "listMeta": "무료 · 마이크로소프트 · 필기",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "OneNote 다운로드",
+    "sourceNote": "SOURCE: OneNote 공식 다운로드 화면 · 무료 제공",
+    "description": "OneNote 를 공식 화면으로 연결합니다. 마이크로소프트가 무료로 주는 필기 프로그램으로, 태블릿 필기에 강합니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "마이크로소프트"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무료입니다",
+        "body": "OneNote 는 Microsoft 365 구독 없이도 무료로 씁니다. 공식 화면에 무료 다운로드로 안내되어 있습니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 OneNote 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "계정 로그인",
+        "body": "마이크로소프트 계정으로 로그인하면 메모가 OneDrive 에 저장돼 다른 기기에서도 보입니다."
+      },
+      {
+        "title": "필기 확인",
+        "body": "태블릿이나 터치 노트북이면 펜으로 바로 쓸 수 있습니다. 손글씨를 텍스트로 바꾸는 기능도 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료인가요?",
+        "a": "공식 화면에 무료 다운로드로 안내되어 있습니다. Microsoft 365 구독이 없어도 씁니다."
+      },
+      {
+        "q": "Windows 에 이미 있지 않나요?",
+        "a": "Windows 에 기본으로 들어 있는 경우가 있습니다. 시작 메뉴에서 OneNote 를 검색해 보세요."
+      },
+      {
+        "q": "노션과 뭐가 다른가요?",
+        "a": "OneNote 는 자유롭게 아무 위치에나 쓰는 방식이라 필기에 가깝습니다. 노션은 문서와 데이터베이스 정리에 강합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "OneNote 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.onenote.com/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "마이크로소프트 공식 다운로드",
+        "href": "https://www.onenote.com/download"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "Xbox-앱-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "게임 플랫폼"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "Xbox 앱",
+    "titleBottom": "다운로드",
+    "listTitle": "Xbox 앱 다운로드",
+    "listMeta": "무료 · 마이크로소프트 · PC 게임",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "Xbox 앱 다운로드",
+    "sourceNote": "SOURCE: XBOX PC 앱 공식 화면",
+    "description": "Xbox PC 앱을 공식 화면으로 연결합니다. Game Pass 게임을 설치하고 실행하는 프로그램입니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "마이크로소프트"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 XBOX PC 앱 공식 화면이 열립니다."
+      },
+      {
+        "title": "설치와 로그인",
+        "body": "설치 후 마이크로소프트 계정으로 로그인합니다."
+      },
+      {
+        "title": "Game Pass 구독 확인",
+        "body": "앱은 무료지만 게임을 하려면 Game Pass 구독이나 개별 구매가 필요합니다."
+      },
+      {
+        "title": "설치 위치 정하기",
+        "body": "게임 용량이 큽니다. 설정에서 설치 드라이브를 여유 있는 곳으로 바꿔 두세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "앱만 깔면 게임을 할 수 있나요?",
+        "a": "아닙니다. 앱은 무료지만 게임은 Game Pass 구독이나 개별 구매가 필요합니다."
+      },
+      {
+        "q": "Microsoft Store 와 다른 건가요?",
+        "a": "Xbox 앱은 게임에 특화된 화면이고 Game Pass 관리가 편합니다. 스토어에서도 게임을 살 수 있습니다."
+      },
+      {
+        "q": "게임 설치 위치를 바꿀 수 있나요?",
+        "a": "앱 설정에서 기본 설치 드라이브를 바꿀 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Xbox PC 앱",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.xbox.com/ko-KR/apps/xbox-app-on-pc",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "마이크로소프트 공식 다운로드",
+        "href": "https://www.xbox.com/ko-KR/apps/xbox-app-on-pc"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "Teams-무료-화상통화",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "화상회의"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "Teams 무료",
+    "titleBottom": "화상통화",
+    "listTitle": "Teams 무료 화상통화",
+    "listMeta": "무료 · 마이크로소프트 · 개인용",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "Teams 무료 화상통화",
+    "sourceNote": "SOURCE: Microsoft Teams 무료 온라인 모임 공식 화면",
+    "description": "개인용 Teams 를 공식 화면으로 연결합니다. 스카이프를 쓰던 개인 사용자가 옮겨 가는 곳이기도 합니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "마이크로소프트"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "직장용과 다릅니다",
+        "body": "회사 계정으로 쓰는 Teams 와 개인용은 별개입니다. 개인 마이크로소프트 계정으로 쓰는 것이 이쪽입니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Microsoft Teams 무료 화면이 열립니다."
+      },
+      {
+        "title": "설치 없이도 됩니다",
+        "body": "브라우저에서 바로 회의를 만들거나 참여할 수 있습니다. 자주 쓴다면 앱을 설치하세요."
+      },
+      {
+        "title": "계정 확인",
+        "body": "회사 계정과 개인 계정을 함께 쓰면 어느 쪽으로 로그인했는지 헷갈립니다. 프로필에서 확인하세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "스카이프는 어떻게 됐나요?",
+        "a": "스카이프 주소로 들어가면 Teams 무료 화면으로 연결됩니다. 개인용 화상통화는 이쪽으로 옮겨진 것으로 보입니다."
+      },
+      {
+        "q": "무료로 얼마나 쓸 수 있나요?",
+        "a": "무료 회의에 시간과 인원 제한이 있습니다. 공식 화면에서 지금 조건을 확인하세요."
+      },
+      {
+        "q": "회사 Teams 와 계정이 섞입니다.",
+        "a": "직장·학교 계정과 개인 계정은 별개입니다. 초대받은 주소에 맞는 계정으로 로그인해야 합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Teams 무료 화면",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://teams.live.com/free",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Teams 무료 공식 화면",
+        "href": "https://teams.live.com/free"
+      },
+      {
+        "tag": "SW",
+        "name": "팀즈 (직장·학교용)",
+        "href": "/download/software/%ED%8C%80%EC%A6%88-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "Microsoft-365-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "문서"
+    ],
+    "badges": [
+      "공식 배포처",
+      "구독제",
+      "한국어"
+    ],
+    "titleTop": "Microsoft 365",
+    "titleBottom": "다운로드",
+    "listTitle": "Microsoft 365 다운로드",
+    "listMeta": "구독제 · 마이크로소프트 · 오피스",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "Microsoft 365 다운로드",
+    "sourceNote": "SOURCE: Microsoft 365 개인용 공식 화면",
+    "description": "Microsoft 365 를 공식 화면으로 연결합니다. 워드·엑셀·파워포인트를 구독으로 쓰는 방식과 무료 대안을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "구독제"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "마이크로소프트"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무료로 될지 먼저 확인",
+        "body": "브라우저에서 쓰는 웹용 오피스는 무료입니다. 간단한 문서와 표라면 설치 없이 해결됩니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Microsoft 365 개인용 공식 화면이 열립니다. 요금제와 포함 앱을 확인할 수 있습니다."
+      },
+      {
+        "title": "구독 후 설치",
+        "body": "구독하면 계정으로 로그인해 설치 파일을 받습니다. 여러 기기에 설치할 수 있는 조건이 요금제마다 다릅니다."
+      },
+      {
+        "title": "OneDrive 용량 확인",
+        "body": "구독에 클라우드 저장 공간이 함께 오는 경우가 많습니다. 구독을 끊으면 그 용량도 줄어드니 주의하세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "한 번 사서 계속 쓸 수는 없나요?",
+        "a": "영구 라이선스 제품(Office 2021 등)이 따로 있습니다. 한 대에서 오래 쓸 거라면 그쪽이 유리할 수 있습니다."
+      },
+      {
+        "q": "무료 대안은?",
+        "a": "리브레오피스나 오픈오피스가 무료입니다. xlsx·docx 를 열고 저장할 수 있지만 복잡한 수식이나 매크로는 다르게 동작할 수 있습니다."
+      },
+      {
+        "q": "구독을 끊으면 문서가 사라지나요?",
+        "a": "문서는 남습니다. 다만 편집 기능이 제한되고 OneDrive 추가 용량도 줄어듭니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Microsoft 365 공식 화면",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.microsoft.com/ko-kr/microsoft-365",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Microsoft 365 공식",
+        "href": "https://www.microsoft.com/ko-kr/microsoft-365"
+      },
+      {
+        "tag": "SW",
+        "name": "리브레오피스 (무료 대안)",
+        "href": "/download/software/%EB%A6%AC%EB%B8%8C%EB%A0%88%EC%98%A4%ED%94%BC%EC%8A%A4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "아이폰-PC-연결-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "백업"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "아이폰 PC 연결",
+    "titleBottom": "프로그램",
+    "listTitle": "아이폰 PC 연결 프로그램",
+    "listMeta": "무료 · 사진 옮기기·백업",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "아이폰 PC 연결 프로그램",
+    "sourceNote": "SOURCE: Apple 공식 지원 화면",
+    "description": "아이폰을 Windows PC 와 연결하는 방법을 정리했습니다. 케이블로 할지 인터넷으로 할지에 따라 쓰는 것이 다릅니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Apple"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무엇을 할지 정하기",
+        "body": "사진만 옮기면 iCloud 로 충분합니다. 전체 백업이나 복원이 필요하면 아이튠즈가 필요합니다."
+      },
+      {
+        "title": "사진과 파일은 iCloud",
+        "body": "위 버튼으로 Windows용 iCloud 를 받습니다. 탐색기에서 아이폰 사진을 바로 볼 수 있습니다."
+      },
+      {
+        "title": "백업은 아이튠즈",
+        "body": "케이블로 연결해 전체 백업을 뜨려면 아이튠즈를 설치합니다. 아이폰에서 이 컴퓨터를 신뢰를 눌러야 인식됩니다."
+      },
+      {
+        "title": "케이블 확인",
+        "body": "충전 전용 케이블은 데이터가 오가지 않습니다. 인식이 안 되면 케이블부터 바꿔 보세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "아이폰이 PC 에 인식되지 않습니다.",
+        "a": "아이폰 화면에서 이 컴퓨터를 신뢰를 눌렀는지 확인하세요. 케이블이 충전 전용이어도 인식되지 않습니다."
+      },
+      {
+        "q": "사진만 옮기고 싶습니다.",
+        "a": "iCloud 사진을 켜면 탐색기에서 바로 볼 수 있습니다. 케이블 없이 됩니다."
+      },
+      {
+        "q": "HEIC 사진이 안 열립니다.",
+        "a": "아이폰 사진 형식입니다. 변환하거나 아이폰 설정 › 카메라 › 포맷을 높은 호환성으로 바꾸세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Windows용 iCloud",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://support.apple.com/ko-kr/103232",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "Windows용 iCloud",
+        "note": "사진과 파일을 인터넷으로.",
+        "href": "/download/software/%EC%95%84%EC%9D%B4%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-Windows-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "아이튠즈",
+        "note": "케이블 연결과 전체 백업.",
+        "href": "/download/software/%EC%95%84%EC%9D%B4%ED%8A%A0%EC%A6%88-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "HEIC JPG 변환",
+        "note": "아이폰 사진이 안 열릴 때.",
+        "href": "/download/software/HEIC-JPG-%EB%B3%80%ED%99%98-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8"
+      }
+    ],
+    "picksTitle": "아이폰 연결에 쓰는 것"
+  },
+  {
+    "slug": "PC-게임-플랫폼-비교",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "게임 플랫폼"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "PC 게임 플랫폼",
+    "titleBottom": "다운로드",
+    "listTitle": "PC 게임 플랫폼 다운로드",
+    "listMeta": "4곳 · 무료 게임과 구독",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "PC 게임 플랫폼 다운로드",
+    "sourceNote": "SOURCE: 각 플랫폼 공식 화면",
+    "description": "PC 게임을 사고 설치하는 플랫폼을 비교했습니다. 무료 게임과 구독 방식의 차이를 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "플랫폼별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "플랫폼마다 라이브러리가 따로입니다",
+        "body": "스팀에서 산 게임은 에픽이나 Xbox 에서 쓸 수 없습니다. 사기 전에 어느 플랫폼인지 확인하세요."
+      },
+      {
+        "title": "가장 큰 곳은 스팀",
+        "body": "위 버튼으로 스팀을 받습니다. 게임 수가 가장 많고 할인도 잦습니다."
+      },
+      {
+        "title": "무료 게임을 받으려면 에픽",
+        "body": "에픽게임즈는 주기적으로 게임을 무료로 줍니다. 받아 두면 계정에 계속 남습니다."
+      },
+      {
+        "title": "구독으로 여러 개를 하려면 Xbox",
+        "body": "Game Pass 는 구독하는 동안 여러 게임을 할 수 있습니다. 구독을 끊으면 못 합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "플랫폼 사이에 게임을 옮길 수 있나요?",
+        "a": "안 됩니다. 각 플랫폼의 계정과 라이브러리가 따로입니다."
+      },
+      {
+        "q": "무료 게임은 어디가 많나요?",
+        "a": "에픽게임즈가 주기적으로 게임을 무료 배포합니다. 받아 두면 계정에 남습니다."
+      },
+      {
+        "q": "구독과 구매 중 뭐가 나은가요?",
+        "a": "여러 게임을 조금씩 해 보려면 구독, 특정 게임을 오래 하려면 구매가 낫습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Steam 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://store.steampowered.com/about/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "스팀",
+        "note": "게임 수가 가장 많고 할인이 잦습니다.",
+        "href": "/download/software/%EC%8A%A4%ED%8C%80-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "에픽게임즈",
+        "note": "무료 게임을 주기적으로 배포합니다.",
+        "href": "/download/software/%EC%97%90%ED%94%BD%EA%B2%8C%EC%9E%84%EC%A6%88-%EB%9F%B0%EC%B2%98-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "Xbox 앱",
+        "note": "Game Pass 구독으로 여러 게임을.",
+        "href": "/download/software/Xbox-%EC%95%B1-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "넥슨플레이",
+        "note": "국내 온라인 게임 런처.",
+        "href": "/download/game/%EB%84%A5%EC%8A%A8%ED%94%8C%EB%A0%88%EC%9D%B4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "PC 게임 플랫폼"
+  },
+  {
+    "slug": "윈도우-재설치-준비",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "설치 가이드"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료 도구",
+      "한국어"
+    ],
+    "titleTop": "윈도우 재설치",
+    "titleBottom": "준비물",
+    "listTitle": "윈도우 재설치 준비물",
+    "listMeta": "설치 미디어 · 백업 · 드라이버",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "윈도우 재설치 준비물",
+    "sourceNote": "SOURCE: 마이크로소프트 공식 다운로드 화면",
+    "description": "윈도우를 새로 설치하기 전에 준비할 것을 순서대로 정리했습니다. 빠뜨리면 설치 후에 고생하는 항목들입니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료 도구"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "마이크로소프트"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "자료 백업이 첫 번째",
+        "body": "새로 설치하면 그 드라이브가 통째로 지워집니다. 사진·문서·즐겨찾기·공인인증서를 외장하드나 클라우드에 먼저 옮기세요."
+      },
+      {
+        "title": "랜 드라이버를 USB 에",
+        "body": "설치 후 랜 드라이버가 없으면 인터넷이 안 되고, 그러면 아무것도 받을 수 없습니다. 미리 받아 USB 에 넣어 두세요."
+      },
+      {
+        "title": "설치 USB 만들기",
+        "body": "위 버튼으로 윈도우11 공식 화면을 열어 미디어 생성 도구를 받습니다. 8GB 이상 USB 가 필요하고 안의 자료는 지워집니다."
+      },
+      {
+        "title": "제품 키 확인",
+        "body": "기존 PC 라면 대부분 자동으로 인증됩니다. 정품 스티커나 구매 내역을 미리 확인해 두면 안심입니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무엇부터 준비하나요?",
+        "a": "자료 백업 → 랜 드라이버 USB 저장 → 설치 USB 만들기 순서입니다. 랜 드라이버를 빠뜨리면 설치 후 인터넷이 안 돼 곤란해집니다."
+      },
+      {
+        "q": "제품 키가 없습니다.",
+        "a": "기존에 정품 인증된 PC 라면 하드웨어에 연결된 라이선스로 자동 인증되는 경우가 많습니다."
+      },
+      {
+        "q": "설치 후 무엇부터 하나요?",
+        "a": "칩셋 드라이버 → 나머지 드라이버 → 윈도우 업데이트 → 필수 프로그램 순서가 무난합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Windows 11 다운로드",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.microsoft.com/ko-kr/software-download/windows11",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "DRV",
+        "name": "포맷 전 드라이버 준비",
+        "href": "/download/driver/%ED%8F%AC%EB%A7%B7-%EC%A0%84-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%A4%80%EB%B9%84"
+      },
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "윈도우11",
+        "note": "설치 미디어 만들기.",
+        "href": "/download/software/%EC%9C%88%EB%8F%84%EC%9A%B011-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "윈도우10",
+        "note": "10 으로 설치할 경우.",
+        "href": "/download/software/%EC%9C%88%EB%8F%84%EC%9A%B010-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "Rufus",
+        "note": "세부 설정이 필요한 USB 만들기.",
+        "href": "/download/software/Rufus-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "PC 백업",
+        "note": "자료를 먼저 옮기세요.",
+        "href": "/download/software/PC-%EB%B0%B1%EC%97%85-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8"
+      },
+      {
+        "title": "포맷 후 필수 프로그램",
+        "note": "설치 후 무엇을 깔지.",
+        "href": "/download/software/%ED%8F%AC%EB%A7%B7-%ED%9B%84-%ED%95%84%EC%88%98-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8"
+      }
+    ],
+    "picksTitle": "재설치 준비물"
+  },
+  {
+    "slug": "오피스-무료-대안",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "문서"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "오피스",
+    "titleBottom": "무료 대안",
+    "listTitle": "오피스 무료 대안",
+    "listMeta": "무료 3가지 · 호환 범위",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "오피스 무료 대안",
+    "sourceNote": "SOURCE: 각 제작사 공식 배포 화면",
+    "description": "MS 오피스 없이 문서를 다루는 방법을 정리했습니다. 무료로 되는 범위와 호환에서 깨지는 지점을 갈랐습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "웹용 오피스가 가장 호환이 좋습니다",
+        "body": "브라우저에서 쓰는 무료 오피스는 마이크로소프트가 만든 것이라 서식이 거의 그대로입니다. 간단한 작업이면 이걸로 끝입니다."
+      },
+      {
+        "title": "설치형이 필요하면 리브레오피스",
+        "body": "위 버튼으로 리브레오피스를 받습니다. 인터넷 없이 쓰고 docx·xlsx 로 저장할 수 있습니다."
+      },
+      {
+        "title": "저장 형식을 바꿔 두세요",
+        "body": "리브레오피스는 기본 저장 형식이 ODF 입니다. 도구 › 옵션에서 docx·xlsx 로 바꿔 두면 주고받기 편합니다."
+      },
+      {
+        "title": "깨지는 것을 알고 쓰세요",
+        "body": "복잡한 수식, 매크로, 정교한 표 서식은 배치가 달라질 수 있습니다. 중요한 문서는 PDF 로 내보내 확인하세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "엑셀 파일이 그대로 열리나요?",
+        "a": "일반적인 표와 수식은 열립니다. 다만 복잡한 함수나 매크로는 동작이 다를 수 있습니다. 중요한 파일은 열어서 확인하세요."
+      },
+      {
+        "q": "무료로 가장 호환이 좋은 방법은?",
+        "a": "브라우저에서 쓰는 웹용 오피스입니다. 마이크로소프트가 만든 것이라 서식이 거의 유지됩니다."
+      },
+      {
+        "q": "한글(HWP)도 되나요?",
+        "a": "안정적이지 않습니다. HWP 는 한컴 뷰어로 여는 편이 확실합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "리브레오피스 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://ko.libreoffice.org/download/libreoffice/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "리브레오피스",
+        "note": "설치형 무료. 개발이 가장 활발합니다.",
+        "href": "/download/software/%EB%A6%AC%EB%B8%8C%EB%A0%88%EC%98%A4%ED%94%BC%EC%8A%A4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "오픈오피스",
+        "note": "같은 뿌리. 아파치 배포.",
+        "href": "/download/software/%EC%98%A4%ED%94%88%EC%98%A4%ED%94%BC%EC%8A%A4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "MS 오피스",
+        "note": "웹용은 무료. 설치형은 구독.",
+        "href": "/download/software/MS-%EC%98%A4%ED%94%BC%EC%8A%A4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "한글 뷰어",
+        "note": "HWP 는 이쪽이 확실합니다.",
+        "href": "/download/software/%ED%95%9C%EA%B8%80-%EB%B7%B0%EC%96%B4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "오피스 대안"
+  },
+  {
+    "slug": "Signal-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "메신저"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "Signal",
+    "titleBottom": "다운로드",
+    "listTitle": "Signal 다운로드",
+    "listMeta": "무료 · Signal · 보안 메신저",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "Signal 다운로드",
+    "sourceNote": "SOURCE: Signal 한국어 공식 다운로드 화면",
+    "description": "Signal 을 공식 한국어 화면으로 연결합니다. 대화 내용이 서버에 남지 않는 방식이라 PC 연동에 휴대폰이 필요한 구조를 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Signal"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "휴대폰에 먼저 설치해야 합니다",
+        "body": "Signal 은 휴대폰이 주 기기입니다. PC 판은 휴대폰과 연결해서 쓰는 방식이라 휴대폰에 먼저 설치하고 가입해야 합니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Signal 한국어 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "QR 로 연결",
+        "body": "PC 판을 실행하면 QR 코드가 나옵니다. 휴대폰 Signal 의 설정에서 기기 연결로 찍으면 됩니다."
+      },
+      {
+        "title": "지난 대화는 안 옮겨집니다",
+        "body": "PC 에서는 연결한 다음부터의 대화가 보입니다. 대화가 서버에 저장되지 않는 구조라 그렇습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "휴대폰 없이 PC 에서만 쓸 수 있나요?",
+        "a": "안 됩니다. 휴대폰에 먼저 가입하고 PC 를 연결하는 방식입니다."
+      },
+      {
+        "q": "지난 대화가 PC 에서 안 보입니다.",
+        "a": "연결한 시점 이후의 대화만 보입니다. 대화를 서버에 저장하지 않는 방식이라 그렇습니다. 텔레그램과 다른 점입니다."
+      },
+      {
+        "q": "무료인가요?",
+        "a": "무료입니다. 비영리 재단이 기부로 운영합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Signal 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://signal.org/ko/download/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Signal 공식 다운로드",
+        "href": "https://signal.org/ko/download/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "Bitwarden-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "보안"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "Bitwarden",
+    "titleBottom": "다운로드",
+    "listTitle": "Bitwarden 다운로드",
+    "listMeta": "무료판 있음 · Bitwarden · 비밀번호 관리",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "Bitwarden 다운로드",
+    "sourceNote": "SOURCE: Bitwarden 공식 다운로드 화면 · Free 요금제 제공",
+    "description": "Bitwarden 을 공식 화면으로 연결합니다. 비밀번호를 서버에 맡기는 방식으로, 키패스와 어느 쪽을 쓸지 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Bitwarden"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "마스터 비밀번호를 정합니다",
+        "body": "이 하나로 모든 비밀번호가 열립니다. 잊으면 복구할 방법이 없으니 반드시 기억하거나 안전한 곳에 적어 두세요."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Bitwarden 공식 다운로드 화면이 열립니다. PC 앱·브라우저 확장·모바일 앱이 있습니다."
+      },
+      {
+        "title": "브라우저 확장도 함께",
+        "body": "실제로 편한 것은 브라우저 확장입니다. 로그인 화면에서 자동으로 채워 줍니다."
+      },
+      {
+        "title": "2단계 인증 켜기",
+        "body": "설정에서 2단계 인증을 켜 두면 마스터 비밀번호가 새어도 한 겹 더 막습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료로 쓸 수 있나요?",
+        "a": "공식 화면에 Free 요금제가 안내되어 있습니다. 개인이 여러 기기에서 쓰는 것은 무료 범위에 들어갑니다."
+      },
+      {
+        "q": "키패스와 뭐가 다른가요?",
+        "a": "Bitwarden 은 서버에 저장해 기기 사이가 자동으로 맞춰집니다. 키패스는 파일을 내가 직접 보관하고 동기화도 직접 챙겨야 합니다."
+      },
+      {
+        "q": "마스터 비밀번호를 잊으면요?",
+        "a": "복구할 방법이 없습니다. 이건 어느 비밀번호 관리자든 같습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Bitwarden 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://bitwarden.com/download/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Bitwarden 공식 다운로드",
+        "href": "https://bitwarden.com/download/"
+      },
+      {
+        "tag": "SW",
+        "name": "키패스 (파일 직접 보관)",
+        "href": "/download/software/%ED%82%A4%ED%8C%A8%EC%8A%A4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "ProtonVPN-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "보안"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "ProtonVPN",
+    "titleBottom": "다운로드",
+    "listTitle": "ProtonVPN 다운로드",
+    "listMeta": "무료판 있음 · Proton · VPN",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "ProtonVPN 다운로드",
+    "sourceNote": "SOURCE: Proton VPN Windows 공식 다운로드 화면",
+    "description": "ProtonVPN 을 공식 화면으로 연결합니다. 무료 요금제가 있는 VPN 으로, 무료판의 제한과 VPN 이 하는 일을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Proton"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "VPN 이 무엇을 하는지 알고 쓰세요",
+        "body": "인터넷 연결을 다른 서버를 거쳐 보냅니다. 공용 와이파이에서 통신을 보호하는 데 쓰이고, 속도는 대개 느려집니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Proton VPN Windows 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "무료 요금제 확인",
+        "body": "무료로 쓸 수 있는 서버 수와 속도에 제한이 있습니다. 공식 화면에서 지금 조건을 확인하세요."
+      },
+      {
+        "title": "계정 만들고 로그인",
+        "body": "무료 요금제도 계정이 필요합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료 VPN 은 안전한가요?",
+        "a": "무료라고 다 같지 않습니다. 광고를 넣거나 접속 기록을 파는 곳도 있습니다. Proton 은 무료 요금제를 공식적으로 운영하고 정책을 공개하고 있으니 화면에서 확인하세요."
+      },
+      {
+        "q": "속도가 느려집니다.",
+        "a": "다른 서버를 거치기 때문에 정상입니다. 무료 요금제는 서버가 붐벼 더 느릴 수 있습니다."
+      },
+      {
+        "q": "VPN 을 쓰면 완전히 익명이 되나요?",
+        "a": "아닙니다. 로그인한 서비스는 여전히 누구인지 압니다. VPN 은 통신 경로를 가릴 뿐입니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Proton VPN Windows",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://protonvpn.com/download-windows",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Proton 공식 다운로드",
+        "href": "https://protonvpn.com/download-windows"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "Tor-브라우저-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "웹 브라우저"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "Tor 브라우저",
+    "titleBottom": "다운로드",
+    "listTitle": "Tor 브라우저 다운로드",
+    "listMeta": "무료 · Tor Project · 익명 브라우저",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "Tor 브라우저 다운로드",
+    "sourceNote": "SOURCE: Tor Project 공식 다운로드 화면",
+    "description": "Tor 브라우저를 공식 화면으로 연결합니다. 접속 경로를 여러 번 거쳐 추적을 어렵게 만드는 브라우저로, 느린 이유와 한계를 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Tor Project"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "느린 것이 정상입니다",
+        "body": "통신을 여러 서버를 거쳐 보내는 구조라 일반 브라우저보다 훨씬 느립니다. 영상 시청이나 대용량 다운로드에는 맞지 않습니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Tor Project 공식 다운로드 화면이 열립니다. 다른 곳에서 받지 마세요."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행합니다. 설치 없이 압축을 풀어 쓰는 방식이기도 합니다."
+      },
+      {
+        "title": "완전한 익명은 아닙니다",
+        "body": "로그인하는 순간 누구인지 드러납니다. 브라우저 설정을 바꾸거나 확장을 더하면 오히려 추적이 쉬워질 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "완전히 익명이 되나요?",
+        "a": "아닙니다. 로그인한 서비스는 누구인지 압니다. 브라우저 설정을 바꾸면 오히려 구분되기 쉬워집니다. 도구를 쓴다고 익명이 보장되지 않습니다."
+      },
+      {
+        "q": "왜 이렇게 느린가요?",
+        "a": "통신을 여러 서버를 거쳐 보내는 구조 때문입니다. 이건 설계상 그런 것이라 개선되지 않습니다."
+      },
+      {
+        "q": "일부 사이트가 차단됩니다.",
+        "a": "Tor 접속을 막는 사이트가 많습니다. 국내 서비스는 대부분 막혀 있다고 보면 됩니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Tor Browser 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.torproject.org/download/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Tor Project 공식 다운로드",
+        "href": "https://www.torproject.org/download/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "Calibre-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "문서"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "Calibre",
+    "titleBottom": "다운로드",
+    "listTitle": "Calibre 다운로드",
+    "listMeta": "무료 · 오픈소스 · 전자책 관리",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "Calibre 다운로드",
+    "sourceNote": "SOURCE: calibre 공식 다운로드 화면 · 오픈소스",
+    "description": "Calibre 를 공식 다운로드 화면으로 연결합니다. 전자책을 정리하고 형식을 바꾸는 프로그램으로, DRM 이 걸린 책은 안 되는 점을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "calibre"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 calibre 공식 다운로드 화면이 열립니다. Windows·Mac·Linux 판이 있습니다."
+      },
+      {
+        "title": "설치와 라이브러리 폴더",
+        "body": "처음 실행하면 전자책을 담을 폴더를 정합니다. 이 폴더가 곧 서재입니다."
+      },
+      {
+        "title": "형식 변환",
+        "body": "EPUB·MOBI·PDF 사이를 바꿀 수 있습니다. 전자책 단말기에 맞는 형식으로 바꿀 때 씁니다."
+      },
+      {
+        "title": "DRM 이 걸린 책은 안 됩니다",
+        "body": "서점에서 산 전자책은 대부분 DRM 이 걸려 있어 열리지 않습니다. DRM 해제는 저작권 문제가 생길 수 있어 이 색인에서 다루지 않습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "서점에서 산 전자책이 안 열립니다.",
+        "a": "DRM 이 걸려 있기 때문입니다. 각 서점의 전용 뷰어로 봐야 합니다."
+      },
+      {
+        "q": "어떤 형식을 지원하나요?",
+        "a": "EPUB·MOBI·AZW3·PDF 등 대부분의 전자책 형식을 다룹니다."
+      },
+      {
+        "q": "전자책 단말기로 보낼 수 있나요?",
+        "a": "USB 로 연결하거나 이메일로 보내는 기능이 있습니다. 단말기에 맞는 형식으로 자동 변환해 보낼 수도 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "calibre 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://calibre-ebook.com/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "calibre 공식 다운로드",
+        "href": "https://calibre-ebook.com/download"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "비밀번호-관리-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "보안"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "비밀번호 관리",
+    "titleBottom": "프로그램",
+    "listTitle": "비밀번호 관리 프로그램",
+    "listMeta": "무료 3가지 · 저장 방식이 다릅니다",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "비밀번호 관리 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 화면",
+    "description": "비밀번호 관리 프로그램을 저장 방식으로 비교했습니다. 서버에 맡기는 것과 파일로 직접 보관하는 것은 성격이 다릅니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "어디에 저장되는지부터 보세요",
+        "body": "Bitwarden 은 서버에 저장해 기기 사이가 자동으로 맞춰집니다. 키패스는 파일이 내 PC 에 있어 백업과 동기화를 직접 챙겨야 합니다."
+      },
+      {
+        "title": "브라우저에 저장하는 것보다는 낫습니다",
+        "body": "브라우저의 비밀번호 저장 기능도 있지만 전용 프로그램이 관리와 보안 면에서 낫습니다."
+      },
+      {
+        "title": "마스터 비밀번호는 반드시 기억",
+        "body": "어느 쪽이든 마스터 비밀번호를 잊으면 복구할 수 없습니다. 만든 사람도 열 수 없는 구조입니다."
+      },
+      {
+        "title": "2단계 인증 켜기",
+        "body": "서버형은 2단계 인증을 반드시 켜세요. 마스터 비밀번호가 새어도 한 겹 더 막습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "어느 쪽이 안전한가요?",
+        "a": "둘 다 암호화해서 보관합니다. 서버형은 회사를 믿는 것이고, 파일형은 내가 관리를 잘해야 합니다. 어느 쪽이든 마스터 비밀번호가 약하면 소용없습니다."
+      },
+      {
+        "q": "마스터 비밀번호를 잊으면요?",
+        "a": "복구할 방법이 없습니다. 이건 모든 비밀번호 관리자가 같습니다. 종이에 적어 안전한 곳에 두는 것도 방법입니다."
+      },
+      {
+        "q": "브라우저 저장 기능으로 충분하지 않나요?",
+        "a": "간단하지만 여러 브라우저나 앱을 오갈 때 불편합니다. 전용 프로그램이 관리가 편합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Bitwarden 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://bitwarden.com/download/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "Bitwarden",
+        "note": "서버 저장. 기기 사이가 자동으로 맞춰집니다.",
+        "href": "/download/software/Bitwarden-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "키패스",
+        "note": "파일을 내가 직접 보관. 오픈소스.",
+        "href": "/download/software/%ED%82%A4%ED%8C%A8%EC%8A%A4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "비밀번호 관리 프로그램"
+  },
+  {
+    "slug": "개인정보-보호-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "보안"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "개인정보 보호",
+    "titleBottom": "프로그램",
+    "listTitle": "개인정보 보호 프로그램",
+    "listMeta": "VPN·브라우저·메신저",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "개인정보 보호 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 화면",
+    "description": "통신과 기록을 보호하는 프로그램을 정리했습니다. 각각이 지켜 주는 범위가 다르다는 점부터 짚었습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무엇을 지키려는지 정하세요",
+        "body": "공용 와이파이에서 통신을 가리려면 VPN, 브라우저 추적을 줄이려면 브레이브, 대화 내용을 지키려면 Signal 입니다. 하나가 전부를 해 주지 않습니다."
+      },
+      {
+        "title": "공용 와이파이라면 VPN",
+        "body": "위 버튼으로 Proton VPN 을 받습니다. 무료 요금제가 있고 정책을 공개합니다."
+      },
+      {
+        "title": "무료 VPN 은 가려서 쓰세요",
+        "body": "무료라고 다 같지 않습니다. 광고를 넣거나 접속 기록을 파는 곳도 있습니다. 운영 주체와 정책이 공개된 곳을 쓰세요."
+      },
+      {
+        "title": "도구가 익명을 보장하지 않습니다",
+        "body": "로그인하는 순간 누구인지 드러납니다. 도구는 통신 경로나 추적을 줄일 뿐입니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "VPN 을 쓰면 완전히 익명인가요?",
+        "a": "아닙니다. 로그인한 서비스는 누구인지 압니다. VPN 은 통신 경로를 가릴 뿐입니다."
+      },
+      {
+        "q": "무료 VPN 을 써도 되나요?",
+        "a": "운영 주체와 정책이 공개된 곳이라면 공용 와이파이 정도에는 쓸 만합니다. 출처가 불분명한 무료 VPN 은 오히려 위험합니다."
+      },
+      {
+        "q": "브라우저 시크릿 모드로는 부족한가요?",
+        "a": "시크릿 모드는 내 PC 에 기록을 안 남길 뿐입니다. 접속하는 사이트나 통신사는 여전히 알 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Proton VPN Windows",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://protonvpn.com/download-windows",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "ProtonVPN",
+        "note": "통신 경로. 공용 와이파이에서.",
+        "href": "/download/software/ProtonVPN-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "브레이브",
+        "note": "브라우저 추적과 광고 차단.",
+        "href": "/download/software/%EB%B8%8C%EB%A0%88%EC%9D%B4%EB%B8%8C-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "Signal",
+        "note": "대화 내용. 서버에 남지 않습니다.",
+        "href": "/download/software/Signal-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "Tor 브라우저",
+        "note": "접속 경로를 여러 번 거칩니다. 느립니다.",
+        "href": "/download/software/Tor-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "Bitwarden",
+        "note": "비밀번호 관리.",
+        "href": "/download/software/Bitwarden-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "보호 범위별 프로그램"
+  },
+  {
+    "slug": "이메일-프로그램-비교",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "이메일"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "이메일 프로그램",
+    "titleBottom": "무료 비교",
+    "listTitle": "이메일 프로그램 무료 비교",
+    "listMeta": "무료 2가지 · 포털 메일 연결",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "이메일 프로그램 무료 비교",
+    "sourceNote": "SOURCE: 각 제작사 공식 화면",
+    "description": "PC 에서 메일을 받아 보는 프로그램을 정리했습니다. 네이버·다음 메일을 연결할 때 막히는 지점을 먼저 짚었습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "포털 메일은 웹 설정을 먼저 켜야 합니다",
+        "body": "네이버·다음 메일을 프로그램에 연결하려면 각 메일 웹사이트에서 IMAP 또는 POP 사용을 먼저 켜야 합니다. 이걸 안 켜면 비밀번호가 맞아도 로그인에 실패합니다. 가장 흔한 원인입니다."
+      },
+      {
+        "title": "무료로 쓰려면 썬더버드",
+        "body": "위 버튼으로 썬더버드를 받습니다. 공식 화면에 평생 무료로 안내되어 있습니다."
+      },
+      {
+        "title": "IMAP 을 고르세요",
+        "body": "여러 기기에서 같은 메일함을 보려면 IMAP 입니다. POP 은 PC 로 내려받고 서버에서 지우는 방식이라 휴대폰에서 안 보일 수 있습니다."
+      },
+      {
+        "title": "아웃룩은 유료입니다",
+        "body": "Microsoft 365 에 포함되는 제품입니다. 무료로 쓰려면 썬더버드가 대안입니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "네이버 메일이 연결되지 않습니다.",
+        "a": "네이버 메일 웹에서 환경설정 › POP3/IMAP 설정을 켜야 합니다. 이걸 안 켜면 비밀번호가 맞아도 실패합니다."
+      },
+      {
+        "q": "IMAP 과 POP 중 뭘 고르나요?",
+        "a": "여러 기기에서 보려면 IMAP 입니다. POP 은 내려받고 서버에서 지우는 방식이라 다른 기기에서 안 보일 수 있습니다."
+      },
+      {
+        "q": "무료 이메일 프로그램은?",
+        "a": "썬더버드가 공식 화면에 평생 무료로 안내되어 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Thunderbird 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.thunderbird.net/ko/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "썬더버드",
+        "note": "평생 무료. Mozilla 재단.",
+        "href": "/download/software/%EC%8D%AC%EB%8D%94%EB%B2%84%EB%93%9C-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "에버노트",
+        "note": "메일은 아니지만 자료 정리용.",
+        "href": "/download/software/%EC%97%90%EB%B2%84%EB%85%B8%ED%8A%B8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "이메일 프로그램"
+  },
+  {
+    "slug": "전자책-보기-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "문서"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "전자책 보기",
+    "titleBottom": "프로그램",
+    "listTitle": "전자책 보기 프로그램",
+    "listMeta": "무료 3가지 · 형식별",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "전자책 보기 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 화면",
+    "description": "전자책과 PDF 를 보는 무료 프로그램을 형식별로 정리했습니다. 서점에서 산 책이 안 열리는 이유도 담았습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "어디서 받은 책인지 확인",
+        "body": "서점에서 산 전자책은 DRM 이 걸려 있어 전용 뷰어로만 열립니다. 무료 배포본이나 직접 만든 파일은 아래 프로그램으로 볼 수 있습니다."
+      },
+      {
+        "title": "정리와 변환은 Calibre",
+        "body": "위 버튼으로 Calibre 를 받습니다. 여러 권을 정리하고 형식을 바꾸는 데 씁니다."
+      },
+      {
+        "title": "가볍게 보려면 SumatraPDF",
+        "body": "PDF 뿐 아니라 EPUB·MOBI·만화(CBZ)도 열립니다. 실행이 아주 빠릅니다."
+      },
+      {
+        "title": "만화는 꿀뷰",
+        "body": "압축된 이미지 묶음을 그대로 넘겨 볼 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "서점에서 산 전자책이 안 열립니다.",
+        "a": "DRM 이 걸려 있기 때문입니다. 그 서점의 전용 뷰어로 봐야 합니다."
+      },
+      {
+        "q": "EPUB 을 가장 가볍게 보려면?",
+        "a": "SumatraPDF 가 빠릅니다. 여러 권을 정리하려면 Calibre 가 낫습니다."
+      },
+      {
+        "q": "전자책 단말기로 옮기려면요?",
+        "a": "Calibre 에서 단말기에 맞는 형식으로 변환한 뒤 USB 로 옮기거나 이메일로 보낼 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "calibre 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://calibre-ebook.com/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "Calibre",
+        "note": "정리와 형식 변환.",
+        "href": "/download/software/Calibre-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "SumatraPDF",
+        "note": "가장 가볍게 보기. EPUB·MOBI 도.",
+        "href": "/download/software/SumatraPDF-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "꿀뷰",
+        "note": "만화 파일(압축된 이미지).",
+        "href": "/download/software/%EA%BF%80%EB%B7%B0-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "전자책 보기 프로그램"
+  },
+  {
+    "slug": "파일-전송-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "파일 전송"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "파일 전송",
+    "titleBottom": "프로그램",
+    "listTitle": "파일 전송 프로그램",
+    "listMeta": "무료 3가지 · FTP·대용량",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "파일 전송 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 화면",
+    "description": "파일을 서버에 올리거나 큰 파일을 주고받는 프로그램을 정리했습니다. 용도에 따라 쓰는 것이 다릅니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사별"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무엇을 하려는지 정하기",
+        "body": "웹서버에 파일을 올리는 것이면 FTP 프로그램, 사람에게 큰 파일을 보내는 것이면 클라우드가 맞습니다."
+      },
+      {
+        "title": "서버에 올리려면 파일질라",
+        "body": "위 버튼으로 FileZilla Client 를 받습니다. Server 가 아니라 Client 인지 확인하세요."
+      },
+      {
+        "title": "포트를 확인하세요",
+        "body": "FTP 는 21, SFTP 는 22 가 일반적입니다. 서버가 SFTP 만 허용하는데 FTP 로 시도하면 연결되지 않습니다."
+      },
+      {
+        "title": "사람에게 보낼 때는 클라우드",
+        "body": "큰 파일을 보낼 때는 클라우드에 올리고 링크를 주는 편이 간단합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "FTP 접속이 안 됩니다.",
+        "a": "포트를 먼저 확인하세요. FTP 21, SFTP 22 가 일반적입니다. 방화벽이나 공유기가 막는 경우도 있습니다."
+      },
+      {
+        "q": "큰 파일을 어떻게 보내나요?",
+        "a": "메일 첨부는 용량 제한이 있습니다. 클라우드에 올리고 공유 링크를 보내는 편이 확실합니다."
+      },
+      {
+        "q": "Client 와 Server 중 뭘 받나요?",
+        "a": "파일을 올리고 받으려면 Client 입니다. Server 는 내 PC 를 서버로 만들 때 씁니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "FileZilla Client",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://filezilla-project.org/download.php",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "파일질라",
+        "note": "웹서버에 올리기. Client 를 받으세요.",
+        "href": "/download/software/%ED%8C%8C%EC%9D%BC%EC%A7%88%EB%9D%BC-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "WinSCP",
+        "note": "서버 파일을 바로 열어 고칠 때.",
+        "href": "/download/software/WinSCP-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "클라우드",
+        "note": "사람에게 큰 파일을 보낼 때.",
+        "href": "/download/software/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%EB%AC%B4%EB%A3%8C-%EC%9A%A9%EB%9F%89-%EB%B9%84%EA%B5%90"
+      }
+    ],
+    "picksTitle": "용도별 파일 전송"
   }
 ]
