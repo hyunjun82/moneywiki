@@ -9052,5 +9052,194 @@
       }
     ],
     "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "포맷-후-필수-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "설치 가이드"
+    ],
+    "badges": [
+      "공식 배포처만",
+      "무료 위주",
+      "15개"
+    ],
+    "titleTop": "포맷 후",
+    "titleBottom": "필수 프로그램",
+    "listTitle": "포맷 후 필수 프로그램",
+    "listMeta": "15개 · 공식 배포처만 · 설치 순서 포함",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "포맷 후 필수 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 배포 화면 · 이 사이트는 파일을 보관하지 않습니다",
+    "description": "윈도우를 새로 설치한 뒤 무엇부터 깔아야 하는지 15개로 추렸습니다. 설치 순서와 굳이 안 깔아도 되는 것까지 함께 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "개수",
+        "value": "15개"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS 11 / 10"
+      },
+      {
+        "label": "요금",
+        "value": "무료 위주"
+      },
+      {
+        "label": "배포처",
+        "value": "제작사 공식"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 순서",
+    "steps": [
+      {
+        "title": "윈도우 업데이트부터",
+        "body": "프로그램을 깔기 전에 설정 › Windows 업데이트를 먼저 끝냅니다. 업데이트 도중 설치하면 충돌이 나기 쉽습니다."
+      },
+      {
+        "title": "드라이버 확인",
+        "body": "화면 해상도가 이상하거나 소리가 안 나면 드라이버부터입니다. 노트북은 제조사 지원 화면에서 모델명으로 받으세요."
+      },
+      {
+        "title": "브라우저 → 백신 → 압축 순서",
+        "body": "브라우저가 있어야 나머지를 받으러 다닐 수 있습니다. 그다음 백신을 하나만 깔고, 압축 프로그램을 깝니다."
+      },
+      {
+        "title": "나머지는 필요할 때",
+        "body": "아래 목록을 전부 깔 필요는 없습니다. 실제로 쓸 것만 고르세요. 안 쓰는 프로그램이 많을수록 PC가 느려집니다."
+      }
+    ],
+    "picksTitle": "포맷 후 깔아 두면 되는 15개",
+    "picks": [
+      {
+        "title": "크롬",
+        "note": "브라우저부터 깝니다. 나머지를 받으러 다닐 창이 필요합니다.",
+        "href": "/download/software/%ED%81%AC%EB%A1%AC-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "네이버 웨일",
+        "note": "국내 사이트 위주로 쓴다면 웨일도 선택지입니다.",
+        "href": "/download/software/%EB%84%A4%EC%9D%B4%EB%B2%84-%EC%9B%A8%EC%9D%BC-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "알약",
+        "note": "백신은 하나만 켭니다. 두 개 켜면 서로를 위협으로 잡습니다.",
+        "href": "/download/software/%EC%95%8C%EC%95%BD-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "반디집",
+        "note": "압축 프로그램. 받은 파일 대부분이 압축돼 있습니다.",
+        "href": "/download/software/%EB%B0%98%EB%94%94%EC%A7%91-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "7-Zip",
+        "note": "광고 없는 압축 프로그램을 원하면 이쪽입니다.",
+        "href": "/download/software/7%EC%A7%91-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "곰플레이어",
+        "note": "동영상 재생. 코덱 문제로 안 열리는 파일을 줄여 줍니다.",
+        "href": "/download/software/%EA%B3%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "팟플레이어",
+        "note": "코덱 설정을 세밀하게 만지고 싶다면.",
+        "href": "/download/software/%ED%8C%9F%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "VLC",
+        "note": "코덱이 내장이라 코덱팩을 따로 안 받아도 됩니다.",
+        "href": "/download/software/VLC-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "한글 뷰어",
+        "note": "HWP 문서를 열려면 필요합니다. 보기 전용은 무료입니다.",
+        "href": "/download/software/%ED%95%9C%EA%B8%80-%EB%B7%B0%EC%96%B4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "어도비 리더",
+        "note": "PDF 뷰어. 브라우저로 충분하면 건너뛰어도 됩니다.",
+        "href": "/download/software/%EC%96%B4%EB%8F%84%EB%B9%84-%EB%A6%AC%EB%8D%94-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "카카오톡 PC",
+        "note": "PC에서 대화하려면. 지난 대화는 안 옮겨옵니다.",
+        "href": "/download/software/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1-PC-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "알씨",
+        "note": "사진 보기와 크기 줄이기.",
+        "href": "/download/software/%EC%95%8C%EC%94%A8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "에브리씽",
+        "note": "파일 이름으로 즉시 찾습니다. 포맷 직후 정리에 편합니다.",
+        "href": "/download/software/%EC%97%90%EB%B8%8C%EB%A6%AC%EC%94%BD-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "CCleaner",
+        "note": "임시 파일 정리. 레지스트리 청소는 권하지 않습니다.",
+        "href": "/download/software/%EC%94%A8%ED%81%B4%EB%A6%AC%EB%84%88-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "노트패드++",
+        "note": "메모장 대신 쓸 텍스트 편집기.",
+        "href": "/download/software/%EB%85%B8%ED%8A%B8%ED%8C%A8%EB%93%9C%2B%2B-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "이걸 다 깔아야 하나요?",
+        "a": "아닙니다. 브라우저·백신·압축 정도가 대부분에게 필요하고, 나머지는 실제로 쓸 때 깔면 됩니다. 안 쓰는 프로그램은 시작 프로그램에 남아 PC를 느리게 만듭니다."
+      },
+      {
+        "q": "백신은 뭘 깔아야 하나요?",
+        "a": "Windows 10·11에는 Windows 보안이 기본으로 들어 있습니다. 그것만 써도 되고, 다른 백신을 깔면 Windows 보안이 자동으로 물러납니다. 중요한 건 하나만 켜 두는 것입니다."
+      },
+      {
+        "q": "드라이버는 어디서 받나요?",
+        "a": "제조사 공식 지원 화면에서 모델명으로 받습니다. 이 색인의 드라이버 항목에 제조사별 주소를 정리해 두었습니다."
+      },
+      {
+        "q": "설치 파일을 모아 주는 사이트를 써도 되나요?",
+        "a": "권하지 않습니다. 원본에 다른 프로그램을 끼워 넣은 경우가 있습니다. 이 색인은 파일을 보관하지 않고 제작사 공식 화면으로만 연결합니다."
+      },
+      {
+        "q": "포맷하면 뭐가 지워지나요?",
+        "a": "그 드라이브의 모든 자료가 지워집니다. 사진·문서·즐겨찾기·공인인증서를 먼저 다른 곳에 옮기세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "크롬 설치 파일",
+        "note": "가장 먼저 받을 것",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.google.com/intl/ko/chrome/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      },
+      {
+        "tag": "LIST",
+        "name": "드라이버 전체 목록",
+        "href": "/download/driver"
+      }
+    ],
+    "requestNote": "목록에 없는 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
   }
 ]

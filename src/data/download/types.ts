@@ -79,6 +79,18 @@ export interface DownloadItem {
   related: { tag: string; name: string; href?: string }[];
   /** 하단 "찾는 파일이 없나요?" 문단 */
   requestNote: string;
+
+  /**
+   * 묶음 페이지에서 쓰는 추천 목록. 이 색인 안의 다른 항목을 가리킨다.
+   *
+   * "포맷 후 필수 프로그램" 처럼 사람이 실제로 검색하는 말로 된 페이지가
+   * 개별 항목들을 모아 주는 자리다. 개별 페이지는 서로 이어지지 않으면
+   * 낱장으로 흩어져 있는 것과 같아서, 이 목록이 그것들을 하나로 묶는다.
+   * href 는 이 사이트 안의 경로(/download/...)로 적는다.
+   */
+  picks?: { title: string; note?: string; href: string }[];
+  /** picks 위에 붙는 제목. 없으면 "함께 받는 프로그램" */
+  picksTitle?: string;
   /** 목록·추천에 쓰는 한 줄 요약 — "무료 · 32/64BIT · 32.4MB" */
   listMeta: string;
   /** 목록에 쓰는 제목(h1 두 줄을 합치지 않고 따로 둔다) */

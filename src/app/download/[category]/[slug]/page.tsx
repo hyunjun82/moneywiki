@@ -121,6 +121,35 @@ export default async function DownloadDetailPage({ params }: PageProps) {
             ))}
           </div>
 
+          {/* 묶음 페이지의 추천 목록 — 이 색인 안의 다른 항목으로 이어 준다.
+              내부 링크라 nofollow 를 붙이지 않는다. */}
+          {it.picks && it.picks.length > 0 ? (
+            <>
+              <h2 style={{ marginTop: 52, fontSize: "clamp(24px,3.2vw,34px)", fontWeight: 800, letterSpacing: "-0.04em" }}>
+                {it.picksTitle ?? "함께 받는 프로그램"}
+              </h2>
+              <div style={{ marginTop: 18, borderTop: `1px solid ${LINE}` }}>
+                {it.picks.map((pk, i) => (
+                  <Link
+                    key={i}
+                    href={pk.href}
+                    className="dl-row dl-a"
+                    style={{ display: "grid", gridTemplateColumns: "44px minmax(0,1fr) auto", alignItems: "center", gap: 16, padding: "18px 8px", borderBottom: `1px solid ${LINE}` }}
+                  >
+                    <span style={{ fontFamily: MONO, fontSize: 11, color: LIME }}>{String(i + 1).padStart(2, "0")}</span>
+                    <span>
+                      <span style={{ display: "block", fontSize: 16, fontWeight: 800, letterSpacing: "-0.02em" }}>{pk.title}</span>
+                      {pk.note ? (
+                        <span style={{ display: "block", marginTop: 5, fontSize: 13, lineHeight: 1.6, color: MUTE }}>{pk.note}</span>
+                      ) : null}
+                    </span>
+                    <span className="dl-get" style={{ fontSize: 13, whiteSpace: "nowrap" }}>보기 →</span>
+                  </Link>
+                ))}
+              </div>
+            </>
+          ) : null}
+
           <h2 style={{ marginTop: 52, fontSize: "clamp(24px,3.2vw,34px)", fontWeight: 800, letterSpacing: "-0.04em" }}>
             자주 묻는 질문
           </h2>
@@ -162,21 +191,31 @@ export default async function DownloadDetailPage({ params }: PageProps) {
           <div style={{ border: `1px solid ${LINE}`, padding: 18, marginTop: 16 }}>
             <div style={{ fontFamily: MONO, fontSize: 10, letterSpacing: "0.16em", color: MUTE }}>{it.relatedTitle}</div>
             <div style={{ marginTop: 12 }}>
-              {it.related.map((r, i) => (
-                <a
-                  key={i}
-                  href={r.href}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  className="dl-a"
-                  style={{ display: "flex", gap: 10, alignItems: "center", padding: "12px 0", borderTop: i ? `1px solid ${LINE}` : "none" }}
-                >
-                  <span style={{ background: CARD, color: MUTE, fontFamily: MONO, fontSize: 9, letterSpacing: "0.1em", padding: "3px 6px" }}>
-                    {r.tag}
-                  </span>
-                  <span style={{ fontSize: 13.5 }}>{r.name}</span>
-                </a>
-              ))}
+              {it.related.map((r, i) => {
+                const inner = (
+                  <>
+                    <span style={{ background: CARD, color: MUTE, fontFamily: MONO, fontSize: 9, letterSpacing: "0.1em", padding: "3px 6px" }}>
+                      {r.tag}
+                    </span>
+                    <span style={{ fontSize: 13.5 }}>{r.name}</span>
+                  </>
+                );
+                const style = {
+                  display: "flex", gap: 10, alignItems: "center",
+                  padding: "12px 0", borderTop: i ? `1px solid ${LINE}` : "none",
+                } as const;
+                // 우리 사이트 안으로 가는 링크는 nofollow 를 붙이지 않는다.
+                // 외부용으로 만든 규칙을 내부 링크에 그대로 쓰면 페이지끼리 이어지지 않는다.
+                return r.href?.startsWith("/") ? (
+                  <Link key={i} href={r.href} className="dl-a" style={style}>
+                    {inner}
+                  </Link>
+                ) : (
+                  <a key={i} href={r.href} target="_blank" rel="noopener noreferrer nofollow" className="dl-a" style={style}>
+                    {inner}
+                  </a>
+                );
+              })}
             </div>
           </div>
 
