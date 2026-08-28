@@ -6058,5 +6058,990 @@
       }
     ],
     "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "IrfanView-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "이미지"
+    ],
+    "badges": [
+      "공식 배포처",
+      "개인 무료",
+      "한국어"
+    ],
+    "titleTop": "IrfanView",
+    "titleBottom": "다운로드",
+    "listTitle": "IrfanView 다운로드",
+    "listMeta": "개인 무료 · 이미지 뷰어",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "IrfanView 다운로드",
+    "sourceNote": "SOURCE: IrfanView 공식 다운로드 화면",
+    "description": "IrfanView를 공식 다운로드 화면으로 연결합니다. 플러그인을 따로 받아야 하는 이유와 사진 여러 장을 한 번에 바꾸는 법을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "개인 무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "IrfanView"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 IrfanView 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "32bit·64bit 고르기",
+        "body": "두 가지가 따로 있습니다. 요즘 PC는 64bit를 받으면 됩니다."
+      },
+      {
+        "title": "플러그인도 함께 받기",
+        "body": "본체만 설치하면 열리지 않는 형식이 있습니다. 같은 화면에 있는 플러그인 묶음을 함께 설치하면 대부분 해결됩니다."
+      },
+      {
+        "title": "한국어 적용",
+        "body": "언어 파일을 따로 받아 넣으면 메뉴가 한국어가 됩니다. 공식 화면의 언어 항목에서 받을 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "어떤 사진이 안 열립니다.",
+        "a": "플러그인을 설치하지 않은 경우가 많습니다. 공식 화면의 플러그인 묶음을 설치해 보세요."
+      },
+      {
+        "q": "사진 여러 장을 한 번에 줄일 수 있나요?",
+        "a": "파일 › 일괄 변환·이름 바꾸기에서 여러 장의 크기와 형식을 한 번에 바꿀 수 있습니다."
+      },
+      {
+        "q": "회사에서 써도 되나요?",
+        "a": "개인 용도는 무료이고 업무용은 라이선스가 필요합니다. 공식 화면의 라이선스 안내를 확인하세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "IrfanView 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.irfanview.com/main_download_engl.htm",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "IrfanView 공식 다운로드",
+        "href": "https://www.irfanview.com/main_download_engl.htm"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "XnView-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "이미지"
+    ],
+    "badges": [
+      "공식 배포처",
+      "개인 무료",
+      "한국어"
+    ],
+    "titleTop": "XnView",
+    "titleBottom": "다운로드",
+    "listTitle": "XnView 다운로드",
+    "listMeta": "개인 무료 · XnSoft · 이미지 뷰어",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "XnView 다운로드",
+    "sourceNote": "SOURCE: XnSoft 공식 XnView MP 화면",
+    "description": "XnView를 공식 화면으로 연결합니다. MP 판과 Classic 판의 차이, 사진 정리에 쓰는 법을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "개인 무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "XnSoft"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 XnSoft 공식 XnView MP 화면이 열립니다."
+      },
+      {
+        "title": "MP 와 Classic 고르기",
+        "body": "MP 는 여러 운영체제를 지원하는 최신 계열이고 Classic 은 예전 Windows 전용 판입니다. 특별한 이유가 없으면 MP 를 쓰면 됩니다."
+      },
+      {
+        "title": "설치",
+        "body": "설치판과 압축만 풀어 쓰는 무설치판이 있습니다."
+      },
+      {
+        "title": "한국어 설정",
+        "body": "도구 › 설정 › 인터페이스에서 언어를 한국어로 바꿀 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "MP 와 Classic 중 뭘 받나요?",
+        "a": "지금도 개발이 이어지는 쪽은 MP 입니다. Windows에서만 쓰고 가벼운 것을 원하면 Classic 도 선택지입니다."
+      },
+      {
+        "q": "사진을 한 번에 변환할 수 있나요?",
+        "a": "여러 장을 골라 일괄 변환을 쓰면 크기와 형식을 한 번에 바꿀 수 있습니다."
+      },
+      {
+        "q": "회사에서 써도 되나요?",
+        "a": "개인 용도는 무료이고 업무용은 라이선스가 필요합니다. 공식 화면에서 조건을 확인하세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "XnView 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.xnview.com/en/xnviewmp/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "XnSoft 공식 다운로드",
+        "href": "https://www.xnview.com/en/xnviewmp/"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "SumatraPDF-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "문서"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "SumatraPDF",
+    "titleBottom": "다운로드",
+    "listTitle": "SumatraPDF 다운로드",
+    "listMeta": "무료 · 오픈소스 · PDF 뷰어",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "SumatraPDF 다운로드",
+    "sourceNote": "SOURCE: SumatraPDF 공식 다운로드 화면 · 오픈소스",
+    "description": "SumatraPDF를 공식 다운로드 화면으로 연결합니다. 가장 가벼운 PDF 뷰어인 이유와 편집이 안 되는 점을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "SumatraPDF"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 SumatraPDF 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치판과 무설치판 고르기",
+        "body": "설치 파일과 exe 하나만 받는 무설치판이 있습니다. USB에 넣어 다니려면 무설치판이 편합니다."
+      },
+      {
+        "title": "설치",
+        "body": "용량이 작아 설치가 금방 끝납니다."
+      },
+      {
+        "title": "기본 프로그램 지정",
+        "body": "설정 › 앱 › 기본 앱에서 .pdf 를 SumatraPDF 로 지정하면 두 번 눌러 바로 열립니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "PDF에 서명이나 주석을 넣을 수 있나요?",
+        "a": "SumatraPDF 는 보기에 집중한 프로그램이라 편집 기능이 거의 없습니다. 주석이 필요하면 어도비 리더나 폭싯 리더를 쓰세요."
+      },
+      {
+        "q": "PDF 말고 다른 것도 열리나요?",
+        "a": "ePub, MOBI, CBZ 같은 전자책과 만화 형식도 열립니다."
+      },
+      {
+        "q": "왜 이렇게 가볍나요?",
+        "a": "기능을 덜어내고 보기에만 집중했기 때문입니다. 실행이 빠른 것이 장점입니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "SumatraPDF 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.sumatrapdfreader.org/download-free-pdf-viewer",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "SumatraPDF 공식 다운로드",
+        "href": "https://www.sumatrapdfreader.org/download-free-pdf-viewer"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "어베스트-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "백신"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "어베스트",
+    "titleBottom": "무료 백신 다운로드",
+    "listTitle": "어베스트 무료 백신 다운로드",
+    "listMeta": "무료판 있음 · Avast · 백신",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "어베스트 무료 백신 다운로드",
+    "sourceNote": "SOURCE: Avast 한국어 공식 다운로드 화면",
+    "description": "어베스트 무료 백신을 공식 한국어 화면으로 연결합니다. 무료판으로 되는 범위와 다른 백신과 겹칠 때 생기는 문제를 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Avast"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "기존 백신 먼저 정리",
+        "body": "백신을 두 개 이상 동시에 켜 두면 서로를 위협으로 잡아 PC가 크게 느려집니다. 쓰던 백신이 있으면 먼저 지우세요."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Avast 한국어 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "무료판인지 확인",
+        "body": "화면에 무료판과 유료판이 함께 안내됩니다. 무료 다운로드 쪽을 눌러야 결제 없이 씁니다."
+      },
+      {
+        "title": "설치 중 부가 항목 확인",
+        "body": "다른 제품을 함께 설치할지 묻는 화면이 나오면 필요 없는 것은 해제하세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료판으로 어디까지 되나요?",
+        "a": "기본 검사와 실시간 보호는 무료로 됩니다. 방화벽이나 랜섬웨어 보호 같은 기능은 유료판입니다. 정확한 구분은 공식 화면에서 확인하세요."
+      },
+      {
+        "q": "Windows 보안과 같이 써도 되나요?",
+        "a": "다른 백신을 설치하면 Windows 보안의 실시간 보호가 자동으로 물러나는 것이 보통입니다. 둘 다 켜 둘 필요는 없습니다."
+      },
+      {
+        "q": "결제 안내가 계속 뜹니다.",
+        "a": "무료판에는 유료 전환을 권하는 안내가 나옵니다. 알림 설정에서 줄일 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "어베스트 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.avast.com/ko-kr/free-antivirus-download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Avast 공식 다운로드",
+        "href": "https://www.avast.com/ko-kr/free-antivirus-download"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "AVG-백신-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "백신"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "AVG",
+    "titleBottom": "무료 백신 다운로드",
+    "listTitle": "AVG 무료 백신 다운로드",
+    "listMeta": "무료판 있음 · AVG · 백신",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "AVG 무료 백신 다운로드",
+    "sourceNote": "SOURCE: AVG 한국어 공식 다운로드 화면",
+    "description": "AVG 무료 백신을 공식 한국어 화면으로 연결합니다. 어베스트와 같은 회사 제품인 점과 무료판 범위를 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "AVG"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "기존 백신 먼저 정리",
+        "body": "백신은 하나만 켜 두는 것이 원칙입니다. 쓰던 것이 있으면 먼저 지우세요."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 AVG 한국어 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "무료판인지 확인",
+        "body": "무료판과 유료판이 함께 안내됩니다. 무료 다운로드 쪽을 눌러야 합니다."
+      },
+      {
+        "title": "설치 후 첫 검사",
+        "body": "설치가 끝나면 전체 검사를 한 번 돌립니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "어베스트와 뭐가 다른가요?",
+        "a": "AVG 와 Avast 는 같은 회사에서 나오는 제품입니다. 검사 엔진이 비슷해 둘 중 하나만 쓰면 됩니다. 함께 설치하면 충돌합니다."
+      },
+      {
+        "q": "무료판으로 어디까지 되나요?",
+        "a": "기본 검사와 실시간 보호는 무료로 됩니다. 추가 보호 기능은 유료판입니다. 공식 화면에서 구분을 확인하세요."
+      },
+      {
+        "q": "PC가 느려졌습니다.",
+        "a": "검사 중이거나 다른 백신과 겹쳤을 때 그렇습니다. 백신은 하나만 남기세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "AVG 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.avg.com/ko-kr/free-antivirus-download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "AVG 공식 다운로드",
+        "href": "https://www.avg.com/ko-kr/free-antivirus-download"
+      },
+      {
+        "tag": "SW",
+        "name": "어베스트 (같은 회사 제품)",
+        "href": "https://www.avast.com/ko-kr/free-antivirus-download"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "에버노트-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "메모"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "에버노트",
+    "titleBottom": "다운로드",
+    "listTitle": "에버노트 다운로드",
+    "listMeta": "무료판 있음 · Evernote · 메모",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "에버노트 다운로드",
+    "sourceNote": "SOURCE: Evernote 한국어 공식 다운로드 화면",
+    "description": "에버노트를 공식 한국어 다운로드 화면으로 연결합니다. 무료판의 기기 수 제한과 다른 메모 앱으로 옮기는 방법을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Evernote"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 에버노트 한국어 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치와 로그인",
+        "body": "받은 파일을 실행해 설치하고 계정으로 로그인합니다."
+      },
+      {
+        "title": "무료판 제한 확인",
+        "body": "무료 요금제는 연결할 수 있는 기기 수와 월 업로드 용량에 제한이 있습니다. 조건이 바뀌는 편이라 공식 화면에서 지금 기준을 보세요."
+      },
+      {
+        "title": "웹 클리퍼",
+        "body": "브라우저 확장을 설치하면 웹 화면을 그대로 메모로 담을 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료로 어디까지 되나요?",
+        "a": "무료 요금제에는 기기 수와 업로드 용량 제한이 있습니다. 정책이 여러 번 바뀌었으니 가입 전에 공식 화면에서 지금 조건을 확인하세요."
+      },
+      {
+        "q": "메모를 다른 앱으로 옮길 수 있나요?",
+        "a": "내보내기로 파일을 만들어 옮길 수 있습니다. 옮기기 전에 백업을 먼저 만들어 두세요."
+      },
+      {
+        "q": "설치 없이 쓸 수 있나요?",
+        "a": "브라우저에서 웹 버전으로 쓸 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "에버노트 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://evernote.com/ko-kr/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Evernote 공식 다운로드",
+        "href": "https://evernote.com/ko-kr/download"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "키패스-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "보안"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "키패스",
+    "titleBottom": "다운로드",
+    "listTitle": "키패스 다운로드",
+    "listMeta": "무료 · 오픈소스 · 비밀번호 관리",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "키패스 다운로드",
+    "sourceNote": "SOURCE: KeePass 공식 다운로드 화면 · 오픈소스",
+    "description": "키패스(KeePass)를 공식 다운로드 화면으로 연결합니다. 비밀번호 파일을 내가 직접 보관하는 방식의 장단점과 마스터 비밀번호를 잊으면 안 되는 이유를 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "KeePass"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 KeePass 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치판과 무설치판 고르기",
+        "body": "Installer 와 압축만 풀어 쓰는 Portable 이 있습니다. USB에 넣어 다니려면 Portable 입니다."
+      },
+      {
+        "title": "데이터베이스 만들기",
+        "body": "비밀번호를 담을 파일(kdbx)을 만들고 마스터 비밀번호를 정합니다."
+      },
+      {
+        "title": "파일 백업",
+        "body": "이 파일이 곧 전부입니다. 클라우드나 외장 저장소에 복사해 두세요. 파일을 잃으면 저장한 비밀번호를 모두 잃습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "마스터 비밀번호를 잊으면 어떻게 되나요?",
+        "a": "복구할 방법이 없습니다. 만든 사람도 열 수 없는 구조입니다. 반드시 기억하거나 안전한 곳에 따로 적어 두세요."
+      },
+      {
+        "q": "클라우드 비밀번호 관리자와 뭐가 다른가요?",
+        "a": "키패스는 파일을 내가 직접 보관합니다. 회사 서버에 맡기지 않는 점이 장점이고, 백업과 기기 간 동기화를 직접 챙겨야 하는 점이 단점입니다."
+      },
+      {
+        "q": "한국어로 쓸 수 있나요?",
+        "a": "공식 화면의 번역 파일을 받아 넣으면 메뉴가 한국어가 됩니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "키패스 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://keepass.info/download.html",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "KeePass 공식 다운로드",
+        "href": "https://keepass.info/download.html"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "테라카피-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "유틸리티"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "테라카피",
+    "titleBottom": "다운로드",
+    "listTitle": "테라카피 다운로드",
+    "listMeta": "무료판 있음 · Code Sector · 파일 복사",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "테라카피 다운로드",
+    "sourceNote": "SOURCE: Code Sector 공식 다운로드 화면",
+    "description": "테라카피(TeraCopy)를 공식 다운로드 화면으로 연결합니다. 대용량 복사가 끊길 때 이어받는 기능과 무료판 범위를 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Code Sector"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Code Sector 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "무료판인지 확인",
+        "body": "무료판과 유료판이 나뉩니다. 개인 용도는 무료판으로 대부분 해결됩니다."
+      },
+      {
+        "title": "설치",
+        "body": "설치하면 파일을 복사할 때 테라카피 창이 뜨도록 설정할 수 있습니다."
+      },
+      {
+        "title": "검증 기능 확인",
+        "body": "복사 후 원본과 사본이 같은지 확인하는 기능이 있습니다. 중요한 자료를 옮길 때 켜 두면 안심입니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "복사가 중간에 끊기면 어떻게 되나요?",
+        "a": "테라카피는 실패한 파일만 다시 시도할 수 있습니다. 처음부터 다시 복사하지 않아도 됩니다."
+      },
+      {
+        "q": "윈도우 기본 복사보다 빠른가요?",
+        "a": "환경에 따라 다릅니다. 속도보다는 끊겼을 때 이어받기와 복사 검증이 실질적인 장점입니다."
+      },
+      {
+        "q": "무료판으로 충분한가요?",
+        "a": "개인 용도의 복사·이동·검증은 무료판으로 됩니다. 일부 고급 기능은 유료판입니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "테라카피 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://codesector.com/downloads",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Code Sector 공식 다운로드",
+        "href": "https://codesector.com/downloads"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "윈머지-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "개발 도구"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "윈머지",
+    "titleBottom": "다운로드",
+    "listTitle": "윈머지 다운로드",
+    "listMeta": "무료 · 오픈소스 · 파일 비교",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "윈머지 다운로드",
+    "sourceNote": "SOURCE: WinMerge 한국어 공식 다운로드 화면 · 오픈소스",
+    "description": "윈머지(WinMerge)를 공식 한국어 다운로드 화면으로 연결합니다. 두 파일의 다른 곳을 찾는 법과 한글이 깨질 때 설정을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "WinMerge"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 WinMerge 한국어 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다. 설치 중 언어에서 한국어를 고를 수 있습니다."
+      },
+      {
+        "title": "파일 비교",
+        "body": "파일 › 열기에서 비교할 두 파일을 고르면 다른 줄이 색으로 표시됩니다."
+      },
+      {
+        "title": "폴더 비교",
+        "body": "파일 대신 폴더 두 개를 고르면 어느 파일이 다른지 한눈에 볼 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "한글이 깨져 보입니다.",
+        "a": "파일의 인코딩이 다를 때 그렇습니다. 파일 › 인코딩에서 CP949 나 UTF-8 로 바꿔 보세요."
+      },
+      {
+        "q": "폴더 전체를 비교할 수 있나요?",
+        "a": "됩니다. 두 폴더를 고르면 어느 파일이 추가·삭제·변경됐는지 목록으로 나옵니다."
+      },
+      {
+        "q": "합치기도 되나요?",
+        "a": "한쪽의 내용을 다른 쪽으로 옮기는 기능이 있습니다. 옮기기 전에 원본을 복사해 두는 편이 안전합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "윈머지 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://winmerge.org/downloads/?lang=ko",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "WinMerge 공식 다운로드",
+        "href": "https://winmerge.org/downloads/?lang=ko"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "WinSCP-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "개발 도구"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "WinSCP",
+    "titleBottom": "다운로드",
+    "listTitle": "WinSCP 다운로드",
+    "listMeta": "무료 · 오픈소스 · 파일 전송",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "WinSCP 다운로드",
+    "sourceNote": "SOURCE: WinSCP 공식 다운로드 화면 · 오픈소스",
+    "description": "WinSCP를 공식 다운로드 화면으로 연결합니다. 파일질라와 다른 점과 SFTP 접속에서 막히는 부분을 정리했습니다.",
+    "updatedAt": "2026-08-27",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "WinSCP"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.27"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 WinSCP 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치",
+        "body": "설치판과 압축만 풀어 쓰는 무설치판이 있습니다."
+      },
+      {
+        "title": "화면 방식 고르기",
+        "body": "처음 실행할 때 두 창을 나란히 보는 방식과 탐색기처럼 한 창으로 보는 방식 중 고를 수 있습니다."
+      },
+      {
+        "title": "접속 정보 입력",
+        "body": "프로토콜(SFTP·FTP·SCP), 호스트, 사용자명, 비밀번호를 넣고 연결합니다. SFTP 는 보통 22번 포트입니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "파일질라와 뭐가 다른가요?",
+        "a": "WinSCP 는 서버 파일을 로컬 편집기로 바로 열어 고치고 저장하면 서버에 반영되는 방식이 편합니다. 단순 업로드가 목적이면 둘 다 충분합니다."
+      },
+      {
+        "q": "접속이 안 됩니다.",
+        "a": "프로토콜과 포트를 먼저 확인하세요. SFTP 는 22, FTP 는 21 이 일반적입니다. 서버가 SFTP만 허용하는데 FTP로 시도하면 연결되지 않습니다."
+      },
+      {
+        "q": "키 파일로 접속할 수 있나요?",
+        "a": "고급 설정에서 개인 키 파일을 지정하면 됩니다. ppk 형식이 필요할 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "WinSCP 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://winscp.net/eng/download.php",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "WinSCP 공식 다운로드",
+        "href": "https://winscp.net/eng/download.php"
+      }
+    ],
+    "requestNote": "다른 버전이나 다른 OS 판이 필요하면 요청 게시판에 남겨주세요."
   }
 ]
