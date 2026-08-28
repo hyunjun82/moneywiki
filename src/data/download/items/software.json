@@ -9241,5 +9241,765 @@
       }
     ],
     "requestNote": "목록에 없는 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "OBS-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "화면 녹화"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "OBS",
+    "titleBottom": "다운로드",
+    "listTitle": "OBS 다운로드",
+    "listMeta": "무료 · 오픈소스 · 화면 녹화/방송",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "OBS 다운로드",
+    "sourceNote": "SOURCE: OBS Project 한국어 공식 내려받기 화면 · 오픈소스",
+    "description": "OBS Studio를 공식 한국어 화면으로 연결합니다. 화면이 검게 녹화될 때 푸는 법과 방송용 설정에서 막히는 부분을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "OBS Project"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 OBS 한국어 내려받기 화면이 열립니다. 인스톨러와 Zip 판이 있습니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다. 광고나 끼워 파는 프로그램이 없습니다."
+      },
+      {
+        "title": "소스 추가",
+        "body": "처음 실행하면 빈 화면입니다. 아래 소스 칸에서 '디스플레이 캡처'나 '게임 캡처'를 더해야 화면이 잡힙니다."
+      },
+      {
+        "title": "저장 위치 확인",
+        "body": "설정 › 출력에서 녹화 파일이 저장될 폴더와 형식을 정합니다. mp4 로 두면 대부분의 편집기에서 열립니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "녹화한 화면이 검게 나옵니다.",
+        "a": "노트북에서 그래픽카드가 두 개일 때 흔합니다. OBS 를 오른쪽 버튼으로 눌러 '다른 그래픽 프로세서로 실행'을 고르거나, Windows 설정 › 디스플레이 › 그래픽에서 OBS 를 다른 GPU 로 지정하면 대개 풀립니다."
+      },
+      {
+        "q": "소리가 녹음되지 않습니다.",
+        "a": "설정 › 오디오에서 데스크톱 오디오와 마이크 장치를 각각 지정해야 합니다. 기본값이 '사용 안 함'인 경우가 있습니다."
+      },
+      {
+        "q": "방송도 되나요?",
+        "a": "유튜브·트위치 같은 곳으로 바로 송출할 수 있습니다. 설정 › 방송에서 서비스와 스트림 키를 넣으면 됩니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "OBS 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://obsproject.com/ko/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "OBS Project 공식 다운로드",
+        "href": "https://obsproject.com/ko/download"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "샷컷-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "영상 편집"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "샷컷",
+    "titleBottom": "다운로드",
+    "listTitle": "샷컷 다운로드",
+    "listMeta": "무료 · 오픈소스 · 영상 편집",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "샷컷 다운로드",
+    "sourceNote": "SOURCE: Shotcut 공식 다운로드 화면 · 오픈소스",
+    "description": "샷컷(Shotcut)을 공식 다운로드 화면으로 연결합니다. 워터마크 없이 무료로 쓸 수 있는 점과 내보내기에서 헤매지 않는 법을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Shotcut"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Shotcut 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치판과 무설치판 고르기",
+        "body": "설치 파일과 압축만 풀어 쓰는 판이 있습니다."
+      },
+      {
+        "title": "한국어 설정",
+        "body": "Settings › Language 에서 한국어를 고르고 다시 켜면 메뉴가 한국어가 됩니다."
+      },
+      {
+        "title": "내보내기",
+        "body": "편집이 끝나면 Export 에서 형식을 고릅니다. 잘 모르겠으면 기본값(H.264 mp4)으로 두면 대부분 잘 열립니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료판에 워터마크가 찍히나요?",
+        "a": "찍히지 않습니다. 오픈소스라 기능 제한이나 표시 없이 씁니다. 이 점이 곰믹스·반디캠 무료판과 다릅니다."
+      },
+      {
+        "q": "무겁지 않나요?",
+        "a": "고화질 영상을 다루면 PC 사양을 탑니다. 미리보기가 끊기면 프리뷰 화질을 낮춰서 편집하고 내보낼 때만 원본 화질로 하면 됩니다."
+      },
+      {
+        "q": "자막을 넣을 수 있나요?",
+        "a": "텍스트 필터를 얹어 넣습니다. 자막 파일(srt)을 불러오는 기능도 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "샷컷 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://shotcut.org/download/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Shotcut 공식 다운로드",
+        "href": "https://shotcut.org/download/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "픽픽-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "화면 캡처"
+    ],
+    "badges": [
+      "공식 배포처",
+      "개인 무료",
+      "한국어"
+    ],
+    "titleTop": "픽픽",
+    "titleBottom": "다운로드",
+    "listTitle": "픽픽 다운로드",
+    "listMeta": "개인 무료 · NGWIN · 화면 캡처",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "픽픽 다운로드",
+    "sourceNote": "SOURCE: 픽픽(PicPick) 한국어 공식 화면 · 개인 사용자 무료",
+    "description": "픽픽(PicPick)을 공식 한국어 화면으로 연결합니다. 스크롤 캡처와 눈금자·각도기 같은 도구가 함께 있는 점, 무료 사용 범위를 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "개인 무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "NGWIN"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 픽픽 한국어 공식 화면이 열립니다."
+      },
+      {
+        "title": "무료 사용 범위 확인",
+        "body": "공식 화면에 무료 사용 범위를 안내하는 항목이 따로 있습니다. 개인 용도인지 업무용인지에 따라 다르니 먼저 읽어 보세요."
+      },
+      {
+        "title": "설치",
+        "body": "설치판과 무설치판이 있습니다."
+      },
+      {
+        "title": "캡처 방식 익히기",
+        "body": "영역·창·전체 화면에 더해 스크롤되는 페이지를 한 장으로 담는 기능이 있습니다. 단축키는 설정에서 바꿀 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "긴 웹페이지를 한 장으로 캡처할 수 있나요?",
+        "a": "스크롤 캡처 기능이 있습니다. 화면을 넘어가는 페이지도 한 장으로 담깁니다."
+      },
+      {
+        "q": "회사에서 써도 되나요?",
+        "a": "공식 화면에 무료 사용 범위를 설명하는 항목이 있습니다. 업무용이라면 그 안내를 확인하고 쓰세요."
+      },
+      {
+        "q": "캡처 말고 다른 기능도 있나요?",
+        "a": "색 추출기, 눈금자, 각도기, 화이트보드 같은 도구가 함께 들어 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "픽픽 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://picpick.app/ko/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "NGWIN 공식 다운로드",
+        "href": "https://picpick.app/ko/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "포토스케이프-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "이미지 편집"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "포토스케이프",
+    "titleBottom": "다운로드",
+    "listTitle": "포토스케이프 다운로드",
+    "listMeta": "무료 · 포토스케이프 · 사진 편집",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "포토스케이프 다운로드",
+    "sourceNote": "SOURCE: 포토스케이프 공식 화면",
+    "description": "포토스케이프를 공식 화면으로 연결합니다. 사진 여러 장을 한 번에 처리하는 기능과 X 버전과의 차이를 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "포토스케이프"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 포토스케이프 공식 화면이 열립니다. 무료 다운로드 항목에서 설치 파일을 받습니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다."
+      },
+      {
+        "title": "일괄 편집 써 보기",
+        "body": "일괄 편집 기능으로 사진 여러 장의 크기·밝기·액자를 한 번에 바꿀 수 있습니다. 블로그에 사진을 올릴 때 편합니다."
+      },
+      {
+        "title": "이어붙이기와 GIF",
+        "body": "사진을 세로로 이어 붙이거나 움직이는 GIF 를 만드는 기능도 함께 들어 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "포토스케이프 X 와 뭐가 다른가요?",
+        "a": "X 는 최신 계열로 Microsoft Store 등에서 따로 배포됩니다. 예전 버전이 익숙하다면 공식 화면의 기본 판을 쓰면 됩니다."
+      },
+      {
+        "q": "사진 여러 장을 한 번에 줄일 수 있나요?",
+        "a": "일괄 편집에서 크기 변경을 지정하면 한 번에 처리됩니다."
+      },
+      {
+        "q": "포토샵 대신 쓸 수 있나요?",
+        "a": "간단한 보정·자르기·액자·이어붙이기에는 충분합니다. 정교한 합성이나 레이어 작업은 김프나 포토샵이 맞습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "포토스케이프 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "http://www.photoscape.co.kr/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "포토스케이프 공식 다운로드",
+        "href": "http://www.photoscape.co.kr/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "PDF-합치기-무료-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "문서"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "PDF 합치기",
+    "titleBottom": "무료 프로그램",
+    "listTitle": "PDF 합치기 무료 프로그램",
+    "listMeta": "설치형 3개 · 공식 배포처만",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "PDF 합치기 무료 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 배포 화면",
+    "description": "PDF 여러 개를 하나로 합치는 무료 프로그램을 정리했습니다. 온라인 도구를 쓰면 안 되는 경우와 상황별로 어느 것을 고를지 담았습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "PDF24"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "설치형인지 온라인인지 먼저 정하기",
+        "body": "회사 문서나 개인 정보가 든 PDF 라면 설치형을 쓰세요. 온라인 도구는 파일을 남의 서버에 올려야 합니다."
+      },
+      {
+        "title": "PDF24 로 합치기",
+        "body": "위 버튼으로 PDF24 Creator 를 받습니다. 설치 후 합치기 도구에 파일을 끌어다 놓고 순서를 정한 뒤 저장하면 끝입니다."
+      },
+      {
+        "title": "이미 알PDF 가 있다면",
+        "body": "알PDF 에도 합치기가 있습니다. 알툴즈를 쓰고 있다면 새로 깔 필요가 없습니다."
+      },
+      {
+        "title": "한 번만 필요하다면",
+        "body": "설치 없이 끝내고 싶고 문서가 민감하지 않다면 브라우저 도구로도 됩니다. 다만 그런 경우에만 쓰세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "설치 안 하고 합칠 수 없나요?",
+        "a": "브라우저에서 처리하는 도구가 있습니다. 다만 파일을 서버에 올려야 하므로 계약서나 개인 정보가 든 문서에는 권하지 않습니다."
+      },
+      {
+        "q": "어느 것이 가장 간단한가요?",
+        "a": "PDF24 Creator 가 합치기·나누기·압축이 아이콘으로 나뉘어 있어 처음 쓰기 쉽습니다."
+      },
+      {
+        "q": "합친 파일이 너무 큽니다.",
+        "a": "PDF24 의 압축 도구로 용량을 줄일 수 있습니다. 화질을 낮추는 방식이라 인쇄용이면 정도를 조절하세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "PDF24 Creator 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://tools.pdf24.org/ko/creator",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "PDF24 공식 다운로드",
+        "href": "https://tools.pdf24.org/ko/creator"
+      },
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "PDF24 Creator",
+        "note": "합치기·나누기·압축이 아이콘으로 나뉘어 있습니다. PC 안에서 처리합니다.",
+        "href": "/download/software/PDF24-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "알PDF",
+        "note": "알툴즈를 이미 쓰고 있다면 새로 깔 필요가 없습니다. 개인 무료.",
+        "href": "/download/software/%EC%95%8CPDF-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "리브레오피스",
+        "note": "문서를 PDF 로 내보낼 때 씁니다. 합치기 전용은 아닙니다.",
+        "href": "/download/software/%EB%A6%AC%EB%B8%8C%EB%A0%88%EC%98%A4%ED%94%BC%EC%8A%A4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "PDF 합치기에 쓰는 프로그램"
+  },
+  {
+    "slug": "화면-녹화-무료-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "화면 녹화"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "화면 녹화",
+    "titleBottom": "무료 프로그램",
+    "listTitle": "화면 녹화 무료 프로그램",
+    "listMeta": "무료 3개 · 워터마크 여부 정리",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "화면 녹화 무료 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 배포 화면",
+    "description": "PC 화면을 녹화하는 무료 프로그램을 정리했습니다. 워터마크와 시간 제한이 있는 것과 없는 것을 갈라 두었습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "OBS Project"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "윈도우 기본 기능으로 될지 먼저 확인",
+        "body": "Windows 키 + G 를 누르면 Xbox Game Bar 가 열리고 화면 녹화가 됩니다. 게임이나 앱 창 하나만 담으면 이걸로 끝입니다."
+      },
+      {
+        "title": "제한 없이 쓰려면 OBS",
+        "body": "위 버튼으로 OBS 를 받습니다. 워터마크도 시간 제한도 없습니다. 대신 처음에 소스를 직접 더해야 합니다."
+      },
+      {
+        "title": "간단한 것을 원하면",
+        "body": "반디캠은 화면이 단순하지만 무료판에 워터마크와 시간 제한이 있습니다."
+      },
+      {
+        "title": "저장 형식 확인",
+        "body": "mp4 로 저장하면 대부분의 편집기와 플랫폼에서 그대로 열립니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "워터마크 없이 녹화하려면요?",
+        "a": "OBS 는 무료이고 워터마크가 없습니다. 반디캠 무료판은 워터마크와 시간 제한이 있습니다."
+      },
+      {
+        "q": "윈도우 기본 기능으로는 안 되나요?",
+        "a": "Windows 키 + G 로 열리는 Game Bar 로 녹화됩니다. 다만 바탕화면 전체나 탐색기 창은 녹화가 안 되는 제약이 있습니다."
+      },
+      {
+        "q": "녹화한 화면이 검게 나옵니다.",
+        "a": "노트북에서 그래픽카드가 두 개일 때 흔합니다. 프로그램을 다른 그래픽 프로세서로 실행하도록 지정하면 대개 풀립니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "OBS Studio 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://obsproject.com/ko/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "OBS 공식 내려받기",
+        "href": "https://obsproject.com/ko/download"
+      },
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "OBS Studio",
+        "note": "무료·오픈소스. 워터마크와 시간 제한이 없습니다. 방송도 됩니다.",
+        "href": "/download/software/OBS-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "ShareX",
+        "note": "캡처가 주력이지만 녹화도 됩니다. 무료이고 광고가 없습니다.",
+        "href": "/download/software/ShareX-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "반디캠",
+        "note": "화면이 단순합니다. 다만 무료판은 워터마크와 시간 제한이 있습니다.",
+        "href": "/download/software/%EB%B0%98%EB%94%94%EC%BA%A0-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "화면 녹화에 쓰는 프로그램"
+  },
+  {
+    "slug": "영상-편집-무료-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "영상 편집"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "영상 편집",
+    "titleBottom": "무료 프로그램",
+    "listTitle": "영상 편집 무료 프로그램",
+    "listMeta": "무료 3개 · 워터마크 여부 정리",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "영상 편집 무료 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 배포 화면",
+    "description": "영상을 자르고 붙이는 무료 편집 프로그램을 정리했습니다. 워터마크가 남는 것과 안 남는 것, PC 사양을 많이 타는 것을 갈라 두었습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Shotcut"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무엇을 할지 정하기",
+        "body": "단순히 자르고 붙이는 정도인지, 색보정과 자막까지 할지에 따라 고를 것이 다릅니다."
+      },
+      {
+        "title": "워터마크 없이 쓰려면 샷컷",
+        "body": "위 버튼으로 샷컷을 받습니다. 오픈소스라 무료판 표시가 남지 않습니다."
+      },
+      {
+        "title": "본격적으로 하려면 다빈치 리졸브",
+        "body": "무료판으로도 색보정까지 됩니다. 대신 PC 사양을 많이 탑니다."
+      },
+      {
+        "title": "내보내기 형식",
+        "body": "mp4(H.264)로 내보내면 유튜브나 카카오톡에서 그대로 열립니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료판에 워터마크가 남나요?",
+        "a": "샷컷과 다빈치 리졸브 무료판은 남지 않습니다. 곰믹스 무료판은 제한이 있습니다."
+      },
+      {
+        "q": "PC 사양이 낮은데 쓸 수 있나요?",
+        "a": "샷컷이 상대적으로 가볍습니다. 다빈치 리졸브는 그래픽카드 성능을 많이 타서 저사양 PC 에서는 버겁습니다."
+      },
+      {
+        "q": "자막을 넣고 싶습니다.",
+        "a": "샷컷은 텍스트 필터로, 다빈치 리졸브는 자막 기능으로 넣습니다. 자막 파일(srt)을 불러오는 방법도 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Shotcut 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://shotcut.org/download/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Shotcut 공식 다운로드",
+        "href": "https://shotcut.org/download/"
+      },
+      {
+        "tag": "PAGE",
+        "name": "DaVinci Resolve 공식",
+        "href": "https://www.blackmagicdesign.com/kr/products/davinciresolve"
+      },
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "샷컷 (Shotcut)",
+        "note": "무료·오픈소스. 워터마크가 없고 상대적으로 가볍습니다.",
+        "href": "/download/software/%EC%83%B7%EC%BB%B7-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "곰믹스",
+        "note": "화면이 익숙하고 쉽습니다. 다만 무료판에 제한이 있습니다.",
+        "href": "/download/software/%EA%B3%B0%EB%AF%B9%EC%8A%A4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "핸드브레이크",
+        "note": "편집이 아니라 형식 변환용입니다. 용량을 줄일 때 씁니다.",
+        "href": "/download/software/%ED%95%B8%EB%93%9C%EB%B8%8C%EB%A0%88%EC%9D%B4%ED%81%AC-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "영상 편집에 쓰는 프로그램"
   }
 ]
