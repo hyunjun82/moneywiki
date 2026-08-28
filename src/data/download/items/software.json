@@ -10001,5 +10001,817 @@
       }
     ],
     "picksTitle": "영상 편집에 쓰는 프로그램"
+  },
+  {
+    "slug": "뮤직비-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "음악"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "뮤직비",
+    "titleBottom": "다운로드",
+    "listTitle": "뮤직비 다운로드",
+    "listMeta": "무료 · MusicBee · 음악 재생",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "뮤직비 다운로드",
+    "sourceNote": "SOURCE: MusicBee 공식 다운로드 화면",
+    "description": "뮤직비(MusicBee)를 공식 다운로드 화면으로 연결합니다. 곡이 많을수록 진가가 나오는 이유와 한글 태그 정리 방법을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "MusicBee"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 MusicBee 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치",
+        "body": "설치판과 압축만 풀어 쓰는 무설치판이 있습니다."
+      },
+      {
+        "title": "음악 폴더 지정",
+        "body": "처음 실행할 때 음악이 든 폴더를 지정하면 목록이 만들어집니다. 곡 수가 많아도 잘 버팁니다."
+      },
+      {
+        "title": "태그 정리",
+        "body": "제목·가수·앨범 정보가 엉켜 있으면 자동 태그 정리 기능으로 한 번에 맞출 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "곡이 몇 만 개인데 버티나요?",
+        "a": "많은 곡을 다루는 데 강한 편입니다. 목록이 커도 검색과 정렬이 빠릅니다."
+      },
+      {
+        "q": "한글 제목이 깨져 보입니다.",
+        "a": "오래된 국내 MP3 는 태그 인코딩이 달라 그렇습니다. 설정에서 인코딩을 CP949 로 바꿔 보세요."
+      },
+      {
+        "q": "휴대폰으로 옮길 수 있나요?",
+        "a": "기기 동기화 기능이 있어 연결된 기기로 곡을 옮길 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "뮤직비 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://getmusicbee.com/downloads/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "MusicBee 공식 다운로드",
+        "href": "https://getmusicbee.com/downloads/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "미디어몽키-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "음악"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "미디어몽키",
+    "titleBottom": "다운로드",
+    "listTitle": "미디어몽키 다운로드",
+    "listMeta": "무료판 있음 · MediaMonkey · 음악 관리",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "미디어몽키 다운로드",
+    "sourceNote": "SOURCE: MediaMonkey 공식 다운로드 화면 · 무료판과 유료판이 나뉩니다",
+    "description": "미디어몽키를 공식 다운로드 화면으로 연결합니다. 무료판과 골드판의 차이, 음악이 많을 때 쓰는 이유를 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Ventis Media"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 MediaMonkey 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "무료판인지 확인",
+        "body": "무료판과 유료 골드판이 나뉩니다. 화면에서 어느 쪽을 받는지 확인하세요."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다."
+      },
+      {
+        "title": "라이브러리 정리",
+        "body": "음악 폴더를 지정하면 태그를 읽어 앨범·가수별로 정리해 줍니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료판으로 어디까지 되나요?",
+        "a": "재생과 라이브러리 관리는 무료판으로 됩니다. 자동 태그 정리나 기기 동기화 속도 같은 일부 기능은 유료 골드판입니다."
+      },
+      {
+        "q": "뮤직비와 뭐가 다른가요?",
+        "a": "둘 다 곡이 많을 때 강합니다. 뮤직비는 완전 무료이고, 미디어몽키는 무료판과 유료판이 나뉩니다."
+      },
+      {
+        "q": "한글 태그가 깨집니다.",
+        "a": "인코딩 설정을 CP949 로 바꿔 보세요. 국내에서 만든 오래된 파일에 흔한 문제입니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "미디어몽키 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.mediamonkey.com/download/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Ventis Media 공식 다운로드",
+        "href": "https://www.mediamonkey.com/download/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "어비라-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "백신"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "어비라",
+    "titleBottom": "무료 백신 다운로드",
+    "listTitle": "어비라 무료 백신 다운로드",
+    "listMeta": "무료판 있음 · Avira · 백신",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "어비라 무료 백신 다운로드",
+    "sourceNote": "SOURCE: Avira 공식 무료 백신 다운로드 화면",
+    "description": "어비라 무료 백신을 공식 화면으로 연결합니다. 무료판 범위와 함께 딸려 오는 부가 기능을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Avira"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "기존 백신 먼저 정리",
+        "body": "백신은 하나만 켜 두는 것이 원칙입니다. 쓰던 것이 있으면 먼저 지우세요."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Avira 공식 다운로드 화면이 열립니다. 화면이 영어로 나올 수 있습니다."
+      },
+      {
+        "title": "무료판인지 확인",
+        "body": "화면에 Free Download 와 유료 제품이 함께 있습니다. 무료 쪽을 눌러야 결제 없이 씁니다."
+      },
+      {
+        "title": "부가 항목 확인",
+        "body": "설치 과정에 VPN 같은 부가 기능을 함께 설치할지 묻는 경우가 있습니다. 필요 없으면 해제하세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료판으로 어디까지 되나요?",
+        "a": "기본 검사와 실시간 보호는 무료로 됩니다. VPN 이나 추가 보호 기능은 사용량 제한이 있거나 유료입니다."
+      },
+      {
+        "q": "한국어를 지원하나요?",
+        "a": "설치 후 설정에서 언어를 바꿀 수 있습니다. 공식 다운로드 화면 자체는 영어로 나올 수 있습니다."
+      },
+      {
+        "q": "Windows 보안만 써도 되지 않나요?",
+        "a": "Windows 10·11 의 기본 보안만으로도 일반적인 용도에는 부족하지 않습니다. 다른 백신을 깔면 기본 보안이 자동으로 물러납니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "어비라 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.avira.com/en/free-antivirus-windows",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Avira 공식 다운로드",
+        "href": "https://www.avira.com/en/free-antivirus-windows"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "스파이봇-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "백신"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "스파이봇",
+    "titleBottom": "다운로드",
+    "listTitle": "스파이봇 다운로드",
+    "listMeta": "무료판 있음 · Safer-Networking · 악성코드",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "스파이봇 다운로드",
+    "sourceNote": "SOURCE: Spybot Free Edition 공식 화면",
+    "description": "스파이봇(Spybot Search & Destroy)을 공식 무료판 화면으로 연결합니다. 백신과 겹치지 않게 쓰는 법과 면역 기능을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Safer-Networking"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Spybot Free Edition 공식 화면이 열립니다. 무료판 화면인지 확인하세요."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다."
+      },
+      {
+        "title": "검사 실행",
+        "body": "설치 후 검사를 돌립니다. 광고성 프로그램과 추적 항목을 주로 찾아냅니다."
+      },
+      {
+        "title": "면역 기능",
+        "body": "악성 사이트를 미리 차단하는 면역 기능이 있습니다. 적용하면 브라우저가 그 주소로 안 가게 됩니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "쓰던 백신과 같이 써도 되나요?",
+        "a": "무료판은 실시간 감시가 없어 다른 백신과 함께 두고 검사용으로 쓰기 좋습니다. 실시간 보호까지 있는 유료판을 쓰면 백신과 겹칠 수 있습니다."
+      },
+      {
+        "q": "무료판으로 어디까지 되나요?",
+        "a": "검사와 치료, 면역 기능이 무료판에 들어 있습니다. 실시간 보호와 자동 업데이트는 유료판입니다."
+      },
+      {
+        "q": "면역을 적용했다가 되돌릴 수 있나요?",
+        "a": "면역 화면에서 해제할 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "스파이봇 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.safer-networking.org/products/spybot-free-edition/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Safer-Networking 공식 다운로드",
+        "href": "https://www.safer-networking.org/products/spybot-free-edition/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "ImgBurn-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "유틸리티"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "ImgBurn",
+    "titleBottom": "다운로드",
+    "listTitle": "ImgBurn 다운로드",
+    "listMeta": "무료 · ImgBurn · CD/DVD 굽기",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "ImgBurn 다운로드",
+    "sourceNote": "SOURCE: ImgBurn 공식 다운로드 화면",
+    "description": "ImgBurn을 공식 다운로드 화면으로 연결합니다. 설치 중 딸려 오는 프로그램을 반드시 걸러야 하는 이유를 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "ImgBurn"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 ImgBurn 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치 화면을 끝까지 읽기",
+        "body": "설치 과정에 다른 프로그램을 함께 설치할지 묻는 단계가 여러 번 나올 수 있습니다. 다음을 연달아 누르지 말고 매 화면에서 체크를 확인하고 거절하세요."
+      },
+      {
+        "title": "ISO 굽기",
+        "body": "Write image file to disc 를 고르고 ISO 파일을 지정한 뒤 공 디스크를 넣으면 됩니다."
+      },
+      {
+        "title": "굽기 속도 낮추기",
+        "body": "속도를 최고로 두면 실패하는 경우가 있습니다. 한 단계 낮추면 성공률이 올라갑니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "설치할 때 이상한 프로그램이 같이 깔렸습니다.",
+        "a": "설치 화면의 제안을 거절하지 않으면 그렇게 됩니다. 매 화면에서 체크를 확인하고 거절하세요. 이미 깔렸다면 설정 › 앱에서 지우면 됩니다."
+      },
+      {
+        "q": "요즘도 필요한가요?",
+        "a": "USB 로 설치 미디어를 만드는 경우가 많아 쓸 일이 줄었습니다. 다만 ISO 를 실제 디스크로 구워야 할 때는 여전히 쓰입니다."
+      },
+      {
+        "q": "굽기가 자꾸 실패합니다.",
+        "a": "굽기 속도를 낮춰 보세요. 디스크 품질이나 드라이브 상태 문제일 수도 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "ImgBurn 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.imgburn.com/index.php?act=download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "ImgBurn 공식 다운로드",
+        "href": "https://www.imgburn.com/index.php?act=download"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "RealVNC-뷰어-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "원격제어"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료 계정",
+      "한국어"
+    ],
+    "titleTop": "RealVNC 뷰어",
+    "titleBottom": "다운로드",
+    "listTitle": "RealVNC 뷰어 다운로드",
+    "listMeta": "무료 계정 · RealVNC · 원격제어",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "RealVNC 뷰어 다운로드",
+    "sourceNote": "SOURCE: RealVNC 공식 VNC Viewer 다운로드 화면",
+    "description": "RealVNC 뷰어를 공식 다운로드 화면으로 연결합니다. 뷰어와 서버가 나뉘는 점과 접속하려면 상대 PC에 무엇이 필요한지 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료 계정"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "RealVNC"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "뷰어인지 서버인지 확인",
+        "body": "접속하는 쪽이 뷰어(Viewer), 접속당하는 쪽이 서버(Server)입니다. 남의 PC 를 보려면 내 PC 에 뷰어, 상대 PC 에 서버가 있어야 합니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 RealVNC 공식 VNC Viewer 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "설치",
+        "body": "설치판과 압축만 풀어 쓰는 ZIP 판이 있습니다."
+      },
+      {
+        "title": "접속",
+        "body": "상대 PC 의 IP 주소나 등록된 이름을 넣고 연결합니다. 계정을 만들어 기기를 등록해 두면 IP 를 몰라도 됩니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "뷰어만 깔면 되나요?",
+        "a": "아닙니다. 접속당할 PC 에는 서버가 있어야 합니다. 양쪽 모두 준비돼야 연결됩니다."
+      },
+      {
+        "q": "무료로 쓸 수 있나요?",
+        "a": "계정을 만들면 개인 용도로 쓸 수 있는 범위가 있습니다. 대수와 기능에 조건이 붙으니 공식 화면에서 확인하세요."
+      },
+      {
+        "q": "팀뷰어·애니데스크와 뭐가 다른가요?",
+        "a": "VNC 는 화면 전송 방식이 다르고 사내망에서 쓰기 좋습니다. 인터넷 너머의 PC 를 간단히 도와줄 목적이면 팀뷰어나 애니데스크가 준비가 적습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "RealVNC 뷰어 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.realvnc.com/en/connect/download/viewer/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "RealVNC 공식 다운로드",
+        "href": "https://www.realvnc.com/en/connect/download/viewer/"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "TightVNC-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "원격제어"
+    ],
+    "badges": [
+      "공식 배포처",
+      "30일 시험",
+      "한국어"
+    ],
+    "titleTop": "TightVNC",
+    "titleBottom": "다운로드",
+    "listTitle": "TightVNC 다운로드",
+    "listMeta": "30일 시험 · GlavSoft · 원격제어",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "TightVNC 다운로드",
+    "sourceNote": "SOURCE: TightVNC 공식 다운로드 화면 · 'Download the 30-Day Trial' 안내",
+    "description": "TightVNC를 공식 다운로드 화면으로 연결합니다. 최신판이 30일 시험 방식인 점과 무료 대안을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "30일 시험"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "GlavSoft"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "사용 조건 먼저 확인",
+        "body": "공식 화면에 최신판을 30일 시험으로 받는다고 적혀 있습니다. 무료 프로그램이라고 알려져 있지만 지금 배포 조건은 화면에서 직접 확인해야 합니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 TightVNC 공식 다운로드 화면이 열립니다. 구버전(1.3.10)도 같은 화면에서 받을 수 있습니다."
+      },
+      {
+        "title": "뷰어와 서버 구분",
+        "body": "접속하는 쪽이 뷰어, 접속당하는 쪽이 서버입니다. 설치할 때 무엇을 넣을지 고를 수 있습니다."
+      },
+      {
+        "title": "접속",
+        "body": "상대 PC 의 IP 와 비밀번호를 넣고 연결합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료 아니었나요?",
+        "a": "공식 화면에 최신판은 30일 시험(Download the 30-Day Trial)으로 안내되어 있습니다. 조건이 바뀌었을 수 있으니 화면에서 직접 확인하고 받으세요."
+      },
+      {
+        "q": "비용 없이 쓸 방법은요?",
+        "a": "애니데스크나 RealVNC 뷰어가 개인 용도 조건을 두고 있습니다. 사내망이라면 Windows 원격 데스크톱도 선택지입니다."
+      },
+      {
+        "q": "뷰어만 설치할 수 있나요?",
+        "a": "설치 중 구성 요소를 고를 수 있습니다. 접속만 할 거라면 뷰어만 넣으면 됩니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "TightVNC 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.tightvnc.com/download.php",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "TightVNC 공식 다운로드",
+        "href": "https://www.tightvnc.com/download.php"
+      },
+      {
+        "tag": "SW",
+        "name": "애니데스크 (원격제어)",
+        "href": "https://anydesk.com/ko/downloads/windows"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "데이터-복구-무료-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "복구"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료판 있음",
+      "한국어"
+    ],
+    "titleTop": "데이터 복구",
+    "titleBottom": "무료 프로그램",
+    "listTitle": "데이터 복구 무료 프로그램",
+    "listMeta": "무료 2개 · 복구 성공률 높이는 법 포함",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "데이터 복구 무료 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 배포 화면",
+    "description": "지운 파일을 되살리는 무료 프로그램을 정리했습니다. 프로그램보다 먼저 해야 할 일과 하지 말아야 할 일부터 담았습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료판 있음"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Piriform"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "그 드라이브를 더 쓰지 마세요",
+        "body": "지운 파일은 자리가 아직 안 지워졌을 뿐입니다. 그 드라이브에 새 파일을 저장하면 그 자리를 덮어써서 영영 못 살립니다. 복구 프로그램도 다른 드라이브나 USB 에 설치하세요."
+      },
+      {
+        "title": "쉬운 것부터 — Recuva",
+        "body": "위 버튼으로 Recuva 를 받습니다. 화면이 단순해 처음 쓰기 쉽습니다. 지운 지 얼마 안 된 파일은 대개 여기서 해결됩니다."
+      },
+      {
+        "title": "파티션이 통째로 사라졌다면 TestDisk",
+        "body": "드라이브 자체가 안 보이거나 포맷된 경우에는 TestDisk 가 더 깊이 들어갑니다. 대신 명령 화면이라 어렵습니다."
+      },
+      {
+        "title": "찾은 파일은 다른 곳에 저장",
+        "body": "복구한 파일을 원래 드라이브에 저장하면 아직 못 찾은 파일을 덮어씁니다. 반드시 다른 드라이브나 USB 에 저장하세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "지운 지 오래됐는데 살릴 수 있나요?",
+        "a": "그 사이에 그 드라이브를 얼마나 썼느냐에 달렸습니다. 새 파일을 많이 저장했다면 자리가 덮여 어렵습니다. 그래서 지운 걸 알아차린 순간부터 그 드라이브를 안 쓰는 것이 가장 중요합니다."
+      },
+      {
+        "q": "SSD 는 복구가 잘 안 된다던데요?",
+        "a": "SSD 는 지운 자리를 미리 비워 두는 동작(TRIM)이 있어 HDD 보다 복구가 어렵습니다. 시간이 지날수록 가능성이 낮아집니다."
+      },
+      {
+        "q": "업체에 맡겨야 하는 경우는 언제인가요?",
+        "a": "드라이브에서 소리가 나거나 아예 인식이 안 되면 물리적 고장입니다. 이때는 프로그램으로 안 되고, 계속 전원을 넣으면 더 나빠질 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Recuva 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.ccleaner.com/ko-kr/recuva/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Recuva 공식 다운로드",
+        "href": "https://www.ccleaner.com/ko-kr/recuva/download"
+      },
+      {
+        "tag": "PAGE",
+        "name": "TestDisk 공식 다운로드",
+        "href": "https://www.cgsecurity.org/wiki/TestDisk_Download"
+      },
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 프로그램이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "Recuva",
+        "note": "화면이 단순합니다. 지운 지 얼마 안 된 파일은 대개 여기서 됩니다.",
+        "href": "/download/software/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%B5%EA%B5%AC-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "에브리씽",
+        "note": "복구가 아니라 찾기입니다. 지운 게 아니라 어디 있는지 모를 때 먼저 써 보세요.",
+        "href": "/download/software/%EC%97%90%EB%B8%8C%EB%A6%AC%EC%94%BD-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "데이터 복구에 쓰는 프로그램"
   }
 ]
