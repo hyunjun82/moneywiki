@@ -109,5 +109,322 @@
       }
     ],
     "requestNote": "필요한 서식이 없다면 요청 게시판에 이름을 남겨주세요. 공공기관이 배포하는 서식 위주로 확인해 추가합니다."
+  },
+  {
+    "slug": "나눔글꼴-다운로드",
+    "category": "font",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "폰트·서식",
+      "폰트"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "나눔글꼴",
+    "titleBottom": "다운로드",
+    "listTitle": "나눔글꼴 다운로드",
+    "listMeta": "무료 · 네이버 · 상업적 사용 가능",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "나눔글꼴 다운로드",
+    "sourceNote": "SOURCE: 네이버 글꼴 모음 공식 화면 · '나눔 글꼴 전체 내려받기'",
+    "description": "네이버 나눔글꼴을 공식 화면으로 연결합니다. 전체 내려받기와 설치 방법, 상업적 사용 조건을 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "네이버"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 네이버 글꼴 모음 화면이 열립니다. 나눔 글꼴 전체 내려받기 항목이 있어 한 번에 받을 수 있습니다."
+      },
+      {
+        "title": "압축 풀기",
+        "body": "받은 파일은 압축돼 있습니다. 압축을 풀면 ttf 나 otf 파일이 나옵니다."
+      },
+      {
+        "title": "설치",
+        "body": "글꼴 파일을 모두 선택하고 오른쪽 버튼 › 설치를 누르면 됩니다. 여러 개를 한 번에 설치할 수 있습니다."
+      },
+      {
+        "title": "프로그램 다시 켜기",
+        "body": "설치 후 한글이나 파워포인트를 이미 열어 뒀다면 껐다 켜야 목록에 나타납니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "상업적으로 써도 되나요?",
+        "a": "네이버가 무료로 배포하는 글꼴입니다. 다만 글꼴마다 허용 범위가 조금씩 다를 수 있으니 공식 화면의 라이선스 안내를 확인하고 쓰세요."
+      },
+      {
+        "q": "설치했는데 프로그램에 안 보입니다.",
+        "a": "글꼴을 설치하기 전에 열어 둔 프로그램에는 반영되지 않습니다. 그 프로그램을 껐다 다시 켜면 나타납니다."
+      },
+      {
+        "q": "마루 부리나 손글씨체도 있나요?",
+        "a": "같은 화면에 마루 부리 글꼴과 클로바 나눔손글씨가 따로 있습니다. 각각 전체 내려받기가 제공됩니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "나눔 글꼴 전체 내려받기",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://hangeul.naver.com/font",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "네이버 글꼴 모음",
+        "href": "https://hangeul.naver.com/font"
+      }
+    ],
+    "requestNote": "다른 것이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "구글-폰트-다운로드",
+    "category": "font",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "폰트·서식",
+      "폰트"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "구글 폰트",
+    "titleBottom": "다운로드",
+    "listTitle": "구글 폰트 다운로드",
+    "listMeta": "무료 · 구글 · 오픈 라이선스",
+    "ctaPlatforms": "WINDOWS · MACOS · WEB",
+    "ctaLabel": "구글 폰트 다운로드",
+    "sourceNote": "SOURCE: Google Fonts 공식 화면 · 한국어 글꼴 모아 보기",
+    "description": "구글 폰트에서 한국어 글꼴을 받는 방법을 정리했습니다. 웹에 쓰는 방법과 PC에 설치하는 방법이 다릅니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · WEB"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "구글"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Google Fonts 의 한국어 글꼴 목록이 열립니다."
+      },
+      {
+        "title": "글꼴 고르기",
+        "body": "목록에서 원하는 글꼴을 누르면 굵기별 미리보기가 나옵니다. 본고딕(Noto Sans KR)이 가장 무난합니다."
+      },
+      {
+        "title": "PC에 설치하려면 내려받기",
+        "body": "글꼴 화면의 내려받기 버튼을 누르면 압축 파일이 받아집니다. 풀어서 ttf 파일을 설치합니다."
+      },
+      {
+        "title": "웹에 쓰려면 코드 복사",
+        "body": "홈페이지에 쓸 거라면 파일을 받는 대신 화면에서 제공하는 연결 코드를 복사해 넣습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "상업적으로 써도 되나요?",
+        "a": "구글 폰트는 오픈 라이선스로 배포되어 대부분 상업적 사용이 열려 있습니다. 글꼴마다 라이선스 표기가 있으니 확인하고 쓰세요."
+      },
+      {
+        "q": "어떤 한국어 글꼴이 무난한가요?",
+        "a": "본고딕 계열(Noto Sans KR)이 굵기가 다양하고 어디서나 잘 보입니다."
+      },
+      {
+        "q": "웹용과 PC용이 다른가요?",
+        "a": "같은 글꼴이지만 쓰는 방법이 다릅니다. 홈페이지에는 연결 코드를, PC 문서에는 내려받아 설치한 파일을 씁니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "한국어 글꼴 목록",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · WEB",
+        "url": "https://fonts.google.com/?subset=korean",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Google Fonts 한국어",
+        "href": "https://fonts.google.com/?subset=korean"
+      }
+    ],
+    "requestNote": "다른 것이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "무료-폰트-다운로드",
+    "category": "font",
+    "kicker": "GUIDE",
+    "trail": [
+      "폰트·서식",
+      "폰트"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "무료 폰트",
+    "titleBottom": "다운로드",
+    "listTitle": "무료 폰트 다운로드",
+    "listMeta": "상업용 가능 · 공식 배포처 3곳",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "무료 폰트 다운로드",
+    "sourceNote": "SOURCE: 각 배포처 공식 화면",
+    "description": "상업적으로 써도 되는 무료 한글 폰트를 어디서 받는지 정리했습니다. 라이선스를 반드시 확인해야 하는 이유도 담았습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "네이버 · 구글"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "라이선스부터 확인",
+        "body": "무료 폰트라고 다 마음대로 쓸 수 있는 것이 아닙니다. 개인 용도만 되는 것, 인쇄물은 되지만 상품에는 안 되는 것이 섞여 있습니다. 받기 전에 그 폰트의 허용 범위를 보세요."
+      },
+      {
+        "title": "네이버 나눔글꼴로 시작",
+        "body": "위 버튼으로 네이버 글꼴 모음을 엽니다. 전체 내려받기가 있어 한 번에 받을 수 있고 가장 널리 쓰입니다."
+      },
+      {
+        "title": "더 필요하면 다른 배포처",
+        "body": "구글 폰트는 오픈 라이선스라 조건이 명확합니다. 눈누는 여러 배포처의 폰트를 라이선스와 함께 모아 보여 줍니다."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일의 압축을 풀고 ttf 파일을 모두 선택해 오른쪽 버튼 › 설치를 누르면 됩니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료 폰트면 다 상업용으로 써도 되나요?",
+        "a": "아닙니다. 개인 용도만 허용하는 폰트, 인쇄물은 되지만 상품 제작이나 임베딩은 안 되는 폰트가 있습니다. 반드시 그 폰트의 라이선스를 확인하세요."
+      },
+      {
+        "q": "어디서 받는 게 안전한가요?",
+        "a": "네이버·구글처럼 배포처가 분명한 곳이 안전합니다. 출처를 알 수 없는 사이트의 폰트 파일은 위험할 수 있습니다."
+      },
+      {
+        "q": "설치한 폰트를 지우려면요?",
+        "a": "설정 › 개인 설정 › 글꼴에서 해당 글꼴을 찾아 제거하면 됩니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "네이버 나눔 글꼴 전체 내려받기",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://hangeul.naver.com/font",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "네이버 글꼴 모음",
+        "href": "https://hangeul.naver.com/font"
+      },
+      {
+        "tag": "PAGE",
+        "name": "Google Fonts 한국어",
+        "href": "https://fonts.google.com/?subset=korean"
+      },
+      {
+        "tag": "PAGE",
+        "name": "눈누 (라이선스 모아보기)",
+        "href": "https://noonnu.cc/"
+      }
+    ],
+    "requestNote": "다른 것이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "네이버 나눔글꼴",
+        "note": "전체 내려받기가 있어 한 번에 받습니다. 가장 널리 쓰입니다.",
+        "href": "/download/font/%EB%82%98%EB%88%94%EA%B8%80%EA%BC%B4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "구글 폰트",
+        "note": "오픈 라이선스라 조건이 명확합니다. 웹에도 바로 쓸 수 있습니다.",
+        "href": "/download/font/%EA%B5%AC%EA%B8%80-%ED%8F%B0%ED%8A%B8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "상업용 가능 폰트를 받는 곳"
   }
 ]

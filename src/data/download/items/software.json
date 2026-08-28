@@ -10813,5 +10813,536 @@
       }
     ],
     "picksTitle": "데이터 복구에 쓰는 프로그램"
+  },
+  {
+    "slug": "스마트스위치-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "백업"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "스마트스위치",
+    "titleBottom": "PC 다운로드",
+    "listTitle": "스마트스위치 PC 다운로드",
+    "listMeta": "무료 · 삼성 · 백업/이전",
+    "ctaPlatforms": "WINDOWS · MACOS",
+    "ctaLabel": "스마트스위치 PC 다운로드",
+    "sourceNote": "SOURCE: 삼성전자 Smart Switch 공식 안내 화면",
+    "description": "삼성 스마트스위치 PC 버전을 공식 화면으로 연결합니다. 갤럭시 백업과 기기 이전에 쓰며, 백업 파일이 어디에 쌓이는지도 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "삼성전자"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 삼성 Smart Switch 공식 안내 화면이 열립니다. PC 버전을 고릅니다."
+      },
+      {
+        "title": "설치와 연결",
+        "body": "설치한 뒤 케이블로 휴대폰을 연결합니다. 휴대폰 화면에서 연결을 허용해야 인식됩니다."
+      },
+      {
+        "title": "백업",
+        "body": "백업을 누르면 사진·연락처·앱 목록이 PC 에 저장됩니다. 용량이 크니 남은 공간을 미리 확인하세요."
+      },
+      {
+        "title": "복원",
+        "body": "새 기기를 연결하고 복원을 고르면 백업한 내용이 옮겨집니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "아이폰에서 갤럭시로 옮길 수 있나요?",
+        "a": "됩니다. 아이폰 백업 파일이나 케이블 연결로 옮기는 기능이 있습니다. 다만 앱 자체는 옮겨지지 않고 목록만 넘어갑니다."
+      },
+      {
+        "q": "백업 파일이 어디에 저장되나요?",
+        "a": "기본은 C 드라이브의 사용자 폴더 아래입니다. 프로그램 설정에서 위치를 바꿀 수 있습니다."
+      },
+      {
+        "q": "휴대폰이 인식되지 않습니다.",
+        "a": "휴대폰 화면에서 연결 허용을 눌렀는지 확인하세요. 케이블이 충전 전용이면 데이터가 오가지 않습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Smart Switch PC 버전",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS",
+        "url": "https://www.samsung.com/sec/apps/smart-switch/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "삼성전자 공식 다운로드",
+        "href": "https://www.samsung.com/sec/apps/smart-switch/"
+      }
+    ],
+    "requestNote": "다른 것이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "한컴타자연습-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "교육"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "한컴타자연습",
+    "titleBottom": "다운로드",
+    "listTitle": "한컴타자연습 다운로드",
+    "listMeta": "무료 · 한글과컴퓨터 · 타자",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "한컴타자연습 다운로드",
+    "sourceNote": "SOURCE: 한글과컴퓨터 다운로드 센터",
+    "description": "한컴타자연습을 한컴 공식 다운로드 센터로 연결합니다. 예전 버전과 지금 제공 방식의 차이를 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "한글과컴퓨터"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 한컴 다운로드 센터가 열립니다. 목록에서 타자연습 항목을 찾습니다."
+      },
+      {
+        "title": "목록에 없으면",
+        "body": "다운로드 센터의 제품 목록은 시기에 따라 바뀝니다. 타자연습이 안 보이면 검색란에 이름을 넣어 보세요."
+      },
+      {
+        "title": "설치",
+        "body": "받은 파일을 실행해 설치합니다."
+      },
+      {
+        "title": "연습 시작",
+        "body": "자리 연습부터 시작해 낱말·긴 글 순서로 넘어가는 구성이 일반적입니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료인가요?",
+        "a": "한컴이 무료로 배포해 온 프로그램입니다. 다만 제공 방식이 바뀔 수 있으니 다운로드 센터에서 지금 조건을 확인하세요."
+      },
+      {
+        "q": "목록에서 못 찾겠습니다.",
+        "a": "다운로드 센터의 제품 구성이 바뀌는 경우가 있습니다. 검색란에 이름을 넣어 보고, 그래도 없으면 요청 게시판에 남겨주세요."
+      },
+      {
+        "q": "웹에서 바로 연습할 수는 없나요?",
+        "a": "브라우저에서 하는 타자 연습 사이트도 있습니다. 설치가 번거로우면 그쪽이 간단합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "한컴 다운로드 센터",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.hancom.com/support/downloadCenter/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "한글과컴퓨터 공식 다운로드",
+        "href": "https://www.hancom.com/support/downloadCenter/download"
+      }
+    ],
+    "requestNote": "다른 것이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "CrystalDiskInfo-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "유틸리티"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "CrystalDiskInfo",
+    "titleBottom": "다운로드",
+    "listTitle": "CrystalDiskInfo 다운로드",
+    "listMeta": "무료 · 오픈소스 · 디스크 상태",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "CrystalDiskInfo 다운로드",
+    "sourceNote": "SOURCE: Crystal Dew World 공식 다운로드 화면 · 오픈소스",
+    "description": "CrystalDiskInfo를 공식 다운로드 화면으로 연결합니다. 하드디스크·SSD 수명을 확인하는 프로그램으로, 경고가 떴을 때 무엇부터 해야 하는지 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Crystal Dew World"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Crystal Dew World 공식 다운로드 화면이 열립니다."
+      },
+      {
+        "title": "판본 고르기",
+        "body": "기본판과 그림이 다른 특별판이 함께 배포됩니다. 기능은 같으니 기본판(Standard Edition)을 받으면 됩니다."
+      },
+      {
+        "title": "설치",
+        "body": "설치판과 압축만 풀어 쓰는 무설치판이 있습니다."
+      },
+      {
+        "title": "상태 확인",
+        "body": "실행하면 드라이브마다 정상·주의·위험이 표시됩니다. 온도와 사용 시간도 함께 나옵니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "'주의'가 떴습니다. 어떻게 하나요?",
+        "a": "먼저 중요한 자료를 다른 곳에 복사하세요. 주의는 나빠지는 중이라는 뜻이고 갑자기 못 쓰게 될 수 있습니다. 그다음에 교체를 생각하면 됩니다."
+      },
+      {
+        "q": "SSD 수명은 어떻게 보나요?",
+        "a": "총 읽고 쓴 양과 남은 수명 비율이 표시됩니다. 일반적인 사용이라면 수명보다 다른 이유로 바꾸는 경우가 많습니다."
+      },
+      {
+        "q": "외장하드도 확인되나요?",
+        "a": "USB 연결 방식에 따라 정보가 안 읽히는 경우가 있습니다. 안 나오면 그 연결이 상태 정보를 전달하지 못하는 것입니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "CrystalDiskInfo 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://crystalmark.info/en/software/crystaldiskinfo/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Crystal Dew World 공식 다운로드",
+        "href": "https://crystalmark.info/en/software/crystaldiskinfo/"
+      }
+    ],
+    "requestNote": "다른 것이 필요하면 요청 게시판에 이름을 남겨주세요."
+  },
+  {
+    "slug": "오디오-편집-무료-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "음성 편집"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "오디오 편집",
+    "titleBottom": "무료 프로그램",
+    "listTitle": "오디오 편집 무료 프로그램",
+    "listMeta": "무료 2개 · 녹음/편집",
+    "ctaPlatforms": "WINDOWS · MACOS · LINUX",
+    "ctaLabel": "오디오 편집 무료 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 배포 화면",
+    "description": "소리를 자르고 녹음하는 무료 프로그램을 정리했습니다. PC에서 나는 소리를 녹음할 때 막히는 부분도 함께 담았습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MACOS · LINUX"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "Audacity Team"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무엇을 할지 정하기",
+        "body": "목소리를 녹음할지, 이미 있는 파일을 자를지, PC 에서 나는 소리를 담을지에 따라 방법이 다릅니다."
+      },
+      {
+        "title": "오다시티로 시작",
+        "body": "위 버튼으로 오다시티를 받습니다. 녹음·자르기·잡음 제거까지 무료로 됩니다."
+      },
+      {
+        "title": "PC 소리를 녹음하려면",
+        "body": "Windows 소리 설정에서 스테레오 믹스를 켜고 입력 장치로 골라야 합니다. 장치가 안 보이면 숨김 장치 표시를 켜 보세요."
+      },
+      {
+        "title": "영상에서 소리만 빼려면",
+        "body": "핸드브레이크나 영상 편집 프로그램으로 오디오만 추출한 뒤 오다시티에서 다듬으면 됩니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "MP3 로 저장하려면 뭘 더 받아야 하나요?",
+        "a": "요즘 오다시티는 따로 받을 것이 없습니다. 파일 › 내보내기에서 MP3 를 고르면 됩니다."
+      },
+      {
+        "q": "PC 에서 나는 소리가 녹음되지 않습니다.",
+        "a": "마이크가 아니라 스테레오 믹스를 입력으로 골라야 합니다. Windows 소리 설정 › 녹음 탭에서 오른쪽 버튼 › 숨김 장치 표시를 켜면 나타나는 경우가 많습니다."
+      },
+      {
+        "q": "잡음을 없앨 수 있나요?",
+        "a": "오다시티의 잡음 제거 기능으로 어느 정도 줄일 수 있습니다. 잡음만 있는 구간을 먼저 선택해 기준을 잡는 것이 요령입니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Audacity 설치 파일",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MACOS · LINUX",
+        "url": "https://www.audacityteam.org/download/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Audacity 공식 다운로드",
+        "href": "https://www.audacityteam.org/download/"
+      },
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 것이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "오다시티 (Audacity)",
+        "note": "녹음·자르기·잡음 제거까지 무료입니다. 오픈소스라 제한이 없습니다.",
+        "href": "/download/software/%EC%98%A4%EB%8B%A4%EC%8B%9C%ED%8B%B0-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "핸드브레이크",
+        "note": "영상에서 소리만 뽑을 때 씁니다. 편집 프로그램은 아닙니다.",
+        "href": "/download/software/%ED%95%B8%EB%93%9C%EB%B8%8C%EB%A0%88%EC%9D%B4%ED%81%AC-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "오디오 편집에 쓰는 프로그램"
+  },
+  {
+    "slug": "컴퓨터-느려졌을때-프로그램",
+    "category": "software",
+    "kicker": "GUIDE",
+    "trail": [
+      "소프트웨어",
+      "시스템 정리"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "컴퓨터 느려졌을 때",
+    "titleBottom": "정리 프로그램",
+    "listTitle": "컴퓨터 느려졌을 때 정리 프로그램",
+    "listMeta": "무료 3개 · 원인부터 확인",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "컴퓨터 느려졌을 때 정리 프로그램",
+    "sourceNote": "SOURCE: 각 제작사 공식 배포 화면 · Autoruns 는 마이크로소프트 배포",
+    "description": "컴퓨터가 느려졌을 때 무엇부터 확인해야 하는지 정리했습니다. 프로그램을 깔기 전에 할 수 있는 것부터 담았습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "마이크로소프트 · 각 제작사"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "작업 관리자부터 열기",
+        "body": "Ctrl + Shift + Esc 를 누르면 무엇이 자원을 쓰는지 바로 보입니다. 특정 프로그램이 CPU 나 메모리를 붙잡고 있으면 그것부터 처리하면 됩니다."
+      },
+      {
+        "title": "시작 프로그램 정리",
+        "body": "작업 관리자의 시작 프로그램 탭에서 안 쓰는 것을 사용 안 함으로 바꿉니다. 부팅이 눈에 띄게 빨라집니다. 더 깊이 보려면 마이크로소프트가 배포하는 Autoruns 를 씁니다."
+      },
+      {
+        "title": "저장 공간 확인",
+        "body": "드라이브가 거의 찼으면 느려집니다. 위즈트리로 무엇이 용량을 먹는지 몇 초 만에 찾을 수 있습니다."
+      },
+      {
+        "title": "디스크 상태 점검",
+        "body": "위 방법으로도 그대로면 하드디스크나 SSD 가 나빠지는 중일 수 있습니다. CrystalDiskInfo 로 상태를 확인하세요."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "정리 프로그램을 깔면 빨라지나요?",
+        "a": "임시 파일을 지우는 정도의 효과입니다. 실제로 체감되는 것은 시작 프로그램을 줄이는 쪽입니다. 레지스트리 청소는 권하지 않습니다."
+      },
+      {
+        "q": "백신이 두 개 깔려 있으면 느려지나요?",
+        "a": "느려집니다. 서로를 위협으로 잡아 계속 검사합니다. 백신은 하나만 남기세요."
+      },
+      {
+        "q": "포맷하는 게 나을까요?",
+        "a": "위 네 가지를 해도 그대로면 포맷이 확실한 방법입니다. 다만 자료 백업이 먼저이고, 디스크 자체가 나빠진 경우에는 포맷해도 다시 느려집니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Autoruns 다운로드",
+        "note": "공식 배포처",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://learn.microsoft.com/ko-kr/sysinternals/downloads/autoruns",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Autoruns (마이크로소프트)",
+        "href": "https://learn.microsoft.com/ko-kr/sysinternals/downloads/autoruns"
+      },
+      {
+        "tag": "LIST",
+        "name": "소프트웨어 전체 목록",
+        "href": "/download/software"
+      }
+    ],
+    "requestNote": "다른 것이 필요하면 요청 게시판에 이름을 남겨주세요.",
+    "picks": [
+      {
+        "title": "위즈트리",
+        "note": "용량을 먹는 파일을 몇 초 만에 찾습니다. 드라이브가 찼을 때.",
+        "href": "/download/software/%EC%9C%84%EC%A6%88%ED%8A%B8%EB%A6%AC-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "CrystalDiskInfo",
+        "note": "하드디스크·SSD 상태를 확인합니다. 주의가 뜨면 백업부터.",
+        "href": "/download/software/CrystalDiskInfo-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "title": "CCleaner",
+        "note": "임시 파일 정리. 레지스트리 청소는 권하지 않습니다.",
+        "href": "/download/software/%EC%94%A8%ED%81%B4%EB%A6%AC%EB%84%88-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "picksTitle": "느려졌을 때 쓰는 프로그램"
   }
 ]
