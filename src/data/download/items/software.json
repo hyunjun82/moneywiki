@@ -9134,6 +9134,11 @@
         "href": "/download/software/%EC%95%8C%EC%95%BD-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       },
       {
+        "title": "V3 Lite",
+        "note": "국산 백신. 알약과 둘 중 하나만 고르세요.",
+        "href": "/download/software/V3-Lite-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
         "title": "반디집",
         "note": "압축 프로그램. 받은 파일 대부분이 압축돼 있습니다.",
         "href": "/download/software/%EB%B0%98%EB%94%94%EC%A7%91-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
@@ -11862,5 +11867,117 @@
       }
     ],
     "picksTitle": "브라우저별 공식 스토어"
+  },
+  {
+    "slug": "V3-Lite-다운로드",
+    "category": "software",
+    "kicker": "SOFTWARE",
+    "trail": [
+      "소프트웨어",
+      "백신"
+    ],
+    "badges": [
+      "공식 배포처",
+      "개인 무료",
+      "한국어"
+    ],
+    "titleTop": "V3 Lite",
+    "titleBottom": "무료 백신 다운로드",
+    "listTitle": "V3 Lite 무료 백신 다운로드",
+    "listMeta": "개인 무료 · 안랩 · 국산 백신",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "V3 Lite 무료 백신 다운로드",
+    "sourceNote": "SOURCE: 안랩 V3 Lite 공식 화면 · '개인 사용자라면 누구나 무료' 안내",
+    "description": "안랩 V3 Lite를 공식 화면으로 연결합니다. 개인 무료 조건과 다른 백신과 겹칠 때 생기는 문제를 정리했습니다.",
+    "updatedAt": "2026-08-28",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "개인 무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "배포처",
+        "value": "안랩"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.28"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "기존 백신 먼저 정리",
+        "body": "백신을 두 개 이상 켜 두면 서로를 위협으로 잡아 PC가 크게 느려집니다. 쓰던 백신이 있으면 먼저 지우고 재부팅하세요."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 안랩 V3 Lite 공식 화면이 열립니다. V3 Lite 다운로드 버튼으로 설치 파일을 받습니다."
+      },
+      {
+        "title": "설치와 첫 검사",
+        "body": "설치가 끝나면 전체 검사를 한 번 돌립니다. 시간이 걸리니 PC를 쓰지 않을 때 실행하는 편이 낫습니다."
+      },
+      {
+        "title": "실시간 감시 확인",
+        "body": "실시간 감시가 켜져 있는지 확인하세요. 꺼져 있으면 설치만 해 둔 것과 다르지 않습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "정말 무료인가요?",
+        "a": "공식 화면에 개인 사용자라면 누구나 무료로 이용할 수 있다고 적혀 있습니다. 다만 기업이나 공공기관에서 쓰려면 별도 제품과 라이선스가 필요합니다."
+      },
+      {
+        "q": "Windows 보안과 같이 써도 되나요?",
+        "a": "다른 백신을 설치하면 Windows 보안의 실시간 보호가 자동으로 물러나는 것이 보통입니다. 굳이 둘 다 켜 둘 필요는 없습니다."
+      },
+      {
+        "q": "알약과 뭐가 다른가요?",
+        "a": "둘 다 국산 백신이고 개인 무료입니다. 검사 엔진과 화면 구성이 다를 뿐이니 하나만 골라 쓰면 됩니다. 함께 설치하면 충돌합니다."
+      },
+      {
+        "q": "PC가 느려졌습니다.",
+        "a": "검사 중이거나 다른 백신과 겹쳤을 때 그렇습니다. 백신은 하나만 남기고 정리하세요."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "V3 Lite 설치 파일",
+        "note": "안랩 공식 제품 화면",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.ahnlab.com/ko/product/v3-lite",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "안랩 V3 Lite 공식 화면",
+        "href": "https://www.ahnlab.com/ko/product/v3-lite"
+      },
+      {
+        "tag": "PAGE",
+        "name": "안랩 다운로드 및 무료체험",
+        "href": "https://www.ahnlab.com/ko/support/download/free"
+      },
+      {
+        "tag": "SW",
+        "name": "알약 (국산 백신)",
+        "href": "/download/software/%EC%95%8C%EC%95%BD-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      }
+    ],
+    "requestNote": "다른 백신이 필요하면 요청 게시판에 이름을 남겨주세요."
   }
 ]
