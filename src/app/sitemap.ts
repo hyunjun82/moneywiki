@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { getAllWikiParams } from "@/lib/wiki";
 import { getAllArticleSlugs } from "@/lib/articles";
+import { ALL_ITEMS, CATEGORIES } from "@/data/download";
 import fs from "fs";
 import path from "path";
 
@@ -148,5 +149,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }));
   }
 
-  return [...staticUrls, ...goldNewsUrls, ...wikiUrls, ...tsxUrls, ...articleUrls];
+  // 다운로드 색인 — 섹션을 만들 때 여기 등록을 빠뜨려서 346장이 통째로 사이트맵 밖에 있었다.
+  const downloadUrls: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/download`,
+      lastModified: new Date(),
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
+    ...CATEGORIES.map((c) => ({
+      url: `${baseUrl}/download/${c}`,
+      lastModified: new Date(),
+      changeFrequency: "daily" as const,
+      priority: 0.8,
+    })),
+    ...ALL_ITEMS.map((it) => ({
+      url: `${baseUrl}/download/${it.category}/${encodeURIComponent(it.slug)}`,
+      lastModified: new Date(it.updatedAt),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    })),
+  ];
+
+  return [...staticUrls, ...goldNewsUrls, ...wikiUrls, ...tsxUrls, ...articleUrls, ...downloadUrls];
 }

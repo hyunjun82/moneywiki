@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DownloadShell, Breadcrumb } from "@/components/download/Chrome";
+import { DownloadSchema } from "@/components/download/Schema";
 import { INK, LINE, LIME, MUTE, CARD, MONO } from "@/components/download/theme";
 import { ALL_ITEMS, getItem, gateHref, categoryLabel } from "@/data/download";
 
@@ -44,8 +45,18 @@ export default async function DownloadDetailPage({ params }: PageProps) {
     { label: it.titleTop },
   ];
 
+  // 목차 — 경쟁 페이지에는 다 있는데 우리만 없었다. 실제로 있는 섹션만 넣는다.
+  const toc = [
+    { id: "how", label: it.howTitle },
+    ...(it.picks && it.picks.length > 0
+      ? [{ id: "picks", label: it.picksTitle ?? "함께 받는 프로그램" }]
+      : []),
+    { id: "faq", label: "자주 묻는 질문" },
+  ];
+
   return (
     <DownloadShell tab={TAB[it.category]}>
+      <DownloadSchema item={it} />
       <Breadcrumb trail={trail} />
 
       {/* 히어로 — 배지 · 제목 두 줄 · 받기 버튼 · 출처 한 줄 */}
@@ -103,10 +114,28 @@ export default async function DownloadDetailPage({ params }: PageProps) {
         ))}
       </section>
 
+      {/* 목차 — 페이지에 뭐가 있는지 먼저 보여 준다 */}
+      <nav
+        aria-label="목차"
+        style={{ padding: "24px 28px 0", display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}
+      >
+        <span style={{ fontFamily: MONO, fontSize: 10, letterSpacing: "0.16em", color: MUTE }}>목차</span>
+        {toc.map((t) => (
+          <a
+            key={t.id}
+            href={`#${t.id}`}
+            className="dl-a"
+            style={{ border: `1px solid ${LINE}`, padding: "7px 12px", fontSize: 13 }}
+          >
+            {t.label}
+          </a>
+        ))}
+      </nav>
+
       {/* 본문 + 사이드 */}
-      <section className="dl-main" style={{ padding: "56px 28px 0" }}>
+      <section className="dl-main" style={{ padding: "40px 28px 0" }}>
         <div>
-          <h2 style={{ fontSize: "clamp(28px,4vw,44px)", fontWeight: 800, letterSpacing: "-0.045em" }}>{it.howTitle}</h2>
+          <h2 id="how" style={{ scrollMarginTop: 24, fontSize: "clamp(28px,4vw,44px)", fontWeight: 800, letterSpacing: "-0.045em" }}>{it.howTitle}</h2>
           <div style={{ marginTop: 22, borderTop: `1px solid ${LINE}` }}>
             {it.steps.map((s, i) => (
               <div key={i} style={{ display: "grid", gridTemplateColumns: "72px minmax(0,1fr)", gap: 20, padding: "26px 0", borderBottom: `1px solid ${LINE}` }}>
@@ -125,7 +154,7 @@ export default async function DownloadDetailPage({ params }: PageProps) {
               내부 링크라 nofollow 를 붙이지 않는다. */}
           {it.picks && it.picks.length > 0 ? (
             <>
-              <h2 style={{ marginTop: 52, fontSize: "clamp(24px,3.2vw,34px)", fontWeight: 800, letterSpacing: "-0.04em" }}>
+              <h2 id="picks" style={{ scrollMarginTop: 24, marginTop: 52, fontSize: "clamp(24px,3.2vw,34px)", fontWeight: 800, letterSpacing: "-0.04em" }}>
                 {it.picksTitle ?? "함께 받는 프로그램"}
               </h2>
               <div style={{ marginTop: 18, borderTop: `1px solid ${LINE}` }}>
@@ -150,7 +179,7 @@ export default async function DownloadDetailPage({ params }: PageProps) {
             </>
           ) : null}
 
-          <h2 style={{ marginTop: 52, fontSize: "clamp(24px,3.2vw,34px)", fontWeight: 800, letterSpacing: "-0.04em" }}>
+          <h2 id="faq" style={{ scrollMarginTop: 24, marginTop: 52, fontSize: "clamp(24px,3.2vw,34px)", fontWeight: 800, letterSpacing: "-0.04em" }}>
             자주 묻는 질문
           </h2>
           <div style={{ marginTop: 18, borderTop: `1px solid ${LINE}` }}>

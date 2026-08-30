@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DownloadShell, Breadcrumb } from "@/components/download/Chrome";
+import { DownloadListSchema } from "@/components/download/Schema";
 import { LINE, LIME, MUTE, MONO } from "@/components/download/theme";
 import { CATEGORIES, itemsIn, itemHref, categoryLabel, type DownloadCategory } from "@/data/download";
 
@@ -40,6 +41,7 @@ export default async function DownloadCategoryPage({ params }: PageProps) {
 
   return (
     <DownloadShell tab={TAB[cat]}>
+      <DownloadListSchema category={cat} items={items} />
       <Breadcrumb trail={[{ label }]} />
 
       <section style={{ padding: "48px 28px 36px" }}>
