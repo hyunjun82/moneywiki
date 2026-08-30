@@ -1,6 +1,5 @@
 export const dynamic = "force-static";
 import type { Metadata } from "next";
-import Link from "next/link";
 import { DownloadShell } from "@/components/download/Chrome";
 import { INK, LINE, PAPER, LIME, MUTE, CARD, CARD2, MONO } from "@/components/download/theme";
 import { ALL_ITEMS, CATEGORIES, itemsIn, itemHref, categoryLabel } from "@/data/download";
@@ -92,7 +91,7 @@ export default function DownloadPage() {
           const t = toneStyle(TONE[c]);
           const n = itemsIn(c).length;
           return (
-            <Link
+            <a
               key={c}
               href={`/download/${c}`}
               className="dl-cat"
@@ -109,7 +108,7 @@ export default function DownloadPage() {
                 {categoryLabel(c)}
               </h2>
               <p style={{ marginTop: 10, fontSize: 13, lineHeight: 1.55, color: t.sub }}>{DESC[c]}</p>
-            </Link>
+            </a>
           );
         })}
       </section>
@@ -127,7 +126,7 @@ export default function DownloadPage() {
         <ul style={{ listStyle: "none", margin: "26px 0 0", padding: 0 }}>
           {latest.map((w, i) => (
             <li key={w.slug} className="dl-row" style={{ borderTop: `1px solid ${LINE}` }}>
-              <Link
+              <a
                 href={itemHref(w)}
                 className="dl-a"
                 style={{ display: "grid", gridTemplateColumns: "44px minmax(0,1fr) auto auto", alignItems: "center", gap: 16, padding: "18px 8px" }}
@@ -141,7 +140,7 @@ export default function DownloadPage() {
                   {categoryLabel(w.category)}
                 </span>
                 <span className="dl-get" style={{ fontSize: 13, fontWeight: 700, whiteSpace: "nowrap" }}>받기 ↓</span>
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
@@ -157,9 +156,9 @@ export default function DownloadPage() {
             <h2 style={{ fontSize: "clamp(26px,3.6vw,52px)", lineHeight: 0.95, fontWeight: 800, letterSpacing: "-0.05em", margin: 0 }}>
               제조사별 드라이버
             </h2>
-            <Link href="/download/driver" className="dl-a" style={{ fontSize: 13, color: MUTE, whiteSpace: "nowrap" }}>
+            <a href="/download/driver" className="dl-a" style={{ fontSize: 13, color: MUTE, whiteSpace: "nowrap" }}>
               전체 보기 →
-            </Link>
+            </a>
           </div>
           <div className="dl-makers" style={{ marginTop: 22, background: LINE, border: `1px solid ${LINE}` }}>
             {makers.map((m) => (
@@ -184,21 +183,21 @@ export default function DownloadPage() {
             <p style={{ margin: "12px 0 0", fontSize: 13, lineHeight: 1.55, color: "rgba(11,11,12,.72)" }}>
               기기 뒷면 스티커의 모델명을 그대로 입력하세요.
             </p>
-            <Link href="/download/driver" style={{ display: "flex", gap: 8, marginTop: 18, textDecoration: "none" }}>
+            <a href="/download/driver" style={{ display: "flex", gap: 8, marginTop: 18, textDecoration: "none" }}>
               <span style={{ flex: 1, background: INK, color: MUTE, fontFamily: MONO, fontSize: 12, padding: "12px 14px" }}>예 : SL-M2020</span>
               <span style={{ background: INK, color: PAPER, fontSize: 13, fontWeight: 700, padding: "12px 18px" }}>목록</span>
-            </Link>
+            </a>
           </div>
 
           <div style={{ marginTop: 26 }}>
             <p style={{ margin: 0, fontFamily: MONO, fontSize: 11, letterSpacing: "0.14em", color: MUTE }}>REQUEST</p>
-            <Link href="/download/request" className="dl-a" style={{ display: "block", marginTop: 12, borderTop: `1px solid ${LINE}`, padding: "18px 0" }}>
+            <a href="/download/request" className="dl-a" style={{ display: "block", marginTop: 12, borderTop: `1px solid ${LINE}`, padding: "18px 0" }}>
               <span style={{ display: "block", fontSize: 16, fontWeight: 800, letterSpacing: "-0.02em" }}>찾는 파일이 없나요?</span>
               <span style={{ display: "block", marginTop: 8, fontSize: 13, lineHeight: 1.7, color: MUTE }}>
                 프로그램명·기기 모델명을 남기면 공식 배포처를 확인해 색인에 추가합니다.
               </span>
               <span style={{ display: "block", marginTop: 12, fontSize: 13, fontWeight: 800, color: LIME }}>요청 게시판에 남기기 →</span>
-            </Link>
+            </a>
           </div>
         </aside>
       </section>

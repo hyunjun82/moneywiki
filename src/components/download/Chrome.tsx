@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { INK, LINE, PAPER, LIME, MUTE, MONO, TICKER, NAV, SHELL_CSS } from "./theme";
 
 /** 티커 + 헤더 + 푸터. 페이지마다 다시 쓰지 않으려고 여기 한 번만 둔다. */
@@ -39,19 +38,19 @@ export function DownloadShell({
 
       <header style={{ borderBottom: `1px solid ${LINE}`, position: "sticky", top: 0, zIndex: 20, background: INK }}>
         <div style={{ display: "flex", alignItems: "center", gap: 28, padding: "0 28px", height: 64 }}>
-          <Link href="/download" className="dl-a" style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <a href="/download" className="dl-a" style={{ display: "flex", alignItems: "center", gap: 10 }}>
             <span style={{ fontSize: 22, fontWeight: 800, letterSpacing: "-0.03em" }}>
               다운로드<span style={{ color: LIME }}>.</span>인덱스
             </span>
             <span style={{ fontFamily: MONO, fontSize: 10, letterSpacing: "0.1em", color: MUTE, border: `1px solid ${LINE}`, padding: "2px 6px" }}>
               KR/2026
             </span>
-          </Link>
+          </a>
           <nav className="dl-nav" style={{ display: "flex", gap: 22, flexWrap: "wrap" }}>
             {NAV.map((n) => (
-              <Link key={n.href} href={n.href} className="dl-a" style={{ fontSize: 14, whiteSpace: "nowrap" }}>
+              <a key={n.href} href={n.href} className="dl-a" style={{ fontSize: 14, whiteSpace: "nowrap" }}>
                 {n.label}
-              </Link>
+              </a>
             ))}
           </nav>
           <div className="dl-search" style={{ marginLeft: "auto", borderLeft: `1px solid ${LINE}`, paddingLeft: 20, minWidth: 260, display: "flex", alignItems: "center", gap: 8 }}>
@@ -61,7 +60,7 @@ export function DownloadShell({
         </div>
         <div style={{ display: "flex", borderTop: `1px solid ${LINE}` }}>
           {tabs.map((t) => (
-            <Link
+            <a
               key={t.label}
               href={t.href}
               className="dl-a"
@@ -75,7 +74,7 @@ export function DownloadShell({
               }}
             >
               {t.label}
-            </Link>
+            </a>
           ))}
         </div>
       </header>
@@ -101,18 +100,18 @@ export function DownloadFooter() {
           <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: "0.14em", color: MUTE }}>INDEX</div>
           <div style={{ marginTop: 12, display: "grid", gap: 8 }}>
             {NAV.slice(0, 3).map((n) => (
-              <Link key={n.href} href={n.href} className="dl-a" style={{ fontSize: 13 }}>
+              <a key={n.href} href={n.href} className="dl-a" style={{ fontSize: 13 }}>
                 {n.label}
-              </Link>
+              </a>
             ))}
           </div>
         </div>
         <div>
           <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: "0.14em", color: MUTE }}>INFO</div>
           <div style={{ marginTop: 12, display: "grid", gap: 8 }}>
-            <Link href="/download/request" className="dl-a" style={{ fontSize: 13 }}>요청 게시판</Link>
-            <Link href="/terms" className="dl-a" style={{ fontSize: 13 }}>이용약관</Link>
-            <Link href="/privacy" className="dl-a" style={{ fontSize: 13 }}>개인정보처리방침</Link>
+            <a href="/download/request" className="dl-a" style={{ fontSize: 13 }}>요청 게시판</a>
+            <a href="/terms" className="dl-a" style={{ fontSize: 13 }}>이용약관</a>
+            <a href="/privacy" className="dl-a" style={{ fontSize: 13 }}>개인정보처리방침</a>
           </div>
         </div>
       </div>
@@ -124,12 +123,12 @@ export function DownloadFooter() {
 export function Breadcrumb({ trail }: { trail: { label: string; href?: string }[] }) {
   return (
     <div style={{ borderBottom: `1px solid ${LINE}`, padding: "14px 28px", display: "flex", gap: 10, flexWrap: "wrap", fontFamily: MONO, fontSize: 11, letterSpacing: "0.1em", color: MUTE }}>
-      <Link href="/download" className="dl-a">HOME</Link>
+      <a href="/download" className="dl-a">HOME</a>
       {trail.map((t, i) => (
         <span key={i} style={{ display: "flex", gap: 10 }}>
           <span>/</span>
           {t.href ? (
-            <Link href={t.href} className="dl-a">{t.label}</Link>
+            <a href={t.href} className="dl-a">{t.label}</a>
           ) : (
             <span style={{ color: PAPER }}>{t.label}</span>
           )}

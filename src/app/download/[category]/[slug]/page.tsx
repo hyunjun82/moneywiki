@@ -1,6 +1,5 @@
 export const dynamic = "force-static";
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DownloadShell, Breadcrumb } from "@/components/download/Chrome";
 import { DownloadSchema } from "@/components/download/Schema";
@@ -87,7 +86,7 @@ export default async function DownloadDetailPage({ params }: PageProps) {
             애드센스가 자기 자동광고(비네트)로만 허용한다. 직접 만든 오버레이는 정책 위반이고,
             이 도메인에는 기존 글 수천 편이 같이 얹혀 있어서 제재를 맞으면 사이트 전체가 맞는다.
             광고는 게이트 페이지 안의 일반 디스플레이 자리에서만 노출된다. */}
-        <Link
+        <a
           href={gateHref(it, 0)}
           style={{
             display: "block", width: "100%", maxWidth: 620, textDecoration: "none",
@@ -101,7 +100,7 @@ export default async function DownloadDetailPage({ params }: PageProps) {
             <span style={{ fontSize: 22, fontWeight: 800, letterSpacing: "-0.02em" }}>{it.ctaLabel}</span>
             <span style={{ fontSize: 20 }}>↓</span>
           </span>
-        </Link>
+        </a>
 
         <p style={{ marginTop: 16, fontFamily: MONO, fontSize: 11, letterSpacing: "0.08em", color: MUTE }}>
           {it.sourceNote}
@@ -163,7 +162,7 @@ export default async function DownloadDetailPage({ params }: PageProps) {
               </h2>
               <div style={{ marginTop: 18, borderTop: `1px solid ${LINE}` }}>
                 {it.picks.map((pk, i) => (
-                  <Link
+                  <a
                     key={i}
                     href={pk.href}
                     className="dl-row dl-a"
@@ -177,7 +176,7 @@ export default async function DownloadDetailPage({ params }: PageProps) {
                       ) : null}
                     </span>
                     <span className="dl-get" style={{ fontSize: 13, whiteSpace: "nowrap" }}>보기 →</span>
-                  </Link>
+                  </a>
                 ))}
               </div>
             </>
@@ -201,7 +200,7 @@ export default async function DownloadDetailPage({ params }: PageProps) {
             <div style={{ fontFamily: MONO, fontSize: 10, letterSpacing: "0.16em", color: MUTE }}>{it.buildsTitle}</div>
             <div style={{ marginTop: 12 }}>
               {it.builds.map((b, i) => (
-                <Link
+                <a
                   key={i}
                   href={gateHref(it, i)}
                   className="dl-a"
@@ -216,7 +215,7 @@ export default async function DownloadDetailPage({ params }: PageProps) {
                     ) : null}
                   </span>
                   <span style={{ fontFamily: MONO, fontSize: 11, color: LIME, whiteSpace: "nowrap" }}>{b.size}</span>
-                </Link>
+                </a>
               ))}
             </div>
           </div>
@@ -239,12 +238,16 @@ export default async function DownloadDetailPage({ params }: PageProps) {
                 } as const;
                 // 우리 사이트 안으로 가는 링크는 nofollow 를 붙이지 않는다.
                 // 외부용으로 만든 규칙을 내부 링크에 그대로 쓰면 페이지끼리 이어지지 않는다.
-                return r.href?.startsWith("/") ? (
-                  <Link key={i} href={r.href} className="dl-a" style={style}>
-                    {inner}
-                  </Link>
-                ) : (
-                  <a key={i} href={r.href} target="_blank" rel="noopener noreferrer nofollow" className="dl-a" style={style}>
+                // 둘 다 <a> 로 hard navigation 시킨다 — 전면광고는 완전한 페이지 이동에서만 붙는다.
+                const isInternal = r.href?.startsWith("/");
+                return (
+                  <a
+                    key={i}
+                    href={r.href}
+                    className="dl-a"
+                    style={style}
+                    {...(isInternal ? {} : { target: "_blank", rel: "noopener noreferrer nofollow" })}
+                  >
                     {inner}
                   </a>
                 );
@@ -255,9 +258,9 @@ export default async function DownloadDetailPage({ params }: PageProps) {
           <div style={{ background: CARD, padding: 18, marginTop: 16 }}>
             <div style={{ fontSize: 15, fontWeight: 800 }}>찾는 파일이 없나요?</div>
             <p style={{ marginTop: 8, fontSize: 13, lineHeight: 1.7, color: MUTE }}>{it.requestNote}</p>
-            <Link href="/download/request" style={{ display: "inline-block", marginTop: 12, color: LIME, fontSize: 13, fontWeight: 800, textDecoration: "none" }}>
+            <a href="/download/request" style={{ display: "inline-block", marginTop: 12, color: LIME, fontSize: 13, fontWeight: 800, textDecoration: "none" }}>
               요청 게시판에 남기기 →
-            </Link>
+            </a>
           </div>
         </aside>
       </section>

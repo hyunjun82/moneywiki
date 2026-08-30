@@ -1,6 +1,5 @@
 export const dynamic = "force-static";
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DownloadShell } from "@/components/download/Chrome";
 import { GateClient } from "@/components/download/GateClient";
@@ -40,9 +39,9 @@ export default async function DownloadGatePage({ params }: PageProps) {
     <DownloadShell>
       <section style={{ padding: "40px 28px 0" }}>
         <div style={{ maxWidth: 940, margin: "0 auto 22px" }}>
-          <Link href={itemHref(it)} className="dl-a" style={{ fontFamily: MONO, fontSize: 11, letterSpacing: "0.1em", color: MUTE }}>
+          <a href={itemHref(it)} className="dl-a" style={{ fontFamily: MONO, fontSize: 11, letterSpacing: "0.1em", color: MUTE }}>
             ← {it.titleTop} 페이지로
-          </Link>
+          </a>
         </div>
 
         <GateClient builds={it.builds} sourceNote={it.sourceNote} label={it.ctaLabel} />
@@ -56,7 +55,7 @@ export default async function DownloadGatePage({ params }: PageProps) {
           </div>
           <div style={{ marginTop: 18, borderTop: `1px solid ${LINE}` }}>
             {also.map((x) => (
-              <Link
+              <a
                 key={x.slug}
                 href={itemHref(x)}
                 className="dl-row dl-a"
@@ -70,7 +69,7 @@ export default async function DownloadGatePage({ params }: PageProps) {
                   </span>
                 </span>
                 <span className="dl-get" style={{ fontSize: 13, color: LIME, whiteSpace: "nowrap" }}>보기 →</span>
-              </Link>
+              </a>
             ))}
           </div>
         </section>

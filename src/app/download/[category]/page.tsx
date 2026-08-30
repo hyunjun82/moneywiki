@@ -1,6 +1,5 @@
 export const dynamic = "force-static";
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DownloadShell, Breadcrumb } from "@/components/download/Chrome";
 import { DownloadListSchema } from "@/components/download/Schema";
@@ -68,13 +67,13 @@ export default async function DownloadCategoryPage({ params }: PageProps) {
         {items.length === 0 ? (
           <p style={{ padding: "40px 0", fontSize: 14, color: MUTE }}>
             아직 색인된 파일이 없습니다. 필요한 파일을{" "}
-            <Link href="/download/request" style={{ color: LIME }}>요청 게시판</Link>
+            <a href="/download/request" style={{ color: LIME }}>요청 게시판</a>
             에 남겨주세요.
           </p>
         ) : (
           <div>
             {items.map((x) => (
-              <Link
+              <a
                 key={x.slug}
                 href={itemHref(x)}
                 className="dl-row dl-a"
@@ -86,7 +85,7 @@ export default async function DownloadCategoryPage({ params }: PageProps) {
                   <span style={{ display: "block", marginTop: 5, fontFamily: MONO, fontSize: 10.5, letterSpacing: "0.1em", color: MUTE }}>{x.listMeta}</span>
                 </span>
                 <span className="dl-get" style={{ fontSize: 13, color: LIME, whiteSpace: "nowrap" }}>보기 →</span>
-              </Link>
+              </a>
             ))}
           </div>
         )}
