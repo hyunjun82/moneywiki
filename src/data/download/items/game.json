@@ -2023,5 +2023,613 @@
       }
     ],
     "requestNote": "찾는 게임이 없으면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "ROBLOX-다운로드",
+    "category": "game",
+    "kicker": "GAME",
+    "trail": [
+      "게임",
+      "샌드박스"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "한국어"
+    ],
+    "titleTop": "ROBLOX",
+    "titleBottom": "다운로드",
+    "listTitle": "ROBLOX 다운로드",
+    "listMeta": "무료 · Roblox Corporation",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "ROBLOX 다운로드",
+    "sourceNote": "SOURCE: ROBLOX.COM 공식 한국어 다운로드 화면",
+    "description": "Roblox를 공식 한국어 다운로드 화면으로 연결합니다. 이용자가 직접 만든 수많은 게임을 하나의 앱에서 즐기는 플랫폼입니다.",
+    "updatedAt": "2026-08-30",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료 플레이"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "배포처",
+        "value": "Roblox Corporation"
+      },
+      {
+        "label": "언어",
+        "value": "한국어"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.30"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 로블록스 한국어 공식 화면이 열립니다. 화면 소개는 \"수천만 개의 세상과 체험을 둘러보세요\"입니다."
+      },
+      {
+        "title": "Windows 앱 받기",
+        "body": "화면의 \"Windows 앱 다운로드\" 버튼을 누르면 설치 파일이 받아집니다."
+      },
+      {
+        "title": "계정 만들고 시작",
+        "body": "설치 후 처음 실행하면 계정을 만들거나 로그인하라는 화면이 뜹니다. 이후 원하는 게임을 골라 들어가면 됩니다."
+      },
+      {
+        "title": "다른 기기에서도 이어서",
+        "body": "공식 화면에 \"다양한 기기에서 Roblox를 즐기세요\"로 안내되어 있습니다. 같은 계정으로 로그인하면 PC와 모바일에서 진행 상황이 이어집니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "돈을 내야 하나요?",
+        "a": "설치와 기본 이용은 무료입니다. 로벅스(게임 내 화폐)를 써야 하는 아이템이나 게임패스는 유료로 별도 구매합니다."
+      },
+      {
+        "q": "나이 제한이 있나요?",
+        "a": "공식 화면에 보호자 가이드 메뉴가 따로 마련되어 있습니다. 자녀가 쓸 경우 그 가이드에서 계정 보호 설정을 확인하는 것을 권장합니다."
+      },
+      {
+        "q": "어떤 게임을 할 수 있나요?",
+        "a": "회사가 만든 게임이 아니라 전 세계 이용자들이 만든 게임을 모아 놓은 플랫폼입니다. 공식 소개대로 수천만 개의 세상이 있어 장르가 매우 다양합니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "Roblox (Windows)",
+        "note": "한국어 공식 화면",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://www.roblox.com/ko/download",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "로블록스 공식 다운로드",
+        "href": "https://www.roblox.com/ko/download"
+      },
+      {
+        "tag": "GAME",
+        "name": "메이플스토리 다운로드",
+        "href": "/download/game/메이플스토리-다운로드"
+      },
+      {
+        "tag": "GAME",
+        "name": "무료 PC 게임 다운로드",
+        "href": "/download/game/무료-PC-게임-다운로드"
+      }
+    ],
+    "requestNote": "다른 샌드박스 게임이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "DeSmuME-다운로드",
+    "category": "game",
+    "kicker": "GAME",
+    "trail": [
+      "게임",
+      "에뮬레이터"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "오픈소스"
+    ],
+    "titleTop": "DeSmuME",
+    "titleBottom": "다운로드",
+    "listTitle": "DeSmuME 다운로드",
+    "listMeta": "무료 오픈소스 · NDS 에뮬레이터 · v0.9.13",
+    "ctaPlatforms": "WINDOWS",
+    "ctaLabel": "DeSmuME 다운로드",
+    "sourceNote": "SOURCE: DESMUME.ORG 공식 다운로드 화면",
+    "description": "DeSmuME를 공식 화면으로 연결합니다. 닌텐도DS 게임을 PC에서 구동하는 무료 오픈소스 에뮬레이터입니다.",
+    "updatedAt": "2026-08-30",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료(오픈소스)"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "배포처",
+        "value": "DeSmuME (GitHub)"
+      },
+      {
+        "label": "버전",
+        "value": "v0.9.13"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.30"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "최신 정식 버전을 확인합니다",
+        "body": "공식 화면 표기로 최신 정식 릴리스는 \"DeSmuME 0.9.13\"이며, 2022년 5월 23일에 발표되어 이후 정식 버전 업데이트는 없습니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 DeSmuME 공식 다운로드 안내 화면이 열립니다. 실제 설치 파일은 GitHub 릴리스 페이지에 있습니다."
+      },
+      {
+        "title": "실행에 필요한 구성 요소를 설치합니다",
+        "body": "공식 안내에 redistributable is required to run this라고 되어 있어, 2015·2017·2019용 재배포 패키지를 함께 설치해야 실행됩니다."
+      },
+      {
+        "title": "최신 기능이 필요하면 나이틀리 빌드",
+        "body": "공식 화면에 \"Nightly builds for the windows version can be found here\"로 별도 안내되어 있어, 정식판 이후 개발 버전을 시험해 볼 수도 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료인가요?",
+        "a": "오픈소스로 배포되는 무료 에뮬레이터입니다."
+      },
+      {
+        "q": "최근에도 업데이트되나요?",
+        "a": "정식 버전은 2022년 0.9.13 이후 새 릴리스가 없습니다. 다만 공식 화면에 안내된 나이틀리 빌드는 계속 갱신됩니다."
+      },
+      {
+        "q": "옛날 버전도 받을 수 있나요?",
+        "a": "공식 화면에 \"you can download these and more at\" 문구와 함께 SourceForge 저장소 링크가 안내되어 있어 이전 버전도 받을 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "DeSmuME",
+        "note": "v0.9.13",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://desmume.org/download/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "DeSmuME 공식 화면",
+        "href": "https://desmume.org/download/"
+      }
+    ],
+    "requestNote": "다른 에뮬레이터가 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "BlueStacks-App-Player-다운로드",
+    "category": "game",
+    "kicker": "GAME",
+    "trail": [
+      "게임",
+      "에뮬레이터"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "모바일 게임 PC 실행"
+    ],
+    "titleTop": "BlueStacks",
+    "titleBottom": "다운로드",
+    "listTitle": "BlueStacks App Player 다운로드",
+    "listMeta": "무료 · 안드로이드 앱 플레이어",
+    "ctaPlatforms": "WINDOWS · MAC",
+    "ctaLabel": "BlueStacks 다운로드",
+    "sourceNote": "SOURCE: BLUESTACKS.COM 공식 다운로드 화면",
+    "description": "BlueStacks를 공식 화면으로 연결합니다. 모바일 게임을 PC 큰 화면에서 즐기게 해 주는 안드로이드 앱 플레이어입니다.",
+    "updatedAt": "2026-08-30",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MAC"
+      },
+      {
+        "label": "배포처",
+        "value": "BlueStacks"
+      },
+      {
+        "label": "종류",
+        "value": "안드로이드 앱 플레이어"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.30"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무엇을 하는 프로그램인지 압니다",
+        "body": "공식 화면 표기는 \"World's #1 Android Emulator\"입니다. 모바일 전용 게임을 PC에서 큰 화면과 마우스·키보드로 즐기는 용도입니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 BlueStacks 공식 화면이 열립니다. Windows 11에 맞춘 BlueStacks 5와 macOS용이 함께 있습니다."
+      },
+      {
+        "title": "안드로이드 버전을 고릅니다",
+        "body": "같은 화면에서 Nougat 32/64비트, Pie 64비트, Android 11·13 64비트 등 안드로이드 버전별 설치 파일을 고를 수 있습니다."
+      },
+      {
+        "title": "구글 계정으로 로그인",
+        "body": "공식 FAQ에 안내된 대로, 설치 후 실행하면 구글 플레이 게임을 받기 위한 구글 계정 로그인을 요청합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료인가요?",
+        "a": "공식 화면 FAQ에 \"Is BlueStacks free to download?\" 항목이 별도로 있으며, 기본 다운로드와 설치는 무료입니다."
+      },
+      {
+        "q": "구글 계정이 꼭 필요한가요?",
+        "a": "공식 FAQ에 \"Why does BlueStacks need me to log in to my Google account?\" 항목이 있어, 구글 플레이 게임을 설치·동기화하려면 로그인이 필요합니다."
+      },
+      {
+        "q": "설치는 어떻게 하나요?",
+        "a": "공식 FAQ 답변으로 \"Download the .exe file and complete the setup within minutes to start playing your favorite mobile games on PC\"라고 안내되어 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "BlueStacks 5",
+        "note": "Windows·Mac",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MAC",
+        "url": "https://www.bluestacks.com/download.html",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "BlueStacks 공식 화면",
+        "href": "https://www.bluestacks.com/download.html"
+      }
+    ],
+    "requestNote": "다른 안드로이드 앱 플레이어가 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "Goose-Goose-Duck-다운로드",
+    "category": "game",
+    "kicker": "GAME",
+    "trail": [
+      "게임",
+      "소셜 추리"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "Steam"
+    ],
+    "titleTop": "Goose Goose Duck",
+    "titleBottom": "다운로드",
+    "listTitle": "Goose Goose Duck 다운로드",
+    "listMeta": "무료 · Gaggle Studios · 최대 16인 소셜 추리",
+    "ctaPlatforms": "WINDOWS (STEAM)",
+    "ctaLabel": "Goose Goose Duck 다운로드",
+    "sourceNote": "SOURCE: STORE.STEAMPOWERED.COM 공식 스토어 화면",
+    "description": "Goose Goose Duck을 Steam 공식 스토어 화면으로 연결합니다. 거위와 오리로 나뉘어 서로의 정체를 추리하는 무료 온라인 파티 게임입니다.",
+    "updatedAt": "2026-08-30",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료(부분 유료 아이템)"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS"
+      },
+      {
+        "label": "배포처",
+        "value": "Gaggle Studios, Inc. (Steam)"
+      },
+      {
+        "label": "출시일",
+        "value": "2021-10-04"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.30"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무엇을 하는 게임인지 압니다",
+        "body": "공식 소개는 \"Goose Goose Duck is a game of social deduction for up to 16 players. Players are separated into different groups that are each assigned a different objective\"이며, \"Complete your team\"의 목표를 달성하면 승리한다고 되어 있습니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Steam 공식 스토어 화면이 열립니다. Steam 클라이언트가 없다면 먼저 설치해야 합니다."
+      },
+      {
+        "title": "평가를 확인합니다",
+        "body": "확인 시점 최근 사용자 평가는 \"Very Positive\"이며, 한국어 인터페이스와 음성도 지원됩니다."
+      },
+      {
+        "title": "설치 후 플레이",
+        "body": "Steam에서 \"플레이\" 버튼으로 설치하면 되며, 구글 또는 Gaggle 계정 로그인이 필요합니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료인가요?",
+        "a": "Steam 공식 화면에 \"Free To Play\"로 표기되어 있으며, 꾸미기 아이템 등에 인앱 결제(In-App Purchases)가 있습니다."
+      },
+      {
+        "q": "계정이 필요한가요?",
+        "a": "공식 화면에 \"Requires 3rd-Party Account\"로 표기되어 있고, Google 또는 Gaggle 계정으로 로그인해야 한다고 안내되어 있습니다."
+      },
+      {
+        "q": "안티치트 프로그램이 깔리나요?",
+        "a": "공식 화면에 \"Uses Kernel Level Anti-Cheat\"와 \"Easy Anti-Cheat - Requires manual removal after game uninstall\"이 안내되어 있어, 게임을 지운 뒤 별도로 안티치트를 제거해야 할 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면",
+    "builds": [
+      {
+        "name": "Goose Goose Duck",
+        "note": "Steam",
+        "size": "공식 화면",
+        "platform": "WINDOWS",
+        "url": "https://store.steampowered.com/app/1568590/Goose_Goose_Duck/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Steam 공식 스토어",
+        "href": "https://store.steampowered.com/app/1568590/Goose_Goose_Duck/"
+      }
+    ],
+    "requestNote": "다른 소셜 추리 게임이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "Brawl-Stars-다운로드",
+    "category": "game",
+    "kicker": "GAME",
+    "trail": [
+      "게임",
+      "모바일"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "Supercell"
+    ],
+    "titleTop": "Brawl Stars",
+    "titleBottom": "다운로드",
+    "listTitle": "Brawl Stars 다운로드",
+    "listMeta": "무료 · Supercell · 3v3 배틀",
+    "ctaPlatforms": "ANDROID · IOS",
+    "ctaLabel": "Brawl Stars 받으러 가기",
+    "sourceNote": "SOURCE: SUPERCELL.COM 공식 게임 화면",
+    "description": "Brawl Stars를 제작사 Supercell 공식 화면으로 연결합니다. 원래 모바일 게임이라, PC에서 하려면 BlueStacks 같은 안드로이드 앱 플레이어가 함께 필요합니다.",
+    "updatedAt": "2026-08-30",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료(부분 유료 아이템)"
+      },
+      {
+        "label": "플랫폼",
+        "value": "ANDROID · IOS (PC는 앱 플레이어 필요)"
+      },
+      {
+        "label": "배포처",
+        "value": "Supercell"
+      },
+      {
+        "label": "장르",
+        "value": "3v3 · 배틀로얄"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.30"
+      }
+    ],
+    "howTitle": "이용 방법",
+    "steps": [
+      {
+        "title": "무엇을 하는 게임인지 압니다",
+        "body": "공식 소개는 \"Time to BRAWL! Team up with your friends and get ready for epic multiplayer MAYHEM! Jump into your favorite game mode and play quick matches with your friends\"입니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 Supercell 공식 게임 화면이 열립니다. 여기서 Google Play·App Store로 이동해 받습니다."
+      },
+      {
+        "title": "모바일 게임임을 압니다",
+        "body": "Brawl Stars는 안드로이드·iOS용으로 나온 게임이라 PC 전용 설치 파일은 없습니다. PC에서 하려면 이미 소개한 BlueStacks 같은 안드로이드 앱 플레이어를 먼저 설치해야 합니다."
+      },
+      {
+        "title": "게임 시작",
+        "body": "설치 후 계정을 연동하면 다양한 브롤러(캐릭터)를 골라 3v3, 배틀로얄 등 여러 모드를 즐길 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료인가요?",
+        "a": "설치와 기본 플레이는 무료이며, 브롤 패스나 캐릭터 스킨 같은 아이템은 유료로 구매합니다."
+      },
+      {
+        "q": "PC 버전이 따로 있나요?",
+        "a": "공식 게임 페이지 자체가 모바일(Google Play·App Store) 링크로 연결되어 있어, PC 전용 클라이언트는 공식적으로 제공되지 않습니다."
+      },
+      {
+        "q": "PC에서 하려면 어떻게 하나요?",
+        "a": "BlueStacks 같은 안드로이드 앱 플레이어를 PC에 설치한 뒤, 그 안에서 구글 플레이로 Brawl Stars를 설치하는 방식으로 즐길 수 있습니다."
+      }
+    ],
+    "buildsTitle": "공식 화면",
+    "builds": [
+      {
+        "name": "Brawl Stars",
+        "note": "Android·iOS",
+        "size": "공식 화면",
+        "platform": "ANDROID · IOS",
+        "url": "https://supercell.com/en/games/brawlstars/",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "Supercell 공식 게임 화면",
+        "href": "https://supercell.com/en/games/brawlstars/"
+      },
+      {
+        "tag": "GAME",
+        "name": "BlueStacks App Player 다운로드",
+        "href": "/download/game/BlueStacks-App-Player-다운로드"
+      }
+    ],
+    "requestNote": "다른 모바일 게임이 필요하면 요청 게시판에 남겨주세요."
+  },
+  {
+    "slug": "melonDS-다운로드",
+    "category": "game",
+    "kicker": "GAME",
+    "trail": [
+      "게임",
+      "에뮬레이터"
+    ],
+    "badges": [
+      "공식 배포처",
+      "무료",
+      "오픈소스"
+    ],
+    "titleTop": "melonDS",
+    "titleBottom": "다운로드",
+    "listTitle": "melonDS 다운로드",
+    "listMeta": "무료 오픈소스 · NDS 에뮬레이터 · 활발히 개발 중",
+    "ctaPlatforms": "WINDOWS · MAC · LINUX",
+    "ctaLabel": "melonDS 다운로드",
+    "sourceNote": "SOURCE: MELONDS.KURIBO64.NET 공식 화면",
+    "description": "melonDS를 공식 화면으로 연결합니다. 닌텐도DS 게임을 구동하는 무료 오픈소스 에뮬레이터로, DeSmuME와 달리 지금도 활발히 업데이트되고 있습니다.",
+    "updatedAt": "2026-08-30",
+    "specs": [
+      {
+        "label": "요금",
+        "value": "무료(오픈소스)"
+      },
+      {
+        "label": "OS",
+        "value": "WINDOWS · MAC · LINUX"
+      },
+      {
+        "label": "배포처",
+        "value": "melonDS (Arisotura)"
+      },
+      {
+        "label": "특징",
+        "value": "JIT 리컴파일러 · OpenGL 렌더러"
+      },
+      {
+        "label": "확인일",
+        "value": "2026.08.30"
+      }
+    ],
+    "howTitle": "설치 방법",
+    "steps": [
+      {
+        "title": "무엇을 하는 프로그램인지 압니다",
+        "body": "공식 소개는 \"melonDS aims at providing fast and accurate Nintendo DS emulation\"입니다."
+      },
+      {
+        "title": "공식 화면 열기",
+        "body": "위 버튼을 누르면 melonDS 공식 화면이 열립니다. Downloads 메뉴에서 Windows·Mac·Linux용 파일을 받습니다."
+      },
+      {
+        "title": "주요 기능을 확인합니다",
+        "body": "공식 기능 목록에 \"JIT recompiler for fast emulation\", \"OpenGL renderer, 3D upscaling\"이 포함되어 있습니다."
+      },
+      {
+        "title": "게임 파일 불러와 실행",
+        "body": "설치 후 본인이 정당하게 보유한 닌텐도DS 게임 파일을 불러오면 바로 플레이할 수 있습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "무료인가요?",
+        "a": "오픈소스로 배포되는 무료 에뮬레이터입니다."
+      },
+      {
+        "q": "DeSmuME와 뭐가 다른가요?",
+        "a": "공식 화면 블로그가 2026년까지도 계속 업데이트되고 있어, 2022년 이후 정식 업데이트가 없는 DeSmuME보다 더 활발히 개발되고 있습니다."
+      },
+      {
+        "q": "와이파이 기능도 되나요?",
+        "a": "공식 기능 목록에 \"(WIP) Wifi: local multiplayer, online connectivity\"로 안내되어 있어, 아직 개발 중인 기능입니다."
+      }
+    ],
+    "buildsTitle": "공식 화면에 있는 파일",
+    "builds": [
+      {
+        "name": "melonDS",
+        "note": "Windows·Mac·Linux",
+        "size": "공식 화면",
+        "platform": "WINDOWS · MAC · LINUX",
+        "url": "https://melonds.kuribo64.net/downloads.php",
+        "kind": "page"
+      }
+    ],
+    "relatedTitle": "RELATED",
+    "related": [
+      {
+        "tag": "PAGE",
+        "name": "melonDS 공식 화면",
+        "href": "https://melonds.kuribo64.net/downloads.php"
+      },
+      {
+        "tag": "SW",
+        "name": "DeSmuME 다운로드",
+        "href": "/download/game/DeSmuME-다운로드"
+      }
+    ],
+    "requestNote": "다른 에뮬레이터가 필요하면 요청 게시판에 남겨주세요."
   }
 ]
