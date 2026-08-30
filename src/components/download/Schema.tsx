@@ -23,9 +23,13 @@ const APP_CATEGORY: Record<string, string> = {
   app: "MultimediaApplication",
 };
 
-/** specs 배열에서 라벨로 값을 찾는다. 없으면 undefined. */
-function spec(it: DownloadItem, label: string): string | undefined {
-  return it.specs.find((s) => s.label === label)?.value;
+/** specs 배열에서 라벨로 값을 찾는다. 항목마다 라벨 표기가 달라(버전/VERSION 등) 후보를 여럿 받는다. */
+function spec(it: DownloadItem, ...labels: string[]): string | undefined {
+  for (const label of labels) {
+    const v = it.specs.find((s) => s.label === label)?.value;
+    if (v) return v;
+  }
+  return undefined;
 }
 
 /**
@@ -34,8 +38,11 @@ function spec(it: DownloadItem, label: string): string | undefined {
  * 유료거나 애매하면 offers 자체를 넣지 않는다.
  */
 function offer(it: DownloadItem) {
-  const fee = (spec(it, "요금") || "").trim();
-  const isFree = /^무료$/.test(fee) || /^무료 /.test(fee) || fee === "프리웨어";
+  const fee = (spec(it, "요금", "LICENSE") || "").trim();
+  // "무료 체험"은 평가판이지 무료가 아니다. "무료 검사"는 기능 일부만 무료라는 뜻이고,
+  // "무료 위주"는 묶음 페이지라 항목마다 다르다는 뜻이다 — 셋 다 확실한 무료가 아니라서 뺀다.
+  const EXCLUDE = /체험|평가판|시험|검사|위주|별도|상이/;
+  const isFree = !EXCLUDE.test(fee) && (/^무료$/.test(fee) || /^무료[ ·]/.test(fee) || fee === "프리웨어");
   if (!isFree) return undefined;
   return {
     "@type": "Offer",
@@ -47,11 +54,11 @@ function offer(it: DownloadItem) {
 
 export function DownloadSchema({ item }: { item: DownloadItem }) {
   const url = `${BASE}/download/${item.category}/${encodeURIComponent(item.slug)}`;
-  const name = `${item.titleTop} ${item.titleBottom}`.replace(/\s+/g, " ").trim();
 
   const os = spec(item, "OS");
-  const maker = spec(item, "배포처");
-  const version = spec(item, "버전");
+  const maker = spec(item, "배포처", "SOURCE");
+  const version = spec(item, "버전", "VERSION");
+  const fileSize = spec(item, "용량", "파일크기", "FILE SIZE");
 
   const app: Record<string, unknown> = {
     "@type": "SoftwareApplication",
@@ -64,6 +71,7 @@ export function DownloadSchema({ item }: { item: DownloadItem }) {
   };
   if (os) app.operatingSystem = os;
   if (version) app.softwareVersion = version;
+  if (fileSize) app.fileSize = fileSize;
   if (maker) app.publisher = { "@type": "Organization", name: maker };
   const o = offer(item);
   if (o) app.offers = o;

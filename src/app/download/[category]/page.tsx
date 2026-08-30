@@ -6,6 +6,7 @@ import { DownloadShell, Breadcrumb } from "@/components/download/Chrome";
 import { DownloadListSchema } from "@/components/download/Schema";
 import { LINE, LIME, MUTE, MONO } from "@/components/download/theme";
 import { CATEGORIES, itemsIn, itemHref, categoryLabel, type DownloadCategory } from "@/data/download";
+import { Favicon } from "@/components/download/Favicon";
 
 interface PageProps {
   params: Promise<{ category: string }>;
@@ -72,15 +73,15 @@ export default async function DownloadCategoryPage({ params }: PageProps) {
           </p>
         ) : (
           <div>
-            {items.map((x, i) => (
+            {items.map((x) => (
               <Link
                 key={x.slug}
                 href={itemHref(x)}
                 className="dl-row dl-a"
                 style={{ display: "grid", gridTemplateColumns: "44px minmax(0,1fr) auto", alignItems: "center", gap: 16, padding: "20px 8px", borderBottom: `1px solid ${LINE}` }}
               >
-                <span style={{ fontFamily: MONO, fontSize: 11, color: MUTE }}>{String(i + 1).padStart(2, "0")}</span>
-                <span>
+                <Favicon url={x.builds[0]?.url} initialsFrom={x.titleTop} size={28} />
+                <span style={{ minWidth: 0 }}>
                   <span style={{ display: "block", fontSize: 16, fontWeight: 800, letterSpacing: "-0.02em" }}>{x.listTitle}</span>
                   <span style={{ display: "block", marginTop: 5, fontFamily: MONO, fontSize: 10.5, letterSpacing: "0.1em", color: MUTE }}>{x.listMeta}</span>
                 </span>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DownloadShell } from "@/components/download/Chrome";
 import { GateClient } from "@/components/download/GateClient";
+import { Favicon } from "@/components/download/Favicon";
 import { LINE, LIME, MUTE, MONO } from "@/components/download/theme";
 import { ALL_ITEMS, getItem, itemHref, recommended } from "@/data/download";
 
@@ -61,9 +62,12 @@ export default async function DownloadGatePage({ params }: PageProps) {
                 className="dl-row dl-a"
                 style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, padding: "18px 8px", borderBottom: `1px solid ${LINE}` }}
               >
-                <span>
-                  <span style={{ display: "block", fontSize: 15.5, fontWeight: 800, letterSpacing: "-0.02em" }}>{x.listTitle}</span>
-                  <span style={{ display: "block", marginTop: 5, fontFamily: MONO, fontSize: 10.5, letterSpacing: "0.1em", color: MUTE }}>{x.listMeta}</span>
+                <span style={{ display: "flex", alignItems: "center", gap: 12, minWidth: 0 }}>
+                  <Favicon url={x.builds[0]?.url} initialsFrom={x.titleTop} size={26} />
+                  <span style={{ minWidth: 0 }}>
+                    <span style={{ display: "block", fontSize: 15.5, fontWeight: 800, letterSpacing: "-0.02em" }}>{x.listTitle}</span>
+                    <span style={{ display: "block", marginTop: 5, fontFamily: MONO, fontSize: 10.5, letterSpacing: "0.1em", color: MUTE }}>{x.listMeta}</span>
+                  </span>
                 </span>
                 <span className="dl-get" style={{ fontSize: 13, color: LIME, whiteSpace: "nowrap" }}>보기 →</span>
               </Link>

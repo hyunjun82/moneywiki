@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DownloadShell, Breadcrumb } from "@/components/download/Chrome";
 import { DownloadSchema } from "@/components/download/Schema";
+import { Favicon } from "@/components/download/Favicon";
 import { INK, LINE, LIME, MUTE, CARD, MONO } from "@/components/download/theme";
 import { ALL_ITEMS, getItem, gateHref, categoryLabel } from "@/data/download";
 
@@ -72,10 +73,13 @@ export default async function DownloadDetailPage({ params }: PageProps) {
           ))}
         </div>
 
-        <h1 style={{ marginTop: 26, fontSize: "clamp(34px, 5.6vw, 62px)", lineHeight: 1.03, fontWeight: 800, letterSpacing: "-0.045em" }}>
-          {it.titleTop}
-          <br />
-          <span style={{ color: MUTE }}>{it.titleBottom}</span>
+        <h1 style={{ marginTop: 26, display: "flex", alignItems: "center", gap: 16, fontSize: "clamp(34px, 5.6vw, 62px)", lineHeight: 1.03, fontWeight: 800, letterSpacing: "-0.045em" }}>
+          <Favicon url={it.builds[0]?.url} initialsFrom={it.titleTop} size={48} />
+          <span>
+            {it.titleTop}
+            <br />
+            <span style={{ color: MUTE }}>{it.titleBottom}</span>
+          </span>
         </h1>
 
         {/* 받기 버튼 — 누르면 곧바로 게이트로 간다.
