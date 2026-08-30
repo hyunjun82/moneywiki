@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-30T09:47:19.613+09:00",
+  "updatedAt": "2026-08-30T14:57:15.311+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -92,13 +92,6 @@
       "changePct": -0.89
     },
     "history": [
-      {
-        "date": "2026-01-21",
-        "krwPerGram": 231000,
-        "krwPerDon": 866250,
-        "change": 6300,
-        "changePct": 2.8
-      },
       {
         "date": "2026-01-22",
         "krwPerGram": 229700,
@@ -1122,7 +1115,7 @@
         "changePct": -0.89
       }
     ],
-    "fetchedDate": "2026-08-29"
+    "fetchedDate": "2026-08-30"
   },
   "fx": {
     "usdkrw": 1371.5,
@@ -1135,7 +1128,7 @@
     "gold": {
       "name": "금",
       "usdPerOz": 4529.9,
-      "changePct": -2.39,
+      "changePct": -2.33,
       "dir": "down",
       "krwPerGram": 199745,
       "krwPerDon": 749044,
@@ -1144,7 +1137,7 @@
     "silver": {
       "name": "은",
       "usdPerOz": 67.79,
-      "changePct": -1.1,
+      "changePct": -1.24,
       "dir": "down",
       "krwPerGram": 2989,
       "krwPerDon": 11209,
