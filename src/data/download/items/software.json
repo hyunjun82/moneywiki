@@ -26593,14 +26593,14 @@
       "무료",
       "Windows·Mac·Linux"
     ],
-    "titleTop": "Hamachi",
+    "titleTop": "하마치",
     "titleBottom": "다운로드",
-    "listTitle": "Hamachi 다운로드",
+    "listTitle": "하마치 다운로드",
     "listMeta": "무료 · LogMeIn · 가상 사설망",
     "ctaPlatforms": "WINDOWS · MAC · LINUX",
-    "ctaLabel": "Hamachi 다운로드",
+    "ctaLabel": "하마치 다운로드",
     "sourceNote": "SOURCE: VPN.NET 공식 다운로드 화면",
-    "description": "Hamachi를 LogMeIn 공식 화면으로 연결합니다. 서로 다른 장소의 PC를 같은 사설망에 있는 것처럼 묶어 주는 가상 랜 프로그램입니다.",
+    "description": "하마치를 LogMeIn 공식 화면으로 연결합니다. 서로 다른 장소의 PC를 같은 사설망에 있는 것처럼 묶어 주는 가상 랜 프로그램입니다.",
     "updatedAt": "2026-08-30",
     "specs": [
       {
@@ -26660,7 +26660,7 @@
     "buildsTitle": "공식 화면에 있는 파일",
     "builds": [
       {
-        "name": "Hamachi",
+        "name": "하마치",
         "note": "OS 자동 인식",
         "size": "공식 화면",
         "platform": "WINDOWS · MAC · LINUX",
@@ -26672,7 +26672,7 @@
     "related": [
       {
         "tag": "PAGE",
-        "name": "Hamachi 공식 화면",
+        "name": "하마치 공식 화면",
         "href": "https://vpn.net/"
       },
       {
@@ -28055,14 +28055,14 @@
       "무료",
       "중국 메신저"
     ],
-    "titleTop": "WeChat",
+    "titleTop": "위챗",
     "titleBottom": "다운로드",
-    "listTitle": "WeChat 다운로드",
+    "listTitle": "위챗 다운로드",
     "listMeta": "무료 · 채팅·통화 메신저",
     "ctaPlatforms": "WINDOWS · MAC",
-    "ctaLabel": "WeChat 다운로드",
+    "ctaLabel": "위챗 다운로드",
     "sourceNote": "SOURCE: WECHAT.COM 공식 화면",
-    "description": "WeChat을 공식 화면으로 연결합니다. 중국을 비롯해 전 세계에서 널리 쓰는 채팅·통화 메신저입니다.",
+    "description": "위챗을 공식 화면으로 연결합니다. 중국을 비롯해 전 세계에서 널리 쓰는 채팅·통화 메신저입니다.",
     "updatedAt": "2026-08-30",
     "specs": [
       {
@@ -28075,7 +28075,7 @@
       },
       {
         "label": "배포처",
-        "value": "WeChat (Tencent)"
+        "value": "위챗 (Tencent)"
       },
       {
         "label": "이용자 규모",
@@ -28094,11 +28094,11 @@
       },
       {
         "title": "공식 화면 열기",
-        "body": "위 버튼을 누르면 WeChat 공식 화면이 열립니다. iOS·Android·macOS·Windows 별로 다운로드 경로가 나뉘어 있습니다."
+        "body": "위 버튼을 누르면 위챗 공식 화면이 열립니다. iOS·Android·macOS·Windows 별로 다운로드 경로가 나뉘어 있습니다."
       },
       {
         "title": "Windows는 Microsoft Store로 연결됩니다",
-        "body": "공식 화면의 Windows 항목을 누르면 Microsoft Store의 WeChat 페이지로 이동해 그곳에서 설치합니다."
+        "body": "공식 화면의 Windows 항목을 누르면 Microsoft Store의 위챗 페이지로 이동해 그곳에서 설치합니다."
       },
       {
         "title": "가입 후 사용",
@@ -28122,7 +28122,7 @@
     "buildsTitle": "공식 화면에 있는 파일",
     "builds": [
       {
-        "name": "WeChat",
+        "name": "위챗",
         "note": "Windows·Mac",
         "size": "공식 화면",
         "platform": "WINDOWS · MAC",
@@ -28134,7 +28134,7 @@
     "related": [
       {
         "tag": "PAGE",
-        "name": "WeChat 공식 화면",
+        "name": "위챗 공식 화면",
         "href": "https://www.wechat.com/en/"
       },
       {
@@ -30384,14 +30384,14 @@
       "무료(광고 포함)",
       "브라우저 재생"
     ],
-    "titleTop": "uTorrent Web",
+    "titleTop": "유토렌트 웹",
     "titleBottom": "다운로드",
-    "listTitle": "uTorrent Web 다운로드",
+    "listTitle": "유토렌트 웹 다운로드",
     "listMeta": "무료(광고 포함) · µTorrent · 브라우저 내 재생",
     "ctaPlatforms": "WINDOWS · MAC",
-    "ctaLabel": "uTorrent Web 다운로드",
+    "ctaLabel": "유토렌트 웹 다운로드",
     "sourceNote": "SOURCE: UTORRENT.COM 공식 다운로드 화면",
-    "description": "uTorrent Web을 제작사 공식 화면으로 연결합니다. 내려받으면서 바로 브라우저에서 재생할 수 있는 토렌트 프로그램으로, 저작권이 있는 자료는 정당한 권한이 있을 때만 받아야 합니다.",
+    "description": "유토렌트 웹을 제작사 공식 화면으로 연결합니다. 내려받으면서 바로 브라우저에서 재생할 수 있는 토렌트 프로그램으로, 저작권이 있는 자료는 정당한 권한이 있을 때만 받아야 합니다.",
     "updatedAt": "2026-08-30",
     "specs": [
       {
@@ -30423,7 +30423,7 @@
       },
       {
         "title": "공식 화면 열기",
-        "body": "위 버튼을 누르면 uTorrent 공식 화면이 열립니다. Windows·Mac용 무료 다운로드 버튼이 있습니다."
+        "body": "위 버튼을 누르면 유토렌트 공식 화면이 열립니다. Windows·Mac용 무료 다운로드 버튼이 있습니다."
       },
       {
         "title": "무료판에 광고가 있음을 압니다",
@@ -30451,7 +30451,7 @@
     "buildsTitle": "공식 화면에 있는 파일",
     "builds": [
       {
-        "name": "uTorrent Web",
+        "name": "유토렌트 웹",
         "note": "무료(광고 포함)",
         "size": "공식 화면",
         "platform": "WINDOWS · MAC",
@@ -30463,7 +30463,7 @@
     "related": [
       {
         "tag": "PAGE",
-        "name": "uTorrent 공식 화면",
+        "name": "유토렌트 공식 화면",
         "href": "https://www.utorrent.com/"
       },
       {
@@ -30894,14 +30894,14 @@
       "무료(광고 포함)",
       "가장 많이 받는 토렌트"
     ],
-    "titleTop": "uTorrent",
+    "titleTop": "유토렌트",
     "titleBottom": "다운로드",
-    "listTitle": "uTorrent 다운로드",
+    "listTitle": "유토렌트 다운로드",
     "listMeta": "무료(광고 포함) · µTorrent Classic · 경량 토렌트",
     "ctaPlatforms": "WINDOWS · MAC · ANDROID",
-    "ctaLabel": "uTorrent 다운로드",
+    "ctaLabel": "유토렌트 다운로드",
     "sourceNote": "SOURCE: UTORRENT.COM 공식 다운로드 화면",
-    "description": "uTorrent(µTorrent Classic)를 제작사 공식 화면으로 연결합니다. 용량이 아주 작은 경량 토렌트 프로그램으로, 저작권이 있는 자료는 정당한 권한이 있을 때만 받아야 합니다.",
+    "description": "유토렌트(µTorrent Classic)를 제작사 공식 화면으로 연결합니다. 용량이 아주 작은 경량 토렌트 프로그램으로, 저작권이 있는 자료는 정당한 권한이 있을 때만 받아야 합니다.",
     "updatedAt": "2026-08-30",
     "specs": [
       {
@@ -30933,7 +30933,7 @@
       },
       {
         "title": "공식 화면 열기",
-        "body": "위 버튼을 누르면 uTorrent 공식 화면이 열립니다. Windows·Mac·Android용 무료 다운로드 버튼이 있습니다."
+        "body": "위 버튼을 누르면 유토렌트 공식 화면이 열립니다. Windows·Mac·Android용 무료 다운로드 버튼이 있습니다."
       },
       {
         "title": "핵심 기능을 확인합니다",
@@ -30950,8 +30950,8 @@
         "a": "다운로드와 기본 사용은 무료이지만 광고가 포함되어 있습니다. 광고를 없애려면 유료 등급이 필요합니다."
       },
       {
-        "q": "uTorrent Web과 뭐가 다른가요?",
-        "a": "uTorrent Web은 브라우저에서 바로 재생하는 초보자용이고, uTorrent(Classic)는 용량이 더 작고 예약 다운로드·원격 관리 같은 세부 기능이 많은 경량 데스크톱 프로그램입니다."
+        "q": "유토렌트 웹과 뭐가 다른가요?",
+        "a": "유토렌트 웹은 브라우저에서 바로 재생하는 초보자용이고, 유토렌트(Classic)는 용량이 더 작고 예약 다운로드·원격 관리 같은 세부 기능이 많은 경량 데스크톱 프로그램입니다."
       },
       {
         "q": "설치 중 다른 프로그램이 같이 깔리나요?",
@@ -30973,12 +30973,12 @@
     "related": [
       {
         "tag": "PAGE",
-        "name": "uTorrent 공식 화면",
+        "name": "유토렌트 공식 화면",
         "href": "https://www.utorrent.com/"
       },
       {
         "tag": "SW",
-        "name": "uTorrent Web 다운로드",
+        "name": "유토렌트 웹 다운로드",
         "href": "/download/software/uTorrent-Web-다운로드"
       },
       {
@@ -31105,14 +31105,14 @@
       "무료",
       "Microsoft Store"
     ],
-    "titleTop": "Instagram",
+    "titleTop": "인스타그램",
     "titleBottom": "다운로드",
-    "listTitle": "Instagram 다운로드",
+    "listTitle": "인스타그램 다운로드",
     "listMeta": "무료 · Meta · Microsoft Store 앱",
     "ctaPlatforms": "WINDOWS 10/11",
-    "ctaLabel": "Instagram 받으러 가기",
+    "ctaLabel": "인스타그램 받으러 가기",
     "sourceNote": "SOURCE: APPS.MICROSOFT.COM 공식 화면",
-    "description": "Instagram을 Microsoft Store 공식 화면으로 연결합니다. PC에서도 사진·동영상을 올리고 친구들과 소통할 수 있는 Meta의 공식 앱입니다.",
+    "description": "인스타그램을 Microsoft Store 공식 화면으로 연결합니다. PC에서도 사진·동영상을 올리고 친구들과 소통할 수 있는 Meta의 공식 앱입니다.",
     "updatedAt": "2026-08-30",
     "specs": [
       {
@@ -31144,7 +31144,7 @@
       },
       {
         "title": "공식 화면 열기",
-        "body": "위 버튼을 누르면 Microsoft Store의 Instagram 공식 화면이 열립니다. \"Microsoft Store에서 보기\"를 누르면 설치가 시작됩니다."
+        "body": "위 버튼을 누르면 Microsoft Store의 인스타그램 공식 화면이 열립니다. \"Microsoft Store에서 보기\"를 누르면 설치가 시작됩니다."
       },
       {
         "title": "계정으로 로그인",
@@ -31172,7 +31172,7 @@
     "buildsTitle": "공식 화면",
     "builds": [
       {
-        "name": "Instagram",
+        "name": "인스타그램",
         "note": "Microsoft Store",
         "size": "공식 화면",
         "platform": "WINDOWS",
@@ -31189,7 +31189,7 @@
       },
       {
         "tag": "SW",
-        "name": "WeChat 다운로드",
+        "name": "위챗 다운로드",
         "href": "/download/software/WeChat-다운로드"
       }
     ],
@@ -35283,14 +35283,14 @@
       "무료",
       "오픈소스"
     ],
-    "titleTop": "FileZilla Server",
+    "titleTop": "파일질라 서버",
     "titleBottom": "다운로드",
-    "listTitle": "FileZilla Server 다운로드",
+    "listTitle": "파일질라 서버 다운로드",
     "listMeta": "무료 오픈소스 · v1.12.6 · FTP 서버",
     "ctaPlatforms": "WINDOWS 64BIT",
-    "ctaLabel": "FileZilla Server 다운로드",
+    "ctaLabel": "파일질라 서버 다운로드",
     "sourceNote": "SOURCE: FILEZILLA-PROJECT.ORG 공식 다운로드 화면",
-    "description": "FileZilla Server를 공식 화면으로 연결합니다. 이미 잘 알려진 FileZilla 클라이언트와 짝을 이루는 무료 오픈소스 FTP 서버 프로그램으로, 내 PC의 파일을 다른 사람에게 공유할 때 씁니다.",
+    "description": "파일질라 서버를 공식 화면으로 연결합니다. 이미 잘 알려진 파일질라 클라이언트와 짝을 이루는 무료 오픈소스 FTP 서버 프로그램으로, 내 PC의 파일을 다른 사람에게 공유할 때 씁니다.",
     "updatedAt": "2026-08-30",
     "specs": [
       {
@@ -35326,7 +35326,7 @@
       },
       {
         "title": "공식 화면 열기",
-        "body": "위 버튼을 누르면 FileZilla 공식 화면이 열립니다. 확인 시점 최신 안정판은 v1.12.6입니다."
+        "body": "위 버튼을 누르면 파일질라 공식 화면이 열립니다. 확인 시점 최신 안정판은 v1.12.6입니다."
       },
       {
         "title": "설치 후 계정·폴더 설정",
@@ -35339,8 +35339,8 @@
         "a": "오픈소스로 배포되는 무료 프로그램입니다."
       },
       {
-        "q": "FileZilla 클라이언트만 있으면 되는 거 아닌가요?",
-        "a": "클라이언트는 접속해서 파일을 주고받는 쪽이고, 서버는 접속을 받아 파일을 제공하는 쪽입니다. 내 컴퓨터를 서버로 쓰려면 FileZilla Server가 따로 필요합니다."
+        "q": "파일질라 클라이언트만 있으면 되는 거 아닌가요?",
+        "a": "클라이언트는 접속해서 파일을 주고받는 쪽이고, 서버는 접속을 받아 파일을 제공하는 쪽입니다. 내 컴퓨터를 서버로 쓰려면 파일질라 서버가 따로 필요합니다."
       },
       {
         "q": "암호화 접속도 지원하나요?",
@@ -35350,7 +35350,7 @@
     "buildsTitle": "공식 화면에 있는 파일",
     "builds": [
       {
-        "name": "FileZilla Server",
+        "name": "파일질라 서버",
         "note": "v1.12.6",
         "size": "공식 화면",
         "platform": "WINDOWS",
@@ -35362,7 +35362,7 @@
     "related": [
       {
         "tag": "PAGE",
-        "name": "FileZilla 공식 화면",
+        "name": "파일질라 공식 화면",
         "href": "https://filezilla-project.org/download.php?type=server"
       },
       {
@@ -35489,19 +35489,19 @@
       "무료판 있음",
       "국산(MOOII TECH)"
     ],
-    "titleTop": "PhotoScape X",
+    "titleTop": "포토스케이프 X",
     "titleBottom": "다운로드",
-    "listTitle": "PhotoScape X 다운로드",
+    "listTitle": "포토스케이프 X 다운로드",
     "listMeta": "무료판 있음 · MOOII TECH · 사진 편집",
     "ctaPlatforms": "WINDOWS 10/11",
-    "ctaLabel": "PhotoScape X 받으러 가기",
+    "ctaLabel": "포토스케이프 X 받으러 가기",
     "sourceNote": "SOURCE: APPS.MICROSOFT.COM 공식 화면",
-    "description": "PhotoScape X를 Microsoft Store 공식 화면으로 연결합니다. 국내 개발사 MOOII TECH의 기존 포토스케이프를 잇는 후속 사진 편집 프로그램으로, 무료판과 유료판(Pro)이 따로 있습니다.",
+    "description": "포토스케이프 X를 Microsoft Store 공식 화면으로 연결합니다. 국내 개발사 MOOII TECH의 기존 포토스케이프를 잇는 후속 사진 편집 프로그램으로, 무료판과 유료판(Pro)이 따로 있습니다.",
     "updatedAt": "2026-08-30",
     "specs": [
       {
         "label": "요금",
-        "value": "무료판 / 유료판(PhotoScape X Pro, ₩50,400)"
+        "value": "무료판 / 유료판(포토스케이프 X Pro, ₩50,400)"
       },
       {
         "label": "OS",
@@ -35524,7 +35524,7 @@
     "steps": [
       {
         "title": "기존 포토스케이프와 다른 프로그램임을 압니다",
-        "body": "PhotoScape X는 클래식 포토스케이프와 같은 MOOII TECH가 만들었지만, Microsoft Store로 배포되는 별도의 후속 프로그램입니다."
+        "body": "포토스케이프 X는 클래식 포토스케이프와 같은 MOOII TECH가 만들었지만, Microsoft Store로 배포되는 별도의 후속 프로그램입니다."
       },
       {
         "title": "무엇을 하는 프로그램인지 압니다",
@@ -35532,7 +35532,7 @@
       },
       {
         "title": "공식 화면 열기",
-        "body": "위 버튼을 누르면 Microsoft Store의 PhotoScape X 공식 화면이 열립니다."
+        "body": "위 버튼을 누르면 Microsoft Store의 포토스케이프 X 공식 화면이 열립니다."
       },
       {
         "title": "기능 구성을 확인합니다",
@@ -35556,7 +35556,7 @@
     "buildsTitle": "공식 화면",
     "builds": [
       {
-        "name": "PhotoScape X",
+        "name": "포토스케이프 X",
         "note": "Microsoft Store",
         "size": "공식 화면",
         "platform": "WINDOWS",
@@ -35896,14 +35896,14 @@
       "무료판 있음",
       "국산(VoyagerX)"
     ],
-    "titleTop": "Vrew",
+    "titleTop": "브루",
     "titleBottom": "다운로드",
-    "listTitle": "Vrew(브루) 다운로드",
+    "listTitle": "브루(Vrew) 다운로드",
     "listMeta": "무료판 있음 · VoyagerX · AI 자막·영상 편집",
     "ctaPlatforms": "WINDOWS · MAC · UBUNTU",
-    "ctaLabel": "Vrew 다운로드",
+    "ctaLabel": "브루 다운로드",
     "sourceNote": "SOURCE: VREW.AI 공식 화면",
-    "description": "Vrew(브루)를 국내 개발사 VoyagerX 공식 화면으로 연결합니다. 음성을 인식해 자막을 자동으로 만들고, 자막을 지우듯 영상을 편집하는 국산 AI 영상 편집 프로그램입니다.",
+    "description": "브루(Vrew)를 국내 개발사 VoyagerX 공식 화면으로 연결합니다. 음성을 인식해 자막을 자동으로 만들고, 자막을 지우듯 영상을 편집하는 국산 AI 영상 편집 프로그램입니다.",
     "updatedAt": "2026-08-30",
     "specs": [
       {
@@ -35935,7 +35935,7 @@
       },
       {
         "title": "공식 화면 열기",
-        "body": "위 버튼을 누르면 Vrew 공식 화면이 열립니다. \"무료 다운로드\" 버튼으로 받을 수 있고, Mac·Windows·Ubuntu를 모두 지원합니다."
+        "body": "위 버튼을 누르면 브루 공식 화면이 열립니다. \"무료 다운로드\" 버튼으로 받을 수 있고, Mac·Windows·Ubuntu를 모두 지원합니다."
       },
       {
         "title": "무료로 쓸 수 있는 소스를 확인합니다",
@@ -35963,7 +35963,7 @@
     "buildsTitle": "공식 화면",
     "builds": [
       {
-        "name": "Vrew",
+        "name": "브루",
         "note": "무료판",
         "size": "공식 화면",
         "platform": "WINDOWS · MAC",
@@ -35975,7 +35975,7 @@
     "related": [
       {
         "tag": "PAGE",
-        "name": "Vrew 공식 화면",
+        "name": "브루 공식 화면",
         "href": "https://vrew.ai/ko/"
       },
       {
@@ -36097,14 +36097,14 @@
       "무료",
       "6100만 사용자"
     ],
-    "titleTop": "AdBlock",
+    "titleTop": "애드블록",
     "titleBottom": "Chrome 확장 다운로드",
-    "listTitle": "AdBlock(Chrome) 다운로드",
+    "listTitle": "애드블록(AdBlock) 다운로드",
     "listMeta": "무료 · Chrome 웹 스토어 · 광고 차단",
     "ctaPlatforms": "CHROME 브라우저",
     "ctaLabel": "Chrome에 추가하기",
     "sourceNote": "SOURCE: CHROMEWEBSTORE.GOOGLE.COM 공식 화면",
-    "description": "AdBlock을 Chrome 웹 스토어 공식 화면으로 연결합니다. 유튜브·페이스북·트위치 등에서 뜨는 광고와 팝업을 막아주는 확장 프로그램으로, 6천만 명 넘는 사용자가 쓰고 있습니다.",
+    "description": "애드블록을 Chrome 웹 스토어 공식 화면으로 연결합니다. 유튜브·페이스북·트위치 등에서 뜨는 광고와 팝업을 막아주는 확장 프로그램으로, 6천만 명 넘는 사용자가 쓰고 있습니다.",
     "updatedAt": "2026-08-30",
     "specs": [
       {
@@ -36164,7 +36164,7 @@
     "buildsTitle": "공식 화면",
     "builds": [
       {
-        "name": "AdBlock",
+        "name": "애드블록",
         "note": "Chrome 확장",
         "size": "공식 화면",
         "platform": "CHROME",
