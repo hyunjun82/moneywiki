@@ -47,6 +47,14 @@ export const SHELL_CSS = `
      색을 물려받는 흰 글자만 갈아 끼운다 — 그래야 위계가 안 무너진다. */
   .dl-a { color: inherit; text-decoration: none; transition: color .14s ease; }
   .dl-a:hover, .dl-a:focus-visible { color: ${LIME}; }
+  /* 목록 한 줄. 인라인 style 로 두면 343줄짜리 카테고리 페이지에서
+     같은 선언이 343번 찍히고, RSC 페이로드에도 한 번 더 실린다.
+     클래스로 빼면 HTML 과 페이로드 양쪽이 같이 줄어든다. */
+  .dl-listrow { display: grid; grid-template-columns: 44px minmax(0,1fr) auto; align-items: center; gap: 16px; padding: 20px 8px; border-bottom: 1px solid ${LINE}; }
+  .dl-listrow-body { min-width: 0; }
+  .dl-listrow-title { display: block; font-size: 16px; font-weight: 800; letter-spacing: -0.02em; }
+  .dl-listrow-meta { display: block; margin-top: 5px; font-family: ${MONO}; font-size: 10.5px; letter-spacing: 0.1em; color: ${MUTE}; }
+  .dl-listrow-get { font-size: 13px; color: ${LIME}; white-space: nowrap; }
   .dl-row { transition: background .14s ease; }
   .dl-row:hover { background: ${CARD}; }
   .dl-row:hover .dl-a, .dl-row:hover .dl-get { color: ${LIME}; }

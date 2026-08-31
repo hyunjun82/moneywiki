@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { getAllWikiParams } from "@/lib/wiki";
 import { getAllArticleSlugs } from "@/lib/articles";
-import { ALL_ITEMS, CATEGORIES } from "@/data/download";
+import { ALL_ITEMS, CATEGORIES, itemsIn } from "@/data/download";
 import fs from "fs";
 import path from "path";
 
@@ -157,7 +157,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily" as const,
       priority: 0.9,
     },
-    ...CATEGORIES.map((c) => ({
+    // 항목이 0개인 카테고리는 넣지 않는다. 빈 목록을 색인 요청하면 soft 404 다.
+    ...CATEGORIES.filter((c) => itemsIn(c).length > 0).map((c) => ({
       url: `${baseUrl}/download/${c}`,
       lastModified: new Date(),
       changeFrequency: "daily" as const,

@@ -23,23 +23,23 @@
     "updatedAt": "2026-08-26",
     "specs": [
       {
-        "label": "FILE TYPE",
+        "label": "파일 형식",
         "value": "HWP"
       },
       {
-        "label": "BATCH",
+        "label": "서식",
         "value": "표준근로계약서"
       },
       {
-        "label": "LANG",
+        "label": "언어",
         "value": "한국어"
       },
       {
-        "label": "LICENSE",
+        "label": "요금",
         "value": "무료 배포"
       },
       {
-        "label": "SOURCE",
+        "label": "배포처",
         "value": "고용노동부"
       }
     ],
@@ -100,12 +100,27 @@
       {
         "tag": "WEB",
         "name": "전자근로계약서 작성 (고용24)",
-        "href": "http://www.work.go.kr/useInfo/workContract/workContractInfo.do"
+        "href": "https://www.work.go.kr/useInfo/workContract/workContractInfo.do"
       },
       {
         "tag": "CALC",
         "name": "최저임금 모의계산기",
         "href": "https://www.moel.go.kr/miniWageMain.do"
+      },
+      {
+        "tag": "FONT",
+        "name": "무료 폰트 다운로드",
+        "href": "/download/font/%EB%AC%B4%EB%A3%8C-%ED%8F%B0%ED%8A%B8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "FONT",
+        "name": "구글 폰트 다운로드",
+        "href": "/download/font/%EA%B5%AC%EA%B8%80-%ED%8F%B0%ED%8A%B8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "FONT",
+        "name": "나눔글꼴 다운로드",
+        "href": "/download/font/%EB%82%98%EB%88%94%EA%B8%80%EA%BC%B4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "필요한 서식이 없다면 요청 게시판에 이름을 남겨주세요. 공공기관이 배포하는 서식 위주로 확인해 추가합니다."
@@ -201,9 +216,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "네이버 글꼴 모음",
-        "href": "https://hangeul.naver.com/font"
+        "tag": "FONT",
+        "name": "무료 폰트 다운로드",
+        "href": "/download/font/%EB%AC%B4%EB%A3%8C-%ED%8F%B0%ED%8A%B8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "FONT",
+        "name": "구글 폰트 다운로드",
+        "href": "/download/font/%EA%B5%AC%EA%B8%80-%ED%8F%B0%ED%8A%B8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "FONT",
+        "name": "근로계약서 표준 서식 무료 양식",
+        "href": "/download/font/%EA%B7%BC%EB%A1%9C%EA%B3%84%EC%95%BD%EC%84%9C-%ED%91%9C%EC%A4%80%EC%84%9C%EC%8B%9D"
       }
     ],
     "requestNote": "다른 것이 필요하면 요청 게시판에 이름을 남겨주세요."
@@ -299,9 +324,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "Google Fonts 한국어",
-        "href": "https://fonts.google.com/?subset=korean"
+        "tag": "FONT",
+        "name": "무료 폰트 다운로드",
+        "href": "/download/font/%EB%AC%B4%EB%A3%8C-%ED%8F%B0%ED%8A%B8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "FONT",
+        "name": "나눔글꼴 다운로드",
+        "href": "/download/font/%EB%82%98%EB%88%94%EA%B8%80%EA%BC%B4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "FONT",
+        "name": "근로계약서 표준 서식 무료 양식",
+        "href": "/download/font/%EA%B7%BC%EB%A1%9C%EA%B3%84%EC%95%BD%EC%84%9C-%ED%91%9C%EC%A4%80%EC%84%9C%EC%8B%9D"
       }
     ],
     "requestNote": "다른 것이 필요하면 요청 게시판에 이름을 남겨주세요."
@@ -397,19 +432,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "네이버 글꼴 모음",
-        "href": "https://hangeul.naver.com/font"
+        "tag": "FONT",
+        "name": "구글 폰트 다운로드",
+        "href": "/download/font/%EA%B5%AC%EA%B8%80-%ED%8F%B0%ED%8A%B8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       },
       {
-        "tag": "PAGE",
-        "name": "Google Fonts 한국어",
-        "href": "https://fonts.google.com/?subset=korean"
+        "tag": "FONT",
+        "name": "눈누 무료 폰트",
+        "href": "/download/font/%EB%88%88%EB%88%84-%EB%AC%B4%EB%A3%8C%ED%8F%B0%ED%8A%B8"
       },
       {
-        "tag": "PAGE",
-        "name": "눈누 (라이선스 모아보기)",
-        "href": "https://noonnu.cc/"
+        "tag": "FONT",
+        "name": "나눔글꼴 다운로드",
+        "href": "/download/font/%EB%82%98%EB%88%94%EA%B8%80%EA%BC%B4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "다른 것이 필요하면 요청 게시판에 이름을 남겨주세요.",
@@ -639,11 +674,6 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "프리텐다드 공식 저장소",
-        "href": "https://github.com/orioncactus/pretendard"
-      },
-      {
         "tag": "FONT",
         "name": "스포카 한 산스 다운로드",
         "href": "/download/font/스포카-한-산스-다운로드"
@@ -760,11 +790,6 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "우아한형제들 공식 글꼴",
-        "href": "https://www.woowahan.com/fonts"
-      },
-      {
         "tag": "FONT",
         "name": "카페24 폰트 다운로드",
         "href": "/download/font/카페24-폰트-다운로드"
@@ -872,11 +897,6 @@
     ],
     "relatedTitle": "RELATED",
     "related": [
-      {
-        "tag": "PAGE",
-        "name": "카페24 공식 다운로드",
-        "href": "https://fonts.cafe24.com/"
-      },
       {
         "tag": "FONT",
         "name": "배민 폰트 다운로드",
@@ -986,11 +1006,6 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "지마켓 공식 글꼴",
-        "href": "https://corp.gmarket.com/fonts/"
-      },
-      {
         "tag": "FONT",
         "name": "카페24 폰트 다운로드",
         "href": "/download/font/카페24-폰트-다운로드"
@@ -1098,11 +1113,6 @@
     ],
     "relatedTitle": "RELATED",
     "related": [
-      {
-        "tag": "PAGE",
-        "name": "스포카 공식 배포 화면",
-        "href": "https://spoqa.github.io/spoqa-han-sans/"
-      },
       {
         "tag": "FONT",
         "name": "프리텐다드 다운로드",
@@ -1212,11 +1222,6 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "네이버 공식 글꼴 화면",
-        "href": "https://hangeul.naver.com/font"
-      },
-      {
         "tag": "FONT",
         "name": "나눔글꼴 다운로드",
         "href": "/download/font/나눔글꼴-다운로드"
@@ -1324,11 +1329,6 @@
     ],
     "relatedTitle": "RELATED",
     "related": [
-      {
-        "tag": "PAGE",
-        "name": "네이버 공식 글꼴 화면",
-        "href": "https://hangeul.naver.com/font"
-      },
       {
         "tag": "FONT",
         "name": "손글씨 무료 폰트",

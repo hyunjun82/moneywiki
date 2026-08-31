@@ -94,14 +94,9 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "한게임 신맞고 공식",
-        "href": "https://gostop.hangame.com/index.nhn?gameId=ms"
-      },
-      {
-        "tag": "PAGE",
-        "name": "한게임 메인",
-        "href": "https://www.hangame.com/"
+        "tag": "GAME",
+        "name": "한게임 다운로드",
+        "href": "/download/game/%ED%95%9C%EA%B2%8C%EC%9E%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 게임이 없으면 요청 게시판에 이름을 남겨주세요."
@@ -197,14 +192,9 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "한게임 바둑 공식",
-        "href": "https://baduk.hangame.com/"
-      },
-      {
-        "tag": "PAGE",
-        "name": "한게임 메인",
-        "href": "https://www.hangame.com/"
+        "tag": "GAME",
+        "name": "한게임 다운로드",
+        "href": "/download/game/%ED%95%9C%EA%B2%8C%EC%9E%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 게임이 없으면 요청 게시판에 이름을 남겨주세요."
@@ -304,9 +294,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "라이엇 게임즈 공식",
-        "href": "https://www.leagueoflegends.com/ko-kr/"
+        "tag": "GAME",
+        "name": "던전앤파이터 다운로드",
+        "href": "/download/game/%EB%8D%98%EC%A0%84%EC%95%A4%ED%8C%8C%EC%9D%B4%ED%84%B0-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "GAME",
+        "name": "메이플스토리 다운로드",
+        "href": "/download/game/%EB%A9%94%EC%9D%B4%ED%94%8C%EC%8A%A4%ED%86%A0%EB%A6%AC-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "GAME",
+        "name": "로블록스 다운로드",
+        "href": "/download/game/%EB%A1%9C%EB%B8%94%EB%A1%9D%EC%8A%A4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 게임이 없으면 요청 게시판에 이름을 남겨주세요."
@@ -402,9 +402,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "넥슨 공식",
-        "href": "https://www.nexon.com/main/ko"
+        "tag": "GAME",
+        "name": "마인크래프트 다운로드",
+        "href": "/download/game/%EB%A7%88%EC%9D%B8%ED%81%AC%EB%9E%98%ED%94%84%ED%8A%B8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "GAME",
+        "name": "FC온라인 다운로드",
+        "href": "/download/game/FC%EC%98%A8%EB%9D%BC%EC%9D%B8-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "GAME",
+        "name": "Goose Goose Duck 다운로드",
+        "href": "/download/game/Goose-Goose-Duck-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 게임이 없으면 요청 게시판에 이름을 남겨주세요."
@@ -504,14 +514,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "메이플스토리 공식",
-        "href": "https://maplestory.nexon.com/Home/Main"
-      },
-      {
         "tag": "GAME",
         "name": "넥슨플레이 (런처)",
         "href": "/download/game/%EB%84%A5%EC%8A%A8%ED%94%8C%EB%A0%88%EC%9D%B4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "GAME",
+        "name": "던전앤파이터 다운로드",
+        "href": "/download/game/%EB%8D%98%EC%A0%84%EC%95%A4%ED%8C%8C%EC%9D%B4%ED%84%B0-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "GAME",
+        "name": "롤 다운로드",
+        "href": "/download/game/%EB%A1%A4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 게임이 없으면 요청 게시판에 이름을 남겨주세요."
@@ -607,14 +622,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "던전앤파이터 공식",
-        "href": "https://df.nexon.com/"
-      },
-      {
         "tag": "GAME",
         "name": "넥슨플레이 (런처)",
         "href": "/download/game/%EB%84%A5%EC%8A%A8%ED%94%8C%EB%A0%88%EC%9D%B4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "GAME",
+        "name": "메이플스토리 다운로드",
+        "href": "/download/game/%EB%A9%94%EC%9D%B4%ED%94%8C%EC%8A%A4%ED%86%A0%EB%A6%AC-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "GAME",
+        "name": "로블록스 다운로드",
+        "href": "/download/game/%EB%A1%9C%EB%B8%94%EB%A1%9D%EC%8A%A4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 게임이 없으면 요청 게시판에 이름을 남겨주세요."
@@ -710,9 +730,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "Roblox 공식",
-        "href": "https://www.roblox.com/ko/download"
+        "tag": "GAME",
+        "name": "던전앤파이터 다운로드",
+        "href": "/download/game/%EB%8D%98%EC%A0%84%EC%95%A4%ED%8C%8C%EC%9D%B4%ED%84%B0-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "GAME",
+        "name": "롤 다운로드",
+        "href": "/download/game/%EB%A1%A4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "GAME",
+        "name": "메이플스토리 다운로드",
+        "href": "/download/game/%EB%A9%94%EC%9D%B4%ED%94%8C%EC%8A%A4%ED%86%A0%EB%A6%AC-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 게임이 없으면 요청 게시판에 이름을 남겨주세요."
@@ -812,14 +842,14 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "한게임 공식",
-        "href": "https://www.hangame.com/"
-      },
-      {
         "tag": "LIST",
         "name": "게임 전체 목록",
         "href": "/download/game"
+      },
+      {
+        "tag": "GAME",
+        "name": "한게임 신맞고 다운로드",
+        "href": "/download/game/%ED%95%9C%EA%B2%8C%EC%9E%84-%EC%8B%A0%EB%A7%9E%EA%B3%A0-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 게임이 없으면 요청 게시판에 이름을 남겨주세요.",
@@ -928,11 +958,6 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "넥슨 공식 다운로드",
-        "href": "https://sa.nexon.com/customer/pds.aspx"
-      },
-      {
         "tag": "GAME",
         "name": "넥슨플레이 다운로드",
         "href": "/download/game/넥슨플레이-다운로드"
@@ -1040,11 +1065,6 @@
     ],
     "relatedTitle": "RELATED",
     "related": [
-      {
-        "tag": "PAGE",
-        "name": "라이엇 공식 다운로드",
-        "href": "https://playvalorant.com/ko-kr/download/"
-      },
       {
         "tag": "GAME",
         "name": "롤 다운로드",
@@ -1162,11 +1182,6 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "카카오게임즈 공식 자료실",
-        "href": "https://pubg.kakaogames.com/pubg/pds/download/index"
-      },
-      {
         "tag": "SW",
         "name": "스팀 다운로드",
         "href": "/download/software/스팀-다운로드"
@@ -1283,11 +1298,6 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "Minecraft 공식 다운로드",
-        "href": "https://www.minecraft.net/ko-kr/download"
-      },
-      {
         "tag": "GAME",
         "name": "로블록스 다운로드",
         "href": "/download/game/로블록스-다운로드"
@@ -1395,11 +1405,6 @@
     ],
     "relatedTitle": "RELATED",
     "related": [
-      {
-        "tag": "PAGE",
-        "name": "블리자드 공식 다운로드",
-        "href": "https://download.battle.net/ko-kr/?product=bnetdesk"
-      },
       {
         "tag": "GAME",
         "name": "오버워치 다운로드",
@@ -1517,11 +1522,6 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "넥슨 오버워치 공식",
-        "href": "https://overwatch.nexon.com/main"
-      },
-      {
         "tag": "GAME",
         "name": "배틀넷 다운로드",
         "href": "/download/game/배틀넷-다운로드"
@@ -1629,11 +1629,6 @@
     ],
     "relatedTitle": "RELATED",
     "related": [
-      {
-        "tag": "PAGE",
-        "name": "스토브 공식 다운로드",
-        "href": "https://store.onstove.com/ko/download"
-      },
       {
         "tag": "GAME",
         "name": "스토브 다운로드",
@@ -1743,11 +1738,6 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "넥슨 공식 자료실",
-        "href": "https://fconline.nexon.com/pds/download"
-      },
-      {
         "tag": "GAME",
         "name": "넥슨플레이 다운로드",
         "href": "/download/game/넥슨플레이-다운로드"
@@ -1855,11 +1845,6 @@
     ],
     "relatedTitle": "RELATED",
     "related": [
-      {
-        "tag": "PAGE",
-        "name": "스토브 공식 다운로드",
-        "href": "https://store.onstove.com/ko/download"
-      },
       {
         "tag": "GAME",
         "name": "로스트아크 다운로드",
@@ -2115,9 +2100,14 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "DeSmuME 공식 화면",
-        "href": "https://desmume.org/download/"
+        "tag": "GAME",
+        "name": "melonDS 다운로드",
+        "href": "/download/game/melonDS-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "GAME",
+        "name": "BlueStacks App Player 다운로드",
+        "href": "/download/game/BlueStacks-App-Player-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "다른 에뮬레이터가 필요하면 요청 게시판에 남겨주세요."
@@ -2213,9 +2203,14 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "BlueStacks 공식 화면",
-        "href": "https://www.bluestacks.com/download.html"
+        "tag": "GAME",
+        "name": "DeSmuME 다운로드",
+        "href": "/download/game/DeSmuME-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "GAME",
+        "name": "melonDS 다운로드",
+        "href": "/download/game/melonDS-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "다른 안드로이드 앱 플레이어가 필요하면 요청 게시판에 남겨주세요."
@@ -2311,9 +2306,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "Steam 공식 스토어",
-        "href": "https://store.steampowered.com/app/1568590/Goose_Goose_Duck/"
+        "tag": "GAME",
+        "name": "Brawl Stars 다운로드",
+        "href": "/download/game/Brawl-Stars-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "GAME",
+        "name": "한게임 바둑 무료 설치",
+        "href": "/download/game/%ED%95%9C%EA%B2%8C%EC%9E%84-%EB%B0%94%EB%91%91-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "GAME",
+        "name": "배틀그라운드 다운로드",
+        "href": "/download/game/%EB%B0%B0%ED%8B%80%EA%B7%B8%EB%9D%BC%EC%9A%B4%EB%93%9C-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "다른 소셜 추리 게임이 필요하면 요청 게시판에 남겨주세요."
@@ -2408,11 +2413,6 @@
     ],
     "relatedTitle": "RELATED",
     "related": [
-      {
-        "tag": "PAGE",
-        "name": "Supercell 공식 게임 화면",
-        "href": "https://supercell.com/en/games/brawlstars/"
-      },
       {
         "tag": "GAME",
         "name": "BlueStacks App Player 다운로드",
@@ -2512,14 +2512,14 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "melonDS 공식 화면",
-        "href": "https://melonds.kuribo64.net/downloads.php"
-      },
-      {
         "tag": "SW",
         "name": "DeSmuME 다운로드",
         "href": "/download/game/DeSmuME-다운로드"
+      },
+      {
+        "tag": "GAME",
+        "name": "BlueStacks App Player 다운로드",
+        "href": "/download/game/BlueStacks-App-Player-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "다른 에뮬레이터가 필요하면 요청 게시판에 남겨주세요."

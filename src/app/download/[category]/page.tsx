@@ -76,15 +76,14 @@ export default async function DownloadCategoryPage({ params }: PageProps) {
               <a
                 key={x.slug}
                 href={itemHref(x)}
-                className="dl-row dl-a"
-                style={{ display: "grid", gridTemplateColumns: "44px minmax(0,1fr) auto", alignItems: "center", gap: 16, padding: "20px 8px", borderBottom: `1px solid ${LINE}` }}
+                className="dl-row dl-listrow dl-a"
               >
                 <Favicon url={x.builds[0]?.url} initialsFrom={x.titleTop} size={28} />
-                <span style={{ minWidth: 0 }}>
-                  <span style={{ display: "block", fontSize: 16, fontWeight: 800, letterSpacing: "-0.02em" }}>{x.listTitle}</span>
-                  <span style={{ display: "block", marginTop: 5, fontFamily: MONO, fontSize: 10.5, letterSpacing: "0.1em", color: MUTE }}>{x.listMeta}</span>
+                <span className="dl-listrow-body">
+                  <span className="dl-listrow-title">{x.listTitle}</span>
+                  <span className="dl-listrow-meta">{x.listMeta}</span>
                 </span>
-                <span className="dl-get" style={{ fontSize: 13, color: LIME, whiteSpace: "nowrap" }}>보기 →</span>
+                <span className="dl-get dl-listrow-get">보기 →</span>
               </a>
             ))}
           </div>

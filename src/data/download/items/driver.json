@@ -93,6 +93,21 @@
         "tag": "PAGE",
         "name": "Lenovo Support KR",
         "href": "https://pcsupport.lenovo.com/kr/ko"
+      },
+      {
+        "tag": "DRV",
+        "name": "델 노트북 드라이버 다운로드",
+        "href": "/download/driver/%EB%8D%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "노트북 드라이버 다운로드",
+        "href": "/download/driver/%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "LG 노트북 드라이버 다운로드",
+        "href": "/download/driver/LG-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명이나 일련번호를 남겨주세요."
@@ -192,9 +207,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "MSI 메인보드 다운로드",
-        "href": "https://kr.msi.com/support/download/mb"
+        "tag": "DRV",
+        "name": "ASRock 드라이버 다운로드",
+        "href": "/download/driver/ASRock-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "메인보드 드라이버 다운로드",
+        "href": "/download/driver/%EB%A9%94%EC%9D%B8%EB%B3%B4%EB%93%9C-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "ASUS 드라이버 다운로드",
+        "href": "/download/driver/ASUS-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 보드가 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -290,9 +315,19 @@
     "relatedTitle": "SAME BRAND",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "캐논코리아 고객지원",
-        "href": "https://svc.kr.canon/solution/solutionList"
+        "tag": "DRV",
+        "name": "프린터 인식 안 될 때",
+        "href": "/download/driver/%ED%94%84%EB%A6%B0%ED%84%B0-%EC%9D%B8%EC%8B%9D-%EC%95%88%EB%90%A0%EB%95%8C"
+      },
+      {
+        "tag": "DRV",
+        "name": "신도리코 프린터 드라이버 다운로드",
+        "href": "/download/driver/%EC%8B%A0%EB%8F%84%EB%A6%AC%EC%BD%94-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "브라더 프린터 드라이버 다운로드",
+        "href": "/download/driver/%EB%B8%8C%EB%9D%BC%EB%8D%94-%ED%94%84%EB%A6%B0%ED%84%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -388,14 +423,24 @@
     "relatedTitle": "SAME BRAND",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "삼성전자 다운로드 센터",
-        "href": "https://www.samsung.com/sec/support/download-center/"
+        "tag": "DRV",
+        "name": "삼성 SL-M2020 프린터 드라이버",
+        "href": "/download/driver/%EC%82%BC%EC%84%B1-SL-M2020-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84"
       },
       {
-        "tag": "MODEL",
-        "name": "SL-M2020 드라이버 (모델별 예시)",
-        "href": "https://www.samsung.com/sec/support/model/SL-M2020/"
+        "tag": "DRV",
+        "name": "프린터 인식 안 될 때",
+        "href": "/download/driver/%ED%94%84%EB%A6%B0%ED%84%B0-%EC%9D%B8%EC%8B%9D-%EC%95%88%EB%90%A0%EB%95%8C"
+      },
+      {
+        "tag": "DRV",
+        "name": "신도리코 프린터 드라이버 다운로드",
+        "href": "/download/driver/%EC%8B%A0%EB%8F%84%EB%A6%AC%EC%BD%94-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "브라더 프린터 드라이버 다운로드",
+        "href": "/download/driver/%EB%B8%8C%EB%9D%BC%EB%8D%94-%ED%94%84%EB%A6%B0%ED%84%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -491,9 +536,19 @@
     "relatedTitle": "SAME BRAND",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "HP 드라이버 및 소프트웨어",
-        "href": "https://support.hp.com/kr-ko/drivers"
+        "tag": "DRV",
+        "name": "프린터 인식 안 될 때",
+        "href": "/download/driver/%ED%94%84%EB%A6%B0%ED%84%B0-%EC%9D%B8%EC%8B%9D-%EC%95%88%EB%90%A0%EB%95%8C"
+      },
+      {
+        "tag": "DRV",
+        "name": "캐논 프린터 드라이버 다운로드",
+        "href": "/download/driver/%EC%BA%90%EB%85%BC-%ED%94%84%EB%A6%B0%ED%84%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "신도리코 프린터 드라이버 다운로드",
+        "href": "/download/driver/%EC%8B%A0%EB%8F%84%EB%A6%AC%EC%BD%94-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -589,9 +644,19 @@
     "relatedTitle": "SAME BRAND",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "NVIDIA 드라이버 다운로드",
-        "href": "https://www.nvidia.com/ko-kr/drivers/"
+        "tag": "DRV",
+        "name": "NVIDIA 앱 다운로드",
+        "href": "/download/driver/NVIDIA-%EC%95%B1-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "그래픽카드 안 잡힐 때",
+        "href": "/download/driver/%EA%B7%B8%EB%9E%98%ED%94%BD%EC%B9%B4%EB%93%9C-%EC%95%88%EC%9E%A1%ED%9E%90%EB%95%8C"
+      },
+      {
+        "tag": "DRV",
+        "name": "AMD 그래픽카드 드라이버 다운로드",
+        "href": "/download/driver/AMD-%EA%B7%B8%EB%9E%98%ED%94%BD%EC%B9%B4%EB%93%9C-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 그래픽카드 이름을 남겨주세요."
@@ -687,9 +752,19 @@
     "relatedTitle": "SAME BRAND",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "AMD 드라이버 및 지원",
-        "href": "https://www.amd.com/ko/support/download/drivers.html"
+        "tag": "DRV",
+        "name": "NVIDIA 앱 다운로드",
+        "href": "/download/driver/NVIDIA-%EC%95%B1-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "그래픽카드 안 잡힐 때",
+        "href": "/download/driver/%EA%B7%B8%EB%9E%98%ED%94%BD%EC%B9%B4%EB%93%9C-%EC%95%88%EC%9E%A1%ED%9E%90%EB%95%8C"
+      },
+      {
+        "tag": "DRV",
+        "name": "인텔 드라이버 다운로드",
+        "href": "/download/driver/%EC%9D%B8%ED%85%94-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 그래픽카드 이름을 남겨주세요."
@@ -793,14 +868,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "NVIDIA 드라이버 다운로드",
-        "href": "https://www.nvidia.com/ko-kr/drivers/"
+        "tag": "DRV",
+        "name": "NVIDIA 앱 다운로드",
+        "href": "/download/driver/NVIDIA-%EC%95%B1-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       },
       {
-        "tag": "PAGE",
-        "name": "AMD 드라이버 및 지원",
-        "href": "https://www.amd.com/ko/support/download/drivers.html"
+        "tag": "DRV",
+        "name": "AMD 그래픽카드 드라이버 다운로드",
+        "href": "/download/driver/AMD-%EA%B7%B8%EB%9E%98%ED%94%BD%EC%B9%B4%EB%93%9C-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "그래픽카드 안 잡힐 때",
+        "href": "/download/driver/%EA%B7%B8%EB%9E%98%ED%94%BD%EC%B9%B4%EB%93%9C-%EC%95%88%EC%9E%A1%ED%9E%90%EB%95%8C"
       }
     ],
     "requestNote": "쓰는 그래픽카드가 목록에 없으면 요청 게시판에 이름을 남겨주세요."
@@ -896,9 +976,19 @@
     "relatedTitle": "SAME BRAND",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "삼성전자 다운로드 센터",
-        "href": "https://www.samsung.com/sec/support/download-center/"
+        "tag": "DRV",
+        "name": "델 노트북 드라이버 다운로드",
+        "href": "/download/driver/%EB%8D%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "노트북 드라이버 다운로드",
+        "href": "/download/driver/%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "레노버 노트북 드라이버 다운로드",
+        "href": "/download/driver/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -994,9 +1084,19 @@
     "relatedTitle": "SAME BRAND",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "LG전자 매뉴얼/소프트웨어 다운로드",
-        "href": "https://www.lge.co.kr/support/product-manuals"
+        "tag": "DRV",
+        "name": "HP 노트북 드라이버 다운로드",
+        "href": "/download/driver/HP-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "델 노트북 드라이버 다운로드",
+        "href": "/download/driver/%EB%8D%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "노트북 드라이버 다운로드",
+        "href": "/download/driver/%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -1092,9 +1192,19 @@
     "relatedTitle": "SAME BRAND",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "신도리코 다운로드",
-        "href": "https://www.sindoh.com/support/download"
+        "tag": "DRV",
+        "name": "브라더 프린터 드라이버 다운로드",
+        "href": "/download/driver/%EB%B8%8C%EB%9D%BC%EB%8D%94-%ED%94%84%EB%A6%B0%ED%84%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "프린터 인식 안 될 때",
+        "href": "/download/driver/%ED%94%84%EB%A6%B0%ED%84%B0-%EC%9D%B8%EC%8B%9D-%EC%95%88%EB%90%A0%EB%95%8C"
+      },
+      {
+        "tag": "DRV",
+        "name": "캐논 프린터 드라이버 다운로드",
+        "href": "/download/driver/%EC%BA%90%EB%85%BC-%ED%94%84%EB%A6%B0%ED%84%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -1123,23 +1233,23 @@
     "updatedAt": "2026-08-26",
     "specs": [
       {
-        "label": "FILE SIZE",
+        "label": "용량",
         "value": "21.6MB"
       },
       {
-        "label": "VERSION",
+        "label": "버전",
         "value": "V3.00.16.00.01"
       },
       {
-        "label": "LANG",
+        "label": "언어",
         "value": "한국어"
       },
       {
-        "label": "LICENSE",
+        "label": "요금",
         "value": "무료"
       },
       {
-        "label": "UPDATED",
+        "label": "배포일",
         "value": "2022.07.21"
       }
     ],
@@ -1180,24 +1290,24 @@
     "builds": [
       {
         "name": "Windows 프린터 드라이버",
-        "note": "V3.00.16 · 통합 패키지",
-        "size": "21.6MB",
+        "note": "V3.00.16 · 통합 패키지 · 약 21.6MB",
+        "size": "공식 화면",
         "platform": "WINDOWS · 통합",
         "url": "https://www.samsung.com/sec/support/model/SL-M2020/",
         "kind": "page"
       },
       {
         "name": "Windows 통합 설치 프로그램",
-        "note": "V3.00.16 · UPD",
-        "size": "33.1MB",
+        "note": "V3.00.16 · UPD · 약 33.1MB",
+        "size": "공식 화면",
         "platform": "WINDOWS · UPD",
         "url": "https://www.samsung.com/sec/support/model/SL-M2020/",
         "kind": "page"
       },
       {
         "name": "macOS 프린터 드라이버",
-        "note": "V3.33.00",
-        "size": "11.3MB",
+        "note": "V3.33.00 · 약 11.3MB",
+        "size": "공식 화면",
         "platform": "MACOS",
         "url": "https://www.samsung.com/sec/support/model/SL-M2020/",
         "kind": "page"
@@ -1214,14 +1324,14 @@
     "relatedTitle": "SAME DEVICE",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "SL-M2020 지원 화면 (드라이버·매뉴얼)",
-        "href": "https://www.samsung.com/sec/support/model/SL-M2020/"
-      },
-      {
         "tag": "PDF",
         "name": "SL-M2020 사용설명서 (국문)",
         "href": "https://downloadcenter.samsung.com/content/UM/201604/20160401155417099/KO/M202x_korean.pdf"
+      },
+      {
+        "tag": "DRV",
+        "name": "삼성 드라이버 다운로드",
+        "href": "/download/driver/%EC%82%BC%EC%84%B1-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "같은 시리즈의 다른 모델이나 구버전 OS가 필요하면 요청 게시판에 모델명을 남겨주세요."
@@ -1362,6 +1472,16 @@
         "tag": "GUIDE",
         "name": "포맷 후 필수 프로그램",
         "href": "/download/software/%ED%8F%AC%EB%A7%B7-%ED%9B%84-%ED%95%84%EC%88%98-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8"
+      },
+      {
+        "tag": "DRV",
+        "name": "포맷 전 드라이버 준비",
+        "href": "/download/driver/%ED%8F%AC%EB%A7%B7-%EC%A0%84-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%A4%80%EB%B9%84"
+      },
+      {
+        "tag": "SW",
+        "name": "새 컴퓨터 설정 프로그램",
+        "href": "/download/software/%EC%83%88-%EC%BB%B4%ED%93%A8%ED%84%B0-%EC%84%A4%EC%A0%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -1457,14 +1577,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "GIGABYTE 코리아 다운로드",
-        "href": "https://www.gigabyte.com/kr/Support/Consumer/Download"
-      },
-      {
         "tag": "SW",
         "name": "MSI 메인보드 드라이버",
         "href": "/download/driver/MSI-%EB%A9%94%EC%9D%B8%EB%B3%B4%EB%93%9C-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "ASRock 드라이버 다운로드",
+        "href": "/download/driver/ASRock-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "메인보드 드라이버 다운로드",
+        "href": "/download/driver/%EB%A9%94%EC%9D%B8%EB%B3%B4%EB%93%9C-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "다른 것이 필요하면 요청 게시판에 이름을 남겨주세요."
@@ -1560,9 +1685,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "Logitech 공식 지원",
-        "href": "https://support.logi.com/hc/ko"
+        "tag": "DRV",
+        "name": "엘가토 드라이버 다운로드",
+        "href": "/download/driver/%EC%97%98%EA%B0%80%ED%86%A0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "주변기기 드라이버 설치",
+        "href": "/download/driver/%EC%A3%BC%EB%B3%80%EA%B8%B0%EA%B8%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98"
+      },
+      {
+        "tag": "DRV",
+        "name": "애플 기기 드라이버 설치",
+        "href": "/download/driver/%EC%95%A0%ED%94%8C-%EA%B8%B0%EA%B8%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -1658,9 +1793,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "엡손 공식 지원",
-        "href": "https://www.epson.co.kr/%EA%B3%A0%EA%B0%9D%EC%A7%80%EC%9B%90/sl/s"
+        "tag": "DRV",
+        "name": "삼성 프린터 드라이버 다운로드",
+        "href": "/download/driver/%EC%82%BC%EC%84%B1-%ED%94%84%EB%A6%B0%ED%84%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "HP 프린터 드라이버 다운로드",
+        "href": "/download/driver/HP-%ED%94%84%EB%A6%B0%ED%84%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "신도리코 프린터 드라이버 다운로드",
+        "href": "/download/driver/%EC%8B%A0%EB%8F%84%EB%A6%AC%EC%BD%94-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -1756,9 +1901,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "Brother 공식 지원",
-        "href": "https://support.brother.com/g/b/productsearch.aspx?c=kr&lang=ko"
+        "tag": "DRV",
+        "name": "엡손 프린터 드라이버 다운로드",
+        "href": "/download/driver/%EC%97%A1%EC%86%90-%ED%94%84%EB%A6%B0%ED%84%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "프린터 드라이버 다운로드",
+        "href": "/download/driver/%ED%94%84%EB%A6%B0%ED%84%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "프린터 인식 안 될 때",
+        "href": "/download/driver/%ED%94%84%EB%A6%B0%ED%84%B0-%EC%9D%B8%EC%8B%9D-%EC%95%88%EB%90%A0%EB%95%8C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -1854,9 +2009,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "HP 공식 지원",
-        "href": "https://support.hp.com/kr-ko/drivers"
+        "tag": "DRV",
+        "name": "레노버 노트북 드라이버 다운로드",
+        "href": "/download/driver/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "삼성 노트북 드라이버 다운로드",
+        "href": "/download/driver/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "LG 노트북 드라이버 다운로드",
+        "href": "/download/driver/LG-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -1952,14 +2117,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "캐논 고객지원 다운로드",
-        "href": "https://svc.kr.canon/solution/solutionList"
-      },
-      {
         "tag": "DRV",
         "name": "캐논 프린터 드라이버",
         "href": "/download/driver/%EC%BA%90%EB%85%BC-%ED%94%84%EB%A6%B0%ED%84%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "복합기 드라이버 다운로드",
+        "href": "/download/driver/%EB%B3%B5%ED%95%A9%EA%B8%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "삼성 복합기 드라이버 다운로드",
+        "href": "/download/driver/%EC%82%BC%EC%84%B1-%EB%B3%B5%ED%95%A9%EA%B8%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -2055,14 +2225,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "삼성 다운로드 센터",
-        "href": "https://www.samsung.com/sec/support/download-center/"
-      },
-      {
         "tag": "DRV",
         "name": "삼성 프린터 드라이버",
         "href": "/download/driver/%EC%82%BC%EC%84%B1-%ED%94%84%EB%A6%B0%ED%84%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "복합기 드라이버 다운로드",
+        "href": "/download/driver/%EB%B3%B5%ED%95%A9%EA%B8%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "캐논 복합기 드라이버 다운로드",
+        "href": "/download/driver/%EC%BA%90%EB%85%BC-%EB%B3%B5%ED%95%A9%EA%B8%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -2158,14 +2333,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "HP 드라이버 및 소프트웨어",
-        "href": "https://support.hp.com/kr-ko/drivers"
-      },
-      {
         "tag": "DRV",
         "name": "HP 프린터 드라이버",
         "href": "/download/driver/HP-%ED%94%84%EB%A6%B0%ED%84%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "복합기 드라이버 다운로드",
+        "href": "/download/driver/%EB%B3%B5%ED%95%A9%EA%B8%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "캐논 복합기 드라이버 다운로드",
+        "href": "/download/driver/%EC%BA%90%EB%85%BC-%EB%B3%B5%ED%95%A9%EA%B8%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -2264,6 +2444,21 @@
         "tag": "LIST",
         "name": "드라이버 전체 목록",
         "href": "/download/driver"
+      },
+      {
+        "tag": "DRV",
+        "name": "헤드셋·마이크 드라이버 설치",
+        "href": "/download/driver/%ED%97%A4%EB%93%9C%EC%85%8B-%EB%A7%88%EC%9D%B4%ED%81%AC-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84"
+      },
+      {
+        "tag": "DRV",
+        "name": "블루투스 드라이버 설치",
+        "href": "/download/driver/%EB%B8%94%EB%A3%A8%ED%88%AC%EC%8A%A4-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98"
+      },
+      {
+        "tag": "DRV",
+        "name": "키보드 드라이버 설치",
+        "href": "/download/driver/%ED%82%A4%EB%B3%B4%EB%93%9C-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요.",
@@ -2382,14 +2577,24 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "인텔 드라이버 및 지원 도우미",
-        "href": "https://www.intel.co.kr/content/www/kr/ko/support/detect.html"
-      },
-      {
         "tag": "LIST",
         "name": "드라이버 전체 목록",
         "href": "/download/driver"
+      },
+      {
+        "tag": "DRV",
+        "name": "스캐너 드라이버 다운로드",
+        "href": "/download/driver/%EC%8A%A4%EC%BA%90%EB%84%88-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "마우스 드라이버 설치",
+        "href": "/download/driver/%EB%A7%88%EC%9A%B0%EC%8A%A4-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98"
+      },
+      {
+        "tag": "DRV",
+        "name": "USB 드라이버 설치",
+        "href": "/download/driver/USB-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요.",
@@ -2518,11 +2723,6 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "Realtek 이더넷 드라이버",
-        "href": "https://www.realtek.com/Download/List?cate_id=584"
-      },
-      {
         "tag": "DRV",
         "name": "MSI 메인보드 드라이버",
         "href": "/download/driver/MSI-%EB%A9%94%EC%9D%B8%EB%B3%B4%EB%93%9C-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
@@ -2531,6 +2731,11 @@
         "tag": "DRV",
         "name": "기가바이트 드라이버",
         "href": "/download/driver/%EA%B8%B0%EA%B0%80%EB%B0%94%EC%9D%B4%ED%8A%B8-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "SW",
+        "name": "1.1.1.1 WARP 다운로드",
+        "href": "/download/software/1111-WARP-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -2626,9 +2831,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "ASUS 공식 지원",
-        "href": "https://www.asus.com/kr/support/"
+        "tag": "DRV",
+        "name": "ASRock 드라이버 다운로드",
+        "href": "/download/driver/ASRock-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "메인보드 드라이버 다운로드",
+        "href": "/download/driver/%EB%A9%94%EC%9D%B8%EB%B3%B4%EB%93%9C-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "기가바이트 드라이버 다운로드",
+        "href": "/download/driver/%EA%B8%B0%EA%B0%80%EB%B0%94%EC%9D%B4%ED%8A%B8-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -2724,9 +2939,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "ASRock 공식 지원",
-        "href": "https://www.asrock.com/support/index.kr.asp"
+        "tag": "DRV",
+        "name": "ASUS 드라이버 다운로드",
+        "href": "/download/driver/ASUS-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "메인보드 드라이버 다운로드",
+        "href": "/download/driver/%EB%A9%94%EC%9D%B8%EB%B3%B4%EB%93%9C-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "MSI 메인보드 드라이버 다운로드",
+        "href": "/download/driver/MSI-%EB%A9%94%EC%9D%B8%EB%B3%B4%EB%93%9C-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -2822,14 +3047,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "인텔 드라이버 및 지원 도우미",
-        "href": "https://www.intel.co.kr/content/www/kr/ko/support/detect.html"
-      },
-      {
         "tag": "DRV",
         "name": "그래픽카드 드라이버 전체",
         "href": "/download/driver/%EA%B7%B8%EB%9E%98%ED%94%BD%EC%B9%B4%EB%93%9C-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "NVIDIA 앱 다운로드",
+        "href": "/download/driver/NVIDIA-%EC%95%B1-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "AMD 그래픽카드 드라이버 다운로드",
+        "href": "/download/driver/AMD-%EA%B7%B8%EB%9E%98%ED%94%BD%EC%B9%B4%EB%93%9C-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -2925,9 +3155,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "Dell 공식 지원",
-        "href": "https://www.dell.com/support/home/ko-kr"
+        "tag": "DRV",
+        "name": "HP 노트북 드라이버 다운로드",
+        "href": "/download/driver/HP-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "노트북 드라이버 다운로드",
+        "href": "/download/driver/%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "레노버 노트북 드라이버 다운로드",
+        "href": "/download/driver/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -3030,6 +3270,21 @@
         "tag": "LIST",
         "name": "드라이버 전체 목록",
         "href": "/download/driver"
+      },
+      {
+        "tag": "DRV",
+        "name": "브라더 프린터 드라이버 다운로드",
+        "href": "/download/driver/%EB%B8%8C%EB%9D%BC%EB%8D%94-%ED%94%84%EB%A6%B0%ED%84%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "캐논 프린터 드라이버 다운로드",
+        "href": "/download/driver/%EC%BA%90%EB%85%BC-%ED%94%84%EB%A6%B0%ED%84%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "삼성 프린터 드라이버 다운로드",
+        "href": "/download/driver/%EC%82%BC%EC%84%B1-%ED%94%84%EB%A6%B0%ED%84%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요.",
@@ -3158,14 +3413,24 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "ASUS 공식지원 화면",
-        "href": "https://www.asus.com/kr/support/"
-      },
-      {
         "tag": "LIST",
         "name": "드라이버 전체 목록",
         "href": "/download/driver"
+      },
+      {
+        "tag": "DRV",
+        "name": "HP 드라이버 다운로드",
+        "href": "/download/driver/HP-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "삼성 드라이버 다운로드",
+        "href": "/download/driver/%EC%82%BC%EC%84%B1-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "3DP Chip 다운로드",
+        "href": "/download/driver/3DP-Chip-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요.",
@@ -3289,14 +3554,24 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "Logitech 지원 + 다운로드",
-        "href": "https://support.logi.com/hc/ko"
-      },
-      {
         "tag": "LIST",
         "name": "드라이버 전체 목록",
         "href": "/download/driver"
+      },
+      {
+        "tag": "DRV",
+        "name": "와콤 드라이버 다운로드",
+        "href": "/download/driver/%EC%99%80%EC%BD%A4-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "엘가토 드라이버 다운로드",
+        "href": "/download/driver/%EC%97%98%EA%B0%80%ED%86%A0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "주변기기 드라이버 설치",
+        "href": "/download/driver/%EC%A3%BC%EB%B3%80%EA%B8%B0%EA%B8%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요.",
@@ -3400,14 +3675,24 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "Logitech 지원 + 다운로드",
-        "href": "https://support.logi.com/hc/ko"
-      },
-      {
         "tag": "LIST",
         "name": "드라이버 전체 목록",
         "href": "/download/driver"
+      },
+      {
+        "tag": "DRV",
+        "name": "애플 기기 드라이버 설치",
+        "href": "/download/driver/%EC%95%A0%ED%94%8C-%EA%B8%B0%EA%B8%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84"
+      },
+      {
+        "tag": "DRV",
+        "name": "젠하이저 드라이버 다운로드",
+        "href": "/download/driver/%EC%A0%A0%ED%95%98%EC%9D%B4%EC%A0%80-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "헤드셋·마이크 드라이버 설치",
+        "href": "/download/driver/%ED%97%A4%EB%93%9C%EC%85%8B-%EB%A7%88%EC%9D%B4%ED%81%AC-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요.",
@@ -3515,14 +3800,24 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "인텔 드라이버 및 지원 도우미",
-        "href": "https://www.intel.co.kr/content/www/kr/ko/support/detect.html"
-      },
-      {
         "tag": "LIST",
         "name": "드라이버 전체 목록",
         "href": "/download/driver"
+      },
+      {
+        "tag": "DRV",
+        "name": "스캐너 드라이버 다운로드",
+        "href": "/download/driver/%EC%8A%A4%EC%BA%90%EB%84%88-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "블루투스 드라이버 설치",
+        "href": "/download/driver/%EB%B8%94%EB%A3%A8%ED%88%AC%EC%8A%A4-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98"
+      },
+      {
+        "tag": "DRV",
+        "name": "키보드 드라이버 설치",
+        "href": "/download/driver/%ED%82%A4%EB%B3%B4%EB%93%9C-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요.",
@@ -3636,14 +3931,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "ROG 공식지원",
-        "href": "https://rog.asus.com/kr/support/"
-      },
-      {
         "tag": "DRV",
         "name": "ASUS 드라이버",
         "href": "/download/driver/ASUS-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "게이밍 마우스·키보드 드라이버 설치",
+        "href": "/download/driver/%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%A7%88%EC%9A%B0%EC%8A%A4-%ED%82%A4%EB%B3%B4%EB%93%9C-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84"
+      },
+      {
+        "tag": "DRV",
+        "name": "로지텍 G HUB 다운로드",
+        "href": "/download/driver/%EB%A1%9C%EC%A7%80%ED%85%8D-G-HUB-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -3739,9 +4039,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "Razer 공식 지원",
-        "href": "https://mysupport.razer.com/app/answers/detail/a_id/3687"
+        "tag": "DRV",
+        "name": "마우스 드라이버 설치",
+        "href": "/download/driver/%EB%A7%88%EC%9A%B0%EC%8A%A4-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98"
+      },
+      {
+        "tag": "DRV",
+        "name": "USB 드라이버 설치",
+        "href": "/download/driver/USB-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98"
+      },
+      {
+        "tag": "DRV",
+        "name": "커세어 드라이버 다운로드",
+        "href": "/download/driver/%EC%BB%A4%EC%84%B8%EC%96%B4-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -3837,9 +4147,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "CORSAIR 공식 지원",
-        "href": "https://www.corsair.com/kr/ko/s/downloads"
+        "tag": "DRV",
+        "name": "레이저 드라이버 다운로드",
+        "href": "/download/driver/%EB%A0%88%EC%9D%B4%EC%A0%80-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "와콤 드라이버 다운로드",
+        "href": "/download/driver/%EC%99%80%EC%BD%A4-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "엘가토 드라이버 다운로드",
+        "href": "/download/driver/%EC%97%98%EA%B0%80%ED%86%A0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -3935,14 +4255,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "Wacom 드라이버",
-        "href": "https://www.wacom.com/ko-kr/support/product-support/drivers"
-      },
-      {
         "tag": "SW",
         "name": "크리타 (그림 프로그램)",
         "href": "/download/software/%ED%81%AC%EB%A6%AC%ED%83%80-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "주변기기 드라이버 설치",
+        "href": "/download/driver/%EC%A3%BC%EB%B3%80%EA%B8%B0%EA%B8%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98"
+      },
+      {
+        "tag": "DRV",
+        "name": "애플 기기 드라이버 설치",
+        "href": "/download/driver/%EC%95%A0%ED%94%8C-%EA%B8%B0%EA%B8%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -4038,14 +4363,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "Logitech G HUB",
-        "href": "https://www.logitechg.com/ko-kr/software/ghub"
-      },
-      {
         "tag": "DRV",
         "name": "로지텍 (일반 제품)",
         "href": "/download/driver/%EB%A1%9C%EC%A7%80%ED%85%8D-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "ROG 드라이버 다운로드",
+        "href": "/download/driver/ROG-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "게이밍 마우스·키보드 드라이버 설치",
+        "href": "/download/driver/%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%A7%88%EC%9A%B0%EC%8A%A4-%ED%82%A4%EB%B3%B4%EB%93%9C-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -4141,14 +4471,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "Elgato 다운로드",
-        "href": "https://www.elgato.com/kr/ko/s/downloads"
-      },
-      {
         "tag": "SW",
         "name": "OBS (방송·녹화)",
         "href": "/download/software/OBS-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "젠하이저 드라이버 다운로드",
+        "href": "/download/driver/%EC%A0%A0%ED%95%98%EC%9D%B4%EC%A0%80-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "헤드셋·마이크 드라이버 설치",
+        "href": "/download/driver/%ED%97%A4%EB%93%9C%EC%85%8B-%EB%A7%88%EC%9D%B4%ED%81%AC-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -4244,14 +4579,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "Seagate 다운로드",
-        "href": "https://www.seagate.com/kr/ko/support/downloads/"
-      },
-      {
         "tag": "SW",
         "name": "CrystalDiskInfo (상태 확인)",
         "href": "/download/software/CrystalDiskInfo-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "저장장치 드라이버 다운로드",
+        "href": "/download/driver/%EC%A0%80%EC%9E%A5%EC%9E%A5%EC%B9%98-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "외장하드·SSD 인식 안 될 때",
+        "href": "/download/driver/%EC%99%B8%EC%9E%A5%ED%95%98%EB%93%9C-SSD-%EC%9D%B8%EC%8B%9D-%EC%95%88%EB%90%A0%EB%95%8C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -4347,14 +4687,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "삼성 도구 & 소프트웨어",
-        "href": "https://semiconductor.samsung.com/kr/consumer-storage/support/tools/"
-      },
-      {
         "tag": "SW",
         "name": "CrystalDiskInfo (범용 상태 확인)",
         "href": "/download/software/CrystalDiskInfo-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "저장장치 드라이버 다운로드",
+        "href": "/download/driver/%EC%A0%80%EC%9E%A5%EC%9E%A5%EC%B9%98-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "시게이트 소프트웨어 다운로드",
+        "href": "/download/driver/%EC%8B%9C%EA%B2%8C%EC%9D%B4%ED%8A%B8-%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -4453,6 +4798,16 @@
         "tag": "LIST",
         "name": "드라이버 전체 목록",
         "href": "/download/driver"
+      },
+      {
+        "tag": "DRV",
+        "name": "ROG 드라이버 다운로드",
+        "href": "/download/driver/ROG-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "로지텍 G HUB 다운로드",
+        "href": "/download/driver/%EB%A1%9C%EC%A7%80%ED%85%8D-G-HUB-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요.",
@@ -4584,6 +4939,11 @@
         "tag": "LIST",
         "name": "드라이버 전체 목록",
         "href": "/download/driver"
+      },
+      {
+        "tag": "DRV",
+        "name": "저장장치 드라이버 다운로드",
+        "href": "/download/driver/%EC%A0%80%EC%9E%A5%EC%9E%A5%EC%B9%98-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요.",
@@ -4696,9 +5056,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "EFM ipTIME 공식 지원",
-        "href": "https://iptime.com/iptime/?page_id=126"
+        "tag": "SW",
+        "name": "Tera Term 다운로드",
+        "href": "/download/software/Tera-Term-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "TP-Link 드라이버 다운로드",
+        "href": "/download/driver/TP-Link-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "넷기어 펌웨어 다운로드",
+        "href": "/download/driver/%EB%84%B7%EA%B8%B0%EC%96%B4-%ED%8E%8C%EC%9B%A8%EC%96%B4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -4794,9 +5164,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "TP-Link 공식 지원",
-        "href": "https://www.tp-link.com/kr/support/download/"
+        "tag": "DRV",
+        "name": "ipTIME 펌웨어 다운로드",
+        "href": "/download/driver/ipTIME-%ED%8E%8C%EC%9B%A8%EC%96%B4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "무선랜 어댑터 드라이버 설치",
+        "href": "/download/driver/%EB%AC%B4%EC%84%A0%EB%9E%9C-%EC%96%B4%EB%8C%91%ED%84%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84"
+      },
+      {
+        "tag": "SW",
+        "name": "하마치 다운로드",
+        "href": "/download/software/Hamachi-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -4892,9 +5272,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "NETGEAR 공식 지원",
-        "href": "https://www.netgear.com/support/"
+        "tag": "SW",
+        "name": "1.1.1.1 WARP 다운로드",
+        "href": "/download/software/1111-WARP-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "SW",
+        "name": "Tera Term 다운로드",
+        "href": "/download/software/Tera-Term-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "ipTIME 펌웨어 다운로드",
+        "href": "/download/driver/ipTIME-%ED%8E%8C%EC%9B%A8%EC%96%B4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -4993,6 +5383,21 @@
         "tag": "LIST",
         "name": "드라이버 전체 목록",
         "href": "/download/driver"
+      },
+      {
+        "tag": "DRV",
+        "name": "TP-Link 드라이버 다운로드",
+        "href": "/download/driver/TP-Link-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "넷기어 펌웨어 다운로드",
+        "href": "/download/driver/%EB%84%B7%EA%B8%B0%EC%96%B4-%ED%8E%8C%EC%9B%A8%EC%96%B4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "인터넷 안 될 때 드라이버 확인",
+        "href": "/download/driver/%EC%9D%B8%ED%84%B0%EB%84%B7-%EC%95%88%EB%90%A0%EB%95%8C-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요.",
@@ -5109,6 +5514,21 @@
         "tag": "LIST",
         "name": "드라이버 전체 목록",
         "href": "/download/driver"
+      },
+      {
+        "tag": "DRV",
+        "name": "무선랜 어댑터 드라이버 설치",
+        "href": "/download/driver/%EB%AC%B4%EC%84%A0%EB%9E%9C-%EC%96%B4%EB%8C%91%ED%84%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84"
+      },
+      {
+        "tag": "SW",
+        "name": "하마치 다운로드",
+        "href": "/download/software/Hamachi-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "SW",
+        "name": "1.1.1.1 WARP 다운로드",
+        "href": "/download/software/1111-WARP-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요.",
@@ -5235,6 +5655,21 @@
         "tag": "LIST",
         "name": "드라이버 전체 목록",
         "href": "/download/driver"
+      },
+      {
+        "tag": "DRV",
+        "name": "델 노트북 드라이버 다운로드",
+        "href": "/download/driver/%EB%8D%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "삼성 노트북 드라이버 다운로드",
+        "href": "/download/driver/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "LG 노트북 드라이버 다운로드",
+        "href": "/download/driver/LG-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요.",
@@ -5361,6 +5796,21 @@
         "tag": "LIST",
         "name": "드라이버 전체 목록",
         "href": "/download/driver"
+      },
+      {
+        "tag": "DRV",
+        "name": "ASRock 드라이버 다운로드",
+        "href": "/download/driver/ASRock-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "기가바이트 드라이버 다운로드",
+        "href": "/download/driver/%EA%B8%B0%EA%B0%80%EB%B0%94%EC%9D%B4%ED%8A%B8-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "ASUS 드라이버 다운로드",
+        "href": "/download/driver/ASUS-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요.",
@@ -5482,6 +5932,21 @@
         "tag": "LIST",
         "name": "드라이버 전체 목록",
         "href": "/download/driver"
+      },
+      {
+        "tag": "DRV",
+        "name": "그래픽카드 드라이버 다운로드",
+        "href": "/download/driver/%EA%B7%B8%EB%9E%98%ED%94%BD%EC%B9%B4%EB%93%9C-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "인텔 드라이버 다운로드",
+        "href": "/download/driver/%EC%9D%B8%ED%85%94-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "NVIDIA 앱 다운로드",
+        "href": "/download/driver/NVIDIA-%EC%95%B1-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요.",
@@ -5603,6 +6068,21 @@
         "tag": "LIST",
         "name": "드라이버 전체 목록",
         "href": "/download/driver"
+      },
+      {
+        "tag": "DRV",
+        "name": "HP 프린터 드라이버 다운로드",
+        "href": "/download/driver/HP-%ED%94%84%EB%A6%B0%ED%84%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "신도리코 프린터 드라이버 다운로드",
+        "href": "/download/driver/%EC%8B%A0%EB%8F%84%EB%A6%AC%EC%BD%94-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "엡손 프린터 드라이버 다운로드",
+        "href": "/download/driver/%EC%97%A1%EC%86%90-%ED%94%84%EB%A6%B0%ED%84%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요.",
@@ -5729,6 +6209,21 @@
         "tag": "LIST",
         "name": "드라이버 전체 목록",
         "href": "/download/driver"
+      },
+      {
+        "tag": "DRV",
+        "name": "스캐너 드라이버 다운로드",
+        "href": "/download/driver/%EC%8A%A4%EC%BA%90%EB%84%88-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "블루투스 드라이버 설치",
+        "href": "/download/driver/%EB%B8%94%EB%A3%A8%ED%88%AC%EC%8A%A4-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98"
+      },
+      {
+        "tag": "DRV",
+        "name": "키보드 드라이버 설치",
+        "href": "/download/driver/%ED%82%A4%EB%B3%B4%EB%93%9C-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요.",
@@ -5852,14 +6347,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "NVIDIA App 공식",
-        "href": "https://www.nvidia.com/ko-kr/software/nvidia-app/"
-      },
-      {
         "tag": "DRV",
         "name": "지포스 드라이버 (직접 받기)",
         "href": "/download/driver/%EC%A7%80%ED%8F%AC%EC%8A%A4-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "그래픽카드 안 잡힐 때",
+        "href": "/download/driver/%EA%B7%B8%EB%9E%98%ED%94%BD%EC%B9%B4%EB%93%9C-%EC%95%88%EC%9E%A1%ED%9E%90%EB%95%8C"
+      },
+      {
+        "tag": "DRV",
+        "name": "AMD 그래픽카드 드라이버 다운로드",
+        "href": "/download/driver/AMD-%EA%B7%B8%EB%9E%98%ED%94%BD%EC%B9%B4%EB%93%9C-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -5955,14 +6455,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "Apple 공식 지원",
-        "href": "https://support.apple.com/ko-kr"
-      },
-      {
         "tag": "SW",
         "name": "아이튠즈 (PC 연결용)",
         "href": "/download/software/%EC%95%84%EC%9D%B4%ED%8A%A0%EC%A6%88-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "마우스 드라이버 설치",
+        "href": "/download/driver/%EB%A7%88%EC%9A%B0%EC%8A%A4-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98"
+      },
+      {
+        "tag": "DRV",
+        "name": "USB 드라이버 설치",
+        "href": "/download/driver/USB-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -6058,9 +6563,19 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "젠하이저 다운로드 및 사용 설명서",
-        "href": "https://www.sennheiser.com/ko-kr/support"
+        "tag": "DRV",
+        "name": "레이저 드라이버 다운로드",
+        "href": "/download/driver/%EB%A0%88%EC%9D%B4%EC%A0%80-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "커세어 드라이버 다운로드",
+        "href": "/download/driver/%EC%BB%A4%EC%84%B8%EC%96%B4-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "와콤 드라이버 다운로드",
+        "href": "/download/driver/%EC%99%80%EC%BD%A4-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요."
@@ -6159,6 +6674,21 @@
         "tag": "LIST",
         "name": "드라이버 전체 목록",
         "href": "/download/driver"
+      },
+      {
+        "tag": "DRV",
+        "name": "엘가토 드라이버 다운로드",
+        "href": "/download/driver/%EC%97%98%EA%B0%80%ED%86%A0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "주변기기 드라이버 설치",
+        "href": "/download/driver/%EC%A3%BC%EB%B3%80%EA%B8%B0%EA%B8%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98"
+      },
+      {
+        "tag": "DRV",
+        "name": "애플 기기 드라이버 설치",
+        "href": "/download/driver/%EC%95%A0%ED%94%8C-%EA%B8%B0%EA%B8%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요.",
@@ -6280,6 +6810,21 @@
         "tag": "LIST",
         "name": "드라이버 전체 목록",
         "href": "/download/driver"
+      },
+      {
+        "tag": "DRV",
+        "name": "HP 복합기 드라이버 다운로드",
+        "href": "/download/driver/HP-%EB%B3%B5%ED%95%A9%EA%B8%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "캐논 복합기 드라이버 다운로드",
+        "href": "/download/driver/%EC%BA%90%EB%85%BC-%EB%B3%B5%ED%95%A9%EA%B8%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "삼성 복합기 드라이버 다운로드",
+        "href": "/download/driver/%EC%82%BC%EC%84%B1-%EB%B3%B5%ED%95%A9%EA%B8%B0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요.",
@@ -6401,6 +6946,11 @@
         "tag": "LIST",
         "name": "드라이버 전체 목록",
         "href": "/download/driver"
+      },
+      {
+        "tag": "DRV",
+        "name": "삼성 SL-M2020 프린터 드라이버",
+        "href": "/download/driver/%EC%82%BC%EC%84%B1-SL-M2020-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요.",
@@ -6527,6 +7077,21 @@
         "tag": "LIST",
         "name": "드라이버 전체 목록",
         "href": "/download/driver"
+      },
+      {
+        "tag": "DRV",
+        "name": "사운드 드라이버 설치",
+        "href": "/download/driver/%EC%82%AC%EC%9A%B4%EB%93%9C-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98"
+      },
+      {
+        "tag": "DRV",
+        "name": "3DP Net 다운로드",
+        "href": "/download/driver/3DP-Net-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
+      },
+      {
+        "tag": "DRV",
+        "name": "삼성 SL-M2020 프린터 드라이버",
+        "href": "/download/driver/%EC%82%BC%EC%84%B1-SL-M2020-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요.",
@@ -6648,6 +7213,16 @@
         "tag": "LIST",
         "name": "드라이버 전체 목록",
         "href": "/download/driver"
+      },
+      {
+        "tag": "SW",
+        "name": "프로그램 한 번에 설치하기",
+        "href": "/download/software/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%ED%95%9C%EB%B2%88%EC%97%90-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0"
+      },
+      {
+        "tag": "SW",
+        "name": "윈도우 재설치 준비물",
+        "href": "/download/software/%EC%9C%88%EB%8F%84%EC%9A%B0-%EC%9E%AC%EC%84%A4%EC%B9%98-%EC%A4%80%EB%B9%84"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요.",
@@ -6769,6 +7344,21 @@
         "tag": "LIST",
         "name": "드라이버 전체 목록",
         "href": "/download/driver"
+      },
+      {
+        "tag": "DRV",
+        "name": "노트북 포맷 후 드라이버 설치",
+        "href": "/download/driver/%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8F%AC%EB%A7%B7-%ED%9B%84-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98"
+      },
+      {
+        "tag": "DRV",
+        "name": "포맷 전 드라이버 준비",
+        "href": "/download/driver/%ED%8F%AC%EB%A7%B7-%EC%A0%84-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%A4%80%EB%B9%84"
+      },
+      {
+        "tag": "SW",
+        "name": "새 컴퓨터 설정 프로그램",
+        "href": "/download/software/%EC%83%88-%EC%BB%B4%ED%93%A8%ED%84%B0-%EC%84%A4%EC%A0%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요.",
@@ -6895,6 +7485,16 @@
         "tag": "LIST",
         "name": "드라이버 전체 목록",
         "href": "/download/driver"
+      },
+      {
+        "tag": "DRV",
+        "name": "외장하드·SSD 인식 안 될 때",
+        "href": "/download/driver/%EC%99%B8%EC%9E%A5%ED%95%98%EB%93%9C-SSD-%EC%9D%B8%EC%8B%9D-%EC%95%88%EB%90%A0%EB%95%8C"
+      },
+      {
+        "tag": "DRV",
+        "name": "시게이트 소프트웨어 다운로드",
+        "href": "/download/driver/%EC%8B%9C%EA%B2%8C%EC%9D%B4%ED%8A%B8-%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"
       }
     ],
     "requestNote": "찾는 모델이 안 보이면 요청 게시판에 모델명을 남겨주세요.",
@@ -7016,11 +7616,6 @@
     "relatedTitle": "RELATED",
     "related": [
       {
-        "tag": "PAGE",
-        "name": "3DP 공식 다운로드",
-        "href": "https://www.3dpchip.com/3dp/chip_down_kor.php"
-      },
-      {
         "tag": "DRIVER",
         "name": "3DP Net 다운로드",
         "href": "/download/driver/3DP-Net-다운로드"
@@ -7128,11 +7723,6 @@
     ],
     "relatedTitle": "RELATED",
     "related": [
-      {
-        "tag": "PAGE",
-        "name": "3DP 공식 다운로드",
-        "href": "https://www.3dpchip.com/3dp/net_down_kor.php"
-      },
       {
         "tag": "DRIVER",
         "name": "3DP Chip 다운로드",
