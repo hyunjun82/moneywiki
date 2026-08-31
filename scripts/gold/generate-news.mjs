@@ -23,6 +23,7 @@ import path from "node:path";
 
 const PRICE_URL =
   "https://raw.githubusercontent.com/hyunjun82/moneywiki/price-data/price.json";
+/** 출력 폴더. --force 같은 플래그를 경로로 오인하지 않도록 걸러낸다. */
 const OUT_DIR =
   process.argv.slice(2).find((a) => !a.startsWith("--")) || "src/data/gold-news";
 const GRAM_PER_DON = 3.75;
@@ -387,11 +388,11 @@ const ig = data.intl?.gold;
 // 후킹 도입부 — 날짜별 순환
 const HOOKS = [
   `순금 한 돈을 사려니 얼마고, 막상 팔면 얼마나 손에 쥘지 헷갈리셨죠. 저도 예물 반지를 정리하려다 ` +
-    `살 때와 팔 때 값이 한 돈에 ${won(gap)}원이나 벌어진다는 걸 알고 한참을 다시 계산했습니다.`,
+    `살 때와 팔 때 값이 부가세까지 넣으면 한 돈에 ${won(realGap)}원이나 벌어진다는 걸 알고 한참을 다시 계산했습니다.`,
   `금값이 오른다는 얘기는 계속 들리는데, 정작 오늘 내 금이 얼마인지는 검색해도 제각각이라 헷갈리셨을 겁니다. ` +
     `기준이 되는 고시가부터 정확히 보고 시작하는 게 빠릅니다.`,
   `장롱 속 반지 하나 팔러 갔다가 생각보다 적은 금액에 놀라신 적 있으신가요. 살 때 가격과 팔 때 가격은 ` +
-    `애초에 다른 숫자이고, 오늘은 그 차이가 한 돈에 ${won(gap)}원입니다.`,
+    `애초에 다른 숫자이고, 부가세까지 더하면 오늘은 그 차이가 한 돈에 ${won(realGap)}원입니다.`,
 ];
 const hook = HOOKS[dayNum % HOOKS.length];
 
@@ -439,9 +440,13 @@ if (g18s?.price && g14s?.price) {
       `${won(g18s.price)}원, 14K 1돈은 팔 때 ${won(g14s.price)}원입니다. 18K·14K는 순금이 아니라 ` +
       `세공비가 붙는 제품 시세로 판매되기 때문에 살 때 가격이 별도로 표기되지 않는다는 점만 기억하면 됩니다.`,
     ``,
-    `순금은 살 때 ${won(buy.price)}원, 팔 때 ${won(sell.price)}원으로 한 돈에 ${won(gap)}원, ` +
-      `약 ${gapPct}%의 차이가 납니다. 오늘 사서 오늘 되팔면 그만큼이 고스란히 비용이라는 뜻이라, ` +
-      `실물 금은 시세가 이 간격 이상 올라야 본전에 도달합니다.`,
+    `순금 고시가만 보면 살 때 ${won(buy.price)}원, 팔 때 ${won(sell.price)}원으로 한 돈에 ` +
+      `${won(gap)}원(${gapPct}%) 차이입니다. 그런데 살 때 가격은 부가세 별도라, 실제로는 ` +
+      `${won(buyIncl)}원을 내고 사서 ${won(sell.price)}원에 팔게 됩니다. 체감하는 간격은 ` +
+      `한 돈에 ${won(realGap)}원, 약 ${realGapPct}%입니다.`,
+    ``,
+    `오늘 사서 오늘 되팔면 이 ${won(realGap)}원이 고스란히 비용입니다. 부가세는 살 때 내고 ` +
+      `팔 때 돌려받지 못하기 때문에, 실물 금은 시세가 이만큼 올라야 본전에 도달합니다.`,
     ``
   );
 }
