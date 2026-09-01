@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import linkFixes from "@/data/link-fixes.json";
 import { remark } from "remark";
 import remarkGfm from "remark-gfm";
 import html from "remark-html";
@@ -207,6 +208,20 @@ export interface FrontmatterCheckerConfig {
 }
 
 // 모든 위키 문서 목록 가져오기
+/** 실제로 있는 /w/ 주소. 본문 링크를 고칠 때 쓴다. 한 번만 만든다. */
+let _liveSlugs: Set<string> | null = null;
+function liveWikiSlugs(): Set<string> {
+  if (_liveSlugs) return _liveSlugs;
+  const set = new Set(getAllWikiSlugs());
+  try {
+    for (const e of fs.readdirSync(path.join(process.cwd(), "src/app/w"), { withFileTypes: true })) {
+      if (e.isDirectory()) set.add(e.name);
+    }
+  } catch { /* 직접 작성한 페이지가 없으면 MD 만 본다 */ }
+  _liveSlugs = set;
+  return set;
+}
+
 export function getAllWikiSlugs(): string[] {
   if (!fs.existsSync(wikiDirectory)) {
     return [];
@@ -261,6 +276,30 @@ export function getCategoryBySlug(slug: string): string | null {
 }
 
 // 특정 위키 문서 가져오기
+/**
+ * 본문의 /w/ 링크 중 없는 주소를 손본다.
+ *
+ * 글을 옮기고 슬러그를 바꾸면서 본문 링크가 그대로 남았다. 7,352개 중 2,602개가
+ * 없는 주소였고, 네이버가 이걸 따라 들어와 "접근 불가한 페이지"로 쌓고 있었다.
+ * 갈 곳이 분명한 것은 새 주소로 돌리고(link-fixes.json), 그렇지 않으면
+ * 링크를 풀어 글자만 남긴다 — 없는 곳으로 보내느니 안 보내는 편이 낫다.
+ */
+function repairWikiLinks(rawHtml: string): string {
+  return rawHtml.replace(
+    /<a\s+([^>]*?)href="\/w\/([^"#?]+)([^"]*)"([^>]*)>([\s\S]*?)<\/a>/g,
+    (whole, pre: string, rawSlug: string, tail: string, post: string, text: string) => {
+      let slug = rawSlug;
+      try { slug = decodeURIComponent(rawSlug); } catch { /* 그대로 쓴다 */ }
+      if (liveWikiSlugs().has(slug)) return whole;
+      const fixed = (linkFixes as Record<string, string>)[slug];
+      if (fixed) {
+        return `<a ${pre}href="/w/${encodeURIComponent(fixed)}${tail}"${post}>${text}</a>`;
+      }
+      return text;
+    }
+  );
+}
+
 export async function getWikiDocument(
   slug: string
 ): Promise<WikiDocument | null> {
@@ -287,7 +326,7 @@ export async function getWikiDocument(
     .use(remarkGfm)
     .use(html, { sanitize: false })
     .process(content);
-  const htmlContent = processedContent.toString();
+  const htmlContent = repairWikiLinks(processedContent.toString());
 
   return {
     slug: decodedSlug,

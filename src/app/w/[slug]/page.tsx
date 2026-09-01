@@ -19,6 +19,8 @@ import ShareButtons from "@/components/ShareButtons";
 import CtaCard from "@/components/CtaCard";
 // 계산기 컴포넌트는 클라이언트 래퍼에서 동적 로딩
 import CalculatorLoader from "@/components/CalculatorLoader";
+// 관련 키워드 태그가 실제로 갈 수 있는 곳. scripts/build-keyword-links.mjs 가 만든다.
+import keywordLinks from "@/data/keyword-links.json";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -229,8 +231,9 @@ function getRelatedCalculator(slug: string, title: string, category: string): { 
       ]
     },
     {
-      slug: '전월세-계산기',
-      title: '전월세 계산기',
+      // '전월세-계산기' 는 없는 주소였다. 실제로 있는 전세대출 계산기로 보낸다.
+      slug: '전세대출-계산기',
+      title: '전세대출 계산기',
       keywords: [
         { word: '전세', weight: 8 },
         { word: '월세', weight: 8 },
@@ -238,8 +241,8 @@ function getRelatedCalculator(slug: string, title: string, category: string): { 
       ]
     },
     {
-      slug: '주식-계산기',
-      title: '주식 계산기',
+      slug: '주식-수익률-계산기',
+      title: '주식 수익률 계산기',
       keywords: [
         { word: '주식', weight: 8 },
         { word: '배당', weight: 6 },
@@ -754,15 +757,28 @@ export default async function WikiPage({ params }: PageProps) {
             <div className="mt-8 pt-6 border-t border-neutral-200">
               <h3 className="text-sm font-medium text-neutral-500 mb-3">관련 키워드</h3>
               <div className="flex flex-wrap gap-2">
-                {doc.keywords.map((keyword) => (
-                  <Link
-                    key={keyword}
-                    href={`/w/${encodeURIComponent(keyword)}`}
-                    className="px-3 py-1 text-sm bg-neutral-100 text-neutral-600 rounded-full hover:bg-neutral-200 transition-colors"
-                  >
-                    #{keyword}
-                  </Link>
-                ))}
+                {doc.keywords.map((keyword) => {
+                  // keywords 는 검색어 문구지 문서 이름이 아니다. 예전에는 이걸 그대로
+                  // /w/<키워드> 로 걸어서 태그가 전부 404 였다. 갈 곳이 분명한 것만
+                  // 링크로 두고 나머지는 글자로 보여 준다.
+                  const target = (keywordLinks as Record<string, Record<string, string>>)[slug]?.[keyword];
+                  return target ? (
+                    <Link
+                      key={keyword}
+                      href={`/w/${encodeURIComponent(target)}`}
+                      className="px-3 py-1 text-sm bg-neutral-100 text-neutral-600 rounded-full hover:bg-neutral-200 transition-colors"
+                    >
+                      #{keyword}
+                    </Link>
+                  ) : (
+                    <span
+                      key={keyword}
+                      className="px-3 py-1 text-sm bg-neutral-100 text-neutral-500 rounded-full"
+                    >
+                      #{keyword}
+                    </span>
+                  );
+                })}
               </div>
             </div>
           )}
