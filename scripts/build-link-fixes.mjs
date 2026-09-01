@@ -23,6 +23,7 @@ import path from "node:path";
 
 const DIR = "content/wiki";
 const OUT = "src/data/link-fixes.json";
+const OUT_RELATED = "src/data/related-fixes.json";
 
 const live = new Set();
 for (const f of fs.readdirSync(DIR)) if (f.endsWith(".md")) live.add(f.replace(/\.md$/, ""));
@@ -147,11 +148,47 @@ for (const [from, to] of Object.entries(fixes)) {
 console.log("잘못된 항목:", bad);
 if (bad) process.exit(1);
 
+/**
+ * 직접 작성 TSX 페이지(src/app/w/<slug>/page.tsx)의 RELATED 배열에도 없는 슬러그가 있다.
+ * 이 페이지들은 MD 가 아니라서 본문 링크 손질(repairWikiLinks)이 닿지 않는다.
+ * 298개 파일을 일일이 고치는 대신, 공통 컴포넌트가 걸러낼 수 있도록 표를 따로 낸다.
+ *   값이 슬러그면 그리로 보내고, 빈 문자열이면 그 항목을 아예 그리지 않는다.
+ */
+const TSX_ROOT = "src/app/w";
+const relatedFixes = {};
+let tsxDead = 0;
+for (const e of fs.readdirSync(TSX_ROOT, { withFileTypes: true })) {
+  if (!e.isDirectory()) continue;
+  const page = path.join(TSX_ROOT, e.name, "page.tsx");
+  if (!fs.existsSync(page)) continue;
+  const text = fs.readFileSync(page, "utf8");
+  const seenHere = new Set();
+  for (const m of text.matchAll(/slug:\s*["'`]([^"'`]+)["'`]/g)) seenHere.add(m[1]);
+  for (const m of text.matchAll(/href=["'{`]+\/w\/([^"'`)\s>{}]+)/g)) {
+    let s = m[1].replace(/[.,)]+$/, "");
+    if (s.includes("${")) continue;
+    try { s = decodeURIComponent(s); } catch { /* 그대로 */ }
+    seenHere.add(s);
+  }
+  for (const s of seenHere) {
+    if (live.has(s) || s === "$") continue;
+    if (relatedFixes[s] !== undefined) continue;
+    relatedFixes[s] = fixes[s] ?? "";   // 갈 곳이 없으면 빈 문자열
+    tsxDead++;
+  }
+}
+const rescued = Object.values(relatedFixes).filter(Boolean).length;
+console.log(`\nTSX 페이지의 죽은 슬러그: ${tsxDead} — 그중 ${rescued}개는 다른 글로 보내고 나머지는 감춘다`);
+
 if (process.argv.includes("--write")) {
   const sorted = {};
   for (const k of Object.keys(fixes).sort()) sorted[k] = fixes[k];
   fs.writeFileSync(OUT, JSON.stringify(sorted, null, 2) + "\n", "utf8");
-  console.log("\n기록:", OUT);
+  console.log("기록:", OUT);
+  const sortedRel = {};
+  for (const k of Object.keys(relatedFixes).sort()) sortedRel[k] = relatedFixes[k];
+  fs.writeFileSync(OUT_RELATED, JSON.stringify(sortedRel, null, 2) + "\n", "utf8");
+  console.log("기록:", OUT_RELATED);
 } else {
   console.log("\n--- 살린 예시 ---");
   Object.entries(fixes).slice(0, 15).forEach(([a, b]) => console.log(`   /w/${a}  →  /w/${b}`));
