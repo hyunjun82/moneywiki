@@ -48,10 +48,6 @@ const SIDEBAR_LINKS = [
 ];
 
 const HUB_LINKS = [
-  { title: "타이레놀 부작용 증상과 안전한 복용법", desc: "간 손상 위험부터 복용 간격까지", href: "/w/타이레놀-부작용" },
-  { title: "약 알레르기 반응, 응급 상황 대처법", desc: "두드러기·호흡곤란 즉시 해야 할 일", href: "/w/약-알레르기-대처" },
-  { title: "어린이 약 부작용 증상과 부모 대응법", desc: "영유아 해열제·항생제 부작용 체크리스트", href: "/w/어린이-약-부작용" },
-  { title: "백신 부작용 피해보상 신청 방법", desc: "코로나·독감 백신 이상반응 보상 절차", href: "/w/백신-부작용-보상" },
 ];
 
 const DOCS = [
@@ -486,6 +482,8 @@ function CTA() {
 
 // ─── 허브 링크
 function HubLinks() {
+  // 이어줄 글이 없으면 제목만 남은 빈 상자가 되므로 그리지 않는다.
+  if (HUB_LINKS.length === 0) return null;
   return (
     <div style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 18px", margin: "2rem 0" }}>
       <p style={{ fontSize: 13, fontWeight: 700, color: "#374151", marginBottom: 12 }}>의약품 부작용 관련 글도 함께 보세요</p>

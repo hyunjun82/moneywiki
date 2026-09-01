@@ -86,10 +86,8 @@ const FAQS = [
 ];
 
 const HUB_LINKS = [
-  { title: "튼튼머니 적립방법 | QR 두 번 찍는 이유", desc: "포인트 안 쌓일 때 원인·해결법", href: "/w/튼튼머니-적립방법" },
-  { title: "튼튼머니 사용처 | 제로페이·슬리머니 전환", desc: "쌓은 포인트 어디서 어떻게 쓰는지", href: "/w/튼튼머니-사용처" },
-  { title: "튼튼머니 적립시설 찾기 | 내 헬스장 되는지", desc: "지정시설 검색법과 등록 기준", href: "/w/튼튼머니-적립시설" },
-  { title: "튼튼머니 포인트 계산 | 5만원 채우려면 몇 번?", desc: "활동별 포인트 계산기", href: "/w/튼튼머니-포인트-계산" },
+  { title: "튼튼머니 적립방법 | QR 두 번 찍는 이유", desc: "포인트 안 쌓일 때 원인·해결법", href: "/w/ttuntun-hub" },
+  { title: "튼튼머니 적립시설 찾기 | 내 헬스장 되는지", desc: "지정시설 검색법과 등록 기준", href: "/w/ttuntun-facility" },
 ];
 
 const SIDEBAR_LINKS = [

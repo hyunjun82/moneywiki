@@ -71,10 +71,8 @@ const STEPS = [
 ];
 
 const HUB_LINKS = [
-  { title: "튼튼머니 적립방법 | QR 두 번 찍는 이유", desc: "포인트 안 쌓일 때 원인·해결법", href: "/w/튼튼머니-적립방법" },
-  { title: "튼튼머니 사용처 | 제로페이·슬리머니 전환", desc: "성인 계정 포인트 사용처 안내", href: "/w/튼튼머니-사용처" },
-  { title: "튼튼머니 포인트 계산 | 5만원 채우려면 몇 번?", desc: "가족별 포인트 계산기", href: "/w/튼튼머니-포인트-계산" },
-  { title: "튼튼머니 앱 사용법 | 설치·로그인·QR 인증 순서", desc: "앱 설치부터 인증까지 단계별 안내", href: "/w/튼튼머니-앱" },
+  { title: "튼튼머니 적립방법 | QR 두 번 찍는 이유", desc: "포인트 안 쌓일 때 원인·해결법", href: "/w/ttuntun-hub" },
+  { title: "튼튼머니 앱 사용법 | 설치·로그인·QR 인증 순서", desc: "앱 설치부터 인증까지 단계별 안내", href: "/w/ttuntun-app" },
 ];
 
 const SIDEBAR_LINKS = [
