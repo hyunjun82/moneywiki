@@ -200,7 +200,7 @@ export default function Page() {
       </p>
       <p style={body}>
         건물 부속 공중화장실은 건축 허가나 용도 변경 신고에 포함돼요.
-        <a href="/w/건축-허가-신청" style={{ color: "#1D9E75", textDecoration: "underline" }}>건축 허가</a>를 받을 때 화장실 설치 계획도 함께 제출하는 구조예요.
+        건축 허가를 받을 때 화장실 설치 계획도 함께 제출하는 구조예요.
         신고 서류는 관할 구청 환경위생과나 건축과에서 받을 수 있어요.
       </p>
       <p style={body}>

@@ -141,7 +141,7 @@ export default function Page() {
       </GreenBox>
 
       <p style={body}>
-        <a href="/w/불법건축-이행강제금" style={{ color: "#1D9E75", textDecoration: "underline" }}>이행강제금</a>은 시정할 때까지 반복 부과돼요.
+        이행강제금은 시정할 때까지 반복 부과돼요.
         공사비 다 날리고 철거비까지 내야 하니 절대 무허가로 짓지 마세요.
       </p>
 

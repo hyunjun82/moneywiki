@@ -88,7 +88,7 @@ export default function Page() {
 
       <p style={body}>
         핵심은 최종 3개월이에요. 6개월 밀렸어도 최신 3개월분만 최우선이고, 나머지 3개월은 4순위로 밀려요.
-        그래서 월급이 밀리기 시작하면 빨리 <a href="/w/임금체불-신고-방법" style={{ color: "#1D9E75", textDecoration: "underline" }}>임금체불 신고</a>를 하는 게 유리해요.
+        그래서 월급이 밀리기 시작하면 빨리 임금체불 신고를 하는 게 유리해요.
       </p>
 
       <CategoryButton label="근로 정보" count={10} href="/category/근로" />

@@ -154,7 +154,7 @@ export default function Page() {
       </GreenBox>
 
       <p style={body}>
-        여기서 보유 10년 + 거주 10년이면 <a href="/w/장기보유특별공제-요건" style={{ color: "#1D9E75", textDecoration: "underline" }}>장기보유특별공제</a> 80%가 적용돼요.
+        여기서 보유 10년 + 거주 10년이면 장기보유특별공제 80%가 적용돼요.
         1억 과세 양도차익이라면 실제 과세 대상은 2,000만원까지 줄어들 수 있죠.
         보유·거주 기간이 길수록 세금 부담이 급격히 낮아져요.
       </p>

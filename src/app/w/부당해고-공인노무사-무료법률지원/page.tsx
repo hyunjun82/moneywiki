@@ -127,7 +127,7 @@ export default function Page() {
       <GreenBox title="구제 결과">
         원직 복직 + 해고 기간 임금 전액 지급 (백페이)<br />
         복직 대신 금전 보상 선택 가능 (보통 3~6개월분)<br />
-        퇴직금·<a href="/w/실업급여-수급조건" style={{ color: "#1D9E75", textDecoration: "underline" }}>실업급여</a>도 별도 청구 가능
+        퇴직금·<a href="/w/실업급여-수급-조건" style={{ color: "#1D9E75", textDecoration: "underline" }}>실업급여</a>도 별도 청구 가능
       </GreenBox>
 
       <Divider />

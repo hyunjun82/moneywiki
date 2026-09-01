@@ -111,7 +111,7 @@ export default function Page() {
       <H2>디폴트옵션, 한 줄로 뭐냐면</H2>
       <p style={body}>
         운용지시를 6주 동안 안 하면, 내가 미리 지정해 둔 상품으로 자동 매수되는 제도예요.
-        DC형(확정기여형)과 <a href="/w/퇴직연금-IRP" style={{ color: "#1D9E75", textDecoration: "underline" }}>IRP</a>에만 적용돼요.
+        DC형(확정기여형)과 IRP에만 적용돼요.
         <a href="/w/퇴직연금-db-dc-차이" style={{ color: "#1D9E75", textDecoration: "underline" }}>DB형</a>은 회사가 운용하니까 해당 없고요.
       </p>
       <p style={body}>

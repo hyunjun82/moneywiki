@@ -171,7 +171,7 @@ export default function Page() {
       <Checklist items={CHECKLIST} />
 
       <p style={body}>
-        <a href="/w/상가-계약갱신청구권" style={{ color: "#1D9E75", textDecoration: "underline" }}>계약갱신청구권</a>과 함께 활용하면 최대 10년까지 안정적으로 영업할 수 있어요.
+        계약갱신청구권과 함께 활용하면 최대 10년까지 안정적으로 영업할 수 있어요.
       </p>
 
       <Divider />

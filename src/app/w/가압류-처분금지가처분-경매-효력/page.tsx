@@ -160,7 +160,7 @@ export default function Page() {
       <Steps steps={STEPS} />
 
       <p style={body}>
-        <a href="/w/부동산-경매-절차" style={{ color: "#1D9E75", textDecoration: "underline" }}>부동산 경매 절차</a> 전체 흐름을 먼저 파악하면 권리분석이 한결 수월해져요.
+        부동산 경매 절차 전체 흐름을 먼저 파악하면 권리분석이 한결 수월해져요.
       </p>
 
       <Divider />

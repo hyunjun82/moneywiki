@@ -55,6 +55,15 @@ if [ -n "$WIKI_FILES" ]; then
     [ "$FAIL" = "1" ] && { echo "✗ MD 품질 검증 실패 — push 차단"; exit 1; }
 fi
 
+# ── 게이트 3: 내부 링크 (2026-09-01, 네이버 404 470건 사고 재발 방지) ──
+# 링크를 만들어내는 자리가 바뀌면 죽은 주소가 나가는지 본다.
+# 이 검사가 없어서 관련 키워드 태그가 8개월간 404 를 뿌리고 있었다.
+if echo "$RANGE_FILES" | grep -qE "^content/wiki/|^src/app/w/|^src/data/(categories|keyword-links|link-fixes|related-fixes)|^public/_redirects"; then
+    echo ""
+    echo "▶ verify:internal-links (죽은 /w/ · /category/ 링크)"
+    node scripts/verify-internal-links.mjs || { echo "✗ 죽은 내부 링크 — push 차단"; exit 1; }
+fi
+
 echo "✓ 게이트 통과"
 echo ""
 exit 0

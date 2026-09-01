@@ -194,7 +194,7 @@ export default function Page() {
       {/* H2-4: 세금 */}
       <H2>프리미엄 1억 받아도 세금 내면 얼마 안 남을 수 있어요</H2>
       <p style={body}>
-        분양권 전매 차익에는 <a href="/w/양도소득세-계산" style={{ color: "#1D9E75", textDecoration: "underline" }}>양도소득세</a>가 붙어요.
+        분양권 전매 차익에는 양도소득세가 붙어요.
         보유기간이 짧을수록 세율이 높아서, 1년 미만이면 차익의 70%를 세금으로 내야 해요.
       </p>
 

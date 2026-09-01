@@ -352,10 +352,9 @@ function HubLinks() {
           </a>
         ))}
       </div>
-      <a href="/w/소상공인-경영안정-바우처" target="_self"
-        style={{ display: "block", textAlign: "center", marginTop: 12, fontSize: 12, color: G, fontWeight: 600, textDecoration: "none", padding: "8px", borderRadius: 6, background: GL }}>
+      
         소상공인 경영안정 바우처 전체 가이드 보기 →
-      </a>
+      
     </div>
   );
 }

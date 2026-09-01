@@ -59,7 +59,7 @@ export default function Page() {
     <ArticleLayout sidebar={<Sidebar heading="지방선거 알바 가이드" items={SIDEBAR_ITEMS} currentSlug="선거알바-급여-지급시기-입금" />}>
       <nav style={{ fontSize: 13, color: "#6b7280", marginBottom: 8 }}>
         <Link href="/" style={{ color: "#6b7280" }}>홈</Link> &gt;{" "}
-        <Link href="/w/지방선거-알바-2026-직종별-급여-신청방법" style={{ color: "#6b7280" }}>지방선거 알바</Link> &gt;{" "}
+        <Link href="/w/선거알바-신청방법-선관위-공고찾기" style={{ color: "#6b7280" }}>지방선거 알바</Link> &gt;{" "}
         <span style={{ color: "#374151" }}>급여 지급 시기</span>
       </nav>
 
@@ -118,7 +118,7 @@ export default function Page() {
         접수할 때 계좌 정보를 여러 번 확인하고, 가능하면 주거래 은행 계좌를 사용하는 게 안전해요. 휴면 계좌나 해지된 계좌를 기재하면 당연히 입금이 안 되죠.
       </p>
 
-      <CategoryButton label="지방선거 알바" count={SIDEBAR_ITEMS.length} href="/w/지방선거-알바-2026-직종별-급여-신청방법" />
+      <CategoryButton label="지방선거 알바" count={SIDEBAR_ITEMS.length} href="/w/선거알바-신청방법-선관위-공고찾기" />
       <RelatedArticles items={RELATED} />
       <ArticleAd position="mid" />
       <Divider />

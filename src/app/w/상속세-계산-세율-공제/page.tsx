@@ -121,9 +121,9 @@ export default function Page() {
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
         가족이 돌아가시면 상속세를 얼마나 내야 할지 막막하죠.
         상속세는 10~50% 누진세율이지만{" "}
-        <a href="/w/증여세-계산" style={{ color: "#1D9E75", textDecoration: "underline" }}>
+        
           배우자·자녀 공제
-        </a>를 잘 챙기면 실제 납부액이 크게 줄어요.
+        를 잘 챙기면 실제 납부액이 크게 줄어요.
         세율표, 공제 항목, 신고 기한까지 한 번에 정리했어요.
       </p>
 

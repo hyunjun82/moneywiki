@@ -181,8 +181,8 @@ export default function Page() {
       <BorderBox>
         <strong>금액 관계없이 보호되는 것</strong><br />
         대항력 (점유 + 사업자등록 후 다음 날 발생)<br />
-        <a href="/w/상가-계약갱신청구권" style={{ color: "#1D9E75" }}>계약갱신청구권</a> (최초 계약 포함 10년)<br />
-        <a href="/w/상가건물-권리금" style={{ color: "#1D9E75" }}>권리금 보호</a> (임대인 방해 시 손해배상 가능)<br />
+        계약갱신청구권 (최초 계약 포함 10년)<br />
+        <a href="/w/상가건물-권리금-임대인-반환" style={{ color: "#1D9E75" }}>권리금 보호</a> (임대인 방해 시 손해배상 가능)<br />
         월세 인상 제한 (연 5% 이내)<br /><br />
         <strong>기준금액 이하만 보호되는 것</strong><br />
         우선변제권 (경매 시 보증금 우선 회수)<br />

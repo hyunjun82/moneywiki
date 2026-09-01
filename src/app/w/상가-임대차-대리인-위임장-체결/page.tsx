@@ -114,7 +114,7 @@ export default function Page() {
       <p style={body}>
         아래 체크리스트를 하나씩 확인하세요.
         하나라도 빠지면 계약을 미루는 게 안전해요.
-        <a href="/w/상가-임대차계약서" style={{ color: "#1D9E75", textDecoration: "underline" }}>상가 임대차 계약서 작성법</a>도 함께 확인하면 좋아요.
+        상가 임대차 계약서 작성법도 함께 확인하면 좋아요.
       </p>
 
       <SectionBadge>필수 확인 체크리스트</SectionBadge>

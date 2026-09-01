@@ -111,7 +111,7 @@ export default function Page() {
       <Steps steps={APPLY_STEPS} />
       <p style={body}>
         교육은 보통 평일 오전 9시~오후 3시예요. 아이가 학교나 어린이집에 가 있는 시간이라 부담이 적죠.
-        <a href="/w/국민취업지원제도" style={{ color: "#1D9E75", textDecoration: "underline" }}>국민취업지원제도</a>와 연계하면
+        <a href="/w/국민취업지원제도-구직촉진수당" style={{ color: "#1D9E75", textDecoration: "underline" }}>국민취업지원제도</a>와 연계하면
         추가로 월 50만원 취업활동비용까지 받을 수 있어요.
       </p>
 

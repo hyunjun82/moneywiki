@@ -87,7 +87,7 @@ export default function Page() {
       </GreenBox>
 
       <p style={body}>
-        부당해고의 경우 근로감독관 진정과 별도로 <a href="/w/부당해고-구제-신청-방법" style={{ color: "#1D9E75", textDecoration: "underline" }}>노동위원회 구제신청</a>도 함께 진행할 수 있어요.
+        부당해고의 경우 근로감독관 진정과 별도로 노동위원회 구제신청도 함께 진행할 수 있어요.
       </p>
 
       <Divider />
@@ -123,7 +123,7 @@ export default function Page() {
       </BorderBox>
 
       <p style={body}>
-        <a href="/w/퇴직금-미지급-신고-지연이자" style={{ color: "#1D9E75", textDecoration: "underline" }}>퇴직금 미지급</a> 사건은 지연이자(연 20%)도 함께 청구할 수 있어요. 14일 지급기한이 지나면 자동으로 이자가 붙거든요.
+        퇴직금 미지급 사건은 지연이자(연 20%)도 함께 청구할 수 있어요. 14일 지급기한이 지나면 자동으로 이자가 붙거든요.
       </p>
 
       <Divider />

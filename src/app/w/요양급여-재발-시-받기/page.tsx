@@ -130,7 +130,7 @@ export default function Page() {
       <p style={body}>
         인과관계 부족으로 불승인됐다면 산재 전문 병원에서 정밀 검사를 다시 받으세요.
         다른 병원의 새 소견서가 추가되면 재심사 통과율이 올라가요.
-        <a href="/w/산재-요양급여-신청-방법" style={{ color: "#1D9E75", textDecoration: "underline" }}>산재 요양급여 신청 방법</a>도 함께 참고하면 도움이 돼요.
+        산재 요양급여 신청 방법도 함께 참고하면 도움이 돼요.
       </p>
 
       <Divider />

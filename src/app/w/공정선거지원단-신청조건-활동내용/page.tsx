@@ -59,7 +59,7 @@ export default function Page() {
     <ArticleLayout sidebar={<Sidebar heading="지방선거 알바 가이드" items={SIDEBAR_ITEMS} currentSlug="공정선거지원단-신청조건-활동내용" />}>
       <nav style={{ fontSize: 13, color: "#6b7280", marginBottom: 8 }}>
         <Link href="/" style={{ color: "#6b7280" }}>홈</Link> &gt;{" "}
-        <Link href="/w/지방선거-알바-2026-직종별-급여-신청방법" style={{ color: "#6b7280" }}>지방선거 알바</Link> &gt;{" "}
+        <Link href="/w/선거알바-신청방법-선관위-공고찾기" style={{ color: "#6b7280" }}>지방선거 알바</Link> &gt;{" "}
         <span style={{ color: "#374151" }}>공정선거지원단</span>
       </nav>
 
@@ -116,7 +116,7 @@ export default function Page() {
         돈보다는 시민 참여 활동 경력이 주요 동기인 분이 많아요. 대학생의 경우 자기소개서에 공공 활동 경험으로 기재할 수 있죠.
       </p>
 
-      <CategoryButton label="지방선거 알바" count={SIDEBAR_ITEMS.length} href="/w/지방선거-알바-2026-직종별-급여-신청방법" />
+      <CategoryButton label="지방선거 알바" count={SIDEBAR_ITEMS.length} href="/w/선거알바-신청방법-선관위-공고찾기" />
       <RelatedArticles items={RELATED} />
       <ArticleAd position="mid" />
       <Divider />
@@ -146,7 +146,7 @@ export default function Page() {
         공정선거지원단은 엄밀히 말하면 '알바'보다는 '시민 참여 활동'에 가까워요. 투표사무원, 개표사무원은 특정 날짜에 특정 장소에서 정해진 업무를 하는 반면, 공정선거지원단은 선거 운동 기간에 자율적으로 활동하죠.
       </p>
       <p style={body}>
-        급여 체계도 달라요. 투표사무원은 일당 13만원이 확정된 반면, 공정선거지원단은 활동비(실비) 형태로 변동이 있어요. <Link href="/w/지방선거-알바-2026-직종별-급여-신청방법" style={{ color: "#1D9E75", textDecoration: "underline" }}>직종별 비교</Link>에서 전체 그림을 볼 수 있죠.
+        급여 체계도 달라요. 투표사무원은 일당 13만원이 확정된 반면, 공정선거지원단은 활동비(실비) 형태로 변동이 있어요. <Link href="/w/선거알바-신청방법-선관위-공고찾기" style={{ color: "#1D9E75", textDecoration: "underline" }}>직종별 비교</Link>에서 전체 그림을 볼 수 있죠.
       </p>
       <p style={body}>
         활동 기간과 투표일이 겹치지 않아서, 공정선거지원단 활동 후 투표사무원으로도 일할 수 있어요. 둘 다 하면 선거 참여 경험을 폭넓게 쌓을 수 있죠.

@@ -72,7 +72,7 @@ export default function Page() {
         "부모님이 70세 넘으셨는데 추가 공제가 있다던데요?"
       </p>
       <p style={body}>
-        네, <a href="/w/연말정산-기본공제" style={{ color: "#1D9E75", textDecoration: "underline" }}>기본공제</a> 150만원에 더해서 받을 수 있는 <strong>추가공제 4종류</strong>가 있어요.
+        네, <a href="/w/연말정산-기본공제-대상" style={{ color: "#1D9E75", textDecoration: "underline" }}>기본공제</a> 150만원에 더해서 받을 수 있는 <strong>추가공제 4종류</strong>가 있어요.
         경로우대 <strong>100만원</strong>, 장애인 <strong>200만원</strong>, 부녀자 <strong>50만원</strong>, 한부모 <strong>100만원</strong>이에요.
         해당 요건만 맞으면 중복으로도 받을 수 있어요.
       </p>

@@ -103,7 +103,7 @@ export default function Page() {
         정년 규정도 함께 기억하세요.<br />
         · 모든 사업장은 <strong>정년 60세 이상</strong>으로 정해야 해요<br />
         · 정년 미설정 시 60세로 간주돼요<br />
-        · <a href="/w/장애인-고용의무-최소-인원" style={{ color: "#1D9E75" }}>장애인 고용의무</a>와는 별도 기준이에요
+        · 장애인 고용의무와는 별도 기준이에요
       </BorderBox>
 
       <Divider />

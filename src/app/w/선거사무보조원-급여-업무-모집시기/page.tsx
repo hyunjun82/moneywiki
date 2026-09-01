@@ -59,7 +59,7 @@ export default function Page() {
     <ArticleLayout sidebar={<Sidebar heading="지방선거 알바 가이드" items={SIDEBAR_ITEMS} currentSlug="선거사무보조원-급여-업무-모집시기" />}>
       <nav style={{ fontSize: 13, color: "#6b7280", marginBottom: 8 }}>
         <Link href="/" style={{ color: "#6b7280" }}>홈</Link> &gt;{" "}
-        <Link href="/w/지방선거-알바-2026-직종별-급여-신청방법" style={{ color: "#6b7280" }}>지방선거 알바</Link> &gt;{" "}
+        <Link href="/w/선거알바-신청방법-선관위-공고찾기" style={{ color: "#6b7280" }}>지방선거 알바</Link> &gt;{" "}
         <span style={{ color: "#374151" }}>선거사무보조원</span>
       </nav>
 
@@ -138,7 +138,7 @@ export default function Page() {
         급여는 투표사무원이 2배 이상 높지만, 근무시간과 업무 강도를 고려하면 선거사무보조원도 나쁘지 않아요. 특히 며칠 연속 근무가 가능하면 총 수령액이 더 많아질 수 있죠.
       </p>
 
-      <CategoryButton label="지방선거 알바" count={SIDEBAR_ITEMS.length} href="/w/지방선거-알바-2026-직종별-급여-신청방법" />
+      <CategoryButton label="지방선거 알바" count={SIDEBAR_ITEMS.length} href="/w/선거알바-신청방법-선관위-공고찾기" />
       <RelatedArticles items={RELATED} />
       <ArticleAd position="mid" />
       <Divider />

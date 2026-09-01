@@ -103,7 +103,7 @@ export default function Page() {
 
       <p style={body}>
         육아휴직 중에 발생한 연차는 복직 후 바로 쓸 수 있어요. 2025년 발생 연차는 2026년 말까지 써야 하니, 복직 후 일정 계획을 미리 세워두면 좋아요.
-        못 쓴 연차에 대해서는 회사에 따라 <a href="/w/연차수당" style={{ color: "#1D9E75", textDecoration: "underline" }}>연차수당</a>을 지급하기도 해요.
+        못 쓴 연차에 대해서는 회사에 따라 연차수당을 지급하기도 해요.
       </p>
 
       <RelatedArticles items={RELATED} />

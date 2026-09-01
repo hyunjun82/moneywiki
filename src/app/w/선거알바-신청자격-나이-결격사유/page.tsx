@@ -72,7 +72,7 @@ export default function Page() {
     <ArticleLayout sidebar={<Sidebar heading="지방선거 알바 가이드" items={SIDEBAR_ITEMS} currentSlug="선거알바-신청자격-나이-결격사유" />}>
       <nav style={{ fontSize: 13, color: "#6b7280", marginBottom: 8 }}>
         <Link href="/" style={{ color: "#6b7280" }}>홈</Link> &gt;{" "}
-        <Link href="/w/지방선거-알바-2026-직종별-급여-신청방법" style={{ color: "#6b7280" }}>지방선거 알바</Link> &gt;{" "}
+        <Link href="/w/선거알바-신청방법-선관위-공고찾기" style={{ color: "#6b7280" }}>지방선거 알바</Link> &gt;{" "}
         <span style={{ color: "#374151" }}>신청 자격</span>
       </nav>
 
@@ -139,7 +139,7 @@ export default function Page() {
         위 목록에서 가장 많이 헷갈리는 게 '정당 당원'이에요. 과거에 가입만 하고 활동을 안 해도 탈당 처리를 하지 않았다면 여전히 당원 신분이라 결격사유에 해당하죠. 신청 전에 정당 가입 여부를 확인해 보세요.
       </p>
 
-      <CategoryButton label="지방선거 알바" count={SIDEBAR_ITEMS.length} href="/w/지방선거-알바-2026-직종별-급여-신청방법" />
+      <CategoryButton label="지방선거 알바" count={SIDEBAR_ITEMS.length} href="/w/선거알바-신청방법-선관위-공고찾기" />
       <RelatedArticles items={RELATED} />
       <ArticleAd position="mid" />
       <Divider />

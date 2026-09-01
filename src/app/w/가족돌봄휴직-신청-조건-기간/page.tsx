@@ -129,7 +129,7 @@ export default function Page() {
 
       <p style={body}>
         무급이 부담스러우면{" "}
-        <a href="/w/가족돌봄-근로시간-단축" style={{ color: "#1D9E75", textDecoration: "underline" }}>가족돌봄 근로시간 단축</a> 제도도 있어요. 완전히 쉬지 않고 근무시간만 줄이는 방법이에요.
+        가족돌봄 근로시간 단축 제도도 있어요. 완전히 쉬지 않고 근무시간만 줄이는 방법이에요.
       </p>
 
       <Divider />

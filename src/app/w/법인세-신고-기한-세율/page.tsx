@@ -164,7 +164,7 @@ export default function Page() {
       </p>
       <p style={body}>
         3월 결산 법인은 6월 30일, 6월 결산은 9월 30일, 9월 결산은 12월 31일이에요.
-        <a href="/w/부가가치세-신고" style={{ color: "#1D9E75", textDecoration: "underline" }}>부가가치세</a>처럼 예정·확정 구분 없이 연 1회 신고가 원칙이에요.
+        <a href="/w/부가가치세-신고-기한-대상" style={{ color: "#1D9E75", textDecoration: "underline" }}>부가가치세</a>처럼 예정·확정 구분 없이 연 1회 신고가 원칙이에요.
         단, 중간예납이라는 제도로 세금을 먼저 일부 납부해두는 구조예요.
       </p>
 

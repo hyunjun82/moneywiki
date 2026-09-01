@@ -424,10 +424,9 @@ function HubLinks() {
           </a>
         ))}
       </div>
-      <a href="/w/튼튼머니-신청방법" target="_self"
-        style={{ display: "block", textAlign: "center", marginTop: 12, fontSize: 12, color: G, fontWeight: 600, textDecoration: "none", padding: "8px", borderRadius: 6, background: GL }}>
+      
         튼튼머니 전체 가이드 보기 →
-      </a>
+      
     </div>
   );
 }

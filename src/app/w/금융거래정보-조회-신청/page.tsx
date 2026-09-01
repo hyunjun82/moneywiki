@@ -132,7 +132,7 @@ export default function Page() {
       </div>
 
       <GreenBox>
-        상속포기나 한정승인을 고민 중이라면 금융거래 조회부터 먼저 하세요. 채무(빚)도 함께 나오기 때문에, 재산보다 빚이 많으면 <a href="/w/상속포기-한정승인" style={{ color: "#085041", textDecoration: "underline" }}>상속포기</a>를 검토할 수 있어요.
+        상속포기나 한정승인을 고민 중이라면 금융거래 조회부터 먼저 하세요. 채무(빚)도 함께 나오기 때문에, 재산보다 빚이 많으면 상속포기를 검토할 수 있어요.
       </GreenBox>
 
       <Divider />

@@ -107,7 +107,7 @@ export default function Page() {
       <H2>부동산 통하면 복비가 얼마나 나오나요?</H2>
       <p style={body}>
         부동산을 통해 갱신하면 거래금액에 따라 중개수수료 상한이 정해져 있어요.
-        <a href="/w/공인중개사법시행규칙" style={{ color: "#1D9E75", textDecoration: "underline" }}>공인중개사법 시행규칙</a>에서 요율을 규정하고 있죠.
+        공인중개사법 시행규칙에서 요율을 규정하고 있죠.
       </p>
 
       <BorderBox>

@@ -112,7 +112,7 @@ export default function Page() {
       <Checklist items={CHECK} />
 
       <p style={body}>
-        <a href="/w/육아휴직-신청-조건" style={{ color: "#1D9E75", textDecoration: "underline" }}>육아휴직</a>도 함께 계획하고 있다면, 배우자 출산휴가 이후 바로 연결해서 쓸 수 있어요. 인사팀에 미리 상의해 두면 수월해요.
+        육아휴직도 함께 계획하고 있다면, 배우자 출산휴가 이후 바로 연결해서 쓸 수 있어요. 인사팀에 미리 상의해 두면 수월해요.
       </p>
 
       <Divider />

@@ -59,7 +59,7 @@ export default function Page() {
     <ArticleLayout sidebar={<Sidebar heading="지방선거 알바 가이드" items={SIDEBAR_ITEMS} currentSlug="개표사무원-급여-근무시간-야간수당" />}>
       <nav style={{ fontSize: 13, color: "#6b7280", marginBottom: 8 }}>
         <Link href="/" style={{ color: "#6b7280" }}>홈</Link> &gt;{" "}
-        <Link href="/w/지방선거-알바-2026-직종별-급여-신청방법" style={{ color: "#6b7280" }}>지방선거 알바</Link> &gt;{" "}
+        <Link href="/w/선거알바-신청방법-선관위-공고찾기" style={{ color: "#6b7280" }}>지방선거 알바</Link> &gt;{" "}
         <span style={{ color: "#374151" }}>개표사무원</span>
       </nav>
 
@@ -119,7 +119,7 @@ export default function Page() {
         근무시간은 개표 물량에 따라 달라요. 소규모 선거구는 4시간 안에 끝나기도 하고, 대규모 선거구는 8시간 이상 걸리기도 하죠. 일당은 동일하게 7.5만원이에요.
       </p>
 
-      <CategoryButton label="지방선거 알바" count={SIDEBAR_ITEMS.length} href="/w/지방선거-알바-2026-직종별-급여-신청방법" />
+      <CategoryButton label="지방선거 알바" count={SIDEBAR_ITEMS.length} href="/w/선거알바-신청방법-선관위-공고찾기" />
       <RelatedArticles items={RELATED} />
       <ArticleAd position="mid" />
       <Divider />
@@ -134,7 +134,7 @@ export default function Page() {
         근로기준법상 야간근로 가산수당(50%)은 근로자에게 적용되는 건데, 선거사무원은 근로계약이 아닌 단기 용역 위촉이에요. 그래서 근로기준법상 야간수당 규정이 적용되지 않죠.
       </p>
       <p style={body}>
-        그래도 시급으로 환산하면 나쁘지 않아요. 4시간 만에 끝나면 시급 약 18,750원, 8시간이 걸려도 시급 약 9,375원이니까요. <Link href="/w/투표사무원-개표사무원-급여-비교" style={{ color: "#1D9E75", textDecoration: "underline" }}>투표사무원과의 시급 비교</Link>는 별도 글에서 자세히 다뤘어요.
+        그래도 시급으로 환산하면 나쁘지 않아요. 4시간 만에 끝나면 시급 약 18,750원, 8시간이 걸려도 시급 약 9,375원이니까요. <Link href="/w/개표사무원-급여-근무시간-야간수당" style={{ color: "#1D9E75", textDecoration: "underline" }}>투표사무원과의 시급 비교</Link>는 별도 글에서 자세히 다뤘어요.
       </p>
 
       <BorderBox title="투표사무원과 겸직하면?">

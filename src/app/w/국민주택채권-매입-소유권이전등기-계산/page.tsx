@@ -94,7 +94,7 @@ export default function Page() {
         <a href="https://www.law.go.kr/법령/주택도시기금법" style={{ color: "#1D9E75", textDecoration: "underline" }}>주택도시기금법</a>에 따라
         소유권이전등기 시 의무적으로 채권을 매입해야 해요. 하지만 실제 납부액은 생각보다 적어요.
         시가표준액에 매입률을 곱한 액면가에 할인율(약 10%)을 적용하면 그 10%만 내면 되거든요.
-        <a href="/w/주택-취득세" style={{ color: "#1D9E75", textDecoration: "underline" }}> 주택 취득세</a>와 함께 집 살 때 반드시 예산에 포함해야 해요.
+        <a href="/w/주택-취득세-계산" style={{ color: "#1D9E75", textDecoration: "underline" }}> 주택 취득세</a>와 함께 집 살 때 반드시 예산에 포함해야 해요.
       </p>
 
       <Divider />

@@ -133,7 +133,7 @@ export default function Page() {
       </BorderBox>
 
       <p style={body}>
-        촉진 통보를 받지 않았는데 연차가 소멸됐다면, 1일 통상임금 기준으로 수당을 청구할 수 있어요. <a href="/w/연차수당-계산" style={{ color: "#1D9E75", textDecoration: "underline" }}>연차수당 계산법</a>에서 구체적인 금액을 확인해보세요.
+        촉진 통보를 받지 않았는데 연차가 소멸됐다면, 1일 통상임금 기준으로 수당을 청구할 수 있어요. <a href="/w/연말정산-연차수당-계산-기준" style={{ color: "#1D9E75", textDecoration: "underline" }}>연차수당 계산법</a>에서 구체적인 금액을 확인해보세요.
       </p>
 
       <Divider />

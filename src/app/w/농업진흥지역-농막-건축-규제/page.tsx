@@ -144,7 +144,7 @@ export default function Page() {
       <p style={body}>
         농막이든 쉼터든 건축허가가 아니라 <strong>가설건축물 축조 신고</strong>로 진행해요.
         절차가 복잡하지 않지만, 서류 하나 빠지면 반려되니까 순서대로 따라오세요.
-        <a href="/w/농지전용허가" style={{ color: "#1D9E75", textDecoration: "underline" }}>농지전용 허가</a>와는 다른 절차예요.
+        농지전용 허가와는 다른 절차예요.
       </p>
 
       <Steps steps={STEPS} />

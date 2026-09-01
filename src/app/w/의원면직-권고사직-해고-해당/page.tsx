@@ -53,7 +53,7 @@ export default function Page() {
 
       <p style={{ ...body, fontSize: 15, lineHeight: 2.1 }}>
         회사 그만둘 때 "의원면직이요", "권고사직이요" 하면서 서류 쓰라고 하죠.
-        단어 하나 차이로 <a href="/w/실업급여-수급조건" style={{ color: "#1D9E75" }}>실업급여</a> 수백만원이 달라질 수 있어요.
+        단어 하나 차이로 <a href="/w/실업급여-수급-조건" style={{ color: "#1D9E75" }}>실업급여</a> 수백만원이 달라질 수 있어요.
         퇴직사유를 어떻게 적어야 하는지까지 정리했어요.
       </p>
 

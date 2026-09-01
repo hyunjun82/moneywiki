@@ -155,7 +155,7 @@ export default function Page() {
 
       <p style={body}>
         가능하면 미등기 건물만 가압류하지 말고, 채무자의 예금·급여·등기된 부동산도 함께 가압류하는 게 회수 가능성을 높여요.
-        <a href="/w/가압류-신청-절차-진행" style={{ color: "#1D9E75", textDecoration: "underline" }}>일반 가압류 절차</a>도 참고하세요.
+        일반 가압류 절차도 참고하세요.
       </p>
 
       <Divider />

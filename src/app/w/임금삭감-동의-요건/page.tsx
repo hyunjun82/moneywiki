@@ -91,7 +91,7 @@ export default function Page() {
       <p style={body}>
         회사가 시정 명령을 불이행하면 검찰에 송치돼요.
         <a href="https://www.law.go.kr/법령/근로기준법" style={{ color: "#1D9E75", textDecoration: "underline" }}>근로기준법 제109조</a>에 따라 3년 이하 징역 또는 3천만원 이하 벌금이에요.
-        <a href="/w/임금체불-진정-신고-방법" style={{ color: "#1D9E75", textDecoration: "underline" }}>임금체불 진정 신고 방법</a>도 참고하세요.
+        임금체불 진정 신고 방법도 참고하세요.
       </p>
 
       <Divider />

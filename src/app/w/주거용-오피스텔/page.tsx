@@ -163,7 +163,7 @@ export default function Page() {
       {/* H2-3: 종부세·양도세 */}
       <H2>종부세·양도세까지 영향이 이어져요</H2>
       <p style={body}>
-        주거용 오피스텔이 주택 수에 들어가면 <a href="/w/종합부동산세-기준" style={{ color: "#1D9E75", textDecoration: "underline" }}>종합부동산세</a>와 <a href="/w/양도소득세-계산" style={{ color: "#1D9E75", textDecoration: "underline" }}>양도소득세</a>까지 연쇄적으로 영향을 받아요.
+        주거용 오피스텔이 주택 수에 들어가면 종합부동산세와 양도소득세까지 연쇄적으로 영향을 받아요.
       </p>
 
       <BorderBox>

@@ -84,7 +84,7 @@ export default function Page() {
         폐업일 이전 24개월 중 <strong>12개월 이상</strong> 보험료를 납부해야 해요. 그리고 폐업 사유가 <strong>정당한 사유</strong>에 해당해야 하죠. 경영 악화(매출 20% 이상 감소), 자연재해, 건강 악화, 임신·출산·육아, 부양가족 사유 등이 인정돼요.
       </p>
       <p style={body}>
-        단순히 다른 사업을 하려고 폐업하거나, 자산 매각 등 자발적 사유면 수급이 안 돼요. <a href="/w/구직급여-수급-조건" style={{ color: "#1D9E75", textDecoration: "underline" }}>구직급여 수급 조건</a>처럼 재취업 의사와 구직활동 능력도 있어야 하죠.
+        단순히 다른 사업을 하려고 폐업하거나, 자산 매각 등 자발적 사유면 수급이 안 돼요. 구직급여 수급 조건처럼 재취업 의사와 구직활동 능력도 있어야 하죠.
       </p>
 
       <SectionBadge>수급 조건 체크</SectionBadge>
@@ -112,7 +112,7 @@ export default function Page() {
 
       <H2>신청 절차, 어떻게 하나요?</H2>
       <p style={body}>
-        폐업 신고 후 워크넷에서 구직등록을 하고, 관할 고용센터에 방문해서 신청하면 돼요. <a href="/w/실업급여-신청-방법" style={{ color: "#1D9E75", textDecoration: "underline" }}>일반 실업급여 신청</a>과 절차가 비슷하죠.
+        폐업 신고 후 워크넷에서 구직등록을 하고, 관할 고용센터에 방문해서 신청하면 돼요. <a href="/w/실업급여-신청방법" style={{ color: "#1D9E75", textDecoration: "underline" }}>일반 실업급여 신청</a>과 절차가 비슷하죠.
       </p>
 
       <SectionBadge>신청 4단계</SectionBadge>

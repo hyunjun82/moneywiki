@@ -180,7 +180,7 @@ export default function Page() {
       </p>
       <p style={body}>
         주택관리사보는 1~2차 구분 없이 5과목을 한 번에 봐요. 시험 범위가 좀 더 좁고 난이도도 낮아요.
-        <a href="/w/주택관리사-시험" style={{ color: "#1D9E75", textDecoration: "underline" }}>주택관리사 시험 안내</a>에서 자세한 일정을 확인할 수 있어요.
+        주택관리사 시험 안내에서 자세한 일정을 확인할 수 있어요.
       </p>
 
       <Divider />
@@ -204,7 +204,7 @@ export default function Page() {
       <GreenBox>
         아파트 시설 미관리로 사고 발생 시 손해배상 책임 가능<br />
         관리비 횡령 시 업무상 횡령죄 성립 (실형 사례 있음)<br />
-        <a href="/w/입주자대표회의-구성" style={{ color: "#fff", textDecoration: "underline" }}>입주자대표회의</a>와의 소통이 분쟁 예방의 핵심이에요
+        <a href="/w/입주자대표회의-구성-선거-절차" style={{ color: "#fff", textDecoration: "underline" }}>입주자대표회의</a>와의 소통이 분쟁 예방의 핵심이에요
       </GreenBox>
 
       <Divider />

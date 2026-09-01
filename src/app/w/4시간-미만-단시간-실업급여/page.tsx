@@ -170,7 +170,7 @@ export default function Page() {
 
       <H2>주 15시간 미만이면? 국민취업지원제도 활용하세요</H2>
       <p style={body}>
-        초단시간 근로자라서 실업급여를 못 받는다면, <a href="/w/국민취업지원제도" style={{ color: "#1D9E75", textDecoration: "underline" }}>국민취업지원제도</a>를 확인해보세요.
+        초단시간 근로자라서 실업급여를 못 받는다면, <a href="/w/국민취업지원제도-구직촉진수당" style={{ color: "#1D9E75", textDecoration: "underline" }}>국민취업지원제도</a>를 확인해보세요.
         소득 요건을 충족하면 월 최대 50만원씩 6개월간 구직촉진수당을 받을 수 있어요.
       </p>
 

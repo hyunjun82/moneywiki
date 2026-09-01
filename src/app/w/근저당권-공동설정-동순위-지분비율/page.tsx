@@ -232,7 +232,7 @@ export default function Page() {
       <GreenBox>
         변호사나 법무사 상담을 권장해요.
         피담보채권액·이자율·변제 순서를 계약서에 명확히 기재해야 경매 배당 시 분쟁을 예방할 수 있어요.{" "}
-        <a href="/w/근저당권-설정" style={{ color: "#1D9E75", textDecoration: "underline" }}>근저당권 설정</a> 전체 절차도 참고하세요.
+        근저당권 설정 전체 절차도 참고하세요.
       </GreenBox>
 
       <Divider />

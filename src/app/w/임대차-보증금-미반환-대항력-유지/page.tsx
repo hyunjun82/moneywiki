@@ -113,7 +113,7 @@ export default function Page() {
       </BorderBox>
 
       <p style={body}>
-        보증금을 실제로 회수하려면 <a href="/w/보증금-반환청구" style={{ color: "#1D9E75" }}>보증금반환청구소송</a>이나
+        보증금을 실제로 회수하려면 <a href="/w/전세-보증금-반환-청구-절차" style={{ color: "#1D9E75" }}>보증금반환청구소송</a>이나
         지급명령을 신청해야 해요. 임차권등기가 되어 있으면 권리는 확보된 상태니까 차근차근 진행하면 돼요.
       </p>
 

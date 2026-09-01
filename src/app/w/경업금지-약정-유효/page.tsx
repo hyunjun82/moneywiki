@@ -115,7 +115,7 @@ export default function Page() {
       <Checklist items={INVALID_SIGNALS} />
       <p style={body}>
         이미 서명했더라도 법원에 무효확인 청구를 할 수 있어요.
-        <a href="/w/부당해고-구제신청-기간" style={{ color: "#1D9E75", textDecoration: "underline" }}>부당해고 구제신청</a>처럼
+        부당해고 구제신청처럼
         근로자 권리를 부당하게 제한하는 약정은 법으로 보호받지 못하죠.
       </p>
 

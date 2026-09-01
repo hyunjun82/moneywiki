@@ -129,9 +129,9 @@ export default function Page() {
       <Steps steps={STEPS} />
 
       <BorderBox title="함께 알아두면 좋은 것">
-        · <a href="/w/국민임대주택-입주-자격" style={{ color: "#1D9E75", textDecoration: "underline" }}>국민임대주택</a>도 국가유공자 우선공급이 있어요<br />
-        · <a href="/w/행복주택-신청-방법" style={{ color: "#1D9E75", textDecoration: "underline" }}>행복주택</a>은 청년·신혼부부 위주지만 유공자도 신청 가능<br />
-        · <a href="/w/공공임대주택-종류" style={{ color: "#1D9E75", textDecoration: "underline" }}>공공임대주택 종류</a>별로 자격 기준이 달라요
+        · 국민임대주택도 국가유공자 우선공급이 있어요<br />
+        · 행복주택은 청년·신혼부부 위주지만 유공자도 신청 가능<br />
+        · <a href="/w/공공임대주택-종류-차이" style={{ color: "#1D9E75", textDecoration: "underline" }}>공공임대주택 종류</a>별로 자격 기준이 달라요
       </BorderBox>
 
       <Divider />

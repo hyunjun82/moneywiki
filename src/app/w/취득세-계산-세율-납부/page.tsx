@@ -97,7 +97,7 @@ export default function Page() {
       <p style={body}>
         1주택자는 집값에 따라 <strong>1~3%</strong>, 다주택자는 조정대상지역에서 최대 <strong>12%</strong>까지 내야 해요.
         기한은 <strong>잔금일로부터 60일 이내</strong>고, 놓치면 세금의 20% 가산세가 붙어요.
-        <a href="/w/양도소득세-계산" style={{ color: "#1D9E75", textDecoration: "underline" }}>양도소득세</a>는 팔 때 내는 세금이고 취득세는 살 때 내는 세금이에요.
+        양도소득세는 팔 때 내는 세금이고 취득세는 살 때 내는 세금이에요.
         아래에서 내 취득세를 계산하고 신고 절차까지 한 번에 정리해요.
       </p>
 

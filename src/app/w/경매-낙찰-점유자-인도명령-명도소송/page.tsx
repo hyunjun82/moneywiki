@@ -138,7 +138,7 @@ export default function Page() {
 
       <H2>인도명령 누구한테 쓸 수 있나요?</H2>
       <p style={body}>
-        모든 점유자에게 쓸 수 있는 건 아니에요. <a href="/w/전세-대항력-확정일자" style={{ color: "#1D9E75", textDecoration: "underline" }}>대항력</a>이 있는 선순위 임차인은 제외돼요.
+        모든 점유자에게 쓸 수 있는 건 아니에요. 대항력이 있는 선순위 임차인은 제외돼요.
       </p>
 
       <GreenBox title="인도명령 대상">

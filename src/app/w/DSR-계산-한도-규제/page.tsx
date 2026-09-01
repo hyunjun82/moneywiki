@@ -74,7 +74,7 @@ export default function Page() {
       </GreenBox>
 
       <p style={body}>
-        여기서 '모든 대출'이 핵심이에요. <a href="/w/주담대-금리-계산" style={{ color: "#1D9E75", textDecoration: "underline" }}>주담대</a>뿐 아니라 신용대출, 카드론, 자동차 할부, 학자금대출까지 전부 합산돼요.
+        여기서 '모든 대출'이 핵심이에요. 주담대뿐 아니라 신용대출, 카드론, 자동차 할부, 학자금대출까지 전부 합산돼요.
         마이너스통장도 한도 전액이 원리금으로 잡혀요.
       </p>
 
