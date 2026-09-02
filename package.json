@@ -10,7 +10,7 @@
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
-    "prebuild": "node scripts/gen-favicon-manifest.mjs && node scripts/build-keyword-links.mjs --write && node scripts/build-link-fixes.mjs --write && node scripts/build-category-redirects.mjs --write && node scripts/build-ghost-redirects.mjs --write && node scripts/verify-internal-links.mjs && node fix-imports-v2.js && npx tsx scripts/verify-articles.ts && node scripts/verify-evidence.mjs",
+    "prebuild": "node scripts/gen-favicon-manifest.mjs && node scripts/build-keyword-links.mjs --write && node scripts/build-link-fixes.mjs --write && node scripts/build-category-redirects.mjs --write && node scripts/verify-internal-links.mjs && node fix-imports-v2.js && npx tsx scripts/verify-articles.ts && node scripts/verify-evidence.mjs",
     "postbuild": "node scripts/clean-out-txt.js",
     "evidence": "node scripts/collect-evidence.mjs",
     "verify:evidence": "node scripts/verify-evidence.mjs",

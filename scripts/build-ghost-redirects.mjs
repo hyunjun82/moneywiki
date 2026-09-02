@@ -1,5 +1,5 @@
 /**
- * 네이버가 "접근 불가한 페이지"로 잡은 유령 주소를 실제 글로 301 보내는 규칙을 public/_redirects 에 만든다.
+ * 네이버가 "접근 불가한 페이지"로 잡은 유령 주소를 실제 글로 301 보내는 목록을 만든다 (Cloudflare Bulk Redirects CSV).
  *
  * 왜 필요한가 —
  * 2026-09-01, 네이버 웹마스터도구 사이트진단에 404 가 540건 잡혔다. 거의 전부 관련 키워드 태그가
@@ -18,7 +18,7 @@
  *   5. 그래도 없으면 실패 — 조용히 홈으로 보내지 않는다. overrides 에 적어라.
  * 이중 인코딩된 깨진 주소(Ã«Â¯Â¸…)는 원래 글자로 되돌려 같은 규칙을 태우되, 규칙의 출발지는 깨진 그대로 쓴다.
  *
- * 실행: node scripts/build-ghost-redirects.mjs [--write]
+ * 실행: node scripts/build-ghost-redirects.mjs [--write]   → scripts/naver-404-bulk-redirects.csv (Cloudflare Bulk Redirects 업로드용)
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -26,6 +26,7 @@ import path from "node:path";
 const LIST = "scripts/naver-404-urls.txt";
 const OVERRIDES = "scripts/ghost-redirect-overrides.json";
 const OUT = "public/_redirects";
+const CSV_OUT = "scripts/naver-404-bulk-redirects.csv";
 const BEGIN = "# --- 네이버 접근불가 유령 주소 → 실제 글 (scripts/build-ghost-redirects.mjs 가 생성) ---";
 const END = "# --- 네이버 접근불가 유령 주소 끝 ---";
 
@@ -159,9 +160,6 @@ for (const raw of fs.readFileSync(LIST, "utf8").split(/\r?\n/)) {
   rules.push(`${src} ${dst} 301`);
 }
 rules.sort();
-// 2026-09-02 실험: 첫 배포에서 파일 141줄(규칙 131개)까지만 적용되고 뒤는 전부 무시됐다 (라이브 540개 실측).
-// 문서 한도(정적 2,000)와 무관한 현상 — 순서를 뒤집어 재배포해 "위치 때문인지"를 가른다. 출발지가 전부 달라 순서는 결과에 무해.
-rules.reverse();
 
 console.log("목록:", seenSrc.size, "| 규칙:", rules.length, "|", JSON.stringify(stats));
 if (failures.length) {
@@ -170,17 +168,27 @@ if (failures.length) {
   process.exit(1);
 }
 
-// Cloudflare Pages 한도: 정적 규칙 2,000개 · 파일 크기에 여유를 두어 경고
-const total = (text.match(/^\/\S+\s+\S+/gm) || []).length + rules.length;
-if (total > 1800) { console.error(`✗ _redirects 규칙이 ${total}개 — Cloudflare 한도(2,000)에 근접`); process.exit(1); }
+/* ── 출력: Cloudflare Bulk Redirects CSV ──
+ * 처음엔 public/_redirects 에 넣었다. 두 번 배포해 540개를 실측한 결과 Cloudflare Pages 는 이 프로젝트의
+ * _redirects 를 141줄(규칙 131개)까지만 적용하고 뒤는 전부 무시했다 — 순서를 뒤집어도 같은 줄에서 잘렸다.
+ * 공식 문서 한도(정적 2,000)와 다른 실제 동작이다. 그래서 계정 단 Bulk Redirects(무료 10,000건)로 옮긴다.
+ * CSV 규격(공식 문서): 헤더 없음, <소스 호스트+경로>,<대상 URL>,<코드>. 소스는 네이버가 요청하는 그대로 퍼센트 인코딩.
+ * 대시보드: 계정 홈 → Bulk Redirects → 목록 만들기 → CSV 업로드 → 규칙 만들어 목록 연결.
+ */
+const HOST = "www.jjyu.co.kr";
+const encPath = (p) => p.split("/").map((seg) => encodeURIComponent(dec(seg))).join("/");
+const csvRows = rules.map((r) => {
+  const [src, dst, code] = r.split(/\s+/);
+  const s = /%C3%A[A-F0-9]%C2/i.test(src) ? src : encPath(src); // 깨진 주소는 이미 네이버 원형
+  return `${HOST}${s},https://${HOST}${encPath(dst)},${code || 301}`;
+});
 
-const body = [BEGIN, ...rules, END].join(eol);
-if (!text.endsWith(eol)) text += eol;
-const out = text.replace(/(\r?\n){3,}$/, eol + eol) + body + eol;
-
+// _redirects 에 이 스크립트가 예전에 넣은 구간이 남아 있으면 걷어낸다 (위 text 는 이미 구간을 뺀 상태)
+const cleaned = text.replace(/(\r?\n){3,}$/, eol);
 if (process.argv.includes("--write")) {
-  fs.writeFileSync(OUT, out, "utf8");
-  console.log("기록:", OUT, `(${Buffer.byteLength(out)} bytes, 규칙 ${total}개)`);
+  fs.writeFileSync(CSV_OUT, csvRows.join("\n") + "\n", "utf8");
+  if (cleaned !== fs.readFileSync(OUT, "utf8")) fs.writeFileSync(OUT, cleaned, "utf8");
+  console.log("기록:", CSV_OUT, `(${csvRows.length}행)`, "| _redirects 유령 구간 제거");
 } else {
-  console.log(`\n(시뮬레이션 — 파일 ${Buffer.byteLength(out)} bytes, 규칙 ${total}개)\n` + rules.slice(0, 10).join("\n") + `\n… 외 ${Math.max(0, rules.length - 10)}개`);
+  console.log(`\n(시뮬레이션 — CSV ${csvRows.length}행)\n` + csvRows.slice(0, 5).join("\n") + `\n… 외 ${Math.max(0, csvRows.length - 5)}개`);
 }
