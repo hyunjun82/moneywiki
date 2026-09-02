@@ -30,7 +30,7 @@ function SeasonBar() {
         <span className="msg">
           신고 마감 <b>D-15</b> · 환급 미리 확인하세요
         </span>
-        <Link href="/w/연말정산-환급" className="cta">
+        <Link href="/w/연말정산-환급금-조회" className="cta">
           바로가기 →
         </Link>
       </div>
@@ -115,11 +115,11 @@ function Hero() {
 
         <div className="quick-suggest">
           <span className="lbl">자주 찾아요</span>
-          <Link href="/w/연말정산-환급" className="chip">연말정산 환급</Link>
+          <Link href="/w/연말정산-환급금-조회" className="chip">연말정산 환급</Link>
           <Link href="/w/퇴직금-계산기" className="chip">퇴직금 계산</Link>
           <Link href="/w/실업급여-수급자격" className="chip">실업급여 조건</Link>
           <Link href="/w/1세대-1주택-양도소득세-비과세-요건" className="chip">양도세 비과세</Link>
-          <Link href="/w/전세대출" className="chip">전세대출</Link>
+          <Link href="/w/전세자금대출" className="chip">전세대출</Link>
         </div>
 
         <div className="hero-trust">
@@ -178,7 +178,7 @@ function Hero() {
 
 /* ───────── Live Data Band ───────── */
 const TRENDS = [
-  { rank: 1, q: "연말정산 환급", delta: "▲ 127%", type: "up", slug: "연말정산-환급" },
+  { rank: 1, q: "연말정산 환급", delta: "▲ 127%", type: "up", slug: "연말정산-환급금-조회" },
   { rank: 2, q: "퇴직금 계산", delta: "변동없음", type: "flat", slug: "퇴직금-계산기" },
   { rank: 3, q: "실업급여 조건", delta: "▲ 43%", type: "up", slug: "실업급여-수급자격" },
   { rank: 4, q: "양도세 1주택 비과세", delta: "NEW", type: "new", slug: "1세대-1주택-양도소득세-비과세-요건" },
@@ -207,7 +207,7 @@ function LiveBand() {
             </h2>
           </div>
           <div className="right">
-            2026.05.16 14:23 기준 · <Link href="/trends">전체 트렌드 →</Link>
+            2026.05.16 14:23 기준
           </div>
         </div>
 
@@ -396,9 +396,6 @@ function GuidesSection() {
             <h2>이번 주 에디터가 추천하는 가이드</h2>
             <div className="lead">매주 월요일 업데이트 · 공식 출처 인용 기반</div>
           </div>
-          <div className="right">
-            <Link href="/guides">인기 가이드 전체 →</Link>
-          </div>
         </div>
 
         <div className="guides-grid">
@@ -541,7 +538,6 @@ function SiteFooter() {
             <h4>안내</h4>
             <ul>
               <li><Link href="/about">소개</Link></li>
-              <li><Link href="/search">문서 검색</Link></li>
               <li><Link href="/privacy">개인정보처리방침</Link></li>
               <li><Link href="/terms">이용약관</Link></li>
             </ul>

@@ -126,6 +126,115 @@ for (const e of fs.readdirSync(TSX_ROOT, { withFileTypes: true })) {
   }
 }
 
+/* ── 3. 홈·레이아웃·공통 컴포넌트 (src/app 의 w/ 바깥 + src/components) ──
+ * 2026-09-02, 홈페이지 메인 CTA 가 /w/연말정산-환급(없는 글)으로 나가고 있었다.
+ * 1·2절은 글만 봤고 홈은 아무도 안 봤다. 여기서는 /w/·/category/ 뿐 아니라
+ * 루트 상대 주소 전부(/guides, /search …)가 실제 라우트·public 파일·리다이렉트 중 하나인지 본다. */
+const APP = "src/app";
+
+// src/app 의 라우트: 디렉터리를 따라 내려가며 [param] 은 무엇이든 받는다. 끝에 page/route 가 있어야 한다.
+function routeExists(p) {
+  const segs = p.split("/").filter(Boolean);
+  const walk = (dir, i) => {
+    if (i === segs.length) {
+      return ["page.tsx", "page.ts", "page.mdx", "route.ts", "route.tsx"].some((f) => fs.existsSync(path.join(dir, f)));
+    }
+    let entries;
+    try { entries = fs.readdirSync(dir, { withFileTypes: true }).filter((e) => e.isDirectory()); } catch { return false; }
+    for (const e of entries) {
+      if (e.name === segs[i] || /^\[.+\]$/.test(e.name)) {
+        if (walk(path.join(dir, e.name), i + 1)) return true;
+      }
+    }
+    return false;
+  };
+  return walk(APP, 0);
+}
+const redirectSources = new Set(
+  [...fs.readFileSync("public/_redirects", "utf8").matchAll(/^(\/\S*)\s+\S+/gm)].map((m) => dec(m[1]))
+);
+function internalPathExists(raw) {
+  const p = dec(raw).split(/[#?]/)[0] || "/";
+  if (p === "/") return true;
+  if (p.startsWith("/w/")) return live.has(p.slice(3));
+  if (p.startsWith("/category/")) { const c = p.slice(10); return validCats.has(c) || redirected.has(c); }
+  if (p === "/sitemap.xml" && fs.existsSync(path.join(APP, "sitemap.ts"))) return true;
+  if (p === "/robots.txt" && fs.existsSync(path.join(APP, "robots.ts"))) return true;
+  if (redirectSources.has(p)) return true;
+  if (fs.existsSync(path.join("public", p))) return true;
+  return routeExists(p);
+}
+
+// 검사 대상 = 실제 라우트(src/app 의 page/layout, w/ 바깥)에서 import 로 닿는 파일만.
+// src/components 에는 어디서도 안 부르는 옛 코드(checkers·hub·spoke·Sidebar 등)가 많다 —
+// 그것까지 보면 화면에 안 나가는 링크로 게이트가 막힌다. 반대로 나중에 누가 연결하면 자동으로 검사 대상이 된다.
+function* routeFiles(dir, skip) {
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, e.name);
+    if (e.isDirectory()) { if (skip && path.resolve(full) === path.resolve(skip)) continue; yield* routeFiles(full, skip); }
+    else if (/\.tsx?$/.test(e.name)) yield full;
+  }
+}
+const resolveImport = (from, spec) => {
+  let base;
+  if (spec.startsWith("@/")) base = path.join("src", spec.slice(2));
+  else if (spec.startsWith(".")) base = path.join(path.dirname(from), spec);
+  else return null; // node_modules
+  for (const c of [base, `${base}.tsx`, `${base}.ts`, path.join(base, "index.tsx"), path.join(base, "index.ts")]) {
+    if (fs.existsSync(c) && fs.statSync(c).isFile()) return c;
+  }
+  return null;
+};
+const reachable = new Set();
+const queue = [...routeFiles(APP, TSX_ROOT), path.join(TSX_ROOT, "[slug]", "page.tsx")].filter((p) => fs.existsSync(p));
+while (queue.length) {
+  const p = path.normalize(queue.pop());
+  if (reachable.has(p) || !/\.tsx?$/.test(p)) continue;
+  reachable.add(p);
+  const t = fs.readFileSync(p, "utf8");
+  for (const m of t.matchAll(/(?:from|import)\s*\(?\s*["']([^"']+)["']/g)) {
+    const r = resolveImport(p, m[1]);
+    if (r) queue.push(r);
+  }
+}
+// CalculatorLoader 는 `import(\`@/components/calculators/${name}\`)` 로 실행 시에 고른다 — 살아 있는 슬러그에 매핑된 것만 실제로 뜬다
+try {
+  const loader = fs.readFileSync("src/components/CalculatorLoader.tsx", "utf8");
+  for (const m of loader.matchAll(/^\s*"([^"]+)":\s*"([^"]+)",?\s*$/gm)) {
+    if (live.has(m[1])) { const c = path.join("src/components/calculators", `${m[2]}.tsx`); if (fs.existsSync(c)) reachable.add(path.normalize(c)); }
+  }
+} catch {}
+
+for (const p of [...reachable].filter((f) => !path.resolve(f).startsWith(path.resolve(TSX_ROOT) + path.sep) || f.includes("[slug]"))) {
+  const t = fs.readFileSync(p, "utf8");
+  const rel = p.replace(/\\/g, "/");
+  const seen = new Set();
+  // href="/..." · href={"/..."} · href: "/..."  — 값이 실행 시 정해지는 `${}` 는 검사할 수 없다
+  for (const m of t.matchAll(/href(?:=[{]?|:\s*)["'`](\/[^"'`\s]*)["'`]/g)) {
+    const raw = m[1];
+    if (raw.startsWith("//") || raw.includes("${") || seen.has(raw)) continue;
+    seen.add(raw);
+    if (!internalPathExists(raw)) add(rel, raw, "그런 페이지가 없다 (라우트·public·_redirects 어디에도)");
+  }
+  // `const LIST = [{ slug: "..." }]` 를 `LIST.map((v) => <Link href={`/w/${v.slug}`}>` 로 뿌리는 꼴 (홈 TRENDS·GUIDES).
+  // 같은 slug 필드라도 /category/·/forms/ 로 조립되는 배열은 대상이 아니다 — 실제로 /w/ 에 넣는 배열만 본다.
+  for (const arr of t.matchAll(/const\s+([A-Za-z_$][\w$]*)\s*(?::[^=]+)?=\s*\[([\s\S]*?)\];/g)) {
+    const [, name, body] = arr;
+    const use = new RegExp(`\\b${name}\\.map\\(\\s*\\(?\\s*([A-Za-z_$][\\w$]*)`).exec(t);
+    if (!use) continue;
+    const v = use[1];
+    // 변수 이름(c, item …)은 다른 배열의 map 에서도 재사용된다 — 이 map 부터 다음 .map( 전까지만 본다
+    const start = use.index + use[0].length;
+    const next = t.indexOf(".map(", start);
+    const region = t.slice(start, next === -1 ? undefined : next);
+    const tpl = new RegExp(`\`(/[^\`$]*)\\$\\{(?:[\\w.]+\\()?${v}\\.slug\\)?\\}`).exec(region);
+    if (!tpl || tpl[1] !== "/w/") continue;
+    for (const m of body.matchAll(/slug:\s*["'`]([^"'`$]+)["'`]/g)) {
+      if (!live.has(m[1]) && !seen.has(`slug:${m[1]}`)) { seen.add(`slug:${m[1]}`); add(rel, `/w/${m[1]}`, `${name} 의 slug 로 조립되는 링크인데 그런 글이 없다`); }
+    }
+  }
+}
+
 /* ── 결과 ── */
 console.log(`살아 있는 주소 ${live.size}개 · 카테고리 ${validCats.size}개(+옛 이름 ${redirected.size}개)`);
 if (problems.length === 0) {

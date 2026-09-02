@@ -368,7 +368,7 @@ export default function HopeReturnPackagePage() {
             <h2 className="text-xl font-bold text-slate-900 mb-6">상세 가이드</h2>
 
             <BridgeCTA
-              href="/support/hope-return-package/closure-support"
+              href="/w/점포철거비-600만원-지원금-신청방법"
               badge="상세 가이드 1"
               title="원스톱 폐업지원 점포철거비 600만원 신청"
               desc="점포철거비 신청 방법과 지원 한도"
@@ -377,19 +377,11 @@ export default function HopeReturnPackagePage() {
             />
 
             <BridgeCTA
-              href="/support/hope-return-package/employment-support"
+              href="/w/희망리턴패키지-원스톱폐업지원-신청-방법"
               badge="상세 가이드 2"
-              title="특화취업지원 전직장려수당 100만원 신청"
-              desc="취업교육과 전직장려수당 신청 방법"
+              title="희망리턴패키지 원스톱폐업지원 신청·조건·지원금액"
+              desc="법률자문·채무조정까지 지원 항목과 신청 절차"
               icon="check"
-            />
-
-            <BridgeCTA
-              href="/support/hope-return-package/restart-business"
-              badge="상세 가이드 3"
-              title="재기사업화 재창업 자금 2,000만원 신청"
-              desc="재창업 자금 신청 방법과 지원 한도"
-              icon="calc"
             />
           </div>
         </div>
@@ -411,12 +403,6 @@ export default function HopeReturnPackagePage() {
               className="px-4 py-2 bg-slate-100 hover:bg-slate-200 rounded-full text-sm text-slate-700 transition-colors"
             >
               소상공인지원
-            </Link>
-            <Link
-              href="/w/재창업"
-              className="px-4 py-2 bg-slate-100 hover:bg-slate-200 rounded-full text-sm text-slate-700 transition-colors"
-            >
-              재창업
             </Link>
           </div>
         </div>
