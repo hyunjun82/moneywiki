@@ -159,6 +159,9 @@ for (const raw of fs.readFileSync(LIST, "utf8").split(/\r?\n/)) {
   rules.push(`${src} ${dst} 301`);
 }
 rules.sort();
+// 2026-09-02 실험: 첫 배포에서 파일 141줄(규칙 131개)까지만 적용되고 뒤는 전부 무시됐다 (라이브 540개 실측).
+// 문서 한도(정적 2,000)와 무관한 현상 — 순서를 뒤집어 재배포해 "위치 때문인지"를 가른다. 출발지가 전부 달라 순서는 결과에 무해.
+rules.reverse();
 
 console.log("목록:", seenSrc.size, "| 규칙:", rules.length, "|", JSON.stringify(stats));
 if (failures.length) {
