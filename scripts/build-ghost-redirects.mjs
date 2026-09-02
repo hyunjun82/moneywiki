@@ -183,12 +183,27 @@ const csvRows = rules.map((r) => {
   return `${HOST}${s},https://${HOST}${encPath(dst)},${code || 301}`;
 });
 
-// _redirects 에 이 스크립트가 예전에 넣은 구간이 남아 있으면 걷어낸다 (위 text 는 이미 구간을 뺀 상태)
-const cleaned = text.replace(/(\r?\n){3,}$/, eol);
+/* ── 예외: 주소에 % 기호(%25)가 든 것 ──
+ * Bulk Redirects 업로드 후 540개 실측: 534개 301, 남은 6개가 전부 "5%" "40%" 처럼 % 기호가 든 주소였다.
+ * Bulk 쪽 정규화가 %25 를 다르게 다루는 것으로 보이나 원인은 미확정. 이 소수만 _redirects 로 받는다.
+ * _redirects 는 규칙 131개까지만 적용되므로(실측) 전체 규칙 수를 반드시 그 아래로 지킨다. */
+const REDIRECTS_APPLY_LIMIT = 131;
+const pctRules = rules.filter((r) => /%25/.test(r.split(/\s+/)[0]));
+const existingCount = (text.match(/^\/\S+\s+\S+/gm) || []).length;
+if (existingCount + pctRules.length > REDIRECTS_APPLY_LIMIT - 5) {
+  console.error(`✗ _redirects 규칙이 ${existingCount + pctRules.length}개 — 실측 적용 상한(${REDIRECTS_APPLY_LIMIT})에 닿는다`);
+  process.exit(1);
+}
+let redirectsText = text.replace(/(\r?\n){3,}$/, eol);
+if (pctRules.length) {
+  if (!redirectsText.endsWith(eol)) redirectsText += eol;
+  redirectsText += eol + [BEGIN, ...pctRules, END].join(eol) + eol;
+}
+
 if (process.argv.includes("--write")) {
   fs.writeFileSync(CSV_OUT, csvRows.join("\n") + "\n", "utf8");
-  if (cleaned !== fs.readFileSync(OUT, "utf8")) fs.writeFileSync(OUT, cleaned, "utf8");
-  console.log("기록:", CSV_OUT, `(${csvRows.length}행)`, "| _redirects 유령 구간 제거");
+  if (redirectsText !== fs.readFileSync(OUT, "utf8")) fs.writeFileSync(OUT, redirectsText, "utf8");
+  console.log("기록:", CSV_OUT, `(${csvRows.length}행)`, `| _redirects 에 % 포함 ${pctRules.length}개 (총 규칙 ${existingCount + pctRules.length}/${REDIRECTS_APPLY_LIMIT})`);
 } else {
-  console.log(`\n(시뮬레이션 — CSV ${csvRows.length}행)\n` + csvRows.slice(0, 5).join("\n") + `\n… 외 ${Math.max(0, csvRows.length - 5)}개`);
+  console.log(`\n(시뮬레이션 — CSV ${csvRows.length}행, _redirects % 포함 ${pctRules.length}개)\n` + pctRules.join("\n"));
 }
