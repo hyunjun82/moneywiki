@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-02T22:50:52.462+09:00",
+  "updatedAt": "2026-09-03T07:33:27.607+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -10,7 +10,7 @@
   "retail": {
     "source": "종로금거래소",
     "sourceUrl": "https://www.jongrogx.com/",
-    "quoteDate": "2026-09-02",
+    "quoteDate": "2026-09-03",
     "unit": "원/돈",
     "note": "내가 살 때 가격은 원문에 부가세 별도로 표기되어 있습니다.",
     "items": [
@@ -85,11 +85,11 @@
     "unit": "원/그램",
     "note": "하루 1회 갱신되는 전 영업일 종가입니다. 실시간 시세가 아닙니다.",
     "latest": {
-      "date": "2026-08-31",
-      "krwPerGram": 196480,
-      "krwPerDon": 736800,
-      "change": -6530,
-      "changePct": -3.22
+      "date": "2026-09-01",
+      "krwPerGram": 196280,
+      "krwPerDon": 736050,
+      "change": -200,
+      "changePct": -0.1
     },
     "history": [
       {
@@ -1113,34 +1113,41 @@
         "krwPerDon": 736800,
         "change": -6530,
         "changePct": -3.22
+      },
+      {
+        "date": "2026-09-01",
+        "krwPerGram": 196280,
+        "krwPerDon": 736050,
+        "change": -200,
+        "changePct": -0.1
       }
     ],
-    "fetchedDate": "2026-09-02"
+    "fetchedDate": "2026-09-03"
   },
   "fx": {
-    "usdkrw": 1359.98,
-    "change": -23.51,
-    "changePct": -1.7,
+    "usdkrw": 1358.38,
+    "change": -25.11,
+    "changePct": -1.81,
     "dir": "down",
     "source": "Yahoo Finance (KRW=X)"
   },
   "intl": {
     "gold": {
       "name": "금",
-      "usdPerOz": 4412.8,
-      "changePct": -1.46,
+      "usdPerOz": 4433.8,
+      "changePct": -0.99,
       "dir": "down",
-      "krwPerGram": 192947,
-      "krwPerDon": 723551,
+      "krwPerGram": 193637,
+      "krwPerDon": 726139,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
       "name": "은",
-      "usdPerOz": 65.78,
-      "changePct": -1.82,
+      "usdPerOz": 65.97,
+      "changePct": -1.53,
       "dir": "down",
-      "krwPerGram": 2876,
-      "krwPerDon": 10785,
+      "krwPerGram": 2881,
+      "krwPerDon": 10804,
       "source": "COMEX 은 선물 (SI=F)"
     }
   }
