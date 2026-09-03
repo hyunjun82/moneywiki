@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-03T14:13:38.060+09:00",
+  "updatedAt": "2026-09-03T18:56:22.658+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -57,8 +57,8 @@
           "dir": "none"
         },
         "userBuy": {
-          "price": 311000,
-          "change": 3000,
+          "price": 313000,
+          "change": 5000,
           "dir": "up"
         }
       },
@@ -1125,29 +1125,29 @@
     "fetchedDate": "2026-09-03"
   },
   "fx": {
-    "usdkrw": 1360.78,
-    "change": -19.67,
-    "changePct": -1.42,
+    "usdkrw": 1358.55,
+    "change": -21.9,
+    "changePct": -1.59,
     "dir": "down",
     "source": "Yahoo Finance (KRW=X)"
   },
   "intl": {
     "gold": {
       "name": "금",
-      "usdPerOz": 4482.7,
-      "changePct": 1.16,
+      "usdPerOz": 4474.3,
+      "changePct": 0.97,
       "dir": "up",
-      "krwPerGram": 196119,
-      "krwPerDon": 735446,
+      "krwPerGram": 195430,
+      "krwPerDon": 732863,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
       "name": "은",
-      "usdPerOz": 66.64,
-      "changePct": 0.63,
+      "usdPerOz": 66.23,
+      "changePct": 0.01,
       "dir": "up",
-      "krwPerGram": 2916,
-      "krwPerDon": 10935,
+      "krwPerGram": 2893,
+      "krwPerDon": 10849,
       "source": "COMEX 은 선물 (SI=F)"
     }
   }
