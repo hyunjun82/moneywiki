@@ -57,31 +57,56 @@ for (const slug of slugs) {
       const all = (s) => [...document.querySelectorAll(s)];
       const out = { problems: [], ctas: [] };
 
-      // 1. 템플릿 블록 존재
-      const blocks = {
-        "서론(lead)": ".lead",
-        "대형 CTA": "a.cta-main",
-        "목차": ".toc",
-        "핵심콕콕": ".kf",
-        "3줄 요약": ".sum",
-        "스포크": ".spoke",
-      };
+      // 1. 템플릿 블록 존재 (2026-09-03 정본: 검증 배지·한 줄 답·접힌 조문·출처 묶음)
+      const v2 = Boolean(q(".ans") || q(".verify"));
+      const blocks = v2
+        ? { "서론(lead)": ".lead", "검증 배지": ".meta .verify", "목차": ".toc", "핵심콕콕": ".kf", "정리": ".sum", "출처 묶음": ".src" }
+        : { "서론(lead)": ".lead", "대형 CTA": "a.cta-main", "목차": ".toc", "핵심콕콕": ".kf", "3줄 요약": ".sum", "스포크": ".spoke" };
       for (const [name, sel] of Object.entries(blocks)) {
         if (!q(sel)) out.problems.push(`${name} 블록이 화면에 없음`);
       }
-      if (q(".sum") && all(".sum li").length !== 3)
+      if (!v2 && q(".sum") && all(".sum li").length !== 3)
         out.problems.push(`3줄 요약이 ${all(".sum li").length}줄`);
+      if (v2) {
+        const n = all(".sum li").length;
+        if (n < 2 || n > 5) out.problems.push(`정리 항목이 ${n}개 — 타이틀 항목 수(2~5)만큼`);
+        // 질문형 제목엔 한 줄 답이 붙어야 한다
+        all("section.q h2, section.q h3.sh").forEach((h) => {
+          if (h.closest("#faq, .src")) return;
+          if (!h.nextElementSibling || !h.nextElementSibling.classList.contains("ans"))
+            out.problems.push(`"${h.textContent.trim().slice(0, 30)}" 아래 한 줄 답(.ans)이 없음`);
+        });
+        // 대제목 수 = 타이틀 항목 수 (중점으로 나열된 개수). 약속하고 답하지 않은 항목이 없어야 한다
+        const h1 = q("h1")?.textContent ?? "";
+        const promised = (h1.split(/\s+/).find((w) => w.includes("·")) || "").split("·").filter(Boolean).length;
+        const mains = all("section.q").filter((s) => /^q\d+$/.test(s.id)).length;
+        if (promised >= 2 && mains !== promised)
+          out.problems.push(`타이틀이 약속한 항목 ${promised}개, 대제목 ${mains}개 — 1:1 이어야 함`);
+        // 숫자가 있는 섹션엔 접힌 근거 조문
+        all("section.q").filter((s) => /^q\d+$/.test(s.id)).forEach((s) => {
+          const hasNum = /\d{2,}/.test(s.innerText);
+          if (hasNum && !s.querySelector("details.quote")) out.problems.push(`${s.id}: 숫자가 있는데 근거 조문(details.quote)이 없음`);
+        });
+      }
 
       // 2. 섹션 비주얼
       const secs = all("section.q").filter((s) => /^q\d+$/.test(s.id));
       const kinds = [];
       secs.forEach((s, i) => {
-        const k = s.querySelector(".check")
+        const k = s.querySelector(".decide")
+          ? "판정"
+          : s.querySelector(".tbl")
+          ? "표"
+          : s.querySelector(".stepbar")
+          ? "단계"
+          : s.querySelector(".flow")
+          ? "산식"
+          : s.querySelector(".tl")
+          ? "타임라인"
+          : s.querySelector(".check")
           ? "체크리스트"
           : s.querySelector(".stats")
           ? "통계"
-          : s.querySelector(".tbl")
-          ? "표"
           : s.querySelector(".steps")
           ? "스텝"
           : s.querySelector(".cta-box")
@@ -124,7 +149,7 @@ for (const slug of slugs) {
         out.problems.push(`타이틀에 브랜드가 두 번: ${document.title}`);
 
       // 6. CTA 링크 수집 (외부 이동은 밖에서 확인)
-      all("a.cta-main, .cta-box a.btn-p").forEach((a) => {
+      all("a.cta-main, .cta-box a.btn-p, .cta-row a.btn-p, .stepbar a.btn-p, .stepbar a.btn-s, td a.go").forEach((a) => {
         if (/^https?:/.test(a.href)) out.ctas.push({ label: a.textContent.trim().slice(0, 40), href: a.href });
       });
 
@@ -161,17 +186,23 @@ for (const slug of slugs) {
     for (const cta of r.ctas) {
       const p2 = await browser.newPage();
       try {
-        await p2.goto(cta.href, { waitUntil: "domcontentloaded", timeout: 45000 });
+        await p2.goto(cta.href, { waitUntil: "commit", timeout: 90000 });
+        await p2.waitForLoadState("domcontentloaded", { timeout: 60000 }).catch(() => {});
         await p2.waitForTimeout(1500);
-        const probe = () =>
-          p2.evaluate(() => ({
-            title: document.title,
-            text: document.body.innerText.replace(/\s+/g, " ").slice(0, 1500),
-            // 실제 행동 요소가 있는가
-            action: [...document.querySelectorAll("a,button,input[type=submit]")]
-              .map((e) => (e.value || e.textContent || "").trim())
-              .some((t) => /신청|조회|검색|로그인|인증|시작|다운로드|발급|계산/.test(t)),
-          }));
+        // 정부 사이트(고용24·대법원 전자가족관계)는 페이지 전역을 덮어써 page.evaluate 가 깨진다
+        // ("Cannot read properties of undefined (reading 'isFunction')"). 격리된 유틸리티 컨텍스트에서 도는
+        // title()/locator API 만 쓴다.
+        const probe = async () => {
+          const title = await p2.title().catch(() => "");
+          const text = (await p2.locator("body").innerText({ timeout: 15000 }).catch(() => "")).replace(/\s+/g, " ").slice(0, 1500);
+          // 일부 정부 사이트는 Map.prototype 까지 덮어써 Playwright 셀렉터 엔진이 깨진다(this._engines.set is not a function).
+          // 그때는 본문 텍스트에서 행동 단어를 찾는다 — 버튼 라벨만큼 엄격하진 않지만 안내·오류 페이지는 여전히 걸러진다.
+          let labels = null;
+          try { labels = await p2.locator("a,button,input[type=submit]").allInnerTexts(); } catch { labels = null; }
+          const RE = /신청|조회|검색|로그인|인증|시작|다운로드|발급|계산|내려받기|첨부/;
+          const action = labels ? labels.some((t) => RE.test(t)) : RE.test(text);
+          return { title, text, action };
+        };
         let info = await probe();
         // 늦게 그려지는 화면이 있다. 금융투자협회 다모아는 WebSquare 라 버튼이 뒤에 붙어,
         // 같은 주소가 한 번은 통과하고 한 번은 "행동 요소 없음"으로 떨어졌다.
@@ -205,7 +236,7 @@ for (const slug of slugs) {
           ctaReport.push(`   → ${cta.label}\n     ${t}\n     ${cta.href}`);
         }
       } catch (e) {
-        problems.push(`CTA "${cta.label}" 링크 열기 실패 — ${cta.href}`);
+        problems.push(`CTA "${cta.label}" 링크 열기 실패 — ${cta.href}\n      ${String(e.message || e).split("\n")[0].slice(0, 160)}`);
       } finally {
         await p2.close().catch(() => {});
       }

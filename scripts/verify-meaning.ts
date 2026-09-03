@@ -110,6 +110,29 @@ function stripTags(s: unknown): string {
     .trim();
 }
 
+/** 표·판정·단계·체크리스트·타임라인·산식에 적힌 글을 한 덩어리 텍스트로 — 판정자가 비주얼 안의 답도 보게 */
+function widgetText(sec: any): string {
+  const out: string[] = [];
+  const t = sec.compareTable;
+  if (t) {
+    if (t.caption) out.push(t.caption);
+    for (const row of t.rows ?? []) out.push((row as any[]).map((c) => (typeof c === "string" ? c : [c.tag, c.text, c.doc, ...(c.links ?? []).map((l: any) => l.label)].filter(Boolean).join(" "))).join(" | "));
+    if (t.footnote) out.push(t.footnote);
+  }
+  for (const w of sec.widgets ?? []) {
+    if (w.type === "checklist") out.push(...w.items);
+    else if (w.type === "decide") out.push(...w.items.map((it: any) => `${it.q} (${it.sub ?? ""}) → 미충족일 때만 보이는 안내: ${it.next}`), `전부 충족일 때: ${w.okText}`);
+    else if (w.type === "flow") out.push(w.steps.map((x: any) => `${x.cap} ${x.val} ${x.sub ?? ""}`).join(" → "));
+    else if (w.type === "stepbar") out.push(...w.steps.map((x: any) => [x.tab, x.title, x.body, x.prep && `준비물 ${x.prep}`, x.time && `소요 ${x.time}`, x.action?.label].filter(Boolean).join(" ")));
+    else if (w.type === "timeline") out.push(...w.items.map((x: any) => `${x.d} ${x.t} ${x.m}`));
+    else if (w.type === "stat-box") out.push(`${w.label} ${w.value} ${w.note ?? ""}`);
+    else if (w.type === "case-example") out.push(`${w.persona} ${w.result}`);
+    else if (w.type === "def-box") out.push(`${w.term} ${w.definition}`);
+  }
+  if (sec.quote) out.push(`[근거] ${sec.quote.law} ${sec.quote.text}`);
+  return stripTags(out.join("\n"));
+}
+
 function firstSentence(body: unknown): string {
   const plain = stripTags(body);
   const m = plain.match(/^.*?(습니다|합니다|입니다)[.!?]/);
@@ -146,12 +169,24 @@ function payloadFor(slug: string) {
         ? { label: a.heroCta.label, url: a.heroCta.url, org: a.heroCta.org }
         : null,
       keyFacts: a.keyFacts ?? [],
+      // 2026-09-03 정본: 한 줄 답(answer)·소제목(subsections)·위젯(판정·표·단계·체크리스트) 본문까지 판정자에게 보인다.
+      // 이게 빠지면 표·단계 안에서 답한 것을 "안 답했다"고 오판한다.
       sections: (a.mainSections ?? []).map((s: any, i: number) => ({
         id: `q${i + 1}`,
         heading: s.heading,
-        firstSentence: firstSentence(s.body),
-        body: stripTags(s.body).slice(0, 1200),
+        answer: s.answer ?? "",
+        firstSentence: s.answer ? firstSentence(s.answer) : firstSentence(s.body),
+        body: stripTags(s.body ?? "").slice(0, 1200),
+        visuals: widgetText(s).slice(0, 1600),
         cta: s.cta ? { label: s.cta.label, url: s.cta.url } : null,
+        subsections: (s.subsections ?? []).map((u: any, j: number) => ({
+          id: `q${i + 1}-${String.fromCharCode(97 + j)}`,
+          heading: u.heading,
+          answer: u.answer ?? "",
+          body: stripTags(u.body ?? "").slice(0, 900),
+          visuals: widgetText(u).slice(0, 1400),
+          cta: u.cta ? { label: u.cta.label, url: u.cta.url } : null,
+        })),
       })),
       faq: (a.context?.faqList ?? []).map((f: any) => ({
         q: f.question ?? f.q,

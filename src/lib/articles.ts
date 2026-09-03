@@ -17,8 +17,9 @@ import { 퇴직금 } from "@/data/articles/퇴직금";
 import { 보험 } from "@/data/articles/보험";
 import { 금융 } from "@/data/articles/금융";
 import { 세금 } from "@/data/articles/세금";
+import { 고용 } from "@/data/articles/고용";
 
-const categories: ArticleCategory[] = [퇴직금, 보험, 금융, 세금];
+const categories: ArticleCategory[] = [퇴직금, 보험, 금융, 세금, 고용];
 
 // slug → ArticleData 인덱스 (빌드 시 1회 생성)
 const indexBySlug: Map<string, ArticleData> = (() => {

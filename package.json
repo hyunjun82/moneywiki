@@ -15,7 +15,9 @@
     "verify:internal-links": "node scripts/verify-internal-links.mjs",
     "keywords": "node scripts/collect-keywords.mjs",
     "verify:meaning": "npx tsx scripts/verify-meaning.ts",
-    "prebuild": "node scripts/gen-favicon-manifest.mjs && node scripts/build-keyword-links.mjs --write && node scripts/build-link-fixes.mjs --write && node scripts/build-category-redirects.mjs --write && node scripts/verify-internal-links.mjs && node fix-imports-v2.js && node scripts/verify-evidence.mjs"
+    "prebuild": "node scripts/gen-favicon-manifest.mjs && node scripts/build-keyword-links.mjs --write && node scripts/build-link-fixes.mjs --write && node scripts/build-category-redirects.mjs --write && node scripts/verify-internal-links.mjs && node fix-imports-v2.js && node scripts/verify-evidence.mjs",
+    "input": "node scripts/prepare-input.mjs",
+    "verify": "node scripts/verify.mjs"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
