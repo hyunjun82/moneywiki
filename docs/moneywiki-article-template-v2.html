@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>실업급여 수급자격·금액·기간·신청방법 총정리 (2026) | 머니위키</title>
+<meta name="description" content="2026년 실업급여는 퇴사 전 3개월 평균임금의 60%, 하루 하한 66,048원·상한 68,100원입니다. 월급 250만 원에 3년 일한 계약만료 퇴사자는 하루 66,048원씩 180일, 총 11,888,640원을 받습니다. 수급자격 판정, 월급별 금액표, 가입기간별 일수, 신청 4단계를 고용24 모의계산과 대조해 정리했습니다.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<!--
+  ══════════════════════════════════════════════════════════════════════════
+  머니위키 정본 템플릿 v2 (2026-09-03)
+  moneydoc 구조(질문 → 즉답 → 표/판정 → 행동 → 근거)를 머니위키식으로 변형한 것.
+  이 파일 하나가 명세다. 블록마다 HTML 주석으로 규칙이 붙어 있다. 규칙 문서를 따로 두지 않는다.
+
+  v1과 달라진 것
+   · 타이틀 항목 = 소제목 1:1 규칙 폐지 → 목차 = 검색자 질문 목록 (6~9개)
+   · 소제목은 검색자 질문형 + 바로 아래 한 줄 답(.ans) 필수
+   · 첫 화면에 "내 경우" 즉답 위젯(.now) — 숫자로 답한다
+   · 판정(.decide) · 산식 흐름(.flow) · 단계 탭(.stepbar) · 회차표 신설
+   · 표는 캡션·각주 필수, 셀 안에 "그 일을 하는 화면" 링크 허용
+   · 정리는 3줄 고정 아님 → 3~5개 체크 항목
+   · 출처는 법령 / 행정규칙·안내 / 정부 도구 / 검증 4묶음 + 검증일 배지
+   · 어미는 합니다체. 타이틀에 "요" 금지. 대시(—) 금지. 항목은 중점(·)으로 묶는다
+  변하지 않은 것
+   · 본문 숫자는 증거 JSON quote/value 안의 값만. CTA 주소는 넣기 전 Playwright로 열어 본다
+   · 광고 자리는 자리일 뿐이다. 버튼처럼 보이게 하지 않는다
+  ══════════════════════════════════════════════════════════════════════════
+-->
+<style>
+:root{
+  --paper:#EFEDE8; --surface:#fff; --surface-alt:#F7F6F3;
+  --ink-900:#1A1D21; --ink-700:#3C424A; --ink-500:#6C727B; --ink-300:#9CA1A8;
+  --line:#E2DFD7; --line-strong:#CFCBC1;
+  --green-700:#2E7D5B; --green-800:#256B4D; --green-soft:#E7F2EC; --green-line:#CFE6D9; --green-mark:#BFE3D1;
+  --sand-700:#9A7B2E; --sand-soft:#F4EEDD;
+  --red-700:#B3433A; --red-soft:#F8E9E7;
+  --font-sans:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,system-ui,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+  --fs-eyebrow:13px; --fs-caption:14px; --fs-body:17px; --fs-lead:20px; --fs-h3:21px; --fs-h2:27px; --fs-display:46px;
+  --ls-tight:-0.02em; --ls-normal:-0.01em; --ls-eyebrow:0.06em;
+  --wrap:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;font-family:var(--font-sans);color:var(--ink-700);-webkit-font-smoothing:antialiased}
+p,h1,h2,h3,ul,ol,li,dl,dt,dd,table,figure,figcaption{margin:0;padding:0}
+li{list-style:none}
+a{color:var(--green-700);text-decoration:none}
+a:hover{color:var(--green-800);text-decoration:underline}
+b{font-weight:700}
+img{max-width:100%}
+button{font-family:inherit}
+
+/* header */
+.hd{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+.hd-in{max-width:var(--wrap);margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo i{width:34px;height:34px;border-radius:9px;background:var(--green-700);color:#fff;display:grid;place-items:center;font-size:19px;font-weight:800;font-style:normal}
+.logo span{font-size:21px;font-weight:800;color:var(--ink-900);letter-spacing:var(--ls-tight)}
+.gnb{display:flex;align-items:center;gap:30px}
+.gnb a{font-size:16px;font-weight:500;color:var(--ink-700)}
+.gnb a:hover{color:var(--green-700);text-decoration:none}
+.hd-btn{height:40px;padding:0 14px;border:1px solid var(--line);border-radius:9px;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--ink-700);background:#fff}
+
+/* layout */
+.wrap{max-width:var(--wrap);margin:0 auto;padding:28px 24px 80px;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:start}
+article{min-width:0}
+aside{position:sticky;top:90px;display:grid;gap:16px}
+
+/* head block */
+.bc{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--ink-500);margin-bottom:16px}
+.bc a{color:var(--ink-500)}
+.bc b{color:var(--ink-700)}
+h1{font-size:40px;line-height:1.28;font-weight:800;color:var(--ink-900);letter-spacing:var(--ls-tight);word-break:keep-all;text-wrap:pretty}
+.lead{margin-top:16px;font-size:var(--fs-lead);line-height:1.6;color:var(--ink-500);word-break:keep-all}
+.lead b{color:var(--ink-900)}
+.meta{margin-top:20px;padding-bottom:20px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font-size:14px;color:var(--ink-500)}
+.meta .by{font-weight:700;color:var(--ink-700)}
+.meta .dot{color:var(--ink-300)}
+/* 검증 배지 — 무엇과 대조했고 언제인지. 날짜 없는 배지는 배지가 아니다 */
+.verify{margin-left:auto;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--green-700);background:var(--green-soft);border-radius:999px;padding:6px 12px}
+.verify i{font-style:normal}
+p.body{font-size:var(--fs-body);line-height:1.7;color:var(--ink-700);word-break:keep-all}
+p.body+p.body{margin-top:12px}
+.mark{color:var(--ink-900);font-weight:700;background:linear-gradient(transparent 58%,var(--green-mark) 0);padding:0 1px}
+
+/* now — 첫 화면 즉답 위젯 */
+.now{margin-top:22px;border:1px solid var(--green-line);border-radius:16px;overflow:hidden}
+.now-hd{background:var(--green-soft);padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.now-hd b{font-size:16px;color:var(--ink-900)}
+.now-hd span{font-size:13px;color:var(--ink-500)}
+.now-body{padding:20px 22px;display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:22px}
+.ctrl label{display:block;font-size:13px;font-weight:700;letter-spacing:var(--ls-eyebrow);color:var(--ink-500);margin-bottom:8px}
+.ctrl+.ctrl{margin-top:16px}
+.range{display:flex;align-items:center;gap:12px}
+.range input{flex:1;accent-color:var(--green-700)}
+.range output{min-width:86px;text-align:right;font-size:18px;font-weight:800;color:var(--ink-900)}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{height:38px;padding:0 12px;border:1px solid var(--line-strong);border-radius:8px;background:#fff;font-size:14px;font-weight:600;color:var(--ink-700);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--green-700);border-color:var(--green-700);color:#fff}
+.now-out{border-left:1px solid var(--line);padding-left:22px;display:grid;align-content:start;gap:12px}
+.now-out .cap{font-size:13px;font-weight:600;color:var(--ink-500)}
+.now-out .big{font-size:34px;line-height:1.1;font-weight:800;color:var(--green-700);letter-spacing:var(--ls-tight)}
+.now-out .row{display:flex;justify-content:space-between;gap:10px;font-size:14px;color:var(--ink-700);border-top:1px solid var(--line);padding-top:10px}
+.now-out .row b{color:var(--ink-900)}
+.now-ft{padding:12px 22px 16px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;font-size:13px;color:var(--ink-500)}
+.now-ft a{font-weight:700}
+
+/* stats */
+.stats{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat{border:1px solid var(--line);border-radius:12px;padding:22px}
+.stat .cap{font-size:var(--fs-caption);font-weight:600;color:var(--ink-500)}
+.stat .big{margin-top:8px;font-size:var(--fs-display);font-weight:800;line-height:1;color:var(--green-700);letter-spacing:var(--ls-tight)}
+.stat .big small{font-size:18px;font-weight:700}
+.stat .sub{margin-top:10px;font-size:var(--fs-caption);color:var(--ink-500);word-break:keep-all}
+
+/* ad — 자리일 뿐. 버튼처럼 보이게 하지 않는다 */
+.ad{border:1px dashed var(--line-strong);border-radius:12px;background:#FAFAF9;display:grid;place-items:center;font-size:13px;font-weight:600;letter-spacing:var(--ls-eyebrow);color:var(--ink-300)}
+.ad-top{margin-top:26px;height:100px}
+.ad-mid{margin-top:34px;height:100px}
+.ad-side{height:600px}
+
+/* toc */
+.toc{margin-top:24px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.toc>button{width:100%;padding:17px 20px;border:0;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer}
+.toc .tl{display:inline-flex;align-items:center;gap:10px;font-size:16px;font-weight:700;color:var(--ink-900)}
+.toc .tl i{color:var(--ink-300);font-style:normal}
+.toc .st{font-size:14px;font-weight:600;color:var(--ink-500)}
+.toc ol{border-top:1px solid var(--line);padding:8px 20px 16px}
+.toc ol[hidden]{display:none}
+.toc ol a{display:block;padding:9px 0;font-size:16px;font-weight:500;color:var(--ink-700)}
+
+/* key facts */
+.kf{margin-top:18px;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.kf-hd{background:var(--green-700);padding:22px 26px 20px}
+.kf-hd .eb{font-size:12px;font-weight:700;letter-spacing:var(--ls-eyebrow);color:rgba(255,255,255,.75)}
+.kf-hd .tt{margin-top:8px;font-size:26px;font-weight:800;color:#fff;letter-spacing:var(--ls-tight)}
+.kf dl{background:#fff;padding:8px 26px 20px;display:grid;grid-template-columns:140px minmax(0,1fr)}
+.kf dt{padding:15px 0;border-bottom:1px solid var(--line);font-size:14px;font-weight:700;color:var(--ink-300)}
+.kf dd{padding:15px 0;border-bottom:1px solid var(--line);font-size:var(--fs-body);font-weight:500;color:var(--ink-900);word-break:keep-all}
+.kf dt:last-of-type,.kf dd:last-of-type{border-bottom:0}
+.kf dd b{color:var(--green-700)}
+
+/* section */
+section.q{margin-top:48px;scroll-margin-top:86px}
+.eyebrow{display:flex;align-items:center;gap:10px}
+.eyebrow i{width:26px;height:26px;border-radius:999px;background:var(--green-700);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:800;font-style:normal;flex:none}
+.eyebrow span{font-size:var(--fs-eyebrow);font-weight:700;letter-spacing:var(--ls-eyebrow);color:var(--ink-500)}
+h2{margin-top:12px;font-size:var(--fs-h2);font-weight:800;color:var(--ink-900);letter-spacing:var(--ls-tight);word-break:keep-all}
+/* 한 줄 답 — 소제목이 질문이면 바로 아래 답이 온다. 없으면 소제목이 아니다 */
+.ans{margin-top:8px;font-size:var(--fs-h3);font-weight:600;line-height:1.5;color:var(--green-800);word-break:keep-all}
+.q .viz{margin-top:18px}
+.q .viz+p.body{margin-top:18px}
+.q p.body+.viz{margin-top:18px}
+
+/* decide — 판정 위젯 */
+.decide{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.decide li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)}
+.decide li:last-of-type{border-bottom:0}
+.decide .qtx{font-size:var(--fs-body);font-weight:700;color:var(--ink-900);word-break:keep-all}
+.decide .qsub{margin-top:4px;font-size:var(--fs-caption);line-height:1.5;color:var(--ink-500);word-break:keep-all}
+.decide .yn{display:flex;gap:6px}
+.decide .yn button{height:38px;padding:0 14px;border:1px solid var(--line-strong);border-radius:8px;background:#fff;font-size:14px;font-weight:700;color:var(--ink-700);cursor:pointer}
+.decide .yn button[aria-pressed="true"].y{background:var(--green-700);border-color:var(--green-700);color:#fff}
+.decide .yn button[aria-pressed="true"].n{background:var(--red-700);border-color:var(--red-700);color:#fff}
+.decide-out{padding:18px 20px;border-top:1px solid var(--line);background:#FAFAF9;font-size:var(--fs-body);line-height:1.6;color:var(--ink-700);word-break:keep-all}
+.decide-out.ok{background:var(--green-soft);color:var(--ink-900)}
+.decide-out.no{background:var(--red-soft);color:var(--ink-900)}
+.decide-out b{color:var(--ink-900)}
+
+/* flow — 산식 흐름 */
+.flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch}
+.flow .box{border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.flow .box.hi{border-color:var(--green-line);background:var(--green-soft)}
+.flow .cap{font-size:13px;font-weight:600;color:var(--ink-500)}
+.flow .val{margin-top:6px;font-size:24px;font-weight:800;color:var(--ink-900);letter-spacing:var(--ls-tight)}
+.flow .box.hi .val{color:var(--green-700)}
+.flow .sub{margin-top:6px;font-size:13px;color:var(--ink-500);word-break:keep-all}
+.flow .arr{display:grid;place-items:center;font-size:22px;color:var(--ink-300)}
+
+/* table — 캡션·각주 필수 */
+.tbl{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.tbl figcaption{padding:14px 20px;border-bottom:1px solid var(--line);background:#fff;font-size:var(--fs-caption);font-weight:700;color:var(--ink-900);word-break:keep-all}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;padding:13px 20px;background:#FAFAF9;border-bottom:1px solid var(--line);font-size:var(--fs-caption);font-weight:700;color:var(--ink-900)}
+td{padding:14px 20px;border-bottom:1px solid var(--line);font-size:16px;line-height:1.55;color:var(--ink-700);vertical-align:top;word-break:keep-all}
+tr:last-child td{border-bottom:0}
+td.k{font-weight:600;color:var(--ink-900)}
+td.g{font-weight:700;color:var(--green-700)}
+td.s{font-weight:700;color:var(--ink-700)}
+td .tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--surface-alt);color:var(--ink-500)}
+td .tag.lo{background:var(--sand-soft);color:var(--sand-700)}
+td .tag.hi{background:var(--green-soft);color:var(--green-700)}
+td .go{display:inline-flex;align-items:center;gap:4px;font-size:14px;font-weight:700;white-space:nowrap}
+td .go::after{content:"↗";font-size:12px}
+td .doc{display:block;font-size:14px;color:var(--ink-500)}
+.tbl .fn{padding:12px 20px;border-top:1px solid var(--line);background:#fff;font-size:13px;line-height:1.6;color:var(--ink-500);word-break:keep-all}
+
+/* stepbar — 단계 탭 */
+.stepbar{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.stepbar .tabs{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line);background:#FAFAF9}
+.stepbar .tabs button{padding:14px 10px;border:0;border-right:1px solid var(--line);background:transparent;display:grid;gap:4px;justify-items:center;cursor:pointer}
+.stepbar .tabs button:last-child{border-right:0}
+.stepbar .tabs i{width:26px;height:26px;border-radius:999px;background:#fff;border:1px solid var(--line-strong);color:var(--ink-500);display:grid;place-items:center;font-size:13px;font-weight:800;font-style:normal}
+.stepbar .tabs span{font-size:13px;font-weight:700;color:var(--ink-500);word-break:keep-all;text-align:center}
+.stepbar .tabs button[aria-selected="true"]{background:#fff}
+.stepbar .tabs button[aria-selected="true"] i{background:var(--green-700);border-color:var(--green-700);color:#fff}
+.stepbar .tabs button[aria-selected="true"] span{color:var(--ink-900)}
+.stepbar .panel{padding:20px 22px}
+.stepbar .panel[hidden]{display:none}
+.stepbar .panel b{display:block;font-size:var(--fs-h3);font-weight:800;color:var(--ink-900);word-break:keep-all}
+.stepbar .panel p{margin-top:8px;font-size:var(--fs-body);line-height:1.65;color:var(--ink-700);word-break:keep-all}
+.stepbar .kv{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:var(--fs-caption);color:var(--ink-500)}
+.stepbar .kv b{display:inline;font-size:inherit;color:var(--ink-700)}
+.stepbar .act{margin-top:14px}
+
+/* checklist */
+.check{border:1px solid var(--line);border-radius:12px;padding:4px 22px}
+.check li{display:flex;gap:12px;padding:16px 0;border-bottom:1px solid var(--line);font-size:var(--fs-body);line-height:1.65;color:var(--ink-700);word-break:keep-all}
+.check li:last-child{border-bottom:0}
+.check li i{flex:none;color:var(--green-700);font-size:17px;font-weight:800;font-style:normal}
+.check b{color:var(--ink-900)}
+
+/* cta */
+.btn-p{display:inline-flex;align-items:center;height:50px;padding:0 20px;border-radius:10px;background:var(--green-700);color:#fff;font-size:16px;font-weight:700}
+.btn-p:hover{background:var(--green-800);color:#fff;text-decoration:none}
+.btn-s{display:inline-flex;align-items:center;height:50px;padding:0 18px;border-radius:10px;background:#fff;border:1px solid var(--line-strong);color:var(--ink-700);font-size:16px;font-weight:600}
+.btn-s:hover{border-color:var(--green-700);color:var(--green-700);text-decoration:none}
+.cta-row{margin-top:16px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.cta-row .fine{font-size:13px;color:var(--ink-300)}
+
+/* caution / quote */
+.caution{margin-top:16px;display:flex;gap:12px;border-left:3px solid var(--sand-700);background:var(--sand-soft);border-radius:0 10px 10px 0;padding:16px 18px}
+.caution i{flex:none;font-style:normal;font-weight:800;color:var(--sand-700)}
+.caution p{font-size:var(--fs-body);line-height:1.6;color:var(--ink-700);word-break:keep-all}
+/* 조문 한 줄 인용 — 그 섹션 숫자의 출처. 인용 없는 숫자는 없다 */
+.quote{margin-top:16px;border-left:3px solid var(--green-line);padding:10px 16px;font-size:var(--fs-caption);line-height:1.6;color:var(--ink-500);word-break:keep-all}
+.quote b{color:var(--ink-700)}
+
+/* faq */
+.faq{margin-top:16px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.faq .item{border-bottom:1px solid var(--line)}
+.faq .item:last-child{border-bottom:0}
+.faq button{width:100%;padding:18px 20px;border:0;background:#fff;text-align:left;display:flex;align-items:flex-start;justify-content:space-between;gap:14px;cursor:pointer}
+.faq .qq{display:flex;gap:10px;font-size:var(--fs-body);font-weight:700;line-height:1.5;color:var(--ink-900);word-break:keep-all}
+.faq .qq i{color:var(--green-700);font-style:normal}
+.faq .pm{flex:none;font-size:18px;font-weight:700;color:var(--ink-300)}
+.faq .aa{padding:0 20px 20px;display:flex;gap:10px}
+.faq .aa[hidden]{display:none}
+.faq .aa i{flex:none;font-size:var(--fs-body);font-weight:700;color:var(--ink-300);font-style:normal}
+.faq .aa p{font-size:var(--fs-body);line-height:1.7;color:var(--ink-700);word-break:keep-all}
+
+/* summary — 떠나기 전 체크 */
+.sum{margin-top:48px;border:1px solid var(--green-line);background:var(--green-soft);border-radius:16px;padding:26px 28px}
+.sum .eb{font-size:12px;font-weight:700;letter-spacing:var(--ls-eyebrow);color:var(--green-700)}
+.sum ul{margin-top:14px;display:grid;gap:10px}
+.sum li{display:flex;gap:12px;align-items:flex-start;font-size:18px;line-height:1.5;font-weight:600;color:var(--ink-900);word-break:keep-all}
+.sum li i{flex:none;margin-top:3px;width:20px;height:20px;border:2px solid var(--green-700);border-radius:5px;display:grid;place-items:center;font-size:12px;font-weight:800;color:var(--green-700);font-style:normal;background:#fff}
+
+/* sources — 4묶음 */
+.src{margin-top:40px;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.src-hd{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.src-hd h2{margin:0;font-size:22px}
+.src-hd .verify{margin-left:0}
+.src dl{padding:6px 22px 18px;display:grid;grid-template-columns:130px minmax(0,1fr)}
+.src dt{padding:14px 0;border-bottom:1px solid var(--line);font-size:13px;font-weight:700;letter-spacing:var(--ls-eyebrow);color:var(--ink-300)}
+.src dd{padding:14px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.7;color:var(--ink-700);word-break:keep-all}
+.src dt:last-of-type,.src dd:last-of-type{border-bottom:0}
+
+/* related / spokes / footer */
+.rel{margin-top:40px}
+.rel h2{font-size:22px;margin-top:0}
+.rel .grid{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.rel a{display:block;border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.rel a:hover{border-color:var(--green-700);text-decoration:none}
+.rel a b{display:block;font-size:var(--fs-body);font-weight:700;color:var(--ink-900);word-break:keep-all}
+.rel a span{display:block;margin-top:6px;font-size:var(--fs-caption);color:var(--ink-500)}
+.foot-note{margin-top:32px;padding-top:20px;border-top:1px solid var(--line);font-size:var(--fs-caption);line-height:1.7;color:var(--ink-500);word-break:keep-all}
+.spoke{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.spoke-hd{padding:16px 20px 14px;border-bottom:1px solid var(--line);background:#FAFAF9}
+.spoke-hd .eb{font-size:12px;font-weight:700;letter-spacing:var(--ls-eyebrow);color:var(--green-700)}
+.spoke-hd .tt{margin-top:6px;font-size:15px;font-weight:700;color:var(--ink-900);word-break:keep-all}
+.spoke li{border-bottom:1px solid var(--line)}
+.spoke li:last-child{border-bottom:0}
+.spoke a{display:block;padding:14px 20px}
+.spoke a:hover{background:#F7FAF8;text-decoration:none}
+.spoke a b{display:block;font-size:14px;font-weight:700;line-height:1.5;color:var(--ink-900);word-break:keep-all}
+.spoke a span{display:block;margin-top:4px;font-size:12px;color:var(--ink-300)}
+.ft{border-top:1px solid var(--line);background:#FAFAF9;padding:34px 24px 46px}
+.ft-in{max-width:var(--wrap);margin:0 auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.ft b{font-size:17px;font-weight:800;color:var(--ink-900)}
+.ft p{margin-top:8px;font-size:var(--fs-caption);color:var(--ink-500)}
+.ft nav{display:flex;gap:20px;font-size:var(--fs-caption)}
+.ft nav a{color:var(--ink-500)}
+
+@media (max-width:1024px){
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  aside{position:static}
+  .gnb{display:none}
+  .ad-side{height:280px}
+}
+@media (max-width:640px){
+  h1{font-size:28px}
+  h2{font-size:22px}
+  .ans{font-size:18px}
+  .lead{font-size:18px}
+  .meta .verify{margin-left:0}
+  .now-body{grid-template-columns:1fr}
+  .now-out{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:16px}
+  .stats,.rel .grid{grid-template-columns:1fr}
+  .kf dl,.src dl{grid-template-columns:1fr;padding:4px 20px 16px}
+  .kf dt,.src dt{padding:14px 0 0;border-bottom:0}
+  .kf dd,.src dd{padding:4px 0 14px}
+  .flow{grid-template-columns:1fr}
+  .flow .arr{transform:rotate(90deg);height:24px}
+  .decide li{grid-template-columns:1fr}
+  .stepbar .tabs span{font-size:12px}
+  /* 표: 모바일에서는 행이 카드가 된다. td::before 가 헤더를 대신한다 */
+  .tbl.cards table,.tbl.cards thead,.tbl.cards tbody,.tbl.cards tr,.tbl.cards td{display:block}
+  .tbl.cards thead{display:none}
+  .tbl.cards tr{border-bottom:1px solid var(--line);padding:6px 0}
+  .tbl.cards tr:last-child{border-bottom:0}
+  .tbl.cards td{border:0;padding:8px 20px;font-size:15px}
+  .tbl.cards td::before{content:attr(data-h);display:block;font-size:12px;font-weight:700;letter-spacing:var(--ls-eyebrow);color:var(--ink-300);margin-bottom:2px}
+  .tbl:not(.cards){overflow-x:auto}
+  .tbl:not(.cards) table{min-width:520px}
+}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="hd-in">
+    <a class="logo" href="/"><i>M</i><span>머니위키</span></a>
+    <nav class="gnb">
+      <a href="#">부동산</a><a href="#">세금</a><a href="#">금융</a>
+      <a href="#">근로·급여</a><a href="#">법률</a><a href="#">계산기</a>
+    </nav>
+    <span class="hd-btn">☰ 전체메뉴</span>
+  </div>
+</header>
+
+<div class="wrap">
+  <article>
+    <nav class="bc"><a href="#">홈</a><span>›</span><a href="#">고용·실업급여</a><span>›</span><b>실업급여</b></nav>
+
+    <!-- 타이틀: 메인키워드 + 검색자가 묻는 항목 3~4개를 중점(·)으로 + (연도). "요" 어미·대시 금지.
+         항목 수와 소제목 수는 같지 않아도 된다 — 소제목은 아래 목차(질문 목록)가 정한다 -->
+    <h1>실업급여 수급자격·금액·기간·신청방법 총정리 (2026)</h1>
+
+    <!-- 리드: 첫 문장에 결론 숫자. 이 글이 답하는 질문을 한 문단으로. 사례 인물은 글마다 다르게 -->
+    <p class="lead">2026년 실업급여는 퇴사 전 3개월 평균임금의 60%이고, 하루 <b>하한 66,048원·상한 68,100원</b> 안에서 정해집니다. 월급 250만 원에 3년을 일하고 계약만료로 퇴사한 50세 미만 근로자는 하루 66,048원씩 180일, <b>총 11,888,640원</b>을 받습니다. 받을 수 있는지 판정, 월급별 금액, 가입기간별 일수, 신청 4단계를 고용24 모의계산과 대조해 정리했습니다.</p>
+
+    <div class="meta">
+      <span class="by">머니위키 편집팀</span><span class="dot">·</span>
+      <span>2026.09.03 갱신</span><span class="dot">·</span>
+      <span>읽는 시간 9분</span>
+      <!-- 검증 배지: 무엇과 대조했는지 + 날짜. 증거 JSON 의 lastVerified 에서 나온다 -->
+      <span class="verify"><i>✓</i>고용24 모의계산 대조 · 시행령 제68조 원문 확인 · 2026-09-02</span>
+    </div>
+
+    <!-- now: 첫 화면 즉답 위젯. 검색자의 첫 질문("나는 얼마?")에 숫자로 답한다.
+         산식은 본문 표와 같아야 한다(같은 증거 JSON). 계산기 글이 따로 있으면 마지막 줄에서 잇는다 -->
+    <div class="now" id="now">
+      <div class="now-hd"><b>내 경우 얼마를 며칠 받는지 바로 보기</b><span>퇴사 전 3개월 평균 월급 · 고용보험 가입기간 · 나이</span></div>
+      <div class="now-body">
+        <div>
+          <div class="ctrl">
+            <label for="sal">퇴사 전 3개월 평균 월급</label>
+            <div class="range"><input id="sal" type="range" min="150" max="600" step="10" value="250"><output id="salOut">250만 원</output></div>
+          </div>
+          <div class="ctrl">
+            <label>고용보험 가입기간</label>
+            <div class="seg" id="yrs">
+              <button type="button" data-v="0" aria-pressed="false">1년 미만</button>
+              <button type="button" data-v="1" aria-pressed="false">1~3년</button>
+              <button type="button" data-v="2" aria-pressed="true">3~5년</button>
+              <button type="button" data-v="3" aria-pressed="false">5~10년</button>
+              <button type="button" data-v="4" aria-pressed="false">10년 이상</button>
+            </div>
+          </div>
+          <div class="ctrl">
+            <label>퇴사 당시 나이</label>
+            <div class="seg" id="age">
+              <button type="button" data-v="0" aria-pressed="true">50세 미만</button>
+              <button type="button" data-v="1" aria-pressed="false">50세 이상 또는 장애인</button>
+            </div>
+          </div>
+        </div>
+        <div class="now-out">
+          <div><div class="cap">총 지급액</div><div class="big" id="oTotal">11,888,640원</div></div>
+          <div class="row"><span>하루 금액</span><b id="oDaily">66,048원</b></div>
+          <div class="row"><span>지급 일수</span><b id="oDays">180일 (약 6개월)</b></div>
+          <div class="row"><span>한 달(30일) 기준</span><b id="oMonth">1,981,440원</b></div>
+          <div class="row"><span>적용</span><b id="oRule">하한 적용</b></div>
+        </div>
+      </div>
+      <div class="now-ft"><span>산식: 3개월 임금 ÷ 90일 × 60%, 하한·상한 적용. 아래 표와 같은 계산입니다.</span><a href="/w/실업급여-계산기">조기재취업수당까지 계산하기 →</a></div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="cap">2026년 하루 하한</div><div class="big">66,048<small>원</small></div><div class="sub">최저임금 10,320원 × 8시간 × 80%. 월급 약 330만 원 이하는 누구나 이 금액입니다.</div></div>
+      <div class="stat"><div class="cap">2026년 하루 상한</div><div class="big">68,100<small>원</small></div><div class="sub">시행령 제68조 기초일액 상한 113,500원 × 60%. 월급 약 341만 원부터는 더 오르지 않습니다.</div></div>
+    </div>
+
+    <div class="ad ad-top">애드센스 · 본문 상단 (반응형)</div>
+
+    <!-- 목차 = 검색자 질문 목록. 6~9개. 소제목과 글자 그대로 같다 -->
+    <div class="toc">
+      <button type="button" id="tocBtn" aria-expanded="false" aria-controls="tocList">
+        <span class="tl"><i>☰</i>목차 (질문 8개)</span><span class="st">열기 ⌄</span>
+      </button>
+      <ol id="tocList" hidden>
+        <li><a href="#q1">01. 실업급여 조건, 나도 받을 수 있습니까</a></li>
+        <li><a href="#q2">02. 자발적 퇴사인데 실업급여 받는 경우는 무엇입니까</a></li>
+        <li><a href="#q3">03. 실업급여 얼마나 받습니까</a></li>
+        <li><a href="#q4">04. 실업급여 몇 개월 받습니까</a></li>
+        <li><a href="#q5">05. 2026년 상한액·하한액은 왜 다들 66,048원입니까</a></li>
+        <li><a href="#q6">06. 실업급여 신청 방법 4단계는 무엇입니까</a></li>
+        <li><a href="#q7">07. 구직활동은 몇 번 해야 합니까</a></li>
+        <li><a href="#q8">08. 받다가 취업하거나 알바하면 어떻게 됩니까</a></li>
+      </ol>
+    </div>
+
+    <!-- 핵심콕콕 7~9행. 각 행은 위 질문 하나의 답이다 -->
+    <div class="kf">
+      <div class="kf-hd"><div class="eb">📌 핵심콕콕</div><div class="tt">한눈에 보는 2026 실업급여</div></div>
+      <dl>
+        <dt>받는 조건</dt><dd>비자발적 퇴사 · 퇴사 전 18개월 중 고용보험 <b>180일 이상</b> · 일할 의사와 능력</dd>
+        <dt>하루 금액</dt><dd>퇴사 전 3개월 평균임금의 <b>60%</b> (하한 66,048원 · 상한 68,100원)</dd>
+        <dt>받는 기간</dt><dd><b>120~240일</b>. 50세 이상·장애인은 150~270일. 가입기간과 나이로 정해집니다</dd>
+        <dt>사례</dt><dd>월급 250만·3년·50세 미만 → 하루 66,048원 × 180일 = <b>11,888,640원</b></dd>
+        <dt>신청 기한</dt><dd>퇴사 다음 날부터 <b>12개월</b> 안에 모두 받아야 하므로 퇴사 직후 신청</dd>
+        <dt>신청 순서</dt><dd>이직확인서 확인 → 구직등록 → 고용센터 수급자격 신청 → 4주마다 실업인정</dd>
+        <dt>자발적 퇴사</dt><dd>원칙 불가. 임금체불 · 통근 3시간 · 질병 등 <b>정당한 사유</b>는 예외</dd>
+        <dt>검증</dt><dd>고용24 모의계산 5건 일치, 상한액은 시행령 제68조 원문 확인 (2026-09-02)</dd>
+      </dl>
+    </div>
+
+    <!-- ── 섹션 규칙 ──
+         eyebrow(번호 + 4~8자 주제) → h2(검색자 질문형, 목차와 동일) → .ans(한 줄 답) → 비주얼 먼저 → 해설 → 행동 버튼(있으면) → 조문 인용
+         숫자가 있는 섹션에는 .quote 가 반드시 있다 -->
+
+    <section class="q" id="q1">
+      <div class="eyebrow"><i>1</i><span>수급자격 판정</span></div>
+      <h2>실업급여 조건, 나도 받을 수 있습니까</h2>
+      <p class="ans">세 가지가 모두 맞으면 받을 수 있습니다. 하나라도 어긋나면 그 자리에서 무엇을 해야 하는지 아래에 나옵니다.</p>
+      <!-- decide: 항목 3~5개. 각 항목에 충족/미충족. 결과 문장은 미충족 항목별로 다르게 -->
+      <div class="viz decide" id="decide">
+        <ul>
+          <li><div><div class="qtx">① 퇴사 이유가 회사 쪽 사정입니까</div><div class="qsub">권고사직 · 계약만료 · 폐업 · 정리해고는 충족. 스스로 사표를 냈으면 원칙상 미충족이지만 02번의 정당한 사유에 들면 충족입니다.</div></div><div class="yn"><button type="button" class="y" aria-pressed="false">충족</button><button type="button" class="n" aria-pressed="false">미충족</button></div></li>
+          <li><div><div class="qtx">② 퇴사 전 18개월 안에 고용보험 180일 이상입니까</div><div class="qsub">주 5일 근무면 대략 7개월입니다. 여러 회사 기간을 합쳐도 됩니다.</div></div><div class="yn"><button type="button" class="y" aria-pressed="false">충족</button><button type="button" class="n" aria-pressed="false">미충족</button></div></li>
+          <li><div><div class="qtx">③ 지금 일할 수 있고 구직활동을 할 계획입니까</div><div class="qsub">질병·출산으로 당장 못 하면 "수급기간 연기"를 신청한 뒤 나중에 받습니다.</div></div><div class="yn"><button type="button" class="y" aria-pressed="false">충족</button><button type="button" class="n" aria-pressed="false">미충족</button></div></li>
+        </ul>
+        <div class="decide-out" id="decideOut">세 항목을 눌러 보십시오. 결과와 다음 할 일이 여기에 나옵니다.</div>
+      </div>
+      <p class="body">고용보험법 제40조는 수급요건을 네 가지로 적지만, 검색자가 실제로 걸리는 지점은 위 세 개입니다. 네 번째인 "재취업을 위한 노력"은 신청 뒤 실업인정 단계에서 확인되는 것이라 07번에서 다룹니다. 가장 많이 틀리는 것은 ①입니다. 계약만료는 비자발적 퇴사로 인정되지만, 회사가 재계약을 제안했는데 본인이 거절했다면 자발적 퇴사로 봅니다.</p>
+      <div class="cta-row"><a class="btn-p" href="https://www.work24.go.kr/cm/main.do" target="_blank" rel="noopener">고용보험 가입기간 확인하기</a><span class="fine">고용24 → 이력내역서. 공동인증서 필요</span></div>
+      <div class="quote"><b>고용보험법 제40조 제1항</b> "구직급여는 이직한 피보험자가 다음 각 호의 요건을 모두 갖춘 경우에 지급한다. 1. 이직일 이전 18개월간 피보험 단위기간이 통산하여 180일 이상일 것 …"</div>
+    </section>
+
+    <section class="q" id="q2">
+      <div class="eyebrow"><i>2</i><span>정당한 이직 사유</span></div>
+      <h2>자발적 퇴사인데 실업급여 받는 경우는 무엇입니까</h2>
+      <p class="ans">시행규칙 별표2에 적힌 사유 하나에 들고, 그것을 증명할 서류가 있으면 사표를 냈어도 받습니다.</p>
+      <!-- 표: 캡션(무슨 표인지) · 각주(기준·단위·출처) 필수. 서류 칸의 링크는 "그 서류를 발급하는 화면"이다. 기관 홈 금지 -->
+      <figure class="viz tbl cards">
+        <figcaption>자발적 퇴사여도 인정되는 정당한 이직 사유와 준비 서류</figcaption>
+        <table>
+          <thead><tr><th>구분</th><th>사유</th><th>준비 서류 (발급처)</th></tr></thead>
+          <tbody>
+            <tr><td class="k" data-h="구분">임금·근로조건</td><td data-h="사유">퇴사 전 1년 안에 2개월 이상 임금체불, 최저임금 미달, 채용 때 약속보다 낮아진 근로조건, 연장근로 제한 위반</td><td data-h="준비 서류"><span class="doc">급여명세서·근로계약서 (회사)</span><a class="go" href="https://www.4insure.or.kr/pbiz/main/main.do" target="_blank" rel="noopener">4대보험 가입내역확인서 발급</a><br><a class="go" href="https://labor.moel.go.kr/anmtDclrCntr/main.do" target="_blank" rel="noopener">임금체불 진정 접수</a></td></tr>
+            <tr><td class="k" data-h="구분">괴롭힘·차별</td><td data-h="사유">종교·성별·장애·노조활동 차별, 성희롱·성폭력, 직장 내 괴롭힘</td><td data-h="준비 서류"><span class="doc">녹취·메신저 기록·동료 진술</span><a class="go" href="https://labor.moel.go.kr/anmtDclrCntr/main.do" target="_blank" rel="noopener">괴롭힘 신고 접수</a></td></tr>
+            <tr><td class="k" data-h="구분">회사 사정</td><td data-h="사유">도산·폐업이 확실하거나 대량 감원 예정, 양도·합병·조직 축소·경영악화로 권고사직 또는 희망퇴직 모집</td><td data-h="준비 서류"><span class="doc">회사 공지·희망퇴직 안내문</span><a class="go" href="https://www.work24.go.kr/cm/main.do" target="_blank" rel="noopener">고용보험 이력내역서 발급</a></td></tr>
+            <tr><td class="k" data-h="구분">통근 3시간 이상</td><td data-h="사유">사업장 이전, 다른 지역 전근, 배우자·부양가족과 동거를 위한 이사로 왕복 통근 3시간 이상</td><td data-h="준비 서류"><span class="doc">사업장 이전 공지</span><a class="go" href="https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000015" target="_blank" rel="noopener">주민등록초본 발급</a></td></tr>
+            <tr><td class="k" data-h="구분">가족 간병</td><td data-h="사유">부모·동거 친족의 질병·부상으로 30일 이상 본인이 간호해야 하는데 휴가·휴직이 안 될 때</td><td data-h="준비 서류"><span class="doc">진단서 (병원) · 휴직 불허 자료 (회사)</span><a class="go" href="https://efamily.scourt.go.kr/index.jsp" target="_blank" rel="noopener">가족관계증명서 발급</a></td></tr>
+            <tr><td class="k" data-h="구분">본인 건강</td><td data-h="사유">질병·부상·체력 부족으로 업무가 곤란한데 업무 전환이나 휴직이 안 될 때</td><td data-h="준비 서류"><span class="doc">진단서·의사 소견서 (병원) · 사업주 의견서 (회사)</span></td></tr>
+            <tr><td class="k" data-h="구분">임신·출산·육아</td><td data-h="사유">임신, 출산, 8세 이하(초2 이하) 자녀 육아로 계속 근무가 어려운데 휴가·휴직이 안 될 때</td><td data-h="준비 서류"><span class="doc">임신확인서 (병원) · 휴직 불허 자료 (회사)</span><a class="go" href="https://efamily.scourt.go.kr/index.jsp" target="_blank" rel="noopener">가족관계증명서 발급</a></td></tr>
+            <tr><td class="k" data-h="구분">정년·계약만료</td><td data-h="사유">정년 도래, 계약기간 만료로 계속 다닐 수 없게 된 경우 (본인이 재계약을 거절한 경우 제외)</td><td data-h="준비 서류"><span class="doc">근로계약서 (회사)</span></td></tr>
+          </tbody>
+        </table>
+        <div class="fn">고용보험법 시행규칙 별표2 요약. 판단은 고용센터가 서류를 보고 합니다. 온라인으로 뗄 수 있는 서류는 발급 화면으로 연결했고, 병원·회사에서만 받는 것은 발급처를 적었습니다.</div>
+      </figure>
+      <p class="body">핵심은 사유가 아니라 서류입니다. 같은 임금체불이어도 급여명세서 두 달치와 4대보험 가입내역이 있으면 그날 인정되고, 말로만 설명하면 회사 확인을 기다리느라 몇 주가 갑니다. 퇴사 전에 뗄 수 있는 것은 퇴사 전에 떼어 두시는 것이 좋습니다.</p>
+      <div class="quote"><b>고용보험법 제58조</b> "… 자기 사정으로 이직한 피보험자는 수급자격이 없는 것으로 본다. 다만, 고용노동부령으로 정하는 정당한 사유에 해당하는 경우는 그러하지 아니하다."</div>
+    </section>
+
+    <section class="q" id="q3">
+      <div class="eyebrow"><i>3</i><span>하루 금액</span></div>
+      <h2>실업급여 얼마나 받습니까</h2>
+      <p class="ans">퇴사 전 3개월 평균임금의 60%입니다. 다만 2026년 하한 66,048원 아래로 내려가지 않고 상한 68,100원 위로 올라가지 않습니다.</p>
+      <!-- flow: 산식 3칸. 마지막 칸이 실제 적용값(.hi) -->
+      <div class="viz flow">
+        <div class="box"><div class="cap">하루 평균임금</div><div class="val">83,333원</div><div class="sub">월급 250만 원 × 3 ÷ 90일</div></div>
+        <div class="arr">→</div>
+        <div class="box"><div class="cap">× 60%</div><div class="val">50,000원</div><div class="sub">법정 비율. 하한보다 적습니다</div></div>
+        <div class="arr">→</div>
+        <div class="box hi"><div class="cap">하한 적용</div><div class="val">66,048원</div><div class="sub">2026년 하한이 실제 하루 금액</div></div>
+      </div>
+      <figure class="viz tbl">
+        <figcaption>2026년 퇴사 전 월급별 실업급여 하루 금액 (200만~500만 원)</figcaption>
+        <table>
+          <thead><tr><th>퇴사 전 월급</th><th>하루 평균임금</th><th>60%</th><th>실제 하루 금액</th><th>적용</th><th>3년 근무 총액</th></tr></thead>
+          <tbody>
+            <tr><td class="k">200만 원</td><td>66,666</td><td>40,000</td><td class="g">66,048</td><td><span class="tag lo">하한</span></td><td class="s">11,888,640</td></tr>
+            <tr><td class="k">250만 원</td><td>83,333</td><td>50,000</td><td class="g">66,048</td><td><span class="tag lo">하한</span></td><td class="s">11,888,640</td></tr>
+            <tr><td class="k">300만 원</td><td>100,000</td><td>60,000</td><td class="g">66,048</td><td><span class="tag lo">하한</span></td><td class="s">11,888,640</td></tr>
+            <tr><td class="k">350만 원</td><td>116,666</td><td>70,000</td><td class="g">68,100</td><td><span class="tag hi">상한</span></td><td class="s">12,258,000</td></tr>
+            <tr><td class="k">400만 원</td><td>133,333</td><td>80,000</td><td class="g">68,100</td><td><span class="tag hi">상한</span></td><td class="s">12,258,000</td></tr>
+            <tr><td class="k">500만 원</td><td>166,666</td><td>100,000</td><td class="g">68,100</td><td><span class="tag hi">상한</span></td><td class="s">12,258,000</td></tr>
+          </tbody>
+        </table>
+        <div class="fn">단위: 원. 하루 평균임금 = 3개월 임금 ÷ 90일. 총액은 3년 근무·50세 미만(180일) 기준. 고용24 모의계산 결과와 같습니다.</div>
+      </figure>
+      <p class="body">월급 200만 원과 300만 원의 실업급여가 같은 이유는 하한 때문입니다. 2026년 최저임금이 올라 하한이 66,048원이 되면서 <b class="mark">월급 약 330만 원까지는 모두 같은 금액</b>을 받고, 그 위에서 아주 짧은 구간만 실제 60%가 적용된 뒤 약 341만 원에서 상한에 닿습니다. 월급이 높을수록 실업급여도 비례해서 커진다는 생각은 2026년에는 맞지 않습니다.</p>
+      <div class="quote"><b>고용보험법 제46조 제1항</b> "구직급여일액은 … 기초일액에 100분의 60을 곱한 금액으로 한다." · <b>최저임금법에 따른 2026년 최저임금</b> 시간당 10,320원</div>
+    </section>
+
+    <section class="q" id="q4">
+      <div class="eyebrow"><i>4</i><span>지급 일수</span></div>
+      <h2>실업급여 몇 개월 받습니까</h2>
+      <p class="ans">일수는 월급이 아니라 고용보험 가입기간과 나이로 정해집니다. 3년 근무·50세 미만이면 180일, 약 6개월입니다.</p>
+      <figure class="viz tbl">
+        <figcaption>실업급여 소정급여일수 (고용보험 가입기간 × 퇴사 당시 나이)</figcaption>
+        <table>
+          <thead><tr><th>고용보험 가입기간</th><th>50세 미만</th><th>50세 이상 · 장애인</th></tr></thead>
+          <tbody>
+            <tr><td class="k">1년 미만</td><td>120일 (약 4개월)</td><td>120일 (약 4개월)</td></tr>
+            <tr><td class="k">1년 이상 3년 미만</td><td>150일 (약 5개월)</td><td>180일 (약 6개월)</td></tr>
+            <tr><td class="k">3년 이상 5년 미만</td><td class="g">180일 (약 6개월)</td><td>210일 (약 7개월)</td></tr>
+            <tr><td class="k">5년 이상 10년 미만</td><td>210일 (약 7개월)</td><td>240일 (약 8개월)</td></tr>
+            <tr><td class="k">10년 이상</td><td>240일 (약 8개월)</td><td>270일 (약 9개월)</td></tr>
+          </tbody>
+        </table>
+        <div class="fn">고용보험법 별표1. 여러 회사의 가입기간은 모두 합산합니다. 1년 미만은 50세 이상이어도 가산이 없습니다(고용24 모의계산 확인).</div>
+      </figure>
+      <p class="body">여기서 놓치기 쉬운 것은 <b class="mark">12개월 수급기간</b>입니다. 소정급여일수가 180일이어도 퇴사 다음 날부터 12개월이 지나면 남은 일수는 사라집니다. 퇴사 후 반년을 쉬다가 신청하면 받을 수 있는 날이 절반으로 줄어드는 구조이니, 신청은 퇴사 직후에 하시는 것이 맞습니다.</p>
+      <div class="quote"><b>고용보험법 제48조 제1항</b> "구직급여는 … 이직일의 다음 날부터 계산하기 시작하여 12개월 내에 … 소정급여일수를 한도로 하여 지급한다." · <b>제50조 및 별표1</b> 소정급여일수</div>
+    </section>
+
+    <div class="ad ad-mid">애드센스 · 본문 중단 (반응형)</div>
+
+    <section class="q" id="q5">
+      <div class="eyebrow"><i>5</i><span>상한·하한 검증</span></div>
+      <h2>2026년 상한액·하한액은 왜 다들 66,048원입니까</h2>
+      <p class="ans">하한이 크게 올라 월급 330만 원 이하가 모두 하한을 받기 때문입니다. 상한은 68,100원이 맞고, 정부 간편계산기가 옛 값을 쓰는 점을 확인했습니다.</p>
+      <figure class="viz tbl">
+        <figcaption>2025년과 2026년 실업급여 하루 상한액·하한액 비교</figcaption>
+        <table>
+          <thead><tr><th>구분</th><th>2025년</th><th>2026년</th><th>근거</th></tr></thead>
+          <tbody>
+            <tr><td class="k">하루 하한</td><td>64,192</td><td class="g">66,048</td><td>최저임금 10,320원 × 8시간 × 80%</td></tr>
+            <tr><td class="k">하루 상한</td><td>66,000</td><td class="g">68,100</td><td>시행령 제68조 기초일액 상한 113,500원 × 60%</td></tr>
+            <tr><td class="k">한 달(30일) 최대</td><td>1,980,000</td><td class="g">2,043,000</td><td>상한 × 30일</td></tr>
+          </tbody>
+        </table>
+        <div class="fn">단위: 원. 시행령 제68조는 2025년 12월 23일 개정으로 기초일액 상한이 110,000원에서 113,500원이 됐습니다.</div>
+      </figure>
+      <!-- caution: 검색자가 다른 곳에서 본 것과 이 글이 다를 때, 왜 다른지와 검증일을 적는다. 유효기간이 있는 문장이다 -->
+      <div class="caution"><i>!</i><p>고용24 간편 모의계산은 2026-09-02 기준으로 아직 옛 상한 66,000원으로 계산해, 월급이 아무리 높아도 66,048원(하한)으로 표시됩니다. 이 글의 표와 위젯은 개정된 시행령을 따릅니다. 실제 지급액은 고용센터가 법령대로 결정합니다.</p></div>
+      <div class="quote"><b>고용보험법 시행령 제68조 제1항</b> "… 기초일액이 11만 3천 5백 원을 초과하는 경우에는 11만 3천 5백 원을 기초일액으로 한다." (2025.12.23 개정)</div>
+    </section>
+
+    <section class="q" id="q6">
+      <div class="eyebrow"><i>6</i><span>신청 방법</span></div>
+      <h2>실업급여 신청 방법 4단계는 무엇입니까</h2>
+      <p class="ans">이직확인서 확인 → 구직등록 → 고용센터 수급자격 신청 → 4주마다 실업인정. 첫 입금은 보통 신청 뒤 2~3주입니다.</p>
+      <!-- stepbar: 단계 3~5개. 각 단계에 준비물·소요시간·행동 버튼. 버튼 주소는 그 단계의 화면 -->
+      <div class="viz stepbar" id="steps">
+        <div class="tabs" role="tablist">
+          <button type="button" role="tab" aria-selected="true" aria-controls="s1"><i>1</i><span>이직확인서 확인</span></button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="s2"><i>2</i><span>구직등록</span></button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="s3"><i>3</i><span>수급자격 신청</span></button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="s4"><i>4</i><span>실업인정</span></button>
+        </div>
+        <div class="panel" id="s1" role="tabpanel"><b>회사가 낸 이직확인서가 처리됐는지 확인합니다</b><p>이직확인서는 회사가 고용보험에 제출합니다. 고용24에서 처리 여부를 확인하고, 안 냈으면 회사에 요청하십시오. 요청받은 날부터 10일 안에 제출할 의무가 있습니다.</p><div class="kv"><span>준비물 <b>없음</b></span><span>시점 <b>퇴사 직후</b></span></div><div class="act"><a class="btn-p" href="https://www.work24.go.kr/cm/main.do" target="_blank" rel="noopener">이직확인서 처리 확인하기</a></div></div>
+        <div class="panel" id="s2" role="tabpanel" hidden><b>고용24에 이력서를 올리고 구직 신청을 합니다</b><p>옛 워크넷이 고용24로 합쳐졌습니다. 온라인 수급자격 교육(약 1시간)도 여기서 미리 들어두면 고용센터 방문이 빨라집니다.</p><div class="kv"><span>준비물 <b>공동인증서</b></span><span>소요 <b>약 10분 + 교육 1시간</b></span></div><div class="act"><a class="btn-p" href="https://www.work24.go.kr/cm/main.do" target="_blank" rel="noopener">구직등록 하기</a></div></div>
+        <div class="panel" id="s3" role="tabpanel" hidden><b>거주지 관할 고용센터에 방문해 수급자격을 신청합니다</b><p>첫 회는 방문이 필수입니다. 신분증을 가져가십시오. 여기서 1차 실업인정일이 정해집니다.</p><div class="kv"><span>준비물 <b>신분증</b></span><span>소요 <b>약 30분</b></span></div><div class="act"><a class="btn-s" href="https://www.work24.go.kr/cm/main.do" target="_blank" rel="noopener">관할 고용센터 찾기</a></div></div>
+        <div class="panel" id="s4" role="tabpanel" hidden><b>4주마다 구직활동 증빙을 내고 실업인정을 받습니다</b><p>입사지원·면접·교육 같은 재취업활동 증빙을 제출하면 그 기간의 급여가 지급됩니다. 2·3차부터는 온라인으로 할 수 있습니다. 회차별 기준은 07번에 있습니다.</p><div class="kv"><span>첫 입금 <b>신청 후 약 2~3주</b></span><span>주기 <b>4주</b></span></div></div>
+      </div>
+      <p class="body">순서를 바꾸면 늦어집니다. 특히 2단계 온라인 교육을 미리 듣지 않고 고용센터에 가면 교육을 듣고 다시 오라는 안내를 받습니다. 1단계와 2단계는 같은 사이트에서 같은 날 끝낼 수 있습니다.</p>
+      <div class="quote"><b>고용보험법 제42조</b> "구직급여를 지급받으려는 사람은 이직 후 지체 없이 직업안정기관에 출석하여 실업을 신고하여야 한다." · <b>제16조</b> 이직확인서 제출 의무</div>
+    </section>
+
+    <section class="q" id="q7">
+      <div class="eyebrow"><i>7</i><span>실업인정 기준</span></div>
+      <h2>구직활동은 몇 번 해야 합니까</h2>
+      <p class="ans">2~4차는 4주에 1번, 5차부터는 4주에 2번이고 그중 1번은 반드시 입사지원·면접 같은 구직활동이어야 합니다. 1차와 4차는 고용센터에 직접 갑니다.</p>
+      <figure class="viz tbl cards">
+        <figcaption>실업인정 회차별 출석 여부와 재취업활동 최소 횟수 (일반 수급자)</figcaption>
+        <table>
+          <thead><tr><th>회차</th><th>언제</th><th>출석</th><th>해야 할 재취업활동</th></tr></thead>
+          <tbody>
+            <tr><td class="k" data-h="회차">1차</td><td data-h="언제">실업신고 후 14일째</td><td data-h="출석">고용센터 출석</td><td data-h="재취업활동">집체교육 수강 (활동 증빙 없음)</td></tr>
+            <tr><td class="k" data-h="회차">2·3차</td><td data-h="언제">직전 인정일 다음 날부터 28일째</td><td data-h="출석">온라인 가능</td><td data-h="재취업활동">4주에 1회 이상 (구직활동 또는 구직외활동)</td></tr>
+            <tr><td class="k" data-h="회차">4차</td><td data-h="언제">직전 인정일 후 7~28일, 담당자 지정</td><td data-h="출석">고용센터 출석</td><td data-h="재취업활동">4주에 1회 이상</td></tr>
+            <tr><td class="k" data-h="회차">5차부터</td><td data-h="언제">담당자 지정 (보통 4주)</td><td data-h="출석">온라인 가능</td><td data-h="재취업활동">4주에 2회 이상, 그중 1회는 반드시 구직활동</td></tr>
+          </tbody>
+        </table>
+        <div class="fn">고용노동부 예규 「실업인정 및 재취업지원규정」 제12조(2026.9.1 시행) 기준. 구직외활동은 직업훈련·심리검사·취업특강 등입니다.</div>
+      </figure>
+      <p class="body">실업인정을 받은 다음 날 통장에 들어옵니다. 같은 회사에 반복 지원하거나 면접에 가지 않는 형식적 구직활동은 인정되지 않고, 반복되면 지급이 중단됩니다.</p>
+      <div class="quote"><b>고용보험법 제44조 제1항</b> "구직급여는 수급자격자가 실업한 상태에 있는 날 중에서 직업안정기관의 장으로부터 실업의 인정을 받은 날에 대하여 지급한다."</div>
+    </section>
+
+    <section class="q" id="q8">
+      <div class="eyebrow"><i>8</i><span>수급 중 변동</span></div>
+      <h2>받다가 취업하거나 알바하면 어떻게 됩니까</h2>
+      <p class="ans">일찍 취업하면 남은 일수의 절반을 조기재취업수당으로 받습니다. 알바는 신고하면 그 날짜만 빠지고, 신고하지 않으면 부정수급입니다.</p>
+      <ul class="viz check">
+        <li><i>✓</i><span><b>조기재취업수당</b> 소정급여일수를 절반 이상 남기고 재취업해 12개월 이상 계속 근무하면, 남은 일수의 50%에 해당하는 금액을 받습니다.</span></li>
+        <li><i>✓</i><span><b>알바·단기 근로</b> 근로한 날은 실업인정 신청 때 신고합니다. 그 날의 급여만 지급되지 않고 소정급여일수는 그대로 남습니다.</span></li>
+        <li><i>✓</i><span><b>월 60시간 이상 · 3개월 이상</b> 근로하면 취업으로 봅니다. 이때는 알바 신고가 아니라 취업 신고입니다.</span></li>
+        <li><i>✓</i><span><b>신고하지 않으면</b> 부정수급으로 받은 금액 반환에 추가 징수가 붙고, 이후 수급이 제한됩니다.</span></li>
+      </ul>
+      <p class="body">가장 흔한 실수는 "하루 이틀 일한 건 괜찮겠지"입니다. 고용보험 자료가 자동으로 대조되기 때문에 하루도 걸립니다. 신고하면 그 하루치만 빠지고 끝나는 일이, 신고하지 않으면 전액 반환이 됩니다.</p>
+      <div class="quote"><b>고용보험법 제64조</b> 조기재취업 수당 · <b>제47조</b> "수급자격자는 실업의 인정을 받으려는 기간 중에 근로를 제공한 경우에는 … 신고하여야 한다." · <b>제61조</b> 부정행위에 따른 지급 제한</div>
+    </section>
+
+    <!-- FAQ 4~6개. 본문에서 답한 것을 검색자 문장으로 다시 묻는다 -->
+    <section class="q" id="faq">
+      <div class="eyebrow"><i>?</i><span>자주 묻는 질문</span></div>
+      <h2>실업급여, 이것도 궁금합니다</h2>
+      <div class="faq" id="faq-list">
+        <div class="item"><button type="button" aria-expanded="true"><span class="qq"><i>Q</i>계약만료도 실업급여가 됩니까</span><span class="pm">−</span></button><div class="aa"><i>A</i><p>됩니다. 계약기간 만료는 비자발적 퇴사입니다. 다만 회사가 같은 조건으로 재계약을 제안했는데 본인이 거절했다면 자발적 퇴사로 봅니다.</p></div></div>
+        <div class="item"><button type="button" aria-expanded="false"><span class="qq"><i>Q</i>월급 250만 원이면 실업급여가 얼마입니까</span><span class="pm">+</span></button><div class="aa" hidden><i>A</i><p>하루 66,048원입니다. 250만 원의 60%는 하루 50,000원인데 2026년 하한이 66,048원이라 하한을 받습니다. 3년 근무·50세 미만이면 180일, 총 11,888,640원입니다.</p></div></div>
+        <div class="item"><button type="button" aria-expanded="false"><span class="qq"><i>Q</i>퇴사 후 언제까지 신청해야 합니까</span><span class="pm">+</span></button><div class="aa" hidden><i>A</i><p>퇴사 다음 날부터 12개월 안에 모두 받아야 합니다. 신청이 늦으면 그만큼 받을 수 있는 날이 줄어들므로 퇴사 직후 신청하는 것이 맞습니다.</p></div></div>
+        <div class="item"><button type="button" aria-expanded="false"><span class="qq"><i>Q</i>받는 동안 4대보험은 어떻게 됩니까</span><span class="pm">+</span></button><div class="aa" hidden><i>A</i><p>건강보험은 지역가입자로 바뀌거나 임의계속가입(직장 보험료 수준 유지, 최대 36개월)을 신청할 수 있습니다. 국민연금은 실업크레딧을 신청하면 보험료의 75%를 국가가 지원합니다.</p></div></div>
+        <div class="item"><button type="button" aria-expanded="false"><span class="qq"><i>Q</i>실업급여를 받은 적이 있으면 다시 못 받습니까</span><span class="pm">+</span></button><div class="aa" hidden><i>A</i><p>다시 받을 수 있습니다. 다만 이전 수급 이후의 고용보험 가입기간만 새로 계산합니다. 5년 안에 3회 이상 받으면 감액 규정이 적용될 수 있습니다.</p></div></div>
+      </div>
+    </section>
+
+    <!-- 정리: 3~5개 체크 항목. 각 항목이 행동 또는 숫자 하나 -->
+    <div class="sum">
+      <div class="eb">떠나기 전 체크</div>
+      <ul>
+        <li><i>✓</i><span>조건 세 개 — 회사 사정 퇴사, 18개월 중 180일, 일할 의사. 자발적 퇴사는 별표2 사유와 서류가 있을 때만.</span></li>
+        <li><i>✓</i><span>금액 — 평균임금의 60%, 2026년 하루 66,048~68,100원. 월급 330만 원 이하는 모두 66,048원.</span></li>
+        <li><i>✓</i><span>기간 — 가입기간·나이로 120~270일. 퇴사 다음 날부터 12개월 안에 다 받아야 합니다.</span></li>
+        <li><i>✓</i><span>신청 — 이직확인서 확인, 구직등록, 고용센터 신청, 4주마다 실업인정. 오늘 1·2단계는 끝낼 수 있습니다.</span></li>
+      </ul>
+    </div>
+
+    <!-- 출처 4묶음. 조문 번호까지. 정부 도구는 무엇을 몇 건 대조했는지. 검증일 배지 재표시 -->
+    <section class="src">
+      <div class="src-hd"><h2>출처</h2><span class="verify"><i>✓</i>2026-09-02 검증</span></div>
+      <dl>
+        <dt>법령</dt><dd>고용보험법 제40조(수급요건), 제42조(실업의 신고), 제44조(실업의 인정), 제46조(구직급여일액), 제47조(근로 신고), 제48조(수급기간 12개월), 제50조 및 별표1(소정급여일수), 제58조(이직 사유 제한), 제61조(부정행위 지급 제한), 제64조(조기재취업수당). 시행령 제68조(기초일액 상한 113,500원, 2025.12.23 개정). 시행규칙 별표2(정당한 이직 사유). 최저임금법에 따른 2026년 최저임금 10,320원.</dd>
+        <dt>행정규칙·안내</dt><dd>고용노동부 예규 「실업인정 및 재취업지원규정」 제10조·제12조(2026.9.1 시행). 고용24 실업급여 제도 안내(신청 절차, 형식적 구직활동 제재). 법제처 생활법령정보 실업급여(2026.8.15 기준).</dd>
+        <dt>정부 도구</dt><dd>고용24 실업급여 간편 모의계산과 하한·일수 케이스 5건 일치(2026-09-02). 상한 케이스는 도구가 개정 전 값을 사용하므로 법령 원문을 기준으로 했습니다.</dd>
+        <dt>검증 방법</dt><dd>본문의 모든 숫자는 위 출처 화면을 직접 열어 추출한 원문(증거 JSON)과 대조했습니다. 링크는 발행 전 실제로 열어 그 일을 하는 화면인지 확인했습니다.</dd>
+      </dl>
+    </section>
+
+    <div class="rel">
+      <h2>이어서 보면 좋은 글</h2>
+      <div class="grid">
+        <a href="/w/실업급여-계산기"><b>실업급여 계산기</b><span>조기재취업수당까지 한 번에</span></a>
+        <a href="/w/자진퇴사-실업급여"><b>자진퇴사 실업급여 받는 조건</b><span>정당한 사유별 서류 준비</span></a>
+        <a href="/w/실업급여-구직활동"><b>실업급여 구직활동 인정 범위</b><span>회차별로 무엇이 인정되는지</span></a>
+        <a href="/w/퇴직금-계산기"><b>퇴직금 계산기</b><span>퇴사 정산 한 번에</span></a>
+      </div>
+    </div>
+
+    <p class="foot-note">이 글은 2026년 9월 기준 법령과 고용24 안내를 바탕으로 정리한 참고 자료입니다. 실제 수급자격과 금액은 고용센터가 개별 사정을 보고 결정합니다. 법령이 바뀌면 표와 위젯의 숫자를 함께 갱신합니다.</p>
+  </article>
+
+  <aside>
+    <div class="ad ad-side">애드센스 · 사이드 (300×600)</div>
+    <div class="spoke">
+      <div class="spoke-hd"><div class="eb">실업급여 시리즈</div><div class="tt">상황별로 더 자세히</div></div>
+      <ul>
+        <li><a href="#"><b>자진퇴사 실업급여 정당한 사유 서류</b><span>임금체불 · 통근 · 질병</span></a></li>
+        <li><a href="#"><b>실업급여 받으면서 알바 신고 방법</b><span>월 60시간 기준</span></a></li>
+        <li><a href="#"><b>조기재취업수당 조건과 금액</b><span>남은 일수의 50%</span></a></li>
+        <li><a href="#"><b>실업급여 중 건강보험 임의계속가입</b><span>최대 36개월</span></a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div><b>머니위키</b><p>공식 출처만 인용합니다. 본 사이트의 정보는 참고용이며 법적 효력이 없습니다.</p></div>
+    <nav><a href="#">소개</a><a href="#">개인정보처리방침</a><a href="#">이용약관</a></nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // 즉답 위젯 — 본문 표와 같은 산식. 숫자는 증거 JSON 에서 온다 (하한·상한·일수표)
+  var LOW=66048, HIGH=68100;
+  var DAYS=[[120,120],[150,180],[180,210],[210,240],[240,270]];
+  var sal=document.getElementById('sal'), salOut=document.getElementById('salOut');
+  var yrs=document.getElementById('yrs'), age=document.getElementById('age');
+  var fmt=function(n){return n.toLocaleString('ko-KR')+'원'};
+  var seg=function(el){return +el.querySelector('[aria-pressed="true"]').dataset.v};
+  function calc(){
+    var s=+sal.value; salOut.textContent=s+'만 원';
+    var avg=s*10000*3/90, sixty=Math.floor(avg*0.6), daily=sixty, rule='60% 적용';
+    if(sixty<LOW){daily=LOW;rule='하한 적용'} else if(sixty>HIGH){daily=HIGH;rule='상한 적용'}
+    var d=DAYS[seg(yrs)][seg(age)];
+    document.getElementById('oTotal').textContent=fmt(daily*d);
+    document.getElementById('oDaily').textContent=fmt(daily);
+    document.getElementById('oDays').textContent=d+'일 (약 '+Math.round(d/30)+'개월)';
+    document.getElementById('oMonth').textContent=fmt(daily*30);
+    document.getElementById('oRule').textContent=rule;
+  }
+  sal.addEventListener('input',calc);
+  [yrs,age].forEach(function(g){g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');calc()})});
+  calc();
+
+  // 판정 위젯 — 미충족 항목별로 다음 할 일이 다르다
+  var NEXT=['퇴사 사유가 자발적이면 02번 표의 정당한 사유에 드는지, 그 서류를 갖출 수 있는지 먼저 보십시오.','180일이 안 되면 이전 회사 가입기간을 합산할 수 있는지 고용24 이력내역서로 확인하십시오. 여러 회사를 합쳐도 됩니다.','당장 일할 수 없으면 고용센터에 수급기간 연기를 신청해 두고, 가능해진 뒤에 받으십시오. 12개월 기한이 그만큼 늘어납니다.'];
+  var dec=document.getElementById('decide'), out=document.getElementById('decideOut');
+  dec.addEventListener('click',function(e){
+    var b=e.target.closest('button');if(!b)return;
+    var li=b.closest('li');li.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');
+    var items=[].slice.call(dec.querySelectorAll('li')),ans=items.map(function(l){var p=l.querySelector('[aria-pressed="true"]');return p?(p.classList.contains('y')?'y':'n'):null});
+    if(ans.indexOf(null)>=0){out.className='decide-out';out.textContent='남은 항목도 눌러 보십시오. ('+ans.filter(Boolean).length+'/3)';return}
+    var bad=ans.indexOf('n');
+    if(bad<0){out.className='decide-out ok';out.innerHTML='<b>받을 수 있습니다.</b> 06번의 4단계대로 진행하십시오. 오늘 1·2단계(이직확인서 확인, 구직등록)는 끝낼 수 있습니다.'}
+    else{out.className='decide-out no';out.innerHTML='<b>'+(bad+1)+'번 조건이 걸립니다.</b> '+NEXT[bad]}
+  });
+
+  // 목차
+  var tb=document.getElementById('tocBtn'),tl=document.getElementById('tocList');
+  tb.addEventListener('click',function(){var o=tb.getAttribute('aria-expanded')==='true';tb.setAttribute('aria-expanded',String(!o));tl.hidden=o;tb.querySelector('.st').textContent=o?'열기 ⌄':'닫기 ⌃'});
+
+  // 단계 탭
+  var sb=document.getElementById('steps');
+  sb.querySelector('.tabs').addEventListener('click',function(e){
+    var b=e.target.closest('button');if(!b)return;
+    sb.querySelectorAll('[role="tab"]').forEach(function(t){t.setAttribute('aria-selected','false')});
+    sb.querySelectorAll('.panel').forEach(function(p){p.hidden=true});
+    b.setAttribute('aria-selected','true');document.getElementById(b.getAttribute('aria-controls')).hidden=false;
+  });
+
+  // FAQ
+  document.getElementById('faq-list').addEventListener('click',function(e){
+    var b=e.target.closest('button');if(!b)return;
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',String(!open));b.nextElementSibling.hidden=open;b.querySelector('.pm').textContent=open?'+':'−';
+  });
+})();
+</script>
+</body>
+</html>
