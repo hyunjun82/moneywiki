@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-09-03T02:51:01.930+09:00",
-  "fetchedDate": "2026-09-03",
+  "updatedAt": "2026-09-04T01:20:03.401+09:00",
+  "fetchedDate": "2026-09-04",
   "source": "전국은행연합회 외환길잡이 — 은행별 주요통화 인터넷환전수수료 우대율 비교",
   "sourceUrl": "https://exchange.kfb.or.kr/page/on_commission.php",
   "note": "환전수수료율과 우대율은 각 은행이 공시한 값입니다. 고객 등급·환전 금액·이벤트에 따라 실제 적용 우대율은 달라질 수 있으므로 거래 전 해당 은행에서 확인하세요.",
-  "latestAsOf": "2026-09-02",
+  "latestAsOf": "2026-09-03",
   "currencies": [
     "USD",
     "JPY",
@@ -75,8 +75,8 @@
         "basePref": 50,
         "maxPref": 90,
         "maxPrefText": "90%",
-        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2026.08.31까지)\n① USD 80 %",
-        "asOf": "2026-08-07"
+        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2027.12.31까지) USD 80%",
+        "asOf": "2026-09-03"
       },
       {
         "bank": "IBK기업은행",
@@ -130,7 +130,7 @@
         "maxPref": 90,
         "maxPrefText": "90%",
         "note": "- 로그인환전 우대율 : 90%\n- 비로그인환전 우대율 : 80%",
-        "asOf": "2026-08-06"
+        "asOf": "2026-09-03"
       },
       {
         "bank": "광주은행",
@@ -221,8 +221,8 @@
         "basePref": 50,
         "maxPref": 80,
         "maxPrefText": "80%",
-        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2026.08.31까지)\n① USD 80 %",
-        "asOf": "2026-08-07"
+        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2027.12.31까지) USD 80%",
+        "asOf": "2026-09-03"
       },
       {
         "bank": "IBK기업은행",
@@ -276,7 +276,7 @@
         "maxPref": 80,
         "maxPrefText": "80%",
         "note": "- 로그인환전 우대율 : 80%\n- 비로그인환전 우대율 : 70%",
-        "asOf": "2026-08-06"
+        "asOf": "2026-09-03"
       },
       {
         "bank": "광주은행",
@@ -367,8 +367,8 @@
         "basePref": 50,
         "maxPref": 80,
         "maxPrefText": "80%",
-        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2026.08.31까지)\n① USD 80 %",
-        "asOf": "2026-08-07"
+        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2027.12.31까지) USD 80%",
+        "asOf": "2026-09-03"
       },
       {
         "bank": "IBK기업은행",
@@ -417,12 +417,12 @@
       },
       {
         "bank": "BNK부산은행",
-        "feeRate": 1.95,
+        "feeRate": 2,
         "basePref": 50,
         "maxPref": 80,
         "maxPrefText": "80%",
         "note": "- 로그인환전 우대율 : 80%\n- 비로그인환전 우대율 : 70%",
-        "asOf": "2026-08-06"
+        "asOf": "2026-09-03"
       },
       {
         "bank": "광주은행",
@@ -504,8 +504,8 @@
         "basePref": 20,
         "maxPref": 30,
         "maxPrefText": "30%",
-        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2026.08.31까지)\n① USD 80 %",
-        "asOf": "2026-08-07"
+        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2027.12.31까지) USD 80%",
+        "asOf": "2026-09-03"
       },
       {
         "bank": "KB국민은행",
@@ -550,7 +550,7 @@
         "maxPref": 30,
         "maxPrefText": "30%",
         "note": "- 로그인환전 우대율 : 30%\n- 비로그인환전 우대율 : 20%",
-        "asOf": "2026-08-06"
+        "asOf": "2026-09-03"
       },
       {
         "bank": "광주은행",
@@ -632,8 +632,8 @@
         "basePref": 20,
         "maxPref": 30,
         "maxPrefText": "30%",
-        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2026.08.31까지)\n① USD 80 %",
-        "asOf": "2026-08-07"
+        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2027.12.31까지) USD 80%",
+        "asOf": "2026-09-03"
       },
       {
         "bank": "KB국민은행",
@@ -673,12 +673,12 @@
       },
       {
         "bank": "BNK부산은행",
-        "feeRate": 1.95,
+        "feeRate": 2,
         "basePref": 20,
         "maxPref": 30,
         "maxPrefText": "30%",
         "note": "- 로그인환전 우대율 : 30%\n- 비로그인환전 우대율 : 20%",
-        "asOf": "2026-08-06"
+        "asOf": "2026-09-03"
       },
       {
         "bank": "BNK경남은행",
@@ -733,8 +733,8 @@
         "basePref": 20,
         "maxPref": 30,
         "maxPrefText": "30%",
-        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2026.08.31까지)\n① USD 80 %",
-        "asOf": "2026-08-07"
+        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2027.12.31까지) USD 80%",
+        "asOf": "2026-09-03"
       },
       {
         "bank": "KB국민은행",
@@ -774,12 +774,12 @@
       },
       {
         "bank": "BNK부산은행",
-        "feeRate": 1.95,
+        "feeRate": 2,
         "basePref": 20,
         "maxPref": 30,
         "maxPrefText": "30%",
         "note": "- 로그인환전 우대율 : 30%\n- 비로그인환전 우대율 : 20%",
-        "asOf": "2026-08-06"
+        "asOf": "2026-09-03"
       },
       {
         "bank": "BNK경남은행",
@@ -834,8 +834,8 @@
         "basePref": 20,
         "maxPref": 30,
         "maxPrefText": "30%",
-        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2026.08.31까지)\n① USD 80 %",
-        "asOf": "2026-08-07"
+        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2027.12.31까지) USD 80%",
+        "asOf": "2026-09-03"
       },
       {
         "bank": "KB국민은행",
@@ -875,12 +875,12 @@
       },
       {
         "bank": "BNK부산은행",
-        "feeRate": 1.95,
+        "feeRate": 2,
         "basePref": 20,
         "maxPref": 30,
         "maxPrefText": "30%",
         "note": "- 로그인환전 우대율 : 30%\n- 비로그인환전 우대율 : 20%",
-        "asOf": "2026-08-06"
+        "asOf": "2026-09-03"
       },
       {
         "bank": "BNK경남은행",
@@ -935,8 +935,8 @@
         "basePref": 20,
         "maxPref": 30,
         "maxPrefText": "30%",
-        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2026.08.31까지)\n① USD 80 %",
-        "asOf": "2026-08-07"
+        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2027.12.31까지) USD 80%",
+        "asOf": "2026-09-03"
       },
       {
         "bank": "KB국민은행",
@@ -949,12 +949,12 @@
       },
       {
         "bank": "BNK부산은행",
-        "feeRate": 1.95,
+        "feeRate": 2,
         "basePref": 20,
         "maxPref": 30,
         "maxPrefText": "30%",
         "note": "- 로그인환전 우대율 : 30%\n- 비로그인환전 우대율 : 20%",
-        "asOf": "2026-08-06"
+        "asOf": "2026-09-03"
       },
       {
         "bank": "BNK경남은행",
@@ -1009,8 +1009,8 @@
         "basePref": 20,
         "maxPref": 30,
         "maxPrefText": "30%",
-        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2026.08.31까지)\n① USD 80 %",
-        "asOf": "2026-08-07"
+        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2027.12.31까지) USD 80%",
+        "asOf": "2026-09-03"
       },
       {
         "bank": "KB국민은행",
@@ -1041,12 +1041,12 @@
       },
       {
         "bank": "BNK부산은행",
-        "feeRate": 1.95,
+        "feeRate": 2,
         "basePref": 20,
         "maxPref": 30,
         "maxPrefText": "30%",
         "note": "- 로그인환전 우대율 : 30%\n- 비로그인환전 우대율 : 20%",
-        "asOf": "2026-08-06"
+        "asOf": "2026-09-03"
       },
       {
         "bank": "제주은행",
@@ -1110,8 +1110,8 @@
         "basePref": 20,
         "maxPref": 30,
         "maxPrefText": "30%",
-        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2026.08.31까지)\n① USD 80 %",
-        "asOf": "2026-08-07"
+        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2027.12.31까지) USD 80%",
+        "asOf": "2026-09-03"
       },
       {
         "bank": "KB국민은행",
@@ -1142,12 +1142,12 @@
       },
       {
         "bank": "BNK부산은행",
-        "feeRate": 1.95,
+        "feeRate": 2,
         "basePref": 20,
         "maxPref": 30,
         "maxPrefText": "30%",
         "note": "- 로그인환전 우대율 : 30%\n- 비로그인환전 우대율 : 20%",
-        "asOf": "2026-08-06"
+        "asOf": "2026-09-03"
       },
       {
         "bank": "BNK경남은행",
@@ -1193,8 +1193,8 @@
         "basePref": 20,
         "maxPref": 30,
         "maxPrefText": "30%",
-        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2026.08.31까지)\n① USD 80 %",
-        "asOf": "2026-08-07"
+        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2027.12.31까지) USD 80%",
+        "asOf": "2026-09-03"
       },
       {
         "bank": "KB국민은행",
@@ -1230,7 +1230,7 @@
         "maxPref": 30,
         "maxPrefText": "30%",
         "note": "- 로그인환전 우대율 : 30%\n- 비로그인환전 우대율 : 20%",
-        "asOf": "2026-08-06"
+        "asOf": "2026-09-03"
       },
       {
         "bank": "BNK경남은행",
@@ -1268,7 +1268,7 @@
         "maxPref": 0,
         "maxPrefText": "0%",
         "note": null,
-        "asOf": "2026-08-07"
+        "asOf": "2026-09-03"
       },
       {
         "bank": "KB국민은행",
@@ -1295,7 +1295,7 @@
         "maxPref": 0,
         "maxPrefText": "0%",
         "note": "- 로그인환전 우대율 : 0%\n- 비로그인환전 우대율 : 해당사항 없음",
-        "asOf": "2026-08-06"
+        "asOf": "2026-09-03"
       }
     ],
     "TWD": [
@@ -1333,7 +1333,7 @@
         "maxPref": 0,
         "maxPrefText": "0%",
         "note": null,
-        "asOf": "2026-08-07"
+        "asOf": "2026-09-03"
       },
       {
         "bank": "KB국민은행",
@@ -1398,7 +1398,7 @@
         "maxPref": 0,
         "maxPrefText": "0%",
         "note": null,
-        "asOf": "2026-08-07"
+        "asOf": "2026-09-03"
       },
       {
         "bank": "KB국민은행",
@@ -1429,12 +1429,12 @@
       },
       {
         "bank": "BNK부산은행",
-        "feeRate": 10,
+        "feeRate": 13,
         "basePref": 0,
         "maxPref": 0,
         "maxPrefText": "0%",
         "note": null,
-        "asOf": "2026-08-06"
+        "asOf": "2026-09-03"
       }
     ],
     "NZD": [
@@ -1471,8 +1471,8 @@
         "basePref": 20,
         "maxPref": 30,
         "maxPrefText": "30%",
-        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2026.08.31까지)\n① USD 80 %",
-        "asOf": "2026-08-07"
+        "note": "▶ [비대면] 환율우대율 안내 (개인) ◀\n1. 환전지갑(외화지폐)\n(1) 하나원큐 환전지갑\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n(2) 제휴사 환전지갑 (토스/카카오페이 등)\n① USD 90%\n② JPY, EUR 80%\n③ HKD, SGD, AUD, CAD, NZD, CNY, THB, GBP, CHF 30%\n2. 외화예금(전신환이체)\n(1) 비대면 기본(별도 통지시까지)\n① USD, EUR, JPY (본인계좌이체시) 40%\n② 기타통화 (타인계좌이체 포함) 20%\n(2) 밀리언달러 통장 (2026.12.31까지)\n① USD 80 %\n② JPY, EUR 50%\n(3) 일달러 외화적금 (2027.12.31까지) USD 80%",
+        "asOf": "2026-09-03"
       },
       {
         "bank": "KB국민은행",
@@ -1503,12 +1503,12 @@
       },
       {
         "bank": "BNK부산은행",
-        "feeRate": 1.95,
+        "feeRate": 2,
         "basePref": 20,
         "maxPref": 30,
         "maxPrefText": "30%",
         "note": "- 로그인환전 우대율 : 30%\n- 비로그인환전 우대율 : 20%",
-        "asOf": "2026-08-06"
+        "asOf": "2026-09-03"
       },
       {
         "bank": "BNK경남은행",
