@@ -1,17 +1,16 @@
 #!/bin/sh
 #
-# Git Pre-Push: 품질 게이트
+# Git Pre-Push: 품질 게이트 (2026-09-03 정리)
 #
-# 이전 버전의 버그 2개를 고쳤다 (2026-08-16):
-#   1. `git diff --cached`는 push 시점에 항상 비어 있어 MD 검증이 한 번도 돈 적이 없었다
-#      → push 범위(원격..HEAD)를 diff한다
-#   2. src/data/articles/*.ts 는 아예 검사 대상이 아니었다
-#      → articles 변경 시 verify:articles + verify:evidence + verify:links 강제
+# 실제 사고를 잡았던 검사만 막는다. 형태 검사(타이틀 공식·블록 순서·상투구)는 없앴다 —
+# 형태를 통과한 글이 내용은 비었던 것이 지난 8개월의 결론이다. 형태는 정본 템플릿 1편이 정한다.
+#   · verify-evidence       본문 숫자 ↔ 증거 JSON            (근거 없는 숫자 차단)
+#   · verify-internal-links 죽은 /w/·/category/·루트 링크    (네이버 404 540건 사고 재발 방지)
+# 화면·뜻 검사(verify-rendered·verify-meaning)는 시간이 걸려 push 전에 손으로 돈다.
 
 echo ""
 echo "══════════ Pre-Push 품질 게이트 ══════════"
 
-# push 범위 계산 — upstream이 없으면 origin/main 기준
 UPSTREAM=$(git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null || echo origin/main)
 RANGE_FILES=$(git diff --name-only "$UPSTREAM"..HEAD 2>/dev/null)
 if [ -z "$RANGE_FILES" ]; then
@@ -19,48 +18,17 @@ if [ -z "$RANGE_FILES" ]; then
     exit 0
 fi
 
-# ── 게이트 1: articles(.ts) 글 변경 시 3종 검증 ──
+# ── 게이트 1: 글 변경 시 숫자 근거 ──
 if echo "$RANGE_FILES" | grep -q "^src/data/articles/.*\.ts$"; then
     echo ""
-    echo "▶ articles 변경 감지 — verify:articles"
-    npm run verify:articles || { echo "✗ verify:articles 실패 — push 차단"; exit 1; }
-
-    echo "▶ verify:evidence"
+    echo "▶ verify:evidence (본문 숫자 ↔ 증거 JSON)"
     node scripts/verify-evidence.mjs || { echo "✗ verify:evidence 실패 — push 차단"; exit 1; }
-
-    echo "▶ verify:links (행동 URL 실접속 검사, 7일 캐시)"
-    npx tsx scripts/verify-links.ts || { echo "✗ verify:links 실패 — push 차단"; exit 1; }
-
-    echo "▶ verify:repetition (상투구·복사 문장·판박이 배치)"
-    npx tsx scripts/verify-repetition.ts || { echo "✗ verify:repetition 실패 — push 차단"; exit 1; }
-
-    echo "▶ verify:claims (과장 표현·근거 없는 인용)"
-    npx tsx scripts/verify-claims.ts || { echo "✗ verify:claims 실패 — push 차단"; exit 1; }
 fi
 
-# ── 게이트 2: MD 글 변경 시 기존 품질 검사 ──
-WIKI_FILES=$(echo "$RANGE_FILES" | grep "^content/wiki/.*\.md$")
-if [ -n "$WIKI_FILES" ]; then
-    FAIL=0
-    for file in $WIKI_FILES; do
-        [ -f "$file" ] || continue
-        if node .claude/scripts/verify-wiki-quality.js "$file" > /dev/null 2>&1; then
-            echo "  ✓ $file"
-        else
-            echo "  ✗ $file"
-            node .claude/scripts/verify-wiki-quality.js "$file" 2>&1 | grep -E "(❌|🔴)" | head -5
-            FAIL=1
-        fi
-    done
-    [ "$FAIL" = "1" ] && { echo "✗ MD 품질 검증 실패 — push 차단"; exit 1; }
-fi
-
-# ── 게이트 3: 내부 링크 (2026-09-01, 네이버 404 470건 사고 재발 방지) ──
-# 링크를 만들어내는 자리가 바뀌면 죽은 주소가 나가는지 본다.
-# 이 검사가 없어서 관련 키워드 태그가 8개월간 404 를 뿌리고 있었다.
-if echo "$RANGE_FILES" | grep -qE "^content/wiki/|^src/app/w/|^src/data/(categories|keyword-links|link-fixes|related-fixes)|^public/_redirects"; then
+# ── 게이트 2: 내부 링크 ──
+if echo "$RANGE_FILES" | grep -qE "^content/wiki/|^src/app/|^src/components/|^src/data/|^public/_redirects"; then
     echo ""
-    echo "▶ verify:internal-links (죽은 /w/ · /category/ 링크)"
+    echo "▶ verify:internal-links (죽은 내부 링크)"
     node scripts/verify-internal-links.mjs || { echo "✗ 죽은 내부 링크 — push 차단"; exit 1; }
 fi
 

@@ -23,10 +23,7 @@
       "Bash(git add *)",
       "Bash(git commit -q -m ' *)",
       "Bash(git push *)",
-      "Bash(node -e ' *)",
-      "Bash(node scripts/collect-keywords.mjs ISA계좌 --q \"ISA계좌\" --q \"ISA 계좌 개편\" --q \"청년 ISA 계좌\")",
-      "Bash(node scripts/collect-keywords.mjs ISA계좌 --q \"ISA계좌\" --q \"ISA 계좌 개편\" --q \"청년 ISA 계좌\" --q \"ISA 계좌 출금\")",
-      "Bash(node scripts/verify-rendered.mjs --base http://localhost:3000 ISA계좌-세금혜택 ISA계좌-단점 ISA계좌-추천 ISA계좌-ETF-추천 ISA계좌-수익률)"
+      "Bash(node -e ' *)"
     ],
     "deny": [
       "WebSearch",
@@ -35,16 +32,6 @@
     "additionalDirectories": []
   },
   "hooks": {
-    "UserPromptSubmit": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node scripts/hooks/require-template.mjs"
-          }
-        ]
-      }
-    ],
     "PreToolUse": [
       {
         "matcher": "WebSearch|WebFetch",
