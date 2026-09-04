@@ -137,9 +137,12 @@ async function collectLawArticle(page, lawName, no) {
     throw new Error(`제${no}조 본문 ${text.length}자 — 최소 ${MIN_TEXT}자 필요 (로딩 실패 또는 이미지 본문)`);
   }
   const file = await capture(page, `${lawName} 제${no}조`);
-  facts.push(...factsFromText(text, {
-    url, org: `법제처 (${lawName} 제${no}조)`, screenshot: file,
-  }));
+  const org = `법제처 (${lawName} 제${no}조)`;
+  // 조문 전문을 raws 에도 남긴다. factsFromText 는 숫자나 조문번호가 있는 문장만 남기므로
+  // '해고를 피하기 위한 노력을 다하여야 하며…' 같은 숫자 없는 요건 문장이 통째로 사라진다.
+  // 그 누락이 실제로 글 7편에서 조문을 빠뜨리게 했다(2026-09-04).
+  raws.push({ url, org, screenshot: file, text: text.slice(0, 60000) });
+  facts.push(...factsFromText(text, { url, org, screenshot: file }));
 }
 
 /** 기관명 — 페이지 제목은 "상세화면" 같은 값이 나와 출처가 뭉개진다. 도메인으로 잡는다. */
@@ -329,6 +332,31 @@ const out = {
   facts,
   raws,
 };
+// ── 다시 수집해도 사람이 넣은 기록은 살린다 ──
+// capturesReviewed(눈으로 읽은 기록) · 파생값 선언 · 캡처를 읽고 손으로 넣은 fact 는
+// 수집기가 만들 수 없다. 덮어쓰면 다시 수집할 때마다 사람이 한 일을 처음부터 해야 하고,
+// 그러면 그 규칙은 결국 꺼진다. 실제로 재수집 한 번에 5장치 검토 기록이 날아갔다.
+const OUT_JSON = path.join("scripts", "evidence", `${slug}.json`);
+try {
+  if (fs.existsSync(OUT_JSON)) {
+    const prev = JSON.parse(fs.readFileSync(OUT_JSON, "utf8"));
+    const shots = new Set(fs.existsSync(OUT_DIR) ? fs.readdirSync(OUT_DIR) : []);
+    if (prev.capturesReviewed) {
+      const kept = {};
+      for (const [k, v] of Object.entries(prev.capturesReviewed)) if (shots.has(k)) kept[k] = v;
+      if (Object.keys(kept).length) out.capturesReviewed = kept;
+    }
+    if (prev.exampleValues?.length) out.exampleValues = prev.exampleValues;
+    if (prev.exampleNote) out.exampleNote = prev.exampleNote;
+    const have = new Set(out.facts.map((f) => f.quote));
+    let back = 0;
+    for (const f of prev.facts || []) if (f.from && !have.has(f.quote)) { out.facts.push(f); back++; }
+    const kn = Object.keys(out.capturesReviewed || {}).length;
+    if (kn || back) console.log(`  이전 기록 보존 — 캡처 확인 ${kn}장, 사람이 넣은 fact ${back}개`);
+  }
+} catch (e) {
+  console.warn("  ⚠ 이전 기록을 살리지 못했습니다:", e.message);
+}
 fs.writeFileSync(path.join("scripts", "evidence", `${slug}.json`), JSON.stringify(out, null, 2));
 console.log(`\n✅ ${facts.length}개 fact / ${shot}장 캡처 → scripts/evidence/${slug}.json`);
 if (facts.length === 0) { console.error("❌ 추출된 fact 0개 — 사이트 구조 확인 필요"); process.exit(1); }
