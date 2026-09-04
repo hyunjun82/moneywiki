@@ -9,6 +9,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { checkNote } from "./lib-arith.mjs";
 
 const ART_DIR = path.join("src", "data", "articles");
 const EV_DIR = path.join("scripts", "evidence");
@@ -145,6 +146,16 @@ for (const file of fs.readdirSync(ART_DIR).filter((f) => f.endsWith(".ts") && f 
     if (exCount && !String(ev.exampleNote || "").trim()) {
       console.error(`\u274c [${art.slug}] 파생값 ${exCount}개를 선언했는데 exampleNote 에 산식이 없습니다`);
       fail++;
+    }
+
+    // 산식을 실제로 계산한다. 66,048 을 66,480 으로 잘못 적어도 산식만 있으면 통과하던 구멍을 막는다.
+    // 못 읽는 조각은 건너뛴다(실패가 아니다). 읽었는데 값이 다르면 그것만 오류다.
+    if (ev.exampleNote) {
+      const ar = checkNote(ev.exampleNote);
+      for (const b of ar.bad) {
+        console.error(`\u274c [${art.slug}] 산식이 맞지 않음: "${b.piece}" — 적힌 값 ${b.lhs}, 계산하면 ${b.rhs}`);
+        fail++;
+      }
     }
 
     // url/날짜/스키마 필드를 제외한 본문 문자열만 대조 대상으로

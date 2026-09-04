@@ -174,6 +174,13 @@ const cases = [
       .split("\n").filter((line) => !line.includes('[{ text: "능력에 맞지 않으면"')).join("\n")
       .replace("정당한 사유 **네 가지**는 예외", "정당한 사유는 예외")),
   },
+  {
+    // 파생값을 선언하고 산식은 그럴듯하게 적되 결과 숫자를 바꿔 놓는다. 검산이 없으면 통과한다.
+    n: "파생값 결과를 틀리게 적으면",
+    gate: "evidence",
+    slow: false,
+    break: () => editEvidence((j) => { j.exampleValues = ["66,480원"]; j.exampleNote = "하한 66,480 = 최저임금 10,320 × 8시간 × 80%"; return j; }),
+  },
 ];
 
 console.log("게이트 시험대 — 망가뜨린 입력을 게이트가 잡는지 확인\n");
