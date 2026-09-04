@@ -47,10 +47,17 @@ const gates = {
   evidenceAll: () => run("node", ["scripts/verify-evidence.mjs"]),
   shadow: () => run("node", ["scripts/verify-no-shadow.mjs"]),
   links: () => run("node", ["scripts/verify-internal-links.mjs"]),
-  changed: () => run("node", ["scripts/verify-meaning-changed.mjs", "HEAD~1"]),
+  // 글 파일을 건드린 가장 최근 커밋의 부모를 기준으로 삼는다. HEAD~1 로 고정하면
+  // 마지막 커밋이 스크립트만 바꿨을 때 '바뀐 글 없음'이 나와 시험이 헛돈다.
+  changed: () => {
+    const r = spawnSync("git", ["log", "-1", "--format=%H", "--", "src/data/articles"], { encoding: "utf8", shell: process.platform === "win32" });
+    const c = (r.stdout || "").trim();
+    return run("node", ["scripts/verify-meaning-changed.mjs", c ? `${c}~1` : "HEAD~1", "--detect-only"]);
+  },
   // --base 를 빼면 라이브 사이트를 검사한다. 로컬 변형이 안 보여 전부 통과로 나온다.
   rendered: () => run("node", ["scripts/verify-rendered.mjs", "--base", "http://localhost:3111", SLUG]),
   meaning: () => run("npx", ["tsx", "scripts/verify-meaning.ts", SLUG]),
+  omission: () => run("npx", ["tsx", "scripts/verify-omission.ts", SLUG]),
 };
 
 /** 글 파일에서 이 slug 블록만 손댄다 */
@@ -156,6 +163,16 @@ const cases = [
     gate: "meaning",
     slow: true,
     break: () => editArticle((b) => b.replace('body: "', 'body: "사전교육은 받지 않아도 됩니다. ')),
+  },
+  {
+    // 교육 글이 인용한 제60조에서 정당한 사유 1호(능력에 맞지 않음)를 표·핵심콕콕 양쪽에서 뺀다.
+    // 다른 검사는 전부 '쓴 것이 맞나'라서 못 본다. 누락 검사만 잡아야 한다.
+    n: "인용한 조문의 항을 글에서 빼면",
+    gate: "omission",
+    slow: true,
+    break: () => editArticle((b) => b
+      .split("\n").filter((line) => !line.includes('[{ text: "능력에 맞지 않으면"')).join("\n")
+      .replace("정당한 사유 **네 가지**는 예외", "정당한 사유는 예외")),
   },
 ];
 

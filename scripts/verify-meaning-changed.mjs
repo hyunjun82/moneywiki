@@ -11,7 +11,9 @@
 import { execSync, spawnSync } from "node:child_process";
 import fs from "node:fs";
 
-const upstream = process.argv[2] || "origin/main";
+const argvAll = process.argv.slice(2);
+const detectOnly = argvAll.includes("--detect-only");
+const upstream = argvAll.find((a) => !a.startsWith("--")) || "origin/main";
 
 function sh(cmd) {
   try {
@@ -67,9 +69,16 @@ if (!changed.size) {
 
 const slugs = [...changed];
 console.log(`바뀐 글 ${slugs.length}편: ${slugs.join(", ")}`);
+if (detectOnly) process.exit(0);
 
 const r = spawnSync("npx", ["tsx", "scripts/verify-meaning.ts", ...slugs], {
   stdio: "inherit",
   shell: process.platform === "win32",
 });
-process.exit(r.status === 0 ? 0 : 1);
+if (r.status !== 0) process.exit(1);
+// 누락 검사 — 바뀐 글이 인용한 조문의 항·호를 전수 대조한다
+const o = spawnSync("npx", ["tsx", "scripts/verify-omission.ts", ...slugs], {
+  stdio: "inherit",
+  shell: process.platform === "win32",
+});
+process.exit(o.status === 0 ? 0 : 1);

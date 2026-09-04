@@ -75,6 +75,9 @@ try {
   }
 
   if (!noMeaning) results["뜻"] = run("verify-meaning (훅↔버튼·소제목↔본문·근거 초과·의도 누락)", "npx", ["tsx", "scripts/verify-meaning.ts", slug]);
+  // 누락 검사 — 위 셋은 전부 "쓴 것이 맞나"를 본다. 이건 "써야 했는데 안 썼나"를 본다.
+  // 조문이 통째로 빠진 글 7편이 세 검사를 전부 통과한 채 배포된 뒤(2026-09-04) 만들었다.
+  if (!noMeaning) results["누락"] = run("verify-omission (인용 조문 항·호 전수 대조)", "npx", ["tsx", "scripts/verify-omission.ts", slug]);
 } finally {
   stopDev();
 }

@@ -72,7 +72,7 @@ const RUBRIC = `너는 머니위키 글의 "의미"를 보는 심사자다. 맞�
  · evidence.sourceText[]        같은 페이지의 본문 전문. facts 에 없어도 여기 있으면 근거가 있는 것이다
  · keywords                     네이버 자동완성·연관검색어로 잡은 실제 검색어
 
-다섯 가지만 판정한다.
+아래 여덟 가지만 판정한다.
 
 1. hook-cta — 훅이 약속한 행동과 버튼이 데려가는 화면이 "같은 일"인가.
    낱말이 겹치는 건 근거가 아니다. 개설 안내 글에 증명서 발급 버튼을 달면 ERROR다.
@@ -90,7 +90,17 @@ const RUBRIC = `너는 머니위키 글의 "의미"를 보는 심사자다. 맞�
    훅·요약·핵심콕콕·본문·FAQ 가 같은 사실을 다르게 말하면 ERROR다.
    특히 훅이 조건을 빼고 단정했는데 본문이 조건을 다는 경우를 잡아라.
    (실제 사고: 훅은 "서류 없이 청구한다", 본문은 "미참여 병원은 서류를 떼야 한다")
-7. unnatural-korean — 뜻이 통하지 않거나 한국어로 어색한 문장이 있는가. ERROR.
+7. omission — 근거(sourceText)에는 있는데 글이 빠뜨려서 독자가 손해 볼 요건이 있는가.
+   다른 규칙은 전부 "쓴 것이 맞나"를 본다. 이 규칙만 "써야 했는데 안 썼나"를 본다.
+   (실제 사고: 정리해고 글이 근로기준법 제24조제2항의 '해고를 피하기 위한 노력'과
+    '합리적이고 공정한 해고의 기준'을 통째로 빠뜨렸다. 숫자가 없어 fact 로도 안 잡혔다.
+    부정수급 글은 제62조제2항의 추가징수 2배·공모 시 5배가 통째로 없었다.)
+   범위를 좁혀서 본다. 아래를 모두 만족할 때만 ERROR 다.
+     · 글이 이미 인용하거나 다루는 조문·화면 안에 있을 것 (새 주제를 끌어오지 마라)
+     · 알면 독자의 판단이나 행동이 달라질 것 — 요건·기한·금액·예외·제재
+     · 글 어디에도(본문·표·체크리스트·FAQ·요약) 없을 것
+   곁가지 열거, 절차의 세부, 다른 글이 맡은 주제는 잡지 않는다. 애매하면 WARN 이다.
+8. unnatural-korean — 뜻이 통하지 않거나 한국어로 어색한 문장이 있는가. ERROR.
    · 뜻이 안 통하는 표현 — 무엇을 하라는 건지 알 수 없는 문장
      (실제 사고: "서류 없이 바로 넣을 수 있으니 먼저 청구부터 걸어 두시죠")
    · 번역체 — "~에 대해서", "~를 통해", "~할 수 있습니다"의 남발, 주어 없는 수동형
@@ -99,7 +109,7 @@ const RUBRIC = `너는 머니위키 글의 "의미"를 보는 심사자다. 맞�
    문장이 그럴듯해 보여도 뜻이 안 통하면 잡아라. 이 항목은 문법 교정이 아니라 뜻 검사다.
 
 출력은 JSON 하나뿐. 설명·머리말·코드펜스 금지.
-{"findings":[{"severity":"ERROR"|"WARN","rule":"hook-cta"|"heading-answer"|"overclaim"|"keyfacts-fit"|"intent-coverage"|"self-contradiction"|"unnatural-korean","where":"heroHook | q3 | keyFacts[4] 처럼 위치","quote":"문제가 된 문장 그대로","why":"무엇이 왜 어긋났는지 한 문장","fix":"어떻게 고칠지 한 문장"}]}
+{"findings":[{"severity":"ERROR"|"WARN","rule":"hook-cta"|"heading-answer"|"overclaim"|"keyfacts-fit"|"intent-coverage"|"self-contradiction"|"omission"|"unnatural-korean","where":"heroHook | q3 | keyFacts[4] 처럼 위치","quote":"문제가 된 문장 그대로","why":"무엇이 왜 어긋났는지 한 문장","fix":"어떻게 고칠지 한 문장"}]}
 근거가 확실한 것만 적는다. 트집을 잡으려고 억지로 채우지 않는다. 문제가 없으면 {"findings":[]}.
 고쳐 쓴 문장을 돌려주지 마라. 어디가 왜 잘못됐는지만 적는다 — 수정은 사람이 확인한 뒤 따로 한다.`;
 
@@ -250,13 +260,20 @@ async function judge(payload: unknown, slug: string) {
   }
   // 프롬프트를 argv 로 넘기면 Windows cmd.exe 의 따옴표 처리에서 깨진다.
   // 지시문과 입력 JSON 을 통째로 stdin 에 넣고, argv 는 플래그만 둔다.
-  const args = ["-p", "--output-format", "text"];
+  // 세션 기본 모델을 따라가면 사용자가 모델을 바꿀 때 판정이 통째로 깨진다(실제로 2026-09-04 에 겪음).
+  // 판정은 마지막 관문이라 고정한다. 필요하면 MEANING_MODEL 로 바꾼다.
+  const JUDGE_MODEL = process.env.MEANING_MODEL || "claude-sonnet-5";
+  const args = ["-p", "--model", JUDGE_MODEL, "--output-format", "text"];
   if (useImages) args.push("--allowedTools", "Read");
-  const raw = (
-    await runClaude(args, `${instructions}\n\n── 입력 JSON ──\n${JSON.stringify(payload)}`)
-  ).trim();
-  const m = raw.match(/\{[\s\S]*\}/);
-  if (!m) throw new Error(`판정자 응답을 JSON으로 읽지 못함: ${raw.slice(0, 300)}`);
+  const prompt = `${instructions}\n\n── 입력 JSON ──\n${JSON.stringify(payload)}`;
+  let raw = (await runClaude(args, prompt)).trim();
+  let m = raw.match(/\{[\s\S]*\}/);
+  if (!m) {
+    // 판정자가 형식을 무시하고 산문을 쓰는 경우가 있다. 한 번 더 묻는다.
+    raw = (await runClaude(args, `${prompt}\n\n(주의: 앞 응답이 JSON 이 아니었다. 설명 없이 {"findings":[...]} JSON 하나만 출력하라.)`)).trim();
+    m = raw.match(/\{[\s\S]*\}/);
+  }
+  if (!m) throw new Error(`판정자 응답을 JSON으로 읽지 못함(2회): ${raw.slice(0, 300)}`);
   return JSON.parse(m[0]);
 }
 

@@ -21,7 +21,8 @@
     "verify:no-shadow": "node scripts/verify-no-shadow.mjs",
     "verify:meaning-changed": "node scripts/verify-meaning-changed.mjs",
     "test:gates": "node scripts/test-gates.mjs",
-    "test:gates:slow": "node scripts/test-gates.mjs --slow"
+    "test:gates:slow": "node scripts/test-gates.mjs --slow",
+    "verify:omission": "npx tsx scripts/verify-omission.ts"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
