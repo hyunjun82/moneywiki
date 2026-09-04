@@ -118,6 +118,35 @@ for (const file of fs.readdirSync(ART_DIR).filter((f) => f.endsWith(".ts") && f 
       fail++;
     }
 
+    // 캡처를 눈으로 읽었는지 — 텍스트 추출은 표·이미지 속 숫자를 놓친다.
+    // capturesReviewed 에 캡처마다 한 줄 요약이 없으면 읽지 않은 것으로 본다.
+    const shotDir = path.join(EV_DIR, art.slug);
+    const allShots = fs.existsSync(shotDir)
+      ? fs.readdirSync(shotDir).filter((f) => f.endsWith(".png"))
+      : [];
+    const reviewed = ev.capturesReviewed || {};
+    const unread = allShots.filter((f) => !String(reviewed[f] || "").trim());
+    // 규칙 시행일(2026-09-04) 이후 수집한 증거부터 적용한다.
+    // 전부에 걸면 옛 글 64편이 막혀 게이트를 꺼 버리게 되고, 끄면 없는 것과 같다.
+    const CAPTURE_RULE_FROM = "2026-09-04";
+    const underRule = String(ev.verifiedAt || "") >= CAPTURE_RULE_FROM;
+    if (unread.length && underRule) {
+      console.error(
+        `\u274c [${art.slug}] 눈으로 읽지 않은 캡처 ${unread.length}/${allShots.length}장: ${unread.join(", ")}`
+      );
+      console.error(
+        `   증거 JSON 의 capturesReviewed 에 파일명마다 무엇이 있었는지 한 줄로 적으세요.`
+      );
+      fail++;
+    }
+
+    // 파생값은 대조를 건너뛴다 — 몇 개를 건너뛰었는지 눈에 보이게 남긴다
+    const exCount = (ev.exampleValues || []).length;
+    if (exCount && !String(ev.exampleNote || "").trim()) {
+      console.error(`\u274c [${art.slug}] 파생값 ${exCount}개를 선언했는데 exampleNote 에 산식이 없습니다`);
+      fail++;
+    }
+
     // url/날짜/스키마 필드를 제외한 본문 문자열만 대조 대상으로
     const prose = art.body
       .replace(/https?:\/\/\S+/g, "")

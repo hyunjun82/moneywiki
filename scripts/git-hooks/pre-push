@@ -41,6 +41,15 @@ if echo "$RANGE_FILES" | grep -qE "^content/wiki/|^src/app/|^src/components/|^sr
     node scripts/verify-internal-links.mjs || { echo "✗ 죽은 내부 링크 — push 차단"; exit 1; }
 fi
 
+# ── 게이트 4: 바뀜 글의 뜻 검사 ──
+# 통과한 뒤 문장을 고치고 다시 돌리지 않아 틀린 글이 배포됐다. 그래서 여기서 막는다.
+# 건너뛰려면 SKIP_MEANING=1 git push (쉽게 넘기지 말 것)
+if [ -z "$SKIP_MEANING" ] && echo "$RANGE_FILES" | grep -q "^src/data/articles/.*\.ts$"; then
+    echo ""
+    echo "▶ verify:meaning (바뀜 글만)"
+    node scripts/verify-meaning-changed.mjs "$UPSTREAM" || { echo "✗ 뜻 검사 실패 — push 차단"; exit 1; }
+fi
+
 echo "✓ 게이트 통과"
 echo ""
 exit 0

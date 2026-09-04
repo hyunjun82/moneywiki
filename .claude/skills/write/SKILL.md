@@ -41,6 +41,8 @@ npm run verify <slug>        # 숫자 → 화면 → 뜻. dev 서버는 알아�
 - `npm run evidence -- <slug> --law <법령명>:<조,조> --url <공식URL> [--url ...]`
   → `scripts/evidence/<slug>.json` (quote/value) + `scripts/evidence/<slug>/*.png`
 - **PNG 를 Read 로 열어 눈으로 읽는다.** 표·상한액·요율은 이미지에 있는 경우가 많다.
+  읽은 뒤 증거 JSON 의 `capturesReviewed` 에 **파일명마다 한 줄**로 무엇이 있었는지 적는다.
+  안 적으면 `verify-evidence` 가 막는다 — 이 단계를 건너뛰어 6편을 텍스트만 보고 쓴 적이 있다.
 - 본문에 쓸 숫자는 JSON `quote`/`value` 안에 있는 것만. 없으면 안 쓴다. 기억으로 채우지 않는다.
 - 버튼(CTA) 주소는 `.go.kr`·`.or.kr` 의 **그 일을 하는 화면**. 넣기 전 Playwright 로 열어 본다. 기관 홈 금지.
 - 즉답 위젯 상수(하한·상한·일수표)는 같은 증거에서 온다. `heroWidget.params` 에 넣고 코드에 박지 않는다.
