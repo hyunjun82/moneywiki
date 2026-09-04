@@ -35,11 +35,19 @@ const ping = (url) => new Promise((res) => {
   req.setTimeout(240000, () => { req.destroy(); res(false); });
 });
 
+function freePort() {
+  if (!isWin) return;
+  const r = spawnSync("powershell", ["-NoProfile", "-Command",
+    `$p = Get-NetTCPConnection -LocalPort ${PORT} -State Listen -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess -Unique; if ($p) { $p | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue } }`],
+    { stdio: "ignore" });
+  return r.status === 0;
+}
+
 let dev = null;
 async function startDev(firstUrl) {
   if (await ping(`http://localhost:${PORT}/`)) { console.log(`dev 서버가 이미 ${PORT} 에 있음 — 그대로 씁니다`); return; }
   console.log(`\n▶ dev 서버 기동 (포트 ${PORT})`);
-  dev = spawn("npx", ["next", "dev", "-p", String(PORT)], { stdio: ["ignore", "pipe", "pipe"], shell: isWin, env: { ...process.env, BROWSERSLIST_IGNORE_OLD_DATA: "1" } });
+  dev = spawn("npx", ["next", "dev", "--webpack", "-p", String(PORT)], { stdio: ["ignore", "pipe", "pipe"], shell: isWin, env: { ...process.env, BROWSERSLIST_IGNORE_OLD_DATA: "1" } });
   dev.stdout.on("data", (d) => { const s = d.toString(); if (/error/i.test(s)) process.stdout.write(s); });
   dev.stderr.on("data", (d) => process.stderr.write(d));
   const deadline = Date.now() + 300000; // 옛 페이지 1,500개라 첫 컴파일이 느리다
