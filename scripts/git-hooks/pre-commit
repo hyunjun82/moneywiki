@@ -1,0 +1,10 @@
+#!/bin/sh
+# 시험대(test-gates)가 도는 동안에는 커밋하지 않는다.
+# 시험대는 글·증거 파일을 망가뜨리고 되돌린다. 그 사이에 커밋하면 망가진 상태가 들어간다.
+# 2026-09-04 에 실제로 그렇게 됐다 — 교육 글에서 제60조 1호 행이 빠진 채 푸시됐다.
+if [ -f .gates-running ]; then
+  echo "✗ 시험대(test-gates)가 실행 중입니다 (.gates-running). 끝난 뒤 커밋하세요."
+  echo "  시험대가 비정상 종료해 파일만 남았다면: rm .gates-running"
+  exit 1
+fi
+exit 0

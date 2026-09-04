@@ -183,18 +183,37 @@ const cases = [
   },
 ];
 
+const LOCK = ".gates-running";
+// 시험대가 도는 동안 커밋을 막는다. 파일을 망가뜨리고 되돌리는 사이에 커밋하면 망가진 상태가 들어간다(실제로 겪음).
+fs.writeFileSync(LOCK, String(process.pid));
+const unlock = () => { try { fs.unlinkSync(LOCK); } catch {} };
+process.on("exit", unlock);
+process.on("SIGINT", () => { unlock(); process.exit(130); });
+process.on("uncaughtException", (e) => { unlock(); console.error(e); process.exit(1); });
+
 console.log("게이트 시험대 — 망가뜨린 입력을 게이트가 잡는지 확인\n");
 
 // 0) 무결 상태에서 빠른 게이트가 모두 통과하는지 (헛경보 확인)
 snapshot();
+let ok = 0, hole = 0, skipped = 0;
 const base = [];
 for (const g of ["evidenceAll", "shadow", "links"]) {
   const r = gates[g]();
   base.push(`${r.pass ? "✅" : "❌"} ${g}`);
 }
+// 설치된 훅이 저장소의 훅과 같은가 — 다르면 오늘 넣은 게이트가 push 에서 아무것도 막지 않는다(실제로 겪음)
+{
+  let stale = [];
+  for (const f of fs.readdirSync(path.join("scripts", "git-hooks"))) {
+    if (f.includes(".")) continue;
+    const a = path.join("scripts", "git-hooks", f), b = path.join(".git", "hooks", f);
+    if (!fs.existsSync(b) || !fs.readFileSync(a).equals(fs.readFileSync(b))) stale.push(f);
+  }
+  base.push(stale.length ? `❌ hooks(미설치: ${stale.join(",")} → npm run hooks:install)` : "✅ hooks");
+  if (stale.length) hole++;
+}
 console.log("무결 상태 기준선:", base.join("  "), "\n");
 
-let ok = 0, hole = 0, skipped = 0;
 const rows = [];
 
 for (const c of cases) {

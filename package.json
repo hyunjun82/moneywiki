@@ -22,7 +22,9 @@
     "verify:meaning-changed": "node scripts/verify-meaning-changed.mjs",
     "test:gates": "node scripts/test-gates.mjs",
     "test:gates:slow": "node scripts/test-gates.mjs --slow",
-    "verify:omission": "npx tsx scripts/verify-omission.ts"
+    "verify:omission": "npx tsx scripts/verify-omission.ts",
+    "hooks:install": "node scripts/install-hooks.mjs",
+    "prepare": "node scripts/install-hooks.mjs"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
