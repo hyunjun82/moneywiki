@@ -34,7 +34,9 @@ try {
   for (const f of fs.readdirSync("src/data/articles")) {
     if (!f.endsWith(".ts") || f === "types.ts") continue;
     const t = fs.readFileSync(path.join("src/data/articles", f), "utf8");
-    for (const m of t.matchAll(/slug:\s*["'`]([^"'`]+)["'`]/g)) live.add(m[1]);
+    // 글 정의(6칸 들여쓰기)만 등록한다. 관련질문·버튼의 slug 까지 넣으면
+    // 깨진 링크가 스스로를 유효하게 만들어 영원히 안 걸린다.
+    for (const m of t.matchAll(/^ {6}slug: "([^"]+)",\r?$/gm)) live.add(m[1]);
   }
 } catch {}
 
@@ -52,6 +54,23 @@ const relatedFixes = read("src/data/related-fixes.json", {});
 
 const problems = [];
 const add = (where, href, why) => problems.push({ where, href, why });
+
+/* ── 0. articles 글의 내부 링크 (relatedQuestions · calc-cta · heroWidget.more) ── */
+for (const f of fs.readdirSync("src/data/articles")) {
+  if (!f.endsWith(".ts") || f === "types.ts") continue;
+  const t = fs.readFileSync(path.join("src/data/articles", f), "utf8");
+  const seenArt = new Set();
+  // 글 정의 줄(6칸)은 빼고, 나머지 slug 참조만 검사 대상으로 본다
+  for (const line of t.split(/\r?\n/)) {
+    if (/^ {6}slug: "[^"]+",$/.test(line)) continue;
+    for (const m of line.matchAll(/slug:\s*"([^"]+)"/g)) {
+      const target = m[1];
+      if (live.has(target) || seenArt.has(target)) continue;
+      seenArt.add(target);
+      add(`src/data/articles/${f}`, `/w/${target}`, "글 안에서 가리키는 slug 인데 그런 글이 없다");
+    }
+  }
+}
 
 /* ── 1. MD 글 ── */
 for (const f of fs.readdirSync(WIKI)) {

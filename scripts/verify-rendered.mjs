@@ -19,6 +19,7 @@
  *   node scripts/verify-rendered.mjs --base http://localhost:3000 <slug>
  */
 import { chromium } from "playwright";
+import net from "node:net";
 
 const argv = process.argv.slice(2);
 let BASE = "https://www.jjyu.co.kr";
@@ -27,6 +28,26 @@ for (let i = 0; i < argv.length; i++) {
   if (argv[i] === "--base") BASE = argv[++i];
   else slugs.push(argv[i]);
 }
+// 어느 주소를 보고 있는지 먼저 밝힌다.
+// --base 없이 돌리면 라이브를 검사한다. 로컬을 고치고 이걸 돌리면 ✅ 가 자기 변경과 무관해진다.
+const IS_LOCAL = /localhost|127\.0\.0\.1/.test(BASE);
+console.log(`검사 대상: ${BASE}${IS_LOCAL ? " (로컬)" : " (라이브 — 로컬 수정은 반영되지 않습니다)"}`);
+if (!IS_LOCAL) {
+  // HTTP 로 물으면 Next dev 의 첫 컴파일이 오래 걸려 경고가 조용히 사라진다. TCP 로만 확인한다.
+  const devUp = await new Promise((resolve) => {
+    const sock = net.connect({ host: "127.0.0.1", port: 3111 });
+    const done = (v) => { sock.destroy(); resolve(v); };
+    sock.setTimeout(1000);
+    sock.once("connect", () => done(true));
+    sock.once("timeout", () => done(false));
+    sock.once("error", () => done(false));
+  });
+  if (devUp) {
+    console.warn("⚠ 로컬 dev 서버가 3111 에 떠 있는데 라이브를 검사하고 있습니다.");
+    console.warn("  로컬 변경을 보려면 --base http://localhost:3111 을 붙이거나 npm run verify <slug> 를 쓰세요.");
+  }
+}
+
 if (!slugs.length) {
   console.error("사용법: node scripts/verify-rendered.mjs <slug> [<slug>...]");
   process.exit(1);
@@ -76,9 +97,16 @@ for (const slug of slugs) {
           if (!h.nextElementSibling || !h.nextElementSibling.classList.contains("ans"))
             out.problems.push(`"${h.textContent.trim().slice(0, 30)}" 아래 한 줄 답(.ans)이 없음`);
         });
-        // 대제목 수 = 타이틀 항목 수 (중점으로 나열된 개수). 약속하고 답하지 않은 항목이 없어야 한다
-        const h1 = q("h1")?.textContent ?? "";
-        const promised = (h1.split(/\s+/).find((w) => w.includes("·")) || "").split("·").filter(Boolean).length;
+        // 대제목 수 = 타이틀이 약속한 항목 수. 약속하고 답하지 않은 항목이 없어야 한다.
+        // 예전 규칙은 중점(·)이 있는 타이틀만 셌다 — 'A와 B, C부터 D까지' 형식에는 걸리지 않는 죽은 규칙이었고,
+        // '질병·간병' 같은 합성어의 중점을 항목으로 세어 오경보도 냈다.
+        const h1 = (q("h1")?.textContent ?? "").replace(/\s*\(\d{4}\)\s*$/, "").trim();
+        const conj = (x) => (x.match(/[가-힣0-9]\s*(?:와|과|·|및)\s*/g) || []).length;
+        let promised = 0;
+        for (const part of h1.split(/,\s*/)) {
+          if (/부터[\s\S]*(까지|총정리|정리)/.test(part)) promised += 2 + conj(part.split("부터")[0]);
+          else promised += 1 + conj(part);
+        }
         const mains = all("section.q").filter((s) => /^q\d+$/.test(s.id)).length;
         if (promised >= 2 && mains !== promised)
           out.problems.push(`타이틀이 약속한 항목 ${promised}개, 대제목 ${mains}개 — 1:1 이어야 함`);

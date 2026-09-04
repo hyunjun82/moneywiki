@@ -19,7 +19,9 @@
     "input": "node scripts/prepare-input.mjs",
     "verify": "node scripts/verify.mjs",
     "verify:no-shadow": "node scripts/verify-no-shadow.mjs",
-    "verify:meaning-changed": "node scripts/verify-meaning-changed.mjs"
+    "verify:meaning-changed": "node scripts/verify-meaning-changed.mjs",
+    "test:gates": "node scripts/test-gates.mjs",
+    "test:gates:slow": "node scripts/test-gates.mjs --slow"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
