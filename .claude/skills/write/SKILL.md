@@ -18,6 +18,7 @@ node scripts/collect-evidence.mjs <slug> --law "고용보험법:44,49" --url <�
 npm run verify <slug>        # 숫자 → 화면 → 뜻. dev 서버는 알아서 뜬다
 ```
 **쓰기 전에 `src/app/w/<slug>/` 폴더가 있으면 먼저 지운다.** 그게 있으면 새 글이 화면에 안 나온다.
+`npm run verify:no-shadow` 가 전체를 훑는다. pre-push 가 이걸 막으니 잊어도 배포는 안 된다.
 
 한 편을 처음부터 끝까지. 판단(질문 군집·이미지 속 숫자·버튼 화면)은 여기서 내가 한다.
 스크립트는 수집·대조·렌더만 한다. 순서를 바꾸지 않고, 단계 사이는 파일로만 넘긴다.
