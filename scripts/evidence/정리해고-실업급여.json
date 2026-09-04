@@ -34,6 +34,14 @@
     {
       "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
       "org": "고용24"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/근로기준법/제28조",
+      "org": "법제처"
+    },
+    {
+      "url": "https://www.nlrc.go.kr/nlrc/commIntro/workGuide03.do",
+      "org": "중앙노동위원회"
     }
   ],
   "facts": [
@@ -568,6 +576,20 @@
       "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
       "org": "고용24",
       "screenshot": "evidence-정리해고-실업급여-8.png"
+    },
+    {
+      "value": "제28조 / 3개월",
+      "quote": "제28조(부당해고등의 구제신청) ① 사용자가 근로자에게 부당해고등을 하면 근로자는 노동위원회에 구제를 신청할 수 있다. ② 제1항에 따른 구제신청은 부당해고등이 있었던 날부터 3개월 이내에 하여야 한다.",
+      "url": "https://www.law.go.kr/법령/근로기준법/제28조",
+      "org": "법제처",
+      "from": "playwright"
+    },
+    {
+      "value": "지방노동위원회",
+      "quote": "사용자로부터 정당한 이유없이 해고·휴직·정직·전직·감봉 기타 징벌을 당한 근로자는 관할 지방노동위원회에 부당해고 등의 구제신청을 할 수 있습니다. ※ 구제신청서 양식은 중앙노동위원회 홈페이지(www.nlrc.go.kr)에서 다운받아 사용하실 수 있습니다.",
+      "url": "https://www.nlrc.go.kr/nlrc/commIntro/workGuide03.do",
+      "org": "중앙노동위원회",
+      "from": "playwright"
     }
   ],
   "raws": [
