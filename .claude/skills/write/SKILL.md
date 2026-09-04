@@ -12,7 +12,7 @@ description: 머니위키 글 한 편 — 사용자가 준 키워드 묶음으�
 ## 한 편의 명령 순서 (이대로)
 ```
 npm run input <slug> -- --xlsx <연관검색어.xlsx> --xlsx <지식인.xlsx>   # 엑셀이면
-node scripts/collect-evidence.mjs <slug> --law <법령:조,조> --url <공식URL>...
+node scripts/collect-evidence.mjs <slug> --law "고용보험법:44,49" --url <공식URL>...  ← 조는 숫자만! "제44조" 로 주면 "제제44조조" 가 되어 전부 실패한다
   ← 글 쓰기 전에 반드시. 캡처 PNG 는 Read 로 눈으로 읽는다
 (글 작성 → src/data/articles/<카테고리>.ts)
 npm run verify <slug>        # 숫자 → 화면 → 뜻. dev 서버는 알아서 뜬다
