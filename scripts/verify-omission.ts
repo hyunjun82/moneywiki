@@ -22,6 +22,7 @@ import { getArticle } from "../src/lib/articles";
 const ROOT = process.cwd();
 const EVID = path.join(ROOT, "scripts", "evidence");
 const MODEL = process.env.MEANING_MODEL || "claude-sonnet-5";
+const PASSES = Math.max(1, Number(process.env.OMISSION_PASSES || 2));
 const slugs = process.argv.slice(2).filter((a) => !a.startsWith("--"));
 
 if (!slugs.length) {
@@ -134,13 +135,35 @@ for (const slug of slugs) {
     checked++;
     const input = `${PROMPT}\n\n── (1) 조문: ${c.law} 제${c.no}조 ──\n${st}\n\n── (2) 글 전문 (제목: ${a.meta?.title}) ──\n${text}`;
     try {
-      const raw = await runClaude(input);
-      const m = raw.match(/\{[\s\S]*\}/);
-      const j = m ? JSON.parse(m[0]) : { items: [] };
-      const items = j.items || [];
-      enumerated += items.length;
-      for (const x of items) {
-        if (x.covered === false && x.matters === true) findings.push({ law: `${c.law} 제${c.no}조`, ...x });
+      // 두 번 물어 합의한 것만 ERROR — 판정이 매번 달라 한 번으로는 게이트가 흔들린다
+      const passes: any[][] = [];
+      for (let k = 0; k < PASSES; k++) {
+        const raw = await runClaude(input);
+        const m = raw.match(/\{[\s\S]*\}/);
+        const j = m ? JSON.parse(m[0]) : { items: [] };
+        passes.push((j.items || []).filter((x: any) => x.covered === false && x.matters === true));
+        if (k === 0) enumerated += (j.items || []).length;
+      }
+      // 같은 항을 '1문'과 '전단'처럼 다르게 부르면 합의로 안 잡힌다. 항·호 번호로만 맞춘다.
+      // 같은 항 안의 문(文)이 합쳐지지만, 그러면 차단 쪽으로 기울어 안전하다.
+      const norm = (w: string) => {
+        const t = String(w || "");
+        const hang = (t.match(/(\d+)\s*항/) || [])[1] || "";
+        const ho = (t.match(/(\d+)\s*호/) || [])[1] || "";
+        const mok = (t.match(/([가-하])\s*목/) || [])[1] || "";
+        const dan = /단서/.test(t) ? "단서" : "";
+        return hang || ho || mok || dan ? `${hang}항${ho}호${mok}목${dan}` : t.replace(/\s+/g, "");
+      };
+      const seen = new Map<string, { hits: number; item: any }>();
+      for (const list of passes) for (const x of list) {
+        const key = norm(x.where);
+        const cur = seen.get(key);
+        if (cur) { cur.hits++; if (x.severity === "ERROR") cur.item.severity = "ERROR"; }
+        else seen.set(key, { hits: 1, item: { ...x } });
+      }
+      for (const { hits, item } of seen.values()) {
+        const agreed = hits >= PASSES;
+        findings.push({ law: `${c.law} 제${c.no}조`, ...item, severity: agreed ? item.severity : "WARN", agreed });
       }
     } catch (e: any) {
       console.error(`   ⚠ ${c.law} 제${c.no}조 판정 실패: ${String(e.message).slice(0, 120)}`);
@@ -155,7 +178,7 @@ for (const slug of slugs) {
   const head = `${errs.length ? "❌" : warns.length ? "⚠️" : "✅"} ${slug} — 인용 조문 ${cited.length}개 중 ${checked}개 대조, 항·호 ${enumerated}개 확인${noText ? ` (원문 없는 조문 ${noText}개)` : ""}`;
   console.log(head);
   for (const f of findings) {
-    console.log(`   ${f.severity === "ERROR" ? "🔴" : "🟡"} [${f.law} ${f.where}]`);
+    console.log(`   ${f.severity === "ERROR" ? "🔴" : "🟡"} [${f.law} ${f.where}]${f.agreed === false ? " (두 번 중 한 번만 지적 — 사람이 확인)" : ""}`);
     console.log(`      "${String(f.text).slice(0, 140)}"`);
     console.log(`      ${f.why}`);
   }
