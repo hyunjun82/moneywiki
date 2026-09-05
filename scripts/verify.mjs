@@ -47,12 +47,26 @@ let dev = null;
 async function startDev(firstUrl) {
   if (await ping(`http://localhost:${PORT}/`)) { console.log(`dev 서버가 이미 ${PORT} 에 있음 — 그대로 씁니다`); return; }
   console.log(`\n▶ dev 서버 기동 (포트 ${PORT})`);
+  // 응답은 못 하는데 포트만 잡고 있는 좀비가 남아 있으면 EADDRINUSE 로 죽는다(실제로 겪음).
+  // ping 이 실패한 시점이므로 정상 서버가 아니다 — 정리하고 띄운다.
+  freePort();
   dev = spawn("npx", ["next", "dev", "--webpack", "-p", String(PORT)], { stdio: ["ignore", "pipe", "pipe"], shell: isWin, env: { ...process.env, BROWSERSLIST_IGNORE_OLD_DATA: "1" } });
   dev.stdout.on("data", (d) => { const s = d.toString(); if (/error/i.test(s)) process.stdout.write(s); });
   dev.stderr.on("data", (d) => process.stderr.write(d));
+  let portTaken = false;
+  dev.stderr.on("data", (d) => { if (/EADDRINUSE/.test(d.toString())) portTaken = true; });
   const deadline = Date.now() + 300000; // 옛 페이지 1,500개라 첫 컴파일이 느리다
   while (Date.now() < deadline) {
     if (await ping(firstUrl)) return;
+    if (portTaken) {
+      console.log("  포트가 잡혀 있어 정리하고 한 번 더 띄웁니다");
+      stopDev();
+      freePort();
+      portTaken = false;
+      dev = spawn("npx", ["next", "dev", "--webpack", "-p", String(PORT)], { stdio: ["ignore", "pipe", "pipe"], shell: isWin, env: { ...process.env, BROWSERSLIST_IGNORE_OLD_DATA: "1" } });
+      dev.stdout.on("data", (d) => { const t = d.toString(); if (/error/i.test(t)) process.stdout.write(t); });
+      dev.stderr.on("data", (d) => process.stderr.write(d));
+    }
     await new Promise((r) => setTimeout(r, 1500));
   }
   throw new Error("dev 서버가 300초 안에 뜨지 않았습니다");
