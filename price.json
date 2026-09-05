@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T21:08:04.279+09:00",
+  "updatedAt": "2026-09-06T07:02:20.327+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -10,7 +10,7 @@
   "retail": {
     "source": "종로금거래소",
     "sourceUrl": "https://www.jongrogx.com/",
-    "quoteDate": "2026-09-05",
+    "quoteDate": "2026-09-06",
     "unit": "원/돈",
     "note": "내가 살 때 가격은 원문에 부가세 별도로 표기되어 있습니다.",
     "items": [
@@ -92,13 +92,6 @@
       "changePct": 1.77
     },
     "history": [
-      {
-        "date": "2026-01-28",
-        "krwPerGram": 251640,
-        "krwPerDon": 943650,
-        "change": 7990,
-        "changePct": 3.28
-      },
       {
         "date": "2026-01-29",
         "krwPerGram": 269810,
@@ -1122,7 +1115,7 @@
         "changePct": 1.77
       }
     ],
-    "fetchedDate": "2026-09-05"
+    "fetchedDate": "2026-09-06"
   },
   "fx": {
     "usdkrw": 1351.1,
