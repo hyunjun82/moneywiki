@@ -4686,7 +4686,7 @@ export const 고용: ArticleCategory = {
         { question: "180일 어떻게 세나요", slug: "실업급여-180일" },
         { question: "실업급여 얼마 받나요", slug: "실업급여-금액" },
         { question: "임금체불로 그만두면 실업급여 되나요", slug: "실업급여-임금체불" },
-        { question: "1년 미만 퇴직금 받을 수 있나요", slug: "1년-미만-퇴직금" },
+        { question: "1년 미만 퇴직금 받을 수 있나요", slug: "1년-미만-퇴직금-지급-규정-조건-기준" },
       ],
     },
     {
