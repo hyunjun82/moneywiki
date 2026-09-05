@@ -1,128 +1,176 @@
 {
   "slug": "실업급여-구직활동",
-  "verifiedAt": "2026-09-04",
+  "verifiedAt": "2026-09-05",
   "collectedBy": "scripts/collect-evidence.mjs (playwright)",
   "sources": [
     {
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제42조",
-      "org": "법제처 (고용보험법 제42조)"
-    },
-    {
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제43조",
-      "org": "법제처 (고용보험법 제43조)"
-    },
-    {
       "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제44조",
       "org": "법제처 (고용보험법 제44조)"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제40조",
+      "org": "법제처 (고용보험법 제40조)"
     },
     {
       "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제47조",
       "org": "법제처 (고용보험법 제47조)"
     },
     {
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제60조",
+      "org": "법제처 (고용보험법 제60조)"
+    },
+    {
       "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제61조",
       "org": "법제처 (고용보험법 제61조)"
     },
     {
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%20%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/제87조",
-      "org": "법제처 (고용보험법 시행규칙 제87조)"
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/제87조",
+      "org": "법제처 (고용보험법시행규칙 제87조)"
     },
     {
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처"
-    },
-    {
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%20%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/제92조",
-      "org": "법제처 (고용보험법 시행규칙 제92조)"
-    },
-    {
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
       "org": "고용24"
     }
   ],
   "facts": [
     {
-      "value": "제42조",
-      "quote": "제42조(실업의 신고) ①구직급여를 지급받으려는 사람은 이직 후 지체없이 직업안정기관에 출석하여 실업을 신고하여야 한다.",
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제42조",
-      "org": "법제처 (고용보험법 제42조)",
-      "screenshot": "evidence-실업급여-구직활동-1.png"
-    },
-    {
-      "value": "제3조",
-      "quote": "제3조제1호의 재난으로 출석하기 어려운 경우 등 고용노동부령으로 정하는 사유가 있는 경우에는 「고용정책 기본법」",
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제42조",
-      "org": "법제처 (고용보험법 제42조)",
-      "screenshot": "evidence-실업급여-구직활동-1.png"
-    },
-    {
-      "value": "제15조",
-      "quote": "제15조의2에 따른 고용정보시스템을 통하여 신고할 수 있다.",
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제42조",
-      "org": "법제처 (고용보험법 제42조)",
-      "screenshot": "evidence-실업급여-구직활동-1.png"
-    },
-    {
-      "value": "제43조",
-      "quote": "②제1항에 따른 실업의 신고에는 구직 신청과 제43조에 따른 수급자격의 인정신청을 포함하여야 한다.",
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제42조",
-      "org": "법제처 (고용보험법 제42조)",
-      "screenshot": "evidence-실업급여-구직활동-1.png"
-    },
-    {
-      "value": "1일",
-      "quote": "③ 제1항에 따라 구직급여를 지급받기 위하여 실업을 신고하려는 사람은 이직하기 전 사업의 사업주에게 피보험 단위기간, 이직 전 1일 소정근로시간 등을 확인할 수 있는 자료(이하 “이직확인서”라 한다)의 발급을 요청할 수 있다.",
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제42조",
-      "org": "법제처 (고용보험법 제42조)",
-      "screenshot": "evidence-실업급여-구직활동-1.png"
-    },
-    {
-      "value": "제43조 / 제40조",
-      "quote": "제43조(수급자격의 인정) ①구직급여를 지급받으려는 사람은 직업안정기관의 장에게 제40조제1항제1호부터 제3호까지ㆍ제5호 및 제6호에 따른 구직급여의 수급 요건을 갖추었다는 사실(이하 “수급자격”이라 한다)을 인정하여 줄 것을 신청하여야 한다.",
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제43조",
-      "org": "법제처 (고용보험법 제43조)",
-      "screenshot": "evidence-실업급여-구직활동-2.png"
-    },
-    {
-      "value": "1개월",
-      "quote": "다만, 마지막 이직 당시 일용근로자로서 피보험 단위기간이 1개월 미만인 사람이 수급자격을 갖추지 못한 경우에는 일용근로자가 아닌 근로자로서 마지막으로 이직한 사업을 기준으로 결정한다.",
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제43조",
-      "org": "법제처 (고용보험법 제43조)",
-      "screenshot": "evidence-실업급여-구직활동-2.png"
-    },
-    {
-      "value": "제48조 / 제54조",
-      "quote": "⑤제2항에 따라 수급자격의 인정을 받은 사람(이하 “수급자격자”라 한다)이 제48조 및 제54조제1항에 따른 기간에 새로 수급자격의 인정을 받은 경우에는 새로 인정받은 수급자격을 기준으로 구직급여를 지급한다.",
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제43조",
-      "org": "법제처 (고용보험법 제43조)",
-      "screenshot": "evidence-실업급여-구직활동-2.png"
-    },
-    {
       "value": "제44조",
       "quote": "제44조(실업의 인정) ①구직급여는 수급자격자가 실업한 상태에 있는 날 중에서 직업안정기관의 장으로부터 실업의 인정을 받은 날에 대하여 지급한다.",
       "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제44조",
       "org": "법제처 (고용보험법 제44조)",
-      "screenshot": "evidence-실업급여-구직활동-3.png"
+      "screenshot": "evidence-실업급여-구직활동-1.png"
     },
     {
       "value": "제42조 / 1주 / 4주",
       "quote": "②실업의 인정을 받으려는 수급자격자는 제42조에 따라 실업의 신고를 한 날부터 계산하기 시작하여 1주부터 4주의 범위에서 직업안정기관의 장이 지정한 날(이하 “실업인정일”이라 한다)에 출석하여 재취업을 위한 노력을 하였음을 신고하여야 하고, 직업안정기관의 장은 직전 실업인정일의 다음 날부터 그 실업인정일까지의 각각의 날에 대하여 실업의 인정을 한다.",
       "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제44조",
       "org": "법제처 (고용보험법 제44조)",
-      "screenshot": "evidence-실업급여-구직활동-3.png"
+      "screenshot": "evidence-실업급여-구직활동-1.png"
     },
     {
       "value": "7일",
       "quote": "질병이나 부상으로 직업안정기관에 출석할 수 없었던 경우로서 그 기간이 계속하여 7일 미만인 경우",
       "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제44조",
       "org": "법제처 (고용보험법 제44조)",
-      "screenshot": "evidence-실업급여-구직활동-3.png"
+      "screenshot": "evidence-실업급여-구직활동-1.png"
+    },
+    {
+      "value": "제40조",
+      "quote": "제40조(구직급여의 수급 요건) ①구직급여는 이직한 근로자인 피보험자가 다음 각 호의 요건을 모두 갖춘 경우에 지급한다.",
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제40조",
+      "org": "법제처 (고용보험법 제40조)",
+      "screenshot": "evidence-실업급여-구직활동-2.png"
+    },
+    {
+      "value": "제41조",
+      "quote": "제2항에 따른 기준기간(이하 “기준기간”이라 한다) 동안의 피보험 단위기간(제41조에 따른 피보험 단위기간을 말한다.",
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제40조",
+      "org": "법제처 (고용보험법 제40조)",
+      "screenshot": "evidence-실업급여-구직활동-2.png"
+    },
+    {
+      "value": "180일",
+      "quote": "이하 같다)이 합산하여 180일 이상일 것",
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제40조",
+      "org": "법제처 (고용보험법 제40조)",
+      "screenshot": "evidence-실업급여-구직활동-2.png"
+    },
+    {
+      "value": "제58조",
+      "quote": "이직사유가 제58조에 따른 수급자격의 제한 사유에 해당하지 아니할 것",
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제40조",
+      "org": "법제처 (고용보험법 제40조)",
+      "screenshot": "evidence-실업급여-구직활동-2.png"
+    },
+    {
+      "value": "제43조 / 3분",
+      "quote": "제43조에 따른 수급자격 인정신청일이 속한 달의 직전 달 초일부터 수급자격 인정신청일까지의 근로일 수의 합이 같은 기간 동안의 총 일수의 3분의 1 미만일 것",
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제40조",
+      "org": "법제처 (고용보험법 제40조)",
+      "screenshot": "evidence-실업급여-구직활동-2.png"
+    },
+    {
+      "value": "제22조",
+      "quote": "제22조제1항에 따라 국가데이터처장이 고시하는 한국표준산업분류의 대분류상 건설업에 종사한 사람을 말한다.",
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제40조",
+      "org": "법제처 (고용보험법 제40조)",
+      "screenshot": "evidence-실업급여-구직활동-2.png"
+    },
+    {
+      "value": "14일",
+      "quote": "이하 같다)로서 수급자격 인정신청일 이전 14일간 연속하여 근로내역이 없을 것",
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제40조",
+      "org": "법제처 (고용보험법 제40조)",
+      "screenshot": "evidence-실업급여-구직활동-2.png"
+    },
+    {
+      "value": "제58조 / 90일",
+      "quote": "최종 이직 당시의 기준기간 동안의 피보험 단위기간 중 다른 사업에서 제58조에 따른 수급자격의 제한 사유에 해당하는 사유로 이직한 사실이 있는 경우에는 그 피보험 단위기간 중 90일 이상을 일용근로자로 근로하였을 것",
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제40조",
+      "org": "법제처 (고용보험법 제40조)",
+      "screenshot": "evidence-실업급여-구직활동-2.png"
+    },
+    {
+      "value": "18개월",
+      "quote": "② 기준기간은 이직일 이전 18개월로 하되, 근로자인 피보험자가 다음 각 호의 어느 하나에 해당하는 경우에는 다음 각 호의 구분에 따른 기간을 기준기간으로 한다.",
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제40조",
+      "org": "법제처 (고용보험법 제40조)",
+      "screenshot": "evidence-실업급여-구직활동-2.png"
+    },
+    {
+      "value": "18개월 / 30일 / 18개월 / 3년 / 3년",
+      "quote": "이직일 이전 18개월 동안에 질병ㆍ부상, 그 밖에 대통령령으로 정하는 사유로 계속하여 30일 이상 보수의 지급을 받을 수 없었던 경우: 18개월에 그 사유로 보수를 지급 받을 수 없었던 일수를 가산한 기간(3년을 초과할 때에는 3년으로 한다)",
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제40조",
+      "org": "법제처 (고용보험법 제40조)",
+      "screenshot": "evidence-실업급여-구직활동-2.png"
+    },
+    {
+      "value": "24개월",
+      "quote": "다음 각 목의 요건에 모두 해당하는 경우: 이직일 이전 24개월",
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제40조",
+      "org": "법제처 (고용보험법 제40조)",
+      "screenshot": "evidence-실업급여-구직활동-2.png"
+    },
+    {
+      "value": "1주 / 15시간 / 1주 / 2일",
+      "quote": "이직 당시 1주 소정근로시간이 15시간 미만이고, 1주 소정근로일수가 2일 이하인 근로자로 근로하였을 것",
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제40조",
+      "org": "법제처 (고용보험법 제40조)",
+      "screenshot": "evidence-실업급여-구직활동-2.png"
+    },
+    {
+      "value": "24개월 / 90일",
+      "quote": "이직일 이전 24개월 동안의 피보험 단위기간 중 90일 이상을 가목의 요건에 해당하는 근로자로 근로하였을 것",
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제40조",
+      "org": "법제처 (고용보험법 제40조)",
+      "screenshot": "evidence-실업급여-구직활동-2.png"
     },
     {
       "value": "제47조",
       "quote": "제47조(실업인정대상기간 중의 취업 등의 신고) ①수급자격자는 실업의 인정을 받으려 하는 기간(이하 “실업인정대상기간”이라 한다) 중에 고용노동부령으로 정하는 기준에 해당하는 취업을 한 경우에는 그 사실을 직업안정기관의 장에게 신고하여야 한다.",
       "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제47조",
       "org": "법제처 (고용보험법 제47조)",
+      "screenshot": "evidence-실업급여-구직활동-3.png"
+    },
+    {
+      "value": "제60조",
+      "quote": "제60조(훈련 거부 등에 따른 급여의 지급 제한) ①수급자격자가 직업안정기관의 장이 소개하는 직업에 취직하는 것을 거부하거나 직업안정기관의 장이 지시한 직업능력개발 훈련 등을 거부하면 대통령령으로 정하는 바에 따라 구직급여의 지급을 정지한다.",
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제60조",
+      "org": "법제처 (고용보험법 제60조)",
+      "screenshot": "evidence-실업급여-구직활동-4.png"
+    },
+    {
+      "value": "100분",
+      "quote": "소개된 직업의 임금 수준이 같은 지역의 같은 종류의 업무 또는 같은 정도의 기능에 대한 통상의 임금 수준에 비하여 100분의 20 이상 낮은 경우 등 고용노동부장관이 정하는 기준에 해당하는 경우",
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제60조",
+      "org": "법제처 (고용보험법 제60조)",
+      "screenshot": "evidence-실업급여-구직활동-4.png"
+    },
+    {
+      "value": "1개월",
+      "quote": "④제1항과 제2항에 따라 구직급여의 지급을 정지하는 기간은 1개월의 범위에서 고용노동부장관이 정하여 고시한다.",
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제60조",
+      "org": "법제처 (고용보험법 제60조)",
       "screenshot": "evidence-실업급여-구직활동-4.png"
     },
     {
@@ -170,394 +218,170 @@
     {
       "value": "제87조 / 제63조",
       "quote": "제87조(재취업활동의 인정기준) ① 영 제63조제3항에 따라 다음 각 호의 어느 하나에 해당하는 경우에 적극적인 재취업활동을 한 것으로 본다.",
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%20%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/제87조",
-      "org": "법제처 (고용보험법 시행규칙 제87조)",
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/제87조",
+      "org": "법제처 (고용보험법시행규칙 제87조)",
       "screenshot": "evidence-실업급여-구직활동-6.png"
     },
     {
       "value": "30일",
       "quote": "해당 실업인정일부터 30일 이내에 취업하기로 확정된 경우",
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%20%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/제87조",
-      "org": "법제처 (고용보험법 시행규칙 제87조)",
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/제87조",
+      "org": "법제처 (고용보험법시행규칙 제87조)",
       "screenshot": "evidence-실업급여-구직활동-6.png"
     },
     {
       "value": "제52조",
       "quote": "제52조에 따른 휴업급여의 지급 대상이 되는 경우",
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%20%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/제87조",
-      "org": "법제처 (고용보험법 시행규칙 제87조)",
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/제87조",
+      "org": "법제처 (고용보험법시행규칙 제87조)",
       "screenshot": "evidence-실업급여-구직활동-6.png"
-    },
-    {
-      "value": "2026년 / 08월 20일",
-      "quote": "고용보험법 2026년 08월 20일 시행(개정 사항을 검토하여 향후 업데이트 예정입니다.)",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "1주 / 4주",
-      "quote": "실업의 인정을 받으려는 수급자격자는 실업의 신고를 한 날부터 계산하기 시작하여 1주부터 4주까지의 범위에서 고용센터의 장이 지정한 날(이하 “실업인정일”이라 함)에 출석하여 재취업을 위한 노력을 하였음을 신고해야 합니다(「고용보험법」",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "제12조",
-      "quote": "제12조제2항에서 확인할 수 있습니다.",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "제63조",
-      "quote": "제63조제1항, 「고용보험법 시행규칙」",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "제84조",
-      "quote": "제84조제1호 및 별지 제82호서식).",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "제12조",
-      "quote": "제12조의2제1항에 따라 고용센터의 장에게 구직급여를 받는 기간을 국민연금 가입기간으로 추가 산입하여 줄 것을 신청하려는 사람은 실업의 인정 신청을 할 때 실업인정(국민연금 가입기간 추가 산입) 신청서로 함께 신청해야 합니다(「고용보험법 시행규칙」",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "제107조 / 제107조",
-      "quote": "제107조의2제1항, 제107조의2제2항 및 별지 제82호서식).",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "제47조",
-      "quote": "제47조제1항, 「고용보험법 시행령」",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "제69조",
-      "quote": "제69조제1항 및 「고용보험법 시행규칙」",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "1개월 / 60시간 / 1주 / 15시간",
-      "quote": "1개월간의 소정근로시간을 60시간 이상(1주간의 소정근로시간을 15시간 이상으로 정하는 경우를 포함)으로 정하고 근로를 제공하는 경우",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "3개월",
-      "quote": "3개월 이상 계속하여 근로를 제공하는 경우",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "제46조",
-      "quote": "근로 제공의 대가로 임금 등 어떠한 명칭으로든지 구직급여일액(「고용보험법」제46조) 이상을 수령하는 경우",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "50만원",
-      "quote": "문화예술용역 관련 계약으로서 월평균소득이 50만원 이상인 문화예술용역 관련 계약을 새로 체결하여 노무를 제공하는 경우",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "80만원",
-      "quote": "노무제공계약으로서 월보수액이 80만원 이상인 노무제공계약을 새로 체결하여 노무를 제공하는 경우",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "제63조",
-      "quote": "제63조제3항, 「고용보험법 시행규칙」",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "제87조",
-      "quote": "제87조제1항 본문, 「실업인정 및 재취업지원규정」",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "제10조 / 제18조",
-      "quote": "제10조제2항·제3항·제4항 및 제18조제3항).",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "제24조",
-      "quote": "제24조에 따라 고용노동부장관의 인정을 받은 훈련과정을 수강하는 경우",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "30일",
-      "quote": "해당 실업인정일부터 30일 이내에 취업하기로 확정된 경우",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "2회 / 8시간 / 1회",
-      "quote": "2) 고용센터에서 실시하는 성취프로그램 등 직업지도 및 재취업지원 프로그램(이하 \"직업지도등\"이라 함) 참여 지시에 응한 경우에는 2회의 재취업활동을 한 것으로 봄(다만, 8시간 미만의 직업지도등에 참여한 경우에는 1회의 재취업활동을 한것으로 봄)",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "제92조 / 1일 / 2주",
-      "quote": "제92조제3호에 따라 근로를 제공하는 경우(다만, 1일 근로제공은 최대 2주간의 구직활동을 한 것으로 봄)",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "4주",
-      "quote": "해당 훈련기관에서 발행한 수강증명서를 4주에 한번 제출",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "제87조",
-      "quote": "제87조제2항 및 「실업인정 및 재취업지원규정」",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "1회",
-      "quote": "5) 「방문판매 등에 관한 법률」에 따른 사업이나 사업을 수행하는 자를 위한 훈련·교육 및 보험대리점 개설이나 보험모집인(생활설계사 등)을 위한 훈련·교육을 수강하는 외에는 별도의 자영업 준비활동을 하지 않는 경우(다만, 수급기간 중 1회의 훈련·교육은 그 기간을 재취업활동을 한 것으로 봄)",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "제15조 / 4회 / 120일 / 6회 / 150일",
-      "quote": "제15조에 따른 워크넷을 통한 이메일 입사지원(고용센터의 지시에 따라 입사지원하는 경우 제외)을 4회(소정급여일수 120일 이하 수급자) 또는 6회(소정급여일수 150일 이상 수급자) 이상 하는 경우",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "2026년 / 8월 15일",
-      "quote": "이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png"
-    },
-    {
-      "value": "제92조 / 제47조",
-      "quote": "제92조(취업의 인정기준) 법 제47조에 따라 수급자격자가 다음 각 호의 어느 하나에 해당하는 경우에는 취업한 것으로 본다.",
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%20%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/제92조",
-      "org": "법제처 (고용보험법 시행규칙 제92조)",
-      "screenshot": "evidence-실업급여-구직활동-8.png"
-    },
-    {
-      "value": "1개월 / 60시간 / 1주 / 15시간",
-      "quote": "1개월간의 소정근로시간을 60시간 이상(1주간의 소정근로시간을 15시간 이상으로 정하는 경우를 포함한다)으로 정하고 근로를 제공하는 경우",
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%20%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/제92조",
-      "org": "법제처 (고용보험법 시행규칙 제92조)",
-      "screenshot": "evidence-실업급여-구직활동-8.png"
-    },
-    {
-      "value": "3개월",
-      "quote": "3개월 이상 계속하여 근로를 제공하는 경우",
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%20%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/제92조",
-      "org": "법제처 (고용보험법 시행규칙 제92조)",
-      "screenshot": "evidence-실업급여-구직활동-8.png"
-    },
-    {
-      "value": "제46조",
-      "quote": "근로 제공의 대가로 임금 등 어떠한 명칭으로든지 법 제46조에 따른 구직급여일액 이상을 수령하는 경우",
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%20%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/제92조",
-      "org": "법제처 (고용보험법 시행규칙 제92조)",
-      "screenshot": "evidence-실업급여-구직활동-8.png"
-    },
-    {
-      "value": "제104조 / 50만원",
-      "quote": "문화예술용역 관련 계약으로서 영 제104조의5제2항제1호에 따른 월평균소득이 50만원 이상인 문화예술용역 관련 계약을 새로 체결하여 노무를 제공하는 경우",
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%20%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/제92조",
-      "org": "법제처 (고용보험법 시행규칙 제92조)",
-      "screenshot": "evidence-실업급여-구직활동-8.png"
-    },
-    {
-      "value": "제104조 / 80만원",
-      "quote": "노무제공계약으로서 영 제104조의11제2항제1호에 따른 월보수액이 80만원 이상인 노무제공계약을 새로 체결하여 노무를 제공하는 경우",
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%20%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/제92조",
-      "org": "법제처 (고용보험법 시행규칙 제92조)",
-      "screenshot": "evidence-실업급여-구직활동-8.png"
     },
     {
       "value": "2026년 / 9월12일",
       "quote": "시스템 개선 작업에 따른 서비스 중단 안내 (2026년 9월12일(토) 00:00~18:00)",
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
       "org": "고용24",
-      "screenshot": "evidence-실업급여-구직활동-9.png"
+      "screenshot": "evidence-실업급여-구직활동-7.png"
     },
     {
       "value": "15일",
       "quote": "사업주는 원칙적으로는 신고 사유가 발생한 날이 속하는 다음 달 15일까지 신고해야 하나, 근로자가 그 기일 이전에 신고할 것을 요구하는 경우에는 지체 없이 신고해야 합니다.",
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
       "org": "고용24",
-      "screenshot": "evidence-실업급여-구직활동-9.png"
+      "screenshot": "evidence-실업급여-구직활동-7.png"
     },
     {
       "value": "1일",
       "quote": "‘이직확인서’는 퇴직 사유, 고용보험 가입기간, 평균임금, 1일 소정 근로시간 등을 확인하는 서류로, 사업주가 고용센터에 제출합니다.",
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
       "org": "고용24",
-      "screenshot": "evidence-실업급여-구직활동-9.png"
+      "screenshot": "evidence-실업급여-구직활동-7.png"
     },
     {
       "value": "10일",
       "quote": "사업주는 근로자의 이직확인서 발급 요청에 따라 10일 이내에 이직확인서를 발급해주어야 합니다.",
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
       "org": "고용24",
-      "screenshot": "evidence-실업급여-구직활동-9.png"
+      "screenshot": "evidence-실업급여-구직활동-7.png"
     },
     {
       "value": "180일 / 65세",
       "quote": "①상실신고서와 이직확인서가 모두 처리된 사람, ②피보험단위기간이 180일 이상이며, 비자발적 이직한 사람(상실코드가 22, 23, 31, 32), ③ 이직일 기준 만 65세 미만인 사람에 해당하여야 합니다.",
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
       "org": "고용24",
-      "screenshot": "evidence-실업급여-구직활동-9.png"
+      "screenshot": "evidence-실업급여-구직활동-7.png"
     },
     {
       "value": "4주",
       "quote": "1~4주마다 아직 취업하지 못한 상태인지, 취업하기 위한 활동을 하고 있는지 고용센터에 인정받아야 하며, 이를 ‘실업 인정’이라고 합니다.",
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
       "org": "고용24",
-      "screenshot": "evidence-실업급여-구직활동-9.png"
+      "screenshot": "evidence-실업급여-구직활동-7.png"
     },
     {
       "value": "2회",
       "quote": "허위 구직활동일 경우 해당 실업인정 대상기간에 한해 부지급 조치, 2회 이상 적발 시 전체 수급 기간에 대해 지급정지를 합니다.",
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
       "org": "고용24",
-      "screenshot": "evidence-실업급여-구직활동-9.png"
+      "screenshot": "evidence-실업급여-구직활동-7.png"
     },
     {
       "value": "1회 / 2회",
       "quote": "형식적 구직활동일 경우 1회 적발 시 사전고지, 2회 적발 시 해당 실업인정 대상기간에 한해 부지급 조치를 합니다.",
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
       "org": "고용24",
-      "screenshot": "evidence-실업급여-구직활동-9.png"
+      "screenshot": "evidence-실업급여-구직활동-7.png"
     },
     {
       "value": "120일 / 270일 / 1년",
       "quote": "재취업을 하지 못한채 지급기간(120일~270일)이 종료되거나, 마지막 근무일의 다음날부터 1년이 지나면 실업급여 지급이 종료됩니다.",
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
       "org": "고용24",
-      "screenshot": "evidence-실업급여-구직활동-9.png"
+      "screenshot": "evidence-실업급여-구직활동-7.png"
     },
     {
       "value": "2개월",
       "quote": "☞ 취업 또는 사업을 시작한 수급자는 근로계약서나 재직증명서 등 취업일이 확인되는 자료를 첨부하여 취업한 날로부터 2개월 이내에 취업사실을 신고해야 하며, 취업 전날까지의 구직급여를 받을 수 있습니다.[바로가기]",
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
       "org": "고용24",
-      "screenshot": "evidence-실업급여-구직활동-9.png"
+      "screenshot": "evidence-실업급여-구직활동-7.png"
     },
     {
       "value": "3회 / 1억 / 4천만원 / 2개월",
       "quote": "고용센터의 직업소개 또는 집단상담·취업상담에 3회 이상 응하였으나 취업하지 못한 자가 본인 및 배우자 재산 합계액이 1억 4천만원 이하 등 일정한 요건을 충족하는 경우에만 지급 대상이므로 수급기간 만료 최소 2개월 전부터 실업인정 담당자와 상의하여 주시기 바랍니다.",
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
       "org": "고용24",
-      "screenshot": "evidence-실업급여-구직활동-9.png"
+      "screenshot": "evidence-실업급여-구직활동-7.png"
     },
     {
       "value": "1년 / 300만원",
       "quote": "실업급여 신청 시 작성 내용이 사실과 다를 경우 부정수급에 해당되어 추가징수 등 불이익이 발생할 수 있고, 고용보험법에 따라 형사처벌을(1년 이하의 징역 또는 300만원 이하의 벌금형) 받을 수 있습니다.",
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
       "org": "고용24",
-      "screenshot": "evidence-실업급여-구직활동-9.png"
+      "screenshot": "evidence-실업급여-구직활동-7.png"
     },
     {
       "value": "6개월",
       "quote": "1유형은 실업급여 수급이 종료된 이후 6개월이 지난 이후에 참여할 수 있게 됩니다.",
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
       "org": "고용24",
-      "screenshot": "evidence-실업급여-구직활동-9.png"
+      "screenshot": "evidence-실업급여-구직활동-7.png"
     },
     {
       "value": "90일",
       "quote": "신중년 경력형 일자리 참여 종료 후 실업급여를 수급했다면, 실업급여 수급 종료 후 90일이 지난 이후에 신중년 경력형 일자리 사업에 다시 참여하실 수 있습니다.",
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
       "org": "고용24",
-      "screenshot": "evidence-실업급여-구직활동-9.png"
+      "screenshot": "evidence-실업급여-구직활동-7.png"
     },
     {
       "value": "90일",
       "quote": "실업급여 수급자격 신청 결과, 실업 인정 신청 결과에 이의가 있는 경우, 결정서/통지서를 받은날로부터 90일 안에 고용보험 심사 청구 또는 재심사 청구를 하실 수 있습니다.",
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
       "org": "고용24",
-      "screenshot": "evidence-실업급여-구직활동-9.png"
+      "screenshot": "evidence-실업급여-구직활동-7.png"
     },
     {
       "value": "3년",
       "quote": "그러나 보험 가입자격 상실 이후 공백이 3년 이상인 경우에는 그 이전의 고용보험 가입 기간은 합산되지 않으며, 또한 구직급여를 받은 적이 있는 경우에는 그 이전의 고용보험 기간은 합산에서 제외됩니다.",
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
       "org": "고용24",
-      "screenshot": "evidence-실업급여-구직활동-9.png"
+      "screenshot": "evidence-실업급여-구직활동-7.png"
     },
     {
       "value": "1년",
       "quote": "◼ 일을 그만두고 1년이 지났는데, 지금 구직급여를 신청하면 받을 수 있나요?",
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
       "org": "고용24",
-      "screenshot": "evidence-실업급여-구직활동-9.png"
+      "screenshot": "evidence-실업급여-구직활동-7.png"
     },
     {
       "value": "1년",
       "quote": "구직급여는 수급자격 인정 신청을 언제 했느냐에 관계없이 마지막 근무일 다음 날부터 시작하여 1년 이내에만 수급이 가능합니다.",
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
       "org": "고용24",
-      "screenshot": "evidence-실업급여-구직활동-9.png"
+      "screenshot": "evidence-실업급여-구직활동-7.png"
     },
     {
       "value": "1년",
       "quote": "1년이 도과한 경우에는 정해진 지급일수와 관계없이 더 이상 구직급여를 받을 수 없으니 유의하시기 바랍니다.",
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
       "org": "고용24",
-      "screenshot": "evidence-실업급여-구직활동-9.png"
+      "screenshot": "evidence-실업급여-구직활동-7.png"
     },
     {
       "value": "4년",
       "quote": "구직급여는 재취업지원을 위해 지급하는 급여로 임신·출산·질병·부상 등으로 취업 활동이 어려운 경우에는 4년의 범위 내에서 그 기간만큼 수급기간을 연장하여 수급자격자가 불이익을 받지 않도록 하고 있습니다.",
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
       "org": "고용24",
-      "screenshot": "evidence-실업급여-구직활동-9.png"
+      "screenshot": "evidence-실업급여-구직활동-7.png"
     },
     {
       "value": "2개월",
       "quote": "취업 또는 사업을 시작한 수급자는 근로계약서나 재직증명서 등 취업일이 확인되는 자료를 첨부하여 취업한 날로부터 2개월 이내에 취업사실을 신고해야 하며, 취업 전날까지의 구직급여를 받을 수 있습니다.[바로가기]",
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
       "org": "고용24",
-      "screenshot": "evidence-실업급여-구직활동-9.png"
+      "screenshot": "evidence-실업급여-구직활동-7.png"
     },
     {
       "value": "2026. 9. 18. / 제479호 / 2026. 8. 19.",
@@ -594,28 +418,28 @@
   ],
   "raws": [
     {
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제42조",
-      "org": "법제처 (고용보험법 제42조)",
-      "screenshot": "evidence-실업급여-구직활동-1.png",
-      "text": "제42조(실업의 신고) ①구직급여를 지급받으려는 사람은 이직 후 지체없이 직업안정기관에 출석하여 실업을 신고하여야 한다. 다만, 「재난 및 안전관리 기본법」 제3조제1호의 재난으로 출석하기 어려운 경우 등 고용노동부령으로 정하는 사유가 있는 경우에는 「고용정책 기본법」 제15조의2에 따른 고용정보시스템을 통하여 신고할 수 있다.  <개정 2020. 5. 26., 2022. 12. 31.>\n\n②제1항에 따른 실업의 신고에는 구직 신청과 제43조에 따른 수급자격의 인정신청을 포함하여야 한다.\n\n③ 제1항에 따라 구직급여를 지급받기 위하여 실업을 신고하려는 사람은 이직하기 전 사업의 사업주에게 피보험 단위기간, 이직 전 1일 소정근로시간 등을 확인할 수 있는 자료(이하 “이직확인서”라 한다)의 발급을 요청할 수 있다. 이 경우 요청을 받은 사업주는 고용노동부령으로 정하는 바에 따라 이직확인서를 발급하여 주어야 한다.  <신설 2019. 8. 27.>"
-    },
-    {
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제43조",
-      "org": "법제처 (고용보험법 제43조)",
-      "screenshot": "evidence-실업급여-구직활동-2.png",
-      "text": "제43조(수급자격의 인정) ①구직급여를 지급받으려는 사람은 직업안정기관의 장에게 제40조제1항제1호부터 제3호까지ㆍ제5호 및 제6호에 따른 구직급여의 수급 요건을 갖추었다는 사실(이하 “수급자격”이라 한다)을 인정하여 줄 것을 신청하여야 한다.  <개정 2019. 1. 15., 2020. 5. 26.>\n\n②직업안정기관의 장은 제1항에 따른 수급자격의 인정신청을 받으면 그 신청인에 대한 수급자격의 인정 여부를 결정하고, 대통령령으로 정하는 바에 따라 신청인에게 그 결과를 알려야 한다.\n\n③제2항에 따른 신청인이 다음 각 호의 요건을 모두 갖춘 경우에는 마지막에 이직한 사업을 기준으로 수급자격의 인정 여부를 결정한다. 다만, 마지막 이직 당시 일용근로자로서 피보험 단위기간이 1개월 미만인 사람이 수급자격을 갖추지 못한 경우에는 일용근로자가 아닌 근로자로서 마지막으로 이직한 사업을 기준으로 결정한다.  <개정 2008. 12. 31., 2020. 5. 26.>\n\n1. 피보험자로서 마지막에 이직한 사업에 고용되기 전에 피보험자로서 이직한 사실이 있을 것\n\n2. 마지막 이직 이전의 이직과 관련하여 구직급여를 받은 사실이 없을 것\n\n④ 직업안정기관의 장은 제2항 및 제3항에 따라 신청인에 대한 수급자격의 인정 여부를 결정하기 위하여 필요하면 신청인이 이직하기 전 사업의 사업주에게 고용노동부령으로 정하는 바에 따라 이직확인서의 제출을 요청할 수 있다. 이 경우 요청을 받은 사업주는 고용노동부령으로 정하는 바에 따라 이직확인서를 제출하여야 한다.  <신설 2019. 8. 27.>\n\n⑤제2항에 따라 수급자격의 인정을 받은 사람(이하 “수급자격자”라 한다)이 제48조 및 제54조제1항에 따른 기간에 새로 수급자격의 인정을 받은 경우에는 새로 인정받은 수급자격을 기준으로 구직급여를 지급한다.  <개정 2019. 8. 27., 2020. 5. 26.>"
-    },
-    {
       "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제44조",
       "org": "법제처 (고용보험법 제44조)",
-      "screenshot": "evidence-실업급여-구직활동-3.png",
+      "screenshot": "evidence-실업급여-구직활동-1.png",
       "text": "제44조(실업의 인정) ①구직급여는 수급자격자가 실업한 상태에 있는 날 중에서 직업안정기관의 장으로부터 실업의 인정을 받은 날에 대하여 지급한다.\n\n②실업의 인정을 받으려는 수급자격자는 제42조에 따라 실업의 신고를 한 날부터 계산하기 시작하여 1주부터 4주의 범위에서 직업안정기관의 장이 지정한 날(이하 “실업인정일”이라 한다)에 출석하여 재취업을 위한 노력을 하였음을 신고하여야 하고, 직업안정기관의 장은 직전 실업인정일의 다음 날부터 그 실업인정일까지의 각각의 날에 대하여 실업의 인정을 한다. 다만, 다음 각 호에 해당하는 사람에 대한 실업의 인정 방법은 고용노동부령으로 정하는 기준에 따른다.  <개정 2010. 6. 4., 2020. 5. 26.>\n\n1. 직업능력개발 훈련 등을 받는 수급자격자\n\n2. 천재지변, 대량 실업의 발생 등 대통령령으로 정하는 사유가 발생한 경우의 수급자격자\n\n3. 그 밖에 대통령령으로 정하는 수급자격자\n\n③제2항에도 불구하고 수급자격자가 다음 각 호의 어느 하나에 해당하면 직업안정기관에 출석할 수 없었던 사유를 적은 증명서를 제출하여 실업의 인정을 받을 수 있다.\n\n1. 질병이나 부상으로 직업안정기관에 출석할 수 없었던 경우로서 그 기간이 계속하여 7일 미만인 경우\n\n2. 직업안정기관의 직업소개에 따른 구인자와의 면접 등으로 직업안정기관에 출석할 수 없었던 경우\n\n3. 직업안정기관의 장이 지시한 직업능력개발 훈련 등을 받기 위하여 직업안정기관에 출석할 수 없었던 경우\n\n4. 천재지변이나 그 밖의 부득이한 사유로 직업안정기관에 출석할 수 없었던 경우\n\n④직업안정기관의 장은 제1항에 따른 실업을 인정할 때에는 수급자격자의 취업을 촉진하기 위하여 재취업 활동에 관한 계획의 수립 지원, 직업소개 등 대통령령으로 정하는 조치를 하여야 한다. 이 경우 수급자격자는 정당한 사유가 없으면 직업안정기관의 장의 조치에 따라야 한다."
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제40조",
+      "org": "법제처 (고용보험법 제40조)",
+      "screenshot": "evidence-실업급여-구직활동-2.png",
+      "text": "제40조(구직급여의 수급 요건) ①구직급여는 이직한 근로자인 피보험자가 다음 각 호의 요건을 모두 갖춘 경우에 지급한다. 다만, 제5호와 제6호는 최종 이직 당시 일용근로자였던 사람만 해당한다.  <개정 2019. 1. 15., 2019. 8. 27., 2020. 5. 26., 2021. 1. 5., 2022. 12. 31., 2025. 10. 1.>\n\n1. 제2항에 따른 기준기간(이하 “기준기간”이라 한다) 동안의 피보험 단위기간(제41조에 따른 피보험 단위기간을 말한다. 이하 같다)이 합산하여 180일 이상일 것\n\n2. 근로의 의사와 능력이 있음에도 불구하고 취업(영리를 목적으로 사업을 영위하는 경우를 포함한다. 이하 이 장 및 제5장에서 같다)하지 못한 상태에 있을 것\n\n3. 이직사유가 제58조에 따른 수급자격의 제한 사유에 해당하지 아니할 것\n\n4. 재취업을 위한 노력을 적극적으로 할 것\n\n5. 다음 각 목의 어느 하나에 해당할 것\n\n가. 제43조에 따른 수급자격 인정신청일이 속한 달의 직전 달 초일부터 수급자격 인정신청일까지의 근로일 수의 합이 같은 기간 동안의 총 일수의 3분의 1 미만일 것\n\n나. 건설일용근로자(일용근로자로서 이직 당시에 「통계법」 제22조제1항에 따라 국가데이터처장이 고시하는 한국표준산업분류의 대분류상 건설업에 종사한 사람을 말한다. 이하 같다)로서 수급자격 인정신청일 이전 14일간 연속하여 근로내역이 없을 것\n\n6. 최종 이직 당시의 기준기간 동안의 피보험 단위기간 중 다른 사업에서 제58조에 따른 수급자격의 제한 사유에 해당하는 사유로 이직한 사실이 있는 경우에는 그 피보험 단위기간 중 90일 이상을 일용근로자로 근로하였을 것\n\n② 기준기간은 이직일 이전 18개월로 하되, 근로자인 피보험자가 다음 각 호의 어느 하나에 해당하는 경우에는 다음 각 호의 구분에 따른 기간을 기준기간으로 한다.  <개정 2019. 8. 27., 2021. 1. 5.>\n\n1. 이직일 이전 18개월 동안에 질병ㆍ부상, 그 밖에 대통령령으로 정하는 사유로 계속하여 30일 이상 보수의 지급을 받을 수 없었던 경우: 18개월에 그 사유로 보수를 지급 받을 수 없었던 일수를 가산한 기간(3년을 초과할 때에는 3년으로 한다)\n\n2. 다음 각 목의 요건에 모두 해당하는 경우: 이직일 이전 24개월\n\n가. 이직 당시 1주 소정근로시간이 15시간 미만이고, 1주 소정근로일수가 2일 이하인 근로자로 근로하였을 것\n\n나. 이직일 이전 24개월 동안의 피보험 단위기간 중 90일 이상을 가목의 요건에 해당하는 근로자로 근로하였을 것"
     },
     {
       "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제47조",
       "org": "법제처 (고용보험법 제47조)",
-      "screenshot": "evidence-실업급여-구직활동-4.png",
+      "screenshot": "evidence-실업급여-구직활동-3.png",
       "text": "제47조(실업인정대상기간 중의 취업 등의 신고) ①수급자격자는 실업의 인정을 받으려 하는 기간(이하 “실업인정대상기간”이라 한다) 중에 고용노동부령으로 정하는 기준에 해당하는 취업을 한 경우에는 그 사실을 직업안정기관의 장에게 신고하여야 한다.  <개정 2011. 7. 21., 2019. 1. 15.>\n\n②직업안정기관의 장은 필요하다고 인정하면 수급자격자의 실업인정대상기간 중의 취업 사실에 대하여 조사할 수 있다.  <개정 2011. 7. 21., 2019. 1. 15.>\n\n[제목개정 2011. 7. 21., 2019. 1. 15.]"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제60조",
+      "org": "법제처 (고용보험법 제60조)",
+      "screenshot": "evidence-실업급여-구직활동-4.png",
+      "text": "제60조(훈련 거부 등에 따른 급여의 지급 제한) ①수급자격자가 직업안정기관의 장이 소개하는 직업에 취직하는 것을 거부하거나 직업안정기관의 장이 지시한 직업능력개발 훈련 등을 거부하면 대통령령으로 정하는 바에 따라 구직급여의 지급을 정지한다. 다만, 다음 각 호의 어느 하나에 해당하는 정당한 사유가 있는 경우에는 그러하지 아니하다.  <개정 2010. 6. 4.>\n\n1. 소개된 직업 또는 직업능력개발 훈련 등을 받도록 지시된 직종이 수급자격자의 능력에 맞지 아니하는 경우\n\n2. 취직하거나 직업능력개발 훈련 등을 받기 위하여 주거의 이전이 필요하나 그 이전이 곤란한 경우\n\n3. 소개된 직업의 임금 수준이 같은 지역의 같은 종류의 업무 또는 같은 정도의 기능에 대한 통상의 임금 수준에 비하여 100분의 20 이상 낮은 경우 등 고용노동부장관이 정하는 기준에 해당하는 경우\n\n4. 그 밖에 정당한 사유가 있는 경우\n\n②수급자격자가 정당한 사유 없이 고용노동부장관이 정하는 기준에 따라 직업안정기관의 장이 실시하는 재취업 촉진을 위한 직업 지도를 거부하면 대통령령으로 정하는 바에 따라 구직급여의 지급을 정지한다.  <개정 2010. 6. 4.>\n\n③제1항 단서 및 제2항에서의 정당한 사유의 유무(有無)에 대한 인정은 고용노동부장관이 정하는 기준에 따라 직업안정기관의 장이 행한다.  <개정 2010. 6. 4.>\n\n④제1항과 제2항에 따라 구직급여의 지급을 정지하는 기간은 1개월의 범위에서 고용노동부장관이 정하여 고시한다.  <개정 2010. 6. 4.>"
     },
     {
       "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95/제61조",
@@ -624,27 +448,15 @@
       "text": "제61조(부정행위에 따른 급여의 지급 제한) ①거짓이나 그 밖의 부정한 방법으로 실업급여를 받았거나 받으려 한 사람에게는 그 급여를 받은 날 또는 받으려 한 날부터의 구직급여를 지급하지 아니한다. 다만, 그 급여와 관련된 이직 이후에 새로 수급자격을 취득한 경우 그 새로운 수급자격에 따른 구직급여에 대하여는 그러하지 아니하다.  <개정 2020. 5. 26.>\n\n②제1항 본문에도 불구하고 거짓이나 그 밖의 부정한 방법이 제47조제1항에 따른 신고의무의 불이행 또는 거짓의 신고 등 대통령령으로 정하는 사유에 해당하면 그 실업인정대상기간에 한정하여 구직급여를 지급하지 아니한다. 다만, 2회 이상의 위반행위를 한 경우에는 제1항 본문에 따른다.  <개정 2020. 5. 26.>\n\n③거짓이나 그 밖의 부정한 방법으로 실업급여를 지급받았거나 받으려 한 사람이 제1항 또는 제2항에 따라 구직급여를 지급받을 수 없게 된 경우에도 제50조제3항 및 같은 조 제4항을 적용할 때는 그 구직급여를 지급받은 것으로 본다.  <개정 2020. 5. 26.>\n\n④거짓이나 그 밖의 부정한 방법으로 실업급여를 지급받았거나 받으려 한 사람이 제1항 또는 제2항에 따라 구직급여를 지급받을 수 없게 된 경우에도 제63조제2항을 적용할 때는 그 지급받을 수 없게 된 일수분의 구직급여를 지급받은 것으로 본다.  <개정 2020. 5. 26.>\n\n⑤ 제1항 단서에도 불구하고 거짓이나 그 밖의 부정한 방법으로 구직급여를 받았거나 받으려 한 사람이 그 구직급여를 받은 날 또는 제44조에 따른 실업인정의 신고를 한 날부터 소급하여 10년간 3회 이상 제1항 본문에 따라 구직급여를 받지 못한 경우에는 대통령령으로 정하는 바에 따라 거짓이나 그 밖의 부정한 방법으로 구직급여를 받은 날 또는 제44조에 따른 실업인정의 신고를 한 날부터 3년의 범위에서 새로운 수급자격에 따른 구직급여를 지급하지 아니한다.  <신설 2019. 8. 27.>"
     },
     {
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%20%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/제87조",
-      "org": "법제처 (고용보험법 시행규칙 제87조)",
+      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/제87조",
+      "org": "법제처 (고용보험법시행규칙 제87조)",
       "screenshot": "evidence-실업급여-구직활동-6.png",
       "text": "제87조(재취업활동의 인정기준) ① 영 제63조제3항에 따라 다음 각 호의 어느 하나에 해당하는 경우에 적극적인 재취업활동을 한 것으로 본다.  <개정 2010. 7. 12., 2022. 2. 17.>\n\n1. 구인업체를 방문하거나 우편ㆍ인터넷 등을 이용하여 구인에 응모한 경우\n\n2. 채용관련 행사에 참여하여 채용을 위한 면접에 응한 경우\n\n3. 직업능력개발 훈련 등을 받는 경우 중 고용노동부장관이 정한 경우\n\n4. 직업안정기관에서 실시하는 직업지도 프로그램에 참여한 경우\n\n5. 해당 실업인정일부터 30일 이내에 취업하기로 확정된 경우\n\n6. 「국민 평생 직업능력 개발법」에 따른 직업능력개발 훈련시설(법인을 포함한다)이나 「학원의 설립ㆍ운영 및 과외교습에 관한 법률」에 따른 학원 등에서 재취업을 위하여 수강 중인 경우로서 따로 재취업활동이 필요하지 아니하다고 직업안정기관의 장이 인정하는 경우\n\n7. 구인업체가 부족한 경우 등 노동시장의 여건상 고용정보의 제공이 어려운 경우로서 직업지도를 위하여 필요하다고 판단되어 직업안정기관의 장이 소개한 사회봉사활동에 참여하는 경우\n\n8. 고용노동부장관이 정하는 바에 따라 자영업 준비활동을 한 경우\n\n9. 직업안정기관의 지원을 받아 재취업활동에 관한 계획을 수립하는 경우\n\n10. 제1호부터 제9호까지의 규정에 준하는 경우로서 고용노동부장관이 정하는 경우\n\n② 제1항에도 불구하고 수급자격자가 다음 각 호의 어느 하나에 해당하는 경우에는 근로의 의사와 능력을 가지고 적극적인 재취업활동을 하지 않은 것으로 보아 실업을 인정하지 않는다.  <개정 2009. 4. 1., 2010. 7. 12., 2021. 7. 2.>\n\n1. 임신ㆍ출산ㆍ육아ㆍ노약자의 간호, 그 밖의 가사상의 이유로 이직한 사람 중 그 이직 원인이 아직 소멸되었다고 보기 어려운 경우\n\n2. 질병ㆍ부상 등 정신적ㆍ육체적 조건으로 통상 취업이 곤란하다고 인정되는 경우\n\n3. 「산업재해보상보험법」 제52조에 따른 휴업급여의 지급 대상이 되는 경우\n\n4. 직업안정기관의 장이 미리 지정하여 준 직업소개나 직업지도를 위한 출석일에 정당한 사유 없이 출석하지 아니한 경우(출석하지 아니한 기간으로 한정한다)\n\n5. 제1호부터 제4호까지의 규정에 준하는 경우로서 고용노동부장관이 정하는 경우"
     },
     {
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2",
-      "org": "법제처",
-      "screenshot": "evidence-실업급여-구직활동-7.png",
-      "text": "메인메뉴 바로가기\n서브메뉴 바로가기\n본문 바로가기\n통합검색박스\n검색어\n검색\n로그인 최근 본 법령정보 -\nLanguage\n메뉴전체보기\n책자형\n카드뉴스형\n백문백답\n솔로몬의 재판\n웹툰\n소식∙참여\n서비스 소개\nSMART\n생활법률\n앱 다운로드\n설문조사\n확장/축소\n닫기\n실업급여\n\n이미지로 보는\n카드뉴스\n\n사례로 보는\n백문백답\n\n관련법령\n\n목차\n\n펼치기\n닫기\n실업급여 알아보기\n실업급여 살펴보기\n하위메뉴 보기/숨기기\n구직급여\n구직급여 수급대상\n하위메뉴 보기/숨기기\n \n구직급여 수급신청\n하위메뉴 보기/숨기기\n실업의 신고\n실업의 인정\n실업인정의 특례\n구직급여 수급\n하위메뉴 보기/숨기기\n \n구직급여 연장\n하위메뉴 보기/숨기기\n \n질병 등에 따른 구직급여 수급\n하위메뉴 보기/숨기기\n취업촉진 수당\n취업촉진 수당 수급\n하위메뉴 보기/숨기기\n자영업자 실업급여\n자영업자 실업급여 수급\n하위메뉴 보기/숨기기\n실업급여 문제해결\n미지급 실업급여\n하위메뉴 보기/숨기기\n \n실업급여 부정수급\n하위메뉴 보기/숨기기\n \n실업급여 처분에 대한 이의 제기\n하위메뉴 보기/숨기기\n확장/축소\n홈 > \n책자형 > 실업급여\n\n생활법령 내 검색\n\n공유\n저장\n인쇄\n즐겨찾기\n실업의 인정\n\n\n고용보험법 2026년 08월 20일 시행(개정 사항을 검토하여 향후 업데이트 예정입니다.)\n본문\n관련법령\n<출처: 고용복지플러스센터(www.workplus.go.kr)-센터소개-센터에서 하는 일-실업급여>\n실업의 인정 \n \n\"실업의 인정\"이란?\n “실업의 인정”이란 고용센터의 장이 수급자격자가 실업상태에서 적극적으로 직업을 구하기 위해 노력하고 있다고 인정하는 것을 말합니다.(「고용보험법」 제2조제4호).\n 또한, 실업을 인정받은 날에 대해서 구직급여가 지급됩니다(「고용보험법」 제44조제1항).\n실업인정의 신청 \n \n재취업활동의 신고\n 실업의 인정을 받으려는 수급자격자는 실업의 신고를 한 날부터 계산하기 시작하여 1주부터 4주까지의 범위에서 고용센터의 장이 지정한 날(이하 “실업인정일”이라 함)에 출석하여 재취업을 위한 노력을 하였음을 신고해야 합니다(「고용보험법」 제44조제2항 본문).\n※ 실업인정일의 지정기준에 대한 자세한 내용은 「실업인정 및 재취업지원규정」 제12조제2항에서 확인할 수 있습니다.\n실업인정신청서 제출\n 수급자격자가 실업의 인정을 받으려면 실업인정일에 신청지 관할 고용센터에 출석하여 실업인정신청서에 직전 실업인정일의 다음날부터 해당 실업인정일까지의 재취업활동 내용을 적은 후 수급자격증 1부를 첨부하여 제출해야 합니다(「고용보험법 시행령」 제63조제1항, 「고용보험법 시행규칙」 제84조제1호 및 별지 제82호서식).\n국민연금 가입기간 추가 산입 신청\n 「국민연금법 시행규칙」 제12조의2제1항에 따라 고용센터의 장에게 구직급여를 받는 기간을 국민연금 가입기간으로 추가 산입하여 줄 것을 신청하려는 사람은 실업의 인정 신청을 할 때 실업인정(국민연금 가입기간 추가 산입) 신청서로 함께 신청해야 합니다(「고용보험법 시행규칙」 제107조의2제1항, 제107조의2제2항 및 별지 제82호서식).\n실업인정대상기간 중 취업 등의 신고 \n \n취업 등의 신고\n 수급자격자는 실업의 인정을 받으려 하는 기간(이하 “실업인정대상기간”이라 함) 중에 다음의 어느 하나에 해당하는 경우에는 취업한 날 이후 최초의 실업인정일에 제출하는 실업인정신청서에 그 사실을 적어 고용센터에 신고해야 합니다(「고용보험법」 제47조제1항, 「고용보험법 시행령」 제69조제1항 및 「고용보험법 시행규칙」 제92조).\n 1개월간의 소정근로시간을 60시간 이상(1주간의 소정근로시간을 15시간 이상으로 정하는 경우를 포함)으로 정하고 근로를 제공하는 경우\n 3개월 이상 계속하여 근로를 제공하는 경우\n 일용근로자로서 근로를 제공하거나 단기예술인 또는 단기노무제공자로서 노무를 제공하는 경우\n 근로 제공의 대가로 임금 등 어떠한 명칭으로든지 구직급여일액(「고용보험법」제46조) 이상을 수령하는 경우\n 문화예술용역 관련 계약으로서 월평균소득이 50만원 이상인 문화예술용역 관련 계약을 새로 체결하여 노무를 제공하는 경우\n 노무제공계약으로서 월보수액이 80만원 이상인 노무제공계약을 새로 체결하여 노무를 제공하는 경우\n 상업·농업 등 가업에 종사(무급 가사종사자를 포함)하거나 다른 사람의 사업에 참여하여 근로를 제공함으로써 다른 사업에 상시 취직하기가 곤란하다고 인정되는 경우\n 「소득세법」, 「부가가치세법」 또는 「법인세법」에 따라 사업자등록을 한 경우(사업자등록을 한 경우라도 휴업신고를 하는 등 실제 사업을 하지 않았음을 증명한 경우와 부동산임대업 중 근로자를 고용하지 않고 임대사무실도 두지 않은 경우는 제외)\n 그 밖에 사회통념상 취업을 하였다고 인정되는 경우\n실업의 인정 \n \n실업의 인정\n 직전 실업인정일의 다음 날부터 그 실업인정일까지의 각각의 날에 대해 실업의 인정을 받습니다(「고용보험법」 제44조제2항 본문)\n재취업활동 인정기준\n 다음의 어느 하나에 해당하는 경우에는 적극적인 재취업활동을 한 것으로 봅니다(「고용보험법 시행령」 제63조제3항, 「고용보험법 시행규칙」 제87조제1항 본문, 「실업인정 및 재취업지원규정」 제10조제2항·제3항·제4항 및 제18조제3항).\n1. 구인업체를 방문하거나 우편·인터넷 등을 이용하여 구인에 응모한 경우\n2. 채용관련 행사에 참여하여 채용을 위한 면접에 응한 경우\n3. 직업능력개발 훈련 등을 받는 경우 중 다음의 어느 하나에 해당하는 경우\n1) 「국민 평생 직업능력 개발법」 제24조에 따라 고용노동부장관의 인정을 받은 훈련과정을 수강하는 경우\n2) 국가 또는 지방자치단체에서 훈련비용의 전부 또는 일부를 지원하는 훈련과정(출결관리가 이루어지는 훈련과정으로 한정)을 수강하는 경우\n4. 고용센터에서 실시하는 직업지도 프로그램에 참여한 경우\n5. 해당 실업인정일부터 30일 이내에 취업하기로 확정된 경우\n6. 「국민 평생 직업능력 개발법」에 따른 직업능력개발 훈련시설(법인 포함)이나 「학원의 설립·운영 및 과외교습에 관한 법률」에 따른 학원 등에서 재취업을 위해 수강 중인 경우로서 따로 재취업활동이 필요하지 않다고 고용센터의 장이 인정하는 경우\n7. 구인업체가 부족한 경우 등 노동시장의 여건상 고용정보의 제공이 어려운 경우로서 직업지도를 위해 필요하다고 판단되어 고용센터의 장이 소개한 사회봉사활동에 참여하는 경우\n8. 근로자 채용을 위한 구인광고, 자영업장소 물색 또는 장소계약(가계약 포함), 시장조사활동자료 및 각종 관계기관 협의 등 적극적인 자영업준비활동을 한 경우\n9. 고용센터의 지원을 받아 재취업활동에 관한 계획을 수립하는 경우\n10. 위 1.부터 9.까지의 사항에 준하는 경우로서 다음의 어느 하나에 해당하는 경우\n1) 고용센터에서 실시하는 직업소개 지시에 응한 경우\n2) 고용센터에서 실시하는 성취프로그램 등 직업지도 및 재취업지원 프로그램(이하 \"직업지도등\"이라 함) 참여 지시에 응한 경우에는 2회의 재취업활동을 한 것으로 봄(다만, 8시간 미만의 직업지도등에 참여한 경우에는 1회의 재취업활동을 한것으로 봄)\n3) 공공·민간의 취업지원기관에서 위 2)의 프로그램에 준하여 실시하는 직업지도등 프로그램(출결관리 가능한 경우에 한함)에 참여한 경우\n4) 고용센터의 직업훈련 지시에 응한 경우(훈련과정을 중도탈락하지 않고 수강하는 경우에는 전체 실업인정대상기간에 대하여 실업인정함)\n5) 실업인정특례자로 인정받은 도서거주자 또는 장애인(자력으로 거동이 곤란한 자로 한정)이 고용센터의 직업소개에 따라 전화 등을 이용하여 구인자와 구직상담을 한 경우\n6) 고용노동부장관의 허가를 받은 근로자파견업체에 구직서류를 접수하거나 선원 구인·구직등록기관에 구직자등록을 한 경우(실업인정대상기간 중 접수 또는 등록한 경우로 한정)\n7) 일용근로자로 수급자격을 인정받은 자가 실업인정대상기간 중 「고용보험법 시행규칙」 제92조제3호에 따라 근로를 제공하는 경우(다만, 1일 근로제공은 최대 2주간의 구직활동을 한 것으로 봄)\n8) 고용센터 장의 지시에 따라 실업인정일 이외의 날에 출석하여 직업상담 등의 직업지도에 참여한 경우\n9) 위 1)부터 8)까지에 준하는 경우로서 사회통념상 근로의 의사와 능력을 가지고 적극적인 구직활동을 하였다고 고용센터의 장이 인정하는 경우\n※ 재취업활동 인정 방법\nQ. 적극적인 재취업활동을 인정받기 위해서는 어떤 서류를 제출해야 하나요?\nA. 다음과 같은 서류를 제출하여 적극적인 재취업활동을 하였음을 인정받을 수 있습니다.\n<구직활동을 증명하는 서류>\n사업장을 방문한 경우: 사업체명, 주소, 전화번호, 면접 또는 서류접수 담당자명을 기재하여 제출(예: 명함)\n우편을 이용하는 경우: 해당업체에서 사람을 뽑고 있다는 자료(예: 모집모강 복사본), 입사지원서, 등기수령증\n팩스를 이용한 경우: 팩스번호, 수취인명, 보낸 날짜와 시간을 기재하여 제출\n채용박람회에 참석한 경우: 채용시험이나 면접 등에 참여했다는 것을 증명할 수 있는 자료\n<직업훈련을 받았음을 증명하는 자료>\n해당 훈련기관에서 발행한 수강증명서를 4주에 한번 제출\n<자영업 준비활동을 증명하는 자료>\n실업인정일에 자영업활동계획서를 고용센터에 제출\n재취업활동계획서에 따라 점포물색, 임대차계약, 시장조사활동, 허가관계 관공서 방문, 근로자 채용을 위한 구인 광고에 관한 자료를 제출하여 실업인정 가능\n<출처: 고용24(www.work24.go.kr)-고객센터-자주하는 질문>\n재취업활동으로 인정되지 않는 경우\n 수급자격자가 다음의 어느 하나에 해당하는 경우에는 근로의 의사와 능력을 가지고 적극적인 재취업활동을 하지 않은 것으로 보아 실업이 인정되지 않습니다(「고용보험법 시행규칙」 제87조제2항 및 「실업인정 및 재취업지원규정」 제10조제5항).\n1. 임신·출산·육아·노약자의 간호, 그 밖의 가사상의 이유로 이직(離職)한 사람 중 그 이직 원인이 아직 소멸되었다고 보기 어려운 경우\n2. 질병·부상 등 정신적·육체적 조건으로 통상 취업이 곤란하다고 인정되는 경우\n3. 휴업급여의 지급 대상이 되는 경우(「산업재해보상보험법」 제52조)\n4. 고용센터의 장이 미리 지정하여 준 직업소개나 직업지도를 위한 출석일에 정당한 사유 없이 출석하지 않은 경우(출석하지 않은 기간으로 한정)\n5. 위 1.부터 4.까지에 준하는 경우로서 다음의 어느 하나에 해당하는 경우\n1) 동일 사업장만을 반복하여 구직활동을 하는 경우\n2) 전화나 인터넷 등으로 구인처를 탐문만 하는 경우\n3) 수급자격자의 경력·연령·기능 및 노동시장상황 등을 고려할 때 수용이 거의 불가능한 근로조건만을 고집하는 경우\n4) 자영업 준비활동의 경우 준비활동이 아닌 반복적으로 자영업을 위한 장소물색이나 시장조사만을 행하는 경우\n5) 「방문판매 등에 관한 법률」에 따른 사업이나 사업을 수행하는 자를 위한 훈련·교육 및 보험대리점 개설이나 보험모집인(생활설계사 등)을 위한 훈련·교육을 수강하는 외에는 별도의 자영업 준비활동을 하지 않는 경우(다만, 수급기간 중 1회의 훈련·교육은 그 기간을 재취업활동을 한 것으로 봄)\n6) 구인공고의 직종·경력·학력·자격증 필수 여부 등과 수급자의 구직신청서내용이 현저히 다르게 재취업 활동을 한 경우\n7) 고용센터의 장이 지시한 구직활동 등 재취업활동을 정당한 사유 없이 이행하지 않은 경우\n8) 「고용정책기본법」 제15조에 따른 워크넷을 통한 이메일 입사지원(고용센터의 지시에 따라 입사지원하는 경우 제외)을 4회(소정급여일수 120일 이하 수급자) 또는 6회(소정급여일수 150일 이상 수급자) 이상 하는 경우\n9) ‘구인 없는 사업장’의 명함만 제출하는 경우(다만, 구인공고가 없는 사업장에서 지인소개 등을 받은 경우에는 해당 사업장의 면접확인서를 제출받아 재취업활동 인정 여부를 결정할 수 있음)\n10) 그 밖에 1)부터 9)까지에 준하는 경우\n※ 실업인정을 신청할 때, 근로 등의 제공사실을 신고하지 않거나 재취업 활동의 내용을 사실과 다르게 신고한 경우에는 구직급여의 수급이 제한될 수 있으며, 이에 대한 자세한 내용은 이 콘텐츠의 <구직급여-구직급여 수급-구직급여의 수급·수급유예·수급정지>에서 확인할 수 있습니다.\n이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.\n생활법령정보는 법적 효력을 갖는 유권해석(결정, 판단)의 근거가 되지 않고, 각종 신고, 불복 청구 등의 증거자료로서의 효력은 없습니다.\n구체적인 법령에 대한 질의는 담당기관이나 국민신문고에 문의하시기 바랍니다.\n위 내용에 대한 홈페이지 개선의견은 홈페이지 개선의견을 이용해 주시기 바랍니다.\n\n개인정보처리방침\n저작권정책\n사이트맵\nRSS\n모바일 홈페이지\n생활법령 블로그\n모바일QR\n생활법령배너달기\n\nCopyright ⓒ 1997-2023 Korea Ministry of Government Legislation. All Rights Reserved.    |    홈페이지 개선의견\n\n관련기관 홈페이지"
-    },
-    {
-      "url": "https://www.law.go.kr/법령/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%20%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/제92조",
-      "org": "법제처 (고용보험법 시행규칙 제92조)",
-      "screenshot": "evidence-실업급여-구직활동-8.png",
-      "text": "제92조(취업의 인정기준) 법 제47조에 따라 수급자격자가 다음 각 호의 어느 하나에 해당하는 경우에는 취업한 것으로 본다.  <개정 2010. 7. 12., 2013. 1. 25., 2018. 12. 31., 2019. 12. 31., 2020. 12. 10., 2021. 7. 1., 2023. 6. 30.>\n\n1. 1개월간의 소정근로시간을 60시간 이상(1주간의 소정근로시간을 15시간 이상으로 정하는 경우를 포함한다)으로 정하고 근로를 제공하는 경우\n\n2. 3개월 이상 계속하여 근로를 제공하는 경우\n\n3. 일용근로자로서 근로를 제공하거나 단기예술인 또는 단기노무제공자로서 노무를 제공하는 경우\n\n4. 근로 제공의 대가로 임금 등 어떠한 명칭으로든지 법 제46조에 따른 구직급여일액 이상을 수령하는 경우\n\n5. 문화예술용역 관련 계약으로서 영 제104조의5제2항제1호에 따른 월평균소득이 50만원 이상인 문화예술용역 관련 계약을 새로 체결하여 노무를 제공하는 경우\n\n6. 노무제공계약으로서 영 제104조의11제2항제1호에 따른 월보수액이 80만원 이상인 노무제공계약을 새로 체결하여 노무를 제공하는 경우\n\n7. 상업ㆍ농업 등 가업에 종사(무급 가사종사자를 포함한다)하거나 다른 사람의 사업에 참여하여 근로를 제공함으로써 다른 사업에 상시 취직하기가 곤란하다고 인정되는 경우\n\n8. 「소득세법」, 「부가가치세법」 또는 「법인세법」에 따라 사업자등록을 한 경우(사업자등록을 한 경우라도 휴업신고를 하는 등 실제 사업을 하지 아니하였음을 증명한 경우와 부동산임대업 중 근로자를 고용하지 아니하고 임대사무실도 두지 아니한 경우는 제외한다)\n\n9. 그 밖에 사회통념상 취업을 하였다고 인정되는 경우"
-    },
-    {
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
       "org": "고용24",
-      "screenshot": "evidence-실업급여-구직활동-9.png",
+      "screenshot": "evidence-실업급여-구직활동-7.png",
       "text": "본문 바로가기\n주메뉴 바로가기\n이 누리집은 대한민국 공식 전자정부 누리집입니다.\n개인\n기업\n시스템 개선 작업에 따른 서비스 중단 안내 (2026년 9월12일(토) 00:00~18:00)\n자세히 보기\n멈춤\n고객센터\n원격지원\n글자·화면 설정\n로그인\n회원가입\n검색\n채용정보\n취업지원\n실업급여\n직업 능력 개발\n출산휴가·육아휴직\n전체 메뉴\n고객센터\n고객센터 홈\n고용24 소개\n이용안내\n정책/제도\n고용정책\n지원금 모의계산\n직종별 임금정보\n자주하는 질문\n개선의견\n공지사항\n자료실\n홈페이지 운영 정책\nOPEN-API\n홈\n고객센터\n정책/제도\n고용정책\n고용정책 상세_제도안내\n페이스북(공유하기)\n엑스(공유하기)\n카카오(공유하기)\n프린트하기\n실업급여(상용직)\n목차\n개요\n지원내용\n신청자격\n신청절차\n주의사항\n신청양식과 이의신청\n자주묻는질문\n목록\n\n\n\n\n지원내용\n\n\n\n\n신청자격\n\n\n\n\n신청절차\n\n서류 제출 요청 → 사전 확인 → 구직 등록 → 사전 교육 → 수급자격 인정 신청(반드시 고용센터 방문) → 취업 준비 → 실업 인정과 실업급여 지급 → 실업급여 지급 종료\n\n온·오프라인 구직 등록·사전 교육 등을 거쳐 가까운 고용센터에 실업급여 수급자격 인정 신청서를 제출합니다. 수급자격을 인정받은 후에는 고용센터를 정기적으로 방문하여 실업인정을 통해 재취업 노력을 증명해야 합니다.\n\n1) 퇴직한 회사에 서류 제출 요청\n\n근로자가 실업급여를 받기 위해서는 퇴직한 회사로부터 퇴직한 사실에 대한 확인이 필요합니다. 이를 위해 회사에서 ‘고용보험 피보험자격 상실 신고서’와 ‘이직 확인서’를 관공서로 제출해야 합니다.\n\n‘고용보험 피보험자격 상실 신고서’는 해당 근로자가 더 이상 고용보험법 적용 대상이 아님을 신고하는 것으로, 사업주가 근로복지공단에 제출합니다. 사업주는 원칙적으로는 신고 사유가 발생한 날이 속하는 다음 달 15일까지 신고해야 하나, 근로자가 그 기일 이전에 신고할 것을 요구하는 경우에는 지체 없이 신고해야 합니다.\n\n‘이직확인서’는 퇴직 사유, 고용보험 가입기간, 평균임금, 1일 소정 근로시간 등을 확인하는 서류로, 사업주가 고용센터에 제출합니다. 사업주는 근로자의 이직확인서 발급 요청에 따라 10일 이내에 이직확인서를 발급해주어야 합니다.\n\n원활한 진행을 위해, 퇴직할 때 회사에 미리 요청해두시는 것을 추천드립니다.\n\n회사에서 제출한 고용보험 피보험자격 상실신고서 내용은 근로복지공단 고용산재토탈서비스에서, 이직확인서 내용은 마이페이지 내 민원처리 알림(이직확인서 처리 현황)에서 확인하실 수 있습니다.\n\n2) 사전 확인\n\n고용보험 가입기간, 이직확인서 제출 여부 등 내 수급 자격을 확인합니다.\n\n3) 구직 등록\n\n내가 일자리를 찾고 있는 상태임을 온라인(고용24)에 등록합니다. [바로가기]\n\n4) 사전 교육\n\n실업급여 제도에 관한 교육을 수급자격 신청 전에 미리 받아야 합니다. 온라인으로 사전 교육을 시청하고 고용복지센터에 방문하여 수급자격 인정 신청을 하면 됩니다. [바로가기]. 온라인 교육을 받지 못한 분들은 수급자격 인정 신청 시 고용복지센터에서 현장 교육을 받을 수 있습니다.\n\n5) 실업급여 수급자격 인정 신청\n\n구직급여 수급자격을 신청하기 위해서는 신분증을 지참하여 고용복지센터에 방문한 후 수급자격 인정신청서를 제출해야 합니다.\n\n거주지 관할 고용복지센터는 ‘마이페이지’에서 확인하실 수 있습니다.\n\n※ 수급자격 인정신청서를 인터넷으로 제출하고 고용센터에 방문할 수는 없나요?\n\n☞ 수급자격 인정신청서를 인터넷으로 간편하게 제출한 후 고용센터에 출석하여 보다 신속하게 수급자격 인정 신청을 하는 인터넷 제출 서비스를 운영하고 있습니다. 다만 다음 세 요건을 모두 충족한 상용근로자만 신청 대상입니다.\n①상실신고서와 이직확인서가 모두 처리된 사람, ②피보험단위기간이 180일 이상이며, 비자발적 이직한 사람(상실코드가 22, 23, 31, 32), ③ 이직일 기준 만 65세 미만인 사람에 해당하여야 합니다. [바로가기].\n\n※ 재난 등으로 출석하기 어려운 경우에도 반드시 방문하여야 하나요?\n\n☞ 재난으로 출석하기 어려운 경우 또는 이에 준하는 경우로서 고용복지센터장이 출석이 어렵다고 인정하는 경우에는 온라인으로 대체할 수 있습니다.\n\n6) 재취업 준비\n\n재취업활동은 재취업을 위하여 적극적으로 활동하는 행위로 입사지원, 면접, 채용박람회 참여하여 면접 응시 등의 구직활동과 취업특강 수강, 직업훈련 이수, 취업지원프로그램 참여 등의 구직외활동으로 구분됩니다.\n\n7) 실업 인정과 실업급여 지급\n\n1~4주마다 아직 취업하지 못한 상태인지, 취업하기 위한 활동을 하고 있는지 고용센터에 인정받아야 하며, 이를 ‘실업 인정’이라고 합니다.\n\n실업 인정은 특정 회차를 제외하고는 방문 없이 온라인으로 신청[바로가기]할 수 있습니다. 단 반복수급자, 장기수급자는 실업인정을 받기 위한 재취업활동 인정 기준을 일반 수급자보다 강화하여 적용하고 있으므로 담당자의 안내를 받으시길 바랍니다.\n\n※ 다른 사람이 실업인정을 대신 신청할 수 있나요?\n\n☞ 실업인정은 수급자 본인이 고용센터에 방문하여 직접 신청하거나, 온라인·모바일로 직접 신청해야 하며, 타인이 대신 작성하여 신청하는 경우 실업급여 부정수급에 해당합니다.\n\n허위·형식적 구직활동일 경우 구직급여를 지급하지 않습니다. 허위 구직활동일 경우 해당 실업인정 대상기간에 한해 부지급 조치, 2회 이상 적발 시 전체 수급 기간에 대해 지급정지를 합니다. 형식적 구직활동일 경우 1회 적발 시 사전고지, 2회 적발 시 해당 실업인정 대상기간에 한해 부지급 조치를 합니다.\n\n※ 허위· 형식적 구직활동이란 무엇인가요?\n\n☞ 허위 구직활동은 입사지원이나 면접에 응하지 않고 지원·응모한 것처럼 허위로 신고 및 서류를 제출하는 행위를 말합니다. 형식적 구직활동은 취업 의사가 없으면서 입사지원 등 구직활동을 하는 경우로 동일한 사업장만을 반복하여 지원하거나, 채용이 거의 불가능한 근로조건만을 고집하는 경우, 정당한 사유 없이 면접을 거부하는 경우 등을 말합니다.\n\n통상 실업인정을 받은 다음 날에 본인이 지정한 계좌로 실업급여가 입금됩니다.\n\n8) 실업급여 지급 종료\n\n재취업을 하지 못한채 지급기간(120일~270일)이 종료되거나, 마지막 근무일의 다음날부터 1년이 지나면 실업급여 지급이 종료됩니다.\n\n※ 실업급여를 받던 중 재취업하면 어떻게 해야 하나요?\n\n☞ 취업 또는 사업을 시작한 수급자는 근로계약서나 재직증명서 등 취업일이 확인되는 자료를 첨부하여 취업한 날로부터 2개월 이내에 취업사실을 신고해야 하며, 취업 전날까지의 구직급여를 받을 수 있습니다.[바로가기]\n\n※ 실업급여 지급 기간이 끝나가는데 아직도 취업을 못했어요. 당장 생계가 어려운데, 방법이 없나요?\n\n☞ 적극적으로 구직활동을 했으나 취업이 특히 곤란하고 생활이 어려운 구직급여 수급자에게 개별연장급여를 지급할 수 있습니다. 고용센터의 직업소개 또는 집단상담·취업상담에 3회 이상 응하였으나 취업하지 못한 자가 본인 및 배우자 재산 합계액이 1억 4천만원 이하 등 일정한 요건을 충족하는 경우에만 지급 대상이므로 수급기간 만료 최소 2개월 전부터 실업인정 담당자와 상의하여 주시기 바랍니다.\n\n구직급여 소정급여일수의 1/2 이상을 남기고 재취업에 성공하고, 향후 재취업한 일자리에서 안정적으로 근무한 것이 확인되면, 남은 구직급여액의 일부를 지급 받으실 수 있습니다. [바로가기]\n\n\n\n\n주의사항\n\n1) 실업급여 부정수급\n\n실업급여 신청 시 작성 내용이 사실과 다를 경우 부정수급에 해당되어 추가징수 등 불이익이 발생할 수 있고, 고용보험법에 따라 형사처벌을(1년 이하의 징역 또는 300만원 이하의 벌금형) 받을 수 있습니다.\n\n실업급여 지급기간 중 단기간이라도 취업하여 소득이 발생되는 경우 고용센터에 신고해야 하며, 이를 어길 경우 부정수급에 해당되어 추가징수 등 불이익을 받을 수 있습니다.\n\n※ 실업급여를 받던 중 일을 하여 소득이 발생하면 어떻게 하나요?\n\n☞ 일한 사실이 있다면 실업인정 신청 시 근로사실을 신고해야 합니다. 하루 소득이 얼마인지와 관계없이, 임금·수당 등 명칭과 관계없이, 일을 했으나 임금을 받지 못한 경우에도 근로사실을 필수 신고해야 합니다. 특히 사업주가 세금 신고 시 국세청에 일용근로자의 소득을 신고하는 과정에서 실업급여 부정수급으로 적발되는 경우가 많으니 반드시 근로사실을 신고하시기 바랍니다.\n\n2) 중복 지원 불가\n\n실업급여와 중복해서 받을 수 없거나, 실업급여 수급 종료 후 일정기간이 지나야 받을 수 있는 혜택들의 예시는 다음과 같습니다.\n\n◼ 국민취업지원제도: 실업급여를 받는 기간 중에는 참여하실 수 없습니다. 1유형은 실업급여 수급이 종료된 이후 6개월이 지난 이후에 참여할 수 있게 됩니다.\n\n◼ 신중년 경력형 일자리: 신중년 경력형 일자리는 ‘공공 일자리’로 취업과 같아 실업급여는 수급은 종료됩니다. 신중년 경력형 일자리 참여 종료 후 실업급여를 수급했다면, 실업급여 수급 종료 후 90일이 지난 이후에 신중년 경력형 일자리 사업에 다시 참여하실 수 있습니다.\n\n◼ 국민내일배움카드 훈련장려금: 실업급여를 받는 중에는 국민내일배움카드를 발급받아 필요한 교육비를 지원받을 받을 수 있지만, 추가 수당을 받을 수는 없습니다. \n\n\n\n\n신청양식과 이의신청\n\n신청에 필요한 양식을 다운받아 직접 작성해보실 수도 있습니다.\n\n◼ 이직확인서 발급 요청서 \n\n◼ 구직신청서\n\n◼ 수급자격인정신청서\n\n◼ 실업인정신청서\n\n실업급여 수급자격 신청 결과, 실업 인정 신청 결과에 이의가 있는 경우, 결정서/통지서를 받은날로부터 90일 안에 고용보험 심사 청구 또는 재심사 청구를 하실 수 있습니다. [바로가기]\n\n심사청구서는 고용복지센터에 제출하시면 됩니다.\n\n \n\n◼ 심사청구서 양식\n\n \n\n\n\n\n자주묻는질문\n\n◼ 고용보험 가입 기간에는 직전에 다녔던 회사에서의 근무 기간만 포함되나요?\n\n고용보험 가입 기간은 최종 이직한 사업장뿐 아니라 이전 회사에서의 고용보험 가입 기간도 합산하여 산정합니다. 그러나 보험 가입자격 상실 이후 공백이 3년 이상인 경우에는 그 이전의 고용보험 가입 기간은 합산되지 않으며, 또한 구직급여를 받은 적이 있는 경우에는 그 이전의 고용보험 기간은 합산에서 제외됩니다.\n\n \n\n◼ 일을 그만두고 1년이 지났는데, 지금 구직급여를 신청하면 받을 수 있나요?\n\n구직급여는 수급자격 인정 신청을 언제 했느냐에 관계없이 마지막 근무일 다음 날부터 시작하여 1년 이내에만 수급이 가능합니다. 1년이 도과한 경우에는 정해진 지급일수와 관계없이 더 이상 구직급여를 받을 수 없으니 유의하시기 바랍니다.\n\n \n\n◼ 임신·출산 등으로 당장 취업활동을 할 수 없는데 수급 기간 연기가 가능할까요?\n\n구직급여는 재취업지원을 위해 지급하는 급여로 임신·출산·질병·부상 등으로 취업 활동이 어려운 경우에는 4년의 범위 내에서 그 기간만큼 수급기간을 연장하여 수급자격자가 불이익을 받지 않도록 하고 있습니다. 수급기간 내에 수급자격증을 첨부하여 고용복지센터에 수급기간연기신고서를 작성하여 제출하시면 됩니다. \n\n\n\n\n◼ 수급자격 인정신청서를 인터넷으로 제출하고 고용센터에 방문할 수는 없나요?\n\n수급자격 인정신청서를 인터넷으로 간편하게 제출한 후 고용센터에 출석하여 보다 신속하게 수급자격 인정 신청을 하는 인터넷 제출 서비스를 운영하고 있습니다. 다만 다음 세 요건을 모두 충족한 상용근로자만 신청 대상입니다.\n①상실신고서와 이직확인서가 모두 처리된 사람, ②피보험단위기간이 180일 이상이며, 비자발적 이직한 사람(상실코드가 22, 23, 31, 32), ③ 이직일 기준 만 65세 미만인 사람에 해당하여야 합니다. [바로가기].\n\n \n\n◼ 재난 등으로 출석하기 어려운 경우에도 반드시 방문하여야 하나요?\n\n재난으로 출석하기 어려운 경우 또는 이에 준하는 경우로서 고용복지센터장이 출석이 어렵다고 인정하는 경우에는 온라인으로 대체할 수 있습니다.\n\n\n\n\n◼ 다른 사람이 실업인정을 대신 신청할 수 있나요?\n\n실업인정은 수급자 본인이 고용센터에 방문하여 직접 신청하거나, 온라인·모바일로 직접 신청해야 하며, 타인이 대신 작성하여 신청하는 경우 실업급여 부정수급에 해당합니다.\n\n \n\n◼ 허위·형식적 구직활동이란 무엇인가요?\n\n허위 구직활동은 입사지원이나 면접에 응하지 않고 지원·응모한 것처럼 허위로 신고 및 서류를 제출하는 행위를 말합니다. 형식적 구직활동은 취업 의사가 없으면서 입사지원 등 구직활동을 하는 경우로 동일한 사업장만을 반복하여 지원하거나, 채용이 거의 불가능한 근로조건만을 고집하는 경우, 정당한 사유 없이 면접을 거부하는 경우 등을 말합니다.\n\n \n\n◼ 실업급여를 받던 중 재취업하면 어떻게 해야 하나요?\n\n \n\n취업 또는 사업을 시작한 수급자는 근로계약서나 재직증명서 등 취업일이 확인되는 자료를 첨부하여 취업한 날로부터 2개월 이내에 취업사실을 신고해야 하며, 취업 전날까지의 구직급여를 받을 수 있습니다.[바로가기]\n\n \n\n◼ 실업급여 지급 기간이 끝나가는데 아직도 취업을 못했어요. 당장 생계가 어려운데, 방법이 없나요?\n\n적극적으로 구직활동을 했으나 취업이 특히 곤란하고 생활이 어려운 구직급여 수급자에게 개별연장급여를 지급할 수 있습니다. 고용센터의 직업소개 또는 집단상담·취업상담에 3회 이상 응하였으나 취업하지 못한 자가 본인 및 배우자 재산 합계액이 1억 4천만원 이하 등 일정한 요건을 충족하는 경우에만 지급 대상이므로 수급기간 만료 최소 2개월 전부터 실업인정 담당자와 상의하여 주시기 바랍니다.\n\n \n\n◼ 실업급여를 받던 중 일을 하여 소득이 발생하면 어떻게 하나요?\n\n일한 사실이 있다면 실업인정 신청 시 근로사실을 신고해야 합니다. 하루 소득이 얼마인지와 관계없이, 임금·수당 등 명칭과 관계없이, 일을 했으나 임금을 받지 못한 경우에도 근로사실을 필수 신고해야 합니다. 특히 사업주가 세금 신고 시 국세청에 일용근로자의 소득을 신고하는 과정에서 실업급여 부정수급으로 적발되는 경우가 많으니 반드시 근로사실을 신고하시기 바랍니다.\n\n\n\n\n유사 제도\n실업급여(일용직)\n실업급여(노무제공자)\n실업급여(예술인)\n실업급여(자영업자)\n실업크레딧\n이직확인서\n\n최종 수정일: 2026-08-25\n\n도우미\n맨위로\n패밀리사이트\n유관기관\n\n(27740) 충청북도 음성군 맹동면 태정로 6 한국고용정보원\n\n홈페이지 전산 이용 문의 1577-7114 (유료, 한국고용정보원 고객상담센터, 평일 09시 ~ 18시)\n\n고용·노동 분야 제도 문의 국번없이 1350 (유료, 고용노동부 고객상담센터, 평일 09시 ~ 18시)\n\n고용24는 통신판매중개자이며, 통신판매의 당사자가 아닙니다.\n상품(훈련), 상품(훈련)정보, 거래에 관한 의무와 책임은 판매자(훈련기관)에게 있습니다.\n\n이용안내\n원격지원\n이용약관\n개인정보처리방침\n이메일무단수집거부\n저작권보호정책\n오픈API 서비스\n화상상담 관리자\n사이트맵\n챗봇\n© Ministry of Employment and Labor, Korea Employment Information Service. All rights reserved.\n이 누리집은 고용노동부와 고용노동부 산하기관 한국고용정보원의 누리집 입니다.\n\n[수식·이미지]\n과학기술정보통신부 WA(WEB접근성) 품질인증 마크, 웹와치(WebWatch) 2026.2.3 ~ 2027.2.2\n개인정보보호우수앱 시스템 인증마크"
     }
   ],
@@ -655,7 +467,7 @@
     "evidence-실업급여-구직활동-4.png": "고용보험법 제47조. ① 실업인정대상기간 중 고용노동부령 기준에 해당하는 취업을 했으면 신고 ② 직업안정기관의 장은 필요하면 취업 사실을 조사할 수 있다. ★②를 본문에 더했다",
     "evidence-실업급여-구직활동-5.png": "고용보험법 제61조 전문. ① 부정수급이면 그날부터 미지급(단서: 그 이직 이후 새로 취득한 수급자격은 별개) ② 신고의무 불이행·거짓 신고는 해당 실업인정대상기간 한정, 2회 이상이면 제1항 본문 ③④ 소정급여일수·연장급여 계산 시 받은 것으로 봄 ⑤ 소급 10년간 3회 이상이면 3년의 범위에서 새 수급자격에 따른 구직급여도 미지급. ★⑤와 ① 단서를 본문에 더했다",
     "evidence-실업급여-구직활동-6.png": "고용보험법 시행규칙 제87조 [시행 2026.9.18.]. 제1항 인정되는 열 가지, 제2항 인정되지 않는 세 가지. 본문과 일치.",
-    "evidence-실업급여-구직활동-7.png": "고용보험법 시행규칙 제92조(취업의 인정기준) 전문 아홉 가지. 본문이 인용한 제3호(일용근로자·단기예술인·단기노무제공자 근로 제공)가 확인됨. 나머지 호는 알바 신고 글의 주제라 이 글에서는 다루지 않음.",
+    "evidence-실업급여-구직활동-7.png": "고용24 '실업급여(상용직)' 제도안내 — **본문이 열리는 주소**(systCnntId=CI00001715). 캡처 이미지에는 상단(제목·좌측 메뉴와 '지원내용'·'신청자격' 빈 상자)만 담기고 본문은 스크롤 아래에 있다. **추출 텍스트에는 전문 7,366자가 들어 있어** 그쪽을 근거로 삼았다. 확인한 내용 — 이직확인서는 요청받고 **10일 이내** 발급(퇴직 사유·가입기간·평균임금·1일 소정근로시간 기재), 인터넷 제출 3요건(상실신고서·이직확인서 모두 처리 / 180일 이상이면서 비자발적 이직 **상실코드 22·23·31·32** / **만 65세 미만**), 실업인정 **대리 신청은 부정수급**, **허위 구직활동은 1회 부지급·2회 이상 전체 수급기간 지급정지**, **형식적 구직활동은 1회 사전고지·2회 부지급**, 부정수급 형사처벌 **1년 이하 징역 또는 300만원 이하 벌금**, 근로사실은 소득 액수·명칭과 무관하고 **임금을 못 받았어도** 신고, 국세청 일용소득 신고로 적발되는 경우가 많음, 취업 신고는 **취업일부터 2개월 이내**·취업 전날까지 지급, 지급기간 **120일~270일**, **개별연장급여**(직업소개·상담 3회 이상 응했으나 미취업 + 본인·배우자 재산 합계 1억 4천만원 이하 등, 만료 2개월 전 상담), 심사·재심사는 결정서·통지서를 받은 날부터 **90일** 이내. 최종 수정일 2026-08-25.",
     "evidence-실업급여-구직활동-8.png": "법제처 생활법령 '실업의 인정' 상단. 흐름도와 실업의 인정 정의. 본문과 일치.",
     "evidence-실업급여-구직활동-9.png": "고용24 실업급여(상용직) 안내 상단. 메뉴와 목차만 보이고 본문은 접혀 있다. 새 수치 없음."
   },

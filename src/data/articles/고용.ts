@@ -298,7 +298,7 @@ export const 고용: ArticleCategory = {
         { group: "법령", title: "고용보험법", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제40조(수급요건), 제41조(피보험 단위기간), 제42조(실업의 신고·이직확인서 발급 요청), 제43조(수급자격 인정), 제44조(실업의 인정), 제45조(기초일액), 제46조(구직급여일액), 제47조(근로 신고), 제48조(수급기간 12개월), 제49조(대기기간), 제50조 및 별표1(소정급여일수), 제58조(이직 사유 제한), 제61조(부정행위 지급 제한), 제64조(조기재취업수당), 제118조(과태료)" },
         { group: "법령", title: "고용보험법 시행령", url: "https://www.law.go.kr/법령/고용보험법시행령", org: "법제처", note: "제68조(기초일액 상한 113,500원), 제84조(조기재취업수당 지급기준)" },
                 { group: "행정규칙·안내", title: "법제처 찾기쉬운 생활법령정보 — 실업급여", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=3&cnpClsNo=2", org: "법제처", note: "구직급여 수급액·수급일수·수급자격 제한(시행규칙 제101조 제2항 및 별표2 정당한 이직 사유)" },
-        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 제도 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411", org: "고용노동부 고용24", note: "신청 절차 8단계, 이직확인서 10일 이내 발급, 재취업활동 구분, 실업인정 다음 날 입금, 취업 2개월 이내 신고 (최종 수정 2026-08-25)" },
+        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 제도 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부 고용24", note: "신청 절차 8단계, 이직확인서 10일 이내 발급, 재취업활동 구분, 실업인정 다음 날 입금, 취업 2개월 이내 신고 (최종 수정 2026-08-25)" },
         { group: "정부 도구", title: "최저임금위원회 — 2026년 적용 최저임금", url: "https://www.minimumwage.go.kr/main.do", org: "최저임금위원회", note: "시급 10,320원, 일급 82,560원(8시간 기준)" },
         { group: "정부 도구", title: "고용24 실업급여 모의계산", url: "https://www.work24.go.kr/cm/c/f/1100/selecSimulate.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=SC00000253&systClId=SC00000254&systId=SI00000411&systCnntId=CI00002358", org: "고용노동부 고용24", note: "간편·상세 모의계산 (상용·일용·자영업·예술인·노무제공자)" },
         { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "본문의 모든 숫자는 위 출처 화면을 Playwright로 직접 열어 추출한 원문(scripts/evidence/실업급여.json, 252건)과 대조했고, 계산값(하한·상한·표의 총액)은 그 원문의 산식으로 계산했어요. 링크는 발행 전 실제로 열어 그 일을 하는 화면인지 확인했어요." },
@@ -446,7 +446,7 @@ export const 고용: ArticleCategory = {
         { group: "법령", title: "고용보험법", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제42조(실업의 신고), 제43조(수급자격 인정), 제44조(실업의 인정), 제47조(근로 제공 신고), 제49조(대기기간), 제61조(부정행위 지급 제한)" },
         { group: "법령", title: "고용보험법 시행령·시행규칙", url: "https://www.law.go.kr/법령/고용보험법시행령", org: "법제처", note: "시행령 제63조(실업인정 신청과 재취업활동 인정기준), 시행규칙 제87조(인정되지 않는 경우), 제92조(취업으로 보는 경우)" },
         { group: "행정규칙·안내", title: "법제처 생활법령 — 실업의 인정", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2", org: "법제처", note: "재취업활동 신고·인정기준·불인정 사유, 증빙 서류 예시" },
-        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411", org: "고용노동부 고용24", note: "실업인정 주기(1~4주), 인정 다음 날 입금, 허위·형식적 구직활동 제재" },
+        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부 고용24", note: "실업인정 주기(1~4주), 인정 다음 날 입금, 허위·형식적 구직활동 제재" },
         { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "본문의 모든 숫자와 인용은 위 출처 화면을 Playwright로 직접 열어 추출한 원문(scripts/evidence/실업급여-실업인정.json, 140건)과 대조했어요." },
       ],
       lastVerified: "2026-09-03",
@@ -604,7 +604,7 @@ export const 고용: ArticleCategory = {
       sources: [
         { group: "법령", title: "고용보험법", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제40조(수급요건), 제41조(피보험 단위기간), 제43조(수급자격 인정), 제48조(수급기간과 연기), 제49조(대기기간), 제50조 및 별표1(소정급여일수)" },
         { group: "행정규칙·안내", title: "법제처 생활법령 — 구직급여 수급일수", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=3&cnpClsNo=1", org: "법제처", note: "소정급여일수 표(120~270일), 대기기간, 개별연장급여" },
-        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411", org: "고용노동부 고용24", note: "지급기간 120~270일, 1년 경과 시 종료, 개별연장급여 상담 시점" },
+        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부 고용24", note: "지급기간 120~270일, 1년 경과 시 종료, 개별연장급여 상담 시점" },
         { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "본문의 모든 숫자와 인용은 위 출처 화면을 Playwright로 직접 열어 추출한 원문(scripts/evidence/실업급여-기간.json, 122건)과 대조했어요." },
       ],
       lastVerified: "2026-09-03",
@@ -930,7 +930,7 @@ export const 고용: ArticleCategory = {
         { group: "법령", title: "고용보험법", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제40조(수급요건), 제43조(수급자격 인정), 제44조(실업의 인정), 제47조(근로 제공 신고), 제61조(부정행위 지급 제한), 제64조(조기재취업수당)" },
         { group: "법령", title: "고용보험법 시행령·시행규칙", url: "https://www.law.go.kr/법령/고용보험법시행규칙", org: "법제처", note: "시행령 제63조·제69조, 시행규칙 제92조(취업으로 보는 경우 — 월 60시간·주 15시간, 3개월 계속, 사업자등록 등)" },
         { group: "행정규칙·안내", title: "법제처 생활법령 — 실업의 인정", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2", org: "법제처", note: "취업 등의 신고 기준, 일용근로자 1일 근로 = 최대 2주 구직활동 인정" },
-        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411", org: "고용노동부 고용24", note: "부정수급 시 추가징수·형사처벌(1년 이하 징역 또는 300만 원 이하 벌금), 취업 2개월 이내 신고" },
+        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부 고용24", note: "부정수급 시 추가징수·형사처벌(1년 이하 징역 또는 300만 원 이하 벌금), 취업 2개월 이내 신고" },
         { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "본문의 모든 숫자와 인용은 위 출처 화면을 Playwright로 직접 열어 추출한 원문(scripts/evidence/알바-실업급여.json, 131건)과 대조했어요." },
       ],
       lastVerified: "2026-09-03",
@@ -1075,7 +1075,7 @@ export const 고용: ArticleCategory = {
         { group: "법령", title: "고용보험법", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제40조(수급요건 180일), 제41조(피보험 단위기간), 제42조(실업의 신고·이직확인서 발급 요청), 제43조(수급자격 인정), 제58조(이직 사유에 따른 수급자격 제한)" },
         { group: "법령", title: "고용보험법 시행규칙 제101조 및 별표", url: "https://www.law.go.kr/법령/고용보험법시행규칙", org: "법제처", note: "별표1의2(수급자격 제한 사유), 별표2(정당한 이직 사유 — 정년 도래·계약기간 만료 포함)" },
         { group: "행정규칙·안내", title: "법제처 생활법령 — 수급자격의 제한", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=1&cnpClsNo=2", org: "법제처", note: "제한 사유 목록과 정당한 이직 사유 전문" },
-        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411", org: "고용노동부 고용24", note: "이직확인서 10일 이내 발급, 피보험단위기간 산정 시 유급휴일 포함·무급일 제외" },
+        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부 고용24", note: "이직확인서 10일 이내 발급, 피보험단위기간 산정 시 유급휴일 포함·무급일 제외" },
         { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "본문의 모든 인용은 위 출처 화면을 Playwright로 직접 열어 추출한 원문(scripts/evidence/계약직-실업급여.json, 87건)과 대조했어요." },
       ],
       lastVerified: "2026-09-03",
@@ -1221,7 +1221,7 @@ export const 고용: ArticleCategory = {
         { group: "법령", title: "고용보험법", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제42조(실업의 신고·이직확인서 발급 요청), 제43조(수급자격의 인정), 제44조(실업의 인정), 제49조(대기기간)" },
         { group: "법령", title: "고용보험법 시행령·시행규칙", url: "https://www.law.go.kr/법령/고용보험법시행령", org: "법제처", note: "시행령 제61조~제63조(수급자격 인정 신청과 실업인정 절차)" },
         { group: "행정규칙·안내", title: "법제처 생활법령 — 실업의 신고", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=1", org: "법제처", note: "실업 신고에 포함되는 것, 수급자격증 보관, 이직확인서 제출 요청" },
-        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411", org: "고용노동부 고용24", note: "신청 절차 8단계, 상실신고 기한, 이직확인서 10일, 인터넷 제출 세 요건" },
+        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부 고용24", note: "신청 절차 8단계, 상실신고 기한, 이직확인서 10일, 인터넷 제출 세 요건" },
         { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "본문의 모든 숫자와 인용은 위 출처 화면을 Playwright로 직접 열어 추출한 원문(scripts/evidence/실업급여-신청.json, 95건)과 대조했어요." },
       ],
       lastVerified: "2026-09-04",
@@ -1260,6 +1260,10 @@ export const 고용: ArticleCategory = {
       ],
 
       keyFacts: [
+        { label: "발급 기한", value: "사업주는 근로자의 이직확인서 **발급 요청에 따라 10일 이내에** 발급해 주어야 해요 (고용24 안내)" },
+        { label: "무엇이 적히나", value: "**퇴직 사유, 고용보험 가입기간, 평균임금, 1일 소정근로시간** 등을 확인하는 서류이고, 사업주가 고용센터에 제출해요" },
+        { label: "확인하는 곳이 달라요", value: "**상실신고서**는 근로복지공단 고용산재토탈서비스에서, **이직확인서**는 고용24 마이페이지의 민원처리 알림(이직확인서 처리 현황)에서 봐요" },
+        { label: "미리 요청하세요", value: "안내는 **퇴직할 때 회사에 미리 요청해 둘 것**을 권하고 있어요" },
         { label: "무엇인가", value: "퇴직 사유·고용보험 가입기간·**평균임금**·1일 소정근로시간을 확인하는 서류예요" },
         { label: "누가 내나", value: "회사(사업주)가 고용센터에 제출해요. 근로자가 가져가는 서류가 아니에요" },
         { label: "요청 권리", value: "이직한 사람은 회사에 발급을 **요청할 수 있어요**" },
@@ -1371,7 +1375,7 @@ export const 고용: ArticleCategory = {
       sources: [
         { group: "법령", title: "고용보험법", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제15조(피보험자격 신고), 제42조 제3항(발급 요청과 발급 의무), 제43조 제4항(고용센터의 제출 요청), 제118조 제1항(과태료)" },
         { group: "행정규칙·안내", title: "법제처 생활법령 — 실업의 신고", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=1", org: "법제처", note: "이직확인서 제출 요청과 수급자격 인정 절차" },
-        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411", org: "고용노동부 고용24", note: "이직확인서 기재 항목, 10일 발급, 상실신고 기한, 처리 현황 확인 경로" },
+        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부 고용24", note: "이직확인서 기재 항목, 10일 발급, 상실신고 기한, 처리 현황 확인 경로" },
         { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "본문의 모든 숫자와 인용은 위 출처 화면을 Playwright로 직접 열어 추출한 원문(scripts/evidence/실업급여-이직확인서.json, 85건)과 대조했어요." },
       ],
       lastVerified: "2026-09-04",
@@ -1530,7 +1534,7 @@ export const 고용: ArticleCategory = {
         { group: "법령", title: "고용보험법", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제40조(수급요건), 제43조(수급자격 인정), 제58조(이직 사유에 따른 수급자격 제한)" },
         { group: "법령", title: "고용보험법 시행규칙 제101조 및 별표", url: "https://www.law.go.kr/법령/고용보험법시행규칙", org: "법제처", note: "별표1의2(수급자격 제한 사유), 별표2(정당한 이직 사유 전문)" },
         { group: "행정규칙·안내", title: "법제처 생활법령 — 수급자격의 제한", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=1&cnpClsNo=2", org: "법제처", note: "제한 사유와 정당한 이직 사유 목록, 기간·정도 요건" },
-        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411", org: "고용노동부 고용24", note: "이직확인서 기재 항목과 발급 요청, 신청 절차" },
+        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부 고용24", note: "이직확인서 기재 항목과 발급 요청, 신청 절차" },
         { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "본문의 모든 인용은 위 출처 화면을 Playwright로 직접 열어 추출한 원문(scripts/evidence/자발적-퇴사-실업급여.json, 84건)과 대조했어요." },
       ],
       lastVerified: "2026-09-04",
@@ -1569,6 +1573,10 @@ export const 고용: ArticleCategory = {
       ],
 
       keyFacts: [
+        { label: "형사처벌", value: "고용보험법에 따라 **1년 이하의 징역 또는 300만원 이하의 벌금형**을 받을 수 있어요 (고용24 안내)" },
+        { label: "대리 신청도 부정수급", value: "실업인정은 본인이 방문하거나 온라인·모바일로 **직접** 신청해야 하고, **타인이 대신 작성해 신청하면 부정수급**이에요" },
+        { label: "허위 구직활동", value: "**2회 이상 적발되면 전체 수급 기간에 대해 지급정지**돼요. 1회는 해당 실업인정 대상기간 부지급입니다" },
+        { label: "가장 흔한 적발 경로", value: "사업주가 세금 신고 시 **국세청에 일용근로자 소득을 신고**하는 과정에서 적발되는 경우가 많다고 안내하고 있어요" },
         { label: "무엇이 부정수급인가", value: "거짓이나 그 밖의 **부정한 방법**으로 실업급여를 받았거나 받으려 한 경우" },
         { label: "지급 제한", value: "받은 날 또는 받으려 한 날부터의 **구직급여를 지급하지 않아요**" },
         { label: "신고 불이행", value: "근로 사실 미신고 등은 **그 실업인정대상기간에 한정**해 부지급" },
@@ -1680,7 +1688,7 @@ export const 고용: ArticleCategory = {
       sources: [
         { group: "법령", title: "고용보험법", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제47조(취업 등의 신고), 제61조(부정행위에 따른 지급 제한), 제62조(반환명령), 제116조(벌칙), 제118조(과태료)" },
         { group: "행정규칙·안내", title: "법제처 생활법령 — 실업의 인정", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2", org: "법제처", note: "근로 제공 신고 의무, 재취업활동으로 인정되지 않는 경우" },
-        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411", org: "고용노동부 고용24", note: "주의사항(부정수급) — 추가징수, 형사처벌 1년 이하 징역 또는 300만 원 이하 벌금, 국세청 소득 신고 과정 적발, 대리 신청 금지, 취업 2개월 이내 신고" },
+        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부 고용24", note: "주의사항(부정수급) — 추가징수, 형사처벌 1년 이하 징역 또는 300만 원 이하 벌금, 국세청 소득 신고 과정 적발, 대리 신청 금지, 취업 2개월 이내 신고" },
         { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "본문의 모든 숫자와 인용은 위 출처 화면을 Playwright로 직접 열어 추출한 원문(scripts/evidence/실업급여-부정수급.json, 82건)과 대조했어요. 신고 포상 등 확인되지 않은 내용은 다루지 않았어요." },
       ],
       lastVerified: "2026-09-04",
@@ -1833,7 +1841,7 @@ export const 고용: ArticleCategory = {
         { group: "법령", title: "고용보험법", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제40조(수급요건 — 18개월 중 180일), 제41조(피보험 단위기간), 제43조(수급자격 인정), 제50조(피보험기간)" },
         { group: "법령", title: "고용보험법 시행령 제60조", url: "https://www.law.go.kr/법령/고용보험법시행령", org: "법제처", note: "기준기간 연장 사유(질병·부상 등으로 계속 30일 이상 보수를 받을 수 없었던 경우)" },
         { group: "행정규칙·안내", title: "법제처 생활법령 — 구직급여 수급요건", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=1&cnpClsNo=1", org: "법제처", note: "피보험 단위기간의 계산, 기준기간, 3년 이내 재취직 시 합산" },
-        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411", org: "고용노동부 고용24", note: "유급휴일·휴업수당 포함, 주 5일제 무급일과 관공서 공휴일 제외, 취업규칙 확인 안내" },
+        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부 고용24", note: "유급휴일·휴업수당 포함, 주 5일제 무급일과 관공서 공휴일 제외, 취업규칙 확인 안내" },
         { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "본문의 모든 숫자와 인용은 위 출처 화면을 Playwright로 직접 열어 추출한 원문(scripts/evidence/실업급여-180일.json, 114건)과 대조했고, 30주 환산은 그 원문의 기준으로 계산했어요." },
       ],
       lastVerified: "2026-09-04",
@@ -2044,6 +2052,11 @@ export const 고용: ArticleCategory = {
       ],
 
       keyFacts: [
+        { label: "허위면 2회에 전부 정지", value: "허위 구직활동은 **해당 실업인정 대상기간에 한해 부지급**, **2회 이상 적발 시 전체 수급 기간에 대해 지급정지**예요 (고용24 안내)" },
+        { label: "형식적이면 단계가 달라요", value: "형식적 구직활동은 **1회 적발 시 사전고지**, **2회 적발 시 해당 실업인정 대상기간에 한해 부지급**이에요" },
+        { label: "허위란", value: "입사지원이나 면접에 **응하지 않고 지원·응모한 것처럼** 허위로 신고하거나 서류를 제출하는 행위예요" },
+        { label: "형식적이란", value: "취업 의사가 없으면서 지원하는 경우예요. **같은 사업장만 반복 지원**, 채용이 거의 불가능한 근로조건만 고집, 정당한 사유 없이 면접 거부 등이 여기 들어요" },
+        { label: "대신 신청하면", value: "실업인정은 **본인이 직접** 신청해야 해요. **타인이 대신 작성해 신청하면 부정수급**에 해당합니다" },
         { label: "기본", value: "구인 응모·채용 면접·직업능력개발 훈련·직업지도 프로그램 참여가 재취업활동이에요" },
         { label: "근거", value: "고용보험법 시행규칙 **제87조 제1항** 열 가지 (시행 2026. 9. 18.)" },
         { label: "인정 안 됨", value: "같은 사업장 반복 구직 · 전화·인터넷 **탐문만** · 구인 없는 사업장 명함만 제출" },
@@ -2184,7 +2197,7 @@ export const 고용: ArticleCategory = {
         { group: "법령", title: "고용보험법 제44조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "실업의 인정 — 제2항 1주부터 4주의 범위에서 직업안정기관의 장이 지정한 실업인정일" },
         { group: "법령", title: "고용보험법 제47조·제61조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제47조 실업인정대상기간 중 취업 등의 신고 의무, 제61조 부정행위에 따른 급여의 지급 제한(제2항 단서와 2회 이상 위반)" },
         { group: "행정규칙·안내", title: "법제처 생활법령 — 실업의 인정", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2", org: "법제처", note: "재취업활동 인정 방법과 제출 서류, 인정되지 않는 경우 열 가지(실업인정 및 재취업지원규정 제10조 제5항), 워크넷 이메일 입사지원 4회·6회 상한" },
-        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411", org: "고용노동부", note: "허위·형식적 구직활동의 정의와 적발 회수별 제재, 반복수급자·장기수급자 기준 강화, 본인 직접 신청 원칙" },
+        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부", note: "허위·형식적 구직활동의 정의와 적발 회수별 제재, 반복수급자·장기수급자 기준 강화, 본인 직접 신청 원칙" },
         { group: "정부 도구", title: "고용24 실업인정 신청", url: "https://www.work24.go.kr/ei/a/b/1300/openHPEIAB1300M01.do", org: "고용노동부", note: "특정 회차를 제외하고 온라인으로 실업인정 신청" },
         { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "본문의 활동 목록·회수·상한·제재는 위 화면을 Playwright로 직접 열어 추출한 원문(scripts/evidence/실업급여-구직활동.json, 74건)과 조문 캡처 이미지에서 확인했어요. 회차별로 몇 건을 해야 하는지는 수급 유형과 고용센터 안내에 따라 달라져 이 글에서 단정하지 않았습니다." },
       ],
@@ -2342,7 +2355,7 @@ export const 고용: ArticleCategory = {
         { group: "법령", title: "고용보험법 제50조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "소정급여일수는 대기기간이 끝난 다음 날부터 계산, 수급기간 연장 시 유예 지급" },
         { group: "법령", title: "고용보험법 시행령 제61조·제62조", url: "https://www.law.go.kr/법령/고용보험법시행령", org: "법제처", note: "제61조 제4항 실업인정일 지정·통지, 제62조 제1항 최초 실업인정일 수급자격증 교부" },
         { group: "행정규칙·안내", title: "법제처 생활법령 — 구직급여 수급신청", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=1", org: "법제처", note: "실업 신고와 수급자격 인정 절차, 이직일 다음 날부터 12개월 초과 시 남은 급여 미지급" },
-        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411", org: "고용노동부", note: "통상 실업인정을 받은 다음 날 지정 계좌 입금, 지급 종료 사유, 취업 시 2개월 이내 신고" },
+        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부", note: "통상 실업인정을 받은 다음 날 지정 계좌 입금, 지급 종료 사유, 취업 시 2개월 이내 신고" },
         { group: "정부 도구", title: "고용24 실업인정 신청", url: "https://www.work24.go.kr/ei/a/b/1300/openHPEIAB1300M01.do", org: "고용노동부", note: "회차별 실업인정 신청과 처리 상태 확인" },
         { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "대기기간 7일·1주부터 4주·12개월·2개월·4년과 입금 시점은 위 화면을 Playwright로 직접 열어 추출한 원문(scripts/evidence/실업급여-지급일.json, 74건)과 대조했어요. 회차별 구체 금액은 개인의 구직급여일액과 인정 일수로 갈려 이 글에서 단정하지 않았습니다." },
       ],
@@ -2498,7 +2511,7 @@ export const 고용: ArticleCategory = {
         { group: "법령", title: "고용보험법 제40조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "구직급여의 수급 요건 — 이직일 이전 18개월(기준기간) 동안 피보험 단위기간 합산 180일 이상, 제58조 제한 사유에 해당하지 않을 것" },
         { group: "법령", title: "고용보험법 제42조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제3항 사업주에게 이직확인서 발급을 요청할 수 있는 근거" },
         { group: "법령", title: "고용보험법 시행규칙 제101조", url: "https://www.law.go.kr/법령/고용보험법시행규칙", org: "법제처", note: "이직 사유에 따른 수급자격의 제한 기준 — 제1항 별표 1의2(중대한 귀책사유 기준), 제2항 별표 2(정당한 사유)" },
-        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411", org: "고용노동부", note: "이직확인서 기재 항목과 10일 발급 기한, 상실신고 다음 달 15일 기한, 온라인 신청 요건(상실코드 22·23·31·32, 65세 미만), 이의 시 90일 심사청구" },
+        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부", note: "이직확인서 기재 항목과 10일 발급 기한, 상실신고 다음 달 15일 기한, 온라인 신청 요건(상실코드 22·23·31·32, 65세 미만), 이의 시 90일 심사청구" },
         { group: "정부 도구", title: "고용24 수급자격 인정신청", url: "https://www.work24.go.kr/ei/a/b/1200/openHPEIAB1200M01.do", org: "고용노동부", note: "이직확인서 처리현황 조회와 수급자격 인정신청서 인터넷 제출" },
         { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "제58조 각 호·목의 문구와 180일·18개월·10일·15일·90일·65세는 위 화면을 Playwright로 직접 열어 추출한 원문(scripts/evidence/권고사직-실업급여.json, 48건)과 조문 캡처 이미지에서 확인했어요. 권고사직 위로금이 실업급여에 미치는 영향은 근거를 확보하지 못해 이 글에서 다루지 않았습니다." },
       ],
@@ -2814,7 +2827,7 @@ export const 고용: ArticleCategory = {
         { group: "법령", title: "고용보험법 제44조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "실업의 인정 — 제2항 1주부터 4주의 범위에서 지정한 실업인정일 출석 신고" },
         { group: "법령", title: "고용보험법 시행규칙 제87조", url: "https://www.law.go.kr/법령/고용보험법시행규칙", org: "법제처", note: "재취업활동의 인정기준 — 제1항 제3호 직업능력개발 훈련, 제4호 직업지도 프로그램 참여" },
         { group: "행정규칙·안내", title: "법제처 생활법령 — 실업의 인정", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2", org: "법제처", note: "직업지도등 참여 2회 인정(8시간 미만 1회), 수강증명서 4주 1회 제출, 자영업 훈련·교육 수급기간 중 1회" },
-        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411", org: "고용노동부", note: "신청절차 8단계와 사전 교육 안내, 첫 신청 방문 원칙, 인터넷 제출 세 요건, 재난 시 온라인 대체, 국민내일배움카드" },
+        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부", note: "신청절차 8단계와 사전 교육 안내, 첫 신청 방문 원칙, 인터넷 제출 세 요건, 재난 시 온라인 대체, 국민내일배움카드" },
         { group: "정부 도구", title: "고용24 온라인 사전교육", url: "https://www.work24.go.kr/ei/a/b/1100/retrievePuIncqualClmntOnlineView.do", org: "고용노동부", note: "수급자격 신청자 온라인 교육 시청 화면" },
         { group: "정부 도구", title: "고용24 실업인정 신청", url: "https://www.work24.go.kr/ei/a/h/1200/openHPEIAH1200M02.do", org: "고용노동부", note: "회차별 실업인정 온라인 신청" },
         { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "1주~4주·2회·8시간·4주·1개월·100분의 20·180일·65세는 위 화면을 Playwright로 직접 열어 추출한 원문(scripts/evidence/실업급여-교육.json, 56건)과 대조했어요. 온라인 사전교육·구직등록·실업인정 버튼 주소는 고용24 안내 페이지에서 실제 링크를 확인하고 하나씩 열어 응답을 확인했습니다. 회차별로 몇 건의 활동이 필요한지는 수급 유형에 따라 갈려 이 글에서 단정하지 않았어요." },
@@ -2855,6 +2868,10 @@ export const 고용: ArticleCategory = {
       ],
 
       keyFacts: [
+        { label: "인터넷 제출 요건 셋", value: "**상실신고서와 이직확인서가 모두 처리**된 사람, **피보험 단위기간 180일 이상이면서 비자발적 이직**(상실코드 22·23·31·32), **이직일 기준 만 65세 미만**을 모두 충족한 상용근로자예요" },
+        { label: "제출해도 방문은 필요해요", value: "인터넷으로 **먼저 제출한 뒤 고용센터에 출석**해 수급자격 인정 신청을 하는 방식이에요. 방문을 없애는 제도가 아닙니다" },
+        { label: "실업인정은 온라인", value: "실업인정은 **특정 회차를 제외하고** 방문 없이 온라인으로 신청할 수 있어요" },
+        { label: "재난이면 대체 가능", value: "재난으로 출석이 어렵거나 이에 준하는 경우로서 **고용복지센터장이 인정**하면 온라인으로 대체할 수 있어요" },
         { label: "온라인으로 되는 것", value: "구직등록 · 사전교육 · 수급자격 인정신청서 **인터넷 제출** · 실업인정(특정 회차 제외)" },
         { label: "방문해야 하는 것", value: "**첫 수급자격 인정 신청** — 신분증을 지참해 거주지 관할 고용복지센터로" },
         { label: "인터넷 제출의 뜻", value: "신청서를 미리 내고 출석해 **처리를 빠르게** 하는 서비스예요. 방문을 없애 주지 않아요" },
@@ -2975,7 +2992,7 @@ export const 고용: ArticleCategory = {
         { group: "법령", title: "고용보험법 시행령 제61조·제62조", url: "https://www.law.go.kr/법령/고용보험법시행령", org: "법제처", note: "제61조 제1항 전산망을 통한 구직신청, 제2항 거주지 관할 고용센터 제출, 제62조 제1항 최초 실업인정일 수급자격증 교부" },
         { group: "법령", title: "고용보험법 시행규칙 제82조", url: "https://www.law.go.kr/법령/고용보험법시행규칙", org: "법제처", note: "실업신고와 수급자격 인정신청서 — 재난 등 출석 곤란 사유, 신청서는 별지 제75호서식" },
         { group: "행정규칙·안내", title: "법제처 생활법령 — 구직급여 수급신청", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=1", org: "법제처", note: "구직신청 경로(고용24 채용정보-구직신청), 수급자격 인정신청서 제출처, 이직일 다음 날부터 12개월 기한" },
-        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411", org: "고용노동부", note: "신청절차 8단계, 수급자격 인정 신청은 반드시 고용센터 방문, 인터넷 제출 세 요건, 실업인정 특정 회차 제외 온라인, 대리 신청 시 부정수급" },
+        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부", note: "신청절차 8단계, 수급자격 인정 신청은 반드시 고용센터 방문, 인터넷 제출 세 요건, 실업인정 특정 회차 제외 온라인, 대리 신청 시 부정수급" },
         { group: "정부 도구", title: "고용24 구직등록", url: "https://www.work24.go.kr/wk/a/b/2100/resumeMngMain.do", org: "고용노동부", note: "이력서 작성과 구직신청" },
         { group: "정부 도구", title: "고용24 수급자격 인정신청서 인터넷 제출", url: "https://www.work24.go.kr/ei/a/b/1200/openHPEIAB1200M01.do", org: "고용노동부", note: "세 요건 충족 시 신청서 선제출" },
         { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "180일·65세·상실코드·12개월·1~4주와 온라인 가능 범위는 위 화면을 Playwright로 직접 열어 추출한 원문(scripts/evidence/실업급여-온라인-신청.json, 56건)과 대조했어요. 버튼 주소는 고용24 안내 페이지의 실제 링크를 확인하고 하나씩 열어 응답을 확인했습니다. 어느 회차에 방문해야 하는지는 수급 유형과 센터 안내로 갈려 이 글에서 단정하지 않았어요." },
@@ -3142,7 +3159,7 @@ export const 고용: ArticleCategory = {
         { group: "법령", title: "고용보험법 시행규칙 제82조·제83조", url: "https://www.law.go.kr/법령/고용보험법시행규칙", org: "법제처", note: "신청서·수급자격증 서식 — 제75호(인정신청서), 제76호(수급자격증), 제77호(불인정 통지서), 제78호(재발급), 제79호(변경·정정), 제80호(인정명세서 발급 청구서)" },
         { group: "법령", title: "고용보험법 시행규칙 제101조 및 별표 2", url: "https://www.law.go.kr/법령/고용보험법시행규칙", org: "법제처", note: "정당한 이직 사유와 사유별 판단 기준 — 1년 이내 2개월, 왕복 3시간, 30일 이상 간호, 의사 소견서, 8세 이하 자녀 등" },
         { group: "행정규칙·안내", title: "법제처 생활법령 — 구직급여 수급신청·수급대상", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=1", org: "법제처", note: "구직신청 경로, 수급자격 인정신청서 제출처, 국민연금 가입기간 추가 산입 신청, 12개월 기한" },
-        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411", org: "고용노동부", note: "신분증 지참 방문, 상실신고서·이직확인서 제출 주체와 확인 경로, 10일·15일 기한, 이의 시 90일 심사청구" },
+        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부", note: "신분증 지참 방문, 상실신고서·이직확인서 제출 주체와 확인 경로, 10일·15일 기한, 이의 시 90일 심사청구" },
         { group: "정부 도구", title: "고용24 이직확인서 발급 요청서", url: "https://www.work24.go.kr/cm/c/b/1100/selectBbttInfo.do?currentPageNo=1&recordCountPerPage=10&polySvcFomtId=FM00000114", org: "고용노동부", note: "회사에 발급을 요청할 때 쓰는 서식" },
         { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "서식 번호(제75~제80호)·10일·15일·12개월·90일·1년 2개월·3시간·30일·8세는 위 화면을 Playwright로 직접 열어 추출한 원문(scripts/evidence/실업급여-구비서류.json, 109건)과 대조했어요. 사유별 증빙은 법이 목록으로 정해 둔 것이 아니라 별표 2의 판단 기준이므로, 임의로 서류 목록을 만들지 않고 조문의 기준을 그대로 실었습니다." },
       ],
@@ -3504,7 +3521,7 @@ export const 고용: ArticleCategory = {
         { group: "법령", title: "고용보험법 제40조 제2항 · 시행령 제60조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "기준기간 연장 — 질병·부상 등으로 계속 30일 이상 보수를 받을 수 없었던 경우 18개월에 그 일수를 가산(3년 한도)" },
         { group: "법령", title: "고용보험법 제48조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "수급기간과 수급일수 — 임신·출산·육아 등 사유로 수급기간을 연장하는 근거" },
         { group: "행정규칙·안내", title: "법제처 생활법령 — 구직급여 수급대상", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=1&cnpClsNo=1", org: "법제처", note: "별표 2의 정당한 사유 전문과 기준기간 연장사유 목록(질병·부상, 휴업, 육아휴직, 간호휴직, 군복무, 부당해고 등)" },
-        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411", org: "고용노동부", note: "수급기간 연기 — 4년 범위 연장, 수급기간 내 수급자격증 첨부해 고용복지센터에 수급기간연기신고서 제출" },
+        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부", note: "수급기간 연기 — 4년 범위 연장, 수급기간 내 수급자격증 첨부해 고용복지센터에 수급기간연기신고서 제출" },
         { group: "정부 도구", title: "고용24 수급자격 인정신청", url: "https://www.work24.go.kr/ei/a/b/1200/openHPEIAB1200M01.do", org: "고용노동부", note: "수급자격 인정신청서 인터넷 제출" },
         { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "30일·4년·18개월·3년·180일·8촌·4촌은 위 화면을 Playwright로 직접 열어 추출한 원문(scripts/evidence/실업급여-질병-부상.json, 73건)과 대조했어요. 증빙은 법이 목록으로 정해 둔 것이 아니라 별표 2가 이름을 적은 의사 소견서·사업주 의견이므로, 임의로 서류 목록을 만들지 않았습니다. 수급기간연기신고서는 온라인 접수 화면이 없어 버튼으로 달지 않았어요." },
       ],
@@ -3670,7 +3687,7 @@ export const 고용: ArticleCategory = {
         { group: "법령", title: "고용보험법 시행령 제85조", url: "https://www.law.go.kr/법령/고용보험법시행령", org: "법제처", note: "금액 — 구직급여일액에 미지급일수의 2분의 1을 곱한 금액" },
         { group: "법령", title: "고용보험법 시행령 제86조", url: "https://www.law.go.kr/법령/고용보험법시행령", org: "법제처", note: "청구 — 청구서 제출처와 12개월 이후 제출, 65세 이상 특례, 지급절차는 제75조 준용" },
         { group: "행정규칙·안내", title: "법제처 생활법령 — 구직급여 수급액", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=3&cnpClsNo=2", org: "법제처", note: "구직급여일액(기초일액 × 60%)과 총 수급액 산식 — 미지급일수 계산의 전제" },
-        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411", org: "고용노동부", note: "소정급여일수의 1/2 이상을 남기고 재취업해 안정적으로 근무하면 남은 구직급여액의 일부 지급, 취업사실 2개월 이내 신고" },
+        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부", note: "소정급여일수의 1/2 이상을 남기고 재취업해 안정적으로 근무하면 남은 구직급여액의 일부 지급, 취업사실 2개월 이내 신고" },
         { group: "정부 도구", title: "고용24 조기재취업수당 신청", url: "https://www.work24.go.kr/ei/a/m/1200/createPuElempAllwncView.do", org: "고용노동부", note: "조기재취업 수당 청구 화면" },
         { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "14일·2분의 1·12개월·6개월·65세·2년과 제외 다섯 목은 위 화면을 Playwright로 직접 열어 추출한 원문(scripts/evidence/실업급여-조기재취업수당.json)과 조문 캡처 이미지에서 확인했어요. 시행령 제85조는 본문이 짧아 자동 추출이 막혀 조문 화면을 직접 열어 읽고 증거에 담았습니다. 라목의 고시 임금액은 고시로 정해져 이 글에서 금액을 단정하지 않았어요." },
       ],
@@ -3710,6 +3727,10 @@ export const 고용: ArticleCategory = {
       ],
 
       keyFacts: [
+        { label: "금액과 무관해요", value: "**하루 소득이 얼마인지와 관계없이**, 임금·수당 등 **명칭과 관계없이** 근로사실을 신고해야 해요 (고용24 안내)" },
+        { label: "못 받았어도 신고", value: "일을 했으나 **임금을 받지 못한 경우에도** 근로사실은 필수 신고예요" },
+        { label: "적발되는 길", value: "사업주가 세금 신고 시 **국세청에 일용근로자 소득을 신고**하는 과정에서 부정수급으로 적발되는 경우가 많아요" },
+        { label: "취업 신고 기한", value: "취업 또는 사업을 시작했다면 근로계약서·재직증명서 등 취업일이 확인되는 자료를 붙여 **취업한 날부터 2개월 이내**에 신고하고, **취업 전날까지의 구직급여**를 받아요" },
         { label: "신고 기한", value: "취업하거나 사업을 시작한 날부터 **2개월 이내**" },
         { label: "첨부", value: "**근로계약서나 재직증명서** 등 취업일이 확인되는 자료" },
         { label: "받는 구간", value: "**취업 전날까지**의 구직급여" },
@@ -3834,7 +3855,7 @@ export const 고용: ArticleCategory = {
         { group: "법령", title: "고용보험법 제61조·제62조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제61조 제2항 신고의무 불이행 시 해당 기간 한정과 2회 이상 위반, 제5항 10년 3회 이상 3년 범위 제한, 제62조 제2항 추가징수 2배·공모 5배" },
         { group: "법령", title: "고용보험법 제64조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "조기재취업 수당 — 남은 급여를 받는 길" },
         { group: "행정규칙·안내", title: "법제처 생활법령 — 실업의 인정", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=2", org: "법제처", note: "실업의 인정 정의와 절차, 심사청구 90일" },
-        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411", org: "고용노동부", note: "취업 시 2개월 이내 신고와 취업 전날까지 구직급여, 하루 소득·명칭과 무관한 근로사실 신고, 국세청 소득신고로 적발되는 경로, 형사처벌" },
+        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부", note: "취업 시 2개월 이내 신고와 취업 전날까지 구직급여, 하루 소득·명칭과 무관한 근로사실 신고, 국세청 소득신고로 적발되는 경로, 형사처벌" },
         { group: "정부 도구", title: "고용24 취업사실 신고", url: "https://www.work24.go.kr/ei/a/m/1100/retrievePuEmpymnFactDclrtViewGet.do", org: "고용노동부", note: "취업일 확인 자료를 첨부해 신고하는 화면" },
         { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "2개월·60시간·15시간·3개월·50만원·80만원·2배·5배·10년 3회·3년은 위 화면을 Playwright로 직접 열어 추출한 원문(scripts/evidence/실업급여-수급중-취업.json)과 조문 캡처 이미지에서 확인했어요. 캡처 6장 중 4장은 다른 글에서 이미 열어 읽은 것과 파일 해시가 같은 동일 화면이고, 나머지 2장은 이 글에서 새로 열어 읽었습니다." },
       ],
@@ -3997,7 +4018,7 @@ export const 고용: ArticleCategory = {
         { group: "법령", title: "고용보험법 제50조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "소정급여일수 — 가입기간과 연령에 따라 별표 1에서 정한 일수" },
         { group: "법령", title: "고용보험법 시행령 제84조·제85조·제86조", url: "https://www.law.go.kr/법령/고용보험법시행령", org: "법제처", note: "조기재취업 수당 — 제84조 65세 이상 6개월 특례, 제85조 금액(구직급여일액 × 미지급일수 × 2분의 1), 제86조 청구서 즉시 제출 특례" },
         { group: "행정규칙·안내", title: "법제처 생활법령 — 구직급여 수급자격", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=1&cnpClsNo=1", org: "법제처", note: "제40조 제1항의 수급 요건 다섯 가지와 기준기간 연장" },
-        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411", org: "고용노동부", note: "인터넷 제출 세 요건 중 이직일 기준 만 65세 미만, 취업 시 2개월 이내 신고" },
+        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부", note: "인터넷 제출 세 요건 중 이직일 기준 만 65세 미만, 취업 시 2개월 이내 신고" },
         { group: "정부 도구", title: "근로복지공단 고용·산재보험 토탈서비스", url: "https://total.comwel.or.kr/", org: "근로복지공단", note: "피보험자격 취득·상실일 확인 — 65세 전부터 자격이 이어졌는지 보는 곳" },
         { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "65세·18개월·180일·30일·3년·6개월·12개월·2개월은 위 화면을 Playwright로 직접 열어 추출한 원문(scripts/evidence/실업급여-65세.json)과 조문 캡처 이미지에서 확인했어요. 캡처 6장 중 4장은 다른 글에서 이미 열어 읽은 것과 파일 해시가 같은 동일 화면이고, 2장은 이 글에서 새로 열어 읽었습니다. 처음 지정했던 시행령 제2조는 적용 범위 조항이라 65세와 무관해 인용하지 않았어요." },
       ],
@@ -4160,7 +4181,7 @@ export const 고용: ArticleCategory = {
         { group: "법령", title: "고용보험법 제45조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "급여의 기초가 되는 임금일액 — 제1항 단서의 일용근로자 특례(4개월 중 최종 1개월 제외)" },
         { group: "법령", title: "고용보험법 제49조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "대기기간 — 제1항 단서, 최종 이직 당시 건설일용근로자는 실업의 신고일부터 계산해 지급" },
         { group: "행정규칙·안내", title: "법제처 생활법령 — 구직급여 수급대상", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=1&cnpClsNo=1", org: "법제처", note: "제40조 수급 요건 전문과 일용직근로자의 정의(1개월 미만 동안 고용되는 사람)" },
-        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411", org: "고용노동부", note: "신청 절차와 실업인정, 근로사실 신고 안내" },
+        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부", note: "신청 절차와 실업인정, 근로사실 신고 안내" },
         { group: "정부 도구", title: "근로복지공단 고용·산재보험 토탈서비스", url: "https://total.comwel.or.kr/", org: "근로복지공단", note: "사업주가 신고한 일용근로내역을 날짜별로 확인하는 곳" },
         { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "3분의 1·14일·90일·180일·18개월·1개월·4개월·7일은 위 화면을 Playwright로 직접 열어 추출한 원문(scripts/evidence/일용직-실업급여.json)과 조문 캡처 이미지에서 확인했어요. 캡처 7장은 모두 다른 글에서 이미 열어 읽은 것과 파일 해시가 같은 동일 화면임을 대조로 확인했습니다." },
       ],
@@ -4323,7 +4344,7 @@ export const 고용: ArticleCategory = {
         { group: "법령", title: "고용보험법 제48조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "수급기간 및 수급일수 — 제1항, 이직일 다음 날부터 12개월 내에 소정급여일수를 한도로 지급" },
         { group: "법령", title: "고용보험법 제61조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "부정행위에 따른 급여의 지급 제한 — 제1항 단서(새 수급자격은 별개), 제2항(2회 이상), 제5항(10년 3회 이상이면 3년 범위 제한)" },
         { group: "법령", title: "고용보험법 제45조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "급여의 기초가 되는 임금일액 — 재수급 시에도 마지막 이직 당시 평균임금으로 다시 산정" },
-        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=9&upprSystClId=&systClId=SC00000254&systId=SI00000411", org: "고용노동부", note: "반복수급자·장기수급자는 재취업활동 인정 기준을 강화하여 적용, 실업인정 온라인 신청과 본인 직접 신청 원칙" },
+        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부", note: "반복수급자·장기수급자는 재취업활동 인정 기준을 강화하여 적용, 실업인정 온라인 신청과 본인 직접 신청 원칙" },
         { group: "정부 도구", title: "근로복지공단 고용·산재보험 토탈서비스", url: "https://total.comwel.or.kr/", org: "근로복지공단", note: "지난 수급 시점과 그 이후의 피보험자격 취득·상실일 확인" },
         { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "180일·18개월·3년·12개월·10년 3회는 위 화면을 Playwright로 직접 열어 추출한 원문(scripts/evidence/실업급여-반복수급.json)과 조문 캡처 이미지에서 확인했어요. 캡처 7장은 모두 다른 글에서 이미 열어 읽은 것과 파일 해시가 같은 동일 화면임을 대조로 확인했습니다. 계획 단계에서 넣으려던 '반복수급 감액'은 현행 조문과 정부 안내에서 근거를 찾지 못해 타이틀과 본문에서 빼고, 확인된 '재취업활동 인정 기준 강화'만 실었습니다." },
       ],
@@ -4334,6 +4355,1645 @@ export const 고용: ArticleCategory = {
         { question: "실업급여 며칠 받나요", slug: "실업급여-기간" },
         { question: "부정수급이 되는 경우와 처벌", slug: "실업급여-부정수급" },
         { question: "구직활동 인정 범위와 횟수", slug: "실업급여-구직활동" },
+      ],
+    },
+    {
+      slug: "실업급여-해외체류",
+      category: "고용",
+      primaryKeywords: ["실업급여 해외여행", "실업급여 해외", "실업급여 이사"],
+
+      meta: {
+        title: "실업급여 수급 중 해외여행과 이사, 출석 의무와 관할 변경 총정리",
+        description:
+          "실업인정일에 **출석**하는 것이 원칙이라, 그날 해외에 있으면 변경을 신청하지 않는 한 그 회차를 받지 못해요. 조문이 열어 둔 해외 경로는 관광이 아니라 **해외에서의 재취업활동**이고, 계획서를 미리 제출해 확인받아야 합니다. 이사는 관할이 자동으로 바뀌지 않고 **신고** 대상이에요.",
+        author: { name: "머니위키 편집팀" },
+        publishedAt: "2026-09-05",
+      },
+
+      searchIntent: {
+        userQuestion: "실업급여 받는 중에 해외여행을 가거나 이사를 해도 되나요?",
+        directAnswer: "실업인정일에 출석하는 것이 원칙이라, 그날 해외에 있으면 변경을 신청하지 않는 한 그 회차가 인정되지 않아요. 이사는 가능하지만 관할 기관에 신고해야 합니다.",
+        why: "고용보험법 제44조 제2항이 실업인정일에 출석해 재취업 노력을 신고하도록 정하고 있고, 시행령 제62조 제4항이 주소나 거소를 변경하면 신청지 관할 직업안정기관에 신고하도록 정하고 있어요.",
+      },
+
+      verify: { note: "법제처 조문 화면(고용보험법 시행 2026. 8. 20. · 시행령 시행 2026. 7. 1. · 시행규칙 시행 2026. 9. 18.) 확인 · 생활법령·고용24 안내 대조", date: "2026-09-05" },
+
+      heroStats: [
+        { label: "원칙", value: "출석", note: "실업인정일에 **직업안정기관에 출석**해 재취업 노력을 신고해야 해요 (제44조 제2항)." },
+        { label: "흘러가는 기한", value: "12개월", note: "이직일 다음 날부터 **12개월** 안에서만 받을 수 있어요. 해외에 머무는 동안에도 이 기간은 지나갑니다 (제48조 제1항)." },
+      ],
+
+      keyFacts: [
+        { label: "해외여행 결론", value: "실업인정일에 출석하지 못하면 **변경을 신청하지 않는 한** 그 회차가 인정되지 않아요. 관광 목적 해외 체류를 정면으로 허용하는 조문은 없습니다" },
+        { label: "조문이 연 해외 경로", value: "**해외에서의 재취업활동**을 위한 체류일 것 + 그 **계획을 제출해 확인**받을 것, 두 가지를 모두 갖춘 경우예요 (시행령 제65조 제10호)" },
+        { label: "짧은 일정이라면", value: "**취업·면접이나 그 밖의 부득이한 사유**로 출석할 수 없을 때 **전날까지** 출석해 변경을 신청할 수 있어요. 단순 여행이 그 사유에 드는지는 기관이 판단합니다 (시행령 제65조 제1호)" },
+        { label: "이미 지났다면", value: "부득이한 사유가 없어진 날부터 **14일 이내**에 출석해 변경을 신청할 수 있어요 (제65조 제2호)" },
+        { label: "변경 신청 방법", value: "**별지 제79호서식** 실업인정일 변경 신청서에 사유를 적어 제출해요. 기관장이 증명 자료를 요구할 수 있습니다 (시행규칙 제88조 제1항)" },
+        { label: "꾸며내면 전면 제한", value: "거짓이나 그 밖의 부정한 방법으로 받았거나 받으려 하면 **그 날부터의 구직급여를 지급하지 않아요.** 해외 재취업활동 계획을 형식만 갖추거나 관광을 활동으로 꾸미는 경우가 여기예요 (제61조 제1항 본문)" },
+        { label: "신고 안 하면", value: "제47조 제1항의 신고의무를 지키지 않거나 거짓 신고한 경우로 대통령령이 정한 사유면 **그 실업인정대상기간에 한정해** 지급되지 않아요. 다만 **2회 이상**이면 제1항 본문으로 넘어가 전면 제한됩니다 (제61조 제2항)" },
+        { label: "변경되면 소급 인정", value: "실업인정일이 변경되면 **직전 실업인정일의 다음 날부터 변경된 실업인정일까지** 각각의 날에 대해 실업을 인정해요. 빠진 구간이 그냥 없어지는 게 아닙니다 (시행규칙 제88조 제3항 제1호)" },
+        { label: "이사 결론", value: "이사해도 관할이 자동으로 바뀌지 않아요. **주소나 거소를 변경하면 신청지 관할 기관에 신고**해야 합니다 (시행령 제62조 제4항)" },
+        { label: "처음 정해지는 관할", value: "수급자격 인정신청서를 낸 곳이 '**신청지 관할**'이 되고, 그곳이 실업인정일을 지정·통지해요 (시행령 제61조 제2항·제4항)" },
+      ],
+
+      mainSections: [
+        {
+          eyebrow: "출국 일정",
+          heading: "실업급여 받는 중에 해외여행 가도 되나요",
+          answer: "출국 자체를 막는 조문은 없어요. 다만 실업인정일에 출석하지 못하면 그 회차를 인정받지 못합니다.",
+          widgets: [
+            {
+              type: "decide",
+              items: [
+                { q: "① 해외에 있는 날짜가 실업인정일과 겹치나요", sub: "겹치지 않는다면 문제되지 않아요. 실업인정일에 출석해 재취업 노력을 신고하면 됩니다.", next: "겹치지 않으면 통과예요" },
+                { q: "② 겹친다면, 목적이 해외에서의 재취업활동인가요", sub: "시행령 제65조 제10호가 여는 경로는 여기까지예요. 관광 목적은 이 호에 들지 않습니다.", next: "관광이면 이 호가 아니에요" },
+                { q: "③ 재취업활동이라면 계획서를 미리 냈나요", sub: "해외에서의 재취업활동에 관한 계획을 직업안정기관의 장에게 제출해 확인받아야 해요. 두 가지를 모두 갖춰야 합니다.", next: "가목·나목을 모두 갖춰야 해요" },
+                { q: "④ 아니라면 실업인정일을 옮길 수 있나요", sub: "부득이한 사유로 출석할 수 없다면 전날까지 출석해 변경을 신청하는 길이 있어요. 인정 여부는 기관이 판단합니다.", next: "전날까지 변경을 신청해요" },
+              ],
+              okText: "출국 일정이 실업인정일과 겹친다면, 떠나기 전에 관할 고용복지+센터에 먼저 확인하세요.",
+            },
+          ],
+          body: "\"해외에 나가면 실업급여가 끊긴다\"는 말은 절반만 맞습니다. **출국을 금지하는 조문은 없어요.** 문제가 되는 건 출국 자체가 아니라 **실업인정일에 출석하지 못하는 것**입니다.\n\n제44조 제2항은 실업의 신고를 한 날부터 1주에서 4주 범위에서 지정한 실업인정일에 **출석해** 재취업을 위한 노력을 하였음을 신고하라고 정합니다. 구직급여는 실업인정을 받은 날에 대해 지급되므로, 인정을 못 받은 구간은 비게 돼요. 다만 **뒤에서 볼 실업인정일 변경 신청이 받아들여지면 그 구간이 소급해 인정**됩니다.\n\n출석하지 못해도 증명서로 인정받는 길이 제44조 제3항에 네 가지 있어요. 질병이나 부상으로 출석할 수 없었고 그 기간이 계속하여 7일 미만인 경우, 직업소개에 따른 면접, 지시받은 직업능력개발 훈련, 그리고 천재지변이나 그 밖의 부득이한 사유입니다. **관광 목적의 해외여행은 이 네 가지에 들어 있지 않습니다.**\n\n조문이 해외를 정면으로 다루는 곳은 시행령 제65조 제10호 하나예요. 여기서 여는 문도 여행이 아니라 **일자리를 찾으러 나가는 경우**입니다.",
+          cta: { label: "실업인정 온라인으로 신청하기", url: "https://www.work24.go.kr/ei/a/b/1300/openHPEIAB1300M01.do", org: "고용노동부 고용24", note: "회차별 실업인정 신청과 처리 상태를 확인할 수 있어요." },
+          quote: { law: "고용보험법 시행령 제65조 제10호 [시행 2026. 7. 1.]", text: "\"10. 다음 각 목에 모두 해당하는 사람으로서 실업인정의 특례를 신청한 사람 / 가. 해외에서의 재취업활동을 위하여 해외 체류 예정이거나 해외 체류 중인 사유로 실업인정일 또는 그 전일까지 직업안정기관에 출석할 수 없을 것 / 나. 직업안정기관의 장에게 해외에서의 재취업활동에 관한 계획을 제출하여 확인을 받을 것\"" },
+        },
+        {
+          eyebrow: "주소 변경",
+          heading: "수급 중에 이사하면 어떻게 되나요",
+          answer: "이사해도 수급자격은 그대로예요. 다만 주소나 거소가 바뀌면 신청지 관할 기관에 신고해야 합니다.",
+          widgets: [
+            {
+              type: "checklist",
+              items: [
+                "**신고 대상** 이름, 주민등록번호, **주소나 거소**를 변경하거나 정정한 경우예요",
+                "**신고할 곳** 처음 수급자격 인정신청서를 낸 '**신청지 관할**' 직업안정기관이에요. 새로 이사 간 곳이 아닙니다",
+                "**수급자격증** 신고하면 기관이 수급자격증의 관련 사항을 수정해 돌려줘요",
+                "**전입신고와 별개** 주민센터 전입신고를 했다고 해서 고용센터에 자동으로 넘어가지는 않아요",
+                "**잃어버렸다면** 수급자격증이 헐어 못쓰게 되거나 잃어버린 경우에는 신청지 관할 기관에 **재발급**을 신청해요 (시행령 제62조 제3항)",
+                "**실업인정일** 지정된 실업인정일은 신청지 관할 기관이 정한 것이고, 이사해도 그 관할과 일정이 그대로예요",
+              ],
+            },
+          ],
+          body: "이사는 실업급여를 못 받게 만드는 사유가 아닙니다. 다만 **신고 의무**가 붙어요.\n\n시행령 제62조 제4항은 수급자격자가 이름, 주민등록번호, **주소나 거소를 변경하거나 정정한 경우** 신청지 관할 직업안정기관의 장에게 신고하도록 정합니다. 이 경우 기관은 수급자격증의 관련 사항을 수정하여 반환해야 합니다.\n\n여기서 헷갈리기 쉬운 지점이 있어요. **관할이 자동으로 따라 움직이지 않는다**는 것입니다. 실업급여의 관할은 '지금 사는 곳'이 아니라 **처음 수급자격 인정신청서를 낸 곳**을 기준으로 정해집니다. 시행령 제61조 제4항은 그 신청서를 받은 기관을 '신청지 관할 직업안정기관'이라 부르고, 그곳이 실업인정일을 지정해 알리도록 하고 있어요.\n\n그래서 이사 후에도 실업인정 출석은 **신청지 관할**로 가는 것이 원칙입니다. 먼 곳으로 옮겼다면 그 사정을 신고하면서 함께 상의하는 것이 실무적으로 맞아요.",
+          cta: { label: "신청지 관할 센터 연락처 찾기", url: "https://www.workplus.go.kr/index.do", org: "고용노동부 · 한국고용정보원", note: "가까운 곳이 아니라 **처음 수급자격 인정신청서를 낸 그 센터**를 찾아 변경 신고를 하세요. 시/도·시/군/구나 전화번호 일부로 검색할 수 있어요." },
+          quote: { law: "고용보험법 시행령 제62조 제4항 [시행 2026. 7. 1.]", text: "\"수급자격자가 이름, 주민등록번호, 주소나 거소를 변경하거나 정정한 경우에는 신청지 관할 직업안정기관의 장에게 신고하여야 한다. 이 경우 직업안정기관의 장은 수급자격증의 관련 사항을 수정하여 반환하여야 한다.\"" },
+        },
+        {
+          eyebrow: "날짜 옮기기",
+          heading: "실업인정일에 출석을 못 하면 어떻게 하나요",
+          answer: "실업인정일 자체를 옮기는 제도가 있어요. 사유와 시점에 따라 신청 방법이 다릅니다.",
+          compareTable: {
+            caption: "실업인정일에 출석하지 못할 때 쓰는 길",
+            cards: true,
+            headers: ["언제·어떤 경우", "무엇을 하나", "근거"],
+            rows: [
+              [{ text: "미리 알았다", tag: "전날까지", tagTone: "hi" }, { text: "취업·면접이나 그 밖의 부득이한 사유로 출석할 수 없으면, 실업인정일 **전날까지** 신청지 관할 기관에 출석해 실업인정일 변경을 신청해요", status: "ok" }, { text: "시행령 제65조 제1호" }],
+              [{ text: "이미 지났다", tag: "14일 이내", tagTone: "hi" }, { text: "출석할 수 없었던 사유가 **없어진 날부터 14일 이내**에 출석해 변경을 신청해요", status: "ok" }, { text: "제65조 제2호" }],
+              [{ text: "7일 이상 계속 취업", tag: "2개월 이내" }, { text: "취업일을 증명할 서류를 붙여 **취업한 날부터 2개월 이내**에 우편·팩스·정보통신망으로 실업인정을 신청해요. 이미 취득신고가 되어 있으면 서류 첨부를 생략할 수 있어요" }, { text: "제65조 제3호" }],
+              [{ text: "내 착오로 빠뜨렸다", tag: "한 번만", tagTone: "lo" }, { text: "해당 실업인정일부터 **14일 이내**에 출석해 변경을 신청해요. 다만 **수급기간 내에 한 번만** 인정됩니다", status: "warn" }, { text: "제65조 제4호" }],
+              [{ text: "공휴일·부득이한 사정", tag: "기관 판단" }, { text: "수급기간이 종료된 경우, 관공서 공휴일인 경우, 그 밖에 부득이한 사정이 있는 경우 기관장이 적당하다고 인정하면 변경할 수 있어요. 이때는 변경된 날을 **미리 알려줍니다**" }, { text: "제65조 제5호 · 시행규칙 제88조 제2항" }],
+              [{ text: "30일 안에 취업 확정", tag: "특례 대상", tagTone: "hi" }, { text: "해당 실업인정일부터 **30일 이내에 취업하기로 확정**된 사람도 실업인정 특례 대상이에요. 굳이 정규 출석 절차를 다 밟지 않아도 됩니다", status: "ok" }, { text: "시행령 제65조 제7호" }],
+              [{ text: "섬 지역에 산다", tag: "특례 대상", tagTone: "hi" }, { text: "**섬 지역**(제주특별자치도 본도 및 방파제·교량 등으로 육지와 연결된 섬은 제외) 거주자가 실업인정의 특례를 신청한 경우예요", status: "ok" }, { text: "제65조 제8호" }],
+              [{ text: "온라인 신고를 인정받았다", tag: "출석 대신", tagTone: "hi" }, { text: "**정보통신망**을 통해 직접 재취업활동과 소득발생 여부를 신고할 수 있다고 기관장이 인정한 사람이에요. 인정받으면 출석 부담이 크게 줄어요", status: "key" }, { text: "제65조 제9호" }],
+              [{ text: "천재지변 등", tag: "전체 특례" }, { text: "천재지변, 수급자격신청률이 2개월 연속 100분의 1 초과, 특별연장급여 지급 결정은 개인 사정이 아니라 **국가 단위**로 발동되는 특례사유예요" }, { text: "시행령 제64조" }],
+            ],
+          },
+          body: "출석하지 못할 사정이 생겼을 때 쓰는 제도가 **실업인정일 변경 신청**입니다.\n\n시행규칙 제88조 제1항은 시행령 제65조 제1호부터 제4호까지에 해당해 변경을 신청하려는 수급자격자는 **별지 제79호서식**의 실업인정일 변경 신청서에 그 사유를 적어 제출하도록 정하고 있어요. 이 경우 직업안정기관의 장은 필요하다고 인정하면 **신청서에 적힌 사유를 증명할 수 있는 자료의 제출을 요구할 수 있습니다.**\n\n표에서 눈여겨볼 것은 **제4호**예요. 본인의 착오로 실업인정일에 출석하지 못한 경우는 14일 이내에 변경을 신청할 수 있지만, **수급기간 내에 한 번만** 인정됩니다. 두 번째부터는 이 길이 닫혀요.\n\n변경이 받아들여지면 그 사이 구간이 어떻게 되는지가 실제로 돈이 갈리는 자리예요. 시행규칙 제88조 제3항 제1호는 변경된 실업인정일에는 **직전 실업인정일의 다음 날부터 변경된 실업인정일까지** 각각의 날에 대하여 실업을 인정하도록 정합니다. 즉 출석하지 못해 비어 있던 구간이 **그냥 사라지는 것이 아니라 소급해 채워집니다.**\n\n제2호는 그다음 회차를 정해요. 변경된 실업인정일 **직후의 실업인정일**에는 변경된 실업인정일의 다음 날부터 직업안정기관의 장이 지정한 실업인정일까지 각각의 날에 대하여 실업을 인정합니다. 일정이 한 번 밀린 뒤 다시 정렬되는 구조예요.\n\n제3항 단서는 제65조 제3호(7일 이상 계속 취업)만 따로 다룹니다. 이 경우에는 **직전 실업인정일의 다음 날부터 취업한 날의 전날까지** 각각의 날에 대하여 실업을 인정해요. 취업한 날부터는 실업이 아니니 거기서 끊는 것입니다.\n\n제44조 제3항의 증명서 제출과 시행령 제65조의 실업인정일 변경은 서로 다른 제도라는 점도 짚어 둘게요. 앞의 것은 출석하지 못한 사유를 적은 증명서로 **그 회차의 실업인정을 받는** 것이고, 뒤의 것은 **인정일 자체를 옮기는** 것이에요.",
+          cta: { label: "고용24 서식자료실에서 신청서 찾기", url: "https://www.work24.go.kr/cm/c/b/1100/selectBbttList.do", org: "고용노동부 고용24", note: "서식명·정책서비스명으로 검색할 수 있어요. 별지 서식은 관할 센터에서도 받을 수 있습니다." },
+          quote: { law: "고용보험법 시행규칙 제88조 제1항 [시행 2026. 9. 18.]", text: "\"영 제65조제1호부터 제4호까지의 규정에 따라 실업인정일의 변경을 신청하려는 수급자격자는 별지 제79호서식의 실업인정일 변경 신청서에 그 사유를 적어 제출해야 한다. 이 경우 직업안정기관의 장은 필요하다고 인정하면 신청서에 적힌 사유를 증명할 수 있는 자료의 제출을 요구할 수 있다.\"" },
+        },
+        {
+          eyebrow: "담당 센터",
+          heading: "관할은 어떻게 정해지고 어떻게 바꾸나요",
+          answer: "처음 수급자격 인정신청서를 낸 곳으로 정해지고, 이사해도 그 관할이 그대로예요. 옮기는 절차 대신 변경 신고만 조문에 있습니다.",
+          widgets: [
+            {
+              type: "timeline",
+              items: [
+                { d: "1단계", t: "구직신청", m: "실업을 신고하려는 사람은 먼저 구직신청을 해요." },
+                { d: "2단계", t: "어디에 낼지 고르기", m: "원칙은 **자신의 거주지 관할**이에요. 다만 ① 취업을 희망하는 지역 관할, ② 이직 전 사업장 관할, ③ 거주지 관할보다 교통이 편리하다고 인정되는 인근 지역 관할에도 낼 수 있어요 (시행령 제61조 제2항)." },
+                { d: "3단계", t: "신청지 관할 확정", m: "그 신청서를 받은 기관이 '**신청지 관할 직업안정기관**'이 되고, 실업인정일을 지정해 알려줘요 (제61조 제4항)." },
+                { d: "이후", t: "이사했다면", m: "주소나 거소 변경을 **신청지 관할**에 신고해요. 수급자격증을 수정해 돌려받습니다 (제62조 제4항)." },
+                { d: "출석", t: "실업인정", m: "실업인정일에 **신청지 관할**에 출석해 실업인정신청서에 재취업활동을 적고 수급자격증을 첨부해 제출해요 (제63조 제1항)." },
+              ],
+            },
+          ],
+          body: "관할이 정해지는 순간은 **수급자격 인정신청서를 내는 때**입니다. 그리고 한 번 정해지면 그 기관이 계속 '신청지 관할'로 따라옵니다.\n\n그래서 **처음 낼 때 고르는 것이 중요해요.** 시행령 제61조 제2항은 거주지 관할을 원칙으로 하면서도 세 가지 예외를 두었습니다. 취업을 희망하는 지역, 이직 전 사업장 관할, 그리고 거주지 관할보다 교통이 편리하다고 인정되는 인근 지역 관할입니다. 이사가 예정되어 있다면 이 단계에서 미리 고려할 수 있어요.\n\n이미 수급 중에 이사를 하게 됐다면 제62조 제4항의 신고를 하면서 사정을 함께 알리는 것이 순서입니다. 조문은 관할을 옮기는 절차를 따로 정해 두고 있지 않고 **신고 의무만** 정하고 있어요. 실제 처리는 기관에서 판단합니다.\n\n한 가지 더 챙길 것이 있어요. 제48조 제1항의 **12개월**은 어디에 있든 흘러갑니다. 이직일 다음 날부터 12개월이 지나면 소정급여일수가 남아 있어도 받지 못하고, 남은 일수는 이월되지 않아요. 이사나 출국으로 몇 회차를 건너뛰었다면, **실업인정일 변경을 신청해 인정받는 것이 먼저**예요. 변경이 받아들여지면 그 구간은 소급해 인정됩니다(시행규칙 제88조 제3항). 다만 아무 조치 없이 12개월이 지나면 남은 일수는 그대로 없어지고, 뒤로 밀리지 않아요.",
+          cta: { label: "내 신청지 관할 센터 찾아 변경 신고하기", url: "https://www.workplus.go.kr/index.do", org: "고용노동부 · 한국고용정보원", note: "이사했다면 **처음 신청서를 낸 그 센터**에 주소·거소 변경을 신고해요 (시행령 제62조 제4항)." },
+          quote: { law: "고용보험법 시행령 제61조 제2항 [시행 2026. 7. 1.]", text: "\"제1항에 따라 구직신청을 한 사람은 수급자격 인정신청서를 자신의 거주지를 관할하는 직업안정기관의 장에게 제출하되, 다음 각 호의 어느 하나에 해당하는 경우에는 해당 직업안정기관의 장에게 제출할 수 있다. 1. 취업을 희망하는 지역 관할 직업안정기관의 장에게 제출하려는 경우 2. 이직 전 사업장 관할 직업안정기관의 장에게 제출하려는 경우 3. 거주지 관할 직업안정기관보다 교통이 편리하다고 인정되는 인근 지역 관할 직업안정기관의 장에게 제출하려는 경우\"" },
+        },
+      ],
+
+      resolution: { steps: [] },
+
+      context: {
+        faqList: [
+          { question: "실업인정일이 아닌 날에 해외에 다녀오면 문제가 되나요", answer: "실업인정일에 출석해 재취업 노력을 신고할 수 있다면 그 회차는 정상적으로 인정됩니다. 조문이 문제 삼는 것은 출국 자체가 아니라 실업인정일의 출석이에요. 다만 실업인정대상기간 중에 근로한 사실이 있으면 제47조에 따라 신고해야 합니다. 신고하지 않거나 거짓으로 신고하면 제61조 제2항에 따라 그 실업인정대상기간의 급여가 막히고, **2회 이상이면 제1항 본문으로 넘어가 그 날부터의 구직급여가 전면 제한**돼요." },
+          { question: "해외에서 구직활동을 하러 나가는 것도 안 되나요", answer: "시행령 제65조 제10호가 그 경우를 열어 두었어요. 다만 두 가지를 모두 갖춰야 합니다. 해외에서의 재취업활동을 위한 체류일 것, 그리고 그 재취업활동에 관한 계획을 직업안정기관의 장에게 제출해 확인을 받을 것입니다. 계획 없이 나갔다가 사후에 설명하는 방식이 아니에요." },
+          { question: "배우자가 해외로 발령이 나서 따라가야 합니다", answer: "시행령 제70조 제4호가 배우자의 국외발령 등에 따른 동거 목적의 거소 이전을 수급기간 연기 사유로 정하고 있어요. 제48조 제2항에 따라 그 기간만큼 수급기간을 연기할 수 있습니다. 연기는 신청해야 하는 것이므로 출국 전에 관할 센터에 확인하세요." },
+          { question: "전입신고를 하면 고용센터에도 자동으로 반영되나요", answer: "시행령 제62조 제4항은 주소나 거소를 변경한 경우 신청지 관할 직업안정기관의 장에게 신고하도록 따로 정하고 있어요. 신고하면 수급자격증의 관련 사항을 수정해 반환합니다. 전입신고와는 별개의 절차로 보는 것이 안전해요." },
+          { question: "출석을 못 한 그 기간의 돈은 영영 못 받나요", answer: "실업인정일 변경이 받아들여지면 소급해 인정됩니다. 시행규칙 제88조 제3항 제1호는 변경된 실업인정일에 직전 실업인정일의 다음 날부터 변경된 실업인정일까지 각각의 날에 대하여 실업을 인정하도록 정하고 있어요. 다만 변경을 신청하지 않았거나 사유가 인정되지 않으면 그 구간은 비게 되고, 제48조 제1항의 12개월이 지나면 남은 일수는 이월되지 않습니다." },
+          { question: "실업인정일을 못 지킨 것이 처음이 아니면 어떻게 되나요", answer: "본인 착오로 출석하지 못한 경우(시행령 제65조 제4호)는 수급기간 내에 한 번만 인정됩니다. 취업이나 면접, 그 밖의 부득이한 사유(제1호·제2호)는 횟수 제한이 조문에 적혀 있지 않지만, 사유에 해당하는지는 기관이 판단해요." },
+        ],
+      },
+
+      summary: [
+        "**해외** 출국을 막는 조문은 없어요. 실업인정일에 출석하지 못하면 그 회차를 인정받지 못하는 것이 문제입니다.",
+        "**열린 경로** 조문이 여는 해외 체류는 관광이 아니라 재취업활동이고, 계획을 미리 제출해 확인받아야 해요.",
+        "**이사** 수급자격은 그대로지만 주소·거소 변경은 신청지 관할 기관에 신고 대상이에요. 관할은 자동으로 안 바뀝니다.",
+        "**소급 인정** 실업인정일 변경이 받아들여지면 직전 인정일 다음 날부터의 구간이 소급해 인정돼요. 먼저 신청하는 것이 순서입니다.",
+        "**12개월** 연기 사유가 없다면 이직일 다음 날부터 12개월은 어디에 있든 흘러가고, 남은 일수는 이월되지 않아요.",
+      ],
+
+      sources: [
+        { group: "법령", title: "고용보험법 제44조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "실업의 인정 — 제2항 실업인정일 출석 의무, 제3항 출석하지 못한 경우 증명서로 인정받는 네 가지 사유" },
+        { group: "법령", title: "고용보험법 제48조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "수급기간 및 수급일수 — 제1항 이직일 다음 날부터 12개월, 제2항 취업할 수 없는 기간의 연기" },
+        { group: "법령", title: "고용보험법 제42조·제47조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제42조 실업의 신고와 재난 시 예외, 제47조 실업인정대상기간 중의 취업 등의 신고" },
+        { group: "법령", title: "고용보험법 시행령 제61조·제62조·제63조", url: "https://www.law.go.kr/법령/고용보험법시행령", org: "법제처", note: "제61조 제2항 신청서 제출처와 제4항 신청지 관할, 제62조 제4항 주소·거소 변경 신고, 제63조 제1항 실업인정 출석" },
+        { group: "법령", title: "고용보험법 시행령 제64조·제65조", url: "https://www.law.go.kr/법령/고용보험법시행령", org: "법제처", note: "제64조 국가 단위 특례사유, 제65조 실업인정의 특례자 — 제1호부터 제5호 변경 신청, 제10호 해외 재취업활동" },
+        { group: "법령", title: "고용보험법 시행령 제70조", url: "https://www.law.go.kr/법령/고용보험법시행령", org: "법제처", note: "수급기간의 연기 사유 — 제4호 배우자의 국외발령 등에 따른 동거 목적의 거소 이전" },
+        { group: "법령", title: "고용보험법 시행규칙 제88조", url: "https://www.law.go.kr/법령/고용보험법시행규칙", org: "법제처", note: "재취업활동 등에 따른 실업인정의 특례 — 제1항 별지 제79호서식과 증명 자료 요구, 제2항 기관장 변경 시 사전 통지, 제3항 변경 후 인정 구간(제1호 직전 인정일 다음 날부터 변경일까지, 제2호 직후 회차, 단서 제65조 제3호의 취업일 전날까지)" },
+        { group: "행정규칙·안내", title: "법제처 생활법령 — 구직급여 수급신청", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=1", org: "법제처", note: "거주지 관할 고용복지센터는 마이페이지에서 확인, 재난 등으로 출석이 어려운 경우 온라인 대체" },
+        { group: "정부 도구", title: "고용복지+센터 찾기", url: "https://www.workplus.go.kr/index.do", org: "고용노동부·한국고용정보원", note: "시/도·시/군/구 또는 전화번호 일부로 전국 센터를 검색" },
+        { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "12개월·7일 미만·14일·2개월·별지 제79호서식은 위 화면 원문(scripts/evidence/실업급여-해외체류.json)과 대조했어요. 캡처 15장은 장마다 읽고 기록했습니다." },
+      ],
+      lastVerified: "2026-09-05",
+
+      relatedQuestions: [
+        { question: "실업인정 어떻게 받나요", slug: "실업급여-실업인정" },
+        { question: "구직활동 인정 범위와 횟수", slug: "실업급여-구직활동" },
+        { question: "수급 중 취업하면 어떻게 되나요", slug: "실업급여-수급중-취업" },
+        { question: "실업급여 며칠 받나요", slug: "실업급여-기간" },
+      ],
+    },
+    {
+      slug: "실업급여-퇴직금",
+      category: "고용",
+      primaryKeywords: ["실업급여 퇴직금", "퇴직금 실업급여 같이", "1년 미만 퇴직금"],
+
+      meta: {
+        title: "퇴직금과 실업급여 같이 받나요, 신청 순서와 1년 미만 기준",
+        description:
+          "둘 다 받습니다. 서로 조건이 아니에요. 퇴직금은 회사가 **14일 이내**에 주는 돈이고, 실업급여는 내가 신청해야 시작됩니다. 다만 둘 다 같은 **평균임금**에서 출발해요. 1년을 못 채우면 퇴직금은 없지만, 실업급여는 **180일**만 채우면 됩니다.",
+        author: { name: "머니위키 편집팀" },
+        publishedAt: "2026-09-05",
+      },
+
+      searchIntent: {
+        userQuestion: "퇴직금이랑 실업급여를 같이 받을 수 있나요?",
+        directAnswer: "각각의 요건을 갖추면 둘 다 받아요. 서로가 서로의 조건이 아니지만, 1년 미만이면 퇴직금은 빠집니다.",
+        why: "고용보험법 제40조의 구직급여 수급 요건에 퇴직금 이야기가 없고, 근로자퇴직급여 보장법 제4조의 퇴직급여제도 설정에도 실업급여가 조건으로 붙어 있지 않아요.",
+      },
+
+      verify: { note: "법제처 조문 화면(근로자퇴직급여 보장법 시행 2026. 7. 1. · 근로기준법 시행 2026. 8. 20. · 고용보험법 시행 2026. 8. 20.) 확인 · 고용노동부 노동포털 민원안내 대조", date: "2026-09-05" },
+
+      heroStats: [
+        { label: "퇴직금 지급기한", value: "14일", note: "지급사유가 발생한 날부터 **14일 이내**예요. 특별한 사정이 있으면 당사자 합의로 연장할 수 있어요 (퇴직급여법 제9조 제1항)." },
+        { label: "실업급여 기준", value: "180일", note: "이직일 이전 18개월 동안 피보험 단위기간이 통산 **180일 이상**이면 돼요. 1년이 아니에요 (고용보험법 제40조 제1항 제1호)." },
+      ],
+
+      keyFacts: [
+        { label: "결론", value: "**둘 다 받아요.** 어느 쪽도 다른 쪽의 조건이 아닙니다" },
+        { label: "왜 그런가", value: "구직급여 수급 요건 네 가지(제40조 제1항)에 퇴직금이 없고, 퇴직급여제도 설정(제4조 제1항)에 실업급여가 없어요" },
+        { label: "퇴직금은 신청이 아니에요", value: "사용자가 지급사유 발생일부터 **14일 이내**에 지급해야 해요. 특별한 사정이 있으면 **당사자 합의**로 연장할 수 있습니다 (제9조 제1항)" },
+        { label: "받는 계좌", value: "퇴직금은 근로자가 지정한 **개인형퇴직연금제도(IRP) 계정등으로 이전**하는 방법으로 지급해요. 55세 이후 퇴직 등 대통령령 사유는 예외입니다 (제9조 제2항)" },
+        { label: "실업급여는 내가 움직여야", value: "이직 후 지체없이 출석해 실업을 신고해야 하고, 이직일 다음 날부터 **12개월** 안에서만 받아요 (제42조·제48조 제1항)" },
+        { label: "같은 뿌리", value: "퇴직금도 실업급여도 **평균임금**에서 출발해요. 이전 **3개월** 임금 총액을 그 기간의 총일수로 나눈 금액입니다 (근로기준법 제2조 제1항 제6호)" },
+        { label: "다른 배율", value: "퇴직금은 1년에 **30일분의 평균임금**(제8조 제1항), 실업급여는 기초일액의 **100분의 60**(고용보험법 제46조 제1항 제1호)이에요" },
+        { label: "1년 미만이면", value: "**계속근로기간 1년 미만**이거나 4주 평균 1주 소정근로시간 **15시간 미만**이면 퇴직급여제도 설정 의무가 없어요 (제4조 제1항 단서)" },
+        { label: "주 15시간 미만이라면", value: "기준기간이 18개월이 아니라 **24개월**이에요. 이직 당시 1주 소정근로시간 **15시간 미만**이고 소정근로일수 **2일 이하**였고, 24개월 동안의 피보험 단위기간 중 **90일 이상**을 그런 근로자로 근로했어야 합니다 (제40조 제2항 제2호 가목·나목)" },
+        { label: "그래도 실업급여는", value: "1년을 못 채워도 **180일**은 채울 수 있어요. 다만 180일은 제40조 제1항의 **네 요건 중 하나**라, 근로의 의사와 능력·이직 사유·재취업 노력도 함께 봅니다. 통산할 때 **공백이 3년 이상이거나 이미 구직급여를 받았으면 그 이전 기간은 빠져요**" },
+        { label: "쉰 기간이 있다면", value: "이직일 이전 18개월 동안 질병·부상 등으로 **계속하여 30일 이상** 보수를 받을 수 없었다면 그 일수를 18개월에 **가산**해요 (3년 한도, 제40조 제2항 제1호)" },
+        { label: "안 주면", value: "14일이 지나면 임금체불이에요. 노동포털 진정서로 신고할 수 있고 **수수료는 없으며 처리기간은 25일**입니다" },
+      ],
+
+      mainSections: [
+        {
+          eyebrow: "겹치는가",
+          heading: "퇴직금과 실업급여를 둘 다 받을 수 있나요",
+          answer: "받을 수 있어요. 두 제도는 서로를 조건으로 삼지 않습니다.",
+          widgets: [
+            {
+              type: "decide",
+              items: [
+                { q: "\u2460 이직일 이전 18개월 동안 180일을 채웠나요", sub: "실업급여의 첫 번째 요건이에요. 퇴직금과는 무관합니다.", next: "채웠다면 실업급여 요건 하나를 넘겼어요" },
+                { q: "\u2461 이직 사유가 제58조 제한 사유가 아닌가요", sub: "자발적 이직이나 중대한 귀책사유는 제한될 수 있어요.", next: "해당하지 않으면 실업급여 쪽은 계속 진행" },
+                { q: "\u2462 계속근로기간이 1년 이상인가요", sub: "퇴직금의 갈림길이에요. 실업급여와는 다른 기준입니다.", next: "1년 이상이면 퇴직금도 발생해요" },
+                { q: "\u2463 4주 평균 1주 소정근로시간이 15시간 이상인가요", sub: "15시간 미만이면 퇴직급여제도 설정 의무가 없어요.", next: "15시간 이상이면 퇴직금 대상" },
+              ],
+              okText: "실업급여와 퇴직금은 창구가 다릅니다. 고용보험 가입내역으로 180일부터 확인하세요.",
+            },
+          ],
+          body: "\"퇴직금을 받으면 실업급여가 깎인다\"는 말을 자주 듣지만, **조문에 그런 연결이 없습니다.**\n\n고용보험법 제40조 제1항은 구직급여의 수급 요건 네 가지를 정합니다. 기준기간 18개월 동안 피보험 단위기간이 180일 이상일 것, 근로의 의사와 능력이 있는데도 취업하지 못한 상태에 있을 것, 재취업을 위한 노력을 적극적으로 할 것, 그리고 이직사유가 제58조의 수급자격 제한 사유에 해당하지 않을 것입니다. **퇴직금을 받았는지 여부는 이 네 가지 어디에도 없습니다.**\n\n반대 방향도 마찬가지예요. 근로자퇴직급여 보장법 제4조 제1항은 사용자가 퇴직하는 근로자에게 급여를 지급하기 위해 퇴직급여제도 중 하나 이상을 설정하도록 정하고 있고, 여기에 실업급여를 받는지는 조건으로 붙어 있지 않습니다.\n\n즉 **둘은 서로 다른 법이 서로 다른 이유로 주는 돈**입니다. 퇴직금은 회사가 근속에 대해 주는 것이고, 실업급여는 고용보험이 실업 상태에 대해 주는 것이에요. 조건이 각각 맞으면 둘 다 받습니다.",
+          cta: { label: "고용보험 가입내역 조회하기", url: "https://total.comwel.or.kr/", org: "근로복지공단 고용·산재보험 토탈서비스", note: "취득·상실일과 근무 이력으로 180일을 세어 볼 수 있어요." },
+          quote: { law: "근로자퇴직급여 보장법 제4조 제1항 [시행 2026. 7. 1.]", text: "\"사용자는 퇴직하는 근로자에게 급여를 지급하기 위하여 퇴직급여제도 중 하나 이상의 제도를 설정하여야 한다. 다만, 계속근로기간이 1년 미만인 근로자, 4주간을 평균하여 1주간의 소정근로시간이 15시간 미만인 근로자에 대하여는 그러하지 아니하다.\"" },
+        },
+        {
+          eyebrow: "먼저 할 일",
+          heading: "어느 것을 먼저 신청해야 하나요",
+          answer: "기다릴 필요가 없어요. 퇴직금은 회사가 주는 것이고, 실업급여만 내가 신청합니다.",
+          compareTable: {
+            caption: "퇴직금과 실업급여, 무엇이 다른가",
+            cards: true,
+            headers: ["", "퇴직금", "실업급여"],
+            rows: [
+              [{ text: "누가 움직이나", tag: "핵심 차이", tagTone: "hi" }, { text: "**사용자가 지급**해요. 근로자가 신청하는 구조가 아닙니다", status: "key" }, { text: "**내가 신청**해야 시작돼요. 출석해서 실업을 신고합니다", status: "key" }],
+              [{ text: "기한" }, { text: "지급사유 발생일부터 **14일 이내** (제9조 제1항)" }, { text: "이직일 다음 날부터 **12개월** 안 (고용보험법 제48조 제1항)" }],
+              [{ text: "연장·예외" }, { text: "특별한 사정이 있으면 **당사자 간의 합의**로 지급기일 연장 (제9조 제1항 단서)", status: "warn" }, { text: "임신·출산·질병 등으로 취업할 수 없으면 그 기간만큼 연기 (제48조 제2항)" }],
+              [{ text: "받는 방법" }, { text: "근로자가 지정한 **IRP 계정등으로 이전** (제9조 제2항). 지정하지 않으면 근로자 명의 계정으로 이전 (제3항)" }, { text: "실업인정을 받은 날에 대해 지정 계좌로 입금" }],
+              [{ text: "회사가 어려우면" }, { text: "**최종 3년간**의 퇴직급여등은 담보 채권·조세·공과금보다 **우선 변제** (제12조 제2항)", status: "ok" }, { text: "고용보험에서 지급하므로 회사 사정과 분리돼요" }],
+            ],
+          },
+          body: "\"둘 중 뭘 먼저 해야 하나\"는 사실 **서로 기다릴 필요가 없는 일**입니다. 신청 창구도 다르고 기한도 따로 흘러가요.\n\n퇴직금은 **회사가 알아서 줘야 하는 돈**입니다. 제9조 제1항은 사용자가 근로자가 퇴직한 경우 그 지급사유가 발생한 날부터 **14일 이내**에 퇴직금을 지급하도록 정합니다. 근로자가 신청해서 받는 구조가 아니에요. 다만 단서가 있어서, 특별한 사정이 있으면 **당사자 간의 합의**에 따라 지급기일을 연장할 수 있습니다. 회사가 일방적으로 미루는 것과 합의로 미루는 것은 다릅니다.\n\n실업급여는 반대로 **내가 움직여야** 시작됩니다. 제42조에 따라 이직 후 지체없이 직업안정기관에 출석해 실업을 신고해야 하고, 제48조 제1항의 12개월은 이직일 다음 날부터 이미 흘러가고 있어요.\n\n그래서 실무적인 순서는 **실업급여 신청을 미루지 않는 것**입니다. 퇴직금이 아직 안 들어왔더라도 실업급여 신청은 따로 진행하세요. 퇴직금을 기다리다가 12개월을 까먹는 것이 더 큰 손해입니다.",
+          cta: { label: "수급자격 인정신청서 인터넷으로 제출하기", url: "https://www.work24.go.kr/ei/a/b/1200/openHPEIAB1200M01.do", org: "고용노동부 고용24", note: "요건을 갖춘 상용근로자가 대상이고, 제출 후 센터 출석이 필요해요." },
+          quote: { law: "근로자퇴직급여 보장법 제9조 제1항·제2항 [시행 2026. 7. 1.]", text: "\"① 사용자는 근로자가 퇴직한 경우에는 그 지급사유가 발생한 날부터 14일 이내에 퇴직금을 지급하여야 한다. 다만, 특별한 사정이 있는 경우에는 당사자 간의 합의에 따라 지급기일을 연장할 수 있다. ② 제1항에 따른 퇴직금은 근로자가 지정한 개인형퇴직연금제도의 계정 또는 제23조의8제1항에 따른 계정으로 이전하는 방법으로 지급하여야 한다.\"" },
+        },
+        {
+          eyebrow: "금액 관계",
+          heading: "퇴직금이 실업급여 금액에 영향을 주나요",
+          answer: "액수를 깎지는 않아요. 다만 둘 다 같은 평균임금에서 출발합니다.",
+          widgets: [
+            {
+              type: "flow",
+              steps: [
+                { cap: "1. 평균임금", val: "3개월 \u00f7 총일수", sub: "산정 사유가 발생한 날 이전 3개월 동안 지급된 임금의 총액을 그 기간의 총일수로 나눠요 (근로기준법 제2조 제1항 제6호)", hi: true },
+                { cap: "2. 하한 보정", val: "통상임금", sub: "그 금액이 통상임금보다 적으면 통상임금액을 평균임금으로 해요 (같은 조 제2항)" },
+                { cap: "3-A. 퇴직금", val: "30일분 \u00d7 근속연수", sub: "계속근로기간 1년에 대하여 30일분 이상의 평균임금이에요 (퇴직급여법 제8조 제1항·제12조 제3항)" },
+                { cap: "3-B. 실업급여", val: "기초일액의 100분의 60", sub: "평균임금이 기초일액이 되고(고용보험법 제45조 제1항), 그 100분의 60이 구직급여일액이에요 (제46조 제1항 제1호)" },
+                { cap: "4. 하한이면", val: "100분의 80", sub: "기초일액이 최저기초일액인 경우에는 100분의 80을 곱해요 (제46조 제1항 제2호)" },
+              ],
+            },
+          ],
+          body: "**퇴직금 액수가 실업급여 액수를 바꾸지는 않습니다.** 다만 둘이 **같은 숫자에서 출발**하기 때문에 헷갈리기 쉬워요.\n\n그 같은 숫자가 **평균임금**입니다. 근로기준법 제2조 제1항 제6호는 평균임금을 \"이를 산정하여야 할 사유가 발생한 날 이전 3개월 동안에 그 근로자에게 지급된 임금의 총액을 그 기간의 총일수로 나눈 금액\"이라고 정의합니다. 같은 조 제2항은 그 금액이 통상임금보다 적으면 **통상임금액을 평균임금으로 한다**고 정하고 있어요.\n\n퇴직금은 이 평균임금을 **30일분씩 근속연수만큼** 곱합니다(제8조 제1항, 제12조 제3항). 실업급여는 이 평균임금을 **기초일액**으로 삼아(고용보험법 제45조 제1항) 그 **100분의 60**을 구직급여일액으로 합니다(제46조 제1항 제1호).\n\n그래서 마지막 3개월 급여가 낮았다면 **퇴직금과 실업급여가 함께 낮아집니다.** 하나가 다른 하나를 깎는 것이 아니라, 두 계산이 같은 뿌리를 공유하는 것이에요.",
+          cta: { label: "고용24 모의계산으로 내 금액 계산해 보기", url: "https://www.work24.go.kr/cm/c/f/1100/selecSimulate.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=SC00000253&systClId=SC00000254&systId=SI00000411&systCnntId=CI00002358", org: "고용노동부 고용24", note: "피보험자격 이력이 여러 건이면 모의계산이 되지 않을 수 있어요." },
+          quote: { law: "근로기준법 제2조 제1항 제6호·제2항 [시행 2026. 8. 20.]", text: "\"6. \u201c평균임금\u201d이란 이를 산정하여야 할 사유가 발생한 날 이전 3개월 동안에 그 근로자에게 지급된 임금의 총액을 그 기간의 총일수로 나눈 금액을 말한다. 근로자가 취업한 후 3개월 미만인 경우도 이에 준한다. / \u2461 제1항제6호에 따라 산출된 금액이 그 근로자의 통상임금보다 적으면 그 통상임금액을 평균임금으로 한다.\"" },
+        },
+        {
+          eyebrow: "짧게 일했다면",
+          heading: "1년을 못 채웠으면 어떻게 되나요",
+          answer: "퇴직금은 없지만 실업급여는 될 수 있어요. 기준이 1년과 180일로 다릅니다.",
+          compareTable: {
+            caption: "근속 길이에 따라 갈리는 것",
+            cards: true,
+            headers: ["상황", "퇴직금", "실업급여"],
+            rows: [
+              [{ text: "1년 이상 일했다", tag: "둘 다", tagTone: "hi" }, { text: "1년에 30일분 이상의 평균임금 (제8조 제1항)", status: "ok" }, { text: "180일은 이미 넘었으니 다른 요건을 봐요", status: "ok" }],
+              [{ text: "1년을 못 채웠다", tag: "갈린다", tagTone: "lo" }, { text: "**설정 의무 없음** — 계속근로기간 1년 미만 (제4조 제1항 단서)", status: "warn" }, { text: "**될 수 있어요** — 18개월 안에서 이전 직장과 통산해 180일이면 요건 충족", status: "ok" }],
+              [{ text: "주 15시간 미만이었다", tag: "기준이 달라요", tagTone: "lo" }, { text: "4주 평균 1주 소정근로시간 15시간 미만이면 퇴직급여제도 설정 의무가 없어요 (제4조 제1항 단서)", status: "warn" }, { text: "**기준기간이 24개월**로 늘어요. 이직 당시 1주 소정근로시간 15시간 미만이고 소정근로일수 2일 이하였고, 24개월 동안의 피보험 단위기간 중 **90일 이상**을 그런 근로자로 근로했어야 해요 (고용보험법 제40조 제2항 제2호)", status: "key" }],
+              [{ text: "중간정산을 받았다", tag: "다시 셈" }, { text: "미리 정산해 지급한 후의 계속근로기간은 **정산시점부터 새로 계산** (제8조 제2항)", status: "warn" }, { text: "실업급여의 180일 계산과는 별개예요" }],
+              [{ text: "14일이 지났는데 안 준다", tag: "체불", tagTone: "lo" }, { text: "노동포털 진정서로 신고. **수수료 없음 · 처리기간 25일 · 지방고용노동관서**", status: "key" }, { text: "퇴직금 미지급이 실업급여를 막지는 않아요" }],
+            ],
+          },
+          body: "**1년을 못 채웠다면 퇴직금은 없고, 실업급여는 있을 수 있습니다.** 이 둘이 갈리는 지점이 헷갈림의 대부분이에요.\n\n제4조 제1항 단서가 명확합니다. **계속근로기간이 1년 미만인 근로자**, 그리고 **4주간을 평균하여 1주간의 소정근로시간이 15시간 미만인 근로자**에 대하여는 퇴직급여제도를 설정하지 않아도 됩니다. 그래서 1년을 못 채우고 나오면 퇴직금은 청구할 근거가 없어요.\n\n그런데 실업급여의 기준은 **1년이 아니라 180일**입니다. 고용보험법 제40조 제1항 제1호는 이직일 이전 18개월 동안 피보험 단위기간이 통산하여 180일 이상일 것을 요구해요. 이 180일은 한 회사에서만 채울 필요가 없어요. 이전 직장의 가입기간도 합산합니다.\n\n다만 합산에 **조건이 둘** 붙습니다. 고용24 안내는 **보험 가입자격 상실 이후 공백이 3년 이상이면 그 이전의 가입기간은 합산되지 않는다**고 밝히고 있어요. 그리고 **이미 구직급여를 받은 적이 있으면 그 이전 기간도 합산에서 빠집니다.** 이 두 가지를 먼저 확인한 뒤에 180일을 세어야 정확해요. 고용노동부 노동포털 안내는 **퇴사한 근로자에게 퇴직일로부터 14일 이내에 지급되지 않는 임금·퇴직금**을 체불로 보고, 진정서로 신고할 수 있다고 밝히고 있어요. 접수·처리기관은 지방고용노동관서이고, 수수료는 없으며 처리기간은 25일입니다. 준비물로는 **퇴직 전 3개월간 급여명세서**를 안내하고 있어요.",
+          cta: { label: "임금체불 진정서 접수하기", url: "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001", org: "고용노동부 노동포털", note: "신청 자격은 근로자(개인회원)이고 방문\u00b7우편\u00b7인터넷으로 접수해요." },
+          quote: { law: "고용보험법 제40조 제1항 제1호 [시행 2026. 8. 20.]", text: "\"1. 제2항에 따른 기준기간(이하 \u201c기준기간\u201d이라 한다) 동안의 피보험 단위기간(제41조에 따른 피보험 단위기간을 말한다. 이하 같다)이 통산(通算)하여 180일 이상일 것\"" },
+        },
+      ],
+
+      resolution: { steps: [] },
+
+      context: {
+        faqList: [
+          { question: "퇴직금을 받으면 실업급여가 줄어드나요", answer: "줄어들지 않습니다. 고용보험법 제46조 제1항의 구직급여일액은 기초일액에 100분의 60을 곱해 정하고, 기초일액은 제45조 제1항에 따라 평균임금으로 정합니다. 퇴직금을 빼거나 더하는 규정이 없어요. 다만 둘 다 같은 평균임금을 쓰기 때문에 마지막 3개월 급여가 낮으면 두 금액이 함께 낮아집니다." },
+          { question: "퇴직금이 아직 안 들어왔는데 실업급여를 신청해도 되나요", answer: "네, 따로 진행하세요. 실업급여는 제42조에 따라 이직 후 지체없이 실업을 신고해야 하고, 제48조 제1항의 12개월은 이직일 다음 날부터 이미 흘러갑니다. 퇴직금을 기다리다 이 기간을 줄이는 것이 더 불리해요." },
+          { question: "1년을 딱 못 채웠는데 퇴직금을 받을 방법이 없나요", answer: "제4조 제1항 단서가 계속근로기간 1년 미만인 근로자에 대해서는 퇴직급여제도 설정 의무를 두지 않습니다. 다만 회사의 취업규칙이나 근로계약에서 더 유리하게 정했다면 그에 따를 수 있어요. 계속근로기간을 어떻게 세는지(수습·계약 갱신 등)는 다툼이 생길 수 있어 관할 고용노동관서에 확인하는 것이 안전합니다." },
+          { question: "퇴직금이 IRP 계좌로만 들어오나요", answer: "제9조 제2항이 근로자가 지정한 개인형퇴직연금제도의 계정등으로 이전하는 방법으로 지급하도록 정하고 있어요. 다만 근로자가 55세 이후에 퇴직하여 급여를 받는 경우 등 대통령령으로 정하는 사유가 있으면 그러하지 아니합니다. 계정을 지정하지 않으면 제3항에 따라 근로자 명의의 계정으로 이전해요." },
+          { question: "회사가 망하면 퇴직금은 어떻게 되나요", answer: "제12조 제2항은 최종 3년간의 퇴직급여등이 사용자의 총재산에 대하여 질권 또는 저당권에 의하여 담보된 채권, 조세·공과금 및 다른 채권보다 우선하여 변제되어야 한다고 정합니다. 그 밖의 기간분은 제1항에 따라 담보 채권을 제외한 다른 채권에 우선해요." },
+          { question: "퇴직연금(DB)에 가입돼 있으면 기한이 다른가요", answer: "제17조 제2항도 14일입니다. 사용자는 가입자의 퇴직 등 지급 사유가 발생한 날부터 14일 이내에 퇴직연금사업자로 하여금 급여 전액을 지급하도록 해야 하고, 특별한 사정이 있으면 합의로 연장할 수 있어요. 제3항은 지급된 급여가 급여수준에 미치지 못하면 그 부족한 금액을 14일 이내에 근로자에게 지급하도록 정합니다." },
+        ],
+      },
+
+      summary: [
+        "**각각의 요건대로** 퇴직금 요건에 실업급여가 없고, 실업급여 요건에 퇴직금이 없어요. 다만 1년 미만이면 퇴직금은 빠집니다.",
+        "**움직이는 쪽이 달라요** 퇴직금은 회사가 14일 안에 주는 것, 실업급여는 내가 신청하는 것이에요.",
+        "**같은 뿌리** 둘 다 이전 3개월의 평균임금에서 출발해요. 퇴직금은 30일분씩, 실업급여는 그 100분의 60이에요.",
+        "**1년과 180일** 1년을 못 채우면 퇴직금은 없지만, 180일을 채웠다면 실업급여는 될 수 있어요.",
+      ],
+
+      sources: [
+        { group: "법령", title: "근로자퇴직급여 보장법 제4조", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법", org: "법제처", note: "퇴직급여제도의 설정 — 제1항 단서 계속근로기간 1년 미만, 4주 평균 1주 소정근로시간 15시간 미만 제외" },
+        { group: "법령", title: "근로자퇴직급여 보장법 제8조·제9조", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법", org: "법제처", note: "제8조 1년에 30일분 이상의 평균임금과 중간정산 시 재계산, 제9조 14일 이내 지급·합의 연장·IRP 계정 이전" },
+        { group: "법령", title: "근로자퇴직급여 보장법 제12조·제17조", url: "https://www.law.go.kr/법령/근로자퇴직급여보장법", org: "법제처", note: "제12조 최종 3년간 퇴직급여등의 우선변제와 30일분 평균임금 계산, 제17조 확정급여형의 수급요건과 14일 지급" },
+        { group: "법령", title: "근로기준법 제2조", url: "https://www.law.go.kr/법령/근로기준법", org: "법제처", note: "제1항 제6호 평균임금의 정의(이전 3개월 임금 총액 ÷ 총일수), 제2항 통상임금이 더 크면 통상임금액" },
+        { group: "법령", title: "고용보험법 제40조·제45조·제46조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제40조 수급 요건 네 가지와 180일, 제45조 기초일액은 평균임금, 제46조 구직급여일액 100분의 60(최저기초일액이면 100분의 80)" },
+        { group: "행정규칙·안내", title: "고용노동부 노동포털 — 진정서(체불, 직장 내 괴롭힘, 기타 노동법 위반)", url: "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001", org: "고용노동부", note: "퇴직일로부터 14일 이내에 지급되지 않는 임금·퇴직금은 체불. 신청 자격 근로자(개인회원), 처리기간 25일, 수수료 없음, 접수기관 지방고용노동관서" },
+        { group: "정부 도구", title: "고용24 실업급여 모의계산", url: "https://www.work24.go.kr/cm/c/f/1100/selecSimulate.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=SC00000253&systClId=SC00000254&systId=SI00000411&systCnntId=CI00002358", org: "고용노동부 고용24", note: "기초일액과 구직급여일액을 미리 계산" },
+        { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "14일·180일·1년·15시간·30일분·100분의 60·3개월·최종 3년·25일은 위 화면 원문(scripts/evidence/실업급여-퇴직금.json)과 대조했어요. 캡처 11장은 장마다 읽고 기록했습니다." },
+      ],
+      lastVerified: "2026-09-05",
+
+      relatedQuestions: [
+        { question: "180일 어떻게 세나요", slug: "실업급여-180일" },
+        { question: "실업급여 얼마 받나요", slug: "실업급여-금액" },
+        { question: "임금체불로 그만두면 실업급여 되나요", slug: "실업급여-임금체불" },
+        { question: "1년 미만 퇴직금 받을 수 있나요", slug: "1년-미만-퇴직금" },
+      ],
+    },
+    {
+      slug: "프리랜서-실업급여",
+      category: "고용",
+      primaryKeywords: ["프리랜서 실업급여", "자영업자 실업급여", "폐업 실업급여"],
+
+      meta: {
+        title: "프리랜서와 자영업자 실업급여, 가입 조건과 폐업 신청 방법",
+        description:
+          "법에 **프리랜서**라는 말은 없어요. 조문은 **노무제공자**와 **자영업자** 두 갈래로 나뉘고 요건 숫자가 다릅니다. 노무제공자는 **24개월 중 12개월**, 자영업자는 **폐업일 이전 24개월간 1년**이에요. 폐업했다고 다 되는 것도 아닙니다.",
+        author: { name: "머니위키 편집팀" },
+        publishedAt: "2026-09-05",
+      },
+
+      searchIntent: {
+        userQuestion: "프리랜서나 개인사업자도 실업급여를 받을 수 있나요?",
+        directAnswer: "받을 수 있어요. 다만 노무제공자냐 자영업자냐에 따라 요건이 다르고, 근로자의 180일 기준과도 다릅니다.",
+        why: "고용보험법 제77조의8이 노무제공자의 구직급여 요건을, 제69조의3이 자영업자의 구직급여 요건을 각각 따로 정하고 있어요.",
+      },
+
+      verify: { note: "법제처 조문 화면(고용보험법 시행 2026. 8. 20.) 확인 · 고용24 안내 대조", date: "2026-09-05" },
+
+      heroStats: [
+        { label: "노무제공자", value: "24개월 중 12개월", note: "이직일 이전 24개월 동안 피보험 단위기간이 통산 **12개월 이상**이어야 해요 (제77조의8 제1항 제1호)." },
+        { label: "자영업자", value: "24개월 중 1년", note: "폐업일 이전 24개월간 자영업자인 피보험자로서 갖춘 피보험 단위기간이 합산 **1년 이상**이어야 해요 (제69조의3 제1호)." },
+      ],
+
+      keyFacts: [
+        { label: "법에는 프리랜서가 없어요", value: "조문이 쓰는 말은 **노무제공자**(제77조의6)와 **자영업자**(제69조의3)예요. 어느 갈래인지부터 정해야 합니다" },
+        { label: "노무제공자의 뜻", value: "근로자가 아니면서 다른 사람의 사업을 위해 **직접 노무를 제공하고 대가를 받기로 계약**한 사람 중 **대통령령으로 정하는 직종** 종사자예요" },
+        { label: "직종이 관문", value: "프리랜서로 일한다고 자동 적용되지 않아요. **대통령령이 정한 직종**에 들어야 합니다 (제77조의6 제1항)" },
+        { label: "적용 제외 셋", value: "**65세 이후** 새로 계약·자영업 개시, **대통령령이 정한 소득 기준** 미달(단기노무제공자는 제외), **15세 미만**(원하면 가입 가능) (제77조의6 제2항)" },
+        { label: "노무제공자 요건", value: "24개월 중 **12개월** 이상이면서, 그 24개월 중 **3개월 이상**을 노무제공자로 자격 유지해야 해요 (제77조의8 제1항 제1호·제4호)" },
+        { label: "소득이 줄어 그만뒀다면", value: "**소득 감소로 이직**했다고 기관장이 인정하면 제58조의 수급자격 제한 사유에 해당하지 않는 것으로 봐요 (제77조의8 제1항 제3호 단서)" },
+        { label: "단기노무제공자라면", value: "계약기간 1개월 미만인 **단기노무제공자**는 제6호가 더 붙어요. 수급자격 인정신청일 이전 **1개월 노무제공일수가 10일 미만**이거나 **14일간 연속 노무제공내역이 없을 것**, 그리고 24개월 중 제58조 제한 사유로 이직한 사실이 있으면 그 피보험 단위기간 **90일 이상**을 단기노무제공자로 종사했을 것이에요 (제77조의8 제1항 제6호)" },
+        { label: "받는 중 일하면 감액", value: "실업인정대상기간 중 취업 등으로 **소득이 발생하면** 소득수준·활동 기간 등을 고려해 **구직급여가 감액**될 수 있어요 (제77조의8 제8항)" },
+        { label: "대기기간이 길어져요", value: "노무제공자도 원칙은 신고일부터 **7일**이 대기기간이에요. 다만 **소득 감소로 이직**한 경우(제1항 제3호 단서)에는 **4주의 범위에서** 대통령령으로 정하는 기간이 대기기간이 됩니다. 둘 이상 해당하면 **가장 긴 기간**을 봐요 (제77조의8 제6항)" },
+        { label: "노무제공자 금액 기준", value: "기초일액은 마지막 이직일 전 **1년간 신고된 보수총액**을 그 기간의 총일수로 나눈 금액이고, 구직급여일액은 그 **기초일액에 100분의 60**을 곱한 금액이에요 (제77조의8 제3항·제5항)" },
+        { label: "자영업자 요건", value: "폐업일 이전 **24개월간 1년 이상** + 취업하지 못한 상태 + 폐업사유 제한 없음 + 재취업 노력, 네 가지를 **모두** (제69조의3)" },
+        { label: "폐업해도 막히는 경우", value: "허가 취소·영업 정지, 본인의 중대한 귀책, **매출 급감 등이 아니면서 전직·재창업 목적** 폐업 등이에요 (제69조의7)" },
+        { label: "자영업자는 못 받는 것", value: "**연장급여(제51~55조)와 조기재취업 수당(제64조)은 제외**돼요 (제69조의2)" },
+        { label: "어디에 신청하나", value: "실업을 신고하고 **거주지 관할 직업안정기관**에 수급자격 인정을 신청해요. 고용복지+센터 검색으로 관할을 찾을 수 있어요" },
+        { label: "인터넷 제출은", value: "고용24 인터넷 제출 서비스는 **요건을 갖춘 상용근로자**가 대상이에요. 노무제공자·자영업자는 관할 센터에서 절차를 확인하세요" },
+      ],
+
+      mainSections: [
+        {
+          eyebrow: "어느 갈래",
+          heading: "프리랜서도 고용보험이 되나요",
+          answer: "될 수 있어요. 다만 법이 쓰는 말은 프리랜서가 아니라 노무제공자이고, 직종 조건이 붙습니다.",
+          widgets: [
+            {
+              type: "decide",
+              items: [
+                { q: "\u2460 근로자가 아니면서 직접 노무를 제공하고 대가를 받는 계약인가요", sub: "노무제공계약의 정의예요. 사업자등록을 내고 내 사업을 하는 것과는 다릅니다.", next: "맞으면 노무제공자 갈래로" },
+                { q: "\u2461 내 일이 대통령령으로 정하는 직종에 들어 있나요", sub: "여기서 대부분이 갈려요. 직종에 없으면 이 장이 적용되지 않습니다.", next: "직종 확인이 첫 관문" },
+                { q: "\u2462 65세 이후에 새로 계약을 체결한 경우가 아닌가요", sub: "65세 전부터 자격을 유지하다 계속한 경우는 제외돼요.", next: "해당하면 적용 제외" },
+                { q: "\u2463 대통령령이 정하는 소득 기준을 넘나요", sub: "계약기간이 1개월 미만인 단기노무제공자는 이 기준에서 빠져요.", next: "미달이면 적용 제외" },
+              ],
+              okText: "네 가지가 맞으면 노무제공자입니다. 사업자등록을 내고 일했다면 자영업자 갈래를 보세요.",
+            },
+          ],
+          body: "\"프리랜서\"라는 말은 고용보험법에 없습니다. 조문이 쓰는 말은 **노무제공자**예요.\n\n제77조의6 제1항은 노무제공자를 이렇게 정의합니다. 근로자가 아니면서 자신이 아닌 다른 사람의 사업을 위하여 **자신이 직접 노무를 제공하고** 해당 사업주 또는 노무수령자로부터 **일정한 대가를 지급받기로 하는 계약**(노무제공계약)을 체결한 사람 중 **대통령령으로 정하는 직종에 종사하는 사람**입니다.\n\n여기서 걸리는 대목이 **직종**이에요. 프리랜서로 일한다고 자동으로 적용되는 것이 아니라, 대통령령이 정한 직종에 들어야 합니다. 내 일이 그 직종에 있는지부터 확인해야 하는 이유예요.\n\n제2항은 적용에서 빼는 경우를 셋 둡니다. **65세 이후**에 근로계약·노무제공계약·문화예술용역 관련 계약을 체결하거나 자영업을 개시하는 경우(65세 전부터 피보험자격을 유지하던 사람이 계속한 경우는 제외), **대통령령으로 정하는 소득 기준**을 충족하지 못하는 경우(계약기간이 1개월 미만인 단기노무제공자는 제외), 그리고 15세 미만인 경우(다만 원하면 가입할 수 있어요).",
+          cta: { label: "고용보험 가입내역 조회하기", url: "https://total.comwel.or.kr/", org: "근로복지공단 고용·산재보험 토탈서비스", note: "어떤 자격(근로자·노무제공자·자영업자)으로 신고돼 있는지 확인할 수 있어요." },
+          quote: { law: "고용보험법 제77조의6 제1항 [시행 2026. 8. 20.]", text: "\"근로자가 아니면서 자신이 아닌 다른 사람의 사업을 위하여 자신이 직접 노무를 제공하고 해당 사업주 또는 노무수령자로부터 일정한 대가를 지급받기로 하는 계약(이하 \u201c노무제공계약\u201d이라 한다)을 체결한 사람 중 대통령령으로 정하는 직종에 종사하는 사람(이하 \u201c노무제공자\u201d라 한다)과 이들을 상대방으로 하여 노무제공계약을 체결한 사업에 대해서는 제8조제2항에 따라 이 장을 적용한다.\"" },
+        },
+        {
+          eyebrow: "숫자 차이",
+          heading: "노무제공자는 얼마나 일해야 받나요",
+          answer: "24개월 동안 12개월이에요. 근로자의 18개월·180일과 다릅니다.",
+          compareTable: {
+            caption: "세 갈래의 요건 비교",
+            cards: true,
+            headers: ["", "근로자", "노무제공자", "자영업자"],
+            rows: [
+              [{ text: "보는 기간", tag: "핵심", tagTone: "hi" }, { text: "이직일 이전 **18개월**", status: "key" }, { text: "이직일 이전 **24개월**", status: "key" }, { text: "폐업일 이전 **24개월**", status: "key" }],
+              [{ text: "채울 길이" }, { text: "피보험 단위기간 **180일**" }, { text: "피보험 단위기간 **12개월**" }, { text: "피보험 단위기간 **1년**" }],
+              [{ text: "추가 조건" }, { text: "제58조 제한 사유가 아닐 것" }, { text: "24개월 중 **3개월 이상** 노무제공자로 자격 유지 (제4호)", status: "warn" }, { text: "폐업사유가 제69조의7 제한 사유가 아닐 것", status: "warn" }],
+              [{ text: "소득이 줄어 그만두면" }, { text: "별표2의 정당한 이직 사유로 개별 판단" }, { text: "**소득 감소** 이직으로 인정되면 제한 사유가 아닌 것으로 봐요 (제3호 단서)", status: "ok" }, { text: "**매출 급감** 등이면 인정 쪽 (제69조의7 제3호 뒤집어 읽기)", status: "ok" }],
+              [{ text: "조기재취업수당" }, { text: "받을 수 있어요" }, { text: "제77조의10의 준용 범위를 따라요" }, { text: "**제외** — 연장급여와 함께 빠져요 (제69조의2)", status: "warn" }],
+            ],
+          },
+          body: "노무제공자로 인정되면 그다음은 **요건 숫자**입니다. 근로자와 다릅니다.\n\n제77조의8 제1항 제1호는 **이직일 이전 24개월 동안 피보험 단위기간이 통산하여 12개월 이상**일 것을 요구합니다. 근로자의 18개월·180일과 기간도 길이도 달라요.\n\n제4호가 하나 더 있습니다. **이직일 이전 24개월 중 3개월 이상**을 노무제공자인 피보험자로 피보험자격을 유지했어야 해요. 24개월 안에 12개월을 채웠더라도 그 안에 노무제공자로서의 기간이 3개월은 있어야 한다는 뜻입니다.\n\n제3호에는 **프리랜서에게 특히 중요한 단서**가 붙어 있어요. 이직사유가 준용되는 제58조의 제한 사유에 해당하지 않아야 하는데, 노무제공자로 이직할 당시 **대통령령으로 정하는 바에 따른 소득 감소**로 인하여 이직하였다고 직업안정기관의 장이 인정하는 경우에는 **제58조의 제한 사유에 해당하지 않는 것으로 봅니다.** 일이 줄어 그만둔 경우를 자발적 이직으로만 보지 않는 통로예요.\n\n금액을 정하는 방식도 다릅니다. 제3항은 노무제공자의 기초일액을 **수급자격 인정과 관련된 마지막 이직일 전 1년간의 보수총액을 그 산정 기준이 되는 기간의 총일수로 나눈 금액**으로 정합니다. 월급이 아니라 신고된 보수총액이 기준이에요.",
+          cta: { label: "내 피보험자격이 어떻게 신고됐는지 조회하기", url: "https://total.comwel.or.kr/", org: "근로복지공단 고용·산재보험 토탈서비스", note: "노무제공자로 신고돼 있는지, 24개월 중 12개월이 채워졌는지 여기서 확인해요." },
+          quote: { law: "고용보험법 제77조의8 제1항 제1호·제4호 [시행 2026. 8. 20.]", text: "\"1. 이직일 이전 24개월 동안 피보험 단위기간이 통산하여 12개월 이상일 것 / 4. 이직일 이전 24개월 중 3개월 이상을 노무제공자인 피보험자로 피보험자격을 유지하였을 것\"" },
+        },
+        {
+          eyebrow: "폐업했다면",
+          heading: "자영업자는 폐업하면 받을 수 있나요",
+          answer: "네 가지를 모두 갖춰야 해요. 폐업 사유에 따라 막히기도 합니다.",
+          widgets: [
+            {
+              type: "checklist",
+              items: [
+                "**기간** 폐업일 이전 **24개월간** 자영업자인 피보험자로서 갖춘 피보험 단위기간이 합산하여 **1년 이상**",
+                "**상태** 근로의 의사와 능력이 있음에도 취업을 하지 못한 상태에 있을 것",
+                "**사유** 폐업사유가 제69조의7의 수급자격 제한 사유에 해당하지 않을 것",
+                "**노력** 재취업을 위한 노력을 적극적으로 할 것",
+                "**막히는 경우 1** 법령을 위반하여 허가 취소를 받거나 영업 정지를 받아 폐업한 경우",
+                "**막히는 경우 2** 방화 등 본인의 중대한 귀책사유로서 고용노동부령이 정하는 사유로 폐업한 경우",
+                "**막히는 경우 3** 매출액 등이 급격하게 감소하는 등 고용노동부령이 정하는 사유가 **아닌** 경우로서 전직 또는 자영업을 다시 하기 위하여 폐업한 경우",
+                "**막히는 경우 4** 그 밖에 고용노동부령으로 정하는 정당한 사유에 해당하지 않는 사유로 폐업한 경우",
+              ],
+            },
+          ],
+          body: "사업자등록을 내고 일했다면 갈래가 또 달라집니다. **자영업자 고용보험**이에요.\n\n제69조의3은 폐업한 자영업자인 피보험자가 네 가지를 **모두** 갖춘 경우에 구직급여를 지급한다고 정합니다. 첫째, **폐업일 이전 24개월간** 제41조 제1항 단서에 따라 자영업자인 피보험자로서 갖춘 피보험 단위기간이 **합산하여 1년 이상**일 것. 둘째, 근로의 의사와 능력이 있음에도 취업을 하지 못한 상태에 있을 것. 셋째, 폐업사유가 제69조의7의 수급자격 제한 사유에 해당하지 않을 것. 넷째, 재취업을 위한 노력을 적극적으로 할 것입니다.\n\n**폐업했다고 다 되는 것이 아닙니다.** 제69조의7이 막는 경우가 넷이에요. 법령을 위반하여 허가 취소를 받거나 영업 정지를 받아 폐업한 경우, 방화 등 본인의 중대한 귀책사유로 폐업한 경우, **매출액 등이 급격하게 감소하는 등 고용노동부령으로 정하는 사유가 아닌 경우로서 전직 또는 자영업을 다시 하기 위하여 폐업한 경우**, 그 밖에 고용노동부령으로 정하는 정당한 사유에 해당하지 않는 사유로 폐업한 경우입니다.\n\n셋째 항목을 뒤집어 읽으면 방향이 보입니다. **매출이 급격히 줄어 접은 것은 인정 쪽**이고, 장사가 되는데 다른 일을 하려고 접은 것은 제한 쪽이에요.\n\n받을 수 있는 것에도 차이가 있습니다. 제69조의2는 자영업자의 실업급여 종류를 제37조에 따르되 **제51조부터 제55조까지의 연장급여와 제64조에 따른 조기재취업 수당은 제외**한다고 정해요. 자영업자는 조기재취업수당을 받지 못합니다.",
+          cta: { label: "신청지 관할 센터 연락처 찾기", url: "https://www.workplus.go.kr/index.do", org: "고용노동부 · 한국고용정보원", note: "자영업자 실업급여는 폐업 사실과 사유 확인이 앞에 놓여요. 관할 센터에 먼저 문의하세요." },
+          quote: { law: "고용보험법 제69조의7 제3호 [시행 2026. 8. 20.]", text: "\"3. 매출액 등이 급격하게 감소하는 등 고용노동부령으로 정하는 사유가 아닌 경우로서 전직 또는 자영업을 다시 하기 위하여 폐업한 경우\"" },
+        },
+        {
+          eyebrow: "밟는 순서",
+          heading: "가입과 신청은 어떻게 하나요",
+          answer: "노무제공자는 보험료 부담 구조로 붙고, 자영업자는 본인이 가입해요. 소정급여일수 표도 다릅니다.",
+          widgets: [
+            {
+              type: "stepbar",
+              steps: [
+                { tab: "1. 갈래 확정", title: "나는 어느 갈래인가", body: "근로자·노무제공자·자영업자 중 무엇으로 신고돼 있는지 고용보험 가입내역에서 확인해요. 여기서 요건 숫자가 갈립니다." },
+                { tab: "2. 요건 확인", title: "숫자를 맞춰 본다", body: "노무제공자는 24개월 중 12개월과 3개월 자격 유지, 자영업자는 폐업일 이전 24개월간 1년이에요." },
+                { tab: "3. 사유 정리", title: "이직·폐업 사유", body: "노무제공자는 소득 감소 인정 여부(제77조의8 제1항 제3호 단서), 자영업자는 제69조의7 제한 사유 해당 여부가 갈림길이에요." },
+                { tab: "4. 신청", title: "관할 센터에 신고", body: "실업을 신고하고 수급자격 인정을 신청해요. 인터넷 제출 서비스는 요건을 갖춘 상용근로자가 대상이라 관할 센터에서 확인하는 편이 안전합니다." },
+                { tab: "5. 계산", title: "대기기간 뒤부터", body: "자영업자의 소정급여일수는 제49조의 대기기간이 끝난 다음 날부터 계산해 피보험기간에 따라 별표 2에서 정한 일수까지예요 (제69조의6)." },
+              ],
+            },
+          ],
+          body: "가입부터가 다릅니다. 여기서 갈리니 순서대로 보세요.\n\n**노무제공자**는 제77조의6 제4항에 따라 노무제공자와 사업주가 고용산재보험료징수법에 따라 보험료를 부담합니다. 보험관계의 성립·소멸·변경과 보험료 산정·납부·징수는 그 법에서 정하는 바에 따라요. 내가 따로 가입 신청을 하는 구조가 아니라, 그 직종에 해당하고 소득 기준을 넘으면 사업주가 신고하는 쪽에 가깝습니다.\n\n**자영업자**는 반대로 본인이 가입해야 합니다. 그리고 요건의 시작점이 '폐업'이라, 폐업 사실과 그 사유를 확인하는 절차가 앞에 놓여요.\n\n소정급여일수도 표가 다릅니다. 제69조의6은 폐업한 수급자격자의 소정급여일수를 제49조에 따른 **대기기간이 끝난 다음 날부터** 계산하기 시작하여 **피보험기간에 따라 별표 2에서 정한 일수**가 되는 날까지로 정합니다. 근로자가 쓰는 별표 1이 아니에요.\n\n정리하면 **내가 어느 갈래인지부터 확정하는 것**이 첫 단계입니다. 근로자인지, 노무제공자인지, 자영업자인지에 따라 요건 숫자도 신청 창구도 달라져요. 고용보험 가입내역에서 어떤 자격으로 신고돼 있는지 먼저 확인하세요.",
+          cta: { label: "신청지 관할 센터 찾아 절차 확인하기", url: "https://www.workplus.go.kr/index.do", org: "고용노동부 · 한국고용정보원", note: "고용24 안내는 **상용직 기준**이에요. 노무제공자·자영업자는 관할 센터에서 절차를 확인하세요." },
+          quote: { law: "고용보험법 제69조의6 [시행 2026. 8. 20.]", text: "\"자영업자인 피보험자로서 폐업한 수급자격자에 대한 소정급여일수는 제49조에 따른 대기기간이 끝난 다음 날부터 계산하기 시작하여 피보험기간에 따라 별표 2에서 정한 일수가 되는 날까지로 한다.\"" },
+        },
+      ],
+
+      resolution: { steps: [] },
+
+      context: {
+        faqList: [
+          { question: "세금을 사업소득으로 뗐으면 프리랜서인가요", answer: "세금을 어떻게 뗐는지로 정해지지 않습니다. 고용보험법 제77조의6 제1항은 노무제공계약을 체결한 사람 중 대통령령으로 정하는 직종에 종사하는 사람을 노무제공자로 봐요. 실제로 고용보험에 어떤 자격으로 신고돼 있는지가 기준이므로, 고용보험 가입내역부터 확인하는 것이 정확합니다." },
+          { question: "일이 줄어서 그만뒀는데 자발적 이직이 되나요", answer: "제77조의8 제1항 제3호 단서가 통로를 두었습니다. 노무제공자로 이직할 당시 대통령령으로 정하는 바에 따른 소득 감소로 인하여 이직하였다고 직업안정기관의 장이 인정하는 경우에는 제58조에 따른 수급자격의 제한 사유에 해당하지 않는 것으로 봅니다. 인정 여부는 기관이 판단하므로 소득 변화를 보여 줄 자료를 챙기세요." },
+          { question: "개인사업자를 내고 일했는데 폐업하면 바로 되나요", answer: "제69조의3의 네 요건을 모두 갖춰야 합니다. 폐업일 이전 24개월간 자영업자인 피보험자로서 갖춘 피보험 단위기간이 합산 1년 이상이어야 하고, 폐업사유가 제69조의7의 제한 사유에 해당하지 않아야 해요. 자영업자 고용보험에 가입해 두지 않았다면 피보험 단위기간 자체가 없습니다." },
+          { question: "장사가 안 돼서 접었는데 인정되나요", answer: "제69조의7 제3호는 매출액 등이 급격하게 감소하는 등 고용노동부령으로 정하는 사유가 아닌 경우로서 전직 또는 자영업을 다시 하기 위하여 폐업한 경우를 제한 사유로 둡니다. 뒤집어 보면 매출 급감 등에 해당하면 제한 사유가 아닌 쪽이에요. 구체적인 기준은 고용노동부령이 정하므로 관할 센터에서 확인하세요." },
+          { question: "자영업자도 조기재취업수당을 받나요", answer: "받지 못합니다. 제69조의2는 자영업자인 피보험자의 실업급여 종류를 제37조에 따르되, 제51조부터 제55조까지의 연장급여와 제64조에 따른 조기재취업 수당은 제외한다고 정하고 있어요." },
+          { question: "소득이 줄어 인정받으면 바로 나오나요", answer: "인정은 되지만 대기기간이 길어집니다. 제77조의8 제6항 본문은 노무제공자도 실업 신고일부터 7일을 대기기간으로 보되, 단서에서 제1항 제3호 단서의 사유(소득 감소로 인한 이직)로 이직한 경우에는 4주의 범위에서 대통령령으로 정하는 기간을 대기기간으로 본다고 정해요. 사유가 둘 이상이면 그중 가장 긴 기간을 대기기간으로 봅니다." },
+          { question: "노무제공자는 금액을 어떻게 계산하나요", answer: "제77조의8 제3항은 기초일액을 수급자격 인정과 관련된 마지막 이직일 전 1년간의 고용산재보험료징수법 제16조의10에 따라 신고된 보수총액을 그 산정 기준이 되는 기간의 총일수로 나눈 금액으로 정합니다. 그 금액이 노무제공자의 일단위 기준보수 미만이면 일단위 기준보수를 기초일액으로 해요." },
+        ],
+      },
+
+      summary: [
+        "**갈래가 둘이에요** 법에 프리랜서는 없고, 노무제공자와 자영업자로 나뉘어요.",
+        "**숫자가 달라요** 노무제공자는 24개월 중 12개월, 자영업자는 24개월 중 1년입니다. 근로자의 18개월·180일이 아니에요.",
+        "**직종과 소득** 노무제공자는 대통령령이 정한 직종과 소득 기준을 넘어야 적용돼요.",
+        "**폐업 사유** 자영업자는 매출 급감 등이 아닌 전직·재창업 목적 폐업이면 막혀요.",
+      ],
+
+      sources: [
+        { group: "법령", title: "고용보험법 제77조의6", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "노무제공자인 피보험자에 대한 적용 — 제1항 정의와 대통령령 직종, 제2항 65세·소득 기준·15세 미만 적용 제외, 제4항 보험료 부담" },
+        { group: "법령", title: "고용보험법 제77조의8", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "노무제공자의 구직급여 — 제1항 제1호 24개월/12개월, 제3호 단서 소득 감소 이직, 제4호 3개월 자격 유지, 제6호 단기노무제공자 요건, 제3항 기초일액" },
+        { group: "법령", title: "고용보험법 제69조의2·제69조의3", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제69조의2 자영업자 실업급여 종류(연장급여·조기재취업 수당 제외), 제69조의3 폐업일 이전 24개월간 1년 이상 등 네 요건" },
+        { group: "법령", title: "고용보험법 제69조의6·제69조의7", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제69조의6 대기기간 다음 날부터 별표 2의 일수, 제69조의7 폐업사유에 따른 수급자격 제한 네 가지" },
+        { group: "법령", title: "고용보험법 제40조·제41조·제49조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제40조 근로자의 수급 요건(제1항 제1호 180일, 제2항 기준기간 18개월), 제41조 제1항 단서가 자영업자 피보험 단위기간 계산의 근거, 제49조 대기기간 7일" },
+        { group: "행정규칙·안내", title: "고용24 실업급여 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부", note: "신청 절차와 제출 서류" },
+        { group: "정부 도구", title: "근로복지공단 고용·산재보험 토탈서비스", url: "https://total.comwel.or.kr/", org: "근로복지공단", note: "어떤 자격으로 고용보험에 신고돼 있는지 확인" },
+        { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "24개월·12개월·1년·3개월·65세·15세는 위 화면 원문(scripts/evidence/프리랜서-실업급여.json)과 대조했어요. 캡처 10장은 장마다 읽고 기록했고, 주제와 무관한 2장은 근거로 쓰지 않았습니다." },
+      ],
+      lastVerified: "2026-09-05",
+
+      relatedQuestions: [
+        { question: "180일 어떻게 세나요", slug: "실업급여-180일" },
+        { question: "자진퇴사해도 받을 수 있나요", slug: "자발적-퇴사-실업급여" },
+        { question: "일용직은 어떻게 다른가요", slug: "일용직-실업급여" },
+        { question: "65세 이후에도 받을 수 있나요", slug: "실업급여-65세" },
+      ],
+    },
+    {
+      slug: "실업급여-한달-얼마-받나요",
+      category: "고용",
+      primaryKeywords: ["실업급여 한달 금액", "실업급여 한달", "실업급여 최대금액"],
+
+      meta: {
+        title: "실업급여 한 달 실수령액과 상한, 회차 계산과 단기 근무 합산까지",
+        description:
+          "실업급여에 **한 달**이라는 단위가 없어요. 실업인정일이 **1주부터 4주 범위**에서 지정되기 때문에 회차마다 일수가 다릅니다. 하루치 상한은 **6만8100원**이고, 회차 상한인 4주면 **190만6800원**이에요. 한 달만 일해서는 안 되고 **180일**을 채워야 합니다.",
+        author: { name: "머니위키 편집팀" },
+        publishedAt: "2026-09-05",
+      },
+
+      searchIntent: {
+        userQuestion: "실업급여는 한 달에 얼마나 받나요?",
+        directAnswer: "하루치 × 그 회차의 인정 일수예요. 하루치 상한이 6만8100원이라 4주 회차면 최대 190만6800원입니다.",
+        why: "고용보험법 제44조 제2항이 실업인정일을 1주부터 4주의 범위에서 지정하도록 하고, 제44조 제1항이 실업인정을 받은 날에 대하여 지급하도록 정하고 있어요.",
+      },
+
+      verify: { note: "법제처 조문 화면(고용보험법 시행 2026. 8. 20. · 시행령 시행 2026. 7. 1.) 확인 · 법제처 생활법령 구직급여 수급액 대조", date: "2026-09-05" },
+
+      heroStats: [
+        { label: "하루치 상한", value: "6만8100원", note: "기초일액 상한 **11만3500원**의 **100분의 60**이에요. 이보다 많이 받을 수 없어요 (시행령 제68조 제1항, 법 제46조 제1항 제1호)." },
+        { label: "회차 간격", value: "1~4주", note: "실업인정일은 **1주부터 4주의 범위**에서 지정돼요. 그래서 회차마다 인정 일수가 다릅니다 (제44조 제2항)." },
+      ],
+
+      keyFacts: [
+        { label: "한 달은 단위가 아니에요", value: "구직급여는 **실업인정을 받은 날에 대하여** 지급돼요. 회차 간격이 **1주부터 4주** 사이에서 정해집니다 (제44조 제1항·제2항)" },
+        { label: "계산 순서", value: "**하루치(구직급여일액)를 구하고, 그 회차의 인정 일수를 곱해요.** 매달 같은 금액이 나오는 구조가 아니에요" },
+        { label: "하루치 상한", value: "기초일액이 **11만3500원**을 넘으면 11만3500원으로 잘라요 (시행령 제68조 제1항). 여기에 **100분의 60**을 곱한 **6만8100원**이 하루치 상한이에요" },
+        { label: "4주 회차면", value: "6만8100원 \u00d7 28일 = **190만6800원**이 한 번에 받는 최대예요. 회차 간격의 상한이 4주라 이보다 긴 구간은 한 번에 나오지 않습니다" },
+        { label: "하한도 있어요", value: "기초일액이 **최저기초일액**보다 낮으면 최저기초일액으로 올리고, 그때는 **100분의 80**을 곱해요 (제45조 제4항, 제46조 제1항 제2호)" },
+        { label: "하한이 사람마다 다른 이유", value: "최저기초일액 = **이직 전 1일 소정근로시간 × 이직일 당시 최저임금액**이에요. 2026년 최저임금액은 **10,320원**입니다" },
+        { label: "출석을 못 했다면", value: "질병·부상으로 **계속하여 7일 미만** 출석하지 못했거나 면접·훈련·천재지변 등이면, **사유를 적은 증명서**를 내고 실업인정을 받을 수 있어요 (제44조 제3항)" },
+        { label: "12개월을 멈추려면", value: "임신·출산·육아 등으로 취업할 수 없다면 **그 사실을 수급기간에 신고**해야 12개월에 그 기간이 가산돼요 (4년 한도, 제48조 제2항)" },
+        { label: "취업촉진 조치", value: "직업안정기관의 장은 실업을 인정할 때 **재취업 활동 계획 수립 지원·직업소개 등 취업촉진 조치**를 해요. 정당한 사유 없이 따르지 않으면 불이익이 있을 수 있어요 (제44조 제4항)" },
+        { label: "한 달 일하면 되나요", value: "안 돼요. 기준기간 동안 피보험 단위기간이 **통산 180일 이상**이어야 해요 (제40조 제1항 제1호)" },
+        { label: "180일 세는 법", value: "달력 재직일이 아니라 **보수 지급의 기초가 된 날**을 합해요. 보수의 기초가 되지 않는 날은 빠지므로 재직 기간이 길어도 모자랄 수 있어요 (제41조 제1항)" },
+        { label: "합칠 수 있어요", value: "기준기간 **18개월** 안의 여러 사업장을 **통산**합니다. 다만 이전에 구직급여를 받았다면 그 이전 기간은 빠져요 (제40조 제2항, 제41조 제2항)" },
+        { label: "총 며칠분", value: "소정급여일수는 피보험기간과 연령에 따라 **별표 1**에서 정한 일수예요 (제50조 제1항)" },
+      ],
+
+      mainSections: [
+        {
+          eyebrow: "회차 구조",
+          heading: "실업급여는 한 달에 얼마 들어오나요",
+          answer: "회차마다 달라요. 하루치에 그 회차의 인정 일수를 곱한 금액이 들어옵니다.",
+          widgets: [
+            {
+              type: "flow",
+              steps: [
+                { cap: "1. 실업인정일 지정", val: "1~4주", sub: "실업의 신고일부터 계산해 1주부터 4주의 범위에서 기관장이 지정해요 (제44조 제2항)", hi: true },
+                { cap: "2. 인정 구간", val: "직전 다음 날 ~ 이번 인정일", sub: "그 구간의 각각의 날에 대하여 실업을 인정받아요" },
+                { cap: "3. 하루치", val: "구직급여일액", sub: "기초일액 × 100분의 60 (최저기초일액이면 100분의 80) (제46조 제1항)" },
+                { cap: "4. 입금액", val: "하루치 × 인정 일수", sub: "구직급여는 실업인정을 받은 날에 대하여 지급돼요 (제44조 제1항)" },
+              ],
+            },
+          ],
+          body: "먼저 짚을 것이 있어요. **실업급여에 \"한 달\"이라는 단위가 없습니다.**\n\n제44조 제2항은 실업의 신고를 한 날부터 계산하기 시작하여 **1주부터 4주의 범위에서** 직업안정기관의 장이 지정한 날을 실업인정일로 정합니다. 그리고 제44조 제1항에 따라 구직급여는 **실업인정을 받은 날에 대하여** 지급돼요.\n\n그래서 통장에 찍히는 금액은 \"월급\"처럼 매달 같은 액수가 아니라 **하루치 × 그 회차에 인정된 일수**입니다. 회차 간격이 4주로 지정되면 한 번에 28일분이 들어오고, 그보다 짧게 지정되면 그만큼 적게 들어와요.\n\n회차에 출석하지 못했더라도 바로 날아가는 것은 아니에요. 제44조 제3항은 질병이나 부상으로 출석할 수 없었고 그 기간이 **계속하여 7일 미만**인 경우, 직업소개에 따른 면접, 지시받은 직업능력개발 훈련, 천재지변이나 그 밖의 부득이한 사유에 해당하면 **출석할 수 없었던 사유를 적은 증명서를 제출해 실업의 인정을 받을 수 있다**고 정합니다.\n\n그러니 \"한 달에 얼마\"를 알려면 순서가 이렇습니다. **하루치(구직급여일액)를 먼저 구하고, 내 회차가 며칠짜리인지 확인해서 곱하는 것**이에요. 하루치를 구하는 방법은 바로 아래에서 봅니다.",
+          cta: { label: "고용24 모의계산으로 하루치 계산해 보기", url: "https://www.work24.go.kr/cm/c/f/1100/selecSimulate.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=SC00000253&systClId=SC00000254&systId=SI00000411&systCnntId=CI00002358", org: "고용노동부 고용24", note: "하루치를 먼저 구해야 회차 금액이 나와요. 피보험자격 이력이 여러 건이면 모의계산이 되지 않을 수 있어요." },
+          quote: { law: "고용보험법 제44조 제1항·제2항 [시행 2026. 8. 20.]", text: "\"①구직급여는 수급자격자가 실업한 상태에 있는 날 중에서 직업안정기관의 장으로부터 실업의 인정을 받은 날에 대하여 지급한다. ②실업의 인정을 받으려는 수급자격자는 제42조에 따라 실업의 신고를 한 날부터 계산하기 시작하여 1주부터 4주의 범위에서 직업안정기관의 장이 지정한 날에 출석하여 재취업을 위한 노력을 하였음을 신고하여야 하고\u2026\"" },
+        },
+        {
+          eyebrow: "위아래 한계",
+          heading: "최대 얼마까지 받을 수 있나요",
+          answer: "하루치 상한이 6만8100원이에요. 4주 회차면 190만6800원입니다.",
+          compareTable: {
+            caption: "하루치가 정해지는 세 갈래",
+            cards: true,
+            headers: ["경우", "기초일액", "곱하는 비율", "하루치"],
+            rows: [
+              [{ text: "상한에 걸림", tag: "꼭대기", tagTone: "hi" }, { text: "**11만3500원**으로 자름 (시행령 제68조 제1항)", status: "key" }, { text: "100분의 60 (제46조 제1항 제1호)" }, { text: "**6만8100원**", status: "key" }],
+              [{ text: "보통" }, { text: "마지막 이직 당시 **평균임금** (제45조 제1항)" }, { text: "100분의 60" }, { text: "평균임금의 60%" }],
+              [{ text: "하한에 걸림", tag: "바닥", tagTone: "lo" }, { text: "**최저기초일액** = 이직 전 1일 소정근로시간 × 이직일 당시 최저임금액 (제45조 제4항)", status: "warn" }, { text: "100분의 80 (제46조 제1항 제2호)", status: "warn" }, { text: "최저기초일액의 100분의 80" }],
+              [{ text: "3개월 안에 2회 이상 취득" }, { text: "마지막 이직일 이전 **3개월간 임금 총액 ÷ 3개월 총일수** (제45조 제1항 단서)" }, { text: "100분의 60" }, { text: "그 금액의 60%" }],
+              [{ text: "회차에 곱하면", tag: "한 달치", tagTone: "hi" }, { text: "상한 기준 6만8100원" }, { text: "\u00d7 28일(4주 회차)" }, { text: "**190만6800원**", status: "key" }],
+            ],
+          },
+          body: "하루치의 **꼭대기는 정해져 있습니다.**\n\n시행령 제68조 제1항은 기초일액이 **11만3500원**을 초과하면 11만3500원을 해당 임금일액으로 한다고 정해요. 그리고 제46조 제1항 제1호는 구직급여일액을 기초일액의 **100분의 60**으로 정합니다.\n\n그래서 법제처 생활법령은 이렇게 정리합니다. **구직급여일액은 기초일액 상한인 11만3500원의 100분의 60을 곱한 6만8100원을 초과할 수 없습니다.** 월급이 아무리 높아도 하루치는 여기서 멈춰요.\n\n이 상한을 회차에 곱하면 **한 번에 받을 수 있는 최대 금액**이 나옵니다. 회차 간격의 최대인 4주(28일)라면 6만8100원 × 28일 = **190만6800원**이에요. 조문이 정한 회차 상한이 4주라 이보다 긴 구간은 한 번에 나오지 않습니다.\n\n아래쪽에도 바닥이 있어요. 제45조 제4항은 산정된 기초일액이 **최저기초일액**(이직 전 1일 소정근로시간 × 이직일 당시 적용되던 최저임금액)보다 낮으면 최저기초일액을 기초일액으로 한다고 정합니다. 이때는 제46조 제1항 제2호에 따라 **100분의 80**을 곱해요. 2026년 최저임금액은 **10,320원**입니다.\n\n바닥 금액이 사람마다 다른 이유가 여기 있어요. **이직 전 1일 소정근로시간**이 곱해지기 때문에, 하루 몇 시간으로 정해져 있었는지에 따라 최저기초일액이 달라집니다.",
+          cta: { label: "고용24 모의계산으로 내 금액 계산해 보기", url: "https://www.work24.go.kr/cm/c/f/1100/selecSimulate.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=SC00000253&systClId=SC00000254&systId=SI00000411&systCnntId=CI00002358", org: "고용노동부 고용24", note: "피보험자격 이력이 여러 건이면 모의계산이 되지 않을 수 있어요." },
+          quote: { law: "고용보험법 시행령 제68조 제1항 [시행 2026. 7. 1.]", text: "\"법 제45조제5항에 따라 구직급여의 산정 기초가 되는 임금일액이 11만3500원을 초과하는 경우에는 11만3500원을 해당 임금일액으로 한다.\"" },
+        },
+        {
+          eyebrow: "짧게 일했다면",
+          heading: "한 달만 일해도 받을 수 있나요",
+          answer: "받기 어려워요. 개월 수가 아니라 보수 기초일 180일이 기준입니다.",
+          widgets: [
+            {
+              type: "checklist",
+              items: [
+                "**기준** 기준기간 동안 피보험 단위기간이 **통산 180일 이상** (제40조 제1항 제1호)",
+                "**기준기간** 원칙은 **이직일 이전 18개월** (제40조 제2항)",
+                "**세는 법** 달력 재직일이 아니라 **보수 지급의 기초가 된 날**을 합해요 (제41조 제1항)",
+                "**주의** 보수의 기초가 되지 않는 날은 빠지므로, 재직 기간이 길어도 180일에 못 미칠 수 있어요",
+                "**늘어나는 경우** 질병·부상 등으로 **계속하여 30일 이상** 보수를 못 받았다면 그 일수를 18개월에 가산해요 (3년 한도)",
+                "**다른 기준** 이직 당시 1주 소정근로시간 **15시간 미만**이고 1주 소정근로일수 **2일 이하**인 경우 등은 24개월을 봐요",
+              ],
+            },
+          ],
+          body: "**한 달만 일한 것으로는 부족합니다.** 기준이 개월 수가 아니라 일수예요.\n\n제40조 제1항 제1호는 기준기간 동안의 **피보험 단위기간이 통산하여 180일 이상**일 것을 요구합니다. 제2항은 그 기준기간을 원칙적으로 **이직일 이전 18개월**로 정해요.\n\n여기서 많이 헷갈리는 것이 **180일을 어떻게 세느냐**입니다. 제41조 제1항은 피보험 단위기간을 피보험기간 중 **보수 지급의 기초가 된 날**을 합해 계산한다고 정합니다. 달력상 재직 일수를 그대로 세는 것이 아니라, **보수의 기초가 된 날만** 세요. 그래서 재직 기간이 길어도 보수의 기초가 되지 않는 날이 있으면 180일에 못 미칠 수 있습니다.\n\n기준기간이 늘어나는 경우도 있어요. 제40조 제2항 제1호는 이직일 이전 18개월 동안 질병·부상 등 대통령령이 정하는 사유로 **계속하여 30일 이상 보수를 받을 수 없었던 경우** 그 일수를 18개월에 가산하도록 합니다(3년을 초과하면 3년까지). 제2호는 이직 당시 **1주 소정근로시간이 15시간 미만이고 1주 소정근로일수가 2일 이하**인 근로자로 근로한 경우 등에 24개월을 봅니다.",
+          cta: { label: "고용보험 가입내역 조회하기", url: "https://total.comwel.or.kr/", org: "근로복지공단 고용·산재보험 토탈서비스", note: "취득·상실일과 보수 신고 내역으로 180일을 세어 볼 수 있어요." },
+          quote: { law: "고용보험법 제41조 제1항 [시행 2026. 8. 20.]", text: "\"근로자의 피보험 단위기간은 피보험기간 중 보수 지급의 기초가 된 날을 합하여 계산한다.\"" },
+        },
+        {
+          eyebrow: "이어 붙이기",
+          heading: "짧은 근무를 여러 개 합칠 수 있나요",
+          answer: "합칠 수 있어요. 기준기간 안의 여러 사업장을 통산합니다.",
+          widgets: [
+            {
+              type: "decide",
+              items: [
+                { q: "\u2460 이직일 이전 18개월 안에 들어오는 근무인가요", sub: "기준기간 밖의 기간은 세지 않아요.", next: "안에 들어오면 통산 대상" },
+                { q: "\u2461 그 기간에 이미 구직급여를 받은 적이 있나요", sub: "받았다면 그와 관련된 상실일 이전 기간은 빠져요 (제41조 제2항).", next: "있으면 그 뒤부터만 셈" },
+                { q: "\u2462 보수 지급의 기초가 된 날이 통산 180일이 되나요", sub: "달력 재직일이 아니라 보수 기초일이에요.", next: "180일을 넘겨야 요건 충족" },
+                { q: "\u2463 이직일 다음 날부터 12개월이 남아 있나요", sub: "12개월이 지나면 남은 일수가 있어도 받지 못해요 (제48조 제1항).", next: "기한 안에 신청해야 해요" },
+              ],
+              okText: "네 가지가 맞으면 통산으로 요건을 채운 것입니다. 소정급여일수는 별표 1에서 정해져요.",
+            },
+          ],
+          body: "**합칠 수 있습니다.** 한 회사에서 채울 필요가 없어요.\n\n제40조 제1항 제1호가 \"통산하여\"라고 적고 있습니다. 기준기간인 18개월 안에 들어오는 여러 사업장의 피보험 단위기간을 더해서 180일을 채우면 됩니다.\n\n다만 빠지는 기간이 있어요. 제41조 제2항은 피보험 단위기간을 계산할 때 **이전에 구직급여를 받은 사실이 있으면 그와 관련된 피보험자격 상실일 이전의 피보험 단위기간은 넣지 않는다**고 정합니다. 한 번 받았다면 그 뒤로 다시 채워야 해요.\n\n합쳐서 180일을 넘겼다면 그다음은 **며칠분을 받느냐**입니다. 제50조 제1항은 소정급여일수를 대기기간이 끝난 다음 날부터 계산하기 시작하여 **피보험기간과 연령에 따라 별표 1에서 정한 일수**가 되는 날까지로 정해요. 180일을 겨우 채운 사람과 오래 가입한 사람의 총액이 여기서 갈립니다.\n\n마지막으로 바깥 울타리 하나. 제48조 제1항은 구직급여를 **이직일의 다음 날부터 계산하여 12개월 내에** 소정급여일수를 한도로 지급한다고 정합니다. 회차를 몇 번 건너뛰어도 이 12개월은 흘러가고, 남은 일수는 이월되지 않아요.\n\n다만 **멈출 수 있는 경우**가 있습니다. 제48조 제2항은 그 12개월의 기간 중 **임신·출산·육아, 그 밖에 대통령령으로 정하는 사유**로 취업할 수 없는 사람이 **그 사실을 수급기간에 직업안정기관에 신고한 경우**, 12개월에 그 취업할 수 없는 기간을 가산한 기간(**4년을 넘을 때에는 4년**) 안에서 소정급여일수를 한도로 지급하도록 정해요. 신고해야 늘어난다는 점이 중요합니다.",
+          cta: { label: "수급자격 인정신청서 인터넷으로 제출하기", url: "https://www.work24.go.kr/ei/a/b/1200/openHPEIAB1200M01.do", org: "고용노동부 고용24", note: "요건을 갖춘 상용근로자가 대상이고, 제출 후 센터 출석이 필요해요." },
+          quote: { law: "고용보험법 제48조 제1항 [시행 2026. 8. 20.]", text: "\"구직급여는 이 법에 따로 규정이 있는 경우 외에는 그 구직급여의 수급자격과 관련된 이직일의 다음 날부터 계산하기 시작하여 12개월 내에 제50조제1항에 따른 소정급여일수를 한도로 하여 지급한다.\"" },
+        },
+      ],
+
+      resolution: { steps: [] },
+
+      context: {
+        faqList: [
+          { question: "왜 달마다 들어오는 금액이 다른가요", answer: "실업인정일이 1주부터 4주의 범위에서 지정되기 때문입니다(제44조 제2항). 구직급여는 실업인정을 받은 날에 대하여 지급되므로(제44조 제1항), 회차마다 인정 일수가 다르면 입금액도 달라져요. 하루치가 같아도 28일 회차와 14일 회차의 금액은 두 배 차이가 납니다." },
+          { question: "월급이 아주 높으면 그만큼 많이 받나요", answer: "아니요. 시행령 제68조 제1항이 기초일액을 11만3500원에서 자릅니다. 제46조 제1항 제1호의 100분의 60을 곱하면 하루치는 6만8100원이 최대예요. 법제처 생활법령도 구직급여일액이 6만8100원을 초과할 수 없다고 밝히고 있습니다." },
+          { question: "최저로 받으면 얼마인가요", answer: "금액은 사람마다 달라요. 제45조 제4항의 최저기초일액이 이직 전 1일 소정근로시간에 이직일 당시 적용되던 최저임금액을 곱한 금액이라, 소정근로시간에 따라 달라지기 때문입니다. 2026년 최저임금액은 10,320원이고, 여기에 제46조 제1항 제2호의 100분의 80을 곱해요. 정확한 금액은 고용24 모의계산으로 확인하세요." },
+          { question: "6개월 일했는데 180일이 안 된다고 합니다", answer: "제41조 제1항이 피보험 단위기간을 보수 지급의 기초가 된 날을 합해 계산하도록 정하기 때문이에요. 달력상 재직일수를 그대로 세는 것이 아니라서, 보수의 기초가 되지 않는 날이 있으면 재직 기간이 길어도 180일에 못 미칠 수 있습니다." },
+          { question: "총액은 어떻게 정해지나요", answer: "하루치에 소정급여일수를 곱한 금액이 총액의 뼈대입니다. 제50조 제1항은 소정급여일수를 대기기간이 끝난 다음 날부터 계산하기 시작하여 피보험기간과 연령에 따라 별표 1에서 정한 일수가 되는 날까지로 정해요. 다만 제48조 제1항의 12개월 안에서만 받을 수 있습니다." },
+        ],
+      },
+
+      summary: [
+        "**한 달이 단위가 아니에요** 실업인정일이 1주부터 4주 범위에서 지정돼 회차마다 일수가 달라요.",
+        "**하루치 상한 6만8100원** 기초일액 상한 11만3500원의 100분의 60이에요. 회차 상한인 4주면 190만6800원입니다.",
+        "**하한은 사람마다** 이직 전 1일 소정근로시간에 최저임금액을 곱한 금액에 100분의 80을 곱해요.",
+        "**한 달로는 부족** 개월 수가 아니라 보수 기초일 180일이 기준이고, 여러 사업장을 통산할 수 있어요.",
+      ],
+
+      sources: [
+        { group: "법령", title: "고용보험법 제44조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "실업의 인정 — 제1항 인정받은 날에 대하여 지급, 제2항 1주부터 4주의 범위에서 지정한 실업인정일" },
+        { group: "법령", title: "고용보험법 제45조·제46조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제45조 기초일액(제1항 평균임금과 단서, 제4항 최저기초일액, 제5항 상한), 제46조 구직급여일액(100분의 60 / 최저기초일액이면 100분의 80)" },
+        { group: "법령", title: "고용보험법 시행령 제68조", url: "https://www.law.go.kr/법령/고용보험법시행령", org: "법제처", note: "급여기초 임금일액의 상한액 11만3500원" },
+        { group: "법령", title: "고용보험법 제40조·제41조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제40조 제1항 제1호 통산 180일과 제2항 기준기간 18개월·가산·24개월, 제41조 제1항 보수 지급의 기초가 된 날과 제2항 이전 수급분 제외" },
+        { group: "법령", title: "고용보험법 제48조·제50조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제48조 제1항 이직일 다음 날부터 12개월, 제50조 제1항 소정급여일수는 별표 1" },
+        { group: "행정규칙·안내", title: "법제처 생활법령 — 구직급여 수급액", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=3&cnpClsNo=2", org: "법제처", note: "구직급여일액은 6만8100원을 초과할 수 없음, 2026년 최저임금액 10,320원, 최저구직급여일액 산식" },
+        { group: "정부 도구", title: "고용24 실업급여 모의계산", url: "https://www.work24.go.kr/cm/c/f/1100/selecSimulate.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=SC00000253&systClId=SC00000254&systId=SI00000411&systCnntId=CI00002358", org: "고용노동부 고용24", note: "기초일액과 구직급여일액을 미리 계산" },
+        { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "11만3500원·6만8100원·10,320원·180일·18개월·12개월·1주~4주는 위 화면 원문(scripts/evidence/실업급여-한달-얼마-받나요.json)과 대조했어요. 190만6800원과 204만3000원은 6만8100원에 28일·30일을 곱한 값입니다. **하한의 실제 금액은 소정근로시간에 따라 달라져 적지 않았습니다.**" },
+      ],
+      lastVerified: "2026-09-05",
+
+      relatedQuestions: [
+        { question: "실업급여 금액 계산법", slug: "실업급여-금액" },
+        { question: "상한액과 하한액은 얼마인가요", slug: "실업급여-상한액" },
+        { question: "180일 어떻게 세나요", slug: "실업급여-180일" },
+        { question: "며칠마다 입금되나요", slug: "실업급여-지급일" },
+      ],
+    },
+    {
+      slug: "실업급여-통근-3시간",
+      category: "고용",
+      primaryKeywords: ["실업급여 통근곤란", "왕복 3시간 실업급여", "이사 실업급여"],
+
+      meta: {
+        title: "통근 왕복 3시간 실업급여, 인정 사유와 계산 기준·증빙 서류 정리",
+        description:
+          "**왕복 3시간**은 사유가 아니라 \u201c통근이 곤란\u201d의 정의예요. 별표 2가 정한 **네 가지 사유**(사업장 이전 · 지역 달리하는 전근 · 배우자·부양친족 동거 목적 거소 이전 · 그 밖에 피할 수 없는 사유) 중 하나로 그렇게 **된** 경우여야 합니다.",
+        author: { name: "머니위키 편집팀" },
+        publishedAt: "2026-09-05",
+      },
+
+      searchIntent: {
+        userQuestion: "통근이 왕복 3시간이 넘어서 그만뒀는데 실업급여가 되나요?",
+        directAnswer: "시간만으로는 안 돼요. 별표 2가 정한 네 가지 사유 중 하나로 통근이 곤란하게 된 경우여야 합니다.",
+        why: "고용보험법 제58조 제2호 다목이 고용노동부령으로 정하는 정당한 사유가 아니면 수급자격이 없다고 하고, 시행규칙 제101조 제2항이 그 사유를 별표 2로 정하고 있어요.",
+      },
+
+      verify: { note: "법제처 조문 화면(고용보험법 시행 2026. 8. 20. · 시행규칙 시행 2026. 9. 18.) 확인 · 법제처 생활법령 구직급여 수급요건 대조", date: "2026-09-05" },
+
+      heroStats: [
+        { label: "통근이 곤란", value: "왕복 3시간", note: "**통상의 교통수단**으로 사업장까지 **왕복**에 드는 시간이 3시간 이상인 경우를 말해요." },
+        { label: "필요한 것", value: "사유 + 시간", note: "시간만 넘겨서는 안 되고, 별표 2가 정한 **네 가지 사유** 중 하나로 그렇게 된 경우여야 해요." },
+      ],
+
+      keyFacts: [
+        { label: "3시간의 뜻", value: "통근 시 이용할 수 있는 **통상의 교통수단**으로 사업장으로의 **왕복**에 드는 시간이 **3시간 이상**인 경우예요" },
+        { label: "편도가 아니에요", value: "**왕복** 기준이라 편도 1시간 30분이면 3시간이 됩니다" },
+        { label: "핵심 오해", value: "3시간은 사유가 아니라 \u201c통근이 곤란\u201d이라는 **말의 정의**예요. 넘겼다고 자동으로 되는 게 아닙니다" },
+        { label: "사유 1", value: "**사업장의 이전** — 회사가 옮겨간 경우예요" },
+        { label: "사유 2", value: "**지역을 달리하는 사업장으로의 전근** — 회사가 나를 다른 지역으로 보낸 경우예요" },
+        { label: "사유 3", value: "**배우자나 부양해야 할 친족과의 동거를 위한 거소 이전** — 내가 옮겼더라도 이유가 동거 목적이어야 해요" },
+        { label: "사유 4", value: "**그 밖에 피할 수 없는 사유**로 통근이 곤란한 경우예요. 해당 여부는 기관이 판단합니다" },
+        { label: "안 되는 경우", value: "집값·주거 취향 등 **개인 선택으로 멀리 이사한 경우**는 위 네 가지에 들지 않아요" },
+        { label: "걸리는 조문", value: "제58조 제2호 다목의 \u201c정당한 사유\u201d에 해당해야 하고, 그 사유를 시행규칙 **제101조 제2항이 별표 2**로 정해요" },
+        { label: "결정하는 사람", value: "**직업안정기관의 장**이 판단해요. 기준을 맞췄어도 자동 확정은 아닙니다" },
+      ],
+
+      mainSections: [
+        {
+          eyebrow: "숫자의 뜻",
+          heading: "왕복 3시간은 어떻게 재나요",
+          answer: "통상의 교통수단으로 사업장까지 오가는 시간을 더해서 3시간 이상이면 통근이 곤란한 것으로 봅니다.",
+          widgets: [
+            {
+              type: "def-box",
+              term: "통근이 곤란",
+              definition: "통근 시 이용할 수 있는 **통상의 교통수단**으로는 사업장으로의 **왕복에 드는 시간이 3시간 이상**인 경우를 말해요. 편도가 아니라 왕복이고, 내가 실제로 쓰는 수단이 아니라 그 구간에서 이용할 수 있는 보통의 교통수단이 기준이에요.",
+            },
+          ],
+          body: "숫자부터 정확히 옮기면 이렇습니다. **통근 시 이용할 수 있는 통상의 교통수단으로는 사업장으로의 왕복에 드는 시간이 3시간 이상인 경우**를 \"통근이 곤란\"한 것으로 봅니다.\n\n여기서 셋을 짚어야 해요.\n\n첫째, **왕복**입니다. 편도가 아니라 집에서 회사로, 회사에서 집으로 오가는 시간을 더한 값이에요. 편도 1시간 30분이면 왕복 3시간이 됩니다.\n\n둘째, **통상의 교통수단**입니다. 내가 실제로 어떻게 다니는지가 아니라, 그 구간에서 이용할 수 있는 보통의 교통수단을 기준으로 봐요. 자가용을 팔았다거나 일부러 돌아가는 노선을 탄다고 해서 시간이 늘어나는 것은 아닙니다.\n\n셋째, **이용할 수 있는**이라는 말이에요. 존재하는 노선 중에서 판단하므로, 더 빠른 경로가 있는데 쓰지 않는 경우는 그 빠른 경로가 기준이 될 수 있습니다.\n\n정리하면 3시간은 **\"통근이 곤란\"이라는 말의 정의**일 뿐이에요. 이 숫자를 넘겼다는 것만으로 실업급여가 되는 것은 아닙니다. 다음 항목이 진짜 관문이에요.",
+          cta: { label: "고용보험 가입내역 조회하기", url: "https://total.comwel.or.kr/", org: "근로복지공단 고용·산재보험 토탈서비스", note: "사업장 소재지와 취득·상실일을 먼저 확인해 두면 상담이 빨라져요." },
+          quote: { law: "고용보험법 시행규칙 별표 2 (법제처 생활법령 인용) [시행 2026. 9. 18.]", text: "\"다음의 어느 하나에 해당하는 사유로 통근이 곤란(통근 시 이용할 수 있는 통상의 교통수단으로는 사업장으로의 왕복에 드는 시간이 3시간 이상인 경우를 말함)하게 된 경우 / 사업장의 이전 / 지역을 달리하는 사업장으로의 전근 / 배우자나 부양해야 할 친족과의 동거를 위한 거소 이전 / 그 밖에 피할 수 없는 사유로 통근이 곤란한 경우\"" },
+        },
+        {
+          eyebrow: "진짜 관문",
+          heading: "어떤 사유여야 인정되나요",
+          answer: "네 가지 중 하나로 통근이 곤란하게 된 경우여야 해요. 시간만으로는 부족합니다.",
+          compareTable: {
+            caption: "같은 왕복 3시간이라도 갈리는 이유",
+            cards: true,
+            headers: ["상황", "판단", "근거"],
+            rows: [
+              [{ text: "회사가 다른 지역으로 이전했다", tag: "사유 1", tagTone: "hi" }, { text: "**사업장의 이전**에 해당해요. 내 선택이 아닙니다", status: "ok" }, { text: "별표 2 통근곤란 첫째" }],
+              [{ text: "지방 지점으로 발령이 났다", tag: "사유 2", tagTone: "hi" }, { text: "**지역을 달리하는 사업장으로의 전근**이에요", status: "ok" }, { text: "별표 2 통근곤란 둘째" }],
+              [{ text: "배우자와 살려고 이사했다", tag: "사유 3", tagTone: "hi" }, { text: "**배우자나 부양해야 할 친족과의 동거를 위한 거소 이전**이면 들어가요", status: "ok" }, { text: "별표 2 통근곤란 셋째" }],
+              [{ text: "집값 때문에 멀리 이사했다", tag: "해당 없음", tagTone: "lo" }, { text: "네 가지 어디에도 없어요. 개인 선택으로 봅니다", status: "warn" }, { text: "제58조 제2호 다목" }],
+              [{ text: "원래부터 왕복 3시간이었다", tag: "해당 없음", tagTone: "lo" }, { text: "조문은 그 사유로 통근이 곤란하게 **된** 경우를 말해요. 입사 때부터 그랬다면 '되었다'고 보기 어렵습니다", status: "warn" }, { text: "별표 2 문언" }],
+              [{ text: "피할 수 없는 다른 사정", tag: "개별 판단" }, { text: "**그 밖에 피할 수 없는 사유**로 통근이 곤란한 경우가 열려 있어요. 해당 여부는 기관이 판단합니다" }, { text: "별표 2 통근곤란 넷째" }],
+            ],
+          },
+          body: "**여기가 이 제도의 핵심입니다.** 3시간을 넘겼다고 다 되는 것이 아니라, **왜 그렇게 됐는지**를 봅니다.\n\n별표 2의 문장 구조를 그대로 읽어 보세요. \"**다음의 어느 하나에 해당하는 사유로** 통근이 곤란하게 된 경우\"입니다. 즉 네 가지 사유 중 하나가 **원인**이 되어 통근이 곤란해진 상황을 말해요.\n\n네 가지는 **사업장의 이전**, **지역을 달리하는 사업장으로의 전근**, **배우자나 부양해야 할 친족과의 동거를 위한 거소 이전**, 그리고 **그 밖에 피할 수 없는 사유로 통근이 곤란한 경우**입니다.\n\n앞의 둘은 **회사가 움직인 경우**예요. 회사가 이사를 갔거나 나를 다른 지역으로 보낸 것이라, 내 선택이 아닙니다.\n\n셋째는 **내가 움직였지만 이유가 정해진 경우**입니다. 배우자나 부양해야 할 친족과 **동거하기 위한** 거소 이전이어야 해요. 집값이 싸서, 조용한 데가 좋아서 옮긴 것은 여기 들지 않습니다.\n\n넷째 \"그 밖에 피할 수 없는 사유\"는 앞의 셋에 준하는, 내가 선택했다고 보기 어려운 사정을 말해요. 여기에 드는지는 기관이 개별로 판단합니다.",
+          cta: { label: "신청지 관할 센터 연락처 찾기", url: "https://www.workplus.go.kr/index.do", org: "고용노동부 · 한국고용정보원", note: "네 가지 사유에 드는지는 개별 판단이라, 퇴사 전에 관할 센터에 먼저 문의하는 편이 안전해요." },
+          quote: { law: "고용보험법 제58조 제2호 [시행 2026. 8. 20.]", text: "\"2. 자기 사정으로 이직한 경우로서 다음 각 목의 어느 하나에 해당하는 경우 / 다. 그 밖에 고용노동부령으로 정하는 정당한 사유에 해당하지 아니하는 사유로 이직한 경우\"" },
+        },
+        {
+          eyebrow: "보여 줄 것",
+          heading: "무엇으로 증명하나요",
+          answer: "사유와 시간 두 가지를 보여야 해요. 다만 서류 목록이 조문에 정해져 있지는 않습니다.",
+          widgets: [
+            {
+              type: "checklist",
+              items: [
+                "**사유 쪽** 사업장 이전이라면 그 사실, 전근이라면 인사발령, 동거 목적 이전이라면 가족관계와 주소 변동을 보여 주는 자료",
+                "**시간 쪽** 바뀐 주소와 사업장 사이를 통상의 교통수단으로 오갈 때의 왕복 소요시간",
+                "**이직확인서** 회사가 적는 이직 사유가 판단의 출발점이 돼요. \u201c개인 사정\u201d으로만 적히면 사정이 남지 않아요",
+                "**주의** 별표 2는 사유만 정하고 **증빙 목록을 나열하지 않아요.** 무엇을 받아 주는지는 관할 센터 판단이에요",
+                "**순서** 퇴사 전에 관할 센터에 문의해 필요한 자료를 확인해 두는 편이 확실해요",
+              ],
+            },
+          ],
+          body: "**주장만으로는 안 되고, 보여 줄 수 있어야 합니다.**\n\n이 사유가 걸리는 자리는 고용보험법 제58조 제2호 다목이에요. 자기 사정으로 이직한 경우 중 \"그 밖에 **고용노동부령으로 정하는 정당한 사유**에 해당하지 아니하는 사유로 이직한 경우\"를 수급자격 없음으로 봅니다. 그리고 시행규칙 제101조 제2항이 그 \"정당한 사유\"를 **별표 2**로 지정해요.\n\n그러니 증명해야 할 것이 두 덩어리입니다. **네 가지 사유 중 하나에 해당한다는 것**, 그리고 그로 인해 **왕복 3시간 이상이 되었다는 것**이에요.\n\n앞의 것은 회사가 이전했다면 그 사실을, 전근이라면 인사발령을, 동거 목적 이전이라면 가족관계와 주소 변동을 보여 주는 자료가 됩니다. 뒤의 것은 바뀐 주소와 사업장 사이의 통상 교통수단 기준 소요시간이에요.\n\n다만 **어떤 서류를 내라고 조문이 정해 두지는 않았습니다.** 별표 2도 사유만 정하고 증빙 목록을 나열하지 않아요. 그래서 실제로 무엇을 받아 주는지는 관할 센터의 판단 영역이고, 미리 문의해서 준비하는 편이 확실합니다.",
+          cta: { label: "이직확인서 처리현황 조회하기", url: "https://www.work24.go.kr/ei/a/b/1200/openHPEIAB1200M01.do", org: "고용노동부 고용24", note: "회사가 신고한 이직 사유가 어떻게 적혔는지 확인할 수 있어요." },
+          quote: { law: "고용보험법 시행규칙 제101조 제2항 [시행 2026. 9. 18.]", text: "\"법 제58조제2호다목에서 \u201c고용노동부령으로 정하는 정당한 사유\u201d란 별표 2를 말한다.\"" },
+        },
+        {
+          eyebrow: "밟는 순서",
+          heading: "신청은 어떻게 하나요",
+          answer: "절차는 다른 이직 사유와 같아요. 다만 이직확인서에 사유가 남게 하는 것이 먼저입니다.",
+          widgets: [
+            {
+              type: "stepbar",
+              steps: [
+                { tab: "1. 퇴사 전", title: "사유를 맞춘다", body: "회사와 이직 사유를 확인해요. 사업장 이전·전근·동거 목적 이전 중 무엇인지가 서류에 남아야 합니다." },
+                { tab: "2. 자료 준비", title: "사유와 시간", body: "사유를 보여 주는 자료와, 바뀐 주소에서 사업장까지의 통상 교통수단 기준 왕복 소요시간을 정리해요." },
+                { tab: "3. 실업 신고", title: "지체없이 출석", body: "이직 후 지체없이 직업안정기관에 출석해 실업을 신고해요 (제42조)." },
+                { tab: "4. 수급자격 인정", title: "거주지 관할에 신청", body: "수급자격 인정신청서를 거주지 관할 직업안정기관에 제출해요. 판단은 직업안정기관의 장이 합니다." },
+                { tab: "5. 결과에 다툴 때", title: "심사·재심사", body: "제87조의 심사·재심사 절차가 있어요. 다만 처음부터 자료를 갖춰 신청하는 편이 훨씬 빠릅니다." },
+              ],
+            },
+          ],
+          body: "절차 자체는 다른 이직 사유와 같습니다. **다만 순서를 앞당기는 것이 유리해요.**\n\n자발적으로 그만두는 형태이기 때문에, 이직확인서에 적히는 **이직 사유**가 판단의 출발점이 됩니다. 회사가 \"개인 사정\"으로만 적어 두면 통근곤란이라는 사정이 서류에 남지 않아요. **퇴사 전에 사유를 어떻게 적을지 회사와 맞춰 두는 것**이 뒤탈을 줄입니다.\n\n신고는 제42조에 따라 이직 후 지체없이 직업안정기관에 출석해 실업을 신고하는 것으로 시작해요. 수급자격 인정신청서는 거주지 관할에 내는 것이 원칙입니다.\n\n그리고 하나 더. **결정은 직업안정기관의 장이 합니다.** 별표 2에 적힌 사유에 해당하는지, 통상의 교통수단으로 왕복 3시간이 되는지 모두 기관의 판단을 거쳐요. 이 글의 기준을 맞췄더라도 자동으로 확정되는 것은 아닙니다.\n\n결과에 다투고 싶다면 제87조의 심사·재심사 절차가 있어요. 다만 그 전에 자료를 갖춰 신청하는 것이 훨씬 빠릅니다.",
+          cta: { label: "수급자격 인정신청서 인터넷으로 제출하기", url: "https://www.work24.go.kr/ei/a/b/1200/openHPEIAB1200M01.do", org: "고용노동부 고용24", note: "요건을 갖춘 상용근로자가 대상이고, 제출 후 센터 출석이 필요해요." },
+          quote: { law: "고용보험법 제58조 본문 [시행 2026. 8. 20.]", text: "\"제40조에도 불구하고 피보험자가 다음 각 호의 어느 하나에 해당한다고 직업안정기관의 장이 인정하는 경우에는 수급자격이 없는 것으로 본다.\"" },
+        },
+      ],
+
+      resolution: { steps: [] },
+
+      context: {
+        faqList: [
+          { question: "왕복 2시간 50분이면 안 되나요", answer: "별표 2는 왕복에 드는 시간이 3시간 이상인 경우를 통근이 곤란한 것으로 정의합니다. 다만 이 시간은 통상의 교통수단을 기준으로 재므로, 어떤 경로를 기준으로 보느냐에 따라 결과가 달라질 수 있어요. 정확한 판단은 관할 센터에서 받으세요." },
+          { question: "회사는 그대로인데 제가 이사해서 멀어졌어요", answer: "이사 이유가 배우자나 부양해야 할 친족과의 동거를 위한 거소 이전이라면 별표 2 셋째에 해당할 수 있습니다. 그 밖의 개인적인 이유로 옮긴 경우는 네 가지 사유에 들지 않아요. 다만 넷째의 그 밖에 피할 수 없는 사유에 해당하는지는 기관이 개별로 판단합니다." },
+          { question: "입사할 때부터 왕복 3시간이었는데요", answer: "별표 2는 네 가지 사유로 통근이 곤란하게 된 경우라고 적고 있어요. 처음부터 그 상태였다면 그 사유로 곤란하게 되었다고 보기 어려운 쪽입니다. 사정이 달라진 경위가 있다면 그 부분을 설명해 관할 센터에서 확인받으세요." },
+          { question: "회사가 이직 사유를 개인 사정으로 적었어요", answer: "이직확인서에 적힌 사유가 판단의 출발점이 되므로 불리해질 수 있습니다. 고용24에서 이직확인서 처리현황을 확인하고, 사실과 다르다면 회사에 정정을 요청하거나 관할 센터에 사정을 소명하세요." },
+          { question: "통근곤란으로 인정되면 대기기간이나 금액이 달라지나요", answer: "달라지지 않습니다. 별표 2는 수급자격 제한에서 빠지는 정당한 사유를 정할 뿐이고, 대기기간·기초일액·소정급여일수는 다른 조문이 정합니다. 요건을 갖추면 일반 수급자와 같은 기준으로 계산돼요." },
+        ],
+      },
+
+      summary: [
+        "**3시간은 정의예요** 사유가 아니라 \u201c통근이 곤란\u201d이라는 말의 뜻이고, 편도가 아니라 왕복입니다.",
+        "**네 가지 사유** 사업장 이전 · 지역 달리하는 전근 · 배우자·부양친족 동거 목적 거소 이전 · 그 밖에 피할 수 없는 사유예요.",
+        "**개인 선택은 제외** 집값이나 취향으로 멀리 이사한 경우는 네 가지에 들지 않아요.",
+        "**결정은 기관이** 사유 해당 여부와 소요시간 모두 직업안정기관의 장이 판단합니다.",
+      ],
+
+      sources: [
+        { group: "법령", title: "고용보험법 제58조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "이직 사유에 따른 수급자격의 제한 — 제2호 다목의 \u201c고용노동부령으로 정하는 정당한 사유\u201d, 판단 주체는 직업안정기관의 장" },
+        { group: "법령", title: "고용보험법 시행규칙 제101조", url: "https://www.law.go.kr/법령/고용보험법시행규칙", org: "법제처", note: "제2항이 제58조 제2호 다목의 정당한 사유를 별표 2로 지정" },
+        { group: "행정규칙·안내", title: "법제처 생활법령 — 구직급여 수급요건", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=1&cnpClsNo=1", org: "법제처", note: "별표 2의 정당한 이직 사유 목록. 통근곤란의 정의(통상의 교통수단으로 왕복 3시간 이상)와 네 가지 사유 원문" },
+        { group: "행정규칙·안내", title: "법제처 생활법령 — 구직급여 수급신청", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=1", org: "법제처", note: "실업 신고와 수급자격 인정 절차, 거주지 관할 확인" },
+        { group: "정부 도구", title: "고용24 이직확인서 처리현황", url: "https://www.work24.go.kr/ei/a/b/1200/openHPEIAB1200M01.do", org: "고용노동부 고용24", note: "회사가 신고한 이직 사유 확인" },
+        { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "왕복 3시간과 네 가지 사유는 위 화면 원문(scripts/evidence/실업급여-통근-3시간.json)과 대조했어요. **별표 2 원문 페이지는 본문 추출이 되지 않아, 같은 내용을 그대로 옮긴 법제처 생활법령 화면을 근거로 삼았습니다.** 캡처 4장은 장마다 읽고 기록했어요." },
+      ],
+      lastVerified: "2026-09-05",
+
+      relatedQuestions: [
+        { question: "자진퇴사해도 받을 수 있나요", slug: "자발적-퇴사-실업급여" },
+        { question: "수급 중 이사하면 어떻게 되나요", slug: "실업급여-해외체류" },
+        { question: "이직확인서는 어떻게 확인하나요", slug: "실업급여-이직확인서" },
+        { question: "질병으로 그만두면 되나요", slug: "실업급여-질병-부상" },
+      ],
+    },
+    {
+      slug: "실업급여-고용보험-미가입",
+      category: "고용",
+      primaryKeywords: ["고용보험 미가입 실업급여", "고용보험 소급가입", "피보험자격 확인청구"],
+
+      meta: {
+        title: "회사가 고용보험에 가입 안 했다면, 소급 취득과 확인청구·신고 의무",
+        description:
+          "받을 수 있어요. 제17조가 **피보험자였던 사람은 언제든지** 확인을 청구할 수 있게 열어 두었습니다. 취득일은 신고한 날이 아니라 **고용된 날**이고, 신고 의무는 근로자가 아니라 **사업주**에게 있어요. 흔히 말하는 소급 **3년**은 보험료 징수권의 시효입니다.",
+        author: { name: "머니위키 편집팀" },
+        publishedAt: "2026-09-05",
+      },
+
+      searchIntent: {
+        userQuestion: "회사가 고용보험에 가입해 주지 않았는데 실업급여를 받을 수 있나요?",
+        directAnswer: "확인청구로 가입 사실을 세울 수 있어요. 다만 확인이 곧 지급은 아니고, 제40조의 수급 요건은 따로 갖춰야 합니다.",
+        why: "고용보험법 제17조 제1항이 피보험자 또는 피보험자였던 사람은 언제든지 확인을 청구할 수 있다고 정하고, 제13조 제1항이 취득일을 고용된 날로 정하고 있어요.",
+      },
+
+      verify: { note: "법제처 조문 화면(고용보험법 시행 2026. 8. 20.) 확인 · 법제처 생활법령 대조", date: "2026-09-05" },
+
+      heroStats: [
+        { label: "청구 기한", value: "언제든지", note: "피보험자 또는 **피보험자였던 사람**은 언제든지 확인을 청구할 수 있어요 (제17조 제1항)." },
+        { label: "취득일 기준", value: "고용된 날", note: "신고한 날이 아니라 이 법이 적용되는 사업에 **고용된 날**이에요 (제13조 제1항)." },
+      ],
+
+      keyFacts: [
+        { label: "결론", value: "**길이 있어요.** 회사가 신고하지 않았다는 이유로 근로자가 자격을 잃는 구조가 아니에요. 다만 확인 뒤에 제40조의 수급 요건을 따로 갖춰야 합니다" },
+        { label: "가입은 선택이 아니에요", value: "이 법은 **근로자를 사용하는 모든 사업 또는 사업장**에 적용돼요 (제8조 제1항)" },
+        { label: "핵심 조문", value: "**피보험자 또는 피보험자였던 사람은 언제든지** 취득 또는 상실에 관한 확인을 청구할 수 있어요 (제17조 제1항)" },
+        { label: "직권으로도", value: "고용노동부장관은 그 청구에 따르거나 **직권으로** 확인을 해요 (제17조 제2항)" },
+        { label: "결과 통지", value: "확인 결과는 청구한 피보험자와 **사업주 등 관계인에게** 알려요 (제17조 제3항)" },
+        { label: "언제부터 가입", value: "취득일은 **고용된 날**이에요. 신고 시점과 무관합니다 (제13조 제1항 본문)" },
+        { label: "예외 하나", value: "회사의 **보험관계 성립일 전에 고용**된 경우에는 그 **보험관계가 성립한 날**이 취득일이에요 (제13조 제1항 제2호)" },
+        { label: "상실일", value: "이직한 경우에는 **이직한 날의 다음 날**이에요 (제14조 제1항 제3호)" },
+        { label: "신고할 사람", value: "**사업주**가 취득·상실 등을 신고해야 해요. 근로자의 의무가 아닙니다 (제15조 제1항)" },
+        { label: "소급은 3년이 갈림길", value: "확인청구 자체는 기한이 없지만, **보험료를 징수할 권리가 3년**으로 시효 소멸해요. 그래서 실무의 소급 범위가 그만큼에서 갈립니다 (고용산재보험료징수법 제41조 제1항)" },
+        { label: "3년의 근거가 다른 법", value: "흔히 인용되는 **근로기준법 제49조의 3년은 밀린 임금(임금채권)** 이야기예요. 고용보험 소급은 **보험료징수법 제41조**가 근거입니다" },
+        { label: "적용 제외는 다른 문제", value: "신고가 안 된 것과 **제10조의 적용 제외 대상**인 것은 달라요. 후자는 확인청구로 해결되지 않습니다" },
+      ],
+
+      mainSections: [
+        {
+          eyebrow: "받을 수 있나",
+          heading: "회사가 가입을 안 했으면 못 받나요",
+          answer: "받을 수 있어요. 퇴사한 뒤에도 확인을 청구할 수 있는 조문이 있습니다.",
+          widgets: [
+            {
+              type: "decide",
+              items: [
+                { q: "\u2460 근로자를 사용하는 사업에서 일했나요", sub: "이 법은 근로자를 사용하는 모든 사업 또는 사업장에 적용돼요 (제8조 제1항).", next: "맞으면 적용 대상" },
+                { q: "\u2461 제10조의 적용 제외 대상은 아닌가요", sub: "적용 제외에 해당하면 확인청구로 해결되지 않아요. 여기서 먼저 갈립니다.", next: "아니면 확인청구로" },
+                { q: "\u2462 실제로 고용된 날짜를 보여 줄 수 있나요", sub: "취득일이 고용된 날이라 그 날짜가 쟁점이 돼요 (제13조 제1항).", next: "근로계약서·급여이체 내역 등" },
+                { q: "\u2463 확인 뒤 수급 요건도 갖추나요", sub: "확인이 곧 수급 결정은 아니에요. 제40조의 요건을 다시 따집니다.", next: "180일 등 요건 확인" },
+              ],
+              okText: "적용 대상이라면 제17조의 확인청구부터 시작하세요. 이미 퇴사했어도 청구할 수 있어요.",
+            },
+          ],
+          body: "**받을 수 있습니다.** 회사가 신고를 안 했다는 이유로 근로자가 자격을 잃는 구조가 아니에요.\n\n제8조 제1항은 이 법이 **근로자를 사용하는 모든 사업 또는 사업장**에 적용된다고 정합니다. 가입할지 말지가 사업주의 선택이 아니라, 요건에 해당하면 **법이 적용되는** 구조예요.\n\n그리고 제17조 제1항이 길을 열어 둡니다. **피보험자 또는 피보험자였던 사람은 언제든지** 고용노동부장관에게 피보험자격의 취득 또는 상실에 관한 확인을 **청구할 수 있습니다.** 이미 퇴사한 사람도 청구할 수 있다는 뜻이에요.\n\n제2항은 장관이 그 청구에 따르거나 **직권으로** 확인을 한다고 하고, 제3항은 그 결과를 청구한 피보험자와 **사업주 등 관계인에게 알리도록** 합니다.\n\n다만 하나는 구분해야 해요. **신고가 안 된 것**과 **애초에 적용 제외 대상인 것**은 다릅니다. 제10조가 이 법을 적용하지 않는 사람을 따로 정하고 있어서, 여기 해당하면 확인청구로 해결되지 않아요.",
+          cta: { label: "확인청구 상담할 관할 센터 찾기", url: "https://www.workplus.go.kr/index.do", org: "고용노동부 · 한국고용정보원", note: "확인청구는 관할 센터에서 접수해요. 먼저 토탈서비스에서 지금 상태를 보고 오면 상담이 빨라집니다." },
+          quote: { law: "고용보험법 제17조 제1항 [시행 2026. 8. 20.]", text: "\"피보험자 또는 피보험자였던 사람은 언제든지 고용노동부장관에게 피보험자격의 취득 또는 상실에 관한 확인을 청구할 수 있다.\"" },
+        },
+        {
+          eyebrow: "날짜 기준",
+          heading: "언제부터 가입된 것으로 보나요",
+          answer: "고용된 날이에요. 회사가 언제 신고했는지와 무관합니다.",
+          compareTable: {
+            caption: "취득일과 상실일이 정해지는 방식",
+            cards: true,
+            headers: ["상황", "그 날짜", "근거"],
+            rows: [
+              [{ text: "원칙", tag: "고용된 날", tagTone: "hi" }, { text: "이 법이 적용되는 사업에 **고용된 날**에 피보험자격을 취득해요. 신고한 날이 아닙니다", status: "key" }, { text: "제13조 제1항 본문" }],
+              [{ text: "적용 제외였다가 적용받게 됨" }, { text: "그 **적용을 받게 된 날**이에요" }, { text: "제13조 제1항 제1호" }],
+              [{ text: "회사의 보험관계 성립 전에 고용됨", tag: "줄어듦", tagTone: "lo" }, { text: "그 **보험관계가 성립한 날**이 취득일이에요. 그 전 기간은 들어가지 않아요", status: "warn" }, { text: "제13조 제1항 제2호" }],
+              [{ text: "이직했다" }, { text: "**이직한 날의 다음 날**에 자격을 상실해요" }, { text: "제14조 제1항 제3호" }],
+              [{ text: "적용 제외 대상이 됨" }, { text: "그 **적용 제외 대상자가 된 날**이에요" }, { text: "제14조 제1항 제1호" }],
+              [{ text: "회사의 보험관계가 소멸함" }, { text: "그 **보험관계가 소멸한 날**이에요" }, { text: "제14조 제1항 제2호" }],
+            ],
+          },
+          body: "확인이 되면 **언제부터** 가입된 것으로 볼까요. 여기가 실질적인 관건입니다.\n\n제13조 제1항 본문이 답을 줍니다. 근로자인 피보험자는 이 법이 적용되는 사업에 **고용된 날**에 피보험자격을 취득해요. **신고한 날이 아닙니다.** 회사가 몇 년 뒤에 신고했더라도 취득일은 실제로 고용된 그 날로 잡힙니다.\n\n단서에 두 가지 예외가 있어요. 제1호는 제10조·제10조의2의 적용 제외 근로자였던 사람이 이 법의 적용을 받게 된 경우 **그 적용을 받게 된 날**입니다. 제2호는 고용산재보험료징수법 제7조에 따른 **보험관계 성립일 전에 고용된 근로자**의 경우 **그 보험관계가 성립한 날**이에요.\n\n제2호가 중요합니다. 회사 자체가 보험관계 성립 전이었다면, 내가 그 전부터 일했더라도 취득일은 **성립일**로 잡혀요. 그만큼 앞쪽 기간이 줄어듭니다.\n\n상실일은 제14조 제1항 제3호에 따라 **이직한 날의 다음 날**입니다. 취득일과 상실일 두 날짜가 정해져야 그 사이의 피보험 단위기간을 셀 수 있어요.",
+          cta: { label: "고용24 실업급여 안내 확인하기", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부 고용24", note: "확인이 끝난 뒤 밟게 되는 신청 절차를 미리 볼 수 있어요." },
+          quote: { law: "고용보험법 제13조 제1항 [시행 2026. 8. 20.]", text: "\"근로자인 피보험자는 이 법이 적용되는 사업에 고용된 날에 피보험자격을 취득한다. 다만, 다음 각 호의 경우에는 각각 그 해당되는 날에 피보험자격을 취득한 것으로 본다. 1. 제10조 및 제10조의2에 따른 적용 제외 근로자였던 사람이 이 법의 적용을 받게 된 경우에는 그 적용을 받게 된 날 2. 고용산재보험료징수법 제7조에 따른 보험관계 성립일 전에 고용된 근로자의 경우에는 그 보험관계가 성립한 날\"" },
+        },
+        {
+          eyebrow: "누구의 일",
+          heading: "신고는 누가 해야 하나요",
+          answer: "사업주예요. 근로자에게 신고 의무를 지운 조문이 아닙니다.",
+          widgets: [
+            {
+              type: "checklist",
+              items: [
+                "**원칙** 사업주가 고용된 근로자의 피보험자격 **취득 및 상실 등**에 관한 사항을 신고해야 해요 (제15조 제1항)",
+                "**도급 구조** 원수급인이 사업주로 된 경우, 원수급인이 고용하는 근로자 외의 근로자는 **그를 고용하는 하수급인**이 신고해요 (제15조 제2항)",
+                "**원수급인의 일** 이 경우 원수급인은 **하수급인에 관한 자료**를 고용노동부장관에게 제출해요",
+                "**회사가 안 하면** 사업주가 제1항의 신고를 하지 아니하면 **대통령령으로 정하는 바에 따라 근로자가 신고할 수 있어요** (제15조 제3항)",
+                "**신고되면 통지** 장관은 신고된 취득·상실 등에 관한 사항을 **피보험자 및 원수급인 등 관계인에게** 알려야 해요 (제15조 제4항)",
+                "**근로자는** 신고 의무를 지지 않아요. 대신 제15조 제3항의 직접 신고와 제17조의 **확인청구권**을 가집니다",
+                "**바로잡는 길** 회사가 하지 않은 신고를 확인청구로 바로잡는 절차가 제17조예요",
+              ],
+            },
+          ],
+          body: "**신고 의무는 회사에 있습니다.** 이 점을 알고 있어야 대응이 됩니다.\n\n제15조 제1항은 **사업주**가 그 사업에 고용된 근로자의 피보험자격의 취득 및 상실 등에 관한 사항을 대통령령으로 정하는 바에 따라 고용노동부장관에게 **신고하여야 한다**고 정합니다. 근로자에게 신고 의무를 지운 조문이 아니에요.\n\n건설업처럼 도급 구조라면 제15조 제2항이 갈래를 나눕니다. 고용산재보험료징수법 제9조에 따라 원수급인이 사업주로 된 경우, 그 사업에 종사하는 근로자 중 원수급인이 고용하는 근로자 외의 근로자에 대해서는 **그 근로자를 고용하는 하수급인**이 신고해야 해요. 이 경우 원수급인은 하수급인에 관한 자료를 장관에게 제출합니다.\n\n그래서 \"내가 신고를 안 해서 못 받는다\"는 말은 조문과 맞지 않습니다. 회사가 하지 않은 신고를 **확인청구로 바로잡는 절차**가 제17조예요.",
+          cta: { label: "이직확인서 처리현황 조회하기", url: "https://www.work24.go.kr/ei/a/b/1200/openHPEIAB1200M01.do", org: "고용노동부 고용24", note: "회사가 상실 신고와 이직확인서를 냈는지 확인할 수 있어요." },
+          quote: { law: "고용보험법 제15조 제1항 [시행 2026. 8. 20.]", text: "\"사업주는 그 사업에 고용된 근로자의 피보험자격의 취득 및 상실 등에 관한 사항을 대통령령으로 정하는 바에 따라 고용노동부장관에게 신고하여야 한다.\"" },
+        },
+        {
+          eyebrow: "밟는 순서",
+          heading: "확인청구는 어떻게 하나요",
+          answer: "지금 이력을 확인하고, 고용 사실 자료를 모아 청구하면 됩니다.",
+          widgets: [
+            {
+              type: "stepbar",
+              steps: [
+                { tab: "1. 현황 확인", title: "지금 어떻게 돼 있나", body: "근로복지공단 토탈서비스에서 취득·상실 이력을 봐요. 아예 없는지, 기간이 짧게 잡혔는지에 따라 다툴 지점이 달라집니다." },
+                { tab: "2. 자료 모으기", title: "고용된 날을 보여 줄 것", body: "취득일이 고용된 날이므로 언제부터 일했는지가 쟁점이에요. 근로계약서, 급여이체 내역, 출퇴근 기록 등이 그 날짜를 뒷받침해요." },
+                { tab: "3. 확인청구", title: "언제든지 청구", body: "제17조 제1항에 따라 피보험자였던 사람도 청구할 수 있어요. 조문에 청구 기한이 적혀 있지 않습니다." },
+                { tab: "4. 확인·통지", title: "직권 확인과 통지", body: "장관은 청구에 따르거나 직권으로 확인하고, 결과를 나와 사업주 등 관계인에게 알려요 (제17조 제2항·제3항)." },
+                { tab: "5. 수급 요건", title: "그다음이 본게임", body: "확인이 곧 수급 결정은 아니에요. 제40조의 요건(180일 등)을 다시 따집니다." },
+              ],
+            },
+          ],
+          body: "순서는 단순합니다. **사실을 모으고, 청구하고, 결과를 기다립니다.**\n\n먼저 **지금 상태를 확인하세요.** 근로복지공단 고용·산재보험 토탈서비스에서 내 취득·상실 이력이 어떻게 신고돼 있는지 볼 수 있어요. 아예 없는지, 기간이 짧게 잡혔는지에 따라 다툴 지점이 달라집니다.\n\n그다음 **근로한 사실을 보여 줄 자료**를 모읍니다. 제13조가 \"고용된 날\"을 취득일로 정하므로, 실제로 언제부터 일했는지가 쟁점이 돼요. 근로계약서, 급여이체 내역, 출퇴근 기록 같은 것이 그 날짜를 뒷받침합니다.\n\n그리고 제17조 제1항에 따라 확인을 청구합니다. 조문은 **\"언제든지\"**라고만 적고 청구 기한을 두지 않았어요.\n\n그런데 실무에서 흔히 **\"소급은 3년까지\"**라고 말합니다. 그 근거가 어디인지 짚어 둘게요. **고용산재보험료징수법 제41조 제1항**은 보험료와 그 밖의 징수금을 **징수하거나 그 반환받을 수 있는 권리는 3년간 행사하지 아니하면 시효로 인하여 소멸한다**고 정합니다. 확인청구는 기한이 없지만 **그에 따라 걷어야 할 보험료가 3년으로 시효 소멸**하기 때문에, 실제 소급 처리 범위가 그 선에서 갈리는 것이에요.\n\n여기서 자주 섞이는 것이 있습니다. 검색하면 나오는 **근로기준법 제49조의 3년은 밀린 임금(임금채권)** 이야기예요. 고용보험 피보험자격과는 **다른 법의 다른 시효**입니다. 두 3년을 같은 것으로 읽으면 안 돼요.\n\n구체적으로 내 사안이 어디까지 소급되는지는 **관할 기관에서 확인하세요.** 시효의 기산점과 중단 사유는 제41조 제2항에 따라 민법을 함께 보게 됩니다.\n\n확인이 끝나면 제17조 제3항에 따라 결과가 나에게, 그리고 사업주에게도 통지됩니다. 그 뒤에 제40조의 수급 요건을 다시 따지게 돼요. 확인이 곧 수급 결정은 아니라는 점은 기억해 두세요.",
+          cta: { label: "신청지 관할 센터 연락처 찾기", url: "https://www.workplus.go.kr/index.do", org: "고용노동부 · 한국고용정보원", note: "소급되는 범위는 다른 법의 규율도 받아요. 관할 센터에서 확인하는 편이 정확합니다." },
+          quote: { law: "고용보험법 제17조 제2항·제3항 [시행 2026. 8. 20.]", text: "\"②고용노동부장관은 제1항에 따른 청구에 따르거나 직권으로 피보험자격의 취득 또는 상실에 관하여 확인을 한다. ③고용노동부장관은 제2항에 따른 확인 결과를 대통령령으로 정하는 바에 따라 그 확인을 청구한 피보험자 및 사업주 등 관계인에게 알려야 한다.\"" },
+        },
+      ],
+
+      resolution: { steps: [] },
+
+      context: {
+        faqList: [
+          { question: "이미 퇴사했는데도 청구할 수 있나요", answer: "제17조 제1항이 \u201c피보험자 또는 피보험자였던 사람은 언제든지\u201d라고 적고 있어요. 퇴사한 사람도 청구 대상에 들어갑니다. 다만 확인이 되더라도 제40조의 수급 요건은 별도로 따집니다." },
+          { question: "회사가 몇 년 뒤에 신고했으면 그때부터인가요", answer: "아니요. 제13조 제1항 본문은 이 법이 적용되는 사업에 고용된 날에 피보험자격을 취득한다고 정합니다. 신고 시점이 아니라 실제로 고용된 날이 기준이에요. 다만 회사의 보험관계 성립일 전에 고용된 경우에는 제2호에 따라 그 보험관계가 성립한 날이 취득일이 됩니다." },
+          { question: "제가 신고를 안 해서 못 받는 건가요", answer: "제15조 제1항은 사업주가 신고하도록 정하고 있어요. 근로자에게 신고 의무를 지운 조문이 아닙니다. 대신 근로자에게는 제17조의 확인청구권이 있어요." },
+          { question: "몇 년 전 것까지 소급되나요", answer: "확인청구 자체는 제17조 제1항이 \u201c언제든지\u201d라고 정해 기한이 없습니다. 다만 고용산재보험료징수법 제41조 제1항이 보험료와 그 밖의 징수금을 징수하거나 반환받을 권리를 3년으로 시효 소멸시켜서, 실제 소급 처리 범위가 그 선에서 갈려요. 검색하면 함께 나오는 근로기준법 제49조의 3년은 밀린 임금에 관한 것이라 다른 법입니다. 시효의 기산점과 중단은 제41조 제2항에 따라 민법을 함께 봐요." },
+          { question: "확인만 되면 실업급여가 나오나요", answer: "아니요. 확인은 취득·상실 사실을 정하는 절차이고, 실업급여는 제40조 제1항의 요건을 따로 갖춰야 해요. 기준기간 동안 피보험 단위기간이 통산 180일 이상이어야 하고, 이직 사유도 제58조의 제한 사유가 아니어야 합니다." },
+          { question: "건설현장이라 누가 사업주인지 모르겠어요", answer: "제15조 제2항이 갈래를 정합니다. 고용산재보험료징수법 제9조에 따라 원수급인이 사업주로 된 경우, 원수급인이 고용하는 근로자 외의 근로자에 대해서는 그 근로자를 고용하는 하수급인이 신고해요. 이 경우 원수급인은 하수급인에 관한 자료를 고용노동부장관에게 제출합니다." },
+        ],
+      },
+
+      summary: [
+        "**길이 있어요** 회사가 신고하지 않았다는 이유로 근로자가 자격을 잃는 구조가 아니에요. 확인 뒤 수급 요건은 따로 봅니다.",
+        "**언제든지 청구** 제17조 제1항이 피보험자였던 사람도 언제든지 확인을 청구할 수 있게 열어 두었어요.",
+        "**고용된 날 기준** 취득일은 신고한 날이 아니라 고용된 날이에요. 회사의 보험관계 성립일이 그보다 늦으면 그날이 기준입니다.",
+        "**신고는 회사 몫** 제15조 제1항의 신고 의무는 사업주에게 있어요.",
+        "**3년의 정체** 소급 범위를 가르는 3년은 보험료 징수권의 시효(징수법 제41조)예요. 임금채권 3년과는 다른 법입니다.",
+      ],
+
+      sources: [
+        { group: "법령", title: "고용보험법 제8조·제10조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제8조 제1항 근로자를 사용하는 모든 사업 적용, 제10조 적용 제외" },
+        { group: "법령", title: "고용보험법 제13조·제14조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제13조 제1항 취득일은 고용된 날(단서 제1호 적용받게 된 날, 제2호 보험관계 성립일), 제14조 제1항 상실일(제3호 이직한 날의 다음 날)" },
+        { group: "법령", title: "고용보험법 제15조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제1항 사업주의 신고 의무, 제2항 도급 구조에서 하수급인의 신고와 원수급인의 자료 제출" },
+        { group: "법령", title: "고용보험법 제17조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "피보험자격의 확인 — 제1항 피보험자였던 사람도 언제든지 청구, 제2항 직권 확인, 제3항 관계인 통지" },
+        { group: "법령", title: "고용보험법 제40조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "구직급여의 수급 요건 — 확인 이후 다시 따지게 되는 기준" },
+        { group: "행정규칙·안내", title: "법제처 생활법령 — 구직급여 수급요건", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=1&cnpClsNo=1", org: "법제처", note: "수급 요건과 정당한 이직 사유 목록" },
+        { group: "법령", title: "고용산재보험료징수법 제41조", url: "https://www.law.go.kr/법령/고용보험및산업재해보상보험의보험료징수등에관한법률", org: "법제처", note: "시효 — 제1항 보험료·징수금을 징수하거나 반환받을 권리는 3년간 행사하지 않으면 시효 소멸, 제2항 나머지는 민법에 따름" },
+        { group: "정부 도구", title: "근로복지공단 고용·산재보험 토탈서비스", url: "https://total.comwel.or.kr/", org: "근로복지공단", note: "취득·상실 이력 조회" },
+        { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "\u201c언제든지\u201d·\u201c고용된 날\u201d·\u201c이직한 날의 다음 날\u201d·3년은 위 화면 원문(scripts/evidence/실업급여-고용보험-미가입.json)과 대조했어요. 캡처 10장은 장마다 읽고 기록했습니다. **흔히 말하는 \u201c소급 3년\u201d의 근거로 검색에 자주 걸리는 근로기준법 제49조는 임금채권 시효라 다른 법입니다. 이 글은 고용산재보험료징수법 제41조 화면을 직접 열어 근거로 삼았습니다.**" },
+      ],
+      lastVerified: "2026-09-05",
+
+      relatedQuestions: [
+        { question: "이직확인서를 안 해 주면 어떻게 하나요", slug: "실업급여-이직확인서" },
+        { question: "180일 어떻게 세나요", slug: "실업급여-180일" },
+        { question: "일용직은 어떻게 다른가요", slug: "일용직-실업급여" },
+        { question: "실업급여 신청 절차", slug: "실업급여-신청" },
+      ],
+    },
+    {
+      slug: "구직급여-출산-이유-실업인정",
+      category: "고용",
+      primaryKeywords: ["임신 출산 실업급여", "출산 퇴사 실업급여", "상병급여"],
+
+      meta: {
+        title: "임신과 출산으로 퇴사할 때 실업급여, 인정 사유와 수급기간 연기",
+        description:
+          "임신·출산만으로는 안 되고 **사업주가 휴가나 휴직을 허용하지 않아** 이직한 경우여야 해요. 받는 중 출산했다면 **신고**하면 12개월이 늘어나고(4년 한도), **청구**하면 상병급여로 갈음할 수 있습니다.",
+        author: { name: "머니위키 편집팀" },
+        publishedAt: "2026-09-05",
+      },
+
+      searchIntent: {
+        userQuestion: "임신이나 출산 때문에 퇴사했는데 실업급여를 받을 수 있나요?",
+        directAnswer: "받을 수 있어요. 다만 사업주가 휴가나 휴직을 허용하지 않아 이직한 경우여야 합니다.",
+        why: "고용보험법 시행규칙 별표 2가 임신·출산·육아로 업무를 계속 수행하기 어려운데 사업주가 휴가나 휴직을 허용하지 않아 이직한 경우를 정당한 사유로 정하고 있어요.",
+      },
+
+      verify: { note: "법제처 조문 화면(고용보험법 시행 2026. 8. 20. · 시행령 시행 2026. 7. 1.) 확인 · 법제처 생활법령 구직급여 수급요건 대조", date: "2026-09-05" },
+
+      heroStats: [
+        { label: "인정의 조건", value: "휴직 불허", note: "임신·출산으로 업무 수행이 어렵고, **사업주가 휴가나 휴직을 허용하지 않아** 이직한 경우여야 해요." },
+        { label: "연기 한도", value: "4년", note: "취업할 수 없는 기간을 12개월에 가산하되 **4년을 넘을 때에는 4년**까지예요 (제48조 제2항)." },
+      ],
+
+      keyFacts: [
+        { label: "핵심 조건", value: "임신·출산만으로는 안 돼요. **사업주가 휴가나 휴직을 허용하지 않아** 이직한 경우여야 합니다 (별표 2 제10호)" },
+        { label: "육아도 포함", value: "**8세 이하 또는 초등학교 2학년 이하 자녀**(입양 포함)의 육아, 병역법 의무복무도 같은 항목에 들어 있어요" },
+        { label: "걸리는 조문", value: "제58조 제2호 다목의 \u201c정당한 사유\u201d에 해당해야 하고, 그 사유를 시행규칙 별표 2가 정해요" },
+        { label: "수급 중 출산이면", value: "임신·출산·육아로 취업할 수 없는 사실을 **수급기간에 신고**하면 12개월에 그 기간을 가산해요 (제48조 제2항)" },
+        { label: "신고가 조건이에요", value: "가만히 있으면 늘어나지 않아요. **수급기간이 지나기 전에** 직업안정기관에 신고해야 합니다" },
+        { label: "상병급여", value: "실업 신고 이후 **출산으로 취업이 불가능해** 실업인정을 못 받은 날은 **청구하면** 구직급여일액에 해당하는 금액을 갈음해 받아요 (제63조 제1항)" },
+        { label: "총량은 그대로", value: "상병급여를 받으면 **그 일수만큼 구직급여가 지급된 것으로 봐요.** 남은 일수가 줄어듭니다 (제63조 제2항)" },
+        { label: "상병급여가 막히는 경우", value: "근로기준법 제79조 휴업보상, 산재보험법 제52~56조 **휴업급여** 등을 받을 수 있으면 지급하지 않아요 (제63조 제4항)" },
+        { label: "지급정지 중이면", value: "제60조 제1항·제2항으로 **구직급여 지급이 정지된 기간**에 대해서는 상병급여도 지급하지 않아요 (제63조 제1항 단서)" },
+        { label: "규칙은 그대로 따라와요", value: "상병급여에도 **제47조(취업 등 신고)·제49조(대기기간)·제57조·제62조가 준용**돼요. 이때 \u201c실업인정대상기간\u201d은 \u201c실업의 인정을 받지 못한 날\u201d로, \u201c구직급여\u201d는 \u201c상병급여\u201d로 봅니다 (제63조 제5항)" },
+        { label: "재직 중이라면", value: "출산전후휴가 급여(제75조)와 육아휴직 급여(제70조)는 **재직 상태에서 휴가·휴직을 받아야** 나오는 다른 제도예요" },
+        { label: "180일이 모자라면", value: "**임신·출산·육아에 따른 휴직**으로 계속 30일 이상 보수를 못 받았다면 그 일수를 18개월에 가산해요 (3년 한도)" },
+      ],
+
+      mainSections: [
+        {
+          eyebrow: "인정 조건",
+          heading: "임신이나 출산으로 그만두면 받을 수 있나요",
+          answer: "받을 수 있어요. 다만 사업주가 휴가나 휴직을 허용하지 않았다는 사정이 있어야 합니다.",
+          widgets: [
+            {
+              type: "decide",
+              items: [
+                { q: "\u2460 임신·출산·육아로 업무를 계속 수행하기 어려웠나요", sub: "8세 이하 또는 초등학교 2학년 이하 자녀의 육아, 병역법 의무복무도 같은 항목이에요.", next: "첫째 조건" },
+                { q: "\u2461 회사에 휴가나 휴직을 요청했나요", sub: "요청한 사실이 남아 있어야 다음 조건을 따질 수 있어요.", next: "요청 기록이 중요" },
+                { q: "\u2462 사업주가 그 휴가나 휴직을 허용하지 않았나요", sub: "여기가 핵심이에요. 정상적으로 휴가를 받았다면 이 사유에 들지 않아요.", next: "불허 사실이 관건" },
+                { q: "\u2463 이직 사유가 그렇게 신고되었나요", sub: "이직확인서에 '개인 사정'으로만 적히면 사정이 남지 않아요.", next: "서류에 남겨야 해요" },
+              ],
+              okText: "네 가지가 맞으면 별표 2의 별표 2 제10호에 해당할 수 있어요. 판단은 직업안정기관의 장이 합니다.",
+            },
+          ],
+          body: "**임신이나 출산 자체가 이직 사유가 되지는 않습니다.** 여기서 많이들 걸립니다.\n\n별표 2의 문장을 그대로 옮기면 이래요. \"임신, 출산, 8세 이하 또는 초등학교 2학년 이하의 자녀(입양한 자녀를 포함함)의 육아, 병역법에 따른 의무복무 등으로 **업무를 계속적으로 수행하기 어려운 경우로서 사업주가 휴가나 휴직을 허용하지 않아 이직한 경우**\"입니다.\n\n조건이 **둘**이에요. 임신·출산으로 **업무를 계속 수행하기 어려울 것**, 그리고 그 상황에서 **사업주가 휴가나 휴직을 허용하지 않았을 것**입니다.\n\n뒤의 조건이 핵심입니다. 회사가 출산전후휴가나 육아휴직을 정상적으로 줬는데 본인이 그만두기로 한 경우라면 이 사유에 들지 않아요. **회사가 막았다는 사정**이 있어야 합니다.\n\n이 사유가 걸리는 자리는 제58조 제2호 다목이에요. 자기 사정으로 이직한 경우 중 \"그 밖에 고용노동부령으로 정하는 정당한 사유에 해당하지 아니하는 사유로 이직한 경우\"를 수급자격 없음으로 보고, 그 \"정당한 사유\"가 별표 2입니다. 별표 2에 들면 제한에서 빠져나오는 구조예요.",
+          cta: { label: "관할 센터에 인정 여부 먼저 문의하기", url: "https://www.workplus.go.kr/index.do", org: "고용노동부 · 한국고용정보원", note: "제10호에 드는지는 개별 판단이에요. **퇴사 전에** 관할 센터에 확인해 두면 다툼이 줄어요." },
+          quote: { law: "고용보험법 시행규칙 [별표 2] 제10호 [시행 2026. 8. 20.]", text: "\"임신, 출산, 8세 이하 또는 초등학교 2학년 이하의 자녀(입양한 자녀를 포함함)의 육아, 「병역법」에 따른 의무복무 등으로 업무를 계속적으로 수행하기 어려운 경우로서 사업주가 휴가나 휴직을 허용하지 않아 이직한 경우\"" },
+        },
+        {
+          eyebrow: "받는 중 출산",
+          heading: "수급 중에 출산하면 어떻게 되나요",
+          answer: "그 회차는 인정받지 못해요. 대신 기간을 늘리거나 상병급여로 갈음하는 두 길이 있습니다.",
+          compareTable: {
+            caption: "수급기간 연기와 상병급여, 무엇이 다른가",
+            cards: true,
+            headers: ["", "수급기간 연기", "상병급여"],
+            rows: [
+              [{ text: "무엇을 하나", tag: "핵심 차이", tagTone: "hi" }, { text: "12개월에 **취업할 수 없는 기간을 가산**해요. 시계를 멈추는 쪽", status: "key" }, { text: "실업인정을 못 받은 날에 대해 **구직급여일액에 해당하는 금액**을 갈음해 받아요", status: "key" }],
+              [{ text: "무엇을 해야" }, { text: "그 사실을 **수급기간에 신고** (제48조 제2항)", status: "warn" }, { text: "수급자격자의 **청구** (제63조 제1항)", status: "warn" }],
+              [{ text: "한도" }, { text: "가산해도 **4년**을 넘을 수 없어요" }, { text: "소정급여일수에서 **이미 지급된 일수를 뺀 일수**까지 (제63조 제2항)" }],
+              [{ text: "남은 일수" }, { text: "줄어들지 않아요. 나중에 받습니다", status: "ok" }, { text: "**그 일수만큼 구직급여가 지급된 것으로 봐요.** 남은 일수가 줄어요", status: "warn" }],
+              [{ text: "언제 들어오나" }, { text: "몸을 추스른 뒤 실업인정을 받으면서" }, { text: "취업할 수 없는 사유가 **없어진 이후 최초로 구직급여를 지급하는 날** (제63조 제3항)" }],
+              [{ text: "막히는 경우" }, { text: "신고하지 않으면 늘어나지 않아요" }, { text: "휴업보상·**휴업급여** 등을 받을 수 있으면 지급하지 않아요 (제63조 제4항)", status: "warn" }],
+            ],
+          },
+          body: "**받는 중에 출산하면 그 회차를 못 받습니다.** 실업인정을 받을 수 없기 때문이에요. 그런데 두 가지 길이 조문에 있습니다.\n\n첫째는 **수급기간 연기**입니다. 제48조 제2항은 12개월의 기간 중 **임신·출산·육아, 그 밖에 대통령령으로 정하는 사유로 취업할 수 없는 사람이 그 사실을 수급기간에 직업안정기관에 신고한 경우**, 12개월에 그 취업할 수 없는 기간을 가산한 기간 안에서 지급하도록 정합니다. 다만 **4년을 넘을 때에는 4년**까지예요.\n\n여기서 놓치기 쉬운 것이 **\"그 사실을 수급기간에 신고한 경우\"**라는 조건입니다. 가만히 있으면 늘어나지 않아요. **수급기간이 지나기 전에** 신고해야 합니다.\n\n둘째는 **상병급여**예요. 제63조 제1항은 수급자격자가 실업의 신고를 한 이후에 질병·부상 또는 **출산**으로 취업이 불가능하여 실업의 인정을 받지 못한 날에 대하여, **그 수급자격자의 청구에 의하여** 구직급여일액에 해당하는 금액을 구직급여를 갈음해 지급할 수 있다고 정합니다.\n\n이것도 **청구해야** 합니다. 제63조 제2항은 그 일수를 소정급여일수에서 이미 지급된 일수를 뺀 만큼으로 한정하고, 상병급여를 받으면 **그 일수만큼 구직급여가 지급된 것으로 봅니다.** 총량이 늘어나는 것이 아니라 형태가 바뀌는 것이에요.",
+          cta: { label: "신청지 관할 센터 연락처 찾기", url: "https://www.workplus.go.kr/index.do", org: "고용노동부 · 한국고용정보원", note: "연기 신고와 상병급여 청구는 모두 기한이 걸려 있어요. 관할 센터에 먼저 확인하세요." },
+          quote: { law: "고용보험법 제48조 제2항 [시행 2026. 8. 20.]", text: "\"제1항에 따른 12개월의 기간 중 임신ㆍ출산ㆍ육아, 그 밖에 대통령령으로 정하는 사유로 취업할 수 없는 사람이 그 사실을 수급기간에 직업안정기관에 신고한 경우에는 12개월의 기간에 그 취업할 수 없는 기간을 가산한 기간(4년을 넘을 때에는 4년)에 제50조제1항에 따른 소정급여일수를 한도로 하여 구직급여를 지급한다.\"" },
+        },
+        {
+          eyebrow: "고르는 법",
+          heading: "연기와 상병급여 중 무엇이 나은가요",
+          answer: "언제까지 구직활동이 어려운지로 갈려요. 총량이 달라지는 쪽은 상병급여입니다.",
+          widgets: [
+            {
+              type: "checklist",
+              items: [
+                "**한동안 못 나간다면** 수급기간 연기가 맞아요. 시계를 멈추고 나중에 남은 회차를 받습니다",
+                "**그 기간의 돈이 지금 필요하다면** 상병급여를 청구해요. 다만 남은 일수가 그만큼 줄어듭니다",
+                "**연기는 신고, 상병급여는 청구** 둘 다 가만히 있으면 되지 않아요",
+                "**중복은 안 돼요** 휴업보상이나 휴업급여를 받을 수 있으면 상병급여는 지급되지 않아요 (제63조 제4항)",
+                "**지급 시점** 상병급여는 사유가 없어진 이후 최초로 구직급여를 지급하는 날에 나와요 (제63조 제3항)",
+                "**한도** 상병급여 일수는 소정급여일수에서 이미 지급된 일수를 뺀 만큼이에요 (제63조 제2항)",
+              ],
+            },
+          ],
+          body: "둘 중 무엇을 고를지는 **\"언제까지 못 나가느냐\"**로 갈립니다.\n\n**수급기간 연기**는 시계를 멈추는 쪽이에요. 취업할 수 없는 기간만큼 12개월을 늘려서, 몸을 추스른 뒤에 남은 회차를 받습니다. 출산·육아로 한동안 구직활동 자체가 어려울 때 맞아요.\n\n**상병급여**는 그 기간을 지금 받는 쪽입니다. 실업인정을 못 받은 날에 대해 구직급여일액에 해당하는 금액을 대신 받아요. 다만 제63조 제2항에 따라 **그 일수만큼 구직급여를 받은 것으로 처리**되므로 남은 일수가 줄어듭니다.\n\n상병급여에는 막히는 경우가 여럿 있어요. 먼저 제63조 제1항 단서는 **제60조 제1항·제2항에 따라 구직급여의 지급이 정지된 기간**에 대하여는 상병급여를 지급하지 아니한다고 정합니다. 훈련 거부 등으로 지급이 정지돼 있으면 상병급여로 우회할 수 없다는 뜻이에요.\n\n그리고 제63조 제5항은 상병급여의 지급에 관하여 **제47조(실업인정대상기간 중의 취업 등의 신고), 제49조(대기기간), 제57조, 제62조를 준용**한다고 정합니다. 이 경우 \u201c실업인정대상기간\u201d은 \u201c실업의 인정을 받지 못한 날\u201d로, \u201c구직급여\u201d는 \u201c상병급여\u201d로 봐요. 대기기간도 그대로 있고, 신고 의무도 그대로 따라옵니다.\n\n또 제63조 제4항은 근로기준법 제79조의 휴업보상, 산업재해보상보험법 제52조부터 제56조까지의 휴업급여, 그 밖에 대통령령으로 정하는 보상이나 급여를 받을 수 있는 경우에는 **상병급여를 지급하지 아니한다**고 정합니다. 중복해서 받는 구조가 아니에요.\n\n지급 시점도 다릅니다. 제63조 제3항은 상병급여를 **취업할 수 없는 사유가 없어진 이후 최초로 구직급여를 지급하는 날**에 지급하도록 정해요. 지금 당장 들어오는 것이 아니라는 뜻입니다.",
+          cta: { label: "연기 신고·상병급여 청구 창구 찾기", url: "https://www.workplus.go.kr/index.do", org: "고용노동부 · 한국고용정보원", note: "수급기간 연기 신고와 상병급여 청구는 모두 **신청지 관할 센터**에서 해요. 기한이 걸려 있으니 먼저 문의하세요." },
+          quote: { law: "고용보험법 제63조 제1항·제2항 [시행 2026. 8. 20.]", text: "\"①수급자격자가 제42조에 따라 실업의 신고를 한 이후에 질병ㆍ부상 또는 출산으로 취업이 불가능하여 실업의 인정을 받지 못한 날에 대하여는 제44조제1항에도 불구하고 그 수급자격자의 청구에 의하여 제46조의 구직급여일액에 해당하는 금액을 구직급여를 갈음하여 지급할 수 있다. ②상병급여를 지급할 수 있는 일수는 그 수급자격자에 대한 구직급여 소정급여일수에서 그 수급자격에 의하여 구직급여가 지급된 일수를 뺀 일수를 한도로 한다.\"" },
+        },
+        {
+          eyebrow: "다른 제도",
+          heading: "출산휴가 급여나 육아휴직 급여와는 뭐가 다른가요",
+          answer: "그 둘은 재직 상태에서 휴가·휴직을 받아야 나와요. 구직급여는 이직한 뒤입니다.",
+          compareTable: {
+            caption: "세 급여가 갈리는 지점",
+            cards: true,
+            headers: ["", "구직급여", "출산전후휴가 급여", "육아휴직 급여"],
+            rows: [
+              [{ text: "언제", tag: "핵심 차이", tagTone: "hi" }, { text: "**이직한 뒤**", status: "key" }, { text: "**재직 중** 휴가를 받아야", status: "key" }, { text: "**재직 중** 휴직을 받아야", status: "key" }],
+              [{ text: "근거" }, { text: "제40조·별표 2" }, { text: "제75조" }, { text: "제70조" }],
+              [{ text: "기간 요건" }, { text: "기준기간 동안 피보험 단위기간 통산 180일" }, { text: "**휴가가 끝난 날 이전** 피보험 단위기간 합산 180일" }, { text: "**육아휴직 시작일 이전** 피보험 단위기간 합산 180일" }],
+              [{ text: "휴가·휴직 길이" }, { text: "해당 없음" }, { text: "근로기준법 제74조의 출산전후휴가, 유산·사산휴가 등" }, { text: "**30일 이상**(같은 조 제6항은 7일)" }],
+              [{ text: "신청 기한" }, { text: "이직일 다음 날부터 12개월 안 (제48조 제1항)" }, { text: "시작일 이후 **1개월부터 끝난 날 이후 12개월 이내**" }, { text: "시작일 이후 **1개월부터 끝난 날 이후 12개월 이내**" }],
+            ],
+          },
+          body: "**재직 중이라면 아예 다른 제도를 먼저 보세요.** 자주 섞이는 지점입니다.\n\n**출산전후휴가 급여**는 제75조예요. 근로기준법 제74조의 출산전후휴가나 유산·사산휴가 등을 받은 경우에 지급하고, 두 요건을 모두 갖춰야 합니다. **휴가가 끝난 날 이전에 피보험 단위기간이 합산 180일 이상**일 것, 그리고 휴가를 시작한 날 이후 **1개월부터 휴가가 끝난 날 이후 12개월 이내**에 신청할 것입니다(우선지원 대상기업이 아니면 휴가 시작 후 60일, 둘 이상 자녀를 임신한 경우에는 75일이 지난 날부터 셉니다).\n\n**육아휴직 급여**는 제70조예요. 육아휴직을 **30일** 이상 부여받은 피보험자 중 **육아휴직을 시작한 날 이전에 피보험 단위기간이 합산 180일 이상**인 사람에게 지급하고, 시작일 이후 **1개월부터 끝난 날 이후 12개월 이내**에 신청합니다.\n\n두 급여의 공통점은 **재직 상태에서 휴가·휴직을 받아야** 나온다는 것이에요. 구직급여는 반대로 **이직한 뒤**에 나옵니다. 그래서 \"회사가 휴직을 안 줘서 그만뒀다\"는 상황이 별표 2에 들어가 있는 거예요.\n\n기준기간 쪽에도 관련 규정이 있습니다. 이직일 이전 18개월 동안 **임신·출산·육아에 따른 휴직**으로 계속하여 30일 이상 보수를 받을 수 없었다면, 그 일수를 18개월에 가산해요(3년 한도). 휴직 기간 때문에 180일이 모자라 보이는 경우에 확인할 지점입니다.",
+          cta: { label: "출산휴가·육아휴직 급여 신청하기", url: "https://www.work24.go.kr/ei/a/b/1100/openHPEIAB1100M01.do", org: "고용노동부 고용24", note: "**재직 중** 휴가·휴직을 받은 경우의 급여예요. 이직한 뒤라면 구직급여 쪽을 봐야 합니다." },
+          quote: { law: "고용보험법 제75조 [시행 2026. 8. 20.]", text: "\"1. 휴가가 끝난 날 이전에 제41조에 따른 피보험 단위기간이 합산하여 180일 이상일 것 2. 휴가를 시작한 날[출산전후휴가 또는 유산ㆍ사산휴가를 받은 피보험자가 속한 사업장이 우선지원 대상기업이 아닌 경우에는 휴가 시작 후 60일(한 번에 둘 이상의 자녀를 임신한 경우에는 75일)이 지난 날로 본다] 이후 1개월부터 휴가가 끝난 날 이후 12개월 이내에 신청할 것\"" },
+        },
+      ],
+
+      resolution: { steps: [] },
+
+      context: {
+        faqList: [
+          { question: "임신했다고 말하니 그만두라고 했어요", answer: "그 경우는 자기 사정에 의한 이직이 아니라 사업주의 권고나 해고 쪽으로 볼 여지가 있습니다. 이직확인서에 어떤 사유로 신고되는지가 출발점이 되니 고용24에서 처리현황을 확인하고, 사실과 다르면 관할 센터에 소명하세요." },
+          { question: "회사가 육아휴직을 줬는데 제가 그만뒀어요", answer: "별표 2 제10호는 사업주가 휴가나 휴직을 허용하지 않아 이직한 경우를 정합니다. 정상적으로 휴직을 받았다면 이 항목에는 들지 않아요. 다른 정당한 사유에 해당하는지는 개별로 판단합니다." },
+          { question: "수급 중에 출산하면 신고를 언제 해야 하나요", answer: "제48조 제2항은 그 사실을 수급기간에 직업안정기관에 신고한 경우라고 적고 있어요. 수급기간이 지나기 전에 신고해야 12개월에 가산됩니다. 미리 관할 센터에 확인하고 신고하세요." },
+          { question: "상병급여를 받으면 나중에 받을 게 줄어드나요", answer: "네. 제63조 제2항은 상병급여를 지급받은 사람에 대하여 이 법의 규정을 적용할 때 상병급여의 지급 일수에 상당하는 일수분의 구직급여가 지급된 것으로 본다고 정합니다. 총량이 늘어나는 것이 아니라 형태가 바뀌는 것이에요." },
+          { question: "훈련을 거부해서 지급이 정지됐는데 상병급여는 되나요", answer: "되지 않습니다. 제63조 제1항 단서가 제60조 제1항 및 제2항에 따라 구직급여의 지급이 정지된 기간에 대하여는 상병급여를 지급하지 아니한다고 정하고 있어요. 지급정지를 상병급여로 우회할 수 없습니다." },
+          { question: "상병급여도 대기기간이 있나요", answer: "제63조 제5항이 상병급여의 지급에 관하여 제47조·제49조·제57조·제62조를 준용하도록 정합니다. 제49조가 대기기간 규정이므로 그대로 적용돼요. 이 경우 \u201c실업인정대상기간\u201d은 \u201c실업의 인정을 받지 못한 날\u201d로, \u201c구직급여\u201d는 \u201c상병급여\u201d로 봅니다." },
+          { question: "산재 휴업급여를 받고 있는데 상병급여도 되나요", answer: "제63조 제4항이 막습니다. 근로기준법 제79조에 따른 휴업보상, 산업재해보상보험법 제52조부터 제56조까지의 규정에 따른 휴업급여, 그 밖에 이에 해당하는 급여 또는 보상으로서 대통령령으로 정하는 보상 또는 급여를 지급받을 수 있는 경우에는 상병급여를 지급하지 아니합니다." },
+          { question: "휴직 때문에 180일이 모자라 보여요", answer: "기준기간 연장을 확인하세요. 이직일 이전 18개월 동안 임신·출산·육아에 따른 휴직 등으로 계속하여 30일 이상 보수를 받을 수 없었다면, 18개월에 그 일수를 가산합니다(3년을 초과할 때에는 3년). 이 계산으로 요건을 채우는 경우가 있어요." },
+        ],
+      },
+
+      summary: [
+        "**조건이 둘** 임신·출산으로 업무 수행이 어렵고, 사업주가 휴가나 휴직을 허용하지 않아 이직한 경우예요.",
+        "**연기는 신고** 수급 중 출산이면 그 사실을 수급기간에 신고해야 12개월이 늘어나요. 4년이 한도입니다.",
+        "**상병급여는 청구** 실업인정을 못 받은 날은 청구하면 갈음해 받되, 그만큼 남은 일수가 줄어요.",
+        "**재직 중이라면** 출산전후휴가 급여와 육아휴직 급여는 휴가·휴직을 받아야 나오는 다른 제도예요.",
+      ],
+
+      sources: [
+        { group: "법령", title: "고용보험법 제58조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "이직 사유에 따른 수급자격의 제한 — 제2호 다목의 정당한 사유" },
+        { group: "법령", title: "고용보험법 제48조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제1항 이직일 다음 날부터 12개월, 제2항 임신·출산·육아 등으로 취업할 수 없는 사실을 수급기간에 신고하면 가산(4년 한도)" },
+        { group: "법령", title: "고용보험법 제63조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "질병 등의 특례 — 제1항 출산 포함 상병급여 청구와 **단서(제60조 제1항·제2항 지급정지 기간 제외)**, 제2항 일수 한도와 지급 의제, 제3항 지급 시점, 제4항 휴업보상·휴업급여 중복 배제, **제5항 제47조·제49조·제57조·제62조 준용**" },
+        { group: "법령", title: "고용보험법 제70조·제75조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제70조 육아휴직 급여(30일 이상, 시작일 이전 180일), 제75조 출산전후휴가 급여 등(휴가 종료일 이전 180일, 신청 기한)" },
+        { group: "법령", title: "고용보험법 시행령 제70조", url: "https://www.law.go.kr/법령/고용보험법시행령", org: "법제처", note: "수급기간의 연기 사유 — 임신·출산·육아는 법 제48조 제2항 본문에 이미 있고 이 목록은 그 밖의 사유" },
+        { group: "법령", title: "고용보험법 시행규칙 [별표 2]", url: "https://www.law.go.kr/LSW/lsBylInfoPLinkR.do?lsiSeq=000000&bylNo=0002&bylBrNo=00&bylCls=BE&bylEfYd=&bylEfYdYn=N&lsNm=%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%20%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99", org: "법제처", note: "정당한 이직 사유 원문 — **제10호**가 임신·출산·8세 이하 자녀 육아·의무복무 등으로 업무 수행이 어려운데 사업주가 휴가나 휴직을 허용하지 않아 이직한 경우를 정한다" },
+        { group: "행정규칙·안내", title: "법제처 생활법령 — 구직급여 수급요건", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=1&cnpClsNo=1", org: "법제처", note: "기준기간 연장 사유(임신·출산·육아에 따른 휴직으로 계속 30일 이상 보수 미지급 시 가산, 3년 한도)" },
+        { group: "정부 도구", title: "고용24 이직확인서 처리현황", url: "https://www.work24.go.kr/ei/a/b/1200/openHPEIAB1200M01.do", org: "고용노동부 고용24", note: "회사가 신고한 이직 사유 확인" },
+        { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "12개월·4년·180일·30일·60일·75일·3년은 위 화면 원문(scripts/evidence/구직급여-출산-이유-실업인정.json)과 대조했어요. 별표 2 제10호는 **국가법령정보센터 별표 뷰어의 원문**을 눈으로 읽어 확인했습니다(본문이 이미지라 텍스트 추출은 되지 않아요). 캡처 7장은 장마다 읽고 기록했습니다." },
+      ],
+      lastVerified: "2026-09-05",
+
+      relatedQuestions: [
+        { question: "질병으로 그만두면 되나요", slug: "실업급여-질병-부상" },
+        { question: "자진퇴사해도 받을 수 있나요", slug: "자발적-퇴사-실업급여" },
+        { question: "실업인정 어떻게 받나요", slug: "실업급여-실업인정" },
+        { question: "180일 어떻게 세나요", slug: "실업급여-180일" },
+      ],
+    },
+    {
+      slug: "실업급여-폐업",
+      category: "고용",
+      primaryKeywords: ["회사 폐업 실업급여", "폐업 이직확인서", "피보험자격 확인청구"],
+
+      meta: {
+        title: "회사가 폐업했을 때 실업급여, 상실 신고와 확인청구·체불 처리",
+        description:
+          "받을 수 있어요. 어려운 건 자격이 아니라 **서류**입니다. 신고할 사업주가 없어도 제17조 제2항의 **직권 확인**이 열려 있고, 청구는 **언제든지** 할 수 있어요. 못 받은 임금·퇴직금은 별도 창구로 진행합니다.",
+        author: { name: "머니위키 편집팀" },
+        publishedAt: "2026-09-05",
+      },
+
+      searchIntent: {
+        userQuestion: "다니던 회사가 폐업했는데 실업급여를 받을 수 있나요?",
+        directAnswer: "받을 수 있어요. 회사가 신고를 못 해도 피보험자격 확인청구로 진행할 수 있습니다.",
+        why: "고용보험법 제17조 제1항이 피보험자였던 사람도 언제든지 확인을 청구할 수 있게 하고, 제2항이 고용노동부장관의 직권 확인을 정하고 있어요.",
+      },
+
+      verify: { note: "법제처 조문 화면(고용보험법 시행 2026. 8. 20.) 확인 · 법제처 생활법령·고용노동부 노동포털 대조", date: "2026-09-05" },
+
+      heroStats: [
+        { label: "막힌 것", value: "이직확인서", note: "제42조 제3항의 발급 요청은 **이직하기 전 사업의 사업주**에게 하는 것이라, 폐업하면 이 경로가 닫혀요." },
+        { label: "열린 것", value: "직권 확인", note: "고용노동부장관은 청구에 따르거나 **직권으로** 피보험자격의 취득 또는 상실을 확인해요 (제17조 제2항)." },
+      ],
+
+      keyFacts: [
+        { label: "결론", value: "**받을 수 있어요.** 폐업은 내 선택으로 그만둔 것이 아니라 이직 사유 쪽으로는 불리하지 않습니다" },
+        { label: "진짜 어려움", value: "자격이 아니라 **서류**예요. 신고할 사업주와 이직확인서를 발급할 상대가 사라진 상황입니다" },
+        { label: "열쇠", value: "**피보험자였던 사람은 언제든지** 취득·상실에 관한 확인을 청구할 수 있어요 (제17조 제1항)" },
+        { label: "직권 확인", value: "장관은 청구에 따르거나 **직권으로** 확인해요. 사업주의 신고를 기다리지 않아도 됩니다 (제17조 제2항)" },
+        { label: "상실일", value: "이직한 경우 **이직한 날의 다음 날**, 보험관계가 소멸한 경우 **그 소멸한 날**이에요 (제14조 제1항 제3호·제2호)" },
+        { label: "이직확인서의 내용", value: "**피보험 단위기간, 이직 전 1일 소정근로시간** 등을 확인할 수 있는 자료예요. 이걸 대신할 것을 모으면 됩니다 (제42조 제3항)" },
+        { label: "모을 것", value: "근로계약서·급여이체 내역·급여명세서·출퇴근 기록처럼 **기간과 하루 몇 시간**을 보여 주는 자료예요" },
+        { label: "판단 주체", value: "무엇을 인정할지는 **직업안정기관의 장**이 정해요. 조문이 서류 목록을 두지 않았습니다" },
+        { label: "체불은 별도", value: "못 받은 임금·퇴직금은 노동포털 진정서로 신고해요. **수수료 없음 · 처리기간 25일 · 지방고용노동관서**" },
+        { label: "미루지 마세요", value: "실업급여는 이직일 다음 날부터 **12개월** 안에서만 받아요. 체불 처리를 기다릴 이유가 없습니다 (제48조 제1항)" },
+      ],
+
+      mainSections: [
+        {
+          eyebrow: "받을 수 있나",
+          heading: "회사가 폐업했는데 실업급여가 되나요",
+          answer: "됩니다. 다만 걸리는 지점이 자격이 아니라 서류 쪽이에요.",
+          widgets: [
+            {
+              type: "decide",
+              items: [
+                { q: "\u2460 폐업으로 일자리가 없어진 것인가요", sub: "내가 선택해 그만둔 것이 아니라면 이직 사유 쪽으로는 불리하지 않아요.", next: "사유는 통과 가능" },
+                { q: "\u2461 상실 신고가 되어 있나요", sub: "제15조 제1항의 신고 의무자인 사업주가 사라졌다면 안 되어 있을 수 있어요.", next: "안 되어 있으면 확인청구" },
+                { q: "\u2462 이직확인서를 받을 수 있나요", sub: "제42조 제3항은 이직하기 전 사업의 사업주에게 요청하도록 해요. 폐업이면 이 경로가 막힙니다.", next: "막혔다면 대체 자료로" },
+                { q: "\u2463 근로 사실을 보여 줄 자료가 있나요", sub: "피보험 단위기간과 이직 전 1일 소정근로시간을 보여 줄 수 있어야 해요.", next: "계약서·급여이체 내역 등" },
+              ],
+              okText: "서류가 막혔다면 제17조의 확인청구로 진행하세요. 회사가 없어도 직권 확인이 가능합니다.",
+            },
+          ],
+          body: "**받을 수 있습니다.** 오히려 이직 사유 쪽으로는 유리한 상황이에요.\n\n실업급여가 막히는 자리는 제58조입니다. 중대한 귀책사유로 해고된 경우와 자기 사정으로 이직한 경우예요. **회사가 문을 닫아 일자리가 없어진 것은 내 선택이 아닙니다.**\n\n문제는 요건이 아니라 **절차**예요. 제15조 제1항은 사업주가 피보험자격의 취득 및 상실 등을 신고하도록 정하는데, **그 사업주가 사라진 상황**입니다. 제42조 제3항은 이직확인서를 이직하기 전 사업의 사업주에게 요청할 수 있다고 하는데, **요청할 상대가 없어요.**\n\n그래서 폐업 사안의 실제 어려움은 \"자격이 되느냐\"가 아니라 **\"서류를 어떻게 채우느냐\"**입니다. 다음 항목부터가 그 이야기예요.",
+          cta: { label: "내 고용보험 취득·상실 이력 조회하기", url: "https://total.comwel.or.kr/", org: "근로복지공단 고용·산재보험 토탈서비스", note: "상실 신고가 되어 있는지부터 보면 다음 단계가 정해져요." },
+          quote: { law: "고용보험법 제42조 제3항 [시행 2026. 8. 20.]", text: "\"제1항에 따라 구직급여를 지급받기 위하여 실업을 신고하려는 사람은 이직하기 전 사업의 사업주에게 피보험 단위기간, 이직 전 1일 소정근로시간 등을 확인할 수 있는 자료(이하 \u201c이직확인서\u201d라 한다)의 발급을 요청할 수 있다. 이 경우 요청을 받은 사업주는 고용노동부령으로 정하는 바에 따라 이직확인서를 발급하여 주어야 한다.\"" },
+        },
+        {
+          eyebrow: "열린 길",
+          heading: "상실 신고가 안 되어 있으면 어떻게 하나요",
+          answer: "확인청구를 하면 됩니다. 기관이 직권으로도 확인할 수 있어요.",
+          compareTable: {
+            caption: "폐업으로 막힌 것과 그래도 열려 있는 것",
+            cards: true,
+            headers: ["무엇", "폐업하면", "근거"],
+            rows: [
+              [{ text: "상실 신고", tag: "막힘", tagTone: "lo" }, { text: "신고 의무자인 **사업주**가 사라져 신고가 안 되어 있을 수 있어요", status: "warn" }, { text: "제15조 제1항" }],
+              [{ text: "이직확인서 발급 요청", tag: "막힘", tagTone: "lo" }, { text: "**이직하기 전 사업의 사업주**에게 요청하는 것이라 상대가 없어요", status: "warn" }, { text: "제42조 제3항" }],
+              [{ text: "확인청구", tag: "열림", tagTone: "hi" }, { text: "**피보험자였던 사람은 언제든지** 취득·상실에 관한 확인을 청구할 수 있어요", status: "ok" }, { text: "제17조 제1항" }],
+              [{ text: "직권 확인", tag: "열림", tagTone: "hi" }, { text: "장관은 청구에 따르거나 **직권으로** 확인해요. 사업주 신고를 기다리지 않아요", status: "key" }, { text: "제17조 제2항" }],
+              [{ text: "결과 통지", tag: "열림", tagTone: "hi" }, { text: "확인 결과를 청구한 피보험자와 **사업주 등 관계인**에게 알려요", status: "ok" }, { text: "제17조 제3항" }],
+              [{ text: "상실일" }, { text: "이직한 날의 다음 날, 또는 **보험관계가 소멸한 날**이에요" }, { text: "제14조 제1항 제3호·제2호" }],
+            ],
+          },
+          body: "**직권 확인이 열쇠입니다.** 조문에 그렇게 적혀 있어요.\n\n제17조 제1항은 피보험자 또는 **피보험자였던 사람은 언제든지** 고용노동부장관에게 피보험자격의 취득 또는 상실에 관한 확인을 청구할 수 있다고 정합니다. 회사가 없어졌어도 **내가 청구할 수 있다**는 뜻이에요.\n\n그리고 제2항이 결정적입니다. 고용노동부장관은 그 청구에 따르거나 **직권으로** 피보험자격의 취득 또는 상실에 관하여 확인을 합니다. 사업주의 신고를 기다리지 않고 기관이 스스로 확인할 수 있다는 근거예요.\n\n확인이 끝나면 제3항에 따라 결과를 청구한 피보험자와 **사업주 등 관계인에게** 알립니다. 폐업으로 연락이 닿지 않더라도 확인 절차 자체는 진행돼요.\n\n상실일은 제14조 제1항이 정합니다. 이직한 경우에는 **이직한 날의 다음 날**(제3호)이고, 고용산재보험료징수법 제10조에 따라 **보험관계가 소멸한 경우에는 그 보험관계가 소멸한 날**(제2호)이에요. 폐업 시점과 내가 마지막으로 일한 날이 다르면 어느 쪽으로 잡히는지가 달라집니다.",
+          cta: { label: "신청지 관할 센터 연락처 찾기", url: "https://www.workplus.go.kr/index.do", org: "고용노동부 · 한국고용정보원", note: "확인청구는 관할 센터에서 진행해요. 준비할 자료를 먼저 물어보세요." },
+          quote: { law: "고용보험법 제17조 제1항·제2항 [시행 2026. 8. 20.]", text: "\"①피보험자 또는 피보험자였던 사람은 언제든지 고용노동부장관에게 피보험자격의 취득 또는 상실에 관한 확인을 청구할 수 있다. ②고용노동부장관은 제1항에 따른 청구에 따르거나 직권으로 피보험자격의 취득 또는 상실에 관하여 확인을 한다.\"" },
+        },
+        {
+          eyebrow: "모을 자료",
+          heading: "이직확인서 대신 무엇을 내나요",
+          answer: "기간과 하루 몇 시간 일했는지를 보여 주는 자료예요.",
+          widgets: [
+            {
+              type: "checklist",
+              items: [
+                "**무엇을 증명하나** 제42조 제3항이 말하는 것은 **피보험 단위기간**과 **이직 전 1일 소정근로시간** 등이에요",
+                "**소정근로시간** 근로계약서에 하루 몇 시간으로 정했는지가 적혀 있어요",
+                "**기간** 급여이체 내역으로 언제부터 언제까지 보수를 받았는지 보여 줄 수 있어요",
+                "**보강** 급여명세서, 출퇴근 기록, 4대보험 관련 서류도 같은 역할을 해요",
+                "**이직 사유** 폐업 사실 자체를 보여 주는 자료를 함께 준비해요",
+                "**주의** 조문이 **서류 목록을 정해 두지 않았어요.** 무엇을 인정할지는 직업안정기관의 장이 판단합니다",
+              ],
+            },
+          ],
+          body: "**내가 일했다는 사실을 보여 주는 것**이 전부입니다. 회사가 해 줄 수 없으니 내가 모아야 해요.\n\n제42조 제3항이 말하는 이직확인서의 내용을 보면 무엇이 필요한지 알 수 있습니다. **피보험 단위기간, 이직 전 1일 소정근로시간 등을 확인할 수 있는 자료**예요. 즉 **얼마나 오래**, **하루 몇 시간** 일했는지가 핵심입니다.\n\n이 두 가지를 보여 줄 수 있는 것들을 떠올려 보세요. 근로계약서에는 소정근로시간이 적혀 있고, 급여이체 내역에는 언제부터 언제까지 보수를 받았는지가 남습니다. 급여명세서, 출퇴근 기록, 4대보험 관련 서류도 같은 역할을 해요.\n\n그리고 **왜 그만두게 됐는지**도 남겨야 합니다. 폐업 사실 자체를 보여 주는 자료가 여기 해당해요.\n\n무엇을 어디까지 인정할지는 **직업안정기관의 장이 판단**합니다. 조문이 서류 목록을 정해 두지 않았기 때문에, 관할 센터에 먼저 문의해 준비하는 편이 확실해요.",
+          cta: { label: "수급자격 인정신청서 인터넷으로 제출하기", url: "https://www.work24.go.kr/ei/a/b/1200/openHPEIAB1200M01.do", org: "고용노동부 고용24", note: "요건을 갖춘 상용근로자가 대상이에요. 서류가 막힌 경우라면 센터에서 먼저 상담하세요." },
+          quote: { law: "고용보험법 제42조 제3항 [시행 2026. 8. 20.]", text: "\"제1항에 따라 구직급여를 지급받기 위하여 실업을 신고하려는 사람은 이직하기 전 사업의 사업주에게 피보험 단위기간, 이직 전 1일 소정근로시간 등을 확인할 수 있는 자료(이하 \u201c이직확인서\u201d라 한다)의 발급을 요청할 수 있다. 이 경우 요청을 받은 사업주는 고용노동부령으로 정하는 바에 따라 이직확인서를 발급하여 주어야 한다.\"" },
+        },
+        {
+          eyebrow: "못 받은 돈",
+          heading: "밀린 월급이나 퇴직금은 어떻게 하나요",
+          answer: "실업급여와는 다른 창구예요. 동시에 진행하세요.",
+          widgets: [
+            {
+              type: "stepbar",
+              steps: [
+                { tab: "1. 이력 확인", title: "신고 상태부터", body: "근로복지공단 토탈서비스에서 취득·상실이 어떻게 되어 있는지 봐요. 다음 단계가 여기서 정해집니다." },
+                { tab: "2. 자료 모으기", title: "기간과 시간", body: "근로계약서, 급여이체 내역, 급여명세서, 출퇴근 기록을 모아요. 폐업 사실 자료도 함께 준비합니다." },
+                { tab: "3. 실업 신고", title: "지체없이", body: "이직 후 지체없이 출석해 실업을 신고해요. 실업의 신고에는 구직 신청과 수급자격 인정신청이 포함됩니다 (제42조 제1항·제2항)." },
+                { tab: "4. 확인청구", title: "막혔다면", body: "상실 신고나 이직확인서가 없다면 제17조 제1항의 확인청구로 진행해요. 장관은 직권으로도 확인합니다." },
+                { tab: "5. 체불 신고", title: "따로 진행", body: "못 받은 임금·퇴직금은 노동포털 진정서로 신고해요. 수수료 없음, 처리기간 25일, 지방고용노동관서에서 처리합니다." },
+              ],
+            },
+          ],
+          body: "폐업이면 **못 받은 돈**이 함께 남아 있는 경우가 많습니다. 실업급여와는 다른 창구예요.\n\n고용노동부 노동포털은 **퇴사한 근로자에게 퇴직일로부터 14일 이내에 지급되지 않는 임금·퇴직금** 등을 임금체불로 보고, 진정서로 신고할 수 있다고 안내합니다. 신청 자격은 **근로자(개인회원)**, 접수·처리기관은 **지방고용노동관서**, **수수료는 없고 처리기간은 25일**이에요.\n\n순서를 정리하면 이렇습니다. **실업급여는 실업급여대로, 체불은 체불대로** 진행하세요. 한쪽을 기다리느라 다른 쪽을 미룰 이유가 없어요. 특히 실업급여는 제48조 제1항의 12개월이 이직일 다음 날부터 흘러갑니다.\n\n수급자격 인정은 제43조 제3항에 따라 **마지막에 이직한 사업을 기준**으로 결정돼요. 폐업한 회사가 마지막 직장이라면 그 회사가 기준이 됩니다. 다만 단서가 있어서, 마지막 이직 당시 일용근로자로서 피보험 단위기간이 1개월 미만인 사람이 그것만으로 수급자격을 갖추지 못한 경우에는 **일용근로자가 아닌 근로자로서 마지막으로 이직한 사업**을 기준으로 결정합니다.\n\n마지막으로, 실업의 신고에는 제42조 제2항에 따라 **구직 신청과 수급자격 인정신청이 포함**돼요. 따로따로 하는 절차가 아닙니다.",
+          cta: { label: "임금체불 진정서 접수하기", url: "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001", org: "고용노동부 노동포털", note: "신청 자격은 근로자(개인회원)이고 방문·우편·인터넷으로 접수해요." },
+          quote: { law: "고용보험법 제42조 제1항·제2항 [시행 2026. 8. 20.]", text: "\"①구직급여를 지급받으려는 사람은 이직 후 지체없이 직업안정기관에 출석하여 실업을 신고하여야 한다. \u2026 ②제1항에 따른 실업의 신고에는 구직 신청과 제43조에 따른 수급자격의 인정신청을 포함하여야 한다.\"" },
+        },
+      ],
+
+      resolution: { steps: [] },
+
+      context: {
+        faqList: [
+          { question: "회사가 없어졌는데 확인청구를 제가 할 수 있나요", answer: "제17조 제1항이 \u201c피보험자 또는 피보험자였던 사람은 언제든지\u201d라고 정하고 있어요. 퇴사한 사람도 청구 대상입니다. 그리고 제2항은 장관이 청구에 따르거나 직권으로도 확인한다고 정해요." },
+          { question: "이직확인서를 못 받으면 아예 안 되나요", answer: "제42조 제3항의 발급 요청 경로는 막히지만, 그것만이 유일한 길은 아닙니다. 조문이 요구하는 것은 피보험 단위기간과 이직 전 1일 소정근로시간 등을 확인할 수 있는 자료예요. 근로계약서와 급여이체 내역처럼 그 사실을 보여 줄 자료를 갖춰 관할 센터에서 상담하세요." },
+          { question: "상실일이 폐업일인가요 마지막 근무일인가요", answer: "제14조 제1항이 두 갈래를 둡니다. 이직한 경우에는 이직한 날의 다음 날(제3호)이고, 고용산재보험료징수법 제10조에 따라 보험관계가 소멸한 경우에는 그 보험관계가 소멸한 날(제2호)입니다. 어느 쪽으로 잡히는지는 확인 절차에서 정해져요." },
+          { question: "밀린 월급을 먼저 받고 실업급여를 신청해도 되나요", answer: "따로 진행하는 편이 좋습니다. 실업급여는 제48조 제1항에 따라 이직일의 다음 날부터 12개월 안에서만 받을 수 있어요. 체불 처리를 기다리다 이 기간이 줄어들 수 있습니다." },
+          { question: "폐업 전에 이미 그만뒀는데 회사가 없어졌어요", answer: "수급자격은 제43조 제3항에 따라 마지막에 이직한 사업을 기준으로 결정합니다. 회사가 나중에 폐업했더라도 내 이직 사실 자체는 확인 대상이에요. 상실 신고가 되어 있지 않다면 제17조의 확인청구로 진행하세요." },
+          { question: "체불 진정은 얼마나 걸리나요", answer: "고용노동부 노동포털 안내에 처리기간 25일로 적혀 있습니다. 신청 자격은 근로자(개인회원)이고, 접수 방법은 방문·우편·인터넷, 수수료는 없으며 접수·처리기관은 지방고용노동관서예요." },
+        ],
+      },
+
+      summary: [
+        "**받을 수 있어요** 폐업은 내 선택이 아니라 이직 사유 쪽으로는 불리하지 않아요.",
+        "**막힌 건 서류** 상실 신고와 이직확인서 발급 요청 경로가 닫힙니다.",
+        "**열린 건 확인청구** 피보험자였던 사람은 언제든지 청구할 수 있고, 기관이 직권으로도 확인해요.",
+        "**체불은 별도** 못 받은 임금·퇴직금은 노동포털 진정으로. 실업급여를 미루지 마세요.",
+      ],
+
+      sources: [
+        { group: "법령", title: "고용보험법 제14조·제15조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제14조 제1항 제2호 보험관계 소멸일·제3호 이직한 날의 다음 날, 제15조 제1항 사업주의 신고 의무" },
+        { group: "법령", title: "고용보험법 제17조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "피보험자격의 확인 — 제1항 피보험자였던 사람도 언제든지 청구, 제2항 직권 확인, 제3항 관계인 통지" },
+        { group: "법령", title: "고용보험법 제42조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제1항 실업의 신고, 제2항 구직 신청과 수급자격 인정신청 포함, 제3항 이직확인서 발급 요청과 사업주의 발급 의무" },
+        { group: "법령", title: "고용보험법 제43조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "수급자격의 인정 — 제3항 마지막에 이직한 사업 기준과 일용근로자 단서" },
+        { group: "행정규칙·안내", title: "법제처 생활법령 — 구직급여 수급신청", url: "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=1", org: "법제처", note: "실업 신고와 수급자격 인정 절차, 거주지 관할 확인" },
+        { group: "행정규칙·안내", title: "고용노동부 노동포털 — 진정서(체불 등)", url: "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001", org: "고용노동부", note: "신청 자격 근로자(개인회원), 처리기간 25일, 수수료 없음, 접수·처리기관 지방고용노동관서" },
+        { group: "정부 도구", title: "근로복지공단 고용·산재보험 토탈서비스", url: "https://total.comwel.or.kr/", org: "근로복지공단", note: "취득·상실 이력 조회" },
+        { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "\u201c언제든지\u201d·\u201c직권으로\u201d·이직한 날의 다음 날·25일은 위 화면 원문(scripts/evidence/실업급여-폐업.json)과 대조했어요. 캡처 8장은 장마다 읽고 기록했습니다. **예전에 이직확인서를 다루던 제16조는 2019. 8. 27. 삭제되어 제42조 제3항으로 옮겨진 것을 화면에서 확인했고, 그 캡처는 근거로 쓰지 않았습니다.**" },
+      ],
+      lastVerified: "2026-09-05",
+
+      relatedQuestions: [
+        { question: "회사가 고용보험에 가입 안 했다면", slug: "실업급여-고용보험-미가입" },
+        { question: "이직확인서를 안 해 주면 어떻게 하나요", slug: "실업급여-이직확인서" },
+        { question: "임금체불로 그만두면 실업급여 되나요", slug: "실업급여-임금체불" },
+        { question: "퇴직금과 실업급여 같이 받나요", slug: "실업급여-퇴직금" },
+      ],
+    },
+    {
+      slug: "실업급여-이직확인서-거부",
+      category: "고용",
+      primaryKeywords: ["이직확인서 거부", "이직확인서 안해줌", "이직확인서 과태료"],
+
+      meta: {
+        title: "회사가 이직확인서를 안 해 줄 때, 발급 의무와 과태료·확인청구",
+        description:
+          "회사에 재량이 없어요. 제42조 제3항 후단이 **발급하여 주어야 한다**고 정하고, 안 주거나 **거짓으로 써 주면 300만원 이하 과태료**입니다(제118조 제1항 제2호). 그래도 안 되면 **근로자 직접 신고**와 **확인청구**가 남아 있어요.",
+        author: { name: "머니위키 편집팀" },
+        publishedAt: "2026-09-05",
+      },
+
+      searchIntent: {
+        userQuestion: "회사가 이직확인서를 발급해 주지 않는데 어떻게 하나요?",
+        directAnswer: "발급은 사업주의 의무이고 안 주면 과태료 대상이에요. 그래도 안 되면 확인청구로 진행할 수 있습니다.",
+        why: "고용보험법 제42조 제3항 후단이 요청받은 사업주에게 발급 의무를 지우고, 제118조 제1항 제2호가 미발급·거짓 발급에 300만원 이하 과태료를 정하고 있어요.",
+      },
+
+      verify: { note: "법제처 조문 화면(고용보험법 시행 2026. 8. 20. · 시행규칙 시행 2026. 9. 18.) 확인 · 고용24 실업급여 안내 대조", date: "2026-09-05" },
+
+      heroStats: [
+        { label: "발급 기한", value: "10일", note: "사업주는 근로자의 발급 요청에 따라 **10일 이내**에 이직확인서를 발급해 주어야 해요 (고용24 안내)." },
+        { label: "안 주면", value: "300만원 이하", note: "미발급이나 **거짓 작성 발급**은 **300만원 이하의 과태료** 대상이에요 (제118조 제1항 제2호)." },
+      ],
+
+      keyFacts: [
+        { label: "회사에 재량이 없어요", value: "요청을 받은 사업주는 고용노동부령으로 정하는 바에 따라 이직확인서를 **발급하여 주어야 해요** (제42조 제3항 후단)" },
+        { label: "기한", value: "고용24 안내는 발급 요청에 따라 **10일 이내** 발급해야 한다고 밝히고 있어요" },
+        { label: "제재", value: "발급하지 아니하거나 **거짓으로 작성하여 발급한 자**에게 **300만원 이하의 과태료**를 부과해요 (제118조 제1항 제2호)" },
+        { label: "거짓도 같은 대상", value: "발급은 했는데 내용이 사실과 다르면 그것도 제2호에 들어가요" },
+        { label: "신고 안 한 것도", value: "제15조를 위반해 **신고를 하지 아니하거나 거짓으로 신고**한 자도 300만원 이하 과태료 대상이에요 (제118조 제1항 제1호)" },
+        { label: "무엇을 확인하는 서류인가", value: "**피보험 단위기간, 이직 전 1일 소정근로시간** 등이에요. 고용24 안내는 **퇴직 사유·가입기간·평균임금**도 든다고 밝힙니다" },
+        { label: "확인 창구가 달라요", value: "**상실신고서**는 근로복지공단 토탈서비스, **이직확인서**는 고용24 마이페이지의 민원처리 알림에서 봐요" },
+        { label: "길 하나 — 직접 신고", value: "사업주가 신고하지 아니하면 **대통령령으로 정하는 바에 따라 근로자가 신고할 수 있어요** (제15조 제3항)" },
+        { label: "길 둘 — 확인청구", value: "**피보험자였던 사람은 언제든지** 취득·상실에 관한 확인을 청구할 수 있고, 장관은 **직권으로도** 확인해요 (제17조)" },
+        { label: "미루지 마세요", value: "이직확인서를 기다리느라 실업 신고를 미루면 **12개월**이 그만큼 줄어요 (제42조 제1항, 제48조 제1항)" },
+      ],
+
+      mainSections: [
+        {
+          eyebrow: "회사의 의무",
+          heading: "회사가 안 해 줘도 되는 건가요",
+          answer: "안 됩니다. 발급은 의무이고, 안 주거나 거짓으로 주면 과태료 대상이에요.",
+          widgets: [
+            {
+              type: "stat-box",
+              label: "미발급·거짓 발급",
+              value: "300만원 이하",
+              note: "요청을 받은 사업주는 발급하여 주어야 하고(제42조 제3항 후단), 발급하지 아니하거나 거짓으로 작성하여 발급하면 **300만원 이하의 과태료** 대상이에요 (제118조 제1항 제2호). 고용24 안내는 발급 기한을 **10일 이내**로 밝히고 있어요.",
+            },
+          ],
+          body: "**회사에 재량이 없습니다.** 조문이 \"발급하여야 한다\"고 적고 있어요.\n\n제42조 제3항은 두 문장입니다. 앞 문장은 실업을 신고하려는 사람이 **이직하기 전 사업의 사업주에게** 피보험 단위기간, 이직 전 1일 소정근로시간 등을 확인할 수 있는 자료(이직확인서)의 발급을 **요청할 수 있다**고 하고, 뒤 문장은 **\"이 경우 요청을 받은 사업주는 고용노동부령으로 정하는 바에 따라 이직확인서를 발급하여 주어야 한다\"**고 정합니다.\n\n기한도 있어요. 고용24 안내는 **사업주가 근로자의 이직확인서 발급 요청에 따라 10일 이내에 발급해 주어야 한다**고 밝히고 있습니다.\n\n그리고 안 주면 제재가 붙습니다. 제118조 제1항 제2호는 **제42조 제3항 후단을 위반하여 이직확인서를 발급하여 주지 아니하거나 거짓으로 작성하여 발급하여 준 자**에게 **300만원 이하의 과태료**를 부과하도록 정해요.\n\n여기서 중요한 것은 **거짓으로 써 준 것도 같은 제재 대상**이라는 점입니다. 발급은 했는데 내용이 사실과 다르면 그것도 제2호에 들어가요.",
+          cta: { label: "이직확인서 발급 요청서 내려받기", url: "https://www.work24.go.kr/cm/c/b/1100/selectBbttList.do", org: "고용노동부 고용24", note: "서식자료실에서 '이직확인서'로 검색해 요청서 서식을 받을 수 있어요." },
+          quote: { law: "고용보험법 제118조 제1항 제2호 [시행 2026. 8. 20.]", text: "\"2. 제42조제3항 후단(제77조의5제2항 및 제77조의10제2항에서 준용하는 경우를 포함한다)을 위반하여 이직확인서를 발급하여 주지 아니하거나 거짓으로 작성하여 발급하여 준 자\"" },
+        },
+        {
+          eyebrow: "먼저 할 일",
+          heading: "무엇부터 해야 하나요",
+          answer: "요청한 사실을 남기고, 처리됐는지 확인하는 것이 순서예요.",
+          widgets: [
+            {
+              type: "checklist",
+              items: [
+                "**요청을 남겨요** 제42조 제3항의 의무는 \u201c요청을 받은\u201d 사업주에게 생겨요. 문자·메일·내용증명처럼 날짜가 남는 방법으로 하세요",
+                "**서식을 씁니다** 고용24 서식자료실에 이직확인서 발급 요청서 서식이 있어요",
+                "**10일을 셉니다** 고용24 안내 기준으로 발급 요청에 따라 10일 이내예요",
+                "**이직확인서 확인** 고용24 **마이페이지 → 민원처리 알림(이직확인서 처리 현황)**에서 봐요",
+                "**상실신고 확인** 상실신고서는 **근로복지공단 고용산재토탈서비스**에서 따로 확인해요",
+                "**퇴직 전에 미리** 고용24 안내는 퇴직할 때 회사에 미리 요청해 둘 것을 권하고 있어요",
+              ],
+            },
+          ],
+          body: "**요청한 사실을 남기는 것**이 먼저입니다. 제42조 제3항의 의무는 \"요청을 받은\" 사업주에게 생기기 때문이에요.\n\n말로만 이야기하면 요청이 있었는지부터 다툼이 됩니다. 문자·메일·내용증명처럼 **날짜와 내용이 남는 방법**으로 요청하세요. 고용24 서식자료실에는 이직확인서 발급 요청서 서식이 올라와 있습니다.\n\n요청한 뒤에는 **처리됐는지 확인**합니다. 고용24 안내는 회사가 제출한 **고용보험 피보험자격 상실신고서**는 근로복지공단 고용산재토탈서비스에서, **이직확인서**는 고용24 **마이페이지의 민원처리 알림(이직확인서 처리 현황)**에서 확인할 수 있다고 안내해요. 두 서류의 확인 창구가 다릅니다.\n\n10일이 지나도 처리되지 않았다면 그때부터는 기다리는 것이 아니라 **관할 센터에 알리는 단계**입니다.",
+          cta: { label: "이직확인서 처리현황 조회하기", url: "https://www.work24.go.kr/ei/a/b/1200/openHPEIAB1200M01.do", org: "고용노동부 고용24", note: "회사가 제출했는지, 내용이 어떻게 적혔는지 확인할 수 있어요." },
+          quote: { law: "고용보험법 제42조 제3항 [시행 2026. 8. 20.]", text: "\"제1항에 따라 구직급여를 지급받기 위하여 실업을 신고하려는 사람은 이직하기 전 사업의 사업주에게 피보험 단위기간, 이직 전 1일 소정근로시간 등을 확인할 수 있는 자료(이하 \u201c이직확인서\u201d라 한다)의 발급을 요청할 수 있다. 이 경우 요청을 받은 사업주는 고용노동부령으로 정하는 바에 따라 이직확인서를 발급하여 주어야 한다.\"" },
+        },
+        {
+          eyebrow: "끝내 안 주면",
+          heading: "그래도 안 해 주면 어떻게 하나요",
+          answer: "막다른 길이 아니에요. 조문에 세 갈래가 있습니다.",
+          compareTable: {
+            caption: "회사가 협조하지 않을 때의 세 갈래",
+            cards: true,
+            headers: ["길", "무엇을 하나", "근거"],
+            rows: [
+              [{ text: "과태료 대상임을 알림", tag: "제재", tagTone: "lo" }, { text: "미발급·거짓 발급은 **300만원 이하 과태료** 대상이에요. 관할 센터에 미발급 사실을 알립니다", status: "warn" }, { text: "제118조 제1항 제2호" }],
+              [{ text: "근로자 직접 신고", tag: "열림", tagTone: "hi" }, { text: "**사업주가 신고하지 아니하면 대통령령으로 정하는 바에 따라 근로자가 신고할 수 있어요**", status: "ok" }, { text: "제15조 제3항" }],
+              [{ text: "확인청구", tag: "열림", tagTone: "hi" }, { text: "**피보험자였던 사람은 언제든지** 취득·상실 확인을 청구할 수 있어요", status: "key" }, { text: "제17조 제1항" }],
+              [{ text: "직권 확인", tag: "열림", tagTone: "hi" }, { text: "장관은 청구에 따르거나 **직권으로** 확인해요. 사업주 협조를 기다리지 않아도 됩니다", status: "key" }, { text: "제17조 제2항" }],
+              [{ text: "결과 통지" }, { text: "확인 결과를 청구한 피보험자와 **사업주 등 관계인**에게 알려요" }, { text: "제17조 제3항" }],
+              [{ text: "신고 미이행도 과태료" }, { text: "제15조를 위반해 **신고를 하지 아니하거나 거짓 신고**한 자도 300만원 이하 과태료예요" }, { text: "제118조 제1항 제1호" }],
+            ],
+          },
+          body: "**기다리지 말고 다른 길로 갑니다.** 조문에 세 갈래가 있어요.\n\n첫째, **과태료 부과 대상임을 알리는 것**입니다. 제118조 제1항 제2호가 근거예요. 관할 고용센터에 미발급 사실을 알리면 기관이 사업주에게 확인하는 절차가 진행됩니다.\n\n둘째, **근로자가 직접 신고하는 길**입니다. 제15조 제3항은 **사업주가 제1항에 따른 피보험자격에 관한 사항을 신고하지 아니하면 대통령령으로 정하는 바에 따라 근로자가 신고할 수 있다**고 정해요. 이직확인서와 상실신고는 다른 서류지만, 상실신고가 안 되어 있다면 이 길이 열립니다.\n\n셋째, **피보험자격 확인청구**입니다. 제17조 제1항은 피보험자 또는 **피보험자였던 사람은 언제든지** 취득 또는 상실에 관한 확인을 청구할 수 있게 하고, 제2항은 장관이 그 청구에 따르거나 **직권으로** 확인하도록 합니다.\n\n이직확인서가 결국 확인하려는 것은 **피보험 단위기간과 이직 전 1일 소정근로시간, 그리고 퇴직 사유**예요. 회사 서류로 확인이 안 되면 **다른 자료로 그 사실을 세우는 것**이 이 길들의 공통점입니다.",
+          cta: { label: "신청지 관할 센터 연락처 찾기", url: "https://www.workplus.go.kr/index.do", org: "고용노동부 · 한국고용정보원", note: "미발급 사실을 알리고 확인청구 절차를 상담할 수 있어요." },
+          quote: { law: "고용보험법 제15조 제3항 [시행 2026. 8. 20.]", text: "\"사업주가 제1항에 따른 피보험자격에 관한 사항을 신고하지 아니하면 대통령령으로 정하는 바에 따라 근로자가 신고할 수 있다.\"" },
+        },
+        {
+          eyebrow: "내용이 틀렸을 때",
+          heading: "발급은 됐는데 사유가 다르면요",
+          answer: "거짓 작성도 같은 과태료 대상이에요. 확인하고 정정을 요청하세요.",
+          widgets: [
+            {
+              type: "stepbar",
+              steps: [
+                { tab: "1. 확인", title: "어떻게 적혔나", body: "고용24 마이페이지의 이직확인서 처리 현황에서 퇴직 사유·가입기간·평균임금·1일 소정근로시간이 어떻게 적혔는지 봐요." },
+                { tab: "2. 대조", title: "사실과 맞나", body: "특히 이직 사유가 갈림길이에요. 권고사직이나 계약만료인데 \u201c개인 사정\u201d으로 적히면 자기 사정 이직으로 분류됩니다." },
+                { tab: "3. 정정 요청", title: "회사에 먼저", body: "사실과 다르면 회사에 정정을 요청해요. 요청 사실은 날짜가 남는 방법으로 남깁니다." },
+                { tab: "4. 소명", title: "관할 센터에", body: "회사가 응하지 않으면 관할 센터에 사정을 소명해요. 거짓 작성 발급은 제118조 제1항 제2호의 과태료 대상입니다." },
+                { tab: "5. 병행", title: "실업 신고는 미루지 않기", body: "이직 후 지체없이 실업을 신고해요. 제48조 제1항의 12개월은 이직일 다음 날부터 흘러갑니다." },
+              ],
+            },
+          ],
+          body: "**발급은 됐는데 내용이 틀린 경우**가 오히려 더 곤란할 수 있습니다. 서류가 있으니 다투기 전에는 그대로 처리되기 때문이에요.\n\n가장 자주 갈리는 칸이 **이직 사유**입니다. 실제로는 권고사직이나 계약만료인데 \"개인 사정\"으로 적히면, 제58조 제2호의 자기 사정 이직으로 분류돼 별표 2의 정당한 사유를 따로 세워야 하는 자리로 밀립니다.\n\n그래서 순서는 이렇습니다. 먼저 **고용24 마이페이지의 이직확인서 처리 현황에서 어떻게 적혔는지 확인**하세요. 사실과 다르면 회사에 정정을 요청하고, 응하지 않으면 관할 센터에 사정을 소명합니다.\n\n거짓 작성도 제118조 제1항 제2호의 제재 대상이라는 점을 기억해 두세요. **\"거짓으로 작성하여 발급하여 준 자\"**가 조문에 그대로 적혀 있습니다.\n\n한 가지 더. 이직확인서가 늦어져도 **실업 신고는 미루지 마세요.** 제42조 제1항은 이직 후 지체없이 출석해 실업을 신고하도록 하고, 제48조 제1항의 12개월은 이직일 다음 날부터 흘러갑니다.",
+          cta: { label: "수급자격 인정신청서 인터넷으로 제출하기", url: "https://www.work24.go.kr/ei/a/b/1200/openHPEIAB1200M01.do", org: "고용노동부 고용24", note: "인터넷 제출은 상실신고서와 이직확인서가 **모두 처리된** 사람 등 세 요건을 갖춘 상용근로자가 대상이에요." },
+          quote: { law: "고용보험법 제42조 제1항 [시행 2026. 8. 20.]", text: "\"구직급여를 지급받으려는 사람은 이직 후 지체없이 직업안정기관에 출석하여 실업을 신고하여야 한다. 다만, 「재난 및 안전관리 기본법」 제3조제1호의 재난으로 출석하기 어려운 경우 등 고용노동부령으로 정하는 사유가 있는 경우에는 「고용정책 기본법」 제15조의2에 따른 고용정보시스템을 통하여 신고할 수 있다.\"" },
+        },
+      ],
+
+      resolution: { steps: [] },
+
+      context: {
+        faqList: [
+          { question: "회사가 바쁘다며 계속 미루면요", answer: "제42조 제3항 후단은 요청을 받은 사업주가 이직확인서를 발급하여 주어야 한다고 정하고, 고용24 안내는 그 기한을 발급 요청에 따라 10일 이내로 밝히고 있어요. 기한이 지나면 관할 센터에 미발급 사실을 알리고, 제15조 제3항의 직접 신고나 제17조의 확인청구를 함께 상담하세요." },
+          { question: "이직확인서 없이도 실업급여를 신청할 수 있나요", answer: "실업 신고 자체는 제42조 제1항에 따라 이직 후 지체없이 하는 것이고, 이직확인서가 없다고 신고를 못 하는 것은 아닙니다. 다만 인터넷 제출 서비스는 상실신고서와 이직확인서가 모두 처리된 사람 등 세 요건을 갖춘 상용근로자가 대상이라, 서류가 밀려 있으면 센터 방문으로 진행하게 돼요." },
+          { question: "회사가 퇴직 사유를 사실과 다르게 적었어요", answer: "제118조 제1항 제2호는 이직확인서를 발급하여 주지 아니한 경우뿐 아니라 거짓으로 작성하여 발급하여 준 경우도 300만원 이하 과태료 대상으로 정합니다. 고용24 마이페이지에서 내용을 확인하고, 회사에 정정을 요청한 뒤 응하지 않으면 관할 센터에 소명하세요." },
+          { question: "상실신고는 됐는데 이직확인서만 없어요", answer: "두 서류는 제출처와 확인 창구가 다릅니다. 고용24 안내는 상실신고서 내용은 근로복지공단 고용산재토탈서비스에서, 이직확인서 내용은 고용24 마이페이지의 민원처리 알림에서 확인하도록 안내해요. 이직확인서만 안 되어 있다면 제42조 제3항의 발급 요청과 제118조 제1항 제2호를 근거로 진행합니다." },
+          { question: "회사가 폐업해서 요청할 상대가 없어요", answer: "제42조 제3항의 요청 경로는 막히지만, 제15조 제3항의 근로자 직접 신고와 제17조의 확인청구가 남아 있어요. 제17조 제2항은 고용노동부장관이 청구에 따르거나 직권으로 확인하도록 정하고 있습니다." },
+          { question: "과태료는 제가 신고하면 바로 부과되나요", answer: "제118조는 과태료를 부과할 수 있는 근거를 정한 조문이고, 실제 부과 여부와 절차는 기관이 판단합니다. 근로자 입장에서 중요한 것은 부과 자체보다 그 사실을 근거로 발급이나 확인 절차를 진행하는 것이에요." },
+        ],
+      },
+
+      summary: [
+        "**의무예요** 요청을 받은 사업주는 이직확인서를 발급하여 주어야 해요 (제42조 제3항 후단).",
+        "**10일과 300만원** 고용24 안내는 10일 이내 발급, 미발급·거짓 발급은 300만원 이하 과태료예요.",
+        "**막다른 길이 아니에요** 근로자 직접 신고(제15조 제3항)와 확인청구(제17조)가 남아 있어요.",
+        "**신고는 미루지 마세요** 이직확인서를 기다리는 동안에도 12개월은 흘러갑니다.",
+      ],
+
+      sources: [
+        { group: "법령", title: "고용보험법 제42조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제1항 실업의 신고, 제3항 이직확인서 발급 요청과 **후단의 사업주 발급 의무**" },
+        { group: "법령", title: "고용보험법 제118조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "과태료 — 제1항 제1호 제15조 위반 신고 미이행·거짓 신고, **제2호 제42조 제3항 후단 위반 미발급·거짓 작성 발급**, 300만원 이하" },
+        { group: "법령", title: "고용보험법 제15조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제1항 사업주의 신고 의무, **제3항 사업주가 신고하지 않으면 근로자가 신고할 수 있음**, 제4항 관계인 통지" },
+        { group: "법령", title: "고용보험법 제17조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "피보험자격의 확인 — 제1항 언제든지 청구, 제2항 직권 확인, 제3항 관계인 통지" },
+        { group: "법령", title: "고용보험법 시행규칙 제82조·제83조", url: "https://www.law.go.kr/법령/고용보험법시행규칙", org: "법제처", note: "제82조 실업신고와 수급자격 인정신청서(별지 제75호), 제83조 수급자격증(별지 제76호)과 재발급 신청(별지 제78호)" },
+        { group: "행정규칙·안내", title: "고용24 실업급여(상용직) 안내", url: "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715", org: "고용노동부", note: "발급 요청에 따라 10일 이내 발급, 기재 항목(퇴직 사유·가입기간·평균임금·1일 소정근로시간), 상실신고서와 이직확인서의 확인 창구 구분" },
+        { group: "정부 도구", title: "고용24 서식자료실", url: "https://www.work24.go.kr/cm/c/b/1100/selectBbttList.do", org: "고용노동부", note: "이직확인서 발급 요청서 등 서식 검색" },
+        { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "10일·300만원은 위 화면 원문(scripts/evidence/실업급여-이직확인서-거부.json)과 대조했어요. 캡처 8장은 장마다 읽고 기록했습니다." },
+      ],
+      lastVerified: "2026-09-05",
+
+      relatedQuestions: [
+        { question: "이직확인서 발급 요청과 기한", slug: "실업급여-이직확인서" },
+        { question: "회사가 고용보험에 가입 안 했다면", slug: "실업급여-고용보험-미가입" },
+        { question: "회사가 폐업했을 때", slug: "실업급여-폐업" },
+        { question: "권고사직 실업급여 조건", slug: "권고사직-실업급여" },
+      ],
+    },
+    {
+      slug: "임원-실업급여",
+      category: "고용",
+      primaryKeywords: ["임원 실업급여", "대표이사 고용보험", "등기임원 실업급여"],
+
+      meta: {
+        title: "대표이사와 임원 실업급여, 고용보험 적용 기준과 예외",
+        description:
+          "조문에 **임원**이라는 말이 없어요. 피보험자의 출발점이 **근로자**라서 그 판단으로 갈립니다. 고용노동부는 **법인의 대표이사는 근로자가 아니어서 취득신고를 할 수 없고 실업급여 대상이 아니라**고 답하고 있어요. 대신 **자영업자 고용보험**이라는 다른 문이 있습니다.",
+        author: { name: "머니위키 편집팀" },
+        publishedAt: "2026-09-05",
+      },
+
+      searchIntent: {
+        userQuestion: "대표이사나 임원도 고용보험에 가입해서 실업급여를 받을 수 있나요?",
+        directAnswer: "대표이사는 받지 못해요. 임원은 실질이 근로자인지에 따라 갈리고, 자영업자 고용보험이라는 다른 경로가 있습니다.",
+        why: "고용보험법 제2조 제1호 가목이 피보험자를 근로자 등으로 정하고, 고용노동부는 법인의 대표이사가 근로자에 해당하지 않아 취득신고를 할 수 없다고 안내하고 있어요.",
+      },
+
+      verify: { note: "법제처 조문 화면(고용보험법 시행 2026. 8. 20. · 근로기준법 시행 2026. 8. 20. · 징수법 시행 2023. 7. 1.) 확인 · 고용복지+센터 자주하는 질문 답변 직접 확인", date: "2026-09-05" },
+
+      heroStats: [
+        { label: "대표이사", value: "대상 아님", note: "고용노동부는 **근로자에 해당되지 아니하므로 고용보험 취득신고를 할 수 없다**고 답하고 있어요." },
+        { label: "다른 문", value: "자영업자 고용보험", note: "**근로자 50명 미만** 사업주는 공단 승인을 받아 자기를 근로자로 보아 가입할 수 있어요 (징수법 제49조의2 제1항)." },
+      ],
+
+      keyFacts: [
+        { label: "조문에 임원이 없어요", value: "피보험자는 **근로자, 예술인 또는 노무제공자**와 자영업자예요. 직함이 아니라 근로자인지로 갈립니다 (제2조 제1호)" },
+        { label: "적용 범위도 같은 방향", value: "이 법은 **근로자를 사용하는** 모든 사업 또는 사업장에 적용돼요 (제8조 제1항)" },
+        { label: "근로자의 뜻", value: "**직업의 종류와 관계없이 임금을 목적으로** 사업이나 사업장에 근로를 제공하는 사람이에요 (근로기준법 제2조 제1항 제1호)" },
+        { label: "대표이사는", value: "**근로자에 해당되지 아니하므로 고용보험 취득신고를 할 수 없고, 실업급여 지급 대상자가 될 수 없어요** (고용노동부 답변)" },
+        { label: "가입이 앞에서 막혀요", value: "받고 못 받고의 문제가 아니라 **취득신고 자체가 되지 않는** 구조예요" },
+        { label: "임원은 갈려요", value: "직함이 임원이어도 **지휘·감독을 받으며 임금을 목적으로 근로를 제공**했다면 근로자로 볼 여지가 있어요" },
+        { label: "사용자 쪽이면", value: "**사업주 또는 사업 경영 담당자, 그 밖에 근로자에 관한 사항에 대하여 사업주를 위하여 행위하는 자**는 사용자예요 (근로기준법 제2조 제1항 제2호)" },
+        { label: "먼저 확인할 것", value: "**내 피보험자격이 취득돼 있는지**부터 보세요. 취득이 없으면 피보험 단위기간도 쌓이지 않아요 (제13조·제40조)" },
+        { label: "대안 경로", value: "**근로자를 사용하지 않거나 50명 미만**을 사용하는 사업주는 공단 승인을 받아 자영업자로 가입할 수 있어요 (징수법 제49조의2 제1항)" },
+        { label: "미리 들어야 해요", value: "자영업자 고용보험은 **가입해 둔 사람**의 제도예요. 그만둔 뒤 소급해 넣는 제도가 아닙니다" },
+      ],
+
+      mainSections: [
+        {
+          eyebrow: "판단 기준",
+          heading: "임원도 고용보험 대상인가요",
+          answer: "직함이 아니라 근로자인지로 갈려요. 조문에 임원이라는 말 자체가 없습니다.",
+          widgets: [
+            {
+              type: "decide",
+              items: [
+                { q: "\u2460 임금을 목적으로 근로를 제공했나요", sub: "근로기준법 제2조 제1항 제1호의 근로자 정의예요. 직함이 아니라 실질을 봅니다.", next: "아니라면 근로자 경로는 닫혀요" },
+                { q: "\u2461 지휘·감독을 받는 위치였나요", sub: "사업주를 위하여 행위하는 자는 사용자 쪽으로 봅니다 (같은 조 제2호).", next: "사용자 쪽이면 근로자와 겹치기 어려워요" },
+                { q: "\u2462 고용보험 취득이 되어 있나요", sub: "회사가 나를 근로자로 신고했는지가 바로 드러나요.", next: "취득이 없으면 단위기간도 없어요" },
+                { q: "\u2463 법인의 대표이사인가요", sub: "고용노동부는 대표이사는 근로자에 해당하지 않는다고 답하고 있어요.", next: "대표이사라면 자영업자 경로를 보세요" },
+              ],
+              okText: "네 가지를 짚어 보면 내 경로가 정해져요. 취득 여부는 토탈서비스에서 바로 확인할 수 있습니다.",
+            },
+          ],
+          body: "**조문에 \"임원\"이라는 말이 없습니다.** 그래서 임원이라서 되고 안 되는 것이 아니라, **근로자냐 아니냐**로 갈립니다.\n\n제2조 제1호 가목은 피보험자를 고용산재보험료징수법에 따라 보험에 가입되거나 가입된 것으로 보는 **근로자, 예술인 또는 노무제공자**라고 정합니다. 출발점이 근로자예요.\n\n제8조 제1항도 같은 방향입니다. 이 법은 **근로자를 사용하는** 모든 사업 또는 사업장에 적용된다고 되어 있어요.\n\n그러면 근로자가 무엇이냐. 근로기준법 제2조 제1항 제1호는 **\"직업의 종류와 관계없이 임금을 목적으로 사업이나 사업장에 근로를 제공하는 사람\"**이라고 정의합니다. 직함이 아니라 **임금을 목적으로 근로를 제공했는지**가 기준이에요.\n\n그래서 같은 \"임원\"이라도 결론이 갈립니다. 등기이사로 이사회 결의에 참여하며 위임 관계로 일했다면 근로자로 보기 어렵고, 직함만 임원이고 실제로는 지휘·감독을 받으며 임금을 받았다면 근로자로 볼 여지가 있어요.",
+          cta: { label: "내 피보험자격 취득 여부 조회하기", url: "https://total.comwel.or.kr/", org: "근로복지공단 고용·산재보험 토탈서비스", note: "근로자로 신고돼 있는지, 취득일이 언제인지 여기서 확인해요." },
+          quote: { law: "근로기준법 제2조 제1항 제1호 [시행 2026. 8. 20.]", text: "\"\u201c근로자\u201d란 직업의 종류와 관계없이 임금을 목적으로 사업이나 사업장에 근로를 제공하는 사람을 말한다.\"" },
+        },
+        {
+          eyebrow: "공식 답변",
+          heading: "대표이사는 왜 안 되나요",
+          answer: "근로자가 아니라서 취득신고 자체가 되지 않기 때문이에요.",
+          compareTable: {
+            caption: "어느 자격으로 피보험자가 되는가",
+            cards: true,
+            headers: ["구분", "피보험자가 되나", "근거"],
+            rows: [
+              [{ text: "근로자", tag: "가목", tagTone: "hi" }, { text: "징수법에 따라 보험에 가입되거나 가입된 것으로 보는 **근로자**예요", status: "ok" }, { text: "제2조 제1호 가목" }],
+              [{ text: "예술인·노무제공자", tag: "가목", tagTone: "hi" }, { text: "같은 가목에 함께 들어 있어요", status: "ok" }, { text: "제2조 제1호 가목" }],
+              [{ text: "자영업자", tag: "나목", tagTone: "hi" }, { text: "징수법 제49조의2에 따라 **가입한 자영업자**예요", status: "ok" }, { text: "제2조 제1호 나목" }],
+              [{ text: "법인의 대표이사", tag: "해당 없음", tagTone: "lo" }, { text: "**근로자에 해당되지 아니하므로 고용보험 취득신고를 할 수 없고, 실업급여 지급 대상자가 될 수 없어요**", status: "warn" }, { text: "고용노동부 답변" }],
+              [{ text: "직함만 임원", tag: "개별 판단" }, { text: "임금을 목적으로 근로를 제공했는지로 판단해요. 취득 신고가 되어 있는지부터 확인하세요" }, { text: "근로기준법 제2조 제1항 제1호" }],
+            ],
+          },
+          body: "**대표이사는 안 됩니다.** 고용노동부가 명확히 답해 두었어요.\n\n고용복지+센터 자주하는 질문에 \"대표이사인 경우 고용보험 대상자인가요? 또 실업급여가 가능한가요?\"라는 항목이 있고, 답변은 이렇습니다.\n\n**\"당해사업에 고용된 근로자에 한하여 고용보험 피보험자 자격 취득이 가능한 바, 귀하는 법인의 대표이사로 근로자에 해당되지 아니하므로 고용보험 취득신고를 할 수 없으며 따라서, 실업급여 지급 대상자가 될 수 없습니다.\"**\n\n두 단계로 읽으면 명확해요. 대표이사는 **근로자가 아니다** → 그래서 **취득신고 자체를 할 수 없다** → 결국 실업급여 대상이 되지 않는다.\n\n여기서 중요한 것은 \"가입은 됐는데 못 받는다\"가 아니라 **애초에 가입 대상이 아니다**라는 점입니다. 순서가 앞에서 막히는 구조예요.",
+          cta: { label: "고용복지+센터에 내 경우 문의하기", url: "https://www.workplus.go.kr/index.do", org: "고용노동부 · 한국고용정보원", note: "직함과 실질이 다른 경우는 개별 판단이에요. 관할 센터에서 확인하세요." },
+          quote: { law: "고용보험법 제2조 제1호 [시행 2026. 8. 20.]", text: "\"1. \u201c피보험자\u201d란 다음 각 목에 해당하는 사람을 말한다. 가. 고용산재보험료징수법 제5조제1항ㆍ제2항, 제6조제1항, 제8조제1항ㆍ제2항, 제48조의2제1항 및 제48조의3제1항에 따라 보험에 가입되거나 가입된 것으로 보는 근로자, 예술인 또는 노무제공자 나. 고용산재보험료징수법 제49조의2제1항ㆍ제2항에 따라 고용보험에 가입하거나 가입된 것으로 보는 자영업자\"" },
+        },
+        {
+          eyebrow: "실질 판단",
+          heading: "직함만 임원이면 어떻게 되나요",
+          answer: "실질이 근로자면 볼 여지가 있어요. 취득이 되어 있는지부터 확인하세요.",
+          widgets: [
+            {
+              type: "checklist",
+              items: [
+                "**기준** 임금을 목적으로 사업이나 사업장에 **근로를 제공**했는지예요 (근로기준법 제2조 제1항 제1호)",
+                "**임금이란** 사용자가 근로의 대가로 지급하는 **임금·봉급, 그 밖에 어떠한 명칭으로든지 지급하는 모든 금품**이에요 (같은 항 제5호)",
+                "**사용자란** 사업주 또는 사업 경영 담당자, 그 밖에 근로자에 관한 사항에 대하여 **사업주를 위하여 행위하는 자**예요 (같은 항 제2호)",
+                "**확인 순서** 토탈서비스에서 **피보험자격 취득 여부**를 먼저 봐요. 회사가 근로자로 신고했는지가 드러나요",
+                "**취득이 없다면** 제13조의 취득일도, 제40조의 피보험 단위기간도 쌓이지 않아요",
+                "**개별 판단** 직함과 실질이 다른 경우는 기관이 사안별로 판단해요. 관할 센터에서 확인하세요",
+              ],
+            },
+          ],
+          body: "**직함이 아니라 실질을 봅니다.** 그래서 이 항목은 사람마다 결론이 다릅니다.\n\n근로기준법 제2조 제1항 제1호가 기준이에요. **임금을 목적으로** 사업이나 사업장에 **근로를 제공**했는지입니다. 같은 조 제5호는 임금을 **\"사용자가 근로의 대가로 근로자에게 임금, 봉급, 그 밖에 어떠한 명칭으로든지 지급하는 모든 금품\"**이라고 정의합니다.\n\n그리고 제2조 제1항 제2호는 사용자를 **\"사업주 또는 사업 경영 담당자, 그 밖에 근로자에 관한 사항에 대하여 사업주를 위하여 행위하는 자\"**라고 합니다. 사용자 쪽에 서 있다면 근로자와 겹치기 어렵겠지요.\n\n실제로 어떻게 신고돼 있는지부터 확인하는 것이 빠릅니다. 근로복지공단 고용·산재보험 토탈서비스에서 **내 피보험자격이 취득돼 있는지** 보면, 회사가 나를 근로자로 신고했는지 아닌지가 바로 드러나요.\n\n취득 자체가 없다면 제13조 제1항의 취득일도 없고, 제40조 제1항 제1호의 피보험 단위기간도 쌓이지 않습니다. 이 경우엔 다음 항목의 대안을 보세요.",
+          cta: { label: "회사가 신고한 내용 확인하기", url: "https://www.work24.go.kr/ei/a/b/1200/openHPEIAB1200M01.do", org: "고용노동부 고용24", note: "상실신고와 이직확인서가 처리됐는지 확인할 수 있어요." },
+          quote: { law: "고용보험법 제8조 제1항 [시행 2026. 8. 20.]", text: "\"이 법은 근로자를 사용하는 모든 사업 또는 사업장(이하 \u201c사업\u201d이라 한다)에 적용한다. 다만, 산업별 특성 및 규모 등을 고려하여 대통령령으로 정하는 사업에 대해서는 적용하지 아니한다.\"" },
+        },
+        {
+          eyebrow: "다른 문",
+          heading: "그러면 방법이 아예 없나요",
+          answer: "자영업자 고용보험이 있어요. 다만 미리 가입해 두어야 합니다.",
+          widgets: [
+            {
+              type: "stepbar",
+              steps: [
+                { tab: "1. 대상 확인", title: "50명 미만", body: "근로자를 사용하지 아니하거나 **50명 미만의 근로자를 사용하는 사업주**로서 대통령령으로 정하는 요건을 갖춘 자영업자가 대상이에요 (징수법 제49조의2 제1항)." },
+                { tab: "2. 승인 신청", title: "공단 승인", body: "**공단의 승인을 받아** 자기를 이 법에 따른 근로자로 보아 고용보험에 가입할 수 있어요." },
+                { tab: "3. 보수액 선택", title: "혜택수준 고려", body: "보험료의 기초가 되는 보수액은 고용노동부장관이 고시하고, 신청할 때 **본인이 원하는 혜택수준을 고려해 고시된 보수액 중 하나를 선택**해요 (제3항·제4항)." },
+                { tab: "4. 유지", title: "50명을 넘겨도", body: "가입 후 50명 이상을 사용하게 되어도 **본인이 피보험자격을 유지하려는 경우에는 계속 가입된 것으로** 봐요 (제2항)." },
+                { tab: "5. 요건은 다름", title: "폐업 기준", body: "자영업자 실업급여는 요건과 급여 종류가 근로자와 달라요. 폐업일 이전 24개월간 1년 이상 등 별도 기준을 확인하세요." },
+              ],
+            },
+          ],
+          body: "**다른 문이 하나 있습니다.** 근로자 자격이 아니라 **자영업자 자격**으로 가입하는 길이에요.\n\n고용산재보험료징수법 제49조의2 제1항은 **근로자를 사용하지 아니하거나 50명 미만의 근로자를 사용하는 사업주**로서 대통령령으로 정하는 요건을 갖춘 자영업자가 **공단의 승인을 받아 자기를 이 법에 따른 근로자로 보아 고용보험에 가입할 수 있다**고 정합니다.\n\n그리고 고용보험법 제2조 제1호 나목이 그렇게 가입한 사람을 **자영업자인 피보험자**로 받습니다. 즉 근로자로는 안 되지만, 자영업자 경로로는 피보험자가 될 수 있어요.\n\n다만 조건이 붙습니다. 제49조의2 제2항은 가입 후 50명 이상을 사용하게 되어도 본인이 피보험자격을 유지하려 하면 계속 가입된 것으로 본다고 하고, 제3항·제4항은 보험료의 기초가 되는 **보수액을 고용노동부장관이 고시**하며 가입 승인을 신청할 때 **본인이 원하는 혜택수준을 고려해 고시된 보수액 중 하나를 선택**하도록 합니다.\n\n핵심은 **미리 가입해 두어야 한다**는 것이에요. 그만두고 나서 소급해 넣는 제도가 아닙니다. 그리고 자영업자 실업급여는 요건과 급여 종류가 근로자와 다르니, 그쪽 글을 함께 보세요.",
+          cta: { label: "자영업자 고용보험 가입 상담하기", url: "https://total.comwel.or.kr/", org: "근로복지공단 고용·산재보험 토탈서비스", note: "가입 승인은 공단이 합니다. 보수액 선택도 이때 함께 정해요." },
+          quote: { law: "고용산재보험료징수법 제49조의2 제1항 [시행 2023. 7. 1.]", text: "\"근로자를 사용하지 아니하거나 50명 미만의 근로자를 사용하는 사업주로서 대통령령으로 정하는 요건을 갖춘 자영업자(이하 \u201c자영업자\u201d라 한다)는 공단의 승인을 받아 자기를 이 법에 따른 근로자로 보아 고용보험에 가입할 수 있다.\"" },
+        },
+      ],
+
+      resolution: { steps: [] },
+
+      context: {
+        faqList: [
+          { question: "등기임원인데 월급을 받았어요", answer: "월급을 받았다는 사실만으로 결론이 나지는 않습니다. 근로기준법 제2조 제1항 제1호는 임금을 목적으로 사업이나 사업장에 근로를 제공하는 사람을 근로자로 정하고, 같은 항 제2호는 사업주를 위하여 행위하는 자를 사용자로 봅니다. 실제로 지휘·감독을 받는 위치였는지가 함께 판단돼요. 먼저 고용보험 취득이 되어 있는지 확인하고 관할 센터에서 상담하세요." },
+          { question: "대표이사인데 고용보험료를 냈다면요", answer: "고용노동부 답변은 법인의 대표이사가 근로자에 해당하지 않아 고용보험 취득신고를 할 수 없고, 따라서 실업급여 지급 대상자가 될 수 없다는 것입니다. 납부 이력이 있다면 어떤 자격으로 처리됐는지 토탈서비스에서 확인하고 관할 기관에 문의하세요." },
+          { question: "자영업자 고용보험은 언제 가입하나요", answer: "징수법 제49조의2 제1항은 근로자를 사용하지 아니하거나 50명 미만의 근로자를 사용하는 사업주로서 대통령령으로 정하는 요건을 갖춘 자영업자가 공단의 승인을 받아 가입할 수 있도록 정합니다. 사업을 하는 동안 미리 가입해 두는 제도이고, 폐업한 뒤 소급해 넣는 방식이 아니에요." },
+          { question: "자영업자로 가입하면 실업급여가 같나요", answer: "다릅니다. 자영업자인 피보험자의 구직급여는 폐업일 이전 24개월간 피보험 단위기간이 합산 1년 이상이어야 하는 등 요건이 따로 있고, 연장급여와 조기재취업 수당은 제외됩니다. 프리랜서·자영업자 편을 함께 보세요." },
+          { question: "임원이 되기 전 근로자 기간은 어떻게 되나요", answer: "그 기간에 근로자로 피보험자격을 취득했다면 그 기간의 피보험 단위기간은 남아 있습니다. 다만 제40조 제1항 제1호는 기준기간 동안의 피보험 단위기간을 보므로, 그 기간이 기준기간 안에 들어오는지가 관건이에요. 토탈서비스에서 취득·상실 이력을 확인하세요." },
+          { question: "회사가 저를 근로자로 신고했는데 임원입니다", answer: "신고가 되어 있다면 취득 자체는 있는 상태입니다. 다만 실제 실업급여 지급 단계에서 근로자성이 다시 판단될 수 있어요. 근로계약서, 급여 지급 방식, 지휘·감독 관계를 보여 줄 자료를 정리해 두고 관할 센터에서 확인하는 것이 안전합니다." },
+        ],
+      },
+
+      summary: [
+        "**직함이 아니라 실질** 조문에 임원이라는 말이 없고, 피보험자의 출발점은 근로자예요.",
+        "**대표이사는 대상 아님** 근로자가 아니어서 취득신고 자체가 되지 않는다는 것이 고용노동부 답변이에요.",
+        "**임원은 갈려요** 임금을 목적으로 근로를 제공했는지로 판단하고, 취득 여부부터 확인하세요.",
+        "**다른 문** 근로자 50명 미만 사업주는 공단 승인을 받아 자영업자로 가입할 수 있어요. 미리 들어 두어야 합니다.",
+      ],
+
+      sources: [
+        { group: "법령", title: "고용보험법 제2조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "정의 — 제1호 가목 피보험자는 근로자·예술인·노무제공자, 나목 자영업자. 제2호 이직은 피보험자와 사업주 사이의 고용관계 종료" },
+        { group: "법령", title: "고용보험법 제8조·제10조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제8조 제1항 근로자를 사용하는 모든 사업에 적용, 제10조 적용 제외 목록" },
+        { group: "법령", title: "고용보험법 제13조·제40조", url: "https://www.law.go.kr/법령/고용보험법", org: "법제처", note: "제13조 취득일은 고용된 날, 제40조 제1항 제1호 기준기간 동안 피보험 단위기간 180일" },
+        { group: "법령", title: "근로기준법 제2조", url: "https://www.law.go.kr/법령/근로기준법", org: "법제처", note: "제1항 제1호 근로자(임금을 목적으로 근로를 제공하는 사람), 제2호 사용자, 제5호 임금의 정의" },
+        { group: "법령", title: "고용산재보험료징수법 제49조의2", url: "https://www.law.go.kr/법령/고용보험및산업재해보상보험의보험료징수등에관한법률", org: "법제처", note: "자영업자에 대한 특례 — 제1항 근로자 50명 미만 사업주의 공단 승인 가입, 제2항 50명 이상이 되어도 유지, 제3항·제4항 고시 보수액과 선택" },
+        { group: "행정규칙·안내", title: "고용복지+센터 자주하는 질문 — 대표이사인 경우 고용보험 대상자인가요", url: "https://www.work.go.kr/seosan/qnaPlace/faq/faqList.do?subNaviMenuCd=30100&pageIndex=7", org: "고용노동부", note: "\u201c당해사업에 고용된 근로자에 한하여 고용보험 피보험자 자격 취득이 가능한 바, 귀하는 법인의 대표이사로 근로자에 해당되지 아니하므로 고용보험 취득신고를 할 수 없으며 따라서, 실업급여 지급 대상자가 될 수 없습니다.\"" },
+        { group: "정부 도구", title: "근로복지공단 고용·산재보험 토탈서비스", url: "https://total.comwel.or.kr/", org: "근로복지공단", note: "피보험자격 취득 여부 확인과 자영업자 고용보험 가입" },
+        { group: "검증 방법", title: "증거 JSON 대조", url: "", org: "머니위키", note: "50명·180일·24개월은 위 화면 원문(scripts/evidence/임원-실업급여.json)과 대조했어요. 대표이사 답변은 **자주하는 질문 항목을 직접 펼쳐 읽고** 캡처 기록에 전문을 옮겼습니다(목록 화면 캡처에는 답변이 접혀 있어요). 캡처 9장은 장마다 읽고 기록했습니다." },
+      ],
+      lastVerified: "2026-09-05",
+
+      relatedQuestions: [
+        { question: "프리랜서와 자영업자 실업급여", slug: "프리랜서-실업급여" },
+        { question: "회사가 고용보험에 가입 안 했다면", slug: "실업급여-고용보험-미가입" },
+        { question: "65세 이후에도 받을 수 있나요", slug: "실업급여-65세" },
+        { question: "180일 어떻게 세나요", slug: "실업급여-180일" },
       ],
     },
   ],
