@@ -6780,7 +6780,7 @@ export const 금융: ArticleCategory = {
       category: "금융",
       primaryKeywords: ["IRP 세액공제 한도", "IRP 900만원", "연금저축 IRP 한도"],
       meta: {
-        title: "IRP 세액공제 한도, IRP 900만원 환급 계산, 연금저축 배분, 중도해지 추징 (2026)",
+        title: "IRP 세액공제 한도, IRP 900만원, 연금저축 배분, 중도해지",
         description: "IRP 세액공제 한도는 연금저축을 합쳐 **900만원**이고, 총급여 5천 500만원 이하면 16.5%, 넘으면 13.2%를 산출세액에서 빼요.",
         author: { name: "머니위키 편집팀" },
         publishedAt: "2026-09-06",
@@ -7489,7 +7489,7 @@ export const 금융: ArticleCategory = {
       category: "금융",
       primaryKeywords: ["연금저축 종신연금 세율", "확정기간형 16.5%", "종신형 조건"],
       meta: {
-        title: "연금저축 종신연금 세율 3.3%, 확정기간형 16.5% 기준, 종신형 조건",
+        title: "연금저축 종신연금 세율 3.3%, 확정기간형 16.5%, 종신형 조건",
         description: "연금저축 종신연금 세율은 만 70세 미만 기준 **4.4%**로 확정기간형 5.5%보다 낮고, 만 70세부터는 두 방식이 같아져요.",
         author: { name: "머니위키 편집팀" },
         publishedAt: "2026-09-07",
