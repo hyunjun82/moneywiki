@@ -1,25 +1,33 @@
 #!/usr/bin/env node
 /**
- * 글 한 편 검사 — 숫자·화면·뜻을 한 번에.
+ * 글 한 편 검사.
  *
+ * 결정적 검사 (기본 — 같은 입력이면 같은 답):
  *   1. verify-evidence   본문 숫자 ↔ 증거 JSON (근거 없는 숫자 차단)
  *   2. verify-rendered   Playwright 로 실제 화면을 열어 정본 블록·표 색·한 줄 답·CTA 실접속
- *   3. verify-meaning    헤드리스 판정자 — 훅↔버튼·소제목↔본문·근거 초과 단언·검색 의도 누락
+ * LLM 판정 (--audit — 돌릴 때마다 다른 것을 잡는다. 글 쓰는 루프에 넣지 않고 따로 읽는다):
+ *   3. verify-meaning    훅↔버튼·소제목↔본문·근거 초과 단언·검색 의도 누락
+ *   4. verify-omission   인용한 조문의 항·호 전수 대조 ("써야 했는데 안 썼나")
  *
  * 화면 검사는 로컬 dev 서버를 띄워 본다 (빌드 15분을 기다리지 않는다).
- *   node scripts/verify.mjs <slug>                 # dev 서버 자동 기동 → 검사 → 종료
- *   node scripts/verify.mjs <slug> --live          # 배포된 화면으로
- *   node scripts/verify.mjs <slug> --no-meaning    # 뜻 검사(느림) 생략
+ *   node scripts/verify.mjs <slug>            # 숫자·화면. dev 서버 자동 기동 → 검사 → 종료
+ *   node scripts/verify.mjs <slug> --live     # 배포된 화면으로
+ *   node scripts/verify.mjs <slug> --audit    # 뜻·누락만 (npm run audit <slug>)
+ *   node scripts/verify.mjs <slug> --all      # 넷 다
  * 하나라도 실패하면 exit 1.
+ * 파이프라인(scripts/article.mjs)은 이 파일을 거치지 않고 검사기를 직접 부른다 — 출력을 고치기 지시문에 넣어야 해서.
  */
 import { spawn, spawnSync } from "node:child_process";
 import http from "node:http";
 
 const argv = process.argv.slice(2);
 const slug = argv.find((a) => !a.startsWith("--"));
-if (!slug) { console.error("사용법: node scripts/verify.mjs <slug> [--live] [--no-meaning]"); process.exit(1); }
+if (!slug) { console.error("사용법: node scripts/verify.mjs <slug> [--live] [--audit | --all]"); process.exit(1); }
 const live = argv.includes("--live");
-const noMeaning = argv.includes("--no-meaning");
+const audit = argv.includes("--audit");
+const all = argv.includes("--all");
+const deterministic = !audit || all;
+const llm = (audit || all) && !argv.includes("--no-meaning");
 const PORT = 3111;
 const isWin = process.platform === "win32";
 
@@ -79,19 +87,23 @@ function stopDev() {
 
 const results = {};
 try {
-  results["숫자 근거"] = run("verify-evidence (본문 숫자 ↔ 증거 JSON)", "node", ["scripts/verify-evidence.mjs", slug]);
+  if (deterministic) {
+    results["숫자 근거"] = run("verify-evidence (본문 숫자 ↔ 증거 JSON)", "node", ["scripts/verify-evidence.mjs", slug]);
 
-  if (live) {
-    results["화면"] = run("verify-rendered (라이브)", "node", ["scripts/verify-rendered.mjs", slug]);
-  } else {
-    await startDev(`http://localhost:${PORT}/w/${encodeURIComponent(slug)}`);
-    results["화면"] = run("verify-rendered (로컬 dev)", "node", ["scripts/verify-rendered.mjs", "--base", `http://localhost:${PORT}`, slug]);
+    if (live) {
+      results["화면"] = run("verify-rendered (라이브)", "node", ["scripts/verify-rendered.mjs", slug]);
+    } else {
+      await startDev(`http://localhost:${PORT}/w/${encodeURIComponent(slug)}`);
+      results["화면"] = run("verify-rendered (로컬 dev)", "node", ["scripts/verify-rendered.mjs", "--base", `http://localhost:${PORT}`, slug]);
+    }
   }
 
-  if (!noMeaning) results["뜻"] = run("verify-meaning (훅↔버튼·소제목↔본문·근거 초과·의도 누락)", "npx", ["tsx", "scripts/verify-meaning.ts", slug]);
-  // 누락 검사 — 위 셋은 전부 "쓴 것이 맞나"를 본다. 이건 "써야 했는데 안 썼나"를 본다.
-  // 조문이 통째로 빠진 글 7편이 세 검사를 전부 통과한 채 배포된 뒤(2026-09-04) 만들었다.
-  if (!noMeaning) results["누락"] = run("verify-omission (인용 조문 항·호 전수 대조)", "npx", ["tsx", "scripts/verify-omission.ts", slug]);
+  if (llm) {
+    results["뜻"] = run("verify-meaning (훅↔버튼·소제목↔본문·근거 초과·의도 누락)", "npx", ["tsx", "scripts/verify-meaning.ts", slug]);
+    // 누락 검사 — 위 셋은 전부 "쓴 것이 맞나"를 본다. 이건 "써야 했는데 안 썼나"를 본다.
+    // 조문이 통째로 빠진 글 7편이 세 검사를 전부 통과한 채 배포된 뒤(2026-09-04) 만들었다.
+    results["누락"] = run("verify-omission (인용 조문 항·호 전수 대조)", "npx", ["tsx", "scripts/verify-omission.ts", slug]);
+  }
 } finally {
   stopDev();
 }

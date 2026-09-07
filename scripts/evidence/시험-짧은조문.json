@@ -1,0 +1,28 @@
+{
+  "slug": "시험-짧은조문",
+  "verifiedAt": "2026-09-06",
+  "collectedBy": "scripts/collect-evidence.mjs (playwright)",
+  "sources": [
+    {
+      "url": "https://www.law.go.kr/법령/%EC%83%81%EB%B2%95/제662조",
+      "org": "법제처 (상법 제662조)"
+    }
+  ],
+  "facts": [
+    {
+      "value": "제662조 / 3년 / 3년 / 2년",
+      "quote": "제662조(소멸시효) 보험금청구권은 3년간, 보험료 또는 적립금의 반환청구권은 3년간, 보험료청구권은 2년간 행사하지 아니하면 시효의 완성으로 소멸한다.",
+      "url": "https://www.law.go.kr/법령/%EC%83%81%EB%B2%95/제662조",
+      "org": "법제처 (상법 제662조)",
+      "screenshot": "evidence-시험-짧은조문-1.png"
+    }
+  ],
+  "raws": [
+    {
+      "url": "https://www.law.go.kr/법령/%EC%83%81%EB%B2%95/제662조",
+      "org": "법제처 (상법 제662조)",
+      "screenshot": "evidence-시험-짧은조문-1.png",
+      "text": "제662조(소멸시효) 보험금청구권은 3년간, 보험료 또는 적립금의 반환청구권은 3년간, 보험료청구권은 2년간 행사하지 아니하면 시효의 완성으로 소멸한다.\n\n[전문개정 2014. 3. 11.]"
+    }
+  ]
+}

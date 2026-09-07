@@ -1,0 +1,6 @@
+# 묶음 실행 목록 — 줄마다: slug | 주제 한 줄 | 카테고리(비우면 파이프라인이 고름) | 키워드 파일
+# npm run article -- --batch scripts/batch.txt --parallel 4
+# 글 작성이 구독 사용량의 대부분이다 (편당 약 $2.8). 상한: 글당 --budget, 묶음 --batch-budget
+
+2026년-실업급여 | 2026년 실업급여 달라진 점: 상한액과 하한액, 수급 요건, 신청 절차 | 고용 | scripts/keywords/실업급여.json
+보험금-청구-절차-지급기한 | 보험금 청구 절차와 지급기한: 필요 서류, 지급 기한, 지연 시 이자 | 보험 | scripts/keywords/5세대-실손보험-보장-내용.json

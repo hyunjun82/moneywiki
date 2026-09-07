@@ -1,0 +1,155 @@
+{
+  "slug": "IRP-세액공제-한도-연말정산-절세",
+  "category": "금융",
+  "topic": "IRP 세액공제 한도와 연말정산 환급액: 납입 한도, 공제율, 연금저축 합산",
+  "title": "IRP 세액공제 한도, IRP 900만원 환급 계산, 연금저축 배분, 중도해지 추징 (2026)",
+  "primaryKeywords": [
+    "IRP 세액공제 한도",
+    "IRP 900만원",
+    "연금저축 IRP 한도"
+  ],
+  "clusters": [
+    {
+      "eyebrow": "연간 한도",
+      "h2": "IRP 세액공제 한도는 얼마까지인가요",
+      "h3": [
+        "연금저축과 IRP를 합쳐 900만원까지 공제받나요",
+        "한도가 700만원에서 900만원으로 왜 바뀌었나요"
+      ],
+      "visual": "compareTable",
+      "why": "'IRP 세액공제 한도' 자동완성 5건 중 3건이 900만원·700/900 차이를 직접 지목 — 가장 검색량이 큰 질문군"
+    },
+    {
+      "eyebrow": "환급액 계산",
+      "h2": "900만원을 채우면 얼마를 환급받나요",
+      "h3": [
+        "총급여에 따라 공제율이 16.5%와 13.2%로 나뉘나요",
+        "실제 환급액은 어떻게 계산하나요"
+      ],
+      "visual": "flow",
+      "why": "'irp 세액공제 계산' 'irp 세액공제 금액' 자동완성과 다수 연관검색이 한도가 아니라 실제 돌려받는 금액을 물음"
+    },
+    {
+      "eyebrow": "계좌 배분",
+      "h2": "연금저축과 IRP 중 어디에 얼마를 넣어야 하나요",
+      "h3": [
+        "연금저축과 IRP는 무엇이 다른가요",
+        "IRP 계좌에서는 어떤 상품에 투자할 수 있나요"
+      ],
+      "visual": "decide",
+      "why": "지식iN 질문 '연금저축과 IRP의 차이점이 궁금해요' 'IRP 계좌에서 투자 가능한 상품 종류가 궁금해요'가 계좌 선택 자체를 물음"
+    },
+    {
+      "eyebrow": "해지 불이익",
+      "h2": "세액공제 받은 후 중도해지하면 어떻게 되나요",
+      "h3": [
+        "중도해지 시 세금이 얼마나 추징되나요",
+        "연말정산에서 세액공제는 어떻게 신청하나요"
+      ],
+      "visual": "checklist",
+      "why": "'irp 세액공제 해지' 자동완성과 지식iN '세액공제 신청 방법 알려주세요'가 실무 절차를 물음"
+    }
+  ],
+  "laws": [
+    {
+      "name": "소득세법",
+      "articles": [
+        "59의3"
+      ]
+    }
+  ],
+  "urls": [
+    {
+      "url": "https://www.fss.or.kr/fss/main/contents.do?menuNo=201011",
+      "org": "금융감독원",
+      "why": "퇴직연금(IRP) 세액공제 한도·공제율 근거",
+      "new": false
+    },
+    {
+      "url": "https://www.fss.or.kr/fss/main/contents.do?menuNo=201007",
+      "org": "금융감독원",
+      "why": "연금저축 세액공제 상세 — 연금저축 단독 한도(600만원) 근거",
+      "new": false
+    },
+    {
+      "url": "https://www.fss.or.kr/fss/main/contents.do?menuNo=201008",
+      "org": "금융감독원",
+      "why": "중도해지(및 인출) 시 과세 — 추징세율 근거",
+      "new": false
+    },
+    {
+      "url": "https://www.fss.or.kr/fss/lifeplan/bnacJoin/list.do?menuNo=200954",
+      "org": "금융감독원",
+      "why": "개인형 IRP 계좌안내 가입 — 연금저축과의 차이·가입 절차 근거",
+      "new": false
+    },
+    {
+      "url": "https://www.fss.or.kr/fss/lifeplan/bnacCncltn/list.do?menuNo=200956",
+      "org": "금융감독원",
+      "why": "개인형 IRP 계좌안내 해지 — IRP 중도해지 실무 근거",
+      "new": false
+    }
+  ],
+  "ctas": [
+    {
+      "label": "퇴직연금 세액공제 한도 확인하기",
+      "url": "https://www.fss.or.kr/fss/main/contents.do?menuNo=201011",
+      "org": "금융감독원",
+      "forSection": "IRP 세액공제 한도는 얼마까지인가요",
+      "hero": true,
+      "checked": {
+        "ok": true,
+        "title": "세액공제 | 퇴직연금 세제 | 연금세제 안내 | 통합연금포털 | 금융소비자보호 |",
+        "why": "",
+        "at": "2026-09-06"
+      }
+    },
+    {
+      "label": "연금저축 세액공제율 확인하기",
+      "url": "https://www.fss.or.kr/fss/main/contents.do?menuNo=201007",
+      "org": "금융감독원",
+      "forSection": "900만원을 채우면 얼마를 환급받나요",
+      "checked": {
+        "ok": true,
+        "title": "세액공제 | 연금저축 세제 | 연금세제 안내 | 통합연금포털 | 금융소비자보호 |",
+        "why": "",
+        "at": "2026-09-06"
+      }
+    },
+    {
+      "label": "개인형 IRP 계좌 가입 절차 확인하기",
+      "url": "https://www.fss.or.kr/fss/lifeplan/bnacJoin/list.do?menuNo=200954",
+      "org": "금융감독원",
+      "forSection": "연금저축과 IRP 중 어디에 얼마를 넣어야 하나요",
+      "checked": {
+        "ok": true,
+        "title": "가입(목록) | 개인형 IRP 계좌안내 | 내 연금조회·재무설계 | 통합연금포털 | 금융소비자보호 |",
+        "why": "",
+        "at": "2026-09-06"
+      }
+    },
+    {
+      "label": "IRP 중도해지 유의사항 확인하기",
+      "url": "https://www.fss.or.kr/fss/lifeplan/bnacCncltn/list.do?menuNo=200956",
+      "org": "금융감독원",
+      "forSection": "세액공제 받은 후 중도해지하면 어떻게 되나요",
+      "checked": {
+        "ok": true,
+        "title": "해지(목록) | 개인형 IRP 계좌안내 | 내 연금조회·재무설계 | 통합연금포털 | 금융소비자보호 |",
+        "why": "",
+        "at": "2026-09-06"
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "IRP-세액공제-한도",
+    "연말정산-IRP-세액공제",
+    "IRP-중도인출-조건",
+    "연금저축펀드-세액공제-한도"
+  ],
+  "misconceptions": [
+    "연금저축만 가입해도 900만원 전액을 공제받는다고 착각하지만 연금저축 단독으로는 600만원까지만 공제되고 나머지 300만원은 IRP로 채워야 합니다.",
+    "세액공제 한도 900만원을 연금계좌에 넣을 수 있는 전체 납입 한도로 착각하지만 900만원은 공제받는 금액의 기준일 뿐 납입 자체는 더 할 수 있습니다.",
+    "중도해지하면 원금만 못 찾는다고 생각하지만 이미 세액공제를 받은 금액에는 기타소득세가 추징됩니다."
+  ]
+}

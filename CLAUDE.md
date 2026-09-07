@@ -14,14 +14,20 @@ Next.js 16 정적 export · Cloudflare Pages (main 푸시 → 자동 빌드 ~15�
 **정본은 `docs/moneywiki-article-template.html` 한 편이다.** 규칙 문서는 없다 — 그 파일의 블록과 주석이 전부다.
 글은 `src/data/articles/<카테고리>.ts`(타입 `types.ts`, 렌더러 `src/components/article/ArticleShell.tsx`)에만 쓴다.
 
-흐름 — 사용자가 주제 + 키워드 묶음(자동완성·연관검색어·지식iN 질문)을 준다:
-1. 질문을 군집으로 묶어 타이틀 항목을 정한다. **타이틀이 약속한 항목 = 대제목(h2)**, 세부 질문은 소제목(h3)
-2. `node scripts/collect-evidence.mjs <slug> --url <공식URL> --law "고용보험법:44,49"` — 조는 **숫자만**("제44조"로 주면 "제제44조조"가 되어 조용히 실패한다). 원문·표·캡처 PNG·JSON. **캡처는 Read로 눈으로 읽고 증거 JSON `capturesReviewed`에 장마다 한 줄 적는다** — 안 적으면 push가 막힌다. 다시 수집해도 이 기록은 보존된다
-3. 글을 쓴다. 본문 숫자는 증거 JSON `quote`/`value` 안의 값만. 버튼 주소는 `.go.kr`·`.or.kr`의 "그 일을 하는 화면" — 넣기 전 Playwright로 연다
-4. `npm run verify <slug>` 한 줄 — 숫자·화면·뜻·**누락**(인용한 조문의 항·호를 전수 대조) 넷이 순서대로 돈다. 검사기를 따로 부르지 않는다: `verify-rendered`를 `--base` 없이 부르면 **라이브를** 검사해 로컬 변경과 무관한 ✅가 뜬다
-5. 렌더 캡처와 검사 결과를 사용자에게 보이고 채점을 받는다. 통과한 글이 다음 글의 기준이다
+**글은 대화창에서 쓰지 않는다. 파이프라인이 쓴다** (`scripts/article.mjs`, 2026-09-06). 사용자는 주제 + 키워드 자료만 준다:
 
-판단(질문 군집·이미지 속 숫자·버튼 화면)은 눈이 있는 세션이 하되 **흔적을 남긴다**(capturesReviewed·exampleNote). 흔적이 없으면 게이트가 막는다. "써야 했는데 안 썼나"는 사람 눈을 믿지 않고 누락 검사가 본다 — 사람이 "읽었다"고 적고 실제로는 안 읽은 일이 있었다.
+```
+npm run article -- <slug> --topic "주제 한 줄" [--category 고용] [--keywords scripts/keywords/<파일>.json] [--rewrite] [--commit]
+npm run article -- --batch scripts/batch.txt        # 줄마다: slug | 주제 | 카테고리 | 키워드파일(생략 가능)
+```
+
+계획(타이틀·군집·조문·URL·CTA, 타이틀 항목 수 = 대제목 수를 기계가 셈) → `collect-evidence`(Playwright) → 캡처 PNG를 Read로 읽어 `capturesReviewed` 기록 → ArticleData 작성 → 사전 검사 → 카테고리 파일 삽입·옛 TSX 삭제 → tsc·숫자·가려짐·내부링크·화면 검사 → 실패면 실패 출력을 넣어 고쳐 쓰기(최대 2회) → 통과만 남기고 실패는 파일을 되돌린다 → `scripts/reports/<slug>.md` + 렌더 캡처 PNG.
+판단이 필요한 세 단계(계획·캡처 읽기·작성)는 **`claude -p`(구독 로그인)**가 한다. `ANTHROPIC_API_KEY`가 있으면 시작하지 않는다(API 과금 금지). 사람이 보는 것은 보고서 한 장과 캡처 — 채점 뒤 `git push`.
+입력: `scripts/keywords/<slug>.json`(엑셀·텍스트 → `npm run input`) 또는 `--keywords`로 같은 주제의 큰 키워드 파일.
+
+- 파이프라인이 떨어지면 **검사기를 고치지 않는다.** 지시문(`scripts/lib/prompts.mjs`)이나 사전 검사(`scripts/lib/check-draft.mjs`)를 고친다. 검사 규칙은 원본 검사기(`verify-evidence`·`verify-rendered`)와 함께 바꾼다
+- 뜻·누락 검사(LLM 판정)는 파이프라인과 pre-push에서 뺐다 — 돌릴 때마다 결과가 달라 글 한 편에 7바퀴를 돌게 했다. `npm run audit <slug>`로 따로 읽는다(경고)
+- 손으로 만질 때만: 카테고리 파일(CRLF)을 직접 고치고 `npm run verify <slug>`(숫자·화면). `verify-rendered`를 `--base` 없이 부르면 **라이브를** 검사해 로컬 변경과 무관한 ✅가 뜬다. 수집을 손으로 부를 때 조는 **숫자만**(`--law "고용보험법:44,49"`)
 
 게이트를 고치면 `npm run test:gates`(빠른 것) · `npm run test:gates:slow`(화면·뜻·누락까지) 로 **일부러 망가뜨린 입력을 잡는지** 확인한다. 조용히 통과하는 검사가 가장 위험하다 — CRLF 로 정규식이 0건을 돌려 '바뀐 글 없음'을 뱉은 적이 있다.
 

@@ -116,9 +116,16 @@ async function capture(page, label) {
 }
 
 /** 법제처: 본문이 iframe 안에 있고 조문 단위로 추출 */
+/** 조 표기 — "19" → 제19조, "19의2" → 제19조의2 (실업크레딧 국민연금법 제19조의2 처럼 '조의N' 조문이 있다) */
+function articleLabel(no) {
+  const m = String(no).trim().match(/^(\d+)(?:의(\d+))?$/);
+  return m ? `제${m[1]}조${m[2] ? `의${m[2]}` : ""}` : `제${no}조`;
+}
+
 async function collectLawArticle(page, lawName, no) {
-  const url = `https://www.law.go.kr/법령/${encodeURIComponent(lawName)}/제${no}조`;
-  console.log(`법제처 ${lawName} 제${no}조 …`);
+  const label = articleLabel(no);
+  const url = `https://www.law.go.kr/법령/${encodeURIComponent(lawName)}/${label}`;
+  console.log(`법제처 ${lawName} ${label} …`);
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
   // 법제처는 본문을 iframe에 늦게 채운다 — 조문이 나타날 때까지 폴링
   let text = "";
@@ -127,17 +134,20 @@ async function collectLawArticle(page, lawName, no) {
     for (const frame of page.frames()) {
       try {
         const t = await frame.evaluate(() => document.body?.innerText || "");
-        const i = t.indexOf(`제${no}조`);
+        const i = t.indexOf(label);
         if (i >= 0 && t.length > 200) { text = t.slice(i, i + 2500); break; }
       } catch {}
     }
   }
-  // 짧으면 iframe이 덜 찼거나 본문이 이미지다. 성공으로 넘기지 않는다.
-  if (text.length < MIN_TEXT) {
-    throw new Error(`제${no}조 본문 ${text.length}자 — 최소 ${MIN_TEXT}자 필요 (로딩 실패 또는 이미지 본문)`);
+  // 위 폴링은 iframe 본문 전체가 200자를 넘어야 text 를 채운다 — 즉 여기 왔으면 페이지는 떴다.
+  // 그래서 조문 조각이 짧은 것은 로딩 실패가 아니라 그냥 짧은 조문이다.
+  // 200자를 요구했더니 상법 제662조(소멸시효, 106자) 같은 진짜 조문이 전부 실패로 떨어졌다 (2026-09-06).
+  const MIN_ARTICLE = 60;
+  if (text.length < MIN_ARTICLE) {
+    throw new Error(`${label} 본문 ${text.length}자 — 최소 ${MIN_ARTICLE}자 필요 (로딩 실패 또는 이미지 본문)`);
   }
-  const file = await capture(page, `${lawName} 제${no}조`);
-  const org = `법제처 (${lawName} 제${no}조)`;
+  const file = await capture(page, `${lawName} ${label}`);
+  const org = `법제처 (${lawName} ${label})`;
   // 조문 전문을 raws 에도 남긴다. factsFromText 는 숫자나 조문번호가 있는 문장만 남기므로
   // '해고를 피하기 위한 노력을 다하여야 하며…' 같은 숫자 없는 요건 문장이 통째로 사라진다.
   // 그 누락이 실제로 글 7편에서 조문을 빠뜨리게 했다(2026-09-04).
@@ -303,7 +313,7 @@ for (const spec of laws) {
   const [lawName, articleList] = spec.split(":");
   for (const no of (articleList || "").split(",").filter(Boolean)) {
     tasks.push({
-      label: `${lawName} 제${no}조`,
+      label: `${lawName} ${articleLabel(no)}`,
       url: `https://www.law.go.kr/`,
       run: (page) => collectLawArticle(page, lawName, no),
     });
