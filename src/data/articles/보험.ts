@@ -5763,7 +5763,7 @@ export const 보험: ArticleCategory = {
       category: "보험",
       primaryKeywords: ["실손보험 청구 방법", "5세대 실손보험 청구", "지급 기간"],
       meta: {
-        title: "5세대 실손보험 청구 방법, 준비 서류, 지급 기간",
+        title: "5세대 실손보험 청구 방법, 필요 서류부터 지급 기간까지",
         description: "5세대 실손보험 청구는 가입한 보험회사 앱에 진료비 영수증과 세부내역서를 올려서 하고, 보험금청구권은 **3년**이 지나면 소멸해요.",
         author: { name: "머니위키 편집팀" },
         publishedAt: "2026-09-06",
@@ -6005,7 +6005,7 @@ export const 보험: ArticleCategory = {
       category: "보험",
       primaryKeywords: ["보험금 분쟁조정 신청 방법", "금융감독원 접수", "소송 지원"],
       meta: {
-        title: "보험금 분쟁조정 신청 방법, 금융감독원 접수, 처리 기간, 소송 지원",
+        title: "보험금 분쟁조정 신청 방법과 접수처, 처리 기간부터 소송 지원까지",
         description: "보험금 분쟁조정 신청 방법은 금융감독원장에게 신청서를 내는 것이고, 합의가 되지 않으면 신청일부터 **30일** 이내에 조정위원회에 회부돼요.",
         author: { name: "머니위키 편집팀" },
         publishedAt: "2026-09-07",
@@ -6388,7 +6388,7 @@ export const 보험: ArticleCategory = {
       category: "보험",
       primaryKeywords: ["보험금 청구 절차", "지급기한", "지연이자"],
       meta: {
-        title: "보험금 청구 절차, 지급기한, 지연이자 (2026)",
+        title: "보험금 청구 절차와 지급기한, 지연이자 계산까지",
         description: "보험금 청구 절차는 사고 통지에서 시작해 서류 접수·심사로 이어지고, 약정기간이 없으면 지급할 보험금액이 정하여진 날부터 **10일**내에 지급받아요.",
         author: { name: "머니위키 편집팀" },
         publishedAt: "2026-09-07",

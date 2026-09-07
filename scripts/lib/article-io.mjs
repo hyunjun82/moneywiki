@@ -144,6 +144,42 @@ export function loadEvidence(slug) {
 }
 export function saveEvidence(slug, ev) { fs.writeFileSync(evidencePath(slug), JSON.stringify(ev, null, 2) + "\n"); }
 
+/**
+ * 타이틀 형식 — 이 프로젝트가 정해 둔 것. scripts/plan-articles.md 머리말이 단일 진실 원천이다.
+ * 지시문에 규칙을 다시 적으면 두 벌이 되어 어긋난다 (실제로 어긋나서 62자짜리가 나갔다, 2026-09-07).
+ */
+export function titleRule() {
+  const f = path.join("scripts", "plan-articles.md");
+  if (!fs.existsSync(f)) return "";
+  const t = fs.readFileSync(f, "utf8");
+  const i = t.indexOf("**타이틀 형식**");
+  if (i < 0) return "";
+  const end = t.indexOf("\nslug 는", i);
+  return t.slice(i, end < 0 ? i + 600 : end).trim();
+}
+
+/** 실제로 쓴 타이틀 예시 — 타이틀 + 그 글의 대제목들 (개수까지 1:1인 것만) */
+export function titleExamples(limit = 18) {
+  const out = [];
+  for (const f of ["plan-new21.md", "plan-articles.md"]) {
+    const p = path.join("scripts", f);
+    if (!fs.existsSync(p)) continue;
+    for (const line of fs.readFileSync(p, "utf8").split(/\r?\n/)) {
+      if (!line.startsWith("|")) continue;
+      const cells = line.split("|").map((c) => c.trim().replace(/^✎\s*/, "")).filter(Boolean);
+      if (cells.length < 6) continue;
+      // plan-new21: # | slug | 기존 | 타이틀 | h2 ① … ④   /  plan-articles: # | slug | 타이틀 | 소제목 4개 | 근거
+      const title = cells.find((c) => c.length >= 12 && /[가-힣]/.test(c) && !/^`/.test(c) && !c.includes("MD") && !/^\d+$/.test(c));
+      if (!title) continue;
+      const heads = cells.slice(cells.indexOf(title) + 1).filter((c) => /[가-힣]/.test(c) && !/^검색어|^\d+문/.test(c));
+      if (heads.length < 2) continue;
+      out.push(`- "${title}"  ← 대제목 ${heads.length}개: ${heads.slice(0, 4).join(" / ")}`);
+      if (out.length >= limit) return out.join("\n");
+    }
+  }
+  return out.join("\n");
+}
+
 /** 지금까지 수집에 성공한 공식 주소들 — 계획 단계가 여기서 고른다 (기억으로 URL 을 짓지 않게) */
 export function sourceRegistry() {
   const dir = path.join("scripts", "evidence");

@@ -252,7 +252,7 @@ async function stagePlan(ctx, deadCtas = []) {
     const tsx = path.join(io.W_DIR, ctx.slug, "page.tsx");
     if (fs.existsSync(tsx)) oldTitle = (fs.readFileSync(tsx, "utf8").match(/title:\s*["'`]([^"'`\n]{8,})["'`]/) || [])[1] || "";
   }
-  const base = { slug: ctx.slug, topic: ctx.topic, category: ctx.category, categories: io.categoryFiles(), keywords: keywordsForPrompt(ctx.keywords, ctx.topic), registry, related, today: today(), rewrite: ctx.rewrite || ctx.live.has(ctx.slug), oldTitle };
+  const base = { slug: ctx.slug, topic: ctx.topic, category: ctx.category, categories: io.categoryFiles(), keywords: keywordsForPrompt(ctx.keywords, ctx.topic), registry, related, today: today(), rewrite: ctx.rewrite || ctx.live.has(ctx.slug), oldTitle, titleRule: io.titleRule(), titleExamples: io.titleExamples() };
   // 다시 세우는 설계도라면, 지난 설계도에서 죽어 있던 버튼 주소를 알려 준다 (같은 주소를 또 고르지 않게)
   let retryNote = "";
   const known = [...deadCtas];
@@ -285,7 +285,7 @@ function validatePlan(plan, ctx) {
   const cats = io.categoryFiles();
   if (!cats.includes(plan.category)) errs.push(`category "${plan.category}" 는 ${cats.join(" / ")} 중 하나여야 합니다`);
   const cl = Array.isArray(plan.clusters) ? plan.clusters : [];
-  if (cl.length < 2 || cl.length > 3) errs.push(`clusters ${cl.length}개 — 2~3개 (4개면 타이틀이 38자를 넘는다)`);
+  if (cl.length < 2 || cl.length > 4) errs.push(`clusters ${cl.length}개 — 2~4개`);
   for (const c of cl) {
     if (!c?.h2 || !c?.eyebrow || !Array.isArray(c.h3) || !c.h3.length) errs.push(`군집 "${c?.h2 || "?"}" 에 eyebrow·h2·h3 가 모두 필요`);
     else if (c.h2.startsWith(c.eyebrow)) errs.push(`eyebrow "${c.eyebrow}" 가 대제목 "${c.h2}" 의 앞부분과 같음`);
@@ -298,7 +298,7 @@ function validatePlan(plan, ctx) {
   if (!plan.title) errs.push("title 없음");
   // 검색 결과에서 30~35자쯤에서 잘린다. 군집을 나열하라는 규칙만 있고 길이 제한이 없어
   // 62자짜리 타이틀이 나갔다 (2026-09-07). 항목 수는 그대로 두고 각 항목을 짧게 만든다.
-  else if (plan.title.length > 38) errs.push(`타이틀이 ${plan.title.length}자 — 38자 이하 (목표 28~34자). 항목 수 ${promised}개는 그대로 두고 항목마다 낱말을 줄이세요. 예) "지역가입 전환 기준, 임의계속가입 보험료 비교, 국민연금 실업크레딧 신청" → "지역가입 전환, 임의계속가입, 실업크레딧 신청". 현재: "${plan.title}"`);
+  else if (plan.title.length > 42) errs.push(`타이틀이 ${plan.title.length}자 — 42자 이하 (저장된 예시는 30~40자). 항목 수 ${promised}개는 그대로 두고 항목마다 낱말을 줄이세요. 예) "지역가입 전환 기준, 임의계속가입 보험료 비교, 국민연금 실업크레딧 신청" → "지역가입 전환, 임의계속가입, 실업크레딧 신청". 현재: "${plan.title}"`);
   else if (promised >= 2 && promised !== cl.length) errs.push(`타이틀이 약속한 항목 ${promised}개 ≠ 군집 ${cl.length}개. 타이틀: "${plan.title}" (쉼표 조각 1개씩 + 와/과/·/및 마다 +1, '부터…까지' 조각은 2개)`);
   else if (promised < 2) errs.push(`타이틀 "${plan.title}" 이 항목을 나열하지 않음 — 군집 ${cl.length}개를 타이틀에 나열`);
   if (/—/.test(plan.title || "")) errs.push("타이틀에 대시(—) 금지");

@@ -223,7 +223,7 @@ export function checkDraft({ article: a, plan, ev, live, ctaAllowed, quickCompon
   if (a.slug !== plan.slug) p.push(`slug 가 "${a.slug}" — 설계도는 "${plan.slug}"`);
   if (a.category !== plan.category) p.push(`category 가 "${a.category}" — 설계도는 "${plan.category}"`);
   if (!a.meta?.title) p.push("meta.title 없음");
-  else if (a.meta.title.length > 38) p.push(`meta.title 이 ${a.meta.title.length}자 — 38자 이하 (검색 결과에서 잘림). 대제목 수는 그대로 두고 항목마다 낱말을 줄이세요: "${a.meta.title}"`);
+  else if (a.meta.title.length > 42) p.push(`meta.title 이 ${a.meta.title.length}자 — 42자 이하 (검색 결과에서 잘림). 대제목 수는 그대로 두고 항목마다 낱말을 줄이세요: "${a.meta.title}"`);
   if (!a.meta?.description) p.push("meta.description 없음");
   for (const k of ["userQuestion", "directAnswer", "why"]) if (!a.searchIntent?.[k]) p.push(`searchIntent.${k} 없음`);
   if (!Array.isArray(a.primaryKeywords) || a.primaryKeywords.length < 2 || a.primaryKeywords.length > 3) p.push("primaryKeywords 는 2~3개");

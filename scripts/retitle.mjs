@@ -3,11 +3,11 @@
  * 타이틀만 줄인다 — 본문은 건드리지 않는다.
  *
  * 규칙 세 가지를 전부 지키는지 확인하고 바꾼다. 하나라도 어기면 그 글은 건너뛴다.
- *   1. 40자 이하 (검색 결과에서 30~35자쯤 잘린다)
+ *   1. 42자 이하 (검색 결과에서 30~35자쯤 잘린다. scripts/plan-articles.md 예시가 30~40자)
  *   2. 타이틀이 약속한 항목 수 = 대제목(h2) 수  ← 이게 정본 규칙이다. 이걸 깨면 안 된다
  *   3. primaryKeywords 중 2개 이상이 타이틀에 글자 그대로 남아 있을 것
  *
- *   node scripts/retitle.mjs            검사만 (40자 넘는 글 목록)
+ *   node scripts/retitle.mjs            검사만 (42자 넘는 글 목록)
  *   node scripts/retitle.mjs --apply    scripts/retitles.json 의 새 타이틀을 적용
  */
 import fs from "node:fs";
@@ -17,7 +17,7 @@ import { promisedCount } from "./lib/check-draft.mjs";
 
 const apply = process.argv.includes("--apply");
 const MAP_FILE = path.join("scripts", "retitles.json");
-const LIMIT = 38;
+const LIMIT = 42;
 
 const all = [];
 for (const cat of io.categoryFiles()) {
@@ -47,10 +47,18 @@ if (!apply) {
 
 const map = JSON.parse(fs.readFileSync(MAP_FILE, "utf8"));
 let done = 0, skipped = 0;
-for (const [slug, newTitle] of Object.entries(map)) {
+for (const [slug, val] of Object.entries(map)) {
+  // { slug: "새 타이틀" } 또는 { slug: { title, keywords } }
+  const newTitle = typeof val === "string" ? val : val.title;
+  const newKw = typeof val === "string" ? null : val.keywords;
   const a = all.find((x) => x.slug === slug);
   if (!a) { console.log(`✗ ${slug} — 글이 없습니다`); skipped++; continue; }
-  const errs = checkTitle(newTitle, a.h2, a.pk);
+  if (newKw) {
+    if (!Array.isArray(newKw) || newKw.length < 2 || newKw.length > 3) { console.log(`✗ ${slug} — keywords 는 2~3개`); skipped++; continue; }
+    const tooLong = newKw.filter((k) => k.length > 12);
+    if (tooLong.length) { console.log(`✗ ${slug} — 검색어가 깁니다(12자 이내): ${tooLong.join(", ")}`); skipped++; continue; }
+  }
+  const errs = checkTitle(newTitle, a.h2, newKw || a.pk);
   if (errs.length) { console.log(`✗ ${slug} — ${errs.join(" · ")}\n     "${newTitle}"`); skipped++; continue; }
   const file = path.join(io.ART_DIR, `${a.cat}.ts`);
   const src = fs.readFileSync(file, "utf8");
@@ -60,7 +68,12 @@ for (const [slug, newTitle] of Object.entries(map)) {
   const rel = src.slice(at, at + 4000);
   const m = rel.match(/(\n\s*title:\s*)"((?:[^"\\]|\\.)*)"/);
   if (!m) { console.log(`✗ ${slug} — meta.title 을 못 찾음`); skipped++; continue; }
-  const replaced = rel.replace(m[0], m[1] + JSON.stringify(newTitle));
+  let replaced = rel.replace(m[0], m[1] + JSON.stringify(newTitle));
+  if (newKw) {
+    const pkm = replaced.match(/(\n\s*primaryKeywords:\s*)\[[^\]]*\]/);
+    if (!pkm) { console.log(`✗ ${slug} — primaryKeywords 를 못 찾음`); skipped++; continue; }
+    replaced = replaced.replace(pkm[0], pkm[1] + "[" + newKw.map((k) => JSON.stringify(k)).join(", ") + "]");
+  }
   fs.writeFileSync(file, src.slice(0, at) + replaced + src.slice(at + 4000));
   console.log(`✓ ${slug}\n     ${a.title.length}자 → ${newTitle.length}자  "${newTitle}"`);
   done++;

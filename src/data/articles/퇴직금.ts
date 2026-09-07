@@ -360,7 +360,7 @@ export const 퇴직금: ArticleCategory = {
       category: "퇴직금",
       primaryKeywords: ["DC형 퇴직연금 운용수익", "원리금 보장 여부", "중도인출"],
       meta: {
-        title: "DC형 퇴직연금 운용수익 계산, 원리금 보장, 중도인출 절차",
+        title: "DC형 퇴직연금 운용수익 계산, 원리금 보장부터 중도인출까지",
         description: "DC형 퇴직연금 운용수익은 회사가 얹어 주는 돈이 아니라 내가 고른 상품의 실적이 적립금에 그대로 반영된 금액이에요. 원리금 보장 여부는 담은 상품이 정하고, 원리금비보장상품은 전체 적립금의 **70%**까지만 담을 수 있어요. 중도인출 사유와 세율, IRP 이전 후 수령 절차까지 정리했어요.",
         author: { name: "머니위키 편집팀" },
         publishedAt: "2026-09-07",
@@ -776,7 +776,7 @@ export const 퇴직금: ArticleCategory = {
       category: "퇴직금",
       primaryKeywords: ["DB형 퇴직연금 수령", "IRP 중도인출", "퇴직소득세 계산"],
       meta: {
-        title: "DB형 퇴직연금 수령 퇴직소득세 계산, 연금 전환, IRP 중도인출",
+        title: "DB형 퇴직연금 수령 세금 계산, 연금 전환부터 IRP 중도인출까지",
         description: "DB형 퇴직연금은 급여 사유가 생긴 날부터 **14일** 이내에 IRP 계정으로 이전돼요. 퇴직소득세가 붙는 구조, 55세 이상·가입기간 10년 이상인 연금 수령 전환 요건, IRP 중도인출 사유와 세율을 법령 원문으로 정리했어요.",
         author: { name: "머니위키 편집팀" },
         publishedAt: "2026-09-07",
