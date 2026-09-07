@@ -71,6 +71,22 @@ export function promisedCount(title) {
   return promised;
 }
 
+/** 타이틀이 약속한 항목들 — promisedCount 와 같은 규칙으로 쪼갠 것. 개수가 어긋나면 빈 배열을 돌려준다 */
+export function titleItems(title) {
+  const h1 = String(title || "").replace(/s*|s*머니위키s*$/, "").replace(/s*(d{4})s*$/, "").trim();
+  const byConj = (x) => x.split(/(?<=[가-힣0-9])s*(?:와|과|·|및)s*/).map((y) => y.trim()).filter(Boolean);
+  const out = [];
+  for (const part of h1.split(/,s*/)) {
+    const i = part.indexOf("부터");
+    if (i >= 0 && /(까지|총정리|정리)/.test(part.slice(i))) {
+      out.push(...byConj(part.slice(0, i)));
+      out.push(part.slice(i + 2).replace(/s*(까지|총정리|정리)s*$/, "").trim());
+    } else out.push(...byConj(part));
+  }
+  const items = out.map((x) => x.replace(/s*(까지|총정리|정리)s*$/, "").trim()).filter(Boolean);
+  return items.length === promisedCount(title) ? items : [];
+}
+
 /** 섹션의 대표 비주얼 — verify-rendered 의 우선순위(판정>표>단계>산식>타임라인>체크리스트>통계) */
 export function sectionKind(sec) {
   const widgets = [...(sec.widgets || []), ...(sec.subsections || []).flatMap((s) => s.widgets || [])];

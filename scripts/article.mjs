@@ -8,7 +8,8 @@
  *   npm run article -- <slug> --topic "주제 한 줄" [--category 고용] [--keywords scripts/keywords/실업급여.json]
  *                     [--rewrite] [--commit] [--from plan|collect|captures|write|gates] [--max-fix 2]
  *                     [--model <m>] [--writer-model <m>] [--capture-model sonnet] [--skip-render] [--keep-on-fail]
- *   npm run article -- --batch scripts/batch.txt         # 줄마다: slug | 주제 | 카테고리 | 키워드파일(생략 가능)
+ *   npm run article -- --batch scripts/batch.txt         # 줄마다: slug | 주제 | 카테고리 | 키워드파일 | 타이틀(뒤 둘은 생략 가능)
+ *   --title "…"  타이틀을 고정한다. 설계 단계가 타이틀을 짓지 않고, 그 타이틀이 약속한 항목 수에 군집 수를 맞춘다
  *
  * 산출물
  *   scripts/plans/<slug>.json        설계도 (타이틀·군집·조문·URL·CTA)
@@ -23,7 +24,7 @@ import http from "node:http";
 import { spawn, spawnSync } from "node:child_process";
 import { ask as askRaw, extractJson, assertSubscriptionOnly, newMeter, addUsage, fmtUsage } from "./lib/headless.mjs";
 import * as io from "./lib/article-io.mjs";
-import { checkDraft, promisedCount } from "./lib/check-draft.mjs";
+import { checkDraft, promisedCount, titleItems } from "./lib/check-draft.mjs";
 import { planPrompt, capturesPrompt, writePrompt, fixPrompt, evidenceDigest } from "./lib/prompts.mjs";
 
 const STAGES = ["plan", "collect", "captures", "write", "gates"];
@@ -162,6 +163,7 @@ function makeCtx(slug, flags) {
     category: flags.category || "",
     keywordsFile: flags.keywords || "",
     exampleSlug: flags.example || "",
+    fixedTitle: typeof flags.title === "string" ? flags.title : "",
     rewrite: Boolean(flags.rewrite),
     commit: Boolean(flags.commit),
     from: typeof flags.from === "string" ? flags.from : "",
@@ -234,7 +236,10 @@ function keywordsForPrompt(kw, topic) {
 }
 async function stagePlan(ctx, deadCtas = []) {
   const file = path.join(PLANS, `${ctx.slug}.json`);
-  if (fs.existsSync(file) && !ctx.redo("plan")) { const p = readJson(file); ctx.log("plan", `설계도 재사용 — "${p.title}" (군집 ${p.clusters.length})`); return p; }
+  // 타이틀을 고정해 불렀는데 저장된 설계도가 다른 타이틀이면 재사용하지 않는다 — 군집이 그 타이틀의 항목과 어긋난다
+  const stale = ctx.fixedTitle && fs.existsSync(file) && readJson(file).title !== ctx.fixedTitle;
+  if (fs.existsSync(file) && !ctx.redo("plan") && !stale) { const p = readJson(file); ctx.log("plan", `설계도 재사용 — "${p.title}" (군집 ${p.clusters.length})`); return p; }
+  if (stale) ctx.log("plan", `저장된 설계도의 타이틀이 고정 타이틀과 달라 다시 세웁니다`);
   const toks = tokens(ctx.topic);
   const hit = (s) => toks.some((t) => String(s).includes(t));
   let registry = io.sourceRegistry();
@@ -252,7 +257,7 @@ async function stagePlan(ctx, deadCtas = []) {
     const tsx = path.join(io.W_DIR, ctx.slug, "page.tsx");
     if (fs.existsSync(tsx)) oldTitle = (fs.readFileSync(tsx, "utf8").match(/title:\s*["'`]([^"'`\n]{8,})["'`]/) || [])[1] || "";
   }
-  const base = { slug: ctx.slug, topic: ctx.topic, category: ctx.category, categories: io.categoryFiles(), keywords: keywordsForPrompt(ctx.keywords, ctx.topic), registry, related, today: today(), rewrite: ctx.rewrite || ctx.live.has(ctx.slug), oldTitle, titleRule: io.titleRule(), titleExamples: io.titleExamples() };
+  const base = { slug: ctx.slug, topic: ctx.topic, category: ctx.category, categories: io.categoryFiles(), keywords: keywordsForPrompt(ctx.keywords, ctx.topic), registry, related, today: today(), rewrite: ctx.rewrite || ctx.live.has(ctx.slug), oldTitle, titleRule: io.titleRule(), titleExamples: io.titleExamples(), fixedTitle: ctx.fixedTitle, fixedItems: titleItems(ctx.fixedTitle) };
   // 다시 세우는 설계도라면, 지난 설계도에서 죽어 있던 버튼 주소를 알려 준다 (같은 주소를 또 고르지 않게)
   let retryNote = "";
   const known = [...deadCtas];
@@ -281,6 +286,8 @@ async function stagePlan(ctx, deadCtas = []) {
 function validatePlan(plan, ctx) {
   const errs = [];
   plan.slug = ctx.slug;
+  // 타이틀을 고정했으면 모델이 뭘 냈든 그 타이틀로 못박고, 군집이 그 항목 수와 맞는지만 본다
+  if (ctx.fixedTitle) plan.title = ctx.fixedTitle;
   if (ctx.category) plan.category = ctx.category;
   const cats = io.categoryFiles();
   if (!cats.includes(plan.category)) errs.push(`category "${plan.category}" 는 ${cats.join(" / ")} 중 하나여야 합니다`);
@@ -298,7 +305,8 @@ function validatePlan(plan, ctx) {
   if (!plan.title) errs.push("title 없음");
   // 검색 결과에서 30~35자쯤에서 잘린다. 군집을 나열하라는 규칙만 있고 길이 제한이 없어
   // 62자짜리 타이틀이 나갔다 (2026-09-07). 항목 수는 그대로 두고 각 항목을 짧게 만든다.
-  else if (plan.title.length > 42) errs.push(`타이틀이 ${plan.title.length}자 — 42자 이하 (저장된 예시는 30~40자). 항목 수 ${promised}개는 그대로 두고 항목마다 낱말을 줄이세요. 예) "지역가입 전환 기준, 임의계속가입 보험료 비교, 국민연금 실업크레딧 신청" → "지역가입 전환, 임의계속가입, 실업크레딧 신청". 현재: "${plan.title}"`);
+  else if (!ctx.fixedTitle && plan.title.length > 42) errs.push(`타이틀이 ${plan.title.length}자 — 42자 이하 (저장된 예시는 30~40자). 항목 수 ${promised}개는 그대로 두고 항목마다 낱말을 줄이세요. 예) "지역가입 전환 기준, 임의계속가입 보험료 비교, 국민연금 실업크레딧 신청" → "지역가입 전환, 임의계속가입, 실업크레딧 신청". 현재: "${plan.title}"`);
+  else if (ctx.fixedTitle && promised !== cl.length) errs.push(`타이틀이 고정돼 있습니다("${plan.title}"). 이 타이틀이 약속한 항목은 ${promised}개인데 군집이 ${cl.length}개입니다 — 타이틀은 그대로 두고 **군집을 ${promised}개로** 다시 나누세요. 항목: ${titleItems(plan.title).map((x, i) => `${i + 1}) ${x}`).join(" / ") || "(쉼표 조각 1개씩 + 와/과/·/및 마다 +1, '부터…까지' 조각은 2개)"}`)
   else if (promised >= 2 && promised !== cl.length) errs.push(`타이틀이 약속한 항목 ${promised}개 ≠ 군집 ${cl.length}개. 타이틀: "${plan.title}" (쉼표 조각 1개씩 + 와/과/·/및 마다 +1, '부터…까지' 조각은 2개)`);
   else if (promised < 2) errs.push(`타이틀 "${plan.title}" 이 항목을 나열하지 않음 — 군집 ${cl.length}개를 타이틀에 나열`);
   if (/—/.test(plan.title || "")) errs.push("타이틀에 대시(—) 금지");
@@ -775,8 +783,8 @@ async function runOne(slug, flags) {
 /* ── 묶음 ── */
 function parseBatch(file) {
   return fs.readFileSync(file, "utf8").split(/\r?\n/).map((l) => l.trim()).filter((l) => l && !l.startsWith("#")).map((l) => {
-    const [slug, topic, category, keywords] = l.split("|").map((s) => s.trim());
-    return { slug, topic, category, keywords };
+    const [slug, topic, category, keywords, title] = l.split("|").map((s) => s.trim());
+    return { slug, topic, category, keywords, title };
   });
 }
 
@@ -795,7 +803,7 @@ try {
       while (next < items.length) {
         const i = next++;
         const it = items[i];
-        const f = { ...flags, topic: it.topic || flags.topic, category: it.category || flags.category, keywords: it.keywords || flags.keywords };
+        const f = { ...flags, topic: it.topic || flags.topic, category: it.category || flags.category, keywords: it.keywords || flags.keywords, title: it.title || flags.title };
         delete f.batch;
         summary[i] = await runOne(it.slug, f);
       }
