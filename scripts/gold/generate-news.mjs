@@ -13,16 +13,18 @@
  *  - 살때·팔때 차이율, 1g 환산, 본전 계산 등 데이터에서 파생되는 인사이트
  *
  * 2026-09-09
+ *  - 소매 숫자는 gold.json(한국금거래소, 스펙 5절)에서, 도매·국제·환율은 price.json 에서 온다.
+ *    gold.json 을 못 받으면 옛 방식(price.json 의 종로 소매)으로 돌아간다.
  *  - 살 때 값은 부가세 포함이 규격이다(retail.vatIncludedBuy). 옛 규격(부가세 별도)이 오면
  *    여기서 ×1.1 한다. 어느 쪽이든 기사와 /gold 화면이 같은 숫자를 쓴다.
  *  - --require-today: 고시일이 오늘이 아니면 발행하지 않고 exit 3 (전일 숫자가 오늘 기사에
  *    들어가는 것을 막는다). 워크플로가 10:15·10:45·11:15 에 재시도한다.
- *  - --price <경로|URL>: 로컬 검증용. 기본은 price-data 브랜치 raw URL.
+ *  - --price / --gold <경로|URL>: 로컬 검증용. 기본은 price-data 브랜치 raw URL.
  *
- * 원칙: 모든 숫자는 price.json 에서만 온다. 등락의 "이유"처럼 데이터에
+ * 원칙: 모든 숫자는 gold.json·price.json 에서만 온다. 등락의 "이유"처럼 데이터에
  * 없는 주장은 쓰지 않는다. 값이 없는 항목의 문장·섹션은 통째로 생략한다.
  *
- * 사용법: node scripts/gold/generate-news.mjs [출력 디렉토리] [--force] [--require-today] [--price <경로|URL>]
+ * 사용법: node scripts/gold/generate-news.mjs [출력 디렉토리] [--force] [--require-today] [--price <경로|URL>] [--gold <경로|URL>]
  */
 
 import fs from "node:fs";
@@ -30,6 +32,8 @@ import path from "node:path";
 
 const PRICE_URL =
   "https://raw.githubusercontent.com/hyunjun82/moneywiki/price-data/price.json";
+const GOLD_URL =
+  "https://raw.githubusercontent.com/hyunjun82/moneywiki/price-data/gold.json";
 
 /* ── 인자 ── */
 const argv = process.argv.slice(2);
@@ -38,9 +42,11 @@ const flagValue = (name) => {
   return i >= 0 && i + 1 < argv.length ? argv[i + 1] : null;
 };
 const PRICE_SRC = flagValue("--price") ?? PRICE_URL;
+const GOLD_SRC = flagValue("--gold") ?? GOLD_URL;
+const VALUE_FLAGS = new Set(["--price", "--gold"]);
 /** 출력 폴더. 플래그와 플래그 값을 경로로 오인하지 않도록 걸러낸다. */
 const OUT_DIR =
-  argv.find((a, i) => !a.startsWith("--") && !(i > 0 && argv[i - 1] === "--price")) ||
+  argv.find((a, i) => !a.startsWith("--") && !(i > 0 && VALUE_FLAGS.has(argv[i - 1]))) ||
   "src/data/gold-news";
 const FORCE = argv.includes("--force");
 const REQUIRE_TODAY = argv.includes("--require-today");
@@ -71,18 +77,68 @@ if (fs.existsSync(outPath)) {
 }
 const existingQuoteDate = existing?.quoteDate ?? null;
 
-/* ── price.json ── */
-let data;
-if (/^https?:/.test(PRICE_SRC)) {
-  const res = await fetch(PRICE_SRC, { signal: AbortSignal.timeout(20000) });
-  if (!res.ok) throw new Error(`price.json HTTP ${res.status}`);
-  data = await res.json();
-} else {
-  data = JSON.parse(fs.readFileSync(PRICE_SRC, "utf8"));
-  console.log(`--price: 로컬 파일 사용 ${PRICE_SRC}`);
+/* ── price.json (도매·국제·환율) + gold.json (소매) ── */
+const loadJson = async (src, label) => {
+  if (/^https?:/.test(src)) {
+    const res = await fetch(src, { signal: AbortSignal.timeout(20000) });
+    if (!res.ok) throw new Error(`${label} HTTP ${res.status}`);
+    return res.json();
+  }
+  console.log(`--${label.replace(".json", "")}: 로컬 파일 사용 ${src}`);
+  return JSON.parse(fs.readFileSync(src, "utf8"));
+};
+const data = await loadJson(PRICE_SRC, "price.json");
+let gold = null;
+try {
+  gold = await loadJson(GOLD_SRC, "gold.json");
+  if (!gold?.retail?.latest?.buy || !gold.retail.latest.sell) throw new Error("순금 값 없음");
+} catch (e) {
+  console.warn(`gold.json 을 쓰지 못함(${e.message}) — price.json 의 소매 값으로 대신 씁니다`);
+  gold = null;
 }
 
-const incomingQuoteDate = data?.retail?.quoteDate ?? null;
+/**
+ * 소매 숫자를 한 모양으로 맞춘다: { source, sourceUrl, quoteDate, round, vatIncludedBuy, note, items }
+ * items 는 화면(RetailItem)과 같은 규격 — change 는 절댓값, 방향은 dir.
+ */
+const toQuote = (price, change) => {
+  if (typeof price !== "number" || !Number.isFinite(price) || price <= 0) return null;
+  const c = typeof change === "number" && Number.isFinite(change) ? change : 0;
+  return { price, change: Math.abs(c), dir: c > 0 ? "up" : c < 0 ? "down" : "none" };
+};
+const retailSrc = gold
+  ? (() => {
+      const r = gold.retail;
+      const l = r.latest;
+      const c = r.change ?? {};
+      const mchg = (now, prev) => (now != null && prev != null ? now - prev : 0);
+      return {
+        source: r.source ?? "한국금거래소",
+        sourceUrl: r.sourceUrl ?? "https://www.koreagoldx.co.kr/price/gold",
+        quoteDate: l.date,
+        round: l.round,
+        vatIncludedBuy: true,
+        note: r.note ?? "한국금거래소 고시. 살 때는 부가세 10% 포함, 하루 여러 차례 고시됩니다.",
+        items: [
+          { key: "gold24", name: "순금 24K", userSell: toQuote(l.sell, c.sell), userBuy: toQuote(l.buy, c.buy) },
+          { key: "gold18", name: "18K", userSell: toQuote(l.k18, c.k18), userBuy: null },
+          { key: "gold14", name: "14K", userSell: toQuote(l.k14, c.k14), userBuy: null },
+          { key: "platinum", name: "백금", userSell: toQuote(r.platinum?.sell, mchg(r.platinum?.sell, r.platinum?.prevSell)), userBuy: toQuote(r.platinum?.buy, mchg(r.platinum?.buy, r.platinum?.prevBuy)) },
+          { key: "silver", name: "은", userSell: toQuote(r.silver?.sell, mchg(r.silver?.sell, r.silver?.prevSell)), userBuy: toQuote(r.silver?.buy, mchg(r.silver?.buy, r.silver?.prevBuy)) },
+        ],
+      };
+    })()
+  : {
+      source: data?.retail?.source ?? "종로금거래소",
+      sourceUrl: data?.retail?.sourceUrl ?? "https://www.jongrogx.com/",
+      quoteDate: data?.retail?.quoteDate ?? null,
+      round: null,
+      vatIncludedBuy: data?.retail?.vatIncludedBuy === true,
+      note: data?.retail?.note ?? null,
+      items: data?.retail?.items ?? [],
+    };
+
+const incomingQuoteDate = retailSrc.quoteDate ?? null;
 
 if (REQUIRE_TODAY && incomingQuoteDate !== today) {
   console.log(
@@ -103,7 +159,7 @@ if (existingQuoteDate !== null && !FORCE) {
   }
 }
 
-const items = data?.retail?.items ?? [];
+const items = retailSrc.items;
 const find = (k) => items.find((it) => it.key === k);
 const g24 = find("gold24");
 const buyRaw = g24?.userBuy;
@@ -115,7 +171,7 @@ if (!buyRaw?.price || !sell?.price) {
 /* ── 살 때: 부가세 포함(실제 결제액)으로 통일 ──
  * 갱신기가 vatIncludedBuy: true 면 그대로, 옛 규격(부가세 별도 원문)이면 여기서 ×1.1.
  * 부가세를 뺀 원문 고시가는 buyEx 로 따로 둔다(국제 시세와 비교할 때 쓴다). */
-const VAT_INCL = data.retail?.vatIncludedBuy === true;
+const VAT_INCL = retailSrc.vatIncludedBuy === true;
 const inclOf = (q) => (VAT_INCL ? q.price : Math.round(q.price * 1.1));
 const buy = {
   price: inclOf(buyRaw),
@@ -127,7 +183,9 @@ const buyEx = VAT_INCL ? (buyRaw.priceExVat ?? Math.round(buyRaw.price / 1.1)) :
 const vatWon = buyIncl - buyEx;
 
 const kd = korDate(today);
-const quoteKd = korDate(data.retail?.quoteDate) || kd;
+const quoteKd = korDate(retailSrc.quoteDate) || kd;
+/** "한국금거래소 9월 9일 2차 고시" / "종로금거래소 9월 9일 고시" */
+const quoteLabel = `${retailSrc.source} ${quoteKd}${retailSrc.round ? ` ${retailSrc.round}차` : ""} 고시`;
 const dayNum = Number(today.slice(8, 10)); // 리드 문장 순환용
 
 /* ── 파생 수치 (전부 데이터에서 계산) ──
@@ -204,7 +262,7 @@ const sections = [];
   sections.push({
     heading: `순금 한 돈 살 때 ${won(buyIncl)}원, 팔 때 ${won(sell.price)}원`,
     paragraphs: [
-      `종로금거래소 ${quoteKd} 고시 기준 순금(24K) 1돈(3.75g)은 살 때 ${won(buyIncl)}원(부가세 포함), ` +
+      `${quoteLabel} 기준 순금(24K) 1돈(3.75g)은 살 때 ${won(buyIncl)}원(부가세 포함), ` +
         `팔 때 ${won(sell.price)}원이다. ${moveBoth()}.`,
       `살 때 ${won(buyIncl)}원은 부가가치세 10%(${won(vatWon)}원)를 포함한 실제 결제 금액이다. ` +
         `부가세를 뺀 고시가는 ${won(buyEx)}원이다. 다른 곳에서 본 시세와 숫자가 다르다면 대개 ` +
@@ -263,7 +321,7 @@ const sections = [];
 
     paras.push(
       `두 변동을 곱하면 원화 기준 금값은 이론상 ${pctStr(theory)} 수준이 된다. 실제 ` +
-        `종로금거래소 고시가는 ${pctStr(actual)}로, ${compareWord}. 국제 시세는 24시간 ` +
+        `${retailSrc.source} 고시가는 ${pctStr(actual)}로, ${compareWord}. 국제 시세는 24시간 ` +
         `움직이지만 국내 고시가는 하루 몇 차례만 정해지므로 반영에 시차가 있고, 국내 실물 수급도 ` +
         `이 차이에 함께 반영된다.`
     );
@@ -384,12 +442,16 @@ const sections = [];
 }
 
 /* ── 기사 안의 시세 스냅샷도 부가세 포함으로 맞춘다 (화면 표가 본문과 같은 숫자를 쓰도록) ── */
-const retailSnapshot = data.retail
+const retailSnapshot = items.length
   ? {
-      ...data.retail,
+      source: retailSrc.source,
+      sourceUrl: retailSrc.sourceUrl,
+      quoteDate: retailSrc.quoteDate,
+      round: retailSrc.round,
+      unit: "원/돈",
       vatIncludedBuy: true,
       note: VAT_INCL
-        ? data.retail.note
+        ? retailSrc.note
         : "살 때 가격은 부가세 10%를 포함한 실제 결제 금액입니다(원문 고시가에 부가세를 더한 값).",
       items: items.map((it) =>
         it.userBuy && !VAT_INCL
@@ -416,8 +478,8 @@ const doc = {
     `팔 때 ${won(sell.price)}원. 18K·14K 매입가와 KRX 도매 종가, 국제 금값, 금 계산기까지 한 번에 확인하세요.`,
   /** 처음 발행한 시각. 정정해도 유지한다(JSON-LD datePublished). */
   publishedAt: existing?.publishedAt ?? kstNow(),
-  updatedAt: data.updatedAt ?? null,
-  quoteDate: data.retail?.quoteDate ?? today,
+  updatedAt: gold?.updatedAt ?? data.updatedAt ?? null,
+  quoteDate: retailSrc.quoteDate ?? today,
   retail: retailSnapshot,
   krx: data.krx?.latest ? { latest: data.krx.latest, note: data.krx?.note ?? null } : null,
   fx: data.fx ?? null,
@@ -427,7 +489,9 @@ const doc = {
   // 구버전 렌더러 호환: 섹션을 평문단으로도 펼쳐둔다
   paragraphs: [lead, ...sections.flatMap((s) => s.paragraphs)],
   sources: [
-    "종로금거래소 고시가 (https://www.jongrogx.com) — 살 때는 부가세 10% 포함으로 환산",
+    gold
+      ? `${retailSrc.source} 고시가 (${retailSrc.sourceUrl}) — 살 때는 부가세 포함`
+      : `${retailSrc.source} 고시가 (${retailSrc.sourceUrl}) — 살 때는 부가세 10% 포함으로 환산`,
     "한국거래소 KRX 금시장 — 금융위원회·공공데이터포털",
     "국제 시세·환율 — Yahoo Finance (전일 종가 대비)",
   ],

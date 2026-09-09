@@ -56,7 +56,13 @@ jobs:
           node scripts/gold/update-price.mjs price-data/price.json /tmp/price.json
           cp /tmp/price.json price-data/price.json
 
-      - name: Commit & push to price-data
+      # price-data 에는 환율 워크플로(30분)·PC 수집기(30분)도 밀어 넣는다. 같은 순간에 겹치면 push 가
+      # 거절된다(2026-09-09 실측: "cannot lock ref"). 그래서 매번 원격 최신으로 맞춘 뒤 우리 파일만 얹고,
+      # 거절되면 다시 맞춰 최대 3번 시도한다. gold.json 은 그때마다 원격 최신 kgx-quotes.json 으로 다시 만든다.
+      #   gold.json — 화면이 읽는 파일 (스펙 5절). 한국금거래소 회차 고시(kgx-quotes.json, PC 가 push)
+      #   + 방금 갱신한 price.json(KRX 도매) + Yahoo 기준가. PC 가 꺼져 있어도 기준가·도매는 움직인다.
+      #   kgx-quotes.json 이 아직 없으면 gold.json 을 만들지 않는다(실패 아님).
+      - name: Commit & push to price-data (원격 최신 위에 얹기, 최대 3회)
         run: |
           cd price-data
           git config user.name "gold-price-bot"
@@ -65,11 +71,27 @@ jobs:
             git init -b price-data
             git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
           fi
-          git add price.json
-          if git diff --cached --quiet; then
-            echo "변경 없음 — 커밋 생략"
-            exit 0
-          fi
-          git commit -m "[CI Skip] gold price update $(date -u +%Y-%m-%dT%H:%MZ)"
-          git pull --rebase origin price-data || true
-          git push origin HEAD:price-data
+          for i in 1 2 3; do
+            git fetch --depth=1 origin price-data && git reset -q --hard origin/price-data
+            cp /tmp/price.json price.json
+            if [ -f kgx-quotes.json ]; then
+              node ../scripts/gold/build-gold-json.mjs . || echo "gold.json 생성 실패 — price.json 만 발행"
+            else
+              echo "kgx-quotes.json 없음 — gold.json 생략"
+            fi
+            git add price.json
+            [ -f gold.json ] && git add gold.json
+            if git diff --cached --quiet; then
+              echo "변경 없음 — 커밋 생략"
+              exit 0
+            fi
+            git commit -q -m "[CI Skip] gold price update $(date -u +%Y-%m-%dT%H:%MZ)"
+            if git push origin HEAD:price-data; then
+              echo "push 완료 (시도 $i)"
+              exit 0
+            fi
+            echo "push 거절 — 다른 갱신기와 겹침, 다시 시도 ($i/3)"
+            sleep 5
+          done
+          echo "::error::price-data push 3회 실패"
+          exit 1

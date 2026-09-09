@@ -16,6 +16,7 @@
  */
 
 import { useEffect, useState } from "react";
+import { fetchGold, priceLikeFromGold } from "./goldData";
 
 export const PRICE_URL =
   "https://raw.githubusercontent.com/hyunjun82/moneywiki/price-data/price.json";
@@ -116,7 +117,10 @@ export interface PriceState {
 
 /**
  * 시세를 읽어온다. 페이지를 열어둔 채로도 갱신되도록 10분마다 다시 읽는다.
- * (원본 갱신은 1시간 주기라 그 사이엔 같은 값이 돌아온다.)
+ *
+ * 2026-09-09: 소매 소스가 종로금거래소(price.json) → 한국금거래소(gold.json) 로 바뀌었다.
+ * gold.json 을 먼저 읽어 PriceData 모양으로 바꾸고(goldData.priceLikeFromGold), 그게 없을 때만
+ * 옛 price.json 으로 돌아간다. 화면들은 소스가 바뀐 것을 몰라도 된다.
  */
 export function usePrice(): PriceState {
   const [state, setState] = useState<PriceState>({ data: null, status: "loading" });
@@ -124,11 +128,17 @@ export function usePrice(): PriceState {
   useEffect(() => {
     let alive = true;
 
-    const load = () =>
+    const loadLegacy = (): Promise<PriceData | null> =>
       fetch(PRICE_URL, { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
-        .then((json: PriceData) => {
-          if (alive) setState({ data: normalizePrice(json), status: "ready" });
+        .then((json: PriceData) => normalizePrice(json));
+
+    const load = () =>
+      fetchGold()
+        .then((g) => priceLikeFromGold(g))
+        .catch(() => loadLegacy())
+        .then((data) => {
+          if (alive && data) setState({ data, status: "ready" });
         })
         .catch(() => {
           // 이미 값을 들고 있으면 그 값을 유지한다. 갱신 실패로 화면을 비우지 않는다.

@@ -38,7 +38,8 @@ npm run article -- --batch scripts/batch.txt        # 줄마다: slug | 주제 |
 
 ## 금시세·환율 (`docs/gold-fx-implementation-spec.md`, 허브 목업 `docs/gold-hub-mockup-v2.html`)
 
-- 시세는 `price-data` 브랜치 JSON(price.json·fx.json·kgx-quotes.json)을 브라우저가 읽는다. main 에 시세를 커밋하지 않는다
+- 시세는 `price-data` 브랜치 JSON을 브라우저가 읽는다. main 에 시세를 커밋하지 않는다. **금 화면은 gold.json**(`scripts/gold/build-gold-json.mjs` = kgx-quotes.json + price.json + Yahoo 기준가, PC 수집기와 Actions 양쪽에서 생성), 환율은 fx.json
+- /gold 허브(`HubView.tsx`)는 `docs/gold-hub-mockup-v2.html` 구조 그대로. 살 때·팔 때·계산기는 `usePrice`가 gold.json 을 옛 PriceData 모양으로 바꿔 준다(`goldData.priceLikeFromGold`)
 - 살 때 값은 **부가세 포함**이 규격(`retail.vatIncludedBuy`). 옛 규격이 오면 `priceData.ts`의 `normalizePrice`가 ×1.1 한다. 화면·기사에서 다시 ×1.1 하지 않는다
 - 등락은 **전일 종가 대비**(`prevClose`). Yahoo `chartPreviousClose`는 쓰지 않는다(요청 기간 직전 종가라 5거래일 전 값이 된다)
 - 한국금거래소 API는 해외 IP 403 → `scripts/gold/collect-kgx.ps1`을 **PC 예약 작업**으로(평일 09:30~18:30 30분, 등록 명령은 파일 머리말). GitHub Actions 에 올리지 않는다
