@@ -2,7 +2,7 @@
  * 금시세 일일 기사 생성기 v2.
  *
  * price-data 브랜치의 price.json(자체 갱신기 발행)을 읽어
- * src/data/gold-news/YYYY-MM-DD.json 을 만든다. 매일 아침 6시(KST)
+ * src/data/gold-news/YYYY-MM-DD.json 을 만든다. 평일 10:15 KST 에
  * gold-news 워크플로가 실행하고, main에 커밋되면 Cloudflare Pages가
  * 재빌드하면서 /gold/news/YYYY-MM-DD 페이지가 생긴다.
  *
@@ -12,10 +12,17 @@
  *  - 날짜 기반으로 리드 문장을 순환시켜 매일 글이 달라지게 함
  *  - 살때·팔때 차이율, 1g 환산, 본전 계산 등 데이터에서 파생되는 인사이트
  *
+ * 2026-09-09
+ *  - 살 때 값은 부가세 포함이 규격이다(retail.vatIncludedBuy). 옛 규격(부가세 별도)이 오면
+ *    여기서 ×1.1 한다. 어느 쪽이든 기사와 /gold 화면이 같은 숫자를 쓴다.
+ *  - --require-today: 고시일이 오늘이 아니면 발행하지 않고 exit 3 (전일 숫자가 오늘 기사에
+ *    들어가는 것을 막는다). 워크플로가 10:15·10:45·11:15 에 재시도한다.
+ *  - --price <경로|URL>: 로컬 검증용. 기본은 price-data 브랜치 raw URL.
+ *
  * 원칙: 모든 숫자는 price.json 에서만 온다. 등락의 "이유"처럼 데이터에
  * 없는 주장은 쓰지 않는다. 값이 없는 항목의 문장·섹션은 통째로 생략한다.
  *
- * 사용법: node scripts/gold/generate-news.mjs [출력 디렉토리]
+ * 사용법: node scripts/gold/generate-news.mjs [출력 디렉토리] [--force] [--require-today] [--price <경로|URL>]
  */
 
 import fs from "node:fs";
@@ -23,12 +30,24 @@ import path from "node:path";
 
 const PRICE_URL =
   "https://raw.githubusercontent.com/hyunjun82/moneywiki/price-data/price.json";
-/** 출력 폴더. --force 같은 플래그를 경로로 오인하지 않도록 걸러낸다. */
+
+/* ── 인자 ── */
+const argv = process.argv.slice(2);
+const flagValue = (name) => {
+  const i = argv.indexOf(name);
+  return i >= 0 && i + 1 < argv.length ? argv[i + 1] : null;
+};
+const PRICE_SRC = flagValue("--price") ?? PRICE_URL;
+/** 출력 폴더. 플래그와 플래그 값을 경로로 오인하지 않도록 걸러낸다. */
 const OUT_DIR =
-  process.argv.slice(2).find((a) => !a.startsWith("--")) || "src/data/gold-news";
+  argv.find((a, i) => !a.startsWith("--") && !(i > 0 && argv[i - 1] === "--price")) ||
+  "src/data/gold-news";
+const FORCE = argv.includes("--force");
+const REQUIRE_TODAY = argv.includes("--require-today");
 const GRAM_PER_DON = 3.75;
 
 const won = (n) => Math.round(n).toLocaleString("ko-KR");
+const kstNow = () => new Date(Date.now() + 9 * 3600 * 1000).toISOString().replace("Z", "+09:00");
 const kstDate = () => new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
 const korDate = (iso) => {
   const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || "");
@@ -40,31 +59,38 @@ const outPath = path.join(OUT_DIR, `${today}.json`);
 
 /**
  * 이미 오늘 기사가 있어도, 그 사이 국내 고시가가 새로 나왔으면 숫자를 정정한다.
- *
- * 새벽에는 아직 당일 고시가 없어 전 영업일 값으로 발행된다(언론사도 같은 방식).
- * 오전에 고시가 갱신되면 이 스크립트가 다시 돌면서 같은 날짜 기사를 최신 숫자로
- * 다시 쓴다. 발행 시각은 새벽 그대로 두고 내용만 정확해진다.
+ * 발행 시각(publishedAt)은 처음 것을 유지하고 내용만 정확해진다.
  */
-let existingQuoteDate = null;
+let existing = null;
 if (fs.existsSync(outPath)) {
   try {
-    existingQuoteDate = JSON.parse(fs.readFileSync(outPath, "utf8")).quoteDate ?? null;
+    existing = JSON.parse(fs.readFileSync(outPath, "utf8"));
   } catch {
-    existingQuoteDate = null;
+    existing = null;
   }
 }
+const existingQuoteDate = existing?.quoteDate ?? null;
 
-const res = await fetch(PRICE_URL, { signal: AbortSignal.timeout(20000) });
-if (!res.ok) throw new Error(`price.json HTTP ${res.status}`);
-const data = await res.json();
+/* ── price.json ── */
+let data;
+if (/^https?:/.test(PRICE_SRC)) {
+  const res = await fetch(PRICE_SRC, { signal: AbortSignal.timeout(20000) });
+  if (!res.ok) throw new Error(`price.json HTTP ${res.status}`);
+  data = await res.json();
+} else {
+  data = JSON.parse(fs.readFileSync(PRICE_SRC, "utf8"));
+  console.log(`--price: 로컬 파일 사용 ${PRICE_SRC}`);
+}
 
 const incomingQuoteDate = data?.retail?.quoteDate ?? null;
-/**
- * --force: 고시일이 그대로여도 기사를 다시 쓴다.
- * 생성기 문장·계산을 고친 날, 이미 발행된 오늘 기사에도 수정본을 반영할 때 쓴다.
- * 예약 실행에는 붙지 않으므로 평소 동작은 그대로다.
- */
-const FORCE = process.argv.includes("--force");
+
+if (REQUIRE_TODAY && incomingQuoteDate !== today) {
+  console.log(
+    `당일 고시 아직 없음 — 고시일 ${incomingQuoteDate ?? "없음"} ≠ 오늘 ${today}. 발행하지 않음 (exit 3)`
+  );
+  process.exit(3);
+}
+
 if (FORCE) console.log("--force: 기존 기사가 있어도 다시 생성합니다");
 if (existingQuoteDate !== null && !FORCE) {
   if (incomingQuoteDate && incomingQuoteDate !== existingQuoteDate) {
@@ -80,11 +106,25 @@ if (existingQuoteDate !== null && !FORCE) {
 const items = data?.retail?.items ?? [];
 const find = (k) => items.find((it) => it.key === k);
 const g24 = find("gold24");
-const buy = g24?.userBuy;
+const buyRaw = g24?.userBuy;
 const sell = g24?.userSell;
-if (!buy?.price || !sell?.price) {
+if (!buyRaw?.price || !sell?.price) {
   throw new Error("순금 24K 살 때/팔 때 값이 없음 — 기사 생성 중단");
 }
+
+/* ── 살 때: 부가세 포함(실제 결제액)으로 통일 ──
+ * 갱신기가 vatIncludedBuy: true 면 그대로, 옛 규격(부가세 별도 원문)이면 여기서 ×1.1.
+ * 부가세를 뺀 원문 고시가는 buyEx 로 따로 둔다(국제 시세와 비교할 때 쓴다). */
+const VAT_INCL = data.retail?.vatIncludedBuy === true;
+const inclOf = (q) => (VAT_INCL ? q.price : Math.round(q.price * 1.1));
+const buy = {
+  price: inclOf(buyRaw),
+  change: VAT_INCL ? buyRaw.change : Math.round(buyRaw.change * 1.1),
+  dir: buyRaw.dir,
+};
+const buyIncl = buy.price;
+const buyEx = VAT_INCL ? (buyRaw.priceExVat ?? Math.round(buyRaw.price / 1.1)) : buyRaw.price;
+const vatWon = buyIncl - buyEx;
 
 const kd = korDate(today);
 const quoteKd = korDate(data.retail?.quoteDate) || kd;
@@ -104,13 +144,11 @@ const pctOf = (q) => {
 const buyPct = pctOf(buy);
 const sellPct = pctOf(sell);
 
-/** 살 때 고시가는 부가세 별도다. 소비자가 실제 결제하는 금액은 10%가 더해진 값. */
-const buyIncl = Math.round(buy.price * 1.1);
-const gap = buy.price - sell.price;                 // 고시가끼리의 차이(부가세 별도)
-const gapPct = ((gap / buy.price) * 100).toFixed(1);
+const gap = buyEx - sell.price;                     // 부가세 뺀 고시가끼리의 차이
+const gapPct = ((gap / buyEx) * 100).toFixed(1);
 const realGap = buyIncl - sell.price;               // 소비자가 체감하는 실제 간격
 const realGapPct = ((realGap / buyIncl) * 100).toFixed(1);
-const buyPerGram = won(buy.price / GRAM_PER_DON);
+const buyPerGram = won(buyIncl / GRAM_PER_DON);
 const sellPerGram = won(sell.price / GRAM_PER_DON);
 
 const moveWord = (q) =>
@@ -122,9 +160,6 @@ const moveConn = (q) =>
   q.change === 0 || q.dir === "none"
     ? "전일과 같고"
     : `${won(Math.abs(q.change))}원 ${q.dir === "up" ? "올랐고" : "내렸고"}`;
-/** "24,000원 내렸다(2.95%)" 형태 */
-const moveFull = (q, p) =>
-  q.change === 0 || q.dir === "none" ? "전일과 같다" : `${moveWord(q)}${p ? `(${p}%)` : ""}`;
 /**
  * 살 때·팔 때 등락을 한 문장으로. 방향이 같으면 동사를 한 번만 써서
  * "…내렸다"가 두 번 반복되는 어색함을 없앤다.
@@ -147,12 +182,11 @@ const moveBoth = () => {
 
 /* ── 리드: 날짜에 따라 순환 (매일 같은 문장 반복 방지) ── */
 const LEADS = [
-  `${kd} 순금 24K 한 돈은 살 때 ${won(buy.price)}원, 팔 때 ${won(sell.price)}원이다. ` +
-    `살 때 고시가는 부가세가 빠진 금액이라 매장에서 실제 내는 돈은 ${won(buyIncl)}원이고, ` +
-    `같은 금을 오늘 팔면 ${won(sell.price)}원을 받는다. 두 금액이 ${won(realGap)}원이나 ` +
-    `벌어지는 이유부터 정리했다.`,
+  `${kd} 순금 24K 한 돈은 살 때 ${won(buyIncl)}원(부가세 포함), 팔 때 ${won(sell.price)}원이다. ` +
+    `살 때 값에는 부가세 ${won(vatWon)}원이 들어 있고, 같은 금을 오늘 팔면 ${won(sell.price)}원을 ` +
+    `받는다. 두 금액이 ${won(realGap)}원이나 벌어지는 이유부터 정리했다.`,
   `금을 사려는 사람과 팔려는 사람이 보는 숫자는 다르다. ${kd} 기준 순금 한 돈은 ` +
-    `살 때 ${won(buy.price)}원(부가세 포함 ${won(buyIncl)}원), 팔 때 ${won(sell.price)}원이다. ` +
+    `살 때 ${won(buyIncl)}원(부가세 포함), 팔 때 ${won(sell.price)}원이다. ` +
     `전일과 비교하면 살 때는 ${moveConn(buy)} 팔 때는 ${moveWord(sell)}.`,
   `${kd} 순금 한 돈 매입가는 ${won(sell.price)}원이다. 반지든 골드바든 오늘 팔면 이 값이 ` +
     `기준이 되고, 반대로 사려면 부가세까지 ${won(buyIncl)}원이 든다. 18K·14K 매입가와 ` +
@@ -170,11 +204,11 @@ const sections = [];
   sections.push({
     heading: `순금 한 돈 살 때 ${won(buyIncl)}원, 팔 때 ${won(sell.price)}원`,
     paragraphs: [
-      `종로금거래소 ${quoteKd} 고시 기준 순금(24K) 1돈(3.75g)은 살 때 ${won(buy.price)}원, ` +
+      `종로금거래소 ${quoteKd} 고시 기준 순금(24K) 1돈(3.75g)은 살 때 ${won(buyIncl)}원(부가세 포함), ` +
         `팔 때 ${won(sell.price)}원이다. ${moveBoth()}.`,
-      `여기서 살 때 ${won(buy.price)}원은 부가가치세가 빠진 고시가다. 매장에서 실제 결제하는 ` +
-        `금액은 부가세 10%가 더해진 ${won(buyIncl)}원이다. 다른 곳에서 본 시세와 숫자가 ` +
-        `다르다면 대개 이 기준 차이 때문이다. 그램으로 환산하면 1g당 살 때 ${buyPerGram}원, ` +
+      `살 때 ${won(buyIncl)}원은 부가가치세 10%(${won(vatWon)}원)를 포함한 실제 결제 금액이다. ` +
+        `부가세를 뺀 고시가는 ${won(buyEx)}원이다. 다른 곳에서 본 시세와 숫자가 다르다면 대개 ` +
+        `부가세 포함 여부 차이 때문이다. 그램으로 환산하면 1g당 살 때 ${buyPerGram}원, ` +
         `팔 때 ${sellPerGram}원이라 소량 거래는 그램 기준으로 따져보는 편이 정확하다.`,
     ],
   });
@@ -213,8 +247,8 @@ const sections = [];
 
     paras.push(
       `국내 금값은 국제 금값과 원/달러 환율 두 가지로 움직인다. 달러로 매겨진 금값에 ` +
-        `환율을 곱해야 원화 값이 나오기 때문이다. 오늘은 국제 금값이 ${abs1(intlPct)}% ` +
-        `${signVerb(intlPct)} 원/달러 환율도 ${fxWon}원(${abs1(fxPct)}%) ` +
+        `환율을 곱해야 원화 값이 나오기 때문이다. 오늘은 국제 금값이 전일 대비 ${abs1(intlPct)}% ` +
+        `${signVerb(intlPct)} 원/달러 환율도 전일 종가보다 ${fxWon}원(${abs1(fxPct)}%) ` +
         `${sign(fxPct)}했다.`
     );
 
@@ -230,7 +264,7 @@ const sections = [];
     paras.push(
       `두 변동을 곱하면 원화 기준 금값은 이론상 ${pctStr(theory)} 수준이 된다. 실제 ` +
         `종로금거래소 고시가는 ${pctStr(actual)}로, ${compareWord}. 국제 시세는 24시간 ` +
-        `움직이지만 국내 고시가는 하루 한 번 정해지므로 반영에 시차가 있고, 국내 실물 수급도 ` +
+        `움직이지만 국내 고시가는 하루 몇 차례만 정해지므로 반영에 시차가 있고, 국내 실물 수급도 ` +
         `이 차이에 함께 반영된다.`
     );
 
@@ -283,9 +317,9 @@ const sections = [];
       heading: `백금 ${won(pt.userSell.price)}원 · 은 ${won(ag.userSell.price)}원`,
       paragraphs: [
         `백금 1돈 매입가는 ${won(pt.userSell.price)}원` +
-          `${pt.userBuy?.price ? `, 살 때는 ${won(pt.userBuy.price)}원(부가세 별도)` : ""}이다. ` +
+          `${pt.userBuy?.price ? `, 살 때는 ${won(inclOf(pt.userBuy))}원(부가세 포함)` : ""}이다. ` +
           `은 1돈은 매입가 ${won(ag.userSell.price)}원` +
-          `${ag.userBuy?.price ? `, 살 때 ${won(ag.userBuy.price)}원(부가세 별도)` : ""}으로 ` +
+          `${ag.userBuy?.price ? `, 살 때 ${won(inclOf(ag.userBuy))}원(부가세 포함)` : ""}으로 ` +
           `단가가 낮아 그램이나 킬로그램 단위로 거래되는 경우가 많다.`,
         `여기 매입가는 일반 백금·은 제품을 기준으로 고시된 값이다. 업체가 자사 브랜드 ` +
           `바(bar)를 되사는 가격은 따로 두는 곳이 있어, 다른 곳에서 더 높은 매입가를 봤다면 ` +
@@ -312,13 +346,13 @@ const sections = [];
   }
   if (ig?.usdPerOz && data.fx?.usdkrw) {
     const dirWord = ig.dir === "up" ? "올랐다" : ig.dir === "down" ? "내렸다" : "보합이다";
-    const overPct = ig.krwPerDon ? (((buy.price / ig.krwPerDon) - 1) * 100).toFixed(1) : null;
+    const overPct = ig.krwPerDon ? (((buyEx / ig.krwPerDon) - 1) * 100).toFixed(1) : null;
     paras.push(
       `국제 금값은 COMEX 선물 기준 트로이온스당 ${ig.usdPerOz.toLocaleString("en-US")}달러로 ` +
         `전일 대비 ${Math.abs(ig.changePct)}% ${dirWord}. 원/달러 환율 ${won(data.fx.usdkrw)}원을 ` +
         `적용해 한 돈으로 환산하면 약 ${won(ig.krwPerDon)}원이다.` +
-        (overPct ? ` 오늘 국내 고시가(부가세 별도)는 이보다 ${overPct}% 높은 수준이다.` : "") +
-        ` 국내가 더 비싼 것은 유통 마진과 부가가치세가 붙기 때문이고, 이 격차가 평소보다 ` +
+        (overPct ? ` 부가세를 뺀 국내 고시가 ${won(buyEx)}원은 이보다 ${overPct}% 높은 수준이다.` : "") +
+        ` 국내가 더 비싼 것은 유통 마진이 붙기 때문이고, 이 격차가 평소보다 ` +
         `벌어졌는지가 매수 시점을 재는 참고가 된다.`
     );
   }
@@ -335,12 +369,12 @@ const sections = [];
 // 5. 실제 간격 + 계산기 안내
 {
   sections.push({
-    heading: `부가세까지 넣으면 실제 차이는 ${won(realGap)}원`,
+    heading: `사자마자 팔면 ${won(realGap)}원(${realGapPct}%)이 사라진다`,
     paragraphs: [
-      `오늘 사서 오늘 되판다고 가정해 보자. 실제 결제액 ${won(buyIncl)}원에 매입가 ` +
+      `오늘 사서 오늘 되판다고 가정해 보자. 결제액 ${won(buyIncl)}원에 매입가 ` +
         `${won(sell.price)}원이니 한 돈에 ${won(realGap)}원, 약 ${realGapPct}%가 비용으로 남는다. ` +
         `실물 금은 시세가 이만큼 오른 뒤에야 본전이라는 뜻이다.`,
-      `고시가끼리만 비교하면 차이가 ${won(gap)}원(${gapPct}%)으로 보인다. 하지만 살 때는 ` +
+      `부가세를 뺀 고시가끼리만 비교하면 차이가 ${won(gap)}원(${gapPct}%)으로 보인다. 하지만 살 때는 ` +
         `부가세를 내고 팔 때는 돌려받지 못하므로, 실제로 체감하는 간격은 위쪽 숫자다. 시세 ` +
         `그래프만 보고 판단하면 이 부분을 놓치기 쉽다.`,
       `내 금이 실제 얼마인지는 중량과 순도에 따라 달라진다. 아래 금 계산기에 무게를 넣으면 ` +
@@ -349,15 +383,42 @@ const sections = [];
   });
 }
 
+/* ── 기사 안의 시세 스냅샷도 부가세 포함으로 맞춘다 (화면 표가 본문과 같은 숫자를 쓰도록) ── */
+const retailSnapshot = data.retail
+  ? {
+      ...data.retail,
+      vatIncludedBuy: true,
+      note: VAT_INCL
+        ? data.retail.note
+        : "살 때 가격은 부가세 10%를 포함한 실제 결제 금액입니다(원문 고시가에 부가세를 더한 값).",
+      items: items.map((it) =>
+        it.userBuy && !VAT_INCL
+          ? {
+              ...it,
+              userBuy: {
+                price: inclOf(it.userBuy),
+                change: Math.round(it.userBuy.change * 1.1),
+                dir: it.userBuy.dir,
+                priceExVat: it.userBuy.price,
+                changeExVat: it.userBuy.change,
+              },
+            }
+          : it
+      ),
+    }
+  : null;
+
 const doc = {
   date: today,
   title: `오늘의 금시세(금값) 살 때 팔 때 계산기까지 — ${kd}`,
   description:
-    `${kd} 순금 24K 한 돈 살 때 ${won(buy.price)}원(부가세 포함 ${won(buyIncl)}원), ` +
+    `${kd} 순금 24K 한 돈 살 때 ${won(buyIncl)}원(부가세 포함), ` +
     `팔 때 ${won(sell.price)}원. 18K·14K 매입가와 KRX 도매 종가, 국제 금값, 금 계산기까지 한 번에 확인하세요.`,
+  /** 처음 발행한 시각. 정정해도 유지한다(JSON-LD datePublished). */
+  publishedAt: existing?.publishedAt ?? kstNow(),
   updatedAt: data.updatedAt ?? null,
   quoteDate: data.retail?.quoteDate ?? today,
-  retail: data.retail ?? null,
+  retail: retailSnapshot,
   krx: data.krx?.latest ? { latest: data.krx.latest, note: data.krx?.note ?? null } : null,
   fx: data.fx ?? null,
   intl: data.intl ?? null,
@@ -366,15 +427,17 @@ const doc = {
   // 구버전 렌더러 호환: 섹션을 평문단으로도 펼쳐둔다
   paragraphs: [lead, ...sections.flatMap((s) => s.paragraphs)],
   sources: [
-    "종로금거래소 고시가 (https://www.jongrogx.com)",
+    "종로금거래소 고시가 (https://www.jongrogx.com) — 살 때는 부가세 10% 포함으로 환산",
     "한국거래소 KRX 금시장 — 금융위원회·공공데이터포털",
-    "국제 시세·환율 — Yahoo Finance",
+    "국제 시세·환율 — Yahoo Finance (전일 종가 대비)",
   ],
 };
 
 fs.mkdirSync(OUT_DIR, { recursive: true });
 fs.writeFileSync(outPath, JSON.stringify(doc, null, 2) + "\n", "utf8");
-console.log(`생성: ${outPath} (섹션 ${sections.length}개)`);
+console.log(
+  `생성: ${outPath} (섹션 ${sections.length}개, 살 때 ${won(buyIncl)}원 부가세 포함, 팔 때 ${won(sell.price)}원)`
+);
 
 /* 카페 원고(.md) 생성은 제거했습니다 — 카페 글은 직접 작성하십니다.
  * 기존 cafe-YYYY-MM-DD.md 파일은 건드리지 않습니다. */

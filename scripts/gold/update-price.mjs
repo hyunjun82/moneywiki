@@ -5,13 +5,16 @@
  *   DATA_GO_KR_KE=<키> node scripts/gold/update-price.mjs <이전파일경로> <출력파일경로>
  *
  * 출처 (quiz.jjyu.co.kr/price.json 과 동일 규격):
- *  - retail : 종로금거래소 http://www.jongrogx.com/  (내가팔때/내가살때, 살때는 VAT별도)
+ *  - retail : 종로금거래소 http://www.jongrogx.com/  (내가팔때/내가살때)
+ *             원문의 살 때는 부가세 별도다. 여기서 ×1.1 해 부가세 포함으로 저장한다 (2026-09-09).
+ *             원문 값은 priceExVat/changeExVat 에 남기고 retail.vatIncludedBuy: true 로 표시한다.
  *  - krx    : 공공데이터포털 금융위원회_일반상품시세정보 getGoldPriceInfo (하루 1회만 호출)
- *  - fx/intl: Yahoo Finance (KRW=X, GC=F, SI=F)
+ *  - fx/intl: Yahoo Finance (KRW=X, GC=F, SI=F) — 등락은 전일 종가 대비 (prevClose)
  *
  * 원칙:
  *  - 어떤 소스가 실패하면 그 섹션은 이전 값을 유지한다. 검증 안 된 값을 쓰지 않는다.
  *  - retail 순금 24K가 비정상(누락·10만원 미만)이면 파일을 덮어쓰지 않고 실패로 종료한다.
+ *  - 살 때 값에 부가세를 더하는 곳은 여기 한 곳뿐이다. 화면·기사에서 다시 ×1.1 하지 않는다.
  */
 
 const GRAM_PER_DON = 3.75;
@@ -103,12 +106,29 @@ async function fetchRetail() {
     throw new Error("retail: gold24 값이 비정상 — 페이지 구조 변경 가능성");
   }
 
+  /* 살 때는 부가세 포함 값으로 저장한다.
+   * 종로 원문은 부가세 별도 고시라 소비자 결제액과 다르다. 화면과 기사가 제각각 ×1.1 을
+   * 하다 /gold 는 756,000원, 기사는 831,600원으로 어긋났다. 데이터 계층에서 한 번만 바꾼다. */
+  for (const it of items) {
+    const b = it.userBuy;
+    if (!b) continue;
+    it.userBuy = {
+      price: Math.round(b.price * 1.1),
+      change: Math.round(b.change * 1.1),
+      dir: b.dir,
+      priceExVat: b.price,
+      changeExVat: b.change,
+    };
+  }
+
   return {
     source: "종로금거래소",
     sourceUrl: "https://www.jongrogx.com/",
     quoteDate,
     unit: "원/돈",
-    note: "내가 살 때 가격은 원문에 부가세 별도로 표기되어 있습니다.",
+    /** 살 때(userBuy.price)가 부가세 포함 금액이라는 표시. 화면은 이 값을 보고 다시 곱하지 않는다. */
+    vatIncludedBuy: true,
+    note: "살 때 가격은 부가세 10%를 포함한 실제 결제 금액입니다(종로금거래소 원문 고시가에 부가세를 더한 값).",
     items,
   };
 }
@@ -163,17 +183,48 @@ async function fetchKrx(prevKrx) {
 
 /* ───────────── 3. fx / intl: Yahoo Finance ───────────── */
 
+/**
+ * 현재가와 전일 종가 대비 등락.
+ *
+ * 전일 종가는 일별 종가 목록에서 마지막 거래일 바로 앞 값을 쓴다. meta.chartPreviousClose 는
+ * "요청 기간(5d) 직전의 종가"라 6거래일 전 값이 되어 환율 등락이 3배로 부풀려졌다 (2026-09-09).
+ */
 async function yahooQuote(symbol) {
   const j = await getJson(
     `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?range=5d&interval=1d`
   );
-  const meta = j?.chart?.result?.[0]?.meta;
-  const price = meta?.regularMarketPrice;
-  const prev = meta?.chartPreviousClose ?? meta?.previousClose;
+  const res = j?.chart?.result?.[0];
+  const price = res?.meta?.regularMarketPrice;
   if (!Number.isFinite(price)) throw new Error(`yahoo ${symbol}: 가격 없음`);
-  const change = Number.isFinite(prev) ? price - prev : 0;
-  const changePct = Number.isFinite(prev) && prev ? (change / prev) * 100 : 0;
-  return { price, change, changePct };
+
+  const ts = Array.isArray(res?.timestamp) ? res.timestamp : [];
+  const closes = Array.isArray(res?.indicators?.quote?.[0]?.close) ? res.indicators.quote[0].close : [];
+  const pts = ts
+    .map((t, i) => ({
+      date: new Date((t + 9 * 3600) * 1000).toISOString().slice(0, 10), // KST 기준일
+      close: closes[i],
+    }))
+    .filter((p) => Number.isFinite(p.close));
+
+  let prevPt = null;
+  if (pts.length >= 2) {
+    const lastDate = pts[pts.length - 1].date;
+    for (let i = pts.length - 1; i >= 0; i--) {
+      if (pts[i].date < lastDate) {
+        prevPt = pts[i];
+        break;
+      }
+    }
+  }
+  const prev = prevPt?.close ?? null;
+  const change = prev ? price - prev : 0;
+  const changePct = prev ? (change / prev) * 100 : 0;
+  return {
+    price,
+    change,
+    changePct,
+    prevClose: prevPt ? { date: prevPt.date, price: Math.round(prevPt.close * 100) / 100 } : null,
+  };
 }
 
 function dirOf(change) {
@@ -196,6 +247,8 @@ async function fetchFxIntl() {
       usdPerOz: Math.round(q.price * 100) / 100,
       changePct: Math.round(q.changePct * 100) / 100,
       dir: dirOf(q.change),
+      changeBasis: "prevClose",
+      prevClose: q.prevClose,
       krwPerGram,
       krwPerDon: Math.round(krwPerGram * GRAM_PER_DON),
       source,
@@ -208,6 +261,9 @@ async function fetchFxIntl() {
       change: Math.round(fx.change * 100) / 100,
       changePct: Math.round(fx.changePct * 100) / 100,
       dir: dirOf(fx.change),
+      /** 등락의 분모 — 전일 종가 */
+      changeBasis: "prevClose",
+      prevClose: fx.prevClose ? { date: fx.prevClose.date, rate: fx.prevClose.price } : null,
       source: "Yahoo Finance (KRW=X)",
     },
     intl: {

@@ -70,8 +70,9 @@ export default async function GoldNewsPage({
     "@context": "https://schema.org",
     "@type": "NewsArticle",
     headline: doc.title,
-    datePublished: `${doc.date}T06:00:00+09:00`,
-    dateModified: doc.updatedAt ?? `${doc.date}T06:00:00+09:00`,
+    // 2026-09-09 이후 기사는 실제 발행 시각(publishedAt)을 갖는다. 옛 기사는 06:00 발행분.
+    datePublished: doc.publishedAt ?? `${doc.date}T06:00:00+09:00`,
+    dateModified: doc.updatedAt ?? doc.publishedAt ?? `${doc.date}T06:00:00+09:00`,
     author: { "@type": "Organization", name: "머니위키" },
     publisher: { "@type": "Organization", name: "머니위키" },
     mainEntityOfPage: `https://www.jjyu.co.kr/gold/news/${doc.date}`,

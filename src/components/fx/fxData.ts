@@ -10,7 +10,8 @@
  * 얼어붙는 문제도 있다.
  *
  * 출처(갱신기가 채운다):
- *   rates — 한국수출입은행 환율 API (매매기준율·현찰 살 때/팔 때)
+ *   rates — Yahoo Finance 시장 중간환율. 등락(change·changePct)은 전일 종가(prevClose) 대비다
+ *           (2026-09-09). official — 한국수출입은행 매매기준율(키가 있을 때만)
  *   banks — 은행연합회 외환길잡이 (환전수수료율·기본/최대우대율·기준일)
  *            exchange.kfb.or.kr. 카카오·토스 등 인터넷은행은 이 공시에
  *            없으므로 확인되지 않으면 목록에 넣지 않는다.
@@ -39,11 +40,15 @@ export interface FxRate {
   unit: number;
   /** 고시 단위 기준 원화 (unit이 100이면 100단위 값) */
   rate: number;
-  /** 전일 대비 원화 */
+  /** 전일 종가 대비 원화 */
   change?: number;
-  /** 전일 대비 % */
+  /** 전일 종가 대비 % */
   changePct?: number;
-  dir?: "up" | "down" | "flat";
+  dir?: "up" | "down" | "flat" | "none";
+  /** 등락의 분모 — "prevClose"(전일 종가). 없으면 옛 갱신기 값(5거래일 전 대비)이다. */
+  changeBasis?: string;
+  /** 전일 종가 {date, rate} — 화면에 "9월 8일 종가 대비" 로 표기한다 */
+  prevClose?: { date: string; rate: number } | null;
   /** 차트용 과거 시세. 과거 → 최신, 최대 370일 */
   history?: { date: string; rate: number }[];
   /** 여행지 묶음 — "일본·중화권" */
@@ -89,6 +94,8 @@ export interface FxData {
   base?: string;
   source?: string;
   note?: string;
+  /** 갱신기가 전일 종가 기준으로 등락을 계산했음을 뜻하는 "prevClose" */
+  changeBasis?: string;
   rates?: FxRate[];
   official?: FxOfficial | null;
   banks?: FxBanks | null;
@@ -187,6 +194,12 @@ export function fxColor(change: number | undefined | null): string {
 export function changeText(changePct: number | undefined | null): string {
   if (typeof changePct !== "number" || changePct === 0) return "0.00%";
   return `${changePct > 0 ? "▲" : "▼"} ${Math.abs(changePct).toFixed(2)}%`;
+}
+
+/** "전일 종가(9월 8일 1,343.57원) 대비" — 등락의 분모를 화면에 밝힌다 */
+export function prevCloseLabel(r: FxRate | undefined): string {
+  if (!r?.prevClose) return "전일 대비";
+  return `전일 종가(${korDate(r.prevClose.date)} ${won(r.prevClose.rate, 2)}원) 대비`;
 }
 
 /** 통화 이름에서 나라를 앞 토막으로 뽑는다 — "미국 달러" → "미국" */

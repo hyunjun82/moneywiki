@@ -34,8 +34,12 @@ export type Dir = "up" | "down" | "none";
 
 export interface Quote {
   price: number;
+  /** 전일 대비 변동 — 절댓값. 방향은 dir 이 갖는다. */
   change: number;
   dir: Dir;
+  /** 살 때에만: 부가세를 뺀 원문 고시가 (갱신기 또는 normalizePrice 가 채운다) */
+  priceExVat?: number;
+  changeExVat?: number;
 }
 
 export interface RetailItem {
@@ -43,7 +47,7 @@ export interface RetailItem {
   name: string;
   /** 사용자가 금을 팔고 받는 돈 */
   userSell: Quote | null;
-  /** 사용자가 금을 사며 내는 돈 (부가세 별도) */
+  /** 사용자가 금을 사며 내는 돈 — 부가세 10% 포함 (normalizePrice 가 보장한다) */
   userBuy: Quote | null;
 }
 
@@ -74,6 +78,8 @@ export interface PriceData {
     quoteDate?: string;
     unit?: string;
     note?: string;
+    /** true 면 userBuy.price 가 이미 부가세 포함이다. 없거나 false 면 옛 규격(부가세 별도). */
+    vatIncludedBuy?: boolean;
     items?: RetailItem[];
   };
   krx?: {
@@ -90,6 +96,9 @@ export interface PriceData {
     change?: number;
     changePct?: number;
     dir?: Dir;
+    /** 등락의 분모 — "prevClose"(전일 종가) */
+    changeBasis?: string;
+    prevClose?: { date: string; rate: number } | null;
     source?: string;
   };
   intl?: {
@@ -119,7 +128,7 @@ export function usePrice(): PriceState {
       fetch(PRICE_URL, { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
         .then((json: PriceData) => {
-          if (alive) setState({ data: json, status: "ready" });
+          if (alive) setState({ data: normalizePrice(json), status: "ready" });
         })
         .catch(() => {
           // 이미 값을 들고 있으면 그 값을 유지한다. 갱신 실패로 화면을 비우지 않는다.
@@ -135,6 +144,65 @@ export function usePrice(): PriceState {
   }, []);
 
   return state;
+}
+
+/** 살 때 값이 부가세 포함이라는 안내. 갱신기가 note 를 주지 않을 때 화면이 쓴다. */
+export const VAT_NOTE =
+  "살 때 가격은 부가세 10%를 포함한 실제 결제 금액입니다(원문 고시가에 부가세를 더한 값).";
+
+/**
+ * 살 때 값을 부가세 포함으로 통일한다 (2026-09-09).
+ *
+ * 갱신기가 retail.vatIncludedBuy: true 로 발행하면 그대로 쓰고, 옛 규격(부가세 별도 원문)이면
+ * 여기서 ×1.1 한다. 갱신기와 화면 중 어느 쪽이 먼저 배포되든 화면은 항상 실제 결제 금액을
+ * 보여주고, 두 번 곱하는 일도 없다. 원문 값은 priceExVat/changeExVat 에 남긴다.
+ */
+export function normalizePrice(data: PriceData | null): PriceData | null {
+  const retail = data?.retail;
+  if (!data || !retail || retail.vatIncludedBuy === true || !retail.items) return data;
+  const items = retail.items.map((it) => {
+    const b = it.userBuy;
+    if (!b) return it;
+    return {
+      ...it,
+      userBuy: {
+        price: Math.round(b.price * 1.1),
+        change: Math.round((b.change ?? 0) * 1.1),
+        dir: b.dir,
+        priceExVat: b.price,
+        changeExVat: b.change,
+      },
+    };
+  });
+  return { ...data, retail: { ...retail, vatIncludedBuy: true, note: VAT_NOTE, items } };
+}
+
+/** 전일 고시가. 갱신기는 등락을 절댓값+방향으로 주므로 방향에 따라 더하거나 뺀다. */
+export function prevPrice(q: Quote | null | undefined): number | null {
+  if (!q || !Number.isFinite(q.price)) return null;
+  const c = Math.abs(q.change ?? 0);
+  if (q.dir === "down") return q.price + c;
+  if (q.dir === "up") return q.price - c;
+  return q.price;
+}
+
+/**
+ * 전일 대비 등락률(%) — 분모는 전일 고시가, 부호는 방향을 따른다.
+ * (예전 화면은 change/(price−change) 로 계산해 하락일에 분모가 작아져 1.29% 처럼 부풀려졌다.
+ *  9,000/714,000 = 1.26% 가 맞다.) 보합·값 없음은 null.
+ */
+export function changePct(q: Quote | null | undefined): number | null {
+  const p = prevPrice(q);
+  if (!q || p === null || p <= 0 || !q.change || q.dir === "none") return null;
+  const pct = (Math.abs(q.change) / p) * 100;
+  return q.dir === "down" ? -pct : pct;
+}
+
+/** 배지용 "▼ 9,000 (1.26%)" — 방향 기호 + 변동액 + 등락률 */
+export function changeBadgeText(q: Quote | null | undefined): string {
+  if (!q || !q.change || q.dir === "none") return "";
+  const pct = changePct(q);
+  return `${dirMark(q.dir)} ${won(Math.abs(q.change))}${pct !== null ? ` (${Math.abs(pct).toFixed(2)}%)` : ""}`;
 }
 
 /** 소매 품목을 key로 찾는다. */

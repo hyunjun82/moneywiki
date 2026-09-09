@@ -96,3 +96,6 @@ _drafts/
 scripts/drafts/
 scripts/reports/
 scripts/.no-mcp.json
+
+# price-data 브랜치 로컬 체크아웃 (수집기 로컬 실행용) — main 에 시세를 커밋하지 않는다
+/price-data/

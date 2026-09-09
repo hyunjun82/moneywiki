@@ -16,7 +16,8 @@ import {
   type TableRow,
 } from "./ui";
 import {
-  dirMark,
+  VAT_NOTE,
+  changeBadgeText,
   gold24,
   korDate,
   korDateTime,
@@ -53,8 +54,8 @@ export default function BuyView() {
 
   const tips = [
     gap && gapPct
-      ? `살 때 가격은 부가세 별도로 고시된 값이며, 오늘 팔 때 가격과 ${won(gap)}원(살 때 대비 ${gapPct.toFixed(1)}%) 차이가 납니다.`
-      : "살 때 가격은 부가세 별도로 고시된 값이라 실제 결제 금액은 이보다 높아집니다.",
+      ? `살 때 가격은 부가세 10%가 포함된 실제 결제 금액이며, 오늘 팔 때 가격과 ${won(gap)}원(살 때 대비 ${gapPct.toFixed(1)}%) 차이가 납니다. 사자마자 팔면 이만큼 사라집니다.`
+      : "살 때 가격은 부가세 10%가 포함된 실제 결제 금액입니다.",
     "골드바는 세공비가 없어 반지·목걸이보다 매입 시 손실이 적습니다.",
     "18K·14K는 순도 환산으로 계산되며 매장별 매입률이 다릅니다.",
   ];
@@ -64,11 +65,11 @@ export default function BuyView() {
       <Hero
         eyebrow="BUY GOLD · 살 때"
         title="금 살 때 가격"
-        lead="소비자가 매장에서 금을 구입할 때 지불하는 가격입니다. 고시가는 부가세 별도 기준이며, 공임은 제품에 따라 추가됩니다."
+        lead="소비자가 매장에서 금을 구입할 때 지불하는 가격입니다. 부가세 10%가 포함된 실제 결제 금액이며, 공임은 제품에 따라 추가됩니다."
         aside={
           <div className="bg-[linear-gradient(145deg,#F7E7B0_0%,#E3C15C_32%,#D4AF37_66%,#A8801A_100%)] rounded-[22px] p-7 flex flex-col gap-3.5 shadow-[0_24px_50px_rgba(0,0,0,.35)]">
             <span className="text-[13px] font-bold tracking-[0.06em] text-[#4A3400]">
-              순금 24K · 1돈(3.75g) 살 때
+              순금 24K · 1돈(3.75g) 살 때 · VAT 포함
             </span>
             {buy ? (
               <>
@@ -84,14 +85,11 @@ export default function BuyView() {
                       className="bg-[#17181C] text-[14px] font-bold px-3 py-1.5 rounded-full tabular-nums"
                       style={{ color: buy.dir === "down" ? "#93B4FF" : "#FFB3A7" }}
                     >
-                      {dirMark(buy.dir)} {won(Math.abs(buy.change))}
-                      {buy.price - buy.change > 0
-                        ? ` (${((buy.change / (buy.price - buy.change)) * 100).toFixed(2)}%)`
-                        : ""}
+                      {changeBadgeText(buy)}
                     </span>
                   ) : null}
                   <span className="text-[14px] font-medium text-[#4A3400]">
-                    {retail?.quoteDate ? `${korDate(retail.quoteDate)} 기준` : ""}
+                    {retail?.quoteDate ? `${korDate(retail.quoteDate)} 고시 · 전일 대비` : ""}
                   </span>
                 </div>
               </>
@@ -109,7 +107,7 @@ export default function BuyView() {
           <SectionHead title="품목별 살 때 가격" />
           <PriceTable head="품목" rows={rows} lastLabel="전일비" />
           <span className="text-[14px] text-[#9CA1A8]">
-            {retail?.note ?? "고시가는 부가세 별도입니다."} 세공비는 디자인에 따라 추가됩니다.
+            {retail?.note ?? VAT_NOTE} 세공비는 디자인에 따라 추가됩니다.
           </span>
         </Card>
 

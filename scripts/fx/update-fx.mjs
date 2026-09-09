@@ -10,6 +10,14 @@
  *  - 공식 매매기준율: 한국수출입은행 현재환율 API (EXIM_API_KEY 가 있을 때만).
  *    영업일 11시 전후 1회 갱신, 일 1,000회 제한이라 하루 1회만 호출한다.
  *
+ * 등락(change·changePct)은 전일 종가 대비다 (2026-09-09).
+ *  - Yahoo meta.chartPreviousClose 는 "요청한 기간 직전의 종가"라 5d 요청이면 6거래일 전,
+ *    1y 요청이면 1년 전 값이 된다. 이걸 분모로 쓰는 바람에 엔화가 내린 날에 빨간 ▲가 떴다.
+ *  - 그래서 일별 종가 목록(history)에서 마지막 거래일 직전 종가를 찾아 쓴다.
+ *    prevClose: {date, rate} 와 changeBasis: "prevClose" 를 통화마다 함께 내보낸다.
+ *  - history 는 새로 받은 일별 종가와 이전 history 를 날짜로 합친다(줄어들지 않는다).
+ *    예전 코드는 5d 응답(5점)이 1y history 를 덮어써 차트가 늘 1주만 그렸다.
+ *
  * 원칙
  *  - 값을 못 받은 통화는 이전 값을 유지하고, 이전 값도 없으면 목록에서 뺀다.
  *  - USD/KRW 가 통째로 실패하면 파일을 쓰지 않고 실패로 끝낸다(화면 붕괴 방지).
@@ -65,6 +73,7 @@ function round(n, d = 2) {
   return Math.round(n * p) / p;
 }
 
+/** 현재가와 일별 종가 목록. meta.chartPreviousClose 는 쓰지 않는다(위 머리말 참고). */
 async function yahoo(symbol, range = "5d") {
   const r = await fetch(
     `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?range=${range}&interval=1d`,
@@ -73,12 +82,10 @@ async function yahoo(symbol, range = "5d") {
   if (!r.ok) throw new Error(`${symbol} HTTP ${r.status}`);
   const j = await r.json();
   const res = j?.chart?.result?.[0];
-  const meta = res?.meta;
-  const price = meta?.regularMarketPrice;
-  const prev = meta?.chartPreviousClose ?? meta?.previousClose;
+  const price = res?.meta?.regularMarketPrice;
   if (!Number.isFinite(price)) throw new Error(`${symbol}: 가격 없음`);
 
-  /** 일별 종가 [{date, close}] — 차트용. 결측일(휴장)은 버린다. */
+  /** 일별 종가 [{date, close}] — 결측일(휴장)은 버린다. */
   let series = [];
   const ts = res?.timestamp;
   const closes = res?.indicators?.quote?.[0]?.close;
@@ -91,7 +98,36 @@ async function yahoo(symbol, range = "5d") {
       .filter((p) => Number.isFinite(p.close));
   }
 
-  return { price, prev: Number.isFinite(prev) ? prev : null, series };
+  return { price, series };
+}
+
+/** 이전 history 와 새 일별 종가를 날짜로 합친다. 같은 날짜는 새 값이 이긴다. 최대 370일. */
+function mergeHistory(prevHistory, series) {
+  const byDate = new Map();
+  for (const p of prevHistory ?? []) {
+    if (p?.date && Number.isFinite(p.rate)) byDate.set(p.date, p.rate);
+  }
+  for (const p of series ?? []) {
+    if (p?.date && Number.isFinite(p.rate)) byDate.set(p.date, p.rate);
+  }
+  return [...byDate.entries()]
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([date, rate]) => ({ date, rate }))
+    .slice(-370);
+}
+
+/**
+ * 전일 종가 = history 에서 마지막 거래일 바로 앞 날짜의 값.
+ * 장중(오늘 점이 있음)엔 어제 종가, 주말·휴일(마지막 점이 금요일)엔 목요일 종가라
+ * 금요일의 등락이 그대로 유지된다 — 네이버 환율 위젯과 같은 방식.
+ */
+function prevCloseOf(history) {
+  if (!history || history.length < 2) return null;
+  const lastDate = history[history.length - 1].date;
+  for (let i = history.length - 1; i >= 0; i--) {
+    if (history[i].date < lastDate) return history[i];
+  }
+  return null;
 }
 
 /* ── 이전 값 ── */
@@ -104,32 +140,44 @@ try {
 }
 const prevByCode = new Map((prev.rates ?? []).map((r) => [r.code, r]));
 
+/* ── 이전 1년치 history (fx-history.json) ──
+ * fx.json 의 rates[].history 는 30일로 잘라 발행하므로, 합칠 때는 잘리기 전 원본을 쓴다. */
+const prevHistoryPath = path.join(path.dirname(prevPath ?? outPath), "fx-history.json");
+let prevFullSeries = {};
+try {
+  const h = JSON.parse(fs.readFileSync(prevHistoryPath, "utf8"));
+  if (h?.series && typeof h.series === "object") prevFullSeries = h.series;
+} catch {
+  /* 없으면 fx.json 의 30일치로 시작한다 */
+}
+const prevHistoryOf = (code) =>
+  Array.isArray(prevFullSeries[code]) && prevFullSeries[code].length
+    ? prevFullSeries[code]
+    : prevByCode.get(code)?.history ?? [];
+
 /* ── USD/KRW 먼저 (교차 계산의 기준) ── */
-const todayStr0 = kstDateStr();
-const needHistory0 = prev.historyDate !== todayStr0;
+const todayStr = kstDateStr();
+const needHistory = prev.historyDate !== todayStr;
 
 let usdkrw;
 try {
-  usdkrw = await yahoo("KRW=X", needHistory0 ? "1y" : "5d");
+  usdkrw = await yahoo("KRW=X", needHistory ? "1y" : "5d");
 } catch (e) {
   const p = prevByCode.get("USD");
   if (!p) {
     console.error(`USD/KRW 실패하고 이전 값도 없음 — 종료: ${e.message}`);
     process.exit(1);
   }
-  usdkrw = { price: p.rate, prev: p.rate - (p.change ?? 0) };
+  usdkrw = { price: p.rate, series: [] };
   console.warn(`USD/KRW 실패 — 이전 값 사용: ${e.message}`);
 }
 
 /* ── 통화별 수집 ──
  *
- * 차트용 과거 시세(history)는 하루 1회만 1년치를 받는다. 그 외 실행에서는
- * 이전 fx.json 의 history 를 그대로 재사용하고 마지막 점만 오늘 값으로 맞춘다.
- * (30분마다 1년치를 17번 받으면 낭비다.)
+ * 차트용 과거 시세(history)는 하루 1회만 1년치를 받는다. 그 외 실행에서는 5일치만 받아
+ * 이전 history 에 합친다. (30분마다 1년치를 17번 받으면 낭비다.)
  */
-const todayStr = todayStr0;
-const needHistory = needHistory0;
-console.log(needHistory ? "history: 오늘 1년치 갱신" : "history: 이전 값 재사용");
+console.log(needHistory ? "history: 오늘 1년치 갱신" : "history: 5일치만 받아 합침");
 
 /** USD/KRW 일별 종가 맵 — 교차 통화 history 계산에 쓴다 */
 const usdSeriesByDate = new Map((usdkrw.series ?? []).map((p) => [p.date, p.close]));
@@ -140,20 +188,16 @@ const failed = [];
 for (const c of CURRENCIES) {
   try {
     let perUnit; // 1단위당 원화
-    let prevPerUnit;
     let series = [];
 
     if (c.symbol) {
       const q = await yahoo(c.symbol, needHistory ? "1y" : "5d");
       perUnit = q.price;
-      prevPerUnit = q.prev;
       series = (q.series ?? []).map((p) => ({ date: p.date, rate: round(p.close * c.unit, 2) }));
     } else {
       // USD 교차: 1 XXX = USDKRW / (XXX per USD)
       const q = await yahoo(c.cross, needHistory ? "1y" : "5d");
       perUnit = usdkrw.price / q.price;
-      prevPerUnit =
-        usdkrw.prev && q.prev ? usdkrw.prev / q.prev : null;
       // 교차 통화 history: 같은 날짜의 USD/KRW ÷ (XXX per USD)
       series = (q.series ?? [])
         .map((p) => {
@@ -164,37 +208,38 @@ for (const c of CURRENCIES) {
         .filter(Boolean);
     }
 
-    const rate = perUnit * c.unit; // 고시 단위(1 또는 100) 기준 원화
-    const prevRate = prevPerUnit != null ? prevPerUnit * c.unit : null;
-    const change = prevRate != null ? rate - prevRate : 0;
-    const changePct = prevRate ? (change / prevRate) * 100 : 0;
+    const rate = round(perUnit * c.unit, 2); // 고시 단위(1 또는 100) 기준 원화
 
-    // history: 새로 받았으면 그것, 아니면 이전 값 유지
-    const prevEntry = prevByCode.get(c.code);
-    let history = series.length >= 5 ? series : prevEntry?.history ?? [];
-    // 마지막 점을 오늘 값으로 맞춘다(장중 갱신 반영)
-    if (history.length) {
-      const last = history[history.length - 1];
-      if (last.date === todayStr) last.rate = round(rate, 2);
-      else history = [...history, { date: todayStr, rate: round(rate, 2) }].slice(-370);
+    // history: 이전 것과 새 것을 합친다. 오늘 점이 있으면 현재가로 맞춘다(장중 갱신 반영).
+    // 오늘 점이 없는 날(주말·휴일)엔 점을 만들지 않는다 — 거래일이 아니다.
+    const history = mergeHistory(prevHistoryOf(c.code), series);
+    if (history.length && history[history.length - 1].date === todayStr) {
+      history[history.length - 1].rate = rate;
     }
+
+    const prevClose = prevCloseOf(history);
+    const change = prevClose ? round(rate - prevClose.rate, 2) : 0;
+    const changePct = prevClose ? round((rate / prevClose.rate - 1) * 100, 2) : 0;
 
     rates.push({
       code: c.code,
       name: c.name,
       unit: c.unit,
       region: c.region,
-      rate: round(rate, c.unit === 100 || rate < 100 ? 2 : 2),
-      change: round(change, 2),
-      changePct: round(changePct, 2),
+      rate,
+      change,
+      changePct,
       dir: dirOf(change),
+      /** 등락의 분모 — 전일 종가 */
+      changeBasis: "prevClose",
+      prevClose: prevClose ? { date: prevClose.date, rate: prevClose.rate } : null,
       /** 일별 종가 [{date, rate}] — 최대 1년, 차트용 */
       history,
     });
   } catch (e) {
     failed.push(`${c.code}: ${e.message}`);
     const p = prevByCode.get(c.code);
-    if (p) rates.push(p); // 이전 값 유지
+    if (p) rates.push({ ...p, history: prevHistoryOf(c.code) }); // 이전 값 유지
   }
 }
 
@@ -279,7 +324,9 @@ const out = {
   updatedAt: kstNow(),
   base: "KRW",
   source: "Yahoo Finance (시장 중간환율)",
-  note: "시장 중간환율입니다. 은행 창구·앱의 현찰 환전가는 여기에 수수료와 우대율이 적용됩니다.",
+  note: "시장 중간환율입니다. 등락은 전일 종가 대비이며, 은행 창구·앱의 현찰 환전가는 여기에 수수료와 우대율이 적용됩니다.",
+  /** 통화별 change·changePct 의 분모 — 전일 종가(prevClose) */
+  changeBasis: "prevClose",
   /** history 를 1년치로 받은 날짜. 하루 1회만 갱신한다. */
   historyDate: needHistory ? todayStr : prev.historyDate ?? null,
   rates,
@@ -312,7 +359,8 @@ fs.writeFileSync(outPath, JSON.stringify(light, null, 2) + "\n", "utf8");
 fs.writeFileSync(historyPath, JSON.stringify(fullHistory) + "\n", "utf8");
 
 const kb = (p) => Math.round(fs.statSync(p).size / 1024);
+const usd = light.rates.find((r) => r.code === "USD");
 console.log(
-  `쓰기 완료: ${outPath} (${rates.length}개 통화, USD ${light.rates[0]?.rate}, ${kb(outPath)}KB)` +
-    ` / ${historyPath} (${kb(historyPath)}KB)`
+  `쓰기 완료: ${outPath} (${rates.length}개 통화, USD ${usd?.rate} 전일 ${usd?.prevClose?.date} ${usd?.prevClose?.rate} 대비 ${usd?.change}, ${kb(outPath)}KB)` +
+    ` / ${historyPath} (${kb(historyPath)}KB, USD ${usd?.history?.length ?? 0}일)`
 );
