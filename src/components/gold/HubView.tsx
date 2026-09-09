@@ -93,6 +93,9 @@ export default function HubView() {
     const t = loadedAt ? new Date(loadedAt) : null;
     return t ? `${String(t.getHours()).padStart(2, "0")}:${String(t.getMinutes()).padStart(2, "0")}` : "";
   }, [loadedAt]);
+  /** 오늘(KST) 고시가 아직 없으면 "전일 마지막 고시" 라벨을 붙인다 (체크리스트 8절: 10시 이전 접속). */
+  const todayKst = useMemo(() => new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10), [loadedAt]);
+  const stale = !!l && l.date < todayKst;
 
   return (
     <div style={{ fontFamily: "var(--font-plex-sans), -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif", color: C.ink }} className="text-[14px] leading-[1.55] [font-feature-settings:'tnum'_1]">
@@ -114,6 +117,11 @@ export default function HubView() {
                 <span>{korDateDow(l.date)}</span>
                 <span aria-hidden="true">·</span>
                 <span>{r?.source} {l.round}차 고시 {hhmm(l.time)}</span>
+                {stale ? (
+                  <span className="px-2 py-[2px] rounded-md text-[11px] font-medium" style={{ background: C.gold100, color: C.gold700 }}>
+                    전일 마지막 고시 · 오늘 고시 전
+                  </span>
+                ) : null}
                 {stamp ? (<><span aria-hidden="true">·</span><span>확인 <b>{stamp}</b></span></>) : null}
               </>
             ) : (
@@ -136,6 +144,7 @@ export default function HubView() {
           <div>
             <div className="mb-2.5 text-[11px] tracking-[0.08em] uppercase" style={{ fontFamily: MONO, color: C.ink3 }}>
               순금 24K · 1돈 · 내가 살 때 <span style={{ color: C.gold700 }}>VAT 포함</span>
+              {stale ? <span className="ml-2 normal-case tracking-normal" style={{ color: C.gold700 }}>· 전일 마지막 고시</span> : null}
             </div>
             {l ? (
               <>
