@@ -26,7 +26,10 @@
     "hooks:install": "node scripts/install-hooks.mjs",
     "prepare": "node scripts/install-hooks.mjs",
     "article": "node scripts/article.mjs",
-    "audit": "node scripts/verify.mjs --audit"
+    "audit": "node scripts/verify.mjs --audit",
+    "gold:collect": "node scripts/gold/collect-kgx.mjs",
+    "gold:collect:push": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/gold/collect-kgx.ps1",
+    "gold:news": "node scripts/gold/generate-news.mjs"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",

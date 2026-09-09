@@ -69,6 +69,9 @@ function Ticker({ rates }: { rates: FxRate[] }) {
         <div className="flex-none flex items-center gap-[7px] py-3.5 pr-5 border-r border-white/[0.12] mr-[22px]">
           <span className="w-1.5 h-1.5 rounded-full bg-[#3DD68C] shadow-[0_0_0_3px_rgba(61,214,140,0.18)]" />
           <span className="text-[11.5px] font-extrabold text-white/70 tracking-[0.1em]">LIVE</span>
+          <span className="text-[10.5px] font-semibold text-white/40 whitespace-nowrap hidden sm:inline">
+            전일 종가 대비
+          </span>
         </div>
         {rates.map((r) => (
           <div key={r.code} className="flex-none flex items-center gap-2 py-3.5 pr-[22px] whitespace-nowrap">

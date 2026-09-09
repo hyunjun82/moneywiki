@@ -20,6 +20,7 @@ import {
   fxColor,
   korDateTime,
   perUnit,
+  prevCloseLabel,
   unitNameOf,
   useFx,
   won,
@@ -378,7 +379,7 @@ function DestCard({ rate }: { rate: FxRate }) {
 
       <div className="mt-3 flex items-center justify-between gap-3">
         <ChangeBadge change={rate.changePct} />
-
+        <span className="text-[12px] text-[#9CA1A8] whitespace-nowrap">{prevCloseLabel(rate)}</span>
       </div>
 
       {per100k ? (

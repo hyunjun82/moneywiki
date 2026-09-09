@@ -10,17 +10,31 @@ import {
   PriceTable,
   type TableRow,
 } from "./ui";
-import { dirMark, dirColor, korDateTime, perGram, usePrice, won, gold24 } from "./priceData";
+import {
+  type PriceData,
+  dirMark,
+  dirColor,
+  korDateTime,
+  normalizePrice,
+  perGram,
+  usePrice,
+  won,
+  gold24,
+} from "./priceData";
 
 /** 일일 기사 JSON의 형태 (scripts/gold/generate-news.mjs 가 생성) */
 export interface NewsDoc {
   date: string;
   title: string;
   description: string;
+  /** 처음 발행한 시각 (2026-09-09 이후 기사). 없으면 옛 기사 — 06:00 발행분. */
+  publishedAt?: string | null;
   updatedAt?: string | null;
   quoteDate?: string | null;
   retail?: {
     note?: string;
+    /** true 면 살 때 값이 부가세 포함. 없으면 옛 기사(부가세 별도 원문) — 화면에서 ×1.1 한다. */
+    vatIncludedBuy?: boolean;
     items?: {
       key: string;
       name: string;
@@ -82,9 +96,11 @@ function QuickButtons({ buy, sell }: { buy?: number | null; sell?: number | null
 export default function NewsView({ doc }: { doc: NewsDoc }) {
   const { data } = usePrice();
   const liveG24 = gold24(data);
-  const g24 = doc.retail?.items?.find((it) => it.key === "gold24");
+  // 기사 안 스냅샷도 살 때를 부가세 포함으로 맞춘다 — 본문 문장과 표·버튼이 같은 숫자를 쓰도록.
+  const snapshot = normalizePrice(doc.retail ? ({ retail: doc.retail } as PriceData) : null)?.retail;
+  const g24 = snapshot?.items?.find((it) => it.key === "gold24");
 
-  const rows: TableRow[] = (doc.retail?.items ?? []).map((it) => {
+  const rows: TableRow[] = (snapshot?.items ?? []).map((it) => {
     const q = it.userSell;
     return {
       name: it.name,
@@ -169,8 +185,8 @@ export default function NewsView({ doc }: { doc: NewsDoc }) {
             <Card className="p-[26px] flex flex-col gap-4">
               <SectionHead title="오늘 팔 때 가격 한눈에" note="원/돈 기준" />
               <PriceTable head="품목" rows={rows} lastLabel="전일비" />
-              {doc.retail?.note ? (
-                <span className="text-[14px] text-[#9CA1A8]">{doc.retail.note}</span>
+              {snapshot?.note ? (
+                <span className="text-[14px] text-[#9CA1A8]">{snapshot.note}</span>
               ) : null}
             </Card>
           ) : null}

@@ -15,6 +15,8 @@ import {
 import { HOME_FAQ } from "./faqData";
 import {
   type KrxPoint,
+  VAT_NOTE,
+  changeBadgeText,
   dirColor,
   dirMark,
   gold24,
@@ -47,7 +49,7 @@ export default function HubView() {
                 국내 순금 24K · 1돈(3.75g)
               </span>
               <span className="text-[12px] font-bold text-[#14161A] bg-white/55 px-2.5 py-1.5 rounded-full">
-                살 때
+                살 때 · VAT 포함
               </span>
             </div>
 
@@ -65,14 +67,11 @@ export default function HubView() {
                       className="bg-[#17181C] text-[14px] font-bold px-3 py-1.5 rounded-full tabular-nums"
                       style={{ color: buy.dir === "down" ? "#93B4FF" : "#FFB3A7" }}
                     >
-                      {dirMark(buy.dir)} {won(Math.abs(buy.change))}
-                      {buy.price - buy.change > 0
-                        ? ` (${((buy.change / (buy.price - buy.change)) * 100).toFixed(2)}%)`
-                        : ""}
+                      {changeBadgeText(buy)}
                     </span>
                   ) : null}
                   <span className="text-[14px] font-medium text-[#4A3400]">
-                    {retail?.quoteDate ? `${korDate(retail.quoteDate)} 기준` : "전일 대비"}
+                    {retail?.quoteDate ? `${korDate(retail.quoteDate)} 고시 · 전일 대비` : "전일 대비"}
                   </span>
                 </div>
               </>
@@ -121,7 +120,7 @@ export default function HubView() {
               금 살 때
             </span>
             <span className="text-[15px] sm:text-[16px] font-semibold text-[#4A3400]">
-              {buy ? `24K 1돈 ${won(buy.price)}원 · ` : ""}살 때 가격 전체보기
+              {buy ? `24K 1돈 ${won(buy.price)}원(VAT 포함) · ` : ""}살 때 가격 전체보기
             </span>
           </span>
           <span className="text-[28px] sm:text-[34px] text-[#17181C]">→</span>
@@ -198,7 +197,7 @@ export default function HubView() {
           </div>
           <span className="text-[14px] text-[#9CA1A8]">
             {retail?.source ? `${retail.source} 고시 소매가 · ` : ""}
-            {retail?.note ?? "살 때 가격은 부가세 별도입니다."}
+            {retail?.note ?? VAT_NOTE} 전일비는 전일 고시 대비입니다.
           </span>
         </Card>
 
@@ -332,7 +331,7 @@ export default function HubView() {
               <div className="grid grid-cols-2 gap-3 pt-1">
                 <div className="bg-[#F7F6F3] border border-[#E2DFD7] rounded-[14px] px-4 py-3.5 flex flex-col gap-1">
                   <span className="text-[12px] font-bold tracking-[0.06em] text-[#6C727B]">
-                    살 때 − 도매
+                    살 때(VAT 포함) − 도매
                   </span>
                   <span className="text-[19px] font-extrabold text-[#1A1D21] tabular-nums">
                     {won(buy.price - krx.latest.krwPerDon)}원

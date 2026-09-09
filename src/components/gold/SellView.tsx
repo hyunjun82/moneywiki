@@ -17,7 +17,7 @@ import {
 } from "./ui";
 import {
   buybackRate,
-  dirMark,
+  changeBadgeText,
   gold24,
   korDate,
   korDateTime,
@@ -80,21 +80,18 @@ export default function SellView() {
                 <div className="flex items-center gap-2.5 flex-wrap">
                   {sell.change ? (
                     <span className="bg-[linear-gradient(140deg,#F3DE9C,#D4AF37)] text-[#17181C] text-[14px] font-bold px-3 py-1.5 rounded-full tabular-nums">
-                      {dirMark(sell.dir)} {won(Math.abs(sell.change))}
-                      {sell.price - sell.change > 0
-                        ? ` (${((sell.change / (sell.price - sell.change)) * 100).toFixed(2)}%)`
-                        : ""}
+                      {changeBadgeText(sell)}
                     </span>
                   ) : null}
                   <span className="text-[14px] text-[#9CA1A8]">
-                    {retail?.quoteDate ? `${korDate(retail.quoteDate)} 기준` : ""}
+                    {retail?.quoteDate ? `${korDate(retail.quoteDate)} 고시 · 전일 대비` : ""}
                   </span>
                 </div>
                 {diff && diffPct ? (
                   <>
                     <div className="h-px bg-[rgba(212,175,55,.25)]" />
                     <span className="text-[14px] text-[#9CA1A8]">
-                      살 때 대비{" "}
+                      살 때(VAT 포함) 대비{" "}
                       <span className="text-[#E3C15C] font-bold tabular-nums">
                         {won(diff)}원 ({diffPct.toFixed(1)}%)
                       </span>
@@ -142,7 +139,7 @@ export default function SellView() {
         primary={{
           href: "/gold/buy",
           title: "금 살 때 가격 보기",
-          sub: buy ? `24K 1돈 ${won(buy.price)}원 · 부가세 별도` : "품목별 판매가",
+          sub: buy ? `24K 1돈 ${won(buy.price)}원 · VAT 포함` : "품목별 판매가",
         }}
         secondary={{ href: "/gold", title: "오늘의 시세 홈", sub: "국내·국제 한눈에" }}
       />

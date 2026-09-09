@@ -172,7 +172,7 @@ export default function CalculatorView() {
               <span className="text-[12px] text-[#4A3400]">
                 {buyPerGram === null && item
                   ? "이 품목은 판매가가 고시되지 않습니다"
-                  : "부가세 별도 · 세공비 별도"}
+                  : "부가세 포함 · 세공비 별도"}
               </span>
             </div>
 

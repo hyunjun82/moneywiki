@@ -46,7 +46,7 @@ export default function GoldNewsListPage() {
           금시세 뉴스
         </h1>
         <p className="m-0 text-[16px] text-[#6C727B]">
-          매일 아침 6시에 그날의 금값을 정리해 발행합니다.
+          평일 오전, 그날 첫 고시가가 확인되는 대로 금값을 정리해 발행합니다.
         </p>
       </header>
 

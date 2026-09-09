@@ -1,18 +1,26 @@
 # 금시세 일일 기사 자동 발행
 #
-# 매일 05:30 KST에 src/data/gold-news/YYYY-MM-DD.json 을 생성해 main에 커밋한다.
-# 새벽에는 아직 당일 국내 고시가가 없어 전 영업일 기준으로 발행되고(언론사도 동일),
-# 오전 09:20 재실행 때 고시가 갱신되어 있으면 같은 날짜 기사를 새 숫자로 정정한다.
-# 커밋이 올라가면 Cloudflare Pages가 재빌드하면서 /gold/news/YYYY-MM-DD 가 생기고,
+# 평일 10:15 KST 에 src/data/gold-news/YYYY-MM-DD.json 을 생성해 main 에 커밋한다.
+# 국내 고시(한국금거래소 1차)는 09:50~10:10 에 나오므로 그 뒤에 돌아야 전일 숫자가 오늘 기사에
+# 섞이지 않는다 (예전 05:30/09:20 발행은 전일 고시로 기사를 썼다 — 2026-09-09 실측).
+# 생성기는 price.json 의 고시일이 오늘이 아니면 발행하지 않고 exit 3 으로 끝낸다(--require-today).
+# 10:45·11:15 에 다시 시도하고, 11시 이후에도 당일 고시가 없으면 잡을 실패시켜 GitHub 알림이 가게 한다.
+# 커밋이 올라가면 Cloudflare Pages 가 재빌드하면서 /gold/news/YYYY-MM-DD 가 생기고,
 # 기존 IndexNow 워크플로 + 아래의 직접 핑으로 검색엔진에 즉시 알린다.
 
 name: Gold News Publish
 
 on:
   schedule:
-    - cron: "30 20 * * *" # UTC 20:30 = KST 05:30 — 새벽 선발행
-    - cron: "20 0 * * *"  # UTC 00:20 = KST 09:20 — 당일 고시 반영 정정
-  workflow_dispatch: {}
+    - cron: "15 1 * * 1-5" # UTC 01:15 = KST 10:15 (평일) — 본 발행
+    - cron: "45 1 * * 1-5" # UTC 01:45 = KST 10:45 — 재시도 1
+    - cron: "15 2 * * 1-5" # UTC 02:15 = KST 11:15 — 재시도 2, 실패 시 알림
+  workflow_dispatch:
+    inputs:
+      ignore_date:
+        description: "고시일이 오늘이 아니어도 발행 (true/false)"
+        required: false
+        default: "false"
 
 permissions:
   contents: write
@@ -35,10 +43,31 @@ jobs:
           node-version: "20"
 
       - name: Generate today's article
-        run: node scripts/gold/generate-news.mjs
+        id: gen
+        run: |
+          set +e
+          if [ "${{ github.event.inputs.ignore_date }}" = "true" ]; then
+            node scripts/gold/generate-news.mjs
+          else
+            node scripts/gold/generate-news.mjs --require-today
+          fi
+          CODE=$?
+          set -e
+          if [ "$CODE" = "3" ]; then
+            HOUR=$(TZ=Asia/Seoul date +%H)
+            if [ "$HOUR" -ge 11 ]; then
+              echo "::error::당일 고시가 11시까지 없어 기사를 발행하지 않았습니다. price-data 갱신기(gold-price.yml)와 고시 소스를 확인하세요."
+              exit 1
+            fi
+            echo "당일 고시 대기 — 다음 예약(10:45 / 11:15)에서 재시도"
+            echo "skipped=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          exit $CODE
 
       - name: Commit & push to main
         id: push
+        if: steps.gen.outputs.skipped != 'true'
         run: |
           git config user.name "gold-news-bot"
           git config user.email "actions@github.com"
