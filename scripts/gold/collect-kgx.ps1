@@ -1,4 +1,4 @@
-# 한국금거래소 고시 수집 → price-data 브랜치 push (사용자 PC 예약 실행용)
+﻿# 한국금거래소 고시 수집 → price-data 브랜치 push (사용자 PC 예약 실행용)
 #
 # 한국금거래소 API 는 해외 IP 를 403 으로 막아 GitHub Actions 에서 돌릴 수 없다.
 # 이 스크립트를 PC 에서 평일 09:30~18:30 30분 간격으로 돌린다 (2026-09-09, 스펙 4절).
@@ -37,6 +37,8 @@ try {
     Log "price-data 브랜치 클론 → $data"
     git clone --quiet --branch price-data --single-branch --depth 1 https://github.com/hyunjun82/moneywiki.git $data
     if ($LASTEXITCODE -ne 0) { throw "git clone 실패 ($LASTEXITCODE)" }
+    # 데이터 파일은 LF 로 둔다 (GitHub Actions 갱신기와 같은 줄바꿈 — CRLF 경고·불필요한 diff 방지)
+    git -C $data config core.autocrlf false
   }
 
   git -C $data pull --quiet --rebase origin price-data
