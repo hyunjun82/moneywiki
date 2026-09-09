@@ -12,7 +12,7 @@
 #
 # 동작:
 #   %LOCALAPPDATA%\moneywiki\price-data 에 price-data 브랜치를 얕게 받아 두고(최초 1회 자동),
-#   pull → 수집기(collect-kgx.mjs) 실행 → kgx-quotes.json 이 바뀌었을 때만 [CI Skip] 커밋·push.
+#   pull → 수집기(collect-kgx.mjs) → gold.json 생성기(build-gold-json.mjs) → 바뀌었을 때만 [CI Skip] 커밋·push.
 #   처음 실행이면 1년치를 백필한다. 로그: %LOCALAPPDATA%\moneywiki\collect-kgx.log
 
 $ErrorActionPreference = "Stop"
@@ -22,7 +22,9 @@ $base = Join-Path $env:LOCALAPPDATA "moneywiki"
 $data = Join-Path $base "price-data"
 $log  = Join-Path $base "collect-kgx.log"
 $file = Join-Path $data "kgx-quotes.json"
+$gold = Join-Path $data "gold.json"
 $collector = Join-Path $repo "scripts\gold\collect-kgx.mjs"
+$builder = Join-Path $repo "scripts\gold\build-gold-json.mjs"
 
 New-Item -ItemType Directory -Force $base | Out-Null
 
@@ -58,15 +60,30 @@ try {
   foreach ($line in $stdout) { Log $line }
   if ($code -ne 0) { throw "수집기 실패 (exit $code)" }
 
-  $after = (Get-FileHash $file).Hash
-  if ($before -eq $after) { Log "변경 없음 — push 생략"; exit 0 }
+  # gold.json — 화면이 읽는 파일. 고시가 그대로여도 기준가(국제 시세×환율)가 움직이므로 매번 만든다.
+  $goldBefore = ""
+  if (Test-Path $gold) { $goldBefore = (Get-FileHash $gold).Hash }
+  $stdout2 = & node $builder $data
+  $code2 = $LASTEXITCODE
+  foreach ($line in $stdout2) { Log $line }
+  if ($code2 -ne 0) { throw "gold.json 생성 실패 (exit $code2)" }
 
-  git -C $data add kgx-quotes.json
+  $after = (Get-FileHash $file).Hash
+  $goldAfter = (Get-FileHash $gold).Hash
+  if ($before -eq $after -and $goldBefore -eq $goldAfter) { Log "변경 없음 — push 생략"; exit 0 }
+
+  git -C $data add kgx-quotes.json gold.json
   $stamp = Get-Date -Format "yyyy-MM-ddTHH:mmK"
   git -C $data -c user.name="kgx-collector" -c user.email="kgx-collector@jjyu.co.kr" commit --quiet -m "[CI Skip] kgx quotes $stamp"
   if ($LASTEXITCODE -ne 0) { throw "git commit 실패 ($LASTEXITCODE)" }
   git -C $data push --quiet origin HEAD:price-data
-  if ($LASTEXITCODE -ne 0) { throw "git push 실패 ($LASTEXITCODE)" }
+  if ($LASTEXITCODE -ne 0) {
+    # GitHub Actions 갱신기와 같은 순간에 밀어 넣어 충돌한 경우 — 원격 상태로 되돌리고 다음 예약에서 다시 만든다
+    git -C $data rebase --abort 2>$null
+    git -C $data fetch --quiet origin price-data
+    git -C $data reset --quiet --hard origin/price-data
+    throw "git push 실패 ($LASTEXITCODE) — 원격으로 되돌림, 다음 실행에서 재시도"
+  }
   Log "push 완료"
   exit 0
 } catch {

@@ -56,6 +56,17 @@ jobs:
           node scripts/gold/update-price.mjs price-data/price.json /tmp/price.json
           cp /tmp/price.json price-data/price.json
 
+      # gold.json — 화면이 읽는 파일 (스펙 5절). 한국금거래소 회차 고시(kgx-quotes.json, PC 가 push)
+      # + 방금 갱신한 price.json(KRX 도매) + Yahoo 기준가로 만든다. PC 가 꺼져 있어도 기준가·도매는 움직인다.
+      # kgx-quotes.json 이 아직 없으면 gold.json 을 만들지 않는다(실패 아님).
+      - name: Build gold.json
+        run: |
+          if [ -f price-data/kgx-quotes.json ]; then
+            node scripts/gold/build-gold-json.mjs price-data || echo "gold.json 생성 실패 — price.json 만 발행"
+          else
+            echo "kgx-quotes.json 없음 — gold.json 생략"
+          fi
+
       - name: Commit & push to price-data
         run: |
           cd price-data
@@ -66,6 +77,7 @@ jobs:
             git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
           fi
           git add price.json
+          [ -f gold.json ] && git add gold.json
           if git diff --cached --quiet; then
             echo "변경 없음 — 커밋 생략"
             exit 0

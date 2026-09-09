@@ -169,9 +169,10 @@ function makeCtx(slug, flags) {
     from: typeof flags.from === "string" ? flags.from : "",
     maxFix: Number(flags["max-fix"] ?? 2),
     // 모델은 단계마다 못박는다 (비워 두면 계정 기본 모델을 상속해 Fable 한도를 먹는다 — 2026-09-06).
-    // 판단이 얕은 단계는 sonnet, 글을 쓰는 단계만 opus. Fable 은 사용자 대화창 몫으로 남긴다.
+    // 전 단계 sonnet (2026-09-09: 사이트 5개 이상을 돌려 주간 사용량이 모자란다 — 글 작성도 sonnet).
+    // 더 큰 모델이 필요하면 --writer-model opus 로 그 글만. Fable 은 사용자 대화창 몫으로 남긴다.
     model: typeof flags.model === "string" ? flags.model : "sonnet",
-    writerModel: typeof flags["writer-model"] === "string" ? flags["writer-model"] : (typeof flags.model === "string" ? flags.model : "opus"),
+    writerModel: typeof flags["writer-model"] === "string" ? flags["writer-model"] : (typeof flags.model === "string" ? flags.model : "sonnet"),
     captureModel: typeof flags["capture-model"] === "string" ? flags["capture-model"] : "sonnet",
     skipRender: Boolean(flags["skip-render"]),
     keepOnFail: Boolean(flags["keep-on-fail"]),
@@ -734,7 +735,7 @@ async function runOne(slug, flags) {
   const meter = ctx.meter;
   console.log(`\n══════════ ${slug} ══════════`);
   console.log(`한 편에 보통 12~18분입니다. 단계: 설계(1~2분) → 버튼 확인 → 수집(1분) → 캡처 읽기 → 작성(7~9분) → 검사(2분) → 필요하면 고쳐 쓰기(3~4분).`);
-  console.log(`모델: 설계·캡처·고치기 ${ctx.model} · 글 작성 ${ctx.writerModel} (Fable 은 쓰지 않습니다 — 대화창 몫)`);
+  console.log(`모델: 설계·캡처·고치기 ${ctx.model} · 글 작성 ${ctx.writerModel} (기본 전부 sonnet · 큰 모델은 --writer-model opus 로 그 글만)`);
   console.log(`모델 호출 8~11회 · 호출마다 고정비 4만~5만 토큰이 붙습니다. 상한 이 글 $${budget.perArticle}${flags.batch ? ` / 묶음 $${budget.batch}` : ""} — 넘으면 멈춥니다.`);
   try {
     await timed(ctx, "guard", () => guard(ctx));
