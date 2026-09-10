@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-10T14:13:31.134+09:00",
-  "date": "2026-09-09",
+  "updatedAt": "2026-09-10T15:00:54.832+09:00",
+  "date": "2026-09-10",
   "retail": {
     "source": "한국금거래소",
     "sourceUrl": "https://www.koreagoldx.co.kr/price/gold",
@@ -8,34 +8,68 @@
     "vatIncludedBuy": true,
     "note": "한국금거래소 고시. 살 때는 부가세 10% 포함, 하루 여러 차례 고시됩니다. 18K·14K 살 때는 제품 시세가 적용됩니다.",
     "latest": {
+      "date": "2026-09-10",
+      "round": 2,
+      "time": "11:08:06",
+      "buy": 837000,
+      "sell": 714000,
+      "k18": 524800,
+      "k14": 407000,
+      "s18": 615195,
+      "s14": 477090
+    },
+    "prevClose": {
       "date": "2026-09-09",
       "round": 3,
       "time": "15:39:17",
       "buy": 834000,
       "sell": 712000,
       "k18": 523400,
-      "k14": 405900,
-      "s18": 612990,
-      "s14": 475380
-    },
-    "prevClose": {
-      "date": "2026-09-08",
-      "round": 4,
-      "time": "17:03:30",
-      "buy": 839000,
-      "sell": 714000,
-      "k18": 524800,
-      "k14": 407000
+      "k14": 405900
     },
     "change": {
-      "buy": -5000,
-      "buyPct": -0.6,
-      "sell": -2000,
-      "sellPct": -0.28,
-      "k18": -1400,
-      "k14": -1100
+      "buy": 3000,
+      "buyPct": 0.36,
+      "sell": 2000,
+      "sellPct": 0.28,
+      "k18": 1400,
+      "k14": 1100
     },
     "quotes": [
+      {
+        "date": "2026-09-10",
+        "round": 2,
+        "time": "11:08:06",
+        "buy": 837000,
+        "sell": 714000,
+        "k18": 524800,
+        "k14": 407000,
+        "platinum": {
+          "buy": 354000,
+          "sell": 287000
+        },
+        "silver": {
+          "buy": 12180,
+          "sell": 10140
+        }
+      },
+      {
+        "date": "2026-09-10",
+        "round": 1,
+        "time": "09:44:13",
+        "buy": 834000,
+        "sell": 712000,
+        "k18": 523400,
+        "k14": 405900,
+        "platinum": {
+          "buy": 354000,
+          "sell": 287000
+        },
+        "silver": {
+          "buy": 12160,
+          "sell": 10120
+        }
+      },
       {
         "date": "2026-09-09",
         "round": 3,
@@ -154,119 +188,34 @@
           "buy": 12030,
           "sell": 10010
         }
-      },
-      {
-        "date": "2026-09-07",
-        "round": 5,
-        "time": "16:11:10",
-        "buy": 841000,
-        "sell": 714000,
-        "k18": 524800,
-        "k14": 407000,
-        "platinum": {
-          "buy": 340000,
-          "sell": 276000
-        },
-        "silver": {
-          "buy": 11900,
-          "sell": 9900
-        }
-      },
-      {
-        "date": "2026-09-07",
-        "round": 4,
-        "time": "15:29:17",
-        "buy": 838000,
-        "sell": 714000,
-        "k18": 524800,
-        "k14": 407000,
-        "platinum": {
-          "buy": 340000,
-          "sell": 276000
-        },
-        "silver": {
-          "buy": 11890,
-          "sell": 9900
-        }
-      },
-      {
-        "date": "2026-09-07",
-        "round": 3,
-        "time": "12:14:23",
-        "buy": 847000,
-        "sell": 719000,
-        "k18": 528500,
-        "k14": 409900,
-        "platinum": {
-          "buy": 342000,
-          "sell": 276000
-        },
-        "silver": {
-          "buy": 11990,
-          "sell": 9980
-        }
-      },
-      {
-        "date": "2026-09-07",
-        "round": 2,
-        "time": "10:06:31",
-        "buy": 846000,
-        "sell": 710000,
-        "k18": 521900,
-        "k14": 404700,
-        "platinum": {
-          "buy": 344000,
-          "sell": 275000
-        },
-        "silver": {
-          "buy": 12260,
-          "sell": 9970
-        }
-      },
-      {
-        "date": "2026-09-07",
-        "round": 1,
-        "time": "09:41:51",
-        "buy": 846000,
-        "sell": 715000,
-        "k18": 525600,
-        "k14": 407600,
-        "platinum": {
-          "buy": 344000,
-          "sell": 275000
-        },
-        "silver": {
-          "buy": 12260,
-          "sell": 9970
-        }
       }
     ],
     "platinum": {
-      "buy": 346000,
-      "sell": 281000,
-      "prevBuy": 343000,
-      "prevSell": 278000
+      "buy": 354000,
+      "sell": 287000,
+      "prevBuy": 346000,
+      "prevSell": 281000
     },
     "silver": {
-      "buy": 12040,
-      "sell": 10020,
-      "prevBuy": 12000,
-      "prevSell": 9990
+      "buy": 12180,
+      "sell": 10140,
+      "prevBuy": 12040,
+      "prevSell": 10020
     }
   },
   "reference": {
-    "xauUsd": 4453.5,
-    "usdKrw": 1337.46,
-    "asOf": "2026-09-10T14:13:19.000+09:00",
-    "basePerGram": 191502,
-    "basePerDon": 718133,
+    "xauUsd": 4467.8,
+    "usdKrw": 1337.78,
+    "asOf": "2026-09-10T15:00:45.000+09:00",
+    "basePerGram": 192162.87,
+    "basePerDon": 720611,
     "formula": "xauUsd / 31.1034768 * usdKrw * 3.75",
     "source": "COMEX 금 선물(GC=F) × USD/KRW — Yahoo Finance"
   },
   "intl": {
-    "xagUsd": 68.13,
-    "silverBasePerGram": 2929.4,
-    "silverBasePerDon": 10985,
+    "xagUsd": 68.41,
+    "silverBasePerGram": 2942.36,
+    "silverBasePerDon": 11034,
     "source": "COMEX 은 선물(SI=F) × USD/KRW — Yahoo Finance"
   },
   "wholesale": {
@@ -318,18 +267,18 @@
     ]
   },
   "derived": {
-    "spread": 122000,
-    "spreadPct": 14.63,
+    "spread": 123000,
+    "spreadPct": 14.7,
     "breakdown": {
-      "gold": 718133,
-      "craft": 40049,
-      "vat": 75818
+      "gold": 720611,
+      "craft": 40298,
+      "vat": 76091
     },
-    "sellVsBase": -6133,
-    "k18Theory": 534000,
-    "k18Gap": -10600,
-    "k14Theory": 416520,
-    "k14Gap": -10620
+    "sellVsBase": -6611,
+    "k18Theory": 535500,
+    "k18Gap": -10700,
+    "k14Theory": 417690,
+    "k14Gap": -10690
   },
   "history": {
     "daily": [
@@ -2844,9 +2793,17 @@
         "k18": 523400,
         "k14": 405900,
         "rounds": 3
+      },
+      {
+        "date": "2026-09-10",
+        "buy": 837000,
+        "sell": 714000,
+        "k18": 524800,
+        "k14": 407000,
+        "rounds": 2
       }
     ],
-    "days": 314,
+    "days": 315,
     "from": "2025-09-09"
   }
 }
