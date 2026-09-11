@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-11T18:50:35.443+09:00",
+  "updatedAt": "2026-09-12T07:30:45.711+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -10,7 +10,7 @@
   "retail": {
     "source": "종로금거래소",
     "sourceUrl": "https://www.jongrogx.com/",
-    "quoteDate": "2026-09-11",
+    "quoteDate": "2026-09-12",
     "unit": "원/돈",
     "vatIncludedBuy": true,
     "note": "살 때 가격은 부가세 10%를 포함한 실제 결제 금액입니다(종로금거래소 원문 고시가에 부가세를 더한 값).",
@@ -99,13 +99,6 @@
       "changePct": 0.26
     },
     "history": [
-      {
-        "date": "2026-02-03",
-        "krwPerGram": 236090,
-        "krwPerDon": 885338,
-        "change": 8390,
-        "changePct": 3.68
-      },
       {
         "date": "2026-02-04",
         "krwPerGram": 243520,
@@ -1136,47 +1129,47 @@
         "changePct": 0.26
       }
     ],
-    "fetchedDate": "2026-09-11"
+    "fetchedDate": "2026-09-12"
   },
   "fx": {
-    "usdkrw": 1341.78,
-    "change": 2.61,
-    "changePct": 0.19,
-    "dir": "up",
+    "usdkrw": 1341.05,
+    "change": -7.12,
+    "changePct": -0.53,
+    "dir": "down",
     "changeBasis": "prevClose",
     "prevClose": {
-      "date": "2026-09-10",
-      "rate": 1339.17
+      "date": "2026-09-11",
+      "rate": 1348.17
     },
     "source": "Yahoo Finance (KRW=X)"
   },
   "intl": {
     "gold": {
       "name": "금",
-      "usdPerOz": 4383.7,
-      "changePct": 0.44,
+      "usdPerOz": 4390,
+      "changePct": 0.58,
       "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-09-10",
         "price": 4364.5
       },
-      "krwPerGram": 189109,
-      "krwPerDon": 709159,
+      "krwPerGram": 189278,
+      "krwPerDon": 709793,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
       "name": "은",
-      "usdPerOz": 64.42,
-      "changePct": 0.21,
+      "usdPerOz": 65.02,
+      "changePct": 1.14,
       "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-09-10",
         "price": 64.28
       },
-      "krwPerGram": 2779,
-      "krwPerDon": 10421,
+      "krwPerGram": 2803,
+      "krwPerDon": 10511,
       "source": "COMEX 은 선물 (SI=F)"
     }
   }
