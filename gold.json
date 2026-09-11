@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-11T07:30:13.494+09:00",
+  "updatedAt": "2026-09-11T09:30:18.393+09:00",
   "date": "2026-09-10",
   "retail": {
     "source": "한국금거래소",
@@ -221,18 +221,18 @@
     }
   },
   "reference": {
-    "xauUsd": 4360.2,
-    "usdKrw": 1349.37,
-    "asOf": "2026-09-11T07:30:12.000+09:00",
-    "basePerGram": 189159.66,
-    "basePerDon": 709349,
+    "xauUsd": 4360.8,
+    "usdKrw": 1347.08,
+    "asOf": "2026-09-11T09:30:15.000+09:00",
+    "basePerGram": 188864.62,
+    "basePerDon": 708242,
     "formula": "xauUsd / 31.1034768 * usdKrw * 3.75",
     "source": "COMEX 금 선물(GC=F) × USD/KRW — Yahoo Finance"
   },
   "intl": {
-    "xagUsd": 64.07,
-    "silverBasePerGram": 2779.35,
-    "silverBasePerDon": 10423,
+    "xagUsd": 64.03,
+    "silverBasePerGram": 2773.12,
+    "silverBasePerDon": 10399,
     "source": "COMEX 은 선물(SI=F) × USD/KRW — Yahoo Finance"
   },
   "wholesale": {
@@ -287,11 +287,11 @@
     "spread": 125000,
     "spreadPct": 14.86,
     "breakdown": {
-      "gold": 709349,
-      "craft": 55196,
+      "gold": 708242,
+      "craft": 56303,
       "vat": 76455
     },
-    "sellVsBase": 6651,
+    "sellVsBase": 7758,
     "k18Theory": 537000,
     "k18Gap": -10700,
     "k14Theory": 418860,
