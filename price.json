@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-13T22:56:23.701+09:00",
+  "updatedAt": "2026-09-14T07:22:16.362+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -10,7 +10,7 @@
   "retail": {
     "source": "종로금거래소",
     "sourceUrl": "https://www.jongrogx.com/",
-    "quoteDate": "2026-09-13",
+    "quoteDate": "2026-09-14",
     "unit": "원/돈",
     "vatIncludedBuy": true,
     "note": "살 때 가격은 부가세 10%를 포함한 실제 결제 금액입니다(종로금거래소 원문 고시가에 부가세를 더한 값).",
@@ -1125,9 +1125,9 @@
     "fetchedDate": "2026-09-13"
   },
   "fx": {
-    "usdkrw": 1342.4,
-    "change": -5.77,
-    "changePct": -0.43,
+    "usdkrw": 1342.97,
+    "change": -5.2,
+    "changePct": -0.39,
     "dir": "down",
     "changeBasis": "prevClose",
     "prevClose": {
@@ -1139,30 +1139,30 @@
   "intl": {
     "gold": {
       "name": "금",
-      "usdPerOz": 4408.9,
-      "changePct": 1.02,
+      "usdPerOz": 4372.2,
+      "changePct": 0.14,
       "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-09-10",
-        "price": 4364.5
+        "date": "2026-09-11",
+        "price": 4366.2
       },
-      "krwPerGram": 190284,
-      "krwPerDon": 713565,
+      "krwPerGram": 188781,
+      "krwPerDon": 707929,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
       "name": "은",
-      "usdPerOz": 65.19,
-      "changePct": 1.41,
-      "dir": "up",
+      "usdPerOz": 64.35,
+      "changePct": -0.32,
+      "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-09-10",
-        "price": 64.28
+        "date": "2026-09-11",
+        "price": 64.55
       },
-      "krwPerGram": 2813,
-      "krwPerDon": 10549,
+      "krwPerGram": 2778,
+      "krwPerDon": 10418,
       "source": "COMEX 은 선물 (SI=F)"
     }
   }
