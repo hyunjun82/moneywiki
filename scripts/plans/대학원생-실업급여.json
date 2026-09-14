@@ -1,146 +1,146 @@
 {
-  "slug": "대학원생-실업급여",
-  "category": "고용",
-  "topic": "대학원 재학 중 실업급여: 수급자격 판정, 취업 의사 확인, 야간·주말 과정, 구직활동 인정",
-  "title": "대학원생 실업급여 수급자격과 취업 의사, 야간 수업부터 구직활동까지",
-  "primaryKeywords": [
-    "대학원생 실업급여",
-    "취업 의사",
-    "구직활동"
-  ],
-  "clusters": [
-    {
-      "eyebrow": "재학생 수급조건",
-      "h2": "대학원생도 실업급여 수급자격이 인정되나요",
-      "h3": [
-        "재학증명서를 내면 자동으로 수급자격이 제한되나요",
-        "피보험단위기간 180일은 대학원생도 똑같이 적용되나요"
-      ],
-      "visual": "decide",
-      "why": "'실업급여조건 확인 좀 부탁드립니다'(답변 26), '실업급여 수급자격'(답변 3) 등 재학 상태에서 조건 충족 여부를 묻는 질문이 다수"
-    },
-    {
-      "eyebrow": "심사 기준",
-      "h2": "대학원생의 취업 의사는 어떻게 확인하나요",
-      "h3": [
-        "재학 중이면 취업할 의사가 없다고 보나요",
-        "실업인정 담당자는 무엇을 근거로 확인하나요"
-      ],
-      "visual": "checklist",
-      "why": "가입조건·자격 스포크의 '실업급여조건', '실업급여 나이' 등 자격 심사 관련 검색어와 '취업' 키워드가 지식iN 질문 상위(취업 6건, 취업 질문 5건)에 집중"
-    },
-    {
-      "eyebrow": "수업 시간대",
-      "h2": "야간·주말 대학원 수업은 수급자격에 영향을 주나요",
-      "h3": [
-        "야간 대학원생은 주간 근로가 가능하다고 인정되나요",
-        "수업 시간표를 어떻게 증빙하나요"
-      ],
-      "visual": "compareTable",
-      "why": "연말정산-대학원-교육비 등 사이트 내 대학원 관련 글과 연결되는 주제이나, 실업급여 자격에서 수업 시간대별 근로 가능성 판단은 검색자가 가장 헷갈려하는 지점"
-    },
-    {
-      "eyebrow": "구직활동 인정",
-      "h2": "대학원생은 구직활동을 어떻게 인정받나요",
-      "h3": [
-        "논문·연구활동도 구직활동으로 인정되나요",
-        "4차 구직활동처럼 이력서 제출만으로 인정되나요",
-        "면접에 불참하면 어떻게 되나요"
-      ],
-      "visual": "stepbar",
-      "why": "'실업급여 4차 구직활동 이력서 궁금증'(답변 7), '실업급여 4건중 3건만 구직활동'(답변 6), '실업급여 첫인정일 불참'(답변 3) 등 구직활동 인정 절차 질문이 다수"
-    }
-  ],
-  "laws": [
-    {
-      "name": "고용보험법",
-      "articles": [
-        "2",
-        "40",
-        "44"
-      ]
-    },
-    {
-      "name": "고용보험법 시행령",
-      "articles": [
-        "63"
-      ]
-    }
-  ],
-  "urls": [
-    {
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
-      "org": "고용24",
-      "why": "실업급여 신청 시스템 안내 화면, 수급자격 신청 절차 근거",
-      "new": false
-    },
-    {
-      "url": "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
-      "org": "고용노동부",
-      "why": "실업급여 관련 민원 서식 확인",
-      "new": false
-    },
-    {
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=1&cnpClsNo=1",
-      "org": "법제처",
-      "why": "구직급여 수급자격·실업 인정 요건의 쉬운 법령 설명",
-      "new": false
-    },
-    {
-      "url": "https://www.law.go.kr/LSW/lsBylInfoPLinkR.do?lsiSeq=000000&bylNo=0002&bylBrNo=00&bylCls=BE&bylEfYd=&bylEfYdYn=N&lsNm=%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%20%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99",
-      "org": "법제처",
-      "why": "고용보험법 시행규칙 별표·서식, 수급자격 제한 사유 확인",
-      "new": false
-    }
-  ],
-  "ctas": [
-    {
-      "label": "고용24에서 실업급여 신청하기",
-      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
-      "org": "고용24",
-      "forSection": "대학원생도 실업급여 수급자격이 인정되나요",
-      "hero": true,
-      "checked": {
-        "ok": true,
-        "title": "고용정책 상세_제도안내 | 고용정책 목록 | 정책/제도 | 고객센터>실업급여(상용직)",
-        "why": "",
-        "at": "2026-09-14"
-      }
-    },
-    {
-      "label": "고용노동부 민원서식 내려받기",
-      "url": "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
-      "org": "고용노동부",
-      "forSection": "대학원생의 취업 의사는 어떻게 확인하나요",
-      "checked": {
-        "ok": true,
-        "title": "고용노동부 노동포털",
-        "why": "",
-        "at": "2026-09-14"
-      }
-    },
-    {
-      "label": "고용보험법 조문 확인하기",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=1&cnpClsNo=1",
-      "org": "법제처",
-      "forSection": "야간·주말 대학원 수업은 수급자격에 영향을 주나요",
-      "checked": {
-        "ok": true,
-        "title": "실업급여 > 구직급여 > 구직급여 수급대상 > 구직급여 수급자격 (본문) | 찾기쉬운 생활법령정보",
-        "why": "",
-        "at": "2026-09-14"
-      }
-    }
-  ],
-  "relatedSlugs": [
-    "실업급여-구직활동",
-    "실업급여-실업인정",
-    "실업급여-수급자격",
-    "실업급여-재취업활동-인정"
-  ],
-  "misconceptions": [
-    "대학원 재학 중이면 무조건 실업급여를 못 받는다고 생각하지만, 취업할 의사와 능력이 인정되면 수급자격이 유지된다.",
-    "야간 대학원이면 자동으로 조건을 충족한다고 생각하지만, 수업 시간표로 주간 근로 가능성을 따로 증빙해야 한다.",
-    "구직활동은 이력서 제출 횟수만 채우면 무조건 인정된다고 생각하지만, 담당자가 활동의 실질성을 심사한다."
-  ]
+ "slug": "대학원생-실업급여",
+ "category": "고용",
+ "topic": "대학원 재학 중 실업급여: 수급자격 판정, 취업 의사 확인, 야간·주말 과정, 구직활동 인정",
+ "title": "대학원 재학 중 실업급여 수급자격과 취업 의사 확인, 야간 과정과 구직활동 인정",
+ "primaryKeywords": [
+  "대학원생 실업급여",
+  "취업 의사",
+  "구직활동"
+ ],
+ "clusters": [
+  {
+   "eyebrow": "재학생 수급조건",
+   "h2": "대학원생도 실업급여 수급자격이 인정되나요",
+   "h3": [
+    "재학증명서를 내면 자동으로 수급자격이 제한되나요",
+    "피보험단위기간 180일은 대학원생도 똑같이 적용되나요"
+   ],
+   "visual": "decide",
+   "why": "'실업급여조건 확인 좀 부탁드립니다'(답변 26), '실업급여 수급자격'(답변 3) 등 재학 상태에서 조건 충족 여부를 묻는 질문이 다수"
+  },
+  {
+   "eyebrow": "심사 기준",
+   "h2": "대학원생의 취업 의사는 어떻게 확인하나요",
+   "h3": [
+    "재학 중이면 취업할 의사가 없다고 보나요",
+    "실업인정 담당자는 무엇을 근거로 확인하나요"
+   ],
+   "visual": "checklist",
+   "why": "가입조건·자격 스포크의 '실업급여조건', '실업급여 나이' 등 자격 심사 관련 검색어와 '취업' 키워드가 지식iN 질문 상위(취업 6건, 취업 질문 5건)에 집중"
+  },
+  {
+   "eyebrow": "수업 시간대",
+   "h2": "야간·주말 대학원 수업은 수급자격에 영향을 주나요",
+   "h3": [
+    "야간 대학원생은 주간 근로가 가능하다고 인정되나요",
+    "수업 시간표를 어떻게 증빙하나요"
+   ],
+   "visual": "compareTable",
+   "why": "연말정산-대학원-교육비 등 사이트 내 대학원 관련 글과 연결되는 주제이나, 실업급여 자격에서 수업 시간대별 근로 가능성 판단은 검색자가 가장 헷갈려하는 지점"
+  },
+  {
+   "eyebrow": "구직활동 인정",
+   "h2": "대학원생은 구직활동을 어떻게 인정받나요",
+   "h3": [
+    "논문·연구활동도 구직활동으로 인정되나요",
+    "4차 구직활동처럼 이력서 제출만으로 인정되나요",
+    "면접에 불참하면 어떻게 되나요"
+   ],
+   "visual": "stepbar",
+   "why": "'실업급여 4차 구직활동 이력서 궁금증'(답변 7), '실업급여 4건중 3건만 구직활동'(답변 6), '실업급여 첫인정일 불참'(답변 3) 등 구직활동 인정 절차 질문이 다수"
+  }
+ ],
+ "laws": [
+  {
+   "name": "고용보험법",
+   "articles": [
+    "2",
+    "40",
+    "44"
+   ]
+  },
+  {
+   "name": "고용보험법 시행령",
+   "articles": [
+    "63"
+   ]
+  }
+ ],
+ "urls": [
+  {
+   "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
+   "org": "고용24",
+   "why": "실업급여 신청 시스템 안내 화면, 수급자격 신청 절차 근거",
+   "new": false
+  },
+  {
+   "url": "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
+   "org": "고용노동부",
+   "why": "실업급여 관련 민원 서식 확인",
+   "new": false
+  },
+  {
+   "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=1&cnpClsNo=1",
+   "org": "법제처",
+   "why": "구직급여 수급자격·실업 인정 요건의 쉬운 법령 설명",
+   "new": false
+  },
+  {
+   "url": "https://www.law.go.kr/LSW/lsBylInfoPLinkR.do?lsiSeq=000000&bylNo=0002&bylBrNo=00&bylCls=BE&bylEfYd=&bylEfYdYn=N&lsNm=%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%20%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99",
+   "org": "법제처",
+   "why": "고용보험법 시행규칙 별표·서식, 수급자격 제한 사유 확인",
+   "new": false
+  }
+ ],
+ "ctas": [
+  {
+   "label": "고용24에서 실업급여 신청하기",
+   "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
+   "org": "고용24",
+   "forSection": "대학원생도 실업급여 수급자격이 인정되나요",
+   "hero": true,
+   "checked": {
+    "ok": true,
+    "title": "고용정책 상세_제도안내 | 고용정책 목록 | 정책/제도 | 고객센터>실업급여(상용직)",
+    "why": "",
+    "at": "2026-09-14"
+   }
+  },
+  {
+   "label": "고용노동부 민원서식 내려받기",
+   "url": "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
+   "org": "고용노동부",
+   "forSection": "대학원생의 취업 의사는 어떻게 확인하나요",
+   "checked": {
+    "ok": true,
+    "title": "고용노동부 노동포털",
+    "why": "",
+    "at": "2026-09-14"
+   }
+  },
+  {
+   "label": "고용보험법 조문 확인하기",
+   "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=1&cnpClsNo=1",
+   "org": "법제처",
+   "forSection": "야간·주말 대학원 수업은 수급자격에 영향을 주나요",
+   "checked": {
+    "ok": true,
+    "title": "실업급여 > 구직급여 > 구직급여 수급대상 > 구직급여 수급자격 (본문) | 찾기쉬운 생활법령정보",
+    "why": "",
+    "at": "2026-09-14"
+   }
+  }
+ ],
+ "relatedSlugs": [
+  "실업급여-구직활동",
+  "실업급여-실업인정",
+  "실업급여-수급자격",
+  "실업급여-재취업활동-인정"
+ ],
+ "misconceptions": [
+  "대학원 재학 중이면 무조건 실업급여를 못 받는다고 생각하지만, 취업할 의사와 능력이 인정되면 수급자격이 유지된다.",
+  "야간 대학원이면 자동으로 조건을 충족한다고 생각하지만, 수업 시간표로 주간 근로 가능성을 따로 증빙해야 한다.",
+  "구직활동은 이력서 제출 횟수만 채우면 무조건 인정된다고 생각하지만, 담당자가 활동의 실질성을 심사한다."
+ ]
 }

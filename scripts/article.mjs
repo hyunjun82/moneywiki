@@ -19,6 +19,7 @@
  *   scripts/reports/<slug>.md/.png    보고서 한 장 + 렌더 캡처. 사람이 보는 건 이것만
  */
 import fs from "node:fs";
+import { ctaProblems, ctaRegistry } from "./lib/cta-rules.mjs";
 import path from "node:path";
 import http from "node:http";
 import { spawn, spawnSync } from "node:child_process";
@@ -258,7 +259,7 @@ async function stagePlan(ctx, deadCtas = []) {
     const tsx = path.join(io.W_DIR, ctx.slug, "page.tsx");
     if (fs.existsSync(tsx)) oldTitle = (fs.readFileSync(tsx, "utf8").match(/title:\s*["'`]([^"'`\n]{8,})["'`]/) || [])[1] || "";
   }
-  const base = { slug: ctx.slug, topic: ctx.topic, category: ctx.category, categories: io.categoryFiles(), keywords: keywordsForPrompt(ctx.keywords, ctx.topic), registry, related, today: today(), rewrite: ctx.rewrite || ctx.live.has(ctx.slug), oldTitle, titleRule: io.titleRule(), titleExamples: io.titleExamples(), fixedTitle: ctx.fixedTitle, fixedItems: titleItems(ctx.fixedTitle) };
+  const base = { slug: ctx.slug, topic: ctx.topic, category: ctx.category, categories: io.categoryFiles(), keywords: keywordsForPrompt(ctx.keywords, ctx.topic), registry, related, today: today(), rewrite: ctx.rewrite || ctx.live.has(ctx.slug), oldTitle, titleRule: io.titleRule(), titleExamples: io.titleExamples(), fixedTitle: ctx.fixedTitle, fixedItems: titleItems(ctx.fixedTitle), ctaScreens: ctaRegistry().screens };
   // 다시 세우는 설계도라면, 지난 설계도에서 죽어 있던 버튼 주소를 알려 준다 (같은 주소를 또 고르지 않게)
   let retryNote = "";
   const known = [...deadCtas];
@@ -347,6 +348,9 @@ async function stageCtaCheck(ctx, plan) {
   const { chromium } = await import("playwright");
   const browser = await chromium.launch();
   for (const c of todo) {
+    // 주소가 규칙에 걸리면 열어 보지도 않는다 — 기관 첫 화면·제도안내·등록부 밖 고용24 주소·이름과 다른 화면
+    const rule = ctaProblems({ label: c.label, url: c.url });
+    if (rule.length) { c.checked = { ok: false, title: "", why: rule.join(" / "), at: today() }; ctx.log("cta", `✗ ${c.label} → ${c.url} — ${rule[0]}`); continue; }
     const page = await browser.newPage();
     let title = "", action = false, ok = false, why = "";
     try {

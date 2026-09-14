@@ -7,6 +7,7 @@
  */
 
 /* ── verify-evidence 와 같은 규칙 ── */
+import { ctaProblems } from "./cta-rules.mjs";
 export const NUM_TOKEN = /\d[\d,]*(?:\.\d+)?[ \t]*(?:원|만원|천원|억원|억|%|퍼센트|일|개월|년|주|회|세|시간|배)/g;
 const IGNORE_YEAR = /^(19|20)\d{2}년$/;
 /** 사람이 읽는 본문이 아닌 필드 — 숫자 대조에서 뺀다 (verify-evidence 도 url·날짜 메타를 뺀다) */
@@ -328,6 +329,7 @@ export function checkDraft({ article: a, plan, ev, live, ctaAllowed, quickCompon
   for (const c of collectCtaUrls(a)) {
     if (!ctaAllowed.has(c.url)) p.push(`CTA "${c.label}" (${c.where}) 의 주소가 허용 목록에 없음: ${c.url}`);
     if (/보기$/.test(c.label.trim())) p.push(`CTA "${c.label}" (${c.where}) 는 열람형 문구 — 행동형으로`);
+    for (const msg of ctaProblems(c)) p.push(`CTA "${c.label}" (${c.where}) ${msg}`);
   }
   // 같은 주소를 버튼 여러 개에 돌려 쓰면 "그 일을 하는 화면"이 아니다 — 허용 CTA 가 하나뿐일 때 단계마다 같은 버튼을 붙이는 것을 막는다
   const byUrl = new Map();

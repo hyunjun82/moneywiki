@@ -29,7 +29,7 @@ export function evidenceDigest(ev, { maxFacts = 320, maxRawChars = 6000, maxRawT
   return { facts: facts.join("\n"), raws: raws.join("\n\n"), captures: captures.join("\n") };
 }
 
-export function planPrompt({ slug, topic, category, categories, keywords, registry, related, today, rewrite, oldTitle, retryNote, titleRule, titleExamples, fixedTitle, fixedItems }) {
+export function planPrompt({ slug, topic, category, categories, keywords, registry, related, today, rewrite, oldTitle, retryNote, titleRule, titleExamples, fixedTitle, fixedItems, ctaScreens }) {
   // 타이틀을 고정해 부르면(--title) 설계 단계는 타이틀을 짓지 않는다. 항목 수에 군집 수를 맞추는 일만 한다.
   const fixed = String(fixedTitle || "").trim();
   const items = Array.isArray(fixedItems) ? fixedItems : [];
@@ -72,6 +72,9 @@ ${related.join(", ") || "(없음)"}
 ## 공식 출처 등록부 — 지금까지 Playwright 로 열어 본문 추출에 성공한 주소. 근거 페이지는 여기서 고릅니다
 ${registry.map((r) => `- ${r.org} | ${r.url} | 쓴 글 ${r.usedBy.length}편 | ${r.preview}`).join("\n") || "(비어 있음)"}
 
+## 행동 화면 등록부 — 버튼(ctas) 전용 (scripts/cta-registry.json). 위 출처 등록부는 근거 목록이지 버튼 목록이 아닙니다
+${(ctaScreens || []).map((s) => `- ${s.label} | ${s.url} | 버튼 이름에 넣을 말: ${s.keywords}`).join("\n") || "(비어 있음)"}
+
 ## 규칙
 1. 군집 2~4개. 군집 하나 = 대제목(h2) 하나 = 검색자가 정말 알고 싶은 것 하나. 군집마다 세부 질문(h3) 1~3개, 전체 h3 는 6~9개. h2·h3 는 검색자가 실제로 묻는 문장 그대로 "~나요" 로 끝냅니다.
 ${fixed ? `2. **타이틀은 위에 고정돼 있습니다 — 새로 짓지 않습니다.** 그대로 옮겨 적고, 군집 수만 위 항목 수(${items.length || "타이틀이 약속한 수"})에 맞춥니다.` : `2. **타이틀은 아래 「저장된 타이틀 형식」과 「실제 예시」를 그대로 따릅니다.** 제가 형식을 새로 만들지 않습니다.
@@ -87,7 +90,7 @@ ${fixed ? `2. **타이틀은 위에 고정돼 있습니다 — 새로 짓지 않
 4. eyebrow: 대제목마다 4~8자 주제 라벨(예: "지원 대상", "보험료 비교"). 대제목 문장의 앞부분을 잘라 쓰면 거부됩니다.
 5. laws: 글이 인용할 조문만. articles 는 숫자만 (예: 40, 41). "제40조" 처럼 쓰지 않습니다. '조의N' 조문은 "19의2" 로 적습니다 (예: 국민연금법 실업크레딧 = "19의2"). 법령 이름은 법제처 정식 명칭(고용보험법 / 고용보험법 시행령 / 국민건강보험법 / 국민연금법 …). 시행령·시행규칙은 별도 항목.
 6. urls: 본문 근거로 쓸 공식 페이지 2~5개. 등록부에서 고릅니다. 등록부에 꼭 필요한 것이 없으면 .go.kr/.or.kr 주소를 새로 적고 "new": true 를 붙입니다 (Playwright 가 실제로 열어 봅니다. 안 열리면 버려집니다). 기관 홈(예: https://www.nps.or.kr/) 은 금지. 그 내용이 실제로 적힌 화면이어야 합니다.
-7. ctas: 독자가 누를 버튼 2~4개. 신청·조회·계산·발급을 실제로 하는 화면. label 은 행동형("임의계속가입 신청하기"). "보기" 로 끝나는 열람형 금지. 어느 대제목 아래에 둘지 forSection 에 h2 문장을 적고, 첫 화면 대형 버튼 하나에 "hero": true. 주소는 Playwright 가 실제로 열어 신청·조회 요소가 있는지 봅니다 — 안내·개편·점검 페이지나 열리지 않는 주소는 버려집니다. 확실하지 않은 깊은 주소보다, 등록부에 있는 주소나 그 기관의 민원·신청 메뉴 첫 화면이 낫습니다. 실손24(insu24.or.kr)처럼 첫 화면이 곧 그 일을 하는 화면이면 도메인만 있는 주소도 됩니다.
+7. ctas: 독자가 누를 버튼 2~4개. 신청·조회·계산·발급을 실제로 하는 화면. label 은 행동형("임의계속가입 신청하기"). "보기" 로 끝나는 열람형 금지. 어느 대제목 아래에 둘지 forSection 에 h2 문장을 적고, 첫 화면 대형 버튼 하나에 "hero": true. 주소는 Playwright 가 실제로 열어 신청·조회 요소가 있는지 봅니다 — 안내·개편·점검 페이지나 열리지 않는 주소는 버려집니다. 고용24·노동포털 버튼은 「행동 화면 등록부」의 주소만 쓰고 버튼 이름에 그 화면의 말을 넣습니다(예: 상병급여 청구 화면 → "고용24에서 상병급여 청구하기"). 등록부에 그 일을 하는 화면이 없으면 그 버튼은 넣지 않습니다 — 기관 첫 화면·제도 안내 화면·다른 일을 하는 화면으로 보내는 버튼은 기계가 거부합니다. 실손24(insu24.or.kr)처럼 첫 화면이 곧 그 일을 하는 화면이면 도메인만 있는 주소도 됩니다.
 8. relatedSlugs 3~4개: 위 '이미 있는 글' 목록 안에서만.
 9. misconceptions 2~3개: 검색자가 자주 틀리는 것. 본문이 직접 다룰 수 있게 한 문장씩.
 10. visual: 군집마다 대표 비주얼 하나 — decide(나도 되나?) / compareTable(뭐가 다르지? 얼마?) / stepbar(어떻게 하나?) / flow(산식) / timeline(언제?) / checklist(조건) / case-example(내 경우는?) / none. 연속한 두 군집에 같은 visual 을 두지 않습니다. 주제에 없는 위젯을 채우지 않습니다.

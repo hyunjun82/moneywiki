@@ -16,6 +16,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { checkDraft } from "./lib/check-draft.mjs";
+import { ctaProblems } from "./lib/cta-rules.mjs";
 
 const slug = process.argv[2];
 if (!slug) { console.error("사용법: node scripts/test-gates-draft.mjs <slug>"); process.exit(2); }
@@ -37,7 +38,15 @@ function articleFromFiles(slug, fromHead = false) {
     const body = src.slice(marks[i].index, i + 1 < marks.length ? marks[i + 1].index : src.length);
     const title = (body.match(/title:\s*"((?:[^"\\]|\\.)*)"/) || [])[1] || "";
     const category = (body.match(/category:\s*"([^"]+)"/) || [])[1] || "";
-    return { slug, category, meta: { title, description: "x" } };
+    // 버튼(heroCta·cta·action) — 출처 목록(sources)의 label/url 은 버튼이 아니다
+    const ctas = [];
+    for (const m of body.matchAll(/label:\s*"([^"]+)",\s*url:\s*"([^"]+)"/g)) {
+      const before = body.slice(0, m.index);
+      const k = Math.max(before.lastIndexOf("heroCta:"), before.lastIndexOf("cta: {"), before.lastIndexOf("action:"));
+      if (before.lastIndexOf("sources: [") > k || /law\.go\.kr/.test(m[2])) continue;
+      ctas.push({ label: m[1], url: m[2] });
+    }
+    return { slug, category, meta: { title, description: "x" }, ctas };
   }
   return null;
 }
@@ -59,9 +68,11 @@ const problems = checkDraft({
   article, plan,
   ev: { facts: [], raws: [] }, live: new Set(), ctaAllowed: new Set(),
 }).filter((x) => x.startsWith("meta.title") || x.startsWith("slug ") || x.startsWith("category "));
+// 버튼 이름과 도착 화면이 같은 일인지 — 버튼이 고용24 첫 화면·제도안내로 몰렸던 구멍 (2026-09-14)
+for (const c of article.ctas || []) for (const msg of ctaProblems(c)) problems.push(`CTA "${c.label}" ${msg}`);
 
 if (problems.length) {
   for (const p of problems) console.error("❌ [" + slug + "] " + p);
   process.exit(1);
 }
-console.log(`✅ [${slug}] 설계도와 글의 slug·category·meta.title 일치`);
+console.log(`✅ [${slug}] 설계도와 글의 slug·category·meta.title 일치 · 버튼 ${(article.ctas || []).length}개 규칙 통과`);

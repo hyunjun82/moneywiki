@@ -116,6 +116,12 @@ const cases = [
     break: () => editArticle((b) => b.replace(/title: "([^"]+)"/, (m, t) => `title: "${t.replace(/과 /, ", ").replace(/부터 /, "").replace(/까지$/, "")}"`)),
   },
   {
+    n: "버튼을 고용24 제도안내 화면으로 바꾸면",
+    gate: "draft",
+    slow: false,
+    break: () => editArticle((b) => b.replace(/(label:\s*"[^"]+",\s*url:\s*")https:\/\/www\.work24\.go\.kr[^"]*"/, "$1https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1\"")),
+  },
+  {
     n: "옛 TSX 폴더가 새 글을 가리면",
     gate: "shadow",
     slow: false,

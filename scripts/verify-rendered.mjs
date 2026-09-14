@@ -19,6 +19,7 @@
  *   node scripts/verify-rendered.mjs --base http://localhost:3000 <slug>
  */
 import { chromium } from "playwright";
+import { ctaProblems } from "./lib/cta-rules.mjs";
 import net from "node:net";
 
 const argv = process.argv.slice(2);
@@ -212,6 +213,8 @@ for (const slug of slugs) {
     ];
 
     for (const cta of r.ctas) {
+      // 이름과 도착 화면이 같은 일인지 — 도착 화면에 '신청' 이 하나라도 있으면 통과시키던 구멍 (2026-09-14)
+      for (const msg of ctaProblems({ label: cta.label, url: cta.href })) problems.push(`CTA "${cta.label}" ${msg}`);
       const p2 = await browser.newPage();
       try {
         await p2.goto(cta.href, { waitUntil: "commit", timeout: 90000 });
