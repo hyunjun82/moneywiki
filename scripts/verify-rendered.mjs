@@ -101,10 +101,10 @@ for (const slug of slugs) {
         // 예전 규칙은 중점(·)이 있는 타이틀만 셌다 — 'A와 B, C부터 D까지' 형식에는 걸리지 않는 죽은 규칙이었고,
         // '질병·간병' 같은 합성어의 중점을 항목으로 세어 오경보도 냈다.
         const h1 = (q("h1")?.textContent ?? "").replace(/\s*\(\d{4}\)\s*$/, "").trim();
-        const conj = (x) => (x.match(/[가-힣0-9]\s*(?:와|과|·|및)\s*/g) || []).length;
+        const conj = (x) => (x.match(/[가-힣0-9](?:\s*(?:와|과|및)(?=\s)|\s*·\s*)/g) || []).length;
         let promised = 0;
         for (const part of h1.split(/,\s*/)) {
-          if (/부터[\s\S]*(까지|총정리|정리)/.test(part)) promised += 2 + conj(part.split("부터")[0]);
+          if (/부터[\s\S]*(까지|총정리|정리|계산)/.test(part)) promised += 2 + conj(part.split("부터")[0]);
           else promised += 1 + conj(part);
         }
         const mains = all("section.q").filter((s) => /^q\d+$/.test(s.id)).length;

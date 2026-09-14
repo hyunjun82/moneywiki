@@ -62,10 +62,10 @@ export function collectQuotes(article) {
 /** 타이틀이 약속한 항목 수 — verify-rendered 의 계산을 그대로 옮김 */
 export function promisedCount(title) {
   const h1 = String(title || "").replace(/\s*\|\s*머니위키\s*$/, "").replace(/\s*\(\d{4}\)\s*$/, "").trim();
-  const conj = (x) => (x.match(/[가-힣0-9]\s*(?:와|과|·|및)\s*/g) || []).length;
+  const conj = (x) => (x.match(/[가-힣0-9](?:\s*(?:와|과|및)(?=\s)|\s*·\s*)/g) || []).length;
   let promised = 0;
   for (const part of h1.split(/,\s*/)) {
-    if (/부터[\s\S]*(까지|총정리|정리)/.test(part)) promised += 2 + conj(part.split("부터")[0]);
+    if (/부터[\s\S]*(까지|총정리|정리|계산)/.test(part)) promised += 2 + conj(part.split("부터")[0]);
     else promised += 1 + conj(part);
   }
   return promised;
@@ -239,7 +239,13 @@ export function checkDraft({ article: a, plan, ev, live, ctaAllowed, quickCompon
   if (a.slug !== plan.slug) p.push(`slug 가 "${a.slug}" — 설계도는 "${plan.slug}"`);
   if (a.category !== plan.category) p.push(`category 가 "${a.category}" — 설계도는 "${plan.category}"`);
   if (!a.meta?.title) p.push("meta.title 없음");
-  else if (a.meta.title.length > 42) p.push(`meta.title 이 ${a.meta.title.length}자 — 42자 이하 (검색 결과에서 잘림). 대제목 수는 그대로 두고 항목마다 낱말을 줄이세요: "${a.meta.title}"`);
+  // 타이틀은 설계도가 정한다. slug·category 처럼 글이 바꾸면 안 되는 값이다.
+  // 이 대조가 없어서 --title 로 못박은 타이틀을 고치기 단계가 42자 규칙에 맞춰 마음대로 줄여 왔다
+  // (부터…까지 가 쉼표로 뭉개져 28편 중 18편이 바뀌었다, 2026-09-14). 길이는 설계 단계에서 이미 본다.
+  else if (plan.title && a.meta.title !== plan.title) p.push(`meta.title 이 설계도와 다릅니다 — 설계도 title 을 글자 하나 바꾸지 말고 그대로 씁니다.
+    설계도: "${plan.title}"
+    글:     "${a.meta.title}"`);
+  else if (!plan.title && a.meta.title.length > 42) p.push(`meta.title 이 ${a.meta.title.length}자 — 42자 이하 (검색 결과에서 잘림). 대제목 수는 그대로 두고 항목마다 낱말을 줄이세요: "${a.meta.title}"`);
   if (!a.meta?.description) p.push("meta.description 없음");
   for (const k of ["userQuestion", "directAnswer", "why"]) if (!a.searchIntent?.[k]) p.push(`searchIntent.${k} 없음`);
   if (!Array.isArray(a.primaryKeywords) || a.primaryKeywords.length < 2 || a.primaryKeywords.length > 3) p.push("primaryKeywords 는 2~3개");

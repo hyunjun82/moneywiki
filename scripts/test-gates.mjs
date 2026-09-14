@@ -56,6 +56,9 @@ const gates = {
   },
   // --base 를 빼면 라이브 사이트를 검사한다. 로컬 변형이 안 보여 전부 통과로 나온다.
   rendered: () => run("node", ["scripts/verify-rendered.mjs", "--base", "http://localhost:3111", SLUG]),
+  // checkDraft 는 CLI 가 없어 시험대 밖에 있었다. 설계도 title 과 글 meta.title 이
+  // 어긋나도 아무도 안 보는 바람에 --title 로 못박은 타이틀이 고치기 단계에서 바뀌었다(2026-09-14).
+  draft: () => run("node", ["scripts/test-gates-draft.mjs", SLUG]),
   meaning: () => run("npx", ["tsx", "scripts/verify-meaning.ts", SLUG]),
   omission: () => run("npx", ["tsx", "scripts/verify-omission.ts", SLUG]),
 };
@@ -105,6 +108,12 @@ const cases = [
     gate: "evidence",
     slow: false,
     break: () => editEvidence((j) => { j.facts[0].screenshot = "없는파일.png"; return j; }),
+  },
+  {
+    n: "설계도 타이틀과 글 타이틀이 달라지면",
+    gate: "draft",
+    slow: false,
+    break: () => editArticle((b) => b.replace(/title: "([^"]+)"/, (m, t) => `title: "${t.replace(/과 /, ", ").replace(/부터 /, "").replace(/까지$/, "")}"`)),
   },
   {
     n: "옛 TSX 폴더가 새 글을 가리면",
