@@ -32,7 +32,7 @@ function articlesInFile(src) {
 }
 
 /** 본문에서 검증 대상 숫자 토큰 추출 (URL·날짜메타·인덱스 제외) */
-const NUM_TOKEN = /\d[\d,]*(?:\.\d+)?\s*(?:원|만원|천원|억원|억|%|퍼센트|일|개월|년|주|회|세|시간|배)/g;
+const NUM_TOKEN = /\d[\d,]*(?:\.\d+)?[ \t]*(?:원|만원|천원|억원|억|%|퍼센트|일|개월|년|주|회|세|시간|배)/g;
 function numbersIn(text) {
   return [...new Set((text.match(NUM_TOKEN) || []).map((s) => s.replace(/\s+/g, "")))];
 }
@@ -161,7 +161,11 @@ for (const file of fs.readdirSync(ART_DIR).filter((f) => f.endsWith(".ts") && f 
     // url/날짜/스키마 필드를 제외한 본문 문자열만 대조 대상으로
     const prose = art.body
       .replace(/https?:\/\/\S+/g, "")
-      .replace(/^\s*(lastVerified|verifiedAt|publishedAt|effectiveDate|sourceIndex|slug|ogImage)\s*:.*$/gm, "");
+      .replace(/^\s*(lastVerified|verifiedAt|publishedAt|effectiveDate|sourceIndex|slug|ogImage)\s*:.*$/gm, "")
+      // 위 줄 단위 제거는 `slug: "..."` 가 줄 맨 앞일 때만 듣는다.
+      // relatedQuestions/more 는 `{ question: "...", slug: "..." }` 처럼 한 줄이라 slug 가 남아
+      // "4시간-미만-단시간-실업급여" 의 4시간이 근거 없는 수치로 잡혔다. 키 단위로 한 번 더 지운다.
+      .replace(/(?:slug|url|ogImage|lastVerified|verifiedAt|publishedAt|effectiveDate|sourceIndex)\s*:\s*(["'])[^"']*/g, "");
 
     const unproven = numbersIn(prose).filter((n) => !IGNORE.test(n) && !evidenceHas(ev, n));
     if (unproven.length) {

@@ -1,0 +1,136 @@
+{
+  "slug": "실업급여-관할-고용센터",
+  "category": "고용",
+  "topic": "실업급여 관할 고용센터: 관할 판정 기준, 센터 찾는 법, 이사 시 변경, 방문 없이 처리",
+  "title": "실업급여 관할 고용센터 판정 기준과 찾는 법, 이사 변경과 온라인 처리",
+  "primaryKeywords": [
+    "실업급여 관할 고용센터",
+    "이사 변경",
+    "온라인 처리"
+  ],
+  "clusters": [
+    {
+      "eyebrow": "관할 판정 원칙",
+      "h2": "실업급여 관할 고용센터는 무엇을 기준으로 정해지나요",
+      "h3": [
+        "관할은 거주지 기준인가요 근무지 기준인가요",
+        "관할이 아닌 고용센터에서 신청해도 되나요"
+      ],
+      "visual": "decide",
+      "why": "기존 제목이 '조회 방법'만 다뤄 관할 자체의 판정 기준(거주지·근무지 중 무엇을 보는지)을 묻는 검색자를 놓치고 있음 — 리라이트 타이틀 1번 항목"
+    },
+    {
+      "eyebrow": "센터 조회 방법",
+      "h2": "내 관할 고용센터는 어디서 찾나요",
+      "h3": [
+        "고용24에서 관할 고용센터를 조회하는 방법은 무엇인가요",
+        "전화나 방문으로 관할 고용센터를 확인할 수 있나요"
+      ],
+      "visual": "stepbar",
+      "why": "옛 제목의 핵심 검색 의도('조회 방법')를 그대로 승계 — 타이틀 2번 항목"
+    },
+    {
+      "eyebrow": "이사 시 대처법",
+      "h2": "실업급여 받는 중 이사하면 관할이 바뀌나요",
+      "h3": [
+        "이사 후에도 원래 관할 고용센터에서 계속 받을 수 있나요",
+        "관할 변경 신청은 어떻게 하나요",
+        "이사로 실업인정일 방문이 어려우면 어떻게 하나요"
+      ],
+      "visual": "checklist",
+      "why": "지식iN 질문 '실업급여 받는중 이사'(답변 19건) — 자료 안에서 확인되는 실제 다빈도 질문. 타이틀 3번 항목"
+    },
+    {
+      "eyebrow": "비대면 처리 범위",
+      "h2": "관할 고용센터를 방문하지 않고 온라인으로 처리할 수 있나요",
+      "h3": [
+        "고용24에서 실업급여 신청과 실업인정을 온라인으로 할 수 있나요",
+        "온라인 처리가 안 되는 경우는 언제인가요"
+      ],
+      "visual": "stepbar",
+      "why": "'실업급여 신청방법 온라인', '고용24 실업급여 신청방법' 자동완성 다수 — 방문 없이 처리 가능한 범위를 궁금해하는 수요. 타이틀 4번 항목"
+    }
+  ],
+  "laws": [
+    {
+      "name": "고용보험법",
+      "articles": [
+        "42",
+        "43",
+        "44"
+      ]
+    }
+  ],
+  "urls": [
+    {
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
+      "org": "고용24",
+      "why": "실업급여 온라인 신청·처리 시스템 정보 페이지, 등록부에서 쓴 글 50편으로 안정적으로 열림",
+      "new": false
+    },
+    {
+      "url": "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
+      "org": "고용노동부 노동포털",
+      "why": "민원 신청 화면 — 방문 없이 처리하는 절차의 근거",
+      "new": false
+    },
+    {
+      "url": "https://www.work24.go.kr/cm/c/d/0210/selectCenterList.do",
+      "org": "고용24",
+      "why": "전국 고용센터 찾기(관할 조회) 화면으로 추정 — Playwright 확인 필요",
+      "new": true,
+      "failed": true
+    },
+    {
+      "url": "https://www.law.go.kr/LSW/lsBylInfoPLinkR.do?lsiSeq=000000&bylNo=0002&bylBrNo=00&bylCls=BE&bylEfYd=&bylEfYdYn=N&lsNm=%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%20%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99",
+      "org": "법제처",
+      "why": "고용보험법 시행규칙 별표·서식 — 관할 신고·변경 관련 서식 근거, 등록부에서 쓴 글 8편",
+      "new": false
+    }
+  ],
+  "ctas": [
+    {
+      "label": "고용24에서 실업급여 온라인 신청하기",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
+      "org": "고용24",
+      "forSection": "관할 고용센터를 방문하지 않고 온라인으로 처리할 수 있나요",
+      "checked": {
+        "ok": true,
+        "title": "고용정책 상세_제도안내 | 고용정책 목록 | 정책/제도 | 고객센터>실업급여(상용직)",
+        "why": "",
+        "at": "2026-09-14"
+      },
+      "hero": true
+    },
+    {
+      "label": "고용노동부 민원 신청하기",
+      "url": "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
+      "org": "고용노동부",
+      "forSection": "관할 고용센터를 방문하지 않고 온라인으로 처리할 수 있나요",
+      "checked": {
+        "ok": true,
+        "title": "고용노동부 노동포털",
+        "why": "",
+        "at": "2026-09-14"
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "실업급여-고용센터",
+    "고용24-실업급여",
+    "고용24-실업급여-계산기-사용법",
+    "실업급여-1차-실업인정"
+  ],
+  "misconceptions": [
+    "관할이 아닌 고용센터에서는 신청 자체가 안 된다고 알지만, 실무상 전국 어느 고용센터에서도 접수가 가능하다",
+    "이사를 하면 실업급여가 끊기거나 처음부터 다시 신청해야 한다고 알지만, 관할만 옮기면 남은 기간 그대로 이어받는다",
+    "관할 고용센터 업무는 반드시 방문해야 처리된다고 알지만, 신청·실업인정 상당 부분은 고용24 온라인으로 끝난다"
+  ],
+  "deadCtas": [
+    {
+      "label": "관할 고용센터 찾기",
+      "url": "https://www.work24.go.kr/cm/c/d/0210/selectCenterList.do",
+      "why": "신청·조회 요소가 없는 페이지 (제목: 고용24)"
+    }
+  ]
+}

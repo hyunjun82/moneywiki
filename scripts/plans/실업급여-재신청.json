@@ -1,0 +1,141 @@
+{
+  "slug": "실업급여-재신청",
+  "category": "고용",
+  "topic": "실업급여 재신청: 재신청 요건, 잔여일수 승계, 180일 재충족, 반복수급 감액",
+  "title": "실업급여 재신청 요건과 잔여일수 승계, 180일 재충족과 반복수급 감액",
+  "primaryKeywords": [
+    "실업급여 재신청",
+    "180일 재충족",
+    "반복수급 감액"
+  ],
+  "clusters": [
+    {
+      "eyebrow": "재신청 조건",
+      "h2": "실업급여를 이미 받았는데 다시 받을 수 있나요",
+      "h3": [
+        "재취업 후 곧바로 퇴사해도 재신청 요건이 되나요",
+        "이직확인서는 재신청 때도 다시 받아야 하나요",
+        "자발적 퇴사로 재취업했다가 그만둬도 재신청 가능한가요"
+      ],
+      "visual": "decide",
+      "why": "지식iN '실업급여 수급받고 같은 회사 재취업 후 다시'(답변6), 연관검색어 '실업급여 재수급' — 재취업 후 재퇴사·재신청 가능 여부를 묻는 질문 다수"
+    },
+    {
+      "eyebrow": "일수 이월",
+      "h2": "이전에 남은 소정급여일수를 이어받을 수 있나요",
+      "h3": [
+        "재취업 후 며칠 만에 퇴사해야 잔여일수가 승계되나요",
+        "잔여일수와 새로 계산한 급여일수 중 어느 쪽을 받나요"
+      ],
+      "visual": "flow",
+      "why": "이미 있는 글 '실업급여-소정급여일수' 존재 — 재취업 후 단기 재퇴사 시 남은 일수 처리를 묻는 질문이 재신청 검색과 함께 나타남"
+    },
+    {
+      "eyebrow": "가입기간 재충족",
+      "h2": "재신청하려면 피보험단위기간 180일을 다시 채워야 하나요",
+      "h3": [
+        "이전 직장과 새 직장 근무기간을 합산해서 180일을 채울 수 있나요",
+        "단기 알바로도 180일 재충족이 가능한가요"
+      ],
+      "visual": "checklist",
+      "why": "지식iN '실업급여 180일'(답변10), '실업급여 180일 충족?'(답변5), '실업급여 수급 기준 180일 채우려면 얼마나 근'(답변8), '실업급여 피보험기간 180일 질문입니다'(답변7)"
+    },
+    {
+      "eyebrow": "감액 기준",
+      "h2": "실업급여를 반복해서 받으면 금액이 깎이나요",
+      "h3": [
+        "몇 번째 재수급부터 감액이 적용되나요",
+        "감액을 피하려면 재취업 기간을 얼마나 유지해야 하나요"
+      ],
+      "visual": "compareTable",
+      "why": "연관검색어 '실업급여 반복수급자', '실업급여 반복수급', 이미 있는 글 '실업급여-반복수급'·'실업급여-감액' 존재 — 2026년 하한액 인상 질문과 함께 반복수급 감액 관심 확인"
+    }
+  ],
+  "laws": [
+    {
+      "name": "고용보험법",
+      "articles": [
+        "40",
+        "41",
+        "48",
+        "50"
+      ]
+    }
+  ],
+  "urls": [
+    {
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
+      "org": "고용24",
+      "why": "실업급여 신청·재신청 시스템 안내 화면",
+      "new": false
+    },
+    {
+      "url": "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
+      "org": "고용노동부",
+      "why": "이직확인서 등 재신청 시 필요한 민원 서식 신청 화면",
+      "new": false
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "why": "실업급여 수급요건·피보험단위기간 개념 설명",
+      "new": false
+    },
+    {
+      "url": "https://www.law.go.kr/LSW/lsBylInfoPLinkR.do?lsiSeq=000000&bylNo=0002&bylBrNo=00&bylCls=BE&bylEfYd=&bylEfYdYn=N&lsNm=%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%20%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99",
+      "org": "법제처",
+      "why": "고용보험법 시행규칙 별표 — 수급자격 제한 사유 확인",
+      "new": false
+    }
+  ],
+  "ctas": [
+    {
+      "label": "실업급여 재신청하기",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
+      "org": "고용24",
+      "forSection": "실업급여를 이미 받았는데 다시 받을 수 있나요",
+      "hero": true,
+      "checked": {
+        "ok": true,
+        "title": "고용정책 상세_제도안내 | 고용정책 목록 | 정책/제도 | 고객센터>실업급여(상용직)",
+        "why": "",
+        "at": "2026-09-14"
+      }
+    },
+    {
+      "label": "이직확인서 재발급 신청하기",
+      "url": "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
+      "org": "고용노동부",
+      "forSection": "실업급여를 이미 받았는데 다시 받을 수 있나요",
+      "checked": {
+        "ok": true,
+        "title": "고용노동부 노동포털",
+        "why": "",
+        "at": "2026-09-14"
+      }
+    },
+    {
+      "label": "피보험단위기간 확인하기",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "forSection": "재신청하려면 피보험단위기간 180일을 다시 채워야 하나요",
+      "checked": {
+        "ok": true,
+        "title": "실업급여 > 구직급여 > 구직급여 수급대상 > 구직급여 수급자격 (본문) | 찾기쉬운 생활법령정보",
+        "why": "",
+        "at": "2026-09-14"
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "실업급여-반복수급",
+    "실업급여-180일",
+    "실업급여-소정급여일수",
+    "실업급여-감액"
+  ],
+  "misconceptions": [
+    "실업급여를 한 번 받으면 다시는 받을 수 없다고 생각하지만, 재취업 후 요건을 다시 채우면 재신청할 수 있습니다.",
+    "이전에 남은 소정급여일수는 재취업 여부와 상관없이 그대로 이어받을 수 있다고 생각하지만, 잔여일수 승계에는 재취업 기간 조건이 있습니다.",
+    "반복수급 감액이 재신청자 전원에게 적용된다고 생각하지만, 실제로는 일정 기간 내 반복 횟수 기준을 넘을 때부터 적용됩니다."
+  ]
+}

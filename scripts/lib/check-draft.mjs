@@ -7,7 +7,7 @@
  */
 
 /* ── verify-evidence 와 같은 규칙 ── */
-export const NUM_TOKEN = /\d[\d,]*(?:\.\d+)?\s*(?:원|만원|천원|억원|억|%|퍼센트|일|개월|년|주|회|세|시간|배)/g;
+export const NUM_TOKEN = /\d[\d,]*(?:\.\d+)?[ \t]*(?:원|만원|천원|억원|억|%|퍼센트|일|개월|년|주|회|세|시간|배)/g;
 const IGNORE_YEAR = /^(19|20)\d{2}년$/;
 /** 사람이 읽는 본문이 아닌 필드 — 숫자 대조에서 뺀다 (verify-evidence 도 url·날짜 메타를 뺀다) */
 const SKIP_KEYS = new Set(["url", "slug", "publishedAt", "lastVerified", "verifiedAt", "ogImage", "sourceIndex",

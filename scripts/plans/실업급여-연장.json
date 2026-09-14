@@ -1,0 +1,127 @@
+{
+  "slug": "실업급여-연장",
+  "category": "고용",
+  "topic": "실업급여 연장급여: 훈련연장급여, 개별연장급여, 특별연장급여, 신청 방법",
+  "title": "실업급여 연장급여 훈련연장과 개별연장, 특별연장부터 신청 조건까지",
+  "primaryKeywords": [
+    "실업급여 연장급여",
+    "개별연장",
+    "특별연장"
+  ],
+  "clusters": [
+    {
+      "eyebrow": "훈련연장 대상",
+      "h2": "실업급여 훈련연장급여는 누가 받을 수 있나요",
+      "h3": [
+        "소정급여일수가 끝난 뒤에도 훈련연장급여를 받을 수 있나요",
+        "훈련연장급여 기간과 지급액은 얼마나 되나요"
+      ],
+      "visual": "decide",
+      "why": "지식iN에 '실업급여 마지막회차'(6건), '실업급여 4차'(9건) 등 소정급여일수 소진 후 상황을 묻는 질문이 반복됨"
+    },
+    {
+      "eyebrow": "개별연장 조건",
+      "h2": "개별연장급여는 어떤 조건이면 받나요",
+      "h3": [
+        "개별연장급여 신청 자격과 지급 기간은 어떻게 되나요",
+        "개별연장급여는 60일 동안 얼마씩 받나요"
+      ],
+      "visual": "checklist",
+      "why": "기존 글 제목이 '개별연장급여·특별연장급여: 추가 60일 지급 요건'이었을 만큼 자격 요건 검색 수요가 큼"
+    },
+    {
+      "eyebrow": "특별연장 발동",
+      "h2": "특별연장급여는 언제 받을 수 있나요",
+      "h3": [
+        "특별연장급여는 개별연장급여와 같이 받을 수 있나요",
+        "특별연장급여 지급액은 얼마인가요"
+      ],
+      "visual": "compareTable",
+      "why": "훈련·개별·특별연장급여의 발동 조건과 지급액이 서로 달라 혼동하는 질문이 많음(스포크 '개념·필요성' 다수)"
+    },
+    {
+      "eyebrow": "연장급여 신청",
+      "h2": "실업급여 연장급여는 어떻게 신청하나요",
+      "h3": [
+        "연장급여는 고용센터에 따로 신청해야 하나요",
+        "연장급여 신청 시기와 준비 서류는 무엇인가요"
+      ],
+      "visual": "stepbar",
+      "why": "'실업급여 신청방법'(월간 최상위 자동완성), '실업급여 신청 준비물' 등 신청 절차 질문이 항상 상위권"
+    }
+  ],
+  "laws": [
+    {
+      "name": "고용보험법",
+      "articles": [
+        "51",
+        "52",
+        "53"
+      ]
+    }
+  ],
+  "urls": [
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "why": "실업급여(구직급여) 제도 개관 및 연장급여 근거 조문 확인",
+      "new": false
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=1",
+      "org": "법제처",
+      "why": "구직급여 지급 요건·기간 관련 후속 조문",
+      "new": false
+    },
+    {
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
+      "org": "고용24",
+      "why": "실업급여 신청·모의계산 시스템 안내 화면",
+      "new": false
+    },
+    {
+      "url": "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
+      "org": "고용노동부",
+      "why": "고용센터 민원 신청 절차 확인",
+      "new": false
+    }
+  ],
+  "ctas": [
+    {
+      "label": "고용24에서 실업급여 신청하기",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
+      "org": "고용24",
+      "forSection": "실업급여 연장급여는 어떻게 신청하나요",
+      "hero": true,
+      "checked": {
+        "ok": true,
+        "title": "고용정책 상세_제도안내 | 고용정책 목록 | 정책/제도 | 고객센터>실업급여(상용직)",
+        "why": "",
+        "at": "2026-09-14"
+      }
+    },
+    {
+      "label": "고용센터 민원 신청하기",
+      "url": "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
+      "org": "고용노동부",
+      "forSection": "실업급여 연장급여는 어떻게 신청하나요",
+      "checked": {
+        "ok": true,
+        "title": "고용노동부 노동포털",
+        "why": "",
+        "at": "2026-09-14"
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "2026년-실업급여",
+    "고용24-실업급여",
+    "권고사직-실업급여",
+    "계약만료-실업급여"
+  ],
+  "misconceptions": [
+    "소정급여일수가 끝나면 무조건 더 받을 수 없다고 생각하지만, 훈련·개별·특별연장급여로 추가 지급받을 수 있다",
+    "개별연장급여는 신청만 하면 자동으로 60일 늘어난다고 오해하지만, 취업이 특히 곤란하다는 별도 인정 요건을 충족해야 한다",
+    "특별연장급여는 개인이 원할 때 신청할 수 있다고 생각하지만, 고용노동부 장관이 고용사정 등을 이유로 기간을 지정해야만 시행된다"
+  ]
+}

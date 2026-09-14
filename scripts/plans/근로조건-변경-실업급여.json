@@ -1,0 +1,132 @@
+{
+  "slug": "근로조건-변경-실업급여",
+  "category": "고용",
+  "topic": "근로조건 변경 퇴사 실업급여: 인정 요건, 임금 20% 삭감, 전보·업무 변경, 증빙 서류",
+  "title": "근로조건 변경 퇴사 실업급여 인정 요건, 임금 삭감과 전보 발령부터 증빙 서류까지",
+  "primaryKeywords": [
+    "근로조건 변경 퇴사",
+    "임금 삭감",
+    "전보 발령"
+  ],
+  "clusters": [
+    {
+      "eyebrow": "인정 기준",
+      "h2": "근로조건이 나빠져서 퇴사하면 실업급여를 받을 수 있나요",
+      "h3": [
+        "근로조건 변경이 어느 정도여야 정당한 퇴사 사유로 인정되나요",
+        "회사가 근로조건 변경을 미리 알리지 않고 시행했다면 어떻게 되나요"
+      ],
+      "visual": "decide",
+      "why": "지식iN 질문 상위권이 '자발적 퇴사 실업급여'(14건), '퇴사 실업급여'(8건) 등 근로조건 저하가 정당한 이직 사유로 인정되는지를 묻는 데 몰려 있음"
+    },
+    {
+      "eyebrow": "삭감 기준",
+      "h2": "임금이 얼마나 깎여야 실업급여 대상이 되나요",
+      "h3": [
+        "임금 20% 삭감 기준은 어떻게 계산하나요",
+        "인센티브나 수당이 줄어든 것도 임금 삭감으로 인정되나요"
+      ],
+      "visual": "compareTable",
+      "why": "'물리치료사 임금삭감+인센티브 폐지로 인한' 질문, 기존 슬러그 임금삭감-퇴직-실업급여, '실업급여 평균 임금 기준'(답변 6건) 등 삭감 폭 계산을 묻는 질문이 다수"
+    },
+    {
+      "eyebrow": "발령 사유",
+      "h2": "전보나 부서 이동으로 퇴사해도 실업급여를 받을 수 있나요",
+      "h3": [
+        "통근 시간이 크게 길어지는 전보는 정당한 사유로 인정되나요",
+        "직무나 직급이 낮아지는 전보도 인정되나요"
+      ],
+      "visual": "case-example",
+      "why": "기존 슬러그 업무전환-발령-퇴직-실업급여, '이사통근곤란 실업급여 인정'(3건) 질문, '퇴사 실업급여' 질문 본문 중 '회사가 부서를 변경했다는' 사례가 반복됨"
+    },
+    {
+      "eyebrow": "서류 목록",
+      "h2": "근로조건 변경을 증명하려면 어떤 서류를 준비해야 하나요",
+      "h3": [
+        "임금대장이나 급여명세서는 어떻게 준비하나요",
+        "인사발령 통지서가 없으면 어떻게 증빙하나요"
+      ],
+      "visual": "checklist",
+      "why": "'실업급여 필요한 서류'(5건), '실업급여 서류'(3~4건) 등 증빙 서류 자체를 묻는 질문이 많고 기존 슬러그 실업급여-구비서류가 존재"
+    }
+  ],
+  "laws": [
+    {
+      "name": "고용보험법",
+      "articles": [
+        "40",
+        "58"
+      ]
+    }
+  ],
+  "urls": [
+    {
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
+      "org": "고용24",
+      "why": "수급자격 인정 신청 등 실업급여 절차의 표준 진입 화면, 이 사이트에서 40편에 근거로 사용",
+      "new": false
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "why": "정당한 이직 사유 등 실업급여 인정 기준을 쉽게 풀어 설명",
+      "new": false
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=2&cnpClsNo=1",
+      "org": "법제처",
+      "why": "근로조건 변경·임금 관련 항목의 다른 챕터, 임금 삭감·전보 근거 보강",
+      "new": false
+    },
+    {
+      "url": "https://www.law.go.kr/LSW/lsBylInfoPLinkR.do?lsiSeq=000000&bylNo=0002&bylBrNo=00&bylCls=BE&bylEfYd=&bylEfYdYn=N&lsNm=%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%20%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99",
+      "org": "법제처",
+      "why": "고용보험법 시행규칙 별표 원문 — 근로조건 저하로 인한 이직이 정당한 사유 목록에 포함되는지 확인",
+      "new": false
+    },
+    {
+      "url": "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
+      "org": "고용노동부",
+      "why": "임금체불·근로조건 위반 진정서 제출 화면 — 증빙 서류 확보 경로",
+      "new": false
+    }
+  ],
+  "ctas": [
+    {
+      "label": "고용24에서 수급자격 인정 신청하기",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
+      "org": "고용24",
+      "forSection": "근로조건이 나빠져서 퇴사하면 실업급여를 받을 수 있나요",
+      "hero": true,
+      "checked": {
+        "ok": true,
+        "title": "고용정책 상세_제도안내 | 고용정책 목록 | 정책/제도 | 고객센터>실업급여(상용직)",
+        "why": "",
+        "at": "2026-09-14"
+      }
+    },
+    {
+      "label": "임금체불·근로조건 위반 진정 접수하기",
+      "url": "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
+      "org": "고용노동부",
+      "forSection": "임금이 얼마나 깎여야 실업급여 대상이 되나요",
+      "checked": {
+        "ok": true,
+        "title": "고용노동부 노동포털",
+        "why": "",
+        "at": "2026-09-14"
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "임금삭감-퇴직-실업급여",
+    "업무전환-발령-퇴직-실업급여",
+    "실업급여-정당한-퇴사-사유",
+    "실업급여-구비서류"
+  ],
+  "misconceptions": [
+    "임금이 조금이라도 깎이면 무조건 실업급여 대상이 된다고 오해하는 경우가 많지만 삭감 폭 기준이 따로 있다",
+    "전보나 발령이 힘들어서 그만두면 무조건 자발적 퇴사로 처리돼 실업급여를 못 받는다고 잘못 아는 경우가 있다",
+    "구두로 통보받은 근로조건 변경도 별다른 증빙 없이 실업급여를 신청할 수 있다고 착각하는 경우가 많다"
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "slug": "희망퇴직-실업급여",
+  "category": "고용",
+  "topic": "희망퇴직 실업급여: 수급 인정 여부, 위로금과 영향, 상실코드 확인, 신청 순서",
+  "title": "희망퇴직 실업급여 인정 여부와 위로금, 상실코드 확인과 신청 순서",
+  "primaryKeywords": [
+    "희망퇴직 실업급여",
+    "상실코드 확인",
+    "희망퇴직 위로금"
+  ],
+  "clusters": [
+    {
+      "eyebrow": "수급 인정 여부",
+      "h2": "희망퇴직도 실업급여를 받을 수 있나요",
+      "h3": [
+        "권고사직과 같게 인정되나요",
+        "회사가 퇴직을 권유했다는 근거가 있어야 하나요"
+      ],
+      "visual": "decide",
+      "why": "'부당해고 실업급여 신청가능한가요?', '실업급여 신청 조건 문의합니다' 등 자발적·비자발적 구분에 대한 지식iN 질문이 다수이고, 희망퇴직이 권고사직에 준하는 이직사유로 인정되는지가 검색자가 가장 먼저 궁금해하는 지점입니다."
+    },
+    {
+      "eyebrow": "위로금 영향",
+      "h2": "위로금을 받으면 실업급여 금액이 줄어드나요",
+      "h3": [
+        "위로금이 평균임금 산정에 포함되나요",
+        "위로금을 받은 시점이 수급 자격에 영향을 주나요"
+      ],
+      "visual": "compareTable",
+      "why": "'실업급여 금액', '실업급여 최대금액', '실업급여 평균임금' 검색량이 높고, 목돈인 위로금이 실업급여 산정이나 수급 자격에 불이익을 주는지 헷갈려하는 질문이 반복됩니다."
+    },
+    {
+      "eyebrow": "상실코드 확인",
+      "h2": "이직확인서 상실코드가 제대로 찍혔는지 어떻게 확인하나요",
+      "h3": [
+        "상실코드가 자진퇴사로 잘못 찍히면 어떻게 하나요",
+        "고용24에서 이직확인서를 직접 조회할 수 있나요"
+      ],
+      "visual": "checklist",
+      "why": "'실업급여 코드', '실업급여 코드 23', '실업급여 코드 32', '징계해고 상실코드26-1 실업급여', '실업급여 이직확인서' 등 상실코드·이직확인서 관련 질문이 자주 올라옵니다."
+    },
+    {
+      "eyebrow": "신청 순서",
+      "h2": "희망퇴직 후 실업급여는 어떤 순서로 신청하나요",
+      "h3": [
+        "이직확인서 발급부터 확인해야 하나요",
+        "고용24 신청과 실업인정 교육은 언제 받나요"
+      ],
+      "visual": "stepbar",
+      "why": "'실업급여 신청방법', '실업급여 신청절차', '고용24 실업급여 신청방법', '실업급여 신청 조건 문의합니다' 등 절차 순서를 묻는 질문이 상위권입니다."
+    }
+  ],
+  "laws": [
+    {
+      "name": "고용보험법",
+      "articles": [
+        "40",
+        "58"
+      ]
+    },
+    {
+      "name": "고용보험법 시행규칙",
+      "articles": [
+        "82"
+      ]
+    }
+  ],
+  "urls": [
+    {
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
+      "org": "고용24",
+      "why": "실업급여 신청·이직확인서 조회 등 고용24 시스템 안내 화면",
+      "new": false
+    },
+    {
+      "url": "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
+      "org": "고용노동부",
+      "why": "이직확인서 미발급 등 민원신청 서식 및 절차 안내",
+      "new": false
+    },
+    {
+      "url": "https://www.law.go.kr/LSW/lsBylInfoPLinkR.do?lsiSeq=000000&bylNo=0002&bylBrNo=00&bylCls=BE&bylEfYd=&bylEfYdYn=N&lsNm=%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%20%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99",
+      "org": "법제처",
+      "why": "고용보험법 시행규칙 별표(이직사유·상실코드 관련 규정) 확인",
+      "new": false
+    }
+  ],
+  "ctas": [
+    {
+      "label": "고용24에서 실업급여 신청하기",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
+      "org": "고용24",
+      "forSection": "희망퇴직도 실업급여를 받을 수 있나요",
+      "hero": true,
+      "checked": {
+        "ok": true,
+        "title": "고용정책 상세_제도안내 | 고용정책 목록 | 정책/제도 | 고객센터>실업급여(상용직)",
+        "why": "",
+        "at": "2026-09-14"
+      }
+    },
+    {
+      "label": "이직확인서 발급 요청하기",
+      "url": "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
+      "org": "고용노동부",
+      "forSection": "이직확인서 상실코드가 제대로 찍혔는지 어떻게 확인하나요",
+      "checked": {
+        "ok": true,
+        "title": "고용노동부 노동포털",
+        "why": "",
+        "at": "2026-09-14"
+      }
+    },
+    {
+      "label": "고용24에서 실업인정 신청하기",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
+      "org": "고용24",
+      "forSection": "희망퇴직 후 실업급여는 어떤 순서로 신청하나요",
+      "checked": {
+        "ok": true,
+        "title": "고용정책 상세_제도안내 | 고용정책 목록 | 정책/제도 | 고객센터>실업급여(상용직)",
+        "why": "",
+        "at": "2026-09-14"
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "권고사직-실업급여-신청-방법",
+    "권고사직-위로금-계산-실업급여-부정수급-주의",
+    "권고사직서-양식-실업급여-수급-조건",
+    "부당해고-구제신청-실업급여"
+  ],
+  "misconceptions": [
+    "희망퇴직은 무조건 자발적 퇴사로 처리돼 실업급여를 못 받는다고 알고 있지만, 회사의 경영상 필요로 권유받았다면 인정될 수 있습니다.",
+    "위로금을 받으면 실업급여를 아예 못 받는다고 오해하지만, 위로금은 평균임금 산정 대상이 아니라 수급 자격 자체를 막지 않습니다.",
+    "이직확인서만 제출하면 끝이라 생각하지만, 상실코드가 자진퇴사로 잘못 기재되면 신청이 반려될 수 있어 직접 확인이 필요합니다."
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "slug": "실업급여-취업촉진수당",
+  "category": "고용",
+  "topic": "취업촉진수당: 조기재취업수당, 직업능력개발수당, 광역구직활동비, 이주비",
+  "title": "취업촉진수당 조기재취업수당과 능력개발수당, 광역구직활동비부터 이주비까지",
+  "primaryKeywords": [
+    "취업촉진수당",
+    "조기재취업수당",
+    "광역구직활동비"
+  ],
+  "clusters": [
+    {
+      "eyebrow": "재취업 성공 수당",
+      "h2": "빨리 재취업하면 조기재취업수당을 받을 수 있나요",
+      "h3": [
+        "조기재취업수당 지급 조건은 무엇인가요",
+        "조기재취업수당은 얼마 받을 수 있나요",
+        "조기재취업수당은 언제까지 신청해야 하나요"
+      ],
+      "visual": "decide",
+      "why": "지식iN 조기재취업 관련 질문 다수 (실업급여 조기취업 6건, 실업급여 조개재취업수당 6건) — 받을 수 있는지 여부와 신청 시기 혼동이 가장 흔함"
+    },
+    {
+      "eyebrow": "직업훈련 지원금",
+      "h2": "실업급여 받으며 직업훈련을 받으면 능력개발수당을 받을 수 있나요",
+      "h3": [
+        "직업능력개발수당 지급 대상은 누구인가요",
+        "직업능력개발수당은 얼마 지급되나요"
+      ],
+      "visual": "compareTable",
+      "why": "실업급여 교육·내일배움카드 관련 검색이 다수(스포크 '개념·필요성' 내 실업급여 교육, 실업급여 내일배움카드) — 구직급여와 별도 수당이라는 점이 헷갈림"
+    },
+    {
+      "eyebrow": "원거리 구직 비용",
+      "h2": "먼 지역으로 구직활동을 가면 광역구직활동비를 받을 수 있나요",
+      "h3": [
+        "광역구직활동비 지급 조건은 무엇인가요",
+        "광역구직활동비는 얼마나 받나요"
+      ],
+      "visual": "checklist",
+      "why": "이미 개별 글(실업급여-광역구직활동비)이 있을 만큼 수요가 있는 주제 — 이 글에서는 다른 취업촉진수당과 비교해 조건만 요약"
+    },
+    {
+      "eyebrow": "취업 이사 비용",
+      "h2": "취업 때문에 이사하면 이주비를 받을 수 있나요",
+      "h3": [
+        "이주비 지급 조건은 무엇인가요",
+        "이주비는 얼마까지 지원되나요"
+      ],
+      "visual": "flow",
+      "why": "실업급여 이사 관련 질문(실업급여 받는중 이사, 답변 19건) — 광역구직활동비와 헷갈려 하는 경우가 많아 계산 구조로 구분"
+    }
+  ],
+  "laws": [
+    {
+      "name": "고용보험법",
+      "articles": [
+        "64",
+        "65",
+        "66",
+        "67"
+      ]
+    }
+  ],
+  "urls": [
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=3&cnpClsNo=2",
+      "org": "법제처",
+      "why": "실업급여 종류 중 취업촉진수당 설명 페이지 (등록부, 쓴 글 5편)",
+      "new": false
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=3&cnpClsNo=1",
+      "org": "법제처",
+      "why": "실업급여 종류·지급 조건 개론 페이지 (등록부, 쓴 글 10편)",
+      "new": false
+    },
+    {
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
+      "org": "고용24",
+      "why": "실업급여 신청 시스템 안내 (등록부, 쓴 글 59편) — 취업촉진수당 신청 절차 근거",
+      "new": false
+    },
+    {
+      "url": "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
+      "org": "고용노동부",
+      "why": "민원 신청 서식(임금체불 등과 같은 계열) — 취업촉진수당 관련 민원·서식 확인 (등록부, 쓴 글 22편)",
+      "new": false
+    }
+  ],
+  "ctas": [
+    {
+      "label": "고용24에서 실업급여·취업촉진수당 신청하기",
+      "url": "https://www.work24.go.kr/ei/index.do",
+      "org": "고용24",
+      "forSection": "빨리 재취업하면 조기재취업수당을 받을 수 있나요",
+      "hero": true,
+      "checked": {
+        "ok": true,
+        "title": "고용24",
+        "why": "",
+        "at": "2026-09-14"
+      }
+    },
+    {
+      "label": "내일배움카드 훈련과정 조회하기",
+      "url": "https://www.hrd.go.kr/hrdp/ma/pmmao/index.do",
+      "org": "직업훈련포털(HRD-Net)",
+      "forSection": "실업급여 받으며 직업훈련을 받으면 능력개발수당을 받을 수 있나요",
+      "hero": false,
+      "checked": {
+        "ok": true,
+        "title": "고용24",
+        "why": "",
+        "at": "2026-09-14"
+      }
+    },
+    {
+      "label": "관할 고용센터에 취업촉진수당 문의하기",
+      "url": "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
+      "org": "고용노동부",
+      "forSection": "먼 지역으로 구직활동을 가면 광역구직활동비를 받을 수 있나요",
+      "hero": false,
+      "checked": {
+        "ok": true,
+        "title": "고용노동부 노동포털",
+        "why": "",
+        "at": "2026-09-14"
+      }
+    },
+    {
+      "label": "이주비 지급 신청서 접수하기",
+      "url": "https://www.work24.go.kr/ei/index.do",
+      "org": "고용24",
+      "forSection": "취업 때문에 이사하면 이주비를 받을 수 있나요",
+      "hero": false,
+      "checked": {
+        "ok": true,
+        "title": "고용24",
+        "why": "",
+        "at": "2026-09-14"
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "실업급여-조기재취업수당",
+    "실업급여-직업능력개발수당",
+    "실업급여-광역구직활동비",
+    "실업급여-이주비"
+  ],
+  "misconceptions": [
+    "조기재취업수당은 아무 직장에 취업만 하면 받는다고 오해하지만, 대기기간·최소 근무기간 등 별도 조건을 채워야 한다",
+    "능력개발수당은 아무 학원이나 다니면 받을 수 있다고 착각하지만, 고용센터가 지정한 훈련과정만 해당된다",
+    "광역구직활동비와 이주비를 같은 것으로 혼동하지만, 광역구직활동비는 구직활동 중 교통비이고 이주비는 취업이 확정된 뒤의 이사 비용이다"
+  ]
+}

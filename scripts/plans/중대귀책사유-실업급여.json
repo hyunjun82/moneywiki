@@ -1,0 +1,138 @@
+{
+  "slug": "중대귀책사유-실업급여",
+  "category": "고용",
+  "topic": "중대귀책사유 실업급여: 수급 불가 3가지, 금고 이상 형, 재산상 손해, 무단결근 기준",
+  "title": "중대귀책사유 실업급여 불가 3가지와 판정, 금고 이상 형부터 무단결근까지",
+  "primaryKeywords": [
+    "중대귀책사유 실업급여",
+    "금고 이상 형",
+    "무단결근"
+  ],
+  "clusters": [
+    {
+      "eyebrow": "불가 사유 3가지",
+      "h2": "중대귀책사유로 실업급여를 못 받는 경우는 몇 가지인가요",
+      "h3": [
+        "중대한 귀책사유 3가지는 각각 무엇인가요",
+        "고의로 사업에 막대한 지장을 주거나 재산상 손해를 끼친 경우도 포함되나요"
+      ],
+      "visual": "checklist",
+      "why": "실업급여 수급자격제한·부정수급 관련 지식iN 질문 다수, '중대한 귀책사유' 자체가 검색어 주제이나 3가지 항목이 무엇인지부터 헷갈려 함"
+    },
+    {
+      "eyebrow": "판정 기준",
+      "h2": "중대귀책사유는 누가 어떻게 판정하나요",
+      "h3": [
+        "고용센터 판정에 불복하면 어떻게 되나요",
+        "권고사직인데 회사가 중대귀책으로 신고하면 어떻게 되나요"
+      ],
+      "visual": "decide",
+      "why": "'실업급여 수급 가능성 질문(답변 5)', '실업급여 수급자격(답변 3)' 등 판정 주체·불복 절차를 묻는 질문 다수"
+    },
+    {
+      "eyebrow": "형사처벌 기준",
+      "h2": "금고 이상의 형을 받으면 왜 실업급여가 안 되나요",
+      "h3": [
+        "집행유예도 금고 이상의 형에 해당하나요",
+        "벌금형만 받았다면 실업급여를 받을 수 있나요"
+      ],
+      "visual": "compareTable",
+      "why": "타이틀 고정 항목 '금고 이상 형' — 집행유예·벌금형과 헷갈려 하는 질문이 실제로 존재"
+    },
+    {
+      "eyebrow": "결근 기준",
+      "h2": "무단결근으로 해고되면 실업급여를 못 받나요",
+      "h3": [
+        "무단결근 며칠부터 중대귀책사유로 보나요",
+        "무단결근 해고가 부당해고로 인정되면 실업급여를 받을 수 있나요"
+      ],
+      "visual": "decide",
+      "why": "'무단결근-해고-실업급여', '무단결근-이유-해고-정당성' 기존 글에도 반복되는 검색 주제, 일수 기준 문의가 많음"
+    }
+  ],
+  "laws": [
+    {
+      "name": "고용보험법",
+      "articles": [
+        "58",
+        "87"
+      ]
+    }
+  ],
+  "urls": [
+    {
+      "url": "https://www.law.go.kr/LSW/lsBylInfoPLinkR.do?lsiSeq=000000&bylNo=0002&bylBrNo=00&bylCls=BE&bylEfYd=&bylEfYdYn=N&lsNm=%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95%20%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99",
+      "org": "법제처",
+      "why": "고용보험법 시행규칙 별표 1의2 '사업에 막대한 지장을 초래하거나 재산상 손해를 끼친 경우' — 중대귀책사유 3가지의 원문 근거",
+      "new": false
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=722&ccfNo=2&cciNo=1&cnpClsNo=1",
+      "org": "법제처(찾기 쉬운 생활법령)",
+      "why": "구직급여 수급자격 및 제한 사유를 일반 국민 눈높이로 설명",
+      "new": false
+    },
+    {
+      "url": "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
+      "org": "고용노동부",
+      "why": "진정서·이의신청 등 판정 불복 관련 민원 신청 화면",
+      "new": false
+    },
+    {
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
+      "org": "고용24",
+      "why": "실업급여 수급자격 관련 공식 시스템 안내",
+      "new": false
+    }
+  ],
+  "ctas": [
+    {
+      "label": "이의신청서 접수하기",
+      "url": "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
+      "org": "고용노동부",
+      "forSection": "중대귀책사유는 누가 어떻게 판정하나요",
+      "hero": true,
+      "checked": {
+        "ok": true,
+        "title": "고용노동부 노동포털",
+        "why": "",
+        "at": "2026-09-14"
+      }
+    },
+    {
+      "label": "실업급여 수급자격 확인하기",
+      "url": "https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=&systClId=SC00000254&systId=SI00000411&systCnntId=CI00001715",
+      "org": "고용24",
+      "forSection": "중대귀책사유로 실업급여를 못 받는 경우는 몇 가지인가요",
+      "checked": {
+        "ok": true,
+        "title": "고용정책 상세_제도안내 | 고용정책 목록 | 정책/제도 | 고객센터>실업급여(상용직)",
+        "why": "",
+        "at": "2026-09-14"
+      }
+    },
+    {
+      "label": "부당해고 진정서 접수하기",
+      "url": "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
+      "org": "고용노동부",
+      "forSection": "무단결근으로 해고되면 실업급여를 못 받나요",
+      "checked": {
+        "ok": true,
+        "title": "고용노동부 노동포털",
+        "why": "",
+        "at": "2026-09-14"
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "무단결근-해고-실업급여",
+    "무단결근-이유-해고-정당성",
+    "실업급여-수급자격제한",
+    "정당한-이유-없는-해고-판단기준"
+  ],
+  "misconceptions": [
+    "해고되면 무조건 실업급여를 못 받는다고 오해하지만, 중대한 귀책사유 3가지에 해당할 때만 제한됩니다.",
+    "벌금형만 받아도 실업급여가 끊긴다고 오해하지만, 제한 사유는 금고 이상의 형이 확정된 경우입니다.",
+    "무단결근 하루만 해도 중대귀책사유가 된다고 오해하지만, 판정은 결근 일수와 정당한 사유 여부를 함께 봅니다."
+  ]
+}
