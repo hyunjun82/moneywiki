@@ -12,7 +12,8 @@
 #
 # 동작:
 #   %LOCALAPPDATA%\moneywiki\price-data 에 price-data 브랜치를 얕게 받아 두고(최초 1회 자동),
-#   pull → 수집기(collect-kgx.mjs) → gold.json 생성기(build-gold-json.mjs) → 바뀌었을 때만 [CI Skip] 커밋·push.
+#   원격 최신으로 리셋 → 수집기(collect-kgx.mjs) → gold.json 생성기(build-gold-json.mjs) →
+#   바뀌었을 때만 [CI Skip] 커밋·push(충돌하면 최신 위에 다시 얹어 최대 3회).
 #   처음 실행이면 1년치를 백필한다. 로그: %LOCALAPPDATA%\moneywiki\collect-kgx.log
 
 $ErrorActionPreference = "Stop"
@@ -34,6 +35,22 @@ function Log([string]$m) {
   Write-Host $line
 }
 
+<#
+  클론을 원격 price-data 와 똑같이 만든다. 로컬 변경·중단된 리베이스·충돌 표시를 전부 버린다.
+  정리 명령은 cmd /c 로 감싼다 — Windows PowerShell 5.1 은 네이티브 명령의 stderr 를 ErrorRecord 로
+  감싸고, 이 스크립트의 ErrorActionPreference = "Stop" 이 그것을 예외로 바꾼다.
+  실제로 2026-09-11 에 `git rebase --abort 2>$null` 이 "no rebase in progress" 를 뱉는 순간 예외가 나서
+  뒤따르던 복구(reset --hard)가 실행되지 않았고, 그래서 클론이 충돌 상태로 굳었다.
+#>
+function Sync-Remote {
+  cmd /c "git -C ""$data"" rebase --abort >nul 2>nul"
+  cmd /c "git -C ""$data"" merge --abort >nul 2>nul"
+  git -C $data fetch --quiet origin price-data
+  if ($LASTEXITCODE -ne 0) { throw "git fetch 실패 ($LASTEXITCODE)" }
+  git -C $data reset --quiet --hard FETCH_HEAD
+  if ($LASTEXITCODE -ne 0) { throw "git reset 실패 ($LASTEXITCODE)" }
+}
+
 try {
   if (-not (Test-Path (Join-Path $data ".git"))) {
     Log "price-data 브랜치 클론 → $data"
@@ -43,47 +60,56 @@ try {
     git -C $data config core.autocrlf false
   }
 
-  git -C $data pull --quiet --rebase origin price-data
-  if ($LASTEXITCODE -ne 0) { throw "git pull 실패 ($LASTEXITCODE)" }
+  # 원격 최신을 그대로 받아 그 위에 파일만 다시 얹는다. 병합·리베이스는 하지 않는다.
+  # gold.json 은 이 PC 와 GitHub Actions(gold-price.yml)가 둘 다 쓰기 때문에 pull --rebase 를 하면
+  # 언젠가 반드시 충돌하고, 예약 실행은 아무도 풀어 주지 않아 클론이 UU 상태로 굳는다.
+  # 2026-09-11 09:30 에 그렇게 굳어 사흘(9/11·9/12 기사 누락) 동안 수집이 멈췄다.
+  # 여기서 버리는 로컬 변경은 아래 수집기·생성기가 다시 만드는 두 파일뿐이라 잃을 것이 없다.
+  Sync-Remote
 
-  $before = ""
-  if (Test-Path $file) { $before = (Get-FileHash $file).Hash }
-
-  $extra = @()
-  if ($before -eq "") {
-    $extra = @("--backfill", (Get-Date).AddYears(-1).ToString("yyyy.MM.dd"))
-    Log "kgx-quotes.json 없음 — 1년치 백필"
-  }
-
-  $stdout = & node $collector --out $data @extra
-  $code = $LASTEXITCODE
-  foreach ($line in $stdout) { Log $line }
-  if ($code -ne 0) { throw "수집기 실패 (exit $code)" }
-
-  # gold.json — 화면이 읽는 파일. 고시가 그대로여도 기준가(국제 시세×환율)가 움직이므로 매번 만든다.
-  $goldBefore = ""
-  if (Test-Path $gold) { $goldBefore = (Get-FileHash $gold).Hash }
-  $stdout2 = & node $builder $data
-  $code2 = $LASTEXITCODE
-  foreach ($line in $stdout2) { Log $line }
-  if ($code2 -ne 0) { throw "gold.json 생성 실패 (exit $code2)" }
-
-  $after = (Get-FileHash $file).Hash
-  $goldAfter = (Get-FileHash $gold).Hash
-  if ($before -eq $after -and $goldBefore -eq $goldAfter) { Log "변경 없음 — push 생략"; exit 0 }
-
-  git -C $data add kgx-quotes.json gold.json
   $stamp = Get-Date -Format "yyyy-MM-ddTHH:mmK"
-  git -C $data -c user.name="kgx-collector" -c user.email="kgx-collector@jjyu.co.kr" commit --quiet -m "[CI Skip] kgx quotes $stamp"
-  if ($LASTEXITCODE -ne 0) { throw "git commit 실패 ($LASTEXITCODE)" }
-  git -C $data push --quiet origin HEAD:price-data
-  if ($LASTEXITCODE -ne 0) {
-    # GitHub Actions 갱신기와 같은 순간에 밀어 넣어 충돌한 경우 — 원격 상태로 되돌리고 다음 예약에서 다시 만든다
-    git -C $data rebase --abort 2>$null
-    git -C $data fetch --quiet origin price-data
-    git -C $data reset --quiet --hard origin/price-data
-    throw "git push 실패 ($LASTEXITCODE) — 원격으로 되돌림, 다음 실행에서 재시도"
+  $pushed = $false
+
+  for ($try = 1; $try -le 3 -and -not $pushed; $try++) {
+    $before = ""
+    if (Test-Path $file) { $before = (Get-FileHash $file).Hash }
+
+    $extra = @()
+    if ($before -eq "") {
+      $extra = @("--backfill", (Get-Date).AddYears(-1).ToString("yyyy.MM.dd"))
+      Log "kgx-quotes.json 없음 — 1년치 백필"
+    }
+
+    $stdout = & node $collector --out $data @extra
+    $code = $LASTEXITCODE
+    foreach ($line in $stdout) { Log $line }
+    if ($code -ne 0) { throw "수집기 실패 (exit $code)" }
+
+    # gold.json — 화면이 읽는 파일. 고시가 그대로여도 기준가(국제 시세×환율)가 움직이므로 매번 만든다.
+    $goldBefore = ""
+    if (Test-Path $gold) { $goldBefore = (Get-FileHash $gold).Hash }
+    $stdout2 = & node $builder $data
+    $code2 = $LASTEXITCODE
+    foreach ($line in $stdout2) { Log $line }
+    if ($code2 -ne 0) { throw "gold.json 생성 실패 (exit $code2)" }
+
+    $after = (Get-FileHash $file).Hash
+    $goldAfter = (Get-FileHash $gold).Hash
+    if ($before -eq $after -and $goldBefore -eq $goldAfter) { Log "변경 없음 — push 생략"; exit 0 }
+
+    git -C $data add kgx-quotes.json gold.json
+    git -C $data -c user.name="kgx-collector" -c user.email="kgx-collector@jjyu.co.kr" commit --quiet -m "[CI Skip] kgx quotes $stamp"
+    if ($LASTEXITCODE -ne 0) { throw "git commit 실패 ($LASTEXITCODE)" }
+
+    git -C $data push --quiet origin HEAD:price-data
+    if ($LASTEXITCODE -eq 0) { $pushed = $true; break }
+
+    # Actions 갱신기가 같은 순간에 밀어 넣은 경우 — 그 최신 위에 파일을 다시 얹어 재시도한다
+    Log "push 충돌 — 원격 최신 위에 다시 얹는다 ($try/3)"
+    Sync-Remote
   }
+
+  if (-not $pushed) { throw "git push 3회 실패 — 다음 예약 실행에서 재시도" }
   Log "push 완료"
   exit 0
 } catch {
