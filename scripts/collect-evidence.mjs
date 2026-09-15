@@ -128,6 +128,11 @@ async function collectLawArticle(page, lawName, no) {
   console.log(`법제처 ${lawName} ${label} …`);
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
   // 법제처는 본문을 iframe에 늦게 채운다 — 조문이 나타날 때까지 폴링
+  // 조문 조각이 짧은 것은 로딩 실패가 아니라 그냥 짧은 조문이다.
+  // 200자를 요구했더니 상법 제662조(소멸시효, 106자) 같은 진짜 조문이 전부 실패로 떨어졌다 (2026-09-06).
+  // iframe 전체 길이도 따지지 않는다 — 민법 제162조는 머리말 포함 iframe 이 197자라 200자 문턱에 걸려 0자로 떨어졌다 (2026-09-15).
+  // 조문 번호 뒤에 본문이 MIN_ARTICLE 자 이상 붙어 있으면 뜬 것이다.
+  const MIN_ARTICLE = 60;
   let text = "";
   for (let tries = 0; tries < 15 && !text; tries++) {
     await page.waitForTimeout(1000);
@@ -135,14 +140,10 @@ async function collectLawArticle(page, lawName, no) {
       try {
         const t = await frame.evaluate(() => document.body?.innerText || "");
         const i = t.indexOf(label);
-        if (i >= 0 && t.length > 200) { text = t.slice(i, i + 2500); break; }
+        if (i >= 0 && t.length - i >= MIN_ARTICLE) { text = t.slice(i, i + 2500); break; }
       } catch {}
     }
   }
-  // 위 폴링은 iframe 본문 전체가 200자를 넘어야 text 를 채운다 — 즉 여기 왔으면 페이지는 떴다.
-  // 그래서 조문 조각이 짧은 것은 로딩 실패가 아니라 그냥 짧은 조문이다.
-  // 200자를 요구했더니 상법 제662조(소멸시효, 106자) 같은 진짜 조문이 전부 실패로 떨어졌다 (2026-09-06).
-  const MIN_ARTICLE = 60;
   if (text.length < MIN_ARTICLE) {
     throw new Error(`${label} 본문 ${text.length}자 — 최소 ${MIN_ARTICLE}자 필요 (로딩 실패 또는 이미지 본문)`);
   }

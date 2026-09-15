@@ -229,7 +229,7 @@ export function checkDraft({ article: a, plan, ev, live, ctaAllowed, quickCompon
   else if (plan.title && a.meta.title !== plan.title) p.push(`meta.title 이 설계도와 다릅니다 — 설계도 title 을 글자 하나 바꾸지 말고 그대로 씁니다.
     설계도: "${plan.title}"
     글:     "${a.meta.title}"`);
-  else if (a.meta.title.length > TITLE_MAX) p.push(`meta.title 이 ${a.meta.title.length}자 — ${TITLE_MAX}자 이하. 메인키워드 + 핵심 하나, 대제목을 늘어놓지 않음: "${a.meta.title}"`);
+  else if (!plan.titleFixed && a.meta.title.length > TITLE_MAX) p.push(`meta.title 이 ${a.meta.title.length}자 — ${TITLE_MAX}자 이하. 메인키워드 + 핵심 하나, 대제목을 늘어놓지 않음: "${a.meta.title}"`);
   if (!a.meta?.description) p.push("meta.description 없음");
   for (const k of ["userQuestion", "directAnswer", "why"]) if (!a.searchIntent?.[k]) p.push(`searchIntent.${k} 없음`);
   if (!Array.isArray(a.primaryKeywords) || a.primaryKeywords.length < 2 || a.primaryKeywords.length > 3) p.push("primaryKeywords 는 2~3개");
@@ -263,6 +263,11 @@ export function checkDraft({ article: a, plan, ev, live, ctaAllowed, quickCompon
   const secs = a.mainSections || [];
   const want = (plan.clusters || []).length;
   if (secs.length !== want) p.push(`mainSections ${secs.length}개 — 설계도 군집 ${want}개와 같아야 함`);
+  // 사용자가 준 소제목은 타이틀처럼 글자 그대로 — 대조가 없으면 고치기 단계가 다듬는다
+  if (plan.headingsFixed) secs.forEach((s, i) => {
+    const h2 = plan.clusters[i]?.h2;
+    if (h2 && s.heading !== h2) p.push(`q${i + 1} heading 이 설계도와 다릅니다 — 준 소제목을 글자 하나 바꾸지 않습니다.\n    설계도: "${h2}"\n    글:     "${s.heading}"`);
+  });
   secs.forEach((s, i) => {
     const id = `q${i + 1} "${(s.heading || "").slice(0, 30)}"`;
     if (!s.heading) p.push(`${id}: heading 없음`);

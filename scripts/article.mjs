@@ -8,8 +8,10 @@
  *   npm run article -- <slug> --topic "주제 한 줄" [--category 고용] [--keywords scripts/keywords/실업급여.json]
  *                     [--rewrite] [--commit] [--from plan|collect|captures|write|gates] [--max-fix 2]
  *                     [--model <m>] [--writer-model <m>] [--capture-model sonnet] [--skip-render] [--keep-on-fail]
- *   npm run article -- --batch scripts/batch.txt         # 줄마다: slug | 주제 | 카테고리 | 키워드파일 | 타이틀(뒤 둘은 생략 가능)
- *   --title "…"  타이틀을 고정한다(30자 이하). 설계 단계가 타이틀을 짓지 않는다
+ *   npm run article -- --batch scripts/batch.txt         # 줄마다: slug | 주제 | 카테고리 | 키워드파일 | 타이틀 | 소제목(뒤 셋은 생략 가능)
+ *   --title "…"  타이틀을 고정한다. 준 글자 그대로 나간다 (길이 제한 없음 — 사용자가 준 타이틀이다)
+ *   --headings "A / B / C / D"  대제목(h2)을 순서대로 고정한다. 준 글자 그대로 나간다
+ *   --no-audit   통과 뒤 뜻·누락 판정(한 번 묻고 🔴 면 한 번 고침)을 건너뛴다
  *
  * 산출물
  *   scripts/plans/<slug>.json        설계도 (타이틀·군집·조문·URL·CTA)
@@ -165,6 +167,7 @@ function makeCtx(slug, flags) {
     keywordsFile: flags.keywords || "",
     exampleSlug: flags.example || "",
     fixedTitle: typeof flags.title === "string" ? flags.title : "",
+    fixedHeadings: typeof flags.headings === "string" ? flags.headings.split("/").map((s) => s.trim()).filter(Boolean) : [],
     rewrite: Boolean(flags.rewrite),
     commit: Boolean(flags.commit),
     from: typeof flags.from === "string" ? flags.from : "",
@@ -177,6 +180,8 @@ function makeCtx(slug, flags) {
     captureModel: typeof flags["capture-model"] === "string" ? flags["capture-model"] : "sonnet",
     skipRender: Boolean(flags["skip-render"]),
     keepOnFail: Boolean(flags["keep-on-fail"]),
+    noAudit: Boolean(flags["no-audit"]),
+    plan: null, audit: null,
     logDir: path.join(REPORTS, "logs", slug),
     t0: Date.now(), timings: {}, notes: [], fixRounds: 0, deletedTsx: false, tsxTracked: false,
     meter: newMeter(),
@@ -239,11 +244,12 @@ function keywordsForPrompt(kw, topic) {
 async function stagePlan(ctx, deadCtas = []) {
   const file = path.join(PLANS, `${ctx.slug}.json`);
   // 타이틀을 고정해 불렀는데 저장된 설계도가 다른 타이틀이면 재사용하지 않는다 — 군집이 그 타이틀의 항목과 어긋난다
-  // 준 타이틀이 길면 설계를 부르기 전에 멈춘다 — 고정 타이틀은 모델이 줄일 수 없어 3번 헛돈다
-  if (ctx.fixedTitle && ctx.fixedTitle.length > TITLE_MAX) throw new Error(`--title 이 ${ctx.fixedTitle.length}자 — ${TITLE_MAX}자 이하로 주세요 (메인키워드 + 핵심 하나): "${ctx.fixedTitle}"`);
-  const stale = ctx.fixedTitle && fs.existsSync(file) && readJson(file).title !== ctx.fixedTitle;
+  // 사용자가 준 타이틀·소제목은 길이를 따지지 않는다 — 준 글자 그대로 나간다 (2026-09-15)
+  const saved = fs.existsSync(file) ? readJson(file) : null;
+  const stale = saved && ((ctx.fixedTitle && saved.title !== ctx.fixedTitle)
+    || (ctx.fixedHeadings.length && JSON.stringify((saved.clusters || []).map((c) => c.h2)) !== JSON.stringify(ctx.fixedHeadings)));
   if (fs.existsSync(file) && !ctx.redo("plan") && !stale) { const p = readJson(file); ctx.log("plan", `설계도 재사용 — "${p.title}" (군집 ${p.clusters.length})`); return p; }
-  if (stale) ctx.log("plan", `저장된 설계도의 타이틀이 고정 타이틀과 달라 다시 세웁니다`);
+  if (stale) ctx.log("plan", `저장된 설계도의 타이틀·소제목이 고정값과 달라 다시 세웁니다`);
   const toks = tokens(ctx.topic);
   const hit = (s) => toks.some((t) => String(s).includes(t));
   let registry = io.sourceRegistry();
@@ -261,7 +267,7 @@ async function stagePlan(ctx, deadCtas = []) {
     const tsx = path.join(io.W_DIR, ctx.slug, "page.tsx");
     if (fs.existsSync(tsx)) oldTitle = (fs.readFileSync(tsx, "utf8").match(/title:\s*["'`]([^"'`\n]{8,})["'`]/) || [])[1] || "";
   }
-  const base = { slug: ctx.slug, topic: ctx.topic, category: ctx.category, categories: io.categoryFiles(), keywords: keywordsForPrompt(ctx.keywords, ctx.topic), registry, related, today: today(), rewrite: ctx.rewrite || ctx.live.has(ctx.slug), oldTitle, titleRule: io.titleRule(), fixedTitle: ctx.fixedTitle, ctaScreens: ctaRegistry().screens };
+  const base = { slug: ctx.slug, topic: ctx.topic, category: ctx.category, categories: io.categoryFiles(), keywords: keywordsForPrompt(ctx.keywords, ctx.topic), registry, related, today: today(), rewrite: ctx.rewrite || ctx.live.has(ctx.slug), oldTitle, titleRule: io.titleRule(), fixedTitle: ctx.fixedTitle, fixedHeadings: ctx.fixedHeadings, ctaScreens: ctaRegistry().screens };
   // 다시 세우는 설계도라면, 지난 설계도에서 죽어 있던 버튼 주소를 알려 준다 (같은 주소를 또 고르지 않게)
   let retryNote = "";
   const known = [...deadCtas];
@@ -291,12 +297,16 @@ function validatePlan(plan, ctx) {
   const errs = [];
   plan.slug = ctx.slug;
   // 타이틀을 고정했으면 모델이 뭘 냈든 그 타이틀로 못박고, 군집이 그 항목 수와 맞는지만 본다
-  if (ctx.fixedTitle) plan.title = ctx.fixedTitle;
+  if (ctx.fixedTitle) { plan.title = ctx.fixedTitle; plan.titleFixed = true; }
   if (ctx.category) plan.category = ctx.category;
   const cats = io.categoryFiles();
   if (!cats.includes(plan.category)) errs.push(`category "${plan.category}" 는 ${cats.join(" / ")} 중 하나여야 합니다`);
   const cl = Array.isArray(plan.clusters) ? plan.clusters : [];
-  if (cl.length < 2 || cl.length > 4) errs.push(`clusters ${cl.length}개 — 2~4개`);
+  // 소제목을 고정했으면 군집 수 = 소제목 수, h2 는 준 글자 그대로 순서대로 못박는다
+  if (ctx.fixedHeadings.length) {
+    if (cl.length !== ctx.fixedHeadings.length) errs.push(`clusters ${cl.length}개 — 고정 소제목 ${ctx.fixedHeadings.length}개와 같아야 합니다 (순서대로 하나씩)`);
+    else { cl.forEach((c, i) => { if (c) c.h2 = ctx.fixedHeadings[i]; }); plan.headingsFixed = true; }
+  } else if (cl.length < 2 || cl.length > 4) errs.push(`clusters ${cl.length}개 — 2~4개`);
   for (const c of cl) {
     if (!c?.h2 || !c?.eyebrow || !Array.isArray(c.h3) || !c.h3.length) errs.push(`군집 "${c?.h2 || "?"}" 에 eyebrow·h2·h3 가 모두 필요`);
     else if (c.h2.startsWith(c.eyebrow)) errs.push(`eyebrow "${c.eyebrow}" 가 대제목 "${c.h2}" 의 앞부분과 같음`);
@@ -307,7 +317,7 @@ function validatePlan(plan, ctx) {
   if (h3n < 4 || h3n > 10) errs.push(`h3 총 ${h3n}개 — 6~9개`);
   if (!plan.title) errs.push("title 없음");
   // 2026-09-15: '타이틀 항목 수 = 군집 수' 규칙을 지웠다. 타이틀이 대제목을 늘어놓게 해 35~47자 타이틀만 나왔다.
-  else if (plan.title.length > TITLE_MAX) errs.push(`타이틀이 ${plan.title.length}자 — ${TITLE_MAX}자 이하. 메인키워드 + 이 글이 답하는 핵심 하나. 대제목을 늘어놓지 않습니다. 현재: "${plan.title}"`);
+  else if (!plan.titleFixed && plan.title.length > TITLE_MAX) errs.push(`타이틀이 ${plan.title.length}자 — ${TITLE_MAX}자 이하. 메인키워드 + 이 글이 답하는 핵심 하나. 대제목을 늘어놓지 않습니다. 현재: "${plan.title}"`);
   if (/—/.test(plan.title || "")) errs.push("타이틀에 대시(—) 금지");
   const pk = Array.isArray(plan.primaryKeywords) ? plan.primaryKeywords : [];
   if (pk.length < 2 || pk.length > 3) errs.push("primaryKeywords 2~3개");
@@ -441,6 +451,8 @@ async function stageCollect(ctx, plan) {
     ev = evBefore;
   }
   if (!ev || !(ev.facts || []).length) throw new Error(`증거 수집 실패 (exit ${r.code})\n${r.out.slice(-1500)}`);
+  // 새로 모았으면 캡처 번호가 다시 매겨진다 — 옛 읽기 기록(파일명 기준)을 남기면 -1.png 에 다른 조문 설명이 붙는다 (2026-09-15)
+  if (ev !== evBefore && ev.capturesReviewed && Object.keys(ev.capturesReviewed).length) { ev.capturesReviewed = {}; io.saveEvidence(ctx.slug, ev); }
   const fails = r.out.split(/\r?\n/).filter((l) => /실패|✗|❌/.test(l)).slice(0, 12);
   if (fails.length) ctx.notes.push("수집 중 실패 항목:\n" + fails.map((l) => "  " + l.trim()).join("\n"));
   markFailedUrls(ctx, plan, ev);
@@ -481,7 +493,12 @@ function criteriaFromTemplate() {
 }
 function pickExample(ctx, plan) {
   const cat = io.loadCategory(plan.category);
-  const arts = cat.articles.filter((a) => a.slug !== ctx.slug);
+  let arts = cat.articles.filter((a) => a.slug !== ctx.slug);
+  // 새 카테고리(첫 글)는 예시가 없다 — 통과한 글이 가장 많은 카테고리의 글을 예시로 빌린다 (구조·어조 기준일 뿐 주제는 안 베낀다)
+  if (!arts.length && !ctx.exampleSlug) {
+    const other = io.categoryFiles().filter((c) => c !== plan.category).map((c) => io.loadCategory(c)).sort((x, y) => y.articles.length - x.articles.length)[0];
+    arts = other ? other.articles : [];
+  }
   const ex = ctx.exampleSlug ? arts.find((a) => a.slug === ctx.exampleSlug) : arts[arts.length - 1];
   if (!ex) throw new Error(`예시로 쓸 글이 없습니다 (카테고리 ${plan.category}${ctx.exampleSlug ? `, --example ${ctx.exampleSlug}` : ""})`);
   return ex;
@@ -544,6 +561,16 @@ function rollback(ctx) {
   if (ctx.deletedTsx && ctx.tsxTracked) { spawnSync("git", ["checkout", "--", path.join(io.W_DIR, ctx.slug)], { stdio: "ignore" }); ctx.deletedTsx = false; }
   if (ctx.evPristine) io.saveEvidence(ctx.slug, ctx.evPristine);
 }
+/** 뜻·누락 🔴 가 남은 글을 내린다 — 리라이트 전 글(이미 틀린 글)을 도로 넣지 않고 옛 페이지(MD·TSX)로 돌린다 */
+function unpublish(ctx, plan) {
+  io.removeArticle(plan.category, ctx.slug);
+  if (ctx.existingCategory && ctx.existingCategory !== plan.category) io.removeArticle(ctx.existingCategory, ctx.slug);
+  const dir = path.join(io.W_DIR, ctx.slug);
+  const rel = dir.split(path.sep).join("/");
+  if (!fs.existsSync(dir) && spawnSync("git", ["cat-file", "-e", `HEAD:${rel}`], { stdio: "ignore" }).status === 0) spawnSync("git", ["checkout", "HEAD", "--", rel], { stdio: "ignore" });
+  ctx.inserted = null; ctx.deletedTsx = false;
+  ctx.notes.push("글을 내리고 옛 페이지로 되돌렸습니다 (커밋·푸시 대상 아님)");
+}
 function trimOut(out, max = 5000) {
   const lines = out.split(/\r?\n/).filter((l) => l.trim() && !/^\s*(▶|✅|✓ )/.test(l) && !/Compil|GET \/|○|▲ Next|- Local:|Ready in/.test(l));
   const s = lines.join("\n");
@@ -591,6 +618,13 @@ function normalizeText(draft, ctx) {
     return v;
   };
   const article = walk(draft.article, "");
+  // 준 타이틀·소제목은 기계가 글자 그대로 되돌린다 — 모델이 다듬어도 나가는 건 준 문장이다
+  const plan = ctx.plan;
+  if (plan?.titleFixed && article.meta && article.meta.title !== plan.title) { ctx.notes.push(`자동 정규화: 타이틀을 준 문장으로 되돌림 ("${article.meta.title}")`); article.meta.title = plan.title; }
+  if (plan?.headingsFixed) (article.mainSections || []).forEach((s, i) => {
+    const h2 = plan.clusters[i]?.h2;
+    if (h2 && s.heading !== h2) { ctx.notes.push(`자동 정규화: 소제목 ${i + 1} 을 준 문장으로 되돌림 ("${s.heading}")`); s.heading = h2; }
+  });
   if (dashes) { ctx.notes.push(`자동 정규화: 대시(—) ${dashes}곳 → 중점(·)`); ctx.log("check", `대시 ${dashes}곳을 중점으로 바꿈`); }
   // 서론 밑 숫자 박스(heroStats)는 정본 템플릿에 없다 — 칸을 없앴다. 옛 설계를 따라 오면 뗀다 (2026-09-15)
   if (article.heroStats) { ctx.notes.push(`자동 정규화: 서론 밑 숫자 박스(heroStats) 제거`); delete article.heroStats; }
@@ -644,6 +678,24 @@ async function applyAndGate(ctx, plan, draftIn, inputs) {
     return { ok, results };
   });
 }
+
+/* ── 6b. 뜻·누락 판정 — 통과한 글에 한 번 묻는다 ── */
+// 2026-09-06 에 쓰기 루프에서 뺐다 — 판정이 매번 달라 글 한 편에 7바퀴를 돌았다.
+// 뺀 사이 숫자·화면만 맞고 뜻이 틀린 글이 통과했다 (오래된-가압류-해제-방법: 채권 가압류에 재산권 20년 조항, 2026-09-15).
+// 그래서 루프가 아니다: 한 번 묻고, 🔴·🟡 면 한 번 고치고, 한 번 확인한다. 🔴 가 남으면 그 글은 내보내지 않는다(옛 페이지 유지).
+async function runAudit(ctx) {
+  const one = async (script) => {
+    const r = await runCmd("npx", ["tsx", path.join("scripts", script), ctx.slug], { quiet: true, shell: isWin });
+    // 끝 줄("의미 검사 — 글 N편" / "누락 검사 — 글 N편")이 없으면 판정이 돌지 않은 것이다. 🔴 0 으로 읽으면 조용한 통과가 된다 —
+    // tsx 경로를 잘못 짚어 모듈 없음으로 죽었는데 11편이 전부 🔴 0 으로 찍혔다 (2026-09-15)
+    r.fatal = !/(의미|누락) 검사 — 글 \d+편/.test(r.out) || /판정 실패|글 없음|articles 에 없는 slug/.test(r.out);
+    return r;
+  };
+  const [meaning, omission] = await Promise.all([one("verify-meaning.ts"), one("verify-omission.ts")]);
+  const count = (re) => (meaning.out.match(re) || []).length + (omission.out.match(re) || []).length;
+  return { meaning, omission, red: count(/🔴/g), yellow: count(/🟡/g), fatal: meaning.fatal || omission.fatal };
+}
+const auditLine = (a) => `🔴 ${a.red} · 🟡 ${a.yellow}${a.fatal ? " · 판정 실패 있음" : ""}`;
 
 /* ── 7. 보고 ── */
 async function screenshot(ctx) {
@@ -717,6 +769,13 @@ function writeReport(ctx, { ok, plan, results, error, shot }) {
     for (const r of results) L.push(`| ${r.name} | ${r.ok ? "✓" : "✗"} |`);
     L.push("");
   }
+  if (ctx.audit) {
+    L.push("## 뜻·누락 판정 (LLM · 한 번 묻고 🔴 면 한 번 고침)", `- 통과 직후: ${auditLine(ctx.audit.before)}`);
+    if (ctx.audit.after) L.push(`- 한 번 고친 뒤 확인: ${auditLine(ctx.audit.after)}`);
+    const last = ctx.audit.after || ctx.audit.before;
+    if (last.red || last.yellow || last.fatal) L.push("```", trimOut(`${last.meaning.out}\n${last.omission.out}`, 6000), "```");
+    L.push("");
+  }
   if (error) L.push("## 오류", "```", String(error), "```", "");
   if (ctx.notes.length) L.push("## 메모", ...ctx.notes.map((n) => `- ${n}`), "");
   if (shot) L.push(`## 렌더 캡처`, `![${ctx.slug}](${path.basename(shot)})`, "");
@@ -754,6 +813,7 @@ async function runOne(slug, flags) {
     await timed(ctx, "guard", () => guard(ctx));
     plan = await timed(ctx, "plan", () => stagePlan(ctx));
     plan = await timed(ctx, "cta", () => stageCtaCheck(ctx, plan));
+    ctx.plan = plan;
     const ev = await timed(ctx, "collect", () => stageCollect(ctx, plan));
     await timed(ctx, "captures", () => stageCaptures(ctx, ev));
     ctx.evPristine = structuredClone(io.loadEvidence(ctx.slug));
@@ -776,6 +836,44 @@ async function runOne(slug, flags) {
       ctx.rounds.push(res.results);
     }
     results = res.results; ok = res.ok;
+    if (ok && !ctx.noAudit) await timed(ctx, "audit", async () => {
+      const first = await runAudit(ctx);
+      ctx.audit = { before: first };
+      ctx.log("audit", `뜻·누락 판정 — ${auditLine(first)}`);
+      // 판정이 돌지 않은 글은 내보내지 않는다 — 🔴 0 으로 읽으면 조용한 통과다
+      if (first.fatal) { ok = false; ctx.unpublish = true; ctx.notes.push("뜻·누락 판정이 돌지 않아 내보내지 않습니다"); return; }
+      if (!first.red && !first.yellow) return;
+      const passed = draft;
+      const draftFile = path.join(DRAFTS, `${ctx.slug}.json`);
+      fs.copyFileSync(draftFile, `${draftFile}.passed`);
+      const failures = [first.meaning, first.omission].filter((o) => /🔴|🟡/.test(o.out)).map((o) => trimOut(o.out, 6000)).join("\n\n");
+      ctx.log("fix", `뜻·누락 🔴 ${first.red} · 🟡 ${first.yellow} 고치기 (한 번만)`);
+      const { text } = await ask(ctx, fixPrompt({ draft, failures: `### 뜻·누락 판정 — 🔴·🟡 모두 고칩니다 · 증거 원문에 없는 주장은 빼거나 근거 안으로 좁힙니다\n${failures}`, plan, ev: ctx.evPristine, digest: inputs.digest, linkCandidates: inputs.linkCandidates, ctas: inputs.ctas, quickComponents: ctx.quickComponents, today: today() }), { label: "auditfix", model: ctx.writerModel, logDir: ctx.logDir, expect: "3~4분" });
+      let fixed;
+      try { fixed = normalizeDraft(extractJson(text)); } catch (e) {
+        ctx.notes.push(`뜻·누락 고치기 답을 읽지 못했습니다: ${e.message.split("\n")[0]}`);
+        if (first.red) { ok = false; ctx.unpublish = true; }
+        return;
+      }
+      writeJson(draftFile, fixed);
+      const r2 = await applyAndGate(ctx, plan, fixed, inputs);
+      ctx.rounds.push(r2.results);
+      if (r2.ok) {
+        draft = fixed;
+        ctx.audit.fixed = true;
+        // 고친 뒤 한 번만 확인한다 — 🔴 가 남으면 내보내지 않는다 (고치기는 더 돌리지 않는다)
+        ctx.audit.after = await runAudit(ctx);
+        ctx.log("audit", `고친 뒤 확인 — ${auditLine(ctx.audit.after)}`);
+        if (ctx.audit.after.red || ctx.audit.after.fatal) { ok = false; ctx.unpublish = true; ctx.notes.push(`고친 뒤에도 뜻·누락 🔴 ${ctx.audit.after.red}건이 남아 내보내지 않습니다`); }
+        return;
+      }
+      // 고친 글이 기계 검사에서 떨어지면 통과본을 도로 넣는다 — rollback 은 리라이트 전 원본으로 돌리므로 통과본이 사라진다
+      ctx.notes.push("뜻·누락을 고친 글이 기계 검사에서 떨어져 통과본으로 되돌렸습니다");
+      writeJson(draftFile, passed);
+      const back = await applyAndGate(ctx, plan, passed, inputs);
+      results = back.results; ok = back.ok && !first.red;
+      if (first.red) ctx.unpublish = true;
+    });
   } catch (e) {
     error = e.stack || e.message;
     console.error(`\n✗ ${slug}: ${e.message}`);
@@ -786,19 +884,19 @@ async function runOne(slug, flags) {
     if (ctx.commit) commit(ctx, plan);
   } else if (!ctx.keepOnFail) {
     // 되돌리기도 공유 파일을 건드리므로 같은 잠금 안에서 한다
-    await gateLock(async () => rollback(ctx));
+    await gateLock(async () => (ctx.unpublish && plan ? unpublish(ctx, plan) : rollback(ctx)));
   }
   const report = writeReport(ctx, { ok, plan, results, error, shot });
   console.log(`\n${ok ? "✅ 통과" : "❌ 실패"} — 보고서 ${report}${shot ? ` · 캡처 ${shot}` : ""}`);
   console.log(`   이 글이 쓴 양: 모델 호출 ${meter.calls}회 · ${fmtUsage(meter)} · ${mins(Date.now() - ctx.t0)}`);
-  return { slug, ok, title: plan?.title || "", report, shot, error: error ? String(error).split("\n")[0] : "", fixRounds: ctx.fixRounds, ms: Date.now() - ctx.t0, usage: { ...meter } };
+  return { slug, ok, title: plan?.title || "", report, shot, error: error ? String(error).split("\n")[0] : "", fixRounds: ctx.fixRounds, ms: Date.now() - ctx.t0, usage: { ...meter }, audit: ctx.audit ? `${auditLine(ctx.audit.before)}${ctx.audit.after ? ` → 고친 뒤 ${auditLine(ctx.audit.after)}` : ""}` : "" };
 }
 
 /* ── 묶음 ── */
 function parseBatch(file) {
   return fs.readFileSync(file, "utf8").split(/\r?\n/).map((l) => l.trim()).filter((l) => l && !l.startsWith("#")).map((l) => {
-    const [slug, topic, category, keywords, title] = l.split("|").map((s) => s.trim());
-    return { slug, topic, category, keywords, title };
+    const [slug, topic, category, keywords, title, headings] = l.split("|").map((s) => s.trim());
+    return { slug, topic, category, keywords, title, headings };
   });
 }
 
@@ -817,16 +915,16 @@ try {
       while (next < items.length) {
         const i = next++;
         const it = items[i];
-        const f = { ...flags, topic: it.topic || flags.topic, category: it.category || flags.category, keywords: it.keywords || flags.keywords, title: it.title || flags.title };
+        const f = { ...flags, topic: it.topic || flags.topic, category: it.category || flags.category, keywords: it.keywords || flags.keywords, title: it.title || flags.title, headings: it.headings || flags.headings };
         delete f.batch;
         summary[i] = await runOne(it.slug, f);
       }
     };
     await Promise.all(Array.from({ length: Math.min(PARALLEL, items.length) }, worker));
     const kk = (n) => (n >= 1000 ? `${Math.round(n / 1000)}k` : String(n || 0));
-    const L = [`# 묶음 결과 — ${new Date().toLocaleString("ko-KR")}`, "", "| slug | 결과 | 타이틀 | 고침 | 시간 | 호출 | 입력 | 출력 | 환산 $ | 보고서 |", "|---|---|---|---|---|---|---|---|---|---|"];
-    for (const s of summary) L.push(`| ${s.slug} | ${s.ok ? "✅" : "❌"} | ${s.title} | ${s.fixRounds} | ${mins(s.ms)} | ${s.usage.calls} | ${kk(s.usage.input)} | ${kk(s.usage.output)} | ${s.usage.cost.toFixed(2)} | ${path.basename(s.report)}${s.error ? ` — ${s.error}` : ""} |`);
-    L.push(`| **합계 ${summary.filter((s) => s.ok).length}/${summary.length} 통과** | | | | | **${batchMeter.calls}** | **${kk(batchMeter.input)}** | **${kk(batchMeter.output)}** | **${batchMeter.cost.toFixed(2)}** | |`);
+    const L = [`# 묶음 결과 — ${new Date().toLocaleString("ko-KR")}`, "", "| slug | 결과 | 타이틀 | 뜻·누락 | 고침 | 시간 | 호출 | 입력 | 출력 | 환산 $ | 보고서 |", "|---|---|---|---|---|---|---|---|---|---|---|"];
+    for (const s of summary) L.push(`| ${s.slug} | ${s.ok ? "✅" : "❌"} | ${s.title} | ${s.audit || "-"} | ${s.fixRounds} | ${mins(s.ms)} | ${s.usage.calls} | ${kk(s.usage.input)} | ${kk(s.usage.output)} | ${s.usage.cost.toFixed(2)} | ${path.basename(s.report)}${s.error ? ` — ${s.error}` : ""} |`);
+    L.push(`| **합계 ${summary.filter((s) => s.ok).length}/${summary.length} 통과** | | | | | | **${batchMeter.calls}** | **${kk(batchMeter.input)}** | **${kk(batchMeter.output)}** | **${batchMeter.cost.toFixed(2)}** | |`);
     L.push("", "> 구독이라 실제 청구는 없습니다. 환산 $ 는 사용 한도를 얼마나 먹었는지의 척도입니다.");
     const file = path.join(REPORTS, `batch-${today()}.md`);
     const wall = Date.now() - t0;

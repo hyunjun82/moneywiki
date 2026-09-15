@@ -29,7 +29,7 @@ export function evidenceDigest(ev, { maxFacts = 320, maxRawChars = 6000, maxRawT
   return { facts: facts.join("\n"), raws: raws.join("\n\n"), captures: captures.join("\n") };
 }
 
-export function planPrompt({ slug, topic, category, categories, keywords, registry, related, today, rewrite, oldTitle, retryNote, titleRule, fixedTitle, ctaScreens }) {
+export function planPrompt({ slug, topic, category, categories, keywords, registry, related, today, rewrite, oldTitle, retryNote, titleRule, fixedTitle, fixedHeadings = [], ctaScreens }) {
   // 타이틀을 고정해 부르면(--title) 설계 단계는 타이틀을 짓지 않는다
   const fixed = String(fixedTitle || "").trim();
   const titleBlock = fixed
@@ -42,6 +42,13 @@ export function planPrompt({ slug, topic, category, categories, keywords, regist
         "## 타이틀 형식 (scripts/plan-articles.md — 이 프로젝트가 정한 것)",
         titleRule,
       ].join("\n");
+  const headingBlock = fixedHeadings.length
+    ? [
+        "## ★ 대제목(h2)도 이미 정해졌습니다 — 순서대로, 글자 그대로",
+        ...fixedHeadings.map((h, i) => `${i + 1}. "${h}"`),
+        `clusters 는 정확히 ${fixedHeadings.length}개, i번째 군집의 "h2" 에 i번째 문장을 그대로 적습니다. 질문형이 아니어도 바꾸지 않습니다. eyebrow·h3·visual 만 새로 정합니다.`,
+      ].join("\n")
+    : "";
   return `당신은 머니위키(jjyu.co.kr) 편집자입니다. 도구를 쓰지 마세요. 필요한 자료는 전부 아래에 있습니다.
 할 일: 검색자 질문을 군집으로 묶어 글 한 편의 설계도(JSON)를 만듭니다. 글은 아직 쓰지 않습니다.
 ${retryNote ? `\n※ 이전 답이 거부된 이유 — 이번엔 반드시 고칩니다:\n${retryNote}\n` : ""}
@@ -53,7 +60,7 @@ ${retryNote ? `\n※ 이전 답이 거부된 이유 — 이번엔 반드시 고�
 ${rewrite ? `- 리라이트입니다. 기존 글이 검색에 노출 중이라, 순위를 만든 검색어를 타이틀에 유지합니다.${oldTitle ? ` 기존 제목: "${oldTitle}"` : ""}` : "- 새 글입니다 (URL 은 기존 주소를 그대로 씁니다)."}
 
 ${titleBlock}
-
+${headingBlock ? `\n${headingBlock}\n` : ""}
 ## 검색어 자료 (네이버 자동완성 · 연관검색어 · 지식iN 질문. 많이 물은 순)
 ${j(keywords)}
 
@@ -67,7 +74,7 @@ ${registry.map((r) => `- ${r.org} | ${r.url} | 쓴 글 ${r.usedBy.length}편 | $
 ${(ctaScreens || []).map((s) => `- ${s.label} | ${s.url} | 버튼 문구: ${s.button}`).join("\n") || "(비어 있음)"}
 
 ## 규칙
-1. 군집 2~4개. 군집 하나 = 대제목(h2) 하나 = 검색자가 정말 알고 싶은 것 하나. 군집마다 세부 질문(h3) 1~3개, 전체 h3 는 6~9개. h2·h3 는 검색자가 실제로 묻는 문장 그대로 "~나요" 로 끝냅니다.
+1. ${fixedHeadings.length ? `군집 ${fixedHeadings.length}개 — h2 는 위에 고정된 문장 그대로. 군집마다 세부 질문(h3) 1~2개, 전체 h3 는 6~9개. h3 는 검색자가 실제로 묻는 문장 그대로 "~나요" 로 끝냅니다.` : `군집 2~4개. 군집 하나 = 대제목(h2) 하나 = 검색자가 정말 알고 싶은 것 하나. 군집마다 세부 질문(h3) 1~3개, 전체 h3 는 6~9개. h2·h3 는 검색자가 실제로 묻는 문장 그대로 "~나요" 로 끝냅니다.`}
 ${fixed ? `2. **타이틀은 위에 고정돼 있습니다 — 새로 짓지 않습니다.** 그대로 옮겨 적습니다.` : `2. **타이틀은 위 「타이틀 형식」대로: 메인키워드 + 이 글이 답하는 핵심 하나, 30자 이하.** 대제목을 늘어놓지 않습니다 — 쉼표·'…부터 …까지'로 항목을 잇지 않습니다. 30자를 넘으면 설계도가 거부됩니다.`}
 3. primaryKeywords 2~3개: 검색량이 큰 메인 검색어. **사람이 실제로 치는 짧은 말(2~4어절, 12자 이내)** 이어야 합니다 — "실업급여 건강보험"(O), "실업급여 수급 중 건강보험"(X, 아무도 이렇게 안 칩니다). 그중 2개 이상이 타이틀에 글자 그대로 들어가야 합니다.${fixed ? " 타이틀이 고정이므로 **위 타이틀 안에 실제로 있는 토막**에서 골라 잘라 씁니다." : " 키워드가 길면 타이틀이 따라 길어집니다."}
 4. eyebrow: 대제목마다 4~8자 주제 라벨(예: "지원 대상", "보험료 비교"). 대제목 문장의 앞부분을 잘라 쓰면 거부됩니다.
@@ -198,6 +205,7 @@ ${failures}
 - "한 줄 답(.ans) 없음": 그 제목에 answer 를 넣습니다. "라벨이 소제목을 자른 형태": eyebrow 를 다른 말로.
 - CTA 문제: url 을 허용 목록의 다른 주소로 바꾸거나 그 버튼을 뺍니다. 내부 링크 문제: 허용 slug 로 바꾸거나 뺍니다.
 - tsc 타입 오류: 필드 이름·형태를 types.ts 대로 (예: widgets[].type 은 checklist·calc-cta·stat-box·case-example·def-box·decide·flow·stepbar·timeline 만).
+- "뜻·누락 판정" 🔴·🟡: 지적한 문장을 증거 원문의 뜻에 맞게 고칩니다. 조문을 엉뚱한 경우에 끌어 쓴 것은 맞는 항으로 바꾸거나 그 문장을 뺍니다. 빠진 예외·단서·요건은 원문 문장을 그대로 옮겨 해당 섹션에 보탭니다. 증거에 근거가 없는 주장(버튼이 하는 일 포함)은 빼거나 "관할 법원에 확인" 처럼 근거 안으로 좁힙니다. 증거에 없는 숫자를 새로 넣지 않습니다. 타이틀·대제목은 바꾸지 않습니다.
 - 검사기를 통과시키기 위한 문장 조작(숫자만 지우고 주장은 남기기)은 금지. 근거 없는 주장은 통째로 뺍니다.
 - 나머지 부분은 바꾸지 않습니다.
 

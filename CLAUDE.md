@@ -26,7 +26,7 @@ npm run article -- --batch scripts/batch.txt        # 줄마다: slug | 주제 |
 입력: `scripts/keywords/<slug>.json`(엑셀·텍스트 → `npm run input`) 또는 `--keywords`로 같은 주제의 큰 키워드 파일.
 
 - 파이프라인이 떨어지면 **검사기를 고치지 않는다.** 지시문(`scripts/lib/prompts.mjs`)이나 사전 검사(`scripts/lib/check-draft.mjs`)를 고친다. 검사 규칙은 원본 검사기(`verify-evidence`·`verify-rendered`)와 함께 바꾼다
-- 뜻·누락 검사(LLM 판정)는 파이프라인과 pre-push에서 뺐다 — 돌릴 때마다 결과가 달라 글 한 편에 7바퀴를 돌게 했다. `npm run audit <slug>`로 따로 읽는다(경고)
+- 뜻·누락 검사(LLM 판정)는 **쓰기 루프에 넣지 않는다** — 돌릴 때마다 결과가 달라 글 한 편에 7바퀴를 돌게 했다. 대신 통과한 글에 **한 번** 묻고, 🔴·🟡 면 **한 번** 고치고, **한 번** 확인한다. 🔴 가 남거나 판정이 안 돌면 그 글은 내리고 옛 페이지로 둔다(2026-09-15, 숫자만 맞고 조문을 엉뚱하게 끌어 쓴 글이 통과해서). 판정 끝 줄이 없으면 🔴 0 이 아니라 판정 실패다. `--no-audit` 로 끈다. pre-push 는 경고만
 - 손으로 만질 때만: 카테고리 파일(CRLF)을 직접 고치고 `npm run verify <slug>`(숫자·화면). `verify-rendered`를 `--base` 없이 부르면 **라이브를** 검사해 로컬 변경과 무관한 ✅가 뜬다. 수집을 손으로 부를 때 조는 **숫자만**(`--law "고용보험법:44,49"`)
 
 게이트를 고치면 `npm run test:gates`(빠른 것) · `npm run test:gates:slow`(화면·뜻·누락까지) 로 **일부러 망가뜨린 입력을 잡는지** 확인한다. 조용히 통과하는 검사가 가장 위험하다 — CRLF 로 정규식이 0건을 돌려 '바뀐 글 없음'을 뱉은 적이 있다.
