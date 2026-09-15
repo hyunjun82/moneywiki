@@ -192,6 +192,20 @@
       "org": "고용노동부",
       "keywords": "퇴직금",
       "lands": "바로 열림"
+    },
+    {
+      "label": "출산전후(유산·사산·배우자·난임치료)휴가 급여신청",
+      "url": "https://www.work24.go.kr/ei/b/a/1100/openHPEIBA1100M02.do",
+      "org": "고용24",
+      "keywords": "출산전후휴가|출산휴가|배우자 출산|유산|사산|난임",
+      "lands": "로그인 후 그 화면"
+    },
+    {
+      "label": "육아휴직급여 신청",
+      "url": "https://www.work24.go.kr/ei/b/b/1100/openHPEIBB1100M01.do",
+      "org": "고용24",
+      "keywords": "육아휴직",
+      "lands": "로그인 후 그 화면"
     }
   ]
 }
