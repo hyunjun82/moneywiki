@@ -331,18 +331,6 @@ export function ArticleShell({ data }: Props) {
 
           {data.heroWidget && <QuickCalc w={data.heroWidget} />}
 
-          {data.heroStats && data.heroStats.length > 0 && (
-            <div className="stats hero">
-              {data.heroStats.map((s, i) => (
-                <div className="stat" key={i}>
-                  <p className="cap">{s.label}</p>
-                  <p className="big">{s.value}{s.unit && <small>{s.unit}</small>}</p>
-                  {s.note && <p className="sub">{s.note}</p>}
-                </div>
-              ))}
-            </div>
-          )}
-
           {data.heroCta && (
             <a className="cta-main" href={data.heroCta.url} rel="noopener">{data.heroCta.label} →</a>
           )}

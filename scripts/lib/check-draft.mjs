@@ -130,7 +130,7 @@ const HYPE = /축하|무조건|100\s*%\s*(보장|받)|확정적으로|반드시\
 /* ── types.ts 의 필드 목록 — tsc 의 "known properties" 검사를 삽입 전에 흉내낸다 (한 바퀴를 아낀다) ── */
 const K = (s) => new Set(s.split(" "));
 const SHAPES = {
-  article: K("slug category primaryKeywords meta searchIntent heroHook heroCta keyFacts summary verify heroWidget heroStats mainSections resolution context sources lastVerified numericClaims relatedQuestions"),
+  article: K("slug category primaryKeywords meta searchIntent heroHook heroCta keyFacts summary verify heroWidget mainSections resolution context sources lastVerified numericClaims relatedQuestions"),
   meta: K("title subtitle description ogImage author publishedAt"),
   author: K("name role bio avatarChar"),
   searchIntent: K("userQuestion directAnswer why"),
@@ -139,7 +139,6 @@ const SHAPES = {
   verify: K("note date"),
   heroWidget: K("type component title hint formula more params"),
   more: K("slug label"),
-  heroStat: K("label value unit note"),
   section: K("eyebrow heading answer body highlight subsections quote cta link sourceQuote compareTable widgets"),
   subsection: K("id heading answer body highlight compareTable widgets cta quote"),
   quote: K("law text"),
@@ -189,7 +188,6 @@ function unknownKeys(a) {
   chk(a.searchIntent, SHAPES.searchIntent, "searchIntent"); chk(a.heroCta, SHAPES.cta, "heroCta"); chk(a.verify, SHAPES.verify, "verify");
   chk(a.heroWidget, SHAPES.heroWidget, "heroWidget"); chk(a.heroWidget?.more, SHAPES.more, "heroWidget.more");
   (a.keyFacts || []).forEach((x, i) => chk(x, SHAPES.keyFact, `keyFacts[${i}]`));
-  (a.heroStats || []).forEach((x, i) => chk(x, SHAPES.heroStat, `heroStats[${i}]`));
   (a.mainSections || []).forEach((s, i) => {
     const w = `mainSections[${i}]`;
     chk(s, SHAPES.section, w); chk(s?.quote, SHAPES.quote, `${w}.quote`); chk(s?.cta, SHAPES.cta, `${w}.cta`); chk(s?.link, SHAPES.link, `${w}.link`); chk(s?.sourceQuote, SHAPES.sourceQuote, `${w}.sourceQuote`);

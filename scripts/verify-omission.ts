@@ -36,7 +36,6 @@ const strip = (s: unknown) => String(s || "").replace(/<[^>]+>/g, " ").replace(/
 function articleText(a: any): string {
   const out: string[] = [a.meta?.title, a.meta?.description, a.searchIntent?.directAnswer];
   for (const k of a.keyFacts ?? []) out.push(`${k.label}: ${k.value}`);
-  for (const st of a.heroStats ?? []) out.push(`${st.label} ${st.value}${st.unit ?? ""} ${st.note ?? ""}`);
   const sec = (s: any) => {
     out.push(s.heading, s.answer, s.body);
     const t = s.compareTable;

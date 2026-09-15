@@ -19,7 +19,7 @@
  *   scripts/reports/<slug>.md/.png    보고서 한 장 + 렌더 캡처. 사람이 보는 건 이것만
  */
 import fs from "node:fs";
-import { ctaProblems, ctaRegistry, heroFits, buttonLabel } from "./lib/cta-rules.mjs";
+import { ctaProblems, ctaRegistry, buttonLabel } from "./lib/cta-rules.mjs";
 import path from "node:path";
 import http from "node:http";
 import { spawn, spawnSync } from "node:child_process";
@@ -378,9 +378,6 @@ async function stageCtaCheck(ctx, plan) {
     plan.deadCtas = [...(plan.deadCtas || []), ...dead.map((c) => ({ label: c.label, url: c.url, why: c.checked.why }))];
     ctx.notes.push(`죽은 CTA 제거 ${dead.length}개:\n${dead.map((c) => `  · ${c.label} → ${c.url} — ${c.checked.why}`).join("\n")}`);
   }
-  // 2026-09-15: hero 가 없으면 첫 버튼을 hero 로 올리던 줄을 지웠다. 28편 중 12편 첫 화면에
-  // 같은 "수급자격 인정신청서 인터넷 제출" 버튼이 붙었다. 주제 자체를 처리하는 화면일 때만 hero 로 남긴다.
-  for (const c of plan.ctas) if (c.hero && !heroFits(c.url, `${plan.title} ${ctx.topic}`)) c.hero = false;
   writeJson(file, plan);
   // 버튼이 하나도 안 살아남았다 — 죽은 주소를 알려 주고 설계를 한 번 다시 시킨다.
   // 그래도 없으면 버튼 없이 쓴다. 정부 신청 화면이 아예 없는 주제(민간보험 청구 등)가 있고,
@@ -595,20 +592,11 @@ function normalizeText(draft, ctx) {
   };
   const article = walk(draft.article, "");
   if (dashes) { ctx.notes.push(`자동 정규화: 대시(—) ${dashes}곳 → 중점(·)`); ctx.log("check", `대시 ${dashes}곳을 중점으로 바꿈`); }
-  // heroStats(첫 화면 숫자 박스)는 마크다운을 그리지 않는다 — **강조** 가 글자 그대로 찍힌다 (2026-09-06 첫 글에서 확인)
-  let stars = 0;
-  for (const s of article.heroStats || []) for (const k of ["label", "value", "unit", "note"]) {
-    if (typeof s[k] === "string" && s[k].includes("**")) { stars++; s[k] = s[k].replace(/\*\*/g, ""); }
-  }
-  if (stars) { ctx.notes.push(`자동 정규화: heroStats 의 ** 강조 ${stars}곳 제거 (그 칸은 마크다운을 그리지 않음)`); ctx.log("check", `heroStats 강조 표시 ${stars}곳 제거`); }
+  // 서론 밑 숫자 박스(heroStats)는 정본 템플릿에 없다 — 칸을 없앴다. 옛 설계를 따라 오면 뗀다 (2026-09-15)
+  if (article.heroStats) { ctx.notes.push(`자동 정규화: 서론 밑 숫자 박스(heroStats) 제거`); delete article.heroStats; }
   // 서론 끝 권유 문장 — 지시문이 "마지막 문장은 행동 유도"라 해서 25/28편이 "…확인해 보세요."로 끝났다 (2026-09-15)
   const hook = dropHookCall(article.heroHook);
   if (hook !== article.heroHook) { ctx.notes.push(`자동 정규화: 서론 끝 권유 문장 제거`); article.heroHook = hook; }
-  // 첫 화면 대형 버튼 — 주제 자체를 처리하는 화면이 아니면 뗀다
-  if (article.heroCta && !heroFits(article.heroCta.url, `${article.meta?.title || ""} ${ctx.topic || ""}`)) {
-    ctx.notes.push(`자동 정규화: 주제와 떨어진 첫 화면 버튼 제거 (${article.heroCta.label})`);
-    delete article.heroCta;
-  }
   // 버튼 이름 — 등록부 주소면 등록부의 짧은 문구로. "고용24에서 수급자격 인정신청서 인터넷 제출하기" 같은
   // 화면 이름 늘여 쓰기가 글마다 찍혀 나왔다 (2026-09-15)
   let relabeled = 0;

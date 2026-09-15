@@ -90,9 +90,6 @@ export interface ArticleData {
     params?: Record<string, unknown>;
   };
 
-  /** 첫 화면 핵심 숫자 박스 2개 (정본 템플릿 .stats) */
-  heroStats?: { label: string; value: string; unit?: string; note?: string }[];
-
   /**
    * 대제목 섹션 — 검색자 질문 군집 하나에 하나 (2~4).
    * 세부 질문은 각 섹션의 subsections 로 들어간다.

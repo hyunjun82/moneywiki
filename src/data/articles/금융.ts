@@ -6808,10 +6808,6 @@ export const 금융: ArticleCategory = {
         { label: "근거 조문", value: "소득세법 제59조의3 제1항" },
       ],
       verify: { note: "금융감독원 통합연금포털 퇴직연금 세제 개인형 IRP 세액공제 표와 소득세법 제59조의3 조문 대조", date: "2026-09-07" },
-      heroStats: [
-        { label: "두 계좌 합산 세액공제 한도", value: "900", unit: "만원", note: "연금저축 600만원 한도를 포함한 금액이에요" },
-        { label: "총급여 5천500만원 이하 공제율", value: "16.5", unit: "%", note: "초과하면 13.2%가 적용돼요" },
-      ],
       mainSections: [
         {
           eyebrow: "공제율 구간",
@@ -7177,10 +7173,6 @@ export const 금융: ArticleCategory = {
         { label: "근거 조문", value: "소득세법 제59조의3 제1항 · 시행령 제40조의2" },
       ],
       verify: { note: "금융감독원 통합연금포털 퇴직연금 세제 세액공제 표와 소득세법 제59조의3·시행령 제40조의2 조문 대조", date: "2026-09-07" },
-      heroStats: [
-        { label: "연금저축펀드 단독 세액공제 한도", value: "600", unit: "만원", note: "퇴직연금계좌를 더하면 900만원까지 늘어나요" },
-        { label: "기준 이하 구간 공제율", value: "16.5", unit: "%", note: "종합소득금액 4천 500만원 이하에 적용돼요" },
-      ],
       mainSections: [
         {
           eyebrow: "펀드 단독 한도",
@@ -7532,10 +7524,6 @@ export const 금융: ArticleCategory = {
         note: "금융감독원 통합연금포털 연금저축 세제 연금수령 세율표와 소득세법 제129조 · 시행령 제40조의2 조문 대조",
         date: "2026-09-07",
       },
-      heroStats: [
-        { label: "종신형 한도 내 금액 세율 (만 70세 미만)", value: "4.4", unit: "%", note: "같은 나이 확정형은 5.5%예요" },
-        { label: "연금수령한도 초과액 세율", value: "16.5", unit: "%", note: "연금수령이 아닌 인출로 봐서 붙어요" },
-      ],
       mainSections: [
         {
           eyebrow: "세율 기준",

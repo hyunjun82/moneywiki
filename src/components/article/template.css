@@ -220,7 +220,6 @@
 .aw .now-out .row b{color:var(--ink-900)}
 .aw .now-ft{padding:12px 22px 16px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;font-size:13px;color:var(--ink-500)}
 .aw .now-ft a{font-weight:700}
-.aw .stats.hero{margin-top:16px}
 .aw .stat .sub{word-break:keep-all}
 
 /* 목차: 대제목 + 들여쓴 소제목 */

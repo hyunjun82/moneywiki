@@ -387,15 +387,6 @@ export const 퇴직금: ArticleCategory = {
         { label: "중도인출 사유", value: "주택구입·전세보증금·요양비·파산선고·개인회생·재난·담보대출 상환" },
         { label: "요양비 사유 기준", value: "**6개월** 이상 요양 + 본인 연간 임금총액의 **1천분의 125** 초과 부담" },
       ],
-      heroStats: [
-        { label: "IRP 해지로 한 번에 뺄 때", value: "16.5", unit: "%", note: "기타소득세 · 지방소득세 포함" },
-        {
-          label: "연금수령 시작 나이",
-          value: "55세",
-          unit: "이후",
-          note: "가입일부터 5년 경과 · 이연퇴직소득 계좌는 5년 조건 배제",
-        },
-      ],
       mainSections: [
         {
           eyebrow: "세금 계산",
@@ -755,15 +746,6 @@ export const 퇴직금: ArticleCategory = {
         { label: "중도인출 사유", value: "주택구입 · 전세보증금 · 요양비 · 파산선고 · 개인회생 · 재난 · 담보대출 상환" },
         { label: "요양비 사유 기준", value: "**6개월** 이상 요양 + 본인 연간 임금총액의 1천분의 125 초과 부담" },
         { label: "IRP 해지 세율", value: "기타소득세 **16.5%**(지방소득세 포함) 원천징수" },
-      ],
-      heroStats: [
-        {
-          label: "원리금비보장상품 투자 한도",
-          value: "70",
-          unit: "%",
-          note: "전체 적립금 기준 · 금융감독원 퇴직연금 비교공시 안내",
-        },
-        { label: "IRP를 해지해 한 번에 뺄 때", value: "16.5", unit: "%", note: "기타소득세 · 지방소득세 포함" },
       ],
       mainSections: [
         {

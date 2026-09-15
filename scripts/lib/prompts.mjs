@@ -141,7 +141,7 @@ const CORE_RULES = ({ verifiedAt, today }) => `숫자
 - 다른 사이트 문장 복제 금지. 사례 인물은 나이·직업·상황이 구체적인 새 인물.
 - meta.description: 결론 한 문장 + 굵은 숫자 하나(**…**). 숫자는 증거에 있는 것만.
 - heroHook: 3~5문장. 첫 질문의 결론(숫자·판정)부터 사실로 쓰고, 마지막 문장도 사실로 끝냅니다. "확인해 보세요"·"…해 보세요" 같은 권유 문장은 기계가 지웁니다. **강조** 1~2곳.
-- **강조** 마크는 heroHook·body·keyFacts.value·meta.description·checklist items 에서만 그려집니다. heroStats(label·value·note)·answer·표 셀·quote 에는 쓰지 않습니다 (글자 그대로 찍힘).
+- **강조** 마크는 heroHook·body·keyFacts.value·meta.description·checklist items 에서만 그려집니다. answer·표 셀·quote 에는 쓰지 않습니다 (글자 그대로 찍힘).
 - 설계도의 misconceptions 를 본문에서 직접 다룹니다.
 형식
 - 출력은 JSON 하나. 마크다운 펜스·설명 없이. 문자열은 한 줄(줄바꿈이 필요하면 \\n).
