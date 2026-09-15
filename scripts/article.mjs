@@ -19,7 +19,7 @@
  *   scripts/reports/<slug>.md/.png    보고서 한 장 + 렌더 캡처. 사람이 보는 건 이것만
  */
 import fs from "node:fs";
-import { ctaProblems, ctaRegistry, heroFits } from "./lib/cta-rules.mjs";
+import { ctaProblems, ctaRegistry, heroFits, buttonLabel } from "./lib/cta-rules.mjs";
 import path from "node:path";
 import http from "node:http";
 import { spawn, spawnSync } from "node:child_process";
@@ -609,6 +609,20 @@ function normalizeText(draft, ctx) {
     ctx.notes.push(`자동 정규화: 주제와 떨어진 첫 화면 버튼 제거 (${article.heroCta.label})`);
     delete article.heroCta;
   }
+  // 버튼 이름 — 등록부 주소면 등록부의 짧은 문구로. "고용24에서 수급자격 인정신청서 인터넷 제출하기" 같은
+  // 화면 이름 늘여 쓰기가 글마다 찍혀 나왔다 (2026-09-15)
+  let relabeled = 0;
+  const relabel = (v) => {
+    if (Array.isArray(v)) return v.forEach(relabel);
+    if (!v || typeof v !== "object") return;
+    if (typeof v.label === "string" && typeof v.url === "string") {
+      const b = buttonLabel(v.url);
+      if (b && v.label !== b) { v.label = b; relabeled++; }
+    }
+    Object.values(v).forEach(relabel);
+  };
+  relabel(article);
+  if (relabeled) ctx.notes.push(`자동 정규화: 버튼 이름 ${relabeled}곳을 등록부 짧은 문구로`);
   return { ...draft, article };
 }
 

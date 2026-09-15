@@ -47,6 +47,12 @@ export function ctaProblems({ label, url }) {
   return [];
 }
 
+/** 등록부 화면의 짧은 버튼 문구. 등록부에 없는 주소면 null (그 버튼 이름은 그대로 둔다) */
+export function buttonLabel(url) {
+  const screen = ctaRegistry().screens.find((s) => norm(s.url) === norm(url));
+  return screen?.button || null;
+}
+
 /**
  * 첫 화면 대형 버튼(hero)으로 둘 만한가 — 그 화면이 글 주제 자체를 처리하는가.
  * 등록부 화면만 판단한다(heroWhen, 없으면 keywords 가 글 타이틀·주제에 있어야 함). 등록부 밖 주소는 막지 않는다.

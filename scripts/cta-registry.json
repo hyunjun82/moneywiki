@@ -1,5 +1,5 @@
 {
-  "_설명": "버튼(heroCta·cta·stepbar action) 행동 화면 등록부. managedDomains 의 버튼은 screens 주소만 쓰고, 버튼 이름에 keywords 가 들어가야 한다. blocked 는 어느 도메인이든 버튼으로 금지. 2026-09-14 — 28편 버튼 81개 중 66개가 고용24 첫 화면·제도안내·노동포털 진정서 3곳에 몰려 이름과 다른 일을 하는 화면으로 갔다. 고용24 신청 화면은 메뉴가 POST 로만 여는 주소(...Post.do)라 링크로 열면 첫 화면으로 튕기고, 끝의 Post 를 뗀 주소는 로그인 뒤 그 화면으로 넘어간다(forwardUrl). 새 화면을 넣을 때는 Playwright 로 열어 로그인→그 화면으로 가는지 확인하고 verifiedAt 을 적는다.",
+  "_설명": "버튼(heroCta·cta·stepbar action) 행동 화면 등록부. managedDomains 의 버튼은 screens 주소만 쓰고, 버튼 이름에 keywords 가 들어가야 한다. blocked 는 어느 도메인이든 버튼으로 금지. 2026-09-14 — 28편 버튼 81개 중 66개가 고용24 첫 화면·제도안내·노동포털 진정서 3곳에 몰려 이름과 다른 일을 하는 화면으로 갔다. 고용24 신청 화면은 메뉴가 POST 로만 여는 주소(...Post.do)라 링크로 열면 첫 화면으로 튕기고, 끝의 Post 를 뗀 주소는 로그인 뒤 그 화면으로 넘어간다(forwardUrl). 새 화면을 넣을 때는 Playwright 로 열어 로그인→그 화면으로 가는지 확인하고 verifiedAt 을 적는다. 2026-09-15 — 버튼 이름이 화면 이름을 늘여 쓴 긴 문구(\"고용24에서 수급자격 인정신청서 인터넷 제출하기\")로 찍혀 나와 화면마다 짧은 문구(button) 하나로 통일한다. 파이프라인 정규화가 등록부 주소의 버튼 이름을 이 문구로 바꾼다.",
   "verifiedAt": "2026-09-14",
   "managedDomains": [
     "work24.go.kr",
@@ -38,147 +38,168 @@
       "org": "고용24",
       "keywords": "수급자격|인터넷 제출",
       "heroWhen": "신청방법|온라인신청|인터넷제출|신청절차|신청하는법|신청서류",
-      "lands": "로그인 후 그 화면"
+      "lands": "로그인 후 그 화면",
+      "button": "수급자격 신청하기"
     },
     {
       "label": "수급자격 신청자 온라인 교육",
       "url": "https://www.work24.go.kr/ei/a/b/1100/retrievePuIncqualClmntOnlineView.do",
       "org": "고용24",
       "keywords": "온라인 교육|사전 교육|신청자 교육",
-      "lands": "로그인 후 그 화면"
+      "lands": "로그인 후 그 화면",
+      "button": "온라인 교육 듣기"
     },
     {
       "label": "수급자격증 기재사항 변경 신고",
       "url": "https://www.work24.go.kr/ei/a/c/1100/openHPEIAC1100M01.do",
       "org": "고용24",
       "keywords": "기재사항",
-      "lands": "로그인 후 그 화면"
+      "lands": "로그인 후 그 화면",
+      "button": "기재사항 변경 신고하기"
     },
     {
       "label": "수급기간 연기(변경) 신고",
       "url": "https://www.work24.go.kr/ei/a/c/1200/openHPEIAC1200M02.do",
       "org": "고용24",
       "keywords": "수급기간|연기",
-      "lands": "로그인 후 그 화면"
+      "lands": "로그인 후 그 화면",
+      "button": "수급기간 연기 신청하기"
     },
     {
       "label": "실업인정 인터넷 신청",
       "url": "https://www.work24.go.kr/ei/a/h/1200/openHPEIAH1200M01.do",
       "org": "고용24",
       "keywords": "실업인정",
-      "lands": "로그인 후 그 화면"
+      "lands": "로그인 후 그 화면",
+      "button": "실업인정 신청하기"
     },
     {
       "label": "상병급여(일반) 청구",
       "url": "https://www.work24.go.kr/ei/a/j/1100/openHPEIAJ1100M01.do",
       "org": "고용24",
       "keywords": "상병급여",
-      "lands": "로그인 후 그 화면"
+      "lands": "로그인 후 그 화면",
+      "button": "상병급여 청구하기"
     },
     {
       "label": "개별연장급여 신청",
       "url": "https://www.work24.go.kr/ei/a/j/1300/openHPEIAJ1300M02.do",
       "org": "고용24",
       "keywords": "연장급여",
-      "lands": "로그인 후 그 화면"
+      "lands": "로그인 후 그 화면",
+      "button": "연장급여 신청하기"
     },
     {
       "label": "조기재취업수당 청구",
       "url": "https://www.work24.go.kr/ei/a/m/1200/createPuElempAllwncView.do",
       "org": "고용24",
       "keywords": "조기재취업",
-      "lands": "로그인 후 그 화면"
+      "lands": "로그인 후 그 화면",
+      "button": "조기재취업수당 청구하기"
     },
     {
       "label": "이주비 청구",
       "url": "https://www.work24.go.kr/ei/a/i/1100/openHPEIAI1100M01.do",
       "org": "고용24",
       "keywords": "이주비",
-      "lands": "로그인 후 그 화면"
+      "lands": "로그인 후 그 화면",
+      "button": "이주비 청구하기"
     },
     {
       "label": "광역구직활동비 청구",
       "url": "https://www.work24.go.kr/ei/a/i/1200/openHPEIAI1200M01.do",
       "org": "고용24",
       "keywords": "광역구직",
-      "lands": "로그인 후 그 화면"
+      "lands": "로그인 후 그 화면",
+      "button": "광역구직활동비 청구하기"
     },
     {
       "label": "심사 청구",
       "url": "https://www.work24.go.kr/cm/d/a/0120/registJdgnReqtView.do",
       "org": "고용24",
       "keywords": "심사청구|심사 청구|이의신청",
-      "lands": "로그인 후 그 화면"
+      "lands": "로그인 후 그 화면",
+      "button": "심사청구하기"
     },
     {
       "label": "재심사 청구",
       "url": "https://www.work24.go.kr/cm/d/a/0130/registRjdgReqtView.do",
       "org": "고용24",
       "keywords": "재심사",
-      "lands": "로그인 후 그 화면"
+      "lands": "로그인 후 그 화면",
+      "button": "재심사청구하기"
     },
     {
       "label": "이직확인서 처리 조회",
       "url": "https://www.work24.go.kr/cm/d/b/0003/selectCvplNotiEILI20.do",
       "org": "고용24",
       "keywords": "이직확인서",
-      "lands": "로그인 후 그 화면"
+      "lands": "로그인 후 그 화면",
+      "button": "이직확인서 확인하기"
     },
     {
       "label": "국민내일배움카드 신청",
       "url": "https://www.work24.go.kr/hr/h/a/4110/selectCardRequestList.do",
       "org": "고용24",
       "keywords": "내일배움카드",
-      "lands": "로그인 후 그 화면"
+      "lands": "로그인 후 그 화면",
+      "button": "내일배움카드 신청하기"
     },
     {
       "label": "서비스 수혜 이력 조회",
       "url": "https://www.work24.go.kr/cm/b/a/0410/selectRcvSvcList.do",
       "org": "고용24",
       "keywords": "수혜 이력|수혜이력",
-      "lands": "로그인 후 그 화면"
+      "lands": "로그인 후 그 화면",
+      "button": "수혜 이력 조회하기"
     },
     {
       "label": "진정서(체불, 직장 내 괴롭힘, 기타 노동법 위반)",
       "url": "https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001",
       "org": "고용노동부",
       "keywords": "진정|체불|괴롭힘",
-      "lands": "민원 안내와 신청하기 버튼"
+      "lands": "민원 안내와 신청하기 버튼",
+      "button": "진정서 접수하기"
     },
     {
       "label": "실업급여 모의계산",
       "url": "https://www.work24.go.kr/cm/c/f/1100/selecSimulate.do?currentPageNo=1&recordCountPerPage=10&upprSystClId=SC00000253&systClId=SC00000254&systId=SI00000411&systCnntId=CI00002358",
       "org": "고용24",
       "keywords": "모의계산|계산",
-      "lands": "바로 열림"
+      "lands": "바로 열림",
+      "button": "실업급여 모의계산하기"
     },
     {
       "label": "이직확인서 발급 요청서 서식",
       "url": "https://www.work24.go.kr/cm/c/b/1100/selectBbttInfo.do?currentPageNo=1&recordCountPerPage=10&polySvcFomtId=FM00000114",
       "org": "고용24",
       "keywords": "요청서|양식|서식",
-      "lands": "바로 열림"
+      "lands": "바로 열림",
+      "button": "이직확인서 요청서 받기"
     },
     {
       "label": "서식자료실",
       "url": "https://www.work24.go.kr/cm/c/b/1100/selectBbttList.do",
       "org": "고용24",
       "keywords": "서식|양식|요청서|내려받기",
-      "lands": "바로 열림"
+      "lands": "바로 열림",
+      "button": "서식 내려받기"
     },
     {
       "label": "구직신청",
       "url": "https://www.work24.go.kr/wk/a/b/2100/resumeMngMain.do",
       "org": "고용24",
       "keywords": "구직등록|구직신청",
-      "lands": "로그인 후 그 화면"
+      "lands": "로그인 후 그 화면",
+      "button": "구직신청하기"
     },
     {
       "label": "수급자격증 재교부 신청",
       "url": "https://www.work24.go.kr/ei/a/b/1300/openHPEIAB1300M01.do",
       "org": "고용24",
       "keywords": "재교부",
-      "lands": "로그인 후 그 화면"
+      "lands": "로그인 후 그 화면",
+      "button": "수급자격증 재교부 신청하기"
     },
     {
       "label": "취업사실 신고",
@@ -186,28 +207,32 @@
       "org": "고용24",
       "keywords": "취업사실",
       "heroWhen": "취업사실|창업|취업하면",
-      "lands": "로그인 후 그 화면 (끝이 ViewGet.do — View.do 는 첫 화면으로 튕김)"
+      "lands": "로그인 후 그 화면 (끝이 ViewGet.do — View.do 는 첫 화면으로 튕김)",
+      "button": "취업사실 신고하기"
     },
     {
       "label": "퇴직금 계산",
       "url": "https://labor.moel.go.kr/cmmt/calRtrmnt.do",
       "org": "고용노동부",
       "keywords": "퇴직금",
-      "lands": "바로 열림"
+      "lands": "바로 열림",
+      "button": "퇴직금 계산하기"
     },
     {
       "label": "출산전후(유산·사산·배우자·난임치료)휴가 급여신청",
       "url": "https://www.work24.go.kr/ei/b/a/1100/openHPEIBA1100M02.do",
       "org": "고용24",
       "keywords": "출산전후휴가|출산휴가|배우자 출산|유산|사산|난임",
-      "lands": "로그인 후 그 화면"
+      "lands": "로그인 후 그 화면",
+      "button": "출산휴가 급여 신청하기"
     },
     {
       "label": "육아휴직급여 신청",
       "url": "https://www.work24.go.kr/ei/b/b/1100/openHPEIBB1100M01.do",
       "org": "고용24",
       "keywords": "육아휴직",
-      "lands": "로그인 후 그 화면"
+      "lands": "로그인 후 그 화면",
+      "button": "육아휴직급여 신청하기"
     }
   ]
 }
