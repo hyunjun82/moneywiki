@@ -91,26 +91,13 @@ for (const slug of slugs) {
         out.problems.push(`3줄 요약이 ${all(".sum li").length}줄`);
       if (v2) {
         const n = all(".sum li").length;
-        if (n < 2 || n > 5) out.problems.push(`정리 항목이 ${n}개 — 타이틀 항목 수(2~5)만큼`);
+        if (n < 2 || n > 5) out.problems.push(`정리 항목이 ${n}개 — 2~5개`);
         // 질문형 제목엔 한 줄 답이 붙어야 한다
         all("section.q h2, section.q h3.sh").forEach((h) => {
           if (h.closest("#faq, .src")) return;
           if (!h.nextElementSibling || !h.nextElementSibling.classList.contains("ans"))
             out.problems.push(`"${h.textContent.trim().slice(0, 30)}" 아래 한 줄 답(.ans)이 없음`);
         });
-        // 대제목 수 = 타이틀이 약속한 항목 수. 약속하고 답하지 않은 항목이 없어야 한다.
-        // 예전 규칙은 중점(·)이 있는 타이틀만 셌다 — 'A와 B, C부터 D까지' 형식에는 걸리지 않는 죽은 규칙이었고,
-        // '질병·간병' 같은 합성어의 중점을 항목으로 세어 오경보도 냈다.
-        const h1 = (q("h1")?.textContent ?? "").replace(/\s*\(\d{4}\)\s*$/, "").trim();
-        const conj = (x) => (x.match(/[가-힣0-9](?:\s*(?:와|과|및)(?=\s)|\s*·\s*)/g) || []).length;
-        let promised = 0;
-        for (const part of h1.split(/,\s*/)) {
-          if (/부터[\s\S]*(까지|총정리|정리|계산)/.test(part)) promised += 2 + conj(part.split("부터")[0]);
-          else promised += 1 + conj(part);
-        }
-        const mains = all("section.q").filter((s) => /^q\d+$/.test(s.id)).length;
-        if (promised >= 2 && mains !== promised)
-          out.problems.push(`타이틀이 약속한 항목 ${promised}개, 대제목 ${mains}개 — 1:1 이어야 함`);
         // 숫자가 있는 섹션엔 접힌 근거 조문
         all("section.q").filter((s) => /^q\d+$/.test(s.id)).forEach((s) => {
           const hasNum = /\d{2,}/.test(s.innerText);

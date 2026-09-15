@@ -60,32 +60,17 @@ export function collectQuotes(article) {
 
 /* ── verify-rendered 와 같은 규칙 ── */
 
-/** 타이틀이 약속한 항목 수 — verify-rendered 의 계산을 그대로 옮김 */
-export function promisedCount(title) {
-  const h1 = String(title || "").replace(/\s*\|\s*머니위키\s*$/, "").replace(/\s*\(\d{4}\)\s*$/, "").trim();
-  const conj = (x) => (x.match(/[가-힣0-9](?:\s*(?:와|과|및)(?=\s)|\s*·\s*)/g) || []).length;
-  let promised = 0;
-  for (const part of h1.split(/,\s*/)) {
-    if (/부터[\s\S]*(까지|총정리|정리|계산)/.test(part)) promised += 2 + conj(part.split("부터")[0]);
-    else promised += 1 + conj(part);
-  }
-  return promised;
-}
+/** 타이틀 최대 길이. 2026-09-15 에 '타이틀 항목 수 = 대제목 수' 규칙을 지우고 길이만 남겼다 */
+export const TITLE_MAX = 30;
 
-/** 타이틀이 약속한 항목들 — promisedCount 와 같은 규칙으로 쪼갠 것. 개수가 어긋나면 빈 배열을 돌려준다 */
-export function titleItems(title) {
-  const h1 = String(title || "").replace(/s*|s*머니위키s*$/, "").replace(/s*(d{4})s*$/, "").trim();
-  const byConj = (x) => x.split(/(?<=[가-힣0-9])s*(?:와|과|·|및)s*/).map((y) => y.trim()).filter(Boolean);
-  const out = [];
-  for (const part of h1.split(/,s*/)) {
-    const i = part.indexOf("부터");
-    if (i >= 0 && /(까지|총정리|정리)/.test(part.slice(i))) {
-      out.push(...byConj(part.slice(0, i)));
-      out.push(part.slice(i + 2).replace(/s*(까지|총정리|정리)s*$/, "").trim());
-    } else out.push(...byConj(part));
-  }
-  const items = out.map((x) => x.replace(/s*(까지|총정리|정리)s*$/, "").trim()).filter(Boolean);
-  return items.length === promisedCount(title) ? items : [];
+/** 서론 끝의 권유 문장("…확인해 보세요." 등)을 뗀다. 앞에 두 문장 이상 남을 때만 */
+export function dropHookCall(hook) {
+  if (typeof hook !== "string") return hook;
+  const parts = hook.trim().split(/(?<=[.!?])\s+/);
+  if (parts.length < 3) return hook;
+  const last = parts[parts.length - 1];
+  if (!/(세요|보는 게 좋아요|보시길 바라요)[.!]?$/.test(last)) return hook;
+  return parts.slice(0, -1).join(" ");
 }
 
 /** 섹션의 대표 비주얼 — verify-rendered 의 우선순위(판정>표>단계>산식>타임라인>체크리스트>통계) */
@@ -246,7 +231,7 @@ export function checkDraft({ article: a, plan, ev, live, ctaAllowed, quickCompon
   else if (plan.title && a.meta.title !== plan.title) p.push(`meta.title 이 설계도와 다릅니다 — 설계도 title 을 글자 하나 바꾸지 말고 그대로 씁니다.
     설계도: "${plan.title}"
     글:     "${a.meta.title}"`);
-  else if (!plan.title && a.meta.title.length > 42) p.push(`meta.title 이 ${a.meta.title.length}자 — 42자 이하 (검색 결과에서 잘림). 대제목 수는 그대로 두고 항목마다 낱말을 줄이세요: "${a.meta.title}"`);
+  else if (a.meta.title.length > TITLE_MAX) p.push(`meta.title 이 ${a.meta.title.length}자 — ${TITLE_MAX}자 이하. 메인키워드 + 핵심 하나, 대제목을 늘어놓지 않음: "${a.meta.title}"`);
   if (!a.meta?.description) p.push("meta.description 없음");
   for (const k of ["userQuestion", "directAnswer", "why"]) if (!a.searchIntent?.[k]) p.push(`searchIntent.${k} 없음`);
   if (!Array.isArray(a.primaryKeywords) || a.primaryKeywords.length < 2 || a.primaryKeywords.length > 3) p.push("primaryKeywords 는 2~3개");
@@ -280,8 +265,6 @@ export function checkDraft({ article: a, plan, ev, live, ctaAllowed, quickCompon
   const secs = a.mainSections || [];
   const want = (plan.clusters || []).length;
   if (secs.length !== want) p.push(`mainSections ${secs.length}개 — 설계도 군집 ${want}개와 같아야 함`);
-  const promised = promisedCount(a.meta?.title);
-  if (promised >= 2 && promised !== secs.length) p.push(`타이틀이 약속한 항목 ${promised}개, 대제목 ${secs.length}개 — 1:1 이어야 함 (타이틀: "${a.meta?.title}")`);
   secs.forEach((s, i) => {
     const id = `q${i + 1} "${(s.heading || "").slice(0, 30)}"`;
     if (!s.heading) p.push(`${id}: heading 없음`);

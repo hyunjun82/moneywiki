@@ -9,7 +9,7 @@
  *                     [--rewrite] [--commit] [--from plan|collect|captures|write|gates] [--max-fix 2]
  *                     [--model <m>] [--writer-model <m>] [--capture-model sonnet] [--skip-render] [--keep-on-fail]
  *   npm run article -- --batch scripts/batch.txt         # 줄마다: slug | 주제 | 카테고리 | 키워드파일 | 타이틀(뒤 둘은 생략 가능)
- *   --title "…"  타이틀을 고정한다. 설계 단계가 타이틀을 짓지 않고, 그 타이틀이 약속한 항목 수에 군집 수를 맞춘다
+ *   --title "…"  타이틀을 고정한다(30자 이하). 설계 단계가 타이틀을 짓지 않는다
  *
  * 산출물
  *   scripts/plans/<slug>.json        설계도 (타이틀·군집·조문·URL·CTA)
@@ -19,13 +19,13 @@
  *   scripts/reports/<slug>.md/.png    보고서 한 장 + 렌더 캡처. 사람이 보는 건 이것만
  */
 import fs from "node:fs";
-import { ctaProblems, ctaRegistry } from "./lib/cta-rules.mjs";
+import { ctaProblems, ctaRegistry, heroFits } from "./lib/cta-rules.mjs";
 import path from "node:path";
 import http from "node:http";
 import { spawn, spawnSync } from "node:child_process";
 import { ask as askRaw, extractJson, assertSubscriptionOnly, newMeter, addUsage, fmtUsage } from "./lib/headless.mjs";
 import * as io from "./lib/article-io.mjs";
-import { checkDraft, promisedCount, titleItems } from "./lib/check-draft.mjs";
+import { checkDraft, dropHookCall, TITLE_MAX } from "./lib/check-draft.mjs";
 import { planPrompt, capturesPrompt, writePrompt, fixPrompt, evidenceDigest } from "./lib/prompts.mjs";
 
 const STAGES = ["plan", "collect", "captures", "write", "gates"];
@@ -239,6 +239,8 @@ function keywordsForPrompt(kw, topic) {
 async function stagePlan(ctx, deadCtas = []) {
   const file = path.join(PLANS, `${ctx.slug}.json`);
   // 타이틀을 고정해 불렀는데 저장된 설계도가 다른 타이틀이면 재사용하지 않는다 — 군집이 그 타이틀의 항목과 어긋난다
+  // 준 타이틀이 길면 설계를 부르기 전에 멈춘다 — 고정 타이틀은 모델이 줄일 수 없어 3번 헛돈다
+  if (ctx.fixedTitle && ctx.fixedTitle.length > TITLE_MAX) throw new Error(`--title 이 ${ctx.fixedTitle.length}자 — ${TITLE_MAX}자 이하로 주세요 (메인키워드 + 핵심 하나): "${ctx.fixedTitle}"`);
   const stale = ctx.fixedTitle && fs.existsSync(file) && readJson(file).title !== ctx.fixedTitle;
   if (fs.existsSync(file) && !ctx.redo("plan") && !stale) { const p = readJson(file); ctx.log("plan", `설계도 재사용 — "${p.title}" (군집 ${p.clusters.length})`); return p; }
   if (stale) ctx.log("plan", `저장된 설계도의 타이틀이 고정 타이틀과 달라 다시 세웁니다`);
@@ -259,7 +261,7 @@ async function stagePlan(ctx, deadCtas = []) {
     const tsx = path.join(io.W_DIR, ctx.slug, "page.tsx");
     if (fs.existsSync(tsx)) oldTitle = (fs.readFileSync(tsx, "utf8").match(/title:\s*["'`]([^"'`\n]{8,})["'`]/) || [])[1] || "";
   }
-  const base = { slug: ctx.slug, topic: ctx.topic, category: ctx.category, categories: io.categoryFiles(), keywords: keywordsForPrompt(ctx.keywords, ctx.topic), registry, related, today: today(), rewrite: ctx.rewrite || ctx.live.has(ctx.slug), oldTitle, titleRule: io.titleRule(), titleExamples: io.titleExamples(), fixedTitle: ctx.fixedTitle, fixedItems: titleItems(ctx.fixedTitle), ctaScreens: ctaRegistry().screens };
+  const base = { slug: ctx.slug, topic: ctx.topic, category: ctx.category, categories: io.categoryFiles(), keywords: keywordsForPrompt(ctx.keywords, ctx.topic), registry, related, today: today(), rewrite: ctx.rewrite || ctx.live.has(ctx.slug), oldTitle, titleRule: io.titleRule(), fixedTitle: ctx.fixedTitle, ctaScreens: ctaRegistry().screens };
   // 다시 세우는 설계도라면, 지난 설계도에서 죽어 있던 버튼 주소를 알려 준다 (같은 주소를 또 고르지 않게)
   let retryNote = "";
   const known = [...deadCtas];
@@ -303,14 +305,9 @@ function validatePlan(plan, ctx) {
   for (let i = 1; i < cl.length; i++) if (cl[i]?.visual && cl[i].visual !== "none" && cl[i].visual === cl[i - 1]?.visual) errs.push(`군집 ${i}·${i + 1} 의 visual 이 같음 (${cl[i].visual})`);
   const h3n = cl.reduce((n, c) => n + (c?.h3?.length || 0), 0);
   if (h3n < 4 || h3n > 10) errs.push(`h3 총 ${h3n}개 — 6~9개`);
-  const promised = promisedCount(plan.title || "");
   if (!plan.title) errs.push("title 없음");
-  // 검색 결과에서 30~35자쯤에서 잘린다. 군집을 나열하라는 규칙만 있고 길이 제한이 없어
-  // 62자짜리 타이틀이 나갔다 (2026-09-07). 항목 수는 그대로 두고 각 항목을 짧게 만든다.
-  else if (!ctx.fixedTitle && plan.title.length > 42) errs.push(`타이틀이 ${plan.title.length}자 — 42자 이하 (저장된 예시는 30~40자). 항목 수 ${promised}개는 그대로 두고 항목마다 낱말을 줄이세요. 예) "지역가입 전환 기준, 임의계속가입 보험료 비교, 국민연금 실업크레딧 신청" → "지역가입 전환, 임의계속가입, 실업크레딧 신청". 현재: "${plan.title}"`);
-  else if (ctx.fixedTitle && promised !== cl.length) errs.push(`타이틀이 고정돼 있습니다("${plan.title}"). 이 타이틀이 약속한 항목은 ${promised}개인데 군집이 ${cl.length}개입니다 — 타이틀은 그대로 두고 **군집을 ${promised}개로** 다시 나누세요. 항목: ${titleItems(plan.title).map((x, i) => `${i + 1}) ${x}`).join(" / ") || "(쉼표 조각 1개씩 + 와/과/·/및 마다 +1, '부터…까지' 조각은 2개)"}`)
-  else if (promised >= 2 && promised !== cl.length) errs.push(`타이틀이 약속한 항목 ${promised}개 ≠ 군집 ${cl.length}개. 타이틀: "${plan.title}" (쉼표 조각 1개씩 + 와/과/·/및 마다 +1, '부터…까지' 조각은 2개)`);
-  else if (promised < 2) errs.push(`타이틀 "${plan.title}" 이 항목을 나열하지 않음 — 군집 ${cl.length}개를 타이틀에 나열`);
+  // 2026-09-15: '타이틀 항목 수 = 군집 수' 규칙을 지웠다. 타이틀이 대제목을 늘어놓게 해 35~47자 타이틀만 나왔다.
+  else if (plan.title.length > TITLE_MAX) errs.push(`타이틀이 ${plan.title.length}자 — ${TITLE_MAX}자 이하. 메인키워드 + 이 글이 답하는 핵심 하나. 대제목을 늘어놓지 않습니다. 현재: "${plan.title}"`);
   if (/—/.test(plan.title || "")) errs.push("타이틀에 대시(—) 금지");
   const pk = Array.isArray(plan.primaryKeywords) ? plan.primaryKeywords : [];
   if (pk.length < 2 || pk.length > 3) errs.push("primaryKeywords 2~3개");
@@ -381,7 +378,9 @@ async function stageCtaCheck(ctx, plan) {
     plan.deadCtas = [...(plan.deadCtas || []), ...dead.map((c) => ({ label: c.label, url: c.url, why: c.checked.why }))];
     ctx.notes.push(`죽은 CTA 제거 ${dead.length}개:\n${dead.map((c) => `  · ${c.label} → ${c.url} — ${c.checked.why}`).join("\n")}`);
   }
-  if (plan.ctas.length && !plan.ctas.some((c) => c.hero)) plan.ctas[0].hero = true;
+  // 2026-09-15: hero 가 없으면 첫 버튼을 hero 로 올리던 줄을 지웠다. 28편 중 12편 첫 화면에
+  // 같은 "수급자격 인정신청서 인터넷 제출" 버튼이 붙었다. 주제 자체를 처리하는 화면일 때만 hero 로 남긴다.
+  for (const c of plan.ctas) if (c.hero && !heroFits(c.url, `${plan.title} ${ctx.topic}`)) c.hero = false;
   writeJson(file, plan);
   // 버튼이 하나도 안 살아남았다 — 죽은 주소를 알려 주고 설계를 한 번 다시 시킨다.
   // 그래도 없으면 버튼 없이 쓴다. 정부 신청 화면이 아예 없는 주제(민간보험 청구 등)가 있고,
@@ -602,6 +601,14 @@ function normalizeText(draft, ctx) {
     if (typeof s[k] === "string" && s[k].includes("**")) { stars++; s[k] = s[k].replace(/\*\*/g, ""); }
   }
   if (stars) { ctx.notes.push(`자동 정규화: heroStats 의 ** 강조 ${stars}곳 제거 (그 칸은 마크다운을 그리지 않음)`); ctx.log("check", `heroStats 강조 표시 ${stars}곳 제거`); }
+  // 서론 끝 권유 문장 — 지시문이 "마지막 문장은 행동 유도"라 해서 25/28편이 "…확인해 보세요."로 끝났다 (2026-09-15)
+  const hook = dropHookCall(article.heroHook);
+  if (hook !== article.heroHook) { ctx.notes.push(`자동 정규화: 서론 끝 권유 문장 제거`); article.heroHook = hook; }
+  // 첫 화면 대형 버튼 — 주제 자체를 처리하는 화면이 아니면 뗀다
+  if (article.heroCta && !heroFits(article.heroCta.url, `${article.meta?.title || ""} ${ctx.topic || ""}`)) {
+    ctx.notes.push(`자동 정규화: 주제와 떨어진 첫 화면 버튼 제거 (${article.heroCta.label})`);
+    delete article.heroCta;
+  }
   return { ...draft, article };
 }
 

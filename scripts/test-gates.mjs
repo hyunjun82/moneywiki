@@ -114,12 +114,17 @@ const cases = [
     gate: "draft",
     slow: false,
     break: () => editArticle((b) => b.replace(/title: "([^"]+)"/, (m, t) => `title: "${t.replace(/과 /, ", ").replace(/부터 /, "").replace(/까지$/, "")}"`)),
+    // 떨어진 이유까지 본다 — 시험용 글에 다른 실패(예: 타이틀 길이)가 있으면 이 사례가 헛돈다 (2026-09-15 겪음)
+    expect: (r) => !r.pass && /설계도와 다릅니다/.test(r.out),
+    expectLabel: "타이틀 대조로 떨어짐",
   },
   {
     n: "버튼을 고용24 제도안내 화면으로 바꾸면",
     gate: "draft",
     slow: false,
     break: () => editArticle((b) => b.replace(/(label:\s*"[^"]+",\s*url:\s*")https:\/\/www\.work24\.go\.kr[^"]*"/, "$1https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1\"")),
+    expect: (r) => !r.pass && /CTA "[^"]+" 주소가 고용24 제도 안내 화면/.test(r.out),
+    expectLabel: "제도안내 버튼으로 떨어짐",
   },
   {
     // 2026-09-15: 수급자격 신청서 화면 키워드에 "인정신청"이 있어, 띄어쓰기를 지운 "실업인정신청하면서"가
@@ -128,6 +133,8 @@ const cases = [
     gate: "draft",
     slow: false,
     break: () => editArticle((b) => b.replace(/label:\s*"[^"]+",\s*url:\s*"https:\/\/www\.work24\.go\.kr[^"]*"/, 'label: "실업인정 신청하면서 근로사실 신고하기", url: "https://www.work24.go.kr/ei/a/b/1200/openHPEIAB1200M01.do"')),
+    expect: (r) => !r.pass && /실업인정 신청하면서 근로사실 신고하기" 이름이 도착 화면/.test(r.out),
+    expectLabel: "버튼 이름·화면 불일치로 떨어짐",
   },
   {
     n: "옛 TSX 폴더가 새 글을 가리면",
@@ -160,14 +167,6 @@ const cases = [
     gate: "rendered",
     slow: true,
     break: () => editArticle((b) => b.replace('eyebrow: "미리 듣기"', 'eyebrow: "사전교육은"')),
-  },
-  {
-    n: "타이틀 약속과 대제목 수가 어긋나면",
-    gate: "rendered",
-    slow: true,
-    // 1개만 약속하는 타이틀은 규칙이 일부러 건너뛴다(확신 있게 셀 수 없어서).
-    // 2개를 약속하는데 대제목이 4개인 상태로 만들어 규칙이 실제로 도는지 본다.
-    break: () => editArticle((b) => b.replace(/title: "[^"]+"/, 'title: "실업급여 사전교육과 고용센터 출석"')),
   },
   {
     n: "버튼을 죽은 주소로 바꾸면",

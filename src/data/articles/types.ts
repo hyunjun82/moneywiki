@@ -44,12 +44,12 @@ export interface ArticleData {
   };
 
   /**
-   * heroHook — 서론 문단. 타이틀이 나열한 항목을 결론부터 펼치고 마지막 문장은 행동 유도.
+   * heroHook — 서론 문단. 첫 질문의 결론부터 사실로 쓰고 사실로 끝낸다 ("확인해 보세요" 같은 권유로 맺지 않는다).
    * **강조**는 형광 마크로 렌더링. 없으면 directAnswer+why로 대체.
    */
   heroHook?: string;
 
-  /** heroAct — 서론 직하 대형 CTA 버튼 1개. 공식 사이트(.go.kr/.or.kr)만. (정본 템플릿 .cta-main) */
+  /** heroAct — 서론 직하 대형 CTA 버튼. 이 글 주제 자체를 처리하는 화면이 있을 때만 (없으면 넣지 않음). 공식 사이트(.go.kr/.or.kr)만. (정본 템플릿 .cta-main) */
   heroCta?: {
     label: string;
     url: string;
@@ -60,7 +60,7 @@ export interface ArticleData {
   keyFacts?: { label: string; value: string }[];
 
   /**
-   * 정리 — "떠나기 전 체크". 타이틀 항목 수만큼(2~5). (정본 템플릿 .sum)
+   * 정리 — "떠나기 전 체크". 대제목마다 하나(2~5). (정본 템플릿 .sum)
    * 옛 글의 3줄 튜플도 그대로 들어간다.
    */
   summary?: string[];
@@ -94,7 +94,7 @@ export interface ArticleData {
   heroStats?: { label: string; value: string; unit?: string; note?: string }[];
 
   /**
-   * 대제목 섹션 — 개수 = 타이틀이 약속한 항목 수 (2~4).
+   * 대제목 섹션 — 검색자 질문 군집 하나에 하나 (2~4).
    * 세부 질문은 각 섹션의 subsections 로 들어간다.
    */
   mainSections: MainSection[];

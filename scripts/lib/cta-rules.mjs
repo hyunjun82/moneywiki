@@ -46,3 +46,15 @@ export function ctaProblems({ label, url }) {
   }
   return [];
 }
+
+/**
+ * 첫 화면 대형 버튼(hero)으로 둘 만한가 — 그 화면이 글 주제 자체를 처리하는가.
+ * 등록부 화면만 판단한다(heroWhen, 없으면 keywords 가 글 타이틀·주제에 있어야 함). 등록부 밖 주소는 막지 않는다.
+ * 2026-09-15: 수급자격 신청서 화면이 모든 실업급여 글에 걸려 28편 중 12편 hero 가 같은 버튼이었다.
+ */
+export function heroFits(url, text) {
+  const screen = ctaRegistry().screens.find((s) => norm(s.url) === norm(url));
+  if (!screen) return true;
+  const squash = (x) => String(x || "").replace(/\s+/g, "");
+  return new RegExp(squash(screen.heroWhen || screen.keywords)).test(squash(text));
+}

@@ -37,6 +37,7 @@
       "url": "https://www.work24.go.kr/ei/a/b/1200/openHPEIAB1200M01.do",
       "org": "고용24",
       "keywords": "수급자격|인터넷 제출",
+      "heroWhen": "신청방법|온라인신청|인터넷제출|신청절차|신청하는법|신청서류",
       "lands": "로그인 후 그 화면"
     },
     {
@@ -184,6 +185,7 @@
       "url": "https://www.work24.go.kr/ei/a/m/1100/retrievePuEmpymnFactDclrtViewGet.do",
       "org": "고용24",
       "keywords": "취업사실",
+      "heroWhen": "취업사실|창업|취업하면",
       "lands": "로그인 후 그 화면 (끝이 ViewGet.do — View.do 는 첫 화면으로 튕김)"
     },
     {

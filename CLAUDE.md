@@ -21,7 +21,7 @@ npm run article -- <slug> --topic "주제 한 줄" [--category 고용] [--keywor
 npm run article -- --batch scripts/batch.txt        # 줄마다: slug | 주제 | 카테고리 | 키워드파일(생략 가능)
 ```
 
-계획(타이틀·군집·조문·URL·CTA, 타이틀 항목 수 = 대제목 수를 기계가 셈) → `collect-evidence`(Playwright) → 캡처 PNG를 Read로 읽어 `capturesReviewed` 기록 → ArticleData 작성 → 사전 검사 → 카테고리 파일 삽입·옛 TSX 삭제 → tsc·숫자·가려짐·내부링크·화면 검사 → 실패면 실패 출력을 넣어 고쳐 쓰기(최대 2회) → 통과만 남기고 실패는 파일을 되돌린다 → `scripts/reports/<slug>.md` + 렌더 캡처 PNG.
+계획(타이틀 30자 이하·군집·조문·URL·CTA) → `collect-evidence`(Playwright) → 캡처 PNG를 Read로 읽어 `capturesReviewed` 기록 → ArticleData 작성 → 사전 검사 → 카테고리 파일 삽입·옛 TSX 삭제 → tsc·숫자·가려짐·내부링크·화면 검사 → 실패면 실패 출력을 넣어 고쳐 쓰기(최대 2회) → 통과만 남기고 실패는 파일을 되돌린다 → `scripts/reports/<slug>.md` + 렌더 캡처 PNG.
 판단이 필요한 세 단계(계획·캡처 읽기·작성)는 **`claude -p`(구독 로그인)**가 한다. `ANTHROPIC_API_KEY`가 있으면 시작하지 않는다(API 과금 금지). 사람이 보는 것은 보고서 한 장과 캡처 — 채점 뒤 `git push`.
 입력: `scripts/keywords/<slug>.json`(엑셀·텍스트 → `npm run input`) 또는 `--keywords`로 같은 주제의 큰 키워드 파일.
 

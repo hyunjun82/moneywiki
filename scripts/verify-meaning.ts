@@ -12,7 +12,7 @@
  *   hook-cta        훅이 약속한 행동과 버튼이 실제로 데려가는 곳이 같은 일인가
  *   heading-answer  소제목이 던진 질문을 그 섹션 첫 문장이 실제로 답하는가
  *   overclaim       증거 quote/value를 넘어선 단언·오해의 소지가 있는 문장인가
- *   keyfacts-fit    핵심콕콕이 타이틀이 약속한 항목을 담고 있는가
+ *   keyfacts-fit    핵심콕콕이 타이틀·대제목이 답하는 내용을 담고 있는가
  *   intent-coverage 수집된 검색어가 드러낸 궁금증 중 글이 안 답한 것이 있는가
  *   self-contradiction 훅·요약·핵심콕콕·본문이 서로 어긋나는가
  *   unnatural-korean  뜻이 안 통하거나 번역체·양산형 문구인가
@@ -83,8 +83,8 @@ const RUBRIC = `너는 머니위키 글의 "의미"를 보는 심사자다. 맞�
    반드시 facts 와 sourceText 를 모두 뒤진 뒤에 판정한다. sourceText 에 그 문장이 있으면 근거 있음이다.
    숫자가 맞아도 조건을 빼먹어 "받을 수 있습니다"로 읽히면 오해의 소지 → ERROR다.
    "대부분/사실상/보통" 같은 말로 근거 없이 일반화하면 WARN이다.
-4. keyfacts-fit — 핵심콕콕 각 행이 타이틀이 나열한 항목을 답하는가.
-   타이틀에 없는 곁가지로 채웠으면 WARN, 타이틀 항목이 통째로 빠졌으면 ERROR다.
+4. keyfacts-fit — 핵심콕콕 각 행이 타이틀과 대제목이 답하는 내용인가.
+   글과 무관한 곁가지로 채웠으면 WARN, 타이틀의 핵심이 통째로 빠졌으면 ERROR다.
 5. intent-coverage — keywords가 드러낸 궁금증 중 글이 한 번도 안 답한 게 있는가. WARN.
 6. self-contradiction — 글 안에서 문장끼리 어긋나는가.
    훅·요약·핵심콕콕·본문·FAQ 가 같은 사실을 다르게 말하면 ERROR다.
