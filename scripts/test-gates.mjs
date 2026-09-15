@@ -122,6 +122,14 @@ const cases = [
     break: () => editArticle((b) => b.replace(/(label:\s*"[^"]+",\s*url:\s*")https:\/\/www\.work24\.go\.kr[^"]*"/, "$1https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1\"")),
   },
   {
+    // 2026-09-15: 수급자격 신청서 화면 키워드에 "인정신청"이 있어, 띄어쓰기를 지운 "실업인정신청하면서"가
+    // 통과했다. 실업인정 버튼 2개가 수급자격 신청서 화면으로 가는데 "위반 0"으로 나왔다.
+    n: "실업인정 버튼을 수급자격 신청서 화면으로 보내면",
+    gate: "draft",
+    slow: false,
+    break: () => editArticle((b) => b.replace(/label:\s*"[^"]+",\s*url:\s*"https:\/\/www\.work24\.go\.kr[^"]*"/, 'label: "실업인정 신청하면서 근로사실 신고하기", url: "https://www.work24.go.kr/ei/a/b/1200/openHPEIAB1200M01.do"')),
+  },
+  {
     n: "옛 TSX 폴더가 새 글을 가리면",
     gate: "shadow",
     slow: false,
