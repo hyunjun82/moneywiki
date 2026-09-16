@@ -14,22 +14,26 @@ Next.js 16 정적 export · Cloudflare Pages (main 푸시 → 자동 빌드 ~15�
 **정본은 `docs/moneywiki-article-template.html` 한 편이다.** 규칙 문서는 없다 — 그 파일의 블록과 주석이 전부다.
 글은 `src/data/articles/<카테고리>.ts`(타입 `types.ts`, 렌더러 `src/components/article/ArticleShell.tsx`)에만 쓴다.
 
-**글은 대화창에서 쓰지 않는다. 파이프라인이 쓴다** (`scripts/article.mjs`, 2026-09-06). 사용자는 주제 + 키워드 자료만 준다:
+**파이프라인이 쓴다** (`scripts/article.mjs`, 2026-09-16 새로 씀). 사용자는 **타이틀·소제목**을 준다. 두 모드:
 
 ```
-npm run article -- <slug> --topic "주제 한 줄" [--category 고용] [--keywords scripts/keywords/<파일>.json] [--rewrite] [--commit]
-npm run article -- --batch scripts/batch.txt        # 줄마다: slug | 주제 | 카테고리 | 키워드파일(생략 가능)
+# 대화창 모드 (기본 — 사용자가 진행을 본다. 2026-09-16 "안 보이면 불편하다")
+npm run article -- <slug> --title "…" --headings "A / B / C" --category 금융 --url … --prompt-only   # ① 수집 (Bash 출력에 페이지·캡처가 보인다)
+#   ② Claude 가 대화창에서 scripts/reports/logs/<slug>/prompt.txt 와 캡처 PNG 를 Read 로 읽고 초안 JSON 을 …/draft-chat.json 에 Write
+npm run article -- <slug> --title "…" --headings "A / B / C" --draft scripts/reports/logs/<slug>/draft-chat.json   # ③ 삽입·검사·고치기·보고서
+# 묶음 모드 (사용자 터미널에서 — 브라우저 창과 진행 줄이 보인다. 대화창 안에서 돌리면 창이 안 뜬다)
+npm run article -- --batch scripts/batch.txt [--parallel 3]   # 줄마다: slug | 타이틀 | 소제목 A / B / C | 카테고리 | 조문(고용보험법:40,45; 민법:840) | URL
 ```
 
-계획(타이틀 30자 이하·군집·조문·URL·CTA) → `collect-evidence`(Playwright) → 캡처 PNG를 Read로 읽어 `capturesReviewed` 기록 → ArticleData 작성 → 사전 검사 → 카테고리 파일 삽입·옛 TSX 삭제 → tsc·숫자·가려짐·내부링크·화면 검사 → 실패면 실패 출력을 넣어 고쳐 쓰기(최대 2회) → 통과만 남기고 실패는 파일을 되돌린다 → `scripts/reports/<slug>.md` + 렌더 캡처 PNG.
-판단이 필요한 세 단계(계획·캡처 읽기·작성)는 **`claude -p`(구독 로그인)**가 한다. `ANTHROPIC_API_KEY`가 있으면 시작하지 않는다(API 과금 금지). 사람이 보는 것은 보고서 한 장과 캡처 — 채점 뒤 `git push`.
-입력: `scripts/keywords/<slug>.json`(엑셀·텍스트 → `npm run input`) 또는 `--keywords`로 같은 주제의 큰 키워드 파일.
+수집(`collect-evidence`, Playwright) → 작성(`claude -p` 1회, 캡처 PNG 는 Read 로 직접 봄) → 삽입·옛 TSX 삭제 → tsc·숫자·가려짐·내부링크·화면 검사 → 떨어지면 실패 출력을 넣어 **고치기 1회** → 다시 검사 → 끝. 그래도 떨어지면 **그 글은 버리고** 파일을 원래대로 되돌린다. 되풀이 루프·설계 단계·뜻 판정은 없다(2026-09-16, 다섯 겹 루프가 시간·사용량만 먹어서 걷어냄).
+조문·URL 을 비우면 타이틀·소제목을 보고 고르는 짧은 호출이 하나 붙는다. 주는 쪽이 낫다. `ANTHROPIC_API_KEY`가 있으면 시작하지 않는다(API 과금 금지). 사람이 보는 것은 `scripts/reports/<slug>.md` 한 장과 렌더 캡처 — 채점 뒤 `git push`.
+**돌아가는 것이 보인다**: 브라우저 창이 떠서 수집·검색·화면 검사가 보이고(끄려면 `--headless`), 모델 호출은 도구 사용 한 줄(`→ Read evidence-….png`)과 쓴 글자 수가 30초마다 찍힌다. 별도 콘솔 창에서 돌리면 대화창과 상관없이 볼 수 있다.
 
-- 파이프라인이 떨어지면 **검사기를 고치지 않는다.** 지시문(`scripts/lib/prompts.mjs`)이나 사전 검사(`scripts/lib/check-draft.mjs`)를 고친다. 검사 규칙은 원본 검사기(`verify-evidence`·`verify-rendered`)와 함께 바꾼다
-- 뜻·누락 검사(LLM 판정)는 **쓰기 루프에 넣지 않는다** — 돌릴 때마다 결과가 달라 글 한 편에 7바퀴를 돌게 했다. 대신 통과한 글에 **한 번** 묻고, 🔴·🟡 면 **한 번** 고치고, **한 번** 확인한다. 🔴 가 남거나 판정이 안 돌면 그 글은 내리고 옛 페이지로 둔다(2026-09-15, 숫자만 맞고 조문을 엉뚱하게 끌어 쓴 글이 통과해서). 판정 끝 줄이 없으면 🔴 0 이 아니라 판정 실패다. `--no-audit` 로 끈다. pre-push 는 경고만
+- 파이프라인이 떨어지면 **검사기를 고치지 않는다.** 지시문(`scripts/lib/prompts.mjs`)을 고친다. 검사 규칙은 원본 검사기(`verify-evidence`·`verify-rendered`)와 함께 바꾼다
+- 검사기·루프를 **덧붙이지 않는다.** 틀리면 지시문을 고치거나 그 글을 버린다
 - 손으로 만질 때만: 카테고리 파일(CRLF)을 직접 고치고 `npm run verify <slug>`(숫자·화면). `verify-rendered`를 `--base` 없이 부르면 **라이브를** 검사해 로컬 변경과 무관한 ✅가 뜬다. 수집을 손으로 부를 때 조는 **숫자만**(`--law "고용보험법:44,49"`)
 
-게이트를 고치면 `npm run test:gates`(빠른 것) · `npm run test:gates:slow`(화면·뜻·누락까지) 로 **일부러 망가뜨린 입력을 잡는지** 확인한다. 조용히 통과하는 검사가 가장 위험하다 — CRLF 로 정규식이 0건을 돌려 '바뀐 글 없음'을 뱉은 적이 있다.
+게이트를 고치면 `npm run test:gates`(빠른 것) · `npm run test:gates:slow`(화면까지) 로 **일부러 망가뜨린 입력을 잡는지** 확인한다. 조용히 통과하는 검사가 가장 위험하다 — CRLF 로 정규식이 0건을 돌려 '바뀐 글 없음'을 뱉은 적이 있다.
 
 ## 사이트 인프라
 

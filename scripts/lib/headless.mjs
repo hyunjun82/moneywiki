@@ -116,28 +116,42 @@ function askOnce(prompt, { tools, model, timeoutMs, label, logDir, expect, tag }
     // 호출 하나에 붙는 고정 비용이 4만~5만 토큰이다 (도구 정의·시스템 프롬프트·전역 명령 목록).
     // MCP 서버 정의는 이 파이프라인이 안 쓰므로 끈다 — 재 보니 호출당 4~5천 토큰이 줄었다.
     // JSON 을 인자로 넘기면 Windows 셸이 따옴표를 먹어 파일 경로로 오해한다 → 빈 설정 파일을 만들어 그 경로를 준다.
-    const args = ["-p", "--output-format", "json", "--strict-mcp-config", "--mcp-config", emptyMcpConfig()];
+    // stream-json: 답이 끝날 때까지 아무것도 안 보이던 것을(2026-09-16 "뭘 하는지 볼 수 없다") 도구 사용 한 줄·쓴 글자 수로 보인다.
+    // 마지막 result 줄이 옛 --output-format json 과 같은 모양(result·usage·total_cost_usd)이다.
+    const args = ["-p", "--output-format", "stream-json", "--verbose", "--include-partial-messages", "--strict-mcp-config", "--mcp-config", emptyMcpConfig()];
     if (model) args.push("--model", model);
     if (tools.length) args.push("--allowedTools", tools.join(","));
 
     const t0 = Date.now();
     const child = spawn("claude", args, { env, shell: process.platform === "win32" });
-    let out = "", err = "", finished = false;
+    let out = "", err = "", finished = false, buf = "", chars = 0, meta = null, text = "";
+    const stamp = () => `[${new Date().toTimeString().slice(0, 8)}] ${String(label).padEnd(9)} ${tag ? tag + " " : ""}`;
+    const brief = (name, input) => {
+      if (name === "Read" && input?.file_path) return path.basename(String(input.file_path));
+      const s = JSON.stringify(input || {}); return s.length > 90 ? s.slice(0, 90) + "…" : s;
+    };
+    const onLine = (line) => {
+      if (!line.trim()) return;
+      let ev; try { ev = JSON.parse(line); } catch { return; }
+      if (ev.type === "stream_event") {
+        const d = ev.event?.delta;
+        if (d?.type === "text_delta") chars += d.text.length; else if (d?.type === "input_json_delta") chars += String(d.partial_json || "").length;
+      } else if (ev.type === "assistant") {
+        for (const c of ev.message?.content || []) if (c.type === "tool_use") console.log(`${stamp()}→ ${c.name} ${brief(c.name, c.input)}`);
+      } else if (ev.type === "result") { meta = ev; text = String(ev.result ?? ""); }
+    };
 
     // 진행 표시 — 긴 단계가 멈춘 것처럼 보이지 않게
-    // 동시 실행이면 여러 호출이 같은 줄을 덮어써 뒤엉킨다 → 그때는 줄을 새로 찍는다
+    // 30초마다 새 줄로 찍는다. 같은 줄을 덮어쓰면(\r) 터미널에서 커서가 안 움직여 멈춘 것처럼 보인다 (2026-09-16)
     const beat = setInterval(() => {
       const s = Math.round((Date.now() - t0) / 1000);
-      const line = `${tag ? tag + " " : ""}${label} … ${s}초 경과${expect ? ` (보통 ${expect})` : ""}`;
-      if (tag) console.log(`           ${line}`);
-      else process.stdout.write(`\r           ${line}   `);
-    }, tag ? 60000 : 20000);
+      console.log(`${stamp()}모델이 쓰는 중 … ${Math.floor(s / 60)}분 ${s % 60}초 경과 · 지금까지 ${chars.toLocaleString()}자${expect ? ` (보통 ${expect})` : ""}`);
+    }, 30000);
     const done = (fn, arg) => {
       if (finished) return;
       finished = true;
       clearInterval(beat);
       clearTimeout(killer);
-      if (!tag && Date.now() - t0 > 20000) process.stdout.write("\r" + " ".repeat(78) + "\r");
       fn(arg);
     };
 
@@ -146,19 +160,26 @@ function askOnce(prompt, { tools, model, timeoutMs, label, logDir, expect, tag }
       done(reject, new Error(`claude 가 ${Math.round(timeoutMs / 60000)}분 안에 끝나지 않았습니다 (${label})`));
     }, timeoutMs);
 
-    child.stdout.on("data", (d) => (out += d));
+    child.stdout.on("data", (d) => {
+      const s = d.toString(); out += s; buf += s;
+      let i; while ((i = buf.indexOf("\n")) >= 0) { onLine(buf.slice(0, i)); buf = buf.slice(i + 1); }
+    });
     child.stderr.on("data", (d) => (err += d));
     child.on("error", (e) => done(reject, new Error(`claude 실행 실패 (${label}): ${e.message}`)));
 
     child.on("close", (code) => {
       const ms = Date.now() - t0;
+      if (buf.trim()) onLine(buf);
       const stderr = err.split(/\r?\n/).filter((l) => l && !/Ignoring \d+ permissions\.allow/.test(l)).join("\n");
 
-      let text = out, meta = null;
-      try {
-        meta = JSON.parse(out);
-        if (meta && typeof meta === "object" && "result" in meta) text = String(meta.result ?? "");
-      } catch { /* json 이 아니면 원문 그대로 */ }
+      if (!meta) {
+        // stream 줄을 못 읽었으면 옛 방식(통째 JSON) → 그마저 아니면 원문 그대로
+        text = out;
+        try {
+          meta = JSON.parse(out);
+          if (meta && typeof meta === "object" && "result" in meta) text = String(meta.result ?? "");
+        } catch { meta = null; }
+      }
 
       if (logDir) {
         try {

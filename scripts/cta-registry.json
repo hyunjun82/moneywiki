@@ -3,7 +3,8 @@
   "verifiedAt": "2026-09-14",
   "managedDomains": [
     "work24.go.kr",
-    "labor.moel.go.kr"
+    "labor.moel.go.kr",
+    "cyber.ccrs.or.kr"
   ],
   "blocked": [
     {
@@ -231,6 +232,22 @@
       "keywords": "육아휴직",
       "lands": "로그인 후 그 화면",
       "button": "육아휴직급여 신청하기"
+    },
+    {
+      "label": "신용회복위원회 채무조정 신규신청 (디지털상담부)",
+      "url": "https://cyber.ccrs.or.kr/debt/apply/guide.do",
+      "org": "신용회복위원회",
+      "keywords": "채무조정|워크아웃|신규신청",
+      "lands": "신규신청 안내 → 인증 후 신청 (2026-09-16 Playwright 확인: 신청비 5만원·예납금 안내, 신규신청 버튼)",
+      "button": "채무조정 신청하기"
+    },
+    {
+      "label": "신용회복위원회 방문예약 신청",
+      "url": "https://cyber.ccrs.or.kr/reservation/apply/guide.do",
+      "org": "신용회복위원회",
+      "keywords": "방문|예약",
+      "lands": "방문예약 신청 안내 → 예약하기 (2026-09-16 Playwright 확인)",
+      "button": "방문상담 예약하기"
     }
   ]
 }

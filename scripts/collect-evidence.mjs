@@ -47,7 +47,8 @@ function factsFromText(text, meta) {
     }));
 }
 
-const browser = await chromium.launch();
+// 파이프라인(article.mjs)이 PW_HEADED=1 을 주면 브라우저 창을 띄워 수집 과정이 눈에 보인다. 훅·CI 에서는 헤드리스
+const browser = await chromium.launch({ headless: !process.env.PW_HEADED });
 
 /** 동시 실행 상한. 정부 사이트에 과한 동시 요청을 보내면 차단당하므로 낮게 잡는다. */
 const CONCURRENCY = 3;

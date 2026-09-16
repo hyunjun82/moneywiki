@@ -3,7 +3,7 @@
  * 게이트 시험대 — 일부러 망가뜨린 입력을 넣고 게이트가 잡는지 확인한다.
  *
  * 왜 필요한가 — 게이트가 "통과"라고 말해도 실제로는 아무것도 안 보고 있을 수 있다.
- * 실제로 그런 일이 있었다. verify-meaning-changed 가 CRLF 때문에 정규식이 0건을 반환해
+ * 실제로 그런 일이 있었다. 옛 뜻 검사가 CRLF 때문에 정규식이 0건을 반환해
  * '바뀐 글 없음 — 통과'를 뱉었는데, 그때 글 4편이 바뀌어 있었다.
  * 조용히 통과하는 검사가 가장 위험하므로, 게이트마다 "잡아야 할 것을 정말 잡는지" 시험한다.
  *
@@ -11,7 +11,7 @@
  * 되돌림은 finally 에서 하고, 끝나고 해시로 원상복구를 검증한다.
  *
  * 사용: node scripts/test-gates.mjs [--slow]
- *   --slow 를 붙이면 dev 서버와 판정 모델이 필요한 화면·뜻 검사까지 돌린다(느리다).
+ *   --slow 를 붙이면 dev 서버가 필요한 화면 검사까지 돌린다(느리다).
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -47,20 +47,8 @@ const gates = {
   evidenceAll: () => run("node", ["scripts/verify-evidence.mjs"]),
   shadow: () => run("node", ["scripts/verify-no-shadow.mjs"]),
   links: () => run("node", ["scripts/verify-internal-links.mjs"]),
-  // 글 파일을 건드린 가장 최근 커밋의 부모를 기준으로 삼는다. HEAD~1 로 고정하면
-  // 마지막 커밋이 스크립트만 바꿨을 때 '바뀐 글 없음'이 나와 시험이 헛돈다.
-  changed: () => {
-    const r = spawnSync("git", ["log", "-1", "--format=%H", "--", "src/data/articles"], { encoding: "utf8", shell: process.platform === "win32" });
-    const c = (r.stdout || "").trim();
-    return run("node", ["scripts/verify-meaning-changed.mjs", c ? `${c}~1` : "HEAD~1", "--detect-only"]);
-  },
   // --base 를 빼면 라이브 사이트를 검사한다. 로컬 변형이 안 보여 전부 통과로 나온다.
   rendered: () => run("node", ["scripts/verify-rendered.mjs", "--base", "http://localhost:3111", SLUG]),
-  // checkDraft 는 CLI 가 없어 시험대 밖에 있었다. 설계도 title 과 글 meta.title 이
-  // 어긋나도 아무도 안 보는 바람에 --title 로 못박은 타이틀이 고치기 단계에서 바뀌었다(2026-09-14).
-  draft: () => run("node", ["scripts/test-gates-draft.mjs", SLUG]),
-  meaning: () => run("npx", ["tsx", "scripts/verify-meaning.ts", SLUG]),
-  omission: () => run("npx", ["tsx", "scripts/verify-omission.ts", SLUG]),
 };
 
 /** 글 파일에서 이 slug 블록만 손댄다 */
@@ -110,33 +98,6 @@ const cases = [
     break: () => editEvidence((j) => { j.facts[0].screenshot = "없는파일.png"; return j; }),
   },
   {
-    n: "설계도 타이틀과 글 타이틀이 달라지면",
-    gate: "draft",
-    slow: false,
-    break: () => editArticle((b) => b.replace(/title: "([^"]+)"/, (m, t) => `title: "${t.replace(/과 /, ", ").replace(/부터 /, "").replace(/까지$/, "")}"`)),
-    // 떨어진 이유까지 본다 — 시험용 글에 다른 실패(예: 타이틀 길이)가 있으면 이 사례가 헛돈다 (2026-09-15 겪음)
-    expect: (r) => !r.pass && /설계도와 다릅니다/.test(r.out),
-    expectLabel: "타이틀 대조로 떨어짐",
-  },
-  {
-    n: "버튼을 고용24 제도안내 화면으로 바꾸면",
-    gate: "draft",
-    slow: false,
-    break: () => editArticle((b) => b.replace(/(label:\s*"[^"]+",\s*url:\s*")https:\/\/www\.work24\.go\.kr[^"]*"/, "$1https://www.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1\"")),
-    expect: (r) => !r.pass && /CTA "[^"]+" 주소가 고용24 제도 안내 화면/.test(r.out),
-    expectLabel: "제도안내 버튼으로 떨어짐",
-  },
-  {
-    // 2026-09-15: 수급자격 신청서 화면 키워드에 "인정신청"이 있어, 띄어쓰기를 지운 "실업인정신청하면서"가
-    // 통과했다. 실업인정 버튼 2개가 수급자격 신청서 화면으로 가는데 "위반 0"으로 나왔다.
-    n: "실업인정 버튼을 수급자격 신청서 화면으로 보내면",
-    gate: "draft",
-    slow: false,
-    break: () => editArticle((b) => b.replace(/label:\s*"[^"]+",\s*url:\s*"https:\/\/www\.work24\.go\.kr[^"]*"/, 'label: "실업인정 신청하면서 근로사실 신고하기", url: "https://www.work24.go.kr/ei/a/b/1200/openHPEIAB1200M01.do"')),
-    expect: (r) => !r.pass && /실업인정 신청하면서 근로사실 신고하기" 이름이 도착 화면/.test(r.out),
-    expectLabel: "버튼 이름·화면 불일치로 떨어짐",
-  },
-  {
     n: "옛 TSX 폴더가 새 글을 가리면",
     gate: "shadow",
     slow: false,
@@ -152,17 +113,6 @@ const cases = [
     break: () => editArticle((b) => b.replace(/slug: "실업급여-구직활동"/, 'slug: "존재하지-않는-글-abcxyz"')),
   },
   {
-    // 이 게이트는 push 대상인 '커밋된 변경'을 본다. 작업 파일을 고쳐도 보이지 않는 것이 맞다.
-    // 그래서 글이 실제로 바뀐 커밋 구간을 주고, slug 를 하나라도 찾아내는지 본다.
-    // CRLF 때문에 조용히 '바뀐 글 없음'을 뱉던 회귀를 다시 잡는 시험이다.
-    n: "바뀐 글이 있는 커밋을 못 짚으면",
-    gate: "changed",
-    slow: false,
-    break: () => {},
-    expect: (r) => /바뀐 글 \d+편:/.test(r.out) && !/바뀐 글 없음/.test(r.out),
-    expectLabel: "커밋 구간에서 바뀐 글을 짚음",
-  },
-  {
     n: "라벨을 소제목 자른 형태로 바꾸면",
     gate: "rendered",
     slow: true,
@@ -173,28 +123,6 @@ const cases = [
     gate: "rendered",
     slow: true,
     break: () => editArticle((b) => b.replace(/url: "https:\/\/www\.work24\.go\.kr[^"]*"/, 'url: "https://www.work24.go.kr/존재하지-않는-경로-abcxyz.do"')),
-  },
-  {
-    n: "근거를 넘어선 단정을 넣으면",
-    gate: "meaning",
-    slow: true,
-    break: () => editArticle((b) => b.replace('body: "', 'body: "사전교육을 듣지 않으면 실업급여를 영원히 받을 수 없고 과태료 500만원이 부과됩니다. ')),
-  },
-  {
-    n: "글 안에서 서로 어긋나는 말을 넣으면",
-    gate: "meaning",
-    slow: true,
-    break: () => editArticle((b) => b.replace('body: "', 'body: "사전교육은 받지 않아도 됩니다. ')),
-  },
-  {
-    // 교육 글이 인용한 제60조에서 정당한 사유 1호(능력에 맞지 않음)를 표·핵심콕콕 양쪽에서 뺀다.
-    // 다른 검사는 전부 '쓴 것이 맞나'라서 못 본다. 누락 검사만 잡아야 한다.
-    n: "인용한 조문의 항을 글에서 빼면",
-    gate: "omission",
-    slow: true,
-    break: () => editArticle((b) => b
-      .split("\n").filter((line) => !line.includes('[{ text: "능력에 맞지 않으면"')).join("\n")
-      .replace("정당한 사유 **네 가지**는 예외", "정당한 사유는 예외")),
   },
   {
     // 파생값을 선언하고 산식은 그럴듯하게 적되 결과 숫자를 바꿔 놓는다. 검산이 없으면 통과한다.

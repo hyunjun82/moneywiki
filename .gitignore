@@ -84,7 +84,6 @@ _to_delete/
 
 # 링크 검사 캐시 (verify-links)
 scripts/.link-check-cache.json
-scripts/meaning-cache/
 
 # 사용자 원고·블로그 템플릿 보관 (빌드와 무관, 2026-09-03 루트에서 이동)
 _drafts/
@@ -92,10 +91,9 @@ _drafts/
 # 시험대 실행 중 잠금
 .gates-running
 
-# 글 파이프라인 작업 파일 (npm run article) — 초안·보고서·헤드리스 로그는 커밋하지 않는다
-scripts/drafts/
+# 글 파이프라인 산출물 (npm run article) — 보고서·헤드리스 로그는 커밋하지 않는다
 scripts/reports/
-scripts/.no-mcp.json
 
 # price-data 브랜치 로컬 체크아웃 (수집기 로컬 실행용) — main 에 시세를 커밋하지 않는다
 /price-data/
+scripts/.no-mcp.json

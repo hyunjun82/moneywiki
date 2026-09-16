@@ -1,6 +1,6 @@
 {
   "slug": "이혼-사유-별거-2년",
-  "verifiedAt": "2026-09-15",
+  "verifiedAt": "2026-09-16",
   "collectedBy": "scripts/collect-evidence.mjs (playwright)",
   "sources": [
     {
@@ -10,6 +10,26 @@
     {
       "url": "https://www.law.go.kr/법령/%EB%AF%BC%EB%B2%95/제840조",
       "org": "법제처 (민법 제840조)"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2",
+      "org": "법제처"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EB%B2%95/제842조",
+      "org": "법제처 (민법 제842조)"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&expcNo=150&csmSeq=47&ccfNo=1&cciNo=4&cnpClsNo=2&menuType=expc",
+      "org": "법제처"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1357&csmSeq=233&ccfNo=4&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처"
     }
   ],
   "facts": [
@@ -33,6 +53,993 @@
       "url": "https://www.law.go.kr/법령/%EB%AF%BC%EB%B2%95/제840조",
       "org": "법제처 (민법 제840조)",
       "screenshot": "evidence-이혼-사유-별거-2년-2.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조는 재판상 이혼 사유로 다음 여섯 가지를 규정하고 있습니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-3.png"
+    },
+    {
+      "value": "6개월 / 2년",
+      "quote": "배우자의 부정행위를 안 날로부터 6개월, 그 부정행위가 있은 날로부터 2년이 지나면 부정행위를 이유로 이혼을 청구하지 못합니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-3.png"
+    },
+    {
+      "value": "2015년 / 2월 26일 / 제241조 / 제241조 / 2008년 / 10월 30일",
+      "quote": "헌법재판소는 2015년 2월 26일 형법 제241조에 따른 간통죄에 대해 위헌법률 결정을 내려 「형법」제241조에 대한 합헌 결정이 있었던 2008년 10월 30일의 다음 날로 소급하여 그 효력을 상실하였습니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-3.png"
+    },
+    {
+      "value": "3년",
+      "quote": "배우자의 생사가 3년 이상 분명하지 않을 때",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-3.png"
+    },
+    {
+      "value": "3년",
+      "quote": "배우자의 생사불명이란 배우자가 살아있는지 여부를 전혀 증명할 수 없는 상태가 이혼 청구 당시까지 3년 이상 계속되는 것을 말합니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-3.png"
+    },
+    {
+      "value": "제27조",
+      "quote": "제27조)에 의한 혼인해소와는 관계가 없습니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-3.png"
+    },
+    {
+      "value": "제29조",
+      "quote": "제29조제1항), 생사불명을 이유로 이혼판결이 확정된 경우에는 배우자가 살아 돌아오더라도 종전의 혼인이 당연히 부활하는 것은 아닙니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-3.png"
+    },
+    {
+      "value": "6개월 / 2년",
+      "quote": "그 밖에 혼인을 계속하기 어려운 중대한 사유로 이혼하는 경우 그 사유를 안 날로부터 6개월, 그 사유가 있은 날로부터 2년이 지나면 이혼을 청구하지 못합니다(「민법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-3.png"
+    },
+    {
+      "value": "2026년 / 8월 15일",
+      "quote": "이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-3.png"
+    },
+    {
+      "value": "제842조 / 제840조 / 2년",
+      "quote": "제842조(기타 원인으로 인한 이혼청구권의 소멸) 제840조제6호의 사유는 다른 일방이 이를 안 날로부터 6월, 그 사유있은 날로부터 2년을 경과하면 이혼을 청구하지 못한다.",
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EB%B2%95/제842조",
+      "org": "법제처 (민법 제842조)",
+      "screenshot": "evidence-이혼-사유-별거-2년-4.png"
+    },
+    {
+      "value": "6개월",
+      "quote": "회답 진정살기 싫다면 악질을 안 날로부터 6개월 이내에 법원에 혼인취소와 위자료 청구소송을 제기할 수 있습니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&expcNo=150&csmSeq=47&ccfNo=1&cciNo=4&cnpClsNo=2&menuType=expc",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-5.png"
+    },
+    {
+      "value": "6개월",
+      "quote": "6개월 이내에 취소청구를 하지 않으면 유효한 혼인관계로 인정되기 때문에 훗날 그 질병을 이유로 하는 이혼 조정신청만이 가능할 뿐입니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&expcNo=150&csmSeq=47&ccfNo=1&cciNo=4&cnpClsNo=2&menuType=expc",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-5.png"
+    },
+    {
+      "value": "5년",
+      "quote": "질의 저의 아내는 결혼생활 5년 동안에 15번이나 가출을 하였습니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&expcNo=150&csmSeq=47&ccfNo=1&cciNo=4&cnpClsNo=2&menuType=expc",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-5.png"
+    },
+    {
+      "value": "4개월",
+      "quote": "아무일 없이 집을 나가서 몇 달 지난 뒤 연락이 오면 찾아가 데려오곤 하였는데 지난달엔 생후 4개월된 갓난아이를 두고 또 가출을 하여 한달이 가까웠습니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&expcNo=150&csmSeq=47&ccfNo=1&cciNo=4&cnpClsNo=2&menuType=expc",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-5.png"
+    },
+    {
+      "value": "2026년 / 8월 15일",
+      "quote": "이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&expcNo=150&csmSeq=47&ccfNo=1&cciNo=4&cnpClsNo=2&menuType=expc",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-5.png"
+    },
+    {
+      "value": "6개월",
+      "quote": "회답 | 진정살기 싫다면 악질을 안 날로부터 6개월 이내에 법원에 혼인취소와 위자료 청구소송을 제기할 수 있습니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&expcNo=150&csmSeq=47&ccfNo=1&cciNo=4&cnpClsNo=2&menuType=expc",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-5.png"
+    },
+    {
+      "value": "5년",
+      "quote": "질의 | 저의 아내는 결혼생활 5년 동안에 15번이나 가출을 하였습니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&expcNo=150&csmSeq=47&ccfNo=1&cciNo=4&cnpClsNo=2&menuType=expc",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-5.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "[2] [다수의견] 민법 제840조는 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’를 이혼사유로 삼고 있으며, 부부간의 애정과 신뢰가 바탕이 되어야 할 혼인의 본질에 해당하는 부부공동생활 관계가 회복할 수 없을 정도로 파탄되고 혼인생활의 계속을 강제하는 것이 일방 배우자에게 참을 수 없는 고통이 되는 경우에는 위 이혼사유에 해당할 수 있다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1357&csmSeq=233&ccfNo=4&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-6.png"
+    },
+    {
+      "value": "2026년 / 8월 15일",
+      "quote": "이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1357&csmSeq=233&ccfNo=4&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-6.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호에 정한 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의미",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호에 정한 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’라 함은 부부간의 애정과 신뢰가 바탕이 되어야 할 혼인의 본질에 상응하는 부부공동생활관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활의 계속을 강제하는 것이 일방 배우자에게 참을 수 없는 고통이 되는 경우를 말한다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 재판상 이혼사유에 해당하는지 여부(한정 적극)",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 재판상 이혼사유에 해당한다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제3호 소정의 이혼사유인 ‘배우자로부터 심히 부당한 대우를 받았을 때’의 의미",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호의 사유로 인한 혼인파탄에 있어 유책성의 판단 기준 시점",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제3호 소정의 이혼사유인 배우자로부터 심히 부당한 대우를 받았을 때라 함은 혼인관계의 지속을 강요하는 것이 참으로 가혹하다고 여겨질 정도의 폭행이나 학대 또는 모욕을 받았을 경우를 말한다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의미",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’라 함은 부부간의 애정과 신뢰가 바탕이 되어야 할 혼인의 본질에 상응하는 부부공동생활관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활의 계속을 강제하는 것이 일방 배우자에게 참을 수 없는 고통이 되는 경우를 말한다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제842조",
+      "quote": "제842조의 제소기간의 적용 범위",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 ‘기타 혼인을 계속하기 어려운 중대한 사유’가 이혼청구 당시까지도 계속 존재하는 것으로 보아야 할 경우에는 이혼청구권의 제척기간에 관한 「민법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제842조",
+      "quote": "제842조가 적용되지 아니한다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "78세 / 92세",
+      "quote": "78세의 처가 92세의 남편을 상대로 제기한 이혼청구에 대하여 「민법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유’가 있음을 이유로 이혼청구를 인용한 원심의 판단을 수긍한 사례",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조 각 호는 각 별개의 독립된 이혼사유를 구성하는지 여부(적극) 및 이혼청구를 한 원고가 「민법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조 각 호 소정의 수개의 사유를 주장할 경우, 법원은 그 중 어느 하나의 사유를 받아들여 원고의 청구를 인용할 수 있는지 여부(적극)",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유’가 있음을 이유로 이혼청구를 인용한 원심의 판단을 수긍한 사례.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조는 동조가 규정하고 있는 각 호 사유마다 각 별개의 독립된 이혼사유를 구성하는 것이고, 이혼청구를 구하면서 위 각 호 소정의 수개의 사유를 주장하는 경우 법원은 그 중 어느 하나를 받아들여 청구를 인용할 수 있다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 이혼사유인 ‘기타 혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의미",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제3호 소정의 이혼사유인 ‘배우자로부터 심히 부당한 대우를 받았을 때’라고 함은 혼인 당사자의 일방이 배우자로부터 혼인관계의 지속을 강요하는 것이 가혹하다고 여겨질 정도의 폭행이나 학대 또는 중대한 모욕을 받았을 경우를 말한다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 이혼사유인 ‘기타 혼인을 계속하기 어려운 중대한 사유가 있을 때’라 함은 부부간의 애정과 신뢰가 바탕이 되어야 할 혼인의 본질에 상응하는 부부공동생활관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활의 계속을 강제하는 것이 일방 배우자에게 참을 수 없는 고통이 되는 경우를 말한다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제3호 소정의 이혼사유인 ‘배우자로부터 심히 부당한 대우를 받았을 때’의 의미 및 같은 조제6호 소정의 이혼사유인 ‘기타 혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의미",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조 / 83세",
+      "quote": "제840조제3호, 제6호 소정의 이혼사유가 있음을 전제로 만 83세의 남편을 상대로 제기한 이혼청구에 대하여 심히 부당한 대우를 받았다거나 혼인관계가 회복할 수 없을 정도로 파탄에 이르렀다고 볼 수 없다는 이유로 이혼청구를 기각한 원심판결을 수긍한 사례",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제3호 소정의 이혼사유인 ‘배우자로부터 심히 부당한 대우를 받았을 때’라고 함은 혼인 당사자의 일방이 배우자로부터 혼인관계의 지속을 강요하는 것이 가혹하다고 여겨질 정도의 폭행이나 학대 또는 중대한 모욕을 받았을 경우를 말하는 것이고, 같은 조제6호 소정의 이혼사유인 ‘기타 혼인을 계속하기 어려운 중대한 사유가 있을 때’라 함은 부부간의 애정과 신뢰가 바탕이 되어야 할 혼인의 본질에 상응하는 부부공동생활관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활의 계속을 강제하는 것이 일방 배우자에게 참을 수 없는 고통이 되는 경우를 말하는 것이다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조 / 83세",
+      "quote": "제840조제3호, 제6호 소정의 이혼사유가 있음을 전제로 만 83세의 남편을 상대로 제기한 이혼청구에 대하여 심히 부당한 대우를 받았다거나 혼인관계가 회복할 수 없을 정도로 파탄에 이르렀다고 볼 수 없다는 이유로 이혼청구를 기각한 원심판결을 수긍한 사례.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제2호 소정의 ‘배우자가 악의로 다른 일방을 유기한 때’의 의미",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제2호 소정의 배우자가 악의로 다른 일방을 유기한 때라 함은 배우자가 정당한 이유 없이 서로 동거, 부양, 협조하여야 할 부부로서의 의무를 포기하고 다른 일방을 버린 경우를 뜻한다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "10년",
+      "quote": "악의의 유기를 원인으로 하는 재판상 이혼청구권이 법률상 그 행사기간의 제한이 없는 형성권으로서 10년의 제척기간에 걸린다고 하더라도 피고가 부첩관계를 계속 유지함으로써 「민법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제2호에 해당하는 배우자가 악의로 다른 일방을 유기하는 것이 이혼청구 당시까지 존속되고 있는 경우에는 기간 경과에 의하여 이혼청구권이 소멸할 여지는 없다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 재판상 이혼사유에 해당한다고 한 사례.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 재판상 이혼사유에 해당하는지 여부",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호의 재판상 이혼사유인 혼인을 계속할 수 없는 중대한 사유에 해당한다고 할 수 없다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호에 해당하는 혼인을 계속하기 어려운 중대한 사유가 이혼청구 당시까지 계속되고 있는 경우에는 「민법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제842조",
+      "quote": "제842조가 적용될 여지가 없다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호의 이혼사유에 해당하는지 여부",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제1호 소정의 “부정한 행위”의 의미",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제1호 소정의 “부정한 행위”라 함은 배우자로서의 정조의무에 충실치 못한 일체의 행위를 포함하며 이른바 간통보다는 넓은 개념으로서 부정한 행위인지의 여부는 각 구체적 사안에 따라 그 정도와 상황을 참작하여 평가하여야 할 것이다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제1호 소정의 이혼사유에 해당하는지 여부(소극)",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제1호 소정의 재판상 이혼사유인 배우자에 부정한 행위가 있었을 때라 함은 혼인한 부부간의 일방이 부정한 행위를 한 때를 말하는 것이므로 혼인 전 약혼단계에서 부정한 행위를 한 때에는 위 제1호의 이혼사유에 해당한다고 할 수는 없다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의미와 그 판단기준",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’라 함은 혼인의 본질에 상응하는 부부공동 생활관계가 회복할 수 없을 정도로 파탄되고, 그 혼인생활의 계속을 강제하는 것이 일방 배우자에게 참을 수 없는 고통이 되는 경우를 말하며, 이를 판단함에 있어서는 혼인계속의사의 유무, 파탄의 원인에 관한 당사자의 책임유무, 혼인생활의 기간, 자녀의 유무, 당사자의 연령, 이혼 후의 생활보장, 기타 혼인관계의 제반 사정을 두루 고려하여야 한다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 재판상 이혼사유에 해당하는지 여부(적극)",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 재판상 이혼사유에 해당한다고 본 사례",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 재판상 이혼사유에 해당한다고 본 사례.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "1년 / 1972년",
+      "quote": "10경 집을 나가 청구인(남편)의 귀가종용에 응하지 아니하여 청구인은 피청구인이 가출한 지 1년쯤 될 무렵부터 다른 여자와 내연관계를 맺어 오늘에 이르고 있고, 한편 피청구인도 1972년경부터 다른 남자와 동거하고 있어 청구인과 피청구인이 20여 년간을 부부로서의 실체 없이 지내 온 것이라면, 이 혼인은 돌이킬 수 없을 정도로 파탄되었다고 할 것이고, 그 책임이 반드시 어느 쪽이 더 크다고 할 수 없는 만큼 「민법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 혼인을 계속 할 수 없는 중대한 사유가 된다고 할 것이다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제1항제6호의 재판상 이혼사유에 해당하는지 여부(소극)",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제1항제6호의 재판상 이혼사유인 혼인을 계속할 수 없는 중대한 사유에 해당한다고는 할 수 없다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제1항제6호의 사유가 있다 하여 이혼을 청구할 수 없다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제1호 소정의 부정한 행위에 해당하지 않는다고 본 사례",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제1호 소정의 부정한 행위를 한 것으로 단정할 수 없다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조 소정의 배우자로부터 심히 부당한 대우를 받은 때 또는 기타 혼인을 계속하기 어려운 중대한 사유가 있을 때에 해당한다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "10년",
+      "quote": "판결요지 청구인의 어머니가 며느리인 피청구인을 데리고 절에 기도드리러 가서 비정상적 행동을 하자 피청구인이 갑자기 정신이상의 증세를 보이기 시작하여 지금까지 계속 재발을 반복해 왔는데, 청구인의 노력에도 불구하고 피청구인이 청구인의 종교인 불교에 대하여 계속 적대적인 태도를 취하여 왔으며 이러한 사정으로 청구인이 이혼을 요구하였으나 피청구인이 불응하자 청구인은 집을 나와 입산하여 비구승이 됨으로써 부부가 10년 넘게 별거하게 되고 현재에 이르러서는 서로의 배타적 신앙생활로 인한 애정의 결핍과 장기간의 별거로 혼인관계가 돌이킬 수 없는 파탄에 빠져있는 것이라면, 이러한 파탄은 청구인이 정신적으로 완전하지 아니한 피청구인을 악의로 유기함에서 비롯되었다고 본 원심의 판단은 수긍된다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 이혼사유에 관하여 오로지 또는 주로 책임이 있는 일방당사자가 하는 이혼청구는 원칙적으로 허용되지 않는다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의의",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 이혼사유인 혼인을 계속하기 어려운 중대한 사유가 있을 때라 함은 부부간의 애정과 신뢰가 바탕이 되어야 할 혼인의 본질에 상응하는 부부공동생활 관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활을 계속을 강제하는 것이 일방배우자에게 참을 수 없는 고통이 되는 경우를 말한다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 이혼사유인 “혼인을 계속하기 어려운 중대한 사유가 있는 때”의 의미와 그 판단기준",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 이혼사유인 혼인을 계속하기 어려운 중대한 사유가 있는 때라 함은 부부간의 애정과 신뢰가 바탕이 되어야 할 혼인의 본질에 상응하는 부부공동생활관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활의 계속을 강제하는 것이 일방배우자에게 참을 수 없는 고통이 되는 경우를 말하며, 이를 판단함에 있어서는 그 파탄의 정도, 혼인계속의사의 유무, 파탄의 원인에 관한 당사자의 책임유무, 혼인생활의 기간, 자녀의 유무, 당사자의 연령, 이혼후의 생활보장 기타 혼인관계의 제반사정을 두루 고려하여야 한다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제1호에서 재판상 이혼사유로 규정한 “배우자의 부정한 행위”의 의미",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제1호에서 재판상 이혼사유로 규정한 “배우자의 부정한 행위”라 함은 간통을 포함하는 보다 넓은 개념으로서 간통에 까지는 이르지 아니하나 부부의 정조의무에 충실하지 않는 일체의 부정한 행위가 이에 포함되며, 부정한 행위인지의 여부는 구체적 사안에 따라 그 정도와 상황을 참작하여 이를 평가하여야 한다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "1주",
+      "quote": "판시사항 처의 무분별한 행동을 제지하기 위해 부가 처를 구타, 요치 1주간의 상처를 입게 하였더라도 재판상 이혼사유에 해당하지 않는다고 본 사례",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "1주",
+      "quote": "판결요지 처가 타인과 간통을 하여 구속된 뒤 부가 자식들의 장래를 위하여 고소를 취하하여 풀려났으면서도 집안일을 돌보지 않고 자주 가출을 하는 등 하여 부가 처를 구타하여 약 1주간의 치료를 요하는 상처를 입히고 자식들 앞에서 모욕적인 말을 한 사실만으로 부에게 책임 있는 이혼이유에 해당한다고 볼 수 없다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "8년",
+      "quote": "판시사항 배우자를 버리고 8년간 자식들의 집으로 전전생활해 왔다 하더라도 배우자를 악의로 유기하였거나 혼인관계를 계속할 수 없을 정도로 파경에 이르렀다고 볼 수 없다고 한 예",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "8년",
+      "quote": "판결요지 피청구인이 청구인을 버리고 근 8년간 자식들의 집에 전전하게 된 내면적인 원인이 청구인의 주벽과 사업실패로 인한 가정파탄 때문이고 30여 년간 피청구인과 살면서 6명의 자녀를 낳고 손자까지 본 청구인으로서 좀더 적극적으로 피청구인을 이해하고 설득하여 원만한 가정생활을 이루도록 하여야 함에도 자식들의 집으로 전전 생활해 온 피청구인을 찾아보지도 않고 자식들에게 연락하지도 아니한 것은 청구인이 남편으로서의 소임을 다하지 못한 처사라 할 것이어서 피청구인이 청구인의 곁을 떠나 자식들의 집으로 전전한다는 것만으로는 피청구인이 청구인을 악의로 유기하였다거나 이로 인하여 그들 사이의 혼인이 도저히 계속할 수 없을 정도로 파경 이르렀다고 볼 수 없다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제2호 소정의 악의의 유기에 해당할 수 없다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제3호 소정의 심히 부당한 대우를 받았을 때에 해당하지 않는다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제1호 소정의 부정한 행위에 해당되지 않는다고 본 사례",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제2호 소정의 배우자가 악의로 다른 일방을 유기한 때의 의미",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제2호 소정의 악의의 유기에 해당하는지 여부",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제2호에서 규정한 악의의 유기라고 볼 수 없다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 이혼 사유에의 해당여부",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 기타 혼인을 계속하기 어려운 중대한 사유 있는 때에 해당한다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "20일",
+      "quote": "판시사항 혼인신고 후 약 20일간 동거하다가 집을 나간 경우와 이혼사유",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "20일",
+      "quote": "판결요지 청구인과 피청구인이 혼인신고를 한 후 약 20일간 동거하다가 피청구인이 농사일이 힘들고 청구인의 건강이 나쁘다는 이유로 집을 나가 돌아오고 있지 않다면 이는 「민법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제2호의 ‘배우자가 악의로 다른 일방을 유기한 때’에 해당한다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제2호 소정의 재판상 이혼사유에 해당한다고 판단한 사례",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제3호 소정이 이혼사유에 해당한다고 판단한 사례",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제3호 소정의 이혼사유에 해당한다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "3회",
+      "quote": "판시사항 3회의 가출사실을 용서받고도 다시 가재도구 일체를 챙겨 가출한 경우와 재판상 이혼사유",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "10일 / 1개월",
+      "quote": "8경까지 세 차례 10일 내지 1개월간 가출한 점에 대하여 피청구인의 용서를 받고도 1982.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "3년",
+      "quote": "판결요지 시어머니가 중풍으로 누워있을 때 처가 3년간이나 그 용변을 받아내면서 간호하느라고 그 용변냄새 때문에 가끔 담배를 피운 일이 있고 남편의 여자관계 때문에 다툰 일이 있다는 사정 등은 혼인을 계속하기 어려운 중대한 사유라고 보기 어렵다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "7년",
+      "quote": "판결요지 피청구인은 혼인 전에 사귀던 소외인을 못 잊어 청구인을 학대하고, 7년간 청구인에게 아무런 이유 없이 욕설과 폭행을 일삼아 오다가 나중에는 청구인이 10여일 동안 병원에 입원할 정도의 폭행을 가한 사실은 「민법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조 소정의 재판상 이혼사유인 배우자로부터 심히 부당한 대우를 받은 경우에 해당된다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "10일",
+      "quote": "피청구인이 청구인의 친정에서 청구인을 구타하여 10일간의 치료를 요하는 상해를 입힌 것이 무정자증으로 생식불능이라는 검사결과로 인하여 충격을 받아 약간 신경질적이 된 피청구인을 포용하지 못하고 오히려 피청구인의 성적기능, 경제상태에 대한 불만을 이유로 이혼을 선언하고 친정으로 돌아가 버린 청구인을 찾아가 귀가를 종용하였으나 불응하므로 일시격한 감정으로 구타하여 일어난 결과라면 이 같은 사유만으로는 「민법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제3호 소정의 배우자로부터 감히 부당한 대우를 받은 경우에 해당한다고 볼 수 없다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 혼인을 계속하기 어려운 중대한 사유에 해당한다고 보기 어렵다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제3호 소정의 “배우자로부터 심히 부당한 대우를 받았을 때”의 의미",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 이혼사유",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제3호 소정의 “배우자로부터 심히 부당한 대우를 받았을 때”라 함은 혼인관계의 지속을 강요하는 것이 참으로 가혹하다고 여겨질 정도의 폭행이나 학대 또는 중대한 모욕을 받았을 경우를 말하므로, 처가 혼인생활 중에 취득한 부동산을 남편 이름으로 등기하거나 남편이 어려운 생활환경하에서 음주하여 부부싸움을 하게 되고 부부가 다투던 중에 다소 모욕적인 언사나 약간의 폭행을 한 사실이 있다고 하더라도 그것만으로 혼인관계의 지속을 요구함이 심히 가혹한 정도의 것이라고 할 수 없다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 이혼사유에 해당하지 아니한다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제1호 소정 부정한 행위의 뜻",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제1호 소정 배우자에 부정(不貞)한 행위가 있었을 때의 부정한 행위라고 함은 객관적으로 그것이 부정한 행위에 해당한다고 볼만한 사실이 있어야 하고 또 이것이 내심의 자유로운 의사에 의하여 행하여 졌다는 두 가지의 요소를 필요로 하는 것으로서 비록 객관적으로는 부정한 행위라고 볼 수 있는 사실이 있다고 하더라도 그것이 자유로운 의사에 의하여 이루어지지 않은 경우는 여기에서 말하는 부정한 행위라고 할 수는 없다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "4년",
+      "quote": "판시사항 피청구인이 유부녀 강간 등 파렴치범죄로 징역 4년의 장기복역형을 선고받아 본건 이혼심판청구서가 제1심법원에 접수된 이후까지 복역하고 있었다면 이것이 「민법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 “기타 혼인을 계속하기 어려운 중대한 사유가 있는 때”에 해당하는가 여부",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "4년",
+      "quote": "판결요지 피청구인이 유부녀강간, 현금강취라는 파렴치범죄로 인한 징역 4년이라는 장기복역형을 선고받아 본건 이혼심판청구서가 제1심법원에 접수된 이후까지 복역하고 있었다면 적어도 이 사유는 「민법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 혼인을 계속하기 어려운 중대한 사유가 있을 때에 해당한다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제1호의 부정행위에 해당하고 그 구타행위는 동조제3호의 배우자로부터 심히 부당한 대우를 받은 경우에 해당한다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정사유에 해당하여 청구인은 이혼을 청구할 수 있다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제3호의 이른바 ‘배우자 또는 직계존속으로부터 심히 부당한 대우를 받았을 때’에 해당하는 사례",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "18만원",
+      "quote": "판결요지 전처 소생의 3남매까지 있었음에도 불구하고 부부인 것 같이 가장하여 결혼을 하게 된 사실에 대하여 처가 항상 불만을 가지게 되어 종종 부부싸움이 있었고 양인 간에 성격차이도 있어 크게 부부싸움을 한 후 이혼하기로 합의하고 남편은 전처 소생을 데리고 동거하던 집에서 나왔으며 처는 이혼합의당시 받아가기로 한 그 집 전세보증금 18만원을 받은 사실이 있다 하여도 그 부부사이에 출생한 자녀가 있다면 위와 같은 사실만으로는 혼인을 계속하기 어려운 중대한 사유가 있는 경우에 해당하지 않는다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호의 이른바 “혼인을 계속하기 어려운 중대한 사유”",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호의 이른바 “기타 혼인을 계속하기 어려운 중대한 사유가 있을 때”에 해당하지 않는 일례",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "3개월",
+      "quote": "처가 임신불능이고 처와 별거생활하기로 합의하였으며 처가 별거생활의 자금 및 3개월간의 생활비를 수령하였다는 사실, 처가 가명으로 남편에게 경고하는 취지의 서신을 발송하고 관계요로에 투서 등을 함으로써 남편이 축첩공무원으로서 권고해직을 당한 사실, 처가 남편의 바바리코트 등을 잡아당겨 찢어지게 한 사실만으로는 처에게 재판상의 이혼사유가 있다고 할 수 없다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제1호의 이른바 “배우자에 부정한 행위가 있었을 때”의 의의",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "1개월",
+      "quote": "처의 부정한 행위에 연유하여 남편이 처에게 가한 전치1개월을 요하는 상해와 「민법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제3호의 이른바 “배우자로부터 심히 부당한 대우를 받았을 때”",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "2026년 / 8월 15일",
+      "quote": "이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호에 정한 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의미 2.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 재판상 이혼사유에 해당하는지 여부(한정 적극) 2.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제3호 소정의 이혼사유인 ‘배우자로부터 심히 부당한 대우를 받았을 때’의 의미 2.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호의 사유로 인한 혼인파탄에 있어 유책성의 판단 기준 시점 3.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의미 2.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유’가 있음을 이유로 이혼청구를 인용한 원심의 판단을 수긍한 사례 3.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 이혼사유인 ‘기타 혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의미 3.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제3호 소정의 이혼사유인 ‘배우자로부터 심히 부당한 대우를 받았을 때’의 의미 및 같은 조제6호 소정의 이혼사유인 ‘기타 혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의미 2.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제2호 소정의 ‘배우자가 악의로 다른 일방을 유기한 때’의 의미 2.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제1호 소정의 “부정한 행위”의 의미 2.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제1호 소정의 이혼사유에 해당하는지 여부(소극) 2.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의미와 그 판단기준 2.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제6호 소정의 재판상 이혼사유에 해당하는지 여부(적극) 2.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "제840조",
+      "quote": "제840조제1항제6호의 재판상 이혼사유에 해당하는지 여부(소극) 2.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
+    },
+    {
+      "value": "10년",
+      "quote": "판결요지 | 청구인의 어머니가 며느리인 피청구인을 데리고 절에 기도드리러 가서 비정상적 행동을 하자 피청구인이 갑자기 정신이상의 증세를 보이기 시작하여 지금까지 계속 재발을 반복해 왔는데, 청구인의 노력에도 불구하고 피청구인이 청구인의 종교인 불교에 대하여 계속 적대적인 태도를 취하여 왔으며 이러한 사정으로 청구인이 이혼을 요구하였으나 피청구인이 불응하자 청구인은 집을 나와 입산하여 비구승이 됨으로써 부부가 10년 넘게 별거하게 되고 현재에 이르러서는 서로의 배타적 신앙생활로 인한 애정의 결핍과 장기간의 별거로 혼인관계가 돌이킬 수 없는 파탄에 빠져있는 것이라면, 이러한 파탄은 청구인이 정신적으로 완전하지 아니한 피청구인을 악의로 유기함에서 비롯되었다고 본 원심의 판단은 수긍된다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png"
     }
   ],
   "raws": [
@@ -47,10 +1054,47 @@
       "org": "법제처 (민법 제840조)",
       "screenshot": "evidence-이혼-사유-별거-2년-2.png",
       "text": "제840조(재판상 이혼원인) 부부의 일방은 다음 각호의 사유가 있는 경우에는 가정법원에 이혼을 청구할 수 있다.  <개정 1990. 1. 13.>\n\n1. 배우자에 부정한 행위가 있었을 때\n\n2. 배우자가 악의로 다른 일방을 유기한 때\n\n3. 배우자 또는 그 직계존속으로부터 심히 부당한 대우를 받았을 때\n\n4. 자기의 직계존속이 배우자로부터 심히 부당한 대우를 받았을 때\n\n5. 배우자의 생사가 3년 이상 분명하지 아니한 때\n\n6. 기타 혼인을 계속하기 어려운 중대한 사유가 있을 때"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-3.png",
+      "text": "메인메뉴 바로가기\n서브메뉴 바로가기\n본문 바로가기\n통합검색박스\n검색어\n검색\n로그인 최근 본 법령정보 -\nLanguage\n메뉴전체보기\n책자형\n카드뉴스형\n백문백답\n솔로몬의 재판\n웹툰\n소식∙참여\n서비스 소개\nSMART\n생활법률\n앱 다운로드\n설문조사\n확장/축소\n닫기\n이혼\n\n이미지로 보는\n카드뉴스\n\n사례로 보는\n백문백답\n\n관련법령\n\n목차\n\n펼치기\n닫기\n이혼의 방법과 효과\n이혼 방법\n하위메뉴 보기/숨기기\n \n이혼 준비\n하위메뉴 보기/숨기기\n \n이혼 효과\n하위메뉴 보기/숨기기\n \n이혼 무효ㆍ취소\n하위메뉴 보기/숨기기\n \n사실혼 파기\n하위메뉴 보기/숨기기\n협의이혼\n협의이혼 요건\n하위메뉴 보기/숨기기\n \n협의이혼 절차\n하위메뉴 보기/숨기기\n재판상 이혼\n재판상 이혼 요건\n하위메뉴 보기/숨기기\n재판상 이혼의 개념\n재판상 이혼 사유\n유책배우자의 이혼청구\n재판상 이혼 절차\n하위메뉴 보기/숨기기\n재산문제\n위자료\n하위메뉴 보기/숨기기\n \n재산분할\n하위메뉴 보기/숨기기\n자녀문제\n친권ㆍ양육권\n하위메뉴 보기/숨기기\n \n면접교섭권\n하위메뉴 보기/숨기기\n \n양육비\n하위메뉴 보기/숨기기\n \n성(姓)과 본(本)\n하위메뉴 보기/숨기기\n형사문제\n가정폭력\n하위메뉴 보기/숨기기\n확장/축소\n홈 > \n책자형 > 이혼\n\n생활법령 내 검색\n\n공유\n저장\n인쇄\n즐겨찾기\n재판상 이혼 사유\n\n\n본문\n100문 100답\n판례\n관련법령\n재판상 이혼 사유 \n \n재판상 이혼 사유\n 「민법」 제840조는 재판상 이혼 사유로 다음 여섯 가지를 규정하고 있습니다.\n배우자에게 부정(不貞)한 행위가 있었을 때\n 부정행위의 의미\n 배우자의 부정행위란 혼인한 이후에 부부 일방이 자유로운 의사로 부부의 정조의무(貞操義務), 성적 순결의무를 충실히 하지 않은 일체의 행위를 말하는 것으로 성관계를 전제로 하는 간통보다 넓은 개념입니다(대법원 1992. 11. 10. 선고 92므68 판결). 부정행위인지 여부는 개개의 구체적인 사안에 따라 그 정도와 상황을 참작해서 평가됩니다.\n 판례상 부정행위\n 부정행위로 본 사례: 대법원 1992. 11. 10. 선고 92므68 판결, 대법원 1988. 5. 24. 선고 88므7 판결, 대법원 1971. 2. 23. 선고 71므1 판결, 대법원 1967. 8. 29. 선고 67므24 판결\n 부정행위로 보지 않은 사례: 대법원 1991. 9. 13. 선고 91므85,92 판결, 대법원 1990. 7. 24. 선고 89므1115 판결, 대법원 1986. 6. 10. 선고 86므8 판결\n 제소기간\n 배우자의 부정행위를 안 날로부터 6개월, 그 부정행위가 있은 날로부터 2년이 지나면 부정행위를 이유로 이혼을 청구하지 못합니다. 또한, 배우자의 부정행위를 사전에 동의했거나 사후에 용서한 경우에는 이혼을 청구하지 못합니다(「민법」 제841조).\n※ 간통죄 위헌결정\n헌법재판소는 2015년 2월 26일 형법 제241조에 따른 간통죄에 대해 위헌법률 결정을 내려 「형법」제241조에 대한 합헌 결정이 있었던 2008년 10월 30일의 다음 날로 소급하여 그 효력을 상실하였습니다.\n배우자가 악의(惡意)로 다른 일방을 유기(遺棄)한 때\n 악의의 유기의 의미\n 배우자의 악의의 유기란 배우자가 정당한 이유 없이 부부의 의무인 동거·부양·협조의무를 이행하지 않는 것을 말합니다.\n 판례상 악의의 유기\n 악의의 유기로 본 사례: 대법원 1998. 4. 10. 선고 96므1434 판결, 대법원 1990. 11. 9. 선고 90므583,590 판결, 대법원 1986. 10. 28. 선고 86므83,84 판결, 대법원 1985. 7. 9. 선고 85므5 판결, 대법원 1984.7.10. 선고 84므27,28 판결\n 악의의 유기로 보지 않은 사례: 대법원 1990. 3. 23. 선고 89므1085 판결, 대법원 1986. 6. 24. 선고 85므6 판결, 대법원 1986. 8. 19. 선고 86므75 판결, 대법원 1986. 5. 27. 선고 85므87 판결, 대법원 1986. 5. 27. 선고 86므26 판결, 대법원 1959.5.28. 선고 4291민상190 판결\n배우자 또는 그 직계존속(시부모, 장인, 장모 등)으로부터 심히 부당한 대우를 받았을 때\n 심히 부당한 대우의 의미\n 배우자 또는 그 직계존속의 심히 부당한 대우란 혼인관계의 지속을 강요하는 것이 가혹하다고 여겨질 정도로 배우자 또는 직계존속으로부터 폭행, 학대 또는 모욕을 당하는 것을 말합니다(대법원 2004. 2. 27. 선고 2003므1890 판결).\n 판례상 심히 부당한 대우\n 심히 부당한 대우로 본 사례: 대법원 2004. 2. 27. 선고 2003므1890 판결, 대법원 1990. 11. 27. 선고 90므484 판결, 대법원 1990. 2. 13. 선고 88므504,511 판결, 대법원 1986. 5. 27. 선고 86므14 판결, 대법원 1985. 11. 26. 선고 85므51 판결, 대법원 1983. 10. 25. 선고 82므28 판결, 대법원 1969. 3. 25. 선고 68므29 판결\n 심히 부당한 대우로 보지 않은 사례: 대법원 1999. 11. 26. 선고 99므180 판결, 대법원 1989. 10. 13. 선고 89므785 판결, 대법원 1986. 9. 9. 선고 86므68 판결, 대법원 1986. 9. 9. 선고 86므56 판결, 대법원 1986. 6. 24. 선고 85므6 판결, 대법원 1982. 11. 23. 선고 82므36 판결, 대법원 1981. 10. 13. 선고 80므9 판결\n자기의 직계존속이 배우자로부터 심히 부당한 대우를 받았을 때\n 심히 부당한 대우의 의미\n 자기의 직계존속에 대한 심히 부당한 대우란 혼인관계를 지속하는 것이 고통스러울 정도로 자기의 직계존속이 배우자에게 폭행, 학대 또는 모욕을 당하는 것을 말합니다(대법원 1986. 5. 27. 선고 86므14 판결).\n 판례상 심히 부당한 대우\n 심히 부당한 대우로 본 사례: 대법원 1986. 5. 27. 선고 86므14 판결, 대법원 1969. 3. 25. 선고 68므29 판결\n 심히 부당한 대우로 보지 않은 사례: 대법원 1986. 2. 11. 선고 85므37 판결, 대법원 1984. 8. 21. 선고 84므49 판결\n배우자의 생사가 3년 이상 분명하지 않을 때\n 생사불명의 의미\n 배우자의 생사불명이란 배우자가 살아있는지 여부를 전혀 증명할 수 없는 상태가 이혼 청구 당시까지 3년 이상 계속되는 것을 말합니다.\n 실종선고와 구별\n 배우자의 생사불명으로 인한 이혼은 실종선고(「민법」 제27조)에 의한 혼인해소와는 관계가 없습니다. 즉, 실종선고에 의해 혼인이 해소되면 배우자가 살아 돌아온 경우에 실종선고 취소를 통해 종전의 혼인이 부활하지만(「민법」 제29조제1항), 생사불명을 이유로 이혼판결이 확정된 경우에는 배우자가 살아 돌아오더라도 종전의 혼인이 당연히 부활하는 것은 아닙니다.\n그 밖에 혼인을 계속하기 어려운 중대한 사유가 있을 때\n 혼인을 계속하기 어려운 중대한 사유의 의미\n 혼인을 계속하기 어려운 중대한 사유란 혼인의 본질인 원만한 부부공동생활 관계가 회복할 수 없을 정도로 파탄되어 그 혼인생활의 계속을 강제하는 것이 일방 배우자에게 참을 수 없는 고통이 되는 것을 말합니다(대법원 2005. 12. 23. 선고 2005므1689 판결). 혼인을 계속하기 어려운 중대한 사유가 있는지는 혼인파탄의 정도, 혼인계속의사의 유무, 혼인생활의 기간, 당사자의 책임유무, 당사자의 연령, 이혼 후의 생활보장이나 그 밖에 혼인관계의 여러 가지 사정을 고려해서 판단됩니다(대법원 2000. 9. 5. 선고 99므1886 판결).\n 판례상 혼인을 계속하기 어려운 중대한 사유\n 혼인을 계속하기 어려운 사유로 본 사례: 대법원 2005. 12. 23. 선고 2005므1689 판결, 대법원 2004. 9. 13. 선고 2004므740 판결, 대법원 2002. 3. 29. 선고 2002므74 판결, 대법원 2000. 9. 5. 선고 99므1886 판결, 대법원 1997. 3. 28. 선고 96므608,615 판결, 대법원 1991. 12. 24. 선고 91므627 판결, 대법원 1991. 11. 26. 선고 91므559 판결, 대법원 1991. 1. 15. 선고 90므446 판결, 대법원 1991. 1. 11. 선고 90므552 판결, 대법원 1987. 8. 18. 선고 87므33,34 판결, 대법원 1987. 7. 21. 선고 87므24 판결, 대법원 1986. 3. 25. 선고 85므72 판결, 대법원 1986. 3. 25. 선고 85므85 판결, 대법원 1974. 10. 22. 선고 74므1 판결, 대법원 1970. 2. 24. 선고 69므13 판결, 대법원 1966. 1. 31. 선고 65므50 판결\n 혼인을 계속하기 어려운 사유로 보지 않은 사례: 대법원 1995. 12. 22. 선고 95므861 판결, 대법원 1996. 4. 26. 선고 96므226 판결, 대법원 1993. 9. 14. 선고 93므621,638 판결, 대법원 1991. 9. 13. 선고 91므85,92 판결, 대법원 1991. 2. 26. 선고 89므365,367 판결, 대법원 1990. 9. 25. 선고 89므112 판결, 대법원 1984. 6. 26. 선고 83므46 판결, 대법원 1982. 11. 23. 선고 82므36 판결, 대법원 1981. 10. 13. 선고 80므9 판결, 대법원 1981. 7. 14. 선고 81므26 판결, 대법원 1967. 2. 7. 선고 66므34 판결, 대법원 1965. 9. 25. 선고 65므16 판결, 대법원 1965. 9. 21. 선고 65므37 판결\n 제소기간\n 그 밖에 혼인을 계속하기 어려운 중대한 사유로 이혼하는 경우 그 사유를 안 날로부터 6개월, 그 사유가 있은 날로부터 2년이 지나면 이혼을 청구하지 못합니다(「민법」 제842조). 다만, 그 밖에 혼인을 계속하기 어려운 중대한 사유가 이혼청구 당시까지 계속되고 있는 경우에는 이 기간이 적용되지 않으므로(대법원 2001. 2. 23. 선고 2000므1561 판결, 대법원 1996. 11. 8. 선고 96므1243 판결), 언제든지 이혼을 청구할 수 있습니다.\n이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.\n생활법령정보는 법적 효력을 갖는 유권해석(결정, 판단)의 근거가 되지 않고, 각종 신고, 불복 청구 등의 증거자료로서의 효력은 없습니다.\n구체적인 법령에 대한 질의는 담당기관이나 국민신문고에 문의하시기 바랍니다.\n위 내용에 대한 홈페이지 개선의견은 홈페이지 개선의견을 이용해 주시기 바랍니다.\n\n개인정보처리방침\n저작권정책\n사이트맵\nRSS\n모바일 홈페이지\n생활법령 블로그\n모바일QR\n생활법령배너달기\n\nCopyright ⓒ 1997-2023 Korea Ministry of Government Legislation. All Rights Reserved.    |    홈페이지 개선의견\n\n관련기관 홈페이지"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EB%B2%95/제842조",
+      "org": "법제처 (민법 제842조)",
+      "screenshot": "evidence-이혼-사유-별거-2년-4.png",
+      "text": "제842조(기타 원인으로 인한 이혼청구권의 소멸) 제840조제6호의 사유는 다른 일방이 이를 안 날로부터 6월, 그 사유있은 날로부터 2년을 경과하면 이혼을 청구하지 못한다."
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&expcNo=150&csmSeq=47&ccfNo=1&cciNo=4&cnpClsNo=2&menuType=expc",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-5.png",
+      "text": "메인메뉴 바로가기\n서브메뉴 바로가기\n본문 바로가기\n통합검색박스\n검색어\n검색\n로그인 최근 본 법령정보 -\nLanguage\n메뉴전체보기\n책자형\n카드뉴스형\n백문백답\n솔로몬의 재판\n웹툰\n소식∙참여\n서비스 소개\nSMART\n생활법률\n앱 다운로드\n설문조사\n확장/축소\n닫기\n결혼이민자\n\n이미지로 보는\n카드뉴스\n\n사례로 보는\n백문백답\n\n관련법령\n\n목차\n\n펼치기\n닫기\n국제결혼 일반\n국제결혼의 성립\n하위메뉴 보기/숨기기\n \n국제결혼의 절차\n하위메뉴 보기/숨기기\n \n국제결혼의 효과\n하위메뉴 보기/숨기기\n \n국제결혼의 해소\n하위메뉴 보기/숨기기\n국제결혼의 무효·취소\n이혼\n국제결혼과 체류·국적\n체류자격\n하위메뉴 보기/숨기기\n \n국적 취득\n하위메뉴 보기/숨기기\n국제결혼과 가족생활\n사회복지 등\n하위메뉴 보기/숨기기\n \n자녀의 출생·취학\n하위메뉴 보기/숨기기\n \n가족·친지의 초청·방문\n하위메뉴 보기/숨기기\n \n배우자 사망·상속\n하위메뉴 보기/숨기기\n \n다문화가족 지원\n하위메뉴 보기/숨기기\n확장/축소\n홈 > \n책자형 > 결혼이민자\n\n생활법령 내 검색\n\n공유\n저장\n인쇄\n즐겨찾기\n이혼\n\n\n본문\n판례\n법령해석례\n관련법령\n\n법령의 구체적 적용을 위하여 법령의 의미를 체계적으로 이해하고 그 제정목적에 따라 규범의 의미를 명확히 하기 위해 행정기관에서 행하는 유권해석의 사례를 제공합니다.\n\n안건명\t  안건번호 없음, 충청남도 - 혼인을 계속하기 어려운 질병이 있는 것을 모르고 한 혼인은 취..\n\n질의\t저의 남편은 결혼한지 일주일 만에 정신병발작으로 병원에 입원하여 치료 중에 있습니다. 알고 보니 결혼 전에도 정신병으로 병원에서 살다시피 하였답니다. 의사의 말이 완치는 불가능하고 계속 입원하여 치료를 받으면 겨우 발작회수가 줄어들 것이라고 합니다. 그런 줄 모르고 시집온 저는 너무 억울해서 부모에게 이혼하겠다고 하니, 결혼했으면 끝까지 살 일이지 이혼은 무슨 이혼이냐며 야단만 칩니다. 살고 싶지 않은데 어떻게 하여야 합니까?\n회답\t진정살기 싫다면 악질을 안 날로부터 6개월 이내에 법원에 혼인취소와 위자료 청구소송을 제기할 수 있습니다. 6개월 이내에 취소청구를 하지 않으면 유효한 혼인관계로 인정되기 때문에 훗날 그 질병을 이유로 하는 이혼 조정신청만이 가능할 뿐입니다.\n해석기관\n및 출처\t\n안건명\t  안건번호 없음, 충청남도 - 정당한 이유 없는 가출은 이혼사유가 된다.\n\n질의\t저의 아내는 결혼생활 5년 동안에 15번이나 가출을 하였습니다. 아무일 없이 집을 나가서 몇 달 지난 뒤 연락이 오면 찾아가 데려오곤 하였는데 지난달엔 생후 4개월된 갓난아이를 두고 또 가출을 하여 한달이 가까웠습니다. 이렇게 이유 없이 잘나가는 아내와 이혼할 수 있는지요?\n회답\t부인의 가출사유가 정당한 것이 아니라면 악의의 유기로 이혼을 할 수 있습니다. 그러나 결혼생활 중에 남자에게 중대한 과실이 있어 그 원인으로 여자가 가출하는 것이라면 가출만으로 이혼할 수는 없습니다. 당신의 경우는 여자가 정당한 이유 없이 가출하는 것으로 생각되므로 이혼할 수 있겠습니다.\n해석기관\n및 출처\t\n이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.\n생활법령정보는 법적 효력을 갖는 유권해석(결정, 판단)의 근거가 되지 않고, 각종 신고, 불복 청구 등의 증거자료로서의 효력은 없습니다.\n구체적인 법령에 대한 질의는 담당기관이나 국민신문고에 문의하시기 바랍니다.\n위 내용에 대한 홈페이지 개선의견은 홈페이지 개선의견을 이용해 주시기 바랍니다.\n\n개인정보처리방침\n저작권정책\n사이트맵\nRSS\n모바일 홈페이지\n생활법령 블로그\n모바일QR\n생활법령배너달기\n\nCopyright ⓒ 1997-2023 Korea Ministry of Government Legislation. All Rights Reserved.    |    홈페이지 개선의견\n\n관련기관 홈페이지\n\n[수식·이미지]\n앉아서 HOW? 라고 생각하는사람의 이미지\n\n[표]\n안건명 | 안건번호 없음, 충청남도 - 혼인을 계속하기 어려운 질병이 있는 것을 모르고 한 혼인은 취..\n질의 | 저의 남편은 결혼한지 일주일 만에 정신병발작으로 병원에 입원하여 치료 중에 있습니다. 알고 보니 결혼 전에도 정신병으로 병원에서 살다시피 하였답니다. 의사의 말이 완치는 불가능하고 계속 입원하여 치료를 받으면 겨우 발작회수가 줄어들 것이라고 합니다. 그런 줄 모르고 시집온 저는 너무 억울해서 부모에게 이혼하겠다고 하니, 결혼했으면 끝까지 살 일이지 이혼은 무슨 이혼이냐며 야단만 칩니다. 살고 싶지 않은데 어떻게 하여야 합니까?\n회답 | 진정살기 싫다면 악질을 안 날로부터 6개월 이내에 법원에 혼인취소와 위자료 청구소송을 제기할 수 있습니다. 6개월 이내에 취소청구를 하지 않으면 유효한 혼인관계로 인정되기 때문에 훗날 그 질병을 이유로 하는 이혼 조정신청만이 가능할 뿐입니다.\n해석기관 및 출처\n---\n안건명 | 안건번호 없음, 충청남도 - 정당한 이유 없는 가출은 이혼사유가 된다.\n질의 | 저의 아내는 결혼생활 5년 동안에 15번이나 가출을 하였습니다. 아무일 없이 집을 나가서 몇 달 지난 뒤 연락이 오면 찾아가 데려오곤 하였는데 지난달엔 생후 4개월된 갓난아이를 두고 또 가출을 하여 한달이 가까웠습니다. 이렇게 이유 없이 잘나가는 아내와 이혼할 수 있는지요?\n회답 | 부인의 가출사유가 정당한 것이 아니라면 악의의 유기로 이혼을 할 수 있습니다. 그러나 결혼생활 중에 남자에게 중대한 과실이 있어 그 원인으로 여자가 가출하는 것이라면 가출만으로 이혼할 수는 없습니다. 당신의 경우는 여자가 정당한 이유 없이 가출하는 것으로 생각되므로 이혼할 수 있겠습니다.\n해석기관 및 출처"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1357&csmSeq=233&ccfNo=4&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-6.png",
+      "text": "메인메뉴 바로가기\n서브메뉴 바로가기\n본문 바로가기\n통합검색박스\n검색어\n검색\n로그인 최근 본 법령정보 -\nLanguage\n메뉴전체보기\n책자형\n카드뉴스형\n백문백답\n솔로몬의 재판\n웹툰\n소식∙참여\n서비스 소개\nSMART\n생활법률\n앱 다운로드\n설문조사\n확장/축소\n닫기\n이혼\n\n이미지로 보는\n카드뉴스\n\n사례로 보는\n백문백답\n\n관련법령\n\n목차\n\n펼치기\n닫기\n이혼의 방법과 효과\n이혼 방법\n하위메뉴 보기/숨기기\n \n이혼 준비\n하위메뉴 보기/숨기기\n \n이혼 효과\n하위메뉴 보기/숨기기\n \n이혼 무효ㆍ취소\n하위메뉴 보기/숨기기\n \n사실혼 파기\n하위메뉴 보기/숨기기\n협의이혼\n협의이혼 요건\n하위메뉴 보기/숨기기\n \n협의이혼 절차\n하위메뉴 보기/숨기기\n재판상 이혼\n재판상 이혼 요건\n하위메뉴 보기/숨기기\n \n재판상 이혼 절차\n하위메뉴 보기/숨기기\n재산문제\n위자료\n하위메뉴 보기/숨기기\n위자료(위자료청구권)의 개념\n혼인파탄에 책임있는 제3자에 대한 위자료 청구\n위자료청구권의 행사기간\n위자료 지급의 강제방법\n위자료 지급에 대한 과세\n재산분할\n하위메뉴 보기/숨기기\n자녀문제\n친권ㆍ양육권\n하위메뉴 보기/숨기기\n \n면접교섭권\n하위메뉴 보기/숨기기\n \n양육비\n하위메뉴 보기/숨기기\n \n성(姓)과 본(本)\n하위메뉴 보기/숨기기\n형사문제\n가정폭력\n하위메뉴 보기/숨기기\n확장/축소\n홈 > \n책자형 > 이혼\n\n생활법령 내 검색\n\n공유\n저장\n인쇄\n즐겨찾기\n혼인파탄에 책임있는 제3자에 대한 위자료 청구\n\n\n본문\n100문 100답\n판례\n관련법령\n\n법원에서 판결된 내용을 보실수 있습니다.\n해당 내용은 법제처 국가법령정보센터(http://www.law.go.kr)기준으로 제공되었습니다.\n\n사건명\t  대법원 2014. 11. 20. 선고 2011므2997 전원합의체 판결\n\n판시사항\t[1] 제3자가 부부의 일방과 부정행위를 함으로써 부부공동생활을 침해하거나 유지를 방해하고 그에 대한 배우자로서 권리를 침해하여 배우자에게 정신적 고통을 가하는 행위가 불법행위를 구성하는지 여부(원칙적 적극)\n[2] 부부가 아직 이혼하지 아니하였지만 실질적으로 부부공동생활이 파탄되어 회복할 수 없을 정도의 상태에 이른 경우, 제3자가 부부의 일방과 한 성적인 행위가 배우자에 대하여 불법행위를 구성하는지 여부(소극) / 이러한 법률관계는 재판상 이혼청구가 계속 중에 있다거나 재판상 이혼이 청구되지 않은 상태라고 하더라도 마찬가지인지 여부(적극)\n판결요지\t1] 제3자도 타인의 부부공동생활에 개입하여 부부공동생활의 파탄을 초래하는 등 혼인의 본질에 해당하는 부부공동생활을 방해하여서는 아니 된다. 제3자가 부부의 일방과 부정행위를 함으로써 혼인의 본질에 해당하는 부부공동생활을 침해하거나 유지를 방해하고 그에 대한 배우자로서의 권리를 침해하여 배우자에게 정신적 고통을 가하는 행위는 원칙적으로 불법행위를 구성한다.\n[2] [다수의견] 민법 제840조는 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’를 이혼사유로 삼고 있으며, 부부간의 애정과 신뢰가 바탕이 되어야 할 혼인의 본질에 해당하는 부부공동생활 관계가 회복할 수 없을 정도로 파탄되고 혼인생활의 계속을 강제하는 것이 일방 배우자에게 참을 수 없는 고통이 되는 경우에는 위 이혼사유에 해당할 수 있다. 이에 비추어 보면 부부가 장기간 별거하는 등의 사유로 실질적으로 부부공동생활이 파탄되어 실체가 더 이상 존재하지 아니하게 되고 객관적으로 회복할 수 없는 정도에 이른 경우에는 혼인의 본질에 해당하는 부부공동생활이 유지되고 있다고 볼 수 없다.\n따라서 비록 부부가 아직 이혼하지 아니하였지만 이처럼 실질적으로 부부공동생활이 파탄되어 회복할 수 없을 정도의 상태에 이르렀다면, 제3자가 부부의 일방과 성적인 행위를 하더라도 이를 두고 부부공동생활을 침해하거나 유지를 방해하는 행위라고 할 수 없고 또한 그로 인하여 배우자의 부부공동생활에 관한 권리가 침해되는 손해가 생긴다고 할 수도 없으므로 불법행위가 성립한다고 보기 어렵다. 그리고 이러한 법률관계는 재판상 이혼청구가 계속 중에 있다거나 재판상 이혼이 청구되지 않은 상태라고 하여 달리 볼 것은 아니다.\n사건명\t  대법원 2005. 5. 13. 선고 2004다1899 판결 손해배상(기)\n\n판시사항\t간통한 부녀 및 상간자가 부녀의 자녀에 대한 관계에서 불법행위책임을 부담하는지 여부(소극)\n판결요지\t배우자 있는 부녀와 간통행위를 하고, 이로 인하여 그 부녀가 배우자와 별거하거나 이혼하는 등으로 혼인관계를 파탄에 이르게 한 경우 그 부녀와 간통행위를 한 제3자(상간자)는 그 부녀의 배우자에 대하여 불법행위를 구성하고, 따라서 그로 인하여 그 부녀의 배우자가 입은 정신상의 고통을 위자할 의무가 있다고 할 것이나, 이러한 경우라도 간통행위를 한 부녀 자체가 그 자녀에 대하여 불법행위책임을 부담한다고 할 수는 없고, 또한 간통행위를 한 제3자(상간자) 역시 해의(해의)를 가지고 부녀의 그 자녀에 대한 양육이나 보호 내지 교양을 적극적으로 저지하는 등의 특별한 사정이 없는 한 그 자녀에 대한 관계에서 불법행위책임을 부담한다고 할 수는 없다.\n판례파일\t대법원 2005. 5. 13. 선고 2004다1899 판결[20090220151053064].hwp\n사건명\t  대법원 1998. 4. 10. 선고 96므1434 판결 이혼 및 위자료 등\n\n판시사항\t부첩관계와 손해배상\n판결요지\t소위 첩계약(妾契約)은 본처(本妻)의 동의 유무를 불문하고 선량한 풍속에 반하는 사항을 내용으로 하는 법률행위로서 무효일 뿐만 아니라 위법한 행위이므로, 부첩관계에 있는 부(夫) 및 첩은 특별한 사정이 없는 한 그로 인하여 본처가 입은 정신상의 고통에 대하여 배상할 의무가 있고, 이러한 손해배상책임이 성립하기 위하여 반드시 부첩관계로 인하여 혼인관계가 파탄에 이를 필요까지는 없고, 한편 본처가 장래의 부첩관계에 대하여 동의하는 것은 그 자체가 선량한 풍속에 반하는 것으로서 무효라고 할 것이나, 기왕의 부첩관계에 대하여 용서한 때에는 그것이 손해배상청구권의 포기라고 해석되는 한 그대로의 법적 효력이 인정될 수 있다.\n판례파일\t대법원 1998. 4. 10. 선고 96므1434 판결[20090220151121856].hwp\n이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.\n생활법령정보는 법적 효력을 갖는 유권해석(결정, 판단)의 근거가 되지 않고, 각종 신고, 불복 청구 등의 증거자료로서의 효력은 없습니다.\n구체적인 법령에 대한 질의는 담당기관이나 국민신문고에 문의하시기 바랍니다.\n위 내용에 대한 홈페이지 개선의견은 홈페이지 개선의견을 이용해 주시기 바랍니다.\n\n개인정보처리방침\n저작권정책\n사이트맵\nRSS\n모바일 홈페이지\n생활법령 블로그\n모바일QR\n생활법령배너달기\n\nCopyright ⓒ 1997-2023 Korea Ministry of Government Legislation. All Rights Reserved.    |    홈페이지 개선의견\n\n관련기관 홈페이지\n\n[표]\n사건명 | 대법원 2014. 11. 20. 선고 2011므2997 전원합의체 판결\n판시사항 | [1] 제3자가 부부의 일방과 부정행위를 함으로써 부부공동생활을 침해하거나 유지를 방해하고 그에 대한 배우자로서 권리를 침해하여 배우자에게 정신적 고통을 가하는 행위가 불법행위를 구성하는지 여부(원칙적 적극) [2] 부부가 아직 이혼하지 아니하였지만 실질적으로 부부공동생활이 파탄되어 회복할 수 없을 정도의 상태에 이른 경우, 제3자가 부부의 일방과 한 성적인 행위가 배우자에 대하여 불법행위를 구성하는지 여부(소극) / 이러한 법률관계는 재판상 이혼청구가 계속 중에 있다거나 재판상 이혼이 청구되지 않은 상태라고 하더라도 마찬가지인지 여부(적극)\n판결요지 | 1] 제3자도 타인의 부부공동생활에 개입하여 부부공동생활의 파탄을 초래하는 등 혼인의 본질에 해당하는 부부공동생활을 방해하여서는 아니 된다. 제3자가 부부의 일방과 부정행위를 함으로써 혼인의 본질에 해당하는 부부공동생활을 침해하거나 유지를 방해하고 그에 대한 배우자로서의 권리를 침해하여 배우자에게 정신적 고통을 가하는 행위는 원칙적으로 불법행위를 구성한다. [2] [다수의견] 민법 제840조는 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’를 이혼사유로 삼고 있으며, 부부간의 애정과 신뢰가 바탕이 되어야 할 혼인의 본질에 해당하는 부부공동생활 관계가 회복할 수 없을 정도로 파탄되고 혼인생활의 계속을 강제하는 것이 일방 배우자에게 참을 수 없는 고통이 되는 경우에는 위 이혼사유에 해당할 수 있다. 이에 비추어 보면 부부가 장기간 별거하는 등의 사유로 실질적으로 부부공동생활이 파탄되어 실체가 더 이상 존재하지 아니하게 되고 객관적으로 회복할 수 없는 정도에 이른 경우에는 혼인의 본질에 해당하는 부부공동생활이 유지되고 있다고 볼 수 없다. 따라서 비록 부부가 아직 이혼하지 아니하였지만 이처럼 실질적으로 부부공동생활이 파탄되어 회복할 수 없을 정도의 상태에 이르렀다면, 제3자가 부부의 일방과 성적인 행위를 하더라도 이를 두고 부부공동생활을 침해하거나 유지를 방해하는 행위라고 할 수 없고 또한 그로 인하여 배우자의 부부공동생활에 관한 권리가 침해되는 손해가 생긴다고 할 수도 없으므로 불법행위가 성립한다고 보기 어렵다. 그리고 이러한 법률관계는 재판상 이혼청구가 계속 중에 있다거나 재판상 이혼이 청구되지 않은 상태라고 하여 달리 볼 것은 아니다.\n---\n사건명 | 대법원 2005. 5. 13. 선고 2004다1899 판결 손해배상(기)\n판시사항 | 간통한 부녀 및 상간자가 부녀의 자녀에 대한 관계에서 불법행위책임을 부담하는지 여부(소극)\n판결요지 | 배우자 있는 부녀와 간통행위를 하고, 이로 인하여 그 부녀가 배우자와 별거하거나 이혼하는 등으로 혼인관계를 파탄에 이르게 한 경우 그 부녀와 간통행위를 한 제3자(상간자)는 그 부녀의 배우자에 대하여 불법행위를 구성하고, 따라서 그로 인하여 그 부녀의 배우자가 입은 정신상의 고통을 위자할 의무가 있다고 할 것이나, 이러한 경우라도 간통행위를 한 부녀 자체가 그 자녀에 대하여 불법행위책임을 부담한다고 할 수는 없고, 또한 간통행위를 한 제3자(상간자) 역시 해의(해의)를 가지고 부녀의 그 자녀에 대한 양육이나 보호 내지 교양을 적극적으로 저지하는 등의 특별한 사정이 없는 한 그 자녀에 대한 관계에서 불법행위책임을 부담한다고 할 수는 없다.\n판례파일 | 대법원 2005. 5. 13. 선고 2004다1899 판결[20090220151053064].hwp\n---\n사건명 | 대법원 1998. 4. 10. 선고 96므1434 판결 이혼 및 위자료 등\n판시사항 | 부첩관계와 손해배상\n판결요지 | 소위 첩계약(妾契約)은 본처(本妻)의 동의 유무를 불문하고 선량한 풍속에 반하는 사항을 내용으로 하는 법률행위로서 무효일 뿐만 아니라 위법한 행위이므로, 부첩관계에 있는 부(夫) 및 첩은 특별한 사정이 없는 한 그로 인하여 본처가 입은 정신상의 고통에 대하여 배상할 의무가 있고, 이러한 손해배상책임이 성립하기 위하여 반드시 부첩관계로 인하여 혼인관계가 파탄에 이를 필요까지는 없고, 한편 본처가 장래의 부첩관계에 대하여 동의하는 것은 그 자체가 선량한 풍속에 반하는 것으로서 무효라고 할 것이나, 기왕의 부첩관계에 대하여 용서한 때에는 그것이 손해배상청구권의 포기라고 해석되는 한 그대로의 법적 효력이 인정될 수 있다.\n판례파일 | 대법원 1998. 4. 10. 선고 96므1434 판결[20090220151121856].hwp"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1184&csmSeq=233&ccfNo=3&cciNo=1&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-이혼-사유-별거-2년-7.png",
+      "text": "메인메뉴 바로가기\n서브메뉴 바로가기\n본문 바로가기\n통합검색박스\n검색어\n검색\n로그인 최근 본 법령정보 -\nLanguage\n메뉴전체보기\n책자형\n카드뉴스형\n백문백답\n솔로몬의 재판\n웹툰\n소식∙참여\n서비스 소개\nSMART\n생활법률\n앱 다운로드\n설문조사\n확장/축소\n닫기\n이혼\n\n이미지로 보는\n카드뉴스\n\n사례로 보는\n백문백답\n\n관련법령\n\n목차\n\n펼치기\n닫기\n이혼의 방법과 효과\n이혼 방법\n하위메뉴 보기/숨기기\n \n이혼 준비\n하위메뉴 보기/숨기기\n \n이혼 효과\n하위메뉴 보기/숨기기\n \n이혼 무효ㆍ취소\n하위메뉴 보기/숨기기\n \n사실혼 파기\n하위메뉴 보기/숨기기\n협의이혼\n협의이혼 요건\n하위메뉴 보기/숨기기\n \n협의이혼 절차\n하위메뉴 보기/숨기기\n재판상 이혼\n재판상 이혼 요건\n하위메뉴 보기/숨기기\n재판상 이혼의 개념\n재판상 이혼 사유\n유책배우자의 이혼청구\n재판상 이혼 절차\n하위메뉴 보기/숨기기\n재산문제\n위자료\n하위메뉴 보기/숨기기\n \n재산분할\n하위메뉴 보기/숨기기\n자녀문제\n친권ㆍ양육권\n하위메뉴 보기/숨기기\n \n면접교섭권\n하위메뉴 보기/숨기기\n \n양육비\n하위메뉴 보기/숨기기\n \n성(姓)과 본(本)\n하위메뉴 보기/숨기기\n형사문제\n가정폭력\n하위메뉴 보기/숨기기\n확장/축소\n홈 > \n책자형 > 이혼\n\n생활법령 내 검색\n\n공유\n저장\n인쇄\n즐겨찾기\n재판상 이혼 사유\n\n\n본문\n100문 100답\n판례\n관련법령\n\n법원에서 판결된 내용을 보실수 있습니다.\n해당 내용은 법제처 국가법령정보센터(http://www.law.go.kr)기준으로 제공되었습니다.\n\n사건명\t  대법원 2005. 12. 23. 선고 2005므1689 판결 이혼 및 재산분할 등\n\n판시사항\t1. 「민법」 제840조제6호에 정한 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의미\n2. 남편이 처에게 폭력을 행사하여 처가 집을 나가 이혼소송을 제기하고 재결합의사가 없음을 명백히 한 사안에서, 부부공동생활관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활의 계속을 강요하는 것이 처에게 참을 수 없는 고통이 된다고 보기 어렵다고 판단한 원심판결을 파기한 사례\n판결요지\t1. 「민법」 제840조제6호에 정한 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’라 함은 부부간의 애정과 신뢰가 바탕이 되어야 할 혼인의 본질에 상응하는 부부공동생활관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활의 계속을 강제하는 것이 일방 배우자에게 참을 수 없는 고통이 되는 경우를 말한다.\n2. 남편이 처에게 폭력을 행사하여 처가 집을 나가 이혼소송을 제기하고 재결합의사가 없음을 명백히 한 사안에서, 부부공동생활관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활의 계속을 강요하는 것이 처에게 참을 수 없는 고통이 된다고 보기 어렵다고 판단한 원심판결을 파기한 사례.\n판례파일\t대법원 2005. 12. 23. 선고 2005므1689 판결[20090220113326024].hwp\n사건명\t  대법원 2004. 9. 13. 선고 2004므740 판결 이혼 및 재산분할 등\n\n판시사항\t1. 부부 중 일방이 불치의 정신병에 이환된 경우, 「민법」 제840조제6호 소정의 재판상 이혼사유에 해당하는지 여부(한정 적극)\n2. 부부의 일방이 정신병적인 증세를 보인다 하여 곧 이혼청구를 할 수 있는지 여부(소극)\n3. 부부의 일방이 정신병에 이환되었으나 그 증세가 불치의 것이라고 보기 어렵다는 이유로 이혼청구를 배척한 사례\n판결요지\t1. 가정은 단순히 부부만의 공동체에 지나지 않는 것이 아니고 그 자녀 등 모든 구성원의 공동생활을 보호하는 기능을 가진 것으로서 부부 중 일방이 불치의 정신병에 이환되었고, 그 질환이 단순히 애정과 정성으로 간호되거나 예후가 예측될 수 있는 것이 아니고 그 가정의 구성원 전체에게 끊임없는 정신적ㆍ육체적 희생을 요구하는 것이며, 경제적 형편에 비추어 많은 재정적 지출을 요하고 그로 인한 다른 가족들의 고통이 언제 끝날지 모르는 상태에 이르렀다면, 온 가족이 헤어날 수 없는 고통을 받더라도 타방 배우자는 배우자 간의 애정에 터잡은 의무에 따라 한정 없이 참고 살아가라고 강요할 수는 없는 것이므로, 이러한 경우는 「민법」 제840조제6호 소정의 재판상 이혼사유에 해당한다.\n2. 부부의 일방이 정신병적 증세를 보여 혼인관계를 유지하는 데 어려움이 있다고 하더라도 그 증상이 가벼운 정도에 그치는 경우라든가, 회복이 가능한 경우인 때에는 그 상대방 배우자는 사랑과 희생으로 그 병의 치료를 위하여 진력을 다하여야 할 의무가 있는 것이고, 이러한 노력을 제대로 하여 보지 않고 정신병 증세로 인하여 혼인관계를 계속하기 어렵다고 주장하여 곧 이혼청구를 할 수는 없다.\n3. 부부의 일방이 정신병에 이환되었으나 그 증세가 불치의 것이라고 보기 어렵다는 이유로 이혼청구를 배척한 사례.\n판례파일\t대법원 2004. 9. 13. 선고 2004므740 판결[20090220113438580].hwp\n사건명\t  대법원 2004. 2. 27. 선고 2003므1890 판결 혼인의 무효\n\n판시사항\t1. 「민법」 제840조제3호 소정의 이혼사유인 ‘배우자로부터 심히 부당한 대우를 받았을 때’의 의미\n2. 「민법」 제840조제6호의 사유로 인한 혼인파탄에 있어 유책성의 판단 기준 시점\n3. 유책배우자의 이혼청구권이 인정되는 경우\n4. 유책배우자의 이혼청구를 허용한 사례\n판결요지\t1. 「민법」 제840조제3호 소정의 이혼사유인 배우자로부터 심히 부당한 대우를 받았을 때라 함은 혼인관계의 지속을 강요하는 것이 참으로 가혹하다고 여겨질 정도의 폭행이나 학대 또는 모욕을 받았을 경우를 말한다.\n2. 혼인파탄에 있어 유책성은 혼인파탄의 원인이 된 사실에 기초하여 평가할 일이며 혼인관계가 완전히 파탄된 뒤에 있은 일을 가지고 따질 것은 아니다.\n3. 혼인생활의 파탄에 대하여 주된 책임이 있는 배우자는 그 파탄을 사유로 하여 이혼을 청구할 수 없는 것이나, 다만 그 상대방도 혼인생활을 계속할 의사가 없음이 객관적으로 명백함에도 오기나 보복적 감정에서 이혼에 응하지 않고 있을 뿐이라는 등 특별한 사정이 있는 경우에는, 예외적으로 유책배우자에게도 이혼청구권이 인정된다.\n4. 유책배우자의 이혼청구를 허용한 사례.\n판례파일\t대법원 2004. 2. 27. 선고 2003므1890 판결[20090220113548658].hwp\n사건명\t  대법원 2002. 3. 29. 선고 2002므74 판결 이혼\n\n판시사항\t1. 「민법」 제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의미\n2. 혼인을 계속하기 어려운 중대한 사유가 있다고 볼 여지가 있다고 한 사례\n판결요지\t1. 「민법」 제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’라 함은 부부간의 애정과 신뢰가 바탕이 되어야 할 혼인의 본질에 상응하는 부부공동생활관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활의 계속을 강제하는 것이 일방 배우자에게 참을 수 없는 고통이 되는 경우를 말한다.\n2. 처가 뚜렷한 합리적인 이유 없이 남편과의 성행위를 거부하고 결혼생활 동안 거의 매일 외간 남자와 전화통화를 하였으며 그로 인하여 남편이 이혼소송을 제기하고 별거에 이르게 되었다면 부부공동생활관계는 회복할 수 없을 정도로 파탄되었고, 그 혼인생활의 계속을 강제하는 것이 남편에게는 참을 수 없는 고통이 된다고 볼 여지가 있다고 한 사례.\n판례파일\t대법원 2002. 3. 29. 선고 2002므74 판결[20090220113644538].hwp\n사건명\t  대법원 2001. 2. 23. 선고 2000므1561 판결 이혼 등\n\n판시사항\t「민법」 제842조의 제소기간의 적용 범위\n판결요지\t「민법」 제840조제6호 소정의 ‘기타 혼인을 계속하기 어려운 중대한 사유’가 이혼청구 당시까지도 계속 존재하는 것으로 보아야 할 경우에는 이혼청구권의 제척기간에 관한 「민법」 제842조가 적용되지 아니한다.\n판례파일\t대법원 2001. 2. 23. 선고 2000므1561 판결[20090220113735476].hwp\n사건명\t  대법원 2000. 9. 5. 선고 99므1886 판결 이혼 등\n\n판시사항\t1. 「민법」 제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의미\n2. 78세의 처가 92세의 남편을 상대로 제기한 이혼청구에 대하여 「민법」 제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유’가 있음을 이유로 이혼청구를 인용한 원심의 판단을 수긍한 사례\n3. 재판상 이혼사유를 규정한 「민법」 제840조 각 호는 각 별개의 독립된 이혼사유를 구성하는지 여부(적극) 및 이혼청구를 한 원고가 「민법」 제840조 각 호 소정의 수개의 사유를 주장할 경우, 법원은 그 중 어느 하나의 사유를 받아들여 원고의 청구를 인용할 수 있는지 여부(적극)\n판결요지\t1. 「민법」 제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’라 함은 부부간의 애정과 신뢰가 바탕이 되어야 할 혼인의 본질에 상응하는 부부공동생활관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활의 계속을 강제하는 것이 일방 배우자에게 참을 수 없는 고통이 되는 경우를 말한다.\n2. 78세의 처가 92세의 남편을 상대로 제기한 이혼청구에 대하여 「민법」 제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유’가 있음을 이유로 이혼청구를 인용한 원심의 판단을 수긍한 사례.\n3. 재판상 이혼사유에 관한 「민법」 제840조는 동조가 규정하고 있는 각 호 사유마다 각 별개의 독립된 이혼사유를 구성하는 것이고, 이혼청구를 구하면서 위 각 호 소정의 수개의 사유를 주장하는 경우 법원은 그 중 어느 하나를 받아들여 청구를 인용할 수 있다.\n판례파일\t대법원 2000. 9. 5. 선고 99므1886 판결[20090220113834217].hwp\n사건명\t  대법원 1999. 8. 24. 선고 99도2149 판결 간통\n\n판시사항\t1. 간통 유서의 방식과 요건\n2. 배우자의 간통사실을 알고 난 후 그 상대방으로부터 배우자를 더 이상 만나지 않겠다는 합의각서를 받은 경우, 간통의 유서에 해당한다고 본 사례\n판결요지\t1. 간통죄에 있어서의 유서는 배우자의 일방이 상대방의 간통사실을 알면서도 혼인관계를 지속시킬 의사로 악감정을 포기하고 상대방에게 그 행위에 대한 책임을 묻지 않겠다는 뜻을 표시하는 일방행위로서, 간통의 유서는 명시적으로 할 수 있음은 물론 묵시적으로도 할 수 있는 것이어서 그 방식에 제한이 있는 것은 아니지만, 감정을 표현하는 어떤 행동이나 의사의 표시가 유서로 인정되기 위하여는 첫째 배우자의 간통사실을 확실하게 알면서 자발적으로 한 것이어야 하고, 둘째 그와 같은 간통사실에도 불구하고 혼인관계를 지속시키려는 진실한 의사가 명백하고 믿을 수 있는 방법으로 표현되어야 하는 것이다.\n2. 배우자의 간통사실을 알고 난 후 그 상대방으로부터 배우자를 더 이상 만나지 않겠다는 합의각서를 받은 경우, 간통의 유서에 해당한다고 본 사례.\n판례파일\t대법원 1999. 8. 24. 선고 99도2149 판결[20090220114004875].hwp\n사건명\t  대법원 1999. 2. 12. 선고 97므612 판결 이혼 및 위자료\n\n판시사항\t1. 「민법」 제840조제3호 소정의 이혼사유인 ‘배우자로부터 심히 부당한 대우를 받았을 때’의 의미\n2. 「민법」 제840조제6호 소정의 이혼사유인 ‘기타 혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의미\n3. 혼인생활 파탄에 주된 책임이 있는 유책 배우자의 이혼청구권 유무(소극)\n4. 부부간의 동거ㆍ부양ㆍ협조의무와 이혼사유와의 관계\n판결요지\t1. 「민법」 제840조제3호 소정의 이혼사유인 ‘배우자로부터 심히 부당한 대우를 받았을 때’라고 함은 혼인 당사자의 일방이 배우자로부터 혼인관계의 지속을 강요하는 것이 가혹하다고 여겨질 정도의 폭행이나 학대 또는 중대한 모욕을 받았을 경우를 말한다.\n2. 「민법」 제840조제6호 소정의 이혼사유인 ‘기타 혼인을 계속하기 어려운 중대한 사유가 있을 때’라 함은 부부간의 애정과 신뢰가 바탕이 되어야 할 혼인의 본질에 상응하는 부부공동생활관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활의 계속을 강제하는 것이 일방 배우자에게 참을 수 없는 고통이 되는 경우를 말한다.\n3. 혼인생활의 파탄에 대하여 주된 책임이 있는 배우자의 이혼청구는 원칙적으로 허용되지 않는다.\n4. 혼인은 남녀의 애정을 바탕으로 하여 일생의 공동생활을 목적으로 하는 도덕적ㆍ풍속적으로 정당시되는 결합으로서 부부 사이에는 동거하며 서로 부양하고 협조하여야 할 의무가 있는 것이므로(「민법」 제826조제1항), 혼인생활을 함에 있어서 부부는 애정과 신의 및 인내로써 서로 상대방을 이해하며 보호하여 혼인생활의 유지를 위한 최선의 노력을 기울여야 하는 것이고, 혼인생활 중에 그 장애가 되는 여러 사태에 직면하는 경우가 있다 하더라도 부부는 그러한 장애를 극복하기 위한 노력을 다하여야 할 것이며, 일시 부부간의 화합을 저해하는 사정이 있다는 이유로 혼인생활의 파탄을 초래하는 행위를 하여서는 안 되는 것이고, 따라서 이러한 부부간의 동거, 부양, 협조의무는 애정과 신뢰를 바탕으로 일생에 걸친 공동생활을 목적으로 하는 혼인의 본질이 요청하는 바로서, 부부 사이에 출생한 자식이 없거나 재혼한 부부간이라 하여 달라질 수 없는 것이고, 재판상 이혼사유에 관한 평가 및 판단의 지도원리로 작용한다고 할 것이며, 배우자가 정당한 이유 없이 서로 동거, 부양, 협조하여야 할 부부로서의 의무를 포기하고 다른 일방을 버린 경우에는 재판상 이혼사유인 악의의 유기에 해당한다.\n판례파일\t대법원 1999. 2. 12. 선고 97므612 판결[20090220114101404].hwp\n사건명\t  대법원 1999. 11. 26. 선고 99므180 판결 이혼 및 위자료\n\n판시사항\t1. 「민법」 제840조제3호 소정의 이혼사유인 ‘배우자로부터 심히 부당한 대우를 받았을 때’의 의미 및 같은 조제6호 소정의 이혼사유인 ‘기타 혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의미\n2. 만 75세의 처가 「민법」 제840조제3호, 제6호 소정의 이혼사유가 있음을 전제로 만 83세의 남편을 상대로 제기한 이혼청구에 대하여 심히 부당한 대우를 받았다거나 혼인관계가 회복할 수 없을 정도로 파탄에 이르렀다고 볼 수 없다는 이유로 이혼청구를 기각한 원심판결을 수긍한 사례\n판결요지\t1. 「민법」 제840조제3호 소정의 이혼사유인 ‘배우자로부터 심히 부당한 대우를 받았을 때’라고 함은 혼인 당사자의 일방이 배우자로부터 혼인관계의 지속을 강요하는 것이 가혹하다고 여겨질 정도의 폭행이나 학대 또는 중대한 모욕을 받았을 경우를 말하는 것이고, 같은 조제6호 소정의 이혼사유인 ‘기타 혼인을 계속하기 어려운 중대한 사유가 있을 때’라 함은 부부간의 애정과 신뢰가 바탕이 되어야 할 혼인의 본질에 상응하는 부부공동생활관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활의 계속을 강제하는 것이 일방 배우자에게 참을 수 없는 고통이 되는 경우를 말하는 것이다.\n2. 만 75세의 처가 「민법」 제840조제3호, 제6호 소정의 이혼사유가 있음을 전제로 만 83세의 남편을 상대로 제기한 이혼청구에 대하여 심히 부당한 대우를 받았다거나 혼인관계가 회복할 수 없을 정도로 파탄에 이르렀다고 볼 수 없다는 이유로 이혼청구를 기각한 원심판결을 수긍한 사례.\n판례파일\t대법원 1999. 11. 26. 선고 99므180 판결[20090220113922431].hwp\n사건명\t  대법원 1998. 4. 10. 선고 96므1434 판결 이혼 및 위자료 등\n\n판시사항\t1. 「민법」 제840조제2호 소정의 ‘배우자가 악의로 다른 일방을 유기한 때’의 의미\n2. 악의의 유기로 인한 이혼청구권의 제척기간\n3. 부부 중 일방이 부동산을 취득ㆍ유지함에 있어 상대방의 가사노동 등이 직ㆍ간접으로 기여한 경우, 그 부동산이 재산분할의 대상이 되는지 여부(적극)\n4. 제3자 명의의 재산과 재산분할 대상\n5. 부첩관계와 손해배상\n판결요지\t1. 「민법」 제840조제2호 소정의 배우자가 악의로 다른 일방을 유기한 때라 함은 배우자가 정당한 이유 없이 서로 동거, 부양, 협조하여야 할 부부로서의 의무를 포기하고 다른 일방을 버린 경우를 뜻한다.\n2. 악의의 유기를 원인으로 하는 재판상 이혼청구권이 법률상 그 행사기간의 제한이 없는 형성권으로서 10년의 제척기간에 걸린다고 하더라도 피고가 부첩관계를 계속 유지함으로써 「민법」 제840조제2호에 해당하는 배우자가 악의로 다른 일방을 유기하는 것이 이혼청구 당시까지 존속되고 있는 경우에는 기간 경과에 의하여 이혼청구권이 소멸할 여지는 없다.\n3. 부부 중 일방이 상속받은 재산이거나 이미 처분한 상속재산을 기초로 형성된 부동산이더라도 이를 취득하고 유지함에 있어 상대방의 가사노동 등이 직ㆍ간접으로 기여한 것이라면 재산분할의 대상이 된다.\n4. 제3자 명의의 재산이더라도 그것이 부부 중 일방에 의하여 명의신탁된 재산 또는 부부의 일방이 실질적으로 지배하고 있는 재산으로서 부부 쌍방의 협력에 의하여 형성된 것이거나 부부 쌍방의 협력에 의하여 형성된 유형, 무형의 자원에 기한 것이라면 그와 같은 사정도 참작하여야 한다는 의미에서 재산분할의 대상이 된다.\n5. 소위 첩계약(妾契約)은 본처(本妻)의 동의 유무를 불문하고 선량한 풍속에 반하는 사항을 내용으로 하는 법률행위로서 무효일 뿐만 아니라 위법한 행위이므로, 부첩관계에 있는 부(夫) 및 첩은 특별한 사정이 없는 한 그로 인하여 본처가 입은 정신상의 고통에 대하여 배상할 의무가 있고, 이러한 손해배상책임이 성립하기 위하여 반드시 부첩관계로 인하여 혼인관계가 파탄에 이를 필요까지는 없고, 한편 본처가 장래의 부첩관계에 대하여 동의하는 것은 그 자체가 선량한 풍속에 반하는 것으로서 무효라고 할 것이나, 기왕의 부첩관계에 대하여 용서한 때에는 그것이 손해배상청구권의 포기라고 해석되는 한 그대로의 법적 효력이 인정될 수 있다.\n판례파일\t대법원 1998. 4. 10. 선고 96므1434 판결[20090220114147268].hwp\n사건명\t  대법원 1997. 3. 28. 선고 96므608,615 판결 이혼\n\n판시사항\t혼인 중 발생한 중증의 조울증이 재판상 이혼사유에 해당한다고 본 사례\n판결요지\t혼인 중 처에게 발생한 조울증이 장기간 지속되어 회복이 거의 불가능한 정신질환으로 이환되어 그 증상이 가벼운 정도에 그치는 경우라 할 수 없고, 그 질환이 단순히 애정과 정성으로 간호되거나 예후가 예측될 수 있는 것이 아닌 경우, 남편에게 계속하여 배우자로서의 의무에 따라 한정 없는 정신적, 경제적 희생을 감내한 채 처와의 혼인관계를 지속하고 살아가라고 하기에는 지나치게 가혹하다고 보아 「민법」 제840조제6호 소정의 재판상 이혼사유에 해당한다고 한 사례.\n판례파일\t대법원 1997. 3. 28. 선고 96므608,615 판결[20090220114230727].hwp\n사건명\t  대법원 1996. 4. 26. 선고 96므226 판결 이혼\n\n판시사항\t이혼 합의사실의 존재가 「민법」 제840조제6호 소정의 재판상 이혼사유에 해당하는지 여부\n판결요지\t혼인생활 중 부부가 일시 이혼에 합의하고 위자료 명목의 금전을 지급하거나 재산분배를 하였다고 하더라도 그것으로 인하여 부부관계가 돌이킬 수 없을 정도로 파탄되어 부부 쌍방이 이혼의 의사로 사실상 부부관계의 실체를 해소한 채 생활하여 왔다는 등의 특별한 사정이 없다면 그러한 이혼 합의사실의 존재만으로는 이를 「민법」 제840조제6호의 재판상 이혼사유인 혼인을 계속할 수 없는 중대한 사유에 해당한다고 할 수 없다.\n판례파일\t대법원 1996. 4. 26. 선고 96므226 판결[20090220114344914].hwp\n사건명\t  대법원 1996. 11. 8. 선고 96므1243 판결 이혼 및 위자료\n\n판시사항\t「민법」 제842조의 제소기간의 적용 범위\n판결요지\t「민법」 제840조제6호에 해당하는 혼인을 계속하기 어려운 중대한 사유가 이혼청구 당시까지 계속되고 있는 경우에는 「민법」 제842조가 적용될 여지가 없다.\n판례파일\t대법원 1996. 11. 8. 선고 96므1243 판결[20090220114309626].hwp\n사건명\t  대법원 1995. 12. 22. 선고 95므861 판결 이혼 및 친권자지정 등\n\n판시사항\t부부 중 일방의 우울증 증세가 「민법」 제840조제6호의 이혼사유에 해당하는지 여부\n판결요지\t혼인생활 중에 일방이 우울증 증세를 보였으나 그 동안 병원의 치료를 받아 현재 일상생활을 하는 데 별다른 지장이 없고 상대방과의 혼인생활을 계속할 것을 바라고 있으므로 부부 사이에 혼인을 계속할 수 없는 중대한 사유가 있다고 할 수 없을 뿐만 아니라, 또한 부부 사이에는 동거, 부양 및 협조의무가 있으므로 혼인생활을 함에 있어서 부부는 서로 협조하고 애정과 인내로써 상대방을 이해하며 보호하여 혼인생활의 유지를 위한 최선의 노력을 기울여야 하는바, 혼인생활 중 일방이 질병에 걸렸다면 상대방은 그 일방을 보호하고 애정과 정성을 다하여야 할 것이고, 가사 일방이 다시 시댁에 들어가 시부모를 모시고 살 경우 우울증이 재발할 가능성이 있다면 상대방으로서는 그를 시댁에 들어가게 하는 대신 그들이 시부모의 집 근처에 살면서 부모를 돌보게 하거나 누이들로 하여금 부모를 모시게 하는 등의 다른 방법을 찾는 등 애정을 가지고 재발방지를 위한 노력을 다하여야 할 입장에 있는 것이어서 그러한 사유도 이혼사유가 될 수 없다.\n판례파일\t대법원 1995. 12. 22. 선고 95므861 판결[20090220114427337].hwp\n사건명\t  대법원 1993. 9. 14. 선고 93므621,638 판결 이혼 등\n\n판시사항\t심인성 음경발기부전증과 혼인파탄의 책임\n판결요지\t심인성 음경발기부전증으로 인하여 일시적으로 발기불능 또는 삽입불능의 상태에 있다 하더라도 부부가 합심하여 전문의의 치료와 조력을 받는 경우 정상적인 성생활로 돌아갈 가능성이 있었다고 한다면, 그 정도의 성적 결함을 지닌 부에 대하여 혼인파탄에 대한 책임을 지울 수 없다.\n판례파일\t대법원 1993. 9. 14. 선고 93므621(본소),638(반소) 판결[20090220114507326].hwp\n사건명\t  대법원 1992. 11. 10. 선고 92므68 판결 이혼 및 위자료\n\n판시사항\t1. 「민법」 제840조제1호 소정의 “부정한 행위”의 의미\n2. 고령이고 중풍으로 정교능력이 없어 실제로 정교를 갖지는 못하였다 하더라도 배우자 아닌 자와 동거한 행위는 배우자로서의 정조의무에 충실치 못한 것으로서 위 “가”항의 “부정한 행위”에 해당한다고 한 사례\n판결요지\t1. 「민법」 제840조제1호 소정의 “부정한 행위”라 함은 배우자로서의 정조의무에 충실치 못한 일체의 행위를 포함하며 이른바 간통보다는 넓은 개념으로서 부정한 행위인지의 여부는 각 구체적 사안에 따라 그 정도와 상황을 참작하여 평가하여야 할 것이다.\n2. 고령이고 중풍으로 정교능력이 없어 실제로 정교를 갖지는 못하였다 하더라도 배우자 아닌 자와 동거한 행위는 배우자로서의 정조의무에 충실치 못한 것으로서 위 “가”항의 “부정한 행위”에 해당한다고 한 사례.\n판례파일\t대법원 1992. 11. 10. 선고 92므68 판결[20090220114620836].hwp\n사건명\t  대법원 1991. 9. 13. 선고 91므85,92 판결 이혼, 이혼 등\n\n판시사항\t1. 약혼단계에서의 부정이 「민법」 제840조제1호 소정의 이혼사유에 해당하는지 여부(소극)\n2. 약혼기간 중 다른 남자와 정교하여 임신하고는 그 혼인 후 남편의 자인 양 속여 출생신고를 한 것이 그 혼인생활의 경과 등에 비추어 혼인을 계속할 수 없는 중대한 사유가 된다고 하기 어렵다고 한 사례\n판결요지\t1. 「민법」 제840조제1호 소정의 재판상 이혼사유인 배우자에 부정한 행위가 있었을 때라 함은 혼인한 부부간의 일방이 부정한 행위를 한 때를 말하는 것이므로 혼인 전 약혼단계에서 부정한 행위를 한 때에는 위 제1호의 이혼사유에 해당한다고 할 수는 없다.\n2. 약혼기간 중 다른 남자와 정교하여 임신하고는 그 혼인 후 남편의 자인 양 속여 출생신고를 한 것이 그 혼인생활의 경과 등에 비추어 혼인을 계속할 수 없는 중대한 사유가 된다고 하기 어렵다고 한 사례.\n판례파일\t대법원 1991. 9. 13. 선고 91므85,92 판결[20090220133142011].hwp\n사건명\t  대법원 1991. 7. 9. 선고, 90므1067 판결 이혼\n\n판시사항\t1. 「민법」 제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의미와 그 판단기준\n2. 혼인관계 파탄의 주된 책임자가 아닌 유책배우자의 이혼청구권 유무(적극)\n판결요지\t1. 「민법」 제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’라 함은 혼인의 본질에 상응하는 부부공동 생활관계가 회복할 수 없을 정도로 파탄되고, 그 혼인생활의 계속을 강제하는 것이 일방 배우자에게 참을 수 없는 고통이 되는 경우를 말하며, 이를 판단함에 있어서는 혼인계속의사의 유무, 파탄의 원인에 관한 당사자의 책임유무, 혼인생활의 기간, 자녀의 유무, 당사자의 연령, 이혼 후의 생활보장, 기타 혼인관계의 제반 사정을 두루 고려하여야 한다.\n2. 부부의 혼인관계가 돌이킬 수 없을 정도로 파탄된 경우, 그 파탄의 원인이 이혼청구인에게 전적으로 또는 주된 책임을 물어야 할 사유로 조성되었거나 청구인의 책임이 피청구인의 책임보다 더 무겁다고 인정되지 않는 한 청구인의 이혼청구는 인용되어야 한다.\n판례파일\t대법원 1991. 7. 9. 선고 90므1067 판결[20090220133223435].hwp\n사건명\t  대법원 1991. 2. 26. 선고 89므365,367 판결 이혼 등\n\n판시사항\t종가의 종손인 남편이 처의 임신불능을 이유로 이혼을 주장하여 혼인관계가 파탄된 경우 남편의 이혼심판청구를 기각하고 처의 반심판청구를 인용한 사례\n판결요지\t처가 전자궁적출술의 수술결과 임신불능이 되자, 남편이 종가의 종손임을 이유로 이혼을 주장하여 혼인관계가 파탄에 이르렀다면, 그와 같이 된 데에는 출산불능이 법률상의 이혼사유로 되지 아니하는 이상 남편 측에게 보다 더 큰 책임이 있다고 하여 남편의 이혼심판청구를 기각하고 처의 반심판청구를 인용한 사례.\n판례파일\t대법원 1991. 2. 26. 선고 89므365,367(반심) 판결[20090220133257360].hwp\n사건명\t  대법원 1991. 12. 24. 선고 91므627 판결 이혼\n\n판시사항\t1. 배우자 일방이 불치의 정신병에 이환되어 가정 구성원 전체가 감당하기 어려운 고통을 받는 경우 「민법」 제840조제6호 소정의 재판상 이혼사유에 해당하는지 여부(적극)\n2. 처가 정신분열증 치료를 위하여 친정으로 가면서 장모가 사위에게 새출발을 하라고 말하여 부가 그 직후부터 다른 여자와 동거하고 있는데 처의 정신분열증은 현재까지도 완치되지 아니하여 정상적인 가정생활이 어렵다면 「민법」 제840조제6호 소정의 재판상 이혼사유에 해당한다고 본 사례\n판결요지\t1. 가정은 단순히 부부만의 공동체에 지나지 않는 것이 아니고 그 자녀 등 이에 관계된 모든 구성원의 공동생활을 보호하는 기능을 가진 것으로서 부부 중 일방이 불치의 정신병에 이환되었고 그 질환이 다른 질환처럼 단순히 애정과 정성으로 간호될 수 있거나 예후가 예측될 수 있는 것이 아니고 그 가정의 구성원 전체에게 끊임없는 정신적, 육체적 희생을 요구하는 외에도 치료를 위한 많은 재정적 지출을 요하고 그로 인한 다른 가족들의 고통이 언제 끝날지 모르는 상태에 이르기까지 하였다면, 온 가족이 헤어날 수 없는 고통을 받더라도 상대방 배우자는 배우자 간의 애정에 터잡은 의무에 따라 한정 없이 참고 살아가라고 강요할 수는 없는 것이므로, 이는 「민법」 제840조제6호 소정의 재판상 이혼사유에 해당한다.\n2. 부가 처의 정신분열증의 치료를 위하여 나름대로의 노력을 기울였으나 치료되지 아니하여 처가 정신분열증 치료를 위하여 친정으로 가면서 장모가 사위에게 새출발을 하라고 말하여 처와의 혼인관계가 사실상 종료된 것으로 믿은 부가 그 직후부터 다른 여자와 동거하면서 처에게 치료비나 생활비 등을 지급하지 아니하고 소식마저 끊고 지냈으며 처의 정신분열증은 현재까지도 완치되지 아니한 상태이고 일시 호전된다 하더라도 재발이 예상되어 정상적인 가정생활은 어렵다면, 그 혼인관계는 어느 쪽에도 책임지울 수 없는 처의 정신분열증으로 인하여 처가 친정으로 돌아간 때부터 파탄에 이르러 현재까지 그러한 상태가 계속되고 있다고 보아, 「민법」 제840조제6호 소정의 재판상 이혼사유에 해당한다고 본 사례.\n판례파일\t대법원 1991. 12. 24. 선고 91므627 판결[20090220133014724].hwp\n사건명\t  대법원 1991. 1. 15. 선고 90므446 판결 이혼\n\n판시사항\t배우자 일방이 불치의 정신병에 이환되어 가정구성원 전체가 감당하기 어려운 고통을 받는 경우 타방배우자의 이혼청구를 인용한 사례\n판결요지\t가정은 단순히 부부만의 공동체에 지나지 않는 것이 아니고 그 자녀 등 모든 구성원의 공동생활을 보호하는 기능을 가진 것으로서 부부 중 일방이 불치의 정신병에 이환되었고 그 질환이 단순히 애정과 정성으로 간호되거나 예후가 예측될 수 있는 것이 아니고 그 가정의 구성원 전체에게 끊임없는 정신적, 육체적 희생을 요구하는 것이며 경제적 형편에 비추어 많은 재정적 지출을 요하고 그로 인한 다른 가족들의 고통이 언제 끝날지 모르는 상태에까지 이르렀다면, 온 가족이 헤어날 수 없는 고통을 받더라도 타방배우자는 배우자간의 애정에 터잡은 의무에 따라 한정 없이 참고 살아가라고 강요할 수는 없는 것이고, 혼인관계가 해소되는 경우 불치의 질환에 이환된 일방이 배우자로부터의 원조가 제한되게 됨에 따라 극심한 경제적 고통을 받게 되고 보호를 받을 수 없게 되는 사정이 있더라도 이는 이혼당사자간의 재산분할청구 등 개인 간 또는 사회적인 부양의 문제로 어느 정도의 지원을 기대할 수 있을 뿐이다.\n판례파일\t대법원 1991. 1. 15. 선고 90므446 판결[20090220133327391].hwp\n사건명\t  대법원 1991. 1. 11. 선고 90므552 판결 이혼\n\n판시사항\t부부가 20여 년간 별거하면서 각자 다른 사람과 동거하는 경우 혼인을 계속할 수 없는 중대한 사유에 해당한다고 본 사례\n판결요지\t피청구인(처)이 조직한 계가 깨어진 뒤로부터 빚을 지게 됨으로써 1966. 10경 집을 나가 청구인(남편)의 귀가종용에 응하지 아니하여 청구인은 피청구인이 가출한 지 1년쯤 될 무렵부터 다른 여자와 내연관계를 맺어 오늘에 이르고 있고, 한편 피청구인도 1972년경부터 다른 남자와 동거하고 있어 청구인과 피청구인이 20여 년간을 부부로서의 실체 없이 지내 온 것이라면, 이 혼인은 돌이킬 수 없을 정도로 파탄되었다고 할 것이고, 그 책임이 반드시 어느 쪽이 더 크다고 할 수 없는 만큼 「민법」 제840조제6호 소정의 혼인을 계속 할 수 없는 중대한 사유가 된다고 할 것이다.\n판례파일\t대법원 1991. 1. 11. 선고 90므552 판결[20090220133401384].hwp\n사건명\t  대법원 1990. 9. 25. 선고 89므112 판결 이혼\n\n판시사항\t1. 이혼에 합의하고 위자료 명목의 금전을 주고받은 것만으로 「민법」 제840조제1항제6호의 재판상 이혼사유에 해당하는지 여부(소극)\n2. 혼인파탄의 유책배우자가 상대방이 그 갈등을 해소하려는 과정에서 저지른 잘못을 이유로 재판상 이혼청구를 할 수 있는지 여부(소극)\n판결요지\t1. 혼인생활 중 부부가 일시 이혼에 합의하고 위자료 명목의 금전을 주고받았더라도 그것으로 인하여 부부관계가 돌이킬 수 없을 정도로 파탄되어 부부쌍방이 이혼의 의사로 사실상 부부관계의 실체를 해소한 채 생활하여 왔다는 등의 특별한 사정이 없다면 그러한 이혼합의 사실의 존재만으로는 이를 「민법」 제840조제1항제6호의 재판상 이혼사유인 혼인을 계속할 수 없는 중대한 사유에 해당한다고는 할 수 없다.\n2. 일방 배우자의 책임 있는 사유(악의의 유기)로 인하여 혼인생활이 파탄에 빠지게 된 이후에 그 갈등을 해소하려는 과정에서 상대방이 재판상 이혼사유에 해당할 수도 있는 잘못(직계존속에 대한 폭행)을 저질렀더라도 그 잘못이 상대방의 유책사유로 인한 혼인의 파탄과는 관계없이 저질러졌다거나 그 정도가 상대방의 유책사유에 비하여 현저하게 책임이 무거운 것이라는 등의 특별한 사정이 없는 한 혼인을 파탄시킨 유책배우자가 이를 사유로 삼아 이혼을 청구할 수는 없는 것이고 그러한 갈등이 쌓여서 혼인관계가 돌이킬 수 없을 정도에 이르렀다 하여도 상대방이 사실은 혼인을 계속할 의사 없이 오로지 배우자를 괴롭힐 의사로 표면적으로만 이혼에 응하지 아니하고 있다는 등의 특별한 사정이 있는 경우가 아니라면 혼인을 파탄에 이르게 한 사유에 관하여 당초 책임 있는 배우자는 「민법」 제840조제1항제6호의 사유가 있다 하여 이혼을 청구할 수 없다.\n판례파일\t대법원 1990. 9. 25. 선고 89므112 판결[20090220133526899].hwp\n사건명\t  대법원 1990. 7. 24. 선고 89므1115 판결 이혼\n\n판시사항\t캬바레에서 다른 남자를 사귀었다는 등의 사실만으로는 「민법」 제840조제1호 소정의 부정한 행위에 해당하지 않는다고 본 사례\n판결요지\t피청구인이 캬바레에 춤을 추러 갔다가 그 곳에서 다른 남자를 만나 알게 되어 친하게 되고 그 남자와 기차를 타고 대천에서 서울에 있는 피청구인의 집까지 동행한 사실만으로는 피청구인이 「민법」 제840조제1호 소정의 부정한 행위를 한 것으로 단정할 수 없다.\n판례파일\t대법원 1990. 7. 24. 선고 89므1115 판결[20090220133615231].hwp\n사건명\t  대법원 1990. 3. 23. 선고 89므1085 판결 이혼 및 위자료\n\n판시사항\t남편의 행패 등을 견디지 못하고 가출한 처에게 귀속사유가 없다고 본 사례\n판결요지\t처가 남편의 무관심과 행패, 사망한 전처 소생의 딸을 양육하는 과정에서의 질책, 폭언 등에 견디지 못하고 친정으로 돌아간 것이라면 처의 위와 같은 가출은 그에게 귀책사유가 될 수 없다.\n판례파일\t대법원 1990. 3. 23. 선고 89므1085 판결[20090220133645540].hwp\n사건명\t  대법원 1990. 2. 13. 선고 88므504,511 판결 이혼 등\n\n판시사항\t배우자의 결백을 알면서도 간통죄로 고소하고 제3자에게 거짓진술을 부탁한 행위가 재판상 이혼사유에 해당한다고 본 사례\n판결요지\t남편이, 처와 제3자와의 관계가 결백함을 알면서도 처를 간통죄로 고소하고 위 제3자 등으로 하여금 간통사실 등에 관한 거짓진술을 하도록 부탁함으로써 혼인관계가 파탄에 이르게 하였다면 그 행위는 「민법」 제840조 소정의 배우자로부터 심히 부당한 대우를 받은 때 또는 기타 혼인을 계속하기 어려운 중대한 사유가 있을 때에 해당한다.\n판례파일\t대법원 1990. 2. 13. 선고 88므504,511(반심) 판결[20090220133721590].hwp\n사건명\t  대법원 1990. 11. 9. 선고 90므583,590 판결 이혼 등\n\n판시사항\t남편이 정신이상의 증세가 있는 처를 두고 가출하여 비구승이 된 것을 악의의 유기라고 본 사례\n판결요지\t청구인의 어머니가 며느리인 피청구인을 데리고 절에 기도드리러 가서 비정상적 행동을 하자 피청구인이 갑자기 정신이상의 증세를 보이기 시작하여 지금까지 계속 재발을 반복해 왔는데, 청구인의 노력에도 불구하고 피청구인이 청구인의 종교인 불교에 대하여 계속 적대적인 태도를 취하여 왔으며 이러한 사정으로 청구인이 이혼을 요구하였으나 피청구인이 불응하자 청구인은 집을 나와 입산하여 비구승이 됨으로써 부부가 10년 넘게 별거하게 되고 현재에 이르러서는 서로의 배타적 신앙생활로 인한 애정의 결핍과 장기간의 별거로 혼인관계가 돌이킬 수 없는 파탄에 빠져있는 것이라면, 이러한 파탄은 청구인이 정신적으로 완전하지 아니한 피청구인을 악의로 유기함에서 비롯되었다고 본 원심의 판단은 수긍된다.\n판례파일\t대법원 1990. 11. 9. 선고 90므583,90므590 판결[20090220133436722].hwp\n사건명\t  대법원 1989. 10. 13. 선고 89므785 판결 이혼, 양육자지정\n\n판시사항\t1. 남편에 대한 부당한 대우가 아니어서 처에게 혼인파탄의 책임이 없다고 본 사례\n2. 혼인파탄에 대한 유책배우자의 이혼청구 가부(소극)\n판결요지\t1. 처가 남편에게 여러 차례 욕을 하고 직장으로 남편을 찾아가 행패를 부리거나 직장으로 전화를 하여 비방한 것이 남편이 전에 제기하였던 이혼심판청구가 기각된 후에도 다른 여자와 가까이 지내면서 처와의 재화합을 위한 노력을 전혀 하지 않고 있는 데에 그 원인이 있었다면 위와 같은 처의 행위만으로는 처가 남편을 부당하게 대우하였다거나 처의 책임 있는 사 유로 혼인생활이 회복하기 어려울 정도로 파탄되었다고 볼 수 없다.\n2. 「민법」 제840조제6호 소정의 이혼사유에 관하여 오로지 또는 주로 책임이 있는 일방당사자가 하는 이혼청구는 원칙적으로 허용되지 않는다.\n판례파일\t대법원 1989. 10. 13. 선고 89므785 판결[20090220133916221].hwp\n사건명\t  대법원 1987. 8. 18. 선고 87므33,34 판결 이혼\n\n판시사항\t「민법」 제840조제6호 소정의 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의의\n판결요지\t「민법」 제840조제6호 소정의 이혼사유인 혼인을 계속하기 어려운 중대한 사유가 있을 때라 함은 부부간의 애정과 신뢰가 바탕이 되어야 할 혼인의 본질에 상응하는 부부공동생활 관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활을 계속을 강제하는 것이 일방배우자에게 참을 수 없는 고통이 되는 경우를 말한다.\n판례파일\t대법원 1987. 8. 18. 선고 87므33,34 판결[20090220133957849].hwp\n사건명\t  대법원 1987. 7. 21. 선고 87므24 판결 이혼 및 위자료\n\n판시사항\t「민법」 제840조제6호 소정의 이혼사유인 “혼인을 계속하기 어려운 중대한 사유가 있는 때”의 의미와 그 판단기준\n판결요지\t「민법」 제840조제6호 소정의 이혼사유인 혼인을 계속하기 어려운 중대한 사유가 있는 때라 함은 부부간의 애정과 신뢰가 바탕이 되어야 할 혼인의 본질에 상응하는 부부공동생활관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활의 계속을 강제하는 것이 일방배우자에게 참을 수 없는 고통이 되는 경우를 말하며, 이를 판단함에 있어서는 그 파탄의 정도, 혼인계속의사의 유무, 파탄의 원인에 관한 당사자의 책임유무, 혼인생활의 기간, 자녀의 유무, 당사자의 연령, 이혼후의 생활보장 기타 혼인관계의 제반사정을 두루 고려하여야 한다.\n판례파일\t대법원 1987. 7. 21. 선고 87므24 판결[20090220134033305].hwp\n사건명\t  대법원 1987. 5. 26. 선고 87므5,6 판결 이혼, 위자료\n\n판시사항\t1. 「민법」 제840조제1호에서 재판상 이혼사유로 규정한 “배우자의 부정한 행위”의 의미\n2. 유책배우자에 대한 위자료수액의 산정방법\n판결요지\t1. 「민법」 제840조제1호에서 재판상 이혼사유로 규정한 “배우자의 부정한 행위”라 함은 간통을 포함하는 보다 넓은 개념으로서 간통에 까지는 이르지 아니하나 부부의 정조의무에 충실하지 않는 일체의 부정한 행위가 이에 포함되며, 부정한 행위인지의 여부는 구체적 사안에 따라 그 정도와 상황을 참작하여 이를 평가하여야 한다.\n2. 유책배우자에 대한 위자료수액을 산정함에 있어서는 유책행위에 이르게 된 경위와 정도, 혼인관계, 파탄의 원인과 책임, 배우자의 연령과 재산상태 등 변론에 나타나는 모든 사정을 참작하여 법원이 직권으로 정하는 것이다.\n판례파일\t대법원 1987. 5. 26. 선고 87므5,87므6 판결[20090220134116802].hwp\n사건명\t  대법원 1987. 4. 14. 선고 86므28 판결 이혼\n\n판시사항\t1. 부정행위를 한 배우자를 고소하고 끝내 용서하지 않은 상대배우자에게도 혼인의 파경에 책임이 있는지 여부\n2. 유책배우자의 이혼청구를 부정하는 취지\n3. 유책배우자의 이혼청구가 예외적으로 인용되어야 할 경우\n판결요지\t1. 부정행위를 저지른 배우자를 간통죄로 고소할 수 있음은 혼인의 순결을 보장하기 위하여 법률이 인정한 권리이고 부정행위를 저지른 배우자가 그 잘못을 뉘우친다 하여 반드시 고소를 취소하여 용서하여 주고 혼인을 계속하여야 할 의무가 발생하는 것도 아니므로 상대배우자가 부정행위를 저지른 배우자를 끝내 용서하지 아니하였다 하더라도 그 혼인의 파탄에 관하여 상대배우자에게도 그 책임이 있다고는 볼 수 없다.\n2. 혼인의 파탄에 관하여 유책배우자는 그 파탄을 원인으로 이혼을 청구할 수 없는 바, 이는 혼인의 파탄을 자초한 자에게 재판상 이혼청구권을 인정하는 것은 혼인제도가 요구하고 있는 도덕성에 근본적으로 배치되고 배우자 일방의 의사에 의한 이혼 내지는 축출이혼을 시인하는 부당한 결과가 되므로 혼인의 파탄에도 불구하고 이혼을 희망하지 않고 있는 상대배우자의 의사에 반하여 이혼을 할 수 없도록 하려는 것일 뿐, 상대배우자에게도 그 혼인을 계속할 의사가 없음이 객관적으로 명백한 경우에까지 파탄된 혼인의 계속을 강제하려는 취지는 아니다.\n3. 유책자의 이혼제기에 대하여 상대배우자도 이혼의 반소를 제기하거나 오기나 보복적 감정에서 표면적으로는 이혼에 불응하고 있기는 하나 실제에 있어서는 혼인의 계속과는 도저히 양립할 수 없는 행위를 하는 등 그 이혼의 의사가 객관적으로 명백한 경우에는 비록 혼인의 파탄에 관하여 전적인 책임이 있는 배우자의 이혼청구라 할지라도 이를 인용함이 상당하다.\n판례파일\t대법원 1987. 4. 14. 선고 86므28 판결[20090220134203734].hwp\n사건명\t  대법원 1986. 9. 9. 선고 86므68 판결 이혼\n\n판시사항\t가정불화 중 처가 부로부터 몇 차례 구타당하여 경미한 상처를 입었다는 사실과 재판상 이혼사유\n판결요지\t처가 가정에 불성실한 탓으로 부와 불화가 심화되던 중 부로부터 몇 번 구타당하여 경미한 상처를 입었다는 사실만으로서는 혼인생활을 계속할 수 없을 정도로 심히 부당한 대우를 받았다고 할 수 없다.\n판례파일\t대법원 1986. 9. 9. 선고 86므68 판결[20090220134509114].hwp\n사건명\t  대법원 1986. 9. 9. 선고 86므56 판결 이혼\n\n판시사항\t처의 무분별한 행동을 제지하기 위해 부가 처를 구타, 요치 1주간의 상처를 입게 하였더라도 재판상 이혼사유에 해당하지 않는다고 본 사례\n판결요지\t처가 타인과 간통을 하여 구속된 뒤 부가 자식들의 장래를 위하여 고소를 취하하여 풀려났으면서도 집안일을 돌보지 않고 자주 가출을 하는 등 하여 부가 처를 구타하여 약 1주간의 치료를 요하는 상처를 입히고 자식들 앞에서 모욕적인 말을 한 사실만으로 부에게 책임 있는 이혼이유에 해당한다고 볼 수 없다.\n판례파일\t대법원 1986. 9. 9. 선고 86므56 판결[20090220134608984].hwp\n사건명\t  대법원 1986. 8. 19. 선고 86므75 판결 이혼\n\n판시사항\t배우자를 버리고 8년간 자식들의 집으로 전전생활해 왔다 하더라도 배우자를 악의로 유기하였거나 혼인관계를 계속할 수 없을 정도로 파경에 이르렀다고 볼 수 없다고 한 예\n판결요지\t피청구인이 청구인을 버리고 근 8년간 자식들의 집에 전전하게 된 내면적인 원인이 청구인의 주벽과 사업실패로 인한 가정파탄 때문이고 30여 년간 피청구인과 살면서 6명의 자녀를 낳고 손자까지 본 청구인으로서 좀더 적극적으로 피청구인을 이해하고 설득하여 원만한 가정생활을 이루도록 하여야 함에도 자식들의 집으로 전전 생활해 온 피청구인을 찾아보지도 않고 자식들에게 연락하지도 아니한 것은 청구인이 남편으로서의 소임을 다하지 못한 처사라 할 것이어서 피청구인이 청구인의 곁을 떠나 자식들의 집으로 전전한다는 것만으로는 피청구인이 청구인을 악의로 유기하였다거나 이로 인하여 그들 사이의 혼인이 도저히 계속할 수 없을 정도로 파경 이르렀다고 볼 수 없다.\n판례파일\t대법원 1986. 8. 19. 선고 86므75 판결[20090220134713780].hwp\n사건명\t  대법원 1986. 6. 24. 선고 85므6 판결 이혼, 위자료\n\n판시사항\t1. 가정불화의 심화로 부가 일시 가출하여 생활비를 지급하지 않은 것이 악의의 유기에 해당하는지 여부\n2. 가정불화 중 몇 차례의 폭행 및 모욕적인 언사를 사용한 것이 배우자를 심히 부당하게 대우한 때에 해당하는지 여부\n판결요지\t1. 악의의 유기라 함은 정당한 이유 없이 배우자를 버리고 부부공동생활을 폐지하는 것을 말하는 바, 가정불화가 심화되어 처 및 자녀들의 냉대가 극심하여지자 가장으로서 이를 피하여 자제케 하고 그 뜻을 꺾기 위하여 일시 집을 나와 별거하고 가정불화가 심히 악화된 기간 이래 생활비를 지급하지 아니한 것뿐이고 달리 부부생활을 폐지하기 위하여 가출한 것이 아니라면 이는 「민법」 제840조제2호 소정의 악의의 유기에 해당할 수 없다.\n2. 배우자로부터 심히 부당한 대우를 받았을 때라 함은 혼인관계의 지속을 강요하는 것이 참으로 가혹하다고 여겨질 정도의 폭행이나 학대 또는 모욕을 받았을 경우를 말하고 가정불화의 와중에서 서로 격한 감정에서 오고간 몇 차례의 폭행 및 모욕적인 언사는 그것이 비교적 경미한 것이라면 이는 「민법」 제840조제3호 소정의 심히 부당한 대우를 받았을 때에 해당하지 않는다.\n판례파일\t대법원 1986. 6. 24. 선고 85므6 판결[20090220134819698].hwp\n사건명\t  대법원 1986. 6. 10. 선고 86므8 판결 이혼\n\n판시사항\t남편 아닌 자와 식사를 하고 카바레에 출입한 처의 행위를 「민법」 제840조제1호 소정의 부정한 행위에 해당되지 않는다고 본 사례\n판결요지\t처가 남편 아닌 남자와 식사를 하거나 캬바레에 출입하고 동인이 운전하는 차에 타고 귀가한 사실이 있다 하더라도 이것이 부가 요구하는 사업자금을 마련하기 위한 것이었고 또한 처가 동인과 둘이서만 다닌 것이 아니라 친구 등 다른 사람과 함께 참여한 것이라면 이를 가리켜 처가 부정한 행위를 하였다고 보기 어렵다.\n판례파일\t대법원 1986. 6. 10. 선고 86므8 판결[20090220134900672].hwp\n사건명\t  대법원 1986. 5. 27. 선고 86므26 판결 이혼\n\n판시사항\t「민법」 제840조제2호 소정의 배우자가 악의로 다른 일방을 유기한 때의 의미\n판결요지\t「민법」 제840조제2호 소정의 배우자가 악의로 다른 일방을 유기한 때라 함은 배우자가 정당한 이유 없이 서로 동거, 부양, 협조하여야 할 부부로서의 의무를 포기하고 다른 일방을 버린 경우를 뜻한다.\n판례파일\t대법원 1986. 5. 27. 선고 86므26 판결[20090220134935938].hwp\n사건명\t  대법원 1986. 5. 27. 선고 86므14 판결 이혼 등\n\n판시사항\t지참금을 가져오지 않았다는 이유로 처를 구타한 행위가 배우자를 심히 부당하게 대우한 경우에 해당한다고 본 사례\n판결요지\t피청구인이 청구인과 혼인을 한 이후, 청구인이 지참금을 가지고 오지 아니하였다는 이유로 불만을 품고 계속 구타하여 상처를 입힌 일이 있을 뿐 아니라 청구인의 친가 아버지에게까지 행패를 부린 행위는 배우자 및 그 직계존속을 심히 부당하게 대우한 경우에 해당한다.\n판례파일\t대법원 1986. 5. 27. 선고 86므14 판결[20090220135011224].hwp\n사건명\t  대법원 1986. 5. 27. 선고 85므87 판결 이혼\n\n판시사항\t가정법원의 조언에 의한 별거가 「민법」 제840조제2호 소정의 악의의 유기에 해당하는지 여부\n판결요지\t피청구인이 청구인과의 주거에서 나와 별거하게 된 것이 청구인의 폭행과 일본대판 가정재판소의 조언 및 청구인의 동의에 의한 것이라면 이를 「민법」 제840조제2호에서 규정한 악의의 유기라고 볼 수 없다.\n판례파일\t대법원 1986. 5. 27. 선고 85므87 판결[20090220135049376].hwp\n사건명\t  대법원 1986. 3. 25. 선고 85므85 판결 이혼\n\n판시사항\t부부관계의 파탄이 부부 모두에게 책임이 있는 경우 「민법」 제840조제6호 소정의 이혼 사유에의 해당여부\n판결요지\t청구인과 피청구인이 각각 타인과 사실혼관계를 맺고 그 사이에 자녀를 출산하고 있다면 위 양인이 다시 부부로 돌아가는 것은 불가능하고, 또 위 부부관계의 파탄은 청구인과 피청구인 모두에게 책임이 있는 것이어서 이는 「민법」 제840조제6호 소정의 기타 혼인을 계속하기 어려운 중대한 사유 있는 때에 해당한다.\n판례파일\t대법원 1986. 3. 25. 선고 85므85 판결[20090220135153675].hwp\n사건명\t  대법원 1986. 3. 25. 선고 85므72 판결 이혼\n\n판시사항\t처가 남편이 직장인으로서의 본분을 다할 수 없게끔 부당한 대우를 하였다는 이유로 이혼을 인정한 사례\n판결요지\t처가 남편이 직장인으로서의 본분을 다할 수 없게끔 부당한 대우를 하였다는 이유로 이혼을 인정한 사례.\n판례파일\t대법원 1986. 3. 25. 선고 85므72 판결[20090220135227954].hwp\n사건명\t  대법원 1986. 2. 11. 선고 85므37 판결 이혼\n\n판시사항\t시모에 대한 다소 불손한 행위가 있었다 하더라도 피청구인의 귀책사유로 비롯되었다고 볼 수 없어 이혼사유에 해당하지 않는다고 판단한 사례\n판결요지\t시모에 대한 다소 불손한 행위가 있었다 하더라도 피청구인의 귀책사유로 비롯되었다고 볼 수 없어 이혼사유에 해당하지 않는다고 판단한 사례\n판례파일\t대법원 1986. 2. 11. 선고 85므37 판결[20090220135306074].hwp\n사건명\t  대법원 1986. 10. 28. 선고 86므83,84 판결 이혼\n\n판시사항\t혼인신고 후 약 20일간 동거하다가 집을 나간 경우와 이혼사유\n판결요지\t청구인과 피청구인이 혼인신고를 한 후 약 20일간 동거하다가 피청구인이 농사일이 힘들고 청구인의 건강이 나쁘다는 이유로 집을 나가 돌아오고 있지 않다면 이는 「민법」 제840조제2호의 ‘배우자가 악의로 다른 일방을 유기한 때’에 해당한다.\n판례파일\t대법원 1986. 10. 28. 선고 86므83,86므84 판결[20090220134246587].hwp\n사건명\t  대법원 1985. 7. 9. 선고 85므5 판결 이혼\n\n판시사항\t배우자가 무단가출한 것이 「민법」 제840조제2호 소정의 재판상 이혼사유에 해당한다고 판단한 사례\n판결요지\t배우자가 무단가출한 것이 「민법」 제840조제2호 소정의 재판상 이혼사유에 해당한다고 판단한 사례\n판례파일\t대법원 1985. 7. 9. 선고 85므5 판결[20090220135756093].hwp\n사건명\t  대법원 1985. 11. 26. 선고 85므51 판결 이혼\n\n판시사항\t처가 남편에게 폭행과 모욕 등 부당한 대우를 하여 「민법」 제840조제3호 소정이 이혼사유에 해당한다고 판단한 사례\n판결요지\t남편이 처의 춤바람과 남녀관계를 추궁한데 대하여 남편이 심한 의처증의 증세를 나타내는 정신병자가 아님에도 처가 남편을 정신병자로 몰아 정신병원이나 요양원등에 강제로 보내기 위해 납치를 기도하고, 수업중인 학생들 앞에서 수갑을 채우는 등으로 폭행과 모욕 등 부당한 대우를 하여 혼인생활을 계속하기 어려운 지경에 이르렀다면 이는 「민법」 제840조제3호 소정의 이혼사유에 해당한다.\n판례파일\t대법원 1985. 11. 26. 선고 85므51 판결[20090220135408753].hwp\n사건명\t  대법원 1984. 8. 21. 선고 84므49 판결 이혼\n\n판시사항\t시부에 대해 부당한 대우를 하였거나 기타 혼인을 계속하기 어려운 중대한 사유로 볼 수 없다고 본 예(정신분열증과 관련)\n판결요지\t시부에 대해 부당한 대우를 하였거나 기타 혼인을 계속하기 어려운 중대한 사유로 볼 수 없다고 본 예(정신분열증과 관련)\n판례파일\t대법원 1984. 8. 21. 선고 84므49 판결[20090220135906876].hwp\n사건명\t  대법원 1984. 7. 10. 선고 84므27,28 판결 이혼 등ㆍ이혼\n\n판시사항\t3회의 가출사실을 용서받고도 다시 가재도구 일체를 챙겨 가출한 경우와 재판상 이혼사유\n판결요지\t청구인이 정신박약자인 장남의 감호양육을 소홀히 하고 춤바람이 나서 각지로 돌아다니 면서 1980. 8경까지 세 차례 10일 내지 1개월간 가출한 점에 대하여 피청구인의 용서를 받고도 1982. 2. 5 경 또 다시 가재도구 일체를 챙겨서 무단가출하여 행방을 감추었다가 동년 5. 13 피청구인에 대하여 이혼청구를 한 사정은 악의의 유기 및 혼인을 계속하기 어려운 중대한 사유에 해당한다.\n판례파일\t대법원 1984. 7. 10. 선고 84므27,84므28 판결[20090220140002284].hwp\n사건명\t  대법원 1984. 6. 26. 선고 83므46 판결 이혼 등\n\n판시사항\t처가 시어머니 간호 시 용변냄새 때문에 담배를 피운 사실 등과 혼인을 계속하기 어려운 중대한 사유\n판결요지\t시어머니가 중풍으로 누워있을 때 처가 3년간이나 그 용변을 받아내면서 간호하느라고 그 용변냄새 때문에 가끔 담배를 피운 일이 있고 남편의 여자관계 때문에 다툰 일이 있다는 사정 등은 혼인을 계속하기 어려운 중대한 사유라고 보기 어렵다.\n판례파일\t대법원 1984. 6. 26. 선고 83므46 판결[20090220140041112].hwp\n사건명\t  대법원 1983. 10. 25. 선고 82므28 판결 이혼ㆍ위자료\n\n판시사항\t재판상 이혼사유인 배우자의 심히 부당한 대우에 해당되는 학대와 폭행의 정도\n판결요지\t피청구인은 혼인 전에 사귀던 소외인을 못 잊어 청구인을 학대하고, 7년간 청구인에게 아무런 이유 없이 욕설과 폭행을 일삼아 오다가 나중에는 청구인이 10여일 동안 병원에 입원할 정도의 폭행을 가한 사실은 「민법」 제840조 소정의 재판상 이혼사유인 배우자로부터 심히 부당한 대우를 받은 경우에 해당된다.\n판례파일\t대법원 1983. 10. 25. 선고 82므28 판결[20090220140123423].hwp\n사건명\t  대법원 1982. 11. 23. 선고 82므36 판결 이혼, 위자료\n\n판시사항\t1. 배우자로부터 심히 부당한 대우를 받은 때에 해당하지 않는다고 한 사례\n2. 혼인을 계속하기 어려운 중대한 사유가 있는 때에 해당하지 않는다고 한 사례\n판결요지\t1. 피청구인이 청구인의 친정에서 청구인을 구타하여 10일간의 치료를 요하는 상해를 입힌 것이 무정자증으로 생식불능이라는 검사결과로 인하여 충격을 받아 약간 신경질적이 된 피청구인을 포용하지 못하고 오히려 피청구인의 성적기능, 경제상태에 대한 불만을 이유로 이혼을 선언하고 친정으로 돌아가 버린 청구인을 찾아가 귀가를 종용하였으나 불응하므로 일시격한 감정으로 구타하여 일어난 결과라면 이 같은 사유만으로는 「민법」 제840조제3호 소정의 배우자로부터 감히 부당한 대우를 받은 경우에 해당한다고 볼 수 없다.\n2. 피청구인이 무정자증으로 생식불능이고 성적기능이 다소 원활하지 못하다는 사실만으로는 다른 특별한 사정이 없는 한 「민법」 제840조제6호 소정의 혼인을 계속하기 어려운 중대한 사유에 해당한다고 보기 어렵다.\n판례파일\t대법원 1982. 11. 23. 선고 82므36 판결[20090220140209894].hwp\n사건명\t  대법원 1981. 7. 14. 선고 81므26 판결 이혼\n\n판시사항\t신앙생활과 가정생활 중 양자택일의 강요와 혼인 관계 파탄의 책임\n판결요지\t신앙생활과 가정생활이 양립할 수 없는 객관적 상황이 아님에도 상대방 배우자가 부당하게 양자택일을 강요하기 때문에 부득이 신앙생활을 택하여 혼인관계가 파탄에 이르렀다면 그 파탄의 주된 책임은 양자택일을 강요한 상대방에게 있다고 할 것이므로 이 배우자의 이혼청구는 허용할 수 없다.\n판례파일\t대법원 1981. 7. 14. 선고 81므26 판결[20090220140356020].hwp\n사건명\t  대법원 1981. 10. 13. 선고 80므9 판결 이혼\n\n판시사항\t1. 「민법」 제840조제3호 소정의 “배우자로부터 심히 부당한 대우를 받았을 때”의 의미\n2. 가정불화로 이혼하기로 합의하고 별거 중인 사정과 「민법」 제840조제6호 소정의 이혼사유\n판결요지\t1. 「민법」 제840조제3호 소정의 “배우자로부터 심히 부당한 대우를 받았을 때”라 함은 혼인관계의 지속을 강요하는 것이 참으로 가혹하다고 여겨질 정도의 폭행이나 학대 또는 중대한 모욕을 받았을 경우를 말하므로, 처가 혼인생활 중에 취득한 부동산을 남편 이름으로 등기하거나 남편이 어려운 생활환경하에서 음주하여 부부싸움을 하게 되고 부부가 다투던 중에 다소 모욕적인 언사나 약간의 폭행을 한 사실이 있다고 하더라도 그것만으로 혼인관계의 지속을 요구함이 심히 가혹한 정도의 것이라고 할 수 없다.\n2. 부부가 가정불화로 이혼하기로 합의하고 이혼신고서나 각서를 작성하고 별거하고 있다는 사정만 가지고는 부부간의 애정을 되찾는 것이 불가능하다고 단정할 자료가 없는 한 「민법」 제840조제6호 소정의 이혼사유에 해당하지 아니한다.\n판례파일\t대법원 1981. 10. 13. 선고 80므9 판결[20090220140249844].hwp\n사건명\t  대법원 1976. 12. 14. 선고 76므10 판결 이혼\n\n판시사항\t「민법」 제840조제1호 소정 부정한 행위의 뜻\n판결요지\t「민법」 제840조제1호 소정 배우자에 부정(不貞)한 행위가 있었을 때의 부정한 행위라고 함은 객관적으로 그것이 부정한 행위에 해당한다고 볼만한 사실이 있어야 하고 또 이것이 내심의 자유로운 의사에 의하여 행하여 졌다는 두 가지의 요소를 필요로 하는 것으로서 비록 객관적으로는 부정한 행위라고 볼 수 있는 사실이 있다고 하더라도 그것이 자유로운 의사에 의하여 이루어지지 않은 경우는 여기에서 말하는 부정한 행위라고 할 수는 없다.\n판례파일\t대법원 1976. 12. 14. 선고 76므10 판결[20090220140431357].hwp\n사건명\t  대법원 1974. 10. 22. 선고 74므1 판결 이혼\n\n판시사항\t피청구인이 유부녀 강간 등 파렴치범죄로 징역 4년의 장기복역형을 선고받아 본건 이혼심판청구서가 제1심법원에 접수된 이후까지 복역하고 있었다면 이것이 「민법」 제840조제6호 “기타 혼인을 계속하기 어려운 중대한 사유가 있는 때”에 해당하는가 여부\n판결요지\t피청구인이 유부녀강간, 현금강취라는 파렴치범죄로 인한 징역 4년이라는 장기복역형을 선고받아 본건 이혼심판청구서가 제1심법원에 접수된 이후까지 복역하고 있었다면 적어도 이 사유는 「민법」 제840조제6호 소정의 혼인을 계속하기 어려운 중대한 사유가 있을 때에 해당한다.\n판례파일\t대법원 1974. 10. 22. 선고 74므1 판결[20090220140527702].hwp\n사건명\t  대법원 1971. 2. 23. 선고 71므1 판결 이혼, 위자료\n\n판시사항\t피청구인의 축첩행위는 「민법」 제840조제1호의 부정행위에 해당하고 그 구타행위는 동조제3호의 배우자로부터 심히 부당한 대우를 받은 경우에 해당한다.\n판결요지\t처첩행위는 본조제1호의 부정행위에, 구투행위는 동조제3호의 심히 부당 한 대우를 받은 경우에 해당한다.\n판례파일\t대법원 1971. 2. 23. 선고 71므1 판결[20090220140600853].hwp\n사건명\t  대법원 1970. 2. 24. 선고 69므13 판결 이혼\n\n판시사항\t다시 원만한 부부생활로 되돌아가기 어려운 상태가 피청구인이나 청구인의 어느 한 쪽의 귀책사유로 인한 것이라 보기 어려운 경우는 「민법」 제840조제6호 소정사유에 해당하여 청구인은 이혼을 청구할 수 있다.\n판결요지\t다시 원만한 부부생활로 되돌아가기 어려운 상태가 부부 어느 일방의 귀책사유로 인한 것이라 보기 어려운 경우는 본조제6호 소정의 이유에 해당된다.\n판례파일\t대법원 1970. 2. 24. 선고 69므13 판결[20090220140732366].hwp\n사건명\t  대법원 1969. 3. 25. 선고 68므29 판결 이혼, 위자료\n\n판시사항\t「민법」 제840조제3호의 이른바 ‘배우자 또는 직계존속으로부터 심히 부당한 대우를 받았을 때’에 해당하는 사례\n판결요지\t시부와 부로부터 평계 이언 이행 등을 당하여 자살을 기획한 사실이 있으며 강제적으로 친정에 가출당하였다면 이는 본조제3호의 이혼사유에 해당한다.\n판례파일\t대법원 1969. 3. 25. 선고 68므29 판결[20090220140800901].hwp\n사건명\t  대법원 1967. 8. 29. 선고 67므24 판결 이혼, 위자료\n\n판시사항\t부의 부정한 행위가 이혼의 원인이 된 실례\n판결요지\t부의 부정한 행위가 이혼의 원인이 된 실례.\n판례파일\t대법원 1967. 8. 29. 선고 67므24 판결[20090220140853820].hwp\n사건명\t  대법원 1967. 2. 7. 선고 66므34 판결 이혼\n\n판시사항\t혼인을 계속하기 어려운 중대한 사유 있다고 판단함에 잘못이 있는 경우\n판결요지\t전처 소생의 3남매까지 있었음에도 불구하고 부부인 것 같이 가장하여 결혼을 하게 된 사실에 대하여 처가 항상 불만을 가지게 되어 종종 부부싸움이 있었고 양인 간에 성격차이도 있어 크게 부부싸움을 한 후 이혼하기로 합의하고 남편은 전처 소생을 데리고 동거하던 집에서 나왔으며 처는 이혼합의당시 받아가기로 한 그 집 전세보증금 18만원을 받은 사실이 있다 하여도 그 부부사이에 출생한 자녀가 있다면 위와 같은 사실만으로는 혼인을 계속하기 어려운 중대한 사유가 있는 경우에 해당하지 않는다.\n판례파일\t대법원 1967. 2. 7. 선고 66므34 판결[20090220140919938].hwp\n사건명\t  대법원 1966. 1. 31. 선고 65므50 판결 이혼\n\n판시사항\t계로 인하여 가정의 평화를 유지할 수 없게 된 경우와 「민법」 제840조제6호의 이른바 “혼인을 계속하기 어려운 중대한 사유”\n판결요지\t가정주부로서 가사에 등한하고 계에 관계하여 가정경제에 위협을 주고 가정의 평화를 깨뜨린 것이 혼인을 계속하기 어려운 중대한 사유에 해당한다고 사례.\n판례파일\t대법원 1966. 1. 31. 선고 65므50 판결[20090220141022550].hwp\n사건명\t  대법원 1965. 9. 25. 선고 65므16 판결 이혼\n\n판시사항\t「민법」 제840조제6호의 이른바 “기타 혼인을 계속하기 어려운 중대한 사유가 있을 때”에 해당하지 않는 일례\n판결요지\t이혼당사자 사이나 그의 배우자의 친족 특히 직계존속과의 사이에 행동이 수반하지 않는 단순한 감정의 갈등, 균열 방지 내지대립이 생겼다는 것을 본조제6호 소정의 혼인을 계속하기 어려운 중대한 사유에 해당된다고는 할 수 없다.\n판례파일\t대법원 1965. 9. 25. 선고 65므16 판결[20090220141056038].hwp\n사건명\t  대법원 1965. 9. 21. 선고 65므37 판결 이혼\n\n판시사항\t유책배우자의 이혼청구를 배척한 사례\n판결요지\t1. 처가 임신불능이고 처와 별거생활하기로 합의하였으며 처가 별거생활의 자금 및 3개월간의 생활비를 수령하였다는 사실, 처가 가명으로 남편에게 경고하는 취지의 서신을 발송하고 관계요로에 투서 등을 함으로써 남편이 축첩공무원으로서 권고해직을 당한 사실, 처가 남편의 바바리코트 등을 잡아당겨 찢어지게 한 사실만으로는 처에게 재판상의 이혼사유가 있다고 할 수 없다.\n2. 남편이 가정의 평화와 남녀의 본질적 평등을 무시하고 그 책임에 속하는 축첩행위를 하였을 뿐만 아니라 그 내연의 처에게 대한 애정에만 사로잡혀 정처를 돌보지 않고 냉대한 결과, 가정의 파경을 초래하였다면 남편은 축첩생활에 기인한 애정의 냉각이 있다하여 재판상 이혼을 주장할 수 없다.\n판례파일\t대법원 1965. 9. 21. 선고 65므37 판결[20090220141216588].hwp\n사건명\t  대법원 1963. 3. 14. 선고 62다54 판결 이혼 등\n\n판시사항\t1. 「민법」 제840조제1호의 이른바 “배우자에 부정한 행위가 있었을 때”의 의의\n2. 처의 부정한 행위에 연유하여 남편이 처에게 가한 전치1개월을 요하는 상해와 「민법」 제840조제3호의 이른바 “배우자로부터 심히 부당한 대우를 받았을 때”\n판결요지\t764. 본건 제1호의 “부정행위”는 배우자로서의 정조의무에 충실치 못한 일절의 행위를 뜻하며 간통보다 넓은 개념이다.\n판례파일\t대법원 1963. 3. 14. 선고 62다54 판결[20090220141245811].hwp\n사건명\t  대법원 1959. 5. 28. 선고 4291민상190 판결 이혼\n\n판시사항\t재판상 이혼의 사유인 악의의 유기\n판결요지\t배우자 일방이 상대방의 의사에 반하여 소지품을 가지고 자주 친정에 간 사실만으로는 악의로 배우자를 유기한 것이라 할 수 없다\n판례파일\t대법원 1959. 5. 28. 선고 4291민상190 판결[20090220141311294].hwp\n이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.\n생활법령정보는 법적 효력을 갖는 유권해석(결정, 판단)의 근거가 되지 않고, 각종 신고, 불복 청구 등의 증거자료로서의 효력은 없습니다.\n구체적인 법령에 대한 질의는 담당기관이나 국민신문고에 문의하시기 바랍니다.\n위 내용에 대한 홈페이지 개선의견은 홈페이지 개선의견을 이용해 주시기 바랍니다.\n\n개인정보처리방침\n저작권정책\n사이트맵\nRSS\n모바일 홈페이지\n생활법령 블로그\n모바일QR\n생활법령배너달기\n\nCopyright ⓒ 1997-2023 Korea Ministry of Government Legislation. All Rights Reserved.    |    홈페이지 개선의견\n\n관련기관 홈페이지\n\n[표]\n사건명 | 대법원 2005. 12. 23. 선고 2005므1689 판결 이혼 및 재산분할 등\n판시사항 | 1. 「민법」 제840조제6호에 정한 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의미 2. 남편이 처에게 폭력을 행사하여 처가 집을 나가 이혼소송을 제기하고 재결합의사가 없음을 명백히 한 사안에서, 부부공동생활관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활의 계속을 강요하는 것이 처에게 참을 수 없는 고통이 된다고 보기 어렵다고 판단한 원심판결을 파기한 사례\n판결요지 | 1. 「민법」 제840조제6호에 정한 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’라 함은 부부간의 애정과 신뢰가 바탕이 되어야 할 혼인의 본질에 상응하는 부부공동생활관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활의 계속을 강제하는 것이 일방 배우자에게 참을 수 없는 고통이 되는 경우를 말한다. 2. 남편이 처에게 폭력을 행사하여 처가 집을 나가 이혼소송을 제기하고 재결합의사가 없음을 명백히 한 사안에서, 부부공동생활관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활의 계속을 강요하는 것이 처에게 참을 수 없는 고통이 된다고 보기 어렵다고 판단한 원심판결을 파기한 사례.\n판례파일 | 대법원 2005. 12. 23. 선고 2005므1689 판결[20090220113326024].hwp\n---\n사건명 | 대법원 2004. 9. 13. 선고 2004므740 판결 이혼 및 재산분할 등\n판시사항 | 1. 부부 중 일방이 불치의 정신병에 이환된 경우, 「민법」 제840조제6호 소정의 재판상 이혼사유에 해당하는지 여부(한정 적극) 2. 부부의 일방이 정신병적인 증세를 보인다 하여 곧 이혼청구를 할 수 있는지 여부(소극) 3. 부부의 일방이 정신병에 이환되었으나 그 증세가 불치의 것이라고 보기 어렵다는 이유로 이혼청구를 배척한 사례\n판결요지 | 1. 가정은 단순히 부부만의 공동체에 지나지 않는 것이 아니고 그 자녀 등 모든 구성원의 공동생활을 보호하는 기능을 가진 것으로서 부부 중 일방이 불치의 정신병에 이환되었고, 그 질환이 단순히 애정과 정성으로 간호되거나 예후가 예측될 수 있는 것이 아니고 그 가정의 구성원 전체에게 끊임없는 정신적ㆍ육체적 희생을 요구하는 것이며, 경제적 형편에 비추어 많은 재정적 지출을 요하고 그로 인한 다른 가족들의 고통이 언제 끝날지 모르는 상태에 이르렀다면, 온 가족이 헤어날 수 없는 고통을 받더라도 타방 배우자는 배우자 간의 애정에 터잡은 의무에 따라 한정 없이 참고 살아가라고 강요할 수는 없는 것이므로, 이러한 경우는 「민법」 제840조제6호 소정의 재판상 이혼사유에 해당한다. 2. 부부의 일방이 정신병적 증세를 보여 혼인관계를 유지하는 데 어려움이 있다고 하더라도 그 증상이 가벼운 정도에 그치는 경우라든가, 회복이 가능한 경우인 때에는 그 상대방 배우자는 사랑과 희생으로 그 병의 치료를 위하여 진력을 다하여야 할 의무가 있는 것이고, 이러한 노력을 제대로 하여 보지 않고 정신병 증세로 인하여 혼인관계를 계속하기 어렵다고 주장하여 곧 이혼청구를 할 수는 없다. 3. 부부의 일방이 정신병에 이환되었으나 그 증세가 불치의 것이라고 보기 어렵다는 이유로 이혼청구를 배척한 사례.\n판례파일 | 대법원 2004. 9. 13. 선고 2004므740 판결[20090220113438580].hwp\n---\n사건명 | 대법원 2004. 2. 27. 선고 2003므1890 판결 혼인의 무효\n판시사항 | 1. 「민법」 제840조제3호 소정의 이혼사유인 ‘배우자로부터 심히 부당한 대우를 받았을 때’의 의미 2. 「민법」 제840조제6호의 사유로 인한 혼인파탄에 있어 유책성의 판단 기준 시점 3. 유책배우자의 이혼청구권이 인정되는 경우 4. 유책배우자의 이혼청구를 허용한 사례\n판결요지 | 1. 「민법」 제840조제3호 소정의 이혼사유인 배우자로부터 심히 부당한 대우를 받았을 때라 함은 혼인관계의 지속을 강요하는 것이 참으로 가혹하다고 여겨질 정도의 폭행이나 학대 또는 모욕을 받았을 경우를 말한다. 2. 혼인파탄에 있어 유책성은 혼인파탄의 원인이 된 사실에 기초하여 평가할 일이며 혼인관계가 완전히 파탄된 뒤에 있은 일을 가지고 따질 것은 아니다. 3. 혼인생활의 파탄에 대하여 주된 책임이 있는 배우자는 그 파탄을 사유로 하여 이혼을 청구할 수 없는 것이나, 다만 그 상대방도 혼인생활을 계속할 의사가 없음이 객관적으로 명백함에도 오기나 보복적 감정에서 이혼에 응하지 않고 있을 뿐이라는 등 특별한 사정이 있는 경우에는, 예외적으로 유책배우자에게도 이혼청구권이 인정된다. 4. 유책배우자의 이혼청구를 허용한 사례.\n판례파일 | 대법원 2004. 2. 27. 선고 2003므1890 판결[20090220113548658].hwp\n---\n사건명 | 대법원 2002. 3. 29. 선고 2002므74 판결 이혼\n판시사항 | 1. 「민법」 제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의미 2. 혼인을 계속하기 어려운 중대한 사유가 있다고 볼 여지가 있다고 한 사례\n판결요지 | 1. 「민법」 제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’라 함은 부부간의 애정과 신뢰가 바탕이 되어야 할 혼인의 본질에 상응하는 부부공동생활관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활의 계속을 강제하는 것이 일방 배우자에게 참을 수 없는 고통이 되는 경우를 말한다. 2. 처가 뚜렷한 합리적인 이유 없이 남편과의 성행위를 거부하고 결혼생활 동안 거의 매일 외간 남자와 전화통화를 하였으며 그로 인하여 남편이 이혼소송을 제기하고 별거에 이르게 되었다면 부부공동생활관계는 회복할 수 없을 정도로 파탄되었고, 그 혼인생활의 계속을 강제하는 것이 남편에게는 참을 수 없는 고통이 된다고 볼 여지가 있다고 한 사례.\n판례파일 | 대법원 2002. 3. 29. 선고 2002므74 판결[20090220113644538].hwp\n---\n사건명 | 대법원 2001. 2. 23. 선고 2000므1561 판결 이혼 등\n판시사항 | 「민법」 제842조의 제소기간의 적용 범위\n판결요지 | 「민법」 제840조제6호 소정의 ‘기타 혼인을 계속하기 어려운 중대한 사유’가 이혼청구 당시까지도 계속 존재하는 것으로 보아야 할 경우에는 이혼청구권의 제척기간에 관한 「민법」 제842조가 적용되지 아니한다.\n판례파일 | 대법원 2001. 2. 23. 선고 2000므1561 판결[20090220113735476].hwp\n---\n사건명 | 대법원 2000. 9. 5. 선고 99므1886 판결 이혼 등\n판시사항 | 1. 「민법」 제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의미 2. 78세의 처가 92세의 남편을 상대로 제기한 이혼청구에 대하여 「민법」 제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유’가 있음을 이유로 이혼청구를 인용한 원심의 판단을 수긍한 사례 3. 재판상 이혼사유를 규정한 「민법」 제840조 각 호는 각 별개의 독립된 이혼사유를 구성하는지 여부(적극) 및 이혼청구를 한 원고가 「민법」 제840조 각 호 소정의 수개의 사유를 주장할 경우, 법원은 그 중 어느 하나의 사유를 받아들여 원고의 청구를 인용할 수 있는지 여부(적극)\n판결요지 | 1. 「민법」 제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’라 함은 부부간의 애정과 신뢰가 바탕이 되어야 할 혼인의 본질에 상응하는 부부공동생활관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활의 계속을 강제하는 것이 일방 배우자에게 참을 수 없는 고통이 되는 경우를 말한다. 2. 78세의 처가 92세의 남편을 상대로 제기한 이혼청구에 대하여 「민법」 제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유’가 있음을 이유로 이혼청구를 인용한 원심의 판단을 수긍한 사례. 3. 재판상 이혼사유에 관한 「민법」 제840조는 동조가 규정하고 있는 각 호 사유마다 각 별개의 독립된 이혼사유를 구성하는 것이고, 이혼청구를 구하면서 위 각 호 소정의 수개의 사유를 주장하는 경우 법원은 그 중 어느 하나를 받아들여 청구를 인용할 수 있다.\n판례파일 | 대법원 2000. 9. 5. 선고 99므1886 판결[20090220113834217].hwp\n---\n사건명 | 대법원 1999. 8. 24. 선고 99도2149 판결 간통\n판시사항 | 1. 간통 유서의 방식과 요건 2. 배우자의 간통사실을 알고 난 후 그 상대방으로부터 배우자를 더 이상 만나지 않겠다는 합의각서를 받은 경우, 간통의 유서에 해당한다고 본 사례\n판결요지 | 1. 간통죄에 있어서의 유서는 배우자의 일방이 상대방의 간통사실을 알면서도 혼인관계를 지속시킬 의사로 악감정을 포기하고 상대방에게 그 행위에 대한 책임을 묻지 않겠다는 뜻을 표시하는 일방행위로서, 간통의 유서는 명시적으로 할 수 있음은 물론 묵시적으로도 할 수 있는 것이어서 그 방식에 제한이 있는 것은 아니지만, 감정을 표현하는 어떤 행동이나 의사의 표시가 유서로 인정되기 위하여는 첫째 배우자의 간통사실을 확실하게 알면서 자발적으로 한 것이어야 하고, 둘째 그와 같은 간통사실에도 불구하고 혼인관계를 지속시키려는 진실한 의사가 명백하고 믿을 수 있는 방법으로 표현되어야 하는 것이다. 2. 배우자의 간통사실을 알고 난 후 그 상대방으로부터 배우자를 더 이상 만나지 않겠다는 합의각서를 받은 경우, 간통의 유서에 해당한다고 본 사례.\n판례파일 | 대법원 1999. 8. 24. 선고 99도2149 판결[20090220114004875].hwp\n---\n사건명 | 대법원 1999. 2. 12. 선고 97므612 판결 이혼 및 위자료\n판시사항 | 1. 「민법」 제840조제3호 소정의 이혼사유인 ‘배우자로부터 심히 부당한 대우를 받았을 때’의 의미 2. 「민법」 제840조제6호 소정의 이혼사유인 ‘기타 혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의미 3. 혼인생활 파탄에 주된 책임이 있는 유책 배우자의 이혼청구권 유무(소극) 4. 부부간의 동거ㆍ부양ㆍ협조의무와 이혼사유와의 관계\n판결요지 | 1. 「민법」 제840조제3호 소정의 이혼사유인 ‘배우자로부터 심히 부당한 대우를 받았을 때’라고 함은 혼인 당사자의 일방이 배우자로부터 혼인관계의 지속을 강요하는 것이 가혹하다고 여겨질 정도의 폭행이나 학대 또는 중대한 모욕을 받았을 경우를 말한다. 2. 「민법」 제840조제6호 소정의 이혼사유인 ‘기타 혼인을 계속하기 어려운 중대한 사유가 있을 때’라 함은 부부간의 애정과 신뢰가 바탕이 되어야 할 혼인의 본질에 상응하는 부부공동생활관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활의 계속을 강제하는 것이 일방 배우자에게 참을 수 없는 고통이 되는 경우를 말한다. 3. 혼인생활의 파탄에 대하여 주된 책임이 있는 배우자의 이혼청구는 원칙적으로 허용되지 않는다. 4. 혼인은 남녀의 애정을 바탕으로 하여 일생의 공동생활을 목적으로 하는 도덕적ㆍ풍속적으로 정당시되는 결합으로서 부부 사이에는 동거하며 서로 부양하고 협조하여야 할 의무가 있는 것이므로(「민법」 제826조제1항), 혼인생활을 함에 있어서 부부는 애정과 신의 및 인내로써 서로 상대방을 이해하며 보호하여 혼인생활의 유지를 위한 최선의 노력을 기울여야 하는 것이고, 혼인생활 중에 그 장애가 되는 여러 사태에 직면하는 경우가 있다 하더라도 부부는 그러한 장애를 극복하기 위한 노력을 다하여야 할 것이며, 일시 부부간의 화합을 저해하는 사정이 있다는 이유로 혼인생활의 파탄을 초래하는 행위를 하여서는 안 되는 것이고, 따라서 이러한 부부간의 동거, 부양, 협조의무는 애정과 신뢰를 바탕으로 일생에 걸친 공동생활을 목적으로 하는 혼인의 본질이 요청하는 바로서, 부부 사이에 출생한 자식이 없거나 재혼한 부부간이라 하여 달라질 수 없는 것이고, 재판상 이혼사유에 관한 평가 및 판단의 지도원리로 작용한다고 할 것이며, 배우자가 정당한 이유 없이 서로 동거, 부양, 협조하여야 할 부부로서의 의무를 포기하고 다른 일방을 버린 경우에는 재판상 이혼사유인 악의의 유기에 해당한다.\n판례파일 | 대법원 1999. 2. 12. 선고 97므612 판결[20090220114101404].hwp\n---\n사건명 | 대법원 1999. 11. 26. 선고 99므180 판결 이혼 및 위자료\n판시사항 | 1. 「민법」 제840조제3호 소정의 이혼사유인 ‘배우자로부터 심히 부당한 대우를 받았을 때’의 의미 및 같은 조제6호 소정의 이혼사유인 ‘기타 혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의미 2. 만 75세의 처가 「민법」 제840조제3호, 제6호 소정의 이혼사유가 있음을 전제로 만 83세의 남편을 상대로 제기한 이혼청구에 대하여 심히 부당한 대우를 받았다거나 혼인관계가 회복할 수 없을 정도로 파탄에 이르렀다고 볼 수 없다는 이유로 이혼청구를 기각한 원심판결을 수긍한 사례\n판결요지 | 1. 「민법」 제840조제3호 소정의 이혼사유인 ‘배우자로부터 심히 부당한 대우를 받았을 때’라고 함은 혼인 당사자의 일방이 배우자로부터 혼인관계의 지속을 강요하는 것이 가혹하다고 여겨질 정도의 폭행이나 학대 또는 중대한 모욕을 받았을 경우를 말하는 것이고, 같은 조제6호 소정의 이혼사유인 ‘기타 혼인을 계속하기 어려운 중대한 사유가 있을 때’라 함은 부부간의 애정과 신뢰가 바탕이 되어야 할 혼인의 본질에 상응하는 부부공동생활관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활의 계속을 강제하는 것이 일방 배우자에게 참을 수 없는 고통이 되는 경우를 말하는 것이다. 2. 만 75세의 처가 「민법」 제840조제3호, 제6호 소정의 이혼사유가 있음을 전제로 만 83세의 남편을 상대로 제기한 이혼청구에 대하여 심히 부당한 대우를 받았다거나 혼인관계가 회복할 수 없을 정도로 파탄에 이르렀다고 볼 수 없다는 이유로 이혼청구를 기각한 원심판결을 수긍한 사례.\n판례파일 | 대법원 1999. 11. 26. 선고 99므180 판결[20090220113922431].hwp\n---\n사건명 | 대법원 1998. 4. 10. 선고 96므1434 판결 이혼 및 위자료 등\n판시사항 | 1. 「민법」 제840조제2호 소정의 ‘배우자가 악의로 다른 일방을 유기한 때’의 의미 2. 악의의 유기로 인한 이혼청구권의 제척기간 3. 부부 중 일방이 부동산을 취득ㆍ유지함에 있어 상대방의 가사노동 등이 직ㆍ간접으로 기여한 경우, 그 부동산이 재산분할의 대상이 되는지 여부(적극) 4. 제3자 명의의 재산과 재산분할 대상 5. 부첩관계와 손해배상\n판결요지 | 1. 「민법」 제840조제2호 소정의 배우자가 악의로 다른 일방을 유기한 때라 함은 배우자가 정당한 이유 없이 서로 동거, 부양, 협조하여야 할 부부로서의 의무를 포기하고 다른 일방을 버린 경우를 뜻한다. 2. 악의의 유기를 원인으로 하는 재판상 이혼청구권이 법률상 그 행사기간의 제한이 없는 형성권으로서 10년의 제척기간에 걸린다고 하더라도 피고가 부첩관계를 계속 유지함으로써 「민법」 제840조제2호에 해당하는 배우자가 악의로 다른 일방을 유기하는 것이 이혼청구 당시까지 존속되고 있는 경우에는 기간 경과에 의하여 이혼청구권이 소멸할 여지는 없다. 3. 부부 중 일방이 상속받은 재산이거나 이미 처분한 상속재산을 기초로 형성된 부동산이더라도 이를 취득하고 유지함에 있어 상대방의 가사노동 등이 직ㆍ간접으로 기여한 것이라면 재산분할의 대상이 된다. 4. 제3자 명의의 재산이더라도 그것이 부부 중 일방에 의하여 명의신탁된 재산 또는 부부의 일방이 실질적으로 지배하고 있는 재산으로서 부부 쌍방의 협력에 의하여 형성된 것이거나 부부 쌍방의 협력에 의하여 형성된 유형, 무형의 자원에 기한 것이라면 그와 같은 사정도 참작하여야 한다는 의미에서 재산분할의 대상이 된다. 5. 소위 첩계약(妾契約)은 본처(本妻)의 동의 유무를 불문하고 선량한 풍속에 반하는 사항을 내용으로 하는 법률행위로서 무효일 뿐만 아니라 위법한 행위이므로, 부첩관계에 있는 부(夫) 및 첩은 특별한 사정이 없는 한 그로 인하여 본처가 입은 정신상의 고통에 대하여 배상할 의무가 있고, 이러한 손해배상책임이 성립하기 위하여 반드시 부첩관계로 인하여 혼인관계가 파탄에 이를 필요까지는 없고, 한편 본처가 장래의 부첩관계에 대하여 동의하는 것은 그 자체가 선량한 풍속에 반하는 것으로서 무효라고 할 것이나, 기왕의 부첩관계에 대하여 용서한 때에는 그것이 손해배상청구권의 포기라고 해석되는 한 그대로의 법적 효력이 인정될 수 있다.\n판례파일 | 대법원 1998. 4. 10. 선고 96므1434 판결[20090220114147268].hwp\n---\n사건명 | 대법원 1997. 3. 28. 선고 96므608,615 판결 이혼\n판시사항 | 혼인 중 발생한 중증의 조울증이 재판상 이혼사유에 해당한다고 본 사례\n판결요지 | 혼인 중 처에게 발생한 조울증이 장기간 지속되어 회복이 거의 불가능한 정신질환으로 이환되어 그 증상이 가벼운 정도에 그치는 경우라 할 수 없고, 그 질환이 단순히 애정과 정성으로 간호되거나 예후가 예측될 수 있는 것이 아닌 경우, 남편에게 계속하여 배우자로서의 의무에 따라 한정 없는 정신적, 경제적 희생을 감내한 채 처와의 혼인관계를 지속하고 살아가라고 하기에는 지나치게 가혹하다고 보아 「민법」 제840조제6호 소정의 재판상 이혼사유에 해당한다고 한 사례.\n판례파일 | 대법원 1997. 3. 28. 선고 96므608,615 판결[20090220114230727].hwp\n---\n사건명 | 대법원 1996. 4. 26. 선고 96므226 판결 이혼\n판시사항 | 이혼 합의사실의 존재가 「민법」 제840조제6호 소정의 재판상 이혼사유에 해당하는지 여부\n판결요지 | 혼인생활 중 부부가 일시 이혼에 합의하고 위자료 명목의 금전을 지급하거나 재산분배를 하였다고 하더라도 그것으로 인하여 부부관계가 돌이킬 수 없을 정도로 파탄되어 부부 쌍방이 이혼의 의사로 사실상 부부관계의 실체를 해소한 채 생활하여 왔다는 등의 특별한 사정이 없다면 그러한 이혼 합의사실의 존재만으로는 이를 「민법」 제840조제6호의 재판상 이혼사유인 혼인을 계속할 수 없는 중대한 사유에 해당한다고 할 수 없다.\n판례파일 | 대법원 1996. 4. 26. 선고 96므226 판결[20090220114344914].hwp\n---\n사건명 | 대법원 1996. 11. 8. 선고 96므1243 판결 이혼 및 위자료\n판시사항 | 「민법」 제842조의 제소기간의 적용 범위\n판결요지 | 「민법」 제840조제6호에 해당하는 혼인을 계속하기 어려운 중대한 사유가 이혼청구 당시까지 계속되고 있는 경우에는 「민법」 제842조가 적용될 여지가 없다.\n판례파일 | 대법원 1996. 11. 8. 선고 96므1243 판결[20090220114309626].hwp\n---\n사건명 | 대법원 1995. 12. 22. 선고 95므861 판결 이혼 및 친권자지정 등\n판시사항 | 부부 중 일방의 우울증 증세가 「민법」 제840조제6호의 이혼사유에 해당하는지 여부\n판결요지 | 혼인생활 중에 일방이 우울증 증세를 보였으나 그 동안 병원의 치료를 받아 현재 일상생활을 하는 데 별다른 지장이 없고 상대방과의 혼인생활을 계속할 것을 바라고 있으므로 부부 사이에 혼인을 계속할 수 없는 중대한 사유가 있다고 할 수 없을 뿐만 아니라, 또한 부부 사이에는 동거, 부양 및 협조의무가 있으므로 혼인생활을 함에 있어서 부부는 서로 협조하고 애정과 인내로써 상대방을 이해하며 보호하여 혼인생활의 유지를 위한 최선의 노력을 기울여야 하는바, 혼인생활 중 일방이 질병에 걸렸다면 상대방은 그 일방을 보호하고 애정과 정성을 다하여야 할 것이고, 가사 일방이 다시 시댁에 들어가 시부모를 모시고 살 경우 우울증이 재발할 가능성이 있다면 상대방으로서는 그를 시댁에 들어가게 하는 대신 그들이 시부모의 집 근처에 살면서 부모를 돌보게 하거나 누이들로 하여금 부모를 모시게 하는 등의 다른 방법을 찾는 등 애정을 가지고 재발방지를 위한 노력을 다하여야 할 입장에 있는 것이어서 그러한 사유도 이혼사유가 될 수 없다.\n판례파일 | 대법원 1995. 12. 22. 선고 95므861 판결[20090220114427337].hwp\n---\n사건명 | 대법원 1993. 9. 14. 선고 93므621,638 판결 이혼 등\n판시사항 | 심인성 음경발기부전증과 혼인파탄의 책임\n판결요지 | 심인성 음경발기부전증으로 인하여 일시적으로 발기불능 또는 삽입불능의 상태에 있다 하더라도 부부가 합심하여 전문의의 치료와 조력을 받는 경우 정상적인 성생활로 돌아갈 가능성이 있었다고 한다면, 그 정도의 성적 결함을 지닌 부에 대하여 혼인파탄에 대한 책임을 지울 수 없다.\n판례파일 | 대법원 1993. 9. 14. 선고 93므621(본소),638(반소) 판결[20090220114507326].hwp\n---\n사건명 | 대법원 1992. 11. 10. 선고 92므68 판결 이혼 및 위자료\n판시사항 | 1. 「민법」 제840조제1호 소정의 “부정한 행위”의 의미 2. 고령이고 중풍으로 정교능력이 없어 실제로 정교를 갖지는 못하였다 하더라도 배우자 아닌 자와 동거한 행위는 배우자로서의 정조의무에 충실치 못한 것으로서 위 “가”항의 “부정한 행위”에 해당한다고 한 사례\n판결요지 | 1. 「민법」 제840조제1호 소정의 “부정한 행위”라 함은 배우자로서의 정조의무에 충실치 못한 일체의 행위를 포함하며 이른바 간통보다는 넓은 개념으로서 부정한 행위인지의 여부는 각 구체적 사안에 따라 그 정도와 상황을 참작하여 평가하여야 할 것이다. 2. 고령이고 중풍으로 정교능력이 없어 실제로 정교를 갖지는 못하였다 하더라도 배우자 아닌 자와 동거한 행위는 배우자로서의 정조의무에 충실치 못한 것으로서 위 “가”항의 “부정한 행위”에 해당한다고 한 사례.\n판례파일 | 대법원 1992. 11. 10. 선고 92므68 판결[20090220114620836].hwp\n---\n사건명 | 대법원 1991. 9. 13. 선고 91므85,92 판결 이혼, 이혼 등\n판시사항 | 1. 약혼단계에서의 부정이 「민법」 제840조제1호 소정의 이혼사유에 해당하는지 여부(소극) 2. 약혼기간 중 다른 남자와 정교하여 임신하고는 그 혼인 후 남편의 자인 양 속여 출생신고를 한 것이 그 혼인생활의 경과 등에 비추어 혼인을 계속할 수 없는 중대한 사유가 된다고 하기 어렵다고 한 사례\n판결요지 | 1. 「민법」 제840조제1호 소정의 재판상 이혼사유인 배우자에 부정한 행위가 있었을 때라 함은 혼인한 부부간의 일방이 부정한 행위를 한 때를 말하는 것이므로 혼인 전 약혼단계에서 부정한 행위를 한 때에는 위 제1호의 이혼사유에 해당한다고 할 수는 없다. 2. 약혼기간 중 다른 남자와 정교하여 임신하고는 그 혼인 후 남편의 자인 양 속여 출생신고를 한 것이 그 혼인생활의 경과 등에 비추어 혼인을 계속할 수 없는 중대한 사유가 된다고 하기 어렵다고 한 사례.\n판례파일 | 대법원 1991. 9. 13. 선고 91므85,92 판결[20090220133142011].hwp\n---\n사건명 | 대법원 1991. 7. 9. 선고, 90므1067 판결 이혼\n판시사항 | 1. 「민법」 제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의미와 그 판단기준 2. 혼인관계 파탄의 주된 책임자가 아닌 유책배우자의 이혼청구권 유무(적극)\n판결요지 | 1. 「민법」 제840조제6호 소정의 이혼사유인 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’라 함은 혼인의 본질에 상응하는 부부공동 생활관계가 회복할 수 없을 정도로 파탄되고, 그 혼인생활의 계속을 강제하는 것이 일방 배우자에게 참을 수 없는 고통이 되는 경우를 말하며, 이를 판단함에 있어서는 혼인계속의사의 유무, 파탄의 원인에 관한 당사자의 책임유무, 혼인생활의 기간, 자녀의 유무, 당사자의 연령, 이혼 후의 생활보장, 기타 혼인관계의 제반 사정을 두루 고려하여야 한다. 2. 부부의 혼인관계가 돌이킬 수 없을 정도로 파탄된 경우, 그 파탄의 원인이 이혼청구인에게 전적으로 또는 주된 책임을 물어야 할 사유로 조성되었거나 청구인의 책임이 피청구인의 책임보다 더 무겁다고 인정되지 않는 한 청구인의 이혼청구는 인용되어야 한다.\n판례파일 | 대법원 1991. 7. 9. 선고 90므1067 판결[20090220133223435].hwp\n---\n사건명 | 대법원 1991. 2. 26. 선고 89므365,367 판결 이혼 등\n판시사항 | 종가의 종손인 남편이 처의 임신불능을 이유로 이혼을 주장하여 혼인관계가 파탄된 경우 남편의 이혼심판청구를 기각하고 처의 반심판청구를 인용한 사례\n판결요지 | 처가 전자궁적출술의 수술결과 임신불능이 되자, 남편이 종가의 종손임을 이유로 이혼을 주장하여 혼인관계가 파탄에 이르렀다면, 그와 같이 된 데에는 출산불능이 법률상의 이혼사유로 되지 아니하는 이상 남편 측에게 보다 더 큰 책임이 있다고 하여 남편의 이혼심판청구를 기각하고 처의 반심판청구를 인용한 사례.\n판례파일 | 대법원 1991. 2. 26. 선고 89므365,367(반심) 판결[20090220133257360].hwp\n---\n사건명 | 대법원 1991. 12. 24. 선고 91므627 판결 이혼\n판시사항 | 1. 배우자 일방이 불치의 정신병에 이환되어 가정 구성원 전체가 감당하기 어려운 고통을 받는 경우 「민법」 제840조제6호 소정의 재판상 이혼사유에 해당하는지 여부(적극) 2. 처가 정신분열증 치료를 위하여 친정으로 가면서 장모가 사위에게 새출발을 하라고 말하여 부가 그 직후부터 다른 여자와 동거하고 있는데 처의 정신분열증은 현재까지도 완치되지 아니하여 정상적인 가정생활이 어렵다면 「민법」 제840조제6호 소정의 재판상 이혼사유에 해당한다고 본 사례\n판결요지 | 1. 가정은 단순히 부부만의 공동체에 지나지 않는 것이 아니고 그 자녀 등 이에 관계된 모든 구성원의 공동생활을 보호하는 기능을 가진 것으로서 부부 중 일방이 불치의 정신병에 이환되었고 그 질환이 다른 질환처럼 단순히 애정과 정성으로 간호될 수 있거나 예후가 예측될 수 있는 것이 아니고 그 가정의 구성원 전체에게 끊임없는 정신적, 육체적 희생을 요구하는 외에도 치료를 위한 많은 재정적 지출을 요하고 그로 인한 다른 가족들의 고통이 언제 끝날지 모르는 상태에 이르기까지 하였다면, 온 가족이 헤어날 수 없는 고통을 받더라도 상대방 배우자는 배우자 간의 애정에 터잡은 의무에 따라 한정 없이 참고 살아가라고 강요할 수는 없는 것이므로, 이는 「민법」 제840조제6호 소정의 재판상 이혼사유에 해당한다. 2. 부가 처의 정신분열증의 치료를 위하여 나름대로의 노력을 기울였으나 치료되지 아니하여 처가 정신분열증 치료를 위하여 친정으로 가면서 장모가 사위에게 새출발을 하라고 말하여 처와의 혼인관계가 사실상 종료된 것으로 믿은 부가 그 직후부터 다른 여자와 동거하면서 처에게 치료비나 생활비 등을 지급하지 아니하고 소식마저 끊고 지냈으며 처의 정신분열증은 현재까지도 완치되지 아니한 상태이고 일시 호전된다 하더라도 재발이 예상되어 정상적인 가정생활은 어렵다면, 그 혼인관계는 어느 쪽에도 책임지울 수 없는 처의 정신분열증으로 인하여 처가 친정으로 돌아간 때부터 파탄에 이르러 현재까지 그러한 상태가 계속되고 있다고 보아, 「민법」 제840조제6호 소정의 재판상 이혼사유에 해당한다고 본 사례.\n판례파일 | 대법원 1991. 12. 24. 선고 91므627 판결[20090220133014724].hwp\n---\n사건명 | 대법원 1991. 1. 15. 선고 90므446 판결 이혼\n판시사항 | 배우자 일방이 불치의 정신병에 이환되어 가정구성원 전체가 감당하기 어려운 고통을 받는 경우 타방배우자의 이혼청구를 인용한 사례\n판결요지 | 가정은 단순히 부부만의 공동체에 지나지 않는 것이 아니고 그 자녀 등 모든 구성원의 공동생활을 보호하는 기능을 가진 것으로서 부부 중 일방이 불치의 정신병에 이환되었고 그 질환이 단순히 애정과 정성으로 간호되거나 예후가 예측될 수 있는 것이 아니고 그 가정의 구성원 전체에게 끊임없는 정신적, 육체적 희생을 요구하는 것이며 경제적 형편에 비추어 많은 재정적 지출을 요하고 그로 인한 다른 가족들의 고통이 언제 끝날지 모르는 상태에까지 이르렀다면, 온 가족이 헤어날 수 없는 고통을 받더라도 타방배우자는 배우자간의 애정에 터잡은 의무에 따라 한정 없이 참고 살아가라고 강요할 수는 없는 것이고, 혼인관계가 해소되는 경우 불치의 질환에 이환된 일방이 배우자로부터의 원조가 제한되게 됨에 따라 극심한 경제적 고통을 받게 되고 보호를 받을 수 없게 되는 사정이 있더라도 이는 이혼당사자간의 재산분할청구 등 개인 간 또는 사회적인 부양의 문제로 어느 정도의 지원을 기대할 수 있을 뿐이다.\n판례파일 | 대법원 1991. 1. 15. 선고 90므446 판결[20090220133327391].hwp\n---\n사건명 | 대법원 1991. 1. 11. 선고 90므552 판결 이혼\n판시사항 | 부부가 20여 년간 별거하면서 각자 다른 사람과 동거하는 경우 혼인을 계속할 수 없는 중대한 사유에 해당한다고 본 사례\n판결요지 | 피청구인(처)이 조직한 계가 깨어진 뒤로부터 빚을 지게 됨으로써 1966. 10경 집을 나가 청구인(남편)의 귀가종용에 응하지 아니하여 청구인은 피청구인이 가출한 지 1년쯤 될 무렵부터 다른 여자와 내연관계를 맺어 오늘에 이르고 있고, 한편 피청구인도 1972년경부터 다른 남자와 동거하고 있어 청구인과 피청구인이 20여 년간을 부부로서의 실체 없이 지내 온 것이라면, 이 혼인은 돌이킬 수 없을 정도로 파탄되었다고 할 것이고, 그 책임이 반드시 어느 쪽이 더 크다고 할 수 없는 만큼 「민법」 제840조제6호 소정의 혼인을 계속 할 수 없는 중대한 사유가 된다고 할 것이다.\n판례파일 | 대법원 1991. 1. 11. 선고 90므552 판결[20090220133401384].hwp\n---\n사건명 | 대법원 1990. 9. 25. 선고 89므112 판결 이혼\n판시사항 | 1. 이혼에 합의하고 위자료 명목의 금전을 주고받은 것만으로 「민법」 제840조제1항제6호의 재판상 이혼사유에 해당하는지 여부(소극) 2. 혼인파탄의 유책배우자가 상대방이 그 갈등을 해소하려는 과정에서 저지른 잘못을 이유로 재판상 이혼청구를 할 수 있는지 여부(소극)\n판결요지 | 1. 혼인생활 중 부부가 일시 이혼에 합의하고 위자료 명목의 금전을 주고받았더라도 그것으로 인하여 부부관계가 돌이킬 수 없을 정도로 파탄되어 부부쌍방이 이혼의 의사로 사실상 부부관계의 실체를 해소한 채 생활하여 왔다는 등의 특별한 사정이 없다면 그러한 이혼합의 사실의 존재만으로는 이를 「민법」 제840조제1항제6호의 재판상 이혼사유인 혼인을 계속할 수 없는 중대한 사유에 해당한다고는 할 수 없다. 2. 일방 배우자의 책임 있는 사유(악의의 유기)로 인하여 혼인생활이 파탄에 빠지게 된 이후에 그 갈등을 해소하려는 과정에서 상대방이 재판상 이혼사유에 해당할 수도 있는 잘못(직계존속에 대한 폭행)을 저질렀더라도 그 잘못이 상대방의 유책사유로 인한 혼인의 파탄과는 관계없이 저질러졌다거나 그 정도가 상대방의 유책사유에 비하여 현저하게 책임이 무거운 것이라는 등의 특별한 사정이 없는 한 혼인을 파탄시킨 유책배우자가 이를 사유로 삼아 이혼을 청구할 수는 없는 것이고 그러한 갈등이 쌓여서 혼인관계가 돌이킬 수 없을 정도에 이르렀다 하여도 상대방이 사실은 혼인을 계속할 의사 없이 오로지 배우자를 괴롭힐 의사로 표면적으로만 이혼에 응하지 아니하고 있다는 등의 특별한 사정이 있는 경우가 아니라면 혼인을 파탄에 이르게 한 사유에 관하여 당초 책임 있는 배우자는 「민법」 제840조제1항제6호의 사유가 있다 하여 이혼을 청구할 수 없다.\n판례파일 | 대법원 1990. 9. 25. 선고 89므112 판결[20090220133526899].hwp\n---\n사건명 | 대법원 1990. 7. 24. 선고 89므1115 판결 이혼\n판시사항 | 캬바레에서 다른 남자를 사귀었다는 등의 사실만으로는 「민법」 제840조제1호 소정의 부정한 행위에 해당하지 않는다고 본 사례\n판결요지 | 피청구인이 캬바레에 춤을 추러 갔다가 그 곳에서 다른 남자를 만나 알게 되어 친하게 되고 그 남자와 기차를 타고 대천에서 서울에 있는 피청구인의 집까지 동행한 사실만으로는 피청구인이 「민법」 제840조제1호 소정의 부정한 행위를 한 것으로 단정할 수 없다.\n판례파일 | 대법원 1990. 7. 24. 선고 89므1115 판결[20090220133615231].hwp\n---\n사건명 | 대법원 1990. 3. 23. 선고 89므1085 판결 이혼 및 위자료\n판시사항 | 남편의 행패 등을 견디지 못하고 가출한 처에게 귀속사유가 없다고 본 사례\n판결요지 | 처가 남편의 무관심과 행패, 사망한 전처 소생의 딸을 양육하는 과정에서의 질책, 폭언 등에 견디지 못하고 친정으로 돌아간 것이라면 처의 위와 같은 가출은 그에게 귀책사유가 될 수 없다.\n판례파일 | 대법원 1990. 3. 23. 선고 89므1085 판결[20090220133645540].hwp\n---\n사건명 | 대법원 1990. 2. 13. 선고 88므504,511 판결 이혼 등\n판시사항 | 배우자의 결백을 알면서도 간통죄로 고소하고 제3자에게 거짓진술을 부탁한 행위가 재판상 이혼사유에 해당한다고 본 사례\n판결요지 | 남편이, 처와 제3자와의 관계가 결백함을 알면서도 처를 간통죄로 고소하고 위 제3자 등으로 하여금 간통사실 등에 관한 거짓진술을 하도록 부탁함으로써 혼인관계가 파탄에 이르게 하였다면 그 행위는 「민법」 제840조 소정의 배우자로부터 심히 부당한 대우를 받은 때 또는 기타 혼인을 계속하기 어려운 중대한 사유가 있을 때에 해당한다.\n판례파일 | 대법원 1990. 2. 13. 선고 88므504,511(반심) 판결[20090220133721590].hwp\n---\n사건명 | 대법원 1990. 11. 9. 선고 90므583,590 판결 이혼 등\n판시사항 | 남편이 정신이상의 증세가 있는 처를 두고 가출하여 비구승이 된 것을 악의의 유기라고 본 사례\n판결요지 | 청구인의 어머니가 며느리인 피청구인을 데리고 절에 기도드리러 가서 비정상적 행동을 하자 피청구인이 갑자기 정신이상의 증세를 보이기 시작하여 지금까지 계속 재발을 반복해 왔는데, 청구인의 노력에도 불구하고 피청구인이 청구인의 종교인 불교에 대하여 계속 적대적인 태도를 취하여 왔으며 이러한 사정으로 청구인이 이혼을 요구하였으나 피청구인이 불응하자 청구인은 집을 나와 입산하여 비구승이 됨으로써 부부가 10년 넘게 별거하게 되고 현재에 이르러서는 서로의 배타적 신앙생활로 인한 애정의 결핍과 장기간의 별거로 혼인관계가 돌이킬 수 없는 파탄에 빠져있는 것이라면, 이러한 파탄은 청구인이 정신적으로 완전하지 아니한 피청구인을 악의로 유기함에서 비롯되었다고 본 원심의 판단은 수긍된다.\n판례파일 | 대법원 1990. 11. 9. 선고 90므583,90므590 판결[20090220133436722].hwp\n---\n사건명 | 대법원 1989. 10. 13. 선고 89므785 판결 이혼, 양육자지정\n판시사항 | 1. 남편에 대한 부당한 대우가 아니어서 처에게 혼인파탄의 책임이 없다고 본 사례 2. 혼인파탄에 대한 유책배우자의 이혼청구 가부(소극)\n판결요지 | 1. 처가 남편에게 여러 차례 욕을 하고 직장으로 남편을 찾아가 행패를 부리거나 직장으로 전화를 하여 비방한 것이 남편이 전에 제기하였던 이혼심판청구가 기각된 후에도 다른 여자와 가까이 지내면서 처와의 재화합을 위한 노력을 전혀 하지 않고 있는 데에 그 원인이 있었다면 위와 같은 처의 행위만으로는 처가 남편을 부당하게 대우하였다거나 처의 책임 있는 사 유로 혼인생활이 회복하기 어려울 정도로 파탄되었다고 볼 수 없다. 2. 「민법」 제840조제6호 소정의 이혼사유에 관하여 오로지 또는 주로 책임이 있는 일방당사자가 하는 이혼청구는 원칙적으로 허용되지 않는다.\n판례파일 | 대법원 1989. 10. 13. 선고 89므785 판결[20090220133916221].hwp\n---\n사건명 | 대법원 1987. 8. 18. 선고 87므33,34 판결 이혼\n판시사항 | 「민법」 제840조제6호 소정의 ‘혼인을 계속하기 어려운 중대한 사유가 있을 때’의 의의\n판결요지 | 「민법」 제840조제6호 소정의 이혼사유인 혼인을 계속하기 어려운 중대한 사유가 있을 때라 함은 부부간의 애정과 신뢰가 바탕이 되어야 할 혼인의 본질에 상응하는 부부공동생활 관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활을 계속을 강제하는 것이 일방배우자에게 참을 수 없는 고통이 되는 경우를 말한다.\n판례파일 | 대법원 1987. 8. 18. 선고 87므33,34 판결[20090220133957849].hwp\n---\n사건명 | 대법원 1987. 7. 21. 선고 87므24 판결 이혼 및 위자료\n판시사항 | 「민법」 제840조제6호 소정의 이혼사유인 “혼인을 계속하기 어려운 중대한 사유가 있는 때”의 의미와 그 판단기준\n판결요지 | 「민법」 제840조제6호 소정의 이혼사유인 혼인을 계속하기 어려운 중대한 사유가 있는 때라 함은 부부간의 애정과 신뢰가 바탕이 되어야 할 혼인의 본질에 상응하는 부부공동생활관계가 회복할 수 없을 정도로 파탄되고 그 혼인생활의 계속을 강제하는 것이 일방배우자에게 참을 수 없는 고통이 되는 경우를 말하며, 이를 판단함에 있어서는 그 파탄의 정도, 혼인계속의사의 유무, 파탄의 원인에 관한 당사자의 책임유무, 혼인생활의 기간, 자녀의 유무, 당사자의 연령, 이혼후의 생활보장 기타 혼인관계의 제반사정을 두루 고려하여야 한다.\n판례파일 | 대법원 1987. 7. 21. 선고 87므24 판결[20090220134033305].hwp"
     }
   ],
   "capturesReviewed": {
-    "evidence-이혼-사유-별거-2년-1.png": "국가법령정보센터 민법 화면, 제826조(부부간의 의무) 전문 표시 — 동거·부양·협조 의무와 동거장소 협의 조항",
-    "evidence-이혼-사유-별거-2년-2.png": "국가법령정보센터 민법 화면, 제840조(재판상 이혼원인) 1~6호 전문 표시 — 6호 '기타 혼인을 계속하기 어려운 중대한 사유'까지 확인됨, 3년 이상 별거 관련 별도 조항 없음"
-  }
+    "evidence-이혼-사유-별거-2년-1.png": "국가법령정보센터 화면. 민법 제826조(부부간의 의무) 조문 전체(①~④, ③④는 삭제)와 시행일 2026.3.17., 개정 이력이 보여요.",
+    "evidence-이혼-사유-별거-2년-2.png": "국가법령정보센터 화면. 민법 제840조(재판상 이혼원인) 1호부터 6호까지 전 목록과 1990.1.13. 개정 표시가 보여요.",
+    "evidence-이혼-사유-별거-2년-3.png": "법제처 생활법령정보 '재판상 이혼 사유' 본문 탭 화면. 민법 제840조가 여섯 가지 사유를 규정한다는 안내와 1호 부정행위 요건·판례 목록이 보여요.",
+    "evidence-이혼-사유-별거-2년-4.png": "국가법령정보센터 화면. 민법 제842조(기타 원인으로 인한 이혼청구권의 소멸) 조문 한 줄과 6월·2년 제척기간 문구가 보여요.",
+    "evidence-이혼-사유-별거-2년-5.png": "법제처 생활법령정보 결혼이민자 카테고리 법령해석례 화면. 혼인을 계속하기 어려운 질병과 정당한 이유 없는 가출에 관한 질의응답 두 건이 6개월·5년 등 숫자와 함께 보여요.",
+    "evidence-이혼-사유-별거-2년-6.png": "법제처 생활법령정보 이혼 카테고리 판례 탭 화면. 대법원 2014. 11. 20. 선고 2011므2997 전원합의체 판결의 판시사항·판결요지(제3자의 부정행위와 부부공동생활 파탄)가 보여요.",
+    "evidence-이혼-사유-별거-2년-7.png": "법제처 생활법령정보 이혼 카테고리 판례 탭 화면. 대법원 2005. 12. 23. 선고 2005므1689 판결의 판시사항·판결요지(혼인을 계속하기 어려운 중대한 사유)가 보여요."
+  },
+  "exampleValues": [],
+  "exampleNote": ""
 }

@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, type CSSProperties } from "react";
 import "./template.css";
 import { Toc, Faq, Decide, StepBar } from "./Interactive";
 import { QuickCalc } from "./quick";
@@ -133,8 +133,9 @@ function Widget({ w, id }: { w: SectionWidget; id: string }) {
     case "decide":
       return <Decide w={w} />;
     case "flow":
+      // 정본 CSS 는 상자 3개(1fr auto 1fr auto 1fr) 고정이라 4단계면 둘째 줄로 깨졌다 — 단계 수만큼 열을 만든다 (2026-09-16)
       return (
-        <div className="flow viz">
+        <div className="flow viz" style={{ ["--flow-cols" as string]: w.steps.map(() => "1fr").join(" auto ") } as CSSProperties}>
           {w.steps.map((s, i) => (
             <Fragment key={i}>
               {i > 0 && <div className="arr">→</div>}

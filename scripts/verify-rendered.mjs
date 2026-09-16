@@ -57,7 +57,7 @@ if (!slugs.length) {
 /** 정본 템플릿의 표 헤더 배경 (docs/moneywiki-article-template.html) */
 const TEMPLATE_TH_BG = "rgb(250, 250, 249)"; // #FAFAF9
 
-const browser = await chromium.launch();
+const browser = await chromium.launch({ headless: !process.env.PW_HEADED }); // 파이프라인 안에서는 창을 띄운다
 let failed = 0;
 
 for (const slug of slugs) {
