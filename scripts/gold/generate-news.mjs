@@ -1,57 +1,49 @@
 /**
- * 금시세 일일 기사 생성기 v2.
+ * 금시세 일일 기사 생성기 (v3, 2026-09-20)
  *
- * price-data 브랜치의 price.json(자체 갱신기 발행)을 읽어
- * src/data/gold-news/YYYY-MM-DD.json 을 만든다. 평일 10:15 KST 에
- * gold-news 워크플로가 실행하고, main에 커밋되면 Cloudflare Pages가
- * 재빌드하면서 /gold/news/YYYY-MM-DD 페이지가 생긴다.
+ * price-data 브랜치의 gold.json(한국금거래소 고시 + 1년 일별 이력) 과 price.json(KRX 도매·환율·국제·거시)
+ * 을 읽어 src/data/gold-news/YYYY-MM-DD.json 을 쓴다. 화면은 NewsView.tsx 가 그린다.
  *
- * v2: 상위 노출을 위한 기사 구조 개선.
- *  - 소제목(H2) 섹션 구조 (sections 필드)
- *  - 독자 문제 제기형 리드 + 단락 간 연결어
- *  - 날짜 기반으로 리드 문장을 순환시켜 매일 글이 달라지게 함
- *  - 살때·팔때 차이율, 1g 환산, 본전 계산 등 데이터에서 파생되는 인사이트
+ * 경쟁 언론사 기사(더페어·국제뉴스 등)는 "오늘 고시 숫자 + 국제 시세 + 달러·금리 한 문단"까지다.
+ * 이 글은 거기에 없는 것을 넣는다:
+ *  - 1년 일별 이력에서 계산한 위치: 30일·1년 최고/최저, n일 만에 최고/최저, 연속 상승/하락, 1주·1달·1년 변동
+ *  - 그래프 데이터(series) — 화면이 30일·1년 선을 그린다
+ *  - "왜 움직였나"를 데이터로: 국제 금값·환율·달러인덱스·미 10년물·유가의 실제 등락과 이론값 대 실제 고시
+ *  - 실전 숫자: 사자마자 팔면 손해액, 본전까지 필요한 상승률, 18K·14K 매입가와 이론값 차이
+ *  - 제목이 날마다 달라진다: 그날 가장 두드러진 사실 하나(예: "3주 만에 최저")를 제목에 넣는다
  *
- * 2026-09-09
- *  - 소매 숫자는 gold.json(한국금거래소, 스펙 5절)에서, 도매·국제·환율은 price.json 에서 온다.
- *    gold.json 을 못 받으면 옛 방식(price.json 의 종로 소매)으로 돌아간다.
- *  - 살 때 값은 부가세 포함이 규격이다(retail.vatIncludedBuy). 옛 규격(부가세 별도)이 오면
- *    여기서 ×1.1 한다. 어느 쪽이든 기사와 /gold 화면이 같은 숫자를 쓴다.
- *  - --require-today: 고시일이 오늘이 아니면 발행하지 않고 exit 3 (전일 숫자가 오늘 기사에
- *    들어가는 것을 막는다). 워크플로가 10:15·10:45·11:15 에 재시도한다.
- *  - --price / --gold <경로|URL>: 로컬 검증용. 기본은 price-data 브랜치 raw URL.
+ * 원칙:
+ *  - 모든 숫자는 gold.json·price.json 에서만 온다. 값이 없는 문장·절은 통째로 뺀다.
+ *  - 등락의 "이유"는 단정하지 않는다. 지표의 실제 움직임과 일반적으로 알려진 방향(달러 강세면 금값 부담 등)만 쓴다.
+ *  - 살 때 값은 부가세 포함(retail.vatIncludedBuy). 옛 규격이 오면 여기서 ×1.1 한다.
+ *  - --require-today: 고시일이 오늘이 아니면 발행하지 않고 exit 3.
+ *  - 기존 기사가 있으면 고시일이 바뀌었을 때만 다시 쓴다(publishedAt 유지). --force 면 무조건 다시 쓴다.
  *
- * 원칙: 모든 숫자는 gold.json·price.json 에서만 온다. 등락의 "이유"처럼 데이터에
- * 없는 주장은 쓰지 않는다. 값이 없는 항목의 문장·섹션은 통째로 생략한다.
- *
- * 사용법: node scripts/gold/generate-news.mjs [출력 디렉토리] [--force] [--require-today] [--price <경로|URL>] [--gold <경로|URL>]
+ * 사용법: node scripts/gold/generate-news.mjs [출력 디렉토리] [--force] [--require-today] [--date YYYY-MM-DD] [--price <경로|URL>] [--gold <경로|URL>]
  */
 
 import fs from "node:fs";
 import path from "node:path";
 
-const PRICE_URL =
-  "https://raw.githubusercontent.com/hyunjun82/moneywiki/price-data/price.json";
-const GOLD_URL =
-  "https://raw.githubusercontent.com/hyunjun82/moneywiki/price-data/gold.json";
+const PRICE_URL = "https://raw.githubusercontent.com/hyunjun82/moneywiki/price-data/price.json";
+const GOLD_URL = "https://raw.githubusercontent.com/hyunjun82/moneywiki/price-data/gold.json";
 
 /* ── 인자 ── */
 const argv = process.argv.slice(2);
-const flagValue = (name) => {
-  const i = argv.indexOf(name);
-  return i >= 0 && i + 1 < argv.length ? argv[i + 1] : null;
+const VALUE_FLAGS = new Set(["--price", "--gold", "--date"]);
+const valueOf = (flag) => {
+  const i = argv.indexOf(flag);
+  return i >= 0 && argv[i + 1] && !argv[i + 1].startsWith("--") ? argv[i + 1] : null;
 };
-const PRICE_SRC = flagValue("--price") ?? PRICE_URL;
-const GOLD_SRC = flagValue("--gold") ?? GOLD_URL;
-const VALUE_FLAGS = new Set(["--price", "--gold"]);
-/** 출력 폴더. 플래그와 플래그 값을 경로로 오인하지 않도록 걸러낸다. */
+const PRICE_SRC = valueOf("--price") ?? PRICE_URL;
+const GOLD_SRC = valueOf("--gold") ?? GOLD_URL;
 const OUT_DIR =
-  argv.find((a, i) => !a.startsWith("--") && !(i > 0 && VALUE_FLAGS.has(argv[i - 1]))) ||
-  "src/data/gold-news";
+  argv.find((a, i) => !a.startsWith("--") && !(i > 0 && VALUE_FLAGS.has(argv[i - 1]))) || "src/data/gold-news";
 const FORCE = argv.includes("--force");
 const REQUIRE_TODAY = argv.includes("--require-today");
 const GRAM_PER_DON = 3.75;
 
+/* ── 유틸 ── */
 const won = (n) => Math.round(n).toLocaleString("ko-KR");
 const kstNow = () => new Date(Date.now() + 9 * 3600 * 1000).toISOString().replace("Z", "+09:00");
 const kstDate = () => new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
@@ -59,14 +51,22 @@ const korDate = (iso) => {
   const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || "");
   return m ? `${Number(m[2])}월 ${Number(m[3])}일` : "";
 };
+const shiftDate = (iso, days) => {
+  const d = new Date(`${iso}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + days);
+  return d.toISOString().slice(0, 10);
+};
+const daysBetween = (a, b) => Math.round((new Date(`${b}T00:00:00Z`) - new Date(`${a}T00:00:00Z`)) / 86400000);
+const pct1 = (now, before) => (before ? Math.round(((now - before) / before) * 1000) / 10 : null);
+const signed = (n, unit = "") => (n > 0 ? `+${won(n)}${unit}` : n < 0 ? `-${won(Math.abs(n))}${unit}` : `0${unit}`);
+const signedPct = (p) => (p > 0 ? `+${p}%` : `${p}%`);
+const num = (v) => (typeof v === "number" && Number.isFinite(v) ? v : null);
 
-const today = kstDate();
+/* --date YYYY-MM-DD: 그 날짜 기사로 쓴다(재생성·검증용). 평소엔 오늘. */
+const today = /^\d{4}-\d{2}-\d{2}$/.test(valueOf("--date") ?? "") ? valueOf("--date") : kstDate();
 const outPath = path.join(OUT_DIR, `${today}.json`);
 
-/**
- * 이미 오늘 기사가 있어도, 그 사이 국내 고시가가 새로 나왔으면 숫자를 정정한다.
- * 발행 시각(publishedAt)은 처음 것을 유지하고 내용만 정확해진다.
- */
+/* ── 기존 기사 (정정용) ── */
 let existing = null;
 if (fs.existsSync(outPath)) {
   try {
@@ -77,7 +77,7 @@ if (fs.existsSync(outPath)) {
 }
 const existingQuoteDate = existing?.quoteDate ?? null;
 
-/* ── price.json (도매·국제·환율) + gold.json (소매) ── */
+/* ── 자료 읽기 ── */
 const loadJson = async (src, label) => {
   if (/^https?:/.test(src)) {
     const res = await fetch(src, { signal: AbortSignal.timeout(20000) });
@@ -97,10 +97,7 @@ try {
   gold = null;
 }
 
-/**
- * 소매 숫자를 한 모양으로 맞춘다: { source, sourceUrl, quoteDate, round, vatIncludedBuy, note, items }
- * items 는 화면(RetailItem)과 같은 규격 — change 는 절댓값, 방향은 dir.
- */
+/* ── 소매 숫자를 한 모양으로 ── */
 const toQuote = (price, change) => {
   if (typeof price !== "number" || !Number.isFinite(price) || price <= 0) return null;
   const c = typeof change === "number" && Number.isFinite(change) ? change : 0;
@@ -117,42 +114,50 @@ const retailSrc = gold
         sourceUrl: r.sourceUrl ?? "https://www.koreagoldx.co.kr/price/gold",
         quoteDate: l.date,
         round: l.round,
+        time: l.time ?? null,
         vatIncludedBuy: true,
         note: r.note ?? "한국금거래소 고시. 살 때는 부가세 10% 포함, 하루 여러 차례 고시됩니다.",
         items: [
           { key: "gold24", name: "순금 24K", userSell: toQuote(l.sell, c.sell), userBuy: toQuote(l.buy, c.buy) },
           { key: "gold18", name: "18K", userSell: toQuote(l.k18, c.k18), userBuy: null },
           { key: "gold14", name: "14K", userSell: toQuote(l.k14, c.k14), userBuy: null },
-          { key: "platinum", name: "백금", userSell: toQuote(r.platinum?.sell, mchg(r.platinum?.sell, r.platinum?.prevSell)), userBuy: toQuote(r.platinum?.buy, mchg(r.platinum?.buy, r.platinum?.prevBuy)) },
-          { key: "silver", name: "은", userSell: toQuote(r.silver?.sell, mchg(r.silver?.sell, r.silver?.prevSell)), userBuy: toQuote(r.silver?.buy, mchg(r.silver?.buy, r.silver?.prevBuy)) },
-        ],
+          {
+            key: "platinum",
+            name: "백금",
+            userSell: toQuote(r.platinum?.sell, mchg(r.platinum?.sell, r.platinum?.prevSell)),
+            userBuy: toQuote(r.platinum?.buy, mchg(r.platinum?.buy, r.platinum?.prevBuy)),
+          },
+          {
+            key: "silver",
+            name: "은",
+            userSell: toQuote(r.silver?.sell, mchg(r.silver?.sell, r.silver?.prevSell)),
+            userBuy: toQuote(r.silver?.buy, mchg(r.silver?.buy, r.silver?.prevBuy)),
+          },
+        ].filter((it) => it.userSell || it.userBuy),
       };
     })()
   : {
-      source: data?.retail?.source ?? "종로금거래소",
-      sourceUrl: data?.retail?.sourceUrl ?? "https://www.jongrogx.com/",
-      quoteDate: data?.retail?.quoteDate ?? null,
+      source: data.retail?.source ?? "종로금거래소",
+      sourceUrl: data.retail?.sourceUrl ?? "http://www.jongrogx.com/",
+      quoteDate: data.retail?.quoteDate ?? null,
       round: null,
-      vatIncludedBuy: data?.retail?.vatIncludedBuy === true,
-      note: data?.retail?.note ?? null,
-      items: data?.retail?.items ?? [],
+      time: null,
+      vatIncludedBuy: data.retail?.vatIncludedBuy === true,
+      note: data.retail?.note ?? "",
+      items: Array.isArray(data.retail?.items) ? data.retail.items : [],
     };
 
 const incomingQuoteDate = retailSrc.quoteDate ?? null;
 
 if (REQUIRE_TODAY && incomingQuoteDate !== today) {
-  console.log(
-    `당일 고시 아직 없음 — 고시일 ${incomingQuoteDate ?? "없음"} ≠ 오늘 ${today}. 발행하지 않음 (exit 3)`
-  );
+  console.log(`당일 고시 아직 없음 — 고시일 ${incomingQuoteDate ?? "없음"} ≠ 오늘 ${today}. 발행하지 않음 (exit 3)`);
   process.exit(3);
 }
 
 if (FORCE) console.log("--force: 기존 기사가 있어도 다시 생성합니다");
 if (existingQuoteDate !== null && !FORCE) {
   if (incomingQuoteDate && incomingQuoteDate !== existingQuoteDate) {
-    console.log(
-      `기사 정정: 고시일 ${existingQuoteDate} → ${incomingQuoteDate} — 같은 날짜 기사를 새 숫자로 다시 씁니다`
-    );
+    console.log(`기사 정정: 고시일 ${existingQuoteDate} → ${incomingQuoteDate} — 같은 날짜 기사를 새 숫자로 다시 씁니다`);
   } else {
     console.log(`이미 존재하고 고시일(${existingQuoteDate}) 변동 없음 — 생성 생략`);
     process.exit(0);
@@ -164,13 +169,9 @@ const find = (k) => items.find((it) => it.key === k);
 const g24 = find("gold24");
 const buyRaw = g24?.userBuy;
 const sell = g24?.userSell;
-if (!buyRaw?.price || !sell?.price) {
-  throw new Error("순금 24K 살 때/팔 때 값이 없음 — 기사 생성 중단");
-}
+if (!buyRaw?.price || !sell?.price) throw new Error("순금 24K 살 때/팔 때 값이 없음 — 기사 생성 중단");
 
-/* ── 살 때: 부가세 포함(실제 결제액)으로 통일 ──
- * 갱신기가 vatIncludedBuy: true 면 그대로, 옛 규격(부가세 별도 원문)이면 여기서 ×1.1.
- * 부가세를 뺀 원문 고시가는 buyEx 로 따로 둔다(국제 시세와 비교할 때 쓴다). */
+/* ── 살 때: 부가세 포함으로 통일 ── */
 const VAT_INCL = retailSrc.vatIncludedBuy === true;
 const inclOf = (q) => (VAT_INCL ? q.price : Math.round(q.price * 1.1));
 const buy = {
@@ -182,266 +183,333 @@ const buyIncl = buy.price;
 const buyEx = VAT_INCL ? (buyRaw.priceExVat ?? Math.round(buyRaw.price / 1.1)) : buyRaw.price;
 const vatWon = buyIncl - buyEx;
 
+const quoteDate = retailSrc.quoteDate ?? today;
 const kd = korDate(today);
-const quoteKd = korDate(retailSrc.quoteDate) || kd;
-/** "한국금거래소 9월 9일 2차 고시" / "종로금거래소 9월 9일 고시" */
+const quoteKd = korDate(quoteDate) || kd;
 const quoteLabel = `${retailSrc.source} ${quoteKd}${retailSrc.round ? ` ${retailSrc.round}차` : ""} 고시`;
-const dayNum = Number(today.slice(8, 10)); // 리드 문장 순환용
 
-/* ── 파생 수치 (전부 데이터에서 계산) ──
- *
- * 등락률은 전일가를 분모로 쓴다. 하락일 때 전일가는 price + change 이고,
- * 상승일 때는 price - change 다. (예전 코드는 방향 구분 없이 price - change 로
- * 계산해 하락일에 등락률이 부풀려졌다.)
- */
+/* 전일가 = 하락이면 price + change, 상승이면 price - change */
 const prevOf = (q) => (q.dir === "down" ? q.price + q.change : q.price - q.change);
 const pctOf = (q) => {
   const p = prevOf(q);
-  return q.change && p > 0 ? ((q.change / p) * 100).toFixed(2) : null;
+  return q.change && p > 0 ? Math.round((q.change / p) * 10000) / 100 : 0;
 };
-const buyPct = pctOf(buy);
-const sellPct = pctOf(sell);
-
-const gap = buyEx - sell.price;                     // 부가세 뺀 고시가끼리의 차이
-const gapPct = ((gap / buyEx) * 100).toFixed(1);
-const realGap = buyIncl - sell.price;               // 소비자가 체감하는 실제 간격
-const realGapPct = ((realGap / buyIncl) * 100).toFixed(1);
-const buyPerGram = won(buyIncl / GRAM_PER_DON);
-const sellPerGram = won(sell.price / GRAM_PER_DON);
-
+const signedChange = (q) => (q.dir === "down" ? -q.change : q.change);
 const moveWord = (q) =>
-  q.change === 0 || q.dir === "none"
-    ? "전일과 같다"
-    : `${won(Math.abs(q.change))}원 ${q.dir === "up" ? "올랐다" : "내렸다"}`;
-/** 연결형: "24,000원 내렸고" */
-const moveConn = (q) =>
-  q.change === 0 || q.dir === "none"
-    ? "전일과 같고"
-    : `${won(Math.abs(q.change))}원 ${q.dir === "up" ? "올랐고" : "내렸고"}`;
-/**
- * 살 때·팔 때 등락을 한 문장으로. 방향이 같으면 동사를 한 번만 써서
- * "…내렸다"가 두 번 반복되는 어색함을 없앤다.
- */
-const moveBoth = () => {
-  const amt = (q, p) => `${won(Math.abs(q.change))}원${p ? `(${p}%)` : ""}`;
-  const moved = (q) => q.change !== 0 && q.dir !== "none";
-  if (!moved(buy) && !moved(sell)) return "살 때와 팔 때 모두 전일과 같다";
-  if (moved(buy) && moved(sell) && buy.dir === sell.dir) {
-    const verb = buy.dir === "up" ? "올랐다" : "내렸다";
-    return `전일 대비 살 때는 ${amt(buy, buyPct)}, 팔 때는 ${amt(sell, sellPct)} ${verb}`;
+  q.change === 0 || q.dir === "none" ? "변동이 없다" : `${won(q.change)}원(${pctOf(q)}%) ${q.dir === "up" ? "올랐다" : "내렸다"}`;
+/** 연결형: "…올랐고" */
+const moveMid = (q) =>
+  q.change === 0 || q.dir === "none" ? "변동이 없고" : `${won(q.change)}원(${pctOf(q)}%) ${q.dir === "up" ? "올랐고" : "내렸고"}`;
+const korDateY = (iso) => (iso && iso.slice(0, 4) !== quoteDate.slice(0, 4) ? `${iso.slice(0, 4)}년 ${korDate(iso)}` : korDate(iso));
+const moveShort = (q) => (q.change === 0 || q.dir === "none" ? "보합" : `${q.dir === "up" ? "▲" : "▼"} ${won(q.change)}원`);
+
+const realGap = buyIncl - sell.price; // 소비자가 체감하는 간격 (부가세 포함 살 때 − 팔 때)
+const realGapPct = Math.round((realGap / buyIncl) * 1000) / 10;
+const breakevenPct = Math.round((realGap / sell.price) * 1000) / 10; // 팔 때가 여기까지 올라야 본전
+const gapEx = buyEx - sell.price;
+const gapExPct = Math.round((gapEx / buyEx) * 1000) / 10;
+const buyPerGram = buyIncl / GRAM_PER_DON;
+const sellPerGram = sell.price / GRAM_PER_DON;
+
+const k18 = find("gold18")?.userSell ?? null;
+const k14 = find("gold14")?.userSell ?? null;
+const pt = find("platinum");
+const ag = find("silver");
+
+/* ══════════════════════════════════════════════════════════════
+ * 1년 이력 통계 — gold.json history.daily (그날 마지막 고시)
+ * ══════════════════════════════════════════════════════════════ */
+const dailyAll = Array.isArray(gold?.history?.daily)
+  ? gold.history.daily.filter((d) => d?.date && num(d.buy) && num(d.sell)).sort((a, b) => a.date.localeCompare(b.date))
+  : [];
+/* 오늘 고시가 이력 마지막과 다르면(장중 정정) 마지막 점을 오늘 값으로 맞춘다 */
+if (dailyAll.length && dailyAll[dailyAll.length - 1].date === quoteDate) {
+  dailyAll[dailyAll.length - 1] = { ...dailyAll[dailyAll.length - 1], buy: buyIncl, sell: sell.price };
+}
+
+function computeStats() {
+  if (dailyAll.length < 5) return null;
+  const last = dailyAll[dailyAll.length - 1];
+  const from30 = shiftDate(quoteDate, -30);
+  const from365 = shiftDate(quoteDate, -365);
+  const win30 = dailyAll.filter((d) => d.date >= from30);
+  const win1y = dailyAll.filter((d) => d.date >= from365);
+  const ext = (arr, key, fn) =>
+    arr.reduce((best, d) => (best == null || fn(d[key], best[key]) ? d : best), null);
+  const hi30 = ext(win30, "buy", (a, b) => a > b);
+  const lo30 = ext(win30, "buy", (a, b) => a < b);
+  const hi1y = ext(win1y, "buy", (a, b) => a > b);
+  const lo1y = ext(win1y, "buy", (a, b) => a < b);
+  const hi30s = ext(win30, "sell", (a, b) => a > b);
+  const lo30s = ext(win30, "sell", (a, b) => a < b);
+
+  /* 기준 시점 값: 그 날짜 이하의 마지막 고시 */
+  const at = (iso) => {
+    let r = null;
+    for (const d of dailyAll) if (d.date <= iso) r = d;
+    return r;
+  };
+  const w1 = at(shiftDate(quoteDate, -7));
+  const m1 = at(shiftDate(quoteDate, -30));
+  const y1 = at(shiftDate(quoteDate, -365));
+  const ytdBase = at(`${quoteDate.slice(0, 4) - 1}-12-31`);
+  const covered = daysBetween(dailyAll[0].date, quoteDate);
+
+  /* 연속 상승/하락 일수 (살 때 기준, 그날 마지막 고시끼리) */
+  let streakDir = "none";
+  let streak = 0;
+  for (let i = dailyAll.length - 1; i >= 1; i--) {
+    const diff = dailyAll[i].buy - dailyAll[i - 1].buy;
+    const dir = diff > 0 ? "up" : diff < 0 ? "down" : "none";
+    if (dir === "none") break;
+    if (streakDir === "none") streakDir = dir;
+    if (dir !== streakDir) break;
+    streak++;
   }
-  // 방향이 다르거나 한쪽만 움직인 날
-  const conn = (q, p) =>
-    moved(q) ? `${amt(q, p)} ${q.dir === "up" ? "올랐고" : "내렸고"}` : "변동이 없고";
-  const end = (q, p) =>
-    moved(q) ? `${amt(q, p)} ${q.dir === "up" ? "올랐다" : "내렸다"}` : "변동이 없다";
-  return `전일 대비 살 때는 ${conn(buy, buyPct)}, 팔 때는 ${end(sell, sellPct)}`;
-};
 
-/* ── 리드: 날짜에 따라 순환 (매일 같은 문장 반복 방지) ── */
-const LEADS = [
-  `${kd} 순금 24K 한 돈은 살 때 ${won(buyIncl)}원(부가세 포함), 팔 때 ${won(sell.price)}원이다. ` +
-    `살 때 값에는 부가세 ${won(vatWon)}원이 들어 있고, 같은 금을 오늘 팔면 ${won(sell.price)}원을 ` +
-    `받는다. 두 금액이 ${won(realGap)}원이나 벌어지는 이유부터 정리했다.`,
-  `금을 사려는 사람과 팔려는 사람이 보는 숫자는 다르다. ${kd} 기준 순금 한 돈은 ` +
-    `살 때 ${won(buyIncl)}원(부가세 포함), 팔 때 ${won(sell.price)}원이다. ` +
-    `전일과 비교하면 살 때는 ${moveConn(buy)} 팔 때는 ${moveWord(sell)}.`,
-  `${kd} 순금 한 돈 매입가는 ${won(sell.price)}원이다. 반지든 골드바든 오늘 팔면 이 값이 ` +
-    `기준이 되고, 반대로 사려면 부가세까지 ${won(buyIncl)}원이 든다. 18K·14K 매입가와 ` +
-    `도매·국제 시세까지 오늘 숫자를 한자리에 모았다.`,
-];
-const lead = LEADS[dayNum % LEADS.length];
+  /* n일 만에 최고/최저: 오늘 값 이상(이하)이었던 마지막 날까지의 일수 */
+  const sinceHigher = (() => {
+    for (let i = dailyAll.length - 2; i >= 0; i--) if (dailyAll[i].buy >= last.buy) return daysBetween(dailyAll[i].date, quoteDate);
+    return covered;
+  })();
+  const sinceLower = (() => {
+    for (let i = dailyAll.length - 2; i >= 0; i--) if (dailyAll[i].buy <= last.buy) return daysBetween(dailyAll[i].date, quoteDate);
+    return covered;
+  })();
 
-/* ── 섹션 구성 ──
- * 소제목만 읽어도 핵심 숫자가 전달되도록 제목에 값을 넣는다.
- */
+  const range30 = hi30.buy - lo30.buy;
+  const pos30 = range30 > 0 ? Math.round(((last.buy - lo30.buy) / range30) * 100) : 50;
+
+  return {
+    covered,
+    hi30: { date: hi30.date, buy: hi30.buy },
+    lo30: { date: lo30.date, buy: lo30.buy },
+    hi30Sell: { date: hi30s.date, sell: hi30s.sell },
+    lo30Sell: { date: lo30s.date, sell: lo30s.sell },
+    hi1y: { date: hi1y.date, buy: hi1y.buy },
+    lo1y: { date: lo1y.date, buy: lo1y.buy },
+    pos30,
+    chg1w: w1 ? { won: last.buy - w1.buy, pct: pct1(last.buy, w1.buy), from: w1.date } : null,
+    chg1m: m1 ? { won: last.buy - m1.buy, pct: pct1(last.buy, m1.buy), from: m1.date } : null,
+    chg1y: y1 && covered >= 360 ? { won: last.buy - y1.buy, pct: pct1(last.buy, y1.buy), from: y1.date } : null,
+    chgYtd: ytdBase ? { won: last.buy - ytdBase.buy, pct: pct1(last.buy, ytdBase.buy), from: ytdBase.date } : null,
+    streak: { dir: streakDir, days: streak },
+    sinceHigher,
+    sinceLower,
+    isHi1y: covered >= 300 && last.buy >= hi1y.buy,
+    isLo1y: covered >= 300 && last.buy <= lo1y.buy,
+    isHi30: last.buy >= hi30.buy,
+    isLo30: last.buy <= lo30.buy,
+  };
+}
+const stats = computeStats();
+
+/* 오늘 회차별 고시 (장중 흐름) */
+const todayRounds = Array.isArray(gold?.retail?.quotes)
+  ? gold.retail.quotes.filter((q) => q.date === quoteDate).sort((a, b) => a.round - b.round)
+  : [];
+const intraday =
+  todayRounds.length >= 1
+    ? {
+        rounds: todayRounds.length,
+        first: { round: todayRounds[0].round, time: todayRounds[0].time, buy: todayRounds[0].buy, sell: todayRounds[0].sell },
+        last: {
+          round: todayRounds[todayRounds.length - 1].round,
+          time: todayRounds[todayRounds.length - 1].time,
+          buy: todayRounds[todayRounds.length - 1].buy,
+          sell: todayRounds[todayRounds.length - 1].sell,
+        },
+      }
+    : null;
+
+/* ── 제목에 넣을 "오늘의 한 가지 사실" ── */
+const spanWord = (days) => (days >= 360 ? "1년" : days >= 180 ? "6개월" : days >= 90 ? "3개월" : days >= 60 ? "두 달" : days >= 28 ? "한 달" : days >= 21 ? "3주" : days >= 14 ? "2주" : `${days}일`);
+function headline() {
+  if (stats) {
+    if (stats.isHi1y) return { short: "1년 최고", sentence: `살 때 기준으로 최근 1년 사이 가장 높은 값이다.` };
+    if (stats.isLo1y) return { short: "1년 최저", sentence: `살 때 기준으로 최근 1년 사이 가장 낮은 값이다.` };
+    if (stats.sinceHigher >= 14 && buy.dir === "up") return { short: `${spanWord(stats.sinceHigher)} 만에 최고`, sentence: `이 값 이상이었던 날은 ${won(stats.sinceHigher)}일 전이 마지막이라 ${spanWord(stats.sinceHigher)} 만의 최고가다.` };
+    if (stats.sinceLower >= 14 && buy.dir === "down") return { short: `${spanWord(stats.sinceLower)} 만에 최저`, sentence: `이 값 이하였던 날은 ${won(stats.sinceLower)}일 전이 마지막이라 ${spanWord(stats.sinceLower)} 만의 최저가다.` };
+    if (stats.isHi30 && stats.hi30.date !== stats.lo30.date) return { short: "한 달 최고", sentence: `최근 30일 중 가장 높은 살 때 값이다.` };
+    if (stats.isLo30 && stats.hi30.date !== stats.lo30.date) return { short: "한 달 최저", sentence: `최근 30일 중 가장 낮은 살 때 값이다.` };
+    if (stats.streak.days >= 3) return { short: `${stats.streak.days}일 연속 ${stats.streak.dir === "up" ? "상승" : "하락"}`, sentence: `살 때 값이 ${stats.streak.days}거래일 연속 ${stats.streak.dir === "up" ? "올랐다" : "내렸다"}.` };
+  }
+  const p = pctOf(buy);
+  if (buy.dir !== "none" && p >= 1) return { short: `하루 ${p}% ${buy.dir === "up" ? "급등" : "급락"}`, sentence: `하루 만에 ${p}% ${buy.dir === "up" ? "오른" : "내린"} 큰 폭의 움직임이다.` };
+  if (buy.dir === "none" && sell.dir === "none") return { short: "전일과 같은 보합", sentence: `살 때·팔 때 모두 전일과 같은 보합이다.` };
+  if (stats && stats.chg1w) return { short: `한 주 ${signedPct(stats.chg1w.pct)}`, sentence: `일주일 전(${korDate(stats.chg1w.from)})보다 ${signed(stats.chg1w.won, "원")}(${signedPct(stats.chg1w.pct)}) 움직였다.` };
+  return { short: `전일 대비 ${moveShort(buy)}`, sentence: `전일 대비 살 때 ${moveWord(buy)}.` };
+}
+const hl = headline();
+
+/* ══════════════════════════════════════════════════════════════
+ * 배경 지표: 국제 금값 · 환율 · 달러 · 금리 · 유가
+ * ══════════════════════════════════════════════════════════════ */
+const fx = data.fx ?? null;
+const ig = data.intl?.gold ?? null;
+const macro = data.macro ?? null;
+const dxy = macro?.dxy ?? null;
+const us10 = macro?.us10y ?? null;
+const wti = macro?.wti ?? null;
+const krx = data.krx?.latest ?? null;
+
+const upDown = (dir, up = "올랐다", down = "내렸다", flat = "변동이 없다") => (dir === "up" ? up : dir === "down" ? down : flat);
+const fxChangeWon = fx ? Math.abs(num(fx.change) ?? 0) : 0;
+const fxPctAbs = fx ? Math.abs(num(fx.changePct) ?? 0) : 0;
+const igPctAbs = ig ? Math.abs(num(ig.changePct) ?? 0) : 0;
+/* 국제 금값 × 환율 이론 변동률 */
+const theoryPct = ig && fx ? Math.round(((1 + (num(ig.changePct) ?? 0) / 100) * (1 + (num(fx.changePct) ?? 0) / 100) - 1) * 100 * 100) / 100 : null;
+const actualPct = buy.dir === "down" ? -pctOf(buy) : pctOf(buy);
+
+/* ══════════════════════════════════════════════════════════════
+ * 본문
+ * ══════════════════════════════════════════════════════════════ */
+
+/* 리드: 오늘 값 → 위치 → 배경, 세 문장 */
+const leadParts = [];
+leadParts.push(
+  `${quoteKd} 순금(24K) 한 돈은 살 때 ${won(buyIncl)}원(부가세 포함), 팔 때 ${won(sell.price)}원이다. 전일 대비 살 때는 ${moveMid(buy)} 팔 때는 ${moveWord(sell)}.`
+);
+if (stats) {
+  const posWord = stats.pos30 >= 80 ? "위쪽 끝" : stats.pos30 >= 60 ? "위쪽" : stats.pos30 >= 40 ? "중간" : stats.pos30 >= 20 ? "아래쪽" : "아래쪽 끝";
+  leadParts.push(
+    `${hl.sentence} 최근 30일 살 때 값은 ${won(stats.lo30.buy)}원(${korDate(stats.lo30.date)})에서 ${won(stats.hi30.buy)}원(${korDate(stats.hi30.date)}) 사이였고, 오늘은 그 범위의 ${posWord}(${stats.pos30}%)에 있다.`
+  );
+} else {
+  leadParts.push(hl.sentence);
+}
+if (ig && fx) {
+  let s = `밤사이 국제 금값은 ${igPctAbs}% ${upDown(ig.dir, "올랐고", "내렸고", "변동이 없었고")} 원/달러 환율은 ${fxChangeWon.toFixed(2)}원 ${upDown(fx.dir)}`;
+  const extra = [];
+  if (dxy) extra.push(`달러인덱스 ${signedPct(num(dxy.changePct) ?? 0)}`);
+  if (us10) extra.push(`미 10년물 금리 ${us10.price}%`);
+  s += extra.length ? `(${extra.join(", ")}).` : ".";
+  leadParts.push(s);
+}
+const lead = leadParts.join(" ");
+
 const sections = [];
 
-// 1. 순금 24K
+/* 1. 오늘 고시 */
 {
+  const ps = [];
+  let p1 = `${quoteLabel}${retailSrc.time ? `(${retailSrc.time.slice(0, 5)})` : ""} 기준 순금 1돈(3.75g)은 살 때 ${won(buyIncl)}원, 팔 때 ${won(sell.price)}원이다.`;
+  if (intraday && intraday.rounds >= 2) {
+    const d = intraday.last.buy - intraday.first.buy;
+    p1 += ` 오늘은 ${intraday.rounds}차례 고시됐고, 1차(${intraday.first.time.slice(0, 5)}) 살 때 ${won(intraday.first.buy)}원에서 ${intraday.last.round}차 ${won(intraday.last.buy)}원으로 장중 ${d === 0 ? "변동이 없었다" : `${won(Math.abs(d))}원 ${d > 0 ? "올랐다" : "내렸다"}`}.`;
+  } else if (intraday && intraday.rounds === 1) {
+    p1 += ` 오늘 첫 고시이며, 국제 시세와 환율에 따라 오후에 다시 고시될 수 있다.`;
+  }
+  ps.push(p1);
+  ps.push(
+    `살 때 ${won(buyIncl)}원에는 부가가치세 10%(${won(vatWon)}원)가 들어 있다. 부가세를 뺀 고시가는 ${won(buyEx)}원이다. 다른 사이트 숫자와 다르면 대개 부가세 포함 여부 차이다. 그램으로는 살 때 ${won(buyPerGram)}원, 팔 때 ${won(sellPerGram)}원이라 소량 거래는 그램으로 따지는 편이 정확하다.`
+  );
+  if (k18 || k14) {
+    const parts = [];
+    if (k18) parts.push(`18K ${won(k18.price)}원(${moveShort(k18)})`);
+    if (k14) parts.push(`14K ${won(k14.price)}원(${moveShort(k14)})`);
+    let p3 = `장롱 속 반지·목걸이를 판다면 순금이 아니라 제품 금 매입가가 기준이다. 오늘 1돈 매입가는 ${parts.join(", ")}이다.`;
+    const der = gold?.derived;
+    if (der && num(der.k18Gap) != null && num(der.k18Theory) != null) {
+      p3 += ` 18K는 금 함량 75%라 순금 매입가의 75%면 ${won(der.k18Theory)}원인데, 실제 고시는 그보다 ${won(Math.abs(der.k18Gap))}원 ${der.k18Gap >= 0 ? "높다" : "낮다"}.`;
+      if (num(der.k14Gap) != null && num(der.k14Theory) != null) p3 += ` 14K(58.5%)는 이론값 ${won(der.k14Theory)}원 대비 ${won(Math.abs(der.k14Gap))}원 ${der.k14Gap >= 0 ? "높다" : "낮다"}.`;
+    }
+    ps.push(p3);
+  }
   sections.push({
-    heading: `순금 한 돈 살 때 ${won(buyIncl)}원, 팔 때 ${won(sell.price)}원`,
-    paragraphs: [
-      `${quoteLabel} 기준 순금(24K) 1돈(3.75g)은 살 때 ${won(buyIncl)}원(부가세 포함), ` +
-        `팔 때 ${won(sell.price)}원이다. ${moveBoth()}.`,
-      `살 때 ${won(buyIncl)}원은 부가가치세 10%(${won(vatWon)}원)를 포함한 실제 결제 금액이다. ` +
-        `부가세를 뺀 고시가는 ${won(buyEx)}원이다. 다른 곳에서 본 시세와 숫자가 다르다면 대개 ` +
-        `부가세 포함 여부 차이 때문이다. 그램으로 환산하면 1g당 살 때 ${buyPerGram}원, ` +
-        `팔 때 ${sellPerGram}원이라 소량 거래는 그램 기준으로 따져보는 편이 정확하다.`,
-    ],
+    heading: `살 때 ${won(buyIncl)}원 · 팔 때 ${won(sell.price)}원 — ${quoteKd} 고시${intraday?.rounds ? ` ${intraday.rounds}차까지` : ""}`,
+    paragraphs: ps,
   });
 }
 
-// 1-2. 왜 움직였나 — 국제 시세 × 환율로 오늘 등락을 분해한다.
-//      해석을 지어내지 않고, 이미 수집한 숫자만으로 계산되는 인과만 쓴다.
-{
-  const ig = data.intl?.gold;
-  const fxPct = typeof data.fx?.changePct === "number" ? data.fx.changePct : null;
-  const intlPct = typeof ig?.changePct === "number" ? ig.changePct : null;
-
-  if (intlPct !== null && fxPct !== null) {
-    // 원화 금값 ≈ 달러 금값 × 환율 → 두 변동률을 곱하면 이론 변동률이 나온다.
-    const theory = ((1 + intlPct / 100) * (1 + fxPct / 100) - 1) * 100;
-    const actual = buyPct
-      ? buy.dir === "down"
-        ? -Number(buyPct)
-        : Number(buyPct)
-      : 0;
-    const diff = actual - theory;
-
-    const sign = (v) => (v > 0 ? "상승" : v < 0 ? "하락" : "보합");
-    const signVerb = (v) => (v > 0 ? "올랐고" : v < 0 ? "내렸고" : "움직이지 않았고");
-    /** 2.80 → "2.8", 0.50 → "0.5" (불필요한 0 제거) */
-    const abs1 = (v) => Number(Math.abs(v).toFixed(2)).toString();
-    /** 부호를 앞에 붙인 표기: -2.95 → "-2.95%" */
-    const pctStr = (v) => `${v >= 0 ? "+" : "-"}${abs1(v)}%`;
-    /** 환율은 소수점이 의미 있다: 7.5원을 8원으로 반올림하지 않는다 */
-    const fxWon = Number(Math.abs(data.fx.change ?? 0).toFixed(2)).toLocaleString("ko-KR");
-
-    const domesticWord =
-      actual > 0 ? "오른" : actual < 0 ? "내린" : "움직이지 않은";
-
-    const paras = [];
-
-    paras.push(
-      `국내 금값은 국제 금값과 원/달러 환율 두 가지로 움직인다. 달러로 매겨진 금값에 ` +
-        `환율을 곱해야 원화 값이 나오기 때문이다. 오늘은 국제 금값이 전일 대비 ${abs1(intlPct)}% ` +
-        `${signVerb(intlPct)} 원/달러 환율도 전일 종가보다 ${fxWon}원(${abs1(fxPct)}%) ` +
-        `${sign(fxPct)}했다.`
-    );
-
-    /* 이론치와 실제치의 관계를 사람 말로 옮긴다. 부호 조합마다 표현이 다르다. */
-    let compareWord;
-    if (Math.abs(diff) < 0.05) compareWord = "계산값과 사실상 같았다";
-    else if (actual < 0 && theory < 0)
-      compareWord = `계산값(${pctStr(theory)})보다 하락폭이 ${abs1(diff)}%p ${diff > 0 ? "작았다" : "컸다"}`;
-    else if (actual > 0 && theory > 0)
-      compareWord = `계산값(${pctStr(theory)})보다 상승폭이 ${abs1(diff)}%p ${diff > 0 ? "컸다" : "작았다"}`;
-    else compareWord = `계산값(${pctStr(theory)})과 방향이 달랐다`;
-
-    paras.push(
-      `두 변동을 곱하면 원화 기준 금값은 이론상 ${pctStr(theory)} 수준이 된다. 실제 ` +
-        `${retailSrc.source} 고시가는 ${pctStr(actual)}로, ${compareWord}. 국제 시세는 24시간 ` +
-        `움직이지만 국내 고시가는 하루 몇 차례만 정해지므로 반영에 시차가 있고, 국내 실물 수급도 ` +
-        `이 차이에 함께 반영된다.`
-    );
-
-    paras.push(
-      `그래서 국제 금값이 내려도 환율이 그만큼 오르면 국내 금값은 잘 안 내린다. 반대로 ` +
-        `국제 금값과 환율이 같은 방향으로 움직인 날은 국내 체감 변동이 커진다. 오늘은 ` +
-        `${
-          Math.abs(intlPct) < 0.05 || Math.abs(fxPct) < 0.05
-            ? "한쪽이 거의 움직이지 않아 다른 한쪽이 값을 끌고 간"
-            : intlPct * fxPct > 0
-              ? "두 요인이 같은 방향이라 변동이 그대로 전달된"
-              : "두 요인이 반대 방향이라 일부가 상쇄된"
-        } 날이다.`
-    );
-
-    sections.push({
-      heading:
-        actual === 0
-          ? `국제 금값 ${abs1(intlPct)}% ${sign(intlPct)}, 환율 ${fxWon}원 ${sign(fxPct)}`
-          : `오늘 금값이 ${domesticWord} 이유 — 국제 금값 ${abs1(intlPct)}% ${sign(intlPct)}, 환율 ${fxWon}원 ${sign(fxPct)}`,
-      paragraphs: paras,
-    });
-  }
+/* 2. 이력 속 위치 */
+if (stats) {
+  const ps = [];
+  ps.push(
+    `최근 30일 살 때 최고는 ${korDate(stats.hi30.date)} ${won(stats.hi30.buy)}원, 최저는 ${korDate(stats.lo30.date)} ${won(stats.lo30.buy)}원이다. 오늘 ${won(buyIncl)}원은 ${buyIncl >= stats.hi30.buy ? "그 최고가와 같다" : buyIncl <= stats.lo30.buy ? `최고보다 ${won(stats.hi30.buy - buyIncl)}원 낮은 최저가다` : `최고보다 ${won(stats.hi30.buy - buyIncl)}원 낮고 최저보다 ${won(buyIncl - stats.lo30.buy)}원 높다`}. 팔 때는 같은 기간 ${won(stats.lo30Sell.sell)}~${won(stats.hi30Sell.sell)}원 사이를 오갔다.`
+  );
+  const chg = [];
+  if (stats.chg1w) chg.push(`1주일 전보다 ${signed(stats.chg1w.won, "원")}(${signedPct(stats.chg1w.pct)})`);
+  if (stats.chg1m) chg.push(`한 달 전보다 ${signed(stats.chg1m.won, "원")}(${signedPct(stats.chg1m.pct)})`);
+  if (stats.chgYtd) chg.push(`올해 초보다 ${signed(stats.chgYtd.won, "원")}(${signedPct(stats.chgYtd.pct)})`);
+  if (stats.chg1y) chg.push(`1년 전보다 ${signed(stats.chg1y.won, "원")}(${signedPct(stats.chg1y.pct)})`);
+  if (chg.length) ps.push(`기간별로 보면 ${chg.join(", ")} 움직였다.`);
+  let p3 = "";
+  if (stats.covered >= 300) p3 += `최근 1년 최고는 ${korDateY(stats.hi1y.date)} ${won(stats.hi1y.buy)}원, 최저는 ${korDateY(stats.lo1y.date)} ${won(stats.lo1y.buy)}원이다. 오늘은 1년 최고보다 ${Math.abs(pct1(buyIncl, stats.hi1y.buy))}% 낮고 1년 최저보다 ${pct1(buyIncl, stats.lo1y.buy)}% 높다. `;
+  if (stats.streak.days >= 2) p3 += `살 때 값은 ${stats.streak.days}거래일 연속 ${stats.streak.dir === "up" ? "오르는" : "내리는"} 중이다. `;
+  else if (stats.streak.days === 1) p3 += `어제까지의 흐름과 반대 방향으로 움직인 첫날이다. `;
+  p3 += `위 그래프는 한국금거래소가 하루에 여러 번 내는 고시 중 그날 마지막 값을 이은 것이다.`;
+  ps.push(p3.trim());
+  sections.push({ heading: `최근 30일 ${won(stats.lo30.buy)}~${won(stats.hi30.buy)}원, 오늘은 ${hl.short}`, paragraphs: ps });
 }
 
-// 2. 18K·14K
-{
-  const g18 = find("gold18")?.userSell;
-  const g14 = find("gold14")?.userSell;
-  if (g18?.price && g14?.price) {
-    sections.push({
-      heading: `18K ${won(g18.price)}원 · 14K ${won(g14.price)}원 — 제품 금 매입가`,
-      paragraphs: [
-        `장롱에 있는 반지나 목걸이를 정리한다면 순금 시세보다 이 값이 기준이 된다. 오늘 ` +
-          `18K 1돈 매입가는 ${won(g18.price)}원, 14K는 ${won(g14.price)}원이다.`,
-        `18K·14K에 살 때 가격이 없는 것은 제품 금이 세공비가 포함된 제품 시세로 팔리기 ` +
-          `때문이다. 같은 무게라도 디자인과 매장에 따라 값이 달라져 하나의 고시가로 ` +
-          `묶이지 않는다. 반대로 팔 때는 순도와 실중량으로만 계산하므로 위 매입가가 기준선이다.`,
-      ],
-    });
+/* 3. 왜 움직였나 — 데이터로 */
+if (ig && fx) {
+  const ps = [];
+  ps.push(
+    `국내 금값은 국제 금값(달러/온스)에 원/달러 환율을 곱해 정해진다. 오늘 국제 금값은 온스당 ${won(ig.usdPerOz)}달러로 전일 종가보다 ${igPctAbs}% ${upDown(ig.dir, "올랐고", "내렸고", "변동이 없고")} 환율은 ${fx.usdkrw?.toLocaleString("ko-KR")}원으로 ${fxChangeWon.toFixed(2)}원(${fxPctAbs}%) ${upDown(fx.dir)}. 두 변동을 곱한 이론상 원화 금값 변동은 ${theoryPct == null ? "계산 불가" : signedPct(theoryPct)}이고, 실제 국내 살 때 고시는 ${signedPct(actualPct)}였다.` +
+      (theoryPct != null && Math.abs(theoryPct - actualPct) >= 0.3
+        ? ` 차이가 ${Math.abs(Math.round((actualPct - theoryPct) * 100) / 100)}%p 나는 것은 국제 시세가 24시간 움직이는 데 비해 국내 고시는 하루 몇 차례만 정해지고, 국내 실물 수급도 함께 반영되기 때문이다.`
+        : ` 국제 시세와 환율의 움직임이 국내 고시에 거의 그대로 반영된 날이다.`)
+  );
+  if (ig.krwPerDon) ps.push(`국제 금값을 환율로 환산하면 한 돈 ${won(ig.krwPerDon)}원이다. 국내 팔 때 ${won(sell.price)}원은 이보다 ${won(Math.abs(sell.price - ig.krwPerDon))}원 ${sell.price >= ig.krwPerDon ? "높고" : "낮고"}, 살 때 ${won(buyIncl)}원에는 부가세와 유통 마진이 얹혀 있다.`);
+  const mac = [];
+  if (dxy) mac.push(`달러인덱스는 ${dxy.price}으로 전일보다 ${Math.abs(num(dxy.changePct) ?? 0)}% ${upDown(dxy.dir)}`);
+  if (us10) mac.push(`미 10년물 국채금리는 ${us10.price}%로 ${Math.abs(num(us10.change) ?? 0).toFixed(2)}%p ${upDown(us10.dir)}`);
+  if (wti) mac.push(`WTI 유가는 배럴당 ${wti.price}달러로 ${Math.abs(num(wti.changePct) ?? 0)}% ${upDown(wti.dir)}`);
+  if (mac.length) {
+    let p = `달러와 금리도 금값을 좌우한다. ${mac.join(", ")}.`;
+    const notes = [];
+    if (dxy && dxy.dir !== "none") notes.push(`달러가 ${dxy.dir === "up" ? "강해지면" : "약해지면"} 달러로 값을 매기는 금은 다른 통화 보유자에게 ${dxy.dir === "up" ? "비싸져 수요가 줄고" : "싸져 수요가 늘어"} 금값에 ${dxy.dir === "up" ? "부담" : "힘"}이 되는 것이 일반적이다`);
+    if (us10 && us10.dir !== "none") notes.push(`금은 이자가 없어 국채금리가 ${us10.dir === "up" ? "오르면" : "내리면"} 상대적 매력이 ${us10.dir === "up" ? "떨어지는" : "커지는"} 쪽으로 작용한다`);
+    if (notes.length) p += ` ${notes.join(". ")}. 오늘 국제 금값의 ${igPctAbs}% ${upDown(ig.dir, "상승", "하락", "보합")}은 이런 지표들의 방향과 ${(dxy?.dir === "up") === (ig.dir === "down") || (us10?.dir === "up") === (ig.dir === "down") ? "대체로 맞물린다" : "반대로, 다른 요인이 더 컸다는 뜻이다"}.`;
+    ps.push(p);
   }
+  if (krx?.krwPerGram) ps.push(`도매 시장인 한국거래소(KRX) 금시장은 ${korDate(krx.date)} 1g당 ${won(krx.krwPerGram)}원(한 돈 ${won(krx.krwPerDon)}원)에 마감했다. 전 거래일보다 ${won(Math.abs(krx.change ?? 0))}원(${Math.abs(krx.changePct ?? 0)}%) ${upDown(krx.change > 0 ? "up" : krx.change < 0 ? "down" : "none")}. 이 값은 하루 한 번 갱신되는 전 영업일 종가라 오늘 소매 고시보다 하루 이상 늦다.`);
+  const headBits = [`국제 금값 ${signedPct(ig.dir === "down" ? -igPctAbs : igPctAbs)}`, `환율 ${signed(fx.dir === "down" ? -fxChangeWon : fxChangeWon, "원")}`];
+  if (dxy) headBits.push(`달러 ${signedPct(num(dxy.changePct) ?? 0)}`);
+  sections.push({ heading: `왜 움직였나 — ${headBits.join(", ")}`, paragraphs: ps });
 }
 
-// 3. 백금·은
+/* 4. 실전 */
 {
-  const pt = find("platinum");
-  const ag = find("silver");
-  if (pt?.userSell?.price && ag?.userSell?.price) {
-    sections.push({
-      heading: `백금 ${won(pt.userSell.price)}원 · 은 ${won(ag.userSell.price)}원`,
-      paragraphs: [
-        `백금 1돈 매입가는 ${won(pt.userSell.price)}원` +
-          `${pt.userBuy?.price ? `, 살 때는 ${won(inclOf(pt.userBuy))}원(부가세 포함)` : ""}이다. ` +
-          `은 1돈은 매입가 ${won(ag.userSell.price)}원` +
-          `${ag.userBuy?.price ? `, 살 때 ${won(inclOf(ag.userBuy))}원(부가세 포함)` : ""}으로 ` +
-          `단가가 낮아 그램이나 킬로그램 단위로 거래되는 경우가 많다.`,
-        `여기 매입가는 일반 백금·은 제품을 기준으로 고시된 값이다. 업체가 자사 브랜드 ` +
-          `바(bar)를 되사는 가격은 따로 두는 곳이 있어, 다른 곳에서 더 높은 매입가를 봤다면 ` +
-          `기준이 다른 숫자일 수 있다. 순금·18K·14K와 달리 백금과 은은 업체별 편차가 크므로 ` +
-          `실제 거래 전에 해당 매장의 적용 기준을 확인하는 편이 안전하다.`,
-      ],
-    });
+  const ps = [];
+  ps.push(
+    `오늘 사서 오늘 되판다고 가정하면 결제액 ${won(buyIncl)}원에 매입가 ${won(sell.price)}원이니 한 돈에 ${won(realGap)}원, ${realGapPct}%가 사라진다. 팔 때 값이 ${breakevenPct}% 올라야 본전이다. 부가세를 뺀 고시가끼리만 비교하면 차이가 ${won(gapEx)}원(${gapExPct}%)으로 보이지만, 살 때는 부가세를 내고 팔 때는 돌려받지 못하므로 실제 간격은 ${realGapPct}%다.`
+  );
+  if (stats?.chg1m) {
+    const need = breakevenPct;
+    const got = stats.chg1m.pct;
+    ps.push(`참고로 지난 한 달 살 때 값은 ${signedPct(got)} 움직였다. 한 달 전에 사서 오늘 판 사람은 ${got >= need ? "간격을 넘어 이익 구간" : "아직 간격(" + need + "%)을 못 넘은 손실 구간"}이다. 실물 금은 시세 차익보다 간격을 먼저 계산해야 하는 이유다.`);
   }
+  let p3 = `내 금이 얼마인지는 중량과 순도가 정한다. 1g은 팔 때 ${won(sellPerGram)}원, 반 돈(1.875g)은 ${won(sell.price / 2)}원이다.`;
+  if (k18) p3 += ` 18K 반지 한 돈이면 ${won(k18.price)}원, 순금 대비 ${Math.round((k18.price / sell.price) * 1000) / 10}% 수준이다.`;
+  p3 += ` 아래 금 계산기에 무게와 순도를 넣으면 오늘 고시가로 바로 환산된다.`;
+  ps.push(p3);
+  sections.push({ heading: `사자마자 팔면 ${won(realGap)}원(${realGapPct}%) 손해 — 본전까지 ${breakevenPct}%`, paragraphs: ps });
 }
 
-// 4. KRX 도매 + 국제
-{
-  const krx = data.krx?.latest;
-  const ig = data.intl?.gold;
-  const paras = [];
-  if (krx?.krwPerGram) {
-    const dirWord = krx.change > 0 ? "오른" : krx.change < 0 ? "내린" : "보합인";
-    paras.push(
-      `소매가의 바탕이 되는 도매 시장을 보면, 한국거래소(KRX) 금시장은 ${korDate(krx.date)} ` +
-        `1g당 ${won(krx.krwPerGram)}원에 마감했다. 전 거래일보다 ${won(Math.abs(krx.change))}원 ` +
-        `${dirWord} 수준으로 등락률은 ${krx.changePct}%, 한 돈으로 환산하면 ${won(krx.krwPerDon)}원이다. ` +
-        `금융위원회가 공공데이터포털에 공개하는 전 영업일 종가이며 하루 한 번 갱신된다.`
-    );
-  }
-  if (ig?.usdPerOz && data.fx?.usdkrw) {
-    const dirWord = ig.dir === "up" ? "올랐다" : ig.dir === "down" ? "내렸다" : "보합이다";
-    const overPct = ig.krwPerDon ? (((buyEx / ig.krwPerDon) - 1) * 100).toFixed(1) : null;
-    paras.push(
-      `국제 금값은 COMEX 선물 기준 트로이온스당 ${ig.usdPerOz.toLocaleString("en-US")}달러로 ` +
-        `전일 대비 ${Math.abs(ig.changePct)}% ${dirWord}. 원/달러 환율 ${won(data.fx.usdkrw)}원을 ` +
-        `적용해 한 돈으로 환산하면 약 ${won(ig.krwPerDon)}원이다.` +
-        (overPct ? ` 부가세를 뺀 국내 고시가 ${won(buyEx)}원은 이보다 ${overPct}% 높은 수준이다.` : "") +
-        ` 국내가 더 비싼 것은 유통 마진이 붙기 때문이고, 이 격차가 평소보다 ` +
-        `벌어졌는지가 매수 시점을 재는 참고가 된다.`
-    );
-  }
-  if (paras.length) {
-    sections.push({
-      heading: krx?.krwPerGram
-        ? `KRX 도매 1g ${won(krx.krwPerGram)}원, 국제 금값 ${ig?.usdPerOz ? `${ig.usdPerOz.toLocaleString("en-US")}달러` : "동향"}`
-        : `국제 금값 동향`,
-      paragraphs: paras,
-    });
-  }
-}
+/* FAQ (화면 하단 · 검색 스니펫용) */
+const faq = [
+  { q: `${quoteKd} 금 한 돈 가격은 얼마인가요?`, a: `한국금거래소 고시 기준 순금 24K 한 돈(3.75g)은 살 때 ${won(buyIncl)}원(부가세 포함), 팔 때 ${won(sell.price)}원입니다. 18K는 팔 때 ${k18 ? won(k18.price) + "원" : "매장 문의"}, 14K는 ${k14 ? won(k14.price) + "원" : "매장 문의"}입니다.` },
+  { q: "살 때와 팔 때 가격이 왜 이렇게 차이 나나요?", a: `살 때 값에는 부가가치세 10%(${won(vatWon)}원)와 유통 마진이 들어가고, 팔 때는 부가세를 돌려받지 못합니다. 오늘 기준 한 돈 간격은 ${won(realGap)}원(${realGapPct}%)이며, 팔 때 값이 ${breakevenPct}% 올라야 본전입니다.` },
+  { q: "금시세는 하루에 몇 번 바뀌나요?", a: `한국금거래소는 국제 금값과 환율에 따라 평일 오전 첫 고시 뒤 하루 몇 차례 다시 고시합니다. ${intraday?.rounds ? `${quoteKd}은 ${intraday.rounds}차례 고시됐습니다. ` : ""}이 기사는 발행 시점 고시가 기준이며 상단 배지가 실시간 값입니다.` },
+];
 
-// 5. 실제 간격 + 계산기 안내
-{
-  sections.push({
-    heading: `사자마자 팔면 ${won(realGap)}원(${realGapPct}%)이 사라진다`,
-    paragraphs: [
-      `오늘 사서 오늘 되판다고 가정해 보자. 결제액 ${won(buyIncl)}원에 매입가 ` +
-        `${won(sell.price)}원이니 한 돈에 ${won(realGap)}원, 약 ${realGapPct}%가 비용으로 남는다. ` +
-        `실물 금은 시세가 이만큼 오른 뒤에야 본전이라는 뜻이다.`,
-      `부가세를 뺀 고시가끼리만 비교하면 차이가 ${won(gap)}원(${gapPct}%)으로 보인다. 하지만 살 때는 ` +
-        `부가세를 내고 팔 때는 돌려받지 못하므로, 실제로 체감하는 간격은 위쪽 숫자다. 시세 ` +
-        `그래프만 보고 판단하면 이 부분을 놓치기 쉽다.`,
-      `내 금이 실제 얼마인지는 중량과 순도에 따라 달라진다. 아래 금 계산기에 무게를 넣으면 ` +
-        `오늘 고시가로 바로 환산되니, 매장에 가기 전에 기준 금액을 확인해 두면 협상이 쉬워진다.`,
-    ],
-  });
-}
+/* 그래프 데이터: 최근 1년 일별(그날 마지막 고시) — 화면이 30일·1년으로 잘라 그린다 */
+const series = dailyAll.length
+  ? dailyAll.filter((d) => d.date >= shiftDate(quoteDate, -370)).map((d) => ({ d: d.date, b: d.buy, s: d.sell }))
+  : [];
 
-/* ── 기사 안의 시세 스냅샷도 부가세 포함으로 맞춘다 (화면 표가 본문과 같은 숫자를 쓰도록) ── */
+/* 배경 지표 묶음 (화면 요인 줄) */
+const drivers = [];
+if (ig) drivers.push({ key: "intlGold", name: "국제 금값", value: `$${won(ig.usdPerOz)}`, unit: "/oz", changePct: num(ig.changePct), dir: ig.dir });
+if (fx) drivers.push({ key: "usdkrw", name: "원/달러", value: `${fx.usdkrw?.toLocaleString("ko-KR")}원`, unit: "", change: num(fx.change), changePct: num(fx.changePct), dir: fx.dir });
+if (dxy) drivers.push({ key: "dxy", name: "달러인덱스", value: `${dxy.price}`, unit: "", changePct: num(dxy.changePct), dir: dxy.dir });
+if (us10) drivers.push({ key: "us10y", name: "미 10년물", value: `${us10.price}%`, unit: "", change: num(us10.change), changePct: num(us10.changePct), dir: us10.dir });
+if (wti) drivers.push({ key: "wti", name: "WTI 유가", value: `$${wti.price}`, unit: "", changePct: num(wti.changePct), dir: wti.dir });
+
+/* ── 스냅샷 (화면 표) ── */
 const retailSnapshot = items.length
   ? {
       source: retailSrc.source,
@@ -450,58 +518,50 @@ const retailSnapshot = items.length
       round: retailSrc.round,
       unit: "원/돈",
       vatIncludedBuy: true,
-      note: VAT_INCL
-        ? retailSrc.note
-        : "살 때 가격은 부가세 10%를 포함한 실제 결제 금액입니다(원문 고시가에 부가세를 더한 값).",
+      note: VAT_INCL ? retailSrc.note : "살 때 가격은 부가세 10%를 포함한 실제 결제 금액입니다(원문 고시가에 부가세를 더한 값).",
       items: items.map((it) =>
         it.userBuy && !VAT_INCL
-          ? {
-              ...it,
-              userBuy: {
-                price: inclOf(it.userBuy),
-                change: Math.round(it.userBuy.change * 1.1),
-                dir: it.userBuy.dir,
-                priceExVat: it.userBuy.price,
-                changeExVat: it.userBuy.change,
-              },
-            }
+          ? { ...it, userBuy: { price: inclOf(it.userBuy), change: Math.round(it.userBuy.change * 1.1), dir: it.userBuy.dir, priceExVat: it.userBuy.price, changeExVat: it.userBuy.change } }
           : it
       ),
     }
   : null;
 
+const title = `오늘의 금시세(금값) ${kd} — 순금 한 돈 ${won(buyIncl)}원, ${hl.short}`;
+const descBits = [`${kd} 순금 24K 한 돈 살 때 ${won(buyIncl)}원(부가세 포함)·팔 때 ${won(sell.price)}원, ${hl.short}.`];
+if (stats) descBits.push(`30일 최저 ${won(stats.lo30.buy)}원~최고 ${won(stats.hi30.buy)}원.`);
+if (ig && fx) descBits.push(`국제 금값 ${signedPct(ig.dir === "down" ? -igPctAbs : igPctAbs)}, 환율 ${signed(fx.dir === "down" ? -fxChangeWon : fxChangeWon, "원")}.`);
+descBits.push(`사자마자 팔면 ${realGapPct}% 손해, 18K·14K 매입가와 금 계산기까지.`);
+
 const doc = {
+  v: 3,
   date: today,
-  title: `오늘의 금시세(금값) 살 때 팔 때 계산기까지 — ${kd}`,
-  description:
-    `${kd} 순금 24K 한 돈 살 때 ${won(buyIncl)}원(부가세 포함), ` +
-    `팔 때 ${won(sell.price)}원. 18K·14K 매입가와 KRX 도매 종가, 국제 금값, 금 계산기까지 한 번에 확인하세요.`,
-  /** 처음 발행한 시각. 정정해도 유지한다(JSON-LD datePublished). */
+  title,
+  description: descBits.join(" "),
   publishedAt: existing?.publishedAt ?? kstNow(),
   updatedAt: gold?.updatedAt ?? data.updatedAt ?? null,
-  quoteDate: retailSrc.quoteDate ?? today,
+  quoteDate,
+  headline: hl.short,
   retail: retailSnapshot,
-  krx: data.krx?.latest ? { latest: data.krx.latest, note: data.krx?.note ?? null } : null,
-  fx: data.fx ?? null,
+  krx: krx ? { latest: krx, note: data.krx?.note ?? null } : null,
+  fx: fx,
   intl: data.intl ?? null,
+  macro: macro,
+  stats,
+  intraday,
+  drivers,
+  series,
   lead,
   sections,
-  // 구버전 렌더러 호환: 섹션을 평문단으로도 펼쳐둔다
+  faq,
   paragraphs: [lead, ...sections.flatMap((s) => s.paragraphs)],
   sources: [
-    gold
-      ? `${retailSrc.source} 고시가 (${retailSrc.sourceUrl}) — 살 때는 부가세 포함`
-      : `${retailSrc.source} 고시가 (${retailSrc.sourceUrl}) — 살 때는 부가세 10% 포함으로 환산`,
-    "한국거래소 KRX 금시장 — 금융위원회·공공데이터포털",
-    "국제 시세·환율 — Yahoo Finance (전일 종가 대비)",
+    `${retailSrc.source} 고시가 (${retailSrc.sourceUrl}) — 살 때는 부가세 포함, 1년 일별 이력은 그날 마지막 고시`,
+    "한국거래소 KRX 금시장 — 금융위원회·공공데이터포털 (전 영업일 종가)",
+    "국제 금값·환율·달러인덱스·미 10년물·WTI — Yahoo Finance (전일 종가 대비)",
   ],
 };
 
 fs.mkdirSync(OUT_DIR, { recursive: true });
 fs.writeFileSync(outPath, JSON.stringify(doc, null, 2) + "\n", "utf8");
-console.log(
-  `생성: ${outPath} (섹션 ${sections.length}개, 살 때 ${won(buyIncl)}원 부가세 포함, 팔 때 ${won(sell.price)}원)`
-);
-
-/* 카페 원고(.md) 생성은 제거했습니다 — 카페 글은 직접 작성하십니다.
- * 기존 cafe-YYYY-MM-DD.md 파일은 건드리지 않습니다. */
+console.log(`생성: ${outPath}\n  제목: ${title}\n  섹션 ${sections.length}개 · 이력 ${series.length}일 · 요인 ${drivers.length}개 · 살 때 ${won(buyIncl)} / 팔 때 ${won(sell.price)}`);

@@ -47,5 +47,6 @@ npm run article -- --batch scripts/batch.txt [--parallel 3]   # 줄마다: slug 
 - 살 때 값은 **부가세 포함**이 규격(`retail.vatIncludedBuy`). 옛 규격이 오면 `priceData.ts`의 `normalizePrice`가 ×1.1 한다. 화면·기사에서 다시 ×1.1 하지 않는다
 - 등락은 **전일 종가 대비**(`prevClose`). Yahoo `chartPreviousClose`는 쓰지 않는다(요청 기간 직전 종가라 5거래일 전 값이 된다)
 - 한국금거래소 API는 해외 IP 403 → `scripts/gold/collect-kgx.ps1`을 **PC 예약 작업**으로(평일 09:30~18:30 30분, 등록 명령은 파일 머리말). GitHub Actions 에 올리지 않는다
-- 기사는 평일 10:15 KST. 당일 고시가 없으면 발행하지 않는다(`--require-today` exit 3, 10:45·11:15 재시도, 11시 이후 실패 알림)
+- 기사는 **PC 수집기가 평일 10:00 고시 직후 main 에 발행**한다(`collect-kgx.ps1` → `Publish-News`, 2026-09-20). GitHub cron 은 이 저장소에서 4시간씩 늦게 떠서(10:15 예약이 14:53 실행) 예비 1개(10:20)만 남겼다. 당일 고시가 없으면 발행하지 않는다(`--require-today` exit 3). 기사 형식은 `generate-news.mjs` v3(1년 이력 통계·그래프·요인·FAQ, 제목에 그날 사실 하나) — 언론사 금시세 기사보다 많아야 한다
+- KGX 예약 작업은 `run-hidden.vbs` 로 감싼다(powershell 직접 띄우면 30분마다 창이 깜빡임). 클론이 깨지면 스크립트가 `*.broken-*` 으로 치우고 새로 받는다
 - 수출입은행·KRX OpenAPI 키는 사용자가 발급한다(6절·5절 도매). 키 전까지 그 부분만 보류

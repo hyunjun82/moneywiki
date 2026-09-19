@@ -10,6 +10,7 @@
  *             원문 값은 priceExVat/changeExVat 에 남기고 retail.vatIncludedBuy: true 로 표시한다.
  *  - krx    : 공공데이터포털 금융위원회_일반상품시세정보 getGoldPriceInfo (하루 1회만 호출)
  *  - fx/intl: Yahoo Finance (KRW=X, GC=F, SI=F) — 등락은 전일 종가 대비 (prevClose)
+ *  - macro  : Yahoo Finance (DX-Y.NYB 달러인덱스, ^TNX 미 10년물, CL=F WTI) — 기사의 "왜 움직였나" 문장용 (2026-09-20)
  *
  * 원칙:
  *  - 어떤 소스가 실패하면 그 섹션은 이전 값을 유지한다. 검증 안 된 값을 쓰지 않는다.
@@ -273,6 +274,42 @@ async function fetchFxIntl() {
   };
 }
 
+/* ───────────── 3b. 거시 지표: 달러인덱스 · 미 10년물 · WTI (Yahoo) ─────────────
+ * 기사가 "왜 움직였나"를 데이터로 쓰기 위한 값. 실패하면 이전 값을 유지하고, 그것도 없으면 생략한다. */
+async function fetchMacro() {
+  const defs = [
+    ["dxy", "DX-Y.NYB", "달러인덱스", "pt"],
+    ["us10y", "^TNX", "미 10년물 국채금리", "%"],
+    ["wti", "CL=F", "WTI 유가", "$"],
+  ];
+  const out = {};
+  const errs = [];
+  await Promise.all(
+    defs.map(async ([key, symbol, name, unit]) => {
+      try {
+        const q = await yahooQuote(symbol);
+        out[key] = {
+          name,
+          symbol,
+          unit,
+          price: Math.round(q.price * 100) / 100,
+          change: Math.round(q.change * 100) / 100,
+          changePct: Math.round(q.changePct * 100) / 100,
+          dir: dirOf(q.change),
+          changeBasis: "prevClose",
+          prevClose: q.prevClose,
+          source: `Yahoo Finance (${symbol})`,
+        };
+      } catch (e) {
+        errs.push(`${symbol}: ${e.message}`);
+      }
+    })
+  );
+  if (!Object.keys(out).length) throw new Error(errs.join("; "));
+  if (errs.length) console.warn("macro 일부 실패: " + errs.join("; "));
+  return out;
+}
+
 /* ───────────── 조립 ───────────── */
 
 let prev = {};
@@ -285,7 +322,7 @@ try {
 
 const out = {
   updatedAt: kstNow(),
-  sources: ["retail:jongrogx", "krx:data.go.kr", "fx:yahoo", "intl.gold:yahoo", "intl.silver:yahoo"],
+  sources: ["retail:jongrogx", "krx:data.go.kr", "fx:yahoo", "intl.gold:yahoo", "intl.silver:yahoo", "macro:yahoo"],
 };
 const failures = [];
 
@@ -323,6 +360,16 @@ try {
   failures.push(`fx/intl: ${e.message}`);
   if (prev.fx) out.fx = prev.fx;
   if (prev.intl) out.intl = prev.intl;
+}
+
+// macro — 실패하면 이전 값 유지 (기사의 "왜" 문장에만 쓰이므로 없어도 파일은 쓴다)
+try {
+  const m = await fetchMacro();
+  out.macro = { ...(prev.macro ?? {}), ...m };
+  console.log(`macro OK — DXY ${out.macro.dxy?.price ?? "-"}, 미10년 ${out.macro.us10y?.price ?? "-"}%, WTI $${out.macro.wti?.price ?? "-"}`);
+} catch (e) {
+  failures.push(`macro: ${e.message}`);
+  if (prev.macro) out.macro = prev.macro;
 }
 
 if (failures.length) console.warn("일부 소스 실패:\n - " + failures.join("\n - "));

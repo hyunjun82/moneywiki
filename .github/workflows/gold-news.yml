@@ -1,10 +1,10 @@
-# 금시세 일일 기사 자동 발행
+# 금시세 일일 기사 — 예비 발행 (2026-09-20 부터)
 #
-# 평일 10:15 KST 에 src/data/gold-news/YYYY-MM-DD.json 을 생성해 main 에 커밋한다.
-# 국내 고시(한국금거래소 1차)는 09:50~10:10 에 나오므로 그 뒤에 돌아야 전일 숫자가 오늘 기사에
-# 섞이지 않는다 (예전 05:30/09:20 발행은 전일 고시로 기사를 썼다 — 2026-09-09 실측).
-# 생성기는 price.json 의 고시일이 오늘이 아니면 발행하지 않고 exit 3 으로 끝낸다(--require-today).
-# 10:45·11:15 에 다시 시도하고, 11시 이후에도 당일 고시가 없으면 잡을 실패시켜 GitHub 알림이 가게 한다.
+# 본 발행은 PC 수집기(scripts/gold/collect-kgx.ps1 → Publish-News)가 평일 10:00 고시 직후 main 에 커밋한다.
+# GitHub 의 schedule 은 이 저장소에서 4시간 넘게 늦게 뜬다(2026-09-15~18 실측: 10:15 예약이 14:53 실행).
+# 그래서 예약을 3개(10:15·10:45·11:15) 두던 것을 1개로 줄이고, 이 워크플로는 PC 가 발행하지 못한 날의 예비로만 둔다.
+# 생성기는 오늘 기사가 이미 있으면 아무것도 하지 않고, 고시일이 오늘이 아니면 exit 3 으로 끝낸다(--require-today).
+# 11시(KST) 이후에도 오늘 기사가 없고 당일 고시도 없으면 잡을 실패시켜 알림이 가게 한다 — 하루 최대 1통.
 # 커밋이 올라가면 Cloudflare Pages 가 재빌드하면서 /gold/news/YYYY-MM-DD 가 생기고,
 # 기존 IndexNow 워크플로 + 아래의 직접 핑으로 검색엔진에 즉시 알린다.
 
@@ -12,9 +12,7 @@ name: Gold News Publish
 
 on:
   schedule:
-    - cron: "15 1 * * 1-5" # UTC 01:15 = KST 10:15 (평일) — 본 발행
-    - cron: "45 1 * * 1-5" # UTC 01:45 = KST 10:45 — 재시도 1
-    - cron: "15 2 * * 1-5" # UTC 02:15 = KST 11:15 — 재시도 2, 실패 시 알림
+    - cron: "20 1 * * 1-5" # UTC 01:20 = KST 10:20 (평일) — 예비. 실제로는 몇 시간 늦게 뜬다
   workflow_dispatch:
     inputs:
       ignore_date:
@@ -55,11 +53,12 @@ jobs:
           set -e
           if [ "$CODE" = "3" ]; then
             HOUR=$(TZ=Asia/Seoul date +%H)
-            if [ "$HOUR" -ge 11 ]; then
-              echo "::error::당일 고시가 11시까지 없어 기사를 발행하지 않았습니다. price-data 갱신기(gold-price.yml)와 고시 소스를 확인하세요."
+            TODAY=$(TZ=Asia/Seoul date +%F)
+            if [ "$HOUR" -ge 11 ] && [ ! -f "src/data/gold-news/${TODAY}.json" ]; then
+              echo "::error::${TODAY} 기사가 없고 당일 고시도 없습니다. PC 수집기(collect-kgx.ps1, %LOCALAPPDATA%/moneywiki/collect-kgx.log)를 확인하세요."
               exit 1
             fi
-            echo "당일 고시 대기 — 다음 예약(10:45 / 11:15)에서 재시도"
+            echo "당일 고시 대기 — 발행하지 않음"
             echo "skipped=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
