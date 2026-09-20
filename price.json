@@ -1,11 +1,12 @@
 {
-  "updatedAt": "2026-09-20T07:18:34.697+09:00",
+  "updatedAt": "2026-09-20T09:11:31.527+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
     "fx:yahoo",
     "intl.gold:yahoo",
-    "intl.silver:yahoo"
+    "intl.silver:yahoo",
+    "macro:yahoo"
   ],
   "retail": {
     "source": "종로금거래소",
@@ -1164,6 +1165,53 @@
       "krwPerGram": 2990,
       "krwPerDon": 11213,
       "source": "COMEX 은 선물 (SI=F)"
+    }
+  },
+  "macro": {
+    "us10y": {
+      "name": "미 10년물 국채금리",
+      "symbol": "^TNX",
+      "unit": "%",
+      "price": 5,
+      "change": 0.05,
+      "changePct": 1.03,
+      "dir": "up",
+      "changeBasis": "prevClose",
+      "prevClose": {
+        "date": "2026-09-17",
+        "price": 4.95
+      },
+      "source": "Yahoo Finance (^TNX)"
+    },
+    "dxy": {
+      "name": "달러인덱스",
+      "symbol": "DX-Y.NYB",
+      "unit": "pt",
+      "price": 100.22,
+      "change": -0.01,
+      "changePct": 0,
+      "dir": "down",
+      "changeBasis": "prevClose",
+      "prevClose": {
+        "date": "2026-09-17",
+        "price": 100.22
+      },
+      "source": "Yahoo Finance (DX-Y.NYB)"
+    },
+    "wti": {
+      "name": "WTI 유가",
+      "symbol": "CL=F",
+      "unit": "$",
+      "price": 96.08,
+      "change": -5.83,
+      "changePct": -5.72,
+      "dir": "down",
+      "changeBasis": "prevClose",
+      "prevClose": {
+        "date": "2026-09-17",
+        "price": 101.91
+      },
+      "source": "Yahoo Finance (CL=F)"
     }
   }
 }
