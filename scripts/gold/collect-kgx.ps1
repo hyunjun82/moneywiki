@@ -100,8 +100,11 @@ function Publish-News {
 
   $gen = Join-Path $main "scripts\gold\generate-news.mjs"
   $outDir = Join-Path $main "src\data\gold-news"
-  $stdout = & node $gen $outDir --require-today --gold $gold
-  $code = $LASTEXITCODE
+  # 해석 문단은 구독 claude -p(opus)가 쓴다(scripts/gold/lib/news-analysis.mjs) — 호출기가 scripts/.no-mcp.json 을
+  # 현재 폴더 기준으로 만들므로 main 클론 안에서 돌린다. 모델이 실패하면 조립 문장으로 그대로 발행된다(막지 않음).
+  Push-Location $main
+  try { $stdout = & node $gen $outDir --require-today --gold $gold; $code = $LASTEXITCODE }
+  finally { Pop-Location }
   foreach ($line in $stdout) { Log ("기사: " + $line) }
   if ($code -eq 3) { Log "기사: 생성기가 당일 고시 없음으로 판단 — 발행 보류"; return }
   if ($code -ne 0) { throw "기사 생성 실패 (exit $code)" }

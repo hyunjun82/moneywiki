@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   BandAd,
   Card,
@@ -77,6 +77,9 @@ export interface NewsDoc {
   faq?: { q: string; a: string }[];
   paragraphs: string[];
   sources?: string[];
+  /** 리드·왜 움직였나·어떻게 읽나를 모델이 썼을 때(scripts/gold/lib/news-analysis.mjs). 화면에는 표시하지 않는다. */
+  analysis?: { model: string; at: string; parts: string[] } | null;
+  template?: { lead?: string; why?: string[] } | null;
 }
 
 /* 그래프 색 — dataviz 검증 통과(라이트 표면, CVD ΔE 28 이상): 살 때 금색, 팔 때 파랑 */
@@ -131,9 +134,10 @@ function KeyStats({ doc, buy, sell }: { doc: NewsDoc; buy: { price: number; chan
   return (
     <div className={`grid grid-cols-2 ${tiles.length >= 4 ? "lg:grid-cols-4" : "lg:grid-cols-3"} gap-2.5`}>
       {tiles.map((t) => (
-        <div key={t.label} className="rounded-[12px] border border-[#E2DFD7] bg-[#FBFAF7] px-4 py-3.5 flex flex-col gap-1">
+        <div key={t.label} className="rounded-[12px] border border-[#E2DFD7] bg-[#FBFAF7] px-3.5 py-3.5 flex flex-col gap-1 min-w-0">
           <span className="text-[12px] font-semibold tracking-[0.02em] text-[#6C727B]">{t.label}</span>
-          <span className="text-[20px] sm:text-[22px] font-extrabold tabular-nums tracking-[-0.02em] text-[#1A1D21]">{t.value}</span>
+          {/* 한 줄 고정 — 4칸일 때 "855,000 / 원"으로 꺾이던 것(2026-09-21) */}
+          <span className="text-[19px] sm:text-[21px] font-extrabold tabular-nums tracking-[-0.03em] text-[#1A1D21] whitespace-nowrap">{t.value}</span>
           <span className="text-[12.5px] font-medium tabular-nums">{t.sub}</span>
         </div>
       ))}
@@ -146,6 +150,21 @@ function TrendChart({ series, quoteDate }: { series: { d: string; b: number; s: 
   const covered = series.length >= 2 ? Math.round((new Date(series[series.length - 1].d).getTime() - new Date(series[0].d).getTime()) / 86400000) : 0;
   const [range, setRange] = useState<"m1" | "y1">("m1");
   const [hover, setHover] = useState<number | null>(null);
+  /*
+    viewBox 를 실제 그린 폭에 맞춘다. 1120 고정이면 700px 화면에서 0.63배, 360px 폰에서 0.32배로 줄어
+    11px 글자가 3~7px 가 됐다(2026-09-21 "그래프 글자가 안 읽힌다"). 폭을 재서 1:1 로 그리면 글자 크기가 그대로다.
+  */
+  const boxRef = useRef<HTMLDivElement>(null);
+  const [W, setW] = useState(1120);
+  useEffect(() => {
+    const el = boxRef.current;
+    if (!el) return;
+    const measure = () => setW(Math.max(320, Math.round(el.clientWidth - 16)));
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
   const pts = useMemo(() => {
     const days = range === "m1" ? 31 : 366;
     const cut = new Date(quoteDate + "T00:00:00Z");
@@ -155,7 +174,9 @@ function TrendChart({ series, quoteDate }: { series: { d: string; b: number; s: 
   }, [series, range, quoteDate]);
   if (pts.length < 2) return null;
 
-  const W = 1120, H = 300, L = 66, R = 18, T = 20, B = 34;
+  const narrow = W < 560;
+  const H = narrow ? 240 : 300, L = narrow ? 52 : 62, R = 14, T = 20, B = 30;
+  const FS = narrow ? 11 : 12; // 축·라벨 글자 — 1:1 로 그리므로 화면에서도 이 크기다
   const all = pts.flatMap((p) => [p.b, p.s]);
   let lo = Math.min(...all), hi = Math.max(...all);
   const pad = (hi - lo) * 0.15 || 10000;
@@ -167,7 +188,7 @@ function TrendChart({ series, quoteDate }: { series: { d: string; b: number; s: 
   const y = (v: number) => T + ((hi - v) / (hi - lo || 1)) * (H - T - B);
   const ticks: number[] = [];
   for (let v = lo; v <= hi + 1e-6; v += step) ticks.push(v);
-  const labelEvery = Math.max(1, Math.ceil(n / 7));
+  const labelEvery = Math.max(1, Math.ceil(n / (narrow ? 4 : 7)));
   const lines = [
     { key: "b" as const, name: "살 때", color: SERIES_BUY },
     { key: "s" as const, name: "팔 때", color: SERIES_SELL },
@@ -212,16 +233,16 @@ function TrendChart({ series, quoteDate }: { series: { d: string; b: number; s: 
           </div>
         </div>
       </div>
-      <div className="relative rounded-xl border border-[#E2DFD7] bg-white pt-3 px-2 pb-1">
-        <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-[220px] sm:h-[300px] block overflow-visible" role="img" aria-label="순금 한 돈 살 때·팔 때 추이 그래프" onMouseLeave={() => setHover(null)}>
+      <div ref={boxRef} className="relative rounded-xl border border-[#E2DFD7] bg-white pt-3 px-2 pb-1">
+        <svg viewBox={`0 0 ${W} ${H}`} width={W} height={H} className="max-w-full h-auto block overflow-visible" role="img" aria-label="순금 한 돈 살 때·팔 때 추이 그래프" onMouseLeave={() => setHover(null)}>
           {ticks.map((v) => (
             <g key={v}>
               <line x1={L} x2={W - R} y1={y(v)} y2={y(v)} stroke={LINE} strokeDasharray="2 4" />
-              <text x={L - 10} y={y(v) + 4} textAnchor="end" fontSize="11" fill={INK3} style={{ fontFamily: MONO }}>{(v / 10000).toLocaleString("ko-KR", { maximumFractionDigits: 1 })}만</text>
+              <text x={L - 8} y={y(v) + 4} textAnchor="end" fontSize={FS} fill={INK3} style={{ fontFamily: MONO }}>{(v / 10000).toLocaleString("ko-KR", { maximumFractionDigits: 1 })}만</text>
             </g>
           ))}
           {pts.map((p, i) => (i % labelEvery === 0 || i === n - 1) ? (
-            <text key={p.d} x={x(i)} y={H - 10} textAnchor={i === n - 1 ? "end" : i === 0 ? "start" : "middle"} fontSize="11" fill={INK3} style={{ fontFamily: MONO }}>{range === "y1" ? `${p.d.slice(2, 4)}.${Number(p.d.slice(5, 7))}` : shortDate(p.d)}</text>
+            <text key={p.d} x={x(i)} y={H - 8} textAnchor={i === n - 1 ? "end" : i === 0 ? "start" : "middle"} fontSize={FS} fill={INK3} style={{ fontFamily: MONO }}>{range === "y1" ? `${p.d.slice(2, 4)}.${Number(p.d.slice(5, 7))}` : shortDate(p.d)}</text>
           ) : null)}
           {lines.map((l) => {
             const d = pts.map((p, i) => `${x(i)},${y(p[l.key])}`).join(" ");
@@ -229,7 +250,7 @@ function TrendChart({ series, quoteDate }: { series: { d: string; b: number; s: 
               <g key={l.key}>
                 <polyline fill="none" stroke={l.color} strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" points={d} />
                 <circle cx={x(n - 1)} cy={y(pts[n - 1][l.key])} r="4" fill={l.color} stroke="#fff" strokeWidth="2" />
-                <text x={x(n - 1) - 8} y={y(pts[n - 1][l.key]) + (l.key === "b" ? -9 : 15)} textAnchor="end" fontSize="11.5" fontWeight="600" fill={INK2} style={{ fontFamily: MONO }}>{won(pts[n - 1][l.key])}</text>
+                <text x={x(n - 1) - 8} y={y(pts[n - 1][l.key]) + (l.key === "b" ? -9 : 16)} textAnchor="end" fontSize={FS + 1} fontWeight="600" fill={INK2} style={{ fontFamily: MONO }}>{won(pts[n - 1][l.key])}</text>
               </g>
             );
           })}
@@ -237,7 +258,7 @@ function TrendChart({ series, quoteDate }: { series: { d: string; b: number; s: 
           {[hiB, loB].map((i, k) => i !== n - 1 ? (
             <g key={k}>
               <circle cx={x(i)} cy={y(pts[i].b)} r="3.5" fill="#fff" stroke={SERIES_BUY} strokeWidth="2" />
-              <text x={x(i)} y={y(pts[i].b) + (k === 0 ? -9 : 17)} textAnchor="middle" fontSize="11" fill={INK2} style={{ fontFamily: MONO }}>{k === 0 ? "최고" : "최저"} {won(pts[i].b)}</text>
+              <text x={x(i)} y={y(pts[i].b) + (k === 0 ? -9 : 17)} textAnchor="middle" fontSize={FS} fill={INK2} style={{ fontFamily: MONO }}>{k === 0 ? "최고" : "최저"} {won(pts[i].b)}</text>
             </g>
           ) : null)}
           {hover != null ? (

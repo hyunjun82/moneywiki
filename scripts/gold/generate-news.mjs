@@ -24,13 +24,14 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { applyModelAnalysis } from "./lib/news-analysis.mjs";
 
 const PRICE_URL = "https://raw.githubusercontent.com/hyunjun82/moneywiki/price-data/price.json";
 const GOLD_URL = "https://raw.githubusercontent.com/hyunjun82/moneywiki/price-data/gold.json";
 
 /* ── 인자 ── */
 const argv = process.argv.slice(2);
-const VALUE_FLAGS = new Set(["--price", "--gold", "--date"]);
+const VALUE_FLAGS = new Set(["--price", "--gold", "--date", "--model"]);
 const valueOf = (flag) => {
   const i = argv.indexOf(flag);
   return i >= 0 && argv[i + 1] && !argv[i + 1].startsWith("--") ? argv[i + 1] : null;
@@ -41,6 +42,12 @@ const OUT_DIR =
   argv.find((a, i) => !a.startsWith("--") && !(i > 0 && VALUE_FLAGS.has(argv[i - 1]))) || "src/data/gold-news";
 const FORCE = argv.includes("--force");
 const REQUIRE_TODAY = argv.includes("--require-today");
+/*
+  해석 문단(리드·왜 움직였나·어떻게 읽나)은 모델이 쓴다(lib/news-analysis.mjs, 구독 claude -p, 기본 opus).
+  숫자는 여기서 고른 것만 허용하고 어긋나면 조립 문장으로 낸다. --no-model 이면 처음부터 조립 문장.
+*/
+const NO_MODEL = argv.includes("--no-model");
+const MODEL = valueOf("--model") ?? process.env.GOLD_NEWS_MODEL ?? "opus";
 const GRAM_PER_DON = 3.75;
 
 /* ── 유틸 ── */
@@ -382,7 +389,7 @@ if (ig && fx) {
   let s = `밤사이 국제 금값은 ${igPctAbs}% ${upDown(ig.dir, "올랐고", "내렸고", "변동이 없었고")} 원/달러 환율은 ${fxChangeWon.toFixed(2)}원 ${upDown(fx.dir)}`;
   const extra = [];
   if (dxy) extra.push(`달러인덱스 ${signedPct(num(dxy.changePct) ?? 0)}`);
-  if (us10) extra.push(`미 10년물 금리 ${us10.price}%`);
+  if (us10) extra.push(`미 10년물 금리 ${(num(us10.price) ?? 0).toFixed(2)}%`); // 5 → "5.00%" (2026-09-21 기사에 "5%"로 나갔다)
   s += extra.length ? `(${extra.join(", ")}).` : ".";
   leadParts.push(s);
 }
@@ -529,7 +536,7 @@ const drivers = [];
 if (ig) drivers.push({ key: "intlGold", name: "국제 금값", value: `$${won(ig.usdPerOz)}`, unit: "/oz", changePct: num(ig.changePct), dir: ig.dir });
 if (fx) drivers.push({ key: "usdkrw", name: "원/달러", value: `${fx.usdkrw?.toLocaleString("ko-KR")}원`, unit: "", change: num(fx.change), changePct: num(fx.changePct), dir: fx.dir });
 if (dxy) drivers.push({ key: "dxy", name: "달러인덱스", value: `${dxy.price}`, unit: "", changePct: num(dxy.changePct), dir: dxy.dir });
-if (us10) drivers.push({ key: "us10y", name: "미 10년물", value: `${us10.price}%`, unit: "", change: num(us10.change), changePct: num(us10.changePct), dir: us10.dir });
+if (us10) drivers.push({ key: "us10y", name: "미 10년물", value: `${(num(us10.price) ?? 0).toFixed(2)}%`, unit: "", change: num(us10.change), changePct: num(us10.changePct), dir: us10.dir });
 if (wti) drivers.push({ key: "wti", name: "WTI 유가", value: `$${wti.price}`, unit: "", changePct: num(wti.changePct), dir: wti.dir });
 
 /* ── 스냅샷 (화면 표) ── */
@@ -585,6 +592,15 @@ const doc = {
   ],
 };
 
+if (!NO_MODEL) {
+  const facts = {
+    quoteKd, round: retailSrc.round, time: retailSrc.time, intraday, buyIncl, buyEx, vatWon, sell: sell.price, buy, sellQ: sell,
+    buyPerGram, sellPerGram, k18, k14, derived: gold?.derived ?? null, stats, hl, ig, fx, dxy, us10, wti, krx,
+    theoryPct, actualPct, realGap, realGapPct, breakevenPct, gapEx, gapExPct,
+  };
+  await applyModelAnalysis(doc, facts, { model: MODEL, won, signed, signedPct, korDate, korDateY, log: console.log, logDir: path.join(OUT_DIR, "..", "..", "..", "scripts", "reports", "logs", "gold-news") });
+}
+
 fs.mkdirSync(OUT_DIR, { recursive: true });
 fs.writeFileSync(outPath, JSON.stringify(doc, null, 2) + "\n", "utf8");
-console.log(`생성: ${outPath}\n  제목: ${title}\n  섹션 ${sections.length}개 · 이력 ${series.length}일 · 요인 ${drivers.length}개 · 살 때 ${won(buyIncl)} / 팔 때 ${won(sell.price)}`);
+console.log(`생성: ${outPath}\n  제목: ${title}\n  섹션 ${doc.sections.length}개 · 이력 ${series.length}일 · 요인 ${drivers.length}개 · 살 때 ${won(buyIncl)} / 팔 때 ${won(sell.price)}${doc.analysis ? ` · 해석 문단 ${doc.analysis.model}` : " · 조립 문장"}`);
