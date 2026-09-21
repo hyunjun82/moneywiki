@@ -453,16 +453,39 @@ if (ig && fx) {
         : ` 국제 시세와 환율의 움직임이 국내 고시에 거의 그대로 반영된 날이다.`)
   );
   if (ig.krwPerDon) ps.push(`국제 금값을 환율로 환산하면 한 돈 ${won(ig.krwPerDon)}원이다. 국내 팔 때 ${won(sell.price)}원은 이보다 ${won(Math.abs(sell.price - ig.krwPerDon))}원 ${sell.price >= ig.krwPerDon ? "높고" : "낮고"}, 살 때 ${won(buyIncl)}원에는 부가세와 유통 마진이 얹혀 있다.`);
+  /*
+    "로/으로" 는 숫자를 읽은 소리의 받침이 정한다.
+    끝자리 0·1·7·8(영·일·칠·팔)은 ㄹ받침이라 "로", 2·4·5·9(이·사·오·구)는 받침이 없어 "로",
+    3·6(삼·육)만 "으로"다. 2026-09-21 기사에 "100.27으로"가 나갔다 — 하드코딩이 원인이었다.
+  */
+  const ro = (v) => {
+    const d = String(v).replace(/[^0-9]/g, "").slice(-1);
+    return "36".includes(d) ? "으로" : "로";
+  };
   const mac = [];
-  if (dxy) mac.push(`달러인덱스는 ${dxy.price}으로 전일보다 ${Math.abs(num(dxy.changePct) ?? 0)}% ${upDown(dxy.dir)}`);
-  if (us10) mac.push(`미 10년물 국채금리는 ${us10.price}%로 ${Math.abs(num(us10.change) ?? 0).toFixed(2)}%p ${upDown(us10.dir)}`);
+  if (dxy) mac.push(`달러인덱스는 ${dxy.price}${ro(dxy.price)} 전일보다 ${Math.abs(num(dxy.changePct) ?? 0)}% ${upDown(dxy.dir)}`);
+  if (us10) mac.push(`미 10년물 국채금리는 ${(num(us10.price) ?? 0).toFixed(2)}%로 ${Math.abs(num(us10.change) ?? 0).toFixed(2)}%p ${upDown(us10.dir)}`);
   if (wti) mac.push(`WTI 유가는 배럴당 ${wti.price}달러로 ${Math.abs(num(wti.changePct) ?? 0)}% ${upDown(wti.dir)}`);
   if (mac.length) {
-    let p = `달러와 금리도 금값을 좌우한다. ${mac.join(", ")}.`;
+    /* 각 조각이 "올랐다/내렸다"로 끝난다. 쉼표로 이으면 비문이 된다 (2026-09-21 기사에 그대로 나갔다). */
+    let p = `달러와 금리도 금값을 좌우한다. ${mac.join(". ")}.`;
     const notes = [];
     if (dxy && dxy.dir !== "none") notes.push(`달러가 ${dxy.dir === "up" ? "강해지면" : "약해지면"} 달러로 값을 매기는 금은 다른 통화 보유자에게 ${dxy.dir === "up" ? "비싸져 수요가 줄고" : "싸져 수요가 늘어"} 금값에 ${dxy.dir === "up" ? "부담" : "힘"}이 되는 것이 일반적이다`);
     if (us10 && us10.dir !== "none") notes.push(`금은 이자가 없어 국채금리가 ${us10.dir === "up" ? "오르면" : "내리면"} 상대적 매력이 ${us10.dir === "up" ? "떨어지는" : "커지는"} 쪽으로 작용한다`);
-    if (notes.length) p += ` ${notes.join(". ")}. 오늘 국제 금값의 ${igPctAbs}% ${upDown(ig.dir, "상승", "하락", "보합")}은 이런 지표들의 방향과 ${(dxy?.dir === "up") === (ig.dir === "down") || (us10?.dir === "up") === (ig.dir === "down") ? "대체로 맞물린다" : "반대로, 다른 요인이 더 컸다는 뜻이다"}.`;
+    /*
+      원래는 WTI 까지 나열해 놓고 "이런 지표들의 방향과 대체로 맞물린다"로 닫았는데,
+      판정식은 달러인덱스·10년물 둘만 봤다. 판단에 들어가지도 않은 유가가 근거처럼 읽혔다.
+      여기서는 금값이 왜 그 방향으로 눌리거나 밀리는지 기제만 적고, 오늘 등락의 원인은 단정하지 않는다.
+    */
+    if (notes.length) {
+      const against = [];
+      if (dxy && dxy.dir !== "none") against.push(dxy.dir === "up" ? "누르는" : "밀어 올리는");
+      if (us10 && us10.dir !== "none") against.push(us10.dir === "up" ? "누르는" : "밀어 올리는");
+      const same = against.length === 2 && against[0] === against[1];
+      p += ` ${notes.join(". ")}.`;
+      if (same) p += ` 오늘은 달러와 금리 모두 금값을 ${against[0]} 방향이었다.`;
+      else if (against.length === 2) p += ` 오늘은 달러와 금리가 서로 반대 방향이었다.`;
+    }
     ps.push(p);
   }
   if (krx?.krwPerGram) ps.push(`도매 시장인 한국거래소(KRX) 금시장은 ${korDate(krx.date)} 1g당 ${won(krx.krwPerGram)}원(한 돈 ${won(krx.krwPerDon)}원)에 마감했다. 전 거래일보다 ${won(Math.abs(krx.change ?? 0))}원(${Math.abs(krx.changePct ?? 0)}%) ${upDown(krx.change > 0 ? "up" : krx.change < 0 ? "down" : "none")}. 이 값은 하루 한 번 갱신되는 전 영업일 종가라 오늘 소매 고시보다 하루 이상 늦다.`);

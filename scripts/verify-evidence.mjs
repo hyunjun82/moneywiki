@@ -79,7 +79,7 @@ function claimedQuotes(body) {
 /** 검증 제외: 연도 표기(2026년)는 서술 맥락이라 대조 대상에서 뺀다 */
 const IGNORE = /^(19|20)\d{2}년$/;
 
-let fail = 0, checked = 0;
+let fail = 0, checked = 0, stale = 0;
 
 for (const file of fs.readdirSync(ART_DIR).filter((f) => f.endsWith(".ts") && f !== "types.ts")) {
   const src = fs.readFileSync(path.join(ART_DIR, file), "utf8");
@@ -102,13 +102,18 @@ for (const file of fs.readdirSync(ART_DIR).filter((f) => f.endsWith(".ts") && f 
       fail++;
       continue;
     }
+    /*
+      증거가 오래된 것은 "경고"다. 빌드는 막지 않는다.
+      막았더니 2026-09-18(8/18 수집분 + 30일)에 ISA·IRP 12편 때문에 사이트 전체 배포가 멈췄고,
+      매일 자동 발행되는 금시세 기사까지 닷새 동안 화면에 못 올라갔다.
+      근거 없는 수치·깨진 인용·누락된 스크린샷은 아래에서 그대로 빌드를 막는다 — 원래 의도는 그쪽이다.
+    */
     if (days > 30) {
-      console.error(
-        `❌ [${art.slug}] 증거가 ${Math.floor(days)}일 전 수집분 (${ev.verifiedAt}) — ` +
+      console.warn(
+        `⚠️  [${art.slug}] 증거가 ${Math.floor(days)}일 전 수집분 (${ev.verifiedAt}) — ` +
           `npm run evidence 로 다시 수집하세요. 낡은 수치가 그대로 실릴 수 있습니다.`
       );
-      fail++;
-      continue;
+      stale++;
     }
 
     // 스크린샷 실존 확인
@@ -190,5 +195,6 @@ for (const file of fs.readdirSync(ART_DIR).filter((f) => f.endsWith(".ts") && f 
 }
 
 if (!checked) { console.log("검사 대상 글 없음"); process.exit(0); }
+if (stale) { console.warn(`\n경고 ${stale}건 — 증거가 30일을 넘겼습니다. 배포는 막지 않으니 npm run evidence 로 갱신하세요.`); }
 if (fail) { console.error(`\n실패 ${fail}건 — 증거 없는 수치를 지우거나 collect-evidence.mjs로 근거를 확보하세요.`); process.exit(1); }
 console.log(`\n통과 — 글 ${checked}편`);
