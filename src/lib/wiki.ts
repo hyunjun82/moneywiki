@@ -367,8 +367,28 @@ export async function getWikiDocument(
   };
 }
 
-// 모든 위키 문서 메타데이터 가져오기
+/*
+  모든 위키 문서 메타데이터 — 한 번 읽어 두고 다시 쓴다.
+  /w/[slug] 한 장을 만들 때마다 이 함수가 두 번(관련 문서·인기 문서) 불렸고, 그때마다 md 1,977개를
+  전부 읽어 gray-matter 로 파싱했다(2,100여 장 × 2 ≈ 800만 번). Cloudflare 빌드가 35분 제한을 넘겨
+  2026-09-17~21 닷새 동안 배포가 한 번도 안 됐다. 빌드 중에는 파일이 바뀌지 않으니 결과를 재사용한다.
+  dev 서버에서는 폴더가 바뀌면(md 추가·삭제) 다시 읽는다. 호출자가 정렬 등으로 배열을 건드려도
+  캐시가 오염되지 않도록 복사본을 돌려준다.
+*/
+let allDocsCache: { key: string; docs: Omit<WikiDocument, "content" | "htmlContent">[] } | null = null;
+
 export function getAllWikiDocuments(): Omit<WikiDocument, "content" | "htmlContent">[] {
+  const isBuild = process.env.NEXT_PHASE === "phase-production-build";
+  const key = isBuild
+    ? "build"
+    : String(fs.existsSync(wikiDirectory) ? fs.statSync(wikiDirectory).mtimeMs : 0);
+  if (allDocsCache && allDocsCache.key === key) return allDocsCache.docs.slice();
+  const docs = readAllWikiDocuments();
+  allDocsCache = { key, docs };
+  return docs.slice();
+}
+
+function readAllWikiDocuments(): Omit<WikiDocument, "content" | "htmlContent">[] {
   const slugs = getAllWikiSlugs();
 
   return slugs.map((slug) => {
