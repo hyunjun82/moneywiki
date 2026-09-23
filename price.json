@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-23T15:36:52.937+09:00",
+  "updatedAt": "2026-09-23T21:19:24.579+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -1126,9 +1126,9 @@
     "fetchedDate": "2026-09-23"
   },
   "fx": {
-    "usdkrw": 1358.21,
-    "change": -15.47,
-    "changePct": -1.13,
+    "usdkrw": 1365.56,
+    "change": -8.12,
+    "changePct": -0.59,
     "dir": "down",
     "changeBasis": "prevClose",
     "prevClose": {
@@ -1140,30 +1140,30 @@
   "intl": {
     "gold": {
       "name": "금",
-      "usdPerOz": 4367,
-      "changePct": -0.21,
+      "usdPerOz": 4349.6,
+      "changePct": -0.61,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-09-22",
         "price": 4376.4
       },
-      "krwPerGram": 190696,
-      "krwPerDon": 715110,
+      "krwPerGram": 190964,
+      "krwPerDon": 716115,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
       "name": "은",
-      "usdPerOz": 66.79,
-      "changePct": 1.29,
-      "dir": "up",
+      "usdPerOz": 65.65,
+      "changePct": -0.44,
+      "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-09-22",
         "price": 65.93
       },
-      "krwPerGram": 2916,
-      "krwPerDon": 10935,
+      "krwPerGram": 2882,
+      "krwPerDon": 10808,
       "source": "COMEX 은 선물 (SI=F)"
     }
   },
@@ -1187,9 +1187,9 @@
       "name": "달러인덱스",
       "symbol": "DX-Y.NYB",
       "unit": "pt",
-      "price": 100.74,
-      "change": 0.31,
-      "changePct": 0.31,
+      "price": 100.88,
+      "change": 0.45,
+      "changePct": 0.45,
       "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
@@ -1202,9 +1202,9 @@
       "name": "WTI 유가",
       "symbol": "CL=F",
       "unit": "$",
-      "price": 89.36,
-      "change": -5.23,
-      "changePct": -5.53,
+      "price": 90.67,
+      "change": -3.92,
+      "changePct": -4.14,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
