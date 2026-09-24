@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-24T15:21:40.175+09:00",
+  "updatedAt": "2026-09-24T21:09:13.160+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -1133,8 +1133,8 @@
     "fetchedDate": "2026-09-24"
   },
   "fx": {
-    "usdkrw": 1367.69,
-    "change": 17.33,
+    "usdkrw": 1367.58,
+    "change": 17.22,
     "changePct": 1.28,
     "dir": "up",
     "changeBasis": "prevClose",
@@ -1147,30 +1147,30 @@
   "intl": {
     "gold": {
       "name": "금",
-      "usdPerOz": 4320,
-      "changePct": 0.04,
-      "dir": "up",
+      "usdPerOz": 4298.5,
+      "changePct": -0.46,
+      "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-09-23",
         "price": 4318.4
       },
-      "krwPerGram": 189960,
-      "krwPerDon": 712350,
+      "krwPerGram": 189000,
+      "krwPerDon": 708750,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
       "name": "은",
-      "usdPerOz": 64.61,
-      "changePct": 0.36,
-      "dir": "up",
+      "usdPerOz": 63.96,
+      "changePct": -0.66,
+      "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-09-23",
         "price": 64.38
       },
-      "krwPerGram": 2841,
-      "krwPerDon": 10654,
+      "krwPerGram": 2812,
+      "krwPerDon": 10545,
       "source": "COMEX 은 선물 (SI=F)"
     }
   },
@@ -1194,10 +1194,10 @@
       "name": "달러인덱스",
       "symbol": "DX-Y.NYB",
       "unit": "pt",
-      "price": 101.07,
-      "change": -0.03,
-      "changePct": -0.03,
-      "dir": "down",
+      "price": 101.29,
+      "change": 0.19,
+      "changePct": 0.19,
+      "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-09-23",
@@ -1209,10 +1209,10 @@
       "name": "WTI 유가",
       "symbol": "CL=F",
       "unit": "$",
-      "price": 92.03,
-      "change": -0.13,
-      "changePct": -0.14,
-      "dir": "down",
+      "price": 93.53,
+      "change": 1.37,
+      "changePct": 1.49,
+      "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-09-23",
