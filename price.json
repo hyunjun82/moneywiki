@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-25T10:37:47.450+09:00",
+  "updatedAt": "2026-09-25T15:42:58.051+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -1133,10 +1133,10 @@
     "fetchedDate": "2026-09-25"
   },
   "fx": {
-    "usdkrw": 1364.25,
-    "change": 1.75,
-    "changePct": 0.13,
-    "dir": "up",
+    "usdkrw": 1358.13,
+    "change": -4.37,
+    "changePct": -0.32,
+    "dir": "down",
     "changeBasis": "prevClose",
     "prevClose": {
       "date": "2026-09-24",
@@ -1147,30 +1147,30 @@
   "intl": {
     "gold": {
       "name": "금",
-      "usdPerOz": 4327.4,
-      "changePct": 0.68,
+      "usdPerOz": 4310.3,
+      "changePct": 0.29,
       "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-09-24",
         "price": 4298
       },
-      "krwPerGram": 189807,
-      "krwPerDon": 711776,
+      "krwPerGram": 188209,
+      "krwPerDon": 705784,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
       "name": "은",
-      "usdPerOz": 64.47,
-      "changePct": 0.14,
+      "usdPerOz": 64.2,
+      "changePct": 1.17,
       "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-09-23",
-        "price": 64.38
+        "date": "2026-09-24",
+        "price": 63.46
       },
-      "krwPerGram": 2828,
-      "krwPerDon": 10605,
+      "krwPerGram": 2803,
+      "krwPerDon": 10511,
       "source": "COMEX 은 선물 (SI=F)"
     }
   },
@@ -1194,9 +1194,9 @@
       "name": "달러인덱스",
       "symbol": "DX-Y.NYB",
       "unit": "pt",
-      "price": 101.23,
-      "change": -0.06,
-      "changePct": -0.06,
+      "price": 101.17,
+      "change": -0.13,
+      "changePct": -0.12,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
@@ -1209,9 +1209,9 @@
       "name": "WTI 유가",
       "symbol": "CL=F",
       "unit": "$",
-      "price": 93.25,
-      "change": -1.36,
-      "changePct": -1.44,
+      "price": 93.02,
+      "change": -1.59,
+      "changePct": -1.68,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
