@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-26T10:42:14.967+09:00",
+  "updatedAt": "2026-09-26T15:42:02.865+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -1130,12 +1130,12 @@
         "changePct": -2.2
       }
     ],
-    "fetchedDate": "2026-09-25"
+    "fetchedDate": "2026-09-26"
   },
   "fx": {
-    "usdkrw": 1355.28,
-    "change": -12.08,
-    "changePct": -0.88,
+    "usdkrw": 1354.4,
+    "change": -12.96,
+    "changePct": -0.95,
     "dir": "down",
     "changeBasis": "prevClose",
     "prevClose": {
@@ -1147,30 +1147,30 @@
   "intl": {
     "gold": {
       "name": "금",
-      "usdPerOz": 4320.5,
-      "changePct": 0.52,
+      "usdPerOz": 4321.2,
+      "changePct": 0.54,
       "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-09-24",
         "price": 4298
       },
-      "krwPerGram": 188258,
-      "krwPerDon": 705968,
+      "krwPerGram": 188167,
+      "krwPerDon": 705626,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
       "name": "은",
-      "usdPerOz": 64.71,
-      "changePct": 1.97,
+      "usdPerOz": 64.8,
+      "changePct": 2.12,
       "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-09-24",
         "price": 63.46
       },
-      "krwPerGram": 2820,
-      "krwPerDon": 10575,
+      "krwPerGram": 2822,
+      "krwPerDon": 10583,
       "source": "COMEX 은 선물 (SI=F)"
     }
   },
@@ -1209,9 +1209,9 @@
       "name": "WTI 유가",
       "symbol": "CL=F",
       "unit": "$",
-      "price": 92.44,
-      "change": -2.17,
-      "changePct": -2.29,
+      "price": 92.41,
+      "change": -2.2,
+      "changePct": -2.33,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
