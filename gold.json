@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-28T16:37:22.991+09:00",
+  "updatedAt": "2026-09-28T17:00:04.163+09:00",
   "date": "2026-09-28",
   "retail": {
     "source": "한국금거래소",
@@ -9,12 +9,12 @@
     "note": "한국금거래소 고시. 살 때는 부가세 10% 포함, 하루 여러 차례 고시됩니다. 18K·14K 살 때는 제품 시세가 적용됩니다.",
     "latest": {
       "date": "2026-09-28",
-      "round": 2,
-      "time": "12:40:16",
+      "round": 3,
+      "time": "16:36:30",
       "buy": 808000,
-      "sell": 688000,
-      "k18": 505700,
-      "k14": 392200,
+      "sell": 684000,
+      "k18": 502800,
+      "k14": 389900,
       "s18": 593880,
       "s14": 460560
     },
@@ -30,12 +30,29 @@
     "change": {
       "buy": -16000,
       "buyPct": -1.94,
-      "sell": -6000,
-      "sellPct": -0.86,
-      "k18": -4400,
-      "k14": -3400
+      "sell": -10000,
+      "sellPct": -1.44,
+      "k18": -7300,
+      "k14": -5700
     },
     "quotes": [
+      {
+        "date": "2026-09-28",
+        "round": 3,
+        "time": "16:36:30",
+        "buy": 808000,
+        "sell": 684000,
+        "k18": 502800,
+        "k14": 389900,
+        "platinum": {
+          "buy": 329000,
+          "sell": 267000
+        },
+        "silver": {
+          "buy": 11370,
+          "sell": 9470
+        }
+      },
       {
         "date": "2026-09-28",
         "round": 2,
@@ -119,18 +136,18 @@
     }
   },
   "reference": {
-    "xauUsd": 4190.3,
-    "usdKrw": 1360.28,
-    "asOf": "2026-09-28T16:37:18.000+09:00",
-    "basePerGram": 183258.65,
-    "basePerDon": 687220,
+    "xauUsd": 4187.9,
+    "usdKrw": 1359.68,
+    "asOf": "2026-09-28T17:00:06.000+09:00",
+    "basePerGram": 183072.91,
+    "basePerDon": 686523,
     "formula": "xauUsd / 31.1034768 * usdKrw * 3.75",
     "source": "COMEX 금 선물(GC=F) × USD/KRW — Yahoo Finance"
   },
   "intl": {
-    "xagUsd": 61.5,
-    "silverBasePerGram": 2689.64,
-    "silverBasePerDon": 10086,
+    "xagUsd": 61.48,
+    "silverBasePerGram": 2687.58,
+    "silverBasePerDon": 10078,
     "source": "COMEX 은 선물(SI=F) × USD/KRW — Yahoo Finance"
   },
   "wholesale": {
@@ -182,18 +199,18 @@
     ]
   },
   "derived": {
-    "spread": 120000,
-    "spreadPct": 14.85,
+    "spread": 124000,
+    "spreadPct": 15.35,
     "breakdown": {
-      "gold": 687220,
-      "craft": 47325,
+      "gold": 686523,
+      "craft": 48022,
       "vat": 73455
     },
-    "sellVsBase": 780,
-    "k18Theory": 516000,
-    "k18Gap": -10300,
-    "k14Theory": 402480,
-    "k14Gap": -10280
+    "sellVsBase": -2523,
+    "k18Theory": 513000,
+    "k18Gap": -10200,
+    "k14Theory": 400140,
+    "k14Gap": -10240
   },
   "history": {
     "daily": [
@@ -2832,10 +2849,10 @@
       {
         "date": "2026-09-28",
         "buy": 808000,
-        "sell": 688000,
-        "k18": 505700,
-        "k14": 392200,
-        "rounds": 2
+        "sell": 684000,
+        "k18": 502800,
+        "k14": 389900,
+        "rounds": 3
       }
     ],
     "days": 330,
