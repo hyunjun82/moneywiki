@@ -11,7 +11,7 @@
  *
  * 그래서 고용24·노동포털 버튼은 확인된 행동 화면(scripts/cta-registry.json)만 쓰고,
  * 버튼 이름에 그 화면의 말이 들어가야 한다. 기관 첫 화면·제도안내·POST 전용 주소는 어느 경우든 금지.
- * check-draft(글 쓰기 전)·verify-rendered(화면)·stageCtaCheck(설계 직후)가 같은 규칙을 쓴다.
+ * article.mjs 정규화(등록부 주소·버튼 문구)와 verify-rendered(화면)가 이 등록부를 쓴다.
  */
 import fs from "node:fs";
 import path from "node:path";

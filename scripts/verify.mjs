@@ -17,7 +17,7 @@ const argv = process.argv.slice(2);
 const slug = argv.find((a) => !a.startsWith("--"));
 if (!slug) { console.error("사용법: node scripts/verify.mjs <slug> [--live]"); process.exit(1); }
 const live = argv.includes("--live");
-const PORT = 3111;
+const PORT = Number(process.env.ARTICLE_PORT) || 3112; // 3111 은 다른 프로젝트(gov-jjyu) dev 가 쓴다 — 포트가 겹치면 남의 앱을 화면 검사한다 (2026-09-20)
 const isWin = process.platform === "win32";
 
 const run = (label, cmd, args) => {

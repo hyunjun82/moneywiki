@@ -29,7 +29,7 @@ export function evidenceDigest(ev, { maxFacts = 320, maxRawChars = 6000, maxRawT
 
 /** 조문·URL 을 사용자가 안 줬을 때 한 번 묻는다. 타이틀·소제목만 보고 고른다 */
 export function pickSourcesPrompt({ title, headings, registry, candidates = [], givenLaws = [], givenUrls = [] }) {
-  return `당신은 머니위키(jjyu.co.kr) 편집자입니다. 도구를 쓰지 마세요.
+  return `당신은 머니위키(jjyu.co.kr) 편집자입니다.
 할 일: 아래 타이틀·소제목의 글을 쓰려면 어떤 법 조문과 어떤 공식 페이지를 근거로 열어야 하는지 고릅니다. 글은 쓰지 않습니다.
 좋은 글은 근거가 두꺼운 데서 나옵니다 — 조문만으로는 "법은 정하지 않는다" 이상을 못 씁니다. 판례·해설·절차·서류가 적힌 페이지를 함께 고릅니다.
 
@@ -55,13 +55,15 @@ ${registry.map((r) => `- ${r.org} | ${r.url} | 쓴 글: ${r.usedBy.slice(0, 4).j
 
 const RULES = ({ verifiedAt, today }) => `숫자
 - 본문의 모든 "숫자+단위"(원·만원·천원·억원·억·%·퍼센트·일·개월·년·주·회·세·시간·배)는 증거 안에 그 숫자가 글자 그대로 있어야 합니다 (콤마·공백만 무시). 없으면 그 숫자를 쓰지 않습니다. 기억으로 채우지 않습니다. "2026년" 같은 연도만 예외.
-- 증거의 숫자로 계산한 파생값이나 사례용 가정값(예: "월급 300만원인 사람")을 쓰면 exampleValues 에 본문 표기 그대로 넣고, exampleNote 에 "값 = 식" 으로 적습니다. 식은 기계가 실제로 계산합니다. 예) "88,000원 = 11,000 × 8", "가정: 월급 300만원 (사례용 가정값)". 파생값은 적을수록 좋습니다.
+- 증거의 숫자로 계산한 파생값이나 사례용 가정값(예: "월급 300만원인 사람")을 쓰면 두 곳에 나눠 적습니다. 파생값은 적을수록 좋고, 증거에 글자 그대로 있는 숫자는 적지 않습니다.
+  · exampleValues — 본문에 쓴 "숫자+단위"만, 한 칸에 하나. 예) ["88,000원", "300만원"]. 식·"가정:"·설명을 붙이면 기계가 본문 숫자와 못 맞춰 떨어집니다.
+  · exampleNote — 식과 가정을 "·" 로 이어서. 예) "88,000원 = 11,000 × 8 · 가정: 월급 300만원 (사례용 가정값)". 기계가 "=" 양쪽을 실제로 계산하므로 "=" 는 계산식에만 씁니다. 출처 설명에 "=" 를 쓰지 않습니다.
 인용
-- quote.text 와 sourceQuote.excerpt 는 증거 원문의 연속된 문장을 그대로 옮깁니다 (요약·의역 금지). 원문에 없는 문장은 거부됩니다. quote.law 는 "국민건강보험법 제110조 제1항" 형식.
+- quote.text 와 sourceQuote.excerpt 는 증거 원문의 연속된 문장을 그대로 옮깁니다 (요약·의역 금지). quote.law 는 "국민건강보험법 제110조 제1항" 형식.
 - 숫자(두 자리 이상)가 나오는 대제목 섹션마다 quote 를 하나 이상 둡니다 (섹션 또는 그 소제목에).
 구조
 - meta.title 은 주어진 타이틀 글자 그대로. mainSections 는 주어진 소제목 수와 같고, i번째 heading 은 i번째 소제목 글자 그대로. 바꾸면 기계가 되돌립니다.
-- 대제목마다 subsections(h3) 1~2개 — 검색자가 실제로 묻는 문장 "~나요" 로. eyebrow 는 4~8자 주제 라벨(예: "지원 대상"). 대제목이 eyebrow 로 시작하면 거부됩니다.
+- 대제목마다 subsections(h3) 1~2개 — 검색자가 실제로 묻는 문장 "~나요" 로. eyebrow 는 4~8자 주제 라벨(예: "지원 대상")이고, 대제목의 첫머리를 그대로 쓰지 않습니다.
 - 모든 h2·h3 에 answer (한 줄 답, 결론부터, 40~120자). body 는 해설 2~5문장.
 - primaryKeywords 2~3개: 사람이 실제로 치는 짧은 검색어(12자 이내). 2개 이상이 타이틀 안에 글자 그대로 있어야 합니다.
 - 필드 이름은 types.ts 에 있는 것만 (없는 필드가 하나라도 있으면 tsc 가 거부). subsections 에는 sourceQuote·link·eyebrow 가 없습니다 (quote·cta·compareTable·widgets 만). widgets[].type 은 checklist·calc-cta·stat-box·case-example·def-box·decide·flow·stepbar·timeline 만. 표 셀 객체는 text·status·tag·tagTone·doc·links·hideOnMobile 만.
@@ -69,12 +71,12 @@ const RULES = ({ verifiedAt, today }) => `숫자
 - resolution 은 반드시 { "steps": [] }. 단계 안내는 stepbar 위젯으로. numericClaims 는 쓰지 않습니다.
 - sources 는 group(법령 / 행정규칙·안내 / 정부 도구 / 검증 방법)을 붙입니다. url 은 증거의 url 과 법제처 조문 주소만.
 - verify: { "note": "무엇과 대조했는지 한 줄", "date": "${verifiedAt}" }. lastVerified: "${verifiedAt}". meta.publishedAt: "${today}". meta.author: { "name": "머니위키 편집팀" } (직함·검수자 표기 금지).
-비주얼 (렌더 검사기가 봅니다)
+비주얼
 - 대제목 섹션의 절반 이상에 비주얼(decide·compareTable·stepbar·flow·timeline·checklist·stat-box·case-example). 비주얼은 질문의 성격이 정합니다 — 얼마? 표·산식 / 나도 되나? decide·checklist / 어떻게? stepbar / 언제? timeline / 내 경우는? case-example. 주제에 없는 위젯을 채우지 않습니다.
-- 섹션의 대표 비주얼은 우선순위(decide > compareTable > stepbar > flow > timeline > checklist > stat-box)로 하나 정해지고, 연속한 두 섹션의 대표 비주얼이 같으면 거부됩니다.
+- 섹션의 대표 비주얼은 우선순위(decide > compareTable > stepbar > flow > timeline > checklist > stat-box)로 하나 정해집니다. 연속한 두 섹션의 대표 비주얼은 달라야 합니다.
 - compareTable: caption·footnote 필수. headers 가 4개 이상이면 "cards": true. 모든 행의 칸 수 = headers 수. decide: items 3~5개(q·sub·next) + okText. stepbar: 3~5단계(tab·title·body·prep·time·action). timeline: items 의 d·t·m.
 버튼·링크
-- 버튼(heroCta · cta · stepbar action) 의 url 은 허용 버튼 목록 안에서만, label 은 목록의 문구 그대로. 목록에 이 글의 일을 하는 화면이 없으면 버튼을 넣지 않습니다 — 없는 주소를 지어내면 거부됩니다. 버튼이 하나도 없어도 됩니다.
+- 버튼(heroCta · cta · stepbar action) 의 url 은 허용 버튼 목록 안에서만, label 은 목록의 문구 그대로. 목록에 이 글의 일을 하는 화면이 없으면 버튼을 넣지 않습니다. 버튼이 하나도 없어도 됩니다.
 - heroCta(첫 화면 대형 버튼)는 그 화면이 이 글의 주제 자체를 처리할 때만. 같은 주소는 최대 2곳.
 - 내부 링크 slug(relatedQuestions · link · alternatives · calc-cta · heroWidget.more) 는 허용 slug 목록 안에서만. relatedQuestions 3~4개.
 정본에서 반드시 가져올 것 (정본 본문의 해당 자리를 보고 그대로 합니다)
@@ -90,12 +92,12 @@ const RULES = ({ verifiedAt, today }) => `숫자
 - 독자는 법을 배우러 온 사람이 아니라 자기 문제를 풀러 온 사람입니다. heroHook·answer·body·keyFacts·summary 에 "제840조 제6호", "제842조" 같은 조·항·호 번호를 늘어놓지 않습니다. 본문은 독자의 상황과 답(되나요 → 됩니다/안 됩니다, 언제까지 → 날짜 계산법, 무엇을 → 행동)으로 쓰고, 조문 번호는 접힌 근거(quote.law)와 sources 에만 둡니다. 본문에 조문을 언급해야 하면 한 섹션에 한 번, "민법은 ~라고 정해요" 정도로 그칩니다.
 - 어미는 해요체. 타이틀·eyebrow 는 명사형. 대시(—) 문자는 어디에도 쓰지 않습니다 — 구분은 중점(·)이나 쉼표, 범위는 물결(~). 백틱·코드 금지.
 - 과장·확정 표현 금지: "축하", "무조건", "100%", "확정", "반드시 받을 수", "대상이에요", "당첨".
-- heroHook(서론): 3~5문장. 첫 질문의 결론(숫자·판정)부터 사실로 쓰고, 마지막 문장도 사실로 끝냅니다. "확인해 보세요" 같은 권유로 맺지 않습니다. **강조** 1~2곳.
+- heroHook(서론): 첫 질문의 결론(숫자·판정)부터 사실로 쓰고, 마지막 문장도 사실로 끝냅니다. "확인해 보세요" 같은 권유로 맺지 않습니다. **강조** 1~2곳.
 - **강조** 마크는 heroHook·body·keyFacts.value·meta.description·checklist items 에서만. answer·표 셀·quote 에는 쓰지 않습니다.
 - meta.description: 결론 한 문장 + 굵은 숫자 하나(**…**). 숫자는 증거에 있는 것만.
 - 다른 사이트 문장 복제 금지. 사례 인물은 나이·직업·상황이 구체적인 새 인물.
 캡처
-- 아래 캡처 PNG 를 Read 도구로 전부 열어 봅니다. 장마다 "무엇이 보이는지" 한국어 한 줄(60~200자)을 captures 에 적습니다: 어느 사이트의 어떤 화면인지, 실제로 보이는 표·금액·기한·조문 번호. 안 보이면(빈 상자·로그인 화면) 그 사실을 그대로. 화면에 없는 숫자를 지어내지 않습니다. 빠진 장이 있으면 거부됩니다.
+- 아래 캡처 PNG 를 Read 도구로 전부 열어 봅니다. 장마다 "무엇이 보이는지" 한국어 한 줄(60~200자)을 captures 에 적습니다: 어느 사이트의 어떤 화면인지, 실제로 보이는 표·금액·기한·조문 번호. 안 보이면(빈 상자·로그인 화면) 그 사실을 그대로. 화면에 없는 숫자를 지어내지 않습니다.
 형식
 - 출력은 JSON 하나. 마크다운 펜스·설명 없이. 문자열은 한 줄(줄바꿈이 필요하면 \\n).
 - 형태: { "article": { …ArticleData… }, "exampleValues": ["…"], "exampleNote": "…", "captures": { "<파일명>": "한 줄", … } }`;
@@ -126,8 +128,8 @@ ${ctas.map((c) => `  - ${c.button} | ${c.url} | ${c.org} (${c.label})`).join("\n
 
 export function writePrompt(p) {
   const { ev, typesSrc, criteria, outline, example, today } = p;
-  return `당신은 머니위키(jjyu.co.kr) 편집자입니다. 캡처를 여는 Read 말고는 도구를 쓰지 마세요. 필요한 자료는 전부 아래에 있습니다.
-할 일: 주어진 타이틀·대제목과 증거만으로 글 한 편을 ArticleData JSON 으로 씁니다. 사람이 다시 손보지 않고 기계 검사를 통과해야 합니다.
+  return `당신은 머니위키(jjyu.co.kr) 편집자입니다. 필요한 자료는 전부 아래에 있습니다.
+할 일: 주어진 타이틀·대제목은 글자 그대로 두고, Playwright 로 연 공식 페이지 원문과 캡처(아래 「증거」)만으로 글 한 편을 ArticleData JSON 으로 씁니다. 본문의 숫자와 인용은 이 증거 JSON 과 대조되고, 사람이 다시 손보지 않고 게시됩니다.
 
 ## 1. 품질 기준 (정본 템플릿 머리말 — 전부 지킵니다)
 ${criteria}
@@ -144,19 +146,20 @@ ${JSON.stringify(example)}
 
 ${common(p)}
 
-## 규칙 (하나라도 어기면 글이 거부됩니다)
+## 규칙
 ${RULES({ verifiedAt: ev.verifiedAt, today })}`;
 }
 
 export function fixPrompt(p) {
   const { draft, failures, ev, today } = p;
-  return `아래 글(JSON)이 기계 검사에서 떨어졌습니다. 실패 목록을 전부 고쳐서 같은 형태의 JSON 전체를 다시 출력하세요. 캡처를 여는 Read 말고는 도구를 쓰지 마세요.
+  return `아래 글(JSON)이 기계 검사에서 떨어졌습니다. 실패 목록을 전부 고쳐서 같은 형태의 JSON 전체를 다시 출력하세요.
 
 ## 실패 목록 (검사기 출력 그대로)
 ${failures}
 
 ## 고치는 법
-- "증거 없는 수치": 그 숫자를 증거에서 찾아 글자 그대로 쓰거나, 없으면 그 숫자가 든 문장을 통째로 지웁니다. 계산값·가정값이면 exampleValues 에 넣고 exampleNote 에 "값 = 식" 을 적습니다.
+- "증거 없는 수치": 그 숫자를 증거에서 찾아 글자 그대로 쓰거나, 없으면 그 숫자가 든 문장을 통째로 지웁니다. 계산값·가정값이면 exampleValues 에는 그 숫자만("33,000원") 넣고, 식·가정은 exampleNote 에("33,000원 = 5,500 × 2 × 3 · 가정: 월세 100만원") 적습니다.
+- "산식이 맞지 않음": 식을 바로잡습니다. 계산식이 아니라 출처 설명이었다면 exampleNote 에서 그 조각을 지웁니다("=" 는 계산식에만).
 - "원문에 없는 인용": quote.text 를 「페이지 원문」·「숫자가 든 문장」에 있는 문장으로 바꿉니다. 복사해서 붙여넣고 앞뒤만 자릅니다 — 줄임표·요약·의역·띄어쓰기 손질을 하면 또 떨어집니다.
 - "숫자가 있는데 근거 조문(quote)이 없음": 그 섹션에 원문에서 그대로 복사한 quote 를 넣습니다. 뒷받침하는 문장이 증거에 없으면 그 숫자가 든 문장을 뺍니다.
 - "같은 비주얼 연속": 한 섹션의 대표 비주얼 종류를 바꿉니다. "한 줄 답(.ans) 없음": 그 제목에 answer 를 넣습니다. "라벨이 소제목을 자른 형태": eyebrow 를 다른 말로.

@@ -11,19 +11,16 @@ Next.js 16 정적 export · Cloudflare Pages (main 푸시 → 자동 빌드 ~15�
 
 ## 글
 
-**정본은 `docs/moneywiki-article-template.html` 한 편이다.** 규칙 문서는 없다 — 그 파일의 블록과 주석이 전부다.
+**정본은 `docs/moneywiki-article-template.html` 한 편이다** — 품질 기준은 그 파일의 머리말과 주석. 모델에 주는 세부 규칙은 `scripts/lib/prompts.mjs` 의 RULES 에만 있다. 별도 규칙 문서는 만들지 않는다.
 글은 `src/data/articles/<카테고리>.ts`(타입 `types.ts`, 렌더러 `src/components/article/ArticleShell.tsx`)에만 쓴다.
 
-**파이프라인이 쓴다** (`scripts/article.mjs`, 2026-09-16 새로 씀). 사용자는 **타이틀·소제목**을 준다. 두 모드:
+**파이프라인이 쓴다** (`scripts/article.mjs`). 사용자는 **타이틀·소제목**만 준다. 대화창에서 글을 쓰지 않는다 — 명령 한 번으로 끝난다.
 
 ```
-# 대화창 모드 (기본 — 사용자가 진행을 본다. 2026-09-16 "안 보이면 불편하다")
-npm run article -- <slug> --title "…" --headings "A / B / C" --category 금융 --url … --prompt-only   # ① 수집 (Bash 출력에 페이지·캡처가 보인다)
-#   ② Claude 가 대화창에서 scripts/reports/logs/<slug>/prompt.txt 와 캡처 PNG 를 Read 로 읽고 초안 JSON 을 …/draft-chat.json 에 Write
-npm run article -- <slug> --title "…" --headings "A / B / C" --draft scripts/reports/logs/<slug>/draft-chat.json   # ③ 삽입·검사·고치기·보고서
-# 묶음 모드 (사용자 터미널에서 — 브라우저 창과 진행 줄이 보인다. 대화창 안에서 돌리면 창이 안 뜬다)
-npm run article -- --batch scripts/batch.txt [--parallel 3]   # 줄마다: slug | 타이틀 | 소제목 A / B / C | 카테고리 | 조문(고용보험법:40,45; 민법:840) | URL
+npm run article -- <slug> --title "…" --headings "A / B / C" --category 금융 [--law 민법:840] [--url …]   # 한 편
+npm run article -- --batch scripts/batch.txt [--parallel 3]   # 묶음. 줄마다: slug | 타이틀 | 소제목 A / B / C | 카테고리 | 조문(고용보험법:40,45; 민법:840) | URL
 ```
+사용자 터미널에서 돌린다 — 브라우저 창과 진행 줄이 보인다(대화창 안에서 돌리면 창이 안 뜬다). `--draft <초안.json>` 은 쓰다 죽은 실행을 다시 쓰지 않고 이어서 검사할 때만.
 
 수집(`collect-evidence`, Playwright) → 작성(`claude -p` 1회, 캡처 PNG 는 Read 로 직접 봄) → 삽입·옛 TSX 삭제 → tsc·숫자·가려짐·내부링크·화면 검사 → 떨어지면 실패 출력을 넣어 **고치기 1회** → 다시 검사 → 끝. 그래도 떨어지면 **그 글은 버리고** 파일을 원래대로 되돌린다. 되풀이 루프·설계 단계·뜻 판정은 없다(2026-09-16, 다섯 겹 루프가 시간·사용량만 먹어서 걷어냄).
 조문·URL 을 비우면 타이틀·소제목을 보고 고르는 짧은 호출이 하나 붙는다. 주는 쪽이 낫다. `ANTHROPIC_API_KEY`가 있으면 시작하지 않는다(API 과금 금지). 사람이 보는 것은 `scripts/reports/<slug>.md` 한 장과 렌더 캡처 — 채점 뒤 `git push`.

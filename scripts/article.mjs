@@ -10,7 +10,6 @@
  *     줄마다: slug | 타이틀 | 소제목 A / B / C | 카테고리 | 조문(고용보험법:40,45; 민법:840) | URL(공백 구분)
  *   조문·URL 을 비우면 타이틀·소제목을 보고 고르는 짧은 호출이 하나 붙는다. 주는 쪽이 낫다.
  *   --draft scripts/reports/logs/<slug>/draft-0.json  쓰다 죽은 실행의 초안을 이어서 검사한다 (다시 쓰지 않는다)
- *   --prompt-only  수집까지 하고 지시문을 scripts/reports/logs/<slug>/prompt.txt 에 남긴 뒤 끝난다 (대화창 모드 1단계)
  *   --headless   브라우저 창을 띄우지 않는다 (기본은 띄운다 — 수집·검색·화면 검사가 보인다). 모델 호출은 도구 사용·쓴 글자 수가 30초마다 찍힌다
  *
  * 산출물
@@ -28,7 +27,7 @@ import * as io from "./lib/article-io.mjs";
 import { ctaRegistry, buttonLabel } from "./lib/cta-rules.mjs";
 import { evidenceDigest, writePrompt, fixPrompt, pickSourcesPrompt } from "./lib/prompts.mjs";
 
-const PORT = 3111;
+const PORT = Number(process.env.ARTICLE_PORT) || 3112; // 3111 은 다른 프로젝트(gov-jjyu) dev 가 쓴다 — 포트가 겹치면 남의 앱을 화면 검사한다 (2026-09-20)
 const isWin = process.platform === "win32";
 const REPORTS = path.join("scripts", "reports");
 fs.mkdirSync(REPORTS, { recursive: true });
@@ -379,10 +378,13 @@ function rollback(ctx) {
 async function applyAndGate(ctx, draftIn, inputs, round) {
   const { draft, problems } = enforce(ctx, draftIn, inputs);
   writeJson(path.join(ctx.logDir, `draft-${round}.json`), draft);
+  // 사전 검사에 걸려도 검사를 끝까지 돈다 — 고치기는 한 번뿐이라 실패를 한꺼번에 넘겨야 한다.
+  // 여기서 멈췄더니 고치기가 "무조건" 하나만 고쳤고, 초안에 이미 있던 라벨 문제가 그 뒤 화면 검사에서 드러나 글을 버렸다 (2026-09-28 통장-가압류-최저생계비)
+  const pre = [];
   if (problems.length) {
-    ctx.log("check", `사전 검사 ${problems.length}건 실패`);
+    ctx.log("check", `사전 검사 ${problems.length}건 실패 — 나머지 검사도 돌려 한꺼번에 고친다`);
     for (const p of problems) console.log(`           · ${p.length > 200 ? p.slice(0, 200) + "…" : p}`);
-    return { ok: false, draft, results: [{ name: "사전 검사", ok: false, out: problems.map((p) => "❌ " + p).join("\n") }] };
+    pre.push({ name: "사전 검사", ok: false, out: problems.map((p) => "❌ " + p).join("\n") });
   }
   const ev = structuredClone(ctx.evPristine);
   ev.capturesReviewed = { ...(ev.capturesReviewed || {}), ...draft.captures };
@@ -393,7 +395,7 @@ async function applyAndGate(ctx, draftIn, inputs, round) {
   return locked(async () => {
     io.saveEvidence(ctx.slug, ev);
     insert(ctx, draft.article);
-    const results = await gates(ctx);
+    const results = [...pre, ...(await gates(ctx))];
     const ok = results.every((r) => r.ok);
     if (!ok) rollback(ctx);
     return { ok, draft, results };
@@ -474,7 +476,6 @@ async function runOne(slug, f) {
     category: f.category || "", laws: parseLaws(f.law || []), urls: (f.url || []).filter(okUrl),
     model: typeof f.model === "string" ? f.model : "sonnet", commit: Boolean(f.commit), skipRender: Boolean(f["skip-render"]), recollect: Boolean(f.recollect),
     draftFile: typeof f.draft === "string" ? f.draft : "", // 쓰다 죽은 실행의 초안(scripts/reports/logs/<slug>/draft-N.json)을 이어서 검사한다 — 8분을 다시 쓰지 않는다
-    promptOnly: Boolean(f["prompt-only"]), // 수집까지만 하고 지시문을 파일로 남긴다 — 작성은 대화창에서 보이게 하고 --draft 로 이어서 검사 (2026-09-16 "안 보이면 불편하다")
     logDir: path.join(REPORTS, "logs", slug), t0: Date.now(), timings: {}, notes: [], fixRounds: 0, meter: newMeter(),
   };
   ctx.log = (stage, msg) => console.log(`[${hms()}] ${String(stage).padEnd(9)} ${PARALLEL > 1 ? slug.slice(0, 22).padEnd(22) + " " : ""}${msg}`);
@@ -487,15 +488,6 @@ async function runOne(slug, f) {
     const ev = await timed(ctx, "collect", () => collect(ctx));
     ctx.evPristine = structuredClone(ev);
     const inputs = writerInputs(ctx, ev);
-    if (ctx.promptOnly) {
-      fs.mkdirSync(ctx.logDir, { recursive: true });
-      const promptFile = path.join(ctx.logDir, "prompt.txt");
-      const draftFile = path.join(ctx.logDir, "draft-chat.json");
-      fs.writeFileSync(promptFile, writePrompt(inputs));
-      ctx.log("prompt", `지시문 저장 → ${promptFile} (캡처 ${inputs.pngs.length}장, 예시 ${ctx.exampleUsed})`);
-      ctx.log("prompt", `다음: 대화창에서 지시문·캡처를 읽고 초안 JSON 을 ${draftFile} 에 쓴 뒤  npm run article -- ${slug} --title … --headings … --draft ${draftFile}`);
-      return { slug, ok: true, title: ctx.title, report: promptFile, fixRounds: 0, ms: Date.now() - ctx.t0, usage: { ...ctx.meter }, error: "" };
-    }
     ctx.log("write", `글 작성 (claude -p, 예시 ${ctx.exampleUsed}, 캡처 ${inputs.pngs.length}장) — 가장 긴 단계`);
     let draft;
     if (ctx.draftFile) { ctx.log("write", `저장된 초안 재사용: ${ctx.draftFile}`); draft = parseDraft(fs.readFileSync(ctx.draftFile, "utf8")); }

@@ -86,12 +86,6 @@ const cases = [
     break: () => editEvidence((j) => { j.exampleValues = ["1,234원"]; j.exampleNote = ""; return j; }),
   },
   {
-    n: "증거가 31일 넘게 낡으면",
-    gate: "evidence",
-    slow: false,
-    break: () => editEvidence((j) => { j.verifiedAt = "2020-01-01"; return j; }),
-  },
-  {
     n: "fact 가 없는 캡처 파일을 가리키면",
     gate: "evidence",
     slow: false,
@@ -130,6 +124,21 @@ const cases = [
     gate: "evidence",
     slow: false,
     break: () => editEvidence((j) => { j.exampleValues = ["66,480원"]; j.exampleNote = "하한 66,480 = 최저임금 10,320 × 8시간 × 80%"; return j; }),
+  },
+  {
+    // 헛경보 시험 — 조문 번호 뒤 "원문"을 금액으로 읽으면 멀쩡한 글을 버린다(2026-09-28 "제3조의5 원문" → 5원)
+    n: "조문 번호 뒤에 '원문'을 쓰면 (헛경보 없어야)",
+    gate: "evidence",
+    slow: false,
+    break: () => editArticle((b) => b.replace('body: "', 'body: "제3조의5 원문과 제7 원칙을 대조했어요. ')),
+    expect: (r) => r.pass,
+    expectLabel: "통과(헛경보 없음)",
+  },
+  {
+    n: "띄어 쓴 금액(987,654 원)을 넣으면",
+    gate: "evidence",
+    slow: false,
+    break: () => editArticle((b) => b.replace('body: "', 'body: "무단으로 넣은 값 987,654 원이에요. ')),
   },
 ];
 

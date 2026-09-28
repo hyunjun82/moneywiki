@@ -2,7 +2,7 @@
 /**
  * 렌더링 검사기 — Playwright로 실제 화면을 열어 정본 템플릿과 대조한다.
  *
- * 데이터 검증(verify-articles)은 "값이 있는가"만 본다. 화면이 어떻게 나오는지는 모른다.
+ * 데이터 검사(tsc·verify-evidence)는 값만 본다. 화면이 어떻게 나오는지는 모른다.
  * 그래서 표 헤더가 남색으로 뒤집혀도, 보험 글에 신용조회 링크가 걸려도 통과했다.
  * 이 검사기는 눈으로 볼 것을 기계가 대신 본다.
  *
@@ -36,7 +36,7 @@ console.log(`검사 대상: ${BASE}${IS_LOCAL ? " (로컬)" : " (라이브 — �
 if (!IS_LOCAL) {
   // HTTP 로 물으면 Next dev 의 첫 컴파일이 오래 걸려 경고가 조용히 사라진다. TCP 로만 확인한다.
   const devUp = await new Promise((resolve) => {
-    const sock = net.connect({ host: "127.0.0.1", port: 3111 });
+    const sock = net.connect({ host: "127.0.0.1", port: Number(process.env.ARTICLE_PORT) || 3112 });
     const done = (v) => { sock.destroy(); resolve(v); };
     sock.setTimeout(1000);
     sock.once("connect", () => done(true));
@@ -44,8 +44,8 @@ if (!IS_LOCAL) {
     sock.once("error", () => done(false));
   });
   if (devUp) {
-    console.warn("⚠ 로컬 dev 서버가 3111 에 떠 있는데 라이브를 검사하고 있습니다.");
-    console.warn("  로컬 변경을 보려면 --base http://localhost:3111 을 붙이거나 npm run verify <slug> 를 쓰세요.");
+    console.warn("⚠ 로컬 dev 서버가 로컬 dev 포트에 떠 있는데 라이브를 검사하고 있습니다.");
+    console.warn("  로컬 변경을 보려면 --base http://localhost:3112 을 붙이거나 npm run verify <slug> 를 쓰세요.");
   }
 }
 
@@ -130,7 +130,7 @@ for (const slug of slugs) {
           : "";
         kinds.push(k);
       });
-      // 전 섹션 필수는 풀었다 — verify-articles 와 같은 기준(과반)을 쓴다.
+      // 전 섹션 필수는 풀었다 — 과반이면 된다.
       // 주제에 따라 해설만으로 충분한 섹션이 있고, 억지로 채우면 판박이가 된다.
       const withViz = kinds.filter(Boolean).length;
       if (secs.length && withViz / secs.length < 0.5)
