@@ -1,0 +1,675 @@
+{
+  "slug": "가압류-뜻-압류-가처분-차이",
+  "verifiedAt": "2026-09-28",
+  "collectedBy": "scripts/collect-evidence.mjs (playwright)",
+  "sources": [
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제276조",
+      "org": "법제처 (민사집행법 제276조)"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제280조",
+      "org": "법제처 (민사집행법 제280조)"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제277조",
+      "org": "법제처 (민사집행법 제277조)"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제293조",
+      "org": "법제처 (민사집행법 제293조)"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제300조",
+      "org": "법제처 (민사집행법 제300조)"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제301조",
+      "org": "법제처 (민사집행법 제301조)"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=85&onhunqueSeq=790",
+      "org": "법제처"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=85&onhunqueSeq=6535",
+      "org": "법제처"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=1&cnpClsNo=1",
+      "org": "법제처"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1&csmSeq=514&ccfNo=6&cciNo=2&cnpClsNo=2&menuType=prec",
+      "org": "법제처"
+    }
+  ],
+  "facts": [
+    {
+      "value": "제276조",
+      "quote": "제276조(가압류의 목적) ①가압류는 금전채권이나 금전으로 환산할 수 있는 채권에 대하여 동산 또는 부동산에 대한 강제집행을 보전하기 위하여 할 수 있다.",
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제276조",
+      "org": "법제처 (민사집행법 제276조)",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-1.png"
+    },
+    {
+      "value": "제280조",
+      "quote": "제280조(가압류명령) ①가압류신청에 대한 재판은 변론 없이 할 수 있다.",
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제280조",
+      "org": "법제처 (민사집행법 제280조)",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-2.png"
+    },
+    {
+      "value": "제277조",
+      "quote": "제277조(보전의 필요) 가압류는 이를 하지 아니하면 판결을 집행할 수 없거나 판결을 집행하는 것이 매우 곤란할 염려가 있을 경우에 할 수 있다.",
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제277조",
+      "org": "법제처 (민사집행법 제277조)",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-3.png"
+    },
+    {
+      "value": "제293조",
+      "quote": "제293조(부동산가압류집행) ①부동산에 대한 가압류의 집행은 가압류재판에 관한 사항을 등기부에 기입하여야 한다.",
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제293조",
+      "org": "법제처 (민사집행법 제293조)",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-4.png"
+    },
+    {
+      "value": "제300조",
+      "quote": "제300조(가처분의 목적) ①다툼의 대상에 관한 가처분은 현상이 바뀌면 당사자가 권리를 실행하지 못하거나 이를 실행하는 것이 매우 곤란할 염려가 있을 경우에 한다.",
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제300조",
+      "org": "법제처 (민사집행법 제300조)",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-5.png"
+    },
+    {
+      "value": "제301조",
+      "quote": "제301조(가압류절차의 준용) 가처분절차에는 가압류절차에 관한 규정을 준용한다.",
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제301조",
+      "org": "법제처 (민사집행법 제301조)",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-6.png"
+    },
+    {
+      "value": "2026년 / 8월 15일",
+      "quote": "이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.",
+      "url": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=85&onhunqueSeq=790",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-7.png"
+    },
+    {
+      "value": "2026년 / 8월 15일",
+      "quote": "이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.",
+      "url": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=85&onhunqueSeq=6535",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-8.png"
+    },
+    {
+      "value": "2028년 / 03월 01일",
+      "quote": "2028년 03월 01일 시행(개정 사항을 검토하여 향후 업데이트 예정입니다.)",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제979조",
+      "quote": "제979조), 유류분반환청구권(「민법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제1115조",
+      "quote": "제1115조) 등과 같은 일신전속적인 권리",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제42조",
+      "quote": "제42조, 「보조금 관리에 관한 법률」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제246조",
+      "quote": "제246조제1항 및 「민사집행법 시행령」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "2분",
+      "quote": "급료·연금·봉급·상여금·퇴직연금, 그 밖에 이와 비슷한 성질을 가진 급여채권의 2분의 1에 해당하는 금액.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "250만원",
+      "quote": "① 월 급여 250만원 이하: 전액 압류 금지",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "250만원 / 500만원 / 250만원",
+      "quote": "② 월 급여 250만원 초과 500만원 이하: 250만원을 제외한 나머지 금액",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "500만원 / 600만원",
+      "quote": "③ 월 급여 500만원 초과 600만원 이하: 월 급여의 1/2에 해당하는 금액",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "600만원 / 300만원 / 300만원",
+      "quote": "④ 월 급여 600만원 초과: [300만원 + {(급여 × 1/2-300만원) × 1/2}]을 제외한 나머지",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "2분",
+      "quote": "퇴직금 그 밖에 이와 비슷한 성질을 가진 급여채권의 2분의 1에 해당하는 금액",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제8조",
+      "quote": "제8조 및 「주택임대차보호법 시행령」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제10조",
+      "quote": "제10조에 따라 우선변제를 받을 수 있는 금액",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제246조",
+      "quote": "제246조의2에 따른 생계비계좌에 예치된 예금",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "250만원",
+      "quote": "생계비계좌에 예치된 예금 외에 개인별 잔액이 250만원 이하인 예금(적금·부금·예탁금과 우편대체를 포함함).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "1개월",
+      "quote": "다만, 채무자 등의 생활에 필요한 1개월간의 생계비에 해당하여 압류하지 못한 금전(「민사집행법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제195조",
+      "quote": "제195조제3호)이나 생계비계좌에 예치되어 압류하지 못한 예금(「민사집행법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제246조 / 250만원",
+      "quote": "제246조제1항제8호)이 있으면 250만원에서 그 금액을 뺀 금액으로 합니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제246조",
+      "quote": "제246조제1항제5호에 따른 퇴직금 그 밖에 이와 비슷한 성질을 가진 급여채권에 해당하여 이를 가압류 할 수 있습니다(대법원 2006.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제36조 / 제88조",
+      "quote": "제36조제1항 및 제88조제2항)",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제10조 / 제11조 / 제30조 / 제40조",
+      "quote": "제10조제1항, 제11조제1항, 제30조제1항 및 제40조)",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제21조 / 제34조 / 제51조 / 제56조",
+      "quote": "제21조, 제34조제2항, 제51조 및 제56조)",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제23조 / 제279조",
+      "quote": "제23조제1항, 제279조, 「민사집행규칙」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제203조",
+      "quote": "제203조제2항, 「민사소송법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제249조 / 제274조",
+      "quote": "제249조 및 제274조).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제274조",
+      "quote": "제274조제1항 및 「민사소송규칙」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "95,000,000원",
+      "quote": "청구채권 금 95,000,000원",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "10,000원 / 10,000원",
+      "quote": "채권가압류를 신청하려는 자는 10,000원(보증보험증권에 따른 담보제공인 경우에도 10,000원)의 인지를 붙여야 합니다(「민사소송 등 인지법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제9조",
+      "quote": "제9조제2항 본문, 「민사접수서류에 붙일 인지액 및 그 편철방법 등에 관한 예규」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "1회 / 3회",
+      "quote": "채권가압류를 신청하려는 자는 송달료(1회 송달료 × 당사자수 × 3회분)를 미리 내야 합니다(「민사소송법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제116조",
+      "quote": "제116조제1항, 「민사소송규칙」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제19조",
+      "quote": "제19조제1항제1호, 「송달료규칙」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제2조",
+      "quote": "제2조, 「송달료규칙의 시행에 따른 업무처리요령」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제7조",
+      "quote": "제7조제1항 및 별표 1).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제273조 / 제275조",
+      "quote": "제273조, 제275조, 「민사집행규칙」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제203조",
+      "quote": "제203조 및 「보전처분 신청사건의 사무처리요령」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "14일",
+      "quote": "※ 가압류 결정 후 14일 경과 후에는 법원에 가지 않고 대법원 홈페이지(http://www.scourt.go.kr)에서도 확인할 수 있습니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제291조 / 제237조",
+      "quote": "제291조 및 제237조제1항).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "1회",
+      "quote": "제3채무자에 대한 진술최고 신청서를 제출할 때에는 최고서의 송달료 및 제3채무자의 진술서 제출용 우편료(1회 송달료 × 제3채무자의 수)를 예납해야 합니다(「송달료규칙」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제14조",
+      "quote": "제14조, 「송달료규칙의 시행에 따른 업무처리요령」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "제237조",
+      "quote": "제237조)를 통해 가압류한 채권에 대한 궁금증을 해소할 수 있습니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "2026년 / 8월 15일",
+      "quote": "이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "95,000,000원",
+      "quote": "[별지 1] 가압류할 채권의 표시 청구채권 금 95,000,000원 제3채무자 1.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "10,000,000원",
+      "quote": "[별지 1] 가압류할 채권의 표시 금 10,000,000원 채무자가 제3채무자에 대하여 가지는 대여금반환청구채권 가운데 위 청구금액에 이를 때까지의 금액.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png"
+    },
+    {
+      "value": "2028년 / 03월 01일",
+      "quote": "2028년 03월 01일 시행(개정 사항을 검토하여 향후 업데이트 예정입니다.)",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-10.png"
+    },
+    {
+      "value": "제291조",
+      "quote": "제291조 및 「민사집행규칙」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-10.png"
+    },
+    {
+      "value": "제44조",
+      "quote": "제44조), 집행문부여에 대한 이의의 소(「민사집행법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-10.png"
+    },
+    {
+      "value": "제45조",
+      "quote": "제45조)의 규정은 원칙적으로 준용되지 않습니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-10.png"
+    },
+    {
+      "value": "2주",
+      "quote": "가압류에 대한 재판의 집행은 채권자에게 재판을 고지한 날부터 2주 이내에 해야 합니다(「민사집행법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-10.png"
+    },
+    {
+      "value": "제293조",
+      "quote": "제293조제2항 및 제3항).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-10.png"
+    },
+    {
+      "value": "제291조 / 제83조",
+      "quote": "제291조 및 제83조제2항).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-10.png"
+    },
+    {
+      "value": "제293조",
+      "quote": "제293조, 「민사집행규칙」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-10.png"
+    },
+    {
+      "value": "제108조 / 제210조 / 제211조",
+      "quote": "제108조, 제210조 및 제211조)",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-10.png"
+    },
+    {
+      "value": "제210조 / 제211조",
+      "quote": "제210조제2항 및 제211조).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-10.png"
+    },
+    {
+      "value": "제210조 / 제111조",
+      "quote": "제210조제3항 및 제111조제3항).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-10.png"
+    },
+    {
+      "value": "1주",
+      "quote": "압류의 효력 발생 당시 채무자가 점유하던 자동차 등을 제3자가 점유하게 된 경우 채권자는 점유 사실을 안 날부터 1주 이내에 법원에게 그 제3자에 대해 그 물건을 집행관에게 인도하도록 명할 것을 신청할 수 있습니다(「민사집행법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-10.png"
+    },
+    {
+      "value": "제193조",
+      "quote": "제193조제1항, 제2항 및 「민사집행규칙」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-10.png"
+    },
+    {
+      "value": "제210조 / 제115조",
+      "quote": "제210조제2항 및 제115조).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-10.png"
+    },
+    {
+      "value": "제210조 / 제117조",
+      "quote": "제210조제2항 및 제117조).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-10.png"
+    },
+    {
+      "value": "제210조",
+      "quote": "제210조제3항 및 「민사집행법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-10.png"
+    },
+    {
+      "value": "5년 / 700만원",
+      "quote": "※ 집행한 가압류에 위배하여 물건을 다른 곳으로 이전하거나 봉인표시(가압류의 경우 연두색 종이)를 떼어낼 경우 공무상비밀표시무효죄에 해당하여 5년 이하의 징역 또는 700만원 이하의 벌금에 처해집니다(「형법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-10.png"
+    },
+    {
+      "value": "1주",
+      "quote": "가압류된 유체동산을 제3자가 점유하게 된 경우 채권자는 그 제3자의 점유를 안 날부터 1주내에 법원에 가압류물의 인도명령을 신청하여 그 물건을 집행관에게 인도하도록 할 수 있습니다(「민사집행법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-10.png"
+    },
+    {
+      "value": "제291조 / 제193조",
+      "quote": "제291조, 제193조제1항 및 제2항).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-10.png"
+    },
+    {
+      "value": "제227조 / 제296조",
+      "quote": "제227조제3항 및 제296조제2항).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-10.png"
+    },
+    {
+      "value": "2026년 / 8월 15일",
+      "quote": "이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-10.png"
+    },
+    {
+      "value": "2026년 / 10월 08일",
+      "quote": "2026년 10월 08일 시행(개정 사항을 검토하여 향후 업데이트 예정입니다.)",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1&csmSeq=514&ccfNo=6&cciNo=2&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-11.png"
+    },
+    {
+      "value": "제579조",
+      "quote": "제579조제4호 소정의 압류금지채권인 퇴직금 기타 유사한 급여채권에 해당하는지 여부(적극)",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1&csmSeq=514&ccfNo=6&cciNo=2&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-11.png"
+    },
+    {
+      "value": "제579조",
+      "quote": "제579조제4호 소정의 압류금지채권인 퇴직금 기타 유사한 급여채권에 해당한다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1&csmSeq=514&ccfNo=6&cciNo=2&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-11.png"
+    },
+    {
+      "value": "2026년 / 8월 31일",
+      "quote": "이 정보는 2026년 8월 31일 기준으로 작성된 것입니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1&csmSeq=514&ccfNo=6&cciNo=2&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-11.png"
+    }
+  ],
+  "raws": [
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제276조",
+      "org": "법제처 (민사집행법 제276조)",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-1.png",
+      "text": "제276조(가압류의 목적) ①가압류는 금전채권이나 금전으로 환산할 수 있는 채권에 대하여 동산 또는 부동산에 대한 강제집행을 보전하기 위하여 할 수 있다.\n\n②제1항의 채권이 조건이 붙어 있는 것이거나 기한이 차지 아니한 것인 경우에도 가압류를 할 수 있다."
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제280조",
+      "org": "법제처 (민사집행법 제280조)",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-2.png",
+      "text": "제280조(가압류명령) ①가압류신청에 대한 재판은 변론 없이 할 수 있다.\n\n②청구채권이나 가압류의 이유를 소명하지 아니한 때에도 가압류로 생길 수 있는 채무자의 손해에 대하여 법원이 정한 담보를 제공한 때에는 법원은 가압류를 명할 수 있다.\n\n③청구채권과 가압류의 이유를 소명한 때에도 법원은 담보를 제공하게 하고 가압류를 명할 수 있다.\n\n④담보를 제공한 때에는 그 담보의 제공과 담보제공의 방법을 가압류명령에 적어야 한다."
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제277조",
+      "org": "법제처 (민사집행법 제277조)",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-3.png",
+      "text": "제277조(보전의 필요) 가압류는 이를 하지 아니하면 판결을 집행할 수 없거나 판결을 집행하는 것이 매우 곤란할 염려가 있을 경우에 할 수 있다."
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제293조",
+      "org": "법제처 (민사집행법 제293조)",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-4.png",
+      "text": "제293조(부동산가압류집행) ①부동산에 대한 가압류의 집행은 가압류재판에 관한 사항을 등기부에 기입하여야 한다.\n\n②제1항의 집행법원은 가압류재판을 한 법원으로 한다.\n\n③가압류등기는 법원사무관등이 촉탁한다."
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제300조",
+      "org": "법제처 (민사집행법 제300조)",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-5.png",
+      "text": "제300조(가처분의 목적) ①다툼의 대상에 관한 가처분은 현상이 바뀌면 당사자가 권리를 실행하지 못하거나 이를 실행하는 것이 매우 곤란할 염려가 있을 경우에 한다.\n\n②가처분은 다툼이 있는 권리관계에 대하여 임시의 지위를 정하기 위하여도 할 수 있다. 이 경우 가처분은 특히 계속하는 권리관계에 끼칠 현저한 손해를 피하거나 급박한 위험을 막기 위하여, 또는 그 밖의 필요한 이유가 있을 경우에 하여야 한다."
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제301조",
+      "org": "법제처 (민사집행법 제301조)",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-6.png",
+      "text": "제301조(가압류절차의 준용) 가처분절차에는 가압류절차에 관한 규정을 준용한다. 다만, 아래의 여러 조문과 같이 차이가 나는 경우에는 그러하지 아니하다."
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=85&onhunqueSeq=790",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-7.png",
+      "text": "메인메뉴 바로가기\n본문 바로가기\n통합검색박스\n검색어\n검색\n로그인 최근 본 법령정보 -\nLanguage\n메뉴전체보기\n책자형\n카드뉴스형\n백문백답\n솔로몬의 재판\n웹툰\n소식∙참여\n서비스 소개\nSMART\n생활법률\n앱 다운로드\n설문조사\n홈 > \n백문백답 > 생활법령 백문백답\n“가압류”란 무엇인가요?\n가압류는 금전과 관련된 채권(매매대금, 빌려준 돈, 어음금, 수표금, 공사대금, 임금, 손해배상청구권 등)을 가진 채권자가 채권보전을 위해 미리 채무자의 재산을 동결(凍結)시키는 것을 말합니다.\n◇ 가압류의 개념\n☞ “가압류”란 금전채권이나 금전으로 환산할 수 있는 채권 (예컨대 매매대금, 빌려준 돈, 어음금, 수표금, 공사대금, 임금, 손해배상청구권 등)의 집행을 보전(保全)할 목적으로 미리 채무자의 재산을 동결(凍結)시켜 채무자로부터 그 재산에 대한 처분권을 잠정적으로 빼앗는 집행보전제도(執行保全制度)를 말합니다.\n◇ 가처분과의 구분\n☞ 부동산 소유권이전 또는 말소등기청구권, 소유물 반환청구권, 매매목적물 인도청구권, 임차물 인도청구권 등과 같이 금전채권 외의 물건이나 권리를 대상으로 하는 청구권 등에 대해 장래의 집행을 보전하기 위해서는 가압류가 아닌 가처분(假處分)을 신청해야 합니다.\n\n\n\n    \n저장\n\n목록\n이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.\n생활법령정보는 법적 효력을 갖는 유권해석(결정, 판단)의 근거가 되지 않고, 각종 신고, 불복 청구 등의 증거자료로서의 효력은 없습니다.\n구체적인 법령에 대한 질의는 담당기관이나 국민신문고에 문의하시기 바랍니다.\n위 내용에 대한 홈페이지 개선의견은 홈페이지 개선의견을 이용해 주시기 바랍니다.\n\n개인정보처리방침\n저작권정책\n사이트맵\nRSS\n모바일 홈페이지\n생활법령 블로그\n모바일QR\n생활법령배너달기\n\nCopyright ⓒ 1997-2023 Korea Ministry of Government Legislation. All Rights Reserved.    |    홈페이지 개선의견\n\n관련기관 홈페이지"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=85&onhunqueSeq=6535",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-8.png",
+      "text": "메인메뉴 바로가기\n본문 바로가기\n통합검색박스\n검색어\n검색\n로그인 최근 본 법령정보 -\nLanguage\n메뉴전체보기\n책자형\n카드뉴스형\n백문백답\n솔로몬의 재판\n웹툰\n소식∙참여\n서비스 소개\nSMART\n생활법률\n앱 다운로드\n설문조사\n홈 > \n백문백답 > 생활법령 백문백답\n부동산에 처분금지가처분이 내려졌는데, 가처분이 무엇인가요?\n“가처분”이란 금전채권 이외의 특정물의 급부·인도를 보전하거나 분쟁 중에 있는 권리관계에 대해 임시적 지위를 정하기 위해 법원이 내리는 잠정적·가정적 처분을 말합니다.\n◇ 가처분의 필요성\n☞ 채권자가 채무자에 대해 가지는 권리를 실현하기 위해서는 민사소송을 통해 집행권원을 얻고 다시 강제집행 절차를 거쳐야 합니다. 그러나 민사소송 절차는 많은 시간이 소요되므로 그 사이에 채무자의 재산 상태가 변하거나 채무자가 다툼의 대상을 멸실·처분하여 사실적·법률적 변경이 생기게 되면 채권자가 권리를 실현하지 못하는 경우가 발생합니다.\n☞ 이때 가처분 절차를 통해 확정판결을 받기 전에 미리 채무자의 일반 재산이나 다툼의 대상의 현상을 동결시키거나 임시로 잠정적인 법률관계를 형성시킨다면 채권자가 입게 될지 모르는 손해를 예방할 수 있습니다.\n◇ 가처분의 구분\n☞ 가처분은 ① 다툼의 대상에 관한 가처분과 ② 임시의 지위를 정하기 위한 가처분으로 나뉩니다.\n\n구분\n\n\t\n\n내용\n\n\n\n\n다툼의 대상에 관한 가처분\n\n\t\n\n• 채권자가 금전채권이 아닌 물건이나 권리를 대상으로 하는 청구권을 가지고 있을 때 강제집행 전에 그 물건이나 권리가 처분되거나 멸실되는 등 법률적·사실적 변경이 생기는 것을 방지하고자 판결을 받기 전에 다툼의 대상의 현상을 동결시키는 가처분\n\n\n\n\n임시의 지위를 정하는 가처분\n\n\t\n\n• 당사자 간에 현재 다툼이 있는 권리관계 또는 법률관계가 존재하고 그에 대한 확정판결이 있기까지 현상의 진행을 그대로 방치한다면 권리자가 현저한 손해를 입거나 목적을 달성하기 어려운 경우에 잠정적으로 임시의 지위를 정하는 가처분\n\n\n\n\n    \n저장\n\n목록\n이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.\n생활법령정보는 법적 효력을 갖는 유권해석(결정, 판단)의 근거가 되지 않고, 각종 신고, 불복 청구 등의 증거자료로서의 효력은 없습니다.\n구체적인 법령에 대한 질의는 담당기관이나 국민신문고에 문의하시기 바랍니다.\n위 내용에 대한 홈페이지 개선의견은 홈페이지 개선의견을 이용해 주시기 바랍니다.\n\n개인정보처리방침\n저작권정책\n사이트맵\nRSS\n모바일 홈페이지\n생활법령 블로그\n모바일QR\n생활법령배너달기\n\nCopyright ⓒ 1997-2023 Korea Ministry of Government Legislation. All Rights Reserved.    |    홈페이지 개선의견\n\n관련기관 홈페이지\n\n[표]\n구분 | 내용\n다툼의 대상에 관한 가처분 | • 채권자가 금전채권이 아닌 물건이나 권리를 대상으로 하는 청구권을 가지고 있을 때 강제집행 전에 그 물건이나 권리가 처분되거나 멸실되는 등 법률적·사실적 변경이 생기는 것을 방지하고자 판결을 받기 전에 다툼의 대상의 현상을 동결시키는 가처분\n임시의 지위를 정하는 가처분 | • 당사자 간에 현재 다툼이 있는 권리관계 또는 법률관계가 존재하고 그에 대한 확정판결이 있기까지 현상의 진행을 그대로 방치한다면 권리자가 현저한 손해를 입거나 목적을 달성하기 어려운 경우에 잠정적으로 임시의 지위를 정하는 가처분"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=3&cciNo=1&cnpClsNo=4",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-9.png",
+      "text": "메인메뉴 바로가기\n서브메뉴 바로가기\n본문 바로가기\n통합검색박스\n검색어\n검색\n로그인 최근 본 법령정보 -\nLanguage\n메뉴전체보기\n책자형\n카드뉴스형\n백문백답\n솔로몬의 재판\n웹툰\n소식∙참여\n서비스 소개\nSMART\n생활법률\n앱 다운로드\n설문조사\n확장/축소\n닫기\n가압류 신청\n\n이미지로 보는\n카드뉴스\n\n사례로 보는\n백문백답\n\n관련법령\n\n목차\n\n펼치기\n닫기\n가압류 이해\n\"가압류\"란?\n하위메뉴 보기/숨기기\n가압류 신청준비\n가압류의 신청 요건 및 당사자\n하위메뉴 보기/숨기기\n \n가압류 신청서 작성\n하위메뉴 보기/숨기기\n \n신청비용 납부\n하위메뉴 보기/숨기기\n \n선담보제공\n하위메뉴 보기/숨기기\n가압류 신청 및 재판\n가압류 신청\n하위메뉴 보기/숨기기\n부동산에 대한 가압류 신청\n자동차ㆍ건설기계ㆍ소형선박에 대한 가압류 신청\n유체동산에 대한 가압류 신청\n금전채권에 대한 가압류 신청\n그 밖의 재산권에 대한 가압류 신청\n가압류 신청 심리\n하위메뉴 보기/숨기기\n \n가압류 재판\n하위메뉴 보기/숨기기\n가압류집행\n가압류집행\n하위메뉴 보기/숨기기\n \n가압류집행취소\n하위메뉴 보기/숨기기\n가압류채무자구제\n이의신청\n하위메뉴 보기/숨기기\n \n채무자에 따른 가압류취소\n하위메뉴 보기/숨기기\n확장/축소\n홈 > \n책자형 > 가압류 신청\n\n생활법령 내 검색\n\n공유\n저장\n인쇄\n즐겨찾기\n금전채권에 대한 가압류 신청\n\n\n「민사집행법」 2028년 03월 01일 시행(개정 사항을 검토하여 향후 업데이트 예정입니다.)\n본문\n100문 100답\n판례\n국민신문고\n관련법령\n가압류목적물 \n \n피압류채권의 특정\n 가압류할 채권은 제3채무자가 그 대상을 인식할 수 있을 정도로 특정되어야 하므로 피압류채권의 채권자(가압류채무자), 채무자(제3채무자), 채권의 종류, 발생원인, 금액, 변제기 등을 표시하여 다른 채권과 구별되도록 해야 합니다(법원행정처, 법원실무제요 민사집행Ⅳ).\n 장래 발생할 채권이나 조건부 채권도 현재 그 권리의 특정이 가능하고 가까운 장래에 발생할 것이 상당 정도 기대되는 경우에는 이를 가압류 할 수 있습니다(대법원 2001. 9. 18.자 2000마5252 결정).\n가압류가 인정되지 않는 (금전)채권 \n \n양도금지채권\n 채무자의 채권이 양도할 수 없는 것이라면 가압류할 수 없습니다(법원행정처, 법원실무제요 민사집행Ⅲ).\n※ 당사자가 양도할 수 없는 것으로 특약한 채권은 압류 채권자의 선의, 악의를 불문하고 압류할 수 있습니다(대법원 1976. 10. 29. 선고 76다1623 판결).\n◀양도금지채권▶\n 국가나 지방자치단체와 같은 공권력의 주체만이 행사할 수 있는 공법상의 채권(예컨대 조세·부담금·경비 등의 징수권)\n 부양료청구권(「민법」 제979조), 유류분반환청구권(「민법」 제1115조) 등과 같은 일신전속적인 권리\n 상호계산(相互計算)에 편입된 채권(「상법」 제72조)\n 국가나 지방자치단체로부터 특정의 사업·연구 등을 위하여 교부되고 그 목적 외의 사용이 금지되는 교부금의 교부청구권(「사회복지사업법」 제42조, 「보조금 관리에 관한 법률」 제22조 등)\n「민사집행법」에 따른 압류금지채권\n 다음의 채권은 압류하지 못합니다(「민사집행법」 제246조제1항 및 「민사집행법 시행령」 제3조·제4조·제7조).\n 법령에 규정된 부양료 및 유족부조료(遺族扶助料)\n 채무자가 구호사업이나 제3자의 도움으로 계속 받는 수입\n 병사의 급료\n 급료·연금·봉급·상여금·퇴직연금, 그 밖에 이와 비슷한 성질을 가진 급여채권의 2분의 1에 해당하는 금액. 다만, 압류가 가능한 채권의 범위는 다음과 같습니다.\n① 월 급여 250만원 이하: 전액 압류 금지\n② 월 급여 250만원 초과 500만원 이하: 250만원을 제외한 나머지 금액\n③ 월 급여 500만원 초과 600만원 이하: 월 급여의 1/2에 해당하는 금액\n④ 월 급여 600만원 초과: [300만원 + {(급여 × 1/2-300만원) × 1/2}]을 제외한 나머지\n 퇴직금 그 밖에 이와 비슷한 성질을 가진 급여채권의 2분의 1에 해당하는 금액\n 「주택임대차보호법」 제8조 및 「주택임대차보호법 시행령」 제10조에 따라 우선변제를 받을 수 있는 금액\n 생명, 상해, 질병, 사고 등을 원인으로 채무자가 지급받는 보장성보험의 보험금(해약환급 및 만기환급금을 포함함). 다만, 압류금지의 범위는 생계유지, 치료 및 장애 회복에 소요될 것으로 예상되는 비용 등을 고려하여「민사집행법 시행령」 제6조에서 정합니다.\n 「민사집행법」 제246조의2에 따른 생계비계좌에 예치된 예금\n 생계비계좌에 예치된 예금 외에 개인별 잔액이 250만원 이하인 예금(적금·부금·예탁금과 우편대체를 포함함). 다만, 채무자 등의 생활에 필요한 1개월간의 생계비에 해당하여 압류하지 못한 금전(「민사집행법」 제195조제3호)이나 생계비계좌에 예치되어 압류하지 못한 예금(「민사집행법」 제246조제1항제8호)이 있으면 250만원에서 그 금액을 뺀 금액으로 합니다.\n\n유용한 법령정보  4\n\n\n\n\nQ. 채무자가 다니던 회사를 그만두면서 명예퇴직수당을 받는다고 하는데, 이를 가압류 할 수 있을까요?\n\n \n\nA. 퇴직위로금이나 명예퇴직수당도 「민사집행법」 제246조제1항제5호에 따른 퇴직금 그 밖에 이와 비슷한 성질을 가진 급여채권에 해당하여 이를 가압류 할 수 있습니다(대법원 2006. 6. 8.자 2000마1439 결정).\n\n특별법에 따른 압류금지채권\n 특별법에 따라 다음의 채권은 압류하지 못합니다.\n 「공무원연금법」에 따른 급여를 받을 권리(「공무원연금법」 제28조 및 제39조)\n 「군인연금법」에 따른 급여를 받을 권리(「군인연금법」 제7조 및 제18조)\n 「고용보험법」에 따른 실업급여를 받을 권리(「고용보험법」 제37조 및 제38조)\n 「국가유공자 등 예우 및 지원에 관한 법률」에 따라 지급받을 보상금(「국가유공자 등 예우 및 지원에 관한 법률」 제11조 및 제19조)\n 「사립학교교직원 연금법」에 따른 급여를 받을 권리(「사립학교교직원 연금법」 제33조 및 제40조)\n 「국민연금법」에 따른 각종 급여를 받을 권리(「국민연금법」 제49조 및 제58조)\n 「근로기준법」에 따라 지급받게 될 보상청구권(「근로기준법」 제86조)\n 「산업재해보상보험법」에 따른 보험급여를 받을 권리(「산업재해보상보험법」 제36조제1항 및 제88조제2항)\n 「자동차손해배상 보장법」에 따라 피해자의 보험회사에 대한 보험청구권, 피해자의 보상청구권 또는 가불금청구권(「자동차손해배상 보장법」 제10조제1항, 제11조제1항, 제30조제1항 및 제40조)\n 「국민기초생활 보장법」에 따른 수급품, 수급품을 받을 권리 및 급여수급계좌의 예금에 관한 채권(「국민기초생활 보장법」 제7조 및 제35조)\n 「어선원 및 어선 재해보상보험법」에 따른 보험급여를 받을 권리 및 보험급여계좌의 예금 중 일정 액수 이하의 금액에 관한 채권(「어선원 및 어선 재해보상보험법」 제21조, 제34조제2항, 제51조 및 제56조)\n 「국민건강보험법」에 따른 보험급여를 받을 권리(「국민건강보험법」 제59조)\n 「선원법」에 따른 재해보상 등을 받을 권리(「선원법」 제152조의2)\n 「형사보상 및 명예회복에 관한 법률」에 따른 보상청구권(「형사보상 및 명예회복에 관한 법률」 제23조)\n 「국가배상법」에 따라 생명·신체의 침해로 인한 국가배상을 받을 권리(「국가배상법」 제2조제1항 및 제4조)\n 「한부모가족지원법」에 따라 복지급여를 받을 권리(「한부모가족지원법」 제27조)\n※ 그 밖에 다른 법령에서도 압류금지채권에 대해 규정하고 있으며, 자세한 내용은 국가법령정보센터(https://www.law.go.kr)에서 확인할 수 있습니다.\n채권가압류신청서 작성 \n \n신청서 작성\n 채권가압류신청서를 작성하려는 자는 신청서에 ① 당사자(대리인이 있는 경우 대리인 포함), ② 청구채권의 표시 및 목적물의 표시 ③ 신청의 취지, ④ 신청의 이유, ⑤ 관할법원, ⑥ 소명방법 및 ⑦ 작성한 날짜를 기재하고, 당사자 또는 대리인의 기명날인 또는 서명을 해야 합니다(「민사집행법」 제23조제1항, 제279조, 「민사집행규칙」 제203조제2항, 「민사소송법」 제249조 및 제274조).\n※ 이하에서는 금전채권가압류의 특이한 기재사항만을 따로 언급하였습니다.\n※ 따라서 그 밖에 신청서 작성 일반에 관한 자세한 내용은 이 콘텐츠의 <가압류 신청준비-가압류 신청서 작성-가압류 신청서 작성 요령>에서 확인할 수 있습니다.\n당사자\n 가압류를 신청하는 사람인 채권자·채무자를 적고, 각각의 주소를 적습니다(「민사소송법」 제274조제1항 및 「민사소송규칙」 제2조).\n 채무자가 보유하는 채권의 상대방인 제3채무자를 적습니다.\n채 권 자 Ο Ο Ο\n서울 종로구 수송동 111-11 ΟΟ아파트 101동 101호 (우: 000-000)\n채권자의 소송대리인 변호사 Ο Ο Ο\n서울 강북구 송중동 333-33 ΟΟ빌딩 111호\n채 무 자 Ο Ο Ο\n서울 종로구 명륜동 222-22 ΟΟ빌라 203호 (우: 000-000)\n제3채무자 1. ΟΟ주식회사\nΟΟ시 ΟΟ구 ΟΟ동 ΟΟ(우: ΟΟΟ-ΟΟΟ)\n대 표 이 사 ΟΟΟ\n(전화: 02-000-0000, 팩스: 02-000-0000)\n2. 주식회사 ΟΟ은행\nΟΟ시 ΟΟ구 ΟΟ동 ΟΟ(우: ΟΟΟ-ΟΟΟ)\n대 표 이 사 ΟΟΟ\n(전화: 02-000-0000, 팩스: 02-000-0000)\n◀법령용어해설▶\n 제3채무자: 채무자가 제3자에 대해 채권을 가지고 있고 이 채권이 가압류 대상이 되는 경우 그 제3자 즉 대상이 되는 채권의 채무자를 제3채무자라 합니다.\n채무자 특정 사항 기재\n 공무원 또는 대기업 직원의 임금, 퇴직금채권에 대한 가압류명령을 신청하는 경우 채무자의 이름과 주소 외에 소속부서, 직위, 주민등록번호 등 채무자를 특정할 수 있는 사항을 기재해야 합니다(「임금 또는 퇴직금에 대한 가압류 등 재판서에 있어서의 채무자 표시에 관한 지침」).\n<예시 1>\n채 무 자 홍 길 동\n서울 중구 서소문동 37\n(참고: 소속부서 육군 ΟΟ부대 하사, 군번 ΟΟΟΟ)\n또는(참고: 소속부서 육군 ΟΟ부대 군무원 Ο급, 순번 ΟΟΟΟ)\n또는(참고: 소속부서 육군 ΟΟ부대 [직위], 주민등록번호 000000-0000000)\n<예시 2>\n채 무 자 홍 길 동\n부산 서구 부민동 2가 5의1\n(참고: 소속부서 부산지사 총무국 경리과)\n<예시 3>\n채 무 자 홍 길 동\n광주 동구 지산2동 342의 1\n(참고: 주민등록번호 123456-1234567)\n가압류할 채권의 표시\n 가압류할 채권의 표시는 “별지 목록 기재와 같음”이라고 표시하고, 별지로 첨부합니다(「민사집행법」 제279조제1항제2호).\n\n<예시 1: 대여금채권을 가지고 임차보증금반환채권의 경우>\n\n \n\n가압류할 채권의 표시\n\n \n\n별지 목록 기재와 같음\n\n \n\n\n\n\n \n\n[별지 1]\n\n \n\n가압류할 채권의 표시\n\n \n\n청구채권 금 95,000,000원\n\n \n\n제3채무자 1. ▣▣주식회사에 대하여\n\n채무자와 제3채무자가 임차목적물(ΟΟ시 ΟΟ구 ΟΟ동 ΟΟ에 있는 건물)에 대한 임대차계약종료나 해지 시 채무자의 임대차보증금반환청구권 가운데 위 청구채권에 이르는 금액\n\n \n\n제3채무자 2. 주식회사 ΟΟ은행에 대하여,\n\n채무자(ΟΟΟ, 주민등록번호 : 000000-0000000)가 제3채무자 주식회사 ΟΟ은행에 대하여 가지는 보통예금, 정기예금, 정기적금, 당좌예금, 별단예금 가운데 이 기재의 순서로, 같은 종류의 예금에 있어서는 예금액이 많은 것부터 차례로 청구채권액에 이를 때까지의 금액. 다만, 이미 압류 또는 가압류가 되어 있는 경우에는 그것이 되어 있지 아니한 것부터 차례로 청구채권에 이를 때까지의 금액\n\n \n\n제3채무자 3. 주식회사 ◎◎은행에 대하여,\n\n채무자(ΟΟΟ, 주민등록번호 : 000000-0000000)가 제3채무자 주식회사 ◎◎은행에 대하여 가지는 보통예금, 정기예금, 정기적금, 당좌예금, 별단예금 가운데 이 기재의 순서로, 같은 종류의 예금에 있어서는 예금액이 많은 것부터 차례로 청구채권액에 이를 때까지의 금액. 다만, 이미 압류 또는 가압류가 되어 있는 경우에는 그것이 되어 있지 아니한 것부터 차례로 청구채권에 이를 때까지의 금액. 끝.\n\n\n\n\n<예시 2: 임금채권으로 대여금의 경우>\n\n \n\n가압류할 채권의 표시\n\n \n\n별지 목록 기재와 같음\n\n \n\n\n\n\n[별지 1]\n\n가압류할 채권의 표시\n\n \n\n금 10,000,000원\n\n채무자가 제3채무자에 대하여 가지는 대여금반환청구채권 가운데 위 청구금액에 이를 때까지의 금액. 끝.\n\n◀ 유의사항 ▶\n 위 “가압류할 채권의 표시”상의 금액은 가압류신청서의 ‘청구채권의 표시’ 기재금액과 같아야 합니다.\n신청취지\n 소장의 청구취지에 상응하는 것으로 가압류에 따라 구하려는 보전처분의 내용을 말하며, 권리의 보전을 위해 필요한 내용을 적습니다(「민사집행규칙」 제203조제2항).\n<예시>\n신 청 취 지\n1. 채무자가 제3채무자들에 대하여 가지는 별지 제1목록 기재의 각 채권을 가압류한다.\n2. 제3채무자들은 채무자에게 위의 각 채권에 관한 지급을 하여서는 아니 된다.\n라는 재판을 구합니다.\n신청이유\n 신청취지를 구하는 근거로 피보전권리의 존재와 보전의 필요성을 구체적으로 적어야 합니다(「민사집행규칙」 제203조제2항).\n 그 밖에 선담보제공을 하는 경우 이를 허가해 달라는 취지를 적습니다.\n※ 개별 사안에 따른 채권가압류신청서 및 그 작성례는 대한법률구조공단 홈페이지(http;//www.klac.or.kr)에서 확인할 수 있습니다.\n채권가압류 신청에 따른 비용 납부 \n \n인지 첩부\n 채권가압류를 신청하려는 자는 10,000원(보증보험증권에 따른 담보제공인 경우에도 10,000원)의 인지를 붙여야 합니다(「민사소송 등 인지법」 제9조제2항 본문, 「민사접수서류에 붙일 인지액 및 그 편철방법 등에 관한 예규」 제3조 및 별표).\n송달료 납부\n 채권가압류를 신청하려는 자는 송달료(1회 송달료 × 당사자수 × 3회분)를 미리 내야 합니다(「민사소송법」 제116조제1항, 「민사소송규칙」 제19조제1항제1호, 「송달료규칙」 제2조, 「송달료규칙의 시행에 따른 업무처리요령」 제7조제1항 및 별표 1).\n※ 등록면허세 및 지방교육세\n 채권가압류는 원칙적으로 등록면허세·지방교육세 및 증지대 납부가 없습니다. 다만, 전세권부 채권가압류와 저당권부채권가압류는 등기부상 공시(부기등기)를 위해 부동산 1건당 등록면허세·지방교육세 납부 및 증지를 첩부해야 합니다.\n※ 채권가압류 신청에 따른 비용 납부에 관한 보다 자세한 내용은 이 콘텐츠의 <가압류 신청준비-신청비용 납부> 이하 해당 부분에서 확인할 수 있습니다.\n선담보제공 \n \n선담보제공 허가 신청\n 채권가압류(급여채권·영업자예금채권에 대한 가압류는 제외)를 신청하는 때에는 미리 은행 등과 지급보증위탁계약을 맺은 문서를 제출하고 이에 대해 법원의 허가를 받는 방법으로 선담보제공을 할 수 있습니다(「민사집행규칙」 제204조).\n※ 급여채권·영업자예금채권은 선담보제공은 허용되지 않지만 공탁보증보험에 따른 담보제공(담보제공명령 후 담보제공)은 가능하며 청구금액의 1/5 이상은 현금공탁을 해야 합니다(법원행정처, 법원실무제요 민사집행Ⅳ).\n※ 선담보제공에 관한 보다 자세한 내용은 이 콘텐츠의<가압류 신청준비-선담보제공-선담보제공 허가 신청(공탁보증보험 가입)>에서 확인할 수 있습니다.\n채권가압류 신청 접수 \n \n제출 서류\n 채권가압류를 신청하려는 자는 다음의 서류를 관할법원 민사신청 담당부서(종합민원실)에 제출해야 합니다(「민사소송법」 제273조, 제275조, 「민사집행규칙」 제203조 및 「보전처분 신청사건의 사무처리요령」 제3조).\n 채권가압류신청서 1부\n 가압류신청진술서 1부\n 그 밖에 소명방법으로 권리증서(예: 차용증, 약속어음 등) 사본 1부\n 법인등기부등본(당사자가 법인인 경우에 한함)\n※ 관할법원\n 채권가압류 사건은 원칙적으로 제3채무자의 보통재판적을 관할하는 법원이나 본안의 관할법원이 관할합니다(「민사집행법」 제278조 및 제21조).\n※ 관할법원에 관한 보다 자세한 내용은 이 콘텐츠의<가압류 이해-\"가압류\"란?-가압류의 관할>에서 확인할 수 있습니다.\n가압류신청서 제출 후 \n \n사건번호 부여\n 신청서를 법원에 제출하면 사건번호를 부여받게 되고, 채권자는 법원에 비치된 민원인용 컴퓨터 단말기를 통하여 사건번호를 입력하면, 담보제공명령, 가압류 인용결정 여부 등을 알 수 있습니다.\n※ 가압류 결정 후 14일 경과 후에는 법원에 가지 않고 대법원 홈페이지(http://www.scourt.go.kr)에서도 확인할 수 있습니다.\n제3채무자에 대한 진술최고 \n \n제3채무자에 대한 진술최고신청\n 채권가압류의 경우 압류채권자는 제3채무자에게 가압류집행을 할 때, 가압류한 채권에 대해 채권자가 만족을 할 수 있는지 여부를 제3채무자에게 진술하도록 법원에 신청할 수 있습니다(「민사집행법」 제291조 및 제237조제1항).\n 제3채무자에 대한 진술최고를 신청하려는 채권자는 다음의 내용을 포함한 제3채무자에 대한 진술최고신청서를 작성하여 법원에 제출해야 합니다(「민사집행법」 제237조제1항).\n 채권을 인정하는지의 여부 및 인정한다면 그 한도\n 채권에 대해 지급할 의사가 있는지의 여부 및 의사가 있다면 그 한도\n 채권에 대해 다른 사람으로부터 청구가 있는지의 여부 및 청구가 있다면 그 종류\n 다른 채권자에게 채권을 압류당한 사실이 있는지의 여부 및 그 사실이 있다면 그 청구의 종류\n 제3채무자에 대한 진술최고 신청서를 제출할 때에는 최고서의 송달료 및 제3채무자의 진술서 제출용 우편료(1회 송달료 × 제3채무자의 수)를 예납해야 합니다(「송달료규칙」 제14조, 「송달료규칙의 시행에 따른 업무처리요령」 제7조제1항 및 별표 1).\n◀ 신청 시 유의사항 ▶\n 제3채무자에 대한 진술최고신청은 가압류신청서와 함께 또는 늦어도 가압류결정문이 제3채무자에게 발송되기 전까지 법원에 제출해야 합니다.\n 사건번호를 모를 경우 사건번호란은 공란으로 하여 제출해도 됩니다.\n 제3채무자에 대한 진술최고신청서 양식은 대한법률구조공단 홈페이지(https://www.klac.or.kr)에서 확인할 수 있습니다.\n제3채무자에 대한 진술최고의 효력(법원행정처, 법원실무제요 민사집행Ⅲ 참조)\n 제3채무자에 대한 진술최고에 따른 제3채무자의 진술은 단순한 사실에 불과하고 채무의 승인으로는 볼 수 없어 그 자체만으로는 아무런 구속력이 없습니다.\n 제3채무자가 고의 또는 과실로 허위의 진술을 함으로써 압류채권자가 손해를 입은 때에는 그 손해배상을 청구할 수 있습니다.\n\n유용한 법령 정보  1\n\n\n\n\nQ. 채권자 A는 채무자 B의 급여를 가압류하려 합니다. 채무자 B의 급여에 제3자의 압류 사실 등이 있는지 알 수 없을까요?\n\n \n\nA. 채권자 A는 채무자 B의 급여를 가압류함에 있어서 제3채무자(주식회사 C)에게 채권을 인정하는지, 인정한다면 그 한도, 그 채권에 대해 다른 사람으로부터 청구가 있는지 및 청구가 있다면 그 청구의 종류 등을 진술하게 하는 “제3채무자에 대한 진술최고”(「민사집행법」 제237조)를 통해 가압류한 채권에 대한 궁금증을 해소할 수 있습니다.\n\n이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.\n생활법령정보는 법적 효력을 갖는 유권해석(결정, 판단)의 근거가 되지 않고, 각종 신고, 불복 청구 등의 증거자료로서의 효력은 없습니다.\n구체적인 법령에 대한 질의는 담당기관이나 국민신문고에 문의하시기 바랍니다.\n위 내용에 대한 홈페이지 개선의견은 홈페이지 개선의견을 이용해 주시기 바랍니다.\n\n개인정보처리방침\n저작권정책\n사이트맵\nRSS\n모바일 홈페이지\n생활법령 블로그\n모바일QR\n생활법령배너달기\n\nCopyright ⓒ 1997-2023 Korea Ministry of Government Legislation. All Rights Reserved.    |    홈페이지 개선의견\n\n관련기관 홈페이지\n\n[수식·이미지]\n채권에 대한 가압류 신청 절차 개요입니다.\n\n[표]\n유용한 법령정보 4\nQ. 채무자가 다니던 회사를 그만두면서 명예퇴직수당을 받는다고 하는데, 이를 가압류 할 수 있을까요? A. 퇴직위로금이나 명예퇴직수당도 「민사집행법」 제246조제1항제5호에 따른 퇴직금 그 밖에 이와 비슷한 성질을 가진 급여채권에 해당하여 이를 가압류 할 수 있습니다(대법원 2006. 6. 8.자 2000마1439 결정).\n---\n<예시 1: 대여금채권을 가지고 임차보증금반환채권의 경우> 가압류할 채권의 표시 별지 목록 기재와 같음\n[별지 1] 가압류할 채권의 표시 청구채권 금 95,000,000원 제3채무자 1. ▣▣주식회사에 대하여 채무자와 제3채무자가 임차목적물(ΟΟ시 ΟΟ구 ΟΟ동 ΟΟ에 있는 건물)에 대한 임대차계약종료나 해지 시 채무자의 임대차보증금반환청구권 가운데 위 청구채권에 이르는 금액 제3채무자 2. 주식회사 ΟΟ은행에 대하여, 채무자(ΟΟΟ, 주민등록번호 : 000000-0000000)가 제3채무자 주식회사 ΟΟ은행에 대하여 가지는 보통예금, 정기예금, 정기적금, 당좌예금, 별단예금 가운데 이 기재의 순서로, 같은 종류의 예금에 있어서는 예금액이 많은 것부터 차례로 청구채권액에 이를 때까지의 금액. 다만, 이미 압류 또는 가압류가 되어 있는 경우에는 그것이 되어 있지 아니한 것부터 차례로 청구채권에 이를 때까지의 금액 제3채무자 3. 주식회사 ◎◎은행에 대하여, 채무자(ΟΟΟ, 주민등록번호 : 000000-0000000)가 제3채무자 주식회사 ◎◎은행에 대하여 가지는 보통예금, 정기예금, 정기적금, 당좌예금, 별단예금 가운데 이 기재의 순서로, 같은 종류의 예금에 있어서는 예금액이 많은 것부터 차례로 청구채권액에 이를 때까지의 금액. 다만, 이미 압류 또는 가압류가 되어 있는 경우에는 그것이 되어 있지 아니한 것부터 차례로 청구채권에 이를 때까지의 금액. 끝.\n<예시 2: 임금채권으로 대여금의 경우> 가압류할 채권의 표시 별지 목록 기재와 같음\n[별지 1] 가압류할 채권의 표시 금 10,000,000원 채무자가 제3채무자에 대하여 가지는 대여금반환청구채권 가운데 위 청구금액에 이를 때까지의 금액. 끝.\n---\n유용한 법령 정보 1\nQ. 채권자 A는 채무자 B의 급여를 가압류하려 합니다. 채무자 B의 급여에 제3자의 압류 사실 등이 있는지 알 수 없을까요? A. 채권자 A는 채무자 B의 급여를 가압류함에 있어서 제3채무자(주식회사 C)에게 채권을 인정하는지, 인정한다면 그 한도, 그 채권에 대해 다른 사람으로부터 청구가 있는지 및 청구가 있다면 그 청구의 종류 등을 진술하게 하는 “제3채무자에 대한 진술최고”(「민사집행법」 제237조)를 통해 가압류한 채권에 대한 궁금증을 해소할 수 있습니다."
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-10.png",
+      "text": "메인메뉴 바로가기\n서브메뉴 바로가기\n본문 바로가기\n통합검색박스\n검색어\n검색\n로그인 최근 본 법령정보 -\nLanguage\n메뉴전체보기\n책자형\n카드뉴스형\n백문백답\n솔로몬의 재판\n웹툰\n소식∙참여\n서비스 소개\nSMART\n생활법률\n앱 다운로드\n설문조사\n확장/축소\n닫기\n가압류 신청\n\n이미지로 보는\n카드뉴스\n\n사례로 보는\n백문백답\n\n관련법령\n\n목차\n\n펼치기\n닫기\n가압류 이해\n\"가압류\"란?\n하위메뉴 보기/숨기기\n가압류 신청준비\n가압류의 신청 요건 및 당사자\n하위메뉴 보기/숨기기\n \n가압류 신청서 작성\n하위메뉴 보기/숨기기\n \n신청비용 납부\n하위메뉴 보기/숨기기\n \n선담보제공\n하위메뉴 보기/숨기기\n가압류 신청 및 재판\n가압류 신청\n하위메뉴 보기/숨기기\n \n가압류 신청 심리\n하위메뉴 보기/숨기기\n \n가압류 재판\n하위메뉴 보기/숨기기\n가압류집행\n가압류집행\n하위메뉴 보기/숨기기\n가압류집행\n가압류집행취소\n하위메뉴 보기/숨기기\n가압류채무자구제\n이의신청\n하위메뉴 보기/숨기기\n \n채무자에 따른 가압류취소\n하위메뉴 보기/숨기기\n확장/축소\n홈 > \n책자형 > 가압류 신청\n\n생활법령 내 검색\n\n공유\n저장\n인쇄\n즐겨찾기\n가압류집행\n\n\n「민사집행법」 2028년 03월 01일 시행(개정 사항을 검토하여 향후 업데이트 예정입니다.)\n본문\n관련법령\n가압류집행 \n \n가압류집행에 대한 본집행의 준용\n 가압류의 집행은 특별한 규정이 없으면 「민사집행법」의 강제집행에 관한 규정이 준용됩니다(「민사집행법」 제291조 및 「민사집행규칙」 제218조). 따라서 집행의 목적물, 집행기관, 집행의 방법, 위임집행에 대한 채무자의 구제, 제3자의 구제절차 등 강제집행에 관한 규정이 대부분 준용됩니다.\n 다만, 청구에 관한 이의의 소(「민사집행법」 제44조), 집행문부여에 대한 이의의 소(「민사집행법」 제45조)의 규정은 원칙적으로 준용되지 않습니다.\n집행개시의 요건\n 가압류에 대한 재판이 있은 뒤에 채권자나 채무자의 승계가 이루어진 경우 가압류의 재판을 집행하려면 집행문을 덧붙여야 합니다(「민사집행법」 제292조제1항).\n 가압류에 대한 재판의 집행은 채권자에게 재판을 고지한 날부터 2주 이내에 해야 합니다(「민사집행법」 제292조제2항).\n 가압류집행은 채무자에게 송달하기 전에도 할 수 있습니다(「민사집행법」 제292조제3항).\n부동산가압류집행 \n \n등기촉탁\n 부동산에 대한 가압류의 집행은 가압류 재판에 관한 사항을 등기부에 기입해야 합니다(「민사집행법」 제293조제1항).\n 법원은 가압류 결정을 한 후 채권자에게 결정 정본을 송달하면서 부동산 소재지 관할 등기소에 가압류 사실을 기입하라는 등기촉탁서를 함께 송달함으로써 등기소공무원에 의하여 등기부에 기입하게 됩니다(「민사집행법」 제293조제2항 및 제3항).\n부동산가압류 등기의 효력\n 부동산가압류 등기가 기입되면 채무자는 해당 가압류 목적 부동산을 처분할 수 없습니다.\n 부동산을 가압류 하더라도 해당 목적 부동산의 이용 및 관리권은 여전히 채무자에게 있습니다(「민사집행법」 제291조 및 제83조제2항).\n자동차·건설기계·소형선박에 대한 가압류집행 \n \n가압류 명령 및 집행\n 자동차·건설기계·소형선박(이하 “자동차 등”이라 함)에 대한 가압류는 법원사무관이 해당 행정관청에 가압류기입등록을 촉탁함으로써 집행됩니다(「민사집행법」 제293조, 「민사집행규칙」 제108조, 제210조 및 제211조)\n 가압류 법원은 채권자의 신청에 따라 자동차 등을 집행관에게 인도할 것을 채무자에게 명할 수 있습니다(「민사집행규칙」 제210조제2항 및 제211조).\n 강제경매개시결정이 송달되거나 등록되기 전에 집행관이 자동차 등을 인도받은 경우에는 그때에 가압류의 효력이 발생합니다(「민사집행규칙」 제210조제3항 및 제111조제3항).\n 압류의 효력 발생 당시 채무자가 점유하던 자동차 등을 제3자가 점유하게 된 경우 채권자는 점유 사실을 안 날부터 1주 이내에 법원에게 그 제3자에 대해 그 물건을 집행관에게 인도하도록 명할 것을 신청할 수 있습니다(「민사집행법」 제193조제1항, 제2항 및 「민사집행규칙」 제210조제2항).\n 집행관은 상당하다고 인정하는 때에는 인도받은 자동차 등을 압류채권자, 채무자, 그 밖의 적당한 사람에게 보관시킬 수 있습니다. 이 경우에는 공시서를 붙여 두거나 그 밖의 방법으로 그 자동차 등을 집행관이 점유하고 있음을 분명하게 표시하고, 운행이 허가된 경우를 제외하고는 운행을 하지 못하도록 적당한 조치를 해야 합니다(「민사집행규칙」 제210조제2항 및 제115조).\n가압류집행의 효력\n 인도 집행된 자동차 등에 대해 영업상의 필요 그 밖의 상당한 이유가 있는 때 이해관계를 가진 사람의 신청에 따라 집행법원이 자동차 등의 운행을 적당한 조건을 붙여 허가할 수 있습니다(「민사집행규칙」 제210조제2항 및 제117조).\n 자동차 등은 가압류의 성질상 현금화할 수 없습니다. 다만, 즉시 매각하지 않으면 값이 크게 떨어질 염려가 있거나 그 보관에 지나치게 많은 비용이 드는 경우에는 집행관은 자동차 등을 매각하여 그 대금을 공탁해야 합니다(「민사집행규칙」 제210조제3항 및 「민사집행법」 제296조제5항).\n유체동산가압류집행 \n \n집행관에게 집행위임\n 유체동산가압류의 집행은 압류와 같은 원칙에 따라야 하므로 집행관에게 위임하여 동산압류방식에 따라 집행해야 합니다(「민사집행법」 제296조제1항).\n 유체동산에 대한 집행위임은 다음의 사항을 적은 서면에 가압류명령정본(법원 결정문 원본)을 함께 붙여서 신청해야 합니다(「민사집행규칙」 제212조제1항).\n 채권자·채무자와 그 대리인의 표시\n 가압류명령의 표시\n 가압류 목적물인 유체동산이 있는 장소\n 가압류채권의 일부에 관하여 집행을 구하는 때에는 그 범위\n 집행관사무소에 유체동산 집행위임을 하면 채권자는 일정 집행비용을 예납해야 합니다(「집행관수수료규칙」 제25조제1항). 그 비용은 해당 집행관사무소에서 바로 알 수 있으며, 그 자리에서 바로 납부하면 됩니다.\n※ 가압류 집행은 채무자 또는 가족이나 친족의 입회가 있어야 집행이 가능하므로 채무자나 그 가족이 있을 때 집행해야 다시 집행하지 않는 수고를 덜 수 있습니다. 따라서 채무자가 직장 그 밖의 사유로 주간에 집행할 수 없거나 공휴일이 아니면 집행할 수 없는 경우에는 야간·휴일 집행허가 신청을 할 수 있습니다(「민사집행법」 제8조).\n※ 집행한 가압류에 위배하여 물건을 다른 곳으로 이전하거나 봉인표시(가압류의 경우 연두색 종이)를 떼어낼 경우 공무상비밀표시무효죄에 해당하여 5년 이하의 징역 또는 700만원 이하의 벌금에 처해집니다(「형법」 제140조).\n가압류집행의 효력\n 가압류된 유체동산을 제3자가 점유하게 된 경우 채권자는 그 제3자의 점유를 안 날부터 1주내에 법원에 가압류물의 인도명령을 신청하여 그 물건을 집행관에게 인도하도록 할 수 있습니다(「민사집행법」 제291조, 제193조제1항 및 제2항).\n※ 가압류집행은 가압류 목적물에 대해 채무자가 매매, 증여, 질권 등의 담보권 설정 그 밖에 일체의 처분을 금지하는 효력이 발생합니다.\n채권가압류명령 및 집행 \n \n가압류명령\n 채권가압류는 가압류의 목적인 특정 채권을 가압류한다는 선언과 동시에 제3채무자에 대해 채무자에게 지급해서는 안 된다는 명령만을 해야 합니다(「민사집행법」 제296조제3항).\n집행과 효력\n 채권가압류는 그 발령과 동시에 가압류명령법원이 제3채무자에게 가압류재판 정본을 송달함으로써 집행됩니다(「민사집행법」 제227조제3항 및 제296조제2항).\n 금전채권이 가압류되었어도 그 이행기가 도래한 때에는 제3채무자는 권리공탁을 해야만 그 지체의 책임을 면할 수 있습니다(「민사집행법」 제248조제1항).\n 제3채무자가 가압류 집행된 금전채권액을 공탁한 경우 그 가압류의 효력은 그 청구채권액에 해당하는 공탁금액에 대한 채무자의 공탁금출급청구권에 대해 존속하게 됩니다(「민사집행법」 제297조).\n이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.\n생활법령정보는 법적 효력을 갖는 유권해석(결정, 판단)의 근거가 되지 않고, 각종 신고, 불복 청구 등의 증거자료로서의 효력은 없습니다.\n구체적인 법령에 대한 질의는 담당기관이나 국민신문고에 문의하시기 바랍니다.\n위 내용에 대한 홈페이지 개선의견은 홈페이지 개선의견을 이용해 주시기 바랍니다.\n\n개인정보처리방침\n저작권정책\n사이트맵\nRSS\n모바일 홈페이지\n생활법령 블로그\n모바일QR\n생활법령배너달기\n\nCopyright ⓒ 1997-2023 Korea Ministry of Government Legislation. All Rights Reserved.    |    홈페이지 개선의견\n\n관련기관 홈페이지"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&precNo=1&csmSeq=514&ccfNo=6&cciNo=2&cnpClsNo=2&menuType=prec",
+      "org": "법제처",
+      "screenshot": "evidence-가압류-뜻-압류-가처분-차이-11.png",
+      "text": "메인메뉴 바로가기\n서브메뉴 바로가기\n본문 바로가기\n통합검색박스\n검색어\n검색\n로그인 최근 본 법령정보 -\nLanguage\n메뉴전체보기\n책자형\n카드뉴스형\n백문백답\n솔로몬의 재판\n웹툰\n소식∙참여\n서비스 소개\nSMART\n생활법률\n앱 다운로드\n설문조사\n확장/축소\n닫기\n해고근로자\n\n이미지로 보는\n카드뉴스\n\n사례로 보는\n백문백답\n\n관련법령\n\n목차\n\n펼치기\n닫기\n\"해고\"란?\n해고의 개념\n하위메뉴 보기/숨기기\n해고 사유의 제한\n해고 사유 및 정당한 이유의 해고\n하위메뉴 보기/숨기기\n해고 시기와 절차의 제한\n해고 시기의 제한\n하위메뉴 보기/숨기기\n \n해고 절차의 제한\n하위메뉴 보기/숨기기\n부당해고 구제\n부당해고와 구제절차\n하위메뉴 보기/숨기기\n \n지방노동위원회에 의한 부당해고 구제(초심)\n하위메뉴 보기/숨기기\n \n중앙노동위원회에 의한 부당해고 구제(재심)\n하위메뉴 보기/숨기기\n \n법원에 의한 부당해고 구제(행정소송)\n하위메뉴 보기/숨기기\n \n해고무효확인의 소(민사소송)\n하위메뉴 보기/숨기기\n해고근로자 보호\n사용증명서 발급 및 취업방해금지 등\n하위메뉴 보기/숨기기\n \n임금, 퇴직금 등 지급\n하위메뉴 보기/숨기기\n금품청산\n퇴직금의 지급\n미지급 임금ㆍ퇴직금(체불임금) 구제 절차\n임금채권의 지급보장(대지급금)\n해고근로자 지원\n실업급여\n하위메뉴 보기/숨기기\n \n실직자 지원제도\n하위메뉴 보기/숨기기\n확장/축소\n홈 > \n책자형 > 해고근로자\n\n생활법령 내 검색\n\n공유\n저장\n인쇄\n즐겨찾기\n퇴직금의 지급\n\n\n「근로기준법」 2026년 10월 08일 시행(개정 사항을 검토하여 향후 업데이트 예정입니다.)\n본문\n판례\n국민신문고\n관련법령\n\n법원에서 판결된 내용을 보실수 있습니다.\n해당 내용은 법제처 국가법령정보센터(http://www.law.go.kr)기준으로 제공되었습니다.\n\n사건명\t  대법원 2000. 6. 8. 자 2000마1439 결정 【가압류를본압류로전이하는채권압류및추..\n\n판시사항\t퇴직위로금이나 명예퇴직수당의 법적 성질 및 이들이 「민사소송법」 제579조제4호 소정의 압류금지채권인 퇴직금 기타 유사한 급여채권에 해당하는지 여부(적극)\n판결요지\t퇴직위로금이나 명예퇴직수당은 그 직에서 퇴임하는 자에 대하여 그 재직 중 직무집행의 대가로서 지급되는 후불적 임금으로서의 보수의 성질을 아울러 갖고 있다고 할 것이므로 퇴직금과 유사하다고 볼 것이고, 따라서 이들은 「민사소송법」 제579조제4호 소정의 압류금지채권인 퇴직금 기타 유사한 급여채권에 해당한다.\n판례파일\t대법원 2000. 6. 8. 자 2000마1439 결정.hwp\n사건명\t  대법원 1996. 3. 8. 선고 95다51847 판결 【해임처분무효확인】\n\n판시사항\t[1] 해고처분에 대한 명시적 이의 유보 없이 퇴직금을 수령한 후 해고처분무효확인 소송을 제기하는 것이 신의칙이나 금반언의 원칙에 반하지 않는 경우\n\n[2] 징계위원회의 동의를 거치지 않고 행한 직권면직처분의 효력(무효) 및 사후의 동의로 그 하자가 치유되는지 여부(소극)\n판결요지\t[1] 사용자로부터 해고된 근로자가 퇴직금 등을 수령하면서 아무런 이의의 유보나 조건을 제기하지 않았다면 특별한 사정이 없는 한 그 해고의 효력을 인정하였다고 할 것이고, 따라서 그로부터 오랜 기간이 지난 후에 그 해고의 효력을 다투는 소를 제기하는 것은 신의칙이나 금반언의 원칙에 위배 되어 허용될 수 없으나, 다만 이와 같은 경우라도 해고의 효력을 인정하지 아니하고 이를 다투고 있었다고 볼 수 있는 객관적인 사정이 있다거나 그 외에 상당한 이유가 있는 상황하에서 이를 수령하는 등 반대의 사정이 있음이 엿보이는 때에는, 명시적인 이의를 유보함이 없이 퇴직금을 수령한 경우라고 하여도 일률적으로 해고의 효력을 인정하였다고 보아서는 안 된다.\n\n[2] 학교법인이 그 교원을 직권면직함에 있어 사립학교법 및 당해 법인의 정관에 위배 되어 무효인 법인 인사규칙에 따라 징계위원회의 동의를 얻지 아니한 경우, 그 직권면직처분은 절차상의 하자로 인하여 무효이고, 비록 소송 계속중에 학교법인이 징계위원회를 개최하여 동의를 얻었다고 하더라도 이러한 사유로 그 하자가 치유된다고 할 수 없다.\n판례파일\t대법원 1996. 3. 8. 선고 95다51847 판결.hwp\n사건명\t  대법원 1992.4.14. 선고 92다1728 판결 【해고무효확인등】\n\n판시사항\t가. 해고를 당한 근로자가 퇴직금과 해고수당을 아무런 조건의 유보 없이 수령하고 난 후 장기간이 경과한 뒤에 해고무효확인청구를 하는 것이 신의성실의 원칙상 허용되는지 여부\n\n나. 위 “가”항에 있어 명시적인 이의를 유보함이 없이 퇴직금이나 해고수당을 수령하였다 하여도 해고의 효력을 인정하였다고 볼 수 없는 경우 및 해고무효확인청구소송이 늦게 제기되었더라도 신의성실의 원칙에 어긋나지 않는다고 보아야 할 경우\n판결요지\t가. 해고나 징계해고를 당한 근로자가 퇴직금과 해고수당을 아무런 조건의 유보 없이 수령한 것이라면 특별한 사정이 없는 한 그 해고를 유효한 것으로 인정하였다고 보는 것이 상당하고, 상당한 이유 없이 그로부터 장기간이 경과한 뒤에야 해고무효의 확인청구를 하는 것은 신의성실의 원칙상 허용되지 않는다.\n\n나. 위 “가”항의 경우라도 해고의 효력을 인정하지 아니하고 이를 다투고 있었다고 볼 수 있는 객관적인 사정이 있다거나, 그 외에 상당한 이유가 있는 상황하에서 이를 수령하는 등 반대의 사정이 있음이 엿보이는 때에는 명시적인 이의를 유보함이 없이 퇴직금이나 해고수당을 수령한 경우라고 하여도 일률적으로 해고의 효력을 인정하였다고 보아서는 안 될 것이고, 해고무효의 확인청구소송의 제기가 늦어진 경우에도 먼저 부당노동행위구제신청을 하느라고 늦어졌다거나 사용자와의 복귀교섭 결과를 기다리거나 사용자의 복귀약속을 믿고 기다리다가 늦어졌다는 등 상당한 이유가 있어서 그렇게 된 경우에는 신의성실의 원칙에 어긋나지 않는다고 보아야 한다.\n판례파일\t대법원 1992.4.14. 선고 92다1728 판결.hwp\n이 정보는 2026년 8월 31일 기준으로 작성된 것입니다.\n생활법령정보는 법적 효력을 갖는 유권해석(결정, 판단)의 근거가 되지 않고, 각종 신고, 불복 청구 등의 증거자료로서의 효력은 없습니다.\n구체적인 법령에 대한 질의는 담당기관이나 국민신문고에 문의하시기 바랍니다.\n위 내용에 대한 홈페이지 개선의견은 홈페이지 개선의견을 이용해 주시기 바랍니다.\n\n개인정보처리방침\n저작권정책\n사이트맵\nRSS\n모바일 홈페이지\n생활법령 블로그\n모바일QR\n생활법령배너달기\n\nCopyright ⓒ 1997-2023 Korea Ministry of Government Legislation. All Rights Reserved.    |    홈페이지 개선의견\n\n관련기관 홈페이지\n\n[표]\n사건명 | 대법원 2000. 6. 8. 자 2000마1439 결정 【가압류를본압류로전이하는채권압류및추..\n판시사항 | 퇴직위로금이나 명예퇴직수당의 법적 성질 및 이들이 「민사소송법」 제579조제4호 소정의 압류금지채권인 퇴직금 기타 유사한 급여채권에 해당하는지 여부(적극)\n판결요지 | 퇴직위로금이나 명예퇴직수당은 그 직에서 퇴임하는 자에 대하여 그 재직 중 직무집행의 대가로서 지급되는 후불적 임금으로서의 보수의 성질을 아울러 갖고 있다고 할 것이므로 퇴직금과 유사하다고 볼 것이고, 따라서 이들은 「민사소송법」 제579조제4호 소정의 압류금지채권인 퇴직금 기타 유사한 급여채권에 해당한다.\n판례파일 | 대법원 2000. 6. 8. 자 2000마1439 결정.hwp\n---\n사건명 | 대법원 1996. 3. 8. 선고 95다51847 판결 【해임처분무효확인】\n판시사항 | [1] 해고처분에 대한 명시적 이의 유보 없이 퇴직금을 수령한 후 해고처분무효확인 소송을 제기하는 것이 신의칙이나 금반언의 원칙에 반하지 않는 경우 [2] 징계위원회의 동의를 거치지 않고 행한 직권면직처분의 효력(무효) 및 사후의 동의로 그 하자가 치유되는지 여부(소극)\n판결요지 | [1] 사용자로부터 해고된 근로자가 퇴직금 등을 수령하면서 아무런 이의의 유보나 조건을 제기하지 않았다면 특별한 사정이 없는 한 그 해고의 효력을 인정하였다고 할 것이고, 따라서 그로부터 오랜 기간이 지난 후에 그 해고의 효력을 다투는 소를 제기하는 것은 신의칙이나 금반언의 원칙에 위배 되어 허용될 수 없으나, 다만 이와 같은 경우라도 해고의 효력을 인정하지 아니하고 이를 다투고 있었다고 볼 수 있는 객관적인 사정이 있다거나 그 외에 상당한 이유가 있는 상황하에서 이를 수령하는 등 반대의 사정이 있음이 엿보이는 때에는, 명시적인 이의를 유보함이 없이 퇴직금을 수령한 경우라고 하여도 일률적으로 해고의 효력을 인정하였다고 보아서는 안 된다. [2] 학교법인이 그 교원을 직권면직함에 있어 사립학교법 및 당해 법인의 정관에 위배 되어 무효인 법인 인사규칙에 따라 징계위원회의 동의를 얻지 아니한 경우, 그 직권면직처분은 절차상의 하자로 인하여 무효이고, 비록 소송 계속중에 학교법인이 징계위원회를 개최하여 동의를 얻었다고 하더라도 이러한 사유로 그 하자가 치유된다고 할 수 없다.\n판례파일 | 대법원 1996. 3. 8. 선고 95다51847 판결.hwp\n---\n사건명 | 대법원 1992.4.14. 선고 92다1728 판결 【해고무효확인등】\n판시사항 | 가. 해고를 당한 근로자가 퇴직금과 해고수당을 아무런 조건의 유보 없이 수령하고 난 후 장기간이 경과한 뒤에 해고무효확인청구를 하는 것이 신의성실의 원칙상 허용되는지 여부 나. 위 “가”항에 있어 명시적인 이의를 유보함이 없이 퇴직금이나 해고수당을 수령하였다 하여도 해고의 효력을 인정하였다고 볼 수 없는 경우 및 해고무효확인청구소송이 늦게 제기되었더라도 신의성실의 원칙에 어긋나지 않는다고 보아야 할 경우\n판결요지 | 가. 해고나 징계해고를 당한 근로자가 퇴직금과 해고수당을 아무런 조건의 유보 없이 수령한 것이라면 특별한 사정이 없는 한 그 해고를 유효한 것으로 인정하였다고 보는 것이 상당하고, 상당한 이유 없이 그로부터 장기간이 경과한 뒤에야 해고무효의 확인청구를 하는 것은 신의성실의 원칙상 허용되지 않는다. 나. 위 “가”항의 경우라도 해고의 효력을 인정하지 아니하고 이를 다투고 있었다고 볼 수 있는 객관적인 사정이 있다거나, 그 외에 상당한 이유가 있는 상황하에서 이를 수령하는 등 반대의 사정이 있음이 엿보이는 때에는 명시적인 이의를 유보함이 없이 퇴직금이나 해고수당을 수령한 경우라고 하여도 일률적으로 해고의 효력을 인정하였다고 보아서는 안 될 것이고, 해고무효의 확인청구소송의 제기가 늦어진 경우에도 먼저 부당노동행위구제신청을 하느라고 늦어졌다거나 사용자와의 복귀교섭 결과를 기다리거나 사용자의 복귀약속을 믿고 기다리다가 늦어졌다는 등 상당한 이유가 있어서 그렇게 된 경우에는 신의성실의 원칙에 어긋나지 않는다고 보아야 한다.\n판례파일 | 대법원 1992.4.14. 선고 92다1728 판결.hwp"
+    }
+  ],
+  "capturesReviewed": {
+    "evidence-가압류-뜻-압류-가처분-차이-1.png": "법제처 국가법령정보센터, 민사집행법 제276조(가압류의 목적) 조문 화면. 가압류는 금전채권이나 금전으로 환산할 수 있는 채권의 강제집행을 보전하기 위한 것이라는 원문이 보여요.",
+    "evidence-가압류-뜻-압류-가처분-차이-2.png": "법제처 국가법령정보센터, 민사집행법 제280조(가압류명령) 조문 화면. 가압류신청 재판은 변론 없이 할 수 있고 담보제공으로 명할 수 있다는 원문이 보여요.",
+    "evidence-가압류-뜻-압류-가처분-차이-3.png": "법제처 국가법령정보센터, 민사집행법 제277조(보전의 필요) 조문 화면. 판결 집행이 곤란해질 염려가 있을 때 가압류할 수 있다는 원문이 보여요.",
+    "evidence-가압류-뜻-압류-가처분-차이-4.png": "법제처 국가법령정보센터, 민사집행법 제293조(부동산가압류집행) 조문 화면. 가압류 집행은 등기부에 기입해야 하고 가압류등기는 법원사무관등이 촉탁한다는 원문이 보여요.",
+    "evidence-가압류-뜻-압류-가처분-차이-5.png": "법제처 국가법령정보센터, 민사집행법 제300조(가처분의 목적) 조문 화면. 다툼의 대상에 관한 가처분과 임시의 지위를 정하는 가처분 두 가지가 정의된 원문이 보여요.",
+    "evidence-가압류-뜻-압류-가처분-차이-6.png": "법제처 국가법령정보센터, 민사집행법 제301조(가압류절차의 준용) 조문 화면. 가처분절차에는 가압류절차 규정을 준용한다는 원문이 보여요.",
+    "evidence-가압류-뜻-압류-가처분-차이-7.png": "법제처 생활법령정보 백문백답 '가압류란 무엇인가요' 화면. 가압류 개념과 가처분과의 구분 설명이 보이고 2026년 8월 15일 기준으로 작성됐다는 안내가 보여요.",
+    "evidence-가압류-뜻-압류-가처분-차이-8.png": "법제처 생활법령정보 백문백답 '가처분이 무엇인가요' 화면. 가처분의 필요성과 다툼의 대상에 관한 가처분·임시의 지위를 정하는 가처분 구분표가 보여요.",
+    "evidence-가압류-뜻-압류-가처분-차이-9.png": "법제처 생활법령정보 '금전채권에 대한 가압류 신청' 페이지. 가압류목적물과 피압류채권의 특정 요건 설명이 보이고 민사집행법 2028년 3월 1일 시행 표시가 보여요.",
+    "evidence-가압류-뜻-압류-가처분-차이-10.png": "법제처 생활법령정보 '가압류집행' 페이지. 가압류집행에 대한 본집행 준용과 집행개시 요건(고지일로부터 2주 이내 집행)이 보여요.",
+    "evidence-가압류-뜻-압류-가처분-차이-11.png": "법제처 생활법령정보 '퇴직금의 지급' 판례 탭. 대법원 2000. 6. 8. 자 2000마1439 결정에서 명예퇴직수당이 압류금지채권인 퇴직금 기타 유사한 급여채권에 해당한다고 본 판시사항이 보여요."
+  },
+  "exampleValues": [],
+  "exampleNote": ""
+}

@@ -6,8 +6,8 @@
  * 2. 빈칸을 채우지 못하면 글 자체가 성립하지 않는다.
  * 3. 컴포넌트는 데이터가 요구할 때만 등장한다.
  * 4. 타이틀과 본문이 같은 키워드를 공유한다 (primaryKeywords).
- * 5. 본문 안 모든 수치는 sources의 한 항목에 매핑된다 (numericClaims).
- * 6. 법령 인용은 공식 사이트 원문에서 온다 (legalBasis.verifiedAt).
+ * 5. 본문 안 모든 수치는 증거 JSON 원문에 글자 그대로 있다 (verify-evidence 가 대조).
+ * 6. 법령 인용은 Playwright 로 연 공식 페이지 원문에서 온다 (quote).
  */
 
 export interface ArticleData {
@@ -17,9 +17,7 @@ export interface ArticleData {
   /**
    * 메인 키워드 2~3개.
    * - meta.title: 최소 2개 포함
-   * - mainSections[i].heading: 최소 1개 포함
    * - meta.description: 최소 1개 포함
-   * 빌드 시 verify-articles.ts가 검증, 위반 시 빌드 실패.
    */
   primaryKeywords: [string, string] | [string, string, string];
 
@@ -60,7 +58,7 @@ export interface ArticleData {
   keyFacts?: { label: string; value: string }[];
 
   /**
-   * 정리 — "떠나기 전 체크". 대제목마다 하나(2~5). (정본 템플릿 .sum)
+   * 정리 — "떠나기 전 체크". 항목마다 행동 또는 숫자 하나(2~5). (정본 템플릿 .sum)
    * 옛 글의 3줄 튜플도 그대로 들어간다.
    */
   summary?: string[];
@@ -91,7 +89,7 @@ export interface ArticleData {
   };
 
   /**
-   * 대제목 섹션 — 검색자 질문 군집 하나에 하나 (2~4).
+   * 대제목 섹션 — 주어진 소제목 하나에 하나, 순서·글자 그대로.
    * 세부 질문은 각 섹션의 subsections 로 들어간다.
    */
   mainSections: MainSection[];
@@ -112,10 +110,7 @@ export interface ArticleData {
   sources: SourceItem[];
   lastVerified: string;
 
-  /**
-   * 본문 안 모든 수치를 sources 인덱스에 매핑.
-   * 매핑 없는 숫자는 빌드 경고, sourceIndex가 범위 밖이면 즉시 FAIL.
-   */
+  /** 옛 글 전용. 새 글은 쓰지 않는다 (숫자 근거는 증거 JSON 대조) */
   numericClaims?: NumericClaim[];
 
   relatedQuestions?: RelatedQuestion[];
@@ -234,13 +229,13 @@ export interface MainSection {
    */
   eyebrow: string;
 
-  /** 검색자 질문형 "~나요". 목차와 글자 그대로 같다 */
+  /** 주어진 소제목 글자 그대로. 목차와 같다 */
   heading: string;
   /** 한 줄 답 (정본 템플릿 .ans). 질문형 제목엔 반드시 있다 */
   answer?: string;
   body: string;
   highlight?: string;
-  /** 세부 질문(h3). 이 대제목이 약속한 항목의 하위 질문들 */
+  /** 세부 질문(h3). 이 대제목 아래 검색자가 묻는 질문들 */
   subsections?: SubSection[];
   /** 접힌 근거 조문 */
   quote?: LawQuote;
@@ -261,8 +256,6 @@ export interface MainSection {
   /**
    * 내부 유도 — 스포크/허브/계산기로 자연스럽게 넘긴다.
    * bridge는 링크 앞에 놓이는 유도 문장이며 필수다.
-   *   bridge: "계산 방법을 잘 살펴보셨나요? 그렇다면 실제 금액부터 확인해 보시는 게 좋겠죠."
-   *   label:  "퇴직금 계산 방법 보기"
    */
   link?: {
     slug: string;
@@ -338,11 +331,11 @@ export interface LegalReference {
   law: string;
   url: string;
   /**
-   * 핵심 조문 발췌. researcher가 Claude in Chrome으로 url 페이지를 열어 직접 복사한 원문.
+   * 핵심 조문 발췌. url 페이지 원문을 그대로 복사한 것.
    * 의역/요약 금지. 페이지에서 literal substring match 가능해야 함.
    */
   excerpt?: string;
-  /** researcher가 url 페이지에서 excerpt 원문을 직접 확인한 날짜. YYYY-MM-DD. */
+  /** url 페이지에서 excerpt 원문을 확인한 날짜. YYYY-MM-DD. */
   verifiedAt?: string;
   /** 시행일. 법령 개정 감지용. */
   effectiveDate?: string;

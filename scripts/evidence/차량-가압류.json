@@ -1,0 +1,703 @@
+{
+  "slug": "차량-가압류",
+  "verifiedAt": "2026-09-28",
+  "collectedBy": "scripts/collect-evidence.mjs (playwright)",
+  "sources": [
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제276조",
+      "org": "법제처 (민사집행법 제276조)"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제280조",
+      "org": "법제처 (민사집행법 제280조)"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제282조",
+      "org": "법제처 (민사집행법 제282조)"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제287조",
+      "org": "법제처 (민사집행법 제287조)"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제288조",
+      "org": "법제처 (민사집행법 제288조)"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제291조",
+      "org": "법제처 (민사집행법 제291조)"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=1",
+      "org": "법제처"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EC%9E%90%EB%8F%99%EC%B0%A8%EA%B4%80%EB%A6%AC%EB%B2%95/제13조",
+      "org": "법제처 (자동차관리법 제13조)"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=2&cnpClsNo=2",
+      "org": "법제처"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처"
+    }
+  ],
+  "facts": [
+    {
+      "value": "제276조",
+      "quote": "제276조(가압류의 목적) ①가압류는 금전채권이나 금전으로 환산할 수 있는 채권에 대하여 동산 또는 부동산에 대한 강제집행을 보전하기 위하여 할 수 있다.",
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제276조",
+      "org": "법제처 (민사집행법 제276조)",
+      "screenshot": "evidence-차량-가압류-1.png"
+    },
+    {
+      "value": "제280조",
+      "quote": "제280조(가압류명령) ①가압류신청에 대한 재판은 변론 없이 할 수 있다.",
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제280조",
+      "org": "법제처 (민사집행법 제280조)",
+      "screenshot": "evidence-차량-가압류-2.png"
+    },
+    {
+      "value": "제282조",
+      "quote": "제282조(가압류해방금액) 가압류명령에는 가압류의 집행을 정지시키거나 집행한 가압류를 취소시키기 위하여 채무자가 공탁할 금액을 적어야 한다.",
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제282조",
+      "org": "법제처 (민사집행법 제282조)",
+      "screenshot": "evidence-차량-가압류-3.png"
+    },
+    {
+      "value": "제287조",
+      "quote": "제287조(본안의 제소명령) ①가압류법원은 채무자의 신청에 따라 변론 없이 채권자에게 상당한 기간 이내에 본안의 소를 제기하여 이를 증명하는 서류를 제출하거나 이미 소를 제기하였으면 소송계속사실을 증명하는 서류를 제출하도록 명하여야 한다.",
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제287조",
+      "org": "법제처 (민사집행법 제287조)",
+      "screenshot": "evidence-차량-가압류-4.png"
+    },
+    {
+      "value": "2주",
+      "quote": "②제1항의 기간은 2주 이상으로 정하여야 한다.",
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제287조",
+      "org": "법제처 (민사집행법 제287조)",
+      "screenshot": "evidence-차량-가압류-4.png"
+    },
+    {
+      "value": "제447조",
+      "quote": "이 경우 민사소송법 제447조의 규정은 준용하지 아니한다.",
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제287조",
+      "org": "법제처 (민사집행법 제287조)",
+      "screenshot": "evidence-차량-가압류-4.png"
+    },
+    {
+      "value": "제288조",
+      "quote": "제288조(사정변경 등에 따른 가압류취소) ①채무자는 다음 각호의 어느 하나에 해당하는 사유가 있는 경우에는 가압류가 인가된 뒤에도 그 취소를 신청할 수 있다.",
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제288조",
+      "org": "법제처 (민사집행법 제288조)",
+      "screenshot": "evidence-차량-가압류-5.png"
+    },
+    {
+      "value": "3년",
+      "quote": "가압류가 집행된 뒤에 3년간 본안의 소를 제기하지 아니한 때",
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제288조",
+      "org": "법제처 (민사집행법 제288조)",
+      "screenshot": "evidence-차량-가압류-5.png"
+    },
+    {
+      "value": "제286조",
+      "quote": "③제1항의 규정에 의한 신청에 대한 재판에는 제286조제1항 내지 제4항ㆍ제6항 및 제7항을 준용한다.",
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제288조",
+      "org": "법제처 (민사집행법 제288조)",
+      "screenshot": "evidence-차량-가압류-5.png"
+    },
+    {
+      "value": "제291조",
+      "quote": "제291조(가압류집행에 대한 본집행의 준용) 가압류의 집행에 대하여는 강제집행에 관한 규정을 준용한다.",
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제291조",
+      "org": "법제처 (민사집행법 제291조)",
+      "screenshot": "evidence-차량-가압류-6.png"
+    },
+    {
+      "value": "2028년 / 03월 01일",
+      "quote": "2028년 03월 01일 시행(개정 사항을 검토하여 향후 업데이트 예정입니다.)",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-7.png"
+    },
+    {
+      "value": "2026년 / 8월 15일",
+      "quote": "이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-7.png"
+    },
+    {
+      "value": "제13조",
+      "quote": "제13조(말소등록) ① 자동차 소유자(재산관리인 및 상속인을 포함한다.",
+      "url": "https://www.law.go.kr/법령/%EC%9E%90%EB%8F%99%EC%B0%A8%EA%B4%80%EB%A6%AC%EB%B2%95/제13조",
+      "org": "법제처 (자동차관리법 제13조)",
+      "screenshot": "evidence-차량-가압류-8.png"
+    },
+    {
+      "value": "제53조",
+      "quote": "제53조에 따라 자동차해체재활용업을 등록한 자(이하 “자동차해체재활용업자”라 한다)에게 폐차를 요청한 경우",
+      "url": "https://www.law.go.kr/법령/%EC%9E%90%EB%8F%99%EC%B0%A8%EA%B4%80%EB%A6%AC%EB%B2%95/제13조",
+      "org": "법제처 (자동차관리법 제13조)",
+      "screenshot": "evidence-차량-가압류-8.png"
+    },
+    {
+      "value": "제47조",
+      "quote": "자동차제작ㆍ판매자등에게 반품한 경우(제47조의2의 교환 또는 환불 요구에 따라 반품된 경우를 포함한다)",
+      "url": "https://www.law.go.kr/법령/%EC%9E%90%EB%8F%99%EC%B0%A8%EA%B4%80%EB%A6%AC%EB%B2%95/제13조",
+      "org": "법제처 (자동차관리법 제13조)",
+      "screenshot": "evidence-차량-가압류-8.png"
+    },
+    {
+      "value": "제14조",
+      "quote": "제14조의 압류등록을 한 후에도 환가(換價) 절차 등 후속 강제집행 절차가 진행되고 있지 아니하는 차량 중 차령 등 대통령령으로 정하는 기준에 따라 환가가치가 남아 있지 아니하다고 인정되는 경우.",
+      "url": "https://www.law.go.kr/법령/%EC%9E%90%EB%8F%99%EC%B0%A8%EA%B4%80%EB%A6%AC%EB%B2%95/제13조",
+      "org": "법제처 (자동차관리법 제13조)",
+      "screenshot": "evidence-차량-가압류-8.png"
+    },
+    {
+      "value": "제24조 / 제37조",
+      "quote": "제24조의2제2항 또는 제37조제3항에 따른 자동차 운행정지 명령에도 불구하고 해당 자동차를 계속 운행하는 경우",
+      "url": "https://www.law.go.kr/법령/%EC%9E%90%EB%8F%99%EC%B0%A8%EA%B4%80%EB%A6%AC%EB%B2%95/제13조",
+      "org": "법제처 (자동차관리법 제13조)",
+      "screenshot": "evidence-차량-가압류-8.png"
+    },
+    {
+      "value": "제26조",
+      "quote": "제26조에 따라 자동차를 폐차한 경우",
+      "url": "https://www.law.go.kr/법령/%EC%9E%90%EB%8F%99%EC%B0%A8%EA%B4%80%EB%A6%AC%EB%B2%95/제13조",
+      "org": "법제처 (자동차관리법 제13조)",
+      "screenshot": "evidence-차량-가압류-8.png"
+    },
+    {
+      "value": "제6조 / 1년",
+      "quote": "제6조제3항에 따른 의무보험 가입명령을 이행하지 아니한 지 1년 이상 경과한 경우",
+      "url": "https://www.law.go.kr/법령/%EC%9E%90%EB%8F%99%EC%B0%A8%EA%B4%80%EB%A6%AC%EB%B2%95/제13조",
+      "org": "법제처 (자동차관리법 제13조)",
+      "screenshot": "evidence-차량-가압류-8.png"
+    },
+    {
+      "value": "1개월",
+      "quote": "④ 시ㆍ도지사는 제3항에 따라 직권으로 말소등록을 하려는 경우에는 그 사유 및 말소등록 예정일을 명시하여 그 1개월 전까지 등록원부에 적힌 자동차 소유자 및 이해관계인에게 알려야 한다.",
+      "url": "https://www.law.go.kr/법령/%EC%9E%90%EB%8F%99%EC%B0%A8%EA%B4%80%EB%A6%AC%EB%B2%95/제13조",
+      "org": "법제처 (자동차관리법 제13조)",
+      "screenshot": "evidence-차량-가압류-8.png"
+    },
+    {
+      "value": "2028년 / 03월 01일",
+      "quote": "2028년 03월 01일 시행(개정 사항을 검토하여 향후 업데이트 예정입니다.)",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-9.png"
+    },
+    {
+      "value": "제279조",
+      "quote": "제279조제1항 및 「보전처분 신청사건의 사무처리요령」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-9.png"
+    },
+    {
+      "value": "10,000원 / 10,000원",
+      "quote": "가압류 신청을 하려는 자는 신청서에 10,000원(지급보증위탁계약체결문서 제출에 따른 담보제공의 경우에도 10,000원)의 인지를 붙여야 합니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-9.png"
+    },
+    {
+      "value": "제9조",
+      "quote": "제9조제2항 본문, 「민사접수서류에 붙일 인지액 및 그 편철방법 등에 관한 예규」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-9.png"
+    },
+    {
+      "value": "3회",
+      "quote": "가압류를 신청하려는 자는 당사자 1명당 3회분의 송달료를 예납해야 합니다(「민사소송법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-9.png"
+    },
+    {
+      "value": "제116조",
+      "quote": "제116조제1항, 「민사소송규칙」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-9.png"
+    },
+    {
+      "value": "제19조",
+      "quote": "제19조제1항제1호, 「송달료규칙」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-9.png"
+    },
+    {
+      "value": "제2조",
+      "quote": "제2조 및 「송달료규칙의 시행에 따른 업무처리요령」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-9.png"
+    },
+    {
+      "value": "제24조 / 제150조",
+      "quote": "제24조 및 제150조제2호).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-9.png"
+    },
+    {
+      "value": "제280조",
+      "quote": "제280조제2항 및 제3항).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-9.png"
+    },
+    {
+      "value": "제204조",
+      "quote": "제204조 및 「지급보증위탁계약체결문서의 제출에 의한 담보제공과 관련한 사무처리요령」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-9.png"
+    },
+    {
+      "value": "제23조",
+      "quote": "제23조제1항 및 「민사소송법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-9.png"
+    },
+    {
+      "value": "7일",
+      "quote": "법원은 가압류로 생길 수 있는 채무자의 손해에 대해 담보제공을 명령할 수 있으며, 법원의 담보제공명령을 발한 후 담보제공명령을 받은 채권자가 그 결정에 정하여진 기일(보통 7일) 내에 담보를 제공하지 않으면 법원은 신청을 각하하게 되며 담보제공이 되면 가압류 명령을 발하게 됩니다(「민사집행법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-9.png"
+    },
+    {
+      "value": "제124조 / 제219조",
+      "quote": "제124조 및 제219조).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-9.png"
+    },
+    {
+      "value": "1주",
+      "quote": "채권자는 신청을 기각하거나 각하하는 결정에 대해 결정 고지된 날부터 1주 이내에 즉시항고장을 제출함으로써 즉시항고할 수 있습니다(「민사집행법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-9.png"
+    },
+    {
+      "value": "제281조 / 제15조",
+      "quote": "제281조제2항 및 제15조제2항).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-9.png"
+    },
+    {
+      "value": "2주",
+      "quote": "가압류에 대한 재판의 집행은 채권자에게 재판을 고지한 날부터 2주 이내에 해야 하며, 이는 채무자에게 송달하기 전에도 할 수 있습니다(「민사집행법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-9.png"
+    },
+    {
+      "value": "제292조",
+      "quote": "제292조제2항 및 제3항).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-9.png"
+    },
+    {
+      "value": "제19조",
+      "quote": "제19조제3항, 「민사소송법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-9.png"
+    },
+    {
+      "value": "10년",
+      "quote": "공탁물이 금전인 경우 그 원금 또는 이자의 수령, 회수에 대한 권리는 그 권리를 행사할 수 있는 때부터 10년간 행사하지 않으면 시효로 인해 소멸합니다(「공탁법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-9.png"
+    },
+    {
+      "value": "제287조",
+      "quote": "제287조제1항 및 제3항).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-9.png"
+    },
+    {
+      "value": "2026년 / 8월 15일",
+      "quote": "이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-9.png"
+    },
+    {
+      "value": "2028년 / 03월 01일",
+      "quote": "2028년 03월 01일 시행(개정 사항을 검토하여 향후 업데이트 예정입니다.)",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-10.png"
+    },
+    {
+      "value": "제26조 / 제28조",
+      "quote": "제26조제1항 및 제28조제1항).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-10.png"
+    },
+    {
+      "value": "1,000원",
+      "quote": "해방금액 공탁을 이유로 한 가압류집행집행취소신청을 하려는 자는 가압류집행취소신청서에 1,000원의 대한민국수입인지를 구입하여 붙여야 합니다(「민사소송 등 인지법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-10.png"
+    },
+    {
+      "value": "제9조",
+      "quote": "제9조제5항제4호, 「민사접수서류에 붙일 인지액 및 그 편철방법 등에 관한 예규」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-10.png"
+    },
+    {
+      "value": "2회",
+      "quote": "해방금액 공탁을 이유로 한 가압류집행취소신청을 하려는 자는 당사자 1명당 2회분의 송달료를 납부해야 합니다(「송달료규칙의 시행에 따른 업무처리요령」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-10.png"
+    },
+    {
+      "value": "제7조",
+      "quote": "제7조제1항 및 별표 1).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-10.png"
+    },
+    {
+      "value": "제24조 / 제28조 / 제150조 / 제151조",
+      "quote": "제24조제1호, 제28조제1항제1호마목, 제3호라목, 제150조제2호 및 제151조제1항제2호).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-10.png"
+    },
+    {
+      "value": "4,000원 / 2회",
+      "quote": "부동산과 같이 등기를 요하는 가압류에 대한 집행취소신청을 하려는 자는 등기신청수수료로 부동산 1개당 4,000원의 대법원수입증지와 말소등기촉탁을 위한 우표 2회분을 구입해야 합니다(「송달료규칙」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-10.png"
+    },
+    {
+      "value": "제14조",
+      "quote": "제14조, 「등기신청수수료 징수에 관한 예규」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-10.png"
+    },
+    {
+      "value": "2026년 / 8월 15일",
+      "quote": "이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-10.png"
+    },
+    {
+      "value": "6,000원 / 1,200원",
+      "quote": "부동산 | 부동산 1개당 6,000원 | 부동산 1개당 1,200원",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-10.png"
+    },
+    {
+      "value": "15,000원",
+      "quote": "자동차 | 1대당 15,000원 | 면제",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-10.png"
+    },
+    {
+      "value": "2028년 / 03월 01일",
+      "quote": "2028년 03월 01일 시행(개정 사항을 검토하여 향후 업데이트 예정입니다.)",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "3년",
+      "quote": "가압류가 집행된 뒤에 3년간 본안의 소를 제기하지 않은 때",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "10,000원 / 8회",
+      "quote": "사정변경에 따른 가압류취소를 신청하려는 자는 10,000원의 수입인지를 구입하고 당사자 1명당 8회분의 송달료를 예납해야 합니다(「민사소송 등 인지법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "제9조",
+      "quote": "제9조제2항 본문, 「민사접수서류에 붙일 인지액 및 그 편철방법 등에 관한 예규」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "제3조",
+      "quote": "제3조 및 별표, 「민사소송법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "제116조",
+      "quote": "제116조제1항, 「민사소송규칙」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "제19조",
+      "quote": "제19조제1항제1호, 「송달료규칙」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "제2조",
+      "quote": "제2조, 「송달료규칙의 시행에 따른 업무처리요령」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "제7조",
+      "quote": "제7조제1항 및 별표 1).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "20,000,000원",
+      "quote": "청구채권액 : 금20,000,000원정",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "20,000,000원",
+      "quote": "채무자가 제3채무자에 대하여 가지는 예금청구채권 다음에서 기재한 순서에 따라 위 청구금액(가압류이후, 추가거래분 포함) 중 금20,000,000원정",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "제282조",
+      "quote": "제282조), 법원이 자유재량에 따라 정한 담보를 제공하고서 그 가압류 자체의 취소를 구할 수도 있습니다(「민사집행법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "3년",
+      "quote": "가압류가 집행된 뒤 3년간 본안의 소를 제기하지 않은 사유에 따른 가압류취소",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "3년",
+      "quote": "3년간 본안의 소를 제기하지 않음에 따른 가압류취소신청",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "3년",
+      "quote": "채권자가 3년간 본안의 소를 제기하지 않음에 따라 가압류취소신청을 하려는 자는 가압류취소신청서(당사자 수 + 1부)를 작성하고 소명방법에 기재된 첨부서류를 가압류 명령을 결정한 법원에 제출해야 합니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "3년 / 10,000원 / 8회",
+      "quote": "채권자가 3년간 본안의 소를 제기하지 않음에 따라 가압류취소를 신청하려는 자는 10,000원의 수입인지를 구입하고 당사자 1명당 8회분의 송달료를 예납해야 합니다(「민사소송 등 인지법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "제3조",
+      "quote": "제3조·별표, 「민사소송법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "제288조 / 제286조",
+      "quote": "제288조제3항, 제286조제1항 및 제3항).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "제288조 / 제286조",
+      "quote": "제288조제3항 및 제286조제2항).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "2주",
+      "quote": "가압류를 취소하는 결정을 하는 경우 채권자가 그 고지를 받은 날부터 2주를 넘지 않는 범위에서 상당하다고 인정하는 기간이 경과해야 그 결정의 효력이 생긴다는 뜻을 선언할 수 있습니다(「민사집행법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "제288조 / 제286조",
+      "quote": "제288조제3항 및 제286조제6항).",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "제288조 / 제286조",
+      "quote": "제288조제3항, 제286조제7항 및 「민사소송법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "2026년 / 8월 15일",
+      "quote": "이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "20,000,000원 / 20,000,000원",
+      "quote": "위 신청인 ΟΟΟ (서명 또는 날인) ΟΟ지방법원 귀중 ------------------------------------------------------------------------------------------- <별지> 목 록 (가압류취소 청구채권의표시) 청구채권액 : 금20,000,000원정 채무자 : ΟΟΟ 채무자가 제3채무자에 대하여 가지는 예금청구채권 다음에서 기재한 순서에 따라 위 청구금액(가압류이후, 추가거래분 포함) 중 금20,000,000원정 다 음 1.",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "10년",
+      "quote": "까지 집행 | 10년 | 「민사집행법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "5년",
+      "quote": "27.까지 사이에 집행 | 5년 | 「민사집행법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    },
+    {
+      "value": "3년",
+      "quote": "이후에 집행 | 3년 | 「민사집행법」",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png"
+    }
+  ],
+  "raws": [
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제276조",
+      "org": "법제처 (민사집행법 제276조)",
+      "screenshot": "evidence-차량-가압류-1.png",
+      "text": "제276조(가압류의 목적) ①가압류는 금전채권이나 금전으로 환산할 수 있는 채권에 대하여 동산 또는 부동산에 대한 강제집행을 보전하기 위하여 할 수 있다.\n\n②제1항의 채권이 조건이 붙어 있는 것이거나 기한이 차지 아니한 것인 경우에도 가압류를 할 수 있다."
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제280조",
+      "org": "법제처 (민사집행법 제280조)",
+      "screenshot": "evidence-차량-가압류-2.png",
+      "text": "제280조(가압류명령) ①가압류신청에 대한 재판은 변론 없이 할 수 있다.\n\n②청구채권이나 가압류의 이유를 소명하지 아니한 때에도 가압류로 생길 수 있는 채무자의 손해에 대하여 법원이 정한 담보를 제공한 때에는 법원은 가압류를 명할 수 있다.\n\n③청구채권과 가압류의 이유를 소명한 때에도 법원은 담보를 제공하게 하고 가압류를 명할 수 있다.\n\n④담보를 제공한 때에는 그 담보의 제공과 담보제공의 방법을 가압류명령에 적어야 한다."
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제282조",
+      "org": "법제처 (민사집행법 제282조)",
+      "screenshot": "evidence-차량-가압류-3.png",
+      "text": "제282조(가압류해방금액) 가압류명령에는 가압류의 집행을 정지시키거나 집행한 가압류를 취소시키기 위하여 채무자가 공탁할 금액을 적어야 한다."
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제287조",
+      "org": "법제처 (민사집행법 제287조)",
+      "screenshot": "evidence-차량-가압류-4.png",
+      "text": "제287조(본안의 제소명령) ①가압류법원은 채무자의 신청에 따라 변론 없이 채권자에게 상당한 기간 이내에 본안의 소를 제기하여 이를 증명하는 서류를 제출하거나 이미 소를 제기하였으면 소송계속사실을 증명하는 서류를 제출하도록 명하여야 한다.\n\n②제1항의 기간은 2주 이상으로 정하여야 한다.\n\n③채권자가 제1항의 기간 이내에 제1항의 서류를 제출하지 아니한 때에는 법원은 채무자의 신청에 따라 결정으로 가압류를 취소하여야 한다.\n\n④제1항의 서류를 제출한 뒤에 본안의 소가 취하되거나 각하된 경우에는 그 서류를 제출하지 아니한 것으로 본다.\n\n⑤제3항의 신청에 관한 결정에 대하여는 즉시항고를 할 수 있다. 이 경우 민사소송법 제447조의 규정은 준용하지 아니한다."
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제288조",
+      "org": "법제처 (민사집행법 제288조)",
+      "screenshot": "evidence-차량-가압류-5.png",
+      "text": "제288조(사정변경 등에 따른 가압류취소) ①채무자는 다음 각호의 어느 하나에 해당하는 사유가 있는 경우에는 가압류가 인가된 뒤에도 그 취소를 신청할 수 있다. 제3호에 해당하는 경우에는 이해관계인도 신청할 수 있다.\n\n1. 가압류이유가 소멸되거나 그 밖에 사정이 바뀐 때\n\n2. 법원이 정한 담보를 제공한 때\n\n3. 가압류가 집행된 뒤에 3년간 본안의 소를 제기하지 아니한 때\n\n②제1항의 규정에 의한 신청에 대한 재판은 가압류를 명한 법원이 한다. 다만, 본안이 이미 계속된 때에는 본안법원이 한다.\n\n③제1항의 규정에 의한 신청에 대한 재판에는 제286조제1항 내지 제4항ㆍ제6항 및 제7항을 준용한다.\n\n[전문개정 2005. 1. 27.]"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EB%AF%BC%EC%82%AC%EC%A7%91%ED%96%89%EB%B2%95/제291조",
+      "org": "법제처 (민사집행법 제291조)",
+      "screenshot": "evidence-차량-가압류-6.png",
+      "text": "제291조(가압류집행에 대한 본집행의 준용) 가압류의 집행에 대하여는 강제집행에 관한 규정을 준용한다. 다만, 아래의 여러 조문과 같이 차이가 나는 경우에는 그러하지 아니하다."
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=1",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-7.png",
+      "text": "메인메뉴 바로가기\n서브메뉴 바로가기\n본문 바로가기\n통합검색박스\n검색어\n검색\n로그인 최근 본 법령정보 -\nLanguage\n메뉴전체보기\n책자형\n카드뉴스형\n백문백답\n솔로몬의 재판\n웹툰\n소식∙참여\n서비스 소개\nSMART\n생활법률\n앱 다운로드\n설문조사\n확장/축소\n닫기\n가압류 신청\n\n이미지로 보는\n카드뉴스\n\n사례로 보는\n백문백답\n\n관련법령\n\n목차\n\n펼치기\n닫기\n가압류 이해\n\"가압류\"란?\n하위메뉴 보기/숨기기\n가압류의 의미 및 필요성\n가압류의 관할\n가압류 절차\n가압류 신청준비\n가압류의 신청 요건 및 당사자\n하위메뉴 보기/숨기기\n \n가압류 신청서 작성\n하위메뉴 보기/숨기기\n \n신청비용 납부\n하위메뉴 보기/숨기기\n \n선담보제공\n하위메뉴 보기/숨기기\n가압류 신청 및 재판\n가압류 신청\n하위메뉴 보기/숨기기\n \n가압류 신청 심리\n하위메뉴 보기/숨기기\n \n가압류 재판\n하위메뉴 보기/숨기기\n가압류집행\n가압류집행\n하위메뉴 보기/숨기기\n \n가압류집행취소\n하위메뉴 보기/숨기기\n가압류채무자구제\n이의신청\n하위메뉴 보기/숨기기\n \n채무자에 따른 가압류취소\n하위메뉴 보기/숨기기\n확장/축소\n홈 > \n책자형 > 가압류 신청\n\n생활법령 내 검색\n\n공유\n저장\n인쇄\n즐겨찾기\n가압류의 의미 및 필요성\n\n\n「민사집행법」 2028년 03월 01일 시행(개정 사항을 검토하여 향후 업데이트 예정입니다.)\n본문\n100문 100답\n카드뉴스\n판례\n관련법령\n가압류의 의미 \n \n\"가압류\"란\n \"가압류\"란 금전채권이나 금전으로 환산할 수 있는 채권(예컨대 매매대금, 대여금, 어음금, 수표금, 양수금, 공사대금, 임금, 손해배상청구권 등)의 집행을 보전(保全)할 목적으로 미리 채무자의 재산을 동결(凍結)시켜 채무자로부터 그 재산에 대한 처분권을 잠정적으로 빼앗는 집행보전제도(執行保全制度)를 말합니다(「민사집행법」 제276조제1항).\n※ 부동산소유권이전 또는 말소등기청구권, 소유물반환청구권, 매매목적물인도청구권, 임차물인도청구권 등과 같이 금전채권 이외의 물건이나 권리를 대상으로 하는 청구권 등에 대한 장래의 집행을 보전하기 위해서는 가압류가 아닌 가처분(假處分)을 신청해야 합니다(「민사집행법」 제300조제1항).\n※ 가처분은 금전채권 이외의 권리 또는 법률관계에 관한 확정판결의 강제집행을 보전하기 위한 집행보전제도로 이에 대한 자세한 내용은 이 사이트(https://www.easylaw.go.kr)의 『가처분 신청』에서 확인할 수 있습니다.\n재산 종류에 따른 가압류 구분\n 가압류는 가압류의 대상이 되는 재산의 종류에 따라 부동산가압류, 선박·항공기·자동차·건설기계에 대한 가압류, 채권가압류, 유체동산가압류, 전세권 등 그 밖의 재산권에 대한 가압류로 구분할 수 있습니다.\n 전세권 등 그 밖의 재산권에는 채무자의 제3자에 대한 유체동산 인도청구권, 부동산인도청구권, 골프회원권, 스포츠회원권, 콘도회원권, 유체동산에 대한 공유지분권, 특허권, 실용신안권, 상표권, 디자인권, 저작권 등의 지식재산권(저작인격권은 제외), 합명·합자·유한회사의 사원권, 조합권의 지분권, 주식발행 전의 주식이나 신주인수권, 예탁유가증권, 전세권 등이 있습니다.\n\n유용한 법령 정보  1\n\n\n\n\n<가압류의 잠정성>\n\n \n\nQ. 가압류 결정으로 경매진행을 할 수 있나요?\n\n \n\nA. 가압류는 채무자의 재산에 대한 현상유지에 그치고 경매 또는 환가를 하지 못합니다. 채권자는 본안 소송에서 승소하여 비로소 본안 청구권을 종국적으로 실현할 수 있으므로 가압류 결정으로 경매진행을 할 수 없습니다.\n\n가압류의 필요성 \n \n채권보전절차\n 가압류는 특별담보 없는 채권자의 채권보전절차 가운데 하나로 채권자가 아무리 명백한 금전채권을 가지고 있더라도 채무자의 재산상태가 변화되거나 또는 재산을 처분·은닉하는 경우를 예상할 수 있기 때문에 특별담보가 없는 이상 일반재산에 대한 앞으로의 집행은 불완전한 상태에 있습니다. 가압류는 이와 같은 사태에 대비하여 채권의 집행을 보전(保全)하기 위해 그 필요성이 인정됩니다.\n\n유용한 법령 정보  2\n\n\n\n\n<가압류의 필요성>\n\n \n\n채무자가 빚을 갚을 능력이 있으면서도 있는 재산을 전부 처분한 후 빚을 갚지 않으려고 하는 경우가 있습니다. 이러한 경우 채권자가 소송을 제기하여 승소한 뒤에 그 판결의 확정을 기다려 집행을 하기까지는 많은 시간이 걸리게 되고 그 사이에 채무자가 그가 가진 재산을 모두 처분하는 경우에는 채권자가 재판에 이기고도 집행을 하지 못해 많은 손해를 입게 됩니다. 이처럼 채권자의 권리를 확보하기 위해 재판확정 전에 채무자가 그의 재산을 처분하지 못하도록 임시로 채무자의 재산을 동결(凍結)시키는 절차가 가압류입니다.\n\n이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.\n생활법령정보는 법적 효력을 갖는 유권해석(결정, 판단)의 근거가 되지 않고, 각종 신고, 불복 청구 등의 증거자료로서의 효력은 없습니다.\n구체적인 법령에 대한 질의는 담당기관이나 국민신문고에 문의하시기 바랍니다.\n위 내용에 대한 홈페이지 개선의견은 홈페이지 개선의견을 이용해 주시기 바랍니다.\n\n개인정보처리방침\n저작권정책\n사이트맵\nRSS\n모바일 홈페이지\n생활법령 블로그\n모바일QR\n생활법령배너달기\n\nCopyright ⓒ 1997-2023 Korea Ministry of Government Legislation. All Rights Reserved.    |    홈페이지 개선의견\n\n관련기관 홈페이지\n\n[표]\n유용한 법령 정보 1\n<가압류의 잠정성> Q. 가압류 결정으로 경매진행을 할 수 있나요? A. 가압류는 채무자의 재산에 대한 현상유지에 그치고 경매 또는 환가를 하지 못합니다. 채권자는 본안 소송에서 승소하여 비로소 본안 청구권을 종국적으로 실현할 수 있으므로 가압류 결정으로 경매진행을 할 수 없습니다.\n---\n유용한 법령 정보 2\n<가압류의 필요성> 채무자가 빚을 갚을 능력이 있으면서도 있는 재산을 전부 처분한 후 빚을 갚지 않으려고 하는 경우가 있습니다. 이러한 경우 채권자가 소송을 제기하여 승소한 뒤에 그 판결의 확정을 기다려 집행을 하기까지는 많은 시간이 걸리게 되고 그 사이에 채무자가 그가 가진 재산을 모두 처분하는 경우에는 채권자가 재판에 이기고도 집행을 하지 못해 많은 손해를 입게 됩니다. 이처럼 채권자의 권리를 확보하기 위해 재판확정 전에 채무자가 그의 재산을 처분하지 못하도록 임시로 채무자의 재산을 동결(凍結)시키는 절차가 가압류입니다."
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EC%9E%90%EB%8F%99%EC%B0%A8%EA%B4%80%EB%A6%AC%EB%B2%95/제13조",
+      "org": "법제처 (자동차관리법 제13조)",
+      "screenshot": "evidence-차량-가압류-8.png",
+      "text": "제13조(말소등록) ① 자동차 소유자(재산관리인 및 상속인을 포함한다. 이하 이 조에서 같다)는 등록된 자동차가 다음 각 호의 어느 하나의 사유에 해당하는 경우에는 대통령령으로 정하는 바에 따라 자동차등록증, 등록번호판을 반납하고 시ㆍ도지사에게 말소등록(이하 “말소등록”이라 한다)을 신청하여야 한다. 다만, 제7호 및 제8호의 사유에 해당되는 경우에는 말소등록을 신청할 수 있고, 제9호의 사유에 해당하는 경우에는 공동으로 자동차를 소유한 자(재산관리인 및 상속인을 포함하며, 이하 “공동소유자”라 한다) 중 1인 또는 수인이 말소등록을 신청할 수 있다.  <개정 2017. 10. 24., 2024. 2. 20., 2025. 12. 2.>\n\n1. 제53조에 따라 자동차해체재활용업을 등록한 자(이하 “자동차해체재활용업자”라 한다)에게 폐차를 요청한 경우\n\n2. 자동차제작ㆍ판매자등에게 반품한 경우(제47조의2의 교환 또는 환불 요구에 따라 반품된 경우를 포함한다)\n\n3. 「여객자동차 운수사업법」에 따른 차령(車齡)이 초과된 경우\n\n4. 「여객자동차 운수사업법」 및 「화물자동차 운수사업법」에 따라 면허ㆍ등록ㆍ인가 또는 신고가 실효(失效)되거나 취소된 경우\n\n5. 천재지변ㆍ교통사고 또는 화재로 자동차 본래의 기능을 회복할 수 없게 되거나 멸실된 경우\n\n6. 자동차를 수출하는 경우\n\n7. 제14조의 압류등록을 한 후에도 환가(換價) 절차 등 후속 강제집행 절차가 진행되고 있지 아니하는 차량 중 차령 등 대통령령으로 정하는 기준에 따라 환가가치가 남아 있지 아니하다고 인정되는 경우. 이 경우 시ㆍ도지사가 해당 자동차 소유자로부터 말소등록 신청을 접수하였을 때에는 즉시 그 사실을 압류등록을 촉탁(囑託)한 법원 또는 행정관청과 등록원부에 적힌 이해관계인에게 알려야 한다.\n\n8. 자동차를 교육ㆍ연구의 목적으로 사용하는 등 대통령령으로 정하는 사유에 해당하는 경우\n\n9. 공동소유자 중 1인 또는 수인이 제1호에 따른 폐차를 요청하는 경우로서 다음 각 목의 요건을 모두 충족하는 경우\n\n가. 소재불명 또는 연락두절 등의 사유로 자동차의 폐차 및 말소등록에 관하여 공동소유자 전원의 동의를 받기 어려운 특별한 사정이 있는 경우\n\n나. 차령 및 주행거리 등 대통령령으로 정하는 기준에 따라 환가가치가 남아 있지 아니하다고 인정되는 경우\n\n② 제1항제1호에 해당하는 경우에는 자동차해체재활용업자가, 제1항제6호에 해당되는 경우에는 자동차를 수출하는 자가 해당 자동차 소유자를 갈음하여 제1항에 따른 말소등록을 신청하여야 한다. 다만, 국토교통부령으로 정하는 바에 따라 자동차 소유자가 직접 말소등록을 신청하는 경우에는 그러하지 아니하다.  <개정 2013. 3. 23.>\n\n③ 시ㆍ도지사는 다음 각 호의 어느 하나에 해당하는 경우에는 직권으로 말소등록을 할 수 있다.  <개정 2015. 8. 11., 2021. 4. 13., 2021. 12. 7.>\n\n1. 제1항과 제2항에 따라 말소등록을 신청하여야 할 자가 신청하지 아니한 경우\n\n2. 자동차의 차대[차대가 없는 자동차의 경우에는 차체(車體)를 말한다. 이하 같다]가 등록원부상의 차대와 다른 경우\n\n3. 제24조의2제2항 또는 제37조제3항에 따른 자동차 운행정지 명령에도 불구하고 해당 자동차를 계속 운행하는 경우\n\n4. 제26조에 따라 자동차를 폐차한 경우\n\n5. 속임수나 그 밖의 부정한 방법으로 등록된 경우\n\n6. 「자동차손해배상 보장법」 제6조제3항에 따른 의무보험 가입명령을 이행하지 아니한 지 1년 이상 경과한 경우\n\n④ 시ㆍ도지사는 제3항에 따라 직권으로 말소등록을 하려는 경우에는 그 사유 및 말소등록 예정일을 명시하여 그 1개월 전까지 등록원부에 적힌 자동차 소유자 및 이해관계인에게 알려야 한다. 다만, 그 자동차 소유자 및 이해관계인이 자동차의 말소등록에 동의한 경우와 제1항제3호ㆍ제5호 또는 제3항제4호에 해당되는 경우에는 그러하지 아니하다.  <개정 2015. 8. 11.>\n\n⑤ 시ㆍ도지사는 제3항에 따라 자동차를 직권으로 말소등록한 경우에는 그 자동차를 소유하여 온 자에게 알려야 한다. 이 경우 통지를 받은 상대방은 국토교통부령으로 정하는 부득이한 사유 등이 있는 경우를 제외하고는 지체 없이 그 자동차의 자동차등록증ㆍ등록번호판을 반납하여야 한다.  <개정 2013. 3. 23., 2024. 2. 20.>\n\n⑥ 시ㆍ도지사는 제3항에 따라 직권으로 등록말소를 하는 경우에는 제4항에 따른 통지를 한 후 해당 자동차의 자동차등록증ㆍ등록번호판을 영치(領置)하거나 폐기할 수 있다.  <개정 2024. 2. 20.>\n\n⑦ 자동차 소유자는 다음 각 호의 어느 하나에 해당하는 경우에는 대통령령으로 정하는 바에 따라 시ㆍ도지사에게 말소등록을 신청할 수 있다.  <개정 2015. 12. 29., 2019. 8. 27.>\n\n1. 본인이 소유하는 자동차를 도난당한 경우\n\n2. 본인이 소유하는 자동차를 횡령 또는 편취당한 경우\n\n⑧ 제1항제6호에 따라 말소등록을 신청한 자(자동차소유자가 수출하지 아니하는 경우에는 제2항에 따라 말소등록을 신청한 자를 말한다)는 대통령령으로 정하는 바에 따"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=1&cciNo=1&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-9.png",
+      "text": "메인메뉴 바로가기\n서브메뉴 바로가기\n본문 바로가기\n통합검색박스\n검색어\n검색\n로그인 최근 본 법령정보 -\nLanguage\n메뉴전체보기\n책자형\n카드뉴스형\n백문백답\n솔로몬의 재판\n웹툰\n소식∙참여\n서비스 소개\nSMART\n생활법률\n앱 다운로드\n설문조사\n확장/축소\n닫기\n가압류 신청\n\n이미지로 보는\n카드뉴스\n\n사례로 보는\n백문백답\n\n관련법령\n\n목차\n\n펼치기\n닫기\n가압류 이해\n\"가압류\"란?\n하위메뉴 보기/숨기기\n가압류의 의미 및 필요성\n가압류의 관할\n가압류 절차\n가압류 신청준비\n가압류의 신청 요건 및 당사자\n하위메뉴 보기/숨기기\n \n가압류 신청서 작성\n하위메뉴 보기/숨기기\n \n신청비용 납부\n하위메뉴 보기/숨기기\n \n선담보제공\n하위메뉴 보기/숨기기\n가압류 신청 및 재판\n가압류 신청\n하위메뉴 보기/숨기기\n \n가압류 신청 심리\n하위메뉴 보기/숨기기\n \n가압류 재판\n하위메뉴 보기/숨기기\n가압류집행\n가압류집행\n하위메뉴 보기/숨기기\n \n가압류집행취소\n하위메뉴 보기/숨기기\n가압류채무자구제\n이의신청\n하위메뉴 보기/숨기기\n \n채무자에 따른 가압류취소\n하위메뉴 보기/숨기기\n확장/축소\n홈 > \n책자형 > 가압류 신청\n\n생활법령 내 검색\n\n공유\n저장\n인쇄\n즐겨찾기\n가압류 절차\n\n\n「민사집행법」 2028년 03월 01일 시행(개정 사항을 검토하여 향후 업데이트 예정입니다.)\n본문\n판례\n관련법령\n가압류 신청 준비 \n \n가압류 신청서 및 가압류신청 진술서 작성\n 가압류를 신청하려는 자는 청구채권의 내용·신청취지·신청이유 등을 적은 가압류신청서 및 가압류신청 진술서를 작성해야 합니다(「민사집행법」 제279조제1항 및 「보전처분 신청사건의 사무처리요령」 제2조제5호).\n신청비용 납부\n 가압류 신청을 하려는 자는 신청서에 10,000원(지급보증위탁계약체결문서 제출에 따른 담보제공의 경우에도 10,000원)의 인지를 붙여야 합니다. 그 밖에 가압류 결정에 대한 이의신청 또는 취소의 신청 등을 하려는 자는 개별 신청서에 해당하는 인지를 붙여야 합니다(「민사소송 등 인지법」 제9조제2항 본문, 「민사접수서류에 붙일 인지액 및 그 편철방법 등에 관한 예규」 제3조 및 별표).\n 가압류를 신청하려는 자는 당사자 1명당 3회분의 송달료를 예납해야 합니다(「민사소송법」 제116조제1항, 「민사소송규칙」 제19조제1항제1호, 「송달료규칙」 제2조 및 「송달료규칙의 시행에 따른 업무처리요령」 별표 1).\n 부동산, 자동차 등에 대해 가압류를 신청하려는 자는 등록면허세 및 지방교육세를 납부해야 합니다(「지방세법」 제24조 및 제150조제2호).\n공탁보증보험 가입(부동산·자동차·건설기계·소형선박 또는 금전채권에 대한 가압류에 한함)\n 법원은 가압류로 생길 수 있는 채무자의 손해에 대해 채권자에게 가압류 명령을 내리기에 앞서 담보제공을 명령할 수 있습니다(「민사집행법」 제280조제2항 및 제3항).\n 채권자가 부동산·자동차·건설기계·소형선박 또는 금전채권에 대한 가압류신청(급여채권·영업자예금채권의 경우는 제외)을 하는 경우 법원의 담보제공명령이 없더라도 일정 금액을 보증금액으로 하는 보증서 원본을 제출(공탁보증보험증서 제출)하는 방법으로 담보제공의 허가신청을 할 수 있습니다(「민사집행규칙」 제204조 및 「지급보증위탁계약체결문서의 제출에 의한 담보제공과 관련한 사무처리요령」 제6조제1항).\n가압류 신청 및 재판 \n \n가압류 신청\n 가압류를 신청하려는 자는 가압류신청서를 비롯한 관련 서류를 관할법원 민사신청 담당부서(종합민원실)에 제출해야 합니다.\n 가압류 신청서에는 소장에 관한 규정이 준용되므로 심리에 앞서 재판장이 신청서의 형식적 적법 여부를 심사합니다(「민사집행법」 제23조제1항 및 「민사소송법」 제254조).\n가압류 재판\n 법원은 가압류로 생길 수 있는 채무자의 손해에 대해 담보제공을 명령할 수 있으며, 법원의 담보제공명령을 발한 후 담보제공명령을 받은 채권자가 그 결정에 정하여진 기일(보통 7일) 내에 담보를 제공하지 않으면 법원은 신청을 각하하게 되며 담보제공이 되면 가압류 명령을 발하게 됩니다(「민사집행법」 제280조, 「민사소송법」 제124조 및 제219조).\n 소송요건에 흠이 있어 부적법하거나 법원이 명한 담보를 제공하지 않은 때에는 가압류 신청이 각하됩니다(「민사집행법」 제23조제1항 및 「민사소송법」 제219조).\n 채권자는 신청을 기각하거나 각하하는 결정에 대해 결정 고지된 날부터 1주 이내에 즉시항고장을 제출함으로써 즉시항고할 수 있습니다(「민사집행법」 제281조제2항 및 제15조제2항).\n가압류집행 \n \n가압류집행\n 가압류의 집행에 대해서는 강제집행에 관한 규정이 일부 준용됩니다(「민사집행법」 제291조).\n 가압류에 대한 재판이 있은 뒤에 채권자나 채무자의 승계가 이루어진 경우 가압류의 재판을 집행하려면 집행문을 덧붙여야 합니다(「민사집행법」 제292조제1항).\n 가압류에 대한 재판의 집행은 채권자에게 재판을 고지한 날부터 2주 이내에 해야 하며, 이는 채무자에게 송달하기 전에도 할 수 있습니다(「민사집행법」 제292조제2항 및 제3항).\n가압류집행취소\n채권자는 가압류의 집행상태가 계속되고 있는 한 채무자의 동의 없이 언제든지 집행기관에 대해 집행해제신청을 할 수 있습니다(대법원 1980. 2. 15.자 79마351 결정).\n 채무자는 법원이 정한 해방공탁금(법원이 가압류 명령결정을 내릴 때 가압류의 집행을 정지시키거나 집행한 가압류를 취소시키기 위하여 가압류명령서에 기재한 채무자가 공탁할 금액)을 공탁하여 집행법원으로 하여금 결정으로 집행한 가압류를 취소할 수 있습니다(「민사집행법」 제299조제1항).\n 가압류 결정을 받기 위해 현금공탁을 한 채권자는 가압류 결정이전에 신청을 취하하거나 각하된 때 또는 가압류 결정 이후 법원의 담보취소결정을 받아 공탁금을 회수할 수 있습니다(「민사집행법」 제19조제3항, 「민사소송법」 제125조 및 「공탁법」 제9조제2항제3호).\n 공탁물이 금전인 경우 그 원금 또는 이자의 수령, 회수에 대한 권리는 그 권리를 행사할 수 있는 때부터 10년간 행사하지 않으면 시효로 인해 소멸합니다(「공탁법」 제9조제3항).\n가압류 채무자 구제 \n \n이의신청\n 채무자는 가압류 결정에 대해 이의를 신청할 수 있습니다(「민사집행법」 제283조제1항).\n채무자에 따른 가압류취소\n 채무자는 채권자에게 상당한 기간 내에 본안의 소를 제기하고 이를 증명하는 서류를 제출하도록 하는 명령을 법원에 신청할 수 있고, 채권자가 이 명령을 이행하지 않으면 채무자는 가압류의 취소를 법원에 신청할 수 있습니다(「민사집행법」 제287조제1항 및 제3항).\n 채무자는 가압류 이유가 소멸되었거나 그 밖에 사정이 바뀐 경우에는 가압류 명령이 있은 후라도 그 취소를 신청할 수 있습니다(「민사집행법」 제288조제1항제1호).\n 채무자는 법원이 명한 담보를 제공하고 그 가압류 자체의 취소를 구할 수 있습니다(「민사집행법」 제288조제1항제2호).\n이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.\n생활법령정보는 법적 효력을 갖는 유권해석(결정, 판단)의 근거가 되지 않고, 각종 신고, 불복 청구 등의 증거자료로서의 효력은 없습니다.\n구체적인 법령에 대한 질의는 담당기관이나 국민신문고에 문의하시기 바랍니다.\n위 내용에 대한 홈페이지 개선의견은 홈페이지 개선의견을 이용해 주시기 바랍니다.\n\n개인정보처리방침\n저작권정책\n사이트맵\nRSS\n모바일 홈페이지\n생활법령 블로그\n모바일QR\n생활법령배너달기\n\nCopyright ⓒ 1997-2023 Korea Ministry of Government Legislation. All Rights Reserved.    |    홈페이지 개선의견\n\n관련기관 홈페이지"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=4&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-10.png",
+      "text": "메인메뉴 바로가기\n서브메뉴 바로가기\n본문 바로가기\n통합검색박스\n검색어\n검색\n로그인 최근 본 법령정보 -\nLanguage\n메뉴전체보기\n책자형\n카드뉴스형\n백문백답\n솔로몬의 재판\n웹툰\n소식∙참여\n서비스 소개\nSMART\n생활법률\n앱 다운로드\n설문조사\n확장/축소\n닫기\n가압류 신청\n\n이미지로 보는\n카드뉴스\n\n사례로 보는\n백문백답\n\n관련법령\n\n목차\n\n펼치기\n닫기\n가압류 이해\n\"가압류\"란?\n하위메뉴 보기/숨기기\n가압류 신청준비\n가압류의 신청 요건 및 당사자\n하위메뉴 보기/숨기기\n \n가압류 신청서 작성\n하위메뉴 보기/숨기기\n \n신청비용 납부\n하위메뉴 보기/숨기기\n \n선담보제공\n하위메뉴 보기/숨기기\n가압류 신청 및 재판\n가압류 신청\n하위메뉴 보기/숨기기\n \n가압류 신청 심리\n하위메뉴 보기/숨기기\n \n가압류 재판\n하위메뉴 보기/숨기기\n가압류집행\n가압류집행\n하위메뉴 보기/숨기기\n \n가압류집행취소\n하위메뉴 보기/숨기기\n채권자의 신청에 따른 집행해제\n채무자의 신청에 따른 가압류집행취소\n공탁금 회수\n가압류채무자구제\n이의신청\n하위메뉴 보기/숨기기\n \n채무자에 따른 가압류취소\n하위메뉴 보기/숨기기\n확장/축소\n홈 > \n책자형 > 가압류 신청\n\n생활법령 내 검색\n\n공유\n저장\n인쇄\n즐겨찾기\n채무자의 신청에 따른 가압류집행취소\n\n\n「민사집행법」 2028년 03월 01일 시행(개정 사항을 검토하여 향후 업데이트 예정입니다.)\n본문\n100문 100답\n카드뉴스\n판례\n관련법령\n해방공탁 \n \n가압류해방금액 공탁\n 채무자는 법원이 정한 가압류해방금액을 공탁하여 집행법원으로 하여금 결정으로 집행한 가압류를 취소할 수 있습니다(「민사집행법」 제299조제1항).\n※ 법원은 가압류 명령 결정을 내릴 때 가압류의 집행을 정지시키거나 집행한 가압류를 취소시키기 위하여 공탁할 금액을 가압류명령서에 기재해야 하고, 이 공탁할 금액을 가압류해방금액이라 합니다(「민사집행법」 제282조).\n공탁금 납부 \n \n현금공탁\n 가압류해방금액은 금전에 의한 공탁만이 허용되고 유가증권에 의한 공탁은 그 유가증권이 실질적 통용가치가 있는 것이더라도 허용되지 않습니다(대법원 1996. 10. 1.자 96마162 전원합의체 결정).\n공탁금 납부\n 금전 공탁서(가압류해방)를 작성하여, 가압류결정을 내린 법원의 공탁소의 공탁관에게 가압류결정문사본과 작성한 공탁서 2부를 제출합니다(「공탁규칙」 제20조제1항).\n 수리된 공탁서 중 1부를 받아 법원이 지정한 은행에 공탁금을 납부합니다(「공탁규칙」 제26조제1항 및 제28조제1항).\n※ 금전 공탁서(가압류해방) 서식 및 그 작성례는 대한법률구조공단 홈페이지(http://www.klac.or.kr)에서 확인할 수 있습니다.\n해방금액 공탁을 이유로 한 가압류집행취소신청 \n \n가압류집행 취소\n 해방금액을 공탁한 채무자는 그 공탁서를 첨부하여 집행법원 또는 가압류명령을 발령한 법원에 가압류집행의 취소를 신청할 수 있습니다(「민사집행법」 제299조제1항).\n신청서 작성 및 신청비용 납부\n 해방금액 공탁을 이유로 한 가압류집행취소신청을 하려는 자는 해방공탁을 이유로 해당 가압류집행취소신청서를 작성해야 합니다.\n※ 해방공탁을 이유로 가압류집행취소신청서 및 그 작성례는 대한법률구조공단 홈페이지(http://www.klac.or.kr)에서 확인할 수 있습니다.\n 해방금액 공탁을 이유로 한 가압류집행집행취소신청을 하려는 자는 가압류집행취소신청서에 1,000원의 대한민국수입인지를 구입하여 붙여야 합니다(「민사소송 등 인지법」 제9조제5항제4호, 「민사접수서류에 붙일 인지액 및 그 편철방법 등에 관한 예규」 제3조 및 별표).\n 해방금액 공탁을 이유로 한 가압류집행취소신청을 하려는 자는 당사자 1명당 2회분의 송달료를 납부해야 합니다(「송달료규칙의 시행에 따른 업무처리요령」 제7조제1항 및 별표 1).\n 부동산 또는 자동차와 같이 등기·등록을 해야 하는 가압류집행취소신청을 하려는 자는 해당 목적물의 등록면허세 및 지방교육세를 납부해야 합니다(「지방세법」 제24조제1호, 제28조제1항제1호마목, 제3호라목, 제150조제2호 및 제151조제1항제2호).\n\n \n\n\t\n\n등록면허세\n\n\t\n\n지방교육세\n\n\n\n\n부동산\n\n\t\n\n부동산 1개당 6,000원\n\n\t\n\n부동산 1개당 1,200원\n\n\n\n\n자동차\n\n\t\n\n1대당 15,000원\n\n\t\n\n면제\n\n◀ 납부방법 ▶\n 부동산의 경우 대법원 인터넷 등기소(http://www.iros.go.kr)의 등기신청-등록면허서 정액분 신고에서 납부통지서를 발부받아 금융기관에 납부하면 됩니다.\n 자동차의 경우 자동차에 대한 가압류집행해제신청서를 소재지 관할 시·군·구청에 제시하고 등록면허세납부통지서를 발부받아 금융기관에 납부하고, 등록면허세영수필확인서 및 통지서를 해제신청서에 첨부합니다.\n 부동산과 같이 등기를 요하는 가압류에 대한 집행취소신청을 하려는 자는 등기신청수수료로 부동산 1개당 4,000원의 대법원수입증지와 말소등기촉탁을 위한 우표 2회분을 구입해야 합니다(「송달료규칙」 제14조, 「등기신청수수료 징수에 관한 예규」 제2호사목 및 별표 1).\n※ 가압류집행취소신청에 따른 비용 납부 방법 등에 관한 보다 자세한 내용은 이 콘텐츠의 <가압류 신청준비-신청비용 납부> 이하 해당 부분에서 확인할 수 있습니다.\n이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.\n생활법령정보는 법적 효력을 갖는 유권해석(결정, 판단)의 근거가 되지 않고, 각종 신고, 불복 청구 등의 증거자료로서의 효력은 없습니다.\n구체적인 법령에 대한 질의는 담당기관이나 국민신문고에 문의하시기 바랍니다.\n위 내용에 대한 홈페이지 개선의견은 홈페이지 개선의견을 이용해 주시기 바랍니다.\n\n개인정보처리방침\n저작권정책\n사이트맵\nRSS\n모바일 홈페이지\n생활법령 블로그\n모바일QR\n생활법령배너달기\n\nCopyright ⓒ 1997-2023 Korea Ministry of Government Legislation. All Rights Reserved.    |    홈페이지 개선의견\n\n관련기관 홈페이지\n\n[표]\n등록면허세 | 지방교육세\n부동산 | 부동산 1개당 6,000원 | 부동산 1개당 1,200원\n자동차 | 1대당 15,000원 | 면제"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=294&ccfNo=5&cciNo=2&cnpClsNo=2",
+      "org": "법제처",
+      "screenshot": "evidence-차량-가압류-11.png",
+      "text": "메인메뉴 바로가기\n서브메뉴 바로가기\n본문 바로가기\n통합검색박스\n검색어\n검색\n로그인 최근 본 법령정보 -\nLanguage\n메뉴전체보기\n책자형\n카드뉴스형\n백문백답\n솔로몬의 재판\n웹툰\n소식∙참여\n서비스 소개\nSMART\n생활법률\n앱 다운로드\n설문조사\n확장/축소\n닫기\n가압류 신청\n\n이미지로 보는\n카드뉴스\n\n사례로 보는\n백문백답\n\n관련법령\n\n목차\n\n펼치기\n닫기\n가압류 이해\n\"가압류\"란?\n하위메뉴 보기/숨기기\n가압류 신청준비\n가압류의 신청 요건 및 당사자\n하위메뉴 보기/숨기기\n \n가압류 신청서 작성\n하위메뉴 보기/숨기기\n \n신청비용 납부\n하위메뉴 보기/숨기기\n \n선담보제공\n하위메뉴 보기/숨기기\n가압류 신청 및 재판\n가압류 신청\n하위메뉴 보기/숨기기\n \n가압류 신청 심리\n하위메뉴 보기/숨기기\n \n가압류 재판\n하위메뉴 보기/숨기기\n가압류집행\n가압류집행\n하위메뉴 보기/숨기기\n \n가압류집행취소\n하위메뉴 보기/숨기기\n가압류채무자구제\n이의신청\n하위메뉴 보기/숨기기\n \n채무자에 따른 가압류취소\n하위메뉴 보기/숨기기\n제소명령 불이행으로 인한 가압류취소\n사정변경 등에 따른 가압류취소\n확장/축소\n홈 > \n책자형 > 가압류 신청\n\n생활법령 내 검색\n\n공유\n저장\n인쇄\n즐겨찾기\n사정변경 등에 따른 가압류취소\n\n\n「민사집행법」 2028년 03월 01일 시행(개정 사항을 검토하여 향후 업데이트 예정입니다.)\n본문\n100문 100답\n판례\n관련법령\n사정변경 등에 따른 가압류취소 \n \n가압류취소 사유\n 채무자는 다음의 어느 하나에 해당하는 사유가 있는 경우 가압류가 인가된 뒤에도 그 취소를 신청할 수 있습니다(「민사집행법」 제288조제1항 본문).\n 가압류이유가 소멸되었거나 그 밖에 사정이 바뀐 때\n 법원이 정한 담보를 제공한 때\n 가압류가 집행된 뒤에 3년간 본안의 소를 제기하지 않은 때\n사정변경에 따른 가압류취소 \n \n사정변경\n 채무자는 가압류 이유가 소멸되었거나 그 밖에 사정이 바뀐 경우에는 가압류 명령이 있은 후라도 그 취소를 신청할 수 있습니다(「민사집행법」 제288조제1항제1호).\n◀ 사정변경 해당 여부 ▶\n• 사정변경에 해당한다고 본 경우\n 본안소송에서 채권자 패소의 판결이 있으나 아직 확정되지 않은 경우라도 잠정적인 보전처분보다는 확정성이 있는 판단이기 때문에 그 판결이 상급심에서 취소나 파기될 염려가 없다고 확정되는 경우(대법원 1977. 5. 10. 선고 77다471 판결)\n 채권자가 본안소송에서 패소판결을 받고 항소심에서 소를 취하하여 재소금지 원칙의 적용을 받은 경우(대법원 1999. 3. 9. 선고 98다12287 판결)\n• 사정변경에 해당하지 않는다고 본 경우\n 가압류의 목적인 채무자의 제3채무자에 대한 채권이 존재하지 않음이 밝혀졌다 하더라도 이는 가압류결정이 결과적으로 채권보전의 실효를 거둘 수 없게 됨에 그칠 뿐임(대법원 1999. 3. 23. 선고 98다63100 판결)\n 본안소송이 이송된 것만으로는 사정변경이라 볼 수 없으며, 본안소송에서 소송법상 이유로 각하판결을 받은 경우 일반적으로 사정변경이 있다고 볼 수 없음(대법원 1995. 8. 25. 선고 94다42211 판결)\n사정변경에 따른 가압류취소신청\n 사정변경으로 가압류취소신청을 하려는 자는 사정변경에 따른 가압류취소신청서(당사자 수 + 1부)를 작성하고 소명방법에 기재된 첨부서류를 가압류 명령을 결정한 법원에 제출해야 합니다. 다만, 본안이 이미 계속된 때에는 본안법원에 제출해야 합니다(「민사집행법」 제288조제2항).\n 사정변경에 따른 가압류취소를 신청하려는 자는 10,000원의 수입인지를 구입하고 당사자 1명당 8회분의 송달료를 예납해야 합니다(「민사소송 등 인지법」 제9조제2항 본문, 「민사접수서류에 붙일 인지액 및 그 편철방법 등에 관한 예규」 제3조 및 별표, 「민사소송법」 제116조제1항, 「민사소송규칙」 제19조제1항제1호, 「송달료규칙」 제2조, 「송달료규칙의 시행에 따른 업무처리요령」 제7조제1항 및 별표 1).\n\n◀ 사정변경에 따른 가압류취소신청 기재례 ▶\n\n\n\n\n \n\n가압류 취소신청\n\n \n\n신청인(채무자) ΟΟΟ\n\nΟΟ시 ΟΟ구 ΟΟ동 ΟΟ(우편번호 ΟΟΟ-ΟΟΟ)\n\n피신청인(채권자) ◇◇◇\n\nΟΟ시 ΟΟ구 ΟΟ동 ΟΟ(우편번호 ΟΟΟ-ΟΟΟ)\n\n제3채무자 ΟΟ은행\n\nΟΟ시 ΟΟ구 ΟΟ동 ΟΟ\n\n대표이사 ΟΟΟ\n\n \n\n신 청 취 지\n\n1. 위 당사자간 ΟΟ법원 ΟΟ지원 20ΟΟ카단ΟΟΟΟ호 채권가압류 신청사건에 관하여 귀원에서 20ΟΟ. Ο. ΟΟ. 결정한 가압류결정을 취소한다.\n\n2. 신청비용은 채권자(피신청인)의 부담으로 한다.\n\n라는 재판을 구합니다.\n\n \n\n신 청 이 유\n\n \n\n1. 피신청인(채권자, 이하 ‘피신청인’이라고 함)은 신청인(채무자, 이하 ‘신청인’이라고 함) 소유의 별지목록 기재 채권에 대하여 선급금 반환 청구의 보전을 위하여 귀원 20ΟΟ카단ΟΟΟΟ호로서 20ΟΟ. Ο. ΟΟ. 가압류 결정을 받아 가압류집행 촉탁을 하였습니다.\n\n \n\n2. 그러나 피신청인이 신청인을 상대로 귀원 20ΟΟ가소ΟΟΟΟ호 선급금반환 청구사건을 제기하여 20ΟΟ. Ο. ΟΟ. 신청인 승소의(원고청구기각) 판결선고가 있었으며, 위 판결은 ΟΟ지방법원 20ΟΟ나ΟΟΟ호 선급금반환 항소심이 20ΟΟ. Ο. ΟΟ.자로 항소취하간주되어 동년 Ο. ΟΟ.자로 확정되었기에 위 가압류 결정의 취소를 구하기 위하여 이 사건 신청에 이른 것입니다.\n\n \n\n소 명 방 법\n\n \n\n1. 소갑제 1호증 결정문(채권가압류)\n\n1. 소갑제 2호증 판결문(1심)\n\n1. 소갑제 3호증 신청서(송달,확정증명원)\n\n1. 소갑제 4호증 항소취하간주증명원\n\n \n\n첨 부 서 류\n\n \n\n1. 별지목록 4통\n\n2. 등기사항전부증명서 1통\n\n3. 신청서부본 1통\n\n \n\n20ΟΟ. Ο. Ο.\n\n \n\n위 신청인 ΟΟΟ (서명 또는 날인)\n\n \n\nΟΟ지방법원 귀중\n\n \n\n-------------------------------------------------------------------------------------------\n\n<별지>\n\n \n\n목 록\n\n(가압류취소 청구채권의표시)\n\n \n\n청구채권액 : 금20,000,000원정\n\n채무자 : ΟΟΟ\n\n \n\n채무자가 제3채무자에 대하여 가지는 예금청구채권 다음에서 기재한 순서에 따라 위 청구금액(가압류이후, 추가거래분 포함) 중 금20,000,000원정\n\n \n\n다 음\n\n \n\n1. 압류되지 않는 예금과 압류된 예금이 있을 때에는 다음의 순서에 의하여 압류한다.\n\n가. 선행압류, 가압류가 되지 않는 예금.\n\n나. 선행압류, 가압류가 된 예금.\n\n2. 여러 종류의 예금이 있는 때에는 다음의 순서에 의하여 압류한다.\n\n가. 보통예금\n\n나. 당좌예금\n\n다. 정기예금\n\n라. 정기적금\n\n마. 별단예금\n\n바. 청약저축, 적금, 부금, 예금\n\n3. 같은 종류의 예금이 여러 계좌에 있는 때에는 계좌번호가 빠른 예금부터 압류한다.\n\n \n\n※ 인지 첩부 및 송달료 예납에 관한 보다 자세한 내용은 이 콘텐츠의 <가압류 신청준비-신청비용 납부> 이하 해당 부분에서 확인할 수 있습니다.\n법원이 정한 담보의 제공에 따른 가압류취소 \n \n담보제공\n 채무자는 가압류결정상의 해방금액을 공탁하고 가압류집행의 취소·정지를 구할 수도 있으나(「민사집행법」 제282조), 법원이 자유재량에 따라 정한 담보를 제공하고서 그 가압류 자체의 취소를 구할 수도 있습니다(「민사집행법」 제288조제1항제2호).\n 채무자는 단순히 적당한 담보를 제공하게 하고 가압류를 취소하여 달라는 신청을 하면 됩니다. 그 밖에 그 담보의 종류, 액수 등을 특정하여 표시할 필요가 없습니다.\n※ 담보제공방법에 관한 내용은 이 콘텐츠의 <가압류 신청 및 재판-가압류 재판-담보제공명령>에서 확인할 수 있습니다.\n가압류가 집행된 뒤 3년간 본안의 소를 제기하지 않은 사유에 따른 가압류취소 \n \n본안의 소 제기 기간\n 가압류가 집행된 뒤 채권자가 다음의 구분에 따른 기간에 본안의 소를 제기하지 않은 경우 채무자나 이해관계인은 가압류의 취소를 신청할 수 있습니다(「민사집행법」 제288조제1항제3호).\n\n가압류의 집행시기\n\n\t\n\n기간\n\n\t\n\n근거\n\n\n\n\n2002. 6. 30. 까지 집행\n\n\t\n\n10년\n\n\t\n\n「민사집행법」 부칙(제6627호) 제2조\n\n\n\n\n2002. 7. 1.부터 2005. 7. 27.까지 사이에 집행\n\n\t\n\n5년\n\n\t\n\n「민사집행법」 부칙(제7358호) 제2조\n\n\n\n\n2005. 7. 28. 이후에 집행\n\n\t\n\n3년\n\n\t\n\n「민사집행법」 부칙(제7358호) 제1조\n\n3년간 본안의 소를 제기하지 않음에 따른 가압류취소신청\n 채권자가 3년간 본안의 소를 제기하지 않음에 따라 가압류취소신청을 하려는 자는 가압류취소신청서(당사자 수 + 1부)를 작성하고 소명방법에 기재된 첨부서류를 가압류 명령을 결정한 법원에 제출해야 합니다. 다만, 본안이 이미 계속된 때에는 본안법원에 제출해야 합니다(「민사집행법」 제288조제2항).\n 채권자가 3년간 본안의 소를 제기하지 않음에 따라 가압류취소를 신청하려는 자는 10,000원의 수입인지를 구입하고 당사자 1명당 8회분의 송달료를 예납해야 합니다(「민사소송 등 인지법」 제9조제2항 본문, 「민사접수서류에 붙일 인지액 및 그 편철방법 등에 관한 예규」 제3조·별표, 「민사소송법」 제116조제1항, 「민사소송규칙」 제19조제1항제1호, 「송달료규칙」 제2조, 「송달료규칙의 시행에 따른 업무처리요령」 제7조제1항 및 별표 1).\n사정변경 등에 따른 가압류취소의 심리와 재판 \n \n관할법원\n 사정변경 등에 따른 가압류취소신청에 대한 재판은 가압류를 명한 법원이 관할법원이 됩니다. 다만, 본안이 이미 계속된 때에는 본안법원이 관할법원이 됩니다(「민사집행법」 제288조제2항).\n심리와 재판\n 사정변경 등에 따른 가압류취소 신청은 변론 또는 당사자 쌍방이 참여할 수 있는 심문절차를 거쳐 결정으로 재판되어야 합니다(「민사집행법」 제288조제3항, 제286조제1항 및 제3항).\n 법원은 심리를 종결하고자 하는 경우에는 상당한 유예기간을 두고 심리를 종결할 기일을 정하여 이를 당사자에게 고지해야 합니다. 다만, 변론기일 또는 당사자 쌍방이 참여할 수 있는 심문기일에는 즉시 심리를 종결할 수 있습니다(「민사집행법」 제288조제3항 및 제286조제2항).\n 가압류를 취소하는 결정을 하는 경우 채권자가 그 고지를 받은 날부터 2주를 넘지 않는 범위에서 상당하다고 인정하는 기간이 경과해야 그 결정의 효력이 생긴다는 뜻을 선언할 수 있습니다(「민사집행법」 제288조제3항 및 제286조제6항).\n사정변경 등에 따른 가압류취소 결정에 대한 불복\n 가압류취소결정에 대해서는 즉시항고를 할 수 있습니다. 이 경우 집행정지의 효력은 발생하지 않습니다(「민사집행법」 제288조제3항, 제286조제7항 및 「민사소송법」 제447조).\n 가압류를 취소하는 결정에 대해 즉시항고를 하는 경우 채권자는 다음과 같은 요건을 갖추어 법원에 가압류취소결정의 효력정지신청을 할 수 있고, 법원은 그 신청에 따라 담보를 제공하게 하거나 담보를 제공하지 않게 하고 가압류취소결정의 효력을 정지시킬 수 있습니다(「민사집행법」 제289조제1항).\n 불복의 이유로 주장한 사유가 법률상 정당한 사유가 있다고 인정되고 그 사실에 대한 소명이 있어야 합니다.\n 가압류를 취소함으로 인해 회복할 수 없는 손해가 생길 위험이 있다는 사정에 대한 소명이 있어야 합니다.\n이 정보는 2026년 8월 15일 기준으로 작성된 것입니다.\n생활법령정보는 법적 효력을 갖는 유권해석(결정, 판단)의 근거가 되지 않고, 각종 신고, 불복 청구 등의 증거자료로서의 효력은 없습니다.\n구체적인 법령에 대한 질의는 담당기관이나 국민신문고에 문의하시기 바랍니다.\n위 내용에 대한 홈페이지 개선의견은 홈페이지 개선의견을 이용해 주시기 바랍니다.\n\n개인정보처리방침\n저작권정책\n사이트맵\nRSS\n모바일 홈페이지\n생활법령 블로그\n모바일QR\n생활법령배너달기\n\nCopyright ⓒ 1997-2023 Korea Ministry of Government Legislation. All Rights Reserved.    |    홈페이지 개선의견\n\n관련기관 홈페이지\n\n[표]\n◀ 사정변경에 따른 가압류취소신청 기재례 ▶\n가압류 취소신청 신청인(채무자) ΟΟΟ ΟΟ시 ΟΟ구 ΟΟ동 ΟΟ(우편번호 ΟΟΟ-ΟΟΟ) 피신청인(채권자) ◇◇◇ ΟΟ시 ΟΟ구 ΟΟ동 ΟΟ(우편번호 ΟΟΟ-ΟΟΟ) 제3채무자 ΟΟ은행 ΟΟ시 ΟΟ구 ΟΟ동 ΟΟ 대표이사 ΟΟΟ 신 청 취 지 1. 위 당사자간 ΟΟ법원 ΟΟ지원 20ΟΟ카단ΟΟΟΟ호 채권가압류 신청사건에 관하여 귀원에서 20ΟΟ. Ο. ΟΟ. 결정한 가압류결정을 취소한다. 2. 신청비용은 채권자(피신청인)의 부담으로 한다. 라는 재판을 구합니다. 신 청 이 유 1. 피신청인(채권자, 이하 ‘피신청인’이라고 함)은 신청인(채무자, 이하 ‘신청인’이라고 함) 소유의 별지목록 기재 채권에 대하여 선급금 반환 청구의 보전을 위하여 귀원 20ΟΟ카단ΟΟΟΟ호로서 20ΟΟ. Ο. ΟΟ. 가압류 결정을 받아 가압류집행 촉탁을 하였습니다. 2. 그러나 피신청인이 신청인을 상대로 귀원 20ΟΟ가소ΟΟΟΟ호 선급금반환 청구사건을 제기하여 20ΟΟ. Ο. ΟΟ. 신청인 승소의(원고청구기각) 판결선고가 있었으며, 위 판결은 ΟΟ지방법원 20ΟΟ나ΟΟΟ호 선급금반환 항소심이 20ΟΟ. Ο. ΟΟ.자로 항소취하간주되어 동년 Ο. ΟΟ.자로 확정되었기에 위 가압류 결정의 취소를 구하기 위하여 이 사건 신청에 이른 것입니다. 소 명 방 법 1. 소갑제 1호증 결정문(채권가압류) 1. 소갑제 2호증 판결문(1심) 1. 소갑제 3호증 신청서(송달,확정증명원) 1. 소갑제 4호증 항소취하간주증명원 첨 부 서 류 1. 별지목록 4통 2. 등기사항전부증명서 1통 3. 신청서부본 1통 20ΟΟ. Ο. Ο. 위 신청인 ΟΟΟ (서명 또는 날인) ΟΟ지방법원 귀중 ------------------------------------------------------------------------------------------- <별지> 목 록 (가압류취소 청구채권의표시) 청구채권액 : 금20,000,000원정 채무자 : ΟΟΟ 채무자가 제3채무자에 대하여 가지는 예금청구채권 다음에서 기재한 순서에 따라 위 청구금액(가압류이후, 추가거래분 포함) 중 금20,000,000원정 다 음 1. 압류되지 않는 예금과 압류된 예금이 있을 때에는 다음의 순서에 의하여 압류한다. 가. 선행압류, 가압류가 되지 않는 예금. 나. 선행압류, 가압류가 된 예금. 2. 여러 종류의 예금이 있는 때에는 다음의 순서에 의하여 압류한다. 가. 보통예금 나. 당좌예금 다. 정기예금 라. 정기적금 마. 별단예금 바. 청약저축, 적금, 부금, 예금 3. 같은 종류의 예금이 여러 계좌에 있는 때에는 계좌번호가 빠른 예금부터 압류한다.\n---\n가압류의 집행시기 | 기간 | 근거\n2002. 6. 30. 까지 집행 | 10년 | 「민사집행법」 부칙(제6627호) 제2조\n2002. 7. 1.부터 2005. 7. 27.까지 사이에 집행 | 5년 | 「민사집행법」 부칙(제7358호) 제2조\n2005. 7. 28. 이후에 집행 | 3년 | 「민사집행법」 부칙(제7358호) 제1조"
+    }
+  ],
+  "capturesReviewed": {
+    "evidence-차량-가압류-1.png": "국가법령정보센터, 민사집행법 제276조(가압류의 목적) 원문 화면. 시행 2026.2.1, 법률 제20733호. 금전채권 강제집행 보전 목적이라는 두 개 항 전체가 보여요.",
+    "evidence-차량-가압류-2.png": "같은 사이트에서 민사집행법 제280조(가압류명령) 원문. 변론 없이 재판 가능, 담보 제공 시 가압류 명령 등 4개 항이 표시돼요.",
+    "evidence-차량-가압류-3.png": "민사집행법 제282조(가압류해방금액) 원문. 가압류명령에 채무자가 공탁할 금액을 적어야 한다는 한 문장짜리 조문이에요.",
+    "evidence-차량-가압류-4.png": "민사집행법 제287조(본안의 제소명령) 원문. 2주 이상 기간을 정해 본안소송을 명하는 내용 등 5개 항이 보여요.",
+    "evidence-차량-가압류-5.png": "민사집행법 제288조(사정변경 등에 따른 가압류취소) 원문. 3년간 본안의 소를 제기하지 않은 때를 포함한 취소 사유 3호가 나열돼요.",
+    "evidence-차량-가압류-6.png": "민사집행법 제291조(가압류집행에 대한 본집행의 준용) 원문. 강제집행 규정을 준용한다는 한 문장이 보여요.",
+    "evidence-차량-가압류-7.png": "법제처 생활법령정보 '가압류 신청' 페이지의 '가압류의 의미' 섹션. 채무자의 처분권을 잠정적으로 빼앗는 집행보전제도라는 정의가 보이고, 2026년 8월 15일 기준이라고 적혀 있어요.",
+    "evidence-차량-가압류-8.png": "국가법령정보센터 자동차관리법 제13조(말소등록) 원문. 폐차 요청·반품·환가가치 없음 등 말소등록 사유 9개 호가 나열돼요. 시행 2026.12.17.",
+    "evidence-차량-가압류-9.png": "법제처 생활법령정보 '가압류 절차' 페이지. 가압류 신청 절차 개요 도식(신청준비→신청서제출→담보제공명령→담보제공→집행)과 인지 10,000원 등 신청비용 안내가 보여요.",
+    "evidence-차량-가압류-10.png": "법제처 생활법령정보 '채무자의 신청에 따른 가압류집행취소' 페이지. 해방공탁·가압류해방금액 공탁 설명과 민사집행법 제299조·제282조 인용이 보여요.",
+    "evidence-차량-가압류-11.png": "법제처 생활법령정보 '사정변경 등에 따른 가압류취소' 페이지. 가압류취소 사유 3가지(사정변경·담보제공·3년간 본안소송 미제기) 목록이 보여요."
+  },
+  "exampleValues": [],
+  "exampleNote": ""
+}
