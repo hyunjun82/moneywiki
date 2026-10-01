@@ -18,9 +18,13 @@ import {
   quoteLabel,
   rankBanks,
 } from "./fxDerive";
-import { FaqList, H2, SourceNote, TableWrap, td, th } from "./parts";
+import { FaqList, Flag, H2, SourceNote, Spark } from "./parts";
 
 const MAIN = ["USD", "JPY", "EUR", "VND"];
+
+/** 표 한 줄 — 휴대폰: 통화 · 30일 그래프 · 환율 / md 이상: 살 때·팔 때·우대 최저까지 */
+const ROW =
+  "grid items-center gap-3 px-4 grid-cols-[minmax(0,1fr)_84px_auto] md:grid-cols-[minmax(0,1.4fr)_96px_minmax(0,1fr)_minmax(0,0.8fr)_minmax(0,0.8fr)_minmax(0,1.1fr)]";
 
 export default function HubView({ initial }: { initial: FxData }) {
   const { data } = useFx(initial);
@@ -78,15 +82,19 @@ export default function HubView({ initial }: { initial: FxData }) {
             <a
               key={code}
               href={`/fx/${row.m.slug}`}
-              className="bg-white border border-[#E2DFD7] rounded-[18px] p-4 sm:p-5 flex flex-col gap-1.5 hover:border-[#1F4E79] transition-colors"
+              className="bg-white border border-[#E2DFD7] rounded-[18px] p-4 sm:p-5 flex flex-col gap-1.5 hover:border-[#1F4E79] transition-colors min-w-0"
             >
-              <span className="text-[14px] font-bold text-[#3C424A]">{row.m.keyword}</span>
+              <span className="flex items-center gap-2 text-[14px] font-bold text-[#3C424A]">
+                <Flag code={code} size={16} />
+                {row.m.keyword}
+              </span>
               <span className="text-[26px] sm:text-[30px] font-extrabold tracking-[-0.03em] text-[#1A1D21] tabular-nums leading-none">
                 {won(row.base.rate, 2)}
               </span>
               <span className="text-[12.5px] text-[#6C727B]">원 / {quoteLabel(row.m, row.base.unit)}</span>
-              <span>
+              <span className="flex items-center justify-between gap-2">
                 <ChangeBadge change={row.base.rateRow.changePct} />
+                <Spark points={row.base.rateRow.history} width={72} height={26} />
               </span>
             </a>
           );
@@ -101,47 +109,50 @@ export default function HubView({ initial }: { initial: FxData }) {
         >
           통화별 오늘 환율 {rows.length}종
         </H2>
-        <TableWrap min={720}>
-          <thead>
-            <tr>
-              <th className={th}>통화</th>
-              <th className={`${th} text-right`}>기준 환율</th>
-              <th className={`${th} text-right`}>전일 대비</th>
-              <th className={`${th} text-right`}>현찰 살 때</th>
-              <th className={`${th} text-right`}>현찰 팔 때</th>
-              <th className={th}>앱 우대 최저</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map(({ m, base, buy, sell, best }) => (
-              <tr key={m.code}>
-                <td className={td}>
-                  <a href={`/fx/${m.slug}`} className="font-bold text-[#1F4E79] hover:underline underline-offset-2">
-                    {m.keyword}
-                  </a>
-                  <span className="ml-1.5 text-[12px] text-[#9CA1A8]">
+        <div className="bg-white border border-[#E2DFD7] rounded-[16px] overflow-hidden">
+          <div className={`${ROW} hidden md:grid bg-[#F7F6F3] border-b border-[#E2DFD7] text-[12.5px] font-bold text-[#6C727B] py-3`}>
+            <span>통화</span>
+            <span>30일 흐름</span>
+            <span className="text-right">기준 환율 · 전일 대비</span>
+            <span className="text-right">현찰 살 때</span>
+            <span className="text-right">현찰 팔 때</span>
+            <span className="text-right">앱 우대 최저</span>
+          </div>
+          {rows.map(({ m, base, buy, sell, best }) => (
+            <a
+              key={m.code}
+              href={`/fx/${m.slug}`}
+              className={`${ROW} py-3 border-b border-[#EFEDE8] last:border-b-0 hover:bg-[#F7F6F3] transition-colors`}
+            >
+              <span className="flex items-center gap-2.5 min-w-0">
+                <Flag code={m.code} size={20} />
+                <span className="flex flex-col min-w-0">
+                  <span className="text-[15px] font-bold text-[#1A1D21] truncate">{m.keyword}</span>
+                  <span className="text-[12px] text-[#9CA1A8] truncate">
                     {m.code} · {quoteLabel(m, base.unit)}
                   </span>
-                </td>
-                <td className={`${td} text-right font-bold text-[#1A1D21]`}>{won(base.rate, 2)}</td>
-                <td className={`${td} text-right`}>
-                  <ChangeBadge change={base.rateRow.changePct} />
-                </td>
-                <td className={`${td} text-right`}>{buy ? won(buy, 2) : ""}</td>
-                <td className={`${td} text-right`}>{sell ? won(sell, 2) : ""}</td>
-                <td className={td}>
-                  {best ? (
-                    <span>
-                      {won(best.applied, 2)} <span className="text-[12px] text-[#6C727B]">{best.name}</span>
-                    </span>
-                  ) : (
-                    ""
-                  )}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </TableWrap>
+                </span>
+              </span>
+              <span className="flex justify-center md:justify-start">
+                <Spark points={base.rateRow.history} width={84} height={28} />
+              </span>
+              <span className="flex flex-col items-end gap-1">
+                <span className="text-[16px] font-extrabold text-[#1A1D21] tabular-nums">{won(base.rate, 2)}</span>
+                <ChangeBadge change={base.rateRow.changePct} />
+              </span>
+              <span className="hidden md:block text-right text-[14px] text-[#3C424A] tabular-nums">{buy ? won(buy, 2) : ""}</span>
+              <span className="hidden md:block text-right text-[14px] text-[#3C424A] tabular-nums">{sell ? won(sell, 2) : ""}</span>
+              <span className="hidden md:flex flex-col items-end text-[14px] text-[#3C424A] tabular-nums min-w-0">
+                {best ? (
+                  <>
+                    <span>{won(best.applied, 2)}</span>
+                    <span className="text-[12px] text-[#9CA1A8] truncate max-w-full">{best.name}</span>
+                  </>
+                ) : null}
+              </span>
+            </a>
+          ))}
+        </div>
         <p className="m-0 text-[13px] text-[#6C727B]">
           전일 대비는 시장 중간환율 전일 종가 기준입니다. 통화 이름을 누르면 은행별 비교·인천공항 수수료·1년 흐름이 있는
           통화별 페이지로 갑니다.
@@ -168,8 +179,9 @@ export default function HubView({ initial }: { initial: FxData }) {
 
       <section className="flex flex-col gap-4">
         <H2>환전 도구</H2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <Tool href="/fx/calculator" title="환율 계산기" body="금액을 넣으면 통화 17종으로 바로 환산합니다." />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <Tool href="/fx/calculator" title="환율 계산기" body="금액을 넣으면 기준 환율로 통화 17종을 바로 환산합니다." />
+          <Tool href="/fx/exchange-calculator" title="환전 계산기" body="은행·우대율을 넣어 실제로 낼 원화와 수수료를 계산합니다." />
           <Tool href="/fx/banks" title="은행별 환전 수수료 비교" body="은행 16곳의 수수료율·우대율로 받는 금액을 줄 세웁니다." />
           <Tool href="/fx/airport" title="인천공항 환전 수수료" body="공항점 공시 수수료율을 시내 창구·앱 우대와 비교합니다." />
         </div>

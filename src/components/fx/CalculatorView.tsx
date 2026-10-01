@@ -18,6 +18,8 @@ import {
   convert,
   countryOf,
   fxColor,
+  UP_BG,
+  DOWN_BG,
   korDateTime,
   perUnit,
   prevCloseLabel,
@@ -91,19 +93,17 @@ export default function CalculatorView({ initial }: { initial?: FxData }) {
             </div>
             <h1 className="mt-[22px] mb-0 text-[36px] sm:text-[52px] leading-[1.12] tracking-[-0.035em] font-extrabold text-white text-balance">
               환율 계산기
-              <br />
-              <span className="text-white/55 font-medium">환전 계산기</span>
             </h1>
-            <p className="mt-[22px] mb-0 text-[17px] sm:text-[18px] leading-[1.75] text-white/[0.62] max-w-[36ch]">
-              금액을 넣으면 오늘 환율로 통화 {rates.length || 17}종을 바로 환산합니다. 수수료 없는 기준
-              환율 값이라, 은행에서 살 때 낼 원화는 은행별 비교에서 확인합니다.
+            <p className="mt-[22px] mb-0 text-[17px] sm:text-[18px] leading-[1.75] text-white/[0.62] max-w-[38ch]">
+              금액을 넣으면 오늘 환율로 원화와 통화 {rates.length || 17}종을 서로 바로 환산합니다. 수수료를 빼고
+              계산한 기준 환율 값입니다. 은행에서 실제로 낼 원화는 환전 계산기에서 은행과 우대율을 넣어 계산합니다.
             </p>
             <div className="mt-[30px] flex items-center gap-2.5 flex-wrap">
               <a
-                href="/fx/banks"
+                href="/fx/exchange-calculator"
                 className="inline-flex items-center gap-2 px-6 py-[15px] rounded-[13px] bg-white text-[#0B2233] text-[15px] font-bold hover:bg-[#E9F0F7] transition-colors"
               >
-                은행 환율 비교하기 →
+                환전 계산기 — 은행별 낼 원화 →
               </a>
               {data?.banks?.currencies?.length ? (
                 <span className="text-[13px] text-white/[0.42]">
@@ -125,7 +125,7 @@ export default function CalculatorView({ initial }: { initial?: FxData }) {
 
           {/* 계산기 카드 */}
           <div className="bg-white rounded-[26px] p-6 sm:p-8 shadow-[0_30px_70px_-30px_rgba(0,0,0,0.55),0_2px_6px_rgba(0,0,0,0.12)]">
-            <div className="grid gap-2.5">
+            <div className="grid grid-cols-1 gap-2.5">
               <label htmlFor="fx-amount" className="text-[14px] font-semibold text-[#6C727B]">
                 보내는 금액
               </label>
@@ -136,7 +136,8 @@ export default function CalculatorView({ initial }: { initial?: FxData }) {
                   inputMode="decimal"
                   value={amount}
                   onChange={(e) => setAmount(e.target.value.replace(/[^\d.]/g, ""))}
-                  className="flex-1 min-w-0 border-none outline-none bg-transparent text-[26px] sm:text-[30px] font-bold tracking-[-0.02em] text-[#1A1D21] tabular-nums"
+                  size={1}
+                  className="flex-1 min-w-0 w-0 border-none outline-none bg-transparent text-[26px] sm:text-[30px] font-bold tracking-[-0.02em] text-[#1A1D21] tabular-nums"
                 />
                 <CurrencySelect value={from} onChange={setFrom} options={options} />
               </div>
@@ -158,7 +159,7 @@ export default function CalculatorView({ initial }: { initial?: FxData }) {
               <div className="flex-1 h-px bg-[#E2DFD7]" />
             </div>
 
-            <div className="grid gap-2.5">
+            <div className="grid grid-cols-1 gap-2.5">
               <span className="text-[14px] font-semibold text-[#6C727B]">받는 금액</span>
               <div className="flex items-center gap-3 border border-[#E2DFD7] rounded-[14px] px-4 py-3.5 bg-[#F7F6F3]">
                 <div className="flex-1 min-w-0 text-[26px] sm:text-[30px] font-bold tracking-[-0.02em] text-[#1A1D21] tabular-nums overflow-hidden text-ellipsis">
@@ -518,7 +519,7 @@ export function RateChart({ rate }: { rate: FxRate }) {
               className="text-[15px] font-bold px-2.5 py-1 rounded-lg tabular-nums"
               style={{
                 color: fxColor(diffPct),
-                background: diffPct > 0 ? "#E7F2EC" : diffPct < 0 ? "#E9F0F7" : "#F7F6F3",
+                background: diffPct > 0 ? UP_BG : diffPct < 0 ? DOWN_BG : "#F7F6F3",
               }}
             >
               {diffPct > 0 ? "▲" : diffPct < 0 ? "▼" : "—"} {Math.abs(diff).toFixed(2)} (

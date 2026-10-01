@@ -1,11 +1,12 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { changeText, fxColor, useFx, won, type FxRate } from "./fxData";
+import { DOWN_ON_DARK, FLAT_COLOR, UP_ON_DARK, changeText, useFx, won, type FxRate } from "./fxData";
 
 const TABS = [
   { href: "/fx", label: "오늘 환율" },
-  { href: "/fx/calculator", label: "계산기" },
+  { href: "/fx/calculator", label: "환율 계산기" },
+  { href: "/fx/exchange-calculator", label: "환전 계산기" },
   { href: "/fx/banks", label: "은행 비교" },
   { href: "/fx/airport", label: "공항 환전" },
 ] as const;
@@ -89,7 +90,7 @@ function Ticker({ rates }: { rates: FxRate[] }) {
             </span>
             <span
               className="text-[12px] font-bold tabular-nums"
-              style={{ color: r.changePct && r.changePct > 0 ? "#3DD68C" : fxColor(r.changePct) }}
+              style={{ color: !r.changePct ? FLAT_COLOR : r.changePct > 0 ? UP_ON_DARK : DOWN_ON_DARK }}
             >
               {changeText(r.changePct)}
             </span>

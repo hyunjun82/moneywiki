@@ -38,10 +38,10 @@ export function loadHistory(code: string): HistoryPoint[] {
 
 /**
  * 클라이언트 컴포넌트로 넘길 값은 줄인다 — 넘긴 props 는 페이지마다 HTML 에 한 번 더 실린다.
- * keepCodes 의 은행 우대 조건(note)만 남기고, 차트용 history 는 뺀다(통화 페이지는 따로 넘긴다).
+ * keepCodes 의 은행 우대 조건(note)만 남긴다. history 는 fx.json 의 30일치 그대로 둔다(허브·칩의 30일 미니 그래프).
  */
 export function trimFx(data: FxData, keepCodes: string[] = []): FxData {
-  const strip = (r: FxRate): FxRate => ({ ...r, history: undefined });
+  const strip = (r: FxRate): FxRate => ({ ...r, history: (r.history ?? []).slice(-30) });
   const banks = data.banks
     ? {
         ...data.banks,

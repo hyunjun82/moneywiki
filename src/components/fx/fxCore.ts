@@ -5,10 +5,15 @@
  * 그래서 훅이 아닌 것은 전부 여기 둔다. fxData.ts 는 이것을 다시 내보낸다.
  */
 
-/** 시안 규칙: 상승 초록 · 하락 파랑 · 보합 회색 */
-export const UP_COLOR = "#2E7D5B";
-export const DOWN_COLOR = "#2A6099";
+/** 국내 시세 관례: 상승 빨강 · 하락 파랑 · 보합 회색 (2026-10-01, 초록 상승을 바꿈) */
+export const UP_COLOR = "#D93B30";
+export const DOWN_COLOR = "#2563C9";
 export const FLAT_COLOR = "#9CA1A8";
+export const UP_BG = "#FDECEA";
+export const DOWN_BG = "#E8F0FC";
+/** 어두운 배경(헤더 티커) 위 */
+export const UP_ON_DARK = "#FF7A72";
+export const DOWN_ON_DARK = "#7FB2FF";
 
 /** 갱신기(scripts/fx/update-fx.mjs)가 내보내는 그대로의 모양 */
 export interface FxRate {

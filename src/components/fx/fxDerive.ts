@@ -488,6 +488,42 @@ export function banksFaq(data: FxData): Faq[] {
   return out;
 }
 
+/** 우대율별 수수료 — 환전 계산기 페이지의 표. amount 외화를 fee% 통화로 살 때 */
+export function prefLadder(data: FxData, code: string, amount: number, prefs = [0, 50, 70, 80, 90, 100]) {
+  const base = baseOf(data, code);
+  const fee = medianFee(data, code);
+  if (!base || fee == null) return [];
+  return prefs.map((p) => {
+    const perUnitApplied = bankRate(base.perUnit, fee, p, "buy");
+    return { pref: p, pay: amount * perUnitApplied, fee: amount * (perUnitApplied - base.perUnit), applied: perUnitApplied * base.unit };
+  });
+}
+
+export function exchangeFaq(data: FxData): Faq[] {
+  const out: Faq[] = [];
+  const counter = counterPay(data, "USD", 1000);
+  const ranked = rankBanks(data, "USD", 1000);
+  out.push({
+    q: "환율 계산기와 환전 계산기는 무엇이 다른가요?",
+    a: "환율 계산기는 수수료를 뺀 기준 환율로 원화와 외화를 서로 바꿔 보는 계산입니다. 환전 계산기는 여기에 은행이 받는 환전 수수료와 우대율을 넣어, 창구나 앱에서 실제로 낼 원화(팔 때는 받을 원화)를 계산합니다.",
+  });
+  out.push({
+    q: "환전 계산기는 어떻게 계산하나요?",
+    a: "살 때 적용 환율 = 기준 환율 + 기준 환율 × 수수료율 × (1 − 우대율), 팔 때는 더하는 대신 뺍니다. 수수료율과 최대 우대율은 은행연합회 외환길잡이에 은행이 공시한 값을 씁니다.",
+  });
+  if (counter && ranked.length) {
+    out.push({
+      q: "우대율 90%를 받으면 얼마나 아끼나요?",
+      a: `1,000달러를 살 때 우대 없이 창구에서는 수수료가 ${won(counter.fee)}원입니다. 우대율 90%면 수수료의 10%만 내므로 약 ${won(counter.fee * 0.1)}원이 됩니다. 은행 공시 최대 우대로 가장 싼 곳은 ${josa(bestLabel(ranked), "이가")} ${won(ranked[0].fee)}원입니다.`,
+    });
+  }
+  out.push({
+    q: "외화를 팔 때는 왜 우대율을 0%로 계산하나요?",
+    a: "은행연합회 공시의 우대율은 외화를 살 때(인터넷·앱 환전) 기준입니다. 남은 외화를 팔 때 주는 우대는 은행·앱마다 조건이 달라 공시값이 없어, 확인되지 않은 우대를 넣지 않고 0%로 계산합니다. 우대율 막대로 직접 바꿔 볼 수 있습니다.",
+  });
+  return out;
+}
+
 export function airportFaq(data: FxData): Faq[] {
   const usd = metaByCode("USD")!;
   const jpy = metaByCode("JPY")!;

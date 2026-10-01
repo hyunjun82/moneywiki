@@ -10,7 +10,7 @@
 import { useMemo, useState } from "react";
 import { BandAd, ChangeBadge, DataNotice } from "./ui";
 import { brandOf } from "./bankBrand";
-import { asOfLabel, korDate, useFx, won, type FxData, type HistoryPoint } from "./fxData";
+import { DOWN_COLOR, UP_COLOR, asOfLabel, korDate, useFx, won, type FxData, type HistoryPoint } from "./fxData";
 import {
   airportCompare,
   amountLabel,
@@ -28,7 +28,7 @@ import {
   rankBanks,
   withLatest,
 } from "./fxDerive";
-import { CurrencyChips, Crumbs, FaqList, H2, LineChart, SourceNote, TableWrap, td, th } from "./parts";
+import { CurrencyChips, Crumbs, FaqList, Flag, H2, LineChart, SourceNote, TableWrap, td, th } from "./parts";
 
 const KRW_ROWS = [100_000, 500_000, 1_000_000, 3_000_000];
 
@@ -70,8 +70,9 @@ export default function CurrencyView({
       {/* 머리 */}
       <header className="flex flex-col gap-3">
         <Crumbs items={[{ name: "오늘 환율", href: "/fx" }, { name: meta.keyword }]} />
-        <h1 className="m-0 text-[30px] sm:text-[40px] font-extrabold tracking-[-0.035em] text-[#1A1D21] leading-tight">
-          {meta.h1}
+        <h1 className="m-0 flex items-center gap-3 text-[30px] sm:text-[40px] font-extrabold tracking-[-0.035em] text-[#1A1D21] leading-tight">
+          <Flag code={meta.code} size={28} />
+          <span>{meta.h1}</span>
         </h1>
         <p className="m-0 text-[16px] sm:text-[17px] leading-[1.75] text-[#3C424A] max-w-[70ch]">{lead}</p>
       </header>
@@ -302,7 +303,7 @@ export default function CurrencyView({
                       {c.label} <span className="text-[12px] text-[#9CA1A8]">{korDate(c.from.date)}</span>
                     </td>
                     <td className={`${td} text-right`}>{won(c.from.rate, 2)}원</td>
-                    <td className={`${td} text-right font-semibold`} style={{ color: c.diff > 0 ? "#2E7D5B" : c.diff < 0 ? "#2A6099" : undefined }}>
+                    <td className={`${td} text-right font-semibold`} style={{ color: c.diff > 0 ? UP_COLOR : c.diff < 0 ? DOWN_COLOR : undefined }}>
                       {c.diff > 0 ? "+" : ""}
                       {won(c.diff, 2)}원 ({c.pct > 0 ? "+" : ""}
                       {c.pct.toFixed(2)}%)
@@ -333,6 +334,7 @@ export default function CurrencyView({
           <a href="/fx" className="text-[#1F4E79] hover:underline underline-offset-2">오늘 환율 전체 →</a>
           <a href="/fx/banks" className="text-[#1F4E79] hover:underline underline-offset-2">은행별 환전 수수료 비교 →</a>
           <a href="/fx/calculator" className="text-[#1F4E79] hover:underline underline-offset-2">환율 계산기 →</a>
+          <a href="/fx/exchange-calculator" className="text-[#1F4E79] hover:underline underline-offset-2">환전 계산기 →</a>
           <a href="/fx/airport" className="text-[#1F4E79] hover:underline underline-offset-2">인천공항 환전 수수료 →</a>
         </div>
       </section>
@@ -386,7 +388,7 @@ function RateCard({ d, slug }: { d: FxData; slug: string }) {
         <a href="#banks" className="text-[#1F4E79] hover:underline underline-offset-2">은행별 비교 ↓</a>
         <a href="#airport" className="text-[#1F4E79] hover:underline underline-offset-2">인천공항 ↓</a>
         <a href="#trend" className="text-[#1F4E79] hover:underline underline-offset-2">환율 흐름 ↓</a>
-        <a href="/fx/calculator" className="text-[#1F4E79] hover:underline underline-offset-2">계산기 →</a>
+        <a href="/fx/exchange-calculator" className="text-[#1F4E79] hover:underline underline-offset-2">환전 계산기 →</a>
       </div>
     </section>
   );

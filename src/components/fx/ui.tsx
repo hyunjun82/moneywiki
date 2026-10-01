@@ -4,11 +4,11 @@
  * 환율노트 공용 UI — 시안(환율계산기.html)을 옮긴 것.
  *
  * 다크 히어로 #0B2233 + 도트 패턴, 페이퍼 카드, 파랑 액센트 #1F4E79.
- * 등락 색은 시안 규칙을 따른다 — 상승 초록 / 하락 파랑.
+ * 등락 색은 국내 시세 관례 — 상승 빨강 / 하락 파랑 (fxCore.UP_COLOR).
  */
 
 import { AdSlot } from "@/components/AdSlot";
-import { changeText, fxColor } from "./fxData";
+import { DOWN_BG, UP_BG, changeText, fxColor } from "./fxData";
 
 /** 다크 히어로 배경 — 도트 패턴까지 시안 그대로 */
 export const DARK_BG = {
@@ -82,7 +82,7 @@ export function DataNotice() {
 /** 전일 대비 배지 */
 export function ChangeBadge({ change }: { change?: number }) {
   const color = fxColor(change);
-  const bg = !change ? "#F7F6F3" : change > 0 ? "#E7F2EC" : "#E9F0F7";
+  const bg = !change ? "#F7F6F3" : change > 0 ? UP_BG : DOWN_BG;
   return (
     <span
       className="text-[13px] font-bold px-2 py-1 rounded-[7px] tabular-nums"

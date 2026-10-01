@@ -3,7 +3,40 @@
  */
 
 import { SPOKES, type Faq } from "./fxDerive";
-import { won, type HistoryPoint } from "./fxCore";
+import { DOWN_COLOR, UP_COLOR, won, type HistoryPoint } from "./fxCore";
+
+/** 국기 — public/flags/<통화>.svg (country-flag-icons, MIT, 3:2). 이름이 옆에 있으니 alt 는 비운다. */
+export function Flag({ code, size = 18 }: { code: string; size?: number }) {
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={`/flags/${code.toLowerCase()}.svg`}
+      width={Math.round(size * 1.5)}
+      height={size}
+      alt=""
+      className="shrink-0 rounded-[3px] shadow-[0_0_0_1px_rgba(0,0,0,0.08)] object-cover"
+      style={{ width: Math.round(size * 1.5), height: size }}
+    />
+  );
+}
+
+/** 30일 미니 그래프 — 첫날보다 오르면 빨강, 내리면 파랑 */
+export function Spark({ points, width = 96, height = 30 }: { points: { rate: number }[] | undefined; width?: number; height?: number }) {
+  const s = (points ?? []).map((p) => p.rate).filter(Number.isFinite);
+  if (s.length < 2) return <span style={{ width, height }} className="inline-block" />;
+  const min = Math.min(...s);
+  const max = Math.max(...s);
+  const x = (i: number) => 1 + (i * (width - 2)) / (s.length - 1);
+  const y = (v: number) => (max === min ? height / 2 : height - 2 - ((v - min) / (max - min)) * (height - 4));
+  const d = s.map((v, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join("");
+  const color = s[s.length - 1] > s[0] ? UP_COLOR : s[s.length - 1] < s[0] ? DOWN_COLOR : "#9CA1A8";
+  return (
+    <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} aria-hidden className="shrink-0">
+      <path d={`${d}L${x(s.length - 1).toFixed(1)},${height}L1,${height}Z`} fill={color} fillOpacity="0.08" />
+      <path d={d} fill="none" stroke={color} strokeWidth="1.6" strokeLinejoin="round" />
+    </svg>
+  );
+}
 
 export function Crumbs({ items }: { items: { name: string; href?: string }[] }) {
   return (
@@ -69,14 +102,17 @@ export function CurrencyChips({
             key={m.code}
             href={`/fx/${m.slug}`}
             aria-current={on ? "page" : undefined}
-            className={`flex flex-col gap-0.5 px-4 py-3 rounded-[14px] border transition-colors ${
+            className={`flex items-center gap-2.5 px-3.5 py-3 rounded-[14px] border transition-colors ${
               on ? "border-[#1F4E79] bg-[#E9F0F7]" : "border-[#E2DFD7] bg-white hover:border-[#1F4E79]"
             }`}
           >
-            <span className="text-[14.5px] font-bold text-[#1A1D21]">{m.keyword}</span>
-            <span className="text-[12.5px] text-[#6C727B] tabular-nums">
-              {m.code}
-              {r ? ` · ${r.unit}${m.unitWord} ${won(r.rate, 2)}원` : ""}
+            <Flag code={m.code} size={20} />
+            <span className="flex flex-col gap-0.5 min-w-0">
+              <span className="text-[14.5px] font-bold text-[#1A1D21] truncate">{m.keyword}</span>
+              <span className="text-[12.5px] text-[#6C727B] tabular-nums truncate">
+                {m.code}
+                {r ? ` · ${won(r.rate, 2)}원` : ""}
+              </span>
             </span>
           </a>
         );
@@ -104,8 +140,8 @@ export function LineChart({ series, label }: { series: HistoryPoint[]; label: st
     <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" role="img" aria-label={label}>
       <path d={area} fill="#1F4E79" fillOpacity="0.08" />
       <path d={line} fill="none" stroke="#1F4E79" strokeWidth="2" strokeLinejoin="round" />
-      <circle cx={x(iMax)} cy={y(max)} r="4" fill="#2E7D5B" />
-      <circle cx={x(iMin)} cy={y(min)} r="4" fill="#2A6099" />
+      <circle cx={x(iMax)} cy={y(max)} r="4" fill={UP_COLOR} />
+      <circle cx={x(iMin)} cy={y(min)} r="4" fill={DOWN_COLOR} />
       <circle cx={x(series.length - 1)} cy={y(rates[rates.length - 1])} r="4.5" fill="#1A1D21" />
     </svg>
   );
