@@ -140,6 +140,71 @@ function Publish-News {
 }
 
 <#
+  환율·은행·인천공항점을 새로 받아 price-data 에 올린다 (fx-rate.yml 과 같은 세 파일, 같은 [CI Skip] 메시지).
+  이전 값은 price-data 클론(1년 이력 fx-history.json 포함). 스크립트는 main 클론의 것(발행된 코드)을 쓴다.
+  돌려주는 값: @{ Fx = fx.json 경로; History = fx-history.json 경로 } — 기사 생성기가 이 파일을 읽는다.
+#>
+function Update-FxData {
+  $main = Join-Path $base "main"
+  if (-not (Test-Path (Join-Path $main ".git"))) { Clone-Branch "main" $main }
+  $tmp = Join-Path $base "fx-tmp"
+  New-Item -ItemType Directory -Force $tmp | Out-Null
+  $banksOut = Join-Path $tmp "banks.json"
+  $fxOut = Join-Path $tmp "fx.json"
+  $histOut = Join-Path $tmp "fx-history.json"
+  $out1 = & node (Join-Path $main "scripts\fx\update-banks.mjs") (Join-Path $data "banks.json") $banksOut
+  foreach ($line in $out1) { Log ("환율: " + $line) }
+  if ($LASTEXITCODE -ne 0 -or -not (Test-Path $banksOut)) { Copy-Item (Join-Path $data "banks.json") $banksOut -Force }
+  $out2 = & node (Join-Path $main "scripts\fx\update-fx.mjs") (Join-Path $data "fx.json") $fxOut $banksOut
+  foreach ($line in $out2) { Log ("환율: " + $line) }
+  if ($LASTEXITCODE -ne 0) { throw "update-fx 실패 ($LASTEXITCODE)" }
+
+  for ($t = 1; $t -le 3; $t++) {
+    Sync-Remote "price-data" $data
+    Copy-Item $fxOut (Join-Path $data "fx.json") -Force
+    Copy-Item $histOut (Join-Path $data "fx-history.json") -Force
+    Copy-Item $banksOut (Join-Path $data "banks.json") -Force
+    git -C $data add fx.json fx-history.json banks.json
+    git -C $data diff --cached --quiet
+    if ($LASTEXITCODE -eq 0) { break }
+    git -C $data -c user.name="fx-rate-pc" -c user.email="kgx-collector@jjyu.co.kr" commit --quiet -m ("[CI Skip] fx rate update " + (Get-Date -Format "yyyy-MM-ddTHH:mmK") + " (PC)")
+    git -C $data push --quiet origin HEAD:price-data
+    if ($LASTEXITCODE -eq 0) { Log "환율: price-data 갱신"; break }
+    Log "환율: price-data push 충돌 — 다시 ($t/3)"
+  }
+  return @{ Fx = $fxOut; History = $histOut }
+}
+
+<#
+  환율 갱신은 하루 3번이면 된다 (2026-10-01 사용자 합의). 사람들이 비교하는 매매기준율은 하루 한 번(9시 전) 정해지고,
+  30분마다 바꿔도 낼 원화는 거의 그대로다. 외환시장에서 뜻이 있는 세 시점만 받는다:
+    개장 칸  09:30~10:59 — 그날 매매기준율과 아침 흐름
+    고시 칸  11:00~       — 수출입은행 고시 반영 + 기사 (Publish-FxNews 가 맡는다)
+    마감 칸  15:30~18:30 — 서울 외환시장 주간 마감(15:30) 뒤 종가
+  예약 작업이 30분마다 부르므로 칸마다 "오늘 끝남" 표시 파일을 남겨 한 번만 돈다. PC 가 꺼져 그 시각을 놓치면 같은 칸의 다음 실행이 맡는다.
+#>
+function Refresh-Fx {
+  $now = Get-Date
+  if ($now.DayOfWeek -in "Saturday", "Sunday") { return }
+  $t = $now.TimeOfDay
+  $slot = $null
+  if ($t -ge [TimeSpan]"09:30" -and $t -lt [TimeSpan]"11:00") { $slot = "open" }
+  elseif ($t -ge [TimeSpan]"15:30") { $slot = "close" }
+  if (-not $slot) { return }
+  $marks = Join-Path $base "fx-slots"
+  New-Item -ItemType Directory -Force $marks | Out-Null
+  Get-ChildItem $marks -Filter "*.done" | Where-Object { $_.LastWriteTime -lt (Get-Date).AddDays(-7) } | Remove-Item -Force
+  $mark = Join-Path $marks ($now.ToString("yyyy-MM-dd") + "-" + $slot + ".done")
+  if (Test-Path $mark) { return }
+  $main = Join-Path $base "main"
+  if (-not (Test-Path (Join-Path $main ".git"))) { Clone-Branch "main" $main }
+  Sync-Remote "main" $main
+  $null = Update-FxData
+  New-Item -ItemType File -Force $mark | Out-Null
+  Log "환율: $slot 칸 갱신 완료"
+}
+
+<#
   환율 기사 발행 (2026-10-01) — 평일 11:00 이후 실행분에서 오늘 환율 기사가 main 에 없을 때 한 번.
   매매기준율은 서울외국환중개가 9시 전에 고시하고 수출입은행 Open API 가 11시 전후 같은 값을 낸다(실측).
   GitHub 환율 예약(fx-rate.yml)이 몇 시간씩 늦게 떠서, 여기서 환율·은행·인천공항점을 직접 다시 받아 price-data 에 올린 뒤 쓴다.
@@ -157,40 +222,17 @@ function Publish-FxNews {
   $art = Join-Path $main "src\data\fx-news\$today.json"
   if (Test-Path $art) { return }
 
-  # 1) 환율·은행·인천공항점을 새로 받는다 — 이전 값은 price-data 클론(1년 이력 fx-history.json 포함)
-  $tmp = Join-Path $base "fx-tmp"
-  New-Item -ItemType Directory -Force $tmp | Out-Null
-  $banksOut = Join-Path $tmp "banks.json"
-  $fxOut = Join-Path $tmp "fx.json"
-  $histOut = Join-Path $tmp "fx-history.json"
-  $out1 = & node (Join-Path $main "scripts\fx\update-banks.mjs") (Join-Path $data "banks.json") $banksOut
-  foreach ($line in $out1) { Log ("환율: " + $line) }
-  if ($LASTEXITCODE -ne 0 -or -not (Test-Path $banksOut)) { Copy-Item (Join-Path $data "banks.json") $banksOut -Force }
-  $out2 = & node (Join-Path $main "scripts\fx\update-fx.mjs") (Join-Path $data "fx.json") $fxOut $banksOut
-  foreach ($line in $out2) { Log ("환율: " + $line) }
-  if ($LASTEXITCODE -ne 0) { throw "update-fx 실패 ($LASTEXITCODE)" }
+  # 1) 환율·은행·인천공항점을 새로 받아 price-data 에 올린다 (하루 3번 중 11시 칸)
+  $fx = Update-FxData | Select-Object -Last 1   # 함수 안의 다른 출력이 섞여도 마지막(경로표)만
+  $fxOut = $fx.Fx
+  $histOut = $fx.History
 
   if ($env:EXIM_API_KEY -and $now.Hour -lt 13) {
     $q = (node -e "const j=JSON.parse(require('fs').readFileSync(process.argv[1],'utf8'));console.log(j.official&&j.official.quoteDate||'')" $fxOut).Trim()
     if ($q -ne $today) { Log "환율 기사: 수출입은행 오늘 고시 아직 없음($q) — 다음 실행에서"; return }
   }
 
-  # 2) price-data 에 올린다 (fx-rate.yml 과 같은 세 파일, 같은 [CI Skip] 메시지)
-  for ($t = 1; $t -le 3; $t++) {
-    Sync-Remote "price-data" $data
-    Copy-Item $fxOut (Join-Path $data "fx.json") -Force
-    Copy-Item $histOut (Join-Path $data "fx-history.json") -Force
-    Copy-Item $banksOut (Join-Path $data "banks.json") -Force
-    git -C $data add fx.json fx-history.json banks.json
-    git -C $data diff --cached --quiet
-    if ($LASTEXITCODE -eq 0) { break }
-    git -C $data -c user.name="fx-rate-pc" -c user.email="kgx-collector@jjyu.co.kr" commit --quiet -m ("[CI Skip] fx rate update " + (Get-Date -Format "yyyy-MM-ddTHH:mmK") + " (PC)")
-    git -C $data push --quiet origin HEAD:price-data
-    if ($LASTEXITCODE -eq 0) { Log "환율: price-data 갱신"; break }
-    Log "환율: price-data push 충돌 — 다시 ($t/3)"
-  }
-
-  # 3) 기사 — main 클론 안에서(해석 문단 claude -p 가 scripts/.no-mcp.json 을 현재 폴더 기준으로 만든다)
+  # 2) 기사 — main 클론 안에서(해석 문단 claude -p 가 scripts/.no-mcp.json 을 현재 폴더 기준으로 만든다)
   Push-Location $main
   try { $stdout = & node (Join-Path $main "scripts\fx\generate-news.mjs") (Join-Path $main "src\data\fx-news") --require-today --fx $fxOut --history $histOut; $code = $LASTEXITCODE }
   finally { Pop-Location }
@@ -285,6 +327,7 @@ try {
 
   # 시세가 올라간 뒤 기사 — 실패해도 시세 수집은 이미 끝났으므로 로그만 남긴다
   try { Publish-News } catch { Log ("기사 오류: " + $_.Exception.Message) }
+  try { Refresh-Fx } catch { Log ("환율 갱신 오류: " + $_.Exception.Message) }
   try { Publish-FxNews } catch { Log ("환율 기사 오류: " + $_.Exception.Message) }
   exit 0
 } catch {
