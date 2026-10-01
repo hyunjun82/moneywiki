@@ -179,5 +179,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
-  return [...staticUrls, ...goldNewsUrls, ...wikiUrls, ...tsxUrls, ...articleUrls, ...downloadUrls];
+  // 환율 일일 기사 (src/data/fx-news/*.json) + 목록
+  const fxNewsDir = path.join(process.cwd(), "src/data/fx-news");
+  const fxNewsUrls: MetadataRoute.Sitemap = fs.existsSync(fxNewsDir)
+    ? [
+        { url: `${baseUrl}/fx/news`, lastModified: new Date(), changeFrequency: "daily" as const, priority: 0.8 },
+        ...fs
+          .readdirSync(fxNewsDir)
+          .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
+          .map((f) => ({
+            url: `${baseUrl}/fx/news/${f.replace(".json", "")}`,
+            lastModified: new Date(`${f.replace(".json", "")}T11:10:00+09:00`),
+            changeFrequency: "monthly" as const,
+            priority: 0.7,
+          })),
+      ]
+    : [];
+
+  return [...staticUrls, ...goldNewsUrls, ...fxNewsUrls, ...wikiUrls, ...tsxUrls, ...articleUrls, ...downloadUrls];
 }

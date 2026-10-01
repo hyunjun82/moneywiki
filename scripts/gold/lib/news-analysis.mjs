@@ -16,12 +16,12 @@
 import { ask, extractJson } from "../../lib/headless.mjs";
 
 /* 사실 목록에 없어도 되는 숫자: 날짜·순도·단위·연도 */
-const FREE = new Set([
+export const FREE = new Set([
   ...Array.from({ length: 32 }, (_, i) => String(i)),
   "100", "1000", "10", "24", "18", "14", "3.75", "1.875", "75", "58.5", "30", "365", "12", "52",
   "2024", "2025", "2026", "2027",
 ]);
-const FORBID =
+export const FORBID =
   /(반드시|확실|틀림없|무조건|폭등|폭락|급등|급락|추천|사야 |팔아야 |사세요|파세요|기회|보장|전망|예상|예측|것이다|것으로 보인다|가능성이 (크|높)|!|[\u{1F300}-\u{1FAFF}])/u;
 
 const norm = (t) => {

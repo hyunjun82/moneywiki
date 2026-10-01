@@ -4,6 +4,7 @@ import { baseOf, hubFaq } from "@/components/fx/fxDerive";
 import { korDate, won } from "@/components/fx/fxCore";
 import { loadFx, trimFx } from "@/components/fx/snapshot";
 import { JsonLd, breadcrumbLd, faqLd } from "@/components/fx/ld";
+import { listFxNewsDates, loadFxNews } from "@/components/fx/newsData";
 
 /**
  * /fx — 오늘 환율 조회 허브 (고정 주소). 통화별 페이지 /fx/<통화> 15종으로 보낸다.
@@ -32,6 +33,12 @@ export function generateMetadata(): Metadata {
   };
 }
 
+function latestNews() {
+  const d = listFxNewsDates()[0];
+  const doc = d ? loadFxNews(d) : null;
+  return doc ? { date: doc.date, title: doc.title } : null;
+}
+
 export default function FxHubPage() {
   const data = loadFx();
   return (
@@ -43,7 +50,7 @@ export default function FxHubPage() {
         ])}
       />
       <JsonLd data={faqLd(hubFaq(data))} />
-      <HubView initial={trimFx(data)} />
+      <HubView initial={trimFx(data)} latestNews={latestNews()} />
     </>
   );
 }

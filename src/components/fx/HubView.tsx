@@ -26,7 +26,13 @@ const MAIN = ["USD", "JPY", "EUR", "VND"];
 const ROW =
   "grid items-center gap-3 px-4 grid-cols-[minmax(0,1fr)_84px_auto] md:grid-cols-[minmax(0,1.4fr)_96px_minmax(0,1fr)_minmax(0,0.8fr)_minmax(0,0.8fr)_minmax(0,1.1fr)]";
 
-export default function HubView({ initial }: { initial: FxData }) {
+export default function HubView({
+  initial,
+  latestNews,
+}: {
+  initial: FxData;
+  latestNews?: { date: string; title: string } | null;
+}) {
   const { data } = useFx(initial);
   const d = data ?? initial;
   const usd = baseOf(d, "USD");
@@ -72,6 +78,17 @@ export default function HubView({ initial }: { initial: FxData }) {
           수수료를 아래에 모았습니다.
         </p>
       </header>
+
+      {latestNews ? (
+        <a
+          href={`/fx/news/${latestNews.date}`}
+          className="flex items-center gap-3 bg-white border border-[#E2DFD7] rounded-[16px] px-5 py-4 hover:border-[#1F4E79] transition-colors"
+        >
+          <span className="shrink-0 px-2 py-1 rounded-md bg-[#0B2233] text-white text-[12px] font-bold">환율 기사</span>
+          <span className="text-[15px] font-semibold text-[#1A1D21] min-w-0 truncate">{latestNews.title}</span>
+          <span className="ml-auto shrink-0 text-[#1F4E79] font-semibold text-[14px]">읽기 →</span>
+        </a>
+      ) : null}
 
       {/* 주요 통화 */}
       <section className="grid grid-cols-2 lg:grid-cols-4 gap-3">

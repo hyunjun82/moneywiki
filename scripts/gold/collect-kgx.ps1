@@ -139,6 +139,95 @@ function Publish-News {
   }
 }
 
+<#
+  환율 기사 발행 (2026-10-01) — 평일 11:00 이후 실행분에서 오늘 환율 기사가 main 에 없을 때 한 번.
+  매매기준율은 서울외국환중개가 9시 전에 고시하고 수출입은행 Open API 가 11시 전후 같은 값을 낸다(실측).
+  GitHub 환율 예약(fx-rate.yml)이 몇 시간씩 늦게 떠서, 여기서 환율·은행·인천공항점을 직접 다시 받아 price-data 에 올린 뒤 쓴다.
+  EXIM_API_KEY 환경변수가 있으면 그날 고시가 잡힐 때까지(13시 전) 기다린다. 없으면 시장환율로 쓴다(기사에 그렇게 밝힌다).
+#>
+function Publish-FxNews {
+  $now = Get-Date
+  if ($now.DayOfWeek -in "Saturday", "Sunday") { return }
+  if ($now.Hour -lt 11 -or $now.Hour -gt 15) { return }
+  $today = $now.ToString("yyyy-MM-dd")
+
+  $main = Join-Path $base "main"
+  if (-not (Test-Path (Join-Path $main ".git"))) { Clone-Branch "main" $main }
+  Sync-Remote "main" $main
+  $art = Join-Path $main "src\data\fx-news\$today.json"
+  if (Test-Path $art) { return }
+
+  # 1) 환율·은행·인천공항점을 새로 받는다 — 이전 값은 price-data 클론(1년 이력 fx-history.json 포함)
+  $tmp = Join-Path $base "fx-tmp"
+  New-Item -ItemType Directory -Force $tmp | Out-Null
+  $banksOut = Join-Path $tmp "banks.json"
+  $fxOut = Join-Path $tmp "fx.json"
+  $histOut = Join-Path $tmp "fx-history.json"
+  $out1 = & node (Join-Path $main "scripts\fx\update-banks.mjs") (Join-Path $data "banks.json") $banksOut
+  foreach ($line in $out1) { Log ("환율: " + $line) }
+  if ($LASTEXITCODE -ne 0 -or -not (Test-Path $banksOut)) { Copy-Item (Join-Path $data "banks.json") $banksOut -Force }
+  $out2 = & node (Join-Path $main "scripts\fx\update-fx.mjs") (Join-Path $data "fx.json") $fxOut $banksOut
+  foreach ($line in $out2) { Log ("환율: " + $line) }
+  if ($LASTEXITCODE -ne 0) { throw "update-fx 실패 ($LASTEXITCODE)" }
+
+  if ($env:EXIM_API_KEY -and $now.Hour -lt 13) {
+    $q = (node -e "const j=JSON.parse(require('fs').readFileSync(process.argv[1],'utf8'));console.log(j.official&&j.official.quoteDate||'')" $fxOut).Trim()
+    if ($q -ne $today) { Log "환율 기사: 수출입은행 오늘 고시 아직 없음($q) — 다음 실행에서"; return }
+  }
+
+  # 2) price-data 에 올린다 (fx-rate.yml 과 같은 세 파일, 같은 [CI Skip] 메시지)
+  for ($t = 1; $t -le 3; $t++) {
+    Sync-Remote "price-data" $data
+    Copy-Item $fxOut (Join-Path $data "fx.json") -Force
+    Copy-Item $histOut (Join-Path $data "fx-history.json") -Force
+    Copy-Item $banksOut (Join-Path $data "banks.json") -Force
+    git -C $data add fx.json fx-history.json banks.json
+    git -C $data diff --cached --quiet
+    if ($LASTEXITCODE -eq 0) { break }
+    git -C $data -c user.name="fx-rate-pc" -c user.email="kgx-collector@jjyu.co.kr" commit --quiet -m ("[CI Skip] fx rate update " + (Get-Date -Format "yyyy-MM-ddTHH:mmK") + " (PC)")
+    git -C $data push --quiet origin HEAD:price-data
+    if ($LASTEXITCODE -eq 0) { Log "환율: price-data 갱신"; break }
+    Log "환율: price-data push 충돌 — 다시 ($t/3)"
+  }
+
+  # 3) 기사 — main 클론 안에서(해석 문단 claude -p 가 scripts/.no-mcp.json 을 현재 폴더 기준으로 만든다)
+  Push-Location $main
+  try { $stdout = & node (Join-Path $main "scripts\fx\generate-news.mjs") (Join-Path $main "src\data\fx-news") --require-today --fx $fxOut --history $histOut; $code = $LASTEXITCODE }
+  finally { Pop-Location }
+  foreach ($line in $stdout) { Log ("환율 기사: " + $line) }
+  if ($code -eq 3) { Log "환율 기사: 오늘 데이터 아님 — 발행 보류"; return }
+  if ($code -ne 0) { throw "환율 기사 생성 실패 (exit $code)" }
+  if (-not (Test-Path $art)) { throw "환율 기사 파일이 생기지 않음: $art" }
+
+  git -C $main add "src/data/fx-news/$today.json"
+  git -C $main -c user.name="fx-news-bot" -c user.email="actions@github.com" commit --quiet -m "feat: 환율 뉴스 $today 자동 발행"
+  if ($LASTEXITCODE -ne 0) { throw "환율 기사 커밋 실패 ($LASTEXITCODE)" }
+  $ok = $false
+  for ($t = 1; $t -le 2 -and -not $ok; $t++) {
+    git -C $main push --quiet origin HEAD:main
+    if ($LASTEXITCODE -eq 0) { $ok = $true; break }
+    Log "환율 기사 push 충돌 — 최신 main 위에 다시 얹는다 ($t/2)"
+    git -C $main fetch --quiet --depth 1 origin main
+    git -C $main rebase --quiet FETCH_HEAD
+    if ($LASTEXITCODE -ne 0) { cmd /c "git -C ""$main"" rebase --abort >nul 2>nul"; throw "환율 기사 rebase 실패" }
+  }
+  if (-not $ok) { throw "환율 기사 push 2회 실패 — 다음 실행에서 재시도" }
+  Log "환율 기사 발행 완료: /fx/news/$today (Cloudflare 빌드 후 반영)"
+
+  try {
+    $body = @{
+      host = "www.jjyu.co.kr"
+      key = "cf14d2ece5b0438e848760be86604782"
+      keyLocation = "https://www.jjyu.co.kr/cf14d2ece5b0438e848760be86604782.txt"
+      urlList = @("https://www.jjyu.co.kr/fx/news/$today", "https://www.jjyu.co.kr/fx/news", "https://www.jjyu.co.kr/fx")
+    } | ConvertTo-Json
+    Invoke-RestMethod -Method Post -Uri "https://api.indexnow.org/indexnow" -ContentType "application/json; charset=utf-8" -Body $body | Out-Null
+    Log "환율 IndexNow 알림 완료"
+  } catch {
+    Log ("환율 IndexNow 실패(무시): " + $_.Exception.Message)
+  }
+}
+
 try {
   if (-not (Test-Path (Join-Path $data ".git"))) { Clone-Branch "price-data" $data }
 
@@ -196,6 +285,7 @@ try {
 
   # 시세가 올라간 뒤 기사 — 실패해도 시세 수집은 이미 끝났으므로 로그만 남긴다
   try { Publish-News } catch { Log ("기사 오류: " + $_.Exception.Message) }
+  try { Publish-FxNews } catch { Log ("환율 기사 오류: " + $_.Exception.Message) }
   exit 0
 } catch {
   Log ("오류: " + $_.Exception.Message)

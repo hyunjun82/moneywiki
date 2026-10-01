@@ -290,9 +290,23 @@ export interface RangeStats {
   changes: { label: string; from: HistoryPoint; diff: number; pct: number }[];
 }
 
+/**
+ * 하루만 튄 점을 뺀다 — 앞뒤 이웃이 서로 1% 안인데 그 점만 2.5% 넘게 벗어난 경우(Yahoo 일별 종가 오류).
+ * 2026-10-01 실측: 유로 2026-08-17 1,582원(앞뒤 1,634·1,638원). 기사 생성기(scripts/fx/generate-news.mjs)와 같은 규칙.
+ */
+export function dropSpikes(s: HistoryPoint[]): HistoryPoint[] {
+  return s.filter((p, i) => {
+    if (i === 0 || i === s.length - 1) return true;
+    const a = s[i - 1].rate;
+    const n = s[i + 1].rate;
+    const m = (a + n) / 2;
+    return !(Math.abs(a - n) / m < 0.01 && Math.abs(p.rate - m) / m > 0.025);
+  });
+}
+
 /** history 에 오늘 값을 붙인 시계열 (같은 날짜면 오늘 값이 이긴다) */
 export function withLatest(history: HistoryPoint[], r: FxRate | undefined, today?: string): HistoryPoint[] {
-  const s = history.filter((p) => Number.isFinite(p.rate));
+  const s = dropSpikes(history.filter((p) => Number.isFinite(p.rate)));
   if (!r || !today) return s;
   const d = today.slice(0, 10);
   const out = s.filter((p) => p.date !== d);
