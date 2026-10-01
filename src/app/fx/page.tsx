@@ -1,27 +1,49 @@
 import type { Metadata } from "next";
-import CalculatorView from "@/components/fx/CalculatorView";
+import HubView from "@/components/fx/HubView";
+import { baseOf, hubFaq } from "@/components/fx/fxDerive";
+import { korDate, won } from "@/components/fx/fxCore";
+import { loadFx, trimFx } from "@/components/fx/snapshot";
+import { JsonLd, breadcrumbLd, faqLd } from "@/components/fx/ld";
 
 /**
- * /fx — 환율 계산기 (고정 허브)
+ * /fx — 오늘 환율 조회 허브 (고정 주소). 통화별 페이지 /fx/<통화> 15종으로 보낸다.
  *
- * 주소에 날짜를 넣지 않는다. 고정 허브여야 검색 트래픽이 한곳에 쌓인다.
- * 환율은 빌드가 아니라 브라우저가 갱신기 JSON에서 직접 읽는다.
+ * 2026-10-01 계산기는 /fx/calculator 로 옮겼다. "환율"·"환율조회"·"오늘 환율" 검색어는 이 주소가 받는다.
+ * 숫자는 빌드 때 스냅숏으로 굽고 브라우저가 최신값으로 바꾼다(fxData.useFx).
  */
 
-export const metadata: Metadata = {
-  title: "환율 계산기 — 오늘 환율로 환전 금액 계산",
-  description:
-    "매매기준율로 환전 금액을 바로 계산합니다. 달러·엔·유로 등 주요 통화의 현찰 살 때·팔 때 고시 환율과 기간별 추이를 한 화면에서 확인하세요.",
-  keywords: ["환율", "환율 계산기", "오늘 환율", "달러 환율", "엔화 환율", "환전 계산"],
-  alternates: { canonical: "/fx" },
-  openGraph: {
-    type: "website",
-    url: "/fx",
-    title: "환율 계산기 — 오늘 환율로 환전 금액 계산",
-    description: "매매기준율 기준 환전 금액과 통화별 고시 환율을 한 화면에서 봅니다.",
-  },
-};
+export function generateMetadata(): Metadata {
+  const data = loadFx();
+  const usd = baseOf(data, "USD");
+  const jpy = baseOf(data, "JPY");
+  const eur = baseOf(data, "EUR");
+  const title = usd
+    ? `오늘 환율 조회 — 달러 ${won(usd.rate, 2)}원·엔화 100엔 ${jpy ? won(jpy.rate, 2) : ""}원, 환전 시세`
+    : "오늘 환율 조회 · 환전 시세";
+  const description =
+    `환율조회·오늘 환율·환전 시세 — ${korDate(data.updatedAt)} 기준 달러 ${usd ? won(usd.rate, 2) : ""}원, 엔화 100엔 ${jpy ? won(jpy.rate, 2) : ""}원, 유로 ${eur ? won(eur.rate, 2) : ""}원. ` +
+    "베트남·중국·태국 등 통화 15종의 현찰 살 때·팔 때와 은행 16곳 환전 수수료·우대율, 인천공항 수수료를 비교합니다.";
+  return {
+    title: { absolute: title },
+    description,
+    keywords: ["환율", "환율조회", "오늘 환율", "환전 시세", "오늘 환전 시세", "달러 환율", "엔화 환율", "유로 환율"],
+    alternates: { canonical: "/fx" },
+    openGraph: { type: "website", url: "/fx", title, description },
+  };
+}
 
-export default function FxPage() {
-  return <CalculatorView />;
+export default function FxHubPage() {
+  const data = loadFx();
+  return (
+    <>
+      <JsonLd
+        data={breadcrumbLd([
+          { name: "머니위키", path: "/" },
+          { name: "오늘 환율", path: "/fx" },
+        ])}
+      />
+      <JsonLd data={faqLd(hubFaq(data))} />
+      <HubView initial={trimFx(data)} />
+    </>
+  );
 }

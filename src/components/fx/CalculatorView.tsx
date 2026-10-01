@@ -24,6 +24,7 @@ import {
   unitNameOf,
   useFx,
   won,
+  type FxData,
   type FxRate,
 } from "./fxData";
 
@@ -33,8 +34,8 @@ const QUICK = [10000, 50000, 100000, 500000, 1000000];
 /** ?? [] 는 매 렌더마다 새 배열이라 useMemo 의존성을 깨뜨린다. 한 번만 만든다. */
 const NO_RATES: FxRate[] = [];
 
-export default function CalculatorView() {
-  const { data, status } = useFx();
+export default function CalculatorView({ initial }: { initial?: FxData }) {
+  const { data, status } = useFx(initial);
   const rates = data?.rates ?? NO_RATES;
 
   const [amount, setAmount] = useState("1000000");
@@ -88,14 +89,14 @@ export default function CalculatorView() {
                 중간 환율 · 수수료 없는 기준가
               </span>
             </div>
-            <h1 className="mt-[22px] mb-0 text-[36px] sm:text-[56px] leading-[1.12] tracking-[-0.035em] font-extrabold text-white text-balance">
-              여행 갈 때마다
+            <h1 className="mt-[22px] mb-0 text-[36px] sm:text-[52px] leading-[1.12] tracking-[-0.035em] font-extrabold text-white text-balance">
+              환율 계산기
               <br />
-              <span className="text-white/55 font-medium">계산기 두드리지</span> 않게
+              <span className="text-white/55 font-medium">환전 계산기</span>
             </h1>
-            <p className="mt-[22px] mb-0 text-[17px] sm:text-[18px] leading-[1.75] text-white/[0.62] max-w-[33ch]">
-              매매기준율로 환전 금액을 바로 확인하고, 자주 가는 여행지 통화와 은행별 실제 환전가를
-              한 화면에서 비교하세요.
+            <p className="mt-[22px] mb-0 text-[17px] sm:text-[18px] leading-[1.75] text-white/[0.62] max-w-[36ch]">
+              금액을 넣으면 오늘 환율로 통화 {rates.length || 17}종을 바로 환산합니다. 수수료 없는 기준
+              환율 값이라, 은행에서 살 때 낼 원화는 은행별 비교에서 확인합니다.
             </p>
             <div className="mt-[30px] flex items-center gap-2.5 flex-wrap">
               <a
@@ -235,7 +236,7 @@ export default function CalculatorView() {
                 no="03"
                 eyebrow="All currencies"
                 title="전체 통화 고시표"
-                lead={rates.length ? `${rates.length}개 통화 · 매매기준율 기준` : undefined}
+                lead={rates.length ? `${rates.length}개 통화 · 시장 중간환율 기준` : undefined}
               />
               <input
                 type="text"
@@ -262,7 +263,7 @@ export default function CalculatorView() {
                 Tip
               </div>
               <h3 className="mt-3 mb-0 text-[22px] sm:text-[26px] font-bold tracking-[-0.02em] text-[#1A1D21] leading-[1.3]">
-                매매기준율과
+                기준 환율과
                 <br />
                 실제 환전 금액은 다릅니다
               </h3>
@@ -275,7 +276,7 @@ export default function CalculatorView() {
             </div>
             <div className="grid gap-3.5">
               {[
-                ["1", "매매기준율은 기준일 뿐입니다", "은행이 실제로 파는 값은 여기에 환전수수료가 더해진 금액입니다."],
+                ["1", "기준 환율은 기준일 뿐입니다", "은행이 실제로 파는 값은 여기에 환전수수료가 더해진 금액입니다."],
                 ["2", "우대율이 실수령액을 가릅니다", "같은 은행이라도 앱·등급·이벤트에 따라 우대율이 달라집니다."],
                 ["3", "현찰과 송금은 값이 다릅니다", "현찰은 보관·운송 비용이 붙어 송금 환율보다 불리합니다."],
               ].map(([n, title, body]) => (
@@ -296,7 +297,7 @@ export default function CalculatorView() {
         <BandAd />
 
         <FooterNote
-          text="여행·유학·해외송금에 필요한 환율을 한 화면에서. 매매기준율과 은행별 실제 환전가를 함께 봅니다."
+          text="여행·유학·해외송금에 필요한 환율을 한 화면에서. 기준 환율과 은행별 실제 환전가를 함께 봅니다."
           updatedAt={korDateTime(data?.updatedAt)}
         />
       </div>

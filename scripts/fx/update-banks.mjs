@@ -6,6 +6,11 @@
  *   https://exchange.kfb.or.kr/page/on_commission.php
  *   실데이터: /page/on_commission_list.php?cur=USD (EUC-KR, 표 HTML)
  *
+ * 인천공항점은 같은 사이트의 별도 표다 (2026-10-01 추가):
+ *   "은행별 주요통화 인천공항점 환전수수료 비교" /page/airport_commission.php
+ *   실데이터: /page/airport_commission_list.php?cur=USD — 은행(지점명)·사실때·파실때·기준일
+ *   → out.airport.byCurrency
+ *
  * 이 표는 은행이 공시한 값이고 **기준일**이 함께 나온다. 화면에도 반드시
  * 기준일과 출처를 표기한다. 우대율은 등급·이벤트에 따라 달라질 수 있으므로
  * 우리가 임의로 보정하거나 추정하지 않는다 — 공시된 숫자만 그대로 옮긴다.
@@ -107,6 +112,34 @@ async function fetchCurrency(cur) {
   return out;
 }
 
+/** 인천공항점 표 — "우리은행 공항금융센터 | 4.50% | 7.00% | 2026.09.01" */
+async function fetchAirport(cur) {
+  const html = await getEuckr(`${BASE}/airport_commission_list.php?cur=${encodeURIComponent(cur)}`);
+  const rows = [...html.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/g)].map((m) => m[1]);
+  const out = [];
+
+  for (const r of rows) {
+    const cells = [...r.matchAll(/<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/g)].map((m) => strip(m[1]));
+    if (cells.length < 4) continue;
+    const [name, buyRaw, sellRaw, dateRaw] = cells;
+    const buyFee = pct(buyRaw);
+    const sellFee = pct(sellRaw);
+    if (!name || buyFee == null) continue; // 헤더 행
+    // "우리은행 공항금융센터" → 은행 "우리은행", 지점 "공항금융센터". 은행 이름은 on_commission 표와 같은 꼴이다.
+    const m = /^(\S*은행)\s*(.*)$/.exec(name);
+    out.push({
+      bank: m ? m[1] : name,
+      branch: m ? m[2] || null : null,
+      /** 현찰 살 때 수수료율(%) */
+      buyFee,
+      /** 현찰 팔 때 수수료율(%) */
+      sellFee,
+      asOf: isoDate(dateRaw),
+    });
+  }
+  return out; // 공항점이 공시하지 않는 통화는 빈 배열 — 실패가 아니다
+}
+
 /* ── 이전 값 ── */
 let prev = {};
 try {
@@ -121,7 +154,8 @@ try {
  * 은행연합회는 하루 1회만 조회한다(상대 서버 배려 + 불필요한 트래픽 방지).
  * 이미 오늘 받아왔으면 이전 파일을 그대로 다시 써서 끝낸다.
  */
-if (prev.fetchedDate === kstDateStr() && !process.argv.includes("--force")) {
+// 공항 표가 없는 옛 파일이면 오늘 받았어도 한 번 더 돈다 — 배포 당일에 공항 값이 바로 생기게.
+if (prev.fetchedDate === kstDateStr() && prev.airport && !process.argv.includes("--force")) {
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
   fs.writeFileSync(outPath, JSON.stringify(prev, null, 2) + "\n", "utf8");
   console.log(`오늘 이미 수집됨(${prev.fetchedDate}) — 재사용하고 종료`);
@@ -148,6 +182,28 @@ if (!byCurrency.USD?.length) {
   process.exit(1);
 }
 
+/* ── 인천공항점 ── */
+const airportByCurrency = {};
+for (const cur of CURRENCIES) {
+  try {
+    const rows = await fetchAirport(cur);
+    if (rows.length) airportByCurrency[cur] = rows;
+  } catch (e) {
+    failed.push(`공항 ${cur}: ${e.message}`);
+    if (prev.airport?.byCurrency?.[cur]) airportByCurrency[cur] = prev.airport.byCurrency[cur];
+  }
+  await new Promise((r) => setTimeout(r, 400));
+}
+console.log(`인천공항점: 통화 ${Object.keys(airportByCurrency).length}종`);
+const airport = airportByCurrency.USD?.length
+  ? {
+      source: "전국은행연합회 외환길잡이 — 은행별 주요통화 인천공항점 환전수수료 비교",
+      sourceUrl: "https://exchange.kfb.or.kr/page/airport_commission.php",
+      currencies: Object.keys(airportByCurrency),
+      byCurrency: airportByCurrency,
+    }
+  : prev.airport ?? null; // 공항 표를 통째로 못 읽으면 이전 값을 유지한다
+
 /* 화면 상단에 쓸 공시 기준일: 수집된 값 중 가장 최근 */
 const allDates = Object.values(byCurrency)
   .flat()
@@ -167,6 +223,7 @@ const out = {
   latestAsOf,
   currencies: Object.keys(byCurrency),
   byCurrency,
+  airport,
 };
 
 if (failed.length) console.warn("일부 통화 실패:\n - " + failed.join("\n - "));

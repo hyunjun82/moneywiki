@@ -13,7 +13,7 @@
     "verify:evidence": "node scripts/verify-evidence.mjs",
     "verify:rendered": "node scripts/verify-rendered.mjs",
     "verify:internal-links": "node scripts/verify-internal-links.mjs",
-    "prebuild": "node scripts/gen-favicon-manifest.mjs && node scripts/build-keyword-links.mjs --write && node scripts/build-link-fixes.mjs --write && node scripts/build-category-redirects.mjs --write && node scripts/verify-internal-links.mjs && node fix-imports-v2.js && node scripts/verify-evidence.mjs",
+    "prebuild": "node scripts/fx/fetch-snapshot.mjs && node scripts/gen-favicon-manifest.mjs && node scripts/build-keyword-links.mjs --write && node scripts/build-link-fixes.mjs --write && node scripts/build-category-redirects.mjs --write && node scripts/verify-internal-links.mjs && node fix-imports-v2.js && node scripts/verify-evidence.mjs",
     "verify": "node scripts/verify.mjs",
     "verify:no-shadow": "node scripts/verify-no-shadow.mjs",
     "test:gates": "node scripts/test-gates.mjs",
@@ -23,7 +23,8 @@
     "article": "node scripts/article.mjs",
     "gold:collect": "node scripts/gold/collect-kgx.mjs",
     "gold:collect:push": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/gold/collect-kgx.ps1",
-    "gold:news": "node scripts/gold/generate-news.mjs"
+    "gold:news": "node scripts/gold/generate-news.mjs",
+    "fx:snapshot": "node scripts/fx/fetch-snapshot.mjs"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",

@@ -97,3 +97,5 @@ scripts/reports/
 # price-data 브랜치 로컬 체크아웃 (수집기 로컬 실행용) — main 에 시세를 커밋하지 않는다
 /price-data/
 scripts/.no-mcp.json
+# 환율 스냅숏 — prebuild 가 price-data 에서 받아 HTML 에 굽는다. main 에 시세를 커밋하지 않는다
+/src/data/fx-snapshot/

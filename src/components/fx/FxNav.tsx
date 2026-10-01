@@ -4,9 +4,15 @@ import { usePathname } from "next/navigation";
 import { changeText, fxColor, useFx, won, type FxRate } from "./fxData";
 
 const TABS = [
-  { href: "/fx", label: "환율 계산기" },
+  { href: "/fx", label: "오늘 환율" },
+  { href: "/fx/calculator", label: "계산기" },
   { href: "/fx/banks", label: "은행 비교" },
+  { href: "/fx/airport", label: "공항 환전" },
 ] as const;
+
+/** 통화 페이지(/fx/usd 등)는 "오늘 환율" 탭 아래로 본다 */
+const tabOf = (path: string) =>
+  TABS.some((t) => t.href === path) ? path : path.startsWith("/fx/") ? "/fx" : path;
 
 /** 티커에 올릴 주요 통화 */
 const TICKER = ["USD", "JPY", "EUR", "CNY", "GBP", "AUD"];
@@ -17,7 +23,7 @@ const TICKER = ["USD", "JPY", "EUR", "CNY", "GBP", "AUD"];
  */
 export default function FxNav() {
   const pathname = usePathname();
-  const current = pathname?.replace(/\/$/, "") || "/fx";
+  const current = tabOf(pathname?.replace(/\/$/, "") || "/fx");
   const { data } = useFx();
 
   const ticker = (data?.rates ?? [])
@@ -32,12 +38,12 @@ export default function FxNav() {
             <span className="w-7 h-7 rounded-[9px] bg-white text-[#0B2233] flex items-center justify-center text-[14px] font-extrabold tracking-[-0.04em]">
               ₩
             </span>
-            <span className="text-[16.5px] font-bold text-white tracking-[-0.02em]">환율노트</span>
+            <span className="text-[16.5px] font-bold text-white tracking-[-0.02em] hidden sm:inline">환율노트</span>
             <span className="ml-1.5 px-2 py-[3px] rounded-md border border-white/20 text-[10.5px] font-bold text-white/70 tracking-[0.08em] hidden sm:inline">
               BETA
             </span>
           </a>
-          <nav className="flex items-center gap-1 bg-white/10 p-1 rounded-full">
+          <nav className="flex items-center gap-1 bg-white/10 p-1 rounded-full overflow-x-auto [scrollbar-width:none] min-w-0">
             {TABS.map((t) => {
               const on = current === t.href;
               return (

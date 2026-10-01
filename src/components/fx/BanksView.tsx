@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { BandAd, Card, DARK_BG, DataNotice, FooterNote, PillTabs, Skeleton } from "./ui";
 import { brandOf } from "./bankBrand";
 import {
+  asOfLabel,
   bankRate,
   korDate,
   korDateTime,
@@ -12,8 +13,11 @@ import {
   useFx,
   won,
   type FxBank,
+  type FxData,
   type FxRate,
 } from "./fxData";
+import { SPOKES, banksFaq, bestLabel, counterPay, rankBanks, type Faq } from "./fxDerive";
+import { FaqList, H2, TableWrap, td, th } from "./parts";
 
 const METHODS = [
   { key: "buy", label: "현찰 살 때" },
@@ -33,8 +37,8 @@ type Sort = (typeof SORTS)[number]["key"];
 const NO_RATES: FxRate[] = [];
 const NO_BANKS: FxBank[] = [];
 
-export default function BanksView() {
-  const { data, status } = useFx();
+export default function BanksView({ initial }: { initial?: FxData }) {
+  const { data, status } = useFx(initial);
   const rates = data?.rates ?? NO_RATES;
   const bankBook = data?.banks ?? null;
 
@@ -96,19 +100,20 @@ export default function BanksView() {
               </span>
             </div>
             <h1 className="mt-4 mb-0 text-[32px] sm:text-[46px] leading-[1.16] tracking-[-0.035em] font-extrabold text-white">
-              같은 100만원, 은행마다
+              은행별 환전 수수료
               <br />
-              <span className="text-white/55 font-medium">얼마나 차이 날까</span>
+              <span className="text-white/55 font-medium">· 우대율 비교</span>
             </h1>
-            <p className="mt-[18px] mb-0 text-[16px] sm:text-[17.5px] text-white/[0.62] leading-[1.7] max-w-[44ch]">
-              은행연합회가 공시하는 환전수수료율과 우대율을 적용해 실제로 받는 금액을 비교합니다.
+            <p className="mt-[18px] mb-0 text-[16px] sm:text-[17.5px] text-white/[0.62] leading-[1.7] max-w-[46ch]">
+              은행연합회가 공시하는 은행 16곳의 환전수수료율과 우대율을 적용해, 같은 금액을 바꿀 때 은행마다
+              받는 금액과 내는 수수료를 비교합니다.
             </p>
           </div>
           <a
             href="/fx"
             className="px-5 py-3.5 rounded-xl border border-white/20 text-white text-[15px] font-semibold hover:bg-white/10 transition-colors"
           >
-            ← 환율 계산기로
+            ← 오늘 환율
           </a>
         </div>
       </section>
@@ -187,7 +192,7 @@ export default function BanksView() {
               </Card>
               <Card className="p-6">
                 <div className="text-[12px] font-bold tracking-[0.06em] uppercase text-[#9CA1A8]">
-                  매매기준율
+                  기준 환율
                 </div>
                 <div className="mt-3 text-[28px] sm:text-[34px] font-extrabold text-[#1A1D21] tracking-[-0.03em] tabular-nums">
                   {rate ? won(rate.rate, 2) : "—"}
@@ -200,7 +205,7 @@ export default function BanksView() {
 
             {/* 순위표 */}
             <Card className="rounded-[20px] overflow-hidden">
-              <BankTable rows={rows} />
+              <BankTable rows={rows} refDate={data?.updatedAt} />
               <div className="px-5 sm:px-[26px] py-4 text-[13px] text-[#9CA1A8] leading-relaxed border-t border-[#E2DFD7]">
                 환전수수료율과 우대율은{" "}
                 {bankBook?.sourceUrl ? (
@@ -236,6 +241,8 @@ export default function BanksView() {
             </section>
           </>
         )}
+
+        {data ? <StaticTables d={data} /> : null}
 
         <FooterNote
           text="은행별 환전수수료율·우대율은 은행연합회 외환길잡이 공시를 따릅니다. 실제 적용 금액은 거래 시점에 은행에서 확인하세요."
@@ -288,7 +295,9 @@ function PendingNotice({ ready }: { ready: boolean }) {
 
 function BankTable({
   rows,
+  refDate,
 }: {
+  refDate?: string;
   rows: { bank: FxBank; pref: number; applied: number; get: number; isBest: boolean; diff: number; barW: number }[];
 }) {
   const cols = "grid-cols-[minmax(0,1.6fr)_90px_minmax(0,1fr)_minmax(0,1.1fr)_minmax(0,1fr)]";
@@ -329,7 +338,7 @@ function BankTable({
                 </div>
                 <div className="mt-[3px] text-[12.5px] text-[#9CA1A8] truncate">
                   {r.bank.note ?? ""}
-                  {r.bank.asOf ? ` · ${korDate(r.bank.asOf)} 기준` : ""}
+                  {r.bank.asOf ? ` · ${asOfLabel(r.bank.asOf, refDate)} 기준` : ""}
                 </div>
               </div>
             </div>
@@ -364,3 +373,126 @@ function BankTable({
     </div>
   );
 }
+
+/**
+ * 서버가 구운 HTML 에도 남는 표 — 통화별 1위 은행, 은행×통화 수수료율·최대 우대율, FAQ.
+ * 위의 순위표는 고른 통화 하나만 보여 주므로, 검색어 "환전 수수료 은행별 비교"의 답은 여기서 한 번에 준다.
+ */
+function StaticTables({ d }: { d: FxData }) {
+  const perCur = SPOKES.map((m) => {
+    const ranked = rankBanks(d, m.code, m.sample);
+    const counter = counterPay(d, m.code, m.sample);
+    return ranked.length && counter ? { m, ranked, counter } : null;
+  }).filter((x): x is NonNullable<typeof x> => x !== null);
+
+  const codes = SPOKES.map((m) => m.code).filter((c) => d.banks?.byCurrency?.[c]?.length);
+  const bankNames = [...new Set(codes.flatMap((c) => (d.banks?.byCurrency?.[c] ?? []).map((b) => b.bank)))];
+  const cell = (bank: string, code: string) => d.banks?.byCurrency?.[code]?.find((b) => b.bank === bank);
+  const faq: Faq[] = banksFaq(d);
+
+  return (
+    <>
+      <section className="flex flex-col gap-4">
+        <H2 id="by-currency" lead="통화마다 여행 한 번에 흔히 바꾸는 금액을 앱 최대 우대(공시)로 살 때, 수수료가 가장 적은 은행입니다.">
+          통화별로 환전 수수료가 가장 싼 은행
+        </H2>
+        <TableWrap min={680}>
+          <thead>
+            <tr>
+              <th className={th}>통화 · 금액</th>
+              <th className={th}>가장 싼 은행</th>
+              <th className={`${th} text-right`}>낼 원화</th>
+              <th className={`${th} text-right`}>그중 수수료</th>
+              <th className={`${th} text-right`}>우대 없는 창구 수수료</th>
+            </tr>
+          </thead>
+          <tbody>
+            {perCur.map(({ m, ranked, counter }) => (
+              <tr key={m.code}>
+                <td className={td}>
+                  <a href={`/fx/${m.slug}#banks`} className="font-bold text-[#1F4E79] hover:underline underline-offset-2">
+                    {m.short}
+                  </a>{" "}
+                  <span className="text-[12px] text-[#9CA1A8]">{won(m.sample)}{m.unitWord}</span>
+                </td>
+                <td className={td}>{bestLabel(ranked)}</td>
+                <td className={`${td} text-right font-bold text-[#1A1D21]`}>{won(ranked[0].pay)}원</td>
+                <td className={`${td} text-right text-[#2E7D5B]`}>{won(ranked[0].fee)}원</td>
+                <td className={`${td} text-right text-[#B4532A]`}>{won(counter.fee)}원</td>
+              </tr>
+            ))}
+          </tbody>
+        </TableWrap>
+      </section>
+
+      <section className="flex flex-col gap-4">
+        <H2 id="matrix" lead="칸마다 위는 환전 수수료율(창구, 살 때), 아래는 공시된 최대 우대율입니다. 빈칸은 그 은행이 그 통화를 공시하지 않은 것입니다.">
+          은행별 · 통화별 환전 수수료율과 최대 우대율
+        </H2>
+        <TableWrap min={1180}>
+          <thead>
+            <tr>
+              <th className={`${th} sticky left-0 z-[1]`}>은행</th>
+              {codes.map((c) => {
+                const m = SPOKES.find((x) => x.code === c)!;
+                return (
+                  <th key={c} className={`${th} text-right`}>
+                    {m.short}
+                  </th>
+                );
+              })}
+            </tr>
+          </thead>
+          <tbody>
+            {bankNames.map((bank) => (
+              <tr key={bank}>
+                <td className={`${td} sticky left-0 bg-white font-semibold text-[#1A1D21]`}>{bank}</td>
+                {codes.map((c) => {
+                  const b = cell(bank, c);
+                  return (
+                    <td key={c} className={`${td} text-right leading-tight`}>
+                      {b ? (
+                        <>
+                          <span className="block">{+b.feeRate.toFixed(2)}%</span>
+                          <span className="block text-[12px] text-[#2E7D5B]">
+                            {typeof b.maxPref === "number" ? `${b.maxPref}%` : typeof b.basePref === "number" ? `${b.basePref}%` : ""}
+                          </span>
+                        </>
+                      ) : null}
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </TableWrap>
+      </section>
+
+      {faq.length ? (
+        <section className="flex flex-col gap-4">
+          <H2 id="faq">은행별 환전, 자주 묻는 질문</H2>
+          <FaqList items={faq} />
+        </section>
+      ) : null}
+
+      <section className="flex flex-col gap-3">
+        <H2>통화별 환율과 은행 비교</H2>
+        <div className="flex flex-wrap gap-2">
+          {SPOKES.map((m) => (
+            <a
+              key={m.code}
+              href={`/fx/${m.slug}`}
+              className="px-3.5 py-2 rounded-full bg-white border border-[#E2DFD7] text-[14px] font-semibold text-[#3C424A] hover:border-[#1F4E79]"
+            >
+              {m.keyword}
+            </a>
+          ))}
+          <a href="/fx/airport" className="px-3.5 py-2 rounded-full bg-white border border-[#E2DFD7] text-[14px] font-semibold text-[#3C424A] hover:border-[#1F4E79]">
+            인천공항 환전 수수료
+          </a>
+        </div>
+      </section>
+    </>
+  );
+}
+

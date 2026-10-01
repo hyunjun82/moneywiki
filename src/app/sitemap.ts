@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 import { getAllWikiParams } from "@/lib/wiki";
 import { getAllArticleSlugs } from "@/lib/articles";
 import { ALL_ITEMS, CATEGORIES, itemsIn } from "@/data/download";
+import { SPOKES } from "@/components/fx/fxDerive";
 import fs from "fs";
 import path from "path";
 
@@ -51,19 +52,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
                 changeFrequency: "daily" as const,
                 priority: 0.8,
       },
-      // 환율노트 — 날짜 없는 고정 허브 2개
+      // 환율 — 허브(오늘 환율) + 도구 3개 + 통화 15종 스포크 (2026-10-01)
       {
                 url: `${baseUrl}/fx`,
                 lastModified: new Date(),
                 changeFrequency: "daily" as const,
                 priority: 0.9,
       },
-      {
-                url: `${baseUrl}/fx/banks`,
+      ...["banks", "calculator", "airport"].map((p) => ({
+                url: `${baseUrl}/fx/${p}`,
                 lastModified: new Date(),
                 changeFrequency: "daily" as const,
                 priority: 0.8,
-      },
+      })),
+      ...SPOKES.map((m) => ({
+                url: `${baseUrl}/fx/${m.slug}`,
+                lastModified: new Date(),
+                changeFrequency: "daily" as const,
+                priority: 0.85,
+      })),
       // 로또 번호 추천 — 추첨기 2개
       {
                 url: `${baseUrl}/lotto`,
