@@ -178,17 +178,20 @@ function Update-FxData {
 <#
   환율 갱신은 하루 3번이면 된다 (2026-10-01 사용자 합의). 사람들이 비교하는 매매기준율은 하루 한 번(9시 전) 정해지고,
   30분마다 바꿔도 낼 원화는 거의 그대로다. 외환시장에서 뜻이 있는 세 시점만 받는다:
-    개장 칸  09:30~10:59 — 그날 매매기준율과 아침 흐름
-    고시 칸  11:00~       — 수출입은행 고시 반영 + 기사 (Publish-FxNews 가 맡는다)
+    개장 칸  09:30~10:59 — 그날 매매기준율과 아침 흐름 (이 값으로 환율 기사를 바로 쓴다 — Publish-FxNews)
+    고시 칸  11:00~15:29 — 수출입은행 고시 반영
     마감 칸  15:30~18:30 — 서울 외환시장 주간 마감(15:30) 뒤 종가
   예약 작업이 30분마다 부르므로 칸마다 "오늘 끝남" 표시 파일을 남겨 한 번만 돈다. PC 가 꺼져 그 시각을 놓치면 같은 칸의 다음 실행이 맡는다.
+  받은 결과는 $script:fxFresh 에 남겨 같은 실행의 Publish-FxNews 가 다시 받지 않게 한다.
 #>
+$script:fxFresh = $null
 function Refresh-Fx {
   $now = Get-Date
   if ($now.DayOfWeek -in "Saturday", "Sunday") { return }
   $t = $now.TimeOfDay
   $slot = $null
   if ($t -ge [TimeSpan]"09:30" -and $t -lt [TimeSpan]"11:00") { $slot = "open" }
+  elseif ($t -ge [TimeSpan]"11:00" -and $t -lt [TimeSpan]"15:30") { $slot = "notice" }
   elseif ($t -ge [TimeSpan]"15:30") { $slot = "close" }
   if (-not $slot) { return }
   $marks = Join-Path $base "fx-slots"
@@ -199,21 +202,22 @@ function Refresh-Fx {
   $main = Join-Path $base "main"
   if (-not (Test-Path (Join-Path $main ".git"))) { Clone-Branch "main" $main }
   Sync-Remote "main" $main
-  $null = Update-FxData
+  $script:fxFresh = Update-FxData | Select-Object -Last 1
   New-Item -ItemType File -Force $mark | Out-Null
   Log "환율: $slot 칸 갱신 완료"
 }
 
 <#
-  환율 기사 발행 (2026-10-01) — 평일 11:00 이후 실행분에서 오늘 환율 기사가 main 에 없을 때 한 번.
-  매매기준율은 서울외국환중개가 9시 전에 고시하고 수출입은행 Open API 가 11시 전후 같은 값을 낸다(실측).
+  환율 기사 발행 (2026-10-01, 09:30 으로 당김 2026-10-02) — 평일 09:30 이후 실행분에서 오늘 환율 기사가 main 에 없을 때 한 번.
+  매매기준율은 서울외국환중개가 9시 전에 고시하고 은행 1회차 공시는 08:2x 에 나온다(실측). 그래서 개장 칸(09:30) 수집값으로 바로 쓴다.
+  11시로 두었던 것은 수출입은행 Open API(11시 전후)를 기다리려던 것인데, 키가 없으면 기다릴 것이 없어 기사만 늦었다.
   GitHub 환율 예약(fx-rate.yml)이 몇 시간씩 늦게 떠서, 여기서 환율·은행·인천공항점을 직접 다시 받아 price-data 에 올린 뒤 쓴다.
   EXIM_API_KEY 환경변수가 있으면 그날 고시가 잡힐 때까지(13시 전) 기다린다. 없으면 시장환율로 쓴다(기사에 그렇게 밝힌다).
 #>
 function Publish-FxNews {
   $now = Get-Date
   if ($now.DayOfWeek -in "Saturday", "Sunday") { return }
-  if ($now.Hour -lt 11 -or $now.Hour -gt 15) { return }
+  if ($now.TimeOfDay -lt [TimeSpan]"09:30" -or $now.Hour -gt 15) { return }
   $today = $now.ToString("yyyy-MM-dd")
 
   $main = Join-Path $base "main"
@@ -222,8 +226,9 @@ function Publish-FxNews {
   $art = Join-Path $main "src\data\fx-news\$today.json"
   if (Test-Path $art) { return }
 
-  # 1) 환율·은행·인천공항점을 새로 받아 price-data 에 올린다 (하루 3번 중 11시 칸)
-  $fx = Update-FxData | Select-Object -Last 1   # 함수 안의 다른 출력이 섞여도 마지막(경로표)만
+  # 1) 환율·은행·인천공항점 — 이번 실행의 Refresh-Fx 가 방금 받았으면 그것을, 아니면 새로 받아 price-data 에 올린다
+  $fx = $script:fxFresh
+  if (-not $fx) { $fx = Update-FxData | Select-Object -Last 1 }   # 함수 안의 다른 출력이 섞여도 마지막(경로표)만
   $fxOut = $fx.Fx
   $histOut = $fx.History
 

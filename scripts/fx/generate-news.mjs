@@ -11,7 +11,7 @@
  *  - 제목이 날마다 달라진다: 달러·엔화 중 가장 두드러진 사실 하나
  *
  * 발행 시각: 매매기준율은 서울외국환중개가 영업일 9시 전에 고시하고, 수출입은행 Open API 가 11시 전후 같은 값을 낸다
- * (2026-10-01 실측, 메모리 project-fx-daily-timeline). PC 수집기가 11시대에 부른다(collect-kgx.ps1 Publish-FxNews).
+ * (2026-10-01 실측, 메모리 project-fx-daily-timeline). PC 수집기가 09:30 개장 칸에서 부른다(collect-kgx.ps1 Publish-FxNews).
  * 수출입은행 키가 없으면 시장 중간환율(Yahoo)로 쓰고 기사에 그렇게 밝힌다.
  *
  * 원칙:

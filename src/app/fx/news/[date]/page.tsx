@@ -37,7 +37,7 @@ export default async function FxNewsPage({ params }: { params: Promise<{ date: s
   const i = dates.indexOf(date);
   const prev = i >= 0 && i + 1 < dates.length ? dates[i + 1] : null;
   const next = i > 0 ? dates[i - 1] : null;
-  const published = doc.publishedAt ?? `${doc.date}T11:10:00+09:00`;
+  const published = doc.publishedAt ?? `${doc.date}T09:30:00+09:00`;
 
   return (
     <>
