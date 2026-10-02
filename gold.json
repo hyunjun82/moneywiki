@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-02T20:18:41.444+09:00",
+  "updatedAt": "2026-10-03T08:43:51.541+09:00",
   "date": "2026-10-02",
   "retail": {
     "source": "한국금거래소",
@@ -170,36 +170,30 @@
     }
   },
   "reference": {
-    "xauUsd": 4216.5,
-    "usdKrw": 1348.1,
-    "asOf": "2026-10-02T20:18:35.000+09:00",
-    "basePerGram": 182753.32,
-    "basePerDon": 685325,
+    "xauUsd": 4172.1,
+    "usdKrw": 1342.51,
+    "asOf": "2026-10-03T06:18:11.000+09:00",
+    "basePerGram": 180079.1,
+    "basePerDon": 675297,
     "formula": "xauUsd / 31.1034768 * usdKrw * 3.75",
     "source": "COMEX 금 선물(GC=F) × USD/KRW — Yahoo Finance"
   },
   "intl": {
-    "xagUsd": 61.39,
-    "silverBasePerGram": 2660.79,
-    "silverBasePerDon": 9978,
+    "xagUsd": 60.71,
+    "silverBasePerGram": 2620.41,
+    "silverBasePerDon": 9827,
     "source": "COMEX 은 선물(SI=F) × USD/KRW — Yahoo Finance"
   },
   "wholesale": {
     "source": "KRX 금시장",
     "sourceUrl": "https://www.data.go.kr/data/15094805/openapi.do",
-    "date": "2026-09-30",
-    "closePerGram": 182940,
-    "closePerDon": 686025,
-    "change": 1480,
-    "changePct": 0.82,
+    "date": "2026-10-01",
+    "closePerGram": 183480,
+    "closePerDon": 688050,
+    "change": 540,
+    "changePct": 0.3,
     "note": "전 영업일 종가 (공공데이터포털, 1~2일 지연)",
     "monthly": [
-      {
-        "month": "2026-04",
-        "date": "2026-04-30",
-        "closePerGram": 217240,
-        "closePerDon": 814650
-      },
       {
         "month": "2026-05",
         "date": "2026-05-29",
@@ -229,6 +223,12 @@
         "date": "2026-09-30",
         "closePerGram": 182940,
         "closePerDon": 686025
+      },
+      {
+        "month": "2026-10",
+        "date": "2026-10-01",
+        "closePerGram": 183480,
+        "closePerDon": 688050
       }
     ]
   },
@@ -236,11 +236,11 @@
     "spread": 108000,
     "spreadPct": 13.57,
     "breakdown": {
-      "gold": 685325,
-      "craft": 38311,
+      "gold": 675297,
+      "craft": 48339,
       "vat": 72364
     },
-    "sellVsBase": 2675,
+    "sellVsBase": 12703,
     "k18Theory": 516000,
     "k18Gap": -10300,
     "k14Theory": 402480,
