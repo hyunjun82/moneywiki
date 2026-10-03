@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-03T08:43:48.459+09:00",
+  "updatedAt": "2026-10-03T11:23:17.619+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -20,24 +20,24 @@
         "key": "gold24",
         "name": "순금 24K",
         "userSell": {
-          "price": 688000,
-          "change": 3000,
+          "price": 676000,
+          "change": 12000,
           "dir": "down"
         },
         "userBuy": {
-          "price": 796400,
-          "change": 7700,
+          "price": 787600,
+          "change": 8800,
           "dir": "down",
-          "priceExVat": 724000,
-          "changeExVat": 7000
+          "priceExVat": 716000,
+          "changeExVat": 8000
         }
       },
       {
         "key": "gold18",
         "name": "18K",
         "userSell": {
-          "price": 505700,
-          "change": 2200,
+          "price": 496900,
+          "change": 8800,
           "dir": "down"
         },
         "userBuy": null
@@ -46,8 +46,8 @@
         "key": "gold14",
         "name": "14K",
         "userSell": {
-          "price": 392200,
-          "change": 1700,
+          "price": 385400,
+          "change": 6800,
           "dir": "down"
         },
         "userBuy": null
@@ -56,16 +56,16 @@
         "key": "platinum",
         "name": "백금",
         "userSell": {
-          "price": 220000,
-          "change": 0,
-          "dir": "none"
+          "price": 210000,
+          "change": 10000,
+          "dir": "down"
         },
         "userBuy": {
-          "price": 335500,
-          "change": 2200,
-          "dir": "up",
-          "priceExVat": 305000,
-          "changeExVat": 2000
+          "price": 324500,
+          "change": 11000,
+          "dir": "down",
+          "priceExVat": 295000,
+          "changeExVat": 10000
         }
       },
       {
@@ -77,11 +77,11 @@
           "dir": "none"
         },
         "userBuy": {
-          "price": 11121,
-          "change": 132,
+          "price": 10956,
+          "change": 165,
           "dir": "down",
-          "priceExVat": 10110,
-          "changeExVat": 120
+          "priceExVat": 9960,
+          "changeExVat": 150
         }
       }
     ]
