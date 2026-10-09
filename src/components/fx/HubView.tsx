@@ -201,6 +201,7 @@ export default function HubView({
           <Tool href="/fx/exchange-calculator" title="환전 계산기" body="은행·우대율을 넣어 실제로 낼 원화와 수수료를 계산합니다." />
           <Tool href="/fx/banks" title="은행별 환전 수수료 비교" body="은행 16곳의 수수료율·우대율로 받는 금액을 줄 세웁니다." />
           <Tool href="/fx/airport" title="인천공항 환전 수수료" body="공항점 공시 수수료율을 시내 창구·앱 우대와 비교합니다." />
+          <Tool href="/fx/exchange-fee" title="환전 수수료 아끼는 법" body="달러·엔화를 공항·창구·앱·100% 우대로 바꿀 때 오늘 낼 원화와 은행별 우대 조건." />
         </div>
       </section>
 

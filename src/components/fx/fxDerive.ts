@@ -568,3 +568,126 @@ export function airportFaq(data: FxData): Faq[] {
   });
   return out;
 }
+
+/* ─────────────────────────── 환전 수수료 아끼는 법 (/fx/exchange-fee) ─────────────────────────── */
+
+/**
+ * 은행연합회 공시에 없는 사실 — 공식 페이지를 Playwright 로 열어 확인한 것만 적는다(확인일 checked).
+ * 바뀌면 같은 페이지를 다시 열어 고친다. 확인되지 않은 카드·앱 혜택은 넣지 않는다(하나카드는 본문이 열리지 않아 뺐다).
+ */
+export const TOSS_FX = {
+  checked: "2026-10-09",
+  url: "https://www.tossbank.com/product-service/fx/account",
+  name: "토스뱅크 외화통장",
+  currencies: 17,
+  /** 입금(환전) 한도 */
+  limit: "하루 1천만 원·한 달 1억 원 상당",
+  who: "토스뱅크 원화 통장이 있는 14세 이상 거주자 개인, 1인 1계좌",
+} as const;
+
+export const CUSTOMS_FX = {
+  checked: "2026-10-09",
+  url: "https://www.customs.go.kr/kcs/cm/cntnts/cntntsView.do?mi=8458&cntntsId=2808",
+} as const;
+
+export interface FeeChannel {
+  key: "airport" | "counter" | "app" | "full";
+  label: string;
+  sub: string;
+  /** 실제로 붙는 수수료율 % (우대 반영) */
+  feeRate: number;
+  fee: number;
+  pay: number;
+}
+
+/** amount 외화를 어디서 사느냐에 따라 낼 원화 — 공항 창구 · 은행 창구(우대 없음) · 은행 앱 최대 우대 · 환율 100% 우대 */
+export function feeChannels(data: FxData | null | undefined, code: string, amount: number): { base: BaseRate; rows: FeeChannel[] } | null {
+  const base = baseOf(data, code);
+  if (!base) return null;
+  const plain = amount * base.perUnit;
+  const rows: FeeChannel[] = [];
+  const ap = airportCompare(data, code, amount);
+  if (ap) {
+    rows.push({ key: "airport", label: "인천공항 창구", sub: `${ap.rows.map((x) => x.bank).join("·")} 공항점 공시 중간값`, feeRate: ap.midBuy, fee: ap.airportFee, pay: plain + ap.airportFee });
+  }
+  const counter = counterPay(data, code, amount);
+  if (counter) {
+    rows.push({ key: "counter", label: "은행 창구 · 우대 없음", sub: `은행 ${banksOf(data, code).length}곳 공시 중간값`, feeRate: counter.feeRate, fee: counter.fee, pay: counter.pay });
+  }
+  const ranked = rankBanks(data, code, amount);
+  if (ranked.length) {
+    const r = ranked[0];
+    rows.push({ key: "app", label: "은행 앱 최대 우대", sub: `${bestLabel(ranked)} · 우대 ${r.pref}%`, feeRate: r.bank.feeRate * (1 - r.pref / 100), fee: r.fee, pay: r.pay });
+  }
+  rows.push({ key: "full", label: "환율 100% 우대", sub: `${TOSS_FX.name} · 살 때·팔 때`, feeRate: 0, fee: 0, pay: plain });
+  return { base, rows };
+}
+
+/** amount 외화가 남아 원화로 바꿀 때 받는 돈 — 공항 창구 · 은행 창구(우대 없음) · 환율 100% 우대 */
+export function sellChannels(data: FxData | null | undefined, code: string, amount: number) {
+  const base = baseOf(data, code);
+  if (!base) return null;
+  const plain = amount * base.perUnit;
+  const rows: { label: string; feeRate: number; get: number }[] = [];
+  const ap = airportCompare(data, code, amount);
+  if (ap?.midSell != null) rows.push({ label: "인천공항 창구", feeRate: ap.midSell, get: plain * (1 - ap.midSell / 100) });
+  const fee = medianFee(data, code);
+  if (fee != null) rows.push({ label: "은행 창구 · 우대 없음", feeRate: fee, get: amount * bankRate(base.perUnit, fee, 0, "sell") });
+  rows.push({ label: `환율 100% 우대 · ${TOSS_FX.name}`, feeRate: 0, get: plain });
+  return { base, rows };
+}
+
+/** 은행별 우대 조건 원문(은행연합회 공시) — 최대 우대율 높은 순. 조건 원문은 통화와 관계없이 은행마다 같아 달러 공시를 쓴다 */
+export function prefConditions(data: FxData | null | undefined, code = "USD"): FxBank[] {
+  return [...banksOf(data, code)].sort(
+    (a, b) => (b.maxPref ?? b.basePref ?? 0) - (a.maxPref ?? a.basePref ?? 0) || (b.basePref ?? 0) - (a.basePref ?? 0) || a.bank.localeCompare(b.bank, "ko")
+  );
+}
+
+export function feeFaq(data: FxData): Faq[] {
+  const out: Faq[] = [];
+  const usd = feeChannels(data, "USD", 1000);
+  const jpy = feeChannels(data, "JPY", 100000);
+  const pick = (c: ReturnType<typeof feeChannels>, k: FeeChannel["key"]) => c?.rows.find((r) => r.key === k);
+  const ua = pick(usd, "airport");
+  const uc = pick(usd, "counter");
+  const up = pick(usd, "app");
+  if (uc && up) {
+    out.push({
+      q: "환전 수수료를 가장 적게 내는 방법은 무엇인가요?",
+      a:
+        `어디서 바꾸느냐가 가장 큽니다. 1,000달러를 살 때 수수료는 ` +
+        (ua ? `인천공항 창구 약 ${won(ua.fee)}원, ` : "") +
+        `우대 없는 은행 창구 ${won(uc.fee)}원, 은행 앱 최대 우대(${up.sub.split(" · ")[0]}) ${won(up.fee)}원입니다. ` +
+        `${TOSS_FX.name}처럼 살 때 환율 우대 100%를 내건 통장은 수수료가 0원입니다(${korDate(TOSS_FX.checked)} 상품 안내 기준, 그 은행이 고시하는 기준 환율로 계산).`,
+    });
+  }
+  if (uc) {
+    out.push({
+      q: "달러 환전 수수료는 얼마인가요?",
+      a: `은행연합회에 공시된 은행 16곳의 달러 현찰 수수료율은 중간값 ${+uc.feeRate.toFixed(2)}%입니다. 1,000달러면 우대 없이 ${won(uc.fee)}원이고, 우대율 90%를 받으면 그 10%인 약 ${won(uc.fee * 0.1)}원입니다.`,
+    });
+  }
+  const jc = pick(jpy, "counter");
+  const jp = pick(jpy, "app");
+  if (jc) {
+    out.push({
+      q: "엔화 환전 수수료는 얼마인가요?",
+      a: `엔화 현찰 수수료율은 은행 공시 중간값 ${+jc.feeRate.toFixed(2)}%입니다. 10만 엔을 살 때 우대 없는 창구는 수수료 ${won(jc.fee)}원` +
+        (jp ? `, 은행 앱 최대 우대는 ${won(jp.fee)}원입니다.` : "입니다."),
+    });
+  }
+  out.push({
+    q: "환율 우대 90%면 환율을 90% 깎아 주나요?",
+    a: "아닙니다. 기준 환율과 현찰 살 때 환율의 차이, 곧 환전 수수료에서 90%를 빼 준다는 뜻입니다. 수수료율 1.75%인 통화를 90% 우대받으면 실제 수수료율은 0.175%, 100% 우대면 기준 환율 그대로 삽니다.",
+  });
+  out.push({
+    q: `${TOSS_FX.name}은 환율 우대가 몇 %인가요?`,
+    a: `토스뱅크 상품 안내(${korDate(TOSS_FX.checked)} 확인)에 외화 살 때·팔 때 모두 환율 100% 우대로 적혀 있습니다. 통화 ${TOSS_FX.currencies}종을 한 통장에 담고, 환전 입금 한도는 ${TOSS_FX.limit}입니다. 토스뱅크 매매기준율은 다른 은행과 다를 수 있다고 함께 적혀 있습니다.`,
+  });
+  out.push({
+    q: "외화는 얼마까지 신고 없이 가지고 나갈 수 있나요?",
+    a: "관세청 안내로 외화·원화·자기앞수표를 모두 합해 미화 1만 달러 이하면 신고 없이 가지고 출국할 수 있습니다. 일반 여행자가 1만 달러를 넘게 가지고 나가려면 세관에 신고해야 하고, 신고하지 않으면 위반 금액 3만 달러 이하는 과태료, 넘으면 1년 이하 징역 또는 1억 원 이하 벌금 대상입니다. 입국할 때도 1만 달러를 넘으면 신고합니다.",
+  });
+  return out;
+}

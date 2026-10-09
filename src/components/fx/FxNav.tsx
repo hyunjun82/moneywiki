@@ -11,6 +11,7 @@ const TABS = [
   { href: "/fx/calculator", label: "환율 계산기" },
   { href: "/fx/exchange-calculator", label: "환전 계산기" },
   { href: "/fx/banks", label: "은행 비교" },
+  { href: "/fx/exchange-fee", label: "수수료 아끼기" },
   { href: "/fx/airport", label: "공항 환전" },
 ] as const;
 

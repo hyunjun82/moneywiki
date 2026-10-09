@@ -59,7 +59,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
                 changeFrequency: "daily" as const,
                 priority: 0.9,
       },
-      ...["banks", "calculator", "exchange-calculator", "airport"].map((p) => ({
+      ...["banks", "calculator", "exchange-calculator", "exchange-fee", "airport"].map((p) => ({
                 url: `${baseUrl}/fx/${p}`,
                 lastModified: new Date(),
                 changeFrequency: "daily" as const,
