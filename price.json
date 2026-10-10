@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-10T20:25:00.833+09:00",
+  "updatedAt": "2026-10-11T08:28:47.003+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -11,7 +11,7 @@
   "retail": {
     "source": "종로금거래소",
     "sourceUrl": "https://www.jongrogx.com/",
-    "quoteDate": "2026-10-10",
+    "quoteDate": "2026-10-11",
     "unit": "원/돈",
     "vatIncludedBuy": true,
     "note": "살 때 가격은 부가세 10%를 포함한 실제 결제 금액입니다(종로금거래소 원문 고시가에 부가세를 더한 값).",
