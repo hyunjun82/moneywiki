@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T14:00:04.288+09:00",
+  "updatedAt": "2026-10-12T14:30:06.527+09:00",
   "date": "2026-10-12",
   "retail": {
     "source": "한국금거래소",
@@ -9,14 +9,14 @@
     "note": "한국금거래소 고시. 살 때는 부가세 10% 포함, 하루 여러 차례 고시됩니다. 18K·14K 살 때는 제품 시세가 적용됩니다.",
     "latest": {
       "date": "2026-10-12",
-      "round": 1,
-      "time": "09:52:22",
-      "buy": 794000,
-      "sell": 679000,
-      "k18": 499100,
-      "k14": 387100,
-      "s18": 583590,
-      "s14": 452580
+      "round": 2,
+      "time": "14:27:18",
+      "buy": 790000,
+      "sell": 677000,
+      "k18": 497600,
+      "k14": 385900,
+      "s18": 580650,
+      "s14": 450300
     },
     "prevClose": {
       "date": "2026-10-10",
@@ -28,14 +28,31 @@
       "k14": 388800
     },
     "change": {
-      "buy": -1000,
-      "buyPct": -0.13,
-      "sell": -3000,
-      "sellPct": -0.44,
-      "k18": -2200,
-      "k14": -1700
+      "buy": -5000,
+      "buyPct": -0.63,
+      "sell": -5000,
+      "sellPct": -0.73,
+      "k18": -3700,
+      "k14": -2900
     },
     "quotes": [
+      {
+        "date": "2026-10-12",
+        "round": 2,
+        "time": "14:27:18",
+        "buy": 790000,
+        "sell": 677000,
+        "k18": 497600,
+        "k14": 385900,
+        "platinum": {
+          "buy": 317000,
+          "sell": 257000
+        },
+        "silver": {
+          "buy": 10980,
+          "sell": 9140
+        }
+      },
       {
         "date": "2026-10-12",
         "round": 1,
@@ -106,31 +123,31 @@
       }
     ],
     "platinum": {
-      "buy": 318000,
-      "sell": 258000,
+      "buy": 317000,
+      "sell": 257000,
       "prevBuy": 317000,
       "prevSell": 257000
     },
     "silver": {
-      "buy": 11050,
-      "sell": 9200,
+      "buy": 10980,
+      "sell": 9140,
       "prevBuy": 11020,
       "prevSell": 9170
     }
   },
   "reference": {
-    "xauUsd": 4220.6,
-    "usdKrw": 1334.42,
-    "asOf": "2026-10-12T14:00:12.000+09:00",
-    "basePerGram": 181074.71,
-    "basePerDon": 679030,
+    "xauUsd": 4211.8,
+    "usdKrw": 1335.62,
+    "asOf": "2026-10-12T14:30:14.000+09:00",
+    "basePerGram": 180859.66,
+    "basePerDon": 678224,
     "formula": "xauUsd / 31.1034768 * usdKrw * 3.75",
     "source": "COMEX 금 선물(GC=F) × USD/KRW — Yahoo Finance"
   },
   "intl": {
-    "xagUsd": 61.31,
-    "silverBasePerGram": 2630.14,
-    "silverBasePerDon": 9863,
+    "xagUsd": 61.13,
+    "silverBasePerGram": 2624.99,
+    "silverBasePerDon": 9844,
     "source": "COMEX 은 선물(SI=F) × USD/KRW — Yahoo Finance"
   },
   "wholesale": {
@@ -182,18 +199,18 @@
     ]
   },
   "derived": {
-    "spread": 115000,
-    "spreadPct": 14.48,
+    "spread": 113000,
+    "spreadPct": 14.3,
     "breakdown": {
-      "gold": 679030,
-      "craft": 42788,
-      "vat": 72182
+      "gold": 678224,
+      "craft": 39958,
+      "vat": 71818
     },
-    "sellVsBase": -30,
-    "k18Theory": 509250,
+    "sellVsBase": -1224,
+    "k18Theory": 507750,
     "k18Gap": -10150,
-    "k14Theory": 397215,
-    "k14Gap": -10115
+    "k14Theory": 396045,
+    "k14Gap": -10145
   },
   "history": {
     "daily": [
@@ -2927,11 +2944,11 @@
       },
       {
         "date": "2026-10-12",
-        "buy": 794000,
-        "sell": 679000,
-        "k18": 499100,
-        "k14": 387100,
-        "rounds": 1
+        "buy": 790000,
+        "sell": 677000,
+        "k18": 497600,
+        "k14": 385900,
+        "rounds": 2
       }
     ],
     "days": 342,
