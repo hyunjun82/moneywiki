@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T10:58:45.267+09:00",
+  "updatedAt": "2026-10-13T18:19:20.112+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -11,7 +11,7 @@
   "retail": {
     "source": "종로금거래소",
     "sourceUrl": "https://www.jongrogx.com/",
-    "quoteDate": "2026-10-12",
+    "quoteDate": "2026-10-13",
     "unit": "원/돈",
     "vatIncludedBuy": true,
     "note": "살 때 가격은 부가세 10%를 포함한 실제 결제 금액입니다(종로금거래소 원문 고시가에 부가세를 더한 값).",
@@ -20,25 +20,25 @@
         "key": "gold24",
         "name": "순금 24K",
         "userSell": {
-          "price": 677000,
-          "change": 5000,
-          "dir": "down"
+          "price": 679000,
+          "change": 2000,
+          "dir": "up"
         },
         "userBuy": {
-          "price": 790900,
-          "change": 4400,
-          "dir": "down",
-          "priceExVat": 719000,
-          "changeExVat": 4000
+          "price": 794200,
+          "change": 3300,
+          "dir": "up",
+          "priceExVat": 722000,
+          "changeExVat": 3000
         }
       },
       {
         "key": "gold18",
         "name": "18K",
         "userSell": {
-          "price": 497600,
-          "change": 3700,
-          "dir": "down"
+          "price": 499100,
+          "change": 1500,
+          "dir": "up"
         },
         "userBuy": null
       },
@@ -46,9 +46,9 @@
         "key": "gold14",
         "name": "14K",
         "userSell": {
-          "price": 385900,
-          "change": 2900,
-          "dir": "down"
+          "price": 387100,
+          "change": 1200,
+          "dir": "up"
         },
         "userBuy": null
       },
@@ -62,10 +62,10 @@
         },
         "userBuy": {
           "price": 324500,
-          "change": 4400,
-          "dir": "up",
+          "change": 0,
+          "dir": "none",
           "priceExVat": 295000,
-          "changeExVat": 4000
+          "changeExVat": 0
         }
       },
       {
@@ -77,11 +77,11 @@
           "dir": "none"
         },
         "userBuy": {
-          "price": 10978,
-          "change": 44,
+          "price": 10956,
+          "change": 22,
           "dir": "down",
-          "priceExVat": 9980,
-          "changeExVat": 40
+          "priceExVat": 9960,
+          "changeExVat": 20
         }
       }
     ]
@@ -1119,9 +1119,9 @@
     "fetchedDate": "2026-10-13"
   },
   "fx": {
-    "usdkrw": 1337.48,
-    "change": -5.51,
-    "changePct": -0.41,
+    "usdkrw": 1340.84,
+    "change": -2.15,
+    "changePct": -0.16,
     "dir": "down",
     "changeBasis": "prevClose",
     "prevClose": {
@@ -1133,30 +1133,30 @@
   "intl": {
     "gold": {
       "name": "금",
-      "usdPerOz": 4174.5,
-      "changePct": -0.99,
-      "dir": "down",
+      "usdPerOz": 4212.5,
+      "changePct": 0.52,
+      "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-10-09",
-        "price": 4216.3
+        "date": "2026-10-12",
+        "price": 4190.6
       },
-      "krwPerGram": 179508,
-      "krwPerDon": 673155,
+      "krwPerGram": 181597,
+      "krwPerDon": 680989,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
       "name": "은",
-      "usdPerOz": 59.86,
-      "changePct": -1.34,
-      "dir": "down",
+      "usdPerOz": 60.79,
+      "changePct": 1.08,
+      "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-10-09",
-        "price": 60.67
+        "date": "2026-10-12",
+        "price": 60.14
       },
-      "krwPerGram": 2574,
-      "krwPerDon": 9653,
+      "krwPerGram": 2621,
+      "krwPerDon": 9829,
       "source": "COMEX 은 선물 (SI=F)"
     }
   },
@@ -1180,9 +1180,9 @@
       "name": "달러인덱스",
       "symbol": "DX-Y.NYB",
       "unit": "pt",
-      "price": 102.49,
-      "change": -0.09,
-      "changePct": -0.09,
+      "price": 102.3,
+      "change": -0.28,
+      "changePct": -0.28,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
@@ -1195,14 +1195,14 @@
       "name": "WTI 유가",
       "symbol": "CL=F",
       "unit": "$",
-      "price": 92.84,
-      "change": 0.99,
-      "changePct": 1.08,
-      "dir": "up",
+      "price": 91.97,
+      "change": -1.77,
+      "changePct": -1.89,
+      "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-10-09",
-        "price": 91.85
+        "date": "2026-10-12",
+        "price": 93.74
       },
       "source": "Yahoo Finance (CL=F)"
     }
