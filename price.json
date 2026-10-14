@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-14T11:12:26.360+09:00",
+  "updatedAt": "2026-10-14T16:47:30.492+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -1126,9 +1126,9 @@
     "fetchedDate": "2026-10-14"
   },
   "fx": {
-    "usdkrw": 1336.78,
-    "change": 2.65,
-    "changePct": 0.2,
+    "usdkrw": 1335.28,
+    "change": 1.15,
+    "changePct": 0.09,
     "dir": "up",
     "changeBasis": "prevClose",
     "prevClose": {
@@ -1140,30 +1140,30 @@
   "intl": {
     "gold": {
       "name": "금",
-      "usdPerOz": 4179.4,
-      "changePct": 0.05,
-      "dir": "up",
+      "usdPerOz": 4170.4,
+      "changePct": -0.17,
+      "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-10-13",
         "price": 4177.3
       },
-      "krwPerGram": 179624,
-      "krwPerDon": 673590,
+      "krwPerGram": 179036,
+      "krwPerDon": 671385,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
       "name": "은",
-      "usdPerOz": 59.27,
-      "changePct": 0.18,
-      "dir": "up",
+      "usdPerOz": 58.83,
+      "changePct": -0.57,
+      "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-10-13",
         "price": 59.16
       },
-      "krwPerGram": 2547,
-      "krwPerDon": 9551,
+      "krwPerGram": 2525,
+      "krwPerDon": 9469,
       "source": "COMEX 은 선물 (SI=F)"
     }
   },
@@ -1187,9 +1187,9 @@
       "name": "달러인덱스",
       "symbol": "DX-Y.NYB",
       "unit": "pt",
-      "price": 102.14,
-      "change": -0.04,
-      "changePct": -0.04,
+      "price": 102.13,
+      "change": -0.05,
+      "changePct": -0.05,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
@@ -1202,9 +1202,9 @@
       "name": "WTI 유가",
       "symbol": "CL=F",
       "unit": "$",
-      "price": 95.21,
-      "change": 1.07,
-      "changePct": 1.14,
+      "price": 94.58,
+      "change": 0.44,
+      "changePct": 0.47,
       "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
