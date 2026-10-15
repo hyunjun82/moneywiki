@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-15T10:34:06.388+09:00",
+  "updatedAt": "2026-10-15T15:26:09.449+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -20,24 +20,24 @@
         "key": "gold24",
         "name": "순금 24K",
         "userSell": {
-          "price": 674000,
-          "change": 1000,
+          "price": 676000,
+          "change": 3000,
           "dir": "up"
         },
         "userBuy": {
-          "price": 788700,
-          "change": 5500,
+          "price": 792000,
+          "change": 8800,
           "dir": "up",
-          "priceExVat": 717000,
-          "changeExVat": 5000
+          "priceExVat": 720000,
+          "changeExVat": 8000
         }
       },
       {
         "key": "gold18",
         "name": "18K",
         "userSell": {
-          "price": 495400,
-          "change": 700,
+          "price": 496900,
+          "change": 2200,
           "dir": "up"
         },
         "userBuy": null
@@ -46,8 +46,8 @@
         "key": "gold14",
         "name": "14K",
         "userSell": {
-          "price": 384200,
-          "change": 500,
+          "price": 385400,
+          "change": 1700,
           "dir": "up"
         },
         "userBuy": null
@@ -61,11 +61,11 @@
           "dir": "none"
         },
         "userBuy": {
-          "price": 317900,
-          "change": 0,
-          "dir": "none",
-          "priceExVat": 289000,
-          "changeExVat": 0
+          "price": 311300,
+          "change": 6600,
+          "dir": "down",
+          "priceExVat": 283000,
+          "changeExVat": 6000
         }
       },
       {
@@ -77,11 +77,11 @@
           "dir": "none"
         },
         "userBuy": {
-          "price": 10197,
-          "change": 374,
+          "price": 10252,
+          "change": 319,
           "dir": "down",
-          "priceExVat": 9270,
-          "changeExVat": 340
+          "priceExVat": 9320,
+          "changeExVat": 290
         }
       }
     ]
@@ -1133,9 +1133,9 @@
     "fetchedDate": "2026-10-15"
   },
   "fx": {
-    "usdkrw": 1351.18,
-    "change": 10.87,
-    "changePct": 0.81,
+    "usdkrw": 1348.18,
+    "change": 7.87,
+    "changePct": 0.59,
     "dir": "up",
     "changeBasis": "prevClose",
     "prevClose": {
@@ -1147,30 +1147,30 @@
   "intl": {
     "gold": {
       "name": "금",
-      "usdPerOz": 4166.5,
-      "changePct": -0.26,
-      "dir": "down",
+      "usdPerOz": 4154.6,
+      "changePct": 1.14,
+      "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-10-13",
-        "price": 4177.3
+        "date": "2026-10-14",
+        "price": 4107.9
       },
-      "krwPerGram": 180999,
-      "krwPerDon": 678746,
+      "krwPerGram": 180081,
+      "krwPerDon": 675304,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
       "name": "은",
-      "usdPerOz": 56.41,
-      "changePct": -4.66,
-      "dir": "down",
+      "usdPerOz": 56.19,
+      "changePct": 1.15,
+      "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-10-13",
-        "price": 59.16
+        "date": "2026-10-14",
+        "price": 55.55
       },
-      "krwPerGram": 2450,
-      "krwPerDon": 9188,
+      "krwPerGram": 2436,
+      "krwPerDon": 9135,
       "source": "COMEX 은 선물 (SI=F)"
     }
   },
@@ -1194,9 +1194,9 @@
       "name": "달러인덱스",
       "symbol": "DX-Y.NYB",
       "unit": "pt",
-      "price": 102.07,
-      "change": -0.48,
-      "changePct": -0.47,
+      "price": 102.09,
+      "change": -0.46,
+      "changePct": -0.45,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
@@ -1209,14 +1209,14 @@
       "name": "WTI 유가",
       "symbol": "CL=F",
       "unit": "$",
-      "price": 93.99,
-      "change": -0.15,
-      "changePct": -0.16,
+      "price": 94.09,
+      "change": -1,
+      "changePct": -1.05,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-10-13",
-        "price": 94.14
+        "date": "2026-10-14",
+        "price": 95.09
       },
       "source": "Yahoo Finance (CL=F)"
     }
