@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T20:14:27.891+09:00",
+  "updatedAt": "2026-10-17T07:46:33.139+09:00",
   "date": "2026-10-16",
   "retail": {
     "source": "한국금거래소",
@@ -187,28 +187,28 @@
     }
   },
   "reference": {
-    "xauUsd": 4196.3,
-    "usdKrw": 1330.82,
-    "asOf": "2026-10-16T20:14:25.000+09:00",
-    "basePerGram": 179546.49,
-    "basePerDon": 673299,
+    "xauUsd": 4186.7,
+    "usdKrw": 1334.2,
+    "asOf": "2026-10-17T06:00:38.000+09:00",
+    "basePerGram": 179590.7,
+    "basePerDon": 673465,
     "formula": "xauUsd / 31.1034768 * usdKrw * 3.75",
     "source": "COMEX 금 선물(GC=F) × USD/KRW — Yahoo Finance"
   },
   "intl": {
-    "xagUsd": 57.95,
-    "silverBasePerGram": 2479.28,
-    "silverBasePerDon": 9297,
+    "xagUsd": 57.14,
+    "silverBasePerGram": 2450.84,
+    "silverBasePerDon": 9191,
     "source": "COMEX 은 선물(SI=F) × USD/KRW — Yahoo Finance"
   },
   "wholesale": {
     "source": "KRX 금시장",
     "sourceUrl": "https://www.data.go.kr/data/15094805/openapi.do",
-    "date": "2026-10-14",
-    "closePerGram": 179180,
-    "closePerDon": 671925,
-    "change": -1920,
-    "changePct": -1.06,
+    "date": "2026-10-15",
+    "closePerGram": 179050,
+    "closePerDon": 671438,
+    "change": -130,
+    "changePct": -0.07,
     "note": "전 영업일 종가 (공공데이터포털, 1~2일 지연)",
     "monthly": [
       {
@@ -243,9 +243,9 @@
       },
       {
         "month": "2026-10",
-        "date": "2026-10-14",
-        "closePerGram": 179180,
-        "closePerDon": 671925
+        "date": "2026-10-15",
+        "closePerGram": 179050,
+        "closePerDon": 671438
       }
     ]
   },
@@ -253,11 +253,11 @@
     "spread": 119000,
     "spreadPct": 14.99,
     "breakdown": {
-      "gold": 673299,
-      "craft": 48519,
+      "gold": 673465,
+      "craft": 48353,
       "vat": 72182
     },
-    "sellVsBase": 1701,
+    "sellVsBase": 1535,
     "k18Theory": 506250,
     "k18Gap": -10050,
     "k14Theory": 394875,
