@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T07:46:30.188+09:00",
+  "updatedAt": "2026-10-17T09:49:41.566+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -20,25 +20,25 @@
         "key": "gold24",
         "name": "순금 24K",
         "userSell": {
-          "price": 675000,
-          "change": 3000,
-          "dir": "up"
+          "price": 670000,
+          "change": 5000,
+          "dir": "down"
         },
         "userBuy": {
-          "price": 794200,
-          "change": 6600,
-          "dir": "up",
-          "priceExVat": 722000,
-          "changeExVat": 6000
+          "price": 786500,
+          "change": 7700,
+          "dir": "down",
+          "priceExVat": 715000,
+          "changeExVat": 7000
         }
       },
       {
         "key": "gold18",
         "name": "18K",
         "userSell": {
-          "price": 496200,
-          "change": 2200,
-          "dir": "up"
+          "price": 492500,
+          "change": 3700,
+          "dir": "down"
         },
         "userBuy": null
       },
@@ -46,9 +46,9 @@
         "key": "gold14",
         "name": "14K",
         "userSell": {
-          "price": 384800,
-          "change": 1700,
-          "dir": "up"
+          "price": 381900,
+          "change": 2900,
+          "dir": "down"
         },
         "userBuy": null
       },
@@ -62,10 +62,10 @@
         },
         "userBuy": {
           "price": 310200,
-          "change": 1100,
-          "dir": "down",
+          "change": 0,
+          "dir": "none",
           "priceExVat": 282000,
-          "changeExVat": 1000
+          "changeExVat": 0
         }
       },
       {
@@ -77,11 +77,11 @@
           "dir": "none"
         },
         "userBuy": {
-          "price": 10505,
-          "change": 308,
-          "dir": "up",
-          "priceExVat": 9550,
-          "changeExVat": 280
+          "price": 10285,
+          "change": 220,
+          "dir": "down",
+          "priceExVat": 9350,
+          "changeExVat": 200
         }
       }
     ]
