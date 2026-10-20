@@ -1,30 +1,26 @@
 {
-  "updatedAt": "2026-10-19T23:42:30.724+09:00",
+  "updatedAt": "2026-10-20T09:30:52.978+09:00",
   "base": "KRW",
   "source": "Yahoo Finance (시장 중간환율)",
   "note": "시장 중간환율입니다. 등락은 전일 종가 대비이며, 은행 창구·앱의 현찰 환전가는 여기에 수수료와 우대율이 적용됩니다.",
   "changeBasis": "prevClose",
-  "historyDate": "2026-10-19",
+  "historyDate": "2026-10-20",
   "rates": [
     {
       "code": "USD",
       "name": "미국 달러",
       "unit": 1,
       "region": "미주",
-      "rate": 1330.71,
-      "change": -10.24,
-      "changePct": -0.76,
+      "rate": 1327.98,
+      "change": -5.45,
+      "changePct": -0.41,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-10-16",
-        "rate": 1340.95
+        "date": "2026-10-19",
+        "rate": 1333.43
       },
       "history": [
-        {
-          "date": "2026-09-11",
-          "rate": 1348.17
-        },
         {
           "date": "2026-09-12",
           "rate": 1341.05
@@ -139,7 +135,11 @@
         },
         {
           "date": "2026-10-19",
-          "rate": 1330.71
+          "rate": 1333.43
+        },
+        {
+          "date": "2026-10-20",
+          "rate": 1327.98
         }
       ]
     },
@@ -148,20 +148,16 @@
       "name": "일본 엔",
       "unit": 100,
       "region": "일본·중화권",
-      "rate": 838,
-      "change": -9.74,
-      "changePct": -1.15,
+      "rate": 835.7,
+      "change": -9.28,
+      "changePct": -1.1,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-10-16",
-        "rate": 847.74
+        "date": "2026-10-19",
+        "rate": 844.98
       },
       "history": [
-        {
-          "date": "2026-09-11",
-          "rate": 872.73
-        },
         {
           "date": "2026-09-12",
           "rate": 871
@@ -276,7 +272,11 @@
         },
         {
           "date": "2026-10-19",
-          "rate": 838
+          "rate": 844.98
+        },
+        {
+          "date": "2026-10-20",
+          "rate": 835.7
         }
       ]
     },
@@ -285,20 +285,16 @@
       "name": "유로",
       "unit": 1,
       "region": "유럽",
-      "rate": 1492,
-      "change": -9.45,
-      "changePct": -0.63,
+      "rate": 1489.2,
+      "change": -9.02,
+      "changePct": -0.6,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-10-16",
-        "rate": 1501.45
+        "date": "2026-10-19",
+        "rate": 1498.22
       },
       "history": [
-        {
-          "date": "2026-09-11",
-          "rate": 1565.09
-        },
         {
           "date": "2026-09-12",
           "rate": 1554.8
@@ -413,7 +409,11 @@
         },
         {
           "date": "2026-10-19",
-          "rate": 1492
+          "rate": 1498.22
+        },
+        {
+          "date": "2026-10-20",
+          "rate": 1489.2
         }
       ]
     },
@@ -422,20 +422,16 @@
       "name": "중국 위안",
       "unit": 1,
       "region": "일본·중화권",
-      "rate": 199.24,
-      "change": 0.1,
-      "changePct": 0.05,
-      "dir": "up",
+      "rate": 199.14,
+      "change": -0.1,
+      "changePct": -0.05,
+      "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-10-16",
-        "rate": 199.14
+        "date": "2026-10-19",
+        "rate": 199.24
       },
       "history": [
-        {
-          "date": "2026-09-11",
-          "rate": 199.65
-        },
         {
           "date": "2026-09-12",
           "rate": 199.89
@@ -551,6 +547,10 @@
         {
           "date": "2026-10-19",
           "rate": 199.24
+        },
+        {
+          "date": "2026-10-20",
+          "rate": 199.14
         }
       ]
     },
@@ -559,20 +559,16 @@
       "name": "영국 파운드",
       "unit": 1,
       "region": "유럽",
-      "rate": 1770.77,
-      "change": -8.61,
-      "changePct": -0.48,
+      "rate": 1766.72,
+      "change": -11.39,
+      "changePct": -0.64,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-10-16",
-        "rate": 1779.38
+        "date": "2026-10-19",
+        "rate": 1778.11
       },
       "history": [
-        {
-          "date": "2026-09-11",
-          "rate": 1821.52
-        },
         {
           "date": "2026-09-12",
           "rate": 1812.39
@@ -687,7 +683,11 @@
         },
         {
           "date": "2026-10-19",
-          "rate": 1770.77
+          "rate": 1778.11
+        },
+        {
+          "date": "2026-10-20",
+          "rate": 1766.72
         }
       ]
     },
@@ -696,20 +696,16 @@
       "name": "호주 달러",
       "unit": 1,
       "region": "미주",
-      "rate": 930.27,
-      "change": 2.73,
-      "changePct": 0.29,
-      "dir": "up",
+      "rate": 926.86,
+      "change": -2.8,
+      "changePct": -0.3,
+      "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-10-16",
-        "rate": 927.54
+        "date": "2026-10-19",
+        "rate": 929.66
       },
       "history": [
-        {
-          "date": "2026-09-11",
-          "rate": 964.78
-        },
         {
           "date": "2026-09-12",
           "rate": 961.64
@@ -824,7 +820,11 @@
         },
         {
           "date": "2026-10-19",
-          "rate": 930.27
+          "rate": 929.66
+        },
+        {
+          "date": "2026-10-20",
+          "rate": 926.86
         }
       ]
     },
@@ -833,20 +833,16 @@
       "name": "캐나다 달러",
       "unit": 1,
       "region": "미주",
-      "rate": 944.51,
-      "change": -0.05,
-      "changePct": -0.01,
+      "rate": 942.51,
+      "change": -1.8,
+      "changePct": -0.19,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-10-16",
-        "rate": 944.56
+        "date": "2026-10-19",
+        "rate": 944.31
       },
       "history": [
-        {
-          "date": "2026-09-11",
-          "rate": 974.4
-        },
         {
           "date": "2026-09-12",
           "rate": 966.88
@@ -961,7 +957,11 @@
         },
         {
           "date": "2026-10-19",
-          "rate": 944.51
+          "rate": 944.31
+        },
+        {
+          "date": "2026-10-20",
+          "rate": 942.51
         }
       ]
     },
@@ -970,20 +970,16 @@
       "name": "스위스 프랑",
       "unit": 1,
       "region": "유럽",
-      "rate": 1612.69,
-      "change": -6.94,
-      "changePct": -0.43,
+      "rate": 1608.6,
+      "change": -9.96,
+      "changePct": -0.62,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-10-16",
-        "rate": 1619.63
+        "date": "2026-10-19",
+        "rate": 1618.56
       },
       "history": [
-        {
-          "date": "2026-09-11",
-          "rate": 1657.86
-        },
         {
           "date": "2026-09-12",
           "rate": 1642.62
@@ -1098,7 +1094,11 @@
         },
         {
           "date": "2026-10-19",
-          "rate": 1612.69
+          "rate": 1618.56
+        },
+        {
+          "date": "2026-10-20",
+          "rate": 1608.6
         }
       ]
     },
@@ -1107,20 +1107,16 @@
       "name": "홍콩 달러",
       "unit": 1,
       "region": "일본·중화권",
-      "rate": 169.18,
-      "change": -1.64,
-      "changePct": -0.96,
+      "rate": 168.8,
+      "change": -1.12,
+      "changePct": -0.66,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-10-16",
-        "rate": 170.82
+        "date": "2026-10-19",
+        "rate": 169.92
       },
       "history": [
-        {
-          "date": "2026-09-11",
-          "rate": 171.93
-        },
         {
           "date": "2026-09-12",
           "rate": 170.56
@@ -1235,7 +1231,11 @@
         },
         {
           "date": "2026-10-19",
-          "rate": 169.18
+          "rate": 169.92
+        },
+        {
+          "date": "2026-10-20",
+          "rate": 168.8
         }
       ]
     },
@@ -1244,20 +1244,16 @@
       "name": "대만 달러",
       "unit": 1,
       "region": "일본·중화권",
-      "rate": 41,
-      "change": -0.48,
-      "changePct": -1.16,
+      "rate": 40.89,
+      "change": -0.28,
+      "changePct": -0.68,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-10-16",
-        "rate": 41.48
+        "date": "2026-10-19",
+        "rate": 41.17
       },
       "history": [
-        {
-          "date": "2026-09-11",
-          "rate": 42.62
-        },
         {
           "date": "2026-09-12",
           "rate": 42.4
@@ -1372,7 +1368,11 @@
         },
         {
           "date": "2026-10-19",
-          "rate": 41
+          "rate": 41.17
+        },
+        {
+          "date": "2026-10-20",
+          "rate": 40.89
         }
       ]
     },
@@ -1381,20 +1381,16 @@
       "name": "싱가포르 달러",
       "unit": 1,
       "region": "동남아",
-      "rate": 1040.01,
-      "change": -5.7,
-      "changePct": -0.55,
+      "rate": 1037.98,
+      "change": -4.31,
+      "changePct": -0.41,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-10-16",
-        "rate": 1045.71
+        "date": "2026-10-19",
+        "rate": 1042.29
       },
       "history": [
-        {
-          "date": "2026-09-11",
-          "rate": 1063.14
-        },
         {
           "date": "2026-09-12",
           "rate": 1058.21
@@ -1509,7 +1505,11 @@
         },
         {
           "date": "2026-10-19",
-          "rate": 1040.01
+          "rate": 1042.29
+        },
+        {
+          "date": "2026-10-20",
+          "rate": 1037.98
         }
       ]
     },
@@ -1518,20 +1518,16 @@
       "name": "태국 바트",
       "unit": 1,
       "region": "동남아",
-      "rate": 39.67,
-      "change": -0.33,
-      "changePct": -0.82,
+      "rate": 39.56,
+      "change": -0.32,
+      "changePct": -0.8,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-10-16",
-        "rate": 40
+        "date": "2026-10-19",
+        "rate": 39.88
       },
       "history": [
-        {
-          "date": "2026-09-11",
-          "rate": 40.67
-        },
         {
           "date": "2026-09-12",
           "rate": 40.59
@@ -1646,7 +1642,11 @@
         },
         {
           "date": "2026-10-19",
-          "rate": 39.67
+          "rate": 39.88
+        },
+        {
+          "date": "2026-10-20",
+          "rate": 39.56
         }
       ]
     },
@@ -1655,9 +1655,9 @@
       "name": "베트남 동",
       "unit": 100,
       "region": "동남아",
-      "rate": 5.14,
-      "change": -0.04,
-      "changePct": -0.77,
+      "rate": 5.13,
+      "change": -0.05,
+      "changePct": -0.97,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
@@ -1783,7 +1783,7 @@
         },
         {
           "date": "2026-10-19",
-          "rate": 5.14
+          "rate": 5.15
         }
       ]
     },
@@ -1792,9 +1792,9 @@
       "name": "필리핀 페소",
       "unit": 1,
       "region": "동남아",
-      "rate": 21.13,
-      "change": -0.18,
-      "changePct": -0.84,
+      "rate": 21.08,
+      "change": -0.23,
+      "changePct": -1.08,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
@@ -1920,7 +1920,7 @@
         },
         {
           "date": "2026-10-19",
-          "rate": 21.13
+          "rate": 21.18
         }
       ]
     },
@@ -1929,9 +1929,9 @@
       "name": "인도네시아 루피아",
       "unit": 100,
       "region": "동남아",
-      "rate": 7.42,
-      "change": -0.02,
-      "changePct": -0.27,
+      "rate": 7.4,
+      "change": -0.04,
+      "changePct": -0.54,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
@@ -2057,7 +2057,7 @@
         },
         {
           "date": "2026-10-19",
-          "rate": 7.42
+          "rate": 7.38
         }
       ]
     },
@@ -2066,20 +2066,16 @@
       "name": "말레이시아 링깃",
       "unit": 1,
       "region": "동남아",
-      "rate": 326.14,
-      "change": -2.27,
-      "changePct": -0.69,
+      "rate": 325.25,
+      "change": -1.25,
+      "changePct": -0.38,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-10-16",
-        "rate": 328.41
+        "date": "2026-10-19",
+        "rate": 326.5
       },
       "history": [
-        {
-          "date": "2026-09-11",
-          "rate": 331.56
-        },
         {
           "date": "2026-09-12",
           "rate": 329.31
@@ -2194,7 +2190,11 @@
         },
         {
           "date": "2026-10-19",
-          "rate": 326.14
+          "rate": 326.5
+        },
+        {
+          "date": "2026-10-20",
+          "rate": 325.25
         }
       ]
     },
@@ -2203,20 +2203,16 @@
       "name": "뉴질랜드 달러",
       "unit": 1,
       "region": "미주",
-      "rate": 754.8,
-      "change": 1.24,
-      "changePct": 0.16,
-      "dir": "up",
+      "rate": 752.4,
+      "change": -2.06,
+      "changePct": -0.27,
+      "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-10-16",
-        "rate": 753.56
+        "date": "2026-10-19",
+        "rate": 754.46
       },
       "history": [
-        {
-          "date": "2026-09-11",
-          "rate": 782.62
-        },
         {
           "date": "2026-09-12",
           "rate": 779.5
@@ -2331,15 +2327,19 @@
         },
         {
           "date": "2026-10-19",
-          "rate": 754.8
+          "rate": 754.46
+        },
+        {
+          "date": "2026-10-20",
+          "rate": 752.4
         }
       ]
     }
   ],
   "official": null,
   "banks": {
-    "updatedAt": "2026-10-19T09:30:30.129+09:00",
-    "fetchedDate": "2026-10-19",
+    "updatedAt": "2026-10-20T09:30:49.852+09:00",
+    "fetchedDate": "2026-10-20",
     "source": "전국은행연합회 외환길잡이 — 은행별 주요통화 인터넷환전수수료 우대율 비교",
     "sourceUrl": "https://exchange.kfb.or.kr/page/on_commission.php",
     "note": "환전수수료율과 우대율은 각 은행이 공시한 값입니다. 고객 등급·환전 금액·이벤트에 따라 실제 적용 우대율은 달라질 수 있으므로 거래 전 해당 은행에서 확인하세요.",
