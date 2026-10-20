@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T16:28:45.613+09:00",
+  "updatedAt": "2026-10-20T16:38:20.231+09:00",
   "date": "2026-10-20",
   "retail": {
     "source": "한국금거래소",
@@ -138,18 +138,13 @@
   "reference": {
     "xauUsd": 4149.6,
     "usdKrw": 1327.15,
-    "asOf": "2026-10-20T16:28:43.000+09:00",
+    "asOf": "2026-10-20T16:28:43.872+09:00",
     "basePerGram": 177058.72,
     "basePerDon": 663970,
     "formula": "xauUsd / 31.1034768 * usdKrw * 3.75",
-    "source": "COMEX 금 선물(GC=F) × USD/KRW — Yahoo Finance"
+    "source": "price.json 의 국제 금값·환율 (지연값)"
   },
-  "intl": {
-    "xagUsd": 57.66,
-    "silverBasePerGram": 2460.29,
-    "silverBasePerDon": 9226,
-    "source": "COMEX 은 선물(SI=F) × USD/KRW — Yahoo Finance"
-  },
+  "intl": null,
   "wholesale": {
     "source": "KRX 금시장",
     "sourceUrl": "https://www.data.go.kr/data/15094805/openapi.do",
