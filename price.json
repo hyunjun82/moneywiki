@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T21:28:50.350+09:00",
+  "updatedAt": "2026-10-22T08:13:18.106+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -11,7 +11,7 @@
   "retail": {
     "source": "종로금거래소",
     "sourceUrl": "https://www.jongrogx.com/",
-    "quoteDate": "2026-10-21",
+    "quoteDate": "2026-10-22",
     "unit": "원/돈",
     "vatIncludedBuy": true,
     "note": "살 때 가격은 부가세 10%를 포함한 실제 결제 금액입니다(종로금거래소 원문 고시가에 부가세를 더한 값).",
@@ -93,11 +93,11 @@
     "unit": "원/그램",
     "note": "하루 1회 갱신되는 전 영업일 종가입니다. 실시간 시세가 아닙니다.",
     "latest": {
-      "date": "2026-10-19",
-      "krwPerGram": 178960,
-      "krwPerDon": 671100,
-      "change": -240,
-      "changePct": -0.13
+      "date": "2026-10-20",
+      "krwPerGram": 176350,
+      "krwPerDon": 661313,
+      "change": -2610,
+      "changePct": -1.46
     },
     "history": [
       {
@@ -1121,49 +1121,56 @@
         "krwPerDon": 671100,
         "change": -240,
         "changePct": -0.13
+      },
+      {
+        "date": "2026-10-20",
+        "krwPerGram": 176350,
+        "krwPerDon": 661313,
+        "change": -2610,
+        "changePct": -1.46
       }
     ],
-    "fetchedDate": "2026-10-21"
+    "fetchedDate": "2026-10-22"
   },
   "fx": {
-    "usdkrw": 1325.63,
-    "change": -4.37,
-    "changePct": -0.33,
-    "dir": "down",
+    "usdkrw": 1326.02,
+    "change": 2.08,
+    "changePct": 0.16,
+    "dir": "up",
     "changeBasis": "prevClose",
     "prevClose": {
-      "date": "2026-10-20",
-      "rate": 1330
+      "date": "2026-10-21",
+      "rate": 1323.94
     },
     "source": "Yahoo Finance (KRW=X)"
   },
   "intl": {
     "gold": {
       "name": "금",
-      "usdPerOz": 4156,
-      "changePct": 0.32,
+      "usdPerOz": 4145.8,
+      "changePct": 0.08,
       "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-10-20",
         "price": 4142.6
       },
-      "krwPerGram": 177129,
-      "krwPerDon": 664234,
+      "krwPerGram": 176746,
+      "krwPerDon": 662798,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
       "name": "은",
-      "usdPerOz": 57.7,
-      "changePct": -0.01,
-      "dir": "down",
+      "usdPerOz": 57.78,
+      "changePct": 0.12,
+      "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-10-20",
         "price": 57.71
       },
-      "krwPerGram": 2459,
-      "krwPerDon": 9221,
+      "krwPerGram": 2463,
+      "krwPerDon": 9236,
       "source": "COMEX 은 선물 (SI=F)"
     }
   },
@@ -1172,14 +1179,14 @@
       "name": "미 10년물 국채금리",
       "symbol": "^TNX",
       "unit": "%",
-      "price": 5.12,
-      "change": -0.02,
-      "changePct": -0.37,
-      "dir": "down",
+      "price": 5.15,
+      "change": 0.03,
+      "changePct": 0.57,
+      "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-10-19",
-        "price": 5.14
+        "date": "2026-10-20",
+        "price": 5.12
       },
       "source": "Yahoo Finance (^TNX)"
     },
@@ -1187,9 +1194,9 @@
       "name": "달러인덱스",
       "symbol": "DX-Y.NYB",
       "unit": "pt",
-      "price": 101.65,
-      "change": -0.08,
-      "changePct": -0.08,
+      "price": 101.69,
+      "change": -0.04,
+      "changePct": -0.04,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
@@ -1202,9 +1209,9 @@
       "name": "WTI 유가",
       "symbol": "CL=F",
       "unit": "$",
-      "price": 98.26,
-      "change": -3.53,
-      "changePct": -3.47,
+      "price": 97.96,
+      "change": -3.83,
+      "changePct": -3.76,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
