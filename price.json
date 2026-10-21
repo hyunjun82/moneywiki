@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T15:38:42.328+09:00",
+  "updatedAt": "2026-10-21T21:28:50.350+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -1126,9 +1126,9 @@
     "fetchedDate": "2026-10-21"
   },
   "fx": {
-    "usdkrw": 1324.52,
-    "change": -5.48,
-    "changePct": -0.41,
+    "usdkrw": 1325.63,
+    "change": -4.37,
+    "changePct": -0.33,
     "dir": "down",
     "changeBasis": "prevClose",
     "prevClose": {
@@ -1140,30 +1140,30 @@
   "intl": {
     "gold": {
       "name": "금",
-      "usdPerOz": 4131.3,
-      "changePct": -0.27,
-      "dir": "down",
+      "usdPerOz": 4156,
+      "changePct": 0.32,
+      "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-10-20",
         "price": 4142.6
       },
-      "krwPerGram": 175929,
-      "krwPerDon": 659734,
+      "krwPerGram": 177129,
+      "krwPerDon": 664234,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
       "name": "은",
-      "usdPerOz": 57.33,
-      "changePct": -0.66,
+      "usdPerOz": 57.7,
+      "changePct": -0.01,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-10-20",
         "price": 57.71
       },
-      "krwPerGram": 2441,
-      "krwPerDon": 9154,
+      "krwPerGram": 2459,
+      "krwPerDon": 9221,
       "source": "COMEX 은 선물 (SI=F)"
     }
   },
@@ -1187,10 +1187,10 @@
       "name": "달러인덱스",
       "symbol": "DX-Y.NYB",
       "unit": "pt",
-      "price": 101.81,
-      "change": 0.08,
-      "changePct": 0.08,
-      "dir": "up",
+      "price": 101.65,
+      "change": -0.08,
+      "changePct": -0.08,
+      "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-10-20",
@@ -1202,9 +1202,9 @@
       "name": "WTI 유가",
       "symbol": "CL=F",
       "unit": "$",
-      "price": 99.26,
-      "change": -2.53,
-      "changePct": -2.49,
+      "price": 98.26,
+      "change": -3.53,
+      "changePct": -3.47,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
