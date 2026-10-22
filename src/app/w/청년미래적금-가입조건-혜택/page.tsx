@@ -16,7 +16,7 @@ import {
 
 const RELATED = [
   { slug: "IRP계좌-가입-세액공제", title: "IRP 가입과 세액공제", description: "청년미래적금과 함께 활용하면 절세 효과가 커요." },
-  { slug: "연말정산-세율표", title: "연말정산 세율표", description: "소득 구간별 세율과 공제 효과를 확인하세요." },
+  { slug: "연말정산-과세표준", title: "연말정산 세율표", description: "소득 구간별 세율과 공제 효과를 확인하세요." },
 ];
 
 const CHECK_ITEMS = [

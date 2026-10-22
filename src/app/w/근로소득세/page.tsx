@@ -51,7 +51,7 @@ const REFERENCES = [
 ];
 
 const RELATED = [
-  { slug: "연말정산-세율", title: "연말정산 세율", description: "연말정산 때 적용되는 세율과 공제 항목을 정리했어요." },
+  { slug: "연말정산-과세표준", title: "연말정산 세율", description: "연말정산 때 적용되는 세율과 공제 항목을 정리했어요." },
   { slug: "연봉-실수령액", title: "연봉 실수령액", description: "연봉에서 세금·4대보험 빼면 실수령액이 얼마인지 확인해보세요." },
   { slug: "원천징수-신고-방법", title: "원천징수 신고 방법", description: "회사가 매월 하는 원천징수 신고 절차를 정리했어요." },
 ];

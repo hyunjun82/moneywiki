@@ -37,7 +37,7 @@ const REFERENCES = [
 const RELATED = [
   { slug: "연말정산-대중교통-공제", title: "연말정산 대중교통 공제", description: "대중교통비도 추가공제 대상이에요." },
   { slug: "연말정산-체크카드", title: "연말정산 체크카드", description: "신용카드와 체크카드 공제율 차이예요." },
-  { slug: "연말정산-특별세액공제-한도", title: "특별세액공제 한도", description: "연말정산 세액공제 항목별 한도 정리예요." },
+  { slug: "연말정산-표준세액공제", title: "특별세액공제 한도", description: "연말정산 세액공제 항목별 한도 정리예요." },
 ];
 
 export default function Page() {

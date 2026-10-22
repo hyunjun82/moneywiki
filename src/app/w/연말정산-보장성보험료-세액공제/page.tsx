@@ -35,7 +35,7 @@ const SOURCES = [
 ];
 
 const RELATED = [
-  { slug: "연말정산-고용보험료", title: "연말정산 고용보험료 소득공제", description: "고용보험료 0.9%도 전액 소득공제 대상이에요." },
+  { slug: "연말정산-공제항목", title: "연말정산 고용보험료 소득공제", description: "고용보험료 0.9%도 전액 소득공제 대상이에요." },
   { slug: "연금저축펀드-세액공제-한도", title: "연금저축펀드 세액공제 한도", description: "IRP·연금저축 합산 한도와 절세 전략." },
   { slug: "연말정산-계산기", title: "연말정산 계산기", description: "내 환급액을 바로 계산해보세요." },
 ];

@@ -51,9 +51,9 @@ const SOURCES = [
 ];
 
 const RELATED = [
-  { slug: "연말정산-세액공제", title: "연말정산 세액공제 항목", description: "의료비, 교육비, 연금저축 등 세액공제 정리." },
+  { slug: "연말정산-공제항목", title: "연말정산 세액공제 항목", description: "의료비, 교육비, 연금저축 등 세액공제 정리." },
   { slug: "연말정산-연금저축", title: "연말정산 연금저축 공제", description: "연금저축 600만원 한도와 16.5% 공제율." },
-  { slug: "연말정산-환급-조회", title: "연말정산 환급금 조회", description: "환급금이 언제, 얼마나 들어오는지 확인." },
+  { slug: "연말정산-환급금-조회", title: "연말정산 환급금 조회", description: "환급금이 언제, 얼마나 들어오는지 확인." },
 ];
 
 export default function Page() {

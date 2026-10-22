@@ -61,7 +61,7 @@ const SOURCES = [
 const RELATED = [
   { slug: "연말정산-급여", title: "연말정산 급여와 총급여", description: "급여 구성과 비과세 항목 정리." },
   { slug: "연말정산-식대-비과세", title: "연말정산 식대 비과세", description: "월 20만원 비과세 적용 조건." },
-  { slug: "연말정산-세율표", title: "연말정산 세율표", description: "과세표준별 세율 6~45%." },
+  { slug: "연말정산-과세표준", title: "연말정산 세율표", description: "과세표준별 세율 6~45%." },
 ];
 
 export default function Page() {

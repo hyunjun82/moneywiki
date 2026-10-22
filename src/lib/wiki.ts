@@ -2,6 +2,12 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import linkFixes from "@/data/link-fixes.json";
+import redirectedSlugs from "@/data/redirected-slugs.json";
+
+// Cloudflare Bulk Redirects 로 301 보낸 옛 주소 — 목록(카테고리·피드·관련 글·사이트맵)에서만 뺀다.
+// 페이지 자체(getAllWikiSlugs·getWikiDocument)는 그대로 빌드한다: 옛 파일을 지우기 전까지는
+// Cloudflare 규칙만 내리면 원래대로 돌아가야 한다 (2026-10-23 연말정산 1차 50개)
+export const REDIRECTED_SLUGS = new Set<string>(redirectedSlugs as string[]);
 import { remark } from "remark";
 import remarkGfm from "remark-gfm";
 import html from "remark-html";
@@ -383,7 +389,7 @@ export function getAllWikiDocuments(): Omit<WikiDocument, "content" | "htmlConte
     ? "build"
     : String(fs.existsSync(wikiDirectory) ? fs.statSync(wikiDirectory).mtimeMs : 0);
   if (allDocsCache && allDocsCache.key === key) return allDocsCache.docs.slice();
-  const docs = readAllWikiDocuments();
+  const docs = readAllWikiDocuments().filter((d) => !REDIRECTED_SLUGS.has(d.slug));
   allDocsCache = { key, docs };
   return docs.slice();
 }

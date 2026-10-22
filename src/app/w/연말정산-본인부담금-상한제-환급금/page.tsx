@@ -15,7 +15,7 @@ const SOURCES = [
 ];
 
 const RELATED = [
-  { slug: "연말정산-실손보험금", title: "- title: 연말정산 실손보험금", description: "" },
+  { slug: "연말정산-의료비-세액공제", title: "- title: 연말정산 실손보험금", description: "" },
   { slug: "연말정산", title: "연말정산", description: "" }
 ];
 

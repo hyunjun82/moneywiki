@@ -72,7 +72,7 @@ const REFERENCES = [
 
 const RELATED = [
   {
-    slug: "연말정산-세율",
+    slug: "연말정산-과세표준",
     title: "연말정산 세율과 환급 계산",
     description: "내 세율 구간을 알면 월세 공제 효과를 정확히 계산할 수 있어요.",
   },

@@ -66,9 +66,9 @@ const FAQS = [
 ];
 
 const RELATED = [
-  { slug: "연말정산-기본공제-대상", title: "기본공제 대상과 요건", description: "1인당 150만원 소득공제 요건 정리." },
+  { slug: "연말정산-인적공제", title: "기본공제 대상과 요건", description: "1인당 150만원 소득공제 요건 정리." },
   { slug: "연말정산-결정세액", title: "결정세액 계산 방법", description: "산출세액 - 세액공제 = 결정세액." },
-  { slug: "연말정산-의료비-공제-한도", title: "의료비 공제 한도", description: "총급여 3% 초과분부터 15% 공제." },
+  { slug: "연말정산-의료비-세액공제", title: "의료비 공제 한도", description: "총급여 3% 초과분부터 15% 공제." },
 ];
 
 export default function Page() {
@@ -114,7 +114,7 @@ export default function Page() {
 
       <H2>연말정산 자주 묻는 질문이에요</H2>
       <p style={body}>
-        매년 가장 많이 들어오는 질문 7가지를 정리했어요. <a href="/w/연말정산-기본공제-대상" style={{ color: "#1D9E75", textDecoration: "underline" }}>기본공제 상세 요건</a>이나 <a href="/w/연말정산-결정세액" style={{ color: "#1D9E75", textDecoration: "underline" }}>결정세액 계산법</a>은 각 글에서 깊이 있게 다뤄요.
+        매년 가장 많이 들어오는 질문 7가지를 정리했어요. <a href="/w/연말정산-인적공제" style={{ color: "#1D9E75", textDecoration: "underline" }}>기본공제 상세 요건</a>이나 <a href="/w/연말정산-결정세액" style={{ color: "#1D9E75", textDecoration: "underline" }}>결정세액 계산법</a>은 각 글에서 깊이 있게 다뤄요.
       </p>
 
       <FAQ items={FAQS} />

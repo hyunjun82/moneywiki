@@ -29,7 +29,7 @@ const REFERENCES = [
 ];
 
 const RELATED = [
-  { slug: "연말정산-환급금-지급일", title: "연말정산 환급금 지급일", description: "환급금이 언제 들어오는지 시기와 조회 방법이에요." },
+  { slug: "연말정산-환급금-조회", title: "연말정산 환급금 지급일", description: "환급금이 언제 들어오는지 시기와 조회 방법이에요." },
   { slug: "연말정산-아르바이트", title: "연말정산 아르바이트", description: "알바생 연말정산 방법을 더 자세히 정리했어요." },
   { slug: "연말정산-이직자", title: "연말정산 이직자", description: "이직했을 때 전 직장 소득 합산하는 방법이에요." },
 ];

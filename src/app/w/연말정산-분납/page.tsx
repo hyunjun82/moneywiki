@@ -30,7 +30,7 @@ const SOURCES = [
 ];
 
 const RELATED = [
-  { slug: "연말정산-환급-조회-기간", title: "연말정산 환급금 조회와 지급 시기", description: "환급금이 언제 들어오는지 확인하는 법." },
+  { slug: "연말정산-환급금-조회", title: "연말정산 환급금 조회와 지급 시기", description: "환급금이 언제 들어오는지 확인하는 법." },
   { slug: "연말정산-과다공제-사례", title: "연말정산 과다공제 사례", description: "자주 실수하는 공제 항목과 가산세." },
   { slug: "중도퇴사자-연말정산-처리", title: "중도퇴사자 연말정산 처리", description: "퇴사 후 연말정산 방법." },
 ];

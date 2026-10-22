@@ -53,7 +53,7 @@ const SOURCES = [
 
 const RELATED = [
   { slug: "연말정산-의료비-세액공제", title: "연말정산 의료비 세액공제", description: "의료비 공제 대상과 한도 정리." },
-  { slug: "연말정산-의료비-공제한도", title: "연말정산 의료비 공제한도", description: "총급여 3% 초과분부터 공제되는 구조." },
+  { slug: "연말정산-의료비-세액공제", title: "연말정산 의료비 공제한도", description: "총급여 3% 초과분부터 공제되는 구조." },
   { slug: "연말정산", title: "연말정산 전체 가이드", description: "연말정산 절차와 공제 항목 정리." },
 ];
 

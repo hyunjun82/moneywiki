@@ -69,7 +69,7 @@ const SOURCES = [
 
 const RELATED = [
   { slug: "연말정산-근로소득-범위", title: "근로소득 범위와 비과세 항목", description: "뭐가 과세되고 뭐가 안 되는지 정리." },
-  { slug: "연말정산-다자녀-추가공제", title: "다자녀 자녀세액공제", description: "자녀 수에 따라 25만~95만원 세액공제." },
+  { slug: "연말정산-자녀-세액공제", title: "다자녀 자녀세액공제", description: "자녀 수에 따라 25만~95만원 세액공제." },
   { slug: "연말정산-문화비", title: "문화비 소득공제 30%", description: "도서·공연·영화 30% 공제 조건." },
 ];
 

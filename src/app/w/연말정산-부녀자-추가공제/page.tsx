@@ -46,7 +46,7 @@ const REFERENCES = [
 const RELATED = [
   { slug: "연말정산-한부모-공제", title: "연말정산 한부모 공제 100만원", description: "한부모 공제 요건과 부녀자 공제와의 차이예요." },
   { slug: "연말정산-인적공제-부양가족", title: "연말정산 부양가족 인적공제", description: "기본공제 150만원 받는 부양가족 조건이에요." },
-  { slug: "연말정산-형제자매", title: "연말정산 형제자매 공제 조건", description: "형제자매 부양가족 공제 요건 확인해요." },
+  { slug: "부양가족-공제-연말정산", title: "연말정산 형제자매 공제 조건", description: "형제자매 부양가족 공제 요건 확인해요." },
 ];
 
 export default function Page() {

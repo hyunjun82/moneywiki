@@ -98,7 +98,7 @@ export default function Page() {
         <SidebarCalc items={[
           { title: "실업급여 계산기", href: "/w/실업급여-상한액" },
           { title: "퇴직금 계산기", href: "/w/퇴직금-계산기" },
-          { title: "연말정산 계산기", href: "/w/연말정산-세액공제" },
+          { title: "연말정산 계산기", href: "/w/연말정산-공제항목" },
         ]} />
       </>}
     >

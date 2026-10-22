@@ -77,7 +77,7 @@ const SOURCES = [
 const RELATED = [
   { slug: "연말정산", title: "연말정산 기본 가이드", description: "연말정산 전체 흐름과 주요 공제 항목 정리." },
   { slug: "연말정산-비과세-근로소득", title: "비과세 근로소득 종류", description: "식대, 자가운전보조금 등 비과세 항목." },
-  { slug: "연말정산-세액공제-소득공제-차이", title: "세액공제와 소득공제 차이", description: "두 가지 공제 방식의 차이와 유불리." },
+  { slug: "연말정산-공제항목", title: "세액공제와 소득공제 차이", description: "두 가지 공제 방식의 차이와 유불리." },
 ];
 
 export default function Page() {

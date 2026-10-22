@@ -43,7 +43,7 @@ const REFERENCES = [
 const RELATED = [
   { slug: "연말정산-급식비", title: "연말정산 급식비 공제", description: "급식비 교육비 공제 기준이에요." },
   { slug: "연말정산-유학생-소득공제", title: "연말정산 유학생 소득공제", description: "해외 유학 교육비 공제예요." },
-  { slug: "연말정산-세액공제-순서", title: "연말정산 세액공제 순서", description: "세액공제 적용 순서 정리예요." },
+  { slug: "연말정산-공제항목", title: "연말정산 세액공제 순서", description: "세액공제 적용 순서 정리예요." },
 ];
 
 export default function Page() {

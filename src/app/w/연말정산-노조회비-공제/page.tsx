@@ -88,8 +88,8 @@ const REFERENCES = [
 
 const RELATED = [
   { slug: "연말정산", title: "연말정산 총정리", description: "공제 항목부터 신청 방법까지 연말정산 전체 흐름이에요." },
-  { slug: "연말정산-세율표", title: "연말정산 세율표", description: "근로소득 과세표준별 세율과 산출세액을 확인해요." },
-  { slug: "연말정산-형제자매", title: "형제자매 인적공제 조건", description: "형제자매를 부양가족으로 올릴 수 있는 조건이에요." },
+  { slug: "연말정산-과세표준", title: "연말정산 세율표", description: "근로소득 과세표준별 세율과 산출세액을 확인해요." },
+  { slug: "부양가족-공제-연말정산", title: "형제자매 인적공제 조건", description: "형제자매를 부양가족으로 올릴 수 있는 조건이에요." },
 ];
 
 export default function Page() {

@@ -46,7 +46,7 @@ const REFERENCES = [
 const RELATED = [
   { slug: "의료비-공제-대상-범위", title: "의료비 공제 대상 범위", description: "장기요양 관련 비용도 의료비 공제 대상이 될 수 있어요." },
   { slug: "고령자-정의-법적-기준", title: "고령자 정의 법적 기준", description: "법에서 고령자를 몇 세로 보는지 확인해봐요." },
-  { slug: "연말정산-의료비-공제-한도", title: "연말정산 의료비 공제", description: "의료비 공제 한도와 대상을 정리했어요." },
+  { slug: "연말정산-의료비-세액공제", title: "연말정산 의료비 공제", description: "의료비 공제 한도와 대상을 정리했어요." },
 ];
 
 export default function Page() {

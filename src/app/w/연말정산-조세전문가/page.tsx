@@ -29,7 +29,7 @@ const REFERENCES = [
 ];
 
 const RELATED = [
-  { slug: "연말정산-환급금-지급일", title: "연말정산 환급금 지급일", description: "환급금이 언제 들어오는지 시기와 조회 방법이에요." },
+  { slug: "연말정산-환급금-조회", title: "연말정산 환급금 지급일", description: "환급금이 언제 들어오는지 시기와 조회 방법이에요." },
   { slug: "연말정산-파트타임", title: "연말정산 파트타임", description: "파트타임 근로자도 연말정산 대상이에요." },
   { slug: "연말정산-경정청구", title: "연말정산 경정청구", description: "놓친 공제를 소급해서 환급받는 방법이에요." },
 ];

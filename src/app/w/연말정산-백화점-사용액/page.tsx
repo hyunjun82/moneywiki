@@ -33,8 +33,8 @@ const REFERENCES = [
 ];
 
 const RELATED = [
-  { slug: "연말정산-세액계산-방법", title: "연말정산 세액계산 방법", description: "전체 세액 계산 흐름을 정리했어요." },
-  { slug: "연말정산-세액공제-소득공제-차이", title: "세액공제 vs 소득공제 차이", description: "둘의 차이를 이해하면 절세 전략이 달라져요." },
+  { slug: "연말정산-과세표준", title: "연말정산 세액계산 방법", description: "전체 세액 계산 흐름을 정리했어요." },
+  { slug: "연말정산-공제항목", title: "세액공제 vs 소득공제 차이", description: "둘의 차이를 이해하면 절세 전략이 달라져요." },
 ];
 
 export default function Page() {

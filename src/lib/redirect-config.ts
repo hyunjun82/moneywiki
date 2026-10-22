@@ -8,7 +8,7 @@
 // 1. 정적 리다이렉트 맵 (로마자 → 한국어, 중첩경로 → /w/slug)
 export const staticRedirects: Record<string, string> = {
   // === 로마자 URL → 한국어 URL ===
-  '/w/buyanggajok-gongje': '/w/연말정산-부양가족-공제',
+  '/w/buyanggajok-gongje': '/w/부양가족-공제-연말정산',
   '/w/geunrogyejunbeob': '/category/근로-노동',
   '/w/gibumgeum-gongje': '/category/세금',
   '/w/gwasedaesang': '/category/세금',
@@ -37,7 +37,7 @@ export const staticRedirects: Record<string, string> = {
   '/w/세금/연말정산-주택마련저축-공제': '/w/연말정산-주택마련저축-공제',
   '/w/연말정산/연말정산-결정세액': '/w/연말정산-결정세액-계산',
   '/w/연말정산/연말정산-도서-공연': '/w/연말정산-도서공연비-공제',
-  '/w/연말정산/연말정산-소득공제-세액공제-차이': '/w/연말정산-세액공제-소득공제-차이',
+  '/w/연말정산/연말정산-소득공제-세액공제-차이': '/w/연말정산-공제항목',
   '/w/연말정산/연말정산-전통시장': '/w/연말정산-전통시장-공제',
   '/w/연말정산/연말정산-주택마련저축': '/w/연말정산-주택마련저축-공제',
   '/w/연말정산/연말정산-퇴직연금-공제': '/w/연말정산-퇴직연금-세액공제',

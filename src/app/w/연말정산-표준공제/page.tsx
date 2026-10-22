@@ -35,8 +35,8 @@ const REFERENCES = [
 ];
 
 const RELATED = [
-  { slug: "연말정산-특별세액공제-한도", title: "특별세액공제 한도", description: "의료비·교육비·기부금 공제 한도예요." },
-  { slug: "연말정산-의료비-공제", title: "연말정산 의료비 공제", description: "의료비 공제 조건과 한도예요." },
+  { slug: "연말정산-표준세액공제", title: "특별세액공제 한도", description: "의료비·교육비·기부금 공제 한도예요." },
+  { slug: "연말정산-의료비-세액공제", title: "연말정산 의료비 공제", description: "의료비 공제 조건과 한도예요." },
 ];
 
 export default function Page() {

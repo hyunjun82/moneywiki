@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { getAllWikiParams } from "@/lib/wiki";
+import { getAllWikiParams, REDIRECTED_SLUGS } from "@/lib/wiki";
 import { getAllArticleSlugs } from "@/lib/articles";
 import { ALL_ITEMS, CATEGORIES, itemsIn } from "@/data/download";
 import { SPOKES } from "@/components/fx/fxDerive";
@@ -196,5 +196,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ]
     : [];
 
-  return [...staticUrls, ...goldNewsUrls, ...fxNewsUrls, ...wikiUrls, ...tsxUrls, ...articleUrls, ...downloadUrls];
+  // 301 로 옮긴 옛 주소는 뺀다 — "색인하라"(사이트맵)와 "옮겨졌다"(301)를 같이 내지 않는다 (src/data/redirected-slugs.json)
+  const notRedirected = (u: { url: string }) => !REDIRECTED_SLUGS.has(decodeURIComponent(u.url.slice(`${baseUrl}/w/`.length)));
+  return [...staticUrls, ...goldNewsUrls, ...fxNewsUrls, ...wikiUrls.filter(notRedirected), ...tsxUrls.filter(notRedirected), ...articleUrls.filter(notRedirected), ...downloadUrls];
 }

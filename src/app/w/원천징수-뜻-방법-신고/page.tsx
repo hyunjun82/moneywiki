@@ -80,7 +80,7 @@ const REFERENCES = [
 ];
 
 const RELATED = [
-  { slug: "연말정산-환급-조회-기간", title: "연말정산 환급 조회 기간", description: "원천징수로 미리 낸 세금이 많으면 돌려받아요. 환급 조회 방법이에요." },
+  { slug: "연말정산-환급금-조회", title: "연말정산 환급 조회 기간", description: "원천징수로 미리 낸 세금이 많으면 돌려받아요. 환급 조회 방법이에요." },
   { slug: "종합소득세-환급-신청", title: "종합소득세 환급 신청", description: "프리랜서·사업소득자는 5월에 종합소득세 신고로 환급받아요." },
   { slug: "퇴직금-세금", title: "퇴직소득세 계산법", description: "퇴직금에 원천징수되는 퇴직소득세 계산 구조예요." },
 ];
@@ -148,7 +148,7 @@ export default function Page() {
       <H2>출처</H2>
       <References groups={REFERENCES} />
 
-      <CategoryButton label="세금 관련 글 더 보기" href="/w/연말정산-환급-조회-기간" />
+      <CategoryButton label="세금 관련 글 더 보기" href="/w/연말정산-환급금-조회" />
       <RelatedArticles items={RELATED} />
       <Disclaimer text="이 글은 2026년 3월 기준 소득세법을 바탕으로 작성됐어요. 세율·공제 기준은 변경될 수 있으니 최신 기준은 국세청(126) 또는 홈택스에서 확인하세요." />
     </ArticleLayout>

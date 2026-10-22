@@ -38,7 +38,7 @@ const REFERENCES = [
 const RELATED = [
   { slug: "연말정산-표준공제", title: "연말정산 표준공제", description: "공제 항목을 놓쳤을 때 적용되는 표준공제예요." },
   { slug: "소득공제장기펀드-세액공제", title: "소득공제장기펀드 세액공제", description: "장기펀드 소득공제의 상세 조건이에요." },
-  { slug: "연말정산-특별세액공제-한도", title: "특별세액공제 한도", description: "연말정산 세액공제 항목별 한도 정리예요." },
+  { slug: "연말정산-표준세액공제", title: "특별세액공제 한도", description: "연말정산 세액공제 항목별 한도 정리예요." },
 ];
 
 export default function Page() {

@@ -42,7 +42,7 @@ const SOURCES = [
 const RELATED = [
   { slug: "연말정산-공제항목", title: "연말정산 공제항목 종류", description: "소득공제와 세액공제 항목별 한도 비교." },
   { slug: "연말정산-과세표준", title: "연말정산 과세표준 세율", description: "과세표준 구간별 세율과 계산법." },
-  { slug: "연말정산-부양가족-공제", title: "부양가족 공제 조건", description: "가족 1명당 150만원 소득공제 요건." },
+  { slug: "부양가족-공제-연말정산", title: "부양가족 공제 조건", description: "가족 1명당 150만원 소득공제 요건." },
 ];
 
 export default function Page() {

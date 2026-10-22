@@ -44,7 +44,7 @@ const REFERENCES = [
 ];
 const RELATED = [
   {
-    "slug": "연말정산-세액계산-방법",
+    "slug": "연말정산-과세표준",
     "title": "연말정산 세액계산 방법",
     "description": "전체 세액 계산 흐름을 정리했어요."
   },

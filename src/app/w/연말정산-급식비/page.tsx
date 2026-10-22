@@ -45,8 +45,8 @@ const REFERENCES = [
 ];
 
 const RELATED = [
-  { slug: "연말정산-다자녀-세액공제", title: "연말정산 다자녀 세액공제", description: "자녀 수별 세액공제 금액이에요." },
-  { slug: "연말정산-자녀-세액공제-조건", title: "연말정산 자녀 세액공제 조건", description: "자녀 세액공제 나이·소득 요건이에요." },
+  { slug: "연말정산-자녀-세액공제", title: "연말정산 다자녀 세액공제", description: "자녀 수별 세액공제 금액이에요." },
+  { slug: "연말정산-자녀-세액공제", title: "연말정산 자녀 세액공제 조건", description: "자녀 세액공제 나이·소득 요건이에요." },
   { slug: "연말정산-주택청약-공제", title: "연말정산 주택청약 공제", description: "청약저축 납입액 소득공제예요." },
 ];
 

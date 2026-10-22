@@ -36,7 +36,7 @@ const REFERENCES = [
 const RELATED = [
   { slug: "국민연금-조기수령-감액률", title: "국민연금 조기수령 감액률", description: "일찍 받으면 얼마나 깎이는지, 손익분기점은 언제인지 알아보세요." },
   { slug: "노령연금-소득-감액", title: "노령연금 소득에 따른 감액", description: "소득이 있으면 연금이 줄어드는 구조를 정리했어요." },
-  { slug: "연말정산-세액계산-방법", title: "연말정산 세액계산 방법", description: "국민연금 공제도 연말정산에 반영돼요." },
+  { slug: "연말정산-과세표준", title: "연말정산 세액계산 방법", description: "국민연금 공제도 연말정산에 반영돼요." },
 ];
 
 export default function Page() {

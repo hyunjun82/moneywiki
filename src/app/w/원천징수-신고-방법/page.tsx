@@ -76,7 +76,7 @@ const SOURCES = [
 ];
 
 const RELATED = [
-  { slug: "연말정산-환급-조회", title: "연말정산 환급금 조회 방법", description: "원천징수된 세금을 연말에 정산하는 방법." },
+  { slug: "연말정산-환급금-조회", title: "연말정산 환급금 조회 방법", description: "원천징수된 세금을 연말에 정산하는 방법." },
   { slug: "사업소득-원천징수-3-3-percent", title: "프리랜서 3.3% 원천징수 계산", description: "사업소득 3.3% 원천징수 구조와 종합소득세 신고." },
   { slug: "원천징수", title: "원천징수란 무엇인가요?", description: "원천징수 개념과 세율 구조 설명." },
 ];
@@ -97,7 +97,7 @@ export default function Page() {
       <p style={body}>
         원천세는 급여를 지급한 달의 <strong>다음 달 10일까지</strong> 홈택스에서 신고·납부해야 해요.
         하루라도 늦으면 가산세가 붙기 시작하고, 납부할 세금이 0원이어도 신고 자체는 반드시 해야 하죠.
-        <a href="/w/연말정산-환급-조회" style={{ color: "#1D9E75", textDecoration: "underline" }}>연말정산</a>과도 연결된 제도라서,
+        <a href="/w/연말정산-환급금-조회" style={{ color: "#1D9E75", textDecoration: "underline" }}>연말정산</a>과도 연결된 제도라서,
         매달 신고를 제대로 해야 나중에 정산이 정확하게 나와요.
         아래에서 신고 절차와 주의사항을 단계별로 정리해요.
       </p>

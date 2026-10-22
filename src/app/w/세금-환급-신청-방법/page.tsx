@@ -83,7 +83,7 @@ const REFERENCES = [
 ];
 
 const RELATED = [
-  { slug: "연말정산-환급-조회-기간", title: "연말정산 환급 조회", description: "연말정산 환급금이 언제 들어오는지 확인하는 방법이에요." },
+  { slug: "연말정산-환급금-조회", title: "연말정산 환급 조회", description: "연말정산 환급금이 언제 들어오는지 확인하는 방법이에요." },
   { slug: "종합소득세-환급-신청", title: "종합소득세 환급 신청", description: "5월 신고 후 환급 절차와 일정이에요." },
   { slug: "부가세-환급-신청", title: "부가세 환급 신청", description: "사업자 부가세 환급 신청 방법이에요." },
 ];
@@ -137,7 +137,7 @@ export default function Page() {
 
       <BorderBox>
         <strong>환급금 종류별 신청 경로</strong><br /><br />
-        <a href="/w/연말정산-환급-조회-기간" style={{ color: "#1D9E75" }}>연말정산 환급</a>: 회사에서 2월 급여와 함께 자동 지급<br />
+        <a href="/w/연말정산-환급금-조회" style={{ color: "#1D9E75" }}>연말정산 환급</a>: 회사에서 2월 급여와 함께 자동 지급<br />
         <a href="/w/종합소득세-환급-신청" style={{ color: "#1D9E75" }}>종합소득세 환급</a>: 5월 신고 → 6~7월 자동 입금<br />
         <a href="/w/부가세-환급-신청" style={{ color: "#1D9E75" }}>부가세 환급</a>: 1·7월 신고 → 30일 이내 지급<br />
         양도소득세 환급: 신고 후 30일 이내<br />

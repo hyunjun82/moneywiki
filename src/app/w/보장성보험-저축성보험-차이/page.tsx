@@ -44,7 +44,7 @@ const REFERENCES = [
 ];
 const RELATED = [
   {
-    "slug": "연말정산-세액공제-소득공제-차이",
+    "slug": "연말정산-공제항목",
     "title": "세액공제 vs 소득공제 차이",
     "description": "보험료 공제가 세액공제인 이유를 알아보세요."
   },

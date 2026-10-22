@@ -71,7 +71,7 @@ const SOURCES = [
 
 const RELATED = [
   { slug: "연말정산", title: "연말정산 개념과 절차", description: "연말정산 전체 흐름과 공제 항목 정리." },
-  { slug: "연말정산-세액공제", title: "연말정산 세액공제 항목", description: "세액공제 항목별 한도와 조건." },
+  { slug: "연말정산-공제항목", title: "연말정산 세액공제 항목", description: "세액공제 항목별 한도와 조건." },
   { slug: "자녀장려금", title: "자녀장려금 신청 방법", description: "자녀 1인당 최대 100만원 받는 방법." },
 ];
 

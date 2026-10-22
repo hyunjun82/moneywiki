@@ -35,7 +35,7 @@ const REFERENCES = [
 
 const RELATED = [
   { slug: "원천징수-신고-방법", title: "원천징수 신고 방법", description: "원천세 신고 기한과 절차예요." },
-  { slug: "연말정산-세액감면", title: "연말정산 세액감면", description: "연말정산 감면 항목 정리예요." },
+  { slug: "연말정산-중소기업-취업자-감면", title: "연말정산 세액감면", description: "연말정산 감면 항목 정리예요." },
   { slug: "월급-세금-공제-항목", title: "월급 세금 공제 항목", description: "급여에서 빠지는 항목들이에요." },
 ];
 

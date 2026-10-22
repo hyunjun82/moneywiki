@@ -50,7 +50,7 @@ const SOURCES = [
 const RELATED = [
   { slug: "근로소득세-계산기", title: "근로소득세 계산기", description: "월급 넣으면 소득세가 바로 나와요." },
   { slug: "연봉-실수령액-계산기", title: "연봉 실수령액 계산기", description: "연봉별 실수령액을 한눈에." },
-  { slug: "연말정산-고용보험료", title: "연말정산 고용보험료 공제", description: "고용보험료도 소득공제 대상이에요." },
+  { slug: "연말정산-공제항목", title: "연말정산 고용보험료 공제", description: "고용보험료도 소득공제 대상이에요." },
 ];
 
 export default function Page() {
