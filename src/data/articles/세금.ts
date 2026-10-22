@@ -1868,7 +1868,7 @@ export const 세금: ArticleCategory = {
       category: "세금",
       primaryKeywords: ["연말정산 부양가족", "부양가족 기준", "소득 100만원"],
       meta: {
-        title: "연말정산 부양가족 기준, 소득 100만원 넘으면 공제 못 받아요",
+        title: "연말정산 부양가족 기준, 소득금액 100만원 넘으면 공제 못 받아요",
         description: "연말정산 부양가족 기준은 소득금액 합계액 **100만원** 이하예요. 근로소득만 있으면 총급여액 500만원 이하까지 포함돼요.",
         author: { name: "머니위키 편집팀" },
         publishedAt: "2026-10-22",
@@ -2280,7 +2280,7 @@ export const 세금: ArticleCategory = {
       category: "세금",
       primaryKeywords: ["연말정산 인적공제", "인적공제 기준"],
       meta: {
-        title: "연말정산 인적공제, 1명당 150만원 받는 기준",
+        title: "연말정산 인적공제, 1명당 150만원 공제받는 기준",
         description: "연말정산 인적공제 기준은 소득·나이·생계를 같이 하는지로 정해지고, 기본공제는 1명당 연 **150만원**이에요.",
         author: { name: "머니위키 편집팀" },
         publishedAt: "2026-10-22",
@@ -3508,7 +3508,7 @@ export const 세금: ArticleCategory = {
       category: "세금",
       primaryKeywords: ["장애인공제", "추가공제", "연말정산"],
       meta: {
-        title: "연말정산 장애인공제, 추가공제 200만원 받는 대상",
+        title: "연말정산 장애인공제, 200만원 추가공제 대상",
         description: "연말정산 장애인공제는 기본공제 150만원에 장애인 추가공제 **200만원**이 더해지고, 장애인은 나이 제한 없이 소득 요건만 맞으면 받을 수 있어요.",
         author: { name: "머니위키 편집팀" },
         publishedAt: "2026-10-22",
@@ -3916,7 +3916,7 @@ export const 세금: ArticleCategory = {
       category: "세금",
       primaryKeywords: ["프리랜서 연말정산", "종합소득세", "환급"],
       meta: {
-        title: "프리랜서 연말정산 언제 하나요? 5월 종합소득세로 환급받는 법",
+        title: "프리랜서 연말정산 언제 하나요? 5월 종합소득세 신고로 정산해요",
         description: "프리랜서 연말정산은 따로 없고 다음 해 **5월 1일부터 5월 31일**까지 종합소득세를 신고해요. 대금에서 미리 뗀 세금은 이때 맞춰요.",
         author: { name: "머니위키 편집팀" },
         publishedAt: "2026-10-22",
@@ -4408,7 +4408,7 @@ export const 세금: ArticleCategory = {
       category: "세금",
       primaryKeywords: ["알바 연말정산", "일용직", "종합소득세"],
       meta: {
-        title: "알바도 연말정산 하나요? 일용직·사업소득이면 5월 종합소득세",
+        title: "알바도 연말정산 하나요? 일용직은 없고 사업소득이면 5월 종합소득세",
         description: "알바 연말정산은 받은 돈의 소득 종류로 갈려요. 근로소득이면 회사가 정산하고, 사업소득이면 **5월 1일부터 5월 31일**에 종합소득세를 신고해요.",
         author: { name: "머니위키 편집팀" },
         publishedAt: "2026-10-22",
@@ -7422,7 +7422,7 @@ export const 세금: ArticleCategory = {
       category: "세금",
       primaryKeywords: ["연말정산 안경", "안경 구입비 공제", "카드 결제"],
       meta: {
-        title: "연말정산 안경 구입비 공제, 영수증과 카드 결제 방법",
+        title: "연말정산 안경 구입비 공제, 안경점 영수증 챙기는 법",
         description: "연말정산 안경 구입비 공제는 의료비로 인정되는 항목이면 일반 가족분 기준 총급여의 **100분의 3** 을 넘는 부분부터 따져요.",
         author: { name: "머니위키 편집팀" },
         publishedAt: "2026-10-22",
@@ -10087,7 +10087,7 @@ export const 세금: ArticleCategory = {
       category: "세금",
       primaryKeywords: ["연말정산 소득공제", "소득공제 항목", "세액공제"],
       meta: {
-        title: "연말정산 소득공제 항목과 한도, 세액공제와 무엇이 다른가요",
+        title: "연말정산 소득공제 항목과 한도, 세액공제와 무엇이 다른가요?",
         description: "연말정산 소득공제 항목은 기본공제 1명당 연 **150만원** 부터 보험료·주택·신용카드 공제까지 있고, 일부는 합쳐서 2천500만원까지만 인정돼요.",
         author: { name: "머니위키 편집팀" },
         publishedAt: "2026-10-22",
@@ -11996,7 +11996,7 @@ export const 세금: ArticleCategory = {
       category: "세금",
       primaryKeywords: ["연말정산 간소화", "간소화 자료 조회", "부양가족"],
       meta: {
-        title: "연말정산 간소화 자료 조회 방법, 부양가족 것도 보려면 동의부터",
+        title: "연말정산 간소화 자료 조회 방법, 성인 부양가족은 동의부터",
         description: "연말정산 간소화 자료에서 부양가족 것을 보려면 그 가족의 **제공 동의** 를 국세청이 받아야 해요. 회사에 내는 방식은 출력본·PDF·온라인 제출로 나뉘어요.",
         author: { name: "머니위키 편집팀" },
         publishedAt: "2026-10-22",
