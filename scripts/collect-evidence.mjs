@@ -141,7 +141,14 @@ async function collectLawArticle(page, lawName, no) {
       try {
         const t = await frame.evaluate(() => document.body?.innerText || "");
         const i = t.indexOf(label);
-        if (i >= 0 && t.length - i >= MIN_ARTICLE) { text = t.slice(i, i + 2500); break; }
+        // 다음 조문 제목("제60조(" 등)까지 자른다. 2,500자로 자르던 때는 소득세법 제59조의4(특별세액공제)가
+        // 보험료·의료비·교육비 항에서 끊겨 제9항 표준세액공제(13만원)가 증거에 없었고, 표준세액공제 글이 쓸 수 없어 버려졌다 (2026-10-22)
+        if (i >= 0 && t.length - i >= MIN_ARTICLE) {
+          const rest = t.slice(i + label.length);
+          const next = rest.search(/\n\s*제\d+조(?:의\d+)?\s*\(/);
+          text = t.slice(i, i + label.length + (next > 0 ? next : Math.min(rest.length, 20000)));
+          break;
+        }
       } catch {}
     }
   }

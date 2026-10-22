@@ -280,7 +280,8 @@ function parseDraft(text) {
 }
 
 /* ── 3. 삽입 + 검사 ── */
-const HYPE = /축하|무조건|100\s*%\s*(보장|받)|확정적으로|반드시\s*받|대상이에요|당첨/;
+// "당첨금"(명사)은 과장이 아니다 — 로또 당첨금 세금 글이 "당첨" 46곳으로 통째로 막혔다 (2026-10-22). "당첨되셨어요" 같은 말은 그대로 막는다
+const HYPE = /축하|무조건|100\s*%\s*(보장|받)|확정적으로|반드시\s*받|대상이에요|당첨(?!금)/;
 /** 주어진 것은 주어진 대로 못박고, 기계로 고칠 수 있는 것만 고친 뒤 삽입 전에 잡을 수 있는 것을 잡는다 */
 function enforce(ctx, draft, inputs) {
   const a = draft.article;
@@ -311,8 +312,9 @@ function enforce(ctx, draft, inputs) {
     for (const [k, x] of Object.entries(v)) relabel(x, inCell || k === "rows");
   };
   relabel(art);
-  // 주제 고정 버튼 — 등록부 screens[].heroFor 가 타이틀에 맞으면 첫 화면 버튼은 그 화면 (2026-10-22 "연말정산 글은 모두 계산기 버튼")
-  const fixedHero = ctaRegistry().screens.find((s) => s.heroFor && new RegExp(s.heroFor).test(ctx.title));
+  // 주제 고정 버튼 — 등록부 screens[].heroFor 가 타이틀이나 slug 에 맞으면 첫 화면 버튼은 그 화면 (2026-10-22 "연말정산 글은 모두 계산기 버튼").
+  // slug 도 본다 — "혼인세액공제 대상과 신청 방법…" 처럼 타이틀에 연말정산이 없는 연말정산-혼인세액공제 글이 빠졌다
+  const fixedHero = ctaRegistry().screens.find((s) => s.heroFor && new RegExp(s.heroFor).test(`${ctx.title} ${ctx.slug}`));
   if (fixedHero) art.heroCta = { label: fixedHero.button, url: fixedHero.url, org: fixedHero.org };
   const strings = [];
   (function all(v, k) { if (typeof v === "string") { if (k !== "url") strings.push(v); } else if (Array.isArray(v)) v.forEach((x) => all(x, k)); else if (v && typeof v === "object") for (const [kk, x] of Object.entries(v)) all(x, kk); })(art, "");
