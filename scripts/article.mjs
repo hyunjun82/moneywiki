@@ -311,6 +311,9 @@ function enforce(ctx, draft, inputs) {
     for (const [k, x] of Object.entries(v)) relabel(x, inCell || k === "rows");
   };
   relabel(art);
+  // 주제 고정 버튼 — 등록부 screens[].heroFor 가 타이틀에 맞으면 첫 화면 버튼은 그 화면 (2026-10-22 "연말정산 글은 모두 계산기 버튼")
+  const fixedHero = ctaRegistry().screens.find((s) => s.heroFor && new RegExp(s.heroFor).test(ctx.title));
+  if (fixedHero) art.heroCta = { label: fixedHero.button, url: fixedHero.url, org: fixedHero.org };
   const strings = [];
   (function all(v, k) { if (typeof v === "string") { if (k !== "url") strings.push(v); } else if (Array.isArray(v)) v.forEach((x) => all(x, k)); else if (v && typeof v === "object") for (const [kk, x] of Object.entries(v)) all(x, kk); })(art, "");
   // 질문 문장("…무조건 인정되나요?")은 주장이 아니다 — 거기 든 낱말로 글을 다시 쓰게 하지 않는다 (2026-09-16 오탐)

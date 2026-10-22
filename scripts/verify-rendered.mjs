@@ -19,7 +19,7 @@
  *   node scripts/verify-rendered.mjs --base http://localhost:3000 <slug>
  */
 import { chromium } from "playwright";
-import { ctaProblems } from "./lib/cta-rules.mjs";
+import { ctaProblems, buttonLabel } from "./lib/cta-rules.mjs";
 import net from "node:net";
 
 const argv = process.argv.slice(2);
@@ -202,6 +202,15 @@ for (const slug of slugs) {
     for (const cta of r.ctas) {
       // 이름과 도착 화면이 같은 일인지 — 도착 화면에 '신청' 이 하나라도 있으면 통과시키던 구멍 (2026-09-14)
       for (const msg of ctaProblems({ label: cta.label, url: cta.href })) problems.push(`CTA "${cta.label}" ${msg}`);
+      // 등록부 화면은 Playwright 로 열어 "그 화면"인지 확인하고 넣은 주소다(scripts/cta-registry.json lands).
+      // 홈택스처럼 늦게 그려지는 화면은 1.5~3초 안에 본문이 비어 행동·주제 낱말 추측이 헛돌았고 —
+      // 확인된 간소화 조회·근로소득 신고 버튼을 "무관"·"행동 요소 없음"으로 떨어뜨려 고치기가 버튼을 지웠다 —
+      // 글마다 같은 홈택스 화면을 버튼 수만큼 새로 열어 한 편에 몇 분씩, 메모리도 먹었다 (2026-10-22).
+      // 등록부 화면은 열지 않는다. 등록부 주소가 살아 있는지는 등록할 때와 등록부를 고칠 때 본다. 등록부 밖 주소는 그대로 전부 연다.
+      if (buttonLabel(cta.href)) {
+        ctaReport.push(`   → ${cta.label}  (등록부 화면 — 열지 않음)\n     ${cta.href}`);
+        continue;
+      }
       const p2 = await browser.newPage();
       try {
         await p2.goto(cta.href, { waitUntil: "commit", timeout: 90000 });

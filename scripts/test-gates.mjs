@@ -48,7 +48,8 @@ const gates = {
   shadow: () => run("node", ["scripts/verify-no-shadow.mjs"]),
   links: () => run("node", ["scripts/verify-internal-links.mjs"]),
   // --base 를 빼면 라이브 사이트를 검사한다. 로컬 변형이 안 보여 전부 통과로 나온다.
-  rendered: () => run("node", ["scripts/verify-rendered.mjs", "--base", "http://localhost:3111", SLUG]),
+  // 파이프라인과 같은 포트 — 3111 은 다른 프로젝트(gov-jjyu) dev 다 (article.mjs PORT, 2026-09-20 에 3112 로 옮김)
+  rendered: () => run("node", ["scripts/verify-rendered.mjs", "--base", `http://localhost:${process.env.ARTICLE_PORT || 3112}`, SLUG]),
 };
 
 /** 글 파일에서 이 slug 블록만 손댄다 */

@@ -220,8 +220,24 @@ export function extractJson(text) {
   let lastErr = null;
   for (const b of blocks.slice(0, 5)) {
     try { return JSON.parse(b); } catch (e) { lastErr = e; }
+    // 배열·객체 끝에 쉼표를 남기는 일이 있다("…열어 봐요",] ) — 글 한 편이 통째로 버려졌다 (2026-10-22 고향사랑기부금).
+    // 읽기가 실패했을 때만, 문자열 밖의 끝 쉼표를 지우고 한 번 더 읽는다.
+    try { return JSON.parse(dropTrailingCommas(b)); } catch {}
   }
   throw new Error(`답의 JSON 을 읽을 수 없습니다 (${lastErr?.message}):\n${blocks[0].slice(0, 600)}`);
+}
+
+/** 문자열 밖에서 ] · } 바로 앞의 쉼표만 지운다 */
+function dropTrailingCommas(s) {
+  let out = "", inStr = false;
+  for (let i = 0; i < s.length; i++) {
+    const c = s[i];
+    if (inStr) { out += c; if (c === "\\") { out += s[++i] ?? ""; } else if (c === '"') inStr = false; continue; }
+    if (c === '"') { inStr = true; out += c; continue; }
+    if (c === ",") { let j = i + 1; while (/\s/.test(s[j] || "")) j++; if (s[j] === "]" || s[j] === "}") continue; }
+    out += c;
+  }
+  return out;
 }
 
 /** 문자열 안의 괄호는 세지 않는다 */

@@ -44,11 +44,16 @@ function evidenceHas(ev, token) {
   const norm = (s) => s.replace(/[,\s]/g, "");
   const t = norm(token);
   if ((ev.exampleValues || []).some((e) => norm(e) === t)) return true; // 예시 계산값(글쓴이 선언)
-  if (ev.facts.some((f) => norm(f.value || "").includes(t) || norm(f.quote || "").includes(t))) return true;
+  // 법령은 비율을 "100분의 3"으로 쓴다 — 본문의 3%와 같은 값이다. 소득세법 제59조의4 "총급여액의 100분의 3"이 있는데
+  // 의료비 글이 "3%·15% 근거 없음"으로 버려졌다 (2026-10-22). "100분의 30"이 3%로 맞지 않게 뒤에 숫자가 오면 다른 값이다.
+  const pct = t.match(/^(\d+(?:\.\d+)?)(?:%|퍼센트)$/);
+  const pctRe = pct ? new RegExp(`100분의${pct[1].replace(".", "\\.")}(?![\\d.])`) : null;
+  const has = (s) => { const x = norm(s || ""); return x.includes(t) || (pctRe ? pctRe.test(x) : false); };
+  if (ev.facts.some((f) => has(f.value) || has(f.quote))) return true;
   // facts 는 숫자가 든 문장만 추린 것이라 표·사례 안의 값이 빠진다.
   // 재정경제부 사례표의 "배우자 9억원 / 합계 11억원"이 원문에 있는데도 근거 없음으로 몰렸다.
   // 같은 페이지에서 뜯어온 원문(raws)까지 본다 — 출처는 동일하다.
-  return (ev.raws || []).some((r) => norm(r.text || "").includes(t));
+  return (ev.raws || []).some((r) => has(r.text));
 }
 
 /** 원문에 그 문장이 실제로 있는가 — 조사·공백 차이를 무시하고 본다 */

@@ -4,9 +4,14 @@
   "managedDomains": [
     "work24.go.kr",
     "labor.moel.go.kr",
-    "cyber.ccrs.or.kr"
+    "cyber.ccrs.or.kr",
+    "hometax.go.kr"
   ],
   "blocked": [
+    {
+      "pattern": "^https?://(www\\.)?hometax\\.go\\.kr/?([?#].*)?$|hometax\\.go\\.kr/websquare/websquare\\.(html|wq)\\?w2xPath=/ui/pp/index_pp\\.xml(&menuCd=[^&]*)?$",
+      "why": "홈택스 첫 화면 — 메뉴 번호(tmIdx·tm2lIdx·tm3lIdx) 없는 주소. 옛 tmIdx=01·04 형식도 첫 화면으로 튕긴다(2026-10-22 확인)"
+    },
     {
       "pattern": "^https?://(www\\.)?work24\\.go\\.kr/?$",
       "why": "고용24 첫 화면(기관 홈)"
@@ -248,6 +253,88 @@
       "keywords": "방문|예약",
       "lands": "방문예약 신청 안내 → 예약하기 (2026-09-16 Playwright 확인)",
       "button": "방문상담 예약하기"
+    },
+    {
+      "label": "연말정산 모의계산(계산기)",
+      "url": "https://gov.jjyu.co.kr/calc/year-end-tax/",
+      "org": "정부지원사업 계산기",
+      "keywords": "연말정산|모의계산|계산",
+      "lands": "연말정산 모의계산 화면, 입력칸 46개 (2026-10-22 Playwright 확인)",
+      "button": "연말정산 모의계산하기",
+      "heroFor": "^(?!.*건강보험료).*연말정산",
+      "_heroFor": "타이틀이 이 정규식에 맞으면 첫 화면 대형 버튼(heroCta)을 이 화면으로 고정한다. 2026-10-22 사용자 지시 \"연말정산 글은 모두 계산기 버튼\". 건강보험료 연말정산은 건보공단 보험료 정산이라 세금 계산기가 하는 일이 아니어서 뺀다"
+    },
+    {
+      "label": "연말정산간소화 소득·세액공제 자료 조회",
+      "url": "https://hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&tmIdx=45&tm2lIdx=4504000000&tm3lIdx=4504010000",
+      "org": "국세청 홈택스",
+      "keywords": "간소화|자료 ?조회|공제 ?자료",
+      "lands": "로그인 필요 — 새 브라우저에서 '로그인 정보가 없습니다' 알림(없는 메뉴번호는 알림 없음, 2026-10-22 Playwright 확인)",
+      "button": "간소화 자료 조회하기"
+    },
+    {
+      "label": "부양가족 자료제공동의 신청/조회/취소",
+      "url": "https://hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&tmIdx=45&tm2lIdx=4504000000&tm3lIdx=4504020000",
+      "org": "국세청 홈택스",
+      "keywords": "부양가족|제공 ?동의",
+      "lands": "그 화면이 열림 — 제목 '연말정산간소화 > 부양가족 자료제공동의 신청/조회/취소' (2026-10-22 Playwright 확인)",
+      "button": "부양가족 자료제공 동의하기"
+    },
+    {
+      "label": "소득·세액공제 자료 삭제 신청",
+      "url": "https://hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&tmIdx=45&tm2lIdx=4504000000&tm3lIdx=4504040000",
+      "org": "국세청 홈택스",
+      "keywords": "삭제",
+      "lands": "그 화면이 열림 — 제목 '연말정산간소화 > 소득·세액공제 자료 삭제 신청' (2026-10-22 Playwright 확인)",
+      "button": "간소화 자료 삭제 신청하기"
+    },
+    {
+      "label": "조회되지 않는 의료비 신고센터",
+      "url": "https://hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&tmIdx=45&tm2lIdx=4504000000&tm3lIdx=4504061000",
+      "org": "국세청 홈택스",
+      "keywords": "의료비",
+      "lands": "로그인 필요 — '로그인 정보가 없습니다' 알림 (2026-10-22 Playwright 확인)",
+      "button": "누락 의료비 신고하기"
+    },
+    {
+      "label": "종합소득세 근로소득 신고 — 근로소득만 있는 사람(5월 연말정산·중도퇴사·누락 공제)",
+      "url": "https://hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&tmIdx=41&tm2lIdx=4103000000&tm3lIdx=4103030000",
+      "org": "국세청 홈택스",
+      "keywords": "근로소득",
+      "lands": "그 화면이 열림 — 제목 '세금신고 > 종합소득세 신고 > 근로소득 신고' (2026-10-22 Playwright 확인)",
+      "button": "근로소득 종합소득세 신고하기"
+    },
+    {
+      "label": "종합소득세 신고 — 사업·기타소득이 있거나 근로소득과 합쳐 신고하는 사람(투잡·알바)",
+      "url": "https://hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&tmIdx=41&tm2lIdx=4103000000&tm3lIdx=4103150000",
+      "org": "국세청 홈택스",
+      "keywords": "종합소득세",
+      "lands": "그 화면이 열림 — 제목 '세금신고 > 종합소득세 신고 > 종합소득세신고(모두채움∙일반∙근로∙분리과세…)' (2026-10-22 Playwright 확인)",
+      "button": "종합소득세 신고하기"
+    },
+    {
+      "label": "종합소득세 모두채움/단순경비율 신고 — 프리랜서·3.3% 사업소득자",
+      "url": "https://hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&tmIdx=41&tm2lIdx=4103000000&tm3lIdx=4103010000",
+      "org": "국세청 홈택스",
+      "keywords": "모두채움",
+      "lands": "그 화면이 열림 — 제목 '세금신고 > 종합소득세 신고 > 모두채움/단순경비율 신고' (2026-10-22 Playwright 확인)",
+      "button": "모두채움 신고하기"
+    },
+    {
+      "label": "종합소득세 기한후 환급신고",
+      "url": "https://hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&tmIdx=41&tm2lIdx=4103000000&tm3lIdx=4103160000",
+      "org": "국세청 홈택스",
+      "keywords": "기한후|환급 ?신고",
+      "lands": "로그인 필요 — '로그인 정보가 없습니다' 알림 (2026-10-22 Playwright 확인)",
+      "button": "기한후 환급신고하기"
+    },
+    {
+      "label": "국세 환급금 상세조회",
+      "url": "https://hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&tmIdx=42&tm2lIdx=4203000000&tm3lIdx=4203020000",
+      "org": "국세청 홈택스",
+      "keywords": "환급금",
+      "lands": "로그인 필요 — '로그인 정보가 없습니다' 알림. 국세청이 돌려주는 환급금(경정청구·종합소득세)용 — 회사가 주는 연말정산 환급금은 여기 안 나온다 (2026-10-22 Playwright 확인)",
+      "button": "국세 환급금 조회하기"
     }
   ]
 }
