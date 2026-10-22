@@ -69,6 +69,10 @@ function readSlugs(docs) {
   return slugs;
 }
 
+/** 301 로 보낸 옛 주소는 옮겨 간 글로 건다. 옛 파일이 남아 있어도 옛 주소로 링크하지 않는다. */
+const REDIRECTED = JSON.parse(fs.readFileSync("src/data/redirected-slugs.json", "utf8"));
+const follow = (s) => REDIRECTED[s] ?? s;
+
 const docs = readDocs();
 const slugs = readSlugs(docs);
 const slugByNorm = new Map();
@@ -93,7 +97,7 @@ for (const d of docs) {
     const n = norm(k);
 
     // ① 키워드가 곧 슬러그인 경우
-    const exact = slugByNorm.get(n);
+    const exact = slugByNorm.has(n) ? follow(slugByNorm.get(n)) : undefined;
     if (exact) {
       if (exact === d.slug) { stat.self++; continue; }
       (links[d.slug] ??= {})[k] = exact;
@@ -102,7 +106,7 @@ for (const d of docs) {
     }
 
     // ② 그 키워드를 가진 글이 자기 말고 하나뿐인 경우
-    const others = [...(owners.get(n) ?? [])].filter((s) => s !== d.slug);
+    const others = [...new Set([...(owners.get(n) ?? [])].map(follow))].filter((s) => s !== d.slug);
     if (others.length === 1) {
       (links[d.slug] ??= {})[k] = others[0];
       stat.byOwner++;

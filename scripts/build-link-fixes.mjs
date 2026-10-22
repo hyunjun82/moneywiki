@@ -25,6 +25,10 @@ const DIR = "content/wiki";
 const OUT = "src/data/link-fixes.json";
 const OUT_RELATED = "src/data/related-fixes.json";
 
+/** 301 로 보낸 옛 주소는 옮겨 간 글로 잇는다 (src/data/redirected-slugs.json). */
+const REDIRECTED = JSON.parse(fs.readFileSync("src/data/redirected-slugs.json", "utf8"));
+const follow = (s) => REDIRECTED[s] ?? s;
+
 const live = new Set();
 for (const f of fs.readdirSync(DIR)) if (f.endsWith(".md")) live.add(f.replace(/\.md$/, ""));
 try { for (const e of fs.readdirSync("src/app/w", { withFileTypes: true })) if (e.isDirectory()) live.add(e.name); } catch {}
@@ -127,7 +131,7 @@ for (const [slug, count] of dead) {
     if (has.length > 1) why = `품는 글 ${has.length}개`;
   }
 
-  if (hit) { fixes[slug] = hit[0]; stat[hit[1]]++; }
+  if (hit) { fixes[slug] = follow(hit[0]); stat[hit[1]]++; }
   else { stat.giveUp++; giveUpTop.push([slug, count, why]); }
 }
 

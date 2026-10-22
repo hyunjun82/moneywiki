@@ -4,10 +4,10 @@ import matter from "gray-matter";
 import linkFixes from "@/data/link-fixes.json";
 import redirectedSlugs from "@/data/redirected-slugs.json";
 
-// Cloudflare Bulk Redirects 로 301 보낸 옛 주소 — 목록(카테고리·피드·관련 글·사이트맵)에서만 뺀다.
+// Cloudflare Bulk Redirects 로 301 보낸 옛 주소 { 옛 slug: 새 slug } — 목록(카테고리·피드·관련 글·사이트맵)에서만 뺀다.
 // 페이지 자체(getAllWikiSlugs·getWikiDocument)는 그대로 빌드한다: 옛 파일을 지우기 전까지는
 // Cloudflare 규칙만 내리면 원래대로 돌아가야 한다 (2026-10-23 연말정산 1차 50개)
-export const REDIRECTED_SLUGS = new Set<string>(redirectedSlugs as string[]);
+export const REDIRECTED_SLUGS = new Set<string>(Object.keys(redirectedSlugs));
 import { remark } from "remark";
 import remarkGfm from "remark-gfm";
 import html from "remark-html";
