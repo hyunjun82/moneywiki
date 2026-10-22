@@ -130,9 +130,13 @@ function Publish-News {
       host = "www.jjyu.co.kr"
       key = "cf14d2ece5b0438e848760be86604782"
       keyLocation = "https://www.jjyu.co.kr/cf14d2ece5b0438e848760be86604782.txt"
-      urlList = @("https://www.jjyu.co.kr/gold/news/$today", "https://www.jjyu.co.kr/gold/news", "https://www.jjyu.co.kr/gold")
+      urlList = @("https://www.jjyu.co.kr/gold/news/$today", "https://www.jjyu.co.kr/gold/news", "https://www.jjyu.co.kr/gold",
+        "https://www.jjyu.co.kr/gold/calculator", "https://www.jjyu.co.kr/gold/buy", "https://www.jjyu.co.kr/gold/sell")
     } | ConvertTo-Json
-    Invoke-RestMethod -Method Post -Uri "https://api.indexnow.org/indexnow" -ContentType "application/json; charset=utf-8" -Body $body | Out-Null
+    # 네이버는 api.indexnow.org 공유만으로는 /fx 도구 페이지를 3주간 수집하지 않았다(2026-10-22 실측) — 네이버 주소에도 직접 보낸다
+    foreach ($ep in @("https://searchadvisor.naver.com/indexnow", "https://api.indexnow.org/indexnow")) {
+      Invoke-RestMethod -Method Post -Uri $ep -ContentType "application/json; charset=utf-8" -Body $body | Out-Null
+    }
     Log "IndexNow 알림 완료"
   } catch {
     Log ("IndexNow 실패(무시): " + $_.Exception.Message)
@@ -266,9 +270,13 @@ function Publish-FxNews {
       host = "www.jjyu.co.kr"
       key = "cf14d2ece5b0438e848760be86604782"
       keyLocation = "https://www.jjyu.co.kr/cf14d2ece5b0438e848760be86604782.txt"
-      urlList = @("https://www.jjyu.co.kr/fx/news/$today", "https://www.jjyu.co.kr/fx/news", "https://www.jjyu.co.kr/fx")
+      urlList = @("https://www.jjyu.co.kr/fx/news/$today", "https://www.jjyu.co.kr/fx/news", "https://www.jjyu.co.kr/fx",
+        "https://www.jjyu.co.kr/fx/calculator", "https://www.jjyu.co.kr/fx/banks", "https://www.jjyu.co.kr/fx/airport",
+        "https://www.jjyu.co.kr/fx/exchange-calculator", "https://www.jjyu.co.kr/fx/exchange-fee")
     } | ConvertTo-Json
-    Invoke-RestMethod -Method Post -Uri "https://api.indexnow.org/indexnow" -ContentType "application/json; charset=utf-8" -Body $body | Out-Null
+    foreach ($ep in @("https://searchadvisor.naver.com/indexnow", "https://api.indexnow.org/indexnow")) {
+      Invoke-RestMethod -Method Post -Uri $ep -ContentType "application/json; charset=utf-8" -Body $body | Out-Null
+    }
     Log "환율 IndexNow 알림 완료"
   } catch {
     Log ("환율 IndexNow 실패(무시): " + $_.Exception.Message)

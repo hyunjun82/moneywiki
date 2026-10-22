@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { BandAd, Card, DataNotice, FooterNote, Hero, SideAd, Skeleton } from "./ui";
+import { BandAd, Card, DataNotice, FooterNote, Hero, SectionHead, SideAd, Skeleton } from "./ui";
+import { CALC_FAQ } from "./faqData";
 import { GRAM_PER_DON, korDate, korDateTime, perGram, usePrice, won } from "./priceData";
 
 /** gold-calculator.html 시안을 옮긴 페이지. */
@@ -42,7 +43,7 @@ export default function CalculatorView() {
       <Hero
         eyebrow="GOLD CALCULATOR"
         title="금 계산기"
-        lead="순도와 중량을 넣으면 오늘 시세 기준 살 때·팔 때 금액을 바로 계산합니다."
+        lead="금 1돈(한돈 3.75g) 시세로 팔 때 받는 값과 살 때 내는 값을 계산합니다. 순금 24K·18K·14K 순도와 중량(돈·그램)을 넣으면 오늘 고시가 기준으로 바로 나옵니다."
       />
 
       {status === "error" ? <DataNotice /> : null}
@@ -199,6 +200,22 @@ export default function CalculatorView() {
               금 팔 때 가격
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ — page.tsx 의 FAQPage JSON-LD 와 같은 문장(CALC_FAQ). 검색엔진이 읽게 답을 모두 펼쳐 둔다 */}
+      <section className="flex flex-col gap-3.5">
+        <SectionHead title="금 계산기, 자주 묻는 질문" />
+        <div className="flex flex-col gap-2.5">
+          {CALC_FAQ.map((f) => (
+            <div key={f.q} className="bg-white border border-[#E2DFD7] rounded-[14px] px-[22px] py-5">
+              <h3 className="m-0 flex items-start gap-3 text-[17px] font-semibold text-[#1A1D21]">
+                <span className="text-[#C79A22] font-extrabold shrink-0">Q</span>
+                {f.q}
+              </h3>
+              <p className="mt-2.5 mb-0 pl-[26px] text-[16px] leading-[1.7] text-[#3C424A]">{f.a}</p>
+            </div>
+          ))}
         </div>
       </section>
 

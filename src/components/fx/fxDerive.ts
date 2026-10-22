@@ -538,6 +538,34 @@ export function exchangeFaq(data: FxData): Faq[] {
   return out;
 }
 
+/** 환율 계산기 — 문항은 자동완성 검색어(달러·엔화 환율 계산기, 환율 계산기 vs 환전 계산기, 베트남 환율 계산기)에 맞춘다 */
+export function calcFaq(data: FxData): Faq[] {
+  const out: Faq[] = [];
+  const usd = baseOf(data, "USD");
+  const jpy = baseOf(data, "JPY");
+  if (usd) {
+    out.push({
+      q: "달러 환율 계산은 어떻게 하나요?",
+      a: `${usd.when} 기준 1달러 ${won(usd.rate, 2)}원이라 100달러는 ${won(usd.perUnit * 100)}원, 1,000달러는 ${won(usd.perUnit * 1000)}원입니다(${usd.label}). 은행에서 실제로 살 때는 여기에 환전 수수료가 붙습니다.`,
+    });
+  }
+  if (jpy) {
+    out.push({
+      q: "엔화 환율은 왜 100엔 기준인가요?",
+      a: `엔화는 1엔 값이 작아 100엔 단위로 고시합니다. ${jpy.when} 기준 100엔 ${won(jpy.rate, 2)}원이라 1엔은 ${won(jpy.perUnit, 4)}원, 1만 엔은 ${won(jpy.perUnit * 10000)}원, 10만 엔은 ${won(jpy.perUnit * 100000)}원입니다. 계산기에는 엔 금액을 그대로 넣으면 됩니다.`,
+    });
+  }
+  out.push({
+    q: "환율 계산기와 환전 계산기는 무엇이 다른가요?",
+    a: "환율 계산기는 수수료를 뺀 기준 환율로 원화와 외화를 서로 바꿔 보는 계산입니다. 환전 계산기는 여기에 은행이 받는 환전 수수료와 우대율을 넣어, 창구나 앱에서 실제로 낼 원화(팔 때는 받을 원화)를 계산합니다.",
+  });
+  out.push({
+    q: "베트남 동·대만 달러도 계산되나요?",
+    a: `됩니다. 달러·엔화·유로·위안 외에 베트남 동, 대만 달러, 홍콩 달러, 태국 바트, 필리핀 페소 등 ${data.rates?.length ?? 17}개 통화를 원화와 서로 계산합니다. 베트남 동·인도네시아 루피아처럼 단위가 작은 통화는 엔화처럼 100 단위로 고시합니다.`,
+  });
+  return out;
+}
+
 export function airportFaq(data: FxData): Faq[] {
   const usd = metaByCode("USD")!;
   const jpy = metaByCode("JPY")!;

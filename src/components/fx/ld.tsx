@@ -19,6 +19,22 @@ export function breadcrumbLd(items: { name: string; path: string }[]) {
   };
 }
 
+/** 페이지 자체 — dateModified 는 환율을 받은 시각(스냅숏 updatedAt). 제목 숫자가 바뀌는 날이 곧 수정일이다. */
+export function webPageLd(p: { path: string; name: string; description: string; dateModified?: string | null }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${SITE}${p.path}`,
+    url: `${SITE}${p.path}`,
+    name: p.name,
+    description: p.description,
+    inLanguage: "ko-KR",
+    ...(p.dateModified ? { dateModified: p.dateModified } : {}),
+    isPartOf: { "@type": "WebSite", name: "머니위키", url: SITE },
+    publisher: { "@type": "Organization", name: "머니위키", url: SITE },
+  };
+}
+
 export function faqLd(items: Faq[]) {
   return {
     "@context": "https://schema.org",

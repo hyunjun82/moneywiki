@@ -29,6 +29,8 @@ import {
   type FxData,
   type FxRate,
 } from "./fxData";
+import { calcFaq } from "./fxDerive";
+import { FaqList } from "./parts";
 
 const QUICK = [10000, 50000, 100000, 500000, 1000000];
 
@@ -95,7 +97,7 @@ export default function CalculatorView({ initial }: { initial?: FxData }) {
               환율 계산기
             </h1>
             <p className="mt-[22px] mb-0 text-[17px] sm:text-[18px] leading-[1.75] text-white/[0.62] max-w-[38ch]">
-              금액을 넣으면 오늘 환율로 원화와 통화 {rates.length || 17}종을 서로 바로 환산합니다. 수수료를 빼고
+              금액을 넣으면 오늘 달러 환율·엔화 환율로 원화와 통화 {rates.length || 17}종을 서로 바로 환산합니다. 수수료를 빼고
               계산한 기준 환율 값입니다. 은행에서 실제로 낼 원화는 환전 계산기에서 은행과 우대율을 넣어 계산합니다.
             </p>
             <div className="mt-[30px] flex items-center gap-2.5 flex-wrap">
@@ -294,6 +296,14 @@ export default function CalculatorView({ initial }: { initial?: FxData }) {
             </div>
           </div>
         </Card>
+
+        {/* 04 FAQ — page.tsx 의 FAQPage JSON-LD 와 같은 문항(calcFaq) */}
+        {data || initial ? (
+          <section className="flex flex-col gap-5">
+            <SectionHead no="04" eyebrow="FAQ" title="환율 계산기, 자주 묻는 질문" />
+            <FaqList items={calcFaq((data ?? initial)!)} />
+          </section>
+        ) : null}
 
         <BandAd />
 
