@@ -47,7 +47,7 @@ SOURCES = [
 const RELATED = [
   { slug: "4대보험-공제액-계산", title: "4대보험 공제액 계산", description: "월급별 공제액 상세 계산법." },
   { slug: "4대보험-가입-확인-방법", title: "4대보험 가입 확인 방법", description: "내 가입 이력 조회하는 법." },
-  { slug: "국민연금-조기수령-감액률-신청조건-손익분기점", title: "국민연금 조기수령", description: "감액률과 손익분기점 비교." },
+  { slug: "국민연금-조기수령-조건", title: "국민연금 조기수령", description: "감액률과 손익분기점 비교." },
 ];
 
 function MiniCalc() {

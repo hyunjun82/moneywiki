@@ -1,0 +1,202 @@
+{
+  "slug": "국민연금-조기수령-조건",
+  "verifiedAt": "2026-10-23",
+  "collectedBy": "scripts/collect-evidence.mjs (playwright)",
+  "sources": [
+    {
+      "url": "https://www.law.go.kr/법령/%EA%B5%AD%EB%AF%BC%EC%97%B0%EA%B8%88%EB%B2%95/제61조",
+      "org": "법제처 (국민연금법 제61조)"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=97&onhunqueSeq=6525",
+      "org": "법제처"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EA%B5%AD%EB%AF%BC%EC%97%B0%EA%B8%88%EB%B2%95/제66조",
+      "org": "법제처 (국민연금법 제66조)"
+    }
+  ],
+  "facts": [
+    {
+      "value": "제61조 / 10년 / 60세 / 55세",
+      "quote": "제61조(노령연금 수급권자) ① 가입기간이 10년 이상인 가입자 또는 가입자였던 자에 대하여는 60세(특수직종근로자는 55세)가 된 때부터 그가 생존하는 동안 노령연금을 지급한다.",
+      "url": "https://www.law.go.kr/법령/%EA%B5%AD%EB%AF%BC%EC%97%B0%EA%B8%88%EB%B2%95/제61조",
+      "org": "법제처 (국민연금법 제61조)",
+      "screenshot": "evidence-국민연금-조기수령-조건-1.png"
+    },
+    {
+      "value": "10년 / 55세 / 60세",
+      "quote": "② 가입기간이 10년 이상인 가입자 또는 가입자였던 자로서 55세 이상인 자가 대통령령으로 정하는 소득이있는 업무에 종사하지 아니하는 경우 본인이 희망하면 제1항에도 불구하고 60세가 되기 전이라도 본인이 청구한 때부터 그가 생존하는 동안 일정한 금액의 연금(이하 “조기노령연금”이라 한다)을 받을 수 있다.",
+      "url": "https://www.law.go.kr/법령/%EA%B5%AD%EB%AF%BC%EC%97%B0%EA%B8%88%EB%B2%95/제61조",
+      "org": "법제처 (국민연금법 제61조)",
+      "screenshot": "evidence-국민연금-조기수령-조건-1.png"
+    },
+    {
+      "value": "11년",
+      "quote": "국민연금 가입기간이 11년 정도 되는데, 언제부터 노령연금을 받을 수 있나요?",
+      "url": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=97&onhunqueSeq=6525",
+      "org": "법제처",
+      "screenshot": "evidence-국민연금-조기수령-조건-2.png"
+    },
+    {
+      "value": "10년",
+      "quote": "국민연금에 10년 이상 가입했다면 출생연도별로 정해진 지급개시연령부터 노령연금을 받을 수 있습니다.",
+      "url": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=97&onhunqueSeq=6525",
+      "org": "법제처",
+      "screenshot": "evidence-국민연금-조기수령-조건-2.png"
+    },
+    {
+      "value": "1962년 / 63세",
+      "quote": "예를 들어 1962년생이라면 만 63세부터 수령 가능합니다.",
+      "url": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=97&onhunqueSeq=6525",
+      "org": "법제처",
+      "screenshot": "evidence-국민연금-조기수령-조건-2.png"
+    },
+    {
+      "value": "10년",
+      "quote": "☞ 국민연금의 기초가 되는 급여로, 국민연금 가입자가 나이가 들어 소득활동에 종사하지 못할 경우 생활안정과 복지증진을 위하여 지급되는 급여로서, 가입기간(연금보험료 납부기간)이 10년 이상이면 출생연도별 지급개시연령 이후부터 평생 동안 매월 지급받을 수 있습니다.",
+      "url": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=97&onhunqueSeq=6525",
+      "org": "법제처",
+      "screenshot": "evidence-국민연금-조기수령-조건-2.png"
+    },
+    {
+      "value": "1953년 / 1956년",
+      "quote": "1953년부터 1956년까지 출생자",
+      "url": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=97&onhunqueSeq=6525",
+      "org": "법제처",
+      "screenshot": "evidence-국민연금-조기수령-조건-2.png"
+    },
+    {
+      "value": "1957년 / 1960년",
+      "quote": "1957년부터 1960년까지 출생자",
+      "url": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=97&onhunqueSeq=6525",
+      "org": "법제처",
+      "screenshot": "evidence-국민연금-조기수령-조건-2.png"
+    },
+    {
+      "value": "1961년 / 1964년",
+      "quote": "1961년부터 1964년까지 출생자",
+      "url": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=97&onhunqueSeq=6525",
+      "org": "법제처",
+      "screenshot": "evidence-국민연금-조기수령-조건-2.png"
+    },
+    {
+      "value": "1965년 / 1968년",
+      "quote": "1965년부터 1968년까지 출생자",
+      "url": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=97&onhunqueSeq=6525",
+      "org": "법제처",
+      "screenshot": "evidence-국민연금-조기수령-조건-2.png"
+    },
+    {
+      "value": "2026년 / 9월 15일",
+      "quote": "이 정보는 2026년 9월 15일 기준으로 작성된 것입니다.",
+      "url": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=97&onhunqueSeq=6525",
+      "org": "법제처",
+      "screenshot": "evidence-국민연금-조기수령-조건-2.png"
+    },
+    {
+      "value": "1952년 / 60세 / 55세 / 55세 / 50세",
+      "quote": "1952년생 이전 출생자 | 60세 (특수직종근로자는 55세) | 55세 (특수직종근로자는 50세)",
+      "url": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=97&onhunqueSeq=6525",
+      "org": "법제처",
+      "screenshot": "evidence-국민연금-조기수령-조건-2.png"
+    },
+    {
+      "value": "1953년 / 1956년 / 61세 / 56세 / 56세 / 51세",
+      "quote": "1953년부터 1956년까지 출생자 | 61세 (특수직종근로자는 56세) | 56세 (특수직종근로자는 51세)",
+      "url": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=97&onhunqueSeq=6525",
+      "org": "법제처",
+      "screenshot": "evidence-국민연금-조기수령-조건-2.png"
+    },
+    {
+      "value": "1957년 / 1960년 / 62세 / 57세 / 57세 / 52세",
+      "quote": "1957년부터 1960년까지 출생자 | 62세 (특수직종근로자는 57세) | 57세 (특수직종근로자는 52세)",
+      "url": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=97&onhunqueSeq=6525",
+      "org": "법제처",
+      "screenshot": "evidence-국민연금-조기수령-조건-2.png"
+    },
+    {
+      "value": "1961년 / 1964년 / 63세 / 58세 / 58세 / 53세",
+      "quote": "1961년부터 1964년까지 출생자 | 63세 (특수직종근로자는 58세) | 58세 (특수직종근로자는 53세)",
+      "url": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=97&onhunqueSeq=6525",
+      "org": "법제처",
+      "screenshot": "evidence-국민연금-조기수령-조건-2.png"
+    },
+    {
+      "value": "1965년 / 1968년 / 64세 / 59세 / 59세 / 54세",
+      "quote": "1965년부터 1968년까지 출생자 | 64세 (특수직종근로자는 59세) | 59세 (특수직종근로자는 54세)",
+      "url": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=97&onhunqueSeq=6525",
+      "org": "법제처",
+      "screenshot": "evidence-국민연금-조기수령-조건-2.png"
+    },
+    {
+      "value": "1969년 / 65세 / 60세 / 60세 / 55세",
+      "quote": "1969년 이후 출생자 | 65세 (특수직종근로자는 60세) | 60세 (특수직종근로자는 55세)",
+      "url": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=97&onhunqueSeq=6525",
+      "org": "법제처",
+      "screenshot": "evidence-국민연금-조기수령-조건-2.png"
+    },
+    {
+      "value": "제66조 / 제61조 / 제63조 / 60세",
+      "quote": "제66조(조기노령연금의 지급 정지 등) ① 제61조제2항과 제63조제2항에 따라 조기노령연금을 받고 있는 60세 미만인 자가 다음 각 호의 어느 하나에 해당되는 경우에는 그 기간에 해당하는 조기노령연금은 지급을 정지한다.",
+      "url": "https://www.law.go.kr/법령/%EA%B5%AD%EB%AF%BC%EC%97%B0%EA%B8%88%EB%B2%95/제66조",
+      "org": "법제처 (국민연금법 제66조)",
+      "screenshot": "evidence-국민연금-조기수령-조건-3.png"
+    },
+    {
+      "value": "제61조",
+      "quote": "제61조제2항에 따른 소득이 있는 업무에 종사하는 경우",
+      "url": "https://www.law.go.kr/법령/%EA%B5%AD%EB%AF%BC%EC%97%B0%EA%B8%88%EB%B2%95/제66조",
+      "org": "법제처 (국민연금법 제66조)",
+      "screenshot": "evidence-국민연금-조기수령-조건-3.png"
+    },
+    {
+      "value": "60세 / 제61조",
+      "quote": "제1항제1호에 해당하는 자가 60세에 도달하기 전에 제61조제2항에 따른 소득이 있는 업무에 종사하지 아니하는 경우",
+      "url": "https://www.law.go.kr/법령/%EA%B5%AD%EB%AF%BC%EC%97%B0%EA%B8%88%EB%B2%95/제66조",
+      "org": "법제처 (국민연금법 제66조)",
+      "screenshot": "evidence-국민연금-조기수령-조건-3.png"
+    },
+    {
+      "value": "60세 / 제61조",
+      "quote": "제1항제2호에 해당하는 자가 60세에 도달하기 전에 제61조제2항에 따른 소득이 있는 업무에 종사하지 아니한 상태에서 본인이 조기노령연금의 재지급을 신청하는 경우",
+      "url": "https://www.law.go.kr/법령/%EA%B5%AD%EB%AF%BC%EC%97%B0%EA%B8%88%EB%B2%95/제66조",
+      "org": "법제처 (국민연금법 제66조)",
+      "screenshot": "evidence-국민연금-조기수령-조건-3.png"
+    },
+    {
+      "value": "제63조 / 제63조 / 1개월",
+      "quote": "지급 정지 전후의 가입기간을 합산하여 산정한 제63조제1항에 따른 노령연금액(부양가족연금액을 제외한다)에 재 수급 당시의 제63조제2항에 따른 연령별 비율에서 기 수급기간 1개월마다 1천분의 5를 뺀 비율을 곱한 금액에 부양가족연금액을 더한 금액",
+      "url": "https://www.law.go.kr/법령/%EA%B5%AD%EB%AF%BC%EC%97%B0%EA%B8%88%EB%B2%95/제66조",
+      "org": "법제처 (국민연금법 제66조)",
+      "screenshot": "evidence-국민연금-조기수령-조건-3.png"
+    }
+  ],
+  "raws": [
+    {
+      "url": "https://www.law.go.kr/법령/%EA%B5%AD%EB%AF%BC%EC%97%B0%EA%B8%88%EB%B2%95/제61조",
+      "org": "법제처 (국민연금법 제61조)",
+      "screenshot": "evidence-국민연금-조기수령-조건-1.png",
+      "text": "제61조(노령연금 수급권자) ① 가입기간이 10년 이상인 가입자 또는 가입자였던 자에 대하여는 60세(특수직종근로자는 55세)가 된 때부터 그가 생존하는 동안 노령연금을 지급한다.  <개정 2011. 12. 31.>\n\n② 가입기간이 10년 이상인 가입자 또는 가입자였던 자로서 55세 이상인 자가 대통령령으로 정하는 소득이있는 업무에 종사하지 아니하는 경우 본인이 희망하면 제1항에도 불구하고 60세가 되기 전이라도 본인이 청구한 때부터 그가 생존하는 동안 일정한 금액의 연금(이하 “조기노령연금”이라 한다)을 받을 수 있다.  <개정 2011. 12. 31.>"
+    },
+    {
+      "url": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=97&onhunqueSeq=6525",
+      "org": "법제처",
+      "screenshot": "evidence-국민연금-조기수령-조건-2.png",
+      "text": "메인메뉴 바로가기\n본문 바로가기\n통합검색박스\n검색어\n검색\n로그인 최근 본 법령정보 -\nLanguage\n메뉴전체보기\n책자형\n카드뉴스형\n백문백답\n솔로몬의 재판\n웹툰\n소식∙참여\n서비스 소개\nSMART\n생활법률\n앱 다운로드\n설문조사\n홈 > \n백문백답 > 생활법령 백문백답\n국민연금 가입기간이 11년 정도 되는데, 언제부터 노령연금을 받을 수 있나요?\n국민연금에 10년 이상 가입했다면 출생연도별로 정해진 지급개시연령부터 노령연금을 받을 수 있습니다. 예를 들어 1962년생이라면 만 63세부터 수령 가능합니다.\n◇ “노령연금”이란?\n☞ 국민연금의 기초가 되는 급여로, 국민연금 가입자가 나이가 들어 소득활동에 종사하지 못할 경우 생활안정과 복지증진을 위하여 지급되는 급여로서, 가입기간(연금보험료 납부기간)이 10년 이상이면 출생연도별 지급개시연령 이후부터 평생 동안 매월 지급받을 수 있습니다.\n◇ 노령연금 지급개시연령\n☞ 노령연금의 지급개시연령은 다음과 같습니다.\n\n출생연도\n\n\t\n\n지급개시연령\n\n\n\n\n노령연금\n\n\t\n\n조기노령연금\n\n\n\n\n1952년생 이전 출생자\n\n\t\n\n60세\n\n(특수직종근로자는 55세)\n\n\t\n\n55세\n\n(특수직종근로자는 50세)\n\n\n\n\n1953년부터 1956년까지 출생자\n\n\t\n\n61세\n\n(특수직종근로자는 56세)\n\n\t\n\n56세\n\n(특수직종근로자는 51세)\n\n\n\n\n1957년부터 1960년까지 출생자\n\n\t\n\n62세\n\n(특수직종근로자는 57세)\n\n\t\n\n57세\n\n(특수직종근로자는 52세)\n\n\n\n\n1961년부터 1964년까지 출생자\n\n\t\n\n63세\n\n(특수직종근로자는 58세)\n\n\t\n\n58세\n\n(특수직종근로자는 53세)\n\n\n\n\n1965년부터 1968년까지 출생자\n\n\t\n\n64세\n\n(특수직종근로자는 59세)\n\n\t\n\n59세\n\n(특수직종근로자는 54세)\n\n\n\n\n1969년 이후 출생자\n\n\t\n\n65세\n\n(특수직종근로자는 60세)\n\n\t\n\n60세\n\n(특수직종근로자는 55세)\n\n\n\n\n    \n저장\n\n목록\n이 정보는 2026년 9월 15일 기준으로 작성된 것입니다.\n생활법령정보는 법적 효력을 갖는 유권해석(결정, 판단)의 근거가 되지 않고, 각종 신고, 불복 청구 등의 증거자료로서의 효력은 없습니다.\n구체적인 법령에 대한 질의는 담당기관이나 국민신문고에 문의하시기 바랍니다.\n위 내용에 대한 홈페이지 개선의견은 홈페이지 개선의견을 이용해 주시기 바랍니다.\n\n개인정보처리방침\n저작권정책\n사이트맵\nRSS\n모바일 홈페이지\n생활법령 블로그\n모바일QR\n생활법령배너달기\n\nCopyright ⓒ 1997-2023 Korea Ministry of Government Legislation. All Rights Reserved.    |    홈페이지 개선의견\n\n관련기관 홈페이지\n\n[표]\n출생연도 | 지급개시연령\n노령연금 | 조기노령연금\n1952년생 이전 출생자 | 60세 (특수직종근로자는 55세) | 55세 (특수직종근로자는 50세)\n1953년부터 1956년까지 출생자 | 61세 (특수직종근로자는 56세) | 56세 (특수직종근로자는 51세)\n1957년부터 1960년까지 출생자 | 62세 (특수직종근로자는 57세) | 57세 (특수직종근로자는 52세)\n1961년부터 1964년까지 출생자 | 63세 (특수직종근로자는 58세) | 58세 (특수직종근로자는 53세)\n1965년부터 1968년까지 출생자 | 64세 (특수직종근로자는 59세) | 59세 (특수직종근로자는 54세)\n1969년 이후 출생자 | 65세 (특수직종근로자는 60세) | 60세 (특수직종근로자는 55세)"
+    },
+    {
+      "url": "https://www.law.go.kr/법령/%EA%B5%AD%EB%AF%BC%EC%97%B0%EA%B8%88%EB%B2%95/제66조",
+      "org": "법제처 (국민연금법 제66조)",
+      "screenshot": "evidence-국민연금-조기수령-조건-3.png",
+      "text": "제66조(조기노령연금의 지급 정지 등) ① 제61조제2항과 제63조제2항에 따라 조기노령연금을 받고 있는 60세 미만인 자가 다음 각 호의 어느 하나에 해당되는 경우에는 그 기간에 해당하는 조기노령연금은 지급을 정지한다.  <개정 2011. 12. 31., 2017. 3. 21.>\n\n1. 제61조제2항에 따른 소득이 있는 업무에 종사하는 경우\n\n2. 제1호에는 해당되지 아니하나 조기노령연금을 받고 있는 본인이 조기노령연금 지급 정지를 신청하는 경우\n\n② 제1항에 따라 조기노령연금의 지급이 정지된 자가 다음 각 호의 어느 하나에 해당되는 경우에는 조기노령연금을 다시 지급한다.  <신설 2017. 3. 21.>\n\n1. 60세에 도달하는 경우\n\n2. 제1항제1호에 해당하는 자가 60세에 도달하기 전에 제61조제2항에 따른 소득이 있는 업무에 종사하지 아니하는 경우\n\n3. 제1항제2호에 해당하는 자가 60세에 도달하기 전에 제61조제2항에 따른 소득이 있는 업무에 종사하지 아니한 상태에서 본인이 조기노령연금의 재지급을 신청하는 경우\n\n③ 제1항에 따라 조기노령연금의 지급이 정지된 자가 제2항에 따라 조기노령연금을 다시 지급받을 경우의 조기노령연금액은 다음 각 호와 같다.  <개정 2011. 12. 31., 2015. 1. 28., 2017. 3. 21.>\n\n1. 지급 정지 전후의 가입기간을 합산하여 산정한 제63조제1항에 따른 노령연금액(부양가족연금액을 제외한다)에 재 수급 당시의 제63조제2항에 따른 연령별 비율에서 기 수급기간 1개월마다 1천분의 5를 뺀 비율을 곱한 금액에 부양가족연금액을 더한 금액\n\n2. 제1호에 따른 조기노령연금액(부양가족연금액을 제외한다. 이하 이 호에서 같다)이 제1항에 따라 지급 정지되기 전의 조기노령연금액보다 적어지는 경우에는 지급 정지되기 전의 조기노령연금액\n\n④ 제1항 및 제2항에 따른 조기노령연금 지급 정지 및 재지급 신청에 필요한 세부사항은 보건복지부령으로 정한다.  <신설 2017. 3. 21.>"
+    }
+  ],
+  "capturesReviewed": {
+    "evidence-국민연금-조기수령-조건-1.png": "국가법령정보센터 국민연금법 화면. 시행 2026. 10. 20. 표시와 제61조 ①항(10년 이상 가입, 60세, 특수직종 55세)·②항(55세 이상, 조기노령연금 정의)이 보여요.",
+    "evidence-국민연금-조기수령-조건-2.png": "법제처 생활법령정보 백문백답 화면. 가입기간 11년 질문과 노령연금 설명, 출생연도별 지급개시연령 표의 1952년생 이전~1961년부터 1964년까지 줄이 보이고 아래는 잘려 있어요.",
+    "evidence-국민연금-조기수령-조건-3.png": "국가법령정보센터 국민연금법 제66조(조기노령연금의 지급 정지 등) 화면. ①~④항의 정지 사유, 60세 도달 시 재지급, 1개월마다 1천분의 5를 뺀 재지급 금액, 보건복지부령 위임이 보여요."
+  },
+  "exampleValues": [],
+  "exampleNote": ""
+}

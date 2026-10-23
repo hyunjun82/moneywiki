@@ -5,7 +5,8 @@
     "work24.go.kr",
     "labor.moel.go.kr",
     "cyber.ccrs.or.kr",
-    "hometax.go.kr"
+    "hometax.go.kr",
+    "nps.or.kr"
   ],
   "blocked": [
     {
@@ -35,6 +36,10 @@
     {
       "pattern": "^https?://(www\\.)?hrd\\.go\\.kr/?$",
       "why": "HRD-Net 첫 화면(기관 홈) — 고용24 국민내일배움카드 신청 화면을 씀"
+    },
+    {
+      "pattern": "^https?://(www\\.)?nps\\.or\\.kr/?(main\\.do|gate\\.do)?([?#].*)?$",
+      "why": "국민연금공단 첫 화면 — 일을 처리하는 화면이 아님. 전자민원 메뉴 주소(elctcvlcpt/…menuId=)를 쓴다(2026-10-23)"
     }
   ],
   "screens": [
@@ -335,6 +340,110 @@
       "keywords": "환급금",
       "lands": "로그인 필요 — '로그인 정보가 없습니다' 알림. 국세청이 돌려주는 환급금(경정청구·종합소득세)용 — 회사가 주는 연말정산 환급금은 여기 안 나온다 (2026-10-22 Playwright 확인)",
       "button": "국세 환급금 조회하기"
+    },
+    {
+      "label": "예상연금액 조회(중앙노후준비지원센터 국민연금 알아보기)",
+      "url": "https://csa.nps.or.kr/ohkd/ntpsidnty/anpninq/UHKD7101M0.do",
+      "org": "국민연금공단",
+      "keywords": "예상|연금액|수령액",
+      "lands": "로그인 필요 — 제목 '중앙노후준비지원센터>재무진단>국민연금 알아보기' (2026-10-23 Playwright 확인)",
+      "button": "예상연금액 조회하기"
+    },
+    {
+      "label": "가입내역조회",
+      "url": "https://www.nps.or.kr/elctcvlcpt/inquiry/getOHAC0001M0.do?menuId=MN24001035",
+      "org": "국민연금공단",
+      "keywords": "가입 ?내역",
+      "lands": "로그인 필요 — 로그인 없는 새 브라우저에서 제목 '전자민원 > 개인 > …' 화면과 로그인 안내 (2026-10-23 Playwright 확인)",
+      "button": "가입내역 조회하기"
+    },
+    {
+      "label": "연기연금 신청자 예상연금월액 조회",
+      "url": "https://www.nps.or.kr/elctcvlcpt/inquiry/getOHAC0012M0.do?menuId=MN24001046",
+      "org": "국민연금공단",
+      "keywords": "연기",
+      "lands": "로그인 필요 — 로그인 없는 새 브라우저에서 제목 '전자민원 > 개인 > …' 화면과 로그인 안내 (2026-10-23 Playwright 확인)",
+      "button": "연기연금 예상액 조회하기"
+    },
+    {
+      "label": "국민연금 신청(연금청구)",
+      "url": "https://www.nps.or.kr/elctcvlcpt/dclraply/getOHAC0040M0.do?menuId=MN24001074",
+      "org": "국민연금공단",
+      "keywords": "청구|신청",
+      "lands": "로그인 필요 — 로그인 없는 새 브라우저에서 제목 '전자민원 > 개인 > …' 화면과 로그인 안내 (2026-10-23 Playwright 확인)",
+      "button": "국민연금 청구하기"
+    },
+    {
+      "label": "추납보험료 납부 신청",
+      "url": "https://www.nps.or.kr/elctcvlcpt/dclraply/getOHAC0038M0.do?menuId=MN24001072",
+      "org": "국민연금공단",
+      "keywords": "추납|추후 ?납부",
+      "lands": "로그인 필요 — 로그인 없는 새 브라우저에서 제목 '전자민원 > 개인 > …' 화면과 로그인 안내 (2026-10-23 Playwright 확인)",
+      "button": "추납 신청하기"
+    },
+    {
+      "label": "임의(희망) 가입 · 탈퇴",
+      "url": "https://www.nps.or.kr/elctcvlcpt/dclraply/getOHAC0034M0.do?menuId=MN24001068",
+      "org": "국민연금공단",
+      "keywords": "임의 ?가입",
+      "lands": "로그인 필요 — 로그인 없는 새 브라우저에서 제목 '전자민원 > 개인 > …' 화면과 로그인 안내 (2026-10-23 Playwright 확인)",
+      "button": "임의가입 신청하기"
+    },
+    {
+      "label": "반납금 납부 신청",
+      "url": "https://www.nps.or.kr/elctcvlcpt/dclraply/getOHAC0037M0.do?menuId=MN24001071",
+      "org": "국민연금공단",
+      "keywords": "반납",
+      "lands": "로그인 필요 — 로그인 없는 새 브라우저에서 제목 '전자민원 > 개인 > …' 화면과 로그인 안내 (2026-10-23 Playwright 확인)",
+      "button": "반납금 납부 신청하기"
+    },
+    {
+      "label": "소득없는 개인의 납부예외 신청",
+      "url": "https://www.nps.or.kr/elctcvlcpt/dclraply/getOHAC0033M0.do?menuId=MN24001067",
+      "org": "국민연금공단",
+      "keywords": "납부 ?예외",
+      "lands": "로그인 필요 — 로그인 없는 새 브라우저에서 제목 '전자민원 > 개인 > …' 화면과 로그인 안내 (2026-10-23 Playwright 확인)",
+      "button": "납부예외 신청하기"
+    },
+    {
+      "label": "개인 납부예외자의 납부재개 등 신고(신청)",
+      "url": "https://www.nps.or.kr/elctcvlcpt/dclraply/getOHAC0032M0.do?menuId=MN24001066",
+      "org": "국민연금공단",
+      "keywords": "납부 ?재개",
+      "lands": "로그인 필요 — 로그인 없는 새 브라우저에서 제목 '전자민원 > 개인 > …' 화면과 로그인 안내 (2026-10-23 Playwright 확인)",
+      "button": "납부재개 신고하기"
+    },
+    {
+      "label": "노령연금 지급연기/재지급 신청",
+      "url": "https://www.nps.or.kr/elctcvlcpt/dclraply/getOHAC0041M0.do?menuId=MN24001075",
+      "org": "국민연금공단",
+      "keywords": "연기",
+      "lands": "로그인 필요 — 로그인 없는 새 브라우저에서 제목 '전자민원 > 개인 > …' 화면과 로그인 안내 (2026-10-23 Playwright 확인)",
+      "button": "연기연금 신청하기"
+    },
+    {
+      "label": "실업크레딧 신청",
+      "url": "https://www.nps.or.kr/elctcvlcpt/dclraply/getOHAC0039M0.do?menuId=MN24001073",
+      "org": "국민연금공단",
+      "keywords": "실업 ?크레딧",
+      "lands": "로그인 필요 — 로그인 없는 새 브라우저에서 제목 '전자민원 > 개인 > …' 화면과 로그인 안내 (2026-10-23 Playwright 확인)",
+      "button": "실업크레딧 신청하기"
+    },
+    {
+      "label": "소득 있는 업무 종사(중단) 신고",
+      "url": "https://www.nps.or.kr/elctcvlcpt/dclraply/getOHAC0045M0.do?menuId=MN24001079",
+      "org": "국민연금공단",
+      "keywords": "소득|업무 ?종사",
+      "lands": "로그인 필요 — 로그인 없는 새 브라우저에서 제목 '전자민원 > 개인 > …' 화면과 로그인 안내 (2026-10-23 Playwright 확인)",
+      "button": "소득활동 신고하기"
+    },
+    {
+      "label": "인터넷 납부서비스",
+      "url": "https://www.nps.or.kr/elctcvlcpt/comm/getOHAC0000M3.do?menuId=MN24001723",
+      "org": "국민연금공단",
+      "keywords": "납부",
+      "lands": "로그인 필요 — 제목 '전자민원 > 개인 > 인터넷 납부서비스' (2026-10-23 Playwright 확인)",
+      "button": "보험료 납부하기"
     }
   ]
 }

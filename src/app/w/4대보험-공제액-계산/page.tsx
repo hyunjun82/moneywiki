@@ -137,7 +137,7 @@ export default function Page() {
       <p style={body}>
         2026년부터 근로자 부담분이 4.5%에서 4.75%로 올랐어요. 18년 만의 인상이에요.
         사업주도 똑같이 4.75%를 내요. 합산하면 9.5%예요.
-        <a href="/w/국민연금-2026년-개혁-보험료율-소득대체율-변경" style={{ color: "#1D9E75", textDecoration: "underline" }}>국민연금 2026년 개혁</a>의 일환으로 점진적으로 인상되는 구조예요.
+        <a href="/w/국민연금-2026-개혁" style={{ color: "#1D9E75", textDecoration: "underline" }}>국민연금 2026년 개혁</a>의 일환으로 점진적으로 인상되는 구조예요.
       </p>
       <p style={body}>
         월급 300만원이라면 국민연금 공제액은 142,500원이에요.

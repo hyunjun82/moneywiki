@@ -45,7 +45,7 @@ const FAQS = [
 
 const RELATED = [
   { slug: "4대보험료-계산기", title: "4대보험료 계산기", description: "월급에서 빠지는 4대보험 금액 확인." },
-  { slug: "국민연금-조기수령-감액률-신청조건-손익분기점", title: "국민연금 조기수령", description: "조기수령 감액률과 손익분기점." },
+  { slug: "국민연금-조기수령-조건", title: "국민연금 조기수령", description: "조기수령 감액률과 손익분기점." },
   { slug: "연봉-실수령액-계산기", title: "연봉 실수령액 계산기", description: "세전 연봉에서 실수령액 확인." },
 ];
 

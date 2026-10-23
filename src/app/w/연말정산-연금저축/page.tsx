@@ -47,7 +47,7 @@ const REFERENCES = [
 const RELATED = [
   { slug: "연말정산-irp-공제", title: "IRP 세액공제 한도와 계산법", description: "연금저축과 합산해 최대 900만원 공제받는 방법이에요." },
   { slug: "연말정산-세액공제-항목-총정리", title: "연말정산 세액공제 항목 총정리", description: "13월의 월급을 만드는 세액공제 항목들이에요." },
-  { slug: "국민연금-2026년-개혁-보험료율-소득대체율-변경", title: "2026년 국민연금 개혁 핵심 정리", description: "보험료율 인상과 소득대체율 변경 내용이에요." },
+  { slug: "국민연금-2026-개혁", title: "2026년 국민연금 개혁 핵심 정리", description: "보험료율 인상과 소득대체율 변경 내용이에요." },
 ];
 
 export default function Page() {

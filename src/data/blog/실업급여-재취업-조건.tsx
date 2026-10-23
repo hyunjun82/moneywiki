@@ -269,7 +269,7 @@ export default function Page() {
         { title: "실업급여 신청방법 안내", href: "/w/실업급여-신청방법" },
       ]} />
       <PrevNext
-        prev={{ title: "실업급여 실업크레딧 가입 조건", href: "/w/실업급여-실업크레딧" }}
+        prev={{ title: "실업급여 실업크레딧 가입 조건", href: "/w/실업급여-국민연금" }}
         next={{ title: "실업급여 구비서류 준비 목록", href: "/w/실업급여-구비서류" }}
       />
     </BlogLayout>

@@ -323,7 +323,7 @@ export default function Page() {
 
       <PrevNext
         prev={{ title: "실업급여 실업신고 방법 안내", href: "/w/실업급여-실업신고" }}
-        next={{ title: "실업급여 실업크레딧 안내", href: "/w/실업급여-실업크레딧" }}
+        next={{ title: "실업급여 실업크레딧 안내", href: "/w/실업급여-국민연금" }}
       />
     </BlogLayout>
   );

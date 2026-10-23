@@ -25,7 +25,7 @@ function getResult(sel: Record<string, string>): Res | null {
       detail: "수급 중에는 국민연금공단 지사 방문, 전화 1355, 또는 내연금.kr에서 납부예외를 신청할 수 있어요. 신청을 늦추면 그만큼 납부예외 기간이 짧아져요.",
       badges: ["납부예외 미신청", "즉시 신청 필요"],
       links: [
-        { icon: "💡", title: "실업크레딧 신청 방법 — 75% 국가 지원", href: "/w/실업급여-실업크레딧" },
+        { icon: "💡", title: "실업크레딧 신청 방법 — 75% 국가 지원", href: "/w/실업급여-국민연금" },
         { icon: "📅", title: "실업급여 수급자격 조건 확인", href: "/w/실업급여-수급-조건" },
       ],
     };
@@ -37,7 +37,7 @@ function getResult(sel: Record<string, string>): Res | null {
       detail: "납부예외를 이미 신청했다면 실업크레딧도 추가 신청해 보세요. 보험료 75%를 국가가 내주고 납부예외와 달리 가입기간도 인정돼요.",
       badges: ["납부예외 완료", "실업크레딧 신청 권장"],
       links: [
-        { icon: "💡", title: "실업크레딧 신청 방법 — 75% 국가 지원", href: "/w/실업급여-실업크레딧" },
+        { icon: "💡", title: "실업크레딧 신청 방법 — 75% 국가 지원", href: "/w/실업급여-국민연금" },
       ],
     };
   }
@@ -48,7 +48,7 @@ function getResult(sel: Record<string, string>): Res | null {
       detail: "실업급여 수급자격 인정 후 국민연금공단에서 납부예외와 실업크레딧을 같이 신청할 수 있어요. 실업크레딧이 더 유리하니 두 가지를 함께 신청하는 게 좋아요.",
       badges: ["신청 예정", "준비 완료"],
       links: [
-        { icon: "💡", title: "실업크레딧 신청 방법 — 75% 국가 지원", href: "/w/실업급여-실업크레딧" },
+        { icon: "💡", title: "실업크레딧 신청 방법 — 75% 국가 지원", href: "/w/실업급여-국민연금" },
         { icon: "📅", title: "실업급여 수급자격 신청 방법", href: "/w/실업급여-수급-조건" },
       ],
     };
@@ -61,7 +61,7 @@ function getResult(sel: Record<string, string>): Res | null {
       badges: ["수급 종료", "소급 신청 확인"],
       links: [
         { icon: "📋", title: "실업급여 소정급여일수 기준표", href: "/w/실업급여-소정급여일수" },
-        { icon: "💡", title: "실업크레딧 신청 방법", href: "/w/실업급여-실업크레딧" },
+        { icon: "💡", title: "실업크레딧 신청 방법", href: "/w/실업급여-국민연금" },
       ],
     };
   }
@@ -205,7 +205,7 @@ export default function Article() {
         납부예외 신청을 잊었더라도 수급 기간 중이라면 소급 신청이 가능해요. 국민연금공단 1355로 문의하면 소급 신청 가능 기간을 정확히 안내받을 수 있어요.
       </Info>
 
-      <InlineLink icon="💡" title="실업크레딧 신청 방법 — 보험료 75% 국가 지원" desc="납부예외와 달리 가입기간이 인정되는 실업크레딧 신청 방법이에요." href="/w/실업급여-실업크레딧" />
+      <InlineLink icon="💡" title="실업크레딧 신청 방법 — 보험료 75% 국가 지원" desc="납부예외와 달리 가입기간이 인정되는 실업크레딧 신청 방법이에요." href="/w/실업급여-국민연금" />
 
       {/* ── SECTION 03 ── */}
       <Divider />
@@ -273,7 +273,7 @@ export default function Article() {
 
       <div style={{ margin: "20px 0" }}>
         <div style={{ fontSize: 13, fontWeight: 700, color: C.t1, marginBottom: 8 }}>📖 실업급여 더 알아보기</div>
-        <SpokeLink num="01" title="실업크레딧 신청 방법 — 국민연금 75% 지원" desc="국가가 75% 내주는 실업크레딧 조건과 신청 방법" href="/w/실업급여-실업크레딧" />
+        <SpokeLink num="01" title="실업크레딧 신청 방법 — 국민연금 75% 지원" desc="국가가 75% 내주는 실업크레딧 조건과 신청 방법" href="/w/실업급여-국민연금" />
         <SpokeLink num="02" title="실업급여 수급자격 — 피보험기간 180일" desc="수급 조건과 비자발적 퇴사 인정 범위" href="/w/실업급여-수급-조건" />
         <SpokeLink num="03" title="실업급여 소정급여일수 기준표" desc="나이·피보험기간별 120~270일 기준표" href="/w/실업급여-소정급여일수" />
       </div>
@@ -293,7 +293,7 @@ export default function Article() {
       ]} />
 
       <RelatedArticles items={[
-        { title: "실업크레딧 신청 방법 — 국민연금 75% 지원", desc: "실업급여 · 국민연금", href: "/w/실업급여-실업크레딧" },
+        { title: "실업크레딧 신청 방법 — 국민연금 75% 지원", desc: "실업급여 · 국민연금", href: "/w/실업급여-국민연금" },
         { title: "실업급여 소정급여일수 기준표", desc: "실업급여 · 소정급여일수", href: "/w/실업급여-소정급여일수" },
         { title: "실업급여 수급자격 — 피보험기간 180일", desc: "실업급여 · 수급자격", href: "/w/실업급여-수급-조건" },
       ]} />

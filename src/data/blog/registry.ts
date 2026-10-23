@@ -319,7 +319,7 @@ const BLOGS: BlogEntry[] = [
     Component: Article52Component,
   },
   {
-    slug: "실업급여-국민연금-유예",
+    slug: "실업급여-국민연금",
     meta: {
       title: "실업급여 국민연금 납부예외 신청 | 유예 기간 연금액 영향",
       description: "실업급여 수급 중 국민연금 납부예외를 신청하면 내지 않아도 돼요. 하지만 나중에 연금이 줄어드는 단점도 있어서 실업크레딧과 비교해보는 게 좋아요.",
@@ -355,7 +355,7 @@ const BLOGS: BlogEntry[] = [
     Component: Article54Component,
   },
   {
-    slug: "실업급여-실업크레딧",
+    slug: "실업급여-국민연금",
     meta: {
       title: "실업급여 실업크레딧 신청 방법 | 국민연금 75% 지원 최대 12개월",
       description: "실업급여 수급 중 실업크레딧을 신청하면 국민연금 보험료의 75%를 국가가 지원해줘요. 신청은 수급 기간 중에만 가능하고 최대 12개월까지 받을 수 있어요.",

@@ -327,8 +327,8 @@ export default function Article() {
       ]} />
 
       <PrevNext
-        prev={{ title: "실업급여 국민연금 납부예외 신청", href: "/w/실업급여-국민연금-유예" }}
-        next={{ title: "실업크레딧 신청 방법", href: "/w/실업급여-실업크레딧" }}
+        prev={{ title: "실업급여 국민연금 납부예외 신청", href: "/w/실업급여-국민연금" }}
+        next={{ title: "실업크레딧 신청 방법", href: "/w/실업급여-국민연금" }}
       />
     </BlogLayout>
   );

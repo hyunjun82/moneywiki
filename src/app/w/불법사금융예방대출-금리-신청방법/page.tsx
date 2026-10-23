@@ -30,7 +30,7 @@ const REFERENCES = [
 const RELATED = [
   { slug: "긴급복지-생계지원금-신청-방법", title: "긴급복지 생계지원금 신청", description: "급전이 필요한 상황이라면 생계지원금도 확인하세요." },
   { slug: "미환급금-조회-정부24-환급금-찾기", title: "미환급금 조회 방법", description: "정부24에서 숨은 환급금을 찾을 수 있어요." },
-  { slug: "국민연금-조기수령-감액률-신청조건-손익분기점", title: "국민연금 조기수령 조건", description: "연금도 미리 받을 수 있어요. 감액률과 손익분기점을 확인하세요." },
+  { slug: "국민연금-조기수령-조건", title: "국민연금 조기수령 조건", description: "연금도 미리 받을 수 있어요. 감액률과 손익분기점을 확인하세요." },
 ];
 
 export default function Page() {
