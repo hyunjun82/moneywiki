@@ -176,6 +176,7 @@ const ORG_BY_HOST = {
   "moef.go.kr": "기획재정부",
   "nhis.or.kr": "국민건강보험공단",
   "nps.or.kr": "국민연금공단",
+  "mohw.go.kr": "보건복지부",
   "molit.go.kr": "국토교통부",
   "bokjiro.go.kr": "복지로",
   "gov.kr": "정부24",
