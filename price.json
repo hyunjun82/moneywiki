@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T08:04:26.756+09:00",
+  "updatedAt": "2026-10-24T10:33:25.688+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -20,24 +20,24 @@
         "key": "gold24",
         "name": "순금 24K",
         "userSell": {
-          "price": 641000,
-          "change": 11000,
+          "price": 636000,
+          "change": 5000,
           "dir": "down"
         },
         "userBuy": {
-          "price": 753500,
-          "change": 11000,
+          "price": 748000,
+          "change": 5500,
           "dir": "down",
-          "priceExVat": 685000,
-          "changeExVat": 10000
+          "priceExVat": 680000,
+          "changeExVat": 5000
         }
       },
       {
         "key": "gold18",
         "name": "18K",
         "userSell": {
-          "price": 471200,
-          "change": 8100,
+          "price": 467500,
+          "change": 3700,
           "dir": "down"
         },
         "userBuy": null
@@ -46,8 +46,8 @@
         "key": "gold14",
         "name": "14K",
         "userSell": {
-          "price": 365400,
-          "change": 6300,
+          "price": 362600,
+          "change": 2800,
           "dir": "down"
         },
         "userBuy": null
@@ -61,11 +61,11 @@
           "dir": "none"
         },
         "userBuy": {
-          "price": 295900,
-          "change": 8800,
+          "price": 293700,
+          "change": 2200,
           "dir": "down",
-          "priceExVat": 269000,
-          "changeExVat": 8000
+          "priceExVat": 267000,
+          "changeExVat": 2000
         }
       },
       {
@@ -73,15 +73,15 @@
         "name": "은",
         "userSell": {
           "price": 6000,
-          "change": 1000,
-          "dir": "down"
+          "change": 0,
+          "dir": "none"
         },
         "userBuy": {
-          "price": 9713,
-          "change": 264,
+          "price": 9636,
+          "change": 77,
           "dir": "down",
-          "priceExVat": 8830,
-          "changeExVat": 240
+          "priceExVat": 8760,
+          "changeExVat": 70
         }
       }
     ]
