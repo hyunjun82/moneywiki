@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T11:31:16.085+09:00",
+  "updatedAt": "2026-10-27T17:20:57.331+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -1119,9 +1119,9 @@
     "fetchedDate": "2026-10-27"
   },
   "fx": {
-    "usdkrw": 1323.33,
-    "change": 1.57,
-    "changePct": 0.12,
+    "usdkrw": 1326.09,
+    "change": 4.33,
+    "changePct": 0.33,
     "dir": "up",
     "changeBasis": "prevClose",
     "prevClose": {
@@ -1133,30 +1133,30 @@
   "intl": {
     "gold": {
       "name": "금",
-      "usdPerOz": 4029.4,
-      "changePct": -0.22,
+      "usdPerOz": 4009.1,
+      "changePct": -0.73,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-10-26",
         "price": 4038.4
       },
-      "krwPerGram": 171435,
-      "krwPerDon": 642881,
+      "krwPerGram": 170927,
+      "krwPerDon": 640976,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
       "name": "은",
-      "usdPerOz": 53.94,
-      "changePct": -0.32,
+      "usdPerOz": 52.91,
+      "changePct": -2.21,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-10-26",
         "price": 54.11
       },
-      "krwPerGram": 2295,
-      "krwPerDon": 8606,
+      "krwPerGram": 2256,
+      "krwPerDon": 8460,
       "source": "COMEX 은 선물 (SI=F)"
     }
   },
@@ -1180,9 +1180,9 @@
       "name": "달러인덱스",
       "symbol": "DX-Y.NYB",
       "unit": "pt",
-      "price": 102.04,
-      "change": 0.08,
-      "changePct": 0.08,
+      "price": 102.18,
+      "change": 0.22,
+      "changePct": 0.22,
       "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
@@ -1195,10 +1195,10 @@
       "name": "WTI 유가",
       "symbol": "CL=F",
       "unit": "$",
-      "price": 100.84,
-      "change": -0.92,
-      "changePct": -0.9,
-      "dir": "down",
+      "price": 102.37,
+      "change": 0.61,
+      "changePct": 0.6,
+      "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-10-26",
