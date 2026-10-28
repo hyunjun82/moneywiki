@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T00:57:25.492+09:00",
+  "updatedAt": "2026-10-29T08:58:39.788+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -1133,9 +1133,9 @@
     "fetchedDate": "2026-10-29"
   },
   "fx": {
-    "usdkrw": 1343.72,
-    "change": 18.95,
-    "changePct": 1.43,
+    "usdkrw": 1341.02,
+    "change": 16.25,
+    "changePct": 1.23,
     "dir": "up",
     "changeBasis": "prevClose",
     "prevClose": {
@@ -1147,30 +1147,30 @@
   "intl": {
     "gold": {
       "name": "금",
-      "usdPerOz": 4055.2,
-      "changePct": -0.48,
+      "usdPerOz": 4066.6,
+      "changePct": -0.2,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-10-27",
         "price": 4074.6
       },
-      "krwPerGram": 175191,
-      "krwPerDon": 656966,
+      "krwPerGram": 175331,
+      "krwPerDon": 657491,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
       "name": "은",
-      "usdPerOz": 53.7,
-      "changePct": -1.1,
+      "usdPerOz": 53.92,
+      "changePct": -0.69,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-10-27",
         "price": 54.29
       },
-      "krwPerGram": 2320,
-      "krwPerDon": 8700,
+      "krwPerGram": 2325,
+      "krwPerDon": 8719,
       "source": "COMEX 은 선물 (SI=F)"
     }
   },
@@ -1179,9 +1179,9 @@
       "name": "미 10년물 국채금리",
       "symbol": "^TNX",
       "unit": "%",
-      "price": 5.03,
-      "change": 0.03,
-      "changePct": 0.7,
+      "price": 5.05,
+      "change": 0.05,
+      "changePct": 1.04,
       "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
@@ -1194,10 +1194,10 @@
       "name": "달러인덱스",
       "symbol": "DX-Y.NYB",
       "unit": "pt",
-      "price": 102.35,
-      "change": 0.03,
-      "changePct": 0.02,
-      "dir": "up",
+      "price": 102.09,
+      "change": -0.23,
+      "changePct": -0.22,
+      "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-10-27",
@@ -1209,9 +1209,9 @@
       "name": "WTI 유가",
       "symbol": "CL=F",
       "unit": "$",
-      "price": 103.23,
-      "change": 3.33,
-      "changePct": 3.33,
+      "price": 101.85,
+      "change": 1.95,
+      "changePct": 1.95,
       "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
