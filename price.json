@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T08:39:49.125+09:00",
+  "updatedAt": "2026-10-31T11:47:22.986+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -20,24 +20,24 @@
         "key": "gold24",
         "name": "순금 24K",
         "userSell": {
-          "price": 642000,
-          "change": 5000,
+          "price": 626000,
+          "change": 16000,
           "dir": "down"
         },
         "userBuy": {
-          "price": 751300,
-          "change": 12100,
+          "price": 731500,
+          "change": 19800,
           "dir": "down",
-          "priceExVat": 683000,
-          "changeExVat": 11000
+          "priceExVat": 665000,
+          "changeExVat": 18000
         }
       },
       {
         "key": "gold18",
         "name": "18K",
         "userSell": {
-          "price": 471900,
-          "change": 3700,
+          "price": 460200,
+          "change": 11700,
           "dir": "down"
         },
         "userBuy": null
@@ -46,8 +46,8 @@
         "key": "gold14",
         "name": "14K",
         "userSell": {
-          "price": 366000,
-          "change": 2800,
+          "price": 356900,
+          "change": 9100,
           "dir": "down"
         },
         "userBuy": null
@@ -61,11 +61,11 @@
           "dir": "none"
         },
         "userBuy": {
-          "price": 284900,
-          "change": 8800,
+          "price": 272800,
+          "change": 12100,
           "dir": "down",
-          "priceExVat": 259000,
-          "changeExVat": 8000
+          "priceExVat": 248000,
+          "changeExVat": 11000
         }
       },
       {
@@ -77,11 +77,11 @@
           "dir": "none"
         },
         "userBuy": {
-          "price": 9130,
-          "change": 561,
+          "price": 8855,
+          "change": 275,
           "dir": "down",
-          "priceExVat": 8300,
-          "changeExVat": 510
+          "priceExVat": 8050,
+          "changeExVat": 250
         }
       }
     ]
