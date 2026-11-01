@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T18:40:10.941+09:00",
+  "updatedAt": "2026-11-02T01:28:16.202+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -100,13 +100,6 @@
       "changePct": -0.11
     },
     "history": [
-      {
-        "date": "2026-03-26",
-        "krwPerGram": 214990,
-        "krwPerDon": 806213,
-        "change": -4950,
-        "changePct": -2.25
-      },
       {
         "date": "2026-03-27",
         "krwPerGram": 216420,
@@ -1123,12 +1116,12 @@
         "changePct": -0.11
       }
     ],
-    "fetchedDate": "2026-11-01"
+    "fetchedDate": "2026-11-02"
   },
   "fx": {
-    "usdkrw": 1335.1,
-    "change": -2.88,
-    "changePct": -0.22,
+    "usdkrw": 1333.44,
+    "change": -4.54,
+    "changePct": -0.34,
     "dir": "down",
     "changeBasis": "prevClose",
     "prevClose": {
@@ -1148,8 +1141,8 @@
         "date": "2026-10-29",
         "price": 4031.4
       },
-      "krwPerGram": 167358,
-      "krwPerDon": 627593,
+      "krwPerGram": 167150,
+      "krwPerDon": 626813,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
@@ -1162,8 +1155,8 @@
         "date": "2026-10-29",
         "price": 52.19
       },
-      "krwPerGram": 2115,
-      "krwPerDon": 7931,
+      "krwPerGram": 2113,
+      "krwPerDon": 7924,
       "source": "COMEX 은 선물 (SI=F)"
     }
   },
