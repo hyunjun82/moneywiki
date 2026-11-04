@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-03T16:57:08.749+09:00",
-  "fetchedDate": "2026-11-03",
+  "updatedAt": "2026-11-04T16:31:37.312+09:00",
+  "fetchedDate": "2026-11-04",
   "source": "전국은행연합회 외환길잡이 — 은행별 주요통화 인터넷환전수수료 우대율 비교",
   "sourceUrl": "https://exchange.kfb.or.kr/page/on_commission.php",
   "note": "환전수수료율과 우대율은 각 은행이 공시한 값입니다. 고객 등급·환전 금액·이벤트에 따라 실제 적용 우대율은 달라질 수 있으므로 거래 전 해당 은행에서 확인하세요.",
@@ -157,7 +157,7 @@
         "maxPref": 50,
         "maxPrefText": "50%",
         "note": "1. 기본우대율 : 30%\n2. 고객등급별 환율우대\n- JB DIAMOND 고객 : 50%\n- JB PLATINUM 고객 : 40%\n- JB FAMILY 고객 : 30%",
-        "asOf": "2026-10-01"
+        "asOf": "2026-11-01"
       },
       {
         "bank": "BNK경남은행",
@@ -303,7 +303,7 @@
         "maxPref": 50,
         "maxPrefText": "50%",
         "note": "1. 기본우대율 : 30%\n2. 고객등급별환율우대\n- JB DIAMOND 고객 : 50%\n- JB PLATINUM 고객 : 40%\n- JB FAMILY 고객 : 30%",
-        "asOf": "2026-10-01"
+        "asOf": "2026-11-01"
       },
       {
         "bank": "BNK경남은행",
@@ -449,7 +449,7 @@
         "maxPref": 50,
         "maxPrefText": "50%",
         "note": "1. 기본우대율 : 30%\n2. 고객등급별환율우대\n- JB DIAMOND 고객 : 50%\n- JB PLATINUM 고객 : 40%\n- JB FAMILY 고객 : 30%",
-        "asOf": "2026-10-01"
+        "asOf": "2026-11-01"
       },
       {
         "bank": "BNK경남은행",
@@ -577,7 +577,7 @@
         "maxPref": 25,
         "maxPrefText": "25%",
         "note": "1. 기본우대율 : 15%\n2. 고객등급별환율우대\n- JB DIAMOND 고객: 25%\n- JB PLATINUM 고객: 20%\n- JB FAMILY 고객: 15%",
-        "asOf": "2026-10-01"
+        "asOf": "2026-11-01"
       },
       {
         "bank": "BNK경남은행",
