@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T21:52:22.223+09:00",
+  "updatedAt": "2026-11-08T08:36:43.593+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -11,7 +11,7 @@
   "retail": {
     "source": "종로금거래소",
     "sourceUrl": "https://www.jongrogx.com/",
-    "quoteDate": "2026-11-07",
+    "quoteDate": "2026-11-08",
     "unit": "원/돈",
     "vatIncludedBuy": true,
     "note": "살 때 가격은 부가세 10%를 포함한 실제 결제 금액입니다(종로금거래소 원문 고시가에 부가세를 더한 값).",
@@ -100,13 +100,6 @@
       "changePct": 2.64
     },
     "history": [
-      {
-        "date": "2026-04-01",
-        "krwPerGram": 228000,
-        "krwPerDon": 855000,
-        "change": 3030,
-        "changePct": 1.35
-      },
       {
         "date": "2026-04-02",
         "krwPerGram": 223250,
@@ -1130,7 +1123,7 @@
         "changePct": 2.64
       }
     ],
-    "fetchedDate": "2026-11-07"
+    "fetchedDate": "2026-11-08"
   },
   "fx": {
     "usdkrw": 1363.65,
