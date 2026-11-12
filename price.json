@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12T10:52:48.015+09:00",
+  "updatedAt": "2026-11-12T18:42:55.884+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -61,11 +61,11 @@
           "dir": "none"
         },
         "userBuy": {
-          "price": 292600,
-          "change": 2200,
-          "dir": "down",
-          "priceExVat": 266000,
-          "changeExVat": 2000
+          "price": 294800,
+          "change": 0,
+          "dir": "none",
+          "priceExVat": 268000,
+          "changeExVat": 0
         }
       },
       {
@@ -1133,9 +1133,9 @@
     "fetchedDate": "2026-11-12"
   },
   "fx": {
-    "usdkrw": 1334.98,
-    "change": -6.93,
-    "changePct": -0.52,
+    "usdkrw": 1331.72,
+    "change": -10.19,
+    "changePct": -0.76,
     "dir": "down",
     "changeBasis": "prevClose",
     "prevClose": {
@@ -1147,30 +1147,30 @@
   "intl": {
     "gold": {
       "name": "금",
-      "usdPerOz": 3993,
-      "changePct": -0.92,
+      "usdPerOz": 3945.7,
+      "changePct": -1.37,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-11-10",
-        "price": 4030.2
+        "date": "2026-11-11",
+        "price": 4000.5
       },
-      "krwPerGram": 171382,
-      "krwPerDon": 642683,
+      "krwPerGram": 168938,
+      "krwPerDon": 633518,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
       "name": "은",
-      "usdPerOz": 51.68,
-      "changePct": 1.13,
-      "dir": "up",
+      "usdPerOz": 51.23,
+      "changePct": -1.25,
+      "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-11-10",
-        "price": 51.1
+        "date": "2026-11-11",
+        "price": 51.88
       },
-      "krwPerGram": 2218,
-      "krwPerDon": 8318,
+      "krwPerGram": 2193,
+      "krwPerDon": 8224,
       "source": "COMEX 은 선물 (SI=F)"
     }
   },
@@ -1194,14 +1194,14 @@
       "name": "달러인덱스",
       "symbol": "DX-Y.NYB",
       "unit": "pt",
-      "price": 102.84,
-      "change": 0.61,
-      "changePct": 0.6,
-      "dir": "up",
+      "price": 102.88,
+      "change": -0.03,
+      "changePct": -0.03,
+      "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-11-10",
-        "price": 102.23
+        "date": "2026-11-11",
+        "price": 102.91
       },
       "source": "Yahoo Finance (DX-Y.NYB)"
     },
@@ -1209,14 +1209,14 @@
       "name": "WTI 유가",
       "symbol": "CL=F",
       "unit": "$",
-      "price": 85.46,
-      "change": -0.58,
-      "changePct": -0.67,
+      "price": 86.1,
+      "change": -0.43,
+      "changePct": -0.5,
       "dir": "down",
       "changeBasis": "prevClose",
       "prevClose": {
-        "date": "2026-11-10",
-        "price": 86.04
+        "date": "2026-11-11",
+        "price": 86.53
       },
       "source": "Yahoo Finance (CL=F)"
     }
