@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T11:46:29.923+09:00",
+  "updatedAt": "2026-11-27T20:28:32.347+09:00",
   "sources": [
     "retail:jongrogx",
     "krx:data.go.kr",
@@ -20,24 +20,24 @@
         "key": "gold24",
         "name": "순금 24K",
         "userSell": {
-          "price": 592000,
-          "change": 7000,
+          "price": 595000,
+          "change": 10000,
           "dir": "up"
         },
         "userBuy": {
-          "price": 688600,
-          "change": 11000,
+          "price": 691900,
+          "change": 14300,
           "dir": "up",
-          "priceExVat": 626000,
-          "changeExVat": 10000
+          "priceExVat": 629000,
+          "changeExVat": 13000
         }
       },
       {
         "key": "gold18",
         "name": "18K",
         "userSell": {
-          "price": 435200,
-          "change": 5200,
+          "price": 437400,
+          "change": 7400,
           "dir": "up"
         },
         "userBuy": null
@@ -46,8 +46,8 @@
         "key": "gold14",
         "name": "14K",
         "userSell": {
-          "price": 337500,
-          "change": 4000,
+          "price": 339200,
+          "change": 5700,
           "dir": "up"
         },
         "userBuy": null
@@ -77,11 +77,11 @@
           "dir": "none"
         },
         "userBuy": {
-          "price": 7832,
-          "change": 352,
+          "price": 7953,
+          "change": 473,
           "dir": "up",
-          "priceExVat": 7120,
-          "changeExVat": 320
+          "priceExVat": 7230,
+          "changeExVat": 430
         }
       }
     ]
@@ -1140,9 +1140,9 @@
     "fetchedDate": "2026-11-27"
   },
   "fx": {
-    "usdkrw": 1340.53,
-    "change": -2.44,
-    "changePct": -0.18,
+    "usdkrw": 1333.34,
+    "change": -9.63,
+    "changePct": -0.72,
     "dir": "down",
     "changeBasis": "prevClose",
     "prevClose": {
@@ -1154,30 +1154,30 @@
   "intl": {
     "gold": {
       "name": "금",
-      "usdPerOz": 3657.6,
-      "changePct": 3.44,
+      "usdPerOz": 3701.9,
+      "changePct": 4.7,
       "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-11-25",
         "price": 3535.8
       },
-      "krwPerGram": 157639,
-      "krwPerDon": 591146,
+      "krwPerGram": 158693,
+      "krwPerDon": 595099,
       "source": "COMEX 금 선물 (GC=F)"
     },
     "silver": {
       "name": "은",
-      "usdPerOz": 43.81,
-      "changePct": 9.37,
+      "usdPerOz": 44.52,
+      "changePct": 11.14,
       "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
         "date": "2026-11-25",
         "price": 40.05
       },
-      "krwPerGram": 1888,
-      "krwPerDon": 7080,
+      "krwPerGram": 1908,
+      "krwPerDon": 7155,
       "source": "COMEX 은 선물 (SI=F)"
     }
   },
@@ -1201,9 +1201,9 @@
       "name": "달러인덱스",
       "symbol": "DX-Y.NYB",
       "unit": "pt",
-      "price": 103.68,
-      "change": 0.01,
-      "changePct": 0.01,
+      "price": 103.82,
+      "change": 0.15,
+      "changePct": 0.15,
       "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
@@ -1216,9 +1216,9 @@
       "name": "WTI 유가",
       "symbol": "CL=F",
       "unit": "$",
-      "price": 85.67,
-      "change": 1.99,
-      "changePct": 2.38,
+      "price": 85.33,
+      "change": 1.65,
+      "changePct": 1.97,
       "dir": "up",
       "changeBasis": "prevClose",
       "prevClose": {
